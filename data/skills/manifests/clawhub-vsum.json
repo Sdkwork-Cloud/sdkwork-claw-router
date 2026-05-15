@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62334,
+  "uuid": "skill-clawhub-vsum",
+  "skillKey": "clawhub-vsum",
+  "name": "vsum",
+  "summary": "视频 summarizer，支持 YouTube 和 Bilibili 视频自动获取字幕并 AI 总结，输出为 md 格式。适用于：用户给出一个视频链接，希望总结内容。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vsum",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chrischaan",
+      "features": [
+        "视频 summarizer，支持 YouTube 和 Bilibili 视频自动获取字幕并 AI 总结，输出为 md 格式。适用于：用户给出一个视频链接，希望总结内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vsum@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49733532?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vsum",
+      "url": "https://clawhub.ai/skills/vsum"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vsum",
+    "url": "https://clawhub.ai/skills/vsum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vsum-559194934b8777b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vsum@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vsum-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72efa368a7d11587a8c38c4437720b99ddd49309d8e950762cf3a7cb1dd7eb60",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T14:38:48.564Z"
+}

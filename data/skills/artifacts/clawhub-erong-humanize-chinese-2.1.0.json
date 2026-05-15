@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/erong-humanize-chinese@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.erong_humanize_chinese",
+  "skill": {
+    "id": 69452,
+    "skillKey": "clawhub-erong-humanize-chinese",
+    "name": "Humanize Chinese"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "erong-humanize-chinese",
+    "url": "https://clawhub.ai/skills/erong-humanize-chinese",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/erong-humanize-chinese-82365072803b8b0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "检测并去除中文文本中的AI写作痕迹。当用户说\"去AI味\"、\"改得自然一点\"、\"太机器了\"、\"帮我润色\"、\"去掉AI感\"时使用。支持文件输入或直接粘贴文本，输出改写后文本和对比报告。适用于论文、文案、公众号、社交媒体等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "erongcao",
+      "userId": "s17baj1em8ajy9w56q6qyqvqg184gggm",
+      "displayName": "Yirong",
+      "image": "https://avatars.githubusercontent.com/u/32793967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1775705560030,
+      "changelog": "- 新增场景支持（通用、社交、科技、正式、对话），可指定不同改写风格\n- 优化检测与改写流程，支持批量处理和文件输入\n- 引入详细的AI痕迹检测评分体系与类别说明\n- 提供具体的改写原则，提升文本自然度与人性化\n- 支持自定义检测规则和替换映射，便于扩展",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b2775e2d3dcbe50a920c213bb02f0b5076e9a5e23fee5dbab400dbcf1776c856"
+}

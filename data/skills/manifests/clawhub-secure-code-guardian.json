@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10533,
+  "uuid": "skill-clawhub-secure-code-guardian",
+  "skillKey": "clawhub-secure-code-guardian",
+  "name": "Secure Code Guardian",
+  "summary": "Use when implementing authentication/authorization, securing user input, or preventing OWASP Top 10 vulnerabilities. Invoke for authentication, authorization, input validation, encryption, OWASP Top 10 prevention.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.secure_code_guardian",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Veera",
+      "features": [
+        "Use when implementing authentication/authorization, securing user input, or preventing OWASP To.",
+        "Invoke for authentication, authorization, input validation, encryption, OWASP Top 10 prevention."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/secure-code-guardian@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/119089869?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "secure-code-guardian",
+      "url": "https://clawhub.ai/skills/secure-code-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "secure-code-guardian",
+    "url": "https://clawhub.ai/skills/secure-code-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/secure-code-guardian-b6d068628baac5c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/secure-code-guardian@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-secure-code-guardian-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45e2e377fa46555614f43884e53ee4554e21a7aa5c2384690a6d1fa81e06e4a6",
+      "artifactSizeBytes": 2575
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T05:56:47.285Z"
+}

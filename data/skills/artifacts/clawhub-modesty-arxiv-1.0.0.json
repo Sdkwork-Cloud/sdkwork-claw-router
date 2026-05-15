@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/modesty-arxiv@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modesty_arxiv",
+  "skill": {
+    "id": 43133,
+    "skillKey": "clawhub-modesty-arxiv",
+    "name": "arxiv"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modesty-arxiv",
+    "url": "https://clawhub.ai/skills/modesty-arxiv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modesty-arxiv-2b5bac4f8800d449.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, download, and summarize academic papers from arXiv. Built for AI/ML researchers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "modestyrichards",
+      "userId": "s17069c392wb17n1nvrdv0kq1h84qjrk",
+      "displayName": "ModestyRichards",
+      "image": "https://avatars.githubusercontent.com/u/261238899?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776086279870,
+      "changelog": "arxiv skill version 1.0.0 released\n\n- Search, fetch, and download academic papers from arXiv.org directly via assistant.\n- Summarize papers, get detailed information, and retrieve PDF links.\n- Simple reading list management: save, view, and mark papers as read.\n- No API key required; optional MongoDB integration for advanced tracking.\n- Designed for researchers, students, and content creators to streamline literature reviews and stay current in technical fields.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a61a1d41ce548153fb4e7a95b3720446497e3017f6205de167283545c0bb7a27"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70496,
+  "uuid": "skill-clawhub-hotspot-writer",
+  "skillKey": "clawhub-hotspot-writer",
+  "name": "hotspot-writer",
+  "summary": "全网热点自动抓取+文案生成。抓取微博/知乎/抖音热搜，生成适配多平台的小红书/抖音/公众号文案，自动存档沉淀。用于用户说蹭热点、写热点、追热点、写文案。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotspot_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Primordia",
+      "features": [
+        "全网热点自动抓取+文案生成。抓取微博/知乎/抖音热搜，生成适配多平台的小红书/抖音/公众号文案，自动存档沉淀。用于用户说蹭热点、写热点、追热点、写文案。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hotspot-writer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224094441?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hotspot-writer",
+      "url": "https://clawhub.ai/skills/hotspot-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotspot-writer",
+    "url": "https://clawhub.ai/skills/hotspot-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotspot-writer-4dc0a5a6e5143266.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hotspot-writer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hotspot-writer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:682035944eee8644b4ffd4349351407a48915bd4cf1da189cc816b87cda7b4fb",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T19:02:59.867Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eu-ai-act-compliance@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eu_ai_act_compliance",
+  "skill": {
+    "id": 43527,
+    "skillKey": "clawhub-eu-ai-act-compliance",
+    "name": "Eu Ai Act Compliance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eu-ai-act-compliance",
+    "url": "https://clawhub.ai/skills/eu-ai-act-compliance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eu-ai-act-compliance-35b1655ccf04641e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Classify HR AI systems by EU AI Act risk level, provide compliance gap analysis, and recommend remediation steps for recruitment and workforce planning tools."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rochyroch",
+      "userId": "s17eznc0zj7kn122qk1z445ajd84rfwz",
+      "displayName": "Enda",
+      "image": "https://avatars.githubusercontent.com/u/4045836?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776096562024,
+      "changelog": "- Documentation updates only: README content was improved for clarity and structure.\n- No functional or logic changes to the skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de0da1e544f02c344b1b337f72b002e3d054413d17c1215ba3d5cca05b476fff"
+}

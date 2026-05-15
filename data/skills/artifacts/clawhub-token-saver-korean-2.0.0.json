@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-saver-korean@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_saver_korean",
+  "skill": {
+    "id": 58935,
+    "skillKey": "clawhub-token-saver-korean",
+    "name": "TokenSaver Korean"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-saver-korean",
+    "url": "https://clawhub.ai/skills/token-saver-korean",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-saver-korean-4a63706d3e4f79f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🧠 한국어 Context DB for AI Agents — 토큰 91% 절감. 임베딩 의미 검색, 중복 자동 병합, 메모리 계층화(Hot/Warm/Cold), 자동 아카이브, WAL 프로토콜, 엔티티 추출. Korean-first + English support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dorongss",
+      "userId": "s17585vadf2yee7jh1xrdphs1x83gqys",
+      "displayName": "dorongss",
+      "image": "https://avatars.githubusercontent.com/u/157365330?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776605153088,
+      "changelog": "v2.0: 임베딩 의미 검색, 중복 자동 병합, 메모리 계층화(Hot/Warm/Cold), 자동 아카이브, 엔티티 추출, nltk 지원",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9c5b2f4995e239ad3e633f02aaa9382924d7d3d0d928ab50723172467725ec9"
+}

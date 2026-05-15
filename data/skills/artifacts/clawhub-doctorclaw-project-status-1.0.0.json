@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doctorclaw-project-status@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doctorclaw_project_status",
+  "skill": {
+    "id": 54247,
+    "skillKey": "clawhub-doctorclaw-project-status",
+    "name": "DoctorClaw Project Status"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doctorclaw-project-status",
+    "url": "https://clawhub.ai/skills/doctorclaw-project-status",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doctorclaw-project-status-ef598e7efac1f22d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Project status board — compile daily status from tasks, calendar, and team updates into one dashboard. Daily cron or on-demand."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ceobotson-bot",
+      "userId": "s179qe3ytytdn9499vw61m1c4h83hhr8",
+      "displayName": "ceobotson-bot",
+      "image": "https://avatars.githubusercontent.com/u/263067918?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777813409584,
+      "changelog": "- Initial release of the doctorclaw-project-status skill.\n- Compiles daily project status boards from tasks, calendar events, and team updates.\n- Supports multiple project management tools (Todoist, Asana, Notion, Trello, Linear, CSV) as data sources.\n- Provides project health status, progress, milestones, blockers, team workload analysis, and daily priority actions.\n- Delivers project status reports on a scheduled cron or on-demand, with options for Telegram/Discord alerts.\n- Customizable thresholds, project selection, team analysis, and delivery channels.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9de884a756edaf3008bb034ab7aea2b7579a0db836feead98923475d8349aac9"
+}

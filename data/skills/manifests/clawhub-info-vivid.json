@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69411,
+  "uuid": "skill-clawhub-info-vivid",
+  "skillKey": "clawhub-info-vivid",
+  "name": "Info Vivid",
+  "summary": "信息可视化技能，将结构化数据渲染为深色主题的高质量图表和长图报告。 支持两类输出：第一类是零依赖 SVG/HTML 交互式横向条形图，直接在浏览器打开； 第二类是基于 Pillow 的 PNG 长图报告，含标题区、KPI 卡片、文字段落、表格、 条形图、卡片组、时间线、页脚等模块，适合监控报告、日报、排行榜等场景...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.info_vivid",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TODD-9527",
+      "features": [
+        "信息可视化技能，将结构化数据渲染为深色主题的高质量图表和长图报告。 支持两类输出：第一类是零依赖 SVG/HTML 交互式横向条形图，直接在浏览器打开； 第二类是基于 Pillow 的 PN."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/info-vivid@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43163256?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "info-vivid",
+      "url": "https://clawhub.ai/skills/info-vivid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "info-vivid",
+    "url": "https://clawhub.ai/skills/info-vivid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/info-vivid-31fa36c0ca5093e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/info-vivid@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-info-vivid-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39cad21592c79ffa16cdcc32dff21fa65ab88d8c7bb1c17e015932902793b3a1",
+      "artifactSizeBytes": 2129
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T16:11:06.353Z"
+}

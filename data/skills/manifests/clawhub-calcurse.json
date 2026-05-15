@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10600,
+  "uuid": "skill-clawhub-calcurse",
+  "skillKey": "clawhub-calcurse",
+  "name": "calcurse",
+  "summary": "A text-based calendar and scheduling application. Use strictly for CLI-based calendar management.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calcurse",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gustavo Madeira Santana",
+      "features": [
+        "A text-based calendar and scheduling application",
+        "Use strictly for CLI-based calendar management."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/calcurse@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5599352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "calcurse",
+      "url": "https://clawhub.ai/skills/calcurse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calcurse",
+    "url": "https://clawhub.ai/skills/calcurse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calcurse-58d45c9a727b4d3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/calcurse@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-calcurse-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa5fbc57590b7257189130caaaee3b5b249d058d1e25a93b184b9159cc050570",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-20T19:02:16.952Z"
+}

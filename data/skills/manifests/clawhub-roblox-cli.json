@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21231,
+  "uuid": "skill-clawhub-roblox-cli",
+  "skillKey": "clawhub-roblox-cli",
+  "name": "Roblox",
+  "summary": "Manage Roblox game passes and developer products via Open Cloud API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.roblox_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TeddyEngel",
+      "features": [
+        "Manage Roblox game passes and developer products via Open Cloud API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/roblox-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5671969?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "roblox-cli",
+      "url": "https://clawhub.ai/skills/roblox-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "roblox-cli",
+    "url": "https://clawhub.ai/skills/roblox-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/roblox-cli-7ed2f972e12b65f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/roblox-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-roblox-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cdcdeba35063e5b7c184beba3f370a1daae11c54662fcc2109e377acb5aecd1e",
+      "artifactSizeBytes": 2198
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T13:59:56.527Z"
+}

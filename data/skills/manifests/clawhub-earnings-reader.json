@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61962,
+  "uuid": "skill-clawhub-earnings-reader",
+  "skillKey": "clawhub-earnings-reader",
+  "name": "Earnings Reader",
+  "summary": "A股财报研读助手 - 解读利润表/资产负债表/现金流量表",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.earnings_reader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "_silhouette",
+      "features": [
+        "A股财报研读助手",
+        "解读利润表/资产负债表/现金流量表"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/earnings-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22570800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "earnings-reader",
+      "url": "https://clawhub.ai/skills/earnings-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "earnings-reader",
+    "url": "https://clawhub.ai/skills/earnings-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/earnings-reader-0f847059131ccc31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/earnings-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-earnings-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d345b0dee8f6b2b92ceca4ec1f3b4ac8adceed6f9b793dfadf5f2f660610a127",
+      "artifactSizeBytes": 1828
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T10:21:16.785Z"
+}

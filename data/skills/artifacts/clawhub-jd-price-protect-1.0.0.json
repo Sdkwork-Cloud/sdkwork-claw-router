@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jd-price-protect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jd_price_protect",
+  "skill": {
+    "id": 57242,
+    "skillKey": "clawhub-jd-price-protect",
+    "name": "JD Price Protection 京东自动价保"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jd-price-protect",
+    "url": "https://clawhub.ai/skills/jd-price-protect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jd-price-protect-c6c6dd4a533058ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-apply JD.com (京东) price protection on all eligible orders. Connects to Chrome via OpenClaw Browser Relay CDP, navigates to JD price protection page, cli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielwangyy",
+      "userId": "s17624f0khah153ayzkz77b04x83nsj2",
+      "displayName": "Danielwangyy",
+      "image": "https://avatars.githubusercontent.com/u/32700482?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 840,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771945452670,
+      "changelog": "Initial release: auto-click all price protection buttons on JD.com, supports pagination and cron scheduling.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d30d30dffc145f7667b56dc0824eccd6ae3c5e107960c27a7767765e88f61afe"
+}

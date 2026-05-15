@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12533,
+  "uuid": "skill-clawhub-ethereum-history",
+  "skillKey": "clawhub-ethereum-history",
+  "name": "Ethereum History",
+  "summary": "Read-only factual data about historical Ethereum mainnet contracts. Use when the user asks about a specific contract address, early Ethereum contracts, deployment era, deployer, bytecode, decompiled code, or documented history (what a cont.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ethereum_history",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cartoonitunes",
+      "features": [
+        "Read-only factual data about historical Ethereum mainnet contracts",
+        "Use when the user asks about a specific contract address, early Ethereum contracts, deployment.",
+        "Data is non-opinionated and includes runtime bytecode, decompiled code, and editorial history w.",
+        "Base URL https://ethereumhistory.com (or set BASE_URL for local/staging)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ethereum-history@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/181663414?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ethereum-history",
+      "url": "https://clawhub.ai/skills/ethereum-history"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ethereum-history",
+    "url": "https://clawhub.ai/skills/ethereum-history",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ethereum-history-8c9ecb3f5775eefb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ethereum-history@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ethereum-history-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2321bc63acc15cd6684ab4a2a7fcf7e086f7a23ff0e86725a8e914a629112932",
+      "artifactSizeBytes": 2445
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T20:13:34.909Z"
+}

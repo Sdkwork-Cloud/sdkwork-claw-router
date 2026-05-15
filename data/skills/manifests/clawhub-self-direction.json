@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23269,
+  "uuid": "skill-clawhub-self-direction",
+  "skillKey": "clawhub-self-direction",
+  "name": "Self-Direction",
+  "summary": "Your agent learns to think like you. Captures your direction system, makes decisions as you would, guides all processes toward your goals.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_direction",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Your agent learns to think like you",
+        "Captures your direction system, makes decisions as you would, guides all processes toward your."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-direction@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-direction",
+      "url": "https://clawhub.ai/skills/self-direction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-direction",
+    "url": "https://clawhub.ai/skills/self-direction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-direction-bd11171a47a8ed9f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-direction@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-direction-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c73caccbd9b2b6c72a84e18eab80e22faed37bf0037072ccf0e8cd181989e3d0",
+      "artifactSizeBytes": 1860
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T23:37:00.514Z"
+}

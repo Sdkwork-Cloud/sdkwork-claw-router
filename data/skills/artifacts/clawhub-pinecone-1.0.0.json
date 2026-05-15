@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pinecone@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pinecone",
+  "skill": {
+    "id": 49985,
+    "skillKey": "clawhub-pinecone",
+    "name": "Pinecone"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pinecone",
+    "url": "https://clawhub.ai/skills/pinecone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pinecone-e2fde0483fc8158c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pinecone vector database — manage indexes, upsert vectors, query similarity search, manage namespaces, and track collections via the Pinecone API. Build sema..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 574,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772765563282,
+      "changelog": "Initial release of pinecone vector database skill.\n\n- Manage Pinecone indexes: create, configure, list, and delete.\n- Upsert, fetch, query, and delete vectors with support for metadata and batch operations.\n- Organize and manage vectors by namespaces and collections (snapshots).\n- Perform similarity search and hybrid sparse-dense search.\n- Requires only Python 3.10+ stdlib (no dependencies), using the Pinecone API.\n- All commands are CLI-based and output JSON by default; add --human for readable output.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b9d34c66181d23795b29d5f452e7975eb3ce81641820b4ccfddaa588ad96ee2b"
+}

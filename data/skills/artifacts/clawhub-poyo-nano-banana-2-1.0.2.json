@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/poyo-nano-banana-2@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poyo_nano_banana_2",
+  "skill": {
+    "id": 56285,
+    "skillKey": "clawhub-poyo-nano-banana-2",
+    "name": "Nano Banana 2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poyo-nano-banana-2",
+    "url": "https://clawhub.ai/skills/poyo-nano-banana-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poyo-nano-banana-2-551003912fbefd3b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Nano Banana 2 image generation and advanced editing on PoYo / poyo.ai via `https://api.poyo.ai/api/generate/submit`; use for `nano-banana-2-new`, `nano-banan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coolhackboy",
+      "userId": "s177pant1v4gn5k13ffg1fp5b183nb02",
+      "displayName": "coolhackboy",
+      "image": "https://avatars.githubusercontent.com/u/13427145?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1131,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773372807882,
+      "changelog": "- Expanded use case guidance to highlight support for multi-reference, advanced editing, and high-resolution (1K/2K/4K) output.\n- Added reference to optional google_search functionality for real-world image grounding.\n- Updated request details: prompt limited to 1000 characters, up to 14 reference images, expanded list of supported size and resolution options.\n- Clarified model selection criteria and when to use each workflow.\n- Improved overall documentation clarity and organization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a56703489e05c9d35b566a13a110f08ce073212c7f1ece46e29cddfc511fbef1"
+}

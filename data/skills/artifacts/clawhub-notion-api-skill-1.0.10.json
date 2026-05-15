@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notion-api-skill@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_api_skill",
+  "skill": {
+    "id": 8607,
+    "skillKey": "clawhub-notion-api-skill",
+    "name": "Notion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-api-skill",
+    "url": "https://clawhub.ai/skills/notion-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-api-skill-4f0402e6b4c9dcf7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Notion API integration with managed OAuth. Query databases, search pages, and read workspace content. Write operations require explicit user confirmation of..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 9208,
+      "installsAllTime": 17,
+      "installsCurrent": 16,
+      "stars": 8,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1778149623751,
+      "changelog": "- Clarified that all write operations (create, update, delete) require explicit user confirmation of the target resource and connection before execution.\n- Updated the description and introductory text to emphasize stricter confirmation requirements for write actions.\n- Adjusted documentation and usage notes to specify no writing is permitted without prior user approval.\n- Reinforced security best practices and scope boundaries regarding resource operations and connection selection.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba7848df95a0b7f0170d0e71f1d2f1c0fb38d6e91d98d314eae6612dc3d075fb"
+}

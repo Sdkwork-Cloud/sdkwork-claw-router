@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bytesagain-lora-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bytesagain_lora_toolkit",
+  "skill": {
+    "id": 42943,
+    "skillKey": "clawhub-bytesagain-lora-toolkit",
+    "name": "LoRA Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bytesagain-lora-toolkit",
+    "url": "https://clawhub.ai/skills/bytesagain-lora-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bytesagain-lora-toolkit-de3d613ead6e74cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure, estimate, and generate LoRA fine-tuning scripts for LLMs. Input: base model name, dataset size, GPU spec. Output: training config, PEFT script, co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "loutai0307-prog",
+      "userId": "s178me4n5rr0ch93xv584tjyv183s7r1",
+      "displayName": "loutai0307-prog",
+      "image": "https://avatars.githubusercontent.com/u/266760463?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775431512654,
+      "changelog": "LoRA fine-tuning toolkit: config/estimate/generate/validate/recommend — supports Llama3/Mistral/Qwen2",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6f1d2dd117028c735b1dad4be1c118d9244920e73e9997eeb2c2fe75f02a4ca"
+}

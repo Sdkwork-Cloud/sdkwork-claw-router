@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27107,
+  "uuid": "skill-clawhub-loopsso",
+  "skillKey": "clawhub-loopsso",
+  "name": "Loopsso",
+  "summary": "Loops.so integration. Manage Persons, Organizations, Deals, Activities, Notes, Files and more. Use when the user wants to interact with Loops.so data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loopsso",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Loops.so integration",
+        "Manage Persons, Organizations, Deals, Activities, Notes, Files and more",
+        "Use when the user wants to interact with Loops.so data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/loopsso@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "loopsso",
+      "url": "https://clawhub.ai/skills/loopsso"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loopsso",
+    "url": "https://clawhub.ai/skills/loopsso",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loopsso-9aeaa9b48400f508.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/loopsso@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-loopsso-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cf8e8d3982059dd564359abf7474e707707f3cdaeda8baf7792d03ab886f5fc",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:09:27.742Z"
+}

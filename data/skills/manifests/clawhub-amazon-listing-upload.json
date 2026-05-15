@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25115,
+  "uuid": "skill-clawhub-amazon-listing-upload",
+  "skillKey": "clawhub-amazon-listing-upload",
+  "name": "amazon-listing-upload",
+  "summary": "Amazon Seller Central listing management and optimization. Use when: user wants to create product listings, apply for GTIN exemptions, set up FBA shipments,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_listing_upload",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sanchez",
+      "features": [
+        "Amazon Seller Central listing management and optimization",
+        "Use when: user wants to create product listings, apply for GTIN exemptions, set up FBA shipment."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-listing-upload@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45893054?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-listing-upload",
+      "url": "https://clawhub.ai/skills/amazon-listing-upload"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-listing-upload",
+    "url": "https://clawhub.ai/skills/amazon-listing-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-listing-upload-240c17d3f1e9ba0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-listing-upload@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-listing-upload-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60eeedb9a000fa449f7d8d93efcc043bb4af1531146c2beef1fc47d34bf6886f",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T11:04:37.303Z"
+}

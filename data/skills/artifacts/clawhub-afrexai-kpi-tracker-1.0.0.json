@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-kpi-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_kpi_tracker",
+  "skill": {
+    "id": 14915,
+    "skillKey": "clawhub-afrexai-kpi-tracker",
+    "name": "KPI Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-kpi-tracker",
+    "url": "https://clawhub.ai/skills/afrexai-kpi-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-kpi-tracker-9a21249ec5c914a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track, analyze, and report business KPIs with targets, status flags, trend analysis, and root cause prompts using configurable JSON files."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1023,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770951500358,
+      "changelog": "- Initial release of the KPI Tracker Skill.\n- Track, categorize, and set targets for multiple business KPIs.\n- Record and store KPI data in JSON for historical analysis.\n- Generate weekly/monthly KPI reports in markdown, with visual status indicators.\n- Automatic flagging of off-track KPIs and root cause prompts.\n- Summarize trends and forecast target achievement using historical data.\n- Easy setup with sample config, and support for scheduled report generation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:304d8553cf4b05f7f031e014750d9e857b06c15190e0223818c60fe35009578e"
+}

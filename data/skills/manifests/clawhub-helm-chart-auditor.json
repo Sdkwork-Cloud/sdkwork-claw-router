@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54080,
+  "uuid": "skill-clawhub-helm-chart-auditor",
+  "skillKey": "clawhub-helm-chart-auditor",
+  "name": "Helm Chart Auditor",
+  "summary": "Audit Helm charts for security, best practices, template correctness, and production readiness — check values, templates, hooks, dependencies, and RBAC.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.helm_chart_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Audit Helm charts for security, best practices, template correctness, and production readiness."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/helm-chart-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "helm-chart-auditor",
+      "url": "https://clawhub.ai/skills/helm-chart-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "helm-chart-auditor",
+    "url": "https://clawhub.ai/skills/helm-chart-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/helm-chart-auditor-f9efba5f9301b0ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/helm-chart-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-helm-chart-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e356a8a7239b27e18a5c74873c0b1d61226385ab2dbdf77c0518ad62572ad1f4",
+      "artifactSizeBytes": 2672
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T06:40:00.219Z"
+}

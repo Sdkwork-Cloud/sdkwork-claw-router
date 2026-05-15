@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-listing-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_listing_writer",
+  "skill": {
+    "id": 30422,
+    "skillKey": "clawhub-amazon-listing-writer",
+    "name": "Amazon Listing Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-listing-writer",
+    "url": "https://clawhub.ai/skills/amazon-listing-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-listing-writer-452a5a0d91dc1281.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write high-converting, SEO-optimized Amazon listings including title, bullets, description, A+ content, and backend search terms. Triggers: listing write, li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774066518608,
+      "changelog": "- Initial release of amazon-listing-writer skill.\n- Generate high-converting, SEO-optimized Amazon listings: title, bullets, description, A+ content, and backend search terms.\n- Supports commands for writing, rewriting, scoring, and translating listings.\n- Provides detailed data input guidelines and copywriting formulas for each listing element.\n- Includes a 100-point listing score rubric and improvement suggestions.\n- Offers split test title variants and keyword placement mapping.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a79b472fda43bf7df6d9a8d1c60065ae637fa68512d138372d06f8747cff8d6d"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72306,
+  "uuid": "skill-clawhub-dispatcher-v2",
+  "skillKey": "clawhub-dispatcher-v2",
+  "name": "调控员",
+  "summary": "OpenClaw 三层架构分离主调度员，纯调度不执行，所有工作派给子代理，独立验证通过才能汇报完成。解决「声称完成但实际未执行」知行分离问题。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dispatcher_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lovenini12344-code",
+      "features": [
+        "OpenClaw 三层架构分离主调度员，纯调度不执行，所有工作派给子代理，独立验证通过才能汇报完成。解决「声称完成但实际未执行」知行分离问题。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dispatcher-v2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264526344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dispatcher-v2",
+      "url": "https://clawhub.ai/skills/dispatcher-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dispatcher-v2",
+    "url": "https://clawhub.ai/skills/dispatcher-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dispatcher-v2-15b1c979bcb2813c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dispatcher-v2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dispatcher-v2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d8ff60f887cdb860279d4d39d1b61d2fc8b4e8c2151a89160b162d0077f5872",
+      "artifactSizeBytes": 3947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T12:31:47.219Z"
+}

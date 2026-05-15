@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9624,
+  "uuid": "skill-clawhub-whats",
+  "skillKey": "clawhub-whats",
+  "name": "What's app",
+  "summary": "Send WhatsApp messages to other people or search/sync WhatsApp history via the wacli CLI (not for normal user chats).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whats",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "engahmedsalah358-lgtm",
+      "features": [
+        "Send WhatsApp messages to other people or search/sync WhatsApp history via the wacli CLI (not f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whats@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/240540382?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whats",
+      "url": "https://clawhub.ai/skills/whats"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whats",
+    "url": "https://clawhub.ai/skills/whats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whats-eeba36dac9d9546a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whats@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whats-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3fe6535c215cb380ba7fc8b0cb22ccf6f043a48d518df0c75c2890191cceac8",
+      "artifactSizeBytes": 2244
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T22:07:27.198Z"
+}

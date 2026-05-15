@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/simulated-upload-helper@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simulated_upload_helper",
+  "skill": {
+    "id": 62030,
+    "skillKey": "clawhub-simulated-upload-helper",
+    "name": "simulated-upload-helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simulated-upload-helper",
+    "url": "https://clawhub.ai/skills/simulated-upload-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simulated-upload-helper-b4cd5742a5919558.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动创建并上传一个简单测试 skill，展示本地 skill 的创建与上传全过程，支持无交互登录。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhoulincom",
+      "userId": "s179dezbnzj1t0sbjx6vdvvk4185nxp8",
+      "displayName": "zhoulincom",
+      "image": "https://avatars.githubusercontent.com/u/75244527?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1777276759466,
+      "changelog": "- The skill no longer creates or modifies any skill; it only triggers the publishing script for existing skills.\n- Updated trigger phrases to clarify focus on direct publish actions, e.g., “上传 skill”, “发布 skills”.\n- Refined steps: now checks if a skill name is specified and publishes accordingly (single or batch).\n- Added strict constraints: no new skill directories or files are created; untouched skills remain unchanged.\n- Documentation and examples updated to reflect the new, publish-only behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f9c66c69ab99767d4743e2f30195c3c898b354bf34f9ff6806eac52044c3c361"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chatgpt-image-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chatgpt_image_gen",
+  "skill": {
+    "id": 21571,
+    "skillKey": "clawhub-chatgpt-image-gen",
+    "name": "Chatgpt Image Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chatgpt-image-gen",
+    "url": "https://clawhub.ai/skills/chatgpt-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chatgpt-image-gen-4db9145ba19ec376.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images using ChatGPT/DALL-E through OpenClaw browser automation. Use when the user wants to create images via ChatGPT's web interface with their log..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sonim1",
+      "userId": "publishers:sonim1",
+      "displayName": "sonim1",
+      "image": "https://avatars.githubusercontent.com/u/2497849?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 474,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772626145762,
+      "changelog": "- Initial release of chatgpt-image-gen skill.\n- Enables DALL-E image generation via ChatGPT’s web interface using OpenClaw browser automation.\n- Requires setup of the OpenClaw Chrome extension and an already logged-in ChatGPT tab.\n- Provides detailed CLI workflow for interacting with ChatGPT UI (listing tabs, clicking, typing prompts, downloading images).\n- Includes troubleshooting tips and best practices for reliable image generation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a270818219dd69016b78d631960476a474314938f41028c5082d33b72cb79c04"
+}

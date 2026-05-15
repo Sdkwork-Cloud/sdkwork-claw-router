@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42782,
+  "uuid": "skill-clawhub-api-test-reporter",
+  "skillKey": "clawhub-api-test-reporter",
+  "name": "api-test-reporter",
+  "summary": "Automates API testing from interface docs by generating detailed HTML reports with test cases, parameters, responses, and validation results for JSON POST/GE...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_test_reporter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "squidtestgary",
+      "features": [
+        "Automates API testing from interface docs by generating detailed HTML reports with test cases,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-test-reporter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107522600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-test-reporter",
+      "url": "https://clawhub.ai/skills/api-test-reporter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-test-reporter",
+    "url": "https://clawhub.ai/skills/api-test-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-test-reporter-7fb1855cccc539dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-test-reporter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-test-reporter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4969768366831cef176b72265bcce8fb3ce9e86a1f3a5789949e1394ae2626c1",
+      "artifactSizeBytes": 2592
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T04:53:39.479Z"
+}

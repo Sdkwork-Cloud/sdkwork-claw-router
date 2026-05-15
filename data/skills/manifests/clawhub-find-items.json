@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23865,
+  "uuid": "skill-clawhub-find-items",
+  "skillKey": "clawhub-find-items",
+  "name": "Find Items",
+  "summary": "Search for products on Chinese e-commerce platforms (Taobao, JD, Vipshop, PDD, Meituan, Ele.me, etc.) using web search. This skill helps users find products,...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_items",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Search for products on Chinese e-commerce platforms (Taobao, JD, Vipshop, PDD, Meituan, Ele.me,.",
+        "This skill helps users find products,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-items@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-items",
+      "url": "https://clawhub.ai/skills/find-items"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-items",
+    "url": "https://clawhub.ai/skills/find-items",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-items-32afdc97e7c5ece9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-items@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-items-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6e0f8064d4abe53f56053ee2d36ccd77dc7a5bc8dd73d47b22d142c3651021c",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T14:38:49.059Z"
+}

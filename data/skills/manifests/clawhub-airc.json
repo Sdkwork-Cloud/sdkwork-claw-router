@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10797,
+  "uuid": "skill-clawhub-airc",
+  "skillKey": "clawhub-airc",
+  "name": "Airc",
+  "summary": "Connect to IRC servers (AIRC or any standard IRC) and participate in channels. Send/receive messages, join/part channels, and listen for activity.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airc",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vortitron",
+      "features": [
+        "Connect to IRC servers (AIRC or any standard IRC) and participate in channels",
+        "Send/receive messages, join/part channels, and listen for activity."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/airc@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8288276?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "airc",
+      "url": "https://clawhub.ai/skills/airc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airc",
+    "url": "https://clawhub.ai/skills/airc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airc-4fa8b974cb3a080e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/airc@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-airc-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e513ddc0fd34d1fa866133e94ae262263f9e1b16c22a195d57eaeba79dc22325",
+      "artifactSizeBytes": 2123
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T22:18:08.079Z"
+}

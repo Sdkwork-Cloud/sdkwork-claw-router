@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32116,
+  "uuid": "skill-clawhub-metriql-docs",
+  "skillKey": "clawhub-metriql-docs",
+  "name": "Metriql Docs",
+  "summary": "Metriql Docs integration. Manage data, records, and automate workflows. Use when the user wants to interact with Metriql Docs data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metriql_docs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Metriql Docs integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Metriql Docs data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/metriql-docs@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "metriql-docs",
+      "url": "https://clawhub.ai/skills/metriql-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metriql-docs",
+    "url": "https://clawhub.ai/skills/metriql-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metriql-docs-46b728afcfe24021.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/metriql-docs@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-metriql-docs-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2582184e487de9c69fc72fb705b38cd05837009896b78cc7c4d27813271cfc6d",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:13:33.729Z"
+}

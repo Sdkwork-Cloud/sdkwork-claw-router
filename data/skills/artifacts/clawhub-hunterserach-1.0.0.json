@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hunterserach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hunterserach",
+  "skill": {
+    "id": 61015,
+    "skillKey": "clawhub-hunterserach",
+    "name": "Hunter Search v1.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hunterserach",
+    "url": "https://clawhub.ai/skills/hunterserach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hunterserach-dd118d72774430ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用于调用奇安信 Hunter OpenAPI 进行资产批量导出。用户提到 Hunter、资产测绘、批量导出、task_id 下载文件等需求时优先加载本 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "biglizi775",
+      "userId": "s17761jcs2kq5mjy2709n2yac984zbdc",
+      "displayName": "bigass",
+      "image": "https://avatars.githubusercontent.com/u/51010852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776667940965,
+      "changelog": "---\nname: qax-hunter-use\ndescription: 用于调用奇安信 Hunter OpenAPI 进行资产批量导出。用户提到 Hunter、资产测绘、批量导出、task_id 下载文件等需求时优先加载本 skill。\n---\n\n# QAX Hunter Use\n\n## First\n\n- 默认走 API 模式，不使用文件上传。\n- 查询语法由用户输入，脚本自动做 RFC 4648 base64url 编码。\n- 批量任务流程固定为：\n  1) 创建任务 `/openApi/search/batch`\n  2) 查询进度 `/openApi/search/batch/{task_id}`\n  3) 下载结果 `/openApi/search/download/{task_id}`\n\n## 入口脚本\n\n- 主脚本：`scripts/hunter_batch_cli.py`\n- 运行方式：\n  - AI 无交互推荐：\n    - `python3 scripts/hunter_batch_cli.py --no-interactive --api-key \"$HUNTER_API_KEY\" --search 'web.title=\"test\"' --check-delay 10 --json-output`\n  - 兼容交互：\n    - `python3 scripts/hunter_batch_cli.py`\n\n## 参数说明\n\n- 必填：`api-key`\n- 常用可选：`search`、`start_time`、`end_time`、`is_web`、`status_code`、`fields`、`assets_limit`\n- AI 友好参数：\n  - `--no-interactive`：禁止交互输入，缺参即报错\n  - `--check-delay`：创建任务后等待 N 秒（默认 10）再首次尝试下载\n  - `--poll-interval` / `--poll-timeout`：轮询控制\n  - `--output-file`：指定下载文件名\n  - `--json-output`：最后输出一行 JSON 结果，便于机器解析\n\n## 安全注意事项\n\n- 不要将真实 `api-key` 写入仓库文件。\n- 推荐使用环境变量注入：`HUNTER_API_KEY`。\n- 若必须持久化，请使用系统密钥环或加密配置文件，不要明文存储。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8eb06d7df8ef691e6694a0fa9f3c2bcdf2575fa3515e1521686af559962bcb1a"
+}

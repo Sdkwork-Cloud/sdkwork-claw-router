@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-grok-to-obsidian@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_grok_to_obsidian",
+  "skill": {
+    "id": 20954,
+    "skillKey": "clawhub-x-grok-to-obsidian",
+    "name": "X Grok to Obsidian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-grok-to-obsidian",
+    "url": "https://clawhub.ai/skills/x-grok-to-obsidian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-grok-to-obsidian-2b5dd5ed04004b9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Export Grok conversations from X (x.com) via browser-network capture and convert them into Obsidian-ready Markdown files. Use when a user wants to back up Gr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hajekt2",
+      "userId": "publishers:hajekt2",
+      "displayName": "hajekt2",
+      "image": "https://avatars.githubusercontent.com/u/7295116?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 530,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772140670402,
+      "changelog": "Initial release: network capture + markdown conversion + resume/checkpoint + rate-limit handling",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0ca9358373b5d8a6ea35f9986b880285aca801a18657a6a54f07061a5b2f62d8"
+}

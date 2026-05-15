@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/htc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.htc",
+  "skill": {
+    "id": 48752,
+    "skillKey": "clawhub-htc",
+    "name": "Htc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "htc",
+    "url": "https://clawhub.ai/skills/htc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/htc-16dc61acc843e20b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "HTC evolved from a top smartphone maker to a VR pioneer, focusing on enterprise VR solutions and wireless VR tech through its Vive product line."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777575930781,
+      "changelog": "- 初始版本发布，全面梳理HTC从智能手机巨头到VR/XR先驱的转型历程\n- 涵盖关键历史时间线、商业模式变化及护城河分析\n- 提供HTC于VR市场的最新市场份额与营收数据\n- 总结先行者劣势和行业兴衰周期，适用于研究科技企业转型与产业变迁",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a740b4d15b79670f9442acc4971870f758b63965b31c462fe4aecc01a2a5210"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/water-coach@1.7.0",
+  "version": "1.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.water_coach",
+  "skill": {
+    "id": 17656,
+    "skillKey": "clawhub-water-coach",
+    "name": "Water Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "water-coach",
+    "url": "https://clawhub.ai/skills/water-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/water-coach-535cb3036f5beb4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hydration tracking and coaching skill. Use when user wants to track water intake, get reminders to drink water, log body metrics (weight, body fat, muscle %,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oristides",
+      "userId": "publishers:oristides",
+      "displayName": "oristides",
+      "image": "https://avatars.githubusercontent.com/u/11547862?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1119,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 21
+    },
+    "latestVersion": {
+      "version": "1.7.0",
+      "createdAt": 1771809092144,
+      "changelog": "water-coach 1.7.0\n\n- Fixed: The `water dynamic` command now correctly resets the hourly notification counter when the hour changes, preventing missed notifications at hour boundaries.\n- Fixed: Weekly and monthly analytics now sum water intake per day using the correct CSV column (`ml_drank`), resolving errors from missing `cumulative_ml`.\n- Documentation updated to clarify bug fixes and reference correct analytics usage.\n- No database, config, or CLI changes to user experience expected outside these bug fixes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:05227bf85fbfa7c850f4f52c8c1de6d2c77e95258c23ef1c82fe56f5ecf99691"
+}

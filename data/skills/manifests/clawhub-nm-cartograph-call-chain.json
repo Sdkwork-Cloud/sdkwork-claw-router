@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33238,
+  "uuid": "skill-clawhub-nm-cartograph-call-chain",
+  "skillKey": "clawhub-nm-cartograph-call-chain",
+  "name": "Nm Cartograph Call Chain",
+  "summary": "Trace execution paths from entry points through the code knowledge graph. Shows call chains with criticality scores and generates Mermaid flowcharts",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_cartograph_call_chain",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "athola",
+      "features": [
+        "Trace execution paths from entry points through the code knowledge graph",
+        "Shows call chains with criticality scores and generates Mermaid flowcharts"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nm-cartograph-call-chain@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9769290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nm-cartograph-call-chain",
+      "url": "https://clawhub.ai/skills/nm-cartograph-call-chain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-cartograph-call-chain",
+    "url": "https://clawhub.ai/skills/nm-cartograph-call-chain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-cartograph-call-chain-22403d7c486fc155.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nm-cartograph-call-chain@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nm-cartograph-call-chain-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7066d404dce2e5ec80de4cb2e9785784ab96b94d65c78d226a869f4a28ab0448",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:16:07.987Z"
+}

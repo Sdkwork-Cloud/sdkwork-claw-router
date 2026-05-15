@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49287,
+  "uuid": "skill-clawhub-session-logs-hardened",
+  "skillKey": "clawhub-session-logs-hardened",
+  "name": "Session Logs Hardened",
+  "summary": "Search and analyze your own session logs (older/parent conversations) using jq.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_logs_hardened",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Faberlens",
+      "features": [
+        "Search and analyze your own session logs (older/parent conversations) using jq."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-logs-hardened@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261834257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-logs-hardened",
+      "url": "https://clawhub.ai/skills/session-logs-hardened"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-logs-hardened",
+    "url": "https://clawhub.ai/skills/session-logs-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-logs-hardened-3eaad27397507379.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-logs-hardened@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-logs-hardened-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:182028b8c53dfc6954227bcd1657ae09b1503764dc102fca812287e0e3c508bf",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:00:14.736Z"
+}

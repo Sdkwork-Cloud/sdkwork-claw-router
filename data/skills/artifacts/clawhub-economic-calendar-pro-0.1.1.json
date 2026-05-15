@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/economic-calendar-pro@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.economic_calendar_pro",
+  "skill": {
+    "id": 21517,
+    "skillKey": "clawhub-economic-calendar-pro",
+    "name": "Economic Calendar Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "economic-calendar-pro",
+    "url": "https://clawhub.ai/skills/economic-calendar-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/economic-calendar-pro-d9476cf849cc0f8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a local script to fetch economic calendar events for a date range. Defaults to 7 days inclusive from the query day. Uses TradingEconomics when TRADING_EC..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youpele52",
+      "userId": "s177cjete9gkkjq09py127x5xx83sfh8",
+      "displayName": "youpele52",
+      "image": "https://avatars.githubusercontent.com/u/43122220?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 477,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773151741695,
+      "changelog": "- Renamed skill and script files from economic-calendar to economic-calendar-pro.\n- Updated SKILL.md documentation to use the new skill name and paths throughout.\n- Added a new wrapper script: economic-calendar-pro.sh (old economic-calendar.sh removed).\n- Minor internal code updates in constants and utils for naming consistency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70cf70ebd588e9857d07eed6701457496c8cfd34a90d978bea38608acf1b6257"
+}

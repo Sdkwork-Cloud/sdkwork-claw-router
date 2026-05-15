@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/investment-research@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investment_research",
+  "skill": {
+    "id": 67870,
+    "skillKey": "clawhub-investment-research",
+    "name": "Investment Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investment-research",
+    "url": "https://clawhub.ai/skills/investment-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investment-research-42b7fb2d44eb2e9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供公司或行业的全面投研分析，涵盖财务、行业格局、估值、技术面及风险催化，助力专业投资决策。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caijichang212",
+      "userId": "publishers:caijichang212",
+      "displayName": "CaiJichang",
+      "image": "https://avatars.githubusercontent.com/u/167088965?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 560,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1774002668481,
+      "changelog": "Version 0.2.1 Changelog:\n\n- Updated version number to 0.3.0 in SKILL.md to reflect progress.\n- No functional changes to workflows, requirements, or usage guidance.\n- Documentation updates only: minor version increment and metadata refresh.\n- No changes to logic or output standards. All framework and analysis steps remain consistent.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20e9f1b87743238d9c58b65923ae31c9ee4ec5617f9c5c743b33e8134ae08095"
+}

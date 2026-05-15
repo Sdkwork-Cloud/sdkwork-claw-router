@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/comfyui-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfyui_video",
+  "skill": {
+    "id": 15075,
+    "skillKey": "clawhub-comfyui-video",
+    "name": "ComfyUI Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfyui-video",
+    "url": "https://clawhub.ai/skills/comfyui-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfyui-video-f6fb9d198878e282.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate AI video generation with ComfyUI and LTX-2.3. Supports text-to-video (T2V), image-to-video (I2V), batch scene rendering for music videos, and multi-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a3165458",
+      "userId": "s178t47h5jq1nmva8zck05brr983t0as",
+      "displayName": "smeb y",
+      "image": "https://avatars.githubusercontent.com/u/48400087?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 954,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773672341003,
+      "changelog": "Initial release: LTX-2.3 video generation workflow, batch scene automation, troubleshooting guide",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b48052f4a0a7db6ad39f298a913fac3e33c2cd938f61fce5268230eec712452c"
+}

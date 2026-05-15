@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45486,
+  "uuid": "skill-clawhub-gaimode",
+  "skillKey": "clawhub-gaimode",
+  "name": "Google AI Mode Search",
+  "summary": "Perform Google AI Mode searches using your local Google cookies to get live sports scores, stock prices, news, weather, and AI summaries.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gaimode",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dhana",
+      "features": [
+        "Perform Google AI Mode searches using your local Google cookies to get live sports scores, stoc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gaimode@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227747512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gaimode",
+      "url": "https://clawhub.ai/skills/gaimode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gaimode",
+    "url": "https://clawhub.ai/skills/gaimode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gaimode-c561ab8d6689ef8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gaimode@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gaimode-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2ace9021a5f2b85f342d413bc42a40c89fb7efff7db2ab485aeb06ca0073816",
+      "artifactSizeBytes": 1834
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T16:41:21.778Z"
+}

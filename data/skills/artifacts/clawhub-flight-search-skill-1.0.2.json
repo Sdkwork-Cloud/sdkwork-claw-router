@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flight-search-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flight_search_skill",
+  "skill": {
+    "id": 24595,
+    "skillKey": "clawhub-flight-search-skill",
+    "name": "Flight Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flight-search-skill",
+    "url": "https://clawhub.ai/skills/flight-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flight-search-skill-ad1df8651fd664f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search flights, compare prices, and monitor airfare using Amadeus API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marcorabelo",
+      "userId": "s1794c030m2x76ghj4xh28ahzd83ree4",
+      "displayName": "Marco Rabelo",
+      "image": "https://avatars.githubusercontent.com/u/5051027?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 408,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772501561557,
+      "changelog": "**flight-search-skill 1.0.2 Changelog**\n\n- Added a \"credentials\" section in SKILL.md, clearly labeling required and optional API keys and how to obtain them.\n- Updated configuration guidance and highlighted credential security best practices (e.g. not committing keys and using environment variables).\n- Improved documentation clarity for credential setup and usage, ensuring users know how to configure both Amadeus and AviationStack APIs.\n- No changes to skill features or API integration; documentation and security updates only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9cfbf988c765502a83858c7035c1ebc23607e72a300af6e669cbf562dfe22999"
+}

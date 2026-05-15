@@ -17,15 +17,15 @@ use crate::ports::{
 const MAX_DASHBOARD_RANGE_DAYS: i64 = 1096;
 const SECONDS_PER_DAY: i64 = 86_400;
 const NANOS_PER_SECOND: i128 = 1_000_000_000;
-const SUPPORTED_DASHBOARD_KEYWORDS: [&str; 4] = ["hourly", "daily", "monthly", "yearly"];
-const DASHBOARD_KEYWORD_INVALID_MESSAGE: &str =
-    "dashboard overview keyword must be one of hourly, daily, monthly, yearly";
+const SUPPORTED_DASHBOARD_RANGES: [&str; 4] = ["hourly", "daily", "monthly", "yearly"];
+const DASHBOARD_RANGE_INVALID_MESSAGE: &str =
+    "dashboard overview time_range must be one of hourly, daily, monthly, yearly";
 const DASHBOARD_START_TIME_INVALID_MESSAGE: &str =
-    "dashboard overview startTime must be a valid UTC timestamp";
+    "dashboard overview start_time must be a valid UTC timestamp";
 const DASHBOARD_END_TIME_INVALID_MESSAGE: &str =
-    "dashboard overview endTime must be a valid UTC timestamp";
+    "dashboard overview end_time must be a valid UTC timestamp";
 const DASHBOARD_REVERSED_RANGE_MESSAGE: &str =
-    "dashboard overview endTime must be greater than or equal to startTime";
+    "dashboard overview end_time must be greater than or equal to start_time";
 
 #[derive(Clone)]
 struct AppDashboardOverviewState {
@@ -34,9 +34,8 @@ struct AppDashboardOverviewState {
 }
 
 #[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
 struct AppDashboardOverviewQuery {
-    keyword: Option<String>,
+    time_range: Option<String>,
     start_time: Option<String>,
     end_time: Option<String>,
 }
@@ -97,7 +96,7 @@ fn app_dashboard_overview_router_with_state(
 ) -> Router {
     Router::new()
         .route(
-            "/app/v3/api/router/dashboard/overview",
+            "/app/v3/api/ai/dashboard/overview",
             get(fetch_dashboard_overview),
         )
         .with_state(AppDashboardOverviewState {
@@ -158,17 +157,17 @@ async fn fetch_dashboard_overview(
 fn validate_dashboard_overview_query(
     query: AppDashboardOverviewQuery,
 ) -> Result<ValidatedDashboardOverviewQuery, DashboardOverviewQueryValidationError> {
-    let keyword = normalize_dashboard_keyword(query.keyword)?;
+    let keyword = normalize_dashboard_range(query.time_range)?;
     let start_time = normalize_query_string(query.start_time);
     let end_time = normalize_query_string(query.end_time);
 
     let parsed_start = start_time
         .as_deref()
-        .map(|value| parse_dashboard_timestamp(value, "startTime"))
+        .map(|value| parse_dashboard_timestamp(value, "start_time"))
         .transpose()?;
     let parsed_end = end_time
         .as_deref()
-        .map(|value| parse_dashboard_timestamp(value, "endTime"))
+        .map(|value| parse_dashboard_timestamp(value, "end_time"))
         .transpose()?;
 
     if let (Some(start), Some(end)) = (parsed_start.as_ref(), parsed_end.as_ref()) {
@@ -197,18 +196,18 @@ fn validate_dashboard_overview_query(
     })
 }
 
-fn normalize_dashboard_keyword(
+fn normalize_dashboard_range(
     value: Option<String>,
 ) -> Result<Option<String>, DashboardOverviewQueryValidationError> {
     let Some(value) = normalize_query_string(value) else {
         return Ok(None);
     };
     let normalized = value.to_ascii_lowercase();
-    if SUPPORTED_DASHBOARD_KEYWORDS.contains(&normalized.as_str()) {
+    if SUPPORTED_DASHBOARD_RANGES.contains(&normalized.as_str()) {
         return Ok(Some(normalized));
     }
     Err(DashboardOverviewQueryValidationError::new(
-        DASHBOARD_KEYWORD_INVALID_MESSAGE,
+        DASHBOARD_RANGE_INVALID_MESSAGE,
     ))
 }
 
@@ -328,8 +327,8 @@ fn invalid_dashboard_timestamp<T>(
 
 fn dashboard_timestamp_error(field_name: &str) -> DashboardOverviewQueryValidationError {
     let message = match field_name {
-        "startTime" => DASHBOARD_START_TIME_INVALID_MESSAGE,
-        "endTime" => DASHBOARD_END_TIME_INVALID_MESSAGE,
+        "start_time" => DASHBOARD_START_TIME_INVALID_MESSAGE,
+        "end_time" => DASHBOARD_END_TIME_INVALID_MESSAGE,
         _ => "dashboard overview timestamp must be a valid UTC timestamp",
     };
     DashboardOverviewQueryValidationError::new(message)

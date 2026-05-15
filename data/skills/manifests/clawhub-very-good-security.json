@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31742,
+  "uuid": "skill-clawhub-very-good-security",
+  "skillKey": "clawhub-very-good-security",
+  "name": "Very Good Security",
+  "summary": "Very Good Security integration. Manage data, records, and automate workflows. Use when the user wants to interact with Very Good Security data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.very_good_security",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Very Good Security integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Very Good Security data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/very-good-security@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "very-good-security",
+      "url": "https://clawhub.ai/skills/very-good-security"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "very-good-security",
+    "url": "https://clawhub.ai/skills/very-good-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/very-good-security-599f989c02ea2a89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/very-good-security@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-very-good-security-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eef36b2e9938479fd574126cb6cb1bcfb9cf68c75e099e2c0626048dd416fd6d",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:59:03.299Z"
+}

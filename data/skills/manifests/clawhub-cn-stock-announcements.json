@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57271,
+  "uuid": "skill-clawhub-cn-stock-announcements",
+  "skillKey": "clawhub-cn-stock-announcements",
+  "name": "A股上市公司公告",
+  "summary": "A tool to query Chinese listed company announcements from SZSE (Shenzhen Stock Exchange) and SSE (Shanghai Stock Exchange). Supports single/batch stock queri...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_stock_announcements",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stepeno",
+      "features": [
+        "A tool to query Chinese listed company announcements from SZSE (Shenzhen Stock Exchange) and SS.",
+        "Supports single/batch stock queri..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-stock-announcements@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64339985?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-stock-announcements",
+      "url": "https://clawhub.ai/skills/cn-stock-announcements"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-stock-announcements",
+    "url": "https://clawhub.ai/skills/cn-stock-announcements",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-stock-announcements-2a6b02f77167236b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-stock-announcements@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-stock-announcements-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dab76ac0d14f9d20a9cba0b1791577aa34f7debd727b7777863879c10a389fcd",
+      "artifactSizeBytes": 2012
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T04:06:15.205Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52394,
+  "uuid": "skill-clawhub-age",
+  "skillKey": "clawhub-age",
+  "name": "Age",
+  "summary": "age file encryption reference — the modern, simple alternative to GPG. Covers key generation, X25519 encryption, SSH key support, passphrase mode, pipe patte...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.age",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "age file encryption reference — the modern, simple alternative to GPG",
+        "Covers key generation, X25519 encryption, SSH key support, passphrase mode, pipe patte..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/age@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "age",
+      "url": "https://clawhub.ai/skills/age"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "age",
+    "url": "https://clawhub.ai/skills/age",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/age-013f54400c82da08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/age@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-age-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a789645b0d403d5ea79877e9233944f9886b9f2b0efc3409091eaaddc21cc76",
+      "artifactSizeBytes": 1810
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T18:21:04.977Z"
+}

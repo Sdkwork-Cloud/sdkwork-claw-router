@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jimmy-task-router@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jimmy_task_router",
+  "skill": {
+    "id": 38565,
+    "skillKey": "clawhub-jimmy-task-router",
+    "name": "Task Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jimmy-task-router",
+    "url": "https://clawhub.ai/skills/jimmy-task-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jimmy-task-router-8917bdfcf5ca4121.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically route tasks to the appropriate tool, agent, or workflow. Analyzes task intent and complexity to route to coding, research, trading, system, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimmyclanker",
+      "userId": "s17ejhqtp0r87e37esqxmc3af983w8qd",
+      "displayName": "JimmyClanker",
+      "image": "https://avatars.githubusercontent.com/u/258324489?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775006239315,
+      "changelog": "- Initial release of task-router skill.\n- Automatically analyzes and routes tasks to appropriate workflows (coding, research, trading, content, system, or general) based on task description.\n- Provides routing decision with a confidence score.\n- Supports customization via patterns in config file.\n- Usable as a pre-processor for directing tasks to specialized tools or agents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8f08712b7c0368797bcd4da4b08c370339b39ab88fab522d899d8862710b421"
+}

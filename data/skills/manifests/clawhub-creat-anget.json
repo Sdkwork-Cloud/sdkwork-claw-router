@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66242,
+  "uuid": "skill-clawhub-creat-anget",
+  "skillKey": "clawhub-creat-anget",
+  "name": "creat-anget",
+  "summary": "创建具有独立工作区和配置的独立 OpenClaw Agent。适用于用户需要完全隔离的 Agent（独立工作区、配置、身份），而不是临时子 Agent 会话的情况。支持飞书机器人绑定，用于多机器人部署。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creat_anget",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "song5749",
+      "features": [
+        "创建具有独立工作区和配置的独立 OpenClaw Agent。适用于用户需要完全隔离的 Agent（独立工作区、配置、身份），而不是临时子 Agent 会话的情况。支持飞书机器人绑定，用于多."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/creat-anget@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8469692?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "creat-anget",
+      "url": "https://clawhub.ai/skills/creat-anget"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creat-anget",
+    "url": "https://clawhub.ai/skills/creat-anget",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creat-anget-2003a79136bd344a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/creat-anget@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-creat-anget-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85df38b902eee14ed17d65dc8f5775f9e8fa5afb63b4d47901c892f86dbe6b45",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T03:34:36.365Z"
+}

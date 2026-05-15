@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47713,
+  "uuid": "skill-clawhub-quicklrc-transcribe",
+  "skillKey": "clawhub-quicklrc-transcribe",
+  "name": "Quicklrc Transcribe",
+  "summary": "Generate synced lyrics or subtitle files (LRC, SRT, WebVTT, ASS, TTML) from any audio/video URL or YouTube link using the QuickLRC AI API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quicklrc_transcribe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weiqingtangx",
+      "features": [
+        "Generate synced lyrics or subtitle files (LRC, SRT, WebVTT, ASS, TTML) from any audio/video URL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quicklrc-transcribe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5905640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quicklrc-transcribe",
+      "url": "https://clawhub.ai/skills/quicklrc-transcribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quicklrc-transcribe",
+    "url": "https://clawhub.ai/skills/quicklrc-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quicklrc-transcribe-eb7e4134800e48a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quicklrc-transcribe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quicklrc-transcribe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:068dd3ac7407287598e84780d19a805cb31c20035dfa95c7feb842aeab39bae0",
+      "artifactSizeBytes": 2362
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T22:10:24.400Z"
+}

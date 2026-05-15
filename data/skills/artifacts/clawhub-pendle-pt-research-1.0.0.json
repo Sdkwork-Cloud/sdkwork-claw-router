@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pendle-pt-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pendle_pt_research",
+  "skill": {
+    "id": 40584,
+    "skillKey": "clawhub-pendle-pt-research",
+    "name": "Pendle PT Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pendle-pt-research",
+    "url": "https://clawhub.ai/skills/pendle-pt-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pendle-pt-research-b820a05ceaaeb03a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research Pendle PT (principal token) markets, including unlevered hold-to-par ideas, near-expiry rotations, and looped PT strategies across money markets lik..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moshu",
+      "userId": "s178jdebtdfx130vbqmr3hrd5h84382j",
+      "displayName": "Moshu",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775105969744,
+      "changelog": "- Initial release of Pendle PT research skill for evaluating principal token (PT) markets across major strategies: unlevered hold-to-par, near-expiry rotations, and looped PT leveraging money markets like Morpho and Euler.\n- Provides a structured workflow to rank and bucket PTs by time to par, APY, liquidity, underlying risk, and loopability—emphasizing practical execution over raw APY alone.\n- Includes explicit guidelines for classifying PT underlying risk, market liquidity, and money market integration quality.\n- Outlines clear, bullet-pointed reporting format for PT opportunities, ensuring decision-focused, actionable market analysis.\n- Supports manual Contango route comparison on demand.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff85b05b1d59faaeca946047e09421026d6f4d1086c44e6dbd0b3f8e6dffdb5f"
+}

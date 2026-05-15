@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35481,
+  "uuid": "skill-clawhub-hotwallet",
+  "skillKey": "clawhub-hotwallet",
+  "name": "Hotwallet",
+  "summary": "Hotwallet reference tool. Use when working with hotwallet in blockchain contexts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotwallet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "Hotwallet reference tool",
+        "Use when working with hotwallet in blockchain contexts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hotwallet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hotwallet",
+      "url": "https://clawhub.ai/skills/hotwallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotwallet",
+    "url": "https://clawhub.ai/skills/hotwallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotwallet-3f6b44e0ccbea1ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hotwallet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hotwallet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:902d1fe32f9947a334189bb037cc1079282216d5c9982c8891aa58f92ed21acc",
+      "artifactSizeBytes": 1777
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T20:17:48.608Z"
+}

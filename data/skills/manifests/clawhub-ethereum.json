@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12467,
+  "uuid": "skill-clawhub-ethereum",
+  "skillKey": "clawhub-ethereum",
+  "name": "Ethereum",
+  "summary": "Assist with Ethereum transactions, gas optimization, token approvals, and L2 bridges.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ethereum",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Assist with Ethereum transactions, gas optimization, token approvals, and L2 bridges."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ethereum@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ethereum",
+      "url": "https://clawhub.ai/skills/ethereum"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ethereum",
+    "url": "https://clawhub.ai/skills/ethereum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ethereum-b60d7bdd334cd376.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ethereum@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ethereum-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbf364c1b196ce6209eb329384462f00c40c6a4f03dd31b057ce5b4fb725b667",
+      "artifactSizeBytes": 1766
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T23:49:37.597Z"
+}

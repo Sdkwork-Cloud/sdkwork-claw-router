@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8508,
+  "uuid": "skill-clawhub-adaptive-reasoning",
+  "skillKey": "clawhub-adaptive-reasoning",
+  "name": "Adaptive Reasoning",
+  "summary": "Automatically assess task complexity and adjust reasoning level. Triggers on every user message to evaluate whether extended thinking (reasoning mode) would improve response quality. Use this as a pre-processing step before answering compl.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adaptive_reasoning",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enzoricciulli",
+      "features": [
+        "Automatically assess task complexity and adjust reasoning level",
+        "Triggers on every user message to evaluate whether extended thinking (reasoning mode) would imp.",
+        "Use this as a pre-processing step before answering complex questions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adaptive-reasoning@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16671702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adaptive-reasoning",
+      "url": "https://clawhub.ai/skills/adaptive-reasoning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adaptive-reasoning",
+    "url": "https://clawhub.ai/skills/adaptive-reasoning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adaptive-reasoning-1ed6a2491253ccde.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adaptive-reasoning@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-adaptive-reasoning-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0f342fba68ddbe91c3b1008621cf0e6edc29d9ad92a280e3a31685692432f06",
+      "artifactSizeBytes": 2545
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T10:37:24.848Z"
+}

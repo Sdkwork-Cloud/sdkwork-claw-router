@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docuclaw@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docuclaw",
+  "skill": {
+    "id": 50280,
+    "skillKey": "clawhub-docuclaw",
+    "name": "DocuClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docuclaw",
+    "url": "https://clawhub.ai/skills/docuclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docuclaw-bcbf259baf72652b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sovereign document intelligence & archival system. Extracts structured data from invoices, receipts, and contracts 100% locally using AI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "astonysh",
+      "userId": "publishers:astonysh",
+      "displayName": "Tony Li",
+      "image": "https://avatars.githubusercontent.com/u/18476067?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 663,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771532600023,
+      "changelog": "- Initial release of DocuClaw: a local-first document intelligence and archival system.\n- Extracts structured data from invoices, receipts, and contracts using AI—100% locally.\n- Converts documents to human-readable Markdown with YAML metadata for easy archiving and version control.\n- Plug-and-play architecture supports country-specific document formats and multimodal AI extraction models.\n- Ensures privacy and compliance by avoiding any cloud dependency.\n- Integrates with the OpenClaw ecosystem for unified querying and automation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2cc1a8c5b6da9cb66d904dca99b29f0ad153b3994d4329f8e940904a5ee47634"
+}

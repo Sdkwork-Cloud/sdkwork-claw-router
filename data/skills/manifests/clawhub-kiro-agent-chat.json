@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26940,
+  "uuid": "skill-clawhub-kiro-agent-chat",
+  "skillKey": "clawhub-kiro-agent-chat",
+  "name": "Kiro Agent Chat",
+  "summary": "Inter-agent communication via shared JSON file. Use when two or more OpenClaw instances need to exchange messages, coordinate, or pass information. Works acr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kiro_agent_chat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sonerbo",
+      "features": [
+        "Inter-agent communication via shared JSON file",
+        "Use when two or more OpenClaw instances need to exchange messages, coordinate, or pass informat.",
+        "Works acr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kiro-agent-chat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71600332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kiro-agent-chat",
+      "url": "https://clawhub.ai/skills/kiro-agent-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kiro-agent-chat",
+    "url": "https://clawhub.ai/skills/kiro-agent-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kiro-agent-chat-fa2a47db94e9617e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kiro-agent-chat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kiro-agent-chat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc1c6b911fbdc33cbc46c0f19edcd207f8dd1562ff0e878c86262232e44b6a36",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T08:30:04.576Z"
+}

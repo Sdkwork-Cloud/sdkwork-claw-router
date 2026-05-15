@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33469,
+  "uuid": "skill-clawhub-bollinger",
+  "skillKey": "clawhub-bollinger",
+  "name": "Bollinger",
+  "summary": "Bollinger reference tool. Use when working with bollinger in finance contexts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bollinger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Bollinger reference tool",
+        "Use when working with bollinger in finance contexts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bollinger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bollinger",
+      "url": "https://clawhub.ai/skills/bollinger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bollinger",
+    "url": "https://clawhub.ai/skills/bollinger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bollinger-ab1ca2d2c2eab40c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bollinger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bollinger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e359b513a39649fbc992c49c3fb860d0efbb400609b9862780bccd4c58097f2b",
+      "artifactSizeBytes": 1774
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T14:17:58.479Z"
+}

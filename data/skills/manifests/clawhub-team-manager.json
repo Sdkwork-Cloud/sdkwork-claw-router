@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70198,
+  "uuid": "skill-clawhub-team-manager",
+  "skillKey": "clawhub-team-manager",
+  "name": "Team Manager",
+  "summary": "Управляет расписанием команды, проводит утренние брифинги, вечерние отчеты и напоминает об отчетах с учетом статуса выходных.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mirra87654321",
+      "features": [
+        "Управляет расписанием команды, проводит утренние брифинги, вечерние отчеты и напоминает об отче."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/team-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5063856?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "team-manager",
+      "url": "https://clawhub.ai/skills/team-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-manager",
+    "url": "https://clawhub.ai/skills/team-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-manager-f2e2045c0017d416.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/team-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-team-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93954f254f3c13e6b887368532d984b58b2a61c606c8bd3e720f6fb0196a40c8",
+      "artifactSizeBytes": 2296
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T10:03:49.049Z"
+}

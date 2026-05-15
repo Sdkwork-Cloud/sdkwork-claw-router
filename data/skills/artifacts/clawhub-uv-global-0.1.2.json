@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uv-global@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uv_global",
+  "skill": {
+    "id": 10616,
+    "skillKey": "clawhub-uv-global",
+    "name": "UV Global"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uv-global",
+    "url": "https://clawhub.ai/skills/uv-global",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uv-global-ea35bb9e1ada8163.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provision and reuse a global uv environment for ad hoc Python scripts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guoqiao",
+      "userId": "publishers:guoqiao",
+      "displayName": "guoqiao",
+      "image": "https://avatars.githubusercontent.com/u/1306111?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2502,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1770770394036,
+      "changelog": "- Replaced the install script reference from `uv-global.sh` to `install.sh`; removed the old script and added the new one.\n- Installation instructions updated to mention new shims added to `~/.uv-global/.venv/bin`.\n- Clarified that the PATH update makes both the global environment and shims available.\n- General documentation enhancements for clarity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:63d73200ad37a1df93437087fa6d75fddc70d719a000ff6b32a00cdfbbe4d5df"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sector-charts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sector_charts",
+  "skill": {
+    "id": 33397,
+    "skillKey": "clawhub-sector-charts",
+    "name": "Sector Charts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sector-charts",
+    "url": "https://clawhub.ai/skills/sector-charts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sector-charts-2aa21dc7ee6c6203.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Visualize competitive positioning using sector charts. Use for market analysis and competitive strategy."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linuszz",
+      "userId": "s17e0e5q8g0sjf5mpwdq1sy65183gmj7",
+      "displayName": "linuszz",
+      "image": "https://avatars.githubusercontent.com/u/46770204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774087508803,
+      "changelog": "- Initial release of sector-charts skill.\n- Visualize competitive positioning using sector (bubble) charts for market analysis and strategy.\n- Supports charting by market share, price/quality, revenue, and more.\n- Framework includes example charts, tabular data, and strategic insights sections.\n- Designed for clear, consistent comparison with up to 10–15 competitors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97e0a7bc3a08373e94bcea28321880b4ae4f73df8ea61e44ca07632f07068f29"
+}

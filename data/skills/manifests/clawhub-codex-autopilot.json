@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19537,
+  "uuid": "skill-clawhub-codex-autopilot",
+  "skillKey": "clawhub-codex-autopilot",
+  "name": "Codex Autopilot",
+  "summary": "Multi-model AI coding automation system with intelligent task routing and built-in CI/CD. Watchdog-driven loop that orchestrates Codex (backend) and Gemini (...",
+  "version": "0.7.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_autopilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wes",
+      "features": [
+        "Multi-model AI coding automation system with intelligent task routing and built-in CI/CD",
+        "Watchdog-driven loop that orchestrates Codex (backend) and Gemini (..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codex-autopilot@0.7.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1765672?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codex-autopilot",
+      "url": "https://clawhub.ai/skills/codex-autopilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-autopilot",
+    "url": "https://clawhub.ai/skills/codex-autopilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-autopilot-1abc891a1450ac58.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codex-autopilot@0.7.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-codex-autopilot-0.7.1.json",
+      "version": "0.7.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5df3f54daffd586945972962535dd86165b18c88f68dcea2e6dc4c0805e53e18",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T15:56:58.702Z"
+}

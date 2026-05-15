@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acp-harness-delegation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acp_harness_delegation",
+  "skill": {
+    "id": 58456,
+    "skillKey": "clawhub-acp-harness-delegation",
+    "name": "Acp Harness Delegation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acp-harness-delegation",
+    "url": "https://clawhub.ai/skills/acp-harness-delegation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acp-harness-delegation-73eaf2e08284c2cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 ACP runtime 委托 acpx-enabled harness（Claude Code / Codex 等）的标准协议。触发词：调用 Claude Code、通过 acp 调用、通过 acpx 调用、delegation to claude/codex、Coordinator 调用 Executor。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaoyang78",
+      "userId": "s177bzvqf3s7ftyvws7t42cwd184taap",
+      "displayName": "Kevin Stone",
+      "image": "https://avatars.githubusercontent.com/u/129476024?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776128589754,
+      "changelog": "acp-harness-delegation v1.0.0 – Initial release\n\n- Provides a standard protocol for delegating tasks via ACP runtime to acpx-enabled harnesses (e.g., Claude Code, Codex).\n- Details trigger phrases and proper session spawning workflow with detailed configuration and error-handling guidance.\n- Documents authentication and permissions prerequisites for successful execution.\n- Offers troubleshooting tips and known issues for common integration errors.\n- Includes configuration recommendations and clarifications for session reuse and safe operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b66d0384f77f9066a6b3b552ac22ce4d9d0fa26f31375ecd0a6767efefe729e"
+}

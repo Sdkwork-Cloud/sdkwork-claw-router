@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45842,
+  "uuid": "skill-clawhub-daily-report-huangyang",
+  "skillKey": "clawhub-daily-report-huangyang",
+  "name": "Daily Report (HuangYang)",
+  "summary": "Generate structured daily reports for the user, summarizing completed tasks, ongoing work, pending items, and notable notes. Use when user asks for daily rep...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_report_huangyang",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nopedijah",
+      "features": [
+        "Generate structured daily reports for the user, summarizing completed tasks, ongoing work, pend.",
+        "Use when user asks for daily rep..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-report-huangyang@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269079192?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-report-huangyang",
+      "url": "https://clawhub.ai/skills/daily-report-huangyang"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-report-huangyang",
+    "url": "https://clawhub.ai/skills/daily-report-huangyang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-report-huangyang-80190406a796a3b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-report-huangyang@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-report-huangyang-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4f0f63646b3fd52736701775917da72f91c8293f54582ccd73a7bc10063576c",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T17:28:10.736Z"
+}

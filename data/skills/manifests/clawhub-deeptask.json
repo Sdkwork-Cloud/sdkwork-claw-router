@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64078,
+  "uuid": "skill-clawhub-deeptask",
+  "skillKey": "clawhub-deeptask",
+  "name": "DeepTask",
+  "summary": "AI 自动拆解需求与任务管理工具。实现 AI 自动拆解需求 → 人工审核 → AI 执行任务 → UT 验证 → **Git Commit** 的完整闭环。使用 SQLite 数据库管理项目、会话、子任务、MUF（最小功能单元）、单元测试。**核心特性：每完成一个 MUF 并通过 UT 后自动执行 git com...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deeptask",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Spaceack",
+      "features": [
+        "AI 自动拆解需求与任务管理工具。实现 AI 自动拆解需求 → 人工审核 → AI 执行任务 → UT 验证 → **Git Commit** 的完整闭环。使用 SQLite 数据库管理项目."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deeptask@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23256191?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deeptask",
+      "url": "https://clawhub.ai/skills/deeptask"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deeptask",
+    "url": "https://clawhub.ai/skills/deeptask",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deeptask-622ed24cf2f8abe9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deeptask@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deeptask-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57caf54f4553af1e449c1cc443b1f666b5848dc80c498389a32ca713f3428c4b",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T01:24:51.005Z"
+}

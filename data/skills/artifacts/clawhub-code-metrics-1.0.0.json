@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-metrics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_metrics",
+  "skill": {
+    "id": 36777,
+    "skillKey": "clawhub-code-metrics",
+    "name": "Code Metrics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-metrics",
+    "url": "https://clawhub.ai/skills/code-metrics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-metrics-6aa916ba2baba1e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze code quality metrics including lines of code by language, cyclomatic complexity (Python), function/class counts, comment ratios, and largest file ran..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnnywang2001",
+      "userId": "s174ntk6h18bvsev091zn78ex583gr1h",
+      "displayName": "John Wang",
+      "image": "https://avatars.githubusercontent.com/u/20619402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774357669741,
+      "changelog": "Initial release of code-metrics.\n\n- Analyze code quality metrics across 17+ programming languages.\n- Reports lines of code, comment ratios, function/class counts, and largest files.\n- Measures cyclomatic complexity for Python (with per-function details and warnings).\n- Offers JSON output, directory exclusion, and complexity analysis toggling.\n- Requires only Python 3.8+ with no external dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e100c94c4694e1ef345bafdca18ac44a107e44fba38351c3860bf851b7bad873"
+}

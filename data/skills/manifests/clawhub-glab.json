@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19848,
+  "uuid": "skill-clawhub-glab",
+  "skillKey": "clawhub-glab",
+  "name": "glab",
+  "summary": "Manage GitLab projects from the command line: create, review, merge MRs; manage issues; monitor and trigger CI/CD; support self-hosted instances and automation.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glab",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bezkom",
+      "features": [
+        "Manage GitLab projects from the command line: create, review, merge MRs",
+        "manage issues",
+        "monitor and trigger CI/CD",
+        "support self-hosted instances and automation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/glab@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190393007?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "glab",
+      "url": "https://clawhub.ai/skills/glab"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glab",
+    "url": "https://clawhub.ai/skills/glab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glab-5730269b9b034c6b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/glab@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-glab-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a831ad2e05e984051f9cd1f37c9d3e80b7e5e213db3d7cdea2a74f9070022cb",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T20:07:03.990Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-health-check@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_health_check",
+  "skill": {
+    "id": 53413,
+    "skillKey": "clawhub-api-health-check",
+    "name": "API Health Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-health-check",
+    "url": "https://clawhub.ai/skills/api-health-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-health-check-f434d4e64cbf34f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check the health and status of popular AI APIs and services — OpenAI, Anthropic, Pollinations, OpenRouter, Gemini, and more. Use when the user wants to know..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cloudcompile",
+      "userId": "s17cjp62zjrtm3j1sf474sp4dd845jvt",
+      "displayName": "CJ Hauser",
+      "image": "https://avatars.githubusercontent.com/u/201248601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775315869319,
+      "changelog": "Initial release - Check AI API status",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b96232b59b22876ce8a188f7886eb3e1ab7bc087389164efe416b09a24c4c0cc"
+}

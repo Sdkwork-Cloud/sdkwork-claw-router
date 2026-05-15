@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fengniao-search@1.0.13",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fengniao_search",
+  "skill": {
+    "id": 68941,
+    "skillKey": "clawhub-fengniao-search",
+    "name": "Company search fengniao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fengniao-search",
+    "url": "https://clawhub.ai/skills/fengniao-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fengniao-search-674534a48425e283.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业查询、工商查询、公司查询、企业信息查询与企业风险查询 Skill。风鸟 Fengniao（Riskbird）支持查公司基本信息、法人、股东、主要人员、对外投资、工商变更、企业信用，以及被执行、失信、限高、经营异常、严重违法、行政处罚等风险数据，适用于企业尽调、合作方背景调查、供应商准入、客户风险识别、签约前核..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elijah-pi",
+      "userId": "s175k19v30amqr83me3cp70hfx83ndeg",
+      "displayName": "Elijah-Pi",
+      "image": "https://avatars.githubusercontent.com/u/77263364?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 338,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.0.13",
+      "createdAt": 1775119774076,
+      "changelog": "No functional or documentation changes in this version.  \nNo updates detected; release is identical to the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46d024358c3a8ad58f4374b5e0cbdac3c0820f79886e4e78824322b209d14d58"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32982,
+  "uuid": "skill-clawhub-envoy",
+  "skillKey": "clawhub-envoy",
+  "name": "Envoy",
+  "summary": "Envoy integration. Manage Persons, Organizations, Deals, Leads, Projects, Activities and more. Use when the user wants to interact with Envoy data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.envoy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Envoy integration",
+        "Manage Persons, Organizations, Deals, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with Envoy data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/envoy@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "envoy",
+      "url": "https://clawhub.ai/skills/envoy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "envoy",
+    "url": "https://clawhub.ai/skills/envoy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/envoy-84532b306f259587.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/envoy@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-envoy-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbc272ca41e601c2e72fb809a402af66e52aeaaac1b00814434ed6b449cb851e",
+      "artifactSizeBytes": 1841
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:26:08.965Z"
+}

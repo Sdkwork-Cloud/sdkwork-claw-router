@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-crypto@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_crypto",
+  "skill": {
+    "id": 61651,
+    "skillKey": "clawhub-file-crypto",
+    "name": "文件加解密 (file-crypto)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-crypto",
+    "url": "https://clawhub.ai/skills/file-crypto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-crypto-2842380f1f5f6cd2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用来布公司内置的 file-crypto SDK 对服务器本地文件进行加密或解密处理，以及获取 Agent 身份令牌（authId）。当用户提到\"加密文件\"、\"解密文件\"、\"文件加密\"、\"文件解密\"、\"获取authId\"、\"获取鉴权\"、\"encrypt file\"、\"decrypt file\"，或者提供了服务器..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "loofare",
+      "userId": "s1706emh1fbtw3ad3dwc6bwv6985dhnb",
+      "displayName": "loofare",
+      "image": "https://avatars.githubusercontent.com/u/5966577?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1777773321195,
+      "changelog": "- 新增对 errorType 为 `unsupported_format` 的错误类型说明，支持识别“非支持的加密格式”场景。\n- 其余内容未变化，保持此前的用法和参数一致。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e98763962315576be4539687b9ca8ca3e6132afd5879ac7edbcef93adb1aca2"
+}

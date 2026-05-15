@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18990,
+  "uuid": "skill-clawhub-consensus-permission-escalation-guard",
+  "skillKey": "clawhub-consensus-permission-escalation-guard",
+  "name": "consensus-permission-escalation-guard",
+  "summary": "Pre-execution governance for IAM and permission escalation changes. Use when an agent or workflow proposes granting, expanding, or assuming higher privileges...",
+  "version": "0.1.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consensus_permission_escalation_guard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kai Cianflone",
+      "features": [
+        "Pre-execution governance for IAM and permission escalation changes",
+        "Use when an agent or workflow proposes granting, expanding, or assuming higher privileges..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/consensus-permission-escalation-guard@0.1.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30943151?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "consensus-permission-escalation-guard",
+      "url": "https://clawhub.ai/skills/consensus-permission-escalation-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consensus-permission-escalation-guard",
+    "url": "https://clawhub.ai/skills/consensus-permission-escalation-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consensus-permission-escalation-guard-72cd55d86f22d7b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/consensus-permission-escalation-guard@0.1.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-consensus-permission-escalation-guard-0.1.13.json",
+      "version": "0.1.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c41ed576ab101f7c0a9bb7940d3df6d4ec882b4540b930ce1ffab6fb4766c043",
+      "artifactSizeBytes": 2118
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T19:27:53.781Z"
+}

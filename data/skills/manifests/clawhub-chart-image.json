@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8531,
+  "uuid": "skill-clawhub-chart-image",
+  "skillKey": "clawhub-chart-image",
+  "name": "Chart Image",
+  "summary": "Generate publication-quality chart images from data. Supports line, bar, area, point, histogram, candlestick, pie/donut, heatmap, multi-series, and stacked c...",
+  "version": "2.6.35",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chart_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Danny Shmueli",
+      "features": [
+        "Generate publication-quality chart images from data",
+        "Supports line, bar, area, point, histogram, candlestick, pie/donut, heatmap, multi-series, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chart-image@2.6.35",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4062328?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chart-image",
+      "url": "https://clawhub.ai/skills/chart-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chart-image",
+    "url": "https://clawhub.ai/skills/chart-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chart-image-782bd16ee32c01ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chart-image@2.6.35",
+      "artifactUrl": "data/skills/artifacts/clawhub-chart-image-2.6.35.json",
+      "version": "2.6.35",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca40764a0078c60712a2ff9ce18f4463678871aa4b1bc90ded4e499be0c78e9f",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T06:29:52.948Z"
+}

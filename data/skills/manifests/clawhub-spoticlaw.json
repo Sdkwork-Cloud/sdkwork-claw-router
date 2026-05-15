@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17188,
+  "uuid": "skill-clawhub-spoticlaw",
+  "skillKey": "clawhub-spoticlaw",
+  "name": "SpotiClaw",
+  "summary": "Spotify Web API client for Nyx agents. Use when interacting with Spotify: search, playback, playlists, library, tracks, artists, albums, shows, podcasts. Req...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spoticlaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ledzgio",
+      "features": [
+        "Spotify Web API client for Nyx agents",
+        "Use when interacting with Spotify: search, playback, playlists, library, tracks, artists, album."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spoticlaw@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218346?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spoticlaw",
+      "url": "https://clawhub.ai/skills/spoticlaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spoticlaw",
+    "url": "https://clawhub.ai/skills/spoticlaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spoticlaw-5a3c790376d8fbaa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spoticlaw@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-spoticlaw-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40f8ffeba9ddb14670eec299eb888d634966e793e745c90fc760926d60a37fdc",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T00:31:49.801Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kallyai@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kallyai",
+  "skill": {
+    "id": 13303,
+    "skillKey": "clawhub-kallyai",
+    "name": "KallyAI Executive Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kallyai",
+    "url": "https://clawhub.ai/skills/kallyai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kallyai-f74f1e12570d5ea5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "KallyAI Executive Assistant — AI that handles phone calls (outbound + inbound), email, bookings, research, errands, multi-channel messaging, and phone number..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sltelitsyn",
+      "userId": "publishers:sltelitsyn",
+      "displayName": "sltelitsyn",
+      "image": "https://avatars.githubusercontent.com/u/31917291?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2019,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1771959014339,
+      "changelog": "Major update: Added 6 new domains (inbound AI receptionist, phone number management, multi-channel messaging, outreach, subscription management, referrals, notifications). Expanded from 8 to 14 user-facing domains. Added credits breakdown and plans endpoints.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:743751a6da70023e82f0c1fb16be0b066973ae5d1fa3782ae1b863960426c84c"
+}

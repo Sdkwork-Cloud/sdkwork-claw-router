@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31353,
+  "uuid": "skill-clawhub-simpleerp",
+  "skillKey": "clawhub-simpleerp",
+  "name": "simpleerp",
+  "summary": "Provides procedures for calling the SimpleERP HTTP API. Runtime: shell with curl/curl.exe or PowerShell (Invoke-WebRequest/Invoke-RestMethod). Credentials: s...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simpleerp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "icystssi-lang",
+      "features": [
+        "Provides procedures for calling the SimpleERP HTTP API",
+        "Runtime: shell with curl/curl.exe or PowerShell (Invoke-WebRequest/Invoke-RestMethod)",
+        "Credentials: s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/simpleerp@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267538212?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "simpleerp",
+      "url": "https://clawhub.ai/skills/simpleerp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simpleerp",
+    "url": "https://clawhub.ai/skills/simpleerp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simpleerp-5c59971f3a4a4c76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/simpleerp@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-simpleerp-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:879ab47e97a6872adaca3ddef119dacb71de837d261f4c1abcd51c600d28b585",
+      "artifactSizeBytes": 2555
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T05:57:30.314Z"
+}

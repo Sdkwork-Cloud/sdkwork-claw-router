@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67500,
+  "uuid": "skill-clawhub-debate-4person",
+  "skillKey": "clawhub-debate-4person",
+  "name": "debate-4person",
+  "summary": "四人制标准辩论工具，AI 扮演正反方 8 名辩手，按立论→攻辩→总结流程辩论，支持打断、评委点评打分。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.debate_4person",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "woqigeshenmemingzibijiaoheshine",
+      "features": [
+        "四人制标准辩论工具，AI 扮演正反方 8 名辩手，按立论→攻辩→总结流程辩论，支持打断、评委点评打分。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/debate-4person@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108391044?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "debate-4person",
+      "url": "https://clawhub.ai/skills/debate-4person"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "debate-4person",
+    "url": "https://clawhub.ai/skills/debate-4person",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/debate-4person-0ace3d42d8acf024.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/debate-4person@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-debate-4person-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d869fe641d9439c807a81b2ade6f2e8ce573a31f38eca58b1f6c750bcd13992",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T04:15:49.468Z"
+}

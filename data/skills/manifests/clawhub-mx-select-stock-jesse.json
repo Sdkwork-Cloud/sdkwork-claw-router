@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68038,
+  "uuid": "skill-clawhub-mx-select-stock-jesse",
+  "skillKey": "clawhub-mx-select-stock-jesse",
+  "name": "Mx Select Stock",
+  "summary": "基于东方财富数据库的智能选股工具，支持按行情指标、财务指标等条件筛选股票。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mx_select_stock_jesse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jessecq1995",
+      "features": [
+        "基于东方财富数据库的智能选股工具，支持按行情指标、财务指标等条件筛选股票。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mx-select-stock-jesse@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/185338792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mx-select-stock-jesse",
+      "url": "https://clawhub.ai/skills/mx-select-stock-jesse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mx-select-stock-jesse",
+    "url": "https://clawhub.ai/skills/mx-select-stock-jesse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mx-select-stock-jesse-41195e4e5d03ac27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mx-select-stock-jesse@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mx-select-stock-jesse-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e674701980dd00ede14e610c583c44ebb6f49c67340c9d3f8e4518681c1ed318",
+      "artifactSizeBytes": 2167
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T22:49:29.631Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prediction-agg@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prediction_agg",
+  "skill": {
+    "id": 41638,
+    "skillKey": "clawhub-prediction-agg",
+    "name": "Prediction Market Data Aggregator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prediction-agg",
+    "url": "https://clawhub.ai/skills/prediction-agg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prediction-agg-fa95101c8a1096cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "karensheng",
+      "userId": "s171kx81g1raj6wtcz7rhg0jpd83wh62",
+      "displayName": "Karen Sheng",
+      "image": "https://avatars.githubusercontent.com/u/46656667?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775098032697,
+      "changelog": "Initial release: Unified prediction market data access for Polymarket and Kalshi via API.\n\n- Query market data, prices, trading history, orderbooks, and sentiment for Polymarket and Kalshi.\n- Track portfolio positions and P&L by wallet address.\n- Detect arbitrage opportunities across platforms.\n- Detailed step-by-step usage guide and example CLI/API calls provided.\n- Requires AISA_API_KEY for authentication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af6f6fad42d62c54544ba4e52f9fdaca3a2e47977c98edb1a4e61be3b543b554"
+}

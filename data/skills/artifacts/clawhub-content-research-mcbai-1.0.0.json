@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-research-mcbai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_research_mcbai",
+  "skill": {
+    "id": 43811,
+    "skillKey": "clawhub-content-research-mcbai",
+    "name": "Content Research - MCB AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-research-mcbai",
+    "url": "https://clawhub.ai/skills/content-research-mcbai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-research-mcbai-3f097af8b8251163.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research and discover trending content sources for any topic using web search. Use this skill whenever the user wants to find articles, news, blog posts, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mcbaivn",
+      "userId": "s17eshjzkvkbdnj5rbbbd5a8js849m8g",
+      "displayName": "MCB AI",
+      "image": "https://avatars.githubusercontent.com/u/132585065?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775377600472,
+      "changelog": "Initial release by MCB AI",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8397e34fa0b445df638909a3efed34f6df64eea3d687815d2080c23409a7fd3c"
+}

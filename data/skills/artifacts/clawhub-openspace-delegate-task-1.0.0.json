@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openspace-delegate-task@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openspace_delegate_task",
+  "skill": {
+    "id": 53182,
+    "skillKey": "clawhub-openspace-delegate-task",
+    "name": "OpenSpace Delegate Task"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openspace-delegate-task",
+    "url": "https://clawhub.ai/skills/openspace-delegate-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openspace-delegate-task-e8e8c7214e24226c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Delegate tasks to OpenSpace — a full-stack autonomous worker for coding, DevOps, web research, and desktop automation, backed by an extensive MCP tool and sk..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "x-rayluan",
+      "userId": "s17c0n0ce78mre7mrytgzehcwn83hkp1",
+      "displayName": "X-RayLuan",
+      "image": "https://avatars.githubusercontent.com/u/150766707?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777022617661,
+      "changelog": "- Initial release of the delegate-task skill for OpenSpace.\n- Enables delegating coding, DevOps, web research, and automation tasks to OpenSpace via MCP tooling.\n- Provides four tools: execute_task, search_skills, fix_skill, and upload_skill.\n- Supports autonomous skill improvement and sharing through a cloud community.\n- Clear guidance included for when and how to delegate, fix, or upload skills.\n- Usage instructions and parameters documented for each tool.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1afd97078d28376674a862caf7ffcefca33bbd36530b2df7b79894164eaa1190"
+}

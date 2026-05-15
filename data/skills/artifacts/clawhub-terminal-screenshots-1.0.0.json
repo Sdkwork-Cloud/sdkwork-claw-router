@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/terminal-screenshots@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.terminal_screenshots",
+  "skill": {
+    "id": 11860,
+    "skillKey": "clawhub-terminal-screenshots",
+    "name": "terminal-screenshots"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "terminal-screenshots",
+    "url": "https://clawhub.ai/skills/terminal-screenshots",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/terminal-screenshots-2f0ae73b5f7bf3bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create terminal screenshots, animated GIFs, or videos using VHS scripts for documentation, demos, and reproducible CLI visuals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ricardodantas",
+      "userId": "publishers:ricardodantas",
+      "displayName": "ricardodantas",
+      "image": "https://avatars.githubusercontent.com/u/86023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1894,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770218723965,
+      "changelog": "- Initial release of terminal-screenshots skill.\n- Provides step-by-step instructions for creating terminal screenshots and animated recordings using VHS.\n- Includes tape file syntax reference and settings for customizing output.\n- Offers usage examples for static images and animated demos.\n- Covers installation instructions for multiple platforms (Homebrew, Fedora, Arch, Docker).\n- Adds workflow tips for clean output, timing, and testing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:10638e9e787125a51543b5d87b31a1e8e77c0172736def97c9f4689a088ebc42"
+}

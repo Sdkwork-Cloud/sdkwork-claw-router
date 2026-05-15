@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zuokun300-amazon-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zuokun300_amazon_scraper",
+  "skill": {
+    "id": 62849,
+    "skillKey": "clawhub-zuokun300-amazon-scraper",
+    "name": "Amazon Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zuokun300-amazon-scraper",
+    "url": "https://clawhub.ai/skills/zuokun300-amazon-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zuokun300-amazon-scraper-ffd6b3f7cb0c5631.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "爬取 Amazon 商品数据，支持关键词搜索，提取价格、评分、评论数，生成结构化 Excel 和 Markdown 报告，含品牌与爆款分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zuokun300",
+      "userId": "publishers:zuokun300",
+      "displayName": "十三先生",
+      "image": "https://avatars.githubusercontent.com/u/39003071?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772628402709,
+      "changelog": "Amazon 数据爬虫技能 v1.0.0 发布，助力电商数据采集与分析。\n\n- 支持从 Amazon 批量爬取商品信息，并生成 Excel 与 Markdown 报告\n- 提供商品搜索、品牌分析、爆款识别、市场趋势研究等核心能力\n- 输出结构化商品数据（价格、排名、品牌等），并统计品牌分布与价格区间\n- 支持自定义关键词、商品数，及生成可点击的商品与图片链接\n- 安装便捷，支持 ClawHub 和手动部署\n- 内建常见问题解答与详细配置说明",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:23314bf059864bc2af2abe597913bdb125e2202368d5170f19745627bb384906"
+}

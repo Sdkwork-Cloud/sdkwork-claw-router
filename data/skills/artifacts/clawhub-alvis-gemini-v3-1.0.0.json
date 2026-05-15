@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alvis-gemini-v3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvis_gemini_v3",
+  "skill": {
+    "id": 42929,
+    "skillKey": "clawhub-alvis-gemini-v3",
+    "name": "Gemini"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvis-gemini-v3",
+    "url": "https://clawhub.ai/skills/alvis-gemini-v3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvis-gemini-v3-315a279e3fec4b20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LLM one-shot Q&A, summaries, and generation via SkillBoss API Hub."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvisdunlop",
+      "userId": "s17fq465rgqaeb4mjcdf3p9dkh84s6zy",
+      "displayName": "AlvisDunlop",
+      "image": "https://avatars.githubusercontent.com/u/255881479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776308400050,
+      "changelog": "Initial release of the Gemini skill for SkillBoss API Hub:\n\n- Provides one-shot Q&A, summaries, and text generation using the SkillBoss `/v1/pilot` endpoint.\n- Automatically selects the optimal large language model (Gemini, Claude, GPT, etc.) based on preference.\n- Includes quick start examples for Python and curl.\n- Supports selection of LLM with \"balanced\", \"quality\", or \"price\" modes.\n- Requires `SkillBoss_API_KEY` environment variable for authentication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f242c2357764d0328ed69a193a8c32f388fa0368c5a78465a396b23c65c87a78"
+}

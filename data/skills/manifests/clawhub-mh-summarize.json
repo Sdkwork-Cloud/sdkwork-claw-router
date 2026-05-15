@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54119,
+  "uuid": "skill-clawhub-mh-summarize",
+  "skillKey": "clawhub-mh-summarize",
+  "name": "MH summarize",
+  "summary": "Summarize or extract text/transcripts from URLs, podcasts, and local files (great fallback for “transcribe this YouTube/video”).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mh_summarize",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mohdalhashemi98-hue",
+      "features": [
+        "Summarize or extract text/transcripts from URLs, podcasts, and local files (great fallback for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mh-summarize@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241047511?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mh-summarize",
+      "url": "https://clawhub.ai/skills/mh-summarize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mh-summarize",
+    "url": "https://clawhub.ai/skills/mh-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mh-summarize-aab662676e27d443.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mh-summarize@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mh-summarize-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fd0c7fa487941f8c1933555d39af05c027554a1adf3b76927ab6eba104d4744",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T18:18:12.270Z"
+}

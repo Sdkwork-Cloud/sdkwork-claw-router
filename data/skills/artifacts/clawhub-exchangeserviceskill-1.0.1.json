@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/exchangeserviceskill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exchangeserviceskill",
+  "skill": {
+    "id": 26932,
+    "skillKey": "clawhub-exchangeserviceskill",
+    "name": "ExchangeService"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exchangeserviceskill",
+    "url": "https://clawhub.ai/skills/exchangeserviceskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exchangeserviceskill-293ae15f75e2304f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cross-platform (Linux/macOS/Windows) skill for Exchange Server 2016 CU21 EWS operations on OpenClaw Node.js runtime."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jokermec",
+      "userId": "s17b9v68atw3htqr2563jfq2rh83qatv",
+      "displayName": "JokerMeC",
+      "image": "https://avatars.githubusercontent.com/u/203392056?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773744337890,
+      "changelog": "- Clarified safety policy to specify that the --insecure flag only relaxes TLS validation per request and does not affect global Node TLS settings.\n- No functional changes or new features; documentation updated for clearer guidance on security options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9cc5b906324104fd63ba6e65b2cb405dd5a53a051d5ec413010cfe32b6a7bdb"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-mp-article-publisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_mp_article_publisher",
+  "skill": {
+    "id": 46896,
+    "skillKey": "clawhub-wechat-mp-article-publisher",
+    "name": "WeChat Official Account Article Auto-Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-mp-article-publisher",
+    "url": "https://clawhub.ai/skills/wechat-mp-article-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-mp-article-publisher-56ffbbe92605927a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete the creation, editing, and publishing of WeChat Official Account articles through browser automation simulating manual operation. No API key require..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777687133957,
+      "changelog": "- Initial release of WeChat Official Account Article Auto-Publisher.\n- Enables browser automation (via xbrowser skill) to create, edit, and publish articles on the WeChat Official Account backend—no API key needed.\n- Supports auto-filling of title, author, AI-generated cover image, body, and abstract.\n- Handles originality claims, previews (prompting user to scan QR code), and final publishing (with mass notification and scheduled publishing options).\n- Requires user interaction for WeChat QR code scans during login and publishing verification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3f8439cfee6e710f928466d0e0320681058b29ff44f2cdd00bb9e9a0a034bdc"
+}

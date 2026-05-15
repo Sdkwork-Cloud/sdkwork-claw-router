@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11191,
+  "uuid": "skill-clawhub-coordinate-meeting",
+  "skillKey": "clawhub-coordinate-meeting",
+  "name": "Coordinate a Meeting",
+  "summary": "Schedule a meeting for humans and their agents. Creates a scheduling poll, distributes it, collects votes, and finds the best time. Use when someone needs to find a time that works for a group. A Doodle alternative built for the age of AI.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coordinate_meeting",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mkelk",
+      "features": [
+        "Schedule a meeting for humans and their agents",
+        "Creates a scheduling poll, distributes it, collects votes, and finds the best time",
+        "Use when someone needs to find a time that works for a group",
+        "A Doodle alternative built for the age of AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coordinate-meeting@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13288681?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coordinate-meeting",
+      "url": "https://clawhub.ai/skills/coordinate-meeting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coordinate-meeting",
+    "url": "https://clawhub.ai/skills/coordinate-meeting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coordinate-meeting-6239cf9b07bd1a49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coordinate-meeting@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-coordinate-meeting-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4730deae70fde2028d87074766d3b9b2bc9d3163ef8f55c8b943703b3842fb1",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T06:19:00.622Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mova-user-contract-setup@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mova_user_contract_setup",
+  "skill": {
+    "id": 53046,
+    "skillKey": "clawhub-mova-user-contract-setup",
+    "name": "Mova User Contract Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mova-user-contract-setup",
+    "url": "https://clawhub.ai/skills/mova-user-contract-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mova-user-contract-setup-4295a731edbfb7bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Walk the user through registering their own MOVA contract — from source_url to first successful run. Trigger when the user says \"register my contract\", \"add..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mova-compact",
+      "userId": "s174xckyab9x52fg7dps9cca2983g5a4",
+      "displayName": "Sergii Miasoiedov",
+      "image": "https://avatars.githubusercontent.com/u/258828376?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775141454688,
+      "changelog": "Added Ecosystem Skill type label.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20991bf4927c78df60b18d72493eb60bb557bd68ca5fbc602e0bc8bcbb82651d"
+}

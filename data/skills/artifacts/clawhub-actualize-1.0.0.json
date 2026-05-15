@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/actualize@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.actualize",
+  "skill": {
+    "id": 44061,
+    "skillKey": "clawhub-actualize",
+    "name": "Actualize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "actualize",
+    "url": "https://clawhub.ai/skills/actualize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/actualize-57cec82511851cfe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reconcile the project's FPF state with recent repository changes"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hahamumu08",
+      "userId": "s17djv8fs491yzn6ftz1hdvhtd850y4s",
+      "displayName": "hahamumu08",
+      "image": "https://avatars.githubusercontent.com/u/202640507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776415342080,
+      "changelog": "Initial release of the fpf:actualize skill\n\n- Introduces a command to reconcile the project's FPF knowledge base with recent repository changes.\n- Performs automated audits for context drift, stale evidence, and outdated decisions based on recent Git changes.\n- Generates a structured actualization report summarizing findings and highlighting required actions.\n- Updates the `.fpf/.baseline` file to track the last actualization point.\n- Supports regular maintenance of assurance case validity as part of project workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe9e212fb236c99f6c0268fb266616a2e6b1d9a55d33b4bdf13e821885c228e5"
+}

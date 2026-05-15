@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/domainforagents@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.domainforagents",
+  "skill": {
+    "id": 46818,
+    "skillKey": "clawhub-domainforagents",
+    "name": "DomainForAgents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "domainforagents",
+    "url": "https://clawhub.ai/skills/domainforagents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/domainforagents-202bf12ad2bd249c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, register, and manage internet domains for AI agents via DomainForAgents API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "midnight-rgb",
+      "userId": "s1747we5t5k4pv0vvg2gt4cv7h84s2pe",
+      "displayName": "midnight-rgb",
+      "image": "https://avatars.githubusercontent.com/u/268296143?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776077196862,
+      "changelog": "Initial release of DomainForAgents skill:\n\n- Search, register, and manage internet domains programmatically via DomainForAgents API\n- Get AI-generated domain suggestions from project descriptions\n- Manage DNS records and check domain availability, pricing, and balance\n- Multiple payment methods supported (prepaid, credit card, USDC, Stripe link)\n- No browser signup or CAPTCHA required; quick API key issuance\n- Supports a wide range of global TLDs (not country-code)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efa1c5a0eb71ce08172c08d04e66af19dc972156fe4ed807dc29e6ba44797154"
+}

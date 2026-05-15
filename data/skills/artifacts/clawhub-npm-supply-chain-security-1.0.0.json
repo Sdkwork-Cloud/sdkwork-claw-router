@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/npm-supply-chain-security@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.npm_supply_chain_security",
+  "skill": {
+    "id": 39408,
+    "skillKey": "clawhub-npm-supply-chain-security",
+    "name": "Npm Supply Chain Security"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "npm-supply-chain-security",
+    "url": "https://clawhub.ai/skills/npm-supply-chain-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/npm-supply-chain-security-659e1ccd8d13c77a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help secure JavaScript projects by detecting malicious npm packages, enforcing trusted publishing, verifying releases, and auditing dependencies for threats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robinyves",
+      "userId": "s17462cenv9g9acdcd8fj842ns840dyy",
+      "displayName": "Robinyves",
+      "image": "https://avatars.githubusercontent.com/u/262183440?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775054364872,
+      "changelog": "Initial release – protect JavaScript projects from npm supply chain attacks using practical security examples and heuristics.\n\n- Explains key supply chain risks, including real-world incidents\n- Details best practices: trusted publishing, release verification, dependency monitoring, and token management\n- Provides example code for trusted publishing (npm, GitHub Actions) and red flag detection scripts (Python, JavaScript)\n- Lists tool dependencies for script usage",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04e7d1bb23ed3131a577dffabb7a8e3ca454e8b2224131ee03da159b4c87b310"
+}

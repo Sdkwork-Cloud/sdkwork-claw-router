@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16459,
+  "uuid": "skill-clawhub-poker-agent",
+  "skillKey": "clawhub-poker-agent",
+  "name": "Poker Agent",
+  "summary": "Play Texas Hold'em poker on Tempo testnet by registering, funding with aUSD, joining tables, polling game state, and submitting actions in real time.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poker_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClementSutjiatma",
+      "features": [
+        "Play Texas Hold'em poker on Tempo testnet by registering, funding with aUSD, joining tables, po."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/poker-agent@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24305920?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "poker-agent",
+      "url": "https://clawhub.ai/skills/poker-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poker-agent",
+    "url": "https://clawhub.ai/skills/poker-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poker-agent-0addbd8560002b8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/poker-agent@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-poker-agent-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:848170b709f280d3ded45dd1c60c05c59c7b374040d74abe11d71bb358bc786b",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T20:47:11.605Z"
+}

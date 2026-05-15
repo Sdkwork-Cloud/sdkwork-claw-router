@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/searxng-connect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searxng_connect",
+  "skill": {
+    "id": 25427,
+    "skillKey": "clawhub-searxng-connect",
+    "name": "SearXNG Connect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searxng-connect",
+    "url": "https://clawhub.ai/skills/searxng-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searxng-connect-60a8c6b7afac1692.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to and search the web using SearXNG (privacy-focused meta search engine). No API keys needed - all searches go through your self-hosted SearXNG insta..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rdeangel",
+      "userId": "s17cgbvvsyqg7wdhm7rca2vt3983ga1f",
+      "displayName": "Rocco De Angelis",
+      "image": "https://avatars.githubusercontent.com/u/6622982?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772785807527,
+      "changelog": "Initial release of searxng-connect.\n\n- Search the web via your self-hosted SearXNG instance with privacy focus and no API keys required.\n- Supports multiple categories (web, news, images, etc.) and time filtering.\n- 1-hour local cache and rate limiting by default.\n- Supports fetching full page content for richer results.\n- Run all commands using `uv`; Python 3.9+ and uv required.\n- Strong security: requires arguments to be passed as an argv list (no raw shell query interpolation).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2fc2fc633c63279a28aeca6235374175a9cf82ca59185d739c6466efdf9017fc"
+}

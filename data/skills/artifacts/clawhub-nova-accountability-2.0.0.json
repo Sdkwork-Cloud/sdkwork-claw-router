@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nova-accountability@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nova_accountability",
+  "skill": {
+    "id": 45639,
+    "skillKey": "clawhub-nova-accountability",
+    "name": "Nova Accountability"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nova-accountability",
+    "url": "https://clawhub.ai/skills/nova-accountability",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nova-accountability-008bf6a2dbc9c366.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage accountability items on a Monday.com board. Use when creating new accountability items, checking on existing ones, running work sessions, or when a cr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "novalystrix",
+      "userId": "s173fnnx7r8dszfcepd5hmt91x83t4jh",
+      "displayName": "novalystrix",
+      "image": "https://avatars.githubusercontent.com/u/262206259?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776859728631,
+      "changelog": "v2.0: Config-driven — all hardcoded values (board ID, column IDs, owner/agent names) moved to plugin config schema. README added. Helper script is env-var based. Generalized for any OpenClaw user running a Monday.com accountability board.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f507aa148cdc1c47a19d826ecae96636211e5f11a99b58cc96b9bfd59ddd7a2"
+}

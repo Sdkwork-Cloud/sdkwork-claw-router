@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aionis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aionis",
+  "skill": {
+    "id": 14578,
+    "skillKey": "clawhub-aionis",
+    "name": "Aionis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aionis",
+    "url": "https://clawhub.ai/skills/aionis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aionis-f27039e1117f9cbf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect OpenClaw to Aionis using write/context/policy/feedback memory loop APIs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cognary",
+      "userId": "publishers:cognary",
+      "displayName": "Cognary",
+      "image": "https://avatars.githubusercontent.com/u/259781227?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772621342791,
+      "changelog": "Aionis Memory Policy Loop Skill 1.0.0\n\n- Initial release: Connects OpenClaw to Aionis using memory loop APIs (write, context, policy, feedback).\n- Provides configuration via environment variables for standalone/local use.\n- Includes safety rules for secret handling, scope, and memory usage.\n- Features connectivity checks and auto-bootstrap for local Aionis instances.\n- Documents default workflow and request templates for writing, context assembly, tool selection, and feedback.\n- Specifies required response fields (e.g., IDs, base_url, scope) for output consistency.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0897924ca6120e2dddd43d9df3f77f4feeddd23d67368ee83dc77fd034379160"
+}

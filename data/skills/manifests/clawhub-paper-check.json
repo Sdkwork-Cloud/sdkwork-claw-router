@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68871,
+  "uuid": "skill-clawhub-paper-check",
+  "skillKey": "clawhub-paper-check",
+  "name": "paper-check",
+  "summary": "本科/研究生毕业论文格式规范检测、自动修复与对比报告生成工具。 当用户需要检查论文格式是否符合学校规范、修复论文格式问题、生成修改对比报告时使用此 Skill。 支持任意学校的撰写规范文档（.doc/.docx/.txt/.pdf）输入，自动解析规范要求并与论文文档进行逐项对比检测。 典型触发场景：用户提到\"论文...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sashavegal",
+      "features": [
+        "本科/研究生毕业论文格式规范检测、自动修复与对比报告生成工具。 当用户需要检查论文格式是否符合学校规范、修复论文格式问题、生成修改对比报告时使用此 Skill。 支持任意学校的撰写规范文档（."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102312946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-check",
+      "url": "https://clawhub.ai/skills/paper-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-check",
+    "url": "https://clawhub.ai/skills/paper-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-check-0a2187e9a9f0ff4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:994478f4b07ab34cc7984a667f42e91d486472be819d592973d605a32e8d51a5",
+      "artifactSizeBytes": 5600
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T11:10:43.541Z"
+}

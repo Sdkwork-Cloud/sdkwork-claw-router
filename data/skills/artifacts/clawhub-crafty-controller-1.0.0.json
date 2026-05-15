@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crafty-controller@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crafty_controller",
+  "skill": {
+    "id": 44736,
+    "skillKey": "clawhub-crafty-controller",
+    "name": "crafty-controller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crafty-controller",
+    "url": "https://clawhub.ai/skills/crafty-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crafty-controller-5e089f58c940f8c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever the user wants to interact with a Crafty Controller instance via its REST API. Triggers include: managing Minecraft servers, starting..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zdstudios",
+      "userId": "s17cm60j7xzpqzdgxp50te4ygn83ykme",
+      "displayName": "ZDStudios",
+      "image": "https://avatars.githubusercontent.com/u/121779558?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775008172640,
+      "changelog": "- Initial release of the Crafty Controller API skill.\n- Enables interaction with Crafty Controller instances via REST API for Minecraft server management.\n- Supports core features: server control (start/stop/restart/kill/delete), console commands, logs, stats, user and role management, scheduling, backups, and file operations.\n- Includes ready-to-use Python helper functions for all major operations.\n- Instructions for setup and configuration are provided for easy integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8673bba5a8df4773ee63b9860a0bb456b576fc92ac853e9f608540421b5a47d"
+}

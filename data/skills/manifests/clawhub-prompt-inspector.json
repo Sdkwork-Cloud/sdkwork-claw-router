@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34587,
+  "uuid": "skill-clawhub-prompt-inspector",
+  "skillKey": "clawhub-prompt-inspector",
+  "name": "Detector of prompt injection",
+  "summary": "Detect prompt injection attacks and adversarial inputs in user text before passing it to your LLM. Use when you need to validate or screen user-provided text...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_inspector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aunicall",
+      "features": [
+        "Detect prompt injection attacks and adversarial inputs in user text before passing it to your L.",
+        "Use when you need to validate or screen user-provided text..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-inspector@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266885561?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-inspector",
+      "url": "https://clawhub.ai/skills/prompt-inspector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-inspector",
+    "url": "https://clawhub.ai/skills/prompt-inspector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-inspector-2436ad441040222c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-inspector@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-inspector-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3697abf56bb5f95ef5bd815ded8ef46da0c65182b08dda65ea929751ba0fefa",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T06:58:41.958Z"
+}

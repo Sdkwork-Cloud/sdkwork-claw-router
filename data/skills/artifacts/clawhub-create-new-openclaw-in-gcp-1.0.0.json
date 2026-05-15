@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-new-openclaw-in-gcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_new_openclaw_in_gcp",
+  "skill": {
+    "id": 10714,
+    "skillKey": "clawhub-create-new-openclaw-in-gcp",
+    "name": "Create New Openclaw Instance on GCP VM"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-new-openclaw-in-gcp",
+    "url": "https://clawhub.ai/skills/create-new-openclaw-in-gcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-new-openclaw-in-gcp-faee82156f616cf6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy and configure an OpenClaw instance on a GCP VM with Tailscale networking, Brave Search integration, and secure credential handling."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "divide-by-0",
+      "userId": "publishers:divide-by-0",
+      "displayName": "Divide-By-0",
+      "image": "https://avatars.githubusercontent.com/u/4804438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2362,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770172719376,
+      "changelog": "Initial release: Deploy OpenClaw to Google Cloud Platform with integrated Tailscale access and Brave Search.\n\n- Provides quick-setup script and full manual setup instructions.\n- Securely handles credentials and configuration using stdin and restricted file permissions.\n- Installs and configures all required software including Tailscale and OpenClaw gateway.\n- Enables Tailscale network access and Brave API integration via systemd environment.\n- Guides for troubleshooting known setup issues and enforcing secure access.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:274f680baa13b99375c34cabbdbde931f10e9ed37dbe36dd9a30ae78288b7799"
+}

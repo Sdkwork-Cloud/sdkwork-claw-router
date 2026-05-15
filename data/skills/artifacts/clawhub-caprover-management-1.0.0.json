@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caprover-management@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caprover_management",
+  "skill": {
+    "id": 22255,
+    "skillKey": "clawhub-caprover-management",
+    "name": "Caprover Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caprover-management",
+    "url": "https://clawhub.ai/skills/caprover-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caprover-management-2eca8a2ade27175e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage CapRover PaaS instances via API: create/update apps, deploy from Docker image or custom Dockerfile (tar file), configure ports, volumes, env vars, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guim4dev",
+      "userId": "s175ke2kaff51e4yr970py77yn83gj0c",
+      "displayName": "Thiago Guimarães",
+      "image": "https://avatars.githubusercontent.com/u/45672975?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 479,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772388309763,
+      "changelog": "Initial release of CapRover Management Skill.\n\n- Manage CapRover PaaS instances via API: create/update apps, deploy from Docker images or custom Dockerfiles.\n- Configure ports, env vars, persistent volumes, and advanced Docker Swarm settings.\n- Supports both standard and advanced workflows, including ARM64-specific guidance.\n- Includes troubleshooting tips and common issues FAQ.\n- Provides ready-to-use Python code for all core operations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:49a52b524ab6f30fa200423c0ac546697cb4e0b8d8b1b055bf676eb0dc688023"
+}

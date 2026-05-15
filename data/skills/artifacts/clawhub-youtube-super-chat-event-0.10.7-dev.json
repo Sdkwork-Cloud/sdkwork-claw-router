@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-super-chat-event@0.10.7-dev",
+  "version": "0.10.7-dev",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_super_chat_event",
+  "skill": {
+    "id": 51215,
+    "skillKey": "clawhub-youtube-super-chat-event",
+    "name": "YouTube Super Chat Event"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-super-chat-event",
+    "url": "https://clawhub.ai/skills/youtube-super-chat-event",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-super-chat-event-458104fad9844e2e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage YouTube Super Chat events. Use this skill to list Super Chat events for a channel. Useful when working with YouTube super chat event — provides comman..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openwaygate",
+      "userId": "s17ceqc046w9bhxqw6az7jvb9h83j6hq",
+      "displayName": "OpenWaygate",
+      "image": "https://avatars.githubusercontent.com/u/27287694?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 319,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.10.7-dev",
+      "createdAt": 1773497497040,
+      "changelog": "- Updated metadata to add openclaw integration with required env, binaries, config files, and install instructions.\n- Added project homepage and emoji to the SKILL metadata.\n- No command or feature changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f0613d2cc661e49714c67a3dd4a0cbde6530815c2023381b5ffc86febda1071"
+}

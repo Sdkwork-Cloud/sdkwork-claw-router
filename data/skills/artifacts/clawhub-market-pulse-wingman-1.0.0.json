@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/market-pulse-wingman@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_pulse_wingman",
+  "skill": {
+    "id": 46747,
+    "skillKey": "clawhub-market-pulse-wingman",
+    "name": "Market Pulse Wingman"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-pulse-wingman",
+    "url": "https://clawhub.ai/skills/market-pulse-wingman",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-pulse-wingman-a25e4404e9be9651.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Market risk co-pilot for equities. Use when you need to scan a watchlist for technical context, fresh headlines, and operational/security red flags, then log..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yaelsprikut",
+      "userId": "s173gqymyg1frdv4qp6cs9wrjd84z55g",
+      "displayName": "Yael",
+      "image": "https://avatars.githubusercontent.com/u/6987802?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776315757689,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:413c9c95d07d7e7fc9e12c6f6a38bacde591d92bdea595d98701a4e2bd03159a"
+}

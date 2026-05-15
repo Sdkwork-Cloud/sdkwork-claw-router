@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16443,
+  "uuid": "skill-clawhub-search-for-service",
+  "skillKey": "clawhub-search-for-service",
+  "name": "Search For Service",
+  "summary": "Search and browse the x402 bazaar marketplace for paid API services. Use when you or the user want to find available services, see what's available, discover APIs, or need an external service to accomplish a task. Also use as a fallback wh.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.search_for_service",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xRAG",
+      "features": [
+        "Search and browse the x402 bazaar marketplace for paid API services",
+        "Use when you or the user want to find available services, see what's available, discover APIs,.",
+        "Also use as a fallback when no other skill clearly matches — search the bazaar to see if a paid.",
+        "Covers \"what can I do?\", \"find me an API for...\", \"what services are available?\", \"search for..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/search-for-service@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15928227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "search-for-service",
+      "url": "https://clawhub.ai/skills/search-for-service"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "search-for-service",
+    "url": "https://clawhub.ai/skills/search-for-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/search-for-service-ec864b94e7b6148b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/search-for-service@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-search-for-service-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9749ca7144be38db582d5957d19a64c28aa619596b3d014c95db1da42d5a3402",
+      "artifactSizeBytes": 2465
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T20:56:59.150Z"
+}

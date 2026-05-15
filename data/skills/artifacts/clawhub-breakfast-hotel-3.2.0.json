@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/breakfast-hotel@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.breakfast_hotel",
+  "skill": {
+    "id": 53649,
+    "skillKey": "clawhub-breakfast-hotel",
+    "name": "Breakfast Hotel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "breakfast-hotel",
+    "url": "https://clawhub.ai/skills/breakfast-hotel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/breakfast-hotel-6f1b31841f6d9f66.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find hotels where breakfast is included in the room rate — save time finding breakfast spots and save money on morning meals. Also supports: flight booking,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775797491241,
+      "changelog": "- Major update: strict rules enforcing 100% real-time hotel data from the flyai CLI for all queries.\n- Now **only** replies with hotels where breakfast is included, using verified CLI output—never from internal knowledge.\n- Always checks for flyai-cli installation and blocks all answers if it’s missing.\n- Output requires booking links from CLI results; no generated or old data allowed.\n- Expanded description: new features include flight booking, train tickets, itinerary planning, visa info, car rental, and more, all powered by Fliggy (Alibaba Group).\n- Strong error handling and self-validation: responses without live booking links are auto-rejected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b715037c90136e766f4f8331d26088561822632e40c5ac0a9878d54f1027d1b3"
+}

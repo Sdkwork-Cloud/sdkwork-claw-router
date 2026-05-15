@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37778,
+  "uuid": "skill-clawhub-text-to-video-h2h",
+  "skillKey": "clawhub-text-to-video-h2h",
+  "name": "Text To Video H2h",
+  "summary": "Get talking head video ready to post, without touching a single slider. Upload your text script (TXT, DOCX, PDF, plain text, up to 500MB), say something like...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_h2h",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "Get talking head video ready to post, without touching a single slider",
+        "Upload your text script (TXT, DOCX, PDF, plain text, up to 500MB), say something like..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text-to-video-h2h@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text-to-video-h2h",
+      "url": "https://clawhub.ai/skills/text-to-video-h2h"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-h2h",
+    "url": "https://clawhub.ai/skills/text-to-video-h2h",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-h2h-a58a0a460258c4d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text-to-video-h2h@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-text-to-video-h2h-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:324a305a205acd5c00e1bc3ec17df1d9655fd619c855e0b61d39898ff68ee5a7",
+      "artifactSizeBytes": 2653
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T18:00:05.147Z"
+}

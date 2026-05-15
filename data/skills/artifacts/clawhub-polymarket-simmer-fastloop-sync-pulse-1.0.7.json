@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-simmer-fastloop-sync-pulse@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_simmer_fastloop_sync_pulse",
+  "skill": {
+    "id": 21901,
+    "skillKey": "clawhub-polymarket-simmer-fastloop-sync-pulse",
+    "name": "polymarket-simmer-fastloop-sync-pulse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-simmer-fastloop-sync-pulse",
+    "url": "https://clawhub.ai/skills/polymarket-simmer-fastloop-sync-pulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-simmer-fastloop-sync-pulse-bb0e7ea7a7782c51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade Polymarket BTC/ETH/SOL 5-minute fast markets using a zero-delay Triple-Trigger strategy. Combines Binance momentum, NOFX OI/Netflow (free public API),..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andrewbrownrd",
+      "userId": "s1764khpp2saavvngtwa7c9syx83gcep",
+      "displayName": "AndrewBrownrd",
+      "image": "https://avatars.githubusercontent.com/u/261283447?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 492,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1773668016588,
+      "changelog": "- Initial metadata file `_meta.json` added for standardization and platform compatibility.\n- No changes to core logic or configuration—behavior remains identical to previous version.\n- Existing documentation for strategy, setup, and troubleshooting is unchanged.\n- Upgrade is non-breaking and does not require any user action.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b841a71736d35539ddfdd53da9df7560993c2def5e6f77fa0a865f8bd2f8d562"
+}

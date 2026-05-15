@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tieba-spider@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tieba_spider",
+  "skill": {
+    "id": 58845,
+    "skillKey": "clawhub-tieba-spider",
+    "name": "Tieba Spider"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tieba-spider",
+    "url": "https://clawhub.ai/skills/tieba-spider",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tieba-spider-578a7fed774d774e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "贴吧帖子爬虫 - 从百度贴吧抓取帖子内容并导出为 Markdown（支持图片下载、楼中楼解析）。Tieba thread crawler - crawl Tieba threads to Markdown with images and sub-posts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fuxiaoji",
+      "userId": "s17dgnazap7bxrm34q1jxn25hh85e2q1",
+      "displayName": "fuxiaoji",
+      "image": "https://avatars.githubusercontent.com/u/183272150?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777029326298,
+      "changelog": "Initial release of tieba-spider.\n\n- Crawl full threads from Baidu Tieba, including all posts and replies.\n- Download images within threads and save them locally.\n- Parse sub-posts (楼中楼) for complete discussion capture.\n- Export posts and images to a clean Markdown format.\n- Support for custom output directory and adjustable request delay.\n- Command-line options allow for flexible usage, including skipping image downloads.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b93112a9e9fd5ffc738003d66ec1dd00044422c84e2f48cf60bd3c3b9e3cb8e5"
+}

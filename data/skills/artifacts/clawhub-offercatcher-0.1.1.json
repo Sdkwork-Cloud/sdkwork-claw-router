@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/offercatcher@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.offercatcher",
+  "skill": {
+    "id": 40580,
+    "skillKey": "clawhub-offercatcher",
+    "name": "OfferCatcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "offercatcher",
+    "url": "https://clawhub.ai/skills/offercatcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/offercatcher-0cd40bcc237bb02f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn recruiting emails into native Apple Reminders. AI-powered parsing extracts interview/assessment events and syncs to iPhone."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nissoncx",
+      "userId": "s17e4zt3x0yyd98nwhhemvppkh83r6x6",
+      "displayName": "Cao Xu",
+      "image": "https://avatars.githubusercontent.com/u/213365928?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775641677260,
+      "changelog": "- Updated documentation in README.md and README_CN.md for improved clarity.\n- No changes to code or skill functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02ccdeee66ee9ba5eb3de2e2ed7d785f98c38257d39f8921aea682d1f17081bb"
+}

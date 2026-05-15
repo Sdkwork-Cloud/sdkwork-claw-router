@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ukui-gsettings-tool@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ukui_gsettings_tool",
+  "skill": {
+    "id": 25617,
+    "skillKey": "clawhub-ukui-gsettings-tool",
+    "name": "ukui-settings"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ukui-gsettings-tool",
+    "url": "https://clawhub.ai/skills/ukui-gsettings-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ukui-gsettings-tool-281ec160b0af5ebf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A skill for exporting, inspecting and applying UKUI desktop gsettings presets, with fine-grained get/set support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lizhuoan",
+      "userId": "publishers:lizhuoan",
+      "displayName": "lizhuoan",
+      "image": "https://avatars.githubusercontent.com/u/73147450?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773221049115,
+      "changelog": "ukui-gsettings-tool 1.0.1\n\n- Added SKILL.md metadata block with skill name, description, and OpenClaw requirements.\n- Updated command documentation to use simplified paths (e.g. gsettings_tool.py instead of /tmp/gsettings-skill/gsettings_tool.py).\n- No changes to code or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f2dbc84098b189d53d695a740098e0ea040dfbeb3f13b14c62c3cfd1b1fc2fd"
+}

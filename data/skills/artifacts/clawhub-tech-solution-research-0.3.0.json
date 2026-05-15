@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tech-solution-research@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_solution_research",
+  "skill": {
+    "id": 58436,
+    "skillKey": "clawhub-tech-solution-research",
+    "name": "Tech Solution Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-solution-research",
+    "url": "https://clawhub.ai/skills/tech-solution-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-solution-research-3fd22af425716fb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "技术方案调研/框架选型/技术对比/最终报告生成 — multi-source evidence orchestration for technical decision-making"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lanyasheng",
+      "userId": "s179bk63dv96y90hw97xaay4fx83t7yr",
+      "displayName": "_silhouette",
+      "image": "https://avatars.githubusercontent.com/u/22570800?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1774803000297,
+      "changelog": "Initial public release with platform-native source routing, source coverage gates, and technical-solution research workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98b8aab615f2917c88c630cfe6ca9c4d19e4f221ec90c143f9b0e88e74ed83f9"
+}

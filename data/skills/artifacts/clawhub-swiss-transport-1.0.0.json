@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swiss-transport@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swiss_transport",
+  "skill": {
+    "id": 11925,
+    "skillKey": "clawhub-swiss-transport",
+    "name": "Swiss Public Transport"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swiss-transport",
+    "url": "https://clawhub.ai/skills/swiss-transport",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swiss-transport-aef72244e6c29714.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Swiss Public Transport real-time information. Use when querying train, bus, tram, or boat schedules in Switzerland. Supports station search, departure boards, journey planning from A to B, and connection details. Use for queries like \"When."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xenofex7",
+      "userId": "publishers:xenofex7",
+      "displayName": "xenofex7",
+      "image": "https://avatars.githubusercontent.com/u/41230096?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1931,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768419591570,
+      "changelog": "Initial release of Swiss Public Transport skill\n- Real-time departure boards for all Swiss stations\n- Journey planning with detailed connections\n- Station search with autocomplete\n- Includes helper script for formatted output\n- No API key required - uses transport.opendata.ch",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e34e683028e597fdca7fd58f9857b5a67fb6d2d004490c25933ecf1edc1a7504"
+}

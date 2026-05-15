@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lowes@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lowes",
+  "skill": {
+    "id": 70774,
+    "skillKey": "clawhub-lowes",
+    "name": "Lowes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lowes",
+    "url": "https://clawhub.ai/skills/lowes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lowes-e7704fe6001152e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "美国第二大家居建材零售商，约1700家门店，核心为DIY消费者，近年来重点拓展专业承包商业务和数字化供应链升级。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776569216534,
+      "changelog": "- 初始发布：提供Lowe's（劳氏）公司详尽简介，适用于行业分析、投资研究与竞品对比。\n- 覆盖Lowe's历史发展、业务结构（DIY零售、专业客户、电器、数字业务）及全渠道战略。\n- 梳理Lowe's核心商业模式、护城河与市场地位。\n- 收录最新关键数据与行业背景，强调Lowe's在家电零售及客户体验领域的差异化优势。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:943f72ea379f21a0e82d79ebd2f178b4114458adc2b8920bce710e94ac894e00"
+}

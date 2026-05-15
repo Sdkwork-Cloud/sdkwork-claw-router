@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/database-query-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.database_query_helper",
+  "skill": {
+    "id": 36117,
+    "skillKey": "clawhub-database-query-helper",
+    "name": "Database Query Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "database-query-helper",
+    "url": "https://clawhub.ai/skills/database-query-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/database-query-helper-bde9c62bdd70bb4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SQL query builder and optimizer. Generates queries, explains execution plans, and optimizes slow queries. Triggers: sql query, database query, sql optimization."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776924614440,
+      "changelog": "- Initial release of skylv-sql-helper.\n- Provides tools to write, optimize, and debug SQL queries.\n- Includes best practices and anti-pattern warnings for efficient SQL usage.\n- Supports triggers for SQL query writing and optimization tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67de66217f30312c3451a7ba4c486efd2c3457369ea156acb7d2fb03c2df6705"
+}

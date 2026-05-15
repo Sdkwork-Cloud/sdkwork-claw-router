@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/b2b-lead-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.b2b_lead_engine",
+  "skill": {
+    "id": 69175,
+    "skillKey": "clawhub-b2b-lead-engine",
+    "name": "B2b Lead Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "b2b-lead-engine",
+    "url": "https://clawhub.ai/skills/b2b-lead-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/b2b-lead-engine-f5f1bf2fb3e6b716.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "B2B商机挖掘助手。当用户说'我要卖XXX'、'帮我找客户'、'分析竞品'、'挖掘商机'时启用，自动识别竞品、挖掘潜在客户、生成个性化BD材料。支持6阶段标准化流程：配置生成→信息采集→商机识别→信息补全→BD材料生成→输出交付。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaniu001",
+      "userId": "s177w7ygngytfty575be4x4xfs84gpxq",
+      "displayName": "ShaNiu001",
+      "image": "https://avatars.githubusercontent.com/u/266231807?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775724147415,
+      "changelog": "b2b-lead-engine 1.0.0 Changelog\n\n- Initial release of the B2B商机挖掘助手 (B2B Lead Engine).\n- Supports end-to-end B2B lead generation: product analysis, competitor identification, potential client mining, and personalized BD material creation.\n- Standardized 6-stage workflow: configuration → information gathering → opportunity identification → information completion → BD material generation → delivery.\n- Automatically extracts competitor sales connections from LinkedIn and screens for qualified leads.\n- Generates detailed reports and personalized outreach messages based on customer profiles and market intel.\n- Chinese-language workflow and output, tailored for B2B sales/BD contexts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d567a14b6b255e009847cc19e83cd4f915f6362b2799be90dfa9f1dd6cd3933"
+}

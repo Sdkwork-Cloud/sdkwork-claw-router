@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32038,
+  "uuid": "skill-clawhub-calendso",
+  "skillKey": "clawhub-calendso",
+  "name": "Calendso",
+  "summary": "Calendso integration. Manage data, records, and automate workflows. Use when the user wants to interact with Calendso data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calendso",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Calendso integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Calendso data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/calendso@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "calendso",
+      "url": "https://clawhub.ai/skills/calendso"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calendso",
+    "url": "https://clawhub.ai/skills/calendso",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calendso-c0080d2e4d58cc84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/calendso@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-calendso-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2327d5312af596803616fcee15ce5e654bf7fa80013b71289f4522a03ad632cf",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:16:31.592Z"
+}

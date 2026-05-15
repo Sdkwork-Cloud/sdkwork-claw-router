@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/playwright-controller@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.playwright_controller",
+  "skill": {
+    "id": 19607,
+    "skillKey": "clawhub-playwright-controller",
+    "name": "playwright-controller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "playwright-controller",
+    "url": "https://clawhub.ai/skills/playwright-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/playwright-controller-501ab9a70cacd32b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse webpages using Playwright with automatic loading wait, screenshots, and text extraction. Use playwright:fetch or playwright:screenshot commands. API:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrchenkuan",
+      "userId": "publishers:mrchenkuan",
+      "displayName": "陈宽同学",
+      "image": "https://avatars.githubusercontent.com/u/9814867?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 592,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772297237915,
+      "changelog": "Initial release of playwright-controller.\n\n- Browse webpages using Playwright with automatic loading wait, screenshots, and text extraction.\n- Supports both full page and specific element screenshots with text extraction.\n- Mobile simulation by default: iPhone viewport and user-agent, visible (headed) browser mode.\n- CLI commands: playwright:fetch (full page), playwright:fetch-element (specific selector).\n- Customizable options: timeout, output directory, headless mode.\n- Outputs both screenshot (PNG) and extracted text for each request; error handling saves screenshots even on failure.\n- Node.js API: fetchWithPlaywright and fetchElementAndScreenshot for programmatic use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1185e40f41d7d3fc0c1c398569f8a9938604aa091451ec71dd15a2c9eb96edd4"
+}

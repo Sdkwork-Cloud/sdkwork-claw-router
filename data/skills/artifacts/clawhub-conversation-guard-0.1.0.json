@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/conversation-guard@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conversation_guard",
+  "skill": {
+    "id": 24588,
+    "skillKey": "clawhub-conversation-guard",
+    "name": "Conversation Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conversation-guard",
+    "url": "https://clawhub.ai/skills/conversation-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conversation-guard-661ee1af2f6690ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically records and backs up conversations with importance tagging to preserve emotional and technical context independently from OpenClaw internals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zfanmy",
+      "userId": "s17a9n0kykchma2r1hmwr1dheh83hyv2",
+      "displayName": "zfanmy",
+      "image": "https://avatars.githubusercontent.com/u/33675069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773233899264,
+      "changelog": "DreamMoon-Conversation-Guard v0.1.0\n\n- Initial release of a self-contained conversation backup system for OpenClaw.\n- Provides automatic conversation recording with importance and tagging features.\n- Supports emotional and technical content detection for improved record accuracy.\n- Dual-format backup (Markdown and JSONL) to preserve interaction history.\n- Includes emergency backup, session recovery, and easy integration with OpenClaw workflows.\n- Detailed setup, configuration, and troubleshooting guidance included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c15a4321bfc9dcafd234c00512414373771cb69f7d8017cc4981d92d8f298a4"
+}

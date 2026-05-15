@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17827,
+  "uuid": "skill-clawhub-ape-claw",
+  "skillKey": "clawhub-ape-claw",
+  "name": "ape-claw",
+  "summary": "Use the ape-claw CLI to bridge to ApeChain and execute NFT quote/simulate/buy flows with strict policy gating, confirm phrases, and telemetry. Use when users...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ape_claw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "simplefarmer69",
+      "features": [
+        "Use the ape-claw CLI to bridge to ApeChain and execute NFT quote/simulate/buy flows with strict.",
+        "Use when users..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ape-claw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225970627?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ape-claw",
+      "url": "https://clawhub.ai/skills/ape-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ape-claw",
+    "url": "https://clawhub.ai/skills/ape-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ape-claw-600132beba680fa7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ape-claw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ape-claw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cab73b7142213840d2460798d4205895c383f07525ecebf665a9facc5d59ef5c",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T15:26:43.217Z"
+}

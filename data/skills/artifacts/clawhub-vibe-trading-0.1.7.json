@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vibe-trading@0.1.7",
+  "version": "0.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibe_trading",
+  "skill": {
+    "id": 18798,
+    "skillKey": "clawhub-vibe-trading",
+    "name": "Vibe Trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibe-trading",
+    "url": "https://clawhub.ai/skills/vibe-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibe-trading-d524378bdac291e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional finance research toolkit — backtesting (7 engines + benchmark comparison panel), factor analysis, options pricing, 74 finance skills, 29 multi-a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "warren618",
+      "userId": "s17aqp0drym9w3rnrc4hdqtsfh83zz2h",
+      "displayName": "Haozhe Wu",
+      "image": "https://avatars.githubusercontent.com/u/127300695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 938,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "0.1.7",
+      "createdAt": 1778069442835,
+      "changelog": "Security hardening patch: strengthens API, file, URL, code-generation, Docker, CLI, Web UI, and MCP/ClawHub boundaries while preserving localhost workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1443a967ec7e75917ec64f8593af3b801f3f20dc2f91846d9bd323d1f5de343"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44139,
+  "uuid": "skill-clawhub-justoneapi-bilibili-get-video-comment",
+  "skillKey": "clawhub-justoneapi-bilibili-get-video-comment",
+  "name": "Bilibili Video Comments API",
+  "summary": "Call GET /api/bilibili/get-video-comment/v2 for Bilibili Video Comments through JustOneAPI with aid.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_bilibili_get_video_comment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/bilibili/get-video-comment/v2 for Bilibili Video Comments through JustOneAPI with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-bilibili-get-video-comment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-bilibili-get-video-comment",
+      "url": "https://clawhub.ai/skills/justoneapi-bilibili-get-video-comment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-bilibili-get-video-comment",
+    "url": "https://clawhub.ai/skills/justoneapi-bilibili-get-video-comment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-bilibili-get-video-comment-bcb619b635e515e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-bilibili-get-video-comment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-bilibili-get-video-comment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bcd06a53ed128592e4117c5060cf2ea0c830796648a782a6ea532dbb0299331b",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T16:15:29.813Z"
+}

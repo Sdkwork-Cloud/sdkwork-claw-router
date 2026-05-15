@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-hosted-crypto@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_hosted_crypto",
+  "skill": {
+    "id": 30885,
+    "skillKey": "clawhub-self-hosted-crypto",
+    "name": "Self-hosted Crypto Payment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-hosted-crypto",
+    "url": "https://clawhub.ai/skills/self-hosted-crypto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-hosted-crypto-cf00d9e51e843fde.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add self-custodied crypto payment checkout to a Next.js + Supabase app. Accepts ETH, BTC, SOL, USDC, USDT and 25+ coins across 9 chains. No payment processor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flacko2048",
+      "userId": "s1788p1tzmc9xnctbt1e96rgkn849vh9",
+      "displayName": "Flacko2048",
+      "image": "https://avatars.githubusercontent.com/u/207198764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775513312508,
+      "changelog": "- Added explicit environment variable requirements for `CRYPTO_MASTER_MNEMONIC` and `CRON_SECRET` in the skill manifest.\n- Updated installation instructions to include `qrcode` and `@types/qrcode` as required dependencies.\n- No code changes; documentation and setup process are now more precise for easier onboarding and configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b21243efa973755ecae7d23c151718542ddd6de59b9035b5f8015d5cb40a78c4"
+}

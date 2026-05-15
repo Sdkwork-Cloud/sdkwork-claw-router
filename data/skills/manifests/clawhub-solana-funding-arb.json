@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12089,
+  "uuid": "skill-clawhub-solana-funding-arb",
+  "skillKey": "clawhub-solana-funding-arb",
+  "name": "Solana Funding Rate Arbitrage",
+  "summary": "Solana perpetual DEX funding rate arbitrage - scanner and auto-trader. Compares funding rates across Drift and Flash Trade to find and execute cross-DEX arbitrage opportunities. Use when analyzing Solana perp funding rates, finding funding.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solana_funding_arb",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zedit42",
+      "features": [
+        "Solana perpetual DEX funding rate arbitrage",
+        "scanner and auto-trader",
+        "Compares funding rates across Drift and Flash Trade to find and execute cross-DEX arbitrage opp.",
+        "Use when analyzing Solana perp funding rates, finding funding arbitrage, setting up delta-neutr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solana-funding-arb@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87221822?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solana-funding-arb",
+      "url": "https://clawhub.ai/skills/solana-funding-arb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solana-funding-arb",
+    "url": "https://clawhub.ai/skills/solana-funding-arb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solana-funding-arb-3a61bd9c7e746998.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solana-funding-arb@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-solana-funding-arb-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cf889ab342834c899ceeddf245d1063d5c3fadde32552486c9d37601a2e33f2",
+      "artifactSizeBytes": 2088
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T11:04:41.424Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ctf-osint@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctf_osint",
+  "skill": {
+    "id": 29047,
+    "skillKey": "clawhub-ctf-osint",
+    "name": "Ctf Osint"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctf-osint",
+    "url": "https://clawhub.ai/skills/ctf-osint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctf-osint-36811c506f9ff351.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides open source intelligence techniques for CTF challenges. Use when gathering information from public sources, social media, geolocation, DNS records,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gandli",
+      "userId": "s17c214vqwcqpk2wczqpbmyngd83xsas",
+      "displayName": "gandli",
+      "image": "https://avatars.githubusercontent.com/u/85359251?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774845564303,
+      "changelog": "Initial release: Quick reference for open source intelligence (OSINT) CTF techniques.\n\n- Covers reconnaissance across public sources: social media, geolocation, usernames, DNS records, reverse image search, Google dorking, Wayback Machine, Tor, FEC, and more.\n- Includes ready-to-use command examples and platform-specific installation instructions.\n- Offers guidance for identifying unknown data (hashes, coordinates) and pivoting between related CTF skill sets.\n- Extensive supplementary resource links for in-depth OSINT tasks.\n- Concise workflows for social media analysis, image and metadata extraction, web archives, DNS research, and technical artifact identification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:909e111fddd5c106feac456eb62c398a6ee2999752de4167d871ac93e551029a"
+}

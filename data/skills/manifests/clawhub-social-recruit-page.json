@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70757,
+  "uuid": "skill-clawhub-social-recruit-page",
+  "skillKey": "clawhub-social-recruit-page",
+  "name": "Social Recruit Page",
+  "summary": "生成高端黑金风格私人圈子/社群招募长图并发送到飞书。当用户说\"生成招募页\"、\"做一个招募图\"、\"私人圈子招募页\"、\"帮我生成会员招募海报\"、或提到需要私人俱乐部/高端社群/付费圈子的招募宣传图时触发。支持自定义品牌名、发起人、服务内容、定价、名额等信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_recruit_page",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Conan",
+      "features": [
+        "生成高端黑金风格私人圈子/社群招募长图并发送到飞书。当用户说\"生成招募页\"、\"做一个招募图\"、\"私人圈子招募页\"、\"帮我生成会员招募海报\"、或提到需要私人俱乐部/高端社群/付费圈子的招募宣传."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/social-recruit-page@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9691831?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "social-recruit-page",
+      "url": "https://clawhub.ai/skills/social-recruit-page"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-recruit-page",
+    "url": "https://clawhub.ai/skills/social-recruit-page",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-recruit-page-fb79628e39ef33a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/social-recruit-page@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-social-recruit-page-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73c23b44a82ef02ce7a510aa40801f1af349dcbfe77df83cf5f51d87425cfe03",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T21:36:44.426Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57018,
+  "uuid": "skill-clawhub-no-ai-tone",
+  "skillKey": "clawhub-no-ai-tone",
+  "name": "no-ai-tone",
+  "summary": "Checks and rewrites copy to eliminate AI-generated tone. Supports Chinese (中文), English, and Japanese (日本語). Triggers when writing or editing any user-facing...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.no_ai_tone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "小白",
+      "features": [
+        "Checks and rewrites copy to eliminate AI-generated tone",
+        "Supports Chinese (中文), English, and Japanese (日本語)",
+        "Triggers when writing or editing any user-facing..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/no-ai-tone@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268746679?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "no-ai-tone",
+      "url": "https://clawhub.ai/skills/no-ai-tone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "no-ai-tone",
+    "url": "https://clawhub.ai/skills/no-ai-tone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/no-ai-tone-12df94a9c79851a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/no-ai-tone@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-no-ai-tone-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3143b920ed94d059180a30361554689e88e35258e9052c6ac6d696291f52c52b",
+      "artifactSizeBytes": 2432
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T06:47:07.855Z"
+}

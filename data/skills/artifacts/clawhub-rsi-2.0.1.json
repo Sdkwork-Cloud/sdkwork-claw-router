@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rsi@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rsi",
+  "skill": {
+    "id": 29960,
+    "skillKey": "clawhub-rsi",
+    "name": "Rsi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rsi",
+    "url": "https://clawhub.ai/skills/rsi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rsi-f0f8270db484173c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculate RSI for any asset. Use when checking overbought/oversold conditions, spotting divergence signals, comparing multi-timeframe RSI, or setting trading..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain-lab",
+      "userId": "s174pq5f3gzez3838vt2642fmx848f1d",
+      "displayName": "bytesagain-lab",
+      "image": "https://avatars.githubusercontent.com/u/271735676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 282,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774536907988,
+      "changelog": "v2.0.0 full rewrite: name+description+script",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f759e7f7ce44ca7b7e22af05cba2b36bbd7e24085d4e63aa2040bd634482f57"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13000,
+  "uuid": "skill-clawhub-cloudflare-manager",
+  "skillKey": "clawhub-cloudflare-manager",
+  "name": "Cloudflare Manager",
+  "summary": "Manage Cloudflare DNS records, Tunnels (cloudflared), and Zero Trust policies. Use for pointing domains, exposing local services via tunnels, and updating in...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "azzar budiyanto",
+      "features": [
+        "Manage Cloudflare DNS records, Tunnels (cloudflared), and Zero Trust policies",
+        "Use for pointing domains, exposing local services via tunnels, and updating in..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloudflare-manager@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48999412?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloudflare-manager",
+      "url": "https://clawhub.ai/skills/cloudflare-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-manager",
+    "url": "https://clawhub.ai/skills/cloudflare-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-manager-70a1a2088d3d615f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloudflare-manager@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloudflare-manager-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc892ebedd937211cab11af19de2d63a6e81e817949594979b3ce291f97ae51c",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T18:54:03.056Z"
+}

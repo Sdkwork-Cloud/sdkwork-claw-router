@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ultrahuman-openclaw@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ultrahuman_openclaw",
+  "skill": {
+    "id": 10961,
+    "skillKey": "clawhub-ultrahuman-openclaw",
+    "name": "Ultrahuman (OpenClaw)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ultrahuman-openclaw",
+    "url": "https://clawhub.ai/skills/ultrahuman-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ultrahuman-openclaw-46fb925a80b77e88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and summarize Ultrahuman Ring/CGM metrics inside OpenClaw using the Ultrahuman MCP server (via mcporter). Use when the user asks about Ultrahuman data such as sleep score, total sleep, sleep stages, HR/HRV/RHR, steps, recovery index,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devpranoy",
+      "userId": "publishers:devpranoy",
+      "displayName": "devpranoy",
+      "image": "https://avatars.githubusercontent.com/u/20567858?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2167,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1770064255954,
+      "changelog": "Docs: link to Ultrahuman MCP repo (Monasterolo21/Ultrahuman-MCP)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:16e36b1d35511239b72b3d4f4055c28ef68ab3494296a3fb41f2355e3cfde24d"
+}

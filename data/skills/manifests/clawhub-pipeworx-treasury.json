@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54283,
+  "uuid": "skill-clawhub-pipeworx-treasury",
+  "skillKey": "clawhub-pipeworx-treasury",
+  "name": "Pipeworx treasury",
+  "summary": "US fiscal data — national debt, Treasury interest rates, and federal spending breakdowns from the Treasury Fiscal Data API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_treasury",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "US fiscal data — national debt, Treasury interest rates, and federal spending breakdowns from t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-treasury@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-treasury",
+      "url": "https://clawhub.ai/skills/pipeworx-treasury"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-treasury",
+    "url": "https://clawhub.ai/skills/pipeworx-treasury",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-treasury-d1fbafca29c9d864.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-treasury@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-treasury-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:001d618d1bd0988bee675fafe6ace95037a27e91cdb8bfd3f520c990a4932404",
+      "artifactSizeBytes": 1878
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T20:03:43.292Z"
+}

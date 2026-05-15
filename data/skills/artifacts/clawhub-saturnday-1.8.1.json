@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/saturnday@1.8.1",
+  "version": "1.8.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.saturnday",
+  "skill": {
+    "id": 51666,
+    "skillKey": "clawhub-saturnday",
+    "name": "Saturnday"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "saturnday",
+    "url": "https://clawhub.ai/skills/saturnday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/saturnday-16ffd4439ef36b7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Governed AI software execution — 48+ deterministic governance checks for Python with additional checks for TypeScript, DevOps, and project metadata. LLM-powe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "honouralexwill",
+      "userId": "s17bg8312g40k6pwt5nx5kqjxn83eb20",
+      "displayName": "honouralexwill",
+      "image": "https://avatars.githubusercontent.com/u/213247219?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 302,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.8.1",
+      "createdAt": 1775254692881,
+      "changelog": "Restore Cursor as supported backend.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6cf35e1d3f30a15c17ccd3d94a97c2b8d45f27e6a1112a5b4a5cf6406b853f8b"
+}

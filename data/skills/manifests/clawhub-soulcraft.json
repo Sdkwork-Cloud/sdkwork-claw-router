@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9189,
+  "uuid": "skill-clawhub-soulcraft",
+  "skillKey": "clawhub-soulcraft",
+  "name": "SoulCraft",
+  "summary": "Create or improve SOUL.md files for OpenClaw agents through guided conversation. Use when designing agent personality, crafting a soul, or saying \"help me create a soul\". Supports self-improvement.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soulcraft",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kesslerio",
+      "features": [
+        "Create or improve SOUL.md files for OpenClaw agents through guided conversation",
+        "Use when designing agent personality, crafting a soul, or saying \"help me create a soul\"",
+        "Supports self-improvement."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soulcraft@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2647990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soulcraft",
+      "url": "https://clawhub.ai/skills/soulcraft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soulcraft",
+    "url": "https://clawhub.ai/skills/soulcraft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soulcraft-7fce1bbb24933816.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soulcraft@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-soulcraft-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30a497aa23a4c1b073afb49996f85b9a5856f9b86301ecd6a22f02757c10ccb2",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T05:34:17.106Z"
+}

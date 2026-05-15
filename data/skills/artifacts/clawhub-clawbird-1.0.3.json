@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawbird@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbird",
+  "skill": {
+    "id": 50419,
+    "skillKey": "clawhub-clawbird",
+    "name": "Clawbird"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbird",
+    "url": "https://clawhub.ai/skills/clawbird",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbird-919891596684d008.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "X/Twitter integration — post, reply, search, like, follow, DMs, and mentions via the official X API v2"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xonder",
+      "userId": "publishers:xonder",
+      "displayName": "xonder",
+      "image": "https://avatars.githubusercontent.com/u/1221363?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 843,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771176716346,
+      "changelog": "**Security and trust section updated for clarity on credentials, installation, and review.**\n\n- Clarified credential injection: credentials must be provided via OpenClaw plugin config at runtime; no direct config file reads.\n- Updated trust statement to specify runtime npm installation, linking to source and npm, and suggesting source audit/pinning for security.\n- Stated test coverage now at 200+ tests.\n- Emphasized no bundled code—runtime code is installed from npm, not included in skill archive.\n- Minor rewording of security and configuration sections for accuracy and transparency.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e8e3c08586e85371b9ae87fc0889fd2fe5497af5ee2ef18ec9ec1121f65948a2"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57332,
+  "uuid": "skill-clawhub-maple-video-capture",
+  "skillKey": "clawhub-maple-video-capture",
+  "name": "video2imgs-视频关键帧获取",
+  "summary": "Capture key frames from video files at fixed time intervals. Use when you need to understand video content by extracting screenshots, or when you need to ana...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maple_video_capture",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chentx1243",
+      "features": [
+        "Capture key frames from video files at fixed time intervals",
+        "Use when you need to understand video content by extracting screenshots, or when you need to an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maple-video-capture@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149167066?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maple-video-capture",
+      "url": "https://clawhub.ai/skills/maple-video-capture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maple-video-capture",
+    "url": "https://clawhub.ai/skills/maple-video-capture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maple-video-capture-8a731cceb378849d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maple-video-capture@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-maple-video-capture-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f60157b0883664a63cbc0d013b0da95acc82957a00d23be7e09a78464e5a8d5",
+      "artifactSizeBytes": 2462
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T05:52:41.997Z"
+}

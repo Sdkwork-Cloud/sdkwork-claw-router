@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wiki-retriever@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wiki_retriever",
+  "skill": {
+    "id": 16289,
+    "skillKey": "clawhub-wiki-retriever",
+    "name": "Wiki Retriever"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wiki-retriever",
+    "url": "https://clawhub.ai/skills/wiki-retriever",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wiki-retriever-811bf5c4e67b5a0c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI agent for wiki retriever tasks"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "urrrich",
+      "userId": "publishers:urrrich",
+      "displayName": "urrrich",
+      "image": "https://avatars.githubusercontent.com/u/1535955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 894,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771146770264,
+      "changelog": "- Initial release of wiki-retriever, an AI agent for efficient document retrieval from knowledge bases.\n- Implements a step-by-step workflow: first filter by file names, then confirm relevance by reading file contents.\n- Strictly limits retrieval to a maximum of 10 documents; prompts user for clarification if filtering exceeds this amount.\n- Gives priority to user-uploaded files and mandates content-based filtering before final selection.\n- Designed to integrate with the wiki_retriever agent configuration and supports runtime variable substitution.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:74b1ebe8f306df1fb4813859b43290c55bbf6dd7e3ad6e2642819dc9580e33f5"
+}

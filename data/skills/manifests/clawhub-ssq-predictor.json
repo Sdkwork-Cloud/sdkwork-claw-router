@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71937,
+  "uuid": "skill-clawhub-ssq-predictor",
+  "skillKey": "clawhub-ssq-predictor",
+  "name": "Ssq Predictor",
+  "summary": "双色球彩票预测工具，基于历史数据分析生成区间平衡的号码推荐。使用冷热号分析、遗漏值追踪、区间分布优化等算法，生成符合历史统计规律的预测号码。当用户需要双色球号码预测、彩票号码分析、或历史开奖数据统计时使用此Skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssq_predictor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ligo-gao",
+      "features": [
+        "双色球彩票预测工具，基于历史数据分析生成区间平衡的号码推荐。使用冷热号分析、遗漏值追踪、区间分布优化等算法，生成符合历史统计规律的预测号码。当用户需要双色球号码预测、彩票号码分析、或历史开奖."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssq-predictor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194260668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssq-predictor",
+      "url": "https://clawhub.ai/skills/ssq-predictor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssq-predictor",
+    "url": "https://clawhub.ai/skills/ssq-predictor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssq-predictor-557f185daa32998a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssq-predictor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssq-predictor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76255a98ce37903ff443dd038ab7d852be58378450f60e0ca4204734bd980aba",
+      "artifactSizeBytes": 2346
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T00:55:34.408Z"
+}

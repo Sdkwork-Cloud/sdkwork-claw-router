@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35942,
+  "uuid": "skill-clawhub-nist-compliance-assessment",
+  "skillKey": "clawhub-nist-compliance-assessment",
+  "name": "Nist Compliance Assessment",
+  "summary": "NIST Cybersecurity Framework (CSF) and SP 800-53 Rev 5 compliance assessment for network infrastructure. Maps device configuration against 6 control families...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nist_compliance_assessment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vahagn Madatyan",
+      "features": [
+        "NIST Cybersecurity Framework (CSF) and SP 800-53 Rev 5 compliance assessment for network infras.",
+        "Maps device configuration against 6 control families..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nist-compliance-assessment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74753362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nist-compliance-assessment",
+      "url": "https://clawhub.ai/skills/nist-compliance-assessment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nist-compliance-assessment",
+    "url": "https://clawhub.ai/skills/nist-compliance-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nist-compliance-assessment-31ee6914e8846348.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nist-compliance-assessment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nist-compliance-assessment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:175f53758c08bc36989ea75c8dcf0ac0ec6cf2977719ac64c9a0cb40f5ea1344",
+      "artifactSizeBytes": 2563
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:38:13.710Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/websocket-engineer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.websocket_engineer",
+  "skill": {
+    "id": 10659,
+    "skillKey": "clawhub-websocket-engineer",
+    "name": "Websocket Engineer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "websocket-engineer",
+    "url": "https://clawhub.ai/skills/websocket-engineer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/websocket-engineer-82e87bf59b7f8250.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when building real-time communication systems with WebSockets or Socket.IO. Invoke for bidirectional messaging, horizontal scaling with Redis, presence tracking, room management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2181,
+      "installsAllTime": 17,
+      "installsCurrent": 17,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769838828304,
+      "changelog": "Initial release of websocket-engineer—real-time WebSocket system expertise for scalable, low-latency applications.\n\n- Provides specialist guidance for building, scaling, and securing WebSocket and Socket.IO infrastructure.\n- Offers best practices and constraints for low-latency, reliable bidirectional messaging at scale.\n- Includes detailed reference workflow, output templates, and context-based documentation.\n- Covers advanced topics: Redis pub/sub scaling, sticky sessions, presence, room management, and security essentials.\n- Lists integrations with related backend, DevOps, and monitoring skills.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:abe835468282463d3be7003a34d23ec1d3376ec2cbe324ca70f6a95f1ed3aebe"
+}

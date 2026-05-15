@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50207,
+  "uuid": "skill-clawhub-session-health-monitor",
+  "skillKey": "clawhub-session-health-monitor",
+  "name": "Session Health Monitor",
+  "summary": "Context window health monitoring for OpenClaw agents — threshold warnings via Telegram, pre-compaction snapshots, and memory rotation.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_health_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "assistantheinrich-prog",
+      "features": [
+        "Context window health monitoring for OpenClaw agents — threshold warnings via Telegram, pre-com."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-health-monitor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261204934?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-health-monitor",
+      "url": "https://clawhub.ai/skills/session-health-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-health-monitor",
+    "url": "https://clawhub.ai/skills/session-health-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-health-monitor-f347f2ae14c4a22e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-health-monitor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-health-monitor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0aad8cb84442818b0c98593045a021d7f44745e011c8fbd43f0f83b3dae9782e",
+      "artifactSizeBytes": 2519
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T10:39:57.609Z"
+}

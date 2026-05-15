@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ilove323-outlook-calendar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ilove323_outlook_calendar",
+  "skill": {
+    "id": 66779,
+    "skillKey": "clawhub-ilove323-outlook-calendar",
+    "name": "Outlook Calendar (M365)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ilove323-outlook-calendar",
+    "url": "https://clawhub.ai/skills/ilove323-outlook-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ilove323-outlook-calendar-a21317edfa82d9b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "读取企业 Microsoft 365 Outlook 日历。当用户问任何涉及日程、会议、安排、工作、任务、事情的问题时触发，例如：今天有什么安排、这周有什么会、本月会议多少小时、明天要做什么、下周有啥工作、这周有什么事、有啥任务等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ilove323",
+      "userId": "s17abamd7n35v4xgykeg537p3h83g3qz",
+      "displayName": "ilove323",
+      "image": "https://avatars.githubusercontent.com/u/14835165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 560,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772192491758,
+      "changelog": "Microsoft 365 Outlook日历读取：MFA登录+Token缓存+OWA REST API，敏感信息存~/.outlook/",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9651a732c2fa11f840ed52de526a62e35c59065c8196272f0db213d504756b03"
+}

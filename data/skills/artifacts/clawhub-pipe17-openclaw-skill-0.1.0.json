@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pipe17-openclaw-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipe17_openclaw_skill",
+  "skill": {
+    "id": 17059,
+    "skillKey": "clawhub-pipe17-openclaw-skill",
+    "name": "Pipe17 Openclaw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipe17-openclaw-skill",
+    "url": "https://clawhub.ai/skills/pipe17-openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipe17-openclaw-skill-52256540dde4b479.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automation skill for Pipe17 Openclaw Skill."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "j-shao1",
+      "userId": "publishers:j-shao1",
+      "displayName": "j-shao1",
+      "image": "https://avatars.githubusercontent.com/u/1136770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 821,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770666704227,
+      "changelog": "Initial release of pipe17-openclaw-skill.\n\n- Adds support for searching and reading orders, shipping requests (shipments), fulfillments, and inventory via the Pipe17 Unified API.\n- Provides detailed setup instructions, including how to configure the required API key.\n- Documents available endpoints, query parameters, and typical usage examples for each core object.\n- Outlines common server-side filtering patterns for effective querying.\n- Includes cURL examples for common API operations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:635383a04e79cd496bbe3becaec320999208e98b1046a02d1222c636979722e7"
+}

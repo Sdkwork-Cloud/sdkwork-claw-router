@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-generator-free-china@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generator_free_china",
+  "skill": {
+    "id": 48071,
+    "skillKey": "clawhub-video-generator-free-china",
+    "name": "Video Generator Free China"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generator-free-china",
+    "url": "https://clawhub.ai/skills/video-generator-free-china",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generator-free-china-3797b4de804a98c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get ready-to-share videos ready to post, without touching a single slider. Upload your text or images (MP4, MOV, JPG, PNG, up to 200MB), say something like \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 105,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777944123892,
+      "changelog": "Initial release of Video Generator Free China.\n\n- Create 1080p videos for Chinese platforms by uploading text or images (MP4, MOV, JPG, PNG, up to 200MB).\n- Automatic setup with anonymous authentication—no technical skills or software needed.\n- Cloud-based GPU rendering delivers ready-to-share MP4s in 1-2 minutes.\n- Supports workflows like quick edits, batch processing, and iterative refinement with timeline state.\n- Simple commands for uploading, generating, exporting, checking credits, and monitoring status.\n- Error handling and user guidance for file limits, token issues, and export restrictions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12a95184f8e544a32526913d78e238b62ff96127d0adfc60027f9ff868045720"
+}

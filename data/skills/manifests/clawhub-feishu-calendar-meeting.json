@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62707,
+  "uuid": "skill-clawhub-feishu-calendar-meeting",
+  "skillKey": "clawhub-feishu-calendar-meeting",
+  "name": "feishu-calendar-meeting",
+  "summary": "创建飞书日历事件和视频会议。通过日历 API 创建，自动关联飞书视频会议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_calendar_meeting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sangy12",
+      "features": [
+        "创建飞书日历事件和视频会议。通过日历 API 创建，自动关联飞书视频会议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-calendar-meeting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13275801?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-calendar-meeting",
+      "url": "https://clawhub.ai/skills/feishu-calendar-meeting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-calendar-meeting",
+    "url": "https://clawhub.ai/skills/feishu-calendar-meeting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-calendar-meeting-5482947c614b1b39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-calendar-meeting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-calendar-meeting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af9ea2fafc712e63334af7cef29f43fafe238e506e5dd76a4609ed91cbe58220",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T12:26:15.197Z"
+}

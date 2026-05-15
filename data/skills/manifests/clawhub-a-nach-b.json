@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11623,
+  "uuid": "skill-clawhub-a-nach-b",
+  "skillKey": "clawhub-a-nach-b",
+  "name": "A nach B - AT Public Transport Service (VOR)",
+  "summary": "Austrian public transport (VOR AnachB) for all of Austria. Query real-time departures, search stations/stops, plan routes between locations, and check service disruptions. Use when asking about Austrian trains, buses, trams, metro (U-Bahn).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_nach_b",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "manmal",
+      "features": [
+        "Austrian public transport (VOR AnachB) for all of Austria",
+        "Query real-time departures, search stations/stops, plan routes between locations, and check ser.",
+        "Use when asking about Austrian trains, buses, trams, metro (U-Bahn), or directions involving pu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-nach-b@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142797?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-nach-b",
+      "url": "https://clawhub.ai/skills/a-nach-b"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-nach-b",
+    "url": "https://clawhub.ai/skills/a-nach-b",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-nach-b-4bd82248f75a83c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-nach-b@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-nach-b-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4f048cbd0557f8c891277f3ab8899b9ca76d6e294164e099fa28b324d1750a7",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-09T00:03:29.834Z"
+}

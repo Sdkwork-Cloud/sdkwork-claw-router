@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-automation-api@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_automation_api",
+  "skill": {
+    "id": 66851,
+    "skillKey": "clawhub-wechat-automation-api",
+    "name": "Wechat Automation Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-automation-api",
+    "url": "https://clawhub.ai/skills/wechat-automation-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-automation-api-c6f7c9c642cdbbe7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信发信能力：控制本机发送微信文本或图片。触发词：给[某人]发微信、通知[某人]、把这个用微信发给[某人]、用微信发个图片"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "niansen3-svg",
+      "userId": "s17a6a5f7n1qbmjwwvsarsh9fh83fjef",
+      "displayName": "niansen3-svg",
+      "image": "https://avatars.githubusercontent.com/u/266380453?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1775799312156,
+      "changelog": "No changes detected in this version.\n\n- Version number updated to 1.0.11.\n- No file or documentation changes found.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:215b89d8e26f71c1a92d80b1e8d40576f6718d6e543a3f11a0b6de6b2c126486"
+}

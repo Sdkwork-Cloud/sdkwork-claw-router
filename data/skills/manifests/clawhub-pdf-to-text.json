@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37641,
+  "uuid": "skill-clawhub-pdf-to-text",
+  "skillKey": "clawhub-pdf-to-text",
+  "name": "PDF to Text",
+  "summary": "Extract plain text from PDF documents using the MinerU API. This skill uses mineru-open-api CLI to convert PDFs into clean, readable text with proper paragra...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_to_text",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "veeicwgy",
+      "features": [
+        "Extract plain text from PDF documents using the MinerU API",
+        "This skill uses mineru-open-api CLI to convert PDFs into clean, readable text with proper parag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-to-text@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108802128?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-to-text",
+      "url": "https://clawhub.ai/skills/pdf-to-text"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-to-text",
+    "url": "https://clawhub.ai/skills/pdf-to-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-to-text-2770e5162b2a8c86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-to-text@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-to-text-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd369196c55034b2bb3dd563a490cb342dc2cad39a949527cbf9b0770bfda715",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T13:12:42.290Z"
+}

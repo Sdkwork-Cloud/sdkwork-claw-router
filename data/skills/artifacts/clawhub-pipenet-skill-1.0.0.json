@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pipenet-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipenet_skill",
+  "skill": {
+    "id": 67029,
+    "skillKey": "clawhub-pipenet-skill",
+    "name": "Pipenet-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipenet-skill",
+    "url": "https://clawhub.ai/skills/pipenet-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipenet-skill-0d90a191b11a61bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分析和处理TOML格式的管道网络，包括转换描述、加载求解及结构与运行状态可视化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spiderdking",
+      "userId": "s179kwqwb9apnp3sywt37gd7fx83hn4x",
+      "displayName": "SpiderDKing",
+      "image": "https://avatars.githubusercontent.com/u/53245582?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774376071924,
+      "changelog": "- Initial release of PipenetSkill.\n- Supports converting TOML-format pipeline network descriptions to TOML files.\n- Enables loading, solving, and analyzing pipeline networks from TOML files.\n- Provides visualization of pipeline networks, displaying structure and operational status.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc9eb10a94625d2f70b9b2d9858778b7245e40430edbf957300a632567b72919"
+}

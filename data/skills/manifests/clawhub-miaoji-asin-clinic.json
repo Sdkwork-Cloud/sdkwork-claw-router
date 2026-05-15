@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64796,
+  "uuid": "skill-clawhub-miaoji-asin-clinic",
+  "skillKey": "clawhub-miaoji-asin-clinic",
+  "name": "Miaoji Asin Clinic",
+  "summary": "基于ASIN和品类，快速诊断亚马逊Listing五维健康指数并智能排序修复优先级，提供详细分析与个性化修复方案。",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miaoji_asin_clinic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangM-A3",
+      "features": [
+        "基于ASIN和品类，快速诊断亚马逊Listing五维健康指数并智能排序修复优先级，提供详细分析与个性化修复方案。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/miaoji-asin-clinic@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274818589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "miaoji-asin-clinic",
+      "url": "https://clawhub.ai/skills/miaoji-asin-clinic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miaoji-asin-clinic",
+    "url": "https://clawhub.ai/skills/miaoji-asin-clinic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miaoji-asin-clinic-9a412de057ef6be7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/miaoji-asin-clinic@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-miaoji-asin-clinic-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5bf4a6851b9e72da11b414bef7d3a63a070360a0fdf7e4d67bb7dc19a80b5765",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T15:27:06.294Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37130,
+  "uuid": "skill-clawhub-totalexpert",
+  "skillKey": "clawhub-totalexpert",
+  "name": "Totalexpert",
+  "summary": "Total Expert integration. Manage data, records, and automate workflows. Use when the user wants to interact with Total Expert data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.totalexpert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Total Expert integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Total Expert data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/totalexpert@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "totalexpert",
+      "url": "https://clawhub.ai/skills/totalexpert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "totalexpert",
+    "url": "https://clawhub.ai/skills/totalexpert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/totalexpert-c5fa0d016227ae7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/totalexpert@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-totalexpert-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a23e3803ebd04b2a32024a8029d906802408b6cba885746b5ef8d67d3ba07b3e",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:54:29.706Z"
+}

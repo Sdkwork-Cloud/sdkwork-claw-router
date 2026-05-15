@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62032,
+  "uuid": "skill-clawhub-windows-api-monitor",
+  "skillKey": "clawhub-windows-api-monitor",
+  "name": "Windows Api Monitor",
+  "summary": "监控并统计Windows环境下OpenClaw API调用，支持实时分析、历史追踪及阈值告警，生成多维度使用报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_api_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guowaa223",
+      "features": [
+        "监控并统计Windows环境下OpenClaw API调用，支持实时分析、历史追踪及阈值告警，生成多维度使用报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/windows-api-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140813209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "windows-api-monitor",
+      "url": "https://clawhub.ai/skills/windows-api-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-api-monitor",
+    "url": "https://clawhub.ai/skills/windows-api-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-api-monitor-a3afa0621825d82f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/windows-api-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-windows-api-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c77ffd0ba1b310692beb0b9efda3216c6cd4caec752d2a99818aef817792a113",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T04:13:35.322Z"
+}

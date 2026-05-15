@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42668,
+  "uuid": "skill-clawhub-dhl",
+  "skillKey": "clawhub-dhl",
+  "name": "Dhl",
+  "summary": "DHL is a leading global express delivery service, part of DPDHL Group, covering 220+ countries with core expertise in international logistics and green solut...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dhl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "DHL is a leading global express delivery service, part of DPDHL Group, covering 220+ countries."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dhl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dhl",
+      "url": "https://clawhub.ai/skills/dhl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dhl",
+    "url": "https://clawhub.ai/skills/dhl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dhl-452ddac3092b5a85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dhl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dhl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a851d4ad95eb82e0dc8883fbae1a045a55306ec467eaf2c194c6058f8f8dccc6",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T19:04:03.486Z"
+}

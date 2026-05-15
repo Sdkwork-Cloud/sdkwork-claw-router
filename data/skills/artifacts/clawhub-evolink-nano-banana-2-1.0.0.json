@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evolink-nano-banana-2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evolink_nano_banana_2",
+  "skill": {
+    "id": 50185,
+    "skillKey": "clawhub-evolink-nano-banana-2",
+    "name": "Nano Banana 2 — AI Image Generation (Gemini 3.1 Flash Image, Google, Evolink)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evolink-nano-banana-2",
+    "url": "https://clawhub.ai/skills/evolink-nano-banana-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evolink-nano-banana-2-05e925c0faa76464.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Nano Banana 2 — AI image generation powered by Google Gemini 3.1 Flash. Fast, versatile text-to-image and image editing via Evolink API. One API key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evolinkai",
+      "userId": "s176k82x7tm60j2kx309p7evxs83j3z7",
+      "displayName": "EvolinkAI",
+      "image": "https://avatars.githubusercontent.com/u/253253881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 775,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772125899390,
+      "changelog": "Initial release of Nano Banana 2 — fast, versatile AI image generation using Google Gemini 3.1 Flash, via Evolink API.\n\n- One-command install for quick text-to-image and image editing.\n- Automatic guidance based on user intent and available context.\n- Async image generation flow with real-time progress polling and clear error handling.\n- Supports both creative generation and image edits with upload/reference workflows.\n- Concise, context-aware greetings and onboarding for first-time users.\n- Full documentation for API keys, setup, security, and troubleshooting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7789ba2629d4d012bd07a876850a784cdb10c27dd14900e501281717c99488d7"
+}

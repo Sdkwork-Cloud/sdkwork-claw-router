@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66424,
+  "uuid": "skill-clawhub-ctf-solver-claude",
+  "skillKey": "clawhub-ctf-solver-claude",
+  "name": "CTF-SOLVER",
+  "summary": "仅在用户明确使用 /ctf-solver 指令或显式说\"调用CTF技能/skill\"时才触发，不自动响应任何CTF相关关键词。 本技能以夺取flag为唯一目标，调用大量工具、深度分析题目，给出完整的解题过程和可执行的攻击链。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctf_solver_claude",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nagisa.",
+      "features": [
+        "仅在用户明确使用 /ctf-solver 指令或显式说\"调用CTF技能/skill\"时才触发，不自动响应任何CTF相关关键词。 本技能以夺取flag为唯一目标，调用大量工具、深度分析题目，给."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ctf-solver-claude@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214199851?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ctf-solver-claude",
+      "url": "https://clawhub.ai/skills/ctf-solver-claude"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctf-solver-claude",
+    "url": "https://clawhub.ai/skills/ctf-solver-claude",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctf-solver-claude-13bce59234490762.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ctf-solver-claude@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ctf-solver-claude-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e2a896424028f1192114d5c69bc8797cecc7b7b0d8f04b6584e8e2273b1c946",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T07:50:19.816Z"
+}

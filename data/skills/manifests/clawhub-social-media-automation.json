@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20564,
+  "uuid": "skill-clawhub-social-media-automation",
+  "skillKey": "clawhub-social-media-automation",
+  "name": "Social Media Automation",
+  "summary": "Manage multiple social media platforms to automate posting, scheduling, draft and template management, timeline viewing, interactions, and analytics via CLI.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_media_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HiroFumiko",
+      "features": [
+        "Manage multiple social media platforms to automate posting, scheduling, draft and template mana."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/social-media-automation@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45387273?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "social-media-automation",
+      "url": "https://clawhub.ai/skills/social-media-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-media-automation",
+    "url": "https://clawhub.ai/skills/social-media-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-media-automation-f647259c10d4efed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/social-media-automation@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-social-media-automation-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69616b4a281f7b1159c8867431d51f845a0371a122ca1d2ebbe676d5ec23825d",
+      "artifactSizeBytes": 2047
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T19:30:05.965Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23933,
+  "uuid": "skill-clawhub-jz-humanizer",
+  "skillKey": "clawhub-jz-humanizer",
+  "name": "Humanizer by JZ",
+  "summary": "Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jz_humanizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jzOcb",
+      "features": [
+        "Remove signs of AI-generated writing from text",
+        "Use when editing or reviewing text to make it sound more natural and human-written",
+        "Based on Wikipedia's comp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jz-humanizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258660657?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jz-humanizer",
+      "url": "https://clawhub.ai/skills/jz-humanizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jz-humanizer",
+    "url": "https://clawhub.ai/skills/jz-humanizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jz-humanizer-0f3adce48f44f8e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jz-humanizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jz-humanizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f132758ce863468d78c54f1b62dad8de199d06b16ef1f2ce5ba695becdaacac6",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T03:32:51.793Z"
+}

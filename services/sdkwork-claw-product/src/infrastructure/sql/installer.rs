@@ -12,6 +12,10 @@ use crate::infrastructure::sql::app_seed::{
     bundled_app_seed_payload, import_postgres_app_seed, import_sqlite_app_seed,
     postgres_app_seed_complete, sqlite_app_seed_complete,
 };
+use crate::infrastructure::sql::course_seed::{
+    bundled_course_seed_payload, import_postgres_course_seed, import_sqlite_course_seed,
+    postgres_course_seed_complete, sqlite_course_seed_complete,
+};
 use crate::infrastructure::sql::forum_seed::{
     bundled_forum_seed_payload, import_postgres_forum_seed, import_sqlite_forum_seed,
     postgres_forum_seed_complete, sqlite_forum_seed_complete,
@@ -34,6 +38,13 @@ pub const DEFAULT_INSTALL_ENVIRONMENT: &str = "production";
 pub const ENV_INSTALL_ENVIRONMENT: &str = "SDKWORK_CLAW_INSTALL_ENVIRONMENT";
 pub const ENV_INSTALL_SEED_PROFILE: &str = "SDKWORK_CLAW_INSTALL_SEED_PROFILE";
 pub const ENV_MODELS_CATALOG_ROOT: &str = "SDKWORK_MODELS_CATALOG_ROOT";
+const DEFAULT_IAM_TENANT_ID: &str = "10";
+const DEFAULT_IAM_TENANT_CODE: &str = "default";
+const DEFAULT_IAM_TENANT_NAME: &str = "Default Tenant";
+const DEFAULT_IAM_ORGANIZATION_ID: &str = "20";
+const DEFAULT_IAM_ORGANIZATION_CODE: &str = "root";
+const DEFAULT_IAM_ORGANIZATION_NAME: &str = "Root Organization";
+const DEFAULT_IAM_ORGANIZATION_PATH: &str = "/20";
 const MAX_REFRESH_SOURCE_LEN: usize = 64;
 const MAX_REFRESH_MODE_LEN: usize = 64;
 const MAX_REFRESH_VENDOR_CODES: usize = 32;
@@ -394,6 +405,7 @@ impl DatabaseInstaller {
             }
         };
         if item.synced && full_catalog_refresh {
+            self.import_installation_support_seeds().await?;
             self.mark_installed_with_options(&install_options, catalog_version.as_str())
                 .await?;
         }
@@ -522,6 +534,26 @@ impl DatabaseInstaller {
             }
             InstallerBackend::Postgres(pool) => {
                 mark_postgres_installed_with_catalog_version(pool, options, catalog_version).await?
+            }
+        }
+        Ok(())
+    }
+
+    async fn import_installation_support_seeds(&self) -> Result<(), DatabaseInstallError> {
+        match &self.backend {
+            InstallerBackend::Sqlite(pool) => {
+                import_sqlite_bundled_app_seed(pool).await?;
+                import_sqlite_bundled_skills_seed(pool).await?;
+                import_sqlite_bundled_course_seed(pool).await?;
+                import_sqlite_bundled_forum_seed(pool).await?;
+                import_sqlite_default_iam_subject_seed(pool).await?;
+            }
+            InstallerBackend::Postgres(pool) => {
+                import_postgres_bundled_app_seed(pool).await?;
+                import_postgres_bundled_skills_seed(pool).await?;
+                import_postgres_bundled_course_seed(pool).await?;
+                import_postgres_bundled_forum_seed(pool).await?;
+                import_postgres_default_iam_subject_seed(pool).await?;
             }
         }
         Ok(())
@@ -1122,10 +1154,39 @@ async fn sqlite_status(
     if !sqlite_skills_seed_complete(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
+    if !sqlite_course_seed_complete(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
     if !sqlite_forum_seed_complete(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
-
+    if !sqlite_default_iam_subject_seed_complete(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !sqlite_seed_migration_payload_current(
+        pool,
+        "course",
+        CURRENT_SCHEMA_VERSION,
+        bundled_course_seed_payload()
+            .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?
+            .as_str(),
+    )
+    .await?
+    {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !sqlite_seed_migration_payload_current(
+        pool,
+        "forum",
+        CURRENT_SCHEMA_VERSION,
+        bundled_forum_seed_payload()
+            .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?
+            .as_str(),
+    )
+    .await?
+    {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
     Ok(InstallationStatus::Installed)
 }
 
@@ -1224,10 +1285,39 @@ async fn postgres_status(
     if !postgres_skills_seed_complete(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
+    if !postgres_course_seed_complete(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
     if !postgres_forum_seed_complete(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
-
+    if !postgres_default_iam_subject_seed_complete(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !postgres_seed_migration_payload_current(
+        pool,
+        "course",
+        CURRENT_SCHEMA_VERSION,
+        bundled_course_seed_payload()
+            .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?
+            .as_str(),
+    )
+    .await?
+    {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !postgres_seed_migration_payload_current(
+        pool,
+        "forum",
+        CURRENT_SCHEMA_VERSION,
+        bundled_forum_seed_payload()
+            .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?
+            .as_str(),
+    )
+    .await?
+    {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
     Ok(InstallationStatus::Installed)
 }
 
@@ -1292,7 +1382,9 @@ async fn install_sqlite(
     .await?;
     import_sqlite_bundled_app_seed(pool).await?;
     import_sqlite_bundled_skills_seed(pool).await?;
+    import_sqlite_bundled_course_seed(pool).await?;
     import_sqlite_bundled_forum_seed(pool).await?;
+    import_sqlite_default_iam_subject_seed(pool).await?;
     mark_sqlite_installed(pool).await?;
     Ok(())
 }
@@ -1331,7 +1423,9 @@ async fn install_postgres(
     .await?;
     import_postgres_bundled_app_seed(pool).await?;
     import_postgres_bundled_skills_seed(pool).await?;
+    import_postgres_bundled_course_seed(pool).await?;
     import_postgres_bundled_forum_seed(pool).await?;
+    import_postgres_default_iam_subject_seed(pool).await?;
     mark_postgres_installed(pool).await?;
     Ok(())
 }
@@ -1380,13 +1474,35 @@ async fn import_postgres_bundled_skills_seed(pool: &PgPool) -> Result<(), Databa
     Ok(())
 }
 
+async fn import_sqlite_bundled_course_seed(pool: &SqlitePool) -> Result<(), DatabaseInstallError> {
+    let payload = bundled_course_seed_payload()
+        .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?;
+    record_sqlite_migration_started(pool, "course", CURRENT_SCHEMA_VERSION, payload.as_str())
+        .await?;
+    import_sqlite_course_seed(pool).await?;
+    record_sqlite_migration_completed(pool, "course", CURRENT_SCHEMA_VERSION, payload.as_str())
+        .await?;
+    Ok(())
+}
+
+async fn import_postgres_bundled_course_seed(pool: &PgPool) -> Result<(), DatabaseInstallError> {
+    let payload = bundled_course_seed_payload()
+        .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?;
+    record_postgres_migration_started(pool, "course", CURRENT_SCHEMA_VERSION, payload.as_str())
+        .await?;
+    import_postgres_course_seed(pool).await?;
+    record_postgres_migration_completed(pool, "course", CURRENT_SCHEMA_VERSION, payload.as_str())
+        .await?;
+    Ok(())
+}
+
 async fn import_sqlite_bundled_forum_seed(pool: &SqlitePool) -> Result<(), DatabaseInstallError> {
     let payload = bundled_forum_seed_payload()
         .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?;
-    record_sqlite_migration_started(pool, "forum-seed", CURRENT_SCHEMA_VERSION, payload.as_str())
+    record_sqlite_migration_started(pool, "forum", CURRENT_SCHEMA_VERSION, payload.as_str())
         .await?;
     import_sqlite_forum_seed(pool).await?;
-    record_sqlite_migration_completed(pool, "forum-seed", CURRENT_SCHEMA_VERSION, payload.as_str())
+    record_sqlite_migration_completed(pool, "forum", CURRENT_SCHEMA_VERSION, payload.as_str())
         .await?;
     Ok(())
 }
@@ -1394,17 +1510,72 @@ async fn import_sqlite_bundled_forum_seed(pool: &SqlitePool) -> Result<(), Datab
 async fn import_postgres_bundled_forum_seed(pool: &PgPool) -> Result<(), DatabaseInstallError> {
     let payload = bundled_forum_seed_payload()
         .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?;
-    record_postgres_migration_started(pool, "forum-seed", CURRENT_SCHEMA_VERSION, payload.as_str())
+    record_postgres_migration_started(pool, "forum", CURRENT_SCHEMA_VERSION, payload.as_str())
         .await?;
     import_postgres_forum_seed(pool).await?;
-    record_postgres_migration_completed(
-        pool,
-        "forum-seed",
-        CURRENT_SCHEMA_VERSION,
-        payload.as_str(),
-    )
-    .await?;
+    record_postgres_migration_completed(pool, "forum", CURRENT_SCHEMA_VERSION, payload.as_str())
+        .await?;
     Ok(())
+}
+
+async fn import_sqlite_default_iam_subject_seed(
+    pool: &SqlitePool,
+) -> Result<(), DatabaseInstallError> {
+    sqlite_upsert_default_iam_subject(pool).await?;
+    Ok(())
+}
+
+async fn import_postgres_default_iam_subject_seed(
+    pool: &PgPool,
+) -> Result<(), DatabaseInstallError> {
+    postgres_upsert_default_iam_subject(pool).await?;
+    Ok(())
+}
+
+async fn sqlite_default_iam_subject_seed_complete(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
+    let count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM iam_tenant t
+        JOIN iam_organization o ON o.tenant_id = t.id
+        WHERE t.id = ?
+          AND t.code = ?
+          AND t.status = 'active'
+          AND o.id = ?
+          AND o.code = ?
+          AND o.status = 'active'
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_TENANT_CODE)
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
+    .bind(DEFAULT_IAM_ORGANIZATION_CODE)
+    .fetch_one(pool)
+    .await?;
+    Ok(count == 1)
+}
+
+async fn postgres_default_iam_subject_seed_complete(pool: &PgPool) -> Result<bool, sqlx::Error> {
+    let count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM iam_tenant t
+        JOIN iam_organization o ON o.tenant_id = t.id
+        WHERE t.id = $1
+          AND t.code = $2
+          AND t.status = 'active'
+          AND o.id = $3
+          AND o.code = $4
+          AND o.status = 'active'
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_TENANT_CODE)
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
+    .bind(DEFAULT_IAM_ORGANIZATION_CODE)
+    .fetch_one(pool)
+    .await?;
+    Ok(count == 1)
 }
 
 async fn sqlite_table_exists(pool: &SqlitePool, table_name: &str) -> Result<bool, sqlx::Error> {
@@ -2255,6 +2426,103 @@ async fn create_postgres_system_tables(pool: &PgPool) -> Result<(), sqlx::Error>
     Ok(())
 }
 
+async fn sqlite_upsert_default_iam_subject(pool: &SqlitePool) -> Result<(), sqlx::Error> {
+    let now = current_utc_timestamp_string();
+    sqlx::query(
+        r#"
+        INSERT INTO iam_tenant
+            (id, code, name, status, created_at, updated_at)
+        VALUES
+            (?, ?, ?, 'active', ?, ?)
+        ON CONFLICT(id) DO UPDATE SET
+            code = excluded.code,
+            name = excluded.name,
+            status = excluded.status,
+            updated_at = excluded.updated_at
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_TENANT_CODE)
+    .bind(DEFAULT_IAM_TENANT_NAME)
+    .bind(&now)
+    .bind(&now)
+    .execute(pool)
+    .await?;
+
+    sqlx::query(
+        r#"
+        INSERT INTO iam_organization
+            (id, tenant_id, parent_id, code, name, path, status, created_at, updated_at)
+        VALUES
+            (?, ?, NULL, ?, ?, ?, 'active', ?, ?)
+        ON CONFLICT(id) DO UPDATE SET
+            tenant_id = excluded.tenant_id,
+            parent_id = excluded.parent_id,
+            code = excluded.code,
+            name = excluded.name,
+            path = excluded.path,
+            status = excluded.status,
+            updated_at = excluded.updated_at
+        "#,
+    )
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_ORGANIZATION_CODE)
+    .bind(DEFAULT_IAM_ORGANIZATION_NAME)
+    .bind(DEFAULT_IAM_ORGANIZATION_PATH)
+    .bind(&now)
+    .bind(&now)
+    .execute(pool)
+    .await?;
+    Ok(())
+}
+
+async fn postgres_upsert_default_iam_subject(pool: &PgPool) -> Result<(), sqlx::Error> {
+    sqlx::query(
+        r#"
+        INSERT INTO iam_tenant
+            (id, code, name, status, created_at, updated_at)
+        VALUES
+            ($1, $2, $3, 'active', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+        ON CONFLICT(id) DO UPDATE SET
+            code = excluded.code,
+            name = excluded.name,
+            status = excluded.status,
+            updated_at = excluded.updated_at
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_TENANT_CODE)
+    .bind(DEFAULT_IAM_TENANT_NAME)
+    .execute(pool)
+    .await?;
+
+    sqlx::query(
+        r#"
+        INSERT INTO iam_organization
+            (id, tenant_id, parent_id, code, name, path, status, created_at, updated_at)
+        VALUES
+            ($1, $2, NULL, $3, $4, $5, 'active', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+        ON CONFLICT(id) DO UPDATE SET
+            tenant_id = excluded.tenant_id,
+            parent_id = excluded.parent_id,
+            code = excluded.code,
+            name = excluded.name,
+            path = excluded.path,
+            status = excluded.status,
+            updated_at = excluded.updated_at
+        "#,
+    )
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_ORGANIZATION_CODE)
+    .bind(DEFAULT_IAM_ORGANIZATION_NAME)
+    .bind(DEFAULT_IAM_ORGANIZATION_PATH)
+    .execute(pool)
+    .await?;
+    Ok(())
+}
+
 async fn upsert_sqlite_installing_state(
     pool: &SqlitePool,
     options: &DatabaseInstallOptions,
@@ -2519,6 +2787,58 @@ async fn record_postgres_migration_completed(
     .execute(pool)
     .await?;
     Ok(())
+}
+
+async fn sqlite_seed_migration_payload_current(
+    pool: &SqlitePool,
+    key_prefix: &str,
+    version: &str,
+    payload: &str,
+) -> Result<bool, sqlx::Error> {
+    let expected_checksum = sha256_hex(payload);
+    let migration_key = migration_key(key_prefix, version);
+    let row = sqlx::query(
+        r#"
+        SELECT checksum, status
+        FROM system_schema_migration
+        WHERE migration_key = ?
+        "#,
+    )
+    .bind(migration_key)
+    .fetch_optional(pool)
+    .await?;
+    Ok(row
+        .map(|row| {
+            row.get::<String, _>("checksum") == expected_checksum
+                && row.get::<String, _>("status") == "completed"
+        })
+        .unwrap_or(false))
+}
+
+async fn postgres_seed_migration_payload_current(
+    pool: &PgPool,
+    key_prefix: &str,
+    version: &str,
+    payload: &str,
+) -> Result<bool, sqlx::Error> {
+    let expected_checksum = sha256_hex(payload);
+    let migration_key = migration_key(key_prefix, version);
+    let row = sqlx::query(
+        r#"
+        SELECT checksum, status
+        FROM system_schema_migration
+        WHERE migration_key = $1
+        "#,
+    )
+    .bind(migration_key)
+    .fetch_optional(pool)
+    .await?;
+    Ok(row
+        .map(|row| {
+            row.get::<String, _>("checksum") == expected_checksum
+                && row.get::<String, _>("status") == "completed"
+        })
+        .unwrap_or(false))
 }
 
 fn postgres_schema_statements() -> Vec<String> {

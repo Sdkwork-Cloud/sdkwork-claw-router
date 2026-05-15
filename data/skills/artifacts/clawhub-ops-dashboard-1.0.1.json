@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ops-dashboard@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ops_dashboard",
+  "skill": {
+    "id": 11526,
+    "skillKey": "clawhub-ops-dashboard",
+    "name": "Ops Dashboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ops-dashboard",
+    "url": "https://clawhub.ai/skills/ops-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ops-dashboard-2db631b4196400e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gather operational signals (disk usage, git status, recent commits, and resources) so you can answer \"How is the Clawdy infrastructure doing?\" without manually running multiple checks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crimsondevil333333",
+      "userId": "s1744z3a1b8mpdjzvrgn6tz82985gp0p",
+      "displayName": "CrimsonDevil333333",
+      "image": "https://avatars.githubusercontent.com/u/49252920?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1916,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770279775011,
+      "changelog": "- Expanded SKILL.md with detailed CLI usage instructions and option explanations.\n- Added sections on metrics, sample command usage, and descriptions for each reported signal.\n- README.md or related documentation updated to improve clarity for new users.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4c705f76b09467f5456e40da77166c9c528d868c030c5b15ec84ddf05814cd23"
+}

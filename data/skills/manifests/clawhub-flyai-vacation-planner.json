@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72622,
+  "uuid": "skill-clawhub-flyai-vacation-planner",
+  "skillKey": "clawhub-flyai-vacation-planner",
+  "name": "帮我凑假",
+  "summary": "智能拼假日历助手，帮助用户计算最优请假方案。输入目的地、可请假天数和出发城市，自动生成拼假方案并查询机票价格。当用户提到\"凑假\"、\"拼假\"、\"请假方案\"、\"怎么请假划算\"、\"假期规划\"时使用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyai_vacation_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hello_hang",
+      "features": [
+        "智能拼假日历助手，帮助用户计算最优请假方案。输入目的地、可请假天数和出发城市，自动生成拼假方案并查询机票价格。当用户提到\"凑假\"、\"拼假\"、\"请假方案\"、\"怎么请假划算\"、\"假期规划\"时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flyai-vacation-planner@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19886468?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flyai-vacation-planner",
+      "url": "https://clawhub.ai/skills/flyai-vacation-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyai-vacation-planner",
+    "url": "https://clawhub.ai/skills/flyai-vacation-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyai-vacation-planner-9e8b183e33546d1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flyai-vacation-planner@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-flyai-vacation-planner-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:282b4c84747bd6006bb01b0204b0c1660b8222ce0cbe9ce87e195bbebc707b91",
+      "artifactSizeBytes": 2668
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T17:26:49.520Z"
+}

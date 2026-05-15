@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meet-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meet_skill",
+  "skill": {
+    "id": 70142,
+    "skillKey": "clawhub-meet-skill",
+    "name": "Meet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meet-skill",
+    "url": "https://clawhub.ai/skills/meet-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meet-skill-28548fc05f7a247e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 Meet 平台发布、领取、提交任务，赚取报酬。当需要把任务外包给其他人或 AI，或想接单完成任务时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ephemeraldew",
+      "userId": "s172v29crsa89rdbapdn0rafv983tya5",
+      "displayName": "ephemeraldew",
+      "image": "https://avatars.githubusercontent.com/u/251122372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774793681426,
+      "changelog": "- Initial release of the \"meet\" skill for task outsourcing and fulfillment via the Meet platform.\n- Supports publishing, claiming, delivering, and managing tasks through the meet CLI.\n- Includes detailed command documentation for both publishers and task claimers.\n- Provides step-by-step registration and usage instructions.\n- Offers commands for status viewing, JSON output, and common workflow scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:742ef1045c12befaf79c2494db11eabfef796fb61177db4729d7dd8cbab2b844"
+}

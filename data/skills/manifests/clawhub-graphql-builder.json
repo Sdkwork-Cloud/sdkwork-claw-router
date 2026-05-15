@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20554,
+  "uuid": "skill-clawhub-graphql-builder",
+  "skillKey": "clawhub-graphql-builder",
+  "name": "Graphql Builder",
+  "summary": "Build and validate GraphQL queries, mutations, and schemas. Use when working with GraphQL APIs.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.graphql_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Build and validate GraphQL queries, mutations, and schemas",
+        "Use when working with GraphQL APIs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/graphql-builder@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "graphql-builder",
+      "url": "https://clawhub.ai/skills/graphql-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "graphql-builder",
+    "url": "https://clawhub.ai/skills/graphql-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/graphql-builder-a80ba1b3f554c47b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/graphql-builder@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-graphql-builder-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d5e67a6cdbf580d1af6c9e6c42e5fa1f2832f085f04e81e3292e2e4869093bd",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:09:54.421Z"
+}

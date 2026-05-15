@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-collab@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_collab",
+  "skill": {
+    "id": 15877,
+    "skillKey": "clawhub-agent-collab",
+    "name": "Agent Collaboration Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-collab",
+    "url": "https://clawhub.ai/skills/agent-collab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-collab-2ac0a99218a09698.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent collaboration framework for OpenClaw. Three modes: Dispatch (one-shot tasks via spawn), Collaborate (multi-turn cross-department via persistent s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kylin19860916",
+      "userId": "publishers:kylin19860916",
+      "displayName": "kylin19860916",
+      "image": "https://avatars.githubusercontent.com/u/229595532?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 846,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773540889457,
+      "changelog": "v1.0: Three-mode collaboration (Dispatch/Collaborate/Direct Chat) + org hierarchy + HANDOFF push mechanism",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25d648ee038133e88ea074bb7fb2a417aeb05d4832ff7908d75657f55a6fb2c2"
+}

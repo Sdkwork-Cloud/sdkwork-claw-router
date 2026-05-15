@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73720,
+  "uuid": "skill-clawhub-habit-education",
+  "skillKey": "clawhub-habit-education",
+  "name": "习惯养成教育追踪系统",
+  "summary": "家庭教育习惯养成追踪与教育付出记录系统。当用户提及习惯养成、坏习惯干预、记录孩子的行为变化、分析干预效果、教育付出总结、孩子内驱力建立等话题时激活。用于替代用户重复描述背景，直接进行习惯记录、分析和查询。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.habit_education",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tbook",
+      "features": [
+        "家庭教育习惯养成追踪与教育付出记录系统。当用户提及习惯养成、坏习惯干预、记录孩子的行为变化、分析干预效果、教育付出总结、孩子内驱力建立等话题时激活。用于替代用户重复描述背景，直接进行习惯记录."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/habit-education@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204369242?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "habit-education",
+      "url": "https://clawhub.ai/skills/habit-education"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "habit-education",
+    "url": "https://clawhub.ai/skills/habit-education",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/habit-education-2081d5cfc2753574.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/habit-education@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-habit-education-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07eae8070c2a0c09d460074ae142c454450145be91b4051dea2a9cc12f2614fd",
+      "artifactSizeBytes": 2626
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T08:46:47.958Z"
+}

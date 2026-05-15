@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gift-genius@4.0.0",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gift_genius",
+  "skill": {
+    "id": 14195,
+    "skillKey": "clawhub-gift-genius",
+    "name": "Gift Genius"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gift-genius",
+    "url": "https://clawhub.ai/skills/gift-genius",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gift-genius-ad3311e822893fcf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Location-aware Valentine's Day gift finder. Routes US users to premium flowers (UrbanStems), Singapore users to wellness supplements (Avea Life). Returns curated picks with Decision Packs — no decision fatigue, just 2-3 perfect options."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evoleinik",
+      "userId": "publishers:evoleinik",
+      "displayName": "evoleinik",
+      "image": "https://avatars.githubusercontent.com/u/3266008?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1619,
+      "installsAllTime": 4,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 19
+    },
+    "latestVersion": {
+      "version": "4.0.0",
+      "createdAt": 1770893350130,
+      "changelog": "v4.0.0: MAJOR - Added Daniel Wellington watches (182) and Beardbrand men's grooming (67). Now 8 gift categories with 2,099 products across 12 merchants. Full Valentine's gift suite for him & her.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8ed569f3b6cc38612cf2767c6e415474ce673a08d13b1774de4bf4b8e7c7ca1a"
+}

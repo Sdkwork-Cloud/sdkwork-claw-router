@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/echoic-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.echoic_memory",
+  "skill": {
+    "id": 45955,
+    "skillKey": "clawhub-echoic-memory",
+    "name": "Echoic Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "echoic-memory",
+    "url": "https://clawhub.ai/skills/echoic-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/echoic-memory-fe4763300f6676d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Distill a beloved person who has left your life into an AI Skill. Import chat history, photos, videos, voice memos, and social media to preserve their person..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quqicolour",
+      "userId": "s17c0fcd81aeba7prwh2gqky1d840fx9",
+      "displayName": "whalehat",
+      "image": "https://avatars.githubusercontent.com/u/62699058?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775038659398,
+      "changelog": "EchoMemory - Remembering Those Who Left\n\"Death is not the end; forgetting is.\" \n\"As long as you remember, he/she is still here.\" \nEchoMemory is an AI Skill project based on the OpenClaw/Claude Code. It enables you to transform the beloved ones who have passed away - whether they are deceased relatives, distant friends, or important people you have lost contact with - into a conversational AI Skill. \nBy importing chat records, photos, videos, voice messages and text descriptions, we can recreate ta's personality, speaking style and emotional expression, allowing ta to continue existing in your life in another form.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:03ad2a51c0bc53c41bc9693928309bdaddc77b7e3bea50f514b8204cccd02424"
+}

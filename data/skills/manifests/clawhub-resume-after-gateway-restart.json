@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56594,
+  "uuid": "skill-clawhub-resume-after-gateway-restart",
+  "skillKey": "clawhub-resume-after-gateway-restart",
+  "name": "Resume After Gateway Restart",
+  "summary": "Reliably resume work after `openclaw gateway restart` (or when you must restart the OpenClaw gateway mid-task). Uses durable one-shot cron `agentTurn` jobs (...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_after_gateway_restart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bobby Lindsey",
+      "features": [
+        "Reliably resume work after `openclaw gateway restart` (or when you must restart the OpenClaw ga.",
+        "Uses durable one-shot cron `agentTurn` jobs (..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resume-after-gateway-restart@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10553845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resume-after-gateway-restart",
+      "url": "https://clawhub.ai/skills/resume-after-gateway-restart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-after-gateway-restart",
+    "url": "https://clawhub.ai/skills/resume-after-gateway-restart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-after-gateway-restart-57d54d5a9385cb9f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resume-after-gateway-restart@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-resume-after-gateway-restart-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20296524f67b60d189635dc58109baa04c62dcce15d51b73b5039c1f96c3782d",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:35:07.758Z"
+}

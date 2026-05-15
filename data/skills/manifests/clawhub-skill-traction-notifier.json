@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49943,
+  "uuid": "skill-clawhub-skill-traction-notifier",
+  "skillKey": "clawhub-skill-traction-notifier",
+  "name": "Find trending skills",
+  "summary": "Monitors ClawHub for skills gaining traction by tracking downloads and stars, alerting when growth or popularity thresholds are exceeded.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_traction_notifier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GK",
+      "features": [
+        "Monitors ClawHub for skills gaining traction by tracking downloads and stars, alerting when gro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-traction-notifier@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89037160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-traction-notifier",
+      "url": "https://clawhub.ai/skills/skill-traction-notifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-traction-notifier",
+    "url": "https://clawhub.ai/skills/skill-traction-notifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-traction-notifier-0b19cd1b1ed6fb73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-traction-notifier@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-traction-notifier-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:316dff8e062f9be452ff64a4a29b53f47ec6ae54659fe6b8cbfa858a8c0ff6b8",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T21:12:09.000Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wiznote@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wiznote",
+  "skill": {
+    "id": 56797,
+    "skillKey": "clawhub-wiznote",
+    "name": "WizNote"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wiznote",
+    "url": "https://clawhub.ai/skills/wiznote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wiznote-961f4e49c6fac0d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WizNote private API connector for reading and writing notes via RESTful API. Use when the user mentions \"为知笔记\", \"WizNote\", \"Wiz\", or needs to search, create,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangfengxiang",
+      "userId": "s178t4ayz6jfnwm3mdrmhb4z4h83rxaj",
+      "displayName": "wangfengxiang",
+      "image": "https://avatars.githubusercontent.com/u/31534139?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774793836973,
+      "changelog": "Initial release: support note CRUD, folder management, and search",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a431939367bbd9fd221ee406eade1822d9b4e394d5550c8048888655fb3c073c"
+}

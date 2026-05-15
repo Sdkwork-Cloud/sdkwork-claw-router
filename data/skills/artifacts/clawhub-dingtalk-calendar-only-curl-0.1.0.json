@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dingtalk-calendar-only-curl@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_calendar_only_curl",
+  "skill": {
+    "id": 63804,
+    "skillKey": "clawhub-dingtalk-calendar-only-curl",
+    "name": "Dingtalk Calendar Only Curl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-calendar-only-curl",
+    "url": "https://clawhub.ai/skills/dingtalk-calendar-only-curl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-calendar-only-curl-744e70e771765e12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "钉钉日程与日历。当用户提到\"钉钉日程\"、\"日历\"、\"创建日程\"、\"新建会议\"、\"视频会议\"、\"钉钉会议\"、\"会议室\"、\"约会议室\"、\"会议室忙闲\"、\"空闲会议室\"、\"签到\"、\"签退\"、\"签到链接\"、\"签退链接\"、\"循环日程\"、\"重复日程\"、\"recurrence\"、\"查日程\"、\"日程列表\"、\"修改日程\"、\"删除日..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "breath57",
+      "userId": "s176bmya5jxbvffz65ps2yjtwd83hscq",
+      "displayName": "breath57",
+      "image": "https://avatars.githubusercontent.com/u/48155693?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774401601117,
+      "changelog": "dingtalk-calendar-only-curl 0.1.0\n\n- Initial release with core support for DingTalk calendar API operations using only curl.\n- Provides skill routing based on user intent for scheduling, calendar events, meeting rooms, video meetings, sign-in/out, and recurrence.\n- Includes configuration validation and environment variable management before API calls.\n- Documents standard script templates and API reference lookup commands.\n- Only unionId is supported as user identifier in API requests (not staffId).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6120d4469306be0942d2d08667c10c6fdf2d2d66cd834d030ca7a1a3e55937b7"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/broadcast-signed-transaction@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.broadcast_signed_transaction",
+  "skill": {
+    "id": 60580,
+    "skillKey": "clawhub-broadcast-signed-transaction",
+    "name": "Broadcast Signed Transaction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "broadcast-signed-transaction",
+    "url": "https://clawhub.ai/skills/broadcast-signed-transaction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/broadcast-signed-transaction-1b644a5d2994112a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "直接广播已签名的 hex 交易到链上，无需私钥，一步完成广播"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangchengming666",
+      "userId": "publishers:wangchengming666",
+      "displayName": "Wang Chengming",
+      "image": "https://avatars.githubusercontent.com/u/17539174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 400,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772182206150,
+      "changelog": "Initial release: Enables direct broadcasting of user-signed transaction hex to the blockchain via OKX API, without the need for a private key.\n\n- Accepts signed transaction hex, chain index, and sender address as input; optional MEV and JSON flags supported.\n- Validates input parameters and necessary OKX API credentials before broadcasting.\n- Calls the OKX Broadcast API and returns order ID, transaction hash, and block explorer link on success.\n- Provides detailed error messages and guidance for troubleshooting common issues.\n- Requires only requests as external dependency; does not use web3 or private key.\n- Command line and Python usage examples included for easy integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e3118fe02e62de99d6c34ab6a6a57529d909b4aa6d7c7879a00686c7b33451b1"
+}

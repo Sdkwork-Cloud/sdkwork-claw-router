@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openmeteo-sh-weather-advanced@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openmeteo_sh_weather_advanced",
+  "skill": {
+    "id": 11321,
+    "skillKey": "clawhub-openmeteo-sh-weather-advanced",
+    "name": "Weather via OpenMeteo (via openmeteo-sh cli; advanced ver)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openmeteo-sh-weather-advanced",
+    "url": "https://clawhub.ai/skills/openmeteo-sh-weather-advanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openmeteo-sh-weather-advanced-0a7b09d613880a33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced weather from free OpenMeteo API: historical data, detailed variable selection, model choice, past-days, and in-depth forecasts. Use when the user as..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lstpsche",
+      "userId": "s17e65zsnrnq4cpfyghybrn4p985gcav",
+      "displayName": "Nikita Shkoda",
+      "image": "https://avatars.githubusercontent.com/u/40822400?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1864,
+      "installsAllTime": 14,
+      "installsCurrent": 13,
+      "stars": 2,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1771078001099,
+      "changelog": "Version 1.2.2\n\n- Updated conversational examples to clarify that city/country context should be taken from the session, not USER.md.\n- Minor edits for clarity and consistency in documentation wording.\n- No functional or code changes detected.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0138c7dfbd55c8b3b01ae5691cb9ce6aedb38dbbcc0ca48ddc0c451adb9eed59"
+}

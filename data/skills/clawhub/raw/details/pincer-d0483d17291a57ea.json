@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "pincer",
+    "displayName": "Pincer",
+    "summary": "Security-first wrapper for installing agent skills. Scans for malware, prompt injection, and suspicious patterns before installation. Use instead of `clawhub install` for safer skill management.",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1557,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1770499182947,
+    "updatedAt": 1778384227758
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1770499526366,
+    "changelog": "- Improved installer: added clear guidance to ensure ~/.local/bin is in PATH for easier use.\n- Installation script label updated for clarity (\"Install pincer to PATH\").\n- Post-install message now includes usage instructions for common commands.\n- No functional or feature changes to scanning or skill management logic.",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "panzacoder",
+    "userId": "publishers:panzacoder",
+    "displayName": "panzacoder",
+    "image": "https://avatars.githubusercontent.com/u/29257545?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778384227758
+  }
+}

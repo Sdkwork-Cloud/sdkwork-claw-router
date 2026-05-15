@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54973,
+  "uuid": "skill-clawhub-novel",
+  "skillKey": "clawhub-novel",
+  "name": "Novel",
+  "summary": "Manage novel data — chapters, characters, plots — from the terminal fast. Use when outlining chapters, tracking characters, organizing plot timelines.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Manage novel data — chapters, characters, plots — from the terminal fast",
+        "Use when outlining chapters, tracking characters, organizing plot timelines."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/novel@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "novel",
+      "url": "https://clawhub.ai/skills/novel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novel",
+    "url": "https://clawhub.ai/skills/novel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novel-f2110e6cf92b93ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/novel@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-novel-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df094c4167e335dd61e332345460f6a90d928ed2f40092a56b6f4a7ab3e4d90e",
+      "artifactSizeBytes": 1831
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T00:40:40.300Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mova-contract-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mova_contract_builder",
+  "skill": {
+    "id": 40159,
+    "skillKey": "clawhub-mova-contract-builder",
+    "name": "Mova Contract Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mova-contract-builder",
+    "url": "https://clawhub.ai/skills/mova-contract-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mova-contract-builder-346ea721a42a546c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build structured MOVA agent contracts (ds.mova_agent_contract_core_v1) from vague user intentions through a guided, step-by-step expert interview. Use this s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mova-compact",
+      "userId": "s174xckyab9x52fg7dps9cca2983g5a4",
+      "displayName": "Sergii Miasoiedov",
+      "image": "https://avatars.githubusercontent.com/u/258828376?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774364089947,
+      "changelog": "mova-contract-builder 1.0.0 — Initial Release\n\n- Introduces an expert-guided interview pipeline to assemble schema-valid MOVA agent contracts (`ds.mova_agent_contract_core_v1`) from user intentions.\n- Conversation proceeds through 8 sequential, structured phases: Identity, Task Domains/Capabilities, I/O Envelopes, Runtime/Connectors, Policy/Security, Observability, Determinism, and Extensions.\n- Each phase provides proposed field values, recommendations, and clear expert guidance tailored to user context.\n- Focuses exclusively on schema assembly — no execution, deployment, or envelope authoring.\n- Activates when users mention drafting, defining, or registering MOVA agent contracts, profiles, or capabilities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b2358bc6750fcb13546ed691392d3f0877c161f55189c901c4890e9a53a409ee"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73361,
+  "uuid": "skill-clawhub-offline-training",
+  "skillKey": "clawhub-offline-training",
+  "name": "线下培训",
+  "summary": "该技能介绍如何通过线下培训实现变现；当你计划从事或优化线下培训时调用。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.offline_training",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "该技能介绍如何通过线下培训实现变现；当你计划从事或优化线下培训时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/offline-training@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "offline-training",
+      "url": "https://clawhub.ai/skills/offline-training"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "offline-training",
+    "url": "https://clawhub.ai/skills/offline-training",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/offline-training-d48b1a84ba3ba9bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/offline-training@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-offline-training-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:742e84c39ff94cf16da200ad6084fe1f95f35aa7c134c8b4a8187d7eac8d08a1",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T10:15:07.004Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50206,
+  "uuid": "skill-clawhub-persona-project-manager",
+  "skillKey": "clawhub-persona-project-manager",
+  "name": "Persona Project Manager",
+  "summary": "Coordinate projects — track tasks, schedule meetings, and share docs.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_project_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Coordinate projects — track tasks, schedule meetings, and share docs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/persona-project-manager@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "persona-project-manager",
+      "url": "https://clawhub.ai/skills/persona-project-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-project-manager",
+    "url": "https://clawhub.ai/skills/persona-project-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-project-manager-01d7f609ff640e6c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/persona-project-manager@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-persona-project-manager-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a329de2cce02b690caaa632c00c81a02f471e80109092e5f4423120f35ea1aee",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:35:29.911Z"
+}

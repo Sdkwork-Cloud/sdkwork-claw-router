@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64842,
+  "uuid": "skill-clawhub-khronos-opencl-resources",
+  "skillKey": "clawhub-khronos-opencl-resources",
+  "name": "提供 Khronos 官方 OpenCL 规范、头文件、SDK、CTS 及社区工具的准确下载链接和资源索引。当用户询问 OpenCL 官方文档、API 参考、开发组件获取方式时使用。",
+  "summary": "提供 Khronos 官方 OpenCL 规范、头文件、SDK、CTS 及社区工具的准确下载链接和资源索引。当用户询问 OpenCL 官方文档、API 参考、开发组件获取方式时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.khronos_opencl_resources",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeoSaang",
+      "features": [
+        "提供 Khronos 官方 OpenCL 规范、头文件、SDK、CTS 及社区工具的准确下载链接和资源索引。当用户询问 OpenCL 官方文档、API 参考、开发组件获取方式时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/khronos-opencl-resources@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259758609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "khronos-opencl-resources",
+      "url": "https://clawhub.ai/skills/khronos-opencl-resources"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "khronos-opencl-resources",
+    "url": "https://clawhub.ai/skills/khronos-opencl-resources",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/khronos-opencl-resources-8816999dbcc9fa88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/khronos-opencl-resources@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-khronos-opencl-resources-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:305f257098d830c10624e2ec48165fdd652d536c28cb0ea568c0ee19185ebfa0",
+      "artifactSizeBytes": 2756
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T09:26:50.413Z"
+}

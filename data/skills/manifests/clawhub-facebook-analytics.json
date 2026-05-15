@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27238,
+  "uuid": "skill-clawhub-facebook-analytics",
+  "skillKey": "clawhub-facebook-analytics",
+  "name": "Facebook Analytics",
+  "summary": "Track Facebook Page performance and analytics. Use when the user says 'Facebook analytics', 'Facebook page metrics', 'how is my Facebook doing', 'Facebook en...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.facebook_analytics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "snoopyrain",
+      "features": [
+        "Track Facebook Page performance and analytics",
+        "Use when the user says 'Facebook analytics', 'Facebook page metrics', 'how is my Facebook doing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/facebook-analytics@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9717776?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "facebook-analytics",
+      "url": "https://clawhub.ai/skills/facebook-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "facebook-analytics",
+    "url": "https://clawhub.ai/skills/facebook-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/facebook-analytics-cae722da6a5ff55f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/facebook-analytics@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-facebook-analytics-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4be1dcb02c23983744fbc0a632d729e863cdaca9f603a68a0b78f56f6f41295c",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T14:38:53.641Z"
+}

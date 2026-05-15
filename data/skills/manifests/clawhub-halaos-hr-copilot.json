@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29990,
+  "uuid": "skill-clawhub-halaos-hr-copilot",
+  "skillKey": "clawhub-halaos-hr-copilot",
+  "name": "HalaOS HR Copilot",
+  "summary": "AI HR Copilot for Southeast Asia. Works with HalaOS MCP Server for live data (employees, attendance, leave, payroll, compliance, org intelligence) or standal...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.halaos_hr_copilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tonypk",
+      "features": [
+        "AI HR Copilot for Southeast Asia",
+        "Works with HalaOS MCP Server for live data (employees, attendance, leave, payroll, compliance,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/halaos-hr-copilot@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3667472?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "halaos-hr-copilot",
+      "url": "https://clawhub.ai/skills/halaos-hr-copilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "halaos-hr-copilot",
+    "url": "https://clawhub.ai/skills/halaos-hr-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/halaos-hr-copilot-76c3ee6a632f61c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/halaos-hr-copilot@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-halaos-hr-copilot-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fa0af34f88de1c6571bee0eb498b2d6bb48528e860e440e12a06ba775b6f4a9",
+      "artifactSizeBytes": 2207
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T11:41:16.683Z"
+}

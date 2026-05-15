@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13712,
+  "uuid": "skill-clawhub-routstr-balance-management",
+  "skillKey": "clawhub-routstr-balance-management",
+  "name": "Routstr Skill",
+  "summary": "Manage Routstr balance by checking balance, creating Lightning invoices for top-up, and checking invoice payment status",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.routstr_balance_management",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sh1ftred",
+      "features": [
+        "Manage Routstr balance by checking balance, creating Lightning invoices for top-up, and checkin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/routstr-balance-management@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213178690?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "routstr-balance-management",
+      "url": "https://clawhub.ai/skills/routstr-balance-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "routstr-balance-management",
+    "url": "https://clawhub.ai/skills/routstr-balance-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/routstr-balance-management-c1dee8fc99882c50.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/routstr-balance-management@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-routstr-balance-management-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9fff90ec0829333977f0b656dab1107a490b9b14cdc886274fc9282a59f94fbd",
+      "artifactSizeBytes": 2192
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T07:51:11.789Z"
+}

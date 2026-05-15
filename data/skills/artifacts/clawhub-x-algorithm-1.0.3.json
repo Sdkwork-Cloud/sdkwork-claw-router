@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-algorithm@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_algorithm",
+  "skill": {
+    "id": 8944,
+    "skillKey": "clawhub-x-algorithm",
+    "name": "X Algorithm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-algorithm",
+    "url": "https://clawhub.ai/skills/x-algorithm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-algorithm-6d7e7fbe1ff590cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "X (Twitter) algorithm rules & viral strategies for AI agents. Boost engagement, avoid reach death. Works with Cursor, Claude, ChatGPT, Copilot. Vibe-coding ready."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nextfrontierbuilds",
+      "userId": "s173crrwz6a8ksnw7w0q36yky18408nb",
+      "displayName": "Next Frontier AI",
+      "image": "https://avatars.githubusercontent.com/u/257253317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4149,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 16,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770799038612,
+      "changelog": "- Expanded description and keywords to emphasize AI agent compatibility (Cursor, Claude, ChatGPT, Copilot) and developer tooling.\n- Updated version to 1.0.3.\n- Enhanced keywords list in package metadata for better discoverability.\n- No core documentation content changes; usage guidelines remain the same.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b3ce19b50498b2b79ccf1fc716c4390619ad851cecc79c2ff31ff5647c2b5459"
+}

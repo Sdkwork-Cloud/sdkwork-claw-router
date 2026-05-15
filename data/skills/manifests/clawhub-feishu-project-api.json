@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71715,
+  "uuid": "skill-clawhub-feishu-project-api",
+  "skillKey": "clawhub-feishu-project-api",
+  "name": "飞书项目OpenAPI技能",
+  "summary": "飞书项目Open API技能，查询/创建/更新/删除工作项，管理流程模板、节点配置、自定义字段、视图和角色权限，批量分析商机进度与风险。触发：查商机、分析进度、管理工作项模板、批量更新任务、流程配置。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_project_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jimislg",
+      "features": [
+        "飞书项目Open API技能，查询/创建/更新/删除工作项，管理流程模板、节点配置、自定义字段、视图和角色权限，批量分析商机进度与风险。触发：查商机、分析进度、管理工作项模板、批量更新任务、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-project-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52199033?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-project-api",
+      "url": "https://clawhub.ai/skills/feishu-project-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-project-api",
+    "url": "https://clawhub.ai/skills/feishu-project-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-project-api-3a15bb4a690038e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-project-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-project-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edaab1e6353e708ace33a4b6f704c58ca4a1b3290e4d54ccad8518134dffb49e",
+      "artifactSizeBytes": 2613
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T12:36:54.095Z"
+}

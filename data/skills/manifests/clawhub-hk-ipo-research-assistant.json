@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66281,
+  "uuid": "skill-clawhub-hk-ipo-research-assistant",
+  "skillKey": "clawhub-hk-ipo-research-assistant",
+  "name": "Hk Ipo Research Assistant",
+  "summary": "港股 IPO 打新研究助手。抓取实时数据（孖展、基石、评级、暗盘、A+H折价、中签率），供 AI 分析判断。 触发词：港股打新、新股分析、IPO、孖展、保荐人、暗盘、中签率、基石投资者。 不适用：A 股打新、美股 IPO、基金申购。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hk_ipo_research_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "m3",
+      "features": [
+        "港股 IPO 打新研究助手。抓取实时数据（孖展、基石、评级、暗盘、A+H折价、中签率），供 AI 分析判断。 触发词：港股打新、新股分析、IPO、孖展、保荐人、暗盘、中签率、基石投资者。 不."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hk-ipo-research-assistant@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11957602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hk-ipo-research-assistant",
+      "url": "https://clawhub.ai/skills/hk-ipo-research-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hk-ipo-research-assistant",
+    "url": "https://clawhub.ai/skills/hk-ipo-research-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hk-ipo-research-assistant-a39a56db7b338275.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hk-ipo-research-assistant@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hk-ipo-research-assistant-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb639fc475ef710ff3ad2c88425ee6911e1e10a1e4fafa2708e6eb32bc10a7dd",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T07:01:37.703Z"
+}

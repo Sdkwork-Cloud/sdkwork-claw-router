@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52504,
+  "uuid": "skill-clawhub-zoo-animals",
+  "skillKey": "clawhub-zoo-animals",
+  "name": "Zoo Animals",
+  "summary": "Provides real-time knowledge about animals in the London Zoo — species, populations, ages, and cuteness ratings. Use this skill whenever the user asks about...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoo_animals",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ornevo",
+      "features": [
+        "Provides real-time knowledge about animals in the London Zoo — species, populations, ages, and.",
+        "Use this skill whenever the user asks about..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zoo-animals@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12645389?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zoo-animals",
+      "url": "https://clawhub.ai/skills/zoo-animals"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoo-animals",
+    "url": "https://clawhub.ai/skills/zoo-animals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoo-animals-a164abdf7cbe1f89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zoo-animals@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zoo-animals-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7ae68a7b53b166d5b763ef301376d771b34d9c9c2bff80126154939c7e375d7",
+      "artifactSizeBytes": 2278
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T16:17:21.503Z"
+}

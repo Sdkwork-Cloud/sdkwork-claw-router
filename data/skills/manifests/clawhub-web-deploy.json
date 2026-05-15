@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9524,
+  "uuid": "skill-clawhub-web-deploy",
+  "skillKey": "clawhub-web-deploy",
+  "name": "Web Deploy",
+  "summary": "Build, preview, and deploy websites, web apps, and APIs using Vercel, Railway, GitHub Pages, or local Canvas environments.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_deploy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cmanfre7",
+      "features": [
+        "Build, preview, and deploy websites, web apps, and APIs using Vercel, Railway, GitHub Pages, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-deploy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232135881?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-deploy",
+      "url": "https://clawhub.ai/skills/web-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-deploy",
+    "url": "https://clawhub.ai/skills/web-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-deploy-50da03724b89daa1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-deploy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-deploy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a78995c80f7bc173d29c8e2c4b3cee0c3c61c4c33ccf94c75588f16001a8c9af",
+      "artifactSizeBytes": 2332
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T18:30:36.495Z"
+}

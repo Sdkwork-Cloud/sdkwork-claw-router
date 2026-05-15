@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawpulse@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawpulse",
+  "skill": {
+    "id": 18418,
+    "skillKey": "clawhub-clawpulse",
+    "name": "ClawPulse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawpulse",
+    "url": "https://clawhub.ai/skills/clawpulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawpulse-5bcbf84330210c08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect your OpenClaw agent to ClawPulse - the community analytics dashboard. Automatically collects and pushes aggregate token stats (no message content) to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pierreeurope",
+      "userId": "publishers:pierreeurope",
+      "displayName": "pierreeurope",
+      "image": "https://avatars.githubusercontent.com/u/248892285?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 692,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1771614534093,
+      "changelog": "Community analytics dashboard for OpenClaw. GitHub OAuth, auto-push via OpenClaw cron, leaderboard.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3d0812be1e8ad69fa37ddf0b17483cd02ed899a159c2a3e6ea2472db3b190a58"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21899,
+  "uuid": "skill-clawhub-imgbb-api",
+  "skillKey": "clawhub-imgbb-api",
+  "name": "ImgBB API",
+  "summary": "Upload images to ImgBB via local file, URL, or base64 and get shareable direct links, supporting batch uploads and optional expiration settings.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imgbb_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KeXu9",
+      "features": [
+        "Upload images to ImgBB via local file, URL, or base64 and get shareable direct links, supportin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/imgbb-api@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147953862?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "imgbb-api",
+      "url": "https://clawhub.ai/skills/imgbb-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imgbb-api",
+    "url": "https://clawhub.ai/skills/imgbb-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imgbb-api-131ecab3717d038d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/imgbb-api@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-imgbb-api-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be54cea3208161f140f533ba6bd9828e98b6e58f47d8b52f852b2e12e83003a1",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T14:23:43.158Z"
+}

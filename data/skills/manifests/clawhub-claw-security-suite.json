@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27139,
+  "uuid": "skill-clawhub-claw-security-suite",
+  "skillKey": "clawhub-claw-security-suite",
+  "name": "Claw Security Suite",
+  "summary": "Provides four-layer security for OpenClaw including static code scanning, logic audit, runtime protection, and periodic security patrols with automated reports.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_security_suite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kenz1117",
+      "features": [
+        "Provides four-layer security for OpenClaw including static code scanning, logic audit, runtime."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-security-suite@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229862838?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-security-suite",
+      "url": "https://clawhub.ai/skills/claw-security-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-security-suite",
+    "url": "https://clawhub.ai/skills/claw-security-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-security-suite-3e96973fb04b1cd8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-security-suite@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-security-suite-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ebf55325b5a126af9580eda76c647f0a46e44b2699d0a51ae0f0105ef3a98cb",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T11:54:24.574Z"
+}

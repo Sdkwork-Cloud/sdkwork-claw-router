@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13582,
+  "uuid": "skill-clawhub-rvt-to-excel",
+  "skillKey": "clawhub-rvt-to-excel",
+  "name": "Rvt To Excel",
+  "summary": "Convert RVT/RFA files to Excel databases. Extract BIM element data, properties, and quantities.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rvt_to_excel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "datadrivenconstruction",
+      "features": [
+        "Convert RVT/RFA files to Excel databases",
+        "Extract BIM element data, properties, and quantities."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rvt-to-excel@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94158709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rvt-to-excel",
+      "url": "https://clawhub.ai/skills/rvt-to-excel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rvt-to-excel",
+    "url": "https://clawhub.ai/skills/rvt-to-excel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rvt-to-excel-8deb36b9ddcf9d5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rvt-to-excel@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rvt-to-excel-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f3da30ac274472cdf3118af15b9bf1b2e6068180350823220bf90affc020203",
+      "artifactSizeBytes": 2337
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T16:23:57.434Z"
+}

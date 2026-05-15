@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45720,
+  "uuid": "skill-clawhub-discord-task-tracker",
+  "skillKey": "clawhub-discord-task-tracker",
+  "name": "Discord Task Tracker",
+  "summary": "Track tasks in Discord using natural language. Add, list, complete, and delete tasks via chat commands. Triggers: add task, track task, todo, my tasks, task...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_task_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fuzzyb33s",
+      "features": [
+        "Track tasks in Discord using natural language",
+        "Add, list, complete, and delete tasks via chat commands",
+        "Triggers: add task, track task, todo, my tasks, task..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discord-task-tracker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221636957?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discord-task-tracker",
+      "url": "https://clawhub.ai/skills/discord-task-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-task-tracker",
+    "url": "https://clawhub.ai/skills/discord-task-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-task-tracker-d38c6b5c18b3762b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discord-task-tracker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-discord-task-tracker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df4c98ad1542b9b0b468cf2379784bac50dcd7563baf20fa339451a134b13f84",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T05:14:02.598Z"
+}

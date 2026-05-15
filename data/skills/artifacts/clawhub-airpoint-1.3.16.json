@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/airpoint@1.3.16",
+  "version": "1.3.16",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airpoint",
+  "skill": {
+    "id": 11466,
+    "skillKey": "clawhub-airpoint",
+    "name": "Airpoint"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airpoint",
+    "url": "https://clawhub.ai/skills/airpoint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airpoint-40e6dd8870fd34c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control a Mac through natural language — open apps, click buttons, read the screen, type text, manage windows, and automate multi-step tasks via Airpoint's A..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marioandf",
+      "userId": "publishers:marioandf",
+      "displayName": "MarioAndF",
+      "image": "https://avatars.githubusercontent.com/u/16432305?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1980,
+      "installsAllTime": 25,
+      "installsCurrent": 24,
+      "stars": 5,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.3.16",
+      "createdAt": 1771196201056,
+      "changelog": "- Added detailed setup instructions for API keys, permissions, and customizations required before using the AI agent.\n- Updated usage guidance for `airpoint ask`, including output expectations and screenshots for confirmation.\n- Documented the new `airpoint stop` command to cancel running tasks.\n- Clarified the role of Gemini API key in enhancing on-screen target detection.\n- Modified examples and explanations for improved clarity and onboarding.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f6ca579fa31563bb553f49b99fabed939102404e9af5df86a85c2f6f3ce3fb6c"
+}

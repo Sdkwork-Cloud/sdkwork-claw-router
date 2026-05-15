@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-workflow-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_workflow_helper",
+  "skill": {
+    "id": 42095,
+    "skillKey": "clawhub-git-workflow-helper",
+    "name": "Git Workflow Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-workflow-helper",
+    "url": "https://clawhub.ai/skills/git-workflow-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-workflow-helper-6910190c7497592d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Git Operations Assistant. Handle Git operations, resolve conflicts, manage branches. Triggers: Git, commit, merge, branch, pull request, conflict."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776935571874,
+      "changelog": "Initial release of git-helper skill.\n\n- Provides guidance for common Git operations.\n- Assists with conflict resolution, branch management, and commit message checks.\n- Includes example commands and troubleshooting tips for frequent issues.\n- Supports triggers for various Git actions (commit, merge, branch, pull request, conflict).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f37f4495dc5114875f519e93466c55ef6b3456488d4143fc28d8b8f84243e11c"
+}

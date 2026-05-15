@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18040,
+  "uuid": "skill-clawhub-agent-orchestrate",
+  "skillKey": "clawhub-agent-orchestrate",
+  "name": "Agent Orchestrate",
+  "summary": "Multi-agent orchestration patterns for OpenClaw. Quick reference for spawning sub-agents, parallel work, and basic coordination. Use when: simple parallel ta...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_orchestrate",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Molten Bot 000",
+      "features": [
+        "Multi-agent orchestration patterns for OpenClaw",
+        "Quick reference for spawning sub-agents, parallel work, and basic coordination",
+        "Use when: simple parallel ta..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-orchestrate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260473928?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-orchestrate",
+      "url": "https://clawhub.ai/skills/agent-orchestrate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-orchestrate",
+    "url": "https://clawhub.ai/skills/agent-orchestrate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-orchestrate-589d414fa2e98fd9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-orchestrate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-orchestrate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:716ffb8c71ddf5c310229447e7df7bcd00f43b54ec75e9a674811a543b5c2a6e",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T15:43:21.395Z"
+}

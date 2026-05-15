@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-map-ios-sdk@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_map_ios_sdk",
+  "skill": {
+    "id": 65220,
+    "skillKey": "clawhub-baidu-map-ios-sdk",
+    "name": "Baidu Map IOS SDK（百度地图官方IOS SKills）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-map-ios-sdk",
+    "url": "https://clawhub.ai/skills/baidu-map-ios-sdk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-map-ios-sdk-4553d1a35c4fbb0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "百度地图 iOS SDK 与 BMKLocationKit 集成与开发规范。覆盖地图、定位、步骑行导航、检索、路线、标注与覆盖物；输出专业地图方案。可快捷使用百度地图 SDK 的能力与数据，构建功能丰富、交互性强的专业地图类应用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lbs-bmap",
+      "userId": "s176pk9echkebx8ym27k7zc30983jasz",
+      "displayName": "baidu-maps",
+      "image": "https://avatars.githubusercontent.com/u/268489846?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 444,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775534867729,
+      "changelog": "Initial release of baidu-map-ios-sdk skill.\n\n- Provides integration and usage guidelines for Baidu Map iOS SDK and BMKLocationKit.\n- Covers configuration for map, location, walking/cycling navigation, search, routes, markers, overlays, and use of professional map features.\n- Details explicit integration steps (CocoaPods, AK & Bundle instructions), privacy compliance, and Info.plist/Launch Screen requirements.\n- Enforces use of BMKIconMarker/BMKTextMarker for point markers and prioritizes texture usage for routes and icons.\n- Includes rules for coordinate systems, logo non-obstruction, route viewport fitting, and toolkit selection for walking/cycling scenarios.\n- Defines output and documentation standards for solutions, ensuring proposals are actionable, verifiable, and code is build-validated.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1dfe917fab4a840800147eba9221163a02d1a7d2a95150d06c56b8eaeaa7add"
+}

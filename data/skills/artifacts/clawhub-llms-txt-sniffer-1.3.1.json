@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llms-txt-sniffer@1.3.1",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llms_txt_sniffer",
+  "skill": {
+    "id": 36035,
+    "skillKey": "clawhub-llms-txt-sniffer",
+    "name": "llms-txt-sniffer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llms-txt-sniffer",
+    "url": "https://clawhub.ai/skills/llms-txt-sniffer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llms-txt-sniffer-7dd90e7c5e45f734.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Locate and utilize AI-friendly documentation index files (llms.txt, llms-full.txt) or sitemap.xml. Use when encountering documentation URLs (containing /docs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jdchi",
+      "userId": "s17fheex2s1vvmq5zvezbkds0x83gnpr",
+      "displayName": "JDChi",
+      "image": "https://avatars.githubusercontent.com/u/14227606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.3.1",
+      "createdAt": 1774690641445,
+      "changelog": "Security: add SSRF protection (block internal IPs), fix metadata (remove requests), clarify allowed-tools, add User-Initiated-Only rule",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e82199cbdb661b591dfe2fd72358ca0d5347b03da0606eff400569a8414fc91"
+}

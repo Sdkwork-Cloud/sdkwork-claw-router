@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61389,
+  "uuid": "skill-clawhub-skillhub-auto-installer",
+  "skillKey": "clawhub-skillhub-auto-installer",
+  "name": "skillhub-auto-installer",
+  "summary": "搜索 Skillhub 技能市场，发现可用技能。 此技能仅提供搜索功能，不执行任何安装或本地文件操作。 关键词: skillhub, 搜索技能, findskill, 技能发现, 技能市场",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillhub_auto_installer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jiayao0810",
+      "features": [
+        "搜索 Skillhub 技能市场，发现可用技能。 此技能仅提供搜索功能，不执行任何安装或本地文件操作。 关键词: skillhub, 搜索技能, findskill, 技能发现, 技能市场"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillhub-auto-installer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/135929123?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillhub-auto-installer",
+      "url": "https://clawhub.ai/skills/skillhub-auto-installer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillhub-auto-installer",
+    "url": "https://clawhub.ai/skills/skillhub-auto-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillhub-auto-installer-973a69c74854a27a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillhub-auto-installer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillhub-auto-installer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2f112caea078fc4be2d4f8e34ac8e44cceca93dc96a0222e228b945d7ec9524",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T09:42:23.149Z"
+}

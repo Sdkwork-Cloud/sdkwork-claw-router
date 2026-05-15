@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9523,
+  "uuid": "skill-clawhub-portfolio-tracker",
+  "skillKey": "clawhub-portfolio-tracker",
+  "name": "Portfolio Tracker",
+  "summary": "Automatically tracks and analyzes Vish's stock and crypto portfolio using live Yahoo Finance data, providing updates, performance summaries, and rebalancing...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.portfolio_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vachanalaviswanath",
+      "features": [
+        "Automatically tracks and analyzes Vish's stock and crypto portfolio using live Yahoo Finance da."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/portfolio-tracker@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26293727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "portfolio-tracker",
+      "url": "https://clawhub.ai/skills/portfolio-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "portfolio-tracker",
+    "url": "https://clawhub.ai/skills/portfolio-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/portfolio-tracker-f6064f4fa6081121.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/portfolio-tracker@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-portfolio-tracker-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11acc965ce54375362165dbd67cb32fa824db2d0b83ab2f56c566c12fedac63b",
+      "artifactSizeBytes": 2169
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T22:12:08.165Z"
+}

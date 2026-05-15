@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ddg-search-privacy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ddg_search_privacy",
+  "skill": {
+    "id": 18766,
+    "skillKey": "clawhub-ddg-search-privacy",
+    "name": "Duckduckgo Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ddg-search-privacy",
+    "url": "https://clawhub.ai/skills/ddg-search-privacy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ddg-search-privacy-d8e94dc4cf1ff63d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DuckDuckGo web search for private tracker-free searching. Use when user asks to search the web find information online or perform web-based research without..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "omprasad122007-rgb",
+      "userId": "publishers:omprasad122007-rgb",
+      "displayName": "omprasad122007-rgb",
+      "image": "https://avatars.githubusercontent.com/u/260436802?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 653,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771401931868,
+      "changelog": "Initial release of private DuckDuckGo web search skill.\n\n- Enables privacy-focused web search with no user tracking.\n- Supports web, image, video, and news searches through DuckDuckGo API.\n- Provides both JSON API and HTML scraping examples for flexible result retrieval.\n- Includes usage examples, search operators, and formatting tools for easy integration.\n- No API key required; instant answer support available.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a6d06283926b708a18b22193e9351b0f65b0396b8983c01ef196e92f66b5567e"
+}

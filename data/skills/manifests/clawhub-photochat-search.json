@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19083,
+  "uuid": "skill-clawhub-photochat-search",
+  "skillKey": "clawhub-photochat-search",
+  "name": "PhotoCHAT Photo Search",
+  "summary": "Search for photos in PhotoCHAT using natural language via the CLI. Use when the user asks to find, search for, or locate photos/pictures/images using PhotoCH...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photochat_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PhotoCHAT",
+      "features": [
+        "Search for photos in PhotoCHAT using natural language via the CLI",
+        "Use when the user asks to find, search for, or locate photos/pictures/images using PhotoCH..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/photochat-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223056595?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "photochat-search",
+      "url": "https://clawhub.ai/skills/photochat-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photochat-search",
+    "url": "https://clawhub.ai/skills/photochat-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photochat-search-6c974d593fafcbef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/photochat-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-photochat-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cfa42b2e9cbb61f216012d639fa9cc2d5312ed49e77430cf807a67a04f6c7244",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T00:30:05.756Z"
+}

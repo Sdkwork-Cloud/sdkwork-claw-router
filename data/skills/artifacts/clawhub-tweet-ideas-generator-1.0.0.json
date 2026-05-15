@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tweet-ideas-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tweet_ideas_generator",
+  "skill": {
+    "id": 11416,
+    "skillKey": "clawhub-tweet-ideas-generator",
+    "name": "Tweet Ideas Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tweet-ideas-generator",
+    "url": "https://clawhub.ai/skills/tweet-ideas-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tweet-ideas-generator-22893966e962c971.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates 60 high-impact tweet ideas from reference content across 5 categories. Use when someone wants to extract engaging short-form statements from content for Twitter/X, organized by harsh advice, quotes, pain points, counterintuitive."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vincentchan",
+      "userId": "publishers:vincentchan",
+      "displayName": "vincentchan",
+      "image": "https://avatars.githubusercontent.com/u/229261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2140,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769496258014,
+      "changelog": "- Initial release of tweet-ideas-generator.\n- Generates 60 high-impact tweet ideas from user-supplied content, organized into 5 categories and 10 creative wildcards.\n- Extracts and reformulates content using psychological triggers for maximum engagement and shareability.\n- Accepts a wide range of reference materials including pasted text, files, and URLs.\n- Outputs categorized and annotated tweet ideas, saved automatically to a timestamped markdown file.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2922988e1bcb0fad5a6f13437287ca2b614b609ee476a8df0a2d6862816d339d"
+}

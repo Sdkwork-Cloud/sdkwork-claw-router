@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-instant-article@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_instant_article",
+  "skill": {
+    "id": 11046,
+    "skillKey": "clawhub-youtube-instant-article",
+    "name": "Youtube Instant Article"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-instant-article",
+    "url": "https://clawhub.ai/skills/youtube-instant-article",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-instant-article-71277a8729e8dd61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform YouTube videos into Telegraph Instant View articles with visual slides and timestamped summaries. Use this skill whenever a user shares a YouTube URL (youtube.com or youtu.be) and asks to summarize, explain, or process the video.."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "viticci",
+      "userId": "publishers:viticci",
+      "displayName": "viticci",
+      "image": "https://avatars.githubusercontent.com/u/2583235?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2192,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769173161870,
+      "changelog": "youtube-instant-article 0.1.0\n\n- Initial release of the skill for transforming YouTube videos into Telegraph Instant View articles with slides and timestamped summaries.\n- Automatically detects and processes all YouTube video requests (youtube.com or youtu.be URLs).\n- Generates visually rich articles: includes video link, interleaved slides, timestamped summaries, notable quotes, and proper YouTube title.\n- Uses OpenAI GPT-5.2 for fast, high-quality summaries and automatic timestamp extraction.\n- Handles image hosting via catbox.moe and publishes articles directly to Telegraph.\n- Requires zsh, summarize v0.10.0+, jq, and proper API keys (Telegraph and OpenAI).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f18cb951e5204f5369bbca3cc407af881515ded939538e3ab065fcc84b35215b"
+}

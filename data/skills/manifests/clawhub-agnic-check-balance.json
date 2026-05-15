@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29652,
+  "uuid": "skill-clawhub-agnic-check-balance",
+  "skillKey": "clawhub-agnic-check-balance",
+  "name": "Agnic Check Balance (x402)",
+  "summary": "Check USDC balance across networks (Base, Solana). Use when the user wants to check balance, see how much USDC is available, view funds, or verify wallet bal...",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agnic_check_balance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Agnic.AI",
+      "features": [
+        "Check USDC balance across networks (Base, Solana)",
+        "Use when the user wants to check balance, see how much USDC is available, view funds, or verify."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agnic-check-balance@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/240652244?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agnic-check-balance",
+      "url": "https://clawhub.ai/skills/agnic-check-balance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agnic-check-balance",
+    "url": "https://clawhub.ai/skills/agnic-check-balance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agnic-check-balance-ba21426599d5d214.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agnic-check-balance@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-agnic-check-balance-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31d4a758456e6b6b78a3e25ac84259622bdb8f9dab863a01bbaa1011e7f07c1c",
+      "artifactSizeBytes": 2115
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:18:30.093Z"
+}

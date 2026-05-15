@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-news-briefing-staging@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_news_briefing_staging",
+  "skill": {
+    "id": 43668,
+    "skillKey": "clawhub-gate-news-briefing-staging",
+    "name": "gate-news-briefing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-news-briefing-staging",
+    "url": "https://clawhub.ai/skills/gate-news-briefing-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-news-briefing-staging-c004ae4254e46da7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "News briefing. Use this skill ONLY when the user's query is exclusively about recent news or headlines with no other analysis dimensions. Trigger phrases: wh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaixianggeng",
+      "userId": "s17edzcx6za5g00fwmgwmkhrgd83yw5a",
+      "displayName": "gaixg",
+      "image": "https://avatars.githubusercontent.com/u/12163126?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775525110637,
+      "changelog": "# gate-news-briefing-staging v1.0.1 Changelog\n\n- Updates runtime rules references to new file paths in SKILL.md.\n- Removes legacy documentation and scenario files (CHANGELOG.md, README.md, and references/scenarios.md).\n- Adds new references for runtime rule documentation (gate-runtime-rules.md, info-news-runtime-rules.md).\n- Minor workflow text clean-up; skill logic and structure remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf930db3eb03808458a6f6a6010526fd48586930fd14765caa6b10b3a03f4f8f"
+}

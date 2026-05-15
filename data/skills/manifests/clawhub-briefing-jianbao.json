@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62406,
+  "uuid": "skill-clawhub-briefing-jianbao",
+  "skillKey": "clawhub-briefing-jianbao",
+  "name": "Briefing-pro",
+  "summary": "将任意内容（URL/文件/文本）生成单页幻灯片简报，输出为图片/PDF/网页。基于 frontend-slides 构建。触发条件：(1) \"生成简报\"、\"AI简报\"、\"摘要\" (2) 上传文件并要求生成简报",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.briefing_jianbao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nonlinearHuman",
+      "features": [
+        "将任意内容（URL/文件/文本）生成单页幻灯片简报，输出为图片/PDF/网页。基于 frontend-slides 构建。触发条件：(1) \"生成简报\"、\"AI简报\"、\"摘要\" (2) 上传."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/briefing-jianbao@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97647446?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "briefing-jianbao",
+      "url": "https://clawhub.ai/skills/briefing-jianbao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "briefing-jianbao",
+    "url": "https://clawhub.ai/skills/briefing-jianbao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/briefing-jianbao-7dc8f0d294a63186.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/briefing-jianbao@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-briefing-jianbao-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31aae49443b3cba8d0333b9fcc58d2a7a48042735f3c768209f92e856e6f0e6f",
+      "artifactSizeBytes": 3718
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T15:59:24.627Z"
+}

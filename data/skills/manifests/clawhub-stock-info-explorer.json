@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8470,
+  "uuid": "skill-clawhub-stock-info-explorer",
+  "skillKey": "clawhub-stock-info-explorer",
+  "name": "Stock Info Explorer",
+  "summary": "A Yahoo Finance (yfinance) powered financial analysis tool. Get real-time quotes, generate high-resolution charts with moving averages + indicators (RSI/MACD/Bollinger/VWAP/ATR), summarize fundamentals, and run a one-shot report that outpu.",
+  "version": "1.2.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_info_explorer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawMaker",
+      "features": [
+        "A Yahoo Finance (yfinance) powered financial analysis tool",
+        "Get real-time quotes, generate high-resolution charts with moving averages + indicators (RSI/MA."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-info-explorer@1.2.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25008566?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-info-explorer",
+      "url": "https://clawhub.ai/skills/stock-info-explorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-info-explorer",
+    "url": "https://clawhub.ai/skills/stock-info-explorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-info-explorer-9d22a90e2648aa95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-info-explorer@1.2.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-info-explorer-1.2.10.json",
+      "version": "1.2.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99ef07f7b0116445cd6b6babb3c4c5fc26a2fe0e39d5c4edbd51d782667d762e",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T13:44:54.993Z"
+}

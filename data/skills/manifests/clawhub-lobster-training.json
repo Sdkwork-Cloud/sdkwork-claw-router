@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69432,
+  "uuid": "skill-clawhub-lobster-training",
+  "skillKey": "clawhub-lobster-training",
+  "name": "🦞 小龙虾入职培训手册",
+  "summary": "AI图像生成与编辑。支持文生图、图+文生图、风格转换。当用户要求画图、生成图片、编辑图片、图片风格转换时使用此 skill。支持多种比例（1:1、3:2、16:9、21:9 等）和分辨率（标准、2K、4K）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_training",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shuxiang255-sudo",
+      "features": [
+        "AI图像生成与编辑。支持文生图、图+文生图、风格转换。当用户要求画图、生成图片、编辑图片、图片风格转换时使用此 skill。支持多种比例（1:1、3:2、16:9、21:9 等）和分辨率（标."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-training@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249451493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-training",
+      "url": "https://clawhub.ai/skills/lobster-training"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-training",
+    "url": "https://clawhub.ai/skills/lobster-training",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-training-4ef86d8ee9e31824.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-training@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-training-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0a6ecfe2f34322a6c6960d171b254daad24ac7fba2e54faadb20c80dae6b80d",
+      "artifactSizeBytes": 2481
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T15:12:17.551Z"
+}

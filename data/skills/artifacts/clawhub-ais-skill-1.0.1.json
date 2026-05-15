@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ais-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ais_skill",
+  "skill": {
+    "id": 68547,
+    "skillKey": "clawhub-ais-skill",
+    "name": "ais-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ais-skill",
+    "url": "https://clawhub.ai/skills/ais-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ais-skill-2d266dfb04fbaf2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 TorchV AIS 知识库远端与用户协作使用这个技能，可进行的操作包括阅读结构、搜索和读取文档、创建文档或目录、修改文档、发布或返回可跳转的文档链接时。需要利用脚本将 `kb ...` 命令发送到远端 AIS 执行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuchuan01",
+      "userId": "s17b7gy7a6ecykgb9cpa4ghnhs84e7c5",
+      "displayName": "liuchuan01",
+      "image": "https://avatars.githubusercontent.com/u/80431571?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775634011287,
+      "changelog": "- Removed README.md and README_CN.md from the skill package.\n- Updated SKILL.md: clarified execution environment URLs and token extraction instructions.\n- Minor language adjustments to workflow and terminology sections for improved clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59b3ff42fd55193ec173b5ce088a878f53af24f80417f04898c6584c06967bae"
+}

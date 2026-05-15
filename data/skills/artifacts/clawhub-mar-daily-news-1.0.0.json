@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mar-daily-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mar_daily_news",
+  "skill": {
+    "id": 44774,
+    "skillKey": "clawhub-mar-daily-news",
+    "name": "mar-daily-news"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mar-daily-news",
+    "url": "https://clawhub.ai/skills/mar-daily-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mar-daily-news-0d12335c2660f133.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch top news from Baidu, Google, and other sources daily via SkillBoss API Hub."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marjoriebroad",
+      "userId": "s17evr8hna69xbf4mv5z0nppgx84m26f",
+      "displayName": "MarjorieBroad",
+      "image": "https://avatars.githubusercontent.com/u/260425366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777009521313,
+      "changelog": "- Initial release of the daily-news skill.\n- Fetches top news headlines daily from multiple sources (Baidu, Google Trends, etc.) via SkillBoss API Hub.\n- Requires Python and a SkillBoss API key for operation.\n- Setup instructions and usage details provided for easy integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa2d6c733cc577eee5635762f73969975decc475641ad5736dbf6b1c1b172bd2"
+}

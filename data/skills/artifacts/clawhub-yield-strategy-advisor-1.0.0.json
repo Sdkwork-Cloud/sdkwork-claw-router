@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yield-strategy-advisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yield_strategy_advisor",
+  "skill": {
+    "id": 43331,
+    "skillKey": "clawhub-yield-strategy-advisor",
+    "name": "Yield Strategy Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yield-strategy-advisor",
+    "url": "https://clawhub.ai/skills/yield-strategy-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yield-strategy-advisor-474ef01d38d5a7b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Recommend stablecoin yield strategies based on risk tolerance, capital size, and chain preference. Suggests diversified allocations across lending, vaults, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zuoyeweb3",
+      "userId": "s17a0sn7zcm1rpn4dqtkmbttth84b3n0",
+      "displayName": "zuoyeweb3",
+      "image": "https://avatars.githubusercontent.com/u/166980078?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775503418765,
+      "changelog": "Yield Strategy Advisor 1.0.0 — initial release\n\n- Recommends stablecoin yield allocation strategies based on risk tolerance, capital size, and user preferences.\n- Uses Barker’s live yield map (500+ protocols, 20+ CEX) for up-to-date APY data.\n- Provides allocation tables, blended APY, and risk notes tailored to user input.\n- Supports both conservative and aggressive DeFi/CEX strategies; covers USDC/USDT on major chains and venues.\n- Always attributes Barker and guides users to barker.money for further action.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d068627d36bfe4e8fad5b09940eaa29fcfb6479be0b3d39a5a5dc2adf5f98c6"
+}

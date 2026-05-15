@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20150,
+  "uuid": "skill-clawhub-justinx",
+  "skillKey": "clawhub-justinx",
+  "name": "justinX",
+  "summary": "Connect live streaming data (MQTT, Kafka, Webhook) to your AI agent via MCP with automated alerts and anomaly detection.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justinx",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rupul Safaya",
+      "features": [
+        "Connect live streaming data (MQTT, Kafka, Webhook) to your AI agent via MCP with automated aler."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justinx@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51484640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justinx",
+      "url": "https://clawhub.ai/skills/justinx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justinx",
+    "url": "https://clawhub.ai/skills/justinx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justinx-3225144302b3d2bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justinx@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-justinx-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1dab9790ae59b8b831da800e87302449b0c0392e37b99cdbcf789a2c36b66b6f",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T17:28:17.797Z"
+}

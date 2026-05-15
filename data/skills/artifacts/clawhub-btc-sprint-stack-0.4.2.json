@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/btc-sprint-stack@0.4.2",
+  "version": "0.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.btc_sprint_stack",
+  "skill": {
+    "id": 36231,
+    "skillKey": "clawhub-btc-sprint-stack",
+    "name": "Btc Sprint Stack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "btc-sprint-stack",
+    "url": "https://clawhub.ai/skills/btc-sprint-stack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/btc-sprint-stack-ee3583dfc9bab060.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade BTC 5m/15m Polymarket fast markets on Simmer with dry-run-first execution, fee-aware filtering, bankroll limits, flat signal_data, journaling, heartbea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "captainslab",
+      "userId": "s171tadzbdqyvtjssdctqzdcb583yxc2",
+      "displayName": "Captain",
+      "image": "https://avatars.githubusercontent.com/u/94413210?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.4.2",
+      "createdAt": 1775574792445,
+      "changelog": "Fix: switch to api.binance.us — api.binance.com returns 451 geo-block from EU servers",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80b81804a35c38575feefd5cf6aacc96d8af538e06d148a85ecc879c798ef6ae"
+}

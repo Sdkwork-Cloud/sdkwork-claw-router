@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smyx-virtual-fence-intrusion-warning-analysis@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_virtual_fence_intrusion_warning_analysis",
+  "skill": {
+    "id": 57658,
+    "skillKey": "clawhub-smyx-virtual-fence-intrusion-warning-analysis",
+    "name": "虚拟围栏越界预警技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-virtual-fence-intrusion-warning-analysis",
+    "url": "https://clawhub.ai/skills/smyx-virtual-fence-intrusion-warning-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-virtual-fence-intrusion-warning-analysis-d2cf011a6bdd0055.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Customizes safety zones, identifies babies crawling out or approaching dangerous areas such as bedsides/windowsills, and immediately alerts to protect baby s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "18072937735",
+      "userId": "s17f8q65zg3y98t86jdg1177g583whq8",
+      "displayName": "smyx-skills",
+      "image": "https://avatars.githubusercontent.com/u/272124705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778341119469,
+      "changelog": "- Fixed minor issues in skill behavior logic across codebase.\n- Refactored and updated core scripts in skills/face_analysis/scripts/skill.py and skills/smyx_common/scripts/skill.py for improved maintainability.\n- No changes to external interfaces or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d43cf07b4aae4f4eca5a5b18bc6dccc43fdc96c646a525302d30ac5ba5cc6819"
+}

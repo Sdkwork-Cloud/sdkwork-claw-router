@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/laosi-spotify@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.laosi_spotify",
+  "skill": {
+    "id": 61707,
+    "skillKey": "clawhub-laosi-spotify",
+    "name": "Spotify控制"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "laosi-spotify",
+    "url": "https://clawhub.ai/skills/laosi-spotify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/laosi-spotify-f5d11b9463f130aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Spotify控制技能 - 终端控制Spotify播放、搜索、管理播放列表。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "534422530",
+      "userId": "s170k9770tgh0506hw0dwtb6pd83kwyq",
+      "displayName": "534422530",
+      "image": "https://avatars.githubusercontent.com/u/82763531?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777366078443,
+      "changelog": "终端控制Spotify播放",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1debf729b3bb0a24f042c31342dcc0e5dab2c1977c986809390a621d8d08f860"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21159,
+  "uuid": "skill-clawhub-spot",
+  "skillKey": "clawhub-spot",
+  "name": "Spot",
+  "summary": "Binance Spot request using the Binance API. Authentication requires API key and secret key. Supports testnet and mainnet.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Awessh",
+      "features": [
+        "Binance Spot request using the Binance API",
+        "Authentication requires API key and secret key",
+        "Supports testnet and mainnet."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spot@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99691122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spot",
+      "url": "https://clawhub.ai/skills/spot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spot",
+    "url": "https://clawhub.ai/skills/spot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spot-be2bdbb3100e4119.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spot@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spot-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05a81bf4c266a980f37075fada2ca6b22051550b1736735e9709bc0d9b9652f9",
+      "artifactSizeBytes": 2070
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T03:17:23.758Z"
+}

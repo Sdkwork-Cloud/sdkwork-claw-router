@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67727,
+  "uuid": "skill-clawhub-jy-hk-stock-morning-brief",
+  "skillKey": "clawhub-jy-hk-stock-morning-brief",
+  "name": "jy-hk-stock-morning-brief",
+  "summary": "生成《港股资讯早报》——专业港股市场分析师角色，基于聚源数据 MCP 接口（通过 mcporter 调用）分析前一交易日市场动态、板块个股、公司公告、研报观点、南向资金、行业全景、外围市场等，为早盘投资者提供决策参考。触发词：港股早报、港股资讯早报、HK 早报、港股日报、恒指复盘、港股复盘。Generate HK...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jy_hk_stock_morning_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiayinian",
+      "features": [
+        "生成《港股资讯早报》——专业港股市场分析师角色，基于聚源数据 MCP 接口（通过 mcporter 调用）分析前一交易日市场动态、板块个股、公司公告、研报观点、南向资金、行业全景、外围市场等."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jy-hk-stock-morning-brief@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22932351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jy-hk-stock-morning-brief",
+      "url": "https://clawhub.ai/skills/jy-hk-stock-morning-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jy-hk-stock-morning-brief",
+    "url": "https://clawhub.ai/skills/jy-hk-stock-morning-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jy-hk-stock-morning-brief-c7d0ab4b5c90e790.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jy-hk-stock-morning-brief@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jy-hk-stock-morning-brief-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6b6805c6be8bf87588e5e56fec0a581a43977f2c23e2254484ab9b68dcafed9",
+      "artifactSizeBytes": 3066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T09:55:26.370Z"
+}

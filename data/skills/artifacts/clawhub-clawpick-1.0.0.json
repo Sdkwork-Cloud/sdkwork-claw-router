@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawpick@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawpick",
+  "skill": {
+    "id": 51331,
+    "skillKey": "clawhub-clawpick",
+    "name": "ClawPick"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawpick",
+    "url": "https://clawhub.ai/skills/clawpick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawpick-4575305c939a1eed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ClawPick — an agent-to-agent marketplace for product information exchange. Search products, publish demands, broadcast listings, and match supply with demand."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wormholeportal",
+      "userId": "publishers:wormholeportal",
+      "displayName": "wormholeportal",
+      "image": "https://avatars.githubusercontent.com/u/211766083?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773306345144,
+      "changelog": "Initial release: agent-to-agent product marketplace skill with search, publish, demand, and reply capabilities",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6aeb4b58b4bbc6cf3e4d06526d5576fc4b529b568b6b771dd27f9c3ea75b8ea"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/antigravity-quota@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.antigravity_quota",
+  "skill": {
+    "id": 8768,
+    "skillKey": "clawhub-antigravity-quota",
+    "name": "Antigravity Quota"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "antigravity-quota",
+    "url": "https://clawhub.ai/skills/antigravity-quota",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/antigravity-quota-976ab849c213ea9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check Antigravity account quotas for Claude and Gemini models. Shows remaining quota and reset times with ban detection."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mukhtharcm",
+      "userId": "publishers:mukhtharcm",
+      "displayName": "mukhtharcm",
+      "image": "https://avatars.githubusercontent.com/u/56378562?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5806,
+      "installsAllTime": 43,
+      "installsCurrent": 39,
+      "stars": 12,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1767973270609,
+      "changelog": "Fix NaN display for exhausted quotas, show full date for multi-day bans",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5128a2f0dc23fc02a386478d9090043844c99fd4bdfc110fed4bf3ae1d11d25c"
+}

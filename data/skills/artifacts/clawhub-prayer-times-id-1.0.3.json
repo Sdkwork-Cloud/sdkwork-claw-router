@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prayer-times-id@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prayer_times_id",
+  "skill": {
+    "id": 19851,
+    "skillKey": "clawhub-prayer-times-id",
+    "name": "Prayer Times Id"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prayer-times-id",
+    "url": "https://clawhub.ai/skills/prayer-times-id",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prayer-times-id-c717b27269b25f53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Menjadwalkan reminder waktu shalat (Indonesia) ke OpenClaw System Event berdasarkan lokasi, lengkap dengan quote harian Islami dan status Ramadan otomatis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zckyachmd",
+      "userId": "publishers:zckyachmd",
+      "displayName": "Zacky Achmad",
+      "image": "https://avatars.githubusercontent.com/u/31559432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 487,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772105013649,
+      "changelog": "Add methodSettings and tune passthrough to Aladhan timings URL; bump version to 1.0.3.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ab7c6b14991f7ebd2635057c7723c04a14055317cb0c37fd4c58d99f51df05d5"
+}

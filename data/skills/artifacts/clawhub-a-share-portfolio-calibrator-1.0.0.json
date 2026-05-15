@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-share-portfolio-calibrator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_portfolio_calibrator",
+  "skill": {
+    "id": 69055,
+    "skillKey": "clawhub-a-share-portfolio-calibrator",
+    "name": "a-share-portfolio-calibrator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-portfolio-calibrator",
+    "url": "https://clawhub.ai/skills/a-share-portfolio-calibrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-portfolio-calibrator-1a8779558439f450.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "把持仓截图或持仓列表标准化成组合工作包，输出仓位、权重、集中度、主题暴露和执行约束。适用于用户发账户截图、贴持仓表、想先诊断组合形态而不是立刻下结论的场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "minguncle",
+      "userId": "s1740agv2s9h5vwt47wp62spjn8534wy",
+      "displayName": "minguncle",
+      "image": "https://avatars.githubusercontent.com/u/57527858?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776485810270,
+      "changelog": "A-share Portfolio Calibrator launches with essential features for standardizing and analyzing portfolio snapshots.\n\n- Extracts and normalizes account and position data from screenshots or text lists.\n- Calculates key metrics: weights, concentration, thematic exposure, and actionable constraints.\n- Flags missing or uncertain data fields without guessing.\n- Outputs a structured portfolio packet for further analysis, not direct trading.\n- Clearly separates diagnosis from actionable recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0041db881d480d6a5df5c32183a157ad4129cbd50a4d8950633b6e822d57d9a4"
+}

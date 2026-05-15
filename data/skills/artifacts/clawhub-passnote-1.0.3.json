@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/passnote@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.passnote",
+  "skill": {
+    "id": 38186,
+    "skillKey": "clawhub-passnote",
+    "name": "passnote-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "passnote",
+    "url": "https://clawhub.ai/skills/passnote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/passnote-6d7957e20a225e2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage disposable memos using PassNote. Share secure, auto-destructing notes with others."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shiweifu",
+      "userId": "s17e495vzskwnezxbhn6h69ev183g4wt",
+      "displayName": "shiweifu",
+      "image": "https://avatars.githubusercontent.com/u/775934?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774773752210,
+      "changelog": "- Added a \"binaries\" section to specify that python3 is required.\n- Updated usage instructions to use python3 instead of python for all script invocations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48c06494e4b753156835653c05e012ec244bd0b356c5e9795a67c2fa34d023e7"
+}

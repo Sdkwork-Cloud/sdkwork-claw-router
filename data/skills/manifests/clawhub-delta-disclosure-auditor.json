@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36754,
+  "uuid": "skill-clawhub-delta-disclosure-auditor",
+  "skillKey": "clawhub-delta-disclosure-auditor",
+  "name": "Delta Disclosure Auditor",
+  "summary": "Helps verify that skill updates publish an auditable record of what changed — catching the gap between \"the registry shows the new version\" and \"anyone can s...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delta_disclosure_auditor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andyxinweiminicloud",
+      "features": [
+        "Helps verify that skill updates publish an auditable record of what changed — catching the gap."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/delta-disclosure-auditor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201528876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "delta-disclosure-auditor",
+      "url": "https://clawhub.ai/skills/delta-disclosure-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delta-disclosure-auditor",
+    "url": "https://clawhub.ai/skills/delta-disclosure-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delta-disclosure-auditor-fcfcd9abdaed9f82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/delta-disclosure-auditor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-delta-disclosure-auditor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b248a372591c7df15a8a1e099dc9a9117468eb89442283716282ddbce739d1a4",
+      "artifactSizeBytes": 2610
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T03:02:10.746Z"
+}

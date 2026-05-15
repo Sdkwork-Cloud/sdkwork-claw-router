@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/life-transition-companion@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.life_transition_companion",
+  "skill": {
+    "id": 53909,
+    "skillKey": "clawhub-life-transition-companion",
+    "name": "Life Transition Companion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "life-transition-companion",
+    "url": "https://clawhub.ai/skills/life-transition-companion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/life-transition-companion-6fd3a38ada001673.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides transition timelines and emotion-preparation scripts for big family changes — new sibling, moving house, school change, parental separation, or loss..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 64,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778127652353,
+      "changelog": "Initial release — provides structured support for families helping children through major life transitions.\n\n- Offers transition timelines and emotion-preparation scripts for situations like a new sibling, moving, school changes, parental separation, or loss.\n- Delivers age-appropriate communication strategies and activities to help children process change.\n- Includes clear safety boundaries and reminders about when to seek professional help.\n- Supplies resources for follow-up support, memory preservation, and further reading.\n- Not a diagnostic, medical, legal, or crisis service; strictly informational and supportive for parents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1bade1b316c690ef10290eac8f80a1c041718dd7604db378cbdf48fc15ca5ae1"
+}

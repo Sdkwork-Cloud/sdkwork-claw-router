@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27221,
+  "uuid": "skill-clawhub-vietqr",
+  "skillKey": "clawhub-vietqr",
+  "name": "VietQR",
+  "summary": "Generate VietQR payment image URLs for Vietnamese bank transfers from bank/account details. Use when users ask to create a VietQR link, return a markdown QR...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vietqr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "phucisstupid",
+      "features": [
+        "Generate VietQR payment image URLs for Vietnamese bank transfers from bank/account details",
+        "Use when users ask to create a VietQR link, return a markdown QR..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vietqr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125681538?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vietqr",
+      "url": "https://clawhub.ai/skills/vietqr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vietqr",
+    "url": "https://clawhub.ai/skills/vietqr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vietqr-2bbbab3150427805.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vietqr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vietqr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95d468dafcc2d970f387efd9f60dbd3823601da2510966bd831ce701712647c6",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T13:52:30.533Z"
+}

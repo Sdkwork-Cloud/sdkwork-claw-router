@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56554,
+  "uuid": "skill-clawhub-agent-survey-corpus",
+  "skillKey": "clawhub-agent-survey-corpus",
+  "name": "Agent Survey Corpus",
+  "summary": "Download a small corpus of open-access arXiv survey/review PDFs about LLM agents and extract text for style learning. **Trigger**: agent survey corpus, ref c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_survey_corpus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WILLOSCAR",
+      "features": [
+        "Download a small corpus of open-access arXiv survey/review PDFs about LLM agents and extract te.",
+        "**Trigger**: agent survey corpus, ref c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-survey-corpus@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63443351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-survey-corpus",
+      "url": "https://clawhub.ai/skills/agent-survey-corpus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-survey-corpus",
+    "url": "https://clawhub.ai/skills/agent-survey-corpus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-survey-corpus-089ccadf8123c464.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-survey-corpus@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-survey-corpus-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f86c05d208f1c750f5aa488db197c10800f2f6c2b660d605ea8b51a4fec1b124",
+      "artifactSizeBytes": 2378
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:14:23.208Z"
+}

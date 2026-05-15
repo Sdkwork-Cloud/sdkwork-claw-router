@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69632,
+  "uuid": "skill-clawhub-self-improving-agent-next",
+  "skillKey": "clawhub-self-improving-agent-next",
+  "name": "self-improving-agent",
+  "summary": "记录错误、纠正、能力缺口与最佳实践，形成可复用的持续改进闭环。适用于：命令失败、用户纠正、外部 API/工具异常、发现更优做法、提出新能力需求，以及任务前复盘历史经验。",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_agent_next",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "微云字节",
+      "features": [
+        "记录错误、纠正、能力缺口与最佳实践，形成可复用的持续改进闭环。适用于：命令失败、用户纠正、外部 API/工具异常、发现更优做法、提出新能力需求，以及任务前复盘历史经验。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-improving-agent-next@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69578375?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-improving-agent-next",
+      "url": "https://clawhub.ai/skills/self-improving-agent-next"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-agent-next",
+    "url": "https://clawhub.ai/skills/self-improving-agent-next",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-agent-next-5506ba451eea80cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-improving-agent-next@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-improving-agent-next-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:736ec57b4ae66de41236a1b52c0170441ee039d45fb8cd68207030798bb08e58",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T08:59:59.989Z"
+}

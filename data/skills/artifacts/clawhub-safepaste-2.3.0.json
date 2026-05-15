@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/safepaste@2.3.0",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safepaste",
+  "skill": {
+    "id": 21721,
+    "skillKey": "clawhub-safepaste",
+    "name": "Safepaste"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safepaste",
+    "url": "https://clawhub.ai/skills/safepaste",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safepaste-b5c6e0da5dcbd714.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check any OpenClaw prompt, config snippet, or tip against YOUR actual setup before applying it. Auto-detects pasted prompts, analyzes compatibility, shows ex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rocanome",
+      "userId": "publishers:rocanome",
+      "displayName": "rocanome",
+      "image": "https://avatars.githubusercontent.com/u/259168735?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 499,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.3.0",
+      "createdAt": 1772216099020,
+      "changelog": "SafePaste v2.3.0 Changelog\n\n- Expanded and clarified SKILL.md documentation with detailed installation, usage instructions, and agent behavior guidelines.\n- Enhanced list and explanation of trigger/interaction commands for user analysis, action, exploration, and rollback.\n- Detailed \"What It Checks\" matrix added to explain SafePaste’s compatibility analysis across config types.\n- Strengthened agent instructions for model escalation, auto-detection signals, backup requirements, and confidence logic.\n- Clarified messaging and scenarios for auto-detecting config snippets, including when to offer analysis.\n- Updated metadata: homepage and OpenClaw integration information included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:726ea6497d696d67a85360950253fd48a9500b3efb0b2e2c3711ffa70d9086c1"
+}

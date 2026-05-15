@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jpeng-property-value@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpeng_property_value",
+  "skill": {
+    "id": 41323,
+    "skillKey": "clawhub-jpeng-property-value",
+    "name": "property-value"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpeng-property-value",
+    "url": "https://clawhub.ai/skills/jpeng-property-value",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpeng-property-value-ef27807800bb688b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Estimate property values"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpengcheng523-netizen",
+      "userId": "s177n9nwg73ep3g6fp9z19025n83h4xr",
+      "displayName": "jpengcheng523-netizen",
+      "image": "https://avatars.githubusercontent.com/u/226868999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774418537065,
+      "changelog": "Initial release of jpeng-property-value.\n\n- Estimate property values with a simple script.\n- Supports automation of property and real estate valuation tasks.\n- Command-line interface for input and output files.\n- Requires configuration with a PROPERTY_API_KEY.\n- Returns results in JSON format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:844ee648ac75a4fbbae61ded7f3602f459dc09978e62dcc3b333c12667c03b4c"
+}

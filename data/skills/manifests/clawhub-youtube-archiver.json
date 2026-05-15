@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22047,
+  "uuid": "skill-clawhub-youtube-archiver",
+  "skillKey": "clawhub-youtube-archiver",
+  "name": "YouTube Archiver",
+  "summary": "Archive YouTube playlists into markdown notes with metadata, transcripts, AI summaries, and tags. Use when a user asks to import/sync YouTube playlists, arch...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_archiver",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ben Miller",
+      "features": [
+        "Archive YouTube playlists into markdown notes with metadata, transcripts, AI summaries, and tags",
+        "Use when a user asks to import/sync YouTube playlists, arch..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-archiver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73343564?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-archiver",
+      "url": "https://clawhub.ai/skills/youtube-archiver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-archiver",
+    "url": "https://clawhub.ai/skills/youtube-archiver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-archiver-84e114dc43e10eef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-archiver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-archiver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0771c61f2fed61b8cde4d28fbe1575b51e7a3eb2ae141c1e936f95e641bf90fd",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T17:02:04.278Z"
+}

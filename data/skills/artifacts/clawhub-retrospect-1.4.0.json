@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/retrospect@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retrospect",
+  "skill": {
+    "id": 55712,
+    "skillKey": "clawhub-retrospect",
+    "name": "Retrospect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retrospect",
+    "url": "https://clawhub.ai/skills/retrospect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retrospect-4836600918f39fa2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Session retrospective that analyzes conversation history to produce structured feedback for both user and LLM. Use this skill whenever the user says '复盘', 'r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zbc0315",
+      "userId": "s170n9q9jf63zng4je4m7vaafh84dkwy",
+      "displayName": "zhangbc",
+      "image": "https://avatars.githubusercontent.com/u/62389427?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1775545061935,
+      "changelog": "Replace Python parser with Node.js — no Python dependency needed",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b664d2983d7ae5db69d7219058b1560c51488077933e7b129eca1266ba657fc9"
+}

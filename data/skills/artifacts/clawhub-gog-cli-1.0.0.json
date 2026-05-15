@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gog-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gog_cli",
+  "skill": {
+    "id": 32176,
+    "skillKey": "clawhub-gog-cli",
+    "name": "Gog Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gog-cli",
+    "url": "https://clawhub.ai/skills/gog-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gog-cli-9d24df909f604f66.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "saisake",
+      "userId": "s17fvv8hqwxdvgmrfxd0097xth84qahj",
+      "displayName": "saisake",
+      "image": "https://avatars.githubusercontent.com/u/12461236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775971065711,
+      "changelog": "Initial release of gog: a CLI for Google Workspace productivity.\n\n- Provides command-line access to Gmail, Calendar, Drive, Contacts, Sheets, and Docs.\n- OAuth authentication setup for secure account access.\n- Includes common commands for searching, sending, listing, updating, and exporting across Google services.\n- Supports JSON output and scripting-friendly options.\n- Brew installation available for easy setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:284eb41f74356fedd38d8658a9b9682858bb80c0dd4a9b1779748311a2f15451"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34264,
+  "uuid": "skill-clawhub-utf8-time",
+  "skillKey": "clawhub-utf8-time",
+  "name": "Utf8 Time",
+  "summary": "When user mentions current time, get and display the current time",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.utf8_time",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zLikeMario",
+      "features": [
+        "When user mentions current time, get and display the current time"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/utf8-time@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100673571?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "utf8-time",
+      "url": "https://clawhub.ai/skills/utf8-time"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "utf8-time",
+    "url": "https://clawhub.ai/skills/utf8-time",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/utf8-time-f00b93e471b2f98a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/utf8-time@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-utf8-time-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb15c68caa89eeee6a55fe68fd3ec2d52fc2cfc1bb75dd5bf730167687beb0e0",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T03:09:27.475Z"
+}

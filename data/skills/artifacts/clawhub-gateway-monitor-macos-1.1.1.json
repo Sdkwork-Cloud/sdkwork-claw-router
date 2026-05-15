@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gateway-monitor-macos@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gateway_monitor_macos",
+  "skill": {
+    "id": 18857,
+    "skillKey": "clawhub-gateway-monitor-macos",
+    "name": "Gateway Monitor (macOS)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gateway-monitor-macos",
+    "url": "https://clawhub.ai/skills/gateway-monitor-macos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gateway-monitor-macos-034266d7b8089da0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and operate a local OpenClaw Gateway Monitor stack on macOS with LaunchAgent + watchdog. Use when setting up, repairing, or validating gateway-monito..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yes999zc",
+      "userId": "s172pp0gtrxya3j2689j2vegfs85vf80",
+      "displayName": "yes999zc",
+      "image": "https://avatars.githubusercontent.com/u/127926029?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 644,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1773505910001,
+      "changelog": "Sync latest gateway-monitor updates: gateway restart action, log baseline clear toggle, oMLX update check UI and repo switch.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e54f94ebe9421ac8d8fd5cc7b509534a5e8fdfaf1d1b57a3d268c801f8bf6a15"
+}

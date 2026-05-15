@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17854,
+  "uuid": "skill-clawhub-ironclaw-lead-enrichment",
+  "skillKey": "clawhub-ironclaw-lead-enrichment",
+  "name": "Ironclaw Lead Enrichment",
+  "summary": "Enrich contact and lead records with LinkedIn profiles, email addresses, company data, and education info. Use when asked to \"enrich contacts\", \"fill in miss...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ironclaw_lead_enrichment",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Patrick Smith",
+      "features": [
+        "Enrich contact and lead records with LinkedIn profiles, email addresses, company data, and educ.",
+        "Use when asked to \"enrich contacts\", \"fill in miss..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ironclaw-lead-enrichment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25066580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ironclaw-lead-enrichment",
+      "url": "https://clawhub.ai/skills/ironclaw-lead-enrichment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ironclaw-lead-enrichment",
+    "url": "https://clawhub.ai/skills/ironclaw-lead-enrichment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ironclaw-lead-enrichment-2c96fad35e7a3fc3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ironclaw-lead-enrichment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ironclaw-lead-enrichment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d659a11879a02230005d06d78dcdabd2882334ad4b200f6d6cf274d750367ca",
+      "artifactSizeBytes": 2504
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T14:53:31.319Z"
+}

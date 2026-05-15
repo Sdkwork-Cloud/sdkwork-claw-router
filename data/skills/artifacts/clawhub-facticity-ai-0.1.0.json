@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/facticity-ai@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.facticity_ai",
+  "skill": {
+    "id": 20054,
+    "skillKey": "clawhub-facticity-ai",
+    "name": "Facticity.AI Complete Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "facticity-ai",
+    "url": "https://clawhub.ai/skills/facticity-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/facticity-ai-000321c88da2a891.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Facticity.AI integration - fact-check claims, extract claims from content, transcribe links, check link reliability, check credits, and monitor task..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shahruj",
+      "userId": "publishers:shahruj",
+      "displayName": "shahruj",
+      "image": "https://avatars.githubusercontent.com/u/57801700?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 576,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771829865384,
+      "changelog": "Initial release: Full Facticity.AI integration enabling claim fact-checking, claim extraction, URL transcription, and source reliability scoring. Built from award-winning research (TIME Best Invention 2024), designed for high-stakes verification across text, audio, and video. Supports YouTube, TikTok, Instagram Reels, X Spaces, and other multimedia URLs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bcd4336295dd3c51751449f9f78815feaa329558bccc5e95a2c4be8dd63d2b49"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-trimmer-clideo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_trimmer_clideo",
+  "skill": {
+    "id": 47452,
+    "skillKey": "clawhub-video-trimmer-clideo",
+    "name": "Video Trimmer Clideo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-trimmer-clideo",
+    "url": "https://clawhub.ai/skills/video-trimmer-clideo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-trimmer-clideo-97fb20b8f34b6c47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "trim video clips into trimmed video clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for cutting unwanted sec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777168734057,
+      "changelog": "Initial release of Video Trimmer Clideo — trim and export video clips easily.\n\n- Supports video trimming for MP4, MOV, AVI, WebM files up to 500MB.\n- Uses cloud GPUs for fast processing (20–40 seconds typically), exporting clips as 1080p MP4 by default.\n- Handles user authentication with a free NEMO_TOKEN (100 free credits).\n- Provides clear workflows for upload, editing (trim, cut), preview, and export.\n- Robust error handling with user-friendly messages for unsupported files, token issues, rate limits, and plan restrictions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8637c2d6bb845eef7b8e7f25f99e21471feed7324668e0a3b8293478da1bd7d9"
+}

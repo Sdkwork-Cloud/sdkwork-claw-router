@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/simmer-wallet-setup@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simmer_wallet_setup",
+  "skill": {
+    "id": 53818,
+    "skillKey": "clawhub-simmer-wallet-setup",
+    "name": "Simmer Wallet Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simmer-wallet-setup",
+    "url": "https://clawhub.ai/skills/simmer-wallet-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simmer-wallet-setup-26b3f30abf4d124e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-custody wallet setup for Simmer agents. Choose OWS (recommended — encrypted local vault, multi-chain, policy controls) or external raw key (existing set..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adlai88",
+      "userId": "s172hbaws6qnfk9a4zffkzfags83j0df",
+      "displayName": "AD88",
+      "image": "https://avatars.githubusercontent.com/u/6263940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 95,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777546259749,
+      "changelog": "Initial Tier A self-custody wallet setup skill — OWS recommended, external raw key supported. Managed users skip this skill (dashboard flow).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6096c0a226766a378a4d7b5aaeda5e406a62d5be0f987c1ad065f5f2a767d7d6"
+}

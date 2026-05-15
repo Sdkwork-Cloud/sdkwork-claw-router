@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lyrics-video-maker-free-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lyrics_video_maker_free_online",
+  "skill": {
+    "id": 44267,
+    "skillKey": "clawhub-lyrics-video-maker-free-online",
+    "name": "Lyrics Video Maker Free Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lyrics-video-maker-free-online",
+    "url": "https://clawhub.ai/skills/lyrics-video-maker-free-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lyrics-video-maker-free-online-3defe510f0bb95e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 3-minute MP3 song with a text file of lyrics into 1080p animated lyrics videos just by typing what you need. Whether it's creating lyric-synced videos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776919932455,
+      "changelog": "lyrics-video-maker-free-online 1.0.0\n\n- Initial release of the Lyrics Video Maker Free Online skill.\n- Upload a 3-minute MP3 and text lyrics file to generate a synchronized, animated 1080p lyric video in under 2 minutes.\n- All processing and exports occur remotely (no installation needed).\n- Easy setup using an automatic free token for 7 days, plus session management and credit tracking.\n- Simple commands to upload, edit, preview, check credits/status, and export videos.\n- Supports common formats (mp3, mp4, wav, etc.) and cloud-based workflow for fast, streamlined lyric video production.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:239147542f6666ad008236d5ee5947077f715261e87335230e1c967809e17e71"
+}

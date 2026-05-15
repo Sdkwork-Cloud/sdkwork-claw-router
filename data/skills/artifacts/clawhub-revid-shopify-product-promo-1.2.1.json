@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/revid-shopify-product-promo@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.revid_shopify_product_promo",
+  "skill": {
+    "id": 53257,
+    "skillKey": "clawhub-revid-shopify-product-promo",
+    "name": "Shopify Product Promo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "revid-shopify-product-promo",
+    "url": "https://clawhub.ai/skills/revid-shopify-product-promo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/revid-shopify-product-promo-861da154234d16ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a Shopify (or any e-commerce) product page URL into a 30–45 second 9:16 promo video ready for TikTok / Reels / Shorts. Use when the user shares a produc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "api00",
+      "userId": "s1728d1rdp70wm5hvmk61q153h85kp8x",
+      "displayName": "api00",
+      "image": "https://avatars.githubusercontent.com/u/57573621?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1777201794448,
+      "changelog": "Fix: follow 307 redirect in polling examples",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47eeb0d249869df8d1ac65be41a583c4e695908766bdeadb95e7de68c5b68959"
+}

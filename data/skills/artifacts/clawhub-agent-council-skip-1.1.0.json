@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-council-skip@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_council_skip",
+  "skill": {
+    "id": 29000,
+    "skillKey": "clawhub-agent-council-skip",
+    "name": "Agent Council"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-council-skip",
+    "url": "https://clawhub.ai/skills/agent-council-skip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-council-skip-33d3efb7aaca8b04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete toolkit for creating autonomous AI agents and managing Discord channels for OpenClaw. Use when setting up multi-agent systems, creating new agents,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "izletenadam-creator",
+      "userId": "s17ekgqj35p6p5cnmh9kjnzx4983gyr5",
+      "displayName": "izletenadam-creator",
+      "image": "https://avatars.githubusercontent.com/u/225687735?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 311,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774367577450,
+      "changelog": "Security fix: removed direct config.json access, now uses OpenClaw CLI commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe7338dc91d2592c1df73f184cccc53e38cfc856476368d01f6b50e0cd46ae73"
+}

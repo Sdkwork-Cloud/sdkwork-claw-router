@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65306,
+  "uuid": "skill-clawhub-a4-to-a3-pdf",
+  "skillKey": "clawhub-a4-to-a3-pdf",
+  "name": "A4 To A3 Pdf",
+  "summary": "将文件夹中的图片按顺序两两合并为A3横向PDF（两张A4左右并排）。触发词：合并PDF、合成A3、两张A4合成一页、图片转PDF。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a4_to_a3_pdf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangchuang9523-gif",
+      "features": [
+        "将文件夹中的图片按顺序两两合并为A3横向PDF（两张A4左右并排）。触发词：合并PDF、合成A3、两张A4合成一页、图片转PDF。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a4-to-a3-pdf@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274148623?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a4-to-a3-pdf",
+      "url": "https://clawhub.ai/skills/a4-to-a3-pdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a4-to-a3-pdf",
+    "url": "https://clawhub.ai/skills/a4-to-a3-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a4-to-a3-pdf-21f79376b0caff95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a4-to-a3-pdf@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a4-to-a3-pdf-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1c723530e4b099f6c3bb48f1218d6871d7167c7afc775593a39d386089bc7da",
+      "artifactSizeBytes": 2335
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T06:46:07.747Z"
+}

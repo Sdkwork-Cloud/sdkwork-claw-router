@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61175,
+  "uuid": "skill-clawhub-tavily-zhipu-search",
+  "skillKey": "clawhub-tavily-zhipu-search",
+  "name": "Tavily + Zhipu Web Search",
+  "summary": "统一网络搜索（Tavily 优先 + 智谱兜底）。当用户需要搜索最新新闻、实时信息、查询网络资料时使用此 skill。优先 Tavily（分钟级实时），失败自动回退智谱 MCP web_search_prime（Coding Plan 免费额度）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_zhipu_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mydearzsy",
+      "features": [
+        "统一网络搜索（Tavily 优先 + 智谱兜底）。当用户需要搜索最新新闻、实时信息、查询网络资料时使用此 skill。优先 Tavily（分钟级实时），失败自动回退智谱 MCP web_se."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tavily-zhipu-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5027137?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tavily-zhipu-search",
+      "url": "https://clawhub.ai/skills/tavily-zhipu-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-zhipu-search",
+    "url": "https://clawhub.ai/skills/tavily-zhipu-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-zhipu-search-6882113c3955df0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tavily-zhipu-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tavily-zhipu-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2be9b8f4d203bdbc44cc29c35f4c20f8233e2a68e6892f4c81f44d5f41fbee9",
+      "artifactSizeBytes": 2088
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T01:38:38.406Z"
+}

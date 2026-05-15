@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/product-framework@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_framework",
+  "skill": {
+    "id": 28317,
+    "skillKey": "clawhub-product-framework",
+    "name": "Product Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-framework",
+    "url": "https://clawhub.ai/skills/product-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-framework-e5fb893f2dffb61d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design and visualize AI product frameworks including layered architecture, value chains, capability maps, and competitive positioning for product managers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pupujanet-eng",
+      "userId": "publishers:pupujanet-eng",
+      "displayName": "pupujanet-eng",
+      "image": "https://avatars.githubusercontent.com/u/235016310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773680424092,
+      "changelog": "Initial release: product architecture and framework design for AI product managers",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f591618c066793ae7cfbe6dc9752482569c6ed486f8bd681d74f05b4466b4df"
+}

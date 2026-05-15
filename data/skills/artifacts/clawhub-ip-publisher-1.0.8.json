@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ip-publisher@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ip_publisher",
+  "skill": {
+    "id": 58128,
+    "skillKey": "clawhub-ip-publisher",
+    "name": "IP Publisher | KB Publish Pack for WeChat Xiaohongshu Zhihu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ip-publisher",
+    "url": "https://clawhub.ai/skills/ip-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ip-publisher-1071412d96e90f3e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Knowledge base article generation + publish pack for WeChat, Xiaohongshu, Zhihu, Juejin, CSDN, Toutiao, and Weibo. 基于知识库、SEO 关键词、热点和大纲生成可审核内容，并附 Wechatsync 草..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeicwgy",
+      "userId": "s17b190tf85c34fs78qx3mh12n83g7at",
+      "displayName": "veeicwgy",
+      "image": "https://avatars.githubusercontent.com/u/108802128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1426,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1776838614196,
+      "changelog": "Refine ClawHub metadata: clearer display name, search-focused summary, and a tighter latest tag set for KB article generation and publish-pack queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d4eca43917f55966dd08903ab6f87f20e89e688ecd6aeb4674ea4bcc664fc17"
+}

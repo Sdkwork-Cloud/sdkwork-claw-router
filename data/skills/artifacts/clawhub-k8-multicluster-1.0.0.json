@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/k8-multicluster@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.k8_multicluster",
+  "skill": {
+    "id": 10162,
+    "skillKey": "clawhub-k8-multicluster",
+    "name": "Kubernetes Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "k8-multicluster",
+    "url": "https://clawhub.ai/skills/k8-multicluster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/k8-multicluster-13d82d2fb1b7c33a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage multiple Kubernetes clusters, switch contexts, and perform cross-cluster operations. Use when working with multiple clusters, comparing environments, or managing cluster lifecycle."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rohitg00",
+      "userId": "s1764xxjbprf3br6gghgha128x84zctc",
+      "displayName": "Rohit Ghumare",
+      "image": "https://avatars.githubusercontent.com/u/48523873?v=4"
+    },
+    "stats": {
+      "comments": 5,
+      "downloads": 2546,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769433763783,
+      "changelog": "- Initial release of k8s-multicluster skill for managing multiple Kubernetes clusters.\n- Provides context management: list, view, and switch between cluster contexts.\n- Supports cross-cluster operations for resources, comparisons, and parallel queries.\n- Includes Cluster API (CAPI) management: list clusters, get details, manage machines, and scale deployments.\n- Enables multi-cluster Helm and GitOps workflows with Flux and ArgoCD.\n- Documents federation and cross-cluster patterns (e.g., secret sync, service discovery).\n- Shares best practices and links to related skills for cluster troubleshooting and GitOps.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:595a9b6bae0696becde84801fa3b756640b0e0443c87dc293bd9b8f66d2ad4e4"
+}

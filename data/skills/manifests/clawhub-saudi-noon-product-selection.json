@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70370,
+  "uuid": "skill-clawhub-saudi-noon-product-selection",
+  "skillKey": "clawhub-saudi-noon-product-selection",
+  "name": "沙特 Noon 选品工具",
+  "summary": "沙特 Noon 电商选品工具。分析指定市场的竞争情况，识别蓝海产品。触发条件：用户要求选品、分析市场、查找蓝海产品。完整流程：市场翻译 → Noon 商品搜索 → 语义分析卖点 → 供给量搜索 → 蓝海识别 → 定价建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.saudi_noon_product_selection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freemanwangfuhan-coder",
+      "features": [
+        "沙特 Noon 电商选品工具。分析指定市场的竞争情况，识别蓝海产品。触发条件：用户要求选品、分析市场、查找蓝海产品。完整流程：市场翻译 → Noon 商品搜索 → 语义分析卖点 → 供给量搜."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/saudi-noon-product-selection@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/247284249?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "saudi-noon-product-selection",
+      "url": "https://clawhub.ai/skills/saudi-noon-product-selection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "saudi-noon-product-selection",
+    "url": "https://clawhub.ai/skills/saudi-noon-product-selection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/saudi-noon-product-selection-4ddea5fc511bab1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/saudi-noon-product-selection@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-saudi-noon-product-selection-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d39ad4be147c66eed3674ac1904af48043cbe04cc06b3fbbd5fe401a3cacfc4",
+      "artifactSizeBytes": 2139
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T07:18:00.820Z"
+}

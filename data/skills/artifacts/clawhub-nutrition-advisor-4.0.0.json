@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nutrition-advisor@4.0.0",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nutrition_advisor",
+  "skill": {
+    "id": 71455,
+    "skillKey": "clawhub-nutrition-advisor",
+    "name": "Megan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nutrition-advisor",
+    "url": "https://clawhub.ai/skills/nutrition-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nutrition-advisor-aaf81ccb2dd9a38c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "科学营养顾问。计算食物热量、TDEE/BMR、宏量营养素分配，结合女性生理周期提供动态饮食建议。支持饮食记录、间歇性断食、碳水循环、GI/GL血糖管理、抗炎饮食、压力-皮质醇营养、反向饮食等。触发词：计算热量、饮食建议、今天吃什么、减脂食谱、增肌食谱、TDEE、BMR、卡路里、记录饮食、查热量、替换、外食指南、补..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yamyeed",
+      "userId": "s17fq0eznz5phgyqsyf9fv3qg1844sq9",
+      "displayName": "Megan",
+      "image": "https://avatars.githubusercontent.com/u/90619919?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "4.0.0",
+      "createdAt": 1775981020414,
+      "changelog": "nutrition-advisor 4.0.0 introduces a comprehensive scientific nutrition coach with advanced features and user guidance.\n\n- 新增女性生理周期动态饮食建议、PCOS和断食的周期适配。\n- 覆盖TDEE/BMR/宏量营养素自动计算，细分多种饮食目标和烹饪方式对热量的影响。\n- 增加饮食、饮水和习惯追踪，内置食谱生成、快速替换与库存推荐。\n- 提供外食估算、GI/GL血糖管理、碳水循环、补剂建议、季节调整及平台期突破方案。\n- 优化交互体验，支持多种快捷指令与语境应答，用户数据本地储存，保护隐私。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca091c237d701ad8a727f01eef575d88514e82cd42e8fd08aee29d34dbb557b0"
+}

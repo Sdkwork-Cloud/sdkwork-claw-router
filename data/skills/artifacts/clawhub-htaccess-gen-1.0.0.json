@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/htaccess-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.htaccess_gen",
+  "skill": {
+    "id": 31478,
+    "skillKey": "clawhub-htaccess-gen",
+    "name": "htaccess Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "htaccess-gen",
+    "url": "https://clawhub.ai/skills/htaccess-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/htaccess-gen-6bd32e7f5ebddae3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate .htaccess files for Apache web servers. Use when creating redirect rules, URL rewrites, security headers, HTTPS enforcement, IP blocking, caching ru..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnnywang2001",
+      "userId": "s174ntk6h18bvsev091zn78ex583gr1h",
+      "displayName": "John Wang",
+      "image": "https://avatars.githubusercontent.com/u/20619402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773439909284,
+      "changelog": "Initial release of htaccess-gen.\n\n- Generate production-ready .htaccess files from the command line\n- Supports HTTPS enforcement, www/non-www redirects, security headers, browser caching, gzip compression, custom error pages, hotlink protection, CORS, IP blocking, directory indexes, redirects, and rewrites\n- Includes options for feature selection and file output\n- Useful for converting nginx rules to Apache .htaccess format",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ec5f73724282ff77e7ceed716e75a70ab56f003757d7c5b671972e6ae775535"
+}

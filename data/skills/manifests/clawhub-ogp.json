@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50800,
+  "uuid": "skill-clawhub-ogp",
+  "skillKey": "clawhub-ogp",
+  "name": "Ogp",
+  "summary": "OGP (Open Gateway Protocol) — federated agent communication, peer management, and project collaboration across OpenClaw and Hermes gateways. Use when the use...",
+  "version": "0.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ogp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "latentgenius",
+      "features": [
+        "OGP (Open Gateway Protocol) — federated agent communication, peer management, and project colla.",
+        "Use when the use..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ogp@0.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203848779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ogp",
+      "url": "https://clawhub.ai/skills/ogp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ogp",
+    "url": "https://clawhub.ai/skills/ogp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ogp-cd940b73e3607ba7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ogp@0.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ogp-0.6.0.json",
+      "version": "0.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6cc6443fd31e7ec2515455affc92289916bfd17a8434350ab5e19116c1124ac2",
+      "artifactSizeBytes": 1889
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T16:10:13.836Z"
+}

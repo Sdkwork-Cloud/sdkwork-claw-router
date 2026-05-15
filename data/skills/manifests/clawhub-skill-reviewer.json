@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11159,
+  "uuid": "skill-clawhub-skill-reviewer",
+  "skillKey": "clawhub-skill-reviewer",
+  "name": "Skill Reviewer",
+  "summary": "Review and audit agent skills (SKILL.md files) for quality, correctness, and effectiveness. Use when evaluating a skill before publishing, reviewing someone else's skill, scoring skill quality, identifying defects in skill content, or impr.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gitgoodordietrying",
+      "features": [
+        "Review and audit agent skills (SKILL.md files) for quality, correctness, and effectiveness",
+        "Use when evaluating a skill before publishing, reviewing someone else's skill, scoring skill qu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116975874?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-reviewer",
+      "url": "https://clawhub.ai/skills/skill-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-reviewer",
+    "url": "https://clawhub.ai/skills/skill-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-reviewer-512119d572ec889e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3016da0224b896ef5b3ffe72286773403813bc1ee292eefc9af0006c8cebd131",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T22:56:01.631Z"
+}

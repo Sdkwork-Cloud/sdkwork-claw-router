@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/waymint@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.waymint",
+  "skill": {
+    "id": 42032,
+    "skillKey": "clawhub-waymint",
+    "name": "wayMint Identity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "waymint",
+    "url": "https://clawhub.ai/skills/waymint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/waymint-f4cc8f5fde432ecf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Link your OpenClaw agent to its wayMint ERC-8004 on-chain identity certificate. Responds to /8004 with your verified identity URL. Configure once, reference..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maksika",
+      "userId": "s17fk93b23mp03qzyyzj86dvq185x67v",
+      "displayName": "Maksika",
+      "image": "https://avatars.githubusercontent.com/u/13403493?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774176994448,
+      "changelog": "fix: /waymint slash command (was incorrectly /8004)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:99c8a747471c32556f4ad15c4193a18c02a9719c6d894bc4e348b0dd5d49ef90"
+}

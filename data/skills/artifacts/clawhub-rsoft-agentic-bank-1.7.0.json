@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rsoft-agentic-bank@1.7.0",
+  "version": "1.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rsoft_agentic_bank",
+  "skill": {
+    "id": 26874,
+    "skillKey": "clawhub-rsoft-agentic-bank",
+    "name": "RSoft Agentic Bank"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rsoft-agentic-bank",
+    "url": "https://clawhub.ai/skills/rsoft-agentic-bank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rsoft-agentic-bank-02a1b8793d47fffb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-native lending service for autonomous agents. Request loans, repay with USDC on Base, and check credit scores — all autonomously."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rsoft-latam",
+      "userId": "publishers:rsoft-latam",
+      "displayName": "rsoft-latam",
+      "image": "https://avatars.githubusercontent.com/u/21285250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1021,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.7.0",
+      "createdAt": 1771790723993,
+      "changelog": "Version 1.7.0 is a major update focusing on on-chain, autonomous loan and repayment flows using the payment skill.\n\n- Adds payment skill integration for on-chain USDC repayments on Base Sepolia\n- Updates setup and command instructions for using a funded wallet and retrieving your address\n- Clarifies all workflow steps: from getting a loan to repaying via the payment skill and confirming repayment\n- Updates documentation for network (Base Sepolia), currency (USDC), and testnet usage notes\n- Enforces one loan at a time and highlights minimum loan constraints",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:37bbeeebc919e0951e92117a44c0ac38581a8e9c50ea55c98bbe7313747320c1"
+}

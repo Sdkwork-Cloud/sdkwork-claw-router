@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wxgzh-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wxgzh_mcp",
+  "skill": {
+    "id": 64847,
+    "skillKey": "clawhub-wxgzh-mcp",
+    "name": "wxgzh-mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wxgzh-mcp",
+    "url": "https://clawhub.ai/skills/wxgzh-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wxgzh-mcp-84a13534ba187a7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信公众号草稿创建与管理技能，支持图片上传、创建草稿、发布等操作。需配置 AppID、AppSecret、白名单 IP。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "279458179",
+      "userId": "s172tnbzze795e1dcwzac5127983pqdg",
+      "displayName": "xiaohuozi",
+      "image": "https://avatars.githubusercontent.com/u/79885733?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776155857177,
+      "changelog": "wxgzh-mcp 1.0.0 初始发布\n\n- 提供微信公众号草稿文章的创建与管理，包括封面图/正文图片上传、草稿创建、查看、删除及发布等功能\n- 支持 access_token 获取与自动缓存\n- 需配置 AppID、AppSecret 以及添加本机 IP 至公众号白名单\n- 包含详细配置引导与常见问题说明\n- 提供分模块源码结构及 Docker 部署支持",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25b0d15388236ae8317fc55708112ea00546319584ee03518e0ec0741a1cdeb2"
+}

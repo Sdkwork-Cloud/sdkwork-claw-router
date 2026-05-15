@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61715,
+  "uuid": "skill-clawhub-oc-pr-review",
+  "skillKey": "clawhub-oc-pr-review",
+  "name": "OC PR Review",
+  "summary": "PR 审查技能 — 完整的 Pull Request 审查流程，集成 GitHub CLI，支持安全分析、测试覆盖、性能评估、代码质量检查，并可推送飞书通知。Use when: (1) 审查 PR，(2) 检查 PR 安全性，(3) 分析测试覆盖，(4) 评估代码质量，(5) 生成审查报告。触发词：'review...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_pr_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Narain",
+      "features": [
+        "PR 审查技能 — 完整的 Pull Request 审查流程，集成 GitHub CLI，支持安全分析、测试覆盖、性能评估、代码质量检查，并可推送飞书通知。Use when: (1) 审查."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oc-pr-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66556401?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oc-pr-review",
+      "url": "https://clawhub.ai/skills/oc-pr-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-pr-review",
+    "url": "https://clawhub.ai/skills/oc-pr-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-pr-review-e61c3f60808f5168.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oc-pr-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oc-pr-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b55aa5e2d3a1ec3e66f720230c3399b775992ebde27cc482c5a381fce4fe35c",
+      "artifactSizeBytes": 2085
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:31:21.152Z"
+}

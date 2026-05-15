@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30790,
+  "uuid": "skill-clawhub-cpbox-news-search",
+  "skillKey": "clawhub-cpbox-news-search",
+  "name": "cpbox-news-search",
+  "summary": "USE FOR news search. Returns news articles with title, URL, description, age, thumbnail. Supports freshness and date range filtering, SafeSearch filter and G...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cpbox_news_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "springmint",
+      "features": [
+        "USE FOR news search",
+        "Returns news articles with title, URL, description, age, thumbnail",
+        "Supports freshness and date range filtering, SafeSearch filter and G..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cpbox-news-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166361573?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cpbox-news-search",
+      "url": "https://clawhub.ai/skills/cpbox-news-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cpbox-news-search",
+    "url": "https://clawhub.ai/skills/cpbox-news-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cpbox-news-search-2779ef66c4b72898.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cpbox-news-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cpbox-news-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ceebdd9b0002ca963641be475d4647a2504d355cd0331bbf3f6690c6b8324af",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T08:56:35.193Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-advisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_advisor",
+  "skill": {
+    "id": 63023,
+    "skillKey": "clawhub-weather-advisor",
+    "name": "Weather Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-advisor",
+    "url": "https://clawhub.ai/skills/weather-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-advisor-8d630404ec755a45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "天气顾问。智能天气顾问。实时天气查询、未来7天预报、穿衣建议与出行活动推荐 Keywords: 天气查询, weather, 穿衣建议, 出行提醒."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 41,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778352199661,
+      "changelog": "- Initial release of weather-advisor.\n- Provides real-time weather queries, 7-day forecasts, outfit recommendations, and travel activity tips.\n- Supports commands: now (current weather), outfit (dressing advice), alert (weather warnings).\n- Includes detailed workflow instructions, validation checklist, and sample output format.\n- Designed for use in scenarios like checking weather, outfit advice, and understanding weather alerts.\n- Requires requests package; no handling of sensitive personal data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d324f6891f1d541b6993e4fcb0d48e2ab3c151cc42b639967bccf9ad42c63ebf"
+}

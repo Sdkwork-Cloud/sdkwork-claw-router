@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13359,
+  "uuid": "skill-clawhub-yidun-skill-sec",
+  "skillKey": "clawhub-yidun-skill-sec",
+  "name": "Yidun Skill Sec",
+  "summary": "Intelligent code security scanner with hybrid local-cloud detection. Fingerprints packages, runs static behavioral analysis, and consults cloud threat intell...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yidun_skill_sec",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yidun",
+      "features": [
+        "Intelligent code security scanner with hybrid local-cloud detection",
+        "Fingerprints packages, runs static behavioral analysis, and consults cloud threat intell..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yidun-skill-sec@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17902411?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yidun-skill-sec",
+      "url": "https://clawhub.ai/skills/yidun-skill-sec"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yidun-skill-sec",
+    "url": "https://clawhub.ai/skills/yidun-skill-sec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yidun-skill-sec-b9f71f6f84b624ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yidun-skill-sec@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-yidun-skill-sec-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd4ce31464f697261904050e0d5ddafa6a45f723c0330442a1c967b0e28eff9c",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T10:26:46.693Z"
+}

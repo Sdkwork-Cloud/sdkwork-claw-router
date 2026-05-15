@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69668,
+  "uuid": "skill-clawhub-stock-analysis-report",
+  "skillKey": "clawhub-stock-analysis-report",
+  "name": "Stock Analysis",
+  "summary": "提供A股个股及市场多维度深度分析，涵盖基本面、资金面、技术面、筹码和舆情，给出评分及买卖操作建议。",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_analysis_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Derrors",
+      "features": [
+        "提供A股个股及市场多维度深度分析，涵盖基本面、资金面、技术面、筹码和舆情，给出评分及买卖操作建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-analysis-report@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33656531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-analysis-report",
+      "url": "https://clawhub.ai/skills/stock-analysis-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-analysis-report",
+    "url": "https://clawhub.ai/skills/stock-analysis-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-analysis-report-0145eb416095debe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-analysis-report@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-analysis-report-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d3f8553f619e204809b352ade1147071b2ca8dae634b917972fe9363778192b",
+      "artifactSizeBytes": 2409
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T02:08:51.064Z"
+}

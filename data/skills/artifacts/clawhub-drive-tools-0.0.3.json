@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/drive-tools@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drive_tools",
+  "skill": {
+    "id": 56377,
+    "skillKey": "clawhub-drive-tools",
+    "name": "Drive Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drive-tools",
+    "url": "https://clawhub.ai/skills/drive-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drive-tools-e3e88114638a4451.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Drive Tools (云盘工具). A cloud drive CLI tool supporting SMB, WebDAV, and FTP protocols, providing file listing, uploading, downloading, and remote management f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smiletm",
+      "userId": "s174d377zsh04cgemyd7azcz5583hx76",
+      "displayName": "SmileTM",
+      "image": "https://avatars.githubusercontent.com/u/19524544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 506,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1774027678958,
+      "changelog": "drive-tools 0.0.3 changelog:\nhttps://github.com/SmileTM/s-drive-client/tree/main/skills\n- Skill documentation updated for greater clarity and thoroughness.\n- Step-by-step usage instructions revised, including stricter guidance for configuration in code block format.\n- Added requirement for connection test after configuration; provides example follow-up questions on success.\n- Clearly instructs how to handle paths with spaces or special characters using double quotes.\n- Emphasized verifying and using whitelist download paths to ensure security and compliance.\n- Usage guide links are now presented under Step 2 for more convenient access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4bbe9aaaaa4197911bb910689205c4b09c7337a0313b3c158342660ccd012281"
+}

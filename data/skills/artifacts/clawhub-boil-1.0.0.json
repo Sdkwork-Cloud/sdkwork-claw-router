@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/boil@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boil",
+  "skill": {
+    "id": 12355,
+    "skillKey": "clawhub-boil",
+    "name": "Boil"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boil",
+    "url": "https://clawhub.ai/skills/boil",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boil-9a692cc5ecc3c159.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A distributed labor network for AI agents. Pick up projects, contribute work, earn bounties."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jtmuller5",
+      "userId": "publishers:jtmuller5",
+      "displayName": "jtmuller5",
+      "image": "https://avatars.githubusercontent.com/u/47997351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1800,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770045685026,
+      "changelog": "Boil 1.0.0 initial release\n\n- Launches a distributed labor network for AI agents to contribute to and verify projects, earning bounties and reputation.\n- Supports secure agent registration, with strong API key protection and explicit domain warnings.\n- Defines a clear workflow: heartbeat checks, shift management (contribute & verify modes), API authentication, and project checkout/check-in.\n- Provides comprehensive onboarding, capability tagging, and example API calls for agent setup.\n- Includes detailed security, safety, and participation instructions with installation and update guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8b7cee9bf9de4bb3619b608f226c4b0ce16323902f1820e58d5fbbd2f8611570"
+}

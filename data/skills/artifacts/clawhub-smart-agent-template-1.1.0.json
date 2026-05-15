@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-agent-template@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_agent_template",
+  "skill": {
+    "id": 62175,
+    "skillKey": "clawhub-smart-agent-template",
+    "name": "Smart Agent Template"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-agent-template",
+    "url": "https://clawhub.ai/skills/smart-agent-template",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-agent-template-92aa9cb51c0ccdd0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Smart Agent 工作流模板：三重判断机制 + 自动更新 + Context 优化。包含完整的任务执行规范、WBS 拆分、流程豁免阈值、记忆管理等最佳实践。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whhaijun",
+      "userId": "s177jghkh390q66eyphpszsc3d83s9at",
+      "displayName": "Mark",
+      "image": "https://avatars.githubusercontent.com/u/16590302?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774872382190,
+      "changelog": "新增自动更新功能 + 流程豁免阈值",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94037c44275216e60ad0ddfff675933e222ebb8c819ea146cec22360f0f5bd75"
+}

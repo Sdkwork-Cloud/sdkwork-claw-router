@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16467,
+  "uuid": "skill-clawhub-itinerary-carousel-post",
+  "skillKey": "clawhub-itinerary-carousel-post",
+  "name": "Itinerary Carousel Post",
+  "summary": "Create and publish an Instagram carousel post from a tabiji.ai itinerary. Given an itinerary URL, finds Instagram-worthy photos for the destination + top att...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.itinerary_carousel_post",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "psyduckler",
+      "features": [
+        "Create and publish an Instagram carousel post from a tabiji.ai itinerary",
+        "Given an itinerary URL, finds Instagram-worthy photos for the destination + top att..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/itinerary-carousel-post@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260153069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "itinerary-carousel-post",
+      "url": "https://clawhub.ai/skills/itinerary-carousel-post"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "itinerary-carousel-post",
+    "url": "https://clawhub.ai/skills/itinerary-carousel-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/itinerary-carousel-post-b1066b85d3878c82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/itinerary-carousel-post@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-itinerary-carousel-post-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96be721dc7cceac48d088f8496a7b299cc8baaed821da9c64001136f236d86d1",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T04:41:01.896Z"
+}

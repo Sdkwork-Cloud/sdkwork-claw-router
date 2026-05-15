@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mail@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mail",
+  "skill": {
+    "id": 9482,
+    "skillKey": "clawhub-mail",
+    "name": "Mail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mail",
+    "url": "https://clawhub.ai/skills/mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mail-00d8d3f11739d2f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute email operations with platform-specific optimizations and secure credential handling."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3129,
+      "installsAllTime": 40,
+      "installsCurrent": 38,
+      "stars": 4,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1771248225592,
+      "changelog": "Added explicit scope, requirements, and data access documentation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:75e47df546dde87241b1ee55715b4faef09458c7d1d27572b898170465a8e93d"
+}

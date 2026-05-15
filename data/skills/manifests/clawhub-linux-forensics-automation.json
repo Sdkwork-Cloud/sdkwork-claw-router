@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29762,
+  "uuid": "skill-clawhub-linux-forensics-automation",
+  "skillKey": "clawhub-linux-forensics-automation",
+  "name": "linux-forensics-automation",
+  "summary": "Automates Linux forensic data collection, generates detailed reports, and uploads them to Google Drive or emails results for fast incident response and audits.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linux_forensics_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PeachhFuzz",
+      "features": [
+        "Automates Linux forensic data collection, generates detailed reports, and uploads them to Googl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linux-forensics-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52888530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linux-forensics-automation",
+      "url": "https://clawhub.ai/skills/linux-forensics-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linux-forensics-automation",
+    "url": "https://clawhub.ai/skills/linux-forensics-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linux-forensics-automation-d61d0cd16b2c385d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linux-forensics-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linux-forensics-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36bf88addee30f60225362c61363e1b892c7c5edde933f660e2654525507bcc3",
+      "artifactSizeBytes": 2472
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T23:56:32.694Z"
+}

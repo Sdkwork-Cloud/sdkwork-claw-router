@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47433,
+  "uuid": "skill-clawhub-picture-to-video-ai",
+  "skillKey": "clawhub-picture-to-video-ai",
+  "name": "Picture To Video Ai",
+  "summary": "Get animated video clips ready to post, without touching a single slider. Upload your still images (JPG, PNG, WEBP, HEIC, up to 200MB), say something like \"t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.picture_to_video_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linmillsd7",
+      "features": [
+        "Get animated video clips ready to post, without touching a single slider",
+        "Upload your still images (JPG, PNG, WEBP, HEIC, up to 200MB), say something like \"t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/picture-to-video-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208832666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "picture-to-video-ai",
+      "url": "https://clawhub.ai/skills/picture-to-video-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "picture-to-video-ai",
+    "url": "https://clawhub.ai/skills/picture-to-video-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/picture-to-video-ai-1e794bf49b1d3022.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/picture-to-video-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-picture-to-video-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0834393b5f11535be350395c95725eb351ea36a9964a3cde0a046493910bd820",
+      "artifactSizeBytes": 2600
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T00:12:07.668Z"
+}

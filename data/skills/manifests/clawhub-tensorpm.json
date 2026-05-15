@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9127,
+  "uuid": "skill-clawhub-tensorpm",
+  "skillKey": "clawhub-tensorpm",
+  "name": "AI-Driven Project Management: TensorPM",
+  "summary": "AI-powered project management - a Notion and Jira alternative with local-first architecture. Manage projects, track action items, and coordinate teams via MCP tools or A2A agent communication. Signed & notarized. https://tensorpm.com",
+  "version": "1.1.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tensorpm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Neo552",
+      "features": [
+        "AI-powered project management",
+        "a Notion and Jira alternative with local-first architecture",
+        "Manage projects, track action items, and coordinate teams via MCP tools or A2A agent communicat.",
+        "Signed & notarized"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tensorpm@1.1.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/122058445?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tensorpm",
+      "url": "https://clawhub.ai/skills/tensorpm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tensorpm",
+    "url": "https://clawhub.ai/skills/tensorpm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tensorpm-00f8aff5a10da044.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tensorpm@1.1.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-tensorpm-1.1.12.json",
+      "version": "1.1.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:630c4b68acefdac2dd5910a65b6038b4e82bcccd81801f6a1bf41bd24dd601bd",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T19:45:29.881Z"
+}

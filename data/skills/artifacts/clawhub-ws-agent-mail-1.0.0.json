@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ws-agent-mail@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ws_agent_mail",
+  "skill": {
+    "id": 59593,
+    "skillKey": "clawhub-ws-agent-mail",
+    "name": "Agent Mail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ws-agent-mail",
+    "url": "https://clawhub.ai/skills/ws-agent-mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ws-agent-mail-faae1ab052d1bbe9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "邮件智能处理。使用 AgentMail API 收发邮件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fhbillwer",
+      "userId": "publishers:fhbillwer",
+      "displayName": "fhbillwer",
+      "image": "https://avatars.githubusercontent.com/u/42957828?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 730,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773158365683,
+      "changelog": "Agent Mail 1.0.0\n\n- 首次发布，基于 AgentMail 实现邮件的收发与管理\n- 支持发送和接收带附件的邮件\n- 提供邮箱账户的创建和管理功能\n- 支持邮件对话线程管理\n- 邮件数据保存在 /workspace/data/emails/",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d803c1287e031c709245d4b71a202c1e4180e85045d5beee4c44a661b23d7c68"
+}

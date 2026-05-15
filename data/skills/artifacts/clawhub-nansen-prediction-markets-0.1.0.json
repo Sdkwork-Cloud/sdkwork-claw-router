@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nansen-prediction-markets@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_prediction_markets",
+  "skill": {
+    "id": 51363,
+    "skillKey": "clawhub-nansen-prediction-markets",
+    "name": "Nansen Prediction Markets"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-prediction-markets",
+    "url": "https://clawhub.ai/skills/nansen-prediction-markets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-prediction-markets-0a57453d0c9e06aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Polymarket screeners — discover trending events, top markets by volume, and search for specific markets. Use when browsing what's happening on prediction mar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nansen-devops",
+      "userId": "s174hnr0xtfypzan2x804p4me183nkqz",
+      "displayName": "Nansen AI",
+      "image": "https://avatars.githubusercontent.com/u/93130718?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 285,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773750729648,
+      "changelog": "Initial release of prediction market screeners for Polymarket:\n\n- Discover trending events and top markets by 24h volume on Polymarket.\n- Search for specific markets by keyword or filter by status (open/closed).\n- Browse events, individual markets, or explore by category.\n- Multiple sorting options: volume (24h/1wk/1mo), liquidity, open interest, and trader count.\n- All commands run via `nansen research pm <sub>`—no chain flag required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d493b63990f179248f18af66bb2f153aaabe44366828d77f690988184ba0d5ae"
+}

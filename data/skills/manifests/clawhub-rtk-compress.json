@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50973,
+  "uuid": "skill-clawhub-rtk-compress",
+  "skillKey": "clawhub-rtk-compress",
+  "name": "Rtk Compress",
+  "summary": "Save 60-90% of LLM tokens on shell commands, file reads, and test outputs. Wraps rtk CLI for compressed output.",
+  "version": "1.15.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rtk_compress",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "erscoder",
+      "features": [
+        "Save 60-90% of LLM tokens on shell commands, file reads, and test outputs",
+        "Wraps rtk CLI for compressed output."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rtk-compress@1.15.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9429379?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rtk-compress",
+      "url": "https://clawhub.ai/skills/rtk-compress"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rtk-compress",
+    "url": "https://clawhub.ai/skills/rtk-compress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rtk-compress-3a66eff8760c2dd4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rtk-compress@1.15.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-rtk-compress-1.15.2.json",
+      "version": "1.15.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f483a481bfd47e063040853394b10191dc9ed8a4769bc7269d1c75d72cd93db",
+      "artifactSizeBytes": 2201
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T13:13:28.326Z"
+}

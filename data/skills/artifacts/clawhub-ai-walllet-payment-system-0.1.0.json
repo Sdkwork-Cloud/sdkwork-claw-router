@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-walllet-payment-system@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_walllet_payment_system",
+  "skill": {
+    "id": 17138,
+    "skillKey": "clawhub-ai-walllet-payment-system",
+    "name": "AI Walllet Payment System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-walllet-payment-system",
+    "url": "https://clawhub.ai/skills/ai-walllet-payment-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-walllet-payment-system-c39ac61ce47d03bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Ethereum wallets with encrypted keys, TOTP 2FA, secure ETH transactions, audit logs, and rate limiting for AI-driven payment processing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cerbug45",
+      "userId": "s170r0ajc2x7b9pyqmvrajgtxx85hz4r",
+      "displayName": "cerbug45",
+      "image": "https://avatars.githubusercontent.com/u/43820349?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 810,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771129479827,
+      "changelog": "Initial release of AI Wallet Payment System skill.\n\n- Enables secure creation and management of Ethereum wallets with military-grade encryption.\n- Supports secure ETH transactions using Web3, with TOTP-based two-factor authentication.\n- Provides encrypted key storage, password policies with high entropy, and backup/recovery options.\n- Features built-in rate limiting, comprehensive audit logging, and abuse prevention tools.\n- Includes command-line demo, API for integration with AI agents, and extensive configuration instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:41301382ccf0d171b756b72286e5976f58e44018498c022caa04f4e2582a8bbf"
+}

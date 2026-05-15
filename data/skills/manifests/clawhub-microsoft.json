@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20837,
+  "uuid": "skill-clawhub-microsoft",
+  "skillKey": "clawhub-microsoft",
+  "name": "Shop from Microsoft - With your creditcard",
+  "summary": "Let your agent shop online with guardrailed wallets, multiple payment methods, and owner approval.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microsoft",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TripleHippo",
+      "features": [
+        "Let your agent shop online with guardrailed wallets, multiple payment methods, and owner approv."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/microsoft@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261665182?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "microsoft",
+      "url": "https://clawhub.ai/skills/microsoft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microsoft",
+    "url": "https://clawhub.ai/skills/microsoft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microsoft-9fbf261b62c1d7c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/microsoft@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-microsoft-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2103ab738f7d2c737d249b298c2142dd9dfe6f2efe1dfa25ed96d0ec3a2268f3",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T20:19:03.237Z"
+}

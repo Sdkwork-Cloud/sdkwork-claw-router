@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60846,
+  "uuid": "skill-clawhub-send-md-as",
+  "skillKey": "clawhub-send-md-as",
+  "name": "Send Md As",
+  "summary": "在即时通讯 app 中以优雅图片形式展示 Markdown。支持标题、代码高亮（行号、Monokai）、LaTeX 公式、Mermaid 图表、表格、列表。4 种色彩主题，智能分页。渲染阶段零 CDN 依赖（安装时需网络下载依赖）。| Render Markdown as a polished image for...",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.send_md_as",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Enc-hanted",
+      "features": [
+        "在即时通讯 app 中以优雅图片形式展示 Markdown。支持标题、代码高亮（行号、Monokai）、LaTeX 公式、Mermaid 图表、表格、列表。4 种色彩主题，智能分页。渲染阶段."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/send-md-as@0.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/209087850?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "send-md-as",
+      "url": "https://clawhub.ai/skills/send-md-as"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "send-md-as",
+    "url": "https://clawhub.ai/skills/send-md-as",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/send-md-as-36e4645580a8e4e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/send-md-as@0.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-send-md-as-0.4.1.json",
+      "version": "0.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f9551ad8acb001dfe22183593d1457785424c5143fe6064bc477de8830a6c65",
+      "artifactSizeBytes": 2149
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T00:53:50.073Z"
+}

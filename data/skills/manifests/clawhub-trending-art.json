@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73443,
+  "uuid": "skill-clawhub-trending-art",
+  "skillKey": "clawhub-trending-art",
+  "name": "网红艺术",
+  "summary": "提供关于网红艺术的推荐清单、打卡路线与指南。用户搜索网红艺术或规划相关出行时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trending_art",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "提供关于网红艺术的推荐清单、打卡路线与指南。用户搜索网红艺术或规划相关出行时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trending-art@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trending-art",
+      "url": "https://clawhub.ai/skills/trending-art"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trending-art",
+    "url": "https://clawhub.ai/skills/trending-art",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trending-art-2c15af3dafd2379e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trending-art@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trending-art-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d87252644d91e27a8c309c8a7f6c905fc37704038d1339071eab883c96b0744",
+      "artifactSizeBytes": 2337
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T01:26:36.300Z"
+}

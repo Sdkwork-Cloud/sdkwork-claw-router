@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openmaic-convert-pptx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openmaic_convert_pptx",
+  "skill": {
+    "id": 60969,
+    "skillKey": "clawhub-openmaic-convert-pptx",
+    "name": "OpenMAIC Convert Pptx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openmaic-convert-pptx",
+    "url": "https://clawhub.ai/skills/openmaic-convert-pptx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openmaic-convert-pptx-2d722516dcd9ee8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将OpenMAIC课程JSON文件转换为包含演讲稿的PPT，支持智能自动查找OpenMAIC安装路径和命令行参数配置。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taizhouchen",
+      "userId": "s17ffpmvqht3rsr3b5ewab08x5841017",
+      "displayName": "taizhouchen",
+      "image": "https://avatars.githubusercontent.com/u/66772463?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 320,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773755024769,
+      "changelog": "Initial release of the OpenMAIC-convert-pptx skill.\n\n- Export OpenMAIC course content to PPTX files, including speaker notes.\n- Supports command line usage with smart detection of the OpenMAIC installation path (configurable via parameter).\n- Converts course JSON to slides, transferring text, shapes, backgrounds, and basic styles.\n- Saves exported PPTX to the workspace directory; includes automatic cleanup of temporary files.\n- CLI parameters available for course ID/title, manual path specification, and optional speaker notes inclusion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de6fdda75a041c2f7de8ae53e466f4cdbc5f175728c0b9e8e3d54765f722c475"
+}

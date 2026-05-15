@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44632,
+  "uuid": "skill-clawhub-google-drive-share-file",
+  "skillKey": "clawhub-google-drive-share-file",
+  "name": "Google Drive Share File",
+  "summary": "Atomic node skill to share a file in Google Drive using the gog CLI.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_drive_share_file",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zvirb",
+      "features": [
+        "Atomic node skill to share a file in Google Drive using the gog CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-drive-share-file@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130008533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-drive-share-file",
+      "url": "https://clawhub.ai/skills/google-drive-share-file"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-drive-share-file",
+    "url": "https://clawhub.ai/skills/google-drive-share-file",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-drive-share-file-54001d90ec4b07ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-drive-share-file@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-drive-share-file-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13124b852e25ffb31cb7b344451d513dcba79f23f010c9b70f4ca646447e095f",
+      "artifactSizeBytes": 2147
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T04:15:47.844Z"
+}

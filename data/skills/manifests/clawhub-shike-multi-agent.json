@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35964,
+  "uuid": "skill-clawhub-shike-multi-agent",
+  "skillKey": "clawhub-shike-multi-agent",
+  "name": "Shike Multi Agent",
+  "summary": "Multi-Agent dispatch system for Chinese. Dispatcher delegates to 5 persistent sub-agents via sessions_spawn. Supports polling, reply-then-dispatch, sessionKe...",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shike_multi_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sjj2026",
+      "features": [
+        "Multi-Agent dispatch system for Chinese",
+        "Dispatcher delegates to 5 persistent sub-agents via sessions_spawn",
+        "Supports polling, reply-then-dispatch, sessionKe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shike-multi-agent@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271952160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shike-multi-agent",
+      "url": "https://clawhub.ai/skills/shike-multi-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shike-multi-agent",
+    "url": "https://clawhub.ai/skills/shike-multi-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shike-multi-agent-640f274d25d0cba0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shike-multi-agent@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shike-multi-agent-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33e25dd672b51c7cf23726e42a3959d21bbd438f018e65217fbd0c4c0455d331",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T22:12:44.318Z"
+}

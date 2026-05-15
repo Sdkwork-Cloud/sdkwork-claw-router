@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/http-retry-circuit-breaker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.http_retry_circuit_breaker",
+  "skill": {
+    "id": 21764,
+    "skillKey": "clawhub-http-retry-circuit-breaker",
+    "name": "HTTP Retry Circuit Breaker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "http-retry-circuit-breaker",
+    "url": "https://clawhub.ai/skills/http-retry-circuit-breaker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/http-retry-circuit-breaker-713b4e14ab6f230e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Implements HTTP request retries with exponential backoff and a configurable circuit breaker to reduce failures and prevent cascading errors."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qwe123sddfsdfs",
+      "userId": "publishers:qwe123sddfsdfs",
+      "displayName": "qwe123sddfsdfs",
+      "image": "https://avatars.githubusercontent.com/u/262101924?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772603555203,
+      "changelog": "Initial release introducing HTTP client with retry logic and circuit breaker pattern.\n\n- Implements exponential backoff retry with configurable base delay, max delay, multiplier, and jitter.\n- Integrates circuit breaker pattern with CLOSED, OPEN, and HALF-OPEN states to minimize failure impact.\n- Supports customizable thresholds for retries, timeouts, and circuit breaker logic.\n- Provides manual circuit breaker control and statistics reporting.\n- Emits events for retry attempts and circuit breaker state changes.\n- Significantly reduces HTTP request failure rates.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a8a623f36873d873c0f72396a2c206233c3fa5d5100df2e9cc2de4f12ebe7503"
+}

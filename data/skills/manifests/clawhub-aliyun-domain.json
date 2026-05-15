@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23362,
+  "uuid": "skill-clawhub-aliyun-domain",
+  "skillKey": "clawhub-aliyun-domain",
+  "name": "aliyun-domain",
+  "summary": "Manage domain assets through Alibaba Cloud OpenAPI, supporting domain query, renewal, transfer, registration, and information modification. Requires user dou...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_domain",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "域小虾",
+      "features": [
+        "Manage domain assets through Alibaba Cloud OpenAPI, supporting domain query, renewal, transfer,.",
+        "Requires user dou..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aliyun-domain@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2419405?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aliyun-domain",
+      "url": "https://clawhub.ai/skills/aliyun-domain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-domain",
+    "url": "https://clawhub.ai/skills/aliyun-domain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-domain-dc952f4dd65e72b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aliyun-domain@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aliyun-domain-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98a95b106844a787f813c3c1f5e94a283ddfa24963cee81cc406835e349b739f",
+      "artifactSizeBytes": 2785
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T05:33:12.790Z"
+}

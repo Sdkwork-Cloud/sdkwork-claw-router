@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iacuc-protocol-drafter@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iacuc_protocol_drafter",
+  "skill": {
+    "id": 36798,
+    "skillKey": "clawhub-iacuc-protocol-drafter",
+    "name": "Iacuc Protocol Drafter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iacuc-protocol-drafter",
+    "url": "https://clawhub.ai/skills/iacuc-protocol-drafter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iacuc-protocol-drafter-b3de5efaa345f868.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Draft IACUC protocol applications with focus on the 3Rs principles justification"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774242874222,
+      "changelog": "Initial release of IACUC Protocol Drafter.\n\n- Generate IACUC protocol draft text with a focus on 3Rs principles justification.\n- Supports input via JSON file or stdin, and output to file or stdout.\n- Built-in templates for Replacement, Reduction, and Refinement sections.\n- Command-line parameters for input/output files, template type, and format.\n- No additional dependencies required; uses Python 3.8+ standard library.\n- Includes security and risk assessment guidelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad21dd22414b0f9382a1943654a49f126528885491167001332cdce0be8f20ef"
+}

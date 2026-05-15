@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44404,
+  "uuid": "skill-clawhub-infoseek",
+  "skillKey": "clawhub-infoseek",
+  "name": "InfoSeek",
+  "summary": "Deep web information search and archival skill for comprehensive research on persons, organizations, or products. Uses multiple search engines (Baidu, Tavily...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.infoseek",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ExpeditionHub",
+      "features": [
+        "Deep web information search and archival skill for comprehensive research on persons, organizat.",
+        "Uses multiple search engines (Baidu, Tavily..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/infoseek@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129585026?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "infoseek",
+      "url": "https://clawhub.ai/skills/infoseek"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "infoseek",
+    "url": "https://clawhub.ai/skills/infoseek",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/infoseek-e87086e9bd46cdbd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/infoseek@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-infoseek-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73a696ebf12ef8f6383922467c3fde965defb8d3da03959ac1c74940c2b10222",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T01:34:47.075Z"
+}

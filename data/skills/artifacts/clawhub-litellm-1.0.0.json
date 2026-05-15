@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/litellm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.litellm",
+  "skill": {
+    "id": 11145,
+    "skillKey": "clawhub-litellm",
+    "name": "LiteLLM"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "litellm",
+    "url": "https://clawhub.ai/skills/litellm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/litellm-dcc8d7506b63db23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call 100+ LLM providers through LiteLLM's unified API. Use when you need to call a different model than your primary (e.g., use GPT-4 for code review while running on Claude), compare outputs from multiple models, route to cheaper models f."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ishaan-jaff",
+      "userId": "publishers:ishaan-jaff",
+      "displayName": "ishaan-jaff",
+      "image": "https://avatars.githubusercontent.com/u/29436595?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 2055,
+      "installsAllTime": 13,
+      "installsCurrent": 12,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770488429166,
+      "changelog": "Initial release - call 100+ LLMs via unified API",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:812808b938711aab922f1b2da4bfc3acaa7753c9cb6a8865b8dd722162704b91"
+}

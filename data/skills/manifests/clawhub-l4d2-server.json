@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63149,
+  "uuid": "skill-clawhub-l4d2-server",
+  "skillKey": "clawhub-l4d2-server",
+  "name": "l4d2-server",
+  "summary": "Left 4 Dead 2 服务器管理助手。支持：(1) 记录和管理多台 L4D2 服务器（别名、IP、端口）(2) 通过 A2S 协议查询服务器状态（玩家数、地图、名称等）(3) 通过 RCON 执行服务器命令。触发词：L4D2、求生之路、服务器状态、rcon、a2s 查询。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.l4d2_server",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LaoYutang",
+      "features": [
+        "Left 4 Dead 2 服务器管理助手。支持：(1) 记录和管理多台 L4D2 服务器（别名、IP、端口）(2) 通过 A2S 协议查询服务器状态（玩家数、地图、名称等）(3) 通过 R."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/l4d2-server@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98928624?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "l4d2-server",
+      "url": "https://clawhub.ai/skills/l4d2-server"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "l4d2-server",
+    "url": "https://clawhub.ai/skills/l4d2-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/l4d2-server-b9e82059ec1de433.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/l4d2-server@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-l4d2-server-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5276357cfb73a16e9c6c8242d4d742438f41bc8f3c3134fa9b2f0f92f84ed03",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:38:12.575Z"
+}

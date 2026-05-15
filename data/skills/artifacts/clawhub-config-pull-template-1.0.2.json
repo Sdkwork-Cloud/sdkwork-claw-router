@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/config-pull-template@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.config_pull_template",
+  "skill": {
+    "id": 70130,
+    "skillKey": "clawhub-config-pull-template",
+    "name": "配置拉取代码生成"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "config-pull-template",
+    "url": "https://clawhub.ai/skills/config-pull-template",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/config-pull-template-0fb4e07f80ae6eb2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成配置拉取代码模板。用于在 Android 项目中接入配置中心、白名单、单独接口或推拉结合的配置。 触发条件：用户想要创建配置拉取功能，需要生成对应的 Kotlin/Java 代码模板。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hefuwei-95",
+      "userId": "s170g4ar44f68kkz98xav5kmh583phms",
+      "displayName": "hefuwei-95",
+      "image": "https://avatars.githubusercontent.com/u/81024917?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 260,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773644032298,
+      "changelog": "修正 Plugin 方法名与注解名一致",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d004f5a572b40cab0a05d5894412ac73116fabba3e56f88d700ea80d0028102"
+}

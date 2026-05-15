@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/student@3.4.1",
+  "version": "3.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.student",
+  "skill": {
+    "id": 21530,
+    "skillKey": "clawhub-student",
+    "name": "Student"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "student",
+    "url": "https://clawhub.ai/skills/student",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/student-264c8c381bf16c98.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help with coursework. Use when taking notes, summarizing readings, formatting citations, outlining essays, or calculating GPA."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 486,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "3.4.1",
+      "createdAt": 1773774791047,
+      "changelog": "v2.5 standard: Use-when desc, homepage, source, security fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aab6c797dc46e66ccc24684c87a41736c5ffa7b1b607b8bd654f1f9a905aff42"
+}

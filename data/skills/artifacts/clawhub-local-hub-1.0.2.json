@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-hub@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_hub",
+  "skill": {
+    "id": 66827,
+    "skillKey": "clawhub-local-hub",
+    "name": "Local Hub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-hub",
+    "url": "https://clawhub.ai/skills/local-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-hub-824773780bd3da86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地能力中心。通过 HTTP 调用本机麦克风、摄像头、Ollama、YOLO、Stable Diffusion、TTS/转写、通知、剪贴板、天气、白名单脚本等。当需要「验证是否有声音、拍一张照、用本地模型对话、文生图/图生图、朗读、系统通知、读剪贴板、看图描述、列模型、天气、跑脚本」时使用。需先确保 local_..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "damianleemoha",
+      "userId": "publishers:damianleemoha",
+      "displayName": "DamianLeeMoha",
+      "image": "https://avatars.githubusercontent.com/u/192185645?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 481,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772684863521,
+      "changelog": "补充服务端下载：GitHub 仓库与 v1.0.0 zip 直链及解压后安装步骤",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:915658a7b59649b34b594cab280ae78d0bb7e7fb168393d0fad0d3a9b8075330"
+}

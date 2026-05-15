@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60468,
+  "uuid": "skill-clawhub-makefile-generator",
+  "skillKey": "clawhub-makefile-generator",
+  "name": "Makefile Generator",
+  "summary": "生成专业的 Makefile，支持 Node.js、Python、Go 项目，提供开发、测试、构建、部署等常用命令。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.makefile_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sunshine-del-ux",
+      "features": [
+        "生成专业的 Makefile，支持 Node.js、Python、Go 项目，提供开发、测试、构建、部署等常用命令。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/makefile-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83053073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "makefile-generator",
+      "url": "https://clawhub.ai/skills/makefile-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "makefile-generator",
+    "url": "https://clawhub.ai/skills/makefile-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/makefile-generator-e3b94bd769b8f183.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/makefile-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-makefile-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87400811faf13b85e52df40beb632f79dc3ed8b8fb650bb99926eaf25e4c4580",
+      "artifactSizeBytes": 2256
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T13:14:16.306Z"
+}

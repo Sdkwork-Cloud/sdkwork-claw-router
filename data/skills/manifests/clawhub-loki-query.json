@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27577,
+  "uuid": "skill-clawhub-loki-query",
+  "skillKey": "clawhub-loki-query",
+  "name": "loki-query",
+  "summary": "Query Loki logs by traceid, keywords, pod, namespace, labels, or time range to debug and analyze Kubernetes application issues via API.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loki_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GoodAtMe",
+      "features": [
+        "Query Loki logs by traceid, keywords, pod, namespace, labels, or time range to debug and analyz."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/loki-query@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10082030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "loki-query",
+      "url": "https://clawhub.ai/skills/loki-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loki-query",
+    "url": "https://clawhub.ai/skills/loki-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loki-query-23b118ca3aecd6c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/loki-query@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-loki-query-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ccaf3fe4df4f1f6e8cf78dfbac7a8e38c3df1d050d4cc230131fc9a416c2e584",
+      "artifactSizeBytes": 2232
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T12:55:53.988Z"
+}

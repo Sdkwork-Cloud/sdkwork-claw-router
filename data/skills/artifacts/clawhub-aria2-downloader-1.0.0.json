@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aria2-downloader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aria2_downloader",
+  "skill": {
+    "id": 39467,
+    "skillKey": "clawhub-aria2-downloader",
+    "name": "Aria2 Downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aria2-downloader",
+    "url": "https://clawhub.ai/skills/aria2-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aria2-downloader-cd9dfd8e86d912d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remote control aria2 via JSON-RPC API. Add downloads (magnet/HTTP/FTP), check progress, pause/resume/remove tasks, batch download from text. NOT for local ar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiastia",
+      "userId": "s17fdda6gjhjbz5845ngpwcyw583j1rw",
+      "displayName": "aiastia",
+      "image": "https://avatars.githubusercontent.com/u/19776350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775916806757,
+      "changelog": "Initial release of aria2-downloader.\n\n- Remotely control aria2 servers via JSON-RPC API.\n- Add downloads via magnet, HTTP, or FTP links.\n- View download tasks with progress/status.\n- Pause, resume, and remove downloads by GID.\n- Batch add links from pasted text.\n- Reads configuration from `.aria2-config.json` in the workspace root.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1bdf75d5c23ff76c36126bdb00381ccf2fe5d8325d0dcbb40ab9728f69ddc27e"
+}

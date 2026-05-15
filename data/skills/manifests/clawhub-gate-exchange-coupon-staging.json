@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40691,
+  "uuid": "skill-clawhub-gate-exchange-coupon-staging",
+  "skillKey": "clawhub-gate-exchange-coupon-staging",
+  "name": "Gate Exchange Coupon",
+  "summary": "Gate coupon and voucher query skill. Use when the user asks about coupon balance, rules, expiry, or source. Triggers on 'my coupons', 'coupon details', 'vouc...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_coupon_staging",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaixg",
+      "features": [
+        "Gate coupon and voucher query skill",
+        "Use when the user asks about coupon balance, rules, expiry, or source",
+        "Triggers on 'my coupons', 'coupon details', 'vouc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-exchange-coupon-staging@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12163126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-exchange-coupon-staging",
+      "url": "https://clawhub.ai/skills/gate-exchange-coupon-staging"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-coupon-staging",
+    "url": "https://clawhub.ai/skills/gate-exchange-coupon-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-coupon-staging-5eb12cbc2f2938ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-exchange-coupon-staging@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-exchange-coupon-staging-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b8c850f42973a9c2629ac090613a903cad278f8a8182ac33a148d27bb93893c",
+      "artifactSizeBytes": 2216
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T04:33:24.386Z"
+}

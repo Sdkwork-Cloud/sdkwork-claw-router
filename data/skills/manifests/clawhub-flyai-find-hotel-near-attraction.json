@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42092,
+  "uuid": "skill-clawhub-flyai-find-hotel-near-attraction",
+  "skillKey": "clawhub-flyai-find-hotel-near-attraction",
+  "name": "Find Hotel Near Attraction",
+  "summary": "Find hotels closest to a specific attraction, landmark, or scenic spot. Searches by POI name, sorts by distance, and shows walking time. Also supports: fligh...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyai_find_hotel_near_attraction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dingtom336-gif",
+      "features": [
+        "Find hotels closest to a specific attraction, landmark, or scenic spot",
+        "Searches by POI name, sorts by distance, and shows walking time",
+        "Also supports: fligh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flyai-find-hotel-near-attraction@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256118512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flyai-find-hotel-near-attraction",
+      "url": "https://clawhub.ai/skills/flyai-find-hotel-near-attraction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyai-find-hotel-near-attraction",
+    "url": "https://clawhub.ai/skills/flyai-find-hotel-near-attraction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyai-find-hotel-near-attraction-ecea3bbe25126ec5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flyai-find-hotel-near-attraction@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flyai-find-hotel-near-attraction-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b07c116eb8d58a87a8f94c93b4ef54cb57898728c5e4946fd55433df1338a76",
+      "artifactSizeBytes": 2166
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T03:47:18.290Z"
+}

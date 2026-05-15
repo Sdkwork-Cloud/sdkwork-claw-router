@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73009,
+  "uuid": "skill-clawhub-chinese-student-tutor",
+  "skillKey": "clawhub-chinese-student-tutor",
+  "name": "高中学习助手",
+  "summary": "专为初高中生打造的智能学习导师 Skill。当用户提问学科知识、请求解题辅导、或需要学习指导时触发此技能。支持语文、数学、英语、物理、化学、历史、地理、政治、生物等科目。 功能包括：① 基于课本知识精准回答并给出原文引用；② 提供解题思路引导和关键步骤分析；③ 分析提问语气并给予教师风格的温暖回应。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_student_tutor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whatif146",
+      "features": [
+        "专为初高中生打造的智能学习导师 Skill。当用户提问学科知识、请求解题辅导、或需要学习指导时触发此技能。支持语文、数学、英语、物理、化学、历史、地理、政治、生物等科目。 功能包括：① 基于."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chinese-student-tutor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232221529?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chinese-student-tutor",
+      "url": "https://clawhub.ai/skills/chinese-student-tutor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-student-tutor",
+    "url": "https://clawhub.ai/skills/chinese-student-tutor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-student-tutor-6025c8400b1d8935.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chinese-student-tutor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chinese-student-tutor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5eec7305185082bef375e4501d04eb9fba618af67c75a8c65e5a65a51b01f429",
+      "artifactSizeBytes": 2217
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T14:09:06.727Z"
+}

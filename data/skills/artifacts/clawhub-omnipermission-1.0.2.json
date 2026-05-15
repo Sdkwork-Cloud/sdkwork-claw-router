@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/omnipermission@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omnipermission",
+  "skill": {
+    "id": 25234,
+    "skillKey": "clawhub-omnipermission",
+    "name": "OmniPermission (Human-in-the-Loop)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omnipermission",
+    "url": "https://clawhub.ai/skills/omnipermission",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omnipermission-8cab763fd09f6e3e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Human-in-the-loop: A free, extensible framework for intercepting tool calls via the OmniPersona mobile app."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobiasyouki",
+      "userId": "s1786dqa0c6me9bzgbdcsty4d583gz55",
+      "displayName": "tobiasyouki",
+      "image": "https://avatars.githubusercontent.com/u/79138107?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773149725583,
+      "changelog": "Initial public release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d22605220ad844b27604d33ae6d4825a4b96d92ef2103039c50e5dfe433bc868"
+}

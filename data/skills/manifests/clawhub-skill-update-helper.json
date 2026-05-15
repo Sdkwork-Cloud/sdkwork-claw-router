@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20464,
+  "uuid": "skill-clawhub-skill-update-helper",
+  "skillKey": "clawhub-skill-update-helper",
+  "name": "Skill Update Helper",
+  "summary": "Manage OpenClaw and installed skill updates with scheduled checks, safe upgrade workflows, rollback-minded guidance, and clear reporting. Use when setting up...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_update_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Manage OpenClaw and installed skill updates with scheduled checks, safe upgrade workflows, roll.",
+        "Use when setting up..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-update-helper@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-update-helper",
+      "url": "https://clawhub.ai/skills/skill-update-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-update-helper",
+    "url": "https://clawhub.ai/skills/skill-update-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-update-helper-a4bb6bccec1a7262.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-update-helper@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-update-helper-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:692b189b23110e5da72580a02100ddfe7d601bc65fa56bfad807abfb8b1e7b23",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T23:11:09.427Z"
+}

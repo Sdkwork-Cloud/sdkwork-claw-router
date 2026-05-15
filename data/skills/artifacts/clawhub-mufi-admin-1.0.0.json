@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mufi-admin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mufi_admin",
+  "skill": {
+    "id": 21432,
+    "skillKey": "clawhub-mufi-admin",
+    "name": "mufi-admin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mufi-admin",
+    "url": "https://clawhub.ai/skills/mufi-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mufi-admin-835c3befb7297d98.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage MUFI events by creating and connecting festivals, campaigns, frame templates, and frames with specified details and images via admin.muinfilm.com."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mupengi-bot",
+      "userId": "s17cb0n67gxg14m41wrqex0hr183j5d2",
+      "displayName": "mupengi-bot",
+      "image": "https://avatars.githubusercontent.com/u/259087580?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 509,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772292831309,
+      "changelog": "Initial publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e9b542485c20da18ccca8660d58d21226a80602315c46af3f6a550155f405832"
+}

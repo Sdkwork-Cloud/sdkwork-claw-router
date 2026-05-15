@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/txt-chunker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.txt_chunker",
+  "skill": {
+    "id": 44458,
+    "skillKey": "clawhub-txt-chunker",
+    "name": "Txt Chunker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "txt-chunker",
+    "url": "https://clawhub.ai/skills/txt-chunker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/txt-chunker-09fb6a7ed8e2a9cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Splits large text files into smaller chunks by line count for easier processing of logs, datasets, or documents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "albionaiinc-del",
+      "userId": "s17a02897swm2wgc0ge6g3j8ss83mx5y",
+      "displayName": "albionaiinc-del",
+      "image": "https://avatars.githubusercontent.com/u/269741383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776429101139,
+      "changelog": "- Initial release of TXT Chunker.\n- Splits large text files into smaller chunks by specified line count.\n- Supports custom output naming and default chunk naming.\n- Ideal for handling logs, datasets, and long documents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d65a5a03ca1811b8ff96396a6022f85b54d6190b872392ae41716e148ab4843e"
+}

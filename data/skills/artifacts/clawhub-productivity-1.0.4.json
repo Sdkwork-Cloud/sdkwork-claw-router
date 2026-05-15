@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/productivity@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.productivity",
+  "skill": {
+    "id": 8324,
+    "skillKey": "clawhub-productivity",
+    "name": "Productivity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "productivity",
+    "url": "https://clawhub.ai/skills/productivity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/productivity-bd1b16004d22b1a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan, focus, and complete work with energy management, time blocking, goals, projects, tasks, habits, reviews, priorities, and context-specific productivity..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 21047,
+      "installsAllTime": 241,
+      "installsCurrent": 225,
+      "stars": 63,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773250749518,
+      "changelog": "Expanded the system with clearer routing, setup, and folders for goals, tasks, habits, planning, and reviews",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f53960485ef06829f9c266a6434b2453571ad0290333eb752407b7a04fbe848f"
+}

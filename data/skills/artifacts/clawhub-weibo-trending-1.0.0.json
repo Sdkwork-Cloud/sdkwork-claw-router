@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weibo-trending@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weibo_trending",
+  "skill": {
+    "id": 58751,
+    "skillKey": "clawhub-weibo-trending",
+    "name": "微博热搜采集 | Weibo Hot Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weibo-trending",
+    "url": "https://clawhub.ai/skills/weibo-trending",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weibo-trending-713de094417067e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微博多频道热搜数据采集与可视化 | Weibo Multi-Channel Hot Search Data Collection & Visualization 支持热搜总榜、社会榜、文娱榜、生活榜同时抓取 | Supports hot search, social, entertainment, life ch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "noah-1106",
+      "userId": "s1786dbb8r9dh5a5r5xxmjqs2s83gej1",
+      "displayName": "noah",
+      "image": "https://avatars.githubusercontent.com/u/242364666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 693,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773612683845,
+      "changelog": "Multi-channel Weibo hot search collector with HTML visualization",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32eb154b875bf19ae919e89f63050c5991da0fbafb407baec9a50dca0db4b91e"
+}

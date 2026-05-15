@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tinyfish-web-agent@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tinyfish_web_agent",
+  "skill": {
+    "id": 9671,
+    "skillKey": "clawhub-tinyfish-web-agent",
+    "name": "TinyFish Web Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tinyfish-web-agent",
+    "url": "https://clawhub.ai/skills/tinyfish-web-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tinyfish-web-agent-469408ed84cebdfc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use TinyFish web agent to extract/scrape websites, extract data, and automate browser actions using natural language. Use when you need to extract/scrape dat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "simantak-dabhade",
+      "userId": "s1763fqe7xrg3ybjf1t9zsjsp1844jsm",
+      "displayName": "Simantak Dabhade",
+      "image": "https://avatars.githubusercontent.com/u/67303107?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3229,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776905221510,
+      "changelog": "- Switched from shell-based API instructions to CLI-based usage with `tinyfish` commands.\n- Comprehensive new documentation on four TinyFish tools: search, fetch, agent, and browser.\n- Added clear guidance on tool selection, escalation workflow, and parallelization best practices.\n- Provides detailed usage examples, flags, and output structure for all CLI commands.\n- Removed the deprecated `scripts/extract.sh` script file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6153c394260eead5bb2625705e5a214e17c0f6e7d796a4b132f622f1285e7137"
+}

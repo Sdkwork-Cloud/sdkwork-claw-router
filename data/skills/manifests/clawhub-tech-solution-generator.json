@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67480,
+  "uuid": "skill-clawhub-tech-solution-generator",
+  "skillKey": "clawhub-tech-solution-generator",
+  "name": "Tech Solution Generator",
+  "summary": "技术方案文档自动生成器。根据需求自动生成完整的技术方案文档，包含架构设计、技术选型、风险评估、排期估算。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_solution_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "imgolye",
+      "features": [
+        "技术方案文档自动生成器。根据需求自动生成完整的技术方案文档，包含架构设计、技术选型、风险评估、排期估算。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tech-solution-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7943209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tech-solution-generator",
+      "url": "https://clawhub.ai/skills/tech-solution-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-solution-generator",
+    "url": "https://clawhub.ai/skills/tech-solution-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-solution-generator-2abb0f29a02612bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tech-solution-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tech-solution-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:839ffcb895da49221e0c17abe5f033f399366e87061310a3b4f53c7728b57c7c",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T12:16:24.742Z"
+}

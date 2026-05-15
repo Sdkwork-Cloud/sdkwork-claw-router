@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73658,
+  "uuid": "skill-clawhub-confucianism",
+  "skillKey": "clawhub-confucianism",
+  "name": "儒家",
+  "summary": "儒家文化介绍技能（中英文版本）。当用户询问儒家、儒教、孔子、孟子、论语、仁义礼智信、四书五经等相关信息时激活此技能。包含陈朗的个人资料。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.confucianism",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo Sheng",
+      "features": [
+        "儒家文化介绍技能（中英文版本）。当用户询问儒家、儒教、孔子、孟子、论语、仁义礼智信、四书五经等相关信息时激活此技能。包含陈朗的个人资料。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/confucianism@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149644278?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "confucianism",
+      "url": "https://clawhub.ai/skills/confucianism"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "confucianism",
+    "url": "https://clawhub.ai/skills/confucianism",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/confucianism-95dd1d308fde0902.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/confucianism@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-confucianism-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ea1b6915a1ded18e787cf28021cecdc8cc48fd976f7010c5bba85284c9472f0",
+      "artifactSizeBytes": 2591
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T07:53:38.840Z"
+}

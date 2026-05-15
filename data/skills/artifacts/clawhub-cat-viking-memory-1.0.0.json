@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cat-viking-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cat_viking_memory",
+  "skill": {
+    "id": 70257,
+    "skillKey": "clawhub-cat-viking-memory",
+    "name": "Viking 记忆系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cat-viking-memory",
+    "url": "https://clawhub.ai/skills/cat-viking-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cat-viking-memory-fd3237b7b4773ad9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持五级自动记忆管理和重要记忆保护，集成飞书群聊会话自动保存与向量相似度检索，提升跨 Agent 记忆共享。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guyxlouspg",
+      "userId": "publishers:guyxlouspg",
+      "displayName": "guyxlouspg",
+      "image": "https://avatars.githubusercontent.com/u/258257222?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 408,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773813262081,
+      "changelog": "初始版本：五级记忆层级、飞书集成、向量搜索",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c23c40137ee8589bc709653df329488d24684a83299fdc84501d106161df0dc"
+}

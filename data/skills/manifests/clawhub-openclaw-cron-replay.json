@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41012,
+  "uuid": "skill-clawhub-openclaw-cron-replay",
+  "skillKey": "clawhub-openclaw-cron-replay",
+  "name": "OpenClaw Cron Replay",
+  "summary": "Replay and debug OpenClaw cron job message formatting and delivery locally using saved configs and results with a trusted openclaw-cron-replay installation.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_cron_replay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Frederiksen",
+      "features": [
+        "Replay and debug OpenClaw cron job message formatting and delivery locally using saved configs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-cron-replay@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/908172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-cron-replay",
+      "url": "https://clawhub.ai/skills/openclaw-cron-replay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-cron-replay",
+    "url": "https://clawhub.ai/skills/openclaw-cron-replay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-cron-replay-0146d86bde3c7947.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-cron-replay@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-cron-replay-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06ebf32a9c1a48328a7c883765bc3afee400400421dbc35adfdb32d357a8b11f",
+      "artifactSizeBytes": 2059
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T19:31:23.480Z"
+}

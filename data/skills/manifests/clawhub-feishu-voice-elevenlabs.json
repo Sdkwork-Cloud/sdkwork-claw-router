@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19785,
+  "uuid": "skill-clawhub-feishu-voice-elevenlabs",
+  "skillKey": "clawhub-feishu-voice-elevenlabs",
+  "name": "Feishu Voice (ElevenLabs)",
+  "summary": "Send and receive voice messages on Feishu (Lark) using ElevenLabs TTS and STT. Activate when user asks to send a voice message on Feishu, or when receiving a...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_voice_elevenlabs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DongDong",
+      "features": [
+        "Send and receive voice messages on Feishu (Lark) using ElevenLabs TTS and STT",
+        "Activate when user asks to send a voice message on Feishu, or when receiving a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-voice-elevenlabs@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38005687?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-voice-elevenlabs",
+      "url": "https://clawhub.ai/skills/feishu-voice-elevenlabs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-voice-elevenlabs",
+    "url": "https://clawhub.ai/skills/feishu-voice-elevenlabs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-voice-elevenlabs-aee4778accf41510.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-voice-elevenlabs@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-voice-elevenlabs-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a244e842aa6c370245b211a5569bbf53f9ad232261ef937880cfa78c360d644b",
+      "artifactSizeBytes": 2012
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T07:47:20.224Z"
+}

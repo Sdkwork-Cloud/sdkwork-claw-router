@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14313,
+  "uuid": "skill-clawhub-dlazy-gemini-2-5-tts",
+  "skillKey": "clawhub-dlazy-gemini-2-5-tts",
+  "name": "Dlazy Gemini 2.5 Tts",
+  "summary": "Generate multilingual, highly natural audio using Gemini 2.5 text-to-speech.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_gemini_2_5_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dlazy",
+      "features": [
+        "Generate multilingual, highly natural audio using Gemini 2.5 text-to-speech."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dlazy-gemini-2-5-tts@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274158181?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dlazy-gemini-2-5-tts",
+      "url": "https://clawhub.ai/skills/dlazy-gemini-2-5-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-gemini-2-5-tts",
+    "url": "https://clawhub.ai/skills/dlazy-gemini-2-5-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-gemini-2-5-tts-b2f6cb949efef8c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dlazy-gemini-2-5-tts@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dlazy-gemini-2-5-tts-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:645e73e154112b32b5cd211761b797e9beb4c2b894d4f661edc9dab9e5a899ae",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T14:03:45.170Z"
+}

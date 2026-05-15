@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60658,
+  "uuid": "skill-clawhub-lobster-coordinator",
+  "skillKey": "clawhub-lobster-coordinator",
+  "name": "Lobster Coordinator",
+  "summary": "三层多Agent协调器（参考Claude Code架构），支持AgentTool单任务委托、Swarm团队协作、Coordinator模式全局调度。当任务复杂需要多Agent协作时自动激活。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_coordinator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangxiaofei860208-source",
+      "features": [
+        "三层多Agent协调器（参考Claude Code架构），支持AgentTool单任务委托、Swarm团队协作、Coordinator模式全局调度。当任务复杂需要多Agent协作时自动激活。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-coordinator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260913269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-coordinator",
+      "url": "https://clawhub.ai/skills/lobster-coordinator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-coordinator",
+    "url": "https://clawhub.ai/skills/lobster-coordinator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-coordinator-f94c655c828a5f09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-coordinator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-coordinator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:441df74ff4e386a89d0ef914bf8b3a1dbeb562cd8d821a3c137898d6b591fd54",
+      "artifactSizeBytes": 2565
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T15:06:43.107Z"
+}

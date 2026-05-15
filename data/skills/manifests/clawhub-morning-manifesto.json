@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10189,
+  "uuid": "skill-clawhub-morning-manifesto",
+  "skillKey": "clawhub-morning-manifesto",
+  "name": "Morning Manifesto",
+  "summary": "Daily morning reflection workflow with task sync to Obsidian, Apple Reminders, and Linear",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morning_manifesto",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarcBickel",
+      "features": [
+        "Daily morning reflection workflow with task sync to Obsidian, Apple Reminders, and Linear"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/morning-manifesto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13186695?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "morning-manifesto",
+      "url": "https://clawhub.ai/skills/morning-manifesto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morning-manifesto",
+    "url": "https://clawhub.ai/skills/morning-manifesto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morning-manifesto-1575e0ac09f4a9af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/morning-manifesto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-morning-manifesto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:576957bbb9595d87804a56b197d8fa9a377baa0ee417d369b8938edb799c4ac1",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-20T22:13:42.863Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-context@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_context",
+  "skill": {
+    "id": 31006,
+    "skillKey": "clawhub-session-context",
+    "name": "Session Memory & Summarization"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-context",
+    "url": "https://clawhub.ai/skills/session-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-context-e5ec72c021573ee3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically loads recent conversation memory into new sessions and generates AI summaries during compaction to maintain continuity across conversations. Pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thomasmarcel",
+      "userId": "s179h2y6xtfhqm5edb0wjxbs75845mnf",
+      "displayName": "Thomas Alcala Schneider",
+      "image": "https://avatars.githubusercontent.com/u/1779231?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1775254560030,
+      "changelog": "v0.2.0: Preserve last 10 raw messages verbatim for exact conversation resumption. Two-layer continuity: AI summary + raw interactions. Loads today + yesterday on session start. Configurable MAX_RECENT_MESSAGES and MAX_SUMMARY_CHARS.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d95a8262048f2540cbe18803eee7cca36313414346e0a69b2a11bc836bb7ee7c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cside-site-scanner@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cside_site_scanner",
+  "skill": {
+    "id": 31831,
+    "skillKey": "clawhub-cside-site-scanner",
+    "name": "cside Site Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cside-site-scanner",
+    "url": "https://clawhub.ai/skills/cside-site-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cside-site-scanner-1358056f4e315ed0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan any website for third-party scripts, trackers, and security risks. Detects PCI DSS compliance issues, missing CSP headers, fingerprinting scripts, and p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "swijckmans",
+      "userId": "s179ngscwa13x6pcvhp9rpwt2184e9z1",
+      "displayName": "swijckmans",
+      "image": "https://avatars.githubusercontent.com/u/61318055?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 261,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773798496242,
+      "changelog": "Ensure all references use cside (no slash)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5fef7c2c37197945a9bba4adad264eb11eac580aea6c6a2458932f8319519620"
+}

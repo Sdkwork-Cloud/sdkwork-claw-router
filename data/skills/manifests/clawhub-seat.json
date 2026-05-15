@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48925,
+  "uuid": "skill-clawhub-seat",
+  "skillKey": "clawhub-seat",
+  "name": "Seat",
+  "summary": "Provides detailed information on SEAT, Spain's national car brand, its history, Volkswagen partnership, brand evolution, market strategy, and key data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides detailed information on SEAT, Spain's national car brand, its history, Volkswagen part."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seat",
+      "url": "https://clawhub.ai/skills/seat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seat",
+    "url": "https://clawhub.ai/skills/seat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seat-5d2c13d6f9fa4211.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-seat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0993e02648be004297f1c0c13309598847bd9de4b69c6fb5ad9a1093feb14dfb",
+      "artifactSizeBytes": 2236
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T04:03:01.510Z"
+}

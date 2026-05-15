@@ -84,12 +84,9 @@ async fn admin_model_catalog_route_returns_plus_result_with_catalog_price_view()
     let response = router
         .oneshot(
             Request::builder()
-                .method("POST")
-                .uri("/backend/v3/api/model/list")
-                .header("content-type", "application/json")
-                .body(Body::from(
-                    r#"{"apiKeyId":100,"billingMeter":"llm_input_token","vendorCode":"openai"}"#,
-                ))
+                .method("GET")
+                .uri("/backend/v3/api/ai/models?api_key_id=100&billing_meter=llm_input_token&vendor_code=openai")
+                .body(Body::empty())
                 .unwrap(),
         )
         .await
@@ -126,13 +123,10 @@ async fn admin_model_catalog_route_accepts_api_key_context_from_header() {
     let response = router
         .oneshot(
             Request::builder()
-                .method("POST")
-                .uri("/backend/v3/api/model/list")
-                .header("content-type", "application/json")
+                .method("GET")
+                .uri("/backend/v3/api/ai/models?billing_meter=llm_input_token&vendor_code=openai")
                 .header("x-sdkwork-api-key-id", "100")
-                .body(Body::from(
-                    r#"{"billingMeter":"llm_input_token","vendorCode":"openai"}"#,
-                ))
+                .body(Body::empty())
                 .unwrap(),
         )
         .await
@@ -161,8 +155,8 @@ async fn admin_model_catalog_route_accepts_empty_body_and_marks_customer_price_u
     let response = router
         .oneshot(
             Request::builder()
-                .method("POST")
-                .uri("/backend/v3/api/model/list")
+                .method("GET")
+                .uri("/backend/v3/api/ai/models")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -199,8 +193,8 @@ async fn admin_model_catalog_route_authenticates_bearer_credential_with_configur
     let response = router
         .oneshot(
             Request::builder()
-                .method("POST")
-                .uri("/backend/v3/api/model/list")
+                .method("GET")
+                .uri("/backend/v3/api/ai/models")
                 .header("authorization", "Bearer sk-live-secret")
                 .body(Body::empty())
                 .unwrap(),
@@ -236,8 +230,8 @@ async fn admin_model_catalog_route_rejects_invalid_bearer_credential_when_hasher
     let response = router
         .oneshot(
             Request::builder()
-                .method("POST")
-                .uri("/backend/v3/api/model/list")
+                .method("GET")
+                .uri("/backend/v3/api/ai/models")
                 .header("authorization", "Bearer sk-wrong-secret")
                 .body(Body::empty())
                 .unwrap(),
@@ -269,8 +263,8 @@ async fn admin_model_catalog_route_rejects_spoofed_api_key_context_when_hasher_i
     let response = router
         .oneshot(
             Request::builder()
-                .method("POST")
-                .uri("/backend/v3/api/model/list")
+                .method("GET")
+                .uri("/backend/v3/api/ai/models")
                 .header("x-sdkwork-api-key-id", "101")
                 .body(Body::empty())
                 .unwrap(),

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69061,
+  "uuid": "skill-clawhub-skill-chinese-localization",
+  "skillKey": "clawhub-skill-chinese-localization",
+  "name": "OpenClaw 全岗位技能解释器",
+  "summary": "将ClawHub技能名翻译成通俗中文，帮助不懂英文或技术术语的用户快速理解并安装对应技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_chinese_localization",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "t22239007-max",
+      "features": [
+        "将ClawHub技能名翻译成通俗中文，帮助不懂英文或技术术语的用户快速理解并安装对应技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-chinese-localization@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260805701?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-chinese-localization",
+      "url": "https://clawhub.ai/skills/skill-chinese-localization"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-chinese-localization",
+    "url": "https://clawhub.ai/skills/skill-chinese-localization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-chinese-localization-54eb0ef9de3d8ca9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-chinese-localization@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-chinese-localization-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c41ce64a1e4d313ffe940f8184654f3ac47461f8a0b38e99a8093f2404c8600",
+      "artifactSizeBytes": 2978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:28:59.884Z"
+}

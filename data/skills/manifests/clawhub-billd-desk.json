@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61207,
+  "uuid": "skill-clawhub-billd-desk",
+  "skillKey": "clawhub-billd-desk",
+  "name": "BilldDesk Remote Desktop",
+  "summary": "BilldDesk远程桌面控制工具 - WebRTC技术，支持2K+60fps，自定义设备码，隐私屏，虚拟屏，屏幕墙，批量群控。免费无限制，配合Tailscale更安全。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.billd_desk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SMS",
+      "features": [
+        "BilldDesk远程桌面控制工具",
+        "WebRTC技术，支持2K+60fps，自定义设备码，隐私屏，虚拟屏，屏幕墙，批量群控。免费无限制，配合Tailscale更安全。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/billd-desk@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33817483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "billd-desk",
+      "url": "https://clawhub.ai/skills/billd-desk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "billd-desk",
+    "url": "https://clawhub.ai/skills/billd-desk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/billd-desk-cc7f372875d74e4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/billd-desk@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-billd-desk-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:001c4320d502fe20912cbb0e327b5be578de5f0137a1f9b37000e3f3efdbc33c",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T04:54:21.692Z"
+}

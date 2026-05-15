@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65569,
+  "uuid": "skill-clawhub-kids-english-teacher",
+  "skillKey": "clawhub-kids-english-teacher",
+  "name": "kids-english-teacher",
+  "summary": "根據上傳的小朋友英語作業圖片，自動生成一個完整的互動教學網頁（HTML），包含：單字發音、句子跟讀評分（麥克風）、寫作練習、Phonics 和對話練習。Use when: (1) 用戶上傳小朋友英語作業照片, (2) 用戶說「幫小朋友做英語學習頁」, (3) 用戶說「生成教學網頁」, (4) 用戶說「分析這張作業...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kids_english_teacher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "IfeyChan702",
+      "features": [
+        "根據上傳的小朋友英語作業圖片，自動生成一個完整的互動教學網頁（HTML），包含：單字發音、句子跟讀評分（麥克風）、寫作練習、Phonics 和對話練習。Use when: (1) 用戶上傳小."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kids-english-teacher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152843056?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kids-english-teacher",
+      "url": "https://clawhub.ai/skills/kids-english-teacher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kids-english-teacher",
+    "url": "https://clawhub.ai/skills/kids-english-teacher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kids-english-teacher-89d8db8df0d54d6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kids-english-teacher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kids-english-teacher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f3813c9e04470d56af4542d0655185a569855fe5fcc096bf78043d09dde0301",
+      "artifactSizeBytes": 2918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T10:57:16.638Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50735,
+  "uuid": "skill-clawhub-work-receipt",
+  "skillKey": "clawhub-work-receipt",
+  "name": "Work Receipt",
+  "summary": "Generates a detailed receipt of everything you accomplished in a coding session — files changed, problems solved, decisions made, debt incurred, and what's l...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.work_receipt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John DeVere Cooley",
+      "features": [
+        "Generates a detailed receipt of everything you accomplished in a coding session — files changed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/work-receipt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75928463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "work-receipt",
+      "url": "https://clawhub.ai/skills/work-receipt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "work-receipt",
+    "url": "https://clawhub.ai/skills/work-receipt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/work-receipt-50f179dac0678b1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/work-receipt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-work-receipt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05bbd8e00e791745355e7c7d745ebbf91c37184f4fb354149a0aaaa35dfd3d06",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T09:56:19.257Z"
+}

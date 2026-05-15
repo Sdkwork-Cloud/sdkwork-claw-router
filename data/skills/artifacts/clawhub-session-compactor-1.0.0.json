@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-compactor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_compactor",
+  "skill": {
+    "id": 65511,
+    "skillKey": "clawhub-session-compactor",
+    "name": "session-compactor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-compactor",
+    "url": "https://clawhub.ai/skills/session-compactor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-compactor-fdb6bc60d574985c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动会话压缩以优化 token 使用。当会话消息数超过阈值时，将早期历史压缩为结构化摘要，保留工具调用和关键事实。适用于长对话场景以节省上下文窗口。核心算法参考 claw-code 项目的 compact.rs 设计。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fangbb-coder",
+      "userId": "s1785c5d9savzszf3ahrfcv00183m3g0",
+      "displayName": "fangbb-coder",
+      "image": "https://avatars.githubusercontent.com/u/201201882?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775097447952,
+      "changelog": "Session-compactor v1.0.0 – Initial Release\n\n- Introduces automated session compression to optimize token usage in long conversations.\n- Compresses early session history into structured summaries while preserving tool calls and key facts.\n- Features auto and manual trigger modes; configurable via `openclaw.config.json`.\n- Inspired by the compact.rs algorithm from the claw-code project.\n- Provides a compact_session tool for manual invocation.\n- Chinese documentation included for setup, usage, and key parameters.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88847fb46e2476a8f7bb9e10673fcd93d44f8bd9bd2ca5f0a99961de7cc6e63b"
+}

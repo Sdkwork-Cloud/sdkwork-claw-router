@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29399,
+  "uuid": "skill-clawhub-adr-decision-extraction",
+  "skillKey": "clawhub-adr-decision-extraction",
+  "name": "Adr Decision Extraction",
+  "summary": "Use when you need to mine a conversation, session transcript, or design discussion for architectural decisions before writing ADRs. Identifies problem-soluti...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adr_decision_extraction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Use when you need to mine a conversation, session transcript, or design discussion for architec.",
+        "Identifies problem-soluti..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adr-decision-extraction@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adr-decision-extraction",
+      "url": "https://clawhub.ai/skills/adr-decision-extraction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adr-decision-extraction",
+    "url": "https://clawhub.ai/skills/adr-decision-extraction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adr-decision-extraction-258bae8bb62c506e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adr-decision-extraction@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-adr-decision-extraction-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9971155882a9f36173c8a7aab8e90dea8ddc43c4c44521bc24f0836c1c4a95b",
+      "artifactSizeBytes": 2333
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:09:46.050Z"
+}

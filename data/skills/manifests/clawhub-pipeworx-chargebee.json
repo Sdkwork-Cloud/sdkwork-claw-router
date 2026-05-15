@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46470,
+  "uuid": "skill-clawhub-pipeworx-chargebee",
+  "skillKey": "clawhub-pipeworx-chargebee",
+  "name": "Pipeworx chargebee",
+  "summary": "Access and manage Chargebee subscriptions, customers, and invoices with filtering options via Pipeworx Chargebee API v2 integration.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_chargebee",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Access and manage Chargebee subscriptions, customers, and invoices with filtering options via P."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-chargebee@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270792185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-chargebee",
+      "url": "https://clawhub.ai/skills/pipeworx-chargebee"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-chargebee",
+    "url": "https://clawhub.ai/skills/pipeworx-chargebee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-chargebee-0222ebae37425219.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-chargebee@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-chargebee-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d20af2f523d4d9477ce3cf96e4cb6006185c9c61cad36c102a986e5eaf28af5c",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T04:44:34.631Z"
+}

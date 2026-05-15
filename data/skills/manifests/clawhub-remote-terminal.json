@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39661,
+  "uuid": "skill-clawhub-remote-terminal",
+  "skillKey": "clawhub-remote-terminal",
+  "name": "remote-terminal",
+  "summary": "Remote Linux terminal control skill. Use when the user wants to (1) connect to a remote Linux server and execute commands, (2) perform SSH operations on remo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remote_terminal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ckaorceu",
+      "features": [
+        "Remote Linux terminal control skill",
+        "Use when the user wants to (1) connect to a remote Linux server and execute commands, (2) perfo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/remote-terminal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139754761?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "remote-terminal",
+      "url": "https://clawhub.ai/skills/remote-terminal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remote-terminal",
+    "url": "https://clawhub.ai/skills/remote-terminal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remote-terminal-5348266b351b1721.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/remote-terminal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-remote-terminal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d08091a1f58900683d7b039df72a153d9e4a51458f3c634525573bb04f46ea0",
+      "artifactSizeBytes": 2370
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T08:21:03.741Z"
+}

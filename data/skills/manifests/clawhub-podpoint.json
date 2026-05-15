@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14445,
+  "uuid": "skill-clawhub-podpoint",
+  "skillKey": "clawhub-podpoint",
+  "name": "Podpoint",
+  "summary": "Monitors live status of a Pod Point charger’s connectors A and B, reporting current availability and changes without requiring authentication.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podpoint",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zoranjurcevic",
+      "features": [
+        "Monitors live status of a Pod Point charger’s connectors A and B, reporting current availabilit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/podpoint@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75725531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "podpoint",
+      "url": "https://clawhub.ai/skills/podpoint"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podpoint",
+    "url": "https://clawhub.ai/skills/podpoint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podpoint-3a89f1d5d05f52fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/podpoint@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-podpoint-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:959a4dffc4bf1a6e6a91bfc0ed8733b66827d1ef4de1205a390324874af553a8",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T23:40:49.277Z"
+}

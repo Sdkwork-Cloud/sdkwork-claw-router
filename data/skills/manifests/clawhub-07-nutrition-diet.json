@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62573,
+  "uuid": "skill-clawhub-07-nutrition-diet",
+  "skillKey": "clawhub-07-nutrition-diet",
+  "name": "Miki Nutrition Diet",
+  "summary": "Miki营养膳食指导 · 评估6-36月龄宝宝的营养摄入，判断是否均衡，给出调整方案",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.07_nutrition_diet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nic-yuan",
+      "features": [
+        "Miki营养膳食指导 · 评估6-36月龄宝宝的营养摄入，判断是否均衡，给出调整方案"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/07-nutrition-diet@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195308903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "07-nutrition-diet",
+      "url": "https://clawhub.ai/skills/07-nutrition-diet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "07-nutrition-diet",
+    "url": "https://clawhub.ai/skills/07-nutrition-diet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/07-nutrition-diet-735d1422570385f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/07-nutrition-diet@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-07-nutrition-diet-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:701cd001271490a36d5d7accebd02c032ed4162e120cf611530d2e367461a708",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T03:28:57.145Z"
+}

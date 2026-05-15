@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38471,
+  "uuid": "skill-clawhub-deepread-medical",
+  "skillKey": "clawhub-deepread-medical",
+  "name": "DeepRead Medical Records",
+  "summary": "Extract structured data from medical records, lab reports, prescriptions, and clinical documents. Pre-built schemas for patient info, diagnoses, medications,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepread_medical",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DeepRead.tech",
+      "features": [
+        "Extract structured data from medical records, lab reports, prescriptions, and clinical documents",
+        "Pre-built schemas for patient info, diagnoses, medications,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepread-medical@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253471566?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepread-medical",
+      "url": "https://clawhub.ai/skills/deepread-medical"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepread-medical",
+    "url": "https://clawhub.ai/skills/deepread-medical",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepread-medical-e803c370c21309b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepread-medical@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepread-medical-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5005bf4a8c7727eea9ab945dd49574ff38e358a73321b238bc7fb2c89f347252",
+      "artifactSizeBytes": 2077
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T15:10:53.430Z"
+}

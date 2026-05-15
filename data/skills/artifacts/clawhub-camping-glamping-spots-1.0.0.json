@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/camping-glamping-spots@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camping_glamping_spots",
+  "skill": {
+    "id": 53355,
+    "skillKey": "clawhub-camping-glamping-spots",
+    "name": "Camping Glamping Spots"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camping-glamping-spots",
+    "url": "https://clawhub.ai/skills/camping-glamping-spots",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camping-glamping-spots-38bdf52e694f38c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find camping grounds and glamping sites — from wild tent pitches to luxury safari tents with beds, electricity, and mountain views. Also supports: flight boo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775126679879,
+      "changelog": "camping-glamping-spots 2.0.0 — Major update for reliable real-time travel results\n\n- Now strictly uses real-time data from the flyai CLI for all camping and glamping results; no answers from training data.\n- Enforces installation and version check for the flyai CLI before handling requests.\n- Response formatting now always includes a [Book](detailUrl) link for every result.\n- Output and parameter-handling rules clarified for consistency and trustworthiness.\n- Expanded playbooks and failure modes for better user guidance and fallback handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3985b0d779e980ca4320e88a49950f30778918d977546a00c5bbd68b110d4bb6"
+}

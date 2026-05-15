@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grupo-venus@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grupo_venus",
+  "skill": {
+    "id": 21147,
+    "skillKey": "clawhub-grupo-venus",
+    "name": "Grupo Venus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grupo-venus",
+    "url": "https://clawhub.ai/skills/grupo-venus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grupo-venus-72048142f0da7632.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Astrological charts, transit forecasts, and compatibility reports via grupovenus.com. Manage multiple people and compare charts conversationally."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "apresmoi",
+      "userId": "publishers:apresmoi",
+      "displayName": "apresmoi",
+      "image": "https://avatars.githubusercontent.com/u/11778792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 520,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772288194541,
+      "changelog": "Grupo Venus v1.0.0 — Initial Release\n\n- Fetch free astrological charts, transit forecasts, and compatibility reports using grupovenus.com.\n- Manage multiple people in memory; compare and analyze their charts conversationally.\n- Includes detailed instructions for registering people, city lookup, and handling sessions/cookies.\n- Provides bash/curl examples for all key features: person creation, natal chart images, and transit forecasts.\n- No API key required; operates via public endpoints and session cookies.\n- Unofficial integration — uses grupovenus.com’s public free tier as-is.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:45fda17b9f6aa6388f430ecd8c273e659b62c78d627001fa6120f2dbd32005ba"
+}

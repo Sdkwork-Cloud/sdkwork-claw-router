@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62756,
+  "uuid": "skill-clawhub-okki-sync-mail",
+  "skillKey": "clawhub-okki-sync-mail",
+  "name": "Okki Sync Mail",
+  "summary": "完整的邮件自动化解决方案，集成 OKKI CRM。支持 IMAP 邮件自动捕获、SMTP 发送邮件、dry-run 模式、发送日志、速率限制、定时发送、签名模板、邮件规则、连接池优化、邮件转发等功能。自动同步 inbound/outbound 邮件到 OKKI 创建跟进记录（remark_type=102）。",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okki_sync_mail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaden's built a claw",
+      "features": [
+        "完整的邮件自动化解决方案，集成 OKKI CRM。支持 IMAP 邮件自动捕获、SMTP 发送邮件、dry-run 模式、发送日志、速率限制、定时发送、签名模板、邮件规则、连接池优化、邮件转."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/okki-sync-mail@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64246343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "okki-sync-mail",
+      "url": "https://clawhub.ai/skills/okki-sync-mail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okki-sync-mail",
+    "url": "https://clawhub.ai/skills/okki-sync-mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okki-sync-mail-3cb6a8f42ec7cc4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/okki-sync-mail@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-okki-sync-mail-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8079baff967f8b2b652654775a9debc87cc8834e86c3a724bb28e0ea423d56c",
+      "artifactSizeBytes": 2145
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T02:30:23.839Z"
+}

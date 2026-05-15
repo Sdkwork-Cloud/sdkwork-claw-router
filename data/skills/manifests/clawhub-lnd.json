@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14151,
+  "uuid": "skill-clawhub-lnd",
+  "skillKey": "clawhub-lnd",
+  "name": "Lnd",
+  "summary": "Install and run Lightning Terminal (litd) which bundles lnd, loop, pool, tapd, and faraday in a single Docker container. Defaults to neutrino backend with SQLite storage on testnet. Supports watch-only mode with remote signer, standalone m.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lnd",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roasbeef",
+      "features": [
+        "Install and run Lightning Terminal (litd) which bundles lnd, loop, pool, tapd, and faraday in a.",
+        "Defaults to neutrino backend with SQLite storage on testnet",
+        "Supports watch-only mode with remote signer, standalone mode, and regtest development",
+        "Use when setting up a Lightning node for payments, channel management, liquidity management (lo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lnd@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/998190?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lnd",
+      "url": "https://clawhub.ai/skills/lnd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lnd",
+    "url": "https://clawhub.ai/skills/lnd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lnd-f9b46588efba7f6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lnd@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lnd-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e55182f7ce0cca600cf9b301c0cdbfbe7d311cbee96ea284272421cf2e9b93a9",
+      "artifactSizeBytes": 2113
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T22:41:03.629Z"
+}

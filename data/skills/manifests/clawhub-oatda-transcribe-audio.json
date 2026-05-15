@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45514,
+  "uuid": "skill-clawhub-oatda-transcribe-audio",
+  "skillKey": "clawhub-oatda-transcribe-audio",
+  "name": "Oatda Transcribe Audio",
+  "summary": "Transcribe audio to text using OATDA's unified audio API. Triggers when the user wants speech-to-text, transcription of meetings, podcasts, voice notes, subt...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oatda_transcribe_audio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "devcsde",
+      "features": [
+        "Transcribe audio to text using OATDA's unified audio API",
+        "Triggers when the user wants speech-to-text, transcription of meetings, podcasts, voice notes,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oatda-transcribe-audio@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29840319?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oatda-transcribe-audio",
+      "url": "https://clawhub.ai/skills/oatda-transcribe-audio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oatda-transcribe-audio",
+    "url": "https://clawhub.ai/skills/oatda-transcribe-audio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oatda-transcribe-audio-2b76cac9aed68825.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oatda-transcribe-audio@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-oatda-transcribe-audio-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:570012a54676913c332de65b30697caf17d5f025b1b91de72e6b8cd7013ee421",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T18:30:45.048Z"
+}

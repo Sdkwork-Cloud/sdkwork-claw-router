@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codebase-stats@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codebase_stats",
+  "skill": {
+    "id": 36112,
+    "skillKey": "clawhub-codebase-stats",
+    "name": "Codebase Stats"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codebase-stats",
+    "url": "https://clawhub.ai/skills/codebase-stats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codebase-stats-ec3619c5a15cc4f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze project metrics: lines of code, language distribution, function complexity, code-to-comment ratio, test coverage indicators, dependency counts, large..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777593631991,
+      "changelog": "- Updated STATUS.md file.  \n- No changes to code or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aef008bb6eaf773e25d6a05b1dc12b22e4f2a76e51d0971730860913758ee9a5"
+}

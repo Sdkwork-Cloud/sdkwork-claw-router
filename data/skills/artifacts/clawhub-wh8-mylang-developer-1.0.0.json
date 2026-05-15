@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wh8-mylang-developer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wh8_mylang_developer",
+  "skill": {
+    "id": 73089,
+    "skillKey": "clawhub-wh8-mylang-developer",
+    "name": "文华8麦语言量化开发"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wh8-mylang-developer",
+    "url": "https://clawhub.ai/skills/wh8-mylang-developer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wh8-mylang-developer-3efec132a0a63da3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供文华8麦语言量化交易模型编写、回测、参数优化、策略运行及头寸风险管理功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kun-wang-0717",
+      "userId": "s17316r76bxjabhdw22edtx47h84cg5w",
+      "displayName": "kun-wang-0717",
+      "image": "https://avatars.githubusercontent.com/u/193871127?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775532360548,
+      "changelog": "WT8Skill 1.0.0 初始发布\n\n- 提供文华财经WT8麦语言量化交易助手基础功能\n- 支持量化模型编写、历史回测、参数优化、策略与风险管理、跨周期套利\n- 包含详细文件结构说明与常用用法示例\n- 集成模型模板、基础及进阶策略演示、常见错误指引\n- 提供官方文档与语法说明链接",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afc173524d17e148ad8933641a134cfaf9f667d8649f2a6592f7cc13909b4394"
+}

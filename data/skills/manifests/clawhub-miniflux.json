@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10783,
+  "uuid": "skill-clawhub-miniflux",
+  "skillKey": "clawhub-miniflux",
+  "name": "Miniflux",
+  "summary": "Browse, read, and manage Miniflux feed articles. Use when Claude needs to work with RSS/atom feeds via Miniflux - listing unread/new articles, reading article content, marking articles as read, and managing feeds/categories. Provides CLI a.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miniflux",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shekohex",
+      "features": [
+        "Browse, read, and manage Miniflux feed articles",
+        "Use when Claude needs to work with RSS/atom feeds via Miniflux",
+        "listing unread/new articles, reading article content, marking articles as read, and managing fe.",
+        "Provides CLI access with flexible output formats (headlines, summaries, full content)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/miniflux@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14620076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "miniflux",
+      "url": "https://clawhub.ai/skills/miniflux"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miniflux",
+    "url": "https://clawhub.ai/skills/miniflux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miniflux-f697475061c0786e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/miniflux@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-miniflux-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab352c49cdeb59fbf9c64cdcebe5e9147ea0efb7f43db30fb0769d232903c397",
+      "artifactSizeBytes": 2485
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-12T15:15:40.998Z"
+}

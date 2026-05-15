@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/super-file-manager@2.0.3",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_file_manager",
+  "skill": {
+    "id": 67595,
+    "skillKey": "clawhub-super-file-manager",
+    "name": "super-file-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-file-manager",
+    "url": "https://clawhub.ai/skills/super-file-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-file-manager-6e809e3213edd35a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "电脑文件管理技能。当用户要求清理垃圾文件、整理文档、检测重复文件、备份文件夹，或提到文件管理、磁盘清理、文件整理、重复文件、文件备份等相关操作时使用此技能。原生支持 macOS、Linux 和 Windows。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yy756127197",
+      "userId": "s177rtr8fksf06xcjhpygnqpcn842nb2",
+      "displayName": "yy756127197",
+      "image": "https://avatars.githubusercontent.com/u/13255952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.3",
+      "createdAt": 1775172833706,
+      "changelog": "移除文件查找和磁盘监控模块（均无对应脚本），功能与文档完全一致，模块重新编号1-5",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:40e7dda67d0e04042ebd6e798fc73372d6e06f1e232633b338c857382785aebc"
+}

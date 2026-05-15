@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62370,
+  "uuid": "skill-clawhub-memory-optimizer",
+  "skillKey": "clawhub-memory-optimizer",
+  "name": "Memory Optimizer",
+  "summary": "提供基于SHA-256的重复记忆去重、后台实时更新和90天记忆自动归档的OpenClaw高效记忆管理方案。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SiriuSM00N",
+      "features": [
+        "提供基于SHA-256的重复记忆去重、后台实时更新和90天记忆自动归档的OpenClaw高效记忆管理方案。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265539072?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-optimizer",
+      "url": "https://clawhub.ai/skills/memory-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-optimizer",
+    "url": "https://clawhub.ai/skills/memory-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-optimizer-a87cafc679c0b342.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d891ab984cf209f548bd0181592552ed6ee067d6a471b3b71ad644edede0f629",
+      "artifactSizeBytes": 1908
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T14:45:25.432Z"
+}

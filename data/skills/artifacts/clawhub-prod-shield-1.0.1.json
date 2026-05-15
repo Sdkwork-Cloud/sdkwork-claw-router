@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prod-shield@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prod_shield",
+  "skill": {
+    "id": 54548,
+    "skillKey": "clawhub-prod-shield",
+    "name": "Hardened execution guardrails — because production only gets one chance."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prod-shield",
+    "url": "https://clawhub.ai/skills/prod-shield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prod-shield-33e2ec8e3c71cc6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ProdShield: Hardened execution guardrails — because production only gets one chance. Use this skill whenever Claude is about to execute commands, run scripts..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2eux",
+      "userId": "s173w9sxvjgmfp8fxt6x9nab5984f540",
+      "displayName": "2eux",
+      "image": "https://avatars.githubusercontent.com/u/3762199?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777351224536,
+      "changelog": "- Clarified that the skill is purely instruction-only and requires no scripts, binaries, or install steps.\n- Changed metadata: removed \"always: true\" and added \"userInvocable: true\" for improved invocation flexibility.\n- Updated compatibility section to stress \"drop the folder and it works immediately\" on all OpenClaw setups.\n- Marked dependencies as \"instruction-only, zero external binaries required\" for added clarity.\n- Minor formatting and wording changes for better readability and user guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:752c3936f5f4b046ddaef237ba33db6d06882babdbe39ec9c868d76305ea9745"
+}

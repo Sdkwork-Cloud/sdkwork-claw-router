@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11327,
+  "uuid": "skill-clawhub-quack-code-review",
+  "skillKey": "clawhub-quack-code-review",
+  "name": "Code Review",
+  "summary": "AI-powered code analysis via LogicArt — find bugs, security issues, and get logic flow visualizations. Use when reviewing code, analyzing code quality, findi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quack_code_review",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JPaulGrayson",
+      "features": [
+        "AI-powered code analysis via LogicArt — find bugs, security issues, and get logic flow visualiz.",
+        "Use when reviewing code, analyzing code quality, findi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quack-code-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212611253?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quack-code-review",
+      "url": "https://clawhub.ai/skills/quack-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quack-code-review",
+    "url": "https://clawhub.ai/skills/quack-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quack-code-review-72366b401d01e6ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quack-code-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quack-code-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e431f869b73d81d537cc8cd92a9827bc34625e8b996be7421c69189302419f5",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T23:09:34.176Z"
+}

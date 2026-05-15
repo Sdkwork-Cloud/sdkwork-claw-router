@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-release-manager@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_release_manager",
+  "skill": {
+    "id": 42657,
+    "skillKey": "clawhub-clawhub-release-manager",
+    "name": "ClawHub Release Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-release-manager",
+    "url": "https://clawhub.ai/skills/clawhub-release-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-release-manager-d6ede8f91fba5f69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safely release and publish skill updates to ClawHub with version bump discipline. Use when preparing patch/minor releases, running lint/build checks, writing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okikesolutions",
+      "userId": "s17cv1x1ad676cdnhx8ta1vc7d845j5q",
+      "displayName": "okikeSolutions",
+      "image": "https://avatars.githubusercontent.com/u/176530744?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775183087733,
+      "changelog": "Initial release: adds routing change disclosure guidance and improved release output template.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe362d60b80c60cb77d705e21d1b10180074a4fcc1ab6b03e765a47d794b188b"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18200,
+  "uuid": "skill-clawhub-clawstats",
+  "skillKey": "clawhub-clawstats",
+  "name": "System Monitor OpenClaw",
+  "summary": "Monitor CPU, RAM, disk space, temperature, load average, and top processes on OpenClaw systems using a single versatile script.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawstats",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aprilox",
+      "features": [
+        "Monitor CPU, RAM, disk space, temperature, load average, and top processes on OpenClaw systems."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawstats@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51274917?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawstats",
+      "url": "https://clawhub.ai/skills/clawstats"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawstats",
+    "url": "https://clawhub.ai/skills/clawstats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawstats-b22d913d739fa554.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawstats@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawstats-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2599b960a8d07106746072b9a85d73e136a9d50e69b364c69d9b1177fad9e8df",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T02:50:45.798Z"
+}

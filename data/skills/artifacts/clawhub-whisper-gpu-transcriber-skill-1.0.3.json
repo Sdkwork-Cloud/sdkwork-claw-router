@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whisper-gpu-transcriber-skill@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whisper_gpu_transcriber_skill",
+  "skill": {
+    "id": 34270,
+    "skillKey": "clawhub-whisper-gpu-transcriber-skill",
+    "name": "Whisper GPU Audio Transcriber"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whisper-gpu-transcriber-skill",
+    "url": "https://clawhub.ai/skills/whisper-gpu-transcriber-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whisper-gpu-transcriber-skill-443974c26a98bd38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert audio to SRT subtitles using OpenAI Whisper with automatic GPU acceleration for Intel XPU / NVIDIA CUDA / AMD ROCm / Apple Metal. Ideal for content c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "allanmeng",
+      "userId": "s172mk8943ewv0gwadqgfcbns183gffy",
+      "displayName": "Allan.M",
+      "image": "https://avatars.githubusercontent.com/u/11768374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774404966580,
+      "changelog": "Version 1.0.3\n\n- No file changes detected; this is a version update with no modifications to the code or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53f509919444312b30fa7fe2f7a636efdc01fd6c66ab82cb54f36608b85f52e4"
+}

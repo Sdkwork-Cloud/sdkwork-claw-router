@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-extractor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_extractor",
+  "skill": {
+    "id": 44701,
+    "skillKey": "clawhub-video-extractor",
+    "name": "Video Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-extractor",
+    "url": "https://clawhub.ai/skills/video-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-extractor-eeb8019d990b7edf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get extracted video clips ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, MKV, up to 500MB), say something like \"ext..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776911626531,
+      "changelog": "Initial release of Video Extractor — Extract and Save Video Clips\n\n- Upload MP4, MOV, AVI, or MKV files (up to 500MB) for automatic AI-driven clip extraction.\n- Use simple prompts (e.g., \"extract the key highlights and save them as separate clips\") to generate 1080p MP4 outputs—no manual editing needed.\n- Integrated session management and cloud rendering for quick, multi-track video processing.\n- Free anonymous login with 100 credits (7-day expiry) available.\n- Supports export, balance checks, session state queries, and batch workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc41a0a9714791b6f1229de46af61f923487f180bcccb48cdb9d9fd0b3527480"
+}

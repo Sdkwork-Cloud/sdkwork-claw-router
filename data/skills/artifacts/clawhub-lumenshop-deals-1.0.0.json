@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lumenshop-deals@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lumenshop_deals",
+  "skill": {
+    "id": 44647,
+    "skillKey": "clawhub-lumenshop-deals",
+    "name": "lumenshop-deals"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lumenshop-deals",
+    "url": "https://clawhub.ai/skills/lumenshop-deals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lumenshop-deals-e723448924e3b75c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Shopify products (shoes, clothes, bags) and present results as beautiful image+text product cards. Use this skill whenever the user wants to buy somet..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "carlos-zen",
+      "userId": "s170sdegm7a31zjzhj6e3t0jcn8495e6",
+      "displayName": "Carlos",
+      "image": "https://avatars.githubusercontent.com/u/39982498?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775379688104,
+      "changelog": "lumenshop-deals 1.0.0 – Initial release\n\n- Instantly searches thousands of Shopify stores for shoes, clothes, and bags based on user queries or shopping intent.\n- Returns rich product cards with images, product links, price, brand, and store for up to 12 items by default.\n- Supports keyword, category, and price range filters.\n- Includes a warm intro and easy-to-read Markdown cards for each product found.\n- Offers follow-up prompts to refine results by keyword, price, or category.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a151d47389f27fc172456e79355d39ff1936625ef8e56688a8ca201699a7daeb"
+}

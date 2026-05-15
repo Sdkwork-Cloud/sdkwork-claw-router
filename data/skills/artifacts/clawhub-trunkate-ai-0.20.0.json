@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trunkate-ai@0.20.0",
+  "version": "0.20.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trunkate_ai",
+  "skill": {
+    "id": 21276,
+    "skillKey": "clawhub-trunkate-ai",
+    "name": "Trunkate AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trunkate-ai",
+    "url": "https://clawhub.ai/skills/trunkate-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trunkate-ai-34b6b3a25466306c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Semantically optimizes context history and large text blocks via the Trunkate AI API. Use when: (1) Conversation history approaches token limits, (2) Reading..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "titus-choi",
+      "userId": "publishers:titus-choi",
+      "displayName": "trunkate-ai",
+      "image": "https://avatars.githubusercontent.com/u/23204110?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 415,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.20.0",
+      "createdAt": 1773670463909,
+      "changelog": "trunkate-ai v0.20.0\n\n- Updated scripts/activator.py and scripts/trunkate.py (details not shown).\n- Updated CHANGELOG.md and version.txt to reflect the new version.\n- No user-facing changes are documented in SKILL.md; all usage and integration instructions remain the same.\n- Internal updates may include bug fixes or improvements in script logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:623b2129f83943b300798316499d511ddfacb9205a2a77a2cf604dab61c820eb"
+}

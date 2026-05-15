@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67946,
+  "uuid": "skill-clawhub-internet-failure-analysis-expert",
+  "skillKey": "clawhub-internet-failure-analysis-expert",
+  "name": "Internet Failure Analysis Expert",
+  "summary": "对各类故障进行系统性分析，支持CVE漏洞和互联网故障两种模式，包括获取官方报告、拆解时间线、分析导火索和连环故障、识别根本原因（人、组织因素）以及提供技术改进建议，最终生成完整分析报告",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.internet_failure_analysis_expert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QuasarRyan",
+      "features": [
+        "对各类故障进行系统性分析，支持CVE漏洞和互联网故障两种模式，包括获取官方报告、拆解时间线、分析导火索和连环故障、识别根本原因（人、组织因素）以及提供技术改进建议，最终生成完整分析报告"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/internet-failure-analysis-expert@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75074216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "internet-failure-analysis-expert",
+      "url": "https://clawhub.ai/skills/internet-failure-analysis-expert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "internet-failure-analysis-expert",
+    "url": "https://clawhub.ai/skills/internet-failure-analysis-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/internet-failure-analysis-expert-6f49673528c2652d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/internet-failure-analysis-expert@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-internet-failure-analysis-expert-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84d4b2f1cf57004a0173ba0694b77cde0bb4dcf16f284cb5e31b716783a899f7",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T15:34:52.430Z"
+}

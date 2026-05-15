@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/miroprism@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miroprism",
+  "skill": {
+    "id": 51428,
+    "skillKey": "clawhub-miroprism",
+    "name": "Miroprism"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miroprism",
+    "url": "https://clawhub.ai/skills/miroprism",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miroprism-176847911b6e9785.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MiroPRISM — Adversarial two-round review protocol. Extends PRISM with a mandatory second round where every reviewer must respond to all R1 findings with evid..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeremyknows",
+      "userId": "s17d0jemwtgnzyzdsxa0xkp4v183sy11",
+      "displayName": "Jeremy Knows",
+      "image": "https://avatars.githubusercontent.com/u/237305675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1773609044056,
+      "changelog": "5 P0 fixes: UNCERTAIN evidence gate (>=50 chars or INCOMPLETE), PID-only slug collision detection (mtime removed), per-reviewer counts removed from transparency log, CHANGELOG section, mode selection decision tree",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4eef2d62ce684953b9f0d5b491a8d9e3b8abb4e71dff6653d4f4e16b8ae3f8b5"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jules-and-lobster@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jules_and_lobster",
+  "skill": {
+    "id": 11297,
+    "skillKey": "clawhub-jules-and-lobster",
+    "name": "Jules and the Lobster API headless"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jules-and-lobster",
+    "url": "https://clawhub.ai/skills/jules-and-lobster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jules-and-lobster-4baad16d27ff5676.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the Jules REST API (v1alpha) via curl to list sources, create sessions, monitor activities, approve plans, send messages, and retrieve outputs (e.g., PR..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sanjacob99",
+      "userId": "s17bznhykw8w0y0hzeadheg26184bjmq",
+      "displayName": "SanJacob99",
+      "image": "https://avatars.githubusercontent.com/u/136534181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2095,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1771348732286,
+      "changelog": "- Clarified the requirement for the JULES_API_KEY environment variable in the description and quick start instructions.\n- Adjusted the Quick Start to include \"set your API key\" step as step 0, making setup requirements clearer for first-time users.\n- No changes to the underlying code or functionality. Documentation-only update for improved onboarding and explicit env var requirements.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0978d5f042effe9f50ce348a8805606c387dfe3e5ff0fd91388825859238510e"
+}

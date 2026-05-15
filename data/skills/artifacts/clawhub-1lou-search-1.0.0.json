@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/1lou-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1lou_search",
+  "skill": {
+    "id": 64581,
+    "skillKey": "clawhub-1lou-search",
+    "name": "1lou Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1lou-search",
+    "url": "https://clawhub.ai/skills/1lou-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1lou-search-4e95bf4850f4bcfa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在1lou网站搜索影视资源并下载到群晖qBittorrent。用于手动搜索电影或电视剧。触发关键词：影视搜索"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bluepop1991-cloud",
+      "userId": "s170tj2j34wp7dc71yayyyqm39840paa",
+      "displayName": "bluepop1991-cloud",
+      "image": "https://avatars.githubusercontent.com/u/267942322?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775079847547,
+      "changelog": "Initial release of 1lou-search skill.\n\n- Enables searching for movie or TV show resources on the 1lou website via the \"影视搜索\" command.\n- Supports automatic domain failover with prioritized domain list and connection retries.\n- Filters out unwanted resources containing specific keywords (网盘, 夸克, 片源, 无字).\n- Guides user to select which resource to download and supports both curl and browser-based torrent downloads with retry logic.\n- Adds selected torrents to qBittorrent on a Synology NAS with appropriate save paths for movies and TV shows.\n- Optionally prompts to add TV shows to an auto-follow watchlist for future tracking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02a88706a3effbff04ce514586d100fa947b14c96762479ad1295ba8efb64f59"
+}

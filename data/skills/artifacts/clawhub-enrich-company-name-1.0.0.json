@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/enrich-company-name@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enrich_company_name",
+  "skill": {
+    "id": 44105,
+    "skillKey": "clawhub-enrich-company-name",
+    "name": "Enrich Company Name"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enrich-company-name",
+    "url": "https://clawhub.ai/skills/enrich-company-name",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enrich-company-name-cd63d2a8f436afb7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Populate missing contact company name fields from associated company records using a HubSpot workflow with optional API backfill. Ensures contacts inherit th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tomgranot",
+      "userId": "s17cmf9jxs7s60v7thhms9w09h83m293",
+      "displayName": "TomGranot",
+      "image": "https://avatars.githubusercontent.com/u/8835035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774550520888,
+      "changelog": "- Initial release of \"enrich-company-name\" skill for HubSpot.\n- Populates missing contact company name fields from associated company records via a HubSpot workflow.\n- Provides detailed instructions for both workflow-based and optional API backfill enrichment.\n- Ensures contacts inherit a company name for improved segmentation, personalization, and ICP classification.\n- Includes before/after state audit scripts and best practices for setup and verification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b89184a575fc1ab762c863c8bdda877d163780db3878e838e5b239f8eac16d6"
+}

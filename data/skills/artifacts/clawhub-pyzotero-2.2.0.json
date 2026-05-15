@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pyzotero@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pyzotero",
+  "skill": {
+    "id": 10536,
+    "skillKey": "clawhub-pyzotero",
+    "name": "Pyzotero"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pyzotero",
+    "url": "https://clawhub.ai/skills/pyzotero",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pyzotero-8512cd4ea0921a6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Python scripts for Zotero - supports search, browse, add items, and full collection management. Both local API and online Web API modes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "killgfat",
+      "userId": "s17d0zyy31mmgnhxcs17jmbmk583na3e",
+      "displayName": "KGTAF",
+      "image": "https://avatars.githubusercontent.com/u/32797449?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2199,
+      "installsAllTime": 13,
+      "installsCurrent": 11,
+      "stars": 3,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1772151019543,
+      "changelog": "新增完整的集合管理功能：collection-create（创建）、collection-rename（重命名）、collection-delete（删除）、collection-add-item（添加项目到集合）、collection-remove-item（移除项目）、collection-list（列出集合项目）。修复了 API 调用问题，所有功能已测试通过。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1b268f13adb4dd60de2a82ca237392af402d12adfd2dfb58eccf4a2f6be7d7bb"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snooker-skill@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snooker_skill",
+  "skill": {
+    "id": 19869,
+    "skillKey": "clawhub-snooker-skill",
+    "name": "Snooker Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snooker-skill",
+    "url": "https://clawhub.ai/skills/snooker-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snooker-skill-519869d1f1ae960d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Look up snooker rankings, results, player profiles, live matches and head-to-head records via api.snooker.org."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rgstephens",
+      "userId": "s17f4asdfpmn2ts3s7b8m9x38x83ja6x",
+      "displayName": "Greg Stephens",
+      "image": "https://avatars.githubusercontent.com/u/846052?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 487,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1773174535750,
+      "changelog": "- Removed setup step and script path now references snooker.py directly from the root (not scripts/snooker.py).\n- Environment variable SNOOKER_API_KEY must be set manually; configuration via script is no longer included.\n- Updated SKILL.md documentation to reflect these usage and setup changes.\n- Cleaned up requirements to remove unnecessary environment variable and clarified instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9755d1e0a7f27d24d92fe5fc0d58e846c64025a05b9f96cb51fc2f96ed585b15"
+}

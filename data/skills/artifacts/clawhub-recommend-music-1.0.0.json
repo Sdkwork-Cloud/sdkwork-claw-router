@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/recommend-music@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recommend_music",
+  "skill": {
+    "id": 71512,
+    "skillKey": "clawhub-recommend-music",
+    "name": "推荐音乐（recommend-music）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recommend-music",
+    "url": "https://clawhub.ai/skills/recommend-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recommend-music-3dc5b8a267b6cbca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据用户描述推荐2000年后经典热门歌曲的技能。当用户需要音乐推荐、寻找适合特定场景或情绪的音乐、或询问歌曲建议时使用此技能。技能结合情绪、场景、活动等多种因素，推荐真实存在且2000年后受欢迎的热门歌曲，提供详细的歌曲信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flonerze",
+      "userId": "s172js0a6hpvfkz5r02e5eyged847w41",
+      "displayName": "Flonerze",
+      "image": "https://avatars.githubusercontent.com/u/191269876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775402096522,
+      "changelog": "music-recommender 1.0.0 — 首次发布，提供根据用户描述推荐2000年后经典热门歌曲的功能。\n\n- 支持基于情绪、场景、活动等多种因素智能推荐音乐\n- 只推荐真实存在、2000年后发行且广受欢迎的热门歌曲\n- 输出包含歌曲名、艺术家、专辑、年份、流派和推荐理由等详细信息\n- 对描述不明确时可多样化推荐，适用不同用户需求\n- 输出格式标准，包含推荐总结与后续建议",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8e081a529810710ac0c810625680259c87f4ed1758249f4480182072380c0fa"
+}

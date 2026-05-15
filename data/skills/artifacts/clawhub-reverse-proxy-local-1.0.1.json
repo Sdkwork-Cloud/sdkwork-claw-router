@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reverse-proxy-local@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reverse_proxy_local",
+  "skill": {
+    "id": 11927,
+    "skillKey": "clawhub-reverse-proxy-local",
+    "name": "Reverse proxy from internet to open claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reverse-proxy-local",
+    "url": "https://clawhub.ai/skills/reverse-proxy-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reverse-proxy-local-5b7ae027d91a87f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect OpenClaw to the internet via Tailscale Funnel. Use when user says \"connect with ecto\", \"setup ecto connection\", \"expose openclaw publicly\", or \"enable external access\"."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tsheasha",
+      "userId": "publishers:tsheasha",
+      "displayName": "tsheasha",
+      "image": "https://avatars.githubusercontent.com/u/941429?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1964,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770024446910,
+      "changelog": "No functional changes detected in this release.\n\n- Version bump to 1.0.1 with no file modifications.\n- All features and behaviors remain the same as in the previous version.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6a5d38214ab60f8c246edeb71dd2ed3a5b37f2715a3e405c587d6a580b3ac494"
+}

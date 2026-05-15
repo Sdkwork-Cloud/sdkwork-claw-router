@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cmux@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmux",
+  "skill": {
+    "id": 22541,
+    "skillKey": "clawhub-cmux",
+    "name": "Cmux"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmux",
+    "url": "https://clawhub.ai/skills/cmux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmux-548d4fabc56e7b55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control cmux terminal multiplexer via its Unix socket API. Use when needing to: (1) List, create, select, or close workspaces; (2) Split panes and manage sur..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cnwangjie",
+      "userId": "publishers:cnwangjie",
+      "displayName": "WangJie",
+      "image": "https://avatars.githubusercontent.com/u/7459652?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 358,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773433626902,
+      "changelog": "Initial release of cmux skill.\n\n- Control cmux terminal multiplexer via Unix socket API or CLI.\n- Manage workspaces: list, create, select, close, and query.\n- Split panes, list and focus surfaces, and send input (text or keys).\n- Create notifications and update sidebar metadata (status, progress, logs).\n- Query system state and capabilities.\n- Includes usage examples for CLI, Python, and shell scripting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcf38cd9e05db3b55c488c77b91c9b1805c848120ce15d162f9fa4cc9f0648ed"
+}

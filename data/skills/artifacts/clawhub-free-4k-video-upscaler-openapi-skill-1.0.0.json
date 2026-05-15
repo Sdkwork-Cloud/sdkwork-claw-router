@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-4k-video-upscaler-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_4k_video_upscaler_openapi_skill",
+  "skill": {
+    "id": 56654,
+    "skillKey": "clawhub-free-4k-video-upscaler-openapi-skill",
+    "name": "Free 4K Video Upscaler – Upscale Video to 4K Online with AI – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-4k-video-upscaler-openapi-skill",
+    "url": "https://clawhub.ai/skills/free-4k-video-upscaler-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-4k-video-upscaler-openapi-skill-5b7188ab1cb0654b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Free 4K video upscaler — upscale video to 4K resolution using AI"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776407696891,
+      "changelog": "- Initial release of the free-4k-video-upscaler-openapi-skill.\n- Enables free AI-powered upscaling of videos to 4K resolution via the WeShop OpenAPI.\n- Supports secure API key authentication (WESHOP_API_KEY environment variable).\n- Includes endpoints for starting runs, polling status, and uploading images.\n- Provides clear usage instructions and security guidelines for handling API keys.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:323bf27d15358b021b20954dafa6a1b0af88d1361beddda1a164b3ba3b74dc61"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37779,
+  "uuid": "skill-clawhub-time-doctor",
+  "skillKey": "clawhub-time-doctor",
+  "name": "Time Doctor",
+  "summary": "Time Doctor integration. Manage data, records, and automate workflows. Use when the user wants to interact with Time Doctor data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.time_doctor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Time Doctor integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Time Doctor data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/time-doctor@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "time-doctor",
+      "url": "https://clawhub.ai/skills/time-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "time-doctor",
+    "url": "https://clawhub.ai/skills/time-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/time-doctor-f717a5f10e211366.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/time-doctor@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-time-doctor-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e32d52526bb44b8a79ebea16da601c4e1534af31a8297ee61d94ba55390a41ea",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:53:21.450Z"
+}

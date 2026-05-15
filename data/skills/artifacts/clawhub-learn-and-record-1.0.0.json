@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/learn-and-record@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learn_and_record",
+  "skill": {
+    "id": 70306,
+    "skillKey": "clawhub-learn-and-record",
+    "name": "Learn and Record"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learn-and-record",
+    "url": "https://clawhub.ai/skills/learn-and-record",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learn-and-record-7e518740ccbd9c05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "学习新工具、新技术、新平台的完整流程。当你需要从零学习某个东西时使用此 skill。包含学习方法论、踩坑记录、探索清单和笔记模板。也用于回顾已有学习经验来指导新的学习。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amazcuter",
+      "userId": "s177qs6wf96arzz9xqh1feq5vn84e93k",
+      "displayName": "amazcuter(神奇可人）",
+      "image": "https://avatars.githubusercontent.com/u/90633247?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775623816852,
+      "changelog": "Learning methodology with Skill/Script/MCP solidification",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36ef1b4caf9ab3f0d041771aa4724a2ec8cf6fc8c243dfc05c099ac128564d62"
+}

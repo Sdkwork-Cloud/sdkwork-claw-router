@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55851,
+  "uuid": "skill-clawhub-pipeworx-patents",
+  "skillKey": "clawhub-pipeworx-patents",
+  "name": "Pipeworx patents",
+  "summary": "Patents MCP — wraps PatentsView API (https://api.patentsview.org/)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_patents",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Patents MCP — wraps PatentsView API (https://api.patentsview.org/)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-patents@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-patents",
+      "url": "https://clawhub.ai/skills/pipeworx-patents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-patents",
+    "url": "https://clawhub.ai/skills/pipeworx-patents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-patents-18fd1124b5ab09b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-patents@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-patents-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3545522e2aacc1946131eb392134b142992a8cbab8edb48db5eeaa742f23812",
+      "artifactSizeBytes": 1815
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T21:10:12.218Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/debt-payoff-plan-comparison@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.debt_payoff_plan_comparison",
+  "skill": {
+    "id": 19703,
+    "skillKey": "clawhub-debt-payoff-plan-comparison",
+    "name": "Debt payoff plan comparison"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "debt-payoff-plan-comparison",
+    "url": "https://clawhub.ai/skills/debt-payoff-plan-comparison",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/debt-payoff-plan-comparison-49796740f47b3206.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Collect debt and mortgage inputs, call a plans API, and return payoff strategy comparisons (snowball, avalanche, refinance) with concise recommendations and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lgvw3",
+      "userId": "s17187zag0wvvr10myj2210fbx8509rx",
+      "displayName": "Logan Van Wagoner",
+      "image": "https://avatars.githubusercontent.com/u/55860287?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 496,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772572539930,
+      "changelog": "**Version 1.1.0 – Adds privacy, security, and inference improvements**\n\n- Requires explicit user consent before sending financial data to API.\n- Clarifies required/optional debt fields; adds enum validation for debt types.\n- Supports script-side inference of missing rates/payments with new flags (`--infer-missing-rate`, `--infer-missing-payment`).\n- Enforces strict marketing URL validation—only shows HTTPS URLs from allowed hosts.\n- Documents new script flags and privacy/consent workflow.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:05e06dfcc474a7ce3a910ca99fab81ae72b4e53be6a452f9d6b5c292914a573a"
+}

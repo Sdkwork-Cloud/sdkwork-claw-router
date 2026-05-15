@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jeep-brand@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jeep_brand",
+  "skill": {
+    "id": 65690,
+    "skillKey": "clawhub-jeep-brand",
+    "name": "Jeep Brand"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jeep-brand",
+    "url": "https://clawhub.ai/skills/jeep-brand",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jeep-brand-c00ca9aab4cc730d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Jeep是始于1941年二战军用四驱越野车的美国SUV品牌，代表经典越野性能和独特七孔格栅设计。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777043008653,
+      "changelog": "- 首发版本：梳理Jeep品牌历史、商业模式、核心产品线和品牌护城河  \n- 涵盖重要历史节点，从二战军车到Stellantis集团核心品牌  \n- 提供市场数据、知名车型介绍、改装与越野文化亮点  \n- 收录品牌趣闻及独特设计元素介绍  \n- 适用于汽车品牌历史、SUV市场、越野文化等研究或讨论",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:07e4ad4cef58eb8cda8ac73865b3c32dc23aee81d542171d3ee558092a4c8842"
+}

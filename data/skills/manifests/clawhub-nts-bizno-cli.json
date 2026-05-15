@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58030,
+  "uuid": "skill-clawhub-nts-bizno-cli",
+  "skillKey": "clawhub-nts-bizno-cli",
+  "name": "NTS BizNo CLI",
+  "summary": "Verify Korean business registration numbers (사업자등록번호) via the official NTS (국세청) public API. Operating-status lookup (계속/휴업/폐업), full authenticity check (b_n...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nts_bizno_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chloe Park",
+      "features": [
+        "Verify Korean business registration numbers (사업자등록번호) via the official NTS (국세청) public API",
+        "Operating-status lookup (계속/휴업/폐업), full authenticity check (b_n..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nts-bizno-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15118976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nts-bizno-cli",
+      "url": "https://clawhub.ai/skills/nts-bizno-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nts-bizno-cli",
+    "url": "https://clawhub.ai/skills/nts-bizno-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nts-bizno-cli-81043203ba1d86fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nts-bizno-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nts-bizno-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b888446bd5553b7b4f04c4de99f8fc6c9f27c0eb920e8c99c4be9b4e7047730c",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T00:08:58.639Z"
+}

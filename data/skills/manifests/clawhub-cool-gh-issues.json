@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39097,
+  "uuid": "skill-clawhub-cool-gh-issues",
+  "skillKey": "clawhub-cool-gh-issues",
+  "name": "GitHub Issues Auto-Fix",
+  "summary": "Fetch GitHub issues, spawn sub-agents to implement fixes and open PRs, then monitor and address PR review comments. Usage: /gh-issues [owner/repo] [--label b...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cool_gh_issues",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chuangyinbot-boop",
+      "features": [
+        "Fetch GitHub issues, spawn sub-agents to implement fixes and open PRs, then monitor and address.",
+        "Usage: /gh-issues [owner/repo] [--label b..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cool-gh-issues@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271754071?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cool-gh-issues",
+      "url": "https://clawhub.ai/skills/cool-gh-issues"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cool-gh-issues",
+    "url": "https://clawhub.ai/skills/cool-gh-issues",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cool-gh-issues-975c0771bb880039.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cool-gh-issues@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cool-gh-issues-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16c93553f7b81fb496a1513723f9239548729a6c9ce31fa60bb45a29bdb648e9",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T17:11:37.484Z"
+}

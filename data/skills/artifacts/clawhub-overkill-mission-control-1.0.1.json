@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/overkill-mission-control@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.overkill_mission_control",
+  "skill": {
+    "id": 21349,
+    "skillKey": "clawhub-overkill-mission-control",
+    "name": "Overkill Mission Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "overkill-mission-control",
+    "url": "https://clawhub.ai/skills/overkill-mission-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/overkill-mission-control-22da83da58f96180.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive Mission Control dashboard for OpenClaw - monitor agents, automation, teams, documents, messages, and system metrics. Features real-time dashboa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "broedkrummen",
+      "userId": "s176tqmpjtkpkhfdzyb4m64qts83hexw",
+      "displayName": "Broedkrummen",
+      "image": "https://avatars.githubusercontent.com/u/146327287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 512,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772966857856,
+      "changelog": "- Updated Tailscale access instructions to reference a customizable hostname (`<your-host>`) and clarified the need to run `tailscale serve 3000`.\n- No other changes were made to features or configuration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3359b75a17c1fdfd6e8a254e38bdab5972646bc65b158b8fc75b8ffb35b2da84"
+}

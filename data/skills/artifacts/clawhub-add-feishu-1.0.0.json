@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/add-feishu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_feishu",
+  "skill": {
+    "id": 53277,
+    "skillKey": "clawhub-add-feishu",
+    "name": "Feishu Channel Integration for Nanoclaw​"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-feishu",
+    "url": "https://clawhub.ai/skills/add-feishu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-feishu-52646773dbc99304.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add Feishu (Lark) as a channel. Uses WebSocket long connection — no public URL or ngrok needed. Works alongside WhatsApp, Telegram, Slack, or as a standalone..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "will-17173",
+      "userId": "publishers:will-17173",
+      "displayName": "will-17173",
+      "image": "https://avatars.githubusercontent.com/u/6138736?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 567,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772683137715,
+      "changelog": "Add Feishu (Lark) channel integration for NanoClaw\n\n- Adds Feishu (Lark) as a new messaging channel using WebSocket – no ngrok or public URL required.\n- Supports interactive setup, including automated code/app changes and environment configuration guidance.\n- Works alongside WhatsApp, Telegram, Slack, or as a standalone channel.\n- Guides users through Feishu app creation, permissions, and registration of chat groups or direct chats.\n- Provides troubleshooting, removal instructions, and details on JID formats.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1ab9b5a7b9a4a0e86891c09f054a5323ea7261a9f34c592be9c22c7c26b803ff"
+}

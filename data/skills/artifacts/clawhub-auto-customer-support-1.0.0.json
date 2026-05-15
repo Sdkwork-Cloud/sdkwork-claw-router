@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-customer-support@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_customer_support",
+  "skill": {
+    "id": 62985,
+    "skillKey": "clawhub-auto-customer-support",
+    "name": "auto-customer-support"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-customer-support",
+    "url": "https://clawhub.ai/skills/auto-customer-support",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-customer-support-319988b715930c81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动化客服（基于 FAQ 的轻量检索回复 + 简单转人工/工单接口；支持 Webhook 接入、邮件/企业微信/工单系统集成与可选升级到 LLM 混合模式）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xianji520",
+      "userId": "s171byq708s4egbk8r2jgy3v8s84n09d",
+      "displayName": "xianji520",
+      "image": "https://avatars.githubusercontent.com/u/250768986?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775902527656,
+      "changelog": "auto-customer-support 1.0.0\n\n- 新增基于 FAQ 的自动化客服 scaffold：支持静态问答检索、模板回复\n- 集成 /webhook 和 /escalate 接口，实现自动回复与工单转人工\n- 支持加载 CSV 格式 FAQ，内置信心阈值与变量模板渲染\n- 提供 Webhook、邮件、企业微信、工单系统等集成参考\n- 含完整目录结构与本地开发/测试指引\n- 明确列出扩展（向量检索、LLM混合、会话管理）与安全建议",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd3f88070b7328eb3e7e42b130892463235f2c67160bf8a37732f7421d2be245"
+}

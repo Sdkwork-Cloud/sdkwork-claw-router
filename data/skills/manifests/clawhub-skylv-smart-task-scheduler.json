@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47791,
+  "uuid": "skill-clawhub-skylv-smart-task-scheduler",
+  "skillKey": "clawhub-skylv-smart-task-scheduler",
+  "name": "Skylv Smart Task Scheduler",
+  "summary": "Context-aware task scheduling with priority management",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_smart_task_scheduler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Context-aware task scheduling with priority management"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-smart-task-scheduler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-smart-task-scheduler",
+      "url": "https://clawhub.ai/skills/skylv-smart-task-scheduler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-smart-task-scheduler",
+    "url": "https://clawhub.ai/skills/skylv-smart-task-scheduler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-smart-task-scheduler-73705fd6374b28d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-smart-task-scheduler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-smart-task-scheduler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd0ad577e4b3330cb57ae164300db322157cff8be79f61609ea37161d2bf2666",
+      "artifactSizeBytes": 2425
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T00:52:17.572Z"
+}

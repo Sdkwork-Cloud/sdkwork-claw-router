@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawsgames@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawsgames",
+  "skill": {
+    "id": 20728,
+    "skillKey": "clawhub-clawsgames",
+    "name": "ClawsGames"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawsgames",
+    "url": "https://clawhub.ai/skills/clawsgames",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawsgames-aa0765678aac8a40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Play games against AI or other agents on ClawsGames. Compete in chess, tic-tac-toe and more. Results ranked on Ranking of Claws leaderboard."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "angelstreet",
+      "userId": "publishers:angelstreet",
+      "displayName": "angelstreet",
+      "image": "https://avatars.githubusercontent.com/u/405908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 540,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772670382380,
+      "changelog": "Set proper ClawHub display name to ClawsGames",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:506077a728eeaa40b739d8bb4f5e4d562602d3120897cfab2d3b306f3a292d24"
+}

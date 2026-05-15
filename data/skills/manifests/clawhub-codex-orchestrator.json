@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9451,
+  "uuid": "skill-clawhub-codex-orchestrator",
+  "skillKey": "clawhub-codex-orchestrator",
+  "name": "Codex Orchestrator",
+  "summary": "Monitor, control, and orchestrate background Codex sessions. Use this skill to track progress, handle interruptions, and ensure task completion for long-running coding tasks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Microcarft",
+      "features": [
+        "Monitor, control, and orchestrate background Codex sessions",
+        "Use this skill to track progress, handle interruptions, and ensure task completion for long-run."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codex-orchestrator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152399668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codex-orchestrator",
+      "url": "https://clawhub.ai/skills/codex-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-orchestrator",
+    "url": "https://clawhub.ai/skills/codex-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-orchestrator-8b92bdb10dfddb9f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codex-orchestrator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-codex-orchestrator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f510718e8d7678638d64a2f5e75de2fba30e43af094adf01b23fbd13ed42a196",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T12:55:17.965Z"
+}

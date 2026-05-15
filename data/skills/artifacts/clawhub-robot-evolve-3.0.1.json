@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/robot-evolve@3.0.1",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.robot_evolve",
+  "skill": {
+    "id": 68657,
+    "skillKey": "clawhub-robot-evolve",
+    "name": "Robot Evolve"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "robot-evolve",
+    "url": "https://clawhub.ai/skills/robot-evolve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/robot-evolve-3f8f57ecd71cd809.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动检测用户会话空闲30分钟，执行低风险自主进化操作并通过官方渠道发送进化报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pengpengliu1212-art",
+      "userId": "s17a6yf887wep91zg3hjwpvfsx85pxge",
+      "displayName": "DayuCyrus",
+      "image": "https://avatars.githubusercontent.com/u/273726579?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.0.1",
+      "createdAt": 1778028237822,
+      "changelog": "robot-evolve 3.0.1\n\n- 报告发送渠道由「JVS Claw 官方消息渠道」调整为「当前会话消息渠道」，更贴合用户实际对话流程\n- 文档和技能描述更新，版本号提升至 3.0.1\n- 无功能逻辑变动",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bda2bf961c9811e22b147a3193a26d6302178d5cbd23a4d7911e99086bf7a37f"
+}

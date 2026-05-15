@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scheduled-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scheduled_report",
+  "skill": {
+    "id": 66834,
+    "skillKey": "clawhub-scheduled-report",
+    "name": "Aloudata CAN SKILLS - scheduled-report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scheduled-report",
+    "url": "https://clawhub.ai/skills/scheduled-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scheduled-report-03e43678c75c5f0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将当前对话中已完成的分析流程，提取并固化为定时执行的任务（周报/月报/日巡检等）。本 Skill 是一个纯粹的**编排层**——它不负责定义\"怎么分析\"，只负责\"把你刚才做的分析录下来，变成能定时重放的任务\"。 触发场景包括但不限于：用户提到\"定时报告\"\"定时分析\"\"定期执行\"\"自动报告\"\"把这个分析变成周报\"\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackyujun",
+      "userId": "s172qm3yezbbjev7q8rsxxbd1s83he2f",
+      "displayName": "jackyujun",
+      "image": "https://avatars.githubusercontent.com/u/4506268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 327,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774966759789,
+      "changelog": "- Initial release of the scheduled-report skill.\n- Enables users to convert a completed multi-step analysis in the current conversation into a scheduled (recurring) task, such as weekly or monthly reports.\n- Accurately extracts all executed analysis steps (from metric-query, metric-attribution, dataset-detail-query, etc.) and assembles them into a self-contained prompt for automated replay.\n- Distinguishes between \"on-demand report\" (analysis-report) and \"scheduled/periodic report\" intents, triggering only when clear recurring execution is requested and after analysis has been performed.\n- Guides users to complete necessary analysis steps if not already done, then seamlessly creates the scheduled task.\n- Automatic prompt generation includes time range normalization, comprehensive task configuration, and user confirmation before final creation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a6e1413c05f5f4f56ecb64f28106f5d92b71278dc4b296320a38f1b36fd469ce"
+}

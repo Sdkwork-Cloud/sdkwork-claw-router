@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memos-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memos_search",
+  "skill": {
+    "id": 13289,
+    "skillKey": "clawhub-memos-search",
+    "name": "Memos Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memos-search",
+    "url": "https://clawhub.ai/skills/memos-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memos-search-93a6f6fddf75a4ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and retrieve memory content using MemOS API based on user queries, supporting up to top 3 relevant results."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hope7709",
+      "userId": "s17cgv15hffpz82v9qpga7dwf583gq4r",
+      "displayName": "hope7709",
+      "image": "https://avatars.githubusercontent.com/u/247332113?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1432,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772262486035,
+      "changelog": "- Initial release of memos-search skill, integrating MemOS API for external memory operations.\n- Supports saving, reading, listing, searching, and deleting memory files via REST API.\n- Enables persistent memory storage and retrieval, replacing OpenClaw's default memory with MemOS.\n- Provides clear usage examples for all available API endpoints.\n- Compatible with Python requests library for all operations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aae6fd4c7e68e508dfecd06b88d414060dee505858feecd41c1277b5ed960a43"
+}

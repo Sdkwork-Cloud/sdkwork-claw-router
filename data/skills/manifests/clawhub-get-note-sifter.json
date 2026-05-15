@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69708,
+  "uuid": "skill-clawhub-get-note-sifter",
+  "skillKey": "clawhub-get-note-sifter",
+  "name": "Get笔记筛选整理助手",
+  "summary": "基于你的研究地图，分析并筛选Get笔记和外部链接，生成结构化报告并给出Obsidian整理建议。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.get_note_sifter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "duzhilei951",
+      "features": [
+        "基于你的研究地图，分析并筛选Get笔记和外部链接，生成结构化报告并给出Obsidian整理建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/get-note-sifter@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22375450?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "get-note-sifter",
+      "url": "https://clawhub.ai/skills/get-note-sifter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "get-note-sifter",
+    "url": "https://clawhub.ai/skills/get-note-sifter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/get-note-sifter-51f163d54a8f1c0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/get-note-sifter@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-get-note-sifter-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7eec3e7747b0926dfb1358b4a3d968a39981e30424594fa7e1e62346035b58b7",
+      "artifactSizeBytes": 2315
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T11:51:25.409Z"
+}

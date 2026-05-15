@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xcloud-docker-deploy@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xcloud_docker_deploy",
+  "skill": {
+    "id": 49707,
+    "skillKey": "clawhub-xcloud-docker-deploy",
+    "name": "xCloud Docker Deploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xcloud-docker-deploy",
+    "url": "https://clawhub.ai/skills/xcloud-docker-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xcloud-docker-deploy-ca9cfda870636968.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy any project to xCloud hosting — auto-detects stack (WordPress, Laravel, PHP, Node.js, Next.js, NestJS, Python, Go, Rust), routes to native or Docker d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asif2bd",
+      "userId": "s172w5rqenpwn4qb4g5n563hx9845890",
+      "displayName": "Asif",
+      "image": "https://avatars.githubusercontent.com/u/2099592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 622,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1772543644312,
+      "changelog": "v1.2.1: Sync — updated CHANGELOG, README badge, skill.json + skillsmp.yml all pinned to 1.2.0; all PRs merged and closed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f074c416ba71b2a7a3f7004a8e8099b43cb301dc5c9c580a3e25c2e5815e56a8"
+}

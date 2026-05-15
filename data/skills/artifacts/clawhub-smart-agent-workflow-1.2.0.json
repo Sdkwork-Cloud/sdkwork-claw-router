@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-agent-workflow@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_agent_workflow",
+  "skill": {
+    "id": 60372,
+    "skillKey": "clawhub-smart-agent-workflow",
+    "name": "Smart Agent Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-agent-workflow",
+    "url": "https://clawhub.ai/skills/smart-agent-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-agent-workflow-84a5f12f20b1000b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent 工作方法论 Skill — 专注 3高（高质量+高效率+高节省）。提供任务类型判断、WBS 拆分、P0/P1 分级汇报、安全检查、Context 管理。渠道无关，适用于 Claude Code、Cursor、Codex、OpenClaw 等任何 AI agent。唯一提供完整工作方法论的 Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whhaijun",
+      "userId": "s177jghkh390q66eyphpszsc3d83s9at",
+      "displayName": "Mark",
+      "image": "https://avatars.githubusercontent.com/u/16590302?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774716364737,
+      "changelog": "增加 DO NOT 列表和 Credit Burn Loop 防护，防止 Token 浪费和低效行为",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4f7da22afb24175127be461228113824d96c96c3f06c572107387023a68146e"
+}

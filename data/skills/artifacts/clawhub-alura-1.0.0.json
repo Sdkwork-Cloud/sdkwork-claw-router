@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alura@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alura",
+  "skill": {
+    "id": 19128,
+    "skillKey": "clawhub-alura",
+    "name": "Alura"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alura",
+    "url": "https://clawhub.ai/skills/alura",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alura-4519845a8b947dc1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate with Alura Trading testnet API for user auth, trading sessions, market data, leaderboard, referrals, and USDC verification using Bearer token."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evilboyajay",
+      "userId": "s17fw9p2m59pdrqqcr6xe5b51583s23k",
+      "displayName": "Ajay Gautam",
+      "image": "https://avatars.githubusercontent.com/u/16292031?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 635,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771484550100,
+      "changelog": "Initial release of Alura backend API integration.\n\n- Provides endpoints for trading sessions, user authentication (EVM wallet), market indicators, leaderboard, referrals, and USDC verification.\n- Supports quick and advanced trade session creation with asset index mapping.\n- Includes user actions: withdraw, claim rewards, and USDC transfer.\n- Exposes leaderboard stats, signals, analytics, and referral management routes.\n- Details error handling and authentication requirements for all endpoints.\n- Offers testnet base URL and comprehensive endpoint documentation links.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:141703896eb44f1c33173e8310e3e8441ecbe0faede2058df14bbb0a173a29cf"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/automatic-generator-cartoon@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.automatic_generator_cartoon",
+  "skill": {
+    "id": 37803,
+    "skillKey": "clawhub-automatic-generator-cartoon",
+    "name": "Automatic Generator Cartoon"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "automatic-generator-cartoon",
+    "url": "https://clawhub.ai/skills/automatic-generator-cartoon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/automatic-generator-cartoon-1acd5ecc8bdb2eab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get cartoon-style videos ready to post, without touching a single slider. Upload your images or video (MP4, MOV, AVI, WebM, up to 500MB), say something like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776744162197,
+      "changelog": "Automatic Generator Cartoon v1.0.0 — Initial Release\n\n- Instantly converts uploaded videos (MP4, MOV, AVI, WebM) to cartoon animation style via cloud rendering; outputs 1080p MP4.\n- Fully automatic workflow with no manual sliders or animation tools required.\n- Seamless setup using either user-provided or automatically generated API token (NEMO_TOKEN).\n- Supports uploads up to 500MB, multi-track editing (video, audio, text), and automatic timeline summaries.\n- Integrated session management, job status, credits/balance checks, and detailed error handling for common issues.\n- Designed for content creators wanting rapid, share-ready cartoon videos with minimal effort.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b572dd37047acd1908166f577f9bfab717964bcc24e13fec36c682709680336c"
+}

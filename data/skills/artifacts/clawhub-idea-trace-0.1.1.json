@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/idea-trace@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idea_trace",
+  "skill": {
+    "id": 37826,
+    "skillKey": "clawhub-idea-trace",
+    "name": "Idea Trace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idea-trace",
+    "url": "https://clawhub.ai/skills/idea-trace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idea-trace-641ad75e5b897d28.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Don't just save ideas - trace how they mature. Use when a user wants to follow how an important idea was shaped by later conversations, work, projects, and l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lakendocean",
+      "userId": "s17fa7cbjz67mt8s7t5xdx5wj983rztp",
+      "displayName": "ken",
+      "image": "https://avatars.githubusercontent.com/u/100094170?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775334909669,
+      "changelog": "Sharpened the public-facing copy for stronger resonance and clearer first-screen positioning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b9291d21f79ad1a81f332d340c4ab0e30847c1c4680baf8b61660cab32c3898"
+}

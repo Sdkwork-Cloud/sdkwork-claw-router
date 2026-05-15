@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63252,
+  "uuid": "skill-clawhub-q012315-context-manager",
+  "skillKey": "clawhub-q012315-context-manager",
+  "name": "context-manager",
+  "summary": "智能上下文管理系统 - 支持多模型自适应、分层记忆、动态注入、SQLite 数据库",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.q012315_context_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zone",
+      "features": [
+        "智能上下文管理系统",
+        "支持多模型自适应、分层记忆、动态注入、SQLite 数据库"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/q012315-context-manager@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36264754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "q012315-context-manager",
+      "url": "https://clawhub.ai/skills/q012315-context-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "q012315-context-manager",
+    "url": "https://clawhub.ai/skills/q012315-context-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/q012315-context-manager-400c123b97a23004.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/q012315-context-manager@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-q012315-context-manager-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f4c1de7f86635f480e2bb93d5082a72aeab561ca98e7d1b9b621af0443a925e",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:14:30.968Z"
+}

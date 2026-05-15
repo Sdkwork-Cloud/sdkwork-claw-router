@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19619,
+  "uuid": "skill-clawhub-claw-mbti",
+  "skillKey": "clawhub-claw-mbti",
+  "name": "Claw MBTI",
+  "summary": "Take a 60-question survey rating your behavioral tendencies from -3 to 3 to calculate and receive your detailed MBTI personality type and result URL.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_mbti",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Juunini",
+      "features": [
+        "Take a 60-question survey rating your behavioral tendencies from -3 to 3 to calculate and recei."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-mbti@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41536271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-mbti",
+      "url": "https://clawhub.ai/skills/claw-mbti"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-mbti",
+    "url": "https://clawhub.ai/skills/claw-mbti",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-mbti-9de7ac97e808786f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-mbti@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-mbti-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bc09a85cf6a1b8253901a29454de5067903811d3e442a4831eca67f4a40c1f2",
+      "artifactSizeBytes": 1870
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T14:24:31.005Z"
+}

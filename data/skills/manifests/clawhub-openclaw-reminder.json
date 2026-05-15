@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11415,
+  "uuid": "skill-clawhub-openclaw-reminder",
+  "skillKey": "clawhub-openclaw-reminder",
+  "name": "Reminder",
+  "summary": "Create one-time reminder tasks using OpenClaw cron. User specifies reminder time and task content in natural language via Discord, and the task result will b...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_reminder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sky Yan",
+      "features": [
+        "Create one-time reminder tasks using OpenClaw cron",
+        "User specifies reminder time and task content in natural language via Discord, and the task res."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-reminder@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/945860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-reminder",
+      "url": "https://clawhub.ai/skills/openclaw-reminder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-reminder",
+    "url": "https://clawhub.ai/skills/openclaw-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-reminder-371935990205d056.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-reminder@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-reminder-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:720bb76ba2cc820b14a8a73a9b8cd07fa8ceb78302965ac3fee47d52fc159f67",
+      "artifactSizeBytes": 2124
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T02:24:00.918Z"
+}

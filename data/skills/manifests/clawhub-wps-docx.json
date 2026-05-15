@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66458,
+  "uuid": "skill-clawhub-wps-docx",
+  "skillKey": "clawhub-wps-docx",
+  "name": "WPS Word Document",
+  "summary": "创建或编辑 Word (.docx) 文档。当用户要求生成、导出、下载 Word 文档，或对现有 .docx 编辑时使用本技能。当最终交付物是\"文档\"且用户未指定格式时（如\"生成文档\"、\"写一份文档\"、\"帮我做个文档\"），默认使用本技能生成 .docx。仅适用于最终交付物，中间生成物的格式不受此约束。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wps_docx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xixihaha123123123123",
+      "features": [
+        "创建或编辑 Word (.docx) 文档。当用户要求生成、导出、下载 Word 文档，或对现有 .docx 编辑时使用本技能。当最终交付物是\"文档\"且用户未指定格式时（如\"生成文档\"、\"写."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wps-docx@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176195294?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wps-docx",
+      "url": "https://clawhub.ai/skills/wps-docx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wps-docx",
+    "url": "https://clawhub.ai/skills/wps-docx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wps-docx-bf2b00d5bac8adb8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wps-docx@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wps-docx-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:857c4ebefa39b1de4e4120e712ad422f0e462ce5b6bebc3234d175d3e40901bb",
+      "artifactSizeBytes": 2096
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T12:33:05.817Z"
+}

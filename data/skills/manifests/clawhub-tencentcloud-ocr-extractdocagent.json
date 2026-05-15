@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67533,
+  "uuid": "skill-clawhub-tencentcloud-ocr-extractdocagent",
+  "skillKey": "clawhub-tencentcloud-ocr-extractdocagent",
+  "name": "TencentCloud ExtractDoc OCR",
+  "summary": "腾讯云实时文档抽取Agent(ExtractDocAgent)接口调用技能。当用户需要从图片或PDF中按自定义字段名称进行结构化信息抽取时，应使用此技能。支持自定义字段名称、字段类型（KV对或表格字段）和字段提示词，实现灵活的文档信息提取。适用于合同、发票、报告等各类文档的结构化数据抽取场景。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_ocr_extractdocagent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tencent-ocr",
+      "features": [
+        "腾讯云实时文档抽取Agent(ExtractDocAgent)接口调用技能。当用户需要从图片或PDF中按自定义字段名称进行结构化信息抽取时，应使用此技能。支持自定义字段名称、字段类型（KV对."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencentcloud-ocr-extractdocagent@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246965649?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencentcloud-ocr-extractdocagent",
+      "url": "https://clawhub.ai/skills/tencentcloud-ocr-extractdocagent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-ocr-extractdocagent",
+    "url": "https://clawhub.ai/skills/tencentcloud-ocr-extractdocagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-ocr-extractdocagent-fa826e7bee0e091f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencentcloud-ocr-extractdocagent@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-ocr-extractdocagent-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b708b169276f0d47afb2dbd59cf86aba9388790208b34d91d10d1d0676cf0590",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T02:38:46.554Z"
+}

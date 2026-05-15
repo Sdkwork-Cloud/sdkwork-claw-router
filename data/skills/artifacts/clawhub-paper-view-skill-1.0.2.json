@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-view-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_view_skill",
+  "skill": {
+    "id": 51394,
+    "skillKey": "clawhub-paper-view-skill",
+    "name": "paper-view"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-view-skill",
+    "url": "https://clawhub.ai/skills/paper-view-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-view-skill-5683abd7f1176f47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PaperView API — generate ECharts visualizations, AI scientific diagrams, and word clouds from data, text, or PDF papers. Use when the user wants to create ch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yyccr",
+      "userId": "s17bq29bj64ww77v6knytraqdd83geyj",
+      "displayName": "yangcheng",
+      "image": "https://avatars.githubusercontent.com/u/14156500?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773988118802,
+      "changelog": "- Updated environment variable structure for PAPERVIEW_API_TOKEN.\n- Removed explicit privacy section from documentation.\n- No changes to API endpoints or user-facing features.\n- Overall usage instructions and API details remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b2e2180309bb8716952cada9236ba9a2a629fe629e14323e63ee787cd10cb8ac"
+}

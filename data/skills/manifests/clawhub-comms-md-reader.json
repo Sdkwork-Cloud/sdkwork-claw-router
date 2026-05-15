@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19510,
+  "uuid": "skill-clawhub-comms-md-reader",
+  "skillKey": "clawhub-comms-md-reader",
+  "name": "COMMS.md Reader",
+  "summary": "Read and adapt to someone's COMMS.md before contacting them. Use when: (1) drafting a message, email, or outreach to someone who has a COMMS.md, (2) scheduli...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comms_md_reader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stedman Halliday",
+      "features": [
+        "Read and adapt to someone's COMMS.md before contacting them",
+        "Use when: (1) drafting a message, email, or outreach to someone who has a COMMS.md, (2) schedul."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comms-md-reader@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8705281?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comms-md-reader",
+      "url": "https://clawhub.ai/skills/comms-md-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comms-md-reader",
+    "url": "https://clawhub.ai/skills/comms-md-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comms-md-reader-35c8990709a84d03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comms-md-reader@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-comms-md-reader-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0315fcfb9ef53174a5132add60f2031a1be62193fae75a31844b7d10c6fd8071",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T16:36:16.152Z"
+}

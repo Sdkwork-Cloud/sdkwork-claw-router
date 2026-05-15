@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-mp-fetch@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_mp_fetch",
+  "skill": {
+    "id": 58332,
+    "skillKey": "clawhub-wechat-mp-fetch",
+    "name": "Wechat Mp Fetch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-mp-fetch",
+    "url": "https://clawhub.ai/skills/wechat-mp-fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-mp-fetch-b611af45c77cf4e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WeChat Official Account article fetcher — extracts title, body text, and final URL from mp.weixin.qq.com links via Playwright. 微信公众号文章抓取工具，提取标题、正文、原始URL，支持重定..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "write31bug",
+      "userId": "s178sjyvq7maptwn35ee7xaj4h847tq4",
+      "displayName": "write31bug",
+      "image": "https://avatars.githubusercontent.com/u/54340965?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 339,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1775804826675,
+      "changelog": "模块化重构：拆分browser/extractor/formatter/validator，新增commander命令行支持",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f64d1d0fc69f63fde3b72c9ecd888169879cd516a3619defff1385c4aa7ed458"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-changelog@1.2.3",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_changelog",
+  "skill": {
+    "id": 29353,
+    "skillKey": "clawhub-agent-changelog",
+    "name": "Agent Changelog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-changelog",
+    "url": "https://clawhub.ai/skills/agent-changelog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-changelog-bfbde2be31183906.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced handling for agent-changelog requests (history, diffs, restores, rollbacks, snapshots) using git and OpenClaw scripts with clear, user-focused summa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "noambens",
+      "userId": "s171vqvn3pyfm08b5jb3q2yj3n84ry8q",
+      "displayName": "NoamBenS",
+      "image": "https://avatars.githubusercontent.com/u/123112289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.3",
+      "createdAt": 1776897916671,
+      "changelog": "- Added PROMPTLAYER_API_KEY to required environment variables in metadata.\n- No other changes detected to functionality, behavior, or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ceb5cdf7d37c69318e3eb958bf2f6dda7890ce898f17e201efee8a077804601"
+}

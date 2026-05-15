@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20242,
+  "uuid": "skill-clawhub-webscraper-v2",
+  "skillKey": "clawhub-webscraper-v2",
+  "name": "Web Scraper Pro",
+  "summary": "Comprehensive web scraping tool for stock data, news, sector analysis and more",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webscraper_v2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "windy-001-crypto",
+      "features": [
+        "Comprehensive web scraping tool for stock data, news, sector analysis and more"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/webscraper-v2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258460660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "webscraper-v2",
+      "url": "https://clawhub.ai/skills/webscraper-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webscraper-v2",
+    "url": "https://clawhub.ai/skills/webscraper-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webscraper-v2-787136bf0b02b480.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/webscraper-v2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-webscraper-v2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2547f1fc1e2d155b7838d0bee8c14dec5632a77f74eb97fc0538d50626bdab70",
+      "artifactSizeBytes": 1854
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T16:14:33.825Z"
+}

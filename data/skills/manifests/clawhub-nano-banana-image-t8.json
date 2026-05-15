@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62550,
+  "uuid": "skill-clawhub-nano-banana-image-t8",
+  "skillKey": "clawhub-nano-banana-image-t8",
+  "name": "Nano Banana Image T8",
+  "summary": "通过Nano Banana API完成文本生成图像和图像编辑，支持上传图片和自定义尺寸比例的生图测试和联调。",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_banana_image_t8",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flywhale",
+      "features": [
+        "通过Nano Banana API完成文本生成图像和图像编辑，支持上传图片和自定义尺寸比例的生图测试和联调。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nano-banana-image-t8@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/136772759?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nano-banana-image-t8",
+      "url": "https://clawhub.ai/skills/nano-banana-image-t8"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-banana-image-t8",
+    "url": "https://clawhub.ai/skills/nano-banana-image-t8",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-banana-image-t8-6df5a502c6dfc083.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nano-banana-image-t8@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-nano-banana-image-t8-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f980a1feffdfac5016fa7d1bf7a1a2285ce17a278b3f4b3fced21422d48839ee",
+      "artifactSizeBytes": 2091
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T05:45:13.975Z"
+}

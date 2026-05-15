@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "generator": "@sdkwork/sdk-generator",
+  "sdk": {
+    "name": "clawrouter-backend-sdk",
+    "version": "0.1.0",
+    "language": "swift",
+    "sdkType": "backend",
+    "packageName": "ClawRouterBackendSdk"
+  },
+  "changeFingerprint": "033fbdc3b0d6cedcea5d2852dda30b9379e8e954a60f0a529236cec6f0df0ae0",
+  "changes": {
+    "createdGeneratedFiles": [
+      "Sources/API/AiApi.swift",
+      "Sources/API/BillingApi.swift",
+      "Sources/API/ContentApi.swift",
+      "Sources/API/EcosystemApi.swift",
+      "Sources/API/IamApi.swift",
+      "Sources/API/IntegrationApi.swift",
+      "Sources/API/PlatformApi.swift"
+    ],
+    "updatedGeneratedFiles": [
+      "README.md",
+      "Sources/API/API.swift",
+      "Sources/API/SystemApi.swift",
+      "Sources/HTTP/HttpClient.swift",
+      "Sources/Models.swift",
+      "Sources/SdkworkBackendClient.swift"
+    ],
+    "unchangedGeneratedFiles": [
+      "bin/publish-core.mjs",
+      "bin/publish.ps1",
+      "bin/publish.sh",
+      "CHANGELOG.md",
+      "LICENSE",
+      "Package.swift",
+      "sdkwork-sdk.json",
+      "Sources/API/ApiPaths.swift"
+    ],
+    "deletedGeneratedFiles": [
+      "Sources/API/ApikeyApi.swift",
+      "Sources/API/AppApi.swift",
+      "Sources/API/ChannelApi.swift",
+      "Sources/API/CouponApi.swift",
+      "Sources/API/DashboardApi.swift",
+      "Sources/API/FinanceApi.swift",
+      "Sources/API/ModelApi.swift",
+      "Sources/API/ProviderSecretApi.swift",
+      "Sources/API/RecordApi.swift",
+      "Sources/API/RouterApi.swift",
+      "Sources/API/SkillApi.swift",
+      "Sources/API/UserApi.swift",
+      "Sources/API/VipApi.swift"
+    ],
+    "scaffoldedFiles": [],
+    "preservedScaffoldFiles": [
+      "custom/README.md"
+    ],
+    "backedUpFiles": [
+      "README.md",
+      "Sources/HTTP/HttpClient.swift"
+    ]
+  },
+  "impact": {
+    "schemaVersion": 1,
+    "areas": [
+      "api-surface",
+      "models",
+      "runtime",
+      "documentation",
+      "unknown"
+    ],
+    "details": [
+      {
+        "area": "api-surface",
+        "paths": [
+          "Sources/API/AiApi.swift",
+          "Sources/API/API.swift",
+          "Sources/API/ApikeyApi.swift",
+          "Sources/API/AppApi.swift",
+          "Sources/API/BillingApi.swift",
+          "Sources/API/ChannelApi.swift",
+          "Sources/API/ContentApi.swift",
+          "Sources/API/CouponApi.swift",
+          "Sources/API/DashboardApi.swift",
+          "Sources/API/EcosystemApi.swift",
+          "Sources/API/FinanceApi.swift",
+          "Sources/API/IamApi.swift",
+          "Sources/API/IntegrationApi.swift",
+          "Sources/API/ModelApi.swift",
+          "Sources/API/PlatformApi.swift",
+          "Sources/API/ProviderSecretApi.swift",
+          "Sources/API/RecordApi.swift",
+          "Sources/API/RouterApi.swift",
+          "Sources/API/SkillApi.swift",
+          "Sources/API/SystemApi.swift",
+          "Sources/API/UserApi.swift",
+          "Sources/API/VipApi.swift"
+        ]
+      },
+      {
+        "area": "models",
+        "paths": [
+          "Sources/Models.swift"
+        ]
+      },
+      {
+        "area": "runtime",
+        "paths": [
+          "Sources/HTTP/HttpClient.swift"
+        ]
+      },
+      {
+        "area": "documentation",
+        "paths": [
+          "README.md"
+        ]
+      },
+      {
+        "area": "unknown",
+        "paths": [
+          "Sources/SdkworkBackendClient.swift"
+        ]
+      }
+    ],
+    "requiresVerification": true,
+    "summary": "Detected impact areas: api-surface, models, runtime, documentation, unknown. Verification is required."
+  },
+  "verificationPlan": {
+    "shouldRun": true,
+    "runPhase": "now",
+    "summary": "Detected impact areas: api-surface, models, runtime, documentation, unknown. Verification is required. Run the required verification commands now against the generated SDK output.",
+    "steps": [
+      {
+        "id": "check",
+        "title": "Unified package check",
+        "required": true,
+        "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, runtime, documentation, unknown.",
+        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-backend-sdk\\clawrouter-backend-sdk-swift\\generated\\server-openapi",
+        "command": "node",
+        "args": [
+          "./bin/publish-core.mjs",
+          "--language",
+          "swift",
+          "--project-dir",
+          ".",
+          "--action",
+          "check"
+        ],
+        "displayCommand": "node ./bin/publish-core.mjs --language swift --project-dir . --action check"
+      }
+    ]
+  },
+  "executionDecision": {
+    "schemaVersion": 1,
+    "riskLevel": "high",
+    "nextAction": "verify",
+    "requiresManualReview": false,
+    "applyRequiresExpectedFingerprint": false,
+    "summary": "Changes have been applied. Run the required verification plan now.",
+    "reasons": [
+      "backed-up-generated-files",
+      "deleted-generated-files",
+      "manual-review-required",
+      "unknown-impact",
+      "verification-required"
+    ]
+  },
+  "preservedLegacyFiles": false
+}

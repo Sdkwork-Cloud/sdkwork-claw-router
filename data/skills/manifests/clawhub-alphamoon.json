@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26019,
+  "uuid": "skill-clawhub-alphamoon",
+  "skillKey": "clawhub-alphamoon",
+  "name": "Alphamoon",
+  "summary": "Alphamoon integration. Manage data, records, and automate workflows. Use when the user wants to interact with Alphamoon data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alphamoon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Alphamoon integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Alphamoon data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alphamoon@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alphamoon",
+      "url": "https://clawhub.ai/skills/alphamoon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alphamoon",
+    "url": "https://clawhub.ai/skills/alphamoon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alphamoon-3755c7a105d0eb1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alphamoon@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-alphamoon-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45d405d309e7cd173bff26f8f1a745608b16a3edc9f063725b9d9a2175a3fc7f",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:09:33.061Z"
+}

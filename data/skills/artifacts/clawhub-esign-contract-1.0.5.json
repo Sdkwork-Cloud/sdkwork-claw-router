@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/esign-contract@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.esign_contract",
+  "skill": {
+    "id": 70296,
+    "skillKey": "clawhub-esign-contract",
+    "name": "esign-contract"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "esign-contract",
+    "url": "https://clawhub.ai/skills/esign-contract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/esign-contract-b7f1bdb578885663.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "e签宝电子签名技能 — 支持 AI 生成任意类型的合同/协议并排版为 PDF， 上传已有文件发起电子签署，返回签署链接。 触发场景：用户要求生成、起草、撰写任何类型的合同或协议（如\"写个借款合同\"、 \"帮我拟一份保密协议\"、\"起草租赁合同\"），或要求对已有合同文件发起签署、 查询签署进度、撤销签署、下载签署文件、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "esign-cn-open-source",
+      "userId": "s174sq73857pst2n5g7a0byxp183jye8",
+      "displayName": "esign-cn-open-source",
+      "image": "https://avatars.githubusercontent.com/u/211654876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774960027317,
+      "changelog": "- 支持 AI 生成任意合同/协议并自动排版为 PDF，发起电子签署，返回签署链接。\n- 支持上传已有文件发起电子签署、查询签署进度、撤销签署、下载签署文件、验证电子签名等全流程操作。\n- 优化输出，所有技术细节和内部字段对用户隐藏，仅提示关键进度与最终结果。\n- 完善异常处理和用户确认流程，确保操作安全、步骤简明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a429283a867e4b3342f2e66e9d3689d57cf8180bc2d53ed80cb215f72135384f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28765,
+  "uuid": "skill-clawhub-llc-phone",
+  "skillKey": "clawhub-llc-phone",
+  "name": "Llc Phone",
+  "summary": "Low-latency inbound and outbound AI phone calls via the OpenAI Realtime API and Twilio, covering pre-warm and pre-accept patterns, IVR and receptionist flows...",
+  "version": "3.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llc_phone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chris M.",
+      "features": [
+        "Low-latency inbound and outbound AI phone calls via the OpenAI Realtime API and Twilio, coverin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llc-phone@3.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5272292?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llc-phone",
+      "url": "https://clawhub.ai/skills/llc-phone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llc-phone",
+    "url": "https://clawhub.ai/skills/llc-phone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llc-phone-e21fc5f857d753d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llc-phone@3.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-llc-phone-3.0.4.json",
+      "version": "3.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c6bde7c0404c7631ac5461b7a17f9d0c004afa00585f4803da6adbc2ae27749",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T07:49:14.600Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69121,
+  "uuid": "skill-clawhub-yuzhi",
+  "skillKey": "clawhub-yuzhi",
+  "name": "御知库",
+  "summary": "御知库——个人知识库系统。当帝提问时，优先从知识库检索答案。支持文档存储（Markdown/PDF/TXT）、语义搜索、关键词搜索、自动分类。帝说\"查一下xxx\"、\"/知识库 xxx\"或询问知识类问题时触发。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuzhi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zton100",
+      "features": [
+        "御知库——个人知识库系统。当帝提问时，优先从知识库检索答案。支持文档存储（Markdown/PDF/TXT）、语义搜索、关键词搜索、自动分类。帝说\"查一下xxx\"、\"/知识库 xxx\"或询问."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuzhi@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42246306?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuzhi",
+      "url": "https://clawhub.ai/skills/yuzhi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuzhi",
+    "url": "https://clawhub.ai/skills/yuzhi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuzhi-cd0e2dcd17d7792a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuzhi@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuzhi-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b68072bbde300aece2d0f0a9f518ce1aa7990134001523b8d7a83622b0ba8be0",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T16:17:50.886Z"
+}

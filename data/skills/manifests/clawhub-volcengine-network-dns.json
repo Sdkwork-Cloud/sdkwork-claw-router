@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15251,
+  "uuid": "skill-clawhub-volcengine-network-dns",
+  "skillKey": "clawhub-volcengine-network-dns",
+  "name": "Volcengine Network Dns",
+  "summary": "DNS record management on Volcengine networking services. Use when users need zone record query/update, traffic routing changes, or DNS propagation troubleshooting.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_network_dns",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "DNS record management on Volcengine networking services",
+        "Use when users need zone record query/update, traffic routing changes, or DNS propagation troub."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcengine-network-dns@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcengine-network-dns",
+      "url": "https://clawhub.ai/skills/volcengine-network-dns"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-network-dns",
+    "url": "https://clawhub.ai/skills/volcengine-network-dns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-network-dns-3c6cf7381b7ac455.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcengine-network-dns@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-network-dns-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:132cb94e81b662a986841da3293d53d7a2dea7f08890909d28b7c42a492ebffd",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T00:24:32.231Z"
+}

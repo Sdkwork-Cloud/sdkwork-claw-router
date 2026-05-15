@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-doc-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_doc_gen",
+  "skill": {
+    "id": 58966,
+    "skillKey": "clawhub-api-doc-gen",
+    "name": "Api Doc Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-doc-gen",
+    "url": "https://clawhub.ai/skills/api-doc-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-doc-gen-d8172517230f7a2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动从 Flask、Django、FastAPI、Express.js 代码生成统一格式的API文档，支持Markdown、OpenAPI和Postman导出。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenghoo123-png",
+      "userId": "s17dv44xed17vb7n7v728mr4dd846y7m",
+      "displayName": "shenghoo123-png",
+      "image": "https://avatars.githubusercontent.com/u/265226019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775445480979,
+      "changelog": "Initial release of api-doc-gen — automatic API documentation generator.\n\n- Generates API docs from Flask, Django DRF, FastAPI, and Express.js code.\n- Supports output in Markdown, OpenAPI 3.0 (JSON/YAML), and Postman Collection.\n- Automatically infers parameter types and docs from type hints and comments.\n- Includes built-in API response templates and batch processing.\n- Offers free and paid plans with feature upgrades.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aac0a26af396e3cab99f99b699b4f161a5e2872cf32c7be07e6ec650f6a39b56"
+}

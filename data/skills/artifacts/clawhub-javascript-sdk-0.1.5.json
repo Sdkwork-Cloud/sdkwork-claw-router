@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/javascript-sdk@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.javascript_sdk",
+  "skill": {
+    "id": 12611,
+    "skillKey": "clawhub-javascript-sdk",
+    "name": "Javascript Sdk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "javascript-sdk",
+    "url": "https://clawhub.ai/skills/javascript-sdk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/javascript-sdk-06b3d5e4299bdec1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "JavaScript/TypeScript SDK for inference.sh - run AI apps, build agents, integrate 150+ models. Package: @inferencesh/sdk (npm install). Full TypeScript suppo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1664,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403223771,
+      "changelog": "- Added comprehensive SKILL.md documentation covering installation, usage, file handling, sessions, and agent SDK features for @inferencesh/sdk.\n- Describes new capabilities: streaming, file uploads, agent and tool builder APIs, support for 150+ models, and human approval flows.\n- Includes quick start examples, authentication methods, running/tracking tasks, and full TypeScript support.\n- Lists usage scenarios for Node.js, React, Next.js, browser, and frontend integration.\n- Documents advanced agent features: template/adhoc agents, agent tools, webhook/internal tools, and streaming agent responses.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:281ad920af86f00c787617a701bddfa8bb44b277a9fa8dc381e9f80d38bf469c"
+}

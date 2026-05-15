@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-video-generator@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_video_generator",
+  "skill": {
+    "id": 60850,
+    "skillKey": "clawhub-image-video-generator",
+    "name": "支持图片生成（SEEDREAM5_0/NANO_BANANA_2）和视频生成（SEEDANCE_1_5_PRO/SORA2），SORA2 支持文生视频和首尾帧图生视频"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-video-generator",
+    "url": "https://clawhub.ai/skills/image-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-video-generator-79e5e5f0fed5ea60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 图片与视频异步生成技能，调用 AI Artist API 根据文本提示词生成图片或视频，自动轮询直到任务完成。 ⚠️ 使用前必须设置环境变量 AI_ARTIST_TOKEN 为你自己的 API Key！ 获取 API Key：访问 https://ai.deepsop.com/ 注册登录后创建。 支持图片模..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2393970875",
+      "userId": "s173p09z4j1qye13kdnmwvvc3183krpw",
+      "displayName": "2393970875",
+      "image": "https://avatars.githubusercontent.com/u/139337194?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777026605223,
+      "changelog": "**DeepSop 全新升级，支持更多图片和视频模型与参考图/视频上传**\n\n- 接入 DeepSop 新 API，支持共11种图片模型、15种视频模型（含 Sora2/Veo/Kling/Wan 等系列）。\n- 支持用户上传本地图像/视频自动转换成可访问 URL 用作参考图、参考视频、首/尾帧等。\n- 参数体系全面升级，详细区分快速、专家、高质量、镜头/分镜等多种模式。\n- 新增多项高级参数：参考图、生成人像控制、时长模式、提示词增强、负向 prompt、自定义音频等（按模型支持）。\n- 文档大幅优化，所有模型、参数、调用方式与能力对齐 DeepSop 官方。\n- 默认 API Key 获取及管理方式切换至 https://ai.deepsop.com/。\n- 所有旧环境说明、能力、参数均已同步至新版服务。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2902042e4a678e0022ca5999926c361ceb9e70a26a74e62deb7fcb9676a76647"
+}

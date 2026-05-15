@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57885,
+  "uuid": "skill-clawhub-caixin-news",
+  "skillKey": "clawhub-caixin-news",
+  "name": "财新网科技新闻",
+  "summary": "Fetch and summarize Chinese tech news from 财新网 (caixin.com). Use when user asks about caixin tech news, tech updates from 财新, or wants news from caixin.com/t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caixin_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jay",
+      "features": [
+        "Fetch and summarize Chinese tech news from 财新网 (caixin.com)",
+        "Use when user asks about caixin tech news, tech updates from 财新, or wants news from caixin.com/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/caixin-news@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1488374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "caixin-news",
+      "url": "https://clawhub.ai/skills/caixin-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caixin-news",
+    "url": "https://clawhub.ai/skills/caixin-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caixin-news-cc01a752c3f9b487.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/caixin-news@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-caixin-news-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8b2986e4df695ef3ee6de38cb7bd75c6f99e3470ed49a4cbf6a8e45f9ca4dbf",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T01:51:16.199Z"
+}

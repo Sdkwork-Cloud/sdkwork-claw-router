@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jike-calendar-lunar-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_calendar_lunar_query",
+  "skill": {
+    "id": 71574,
+    "skillKey": "clawhub-jike-calendar-lunar-query",
+    "name": "老黄历查询 - 即刻数据"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-calendar-lunar-query",
+    "url": "https://clawhub.ai/skills/jike-calendar-lunar-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-calendar-lunar-query-c04e667aebf85f1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "老黄历查询。输入阳历日期和时间，查询农历日期、黄历宜忌、黄黑道、吉神凶煞、生肖、星座、节气、喜神福神财神方位等信息。适用场景：用户说“查一下 2024-02-02 的老黄历”“今天宜忌是什么”“某天适合结婚搬家吗”等。数据由即刻数据（jikeapi.cn）开放接口提供。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jikeapi-cn",
+      "userId": "s1748e0m2nvjyq8jm7s2y4man185q081",
+      "displayName": "jikeapi",
+      "image": "https://avatars.githubusercontent.com/u/26078515?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 96,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777433325455,
+      "changelog": "首次发布老黄历查询 Skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cfa53462c074ff2c929995c9bec17e3936786bb8840c9d5d9af71b4a1e3d7227"
+}

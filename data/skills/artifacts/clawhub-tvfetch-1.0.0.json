@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tvfetch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tvfetch",
+  "skill": {
+    "id": 53563,
+    "skillKey": "clawhub-tvfetch",
+    "name": "TVFetch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tvfetch",
+    "url": "https://clawhub.ai/skills/tvfetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tvfetch-e74550d47afecb5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch TradingView market data — historical OHLCV bars, live price streams, symbol search, technical indicators, and statistical analysis for any symbol (stoc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tarun-khatri",
+      "userId": "s17case5wwcajt45d1hnf79gwn83sykn",
+      "displayName": "Tarun Khatri",
+      "image": "https://avatars.githubusercontent.com/u/84188088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775654614647,
+      "changelog": "Initial release of tvfetch — fetch and analyze market data from TradingView with no API key.\n\n- Fetch historical OHLCV bars, live price streams, search symbols, and compute key technical indicators (RSI, MACD, SMA, EMA, Bollinger Bands, etc.).\n- Supports stocks, crypto, forex, futures, indices, and commodities for any TradingView symbol.\n- Automatically interprets user intent from natural language and resolves symbols to exchange-prefixed codes.\n- Handles anonymous usage limits and guides users to set up authentication for higher data limits.\n- Outputs can be shown as tables or downloaded in CSV, JSON, or Parquet formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af80edf85a76aac172c85c073b49e0b23130345843e2843780d5fa4f8fcb9c05"
+}

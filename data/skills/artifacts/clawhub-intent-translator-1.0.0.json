@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intent-translator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intent_translator",
+  "skill": {
+    "id": 64705,
+    "skillKey": "clawhub-intent-translator",
+    "name": "Intent Translation Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intent-translator",
+    "url": "https://clawhub.ai/skills/intent-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intent-translator-d646546f89db63ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "引导用户表达模糊想法，挖掘真实需求，生成结构化指令，帮助AI精准理解和执行用户意图。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wesley138cn",
+      "userId": "s17f49qhdctdrdr3qhv871hpvd83nak7",
+      "displayName": "wesley138cn",
+      "image": "https://avatars.githubusercontent.com/u/197040006?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774104527025,
+      "changelog": "Initial release - translate vague intentions into structured AI prompts",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:845758c6fc094add8ac82d27ce5ceb2339ee9d53bb6f824501efb6eaa8e5b8d6"
+}

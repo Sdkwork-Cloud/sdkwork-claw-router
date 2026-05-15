@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/playasia@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.playasia",
+  "skill": {
+    "id": 51188,
+    "skillKey": "clawhub-playasia",
+    "name": "Mcp Server"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "playasia",
+    "url": "https://clawhub.ai/skills/playasia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/playasia-f390d3837a09ce7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and buy digital game codes, eShop cards, PSN vouchers from Play-Asia.com via HTTP or MCP. Three purchase methods — Wallet (instant), Lightning (instan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tom-playasia",
+      "userId": "s174gz5ng851fw65rhecw4ttkd83wtsj",
+      "displayName": "Tom",
+      "image": "https://avatars.githubusercontent.com/u/70365740?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 267,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1776564795088,
+      "changelog": "Major update: Now includes strict security rules and clearer guidance for chat-based users and agents.\n\n- Added explicit security rules: Never echo or store real Playasia tokens and always use a placeholder in all examples.\n- New \"Web chat clients\" section explains workflow for ChatGPT, Claude, Grok, etc. with clear steps for searching, price checks, and purchases.\n- Strong warning to never invent or fabricate product info, prices, or codes without live API data.\n- All purchase/authentication examples now consistently use the token placeholder pa_YOUR_TOKEN_HERE.\n- Documentation clarified on how agents must disclose limitations and interact securely with users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e73ac648069ac874e6957e4f4cb67c231840e0cca1a96b53f52705f92d37be2"
+}

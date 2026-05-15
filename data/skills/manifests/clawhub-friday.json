@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66280,
+  "uuid": "skill-clawhub-friday",
+  "skillKey": "clawhub-friday",
+  "name": "星期五",
+  "summary": "专用编程代理 - 使用 opencode 进行代码编写、审查、重构和调试",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.friday",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "easeclick",
+      "features": [
+        "使用 opencode 进行代码编写、审查、重构和调试"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/friday@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5234702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "friday",
+      "url": "https://clawhub.ai/skills/friday"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "friday",
+    "url": "https://clawhub.ai/skills/friday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/friday-1a79668eac4051a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/friday@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-friday-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9417f9283f7a6b187578b2b8d1730f21cb2c0f4741d0f17e12785dc9806c1976",
+      "artifactSizeBytes": 1770
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T06:53:50.338Z"
+}

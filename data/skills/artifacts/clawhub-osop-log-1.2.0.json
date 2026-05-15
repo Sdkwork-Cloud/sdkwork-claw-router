@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/osop-log@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.osop_log",
+  "skill": {
+    "id": 55104,
+    "skillKey": "clawhub-osop-log",
+    "name": "Osop Log"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "osop-log",
+    "url": "https://clawhub.ai/skills/osop-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/osop-log-ec06b96165727f58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate OSOP session log — creates .osop workflow and .osoplog.yaml execution record"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "archie0125",
+      "userId": "s179s8ypm6jvmks7shkyy813rd840pdv",
+      "displayName": "Archie0125",
+      "image": "https://avatars.githubusercontent.com/u/58622712?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775042840649,
+      "changelog": "Initial ClawHub release — OSOP session logger",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7ff03e7fbbe672d30290833ab1a7de344bf13442c463327293d68da91485d85"
+}

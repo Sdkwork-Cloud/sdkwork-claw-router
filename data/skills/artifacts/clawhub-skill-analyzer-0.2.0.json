@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-analyzer@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_analyzer",
+  "skill": {
+    "id": 22780,
+    "skillKey": "clawhub-skill-analyzer",
+    "name": "Skill Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-analyzer",
+    "url": "https://clawhub.ai/skills/skill-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-analyzer-26c666de022466ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes OpenClaw skills for functionality, security, usability, documentation, maintainability, and best practices to provide quality scores and improvement..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codeblackhole1024",
+      "userId": "s177mgnzkjxtm73sg9mgwxwc9n83nygc",
+      "displayName": "codeblackhole",
+      "image": "https://avatars.githubusercontent.com/u/39405686?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 451,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1772870079247,
+      "changelog": "Optimized description for better discoverability",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bf7617d005069ef1d2b19887506d107ae07b4a3813efc3e9ca89366e52b94fbc"
+}

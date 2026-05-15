@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowledge-distillation@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_distillation",
+  "skill": {
+    "id": 19753,
+    "skillKey": "clawhub-knowledge-distillation",
+    "name": "Knowledge Distillation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-distillation",
+    "url": "https://clawhub.ai/skills/knowledge-distillation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-distillation-ad7c2e66c8a06bb2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Distill OpenClaw daily memory, session transcripts, and newly generated report files into new knowledge points and deeper knowledge leads. Use when the input..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 454,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773394166408,
+      "changelog": "Refine the skill for OpenClaw memory, sessions, and report-based knowledge distillation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81bac2443c08026c3f38c54ae7a1fc58715d224eb95430ff93fa8a30ddb3280b"
+}

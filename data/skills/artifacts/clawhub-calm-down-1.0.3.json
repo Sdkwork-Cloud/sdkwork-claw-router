@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/calm-down@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calm_down",
+  "skill": {
+    "id": 39479,
+    "skillKey": "clawhub-calm-down",
+    "name": "Calm Down"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calm-down",
+    "url": "https://clawhub.ai/skills/calm-down",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calm-down-ebbd10215432aff2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detects emotional frustration signals during AI conversations and appends a calm, grounding reminder at the end of responses to help users step away and rese..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kencan666-ai",
+      "userId": "s174p99gyw3gbkacbx7hckcjn983zbp8",
+      "displayName": "kencan666-ai",
+      "image": "https://avatars.githubusercontent.com/u/234040206?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775971006978,
+      "changelog": "Full English rewrite. Removed all Chinese examples, replaced with mechanism explanation and English-only demo.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:489aac476a46e00629fb8fdd3f498af2063d531e27a85446cdec3c12d6ea1819"
+}

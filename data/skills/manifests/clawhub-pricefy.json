@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31425,
+  "uuid": "skill-clawhub-pricefy",
+  "skillKey": "clawhub-pricefy",
+  "name": "Pricefy",
+  "summary": "PRICEFY.IO integration. Manage data, records, and automate workflows. Use when the user wants to interact with PRICEFY.IO data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pricefy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "PRICEFY.IO integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with PRICEFY.IO data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pricefy@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pricefy",
+      "url": "https://clawhub.ai/skills/pricefy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pricefy",
+    "url": "https://clawhub.ai/skills/pricefy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pricefy-8c15a1901488573a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pricefy@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-pricefy-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe1d03df486f655d772eb42213722af32b2739d4ea5a764ffd8ba44f0966ce2b",
+      "artifactSizeBytes": 1835
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:52:48.334Z"
+}

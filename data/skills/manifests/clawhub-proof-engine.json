@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28074,
+  "uuid": "skill-clawhub-proof-engine",
+  "skillKey": "clawhub-proof-engine",
+  "name": "Proof Engine",
+  "summary": "Transforms every result [PRINCIPAL_NAME] achieves into deployable proof across all business domains. Captures P&L, agent performance, funnel revenue, testimo...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proof_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wesley Armando",
+      "features": [
+        "Transforms every result [PRINCIPAL_NAME] achieves into deployable proof across all business dom.",
+        "Captures P&L, agent performance, funnel revenue, testimo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proof-engine@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130360599?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proof-engine",
+      "url": "https://clawhub.ai/skills/proof-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proof-engine",
+    "url": "https://clawhub.ai/skills/proof-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proof-engine-da0f4a1c37deb938.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proof-engine@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-proof-engine-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:607c861e7dad63e4e07b0a1f2fc425f621914a1951861b7c3dce68d20fb29c8c",
+      "artifactSizeBytes": 2299
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T17:35:47.636Z"
+}

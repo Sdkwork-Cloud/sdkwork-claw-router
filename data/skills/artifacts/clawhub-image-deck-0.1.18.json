@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-deck@0.1.18",
+  "version": "0.1.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_deck",
+  "skill": {
+    "id": 23370,
+    "skillKey": "clawhub-image-deck",
+    "name": "image-deck: GPT Image 2 Slide Deck"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-deck",
+    "url": "https://clawhub.ai/skills/image-deck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-deck-3c73504e9a24e67a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "image-deck creates slide decks, slides, single slides, PPT, PowerPoint-style presentations, carousel pages, and full-image decks with GPT Image 2 through Cod..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tseng71",
+      "userId": "s173wy90twmq3hscnwy0dnragx85yp98",
+      "displayName": "tseng71",
+      "image": "https://avatars.githubusercontent.com/u/169515925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 443,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 19
+    },
+    "latestVersion": {
+      "version": "0.1.18",
+      "createdAt": 1778077873559,
+      "changelog": "Move the preview image before the install section and include it in SKILL.md for ClawHub display.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b86063ed7550304aef06f1f7dd7c3643e4b694ea53f2beae1eeeb04ba196a7d5"
+}

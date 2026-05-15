@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/forkzoo-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forkzoo_skill",
+  "skill": {
+    "id": 12770,
+    "skillKey": "clawhub-forkzoo-skill",
+    "name": "ForkZoo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forkzoo-skill",
+    "url": "https://clawhub.ai/skills/forkzoo-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forkzoo-skill-82cb45d2252a7e31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt and manage GitHub-native digital pets (tamagotchis) that evolve daily with AI. Use when an agent wants to adopt a pet (monkey, cat, dog, lion), check their pet's status/evolution, interact with their pet, view the community gallery,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "levi-law",
+      "userId": "publishers:levi-law",
+      "displayName": "levi-law",
+      "image": "https://avatars.githubusercontent.com/u/215663328?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1557,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770321899341,
+      "changelog": "Initial release of forkzoo.\n\n- Adopt and manage digital pets (monkey, cat, dog, lion) on GitHub.\n- Pets evolve daily with AI, gaining new traits and rarity.\n- Interact with your pet, check status and evolution history.\n- Includes community gallery, leaderboard, and family tree features.\n- Breeding system lets pets create offspring with inherited traits.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5774275eb66d310afc9547724fe179b4aac4f2dad4c4f3a58ca82cb4d7428d28"
+}

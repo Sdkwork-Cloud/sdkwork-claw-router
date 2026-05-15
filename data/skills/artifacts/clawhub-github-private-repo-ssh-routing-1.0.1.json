@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-private-repo-ssh-routing@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_private_repo_ssh_routing",
+  "skill": {
+    "id": 25414,
+    "skillKey": "clawhub-github-private-repo-ssh-routing",
+    "name": "Github Private Repo SSH Routing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-private-repo-ssh-routing",
+    "url": "https://clawhub.ai/skills/github-private-repo-ssh-routing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-private-repo-ssh-routing-f47b3ab8c906368c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose and manage SSH keys, host aliases, and Git remotes for GitHub private repositories in multi-repo environments. Use when deploy keys collide, a machi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darinrowe",
+      "userId": "publishers:darinrowe",
+      "displayName": "DarinRowe",
+      "image": "https://avatars.githubusercontent.com/u/5706314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773463630359,
+      "changelog": "Add guidance for deploy key vs fine-grained PAT boundaries, PR/release automation decisions, and OpenClaw-specific identity model selection.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72ee02292b9c46f9f1a0fe9a85a92051142acf0be34c30416c6018341f85cc2c"
+}

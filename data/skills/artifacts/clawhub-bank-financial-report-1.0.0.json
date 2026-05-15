@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bank-financial-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bank_financial_report",
+  "skill": {
+    "id": 39955,
+    "skillKey": "clawhub-bank-financial-report",
+    "name": "Bank Financial Report Analyst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bank-financial-report",
+    "url": "https://clawhub.ai/skills/bank-financial-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bank-financial-report-c07603681ed23210.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered financial statement analysis assistant for banks - analyze corporate balance sheets, income statements, cash flows, peer comparison, and investmen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gechengling",
+      "userId": "s17ewqc4f2s6gpcbm88hy7fgvn85kg1g",
+      "displayName": "lingfeng-19",
+      "image": "https://avatars.githubusercontent.com/u/8140166?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 72,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778140723721,
+      "changelog": "Initial release: AI-powered financial statement analysis - three-statement analysis, DuPont analysis, Altman Z-Score, peer comparison, and red flag detection",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16247452357c99a88840828eaa22e13d5d0d227848497adaa01800726be0b64d"
+}

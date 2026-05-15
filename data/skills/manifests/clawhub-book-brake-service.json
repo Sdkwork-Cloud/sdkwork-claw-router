@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13144,
+  "uuid": "skill-clawhub-book-brake-service",
+  "skillKey": "clawhub-book-brake-service",
+  "name": "Book Brake Service",
+  "summary": "Book brake-service services through Lokuli MCP. Use when user needs to find and book brake-service. Triggers on requests like \"book a brake-service\", \"find brake-service near me\", or any brake-service service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_brake_service",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book brake-service services through Lokuli MCP",
+        "Use when user needs to find and book brake-service",
+        "Triggers on requests like \"book a brake-service\", \"find brake-service near me\", or any brake-se."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-brake-service@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-brake-service",
+      "url": "https://clawhub.ai/skills/book-brake-service"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-brake-service",
+    "url": "https://clawhub.ai/skills/book-brake-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-brake-service-4106e4e114ee720b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-brake-service@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-brake-service-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8635b54bc1837a5658df651c822e318f22f3a14727a2400fc97de284268aa064",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:04:25.155Z"
+}

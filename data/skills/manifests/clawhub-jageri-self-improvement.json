@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42983,
+  "uuid": "skill-clawhub-jageri-self-improvement",
+  "skillKey": "clawhub-jageri-self-improvement",
+  "name": "Self Improvement",
+  "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jageri_self_improvement",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jageri",
+      "features": [
+        "Captures learnings, errors, and corrections to enable continuous improvement",
+        "Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jageri-self-improvement@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14195779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jageri-self-improvement",
+      "url": "https://clawhub.ai/skills/jageri-self-improvement"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jageri-self-improvement",
+    "url": "https://clawhub.ai/skills/jageri-self-improvement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jageri-self-improvement-bd5ac17f7f62610f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jageri-self-improvement@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jageri-self-improvement-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9bb92f0f00cde06fe80451f70f5c1bf6698ad56e2028d9d4a3ec61788db1864e",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T14:37:14.487Z"
+}

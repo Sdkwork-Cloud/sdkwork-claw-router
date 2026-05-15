@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docpilot@2.0.4",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docpilot",
+  "skill": {
+    "id": 73299,
+    "skillKey": "clawhub-docpilot",
+    "name": "智能文档助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docpilot",
+    "url": "https://clawhub.ai/skills/docpilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docpilot-712ed0022bb10c53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能文档处理专家，支持文档解析、信息抽取、文档分类"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ankylala",
+      "userId": "s1749k021s8ehj82qtdwad7emn841bhy",
+      "displayName": "docpilot",
+      "image": "https://avatars.githubusercontent.com/u/29157104?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.4",
+      "createdAt": 1777047078455,
+      "changelog": "- Version bump from 2.0.0 to 2.0.4\n- No file or documentation changes detected in this release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b5096245db26d5fc6ab5f652ba7f1699c5b2ed7f62f6f7e004948770b4dc1d8"
+}

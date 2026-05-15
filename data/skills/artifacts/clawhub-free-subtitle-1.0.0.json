@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-subtitle@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_subtitle",
+  "skill": {
+    "id": 55808,
+    "skillKey": "clawhub-free-subtitle",
+    "name": "Free Subtitle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-subtitle",
+    "url": "https://clawhub.ai/skills/free-subtitle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-subtitle-859a256049447dfa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — automatically generate and add subtitles to my video for free — and get ca..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777309072813,
+      "changelog": "Initial release of Free Subtitle — Generate and Burn In Captions:\n\n- Instantly generate and add AI subtitles to videos (MP4, MOV, AVI, WebM up to 500MB).\n- Automatic cloud session/token setup for easy first-run experience (no manual API keys required).\n- Simple, intent-driven commands: just upload videos and describe what you want; captions are returned in 30–60 seconds.\n- Export captioned videos in high-quality 1080p MP4 format.\n- Streamlined error handling and transparent, free usage with 100 credits provided (no subscription required).\n- Supports batch, quick-edit, and iterative workflows for content creators.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c94e27f18e275600acb89ffc98f17132c3a00269567c0ccc749b12f47718a0e"
+}

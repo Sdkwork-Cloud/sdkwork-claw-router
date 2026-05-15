@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57533,
+  "uuid": "skill-clawhub-lx-minimax-image-generation",
+  "skillKey": "clawhub-lx-minimax-image-generation",
+  "name": "MiniMax Image Generation",
+  "summary": "MiniMax文生图(T2I)和图生图(I2I)工具 / MiniMax image generation tool supporting T2I and I2I. Generate 1-9 images per request with customizable aspect ratios.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lx_minimax_image_generation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lixiang92229",
+      "features": [
+        "MiniMax文生图(T2I)和图生图(I2I)工具 / MiniMax image generation tool supporting T2I and I2I",
+        "Generate 1-9 images per request with customizable aspect ratios."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lx-minimax-image-generation@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13725618?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lx-minimax-image-generation",
+      "url": "https://clawhub.ai/skills/lx-minimax-image-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lx-minimax-image-generation",
+    "url": "https://clawhub.ai/skills/lx-minimax-image-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lx-minimax-image-generation-8a5f0a9605643ea2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lx-minimax-image-generation@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lx-minimax-image-generation-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8ba650190b490a81a5039b4ee538ac19d82046ab010e797274e140c582ce5d5",
+      "artifactSizeBytes": 2064
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:51:08.038Z"
+}

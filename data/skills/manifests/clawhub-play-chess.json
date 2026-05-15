@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23644,
+  "uuid": "skill-clawhub-play-chess",
+  "skillKey": "clawhub-play-chess",
+  "name": "Play Chess on ChessWithClaw",
+  "summary": "Play live chess as Black against the user on ChessWithClaw by connecting to their game invite and responding to their first move.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.play_chess",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alightttt",
+      "features": [
+        "Play live chess as Black against the user on ChessWithClaw by connecting to their game invite a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/play-chess@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168413990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "play-chess",
+      "url": "https://clawhub.ai/skills/play-chess"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "play-chess",
+    "url": "https://clawhub.ai/skills/play-chess",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/play-chess-7d8fc3e3a039e373.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/play-chess@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-play-chess-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a73c88b3b51cca49b2cf22621179e2c8bbb63c530264aafeba6e1fa05c0b4035",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T08:19:33.664Z"
+}

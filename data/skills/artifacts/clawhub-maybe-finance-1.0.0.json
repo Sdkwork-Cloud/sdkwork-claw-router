@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maybe-finance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maybe_finance",
+  "skill": {
+    "id": 57106,
+    "skillKey": "clawhub-maybe-finance",
+    "name": "Maybe Finance - 个人财务助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maybe-finance",
+    "url": "https://clawhub.ai/skills/maybe-finance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maybe-finance-8ec0bdf6bbb58f4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal finance management skill using Maybe Finance OS. Use when users need to track expenses, analyze budgets, monitor net worth, or manage personal finan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "antonia-sz",
+      "userId": "s1730srvecg82e9ex26q7shpd184ghxy",
+      "displayName": "antonia huang",
+      "image": "https://avatars.githubusercontent.com/u/143588581?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774062143584,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d37cd3914f4bf097e20328310de33285ddfa11837d4d513eb2b3c07033920b71"
+}

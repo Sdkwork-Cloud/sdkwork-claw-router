@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36620,
+  "uuid": "skill-clawhub-title-polisher",
+  "skillKey": "clawhub-title-polisher",
+  "name": "jasontest",
+  "summary": "Rewrite a rough sentence into 5 better title options.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.title_polisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Meituan-OpenPlatform",
+      "features": [
+        "Rewrite a rough sentence into 5 better title options."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/title-polisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266672891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "title-polisher",
+      "url": "https://clawhub.ai/skills/title-polisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "title-polisher",
+    "url": "https://clawhub.ai/skills/title-polisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/title-polisher-745975c059716780.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/title-polisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-title-polisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:550d85b0fa49c102a0064aa9083c1294f091315b3700a22470bb1050d19396b4",
+      "artifactSizeBytes": 2106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T07:12:00.249Z"
+}

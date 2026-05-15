@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47699,
+  "uuid": "skill-clawhub-idle-shutdown",
+  "skillKey": "clawhub-idle-shutdown",
+  "name": "Idle-shutdown",
+  "summary": "Monitors user session idleness and automatically stops the OpenClaw Gateway after a configurable idle period to save resources and costs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idle_shutdown",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yu200512",
+      "features": [
+        "Monitors user session idleness and automatically stops the OpenClaw Gateway after a configurabl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/idle-shutdown@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177332642?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "idle-shutdown",
+      "url": "https://clawhub.ai/skills/idle-shutdown"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idle-shutdown",
+    "url": "https://clawhub.ai/skills/idle-shutdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idle-shutdown-113a9ec42a778ea4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/idle-shutdown@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-idle-shutdown-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2aa4fc645a02473ca67cf8cbccc88108dbb65e284a4c7d426f468d8509be2ae",
+      "artifactSizeBytes": 2328
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T18:18:08.455Z"
+}

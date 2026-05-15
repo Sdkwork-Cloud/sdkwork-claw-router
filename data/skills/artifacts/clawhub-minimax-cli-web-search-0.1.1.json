@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-cli-web-search@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_cli_web_search",
+  "skill": {
+    "id": 11334,
+    "skillKey": "clawhub-minimax-cli-web-search",
+    "name": "MiniMax CLI Web Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-cli-web-search",
+    "url": "https://clawhub.ai/skills/minimax-cli-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-cli-web-search-f43e4b3f94cd59f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web search via MiniMax MCP using a local CLI wrapper (mcporter), with environment preflight, API-key/config checks, and normalized result formatting. Use whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "biggersun",
+      "userId": "publishers:biggersun",
+      "displayName": "Sun",
+      "image": "https://avatars.githubusercontent.com/u/13725638?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1758,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1771849618580,
+      "changelog": "Security hardening: replace fixed /tmp filename with mktemp-based temp files and cleanup via trap.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:000b5adf6dca574076f16e2c025b8b6e98580844bf11ce92110cd669201464db"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/exa@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exa",
+  "skill": {
+    "id": 8743,
+    "skillKey": "clawhub-exa",
+    "name": "Exa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exa",
+    "url": "https://clawhub.ai/skills/exa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exa-4968d0cf3b24d26d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Neural web search and code context via Exa AI API. Requires EXA_API_KEY. Use for finding documentation, code examples, research papers, or company info."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fardeenxyz",
+      "userId": "publishers:fardeenxyz",
+      "displayName": "fardeenxyz",
+      "image": "https://avatars.githubusercontent.com/u/66341435?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6840,
+      "installsAllTime": 49,
+      "installsCurrent": 43,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1767729594736,
+      "changelog": "- Replaced all instances of \"./scripts/*.sh\" usage instructions with \"bash scripts/*.sh\" to clarify script invocation.\n- No other usage or configuration changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d40d1ea83ce45a5a01527a996bc2226d640a255a43b7d00fe408893fe2c7c05a"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63879,
+  "uuid": "skill-clawhub-feishu-ai-coding-assistant",
+  "skillKey": "clawhub-feishu-ai-coding-assistant",
+  "name": "Feishu Ai Coding Assistant",
+  "summary": "通过调用子 Agent 管理和执行多任务编程工作流，支持多编程工具选择、编码与研究双运行时及任务持久化。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_ai_coding_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rfdiosuao",
+      "features": [
+        "通过调用子 Agent 管理和执行多任务编程工作流，支持多编程工具选择、编码与研究双运行时及任务持久化。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-ai-coding-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190207982?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-ai-coding-assistant",
+      "url": "https://clawhub.ai/skills/feishu-ai-coding-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-ai-coding-assistant",
+    "url": "https://clawhub.ai/skills/feishu-ai-coding-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-ai-coding-assistant-a57ee71704d5d648.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-ai-coding-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-ai-coding-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:478013e746cacac754e724b870e75b37a5804c671d6a0797c881f47dfc3397e7",
+      "artifactSizeBytes": 2555
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T15:17:52.358Z"
+}

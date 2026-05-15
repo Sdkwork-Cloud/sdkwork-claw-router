@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26714,
+  "uuid": "skill-clawhub-skills-audit",
+  "skillKey": "clawhub-skills-audit",
+  "name": "Skills Audit",
+  "summary": "Security audit + append-only logging + monitoring for OpenClaw skills (file-level diff, baseline approval, SHA-256 integrity).",
+  "version": "1.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ucloud-securiry",
+      "features": [
+        "Security audit + append-only logging + monitoring for OpenClaw skills (file-level diff, baselin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skills-audit@1.5.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78222203?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skills-audit",
+      "url": "https://clawhub.ai/skills/skills-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-audit",
+    "url": "https://clawhub.ai/skills/skills-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-audit-9b4d58e388170d4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skills-audit@1.5.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-skills-audit-1.5.3.json",
+      "version": "1.5.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:992619eba2a67cf2ff4470362e42ba34a50fa22b5cce96217765319a3a238a8b",
+      "artifactSizeBytes": 1922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T13:11:51.681Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-output-metrics-footer@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_output_metrics_footer",
+  "skill": {
+    "id": 33387,
+    "skillKey": "clawhub-openclaw-output-metrics-footer",
+    "name": "OpenClaw Output Metrics Footer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-output-metrics-footer",
+    "url": "https://clawhub.ai/skills/openclaw-output-metrics-footer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-output-metrics-footer-2acb329a5b193a34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install, configure, maintain, or troubleshoot a compact OpenClaw output footer that shows live context usage, output tokens, Codex quota remaining, model use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "udaymanish6",
+      "userId": "s17b6m47p70k13fc1hh3qfs16n85e85c",
+      "displayName": "udaymanish6",
+      "image": "https://avatars.githubusercontent.com/u/89544177?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1777059581514,
+      "changelog": "Parse current Codex quota usage windows",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ec31085621dab1e2c65b0856870f3a1b03c1043bee720e430730d243cf4d7a9a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/log-scrubber@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.log_scrubber",
+  "skill": {
+    "id": 27246,
+    "skillKey": "clawhub-log-scrubber",
+    "name": "Log Scrubber"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "log-scrubber",
+    "url": "https://clawhub.ai/skills/log-scrubber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/log-scrubber-347bb36d4a269b0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically redacts API keys, tokens, and secrets from workspace logs and memory files."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "heather-herbert",
+      "userId": "publishers:heather-herbert",
+      "displayName": "Heather-Herbert",
+      "image": "https://avatars.githubusercontent.com/u/410682?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773414241384,
+      "changelog": "- Added a \"dry-run\" mode to allow simulating redaction without modifying any files.\n- Updated documentation with instructions for using the dry-run and standard redaction modes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bece1039ba2793466991fca5bfd5401ae24f2065acfe4b6eff18e194d8c9fe6d"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67970,
+  "uuid": "skill-clawhub-meituan-bike",
+  "skillKey": "clawhub-meituan-bike",
+  "name": "Meituan Bike",
+  "summary": "美团单车出行助手，精通骑行规划、站点查询、费用管理、绿色出行",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meituan_bike",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "美团单车出行助手，精通骑行规划、站点查询、费用管理、绿色出行"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meituan-bike@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meituan-bike",
+      "url": "https://clawhub.ai/skills/meituan-bike"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meituan-bike",
+    "url": "https://clawhub.ai/skills/meituan-bike",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meituan-bike-db2e07bfd01ec621.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meituan-bike@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meituan-bike-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:223e13c0b4b1c8c0dddf3b3185bd26d650dd3a1b02da5bf04404621e3366ac86",
+      "artifactSizeBytes": 2202
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:20:54.465Z"
+}

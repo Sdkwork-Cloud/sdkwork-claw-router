@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spoticlaw@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spoticlaw",
+  "skill": {
+    "id": 17188,
+    "skillKey": "clawhub-spoticlaw",
+    "name": "SpotiClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spoticlaw",
+    "url": "https://clawhub.ai/skills/spoticlaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spoticlaw-5a3c790376d8fbaa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Spotify Web API client for Nyx agents. Use when interacting with Spotify: search, playback, playlists, library, tracks, artists, albums, shows, podcasts. Req..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ledzgio",
+      "userId": "publishers:ledzgio",
+      "displayName": "ledzgio",
+      "image": "https://avatars.githubusercontent.com/u/218346?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 797,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1771806709801,
+      "changelog": "- Documentation updated in SKILL.md for greater clarity and minor formatting improvements.\n- No functional or code changes; this release is documentation-only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:40f8ffeba9ddb14670eec299eb888d634966e793e745c90fc760926d60a37fdc"
+}

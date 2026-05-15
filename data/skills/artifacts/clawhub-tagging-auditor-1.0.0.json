@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tagging-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tagging_auditor",
+  "skill": {
+    "id": 26300,
+    "skillKey": "clawhub-tagging-auditor",
+    "name": "Tagging Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tagging-auditor",
+    "url": "https://clawhub.ai/skills/tagging-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tagging-auditor-7e3d30b5b7056f4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit AWS resource tagging compliance and identify unallocatable spend for FinOps teams"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anmolnagpal",
+      "userId": "publishers:anmolnagpal",
+      "displayName": "Anmol Nagpal",
+      "image": "https://avatars.githubusercontent.com/u/4303310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772359587820,
+      "changelog": "aws-tagging-auditor 1.0.0 – Initial release\n\n- Provides instructions for auditing AWS resource tagging and cost allocation compliance for FinOps teams.\n- Guides users to export & supply data via AWS CLI or console (never asks for credentials).\n- Outputs: tagging compliance score, spend coverage, untagged resource ranking, AWS Config rules, remediation plan.\n- Flags inconsistent tag values and alerts if Cost Allocation Tags are not activated.\n- Includes minimum necessary IAM permissions and data privacy checks.\n- Instruction-only: does not access AWS directly or run commands; user supplies data for analysis.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e69868a279cf5c3f3599acd31bd92e2fbafdb40040af26ce7c7333694b7556c4"
+}

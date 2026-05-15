@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-trading-agents@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_trading_agents",
+  "skill": {
+    "id": 62336,
+    "skillKey": "clawhub-crypto-trading-agents",
+    "name": "Crypto Trading Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-trading-agents",
+    "url": "https://clawhub.ai/skills/crypto-trading-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-trading-agents-d2ac603192d6af71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多Agent加密货币量化交易系统 — 基于 TradingAgents 多Agent框架 + Binance 执行层。 支持：技术分析、消息分析、多Agent辩论、自动化交易信号生成、Binance 现货下单。 适用场景：研究量化策略、自动交易Bot开发、加密货币组合分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kriouerlia",
+      "userId": "s17dvf37bbjwycahm9m8p0gqed83jm3c",
+      "displayName": "kriouerlia",
+      "image": "https://avatars.githubusercontent.com/u/126583563?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 285,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774435004860,
+      "changelog": "v1.0.2: 新增完整版 Pine Script 策略（291行 MA60评分系统+K线形态+逆反信号+Webhook告警），整合 Boss 原始交易策略",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1cd09e092bea10dc8ef3242aff8b7acd19c6aaad81198faeae678e83287c3b82"
+}

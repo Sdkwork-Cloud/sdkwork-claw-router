@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29443,
+  "uuid": "skill-clawhub-veed-skill",
+  "skillKey": "clawhub-veed-skill",
+  "name": "Veed Fabric",
+  "summary": "Generate talking head videos from a photo using VEED Fabric 1.0. Triggers on mentions of \"veed\", \"fabric\", or \"talking video\". Turns a headshot + audio or te...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veed_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mattdotroberts",
+      "features": [
+        "Generate talking head videos from a photo using VEED Fabric 1.0",
+        "Triggers on mentions of \"veed\", \"fabric\", or \"talking video\"",
+        "Turns a headshot + audio or te..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/veed-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6546988?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "veed-skill",
+      "url": "https://clawhub.ai/skills/veed-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veed-skill",
+    "url": "https://clawhub.ai/skills/veed-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veed-skill-d39800a5a830a406.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/veed-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-veed-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35ab9dada339a7958df3b155e5e252b8000ca783abcb813055d6126a2f203c2d",
+      "artifactSizeBytes": 2417
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:41:01.183Z"
+}

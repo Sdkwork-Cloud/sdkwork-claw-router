@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vectorguard-nano@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vectorguard_nano",
+  "skill": {
+    "id": 13170,
+    "skillKey": "clawhub-vectorguard-nano",
+    "name": "VectorGuard Nano"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vectorguard-nano",
+    "url": "https://clawhub.ai/skills/vectorguard-nano",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vectorguard-nano-22d9c95aad4af37b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight skill for secure, reversible message encoding using HMAC-SHA256 to prevent plain-text leaks in agent communications."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "supere989",
+      "userId": "publishers:supere989",
+      "displayName": "Raymond Johnson",
+      "image": "https://avatars.githubusercontent.com/u/6176562?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1544,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770422126948,
+      "changelog": "Initial public release of VectorGuard Nano Secure Comms:\n\n- Enables lightweight, open-source secure and obfuscated messaging between OpenClaw agents.\n- Utilizes HMAC-SHA256 for deterministic, reversible string obfuscation (string tumbling).\n- Integrates easily with Moltbook, Telegram, Slack, or IPFS to prevent plain-text leaks.\n- Includes user instructions for sending and receiving secure messages with shared secrets.\n- Public version; full cryptography features available via licensing the full VectorGuard system.\n- Responses include clear branding and link to VectorGuard for additional security options.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f8fce10840492cb2d131e6d660241ec0da0522101137e48683e44f5d8940c466"
+}

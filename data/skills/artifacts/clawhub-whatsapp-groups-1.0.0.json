@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whatsapp-groups@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_groups",
+  "skill": {
+    "id": 18211,
+    "skillKey": "clawhub-whatsapp-groups",
+    "name": "WhatsApp Groups"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-groups",
+    "url": "https://clawhub.ai/skills/whatsapp-groups",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-groups-86408a949d80b670.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover, list, and search WhatsApp groups from Baileys session data"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marcosrippel",
+      "userId": "publishers:marcosrippel",
+      "displayName": "Marcos Santos",
+      "image": "https://avatars.githubusercontent.com/u/74862230?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 709,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771519367760,
+      "changelog": "Initial release. Discovers and lists WhatsApp groups from Baileys sender-key files. Enriches group data with names from store and contacts files. Supports listing, searching, and syncing with openclaw.json configuration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:503b024eb9147ec783ba463ce0645cd810e60c6f671667b129214b18752ab5d7"
+}

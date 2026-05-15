@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44693,
+  "uuid": "skill-clawhub-toby-audio-transcribe",
+  "skillKey": "clawhub-toby-audio-transcribe",
+  "name": "audio-transcribe",
+  "summary": "Transcribe, diarise, translate, post-process, and structure audio/video with AssemblyAI. Use this skill when the user wants AssemblyAI specifically, needs hi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toby_audio_transcribe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TobeyRebecca",
+      "features": [
+        "Transcribe, diarise, translate, post-process, and structure audio/video with AssemblyAI",
+        "Use this skill when the user wants AssemblyAI specifically, needs hi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toby-audio-transcribe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260428668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toby-audio-transcribe",
+      "url": "https://clawhub.ai/skills/toby-audio-transcribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toby-audio-transcribe",
+    "url": "https://clawhub.ai/skills/toby-audio-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toby-audio-transcribe-fa356d0de3a6edc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toby-audio-transcribe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toby-audio-transcribe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e290e2c8906156d1386829c12ab5d954d33c26d75b2141f4056fb9260ddef6f3",
+      "artifactSizeBytes": 2626
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T01:29:04.246Z"
+}

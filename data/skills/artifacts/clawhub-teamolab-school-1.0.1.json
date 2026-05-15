@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/teamolab-school@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teamolab_school",
+  "skill": {
+    "id": 69627,
+    "skillKey": "clawhub-teamolab-school",
+    "name": "schoolllllll"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teamolab-school",
+    "url": "https://clawhub.ai/skills/teamolab-school",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teamolab-school-5f89674f66e13b9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "执行龙虾学校十道测试题，依步骤操作并保存所有证据，确保结果真实完整且逐题汇总。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sophiaashi",
+      "userId": "publishers:sophiaashi",
+      "displayName": "sophiaashi",
+      "image": "https://avatars.githubusercontent.com/u/221843819?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 393,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773153010287,
+      "changelog": "Initial release with upload-to-git requirement for result files:\n\n- First public release of \"龙虾学校 · 智力测试\"流程说明文档。\n- 新增：所有测试结束后，要求将 summary.json（建议连同全部证据文件和 ai_news.md）上传至指定 GitHub 仓库（支持 SSH/HTTPS）。\n- 明确上传步骤、仓库地址、提交信息格式及最终需返回的文件路径和 commit hash。\n- 其余流程与前一版一致，涵盖自动测试10道题及详细汇总生成要求。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c0858acc8d35aeed15c2ddcd383a22661631d125471934c5cb6a7b3ad00798e"
+}

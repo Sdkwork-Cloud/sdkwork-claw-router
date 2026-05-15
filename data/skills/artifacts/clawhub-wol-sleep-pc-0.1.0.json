@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wol-sleep-pc@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wol_sleep_pc",
+  "skill": {
+    "id": 15255,
+    "skillKey": "clawhub-wol-sleep-pc",
+    "name": "Wol Sleep Pc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wol-sleep-pc",
+    "url": "https://clawhub.ai/skills/wol-sleep-pc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wol-sleep-pc-b4518af77d21787b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send Wake-on-LAN (magic packet) and Sleep-on-LAN (inverted MAC) packets for a specific PC. Use when the user asks to wake, check, or put the PC to sleep on the local LAN. Defaults are zeroed; configure the target IP, MAC, and inverted MAC."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oblivisheee",
+      "userId": "publishers:oblivisheee",
+      "displayName": "oblivisheee",
+      "image": "https://avatars.githubusercontent.com/u/90264127?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1048,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770839370174,
+      "changelog": "Initial release of wol-sleep-pc skill.\n\n- Provides scripts to send Wake-on-LAN and Sleep-on-LAN packets to a specific PC on a local network.\n- Configuration requires explicit MAC/IP; no sensitive defaults included—use CLI flags or a config file.\n- Includes sample usage and configuration instructions.\n- Local configuration files are .gitignored to protect secrets.\n- Designed for explicit user commands to wake or sleep a PC by sending the appropriate magic packets.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3ebaaf92788a0661ce87972e7d8fa85c8ca5744b14415a018ad69b12b1c7fa53"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agi-term-helper@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agi_term_helper",
+  "skill": {
+    "id": 15664,
+    "skillKey": "clawhub-agi-term-helper",
+    "name": "Agi Term Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agi-term-helper",
+    "url": "https://clawhub.ai/skills/agi-term-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agi-term-helper-9be5920d4e82a9ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fast, explicit terminal execution via OpenClaw exec (direct dispatch; you type the exact command)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuwujijay",
+      "userId": "publishers:liuwujijay",
+      "displayName": "liuwujijay",
+      "image": "https://avatars.githubusercontent.com/u/16355831?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 960,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771183440343,
+      "changelog": "- Added _meta.json file to the skill package.\n- No changes to skill behavior or documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7dc9ae283113f12910458327186eeeb5312cc5415add14b96271ef9c64a13d94"
+}

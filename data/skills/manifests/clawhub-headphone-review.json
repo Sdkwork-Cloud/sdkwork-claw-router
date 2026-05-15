@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38378,
+  "uuid": "skill-clawhub-headphone-review",
+  "skillKey": "clawhub-headphone-review",
+  "name": "Headphone Review",
+  "summary": "Use this skill when the user wants a buyer-facing long review of a headphone, IEM, earbud, or TWS model by name. Use AskUserQuestion in option mode first for...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.headphone_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "VincentJiang06",
+      "features": [
+        "Use this skill when the user wants a buyer-facing long review of a headphone, IEM, earbud, or T.",
+        "Use AskUserQuestion in option mode first for..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/headphone-review@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89259282?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "headphone-review",
+      "url": "https://clawhub.ai/skills/headphone-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "headphone-review",
+    "url": "https://clawhub.ai/skills/headphone-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/headphone-review-67245df3edda1703.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/headphone-review@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-headphone-review-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6f96ccf5a3a04fe8574a1c7fe16c0f4b886b3253be5084279696d472d01fd6a",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T15:23:13.650Z"
+}

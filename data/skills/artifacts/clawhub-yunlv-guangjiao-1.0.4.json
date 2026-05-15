@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yunlv-guangjiao@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yunlv_guangjiao",
+  "skill": {
+    "id": 56274,
+    "skillKey": "clawhub-yunlv-guangjiao",
+    "name": "Skill Guangjiao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yunlv-guangjiao",
+    "url": "https://clawhub.ai/skills/yunlv-guangjiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yunlv-guangjiao-b3edab5e8fd819c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user needs to discover leads from Canton Fair (广交会) exhibitors. Use when mining business opportunities from trade show data. Use when finding exhibi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangm-a3",
+      "userId": "s178tfk08y1fqgtvraxrr20g4h84g03e",
+      "displayName": "WangM-A3",
+      "image": "https://avatars.githubusercontent.com/u/274818589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777540900441,
+      "changelog": "- Skill renamed from “yunlv-guangjiao-FAI” to “yunlv-cantonfair”\n- Notification/messaging API switched to user-configured and now only generates message templates for users to copy and send (no direct automated messaging)\n- Updated feature descriptions to clarify that messages (emails/WhatsApp etc.) are generated for user action, not autopilot contact\n- Cleaned up and simplified instructions for contacting leads, focusing on assisting the user to prepare outreach rather than sending on their behalf\n- Minor updates to permissions: clarified no direct third-party messaging or data sharing; user copies message content for outreach",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eec3fbadb3e41cd727bf1eebdd331cda98874da2561c439792bf9488e3c8cb5b"
+}

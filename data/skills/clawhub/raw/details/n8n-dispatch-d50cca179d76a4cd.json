@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "n8n-dispatch",
+    "displayName": "N8n Dispatch",
+    "summary": "Forwards user requests labeled state, action, or historical with text prompts to a configured n8n_dispatch MCP service and returns its response.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1810,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 1
+    },
+    "createdAt": 1770082800389,
+    "updatedAt": 1778383245552
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1770082800389,
+    "changelog": "Initial release of n8n-dispatch skill:\n\n- Bridges OpenClaw with your existing n8n‑dispatch service using mcporter.\n- Adds a single `dispatch` command that forwards a `requestType` and user prompt to the MCP service.\n- Supports request types: `state`, `action`, and `historical`.\n- Returns processed responses from your n8n workflow directly in OpenClaw.\n- Includes configuration guidance and usage examples.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "enchantedmotorcycle",
+    "userId": "publishers:enchantedmotorcycle",
+    "displayName": "enchantedmotorcycle",
+    "image": "https://avatars.githubusercontent.com/u/88115702?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778383245552
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-time-machine@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_time_machine",
+  "skill": {
+    "id": 29936,
+    "skillKey": "clawhub-claw-time-machine",
+    "name": "Claw Time Machine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-time-machine",
+    "url": "https://clawhub.ai/skills/claw-time-machine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-time-machine-5035a12f93a1f6aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Backup, restore, and migrate OpenClaw installations. Preserve workspace memories, credentials, custom skills, scheduled tasks, and core configuration. Use wh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tacitlab",
+      "userId": "s17by8hsrn84z694jzk64cfxqs83h97q",
+      "displayName": "Tacit Lab",
+      "image": "https://avatars.githubusercontent.com/u/263604746?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775113900167,
+      "changelog": "Harden backup/restore flow, add manifest support, improve migration behavior, and remove service lifecycle automation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd803ae51a7f086c48a53a8c6c0665583c64b55a416a4f19354f2db2047cc34a"
+}

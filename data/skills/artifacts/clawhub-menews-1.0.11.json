@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/menews@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.menews",
+  "skill": {
+    "id": 59927,
+    "skillKey": "clawhub-menews",
+    "name": "AIMPACT x ME News - AI-Powered Information Hub for Web4 & AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "menews",
+    "url": "https://clawhub.ai/skills/menews",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/menews-daec3c60f92f1dc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AIMPACT 提供 AI 领域早报、晚报、热点新闻和精选内容，基于 AI 评分智能排序，支持定时推送。当用户说\"查询 AIMPACT 早报\"、\"查询 AIMPACT 晚报\"、\"查询 24H 热点新闻榜\"或\"查询 AI 精选内容\"时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamesmenews",
+      "userId": "s177x32ba36jaspp47v9qdzqnh83gzf0",
+      "displayName": "AIMPACT",
+      "image": "https://avatars.githubusercontent.com/u/254596585?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 560,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1776670099770,
+      "changelog": "-  更新版本号 1.0.11，其余功能和描述保持不变。\n- 未检测到文件内容的实际更改，功能与使用方式无变化。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23d68cb2db5d7c0351173b3fb8b58b67c79f1f553970ee9d7ce56893797296c4"
+}

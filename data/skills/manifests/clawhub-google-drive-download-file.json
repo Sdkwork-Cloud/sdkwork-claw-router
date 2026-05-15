@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44869,
+  "uuid": "skill-clawhub-google-drive-download-file",
+  "skillKey": "clawhub-google-drive-download-file",
+  "name": "Google Drive Download File",
+  "summary": "Atomic node skill to download a file from Google Drive using the gog CLI.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_drive_download_file",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zvirb",
+      "features": [
+        "Atomic node skill to download a file from Google Drive using the gog CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-drive-download-file@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130008533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-drive-download-file",
+      "url": "https://clawhub.ai/skills/google-drive-download-file"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-drive-download-file",
+    "url": "https://clawhub.ai/skills/google-drive-download-file",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-drive-download-file-fc664b3cc35e6611.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-drive-download-file@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-drive-download-file-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:872cddb1fbfbcc31560d9b265edc9064cfe3823e414387162e7a1e6bb154c94c",
+      "artifactSizeBytes": 2205
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T04:15:41.600Z"
+}

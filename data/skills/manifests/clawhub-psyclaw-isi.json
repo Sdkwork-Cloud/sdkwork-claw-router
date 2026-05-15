@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41193,
+  "uuid": "skill-clawhub-psyclaw-isi",
+  "skillKey": "clawhub-psyclaw-isi",
+  "name": "PsyClaw ISI",
+  "summary": "Structured screening for insomnia severity using the ISI scale, requiring psyclaw-openclaw-health installation or local credentials.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.psyclaw_isi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anctro",
+      "features": [
+        "Structured screening for insomnia severity using the ISI scale, requiring psyclaw-openclaw-heal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/psyclaw-isi@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124227053?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "psyclaw-isi",
+      "url": "https://clawhub.ai/skills/psyclaw-isi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "psyclaw-isi",
+    "url": "https://clawhub.ai/skills/psyclaw-isi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/psyclaw-isi-a1ff08fb8d3ef6f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/psyclaw-isi@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-psyclaw-isi-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e101def119ad1f015e40b93798dd1c1dcd105c560c4fc1c9301c012dbc7bdb2",
+      "artifactSizeBytes": 1846
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:49:17.571Z"
+}

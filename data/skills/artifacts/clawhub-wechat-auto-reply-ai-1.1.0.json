@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-auto-reply-ai@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_auto_reply_ai",
+  "skill": {
+    "id": 27468,
+    "skillKey": "clawhub-wechat-auto-reply-ai",
+    "name": "WeChat Auto Reply (V26 Safe)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-auto-reply-ai",
+    "url": "https://clawhub.ai/skills/wechat-auto-reply-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-auto-reply-ai-7f5148d6c5dc94fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors a detached WeChat Mac window via OCR and automatically replies using a customizable AI persona with safety locks to prevent interference."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jarryxin",
+      "userId": "s173cpeywaa3ave25xsg205a1x83gg8e",
+      "displayName": "Jarryxin",
+      "image": "https://avatars.githubusercontent.com/u/21277570?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774421870760,
+      "changelog": "feat: V5.0 with Web Dashboard",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a548d481b9f8250122c57d0c24e1e96f71e3e7126336d49937b0996c1fea6119"
+}

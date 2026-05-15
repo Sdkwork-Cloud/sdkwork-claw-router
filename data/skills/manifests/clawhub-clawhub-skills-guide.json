@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63603,
+  "uuid": "skill-clawhub-clawhub-skills-guide",
+  "skillKey": "clawhub-clawhub-skills-guide",
+  "name": "ClawHub Skills Guide",
+  "summary": "AIC团队ClawHub技能管理指南。当用户询问\"如何发布技能\"、\"怎么搜索技能\"、\"s和skills区别\"、\"如何安装技能\"、\"技能格式要求\"、\"SKILL.md怎么写\"、\"怎么验证技能\"等ClawHub相关问题时触发。包含技能发现、安装、发布、验证全流程。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skills_guide",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chii726",
+      "features": [
+        "AIC团队ClawHub技能管理指南。当用户询问\"如何发布技能\"、\"怎么搜索技能\"、\"s和skills区别\"、\"如何安装技能\"、\"技能格式要求\"、\"SKILL.md怎么写\"、\"怎么验证技能\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-skills-guide@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224948000?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-skills-guide",
+      "url": "https://clawhub.ai/skills/clawhub-skills-guide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skills-guide",
+    "url": "https://clawhub.ai/skills/clawhub-skills-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skills-guide-4283b733f6860103.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-skills-guide@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-skills-guide-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4aac994adcbc3e711330fb484378bfb6e9c85400552a4a202a503be5a60f7e16",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T05:10:04.921Z"
+}

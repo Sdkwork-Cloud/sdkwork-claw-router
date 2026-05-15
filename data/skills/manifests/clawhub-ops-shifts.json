@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32496,
+  "uuid": "skill-clawhub-ops-shifts",
+  "skillKey": "clawhub-ops-shifts",
+  "name": "Ops Shifts",
+  "summary": "View and manage shift schedules and team rosters for operations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ops_shifts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AdmiralKittysDad",
+      "features": [
+        "View and manage shift schedules and team rosters for operations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ops-shifts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/167309028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ops-shifts",
+      "url": "https://clawhub.ai/skills/ops-shifts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ops-shifts",
+    "url": "https://clawhub.ai/skills/ops-shifts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ops-shifts-4e053f6583fcd483.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ops-shifts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ops-shifts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8319146b9736d8d2ad16702c1d44db9e7ac663107d0cde900acd56656ba85afd",
+      "artifactSizeBytes": 2291
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T19:10:31.201Z"
+}

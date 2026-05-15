@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jageri-self-improvement@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jageri_self_improvement",
+  "skill": {
+    "id": 42983,
+    "skillKey": "clawhub-jageri-self-improvement",
+    "name": "Self Improvement"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jageri-self-improvement",
+    "url": "https://clawhub.ai/skills/jageri-self-improvement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jageri-self-improvement-bd5ac17f7f62610f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jageri",
+      "userId": "s176vma24bzx5p6m4c8xnrbgss849xmz",
+      "displayName": "Jageri",
+      "image": "https://avatars.githubusercontent.com/u/14195779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775399834487,
+      "changelog": "Initial release by Jageri",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9bb92f0f00cde06fe80451f70f5c1bf6698ad56e2028d9d4a3ec61788db1864e"
+}

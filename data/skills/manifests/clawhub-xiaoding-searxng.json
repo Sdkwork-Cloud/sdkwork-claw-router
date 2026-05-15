@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27555,
+  "uuid": "skill-clawhub-xiaoding-searxng",
+  "skillKey": "clawhub-xiaoding-searxng",
+  "name": "SearXNG (XiaoDing)",
+  "summary": "Privacy-respecting metasearch using your local SearXNG instance. Search the web, images, news, and more without external API dependencies.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoding_searxng",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "asterisk622",
+      "features": [
+        "Privacy-respecting metasearch using your local SearXNG instance",
+        "Search the web, images, news, and more without external API dependencies."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaoding-searxng@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4076262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaoding-searxng",
+      "url": "https://clawhub.ai/skills/xiaoding-searxng"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoding-searxng",
+    "url": "https://clawhub.ai/skills/xiaoding-searxng",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoding-searxng-72ebff390b46075f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaoding-searxng@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaoding-searxng-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45a34d0e3f0030e09efa56c4f5e90611c9901c208139fa8a858930f4001f233e",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T07:04:43.174Z"
+}

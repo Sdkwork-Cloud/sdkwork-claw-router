@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chia-splitxch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chia_splitxch",
+  "skill": {
+    "id": 15286,
+    "skillKey": "clawhub-chia-splitxch",
+    "name": "Chia SplitXCH"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chia-splitxch",
+    "url": "https://clawhub.ai/skills/chia-splitxch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chia-splitxch-ad7f3b97ff5728d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create SplitXCH royalty split addresses from plain language descriptions. Use when the user wants to split XCH payments, royalties, or revenue between multiple recipients. Triggers on \"split royalties\", \"royalty split\", \"splitxch\", \"split."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "koba42corp",
+      "userId": "publishers:koba42corp",
+      "displayName": "Koba42Corp",
+      "image": "https://avatars.githubusercontent.com/u/76798369?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1050,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770727791530,
+      "changelog": "Initial release of SplitXCH skill.\n\n- Enables creation of complex Chia (XCH) royalty split addresses from natural language descriptions.\n- Supports nested/cascading splits and up to 128+ recipients.\n- Parses user input, converts percentages to basis points (accounting for 1.5% fee), and validates all addresses.\n- Returns split address, recipient summary, and fee notes.\n- Asks users for missing wallet addresses before proceeding.\n- Offers dry run/previews with calculated points without making API calls.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9980f63a51b358ba5ba03ccebdb0c1d1548b1b05f2b755149eae155e6b310ba0"
+}

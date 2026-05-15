@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15555,
+  "uuid": "skill-clawhub-ollama-integration",
+  "skillKey": "clawhub-ollama-integration",
+  "name": "Ollama Integration",
+  "summary": "Integrate and run local Ollama AI models with custom prompts for AI assistance and automatic model management.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_integration",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yrtryA5790343",
+      "features": [
+        "Integrate and run local Ollama AI models with custom prompts for AI assistance and automatic mo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ollama-integration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195642499?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ollama-integration",
+      "url": "https://clawhub.ai/skills/ollama-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-integration",
+    "url": "https://clawhub.ai/skills/ollama-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-integration-8349d909fa7aeea4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ollama-integration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ollama-integration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb5731c4853700c052383ebe9ad056f7c58c563ccf67e443cbf592b9d969ac8f",
+      "artifactSizeBytes": 1906
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T11:00:48.904Z"
+}

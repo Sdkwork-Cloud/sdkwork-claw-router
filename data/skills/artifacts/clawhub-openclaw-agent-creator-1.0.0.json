@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-agent-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_agent_creator",
+  "skill": {
+    "id": 62435,
+    "skillKey": "clawhub-openclaw-agent-creator",
+    "name": "OpenClaw Agent 创建器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-agent-creator",
+    "url": "https://clawhub.ai/skills/openclaw-agent-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-agent-creator-fda2ce12bf64b5e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "创建新的 OpenClaw Agent。用于当用户要求创建新 agent、添加新机器人、配置新模型测试环境时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "axelhu",
+      "userId": "s172yaxxd2drm0sc92554g9aq983hegj",
+      "displayName": "AxelHu",
+      "image": "https://avatars.githubusercontent.com/u/12809280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773720345168,
+      "changelog": "初始版本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:07ada08a2bf6bfa5887dd3abad8a36f905e01f29b728d617c065ff3ab50b044c"
+}

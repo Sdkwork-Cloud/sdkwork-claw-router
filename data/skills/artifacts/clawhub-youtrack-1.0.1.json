@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtrack@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtrack",
+  "skill": {
+    "id": 11306,
+    "skillKey": "clawhub-youtrack",
+    "name": "YouTrack Issue Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtrack",
+    "url": "https://clawhub.ai/skills/youtrack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtrack-915dff34b010cc33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage YouTrack issues, projects, and workflows via CLI. Use when creating, updating, searching, or commenting on YouTrack issues, listing projects, checking issue states, or automating issue workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iahmadzain",
+      "userId": "publishers:iahmadzain",
+      "displayName": "iAhmadZain",
+      "image": "https://avatars.githubusercontent.com/u/9432748?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2101,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769511791837,
+      "changelog": "Fix: State updates now use customFields API format for proper YouTrack state transitions",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:edb7642b8751b7b353ea6bc5f9ec26e984a527a41a6202dceb2edea6e195d9e9"
+}

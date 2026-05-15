@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38321,
+  "uuid": "skill-clawhub-token-cost-optimization",
+  "skillKey": "clawhub-token-cost-optimization",
+  "name": "Token Cost Optimization",
+  "summary": "Token savings and API cost optimization. Provides token calculator, three-tier optimization strategies (prompt compression / cache reuse / model downgrade),...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_cost_optimization",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenLark",
+      "features": [
+        "Token savings and API cost optimization",
+        "Provides token calculator, three-tier optimization strategies (prompt compression / cache reuse."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/token-cost-optimization@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260858787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "token-cost-optimization",
+      "url": "https://clawhub.ai/skills/token-cost-optimization"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-cost-optimization",
+    "url": "https://clawhub.ai/skills/token-cost-optimization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-cost-optimization-da69a4451cd559d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/token-cost-optimization@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-token-cost-optimization-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f3825f7d381967022b9331e7b6608f67554126eb9d7aaedc9207e7f2a927075",
+      "artifactSizeBytes": 2421
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T02:41:26.011Z"
+}

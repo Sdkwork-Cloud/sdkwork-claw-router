@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30352,
+  "uuid": "skill-clawhub-pm-copilot",
+  "skillKey": "clawhub-pm-copilot",
+  "name": "PM Copilot",
+  "summary": "General product-management copilot that acts as the default entry point for PM work. Use when the user has a broad PM request, mixed product materials, or wa...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pm_copilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryanao",
+      "features": [
+        "General product-management copilot that acts as the default entry point for PM work",
+        "Use when the user has a broad PM request, mixed product materials, or wa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pm-copilot@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9943807?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pm-copilot",
+      "url": "https://clawhub.ai/skills/pm-copilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pm-copilot",
+    "url": "https://clawhub.ai/skills/pm-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pm-copilot-f5ea5978531a7aee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pm-copilot@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pm-copilot-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4dba24ca5656618d60eb7a180d57904ef506b2dd7f5d7e52c7906c70783a9d7",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T19:07:04.716Z"
+}

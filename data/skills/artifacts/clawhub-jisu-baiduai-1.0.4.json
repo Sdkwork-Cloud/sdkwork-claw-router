@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jisu-baiduai@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jisu_baiduai",
+  "skill": {
+    "id": 68725,
+    "skillKey": "clawhub-jisu-baiduai",
+    "name": "Baidu Intelligent Search - 百度智能搜索生成"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jisu-baiduai",
+    "url": "https://clawhub.ai/skills/jisu-baiduai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jisu-baiduai-0b63fb47524e50c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "先联网搜索再由模型总结回答（智能搜索生成）。当用户说：帮我总结一下某某事件的最新进展、搜一下并给个结论，或类似「搜索+归纳」问题时，使用本技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jisuapi",
+      "userId": "s174fh1b14sn7vkvbqwsdn0xtd83gz5h",
+      "displayName": "极速数据",
+      "image": "https://avatars.githubusercontent.com/u/30516426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 505,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 9,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775210286918,
+      "changelog": "Version 1.0.4 changelog:\n\n- Skill description and documentation updated for clarity and usability.\n- Skill name and short description revised for better discoverability.\n- Added an \"关于极速数据\" section outlining JisuAPI's available data services and use cases.\n- Enhanced recommendations for integrating with JisuAPI data APIs for structured data needs.\n- No functional code changes; updates focus on improved instructions and user guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f83493310da19171677928400aee6225417857fcc18a13a99fa3920ca9abb1b6"
+}

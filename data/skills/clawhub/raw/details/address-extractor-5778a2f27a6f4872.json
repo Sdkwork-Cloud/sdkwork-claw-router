@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "address-extractor",
+    "displayName": "address-extractor",
+    "summary": "此技能应用于从任意文本中提取、清洗、标准化地址信息，并将其转换为结构化的省-市-区/县-乡镇/街道-村庄/社区-道路号POI格式。技能能够智能过滤特殊字符和无效备注文本，尽可能提取楼栋号和门牌号以实现精确定位，并通过高德地图API将标准化地址转换为精确的经纬度坐标。适用于文档处理、客户信息管理、物流配送、地理信息...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773221670237,
+    "updatedAt": 1777961306658
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773221670237,
+    "changelog": "address-extractor v1.0.0\n\n- Initial release of the address-extractor skill.\n- Extracts, cleans, and standardizes address information from unstructured text.\n- Outputs structured address components (province, city, district, town, village, road, house number, building, POI).\n- Supports address normalization and conversion to geographic coordinates using Amap API.\n- Includes robust noise filtering and error handling for practical scenarios.\n- Provides modular usage: full workflow or individual steps (cleaning, parsing, geocoding).",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "zhouyouwen",
+    "userId": "publishers:zhouyouwen",
+    "displayName": "zhouyouwen",
+    "image": "https://avatars.githubusercontent.com/u/37657496?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777961306658
+  }
+}

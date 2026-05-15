@@ -1,0 +1,46 @@
+{
+  "skill": {
+    "slug": "byteplan-api",
+    "displayName": "byteplan-api",
+    "summary": "BytePlan 数据平台 API 封装。提供登录认证、模型查询、数据获取等接口。可被其他 skill（如 byteplan-ppt、byteplan-word、byteplan-video）依赖使用。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775014658170,
+    "updatedAt": 1777526993588
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775014658170,
+    "changelog": "BytePlan API Skill 1.0.0\n\n- Initial release: provides JavaScript API wrapper for the BytePlan data platform.\n- Supports login authentication (dev/uat), user & tenant management, model queries, and data fetching.\n- Includes persistent credential storage under `~/.byteplan/.env` with automated token management and renewal.\n- Exposes APIs for listing models, querying fields and records, and retrieving value lists for DIM, LIST, LOV, LEVEL field types.\n- Serves as a core dependency for related skills: byteplan-ppt, byteplan-word, byteplan-video.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "dbfu",
+    "userId": "s173dd2856t86yy9d88xm2h56183ja9h",
+    "displayName": "dbfu",
+    "image": "https://avatars.githubusercontent.com/u/32224358?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious",
+      "suspicious.potential_exfiltration"
+    ],
+    "summary": "Detected: suspicious.env_credential_access, suspicious.llm_suspicious, suspicious.potential_exfiltration",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777526993588
+  }
+}

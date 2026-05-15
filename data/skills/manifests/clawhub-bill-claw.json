@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52254,
+  "uuid": "skill-clawhub-bill-claw",
+  "skillKey": "clawhub-bill-claw",
+  "name": "bill claw",
+  "summary": "Drives the BillClaw local bookkeeping CLI against SQLite (db/expenses.db) via scripts/main.py JSON subcommands—add/query transactions, delete and category-me...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bill_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JuneBao",
+      "features": [
+        "Drives the BillClaw local bookkeeping CLI against SQLite (db/expenses.db) via scripts/main.py J."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bill-claw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44747536?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bill-claw",
+      "url": "https://clawhub.ai/skills/bill-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bill-claw",
+    "url": "https://clawhub.ai/skills/bill-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bill-claw-54bc8118c5db9952.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bill-claw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bill-claw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39ade3f3f44c917a5dab008c45e2d105821c38e08286003e3d1f71031c258692",
+      "artifactSizeBytes": 2460
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T18:49:53.708Z"
+}

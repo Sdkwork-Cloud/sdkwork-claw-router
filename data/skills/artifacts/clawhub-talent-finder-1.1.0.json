@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/talent-finder@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.talent_finder",
+  "skill": {
+    "id": 71021,
+    "skillKey": "clawhub-talent-finder",
+    "name": "talent-finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "talent-finder",
+    "url": "https://clawhub.ai/skills/talent-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/talent-finder-e16f4eba478362a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "天赋领域探索全流程工具。从结构化深度访谈，到天赋画像解码，再到90天落地行动方案。帮助用户发现自己的核心天赋，制定可执行的成长战略。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "isaacwong1986",
+      "userId": "s177ck3fb5dqwpjfbn0j0a59nn83nt2y",
+      "displayName": "isaacwong1986",
+      "image": "https://avatars.githubusercontent.com/u/266648081?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775632929974,
+      "changelog": "Talent Finder v1.1.0 introduces a comprehensive framework for discovering and applying personal talents.\n\n- Added detailed three-step process: structured interview, talent decoding, and 90-day actionable plan.\n- Provided 15 in-depth interview questions with specific probing and follow-up rules.\n- Developed a multi-stage analysis engine, including signal extraction, pattern clustering, and talent triangle validation.\n- Included practical tools: action templates, weekly habit tracking, monthly reviews, and final 90-day assessment forms.\n- Integrated established psychological theories and personal development methodologies for robust talent exploration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e75635bf5e76f08551c3b6b3cc4e29c0c388a4c2ec9747242c228362d763694f"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57232,
+  "uuid": "skill-clawhub-daily-news-reporter",
+  "skillKey": "clawhub-daily-news-reporter",
+  "name": "时事日报分析",
+  "summary": "An AI-assisted international news reporting tool that helps generate professional daily reports through structured workflows and multi-source verification fr...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_news_reporter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YWWZZsgit",
+      "features": [
+        "An AI-assisted international news reporting tool that helps generate professional daily reports."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-news-reporter@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215634836?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-news-reporter",
+      "url": "https://clawhub.ai/skills/daily-news-reporter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-news-reporter",
+    "url": "https://clawhub.ai/skills/daily-news-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-news-reporter-33e0d18af0991758.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-news-reporter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-news-reporter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66103b44eaad331e6f243dde1ea5d06a2ab6715186d2baf44c28edf185097fcd",
+      "artifactSizeBytes": 2516
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:28:35.370Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18882,
+  "uuid": "skill-clawhub-supermarket-deals",
+  "skillKey": "clawhub-supermarket-deals",
+  "name": "Supermarket Deals (DE)",
+  "summary": "Search German supermarket flyers (Aldi, Lidl, REWE, EDEKA, Kaufland) for product deals via Marktguru. Results ranked by best price per litre (EUR/L). No API...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supermarket_deals",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ben Miller",
+      "features": [
+        "Search German supermarket flyers (Aldi, Lidl, REWE, EDEKA, Kaufland) for product deals via Mark.",
+        "Results ranked by best price per litre (EUR/L)",
+        "No API..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/supermarket-deals@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73343564?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "supermarket-deals",
+      "url": "https://clawhub.ai/skills/supermarket-deals"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supermarket-deals",
+    "url": "https://clawhub.ai/skills/supermarket-deals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supermarket-deals-3eff005b4d47046b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/supermarket-deals@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-supermarket-deals-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3215e970ef652aa9256aae5a77bba97735b823de7e97d93fd924d932b9e6390e",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T15:14:29.461Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jll@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jll",
+  "skill": {
+    "id": 68910,
+    "skillKey": "clawhub-jll",
+    "name": "Jll"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jll",
+    "url": "https://clawhub.ai/skills/jll",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jll-9a103d794814ecc7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全球商业地产巨头，创立于1783年，比美国建国还早"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777241229356,
+      "changelog": "- 首次发布 jll 技能，聚焦全球领先商业地产服务公司 JLL。\n- 提供公司历史、四大主营业务、关键发展里程碑与最新核心数据。\n- 总结 JLL 竞争优势及其在行业科技转型中的地位。\n- 适用于分析全球商业地产市场格局、科技趋势和房地产投资管理。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a01264dd9b641544b38098d96d42e52cd589667265d486ee1db4f3203dc37e46"
+}

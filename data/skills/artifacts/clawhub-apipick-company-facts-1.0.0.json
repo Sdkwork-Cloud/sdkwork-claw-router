@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apipick-company-facts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apipick_company_facts",
+  "skill": {
+    "id": 19578,
+    "skillKey": "clawhub-apipick-company-facts",
+    "name": "Get company fact and information by ticker or CIK"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apipick-company-facts",
+    "url": "https://clawhub.ai/skills/apipick-company-facts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apipick-company-facts-c8dbd411477730c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Retrieve public company information by stock ticker symbol or SEC CIK number using the apipick Company Facts API. Returns company name, industry, sector, exc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "javainthinking",
+      "userId": "s179pwr839zxxcs8hgrqv73jv583ma9f",
+      "displayName": "javainthinking",
+      "image": "https://avatars.githubusercontent.com/u/2844583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 604,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771755909095,
+      "changelog": "apipick-company-facts 1.0.0\n\n- Initial release.\n- Retrieve public company data (name, industry, sector, exchange, market cap, employees, website, SEC filings) by ticker or CIK.\n- Requires an apipick API key.\n- Provides readable formatting for market capitalization in responses.\n- Automatically infers ticker from company name if needed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:378bc3a3424bedde96e52eb815b7b73636594377e30531af6c9831e41040193f"
+}

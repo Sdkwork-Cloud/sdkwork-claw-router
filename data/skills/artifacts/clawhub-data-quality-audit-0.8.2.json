@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-quality-audit@0.8.2",
+  "version": "0.8.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_quality_audit",
+  "skill": {
+    "id": 57970,
+    "skillKey": "clawhub-data-quality-audit",
+    "name": "Data Quality Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-quality-audit",
+    "url": "https://clawhub.ai/skills/data-quality-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-quality-audit-fc76bb911ce85b7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Independent cross-source audit of a completed CN banker deliverable. Use when the user asks to audit / double-check / 双核实 / 交叉验证 / 数据质量检查 / 审计 an existing de..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackdark425",
+      "userId": "s176mxzq3jzjv11d44t7jjr33x83rvkb",
+      "displayName": "jackdark",
+      "image": "https://avatars.githubusercontent.com/u/201514154?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.8.2",
+      "createdAt": 1776698445405,
+      "changelog": "- Added new rule checks: restatement_aware, roe_definition_check, and price_basis_check (total rule set increased to 13).\n- Enhanced common-sense sanity checks to flag or fail suspect data based on updated rules.\n- Improved cross-source auditing workflow: enforces use of independent data sources for each number, flags unverifiable or unavailable second sources.\n- Audit report now provides clearer verdicts (PASS / FLAG / FAIL) and includes actionable next steps.\n- Documentation thoroughly explains audit logic, typical failure scenarios, and integration with other data verification steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5365d26bfb832b69a3bb3905046d2319ee3df406d84ec99957fb0be8ab4175d6"
+}

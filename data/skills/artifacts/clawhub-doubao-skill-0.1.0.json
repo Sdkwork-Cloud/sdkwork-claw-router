@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doubao-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubao_skill",
+  "skill": {
+    "id": 58716,
+    "skillKey": "clawhub-doubao-skill",
+    "name": "Doubao Image Video Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubao-skill",
+    "url": "https://clawhub.ai/skills/doubao-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubao-skill-ce2405b2cbc7a7d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ByteDance/Doubao (Volcengine ARK) API 进行文本生图、图片编辑和文本生视频的操作"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wenkangwei",
+      "userId": "s178n529mb0m4max2mnqw974p983hm0e",
+      "displayName": "wenkangwei",
+      "image": "https://avatars.githubusercontent.com/u/23649773?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 574,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772382615881,
+      "changelog": "Version 1.0.0 introduces the initial release of doubao-image-video-skill for ByteDance/Doubao (Volcengine ARK) API integration.\n\n- Provides CLI and Python API for text-to-image, image editing (e.g. watermark removal), and text-to-video generation.\n- Supports asynchronous and synchronous video generation, along with task status checking.\n- Includes troubleshooting tips and detailed usage documentation.\n- Requires Python 3.7+ and ARK_API_KEY setup.\n- Offers example commands and code for quick start and testing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:545e0698d98a41ca720322f58f4fc887d8002161ba53c0734ebac161c9743126"
+}

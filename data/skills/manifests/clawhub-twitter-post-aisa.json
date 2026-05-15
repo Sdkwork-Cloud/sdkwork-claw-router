@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35092,
+  "uuid": "skill-clawhub-twitter-post-aisa",
+  "skillKey": "clawhub-twitter-post-aisa",
+  "name": "Twitter Post AIsa",
+  "summary": "Run Twitter/X likes, follows, replies, and OAuth-gated posting through AIsa. Use when: the user already knows which account, tweet, or campaign to act on and...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_post_aisa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bibaofeng",
+      "features": [
+        "Run Twitter/X likes, follows, replies, and OAuth-gated posting through AIsa",
+        "Use when: the user already knows which account, tweet, or campaign to act on and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twitter-post-aisa@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86095131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twitter-post-aisa",
+      "url": "https://clawhub.ai/skills/twitter-post-aisa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-post-aisa",
+    "url": "https://clawhub.ai/skills/twitter-post-aisa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-post-aisa-3dc0d6f8d136b25a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twitter-post-aisa@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-twitter-post-aisa-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0ba83bd9bf400fba48575041d7206da8ee8b079d764e05b03c7c4df322dbff5",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T16:45:07.994Z"
+}

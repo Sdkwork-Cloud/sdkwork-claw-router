@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24168,
+  "uuid": "skill-clawhub-openclaw-guide",
+  "skillKey": "clawhub-openclaw-guide",
+  "name": "OpenClaw Guide",
+  "summary": "Authoritative OpenClaw guidance and documentation lookup. Provides accurate information about OpenClaw capabilities, configuration, and usage based on offici...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_guide",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andy Tien",
+      "features": [
+        "Authoritative OpenClaw guidance and documentation lookup",
+        "Provides accurate information about OpenClaw capabilities, configuration, and usage based on of."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-guide@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35169750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-guide",
+      "url": "https://clawhub.ai/skills/openclaw-guide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-guide",
+    "url": "https://clawhub.ai/skills/openclaw-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-guide-8c79974d8bb09052.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-guide@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-guide-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cde4e1d80403b29466b6fac9ddef7ca15f8489e486906b9667aecaf6dd54675",
+      "artifactSizeBytes": 2504
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T10:15:47.028Z"
+}

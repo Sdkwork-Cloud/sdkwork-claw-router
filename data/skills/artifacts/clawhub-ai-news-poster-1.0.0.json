@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-news-poster@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news_poster",
+  "skill": {
+    "id": 21886,
+    "skillKey": "clawhub-ai-news-poster",
+    "name": "Ai News Poster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news-poster",
+    "url": "https://clawhub.ai/skills/ai-news-poster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-poster-b5f691a1da79c687.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate fixed-template daily AI news posters from five news items. Use when the user asks to create a poster, social card, or image summary for \"today's AI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caoyacheng",
+      "userId": "s178se9m1b42yea3mgbh9ncjmd83gvcm",
+      "displayName": "小曹学AI",
+      "image": "https://avatars.githubusercontent.com/u/30097023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 492,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772847718585,
+      "changelog": "Initial release of ai-news-poster skill.\n\n- Generate daily AI news posters from exactly 5 news items using a fixed Chinese/English template.\n- Strict poster style: layout, typography, and content contract provided.\n- Validates input: always normalizes news to 5 items, rewrites summaries, ensures factuality.\n- Poster output: 1080x1350 PNG image, ready for social sharing; outputs normalized JSON if needed.\n- Includes sample prompts, rendering script usage, and manual fallback instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9dee0271dc8689e206a5f67b6b7c47533be23b07c854f09978488fae8284e71c"
+}

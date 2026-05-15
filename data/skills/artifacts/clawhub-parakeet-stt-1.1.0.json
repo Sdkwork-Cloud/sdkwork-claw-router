@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/parakeet-stt@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parakeet_stt",
+  "skill": {
+    "id": 10443,
+    "skillKey": "clawhub-parakeet-stt",
+    "name": "Parakeet Stt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parakeet-stt",
+    "url": "https://clawhub.ai/skills/parakeet-stt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parakeet-stt-b0b7c2af575826a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local speech-to-text with NVIDIA Parakeet TDT 0.6B v3 (ONNX on CPU). 30x faster than Whisper, 25 languages, auto-detection, OpenAI-compatible API. Use when transcribing audio files, converting speech to text, or processing voice recordings."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "carlulsoe",
+      "userId": "publishers:carlulsoe",
+      "displayName": "carlulsoe",
+      "image": "https://avatars.githubusercontent.com/u/34673973?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 2529,
+      "installsAllTime": 7,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1768689710480,
+      "changelog": "Made installation-agnostic: env var config, install instructions, removed hardcoded paths",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:81c14c3c9f40ee37d4b7b443a1ba3e72f1f32de37ebc4b020bec98078ea113be"
+}

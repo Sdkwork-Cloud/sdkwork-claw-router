@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58187,
+  "uuid": "skill-clawhub-bilibili-summarizer",
+  "skillKey": "clawhub-bilibili-summarizer",
+  "name": "视频字幕提取与总结（B站+抖音+YouTube+小红书）",
+  "summary": "This skill should be used when the user shares a video link (Bilibili/B站, Douyin/抖音, YouTube, Xiaohongshu/小红书) and asks to extract subtitles, summarize the v...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_summarizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangligong0826",
+      "features": [
+        "This skill should be used when the user shares a video link (Bilibili/B站, Douyin/抖音, YouTube, X."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-summarizer@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64336170?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-summarizer",
+      "url": "https://clawhub.ai/skills/bilibili-summarizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-summarizer",
+    "url": "https://clawhub.ai/skills/bilibili-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-summarizer-46bcbd68308b3498.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-summarizer@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-summarizer-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64baca9b05c6a9712ed5e727d29f98922f1934a0065a1363a17f8c2352f9fe95",
+      "artifactSizeBytes": 2672
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T23:34:41.507Z"
+}

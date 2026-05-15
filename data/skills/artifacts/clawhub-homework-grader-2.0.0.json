@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/homework-grader@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.homework_grader",
+  "skill": {
+    "id": 66183,
+    "skillKey": "clawhub-homework-grader",
+    "name": "homework-grader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "homework-grader",
+    "url": "https://clawhub.ai/skills/homework-grader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/homework-grader-9c8a2e929266836e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "老师作业批改助手，用于自动批改数学作业、统计错题、生成Excel统计表和PDF报告。当老师需要：(1) 上传正确答案并让AI识别 (2) 批量上传学生作业照片进行批改 (3) 统计全班错误率并生成错题分析报告 (4) 生成重点错题PDF供讲解使用时，触发此skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lhy123456lhy",
+      "userId": "publishers:lhy123456lhy",
+      "displayName": "lhy123456lhy",
+      "image": "https://avatars.githubusercontent.com/u/53179397?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 435,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773388278184,
+      "changelog": "- Added dependency management with scripts/requirements.txt for easier setup.\n- Updated documentation with Python包和系统依赖安装说明，明确要求安装 Tesseract OCR。\n- No changes to program logic or workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afd69b5449ffd4489f1ff12125cf4fa96ac612af2086739f65142bd754b60a72"
+}

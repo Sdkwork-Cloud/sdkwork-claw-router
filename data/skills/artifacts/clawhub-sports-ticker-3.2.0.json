@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sports-ticker@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sports_ticker",
+  "skill": {
+    "id": 8972,
+    "skillKey": "clawhub-sports-ticker",
+    "name": "Sports Ticker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sports-ticker",
+    "url": "https://clawhub.ai/skills/sports-ticker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sports-ticker-0bbcde8b1c737ada.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Live sports alerts for Soccer, NFL, NBA, NHL, MLB, F1 and more. Real-time scoring with FREE ESPN API. Track any team from any major league worldwide."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robbyczgw-cla",
+      "userId": "s177f7tydbpq0gh2sctd8hqdjn83fnwv",
+      "displayName": "Robby",
+      "image": "https://avatars.githubusercontent.com/u/239660374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5394,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 2,
+      "versions": 28
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1774646696794,
+      "changelog": "- Adds caching support with new scripts/cache.py module.\n- Improves performance and reduces API calls by storing recent data.\n- Updates live_monitor.py and ticker.py to use cached data when possible.\n- Updates documentation and version to 3.2.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b309e9923aab90ded6e40d2aabac35b79d554cbc99bdb43d07ac07bdb6ea2be"
+}

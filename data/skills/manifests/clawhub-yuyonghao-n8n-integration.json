@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60450,
+  "uuid": "skill-clawhub-yuyonghao-n8n-integration",
+  "skillKey": "clawhub-yuyonghao-n8n-integration",
+  "name": "N8n Integration",
+  "summary": "实现 n8n 与 OpenClaw Agent 的双向集成，支持Webhook触发执行、结果回调、认证验证及可观测性。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuyonghao_n8n_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuyonghao-123",
+      "features": [
+        "实现 n8n 与 OpenClaw Agent 的双向集成，支持Webhook触发执行、结果回调、认证验证及可观测性。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuyonghao-n8n-integration@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267580628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuyonghao-n8n-integration",
+      "url": "https://clawhub.ai/skills/yuyonghao-n8n-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuyonghao-n8n-integration",
+    "url": "https://clawhub.ai/skills/yuyonghao-n8n-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuyonghao-n8n-integration-5d4e19350577271a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuyonghao-n8n-integration@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuyonghao-n8n-integration-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb8acce65c012101b9eaa1782f857c40b59be7458b89a6e2e4dca04fd2ea08d3",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T01:31:43.038Z"
+}

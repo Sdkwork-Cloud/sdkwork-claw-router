@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13573,
+  "uuid": "skill-clawhub-solana-sniper-bot",
+  "skillKey": "clawhub-solana-sniper-bot",
+  "name": "Solana Sniper Bot",
+  "summary": "Autonomous Solana token sniper and trading bot. Monitors new token launches on Raydium/Jupiter, evaluates rugpull risk with LLM analysis, auto-buys promising launches, and manages exit strategies. Use when user wants to snipe Solana token.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solana_sniper_bot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "srikanthbellary",
+      "features": [
+        "Autonomous Solana token sniper and trading bot",
+        "Monitors new token launches on Raydium/Jupiter, evaluates rugpull risk with LLM analysis, auto-.",
+        "Use when user wants to snipe Solana token launches, trade memecoins, monitor new Solana pairs,.",
+        "Supports cron-based monitoring, take-profit/stop-loss, and portfolio tracking."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solana-sniper-bot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204752113?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solana-sniper-bot",
+      "url": "https://clawhub.ai/skills/solana-sniper-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solana-sniper-bot",
+    "url": "https://clawhub.ai/skills/solana-sniper-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solana-sniper-bot-dcebf439d1cb4027.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solana-sniper-bot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-solana-sniper-bot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc3e5a2f518aa2ce2d934bf6b94b740805f4661d5588c1bb7f12bdfefb92309c",
+      "artifactSizeBytes": 2091
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T22:25:05.257Z"
+}

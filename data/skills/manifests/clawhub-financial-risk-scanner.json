@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31987,
+  "uuid": "skill-clawhub-financial-risk-scanner",
+  "skillKey": "clawhub-financial-risk-scanner",
+  "name": "Financial Risk Scanner for Listed Companies",
+  "summary": "Analyze listed company financials to detect 21 fraud risk indicators with severity ratings and cross-validation for accounting anomalies and governance issues.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_risk_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "赖根",
+      "features": [
+        "Analyze listed company financials to detect 21 fraud risk indicators with severity ratings and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/financial-risk-scanner@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42961557?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "financial-risk-scanner",
+      "url": "https://clawhub.ai/skills/financial-risk-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-risk-scanner",
+    "url": "https://clawhub.ai/skills/financial-risk-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-risk-scanner-b29802d518d7794c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/financial-risk-scanner@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-financial-risk-scanner-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8cea6f0802f7b5da32a5be4bd7955bb236187dd0be6f464dc017b9523280c6f1",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T14:58:35.738Z"
+}

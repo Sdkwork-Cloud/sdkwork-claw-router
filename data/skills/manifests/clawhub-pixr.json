@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46000,
+  "uuid": "skill-clawhub-pixr",
+  "skillKey": "clawhub-pixr",
+  "name": "Pixr Cli",
+  "summary": "Drives the local pixr Gemini image CLI for generation, editing, variations, model selection, saved defaults, profile-based defaults, reference-image workflow...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pixr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dishant Sharma",
+      "features": [
+        "Drives the local pixr Gemini image CLI for generation, editing, variations, model selection, sa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pixr@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90952604?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pixr",
+      "url": "https://clawhub.ai/skills/pixr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pixr",
+    "url": "https://clawhub.ai/skills/pixr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pixr-ec0bcd55953ace59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pixr@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-pixr-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39c865a7aa6ac224baefd91dbd2b762a333d076c075d9a528fae8cd31ad028f6",
+      "artifactSizeBytes": 2239
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T21:20:28.038Z"
+}

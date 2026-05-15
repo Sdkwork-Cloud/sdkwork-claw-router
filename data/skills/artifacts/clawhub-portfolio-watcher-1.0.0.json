@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/portfolio-watcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.portfolio_watcher",
+  "skill": {
+    "id": 8682,
+    "skillKey": "clawhub-portfolio-watcher",
+    "name": "Portfolio Watcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "portfolio-watcher",
+    "url": "https://clawhub.ai/skills/portfolio-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/portfolio-watcher-878eec131fc22943.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor stock/crypto holdings, get price alerts, track portfolio performance"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jhillin8",
+      "userId": "publishers:jhillin8",
+      "displayName": "jhillin8",
+      "image": "https://avatars.githubusercontent.com/u/79551560?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 7631,
+      "installsAllTime": 56,
+      "installsCurrent": 53,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769326523827,
+      "changelog": "Initial release of portfolio-watcher.\n\n- Monitor stock and crypto holdings with natural language\n- Get real-time price checks for stocks, crypto, and ETFs\n- Set price alerts and receive notifications when targets are met\n- Track overall portfolio performance, gains/losses, and top performers\n- Supports conversational commands for managing and updating your portfolio",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:82169ce43b923f4d18a7e05d1151faad502dde5d96c4c55fa6c12c4af7469945"
+}

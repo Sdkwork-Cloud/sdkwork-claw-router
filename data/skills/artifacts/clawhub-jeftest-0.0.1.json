@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jeftest@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jeftest",
+  "skill": {
+    "id": 27199,
+    "skillKey": "clawhub-jeftest",
+    "name": "Jeftest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jeftest",
+    "url": "https://clawhub.ai/skills/jeftest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jeftest-1b9afb41000ffc0d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to 100+ APIs (Google Workspace, Microsoft 365, GitHub, Notion, Slack, Airtable, HubSpot, etc.) with managed OAuth. Use this skill when users want to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hjcloud",
+      "userId": "publishers:hjcloud",
+      "displayName": "hjcloud",
+      "image": "https://avatars.githubusercontent.com/u/48515051?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1773828581091,
+      "changelog": "Initial release of jeftest v0.0.1\n\n- Provides a unified gateway to connect with 100+ third-party APIs (e.g., Google Workspace, Slack, Airtable) using managed OAuth via Maton.ai.\n- Allows secure API calls through a passthrough proxy, authenticated by MATON_API_KEY.\n- Users authorize and manage connections individually through Maton’s connect flow—API key alone does not grant third-party access.\n- Includes endpoints and examples for creating, listing, retrieving, and deleting connections.\n- Supports specifying which service connection to use for each API call via headers.\n- Extensive documentation and full list of supported services provided.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5554f284cc7e1aec9d43fc8e8525476baf496591eee4043942d8ef097f34fb44"
+}

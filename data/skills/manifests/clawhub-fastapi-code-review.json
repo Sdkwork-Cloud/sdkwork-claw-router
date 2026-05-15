@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29228,
+  "uuid": "skill-clawhub-fastapi-code-review",
+  "skillKey": "clawhub-fastapi-code-review",
+  "name": "Fastapi Code Review",
+  "summary": "Reviews FastAPI code for routing patterns, dependency injection, validation, and async handlers. Use when reviewing FastAPI apps, checking APIRouter setup, D...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fastapi_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Reviews FastAPI code for routing patterns, dependency injection, validation, and async handlers",
+        "Use when reviewing FastAPI apps, checking APIRouter setup, D..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fastapi-code-review@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fastapi-code-review",
+      "url": "https://clawhub.ai/skills/fastapi-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fastapi-code-review",
+    "url": "https://clawhub.ai/skills/fastapi-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fastapi-code-review-5e706dd0d69fc552.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fastapi-code-review@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fastapi-code-review-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d464c70f7fc4ef5f9d85dd80970fb54bd8a6fa0b57c818692a49e9a1c99bd9a",
+      "artifactSizeBytes": 2503
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:14:13.857Z"
+}

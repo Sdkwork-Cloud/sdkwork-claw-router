@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61221,
+  "uuid": "skill-clawhub-kura-booking",
+  "skillKey": "clawhub-kura-booking",
+  "name": "Kura Sushi Booking (E-Pai-Ke)",
+  "summary": "使用 e-pai-ke.com (E排客) 進行餐廳預約管理、叫號查詢、登入及取消訂位。適用於藏壽司等使用 E排客 系統的餐廳。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kura_booking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dabendan",
+      "features": [
+        "使用 e-pai-ke.com (E排客) 進行餐廳預約管理、叫號查詢、登入及取消訂位。適用於藏壽司等使用 E排客 系統的餐廳。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kura-booking@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9552477?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kura-booking",
+      "url": "https://clawhub.ai/skills/kura-booking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kura-booking",
+    "url": "https://clawhub.ai/skills/kura-booking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kura-booking-4c80bdb3cae85805.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kura-booking@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kura-booking-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37bdefbfc3dae88646e2f10e270ce4cfab87175d2bc628e14dd0c3186854bdc2",
+      "artifactSizeBytes": 1878
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T12:19:05.789Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13037,
+  "uuid": "skill-clawhub-file-converter",
+  "skillKey": "clawhub-file-converter",
+  "name": "File Converter",
+  "summary": "File format converter. Detect formats, convert between JSON/YAML/XML/CSV/Markdown, minify and prettify code. Commands: detect, json2yaml, yaml2json, csv2md.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_converter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "File format converter",
+        "Detect formats, convert between JSON/YAML/XML/CSV/Markdown, minify and prettify code",
+        "Commands: detect, json2yaml, yaml2json, csv2md."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-converter@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-converter",
+      "url": "https://clawhub.ai/skills/file-converter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-converter",
+    "url": "https://clawhub.ai/skills/file-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-converter-373c8f69b97f35d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-converter@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-converter-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e32514a15adcfac0020b3a8809b5af84afde7ac266f5318da0d53916d35fefb",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T00:30:17.729Z"
+}

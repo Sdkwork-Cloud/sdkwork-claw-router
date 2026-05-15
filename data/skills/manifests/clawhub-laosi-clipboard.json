@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69731,
+  "uuid": "skill-clawhub-laosi-clipboard",
+  "skillKey": "clawhub-laosi-clipboard",
+  "name": "Windows剪贴板管理器",
+  "summary": "Windows剪贴板管理器 - 原创技能。管理Windows剪贴板，支持复制、粘贴、历史记录、多条目管理、格式化转换等功能。适用于数据处理、批量操作、跨应用数据交换等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.laosi_clipboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "534422530",
+      "features": [
+        "Windows剪贴板管理器",
+        "原创技能。管理Windows剪贴板，支持复制、粘贴、历史记录、多条目管理、格式化转换等功能。适用于数据处理、批量操作、跨应用数据交换等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/laosi-clipboard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82763531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "laosi-clipboard",
+      "url": "https://clawhub.ai/skills/laosi-clipboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "laosi-clipboard",
+    "url": "https://clawhub.ai/skills/laosi-clipboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/laosi-clipboard-34f40bb267f7dcf6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/laosi-clipboard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-laosi-clipboard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b01fe883a2a10d112b27a280a3d72a670d86b1542258ce5ad25a098d39ab63b",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T07:29:25.581Z"
+}

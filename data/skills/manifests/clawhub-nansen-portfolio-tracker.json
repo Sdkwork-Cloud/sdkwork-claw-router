@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30043,
+  "uuid": "skill-clawhub-nansen-portfolio-tracker",
+  "skillKey": "clawhub-nansen-portfolio-tracker",
+  "name": "Nansen Portfolio Tracker",
+  "summary": "How has a wallet's portfolio changed over time? Historical balances, current snapshot, and per-token PnL.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_portfolio_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nansen AI",
+      "features": [
+        "How has a wallet's portfolio changed over time? Historical balances, current snapshot, and per-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nansen-portfolio-tracker@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93130718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nansen-portfolio-tracker",
+      "url": "https://clawhub.ai/skills/nansen-portfolio-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-portfolio-tracker",
+    "url": "https://clawhub.ai/skills/nansen-portfolio-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-portfolio-tracker-0705e1a92d1bac72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nansen-portfolio-tracker@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nansen-portfolio-tracker-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db72b50d0110477b889703642d758ece01cbe0253039665bd2c865ceac921daa",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T12:31:55.506Z"
+}

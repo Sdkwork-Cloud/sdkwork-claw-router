@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elixir-performance-review@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elixir_performance_review",
+  "skill": {
+    "id": 30577,
+    "skillKey": "clawhub-elixir-performance-review",
+    "name": "Elixir Performance Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elixir-performance-review",
+    "url": "https://clawhub.ai/skills/elixir-performance-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elixir-performance-review-cb693bbd399070cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews Elixir code for performance issues including GenServer bottlenecks, memory usage, and concurrency patterns. Use when reviewing high-throughput code o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1776831089539,
+      "changelog": "- Added “Gates — before reporting” section describing mandatory step-by-step verification before submitting findings, including protocol adherence, anchored evidence, and requirement for observed/measured performance claims.\n- Updated “Before Submitting Findings” to reference the new gates and clarify verification is required.\n- No changes to review topics, checklists, or core skill functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f66eb0a11374c77aece5700116fb201500765ee58b82348d3a5693b0d5f9b344"
+}

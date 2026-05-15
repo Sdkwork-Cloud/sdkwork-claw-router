@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23136,
+  "uuid": "skill-clawhub-pumpclaw-agent",
+  "skillKey": "clawhub-pumpclaw-agent",
+  "name": "Pumpfun Agent Integration",
+  "summary": "Generate customer-ready Telegram polling bots + an Express-style web server that integrate Pump.fun Tokenized Agent payments using @pump-fun/agent-payments-s...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pumpclaw_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Belimad",
+      "features": [
+        "Generate customer-ready Telegram polling bots + an Express-style web server that integrate Pump."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pumpclaw-agent@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125614857?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pumpclaw-agent",
+      "url": "https://clawhub.ai/skills/pumpclaw-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pumpclaw-agent",
+    "url": "https://clawhub.ai/skills/pumpclaw-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pumpclaw-agent-8ce53d5ab76d3ddc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pumpclaw-agent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pumpclaw-agent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a37285e65b083cd7fa5faa3b8be8ffc3956e21baa50317cfa43a16d18b5477bd",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T13:15:49.860Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-ecommerce-search@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_ecommerce_search",
+  "skill": {
+    "id": 9163,
+    "skillKey": "clawhub-cn-ecommerce-search",
+    "name": "Cn Ecommerce Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-ecommerce-search",
+    "url": "https://clawhub.ai/skills/cn-ecommerce-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-ecommerce-search-26b0b8fc54d6ca54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search products across 8 Chinese e-commerce platforms: Taobao, Tmall, JD, PDD, 1688, AliExpress, Douyin, XHS. Zero-config — no API keys needed. Powered by Sh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shopmeskills",
+      "userId": "publishers:shopmeskills",
+      "displayName": "Shopme",
+      "image": "https://avatars.githubusercontent.com/u/261120965?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 4369,
+      "installsAllTime": 32,
+      "installsCurrent": 30,
+      "stars": 7,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1771573023914,
+      "changelog": "**Major update: Expanded platform support and simplified setup.**\n\n- Now supports 8 Chinese e-commerce platforms: added JD, PDD, Douyin, XHS alongside Taobao, Tmall, 1688, AliExpress.\n- Zero configuration required — no API keys or environment variables needed.\n- All product search and detail retrieval powered by Shopme’s unified product database.\n- New and updated tool parameters, including improved filters, platform codes, and easier product lookup by URL or ID.\n- Enhanced documentation: updated usage instructions, platform guide, and supported URL formats.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:88a91cdf5832d8d13d211b9f46dc801455946d186b5ef3f887d34fb7d4a9a02c"
+}

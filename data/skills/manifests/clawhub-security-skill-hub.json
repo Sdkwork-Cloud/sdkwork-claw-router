@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63381,
+  "uuid": "skill-clawhub-security-skill-hub",
+  "skillKey": "clawhub-security-skill-hub",
+  "name": "安全技能插座",
+  "summary": "安全技能插座 - 统一的安全技能管理和调用平台 这是一个安全技能的\"插座\"框架，提供统一的安全能力入口。已集成以下技能： **全网技能搜索 (ClawHub)**: - clawhub: 从 clawhub.com 搜索安装全网技能 **信息收集类**: - collector-strategy: 采集策略Ski...",
+  "version": "2.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_skill_hub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "caidongyun",
+      "features": [
+        "统一的安全技能管理和调用平台 这是一个安全技能的\"插座\"框架，提供统一的安全能力入口。已集成以下技能： **全网技能搜索 (ClawHub)**:",
+        "clawhub: 从 clawhub.com 搜索安装全网技能 **信息收集类**:",
+        "collector-strategy: 采集策略Ski..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-skill-hub@2.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1638934?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-skill-hub",
+      "url": "https://clawhub.ai/skills/security-skill-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-skill-hub",
+    "url": "https://clawhub.ai/skills/security-skill-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-skill-hub-b26b3063aa1c1a38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-skill-hub@2.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-skill-hub-2.2.1.json",
+      "version": "2.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ef24aa50981ebc808125d3378c4292e4c51d88e71e1b92ff6edfc0a1c813792",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:59:19.342Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46970,
+  "uuid": "skill-clawhub-top-attractions",
+  "skillKey": "clawhub-top-attractions",
+  "name": "Top Attractions",
+  "summary": "Discover the most popular and highest-rated attractions in any city. Shows top-tier POIs with ticket prices, opening hours, and booking links. Also supports:...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.top_attractions",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dingtom336-gif",
+      "features": [
+        "Discover the most popular and highest-rated attractions in any city",
+        "Shows top-tier POIs with ticket prices, opening hours, and booking links",
+        "Also supports:..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/top-attractions@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256118512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "top-attractions",
+      "url": "https://clawhub.ai/skills/top-attractions"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "top-attractions",
+    "url": "https://clawhub.ai/skills/top-attractions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/top-attractions-c8670416af288700.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/top-attractions@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-top-attractions-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d4182ed6a4a1a49300593217e5b8f471cb36bab2d4b49fd289fb8be17f3a674",
+      "artifactSizeBytes": 2524
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T06:21:17.317Z"
+}

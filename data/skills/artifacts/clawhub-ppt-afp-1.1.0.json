@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ppt-afp@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt_afp",
+  "skill": {
+    "id": 61897,
+    "skillKey": "clawhub-ppt-afp",
+    "name": "Ppt Afp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt-afp",
+    "url": "https://clawhub.ai/skills/ppt-afp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt-afp-8a4ed0f4bfcdadd0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PPT全自动生成流（AFP：Auto-Flow Prompt）。用户提供主题和内容，Agent自动完成：风格选择 → 大纲生成 → Prompt生成 → AI生图 → 打包PPTX → 发送飞书。当用户说\"帮我做PPT\"、\"生成幻灯片\"、\"制作演示文稿\"、\"ppt-afp\"时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yipng05-max",
+      "userId": "s17e7y2rfdj7a3t1zc44g22dk983ncaz",
+      "displayName": "yipng05-max",
+      "image": "https://avatars.githubusercontent.com/u/256726987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 916,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773677646211,
+      "changelog": "P1: add Feishu style gallery doc link for visual preview",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68db309d93789e31757f063529a9395ae5b16842ca3d54c84f1b8634f0929c8a"
+}

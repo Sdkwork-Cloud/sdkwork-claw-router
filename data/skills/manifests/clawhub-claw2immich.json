@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17816,
+  "uuid": "skill-clawhub-claw2immich",
+  "skillKey": "clawhub-claw2immich",
+  "name": "claw2immich",
+  "summary": "Work with Immich photo library via MCP (claw2immich) - search photos by people, dates, locations, albums. Download assets via shared links. Handles multi-per...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw2immich",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Johannes Rumpf",
+      "features": [
+        "Work with Immich photo library via MCP (claw2immich)",
+        "search photos by people, dates, locations, albums",
+        "Download assets via shared links",
+        "Handles multi-per..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw2immich@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5239765?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw2immich",
+      "url": "https://clawhub.ai/skills/claw2immich"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw2immich",
+    "url": "https://clawhub.ai/skills/claw2immich",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw2immich-52299efdd00caa25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw2immich@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw2immich-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c44f980a549b78f0716bf3ca9046f8534f5b8a3ab4d57600648b787bc7d39ae7",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T20:56:49.220Z"
+}

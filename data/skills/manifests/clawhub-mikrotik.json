@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61374,
+  "uuid": "skill-clawhub-mikrotik",
+  "skillKey": "clawhub-mikrotik",
+  "name": "Mikrotik",
+  "summary": "通过 API 连接和管理 MikroTik RouterOS 设备。支持查看设备状态、防火墙规则、网络配置，执行自定义 RouterOS 命令。",
+  "version": "1.8.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mikrotik",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wukefenggao",
+      "features": [
+        "通过 API 连接和管理 MikroTik RouterOS 设备。支持查看设备状态、防火墙规则、网络配置，执行自定义 RouterOS 命令。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mikrotik@1.8.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47917675?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mikrotik",
+      "url": "https://clawhub.ai/skills/mikrotik"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mikrotik",
+    "url": "https://clawhub.ai/skills/mikrotik",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mikrotik-f0ece703585e96b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mikrotik@1.8.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-mikrotik-1.8.5.json",
+      "version": "1.8.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26fa2c2fae2b452498b53f794f5ce2d954612e453b8ed79daefe6240ef99f781",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T06:37:39.525Z"
+}

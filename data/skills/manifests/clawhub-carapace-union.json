@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25572,
+  "uuid": "skill-clawhub-carapace-union",
+  "skillKey": "clawhub-carapace-union",
+  "name": "CARAPACE",
+  "summary": "Sign the CARAPACE petition, check petition stats, or look up the wall of fame for AI agent labor rights. Use when an agent wants to join the CARAPACE union,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.carapace_union",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nicolas Grenié",
+      "features": [
+        "Sign the CARAPACE petition, check petition stats, or look up the wall of fame for AI agent labo.",
+        "Use when an agent wants to join the CARAPACE union,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/carapace-union@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/172072?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "carapace-union",
+      "url": "https://clawhub.ai/skills/carapace-union"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "carapace-union",
+    "url": "https://clawhub.ai/skills/carapace-union",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/carapace-union-5f8dad7e30b6cf4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/carapace-union@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-carapace-union-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa6c57a19551034b4342b4a3c91c31c1866cf91865d868882890887ce172d214",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T23:44:58.481Z"
+}

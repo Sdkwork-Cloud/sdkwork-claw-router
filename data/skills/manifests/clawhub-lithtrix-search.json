@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52841,
+  "uuid": "skill-clawhub-lithtrix-search",
+  "skillKey": "clawhub-lithtrix-search",
+  "name": "lithtrix-skills-api",
+  "summary": "Operate Lithtrix (lithtrix.ai) from an agent — self-serve API keys, credibility-scored web discovery, per-agent JSON memory, MCP tools, and free-tier referra...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lithtrix_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "learningloons-hash",
+      "features": [
+        "Operate Lithtrix (lithtrix.ai) from an agent — self-serve API keys, credibility-scored web disc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lithtrix-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264562756?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lithtrix-search",
+      "url": "https://clawhub.ai/skills/lithtrix-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lithtrix-search",
+    "url": "https://clawhub.ai/skills/lithtrix-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lithtrix-search-909702cbe03e88f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lithtrix-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lithtrix-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54feeef0ca16b768ec972e929573aa993438b5e089a8358106e34abacf34fe63",
+      "artifactSizeBytes": 2549
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T14:40:06.904Z"
+}

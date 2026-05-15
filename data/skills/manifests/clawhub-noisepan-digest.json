@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19739,
+  "uuid": "skill-clawhub-noisepan-digest",
+  "skillKey": "clawhub-noisepan-digest",
+  "name": "Noisepan Digest",
+  "summary": "Set up automated news digests using noisepan (signal extraction), entropia (source verification), and HN blind spot detection. Use when configuring daily new...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.noisepan_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ppiankov",
+      "features": [
+        "Set up automated news digests using noisepan (signal extraction), entropia (source verification.",
+        "Use when configuring daily new..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/noisepan-digest@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103106369?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "noisepan-digest",
+      "url": "https://clawhub.ai/skills/noisepan-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "noisepan-digest",
+    "url": "https://clawhub.ai/skills/noisepan-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/noisepan-digest-10f8721ae44c3c02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/noisepan-digest@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-noisepan-digest-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69e518625e1e01357570160cf3a3329386219c08e0e76b8214a8bc4e2f2e7a1a",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:27:30.766Z"
+}

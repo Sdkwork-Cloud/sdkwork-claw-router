@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63925,
+  "uuid": "skill-clawhub-ai-ppt-maker",
+  "skillKey": "clawhub-ai-ppt-maker",
+  "name": "help you to make annual work summary ppt",
+  "summary": "AI年终总结PPT生成器。用户输入姓名、年份、工作成果亮点和下一年度规划，自动分类整理内容，生成结构完整、排版专业的年终总结PPT文件（.pptx格式），并通过飞书发送给用户。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_ppt_maker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jay",
+      "features": [
+        "AI年终总结PPT生成器。用户输入姓名、年份、工作成果亮点和下一年度规划，自动分类整理内容，生成结构完整、排版专业的年终总结PPT文件（.pptx格式），并通过飞书发送给用户。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-ppt-maker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77764854?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-ppt-maker",
+      "url": "https://clawhub.ai/skills/ai-ppt-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-ppt-maker",
+    "url": "https://clawhub.ai/skills/ai-ppt-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-ppt-maker-99cd3bda5c1c29e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-ppt-maker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-ppt-maker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90b4636de8f09d7a34bc6c23f7a9b20114ba962bc8a49c971fdb36b9e0c2cd95",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T10:17:58.987Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lechat@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lechat",
+  "skill": {
+    "id": 34312,
+    "skillKey": "clawhub-lechat",
+    "name": "LeChat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lechat",
+    "url": "https://clawhub.ai/skills/lechat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lechat-6b17bb1077b41277.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LeChat agent collaboration platform. Use when building, configuring, or debugging LeChat components."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "saullockyip",
+      "userId": "s1723a9wg4dwh9ewha847wfhd584ph45",
+      "displayName": "Char Siu",
+      "image": "https://avatars.githubusercontent.com/u/81426115?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1777031143884,
+      "changelog": "- Documentation now uses English for thread usage guidelines instead of Chinese.\n- Section renamed from \"Thread 使用规范\" to \"Thread Usage Guidelines\" with clearer examples and naming tips.\n- Minor formatting and language improvements for clarity and consistency in instructions.\n- No functional or file changes in this release; update is documentation-only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e0556a3330524fc84377586d4f09db9d73d5807ca2b34630ae511d3daf4e8f4"
+}

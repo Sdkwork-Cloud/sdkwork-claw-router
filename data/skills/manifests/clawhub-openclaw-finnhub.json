@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10771,
+  "uuid": "skill-clawhub-openclaw-finnhub",
+  "skillKey": "clawhub-openclaw-finnhub",
+  "name": "Finnhub Skill",
+  "summary": "Provides real-time US stock quotes and financial data using the Finnhub API and Python.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_finnhub",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "keyfrog-21K",
+      "features": [
+        "Provides real-time US stock quotes and financial data using the Finnhub API and Python."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-finnhub@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77488170?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-finnhub",
+      "url": "https://clawhub.ai/skills/openclaw-finnhub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-finnhub",
+    "url": "https://clawhub.ai/skills/openclaw-finnhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-finnhub-b795aa05c02f323b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-finnhub@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-finnhub-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbb527c8a31472c4e04e6fef6460c5a14c840a05e3a2f60c82828a3169ad0a40",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T00:50:18.120Z"
+}

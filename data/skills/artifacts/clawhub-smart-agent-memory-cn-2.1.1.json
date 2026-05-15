@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-agent-memory-cn@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_agent_memory_cn",
+  "skill": {
+    "id": 60768,
+    "skillKey": "clawhub-smart-agent-memory-cn",
+    "name": "Openclaw Skills Smart Agent Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-agent-memory-cn",
+    "url": "https://clawhub.ai/skills/smart-agent-memory-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-agent-memory-cn-0c1c3ccc88847810.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "跨平台 Agent 长期记忆系统。分层上下文供给 + 温度模型 + Skill经验记忆 + 结构化存储 + 自动归档。三层存储：Markdown（人可读，QMD 可搜索）+ JSON（结构化）+ SQLite/FTS5（高性能全文搜索）。纯 Node.js 原生模块，零外部依赖。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tntest",
+      "userId": "s17es0bxen63p2hd7rb35ek5d183kjb3",
+      "displayName": "TNTest",
+      "image": "https://avatars.githubusercontent.com/u/470968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 346,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1773670587908,
+      "changelog": "README + SKILL.md 添加 qmd 安全说明：可选工具、10秒超时、自动降级、无命令注入风险",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae399ed3570219fa72a8967eb116df2a191494acf458421bc457004ecf07b1ed"
+}

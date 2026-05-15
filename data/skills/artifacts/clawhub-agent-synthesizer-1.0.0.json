@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-synthesizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_synthesizer",
+  "skill": {
+    "id": 17172,
+    "skillKey": "clawhub-agent-synthesizer",
+    "name": "Agent Synthesizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-synthesizer",
+    "url": "https://clawhub.ai/skills/agent-synthesizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-synthesizer-52f6856d6f91aa17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enable and configure Agent Synthesizer for OpenClaw to improve autonomy and execution throughput. Use when a user asks to install, set up, troubleshoot, or o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rylena",
+      "userId": "publishers:rylena",
+      "displayName": "Rylen Anil",
+      "image": "https://avatars.githubusercontent.com/u/47320423?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 777,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771832930735,
+      "changelog": "Initial release: README-first setup workflow for https://github.com/rylena/agent-synth.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0f8ba7f87403b056cc671d462d7673d5cbc4fd216d06ab480010cec7752f6758"
+}

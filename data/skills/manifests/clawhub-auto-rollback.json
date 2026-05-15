@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40774,
+  "uuid": "skill-clawhub-auto-rollback",
+  "skillKey": "clawhub-auto-rollback",
+  "name": "auto-rollback",
+  "summary": "Timed rollback safety net for edits to ~/.openclaw/openclaw.json on macOS. Use when changing Gateway config, restarting Gateway after config edits, or needin...",
+  "version": "1.2.0-alpha.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_rollback",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "extraterrest",
+      "features": [
+        "Timed rollback safety net for edits to ~/.openclaw/openclaw.json on macOS",
+        "Use when changing Gateway config, restarting Gateway after config edits, or needin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-rollback@1.2.0-alpha.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2050923?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-rollback",
+      "url": "https://clawhub.ai/skills/auto-rollback"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-rollback",
+    "url": "https://clawhub.ai/skills/auto-rollback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-rollback-a251992bef7f4cb2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-rollback@1.2.0-alpha.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-rollback-1.2.0-alpha.2.json",
+      "version": "1.2.0-alpha.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1d28f25294b365367463598eb3ec513a243685431c273fe743f8c4ce135a4dd",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T03:10:10.059Z"
+}

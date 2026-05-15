@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-security-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_security_toolkit",
+  "skill": {
+    "id": 11722,
+    "skillKey": "clawhub-openclaw-security-toolkit",
+    "name": "Openclaw Security Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-security-toolkit",
+    "url": "https://clawhub.ai/skills/openclaw-security-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-security-toolkit-91612e61df38d065.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security guard for OpenClaw users. Audit configs, scan secrets, manage access, and generate security reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hkall",
+      "userId": "publishers:hkall",
+      "displayName": "hkall",
+      "image": "https://avatars.githubusercontent.com/u/29396669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1956,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773201618878,
+      "changelog": "Initial release of the OpenClaw Security Toolkit.\n\n- Security guard tool for OpenClaw users: audit configs, scan secrets, manage access, and generate security reports.\n- Provides CLI commands for auditing, scanning, reporting, hardening, and access management.\n- Supports multiple output formats: table, JSON, and markdown.\n- No external dependencies; works with Python 3.6+.\n- Includes options for language, verbosity, deep scans, and auto-fix.\n- Documentation and usage examples included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2d6f54b15f78a0ac4f52cc510dc187a6813320bb56adb5e73234e5ccbb831059"
+}

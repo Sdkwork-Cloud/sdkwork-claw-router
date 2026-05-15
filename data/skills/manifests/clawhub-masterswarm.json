@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16997,
+  "uuid": "skill-clawhub-masterswarm",
+  "skillKey": "clawhub-masterswarm",
+  "name": "MasterSwarm AI Document Analysis",
+  "summary": "Analyze any document with 15 parallel AI engines via the MasterSwarm cloud API. Upload receipts, contracts, lab results, or ask business/crypto/legal questio...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.masterswarm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hlias Staurou",
+      "features": [
+        "Analyze any document with 15 parallel AI engines via the MasterSwarm cloud API",
+        "Upload receipts, contracts, lab results, or ask business/crypto/legal questio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/masterswarm@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12682510?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "masterswarm",
+      "url": "https://clawhub.ai/skills/masterswarm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "masterswarm",
+    "url": "https://clawhub.ai/skills/masterswarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/masterswarm-7716a7b8af7a5b7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/masterswarm@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-masterswarm-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f464d04945d2e6de38f75db757426cbf579e91fbdd9c23e34ed408852b129e3d",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T09:49:32.401Z"
+}

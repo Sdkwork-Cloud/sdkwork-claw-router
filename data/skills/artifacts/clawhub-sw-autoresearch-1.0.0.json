@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sw-autoresearch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sw_autoresearch",
+  "skill": {
+    "id": 16981,
+    "skillKey": "clawhub-sw-autoresearch",
+    "name": "Autoresearch Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sw-autoresearch",
+    "url": "https://clawhub.ai/skills/sw-autoresearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sw-autoresearch-399aca8b4c4e911c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conducts autonomous, iterative research by defining goals, generating hypotheses, verifying results, modifying approaches, and repeating until criteria are met."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amdf01-debug",
+      "userId": "publishers:amdf01-debug",
+      "displayName": "amdf01-debug",
+      "image": "https://avatars.githubusercontent.com/u/252609374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 501,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774155735318,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb304fd6192499b4aab82673217c04ebd7b0e9215f16ccaddcb9013af5fa91bd"
+}

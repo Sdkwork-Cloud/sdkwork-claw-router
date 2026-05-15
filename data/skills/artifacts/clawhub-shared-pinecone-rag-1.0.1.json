@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shared-pinecone-rag@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shared_pinecone_rag",
+  "skill": {
+    "id": 21353,
+    "skillKey": "clawhub-shared-pinecone-rag",
+    "name": "Shared Pinecone RAG"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shared-pinecone-rag",
+    "url": "https://clawhub.ai/skills/shared-pinecone-rag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shared-pinecone-rag-daa38e4ad3cf381d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the shared Pinecone RAG index for any agent in this workspace. Use when an agent needs to ingest markdown/text docs into pulse-rag or query semantic cont..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cryptobro-man",
+      "userId": "publishers:cryptobro-man",
+      "displayName": "cryptobro-man",
+      "image": "https://avatars.githubusercontent.com/u/78248519?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 512,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772329732005,
+      "changelog": "Docs update: advertise combined usage with hybrid-db-health as Persistent Memory skill stack.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e2c48135c87811ffcc5647e1b2ad39a579b688a2b4c7e9d0e01117fce2211219"
+}

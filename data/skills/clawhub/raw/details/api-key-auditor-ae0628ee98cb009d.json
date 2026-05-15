@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "api-key-auditor",
+    "displayName": "api-key-auditor",
+    "summary": "扫描 ~/.openclaw/workspace/skills 目录下所有文件中的硬编码 API Key、Token、Secret，检查是否已集成到 openclaw.json env.vars，并可自动将未集成的凭证迁移进去。Use when user asks to audit/check/scan for...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 286,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773913057232,
+    "updatedAt": 1778312740705
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773913057232,
+    "changelog": "Initial release — scans and audits hardcoded API keys and credentials in the skills directory, with optional migration to central config.\n\n- Scans all files in ~/.openclaw/workspace/skills for hardcoded API keys, tokens, and secrets.\n- Reports integration status: integrated in openclaw.json, managed by mcporter, or not yet integrated.\n- Supports read-only audit and --fix mode for automatic migration of unregistered credentials to openclaw.json env.vars.\n- Skips sample values and mcporter-managed keys to avoid false positives.\n- Clear instructions provided for manual replacement and integration workflow.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "lemongggit",
+    "userId": "s17774rb2327c6ahsyntwfvwgh83hjjj",
+    "displayName": "lemonGGGit",
+    "image": "https://avatars.githubusercontent.com/u/36196725?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778312740705
+  }
+}

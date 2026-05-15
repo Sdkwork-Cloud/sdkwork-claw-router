@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68229,
+  "uuid": "skill-clawhub-shenmeng-self-evolution-engine",
+  "skillKey": "clawhub-shenmeng-self-evolution-engine",
+  "name": "Self Evolution Engine 自我进化引擎",
+  "summary": "自我进化引擎 - 让AI Skill具备自我分析、自我改进、自我学习的能力。通过监控执行日志、分析用户反馈、自动发现优化点并生成改进方案，实现Skills的持续进化。适用于技能开发者希望自动化技能维护、优化和迭代的场景。",
+  "version": "2025.4.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shenmeng_self_evolution_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenmeng",
+      "features": [
+        "让AI Skill具备自我分析、自我改进、自我学习的能力。通过监控执行日志、分析用户反馈、自动发现优化点并生成改进方案，实现Skills的持续进化。适用于技能开发者希望自动化技能维护、优化和."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shenmeng-self-evolution-engine@2025.4.15",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6897076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shenmeng-self-evolution-engine",
+      "url": "https://clawhub.ai/skills/shenmeng-self-evolution-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shenmeng-self-evolution-engine",
+    "url": "https://clawhub.ai/skills/shenmeng-self-evolution-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shenmeng-self-evolution-engine-abcafce78c3b98a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shenmeng-self-evolution-engine@2025.4.15",
+      "artifactUrl": "data/skills/artifacts/clawhub-shenmeng-self-evolution-engine-2025.4.15.json",
+      "version": "2025.4.15",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07ca271c4985553dc3db811fd4a234804b2d7b214b1c91ee8e0288ac898ca4be",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T05:11:28.042Z"
+}

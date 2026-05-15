@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/domain-trust-check@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.domain_trust_check",
+  "skill": {
+    "id": 15879,
+    "skillKey": "clawhub-domain-trust-check",
+    "name": "Domain Trust Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "domain-trust-check",
+    "url": "https://clawhub.ai/skills/domain-trust-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/domain-trust-check-875f1eef3be09ef9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "URL safety scanner and domain reputation checker. Use when: checking if a URL is safe before visiting, scanning links in emails/messages, verifying domains f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamesouttake",
+      "userId": "s173g2qzy7b0vgg7gd3zaw9y3h83j1re",
+      "displayName": "hola",
+      "image": "https://avatars.githubusercontent.com/u/241784884?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 847,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1772561148917,
+      "changelog": "Add support email (trust-check@outtake.ai)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:277f149a22577026f3611583af078c95009a7a23c7057bed0ed7aba8a716d882"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/radarr-plus@0.1.7",
+  "version": "0.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.radarr_plus",
+  "skill": {
+    "id": 9666,
+    "skillKey": "clawhub-radarr-plus",
+    "name": "Radarr+"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "radarr-plus",
+    "url": "https://clawhub.ai/skills/radarr-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/radarr-plus-2521a521bd6935f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add and manage movies in a Radarr instance via its HTTP API (search/lookup movies, list quality profiles and root folders, add a movie by title/year or TMDB id, and trigger a search). Use when the user asks to add/request/download a movie."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vishalchaudhary",
+      "userId": "publishers:vishalchaudhary",
+      "displayName": "WarHog",
+      "image": "https://avatars.githubusercontent.com/u/1926577?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2837,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 7,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.1.7",
+      "createdAt": 1770137634453,
+      "changelog": "Docs: fix ClawHub rendering by removing HTML table and using smaller TMDB poster (w185).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4321d1d3fa1e70503d59bddd020c0d244e56138112464d374cea80d9d726a3b6"
+}

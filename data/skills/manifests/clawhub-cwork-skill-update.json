@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65379,
+  "uuid": "skill-clawhub-cwork-skill-update",
+  "skillKey": "clawhub-cwork-skill-update",
+  "name": "Cwork Skill Update",
+  "summary": "管理工作协同中的员工查询、汇报处理、待办闭环和任务协作流程。触发词：cwork/CWork/工作协同/发送汇报/发汇报/汇报/申请/周报/待办/任务/催办/搜索员工/查收件箱。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cwork_skill_update",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "spzwin",
+      "features": [
+        "管理工作协同中的员工查询、汇报处理、待办闭环和任务协作流程。触发词：cwork/CWork/工作协同/发送汇报/发汇报/汇报/申请/周报/待办/任务/催办/搜索员工/查收件箱。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cwork-skill-update@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48741773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cwork-skill-update",
+      "url": "https://clawhub.ai/skills/cwork-skill-update"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cwork-skill-update",
+    "url": "https://clawhub.ai/skills/cwork-skill-update",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cwork-skill-update-2fa47bd3ddb3f6d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cwork-skill-update@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-cwork-skill-update-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0accb197e5038d822c2fd98189480b298968dac5bb20eb4ee67bf7016259af8",
+      "artifactSizeBytes": 2499
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T12:25:13.500Z"
+}

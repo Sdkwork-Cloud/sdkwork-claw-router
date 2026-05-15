@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52740,
+  "uuid": "skill-clawhub-quebec-city-opendata",
+  "skillKey": "clawhub-quebec-city-opendata",
+  "name": "Ville de Québec Open Data",
+  "summary": "Access 37+ datasets from the City of Quebec open data portal. Search, fetch, and analyze city data on streets, permits, trees, infrastructure, and more via t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quebec_city_opendata",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ray Chan, PMP",
+      "features": [
+        "Access 37+ datasets from the City of Quebec open data portal",
+        "Search, fetch, and analyze city data on streets, permits, trees, infrastructure, and more via t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quebec-city-opendata@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63657868?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quebec-city-opendata",
+      "url": "https://clawhub.ai/skills/quebec-city-opendata"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quebec-city-opendata",
+    "url": "https://clawhub.ai/skills/quebec-city-opendata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quebec-city-opendata-f17e2ce57be5c394.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quebec-city-opendata@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quebec-city-opendata-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:164878aded521dd40b950f886fe9e6e4abc1852724a4016de6f3cbc92787aff2",
+      "artifactSizeBytes": 2039
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T22:35:39.270Z"
+}

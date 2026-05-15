@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40558,
+  "uuid": "skill-clawhub-jpeng-music-transposer",
+  "skillKey": "clawhub-jpeng-music-transposer",
+  "name": "music-transposer",
+  "summary": "Transpose music keys",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpeng_music_transposer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jpengcheng523-netizen",
+      "features": [
+        "Transpose music keys"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jpeng-music-transposer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226868999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jpeng-music-transposer",
+      "url": "https://clawhub.ai/skills/jpeng-music-transposer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpeng-music-transposer",
+    "url": "https://clawhub.ai/skills/jpeng-music-transposer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpeng-music-transposer-a93d68d2e52de7cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jpeng-music-transposer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jpeng-music-transposer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25555d250c5d90af2136db85b0bfe821560056cd4655d8a54860d42aefd250bb",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T04:02:55.572Z"
+}

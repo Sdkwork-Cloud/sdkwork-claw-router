@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/replit-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.replit_agent",
+  "skill": {
+    "id": 61561,
+    "skillKey": "clawhub-replit-agent",
+    "name": "Replit Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "replit-agent",
+    "url": "https://clawhub.ai/skills/replit-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/replit-agent-fcb4c3234b8cb6e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Replit Agent 助手，精通云端 AI 编程、自动部署、数据库集成、全栈应用开发"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774194485737,
+      "changelog": "- Skill renamed from \"Claude Prompt\" to \"Replit Agent\" with a new focus on Replit cloud AI programming.\n- Entire SKILL.md content rewritten to describe Replit Agent's capabilities and features.\n- Previous focus on Claude prompt engineering replaced with Replit’s agent workflow, cloud deployment, database, and full-stack integration.\n- Added comparison table with competing platforms (Bolt.new, Lovable, Cursor).\n- Included best practices and practical application scenarios for rapid prototyping, full-stack, API, and learning projects.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c2524a3c86af39e54f3782a2b5475d7a1078cb2b9fdd62aa891e39b9e1fbf52"
+}

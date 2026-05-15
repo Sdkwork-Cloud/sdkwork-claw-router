@@ -22,7 +22,7 @@ async fn app_model_rankings_route_reports_service_unavailable_when_read_store_is
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/router/model-rankings")
+                .uri("/app/v3/api/ai/model_rankings")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -49,7 +49,7 @@ async fn admin_model_rankings_route_requires_trusted_subject_before_unconfigured
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/backend/v3/api/router/model-rankings")
+                .uri("/backend/v3/api/ai/model_rankings")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -68,7 +68,7 @@ async fn admin_model_ranking_status_route_requires_trusted_subject() {
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/backend/v3/api/router/model-rankings/status")
+                .uri("/backend/v3/api/ai/model_rankings/status")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -87,7 +87,7 @@ async fn admin_model_ranking_status_route_returns_refresh_observability_snapshot
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/backend/v3/api/router/model-rankings/status?rankScope=commercial-default")
+                .uri("/backend/v3/api/ai/model_rankings/status?rank_scope=commercial-default")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -128,7 +128,9 @@ async fn admin_model_ranking_jobs_route_returns_recent_refresh_execution_history
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/backend/v3/api/router/model-rankings/jobs?rankScope=commercial-default&limit=20")
+                .uri(
+                    "/backend/v3/api/ai/model_rankings/jobs?rank_scope=commercial-default&limit=20",
+                )
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -173,7 +175,7 @@ async fn admin_model_ranking_manual_refresh_route_requires_trusted_subject() {
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/router/model-rankings/refresh")
+                .uri("/backend/v3/api/ai/model_rankings/refresh")
                 .header("content-type", "application/json")
                 .body(Body::from(r#"{"rankScope":"commercial-default"}"#))
                 .unwrap(),
@@ -197,7 +199,7 @@ async fn admin_model_ranking_manual_refresh_route_runs_worker_and_returns_result
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/router/model-rankings/refresh")
+                .uri("/backend/v3/api/ai/model_rankings/refresh")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -270,7 +272,7 @@ async fn admin_model_ranking_manual_refresh_route_rejects_concurrent_refresh() {
             .oneshot(
                 Request::builder()
                     .method("POST")
-                    .uri("/backend/v3/api/router/model-rankings/refresh")
+                    .uri("/backend/v3/api/ai/model_rankings/refresh")
                     .header("x-sdkwork-tenant-id", "10")
                     .header("x-sdkwork-organization-id", "20")
                     .header("x-sdkwork-user-id", "30")
@@ -287,7 +289,7 @@ async fn admin_model_ranking_manual_refresh_route_rejects_concurrent_refresh() {
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/router/model-rankings/refresh")
+                .uri("/backend/v3/api/ai/model_rankings/refresh")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")

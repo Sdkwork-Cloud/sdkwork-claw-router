@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46787,
+  "uuid": "skill-clawhub-zwj-github-mcp",
+  "skillKey": "clawhub-zwj-github-mcp",
+  "name": "github-mcp",
+  "summary": "Use the GitHub MCP server (github-mcp-server) to browse repositories, manage issues and PRs, analyze code, search files, monitor CI/CD workflows, and automat...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zwj_github_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zwj-opener",
+      "features": [
+        "Use the GitHub MCP server (github-mcp-server) to browse repositories, manage issues and PRs, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zwj-github-mcp@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269986619?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zwj-github-mcp",
+      "url": "https://clawhub.ai/skills/zwj-github-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zwj-github-mcp",
+    "url": "https://clawhub.ai/skills/zwj-github-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zwj-github-mcp-435e9a297b19c496.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zwj-github-mcp@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zwj-github-mcp-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8af3ce5268cd44cbbf5c7f3ad89e159ad344d1ad09e4b27429103e8d52c8e486",
+      "artifactSizeBytes": 1886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T22:14:16.370Z"
+}

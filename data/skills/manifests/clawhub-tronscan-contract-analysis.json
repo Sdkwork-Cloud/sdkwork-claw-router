@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20846,
+  "uuid": "skill-clawhub-tronscan-contract-analysis",
+  "skillKey": "clawhub-tronscan-contract-analysis",
+  "name": "TronScan Contract Analysis",
+  "summary": "Analyze TRON contracts: deploy info, hot methods, top callers, open-source status, transaction count. Use when user asks \"contract verification\", \"contract s...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tronscan_contract_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BigFrog",
+      "features": [
+        "Analyze TRON contracts: deploy info, hot methods, top callers, open-source status, transaction.",
+        "Use when user asks \"contract verification\", \"contract s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tronscan-contract-analysis@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142767282?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tronscan-contract-analysis",
+      "url": "https://clawhub.ai/skills/tronscan-contract-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tronscan-contract-analysis",
+    "url": "https://clawhub.ai/skills/tronscan-contract-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tronscan-contract-analysis-83168bd31434a31b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tronscan-contract-analysis@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-tronscan-contract-analysis-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98c4943d0e3a64718b650a5e1f5f9b64bd16c960053af739c9f497331fa42129",
+      "artifactSizeBytes": 2232
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:24:16.819Z"
+}

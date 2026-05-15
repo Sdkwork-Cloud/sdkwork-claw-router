@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/truthcheck@0.4.4",
+  "version": "0.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.truthcheck",
+  "skill": {
+    "id": 16472,
+    "skillKey": "clawhub-truthcheck",
+    "name": "Truthcheck"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "truthcheck",
+    "url": "https://clawhub.ai/skills/truthcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/truthcheck-9d56c80edc224437.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verify claims, fact-check content, check URL trustworthiness, and trace claims to their origin using the TruthCheck CLI. Use when: (1) user asks to fact-chec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baiyishr",
+      "userId": "s176c5wqxpzm37bqa8f88hz8fh83mn0x",
+      "displayName": "Xiaobing Li",
+      "image": "https://avatars.githubusercontent.com/u/3783600?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 863,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.4.4",
+      "createdAt": 1774044883346,
+      "changelog": "Add installation guide to SKILL.md",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6743f8abfc29c3f86730134f82900a3af52f90facb1e1f06b5d9aeb39a5bedf"
+}

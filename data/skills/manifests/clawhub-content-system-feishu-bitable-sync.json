@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55935,
+  "uuid": "skill-clawhub-content-system-feishu-bitable-sync",
+  "skillKey": "clawhub-content-system-feishu-bitable-sync",
+  "name": "Content System Feishu Bitable Sync",
+  "summary": "Sync a local `wechat-report` result into Feishu Bitable after the user has reviewed the report and confirmed the sync.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_system_feishu_bitable_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Abigale-cyber",
+      "features": [
+        "Sync a local `wechat-report` result into Feishu Bitable after the user has reviewed the report."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-system-feishu-bitable-sync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237663252?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-system-feishu-bitable-sync",
+      "url": "https://clawhub.ai/skills/content-system-feishu-bitable-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-system-feishu-bitable-sync",
+    "url": "https://clawhub.ai/skills/content-system-feishu-bitable-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-system-feishu-bitable-sync-60d21164d235b7cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-system-feishu-bitable-sync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-system-feishu-bitable-sync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d588885c38fe02496a14bd989e54b4271b65cefd95760c1e1079119d6a28f05",
+      "artifactSizeBytes": 2485
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T14:14:31.515Z"
+}

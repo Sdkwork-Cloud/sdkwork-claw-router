@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64335,
+  "uuid": "skill-clawhub-nomoreforget",
+  "skillKey": "clawhub-nomoreforget",
+  "name": "NoMoreForget",
+  "summary": "让 OpenClaw 不再失忆！一键解决记忆问题：失忆、Token 消耗高、搜不到。自动启用 Memory Flush、优化记忆配置、提供诊断备份工具。触发词：龙虾失忆、记忆问题、Token 消耗高、记忆配置、memory 问题、记不住。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nomoreforget",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Steventsang18",
+      "features": [
+        "让 OpenClaw 不再失忆！一键解决记忆问题：失忆、Token 消耗高、搜不到。自动启用 Memory Flush、优化记忆配置、提供诊断备份工具。触发词：龙虾失忆、记忆问题、Token."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nomoreforget@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266535646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nomoreforget",
+      "url": "https://clawhub.ai/skills/nomoreforget"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nomoreforget",
+    "url": "https://clawhub.ai/skills/nomoreforget",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nomoreforget-ab1cab66feb3662e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nomoreforget@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nomoreforget-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3957fe34e9c993945ebddd7d2b05c27f81605cd787a41cb3ab3f8c6b1739995",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T07:34:37.732Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-mirrors@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_mirrors",
+  "skill": {
+    "id": 62736,
+    "skillKey": "clawhub-china-mirrors",
+    "name": "China Mirrors"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-mirrors",
+    "url": "https://clawhub.ai/skills/china-mirrors",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-mirrors-e8a60bc3fd7520e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动配置 Python pip、npm、yarn、pnpm、cargo、go mod、NuGet、RubyGems、Conda、Homebrew、Gradle 等包管理器的国内镜像源。使用当用户提到下载慢、安装依赖、配置镜像、加速包下载、设置国内源，或在中国大陆开发需要加速依赖安装时。支持阿里云、腾讯云、清华大学..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "normdist-ai",
+      "userId": "s17319ta8zdseb1h03jj0t118n849d12",
+      "displayName": "NormDist",
+      "image": "https://avatars.githubusercontent.com/u/188064804?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1775648595577,
+      "changelog": "**Major update: Skill package now relies on dynamic runtime commands, with all static reference/scripts removed.**\n\n- 移除了所有自带文档与脚本（如 README、examples、测试脚本等），技能核心内容完全迁移至 SKILL.md 指南。\n- 新版指南明确要求 Agent 按阶段动态检测需求、确认用户意图、执行配置，不再调用或生成任何本地/静态脚本。\n- 所有主流包管理器的国内镜像源配置命令清单全部内嵌在 SKILL.md，并提供交互式确认与验证指引。\n- 推荐镜像源表进行了简化和更新，操作步骤更加聚焦终端原生命令执行。\n- Skill 类型及元数据（如 author、license）正式补全，结构化更规范。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:10be9c04241643ae0cbafb891ac108475019ea593a717513bc1dec529e4732c6"
+}

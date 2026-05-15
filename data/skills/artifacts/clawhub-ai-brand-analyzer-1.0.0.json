@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-brand-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_brand_analyzer",
+  "skill": {
+    "id": 11023,
+    "skillKey": "clawhub-ai-brand-analyzer",
+    "name": "AI Brand Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-brand-analyzer",
+    "url": "https://clawhub.ai/skills/ai-brand-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-brand-analyzer-3708fec98b5a1a3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze brands to generate comprehensive brand identity profiles (JSON). Use when the user wants to analyze a brand, create a brand profile, or needs brand data for ad generation. Stores profiles for reuse across Ad-Ready, Morpheus, and ot."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pauldelavallaz",
+      "userId": "publishers:pauldelavallaz",
+      "displayName": "Paul de Lavallaz",
+      "image": "https://avatars.githubusercontent.com/u/51497690?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2031,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770273239453,
+      "changelog": "v1.0.0: Brand identity profiler using Gemini Flash + Google Search grounding. Generates comprehensive JSON profiles for ad generation workflows (Product to Ads, Morpheus, etc).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:29fa34dcfe4962ee587d442172ddff6fce846b3ea2fe441a35953278e4294d07"
+}

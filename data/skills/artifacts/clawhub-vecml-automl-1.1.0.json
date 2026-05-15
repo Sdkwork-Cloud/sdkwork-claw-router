@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vecml-automl@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vecml_automl",
+  "skill": {
+    "id": 52434,
+    "skillKey": "clawhub-vecml-automl",
+    "name": "VecML AutoML"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vecml-automl",
+    "url": "https://clawhub.ai/skills/vecml-automl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vecml-automl-d99f78bc48fa4dc8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "VecML AutoML — Drop a CSV, train an ML model, get predictions. One command. Use when the user asks to: train a model, upload data, run predictions, classify,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tinle2",
+      "userId": "s170swczwagrq9gn12dgqky5jn83kpvx",
+      "displayName": "Tin Le",
+      "image": "https://avatars.githubusercontent.com/u/101690568?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774470588319,
+      "changelog": "v1.1: One-command pipeline script, auto-detects columns, drops IDs/free-text, proper CSV handling, visual output with metrics and feature bars",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:416046197edccf9084bcb099f2e682994de2fcd262f981d79f211b23436943db"
+}

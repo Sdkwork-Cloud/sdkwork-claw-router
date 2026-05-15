@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34024,
+  "uuid": "skill-clawhub-vision-helpdesk",
+  "skillKey": "clawhub-vision-helpdesk",
+  "name": "Vision Helpdesk",
+  "summary": "Vision Helpdesk integration. Manage data, records, and automate workflows. Use when the user wants to interact with Vision Helpdesk data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vision_helpdesk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Vision Helpdesk integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Vision Helpdesk data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vision-helpdesk@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vision-helpdesk",
+      "url": "https://clawhub.ai/skills/vision-helpdesk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vision-helpdesk",
+    "url": "https://clawhub.ai/skills/vision-helpdesk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vision-helpdesk-87e8b25a2da0b55c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vision-helpdesk@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-vision-helpdesk-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64639c739344888313fb920787300b8410822313b1c378bf77cb99cf8ea9ec44",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:59:19.053Z"
+}

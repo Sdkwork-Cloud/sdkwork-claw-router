@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10409,
+  "uuid": "skill-clawhub-frontend-dev",
+  "skillKey": "clawhub-frontend-dev",
+  "name": "NextJS Frontend Development + Integration",
+  "summary": "Generate production-ready Next.js projects with TypeScript, Tailwind CSS, shadcn/ui, and API integration. Use when the user asks to build, create, develop, or scaffold a Next.js application, web app, full-stack project, or frontend with ba.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.frontend_dev",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wing8169",
+      "features": [
+        "Generate production-ready Next.js projects with TypeScript, Tailwind CSS, shadcn/ui, and API in.",
+        "Use when the user asks to build, create, develop, or scaffold a Next.js application, web app, f.",
+        "Prioritizes modern stack (Next.js 14+, TypeScript, shadcn/ui, axios, react-query) and best prac.",
+        "Also triggers on requests to add features, integrate APIs, or extend existing Next.js projects."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/frontend-dev@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33794617?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "frontend-dev",
+      "url": "https://clawhub.ai/skills/frontend-dev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "frontend-dev",
+    "url": "https://clawhub.ai/skills/frontend-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/frontend-dev-309ffd253515ad79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/frontend-dev@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-frontend-dev-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bc38e76a0ec88c2b372ad8b53b50f285cb45396c8319891da301f0611bfc59d",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T09:57:06.510Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/product-expert-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_expert_review",
+  "skill": {
+    "id": 45024,
+    "skillKey": "clawhub-product-expert-review",
+    "name": "product-expert-review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-expert-review",
+    "url": "https://clawhub.ai/skills/product-expert-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-expert-review-b26e8a4672b313c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate deep product experience reviews for AI tools, agent products, SaaS products, or consumer-facing software based on a website URL, screenshots, or bot..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jelly6661",
+      "userId": "s178nkvjbmr8b5q3twmpmkv82h83jajn",
+      "displayName": "Jelly6661",
+      "image": "https://avatars.githubusercontent.com/u/112965575?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776393871263,
+      "changelog": "- Initial release of product-expert-review-enhanced.\n- Generates deep product experience reviews for AI tools, SaaS, or consumer software based on website URLs and/or screenshots.\n- Structured, evidence-driven analysis across 10 key user experience dimensions.\n- Automatically gathers public and competitor context; adapts based on provided materials.\n- Reports produced in Chinese by default, formatted for clarity and actionability.\n- Optionally uploads reviews to a Feishu doc for easy sharing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4527f46861986aaec8763fe55c9ae0e222235694be803542645b45d8542df2eb"
+}

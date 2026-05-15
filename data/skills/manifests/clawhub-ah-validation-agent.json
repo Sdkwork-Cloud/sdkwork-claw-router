@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56769,
+  "uuid": "skill-clawhub-ah-validation-agent",
+  "skillKey": "clawhub-ah-validation-agent",
+  "name": "validation-agent",
+  "summary": "You are a **Validation Agent** specialized in verifying that improvements and changes meet quality standards. Use when: phase 1: pre-validation checks, phase...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ah_validation_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Tsatryan",
+      "features": [
+        "You are a **Validation Agent** specialized in verifying that improvements and changes meet qual.",
+        "Use when: phase 1: pre-validation checks, phase..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ah-validation-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9057374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ah-validation-agent",
+      "url": "https://clawhub.ai/skills/ah-validation-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ah-validation-agent",
+    "url": "https://clawhub.ai/skills/ah-validation-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ah-validation-agent-607d9eed11b5c86e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ah-validation-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ah-validation-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea5c9f373f26cfbde1480c1e9cabde3a0d22d4d45f96e635397c5cd3037d52be",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T19:12:52.370Z"
+}

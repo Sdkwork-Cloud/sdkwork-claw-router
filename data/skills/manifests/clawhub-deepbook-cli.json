@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14049,
+  "uuid": "skill-clawhub-deepbook-cli",
+  "skillKey": "clawhub-deepbook-cli",
+  "name": "DeepBook CLI. Watch, Make & Take the Sui Market",
+  "summary": "Operate the deepbook CLI for DeepBook reads (REST/SSE), global ~/.deepbook config/account management, on-chain spot trading, top-level swap execution, balance-manager ops, and margin trading.",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepbook_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "astinz",
+      "features": [
+        "Operate the deepbook CLI for DeepBook reads (REST/SSE), global ~/.deepbook config/account manag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepbook-cli@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28899947?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepbook-cli",
+      "url": "https://clawhub.ai/skills/deepbook-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepbook-cli",
+    "url": "https://clawhub.ai/skills/deepbook-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepbook-cli-9eb4908c392edfe3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepbook-cli@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepbook-cli-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53b94ad63733d658a67602f5646f1ba34815b297c5e4dbd13dd8e499da38a79c",
+      "artifactSizeBytes": 2637
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T02:17:11.330Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71506,
+  "uuid": "skill-clawhub-gitlab-daily-report",
+  "skillKey": "clawhub-gitlab-daily-report",
+  "name": "GitLab 每日提交汇总",
+  "summary": "自动拉取 GitLab 多维度数据，生成智能摘要并推送到飞书。支持语义化聚类、项目动量分析及阻塞风险识别。适用于每日进度汇报、团队贡献分析及研发效能洞察。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitlab_daily_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chengxiansheng1",
+      "features": [
+        "自动拉取 GitLab 多维度数据，生成智能摘要并推送到飞书。支持语义化聚类、项目动量分析及阻塞风险识别。适用于每日进度汇报、团队贡献分析及研发效能洞察。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gitlab-daily-report@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/123325847?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gitlab-daily-report",
+      "url": "https://clawhub.ai/skills/gitlab-daily-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitlab-daily-report",
+    "url": "https://clawhub.ai/skills/gitlab-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitlab-daily-report-f615453ca1f579b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gitlab-daily-report@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-gitlab-daily-report-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08f521aa8b35c4853947159755a24180aacdda970d3a00e3149bd27fd0fba1a4",
+      "artifactSizeBytes": 2549
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T14:04:14.527Z"
+}

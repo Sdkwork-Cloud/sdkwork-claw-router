@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trip-discover@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trip_discover",
+  "skill": {
+    "id": 23890,
+    "skillKey": "clawhub-trip-discover",
+    "name": "Trip Discover"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trip-discover",
+    "url": "https://clawhub.ai/skills/trip-discover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trip-discover-7f85a6528bdcd42b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Recommend travel destinations based on vibe, budget, duration, and group size. Handles \"suggest a trip\", \"where should I go\", \"weekend getaway\", \"compare X v..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "swayamg20",
+      "userId": "publishers:swayamg20",
+      "displayName": "Swayam Gupta",
+      "image": "https://avatars.githubusercontent.com/u/77153230?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 408,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772350510801,
+      "changelog": "- Initial release of trip-discover: personalized travel recommendations based on vibe, budget, duration, and group size.\n- Supports trip suggestions, destination comparisons, and plans from users’ saved places or wishlists.\n- Extracts key criteria from requests; defaults to Delhi as starting city if not specified.\n- Provides concise, real-time recommendations with travel details, estimated costs, and seasonal weather.\n- Opinionated, max three destination suggestions per request; always checks memory for saved places before suggesting new ones.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2cc3cddbdc99d9f13395d8719e839a1ae6111ab9f2ae1d86ac23060f92bc73b3"
+}

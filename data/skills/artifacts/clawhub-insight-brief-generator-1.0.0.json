@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/insight-brief-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insight_brief_generator",
+  "skill": {
+    "id": 59493,
+    "skillKey": "clawhub-insight-brief-generator",
+    "name": "Insight Brief Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insight-brief-generator",
+    "url": "https://clawhub.ai/skills/insight-brief-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insight-brief-generator-e35b556e979fe77e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "把报表和图表转成管理层可读的洞察摘要，区分发现、解释和建议动作。；use for insights, analytics, briefing workflows；do not use for 夸大结论, 把相关性当因果."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773800283861,
+      "changelog": "Initial release of insight-brief-generator.\n\n- Generates management-level insight briefs from reports and charts, clearly separating findings, explanations, and recommended actions.\n- Emphasizes distinction between correlation and causation; avoids exaggerating conclusions.\n- Provides structured outputs: core findings, data interpretation, possible causes, recommended actions, data gaps, and risk alerts.\n- Includes built-in guidance for missing information, security boundaries, and review workflows.\n- Supports both script-driven and direct text generation based on environment capabilities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb497716c74591aabe0641e70b9a77e2afb4affaed88ec3b1dfa7239ba07f38b"
+}

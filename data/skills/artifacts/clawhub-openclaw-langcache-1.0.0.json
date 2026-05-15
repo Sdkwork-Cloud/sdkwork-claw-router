@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-langcache@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_langcache",
+  "skill": {
+    "id": 12198,
+    "skillKey": "clawhub-openclaw-langcache",
+    "name": "Langcache Semantic Caching for OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-langcache",
+    "url": "https://clawhub.ai/skills/openclaw-langcache",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-langcache-7aa94ee45d8a561e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks to \"enable semantic caching\", \"cache LLM responses\", \"reduce API costs\", \"speed up AI responses\", \"configure LangCache\", \"search the semantic cache\", \"store responses in cache\", or mentions Redi."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "manvinder01",
+      "userId": "publishers:manvinder01",
+      "displayName": "manvinder01",
+      "image": "https://avatars.githubusercontent.com/u/16512475?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1776,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770172516522,
+      "changelog": "openclaw-langcache v1.0.0\n\n- Initial release.\n- Integrates Redis LangCache for semantic caching of LLM prompts and responses.\n- Provides bash scripts for searching, storing, deleting, and flushing cache entries.\n- Enforces robust caching policy to prevent unsafe or context-sensitive data from being stored.\n- Supports both semantic and exact match search strategies.\n- Includes usage documentation, environment variable setup, and example workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cbde12ef9869b46da7a734f8c44ab7e5cd2334264edf6df33aa15de91c48abaa"
+}

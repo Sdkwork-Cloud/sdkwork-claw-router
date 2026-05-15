@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22743,
+  "uuid": "skill-clawhub-openclaw-freecad-mcp",
+  "skillKey": "clawhub-openclaw-freecad-mcp",
+  "name": "FreeCAD MCP",
+  "summary": "Control FreeCAD via MCP to create and modify 3D models, automate CAD tasks, solve constraints, and integrate part libraries programmatically.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_freecad_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mars720816",
+      "features": [
+        "Control FreeCAD via MCP to create and modify 3D models, automate CAD tasks, solve constraints,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-freecad-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31459056?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-freecad-mcp",
+      "url": "https://clawhub.ai/skills/openclaw-freecad-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-freecad-mcp",
+    "url": "https://clawhub.ai/skills/openclaw-freecad-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-freecad-mcp-9268d5073bcc80b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-freecad-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-freecad-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c25398af32365df5f49100b8a960cc3e4d12dcb5b06f89f6a356bc8cd11eda4e",
+      "artifactSizeBytes": 2304
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:06:08.490Z"
+}

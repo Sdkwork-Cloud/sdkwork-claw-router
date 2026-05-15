@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencentcloud-aigc-recog-image@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_aigc_recog_image",
+  "skill": {
+    "id": 58529,
+    "skillKey": "clawhub-tencentcloud-aigc-recog-image",
+    "name": "TencentCloud Image AIGC Detection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-aigc-recog-image",
+    "url": "https://clawhub.ai/skills/tencentcloud-aigc-recog-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-aigc-recog-image-b2cf5a64526c3967.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "腾讯云 AI 生成图片识别 (TencentCloud Image AIGC Detection) 技能。适用于 AI 生成图片检测、图片真伪鉴别、AI 绘画检测、Deepfake 检测等场景。TencentCloud Image AIGC Detection is an AI-generated content..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shawn233",
+      "userId": "s179h1r6xe7hhk1ttzsb2fwh6983hnrh",
+      "displayName": "Xinyu Wang",
+      "image": "https://avatars.githubusercontent.com/u/35052417?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 503,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1774956460930,
+      "changelog": "- Added English introductions and descriptions for international users alongside the original Chinese content.\n- Updated the skill description to clarify its purpose in both Chinese and English, with greater emphasis on TencentCloud AIGC Detection functions.\n- Adjusted command usage examples to include English comments, improving clarity for non-Chinese speakers.\n- No changes to code, API, or behavior—documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4962dd0a10496721d27ac4437c218914b063abf38a46575e7ba46aeaef224b5"
+}

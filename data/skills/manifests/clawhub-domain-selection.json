@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53164,
+  "uuid": "skill-clawhub-domain-selection",
+  "skillKey": "clawhub-domain-selection",
+  "name": "domain-selection",
+  "summary": "When the user wants to choose an SEO-friendly domain for a new site—brand vs keyword domain, TLD selection, or domain best practices. Also use when the user...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.domain_selection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to choose an SEO-friendly domain for a new site—brand vs keyword domain, TL.",
+        "Also use when the user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/domain-selection@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "domain-selection",
+      "url": "https://clawhub.ai/skills/domain-selection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "domain-selection",
+    "url": "https://clawhub.ai/skills/domain-selection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/domain-selection-c17b4aa0ab808555.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/domain-selection@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-domain-selection-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0c416410eebb676086f1aee0fdab877c388737514236df64a613dc899243b5a",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:02:31.375Z"
+}

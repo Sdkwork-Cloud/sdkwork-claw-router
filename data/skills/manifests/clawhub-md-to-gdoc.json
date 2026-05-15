@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25959,
+  "uuid": "skill-clawhub-md-to-gdoc",
+  "skillKey": "clawhub-md-to-gdoc",
+  "name": "Md To Gdoc",
+  "summary": "Convert markdown files to properly formatted Google Docs. Use when asked to create a Google Doc from markdown, upload markdown to Google Docs, put a .md file...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_to_gdoc",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BrennerSpear",
+      "features": [
+        "Convert markdown files to properly formatted Google Docs",
+        "Use when asked to create a Google Doc from markdown, upload markdown to Google Docs, put a .md."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/md-to-gdoc@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12127609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "md-to-gdoc",
+      "url": "https://clawhub.ai/skills/md-to-gdoc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-to-gdoc",
+    "url": "https://clawhub.ai/skills/md-to-gdoc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-to-gdoc-f940e0b1e213ad6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/md-to-gdoc@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-md-to-gdoc-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4313cc3fcfc46b565121f13aea11aab85d8f783a161a27360bcbb200eb5f4414",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T04:56:18.052Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59421,
+  "uuid": "skill-clawhub-prd-generator-team",
+  "skillKey": "clawhub-prd-generator-team",
+  "name": "PRD GENERATOR - Interactive Demo & iWiki Publish",
+  "summary": "PRD文档生成器（团队版） - 从需求描述一键生成完整PRD文档与HTML交互原型，支持iWiki发布",
+  "version": "4.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prd_generator_team",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "junko-zhang",
+      "features": [
+        "PRD文档生成器（团队版）",
+        "从需求描述一键生成完整PRD文档与HTML交互原型，支持iWiki发布"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prd-generator-team@4.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267880817?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prd-generator-team",
+      "url": "https://clawhub.ai/skills/prd-generator-team"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prd-generator-team",
+    "url": "https://clawhub.ai/skills/prd-generator-team",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prd-generator-team-d947cbdba8419537.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prd-generator-team@4.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-prd-generator-team-4.0.4.json",
+      "version": "4.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0bda3e7851b5ebcd28d0f053a3e866575d0620fb1c1c31d1634e920e3aad5507",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T11:36:28.457Z"
+}

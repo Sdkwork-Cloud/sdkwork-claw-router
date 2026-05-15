@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/architecture-diagram@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.architecture_diagram",
+  "skill": {
+    "id": 26057,
+    "skillKey": "clawhub-architecture-diagram",
+    "name": "Architecture Diagram"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "architecture-diagram",
+    "url": "https://clawhub.ai/skills/architecture-diagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/architecture-diagram-0921b8f50d85ad51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI architecture diagram generator supporting Mermaid charts. Generate system architecture, cloud architecture, neural network, graph theory, flowchart, ER di..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smseow001",
+      "userId": "s17a72fh5mgpvvs3dm2ax0yq8984pnqc",
+      "displayName": "SMS",
+      "image": "https://avatars.githubusercontent.com/u/33817483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776401640075,
+      "changelog": "Fixed: Use PNG instead of SVG to preserve text in boxes. SVG to image conversion loses text, now using Kroki PNG API directly for correct rendering on Telegram and mobile.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:301557b517da5f9d128959fa3edf46f0da2e8562e9b0e5af7f4525d81b9b7a66"
+}

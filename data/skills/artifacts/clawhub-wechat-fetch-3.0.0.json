@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-fetch@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_fetch",
+  "skill": {
+    "id": 60991,
+    "skillKey": "clawhub-wechat-fetch",
+    "name": "Wechat Fetch Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-fetch",
+    "url": "https://clawhub.ai/skills/wechat-fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-fetch-4fd3a3278b00dfc5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信公众号文章抓取工具 v3.0 - Lite轻量版 + Playwright版，支持免登录、批量抓取、图片下载、多格式输出"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackyfan01",
+      "userId": "s178eexwn07y6a7yh97tfms3v183gajm",
+      "displayName": "JackyFan",
+      "image": "https://avatars.githubusercontent.com/u/227755718?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1774601201364,
+      "changelog": "Major release: Adds Lite版、免登录模式、批量/图片下载、多格式输出，优化结构。\n\n- Lite版、Playwright版双实现，适合不同环境和需求\n- 支持免登录公开抓取及批量下载\n- 自动文章图片下载、本地存储\n- 输出格式支持 Markdown/HTML/JSON/TXT\n- 删除旧代码，精简依赖，取消 Cookie 监控功能\n- 提供全新批量抓取报告和命令行参数",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da2bbba08b78f29337bf20101dab367b5fa056069cc88145e5e7bfeb1b002aca"
+}

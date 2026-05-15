@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30887,
+  "uuid": "skill-clawhub-sms-everyone",
+  "skillKey": "clawhub-sms-everyone",
+  "name": "Sms Everyone",
+  "summary": "SMS Everyone integration. Manage Users, Groups, Contacts, Lists, Campaigns, Templates. Use when the user wants to interact with SMS Everyone data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sms_everyone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SMS Everyone integration",
+        "Manage Users, Groups, Contacts, Lists, Campaigns, Templates",
+        "Use when the user wants to interact with SMS Everyone data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sms-everyone@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sms-everyone",
+      "url": "https://clawhub.ai/skills/sms-everyone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sms-everyone",
+    "url": "https://clawhub.ai/skills/sms-everyone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sms-everyone-3031cd44e0706545.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sms-everyone@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sms-everyone-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a25e632915042f8e3e8052f0a5a7d9f9dfeed0a8245d4372991ffc48576caca3",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:44:03.440Z"
+}

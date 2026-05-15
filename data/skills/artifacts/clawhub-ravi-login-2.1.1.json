@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ravi-login@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ravi_login",
+  "skill": {
+    "id": 49945,
+    "skillKey": "clawhub-ravi-login",
+    "name": "Ravi login"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ravi-login",
+    "url": "https://clawhub.ai/skills/ravi-login",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ravi-login-f65354cc9a106c7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sign up for and log into services using your Ravi identity — handles onboarding, forms, 2FA, OTPs, and credential storage. Do NOT use for standalone inbox re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raunaksingwi",
+      "userId": "s17c2wh3r2py8ztx3k1ks1v6yh84aak2",
+      "displayName": "Raunak Singwi",
+      "image": "https://avatars.githubusercontent.com/u/18749768?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 642,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1775627187692,
+      "changelog": "Auto-published from 19d2b7eea3e0a215bf8c5726dd9e1fb86307cdd7",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef8a33ff24d6d2cf2f5717e71949d81d2e3991d31a2b958e5ff409f9a549d5e0"
+}

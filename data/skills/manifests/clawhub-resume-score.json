@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69506,
+  "uuid": "skill-clawhub-resume-score",
+  "skillKey": "clawhub-resume-score",
+  "name": "my skill",
+  "summary": "AI简历评分与优化工具。用户上传简历后，对简历质量、目标岗位匹配度给出多维度评分，并输出修改后的简历版本。触发词：简历评分、简历优化、简历修改、改简历、简历打分、resume score、resume review、简历诊断、帮我看看简历、简历能过HR吗、优化简历、简历不过关。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_score",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yangmanqi2104201431-ship-it",
+      "features": [
+        "AI简历评分与优化工具。用户上传简历后，对简历质量、目标岗位匹配度给出多维度评分，并输出修改后的简历版本。触发词：简历评分、简历优化、简历修改、改简历、简历打分、resume score、r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resume-score@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239160289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resume-score",
+      "url": "https://clawhub.ai/skills/resume-score"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-score",
+    "url": "https://clawhub.ai/skills/resume-score",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-score-4a2ea5505a289434.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resume-score@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-resume-score-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e197eb0e24080c0e200e8c43f16ea659702be71d354c9b75f3833d66815c4adb",
+      "artifactSizeBytes": 2484
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T07:10:29.215Z"
+}

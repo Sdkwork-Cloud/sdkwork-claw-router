@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35563,
+  "uuid": "skill-clawhub-broadridge",
+  "skillKey": "clawhub-broadridge",
+  "name": "Broadridge",
+  "summary": "Broadridge integration. Manage data, records, and automate workflows. Use when the user wants to interact with Broadridge data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.broadridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Broadridge integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Broadridge data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/broadridge@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "broadridge",
+      "url": "https://clawhub.ai/skills/broadridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "broadridge",
+    "url": "https://clawhub.ai/skills/broadridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/broadridge-d1063c3323eff6ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/broadridge@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-broadridge-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30d4f246ff85e8bdbaccb57f155ee779f7c6762ffa62af30e1237f3225b15794",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:25:57.439Z"
+}

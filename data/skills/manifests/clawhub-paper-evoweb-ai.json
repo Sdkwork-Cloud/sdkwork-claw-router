@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15117,
+  "uuid": "skill-clawhub-paper-evoweb-ai",
+  "skillKey": "clawhub-paper-evoweb-ai",
+  "name": "Scientific Article PDF Generator",
+  "summary": "Generate publication-ready scientific articles in PDF format with AI-powered research and citations",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_evoweb_ai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "galizki",
+      "features": [
+        "Generate publication-ready scientific articles in PDF format with AI-powered research and citat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-evoweb-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67021003?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-evoweb-ai",
+      "url": "https://clawhub.ai/skills/paper-evoweb-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-evoweb-ai",
+    "url": "https://clawhub.ai/skills/paper-evoweb-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-evoweb-ai-7305ba59413a0446.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-evoweb-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-evoweb-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:804137a4cf08f0a6cbdb2d5060a83f6ad0319bf6b9a8db2556113ab82717187e",
+      "artifactSizeBytes": 2407
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T16:51:58.514Z"
+}

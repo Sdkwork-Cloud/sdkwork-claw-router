@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-memory-plus@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_plus",
+  "skill": {
+    "id": 72811,
+    "skillKey": "clawhub-agent-memory-plus",
+    "name": "记忆模组"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-plus",
+    "url": "https://clawhub.ai/skills/agent-memory-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-plus-b556823b55dd41ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能体底层记忆基础设施，提供感知记忆、短期语义桶（洞察驱动话题聚类+跨层关联索引）、长期8分类记忆（含反思记忆）、六维质量上下文重构、超然洞察池、链式推理增强、隐私配置和数据加密；当用户需要构建智能体记忆能力、管理对话上下文、实现长期记忆持久化、集成LangGraph状态管理或增强链式推理反思能力时使用；作为元技..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kiwifruit13",
+      "userId": "s17cje0hnbtrzjwaa1vrpxyta983ga4v",
+      "displayName": "kiwifruit13",
+      "image": "https://avatars.githubusercontent.com/u/143737192?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774411773946,
+      "changelog": "agent-memory-plus 1.0.4 更新日志\n\n- 新增链式推理增强功能，支持推理反思、自动验证、回退与元学习数据提取。\n- 长期记忆分类由7类拓展为8类，增加“反思记忆”类型。\n- 新增链式推理相关核心脚本 scripts/chain_reasoning.py。\n- 新增链式推理参考文档 references/chain_reasoning_guide.md。\n- SKILL.md 中详细说明链式推理在实际推理与LangGraph工作流中的使用方法。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f179516fac84bf23f3375fb96780bf82790d0ef7b41202e6600f22dbf987d34c"
+}

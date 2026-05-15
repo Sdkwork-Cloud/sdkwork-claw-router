@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "jqopenclaw-node-invoker",
+    "displayName": "JQOpenClawNode skill",
+    "summary": "统一通过 Gateway 的 node.invoke 调用 JQOpenClawNode 能力（file.read、file.write、process.exec、process.manage、system.run、process.which、system.info、system.screenshot、syste...",
+    "tags": {
+      "latest": "26.3.9"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 572,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "createdAt": 1772460858485,
+    "updatedAt": 1778303323752
+  },
+  "latestVersion": {
+    "version": "26.3.9",
+    "createdAt": 1773067587970,
+    "changelog": "- 新增对 process.exec 的支持，完善进程执行能力及参数校验。\n- 节点识别和命令映射全面切换为 process.exec（原 process.manage 仅用于管理，执行使用 exec）。\n- system.run 仅保留 OpenClaw 标准参数，process.exec 用于 program/arguments/detached 场景。\n- node.selfUpdate 增加必填 md5 校验，缺失或格式错误会报 INVALID_PARAMS。\n- 明确各命令 timeoutMs 推荐值，并区分 process.exec / system.run 场景。\n- 命令声明、错误处理、输出规范均据此同步完善。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "188080501",
+    "userId": "publishers:188080501",
+    "displayName": "Jason",
+    "image": "https://avatars.githubusercontent.com/u/6997074?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778303323752
+  }
+}

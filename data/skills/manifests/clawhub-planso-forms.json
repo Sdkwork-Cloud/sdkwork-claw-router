@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31714,
+  "uuid": "skill-clawhub-planso-forms",
+  "skillKey": "clawhub-planso-forms",
+  "name": "Planso Forms",
+  "summary": "PlanSo Forms integration. Manage Forms. Use when the user wants to interact with PlanSo Forms data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.planso_forms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "PlanSo Forms integration",
+        "Manage Forms",
+        "Use when the user wants to interact with PlanSo Forms data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/planso-forms@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "planso-forms",
+      "url": "https://clawhub.ai/skills/planso-forms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "planso-forms",
+    "url": "https://clawhub.ai/skills/planso-forms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/planso-forms-cf7e01bd25906555.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/planso-forms@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-planso-forms-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a9380bfeb13955e7ae696f0eb3c1a46699a0ad849a7840dc4023a912aca52a2",
+      "artifactSizeBytes": 1834
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:25:01.087Z"
+}

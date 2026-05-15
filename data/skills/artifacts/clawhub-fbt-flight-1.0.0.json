@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fbt-flight@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fbt_flight",
+  "skill": {
+    "id": 73163,
+    "skillKey": "clawhub-fbt-flight",
+    "name": "分贝通机票助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fbt-flight",
+    "url": "https://clawhub.ai/skills/fbt-flight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fbt-flight-c52d5dbde4bb943f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分贝通机票助手 - 实现国内航班搜索、舱位查询、预订下单、机票改期、机票退票。适用于用户询问航班、查询机票价格、提交机票订单、改期航班、退票时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryan-zry",
+      "userId": "s178x3nj3nkwm83bzzt6tyj5gx83nva1",
+      "displayName": "赵瑞宇",
+      "image": "https://avatars.githubusercontent.com/u/266894511?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774589284614,
+      "changelog": "Initial release of fbt-flight skill.\n\n- Supports domestic flight search, seat pricing, booking, rescheduling, and refund operations.\n- Requires users to complete authentication with phone number and verification code prior to use.\n- Handles personal passenger information securely during booking and order creation.\n- Provides detailed step-by-step guidance for all supported commands, including flight search, booking, order details, cancellations, changes, and refunds.\n- Requires Python 3 environment for running command-line scripts to interact with 分贝通 flight services.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8a3355d0fdb5f7964db8b8c68dc3573b843658fa7c9442fe116e3558b3c19e2"
+}

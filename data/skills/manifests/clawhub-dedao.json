@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31235,
+  "uuid": "skill-clawhub-dedao",
+  "skillKey": "clawhub-dedao",
+  "name": "Dedao",
+  "summary": "Access and summarize publicly available courses, columns, and topics from Dedao without bypassing paywalls or downloading content.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dedao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "Access and summarize publicly available courses, columns, and topics from Dedao without bypassi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dedao@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dedao",
+      "url": "https://clawhub.ai/skills/dedao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dedao",
+    "url": "https://clawhub.ai/skills/dedao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dedao-9746239795c14229.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dedao@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dedao-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf6d078f341463cf7776206fc6041c900f15e96dd0ba1233bff9373e2c6d43fc",
+      "artifactSizeBytes": 2333
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T17:02:17.938Z"
+}

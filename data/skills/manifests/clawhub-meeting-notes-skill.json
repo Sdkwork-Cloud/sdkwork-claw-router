@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70742,
+  "uuid": "skill-clawhub-meeting-notes-skill",
+  "skillKey": "clawhub-meeting-notes-skill",
+  "name": "会议纪要助手",
+  "summary": "会议纪要与会议播报生成技能。用于处理会议录音或转写文本，执行发言人区分、口语降噪、议题重构、双钻结构整理，并输出执行摘要、核心决议、Markdown待办表格、TTS播报稿和会议思维导图（HTML/SVG/XMind）。支持双向语音能力：录音转文本（ASR）与文本转录音（TTS）。用户提到“会议纪要”“录音转文字”...",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_notes_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2813223285",
+      "features": [
+        "会议纪要与会议播报生成技能。用于处理会议录音或转写文本，执行发言人区分、口语降噪、议题重构、双钻结构整理，并输出执行摘要、核心决议、Markdown待办表格、TTS播报稿和会议思维导图（HT."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-notes-skill@1.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77765227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-notes-skill",
+      "url": "https://clawhub.ai/skills/meeting-notes-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-notes-skill",
+    "url": "https://clawhub.ai/skills/meeting-notes-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-notes-skill-f8cc3bed149050a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-notes-skill@1.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-notes-skill-1.3.1.json",
+      "version": "1.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc674b44e45efe72a8b32c1dcfe313f447b393163b32140c14c08168b4eb2bd6",
+      "artifactSizeBytes": 2508
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T12:46:03.800Z"
+}

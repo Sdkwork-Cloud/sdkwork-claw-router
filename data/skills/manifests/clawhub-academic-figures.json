@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32875,
+  "uuid": "skill-clawhub-academic-figures",
+  "skillKey": "clawhub-academic-figures",
+  "name": "Academic Figures",
+  "summary": "Generate publication-quality academic figures from data with one command. Supports 7 chart types (bar, heatmap, scatter, line, box, forest, violin), 4 color...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_figures",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "docsor1212",
+      "features": [
+        "Generate publication-quality academic figures from data with one command",
+        "Supports 7 chart types (bar, heatmap, scatter, line, box, forest, violin), 4 color..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/academic-figures@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253113937?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "academic-figures",
+      "url": "https://clawhub.ai/skills/academic-figures"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-figures",
+    "url": "https://clawhub.ai/skills/academic-figures",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-figures-dd932b20731e39d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/academic-figures@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-academic-figures-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8356627aa8439a3a96f487a21c15f371689946a9924d866ef01368a6a070eb60",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T12:03:47.543Z"
+}

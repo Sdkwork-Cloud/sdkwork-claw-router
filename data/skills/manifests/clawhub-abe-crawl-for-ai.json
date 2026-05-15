@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42773,
+  "uuid": "skill-clawhub-abe-crawl-for-ai",
+  "skillKey": "clawhub-abe-crawl-for-ai",
+  "name": "crawl-for-ai",
+  "summary": "Web scraping via SkillBoss API Hub. Use for fetching full page content with JavaScript rendering. Handles complex pages with dynamic content.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abe_crawl_for_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AbelTennyson",
+      "features": [
+        "Web scraping via SkillBoss API Hub",
+        "Use for fetching full page content with JavaScript rendering",
+        "Handles complex pages with dynamic content."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abe-crawl-for-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261241122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abe-crawl-for-ai",
+      "url": "https://clawhub.ai/skills/abe-crawl-for-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abe-crawl-for-ai",
+    "url": "https://clawhub.ai/skills/abe-crawl-for-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abe-crawl-for-ai-bb8f9f137acda656.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abe-crawl-for-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-abe-crawl-for-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7730ebbd37065d677d31a7dbd47dfc8a7c0897422c7b3e21f0d73d723c6847a3",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T04:12:54.353Z"
+}

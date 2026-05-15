@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-genie@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_genie",
+  "skill": {
+    "id": 48493,
+    "skillKey": "clawhub-openclaw-genie",
+    "name": "Openclaw Genie"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-genie",
+    "url": "https://clawhub.ai/skills/openclaw-genie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-genie-add46488bffd88ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user asks about OpenClaw — installation, configuration, agents, channels, memory, tools, hooks, skills, deployment, Docker, multi-agent, OAuth,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fcsouza",
+      "userId": "s17ap2jnaj08wme6310hy9t6bx83gsds",
+      "displayName": "Fabricio Cavalcante",
+      "image": "https://avatars.githubusercontent.com/u/7094035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 474,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772889206343,
+      "changelog": "Update for v2026.3.7: add PDF tool, voice, secrets management, nodes, WebChat channel, config validate CLI, breaking change notes, Telegram topic routing, persistent Discord bindings",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f20378a96dd9f03e6801d50c197a5625c76bfb286435b7ab3aabfb2f0365bb22"
+}

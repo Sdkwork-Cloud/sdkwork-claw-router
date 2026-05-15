@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/comedy-central@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comedy_central",
+  "skill": {
+    "id": 62155,
+    "skillKey": "clawhub-comedy-central",
+    "name": "Comedy Central"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comedy-central",
+    "url": "https://clawhub.ai/skills/comedy-central",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comedy-central-cf22ee44da4b76cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供美国喜剧频道Comedy Central的历史、节目、业务范围及最新动态信息查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776238337446,
+      "changelog": "- 重写并优化了技能说明文档，使内容更精炼易查阅  \n- 增加了快速导航板块，突出品牌历史、业务、市场、竞争等关键信息  \n- 对使用场景进行了简要列举，突出快速查询和商业应用  \n- 强调通过官方网站获取最新资讯",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7761267f638735cae63439b19b22a65e3ec73a6e2924aa2eb625adfbc63c5266"
+}

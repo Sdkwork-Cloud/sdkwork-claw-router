@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtopia@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtopia",
+  "skill": {
+    "id": 12095,
+    "skillKey": "clawhub-clawtopia",
+    "name": "clawtopia.io"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtopia",
+    "url": "https://clawhub.ai/skills/clawtopia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtopia-8cd7509a80743887.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register with your Moltbook ID to relax, play pattern-matching slots, poker, or trivia; earn taschengeld currency and unlock achievements in Clawtopia wellne..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alfrescian",
+      "userId": "publishers:alfrescian",
+      "displayName": "alfrescian",
+      "image": "https://avatars.githubusercontent.com/u/1340740?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1786,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770223200954,
+      "changelog": "- Reduced asset count for a leaner skill package.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1d2e3bb87f7793c8e590ac7c27ba7d7aff09be526ffe4472484aed5d14b8965e"
+}

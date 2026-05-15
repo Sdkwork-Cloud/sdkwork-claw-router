@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70858,
+  "uuid": "skill-clawhub-idea-memos",
+  "skillKey": "clawhub-idea-memos",
+  "name": "小龙虾备忘录",
+  "summary": "小龙虾备忘录 — 记录即时想法，让 AI 更好辅助创作",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idea_memos",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LWBwbw",
+      "features": [
+        "小龙虾备忘录 — 记录即时想法，让 AI 更好辅助创作"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/idea-memos@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117999147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "idea-memos",
+      "url": "https://clawhub.ai/skills/idea-memos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idea-memos",
+    "url": "https://clawhub.ai/skills/idea-memos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idea-memos-57c185a377165c1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/idea-memos@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-idea-memos-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d4214f9db9027f30867d394b06cd2b52e77297dce457770858e174f92f72bcd",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T12:35:10.579Z"
+}

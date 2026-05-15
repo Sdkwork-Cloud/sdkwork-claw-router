@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56431,
+  "uuid": "skill-clawhub-kisa-guideline-hub",
+  "skillKey": "clawhub-kisa-guideline-hub",
+  "name": "Kisa Guideline Hub",
+  "summary": "Automatically collect and publish security guidelines and guides from KISA and Boho (보호나라) to Notion. Use when you need to (1) collect new security guideline...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kisa_guideline_hub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rebugui",
+      "features": [
+        "Automatically collect and publish security guidelines and guides from KISA and Boho (보호나라) to N.",
+        "Use when you need to (1) collect new security guideline..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kisa-guideline-hub@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51498462?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kisa-guideline-hub",
+      "url": "https://clawhub.ai/skills/kisa-guideline-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kisa-guideline-hub",
+    "url": "https://clawhub.ai/skills/kisa-guideline-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kisa-guideline-hub-077bfd656f21e446.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kisa-guideline-hub@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kisa-guideline-hub-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d55b38816207dca60ce8a2cbf58ff7944cc815e910f5d757cf7a83659ec822e3",
+      "artifactSizeBytes": 2101
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T07:46:37.767Z"
+}

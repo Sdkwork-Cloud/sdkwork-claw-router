@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-audio-replace@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_audio_replace",
+  "skill": {
+    "id": 21444,
+    "skillKey": "clawhub-video-audio-replace",
+    "name": "video-audio-replace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-audio-replace",
+    "url": "https://clawhub.ai/skills/video-audio-replace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-audio-replace-9d89755581bb2d36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Replace video audio with TTS voice while preserving original timing. Includes subtitle generation from video using Whisper. Uses ElevenLabs or Edge TTS, alig..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "synthere",
+      "userId": "s170tzn8x616xjz9zkhxn7xg5n851az9",
+      "displayName": "marc",
+      "image": "https://avatars.githubusercontent.com/u/167509925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 490,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772181718101,
+      "changelog": "init version",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:191d2d4e9252741aee25344f4c37d2579db17a548e2e8d001de1a411700d60ad"
+}

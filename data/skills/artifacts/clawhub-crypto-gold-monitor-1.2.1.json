@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-gold-monitor@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_gold_monitor",
+  "skill": {
+    "id": 59252,
+    "skillKey": "clawhub-crypto-gold-monitor",
+    "name": "加密货币与贵金属监控"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-gold-monitor",
+    "url": "https://clawhub.ai/skills/crypto-gold-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-gold-monitor-c057534be5b9fb2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "加密货币与贵金属价格监控 / Crypto & Precious Metals Price Monitor - 监控BTC/ETH实时价格、黄金(XAU)/白银(XAG)走势，免费API无需Key"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "franky0617",
+      "userId": "publishers:franky0617",
+      "displayName": "franky0617",
+      "image": "https://avatars.githubusercontent.com/u/257217961?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5124,
+      "installsAllTime": 17,
+      "installsCurrent": 17,
+      "stars": 7,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1769733658786,
+      "changelog": "撤回每克价格显示",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c98955e48b4f92e2f37e50e74ba97ad4fc61226646f5177af5feb0928fdda24b"
+}

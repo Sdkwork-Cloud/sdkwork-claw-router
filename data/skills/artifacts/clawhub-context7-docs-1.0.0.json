@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context7-docs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context7_docs",
+  "skill": {
+    "id": 18419,
+    "skillKey": "clawhub-context7-docs",
+    "name": "Context7 Documentation Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context7-docs",
+    "url": "https://clawhub.ai/skills/context7-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context7-docs-6bfdb6d225471fb7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches up-to-date, version-specific documentation and code examples for any programming library or framework from Context7. Use this skill when the user nee..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaylane",
+      "userId": "s1764agjek6w0zcyc65erg2wkd83wv5n",
+      "displayName": "Jay Lane",
+      "image": "https://avatars.githubusercontent.com/u/1765190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 673,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771403545637,
+      "changelog": "- Initial release of context7-docs skill.\n- Provides up-to-date, version-specific documentation and code examples for any programming library or framework via Context7.\n- Supports resolving library IDs, querying documentation, and handling version-specific searches.\n- Includes usage guidelines, recommended workflows, and troubleshooting steps.\n- Requires curl, jq, and internet access; optional API key for higher rate limits.\n- Includes best practices for specificity and safe usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f42c402fd9596ea41532afde515fdd24ce441bfb0cb0364790aa75e9df94779d"
+}

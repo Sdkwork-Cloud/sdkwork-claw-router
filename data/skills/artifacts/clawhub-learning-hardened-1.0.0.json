@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/learning-hardened@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learning_hardened",
+  "skill": {
+    "id": 48600,
+    "skillKey": "clawhub-learning-hardened",
+    "name": "Learning Hardened"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learning-hardened",
+    "url": "https://clawhub.ai/skills/learning-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learning-hardened-897d7b05ad532a85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-learns how you learn best. Adapts teaching style, format, and depth to you."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snazar-faberlens",
+      "userId": "s17er0wp685j1z14w6vqrsnqrh83h5er",
+      "displayName": "Faberlens",
+      "image": "https://avatars.githubusercontent.com/u/261834257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776913266778,
+      "changelog": "- Initial release of the skill.\n- Auto-adapts teaching style, format, and depth based on how you learn best.\n- Detects and confirms learning preferences from user interactions (minimum 2 consistent signals).\n- Supports academic, professional, and casual learning contexts.\n- Built-in guardrails to protect sensitive personal and demographic data; only behavioral preferences are recorded.\n- Preferences for style, format, tools, and avoidances are updated dynamically as you learn.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efe62eb145bf44205169149250c1695c56a14f0f07c4a15ef9029b5658432c6b"
+}

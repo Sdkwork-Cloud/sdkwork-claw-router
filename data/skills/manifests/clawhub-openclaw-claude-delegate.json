@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47644,
+  "uuid": "skill-clawhub-openclaw-claude-delegate",
+  "skillKey": "clawhub-openclaw-claude-delegate",
+  "name": "OpenClaw Claude Delegate",
+  "summary": "Give Claude back to OpenClaw through a local Claude Code delegation lane with dispatch, poll, result, resume, and an optional non-root bypassPermissions runn...",
+  "version": "0.2.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_claude_delegate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "henryclaw007-lgtm",
+      "features": [
+        "Give Claude back to OpenClaw through a local Claude Code delegation lane with dispatch, poll, r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-claude-delegate@0.2.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260290683?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-claude-delegate",
+      "url": "https://clawhub.ai/skills/openclaw-claude-delegate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-claude-delegate",
+    "url": "https://clawhub.ai/skills/openclaw-claude-delegate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-claude-delegate-e8d71c5b30be79c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-claude-delegate@0.2.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-claude-delegate-0.2.6.json",
+      "version": "0.2.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71814a89b8323b632a56052fa24a588ed33256aa101779dbe04c238c7eb53ae3",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T23:04:21.733Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12697,
+  "uuid": "skill-clawhub-email-send",
+  "skillKey": "clawhub-email-send",
+  "name": "Email Send",
+  "summary": "Send a quick email via SMTP using `msmtp` without opening a full mail client.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_send",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xejrax",
+      "features": [
+        "Send a quick email via SMTP using `msmtp` without opening a full mail client."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-send@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/148405630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-send",
+      "url": "https://clawhub.ai/skills/email-send"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-send",
+    "url": "https://clawhub.ai/skills/email-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-send-6b3b1f7583ef2a39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-send@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-send-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62da22a5b3be19360e680eb14e28781e611acf8baecc3c560cb11b35983d5f16",
+      "artifactSizeBytes": 1756
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T16:20:43.885Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-desktop-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_desktop_automation",
+  "skill": {
+    "id": 28558,
+    "skillKey": "clawhub-web-desktop-automation",
+    "name": "Web + Desktop Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-desktop-automation",
+    "url": "https://clawhub.ai/skills/web-desktop-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-desktop-automation-7592fae06124738a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants browser automation, web scraping, form filling, clicking, or desktop GUI automation, including mixed workflows that move between web..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lurui808",
+      "userId": "publishers:lurui808",
+      "displayName": "lurui808",
+      "image": "https://avatars.githubusercontent.com/u/174393437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 323,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774240859578,
+      "changelog": "Initial stable release of web-desktop-automation.\n\n- Added unified browser, desktop, and mixed workflow guidance\n- Added Playwright browser automation template\n- Added PyAutoGUI desktop automation template\n- Added mixed-flow orchestrator template\n- Added dependency and installation notes\n- Added a real-world browser-download → desktop-edit → browser-upload example\n- Added graceful degradation when Playwright is unavailable\n- Cleaned release tree and removed cache artifacts",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e4dceffa24c7baeb24a79d707f20f784c3d09f9fbebfe6a5ed8c19aec5729f4"
+}

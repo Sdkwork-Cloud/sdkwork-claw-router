@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73275,
+  "uuid": "skill-clawhub-jiankangguanli",
+  "skillKey": "clawhub-jiankangguanli",
+  "name": "健康管理",
+  "summary": "基于用户每一次提交的个人医疗数据（如体检报告、化验单、检查报告等），立即对用户的各项常见疾病，进行AI评估并生成“患病概率”。以及进一步的个性化、精准健康干预方案。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiankangguanli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lantian888",
+      "features": [
+        "基于用户每一次提交的个人医疗数据（如体检报告、化验单、检查报告等），立即对用户的各项常见疾病，进行AI评估并生成“患病概率”。以及进一步的个性化、精准健康干预方案。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jiankangguanli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30491114?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jiankangguanli",
+      "url": "https://clawhub.ai/skills/jiankangguanli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiankangguanli",
+    "url": "https://clawhub.ai/skills/jiankangguanli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiankangguanli-a70199b3433cfaed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jiankangguanli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jiankangguanli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afc4d794b5a58b23c4d8c074cca1d9f5e5b72290f420ca9949d86724d79cef03",
+      "artifactSizeBytes": 2488
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T13:35:38.483Z"
+}

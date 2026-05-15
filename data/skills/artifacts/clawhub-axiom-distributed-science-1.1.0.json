@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/axiom-distributed-science@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axiom_distributed_science",
+  "skill": {
+    "id": 26058,
+    "skillKey": "clawhub-axiom-distributed-science",
+    "name": "Axiom Distributed Science"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axiom-distributed-science",
+    "url": "https://clawhub.ai/skills/axiom-distributed-science",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axiom-distributed-science-ece63196c31fde55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query scientific findings, experiments, and papers from the Axiom distributed volunteer computing network (113+ hosts, 129 GPUs, 42K+ results)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pyhelix",
+      "userId": "publishers:pyhelix",
+      "displayName": "PyHelix",
+      "image": "https://avatars.githubusercontent.com/u/35717405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773036324185,
+      "changelog": "- Added a new API endpoint: POST /api/suggest.php to allow users to submit plain-text experiment ideas for review.\n- Updated documentation with endpoint usage example, constraints, and response format for experiment suggestions.\n- No changes to existing API usage or removed features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c5b0663c2702334688db2c2e82824c47d16b4a41f5fffb70b0cbd73bda1b103f"
+}

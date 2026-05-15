@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "google-maps-search-api",
+    "displayName": "Google Maps Search Api",
+    "summary": "This skill is designed to help users automatically extract business data from Google Maps search results. When a user asks to \"find coffee shops in New York,\" \"search for dental clinics,\" or \"extract business leads from Google Maps,\" the agent should proactively apply this skill.",
+    "tags": {
+      "latest": "0.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2149,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 1
+    },
+    "createdAt": 1770391102446,
+    "updatedAt": 1778384015970
+  },
+  "latestVersion": {
+    "version": "0.1.0",
+    "createdAt": 1770391102446,
+    "changelog": "Initial release: Enables automated extraction of business data from Google Maps search results using the BrowserAct API.\n\n- Supports searches by keyword, language, country, and result count.\n- Notifies users if a required API key is missing, expired, or invalid, and instructs on where to obtain/provide it.\n- Returns structured business details (name, address, rating, etc.) from Google Maps.\n- Includes auto-retry logic for failed tasks (excluding authorization errors), limited to one additional attempt.\n- Compatible with OpenCode, Claude Code, Cursor, and OpenClaw AI assistant platforms.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "phheng",
+    "userId": "s17cnrtda4fqzdjza3g2hx20bs83f18z",
+    "displayName": "Henk Nie",
+    "image": "https://avatars.githubusercontent.com/u/44972754?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778384015970
+  }
+}

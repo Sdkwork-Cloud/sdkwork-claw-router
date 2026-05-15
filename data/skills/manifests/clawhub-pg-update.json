@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23685,
+  "uuid": "skill-clawhub-pg-update",
+  "skillKey": "clawhub-pg-update",
+  "name": "Pg Update",
+  "summary": "Use when updating ProxyGate CLI or SDK to the latest version. Also triggers proactively when an update notification is shown. Make sure to use this whenever...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pg_update",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jwelten",
+      "features": [
+        "Use when updating ProxyGate CLI or SDK to the latest version",
+        "Also triggers proactively when an update notification is shown",
+        "Make sure to use this whenever..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pg-update@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194850832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pg-update",
+      "url": "https://clawhub.ai/skills/pg-update"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pg-update",
+    "url": "https://clawhub.ai/skills/pg-update",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pg-update-94237b1765df3312.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pg-update@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pg-update-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:755888db75c238b5548fa93c3c5c23a9d469a27976932da4ea7fbbde0de05a7e",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T22:33:43.552Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/5@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.5",
+  "skill": {
+    "id": 72570,
+    "skillKey": "clawhub-5",
+    "name": "58区块同城"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "5",
+    "url": "https://clawhub.ai/skills/5",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/5-ef2d127de37b942b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于区块链的数字城市平台，提供数字区块浏览、城市人气查询、NFT头像交易与区块活动参与服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hgta23",
+      "userId": "s176ns9wb0zkz6m56ha2rk438x843wcn",
+      "displayName": "bittao",
+      "image": "https://avatars.githubusercontent.com/u/17961407?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775578162605,
+      "changelog": "Initial release of 58区块同城 skill.\n\n- Provides a blockchain-based digital city service platform.\n- Features include: browsing digital blocks, city popularity rankings, NFT avatar marketplace and management, and participation in block activities.\n- Supports querying digital city information and city details via specified APIs.\n- Enables browsing, purchasing, and managing NFT avatars.\n- Requires network connection; some features may require account login or digital wallet.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f4ba4b048268977e30e742cfa01943f4515e5571e776f70699d26c2ea62251c"
+}

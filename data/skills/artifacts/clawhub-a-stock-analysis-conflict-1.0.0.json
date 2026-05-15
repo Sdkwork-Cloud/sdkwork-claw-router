@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-stock-analysis-conflict@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_analysis_conflict",
+  "skill": {
+    "id": 64857,
+    "skillKey": "clawhub-a-stock-analysis-conflict",
+    "name": "A Stock Analysis Conflict"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-analysis-conflict",
+    "url": "https://clawhub.ai/skills/a-stock-analysis-conflict",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-analysis-conflict-bfa2afbcd8cbde0d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供A股实时行情、分时量能分布、主力资金动向分析及持仓盈亏管理，支持沪深北交所股票。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "litiao1224",
+      "userId": "publishers:litiao1224",
+      "displayName": "litiao1224",
+      "image": "https://avatars.githubusercontent.com/u/183017089?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773685309793,
+      "changelog": "- Initial release of A股实时行情与分时量能分析工具\n- Retrieves real-time A股 stock prices, volume, and provides minute-level volume distribution analysis\n- Supports detection of main fund movements and trading signals (抢筹/出货/封单)\n- Includes portfolio management: add, update, remove, show, and analyze holdings with profit/loss calculation\n- Uses Sina Finance API for consistent and efficient data access\n- CLI scripts provided for querying single/multiple stocks, outputting JSON, and analyzing portfolio",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6524a28120dd88059621e0bf0273db70b179bfe0cdd8e7b16c73f4fe1b5ac24d"
+}

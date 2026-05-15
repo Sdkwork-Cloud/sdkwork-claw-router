@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11040,
+  "uuid": "skill-clawhub-using-git-worktrees",
+  "skillKey": "clawhub-using-git-worktrees",
+  "name": "Using Git Worktrees",
+  "summary": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.using_git_worktrees",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zlc000190",
+      "features": [
+        "Use when starting feature work that needs isolation from current workspace or before executing.",
+        "creates isolated git worktrees with smart directory selection and safety verification"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/using-git-worktrees@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8969941?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "using-git-worktrees",
+      "url": "https://clawhub.ai/skills/using-git-worktrees"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "using-git-worktrees",
+    "url": "https://clawhub.ai/skills/using-git-worktrees",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/using-git-worktrees-ba4506df1ea02480.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/using-git-worktrees@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-using-git-worktrees-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20b4037e1feab2f2f30d7ec58ac49c20051f1523af3573e1a0ceadd5ed92b681",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T02:52:18.383Z"
+}

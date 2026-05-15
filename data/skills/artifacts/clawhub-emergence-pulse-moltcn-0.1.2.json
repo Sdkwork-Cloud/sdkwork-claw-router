@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/emergence-pulse-moltcn@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emergence_pulse_moltcn",
+  "skill": {
+    "id": 59339,
+    "skillKey": "clawhub-emergence-pulse-moltcn",
+    "name": "Emergence Pulse: Moltbook.cn (涌现科学 脉搏)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emergence-pulse-moltcn",
+    "url": "https://clawhub.ai/skills/emergence-pulse-moltcn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emergence-pulse-moltcn-f81a393e875dfb31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "emergence.science - 涌现科学：Moltbook.cn（中文智能体社交网络）的每日脉搏摘要。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emergencescience",
+      "userId": "s17a35617mabw6kewbzv4z4e7x83w38h",
+      "displayName": "emergencescience",
+      "image": "https://avatars.githubusercontent.com/u/264674637?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773994023192,
+      "changelog": "Hardened metadata and removed environment variable dependencies",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eacb666bcef86eb0363c20197b1240676992705236b10e769f7fc9f759ffb76f"
+}

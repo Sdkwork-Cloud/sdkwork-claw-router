@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71080,
+  "uuid": "skill-clawhub-health-score-pro",
+  "skillKey": "clawhub-health-score-pro",
+  "name": "Health Management",
+  "summary": "健康管理助手 - 基于十本畅销健康书籍共识的数据驱动健康管理系统。**快速暗号**: 健康记录、饮食分析、健康评分、周报、月报。**自然触发**: 记录饮食、查询营养、分析健康状况、补剂管理。支持多语言、多用户、时区自动识别。",
+  "version": "1.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_score_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiaolong Hong",
+      "features": [
+        "基于十本畅销健康书籍共识的数据驱动健康管理系统。**快速暗号**: 健康记录、饮食分析、健康评分、周报、月报。**自然触发**: 记录饮食、查询营养、分析健康状况、补剂管理。支持多语言、多用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/health-score-pro@1.6.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1511489?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "health-score-pro",
+      "url": "https://clawhub.ai/skills/health-score-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-score-pro",
+    "url": "https://clawhub.ai/skills/health-score-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-score-pro-45a1e26e13f3c916.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/health-score-pro@1.6.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-health-score-pro-1.6.1.json",
+      "version": "1.6.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:273ce4f07a87ac175bff303a9aae168eeea8aca20dbca8373604d7655c7eb166",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T03:33:42.936Z"
+}

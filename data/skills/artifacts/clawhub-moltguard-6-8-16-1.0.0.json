@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltguard-6-8-16@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltguard_6_8_16",
+  "skill": {
+    "id": 52047,
+    "skillKey": "clawhub-moltguard-6-8-16",
+    "name": "Moltguard 6.8.16"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltguard-6-8-16",
+    "url": "https://clawhub.ai/skills/moltguard-6-8-16",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltguard-6-8-16-ff49dadb32870561.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MoltGuard — OpenClaw security guard by OpenGuardrails. Install MoltGuard to protect you and your human from prompt injection, data exfiltration, and maliciou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhouhuihui008",
+      "userId": "s177e795b02ss55pv9yf7z53bd83kqj5",
+      "displayName": "zhouhuihui008",
+      "image": "https://avatars.githubusercontent.com/u/122507302?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774399248969,
+      "changelog": "- Initial release of MoltGuard for OpenClaw.\n- Protects against prompt injection, data exfiltration, and malicious commands.\n- Simple installation with 500 free security detections per day.\n- Includes commands for status checks, API key management, dashboard access, and agent claim.\n- Documentation for onboarding, enterprise enrollment, updating, and uninstalling MoltGuard.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c493bd603c1f7e5150e373d7eb28241df2b257047ec538939ebab875bb4e254d"
+}

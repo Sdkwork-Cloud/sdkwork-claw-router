@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47259,
+  "uuid": "skill-clawhub-clawtrace-self-evolve-v2",
+  "skillKey": "clawhub-clawtrace-self-evolve-v2",
+  "name": "Skills",
+  "summary": "Ask Tracy to analyze your recent trajectories and improve your agent behavior based on data-driven recommendations.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtrace_self_evolve_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "richard-epsilla",
+      "features": [
+        "Ask Tracy to analyze your recent trajectories and improve your agent behavior based on data-dri."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawtrace-self-evolve-v2@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131846445?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawtrace-self-evolve-v2",
+      "url": "https://clawhub.ai/skills/clawtrace-self-evolve-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtrace-self-evolve-v2",
+    "url": "https://clawhub.ai/skills/clawtrace-self-evolve-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtrace-self-evolve-v2-2aa7919284dcb328.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawtrace-self-evolve-v2@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawtrace-self-evolve-v2-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65d9a4d11de248661ecd26b0f1caf7177f00d419edeb67b754e38b95303025e5",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T00:00:01.975Z"
+}

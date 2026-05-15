@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23776,
+  "uuid": "skill-clawhub-usage-tracker",
+  "skillKey": "clawhub-usage-tracker",
+  "name": "Usage Tracker",
+  "summary": "Track and log AI API usage across providers, calculate costs, and generate daily, weekly, or monthly reports filtered by model and task type.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usage_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "punkaze",
+      "features": [
+        "Track and log AI API usage across providers, calculate costs, and generate daily, weekly, or mo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/usage-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16140252?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "usage-tracker",
+      "url": "https://clawhub.ai/skills/usage-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usage-tracker",
+    "url": "https://clawhub.ai/skills/usage-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usage-tracker-c17599b9ab977db1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/usage-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-usage-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bff4ae785a352ada7f2d6f0921b680ba7370342247d8871d64d8e100a4026831",
+      "artifactSizeBytes": 2223
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T09:41:58.205Z"
+}

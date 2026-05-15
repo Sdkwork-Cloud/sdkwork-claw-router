@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/long-task-manager@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_task_manager",
+  "skill": {
+    "id": 67548,
+    "skillKey": "clawhub-long-task-manager",
+    "name": "Long Task Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-task-manager",
+    "url": "https://clawhub.ai/skills/long-task-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-task-manager-c0f05178357d0c0e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "管理和调度长时间运行任务，支持实时进度跟踪、异步执行、任务取消和断点续传功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devinyxl",
+      "userId": "s1773watpea1w73grf3vd7txx583gw51",
+      "displayName": "DevinYxl",
+      "image": "https://avatars.githubusercontent.com/u/5119080?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 299,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773717828634,
+      "changelog": "- No file changes detected for version 1.0.1.\n- Documentation, functionality, and feature set remain unchanged from the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:15adbbe020ecdd81dacd78d7f6830680d509decbe0c90c6f64b6c8002492769b"
+}

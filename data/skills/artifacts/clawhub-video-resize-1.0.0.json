@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-resize@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_resize",
+  "skill": {
+    "id": 49464,
+    "skillKey": "clawhub-video-resize",
+    "name": "Video Resize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-resize",
+    "url": "https://clawhub.ai/skills/video-resize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-resize-aa94d869deaced71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants to change a video's aspect ratio or reformat it for a specific platform — e.g. \"convert to vertical\", \"make it 9:16\", \"crop for TikTo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "symbolk",
+      "userId": "s17e3mejw3ew7dtqfqz71spav583g96y",
+      "displayName": "BoShen",
+      "image": "https://avatars.githubusercontent.com/u/14107297?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 546,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772266190717,
+      "changelog": "Initial release of Video Resize v1.0.0:\n\n- Instantly reformat videos to any aspect ratio (e.g., 9:16, 1:1, 16:9) for platforms like TikTok, Instagram, or YouTube, using local center-crop (via ffmpeg, no API key needed).\n- Simple command-line tool: `bash scripts/resize.sh <input> <ratio> [output]`.\n- Provides aspect ratio and resolution reference table for common platforms.\n- Includes guidance for when to switch to AI-powered smart cropping (AI Edit) for subject-aware resizing.\n- Troubleshooting section added for common errors and requirements (ffmpeg, API key for AI Edit).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:821c06180eadab2eaa6bfe6686ab3e45c457e4d5a6ca61839ac85d2b82ba31be"
+}

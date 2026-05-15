@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oauth-helper@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oauth_helper",
+  "skill": {
+    "id": 9833,
+    "skillKey": "clawhub-oauth-helper",
+    "name": "Oauth Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oauth-helper",
+    "url": "https://clawhub.ai/skills/oauth-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oauth-helper-d197c23aad8c17f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate OAuth login flows with user confirmation via Telegram. Supports 7 providers: Google, Apple, Microsoft, GitHub, Discord, WeChat, QQ. Features: - Auto-detect available OAuth options on login pages - Ask user to choose via Telegram w."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "helloliuyongsheng-bot",
+      "userId": "publishers:helloliuyongsheng-bot",
+      "displayName": "helloliuyongsheng-bot",
+      "image": "https://avatars.githubusercontent.com/u/242362760?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2893,
+      "installsAllTime": 14,
+      "installsCurrent": 13,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1769654883923,
+      "changelog": "**Changelog for oauth-helper v1.1.0**\n\n- Major documentation overhaul: SKILL.md rewritten in English with concise step-by-step instructions and tables.\n- Improved clarity of supported providers, detection patterns, workflows, and click sequences.\n- Better structured prerequisites, error handling, and setup sections for easier onboarding.\n- Updated usage examples with clear, Telegram-driven flows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0d14f416d073ccbd9e711975c3a688d2aea1d170bf663a08235750d7daf9a89b"
+}

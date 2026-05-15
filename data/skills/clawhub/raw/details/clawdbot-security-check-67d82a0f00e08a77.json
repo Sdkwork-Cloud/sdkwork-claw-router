@@ -1,0 +1,51 @@
+{
+  "skill": {
+    "slug": "clawdbot-security-check",
+    "displayName": "Clawdbot Security Check",
+    "summary": "Perform a comprehensive read-only security audit of Clawdbot's own configuration. This is a knowledge-based skill that teaches Clawdbot to identify hardening opportunities across the system. Use when user asks to \"run security check\", \"audit clawdbot\", \"check security hardening\", or \"what vulnerabilities does my Clawdbot have\". This skill uses Clawdbot's internal capabilities and file system access to inspect configuration, detect misconfigurations, and recommend remediations. It is designed to be extensible - new checks can be added by updating this skill's knowledge.",
+    "tags": {
+      "latest": "2.2.2"
+    },
+    "stats": {
+      "comments": 19,
+      "downloads": 8460,
+      "installsAllTime": 73,
+      "installsCurrent": 67,
+      "stars": 33,
+      "versions": 5
+    },
+    "createdAt": 1769463345220,
+    "updatedAt": 1778382401006
+  },
+  "latestVersion": {
+    "version": "2.2.2",
+    "createdAt": 1769469026784,
+    "changelog": "Added Trust Hierarchy, Prompt Injection Mitigation, Sandboxing levels, Browser Control Risks, Incident Response, Secret Scanning, Vulnerability Reporting. 13 domains.",
+    "license": null
+  },
+  "metadata": {
+    "os": [
+      "darwin",
+      "linux"
+    ],
+    "systems": null
+  },
+  "owner": {
+    "handle": "thesethrose",
+    "userId": "publishers:thesethrose",
+    "displayName": "Seth Rose",
+    "image": "https://avatars.githubusercontent.com/u/10383809?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778382401006
+  }
+}

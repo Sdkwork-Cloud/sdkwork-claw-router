@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27460,
+  "uuid": "skill-clawhub-scrapclaw",
+  "skillKey": "clawhub-scrapclaw",
+  "name": "Scrapclaw",
+  "summary": "Run Scrapclaw as a Dockerized browser-backed scraping service, then use this skill to fetch HTML from JavaScript-heavy or Cloudflare-protected pages through...",
+  "version": "0.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scrapclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eric Pearson",
+      "features": [
+        "Run Scrapclaw as a Dockerized browser-backed scraping service, then use this skill to fetch HTM."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scrapclaw@0.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/793594?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scrapclaw",
+      "url": "https://clawhub.ai/skills/scrapclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scrapclaw",
+    "url": "https://clawhub.ai/skills/scrapclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scrapclaw-4dadda69d4c33651.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scrapclaw@0.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-scrapclaw-0.0.6.json",
+      "version": "0.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac06d337e76039571543bae4d74a018ebae9027d478fa762dd413dfc2600b153",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T16:48:09.164Z"
+}

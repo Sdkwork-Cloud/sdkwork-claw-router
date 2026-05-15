@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45382,
+  "uuid": "skill-clawhub-config-review-flow",
+  "skillKey": "clawhub-config-review-flow",
+  "name": "Config Review Flow",
+  "summary": "Review and finalize configuration topics through a structured item-by-item confirmation flow. Use when the user wants a documented configuration review flow,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.config_review_flow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Silronin",
+      "features": [
+        "Review and finalize configuration topics through a structured item-by-item confirmation flow",
+        "Use when the user wants a documented configuration review flow,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/config-review-flow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67084317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "config-review-flow",
+      "url": "https://clawhub.ai/skills/config-review-flow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "config-review-flow",
+    "url": "https://clawhub.ai/skills/config-review-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/config-review-flow-43bc96d1c1962d13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/config-review-flow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-config-review-flow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbda2df53715a36663564f889cc14ebd3477914c690f5276d8cc21ae689e79d7",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T01:01:02.371Z"
+}

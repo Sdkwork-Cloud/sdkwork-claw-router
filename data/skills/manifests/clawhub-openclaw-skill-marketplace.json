@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64519,
+  "uuid": "skill-clawhub-openclaw-skill-marketplace",
+  "skillKey": "clawhub-openclaw-skill-marketplace",
+  "name": "Openclaw Skill Marketplace",
+  "summary": "OpenClaw 技能市场 - 从 ClawHub 同步 100+ 技能，智能推荐最适合你的技能组合。 支持场景推荐（开发/创作/办公）、行业推荐（互联网/金融/教育）、身份推荐（开发者/设计师/学生）。 增强搜索：精确搜索、模糊搜索、中文关键词映射（如\"备份\"搜到\"backup\"）。 浏览、搜索、一键安装、评分...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_marketplace",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "williamwg2025",
+      "features": [
+        "OpenClaw 技能市场",
+        "从 ClawHub 同步 100+ 技能，智能推荐最适合你的技能组合。 支持场景推荐（开发/创作/办公）、行业推荐（互联网/金融/教育）、身份推荐（开发者/设计师/学生）。 增强搜索：精确搜."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-marketplace@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/175094070?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-marketplace",
+      "url": "https://clawhub.ai/skills/openclaw-skill-marketplace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-marketplace",
+    "url": "https://clawhub.ai/skills/openclaw-skill-marketplace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-marketplace-434450d31c33f2b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-marketplace@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-marketplace-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d9d3e322c78eae30f14b8c2e469c3f54b78fdf0a173332da91f0445502fabc1",
+      "artifactSizeBytes": 2628
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T06:08:25.544Z"
+}

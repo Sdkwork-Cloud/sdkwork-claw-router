@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/variant-pathogenicity-predictor-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.variant_pathogenicity_predictor_1",
+  "skill": {
+    "id": 45549,
+    "skillKey": "clawhub-variant-pathogenicity-predictor-1",
+    "name": "Variant Pathogenicity Predictor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "variant-pathogenicity-predictor-1",
+    "url": "https://clawhub.ai/skills/variant-pathogenicity-predictor-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/variant-pathogenicity-predictor-1-cd05799ac6982b6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate REVEL, CADD, PolyPhen scores to predict variant pathogenicity."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775095646377,
+      "changelog": "Initial release of variant-pathogenicity-predictor.\n\n- Integrates REVEL, CADD, PolyPhen, SIFT, and MutationTaster scores to predict variant pathogenicity.\n- Provides command-line interface for inputting single variants or VCF files, specifying gene and score types.\n- Outputs include pathogenicity classification, ACMG guideline interpretation, individual score breakdown, and confidence assessment.\n- Includes structured workflow, input validation, error handling, and explicit risk/security assessment.\n- No extra Python dependencies required; packaged for reproducible, auditable execution via scripts/main.py.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:490bac896aad8c359d475a2bd685f92946edf4deeee37109afe97710244094e3"
+}

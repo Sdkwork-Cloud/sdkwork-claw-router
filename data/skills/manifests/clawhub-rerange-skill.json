@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40597,
+  "uuid": "skill-clawhub-rerange-skill",
+  "skillKey": "clawhub-rerange-skill",
+  "name": "Rerange Skill",
+  "summary": "Build, preview, monitor, rerange, close, and risk-check non-custodial Rerange liquid orders using @rerange/wagmi.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rerange_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RΞRANGE",
+      "features": [
+        "Build, preview, monitor, rerange, close, and risk-check non-custodial Rerange liquid orders usi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rerange-skill@1.0.0",
+      "screenshots": [
+        "https://rerange.xyz/icon.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rerange-skill",
+      "url": "https://clawhub.ai/skills/rerange-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rerange-skill",
+    "url": "https://clawhub.ai/skills/rerange-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rerange-skill-757062abc517df8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rerange-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rerange-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ebd25694d2e12a5335285af8504f1a1ee0247dc15b610435d91edc7243613ff",
+      "artifactSizeBytes": 1819
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T18:20:49.937Z"
+}

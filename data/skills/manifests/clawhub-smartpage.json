@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43306,
+  "uuid": "skill-clawhub-smartpage",
+  "skillKey": "clawhub-smartpage",
+  "name": "SmartPage",
+  "summary": "Auto-fit Markdown to one A4 page. Binary search optimal font size, render with 10 themes, export PDF+PNG+MD.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smartpage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Laurence Rotolo",
+      "features": [
+        "Auto-fit Markdown to one A4 page",
+        "Binary search optimal font size, render with 10 themes, export PDF+PNG+MD."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smartpage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127916299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smartpage",
+      "url": "https://clawhub.ai/skills/smartpage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smartpage",
+    "url": "https://clawhub.ai/skills/smartpage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smartpage-5743ac099b000910.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smartpage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smartpage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f9637c87cb66697f47d68d687c6ebf7d80fd2a3a8f32d07ae5bdf03d3ff78a9",
+      "artifactSizeBytes": 1806
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T13:34:10.938Z"
+}

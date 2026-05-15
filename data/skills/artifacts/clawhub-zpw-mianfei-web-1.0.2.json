@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zpw-mianfei-web@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zpw_mianfei_web",
+  "skill": {
+    "id": 21414,
+    "skillKey": "clawhub-zpw-mianfei-web",
+    "name": "zpw-mianfei-web"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zpw-mianfei-web",
+    "url": "https://clawhub.ai/skills/zpw-mianfei-web",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zpw-mianfei-web-d09275bcc903a8af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use a local free search engine to find information on the web by fetching results with specified keywords."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blue-sky-8",
+      "userId": "s176d5cg8yfsqrjn5cmmd7knps83phy4",
+      "displayName": "blue-sky-8",
+      "image": "https://avatars.githubusercontent.com/u/99163107?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 510,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773680924189,
+      "changelog": "- Initial release of the zpw-mianfei-web skill.\n- Enables local free web search using a self-hosted search engine.\n- Activates when users ask to \"search\", \"查一下\", or \"找找\".\n- Extracts search keywords and returns results in JSON format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1aea82897b0eeedc3c6462cc733a057446d808e417ae67dad2df643752f2117"
+}

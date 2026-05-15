@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42439,
+  "uuid": "skill-clawhub-quarterly-database-cleanup",
+  "skillKey": "clawhub-quarterly-database-cleanup",
+  "name": "Quarterly Database Cleanup",
+  "summary": "Run a comprehensive quarterly CRM audit covering list health, bounce monitoring, data quality, scoring calibration, engagement metrics, and property cleanup....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quarterly_database_cleanup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TomGranot",
+      "features": [
+        "Run a comprehensive quarterly CRM audit covering list health, bounce monitoring, data quality,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quarterly-database-cleanup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8835035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quarterly-database-cleanup",
+      "url": "https://clawhub.ai/skills/quarterly-database-cleanup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quarterly-database-cleanup",
+    "url": "https://clawhub.ai/skills/quarterly-database-cleanup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quarterly-database-cleanup-68b147f79ac2c71b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quarterly-database-cleanup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quarterly-database-cleanup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7933c32cadee685f4a1d2cf15fb875f45731e40bb09001e49232988dc3d832e",
+      "artifactSizeBytes": 2460
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T19:48:45.304Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/idx-cma-report@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idx_cma_report",
+  "skill": {
+    "id": 16359,
+    "skillKey": "clawhub-idx-cma-report",
+    "name": "IDX CMA Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idx-cma-report",
+    "url": "https://clawhub.ai/skills/idx-cma-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idx-cma-report-fba3215f85762124.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate comparative market analysis (CMA) and home valuation reports from IDX listing data and selected comparable properties. Use when a user wants to pick..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielfoch",
+      "userId": "publishers:danielfoch",
+      "displayName": "danielfoch",
+      "image": "https://avatars.githubusercontent.com/u/152220262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 883,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771305009667,
+      "changelog": "idx-cma-report 0.1.0 — Initial release\n\n- Generates comparative market analysis (CMA) and home valuation reports using IDX listing data and chosen comparables.\n- Provides structured valuations, written agent/client reports, and prompts for interactive experience in Google AI Studio or Gemini Canvas.\n- Guides users through comp selection, data normalization, and CMA output creation.\n- Flags data gaps, explains adjustments, and ensures transparency between data and modeling.\n- Designed for agent/broker support; not a licensed appraisal tool.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:21466cb7d2a168ae683c561c5cfd9d3a3d704fe416d355cf4659548ac8b891af"
+}

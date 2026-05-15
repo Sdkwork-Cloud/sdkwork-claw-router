@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-hot-zh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_hot_zh",
+  "skill": {
+    "id": 70442,
+    "skillKey": "clawhub-stock-hot-zh",
+    "name": "stock-hot-zh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-hot-zh",
+    "url": "https://clawhub.ai/skills/stock-hot-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-hot-zh-fd04b4c3024a6bfb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 AISA 扫描热门股票和加密资产的实时异动。触发条件：当用户想知道现在什么最热、什么在大幅波动、市场动量如何、涨幅榜或消息驱动异动时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bibaofeng",
+      "userId": "s1740zrgcnwxsxgzt9bfj5a1jn842mag",
+      "displayName": "bibaofeng",
+      "image": "https://avatars.githubusercontent.com/u/86095131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776440176119,
+      "changelog": "stock-hot-zh 1.0.0\n\n- 首次发布，支持通过 AISA 实时扫描热门股票和加密资产的市场异动。\n- 支持识别涨跌幅居前、动量标的及快速市场总结。\n- 简易命令行运行方式，需配置 AISA_API_KEY 环境变量。\n- 适用于查询市场最热、波动最大、动量突出或消息驱动的股票与加密资产行情。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee85283ebb47969b0a0dc44b3933bbea56afd66cc84ed7fa383da01ac56cea3f"
+}

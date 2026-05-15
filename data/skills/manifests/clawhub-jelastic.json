@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34063,
+  "uuid": "skill-clawhub-jelastic",
+  "skillKey": "clawhub-jelastic",
+  "name": "Jelastic",
+  "summary": "Jelastic integration. Manage data, records, and automate workflows. Use when the user wants to interact with Jelastic data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jelastic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Jelastic integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Jelastic data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jelastic@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jelastic",
+      "url": "https://clawhub.ai/skills/jelastic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jelastic",
+    "url": "https://clawhub.ai/skills/jelastic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jelastic-4c477b903618c772.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jelastic@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-jelastic-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54ef72d86ab3c27bbaab2eaea8ef0464c1cda7116f3ce83117768ad2bab3b939",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:38:47.088Z"
+}

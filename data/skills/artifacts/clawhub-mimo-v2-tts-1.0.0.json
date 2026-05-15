@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mimo-v2-tts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mimo_v2_tts",
+  "skill": {
+    "id": 36143,
+    "skillKey": "clawhub-mimo-v2-tts",
+    "name": "Xiaomi MiMo-V2-TTS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mimo-v2-tts",
+    "url": "https://clawhub.ai/skills/mimo-v2-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mimo-v2-tts-bfc9a224bade8004.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Converts text to speech using Xiaomi MiMo-V2-TTS with support for emotional styles, Chinese dialects, role voices, and singing synthesis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ddpie",
+      "userId": "s17cd8bq9fy7n4zahwgeh4wf6d83vaxx",
+      "displayName": "ddpie",
+      "image": "https://avatars.githubusercontent.com/u/8743845?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774260299554,
+      "changelog": "Initial release: MiMo-V2-TTS speech synthesis with emotional style control, Chinese dialect support, and singing synthesis",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30b8ec1ebf34e91f28162b99ca567e44eb0a4d74a981da3346a73b6c61a2018b"
+}

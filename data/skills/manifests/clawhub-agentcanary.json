@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15887,
+  "uuid": "skill-clawhub-agentcanary",
+  "skillKey": "clawhub-agentcanary",
+  "name": "AgentCanary",
+  "summary": "Cross-asset market intelligence API for AI agents. 130+ endpoints across macro regime detection, risk scoring, trading signals (IGNITION/ACCUMULATION/DISTRIB...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentcanary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AgentCanary",
+      "features": [
+        "Cross-asset market intelligence API for AI agents",
+        "130+ endpoints across macro regime detection, risk scoring, trading signals (IGNITION/ACCUMULAT."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentcanary@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/188248728?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentcanary",
+      "url": "https://clawhub.ai/skills/agentcanary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentcanary",
+    "url": "https://clawhub.ai/skills/agentcanary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentcanary-f94b15d6bc74b8c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentcanary@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentcanary-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a24dcbe24222dd3ed4f77c9e0dd315413df8ed56e98d82f9d6d3e5de8df6a95d",
+      "artifactSizeBytes": 2062
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T12:14:20.451Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/luke-find-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.luke_find_skills",
+  "skill": {
+    "id": 24345,
+    "skillKey": "clawhub-luke-find-skills",
+    "name": "Luke Find Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "luke-find-skills",
+    "url": "https://clawhub.ai/skills/luke-find-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/luke-find-skills-391bd6ded15cfb5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "banalit",
+      "userId": "s17abp9n06pk45v9gsxmvsnk29869nqg",
+      "displayName": "banalit",
+      "image": "https://avatars.githubusercontent.com/u/23724305?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773474061010,
+      "changelog": "- Initial release of the \"find-skills\" skill.\n- Helps users discover and install agent skills based on their queries.\n- Guides users through searching, selecting, and installing skills using the Skills CLI (`npx skills`).\n- Provides examples and tips for effective skill search.\n- Includes advice on what to do if no relevant skills are found.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3671e664d18aa988f8a973fa660f3bb96b588174a468e9d204a931142fb7ff52"
+}

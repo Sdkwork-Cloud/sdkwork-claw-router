@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bios-deep-research@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bios_deep_research",
+  "skill": {
+    "id": 19020,
+    "skillKey": "clawhub-bios-deep-research",
+    "name": "Bios Deep Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bios-deep-research",
+    "url": "https://clawhub.ai/skills/bios-deep-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bios-deep-research-be07f530494d7a39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run deep biological research using the BIOS API. Supports API key and x402 crypto payments (USDC on Base). Start-and-check-back pattern works across heartbeats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jmartink",
+      "userId": "s17d2pj6kqjr1k5e6zm8k93ygx83hq4j",
+      "displayName": "jmartink",
+      "image": "https://avatars.githubusercontent.com/u/3597424?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 623,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773153491021,
+      "changelog": "Declare curl as required binary; improve scanner coherence",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ac6b6a5c2adcf4953e0fb85cc17720b090b1cc0ed3f992ce86868c42206c212"
+}

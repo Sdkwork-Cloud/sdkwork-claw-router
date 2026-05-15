@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56978,
+  "uuid": "skill-clawhub-openclaw-video-pipeline",
+  "skillKey": "clawhub-openclaw-video-pipeline",
+  "name": "video 生成流水线",
+  "summary": "OpenClaw two-step pipeline: (1) expand a user brief into a three-shot storyboard and save it to storyboard/storyboard.json at project root, (2) run python3 s...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_video_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "King",
+      "features": [
+        "OpenClaw two-step pipeline: (1) expand a user brief into a three-shot storyboard and save it to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-video-pipeline@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13331694?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-video-pipeline",
+      "url": "https://clawhub.ai/skills/openclaw-video-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-video-pipeline",
+    "url": "https://clawhub.ai/skills/openclaw-video-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-video-pipeline-243af645aa24a972.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-video-pipeline@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-video-pipeline-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d6558f6f650b65fe2910f51df1920f6b3a7b788df479a2cb3ffa9b5711ccbd1",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T13:58:09.020Z"
+}

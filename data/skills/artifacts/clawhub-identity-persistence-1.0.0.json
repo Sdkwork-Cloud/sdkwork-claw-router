@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/identity-persistence@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.identity_persistence",
+  "skill": {
+    "id": 19766,
+    "skillKey": "clawhub-identity-persistence",
+    "name": "Identity Persistence Layer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "identity-persistence",
+    "url": "https://clawhub.ai/skills/identity-persistence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/identity-persistence-33e71f515d2ee4ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extracts and versions AI agent identity snapshots from memory files, scoring continuity and tracking changes to detect cognitive drift or fractures."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quriustus",
+      "userId": "publishers:quriustus",
+      "displayName": "quriustus",
+      "image": "https://avatars.githubusercontent.com/u/145394137?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 592,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771969109245,
+      "changelog": "Versioned identity graphs, KL-divergence continuity scoring, molting protocol for model upgrades",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:af8e9763f08df120c0f776e0fba3a2bab41cc2421af1cf995eb67fbe7ca2b901"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mockplus-reader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mockplus_reader",
+  "skill": {
+    "id": 65709,
+    "skillKey": "clawhub-mockplus-reader",
+    "name": "Mockplus Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mockplus-reader",
+    "url": "https://clawhub.ai/skills/mockplus-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mockplus-reader-861467d2021dee6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "读取和分析 MockPlus 在线设计页面。用于：（1）打开并解析 MockPlus 网页链接，（2）提取页面中的设计信息、结构、组件，（3）分析原型稿内容和交互说明。当用户发送 MockPlus 链接或要求分析原型稿时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a-din",
+      "userId": "s17c7djh1gag2b7k7dst2mkr6983sy0v",
+      "displayName": "Adin",
+      "image": "https://avatars.githubusercontent.com/u/22701008?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774033532337,
+      "changelog": "- Initial release of mockplus-reader skill.\n- Enables opening and parsing MockPlus online design pages.\n- Extracts page structure, design info, component tree, interaction details, and comments from MockPlus links.\n- Provides standardized output format for project analysis.\n- Includes guidance for analyzing and exporting MockPlus-based uni-app + Vue3 projects.\n- Notes on access restrictions and login requirements for certain MockPlus pages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac224e24f8fcbefc57db3ec569af7a150b8242bbdede5e1b20a1d8ef1a508b01"
+}

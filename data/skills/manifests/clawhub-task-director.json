@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52859,
+  "uuid": "skill-clawhub-task-director",
+  "skillKey": "clawhub-task-director",
+  "name": "Task Director",
+  "summary": "Task Director — turn complex tasks into movie storyboards. Create a plan, review it, then execute step by step with fallback support. Pause, retry, skip anyt...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_director",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "besty0121",
+      "features": [
+        "Task Director — turn complex tasks into movie storyboards",
+        "Create a plan, review it, then execute step by step with fallback support",
+        "Pause, retry, skip anyt..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-director@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133213023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-director",
+      "url": "https://clawhub.ai/skills/task-director"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-director",
+    "url": "https://clawhub.ai/skills/task-director",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-director-c54142688192ab46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-director@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-director-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1c558d1b255c515dc4143e726347865b6a56080fc1c911cd5641b233df88eec",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T01:37:10.152Z"
+}

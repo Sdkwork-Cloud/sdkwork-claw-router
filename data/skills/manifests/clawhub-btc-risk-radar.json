@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19933,
+  "uuid": "skill-clawhub-btc-risk-radar",
+  "skillKey": "clawhub-btc-risk-radar",
+  "name": "BTC Risk Radar",
+  "summary": "Professional BTC risk radar using public options, perp, and spot data. Use when the user wants a clear Bitcoin risk snapshot with volatility/skew context, pa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.btc_risk_radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Li Xin",
+      "features": [
+        "Professional BTC risk radar using public options, perp, and spot data",
+        "Use when the user wants a clear Bitcoin risk snapshot with volatility/skew context, pa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/btc-risk-radar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2403860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "btc-risk-radar",
+      "url": "https://clawhub.ai/skills/btc-risk-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "btc-risk-radar",
+    "url": "https://clawhub.ai/skills/btc-risk-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/btc-risk-radar-0da1006a93549056.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/btc-risk-radar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-btc-risk-radar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c51ccc044c782fc115d4890bff8fb2316018818ea2404e12dbd086413e39220b",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T14:38:41.730Z"
+}

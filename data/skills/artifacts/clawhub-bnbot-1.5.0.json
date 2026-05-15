@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bnbot@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bnbot",
+  "skill": {
+    "id": 43193,
+    "skillKey": "clawhub-bnbot",
+    "name": "BNBot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bnbot",
+    "url": "https://clawhub.ai/skills/bnbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bnbot-c2551dc64ef3450f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The safest and most efficient way to automate Twitter/X — BNBot operates through a real browser session with 40+ AI-powered CLI tools. Grow your Twitter with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackleeio",
+      "userId": "s17cmkyzq3sr98sr2h9bkv113x83htzr",
+      "displayName": "Jack Lee",
+      "image": "https://avatars.githubusercontent.com/u/20477587?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 643,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 24
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1773764323327,
+      "changelog": "Add 12 missing CLI commands, full search params, media support docs",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:00e200cce8f95bb2463a20843b6c73e5c9a2028a66d024d2db4a747fb6ce23c1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phantom-limb@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phantom_limb",
+  "skill": {
+    "id": 51447,
+    "skillKey": "clawhub-phantom-limb",
+    "name": "Phantom Limb"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phantom-limb",
+    "url": "https://clawhub.ai/skills/phantom-limb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phantom-limb-1f99a342c55c063e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detects phantom dependencies — references to things that no longer exist, ghost state that lives in the gaps between modules, and invisible wires that connec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jcools1977",
+      "userId": "publishers:jcools1977",
+      "displayName": "John DeVere Cooley",
+      "image": "https://avatars.githubusercontent.com/u/75928463?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 323,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772568126001,
+      "changelog": "Initial release — Detects phantom dependencies and ghost references across the codebase",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e16d226918c969634d3c6698e60db0d64196878fb807518c98dcd732ee253807"
+}

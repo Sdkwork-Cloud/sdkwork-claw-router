@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/report-generator-en@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.report_generator_en",
+  "skill": {
+    "id": 38412,
+    "skillKey": "clawhub-report-generator-en",
+    "name": "Report Generator EN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "report-generator-en",
+    "url": "https://clawhub.ai/skills/report-generator-en",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/report-generator-en-be282f76c0285358.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates clear, structured weekly work reports from natural language input, tailored by role with insight-driven analysis and customizable tone."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rashed-mamoon",
+      "userId": "s17fq89ktp1w2swvfe5zd63tj983paxt",
+      "displayName": "Rashed Al Mamoon",
+      "image": "https://avatars.githubusercontent.com/u/113433060?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774594577142,
+      "changelog": "Version 1.0.1 introduces a changelog file for improved transparency.\n\n- Added `CHANGELOG.md` to document changes in each release.\n- No functional or behavioral updates to the skill itself.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04e03cb1739229187d9a32037b7ae19f91707473bc09f8418886cbeee332f4d9"
+}

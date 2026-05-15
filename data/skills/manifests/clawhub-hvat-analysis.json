@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73584,
+  "uuid": "skill-clawhub-hvat-analysis",
+  "skillKey": "clawhub-hvat-analysis",
+  "name": "横纵分析法",
+  "summary": "基于时间纵深和同期横截面双维度，系统还原对象演变史与现状，挖掘深入交叉洞察，辅助文献综述与行业报告分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hvat_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zihaowyt5525-max",
+      "features": [
+        "基于时间纵深和同期横截面双维度，系统还原对象演变史与现状，挖掘深入交叉洞察，辅助文献综述与行业报告分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hvat-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237939160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hvat-analysis",
+      "url": "https://clawhub.ai/skills/hvat-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hvat-analysis",
+    "url": "https://clawhub.ai/skills/hvat-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hvat-analysis-5edc7cb77e2f8459.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hvat-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hvat-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41b3797dc91e8647ff6bf0edaa7d65ea45bbd90a12ea0539be1a5fef3807d42d",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T17:37:16.898Z"
+}

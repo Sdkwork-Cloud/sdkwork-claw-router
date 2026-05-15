@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/signal-track@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signal_track",
+  "skill": {
+    "id": 32440,
+    "skillKey": "clawhub-signal-track",
+    "name": "signal-track"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signal-track",
+    "url": "https://clawhub.ai/skills/signal-track",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signal-track-a4b382934a21c0d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track persistent topics (stocks, companies, AI, and policy events) and monitor them continuously. Use this for recurring updates, trend monitoring, and struc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lucas-acc",
+      "userId": "s17agmz96hp5r28hhht7p7c6jh83jjx0",
+      "displayName": "LucasWU",
+      "image": "https://avatars.githubusercontent.com/u/32960135?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1774433381322,
+      "changelog": "- Added required_config_paths section specifying both preferred (`~/.openclaw/openclaw.json`) and legacy (`~/.signal-track/config.json`) config file locations, with usage notes for each.\n- Clarified that API base URL is now `https://younews.k.sohu.com/` (was `http://` previously).\n- Updated execution notes detailing config file reading/writing logic and enhanced description of legacy config fallback.\n- No functional CLI or feature changes; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a66da6dfd19e236f1aba08e59ce05417b853c1017853d08d948642433c0b8dc"
+}

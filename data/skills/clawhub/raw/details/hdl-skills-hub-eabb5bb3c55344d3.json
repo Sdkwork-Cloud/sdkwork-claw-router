@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "hdl-skills-hub",
+    "displayName": "Hdl Skills Hub",
+    "summary": "HDL-MCP-Server 的核心技能入口。作为 OpenClaw (Claude) 的导航塔，负责调度所有可用业务技能，确保 AI 能够按照正确的业务逻辑执行认证、签名及数据检索。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774923128332,
+    "updatedAt": 1777526930573
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774923128332,
+    "changelog": "HDL Skills Hub v1.2.0\n\n- 新增：详细规范 AI 行为的核心原则，强化隐私保护与安全性要求。\n- 规范了所有业务操作前的严格 Token 检查与分步式登录引导流程。\n- 明确多房屋动态切换能力，禁止硬编码 sensitive 信息，要求动态获取 homeId。\n- 规定所有用户回复内容中必须脱敏，禁止展示 ID、Token、密钥等敏感数据。\n- 业务流程中引入多媒体视觉反馈，设备状态需关联图片，增强交互体验。\n- 明确并细化各原子技能模块及其权限边界。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "superzhangquansong",
+    "userId": "s177gabb3kkya0ggncsgp9k6bx83myg6",
+    "displayName": "superzhangquansong",
+    "image": "https://avatars.githubusercontent.com/u/121998275?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777526930573
+  }
+}

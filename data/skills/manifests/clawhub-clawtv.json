@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16508,
+  "uuid": "skill-clawhub-clawtv",
+  "skillKey": "clawhub-clawtv",
+  "name": "ClawTV",
+  "summary": "AI-powered Apple TV remote that uses vision to autonomously navigate apps, play content, control playback, and manage settings.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtv",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "akivasolutions",
+      "features": [
+        "AI-powered Apple TV remote that uses vision to autonomously navigate apps, play content, contro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawtv@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259251553?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawtv",
+      "url": "https://clawhub.ai/skills/clawtv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtv",
+    "url": "https://clawhub.ai/skills/clawtv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtv-1c30617c6e566ef8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawtv@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawtv-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:512b995b078e249e7d5123addb5fc3b2e30b9826545ed7b784f7359a3d596229",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T05:23:20.608Z"
+}

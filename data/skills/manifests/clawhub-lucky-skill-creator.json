@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39018,
+  "uuid": "skill-clawhub-lucky-skill-creator",
+  "skillKey": "clawhub-lucky-skill-creator",
+  "name": "Lucky Skill Creator",
+  "summary": "Create or update AgentSkills. Use when designing, structuring, or packaging skills with scripts, references, and assets.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lucky_skill_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rmbell09-lang",
+      "features": [
+        "Create or update AgentSkills",
+        "Use when designing, structuring, or packaging skills with scripts, references, and assets."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lucky-skill-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/238621327?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lucky-skill-creator",
+      "url": "https://clawhub.ai/skills/lucky-skill-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lucky-skill-creator",
+    "url": "https://clawhub.ai/skills/lucky-skill-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lucky-skill-creator-675645b0827fd8e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lucky-skill-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lucky-skill-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42f013bdcd7c6d569eaabce3954ab2b0c01042c6634f5306e3a87218f6145ef7",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T02:48:24.298Z"
+}

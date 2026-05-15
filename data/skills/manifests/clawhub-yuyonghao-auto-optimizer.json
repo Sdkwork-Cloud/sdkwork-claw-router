@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65729,
+  "uuid": "skill-clawhub-yuyonghao-auto-optimizer",
+  "skillKey": "clawhub-yuyonghao-auto-optimizer",
+  "name": "Auto Optimizer",
+  "summary": "自动监控、分析和优化OpenClaw技能性能，识别瓶颈并自动应用优化方案提升执行效率和稳定性。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuyonghao_auto_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuyonghao-123",
+      "features": [
+        "自动监控、分析和优化OpenClaw技能性能，识别瓶颈并自动应用优化方案提升执行效率和稳定性。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuyonghao-auto-optimizer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267580628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuyonghao-auto-optimizer",
+      "url": "https://clawhub.ai/skills/yuyonghao-auto-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuyonghao-auto-optimizer",
+    "url": "https://clawhub.ai/skills/yuyonghao-auto-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuyonghao-auto-optimizer-58e3192e157f8104.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuyonghao-auto-optimizer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuyonghao-auto-optimizer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d23e751e8ccddf8f5195e6df098272ef989d584930ad2d7ddccce9fb98cb1238",
+      "artifactSizeBytes": 2515
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T01:32:10.420Z"
+}

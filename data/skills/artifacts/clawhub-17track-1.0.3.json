@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/17track@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.17track",
+  "skill": {
+    "id": 25355,
+    "skillKey": "clawhub-17track",
+    "name": "17TRACK"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "17track",
+    "url": "https://clawhub.ai/skills/17track",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/17track-f3e35aaeaf646ade.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track parcels and shipments via the 17TRACK API. Manage a local SQLite database of tracked packages with automatic status polling, webhook ingestion, and dai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "f-liva",
+      "userId": "s172qzhaaqgbcj367wdz5xwjjx84m22g",
+      "displayName": "Federico Liva",
+      "image": "https://avatars.githubusercontent.com/u/346224?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 380,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772803810470,
+      "changelog": "Security fix: removed hardcoded paths from daily-report.py (uses same path resolution as track17.py). Token read from TRACK17_TOKEN env var only. Removed WhatsApp/external channel references from SKILL.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:281df3c5a7f8a2e329f16e8a8e9a62d982156695e7020c24751450e721627ccf"
+}

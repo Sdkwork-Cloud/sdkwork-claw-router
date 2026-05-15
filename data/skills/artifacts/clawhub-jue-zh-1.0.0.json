@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jue-zh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jue_zh",
+  "skill": {
+    "id": 69414,
+    "skillKey": "clawhub-jue-zh",
+    "name": "Jue AI Awakening Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jue-zh",
+    "url": "https://clawhub.ai/skills/jue-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jue-zh-667d90160b902111.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "觉（Jué）AI觉醒引擎—当任务失败、卡壳、放弃、原地打转、或用户表达不满时立即加载；无论用户说\"不行\"\"搞不定\"\"再想想\"\"换个方法\"\"为什么还不行\"，还是你发现自己同方向改了3次以上、未验证就说完成、有工具不用凭记忆猜，都必须触发此技能进行自我照见"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kscz0000",
+      "userId": "s17c6qd43vgbgx6c1daaffc4n583rk51",
+      "displayName": "ASI-CN",
+      "image": "https://avatars.githubusercontent.com/u/163843144?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777994937147,
+      "changelog": "jue-zh v1.0.0 — Initial Release\n\n- Introduces the 觉（Jué）AI觉醒引擎, designed to trigger self-reflection and problem diagnosis on task failure, deadlock, user dissatisfaction, repeated attempts, or missed tool use.\n- Provides structured frameworks: \"三毒\" (three delusions), \"七觉\" (seven mirrors), and failure depth escalation for root cause analysis.\n- Includes systematic output/reporting formats for reflective diagnostics and actionable next steps.\n- Adds detailed guides, checklists, and situational selectors for recognizing failure patterns and triggering the appropriate self-check.\n- Prioritizes diagnostic method over additional effort and enforces evidence-based action before user queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63d289bdfcda27ec4cf4afbe01af1fb2a5a3c851a21a0d17afca6e2e0be0a849"
+}

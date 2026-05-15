@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-translate@4.0.0",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_translate",
+  "skill": {
+    "id": 17977,
+    "skillKey": "clawhub-pdf-translate",
+    "name": "PDF Translate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-translate",
+    "url": "https://clawhub.ai/skills/pdf-translate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-translate-ec2bcbcbe62a4a52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translates PDF documents to Chinese with professional typography. Extracts text, translates section-by-section into well-structured Markdown, then generates..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chrislee121",
+      "userId": "s1788cvd7sk4j95ake4k8s62sh83njfd",
+      "displayName": "ChrisLee121",
+      "image": "https://avatars.githubusercontent.com/u/33147951?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 668,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "4.0.0",
+      "createdAt": 1772451863443,
+      "changelog": "Initial release of PDF translation tool with professional Markdown-to-PDF workflow.\n\n- Provides section-by-section translation of PDFs to Chinese, preserving document structure in Markdown.\n- Generates high-quality PDFs from Markdown using weasyprint with full CJK (Chinese, Japanese, Korean) font support and modern typography.\n- Fixes previous issues with code blocks displaying Chinese characters incorrectly.\n- Includes robust handling of tables, lists, code, blockquotes, and headings.\n- Adds `scripts/md2pdf.py` for universal Markdown-to-PDF conversion.\n- Reference guides cover translation standards, font configuration, troubleshooting, and complete workflow examples.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f7b919babfc3333d097263e61d815216cbd819320780313b4e7aedc9b5a4da92"
+}

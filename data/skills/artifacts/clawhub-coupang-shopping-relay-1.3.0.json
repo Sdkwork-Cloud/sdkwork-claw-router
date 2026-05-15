@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coupang-shopping-relay@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coupang_shopping_relay",
+  "skill": {
+    "id": 61053,
+    "skillKey": "clawhub-coupang-shopping-relay",
+    "name": "Coupang Shopping Relay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coupang-shopping-relay",
+    "url": "https://clawhub.ai/skills/coupang-shopping-relay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coupang-shopping-relay-1ad4653c35330e9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "로그인된 Chrome browser relay로 쿠팡 검색, 비교, 장바구니 조회/추가/삭제/수량 변경, 주문 직전 검수를 수행하는 OpenClaw 스킬입니다. 쿠팡 쇼핑 자동화와 장바구니 정리가 필요할 때 사용합니다."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mnemosyn1154",
+      "userId": "s1708mhs15hb7tqg2vk4s7fk7x846hzv",
+      "displayName": "Mnemosyn1154",
+      "image": "https://avatars.githubusercontent.com/u/207116334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1775364688833,
+      "changelog": "배치 모드: wait 의무화, 탭 초기화 구체화, 외부 스킬 참고, 실행 흐름 요약 추가",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:011063c446acaa4c445f5d5b9d603e622afea56ca4e87cee1c0658384626393d"
+}

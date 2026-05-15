@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20851,
+  "uuid": "skill-clawhub-connectors-available",
+  "skillKey": "clawhub-connectors-available",
+  "name": "Connectors Available",
+  "summary": "Check which exchanges work from your location and search for tokens with trading rules (min order size, price increment, order types).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.connectors_available",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Feng",
+      "features": [
+        "Check which exchanges work from your location and search for tokens with trading rules (min ord."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/connectors-available@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1795030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "connectors-available",
+      "url": "https://clawhub.ai/skills/connectors-available"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "connectors-available",
+    "url": "https://clawhub.ai/skills/connectors-available",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/connectors-available-22dd2cfdde1adaad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/connectors-available@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-connectors-available-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24a875929d72928a3651179470106e22c29f1ae4c4a99190b1b22655aae72060",
+      "artifactSizeBytes": 2331
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T21:46:12.233Z"
+}

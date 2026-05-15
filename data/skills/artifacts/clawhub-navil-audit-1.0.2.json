@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/navil-audit@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.navil_audit",
+  "skill": {
+    "id": 43860,
+    "skillKey": "clawhub-navil-audit",
+    "name": "Navil Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "navil-audit",
+    "url": "https://clawhub.ai/skills/navil-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/navil-audit-2b1297fad246a64c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep security audit for OpenClaw. Run a comprehensive scan of all installed skills, MCP servers, and agent configuration. Generates a detailed security repor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivanpantheon",
+      "userId": "s174t8r08hfsb9ksce4nwzsxpd83j7wk",
+      "displayName": "ivanpantheon",
+      "image": "https://avatars.githubusercontent.com/u/54975818?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774406696051,
+      "changelog": "Fix: version sync, fix detector count",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:040c17307495ce129b4c65e6047a8893c3f484a136e0cfc3a86bdf8cf53d590c"
+}

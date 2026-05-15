@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lastfm-spotify-playlists@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lastfm_spotify_playlists",
+  "skill": {
+    "id": 37073,
+    "skillKey": "clawhub-lastfm-spotify-playlists",
+    "name": "LastFM to Spotify Playlists"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lastfm-spotify-playlists",
+    "url": "https://clawhub.ai/skills/lastfm-spotify-playlists",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lastfm-spotify-playlists-620da0ff7abcb5ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build music recommendations and create Spotify playlists using Last.fm similarity and listening history."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stanestane",
+      "userId": "s17b2gdwmr6qr85ytdwbxw09q183g4ys",
+      "displayName": "Stanislav Stankovic",
+      "image": "https://avatars.githubusercontent.com/u/1871432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1774629832503,
+      "changelog": "Major refactor: converted from scripts/ to a flat, entrypoint-based structure for direct, reliable script usage.\n\n- Replaced all `scripts/` submodules with top-level Python scripts and helpers (`run_pipeline.py`, `auth.py`, `lastfm.py`, `spotify.py`, etc.).\n- All commands must now be run from the skill root; package installation and `python -m` invocation are no longer required or supported.\n- Credentials and tokens must be supplied via environment variables or standard file paths (see example credential files).\n- Updated SKILL.md with new execution and command structure, strict workflow rules, and revised behavior guidelines.\n- Removes references and workflow patterns tied to previous module hierarchy (no `scripts/` directory usage, no ACP).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e341ce3f1b7d3a73fc36d3645ed8a6f56fa09875b678fc70c001dfcf362c92e"
+}

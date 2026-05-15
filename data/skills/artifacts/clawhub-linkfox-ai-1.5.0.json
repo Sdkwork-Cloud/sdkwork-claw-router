@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkfox-ai@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_ai",
+  "skill": {
+    "id": 65039,
+    "skillKey": "clawhub-linkfox-ai",
+    "name": "LinkFoxAI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-ai",
+    "url": "https://clawhub.ai/skills/linkfox-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-ai-94359066171e6f0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用 LinkFox AI 开放平台 AI 作图/视频 API（换模特、抠图、扩图、场景裂变、智能修图、套图、姿势裂变、带货口播、图转视频等）。适用场景：(1) AI 任务创建与结果轮询，(2) 通过 api-call 调用任意开放平台接口，(3) 素材连通性测试。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linkfox-ai",
+      "userId": "s171g8b6m2khwdy9ye8bxj0wx183vd4z",
+      "displayName": "linkfox-ai",
+      "image": "https://avatars.githubusercontent.com/u/267242260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1778157856506,
+      "changelog": "linkfox-ai v1.5.0\n- 商品套图/服装套图 — 新增 WAN2_7 和 GPT_2_IMAGE（低/中/高三档品质）模型\n- 智能修图（image-edit） — 新增 WAN2_7、SEEDREAM5、GPT_2_IMAGE、AIDRAW_EDIT provider\n- 图转视频（image-to-video）快捷命令参数补充，支持 `--voice`、`--camera`、`--prompt-optimizer` 等高级选项（具体参数详见 references/image-make.md）。\n- 文档中对 image-to-video 的模型参数说明更详细，方便使用不同视频模型能力。\n- 其余说明文档保持一致，无功能变动。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:439a8503b131aef8fff918eddbfcf24af823758c97246a6f0cb47d4563bc0eaa"
+}

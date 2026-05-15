@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59530,
+  "uuid": "skill-clawhub-crash-snapshots",
+  "skillKey": "clawhub-crash-snapshots",
+  "name": "Crash Snapshots",
+  "summary": "每次 write/edit 前自动备份原文件到 .openclaw/backups/，防止误操作导致文件丢失。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crash_snapshots",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ECsss",
+      "features": [
+        "每次 write/edit 前自动备份原文件到 .openclaw/backups/，防止误操作导致文件丢失。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crash-snapshots@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226646360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crash-snapshots",
+      "url": "https://clawhub.ai/skills/crash-snapshots"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crash-snapshots",
+    "url": "https://clawhub.ai/skills/crash-snapshots",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crash-snapshots-762ce30e53d02881.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crash-snapshots@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-crash-snapshots-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4c75a85e9d1d6b2ecf490e498403a01db715d9285ecf7c9ac8a3974f098cf89",
+      "artifactSizeBytes": 1886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T05:54:36.064Z"
+}

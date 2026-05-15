@@ -1,0 +1,1008 @@
+{
+  "schemaVersion": 1,
+  "generator": "@sdkwork/sdk-generator",
+  "artifacts": {
+    "stateDir": ".sdkwork",
+    "manifestPath": ".sdkwork/sdkwork-generator-manifest.json",
+    "changeSummaryPath": ".sdkwork/sdkwork-generator-changes.json",
+    "executionReportPath": ".sdkwork/sdkwork-generator-report.json",
+    "manualBackupDir": ".sdkwork/manual-backups"
+  },
+  "status": "ok",
+  "mode": "apply",
+  "hasChanges": true,
+  "hasDestructiveChanges": false,
+  "changeFingerprint": "96bc5f731fa7cb16317ed36c68368a0a03d266f52fb5b67c8378a961d3774097",
+  "changeImpact": {
+    "schemaVersion": 1,
+    "areas": [
+      "models"
+    ],
+    "details": [
+      {
+        "area": "models",
+        "paths": [
+          "src/types/recharge-package.ts"
+        ]
+      }
+    ],
+    "requiresVerification": true,
+    "summary": "Detected impact areas: models. Verification is required."
+  },
+  "executionDecision": {
+    "schemaVersion": 1,
+    "riskLevel": "medium",
+    "nextAction": "verify",
+    "requiresManualReview": false,
+    "applyRequiresExpectedFingerprint": false,
+    "summary": "Changes have been applied. Run the required verification plan now.",
+    "reasons": [
+      "verification-required"
+    ]
+  },
+  "executionHandoff": {
+    "schemaVersion": 1,
+    "summary": "Run the required verification commands now.",
+    "steps": [
+      {
+        "id": "verify-check",
+        "title": "Unified package check",
+        "required": true,
+        "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
+        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-backend-sdk\\clawrouter-backend-sdk-typescript",
+        "command": "node",
+        "args": [
+          "./bin/publish-core.mjs",
+          "--language",
+          "typescript",
+          "--project-dir",
+          ".",
+          "--action",
+          "check"
+        ],
+        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action check"
+      },
+      {
+        "id": "verify-build",
+        "title": "Unified package build",
+        "required": true,
+        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: models.",
+        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-backend-sdk\\clawrouter-backend-sdk-typescript",
+        "command": "node",
+        "args": [
+          "./bin/publish-core.mjs",
+          "--language",
+          "typescript",
+          "--project-dir",
+          ".",
+          "--action",
+          "build"
+        ],
+        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action build"
+      }
+    ]
+  },
+  "verificationPlan": {
+    "shouldRun": true,
+    "runPhase": "now",
+    "summary": "Detected impact areas: models. Verification is required. Run the required verification commands now against the generated SDK output.",
+    "steps": [
+      {
+        "id": "check",
+        "title": "Unified package check",
+        "required": true,
+        "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
+        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-backend-sdk\\clawrouter-backend-sdk-typescript",
+        "command": "node",
+        "args": [
+          "./bin/publish-core.mjs",
+          "--language",
+          "typescript",
+          "--project-dir",
+          ".",
+          "--action",
+          "check"
+        ],
+        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action check"
+      },
+      {
+        "id": "build",
+        "title": "Unified package build",
+        "required": true,
+        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: models.",
+        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-backend-sdk\\clawrouter-backend-sdk-typescript",
+        "command": "node",
+        "args": [
+          "./bin/publish-core.mjs",
+          "--language",
+          "typescript",
+          "--project-dir",
+          ".",
+          "--action",
+          "build"
+        ],
+        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action build"
+      }
+    ]
+  },
+  "sdk": {
+    "name": "clawrouter-backend-sdk",
+    "version": "0.1.0",
+    "language": "typescript",
+    "sdkType": "backend",
+    "outputPath": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-backend-sdk\\clawrouter-backend-sdk-typescript",
+    "packageName": "@sdkwork/clawrouter-backend-sdk"
+  },
+  "versioning": {
+    "resolvedVersion": "0.1.0",
+    "localVersions": []
+  },
+  "stats": {
+    "totalFiles": 456,
+    "models": 425,
+    "apis": 8,
+    "types": 427
+  },
+  "warnings": [
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/admin-api-keys-map-response.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/json-object.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-account-exchange-config-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-account-history-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-account-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-api-key-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-api-result.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-card-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-card-template-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-channel-account-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-channel-proxy-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-channel-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-coupon-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-coupon-template-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-currency-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-department-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-exchange-rate-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-invitation-code-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-invitation-relation-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-invoice-item-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-invoice-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-invoice-record-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-ledger-bridge-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-member-card-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-member-level-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-oauth-account-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-order-dispatch-rule-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-order-item-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-order-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-order-worker-dispatch-profile-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-organization-member-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-organization-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-partner-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-payment-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-payment-webhook-event-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-permission-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-position-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-product-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-refund-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-role-permission-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-role-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-shop-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-shopping-cart-item-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-shopping-cart-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-sku-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-tenant-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-usage-record-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-user-address-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-user-card-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-user-coupon-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-user-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-user-role-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-vip-benefit-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-vip-benefit-usage-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-vip-level-benefit-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-vip-level-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-vip-pack-group-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-vip-pack-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-vip-point-change-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-vip-recharge-method-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-vip-recharge-pack-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-vip-recharge-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-vip-user-record.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/index.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/api/ai.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/api/billing.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/api/content.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/api/ecosystem.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/api/iam.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/api/integration.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/api/platform.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/api/system.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/api/index.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/http/client.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to package.json"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to sdkwork-sdk.json"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to bin/publish-core.mjs"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to custom/README.md"
+    }
+  ],
+  "syncSummary": {
+    "dryRun": false,
+    "writtenFiles": 1,
+    "skippedScaffoldFiles": 2,
+    "skippedUnchangedGeneratedFiles": 452,
+    "deletedGeneratedFiles": 0,
+    "changeSummaryPath": ".sdkwork/sdkwork-generator-changes.json",
+    "changeFingerprint": "96bc5f731fa7cb16317ed36c68368a0a03d266f52fb5b67c8378a961d3774097",
+    "changes": {
+      "createdGeneratedFiles": [],
+      "updatedGeneratedFiles": [
+        "src/types/recharge-package.ts"
+      ],
+      "unchangedGeneratedFiles": [
+        "bin/publish-core.mjs",
+        "bin/publish.ps1",
+        "bin/publish.sh",
+        "bin/sdk-gen.bat",
+        "bin/sdk-gen.sh",
+        "CHANGELOG.md",
+        "LICENSE",
+        "package.json",
+        "README.md",
+        "sdkwork-sdk.json",
+        "src/api/ai.ts",
+        "src/api/base.ts",
+        "src/api/billing.ts",
+        "src/api/content.ts",
+        "src/api/ecosystem.ts",
+        "src/api/iam.ts",
+        "src/api/index.ts",
+        "src/api/integration.ts",
+        "src/api/paths.ts",
+        "src/api/platform.ts",
+        "src/api/system.ts",
+        "src/auth/index.ts",
+        "src/http/client.ts",
+        "src/http/index.ts",
+        "src/index.ts",
+        "src/sdk.ts",
+        "src/types/access-groups-create-result.ts",
+        "src/types/access-groups-delete-result.ts",
+        "src/types/access-groups-list-result.ts",
+        "src/types/access-groups-update-result.ts",
+        "src/types/admin-access-group-create-request.ts",
+        "src/types/admin-access-group-item.ts",
+        "src/types/admin-access-group-mutation-response.ts",
+        "src/types/admin-access-group-update-request.ts",
+        "src/types/admin-access-groups-response.ts",
+        "src/types/admin-ai-model-create-request.ts",
+        "src/types/admin-ai-model-item.ts",
+        "src/types/admin-ai-model-mutation-response.ts",
+        "src/types/admin-ai-model-update-request.ts",
+        "src/types/admin-ai-models-response.ts",
+        "src/types/admin-announcement-create-request.ts",
+        "src/types/admin-announcement-item.ts",
+        "src/types/admin-announcement-mutation-response.ts",
+        "src/types/admin-announcement-update-request.ts",
+        "src/types/admin-announcements-response.ts",
+        "src/types/admin-api-key-create-request.ts",
+        "src/types/admin-api-key-create-response.ts",
+        "src/types/admin-api-key-item.ts",
+        "src/types/admin-api-keys-map-response.ts",
+        "src/types/admin-app-config-standard.ts",
+        "src/types/admin-app-config.ts",
+        "src/types/admin-app-create-request.ts",
+        "src/types/admin-app-delete-response.ts",
+        "src/types/admin-app-item-response.ts",
+        "src/types/admin-app-list-response.ts",
+        "src/types/admin-app-mutation-response.ts",
+        "src/types/admin-app-portal-config.ts",
+        "src/types/admin-app-update-request.ts",
+        "src/types/admin-billing-record-item.ts",
+        "src/types/admin-billing-records-response.ts",
+        "src/types/admin-capacity-pair.ts",
+        "src/types/admin-channel-create-request.ts",
+        "src/types/admin-channel-item.ts",
+        "src/types/admin-channel-mutation-response.ts",
+        "src/types/admin-channel-test-response.ts",
+        "src/types/admin-channel-update-request.ts",
+        "src/types/admin-channels-response.ts",
+        "src/types/admin-count-pair.ts",
+        "src/types/admin-coupon-batch-generate-request.ts",
+        "src/types/admin-coupon-batch-generate-response.ts",
+        "src/types/admin-coupon-batch-item.ts",
+        "src/types/admin-coupon-batches-response.ts",
+        "src/types/admin-coupon-create-request.ts",
+        "src/types/admin-coupon-item.ts",
+        "src/types/admin-coupon-mutation-response.ts",
+        "src/types/admin-coupons-response.ts",
+        "src/types/admin-dashboard-data-response.ts",
+        "src/types/admin-dashboard-recent-usage-item.ts",
+        "src/types/admin-dashboard-traffic-item.ts",
+        "src/types/admin-delete-response.ts",
+        "src/types/admin-exchange-rule-mutation-response.ts",
+        "src/types/admin-exchange-rules-response.ts",
+        "src/types/admin-firewall-item.ts",
+        "src/types/admin-firewall-mutation-response.ts",
+        "src/types/admin-firewall-rule-create-request.ts",
+        "src/types/admin-firewall-rules-response.ts",
+        "src/types/admin-ip-limit-create-request.ts",
+        "src/types/admin-ip-limits-response.ts",
+        "src/types/admin-model-catalog-sync-request.ts",
+        "src/types/admin-model-catalog-sync-response.ts",
+        "src/types/admin-model-limit-create-request.ts",
+        "src/types/admin-model-limits-response.ts",
+        "src/types/admin-model-vendor-create-request.ts",
+        "src/types/admin-model-vendor-item.ts",
+        "src/types/admin-model-vendor-mutation-response.ts",
+        "src/types/admin-model-vendors-response.ts",
+        "src/types/admin-monitor-alert-item.ts",
+        "src/types/admin-monitor-alerts-response.ts",
+        "src/types/admin-monitor-node-item.ts",
+        "src/types/admin-monitor-nodes-response.ts",
+        "src/types/admin-monitor-performance-item.ts",
+        "src/types/admin-monitor-performance-response.ts",
+        "src/types/admin-payment-attempt-item.ts",
+        "src/types/admin-payment-attempts-response.ts",
+        "src/types/admin-pie-chart-item.ts",
+        "src/types/admin-promo-code-item.ts",
+        "src/types/admin-promo-code-status-update-request.ts",
+        "src/types/admin-promo-code-status-update-response.ts",
+        "src/types/admin-promo-codes-response.ts",
+        "src/types/admin-provider-secret-create-request.ts",
+        "src/types/admin-provider-secret-item.ts",
+        "src/types/admin-provider-secret-mutation-response.ts",
+        "src/types/admin-provider-secret-update-request.ts",
+        "src/types/admin-provider-secrets-response.ts",
+        "src/types/admin-rate-limit-item.ts",
+        "src/types/admin-rate-limit-mutation-response.ts",
+        "src/types/admin-recharge-package-mutation-response.ts",
+        "src/types/admin-recharge-packages-response.ts",
+        "src/types/admin-recharge-record-item.ts",
+        "src/types/admin-recharge-records-response.ts",
+        "src/types/admin-record-log-item.ts",
+        "src/types/admin-record-logs-response.ts",
+        "src/types/admin-redemption-record-item.ts",
+        "src/types/admin-redemption-records-response.ts",
+        "src/types/admin-referral-stat-item.ts",
+        "src/types/admin-referral-stats-response.ts",
+        "src/types/admin-skill-artifact-create-request.ts",
+        "src/types/admin-skill-artifact-delete-response.ts",
+        "src/types/admin-skill-artifact-item.ts",
+        "src/types/admin-skill-artifact-list-response.ts",
+        "src/types/admin-skill-artifact-mutation-response.ts",
+        "src/types/admin-skill-artifact-update-request.ts",
+        "src/types/admin-skill-asset-create-request.ts",
+        "src/types/admin-skill-asset-delete-response.ts",
+        "src/types/admin-skill-asset-item.ts",
+        "src/types/admin-skill-asset-list-response.ts",
+        "src/types/admin-skill-asset-mutation-response.ts",
+        "src/types/admin-skill-asset-update-request.ts",
+        "src/types/admin-skill-category-create-request.ts",
+        "src/types/admin-skill-category-item.ts",
+        "src/types/admin-skill-category-list-response.ts",
+        "src/types/admin-skill-category-mutation-response.ts",
+        "src/types/admin-skill-create-request.ts",
+        "src/types/admin-skill-delete-response.ts",
+        "src/types/admin-skill-item.ts",
+        "src/types/admin-skill-list-response.ts",
+        "src/types/admin-skill-mutation-response.ts",
+        "src/types/admin-skill-package-create-request.ts",
+        "src/types/admin-skill-package-delete-response.ts",
+        "src/types/admin-skill-package-item.ts",
+        "src/types/admin-skill-package-list-response.ts",
+        "src/types/admin-skill-package-mutation-response.ts",
+        "src/types/admin-skill-package-update-request.ts",
+        "src/types/admin-skill-review-request.ts",
+        "src/types/admin-skill-update-request.ts",
+        "src/types/admin-token-limit-create-request.ts",
+        "src/types/admin-token-limits-response.ts",
+        "src/types/admin-transaction-record-item.ts",
+        "src/types/admin-transactions-response.ts",
+        "src/types/admin-usage-pair.ts",
+        "src/types/admin-user-balance-adjustment-request.ts",
+        "src/types/admin-user-create-request.ts",
+        "src/types/admin-user-item.ts",
+        "src/types/admin-user-mutation-response.ts",
+        "src/types/admin-user-update-request.ts",
+        "src/types/admin-users-response.ts",
+        "src/types/ai-billing-meter-record.ts",
+        "src/types/ai-generation-asset-action-record.ts",
+        "src/types/ai-generation-asset-record.ts",
+        "src/types/ai-generation-job-record.ts",
+        "src/types/ai-generation-session-record.ts",
+        "src/types/ai-model-capability-record.ts",
+        "src/types/ai-model-catalog-source-record.ts",
+        "src/types/ai-model-catalog-sync-run-record.ts",
+        "src/types/ai-model-family-record.ts",
+        "src/types/ai-model-pricing-record.ts",
+        "src/types/ai-model-rank-snapshot-record.ts",
+        "src/types/ai-model-record.ts",
+        "src/types/ai-model-vendor-record.ts",
+        "src/types/ai-model-vendor-region-record.ts",
+        "src/types/ai-pricing-import-snapshot-record.ts",
+        "src/types/ai-pricing-plan-binding-record.ts",
+        "src/types/ai-pricing-plan-record.ts",
+        "src/types/ai-pricing-rule-record.ts",
+        "src/types/ai-pricing-tier-record.ts",
+        "src/types/ai-quota-policy-record.ts",
+        "src/types/ai-rate-limit-bucket-record.ts",
+        "src/types/ai-request-trace-record.ts",
+        "src/types/ai-routing-decision-log-record.ts",
+        "src/types/ai-routing-policy-record.ts",
+        "src/types/ai-routing-profile-record.ts",
+        "src/types/ai-routing-rule-record.ts",
+        "src/types/ai-usage-fact-record.ts",
+        "src/types/announcements-create-result.ts",
+        "src/types/announcements-delete-result.ts",
+        "src/types/announcements-list-result.ts",
+        "src/types/announcements-update-result.ts",
+        "src/types/api-keys-create-result.ts",
+        "src/types/api-keys-delete-result.ts",
+        "src/types/api-keys-list-result.ts",
+        "src/types/apps-create-result.ts",
+        "src/types/apps-delete-result.ts",
+        "src/types/apps-disable-result.ts",
+        "src/types/apps-enable-result.ts",
+        "src/types/apps-list-result.ts",
+        "src/types/apps-publish-result.ts",
+        "src/types/apps-retrieve-result.ts",
+        "src/types/apps-unpublish-result.ts",
+        "src/types/apps-update-result.ts",
+        "src/types/channels-create-result.ts",
+        "src/types/channels-delete-result.ts",
+        "src/types/channels-list-result.ts",
+        "src/types/channels-update-result.ts",
+        "src/types/channels-verify-result.ts",
+        "src/types/commerce-billing-export-record.ts",
+        "src/types/commerce-exchange-rule-item.ts",
+        "src/types/commerce-exchange-rule-upsert-request.ts",
+        "src/types/commerce-recharge-package-mutation-request.ts",
+        "src/types/commerce-usage-pricing-plan-record.ts",
+        "src/types/commerce-usage-settlement-record.ts",
+        "src/types/commerce-usage-statement-item-record.ts",
+        "src/types/commerce-usage-statement-record.ts",
+        "src/types/common.ts",
+        "src/types/content-announcement-record.ts",
+        "src/types/content-course-application-record.ts",
+        "src/types/content-course-lesson-record.ts",
+        "src/types/content-course-record.ts",
+        "src/types/content-course-relation-record.ts",
+        "src/types/content-course-section-record.ts",
+        "src/types/content-doc-page-record.ts",
+        "src/types/content-forum-comment-record.ts",
+        "src/types/content-forum-post-record.ts",
+        "src/types/content-openapi-snapshot-record.ts",
+        "src/types/content-reaction-record.ts",
+        "src/types/content-sdk-release-record.ts",
+        "src/types/coupon-batches-create-result.ts",
+        "src/types/coupon-batches-list-result.ts",
+        "src/types/coupon-codes-list-result.ts",
+        "src/types/coupon-codes-status-update-result.ts",
+        "src/types/coupons-create-result.ts",
+        "src/types/coupons-delete-result.ts",
+        "src/types/coupons-list-result.ts",
+        "src/types/coupons-update-result.ts",
+        "src/types/dashboard-admin-overview-retrieve-result.ts",
+        "src/types/exchange-rules-list-result.ts",
+        "src/types/exchange-rules-update-result.ts",
+        "src/types/field-error.ts",
+        "src/types/finance-ledger-list-result.ts",
+        "src/types/finance-usage-statements-list-result.ts",
+        "src/types/firewalls-rules-create-result.ts",
+        "src/types/firewalls-rules-delete-result.ts",
+        "src/types/firewalls-rules-list-result.ts",
+        "src/types/iam-audit-event-record.ts",
+        "src/types/iam-credential-record.ts",
+        "src/types/iam-gateway-access-policy-record.ts",
+        "src/types/iam-gateway-api-key-group-metric-snapshot-record.ts",
+        "src/types/iam-gateway-api-key-group-record.ts",
+        "src/types/iam-gateway-api-key-record.ts",
+        "src/types/iam-gateway-risk-rule-record.ts",
+        "src/types/iam-organization-member-record.ts",
+        "src/types/iam-organization-record.ts",
+        "src/types/iam-security-event-record.ts",
+        "src/types/iam-session-record.ts",
+        "src/types/iam-tenant-record.ts",
+        "src/types/iam-user-identity-record.ts",
+        "src/types/iam-user-login-event-record.ts",
+        "src/types/iam-user-preference-record.ts",
+        "src/types/iam-user-record.ts",
+        "src/types/iam-user-security-setting-record.ts",
+        "src/types/index.ts",
+        "src/types/installation-status-response.ts",
+        "src/types/installation-status-retrieve-result.ts",
+        "src/types/integration-channel-model-record.ts",
+        "src/types/integration-channel-record.ts",
+        "src/types/integration-provider-account-record.ts",
+        "src/types/integration-provider-health-snapshot-record.ts",
+        "src/types/integration-provider-record.ts",
+        "src/types/integration-proxy-record.ts",
+        "src/types/integration-webhook-endpoint-record.ts",
+        "src/types/json-null.ts",
+        "src/types/json-object.ts",
+        "src/types/json-value.ts",
+        "src/types/model-ranking-history-entry.ts",
+        "src/types/model-ranking-history-point.ts",
+        "src/types/model-ranking-item.ts",
+        "src/types/model-ranking-refresh-job-history-page.ts",
+        "src/types/model-ranking-refresh-job-item.ts",
+        "src/types/model-ranking-refresh-latest-job.ts",
+        "src/types/model-ranking-refresh-status.ts",
+        "src/types/model-ranking-refresh-trigger-request.ts",
+        "src/types/model-ranking-refresh-trigger-response.ts",
+        "src/types/model-rankings-jobs-list-result.ts",
+        "src/types/model-rankings-list-result.ts",
+        "src/types/model-rankings-refresh-result.ts",
+        "src/types/model-rankings-snapshot.ts",
+        "src/types/model-rankings-source.ts",
+        "src/types/model-rankings-status-retrieve-result.ts",
+        "src/types/model-vendors-create-result.ts",
+        "src/types/model-vendors-list-result.ts",
+        "src/types/models-create-result.ts",
+        "src/types/models-delete-result.ts",
+        "src/types/models-list-result.ts",
+        "src/types/models-refresh-result.ts",
+        "src/types/models-update-result.ts",
+        "src/types/monitor-alerts-list-result.ts",
+        "src/types/monitor-nodes-list-result.ts",
+        "src/types/monitor-performance-list-result.ts",
+        "src/types/ops-alert-event-record.ts",
+        "src/types/ops-audit-log-record.ts",
+        "src/types/ops-config-snapshot-record.ts",
+        "src/types/ops-coupon-issue-batch-record.ts",
+        "src/types/ops-gateway-heartbeat-record.ts",
+        "src/types/ops-gateway-instance-record.ts",
+        "src/types/ops-inbox-event-record.ts",
+        "src/types/ops-job-execution-record.ts",
+        "src/types/ops-metric-snapshot-record.ts",
+        "src/types/ops-notification-delivery-record.ts",
+        "src/types/ops-notification-message-record.ts",
+        "src/types/ops-outbox-event-record.ts",
+        "src/types/ops-referral-stat-snapshot-record.ts",
+        "src/types/payments-attempts-list-result.ts",
+        "src/types/plus-account-exchange-config-record.ts",
+        "src/types/plus-account-history-record.ts",
+        "src/types/plus-account-record.ts",
+        "src/types/plus-agent-skill-package-record.ts",
+        "src/types/plus-agent-skill-record.ts",
+        "src/types/plus-api-key-record.ts",
+        "src/types/plus-api-result.ts",
+        "src/types/plus-app-record.ts",
+        "src/types/plus-card-record.ts",
+        "src/types/plus-card-template-record.ts",
+        "src/types/plus-category-record.ts",
+        "src/types/plus-channel-account-record.ts",
+        "src/types/plus-channel-proxy-record.ts",
+        "src/types/plus-channel-record.ts",
+        "src/types/plus-comments-record.ts",
+        "src/types/plus-content-vote-record.ts",
+        "src/types/plus-coupon-record.ts",
+        "src/types/plus-coupon-template-record.ts",
+        "src/types/plus-currency-record.ts",
+        "src/types/plus-department-record.ts",
+        "src/types/plus-exchange-rate-record.ts",
+        "src/types/plus-favorite-record.ts",
+        "src/types/plus-feeds-record.ts",
+        "src/types/plus-invitation-code-record.ts",
+        "src/types/plus-invitation-relation-record.ts",
+        "src/types/plus-invoice-item-record.ts",
+        "src/types/plus-invoice-record-record.ts",
+        "src/types/plus-invoice-record.ts",
+        "src/types/plus-ledger-bridge-record.ts",
+        "src/types/plus-member-card-record.ts",
+        "src/types/plus-member-level-record.ts",
+        "src/types/plus-oauth-account-record.ts",
+        "src/types/plus-order-dispatch-rule-record.ts",
+        "src/types/plus-order-item-record.ts",
+        "src/types/plus-order-record.ts",
+        "src/types/plus-order-worker-dispatch-profile-record.ts",
+        "src/types/plus-organization-member-record.ts",
+        "src/types/plus-organization-record.ts",
+        "src/types/plus-partner-record.ts",
+        "src/types/plus-payment-record.ts",
+        "src/types/plus-payment-webhook-event-record.ts",
+        "src/types/plus-permission-record.ts",
+        "src/types/plus-position-record.ts",
+        "src/types/plus-product-record.ts",
+        "src/types/plus-refund-record.ts",
+        "src/types/plus-role-permission-record.ts",
+        "src/types/plus-role-record.ts",
+        "src/types/plus-shop-record.ts",
+        "src/types/plus-shopping-cart-item-record.ts",
+        "src/types/plus-shopping-cart-record.ts",
+        "src/types/plus-sku-record.ts",
+        "src/types/plus-tenant-record.ts",
+        "src/types/plus-usage-record-record.ts",
+        "src/types/plus-user-address-record.ts",
+        "src/types/plus-user-agent-skill-record.ts",
+        "src/types/plus-user-card-record.ts",
+        "src/types/plus-user-coupon-record.ts",
+        "src/types/plus-user-record.ts",
+        "src/types/plus-user-role-record.ts",
+        "src/types/plus-vip-benefit-record.ts",
+        "src/types/plus-vip-benefit-usage-record.ts",
+        "src/types/plus-vip-level-benefit-record.ts",
+        "src/types/plus-vip-level-record.ts",
+        "src/types/plus-vip-pack-group-record.ts",
+        "src/types/plus-vip-pack-record.ts",
+        "src/types/plus-vip-point-change-record.ts",
+        "src/types/plus-vip-recharge-method-record.ts",
+        "src/types/plus-vip-recharge-pack-record.ts",
+        "src/types/plus-vip-recharge-record.ts",
+        "src/types/plus-vip-user-record.ts",
+        "src/types/problem-detail.ts",
+        "src/types/provider-retry-policy.ts",
+        "src/types/provider-secrets-create-result.ts",
+        "src/types/provider-secrets-delete-result.ts",
+        "src/types/provider-secrets-list-result.ts",
+        "src/types/provider-secrets-update-result.ts",
+        "src/types/rate-limits-api-keys-create-result.ts",
+        "src/types/rate-limits-api-keys-list-result.ts",
+        "src/types/rate-limits-ip-create-result.ts",
+        "src/types/rate-limits-ip-list-result.ts",
+        "src/types/rate-limits-models-create-result.ts",
+        "src/types/rate-limits-models-list-result.ts",
+        "src/types/recharges-packages-create-result.ts",
+        "src/types/recharges-packages-delete-result.ts",
+        "src/types/recharges-packages-list-result.ts",
+        "src/types/recharges-packages-update-result.ts",
+        "src/types/recharges-records-list-result.ts",
+        "src/types/recharges-records-retrieve-result.ts",
+        "src/types/records-list-result.ts",
+        "src/types/referrals-stats-list-result.ts",
+        "src/types/skills-artifacts-create-result.ts",
+        "src/types/skills-artifacts-delete-result.ts",
+        "src/types/skills-artifacts-list-result.ts",
+        "src/types/skills-artifacts-retrieve-result.ts",
+        "src/types/skills-artifacts-update-result.ts",
+        "src/types/skills-assets-create-result.ts",
+        "src/types/skills-assets-delete-result.ts",
+        "src/types/skills-assets-list-result.ts",
+        "src/types/skills-assets-retrieve-result.ts",
+        "src/types/skills-assets-update-result.ts",
+        "src/types/skills-categories-create-result.ts",
+        "src/types/skills-categories-list-result.ts",
+        "src/types/skills-create-result.ts",
+        "src/types/skills-delete-result.ts",
+        "src/types/skills-disable-result.ts",
+        "src/types/skills-enable-result.ts",
+        "src/types/skills-list-result.ts",
+        "src/types/skills-package-create-result.ts",
+        "src/types/skills-package-delete-result.ts",
+        "src/types/skills-package-disable-result.ts",
+        "src/types/skills-package-enable-result.ts",
+        "src/types/skills-package-list-result.ts",
+        "src/types/skills-package-retrieve-result.ts",
+        "src/types/skills-package-update-result.ts",
+        "src/types/skills-publish-result.ts",
+        "src/types/skills-retrieve-result.ts",
+        "src/types/skills-review-approve-result.ts",
+        "src/types/skills-review-reject-result.ts",
+        "src/types/skills-unpublish-result.ts",
+        "src/types/skills-update-result.ts",
+        "src/types/studio-catalog-action-record.ts",
+        "src/types/studio-catalog-artifact-record.ts",
+        "src/types/studio-catalog-asset-record.ts",
+        "src/types/system-installation-state-record.ts",
+        "src/types/system-schema-migration-record.ts",
+        "src/types/users-balance-adjustments-create-result.ts",
+        "src/types/users-coupons-list-result.ts",
+        "src/types/users-create-result.ts",
+        "src/types/users-list-result.ts",
+        "src/types/users-update-result.ts",
+        "tsconfig.json"
+      ],
+      "deletedGeneratedFiles": [],
+      "scaffoldedFiles": [],
+      "preservedScaffoldFiles": [
+        "custom/build-runtime.mjs",
+        "custom/README.md"
+      ],
+      "backedUpFiles": []
+    },
+    "impact": {
+      "schemaVersion": 1,
+      "areas": [
+        "models"
+      ],
+      "details": [
+        {
+          "area": "models",
+          "paths": [
+            "src/types/recharge-package.ts"
+          ]
+        }
+      ],
+      "requiresVerification": true,
+      "summary": "Detected impact areas: models. Verification is required."
+    },
+    "verificationPlan": {
+      "shouldRun": true,
+      "runPhase": "now",
+      "summary": "Detected impact areas: models. Verification is required. Run the required verification commands now against the generated SDK output.",
+      "steps": [
+        {
+          "id": "check",
+          "title": "Unified package check",
+          "required": true,
+          "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
+          "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-backend-sdk\\clawrouter-backend-sdk-typescript",
+          "command": "node",
+          "args": [
+            "./bin/publish-core.mjs",
+            "--language",
+            "typescript",
+            "--project-dir",
+            ".",
+            "--action",
+            "check"
+          ],
+          "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action check"
+        },
+        {
+          "id": "build",
+          "title": "Unified package build",
+          "required": true,
+          "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: models.",
+          "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-backend-sdk\\clawrouter-backend-sdk-typescript",
+          "command": "node",
+          "args": [
+            "./bin/publish-core.mjs",
+            "--language",
+            "typescript",
+            "--project-dir",
+            ".",
+            "--action",
+            "build"
+          ],
+          "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action build"
+        }
+      ]
+    },
+    "executionDecision": {
+      "schemaVersion": 1,
+      "riskLevel": "medium",
+      "nextAction": "verify",
+      "requiresManualReview": false,
+      "applyRequiresExpectedFingerprint": false,
+      "summary": "Changes have been applied. Run the required verification plan now.",
+      "reasons": [
+        "verification-required"
+      ]
+    },
+    "backedUpFiles": [],
+    "preservedLegacyFiles": false
+  }
+}

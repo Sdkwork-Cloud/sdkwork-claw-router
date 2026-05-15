@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67561,
+  "uuid": "skill-clawhub-competitor-parser",
+  "skillKey": "clawhub-competitor-parser",
+  "name": "Competitor Parser",
+  "summary": "Автоматический сбор и анализ данных о конкурентах в робототехнике из Google и базы знаний с выводом рейтинга, цен и адресов.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitor_parser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "larthe",
+      "features": [
+        "Автоматический сбор и анализ данных о конкурентах в робототехнике из Google и базы знаний с выв."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/competitor-parser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7958413?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "competitor-parser",
+      "url": "https://clawhub.ai/skills/competitor-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitor-parser",
+    "url": "https://clawhub.ai/skills/competitor-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitor-parser-69046e7433ec45d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/competitor-parser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-competitor-parser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51d8575f3b348a7281b7141b811b51813d544a34d40d3d7ef9b17fa8125dee20",
+      "artifactSizeBytes": 2490
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T11:43:59.945Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/digital-human-training@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.digital_human_training",
+  "skill": {
+    "id": 63788,
+    "skillKey": "clawhub-digital-human-training",
+    "name": "digital-human-training"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "digital-human-training",
+    "url": "https://clawhub.ai/skills/digital-human-training",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/digital-human-training-bbd5adbaa50ddf8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "数字人训练与部署 Skill - 提供从语音克隆、唇形同步到实时交互数字人的全流程训练建议与技术支持。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gmsx000-cloud",
+      "userId": "publishers:gmsx000-cloud",
+      "displayName": "gmsx000-cloud",
+      "image": "https://avatars.githubusercontent.com/u/260407988?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 515,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772380167293,
+      "changelog": "Initial release — provides end-to-end technical support and guidance for building and deploying interactive digital humans.\n\n- Covers the full process from data collection to model training.\n- Supports voice cloning (using GPT-SoVITS or Fish Speech) and lip-sync (SadTalker, Live2D, Wav2Lip).\n- Enables logical integration with LLMs (OpenClaw) for real-time interaction.\n- Recommends optimized deployment methods (local GPU or cloud API) for response times under 500ms.\n- Includes practical selection advice and example workflows for building live digital characters.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dbe04bc6a84a29b399d0795dbb21672faaa167d9d82e8de82b7002d7764957d1"
+}

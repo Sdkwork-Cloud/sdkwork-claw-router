@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mkts-market-data@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mkts_market_data",
+  "skill": {
+    "id": 16402,
+    "skillKey": "clawhub-mkts-market-data",
+    "name": "mkts Market Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mkts-market-data",
+    "url": "https://clawhub.ai/skills/mkts-market-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mkts-market-data-a3a19745c9db8982.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time market data, portfolio tracking, trade journaling, screening, and news for stocks, crypto, ETFs, commodities, and forex — no API key required to start"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdliriano",
+      "userId": "s174bq5n0khsaaw7d76rn0r59h83jdw3",
+      "displayName": "Stephen",
+      "image": "https://avatars.githubusercontent.com/u/41870969?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1045,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 4,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1773168829568,
+      "changelog": "Add minor api changes",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64767f6abd254a39c29297050c13b1be5b8ebc686abc955b74f452f3041f915d"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67039,
+  "uuid": "skill-clawhub-novel-orchestrator",
+  "skillKey": "clawhub-novel-orchestrator",
+  "name": "novel-orchestrator",
+  "summary": "用于长篇网络小说协作生产与流程统筹。适用于写章节、续写、重写、救文、审稿、分卷规划、长线结构调整，以及任何需要在 manager、planner、writer、checker 之间进行任务路由、协作编排、返修闭环和阶段推进的小说任务。当用户要求创建小说agent、初始化小说工作流、设置小说创作环境时，使用此ski...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novel_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NaitOah",
+      "features": [
+        "用于长篇网络小说协作生产与流程统筹。适用于写章节、续写、重写、救文、审稿、分卷规划、长线结构调整，以及任何需要在 manager、planner、writer、checker 之间进行任务路."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/novel-orchestrator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93955383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "novel-orchestrator",
+      "url": "https://clawhub.ai/skills/novel-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novel-orchestrator",
+    "url": "https://clawhub.ai/skills/novel-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novel-orchestrator-43ba152ffcfbbd77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/novel-orchestrator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-novel-orchestrator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5faf3a950630995ea99ef2f7a6cd05d3a624891e65ae086e7dff856b742ea3dc",
+      "artifactSizeBytes": 2764
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T10:00:12.507Z"
+}

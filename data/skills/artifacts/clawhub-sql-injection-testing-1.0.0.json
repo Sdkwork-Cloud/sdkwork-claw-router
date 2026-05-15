@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sql-injection-testing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sql_injection_testing",
+  "skill": {
+    "id": 12323,
+    "skillKey": "clawhub-sql-injection-testing",
+    "name": "SQL Injection Testing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sql-injection-testing",
+    "url": "https://clawhub.ai/skills/sql-injection-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sql-injection-testing-686debb7d53e04bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform authorized security tests to detect, exploit, and validate defenses against SQL injection vulnerabilities in web applications."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brandonwise",
+      "userId": "publishers:brandonwise",
+      "displayName": "brandonwise",
+      "image": "https://avatars.githubusercontent.com/u/21148772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1753,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771207515093,
+      "changelog": "Initial release: Detection, exploitation, bypass techniques, prevention patterns",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:46c6967a3a46ebb2612606000d346065aedf64f5569533c850fb972f3f53dd1a"
+}

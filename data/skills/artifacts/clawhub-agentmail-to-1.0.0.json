@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentmail-to@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentmail_to",
+  "skill": {
+    "id": 65873,
+    "skillKey": "clawhub-agentmail-to",
+    "name": "Agentmail To"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentmail-to",
+    "url": "https://clawhub.ai/skills/agentmail-to",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentmail-to-8d81084b8a7fac39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Управление агентскими email через agentmail.to: создание, чтение, отправка и очистка временных почтовых ящиков через API и веб-консоль."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pjotrglushkov-byte",
+      "userId": "s172x2hz09knh8p019yjsgw2ys84dd6j",
+      "displayName": "pjotrglushkov-byte",
+      "image": "https://avatars.githubusercontent.com/u/226679597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773909732598,
+      "changelog": "Initial release of agentmail-to skill:\n\n- Provides tools for creating, reading, replying, and managing temporary/agent email addresses via API or web interface.\n- Configuration details and environment variables included for API integration.\n- Lists commands for checking inbox, sending replies, and creating new inboxes.\n- Describes included scripts for smart email processing and inbox management.\n- Links to web console and official documentation provided.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db06d855357776bc659a2a081bd5932c99b917287466f1594a7551663cad6d18"
+}

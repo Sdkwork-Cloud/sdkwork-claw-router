@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36392,
+  "uuid": "skill-clawhub-pushbots",
+  "skillKey": "clawhub-pushbots",
+  "name": "Pushbots",
+  "summary": "PushBots integration. Manage data, records, and automate workflows. Use when the user wants to interact with PushBots data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pushbots",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "PushBots integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with PushBots data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pushbots@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pushbots",
+      "url": "https://clawhub.ai/skills/pushbots"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pushbots",
+    "url": "https://clawhub.ai/skills/pushbots",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pushbots-176c0072cb9da77c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pushbots@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-pushbots-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62bf04fddbfcef0012ccb17c1eaf7f24815eae175142c85065cb20a158e0e62f",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:29:50.827Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32056,
+  "uuid": "skill-clawhub-haproxy",
+  "skillKey": "clawhub-haproxy",
+  "name": "Haproxy",
+  "summary": "HAProxy load balancer reference. Frontend binds with ACL routing, backend server pools with health checks, balance algorithms (roundrobin/leastconn/source),...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.haproxy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "HAProxy load balancer reference",
+        "Frontend binds with ACL routing, backend server pools with health checks, balance algorithms (r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/haproxy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "haproxy",
+      "url": "https://clawhub.ai/skills/haproxy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "haproxy",
+    "url": "https://clawhub.ai/skills/haproxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/haproxy-cb2a39806df97f59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/haproxy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-haproxy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08f59cdc7d1dd14c354566bf1e0caa0794b4f048d5130d352e219c1fd827515a",
+      "artifactSizeBytes": 1835
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T18:20:38.002Z"
+}

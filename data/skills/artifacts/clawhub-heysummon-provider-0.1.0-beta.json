@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/heysummon-provider@0.1.0-beta",
+  "version": "0.1.0-beta",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.heysummon_provider",
+  "skill": {
+    "id": 21547,
+    "skillKey": "clawhub-heysummon-provider",
+    "name": "Hey summon - provider"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "heysummon-provider",
+    "url": "https://clawhub.ai/skills/heysummon-provider",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/heysummon-provider-19f68ef9a5386c2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides human-help support to AI agents via HeySummon by monitoring requests, sending notifications, and handling provider replies through a secure platform."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thomasansems",
+      "userId": "s1759pf0b5r8mvs15r10wd6ak5846vjk",
+      "displayName": "thomasansems",
+      "image": "https://avatars.githubusercontent.com/u/8612092?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 505,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0-beta",
+      "createdAt": 1772305926788,
+      "changelog": "HeySummon Provider Skill v1.0.0 – Initial Release\n\n- Provides setup and usage instructions for integrating as a human-help provider on HeySummon.\n- Documents required environment variables and validation for provider API keys.\n- Details event watcher startup/teardown scripts for handling request notifications and replies.\n- Explains the architecture and communication flow between AI agent, platform, and provider.\n- Outlines reply flow and status codes for handling user requests efficiently.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:775cc484486b103ac38e1fd1b6e0a63c9b659ec44449f13123e607c508a996fe"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/drift-guard-sr@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drift_guard_sr",
+  "skill": {
+    "id": 25894,
+    "skillKey": "clawhub-drift-guard-sr",
+    "name": "Drift Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drift-guard-sr",
+    "url": "https://clawhub.ai/skills/drift-guard-sr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drift-guard-sr-1b21e4f6bee35b9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect personality drift, sycophancy creep, and capability degradation in AI agents before they become problems. Tracks behavior metrics over time against he..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theshadowrose",
+      "userId": "s1736mx5m1zt9qzh6fvzvffnhh83hgf8",
+      "displayName": "Shadow Rose",
+      "image": "https://avatars.githubusercontent.com/u/262919821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773082234657,
+      "changelog": "- Updated skill name from \"Drift Guard Agent Behavior Monitor\" to \"Drift Guard: Agent Behavior Monitor\".\n- Bumped version to 1.0.3 in the documentation.\n- No functionality or code changes; documentation now reflects updated name and version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49f53747edadc09170809c010b68c77bc97214a9e9b138cfadd81dc20c6aac17"
+}

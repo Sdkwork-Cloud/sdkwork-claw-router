@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/network-speed-test@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.network_speed_test",
+  "skill": {
+    "id": 30464,
+    "skillKey": "clawhub-network-speed-test",
+    "name": "Network Speed Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "network-speed-test",
+    "url": "https://clawhub.ai/skills/network-speed-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/network-speed-test-e018ab524580cbe3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Measure network download speed, upload speed, and latency from the command line. Uses Cloudflare speed test endpoints and public DNS for latency measurements..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnnywang2001",
+      "userId": "s174ntk6h18bvsev091zn78ex583gr1h",
+      "displayName": "John Wang",
+      "image": "https://avatars.githubusercontent.com/u/20619402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773925652875,
+      "changelog": "Initial release of the network-speed-test skill:\n\n- Measure download speed, upload speed, and latency from the command line in pure Python (no external dependencies).\n- Uses Cloudflare endpoints for speed tests and public DNS for latency checks.\n- Supports individual or combined tests, adjustable test sizes, and structured JSON output.\n- Reports detailed latency stats (avg/min/max/jitter) for multiple DNS hosts.\n- No API keys or accounts required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:266586b9c6df4ae883dbba5b69a0ed17e70d65096447a917f3f438b1c3fad361"
+}

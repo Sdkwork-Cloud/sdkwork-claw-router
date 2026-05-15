@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29985,
+  "uuid": "skill-clawhub-error-recovery",
+  "skillKey": "clawhub-error-recovery",
+  "name": "Error Recovery",
+  "summary": "Error Recovery - Strategies for handling failures gracefully",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.error_recovery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxiao-bot",
+      "features": [
+        "Error Recovery",
+        "Strategies for handling failures gracefully"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/error-recovery@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262316041?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "error-recovery",
+      "url": "https://clawhub.ai/skills/error-recovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "error-recovery",
+    "url": "https://clawhub.ai/skills/error-recovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/error-recovery-1d78b336473c05ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/error-recovery@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-error-recovery-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd43a166037760d96b8e0c598b783fb4c14e448a7790a6475104af0c803dd1f2",
+      "artifactSizeBytes": 2171
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T15:47:24.111Z"
+}

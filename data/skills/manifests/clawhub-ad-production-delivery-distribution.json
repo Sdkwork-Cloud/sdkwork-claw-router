@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72538,
+  "uuid": "skill-clawhub-ad-production-delivery-distribution",
+  "skillKey": "clawhub-ad-production-delivery-distribution",
+  "name": "资源交付分发",
+  "summary": "资源交付分发技能 - 处理素材导出、格式转换和多平台分发",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ad_production_delivery_distribution",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JEyeshield",
+      "features": [
+        "资源交付分发技能",
+        "处理素材导出、格式转换和多平台分发"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ad-production-delivery-distribution@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25786840?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ad-production-delivery-distribution",
+      "url": "https://clawhub.ai/skills/ad-production-delivery-distribution"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ad-production-delivery-distribution",
+    "url": "https://clawhub.ai/skills/ad-production-delivery-distribution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ad-production-delivery-distribution-ab656bba82789d50.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ad-production-delivery-distribution@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ad-production-delivery-distribution-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a60052fe6633da66729435cc048750468ea5fb8c5db28000dc9f7525967457ef",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:45:54.052Z"
+}

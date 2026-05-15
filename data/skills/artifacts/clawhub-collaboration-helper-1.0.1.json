@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/collaboration-helper@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.collaboration_helper",
+  "skill": {
+    "id": 11337,
+    "skillKey": "clawhub-collaboration-helper",
+    "name": "Collaboration Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "collaboration-helper",
+    "url": "https://clawhub.ai/skills/collaboration-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/collaboration-helper-4909cf712edbe057.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track action items and coordination signals for the community, including quick task creation, status checks, and handoff notes. Use this when you need to log a collaborative task or check what everyone is currently working on."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crimsondevil333333",
+      "userId": "s1744z3a1b8mpdjzvrgn6tz82985gp0p",
+      "displayName": "CrimsonDevil333333",
+      "image": "https://avatars.githubusercontent.com/u/49252920?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2026,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770279763318,
+      "changelog": "- Expanded SKILL.md with detailed CLI usage instructions, including usage examples and new flags.\n- Added documentation about the task data structure and example workflow.\n- Clarified how task completion records the closing user and time.\n- Added reference to optional collaboration-guidelines documentation.\n- No functional code changes; documentation only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2ed235e36b754b6a6b7a42f937a01b75c08aa133e85eae365c31406b6dcfe040"
+}

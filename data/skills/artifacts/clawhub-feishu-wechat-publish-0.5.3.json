@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-wechat-publish@0.5.3",
+  "version": "0.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_wechat_publish",
+  "skill": {
+    "id": 62591,
+    "skillKey": "clawhub-feishu-wechat-publish",
+    "name": "Feishu Wechat Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-wechat-publish",
+    "url": "https://clawhub.ai/skills/feishu-wechat-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-wechat-publish-d4e9f1066200fa81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在客户端环境读取用户可访问的飞书文档,并将最终文章内容发送到 feishu.shing19.cc,由该服务发布到微信公众号草稿箱。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shing19",
+      "userId": "s172kjnp9yebtfrzzjamwm07wn83yvwr",
+      "displayName": "shing19",
+      "image": "https://avatars.githubusercontent.com/u/38907754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.5.3",
+      "createdAt": 1774989111358,
+      "changelog": "**feishu-wechat-publish v0.5.3 – 更完善的飞书文档环境修复处理**\n\n- 发布流程中，飞书文档读取失败时，增加详细的 CLI/SKILL 安装、应用凭证、登录等环境修复步骤说明。\n- 明确首次失败后需指导用户用 lark-cli 工具完成安装和授权配置，包含每一步推荐的具体终端命令与授权流程提示。\n- 强调无需预先检测环境，只有实际读取失败时才引导用户逐步修复。\n- 发布接口请求头的 `X-Skill-Version` 升级至 0.5.3。\n- 添加了发布前的内容格式校验提醒，明确不得发送 HTML 格式内容。\n- 其他说明文本细节调整，无影响原有认证、图片处理、进度反馈等主流程。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f28bae764571af710bf3142ab26d907f2d5f8893fefd3fd3eb43cc46f272c4c"
+}

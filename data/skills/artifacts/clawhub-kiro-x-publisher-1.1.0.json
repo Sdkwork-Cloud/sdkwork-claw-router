@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kiro-x-publisher@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kiro_x_publisher",
+  "skill": {
+    "id": 17399,
+    "skillKey": "clawhub-kiro-x-publisher",
+    "name": "Kiro X Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kiro-x-publisher",
+    "url": "https://clawhub.ai/skills/kiro-x-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kiro-x-publisher-fcabe14069c36fc0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover hot topics on X, enrich tweets one-by-one, score and summarize signals, generate one tweet draft, and optionally publish on schedule."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vmining",
+      "userId": "s17egwyjsr6yzmmjjyakghyvyd83mx21",
+      "displayName": "Xinjin",
+      "image": "https://avatars.githubusercontent.com/u/105750766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 773,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771711393298,
+      "changelog": "- Renamed the skill to \"kiro-x-hot-publisher\".\n- Added `scripts/install_and_init.py` for improved setup and initialization.\n- Removed `README.md`.\n- Updated documentation: improved quick start instructions, now referencing the new script.\n- Minor metadata and naming updates.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e7cd7f70b7d4f9097567f45f8d680fabacef7bb80f9b9d41d03a312ca41ee8df"
+}

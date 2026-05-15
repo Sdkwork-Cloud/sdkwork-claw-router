@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brevo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brevo",
+  "skill": {
+    "id": 10094,
+    "skillKey": "clawhub-brevo",
+    "name": "Brevo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brevo",
+    "url": "https://clawhub.ai/skills/brevo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brevo-8dca24b9a170d034.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Brevo (formerly Sendinblue) email marketing API for managing contacts, lists, sending transactional emails, and campaigns. Use when importing contacts, sending emails, managing subscriptions, or working with email automation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yujesyoga",
+      "userId": "publishers:yujesyoga",
+      "displayName": "yuj es yoga",
+      "image": "https://avatars.githubusercontent.com/u/217279158?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2705,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769647609989,
+      "changelog": "- Initial release of Brevo email marketing API skill.\n- Provides guides for managing contacts, lists, transactional emails, and campaigns.\n- Includes authentication setup and common API endpoint references.\n- Offers practical code examples for importing contacts, sending emails, and managing lists.\n- Documents safe import patterns and best practices for handling unsubscribes and updates.\n- Lists useful queries and automation triggers for effective email marketing workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:14eaf30ae3cf8dbd28284c2f7f3c39755136ceb83dbdb05b90b5e366f0e5e821"
+}

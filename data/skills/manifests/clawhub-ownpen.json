@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69141,
+  "uuid": "skill-clawhub-ownpen",
+  "skillKey": "clawhub-ownpen",
+  "name": "Publish Clawhub",
+  "summary": "领导问\"这是AI写的？\"——这个问题每个打工人都怕。 45条中文写作规则，改完原文格式一字不动，只换掉那股机器味。 粘贴进来就能改，不用配置不用学。",
+  "version": "1.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ownpen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huangjihua007-rgb",
+      "features": [
+        "领导问\"这是AI写的？\"——这个问题每个打工人都怕。 45条中文写作规则，改完原文格式一字不动，只换掉那股机器味。 粘贴进来就能改，不用配置不用学。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ownpen@1.5.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267920358?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ownpen",
+      "url": "https://clawhub.ai/skills/ownpen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ownpen",
+    "url": "https://clawhub.ai/skills/ownpen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ownpen-950f30e3ca352d5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ownpen@1.5.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ownpen-1.5.1.json",
+      "version": "1.5.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2aa8e851b5330da14f8b2ab9bdc116b759e3235e92576617bd8f69194f20bfb8",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T14:13:37.018Z"
+}

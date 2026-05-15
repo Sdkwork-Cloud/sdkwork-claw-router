@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocli-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocli_api",
+  "skill": {
+    "id": 52042,
+    "skillKey": "clawhub-ocli-api",
+    "name": "Ocli Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocli-api",
+    "url": "https://clawhub.ai/skills/ocli-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocli-api-d40bc5436538ac44.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn any OpenAPI/Swagger API into CLI commands and call them. Search endpoints with BM25, check parameters, execute — no MCP server needed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vakovalskii",
+      "userId": "publishers:vakovalskii",
+      "displayName": "Valerii Kovalskii",
+      "image": "https://avatars.githubusercontent.com/u/220532298?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773751059647,
+      "changelog": "Initial release of ocli-api\n\n- Launches ocli-api for turning any OpenAPI/Swagger API into CLI commands.\n- Enables endpoint search using BM25 or regex queries.\n- Supports checking command parameters and executing API calls directly from the CLI.\n- No MCP server or code generation required; minimal token usage.\n- Includes guardrails and troubleshooting guidance for common errors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:485a3d18f2686f9ffa4947d548a52f1162659c0a22a227a566c5a2786ef657ac"
+}

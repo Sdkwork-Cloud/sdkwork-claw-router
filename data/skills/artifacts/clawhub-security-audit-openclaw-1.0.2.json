@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/security-audit-openclaw@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_audit_openclaw",
+  "skill": {
+    "id": 54654,
+    "skillKey": "clawhub-security-audit-openclaw",
+    "name": "OpenClaw Security Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-audit-openclaw",
+    "url": "https://clawhub.ai/skills/security-audit-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-audit-openclaw-1e76384efa2083df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "⚠️ HIGH PRIVILEGE SECURITY AUDIT SKILL Performs comprehensive security auditing for OpenClaw deployments. Requires system-level access for legitimate securit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iaadoa",
+      "userId": "publishers:iaadoa",
+      "displayName": "iaadoa",
+      "image": "https://avatars.githubusercontent.com/u/3303385?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 390,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773636627023,
+      "changelog": "Made Git backup and Telegram notifications opt-in features (disabled by default). Added SECURITY_AUDIT_ENABLE_GIT and SECURITY_AUDIT_ENABLE_TELEGRAM env vars for explicit opt-in.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6924fda1250dfa16df95ed98053b55d16a61a3d48148f55d3dd8c5b95cd265f8"
+}

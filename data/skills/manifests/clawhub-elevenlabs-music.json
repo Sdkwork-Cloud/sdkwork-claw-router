@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9593,
+  "uuid": "skill-clawhub-elevenlabs-music",
+  "skillKey": "clawhub-elevenlabs-music",
+  "name": "ElevenLabs Music",
+  "summary": "Generate music from text prompts using ElevenLabs Eleven Music API. Use when creating songs, soundtracks, jingles, lullabies, or any audio music from descriptions. Supports vocals with AI-generated lyrics, instrumental tracks, and multiple.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elevenlabs_music",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawdbotborges",
+      "features": [
+        "Generate music from text prompts using ElevenLabs Eleven Music API",
+        "Use when creating songs, soundtracks, jingles, lullabies, or any audio music from descriptions",
+        "Supports vocals with AI-generated lyrics, instrumental tracks, and multiple genres/styles",
+        "Requires paid ElevenLabs plan."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/elevenlabs-music@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257134713?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "elevenlabs-music",
+      "url": "https://clawhub.ai/skills/elevenlabs-music"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elevenlabs-music",
+    "url": "https://clawhub.ai/skills/elevenlabs-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elevenlabs-music-cb9c7304b466329f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/elevenlabs-music@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-elevenlabs-music-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:523e311c455fcf6126f920667d8bda1c0ac8f4a108a97192276c589907a54780",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T21:01:21.579Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40240,
+  "uuid": "skill-clawhub-art-director",
+  "skillKey": "clawhub-art-director",
+  "name": "Art Director",
+  "summary": "Generate on-aesthetic images for any brand telling stories with images. Combines a persistent brand aesthetic with per-image editorial thinking to produce vi...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.art_director",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MachinesOfDesire",
+      "features": [
+        "Generate on-aesthetic images for any brand telling stories with images",
+        "Combines a persistent brand aesthetic with per-image editorial thinking to produce vi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/art-director@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23515339?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "art-director",
+      "url": "https://clawhub.ai/skills/art-director"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "art-director",
+    "url": "https://clawhub.ai/skills/art-director",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/art-director-81c41cead32bb8cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/art-director@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-art-director-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23aa3b76a3923799c34c3ba38d8269287cfcfb5d528d34d10be7cd391b9e7d52",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T06:33:36.823Z"
+}

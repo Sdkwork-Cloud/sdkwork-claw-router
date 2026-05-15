@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-passport@2.4.2",
+  "version": "2.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_passport",
+  "skill": {
+    "id": 11372,
+    "skillKey": "clawhub-agent-passport",
+    "name": "Agent Passport"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-passport",
+    "url": "https://clawhub.ai/skills/agent-passport",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-passport-7b9d709c519f020a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OAuth for the agentic era. Consent-gating for ALL sensitive agent actions. 75+ data-driven threat definitions with auto-updates (like antivirus signatures)...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "markneville",
+      "userId": "s17c2c6n780m8086w7vcgempyh83gkce",
+      "displayName": "Mark Neville",
+      "image": "https://avatars.githubusercontent.com/u/4522134?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1848,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "2.4.2",
+      "createdAt": 1772141918683,
+      "changelog": "Remove internal spec from published package.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aad40a720fef8371fb079722f145fd270023505ab67f37497b64522b3e9d5f6a"
+}

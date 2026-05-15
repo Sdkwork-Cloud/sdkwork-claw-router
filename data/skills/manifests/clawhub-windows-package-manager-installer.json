@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26575,
+  "uuid": "skill-clawhub-windows-package-manager-installer",
+  "skillKey": "clawhub-windows-package-manager-installer",
+  "name": "Windows packag manager installer",
+  "summary": "install windows software and windows package manager environments. use when the user wants to install a windows application, explicitly wants to install or c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_package_manager_installer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "darkqiank",
+      "features": [
+        "install windows software and windows package manager environments",
+        "use when the user wants to install a windows application, explicitly wants to install or c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/windows-package-manager-installer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24850527?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "windows-package-manager-installer",
+      "url": "https://clawhub.ai/skills/windows-package-manager-installer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-package-manager-installer",
+    "url": "https://clawhub.ai/skills/windows-package-manager-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-package-manager-installer-cdde94462dc53dcd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/windows-package-manager-installer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-windows-package-manager-installer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7f6131adb4b2cbbec9f336d98df920b7d05a49fc270f2a4749f57feebbd5b32",
+      "artifactSizeBytes": 2596
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T11:30:35.224Z"
+}

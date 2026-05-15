@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46568,
+  "uuid": "skill-clawhub-sv-analytics-review",
+  "skillKey": "clawhub-sv-analytics-review",
+  "name": "Sv Analytics Review",
+  "summary": "Provides a structured framework to analyze short video metrics, extract insights, and plan iterative content improvements based on manual data input.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sv_analytics_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Provides a structured framework to analyze short video metrics, extract insights, and plan iter."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sv-analytics-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sv-analytics-review",
+      "url": "https://clawhub.ai/skills/sv-analytics-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sv-analytics-review",
+    "url": "https://clawhub.ai/skills/sv-analytics-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sv-analytics-review-c44e024f079386a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sv-analytics-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sv-analytics-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d27c9b07e27e4e9bf30998a5a077bacd36311775d49e50148abf6ad6dfac132",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T06:33:13.276Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15093,
+  "uuid": "skill-clawhub-ollama-updater",
+  "skillKey": "clawhub-ollama-updater",
+  "name": "Ollama Updater",
+  "summary": "Ollama Updater installs or updates Ollama with curl-based breakpoint resume, auto-retry, progress display, old version cleanup, and GPU driver detection.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_updater",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "newolf20000",
+      "features": [
+        "Ollama Updater installs or updates Ollama with curl-based breakpoint resume, auto-retry, progre."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ollama-updater@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28947857?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ollama-updater",
+      "url": "https://clawhub.ai/skills/ollama-updater"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-updater",
+    "url": "https://clawhub.ai/skills/ollama-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-updater-2befa76771dd050a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ollama-updater@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ollama-updater-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87880e2cf7508e8feaf4c82f5c94c8ff3f004fc561c6eaa55f17070c5003b689",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T00:59:01.678Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36766,
+  "uuid": "skill-clawhub-automox",
+  "skillKey": "clawhub-automox",
+  "name": "Automox",
+  "summary": "Automox integration. Manage data, records, and automate workflows. Use when the user wants to interact with Automox data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.automox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Automox integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Automox data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/automox@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "automox",
+      "url": "https://clawhub.ai/skills/automox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "automox",
+    "url": "https://clawhub.ai/skills/automox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/automox-75ffdc3fb5d1c1f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/automox@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-automox-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91f12ab83c571919c33c50f073de32c3c0b19355852e532a685c46df4641cd5a",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:12:43.859Z"
+}

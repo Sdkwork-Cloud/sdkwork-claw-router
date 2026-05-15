@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42164,
+  "uuid": "skill-clawhub-toby-video",
+  "skillKey": "clawhub-toby-video",
+  "name": "video",
+  "summary": "Generate video using SkillBoss API Hub (video generation, auto-routed via /v1/pilot).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toby_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TobeyRebecca",
+      "features": [
+        "Generate video using SkillBoss API Hub (video generation, auto-routed via /v1/pilot)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toby-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260428668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toby-video",
+      "url": "https://clawhub.ai/skills/toby-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toby-video",
+    "url": "https://clawhub.ai/skills/toby-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toby-video-d6781e6a21cc6b36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toby-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toby-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6273183bc8605b98ef4f1c844bcc6bae85b780152ecbf7429ed2a54f05ab5a9d",
+      "artifactSizeBytes": 2164
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T07:06:07.307Z"
+}

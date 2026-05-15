@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38344,
+  "uuid": "skill-clawhub-ainative-mcp-builder",
+  "skillKey": "clawhub-ainative-mcp-builder",
+  "name": "Ainative Mcp Builder",
+  "summary": "Build and publish custom MCP servers on AINative. Use when (1) Creating a new MCP server from scratch, (2) Adding tools to an existing MCP server, (3) Publis...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ainative_mcp_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Toby Morning",
+      "features": [
+        "Build and publish custom MCP servers on AINative",
+        "Use when (1) Creating a new MCP server from scratch, (2) Adding tools to an existing MCP server."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ainative-mcp-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2746731?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ainative-mcp-builder",
+      "url": "https://clawhub.ai/skills/ainative-mcp-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ainative-mcp-builder",
+    "url": "https://clawhub.ai/skills/ainative-mcp-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ainative-mcp-builder-bfd80f0965ed235b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ainative-mcp-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ainative-mcp-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2376462136b0eb67ddf36b554cfc0cd706b84acbef6e5b293621f018da373943",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T00:10:24.168Z"
+}

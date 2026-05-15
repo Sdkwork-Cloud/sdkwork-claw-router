@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47712,
+  "uuid": "skill-clawhub-product-test-skill",
+  "skillKey": "clawhub-product-test-skill",
+  "name": "test-skill",
+  "summary": "Processes CSV files to generate statistical summaries (mean, median, std, min, max) for specified numeric columns and row count.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_test_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aidfsoft",
+      "features": [
+        "Processes CSV files to generate statistical summaries (mean, median, std, min, max) for specifi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-test-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/153803595?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-test-skill",
+      "url": "https://clawhub.ai/skills/product-test-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-test-skill",
+    "url": "https://clawhub.ai/skills/product-test-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-test-skill-77be54051e4c58ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-test-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-test-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fed61fa0965732f10e19a6d13196148628368ab9800b598262807c122f15e96",
+      "artifactSizeBytes": 2512
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T07:57:00.207Z"
+}

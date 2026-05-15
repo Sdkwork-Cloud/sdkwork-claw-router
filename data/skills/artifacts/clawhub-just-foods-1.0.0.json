@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/just-foods@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.just_foods",
+  "skill": {
+    "id": 50136,
+    "skillKey": "clawhub-just-foods",
+    "name": "Just Foods"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "just-foods",
+    "url": "https://clawhub.ai/skills/just-foods",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/just-foods-3c9dab443804ed89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provide detailed insights on Just Egg (Eat Just), a food tech company pioneering plant-based egg alternatives using mung bean protein since 2011."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 31,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778372027513,
+      "changelog": "Initial release of the Just Egg (Eat Just) skill.\n\n- Introduces a comprehensive overview of Just Egg, a pioneering food tech company founded in 2011.\n- Covers company origins, business model, competitive advantages, and key figures.\n- Designed for users researching development history, investment value, industry position, and core competencies of Just Egg (Eat Just).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc798a41c706e156fde0b7dedbbb2e4d7cb97ff3cd90d197fb3a0fffe590d003"
+}

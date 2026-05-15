@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-efficient-task-router@0.6.8",
+  "version": "0.6.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_efficient_task_router",
+  "skill": {
+    "id": 47378,
+    "skillKey": "clawhub-token-efficient-task-router",
+    "name": "token-efficient-task-router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-efficient-task-router",
+    "url": "https://clawhub.ai/skills/token-efficient-task-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-efficient-task-router-7d7f4541f3d91a3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A token-efficient task routing and execution control skill for WorkBuddy, iMA Copilot, OpenClaw, QClaw, and other agent systems. Use this skill to classify u..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "afanmusic",
+      "userId": "s17e3yfyq6zymcamxqvq9xg14n83hm88",
+      "displayName": "afanmusic",
+      "image": "https://avatars.githubusercontent.com/u/48711197?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.6.8",
+      "createdAt": 1777726470830,
+      "changelog": "token-efficient-task-router v0.6.8\n\n- Clarified the skill's purpose and scope as an ROI- and safety-focused task router and token controller for various agent systems.\n- Added detailed classification rules across clarity, complexity, risk, and token cost for routing user requests.\n- Defined usage scenarios, including when not to use the skill to avoid over-processing simple tasks.\n- Provided explicit focus activation, calibration, progressive delivery, and chat confirmation rules.\n- Expanded core principles to emphasize staged execution, smallest-useful-mode, and confirmation gates.\n- Included Chinese-language core guideline for multilingual support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e6c36bc5719aea82a837b552c833ada73700279bc5fa0a518ffddd73069adef"
+}

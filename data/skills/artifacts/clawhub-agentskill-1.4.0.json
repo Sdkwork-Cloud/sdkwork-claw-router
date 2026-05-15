@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentskill@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentskill",
+  "skill": {
+    "id": 21935,
+    "skillKey": "clawhub-agentskill",
+    "name": "Agentskill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentskill",
+    "url": "https://clawhub.ai/skills/agentskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentskill-abee4c76f2244549.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Let any agent produce code indistinguishable from the existing codebase."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "airscripts",
+      "userId": "s17f2vd423cnfs44ybpyjk4zv585kxfb",
+      "displayName": "Francesco Sardone",
+      "image": "https://avatars.githubusercontent.com/u/43211620?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 390,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1778109397554,
+      "changelog": "Agentskill 1.4.0\n\n- Added explicit distinction between AI-led (skill) and CLI static (operator) generation for AGENTS.md.\n- Clarified that in skill mode, only analyzer commands are used for evidence; final document is always authored by the AI, not by static CLI generation.\n- Updated operational rules and workflow to emphasize evidence gathering vs. authorship responsibilities.\n- Expanded SKILL.md to document both modes and enforce correct usage in AI-assisted workflows.\n- No breaking changes to workflow steps or trigger phrases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5ba162c6e76a92da1b3c5920ddcad921ff1d94d7ef5a9b556097e91746b8282"
+}

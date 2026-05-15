@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "api-merchant-fee",
+    "displayName": "API Merchant Fee",
+    "summary": "商户费率查询 API。当用户提到查询商户费率、商户信息、贷记卡费率、借记卡费率、扫码费率、商户管理费，或需要查询某个商户的费率信息时触发。触发词包括：查询商户费率、商户费率、商户费率查询、merchant fee。",
+    "tags": {
+      "api": "1.0.0",
+      "finance": "1.0.0",
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1776351974767,
+    "updatedAt": 1777527614773
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1776351974767,
+    "changelog": "api-merchant-fee v1.0.0\n\n- Initial release of the 商户费率查询 (Merchant Fee Query) skill.\n- Supports querying merchant rates by parsing user input for required parameters (agentNo, apikey, userId, tusn).\n- Caches agentNo and apikey locally for convenient repeat queries.\n- Handles input validation and parameter completion with clear user prompts.\n- Formats successful, failed, or incomplete queries with easy-to-read templates.\n- Includes robust error handling for network, authentication, and business logic errors.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "sgfa005",
+    "userId": "s177k6wzhk81sbrdjxr33vf8sd84yx3f",
+    "displayName": "sgfa005",
+    "image": "https://avatars.githubusercontent.com/u/97841177?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.install_untrusted_source",
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.install_untrusted_source, suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527614773
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25938,
+  "uuid": "skill-clawhub-claoow-search",
+  "skillKey": "clawhub-claoow-search",
+  "name": "claoow search",
+  "summary": "Connects your agent to Claoow Search to fetch, scrape, and submit AI-generated intelligence tasks in batched mode with strict anti-SSRF safeguards.",
+  "version": "1.0.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claoow_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BiaHD",
+      "features": [
+        "Connects your agent to Claoow Search to fetch, scrape, and submit AI-generated intelligence tas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claoow-search@1.0.15",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22287223?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claoow-search",
+      "url": "https://clawhub.ai/skills/claoow-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claoow-search",
+    "url": "https://clawhub.ai/skills/claoow-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claoow-search-356d120c714a3c52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claoow-search@1.0.15",
+      "artifactUrl": "data/skills/artifacts/clawhub-claoow-search-1.0.15.json",
+      "version": "1.0.15",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e958f30c49b70bc4b8d20f5f5489f916c4b5b2ba79557191ee0a16166cd3b64e",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T17:18:05.122Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiangong-wps-word-automation-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiangong_wps_word_automation_cn",
+  "skill": {
+    "id": 29597,
+    "skillKey": "clawhub-tiangong-wps-word-automation-cn",
+    "name": "Tiangong Wps Word Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiangong-wps-word-automation-cn",
+    "url": "https://clawhub.ai/skills/tiangong-wps-word-automation-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiangong-wps-word-automation-cn-725cc64283ee54b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate common Word/WPS document operations on Windows via COM (read text, replace, insert, headings, headers/footers, page breaks, merge, split, export to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jirboy",
+      "userId": "s172kehers3wd9ajz7fymawqnn843cz8",
+      "displayName": "JIRBOY",
+      "image": "https://avatars.githubusercontent.com/u/49422297?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 300,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776426547831,
+      "changelog": "Initial release of wps-word-automation:\n\n- Automates common Microsoft Word and WPS Writer document operations on Windows using Python and COM.\n- Supports reading text, find/replace, inserting text, applying headings, setting headers/footers, page breaks, merging and splitting documents.\n- Allows exporting to PDF/TXT, and adding or replacing images.\n- Designed for single-document actions, not batch processing.\n- Compatible with both Word and WPS Writer via command-line scripts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3a7eed9747d2b3ac5a78acb4a92aa64193abfb459cadc2b83214c8317f01a86"
+}

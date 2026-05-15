@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30251,
+  "uuid": "skill-clawhub-jrv-http-client",
+  "skillKey": "clawhub-jrv-http-client",
+  "name": "Jrv Http Client",
+  "summary": "Make HTTP requests from the command line with support for auth (Bearer, Basic, API key), custom headers, JSON/form body, response formatting, timing, and his...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jrv_http_client",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Wang",
+      "features": [
+        "Make HTTP requests from the command line with support for auth (Bearer, Basic, API key), custom."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jrv-http-client@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20619402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jrv-http-client",
+      "url": "https://clawhub.ai/skills/jrv-http-client"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jrv-http-client",
+    "url": "https://clawhub.ai/skills/jrv-http-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jrv-http-client-a6c0527f16faa20e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jrv-http-client@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jrv-http-client-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e9ca45121034d14a6537ef04a67ed026b23a05acd361cb599773277de6392c1",
+      "artifactSizeBytes": 2464
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:09:09.168Z"
+}

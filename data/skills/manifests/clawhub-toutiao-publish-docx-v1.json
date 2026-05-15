@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62382,
+  "uuid": "skill-clawhub-toutiao-publish-docx-v1",
+  "skillKey": "clawhub-toutiao-publish-docx-v1",
+  "name": "toutiao-publish-docx",
+  "summary": "用 Cookie 或已保存会话在头条号后台发布文章，支持标题/正文/图片与固定目录 docx 导入。当用户要自动发头条文章、传入 cookie_header 或要求按 docx 流程发布时调用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toutiao_publish_docx_v1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlesliu-sap",
+      "features": [
+        "用 Cookie 或已保存会话在头条号后台发布文章，支持标题/正文/图片与固定目录 docx 导入。当用户要自动发头条文章、传入 cookie_header 或要求按 docx 流程发布时调."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toutiao-publish-docx-v1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253213849?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toutiao-publish-docx-v1",
+      "url": "https://clawhub.ai/skills/toutiao-publish-docx-v1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toutiao-publish-docx-v1",
+    "url": "https://clawhub.ai/skills/toutiao-publish-docx-v1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toutiao-publish-docx-v1-98db8343775a9dbe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toutiao-publish-docx-v1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toutiao-publish-docx-v1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:110703356f96ee1387bfc9dd41eadd5b973515e4b1790e55dd22ac7ff3c76252",
+      "artifactSizeBytes": 2561
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T08:21:21.576Z"
+}

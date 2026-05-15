@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64950,
+  "uuid": "skill-clawhub-web-screenshot",
+  "skillKey": "clawhub-web-screenshot",
+  "name": "web-screenshot",
+  "summary": "🖼️ 任意URL全页面截图 + PDF导出工具。当用户要求截取网页、保存网页快照、截图存档、做QA对比、导出PDF时使用。支持百度/知乎/微信公众号/小红书等中文网站，自动等待JS渲染交付PNG/JPG/PDF。",
+  "version": "1.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_screenshot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiaonvmo-maker",
+      "features": [
+        "🖼️ 任意URL全页面截图 + PDF导出工具。当用户要求截取网页、保存网页快照、截图存档、做QA对比、导出PDF时使用。支持百度/知乎/微信公众号/小红书等中文网站，自动等待JS渲染交付."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-screenshot@1.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/247651203?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-screenshot",
+      "url": "https://clawhub.ai/skills/web-screenshot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-screenshot",
+    "url": "https://clawhub.ai/skills/web-screenshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-screenshot-23a566f11c60eb9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-screenshot@1.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-screenshot-1.1.3.json",
+      "version": "1.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69bbe94fdd200008e77064812474c930e6c3d6e737e13a3eba98081112c9483c",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T04:23:00.705Z"
+}

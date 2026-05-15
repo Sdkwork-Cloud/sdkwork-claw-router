@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31313,
+  "uuid": "skill-clawhub-didomi",
+  "skillKey": "clawhub-didomi",
+  "name": "Didomi",
+  "summary": "Didomi integration. Manage data, records, and automate workflows. Use when the user wants to interact with Didomi data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.didomi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Didomi integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Didomi data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/didomi@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "didomi",
+      "url": "https://clawhub.ai/skills/didomi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "didomi",
+    "url": "https://clawhub.ai/skills/didomi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/didomi-94daadacd99f8c84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/didomi@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-didomi-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab39b68a40dae6cf6a5f6b618bad6f8a51d4b3184cf977e3136a9d425764747b",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:38:58.624Z"
+}

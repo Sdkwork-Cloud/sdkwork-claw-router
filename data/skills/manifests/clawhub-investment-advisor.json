@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67254,
+  "uuid": "skill-clawhub-investment-advisor",
+  "skillKey": "clawhub-investment-advisor",
+  "name": "investment-advisor",
+  "summary": "提供股票技术面及基本面分析、市场情绪评估和综合交易建议，支持多股票比较与投资组合分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investment_advisor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael20070814",
+      "features": [
+        "提供股票技术面及基本面分析、市场情绪评估和综合交易建议，支持多股票比较与投资组合分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/investment-advisor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100540606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "investment-advisor",
+      "url": "https://clawhub.ai/skills/investment-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investment-advisor",
+    "url": "https://clawhub.ai/skills/investment-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investment-advisor-3cf141a57b16f035.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/investment-advisor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-investment-advisor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46fa024429bc9c96ab48948dc2c9ac8ad4abc184d26b1e0296ca2297bbc4af66",
+      "artifactSizeBytes": 2550
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T02:17:26.942Z"
+}

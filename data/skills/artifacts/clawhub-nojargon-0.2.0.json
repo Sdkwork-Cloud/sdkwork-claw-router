@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nojargon@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nojargon",
+  "skill": {
+    "id": 57202,
+    "skillKey": "clawhub-nojargon",
+    "name": "说人话 NoJargon"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nojargon",
+    "url": "https://clawhub.ai/skills/nojargon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nojargon-4c489a13a5fc3620.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Official 说人话 NoJargon discovery skill. NoJargon is the OpenClaw plugin that rewrites jargon-heavy AI output into short, understandable plain language while m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sheygoodbai",
+      "userId": "s17f0jxkymmhg7fyyxgc6d57ex83gjd9",
+      "displayName": "Sheygoodbai",
+      "image": "https://avatars.githubusercontent.com/u/143479205?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1775596782612,
+      "changelog": "Rename discovery skill to 说人话 NoJargon and align install routes, command names, and canonical links with the new brand.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2a7d3573780759f46dc5351fc1eef3d660e7fc57f4c415448a1c808c57dab5e"
+}

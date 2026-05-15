@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flyelep-image-translate@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyelep_image_translate",
+  "skill": {
+    "id": 68075,
+    "skillKey": "clawhub-flyelep-image-translate",
+    "name": "image-translate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyelep-image-translate",
+    "url": "https://clawhub.ai/skills/flyelep-image-translate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyelep-image-translate-295a1a48b01664b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 Flyelep AI 工具接口识别并翻译图片中的文字，返回翻译后的新图片地址。 当用户要求翻译海报文字、翻译商品图文案、将图片文字改成目标语言时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flyelepai",
+      "userId": "s175rfkzzv81fcfhp65sjggxa984fmry",
+      "displayName": "flyelep",
+      "image": "https://avatars.githubusercontent.com/u/272408277?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 262,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777262230205,
+      "changelog": "No functional or content changes detected in this version.\n\n- No file changes were made from the previous version.\n- Documentation and API instructions remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:069cf65948eff1e589445d6beae4baef0d86ab438ce4c69669dce62c9f0df7ba"
+}

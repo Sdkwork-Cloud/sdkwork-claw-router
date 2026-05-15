@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14237,
+  "uuid": "skill-clawhub-openclaw-skill-personal-finance",
+  "skillKey": "clawhub-openclaw-skill-personal-finance",
+  "name": "Personal Finance",
+  "summary": "Parse personal finance CSV exports, validate schema, categorize transactions via local rules, and summarize/report income, expenses, merchants, and categories.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_personal_finance",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pp",
+      "features": [
+        "Parse personal finance CSV exports, validate schema, categorize transactions via local rules, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-personal-finance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263042322?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-personal-finance",
+      "url": "https://clawhub.ai/skills/openclaw-skill-personal-finance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-personal-finance",
+    "url": "https://clawhub.ai/skills/openclaw-skill-personal-finance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-personal-finance-bc9c815730198e1c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-personal-finance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-personal-finance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79e7358457788c7fc59625924ee8e0ca46d15348e8678ee42a39c9c7a53c16a7",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T00:48:35.475Z"
+}

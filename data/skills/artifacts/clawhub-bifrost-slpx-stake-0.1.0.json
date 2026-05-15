@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bifrost-slpx-stake@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bifrost_slpx_stake",
+  "skill": {
+    "id": 27021,
+    "skillKey": "clawhub-bifrost-slpx-stake",
+    "name": "Bifrost Slpx Stake"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bifrost-slpx-stake",
+    "url": "https://clawhub.ai/skills/bifrost-slpx-stake",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bifrost-slpx-stake-8f783aedd40f867c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute liquid staking operations on Bifrost SLPx protocol across Ethereum, Base, Optimism, and Arbitrum. Mint vETH by staking ETH/WETH, redeem vETH back to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ark930",
+      "userId": "s17c9aenb0jbt4akcjqqrvtpt185bfn0",
+      "displayName": "Edwin",
+      "image": "https://avatars.githubusercontent.com/u/3787876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773390309490,
+      "changelog": "bifrost-slpx-stake v0.1.0 initial release:\n\n- Enables liquid staking (mint, redeem, claim) of ETH/WETH using the Bifrost SLPx protocol on Ethereum, Base, Optimism, and Arbitrum.\n- Supports both manual (default) and agent-side signing via environment variable configuration.\n- Includes detailed contract addresses, function selectors, and transaction encoding instructions for all supported operations.\n- Provides pre-execution query steps, calldata encoding guide, and sample command-line calls for users.\n- Designed for easy integration and secure on-chain interaction with Bifrost DeFi staking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fc3bb9b75b8d6a266ecb2c8afed1bd117b6b55771d7530f1c876db818d9388f0"
+}

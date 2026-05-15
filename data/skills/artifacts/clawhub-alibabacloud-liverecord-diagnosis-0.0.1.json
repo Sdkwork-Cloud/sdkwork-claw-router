@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-liverecord-diagnosis@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_liverecord_diagnosis",
+  "skill": {
+    "id": 47074,
+    "skillKey": "clawhub-alibabacloud-liverecord-diagnosis",
+    "name": "Alibabacloud Liverecord Diagnosis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-liverecord-diagnosis",
+    "url": "https://clawhub.ai/skills/alibabacloud-liverecord-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-liverecord-diagnosis-f4dcdc70a449bb00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Alibaba Cloud Live Recording Diagnostic Skill. Use for diagnosing live stream record issues including missing recordings, file generation problems, unexpecte..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1778234778482,
+      "changelog": "alibabacloud-liverecord-diagnosis 0.0.1\n\n- Improved installation instructions: users are now referred to a separate CLI installation guide for details.\n- Enhanced parameter time range rules: if a time range year is omitted, the current year is assumed.\n- Updated diagnostic workflow to clarify that Step 2 queries must always execute, regardless of previous results.\n- Minor language and formatting updates for clarity in steps and requirements.\n- No breaking changes; general documentation refinement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e2dbcf025a8cfce799ddde43694b09a1e608828fe5f78510617ffbdd2404127"
+}

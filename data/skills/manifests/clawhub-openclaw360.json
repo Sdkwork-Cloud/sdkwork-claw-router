@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50250,
+  "uuid": "skill-clawhub-openclaw360",
+  "skillKey": "clawhub-openclaw360",
+  "name": "Openclaw360",
+  "summary": "Runtime security skill for AI agents — prompt injection detection, tool call authorization, sensitive data leak prevention, skill security scanning, and one-...",
+  "version": "0.1.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw360",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WalkerX",
+      "features": [
+        "Runtime security skill for AI agents — prompt injection detection, tool call authorization, sen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw360@0.1.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16461109?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw360",
+      "url": "https://clawhub.ai/skills/openclaw360"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw360",
+    "url": "https://clawhub.ai/skills/openclaw360",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw360-7beb49e1a9dc67d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw360@0.1.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw360-0.1.11.json",
+      "version": "0.1.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8f7d0c3cc57e8ba8bf88c419f62749fadb81c6f4e7dd8dc19e9852a74fb72fc",
+      "artifactSizeBytes": 2197
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T02:51:49.121Z"
+}

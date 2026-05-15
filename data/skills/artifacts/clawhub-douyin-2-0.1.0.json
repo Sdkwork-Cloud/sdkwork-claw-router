@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_2",
+  "skill": {
+    "id": 72655,
+    "skillKey": "clawhub-douyin-2",
+    "name": "Douyin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-2",
+    "url": "https://clawhub.ai/skills/douyin-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-2-e052a9e9ad631634.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抖音视频上传工具。支持登录抖音账号、上传视频、管理登录状态。当用户需要上传视频到抖音、登录抖音、检查抖音登录状态时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lancelin111",
+      "userId": "s17a3xtea70cdnt8scm7ysy8m1849hz9",
+      "displayName": "lance",
+      "image": "https://avatars.githubusercontent.com/u/8026845?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773745110072,
+      "changelog": "Version 0.1.0 introduces the douyin skill for uploading and managing videos on the Douyin platform.\n\n- Supports logging in to Douyin and securely saving login credentials (Cookies) locally.\n- Enables automated video uploads with options for title, description, and tags.\n- Provides scripts to check, view, and clear login status.\n- Ensures all network requests are made only to official Douyin domains.\n- Uses Puppeteer for browser automation; no need to clone external repositories.\n- All code and dependencies required are included and managed locally.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f92c25ff7cff4c0d7d6f6ec6e64d6882522af09e759137a65c6839c50546ef97"
+}

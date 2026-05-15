@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "byted-bytehouse-hybrid-search",
+    "displayName": "Byted Bytehouse Hybrid Search",
+    "summary": "ByteHouse 混合检索 Skill，支持全文检索 + 向量检索，结合 RRF 重排算法实现更精准的检索结果。当用户需要在ByteHouse数据库中进行全文检索 + 向量检索，结合 RRF 重排算法实现更精准的检索结果时，使用此Skill。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774526816662,
+    "updatedAt": 1777623901242
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774526816662,
+    "changelog": "- Initial release of byted-bytehouse-hybrid-search.\n- Supports hybrid search on ByteHouse using both full-text (BM25) and vector (HNSW) indexes.\n- Implements Reciprocal Rank Fusion (RRF) algorithm for reranking combined search results.\n- Provides automatic embedding generation, single and batch document insertion, and updating of missing embeddings.\n- Example code and usage instructions included.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "volcengine-skills",
+    "userId": "s17bcxs73bckd3eercvtn6cmsx83g5kg",
+    "displayName": "volcengine-skills",
+    "image": "https://avatars.githubusercontent.com/u/260939792?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777623901242
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-repo-quickstart@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_repo_quickstart",
+  "skill": {
+    "id": 37607,
+    "skillKey": "clawhub-github-repo-quickstart",
+    "name": "Github repository quickstart"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-repo-quickstart",
+    "url": "https://clawhub.ai/skills/github-repo-quickstart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-repo-quickstart-717a546e76ea7856.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants a fast, low-friction onboarding guide for an unfamiliar GitHub repository. Trigger when a GitHub repo URL is provided, or when the us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "starquakee",
+      "userId": "publishers:starquakee",
+      "displayName": "starquakee",
+      "image": "https://avatars.githubusercontent.com/u/99738745?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774005246903,
+      "changelog": "Initial release of github-repo-quickstart skill.\n\n- Provides a fast, developer-focused onboarding guide for any GitHub repository.\n- Analyzes repo structure, dependencies, entrypoints, and maintenance status via a four-step workflow.\n- Output is a compact, annotated Markdown guide with sections for overview, architecture, quickstart, and logic navigation.\n- Automatically matches the user’s language for all headings and explanations.\n- Prioritizes practical commands, explicit setup guidance, and concise explanations.\n- Highlights pitfalls, version issues, and environment requirements to prevent common onboarding errors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61b858c2838371a4b94b26d81ae7f9852d70dccb252a2be0cff2994224526fc0"
+}

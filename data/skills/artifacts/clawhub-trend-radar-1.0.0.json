@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trend-radar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trend_radar",
+  "skill": {
+    "id": 16305,
+    "skillKey": "clawhub-trend-radar",
+    "name": "Trend Radar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trend-radar",
+    "url": "https://clawhub.ai/skills/trend-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trend-radar-0c82216f85a000c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time trending topics aggregator across 7 platforms (X/Twitter, Reddit, Google Trends, Hacker News, Zhihu, Bilibili, Weibo). Trigger: when user says 'tre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaoyiweio",
+      "userId": "s177w0npqct9fjq708k4fgne6h83j7tt",
+      "displayName": "XiaoYiWeio",
+      "image": "https://avatars.githubusercontent.com/u/50070170?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 862,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773822574420,
+      "changelog": "Initial release: 7 platforms, zero API keys, progressive disclosure",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:788efd15fd8dcaaaac74f1bafdba0a2195c66f19e95dba3dbcfa125536ecd2bd"
+}

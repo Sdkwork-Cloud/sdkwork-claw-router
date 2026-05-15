@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64769,
+  "uuid": "skill-clawhub-event-manager",
+  "skillKey": "clawhub-event-manager",
+  "name": "Event Manager",
+  "summary": "小说事件管理工具。创建、编辑、查询事件档案，支持因果链、时间线、多线叙事追踪。Use when: Architect 代理在 Phase 2 需要创建事件架构、管理因果链、规划多线叙事。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.event_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuzhihui886",
+      "features": [
+        "小说事件管理工具。创建、编辑、查询事件档案，支持因果链、时间线、多线叙事追踪。Use when: Architect 代理在 Phase 2 需要创建事件架构、管理因果链、规划多线叙事。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/event-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213567314?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "event-manager",
+      "url": "https://clawhub.ai/skills/event-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "event-manager",
+    "url": "https://clawhub.ai/skills/event-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/event-manager-7b84453d10cbde4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/event-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-event-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:119e727ca28e63ce0d3f65d96e1f4b4adbf4acf879b64fb2fca926ec5196706c",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T05:48:23.823Z"
+}

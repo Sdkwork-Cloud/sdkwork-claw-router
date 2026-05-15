@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25603,
+  "uuid": "skill-clawhub-public-relations-manager",
+  "skillKey": "clawhub-public-relations-manager",
+  "name": "Public Relations Manager",
+  "summary": "AI-powered assistant for PR pros to match media, generate press releases and pitches, and plan multi-week public relations campaigns efficiently.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.public_relations_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Justin Liu",
+      "features": [
+        "AI-powered assistant for PR pros to match media, generate press releases and pitches, and plan."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/public-relations-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34432727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "public-relations-manager",
+      "url": "https://clawhub.ai/skills/public-relations-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "public-relations-manager",
+    "url": "https://clawhub.ai/skills/public-relations-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/public-relations-manager-e04650b8e24c02bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/public-relations-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-public-relations-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8c906b973028f7b066bdd91c7aea2845e7c962b9210a21ea586e0c923e699d3",
+      "artifactSizeBytes": 2461
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T17:14:32.083Z"
+}

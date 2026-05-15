@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sql-connector@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sql_connector",
+  "skill": {
+    "id": 21355,
+    "skillKey": "clawhub-sql-connector",
+    "name": "SQL Connector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sql-connector",
+    "url": "https://clawhub.ai/skills/sql-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sql-connector-90a071875186c99d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generic SQL Server connectivity for OpenClaw agents. Use when: (1) executing parameterized queries against SQL Server, (2) building repository layers that ne..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oblio-falootin",
+      "userId": "s178hc1brh9m5mmh3hnb27txnx83j824",
+      "displayName": "Oblio",
+      "image": "https://avatars.githubusercontent.com/u/263802398?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 512,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1777398466866,
+      "changelog": "GETTING_STARTED.md (494 lines) and SKILL_REFERENCE.md (712 lines) added. Publish workflow added. Custom backend naming documented. README updated with DEPENDENCY_PRIORITY.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6eef8fba185880b5acbb146d98918ff0eff8c3a5701c0385923f1df8c9046529"
+}

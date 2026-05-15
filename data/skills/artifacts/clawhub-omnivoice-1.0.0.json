@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/omnivoice@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omnivoice",
+  "skill": {
+    "id": 39649,
+    "skillKey": "clawhub-omnivoice",
+    "name": "OmniVoice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omnivoice",
+    "url": "https://clawhub.ai/skills/omnivoice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omnivoice-b52fd97f0979c267.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "All-in-one voice identity toolkit: speaker identification, voice library management, voice cloning, and speech-to-text. The only OpenClaw skill with speaker..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangqibin-caibi",
+      "userId": "s172as0yac71nh97wgwfqd5jt583hyhx",
+      "displayName": "Yang Qibin",
+      "image": "https://avatars.githubusercontent.com/u/79695798?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774370392912,
+      "changelog": "- Initial release of OmniVoice: an all-in-one voice identity toolkit.\n- Provides ten operations including speaker identification, voice library management, voice cloning, speech-to-text, and persona voice replies.\n- Unique feature: speaker identification—recognize WHO is speaking, not just what they said.\n- Supports audio transcription, voice swap, and CRUD operations on a voice library.\n- Works with English, Chinese, and Japanese input; compatible with Feishu message sending.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:057a3aca2d16cbb014580959a26e9e057c83cc445a5ecc87e3357238a92a3a41"
+}

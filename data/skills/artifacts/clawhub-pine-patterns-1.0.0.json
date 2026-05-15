@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pine-patterns@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pine_patterns",
+  "skill": {
+    "id": 24733,
+    "skillKey": "clawhub-pine-patterns",
+    "name": "Pine Patterns"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pine-patterns",
+    "url": "https://clawhub.ai/skills/pine-patterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pine-patterns-0e512a8edbc4aaaa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pine Script v5/v6 indicator scaffold and patterns. Provides structure guidance and triggers doc-researcher for current syntax verification. Use when developi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhengxinjipai",
+      "userId": "s1730v5c386prna2echd6pyczn83x8km",
+      "displayName": "zhengxinjipai",
+      "image": "https://avatars.githubusercontent.com/u/130424576?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 405,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772790876326,
+      "changelog": "- Initial release of pine-patterns.\n- Provides a lightweight scaffold for Pine Script v5/v6 indicator development.\n- Includes conventions for file structure, session defaults, and resource limits.\n- Offers reusable code patterns for state management, session detection, moving averages, VWAP, and error handling.\n- Documents group input standards, theming, and typical institutional trading features.\n- Recommends verification with doc-researcher for current Pine Script syntax and deprecation status.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ec89d258ba3d04de4e1d2f936ba1627301f484b43e39f6f20bbfc29cb00a0fa0"
+}

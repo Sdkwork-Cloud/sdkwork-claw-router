@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68076,
+  "uuid": "skill-clawhub-have-a-nice-day",
+  "skillKey": "clawhub-have-a-nice-day",
+  "name": "have-a-nice-day",
+  "summary": "腾讯地图位置服务，支持POI搜索、路径规划、旅游规划、周边搜索，轨迹数据可视化和地图数据可视化",
+  "version": "1.0.21",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.have_a_nice_day",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qfish",
+      "features": [
+        "腾讯地图位置服务，支持POI搜索、路径规划、旅游规划、周边搜索，轨迹数据可视化和地图数据可视化"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/have-a-nice-day@1.0.21",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/679824?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "have-a-nice-day",
+      "url": "https://clawhub.ai/skills/have-a-nice-day"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "have-a-nice-day",
+    "url": "https://clawhub.ai/skills/have-a-nice-day",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/have-a-nice-day-ea22a3f9c6b8f04c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/have-a-nice-day@1.0.21",
+      "artifactUrl": "data/skills/artifacts/clawhub-have-a-nice-day-1.0.21.json",
+      "version": "1.0.21",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc78be6c5caa771b62cbbff672535d33b73b51f230706217b702b5aaaae54f25",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T17:24:43.971Z"
+}

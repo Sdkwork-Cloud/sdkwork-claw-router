@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63924,
+  "uuid": "skill-clawhub-uapp-retention",
+  "skillKey": "clawhub-uapp-retention",
+  "name": "用户留存查询",
+  "summary": "友盟 U-App 留存率查询技能，支持通过 umeng-cli call 调用友盟 OpenAPI（gateway.open.umeng.com）的 1 个只读留存接口，覆盖新增/活跃用户的次日/3日/7日/14日/30日留存率查询、版本与渠道维度的留存对比分析。当用户需要查询应用留存率、次日留存、7日留存、版本...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uapp_retention",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Umeng+",
+      "features": [
+        "友盟 U-App 留存率查询技能，支持通过 umeng-cli call 调用友盟 OpenAPI（gateway.open.umeng.com）的 1 个只读留存接口，覆盖新增/活跃用户的."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uapp-retention@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195273084?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uapp-retention",
+      "url": "https://clawhub.ai/skills/uapp-retention"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uapp-retention",
+    "url": "https://clawhub.ai/skills/uapp-retention",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uapp-retention-5cedcab103e3b48d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uapp-retention@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uapp-retention-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d24c66cb8434f1382500983f783ef9690c944edf171728cbfd0e0b480ccb3a3",
+      "artifactSizeBytes": 2626
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T11:47:48.355Z"
+}

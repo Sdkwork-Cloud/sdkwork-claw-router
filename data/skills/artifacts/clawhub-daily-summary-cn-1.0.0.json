@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-summary-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_summary_cn",
+  "skill": {
+    "id": 69330,
+    "skillKey": "clawhub-daily-summary-cn",
+    "name": "daily_summary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-summary-cn",
+    "url": "https://clawhub.ai/skills/daily-summary-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-summary-cn-05b40f0b82beeafd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日工作总结自动生成。根据聊天记录和浏览器历史生成一句话工作总结，定时发送飞书。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ppop0uuiu",
+      "userId": "s1734a8859k8hr5f0kbzg846g583q9e5",
+      "displayName": "ppop0uuiu",
+      "image": "https://avatars.githubusercontent.com/u/77722624?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 353,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773801911489,
+      "changelog": "根据和openclaw的聊天记录和浏览器记录生成每日日报",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e760c4bc00bffcc5310d31a97aa688039fb3c3f0410aa40ad1336c3ad7d0082"
+}

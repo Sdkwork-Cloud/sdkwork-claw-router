@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/magic-docs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.magic_docs",
+  "skill": {
+    "id": 61557,
+    "skillKey": "clawhub-magic-docs",
+    "name": "Magic Docs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "magic-docs",
+    "url": "https://clawhub.ai/skills/magic-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/magic-docs-0966b41f7e87c2ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动更新的活文档。在 Markdown 文件开头加 `<!-- MAGIC DOC -->` 标记，Agent 会在每轮对话后自动检测是否需要更新该文档，并写入新发现的信息。灵感来自 Claude Code 的 Magic Docs 机制。触发词：magic doc、活文档、自动更新文档、auto doc。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wavmson",
+      "userId": "s1757c42efs3j405hc00csdrxs840yj8",
+      "displayName": "wavmson",
+      "image": "https://avatars.githubusercontent.com/u/127436552?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775131145366,
+      "changelog": "Magic Docs v1.0.0 初始发布\n\n- 自动检测并更新带有<!-- MAGIC DOC -->标记的 Markdown 文档，每轮对话后智能补充新信息\n- 支持通过scope参数限定关注主题，可设置自动、每日或手动更新频率\n- 按需追加新知识、修正过时内容，并在每条更新处加日期标注\n- 文档末尾自动维护Changelog，记录所有变动历史\n- 内置安全规则：不删除用户内容、不写入敏感或临时信息，保留文档可读性",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff4ed6de4e530a04fcbaf2a55910704145dbc890833eebee299b863244c2f59e"
+}

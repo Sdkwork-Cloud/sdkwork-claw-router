@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51586,
+  "uuid": "skill-clawhub-nvidia",
+  "skillKey": "clawhub-nvidia",
+  "name": "Shop from Nvidia - With your claw and creditcard",
+  "summary": "Buy at Nvidia | Manage compatible cards, wallets & payments. Financial management for Agents and OpenClaw bots.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nvidia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TripleHippo",
+      "features": [
+        "Buy at Nvidia | Manage compatible cards, wallets & payments",
+        "Financial management for Agents and OpenClaw bots."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nvidia@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261665182?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nvidia",
+      "url": "https://clawhub.ai/skills/nvidia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nvidia",
+    "url": "https://clawhub.ai/skills/nvidia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nvidia-8d4321d936320802.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nvidia@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nvidia-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3782a436c5e06d260845bb54611c5f38a19b276120590b9afa71b8d37a02eefa",
+      "artifactSizeBytes": 2627
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T14:07:07.687Z"
+}

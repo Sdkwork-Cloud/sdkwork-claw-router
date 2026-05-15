@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weibo-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weibo_backup",
+  "skill": {
+    "id": 65060,
+    "skillKey": "clawhub-weibo-backup",
+    "name": "Weibo 微博数据备份"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weibo-backup",
+    "url": "https://clawhub.ai/skills/weibo-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weibo-backup-2d8874b832940ae7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 Playwright 自动化下载微博(weibo)收藏内容，本人或其他博主发表微博内容所有历史记录，包括图片、视频和长文章。 当用户提到\"微博收藏\"、\"下载微博\"、\"备份微博\"、\"weibo favorites\"、 \"抓取微博内容\"、\"保存微博图片\"或任何与微博数据备份相关的需求时， 支持 headless..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hhjin",
+      "userId": "s17acqvy6hjm9yg9pssq1t6r01858xp5",
+      "displayName": "hhjin",
+      "image": "https://avatars.githubusercontent.com/u/20532714?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776757347773,
+      "changelog": "Initial release of weibo-downloader (weibo-backup) skill:\n\n- Automates backup of Weibo favorites, personal posts, or other users' posts, including images, videos, and long articles.\n- Supports Playwright-based headless operations; offers flexible download options (image size, video, article extraction).\n- Saves content in Markdown with bidirectional navigation links for easy browsing.\n- Includes detailed usage instructions, command examples, parameter explanations, and troubleshooting.\n- Requires user login for first-time setup; guides user through safe login and data extraction steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:879b42592e6e4afb6be726c30caaa24dc8603b951ad021a461ee67962fa6ce9a"
+}

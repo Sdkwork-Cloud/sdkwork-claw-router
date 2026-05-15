@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60018,
+  "uuid": "skill-clawhub-java-code-reviewer",
+  "skillKey": "clawhub-java-code-reviewer",
+  "name": "Java Code Reviewer",
+  "summary": "Java 代码审查报告生成器。用于审查 Java 代码变更，生成结构化审查报告。 触发场景： (1) 审查 git diff 或代码变更 (2) 审查 Java 源文件 (3) 代码质量检查 (4) PR/CR 审查 (5) 检查代码是否符合 Google Java Style、阿里 Java 开发手册、Clea...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.java_code_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wxweven",
+      "features": [
+        "Java 代码审查报告生成器。用于审查 Java 代码变更，生成结构化审查报告。 触发场景： (1) 审查 git diff 或代码变更 (2) 审查 Java 源文件 (3) 代码质量检查."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/java-code-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3103341?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "java-code-reviewer",
+      "url": "https://clawhub.ai/skills/java-code-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "java-code-reviewer",
+    "url": "https://clawhub.ai/skills/java-code-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/java-code-reviewer-9ec5ac71d7570fd3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/java-code-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-java-code-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2aa7f11a3d494dbf9ba2880edb9090a883eb92c724018d6292983bd4de87870e",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T10:08:31.894Z"
+}

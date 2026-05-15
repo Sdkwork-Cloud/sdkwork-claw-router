@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cron-system-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_system_manager",
+  "skill": {
+    "id": 68728,
+    "skillKey": "clawhub-cron-system-manager",
+    "name": "Cron System Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-system-manager",
+    "url": "https://clawhub.ai/skills/cron-system-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-system-manager-baf7b3dd20f44a73.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "雨晴定时任务系统管理器。当需要检查cron任务状态、修改任务配置、排查重复职责、优化任务安排时触发此技能。也是主人确认的\"主动发现+解决问题\"能力核心。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tianheihei002",
+      "userId": "s17c88m5zqx7a0c9r1deb71hq584d4qa",
+      "displayName": "tianheihei002",
+      "image": "https://avatars.githubusercontent.com/u/193375545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776526827963,
+      "changelog": "cron-system-manager v1.0.0\n\n- 首次发布，全面定义定时任务（cron）系统管理规范\n- 明确职责矩阵与唯一性原则，防止任务重复或冲突\n- 设定关键任务（如每日复盘、每小时自检、技能更新等）角色、触发时间、禁止事项和输出标准\n- 制定严格的飞书推送规则，仅每日早间新闻允许主动推送\n- 内置HEARTBEAT和职能冲突自动检测及补救机制\n- 清晰列出任务新建检查流程、Token消耗评估与文件路径规范\n- 建立ERRORS.md主动清理与问题归档机制",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2214b44e153ff56b12efa773536317252984cd24da8542ab6dfef0c936b45791"
+}

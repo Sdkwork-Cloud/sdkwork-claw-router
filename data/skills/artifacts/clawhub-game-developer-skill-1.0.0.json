@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/game-developer-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.game_developer_skill",
+  "skill": {
+    "id": 10902,
+    "skillKey": "clawhub-game-developer-skill",
+    "name": "Claude_Game_Developer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "game-developer-skill",
+    "url": "https://clawhub.ai/skills/game-developer-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/game-developer-skill-c346118f383f5480.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when building game systems, implementing Unity/Unreal features, or optimizing game performance. Invoke for Unity, Unreal, game patterns, ECS, physics, ne..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cryptorabea",
+      "userId": "publishers:cryptorabea",
+      "displayName": "youssef mostafa rabea",
+      "image": "https://avatars.githubusercontent.com/u/123809889?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1792,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771987141789,
+      "changelog": "Initial release of the game-developer skill.\n\n- Provides guidance for building and optimizing games in Unity and Unreal Engine.\n- Covers ECS architecture, multiplayer networking, performance optimization, and shader programming.\n- Enforces industry-standard best practices for code structure, profiling, and platform compatibility.\n- Includes detailed workflow, reference topics, and clear “must do/must not do” constraints for game development.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:da680b2e39c27f0e91869caab86c22ff1fceacc5a71ae82b052f3070976919d7"
+}

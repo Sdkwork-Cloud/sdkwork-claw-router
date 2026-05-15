@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oktk@2.4.0",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oktk",
+  "skill": {
+    "id": 52966,
+    "skillKey": "clawhub-oktk",
+    "name": "Oktk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oktk",
+    "url": "https://clawhub.ai/skills/oktk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oktk-a4fc21df517dc64c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LLM Token Optimizer - Reduce AI API costs by 60-90%. Compresses CLI outputs (git, docker, kubectl) before sending to GPT-4/Claude. AI auto-learning included. By Buba Draugelis 🇱🇹"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "satnamra",
+      "userId": "publishers:satnamra",
+      "displayName": "satnamra",
+      "image": "https://avatars.githubusercontent.com/u/22494619?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "2.4.0",
+      "createdAt": 1770931665433,
+      "changelog": "v2.4.0: Added shell aliases for auto-filtering (gst, dps, kpods, ok wrapper)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:26dd13616852330ee1e2167904ec5f8e09b7501abc2be3021c35441440386bb8"
+}

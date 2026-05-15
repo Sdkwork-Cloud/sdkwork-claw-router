@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bp-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bp_audit",
+  "skill": {
+    "id": 68939,
+    "skillKey": "clawhub-bp-audit",
+    "name": "Bp Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bp-audit",
+    "url": "https://clawhub.ai/skills/bp-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bp-audit-bc3ad5e0fd05a899.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供BP目标的合规性、上下承接和GAP分析审计，支持任务树、目标详情及相关数据查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spzwin",
+      "userId": "s174w40rh23bjb4hmnxn9p1fa983gsch",
+      "displayName": "spzwin",
+      "image": "https://avatars.githubusercontent.com/u/48741773?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774922008305,
+      "changelog": "bp-audit v1.0.0 — Initial Release\n\n- Introduces BP（Business Plan）目标审计专用能力，覆盖合规性、上下承接、GAP 分析四大审计场景。\n- 提供周期、分组、任务树、目标详情、KR/KI 详情、汇报、搜索等功能，全部接口围绕审计场景组织。\n- 明确模块路由及触发示例，动态按需加载，需认证后方可使用。\n- 完整记录标准审计流程、能力树以及详细审计检查项。\n- 设计满足 AI Agent，数据返回自带上下级承接信息，支持结构化输出审计结果。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:503edc3d3b6dee26f361d9e040d1af1a99b6ac81d1795cc338f45846c437b76c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lead-finder-outreach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lead_finder_outreach",
+  "skill": {
+    "id": 36481,
+    "skillKey": "clawhub-lead-finder-outreach",
+    "name": "Lead Finder Outreach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lead-finder-outreach",
+    "url": "https://clawhub.ai/skills/lead-finder-outreach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lead-finder-outreach-df232f726dbc9a59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants to find agency-ready prospects, build a company shortlist by niche and geography, or extract public contact paths. Also use when the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunflower225",
+      "userId": "s17amv5qjndp5s70mqx46fsrkx84h2bq",
+      "displayName": "sunflower225",
+      "image": "https://avatars.githubusercontent.com/u/29374469?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775730855257,
+      "changelog": "Align ClawHub listing and internal skill docs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0142392f5e0b13f5e1b3da8b497e128603f8a06194ba550b4b98615dd180ff7a"
+}

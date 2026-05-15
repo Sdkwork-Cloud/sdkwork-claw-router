@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/technical-blog-writing@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.technical_blog_writing",
+  "skill": {
+    "id": 14558,
+    "skillKey": "clawhub-technical-blog-writing",
+    "name": "Technical Blog Writing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "technical-blog-writing",
+    "url": "https://clawhub.ai/skills/technical-blog-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/technical-blog-writing-b8f3c78a0ed55cb7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Technical blog post writing with structure, code examples, and developer audience conventions. Covers post types, code formatting, explanation depth, and dev..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1026,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403421541,
+      "changelog": "technical-blog-writing 0.1.5\n\n- Added detailed SKILL.md describing technical blog writing structure, conventions, and best practices for developer-focused content.\n- Included clear post type templates (tutorials, deep dives, benchmarks, postmortems, architecture).\n- Outlined writing rules, code example guidelines, explanation depth, and developer audience engagement patterns.\n- Provided sample CLI usage instructions and install notes for [inference.sh](https://inference.sh).\n- Listed word count ranges, structural templates, and diagram usage recommendations for different post types.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:12607e1fb880f5c0f4b78b62da23d46e73e98ea926734e4af0d6f46c0aaa4f95"
+}

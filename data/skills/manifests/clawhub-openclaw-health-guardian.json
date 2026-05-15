@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23073,
+  "uuid": "skill-clawhub-openclaw-health-guardian",
+  "skillKey": "clawhub-openclaw-health-guardian",
+  "name": "Openclaw Health Guardian",
+  "summary": "Monitors OpenClaw Gateway on macOS, auto-restarts on failure with 180s cooldown and max 5 restarts/hour to prevent restart loops.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_health_guardian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhilshi",
+      "features": [
+        "Monitors OpenClaw Gateway on macOS, auto-restarts on failure with 180s cooldown and max 5 resta."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-health-guardian@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9841541?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-health-guardian",
+      "url": "https://clawhub.ai/skills/openclaw-health-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-health-guardian",
+    "url": "https://clawhub.ai/skills/openclaw-health-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-health-guardian-24dd3190aab608ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-health-guardian@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-health-guardian-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:246b98ec40392a811be9fa179a0c916126f390dbe415546b545cdeefffa61dfd",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T05:07:13.610Z"
+}

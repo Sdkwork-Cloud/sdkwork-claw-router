@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bot-file-processor@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bot_file_processor",
+  "skill": {
+    "id": 66715,
+    "skillKey": "clawhub-bot-file-processor",
+    "name": "bot File Processor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bot-file-processor",
+    "url": "https://clawhub.ai/skills/bot-file-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bot-file-processor-4e743a7bd80701ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用文件处理技能,用于批量重命名和格式转换。当用户需要批量重命名文件(添加前缀/后缀、替换文本、编号重命名、正则表达式重命名)或转换文件格式(图片格式转换、PDF与图片互转、DOCX转PDF、Markdown转PDF)时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ollielin",
+      "userId": "s17cbv0pejjg7snw385nc4snd583gktp",
+      "displayName": "mpaas-skills",
+      "image": "https://avatars.githubusercontent.com/u/2137816?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778316031247,
+      "changelog": "Version 1.0.2\n\n- No file changes detected.\n- No user-facing changes; functionality and documentation remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8ca0036f448b53e817c7d77bcedb8b76c7ea6fa76f7afbe0cec0f8a09f175b5"
+}

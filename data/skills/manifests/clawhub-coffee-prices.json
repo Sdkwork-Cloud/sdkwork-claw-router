@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28160,
+  "uuid": "skill-clawhub-coffee-prices",
+  "skillKey": "clawhub-coffee-prices",
+  "name": "Coffee Prices by City",
+  "summary": "Fetch and compare mainstream coffee prices (latte, americano, etc.) from major chains like Starbucks, Luckin, and Cotti for a given Chinese city and output t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coffee_prices",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Realank",
+      "features": [
+        "Fetch and compare mainstream coffee prices (latte, americano, etc.) from major chains like Star."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coffee-prices@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11557944?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coffee-prices",
+      "url": "https://clawhub.ai/skills/coffee-prices"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coffee-prices",
+    "url": "https://clawhub.ai/skills/coffee-prices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coffee-prices-788c5be956b7d85f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coffee-prices@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coffee-prices-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa2b264a78db1a6506af841f2d7087c08af2a456ef0e616901a65ece8b12ccb7",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T12:15:01.875Z"
+}

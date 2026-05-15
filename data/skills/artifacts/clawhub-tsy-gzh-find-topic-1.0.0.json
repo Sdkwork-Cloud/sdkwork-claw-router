@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tsy-gzh-find-topic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tsy_gzh_find_topic",
+  "skill": {
+    "id": 62662,
+    "skillKey": "clawhub-tsy-gzh-find-topic",
+    "name": "tsy-gzh-find-topic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tsy-gzh-find-topic",
+    "url": "https://clawhub.ai/skills/tsy-gzh-find-topic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tsy-gzh-find-topic-e3300045f2ae937c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用后端接口，获取公众号爆款选题推荐，直接输出原始 data。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangshiyegit",
+      "userId": "publishers:tangshiyegit",
+      "displayName": "AI架构师汤师爷",
+      "image": "https://avatars.githubusercontent.com/u/12964861?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774174030377,
+      "changelog": "tsy-gzh-find-topic 1.0.0\n\n- 初始版本，支持通过后端接口获取公众号爆款选题推荐。\n- 调用 POST {BASE_URL}/gzh/findTopic，自动处理参数与请求体生成。\n- 只输出接口响应的原始 data 字段，不进行任何加工、分析或补充。\n- 严格按 HTTP 和接口状态判断输出结果，若配置或请求异常则直接报错。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c9ee200ab42f81ccf8641d93b82f2e3c9f791709b2d64396445a8fa95a90408"
+}

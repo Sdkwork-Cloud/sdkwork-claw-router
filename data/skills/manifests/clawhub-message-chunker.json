@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69782,
+  "uuid": "skill-clawhub-message-chunker",
+  "skillKey": "clawhub-message-chunker",
+  "name": "message-chunker",
+  "summary": "智能消息分段工具。自动将长消息拆分成多条发送，避免飞书API消息长度限制。当需要发送长消息（如汇报、方案、日志）时自动激活。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.message_chunker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Code:Z",
+      "features": [
+        "智能消息分段工具。自动将长消息拆分成多条发送，避免飞书API消息长度限制。当需要发送长消息（如汇报、方案、日志）时自动激活。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/message-chunker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58386845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "message-chunker",
+      "url": "https://clawhub.ai/skills/message-chunker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "message-chunker",
+    "url": "https://clawhub.ai/skills/message-chunker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/message-chunker-a20e122c141e6e74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/message-chunker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-message-chunker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3b7c616a86c5b72ec0505e2f55c2245ad30217106fbbffd4bd421283d653ae1",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T12:06:41.041Z"
+}

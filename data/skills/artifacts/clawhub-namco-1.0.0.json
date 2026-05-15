@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/namco@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.namco",
+  "skill": {
+    "id": 70020,
+    "skillKey": "clawhub-namco",
+    "name": "Namco"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "namco",
+    "url": "https://clawhub.ai/skills/namco",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/namco-33b87960247f42ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "南梦宫（Namco）是日本传奇街机与主机游戏公司，创作《吃豆人》《铁拳》，2005年与万代合并成立万代南梦宫控股。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776345153040,
+      "changelog": "Namco 1.0.0 首发版上线！\n\n- 提供南梦宫（Namco）发展历史和大事年表\n- 涵盖街机、主机代表作品及其影响力\n- 聚焦《吃豆人》全球文化现象\n- 总结公司概况与主要 IP 列表\n- 适用 Bandai Namco 合并前历史查询、街机黄金时代、经典游戏研究等场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9cf5ac5fd25c4a7fb9bede63771e48a91289c5096fe9bd88e98f64a4a49aa82"
+}

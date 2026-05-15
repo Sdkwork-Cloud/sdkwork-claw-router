@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73314,
+  "uuid": "skill-clawhub-business-plan-maker",
+  "skillKey": "clawhub-business-plan-maker",
+  "name": "商业计划生成器",
+  "summary": "输入产品/业务描述，自动生成完整的商业计划书（执行摘要、市场分析、竞争定位、收入模型、运营计划、财务预测、风险评估）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_plan_maker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hyjaixiao",
+      "features": [
+        "输入产品/业务描述，自动生成完整的商业计划书（执行摘要、市场分析、竞争定位、收入模型、运营计划、财务预测、风险评估）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/business-plan-maker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102917158?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "business-plan-maker",
+      "url": "https://clawhub.ai/skills/business-plan-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-plan-maker",
+    "url": "https://clawhub.ai/skills/business-plan-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-plan-maker-743df330c61b0897.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/business-plan-maker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-business-plan-maker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9b8f40d9a639b29671ee19e8f7fca2843682ec6959befba0700e2500469a5c0",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T07:44:28.310Z"
+}

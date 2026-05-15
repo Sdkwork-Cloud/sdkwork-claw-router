@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-voice-loop@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_voice_loop",
+  "skill": {
+    "id": 22960,
+    "skillKey": "clawhub-feishu-voice-loop",
+    "name": "Feishu Voice Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-voice-loop",
+    "url": "https://clawhub.ai/skills/feishu-voice-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-voice-loop-ded74de5adaf8607.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Accept text or voice input, transcribe if needed, generate natural OpenAI TTS speech, and send audio output to Feishu chat or web player."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pengzhuowen",
+      "userId": "publishers:pengzhuowen",
+      "displayName": "ZoePeng",
+      "image": "https://avatars.githubusercontent.com/u/38909779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 456,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773248662551,
+      "changelog": "Initial public release of Feishu Voice Loop.\nSupports text or voice input, local transcription, OpenAI TTS speech generation, and Feishu audio delivery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0615e2ea5e937088e85a92e2a7b24809429bd5ad471a667d90277d164c03e062"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19214,
+  "uuid": "skill-clawhub-zettel-brainstormer",
+  "skillKey": "clawhub-zettel-brainstormer",
+  "name": "zettel-brainstormer",
+  "summary": "Build structured brainstorming notes from a seed zettel by retrieving linked notes, preprocessing each note with subagents for relevance extraction, drafting...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zettel_brainstormer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiaoyu Kevin Hu",
+      "features": [
+        "Build structured brainstorming notes from a seed zettel by retrieving linked notes, preprocessi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zettel-brainstormer@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3738091?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zettel-brainstormer",
+      "url": "https://clawhub.ai/skills/zettel-brainstormer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zettel-brainstormer",
+    "url": "https://clawhub.ai/skills/zettel-brainstormer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zettel-brainstormer-512ad462b2e5c8a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zettel-brainstormer@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zettel-brainstormer-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bbfbd2d0e1ea6aa9e9c38f546e8d3b008402843d3cbd0db8d4d56d7c62d0b39",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T18:36:41.358Z"
+}

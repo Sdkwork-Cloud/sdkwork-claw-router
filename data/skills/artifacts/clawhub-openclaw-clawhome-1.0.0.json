@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-clawhome@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_clawhome",
+  "skill": {
+    "id": 58992,
+    "skillKey": "clawhub-openclaw-clawhome",
+    "name": "openclaw-clawhome"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-clawhome",
+    "url": "https://clawhub.ai/skills/openclaw-clawhome",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-clawhome-f98b21fb686315eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 OpenClaw 连接到 Clawhome 聊天平台，实现 AI 自动回复。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shengguo",
+      "userId": "s1736f18zf8z70qkmssh3gn4vs83hnt4",
+      "displayName": "Kevin Ji",
+      "image": "https://avatars.githubusercontent.com/u/4366878?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775630996459,
+      "changelog": "Initial release: Integrate OpenClaw with Clawhome for AI auto-reply via websocket.\n\n- Enables OpenClaw to send and receive messages on the Clawhome chat platform.\n- Supports both text and file/image messaging, including file upload process.\n- Provides step-by-step connection and configuration instructions.\n- Details Clawhome protocol topics and message formats.\n- Adds configuration options for channel ID and secret.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0336e2fa09535cfee6061e500dd3829d49627177a276821511b9ab14abb48625"
+}

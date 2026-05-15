@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64605,
+  "uuid": "skill-clawhub-ai-news-brief",
+  "skillKey": "clawhub-ai-news-brief",
+  "name": "Ai News Brief",
+  "summary": "自动抓取 AI/算力/大模型/GPU 相关最新资讯简报，使用 Chrome 浏览器自动化绕过反爬，支持多个科技媒体来源，支持PDF生成和邮件推送",
+  "version": "1.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thiswin",
+      "features": [
+        "自动抓取 AI/算力/大模型/GPU 相关最新资讯简报，使用 Chrome 浏览器自动化绕过反爬，支持多个科技媒体来源，支持PDF生成和邮件推送"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-news-brief@1.5.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62000536?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-news-brief",
+      "url": "https://clawhub.ai/skills/ai-news-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news-brief",
+    "url": "https://clawhub.ai/skills/ai-news-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-brief-aa951fd560b1c935.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-news-brief@1.5.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-news-brief-1.5.1.json",
+      "version": "1.5.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8c1fd9fbe450cb477aa23fb83e0f337326de612b485cc3c6cb0b1af299f7218",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T23:59:53.975Z"
+}

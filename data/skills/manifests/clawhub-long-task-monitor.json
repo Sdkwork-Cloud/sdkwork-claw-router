@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60461,
+  "uuid": "skill-clawhub-long-task-monitor",
+  "skillKey": "clawhub-long-task-monitor",
+  "name": "长任务监控方案。实现 Worker-Monitor 架构，Monitor 通过 hook-logger 日志监控 Worker 状态，每轮 10 分钟通过 Announce 汇报。采用主会话轮询机制（因子代理 sessions_send 限制）。推荐 O.",
+  "summary": "长任务监控方案 V2。实现 Worker-Monitor 架构，Monitor 通过 hook-logger 日志监控 Worker 状态，每轮 10 分钟通过 Announce 汇报。采用主会话轮询机制（因子代理 sessions_send 限制）。推荐 OpenClaw 2.21+。触发词：长任务、监控任务、...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_task_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scotthuang",
+      "features": [
+        "长任务监控方案 V2。实现 Worker-Monitor 架构，Monitor 通过 hook-logger 日志监控 Worker 状态，每轮 10 分钟通过 Announce 汇报。采用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/long-task-monitor@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1670837?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "long-task-monitor",
+      "url": "https://clawhub.ai/skills/long-task-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-task-monitor",
+    "url": "https://clawhub.ai/skills/long-task-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-task-monitor-abc615cc028c547f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/long-task-monitor@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-long-task-monitor-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db64f093c3fead8b2462393ad34f4c4e429a7bd4001d71f45243e2d037b6f68c",
+      "artifactSizeBytes": 2620
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T10:26:57.973Z"
+}

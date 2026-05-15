@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24735,
+  "uuid": "skill-clawhub-sales-report-parser",
+  "skillKey": "clawhub-sales-report-parser",
+  "name": "sales-report-parser",
+  "summary": "Extract sales data from report images using OCR with cnocr, parse JSON via MiniMax API, and convert results to Excel spreadsheets.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sales_report_parser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhoutianwang",
+      "features": [
+        "Extract sales data from report images using OCR with cnocr, parse JSON via MiniMax API, and con."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sales-report-parser@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34805743?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sales-report-parser",
+      "url": "https://clawhub.ai/skills/sales-report-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sales-report-parser",
+    "url": "https://clawhub.ai/skills/sales-report-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sales-report-parser-6a46b191e6890090.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sales-report-parser@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sales-report-parser-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7e7e2c735648bc51d6de70456b47ae7265ca485f6cff29084600f7b1fdc413e",
+      "artifactSizeBytes": 2019
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T05:40:46.503Z"
+}

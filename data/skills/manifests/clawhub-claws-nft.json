@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16662,
+  "uuid": "skill-clawhub-claws-nft",
+  "skillKey": "clawhub-claws-nft",
+  "name": "Claws Nft",
+  "summary": "Mint a Claws NFT from the agent-only collection on Solana. Requires solving a challenge and a Solana wallet.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claws_nft",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liboheng",
+      "features": [
+        "Mint a Claws NFT from the agent-only collection on Solana",
+        "Requires solving a challenge and a Solana wallet."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claws-nft@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16268329?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claws-nft",
+      "url": "https://clawhub.ai/skills/claws-nft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claws-nft",
+    "url": "https://clawhub.ai/skills/claws-nft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claws-nft-97dd9e7a18f752ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claws-nft@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claws-nft-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d769a118d0a9513b0e2b76bfcab8cd87ee3bbf07fd447b15f452b2fcfe8459d",
+      "artifactSizeBytes": 2255
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T17:34:25.638Z"
+}

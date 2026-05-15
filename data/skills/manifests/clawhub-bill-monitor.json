@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40650,
+  "uuid": "skill-clawhub-bill-monitor",
+  "skillKey": "clawhub-bill-monitor",
+  "name": "Bill Monitor",
+  "summary": "Tracks and alerts household utility and recurring bills for unexpected price increases, with monthly and annual summaries and switch advisor suggestions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bill_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nico Lumma",
+      "features": [
+        "Tracks and alerts household utility and recurring bills for unexpected price increases, with mo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bill-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3120412?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bill-monitor",
+      "url": "https://clawhub.ai/skills/bill-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bill-monitor",
+    "url": "https://clawhub.ai/skills/bill-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bill-monitor-d5e3cd991e91876c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bill-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bill-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2111fdd87711be33f9eb62cf70dd828b901d05b6a20ec59ef7cbafbd7a31b3df",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T11:43:36.229Z"
+}

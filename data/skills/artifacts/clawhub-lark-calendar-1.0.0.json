@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lark-calendar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lark_calendar",
+  "skill": {
+    "id": 8702,
+    "skillKey": "clawhub-lark-calendar",
+    "name": "Lark Calendar & Tasks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lark-calendar",
+    "url": "https://clawhub.ai/skills/lark-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lark-calendar-67ff822f74453c7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, update, and delete calendar events and tasks in Lark (Feishu). Includes employee directory for automatic name-to-user_id resolution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boyangwang",
+      "userId": "publishers:boyangwang",
+      "displayName": "boyangwang",
+      "image": "https://avatars.githubusercontent.com/u/2408273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7407,
+      "installsAllTime": 68,
+      "installsCurrent": 67,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770042417246,
+      "changelog": "Initial release: Full CRUD for Lark calendar events and tasks with dynamic employee directory",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5464f6a167614d2ade1fcd864b38f7238fe21a4e2af77d4ee83b2f05605c536c"
+}

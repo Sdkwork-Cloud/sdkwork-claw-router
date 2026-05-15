@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41188,
+  "uuid": "skill-clawhub-podcast-pipeline",
+  "skillKey": "clawhub-podcast-pipeline",
+  "name": "Podcast Pipeline",
+  "summary": "Podcast Pipeline assists podcast creators with guest research and interview questions, transcript-based show notes, social posts, YouTube descriptions, and s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chris-openclaw",
+      "features": [
+        "Podcast Pipeline assists podcast creators with guest research and interview questions, transcri."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/podcast-pipeline@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271059507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "podcast-pipeline",
+      "url": "https://clawhub.ai/skills/podcast-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-pipeline",
+    "url": "https://clawhub.ai/skills/podcast-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-pipeline-2f0323e3b42cd35e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/podcast-pipeline@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-podcast-pipeline-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7132117714aa4a39da2f7b89a6b48aca5fd3d0831d1d9334a01b1763b4a6d7f2",
+      "artifactSizeBytes": 2421
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T19:41:33.568Z"
+}

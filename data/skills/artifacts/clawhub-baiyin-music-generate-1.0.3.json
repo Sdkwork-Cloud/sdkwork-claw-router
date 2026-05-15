@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baiyin-music-generate@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baiyin_music_generate",
+  "skill": {
+    "id": 69443,
+    "skillKey": "clawhub-baiyin-music-generate",
+    "name": "baiyin-music-generate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baiyin-music-generate",
+    "url": "https://clawhub.ai/skills/baiyin-music-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baiyin-music-generate-2b4801a2e032d3e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用百音开放平台创建 AI 音乐任务，支持普通生成、参考音频生成、音乐改编，并在同一 skill 内继续查询任务状态、结果链接和余额。用于用户要生成歌曲、参考音频做歌、改编上一首歌、查询音乐任务进度或下载结果时。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiuping520",
+      "userId": "s179mk3pmxbx96yfcenhqxzm6984v4ak",
+      "displayName": "baiyin",
+      "image": "https://avatars.githubusercontent.com/u/63402476?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776679270445,
+      "changelog": "No functional code changes; doc-only update.\n\n- 运行时 API key 环境变量从 BAIYIN_OPEN_KEY 更名为 BAIYIN_API_KEY\n- 移除了 BAIYIN_OPEN_URL 相关描述\n- 文档其他部分保持一致，无新增功能或接口变更\n- 仅 SKILL.md 说明有轻微调整，技能行为不变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0545a0ccbe0bddba8eb95cdde5abd19e7cd36b77266ce0436e8889f0a5a3313"
+}

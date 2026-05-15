@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dockerps@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dockerps",
+  "skill": {
+    "id": 22211,
+    "skillKey": "clawhub-dockerps",
+    "name": "Dockerps"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dockerps",
+    "url": "https://clawhub.ai/skills/dockerps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dockerps-15eed147168380bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "View and manage Docker container processes and stats. Use when monitoring containers. Requires docker."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain1",
+      "userId": "s17214ddq2ph75r81trqngwmtn83exsy",
+      "displayName": "bytesagain1",
+      "image": "https://avatars.githubusercontent.com/u/261107384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 471,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1773922165308,
+      "changelog": "v3.0.0: Complete rewrite with real functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8eb9a44bc975976855822b98918127e53f8272730b4df390e963aa4b5914dcfb"
+}

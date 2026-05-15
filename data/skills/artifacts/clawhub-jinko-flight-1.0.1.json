@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jinko-flight@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jinko_flight",
+  "skill": {
+    "id": 53058,
+    "skillKey": "clawhub-jinko-flight",
+    "name": "Jinko"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jinko-flight",
+    "url": "https://clawhub.ai/skills/jinko-flight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jinko-flight-26f492fd71d3dfd0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide for using the Jinko CLI (@gojinko/cli) — a terminal tool for searching flights, discovering destinations, managing trips, and booking travel. Use when:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevinjinko",
+      "userId": "s179ybqt9jsartqyvnzzjasbpn83npf9",
+      "displayName": "kevinjinko",
+      "image": "https://avatars.githubusercontent.com/u/186920377?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774499867093,
+      "changelog": "Version 1.0.1 — Big Change: Migrated from Jinko MCP server search skill to CLI user guide for @gojinko/cli.\n\n- Replaces previous flight search & destination discovery API guidance with full CLI command usage documentation.\n- Covers Jinko CLI install instructions, authentication methods, and all primary commands (find-flight, find-destination, flight-search, flight-calendar, trip management, and booking).\n- Details CLI options, response fields, and usage examples for each command.\n- Specifies key environment/config requirements and global options.\n- New focus: assist users running flight/trip commands in a terminal, not via web API.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e008b3d44c432bd5d5d215d8d495c0c1264d46e96fd9c5e3b0c3441520906bf4"
+}

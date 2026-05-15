@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-summerizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_summerizer",
+  "skill": {
+    "id": 20955,
+    "skillKey": "clawhub-youtube-summerizer",
+    "name": "summerizeryoutube"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-summerizer",
+    "url": "https://clawhub.ai/skills/youtube-summerizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-summerizer-5b70c7654ae8c16d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates structured summaries and context-based Q&A from YouTube transcripts with multi-language support, ensuring accuracy and no hallucinations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gangadharpadshetty",
+      "userId": "publishers:gangadharpadshetty",
+      "displayName": "Gangadhar",
+      "image": "https://avatars.githubusercontent.com/u/92199642?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 431,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772178842126,
+      "changelog": "youtube summerizer calls backend to  store in database",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4abdf89c67f4e64d6cba4b18750043a833ef1d93ebe2be5ff039d74fc1f32fc1"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37867,
+  "uuid": "skill-clawhub-streamtime",
+  "skillKey": "clawhub-streamtime",
+  "name": "Streamtime",
+  "summary": "Streamtime integration. Manage Organizations. Use when the user wants to interact with Streamtime data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.streamtime",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Streamtime integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Streamtime data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/streamtime@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "streamtime",
+      "url": "https://clawhub.ai/skills/streamtime"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "streamtime",
+    "url": "https://clawhub.ai/skills/streamtime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/streamtime-a78694fc0e6e10dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/streamtime@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-streamtime-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1c974a26438c702247a7dd8db578518be25e12faeef263e4dd4bb834c28202b",
+      "artifactSizeBytes": 1806
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T22:44:22.991Z"
+}

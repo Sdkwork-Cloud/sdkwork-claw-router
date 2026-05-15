@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57565,
+  "uuid": "skill-clawhub-codex-session-history",
+  "skillKey": "clawhub-codex-session-history",
+  "name": "Codex Session History",
+  "summary": "List and inspect local Codex session history by reading `~/.codex/session_index.jsonl`, `~/.codex/sessions/`, and `~/.codex/archived_sessions/`. Default to u...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_session_history",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sube",
+      "features": [
+        "List and inspect local Codex session history by reading `~/.codex/session_index.jsonl`, `~/.cod.",
+        "Default to u..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codex-session-history@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53138073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codex-session-history",
+      "url": "https://clawhub.ai/skills/codex-session-history"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-session-history",
+    "url": "https://clawhub.ai/skills/codex-session-history",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-session-history-5403bfcdb2690969.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codex-session-history@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-codex-session-history-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3089fc9d33f76f4a8ce6a1554d05e0649353a5d103e749d231f22ac6272cea0f",
+      "artifactSizeBytes": 2420
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:17:28.460Z"
+}

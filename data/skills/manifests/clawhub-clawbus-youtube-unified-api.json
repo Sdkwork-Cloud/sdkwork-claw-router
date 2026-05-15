@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49913,
+  "uuid": "skill-clawhub-clawbus-youtube-unified-api",
+  "skillKey": "clawhub-clawbus-youtube-unified-api",
+  "name": "clawbus-youtube-unified-api",
+  "summary": "Use this skill when an agent needs to call YouTube Data API v3, YouTube Analytics API v2, or YouTube Reporting API v1 through the hosted proxy at mcp.imagine...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbus_youtube_unified_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "9Ying66",
+      "features": [
+        "Use this skill when an agent needs to call YouTube Data API v3, YouTube Analytics API v2, or Yo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawbus-youtube-unified-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191543806?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawbus-youtube-unified-api",
+      "url": "https://clawhub.ai/skills/clawbus-youtube-unified-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbus-youtube-unified-api",
+    "url": "https://clawhub.ai/skills/clawbus-youtube-unified-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbus-youtube-unified-api-6ec98c1aa87707ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawbus-youtube-unified-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawbus-youtube-unified-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33336b3c987eb0dbb3b7e5e43485d6dc577c1fba1f05c0126f50ccea5fe4733d",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T07:23:35.852Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/undersheet@1.2.3",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.undersheet",
+  "skill": {
+    "id": 50308,
+    "skillKey": "clawhub-undersheet",
+    "name": "Undersheet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "undersheet",
+    "url": "https://clawhub.ai/skills/undersheet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/undersheet-6f835586a53b25c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent thread memory for OpenClaw agents across any platform — Moltbook, Hacker News, Reddit, Discord, Twitter. Tracks threads, surfaces only new replies..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ubgb",
+      "userId": "publishers:ubgb",
+      "displayName": "ubgb",
+      "image": "https://avatars.githubusercontent.com/u/6194537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 558,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.3",
+      "createdAt": 1772343937776,
+      "changelog": "Atomic state writes via os.replace — no more torn JSON on concurrent access or power loss. Corrupt state file recovers cleanly.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:508f514b1dc9ef19cc3714116d766bd49fa72487f663555dc33381a55d46b058"
+}

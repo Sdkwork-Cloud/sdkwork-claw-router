@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bdpan-storage@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bdpan_storage",
+  "skill": {
+    "id": 67635,
+    "skillKey": "clawhub-bdpan-storage",
+    "name": "Bdpan Storage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bdpan-storage",
+    "url": "https://clawhub.ai/skills/bdpan-storage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bdpan-storage-f1a6f896d90d5dc8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "百度网盘文件管理 Skill。支持上传、下载、转存、分享、列表查询、搜索、移动、复制、重命名、创建文件夹。当用户提及\"百度网盘\"/\"bdpan\"/\"网盘\"并涉及文件操作（上传/下载/转存/分享/查看/搜索/移动/复制/重命名/新建文件夹/登录/注销）时触发。用户说\"上传到网盘\"、\"从百度网盘下载\"、\"转存到网盘\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "may-yaha",
+      "userId": "s17f4ba5w8e33tn7eqqvnxt76183gkmk",
+      "displayName": "baidu-netdisk",
+      "image": "https://avatars.githubusercontent.com/u/17535606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 851,
+      "installsAllTime": 17,
+      "installsCurrent": 17,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774505696760,
+      "changelog": "feat(skill): 修复常见 bug",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69f231092314c27b354e53a494f3b492710082b0472494a50741c249a83c21b8"
+}

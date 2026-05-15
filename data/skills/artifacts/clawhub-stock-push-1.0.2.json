@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-push@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_push",
+  "skill": {
+    "id": 65942,
+    "skillKey": "clawhub-stock-push",
+    "name": "Stock Push"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-push",
+    "url": "https://clawhub.ai/skills/stock-push",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-push-8adc32b4d637c2cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股股票定时推送系统。管理盘前推荐（09:20）、收盘复盘（15:05）、次日关注（20:00）三个推送任务，每交易日晚自动发送持仓股行情到微信。当用户提到：股票推送、持仓监控、定时提醒、A股行情，或者需要查询持仓盈亏、复盘信息、次日建议时触发。also triggers when user says \"推送\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maizhenn",
+      "userId": "s17eh12zw18xnrp790y35vd97x859h0f",
+      "displayName": "maizhenn",
+      "image": "https://avatars.githubusercontent.com/u/86589949?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776736011320,
+      "changelog": "SKILL.md 字段说明更新；history.md 补充 4/21 修复记录",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09254a41b9e5fb6651e254d41cc3de4c2aa37182f9a9677b8a05c55be3034f01"
+}

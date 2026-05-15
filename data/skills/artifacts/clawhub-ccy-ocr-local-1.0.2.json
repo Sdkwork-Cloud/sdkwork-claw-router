@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ccy-ocr-local@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccy_ocr_local",
+  "skill": {
+    "id": 69138,
+    "skillKey": "clawhub-ccy-ocr-local",
+    "name": "Ccy Ocr Local"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccy-ocr-local",
+    "url": "https://clawhub.ai/skills/ccy-ocr-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccy-ocr-local-97fd6b0666a59f21.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地 OCR / 图表识别技能。对本机图片做离线文字识别，支持截图、文档图片、扫描件、表格/图表图片中的中英文文本与图表数据提取；默认不上传文件、不依赖外部 API。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenchongyong",
+      "userId": "s1702t2wqma6ghbsampqdvkaw58518za",
+      "displayName": "超控中国",
+      "image": "https://avatars.githubusercontent.com/u/57010759?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778115961585,
+      "changelog": "Version 1.0.2 (major update: 图表识别与结构化提取能力加入)\n\n- 新增本地图表识别和结构化提取，支持饼图、柱状图、折线图、表格、dashboard 等常见类型。\n- 提供 `scripts/chart_ocr.py`，可自动检测/指定图表类型，输出结构化 JSON，并支持可视化调试输出。\n- 新增质量判别与建议字段（如 avg_conf、quality_warning、suggestions），便于自动筛查与重跑。\n- 完善配置说明与路线文档，增加大量说明文档与示例样本数据（新增 190 个文件）。\n- 强化回归与批量评测支持，方便准确率评测、持续改进和业务集成。\n- 保持原有本地 OCR 能力，增强参数与图表抽取相关选项。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c18ae56ec012bae7788e0717dc20003462b4b9a4a7ffe41eb1a0496247ede8e6"
+}

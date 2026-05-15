@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27185,
+  "uuid": "skill-clawhub-claw-health",
+  "skillKey": "clawhub-claw-health",
+  "name": "Claw Health",
+  "summary": "Monitors OpenClaw health in real-time, offers one-click repair, security scanning, and a web dashboard for system and skill status.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_health",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ECsss",
+      "features": [
+        "Monitors OpenClaw health in real-time, offers one-click repair, security scanning, and a web da."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-health@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226646360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-health",
+      "url": "https://clawhub.ai/skills/claw-health"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-health",
+    "url": "https://clawhub.ai/skills/claw-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-health-ef54bdba00d03a42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-health@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-health-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18c516a87230824aeccab54f6a9dd66fcb229e46b0946d7b2b5e1292ffbb9a38",
+      "artifactSizeBytes": 2156
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T13:10:54.313Z"
+}

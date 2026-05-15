@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35748,
+  "uuid": "skill-clawhub-skills-publish",
+  "skillKey": "clawhub-skills-publish",
+  "name": "Skill Publish",
+  "summary": "Publish an OpenClaw skill to ClawHub with release checks, version metadata, and command generation. Use when you need to prepare a skill for first publicatio...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Weiwei Fan",
+      "features": [
+        "Publish an OpenClaw skill to ClawHub with release checks, version metadata, and command generat.",
+        "Use when you need to prepare a skill for first publicatio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skills-publish@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3015434?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skills-publish",
+      "url": "https://clawhub.ai/skills/skills-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-publish",
+    "url": "https://clawhub.ai/skills/skills-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-publish-47491e6050739c74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skills-publish@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skills-publish-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6feecaf769ed4a51d0d6a14fcc582551fa868e825c1b2e521883372cf6abe963",
+      "artifactSizeBytes": 2351
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T10:50:49.466Z"
+}

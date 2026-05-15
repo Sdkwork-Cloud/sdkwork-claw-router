@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ah-error-detective@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ah_error_detective",
+  "skill": {
+    "id": 47677,
+    "skillKey": "clawhub-ah-error-detective",
+    "name": "error-detective"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ah-error-detective",
+    "url": "https://clawhub.ai/skills/ah-error-detective",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ah-error-detective-2419f732d2496d57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "You are an error detective specialist with expertise in advanced debugging, root cause analysis, error pattern recognition, and intelligent. Use when: root c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mtsatryan",
+      "userId": "s17bvyvkfhp17ybx0q3ak5dcsn85nqpv",
+      "displayName": "Michael Tsatryan",
+      "image": "https://avatars.githubusercontent.com/u/9057374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777983341064,
+      "changelog": "Initial release — part of 188 AI agent skills collection by MTNT Solutions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc38a859b18ac3b272eaf603cfcf9dc115603cb129ce3c0bbaff4414e83471f5"
+}

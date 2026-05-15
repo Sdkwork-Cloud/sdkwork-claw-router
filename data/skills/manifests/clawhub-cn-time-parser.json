@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68838,
+  "uuid": "skill-clawhub-cn-time-parser",
+  "skillKey": "clawhub-cn-time-parser",
+  "name": "cn-time-parser",
+  "summary": "智能识别中文时间关键词并转换为具体日期和时间戳；使用lunisolar模块处理农历计算，chinese-workday模块处理节日和工作日判断；支持解析复杂农历日期和判断节假日；当用户需要解析自然语言中的时间信息、计算特定日期、处理农历节日转换时使用",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_time_parser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "黄龙",
+      "features": [
+        "智能识别中文时间关键词并转换为具体日期和时间戳；使用lunisolar模块处理农历计算，chinese-workday模块处理节日和工作日判断；支持解析复杂农历日期和判断节假日；当用户需要解."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-time-parser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2247238?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-time-parser",
+      "url": "https://clawhub.ai/skills/cn-time-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-time-parser",
+    "url": "https://clawhub.ai/skills/cn-time-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-time-parser-39c0e902fd7f3beb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-time-parser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-time-parser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:baf2749fc60af1181c1872136dc491c25f6c256be16ce210f9c1595d1e715a7d",
+      "artifactSizeBytes": 2531
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T02:49:48.830Z"
+}

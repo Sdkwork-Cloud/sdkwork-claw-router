@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16162,
+  "uuid": "skill-clawhub-publora-twitter",
+  "skillKey": "clawhub-publora-twitter",
+  "name": "Publora Twitter",
+  "summary": "Post or schedule content to X (Twitter) using the Publora API. Use this skill when the user wants to tweet, schedule a tweet, or post a thread to X/Twitter v...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publora_twitter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergey Bulaev",
+      "features": [
+        "Post or schedule content to X (Twitter) using the Publora API",
+        "Use this skill when the user wants to tweet, schedule a tweet, or post a thread to X/Twitter v.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/publora-twitter@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241980?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "publora-twitter",
+      "url": "https://clawhub.ai/skills/publora-twitter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publora-twitter",
+    "url": "https://clawhub.ai/skills/publora-twitter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publora-twitter-36092b415020ae47.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/publora-twitter@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-publora-twitter-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4dfe4d42f087ec8b4ca6647c58cabac2a0f9e6d5f78d2fe6a31ac5bf3b4898ed",
+      "artifactSizeBytes": 2094
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:00:21.246Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/autothink@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autothink",
+  "skill": {
+    "id": 26316,
+    "skillKey": "clawhub-autothink",
+    "name": "Autothink 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autothink",
+    "url": "https://clawhub.ai/skills/autothink",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autothink-aa4161b5b0f49c6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically adjust OpenClaw's thinking level based on message complexity. Switch between low/medium/high modes intelligently with session persistence."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zpy0726",
+      "userId": "publishers:zpy0726",
+      "displayName": "zpy0726",
+      "image": "https://avatars.githubusercontent.com/u/68719261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773599069045,
+      "changelog": "v2.0.0: Persistent mode switching. One-time -h/-l/-m sets thinking mode for entire session. Zero analysis overhead after setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c70ea2ac5e10e4404a08ce961ba793db954950180d21dd838cd2cfeba7a9c34c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hi",
+  "skill": {
+    "id": 17105,
+    "skillKey": "clawhub-hi",
+    "name": "Tsz"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hi",
+    "url": "https://clawhub.ai/skills/hi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hi-8f434346648f6b96.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the ClawdHub CLI to search, install, update, and publish agent skills from clawdhub.com. Use when you need to fetch new skills on the fly, sync installed..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roman181",
+      "userId": "s175t39xp07x2j6x0t9k820k4n86ad5g",
+      "displayName": "181",
+      "image": "https://avatars.githubusercontent.com/u/60948233?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 814,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771348920236,
+      "changelog": "hi",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e0fb618c3154a9ad9bd5fb7eb34bc2c4656831d10f2d8f26135feaac19dbeb0b"
+}

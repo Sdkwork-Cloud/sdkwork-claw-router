@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23517,
+  "uuid": "skill-clawhub-glmv-pdf-to-web",
+  "skillKey": "clawhub-glmv-pdf-to-web",
+  "name": "GLM-V-PDF-to-WEB",
+  "summary": "Convert a PDF (research paper, technical report, or project document) into a beautiful single-page academic/project website with a structured outline JSON. T...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glmv_pdf_to_web",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zai-org",
+      "features": [
+        "Convert a PDF (research paper, technical report, or project document) into a beautiful single-p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/glmv-pdf-to-web@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/glmv-pdf-to-web/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "glmv-pdf-to-web",
+      "url": "https://clawhub.ai/skills/glmv-pdf-to-web"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glmv-pdf-to-web",
+    "url": "https://clawhub.ai/skills/glmv-pdf-to-web",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glmv-pdf-to-web-2a9f0f7daf3fc6c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/glmv-pdf-to-web@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-glmv-pdf-to-web-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6cf7fb4be684c94370d89d99bf0ad4b7b862e060b679f8e93c202de7793b46b2",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T12:18:16.199Z"
+}

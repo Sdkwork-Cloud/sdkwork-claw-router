@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-qwen-ocr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_qwen_ocr",
+  "skill": {
+    "id": 56720,
+    "skillKey": "clawhub-aliyun-qwen-ocr",
+    "name": "Aliyun Qwen Ocr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-qwen-ocr",
+    "url": "https://clawhub.ai/skills/aliyun-qwen-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-qwen-ocr-4df564d4a0e41b4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when OCR-specialized extraction is needed with Alibaba Cloud Model Studio Qwen OCR models (`qwen-vl-ocr`, `qwen-vl-ocr-latest`, and snapshots), including..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775058685281,
+      "changelog": "Initial release of aliyun-qwen-ocr.\n\n- Provides OCR extraction using Alibaba Cloud Model Studio Qwen OCR models.\n- Supports document parsing, table parsing, multilingual OCR, formula recognition, and key information extraction.\n- Standardized `ocr.extract` interface with flexible image input, tasks, and prompt customization.\n- Includes clear model selection guidance and built-in OCR task descriptions.\n- Output, validation, and configuration instructions included for fast integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d28bafb8241f7f68140ad87b5708680531fed516a33749cbf818caeba510f2d4"
+}

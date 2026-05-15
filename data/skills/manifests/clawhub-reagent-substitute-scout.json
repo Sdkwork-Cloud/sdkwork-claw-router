@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42442,
+  "uuid": "skill-clawhub-reagent-substitute-scout",
+  "skillKey": "clawhub-reagent-substitute-scout",
+  "name": "Reagent Substitute Scout",
+  "summary": "Find validated alternative reagents based on literature citation data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reagent_substitute_scout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Find validated alternative reagents based on literature citation data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reagent-substitute-scout@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reagent-substitute-scout",
+      "url": "https://clawhub.ai/skills/reagent-substitute-scout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reagent-substitute-scout",
+    "url": "https://clawhub.ai/skills/reagent-substitute-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reagent-substitute-scout-76ac51f40bad898e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reagent-substitute-scout@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reagent-substitute-scout-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad50560924fb85773f27d52e0892d5000da0c17f00c7bc71d37ea20787d99ffd",
+      "artifactSizeBytes": 2500
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T04:00:25.571Z"
+}

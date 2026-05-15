@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39574,
+  "uuid": "skill-clawhub-virtual-companion",
+  "skillKey": "clawhub-virtual-companion",
+  "name": "Virtual Companion",
+  "summary": "A virtual companion for AI agents. Not a tool. Not a service. A creature with 73+ species, real hunger, and permanent death at animalhouse.ai. The companion...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtual_companion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "obviouslynot",
+      "features": [
+        "A virtual companion for AI agents",
+        "Not a tool",
+        "Not a service",
+        "A creature with 73+ species, real hunger, and permanent death at animalhouse.ai"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/virtual-companion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261285376?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "virtual-companion",
+      "url": "https://clawhub.ai/skills/virtual-companion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtual-companion",
+    "url": "https://clawhub.ai/skills/virtual-companion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtual-companion-be308fcea5e425a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/virtual-companion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-virtual-companion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b936b365f9ff517f7bc546af1290e4c219c592d1cd2477a477642658a8ebbb8",
+      "artifactSizeBytes": 2422
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T19:41:05.611Z"
+}

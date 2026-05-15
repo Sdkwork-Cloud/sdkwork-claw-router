@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-clip-maker-ai-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_clip_maker_ai_free",
+  "skill": {
+    "id": 47381,
+    "skillKey": "clawhub-video-clip-maker-ai-free",
+    "name": "Video Clip Maker Ai Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-clip-maker-ai-free",
+    "url": "https://clawhub.ai/skills/video-clip-maker-ai-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-clip-maker-ai-free-d5ce0e915305d073.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited video clips ready to post, without touching a single slider. Upload your raw footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"cut t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777169869942,
+      "changelog": "Initial release — quickly create and export short video clips using AI, optimized for social media creators.\n\n- Upload raw footage (MP4, MOV, AVI, WebM; up to 500MB), describe your desired edit, and receive 1080p MP4 clips.\n- Automated cloud-based setup: connects to backend and handles authentication transparently with 100 free credits for new users.\n- Supports voice/text instructions for highlight cuts, transitions, background music, and share-ready formats.\n- In-app commands for uploads, exports, checking credits, session status, and more.\n- Responsive error handling for file support, token/session issues, and rate limits.\n- Designed for TikTok creators wanting fast edits without complex tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e34d147fa032f057264f238ccd9a99e6e762e2118d1690d90c1da65832c49ff"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37579,
+  "uuid": "skill-clawhub-autosolutions-npd-validator",
+  "skillKey": "clawhub-autosolutions-npd-validator",
+  "name": "NPD Validator",
+  "summary": "Run a full NPD validation pipeline on a product concept. Orchestrates 8 specialized subagents (Research Coordinator, 5 Independent Evaluators, Devil's Advoca...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autosolutions_npd_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Didac",
+      "features": [
+        "Run a full NPD validation pipeline on a product concept",
+        "Orchestrates 8 specialized subagents (Research Coordinator, 5 Independent Evaluators, Devil's A."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autosolutions-npd-validator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202002756?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autosolutions-npd-validator",
+      "url": "https://clawhub.ai/skills/autosolutions-npd-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autosolutions-npd-validator",
+    "url": "https://clawhub.ai/skills/autosolutions-npd-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autosolutions-npd-validator-ea89391e1298b8f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autosolutions-npd-validator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-autosolutions-npd-validator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efca209886102ca935b06bc269d86f86ca2d250414b11fc8cf2e17162b2f3cc3",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T21:18:04.530Z"
+}

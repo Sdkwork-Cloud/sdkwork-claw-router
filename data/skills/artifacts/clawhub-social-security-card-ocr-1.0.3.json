@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-security-card-ocr@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_security_card_ocr",
+  "skill": {
+    "id": 65460,
+    "skillKey": "clawhub-social-security-card-ocr",
+    "name": "Social Security Card Ocr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-security-card-ocr",
+    "url": "https://clawhub.ai/skills/social-security-card-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-security-card-ocr-410f28d500afed00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将图片中的文字、社保卡信息识别并提取出来。本技能应在用户需要 OCR 识别图片中的文字，或识别社保卡时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scnet-sugon",
+      "userId": "s17aan1jdk93c5398r3ypc523d83hqys",
+      "displayName": "SCNet-sugon",
+      "image": "https://avatars.githubusercontent.com/u/267813088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776311038171,
+      "changelog": "- Added skill.yaml for better metadata and configuration support.\n- Updated SKILL.md with explicit environment variable requirements, Python 3 and requests dependencies, and enhanced manual API Key setup instructions.\n- Improved security instructions to avoid pasting API Keys in chat.\n- Clarified examples and removed references unrelated to social security card recognition.\n- Added dependency installation guide for Python requests library.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a1d309a55aa795cd03d6c380bf6311df1a0d6f844b622bb42e4f5040fda45b98"
+}

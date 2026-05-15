@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15173,
+  "uuid": "skill-clawhub-ai-meeting-scheduling",
+  "skillKey": "clawhub-ai-meeting-scheduling",
+  "name": "Skipup - AI Meeting Scheduling",
+  "summary": "Schedule and coordinate asynchronous group meetings (2-50 participants) via email across timezones, with status checks, pauses, resumes, and cancellations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_meeting_scheduling",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DheerG",
+      "features": [
+        "Schedule and coordinate asynchronous group meetings (2-50 participants) via email across timezo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-meeting-scheduling@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3100742?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-meeting-scheduling",
+      "url": "https://clawhub.ai/skills/ai-meeting-scheduling"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-meeting-scheduling",
+    "url": "https://clawhub.ai/skills/ai-meeting-scheduling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-meeting-scheduling-1a4b8cba17fa1375.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-meeting-scheduling@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-meeting-scheduling-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da03af1860b23bb0c1c436efe494b53a40c17a65b1889b0b91a73d492157f512",
+      "artifactSizeBytes": 2523
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T02:33:01.932Z"
+}

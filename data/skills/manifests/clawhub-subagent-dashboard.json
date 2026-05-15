@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18151,
+  "uuid": "skill-clawhub-subagent-dashboard",
+  "skillKey": "clawhub-subagent-dashboard",
+  "name": "Subagent Dashboard",
+  "summary": "Web dashboard for real-time monitoring and management of OpenClaw subagents. Use when monitoring or managing subagents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subagent_dashboard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austindixson",
+      "features": [
+        "Web dashboard for real-time monitoring and management of OpenClaw subagents",
+        "Use when monitoring or managing subagents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subagent-dashboard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52183161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subagent-dashboard",
+      "url": "https://clawhub.ai/skills/subagent-dashboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subagent-dashboard",
+    "url": "https://clawhub.ai/skills/subagent-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subagent-dashboard-4e136636cc215bae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subagent-dashboard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-subagent-dashboard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc9cbeff60503b22f93afec9bc134a01a0df44afc1ca2f8dabd7bf5fb31654dc",
+      "artifactSizeBytes": 2297
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T02:22:00.914Z"
+}

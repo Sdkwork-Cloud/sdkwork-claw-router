@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawmart@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmart",
+  "skill": {
+    "id": 16838,
+    "skillKey": "clawhub-clawmart",
+    "name": "ClawMart Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmart",
+    "url": "https://clawhub.ai/skills/clawmart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmart-04b9c8310c8e6399.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, manage, and publish ClawMart personas and skills directly from OpenClaw chat. Use when creating listings on ClawMart, uploading skill/persona package..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nateliason",
+      "userId": "publishers:nateliason",
+      "displayName": "Nat Eliason",
+      "image": "https://avatars.githubusercontent.com/u/5629352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 753,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771252745434,
+      "changelog": "Clawmart skill v1.0.0 – Initial release\n\n- Create, manage, and publish ClawMart personas and skills directly from OpenClaw chat.\n- Supports creating and updating listings, uploading skill/persona packages, and managing creator accounts.\n- Enforces duplicate listing checks and user confirmation before publishing.\n- Includes workflow steps, API reference, and detailed guidance on required fields and price formatting.\n- Provides guardrails for key handling, validation, and error reporting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9cb16562ca155e97fdb0a306796b6b45cc7d8bf6dbd2e986aff581b9c4d79e26"
+}

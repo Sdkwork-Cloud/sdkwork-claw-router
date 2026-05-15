@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14696,
+  "uuid": "skill-clawhub-knuspr-cli",
+  "skillKey": "clawhub-knuspr-cli",
+  "name": "Knuspr",
+  "summary": "Manage grocery shopping on Knuspr.de via the knuspr-cli. Use for product search, cart management, delivery slot reservation, shopping lists, order history, deals, favorites, and meal suggestions. Trigger when the user mentions Knuspr, groc.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knuspr_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lars147",
+      "features": [
+        "Manage grocery shopping on Knuspr.de via the knuspr-cli",
+        "Use for product search, cart management, delivery slot reservation, shopping lists, order histo.",
+        "Trigger when the user mentions Knuspr, groceries, Einkauf, Lebensmittel, Warenkorb, Lieferslot,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knuspr-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48560605?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knuspr-cli",
+      "url": "https://clawhub.ai/skills/knuspr-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knuspr-cli",
+    "url": "https://clawhub.ai/skills/knuspr-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knuspr-cli-8cb05cd666b34451.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knuspr-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knuspr-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:caf2e4207669b16c91b68076b04f44e5fb073f53112072869347bc61b93d94e3",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T12:33:54.747Z"
+}

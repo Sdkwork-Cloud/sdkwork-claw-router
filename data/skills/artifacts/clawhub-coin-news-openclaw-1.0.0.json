@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coin-news-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coin_news_openclaw",
+  "skill": {
+    "id": 43947,
+    "skillKey": "clawhub-coin-news-openclaw",
+    "name": "coin-news-openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coin-news-openclaw",
+    "url": "https://clawhub.ai/skills/coin-news-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coin-news-openclaw-af6d136799aa999c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Collect and summarize cryptocurrency and coin market news with OpenClaw-friendly workflows. Use when users request coin news, crypto news, token-specific new..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "houdl",
+      "userId": "s177dpxk3z4d0v0jakbqnpp6g983n80h",
+      "displayName": "Jason",
+      "image": "https://avatars.githubusercontent.com/u/8501458?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774504995717,
+      "changelog": "Initial release of coin-news-openclaw.\n\n- Collects and summarizes cryptocurrency and coin market news from configurable sources.\n- Supports keyword relevance scoring, source weighting, deduplication, and structured JSON output.\n- Integrates dynamic token fetching from CoinGecko with override/merge logic via YAML.\n- Offers flexible time window selection and output formats (JSON/Markdown).\n- CLI supports filtering by token, topic, and adjustable output/limit settings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92b552a35e264772d668da8209dfffc0ce593c1f1dd4b301d4793bd0a0216003"
+}

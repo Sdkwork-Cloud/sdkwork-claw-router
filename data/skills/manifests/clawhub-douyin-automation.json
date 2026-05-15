@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57650,
+  "uuid": "skill-clawhub-douyin-automation",
+  "skillKey": "clawhub-douyin-automation",
+  "name": "Douyin Automation",
+  "summary": "Puppeteer-based Douyin (TikTok China) video uploader. Automate login, upload and publish videos to Douyin Creator Platform using headless browser. 抖音视频自动化发布工...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chongjie-ran",
+      "features": [
+        "Puppeteer-based Douyin (TikTok China) video uploader",
+        "Automate login, upload and publish videos to Douyin Creator Platform using headless browser",
+        "抖音视频自动化发布工..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198864991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-automation",
+      "url": "https://clawhub.ai/skills/douyin-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-automation",
+    "url": "https://clawhub.ai/skills/douyin-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-automation-2c17a20684a4312c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5a3022a967c53716bf557ffcf2ae897b8c91bfa08d524ee1cf9c6f6f2b04eb0",
+      "artifactSizeBytes": 2464
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T14:41:27.659Z"
+}

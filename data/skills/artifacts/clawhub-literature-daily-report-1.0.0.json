@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/literature-daily-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.literature_daily_report",
+  "skill": {
+    "id": 64069,
+    "skillKey": "clawhub-literature-daily-report",
+    "name": "Literature Daily Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "literature-daily-report",
+    "url": "https://clawhub.ai/skills/literature-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/literature-daily-report-e9409dffa3f348a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日科研文献日报生成与管理。当用户请求生成科研日报、更新文献收集脚本或分析研究趋势时激活。支持：(1) 自动抓取 PubMed/bioRxiv/arXiv 最新文献，(2) 语义筛选 AI/生信/病原/真菌等领域，(3) LLM 智能总结与编辑排版，(4) 中文格式报告输出与定时任务管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "biociao",
+      "userId": "s17dtx203kvnxrae9yp2v5epcn83kj3f",
+      "displayName": "Fang, Chao",
+      "image": "https://avatars.githubusercontent.com/u/9637282?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774892322995,
+      "changelog": "Initial release of literature-daily-report.\n\n- Automates daily literature report generation and management for life sciences × AI.\n- Fetches latest publications from PubMed, bioRxiv, and arXiv based on customizable queries.\n- Filters and categorizes articles with semantic keyword matching in fields like AI, bioinformatics, pathogens, and fungi.\n- Uses LLM to generate structured, concise Chinese summaries and edits reports in markdown format.\n- Supports scheduled tasks, automatic file organization, ClawLib syncing, and Zotero group library integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88f7bebb5052ee38df009db47d60223e427021d46a406bfc592ec42e953dd166"
+}

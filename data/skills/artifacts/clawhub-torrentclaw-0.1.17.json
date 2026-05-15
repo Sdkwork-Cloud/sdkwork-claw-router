@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/torrentclaw@0.1.17",
+  "version": "0.1.17",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.torrentclaw",
+  "skill": {
+    "id": 15148,
+    "skillKey": "clawhub-torrentclaw",
+    "name": "TorrentClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "torrentclaw",
+    "url": "https://clawhub.ai/skills/torrentclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/torrentclaw-f56b8c4c31a0437a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and download torrents via TorrentClaw. Use when the user asks to find, search, or download movies, TV shows, or torrents. Detects local torrent client..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "buryni",
+      "userId": "publishers:buryni",
+      "displayName": "buryni",
+      "image": "https://avatars.githubusercontent.com/u/172052?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 874,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.17",
+      "createdAt": 1771239437288,
+      "changelog": "Fix shell injection vulnerability in SKILL.md curl search commands. Replace direct URL interpolation with curl -G --data-urlencode for all user-supplied query parameters.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:463bd397cc4cedb6d00a8dc2a1cfb894b059616a83edb5d49e8fc01c28c9ba0f"
+}

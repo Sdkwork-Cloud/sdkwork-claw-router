@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10795,
+  "uuid": "skill-clawhub-addis-assistant-stt",
+  "skillKey": "clawhub-addis-assistant-stt",
+  "name": "Addis Assistant",
+  "summary": "Provides Speech-to-Text (STT) and text Translation using the Addis Assistant API (api.addisassistant.com). Use when the user needs to convert an audio file to text (specifically Amharic), or translate text between languages (e.g., Amharic.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.addis_assistant_stt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dagmawibabi",
+      "features": [
+        "Provides Speech-to-Text (STT) and text Translation using the Addis Assistant API (api.addisassi.",
+        "Use when the user needs to convert an audio file to text (specifically Amharic), or translate t.",
+        "Requires 'x-api-key'."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/addis-assistant-stt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44819176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "addis-assistant-stt",
+      "url": "https://clawhub.ai/skills/addis-assistant-stt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "addis-assistant-stt",
+    "url": "https://clawhub.ai/skills/addis-assistant-stt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/addis-assistant-stt-c11730a0922349b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/addis-assistant-stt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-addis-assistant-stt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8bc298888ce552660fed57837f01997d3d583a9fbb3c4ee3b2862b3e14fceb7",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T12:49:33.849Z"
+}

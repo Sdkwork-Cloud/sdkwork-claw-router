@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21617,
+  "uuid": "skill-clawhub-polymarket-wallet-xray",
+  "skillKey": "clawhub-polymarket-wallet-xray",
+  "name": "Polymarket Wallet Xray",
+  "summary": "X-ray any Polymarket wallet — skill level, entry quality, bot detection, and edge analysis. Queries Polymarket's public APIs, no authentication needed. Inspi...",
+  "version": "1.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_wallet_xray",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AD88",
+      "features": [
+        "X-ray any Polymarket wallet — skill level, entry quality, bot detection, and edge analysis",
+        "Queries Polymarket's public APIs, no authentication needed",
+        "Inspi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-wallet-xray@1.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6263940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-wallet-xray",
+      "url": "https://clawhub.ai/skills/polymarket-wallet-xray"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-wallet-xray",
+    "url": "https://clawhub.ai/skills/polymarket-wallet-xray",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-wallet-xray-2f9d0de56702731c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-wallet-xray@1.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-wallet-xray-1.1.3.json",
+      "version": "1.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa131c1083c47eed79537a92b30a1c2c9916129da79384be0b247aec009b390c",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T09:21:31.291Z"
+}

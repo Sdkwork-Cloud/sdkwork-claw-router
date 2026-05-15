@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/facebook-ads@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.facebook_ads",
+  "skill": {
+    "id": 16104,
+    "skillKey": "clawhub-facebook-ads",
+    "name": "Facebook Ads"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "facebook-ads",
+    "url": "https://clawhub.ai/skills/facebook-ads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/facebook-ads-3e423bbfb5e588fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Facebook Ads integration. Manage Campaigns, Audiences, Pixels. Use when the user wants to interact with Facebook Ads data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gora050",
+      "userId": "s178embtbbq5jnxba7hj83fa8583e8h7",
+      "displayName": "Vlad Ursul",
+      "image": "https://avatars.githubusercontent.com/u/4161345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 817,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776773099505,
+      "changelog": "Auto sync from membranedev/application-skills",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:225f77ac3d2c41a5e7ac66cd73c7d4b070383e871f3e1a8a1429a2d4c7425323"
+}

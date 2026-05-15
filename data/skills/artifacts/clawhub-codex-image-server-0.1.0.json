@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codex-image-server@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_image_server",
+  "skill": {
+    "id": 49541,
+    "skillKey": "clawhub-codex-image-server",
+    "name": "Codex Image Server"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-image-server",
+    "url": "https://clawhub.ai/skills/codex-image-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-image-server-c47d2dde418aba52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when a user wants to turn local Codex image_generation capability into a local HTTP image server for apps such as Photoshop plugins, design tools, or int..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "catrefuse",
+      "userId": "s1768eg87kddn8jfvabsrdrnz184h1q1",
+      "displayName": "CatREFuse",
+      "image": "https://avatars.githubusercontent.com/u/8400960?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 75,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778175980929,
+      "changelog": "Initial Codex image server extraction from Lightyear Banana.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73334be6b32d42b8d8bced8b189d5ff9cc7b9ce3d35561f4f90ebf7d3dc41d94"
+}

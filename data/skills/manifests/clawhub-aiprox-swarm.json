@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45700,
+  "uuid": "skill-clawhub-aiprox-swarm",
+  "skillKey": "clawhub-aiprox-swarm",
+  "name": "Aiprox Swarm",
+  "summary": "40-persona prediction engine for binary market questions. Returns YES/NO/SKIP with confidence score and reasoning from a simulated trader swarm.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiprox_swarm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "unixlamadev-spec",
+      "features": [
+        "40-persona prediction engine for binary market questions",
+        "Returns YES/NO/SKIP with confidence score and reasoning from a simulated trader swarm."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aiprox-swarm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251052015?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aiprox-swarm",
+      "url": "https://clawhub.ai/skills/aiprox-swarm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiprox-swarm",
+    "url": "https://clawhub.ai/skills/aiprox-swarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiprox-swarm-6f50ae0be0a63585.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aiprox-swarm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aiprox-swarm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7204a0935164d52db870b68546709bab3ddcf6c9a03184212214c5acfe51cc18",
+      "artifactSizeBytes": 2468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T18:39:09.893Z"
+}

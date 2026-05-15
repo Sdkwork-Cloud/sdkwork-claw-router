@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64281,
+  "uuid": "skill-clawhub-global-intel-summary",
+  "skillKey": "clawhub-global-intel-summary",
+  "name": "global-intel-summary",
+  "summary": "全球情报汇总工具 - 自动生成结构化的全球市场、政经、AI 新闻汇总报告。支持定向深度分析与智能推演。借鉴 situation-monitor 项目架构，增强 RSS 源接入、情报分级和高相关性事件检测。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.global_intel_summary",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gmsx000-cloud",
+      "features": [
+        "全球情报汇总工具",
+        "自动生成结构化的全球市场、政经、AI 新闻汇总报告。支持定向深度分析与智能推演。借鉴 situation-monitor 项目架构，增强 RSS 源接入、情报分级和高相关性事件检测。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/global-intel-summary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260407988?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "global-intel-summary",
+      "url": "https://clawhub.ai/skills/global-intel-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "global-intel-summary",
+    "url": "https://clawhub.ai/skills/global-intel-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/global-intel-summary-44afe47b73075c85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/global-intel-summary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-global-intel-summary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25ce47359ba7520df9f48309fdb8617b0d0606e499def945cd07ccd0f4dc5ac8",
+      "artifactSizeBytes": 2832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T15:48:59.408Z"
+}

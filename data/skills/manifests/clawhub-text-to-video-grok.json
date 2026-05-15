@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45426,
+  "uuid": "skill-clawhub-text-to-video-grok",
+  "skillKey": "clawhub-text-to-video-grok",
+  "name": "Text To Video Grok",
+  "summary": "Get AI generated videos ready to post, without touching a single slider. Upload your text prompts (TXT, DOCX, PDF, RTF, up to 500MB), say something like \"gen...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_grok",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vynbosserman65",
+      "features": [
+        "Get AI generated videos ready to post, without touching a single slider",
+        "Upload your text prompts (TXT, DOCX, PDF, RTF, up to 500MB), say something like \"gen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text-to-video-grok@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208823770?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text-to-video-grok",
+      "url": "https://clawhub.ai/skills/text-to-video-grok"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-grok",
+    "url": "https://clawhub.ai/skills/text-to-video-grok",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-grok-f4cd8d2a407d116d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text-to-video-grok@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-text-to-video-grok-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79cb28521498c73885378bb8a694e6bed36014a21f035eb413f5c89f5fad6fc9",
+      "artifactSizeBytes": 2524
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T19:25:19.901Z"
+}

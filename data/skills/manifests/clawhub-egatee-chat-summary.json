@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60322,
+  "uuid": "skill-clawhub-egatee-chat-summary",
+  "skillKey": "clawhub-egatee-chat-summary",
+  "name": "Egatee Chat Summary",
+  "summary": "拉取IM账号近1-7天聊天记录并生成汇总分析",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.egatee_chat_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ahoyoshi",
+      "features": [
+        "拉取IM账号近1-7天聊天记录并生成汇总分析"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/egatee-chat-summary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224490625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "egatee-chat-summary",
+      "url": "https://clawhub.ai/skills/egatee-chat-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "egatee-chat-summary",
+    "url": "https://clawhub.ai/skills/egatee-chat-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/egatee-chat-summary-c2e8ad5890940f63.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/egatee-chat-summary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-egatee-chat-summary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0847094443e87b122227e896db30244ad0596341522991ce642b8c99df3a7789",
+      "artifactSizeBytes": 2226
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T05:51:24.811Z"
+}

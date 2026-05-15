@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-text-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_text_generator",
+  "skill": {
+    "id": 55478,
+    "skillKey": "clawhub-video-text-generator",
+    "name": "Video Text Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-text-generator",
+    "url": "https://clawhub.ai/skills/video-text-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-text-generator-4c1657e54116078b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — add on-screen text captions and title cards to my video — and get text-ove..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776482226503,
+      "changelog": "- Initial release of Video Text Generator skill.\n- Instantly add text overlays, captions, and title cards to videos using AI — just upload and describe your edits.\n- Supports MP4, MOV, AVI, and WebM files up to 500MB; export videos in 1080p MP4 format.\n- Automatic onboarding with easy token generation and session setup; no editing software or manual steps required.\n- Cloud-based GPU rendering ensures quick turnarounds (30–60 seconds for short clips).\n- Designed for content creators and marketers needing rapid, high-quality video text overlays without complex tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b32d5a37fe7bab13b04990e816405c5ae9739049a9eefce5c44bf8c1a1b1051"
+}

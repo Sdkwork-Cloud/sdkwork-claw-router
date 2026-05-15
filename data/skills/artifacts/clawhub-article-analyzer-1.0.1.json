@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/article-analyzer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_analyzer",
+  "skill": {
+    "id": 71775,
+    "skillKey": "clawhub-article-analyzer",
+    "name": "Article Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-analyzer",
+    "url": "https://clawhub.ai/skills/article-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-analyzer-3a35f805edca26c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "爆款文章拆解分析工具。当用户发来公众号/网页链接并要求拆解、分析、学习、拆文时触发。支持结构分析、金句提取、选题逻辑、情绪曲线、复刻建议。关键词：拆解、分析、拆文、学习这篇文章、爆文分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luaqnyin",
+      "userId": "s178qe0kda29njgnhv2hnwpbc983kt75",
+      "displayName": "luaqnyin",
+      "image": "https://avatars.githubusercontent.com/u/162386609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775780000559,
+      "changelog": "- Improved and clarified the skill description to better outline supported triggers and functionalities.\n- Updated keywords in the description for enhanced discoverability and trigger accuracy.\n- No changes to core workflow, analysis dimensions, or reporting template.\n- Documentation now notes the optimization date (2026-04-02).\n- No functional or structural changes to the analysis process or user workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ec9ff83782157000b132238205b94d63fa8c94ca93e3e4424643129cb410102"
+}

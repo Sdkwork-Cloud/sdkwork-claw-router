@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62749,
+  "uuid": "skill-clawhub-qr-barcode-toolkit",
+  "skillKey": "clawhub-qr-barcode-toolkit",
+  "name": "Qr Code Toolkit",
+  "summary": "二维码/条形码全能工具集 - 支持生成、识别、美化、批量处理。Use when: (1) 需要生成二维码（URL/文本/WiFi/名片/支付）, (2) 需要识别/解码二维码或条形码, (3) 需要美化二维码（添加logo/改变颜色/样式）, (4) 需要批量生成或识别二维码, (5) 需要生成条形码（EAN/U...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qr_barcode_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lv Lancer",
+      "features": [
+        "二维码/条形码全能工具集",
+        "支持生成、识别、美化、批量处理。Use when: (1) 需要生成二维码（URL/文本/WiFi/名片/支付）, (2) 需要识别/解码二维码或条形码, (3) 需要美化二维码（添加log."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qr-barcode-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29176686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qr-barcode-toolkit",
+      "url": "https://clawhub.ai/skills/qr-barcode-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qr-barcode-toolkit",
+    "url": "https://clawhub.ai/skills/qr-barcode-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qr-barcode-toolkit-27509000e6b88820.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qr-barcode-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qr-barcode-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a94c64b28379813b0a2e4451c81c0517af6b84afac86ceb5b1ca9a431849572b",
+      "artifactSizeBytes": 2586
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T07:24:48.301Z"
+}

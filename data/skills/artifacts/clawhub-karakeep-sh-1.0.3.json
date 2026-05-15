@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/karakeep-sh@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.karakeep_sh",
+  "skill": {
+    "id": 16312,
+    "skillKey": "clawhub-karakeep-sh",
+    "name": "karakeep-sh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "karakeep-sh",
+    "url": "https://clawhub.ai/skills/karakeep-sh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/karakeep-sh-4918ca21335ec7f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Karakeep bookmark manager with full native RESTful API support including notes, updates, and deletion."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vandeefeng",
+      "userId": "publishers:vandeefeng",
+      "displayName": "Vandee",
+      "image": "https://avatars.githubusercontent.com/u/102362163?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 891,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773555853304,
+      "changelog": "karakeep-sh v1.0.3\n\n- Updated description to clarify full native RESTful API support.\n- Added setup instructions: users must add KARAKEEP_SERVER_URL and KARAKEEP_API_KEY to environment variables and use `jq` for JSON pretty-printing.\n- Stated that if these environment variables are missing, users should be shown a clear guide.\n- Emphasized that users should always be asked for confirmation before deleting a bookmark.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:07eda6a357cd4c9ccecad451afc11ac29af88f5c7a78fa21851fc8be76d8fb43"
+}

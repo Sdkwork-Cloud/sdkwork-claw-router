@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30539,
+  "uuid": "skill-clawhub-neo-ai",
+  "skillKey": "clawhub-neo-ai",
+  "name": "neo-ai",
+  "summary": "Generate images and videos via Neodomain AI API. Supports text-to-image, image-to-video, text-to-video, universal multi-modal video, motion control video, an...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neo_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BandWhite",
+      "features": [
+        "Generate images and videos via Neodomain AI API",
+        "Supports text-to-image, image-to-video, text-to-video, universal multi-modal video, motion cont."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neo-ai@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38720752?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neo-ai",
+      "url": "https://clawhub.ai/skills/neo-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neo-ai",
+    "url": "https://clawhub.ai/skills/neo-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neo-ai-e33e3c16eb827322.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neo-ai@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-neo-ai-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31ecf0e714faa7022a1dd265ceaa4a3d3e75802fcb485e5febc2a104215ffe4d",
+      "artifactSizeBytes": 2454
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T11:00:17.843Z"
+}

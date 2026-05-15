@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49379,
+  "uuid": "skill-clawhub-somnia",
+  "skillKey": "clawhub-somnia",
+  "name": "Somnia",
+  "summary": "Run overnight skill health reviews, replay-case availability checks, feedback triage, and proposal-only maintenance reports for OpenClaw agents. Use when the...",
+  "version": "0.4.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.somnia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SheepXu",
+      "features": [
+        "Run overnight skill health reviews, replay-case availability checks, feedback triage, and propo.",
+        "Use when the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/somnia@0.4.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132804464?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "somnia",
+      "url": "https://clawhub.ai/skills/somnia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "somnia",
+    "url": "https://clawhub.ai/skills/somnia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/somnia-5356a328a34da8ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/somnia@0.4.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-somnia-0.4.3.json",
+      "version": "0.4.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e9265a0b5ce5cd7998267201701a18908815dd46ba675657d16d09eb22f9b49",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T19:31:51.997Z"
+}

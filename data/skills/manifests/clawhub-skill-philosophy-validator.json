@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36402,
+  "uuid": "skill-clawhub-skill-philosophy-validator",
+  "skillKey": "clawhub-skill-philosophy-validator",
+  "name": "Skill Philosophy Validator",
+  "summary": "Validates skill design against five core principles. Trigger after a SKILL.md file is created, written, edited, modified, or optimized. Also trigger when use...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_philosophy_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nano",
+      "features": [
+        "Validates skill design against five core principles",
+        "Trigger after a SKILL.md file is created, written, edited, modified, or optimized",
+        "Also trigger when use..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-philosophy-validator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52405989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-philosophy-validator",
+      "url": "https://clawhub.ai/skills/skill-philosophy-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-philosophy-validator",
+    "url": "https://clawhub.ai/skills/skill-philosophy-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-philosophy-validator-b120c268ff3e401d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-philosophy-validator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-philosophy-validator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8717a8d67a3a31fff1748d41d0a48377d8b6566debea37f4a9d6a874dca5fc3e",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T11:59:48.262Z"
+}

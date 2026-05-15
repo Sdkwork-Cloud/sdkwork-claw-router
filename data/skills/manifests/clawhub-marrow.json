@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46340,
+  "uuid": "skill-clawhub-marrow",
+  "skillKey": "clawhub-marrow",
+  "name": "Marrow",
+  "summary": "Persistent agent memory for OpenClaw. Surface past failures, log decisions, and compound intelligence across sessions. Use when an agent should enforce Marro...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marrow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MajinBuu0x9",
+      "features": [
+        "Persistent agent memory for OpenClaw",
+        "Surface past failures, log decisions, and compound intelligence across sessions",
+        "Use when an agent should enforce Marro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/marrow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102624620?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "marrow",
+      "url": "https://clawhub.ai/skills/marrow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marrow",
+    "url": "https://clawhub.ai/skills/marrow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marrow-e574bf06a7a938ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/marrow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-marrow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17f044a990c83fd540458c7319bebe670c4c1bf7b4d3bc50864c5ee7e5d0a5b6",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T09:42:25.553Z"
+}

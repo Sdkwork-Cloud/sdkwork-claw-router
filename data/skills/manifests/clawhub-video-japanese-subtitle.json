@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65006,
+  "uuid": "skill-clawhub-video-japanese-subtitle",
+  "skillKey": "clawhub-video-japanese-subtitle",
+  "name": "视频日语字幕",
+  "summary": "日语视频自动翻译烧录技能。将日语视频转换为中文硬字幕，完整流程：ffmpeg 提取音频 → Whisper 日语转录 → LLM 翻译日→中 → SRT 转 ASS → ffmpeg NVENC 烧录硬字幕 → 验证。触发条件：用户提到视频字幕、硬字幕、字幕烧录、日语视频翻译、whisper 字幕、ass 字幕、...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_japanese_subtitle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xunnv",
+      "features": [
+        "日语视频自动翻译烧录技能。将日语视频转换为中文硬字幕，完整流程：ffmpeg 提取音频 → Whisper 日语转录 → LLM 翻译日→中 → SRT 转 ASS → ffmpeg NVE."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-japanese-subtitle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81957090?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-japanese-subtitle",
+      "url": "https://clawhub.ai/skills/video-japanese-subtitle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-japanese-subtitle",
+    "url": "https://clawhub.ai/skills/video-japanese-subtitle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-japanese-subtitle-9aa90f17d4c5b938.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-japanese-subtitle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-japanese-subtitle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d1a44282119e716dc5c82dd475fd555511b90215d803c8d5b5b9c2110925796",
+      "artifactSizeBytes": 2663
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T10:55:41.070Z"
+}

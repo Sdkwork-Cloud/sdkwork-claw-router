@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clack@1.5.3",
+  "version": "1.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clack",
+  "skill": {
+    "id": 54720,
+    "skillKey": "clawhub-clack",
+    "name": "Clack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clack",
+    "url": "https://clawhub.ai/skills/clack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clack-239c3607d582db3e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy and manage Clack, a voice relay server for OpenClaw. Bridges voice input (WebSocket) through STT → OpenClaw agent → TTS, enabling real-time voice conv..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fbn3799",
+      "userId": "publishers:fbn3799",
+      "displayName": "fbn3799",
+      "image": "https://avatars.githubusercontent.com/u/181361725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 462,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.5.3",
+      "createdAt": 1772142754704,
+      "changelog": "Clack 1.5.3 (includes unreleased 1.5.1 and 1.5.2):\n\n- Setup script now interactively prompts for ElevenLabs, OpenAI, and Deepgram API keys instead of requiring env vars up front. Existing keys can be kept, changed, or deleted on re-run.\n- New management CLI: `clack status`, `clack restart`, `clack logs`, `clack pair`, `clack update`, `clack setup`, and `clack uninstall` for easier service control.\n- Improved input sanitization: user-provided context is strictly filtered for valid natural-language text, with hard character and length caps. Shell input is never possible.\n- Expanded documentation and setup guidance, including full description of new input sanitization and updated example commands.\n- No functional code changes; documentation and setup tooling only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1976a5a1b60e31cf8c57899bb56d75686b15c36183b3e3ab5b6d6b09dfcf3b33"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xc-openclaw-dashboard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xc_openclaw_dashboard",
+  "skill": {
+    "id": 62496,
+    "skillKey": "clawhub-xc-openclaw-dashboard",
+    "name": "OpenClaw Dashboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xc-openclaw-dashboard",
+    "url": "https://clawhub.ai/skills/xc-openclaw-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xc-openclaw-dashboard-7663f56adc5f5c1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实时监控多个AI Agent的运行状态和Token消耗，支持会话列表和飞书群组富文本状态推送。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youhaveamydream-spec",
+      "userId": "s17betqpmfmz4r5dyw3z04nvt983qm76",
+      "displayName": "youhaveamydream-spec",
+      "image": "https://avatars.githubusercontent.com/u/265768172?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773987825695,
+      "changelog": "初始版本发布 - 多Agent状态监控、Token消耗统计、飞书卡片推送",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df5ef10575efe91afc050e956d37b2cc32d511b50ab7599b63715d53d11bf181"
+}

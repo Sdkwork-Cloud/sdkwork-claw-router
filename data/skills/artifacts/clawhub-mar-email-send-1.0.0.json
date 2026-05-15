@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mar-email-send@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mar_email_send",
+  "skill": {
+    "id": 44148,
+    "skillKey": "clawhub-mar-email-send",
+    "name": "mar-email-send"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mar-email-send",
+    "url": "https://clawhub.ai/skills/mar-email-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mar-email-send-a884940f3be9405f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send a quick email via SkillBoss API Hub without a local mail client."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marjoriebroad",
+      "userId": "s17evr8hna69xbf4mv5z0nppgx84m26f",
+      "displayName": "MarjorieBroad",
+      "image": "https://avatars.githubusercontent.com/u/260425366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777009614780,
+      "changelog": "- Initial release of the email-send skill.\n- Send emails easily via the SkillBoss API Hub without a local mail client.\n- Supports sending to multiple recipients, with CC and BCC options.\n- Requires setting the SKILLBOSS_API_KEY environment variable for authentication.\n- Includes usage examples and setup instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13ca0ebad59aee2fd2d95903815795af5bea639374a01c86a268559e908955f3"
+}

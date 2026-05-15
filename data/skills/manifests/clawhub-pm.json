@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72434,
+  "uuid": "skill-clawhub-pm",
+  "skillKey": "clawhub-pm",
+  "name": "pm",
+  "summary": "提供规范的项目管理流程指导，涵盖需求拆解、API设计、任务分解、迭代开发、测试验证与状态同步。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zengn1",
+      "features": [
+        "提供规范的项目管理流程指导，涵盖需求拆解、API设计、任务分解、迭代开发、测试验证与状态同步。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/137683392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pm",
+      "url": "https://clawhub.ai/skills/pm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pm",
+    "url": "https://clawhub.ai/skills/pm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pm-96f2f0811df88d8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5e3a93c3ce82c180789aaf4485bc1d3ba2d68dad853405567a92c120292224e",
+      "artifactSizeBytes": 1769
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T10:25:14.138Z"
+}

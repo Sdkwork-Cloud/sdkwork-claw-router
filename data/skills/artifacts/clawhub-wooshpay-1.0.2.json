@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wooshpay@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wooshpay",
+  "skill": {
+    "id": 21305,
+    "skillKey": "clawhub-wooshpay",
+    "name": "wooshpay-api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wooshpay",
+    "url": "https://clawhub.ai/skills/wooshpay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wooshpay-ecdb710731c55084.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WooshPay Payment Gateway Integration. For creating payments, checking order status, processing refunds, and managing checkout sessions. Use scenarios: - Crea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wp-ai-dev",
+      "userId": "s17dzk1gpqw2qd8cvd4s4qp6nd84sar8",
+      "displayName": "wooshpay",
+      "image": "https://avatars.githubusercontent.com/u/3370225?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 414,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773193308891,
+      "changelog": "Expanded documentation and provided official references.\n\n- Added links to official WooshPay API documentation for setup, payment methods, and currencies.\n- Expanded list of supported payment methods and currencies, with reference links.\n- Clarified quick start steps for obtaining and setting API keys.\n- No code or file changes—documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ee5fdc61627abd8b1e7f12da77bc04caa009f8096219449177d722e35445462"
+}

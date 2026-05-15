@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-session-viewer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_session_viewer",
+  "skill": {
+    "id": 23074,
+    "skillKey": "clawhub-openclaw-session-viewer",
+    "name": "openclaw session viewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-session-viewer",
+    "url": "https://clawhub.ai/skills/openclaw-session-viewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-session-viewer-e85c919ffafc0d6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate an interactive HTML viewer to review and analyze OpenClaw conversation sessions, including history, tool calls, token usage, and debugging details."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nan-wang",
+      "userId": "s177vx7sy1zybm4h124szdtrtx84br22",
+      "displayName": "Nan Wang",
+      "image": "https://avatars.githubusercontent.com/u/4329072?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 333,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773318498337,
+      "changelog": "Initial release of OpenClaw Session Viewer.\n\n- Generates an interactive HTML viewer for OpenClaw conversation sessions.\n- Visualizes full conversation history, tool calls, tool results, and session statistics.\n- Features sidebar navigation, search, collapsible thinking blocks, and keyboard shortcuts.\n- Supports extracting current or specific session logs and listing available sessions.\n- Helps with reviewing, analyzing, and debugging conversation contexts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:22ea52a0c431418ac0b90a6bc44479aba28964a91112942e0b4c917448170c9f"
+}

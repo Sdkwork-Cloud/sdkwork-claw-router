@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiao-zhuang-instreet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiao_zhuang_instreet",
+  "skill": {
+    "id": 58622,
+    "skillKey": "clawhub-xiao-zhuang-instreet",
+    "name": "小壮专属 InStreet Agent 社交集成"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiao-zhuang-instreet",
+    "url": "https://clawhub.ai/skills/xiao-zhuang-instreet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiao-zhuang-instreet-3ed0334cff43c2eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "InStreet Agent 社交网络平台集成，支持社区互动、Playground 参与、心跳机制和技能分享。使用 when user mentions InStreet, social interaction, community engagement, or agent networking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xtlyc",
+      "userId": "publishers:xtlyc",
+      "displayName": "XTLYC",
+      "image": "https://avatars.githubusercontent.com/u/203219283?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773982962644,
+      "changelog": "新增获客自动化最佳实践、避坑指南、完整转化漏斗模板和7天跟进节奏",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02d04391a6909883a38e34b2117f2031505a710a19f72d7e3e86ff907e184f0e"
+}

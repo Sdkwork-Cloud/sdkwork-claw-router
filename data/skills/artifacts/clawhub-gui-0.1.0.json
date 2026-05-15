@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gui@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gui",
+  "skill": {
+    "id": 16589,
+    "skillKey": "clawhub-gui",
+    "name": "Pywayne Gui"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gui",
+    "url": "https://clawhub.ai/skills/gui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gui-047007876c105127.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Windows GUI automation toolkit for global hotkeys and window management. Use when users need to register global hotkeys, find/control windows, automate GUI o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangyendt",
+      "userId": "publishers:wangyendt",
+      "displayName": "wangyendt",
+      "image": "https://avatars.githubusercontent.com/u/18455758?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 838,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771215082866,
+      "changelog": "Initial release — Windows GUI automation toolkit for hotkeys and window management.\n\n- Provides global hotkey registration and listener functionality.\n- Enables window finding, attribute querying, bringing to top, maximizing, renaming, closing, and retrieving geometry.\n- Supports retrieving child windows for advanced automation.\n- Includes concise API usage examples.\n- Requires Windows OS with pywin32, pyuserinput, and pyautogui dependencies.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:892a1870a06cfe7289a9ac02a4f004bf5a4759f20395b546d623fe3378abe69b"
+}

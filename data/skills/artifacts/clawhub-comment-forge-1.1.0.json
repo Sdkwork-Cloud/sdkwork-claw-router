@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/comment-forge@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comment_forge",
+  "skill": {
+    "id": 28750,
+    "skillKey": "clawhub-comment-forge",
+    "name": "Cf Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comment-forge",
+    "url": "https://clawhub.ai/skills/comment-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comment-forge-c761417857f14d84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Corpus-grounded Reddit comment engine. Generate natural replies that pass AI detection, powered by real comment corpus and 7-dimension QA scoring."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aces1up",
+      "userId": "s1740avm8hpy6c4p010vsj1jm583gvsc",
+      "displayName": "aces1up",
+      "image": "https://avatars.githubusercontent.com/u/2554853?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 317,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773891752361,
+      "changelog": "**Add support for automatic virtual environment setup via setup script.**\n\n- Added setup.sh script to automate virtual environment creation and dependency installation.\n- Minor code updates in comment_forge.py to support smoother setup and execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:485def6040f7d051b8c9adebba62cae67aa3db822f9c6fc17787f44ed9ca210f"
+}

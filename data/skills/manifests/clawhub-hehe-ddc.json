@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63521,
+  "uuid": "skill-clawhub-hehe-ddc",
+  "skillKey": "clawhub-hehe-ddc",
+  "name": "hehe-ddc",
+  "summary": "抖音视频自动生成 - 图片 + 文案→视频，支持 Edge TTS 男女声、逐行字幕、随机 BGM、智能时长适配",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hehe_ddc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wanghu66",
+      "features": [
+        "抖音视频自动生成",
+        "图片 + 文案→视频，支持 Edge TTS 男女声、逐行字幕、随机 BGM、智能时长适配"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hehe-ddc@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/136964460?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hehe-ddc",
+      "url": "https://clawhub.ai/skills/hehe-ddc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hehe-ddc",
+    "url": "https://clawhub.ai/skills/hehe-ddc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hehe-ddc-7a78e779347e6a39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hehe-ddc@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hehe-ddc-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7fc52f9745a035f0094914e80037172808ef579c5be4b64beebfb4c73f07d4f0",
+      "artifactSizeBytes": 2306
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T11:08:45.493Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21003,
+  "uuid": "skill-clawhub-expo-appstore-deploy",
+  "skillKey": "clawhub-expo-appstore-deploy",
+  "name": "Expo App Store Deploy",
+  "summary": "Deploy Expo/React Native apps to Apple App Store and Google Play Store using EAS Build + Submit. Use when building iOS/Android production builds, submitting...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expo_appstore_deploy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jini92",
+      "features": [
+        "Deploy Expo/React Native apps to Apple App Store and Google Play Store using EAS Build + Submit",
+        "Use when building iOS/Android production builds, submitting..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/expo-appstore-deploy@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43900848?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "expo-appstore-deploy",
+      "url": "https://clawhub.ai/skills/expo-appstore-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expo-appstore-deploy",
+    "url": "https://clawhub.ai/skills/expo-appstore-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expo-appstore-deploy-be640fa7666fa4f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/expo-appstore-deploy@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-expo-appstore-deploy-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb2e38faf06cfa417d8a22fb002f39bba69c238bb23d1bc927f31374ac8741f3",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T01:50:07.844Z"
+}

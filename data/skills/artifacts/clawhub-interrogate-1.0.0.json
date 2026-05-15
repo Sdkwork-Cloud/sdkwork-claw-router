@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/interrogate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interrogate",
+  "skill": {
+    "id": 53636,
+    "skillKey": "clawhub-interrogate",
+    "name": "Interrogate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interrogate",
+    "url": "https://clawhub.ai/skills/interrogate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interrogate-0458e964e99f0533.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guided elicitation skill. Activates ONLY when the user explicitly types /interrogate. Asks 4–15 adaptive questions in batches of 2, each with exactly 4 lette..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "inxan3",
+      "userId": "s1777jy7gnm8xab1ce9cyb6vnd85ff93",
+      "displayName": "inxan3",
+      "image": "https://avatars.githubusercontent.com/u/208640470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777007563028,
+      "changelog": "- Initial release of the \"interrogate\" skill.\n- Guided questioning workflow: activated only by the explicit command `/interrogate`.\n- Presents 4–15 adaptive, mutually exclusive questions in batches of 2, each with options A–D plus a write-in option.\n- Adjusts questioning path based on prior answers, designed to clarify vague or complex requests before any action.\n- Summarizes understanding and asks for confirmation before proceeding.\n- Handles uncertainty and indecision by offering explanations and recommendations without repeating questions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2bd8f7674a2d5deb6eb989d3a38de4bf2b1e0b92247ed790f296093fef721a2d"
+}

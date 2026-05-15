@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44633,
+  "uuid": "skill-clawhub-graph-rag-builder",
+  "skillKey": "clawhub-graph-rag-builder",
+  "name": "GraphRAGBuilder",
+  "summary": "Builds a fully runnable MCP (Model Context Protocol) knowledge server from any website or documentation URL. Crawls the site, extracts concepts using Claude,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.graph_rag_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nacmonad",
+      "features": [
+        "Builds a fully runnable MCP (Model Context Protocol) knowledge server from any website or docum.",
+        "Crawls the site, extracts concepts using Claude,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/graph-rag-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13107516?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "graph-rag-builder",
+      "url": "https://clawhub.ai/skills/graph-rag-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "graph-rag-builder",
+    "url": "https://clawhub.ai/skills/graph-rag-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/graph-rag-builder-fba8f85e093be522.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/graph-rag-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-graph-rag-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2f04d0362cc3a9a7a524cad1a555898dfcb7ec76b1e5da01bd04a6f33471fcb",
+      "artifactSizeBytes": 2509
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T14:06:59.840Z"
+}

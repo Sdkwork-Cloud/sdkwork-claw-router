@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pingcode-skills@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pingcode_skills",
+  "skill": {
+    "id": 67873,
+    "skillKey": "clawhub-pingcode-skills",
+    "name": "PingCode"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pingcode-skills",
+    "url": "https://clawhub.ai/skills/pingcode-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pingcode-skills-3a65f26c58661d7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PingCode 研发管理平台 API 集成。支持查询工作项、生成周报、管理项目进度等。使用场景：研发管理自动化、团队协作、数据分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anytao",
+      "userId": "publishers:anytao",
+      "displayName": "anytao",
+      "image": "https://avatars.githubusercontent.com/u/541185?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 521,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773229275266,
+      "changelog": "- 新增获取项目列表脚本（get_projects.py），支持列出所有项目及多种输出格式\n- 新增获取指定项目全部工作项脚本（get_project_workitems.py），可按项目名称或 ID 查询\n- 新增更新工作项脚本（update_workitem.py），支持修改负责人、时间、优先级、状态等字段\n- 在文档中介绍上述新功能与用法，并补充相关示例",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7847b5171b57e29545f6adaa29cd5eb1662e090124d48e871bff01ccd84bb6e"
+}

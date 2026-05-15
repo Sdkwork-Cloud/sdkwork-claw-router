@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whatclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatclaw",
+  "skill": {
+    "id": 27612,
+    "skillKey": "clawhub-whatclaw",
+    "name": "whatclaw-whatsapp-integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatclaw",
+    "url": "https://clawhub.ai/skills/whatclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatclaw-2365f8ec0acaf68b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages WhatsApp whitelists to send messages only to approved numbers, track delivery status, and verify OpenClaw connectivity via word-trigger commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "santanu-kumar-prusty",
+      "userId": "s17b502vpcc1tytdk5ww9z9yq584kdkx",
+      "displayName": "Santanu-Kumar-prusty",
+      "image": "https://avatars.githubusercontent.com/u/88020790?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 344,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773833977005,
+      "changelog": "WhatsApp whitelist skill initial release:\n\n- Manages and edits whitelist sets of phone numbers for outbound messages.\n- Sends WhatsApp messages (text and media) only to numbers in whitelisted sets.\n- Tracks and displays message status (`sent`, `delivered`, `read`, `failed`, `unknown`) by message ID.\n- Verifies WhatsApp channel connectivity before sending.\n- Supports trigger phrases for common whitelist and message actions (add, remove, update, send, status).\n- Stores data locally in JSON files for whitelist and message logs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d26bca6e884afe04f83ae2076d25891d3baa11f26887d7122ff2e3cb209f3c22"
+}

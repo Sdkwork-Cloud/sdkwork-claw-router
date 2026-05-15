@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20749,
+  "uuid": "skill-clawhub-llm-judge-ensemble",
+  "skillKey": "clawhub-llm-judge-ensemble",
+  "name": "Llm As Judge",
+  "summary": "Build a cost-efficient LLM evaluation ensemble with sampling, tiebreakers, and deterministic validators. Learned from 600+ production runs judging local Olla...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_judge_ensemble",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nissan Dookeran",
+      "features": [
+        "Build a cost-efficient LLM evaluation ensemble with sampling, tiebreakers, and deterministic va.",
+        "Learned from 600+ production runs judging local Olla..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-judge-ensemble@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-judge-ensemble",
+      "url": "https://clawhub.ai/skills/llm-judge-ensemble"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-judge-ensemble",
+    "url": "https://clawhub.ai/skills/llm-judge-ensemble",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-judge-ensemble-f68d77b297ed5da9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-judge-ensemble@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-judge-ensemble-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:669082db58aad3ecc14e05e7f5da94bd871a40589508ab7aef0ebd446f8ce98c",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T04:41:39.547Z"
+}

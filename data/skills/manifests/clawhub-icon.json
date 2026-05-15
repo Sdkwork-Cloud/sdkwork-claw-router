@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20370,
+  "uuid": "skill-clawhub-icon",
+  "skillKey": "clawhub-icon",
+  "name": "Icon",
+  "summary": "Generate and convert icons. Use when creating SVGs, building sprite sheets, converting ICO/PNG/SVG, or generating favicon sets.",
+  "version": "3.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.icon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Generate and convert icons",
+        "Use when creating SVGs, building sprite sheets, converting ICO/PNG/SVG, or generating favicon s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/icon@3.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "icon",
+      "url": "https://clawhub.ai/skills/icon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "icon",
+    "url": "https://clawhub.ai/skills/icon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/icon-c2d4b446a44ce54f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/icon@3.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-icon-3.4.1.json",
+      "version": "3.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:696c8fcf153c73d7086b40fdb664c3cca741fd02808bc7eb24a20e4e8b6ecdae",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:13:22.746Z"
+}

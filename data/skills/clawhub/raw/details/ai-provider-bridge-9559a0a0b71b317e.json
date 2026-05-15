@@ -1,0 +1,52 @@
+{
+  "skill": {
+    "slug": "ai-provider-bridge",
+    "displayName": "Ai Provider Bridge",
+    "summary": "One interface to call 6 AI providers. Swap models with a config change, not a code rewrite. Zero external dependencies.",
+    "tags": {
+      "api": "1.0.3",
+      "integration": "1.0.3",
+      "latest": "1.0.3",
+      "multi-model": "1.0.3",
+      "providers": "1.0.3",
+      "routing": "1.0.3"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 456,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "createdAt": 1773046901648,
+    "updatedAt": 1778305858528
+  },
+  "latestVersion": {
+    "version": "1.0.3",
+    "createdAt": 1773078583208,
+    "changelog": "v1.0.3\n\nFixed API usage examples — config object uses camelCase property names (anthropicApiKey, openaiApiKey, googleApiKey, xaiApiKey, mistralApiKey), not flat apiKey or env var names. Model prefix determines provider (anthropic/model-name). Clarified sendMessage() as the correct method name.\n\nv1.0.2\n\nRemoved require('./token-compressor') reference entirely. TokenCompressor is now an inlined no-op pass-through class — no missing dependency, no external file needed. To enable compression, install the companion token-compressor skill and swap the class as noted in the code comments.\nRemoved automatic \"Do not store or train on this data.\" appended to system prompts in OpenAI-compatible requests. This is the caller's responsibility — pass it via setSystemPrompt() if needed.\n\nv1.0.1\n\nTokenCompressor dependency made optional — no-op fallback added when ./token-compressor is not present. Bridge works without it; messages pass through uncompressed.\nRemoved buildSystemPrompt() and workspaceContext option. These allowed embedding workspace files into system prompts sent to external APIs — data exposure risk. Use setSystemPrompt() directly.\nAdded env: section to frontmatter declaring required API keys per provider. All optional — only keys for providers you use are needed.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "theshadowrose",
+    "userId": "s1736mx5m1zt9qzh6fvzvffnhh83hgf8",
+    "displayName": "Shadow Rose",
+    "image": "https://avatars.githubusercontent.com/u/262919821?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778305858528
+  }
+}

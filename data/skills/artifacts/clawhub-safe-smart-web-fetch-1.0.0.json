@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/safe-smart-web-fetch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_smart_web_fetch",
+  "skill": {
+    "id": 63561,
+    "skillKey": "clawhub-safe-smart-web-fetch",
+    "name": "Safe Smart Web Fetch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-smart-web-fetch",
+    "url": "https://clawhub.ai/skills/safe-smart-web-fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-smart-web-fetch-fd554452bed15883.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "安全网页抓取技能。获取网页内容时，默认先判断 URL 是否可能包含 token、是否为内网/本地域名、是否为私密链接；这三类一律不走第三方清洗服务，只走直接抓取。其余公开网页可按顺序尝试 Jina Reader、markdown.new、defuddle.md 获取干净 Markdown，失败再回退原始抓取。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zqh2333",
+      "userId": "s17dq27qynd9j1cwkrxvc2qzfd83z6x1",
+      "displayName": "Qihong",
+      "image": "https://avatars.githubusercontent.com/u/49940695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775559190880,
+      "changelog": "Initial release: safe web fetch with private-link protection and third-party cleaning only for public pages",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e1dcba49d336f67983887dd783de4eb09beacb5dfd61169c342fd4605f789536"
+}

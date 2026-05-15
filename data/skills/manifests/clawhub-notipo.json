@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26213,
+  "uuid": "skill-clawhub-notipo",
+  "skillKey": "clawhub-notipo",
+  "name": "notipo",
+  "summary": "Publish blog posts from AI agents to WordPress via Notion. One API call handles page creation, markdown conversion, image uploads, featured image generation,...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notipo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kfuras",
+      "features": [
+        "Publish blog posts from AI agents to WordPress via Notion",
+        "One API call handles page creation, markdown conversion, image uploads, featured image generati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notipo@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7188679?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notipo",
+      "url": "https://clawhub.ai/skills/notipo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notipo",
+    "url": "https://clawhub.ai/skills/notipo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notipo-b51015ce6e30cd6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notipo@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-notipo-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:909f1cf230c9e925b7ec515a2fd522a4373759308c56f5ec3fced6f0f15873fe",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T10:56:29.653Z"
+}

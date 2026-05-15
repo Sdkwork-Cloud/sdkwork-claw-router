@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38782,
+  "uuid": "skill-clawhub-hostcheck",
+  "skillKey": "clawhub-hostcheck",
+  "name": "Hostcheck",
+  "summary": "Free host health check for OpenClaw deployments. Check system status, updates, security settings, and provide recommendations. No paid tools required.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hostcheck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bwtomekk-bit",
+      "features": [
+        "Free host health check for OpenClaw deployments",
+        "Check system status, updates, security settings, and provide recommendations",
+        "No paid tools required."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hostcheck@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257875388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hostcheck",
+      "url": "https://clawhub.ai/skills/hostcheck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hostcheck",
+    "url": "https://clawhub.ai/skills/hostcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hostcheck-5d6427fc43a7f4ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hostcheck@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hostcheck-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ba6d2011ec29d2064946c100532dd0a8fd27f818306ff5a7145de17599a7011",
+      "artifactSizeBytes": 2252
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T11:59:12.500Z"
+}

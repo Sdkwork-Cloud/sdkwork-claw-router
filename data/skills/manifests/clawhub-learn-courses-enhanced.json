@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63591,
+  "uuid": "skill-clawhub-learn-courses-enhanced",
+  "skillKey": "clawhub-learn-courses-enhanced",
+  "name": "learn-courses-mooc",
+  "summary": "MOOC自动化学习工具 - 自动完成课程视频学习、检测章节状态、等待视频播放完成",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learn_courses_enhanced",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tonylemon",
+      "features": [
+        "MOOC自动化学习工具",
+        "自动完成课程视频学习、检测章节状态、等待视频播放完成"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learn-courses-enhanced@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32925595?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learn-courses-enhanced",
+      "url": "https://clawhub.ai/skills/learn-courses-enhanced"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learn-courses-enhanced",
+    "url": "https://clawhub.ai/skills/learn-courses-enhanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learn-courses-enhanced-0cae6b95a608a555.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learn-courses-enhanced@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-learn-courses-enhanced-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a58f500259e70d06ff8780c2c99a88b0db1db05a7874005bda2d7b42ed7226ee",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T14:17:31.571Z"
+}

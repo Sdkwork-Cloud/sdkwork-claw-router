@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/website-capture@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.website_capture",
+  "skill": {
+    "id": 24218,
+    "skillKey": "clawhub-website-capture",
+    "name": "Website Capture - AllScreenshots"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "website-capture",
+    "url": "https://clawhub.ai/skills/website-capture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/website-capture-8bdc918f57858c08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Take website screenshots, capture full pages, generate PDFs. Handles desktop, mobile, dark mode, stealth mode, cookie banner blocking, and batch URLs via the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "panilya",
+      "userId": "publishers:panilya",
+      "displayName": "panilya",
+      "image": "https://avatars.githubusercontent.com/u/42717485?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773345257452,
+      "changelog": "Initial release of website capture skill using the Allscreenshots API.\n\n- Capture full-page or viewport-only screenshots of any website.\n- Supports desktop, mobile, and dark mode screenshots.\n- Export pages as PDFs in addition to images.\n- Features ad blocking, cookie banner blocking, and stealth mode for bot-protected sites.\n- Handle single or batch URLs, with responses as direct image URLs, base64, or raw files.\n- Requires only curl, jq, and an API key—no local browser needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67d0aa98c8f592e6efda069c4bbb1b5d2f57f7670a4beb8c8425f3b948fe5985"
+}

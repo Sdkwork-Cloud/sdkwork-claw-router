@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/genviral@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.genviral",
+  "skill": {
+    "id": 16131,
+    "skillKey": "clawhub-genviral",
+    "name": "Genviral"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "genviral",
+    "url": "https://clawhub.ai/skills/genviral",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/genviral-ca2d79cec7cd7ac3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete genviral Partner API automation. Create and schedule posts (video + slideshow) across TikTok, Instagram, and any supported platform. Includes slides..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ugenesys",
+      "userId": "publishers:ugenesys",
+      "displayName": "ugenesys",
+      "image": "https://avatars.githubusercontent.com/u/180717847?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 904,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772539975992,
+      "changelog": "genviral 1.0.0\n\n- Initial release of full genviral Partner API automation.\n- Create and schedule video or slideshow posts across TikTok, Instagram, and all supported platforms.\n- Includes slideshow generation, CDN uploads, template/pack management, analytics, and content pipeline automation.\n- Studio AI integration for image (sync) and video (async) generation.\n- Supports niche research, performance tracking, and evolving hook/CTA library.\n- All actions are fully auditable in the Genviral dashboard.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:89a9a80c542932f43aca54ea62c2b63732562c89ec3a864f0b5a4d5d93f23e92"
+}

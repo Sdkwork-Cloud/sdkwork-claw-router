@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24667,
+  "uuid": "skill-clawhub-superrare-deploy",
+  "skillKey": "clawhub-superrare-deploy",
+  "name": "superrare-deploy",
+  "summary": "Deploy a SuperRare Sovereign ERC-721 collection on Ethereum or Base via Bankr. Uses the official RARE factory createSovereignBatchMint path, dry-runs by defa...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.superrare_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aaigotchi",
+      "features": [
+        "Deploy a SuperRare Sovereign ERC-721 collection on Ethereum or Base via Bankr",
+        "Uses the official RARE factory createSovereignBatchMint path, dry-runs by defa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/superrare-deploy@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258886199?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "superrare-deploy",
+      "url": "https://clawhub.ai/skills/superrare-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "superrare-deploy",
+    "url": "https://clawhub.ai/skills/superrare-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/superrare-deploy-86528d3a5f97732f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/superrare-deploy@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-superrare-deploy-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e80a4dc3be1d58c9d1446ffa191bbafc6046b4a9a6f44b1a5702dc64eda5167",
+      "artifactSizeBytes": 2302
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T03:07:26.413Z"
+}

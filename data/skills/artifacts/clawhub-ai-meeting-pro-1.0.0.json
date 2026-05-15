@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-meeting-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_meeting_pro",
+  "skill": {
+    "id": 33196,
+    "skillKey": "clawhub-ai-meeting-pro",
+    "name": "Meeting Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-meeting-pro",
+    "url": "https://clawhub.ai/skills/ai-meeting-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-meeting-pro-1b807f7928c083f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI meeting assistant for agenda generation, minute taking, and action item tracking using Manager-Worker pattern."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "banxian87",
+      "userId": "s1725nf8jgsbz5gj0nmfh3vkk5843csb",
+      "displayName": "banxian87",
+      "image": "https://avatars.githubusercontent.com/u/264314218?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775105042643,
+      "changelog": "Initial release of Meeting Assistant – an AI tool for streamlined meeting management.\n\n- Generates agendas with prep checklists and time allocation.\n- Supports real-time minute taking, key point extraction, and decision tracking.\n- Extracts action items, assigns owners, and creates follow-up reminders.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac7c594b56d5a2ffdb780c5dae908037d0fe1c149015f976aef6b5202c3f77d4"
+}

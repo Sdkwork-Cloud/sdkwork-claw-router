@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38796,
+  "uuid": "skill-clawhub-loopify-integration",
+  "skillKey": "clawhub-loopify-integration",
+  "name": "Loopify",
+  "summary": "Loopify integration. Manage Organizations, Users. Use when the user wants to interact with Loopify data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loopify_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Loopify integration",
+        "Manage Organizations, Users",
+        "Use when the user wants to interact with Loopify data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/loopify-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "loopify-integration",
+      "url": "https://clawhub.ai/skills/loopify-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loopify-integration",
+    "url": "https://clawhub.ai/skills/loopify-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loopify-integration-fceb7b906861f92e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/loopify-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-loopify-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:823f4eff2dc817e272caff2f513f25b76da18eff8cfde273818a743f9144cc7d",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:09:24.459Z"
+}

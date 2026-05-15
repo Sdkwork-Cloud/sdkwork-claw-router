@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-with-nodes@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_with_nodes",
+  "skill": {
+    "id": 55091,
+    "skillKey": "clawhub-video-editing-with-nodes",
+    "name": "Video Editing With Nodes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-with-nodes",
+    "url": "https://clawhub.ai/skills/video-editing-with-nodes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-with-nodes-80cf56c330e35272.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — connect trim, color grade, and audio mix nodes to produce a finished cut —..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776765919951,
+      "changelog": "- Initial release of \"Video Editing With Nodes\" skill.\n- Upload MP4, MOV, AVI, or WebM videos (up to 500MB) and describe edits — AI handles node-based editing including trim, color grade, audio mix.\n- Connects automatically to cloud backend using either your NEMO_TOKEN or a free anonymous token.\n- Returns finished, node-edited videos in 1–2 minutes (1080p MP4 by default).\n- Guides users through upload, edit, preview, export, and credits workflows.\n- Provides status updates and error messages in plain language; no installation required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dce57176bccfe0ab1e82312a629727f472abbb69797925d2479db2de8fa58fe2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ploi@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ploi",
+  "skill": {
+    "id": 31583,
+    "skillKey": "clawhub-ploi",
+    "name": "Ploi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ploi",
+    "url": "https://clawhub.ai/skills/ploi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ploi-3bb81eaff85ae9b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ploi integration. Manage data, records, and automate workflows. Use when the user wants to interact with Ploi data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gora050",
+      "userId": "s178embtbbq5jnxba7hj83fa8583e8h7",
+      "displayName": "Vlad Ursul",
+      "image": "https://avatars.githubusercontent.com/u/4161345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776865778468,
+      "changelog": "Auto sync from membranedev/application-skills",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:295efc2774f07ff9e20df46d2fea2f695496b9cf0f52aaf05c41edfe9deddfb7"
+}

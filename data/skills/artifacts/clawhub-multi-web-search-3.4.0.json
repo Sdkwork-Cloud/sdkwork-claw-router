@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-web-search@3.4.0",
+  "version": "3.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_web_search",
+  "skill": {
+    "id": 68407,
+    "skillKey": "clawhub-multi-web-search",
+    "name": "Multi-Web-Search | 多引擎网页搜索"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-web-search",
+    "url": "https://clawhub.ai/skills/multi-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-web-search-f62d9d63c1b0ff45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供无须API密钥的多引擎并行网页搜索，支持20个国际、国内及专业搜索引擎，含时间和站点过滤，支持图片、新闻、视频搜索及DHT加速。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangzairong",
+      "userId": "s176bzwbby3efc6tckjvf8n8jn83shnx",
+      "displayName": "wangzairong",
+      "image": "https://avatars.githubusercontent.com/u/23448989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.4.0",
+      "createdAt": 1777731886595,
+      "changelog": "Multi-Web-Search v3.4.0 – Major update with expanded search modalities and network enhancements.\n\n- Added support for image, news, video, and book searches (--type parameter).\n- Introduced DHT network acceleration for up to 90% faster repeated queries.\n- Integrated proxy support for private and region-unlocked searches.\n- New configurable per-engine timeout (--timeout).\n- Improved zero-config fallback (DuckDuckGo Lite) and enhanced multi-language/documentation search support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e65cabd16d1cfc7c4b36c641ee9c929555f35935807d2d264b4a121403b8c9b0"
+}

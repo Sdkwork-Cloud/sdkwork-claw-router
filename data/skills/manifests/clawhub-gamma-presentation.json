@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54534,
+  "uuid": "skill-clawhub-gamma-presentation",
+  "skillKey": "clawhub-gamma-presentation",
+  "name": "Gamma Presentation Generator",
+  "summary": "Generate professional presentations with Gamma AI. Just describe what you want — topic, outline, or full content — and get a polished deck. No Gamma account...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gamma_presentation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lmanchu",
+      "features": [
+        "Generate professional presentations with Gamma AI",
+        "Just describe what you want — topic, outline, or full content — and get a polished deck",
+        "No Gamma account..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gamma-presentation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8541873?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gamma-presentation",
+      "url": "https://clawhub.ai/skills/gamma-presentation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gamma-presentation",
+    "url": "https://clawhub.ai/skills/gamma-presentation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gamma-presentation-f3ba49502f8dce68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gamma-presentation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gamma-presentation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93c50ebf62bccfda585cc9f17fdce225fde07d18d375cfc119ca5829f1ace3d5",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T04:48:31.999Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/erong-agents@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.erong_agents",
+  "skill": {
+    "id": 60195,
+    "skillKey": "clawhub-erong-agents",
+    "name": "Agency Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "erong-agents",
+    "url": "https://clawhub.ai/skills/erong-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/erong-agents-10ae2029f9180e5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent 团队 - 49个专业Agent，8大部门，完整的AI代理机构。支持单Agent使用和多Agent协作编排。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "erongcao",
+      "userId": "s17baj1em8ajy9w56q6qyqvqg184gggm",
+      "displayName": "Yirong",
+      "image": "https://avatars.githubusercontent.com/u/32793967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776491754860,
+      "changelog": "erong-agents 1.1.1 Changelog\n\n- Updated package.json and README.md with minor changes.\n- No updates to feature set or SKILL.md documentation content.\n- Maintenance release with metadata or documentation refinements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:114b3da0c177bc316732420a8b157f04bf284d8d8ce5b964bf2af86f0804a640"
+}

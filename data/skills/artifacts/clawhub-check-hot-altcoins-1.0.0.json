@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/check-hot-altcoins@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.check_hot_altcoins",
+  "skill": {
+    "id": 67775,
+    "skillKey": "clawhub-check-hot-altcoins",
+    "name": "查看每日热门山寨代币"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "check-hot-altcoins",
+    "url": "https://clawhub.ai/skills/check-hot-altcoins",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/check-hot-altcoins-9ad6048e3937962d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成加密货币早报PDF，包含行业动态、FDV排名、热点赛道和风险提示。数据来源于CoinGecko API。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nihaovand",
+      "userId": "publishers:nihaovand",
+      "displayName": "nihaovand",
+      "image": "https://avatars.githubusercontent.com/u/110290620?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 421,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771943369656,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:db8aaa898f8dc3ffe6b782ef82b378bbf046a2586835f319549254c973bf353b"
+}

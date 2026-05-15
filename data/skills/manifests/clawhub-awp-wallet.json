@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25889,
+  "uuid": "skill-clawhub-awp-wallet",
+  "skillKey": "clawhub-awp-wallet",
+  "name": "AWP Wallet Skill",
+  "summary": "Use when the user says \"send ETH/USDC to 0x...\", \"check my balance\", \"how much do I have\", \"approve token spending\", \"sign this message\", \"estimate gas\", \"wh...",
+  "version": "0.15.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.awp_wallet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "awp-core",
+      "features": [
+        "Use when the user says \"send ETH/USDC to 0x...\", \"check my balance\", \"how much do I have\", \"app."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/awp-wallet@0.15.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9641495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "awp-wallet",
+      "url": "https://clawhub.ai/skills/awp-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "awp-wallet",
+    "url": "https://clawhub.ai/skills/awp-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/awp-wallet-47e46ff7c47dc231.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/awp-wallet@0.15.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-awp-wallet-0.15.0.json",
+      "version": "0.15.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6510db2db05b71bd80462c70c5b445d8d1a7579bf9307cdf95a9e853a827b01",
+      "artifactSizeBytes": 2392
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T10:40:30.884Z"
+}

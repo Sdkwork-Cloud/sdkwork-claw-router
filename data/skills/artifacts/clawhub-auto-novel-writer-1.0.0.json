@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-novel-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_novel_writer",
+  "skill": {
+    "id": 70514,
+    "skillKey": "clawhub-auto-novel-writer",
+    "name": "auto-novel-writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-novel-writer",
+    "url": "https://clawhub.ai/skills/auto-novel-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-novel-writer-dd19c2384800ed01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "长篇爽文小说写作助手，支持多小说管理、章节记忆管理、大纲追踪、AI味去除。专为男频爽文（扮猪吃虎、金手指系统、无敌流）设计，解决长上下文限制问题。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "captaindaveluo",
+      "userId": "s178qb1sjwv01qwpanhfr5wv3x83knd2",
+      "displayName": "CaptainDaveluo",
+      "image": "https://avatars.githubusercontent.com/u/8756014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774770701914,
+      "changelog": "Initial release of the long-form male-oriented web novel writing assistant.\n\n- Supports multi-novel project management with independent directories.\n- Implements chapter memory management and context recall for up to 10 previous chapters.\n- Provides AI-style removal, ensuring writing style is close to popular novels like 《斗破苍穹》.\n- Includes auto self-check and repair for chapters inconsistent with the outline or style.\n- Enforces strict minimum chapter length (2000+ words) before allowing progression.\n- Offers structured outlining, character/system/world setting tools, and review/repair workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d445860fab673b01e021638f7a80e9d87249735448fbb2dca00bb4796a2a74e"
+}

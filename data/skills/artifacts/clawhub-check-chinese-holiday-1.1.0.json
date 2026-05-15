@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/check-chinese-holiday@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.check_chinese_holiday",
+  "skill": {
+    "id": 65842,
+    "skillKey": "clawhub-check-chinese-holiday",
+    "name": "中国节假日检测"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "check-chinese-holiday",
+    "url": "https://clawhub.ai/skills/check-chinese-holiday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/check-chinese-holiday-397be02f3c1c4651.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 chinesecalendar 包的中国节假日检测，判断是否为节假日/调休日工作日"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuehongyanl",
+      "userId": "publishers:xuehongyanl",
+      "displayName": "xuehongyanL",
+      "image": "https://avatars.githubusercontent.com/u/21170105?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 394,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772612897678,
+      "changelog": "新增年份边界处理规则，防止Agent陷入死循环",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3d2e97701acbb3dc360d029d8228bf988ca8c77efd9b6e4804f3d335c522534d"
+}

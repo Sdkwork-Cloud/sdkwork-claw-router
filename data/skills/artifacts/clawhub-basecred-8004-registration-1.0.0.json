@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/basecred-8004-registration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.basecred_8004_registration",
+  "skill": {
+    "id": 15090,
+    "skillKey": "clawhub-basecred-8004-registration",
+    "name": "Basecred ERC-8004 Registration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "basecred-8004-registration",
+    "url": "https://clawhub.ai/skills/basecred-8004-registration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/basecred-8004-registration-2118ececc31a0724.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactive ERC-8004 agent registration via chat. Guides users through a prefill form, shows draft, confirms, then registers on-chain using agent0-sdk."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "callmedas69",
+      "userId": "publishers:callmedas69",
+      "displayName": "Mr. TeeClaw",
+      "image": "https://avatars.githubusercontent.com/u/126429597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1071,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770644375180,
+      "changelog": "Initial release: interactive chat-based ERC-8004 agent registration using agent0-sdk",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e57a4b278a04121c72f65e87cd53b8c60775aeec673c25ba1db7bbed13589f4f"
+}

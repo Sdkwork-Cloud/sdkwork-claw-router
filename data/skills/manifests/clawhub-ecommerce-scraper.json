@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61489,
+  "uuid": "skill-clawhub-ecommerce-scraper",
+  "skillKey": "clawhub-ecommerce-scraper",
+  "name": "Ecommerce Scraper",
+  "summary": "爬取动态电商网站数据。使用Playwright处理JavaScript渲染的页面，支持Cloudflare反爬、隐躲API发现、分页抓取。适用于： (1) 爬取京东/淘宝/拼多多等中国电商， (2) 爬取Amazon/eBay等国际电商， (3) 价格监控和竞品分析， (4) 批量商品数据采集。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_scraper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chefroger",
+      "features": [
+        "爬取动态电商网站数据。使用Playwright处理JavaScript渲染的页面，支持Cloudflare反爬、隐躲API发现、分页抓取。适用于： (1) 爬取京东/淘宝/拼多多等中国电商，."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecommerce-scraper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28817001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecommerce-scraper",
+      "url": "https://clawhub.ai/skills/ecommerce-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-scraper",
+    "url": "https://clawhub.ai/skills/ecommerce-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-scraper-a9e08a510908d972.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecommerce-scraper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecommerce-scraper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a19c435da990d293c4b272e7b9906db51dfbfac9206e3e23119fbc2f6e4eb963",
+      "artifactSizeBytes": 2546
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T07:42:01.293Z"
+}

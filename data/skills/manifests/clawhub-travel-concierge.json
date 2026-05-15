@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10329,
+  "uuid": "skill-clawhub-travel-concierge",
+  "skillKey": "clawhub-travel-concierge",
+  "name": "Travel Concierge CLI",
+  "summary": "Find contact details for accommodation listings (Airbnb, Booking.com, VRBO, Expedia)",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_concierge",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "arein",
+      "features": [
+        "Find contact details for accommodation listings (Airbnb, Booking.com, VRBO, Expedia)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/travel-concierge@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/966091?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "travel-concierge",
+      "url": "https://clawhub.ai/skills/travel-concierge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-concierge",
+    "url": "https://clawhub.ai/skills/travel-concierge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-concierge-60cd6f84ee4a4706.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/travel-concierge@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-travel-concierge-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5222a4f1f61c028d977d15e55df475aaef97268e0d4ec99c7f58007595527233",
+      "artifactSizeBytes": 1823
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T16:53:41.625Z"
+}

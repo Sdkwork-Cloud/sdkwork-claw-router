@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17274,
+  "uuid": "skill-clawhub-clockify",
+  "skillKey": "clawhub-clockify",
+  "name": "Clockify",
+  "summary": "Clockify API integration with managed OAuth. Track time, manage projects, clients, tasks, and workspaces. Use this skill when users want to track time, creat...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clockify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Clockify API integration with managed OAuth",
+        "Track time, manage projects, clients, tasks, and workspaces",
+        "Use this skill when users want to track time, creat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clockify@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clockify",
+      "url": "https://clawhub.ai/skills/clockify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clockify",
+    "url": "https://clawhub.ai/skills/clockify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clockify-aef009194961b226.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clockify@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clockify-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70a636f42753218f80e826e7b8366a160e4e073be5c387b0fbe9744f8b6d7984",
+      "artifactSizeBytes": 2264
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T22:33:11.534Z"
+}

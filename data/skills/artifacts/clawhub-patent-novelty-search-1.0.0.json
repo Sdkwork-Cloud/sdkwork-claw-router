@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/patent-novelty-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patent_novelty_search",
+  "skill": {
+    "id": 26042,
+    "skillKey": "clawhub-patent-novelty-search",
+    "name": "patent-novelty-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patent-novelty-search",
+    "url": "https://clawhub.ai/skills/patent-novelty-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patent-novelty-search-d6b56037b6f4ba4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform patent novelty searches by analyzing technical solutions, retrieving and ranking related patents, comparing features, and generating a detailed novel..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaochaosz",
+      "userId": "s17aqnhgyt2gmfqt1j9zm7p2mx83wch8",
+      "displayName": "chaochaoSZ",
+      "image": "https://avatars.githubusercontent.com/u/39897272?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773799511995,
+      "changelog": "Patent Novelty Search Skill v1.0.0\n\n- Introduces an end-to-end workflow for patent novelty search, from initial user input through to generation of a professional novelty search report.\n- Supports structured input processing to extract core technical elements (problem, means, effect).\n- Provides guidelines for technical feature extraction and formatting.\n- Details step-by-step procedures for patent retrieval, emphasizing the use of Google Patents and structured search strategies.\n- Implements similarity ranking and comparison analysis of retrieved patents with comprehensive output formats.\n- Outputs feature comparison tables and final search reports compiled in Word document format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1db17ea42906f419bcdccb1aa104ecb11cbb0ae26ed8cddffab2f3b9dee64d2"
+}

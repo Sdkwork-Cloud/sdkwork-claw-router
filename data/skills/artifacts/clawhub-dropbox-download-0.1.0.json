@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dropbox-download@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dropbox_download",
+  "skill": {
+    "id": 43092,
+    "skillKey": "clawhub-dropbox-download",
+    "name": "Dropbox Download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dropbox-download",
+    "url": "https://clawhub.ai/skills/dropbox-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dropbox-download-04636d421b69ad67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download a file from Dropbox by providing its file path, returning the file content as binary data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "foundergraph",
+      "userId": "s171sj1ta2zrxe3r45rrrwtfsn83wf4f",
+      "displayName": "foundergraph",
+      "image": "https://avatars.githubusercontent.com/u/215341799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775190600004,
+      "changelog": "Initial release: Enables downloading files from Dropbox via API.\n\n- Download files from Dropbox by specifying their path.\n- Optionally support revision identifier (deprecated; recommend specifying in path).\n- Returns file content as binary data.\n- Requires Dropbox OAuth2 integration with files.content.read scope.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46ceb90338246031acf8b5138b8ed396253ac5cea968fc68b7121a8ee9242bf9"
+}

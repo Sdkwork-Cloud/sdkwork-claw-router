@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32714,
+  "uuid": "skill-clawhub-typeflowai",
+  "skillKey": "clawhub-typeflowai",
+  "name": "Typeflowai",
+  "summary": "TypeflowAI integration. Manage data, records, and automate workflows. Use when the user wants to interact with TypeflowAI data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.typeflowai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "TypeflowAI integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with TypeflowAI data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/typeflowai@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "typeflowai",
+      "url": "https://clawhub.ai/skills/typeflowai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "typeflowai",
+    "url": "https://clawhub.ai/skills/typeflowai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/typeflowai-e2175d9cc28bfc9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/typeflowai@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-typeflowai-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b06664da1d6ce75668246f7a8041564aaac4e919082436d210d24015a6b30fb",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:56:24.330Z"
+}

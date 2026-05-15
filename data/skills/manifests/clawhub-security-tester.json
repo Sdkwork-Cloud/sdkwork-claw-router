@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43884,
+  "uuid": "skill-clawhub-security-tester",
+  "skillKey": "clawhub-security-tester",
+  "name": "Security Tester",
+  "summary": "Security testing for web applications and APIs based on OWASP standards. Identify common vulnerabilities (injection, auth bypass, XSS, CSRF, IDOR), generate...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_tester",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhanghengyi1986-afk",
+      "features": [
+        "Security testing for web applications and APIs based on OWASP standards",
+        "Identify common vulnerabilities (injection, auth bypass, XSS, CSRF, IDOR), generate..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-tester@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266693384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-tester",
+      "url": "https://clawhub.ai/skills/security-tester"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-tester",
+    "url": "https://clawhub.ai/skills/security-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-tester-b303fb6481199cfa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-tester@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-tester-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28d2a34c34506fdb59c41113329789aed9e412544d33c575f7016323fc6653bb",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T02:51:42.876Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wecom-meeting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wecom_meeting",
+  "skill": {
+    "id": 69191,
+    "skillKey": "clawhub-wecom-meeting",
+    "name": "wecom-meeting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wecom-meeting",
+    "url": "https://clawhub.ai/skills/wecom-meeting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wecom-meeting-dc70d7e2af771a85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业微信会议管理工具。用于创建、查询、取消和管理企业微信预约会议。支持创建预约会议、获取会议详情、取消会议、获取成员会议列表等操作。使用企业微信会议API需要配置CorpID、Secret和AgentID。当用户需要创建企业微信会议、查询会议信息、取消会议或管理会议时使用此Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "limawanyan",
+      "userId": "publishers:limawanyan",
+      "displayName": "limawanyan",
+      "image": "https://avatars.githubusercontent.com/u/48382427?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 514,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773125422799,
+      "changelog": "wecom-meeting v1.0.0\n\n- 首次发布，支持通过企业微信API进行会议预约与管理\n- 实现会议的创建、详情获取、取消、参会人会议列表查询\n- 提供命令行脚本及Python类调用方式\n- 支持定制化的会议时间、参会人和会议提醒\n- 附带常见错误解释、权限配置说明和示例用法",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31751ea7567e009740dd4d116d33a24a4dd54573b45d8dab0da8f2c2820f117c"
+}

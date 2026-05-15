@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39410,
+  "uuid": "skill-clawhub-ontraport-integration",
+  "skillKey": "clawhub-ontraport-integration",
+  "name": "Ontraport",
+  "summary": "Ontraport integration. Manage Persons, Organizations, Deals, Projects, Activities, Notes and more. Use when the user wants to interact with Ontraport data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ontraport_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Ontraport integration",
+        "Manage Persons, Organizations, Deals, Projects, Activities, Notes and more",
+        "Use when the user wants to interact with Ontraport data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ontraport-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ontraport-integration",
+      "url": "https://clawhub.ai/skills/ontraport-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ontraport-integration",
+    "url": "https://clawhub.ai/skills/ontraport-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ontraport-integration-f3f9f3f933079749.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ontraport-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ontraport-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:921491317205db1f6af1712f811b690d9c6c37873b2834e9084b106872258064",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:19:36.868Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58656,
+  "uuid": "skill-clawhub-drop-caches-cleanup",
+  "skillKey": "clawhub-drop-caches-cleanup",
+  "name": "Drop Caches Cleanup",
+  "summary": "一键清理系统内存（RAM）/ One-click system memory cleanup. 当用户说\"清理内存\"、\"释放内存\"、\"一键清理\"、\"drop caches\"、\"内存太高\"、\"卡\"、\"慢\" / \"clear memory\"、\"free memory\"、\"memory cleanup\"、\"system...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drop_caches_cleanup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aaroncxxx",
+      "features": [
+        "一键清理系统内存（RAM）/ One-click system memory cleanup",
+        "当用户说\"清理内存\"、\"释放内存\"、\"一键清理\"、\"drop caches\"、\"内存太高\"、\"卡\"、\"慢\" / \"clear memory\"、\"free memory\"、\"memory cl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drop-caches-cleanup@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255621878?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drop-caches-cleanup",
+      "url": "https://clawhub.ai/skills/drop-caches-cleanup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drop-caches-cleanup",
+    "url": "https://clawhub.ai/skills/drop-caches-cleanup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drop-caches-cleanup-30521af6d7af6ddc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drop-caches-cleanup@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-drop-caches-cleanup-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1d2bbbb69358b6a3a821cb792faecf433c35c7187189cc0ae644c10c2383e15",
+      "artifactSizeBytes": 2176
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T02:54:10.758Z"
+}

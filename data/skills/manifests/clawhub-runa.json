@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35620,
+  "uuid": "skill-clawhub-runa",
+  "skillKey": "clawhub-runa",
+  "name": "Runa",
+  "summary": "Save, search, list, update, and delete bookmarks and text notes in Runa. Use when the user wants to bookmark a URL, save text/thoughts/snippets, find a saved...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "imprakharshukla",
+      "features": [
+        "Save, search, list, update, and delete bookmarks and text notes in Runa",
+        "Use when the user wants to bookmark a URL, save text/thoughts/snippets, find a saved..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/runa@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39938009?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "runa",
+      "url": "https://clawhub.ai/skills/runa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runa",
+    "url": "https://clawhub.ai/skills/runa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runa-f33c7a4fbfb5dc36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/runa@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-runa-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c28bb6d38ac97bc3beb82e7f150cb795fe7daf5513ce7de284c0ac66942631d",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T00:16:52.172Z"
+}

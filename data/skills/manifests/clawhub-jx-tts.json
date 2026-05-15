@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39121,
+  "uuid": "skill-clawhub-jx-tts",
+  "skillKey": "clawhub-jx-tts",
+  "name": "tts",
+  "summary": "Convert text to speech using SkillBoss API Hub. Use when the user asks for an audio message, a voice reply, or to hear something \"of vive voix\".",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jx_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KirkRaman",
+      "features": [
+        "Convert text to speech using SkillBoss API Hub",
+        "Use when the user asks for an audio message, a voice reply, or to hear something \"of vive voix\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jx-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255880392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jx-tts",
+      "url": "https://clawhub.ai/skills/jx-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jx-tts",
+    "url": "https://clawhub.ai/skills/jx-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jx-tts-d55dd4fcb3d67ee0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jx-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jx-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:259e5bd6e6534e030e395e2bccc015dfb77dcd237dd6d0f60edc3ec36da2370e",
+      "artifactSizeBytes": 2160
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T11:14:24.416Z"
+}

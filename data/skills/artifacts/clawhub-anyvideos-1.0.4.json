@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anyvideos@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anyvideos",
+  "skill": {
+    "id": 25822,
+    "skillKey": "clawhub-anyvideos",
+    "name": "anyvideos"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anyvideos",
+    "url": "https://clawhub.ai/skills/anyvideos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anyvideos-fe14cb66bfe9c71b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download videos, images, and audio from YouTube, Twitter, Instagram, Facebook, Vimeo, Tumblr, TikTok, Bilibili, and 1000+ more websites. Just paste a URL and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mstscmsn",
+      "userId": "publishers:mstscmsn",
+      "displayName": "mstsc",
+      "image": "https://avatars.githubusercontent.com/u/150656582?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773986641508,
+      "changelog": "- Added an immediate welcome and setup message for new users, including signup instructions and a free download offer.\n- Now blocks all download requests until the API key is set, with clear instructions to the user.\n- The first-time user setup flow is updated to emphasize the 5 free downloads and guide API key configuration.\n- No changes to functionality or API usage—improvements focus on onboarding clarity and user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bfa48cb5047593e8af7e4a61230d541ccd4af0a276d75e2a5f7ddeb680140067"
+}

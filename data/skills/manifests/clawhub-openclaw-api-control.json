@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28261,
+  "uuid": "skill-clawhub-openclaw-api-control",
+  "skillKey": "clawhub-openclaw-api-control",
+  "name": "OpenClaw API Control",
+  "summary": "Control a hosted OpenClaw instance through the OpenClaw as a Service API. Use when the user asks to talk to OpenClaw over API, send a folder or file to OpenC...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_api_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Florian Standhartinger",
+      "features": [
+        "Control a hosted OpenClaw instance through the OpenClaw as a Service API",
+        "Use when the user asks to talk to OpenClaw over API, send a folder or file to OpenC..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-api-control@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1905188?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-api-control",
+      "url": "https://clawhub.ai/skills/openclaw-api-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-api-control",
+    "url": "https://clawhub.ai/skills/openclaw-api-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-api-control-2ea2252b577346f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-api-control@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-api-control-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b153c0ed434f3a58b8361ebf7d0019da934dd314999481d624db80247d83836e",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T19:09:30.732Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-model-router@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_model_router",
+  "skill": {
+    "id": 21885,
+    "skillKey": "clawhub-ai-model-router",
+    "name": "Ai Model Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-model-router",
+    "url": "https://clawhub.ai/skills/ai-model-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-model-router-69609b93d8c34e99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically routes requests between two configured AI models based on task complexity, privacy needs, and user preferences for optimized AI usage."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuldrone",
+      "userId": "publishers:yuldrone",
+      "displayName": "yuldrone",
+      "image": "https://avatars.githubusercontent.com/u/179404292?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 482,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773626470554,
+      "changelog": "No changes detected in this release.\n\n- Version number and documentation remain unchanged.\n- No file or feature updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:495f66ee8ff13bf095825f0667e2639b0daeeabfd3862449a129903e4f3f2339"
+}

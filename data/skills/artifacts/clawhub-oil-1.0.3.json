@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oil@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oil",
+  "skill": {
+    "id": 67952,
+    "skillKey": "clawhub-oil",
+    "name": "Today's Oil Price - 今日油价"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oil",
+    "url": "https://clawhub.ai/skills/oil",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oil-ab7902bcbd91137e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询各省市汽柴油参考价，可查省市列表。当用户说：今天北京 92 号油价多少？山东柴油什么价？或类似油价问题时，使用本技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jisuapi",
+      "userId": "s174fh1b14sn7vkvbqwsdn0xtd83gz5h",
+      "displayName": "极速数据",
+      "image": "https://avatars.githubusercontent.com/u/30516426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 610,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 9,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775209494641,
+      "changelog": "- 简化并优化了技能名称与描述，突出油价查询及省市列表功能。\n- 统一“前置配置”说明，改为更为直观的步骤引导。\n- API 申请说明精简，重点突出核心操作入口。\n- 明确场景举例，让用户更易理解技能用途和调用方式。\n- 无脚本或功能变动，仅文档内容微调，更友好易用。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e37cdea78b4dd36a6a0370d76a57910462357a2cf2e74c652533a6970deaf6eb"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22622,
+  "uuid": "skill-clawhub-skill-qr-card",
+  "skillKey": "clawhub-skill-qr-card",
+  "name": "Skill QR Card",
+  "summary": "Generate styled QR images/cards for ClawHub skills so users can scan and install instantly. Supports install-command payloads, ClawHub links, and GitHub link...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_qr_card",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jack Lee",
+      "features": [
+        "Generate styled QR images/cards for ClawHub skills so users can scan and install instantly",
+        "Supports install-command payloads, ClawHub links, and GitHub link..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-qr-card@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20477587?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-qr-card",
+      "url": "https://clawhub.ai/skills/skill-qr-card"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-qr-card",
+    "url": "https://clawhub.ai/skills/skill-qr-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-qr-card-e48711f8e19ea22e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-qr-card@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-qr-card-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aac18e064f3077e5cd6357ba0b4082ba81cae3287827e230ee010e5f18e788a9",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T09:35:50.307Z"
+}

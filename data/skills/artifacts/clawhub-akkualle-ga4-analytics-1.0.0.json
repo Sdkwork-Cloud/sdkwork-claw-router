@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/akkualle-ga4-analytics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.akkualle_ga4_analytics",
+  "skill": {
+    "id": 52235,
+    "skillKey": "clawhub-akkualle-ga4-analytics",
+    "name": "Google Analytics 4 Analytics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "akkualle-ga4-analytics",
+    "url": "https://clawhub.ai/skills/akkualle-ga4-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/akkualle-ga4-analytics-5a5b9f05e4605bbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ruft Google Analytics 4 Daten für akku-alle.de ab - Seitenaufrufe, Nutzer, Sessions, Top-Seiten und Traffic-Quellen. Nutze das shell Tool um /root/.openclaw/..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "akkualle",
+      "userId": "s177jjpb6bm7wbz5sm80pd8n1h83m63a",
+      "displayName": "Akkualle",
+      "image": "https://avatars.githubusercontent.com/u/257129674?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774610196663,
+      "changelog": "GA4 data extraction - sessions, users, pageviews, traffic sources",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7715ca324e63c1c7668ebeb88eb99fbf08e84cc16125eb11b0f8ce24e76dde89"
+}

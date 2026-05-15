@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hz-proactive-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hz_proactive_agent",
+  "skill": {
+    "id": 17328,
+    "skillKey": "clawhub-hz-proactive-agent",
+    "name": "Huizai Proactive Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hz-proactive-agent",
+    "url": "https://clawhub.ai/skills/hz-proactive-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hz-proactive-agent-d30d4238066c9fca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform AI agents from task-followers into proactive partners that anticipate needs and continuously improve. Now with WAL Protocol, Working Buffer, Autono..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lidekahdjdhdhsjjs-lang",
+      "userId": "publishers:lidekahdjdhdhsjjs-lang",
+      "displayName": "lidekahdjdhdhsjjs-lang",
+      "image": "https://avatars.githubusercontent.com/u/248733544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 760,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771755112684,
+      "changelog": "Version 3.1.0 brings major new autonomy, memory, and reliability features to Proactive Agent.\n\n- Adds \"Autonomous vs Prompted Crons\" guidance, clarifying when to use `systemEvent` or `isolated agentTurn`\n- Introduces \"Verify Implementation, Not Intent\"—focus on mechanism validation, not just intent\n- Includes a \"Tool Migration Checklist\" for safely updating tool dependencies\n- Expanded documentation for all new features and protocols\n- Retains robust memory architecture, security, and proactive self-improvement features from 3.0.0",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:996a3bcdc1275b1b6e77d140f33194e0f93aee4188647bd58391a1132ab574be"
+}

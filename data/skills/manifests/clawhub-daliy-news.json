@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18490,
+  "uuid": "skill-clawhub-daliy-news",
+  "skillKey": "clawhub-daliy-news",
+  "name": "Daily News",
+  "summary": "Use when users need daily news summaries, current events, or want to stay informed about world news in Chinese.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daliy_news",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JaceyMarvin99",
+      "features": [
+        "Use when users need daily news summaries, current events, or want to stay informed about world."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daliy-news@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73216966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daliy-news",
+      "url": "https://clawhub.ai/skills/daliy-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daliy-news",
+    "url": "https://clawhub.ai/skills/daliy-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daliy-news-4f6ce4872122d05d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daliy-news@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daliy-news-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:881bbc7abfc3d367c1c1efff7a3db82e31a8c809033bbb4c558356f37175221e",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T05:12:42.519Z"
+}

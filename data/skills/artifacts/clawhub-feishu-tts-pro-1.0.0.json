@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-tts-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_tts_pro",
+  "skill": {
+    "id": 66638,
+    "skillKey": "clawhub-feishu-tts-pro",
+    "name": "飞书TTS Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-tts-pro",
+    "url": "https://clawhub.ai/skills/feishu-tts-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-tts-pro-49c8178e07b35107.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将文字转换为语音并以飞书语音气泡消息发送。使用 Edge-TTS（微软，免费，无限次）生成中文语音，FFmpeg 转码为 ogg/opus，上传到飞书作为 audio 类型消息。支持自定义音色、接收者和 Python 环境。当用户要求用语音回复、发语音消息、TTS 朗读内容时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "minybear",
+      "userId": "s17328a85q88qrm4k1c8pz7qqx85qxmh",
+      "displayName": "minybear",
+      "image": "https://avatars.githubusercontent.com/u/54667053?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777373135437,
+      "changelog": "- Initial release of feishu-tts-pro.\n- Converts Chinese text to speech and sends as Feishu audio bubble messages.\n- Uses Edge-TTS for TTS generation, FFmpeg for audio conversion to ogg/opus.\n- Supports custom voice, recipient selection, and Python environment configuration.\n- Requires environment variables for Feishu API and voice settings.\n- Includes usage guidance, troubleshooting tips, and installation instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:15c6bb93b6f11bf4a52f09122a5764da79814d707c78fb1a5026655102b66814"
+}

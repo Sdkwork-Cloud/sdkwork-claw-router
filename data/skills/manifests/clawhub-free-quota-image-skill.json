@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21004,
+  "uuid": "skill-clawhub-free-quota-image-skill",
+  "skillKey": "clawhub-free-quota-image-skill",
+  "name": "free quota text to image",
+  "summary": "Generate images from text with a free-quota-first multi-provider workflow. Use this skill when a user asks for text-to-image generation that needs provider r...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_quota_image_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChiayenGu",
+      "features": [
+        "Generate images from text with a free-quota-first multi-provider workflow",
+        "Use this skill when a user asks for text-to-image generation that needs provider r..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-quota-image-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47971475?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-quota-image-skill",
+      "url": "https://clawhub.ai/skills/free-quota-image-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-quota-image-skill",
+    "url": "https://clawhub.ai/skills/free-quota-image-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-quota-image-skill-102943bc51e51b59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-quota-image-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-quota-image-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08bc33802cbb551333dd2e2647f7435a7ab1363d468b365e5c7c6a10fda0e9db",
+      "artifactSizeBytes": 2456
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T16:28:39.275Z"
+}

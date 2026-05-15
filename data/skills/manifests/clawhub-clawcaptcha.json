@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52369,
+  "uuid": "skill-clawhub-clawcaptcha",
+  "skillKey": "clawhub-clawcaptcha",
+  "name": "ClawCaptcha",
+  "summary": "CAPTCHA solving service for AI agents — solve reCAPTCHA, hCaptcha, Cloudflare Turnstile, FunCaptcha, and image CAPTCHAs automatically.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawcaptcha",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lime",
+      "features": [
+        "CAPTCHA solving service for AI agents — solve reCAPTCHA, hCaptcha, Cloudflare Turnstile, FunCap."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawcaptcha@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7406269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawcaptcha",
+      "url": "https://clawhub.ai/skills/clawcaptcha"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawcaptcha",
+    "url": "https://clawhub.ai/skills/clawcaptcha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawcaptcha-8c7781102137ec0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawcaptcha@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawcaptcha-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3b0918f450b2c3afae0fff00d6313ff51449800b73e26560d463ef8b893ca81",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:02:53.124Z"
+}

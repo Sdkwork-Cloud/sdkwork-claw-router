@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-knowledge-qa@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_knowledge_qa",
+  "skill": {
+    "id": 58671,
+    "skillKey": "clawhub-ai-knowledge-qa",
+    "name": "Ai Intelligent Knowledge Qa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-knowledge-qa",
+    "url": "https://clawhub.ai/skills/ai-knowledge-qa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-knowledge-qa-db16713ff2997c26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "知识问答，FAQ + 智能检索 + AI 问答。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774774956111,
+      "changelog": "Initial release of AI 智能知识问答系统.\n\n- 提供 FAQ 管理、智能语义检索和 GPT 集成问答功能\n- 支持多渠道接入：Web、微信与 API\n- 包含数据分析与问答统计模块\n- 提供基础、专业与企业三种定价版本\n- 适用于智能客服、知识管理、内部问答和产品支持场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3658ea378fddad1896fbb9d9bf5a4e73124c16276ca3878df42519403598e036"
+}

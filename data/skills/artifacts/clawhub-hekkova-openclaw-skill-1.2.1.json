@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hekkova-openclaw-skill@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hekkova_openclaw_skill",
+  "skill": {
+    "id": 37313,
+    "skillKey": "clawhub-hekkova-openclaw-skill",
+    "name": "Hekkova Openclaw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hekkova-openclaw-skill",
+    "url": "https://clawhub.ai/skills/hekkova-openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hekkova-openclaw-skill-5fb78e35ec393b5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Permanent memory layer for AI agents. Mint moments to the blockchain via MCP."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hekkova",
+      "userId": "s172swy64vp5phtv1pxc85kdj983tdxt",
+      "displayName": "Hekkova",
+      "image": "https://avatars.githubusercontent.com/u/269852808?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1775531271436,
+      "changelog": "Add Filecoin cold archival documentation and clarify infrastructure-independent recovery path",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:141281fbb395ac74a712329065f672e7e57e1cb612a670481e157b12496a5da8"
+}

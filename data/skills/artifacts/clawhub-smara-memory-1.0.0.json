@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smara-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smara_memory",
+  "skill": {
+    "id": 54725,
+    "skillKey": "clawhub-smara-memory",
+    "name": "Smara Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smara-memory",
+    "url": "https://clawhub.ai/skills/smara-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smara-memory-5fac77a8895b3673.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent memory for AI agents — store, search, and recall user context via the Smara Memory API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parallelromb",
+      "userId": "s179y88qpy2xvzsgcjgbxj27vx83wwvy",
+      "displayName": "parallelromb",
+      "image": "https://avatars.githubusercontent.com/u/20191056?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774842878104,
+      "changelog": "Initial release — store, search, context, delete memories via Smara API. Ebbinghaus decay scoring, contradiction detection, zero infrastructure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:908835daccd3045a3ebbec6859e241510282e6c01974f26439363ccc27a88810"
+}

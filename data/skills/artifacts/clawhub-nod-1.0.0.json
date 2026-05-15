@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nod@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nod",
+  "skill": {
+    "id": 17566,
+    "skillKey": "clawhub-nod",
+    "name": "Nod"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nod",
+    "url": "https://clawhub.ai/skills/nod",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nod-4043d35e7dd415e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find and connect with professionals, experts, freelancers, and business contacts. Search people by role, skill, location, or intent. Send introductions and m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yoannarz",
+      "userId": "publishers:yoannarz",
+      "displayName": "Yoann a.",
+      "image": "https://avatars.githubusercontent.com/u/182226389?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 567,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771538965980,
+      "changelog": "Initial release of Nod skill — professional networking for AI agents.\n\n- Search for professionals by role, skill, location, or intent using natural language queries.\n- View public profiles, including headline, bio, location, social links, and nod count.\n- Express mutual professional interest (\"nod\") to unlock messaging.\n- Send direct messages to connections, limited to 10 per day.\n- Browse your inbox or view specific conversation threads.\n- Authentication is required for nodding, messaging, and viewing inbox; search and profile view are public.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5da901d47f6d4d13d78686d37bb98c57f4a0cb68d6bd3022604388732806cde0"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22847,
+  "uuid": "skill-clawhub-tomoviee-image-recognition",
+  "skillKey": "clawhub-tomoviee-image-recognition",
+  "name": "Tomoviee Image Recognition",
+  "summary": "Auto-generate masks for objects/regions in images. Use when users request image_recognition operations or related tasks.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tomoviee_image_recognition",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wondershare-boop",
+      "features": [
+        "Auto-generate masks for objects/regions in images",
+        "Use when users request image_recognition operations or related tasks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tomoviee-image-recognition@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208894930?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tomoviee-image-recognition",
+      "url": "https://clawhub.ai/skills/tomoviee-image-recognition"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tomoviee-image-recognition",
+    "url": "https://clawhub.ai/skills/tomoviee-image-recognition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tomoviee-image-recognition-74f1780b8f9a54b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tomoviee-image-recognition@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tomoviee-image-recognition-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7bbedb4dfd0419e867546dc94b79d39c37ecc0d6607ca0520d861f41e360a4e",
+      "artifactSizeBytes": 2145
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T14:37:53.602Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-cost-guard@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_cost_guard",
+  "skill": {
+    "id": 41206,
+    "skillKey": "clawhub-skylv-cost-guard",
+    "name": "Skylv Cost Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-cost-guard",
+    "url": "https://clawhub.ai/skills/skylv-cost-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-cost-guard-bef93bd1b6b44964.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors and optimizes AI API usage costs across multiple providers"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776487018555,
+      "changelog": "- Added frontmatter with description, keywords, name, and triggers for improved metadata.\n- Appended a new \"Usage\" section with step-by-step instructions.\n- No changes to core features, functionality, or CLI examples.\n- Previous content and skill documentation remain intact.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca68ba768a39c496e3e4744aa439cba4acf327bab00f6b096599542268b7d3c5"
+}

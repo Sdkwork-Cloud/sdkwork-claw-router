@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-ai-safety-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_ai_safety_audit",
+  "skill": {
+    "id": 20446,
+    "skillKey": "clawhub-afrexai-ai-safety-audit",
+    "name": "AI Safety Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-ai-safety-audit",
+    "url": "https://clawhub.ai/skills/afrexai-ai-safety-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-ai-safety-audit-74c13a97a6ac50b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs a comprehensive AI safety audit mapping systems to EU AI Act risk tiers, assessing 30 controls across six domains, and generating a 90-day remediati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 555,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771605898549,
+      "changelog": "Initial release — comprehensive AI safety and alignment audit framework for business AI deployments.\n\n- Provides structured audits aligned with UK AI Safety Institute, EU AI Act, and NIST AI RMF standards.\n- Assesses 30 safety controls across 6 critical domains, scoring implementation with clear risk tiers.\n- Delivers executive summary, detailed scorecard, prioritized gap analysis, 90-day compliance roadmap, and board-ready reporting.\n- Includes industry-specific adjustments for tailored control weighting.\n- Maps out regulatory requirements and estimated compliance costs.\n- Offers supporting tools for revenue risk estimation and rapid deployment of safety controls.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d7c1229c37429199f9297b04eb58b3edd696145f0e1f3d9d7c7083be03bc3c49"
+}

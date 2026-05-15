@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36848,
+  "uuid": "skill-clawhub-timetastic",
+  "skillKey": "clawhub-timetastic",
+  "name": "Timetastic",
+  "summary": "Timetastic integration. Manage data, records, and automate workflows. Use when the user wants to interact with Timetastic data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.timetastic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Timetastic integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Timetastic data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/timetastic@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "timetastic",
+      "url": "https://clawhub.ai/skills/timetastic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "timetastic",
+    "url": "https://clawhub.ai/skills/timetastic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/timetastic-573f895ab25d8567.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/timetastic@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-timetastic-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4604ef6c4815efa4ed081348ed19dfadbc2d171905a095d525de4658457215b",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:53:34.673Z"
+}

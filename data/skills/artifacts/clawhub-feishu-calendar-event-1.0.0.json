@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-calendar-event@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_calendar_event",
+  "skill": {
+    "id": 66514,
+    "skillKey": "clawhub-feishu-calendar-event",
+    "name": "feishu-calendar-event"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-calendar-event",
+    "url": "https://clawhub.ai/skills/feishu-calendar-event",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-calendar-event-7569271adc947f91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书日历管理技能，支持获取日历列表、查询、创建、更新、删除日程事件及设置重复和多级提醒。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teweitao",
+      "userId": "s17am0ynpnjntg3ggyb49zjcj583h0x8",
+      "displayName": "TEweitao",
+      "image": "https://avatars.githubusercontent.com/u/133971480?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1248,
+      "installsAllTime": 9,
+      "installsCurrent": 7,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772363572328,
+      "changelog": "Initial release with new, streamlined codebase and Chinese documentation.\n\n- Replaced previous scripts and meta files with a concise client implementation (calendar-client.js) and usage examples (example.md)\n- Removed legacy routines and test scripts for calendar operations\n- Provided comprehensive Chinese documentation covering features, setup, API usage, timezones, reminders, and error handling\n- Core features: list calendars, query/create/update/delete events, support for recurring rules, multiple reminders, full timezone & all-day handling",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8f4e73a66981c649584bd8662362cbbe779aa32ebd233de429bba34614e31a7c"
+}

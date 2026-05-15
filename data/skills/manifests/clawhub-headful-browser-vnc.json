@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29235,
+  "uuid": "skill-clawhub-headful-browser-vnc",
+  "skillKey": "clawhub-headful-browser-vnc",
+  "name": "Headful Browser (VNC)",
+  "summary": "Headful Chromium with VNC/noVNC operator UI and Chrome CDP exports (cookies, screenshots, outerHTML).",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.headful_browser_vnc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WaylonSong",
+      "features": [
+        "Headful Chromium with VNC/noVNC operator UI and Chrome CDP exports (cookies, screenshots, outer."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/headful-browser-vnc@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9860460?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "headful-browser-vnc",
+      "url": "https://clawhub.ai/skills/headful-browser-vnc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "headful-browser-vnc",
+    "url": "https://clawhub.ai/skills/headful-browser-vnc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/headful-browser-vnc-c22db56f56e4af6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/headful-browser-vnc@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-headful-browser-vnc-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5904b1f3b3023ac46974ce86087e8032b6d878643ac5460817dfd95edf78f03",
+      "artifactSizeBytes": 2328
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T05:35:54.402Z"
+}

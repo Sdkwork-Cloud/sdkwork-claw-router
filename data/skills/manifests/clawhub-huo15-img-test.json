@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59143,
+  "uuid": "skill-clawhub-huo15-img-test",
+  "skillKey": "clawhub-huo15-img-test",
+  "name": "Huo15 Img Test",
+  "summary": "火一五文生图提示词 v2.3 — 文生图&视频六件套：(1) enhance_prompt.py 文生图：88 风格预设 + 混合预设 (-p A+B --mix 0.6) + 五锁一致性 + 角色设定图 + 系列批量 + basic/pro/master 三档；(2) enhance_video.py 视频提示...",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_img_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Job Zhao",
+      "features": [
+        "火一五文生图提示词 v2.3 — 文生图&视频六件套：(1) enhance_prompt.py 文生图：88 风格预设 + 混合预设 (-p A+B --mix 0.6) + 五锁一致性."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huo15-img-test@2.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13188275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huo15-img-test",
+      "url": "https://clawhub.ai/skills/huo15-img-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-img-test",
+    "url": "https://clawhub.ai/skills/huo15-img-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-img-test-4021137476aeaf7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huo15-img-test@2.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-huo15-img-test-2.3.0.json",
+      "version": "2.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:596d61c525d0353f3b966f610acc69371a73c3f72ac6ef4871523332abdf1ada",
+      "artifactSizeBytes": 2696
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T14:26:20.189Z"
+}

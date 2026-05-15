@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53163,
+  "uuid": "skill-clawhub-klaus-processos-br",
+  "skillKey": "clawhub-klaus-processos-br",
+  "name": "Klaus Processos Br",
+  "summary": "Consulta processos judiciais brasileiros (Brasil) via API Pública do DataJud (CNJ)",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.klaus_processos_br",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "runawaydevil",
+      "features": [
+        "Consulta processos judiciais brasileiros (Brasil) via API Pública do DataJud (CNJ)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/klaus-processos-br@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8763225?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "klaus-processos-br",
+      "url": "https://clawhub.ai/skills/klaus-processos-br"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "klaus-processos-br",
+    "url": "https://clawhub.ai/skills/klaus-processos-br",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/klaus-processos-br-9c11b2b232960697.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/klaus-processos-br@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-klaus-processos-br-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0946cc4dba3087edd78f04306d0099456282949e8565a164f38489d6fb0b1ff1",
+      "artifactSizeBytes": 2296
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T15:33:53.114Z"
+}

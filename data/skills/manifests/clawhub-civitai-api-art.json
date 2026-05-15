@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15340,
+  "uuid": "skill-clawhub-civitai-api-art",
+  "skillKey": "clawhub-civitai-api-art",
+  "name": "Civitai Generation API",
+  "summary": "Generate AI images from prompts using CivitAI's JavaScript SDK with customizable models, samplers, seeds, steps, LoRA, and output options.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.civitai_api_art",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shinnpuru",
+      "features": [
+        "Generate AI images from prompts using CivitAI's JavaScript SDK with customizable models, sample."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/civitai-api-art@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89232015?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "civitai-api-art",
+      "url": "https://clawhub.ai/skills/civitai-api-art"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "civitai-api-art",
+    "url": "https://clawhub.ai/skills/civitai-api-art",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/civitai-api-art-47b2132f0a5d9eb9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/civitai-api-art@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-civitai-api-art-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65abd467f1a01c4e032c9572bd40694e691f6bbb8c995df28f0c888a9440f1f7",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T03:02:35.567Z"
+}

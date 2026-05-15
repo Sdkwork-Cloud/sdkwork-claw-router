@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-system-tavily-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_system_tavily_research",
+  "skill": {
+    "id": 39202,
+    "skillKey": "clawhub-content-system-tavily-research",
+    "name": "Tavily Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-system-tavily-research",
+    "url": "https://clawhub.ai/skills/content-system-tavily-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-system-tavily-research-4a3ecae26266ba55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conduct comprehensive AI-powered research with citations via the Tavily CLI. Use this skill when the user wants deep research, a detailed report, a compariso..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abigale-cyber",
+      "userId": "s177gvvwbgtc3ew8annt8ph3gx84c2xt",
+      "displayName": "Abigale-cyber",
+      "image": "https://avatars.githubusercontent.com/u/237663252?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775613627992,
+      "changelog": "Publish auxiliary content-system skills",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7fde9f5e6d298a1b929ceea9c306d40516972bcbdd742a80cbc67b91cbbc566"
+}

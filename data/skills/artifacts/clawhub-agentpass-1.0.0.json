@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentpass@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentpass",
+  "skill": {
+    "id": 41244,
+    "skillKey": "clawhub-agentpass",
+    "name": "agentpass"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentpass",
+    "url": "https://clawhub.ai/skills/agentpass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentpass-d2625741204f0996.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Home Assistant devices through the agentpass security gateway. Use when the user asks to control lights, switches, sensors, climate, or any smart hom..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "torbenwetter",
+      "userId": "s178fa0ry3zezr3c59wr1fsd2h840ef9",
+      "displayName": "TorbenWetter",
+      "image": "https://avatars.githubusercontent.com/u/20714088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775038161991,
+      "changelog": "Initial release of agentpass — a secure gateway for Home Assistant control.\n\n- Enables read-only Home Assistant queries instantly.\n- Executes state-changing actions (e.g., turning devices on/off) only after human approval via Telegram.\n- Blocks sensitive actions for up to 15 minutes, awaiting approval or denial.\n- Provides commands to get entity states, list services, check history, and call services with strong access control.\n- Certain risky actions (custom event firing, lock control) are always denied.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b354dd209e37d6a4480544707aeb03ee859ee9e4414dcc2e6d1d9ddf08a71045"
+}

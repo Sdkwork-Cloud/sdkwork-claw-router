@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62135,
+  "uuid": "skill-clawhub-ctyun",
+  "skillKey": "clawhub-ctyun",
+  "name": "ctyun-cli-天翼云-命令行",
+  "summary": "天翼云CLI工具 - 企业级命令行工具，帮助您轻松管理天翼云资源。支持ECS、VPC、EBS、ELB、CCE、Redis、Kafka、CSS、EMR、监控、账务等15+服务模块，覆盖311+个API，217+个命令。",
+  "version": "1.12.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctyun",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fengyucn",
+      "features": [
+        "天翼云CLI工具",
+        "企业级命令行工具，帮助您轻松管理天翼云资源。支持ECS、VPC、EBS、ELB、CCE、Redis、Kafka、CSS、EMR、监控、账务等15+服务模块，覆盖311+个API，217+个命."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ctyun@1.12.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127462220?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ctyun",
+      "url": "https://clawhub.ai/skills/ctyun"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctyun",
+    "url": "https://clawhub.ai/skills/ctyun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctyun-4b1d518cb87ec169.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ctyun@1.12.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ctyun-1.12.0.json",
+      "version": "1.12.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4597e1821700fcc06415678a6ffbd754a6685238569eb99a0336778c89fd42aa",
+      "artifactSizeBytes": 2484
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T05:52:07.273Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/figure-legend-gen@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.figure_legend_gen",
+  "skill": {
+    "id": 20793,
+    "skillKey": "clawhub-figure-legend-gen",
+    "name": "Figure Legend Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "figure-legend-gen",
+    "url": "https://clawhub.ai/skills/figure-legend-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/figure-legend-gen-5d0e82a04c7fdc34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate standardized figure legends for scientific charts and graphs. Trigger when user uploads/requesting legend for research figures, academic papers, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 538,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773718532496,
+      "changelog": "No user-facing changes in this version.\n\n- No file or documentation changes detected.\n- Functionality and features remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3cfc7b551d2124b7c81ca8091b1677db44dbe9eeac6ed2e4525db28e093df117"
+}

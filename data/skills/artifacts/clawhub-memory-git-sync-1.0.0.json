@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-git-sync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_git_sync",
+  "skill": {
+    "id": 14779,
+    "skillKey": "clawhub-memory-git-sync",
+    "name": "Smart Git Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-git-sync",
+    "url": "https://clawhub.ai/skills/memory-git-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-git-sync-05bcb821a0522f19.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates the backup of the OpenClaw workspace to a remote Git repository. Handles large file exclusions, validates git configuration, and performs intelligent sync with conflict resolution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vemec",
+      "userId": "s170dxgwg7wbrtrax1ptgzccg583fskz",
+      "displayName": "vemec",
+      "image": "https://avatars.githubusercontent.com/u/839090?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 910,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770990610998,
+      "changelog": "Initial release of memory-git-sync — a skill to automate workspace backup and synchronization with a remote Git repository.\n\n- Validates local Git configuration, user identity, remote 'origin', and permissions before syncing.\n- Automatically detects and excludes large files (>95MB) to prevent push failures.\n- Stages, commits (using timestamped or custom messages), pulls, and pushes changes with intelligent conflict handling.\n- Outputs all actions with structured, prefix-based logs for easy status parsing.\n- Auto-configures branch upstream/tracking on initial push.\n- Includes fallback handling for common errors and recovery scenarios.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4b1269499f5defaf3ae4d4c2e0c901c6beff498177dcdc81b60c2582cfd41f86"
+}

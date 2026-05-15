@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20653,
+  "uuid": "skill-clawhub-claude-code-bridge",
+  "skillKey": "clawhub-claude-code-bridge",
+  "name": "claude-code-bridge",
+  "summary": "Bridges OpenClaw (QQ, Telegram, WeChat, and other messaging channels) to a persistent Claude Code CLI session running in a background tmux process. Enables s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Linghaoz",
+      "features": [
+        "Bridges OpenClaw (QQ, Telegram, WeChat, and other messaging channels) to a persistent Claude Co.",
+        "Enables s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-bridge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55875143?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-bridge",
+      "url": "https://clawhub.ai/skills/claude-code-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-bridge",
+    "url": "https://clawhub.ai/skills/claude-code-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-bridge-c9e467139b984e45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-bridge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-bridge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc42dd51bfccc5d509fa9d6221781d4ed02ab6d99b369badfc65dd7473efb073",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:27:13.631Z"
+}

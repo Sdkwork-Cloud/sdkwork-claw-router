@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12880,
+  "uuid": "skill-clawhub-bagman",
+  "skillKey": "clawhub-bagman",
+  "name": "Openclaw",
+  "summary": "Secure key management for AI agents. Use when handling private keys, API secrets, wallet credentials, or when building systems that need agent-controlled funds. Covers secure storage, session keys, leak prevention, prompt injection defense.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bagman",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zscole",
+      "features": [
+        "Secure key management for AI agents",
+        "Use when handling private keys, API secrets, wallet credentials, or when building systems that.",
+        "Covers secure storage, session keys, leak prevention, prompt injection defense, and MetaMask De."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bagman@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20308948?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bagman",
+      "url": "https://clawhub.ai/skills/bagman"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bagman",
+    "url": "https://clawhub.ai/skills/bagman",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bagman-5140f32df6bee17a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bagman@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bagman-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00d0fcf41cdb0a331f071194cb389aa9ad291bc2f78961486474354c5f19b026",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T17:20:30.396Z"
+}

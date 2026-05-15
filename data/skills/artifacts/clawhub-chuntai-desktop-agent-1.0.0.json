@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chuntai-desktop-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chuntai_desktop_agent",
+  "skill": {
+    "id": 69388,
+    "skillKey": "clawhub-chuntai-desktop-agent",
+    "name": "春登台桌面智能体"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chuntai-desktop-agent",
+    "url": "https://clawhub.ai/skills/chuntai-desktop-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chuntai-desktop-agent-8db06bf7c00f6aef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "桌面智能体自动化技能。执行需要操作电脑的多步骤任务时激活。 能力：屏幕截图、视觉分析、浏览器自动化、桌面键鼠控制、文件shell操作、跨域握手协议。 触发场景： - \"帮我自动完成XXX（需要操作电脑）\" - \"打开XX应用/网页，然后...\" - \"把桌面上的文件自动整理到...\" - \"自动登录XX网站并填入..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinxulin8899-dotcom",
+      "userId": "s173cdhvmkcrpgr4mewybkkja5850zkk",
+      "displayName": "jinxulin8899-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/266519740?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776443946080,
+      "changelog": "初始版本：双域架构 + 七条铁律 + 浏览器/桌面自动化工具",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3690e6d5136a623f7b9a1446a3ddfdf1c5fcaf47500baae44b64fde5921e6fd6"
+}

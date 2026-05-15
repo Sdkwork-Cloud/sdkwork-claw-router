@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/symbiont@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.symbiont",
+  "skill": {
+    "id": 16392,
+    "skillKey": "clawhub-symbiont",
+    "name": "Symbiont"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "symbiont",
+    "url": "https://clawhub.ai/skills/symbiont",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/symbiont-943ba292100b55c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Zero-trust AI agent governance for OpenClaw. Adds ORGA runtime, Cedar policy enforcement, SchemaPin tool verification, ClawHavoc skill scanning, and cryptogr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaschadub",
+      "userId": "publishers:jaschadub",
+      "displayName": "Jascha",
+      "image": "https://avatars.githubusercontent.com/u/768841?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 891,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774156405324,
+      "changelog": "1.1.0\n\nComplete rewrite. Now delivers the full Symbiont governance stack for OpenClaw, matching capabilities of symbi-claude-code and symbi-gemini-cli.\n\nThree governance tiers: Awareness (audit logging), Protection (deny list), Governance (Cedar policies)\nClawHavoc skill scanner with 40+ detection rules across 10 attack categories\nCedar policy creation, editing, and validation\nSchemaPin MCP tool schema verification (ECDSA P-256, TOFU pinning)\nSymbiont DSL agent definition authoring and validation\nCryptographic audit trails (JSONL)\nDual-mode architecture: standalone (Mode A) and ORGA-managed (Mode B)\nAgent personas: symbi-governor (default), symbi-dev (DSL specialist)\nCross-compatible .symbiont/local-policy.toml (works with Claude Code and Gemini CLI plugins)\nReference docs for Cedar patterns and DSL syntax\nCompanion SOUL.md on onlycrabs.ai",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:432f836fbd3a2b8324f83048c1ef1ff77a23ee6da593ae789785443818e07d7e"
+}

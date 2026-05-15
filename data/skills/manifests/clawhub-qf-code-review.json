@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28076,
+  "uuid": "skill-clawhub-qf-code-review",
+  "skillKey": "clawhub-qf-code-review",
+  "name": "AI Code Review",
+  "summary": "Provides detailed, prioritized code review feedback on security, performance, correctness, and maintainability issues for multiple major programming languages.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qf_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "371166758-qq",
+      "features": [
+        "Provides detailed, prioritized code review feedback on security, performance, correctness, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qf-code-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267607290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qf-code-review",
+      "url": "https://clawhub.ai/skills/qf-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qf-code-review",
+    "url": "https://clawhub.ai/skills/qf-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qf-code-review-d5de02afce5a2521.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qf-code-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qf-code-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71b054cfd27017a3f5fbac2fe70b6cc3f520510a6fd981efb0ef0c5758d88cb5",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:36:20.308Z"
+}

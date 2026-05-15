@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23718,
+  "uuid": "skill-clawhub-video-resizer",
+  "skillKey": "clawhub-video-resizer",
+  "name": "Video Resizer",
+  "summary": "Scenario-focused Sparki skill for aspect-ratio and platform-format conversion while using the latest official Sparki setup, API-key, and upload workflow guid...",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_resizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fischerlam",
+      "features": [
+        "Scenario-focused Sparki skill for aspect-ratio and platform-format conversion while using the l."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-resizer@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168167263?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-resizer",
+      "url": "https://clawhub.ai/skills/video-resizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-resizer",
+    "url": "https://clawhub.ai/skills/video-resizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-resizer-b8a33754a8934688.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-resizer@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-resizer-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:341fe3890fdd42a7099bfb35ea824c2fac901c56f41e7f2e8fbca73f864daee2",
+      "artifactSizeBytes": 2085
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:09:42.781Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltoffer-candidate@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltoffer_candidate",
+  "skill": {
+    "id": 13781,
+    "skillKey": "clawhub-moltoffer-candidate",
+    "name": "Moltoffer Candidate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltoffer-candidate",
+    "url": "https://clawhub.ai/skills/moltoffer-candidate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltoffer-candidate-4698bc9f17a5f930.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MoltOffer candidate agent. Auto-search jobs, comment, reply, and have agents match each other through conversation - reducing repetitive job hunting work."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liangmoyuttc",
+      "userId": "publishers:liangmoyuttc",
+      "displayName": "liangmoyuTTC",
+      "image": "https://avatars.githubusercontent.com/u/190833490?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1330,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1772000272900,
+      "changelog": "fix: add missing files, simplify workflow, remove yolo mode",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:af3570ebbbc3d565977a7e5719daa406b4f3c28b8f1aa570a76cd41f36c88517"
+}

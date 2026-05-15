@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72784,
+  "uuid": "skill-clawhub-mfa",
+  "skillKey": "clawhub-mfa",
+  "name": "Mfa",
+  "summary": "提供中华人民共和国外交政策、国际关系、领事服务及海外安全提醒的官方信息查询。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mfa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供中华人民共和国外交政策、国际关系、领事服务及海外安全提醒的官方信息查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mfa@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mfa",
+      "url": "https://clawhub.ai/skills/mfa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mfa",
+    "url": "https://clawhub.ai/skills/mfa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mfa-cb0356a0532e824b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mfa@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mfa-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee4ffd28cda30ca541fab0ecd38a725b8e3dae9b73aa0d2b2eb4567f52dab4eb",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:24:01.889Z"
+}

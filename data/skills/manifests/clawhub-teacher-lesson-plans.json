@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40609,
+  "uuid": "skill-clawhub-teacher-lesson-plans",
+  "skillKey": "clawhub-teacher-lesson-plans",
+  "name": "Teacher Lesson Plans (UK Curriculum)",
+  "summary": "Generate UK National Curriculum-aligned lesson plans, differentiated worksheets, assessment questions with mark schemes, and student report comments. Covers...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teacher_lesson_plans",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ExternalOS",
+      "features": [
+        "Generate UK National Curriculum-aligned lesson plans, differentiated worksheets, assessment que.",
+        "Covers..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/teacher-lesson-plans@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270515205?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "teacher-lesson-plans",
+      "url": "https://clawhub.ai/skills/teacher-lesson-plans"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teacher-lesson-plans",
+    "url": "https://clawhub.ai/skills/teacher-lesson-plans",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teacher-lesson-plans-25a7d8863a0b1a01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/teacher-lesson-plans@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-teacher-lesson-plans-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5aa85f541d141575e2aa565627cbfe0221964794a2030386aa75cfceca129d25",
+      "artifactSizeBytes": 2565
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T11:46:47.282Z"
+}

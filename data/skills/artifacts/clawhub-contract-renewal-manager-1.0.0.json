@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/contract-renewal-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contract_renewal_manager",
+  "skill": {
+    "id": 27993,
+    "skillKey": "clawhub-contract-renewal-manager",
+    "name": "Contract Renewal & Expiration Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contract-renewal-manager",
+    "url": "https://clawhub.ai/skills/contract-renewal-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contract-renewal-manager-dffe1ebbeeaf25cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage vendor contract renewals proactively with alerts, decision scoring, renegotiation prep, and documentation to avoid missed deadlines and optimize terms."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flynndavid",
+      "userId": "publishers:flynndavid",
+      "displayName": "flynndavid",
+      "image": "https://avatars.githubusercontent.com/u/11565009?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 336,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772576518039,
+      "changelog": "Initial release of Contract Renewal & Expiration Manager\n\n- Structured process to track and manage all vendor contract renewals.\n- Automated 90/60/30-day alert protocol for proactive renewal decisions and renegotiations.\n- Scoring-based decision framework to assess renewal, renegotiation, or replacement.\n- Renegotiation preparation package with market comparison and value analysis.\n- Renewal and escalation documentation templates included.\n- Comprehensive implementation checklist for onboarding the system.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8106c6b838fb0607a564faae6d878dbe6b902193723a28a92b955a1c0d6c8ce8"
+}

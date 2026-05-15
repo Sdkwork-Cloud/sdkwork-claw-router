@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19156,
+  "uuid": "skill-clawhub-lg-thinq-universal",
+  "skillKey": "clawhub-lg-thinq-universal",
+  "name": "Lg Thinq Universal",
+  "summary": "Universal LG ThinQ device setup and control. Discovers appliances and generates secure device skills.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lg_thinq_universal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Utkarsh Tiwari",
+      "features": [
+        "Universal LG ThinQ device setup and control",
+        "Discovers appliances and generates secure device skills."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lg-thinq-universal@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128823414?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lg-thinq-universal",
+      "url": "https://clawhub.ai/skills/lg-thinq-universal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lg-thinq-universal",
+    "url": "https://clawhub.ai/skills/lg-thinq-universal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lg-thinq-universal-72e7824aa7df4dfd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lg-thinq-universal@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lg-thinq-universal-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e966780caf49c203adf35a5d8d367117d7d51e73a9f0bb9de3bd7bf8d1edfe43",
+      "artifactSizeBytes": 2332
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T18:01:36.245Z"
+}

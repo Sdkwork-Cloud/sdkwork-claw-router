@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travel-partner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_partner",
+  "skill": {
+    "id": 28816,
+    "skillKey": "clawhub-travel-partner",
+    "name": "Travel Partner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-partner",
+    "url": "https://clawhub.ai/skills/travel-partner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-partner-a5360290e0602df4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill provides AI-powered virtual travel companion services for international trips. Use this skill when users request a virtual boyfriend/girlfriend to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wolf-leo",
+      "userId": "s1729549z81g2c2xvect14t425840vkq",
+      "displayName": "wolfcode",
+      "image": "https://avatars.githubusercontent.com/u/37436228?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773893749170,
+      "changelog": "travel-partner v1.0.0\n\n- Initial release of travel-partner skill.\n- Offers AI-powered virtual travel companion for international trips.\n- Generates personalized itineraries, travel narratives, photo prompts, and social media content.\n- Supports romantic, adventurous, foodie, and cultural companion personas.\n- Provides immersive travel experiences, destination research, and platform-specific post suggestions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:06ee857bb0cd17e10dfd682f1de3c2dd1a7d15e479a3a61d9b44984ab0425020"
+}

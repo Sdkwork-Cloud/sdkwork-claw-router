@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hyperliquid-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hyperliquid_agent",
+  "skill": {
+    "id": 37513,
+    "skillKey": "clawhub-hyperliquid-agent",
+    "name": "hyperliquid-trading-agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hyperliquid-agent",
+    "url": "https://clawhub.ai/skills/hyperliquid-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hyperliquid-agent-644f882d2139a29a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connects to Hyperliquid via wallet, fetches market data, enforces risk rules, sizes positions, places and monitors orders for perpetual futures trading."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jurgenw81",
+      "userId": "s175481d152rdg5dqq5ctjxkzs83kkre",
+      "displayName": "Jurgenw81",
+      "image": "https://avatars.githubusercontent.com/u/64462506?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774688515795,
+      "changelog": "**Summary**: This update refactors the Hyperliquid agent skill to enforce strict separation between execution logic and secret handling, requiring all authentication and session setup to be handled externally.\n\n- The skill no longer manages, requests, or stores wallet secrets or credentials; authentication must be handled by the host environment.\n- Required input now includes a host-provided authenticated Hyperliquid client/session instead of private keys or secret data.\n- Clarified host and skill responsibilities: secret management and transaction signing are outside the skill scope.\n- Revised risk, position sizing, and execution flows to operate only on authenticated sessions and externally-injected state.\n- Updated documentation and input/output fields for improved composability and security.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df6e22e15eb29ece00c598d8f0a908ab518d08c6b0475cefad298d8b66a44012"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/icon-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.icon_generator",
+  "skill": {
+    "id": 24341,
+    "skillKey": "clawhub-icon-generator",
+    "name": "Icon Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "icon-generator",
+    "url": "https://clawhub.ai/skills/icon-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/icon-generator-f17d96a15c1e3604.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional icon and logo generator for apps and websites. Use when user needs to create app icons, favicons, logos, or brand marks. Supports iOS, Android,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobewin",
+      "userId": "s174rz3f0862tcfw7pzfh5w8kn83hv2z",
+      "displayName": "ToBeWin",
+      "image": "https://avatars.githubusercontent.com/u/145168989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 404,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774518664380,
+      "changelog": "专业图标生成器：iOS/Android/Web全平台，5种风格，自动导出多尺寸",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b652a4be4fbb7fc1b7353efe47925729bbd5547dc9a48dae56a1364c430d39a8"
+}

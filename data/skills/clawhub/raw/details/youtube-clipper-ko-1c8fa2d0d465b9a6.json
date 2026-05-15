@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "youtube-clipper-ko",
+    "displayName": "Youtube Clipper Ko",
+    "summary": "한국어 YouTube 영상을 바이럴 클립으로 자동 분할하는 스킬. Whisper로 음성 분석 → Claude로 바이럴 구간 선정 → ffmpeg으로 클립 추출. 무음/숨소리 구간 제거, 3색 한국어 자막(SUIT 폰트), 바이럴 점수 + 리즌 텍스트 포함. YouTube URL 또...",
+    "tags": {
+      "latest": "0.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773615956382,
+    "updatedAt": 1778309667252
+  },
+  "latestVersion": {
+    "version": "0.1.0",
+    "createdAt": 1773615956382,
+    "changelog": "youtube-clipper-ko v0.1.0 initial release\n\n- 자동으로 한국어 YouTube 영상을 바이럴 클립으로 분할해주는 기능 제공\n- Whisper로 음성 분석, Claude Haiku로 바이럴 구간 8~12개 선정, ffmpeg로 클립 추출\n- 무음/숨소리 구간 압축 및 3색 SUIT ExtraBold 한국어 자막 자동 추가\n- YouTube URL, 로컬 파일 입력 모두 지원\n- 클립별 바이럴 점수와 선정 이유 자동 부여, 메타데이터 JSON 포함\n- Clawitzer 파이프라인과 연동 가능",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "thedalbee",
+    "userId": "publishers:thedalbee",
+    "displayName": "thedalbee",
+    "image": "https://avatars.githubusercontent.com/u/262329684?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778309667252
+  }
+}

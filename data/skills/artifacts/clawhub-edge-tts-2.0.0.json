@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edge-tts@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edge_tts",
+  "skill": {
+    "id": 8357,
+    "skillKey": "clawhub-edge-tts",
+    "name": "Edge TTS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edge-tts",
+    "url": "https://clawhub.ai/skills/edge-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edge-tts-e6b0a479699e8360.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Text-to-speech conversion using node-edge-tts npm package for generating audio from text. Supports multiple voices, languages, speed adjustment, pitch control, and subtitle generation. Use when: (1) User requests audio/voice output with th."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "i3130002",
+      "userId": "publishers:i3130002",
+      "displayName": "i3130002",
+      "image": "https://avatars.githubusercontent.com/u/11602376?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 18903,
+      "installsAllTime": 262,
+      "installsCurrent": 247,
+      "stars": 30,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1769456031010,
+      "changelog": "**Major upgrade with added scripts, configurability, and streamlined TTS triggers**\n\n- Added Node.js scripts for TTS conversion and config management (`tts-converter.js`, `config-manager.js`), with installation and usage instructions.\n- Added resource and reference files, including a complete voice/option guide and install script.\n- Changed TTS intent detection to trigger only on the \"tts\" keyword (removes long trigger phrase lists), and clarified keyword filtering prior to conversion.\n- Expanded documentation with workflow, usage examples, advanced configuration, troubleshooting, and testing instructions.\n- Clarified default voice, output formats, temporary file handling, and recommended voice test site.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:55bc9b9f21557718da9adf8ea2b4bdd9d8d05dc3ffc46e4e1f2c2083e0cda494"
+}

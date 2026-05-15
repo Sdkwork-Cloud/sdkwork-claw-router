@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-runner-local@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_runner_local",
+  "skill": {
+    "id": 20937,
+    "skillKey": "clawhub-code-runner-local",
+    "name": "Code Runner Local"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-runner-local",
+    "url": "https://clawhub.ai/skills/code-runner-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-runner-local-3799937b920787f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run code snippets in 30+ programming languages including JavaScript, Python, TypeScript, Java, C, C++, Go, Rust, Ruby, PHP, and more. Use when the user wants..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "panchenbo",
+      "userId": "s17fzcsk1r5hcyfjmsa4g7x63d83gfv5",
+      "displayName": "panchenbo",
+      "image": "https://avatars.githubusercontent.com/u/75836904?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 520,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774000117767,
+      "changelog": "Initial release of the Code Runner skill.\n\n- Run code snippets in over 30 programming languages, including JavaScript, Python, Java, C/C++, Go, Rust, and more.\n- Supports both interpreted and compiled languages via command line.\n- Provides guidelines for identifying language, executing code, and handling output/errors.\n- Includes detailed instructions and examples for running code in different environments (Windows, macOS, Linux).\n- Emphasizes security with recommendations for running untrusted code.\n- Offers troubleshooting tips for common issues like missing interpreters or code errors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b92be5faa239b5873e9bbccbc95ce0282404ba36c237c30418e3dc13b3479f5"
+}

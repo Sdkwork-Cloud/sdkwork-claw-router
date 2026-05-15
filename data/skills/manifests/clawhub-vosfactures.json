@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35095,
+  "uuid": "skill-clawhub-vosfactures",
+  "skillKey": "clawhub-vosfactures",
+  "name": "Vosfactures",
+  "summary": "Vosfactures integration. Manage data, records, and automate workflows. Use when the user wants to interact with Vosfactures data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vosfactures",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Vosfactures integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Vosfactures data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vosfactures@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vosfactures",
+      "url": "https://clawhub.ai/skills/vosfactures"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vosfactures",
+    "url": "https://clawhub.ai/skills/vosfactures",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vosfactures-386c1c6fde854e0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vosfactures@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-vosfactures-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09ded11530a86fda3911123b48eae2ed3256aa628ba28009ce60d360d350f1cc",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:09:59.134Z"
+}

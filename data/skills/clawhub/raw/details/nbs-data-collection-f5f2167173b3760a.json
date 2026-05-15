@@ -1,0 +1,49 @@
+{
+  "skill": {
+    "slug": "nbs-data-collection",
+    "displayName": "国家统计局数据采集",
+    "summary": "国家统计局数据采集技能。当用户需要采集国家统计局（NBS）的宏观经济数据（如GDP、CPI、PPI、产出缺口等）时触发。适用场景包括：（1）采集GDP、CPI、PPI等指标；（2）从国家统计局官网/统计年鉴获取数据；（3）计算产出缺口（HP滤波）；（4）整理数据到Excel。本skill包含标准工作流程、数据源U...",
+    "tags": {
+      "china": "1.0.0",
+      "data": "1.0.0",
+      "economy": "1.0.0",
+      "gdp": "1.0.0",
+      "latest": "1.0.0",
+      "nbs": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774857278904,
+    "updatedAt": 1777526890067
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774857278904,
+    "changelog": "nbs-data-collection v1.0.0\n\n- Initial release of the 国家统计局（NBS）数据采集技能。\n- Provides a standard workflow for collecting, processing, and verifying macroeconomic indicators (GDP, CPI, PPI, output gap, etc.) from the NBS.\n- Includes data source URLs, indicator explanations, and reusable scripts for key steps (data crawling, HP filtering, Excel charting, link verification).\n- Defines output structure: organized Excel files, checkpoints, and raw data folders.\n- Covers special handling for data before 2015, API migration, and updated NBS data access rules.\n- Detailed documentation and references included for workflow and data sources.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "yingjie-zhang-dev",
+    "userId": "s1795gc139ehyrjqseqxdvjsxh83jhbd",
+    "displayName": "Jackie Zhang",
+    "image": "https://avatars.githubusercontent.com/u/114508555?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777526890067
+  }
+}

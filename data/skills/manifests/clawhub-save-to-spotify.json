@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16319,
+  "uuid": "skill-clawhub-save-to-spotify",
+  "skillKey": "clawhub-save-to-spotify",
+  "name": "Save To Spotify",
+  "summary": "Create polished audio content and save to Spotify. Produces episodes with TTS narration, a rich timeline (chapters plus in-player images, external links, and...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.save_to_spotify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Spotify",
+      "features": [
+        "Create polished audio content and save to Spotify",
+        "Produces episodes with TTS narration, a rich timeline (chapters plus in-player images, external."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/save-to-spotify@0.1.1",
+      "screenshots": [
+        "https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Primary_Logo_RGB_Green.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "save-to-spotify",
+      "url": "https://clawhub.ai/skills/save-to-spotify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "save-to-spotify",
+    "url": "https://clawhub.ai/skills/save-to-spotify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/save-to-spotify-660d2b33bc637231.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/save-to-spotify@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-save-to-spotify-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87ec8eda560cc4f280c94b717a30e89f5bccd4eb939ec7efe2841df22e89cf3c",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T14:44:21.457Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26419,
+  "uuid": "skill-clawhub-regal",
+  "skillKey": "clawhub-regal",
+  "name": "Regal",
+  "summary": "Regal integration. Manage Organizations, Pipelines, Users, Goals, Filters. Use when the user wants to interact with Regal data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.regal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Regal integration",
+        "Manage Organizations, Pipelines, Users, Goals, Filters",
+        "Use when the user wants to interact with Regal data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/regal@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "regal",
+      "url": "https://clawhub.ai/skills/regal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "regal",
+    "url": "https://clawhub.ai/skills/regal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/regal-44d980dac0286a43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/regal@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-regal-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7658ef7820c992cd195f0d03977af230d1a4d24119c5418570368e0b0cab90ef",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:55:38.886Z"
+}

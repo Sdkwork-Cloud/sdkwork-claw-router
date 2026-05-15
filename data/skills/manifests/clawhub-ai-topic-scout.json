@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68391,
+  "uuid": "skill-clawhub-ai-topic-scout",
+  "skillKey": "clawhub-ai-topic-scout",
+  "name": "AI Topic Scout",
+  "summary": "AI短视频选题追踪系统。自动抓取指定YouTube博主视频和Twitter博主推文，分析内容，聚合跨平台热点主题，生成带热度评分和选题建议的分析报告，结果写入钉钉AI表格。适用于：定时抓取AI领域博主内容、分析短视频选题热度、跨平台话题聚合、生成选题建议。触发词：\"抓取选题\"、\"分析选题\"、\"选题scout\"、\"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_topic_scout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alex Yang",
+      "features": [
+        "AI短视频选题追踪系统。自动抓取指定YouTube博主视频和Twitter博主推文，分析内容，聚合跨平台热点主题，生成带热度评分和选题建议的分析报告，结果写入钉钉AI表格。适用于：定时抓取A."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-topic-scout@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12794925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-topic-scout",
+      "url": "https://clawhub.ai/skills/ai-topic-scout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-topic-scout",
+    "url": "https://clawhub.ai/skills/ai-topic-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-topic-scout-b7c1222cd8e452f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-topic-scout@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-topic-scout-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74ad7a8c507ae139b4145e26fb4236902041f0e7b227a0e1eb71d5661a5888b8",
+      "artifactSizeBytes": 2169
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T12:18:40.307Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-flows@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_flows",
+  "skill": {
+    "id": 33606,
+    "skillKey": "clawhub-email-flows",
+    "name": "Email Flows"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-flows",
+    "url": "https://clawhub.ai/skills/email-flows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-flows-30aace4d5719cf09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Designs onboarding, activation, and retention email sequences for SaaS. Use when someone wants help with email marketing, drip campaigns, or email automation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "c0ldsmi1e",
+      "userId": "s17aaqvxax2y8387sde2bqs0m183f7bn",
+      "displayName": "Daniel Yu",
+      "image": "https://avatars.githubusercontent.com/u/40680511?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773950205527,
+      "changelog": "- Initial release of email-flows skill for SaaS onboarding, activation, and retention email sequence design.\n- Guides users through discovery questions to tailor email strategies.\n- Provides detailed onboarding and trial-to-paid conversion sequences, including subject lines, timing, and triggers.\n- Offers retention, win-back, and feature announcement email templates.\n- Includes best practices for SaaS email marketing and a checklist action plan.\n- Curates a list of further reading and resources for SaaS email marketing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0f39dfd5f6b31015b2bf9bef6d701cef5801a1f09d2de33618bbc462dde599f"
+}

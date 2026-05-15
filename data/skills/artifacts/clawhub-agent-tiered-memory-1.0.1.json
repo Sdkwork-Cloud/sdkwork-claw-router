@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-tiered-memory@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_tiered_memory",
+  "skill": {
+    "id": 55506,
+    "skillKey": "clawhub-agent-tiered-memory",
+    "name": "Tiered Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-tiered-memory",
+    "url": "https://clawhub.ai/skills/agent-tiered-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-tiered-memory-0dc2bde41ef05898.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Two-tier memory system for OpenClaw agents. Tier 0 = QMD semantic search for recent memories (7-14 days). Tier 1 = SQLite archive for long-term storage. Auto..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpmoregain-eth",
+      "userId": "s17b68s6j6w399kt6hg81kfhr583xm5m",
+      "displayName": "jpmoregain-eth",
+      "image": "https://avatars.githubusercontent.com/u/265452871?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774839122703,
+      "changelog": "Fix: added ollama/python3 to requires.bins metadata, fixed inconsistent DB path (~/.agentbear → ~/.openclaw), declared external dependencies properly",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d6fc0c23663d0524e93aee1a850752ff43f61d436927a612057892872b9c124f"
+}

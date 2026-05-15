@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-luma@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_luma",
+  "skill": {
+    "id": 49252,
+    "skillKey": "clawhub-ai-video-editor-luma",
+    "name": "Ai Video Editor Luma"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-luma",
+    "url": "https://clawhub.ai/skills/ai-video-editor-luma",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-luma-bdf5b63271218417.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute unedited camera recording into 1080p color-graded video just by typing what you need. Whether it's applying Luma AI-style edits and color cor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 83,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777950942004,
+      "changelog": "AI Video Editor Luma — initial release\n\n- Instantly edit raw video into 1080p, color-graded output using Luma AI by describing your desired result—no timeline or manual export settings required.\n- Seamlessly handles video upload, editing actions (including Luma-style grading), session management, and exports via cloud GPU in 1–2 minutes.\n- Automatically manages authentication: uses NEMO_TOKEN if available or fetches a free trial token for quick start.\n- Provides status, credit checks, timeline previews, and error resolution all within chat—no technical steps surfaced to users.\n- Supports popular video (mp4, mov, avi, etc.) and audio/image formats; files up to 500MB.\n- Helpful prompts and workflow tips included for batch, quick, and iterative editing sessions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fad5fa34bb46688891f3ed7c2ef5045fde1c74dec80016e681d684ed1abe27cf"
+}

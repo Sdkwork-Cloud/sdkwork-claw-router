@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-maker-jobs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_maker_jobs",
+  "skill": {
+    "id": 43183,
+    "skillKey": "clawhub-video-maker-jobs",
+    "name": "Video Maker Jobs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-maker-jobs",
+    "url": "https://clawhub.ai/skills/video-maker-jobs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-maker-jobs-b48795568a1516fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute screen recording of a product demo into 1080p polished job videos just by typing what you need. Whether it's creating professional video samp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776031597879,
+      "changelog": "Initial release: Instantly create and export professional job video reels from product demo screen recordings.\n\n- Upload raw footage and describe your desired outcome—AI handles editing and export (no manual timeline work needed).\n- Automatic cloud setup checks for necessary tokens and connects seamlessly; informs you when ready.\n- Supports quick edits (\"cut pauses, add titles, export\") with fast turnaround (1–2 minutes for short clips).\n- Handles common video tasks: trimming, title overlays, aspect ratio changes, BGM track, and more.\n- Export videos in popular formats (MP4, MOV, AVI, etc.) at up to 1080p, with download link delivered.\n- Offers clear error handling, credits management, and guidance on maximizing effectiveness for job applications.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f96b35ca35f214be70502f22600c424bd6bd9d1f93f63f1f09464cc4c528e5d"
+}

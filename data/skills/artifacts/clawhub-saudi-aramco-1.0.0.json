@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/saudi-aramco@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.saudi_aramco",
+  "skill": {
+    "id": 68519,
+    "skillKey": "clawhub-saudi-aramco",
+    "name": "Saudi Aramco"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "saudi-aramco",
+    "url": "https://clawhub.ai/skills/saudi-aramco",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/saudi-aramco-bb1ce4880e631d74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供沙特阿美公司信息，涵盖其石油生产、全球市场、能源战略及2030愿景的详细分析与数据解读。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776396326627,
+      "changelog": "Saudi Aramco skill v1.0.0\n\n- Initial release introducing detailed company insights in Chinese, covering Saudi Aramco’s history, scale, operations, and role in global energy.\n- Includes timeline of key milestones, major oil fields, refining/chemicals business, and key partnerships.\n- Summarizes relevance for research on Aramco, OPEC+, global oil, the 2019 IPO, and Saudi Vision 2030.\n- Highlights current data on production, profits, IPO, and strategic transformation goals.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b86617c108314dd6220bbcb51d44e4e401d9bcdbddb8094dade74ca92a1f3be3"
+}

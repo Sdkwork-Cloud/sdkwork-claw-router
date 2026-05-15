@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20286,
+  "uuid": "skill-clawhub-echo-test",
+  "skillKey": "clawhub-echo-test",
+  "name": "Echo Test",
+  "summary": "Returns the text you input along with the current time for simple testing purposes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.echo_test",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wxsjlrwsj",
+      "features": [
+        "Returns the text you input along with the current time for simple testing purposes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/echo-test@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201960414?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "echo-test",
+      "url": "https://clawhub.ai/skills/echo-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "echo-test",
+    "url": "https://clawhub.ai/skills/echo-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/echo-test-e0d1549b286b94b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/echo-test@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-echo-test-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0023347b740db487dc94d0685d88f5e278cae422a62e8f606dca009b7e13970",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T06:38:10.720Z"
+}

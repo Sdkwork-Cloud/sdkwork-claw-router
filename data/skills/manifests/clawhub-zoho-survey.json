@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32573,
+  "uuid": "skill-clawhub-zoho-survey",
+  "skillKey": "clawhub-zoho-survey",
+  "name": "Zoho Survey",
+  "summary": "Zoho Survey integration. Manage data, records, and automate workflows. Use when the user wants to interact with Zoho Survey data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoho_survey",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Zoho Survey integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Zoho Survey data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zoho-survey@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zoho-survey",
+      "url": "https://clawhub.ai/skills/zoho-survey"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoho-survey",
+    "url": "https://clawhub.ai/skills/zoho-survey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoho-survey-2723fac50fffacde.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zoho-survey@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zoho-survey-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f899657410885c76029e108cb6377de17c98666d1893d06ec4a3709499537e21",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:14:02.714Z"
+}

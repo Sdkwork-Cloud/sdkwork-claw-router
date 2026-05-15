@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/high-openness-genesis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.high_openness_genesis",
+  "skill": {
+    "id": 40981,
+    "skillKey": "clawhub-high-openness-genesis",
+    "name": "High-Openness Genesis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "high-openness-genesis",
+    "url": "https://clawhub.ai/skills/high-openness-genesis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/high-openness-genesis-1dfe8243838b33c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables GPT to reject safe, conventional answers by generating highly creative, cross-disciplinary, multi-sensory, and surprising solutions in all creative a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuxudong0031-star",
+      "userId": "s1790b13tmne022r3mn5b4kkg183hqcq",
+      "displayName": "dong",
+      "image": "https://avatars.githubusercontent.com/u/253901768?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774336838140,
+      "changelog": "High-Openness Genesis 1.0.0 – Boosts creativity and surprise in all model outputs.\n\n- Introduces a prompt-only, system-context behavioral protocol for maximum openness and innovation.\n- Enforces rejection of clichéd or standard responses; encourages multiple unconventional approaches.\n- Explicitly promotes cross-domain thinking, unexpected solutions, and rich sensory detail in outputs.\n- Adds context-specific instructions for code, design, and writing tasks to surpass typical AI answers.\n- Includes a self-check for “safety” before output: if too standard, output must be rewritten.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afdac7276333e774a574794847e860723d865b0249e4f20d99fc1a978ae014fb"
+}

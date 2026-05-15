@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15382,
+  "uuid": "skill-clawhub-my-claw-shell",
+  "skillKey": "clawhub-my-claw-shell",
+  "name": "My Claw Shell",
+  "summary": "Runs shell commands inside a dedicated tmux session named claw, returning the command output while restricting dangerous commands without confirmation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_claw_shell",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "biosaylom",
+      "features": [
+        "Runs shell commands inside a dedicated tmux session named claw, returning the command output wh."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-claw-shell@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/167272159?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-claw-shell",
+      "url": "https://clawhub.ai/skills/my-claw-shell"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-claw-shell",
+    "url": "https://clawhub.ai/skills/my-claw-shell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-claw-shell-5c272ec698a7a99c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-claw-shell@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-claw-shell-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6100f477ccb0d23d1f08110a5562eb3b40001a3f5498e88c9f7fa2e3b6ffed64",
+      "artifactSizeBytes": 2291
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T08:18:04.844Z"
+}

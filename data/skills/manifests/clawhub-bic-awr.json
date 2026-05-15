@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63159,
+  "uuid": "skill-clawhub-bic-awr",
+  "skillKey": "clawhub-bic-awr",
+  "name": "Bic Awr Analyze - 佰晟问诊",
+  "summary": "当用户需要分析数据库 AWR（或兼容）报告时使用。调用官方 API 需要有效凭据，详见正文 Setup",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bic_awr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bbsyd2",
+      "features": [
+        "当用户需要分析数据库 AWR（或兼容）报告时使用。调用官方 API 需要有效凭据，详见正文 Setup"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bic-awr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52747040?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bic-awr",
+      "url": "https://clawhub.ai/skills/bic-awr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bic-awr",
+    "url": "https://clawhub.ai/skills/bic-awr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bic-awr-604ecdb1c7a49429.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bic-awr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bic-awr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03506b47c505b46996c8dd3c2af17830eb99273117550f80a628a5c003f4f211",
+      "artifactSizeBytes": 2189
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:30:43.164Z"
+}

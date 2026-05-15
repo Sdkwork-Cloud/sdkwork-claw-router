@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38104,
+  "uuid": "skill-clawhub-video-frames-online",
+  "skillKey": "clawhub-video-frames-online",
+  "name": "Video Frames Online",
+  "summary": "Turn a 2-minute MP4 clip into 1080p exported frame images just by typing what you need. Whether it's extracting individual frames from video for editing or r...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_frames_online",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tk8544-b",
+      "features": [
+        "Turn a 2-minute MP4 clip into 1080p exported frame images just by typing what you need",
+        "Whether it's extracting individual frames from video for editing or r..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-frames-online@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-frames-online",
+      "url": "https://clawhub.ai/skills/video-frames-online"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-frames-online",
+    "url": "https://clawhub.ai/skills/video-frames-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-frames-online-a5594d4bf0ba3d53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-frames-online@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-frames-online-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06cc50c7484923d235a883d18385355d5801318b29e9c25d3c1581e5dc59f71f",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T10:59:00.118Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43993,
+  "uuid": "skill-clawhub-objection",
+  "skillKey": "clawhub-objection",
+  "name": "objection",
+  "summary": "Activate this skill whenever the user asks you to \"find problems,\" \"poke holes,\" \"stress test,\" \"play devil's advocate,\" \"be critical,\" \"challenge this,\" \"fi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.objection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "马龙",
+      "features": [
+        "Activate this skill whenever the user asks you to \"find problems,\" \"poke holes,\" \"stress test,\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/objection@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/185081395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "objection",
+      "url": "https://clawhub.ai/skills/objection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "objection",
+    "url": "https://clawhub.ai/skills/objection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/objection-4194b692f5789e4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/objection@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-objection-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7941d317ebdd90185d59dca6121505c29eb96634988830a7dfd178f04b00fd75",
+      "artifactSizeBytes": 2753
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T01:58:49.666Z"
+}

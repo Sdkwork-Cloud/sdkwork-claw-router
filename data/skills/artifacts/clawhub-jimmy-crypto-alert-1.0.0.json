@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jimmy-crypto-alert@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jimmy_crypto_alert",
+  "skill": {
+    "id": 53192,
+    "skillKey": "clawhub-jimmy-crypto-alert",
+    "name": "Crypto Alert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jimmy-crypto-alert",
+    "url": "https://clawhub.ai/skills/jimmy-crypto-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jimmy-crypto-alert-7f7f4ca7f290e79b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor cryptocurrency prices and send alerts when thresholds are crossed. No API key required — uses Binance public API. Supports BTC, ETH, SOL, and 10+ tok..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimmyclanker",
+      "userId": "s17ejhqtp0r87e37esqxmc3af983w8qd",
+      "displayName": "JimmyClanker",
+      "image": "https://avatars.githubusercontent.com/u/258324489?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775006228382,
+      "changelog": "Initial release of crypto-alert.\n\n- Monitor cryptocurrency prices for BTC, ETH, SOL, and 10+ tokens.\n- Send alerts when price thresholds are crossed, with no API key required.\n- Supports single or multi-token checks via simple shell scripts.\n- Optional Telegram integration for real-time alert notifications.\n- Uses Binance public API for pricing and supports basic local configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1531721f9ae7d1888d7eee9ace321108875711c4759e30bb32bc8942350e1f0d"
+}

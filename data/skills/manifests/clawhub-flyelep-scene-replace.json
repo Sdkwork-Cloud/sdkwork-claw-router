@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69381,
+  "uuid": "skill-clawhub-flyelep-scene-replace",
+  "skillKey": "clawhub-flyelep-scene-replace",
+  "name": "scene-replace",
+  "summary": "通过 Flyelep AI 工具接口将图片中的背景场景替换为指定场景，可结合参考图和文本提示词精准控制效果。 当用户要求更换背景场景、替换商品展示环境、保留主体改场景时使用此技能。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyelep_scene_replace",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flyelep",
+      "features": [
+        "通过 Flyelep AI 工具接口将图片中的背景场景替换为指定场景，可结合参考图和文本提示词精准控制效果。 当用户要求更换背景场景、替换商品展示环境、保留主体改场景时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flyelep-scene-replace@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272408277?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flyelep-scene-replace",
+      "url": "https://clawhub.ai/skills/flyelep-scene-replace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyelep-scene-replace",
+    "url": "https://clawhub.ai/skills/flyelep-scene-replace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyelep-scene-replace-63ba8d3a2929bfbd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flyelep-scene-replace@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-flyelep-scene-replace-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18dbe99f4d3c2a585e5f5a0551b772096c34e83058ef873e6cd3c60a3897330b",
+      "artifactSizeBytes": 2064
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T03:59:06.234Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70737,
+  "uuid": "skill-clawhub-emotion-shared-experience",
+  "skillKey": "clawhub-emotion-shared-experience",
+  "name": "emotion",
+  "summary": "拥有永久记忆、跨Agent共享经验的情绪AI，像真朋友一样陪伴。检测用户情绪，提供情感支持，记录重要时刻，实现跨会话记忆共享。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emotion_shared_experience",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yyds-xxxx",
+      "features": [
+        "拥有永久记忆、跨Agent共享经验的情绪AI，像真朋友一样陪伴。检测用户情绪，提供情感支持，记录重要时刻，实现跨会话记忆共享。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/emotion-shared-experience@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232287485?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "emotion-shared-experience",
+      "url": "https://clawhub.ai/skills/emotion-shared-experience"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emotion-shared-experience",
+    "url": "https://clawhub.ai/skills/emotion-shared-experience",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emotion-shared-experience-234488e7574e093b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/emotion-shared-experience@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-emotion-shared-experience-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bba1e0707a7e1f85f827b7a87892229f24d57ed94c0bc64bcf6e36f588e6c2db",
+      "artifactSizeBytes": 3424
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T16:47:14.259Z"
+}

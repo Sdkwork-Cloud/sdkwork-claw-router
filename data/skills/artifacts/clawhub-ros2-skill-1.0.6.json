@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ros2-skill@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ros2_skill",
+  "skill": {
+    "id": 16876,
+    "skillKey": "clawhub-ros2-skill",
+    "name": "ROS 2 Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ros2-skill",
+    "url": "https://clawhub.ai/skills/ros2-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ros2-skill-a29491c5dafa44b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Controls and monitors ROS 2 robots directly via rclpy CLI. Use for ANY ROS 2 robot task: topics (subscribe, publish, capture images, find by type), services..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adityakamath",
+      "userId": "s1729meahye4ntdwzcpng7ddgs83jj0k",
+      "displayName": "Aditya Kamath",
+      "image": "https://avatars.githubusercontent.com/u/2458029?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 730,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1774483597158,
+      "changelog": "**ros2-skill 1.0.6** — Adds internal structure, enhanced documentation, and technical references.\n\n- Added extensive CLI documentation and workflow references (references/CLI.md, EXAMPLES.md, RULES.md).\n- Introduced internal Python modules for each major ROS 2 operation (e.g., `ros2_bag.py`, `ros2_component.py`, etc.).\n- Improved agent usage guidance and modular architecture via updated SKILL.md.\n- Transitioned from a single `EXAMPLES.md` file to a comprehensive, multi-file documentation system.\n- Expanded test coverage and internal caching through new pycache files.\n- Cleaned up obsolete files to align with new modular design.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b88afd7206b934f939b38099f35c3694d4d86ff9c18767600c564a12df23f1fd"
+}

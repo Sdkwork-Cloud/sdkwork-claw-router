@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agntdata-reddit@1.0.15",
+  "version": "1.0.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agntdata_reddit",
+  "skill": {
+    "id": 33041,
+    "skillKey": "clawhub-agntdata-reddit",
+    "name": "Reddit API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agntdata-reddit",
+    "url": "https://clawhub.ai/skills/agntdata-reddit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agntdata-reddit-262a5fe7702571a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use one API key to pull Reddit data (subreddits, posts, and community data) for agents, automations, and analytics. Structured JSON, credit-based pricing, no se"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaencarrodine",
+      "userId": "s17d5p6q94jb97qnamxbnpkvq984rfwm",
+      "displayName": "Jaen",
+      "image": "https://avatars.githubusercontent.com/u/53541106?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.15",
+      "createdAt": 1778370290192,
+      "changelog": "1. Version updated to 1.0.15.\n2. Documentation and metadata refreshed; no changes to API endpoints or functionality.\n3. No breaking changes or new features added.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a5a90f7039e41fbef1052f749e409eddd66f4e296405321f8ecd10ce347d1d2"
+}

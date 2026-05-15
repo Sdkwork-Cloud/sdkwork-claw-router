@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/discord-digest@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_digest",
+  "skill": {
+    "id": 17307,
+    "skillKey": "clawhub-discord-digest",
+    "name": "Discord Digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-digest",
+    "url": "https://clawhub.ai/skills/discord-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-digest-8a8e149e20c54fa1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate formatted digests from Discord servers using a user token. Reads messages from selected channels/threads and creates concise summaries with links. U..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nikolaybohdanov",
+      "userId": "s1773gmtsmvap8c0rz2tn4bf1s83fzan",
+      "displayName": "Nikoxyz",
+      "image": "https://avatars.githubusercontent.com/u/100773227?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 792,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771446393429,
+      "changelog": "All text translated to English for international audience",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:837d3eb524d533154370deccae14eb4f4db88ca9226636a60029307be8233635"
+}

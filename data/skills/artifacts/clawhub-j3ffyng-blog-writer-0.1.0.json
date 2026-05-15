@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/j3ffyng-blog-writer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.j3ffyng_blog_writer",
+  "skill": {
+    "id": 24236,
+    "skillKey": "clawhub-j3ffyng-blog-writer",
+    "name": "blog-writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "j3ffyng-blog-writer",
+    "url": "https://clawhub.ai/skills/j3ffyng-blog-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/j3ffyng-blog-writer-1e5d88447aa150c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help the user draft, review, and polish blog posts in Markdown, keeping the original languages and informal tone."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "j3ffyang",
+      "userId": "s1779e1n6evsf8stg77rena51983qpyd",
+      "displayName": "Jeff Yang",
+      "image": "https://avatars.githubusercontent.com/u/245605?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 417,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772938033186,
+      "changelog": "Initial release of the blog-writer skill.\n\n- Drafts, reviews, and polishes blog posts written in Markdown, preserving original languages and a casual, friendly tone.\n- Provides grammar, wording, and clarity fixes while keeping the user’s intent and informal style.\n- Suggests paragraph and structural improvements, always asking for user confirmation before making changes.\n- Always uses Markdown for both input and output; preserves all existing structure unless told otherwise.\n- Marks any significant meaning changes clearly and explains them.\n- Designed to handle multilingual drafts without automatic translation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:abc58556ccff6e0ff06fbe552bb799ca6bebe98656d68be74da678249ae3b160"
+}

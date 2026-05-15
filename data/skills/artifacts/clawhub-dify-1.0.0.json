@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dify@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dify",
+  "skill": {
+    "id": 60971,
+    "skillKey": "clawhub-dify",
+    "name": "Dify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dify",
+    "url": "https://clawhub.ai/skills/dify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dify-dba3ebfefbdbff63.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dify AI应用开发平台指南。用于构建LLM应用、工作流、Agent和知识库。当用户需要(1)使用Dify创建AI应用 (2)设计LLM工作流 (3)配置知识库RAG (4)开发AI Agent (5)调用Dify API (6)自托管部署Dify时激活此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krx1511",
+      "userId": "publishers:krx1511",
+      "displayName": "krx1511",
+      "image": "https://avatars.githubusercontent.com/u/47999437?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 840,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772761728057,
+      "changelog": "初始版本：Dify AI应用开发平台完整指南，包含核心概念、工作流节点、API调用、知识库配置、模型提供商配置",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:696c6b0f4d5b942a6669a26a5f84b23fd7cd96f18488e074cce972330eda33b7"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mova-connector-setup@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mova_connector_setup",
+  "skill": {
+    "id": 35713,
+    "skillKey": "clawhub-mova-connector-setup",
+    "name": "Mova Connector Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mova-connector-setup",
+    "url": "https://clawhub.ai/skills/mova-connector-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mova-connector-setup-998f8154eaf92d08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help the user connect their real business systems (ERP, CRM, AML, market data, etc.) to MOVA by registering custom connector endpoints. Trigger when the user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mova-compact",
+      "userId": "s174xckyab9x52fg7dps9cca2983g5a4",
+      "displayName": "Sergii Miasoiedov",
+      "image": "https://avatars.githubusercontent.com/u/258828376?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775141476762,
+      "changelog": "Added Ecosystem Skill type label.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8eb26fcd8ad516e91714289ffb9a37d8ed3909610d223baf235a0392e91c4fc8"
+}

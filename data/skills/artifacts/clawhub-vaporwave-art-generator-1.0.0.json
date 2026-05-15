@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vaporwave-art-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vaporwave_art_generator",
+  "skill": {
+    "id": 52183,
+    "skillKey": "clawhub-vaporwave-art-generator",
+    "name": "Vaporwave Art Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vaporwave-art-generator",
+    "url": "https://clawhub.ai/skills/vaporwave-art-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vaporwave-art-generator-58028b1a5b5567b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI vaporwave art generator — create synthwave, retrowave, and aesthetic vaporwave images with neon grids, 80s retro colors, palm trees, and lo-fi vibes. Perf..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "omactiengartelle",
+      "userId": "s1700se1ym0cqwmmannczhx57183gf78",
+      "displayName": "omactiengartelle",
+      "image": "https://avatars.githubusercontent.com/u/258436340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774802692828,
+      "changelog": "- Initial release of Vaporwave Art Generator skill.\n- Generate synthwave, retrowave, and vaporwave images using the Neta AI image generation API.\n- Supports custom image sizes and style inheritance via reference images.\n- Ideal for wallpapers, album art, and social media aesthetics.\n- Requires a free Neta API token for image creation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d6b73332a57fad8aea89b01c41526a25201946ec7fd7947e2f4746a35b742605"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/argument-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.argument_audit",
+  "skill": {
+    "id": 58186,
+    "skillKey": "clawhub-argument-audit",
+    "name": "Argument Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "argument-audit",
+    "url": "https://clawhub.ai/skills/argument-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/argument-audit-f88d7395ab2d8f8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "论点审计 - An analytical tool that evaluates the logical structure, evidence quality, and persuasiveness of arguments. Use when user asks about 论点分析、论证评估、逻辑审查、观点..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774791320867,
+      "changelog": "Initial release of argument-audit.\n\n- Provides systematic analysis of arguments, including logical structure, evidence quality, fallacy detection, and persuasiveness assessment.\n- Offers a step-by-step audit workflow and detailed output format for clarity and usability.\n- Supports use cases such as essay analysis, debate prep, business proposal review, and critical evaluation.\n- Includes structured frameworks and rating criteria to guide consistent argument evaluation.\n- Lists key limitations and related skills for user guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a520af57f697c475bb12e1bc93a84a4759e1354b6c91f783c6e80a23dff5056"
+}

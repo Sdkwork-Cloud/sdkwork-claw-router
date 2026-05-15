@@ -1,0 +1,210 @@
+# clawrouter-backend-sdk (Kotlin)
+
+SDKWork Claw Router backend API SDK kotlin generated transport SDK
+
+## Installation
+
+Add to your `build.gradle.kts`:
+
+```kotlin
+implementation("com.sdkwork.clawrouter:clawrouter-backend-sdk:0.1.0")
+```
+
+Or with Gradle Groovy:
+
+```groovy
+implementation 'com.sdkwork.clawrouter:clawrouter-backend-sdk:0.1.0'
+```
+
+## Quick Start
+
+```kotlin
+import com.sdkwork.clawrouter.backend.SdkworkBackendClient
+import com.sdkwork.clawrouter.backend.*
+import com.sdkwork.common.core.SdkConfig
+import kotlinx.coroutines.runBlocking
+
+fun main() = runBlocking {
+    val config = SdkConfig(baseUrl = "http://localhost:18081")
+    val client = SdkworkBackendClient(config)
+    client.setApiKey("your-api-key")
+
+    // Use the SDK
+    val result = client.ai.modelVendorsList()
+    println(result)
+}
+```
+
+## Authentication Modes (Mutually Exclusive)
+
+Choose exactly one mode for the same client instance.
+
+### Mode A: API Key
+
+```kotlin
+val config = SdkConfig(baseUrl = "http://localhost:18081")
+val client = SdkworkBackendClient(config)
+client.setApiKey("your-api-key")
+// Sends: Sdkwork-Access-Token: <apiKey>
+```
+
+### Mode B: Dual Token
+
+```kotlin
+val config = SdkConfig(baseUrl = "http://localhost:18081")
+val client = SdkworkBackendClient(config)
+client.setAuthToken("your-auth-token")
+client.setAccessToken("your-access-token")
+// Sends:
+// Authorization: Bearer <authToken>
+// Sdkwork-Access-Token: <accessToken>
+```
+
+> Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
+
+## Configuration (Non-Auth)
+
+```kotlin
+val config = SdkConfig(baseUrl = "http://localhost:18081")
+val client = SdkworkBackendClient(config)
+```
+
+## API Modules
+
+- `client.ai` - ai API
+- `client.billing` - billing API
+- `client.content` - content API
+- `client.ecosystem` - ecosystem API
+- `client.iam` - iam API
+- `client.integration` - integration API
+- `client.platform` - platform API
+- `client.system` - system API
+
+## Usage Examples
+
+### ai
+
+```kotlin
+// List vendors
+val result = client.ai.modelVendorsList()
+println(result)
+```
+
+### billing
+
+```kotlin
+// List batches
+val result = client.billing.couponBatchesList()
+println(result)
+```
+
+### content
+
+```kotlin
+// List announcements
+val result = client.content.announcementsList()
+println(result)
+```
+
+### ecosystem
+
+```kotlin
+// List skill categories
+val result = client.ecosystem.skillsCategoriesList()
+println(result)
+```
+
+### iam
+
+```kotlin
+// List groups
+val result = client.iam.accessGroupsList()
+println(result)
+```
+
+### integration
+
+```kotlin
+// List channels
+val result = client.integration.channelsList()
+println(result)
+```
+
+### platform
+
+```kotlin
+// List apps
+val params = linkedMapOf<String, Any>(
+    "q" to "q",
+    "status" to "ACTIVE",
+    "market_status" to "DRAFT",
+    "app_type" to "app-type",
+    "page" to 5,
+    "page_size" to 6
+)
+val xRequestId = "X-Request-Id"
+val result = client.platform.appsList(params, xRequestId)
+println(result)
+```
+
+### system
+
+```kotlin
+// List dashboard data
+val result = client.system.dashboardAdminOverviewRetrieve()
+println(result)
+```
+
+## Error Handling
+
+```kotlin
+import kotlinx.coroutines.runBlocking
+
+fun main() = runBlocking {
+    try {
+        val result = client.ai.modelVendorsList()
+        println(result)
+    } catch (e: Exception) {
+        println("Error: ${e.message}")
+    }
+}
+```
+
+## Publishing
+
+This SDK includes cross-platform publish scripts in `bin/`:
+- `bin/publish-core.mjs`
+- `bin/publish.sh`
+- `bin/publish.ps1`
+
+### Check
+
+```bash
+./bin/publish.sh --action check
+```
+
+### Publish
+
+```bash
+./bin/publish.sh --action publish --channel release
+```
+
+```powershell
+.\bin\publish.ps1 --action publish --channel test --dry-run
+```
+
+> Configure Gradle publishing credentials and optional `GRADLE_PUBLISH_TASK`.
+
+## License
+
+MIT
+
+## Regeneration Contract
+
+- Generator-owned files are tracked in `.sdkwork/sdkwork-generator-manifest.json`.
+- Each run also writes `.sdkwork/sdkwork-generator-changes.json` so automation can inspect created, updated, deleted, unchanged, scaffolded, and backed-up files plus the classified impact areas, verification plan, and execution decision for the latest generation.
+- Apply mode also writes `.sdkwork/sdkwork-generator-report.json` with the full execution report, including `schemaVersion`, `generator`, stable artifact paths, and the execution handoff commands that match CLI `--json` output.
+- CLI JSON output also includes an execution handoff with concrete next commands, including reviewed apply commands for dry-run flows.
+- Put hand-written wrappers, adapters, and orchestration in `custom/`.
+- Files scaffolded under `custom/` are created once and preserved across regenerations.
+- If a generated-owned file was modified locally, its previous content is copied to `.sdkwork/manual-backups/` before overwrite or removal.

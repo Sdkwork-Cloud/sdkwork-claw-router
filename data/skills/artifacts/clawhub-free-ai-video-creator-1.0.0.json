@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-ai-video-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_ai_video_creator",
+  "skill": {
+    "id": 52822,
+    "skillKey": "clawhub-free-ai-video-creator",
+    "name": "Free Ai Video Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-ai-video-creator",
+    "url": "https://clawhub.ai/skills/free-ai-video-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-ai-video-creator-ee6eba41f428dc36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn your ideas, images, scripts, and raw clips into polished videos using free-ai-video-creator — a no-cost AI-powered video generation skill. Describe a co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775627833653,
+      "changelog": "Free AI Video Creator v1.0.0 — initial release.\n\n- Instantly generate structured, professional-quality videos from ideas, scripts, or uploaded assets with no cost or technical skills required.\n- Handles authentication: uses user's NEMO_TOKEN or auto-requests an anonymous token and session setup.\n- Supports full video workflow: idea input, file upload, scene breakdowns, editing, export, and credits monitoring.\n- Integrates cloud-based rendering and delivers videos in popular formats (mp4, mov, avi, webm, gif, etc.).\n- User-friendly message routing, error handling, and status notifications for smooth, guided use.\n- Tailored for creators, educators, and small businesses in need of quick, polished video output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb1d20dfb2628b51371ce6faffda96abcfa7d868a3dc9b7d496b57d25801f635"
+}

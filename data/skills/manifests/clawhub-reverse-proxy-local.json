@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11927,
+  "uuid": "skill-clawhub-reverse-proxy-local",
+  "skillKey": "clawhub-reverse-proxy-local",
+  "name": "Reverse proxy from internet to open claw",
+  "summary": "Connect OpenClaw to the internet via Tailscale Funnel. Use when user says \"connect with ecto\", \"setup ecto connection\", \"expose openclaw publicly\", or \"enable external access\".",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reverse_proxy_local",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tsheasha",
+      "features": [
+        "Connect OpenClaw to the internet via Tailscale Funnel",
+        "Use when user says \"connect with ecto\", \"setup ecto connection\", \"expose openclaw publicly\", or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reverse-proxy-local@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/941429?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reverse-proxy-local",
+      "url": "https://clawhub.ai/skills/reverse-proxy-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reverse-proxy-local",
+    "url": "https://clawhub.ai/skills/reverse-proxy-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reverse-proxy-local-5b7ae027d91a87f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reverse-proxy-local@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-reverse-proxy-local-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a5d38214ab60f8c246edeb71dd2ed3a5b37f2715a3e405c587d6a580b3ac494",
+      "artifactSizeBytes": 2109
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T09:27:26.910Z"
+}

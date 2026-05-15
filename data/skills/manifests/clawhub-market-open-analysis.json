@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65685,
+  "uuid": "skill-clawhub-market-open-analysis",
+  "skillKey": "clawhub-market-open-analysis",
+  "name": "openpd",
+  "summary": "每日开盘分析 Skill - 每个交易日自动推送 WTI 原油和黄金的开盘预测报告 **功能特性：** - 5:00 自动收集实时价格数据 - 5:30 分析信息面并推送到飞书 - 表格格式展示：品种、收盘价、开盘预测、置信度 - 基于隔夜新闻的利好/利空分析 **数据源：** - 价格数据：CommodityP...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_open_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linshengyyy",
+      "features": [
+        "每日开盘分析 Skill",
+        "每个交易日自动推送 WTI 原油和黄金的开盘预测报告 **功能特性：**",
+        "5:00 自动收集实时价格数据",
+        "5:30 分析信息面并推送到飞书"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/market-open-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150687052?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "market-open-analysis",
+      "url": "https://clawhub.ai/skills/market-open-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-open-analysis",
+    "url": "https://clawhub.ai/skills/market-open-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-open-analysis-d2a6725aa3d62fae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/market-open-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-market-open-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d9e899204f00cd712599db28bc608ff99f336d5bc614441625275b9fa05d0a6",
+      "artifactSizeBytes": 2491
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:31:47.597Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/verify-claims@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.verify_claims",
+  "skill": {
+    "id": 11923,
+    "skillKey": "clawhub-verify-claims",
+    "name": "Verify Claims"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "verify-claims",
+    "url": "https://clawhub.ai/skills/verify-claims",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/verify-claims-d9ac30dc06aa0d37.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verify claims and information using professional fact-checking services. Use this skill when users want to verify facts, check claims in articles/videos/transcripts, validate news authenticity, cross-reference information with trusted fact."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asgraf",
+      "userId": "s178895e5qs5ps1y83g3hrvbx184baz6",
+      "displayName": "Michał Turek",
+      "image": "https://avatars.githubusercontent.com/u/1997264?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1526,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770578526427,
+      "changelog": "- Initial release of the verify-claims skill.\n- Enables users to verify claims and content using professional fact-checking services worldwide.\n- Focuses on cross-referencing multiple trusted sources with regional and language relevancy.\n- Establishes clear guidelines for when to trigger fact-checking versus standard research.\n- Provides a step-by-step workflow for claim identification, source selection, searching, result analysis, and presenting findings.\n- Explicitly avoids unreliable or fraudulent sources and prioritizes user-friendly syntheses of verified information.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7e0995057f2b60c448b95bfb1be6d5c98b5243b0f590085520c9887adbeda112"
+}

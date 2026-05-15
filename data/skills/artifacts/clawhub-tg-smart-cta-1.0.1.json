@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tg-smart-cta@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tg_smart_cta",
+  "skill": {
+    "id": 10416,
+    "skillKey": "clawhub-tg-smart-cta",
+    "name": "Telegram CTA Button"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tg-smart-cta",
+    "url": "https://clawhub.ai/skills/tg-smart-cta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tg-smart-cta-e49c8351519f51fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enhance Telegram replies with context-aware dynamic CTA buttons (Smart Launcher UI). Use when replying to users on Telegram to provide relevant, time-sensitive, and task-oriented options for better interaction."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dendyadinirwana",
+      "userId": "publishers:dendyadinirwana",
+      "displayName": "dendyadinirwana",
+      "image": "https://avatars.githubusercontent.com/u/50883257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2350,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770025886782,
+      "changelog": "Version 1.0.1\n\n- Updated skill description for clarity and better interaction emphasis.\n- Refined button selection examples to improve clarity and expand button purpose descriptions.\n- Modernized terminology (e.g., replaced \"Jawaban Bebas\" with \"Manual Input\") and provided examples in English.\n- Clarified context-awareness logic to cover a broader range of user tasks.\n- Improved sample usage, making the implementation pattern more accessible.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:749ef72e0d01813e1ba97a7a7d14c16c1990a88e22df9ca6d101701dfa76a70d"
+}

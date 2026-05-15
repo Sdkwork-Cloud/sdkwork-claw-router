@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/serena@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serena",
+  "skill": {
+    "id": 42739,
+    "skillKey": "clawhub-serena",
+    "name": "Serena"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serena",
+    "url": "https://clawhub.ai/skills/serena",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serena-5e42e5c6483833eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Serena-backed semantic code navigation and editing when working in existing software projects with non-trivial structure, especially multi-file repos whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "juanclaw",
+      "userId": "s17a033txfqxy6ghp2sqk6ajg183zxpj",
+      "displayName": "juanclaw",
+      "image": "https://avatars.githubusercontent.com/u/267732897?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774996481689,
+      "changelog": "Bundle with Serena Openclaw Plugin and update skill layout",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38118c232095eeb9a6208a86f04edd7830d3573fac7d9da22d4f3497b205ae59"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codebase-onboarder@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codebase_onboarder",
+  "skill": {
+    "id": 52996,
+    "skillKey": "clawhub-codebase-onboarder",
+    "name": "Codebase Onboarder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codebase-onboarder",
+    "url": "https://clawhub.ai/skills/codebase-onboarder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codebase-onboarder-a44c725bcdb70459.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered codebase analysis — generate architecture docs, onboarding guides, and key-flow walkthroughs for any project. Use when joining a new codebase, onb..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777593636200,
+      "changelog": "- No code or documentation changes in this release.\n- Version bump only; no user-facing changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef56fb12c980eb04cea5632970f31c8fdba87875e3df7fca60062f320ed34e9a"
+}

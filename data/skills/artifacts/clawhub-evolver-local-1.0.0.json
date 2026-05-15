@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evolver-local@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evolver_local",
+  "skill": {
+    "id": 21680,
+    "skillKey": "clawhub-evolver-local",
+    "name": "Evolver Local"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evolver-local",
+    "url": "https://clawhub.ai/skills/evolver-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evolver-local-fa52c43bce196a52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A self-evolution engine for AI agents. Analyzes runtime history to identify improvements and applies protocol-constrained evolution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "muguozi1",
+      "userId": "s17197vrn391tcfkwt2y7v215n83gb4q",
+      "displayName": "muguozi1",
+      "image": "https://avatars.githubusercontent.com/u/63887927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 490,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773638410521,
+      "changelog": "Initial release of capability-evolver: a self-evolution engine for AI agents.\n\n- Enables agents to analyze their own runtime history and autonomously improve by writing new code or updating memory.\n- Supports multiple evolution strategies and rollback modes, configurable via environment variables.\n- Integrates with EvoMap network for registration, authentication, review, and publishing.\n- Provides automated error detection, self-repair, and standardized evolution workflows (GEP protocol).\n- Includes options for human-in-the-loop review, continuous (looped) evolution, and auto-issue creation on GitHub.\n- Offers detailed configuration for process management, memory handling, and external integrations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c281168ddc0b0476d8b9b383c6a14ea131d1b33c42c99e43542a4ac2e2227353"
+}

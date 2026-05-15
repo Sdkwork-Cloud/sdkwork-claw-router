@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiktok-with-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_with_ai",
+  "skill": {
+    "id": 41665,
+    "skillKey": "clawhub-tiktok-with-ai",
+    "name": "Tiktok With Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-with-ai",
+    "url": "https://clawhub.ai/skills/tiktok-with-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-with-ai-59656ebf03d3f95f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute phone recording of a day out into 1080p TikTok-ready clips just by typing what you need. Whether it's generating short viral-style TikTok vid..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775906880333,
+      "changelog": "TikTok with AI — Initial Release\n\n- Create TikTok-ready clips from raw video using AI by describing desired edits — no timeline or export settings needed.\n- Automatic cloud setup with anonymous token and session management; 100 free credits for new users.\n- Upload, edit, and export short-form videos (1080p MP4), including support for music, captions, and transitions.\n- Clear user feedback on setup progress and task completion.\n- Built-in handling for common user requests: credits, status, upload, export.\n- Detailed error handling and guidance for file types, limits, and session issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:026dbd82d4d10024d7ea303faf8aa1bab5a65e30778a6320a06c94e81d90fa82"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openviking-token-saver@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openviking_token_saver",
+  "skill": {
+    "id": 50596,
+    "skillKey": "clawhub-openviking-token-saver",
+    "name": "openviking-token-saver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openviking-token-saver",
+    "url": "https://clawhub.ai/skills/openviking-token-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openviking-token-saver-1a8c5b10761494aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenViking context database for AI agents — layered context loading (L0/L1/L2), semantic search, file-system memory management. Use when: (1) setting up Open..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cnoder-wgh",
+      "userId": "s177kat3e518801npd0aptksdx83ps2k",
+      "displayName": "cnoder-wgh",
+      "image": "https://avatars.githubusercontent.com/u/15918416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 448,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1774598608409,
+      "changelog": "修复 Python 路径问题；优化 token 对比输出格式；更新触发词（支持中文）；完善 SKILL.md 文档；Console Web UI 启动说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d589b6013c79a8a3a34916e0db48a6a2c2ab25e6ae1d1e92177054d79f190b4e"
+}

@@ -34,6 +34,7 @@ class ClawRouterOpenApiPrecisionAuditTest(unittest.TestCase):
                             "api_method": "GET",
                             "api_path": "/app/v3/api/model-vendors",
                             "operation": "fetchModelVendors",
+                            "operation_id": "modelVendors.list",
                             "tag": "models",
                             "kind": "read",
                             "path_params": [],
@@ -46,6 +47,7 @@ class ClawRouterOpenApiPrecisionAuditTest(unittest.TestCase):
                             "api_method": "GET",
                             "api_path": "/app/v3/api/model-vendors/{vendorCode}",
                             "operation": "getModelVendor",
+                            "operation_id": "modelVendors.retrieve",
                             "tag": "models",
                             "kind": "read",
                             "path_params": ["vendorCode"],
@@ -58,6 +60,7 @@ class ClawRouterOpenApiPrecisionAuditTest(unittest.TestCase):
                             "api_method": "GET",
                             "api_path": "/app/v3/api/model-vendors",
                             "operation": "fetchModelVendorsForRankings",
+                            "operation_id": "modelVendors.rankings.list",
                             "tag": "models",
                             "kind": "read",
                             "path_params": [],
@@ -71,6 +74,7 @@ class ClawRouterOpenApiPrecisionAuditTest(unittest.TestCase):
                             "api_method": "GET",
                             "api_path": "/app/v3/api/dashboard",
                             "operation": "fetchDashboard",
+                            "operation_id": "dashboard.retrieve",
                             "tag": "dashboard",
                             "kind": "read",
                             "path_params": [],
@@ -83,6 +87,7 @@ class ClawRouterOpenApiPrecisionAuditTest(unittest.TestCase):
                             "api_method": "POST",
                             "api_path": "/app/v3/api/model-vendors",
                             "operation": "createModelVendor",
+                            "operation_id": "modelVendors.create",
                             "tag": "models",
                             "kind": "create",
                             "path_params": [],
@@ -93,9 +98,10 @@ class ClawRouterOpenApiPrecisionAuditTest(unittest.TestCase):
                         {
                             "api_surface": "app",
                             "api_method": "POST",
-                            "api_path": "/app/v3/api/router/api-keys",
+                            "api_path": "/app/v3/api/iam/api_keys",
                             "operation": "createKey",
-                            "tag": "router",
+                            "operation_id": "apiKeys.create",
+                            "tag": "iam",
                             "kind": "create",
                             "path_params": [],
                             "source": "apps/portal/apiKeyService.ts",
@@ -172,6 +178,16 @@ class ClawRouterOpenApiPrecisionAuditTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_generated_openapi(root)
+            spec = self.read_app_spec(root)
+
+            self.assertEqual(
+                "modelVendors.list",
+                spec["paths"]["/app/v3/api/model-vendors"]["get"]["operationId"],
+            )
+            self.assertEqual(
+                {"$ref": "#/components/schemas/ModelVendorsListResult"},
+                spec["paths"]["/app/v3/api/model-vendors"]["get"]["responses"]["200"]["content"]["application/json"]["schema"],
+            )
 
             result = ClawRouterOpenApiPrecisionAudit(root=root).run()
 
@@ -184,31 +200,48 @@ class ClawRouterOpenApiPrecisionAuditTest(unittest.TestCase):
             spec = self.read_app_spec(root)
 
             self.assertEqual(
-                {"$ref": "#/components/schemas/CreateKeyResult"},
-                spec["paths"]["/app/v3/api/router/api-keys"]["post"]["responses"]["200"]["content"]["application/json"]["schema"],
+                {"$ref": "#/components/schemas/ApiKeysCreateResult"},
+                spec["paths"]["/app/v3/api/iam/api_keys"]["post"]["responses"]["200"]["content"]["application/json"]["schema"],
             )
 
             result = ClawRouterOpenApiPrecisionAudit(root=root).run()
 
             self.assertTrue(result.ok, result.messages)
 
-    def test_rejects_precise_wrapper_for_non_get_operation(self) -> None:
+    def test_no_data_operation_uses_operation_result_with_no_data_payload(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_generated_openapi(root)
             spec = self.read_app_spec(root)
-            spec["components"]["schemas"]["CreateModelVendorResult"] = {
+            self.assertEqual(
+                {"$ref": "#/components/schemas/ModelVendorsCreateResult"},
+                spec["paths"]["/app/v3/api/model-vendors"]["post"]["responses"]["200"]["content"]["application/json"]["schema"],
+            )
+            self.assertIn("ModelVendorsCreateResult", spec["components"]["schemas"])
+            self.assertIn("NoData", spec["components"]["schemas"])
+            self.assertEqual(
+                [{"$ref": "#/components/schemas/NoData"}],
+                spec["components"]["schemas"]["ModelVendorsCreateResult"]["properties"]["data"]["allOf"],
+            )
+
+            result = ClawRouterOpenApiPrecisionAudit(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_rejects_operation_result_wrapper_for_no_data_operation(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_generated_openapi(root)
+            spec = self.read_app_spec(root)
+            spec["components"]["schemas"]["UnexpectedModelVendorsCreateResult"] = {
                 "type": "object",
                 "additionalProperties": False,
                 "required": ["code"],
-                "x-operation-id": "createModelVendor",
+                "x-operation-id": "modelVendors.create",
                 "properties": {
                     "code": {"type": "string"},
                     "data": {"$ref": "#/components/schemas/AiModelVendorRecord"},
                 },
-            }
-            spec["paths"]["/app/v3/api/model-vendors"]["post"]["responses"]["200"]["content"]["application/json"]["schema"] = {
-                "$ref": "#/components/schemas/CreateModelVendorResult"
             }
             self.write_app_spec(root, spec)
 
@@ -216,7 +249,50 @@ class ClawRouterOpenApiPrecisionAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "app createModelVendor must use PlusApiResult because precise responses require GET, one read source, and an existing record schema",
+                "app modelVendors.create result schema name must be ModelVendorsCreateResult",
+                result.messages,
+            )
+
+    def test_rejects_business_data_schema_for_no_data_operation_result(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_generated_openapi(root)
+            spec = self.read_app_spec(root)
+            spec["components"]["schemas"]["ModelVendorsCreateResult"] = {
+                "type": "object",
+                "additionalProperties": False,
+                "required": ["code"],
+                "x-operation-id": "modelVendors.create",
+                "properties": {
+                    "code": {"type": "string"},
+                    "data": {"$ref": "#/components/schemas/AiModelVendorRecord"},
+                },
+            }
+            self.write_app_spec(root, spec)
+
+            result = ClawRouterOpenApiPrecisionAudit(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "app modelVendors.create data schema must be {'$ref': '#/components/schemas/NoData'}",
+                result.messages,
+            )
+
+    def test_rejects_shared_plus_api_result_for_business_data_operation(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_generated_openapi(root)
+            spec = self.read_app_spec(root)
+            spec["paths"]["/app/v3/api/iam/api_keys"]["post"]["responses"]["200"]["content"]["application/json"]["schema"] = {
+                "$ref": "#/components/schemas/PlusApiResult"
+            }
+            self.write_app_spec(root, spec)
+
+            result = ClawRouterOpenApiPrecisionAudit(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "app apiKeys.create 200 response must reference #/components/schemas/ApiKeysCreateResult",
                 result.messages,
             )
 
@@ -225,7 +301,7 @@ class ClawRouterOpenApiPrecisionAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_generated_openapi(root)
             spec = self.read_app_spec(root)
-            result_schema = spec["components"]["schemas"]["GetModelVendorResult"]
+            result_schema = spec["components"]["schemas"]["ModelVendorsRetrieveResult"]
             result_schema["properties"]["data"] = {
                 "type": "array",
                 "items": {"$ref": "#/components/schemas/AiModelVendorRecord"},
@@ -236,7 +312,7 @@ class ClawRouterOpenApiPrecisionAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "app getModelVendor data schema must be {'$ref': '#/components/schemas/AiModelVendorRecord'}",
+                "app modelVendors.retrieve data schema must be {'$ref': '#/components/schemas/AiModelVendorRecord'}",
                 result.messages,
             )
 

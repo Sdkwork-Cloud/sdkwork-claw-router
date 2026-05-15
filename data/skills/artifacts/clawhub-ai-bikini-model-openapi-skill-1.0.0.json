@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-bikini-model-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_bikini_model_openapi_skill",
+  "skill": {
+    "id": 56379,
+    "skillKey": "clawhub-ai-bikini-model-openapi-skill",
+    "name": "AI Bikini Model – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-bikini-model-openapi-skill",
+    "url": "https://clawhub.ai/skills/ai-bikini-model-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-bikini-model-openapi-skill-5149c8397c285b9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI bikini model — transform a person photo into a bikini model image or video"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775817293434,
+      "changelog": "ai-bikini-model-openapi-skill v1.0.0\n\n- Initial release of the AI bikini model OpenAPI skill.\n- Transforms a person photo into a bikini model image or video via WeShop OpenAPI.\n- Requires API key (`WESHOP_API_KEY`) for secure access; usage instructions updated for key management.\n- Supports input of a portrait or full-body photo URL, with optional description and output type (video/image).\n- Endpoints included for starting runs, polling status, and uploading photos.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78e844c8788b29787b85a9d3187b2b1e3455a5e2815819b535983220143954cf"
+}

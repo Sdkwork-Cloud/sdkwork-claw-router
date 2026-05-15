@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11424,
+  "uuid": "skill-clawhub-wolt-orders",
+  "skillKey": "clawhub-wolt-orders",
+  "name": "Wolt Orders",
+  "summary": "Discover restaurants with advanced filters (cuisine, price, distance, rating, promotions), place single or group orders on Wolt.com, reorder past favorites, track status in real-time, automatically detect delays and contact support, and pu.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wolt_orders",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dviros",
+      "features": [
+        "Discover restaurants with advanced filters (cuisine, price, distance, rating, promotions), plac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wolt-orders@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23431860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wolt-orders",
+      "url": "https://clawhub.ai/skills/wolt-orders"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wolt-orders",
+    "url": "https://clawhub.ai/skills/wolt-orders",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wolt-orders-01c33afe13ad5e91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wolt-orders@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wolt-orders-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f91e117740bc3e991fa6afd52c05886484faaeb2582729c932111420c53c22f9",
+      "artifactSizeBytes": 2602
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T18:09:16.264Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24310,
+  "uuid": "skill-clawhub-openclaw-skill-session-memory",
+  "skillKey": "clawhub-openclaw-skill-session-memory",
+  "name": "Openclaw Skill Session Memory",
+  "summary": "Automatically saves conversations daily with sensitive data redacted and supports fast keyword search across recent sessions.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_session_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "魏然",
+      "features": [
+        "Automatically saves conversations daily with sensitive data redacted and supports fast keyword."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-session-memory@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42764079?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-session-memory",
+      "url": "https://clawhub.ai/skills/openclaw-skill-session-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-session-memory",
+    "url": "https://clawhub.ai/skills/openclaw-skill-session-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-session-memory-f84d97e3aee0e95d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-session-memory@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-session-memory-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6135efc28fd9f67c6c1ac69d50c53fa2f1f126933e07a81b12da6da94e3d4e16",
+      "artifactSizeBytes": 2417
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T12:11:31.175Z"
+}

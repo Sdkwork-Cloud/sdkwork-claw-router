@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10521,
+  "uuid": "skill-clawhub-clawgator-superpowers",
+  "skillKey": "clawhub-clawgator-superpowers",
+  "name": "ClawGator Superpowers",
+  "summary": "Framework pengembangan perangkat lunak lengkap untuk tim ClawGator. Brainstorming, planning, eksekusi sistematis, TDD, debugging, code review, dan git worktrees. Trigger otomatis sebelum memulai proyek atau perubahan kode.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawgator_superpowers",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "renggap",
+      "features": [
+        "Framework pengembangan perangkat lunak lengkap untuk tim ClawGator",
+        "Brainstorming, planning, eksekusi sistematis, TDD, debugging, code review, dan git worktrees",
+        "Trigger otomatis sebelum memulai proyek atau perubahan kode."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawgator-superpowers@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7005660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawgator-superpowers",
+      "url": "https://clawhub.ai/skills/clawgator-superpowers"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawgator-superpowers",
+    "url": "https://clawhub.ai/skills/clawgator-superpowers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawgator-superpowers-cd39a7e4a8c07cd7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawgator-superpowers@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawgator-superpowers-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9232bf0f171384d9ec0cdcd237df0ae8b4a0efb1045b92fc4c91667df322ec23",
+      "artifactSizeBytes": 2518
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T10:25:11.831Z"
+}

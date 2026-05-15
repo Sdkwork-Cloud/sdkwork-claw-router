@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-interview-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_interview_assistant",
+  "skill": {
+    "id": 72632,
+    "skillKey": "clawhub-ai-interview-assistant",
+    "name": "基于多阶段协作的智能面试系统，模拟真实面试场景，对用户进行技术面试评估。"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-interview-assistant",
+    "url": "https://clawhub.ai/skills/ai-interview-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-interview-assistant-a2f2118877fea30e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 模拟面试助手 — 基于多阶段协作的智能面试系统。用户说'我要开始模拟面试'即可启动，自动进行简历画像管理、岗位匹配分析、5道题面试循环、实时评分和总结报告。70%关键词匹配+30%思路评分，60分合格。支持匿名模式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paradise123-bot",
+      "userId": "s178gbmpymgh73h8hztxjba32x843dnt",
+      "displayName": "Paradise123-bot",
+      "image": "https://avatars.githubusercontent.com/u/78597511?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775143382329,
+      "changelog": "AI 模拟面试助手 1.0.0 发布，提供多阶段协作的智能面试体验：\n\n- 支持“简历画像管理—岗位匹配分析—5道题面试循环—总结报告”完整流程\n- 实现70%关键词+30%思路评分，60分合格，支持详细实时评分反馈\n- 用户可匿名模式参与，严格隐私保护，最小化个人数据采集\n- 提供岗位JD分析、技术方向自适应题库、前沿题获取与评分\n- 支持用户“跳过”“结束”等指令，异常情形自动降级处理",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3613222b9cffb7ba46f78ddd0d206a968617ec898cf030c856782ef234d7cb30"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56091,
+  "uuid": "skill-clawhub-auditcore-network-audit",
+  "skillKey": "clawhub-auditcore-network-audit",
+  "name": "AuditCore — Network Security Audit Suite",
+  "summary": "AuditCore — Suite completa de auditoría de seguridad para infraestructura de red. Cubre 6 vendors (F5, Cisco, Fortinet, Palo Alto, Juniper, Arista), 5 framew...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auditcore_network_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "santanallen",
+      "features": [
+        "AuditCore — Suite completa de auditoría de seguridad para infraestructura de red",
+        "Cubre 6 vendors (F5, Cisco, Fortinet, Palo Alto, Juniper, Arista), 5 framew..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auditcore-network-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126915123?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auditcore-network-audit",
+      "url": "https://clawhub.ai/skills/auditcore-network-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auditcore-network-audit",
+    "url": "https://clawhub.ai/skills/auditcore-network-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auditcore-network-audit-9c261059246d02a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auditcore-network-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auditcore-network-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6bc961a0131f3bb52f299a74a75655f04e64dbcf14a85e7f42d8868392a5a4af",
+      "artifactSizeBytes": 2615
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T18:02:37.309Z"
+}

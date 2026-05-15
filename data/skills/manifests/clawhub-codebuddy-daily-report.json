@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57465,
+  "uuid": "skill-clawhub-codebuddy-daily-report",
+  "skillKey": "clawhub-codebuddy-daily-report",
+  "name": "CodeBuddy 每日工作日报生成",
+  "summary": "Generate a daily work report by automatically discovering all git repositories the user worked on, collecting commit logs across all branches, and summarizin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codebuddy_daily_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "disyli",
+      "features": [
+        "Generate a daily work report by automatically discovering all git repositories the user worked."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codebuddy-daily-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114840937?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codebuddy-daily-report",
+      "url": "https://clawhub.ai/skills/codebuddy-daily-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codebuddy-daily-report",
+    "url": "https://clawhub.ai/skills/codebuddy-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codebuddy-daily-report-744a4542daf78ec4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codebuddy-daily-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-codebuddy-daily-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df1492ae93c07dddb38bb4ec8be742a85c5d4d5d46d24289fba00f22e1930a57",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T15:28:57.090Z"
+}

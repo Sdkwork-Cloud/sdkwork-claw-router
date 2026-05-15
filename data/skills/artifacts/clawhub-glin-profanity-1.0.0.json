@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glin-profanity@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glin_profanity",
+  "skill": {
+    "id": 11910,
+    "skillKey": "clawhub-glin-profanity",
+    "name": "Glin Profanity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glin-profanity",
+    "url": "https://clawhub.ai/skills/glin-profanity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glin-profanity-b2d572e7f27c82ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Profanity detection and content moderation library with leetspeak, Unicode homoglyph, and ML-powered detection. Use when filtering user-generated content, moderating comments, checking text for profanity, censoring messages, or building co."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thegdsks",
+      "userId": "publishers:thegdsks",
+      "displayName": "thegdsks",
+      "image": "https://avatars.githubusercontent.com/u/39922405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1880,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769925962070,
+      "changelog": "Initial release: Profanity detection library with leetspeak, Unicode homoglyph, and ML support. 24 languages.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:73435a300e1366362a44e4fe56c1273444e8e17ccfa4ebb75e0f964736f4266d"
+}

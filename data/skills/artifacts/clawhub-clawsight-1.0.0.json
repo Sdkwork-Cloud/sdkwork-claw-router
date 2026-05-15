@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawsight@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawsight",
+  "skill": {
+    "id": 23540,
+    "skillKey": "clawhub-clawsight",
+    "name": "nutcracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawsight",
+    "url": "https://clawhub.ai/skills/clawsight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawsight-cbf48636d1960f94.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "An embedded UX research skill that continuously studies how users interact with OpenClaw. It observes conversation patterns, task completions, friction point..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "giulianomorse",
+      "userId": "publishers:giulianomorse",
+      "displayName": "giulianomorse",
+      "image": "https://avatars.githubusercontent.com/u/210213190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 437,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772238714720,
+      "changelog": "Initial release of uxr-observer: embedded, privacy-conscious UX research for OpenClaw.\n\n- Passively observes all user interactions to track intents, outcomes, friction, sentiment, and notable verbatim quotes.\n- Actively triggers brief micro-surveys after each completed task for direct user feedback.\n- Stores all data locally under `~/.uxr-observer/`; never transmits data unless explicitly requested by the user.\n- Provides daily insight reports the user can review and share if they choose.\n- Ensures sensitive content (passwords, API keys, personal secrets) is never logged verbatim.\n- User can opt out or pause observation at any time.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e3688ed4d0ae8acfa3be78a2b1f31d47e8e77fec3d96923959990f5cf017e9da"
+}

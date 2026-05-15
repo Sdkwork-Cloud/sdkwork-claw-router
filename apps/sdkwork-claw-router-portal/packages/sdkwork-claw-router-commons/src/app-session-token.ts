@@ -4,10 +4,11 @@ const APP_SESSION_STORAGE_KEY = 'sdkwork.clawRouter.appSession.v1';
 const EXPIRY_SKEW_SECONDS = 30;
 
 export interface StoredAppSessionToken {
-  token: string;
-  tokenType: 'Bearer';
-  expiresAt: number;
-  expiresInSeconds?: number;
+  accessToken: string;
+  authToken: string;
+  expiresAt?: number;
+  refreshToken?: string;
+  sessionId?: string;
   storedAt: number;
 }
 
@@ -16,20 +17,22 @@ let storageLoaded = false;
 
 export function storeAppSessionFromResult(result: unknown): StoredAppSessionToken {
   const data = readAppSessionPayload(result);
-  const token = readString(data, 'token');
-  const tokenType = readString(data, 'tokenType');
-  const expiresAt = readNumber(data, 'expiresAt');
-  const expiresInSeconds = readOptionalNumber(data, 'expiresInSeconds');
+  const accessToken = readString(data, 'accessToken');
+  const authToken = readString(data, 'authToken');
+  const expiresAt = readOptionalExpiry(data, 'expiresAt');
+  const refreshToken = readString(data, 'refreshToken');
+  const sessionId = readString(data, 'sessionId');
 
-  if (!token || tokenType.toLowerCase() !== 'bearer' || !Number.isFinite(expiresAt)) {
-    throw new Error('App session response is missing valid token data');
+  if (!accessToken || !authToken) {
+    throw new Error('App session response is missing valid SDKWork IAM token data');
   }
 
   const stored: StoredAppSessionToken = {
-    token,
-    tokenType: 'Bearer',
-    expiresAt,
-    expiresInSeconds,
+    accessToken,
+    authToken,
+    ...(Number.isFinite(expiresAt) ? { expiresAt } : {}),
+    ...(refreshToken ? { refreshToken } : {}),
+    ...(sessionId ? { sessionId } : {}),
     storedAt: currentUnixSeconds(),
   };
 
@@ -40,6 +43,10 @@ export function storeAppSessionFromResult(result: unknown): StoredAppSessionToke
 }
 
 export function getStoredAppSessionToken(now = currentUnixSeconds()): string | undefined {
+  return getStoredAppSessionAuthToken(now);
+}
+
+export function getStoredAppSessionAuthToken(now = currentUnixSeconds()): string | undefined {
   const token = loadStoredAppSessionToken();
   if (!token) {
     return undefined;
@@ -48,7 +55,19 @@ export function getStoredAppSessionToken(now = currentUnixSeconds()): string | u
     clearStoredAppSessionToken();
     return undefined;
   }
-  return token.token;
+  return token.authToken;
+}
+
+export function getStoredAppSessionAccessToken(now = currentUnixSeconds()): string | undefined {
+  const token = loadStoredAppSessionToken();
+  if (!token) {
+    return undefined;
+  }
+  if (isExpired(token, now)) {
+    clearStoredAppSessionToken();
+    return undefined;
+  }
+  return token.accessToken;
 }
 
 export function loadStoredAppSessionToken(): StoredAppSessionToken | null {
@@ -87,6 +106,9 @@ function readAppSessionPayload(result: unknown): Record<string, unknown> {
 }
 
 function isExpired(token: StoredAppSessionToken, now: number): boolean {
+  if (typeof token.expiresAt !== 'number') {
+    return false;
+  }
   return token.expiresAt <= now + EXPIRY_SKEW_SECONDS;
 }
 
@@ -95,15 +117,18 @@ function isStoredAppSessionToken(value: unknown): value is StoredAppSessionToken
     return false;
   }
   return (
-    typeof value.token === 'string' &&
-    value.token.length > 0 &&
-    value.tokenType === 'Bearer' &&
-    typeof value.expiresAt === 'number' &&
-    Number.isFinite(value.expiresAt) &&
+    typeof value.accessToken === 'string' &&
+    value.accessToken.length > 0 &&
+    typeof value.authToken === 'string' &&
+    value.authToken.length > 0 &&
     typeof value.storedAt === 'number' &&
     Number.isFinite(value.storedAt) &&
-    (value.expiresInSeconds === undefined ||
-      (typeof value.expiresInSeconds === 'number' && Number.isFinite(value.expiresInSeconds)))
+    (value.expiresAt === undefined ||
+      (typeof value.expiresAt === 'number' && Number.isFinite(value.expiresAt))) &&
+    (value.refreshToken === undefined ||
+      (typeof value.refreshToken === 'string' && value.refreshToken.length > 0)) &&
+    (value.sessionId === undefined ||
+      (typeof value.sessionId === 'string' && value.sessionId.length > 0))
   );
 }
 
@@ -123,13 +148,22 @@ function readNumber(record: Record<string, unknown>, key: string): number {
   return Number.NaN;
 }
 
-function readOptionalNumber(record: Record<string, unknown>, key: string): number | undefined {
+function readOptionalExpiry(record: Record<string, unknown>, key: string): number | undefined {
   const value = record[key];
   if (value === undefined || value === null || value === '') {
     return undefined;
   }
-  const parsed = readNumber(record, key);
-  return Number.isFinite(parsed) ? parsed : undefined;
+  const parsedNumber = readNumber(record, key);
+  if (Number.isFinite(parsedNumber)) {
+    return parsedNumber;
+  }
+  if (typeof value === 'string') {
+    const parsedTime = Date.parse(value);
+    if (Number.isFinite(parsedTime)) {
+      return Math.floor(parsedTime / 1000);
+    }
+  }
+  return undefined;
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {

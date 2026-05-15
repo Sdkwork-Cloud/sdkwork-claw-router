@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travel-disruption-rescue@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_disruption_rescue",
+  "skill": {
+    "id": 50076,
+    "skillKey": "clawhub-travel-disruption-rescue",
+    "name": "Travel Disruption Rescue"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-disruption-rescue",
+    "url": "https://clawhub.ai/skills/travel-disruption-rescue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-disruption-rescue-d647386743a0136a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a calm, step-by-step plan and communication drafts for managing flight delays, cancellations, missed connections, lost luggage, and travel disruptions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 44,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778299823368,
+      "changelog": "Travel Disruption Rescue 1.0.0 – Initial Release\n\n- Provides a structured workflow for travelers facing flight delays, cancellations, missed connections, lost luggage, or overbookings.\n- Guides users from chaotic disruption details to an actionable step-by-step plan.\n- Supports intake, organization, draft communication, and verification for travel emergencies.\n- Offers suggested output formats like situation summaries, timelines, checklists, action tables, and message drafts.\n- Prioritizes clarity, calm, and safety with explicit boundaries and verification steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0dc6740d0c1236c40d80593a3f67f9f87ad0a294bdf1d872a64ae36a5ff826f6"
+}

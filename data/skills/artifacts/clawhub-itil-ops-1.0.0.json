@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/itil-ops@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.itil_ops",
+  "skill": {
+    "id": 36475,
+    "skillKey": "clawhub-itil-ops",
+    "name": "ITIL Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "itil-ops",
+    "url": "https://clawhub.ai/skills/itil-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/itil-ops-8a06bd8a7ac51f27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ITIL-aligned incident, problem, and change management for AI agents. Use when: detecting service crashes, analyzing recurring failures, tracking incidents to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chefboyrdave21",
+      "userId": "publishers:chefboyrdave21",
+      "displayName": "chefboyrdave21",
+      "image": "https://avatars.githubusercontent.com/u/184315360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774155650225,
+      "changelog": "v1.0.0 — Initial release. ITIL 4 incident, problem, and change management for AI agents. Born from fixing a midnight watchdog crash loop. Includes automated detection script, severity classification, pattern-based escalation, root cause analysis workflows, and ITIL-to-agent-ops reference mapping.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5acd2501e5f08b042eb3bd986f2e1635a8159d92baef7380cd3f477dd7973ad4"
+}

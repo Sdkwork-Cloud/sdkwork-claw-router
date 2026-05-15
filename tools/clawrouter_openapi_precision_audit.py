@@ -32,6 +32,7 @@ class _OperationContext:
     read_sources: list[str]
     record_component: str | None
     response_component: str | None
+    has_business_data: bool
 
 
 class ClawRouterOpenApiPrecisionAudit:
@@ -42,7 +43,6 @@ class ClawRouterOpenApiPrecisionAudit:
         "app": "clawrouter-app-openapi.json",
         "backend": "clawrouter-backend-openapi.json",
     }
-    GENERIC_RESULT_REF = "#/components/schemas/PlusApiResult"
     APP_MODEL_CATALOG_PRIVATE_ITEM_FIELDS = frozenset(
         {
             "lowestUpstreamCostUnitPrice",
@@ -145,21 +145,13 @@ class ClawRouterOpenApiPrecisionAudit:
                 messages.append(f"{surface} {context.path} {context.method} operationId must be {context.operation_id}")
 
             response_ref = self._success_response_ref(operation_spec)
-            expected_component = self._operation_result_component_name(context.operation_id)
-            if self._can_use_precise_response(context):
-                allowed_components.add(expected_component)
-                expected_ref = f"#/components/schemas/{expected_component}"
-                if response_ref != expected_ref:
-                    messages.append(f"{surface} {context.operation_id} 200 response must reference {expected_ref}")
-                    continue
-                messages.extend(self._validate_precise_result_schema(surface, context, schemas.get(expected_component)))
+            expected_ref = self._expected_success_response_ref(context)
+            if response_ref != expected_ref:
+                messages.append(f"{surface} {context.operation_id} 200 response must reference {expected_ref}")
             else:
-                if response_ref != self.GENERIC_RESULT_REF:
-                    messages.append(
-                        f"{surface} {context.operation_id} must use PlusApiResult because precise responses require GET, one read source, and an existing record schema"
-                    )
-                if expected_component in schemas:
-                    messages.append(f"{surface} {context.operation_id} must not declare unsupported result schema {expected_component}")
+                expected_component = self._operation_result_component_name(context.operation_id)
+                allowed_components.add(expected_component)
+                messages.extend(self._validate_precise_result_schema(surface, context, schemas.get(expected_component)))
 
         messages.extend(
             self._validate_operation_result_orphans(
@@ -236,7 +228,7 @@ class ClawRouterOpenApiPrecisionAudit:
 
         expected_data_schema = self._expected_data_schema(context)
         actual_data_schema = properties.get("data")
-        if actual_data_schema != expected_data_schema:
+        if not self._schema_matches(actual_data_schema, expected_data_schema):
             messages.append(f"{surface} {context.operation_id} data schema must be {expected_data_schema}")
         return messages
 
@@ -259,8 +251,6 @@ class ClawRouterOpenApiPrecisionAudit:
             expected_component = self._operation_result_component_name(operation_id)
             if component_name != expected_component:
                 messages.append(f"{surface} {operation_id} result schema name must be {expected_component}")
-            if component_name not in allowed_components:
-                messages.append(f"{surface} {operation_id} must not declare unsupported result schema {component_name}")
         return messages
 
     def _operation_context(
@@ -273,29 +263,63 @@ class ClawRouterOpenApiPrecisionAudit:
         read_sources = self._string_list(operation.get("read_sources"))
         record_component = table_records.get(read_sources[0]) if len(read_sources) == 1 else None
         response_component = self._payload_schema_component(operation.get("response_schema"))
+        method = self._string(operation.get("api_method")).upper()
+        path_params = self._string_list(operation.get("path_params"))
+        has_business_data = response_component not in {"PlusApiResult", "NoData"} and (
+            response_component is not None or (method == "GET" and record_component is not None)
+        )
         return _OperationContext(
             surface=surface,
-            method=self._string(operation.get("api_method")).upper(),
+            method=method,
             path=self._string(operation.get("api_path")),
             operation_id=operation_id,
-            path_params=self._string_list(operation.get("path_params")),
+            path_params=path_params,
             read_sources=read_sources,
             record_component=record_component,
             response_component=response_component,
+            has_business_data=has_business_data,
         )
 
-    def _can_use_precise_response(self, context: _OperationContext) -> bool:
-        return context.response_component is not None or (
-            context.method == "GET" and len(context.read_sources) == 1 and context.record_component is not None
-        )
-
-    def _expected_data_schema(self, context: _OperationContext) -> dict[str, Any]:
-        if context.response_component is not None:
+    def _expected_data_schema(self, context: _OperationContext) -> dict[str, Any] | None:
+        if not context.has_business_data:
+            return {"$ref": "#/components/schemas/NoData"}
+        if context.response_component is not None and context.response_component not in {"PlusApiResult", "NoData"}:
             return {"$ref": f"#/components/schemas/{context.response_component}"}
         record_ref = {"$ref": f"#/components/schemas/{context.record_component}"}
         if context.path_params:
             return record_ref
         return {"type": "array", "items": record_ref}
+
+    def _expected_success_response_ref(self, context: _OperationContext) -> str:
+        expected_component = self._operation_result_component_name(context.operation_id)
+        return f"#/components/schemas/{expected_component}"
+
+    def _schema_matches(self, actual: Any, expected: dict[str, Any] | None) -> bool:
+        if actual == expected:
+            return True
+        if expected is None:
+            return False
+        if self._schema_is_no_data(actual) and expected == {"$ref": "#/components/schemas/NoData"}:
+            return True
+        if isinstance(actual, dict):
+            actual_without_description = {
+                key: value for key, value in actual.items() if key != "description"
+            }
+            if actual_without_description == expected:
+                return True
+        expected_ref = expected.get("$ref")
+        if isinstance(expected_ref, str) and isinstance(actual, dict):
+            all_of = actual.get("allOf")
+            return isinstance(all_of, list) and all_of == [{"$ref": expected_ref}]
+        return False
+
+    def _schema_is_no_data(self, schema: Any) -> bool:
+        if not isinstance(schema, dict):
+            return False
+        if schema.get("$ref") == "#/components/schemas/NoData":
+            return True
+        all_of = schema.get("allOf")
+        return isinstance(all_of, list) and all_of == [{"$ref": "#/components/schemas/NoData"}]
 
     def _operation_spec(self, paths: Any, context: _OperationContext) -> dict[str, Any] | None:
         if not isinstance(paths, dict):
@@ -378,27 +402,21 @@ class ClawRouterOpenApiPrecisionAudit:
         return payload
 
     def _operation_ids(self, operations: list[dict[str, Any]]) -> dict[int, str]:
-        counts: dict[str, int] = {}
-        for operation in operations:
-            base = self._safe_operation_id(self._string(operation.get("operation")) or "operation")
-            counts[base] = counts.get(base, 0) + 1
-
         result: dict[int, str] = {}
         used: set[str] = set()
         for operation in operations:
-            base = self._safe_operation_id(self._string(operation.get("operation")) or "operation")
-            if counts[base] > 1:
-                candidate = self._safe_operation_id(f"{self._string(operation.get('tag'))}_{base}")
-            else:
-                candidate = base
-            unique = candidate
-            suffix = 2
-            while unique in used:
-                unique = f"{candidate}{suffix}"
-                suffix += 1
-            used.add(unique)
-            result[id(operation)] = unique
+            base = self._operation_id_base(operation)
+            if base in used:
+                raise ValueError(f"duplicate OpenAPI operationId: {base}")
+            used.add(base)
+            result[id(operation)] = base
         return result
+
+    def _operation_id_base(self, operation: dict[str, Any]) -> str:
+        raw = self._string(operation.get("operation_id")) or self._string(operation.get("operation")) or "operation"
+        if re.match(r"^[a-z][A-Za-z0-9]*(?:\.[a-z][A-Za-z0-9]*)+$", raw):
+            return raw
+        raise ValueError(f"OpenAPI operation_id must use dotted lowerCamel segments: {raw}")
 
     def _safe_operation_id(self, value: str) -> str:
         parts = [part for part in re.split(r"[^A-Za-z0-9]+", value) if part]
@@ -414,7 +432,21 @@ class ClawRouterOpenApiPrecisionAudit:
     def _operation_result_component_name(self, operation_id: str) -> str:
         if not operation_id:
             return "OperationResult"
-        return operation_id[0].upper() + operation_id[1:] + "Result"
+        safe = self._component_safe_operation_name(operation_id)
+        return safe[0].upper() + safe[1:] + "Result"
+
+    def _component_safe_operation_name(self, operation_id: str) -> str:
+        if re.match(r"^[A-Za-z_][A-Za-z0-9_]*$", operation_id):
+            return operation_id
+        parts = [part for part in re.split(r"[^A-Za-z0-9]+", operation_id) if part]
+        if not parts:
+            return "operation"
+        first = parts[0][0].lower() + parts[0][1:]
+        rest = "".join(part[0].upper() + part[1:] for part in parts[1:])
+        candidate = first + rest
+        if not re.match(r"^[A-Za-z_]", candidate):
+            candidate = f"operation{candidate[0].upper()}{candidate[1:]}"
+        return candidate
 
     def _payload_schema_component(self, value: Any) -> str | None:
         if not isinstance(value, dict):

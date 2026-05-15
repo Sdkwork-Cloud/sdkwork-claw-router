@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71328,
+  "uuid": "skill-clawhub-que-yin",
+  "skillKey": "clawhub-que-yin",
+  "name": "Que Yin",
+  "summary": "负载均衡模块，监控资源状态，调度多任务执行，优化资源分配，生成负载报告。",
+  "version": "1.0.23",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.que_yin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "无为上人",
+      "features": [
+        "负载均衡模块，监控资源状态，调度多任务执行，优化资源分配，生成负载报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/que-yin@1.0.23",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269488520?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "que-yin",
+      "url": "https://clawhub.ai/skills/que-yin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "que-yin",
+    "url": "https://clawhub.ai/skills/que-yin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/que-yin-fdf18391099c0f1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/que-yin@1.0.23",
+      "artifactUrl": "data/skills/artifacts/clawhub-que-yin-1.0.23.json",
+      "version": "1.0.23",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7c65619accc7828a52bfcdb2796b94ff0104cf55c049c2dbb9ac99bb62d6754",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T20:00:02.384Z"
+}

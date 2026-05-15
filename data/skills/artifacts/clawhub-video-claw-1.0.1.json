@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-claw@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_claw",
+  "skill": {
+    "id": 37368,
+    "skillKey": "clawhub-video-claw",
+    "name": "A skill to help you plan, script, record, edit and publish social media videos"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-claw",
+    "url": "https://clawhub.ai/skills/video-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-claw-9a0a4357e84cbf35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "End-to-end video creation copilot for OpenClaw. Helps users brainstorm ideas, research angles, generate hooks and teleprompter scripts, create recording link..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chin-jlyc",
+      "userId": "s170aqh7q11xsda1hde8s17nch83gh8d",
+      "displayName": "chin-jlyc",
+      "image": "https://avatars.githubusercontent.com/u/75539667?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774334666873,
+      "changelog": "- Changed the API base URL from `http://localhost:3000` to `app.humeo.com`\n- Updated installation requirements: `USER.md` is no longer required in the skill folder\n- Minor text cleanups and clarifications throughout the setup and mission documentation\n- No changes to workflows or user-facing behaviors",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55ce0a41df157ae1cc814191783b30d1a46b817f5d8327c2e1f76a63d906dabe"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35229,
+  "uuid": "skill-clawhub-agent-soul-sync",
+  "skillKey": "clawhub-agent-soul-sync",
+  "name": "Agent Soul Sync",
+  "summary": "Sync local OpenClaw skills to a remote NanoClaw agent on Mysta. Use when the user says \"sync my skills\", \"upload skills to mysta\", \"push skills to my nanocla...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_soul_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hongyegong",
+      "features": [
+        "Sync local OpenClaw skills to a remote NanoClaw agent on Mysta",
+        "Use when the user says \"sync my skills\", \"upload skills to mysta\", \"push skills to my nanocla..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-soul-sync@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9115283?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-soul-sync",
+      "url": "https://clawhub.ai/skills/agent-soul-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-soul-sync",
+    "url": "https://clawhub.ai/skills/agent-soul-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-soul-sync-0c674289a1274ad6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-soul-sync@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-soul-sync-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59d14ba542c252e2683a4697a28a2ea3d9334dfa28c96bb0ef7e4fd4044e213f",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:45:50.951Z"
+}

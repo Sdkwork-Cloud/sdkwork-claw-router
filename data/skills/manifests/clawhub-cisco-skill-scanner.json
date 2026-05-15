@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42512,
+  "uuid": "skill-clawhub-cisco-skill-scanner",
+  "skillKey": "clawhub-cisco-skill-scanner",
+  "name": "Cisco AI Skill Scanner",
+  "summary": "Scan agent skills for security threats using the Cisco AI skill-scanner CLI. Triggers on: scan skill for security, check skill safety, audit skill code, skil...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cisco_skill_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dewaldt Huysamen",
+      "features": [
+        "Scan agent skills for security threats using the Cisco AI skill-scanner CLI",
+        "Triggers on: scan skill for security, check skill safety, audit skill code, skil..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cisco-skill-scanner@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5792287?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cisco-skill-scanner",
+      "url": "https://clawhub.ai/skills/cisco-skill-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cisco-skill-scanner",
+    "url": "https://clawhub.ai/skills/cisco-skill-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cisco-skill-scanner-566b94e96266d3a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cisco-skill-scanner@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cisco-skill-scanner-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4dec012da1d094420e2ee21624079ec75e4706b54574f3d7ad5b117def1c587f",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T13:02:46.600Z"
+}

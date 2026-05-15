@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26376,
+  "uuid": "skill-clawhub-baidu-search-v2",
+  "skillKey": "clawhub-baidu-search-v2",
+  "name": "Baidu Search V2",
+  "summary": "Search the web using Baidu AI Search Engine (BDSE). Use for live information, documentation, or research topics.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_search_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "15914355527",
+      "features": [
+        "Search the web using Baidu AI Search Engine (BDSE)",
+        "Use for live information, documentation, or research topics."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-search-v2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51820137?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-search-v2",
+      "url": "https://clawhub.ai/skills/baidu-search-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-search-v2",
+    "url": "https://clawhub.ai/skills/baidu-search-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-search-v2-23386a37de767b18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-search-v2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-search-v2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b35bc99c2ebb0b3b752a891553cff72709453dce5d095a2354546d2ab3d24a12",
+      "artifactSizeBytes": 2176
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:06:43.580Z"
+}

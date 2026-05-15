@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42448,
+  "uuid": "skill-clawhub-shopify-product",
+  "skillKey": "clawhub-shopify-product",
+  "name": "shopify product",
+  "summary": "Search Shopify products and analyze winning items with PPSPY. Filter products by price, category, sales, and revenue, and inspect bestselling products by store.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_product",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fanyanggod",
+      "features": [
+        "Search Shopify products and analyze winning items with PPSPY",
+        "Filter products by price, category, sales, and revenue, and inspect bestselling products by sto."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shopify-product@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44659216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shopify-product",
+      "url": "https://clawhub.ai/skills/shopify-product"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-product",
+    "url": "https://clawhub.ai/skills/shopify-product",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-product-077b1c13aa63050d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shopify-product@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-shopify-product-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d310134d88c5df56009284d6a6812cc000bdc65106b57649fe7c1caa9eb4715f",
+      "artifactSizeBytes": 2199
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T03:04:28.259Z"
+}

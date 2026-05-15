@@ -17,15 +17,17 @@ async fn admin_record_route_lists_logs_and_normalizes_filters() {
     let payload = request_json(
         router,
         signed_request(
-            "POST",
-            "/backend/v3/api/record/list",
-            r#"{"user":" owner@example.com ","token":"Production","model":"gpt-4o-mini","pageNo":2,"pageSize":50}"#,
+            "GET",
+            "/backend/v3/api/system/records?user=%20owner@example.com%20&token=Production&model=gpt-4o-mini&page=2&page_size=50",
         ),
     )
     .await;
 
     assert_eq!("2000", payload["code"]);
     assert_eq!(7, payload["data"]["total"]);
+    assert_eq!(2, payload["data"]["page"]);
+    assert_eq!(50, payload["data"]["pageSize"]);
+    assert!(payload["data"]["pageNo"].is_null());
     assert_eq!("trace-100", payload["data"]["logs"][0]["id"]);
     assert_eq!("owner@example.com", payload["data"]["logs"][0]["user"]);
     assert_eq!(
@@ -74,10 +76,9 @@ async fn admin_record_route_rejects_missing_trusted_subject() {
     let response = router
         .oneshot(
             Request::builder()
-                .method("POST")
-                .uri("/backend/v3/api/record/list")
-                .header("content-type", "application/json")
-                .body(Body::from("{}"))
+                .method("GET")
+                .uri("/backend/v3/api/system/records")
+                .body(Body::empty())
                 .unwrap(),
         )
         .await
@@ -95,9 +96,8 @@ async fn admin_record_route_rejects_invalid_filter_without_calling_store() {
 
     let response = router
         .oneshot(signed_request(
-            "POST",
-            "/backend/v3/api/record/list",
-            r#"{"user":"owner@example.com","token":"Production","model":"bad\u0001model"}"#,
+            "GET",
+            "/backend/v3/api/system/records?user=owner@example.com&token=Production&model=bad%01model",
         ))
         .await
         .unwrap();
@@ -112,15 +112,14 @@ async fn admin_record_route_rejects_invalid_filter_without_calling_store() {
     assert!(store.captured.lock().unwrap().is_none());
 }
 
-fn signed_request(method: &str, path: &str, body: &str) -> Request<Body> {
+fn signed_request(method: &str, path: &str) -> Request<Body> {
     Request::builder()
         .method(method)
         .uri(path)
-        .header("content-type", "application/json")
         .header("x-sdkwork-tenant-id", "10")
         .header("x-sdkwork-organization-id", "20")
         .header("x-sdkwork-user-id", "30")
-        .body(Body::from(body.to_owned()))
+        .body(Body::empty())
         .unwrap()
 }
 

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-chat@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_chat",
+  "skill": {
+    "id": 12185,
+    "skillKey": "clawhub-agent-chat",
+    "name": "Agent Chat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-chat",
+    "url": "https://clawhub.ai/skills/agent-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-chat-216ed80f9f57936e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Temporary real-time chat rooms for AI agents. Password-protected, with SSE streaming, web UI for humans, and CLI tools for agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "awlevin",
+      "userId": "publishers:awlevin",
+      "displayName": "Aaron Levin",
+      "image": "https://avatars.githubusercontent.com/u/8488209?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1739,
+      "installsAllTime": 14,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770705667627,
+      "changelog": "Initial release: real-time agent chat rooms with SSE, web UI, cloudflared tunneling",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f8a382c526c0ddbd1f5ecb5d9c82d6c1d5e475078ed4a257f4366110846ad2d3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kingsmantestskill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kingsmantestskill",
+  "skill": {
+    "id": 72391,
+    "skillKey": "clawhub-kingsmantestskill",
+    "name": "mytestskill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kingsmantestskill",
+    "url": "https://clawhub.ai/skills/kingsmantestskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kingsmantestskill-5b99941374c62e88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每天定时汇总\"昨天\"的10条民航相关新闻，输出结构化快速总览，并通过邮件发送给指定收件人。触发词：民航新闻晨报、昨日民航新闻、每日航空资讯、民航日报、航空新闻摘要。不处理会议、审批、待办、文档编辑等任务，不处理非民航领域资讯。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wuyun1118",
+      "userId": "s179410vgcd73eqw1r44tnvprs85rb9x",
+      "displayName": "wuyun1118",
+      "image": "https://avatars.githubusercontent.com/u/274429591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777452351228,
+      "changelog": "civil-aviation-news-daily 1.0.0 – 新增技能版本简要说明：\n\n- 每天定时汇总并邮件发送“昨天”共10条民航相关新闻摘要，内容结构化且以行业影响度排序。\n- 明确支持触发词（如民航新闻晨报、昨日民航新闻等）及适用/不适用场景。\n- 主题聚焦于航司、机场、空管、航线、政策等民航领域，资讯仅采信公开来源。\n- 邮件自动发送至指定收件人；若信息不足10条或发送失败则有清晰降级流程与提示。\n- 每次产出含今日观察重点及有效条目说明，保障信息真实、可追溯。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c692db0f827bcece17e4fa534b2aa6884a7d5ccceb3861d30ac0cbc447e87433"
+}

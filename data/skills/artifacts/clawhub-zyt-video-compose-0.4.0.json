@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zyt-video-compose@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zyt_video_compose",
+  "skill": {
+    "id": 32218,
+    "skillKey": "clawhub-zyt-video-compose",
+    "name": "Zyt video compose"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zyt-video-compose",
+    "url": "https://clawhub.ai/skills/zyt-video-compose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zyt-video-compose-20409a95846f2c2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Chanjing video synthesis APIs to create digital human videos from text or audio, with optional background upload, task polling, and explicit download whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zuoyuting214",
+      "userId": "s173jvgnwrdkdq98kh17nyzq5183j2aj",
+      "displayName": "zuoyuting214",
+      "image": "https://avatars.githubusercontent.com/u/226682936?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1774530915161,
+      "changelog": "Initial publish.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db016299ca43f27e8d0b2d8c6336b99ae89012cc472b9dd0b7278942ae3a2996"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hippocampus-subagent-memory@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hippocampus_subagent_memory",
+  "skill": {
+    "id": 24598,
+    "skillKey": "clawhub-hippocampus-subagent-memory",
+    "name": "Hippocampus Subagent Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hippocampus-subagent-memory",
+    "url": "https://clawhub.ai/skills/hippocampus-subagent-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hippocampus-subagent-memory-9799117ad46ba6e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Isolate and coordinate sub-agent memory in OpenClaw with Hippocampus using scoped IDs, bounded merge-back, and explicit cross-agent imports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cezexpl",
+      "userId": "publishers:cezexpl",
+      "displayName": "cezexPL",
+      "image": "https://avatars.githubusercontent.com/u/103859161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 408,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773056753577,
+      "changelog": "- Initial release of hippocampus-subagent-memory skill.\n- Enables isolated sub-agent memory in OpenClaw using scoped IDs.\n- Prevents accidental memory leakage across sibling/parent contexts.\n- Supports bounded merge-back and explicit import from child to parent.\n- Includes guidance for namespace management and session linkage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a18ec7c24a46de4a26450d68c31773838a8a93e1c11148ae4543d98221a26df3"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42076,
+  "uuid": "skill-clawhub-databricks-integration",
+  "skillKey": "clawhub-databricks-integration",
+  "name": "Databricks",
+  "summary": "Databricks integration. Manage Workspaces. Use when the user wants to interact with Databricks data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.databricks_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Databricks integration",
+        "Manage Workspaces",
+        "Use when the user wants to interact with Databricks data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/databricks-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "databricks-integration",
+      "url": "https://clawhub.ai/skills/databricks-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "databricks-integration",
+    "url": "https://clawhub.ai/skills/databricks-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/databricks-integration-d8e06ed523357940.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/databricks-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-databricks-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef3eddc736c6b988515671cf85a19aba28515bb2ad266e12bd0afd05299d6aa3",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:22:25.987Z"
+}

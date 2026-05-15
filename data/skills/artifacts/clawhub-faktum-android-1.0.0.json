@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/faktum-android@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.faktum_android",
+  "skill": {
+    "id": 58193,
+    "skillKey": "clawhub-faktum-android",
+    "name": "Faktum Android"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "faktum-android",
+    "url": "https://clawhub.ai/skills/faktum-android",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/faktum-android-4092f8eb05de899a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Faktum News Android 앱 개발 세션. Google 공식 Android CLI(`~/bin/android`) + 공식 Skills(android-cli, navigation-3, edge-to-edge)를 조합해 Kotlin + Jetpack Compose로 모바일 앱..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ntriq-gh",
+      "userId": "s170tfc8cnswm72pmy4aqs9yd5841wq0",
+      "displayName": "ntriq",
+      "image": "https://avatars.githubusercontent.com/u/215101248?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776556831363,
+      "changelog": "- 최초 릴리스: Faktum News Android 앱 개발 세션용 스킬 신설\n- Google 공식 Android CLI 및 Jetpack Compose 조합으로 앱 개발 지원\n- Navigation 3 및 edge-to-edge 디자인 공식 스킬과 체이닝\n- Faktum 웹(Next.js 16, SQLite/FTS5 API) 백엔드 재사용\n- Kotlin 언어, Ground News 스타일 다크 테마 기반\n- 상세 개발 워크플로우, 공식 명령어, 필독 문서 및 협업 기준 제공",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d4221ed6cc0c4d20ab71b9a520feb20f07cd21469db2165c2b51d2c324ac194"
+}

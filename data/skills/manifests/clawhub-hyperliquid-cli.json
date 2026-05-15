@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9557,
+  "uuid": "skill-clawhub-hyperliquid-cli",
+  "skillKey": "clawhub-hyperliquid-cli",
+  "name": "Hyperliquid CLI (with HIP3 Support)",
+  "summary": "Trade crypto, stocks (AAPL, NVDA, TSLA), indexes, and commodities (GOLD, SILVER) 24/7 on Hyperliquid via HIP-3. Real-time position & P&L tracking, orderbook monitoring, multi-account management, and websocket client for sub-5ms low-latency.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hyperliquid_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chris Ling",
+      "features": [
+        "Trade crypto, stocks (AAPL, NVDA, TSLA), indexes, and commodities (GOLD, SILVER) 24/7 on Hyperl.",
+        "Real-time position & P&L tracking, orderbook monitoring, multi-account management, and websocke."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hyperliquid-cli@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81092286?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hyperliquid-cli",
+      "url": "https://clawhub.ai/skills/hyperliquid-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hyperliquid-cli",
+    "url": "https://clawhub.ai/skills/hyperliquid-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hyperliquid-cli-52b2602c9f692e72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hyperliquid-cli@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-hyperliquid-cli-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:512ec41227424aa09ace7b6b666982fdad1f54b0ba1f3b6514318e8955c93c02",
+      "artifactSizeBytes": 2292
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T17:04:24.499Z"
+}

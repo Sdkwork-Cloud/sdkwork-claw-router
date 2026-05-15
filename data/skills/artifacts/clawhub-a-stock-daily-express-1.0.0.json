@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-stock-daily-express@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_daily_express",
+  "skill": {
+    "id": 68479,
+    "skillKey": "clawhub-a-stock-daily-express",
+    "name": "A Stock Daily Express"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-daily-express",
+    "url": "https://clawhub.ai/skills/a-stock-daily-express",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-daily-express-afc3622a327845f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "📈 A股每日快报自动生成 - 自动获取今日大盘行情、涨跌排名、热点板块，一键生成小红书/公众号文章，直接就能发。炒股懒人必备，每天省你半小时整理时间。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rudagebil11-jpg",
+      "userId": "s174hj2x8qgcr1bfhf1t0y4tss83rgpx",
+      "displayName": "rudagebil11-jpg",
+      "image": "https://avatars.githubusercontent.com/u/262148849?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774716198667,
+      "changelog": "Initial release: Automatically generates a concise daily report for China A-shares (A股) to streamline content creation for platforms like Xiaohongshu and WeChat.\n\n- Fetches and analyzes real-time A股 market data, including index changes, top gainers/losers, and trending sectors.\n- One-click generation of platform-specific articles (Xiaohongshu, WeChat, Moments) in ready-to-publish formats.\n- Supports markdown/HTML exports and customizable output for different social platforms.\n- Includes optional fact-checking to ensure data reliability.\n- No paid data source required; works with free Akshare and optionally ai-fact-checker.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5274c0878745347b4f2a7dd1c06820e62041ca878ea73a9e242f35a33de3eef0"
+}

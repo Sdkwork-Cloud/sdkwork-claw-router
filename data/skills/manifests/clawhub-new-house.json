@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69024,
+  "uuid": "skill-clawhub-new-house",
+  "skillKey": "clawhub-new-house",
+  "name": "New House",
+  "summary": "提供新盘资讯、售楼处在线预约、购房政策及贷款计算指引。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.new_house",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mikeclaw007",
+      "features": [
+        "提供新盘资讯、售楼处在线预约、购房政策及贷款计算指引。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/new-house@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265502950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "new-house",
+      "url": "https://clawhub.ai/skills/new-house"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "new-house",
+    "url": "https://clawhub.ai/skills/new-house",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/new-house-aa3c05fea63d7dec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/new-house@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-new-house-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4517584a888d41d868655a8c29f4a56ee7c1d4ee4d305a46bcae09a8c4675d11",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T00:50:21.072Z"
+}

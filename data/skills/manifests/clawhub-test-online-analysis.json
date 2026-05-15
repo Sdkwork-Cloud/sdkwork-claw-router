@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28784,
+  "uuid": "skill-clawhub-test-online-analysis",
+  "skillKey": "clawhub-test-online-analysis",
+  "name": "Online Analysis",
+  "summary": "Online (real-time) data analysis, rule extraction, and pattern recognition for testing scenarios. Activate when user mentions test online analysis, real-time...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_online_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shineniefei",
+      "features": [
+        "Online (real-time) data analysis, rule extraction, and pattern recognition for testing scenarios",
+        "Activate when user mentions test online analysis, real-time..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-online-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17307071?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-online-analysis",
+      "url": "https://clawhub.ai/skills/test-online-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-online-analysis",
+    "url": "https://clawhub.ai/skills/test-online-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-online-analysis-898f2d3cc2141bc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-online-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-online-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8680e11e080439169e205b6d4b19b9f0a805605017c088638f29b243809bcc1",
+      "artifactSizeBytes": 2358
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T11:22:57.344Z"
+}

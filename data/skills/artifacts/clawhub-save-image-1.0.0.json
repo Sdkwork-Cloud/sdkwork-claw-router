@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/save-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.save_image",
+  "skill": {
+    "id": 43295,
+    "skillKey": "clawhub-save-image",
+    "name": "Save Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "save-image",
+    "url": "https://clawhub.ai/skills/save-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/save-image-3ecd87272470519f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download images, GIFs, and media from any URL using proper headers, Referer spoofing, and scraping to handle CDNs and social media sources correctly."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bstokes0971",
+      "userId": "s17eddyyz3yevgwcvp1krzcgf184mz44",
+      "displayName": "bstokes0971",
+      "image": "https://avatars.githubusercontent.com/u/73054583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775950540763,
+      "changelog": "Initial release — proper browser headers, two-step CDN scrape pattern, gifgrep/yt-dlp decision tree",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1e2179772630566c3b26dbbe648c8a94fdd7b80fe85b86766f60ce39f35330b"
+}

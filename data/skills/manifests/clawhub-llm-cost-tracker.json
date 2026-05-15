@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24344,
+  "uuid": "skill-clawhub-llm-cost-tracker",
+  "skillKey": "clawhub-llm-cost-tracker",
+  "name": "LLM Cost Tracker",
+  "summary": "Track, analyze, and optimize LLM API spending across providers (OpenAI, Anthropic, Google, DeepSeek, etc.). Use when the user asks about API costs, token usa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_cost_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Wang",
+      "features": [
+        "Track, analyze, and optimize LLM API spending across providers (OpenAI, Anthropic, Google, Deep.",
+        "Use when the user asks about API costs, token usa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-cost-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20619402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-cost-tracker",
+      "url": "https://clawhub.ai/skills/llm-cost-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-cost-tracker",
+    "url": "https://clawhub.ai/skills/llm-cost-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-cost-tracker-ec9853f563f5c3e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-cost-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-cost-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f075089deeb12a224ea200e5f9fafbb56f393cd7c323742d97a56e0ad12fb85",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T02:48:27.715Z"
+}

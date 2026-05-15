@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "transcribe-video",
+    "displayName": "transcribe-video",
+    "summary": "Extract transcript or subtitles from a local video file. Use this skill whenever the user asks to transcribe a video, extract speech-to-text, get subtitles,...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1776249141108,
+    "updatedAt": 1777527569950
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1776249141108,
+    "changelog": "- Initial release: transcribe-video skill extracts transcripts or subtitles from local video files.\n- Automatically checks for embedded subtitles first for fast, accurate results; uses speech-to-text API if none are found.\n- Supports popular video formats: mp4, mkv, mov, avi, webm, and others ffmpeg can read.\n- Guides user through dependencies for API transcription if required.\n- Outputs a text transcript file in the same folder as the video, and shows a preview with basic info.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "feiskyer",
+    "userId": "s174q6bx170bf0qb9wjqhqfv6x83vv3e",
+    "displayName": "Pengfei Ni",
+    "image": "https://avatars.githubusercontent.com/u/676637?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527569950
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20312,
+  "uuid": "skill-clawhub-timeless",
+  "skillKey": "clawhub-timeless",
+  "name": "Timeless.day Meeting Notes",
+  "summary": "Query and manage Timeless meetings, rooms, transcripts, and AI documents. Capture podcast episodes and YouTube videos into Timeless for transcription. Use wh...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.timeless",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eilon Mor",
+      "features": [
+        "Query and manage Timeless meetings, rooms, transcripts, and AI documents",
+        "Capture podcast episodes and YouTube videos into Timeless for transcription",
+        "Use wh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/timeless@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12556601?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "timeless",
+      "url": "https://clawhub.ai/skills/timeless"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "timeless",
+    "url": "https://clawhub.ai/skills/timeless",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/timeless-2eef75362c5d08a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/timeless@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-timeless-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9bead56972dadba0299ee419a12eba1e6957643f05cd593d6cc3c7ef0309f56d",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T17:35:33.498Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chart-mpl@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chart_mpl",
+  "skill": {
+    "id": 29222,
+    "skillKey": "clawhub-chart-mpl",
+    "name": "Chart MPL"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chart-mpl",
+    "url": "https://clawhub.ai/skills/chart-mpl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chart-mpl-fd0e57403b31be9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate PNG/SVG charts (line, bar, hbar, pie, stacked, scatter, area) from CSV data using matplotlib. Use when the user asks to visualize tabular data, prod..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mohamed-hammane",
+      "userId": "s1741t73nrt7q2vnxcrxcxxtjh83hfew",
+      "displayName": "Umbra",
+      "image": "https://avatars.githubusercontent.com/u/35642940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 307,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775319298944,
+      "changelog": "v1.1.0 — New chart types, multi-series, and BI improvements\n\n- Added 5 new chart types: hbar, pie, stacked, scatter, area\n- Multi-series support via comma-separated --ycol (e.g. Sales,Costs)\n- Grouped bars for multi-series bar/hbar (no more overlap)\n- --top N: keep top N categories; pie aggregates remainder into \"Other\"\n- --sort: explicit sort modes (x-asc, x-desc, y-desc, none)\n- --numfmt: human-readable Y axis with FR (1,5M) or EN (1.5M) formatting\n- SVG output support (detected from --out extension)\n- Accounting negatives (1,234.56) now parsed correctly\n- Self-contained setup instructions in SKILL.md\n- Fixed crash when --out is a filename without directory",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bce9736c8b28e18cd23ec26861def4514e62a8d4cf7f54279af7e72872aeb762"
+}

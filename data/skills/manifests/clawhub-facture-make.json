@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57029,
+  "uuid": "skill-clawhub-facture-make",
+  "skillKey": "clawhub-facture-make",
+  "name": "Facture Make",
+  "summary": "Génère et prépare une facture professionnelle, affiche un résumé pour confirmation, puis envoie la facture validée vers Make.com.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.facture_make",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cimes19",
+      "features": [
+        "Génère et prépare une facture professionnelle, affiche un résumé pour confirmation, puis envoie."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/facture-make@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215893593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "facture-make",
+      "url": "https://clawhub.ai/skills/facture-make"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "facture-make",
+    "url": "https://clawhub.ai/skills/facture-make",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/facture-make-2f0e466e3fe55807.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/facture-make@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-facture-make-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6fd2752ba11d79a9d4de3396a574f86edf9e973be9375905f145a7874e6a656",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T13:09:10.188Z"
+}

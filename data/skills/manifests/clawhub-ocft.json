@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10275,
+  "uuid": "skill-clawhub-ocft",
+  "skillKey": "clawhub-ocft",
+  "name": "OCFT - OpenClaw File Transfer",
+  "summary": "P2P file transfer between AI agents via message channels. Supports chunked transfer, IPFS fallback for large files, and trusted peer management.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocft",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stormixus",
+      "features": [
+        "P2P file transfer between AI agents via message channels",
+        "Supports chunked transfer, IPFS fallback for large files, and trusted peer management."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ocft@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3465179?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ocft",
+      "url": "https://clawhub.ai/skills/ocft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocft",
+    "url": "https://clawhub.ai/skills/ocft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocft-efe2559b4cdcc18d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ocft@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ocft-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:406d91136fd857816f98e6e8fc878922e2234cb25c14791f138d9f5d1b3cecc6",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T06:59:40.997Z"
+}

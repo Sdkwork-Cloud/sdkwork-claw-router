@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/literature-recommendation@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.literature_recommendation",
+  "skill": {
+    "id": 65653,
+    "skillKey": "clawhub-literature-recommendation",
+    "name": "literature-recommendation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "literature-recommendation",
+    "url": "https://clawhub.ai/skills/literature-recommendation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/literature-recommendation-e53a4036fda47ca8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用于论文推荐、文献推荐、论文匹配、按偏好找论文、根据研究方向推荐论文；从数据库读取成员偏好，召回候选论文并输出给OpenClaw。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhcolin0313",
+      "userId": "s17ag0v1yypnyssnf4mgdyxvkx842kvm",
+      "displayName": "Colin",
+      "image": "https://avatars.githubusercontent.com/u/165698485?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776541678274,
+      "changelog": "- Updated the llm_reason_contract in the output contract to specify required input sources, forbidden reasoning styles, and explicit reasoning steps.\n- Added delivery payload fields: paper_title and paper_abstract to personal_cards schema.\n- No code changes; documentation and output contract clarifications only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45255160df97228abeefcc246366c1ece9ab2dd43bb32c4cff54562787b20e4e"
+}

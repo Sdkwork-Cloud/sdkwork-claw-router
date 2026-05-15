@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/explorium-lead-enrichment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.explorium_lead_enrichment",
+  "skill": {
+    "id": 22000,
+    "skillKey": "clawhub-explorium-lead-enrichment",
+    "name": "lead-contact-enrichment-agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "explorium-lead-enrichment",
+    "url": "https://clawhub.ai/skills/explorium-lead-enrichment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/explorium-lead-enrichment-c8a03cf05f530ecb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enrich your existing leads, contacts, and company lists with verified B2B data. Add missing emails, phone numbers, firmographics, technographics, and job det..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haroexplorium",
+      "userId": "publishers:haroexplorium",
+      "displayName": "haroExplorium",
+      "image": "https://avatars.githubusercontent.com/u/48237785?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 488,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772264433823,
+      "changelog": "Initial release of the Lead & Contact Data Enrichment Agent.\n\n- Enrich leads, contacts, and company lists with verified B2B data including emails, phones, firmographics, technographics, and job details.\n- Supports single record, inline list, and bulk CSV enrichment workflows for CRM hygiene and data cleaning.\n- Powered by Explorium AgentSource, operated via agentsource CLI tool.\n- Guides users through data input, enrichment requirements, and step-by-step workflows.\n- Includes secure API key handling and detailed instructions for setup and usage.\n- Not officially affiliated with or endorsed by Explorium.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0d485ea44a9bb5cf75d9f0d0089902d7709518a80e5a86e66d889e269d2185f9"
+}

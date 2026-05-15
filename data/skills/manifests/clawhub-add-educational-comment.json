@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37379,
+  "uuid": "skill-clawhub-add-educational-comment",
+  "skillKey": "clawhub-add-educational-comment",
+  "name": "Add Educational Comments",
+  "summary": "Add educational comments to the file specified, or prompt asking for file to comment if one is not provided.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_educational_comment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Haugabook",
+      "features": [
+        "Add educational comments to the file specified, or prompt asking for file to comment if one is."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/add-educational-comment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10998676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "add-educational-comment",
+      "url": "https://clawhub.ai/skills/add-educational-comment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-educational-comment",
+    "url": "https://clawhub.ai/skills/add-educational-comment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-educational-comment-caef8daa85834b34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/add-educational-comment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-add-educational-comment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5d7c6dd3076c11480e0d766a545d991e365c05807c984b7bb129d385779b519",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T00:47:39.444Z"
+}

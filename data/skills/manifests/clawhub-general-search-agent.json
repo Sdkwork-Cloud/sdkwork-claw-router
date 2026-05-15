@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16342,
+  "uuid": "skill-clawhub-general-search-agent",
+  "skillKey": "clawhub-general-search-agent",
+  "name": "General Search Agent",
+  "summary": "Provides general search capabilities with enhanced results using English queries and current date context for accuracy.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.general_search_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sophiaashi",
+      "features": [
+        "Provides general search capabilities with enhanced results using English queries and current da."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/general-search-agent@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221843819?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "general-search-agent",
+      "url": "https://clawhub.ai/skills/general-search-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "general-search-agent",
+    "url": "https://clawhub.ai/skills/general-search-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/general-search-agent-58232220ee2ce8a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/general-search-agent@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-general-search-agent-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f69d3d3561a6080c1a2833589668d8c9053e0f400e50eb0dc05132263d412825",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T03:19:41.743Z"
+}

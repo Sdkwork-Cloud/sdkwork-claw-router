@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18068,
+  "uuid": "skill-clawhub-autonomous-skill",
+  "skillKey": "clawhub-autonomous-skill",
+  "name": "Autonomous Skill",
+  "summary": "Execute long-running, multi-session tasks autonomously using Claude Code headless mode or in-session hook-based loops. Supports structured task decomposition...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomous_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pengfei Ni",
+      "features": [
+        "Execute long-running, multi-session tasks autonomously using Claude Code headless mode or in-se.",
+        "Supports structured task decomposition..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autonomous-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/676637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autonomous-skill",
+      "url": "https://clawhub.ai/skills/autonomous-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomous-skill",
+    "url": "https://clawhub.ai/skills/autonomous-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomous-skill-2697de05b54342d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autonomous-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-autonomous-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:361fe881c544bf5d4b268b69357573b6a339e4887a57a94339bee029556d6ff2",
+      "artifactSizeBytes": 2619
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T11:15:50.776Z"
+}

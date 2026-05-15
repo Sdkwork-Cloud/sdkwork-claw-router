@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16838,
+  "uuid": "skill-clawhub-clawmart",
+  "skillKey": "clawhub-clawmart",
+  "name": "ClawMart Creator",
+  "summary": "Create, manage, and publish ClawMart personas and skills directly from OpenClaw chat. Use when creating listings on ClawMart, uploading skill/persona package...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmart",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nat Eliason",
+      "features": [
+        "Create, manage, and publish ClawMart personas and skills directly from OpenClaw chat",
+        "Use when creating listings on ClawMart, uploading skill/persona package..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawmart@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5629352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawmart",
+      "url": "https://clawhub.ai/skills/clawmart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmart",
+    "url": "https://clawhub.ai/skills/clawmart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmart-04b9c8310c8e6399.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawmart@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawmart-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cb16562ca155e97fdb0a306796b6b45cc7d8bf6dbd2e986aff581b9c4d79e26",
+      "artifactSizeBytes": 2325
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T14:39:05.434Z"
+}

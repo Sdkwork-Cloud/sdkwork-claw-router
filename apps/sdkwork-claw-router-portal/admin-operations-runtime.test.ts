@@ -54,11 +54,16 @@ async function withBackendSdkFetch<T>(
   }
 }
 
+function isSystemRecordsRequest(url: string, init?: RequestInit): boolean {
+  return new URL(url, "http://localhost").pathname === "/backend/v3/api/system/records"
+    && (init?.method ?? "GET") === "GET";
+}
+
 test("admin dashboard service reads generated backend SDK dashboard data", async () => {
   await withBackendSdkFetch(
     (url, init) => {
       assert.equal(init?.method ?? "GET", "GET");
-      assert.equal(url, "/backend/v3/api/dashboard/admin/overview");
+      assert.equal(url, "/backend/v3/api/system/dashboard/admin/overview");
       return {
         userConsumption: [{ name: "Enterprise", value: 80, color: "#2563eb" }],
         multimodal: [{ name: "image", value: 12, color: "#7c3aed" }],
@@ -92,11 +97,10 @@ test("admin dashboard service reads generated backend SDK dashboard data", async
     },
   );
 });
-
 test("admin finance service reads transaction and billing lists from generated backend SDK data", async () => {
   await withBackendSdkFetch(
     (url) => {
-      if (url === "/backend/v3/api/finance/admin/ledger") {
+      if (url === "/backend/v3/api/billing/finance/ledger") {
         return {
           items: [
             {
@@ -112,7 +116,7 @@ test("admin finance service reads transaction and billing lists from generated b
           ],
         };
       }
-      if (url === "/backend/v3/api/router/finance/usage-statements") {
+      if (url === "/backend/v3/api/billing/finance/usage_statements") {
         return {
           items: [
             {
@@ -134,8 +138,8 @@ test("admin finance service reads transaction and billing lists from generated b
       const billing = await FinanceService.fetchBilling();
 
       assert.deepEqual(captured.map((request) => request.url), [
-        "/backend/v3/api/finance/admin/ledger",
-        "/backend/v3/api/router/finance/usage-statements",
+        "/backend/v3/api/billing/finance/ledger",
+        "/backend/v3/api/billing/finance/usage_statements",
       ]);
       assert.equal(transactions[0].amount, "12.50");
       assert.equal(transactions[0].status, "pending");
@@ -149,7 +153,7 @@ test("admin finance service reads transaction and billing lists from generated b
 test("admin monitor service reads nodes alerts and performance through backend SDK paths", async () => {
   await withBackendSdkFetch(
     (url) => {
-      if (url === "/backend/v3/api/router/monitor/nodes") {
+      if (url === "/backend/v3/api/system/monitor/nodes") {
         return {
           items: [
             {
@@ -165,7 +169,7 @@ test("admin monitor service reads nodes alerts and performance through backend S
           ],
         };
       }
-      if (url === "/backend/v3/api/router/monitor/alerts") {
+      if (url === "/backend/v3/api/system/monitor/alerts") {
         return {
           items: [
             {
@@ -180,7 +184,7 @@ test("admin monitor service reads nodes alerts and performance through backend S
           ],
         };
       }
-      if (url === "/backend/v3/api/router/monitor/performance") {
+      if (url === "/backend/v3/api/system/monitor/performance") {
         return {
           items: [{ time: "10:00", cpu: 70, memory: "64", network: 220 }],
         };
@@ -193,9 +197,9 @@ test("admin monitor service reads nodes alerts and performance through backend S
       const performance = await MonitorService.fetchPerformanceData();
 
       assert.deepEqual(captured.map((request) => request.url), [
-        "/backend/v3/api/router/monitor/nodes",
-        "/backend/v3/api/router/monitor/alerts",
-        "/backend/v3/api/router/monitor/performance",
+        "/backend/v3/api/system/monitor/nodes",
+        "/backend/v3/api/system/monitor/alerts",
+        "/backend/v3/api/system/monitor/performance",
       ]);
       assert.equal(nodes[0].status, "warning");
       assert.equal(nodes[0].cpu, 72.5);
@@ -209,12 +213,12 @@ test("admin monitor service reads nodes alerts and performance through backend S
 test("admin record service reads backend logs and total from generated backend SDK data", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      assert.equal(url, "/backend/v3/api/record/list");
-      assert.equal(init?.method ?? "GET", "POST");
-      assert.deepEqual(JSON.parse(typeof init?.body === "string" ? init.body : "{}"), {
-        user: "user-1",
-        model: "gpt-4o-mini",
-      });
+      const requestUrl = new URL(url, "http://localhost");
+      assert.equal(requestUrl.pathname, "/backend/v3/api/system/records");
+      assert.equal(init?.method ?? "GET", "GET");
+      assert.equal(requestUrl.searchParams.get("user"), "user-1");
+      assert.equal(requestUrl.searchParams.get("model"), "gpt-4o-mini");
+      assert.equal(typeof init?.body === "string" ? init.body : "", "");
       return {
         total: "1",
         logs: [
@@ -261,20 +265,20 @@ test("admin record service reads backend logs and total from generated backend S
 test("admin record service normalizes log filters before generated backend SDK call", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      assert.equal(url, "/backend/v3/api/record/list");
-      assert.equal(init?.method ?? "GET", "POST");
-      assert.deepEqual(JSON.parse(typeof init?.body === "string" ? init.body : "{}"), {
-        pageNo: 2,
-        pageSize: 200,
-        user: "owner@example.com",
-        token: "prod-key",
-        model: "gpt-4o-mini",
-      });
+      const requestUrl = new URL(url, "http://localhost");
+      assert.equal(requestUrl.pathname, "/backend/v3/api/system/records");
+      assert.equal(init?.method ?? "GET", "GET");
+      assert.equal(requestUrl.searchParams.get("page"), "2");
+      assert.equal(requestUrl.searchParams.get("page_size"), "200");
+      assert.equal(requestUrl.searchParams.get("user"), "owner@example.com");
+      assert.equal(requestUrl.searchParams.get("token"), "prod-key");
+      assert.equal(requestUrl.searchParams.get("model"), "gpt-4o-mini");
+      assert.equal(requestUrl.searchParams.has("pageNo"), false);
       return { total: 0, logs: [] };
     },
     async (captured) => {
       const result = await RecordService.fetchLogs({
-        pageNo: "2",
+        page: "2",
         pageSize: "200",
         user: " owner@example.com ",
         token: " prod-key ",
@@ -296,7 +300,7 @@ test("admin record service rejects invalid log filters before generated backend 
       throw new Error("backend SDK must not be called for invalid record log filters");
     },
     async (captured) => {
-      await assert.rejects(() => RecordService.fetchLogs({ pageNo: 0 }), /pageNo must be a positive integer/);
+      await assert.rejects(() => RecordService.fetchLogs({ page: 0 }), /page must be a positive integer/);
       await assert.rejects(() => RecordService.fetchLogs({ pageSize: 0 }), /pageSize must be between 1 and 200/);
       await assert.rejects(() => RecordService.fetchLogs({ pageSize: 201 }), /pageSize must be between 1 and 200/);
       await assert.rejects(
@@ -319,7 +323,7 @@ test("admin record service rejects invalid log filters before generated backend 
 test("admin dashboard recent usage fails closed when backend omits stable row ids", async () => {
   await withBackendSdkFetch(
     (url) => {
-      if (url === "/backend/v3/api/dashboard/admin/overview") {
+      if (url === "/backend/v3/api/system/dashboard/admin/overview") {
         return {
           userConsumption: [],
           multimodal: [],
@@ -359,7 +363,7 @@ test("admin dashboard lists fail closed when backend returns malformed dashboard
   ] as const) {
     await withBackendSdkFetch(
       (url) => {
-        if (url === "/backend/v3/api/dashboard/admin/overview") {
+        if (url === "/backend/v3/api/system/dashboard/admin/overview") {
           return {
             userConsumption: [],
             multimodal: [],
@@ -380,11 +384,10 @@ test("admin dashboard lists fail closed when backend returns malformed dashboard
     );
   }
 });
-
 test("admin dashboard lists fail closed when backend omits required dashboard fields", async () => {
   await withBackendSdkFetch(
     (url) => {
-      if (url === "/backend/v3/api/dashboard/admin/overview") {
+      if (url === "/backend/v3/api/system/dashboard/admin/overview") {
         return {
           userConsumption: [{ value: 80, color: "#2563eb" }],
           multimodal: [],
@@ -405,7 +408,7 @@ test("admin dashboard lists fail closed when backend omits required dashboard fi
 
   await withBackendSdkFetch(
     (url) => {
-      if (url === "/backend/v3/api/dashboard/admin/overview") {
+      if (url === "/backend/v3/api/system/dashboard/admin/overview") {
         return {
           userConsumption: [],
           multimodal: [],
@@ -426,7 +429,7 @@ test("admin dashboard lists fail closed when backend omits required dashboard fi
 
   await withBackendSdkFetch(
     (url) => {
-      if (url === "/backend/v3/api/dashboard/admin/overview") {
+      if (url === "/backend/v3/api/system/dashboard/admin/overview") {
         return {
           userConsumption: [],
           multimodal: [],
@@ -460,7 +463,7 @@ test("admin dashboard lists fail closed when backend omits required dashboard fi
 test("admin dashboard recent usage fails closed when backend returns invalid money values", async () => {
   await withBackendSdkFetch(
     (url) => {
-      if (url === "/backend/v3/api/dashboard/admin/overview") {
+      if (url === "/backend/v3/api/system/dashboard/admin/overview") {
         return {
           userConsumption: [],
           multimodal: [],
@@ -495,7 +498,7 @@ test("admin dashboard recent usage fails closed when backend returns invalid mon
 test("admin finance transaction list fails closed when backend omits stable transaction ids", async () => {
   await withBackendSdkFetch(
     (url) => {
-      if (url === "/backend/v3/api/finance/admin/ledger") {
+      if (url === "/backend/v3/api/billing/finance/ledger") {
         return {
           items: [
             {
@@ -524,7 +527,7 @@ test("admin finance transaction list fails closed when backend omits stable tran
 test("admin finance transaction list fails closed when backend returns malformed rows", async () => {
   await withBackendSdkFetch(
     (url) => {
-      if (url === "/backend/v3/api/finance/admin/ledger") {
+      if (url === "/backend/v3/api/billing/finance/ledger") {
         return {
           items: [
             {
@@ -555,7 +558,7 @@ test("admin finance transaction list fails closed when backend returns malformed
 test("admin finance transaction list fails closed when backend returns unsupported transaction types", async () => {
   await withBackendSdkFetch(
     (url) => {
-      if (url === "/backend/v3/api/finance/admin/ledger") {
+      if (url === "/backend/v3/api/billing/finance/ledger") {
         return {
           items: [
             {
@@ -592,7 +595,7 @@ test("admin finance transaction list fails closed when backend omits required le
   ] as const) {
     await withBackendSdkFetch(
       (url) => {
-        if (url === "/backend/v3/api/finance/admin/ledger") {
+        if (url === "/backend/v3/api/billing/finance/ledger") {
           const transaction = {
             id: "txn-1",
             time: "2026-05-05T08:00:00Z",
@@ -626,7 +629,7 @@ test("admin finance transaction list fails closed when backend returns invalid m
   ] as const) {
     await withBackendSdkFetch(
       (url) => {
-        if (url === "/backend/v3/api/finance/admin/ledger") {
+        if (url === "/backend/v3/api/billing/finance/ledger") {
           return {
             items: [
               {
@@ -658,7 +661,7 @@ test("admin finance transaction list fails closed when backend returns invalid m
 test("admin finance billing list fails closed when backend omits stable billing ids", async () => {
   await withBackendSdkFetch(
     (url) => {
-      if (url === "/backend/v3/api/router/finance/usage-statements") {
+      if (url === "/backend/v3/api/billing/finance/usage_statements") {
         return {
           items: [
             {
@@ -686,7 +689,7 @@ test("admin finance billing list fails closed when backend omits stable billing 
 test("admin finance billing list fails closed when backend returns malformed rows", async () => {
   await withBackendSdkFetch(
     (url) => {
-      if (url === "/backend/v3/api/router/finance/usage-statements") {
+      if (url === "/backend/v3/api/billing/finance/usage_statements") {
         return {
           items: [
             {
@@ -724,7 +727,7 @@ test("admin finance billing list fails closed when backend omits required statem
   ] as const) {
     await withBackendSdkFetch(
       (url) => {
-        if (url === "/backend/v3/api/router/finance/usage-statements") {
+        if (url === "/backend/v3/api/billing/finance/usage_statements") {
           const billing = {
             id: "bill-1",
             userId: "user-1",
@@ -757,7 +760,7 @@ test("admin finance billing list fails closed when backend returns invalid state
   ] as const) {
     await withBackendSdkFetch(
       (url) => {
-        if (url === "/backend/v3/api/router/finance/usage-statements") {
+        if (url === "/backend/v3/api/billing/finance/usage_statements") {
           return {
             items: [
               {
@@ -788,7 +791,7 @@ test("admin finance billing list fails closed when backend returns invalid state
 test("admin monitor lists fail closed when backend omits stable node or alert ids", async () => {
   await withBackendSdkFetch(
     (url) => {
-      if (url === "/backend/v3/api/router/monitor/nodes") {
+      if (url === "/backend/v3/api/system/monitor/nodes") {
         return {
           items: [
             {
@@ -803,7 +806,7 @@ test("admin monitor lists fail closed when backend omits stable node or alert id
           ],
         };
       }
-      if (url === "/backend/v3/api/router/monitor/alerts") {
+      if (url === "/backend/v3/api/system/monitor/alerts") {
         return {
           items: [
             {
@@ -835,13 +838,13 @@ test("admin monitor lists fail closed when backend omits stable node or alert id
 test("admin monitor lists fail closed when backend returns malformed monitor rows", async () => {
   await withBackendSdkFetch(
     (url) => {
-      if (url === "/backend/v3/api/router/monitor/nodes") {
+      if (url === "/backend/v3/api/system/monitor/nodes") {
         return { items: ["not-a-node-record"] };
       }
-      if (url === "/backend/v3/api/router/monitor/alerts") {
+      if (url === "/backend/v3/api/system/monitor/alerts") {
         return { items: ["not-an-alert-record"] };
       }
-      if (url === "/backend/v3/api/router/monitor/performance") {
+      if (url === "/backend/v3/api/system/monitor/performance") {
         return { items: ["not-a-performance-record"] };
       }
       throw new Error(`unexpected SDK URL: ${url}`);
@@ -866,7 +869,7 @@ test("admin monitor lists fail closed when backend returns malformed monitor row
 test("admin monitor lists fail closed when backend omits required monitor fields", async () => {
   await withBackendSdkFetch(
     (url) => {
-      if (url === "/backend/v3/api/router/monitor/nodes") {
+      if (url === "/backend/v3/api/system/monitor/nodes") {
         return {
           items: [
             {
@@ -881,7 +884,7 @@ test("admin monitor lists fail closed when backend omits required monitor fields
           ],
         };
       }
-      if (url === "/backend/v3/api/router/monitor/alerts") {
+      if (url === "/backend/v3/api/system/monitor/alerts") {
         return {
           items: [
             {
@@ -895,7 +898,7 @@ test("admin monitor lists fail closed when backend omits required monitor fields
           ],
         };
       }
-      if (url === "/backend/v3/api/router/monitor/performance") {
+      if (url === "/backend/v3/api/system/monitor/performance") {
         return {
           items: [{ cpu: 70, memory: "64", network: 220 }],
         };
@@ -922,7 +925,7 @@ test("admin monitor lists fail closed when backend omits required monitor fields
 test("admin monitor lists fail closed when backend returns unsupported monitor enums", async () => {
   await withBackendSdkFetch(
     (url) => {
-      if (url === "/backend/v3/api/router/monitor/nodes") {
+      if (url === "/backend/v3/api/system/monitor/nodes") {
         return {
           items: [
             {
@@ -938,7 +941,7 @@ test("admin monitor lists fail closed when backend returns unsupported monitor e
           ],
         };
       }
-      if (url === "/backend/v3/api/router/monitor/alerts") {
+      if (url === "/backend/v3/api/system/monitor/alerts") {
         return {
           items: [
             {
@@ -971,7 +974,7 @@ test("admin monitor lists fail closed when backend returns unsupported monitor e
 test("admin record log list fails closed when backend omits stable log ids", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/record/list" && (init?.method ?? "GET") === "POST") {
+      if (isSystemRecordsRequest(url, init)) {
         return {
           total: 1,
           logs: [
@@ -1015,7 +1018,7 @@ test("admin record log list fails closed when backend omits stable log ids", asy
 test("admin record log list fails closed when backend returns malformed log rows", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/record/list" && (init?.method ?? "GET") === "POST") {
+      if (isSystemRecordsRequest(url, init)) {
         return {
           total: 1,
           logs: ["not-a-log-record"],
@@ -1040,7 +1043,7 @@ test("admin record log list fails closed when backend omits required audit field
   ] as const) {
     await withBackendSdkFetch(
       (url, init) => {
-        if (url === "/backend/v3/api/record/list" && (init?.method ?? "GET") === "POST") {
+        if (isSystemRecordsRequest(url, init)) {
           const log = {
             id: "log-1",
             user: "user-1",
@@ -1086,7 +1089,7 @@ test("admin record log list fails closed when backend omits required audit field
 test("admin record log list fails closed when backend returns invalid decimal audit values", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/record/list" && (init?.method ?? "GET") === "POST") {
+      if (isSystemRecordsRequest(url, init)) {
         return {
           total: 1,
           logs: [
@@ -1132,7 +1135,7 @@ test("admin record log list fails closed when backend omits or corrupts paginati
   for (const total of [undefined, -1, "not-a-number"]) {
     await withBackendSdkFetch(
       (url, init) => {
-        if (url === "/backend/v3/api/record/list" && (init?.method ?? "GET") === "POST") {
+        if (isSystemRecordsRequest(url, init)) {
           return {
             ...(total === undefined ? {} : { total }),
             logs: [

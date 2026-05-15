@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/willhaben-realestate-search@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.willhaben_realestate_search",
+  "skill": {
+    "id": 40215,
+    "skillKey": "clawhub-willhaben-realestate-search",
+    "name": "Willhaben Real Estate Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "willhaben-realestate-search",
+    "url": "https://clawhub.ai/skills/willhaben-realestate-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/willhaben-realestate-search-22e250dbeeb64352.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search willhaben.at real estate listings (apartments, houses) via their public webapi. No browser needed. Search any Austrian state and district with price/r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mihaimacarie98",
+      "userId": "s179aj6f7kn01j5qv9cd4aq98s84pqxj",
+      "displayName": "mihaimacarie98",
+      "image": "https://avatars.githubusercontent.com/u/9325048?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776031479574,
+      "changelog": "ClawHub compliance: added metadata.openclaw.requires.bins, removed anti-bot language, made district docs generic",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8bd7f32bb42255950897f967a075aebd0c16174383cc007d6e8e5c07d40dc89"
+}

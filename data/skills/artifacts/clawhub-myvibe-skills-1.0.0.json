@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/myvibe-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.myvibe_skills",
+  "skill": {
+    "id": 14492,
+    "skillKey": "clawhub-myvibe-skills",
+    "name": "MyVibe Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "myvibe-skills",
+    "url": "https://clawhub.ai/skills/myvibe-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/myvibe-skills-79482d4173800edf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish static HTML, ZIP archive, or directory to MyVibe. Use this skill when user wants to publish web content to MyVibe."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhuzhuyule",
+      "userId": "publishers:zhuzhuyule",
+      "displayName": "zhuzhuyule",
+      "image": "https://avatars.githubusercontent.com/u/11242146?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770729135272,
+      "changelog": "myvibe-skills v1.0.0\n\n- Initial release of the MyVibe Publish skill.\n- Allows publishing static HTML, ZIP archives, or directories to MyVibe.\n- Supports publishing from file, directory, or URL with optional metadata extraction, git integration, and screenshot generation.\n- Provides automated project type detection (static, buildable, monorepo) and smart workflow (build, analyze, confirm, publish).\n- Includes advanced options for visibility, updating specific Vibes, and import from external URLs.\n- Guides users through error handling and upgrade prompts for version history features.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7a2137f8c1237729377884e4b4cf85c3c8612565a3ba8659d2691dfa75f0fe58"
+}

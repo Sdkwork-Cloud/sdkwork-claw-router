@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_review",
+  "skill": {
+    "id": 8430,
+    "skillKey": "clawhub-code-review",
+    "name": "Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-review",
+    "url": "https://clawhub.ai/skills/code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-review-717d32bb32dbbc16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Systematic code review patterns covering security, performance, maintainability, correctness, and testing — with severity levels, structured feedback guidance, review process, and anti-patterns to avoid. Use when reviewing PRs, establishin."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 13668,
+      "installsAllTime": 212,
+      "installsCurrent": 199,
+      "stars": 15,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770729869941,
+      "changelog": "Initial release of the code-review skill with comprehensive, structured checklists for code review.\n\n- Provides detailed checklists for security, performance, correctness, maintainability, and testing.\n- Suggests severity and priority for each review dimension.\n- Outlines best practices, anti-patterns to avoid, and a step-by-step review process.\n- Includes sample installation instructions.\n- Aims to standardize and improve code review quality for any team.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b8261f9ae8dbe7dd4b7079e2577324c1b5294d0d974ce1a075277d19b963a164"
+}

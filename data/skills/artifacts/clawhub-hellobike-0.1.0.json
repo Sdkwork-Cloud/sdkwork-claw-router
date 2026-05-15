@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hellobike@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hellobike",
+  "skill": {
+    "id": 31847,
+    "skillKey": "clawhub-hellobike",
+    "name": "Hellobike"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hellobike",
+    "url": "https://clawhub.ai/skills/hellobike",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hellobike-d6cbd48cc00fa39e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarizes public service details, announcements, and city-specific info from Hellobike's official pages without accessing user accounts or orders."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773766985409,
+      "changelog": "Initial release of the hellobike-hot-trend skill.\n\n- Organizes public service and announcement information from HelloBike’s official website.\n- Summarizes service descriptions, announcements, news, and city-specific details.\n- Only processes compliant information from public pages; no login or account operations.\n- Extracts data such as service scope, prices, announcement details, and city coverage.\n- Ensures automated extraction respects site loading times and visit frequency limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82c696b71544973d3a7a385dbe0a66a20f237e051b906b00335e62a11636843c"
+}

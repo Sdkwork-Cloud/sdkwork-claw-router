@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/honey@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.honey",
+  "skill": {
+    "id": 65770,
+    "skillKey": "clawhub-honey",
+    "name": "Honey优惠券助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "honey",
+    "url": "https://clawhub.ai/skills/honey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/honey-a55e2e3846a51f6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Honey（PayPal旗下）浏览器优惠券自动应用工具，自动在结算时测试所有可用优惠码，并提供Honey Gold返利积分。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fangshan101-coder",
+      "userId": "s1782arxyb13jw6g2c7z1z1n4183nyc9",
+      "displayName": "fangshan101-coder",
+      "image": "https://avatars.githubusercontent.com/u/267524233?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774584031844,
+      "changelog": "初始发布",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f3be814f1666b2209a6f151f174fe756531c602f9c513d89487ebe7d0898b0f"
+}

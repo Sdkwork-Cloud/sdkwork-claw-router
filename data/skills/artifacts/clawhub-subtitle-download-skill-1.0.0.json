@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subtitle-download-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_download_skill",
+  "skill": {
+    "id": 40745,
+    "skillKey": "clawhub-subtitle-download-skill",
+    "name": "Subtitle Download Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-download-skill",
+    "url": "https://clawhub.ai/skills/subtitle-download-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-download-skill-ec14253b65a968d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 10-minute YouTube tutorial video into 1080p downloadable subtitle files just by typing what you need. Whether it's downloading subtitle files from vid..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775953342782,
+      "changelog": "subtitle-download-skill 1.0.0\n\n- Initial release: Extract and download subtitles from uploaded video files using cloud processing.\n- Supports a wide range of input formats (mp4, mov, avi, webm, mkv, etc.) and subtitle export (SRT).\n- Automatic onboarding with free token generation and session setup.\n- Simple user workflow: upload video, describe subtitle export, receive download link within 20–40 seconds for most videos.\n- Error handling with helpful messages for issues like format, file size, credits, and session management.\n- Designed for content creators, translators, and students needing quick subtitle extraction without local setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:abcf3c13e0152d0c9ff936c878cfa90e01052c81397b54e65f70a8ca5192ab0e"
+}

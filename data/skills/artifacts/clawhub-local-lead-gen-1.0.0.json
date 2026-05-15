@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-lead-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_lead_gen",
+  "skill": {
+    "id": 27755,
+    "skillKey": "clawhub-local-lead-gen",
+    "name": "Local Lead Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-lead-gen",
+    "url": "https://clawhub.ai/skills/local-lead-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-lead-gen-52f4a539d8fccb78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated local business lead generation and cold outreach pipeline. Scans businesses by niche and city, scores their websites (SSL, mobile, speed, design),..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "merjua14",
+      "userId": "publishers:merjua14",
+      "displayName": "merjua14",
+      "image": "https://avatars.githubusercontent.com/u/40038194?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773344749353,
+      "changelog": "Scan local businesses, score websites, auto-email pitches to bad ones",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e67470b97b7693a8983eb7dca46914b9ce0e1cd26ed6f970a8de487229781e5"
+}

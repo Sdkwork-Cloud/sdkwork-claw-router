@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68772,
+  "uuid": "skill-clawhub-synapse-wiki",
+  "skillKey": "clawhub-synapse-wiki",
+  "name": "Synapse Wiki",
+  "summary": "Synapse Wiki — 智能知识库管理系统。 自动摄取原始资料，增量构建持久化知识网络，支持智能查询和健康检查。 知识随时间复利积累，越用越聪明。 当用户提到 wiki、知识库、摄取资料、查询知识、整理文档时使用此技能。",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.synapse_wiki",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ankechenlab-node",
+      "features": [
+        "Synapse Wiki — 智能知识库管理系统。 自动摄取原始资料，增量构建持久化知识网络，支持智能查询和健康检查。 知识随时间复利积累，越用越聪明。 当用户提到 wiki、知识库、摄取资."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/synapse-wiki@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260451964?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "synapse-wiki",
+      "url": "https://clawhub.ai/skills/synapse-wiki"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "synapse-wiki",
+    "url": "https://clawhub.ai/skills/synapse-wiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/synapse-wiki-9e7cadf30fc268d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/synapse-wiki@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-synapse-wiki-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00f164f0a684f35d0c845db703487503764a1888a152615759e2e417dbb5cfe4",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T05:25:12.427Z"
+}

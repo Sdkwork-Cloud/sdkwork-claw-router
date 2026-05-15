@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17073,
+  "uuid": "skill-clawhub-gws-calendar-insert",
+  "skillKey": "clawhub-gws-calendar-insert",
+  "name": "Gws Calendar Insert",
+  "summary": "Google Calendar: Create a new event.",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_calendar_insert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google Calendar: Create a new event."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-calendar-insert@1.0.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-calendar-insert",
+      "url": "https://clawhub.ai/skills/gws-calendar-insert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-calendar-insert",
+    "url": "https://clawhub.ai/skills/gws-calendar-insert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-calendar-insert-2147da4c0730f15d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-calendar-insert@1.0.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-calendar-insert-1.0.13.json",
+      "version": "1.0.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41779e783ccb746854a0cfb34139881594edadaff6b80f4c299cabf833c224d1",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:33:20.028Z"
+}

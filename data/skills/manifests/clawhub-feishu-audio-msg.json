@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17057,
+  "uuid": "skill-clawhub-feishu-audio-msg",
+  "skillKey": "clawhub-feishu-audio-msg",
+  "name": "Feishu Audio Message",
+  "summary": "Send TTS audio as a proper playable audio message (not file attachment) to Feishu chats. Use when asked to send voice messages, TTS audio, speech announcemen...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_audio_msg",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rong",
+      "features": [
+        "Send TTS audio as a proper playable audio message (not file attachment) to Feishu chats",
+        "Use when asked to send voice messages, TTS audio, speech announcemen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-audio-msg@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220700654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-audio-msg",
+      "url": "https://clawhub.ai/skills/feishu-audio-msg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-audio-msg",
+    "url": "https://clawhub.ai/skills/feishu-audio-msg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-audio-msg-cf60edf82e18a356.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-audio-msg@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-audio-msg-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f467e0b07bf1c8f3d06f5e82dd1ab5cf56671c0be73c8b4a62f4ce44bdf3d044",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T12:28:49.320Z"
+}

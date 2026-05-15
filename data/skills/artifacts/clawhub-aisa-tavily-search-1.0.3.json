@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aisa-tavily-search@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_tavily_search",
+  "skill": {
+    "id": 35553,
+    "skillKey": "clawhub-aisa-tavily-search",
+    "name": "AIsa Tavily Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-tavily-search",
+    "url": "https://clawhub.ai/skills/aisa-tavily-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-tavily-search-80f08343583cf1f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run web, multi-source, or last-30-days research through AIsa. Use when: the user needs search, synthesis, competitor scans, or trend discovery. Supports rese..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bibaofeng",
+      "userId": "s1740zrgcnwxsxgzt9bfj5a1jn842mag",
+      "displayName": "bibaofeng",
+      "image": "https://avatars.githubusercontent.com/u/86095131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1778243634545,
+      "changelog": "- Migrated implementation from Python to Node.js scripts.\n- Added new scripts: extract.mjs and search.mjs.\n- Removed the Python script: scripts/search_client.py.\n- Updated system requirements to require Node.js instead of Python.\n- Added homepage and source repo links in the documentation.\n- Increased version to 1.0.3.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe3c3a79b759f9c4be4f105c7e038e6864b896fa6f3e22c41a2d28c03ad313e1"
+}

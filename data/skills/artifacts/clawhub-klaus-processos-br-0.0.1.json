@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/klaus-processos-br@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.klaus_processos_br",
+  "skill": {
+    "id": 53163,
+    "skillKey": "clawhub-klaus-processos-br",
+    "name": "Klaus Processos Br"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "klaus-processos-br",
+    "url": "https://clawhub.ai/skills/klaus-processos-br",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/klaus-processos-br-9c11b2b232960697.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Consulta processos judiciais brasileiros (Brasil) via API Pública do DataJud (CNJ)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "runawaydevil",
+      "userId": "publishers:runawaydevil",
+      "displayName": "runawaydevil",
+      "image": "https://avatars.githubusercontent.com/u/8763225?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 469,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1772552033114,
+      "changelog": "Initial release of klaus_processos_br: Query Brazilian court cases via public DataJud API.\n\n- Enables querying of Brazilian judicial processes by CNJ number.\n- Supports advanced search using filters: class, court, date, etc.\n- Includes process monitoring: add, list, check for updates, and remove.\n- Offers tribunal inference for case numbers.\n- Outputs results in plain text or JSON.\n- Covers 91 courts, excludes STF, and supports only public (non-confidential) processes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0946cc4dba3087edd78f04306d0099456282949e8565a164f38489d6fb0b1ff1"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44301,
+  "uuid": "skill-clawhub-skill-auditor-in-sandbox",
+  "skillKey": "clawhub-skill-auditor-in-sandbox",
+  "name": "Skill Auditor in Sandbox",
+  "summary": "Launch a NovitaClaw (OpenClaw) sandbox, install a specified skill, and generate an installation & security audit report. Use when: (1) You want to test a com...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_auditor_in_sandbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freecodewu",
+      "features": [
+        "Launch a NovitaClaw (OpenClaw) sandbox, install a specified skill, and generate an installation.",
+        "Use when: (1) You want to test a com..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-auditor-in-sandbox@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96016540?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-auditor-in-sandbox",
+      "url": "https://clawhub.ai/skills/skill-auditor-in-sandbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-auditor-in-sandbox",
+    "url": "https://clawhub.ai/skills/skill-auditor-in-sandbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-auditor-in-sandbox-34c4147a80ed9b95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-auditor-in-sandbox@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-auditor-in-sandbox-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9ecf8528ba46b00e7bea192226d892aa43a4a8e121298f4afa9eb1965f52f71",
+      "artifactSizeBytes": 2095
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T11:23:53.477Z"
+}

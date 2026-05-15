@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/k2ljl-qmd@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.k2ljl_qmd",
+  "skill": {
+    "id": 23795,
+    "skillKey": "clawhub-k2ljl-qmd",
+    "name": "QMD Markdown Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "k2ljl-qmd",
+    "url": "https://clawhub.ai/skills/k2ljl-qmd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/k2ljl-qmd-cbf6a5c94cae8f91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and retrieve markdown documents from local knowledge bases using qmd. Supports BM25 keyword search, vector semantic search, and hybrid search with LLM..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidsteelerose",
+      "userId": "publishers:davidsteelerose",
+      "displayName": "davidsteelerose",
+      "image": "https://avatars.githubusercontent.com/u/1289381?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 429,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773629955716,
+      "changelog": "QMD Skill 1.0.0 – Initial Release\n\n- Search local markdown knowledge bases using fast BM25 keyword, vector semantic, or hybrid LLM-re-ranked methods.\n- Retrieve individual or multiple markdown documents by path or ID.\n- All commands support structured --json output for integration.\n- Easy setup instructions for indexing and embedding content.\n- Includes maintenance commands for updating and checking collection health.\n- Supports MCP server mode for tool integration: search, vsearch, query, get, multi-get, and status.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:038860b0515d0acced8c5045218fed61737a0d9c34c4a53198e4870959f0b4d5"
+}

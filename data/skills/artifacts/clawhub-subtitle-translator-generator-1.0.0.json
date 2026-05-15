@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subtitle-translator-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_translator_generator",
+  "skill": {
+    "id": 44450,
+    "skillKey": "clawhub-subtitle-translator-generator",
+    "name": "Subtitle Translator Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-translator-generator",
+    "url": "https://clawhub.ai/skills/subtitle-translator-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-translator-generator-746142f4f45c72f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get subtitled translated videos ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776920188648,
+      "changelog": "Initial release of Subtitle Translator Generator — translate and embed subtitles in your videos automatically.\n\n- Upload video files (MP4, MOV, AVI, WebM up to 500MB) and request subtitle translation and embedding in multiple languages.\n- Automatic connection to processing API; handles token and session management in the background.\n- Cloud-based rendering pipeline: generates 1080p MP4 outputs with accurate, fast subtitle translation (typically 1–2 minutes per short video).\n- Simple command-driven workflow: upload, instruct translation and burn-in, then download the finished video.\n- Supports export, status, credits, and multi-language workflows for content creators, YouTubers, and educators.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d424d475af703d00f95b07f8fc92ca31e369e890eaf7f3aa517d7995893b02b"
+}

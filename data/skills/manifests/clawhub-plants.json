@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14346,
+  "uuid": "skill-clawhub-plants",
+  "skillKey": "clawhub-plants",
+  "name": "Plants",
+  "summary": "Build a personal plant care system with watering schedules, care logs, and seasonal reminders.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plants",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build a personal plant care system with watering schedules, care logs, and seasonal reminders."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plants@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plants",
+      "url": "https://clawhub.ai/skills/plants"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plants",
+    "url": "https://clawhub.ai/skills/plants",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plants-8b6bfe00f0034595.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plants@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-plants-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e59e7cdceb580fa054cf01c50058af1d46e5ec0acbce74c0fc37d31acf73fe17",
+      "artifactSizeBytes": 1761
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T23:56:33.550Z"
+}

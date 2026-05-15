@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geeksdobyte-slack-botskill@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geeksdobyte_slack_botskill",
+  "skill": {
+    "id": 17207,
+    "skillKey": "clawhub-geeksdobyte-slack-botskill",
+    "name": "Slack Actions"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geeksdobyte-slack-botskill",
+    "url": "https://clawhub.ai/skills/geeksdobyte-slack-botskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geeksdobyte-slack-botskill-1646cc5f87f24663.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables authenticated interaction with Slack for sending, editing, deleting, reacting to, and managing messages and pins via a secure bot token."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rk905",
+      "userId": "publishers:rk905",
+      "displayName": "RK905",
+      "image": "https://avatars.githubusercontent.com/u/8699271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 804,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1771005288456,
+      "changelog": "**Major update: Expanded documentation and enforced stricter security and setup requirements for Slack bot credential usage.**\n\n- Added detailed setup and authentication instructions, including required OAuth scopes and credential storage rules.\n- Expanded usage and capability explanations, specifying agent action scope and security/compliance guidelines.\n- Clarified required inputs, supported actions, and example JSON payloads for all Slack operations.\n- Emphasized credential safety: use of environment variables, prohibition of user tokens and hardcoding, and workspace/permission constraints.\n- Updated tags and version metadata to reflect improved capabilities and security.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9086430b09485f31d3ab29ede88b98f02ef59475303f7e6a1809d7247fa936b3"
+}

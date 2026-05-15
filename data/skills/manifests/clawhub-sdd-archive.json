@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60948,
+  "uuid": "skill-clawhub-sdd-archive",
+  "skillKey": "clawhub-sdd-archive",
+  "name": "SDD Archive",
+  "summary": "将已完成的 feature spec 归档到全局知识库。提取关键决策，更新约束和领域索引，然后将 feature 目录移到 spec/archive/。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sdd_archive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mahingbun-dev",
+      "features": [
+        "将已完成的 feature spec 归档到全局知识库。提取关键决策，更新约束和领域索引，然后将 feature 目录移到 spec/archive/。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sdd-archive@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/174362089?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sdd-archive",
+      "url": "https://clawhub.ai/skills/sdd-archive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sdd-archive",
+    "url": "https://clawhub.ai/skills/sdd-archive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sdd-archive-cd7d343c8523b12b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sdd-archive@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sdd-archive-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7fe0dbbc720b763da30229bc571872a31f7bd82930b309433880a1e30df53a5f",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T01:07:18.592Z"
+}

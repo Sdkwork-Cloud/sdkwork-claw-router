@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71321,
+  "uuid": "skill-clawhub-learning-path-builder",
+  "skillKey": "clawhub-learning-path-builder",
+  "name": "职业技能个性学习路径生成",
+  "summary": "根据输入的职业技能标准文档，输出基于知识图谱的三层学习路径规划。适用于职业技能学习、职业资格认证学习。本技能以中国国内职业技能为目标，参考资源为国内官方资源。详细说明见 references/README.md",
+  "version": "2.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learning_path_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zpwang@live.cn",
+      "features": [
+        "根据输入的职业技能标准文档，输出基于知识图谱的三层学习路径规划。适用于职业技能学习、职业资格认证学习。本技能以中国国内职业技能为目标，参考资源为国内官方资源。详细说明见 references."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learning-path-builder@2.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262943821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learning-path-builder",
+      "url": "https://clawhub.ai/skills/learning-path-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learning-path-builder",
+    "url": "https://clawhub.ai/skills/learning-path-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learning-path-builder-4e25122dba3adc71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learning-path-builder@2.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-learning-path-builder-2.4.1.json",
+      "version": "2.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26b0ab9ac89d851710e209c5936bef7753962feed2703ab302b504e7aaf8657a",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T02:17:26.279Z"
+}

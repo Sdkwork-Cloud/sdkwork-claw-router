@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69535,
+  "uuid": "skill-clawhub-china-stock-screener",
+  "skillKey": "clawhub-china-stock-screener",
+  "name": "Stock Screener",
+  "summary": "基于技术面、资金面、基本面三维度筛选A股和港股符合条件的股票。支持多因子选股、条件过滤、排序输出。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_stock_screener",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weqwhdiowa",
+      "features": [
+        "基于技术面、资金面、基本面三维度筛选A股和港股符合条件的股票。支持多因子选股、条件过滤、排序输出。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-stock-screener@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43745496?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-stock-screener",
+      "url": "https://clawhub.ai/skills/china-stock-screener"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-stock-screener",
+    "url": "https://clawhub.ai/skills/china-stock-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-stock-screener-476e3e3ffb82882d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-stock-screener@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-stock-screener-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ccecee3f47172c2b59f80cbfc86e9079669ffc9f73a1fc8d3c96ff001d2c6ad",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T15:41:48.575Z"
+}

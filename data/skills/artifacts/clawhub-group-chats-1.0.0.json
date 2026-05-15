@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/group-chats@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.group_chats",
+  "skill": {
+    "id": 27337,
+    "skillKey": "clawhub-group-chats",
+    "name": "Group Chats"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "group-chats",
+    "url": "https://clawhub.ai/skills/group-chats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/group-chats-e5bead128e00a824.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rules and behavior guidelines for participating in group chats (Discord, Slack, etc.)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flayzz",
+      "userId": "publishers:flayzz",
+      "displayName": "FlayZz",
+      "image": "https://avatars.githubusercontent.com/u/45981623?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773568616889,
+      "changelog": "- Initial release introducing group chat participation rules and behavior guidelines.\n- Defines when to speak, when to stay silent, and how to avoid dominating group conversations.\n- Emphasizes using thoughtful, quality responses—mirroring natural human group chat behavior.\n- Outlines best practices for using reactions (emoji) to engage without interrupting chat flow.\n- Advises against over-responding and 'triple-tap' replies, promoting natural participation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1078237d6f3ffe2cf1207dc3281f50416ef3af34e3e81be3bb77605530c95d80"
+}

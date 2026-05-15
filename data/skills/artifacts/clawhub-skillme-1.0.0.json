@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skillme@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillme",
+  "skill": {
+    "id": 28510,
+    "skillKey": "clawhub-skillme",
+    "name": "SkillMe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillme",
+    "url": "https://clawhub.ai/skills/skillme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillme-b62b141a4d567a1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user asks to find, search, add, or install skills, or discover agent capabilities. Also triggers on 'install skills', 'add skills', 'is there a skil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ghesericsu",
+      "userId": "s172mptx0vyt04956pvq66bg5183jthk",
+      "displayName": "Eric Su",
+      "image": "https://avatars.githubusercontent.com/u/60202455?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 323,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773855445303,
+      "changelog": "Initial release of parallel skill search and conversion tool",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b87664577269ce887d04430dcde9b5b60d175c3c29754f375f7da44d5a850060"
+}

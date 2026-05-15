@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-exchange-vip-fee@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_vip_fee",
+  "skill": {
+    "id": 26849,
+    "skillKey": "clawhub-gate-exchange-vip-fee",
+    "name": "Gate VIP & Fee Query Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-vip-fee",
+    "url": "https://clawhub.ai/skills/gate-exchange-vip-fee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-vip-fee-168f4f7b824bd555.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gate VIP tier and trading fee query skill. Use when the user asks about their fee rates or VIP level. Triggers on 'VIP level', 'trading fee', 'fee rate', 'sp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gate-exchange",
+      "userId": "s172g4d1dcv6ccs6desbb2xw1583qza9",
+      "displayName": "Gate",
+      "image": "https://avatars.githubusercontent.com/u/33109813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775115427896,
+      "changelog": "- Introduced `references/mcp.md` as the authoritative guide for MCP execution and safe data retrieval.\n- Updated `SKILL.md` to streamline routing, reporting, and intent logic; details for data access have been moved to `references/mcp.md`.\n- Clarified workflow: follow shared MCP rules and the new reference document before any account or fee queries.\n- No changes to MCP server/tools or output format—behavior remains backward compatible.\n- Minor adjustments to the description and quick start for better clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b2eaabef44a21ae3eab2a6b58e83613d7dd88b85b4be86ce931c99a747da53c"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65422,
+  "uuid": "skill-clawhub-qwen-vision-rename",
+  "skillKey": "clawhub-qwen-vision-rename",
+  "name": "Qwen Vision Rename",
+  "summary": "根据图片内容批量重命名本地图片文件。这是一个 skill，不是可调用工具；先用 read 打开本文件，再执行脚本命令，绝不能直接发出名为 qwen-vision-rename 的 tool call。用户提到“改名/重命名/按图片内容命名/整理图片文件名/整理图片”时必须使用本技能。默认直接执行改名，仅在用户明确...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen_vision_rename",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huiya-code",
+      "features": [
+        "根据图片内容批量重命名本地图片文件。这是一个 skill，不是可调用工具；先用 read 打开本文件，再执行脚本命令，绝不能直接发出名为 qwen-vision-rename 的 tool."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qwen-vision-rename@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229924483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qwen-vision-rename",
+      "url": "https://clawhub.ai/skills/qwen-vision-rename"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen-vision-rename",
+    "url": "https://clawhub.ai/skills/qwen-vision-rename",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen-vision-rename-3c564a1b46388cc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qwen-vision-rename@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qwen-vision-rename-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2efff5b92555ba1dfc05beb966c906788236b57967caa0140b0ed1c08e95945e",
+      "artifactSizeBytes": 2129
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T01:55:43.786Z"
+}

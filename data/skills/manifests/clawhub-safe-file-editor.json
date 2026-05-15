@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73274,
+  "uuid": "skill-clawhub-safe-file-editor",
+  "skillKey": "clawhub-safe-file-editor",
+  "name": "安全文件编辑器",
+  "summary": "安全文件编辑器，支持4眼原则预览确认，原子备份与回滚，避免误操作覆盖及注入风险，保障文件编辑安全可靠。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_file_editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suda6632",
+      "features": [
+        "安全文件编辑器，支持4眼原则预览确认，原子备份与回滚，避免误操作覆盖及注入风险，保障文件编辑安全可靠。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-file-editor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194589286?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-file-editor",
+      "url": "https://clawhub.ai/skills/safe-file-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-file-editor",
+    "url": "https://clawhub.ai/skills/safe-file-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-file-editor-e94120755eb5601e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-file-editor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-file-editor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b82447a13e4b9fbd8b35dbbd373e297b83fbedb33d34f1531e70e8f9a659a277",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T08:22:15.086Z"
+}

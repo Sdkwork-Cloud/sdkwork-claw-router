@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67674,
+  "uuid": "skill-clawhub-stock-monitor-siyou",
+  "skillKey": "clawhub-stock-monitor-siyou",
+  "name": "Stock Monitor Skill",
+  "summary": "自动监控股票价格，突破阈值时自动发送飞书语音提醒。支持多只股票、自定义阈值、交易时间判断。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_monitor_siyou",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anightmare2",
+      "features": [
+        "自动监控股票价格，突破阈值时自动发送飞书语音提醒。支持多只股票、自定义阈值、交易时间判断。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-monitor-siyou@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198483483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-monitor-siyou",
+      "url": "https://clawhub.ai/skills/stock-monitor-siyou"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-monitor-siyou",
+    "url": "https://clawhub.ai/skills/stock-monitor-siyou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-monitor-siyou-1144798e5608c3b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-monitor-siyou@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-monitor-siyou-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d60393a8aaf1183bd934045e48661c267878e8a52de4d4e0bc8c07f60dbd5e49",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T00:39:18.953Z"
+}

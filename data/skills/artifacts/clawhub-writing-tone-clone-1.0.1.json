@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/writing-tone-clone@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.writing_tone_clone",
+  "skill": {
+    "id": 27718,
+    "skillKey": "clawhub-writing-tone-clone",
+    "name": "Writing Tone Clone"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "writing-tone-clone",
+    "url": "https://clawhub.ai/skills/writing-tone-clone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/writing-tone-clone-49a3ce717563d7bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Clone someone's writing tone from sample text and produce a ready-to-use voice skill. Provide writing samples (diary, blog posts, emails, social posts) and g..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "couriard",
+      "userId": "s174084bjv3r7z4nvxnd0xfhgh83hzcf",
+      "displayName": "Chris Couriard",
+      "image": "https://avatars.githubusercontent.com/u/128924221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773823377542,
+      "changelog": "- Updated version to 1.0.1 in SKILL.md and metadata.\n- No changes to skill logic or documentation content; only version increment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef9489f1f60bfc13eb48eebd2877506e2e2fe93e7fcaa83215eaf0703b1ce661"
+}

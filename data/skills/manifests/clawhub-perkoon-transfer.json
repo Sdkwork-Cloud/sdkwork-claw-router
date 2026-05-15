@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50362,
+  "uuid": "skill-clawhub-perkoon-transfer",
+  "skillKey": "clawhub-perkoon-transfer",
+  "name": "Perkoon Transfer",
+  "summary": "The agent data layer. Perkoon moves files between agents and the physical world — agent to human, agent to agent, agent to pipeline. P2P over WebRTC. Free. E...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perkoon_transfer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Perkoon",
+      "features": [
+        "The agent data layer",
+        "Perkoon moves files between agents and the physical world — agent to human, agent to agent, age.",
+        "P2P over WebRTC"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/perkoon-transfer@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5639757?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "perkoon-transfer",
+      "url": "https://clawhub.ai/skills/perkoon-transfer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perkoon-transfer",
+    "url": "https://clawhub.ai/skills/perkoon-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perkoon-transfer-bd5019a74af955e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/perkoon-transfer@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-perkoon-transfer-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d96f6dd8d98c108edce2c8e6793a736b8617b7a1c4b214d43e8ff34110ba966c",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T20:56:28.240Z"
+}

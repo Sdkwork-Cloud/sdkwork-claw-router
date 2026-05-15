@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bungie@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bungie",
+  "skill": {
+    "id": 53473,
+    "skillKey": "clawhub-bungie",
+    "name": "Bungie"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bungie",
+    "url": "https://clawhub.ai/skills/bungie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bungie-128326881733e148.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bungie pioneered the console FPS genre with Halo, developed Destiny as a cross-platform MMOFPS, and was acquired by Sony for $3.6B to expand its GaaS model."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776963893060,
+      "changelog": "- Added a version field to SKILL.md for clearer version tracking.\n- No content changes were made to the SKILL documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f05d5bac0b804fa9d10c9a0081f6a461b5116ed05ec1ae80350d3884a5e74e80"
+}

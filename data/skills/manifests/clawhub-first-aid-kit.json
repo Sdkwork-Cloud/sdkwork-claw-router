@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43960,
+  "uuid": "skill-clawhub-first-aid-kit",
+  "skillKey": "clawhub-first-aid-kit",
+  "name": "first-aid-kit",
+  "summary": "A first aid learning assistant. Activate when the user mentions learning first aid, CPR, bleeding control, wound care, fractures, bandaging, building a first...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.first_aid_kit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "枳初",
+      "features": [
+        "A first aid learning assistant",
+        "Activate when the user mentions learning first aid, CPR, bleeding control, wound care, fracture."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/first-aid-kit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74137379?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "first-aid-kit",
+      "url": "https://clawhub.ai/skills/first-aid-kit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "first-aid-kit",
+    "url": "https://clawhub.ai/skills/first-aid-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/first-aid-kit-d90eae5b1e29cf5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/first-aid-kit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-first-aid-kit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c97af911578681a05d3328179207e16ce2db9a60e5b6776045695959d3b69a9",
+      "artifactSizeBytes": 2441
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T15:07:47.556Z"
+}

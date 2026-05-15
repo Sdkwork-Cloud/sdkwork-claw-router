@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mineru-fast-extract@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mineru_fast_extract",
+  "skill": {
+    "id": 51698,
+    "skillKey": "clawhub-mineru-fast-extract",
+    "name": "MinerU zero-setup document extraction — convert PDFs, images, Word, and PowerPoint to Markdown instantly. No login, no token, n."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mineru-fast-extract",
+    "url": "https://clawhub.ai/skills/mineru-fast-extract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mineru-fast-extract-630fcb655b85489c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MinerU fast extract — zero-setup, instant document extraction. Convert PDFs, images, Word (DOCX), and PowerPoint (PPTX) to Markdown with no login, no token,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mineru-extract",
+      "userId": "s17a507qg9adzt2jkyh0mgzp3183ggjt",
+      "displayName": "MinerU-Extract",
+      "image": "https://avatars.githubusercontent.com/u/82048227?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 299,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1775564868559,
+      "changelog": "Fix: republish with complete SKILL.md content (previous publish had truncated CLI documentation)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f707d01ae22de693b9eab7c963f070d431c999b5586082ee8cfb0e147854a59"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72179,
+  "uuid": "skill-clawhub-wechat-video",
+  "skillKey": "clawhub-wechat-video",
+  "name": "Wechat",
+  "summary": "提供微信视频号公开页面的视频数据检索与表现摘要，包括话题合集、账号主页及榜单统计分析。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawkk",
+      "features": [
+        "提供微信视频号公开页面的视频数据检索与表现摘要，包括话题合集、账号主页及榜单统计分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-video@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-video",
+      "url": "https://clawhub.ai/skills/wechat-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-video",
+    "url": "https://clawhub.ai/skills/wechat-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-video-ac34bf622c2c94a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-video@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-video-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a5984ad2f94c1de1110e1b88ea1506107c50e5e2ffec0edc39c702efc9e4aa4",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T00:54:13.591Z"
+}

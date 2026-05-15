@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55509,
+  "uuid": "skill-clawhub-tech-debt-scanner",
+  "skillKey": "clawhub-tech-debt-scanner",
+  "name": "Tech Debt Scanner",
+  "summary": "Scan codebases for technical debt — TODO/FIXME comments, deprecated APIs, complexity hotspots, outdated patterns, missing tests, large files — then prioritiz...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_debt_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Scan codebases for technical debt — TODO/FIXME comments, deprecated APIs, complexity hotspots,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tech-debt-scanner@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tech-debt-scanner",
+      "url": "https://clawhub.ai/skills/tech-debt-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-debt-scanner",
+    "url": "https://clawhub.ai/skills/tech-debt-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-debt-scanner-5ac8b085d86328a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tech-debt-scanner@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tech-debt-scanner-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b33b5511624eb7ae4919b9e774a44506abe072917594119d80d41345198c2492",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:03:10.465Z"
+}

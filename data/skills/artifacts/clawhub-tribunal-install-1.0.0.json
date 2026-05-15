@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tribunal-install@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tribunal_install",
+  "skill": {
+    "id": 51208,
+    "skillKey": "clawhub-tribunal-install",
+    "name": "Tribunal Install"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tribunal-install",
+    "url": "https://clawhub.ai/skills/tribunal-install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tribunal-install-b7c1e694bad823f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and initialise Tribunal — the Claude Code quality enforcement plugin. Use when setting up a new project for AI-assisted development, when a project l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "koshaji",
+      "userId": "publishers:koshaji",
+      "displayName": "koshaji",
+      "image": "https://avatars.githubusercontent.com/u/243474115?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 343,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772811114015,
+      "changelog": "Install and initialise Tribunal quality enforcement for AI coding agents",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2b87082a051e9e6ba6d0d3cae7bfb7209048f74898f697d3f589f9b066c6decd"
+}

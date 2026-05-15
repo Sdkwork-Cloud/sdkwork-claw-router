@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seo-reporter-kryzl19@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seo_reporter_kryzl19",
+  "skill": {
+    "id": 37770,
+    "skillKey": "clawhub-seo-reporter-kryzl19",
+    "name": "Seo Reporter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seo-reporter-kryzl19",
+    "url": "https://clawhub.ai/skills/seo-reporter-kryzl19",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seo-reporter-kryzl19-149516876c2223a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit a URL for SEO factors and generate an actionable markdown report. Use when asked to analyze, check, or audit a webpage's SEO performance. Covers title,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kryzl19",
+      "userId": "s17b9ch25kfyjf0y6kmc0k5xph83j3ny",
+      "displayName": "KRYZL19",
+      "image": "https://avatars.githubusercontent.com/u/220403544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774455824986,
+      "changelog": "Initial release of seo-reporter.\n\n- Audits a webpage URL for essential SEO factors and outputs a structured markdown report.\n- Checks include title tag, meta description, heading structure, canonical tags, robots.txt, sitemap.xml, Open Graph tags, mobile viewport, and HTTPS status.\n- Each factor receives a score (Pass/Warning/Fail) with specific recommendations.\n- Designed for actionable, easy-to-read SEO audits—ideal for quick checks but not full-scale technical crawls.\n- Report includes detailed findings, recommendations, and scoring guide.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20ac26ff89ba4b0cd51e603e8eed0833042a33a63410a2eb4d6852dbdb603aff"
+}

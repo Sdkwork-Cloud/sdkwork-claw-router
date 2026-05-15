@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43755,
+  "uuid": "skill-clawhub-tiktok-add-music",
+  "skillKey": "clawhub-tiktok-add-music",
+  "name": "Tiktok Add Music",
+  "summary": "Get music-backed videos ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"add...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_add_music",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "Get music-backed videos ready to post, without touching a single slider",
+        "Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"add..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiktok-add-music@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiktok-add-music",
+      "url": "https://clawhub.ai/skills/tiktok-add-music"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-add-music",
+    "url": "https://clawhub.ai/skills/tiktok-add-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-add-music-3d0a16f44d51260c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiktok-add-music@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiktok-add-music-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a663681418645cc8e89b02c5d690e93507bafcee5da7dc1b9ab03528b9d08956",
+      "artifactSizeBytes": 2432
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T11:07:06.939Z"
+}

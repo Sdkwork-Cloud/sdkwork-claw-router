@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-lint@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_lint",
+  "skill": {
+    "id": 14840,
+    "skillKey": "clawhub-claw-lint",
+    "name": "Claw-lint"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-lint",
+    "url": "https://clawhub.ai/skills/claw-lint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-lint-d0063616739e5bb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security scanner for OpenClaw skills. Detects malware and backdoors before execution, scores risk levels, and monitors file integrity through static code analysis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parthghumatkar",
+      "userId": "publishers:parthghumatkar",
+      "displayName": "ParthGhumatkar",
+      "image": "https://avatars.githubusercontent.com/u/36190438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1089,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1770976581063,
+      "changelog": "- No changes detected in this release.\n- Version number updated to 1.0.4; all functionality and documentation remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:06e56a98b4ac2b586585c732ae7f4b1c98d51a282cf07b70d1c8ba857efcada1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ripgrep@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ripgrep",
+  "skill": {
+    "id": 10048,
+    "skillKey": "clawhub-ripgrep",
+    "name": "Ripgrep"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ripgrep",
+    "url": "https://clawhub.ai/skills/ripgrep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ripgrep-33165223a0a3c347.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Blazingly fast text search tool - recursively searches directories for regex patterns with respect to gitignore rules."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arnarsson",
+      "userId": "publishers:arnarsson",
+      "displayName": "Arnarsson",
+      "image": "https://avatars.githubusercontent.com/u/96142966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2874,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769692018910,
+      "changelog": "- Initial release of the ripgrep skill.\n- Provides fast, recursive searching with gitignore awareness.\n- Includes usage examples for searching, filtering by file type, and advanced search options.\n- Highlights common use cases and performance tips.\n- Offers installation steps for both Homebrew and apt package managers.\n- Compares key features and advantages over traditional grep.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8a1d3b466536ee68bb1f8bbda1c34d1113c2e2a11063897d101c0ccec003d176"
+}

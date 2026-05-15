@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45340,
+  "uuid": "skill-clawhub-agent-memory-backup-ensoul",
+  "skillKey": "clawhub-agent-memory-backup-ensoul",
+  "name": "Agent Memory Backup (Ensoul)",
+  "summary": "Agent memory persistence and state backup. Save and restore your AI agent's memory, identity, and state. Persistent agent memory that survives crashes, resta...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_backup_ensoul",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suitandclaw",
+      "features": [
+        "Agent memory persistence and state backup",
+        "Save and restore your AI agent's memory, identity, and state",
+        "Persistent agent memory that survives crashes, resta..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-memory-backup-ensoul@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260769788?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-memory-backup-ensoul",
+      "url": "https://clawhub.ai/skills/agent-memory-backup-ensoul"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-backup-ensoul",
+    "url": "https://clawhub.ai/skills/agent-memory-backup-ensoul",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-backup-ensoul-45d2dced9957da5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-memory-backup-ensoul@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-backup-ensoul-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6e0767d49ee56b40e00844bc7c0d5476a1e745a6062d72574f63d6f973f2a96",
+      "artifactSizeBytes": 2033
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T20:41:47.265Z"
+}

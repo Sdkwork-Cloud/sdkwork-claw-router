@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taobao-draft-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taobao_draft_generator",
+  "skill": {
+    "id": 64324,
+    "skillKey": "clawhub-taobao-draft-generator",
+    "name": "Taobao Draft Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taobao-draft-generator",
+    "url": "https://clawhub.ai/skills/taobao-draft-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taobao-draft-generator-9a8d709e7f39f0d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "淘宝商品上架草稿生成 - 人工触发，五维材质一致性校验，SEO 标题二次原创，仅生成草稿不自动上架"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guowaa223",
+      "userId": "s17d5jj4dy818vgk57n6we5vdx83hxcd",
+      "displayName": "guowaa223",
+      "image": "https://avatars.githubusercontent.com/u/140813209?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774840437444,
+      "changelog": "v1.0.0 初始发布：\n\n- 支持淘宝商品上架草稿生成，仅人工触发、不会自动上架\n- 实现五维材质一致性校验与合规终审\n- 集成SEO标题二次原创与违禁词检测\n- 输出草稿JSON和《上架信息终审表》Excel文件\n- 强制合规：禁止原标题搬运、物料一致、3折安全价、库存阈值限制",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f8eda7c14824632ec676ca45e23d5871b8e3d69208ed899cd0bb63edfd99ae35"
+}

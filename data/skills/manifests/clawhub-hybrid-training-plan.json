@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50703,
+  "uuid": "skill-clawhub-hybrid-training-plan",
+  "skillKey": "clawhub-hybrid-training-plan",
+  "name": "Hybrid training plan",
+  "summary": "View and manage a Hybrid Training Plan — check today's workout, log strength sets and runs, mark days complete or skip, view exercise 1RMs and session histor...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hybrid_training_plan",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Kenneth Kent",
+      "features": [
+        "View and manage a Hybrid Training Plan — check today's workout, log strength sets and runs, mar."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hybrid-training-plan@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2339925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hybrid-training-plan",
+      "url": "https://clawhub.ai/skills/hybrid-training-plan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hybrid-training-plan",
+    "url": "https://clawhub.ai/skills/hybrid-training-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hybrid-training-plan-dbbc8ff6f0eac511.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hybrid-training-plan@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hybrid-training-plan-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0668e475c3da59ca1d7e2287604a56d338eedf15f01b9708727b04d4c7fdf6b",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T15:33:40.560Z"
+}

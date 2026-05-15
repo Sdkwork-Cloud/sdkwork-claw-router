@@ -1,0 +1,46 @@
+{
+  "skill": {
+    "slug": "mysql-query-assistant",
+    "displayName": "MySQL Natural Language Query Assistant",
+    "summary": "translate natural-language analytics requests into mysql queries, connect to a live mysql database, inspect schema and column comments, execute read-only sql...",
+    "tags": {
+      "database": "1.0.0",
+      "latest": "1.0.0",
+      "mysql": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "createdAt": 1777548545013,
+    "updatedAt": 1777551407141
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1777548545013,
+    "changelog": "Initial release of mysql-query-assistant\n\n- Translates natural-language analytics requests into MySQL queries.\n- Connects to a live MySQL database for schema inspection and read-only SQL execution.\n- Validates SQL correctness both structurally and via real query results.\n- Supports a read-only workflow by default; restricted write requests generate preview SELECT statements and SQL, but never auto-execute writes.\n- Prioritizes schema discovery before query writing, including use of column comments and types.\n- Presents outputs using a standard template with SQL, validation, sample results, and notes.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "nocb",
+    "userId": "s176c3n8td6m29gmtxkemsz0b585tgbq",
+    "displayName": "hansen",
+    "image": "https://avatars.githubusercontent.com/u/1073133?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777551407141
+  }
+}

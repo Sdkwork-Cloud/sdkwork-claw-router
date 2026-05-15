@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weibo-fresh-posts@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weibo_fresh_posts",
+  "skill": {
+    "id": 64399,
+    "skillKey": "clawhub-weibo-fresh-posts",
+    "name": "Weibo Timeline Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weibo-fresh-posts",
+    "url": "https://clawhub.ai/skills/weibo-fresh-posts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weibo-fresh-posts-b60acb12c91c5db9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用于监控微博关注流，先切换到最新微博时间线，再按发帖时间抓取并去重写入每日 Markdown，减少关键微博漏看。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hwb96",
+      "userId": "s177bw518kc94r8001mtw8fk5n83j36m",
+      "displayName": "HanWenbo",
+      "image": "https://avatars.githubusercontent.com/u/124024253?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1001,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1772452371516,
+      "changelog": "- Added bilingual section title \"Weibo Timeline Monitor（微博关键信息不漏看）\" to improve clarity for all users\n- No functional or logic changes; documentation only",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e96e718ff1225d1177da56620bd4b26a6f057f34187065bad44dba77ee0c8759"
+}

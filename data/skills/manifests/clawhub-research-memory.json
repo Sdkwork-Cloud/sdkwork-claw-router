@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46225,
+  "uuid": "skill-clawhub-research-memory",
+  "skillKey": "clawhub-research-memory",
+  "name": "Research Memory",
+  "summary": "Build a persistent, searchable knowledge base from articles, papers, documents, and notes using BlueColumn. Use when a user wants to save research for later...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bluecolumnconsulting-lgtm",
+      "features": [
+        "Build a persistent, searchable knowledge base from articles, papers, documents, and notes using.",
+        "Use when a user wants to save research for later..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/research-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243032714?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "research-memory",
+      "url": "https://clawhub.ai/skills/research-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-memory",
+    "url": "https://clawhub.ai/skills/research-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-memory-ec708ee7f04ae93b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/research-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-research-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca7683f38059efc600f644c3b057188ff68ae36365f24c015b44e5d9606ec901",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T19:39:45.009Z"
+}

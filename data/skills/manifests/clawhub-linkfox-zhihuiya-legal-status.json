@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61337,
+  "uuid": "skill-clawhub-linkfox-zhihuiya-legal-status",
+  "skillKey": "clawhub-linkfox-zhihuiya-legal-status",
+  "name": "Zhihuiya Legal Status",
+  "summary": "从智慧芽（PatSnap）数据库查询专利法律状态信息。当用户提到专利法律状态、专利有效性核查、专利状态查询、专利事件历史、简单法律状态、转让、许可、质押、异议、诉讼、复审等法律事件、patent legal status, patent validity, patent events, transfer/lice...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_zhihuiya_legal_status",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linkfox-ai",
+      "features": [
+        "从智慧芽（PatSnap）数据库查询专利法律状态信息。当用户提到专利法律状态、专利有效性核查、专利状态查询、专利事件历史、简单法律状态、转让、许可、质押、异议、诉讼、复审等法律事件、pate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkfox-zhihuiya-legal-status@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267242260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkfox-zhihuiya-legal-status",
+      "url": "https://clawhub.ai/skills/linkfox-zhihuiya-legal-status"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-zhihuiya-legal-status",
+    "url": "https://clawhub.ai/skills/linkfox-zhihuiya-legal-status",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-zhihuiya-legal-status-8a18a61338f84e40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkfox-zhihuiya-legal-status@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-zhihuiya-legal-status-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d85bf41400e62648e752c58061e672a58532ada9dab86f9f1999416f7dec779",
+      "artifactSizeBytes": 2155
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T15:11:08.272Z"
+}

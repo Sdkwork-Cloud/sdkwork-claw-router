@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/godfery-api-designer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.godfery_api_designer",
+  "skill": {
+    "id": 43969,
+    "skillKey": "clawhub-godfery-api-designer",
+    "name": "api-designer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "godfery-api-designer",
+    "url": "https://clawhub.ai/skills/godfery-api-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/godfery-api-designer-b0370a1f5e9f1113.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when designing REST or GraphQL APIs, creating OpenAPI specifications, or planning API architecture. Invoke for resource modeling, versioning strategies,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirkraman",
+      "userId": "s171c4e2zwz2yy69j6tp9xcfc184vnxz",
+      "displayName": "KirkRaman",
+      "image": "https://avatars.githubusercontent.com/u/255880392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776407798655,
+      "changelog": "Initial release of API Designer, a senior-level skill for designing scalable, maintainable REST and GraphQL APIs.\n\n- Offers expert guidance in resource modeling, endpoint design, and OpenAPI 3.1 specification.\n- Includes best practices for API versioning, pagination, error handling, and authentication flows.\n- Provides output templates covering resource definitions, endpoints, specs, error catalogs, and more.\n- Reference guide integrates detailed tips on REST, versioning, pagination, and error standards.\n- Defines strict constraints to ensure robust, developer-friendly, and well-documented APIs.\n- Related skills highlighted for deeper specialization or implementation needs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f8e36ac923f6b0d31c7c7347610b42376ebfe1c82fdbfaf47dbc6cb8c14d79a5"
+}

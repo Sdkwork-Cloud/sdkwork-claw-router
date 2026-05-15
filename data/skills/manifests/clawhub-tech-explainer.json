@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73165,
+  "uuid": "skill-clawhub-tech-explainer",
+  "skillKey": "clawhub-tech-explainer",
+  "name": "技术解释器（当你发来一句或一段包含技术名词的文本时，自动识别其中的专业术语，用\"是什么 → 解决什么问题 → 通俗比喻\"的三步法，为没有技术背景的小白逐个解释每一个陌生词汇。）",
+  "summary": "自动识别技术名词，逐个用“是什么→解决什么问题→生活比喻”三步法，用易懂语言帮零基础小白理解专业术语。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_explainer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangjinhongmy-pixel",
+      "features": [
+        "自动识别技术名词，逐个用“是什么→解决什么问题→生活比喻”三步法，用易懂语言帮零基础小白理解专业术语。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tech-explainer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/247364929?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tech-explainer",
+      "url": "https://clawhub.ai/skills/tech-explainer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-explainer",
+    "url": "https://clawhub.ai/skills/tech-explainer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-explainer-015c7b4f645ec09e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tech-explainer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tech-explainer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdc8b7a703c7bfd8ff3f2e0ad0fc81841de6ac19db9403609110d07a349e1d24",
+      "artifactSizeBytes": 2617
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T08:15:01.771Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aoms@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aoms",
+  "skill": {
+    "id": 50858,
+    "skillKey": "clawhub-aoms",
+    "name": "AOMS - Always-On Memory Service"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aoms",
+    "url": "https://clawhub.ai/skills/aoms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aoms-1835db9739d81657.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Always-On Memory Service — persistent 4-tier memory (episodic, semantic, procedural, working) with weighted retrieval, vector search, progressive disclosure..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dhawala4",
+      "userId": "publishers:dhawala4",
+      "displayName": "DhawalA4",
+      "image": "https://avatars.githubusercontent.com/u/168691860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 364,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773760220457,
+      "changelog": "Security fixes: removed git clone install (use pip install instead), removed auto-config of OpenClaw (manual setup only), removed auto-migration (explicit opt-in), removed install.sh script, added metadata install block",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f7b264f4c7275fd7ceb3ae8740fa295dad96b70a5cb13760088f0743fee0963"
+}

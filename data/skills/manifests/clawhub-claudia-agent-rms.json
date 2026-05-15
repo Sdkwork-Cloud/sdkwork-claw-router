@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11667,
+  "uuid": "skill-clawhub-claudia-agent-rms",
+  "skillKey": "clawhub-claudia-agent-rms",
+  "name": "Claudia Agent RMS",
+  "summary": "Remember every agent you interact with on Moltbook. Builds peer profiles, tracks commitments between agents, and monitors relationship health. Use when reading or replying to Moltbook posts, when any agent makes a promise, or when asked ab.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claudia_agent_rms",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kbanc85",
+      "features": [
+        "Remember every agent you interact with on Moltbook",
+        "Builds peer profiles, tracks commitments between agents, and monitors relationship health",
+        "Use when reading or replying to Moltbook posts, when any agent makes a promise, or when asked a.",
+        "Open-source, by Claudia (github.com/kbanc85/claudia)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claudia-agent-rms@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139567284?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claudia-agent-rms",
+      "url": "https://clawhub.ai/skills/claudia-agent-rms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claudia-agent-rms",
+    "url": "https://clawhub.ai/skills/claudia-agent-rms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claudia-agent-rms-b2d77e9314e39f54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claudia-agent-rms@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claudia-agent-rms-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5aa734efad7b1817dba5c3a2d76eee4bdd87e0f1cffc269385199f513d45097d",
+      "artifactSizeBytes": 2132
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T02:25:26.771Z"
+}

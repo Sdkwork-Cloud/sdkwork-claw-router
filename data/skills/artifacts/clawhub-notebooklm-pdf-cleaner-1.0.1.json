@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notebooklm-pdf-cleaner@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notebooklm_pdf_cleaner",
+  "skill": {
+    "id": 28348,
+    "skillKey": "clawhub-notebooklm-pdf-cleaner",
+    "name": "NotebookLM PDF Cleaner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notebooklm-pdf-cleaner",
+    "url": "https://clawhub.ai/skills/notebooklm-pdf-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notebooklm-pdf-cleaner-c5ffccf0a38c64d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create a presentation-ready copy of a NotebookLM-exported slide-deck PDF by masking the small visible NotebookLM footer badge at the bottom-right of each pag..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fudanjx",
+      "userId": "s1737cxrsvk1dk3hzbrgchbems83h3c2",
+      "displayName": "fudanjx",
+      "image": "https://avatars.githubusercontent.com/u/20398433?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774325444331,
+      "changelog": "Narrowed scope to NotebookLM slide-deck footer-badge masking, replaced machine-specific paths with portable skill paths, and added safer defaults: no metadata/annotation stripping unless explicitly requested, no source overwrite, and no output overwrite without --force.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efd821721c2b6c7570ce3dc11c144c640d566ae6a58e088b0ea9f87ad8a1ecd7"
+}

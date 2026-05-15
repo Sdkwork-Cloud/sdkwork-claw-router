@@ -25,8 +25,8 @@ async fn call(method: Method, uri: &str) -> (StatusCode, Value) {
 #[tokio::test]
 async fn app_contract_routes_return_standard_not_implemented_envelope() {
     let cases = [
-        (Method::GET, "/app/v3/api/router/api-keys", "fetchKeys"),
-        (Method::POST, "/app/v3/api/router/api-keys", "createKey"),
+        (Method::GET, "/app/v3/api/iam/api_keys", "fetchKeys"),
+        (Method::POST, "/app/v3/api/iam/api_keys", "createKey"),
     ];
 
     for (method, path, operation) in cases {
@@ -47,7 +47,7 @@ async fn app_redeem_code_route_requires_trusted_subject_with_json_body() {
         .oneshot(
             Request::builder()
                 .method(Method::POST)
-                .uri("/app/v3/api/coupons/redeem")
+                .uri("/app/v3/api/billing/coupons/redeem")
                 .header("content-type", "application/json")
                 .body(Body::from(r#"{"code":"WELCOME"}"#))
                 .unwrap(),
@@ -66,7 +66,7 @@ async fn app_redeem_code_route_requires_trusted_subject_with_json_body() {
 
 #[tokio::test]
 async fn app_user_profile_contract_route_returns_success_envelope() {
-    let (status, payload) = call(Method::GET, "/app/v3/api/user/profile").await;
+    let (status, payload) = call(Method::GET, "/app/v3/api/iam/users/current").await;
 
     assert_eq!(StatusCode::OK, status);
     assert_eq!("2000", payload["code"]);
@@ -77,7 +77,7 @@ async fn app_user_profile_contract_route_returns_success_envelope() {
 
 #[tokio::test]
 async fn app_store_route_is_exposed_by_default_router() {
-    let (status, payload) = call(Method::GET, "/app/v3/api/app/store").await;
+    let (status, payload) = call(Method::GET, "/app/v3/api/platform/apps/store").await;
 
     assert_eq!(StatusCode::OK, status);
     assert_eq!("2000", payload["code"]);
@@ -86,8 +86,61 @@ async fn app_store_route_is_exposed_by_default_router() {
 }
 
 #[tokio::test]
+async fn app_commerce_foundation_routes_are_exposed_by_default_router() {
+    let success_cases = [
+        "/app/v3/api/billing/wallet/overview",
+        "/app/v3/api/billing/account/points",
+        "/app/v3/api/billing/account/points/recharges/packages",
+        "/app/v3/api/billing/account/tokens",
+        "/app/v3/api/billing/vip/info",
+        "/app/v3/api/billing/vip/points/daily_rewards/status",
+    ];
+
+    for path in success_cases {
+        let (status, payload) = call(Method::GET, path).await;
+
+        assert_eq!(StatusCode::OK, status, "{path}");
+        assert_eq!("2000", payload["code"], "{path}");
+    }
+
+    let unavailable_cases = [
+        "/app/v3/api/billing/wallet/operations/request-1",
+        "/app/v3/api/billing/vip/packs/pack-1",
+        "/app/v3/api/billing/preflight/estimates",
+    ];
+
+    for path in unavailable_cases {
+        let method = if path.ends_with("/estimates") {
+            Method::POST
+        } else {
+            Method::GET
+        };
+        let (status, payload) = call(method, path).await;
+
+        assert_eq!(StatusCode::NOT_IMPLEMENTED, status, "{path}");
+        assert_eq!("5010", payload["code"], "{path}");
+    }
+}
+
+#[tokio::test]
+async fn legacy_commerce_app_routes_are_not_exposed_by_default_router() {
+    let legacy_paths = [
+        "/app/v3/api/account/summary",
+        "/app/v3/api/account/points/recharge",
+        "/app/v3/api/vip/pack_groups/packs",
+        "/app/v3/api/payments/checkout/order-1",
+        "/app/v3/api/coupons/redeem",
+    ];
+
+    for path in legacy_paths {
+        let (status, _payload) = call(Method::GET, path).await;
+        assert_eq!(StatusCode::NOT_FOUND, status, "{path}");
+    }
+}
+
+#[tokio::test]
 async fn app_skills_route_is_exposed_by_default_router() {
-    let (status, payload) = call(Method::GET, "/app/v3/api/skills").await;
+    let (status, payload) = call(Method::GET, "/app/v3/api/ecosystem/skills").await;
 
     assert_eq!(StatusCode::OK, status);
     assert_eq!("2000", payload["code"]);

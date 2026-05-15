@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chart-image@2.6.35",
+  "version": "2.6.35",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chart_image",
+  "skill": {
+    "id": 8531,
+    "skillKey": "clawhub-chart-image",
+    "name": "Chart Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chart-image",
+    "url": "https://clawhub.ai/skills/chart-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chart-image-782bd16ee32c01ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate publication-quality chart images from data. Supports line, bar, area, point, histogram, candlestick, pie/donut, heatmap, multi-series, and stacked c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dannyshmueli",
+      "userId": "s1785jgb7evz92f88z9psd4m7583gmsv",
+      "displayName": "Danny Shmueli",
+      "image": "https://avatars.githubusercontent.com/u/4062328?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 10260,
+      "installsAllTime": 68,
+      "installsCurrent": 65,
+      "stars": 15,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "2.6.35",
+      "createdAt": 1775716192948,
+      "changelog": "Add x-domain support for quantitative and temporal charts, plus updated docs/examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca40764a0078c60712a2ff9ce18f4463678871aa4b1bc90ded4e499be0c78e9f"
+}

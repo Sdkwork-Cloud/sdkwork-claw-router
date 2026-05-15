@@ -25,7 +25,7 @@ async fn admin_announcement_route_creates_lists_updates_and_soft_deletes_items()
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/router/announcements")
+                .uri("/backend/v3/api/content/announcements")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -57,7 +57,7 @@ async fn admin_announcement_route_creates_lists_updates_and_soft_deletes_items()
         .oneshot(
             Request::builder()
                 .method("PATCH")
-                .uri("/backend/v3/api/router/announcements/1")
+                .uri("/backend/v3/api/content/announcements/1")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -81,7 +81,7 @@ async fn admin_announcement_route_creates_lists_updates_and_soft_deletes_items()
         .clone()
         .oneshot(
             Request::builder()
-                .uri("/backend/v3/api/router/announcements")
+                .uri("/backend/v3/api/content/announcements")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -103,7 +103,7 @@ async fn admin_announcement_route_creates_lists_updates_and_soft_deletes_items()
         .oneshot(
             Request::builder()
                 .method("DELETE")
-                .uri("/backend/v3/api/router/announcements/1")
+                .uri("/backend/v3/api/content/announcements/1")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -120,7 +120,7 @@ async fn admin_announcement_route_creates_lists_updates_and_soft_deletes_items()
     let final_list_response = router
         .oneshot(
             Request::builder()
-                .uri("/backend/v3/api/router/announcements")
+                .uri("/backend/v3/api/content/announcements")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -146,7 +146,7 @@ async fn admin_announcement_route_rejects_missing_trusted_subject_for_store_back
     let response = router
         .oneshot(
             Request::builder()
-                .uri("/backend/v3/api/router/announcements")
+                .uri("/backend/v3/api/content/announcements")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -174,7 +174,7 @@ async fn admin_announcement_route_rejects_invalid_payload_without_calling_store(
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/router/announcements")
+                .uri("/backend/v3/api/content/announcements")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")

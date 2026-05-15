@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38286,
+  "uuid": "skill-clawhub-oc-performance",
+  "skillKey": "clawhub-oc-performance",
+  "name": "OpenClaw Performance",
+  "summary": "Performance analysis and optimization. Profiles code execution, identifies bottlenecks, and suggests optimizations.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_performance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "michealxie001",
+      "features": [
+        "Performance analysis and optimization",
+        "Profiles code execution, identifies bottlenecks, and suggests optimizations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oc-performance@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231448030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oc-performance",
+      "url": "https://clawhub.ai/skills/oc-performance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-performance",
+    "url": "https://clawhub.ai/skills/oc-performance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-performance-aff713a090cda94d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oc-performance@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oc-performance-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:322144c3dd13b8084f1c597748f36882f72ea487ab59f38bb28673b88005d064",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T08:30:42.698Z"
+}

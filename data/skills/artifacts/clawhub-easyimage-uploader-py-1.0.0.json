@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/easyimage-uploader-py@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easyimage_uploader_py",
+  "skill": {
+    "id": 46425,
+    "skillKey": "clawhub-easyimage-uploader-py",
+    "name": "Easyimage uploader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easyimage-uploader-py",
+    "url": "https://clawhub.ai/skills/easyimage-uploader-py",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easyimage-uploader-py-e2865a797cf73348.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload local image files to an EasyImages 2.0 service and return the hosted image URL. Use when the user asks to upload an image, host a picture, put a local..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fm7077",
+      "userId": "s172z1mc3efd5kavr7jb3856tn84y6j2",
+      "displayName": "FM7077",
+      "image": "https://avatars.githubusercontent.com/u/41443707?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776318659684,
+      "changelog": "Initial release of easyimage-uploader:\n\n- Uploads local image files to an EasyImages 2.0 service and returns the hosted image URL.\n- Supports configuration via CLI flags, skill-local `config.json`, or environment variables.\n- Includes failure handling with clear user-facing explanations for common errors and status codes.\n- Guides usage with security notes, safe path handling, and best practices for `temp_dir`.\n- Provides a detailed workflow for confirming file selection, parsing results, and managing config secrets.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7830ce53fe545f5a38da82f88266795204906b6688425bfca566b8e5e6ee8219"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8306,
+  "uuid": "skill-clawhub-ai-ppt-generator",
+  "skillKey": "clawhub-ai-ppt-generator",
+  "name": "Baidu Wenku AIPPT",
+  "summary": "Generate PPT with Baidu Wenku AI. Smart template selection based on content.",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_ppt_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ide-rea",
+      "features": [
+        "Generate PPT with Baidu Wenku AI",
+        "Smart template selection based on content."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-ppt-generator@1.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30512600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-ppt-generator",
+      "url": "https://clawhub.ai/skills/ai-ppt-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-ppt-generator",
+    "url": "https://clawhub.ai/skills/ai-ppt-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-ppt-generator-c4cb8ca3ff3c4fa7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-ppt-generator@1.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-ppt-generator-1.1.5.json",
+      "version": "1.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f6a42e202b677b0506e48ef20045435edfdfdfa4a0d45cff059840b9cbad9c0",
+      "artifactSizeBytes": 2065
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T08:49:29.430Z"
+}

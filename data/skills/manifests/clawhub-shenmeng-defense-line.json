@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64484,
+  "uuid": "skill-clawhub-shenmeng-defense-line",
+  "skillKey": "clawhub-shenmeng-defense-line",
+  "name": "Security Defense Line 安全防线",
+  "summary": "安全防线 - 全方位安全防护与威胁防御系统。 当用户需要以下功能时触发此skill： (1) 智能合约安全审计与漏洞检测 (2) 钱包安全检测与防护 (3) 交易安全验证与风险预警 (4) 钓鱼网站/诈骗检测 (5) 私钥/助记词安全管理 (6) 多签钱包配置与管理 (7) 安全事件响应与应急处理 (8) 安全策...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shenmeng_defense_line",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenmeng",
+      "features": [
+        "全方位安全防护与威胁防御系统。 当用户需要以下功能时触发此skill： (1) 智能合约安全审计与漏洞检测 (2) 钱包安全检测与防护 (3) 交易安全验证与风险预警 (4) 钓鱼网站/诈骗."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shenmeng-defense-line@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6897076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shenmeng-defense-line",
+      "url": "https://clawhub.ai/skills/shenmeng-defense-line"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shenmeng-defense-line",
+    "url": "https://clawhub.ai/skills/shenmeng-defense-line",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shenmeng-defense-line-1d3c64444e1b02f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shenmeng-defense-line@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shenmeng-defense-line-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f87a8122bf96a799912df460f5bfc3bfaf461ee31296d0126651de0d7be6137",
+      "artifactSizeBytes": 2757
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T21:00:25.802Z"
+}

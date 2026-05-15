@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subtitle-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_assistant",
+  "skill": {
+    "id": 44180,
+    "skillKey": "clawhub-subtitle-assistant",
+    "name": "Subtitle Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-assistant",
+    "url": "https://clawhub.ai/skills/subtitle-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-assistant-0effad5940604698.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get captioned videos ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"add sub..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776934736752,
+      "changelog": "- Initial release of Subtitle Assistant.\n- Generate and embed accurate subtitles in multiple languages for uploaded video files (up to 500MB).\n- Automated onboarding: connects via API, using your NEMO_TOKEN or an anonymous free trial token.\n- Simple workflow: upload your video, specify subtitle languages, and export to 1080p MP4 in under a minute for short clips.\n- Supports a wide range of formats and cloud-based rendering with job/session tracking.\n- Error handling for expired tokens, file issues, and plan limitations is built-in for a smooth experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2fe94cca6debe9820d924456f760ece21749b7773f355c27a7d92be4ba870185"
+}

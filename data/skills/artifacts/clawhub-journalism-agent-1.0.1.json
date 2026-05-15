@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/journalism-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.journalism_agent",
+  "skill": {
+    "id": 38907,
+    "skillKey": "clawhub-journalism-agent",
+    "name": "Journalism Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "journalism-agent",
+    "url": "https://clawhub.ai/skills/journalism-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/journalism-agent-c6c07e2c6933e2b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-stage journalism agent for OpenClaw. Researches, drafts, and edits publication-quality articles. Also assembles mixed newsletters combining original ar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "defineagain",
+      "userId": "s175gqb84k5w9dxr9f5e2t7pws84wbf7",
+      "displayName": "defineagain",
+      "image": "https://avatars.githubusercontent.com/u/145506209?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776256204722,
+      "changelog": "- Integrates \"NK Images Search\" as the new primary image pipeline for articles and listings, with detailed API usage instructions and AI fallback process.\n- Adds explicit guidance on image credit format and alt text style.\n- Updates key files list to include external dependencies (`nk-images-search`, `design-agent`) and replaces `assets/newsletter-template.md` with `assets/newsletter-template.html`.\n- Clarifies that fabricated image URLs are not permitted and instructs never to invent them.\n- No changes to core journalism workflow or output formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66f15ff4697150f0a84069a1ce06860a520438feb68ab227632076af0ce2f07b"
+}

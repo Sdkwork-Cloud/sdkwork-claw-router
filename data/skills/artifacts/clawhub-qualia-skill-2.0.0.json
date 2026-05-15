@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qualia-skill@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qualia_skill",
+  "skill": {
+    "id": 56311,
+    "skillKey": "clawhub-qualia-skill",
+    "name": "Train Robotic AI Models using Qualia"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qualia-skill",
+    "url": "https://clawhub.ai/skills/qualia-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qualia-skill-df02dee697c8c998.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fine-tune robot foundation models on cloud GPUs — π0.5, π0, GR00T, SmolVLA, ACT, and more."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fabbe1999",
+      "userId": "s172332kgny713j8htfhq78xa583mehy",
+      "displayName": "Qualia",
+      "image": "https://avatars.githubusercontent.com/u/79282978?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 526,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776350048080,
+      "changelog": "Changes in v2:\n\nNew: scripts/qualia.py — Complete Python rewrite of the CLI. Pure stdlib (urllib + json), zero external dependencies. No more curl/jq requirement. Same commands, same interface. This is what was triggering VirusTotal (bash + curl + API keys = \"suspicious data exfiltration\" heuristic).\n\nUpdated: SKILL.md — Better agent instructions: onboarding flow with sign-up link, \"when someone asks to train\" decision tree so agents know what info to gather, troubleshooting table, smart camera mapping hints, cost estimation guidance, live docs links. Added ClawhHub metadata: tags (robotics, foundation-models, vla, etc.), categories, and homepage (qualiastudios.dev).\n\nUpdated: README.md — References changed from bash to Python, simplified requirements to just \"Python 3.6+\".\n\nKept: scripts/qualia.sh — Still there for backwards compatibility. Not referenced in SKILL.md anymore but won't break existing installs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd87e56104f74ec41482877faea5e2e4c304903e84c5366a064622811f14f132"
+}

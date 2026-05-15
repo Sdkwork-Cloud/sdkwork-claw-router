@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/legalbot@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legalbot",
+  "skill": {
+    "id": 66794,
+    "skillKey": "clawhub-legalbot",
+    "name": "LegalBot法律助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legalbot",
+    "url": "https://clawhub.ai/skills/legalbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legalbot-7cca40fc7a329931.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LegalBot - AI法律小助手，日常法律咨询、合同风险扫描、诉讼成本评估、法律文书生成、时效提醒。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "webpenbot",
+      "userId": "s179f44t9qt30ncjwempvxq2m983jay1",
+      "displayName": "webpenbot",
+      "image": "https://avatars.githubusercontent.com/u/270956334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776691763034,
+      "changelog": "- 新增合同风险扫描、合同风险评分功能  \n- 支持诉讼成本自动计算（受理费、律师费参考）  \n- 增加时效提醒：判断法律时效、自动计算剩余天数  \n- 提供10种常用法律文书自动生成模板  \n- 更新数据文件，支持法条引用、诉讼费率、合同风险识别等  \n- 增加功能说明及免责声明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:971822d48a3e5eadf387e4b2e090362719b4d9b65152ceb5585dccc5b591f114"
+}

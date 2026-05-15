@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26549,
+  "uuid": "skill-clawhub-filescom",
+  "skillKey": "clawhub-filescom",
+  "name": "Filescom",
+  "summary": "Files.com integration. Manage Files, Folders, Users, Groups, Permissions, Shares and more. Use when the user wants to interact with Files.com data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.filescom",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Files.com integration",
+        "Manage Files, Folders, Users, Groups, Permissions, Shares and more",
+        "Use when the user wants to interact with Files.com data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/filescom@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "filescom",
+      "url": "https://clawhub.ai/skills/filescom"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "filescom",
+    "url": "https://clawhub.ai/skills/filescom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/filescom-77de37be46fe13f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/filescom@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-filescom-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8bd91c759a75907e0da366591246cdbbc55c72c504d835648cf7ce7d8033937",
+      "artifactSizeBytes": 1836
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:03:22.768Z"
+}

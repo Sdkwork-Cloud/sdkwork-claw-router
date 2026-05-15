@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39854,
+  "uuid": "skill-clawhub-composer-json-validator",
+  "skillKey": "clawhub-composer-json-validator",
+  "name": "Composer Json Validator",
+  "summary": "Validate and lint PHP Composer composer.json files for structure, dependencies, autoload, and best practices. Use when asked to lint, validate, check, or aud...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.composer_json_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Validate and lint PHP Composer composer.json files for structure, dependencies, autoload, and b.",
+        "Use when asked to lint, validate, check, or aud..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/composer-json-validator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "composer-json-validator",
+      "url": "https://clawhub.ai/skills/composer-json-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "composer-json-validator",
+    "url": "https://clawhub.ai/skills/composer-json-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/composer-json-validator-5da1186ed9838091.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/composer-json-validator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-composer-json-validator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6254c9e3ac744adf8a88db09d1cd30354a495f963653e989a8e2a251d84093ae",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:00:42.520Z"
+}

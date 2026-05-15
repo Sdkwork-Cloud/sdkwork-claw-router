@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uk-prayer-times@1.4.4",
+  "version": "1.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uk_prayer_times",
+  "skill": {
+    "id": 13511,
+    "skillKey": "clawhub-uk-prayer-times",
+    "name": "UK Prayer Times"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uk-prayer-times",
+    "url": "https://clawhub.ai/skills/uk-prayer-times",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uk-prayer-times-d6a64f1da8703620.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get instant, accurate Islamic prayer times for any UK location. Auto-detects your city or accepts any UK location name (cities, towns, boroughs). Handles typos with smart fuzzy search. Shows Fajr, Sunrise, Dhuhr, Asr, Maghrib, and Isha tim."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clinicode",
+      "userId": "s17fz5aehs4mzc34djrd79ac5d849mc8",
+      "displayName": "clinicode",
+      "image": "https://avatars.githubusercontent.com/u/212307185?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1436,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.4.4",
+      "createdAt": 1770590601270,
+      "changelog": "- Refactored core script: merged functionality into scripts/uk_prayer_times.py for improved structure.\n- Removed redundant root files: uk_prayer_times.py and prompt.txt are no longer included.\n- No changes to user-facing features or documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:18ac4eaa4c47412757a24731be6dd162ed0cb08df4027a3a946c409a9f77fdca"
+}

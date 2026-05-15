@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12965,
+  "uuid": "skill-clawhub-camino-real-estate",
+  "skillKey": "clawhub-camino-real-estate",
+  "name": "Real Estate Intelligence",
+  "summary": "Evaluate any address for home buyers and renters. Get nearby schools, transit, grocery stores, parks, restaurants, and walkability using Camino AI's location...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camino_real_estate",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "James-southendsolutions",
+      "features": [
+        "Evaluate any address for home buyers and renters",
+        "Get nearby schools, transit, grocery stores, parks, restaurants, and walkability using Camino A."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/camino-real-estate@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93152760?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "camino-real-estate",
+      "url": "https://clawhub.ai/skills/camino-real-estate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camino-real-estate",
+    "url": "https://clawhub.ai/skills/camino-real-estate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camino-real-estate-4f19e4bbfeafee40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/camino-real-estate@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-camino-real-estate-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0414446524627d762b0d0e8388204e7aab08f65277c16509c6f84d84387de95",
+      "artifactSizeBytes": 2089
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T04:10:07.264Z"
+}

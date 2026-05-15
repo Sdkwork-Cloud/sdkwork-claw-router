@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xrpl-tx-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xrpl_tx_builder",
+  "skill": {
+    "id": 17608,
+    "skillKey": "clawhub-xrpl-tx-builder",
+    "name": "XRPL Transaction Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xrpl-tx-builder",
+    "url": "https://clawhub.ai/skills/xrpl-tx-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xrpl-tx-builder-b6dfe066fea1e2f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build, sign, and submit XRP Ledger transactions including payments, NFT minting/burning, with Xaman wallet integration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harleyscodes",
+      "userId": "publishers:harleyscodes",
+      "displayName": "HarleysCodes",
+      "image": "https://avatars.githubusercontent.com/u/116604105?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 762,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771102235407,
+      "changelog": "- Initial release of xrpl-tx-builder.\n- Build and sign XRP Ledger transactions, including payments and NFT mint/burn transactions.\n- Supports transaction signing via Xaman wallet and direct submission to XRPL.\n- Provides code examples for common XRPL transaction types and usage tips.\n- Includes guidance on drops, destination tags, flags, and public RPC endpoints.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cf017299e1e8fdeb61af44d7f2d9ec49b0916520be4e5780f4745becc8f65586"
+}

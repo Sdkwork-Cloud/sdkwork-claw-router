@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31069,
+  "uuid": "skill-clawhub-serveravatar",
+  "skillKey": "clawhub-serveravatar",
+  "name": "Serveravatar",
+  "summary": "ServerAvatar integration. Manage Servers, Teams. Use when the user wants to interact with ServerAvatar data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serveravatar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "ServerAvatar integration",
+        "Manage Servers, Teams",
+        "Use when the user wants to interact with ServerAvatar data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/serveravatar@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "serveravatar",
+      "url": "https://clawhub.ai/skills/serveravatar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serveravatar",
+    "url": "https://clawhub.ai/skills/serveravatar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serveravatar-5479cf67f26d8c53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/serveravatar@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-serveravatar-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b00b64307b7acb0b8ee694568245b1e812e91c7010870cb6616b826890dfa058",
+      "artifactSizeBytes": 1843
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:40:17.183Z"
+}

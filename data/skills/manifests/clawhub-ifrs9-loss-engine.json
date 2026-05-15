@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61139,
+  "uuid": "skill-clawhub-ifrs9-loss-engine",
+  "skillKey": "clawhub-ifrs9-loss-engine",
+  "name": "Ifrs9 Loss Engine",
+  "summary": "计算IFRS 9预期信用损失（ECL），支持Vasicek单因子前瞻性调整、Kaplan-Meier生存分析计算PD及贷款摊销计划生成，满足Basel III减值合规要求。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ifrs9_loss_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "计算IFRS 9预期信用损失（ECL），支持Vasicek单因子前瞻性调整、Kaplan-Meier生存分析计算PD及贷款摊销计划生成，满足Basel III减值合规要求。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ifrs9-loss-engine@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ifrs9-loss-engine",
+      "url": "https://clawhub.ai/skills/ifrs9-loss-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ifrs9-loss-engine",
+    "url": "https://clawhub.ai/skills/ifrs9-loss-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ifrs9-loss-engine-7b4bfdb0a3983218.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ifrs9-loss-engine@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ifrs9-loss-engine-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7398a5a608f4a8df51ab450c25956ce149f0af10d87cd83dec4852da8c6d5bc",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:27:30.581Z"
+}

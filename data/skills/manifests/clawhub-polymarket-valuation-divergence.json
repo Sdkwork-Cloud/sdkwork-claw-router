@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52031,
+  "uuid": "skill-clawhub-polymarket-valuation-divergence",
+  "skillKey": "clawhub-polymarket-valuation-divergence",
+  "name": "Polymarket Valuation Divergence",
+  "summary": "Trade Polymarket markets based on valuation divergence. When your probability model differs from Polymarket's price by >threshold, enter using Kelly sizing....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_valuation_divergence",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AD88",
+      "features": [
+        "Trade Polymarket markets based on valuation divergence",
+        "When your probability model differs from Polymarket's price by >threshold, enter using Kelly si."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-valuation-divergence@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6263940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-valuation-divergence",
+      "url": "https://clawhub.ai/skills/polymarket-valuation-divergence"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-valuation-divergence",
+    "url": "https://clawhub.ai/skills/polymarket-valuation-divergence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-valuation-divergence-2c4f9e93865d3f66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-valuation-divergence@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-valuation-divergence-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4129db15b777366b28a0fbb2022084a959ba61a959b894986350438295c883d",
+      "artifactSizeBytes": 2616
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T08:48:35.672Z"
+}

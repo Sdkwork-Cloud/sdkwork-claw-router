@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/etoro-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.etoro_api",
+  "skill": {
+    "id": 19704,
+    "skillKey": "clawhub-etoro-api",
+    "name": "eToro API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "etoro-api",
+    "url": "https://clawhub.ai/skills/etoro-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/etoro-api-5045f9324ffcbc53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables agents to interact with the eToro API to access market data, portfolio and social features, and execute trades programmatically."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marian2js",
+      "userId": "publishers:marian2js",
+      "displayName": "Mariano Pardo",
+      "image": "https://avatars.githubusercontent.com/u/4909681?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 586,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771960778163,
+      "changelog": "Initial release of the etoro-api skill, providing programmatic access to eToro's trading and market data API.\n\n- Enables agents to access eToro market data, portfolio information, and social features.\n- Supports executing trades, including buy/sell orders, using demo or real accounts.\n- Includes detailed authentication and key management instructions.\n- Covers endpoints for searching instruments, managing watchlists, and retrieving trading history.\n- Provides request conventions, parameter casing, and guidelines for using both demo and real environments.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:02f91abceecab7428653c760a9e5277b8a2abedcbbc554593dfce95b6f6c909f"
+}

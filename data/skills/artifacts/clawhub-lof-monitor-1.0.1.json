@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lof-monitor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lof_monitor",
+  "skill": {
+    "id": 34033,
+    "skillKey": "clawhub-lof-monitor",
+    "name": "LOFMonitor Finance Stock Investment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lof-monitor",
+    "url": "https://clawhub.ai/skills/lof-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lof-monitor-454a0ef4b83fd683.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors A-share LOF fund premium/discount exceeding 10% to identify and output potential arbitrage opportunities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kafroc",
+      "userId": "publishers:kafroc",
+      "displayName": "kafroc",
+      "image": "https://avatars.githubusercontent.com/u/60767326?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 736,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773328430122,
+      "changelog": "- 更新工具介绍，明确工具为股票金融投资（A股）LOF基金的套利监控工具\n- 删除py脚本的冗余内容",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:665ce4f0ba0f91e875387f04e88a78c59baad8559ba25d68689830d30a233252"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wcwudi-memory-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wcwudi_memory_manager",
+  "skill": {
+    "id": 69727,
+    "skillKey": "clawhub-wcwudi-memory-manager",
+    "name": "Memory Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wcwudi-memory-manager",
+    "url": "https://clawhub.ai/skills/wcwudi-memory-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wcwudi-memory-manager-08e968f4517a6598.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "简化主代理与子代理间记忆交换、归档和管理，支持操作记录和极简脚本工具，提升多代理协作效率。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wcwudi",
+      "userId": "s17dsgvbrq2x4pk4jf2v5vkb85852zxx",
+      "displayName": "wcwudi",
+      "image": "https://avatars.githubusercontent.com/u/30545608?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776506791389,
+      "changelog": "Initial release: Memory management system for OpenClaw agents",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5f38bcb51f7f8d8dfd052264f81ce5abdb24b034db77ebea5365cfc085b283a"
+}

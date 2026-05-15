@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ragtop-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ragtop_agent",
+  "skill": {
+    "id": 63576,
+    "skillKey": "clawhub-ragtop-agent",
+    "name": "Ragtop Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ragtop-agent",
+    "url": "https://clawhub.ai/skills/ragtop-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ragtop-agent-b351028faef53ca4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "高级 RAG 助手，具备 Agentic RAG 思考能力。能够自动化管理 RAGTOP 知识库，并在执行深度调研任务时，调用 RAGTOP 后端接口。使用场景包括：(1) 列出知识库和文档，(2) 执行语义检索和深度分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qbs784",
+      "userId": "s173bfc7mjzd7qbb1bzezsyvys85ar2q",
+      "displayName": "Pt Hanabi",
+      "image": "https://avatars.githubusercontent.com/u/184506416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 573,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772078993403,
+      "changelog": "Initial release of agentic RAG assistant with KB management and deep retrieval capabilities",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:79deb7276b6d3477ec12c8f15a4a6f4ce09f1efd13054d19953d77d6c3c9e6ae"
+}

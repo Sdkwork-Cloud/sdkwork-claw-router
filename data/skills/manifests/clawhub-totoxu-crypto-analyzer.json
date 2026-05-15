@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25074,
+  "uuid": "skill-clawhub-totoxu-crypto-analyzer",
+  "skillKey": "clawhub-totoxu-crypto-analyzer",
+  "name": "Crypto Market Analyzer",
+  "summary": "Fetch real-time crypto prices and calculate technical indicators (SMA, EMA, MACD, RSI, Bollinger Bands, ATR) for BTC, ETH, SOL, BNB, XRP, DOGE. Powered by mu...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.totoxu_crypto_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "totoxu",
+      "features": [
+        "Fetch real-time crypto prices and calculate technical indicators (SMA, EMA, MACD, RSI, Bollinge.",
+        "Powered by mu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/totoxu-crypto-analyzer@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77253165?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "totoxu-crypto-analyzer",
+      "url": "https://clawhub.ai/skills/totoxu-crypto-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "totoxu-crypto-analyzer",
+    "url": "https://clawhub.ai/skills/totoxu-crypto-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/totoxu-crypto-analyzer-e6ee38d9b886b2be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/totoxu-crypto-analyzer@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-totoxu-crypto-analyzer-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edd577b87f9114be8592fa75ddc473434dcfca027e36fc788d95ef02756d1697",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T02:42:30.218Z"
+}

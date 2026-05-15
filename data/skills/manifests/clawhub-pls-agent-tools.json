@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10500,
+  "uuid": "skill-clawhub-pls-agent-tools",
+  "skillKey": "clawhub-pls-agent-tools",
+  "name": "PLS Agent Tools",
+  "summary": "Provides utilities for safe file handling, JSON/YAML editing, regex text processing, system commands, encoding, date/time, and validation tasks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pls_agent_tools",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matt Valenta",
+      "features": [
+        "Provides utilities for safe file handling, JSON/YAML editing, regex text processing, system com."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pls-agent-tools@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/153394211?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pls-agent-tools",
+      "url": "https://clawhub.ai/skills/pls-agent-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pls-agent-tools",
+    "url": "https://clawhub.ai/skills/pls-agent-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pls-agent-tools-79fab9a43dcc404e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pls-agent-tools@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pls-agent-tools-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ac9f8d3f1f883612ba00e8602d30b761375cd172673514bfd9ff0952668518b",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T23:13:15.030Z"
+}

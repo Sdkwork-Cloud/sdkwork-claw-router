@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hackernews@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hackernews",
+  "skill": {
+    "id": 9085,
+    "skillKey": "clawhub-hackernews",
+    "name": "Hacker News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hackernews",
+    "url": "https://clawhub.ai/skills/hackernews",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hackernews-2541e14603ec420d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse and search Hacker News. Fetch top, new, best, Ask HN, Show HN stories and job postings. View item details, comments, and user profiles. Search stories and comments via Algolia. Find \"Who is hiring?\" threads. Use for any HN-related q."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gchapim",
+      "userId": "publishers:gchapim",
+      "displayName": "gchapim",
+      "image": "https://avatars.githubusercontent.com/u/1141813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3872,
+      "installsAllTime": 24,
+      "installsCurrent": 22,
+      "stars": 10,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770040326981,
+      "changelog": "Initial release of the Hacker News skill:\n\n- Browse top, new, best, Ask HN, Show HN stories, and job postings.\n- View item details, comments, and user profiles.\n- Search stories and comments using Algolia.\n- Find and view \"Who is hiring?\" threads.\n- Supports CLI usage for all features with customizable limits and filters.\n- Outputs clean, readable results with auto-converted text and relative timestamps.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b6b16f223df6a43e4429b0e26b26b6072c9880e8d2a200e23d4d685a48e96e34"
+}

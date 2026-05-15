@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62811,
+  "uuid": "skill-clawhub-pans-gpu-calculator",
+  "skillKey": "clawhub-pans-gpu-calculator",
+  "name": "Pans Gpu Calculator",
+  "summary": "AI算力销售GPU配置计算器。输入模型参数量和需求，自动推荐最优GPU配置并估算成本。 支持训练和推理场景，覆盖H100/A100/L40S/A10G等主流GPU。 触发词：GPU计算, 算力配置, 模型部署成本, GPU选型, 显存估算, 训练成本, 推理成本, GPU推荐",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pans_gpu_calculator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dashiming",
+      "features": [
+        "AI算力销售GPU配置计算器。输入模型参数量和需求，自动推荐最优GPU配置并估算成本。 支持训练和推理场景，覆盖H100/A100/L40S/A10G等主流GPU。 触发词：GPU计算, 算."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pans-gpu-calculator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28342384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pans-gpu-calculator",
+      "url": "https://clawhub.ai/skills/pans-gpu-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pans-gpu-calculator",
+    "url": "https://clawhub.ai/skills/pans-gpu-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pans-gpu-calculator-a561fc04da329c5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pans-gpu-calculator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pans-gpu-calculator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0d29bb9fe0e1f2d00ce3de03b7bd42c1f7ad63fd48f4b80fc4741eaf250e7d8",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T02:37:49.779Z"
+}

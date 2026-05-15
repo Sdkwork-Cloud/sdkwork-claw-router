@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55212,
+  "uuid": "skill-clawhub-java-maven-code-review",
+  "skillKey": "clawhub-java-maven-code-review",
+  "name": "Java Maven Code Review",
+  "summary": "Review a Java Maven project delivered as a ZIP archive or a GitLab repository URL for code规范, naming, module boundaries, maintainability problems, duplicated...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.java_maven_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "刘岗强",
+      "features": [
+        "Review a Java Maven project delivered as a ZIP archive or a GitLab repository URL for code规范, n."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/java-maven-code-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7357127?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "java-maven-code-review",
+      "url": "https://clawhub.ai/skills/java-maven-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "java-maven-code-review",
+    "url": "https://clawhub.ai/skills/java-maven-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/java-maven-code-review-8cf6ea1cb86bd2bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/java-maven-code-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-java-maven-code-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:198d326b2e654f6087b700d179d4b68f9b1ffd60e851ba07897f85d4ad7af17d",
+      "artifactSizeBytes": 2531
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T08:29:50.967Z"
+}

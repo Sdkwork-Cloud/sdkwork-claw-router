@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-read@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_read",
+  "skill": {
+    "id": 27477,
+    "skillKey": "clawhub-browser-read",
+    "name": "Browser Read"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-read",
+    "url": "https://clawhub.ai/skills/browser-read",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-read-fe8b3c9fd28c80d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract readable content from browser pages as markdown. Use when web_fetch fails (bot protection, auth-required pages, Twitter/X, LinkedIn) and you already..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bill492",
+      "userId": "publishers:bill492",
+      "displayName": "bill492",
+      "image": "https://avatars.githubusercontent.com/u/257063863?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773795404525,
+      "changelog": "- Initial release of browser-read skill for extracting readable content from open browser pages as markdown.\n- Designed to handle cases where web_fetch fails due to bot protection, authentication requirements, or dynamic content (e.g., Twitter/X, LinkedIn).\n- Provides markdown output with metadata: title, excerpt, byline, site name, and content length.\n- Falls back to extracting plain text from document body if primary extraction fails.\n- Not intended for use when web_fetch already works or on static pages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43a68eeae2f1ea59c9abe10bf62b00a3f67412943ab2a10b4d53dee99b51991a"
+}

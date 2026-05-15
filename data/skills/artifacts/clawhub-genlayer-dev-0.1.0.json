@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/genlayer-dev@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.genlayer_dev",
+  "skill": {
+    "id": 12637,
+    "skillKey": "clawhub-genlayer-dev",
+    "name": "Genlayer Dev Claw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "genlayer-dev",
+    "url": "https://clawhub.ai/skills/genlayer-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/genlayer-dev-c20bb18ff4664b75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write, deploy, and interact with GenLayer Python smart contracts featuring LLM calls, web access, and blockchain-consensus-safe non-determinism."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "acastellana",
+      "userId": "publishers:acastellana",
+      "displayName": "acastellana",
+      "image": "https://avatars.githubusercontent.com/u/4104509?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1605,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770056451783,
+      "changelog": "Initial release: Comprehensive GenLayer Intelligent Contracts skill.\n\n- Provides detailed quickstart guides and contract examples (minimal, with LLM, and with web access).\n- Explains core contract structure, method decorators, and supported storage types in GenLayer.\n- Documents non-deterministic operations and the equivalence principle (strict_eq, prompt_comparative, etc.).\n- Covers contract interaction patterns (calls, emits, deployments, EVM interop).\n- Lists CLI usage for setup, deployment, and contract interaction.\n- Skill triggers and reference guidance included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e93c1261979bfd3d697aef12fee1293bcfba92c4eadbf53f3ab364fc6db5ddfa"
+}

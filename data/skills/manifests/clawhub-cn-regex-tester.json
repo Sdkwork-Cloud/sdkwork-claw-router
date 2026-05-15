@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69460,
+  "uuid": "skill-clawhub-cn-regex-tester",
+  "skillKey": "clawhub-cn-regex-tester",
+  "name": "正则表达式测试器",
+  "summary": "正则表达式测试工具。输入正则和文本，返回匹配结果和数量。纯Python标准库re模块，无需API Key。",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_regex_tester",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "正则表达式测试工具。输入正则和文本，返回匹配结果和数量。纯Python标准库re模块，无需API Key。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-regex-tester@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-regex-tester",
+      "url": "https://clawhub.ai/skills/cn-regex-tester"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-regex-tester",
+    "url": "https://clawhub.ai/skills/cn-regex-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-regex-tester-486e959302d5e040.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-regex-tester@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-regex-tester-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a9aab8ef7b6d818e4e1234cffa290e6484d809e4645462b2a565d581d01a7ac",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T04:43:25.039Z"
+}

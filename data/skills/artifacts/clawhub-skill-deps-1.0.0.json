@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-deps@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_deps",
+  "skill": {
+    "id": 11779,
+    "skillKey": "clawhub-skill-deps",
+    "name": "Skill Dependencies"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-deps",
+    "url": "https://clawhub.ai/skills/skill-deps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-deps-e14a246e5e6795e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track and manage dependencies between OpenClaw skills. Scan skills for dependencies, visualize skill trees, detect circular dependencies, and manage skill versioning. Use when analyzing skill relationships, checking which skills depend on."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "myrodar",
+      "userId": "publishers:myrodar",
+      "displayName": "myrodar",
+      "image": "https://avatars.githubusercontent.com/u/108596859?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1924,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770410607961,
+      "changelog": "Initial release: dependency tracking for OpenClaw skills",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4c4094d3a71f1c855981cdc5e6d508995491028b973311d61e828d182fd5111f"
+}

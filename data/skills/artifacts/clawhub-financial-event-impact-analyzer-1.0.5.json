@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/financial-event-impact-analyzer@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_event_impact_analyzer",
+  "skill": {
+    "id": 25839,
+    "skillKey": "clawhub-financial-event-impact-analyzer",
+    "name": "Financial Event Historical Impact Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-event-impact-analyzer",
+    "url": "https://clawhub.ai/skills/financial-event-impact-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-event-impact-analyzer-767407316620f057.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze historical impact of financial events on related assets. Kensho-style event-driven analysis. Use when: asking about asset reactions to events (oil su..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laigen",
+      "userId": "s174c3qf7rzby58ss8ght6wmyd83hx75",
+      "displayName": "赖根",
+      "image": "https://avatars.githubusercontent.com/u/42961557?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774756334367,
+      "changelog": "Version 1.0.5 of Financial Event Impact Analyzer introduces major improvements to multi-economy causal analysis and visualization standards:\n\n- Expands required causal mapping to cover stocks, macro indicators, rates, monetary aggregates, and FX for China, Japan, Korea, Europe, and emerging Asia.\n- Enforces that every relevant indicator produces its own time series comparison chart; no grouping or omission allowed.\n- Requires red dashed rectangles in all time series charts to highlight event intervals, always spanning the entire Y-axis.\n- Enforces Chinese font availability and correct rendering in all outputs.\n- Adds detailed table-driven specifications to ensure cross-market completeness and chart labeling consistency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c25512ef773ba0287bc506dc181e3c6193d6b528421463887f547f9201e90bf3"
+}

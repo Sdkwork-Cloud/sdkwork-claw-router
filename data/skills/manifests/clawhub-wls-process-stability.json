@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57897,
+  "uuid": "skill-clawhub-wls-process-stability",
+  "skillKey": "clawhub-wls-process-stability",
+  "name": "WLS运行时工程师 WLS进程稳定",
+  "summary": "WLS runtime engineer skill for worker lifecycle, reload versus restart decisions, process cleanup, and runtime stability.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wls_process_stability",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aiweline",
+      "features": [
+        "WLS runtime engineer skill for worker lifecycle, reload versus restart decisions, process clean."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wls-process-stability@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32635766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wls-process-stability",
+      "url": "https://clawhub.ai/skills/wls-process-stability"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wls-process-stability",
+    "url": "https://clawhub.ai/skills/wls-process-stability",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wls-process-stability-360c2aae345b67a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wls-process-stability@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wls-process-stability-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b3ef550e7bea516b5e9b8fa8c1bf262a4672fae4f6a8d1b36b90f1d5a5ce750",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T03:20:34.061Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71843,
+  "uuid": "skill-clawhub-juhe-football-query",
+  "skillKey": "clawhub-juhe-football-query",
+  "name": "足球联赛查询 - 聚合数据",
+  "summary": "足球联赛查询。查询各大足球联赛的赛事赛程和积分榜，支持中超、英超、意甲、德甲、法甲、西乙、苏超等联赛。使用场景：用户说\"查一下英超赛程\"、\"中超积分榜\"、\"德甲比赛结果\"、\"意甲最新排名\"等。通过聚合数据（juhe.cn）API 实时查询，免费注册每天免费调用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juhe_football_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "juhe-skills",
+      "features": [
+        "足球联赛查询。查询各大足球联赛的赛事赛程和积分榜，支持中超、英超、意甲、德甲、法甲、西乙、苏超等联赛。使用场景：用户说\"查一下英超赛程\"、\"中超积分榜\"、\"德甲比赛结果\"、\"意甲最新排名\"等."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/juhe-football-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203600343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "juhe-football-query",
+      "url": "https://clawhub.ai/skills/juhe-football-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juhe-football-query",
+    "url": "https://clawhub.ai/skills/juhe-football-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juhe-football-query-c6d733470a7bf6cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/juhe-football-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-juhe-football-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a6bda3029373537cb06fe2697c55fb8a39ae6195e3b2ec84b3d9bbc05b7b69c",
+      "artifactSizeBytes": 2576
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T05:26:07.247Z"
+}

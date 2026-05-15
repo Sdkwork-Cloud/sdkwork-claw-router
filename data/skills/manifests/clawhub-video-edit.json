@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9227,
+  "uuid": "skill-clawhub-video-edit",
+  "skillKey": "clawhub-video-edit",
+  "name": "Video Editing",
+  "summary": "Edit videos with AI background removal, color grading, upscaling, stabilization, and enhancement tools.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_edit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Edit videos with AI background removal, color grading, upscaling, stabilization, and enhancemen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-edit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-edit",
+      "url": "https://clawhub.ai/skills/video-edit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-edit",
+    "url": "https://clawhub.ai/skills/video-edit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-edit-9d4f638ae3eb49ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-edit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-edit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:030258f948c800223b803ce4de279bf9e4a1fcaba0db1cc2067ed5aa4b7cdab2",
+      "artifactSizeBytes": 1802
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T02:04:14.973Z"
+}

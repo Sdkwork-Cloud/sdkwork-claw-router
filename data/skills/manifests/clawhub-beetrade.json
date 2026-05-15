@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19013,
+  "uuid": "skill-clawhub-beetrade",
+  "skillKey": "clawhub-beetrade",
+  "name": "Beetrade",
+  "summary": "Use Beecli to interact with the Beetrade platform for authentication, market data, bot/strategy operations, alerts, accounts, and portfolio workflows. Use th...",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beetrade",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BeeTrade",
+      "features": [
+        "Use Beecli to interact with the Beetrade platform for authentication, market data, bot/strategy.",
+        "Use th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beetrade@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233191569?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beetrade",
+      "url": "https://clawhub.ai/skills/beetrade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beetrade",
+    "url": "https://clawhub.ai/skills/beetrade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beetrade-664feb8d5f6e6593.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beetrade@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-beetrade-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25997b4b41dd4d30ccc4219f3c9932e81754f61c933eb118801ed09a9a9399ca",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T15:18:38.292Z"
+}

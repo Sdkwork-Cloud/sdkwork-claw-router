@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/detect-file-type-local@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.detect_file_type_local",
+  "skill": {
+    "id": 53774,
+    "skillKey": "clawhub-detect-file-type-local",
+    "name": "Detect File Type - Local"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "detect-file-type-local",
+    "url": "https://clawhub.ai/skills/detect-file-type-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/detect-file-type-local-556299c1c0e75056.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local, offline AI-powered file type detection — no network, no API keys"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pgeraghty",
+      "userId": "publishers:pgeraghty",
+      "displayName": "pgeraghty",
+      "image": "https://avatars.githubusercontent.com/u/11458?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 486,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1772140151658,
+      "changelog": "Breaking: renamed CLI binary to detect_file_type and updated skill title.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9b865d95c731662ebc4018f66820842e6baf70bbfa759652fd43b160616ffdcd"
+}

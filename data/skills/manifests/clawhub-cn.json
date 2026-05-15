@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59338,
+  "uuid": "skill-clawhub-cn",
+  "skillKey": "clawhub-cn",
+  "name": "sillytavern-cards-cn",
+  "summary": "导入 SillyTavern 兼容的角色卡（TavernAI V2/V3 PNG 格式），在任意聊天平台上角色扮演",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pearyj",
+      "features": [
+        "导入 SillyTavern 兼容的角色卡（TavernAI V2/V3 PNG 格式），在任意聊天平台上角色扮演"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130187974?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn",
+      "url": "https://clawhub.ai/skills/cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn",
+    "url": "https://clawhub.ai/skills/cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-ff2082aa78aea80a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a61b17cbefdc3e8b6dd6b963c5933f7b227cbf68d87156adc40e7a94d7ec8d3",
+      "artifactSizeBytes": 2220
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T22:44:53.302Z"
+}

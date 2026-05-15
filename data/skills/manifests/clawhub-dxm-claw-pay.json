@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64300,
+  "uuid": "skill-clawhub-dxm-claw-pay",
+  "skillKey": "clawhub-dxm-claw-pay",
+  "name": "度小满支付技能",
+  "summary": "度小满支付钱包 Skill，处理 SP 服务余额不足/未购买场景：根据调用方传入的结构化商品数据生成支付链接和二维码。也处理 Skill 安装：当用户说\"使用度小满安装skill\"、\"度小满下载skill\"、\"install skill\"、\"我要使用度小满安装某个skill\"时触发 installSkill 流程。",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dxm_claw_pay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "度小满",
+      "features": [
+        "度小满支付钱包 Skill，处理 SP 服务余额不足/未购买场景：根据调用方传入的结构化商品数据生成支付链接和二维码。也处理 Skill 安装：当用户说\"使用度小满安装skill\"、\"度小满."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dxm-claw-pay@1.0.10",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/dxm-claw-pay/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dxm-claw-pay",
+      "url": "https://clawhub.ai/skills/dxm-claw-pay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dxm-claw-pay",
+    "url": "https://clawhub.ai/skills/dxm-claw-pay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dxm-claw-pay-ce615370c529b76f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dxm-claw-pay@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-dxm-claw-pay-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba1bfb2b7f0aa0243dad64570ca960a60cfaa404731af5ddade7810861f5350d",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T12:41:18.440Z"
+}

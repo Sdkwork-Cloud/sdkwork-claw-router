@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_search",
+  "skill": {
+    "id": 8391,
+    "skillKey": "clawhub-google-search",
+    "name": "google-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-search",
+    "url": "https://clawhub.ai/skills/google-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-search-d2cefdd7cd67face.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web using Google Custom Search Engine (PSE). Use this when you need live information, documentation, or to research topics and the built-in web_search is unavailable."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mxfeinberg",
+      "userId": "publishers:mxfeinberg",
+      "displayName": "mxfeinberg",
+      "image": "https://avatars.githubusercontent.com/u/7530298?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 16375,
+      "installsAllTime": 195,
+      "installsCurrent": 183,
+      "stars": 17,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769909754813,
+      "changelog": "- Initial release of the Google Search skill for OpenClaw agents.\n- Enables web searches via Google's Custom Search API (PSE).\n- Provides setup instructions for API key and Programmable Search Engine ID.\n- Includes usage example for performing searches from the command line.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b6f2c3069a9350ae3994f50617bf5c536cb396501fb067b5aba18ac10fee6a1f"
+}

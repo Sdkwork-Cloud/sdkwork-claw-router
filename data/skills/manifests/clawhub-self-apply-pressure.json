@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36968,
+  "uuid": "skill-clawhub-self-apply-pressure",
+  "skillKey": "clawhub-self-apply-pressure",
+  "name": "Self Apply Pressure",
+  "summary": "Prevents AI from giving up prematurely by exhausting all options, verifying fixes, troubleshooting proactively, and providing evidence before concluding.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_apply_pressure",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenLark",
+      "features": [
+        "Prevents AI from giving up prematurely by exhausting all options, verifying fixes, troubleshoot."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-apply-pressure@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260858787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-apply-pressure",
+      "url": "https://clawhub.ai/skills/self-apply-pressure"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-apply-pressure",
+    "url": "https://clawhub.ai/skills/self-apply-pressure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-apply-pressure-dc869e1541e3a418.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-apply-pressure@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-apply-pressure-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2620b58481dcbe04ec5ef7e409880b205938796876dccc8a941bd20638c8e948",
+      "artifactSizeBytes": 2437
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T02:23:23.443Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclawbackup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclawbackup",
+  "skill": {
+    "id": 55783,
+    "skillKey": "clawhub-openclawbackup",
+    "name": "OpenClaw Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclawbackup",
+    "url": "https://clawhub.ai/skills/openclawbackup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclawbackup-e52f65566f0aa353.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Backup OpenClaw workspace, config, and state using the built-in `openclaw backup create` command. Also handles cleanup of old backups and health verification..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joeyiptk",
+      "userId": "s17av7k4d5aq1pr3yswt5phdg985p5pm",
+      "displayName": "larryjoe",
+      "image": "https://avatars.githubusercontent.com/u/25060936?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 97,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777351871547,
+      "changelog": "- Automated daily backup using OpenClaw's built-in `backup create`\n- Backups stored in ~/openclaw_backups/ as timestamped .tar.gz archives\n- Backup contents: config, credentials, session history, workspace, skills\n- Archive verification via `openclaw backup verify`\n- Cleanup old backups by age (--days flag, dry-run by default)\n- Optional daily cron at 04:00 HKT\n- Portable — works on any machine with OpenClaw installed, no extra deps",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1fcf6ee4fbcb3f814df9089b1daa4f78d394a1aade87aa7c843d0fe687ab2a94"
+}

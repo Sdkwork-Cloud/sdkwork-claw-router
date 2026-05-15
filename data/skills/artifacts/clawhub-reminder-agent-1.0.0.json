@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reminder-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reminder_agent",
+  "skill": {
+    "id": 33326,
+    "skillKey": "clawhub-reminder-agent",
+    "name": "Reminder Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reminder-agent",
+    "url": "https://clawhub.ai/skills/reminder-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reminder-agent-603743a217320f5d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Converts any human reminder request into structured JSON reminder data. Trigger this skill whenever the user wants to set, create, schedule, or log a reminde..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anhducna",
+      "userId": "publishers:anhducna",
+      "displayName": "AnhducNA",
+      "image": "https://avatars.githubusercontent.com/u/95276179?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773992208410,
+      "changelog": "reminder-agent 1.0.0 — Initial Release\n\n- Converts Vietnamese and English reminder requests into JSON, extracting title, datetime, recurrence, priority, and note.\n- Detects and handles lunar (âm lịch) date requests by invoking the lunar-convert skill.\n- Supports custom output field formatting when specified by the user.\n- Maps vague Vietnamese time expressions to specific times.\n- Always asks just one clarifying question if required fields are missing.\n- Outputs only the required JSON object without any extra text.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2240db325be72d8aa0120642b73c88bf2b98af00d4534ae55354b531e1e60699"
+}

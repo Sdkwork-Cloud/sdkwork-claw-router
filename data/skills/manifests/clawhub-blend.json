@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35659,
+  "uuid": "skill-clawhub-blend",
+  "skillKey": "clawhub-blend",
+  "name": "Blend",
+  "summary": "Blend integration. Manage data, records, and automate workflows. Use when the user wants to interact with Blend data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blend",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Blend integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Blend data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blend@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blend",
+      "url": "https://clawhub.ai/skills/blend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blend",
+    "url": "https://clawhub.ai/skills/blend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blend-727c1e414b34819f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blend@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-blend-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d995e713f0eb4a7aac527d66532f43c03ed0ca367b247601aa1ac36df0b5160c",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:24:18.652Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gh-triage@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gh_triage",
+  "skill": {
+    "id": 21579,
+    "skillKey": "clawhub-gh-triage",
+    "name": "GH Triage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gh-triage",
+    "url": "https://clawhub.ai/skills/gh-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gh-triage-28fcd74d2f97df2b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically scans GitHub repos to label, comment, assign, and fix issues and PRs for efficient triage and reporting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gruted",
+      "userId": "s17bzg4rfk98bk2epgm610c0p9847765",
+      "displayName": "gruted",
+      "image": "https://avatars.githubusercontent.com/u/262255360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 504,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772763916394,
+      "changelog": "Initial release: GitHub issues/PR triage automation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:564d13f563f4be785e265d399963b64cf7a6f12f6e3a61276bafeeda689a0c9c"
+}

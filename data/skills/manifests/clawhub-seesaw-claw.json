@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44920,
+  "uuid": "skill-clawhub-seesaw-claw",
+  "skillKey": "clawhub-seesaw-claw",
+  "name": "SeeSaw Claw",
+  "summary": "Integrates SeeSaw prediction market APIs into OpenClaw, enabling market listing, balance checking, and position management via CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seesaw_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SeeSaw",
+      "features": [
+        "Integrates SeeSaw prediction market APIs into OpenClaw, enabling market listing, balance checki."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seesaw-claw@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/seesaw-claw/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seesaw-claw",
+      "url": "https://clawhub.ai/skills/seesaw-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seesaw-claw",
+    "url": "https://clawhub.ai/skills/seesaw-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seesaw-claw-6b6776acb4c6596e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seesaw-claw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-seesaw-claw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:313fa9d752cc781fbb78e8d7ea29929ea8fc5ef79a20b92113968624ac186616",
+      "artifactSizeBytes": 2203
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T14:46:48.941Z"
+}

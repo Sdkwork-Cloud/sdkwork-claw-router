@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/typetex@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.typetex",
+  "skill": {
+    "id": 10127,
+    "skillKey": "clawhub-typetex",
+    "name": "Compile LaTex & Typst into PDF with TypeTex"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "typetex",
+    "url": "https://clawhub.ai/skills/typetex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/typetex-e7083ca9258be597.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compile Typst and LaTeX documents to PDF via API. Send source code, get back a PDF."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gregm711",
+      "userId": "s174j9m1gk90h2bdx395m5w93d83ncr5",
+      "displayName": "gregm711",
+      "image": "https://avatars.githubusercontent.com/u/13073838?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2592,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1769987507833,
+      "changelog": "Initial release of typetex v1.0.0.\n\n- Compile Typst (.typ) and LaTeX (.tex) documents to PDF via API.\n- Supports multi-file projects, images, custom fonts, and bibliographies.\n- Offers endpoints for both Typst and LaTeX compilation, plus a health check.\n- Clear error reporting, including LaTeX logs for debugging.\n- Provides Python and curl usage examples.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0688b1efc3deb8d8428212ca4f1d5037a9528204324899faf0929aa49a3d06a5"
+}

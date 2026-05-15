@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59216,
+  "uuid": "skill-clawhub-interview-pro",
+  "skillKey": "clawhub-interview-pro",
+  "name": "interview-pro",
+  "summary": "面试助手。支持模拟面试、面试问题预测、简历优化、面试复盘。覆盖所有行业。Use when user needs interview preparation, mock interviews, resume optimization, or interview feedback. 面试准备、模拟面试、简历优化、面试...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interview_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "面试助手。支持模拟面试、面试问题预测、简历优化、面试复盘。覆盖所有行业。Use when user needs interview preparation, mock interviews,.",
+        "面试准备、模拟面试、简历优化、面试..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/interview-pro@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "interview-pro",
+      "url": "https://clawhub.ai/skills/interview-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interview-pro",
+    "url": "https://clawhub.ai/skills/interview-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interview-pro-8d3bed6329d8da15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/interview-pro@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-interview-pro-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7898830419e0161cd210e0dc03bff732151673eb85a40f78602603fdc11a8ef",
+      "artifactSizeBytes": 2147
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T00:14:14.919Z"
+}

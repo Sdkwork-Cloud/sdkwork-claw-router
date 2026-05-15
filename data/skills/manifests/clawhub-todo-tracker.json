@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8726,
+  "uuid": "skill-clawhub-todo-tracker",
+  "skillKey": "clawhub-todo-tracker",
+  "name": "TODO Tracker",
+  "summary": "Persistent TODO scratch pad for tracking tasks across sessions. Use when user says \"add to TODO\", \"what's on the TODO\", \"mark X done\", \"show TODO list\", \"remove from TODO\", or asks about pending tasks. Also triggers on heartbeat to remind.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todo_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jonathan Rhyne",
+      "features": [
+        "Persistent TODO scratch pad for tracking tasks across sessions",
+        "Use when user says \"add to TODO\", \"what's on the TODO\", \"mark X done\", \"show TODO list\", \"remov.",
+        "Also triggers on heartbeat to remind about stale items."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/todo-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7828464?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "todo-tracker",
+      "url": "https://clawhub.ai/skills/todo-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todo-tracker",
+    "url": "https://clawhub.ai/skills/todo-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todo-tracker-9991aa5266b86e85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/todo-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-todo-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8dd11f12a1acbe827365b07b9e0ab8ead8aebee99c814c919e52523e4882d2cb",
+      "artifactSizeBytes": 2074
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-17T07:18:40.198Z"
+}

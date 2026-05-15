@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58333,
+  "uuid": "skill-clawhub-github-personal-repo-publisher",
+  "skillKey": "clawhub-github-personal-repo-publisher",
+  "name": "GitHub Personal Repo Publisher",
+  "summary": "Create a repository under your own GitHub account, wire a local project repo to it, and push committed history safely. 为你自己的 GitHub 账户创建仓库，把本地项目仓库接过去，并安全推送已提...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_personal_repo_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "grey0758",
+      "features": [
+        "Create a repository under your own GitHub account, wire a local project repo to it, and push co.",
+        "为你自己的 GitHub 账户创建仓库，把本地项目仓库接过去，并安全推送已提..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-personal-repo-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110289906?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-personal-repo-publisher",
+      "url": "https://clawhub.ai/skills/github-personal-repo-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-personal-repo-publisher",
+    "url": "https://clawhub.ai/skills/github-personal-repo-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-personal-repo-publisher-508a71cc0414b512.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-personal-repo-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-personal-repo-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:971dbfed644ef05380079f78614a145db96ee6f6d0c3e986801dcdc69be42d26",
+      "artifactSizeBytes": 2601
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T03:27:37.203Z"
+}

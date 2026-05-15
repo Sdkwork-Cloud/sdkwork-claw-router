@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20044,
+  "uuid": "skill-clawhub-readme-template",
+  "skillKey": "clawhub-readme-template",
+  "name": "Readme Template",
+  "summary": "README template generator. Standard, awesome-list, minimal, detailed, library, app, API project.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readme_template",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "README template generator",
+        "Standard, awesome-list, minimal, detailed, library, app, API project."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/readme-template@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "readme-template",
+      "url": "https://clawhub.ai/skills/readme-template"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readme-template",
+    "url": "https://clawhub.ai/skills/readme-template",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readme-template-e8f70654b7317b9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/readme-template@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-readme-template-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8931d44898dae23b303a9435128a86668cdc973a2566eda065e7fb33b2c558f6",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:02:32.121Z"
+}

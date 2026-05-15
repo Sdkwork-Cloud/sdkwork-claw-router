@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-drive-organizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_drive_organizer",
+  "skill": {
+    "id": 72127,
+    "skillKey": "clawhub-feishu-drive-organizer",
+    "name": "飞书云盘 AI 管家"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-drive-organizer",
+    "url": "https://clawhub.ai/skills/feishu-drive-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-drive-organizer-5abc5cfaa5b52609.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书云盘 AI 管家，支持按类型自动分类、批量管理文件、生成存储报告及评论管理，助你高效整理云端文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "young-joey",
+      "userId": "s179a1hc0q79dprdtxz2krr4hh869mzn",
+      "displayName": "Young-Joey",
+      "image": "https://avatars.githubusercontent.com/u/25998415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 69,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778236039950,
+      "changelog": "Initial release: 飞书云盘智能整理、批量管理、文件查找、评论管理",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d313b42de512a942a2f76675caea15c2d3ce8033d4d0e8c4d6d130fc26056e39"
+}

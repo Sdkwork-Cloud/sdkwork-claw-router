@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pipeworx-exchangerate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_exchangerate",
+  "skill": {
+    "id": 54485,
+    "skillKey": "clawhub-pipeworx-exchangerate",
+    "name": "Pipeworx exchangerate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-exchangerate",
+    "url": "https://clawhub.ai/skills/pipeworx-exchangerate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-exchangerate-61481223816a7a7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Simple currency exchange rates — all rates for a base currency or a direct pair lookup via open.er-api.com"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "b-gutman",
+      "userId": "s17de0904v925begb7h04jkph984bgct",
+      "displayName": "Bruce Gutman",
+      "image": "https://avatars.githubusercontent.com/u/270792185?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775672384869,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db449e22924cbd05f8775217464b88e34b9509a9cdba50810b2cd2f67615a584"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32137,
+  "uuid": "skill-clawhub-softlayer",
+  "skillKey": "clawhub-softlayer",
+  "name": "Softlayer",
+  "summary": "SoftLayer integration. Manage data, records, and automate workflows. Use when the user wants to interact with SoftLayer data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.softlayer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SoftLayer integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with SoftLayer data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/softlayer@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "softlayer",
+      "url": "https://clawhub.ai/skills/softlayer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "softlayer",
+    "url": "https://clawhub.ai/skills/softlayer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/softlayer-12c4b06e76830a9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/softlayer@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-softlayer-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7dfa4d3aa08dd87f3ff482790b646a519819a8cfa5006de7876ede066116853e",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:45:01.888Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70197,
+  "uuid": "skill-clawhub-ding-restaurant-reservation",
+  "skillKey": "clawhub-ding-restaurant-reservation",
+  "name": "DINGs 托管式 AI 电话助手（中国、日本餐厅预订）",
+  "summary": "全自动 AI 电话助手，帮助用户拨打中国餐厅电话完成预订、查询预订状态及获取电子凭证。",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ding_restaurant_reservation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smallGeDing",
+      "features": [
+        "全自动 AI 电话助手，帮助用户拨打中国餐厅电话完成预订、查询预订状态及获取电子凭证。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ding-restaurant-reservation@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257256164?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ding-restaurant-reservation",
+      "url": "https://clawhub.ai/skills/ding-restaurant-reservation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ding-restaurant-reservation",
+    "url": "https://clawhub.ai/skills/ding-restaurant-reservation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ding-restaurant-reservation-ac007b41688074b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ding-restaurant-reservation@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-ding-restaurant-reservation-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3348dc7926824e9d432f507ebb1c1a7bba2f3eea288f7b37d23a018336e91eb9",
+      "artifactSizeBytes": 2227
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T03:02:51.431Z"
+}

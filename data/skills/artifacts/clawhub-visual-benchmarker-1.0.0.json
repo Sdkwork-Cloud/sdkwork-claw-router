@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/visual-benchmarker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visual_benchmarker",
+  "skill": {
+    "id": 64408,
+    "skillKey": "clawhub-visual-benchmarker",
+    "name": "Visual Benchmarker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visual-benchmarker",
+    "url": "https://clawhub.ai/skills/visual-benchmarker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visual-benchmarker-f838fdf6d7d74a30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "(元技能) 视觉对标视频搜索器，通过指导AI调用其他工具，为项目确认视觉风格。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahsbnb",
+      "userId": "s17d6exthhg7wwbw0z502jz00183kevf",
+      "displayName": "an",
+      "image": "https://avatars.githubusercontent.com/u/208153467?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774437264043,
+      "changelog": "Initial release of visual-benchmarker (元技能) – a workflow to help projects identify visual styles by orchestrating AI and external tools.\n\n- Defines a 3-step process: extract search keywords, fetch Douyin videos using douyin-video-search skill, and select benchmark cases.\n- Provides prompts and templates for AI to extract core categories and search terms from user documents.\n- Specifies use of the douyin-video-search tool, with sample calls and usage guidelines.\n- Outputs a Markdown report with at least 3 recommended videos, each with links and visual analysis.\n- Emphasizes tool-based dynamic calls and quality of keyword extraction.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e383fcf8eaeed55137e1280c93e316986532cae9d90bb6749d5504ec57bc42b4"
+}

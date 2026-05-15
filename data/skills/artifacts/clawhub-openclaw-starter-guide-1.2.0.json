@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-starter-guide@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_starter_guide",
+  "skill": {
+    "id": 61737,
+    "skillKey": "clawhub-openclaw-starter-guide",
+    "name": "🦞 OpenClaw Starter Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-starter-guide",
+    "url": "https://clawhub.ai/skills/openclaw-starter-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-starter-guide-6c4d4f71c8e546bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 小白养成手册。从零开始搭建多 Agent AI 助手系统的完整指南，包含免费起步方案（Qwen 零成本）、进阶方案（MiniMax Coding Plan ¥49/月）、旗舰外援（SiliconFlow/NewCLI 按需调用）。涵盖模型策略、Fallback 链设计、额度管理、常见故障排查。适合首次部署 OpenClaw 或想优化模型成本的用户。当用户说\"怎么开始\"、\"新手指南\"、\"省钱方案\"、\"模型怎么选\"、\"fallback 怎么配\"时使用此 ski."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jooey",
+      "userId": "publishers:jooey",
+      "displayName": "jooey",
+      "image": "https://avatars.githubusercontent.com/u/7296530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1343,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 5,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1770631092500,
+      "changelog": "v1.2: 更新额度监控建议 - MiniMax API 数据不可信，改为真实请求验证；补充前置条件",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e1b211c700347269cb3527a3c4d60643a6841cdd339f4aaa938423390f4ae8c7"
+}

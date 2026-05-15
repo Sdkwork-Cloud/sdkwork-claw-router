@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60121,
+  "uuid": "skill-clawhub-ai-call-agent",
+  "skillKey": "clawhub-ai-call-agent",
+  "name": "phone call agent",
+  "summary": "智能语音通话助手，支持中国大陆电话拨打。当用户表达\"打电话、代打电话、电话沟通\"等意图时触发。AI可进行多轮自然对话，完成预约、通知、回访等任务。An AI voice assistant for Mainland China calls. Triggered when user expresses intent...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_call_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "naive-white-expert",
+      "features": [
+        "智能语音通话助手，支持中国大陆电话拨打。当用户表达\"打电话、代打电话、电话沟通\"等意图时触发。AI可进行多轮自然对话，完成预约、通知、回访等任务。An AI voice assistant.",
+        "Triggered when user expresses intent..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-call-agent@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130733538?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-call-agent",
+      "url": "https://clawhub.ai/skills/ai-call-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-call-agent",
+    "url": "https://clawhub.ai/skills/ai-call-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-call-agent-ae543d53e5269ce9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-call-agent@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-call-agent-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:092e7955378b7495d3b69adb42400940594c815a797b371f1458c9a276daba5b",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T13:04:17.783Z"
+}

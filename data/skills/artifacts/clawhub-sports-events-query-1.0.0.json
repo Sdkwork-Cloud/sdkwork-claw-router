@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sports-events-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sports_events_query",
+  "skill": {
+    "id": 19796,
+    "skillKey": "clawhub-sports-events-query",
+    "name": "Sports Events Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sports-events-query",
+    "url": "https://clawhub.ai/skills/sports-events-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sports-events-query-3ba14b4d0b746684.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Retrieve sports events, results, team info, and league details across multiple sports using TheSportsDB free API without requiring an API key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mingo-318",
+      "userId": "s174azpqkfzaht4rsrns8gsy4983gadk",
+      "displayName": "Mingo_318",
+      "image": "https://avatars.githubusercontent.com/u/62329898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 482,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772694963359,
+      "changelog": "- Initial release with support for querying sports events via TheSportsDB free API\n- Provides results, fixtures, and team information for soccer, basketball, tennis, baseball, NFL, NHL, and more\n- Supports searching by league name, team name, and specific event keywords\n- Lists available sports leagues\n- No API key required for use",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b7b6bd2ba88287e978444966d50eb4b35d61ac15a349a7d5989468b3faf9d91d"
+}

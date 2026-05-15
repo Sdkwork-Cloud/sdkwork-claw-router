@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tax-deadline-calendar@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tax_deadline_calendar",
+  "skill": {
+    "id": 30552,
+    "skillKey": "clawhub-tax-deadline-calendar",
+    "name": "Tax Deadline Calendar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tax-deadline-calendar",
+    "url": "https://clawhub.ai/skills/tax-deadline-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tax-deadline-calendar-2d39cbf4d313cb02.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tax deadline tracking and compliance calendar for businesses and individuals. Tracks federal and state tax filing deadlines, estimated tax payment due dates,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samledger67-dotcom",
+      "userId": "s17e6161jqcyaq82bkvewk1rz583ndyf",
+      "displayName": "samledger67-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/261800271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 271,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773926355702,
+      "changelog": "Fix display name from slug to proper title",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6daf82c2c264eba67ab21683b6be85cfb58ffdcac70ca4f98f6f43114c4eed3a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-ppt@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_ppt",
+  "skill": {
+    "id": 70117,
+    "skillKey": "clawhub-ai-ppt",
+    "name": "AIPPT生成"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-ppt",
+    "url": "https://clawhub.ai/skills/ai-ppt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-ppt-9d4951464af4119f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PPT自动生成工具，通过调用外部接口实现从主题到完整PPT文件的自动化生成流程。支持大纲生成、大纲修改、模板选择、PPT生成等完整流程。当用户要求生成PPT、制作幻灯片、创建演示文稿、年终总结PPT、项目汇报PPT时使用此skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luych888-design",
+      "userId": "publishers:luych888-design",
+      "displayName": "luych888-design",
+      "image": "https://avatars.githubusercontent.com/u/237707216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774010975820,
+      "changelog": "ai-ppt 1.0.4\n\n- Added explicit instructions to stop execution and wait for user input at key interactive steps (outline confirmation and template selection).\n- Clarified that the process is interactive, not an automated script.\n- Emphasized that the system must not proceed without clear user confirmation at required steps.\n- Improved the step descriptions and warnings for interactive operations.\n- Updated contact information and minor formatting fixes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f70211770bdc87b8ab9441db99b76f9d95d6f54699ce6c6c7da1c681705b1ac"
+}

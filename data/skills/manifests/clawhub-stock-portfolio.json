@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68489,
+  "uuid": "skill-clawhub-stock-portfolio",
+  "skillKey": "clawhub-stock-portfolio",
+  "name": "Stock Portfolio",
+  "summary": "股票组合管理与预警技能。支持 A 股/港股/美股行情查询、持仓跟踪、收益计算、价格预警、每日推荐。使用免费 API（腾讯财经），数据本地存储。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_portfolio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yinshengf",
+      "features": [
+        "股票组合管理与预警技能。支持 A 股/港股/美股行情查询、持仓跟踪、收益计算、价格预警、每日推荐。使用免费 API（腾讯财经），数据本地存储。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-portfolio@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13606856?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-portfolio",
+      "url": "https://clawhub.ai/skills/stock-portfolio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-portfolio",
+    "url": "https://clawhub.ai/skills/stock-portfolio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-portfolio-98e81d520dd0dc6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-portfolio@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-portfolio-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcfa922c98142234d9e6994a9fc99dabb3126f1aac8a5a06781b6cdf87a27bf8",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T10:00:12.045Z"
+}

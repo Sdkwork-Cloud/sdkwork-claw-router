@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lss@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lss",
+  "skill": {
+    "id": 39763,
+    "skillKey": "clawhub-lss",
+    "name": "react design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lss",
+    "url": "https://clawhub.ai/skills/lss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lss-235835d5bc32b359.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Applies the Learn Social Studies brand system to React interfaces using CSS variables, reusable component conventions, light theme by default, and dark theme..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lssmanager",
+      "userId": "s17561q207bpc92vzsnsd3c6q584rxck",
+      "displayName": "lssmanager",
+      "image": "https://avatars.githubusercontent.com/u/220819520?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776048024912,
+      "changelog": "- Initial release of the Learn Social Studies UI Kit for React.\n- Provides standardized CSS variables, typography, and color rules for Learn Social Studies branding.\n- Includes support for light theme by default with optional dark theme via the data-theme attribute.\n- Supplies reusable component conventions for buttons, inputs, cards, badges, and more.\n- Offers guidance on file layout, font loading, and usage instructions for consistent UI across React projects.\n- Emphasizes separation of style from business logic and encourages use of scalable, maintainable UI patterns.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b565aa32ce73ceb58b2c519523c90ab7777d0951a947c8eb432c5ee8d919f1a"
+}

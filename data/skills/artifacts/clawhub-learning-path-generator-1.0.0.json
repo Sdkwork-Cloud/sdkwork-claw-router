@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/learning-path-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learning_path_generator",
+  "skill": {
+    "id": 35926,
+    "skillKey": "clawhub-learning-path-generator",
+    "name": "learning-path-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learning-path-generator",
+    "url": "https://clawhub.ai/skills/learning-path-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learning-path-generator-a8be243fdc5baf18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate personalized learning paths and curriculum for any skill or subject"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huajianjiu000",
+      "userId": "s17f54gbrv7gfj1z72d0e3d24h84b2ep",
+      "displayName": "huajianjiu",
+      "image": "https://avatars.githubusercontent.com/u/163974966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776680728368,
+      "changelog": "Initial release of Learning Path Generator.\n\n- Generate personalized, structured learning paths for any skill or subject.\n- Features include skill assessment, goal setting, curriculum design, time planning, resource curation, and progress tracking.\n- Allows users to define goals, assess proficiency, and receive optimized, phase-based curriculums with milestones and resource recommendations.\n- Supports customizable plans based on learning objectives, available time, and current skill level.\n- Example curriculum included for mastering Python programming from beginner to job-ready.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60aee91730ea8821eaff0af82751ad2db879484f8bd05af8e9503f913fe918bc"
+}

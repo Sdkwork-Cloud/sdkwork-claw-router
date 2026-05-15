@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25276,
+  "uuid": "skill-clawhub-nicebox-site-manager",
+  "skillKey": "clawhub-nicebox-site-manager",
+  "name": "nicebox-site-manager",
+  "summary": "Manage AI-built websites via NiceBox OpenClaw API. Supports article publishing, viewing messages, and checking site status.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nicebox_site_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ravchen",
+      "features": [
+        "Manage AI-built websites via NiceBox OpenClaw API",
+        "Supports article publishing, viewing messages, and checking site status."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nicebox-site-manager@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64203512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nicebox-site-manager",
+      "url": "https://clawhub.ai/skills/nicebox-site-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nicebox-site-manager",
+    "url": "https://clawhub.ai/skills/nicebox-site-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nicebox-site-manager-011701f8b985ec1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nicebox-site-manager@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nicebox-site-manager-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3aeed105bf9c66dfaf229f1acaee2f21b259c3a0530d139bd2dab5a2f6d2794c",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T11:37:17.552Z"
+}

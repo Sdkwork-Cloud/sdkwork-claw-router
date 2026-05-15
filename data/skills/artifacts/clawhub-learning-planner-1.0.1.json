@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/learning-planner@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learning_planner",
+  "skill": {
+    "id": 21870,
+    "skillKey": "clawhub-learning-planner",
+    "name": "Learning Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learning-planner",
+    "url": "https://clawhub.ai/skills/learning-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learning-planner-2f0693933a820bc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal learning management system with goal setting, spaced repetition scheduling, and progress tracking. Use when: (1) setting learning goals and skill tr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 483,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773236788538,
+      "changelog": "- Expanded skill description and usage scenarios in SKILL.md for greater clarity.\n- Added an optional PATH setup step to the installation section in SKILL.md.\n- Cleaned up repository by removing 10 files, mainly legacy source code and metadata.\n- Updated documentation for improved detail and organization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9564581439a8e3d55797b178465065433760d3afcfb7e08587538487f8cfd8c3"
+}

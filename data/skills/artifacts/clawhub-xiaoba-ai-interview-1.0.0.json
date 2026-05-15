@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaoba-ai-interview@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoba_ai_interview",
+  "skill": {
+    "id": 61135,
+    "skillKey": "clawhub-xiaoba-ai-interview",
+    "name": "AI intervew agent named Xiaoba"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoba-ai-interview",
+    "url": "https://clawhub.ai/skills/xiaoba-ai-interview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoba-ai-interview-53711e9eadd69cd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过小芭 AI 面试开放 API 创建面试计划、管理候选人、发起面试并获取面试结果。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "changwu",
+      "userId": "s178qtp2vwfhv3s2regvnyyctn854xbh",
+      "displayName": "changwu",
+      "image": "https://avatars.githubusercontent.com/u/57764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776609434619,
+      "changelog": "Initial release of xiaoba-interview-api Skill:\n\n- Provides access to Xiaoba AI Interview open API for interview planning, candidate management, and session/result handling.\n- Supports creating, querying, and generating interview plans.\n- Enables creating and listing candidates, including candidate details.\n- Allows scheduling interview sessions and retrieving interview results.\n- Usage requires API key via the `XIAOBA_API_KEY` environment variable.\n- Includes bash + curl + jq request templates for all core workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:062b8bbed8afcf16f8365152f896bb1fec75b26f822c5b3b94d03f31277e5727"
+}

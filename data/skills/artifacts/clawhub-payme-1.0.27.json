@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/payme@1.0.27",
+  "version": "1.0.27",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payme",
+  "skill": {
+    "id": 17819,
+    "skillKey": "clawhub-payme",
+    "name": "PayMe - Crypto Payments"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payme",
+    "url": "https://clawhub.ai/skills/payme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payme-c7c00a884bea1fdf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send and receive USDC/USDT crypto payments via PayMe smart wallets. Check balances, send stablecoins, view history, manage contacts, sell crypto for local cu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "variousfoot",
+      "userId": "s17dh0dc10wn6df98f30rfxwzd83eqtt",
+      "displayName": "variousfoot",
+      "image": "https://avatars.githubusercontent.com/u/157887145?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 642,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 28
+    },
+    "latestVersion": {
+      "version": "1.0.27",
+      "createdAt": 1774432802572,
+      "changelog": "- Removed instructions for connecting via Telegram `/agentcode`; now connection is done exclusively through the web app (payme.feedom.tech → Settings → AI Agent Access).\n- Updated user guidance regarding connection code generation, removing all Telegram references.\n- Clarified steps and wording around generating and exchanging the secure connection code.\n- No changes to API endpoints or crypto/payment features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff2d9f910fe3a54e9a4f0637ff03faa4056598a82bd11c49e2ec63601dfca492"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57309,
+  "uuid": "skill-clawhub-meeting-minutes-workflow",
+  "skillKey": "clawhub-meeting-minutes-workflow",
+  "name": "Meeting Minutes Workflow",
+  "summary": "Generate structured meeting minutes and sync to Feishu, following the Capture→Annotate→Share→Reuse workflow. Use when taking meeting notes, writing 会议纪要, sum...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_minutes_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "Generate structured meeting minutes and sync to Feishu, following the Capture→Annotate→Share→Re.",
+        "Use when taking meeting notes, writing 会议纪要, sum..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-minutes-workflow@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-minutes-workflow",
+      "url": "https://clawhub.ai/skills/meeting-minutes-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-minutes-workflow",
+    "url": "https://clawhub.ai/skills/meeting-minutes-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-minutes-workflow-c65ad65fd1b76431.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-minutes-workflow@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-minutes-workflow-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00467a43443af42ea63d8d8bb7e819474ffe77b71e09d3870c2cc38886afc65b",
+      "artifactSizeBytes": 2071
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T19:34:53.114Z"
+}

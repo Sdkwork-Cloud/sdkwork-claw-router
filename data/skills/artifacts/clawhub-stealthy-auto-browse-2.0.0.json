@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stealthy-auto-browse@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stealthy_auto_browse",
+  "skill": {
+    "id": 10197,
+    "skillKey": "clawhub-stealthy-auto-browse",
+    "name": "stealthy-auto-browse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stealthy-auto-browse",
+    "url": "https://clawhub.ai/skills/stealthy-auto-browse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stealthy-auto-browse-04aec897a14b0ba9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser automation that passes CreepJS, BrowserScan, Pixelscan, and Cloudflare — zero CDP exposure, OS-level input, persistent fingerprints. Use when standar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "psyb0t",
+      "userId": "s17fq93tmpky791n7516jcn08n83sfn2",
+      "displayName": "Ciprian Mandache",
+      "image": "https://avatars.githubusercontent.com/u/12934156?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3195,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776735766554,
+      "changelog": "No file or documentation changes detected in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ecbe69a601c303278b82bd7e6b5bddb5dfdd6901ecc816e3206d94c76cde4f27"
+}

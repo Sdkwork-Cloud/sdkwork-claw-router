@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/md2pdf-converter@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md2pdf_converter",
+  "skill": {
+    "id": 13734,
+    "skillKey": "clawhub-md2pdf-converter",
+    "name": "Markdown to PDF Converter (v2.0)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md2pdf-converter",
+    "url": "https://clawhub.ai/skills/md2pdf-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md2pdf-converter-eda348d668034ffc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Offline Markdown to PDF converter with full Unicode support using Pandoc + WeasyPrint + local emoji cache. Converts Markdown documents to professional PDFs w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tianxingleo",
+      "userId": "publishers:tianxingleo",
+      "displayName": "tianxingleo",
+      "image": "https://avatars.githubusercontent.com/u/237200863?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1151,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1771124542046,
+      "changelog": "Switch to Twemoji 14.0.0 (complete version) with 3660 colorful emojis including all variants. Add Python script to generate emoji mapping table. Fix black-and-white emoji display issue. Support all emoji variants (skin tones, hair styles, regional flags, etc.). Improve mapping accuracy with pre-generated lookup table.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1b014f9b3e37e4780a9b3d2fc0eea7f523f1acc2f72cc9a1ae6f315f97297f0b"
+}

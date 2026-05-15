@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/practical-news-monitor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.practical_news_monitor",
+  "skill": {
+    "id": 67253,
+    "skillKey": "clawhub-practical-news-monitor",
+    "name": "Practical News Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "practical-news-monitor",
+    "url": "https://clawhub.ai/skills/practical-news-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/practical-news-monitor-f0c3c7184a8f58ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持地缘政治、石油、黄金等关键词的多数据源新闻监控，自动保存数据并生成摘要报告，易于扩展和定制。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zrisingz-crypto",
+      "userId": "publishers:zrisingz-crypto",
+      "displayName": "zrisingz-crypto",
+      "image": "https://avatars.githubusercontent.com/u/256700950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 396,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774256739356,
+      "changelog": "- Initial release of practical-news-monitor.\n- Provides a framework for monitoring news across multiple customizable data sources.\n- Supports both JSON API and HTML parsing input types.\n- Allows user-defined keyword categories for news relevance filtering.\n- Automatically saves news data and generates summary reports.\n- Designed for easy extension with new data sources and relevance logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82103014dcad67f64ec3304b232eb6f7491199c32ae6052983def1270b731c37"
+}

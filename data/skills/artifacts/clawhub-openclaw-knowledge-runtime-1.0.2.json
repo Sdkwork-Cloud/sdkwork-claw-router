@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-knowledge-runtime@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_knowledge_runtime",
+  "skill": {
+    "id": 26658,
+    "skillKey": "clawhub-openclaw-knowledge-runtime",
+    "name": "OpenClaw Knowledge Runtime"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-knowledge-runtime",
+    "url": "https://clawhub.ai/skills/openclaw-knowledge-runtime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-knowledge-runtime-f36e61c5550b4424.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build a standalone layered knowledge runtime with typed links across knowledge entries, entities, memories, and reusable assets. Use when designing or implem..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wanng-ide",
+      "userId": "s176gjsdvgc0ce9sr8b6s9yzmx84mv9j",
+      "displayName": "WANGJUNJIE",
+      "image": "https://avatars.githubusercontent.com/u/32323900?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 324,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773834525921,
+      "changelog": "Add a storefront README and usage examples for clearer ClawHub presentation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a004ec8fe0761fea339554f251c7e5ed790357c3497d46ffb66e5766efa1f0b"
+}

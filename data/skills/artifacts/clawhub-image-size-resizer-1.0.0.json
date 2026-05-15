@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-size-resizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_size_resizer",
+  "skill": {
+    "id": 58334,
+    "skillKey": "clawhub-image-size-resizer",
+    "name": "Image Resizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-size-resizer",
+    "url": "https://clawhub.ai/skills/image-size-resizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-size-resizer-f8cb6a0bd7770fe3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "图片分辨率调整工具。Use when user needs to resize images to specific dimensions. Supports custom size, batch resize, aspect ratio preservation. 图片缩放、分辨率调整、图片裁剪。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobewin",
+      "userId": "s174rz3f0862tcfw7pzfh5w8kn83hv2z",
+      "displayName": "ToBeWin",
+      "image": "https://avatars.githubusercontent.com/u/145168989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774878456794,
+      "changelog": "图片分辨率调整工具：自定义尺寸，保持比例，批量处理，预设常用尺寸",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2999d06e9aa56beeaa3779d725d1e94c144c3c538345e663b8918d77aa8811e3"
+}

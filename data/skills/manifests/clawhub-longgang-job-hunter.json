@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71967,
+  "uuid": "skill-clawhub-longgang-job-hunter",
+  "skillKey": "clawhub-longgang-job-hunter",
+  "name": "龙港求职技能",
+  "summary": "自动抓取龙港325802人才招聘网职位信息，按用户偏好筛选并整理后发送邮件通知。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.longgang_job_hunter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jinxiangren",
+      "features": [
+        "自动抓取龙港325802人才招聘网职位信息，按用户偏好筛选并整理后发送邮件通知。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/longgang-job-hunter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244527891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "longgang-job-hunter",
+      "url": "https://clawhub.ai/skills/longgang-job-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "longgang-job-hunter",
+    "url": "https://clawhub.ai/skills/longgang-job-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/longgang-job-hunter-9e56f689bf1ca0d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/longgang-job-hunter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-longgang-job-hunter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:513293541380e3e15ed383ce8e6d863ebd1f33b793d0fba4e9540e91412eae1c",
+      "artifactSizeBytes": 2362
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T15:19:53.639Z"
+}

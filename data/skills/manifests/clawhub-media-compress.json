@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31928,
+  "uuid": "skill-clawhub-media-compress",
+  "skillKey": "clawhub-media-compress",
+  "name": "Media Compress",
+  "summary": "Compress and convert images and videos using ffmpeg. Use when the user wants to reduce file size, change format, resize, or optimize media files. Handles com...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.media_compress",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1987566643",
+      "features": [
+        "Compress and convert images and videos using ffmpeg",
+        "Use when the user wants to reduce file size, change format, resize, or optimize media files",
+        "Handles com..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/media-compress@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51523972?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "media-compress",
+      "url": "https://clawhub.ai/skills/media-compress"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "media-compress",
+    "url": "https://clawhub.ai/skills/media-compress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/media-compress-c202ad9923f7e338.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/media-compress@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-media-compress-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4eb523259228ea5d481aa2d721204281a01a2b70e53e1dc0e8b0436b545a529c",
+      "artifactSizeBytes": 1898
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T06:22:06.820Z"
+}

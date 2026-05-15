@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58420,
+  "uuid": "skill-clawhub-echo-seed",
+  "skillKey": "clawhub-echo-seed",
+  "name": "Echo Seed",
+  "summary": "简洁优雅的想法记录工具 / Simple and elegant idea capture tool",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.echo_seed",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zheznanohana",
+      "features": [
+        "简洁优雅的想法记录工具 / Simple and elegant idea capture tool"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/echo-seed@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166991689?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "echo-seed",
+      "url": "https://clawhub.ai/skills/echo-seed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "echo-seed",
+    "url": "https://clawhub.ai/skills/echo-seed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/echo-seed-8c4f5274095b8ca6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/echo-seed@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-echo-seed-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fa6ff41cde20fc6403351dd97c0e35121594fc97f017388aa70fbe79ba3af9a",
+      "artifactSizeBytes": 1780
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T02:03:09.550Z"
+}

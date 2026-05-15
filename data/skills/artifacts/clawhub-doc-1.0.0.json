@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc",
+  "skill": {
+    "id": 56127,
+    "skillKey": "clawhub-doc",
+    "name": "Doc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc",
+    "url": "https://clawhub.ai/skills/doc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-139d544b821b13eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the task involves reading, creating, or editing `.docx` documents, especially when formatting or layout fidelity matters; prefer `python-docx` plus..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flywhale-666",
+      "userId": "publishers:flywhale-666",
+      "displayName": "flywhale",
+      "image": "https://avatars.githubusercontent.com/u/136772759?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 891,
+      "installsAllTime": 14,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772540379338,
+      "changelog": "Initial release of the doc skill for DOCX document handling.\n\n- Provides guidance for reading, creating, and editing DOCX files with emphasis on formatting and layout fidelity.\n- Recommends workflows and tools for visual rendering and review (using soffice, pdftoppm, or scripts/render_docx.py).\n- Lists conventions for intermediate and output file management.\n- Details required dependencies and installation steps.\n- Outlines quality and delivery expectations for client-ready documents.\n- Includes troubleshooting steps and fallback approaches for environments with missing dependencies.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:67ac1d67c7bd55e70825994acd7c9890793bc3759548e95cd2b4191016143d4f"
+}

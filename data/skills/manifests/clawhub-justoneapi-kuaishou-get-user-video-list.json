@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48851,
+  "uuid": "skill-clawhub-justoneapi-kuaishou-get-user-video-list",
+  "skillKey": "clawhub-justoneapi-kuaishou-get-user-video-list",
+  "name": "Kuaishou User Published Videos API",
+  "summary": "Call GET /api/kuaishou/get-user-video-list/v2 for Kuaishou User Published Videos through JustOneAPI with userId.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_kuaishou_get_user_video_list",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/kuaishou/get-user-video-list/v2 for Kuaishou User Published Videos through JustOn."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-kuaishou-get-user-video-list@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-kuaishou-get-user-video-list",
+      "url": "https://clawhub.ai/skills/justoneapi-kuaishou-get-user-video-list"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-kuaishou-get-user-video-list",
+    "url": "https://clawhub.ai/skills/justoneapi-kuaishou-get-user-video-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-kuaishou-get-user-video-list-bdcca80c6313c4ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-kuaishou-get-user-video-list@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-kuaishou-get-user-video-list-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:222a063fbe375160bd81e39979091f412a6dc79ece95b19788008b1648394a5f",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T04:07:29.260Z"
+}

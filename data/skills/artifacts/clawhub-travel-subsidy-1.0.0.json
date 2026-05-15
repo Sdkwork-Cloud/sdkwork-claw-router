@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travel-subsidy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_subsidy",
+  "skill": {
+    "id": 56897,
+    "skillKey": "clawhub-travel-subsidy",
+    "name": "travel-subsidy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-subsidy",
+    "url": "https://clawhub.ai/skills/travel-subsidy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-subsidy-a70702f43942e7d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user uploads 发票.zip and 火车票.zip, use the included data tables to calculate eligible business-trip subsidy records, split related vs remaining files,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "attorneytao",
+      "userId": "s171bmr1q1jzpbs8rqp3nf4gtd83j0aa",
+      "displayName": "RyanTao",
+      "image": "https://avatars.githubusercontent.com/u/41137836?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 328,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772891838558,
+      "changelog": "initial commit",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8c80c695c7fe05f44f42af9f8304e300d03edf9cbabaad4844434e143b36b769"
+}

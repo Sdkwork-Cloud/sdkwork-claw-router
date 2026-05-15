@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clean-content-fetch@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clean_content_fetch",
+  "skill": {
+    "id": 61686,
+    "skillKey": "clawhub-clean-content-fetch",
+    "name": "Clean Content Fetch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clean-content-fetch",
+    "url": "https://clawhub.ai/skills/clean-content-fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clean-content-fetch-e44a685288f7eea3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取干净、可读的网页正文内容，适合现代网页、博客、新闻、公告和微信公众号文章抓取；支持网页正文提取、内容清洗、去噪、Markdown 输出，适用于普通 fetch 效果不佳、页面噪音较多或动态渲染干扰的场景。Clean content fetch for modern web pages, article ext..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jllyzzd",
+      "userId": "s178recmwet9jgxbaxpd516pax83jq7t",
+      "displayName": "晨冬",
+      "image": "https://avatars.githubusercontent.com/u/29781598?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 893,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773034435983,
+      "changelog": "Republish full bundle after path cleanup",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf1268096d3190d9e0dc27d2311047184bce5ea9024c11bf880d12a41eeab4aa"
+}

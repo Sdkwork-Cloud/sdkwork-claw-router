@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29616,
+  "uuid": "skill-clawhub-defillama-prices-openapi-skill",
+  "skillKey": "clawhub-defillama-prices-openapi-skill",
+  "name": "DefiLlama Prices OpenAPI Skill",
+  "summary": "Operate DefiLlama public price APIs through UXC with a curated OpenAPI schema and read-first guardrails.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.defillama_prices_openapi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Operate DefiLlama public price APIs through UXC with a curated OpenAPI schema and read-first gu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/defillama-prices-openapi-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "defillama-prices-openapi-skill",
+      "url": "https://clawhub.ai/skills/defillama-prices-openapi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "defillama-prices-openapi-skill",
+    "url": "https://clawhub.ai/skills/defillama-prices-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/defillama-prices-openapi-skill-012ad2bb64caa847.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/defillama-prices-openapi-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-defillama-prices-openapi-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9117a35fdc6734ba7aaf73b6aa535ab0344997d6b4baeb770d0400161a43de8d",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T02:02:47.434Z"
+}

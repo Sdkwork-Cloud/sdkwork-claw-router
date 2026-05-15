@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19996,
+  "uuid": "skill-clawhub-shadow-phone",
+  "skillKey": "clawhub-shadow-phone",
+  "name": "Shadow Number",
+  "summary": "Get a disposable temp phone number and receive OTP codes to sign up on websites without using your real number. Handles x402 crypto payment automatically.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shadow_phone",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xShadow",
+      "features": [
+        "Get a disposable temp phone number and receive OTP codes to sign up on websites without using y.",
+        "Handles x402 crypto payment automatically."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shadow-phone@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219709178?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shadow-phone",
+      "url": "https://clawhub.ai/skills/shadow-phone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shadow-phone",
+    "url": "https://clawhub.ai/skills/shadow-phone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shadow-phone-f13e07b138c76c7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shadow-phone@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shadow-phone-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bba2483b176649c829d0c013de4e35937a7361b6c73eba927e901210724aeb9d",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T16:33:42.543Z"
+}

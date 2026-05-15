@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18543,
+  "uuid": "skill-clawhub-ghapp",
+  "skillKey": "clawhub-ghapp",
+  "name": "Github App Authentication",
+  "summary": "Give your AI agents and automations their own GitHub (App) identity. Authenticate using GitHub Apps so every commit, PR, and action is attributed to the bot...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghapp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ross Morsali",
+      "features": [
+        "Give your AI agents and automations their own GitHub (App) identity",
+        "Authenticate using GitHub Apps so every commit, PR, and action is attributed to the bot..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ghapp@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/853547?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ghapp",
+      "url": "https://clawhub.ai/skills/ghapp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghapp",
+    "url": "https://clawhub.ai/skills/ghapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghapp-1e0153cdf4e4f3c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ghapp@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-ghapp-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cf26625e22b3f028aa36eb9b591e0cb72d75928cae9809a8bf0ce6cec34885f",
+      "artifactSizeBytes": 2202
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T10:55:10.280Z"
+}

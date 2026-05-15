@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22002,
+  "uuid": "skill-clawhub-gws-workflow-file-announce",
+  "skillKey": "clawhub-gws-workflow-file-announce",
+  "name": "Gws Workflow File Announce",
+  "summary": "Google Workflow: Announce a Drive file in a Chat space.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_workflow_file_announce",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google Workflow: Announce a Drive file in a Chat space."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-workflow-file-announce@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-workflow-file-announce",
+      "url": "https://clawhub.ai/skills/gws-workflow-file-announce"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-workflow-file-announce",
+    "url": "https://clawhub.ai/skills/gws-workflow-file-announce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-workflow-file-announce-515ea31f493ca6e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-workflow-file-announce@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-workflow-file-announce-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:393e50f5671863f4a24a3883d87751c47c9028790a82918cfd95e1bbfaa7ad04",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:35:04.438Z"
+}

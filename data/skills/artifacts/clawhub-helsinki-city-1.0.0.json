@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/helsinki-city@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.helsinki_city",
+  "skill": {
+    "id": 68970,
+    "skillKey": "clawhub-helsinki-city",
+    "name": "Helsinki City"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "helsinki-city",
+    "url": "https://clawhub.ai/skills/helsinki-city",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/helsinki-city-f3f0d3d0e03b6574.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "赫尔辛基是芬兰首都，以设计创新、领先教育体系和诺基亚遗产下的科技生态闻名。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 73,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778184294168,
+      "changelog": "- 首发版本，收录了赫尔辛基的品牌档案、历史时间线和核心产业信息\n- 总结了城市在设计、教育、科技与智慧城市方面的特色\n- 分析了商业模式与护城河，包括创新生态系统与全球领先的教育模式\n- 提供了关键人口与企业数据\n- 列举了Supercell等企业的有趣事实",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5df3e96a2b84bdea9f19a98aa551c852176429050454dc1663bb821d40c7211a"
+}

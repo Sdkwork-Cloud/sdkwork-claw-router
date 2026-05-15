@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9623,
+  "uuid": "skill-clawhub-perf-profiler",
+  "skillKey": "clawhub-perf-profiler",
+  "name": "Performance Profiler",
+  "summary": "Profile and optimize application performance. Use when diagnosing slow code, measuring CPU/memory usage, generating flame graphs, benchmarking functions, load testing APIs, finding memory leaks, or optimizing database queries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perf_profiler",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gitgoodordietrying",
+      "features": [
+        "Profile and optimize application performance",
+        "Use when diagnosing slow code, measuring CPU/memory usage, generating flame graphs, benchmarkin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/perf-profiler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116975874?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "perf-profiler",
+      "url": "https://clawhub.ai/skills/perf-profiler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perf-profiler",
+    "url": "https://clawhub.ai/skills/perf-profiler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perf-profiler-58c898a42061f25e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/perf-profiler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-perf-profiler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de3eabf65c5090fb4e9fd1a457cbbc4ac0cf0f32cc05309e6f954e9b81ddf649",
+      "artifactSizeBytes": 2106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T21:45:15.487Z"
+}

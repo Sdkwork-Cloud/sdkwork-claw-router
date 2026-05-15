@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nini-code-sync@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nini_code_sync",
+  "skill": {
+    "id": 50337,
+    "skillKey": "clawhub-nini-code-sync",
+    "name": "Code Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nini-code-sync",
+    "url": "https://clawhub.ai/skills/nini-code-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nini-code-sync-e4c7ec6449e27df7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill to batch-sync all git repos across machines — pushing uncommitted changes at end of day or pulling latest at start of day. Invoke when the use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "niracler",
+      "userId": "s17ektxxtp4a689vnpykc5sxys85n5wj",
+      "displayName": "Niracler",
+      "image": "https://avatars.githubusercontent.com/u/24842631?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 562,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1777253591310,
+      "changelog": "Release v0.3.0 — see https://github.com/niracler/skill/releases/tag/v0.3.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dfbc1aa6b8902b5ac1573b73d4a181076a8545041e29455eca568f0d8821cb10"
+}

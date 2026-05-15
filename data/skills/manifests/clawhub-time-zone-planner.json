@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39924,
+  "uuid": "skill-clawhub-time-zone-planner",
+  "skillKey": "clawhub-time-zone-planner",
+  "name": "Time Zone Planner",
+  "summary": "Plan cross-time-zone meeting windows for distributed teams, providing region-by-region local time mappings and tradeoff analysis for scheduling decisions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.time_zone_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Plan cross-time-zone meeting windows for distributed teams, providing region-by-region local ti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/time-zone-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "time-zone-planner",
+      "url": "https://clawhub.ai/skills/time-zone-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "time-zone-planner",
+    "url": "https://clawhub.ai/skills/time-zone-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/time-zone-planner-f452e5a606fcef9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/time-zone-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-time-zone-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:caea4c0acb8630dfd786887e81ed389584ec4fe4a6d87aafacd25ae9289d1b69",
+      "artifactSizeBytes": 2322
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T08:09:34.068Z"
+}

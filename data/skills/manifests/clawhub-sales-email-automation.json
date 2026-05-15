@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38201,
+  "uuid": "skill-clawhub-sales-email-automation",
+  "skillKey": "clawhub-sales-email-automation",
+  "name": "Sales Email Automation (IMAP/SMTP)",
+  "summary": "Read and send email via IMAP/SMTP. Check for new/unread messages, fetch content, search mailboxes, mark as read/unread, and send emails with attachments. Wor...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sales_email_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaden's built a claw",
+      "features": [
+        "Read and send email via IMAP/SMTP",
+        "Check for new/unread messages, fetch content, search mailboxes, mark as read/unread, and send e."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sales-email-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64246343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sales-email-automation",
+      "url": "https://clawhub.ai/skills/sales-email-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sales-email-automation",
+    "url": "https://clawhub.ai/skills/sales-email-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sales-email-automation-a6ea4168b2efac92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sales-email-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sales-email-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:804c2bc3e512221865da1a956fa5ab50fd494ec4c43a7b87ffc48d5835975ddc",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T05:38:20.395Z"
+}

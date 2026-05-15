@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71260,
+  "uuid": "skill-clawhub-fitbuddy",
+  "skillKey": "clawhub-fitbuddy",
+  "name": "FitBuddy",
+  "summary": "专属健身追踪与饮食记录助手。支持体重/饮食/运动/饮水记录、BMR/TDEE自动计算、碳循环等饮食策略、食物数据库自动计算营养素、营养知识问答、训练计划制定、趋势图表、定时提醒。触发词：记录饮食/体重/运动/饮水、健身打卡/设置/初始化、今天吃了/练了、查看进度、训练建议、喝水了吗、蛋白质/碳水/脂肪/热量相关、...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fitbuddy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PromiseWHH",
+      "features": [
+        "专属健身追踪与饮食记录助手。支持体重/饮食/运动/饮水记录、BMR/TDEE自动计算、碳循环等饮食策略、食物数据库自动计算营养素、营养知识问答、训练计划制定、趋势图表、定时提醒。触发词：记录."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fitbuddy@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37896947?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fitbuddy",
+      "url": "https://clawhub.ai/skills/fitbuddy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fitbuddy",
+    "url": "https://clawhub.ai/skills/fitbuddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fitbuddy-1c39fc9a8bc7f575.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fitbuddy@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fitbuddy-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c41b4f579101fd8584c0d73e0226bfcf48ec600d3edb098416ce2cbb151b168",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T09:21:51.289Z"
+}

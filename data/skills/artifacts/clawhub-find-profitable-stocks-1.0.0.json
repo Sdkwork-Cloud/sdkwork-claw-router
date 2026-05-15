@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-profitable-stocks@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_profitable_stocks",
+  "skill": {
+    "id": 25692,
+    "skillKey": "clawhub-find-profitable-stocks",
+    "name": "Find Profitable Stocks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-profitable-stocks",
+    "url": "https://clawhub.ai/skills/find-profitable-stocks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-profitable-stocks-3c851cb072611bd9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Screen and analyze stocks based on free cash flow and fundamentals to identify truly profitable companies with health scores and key metrics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "674067795w-wq",
+      "userId": "publishers:674067795w-wq",
+      "displayName": "674067795w-wq",
+      "image": "https://avatars.githubusercontent.com/u/229424916?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 373,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772729668823,
+      "changelog": "Initial release — find profitable stocks using Free Cash Flow and fundamental analysis.\n\n- Screens stocks based on real cash profits, not just accounting earnings.\n- Calculates and ranks companies using health scores, grades, and key metrics (PE, ROE, growth).\n- Supports single stock analysis, multi-stock comparisons, and batch screening.\n- Fetches real-time financial data from East Money (with mock data fallback).\n- Plain-language commands supported in both English and Chinese.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:648127564a486afc235cf53a4d0c397d2c3e48d894db16d94201f5162b4fb12f"
+}

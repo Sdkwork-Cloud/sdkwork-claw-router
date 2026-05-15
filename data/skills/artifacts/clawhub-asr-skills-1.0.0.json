@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/asr-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asr_skills",
+  "skill": {
+    "id": 29215,
+    "skillKey": "clawhub-asr-skills",
+    "name": "asr-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asr-skills",
+    "url": "https://clawhub.ai/skills/asr-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asr-skills-7df8c4a8e73e0a2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks to \"transcribe audio\", \"transcribe video\", \"convert speech to text\", \"generate subtitles\", \"create captions\", \"i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lgwanai",
+      "userId": "publishers:lgwanai",
+      "displayName": "lgwanai",
+      "image": "https://avatars.githubusercontent.com/u/210057668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774027764903,
+      "changelog": "Initial release of local ASR transcription skill with speaker diarization.\n\n- Transcribes audio and video files with automatic speaker identification using FunASR.\n- Supports multiple output formats: TXT, JSON, SRT, ASS/SSA, Markdown.\n- Provides hardware auto-detection for GPU/MPS/CPU, and handles long files efficiently.\n- Offers both CLI and Python API usage with asynchronous execution for long tasks.\n- Ensures privacy by processing all files locally; models download on first use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b01349edca5998428e630de4b5db5ff63bce4210ff975bcae0e0ebd91a3c807"
+}

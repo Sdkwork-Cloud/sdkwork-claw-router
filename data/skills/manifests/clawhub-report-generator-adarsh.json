@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26954,
+  "uuid": "skill-clawhub-report-generator-adarsh",
+  "skillKey": "clawhub-report-generator-adarsh",
+  "name": "Report Generator Adarsh",
+  "summary": "Generates a structured marketing audit report from aggregated data using a single GPT-4.1-mini API call with six predefined sections.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.report_generator_adarsh",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adarsh More",
+      "features": [
+        "Generates a structured marketing audit report from aggregated data using a single GPT-4.1-mini."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/report-generator-adarsh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103880462?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "report-generator-adarsh",
+      "url": "https://clawhub.ai/skills/report-generator-adarsh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "report-generator-adarsh",
+    "url": "https://clawhub.ai/skills/report-generator-adarsh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/report-generator-adarsh-d4e20bb1862ac4cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/report-generator-adarsh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-report-generator-adarsh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:019bb3a0c5425c561df427f83f15eb1686d75cc03ac1ed3ad39e0a132063a865",
+      "artifactSizeBytes": 2318
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T05:40:19.460Z"
+}

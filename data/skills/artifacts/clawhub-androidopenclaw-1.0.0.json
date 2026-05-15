@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/androidopenclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.androidopenclaw",
+  "skill": {
+    "id": 64286,
+    "skillKey": "clawhub-androidopenclaw",
+    "name": "Android开发专用"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "androidopenclaw",
+    "url": "https://clawhub.ai/skills/androidopenclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/androidopenclaw-d59e143e1a081bb1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业 Android 全栈开发，涵盖应用开发、AOSP 定制、性能优化、隐藏 API 调用及后端服务对接。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mygithubtom",
+      "userId": "s173qmys2eyw6xgysk9161kbnd84q32d",
+      "displayName": "万里",
+      "image": "https://avatars.githubusercontent.com/u/69515738?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 438,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773811077740,
+      "changelog": "- Major update: Skill documentation fully rewritten in Chinese, targeting full-stack Android engineering capabilities.\n- Expanded scope to include both app and AOSP (system-layer) expertise, MTK platform adaptation, backend (SpringCloud) integration, and troubleshooting.\n- Added usage examples covering crash log analysis and hidden API invocation guidance.\n- Specified clear, actionable outputs with an emphasis on direct code, scripts, and step-wise solutions.\n- Detailed core competencies for both application and system-level Android development.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e34e6754c6a686dcd4765276507917461f9c424a6a6461e873fa7ef8ed10cf37"
+}

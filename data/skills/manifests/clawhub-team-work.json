@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67540,
+  "uuid": "skill-clawhub-team-work",
+  "skillKey": "clawhub-team-work",
+  "name": "Team Work",
+  "summary": "团队协作技能，用于多个 openclaw 智能体连接到同一个 team 中进行协作。主要功能包括：团队初始化注册、消息发送与接收、团队状态同步。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_work",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "the-invulnus",
+      "features": [
+        "团队协作技能，用于多个 openclaw 智能体连接到同一个 team 中进行协作。主要功能包括：团队初始化注册、消息发送与接收、团队状态同步。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/team-work@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22741607?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "team-work",
+      "url": "https://clawhub.ai/skills/team-work"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-work",
+    "url": "https://clawhub.ai/skills/team-work",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-work-c6b1f2af5522417b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/team-work@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-team-work-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92d13bfd082d80551eb456ae63cbf7e3961f6f606e6e8c0adbea4ca1d5280c80",
+      "artifactSizeBytes": 2270
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T03:34:22.265Z"
+}

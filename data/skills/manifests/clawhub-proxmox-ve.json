@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57135,
+  "uuid": "skill-clawhub-proxmox-ve",
+  "skillKey": "clawhub-proxmox-ve",
+  "name": "Proxmox VE",
+  "summary": "Use Proxmox VE (PVE) through the `pvesh`, `qm`, and `pct` CLIs for cluster, node, VM, and LXC inspection plus routine lifecycle work. Trigger when tasks ment...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxmox_ve",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jimpang8",
+      "features": [
+        "Use Proxmox VE (PVE) through the `pvesh`, `qm`, and `pct` CLIs for cluster, node, VM, and LXC i.",
+        "Trigger when tasks ment..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proxmox-ve@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27860553?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proxmox-ve",
+      "url": "https://clawhub.ai/skills/proxmox-ve"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxmox-ve",
+    "url": "https://clawhub.ai/skills/proxmox-ve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxmox-ve-b4c81fc0b194dac2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proxmox-ve@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-proxmox-ve-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f135a334583ab9f7dc0b9487e0ff7a91b657f9d14727fad6504f079b81025bd",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T09:02:18.720Z"
+}

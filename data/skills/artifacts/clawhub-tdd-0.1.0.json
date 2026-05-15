@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tdd@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tdd",
+  "skill": {
+    "id": 54746,
+    "skillKey": "clawhub-tdd",
+    "name": "TDD Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tdd",
+    "url": "https://clawhub.ai/skills/tdd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tdd-17c706b273e4f19e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Test-Driven Development for coding and bug fixing. cycle - Red→Green→Refactor cycle, defining expected behavior, bug-fix TDD, anti-patterns [cycle.md], run -..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drumrobot",
+      "userId": "s17ay1v6v88r2m102pvvc44gz183qcrm",
+      "displayName": "es6kr",
+      "image": "https://avatars.githubusercontent.com/u/819969?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775016846615,
+      "changelog": "Initial release: Red-Green-Refactor cycle, test runner, test design strategies",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4fba6575ad41087b1610c41c4fbd8c9a77867f7f013134c24663b4616f54fee2"
+}

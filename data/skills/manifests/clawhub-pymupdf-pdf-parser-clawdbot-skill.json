@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8890,
+  "uuid": "skill-clawhub-pymupdf-pdf-parser-clawdbot-skill",
+  "skillKey": "clawhub-pymupdf-pdf-parser-clawdbot-skill",
+  "name": "PyMuPDF PDF Parser Clawdbot Skill",
+  "summary": "Fast local PDF parsing with PyMuPDF (fitz) for Markdown/JSON outputs and optional images/tables. Use when speed matters more than robustness, or as a fallback while heavier parsers are unavailable. Default to single-PDF parsing with per-do.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pymupdf_pdf_parser_clawdbot_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kesslerio",
+      "features": [
+        "Fast local PDF parsing with PyMuPDF (fitz) for Markdown/JSON outputs and optional images/tables",
+        "Use when speed matters more than robustness, or as a fallback while heavier parsers are unavail.",
+        "Default to single-PDF parsing with per-document output folders."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pymupdf-pdf-parser-clawdbot-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2647990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pymupdf-pdf-parser-clawdbot-skill",
+      "url": "https://clawhub.ai/skills/pymupdf-pdf-parser-clawdbot-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pymupdf-pdf-parser-clawdbot-skill",
+    "url": "https://clawhub.ai/skills/pymupdf-pdf-parser-clawdbot-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pymupdf-pdf-parser-clawdbot-skill-059622ba8694f333.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pymupdf-pdf-parser-clawdbot-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pymupdf-pdf-parser-clawdbot-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46a4e4dc675b4a8220a815200dfaf97747de37776fb2a0251fc725a0d70e9c4f",
+      "artifactSizeBytes": 2525
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-23T19:27:11.096Z"
+}

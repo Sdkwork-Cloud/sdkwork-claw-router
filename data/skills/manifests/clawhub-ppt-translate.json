@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34418,
+  "uuid": "skill-clawhub-ppt-translate",
+  "skillKey": "clawhub-ppt-translate",
+  "name": "Translate Chinese PPT to English",
+  "summary": "Translate Chinese PowerPoint presentations to English while preserving all images, charts, shapes, and media content. Adjusts fonts to Calibri and optimizes...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt_translate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Birkhoff-China",
+      "features": [
+        "Translate Chinese PowerPoint presentations to English while preserving all images, charts, shap.",
+        "Adjusts fonts to Calibri and optimizes..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ppt-translate@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9637693?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ppt-translate",
+      "url": "https://clawhub.ai/skills/ppt-translate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt-translate",
+    "url": "https://clawhub.ai/skills/ppt-translate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt-translate-6dd88710804cb348.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ppt-translate@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ppt-translate-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a1dafc21fd7040ea908d344cfff5d465ea1cfb266c36f1efd4e0c06aa3ffc24",
+      "artifactSizeBytes": 2498
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:16:54.850Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42299,
+  "uuid": "skill-clawhub-supplier-sync-manager",
+  "skillKey": "clawhub-supplier-sync-manager",
+  "name": "Supplier Sync Manager",
+  "summary": "Build a supplier sync control brief for inventory, catalog, pricing, order-handoff, and onboarding workflows. Use when a team needs to spot mapping gaps, lat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supplier_sync_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Build a supplier sync control brief for inventory, catalog, pricing, order-handoff, and onboard.",
+        "Use when a team needs to spot mapping gaps, lat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/supplier-sync-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "supplier-sync-manager",
+      "url": "https://clawhub.ai/skills/supplier-sync-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supplier-sync-manager",
+    "url": "https://clawhub.ai/skills/supplier-sync-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supplier-sync-manager-47e51c67af69db8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/supplier-sync-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-supplier-sync-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9194e67b49f0ab83316cb203ef837092c0d213c880e4e4c818150a0b71e5a35e",
+      "artifactSizeBytes": 2498
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T01:47:31.695Z"
+}

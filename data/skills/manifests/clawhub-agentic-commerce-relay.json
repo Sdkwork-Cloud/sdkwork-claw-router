@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15185,
+  "uuid": "skill-clawhub-agentic-commerce-relay",
+  "skillKey": "clawhub-agentic-commerce-relay",
+  "name": "Agentic Commerce Relay",
+  "summary": "Run the CCTP relay to burn USDC on a source chain and mint on a destination chain, returning verifiable receipts. Use for multichain agent-to-agent settlement, with optional Moltbook discovery and integrations.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_commerce_relay",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nativ3ai",
+      "features": [
+        "Run the CCTP relay to burn USDC on a source chain and mint on a destination chain, returning ve.",
+        "Use for multichain agent-to-agent settlement, with optional Moltbook discovery and integrations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentic-commerce-relay@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56003092?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentic-commerce-relay",
+      "url": "https://clawhub.ai/skills/agentic-commerce-relay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-commerce-relay",
+    "url": "https://clawhub.ai/skills/agentic-commerce-relay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-commerce-relay-af5dde7057e3c6c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentic-commerce-relay@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentic-commerce-relay-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58a51b5b4d79c2a6e43d667f9e478558b837aa31c2977ae4186bf8ef2a4fd94b",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T18:55:05.226Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59868,
+  "uuid": "skill-clawhub-rocky-minimax-media",
+  "skillKey": "clawhub-rocky-minimax-media",
+  "name": "MiniMax Media Generator",
+  "summary": "MiniMax 媒体生成插件 - 图片/视频/TTS/音乐生成，支持交互式选择模型",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rocky_minimax_media",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rocky.Tian",
+      "features": [
+        "MiniMax 媒体生成插件",
+        "图片/视频/TTS/音乐生成，支持交互式选择模型"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rocky-minimax-media@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272256358?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rocky-minimax-media",
+      "url": "https://clawhub.ai/skills/rocky-minimax-media"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rocky-minimax-media",
+    "url": "https://clawhub.ai/skills/rocky-minimax-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rocky-minimax-media-f105d21448e0397e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rocky-minimax-media@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rocky-minimax-media-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:793f42b9b84de088c42eb13325c4f48c1c1fd1dc0f8c10df91dcdbd331d20c7c",
+      "artifactSizeBytes": 2250
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T11:06:27.935Z"
+}

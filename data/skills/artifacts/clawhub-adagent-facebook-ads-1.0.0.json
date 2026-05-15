@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adagent-facebook-ads@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adagent_facebook_ads",
+  "skill": {
+    "id": 55925,
+    "skillKey": "clawhub-adagent-facebook-ads",
+    "name": "Adagent Facebook Ads"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adagent-facebook-ads",
+    "url": "https://clawhub.ai/skills/adagent-facebook-ads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adagent-facebook-ads-e75ee3db66f94536.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Facebook/Meta Ads — create campaigns, ad sets, ads, monitor performance, and target audiences. Use when the user says 'Facebook Ads', 'FB 廣告', 'Meta A..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snoopyrain",
+      "userId": "s17caa3d3hyz4mwjdj866q0we983qd7s",
+      "displayName": "snoopyrain",
+      "image": "https://avatars.githubusercontent.com/u/9717776?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 516,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774853508284,
+      "changelog": "adagent-facebook-ads v1.0.0\n\n- Initial release: Manage Facebook/Meta Ads via AdAgent platform\n- Create, pause, enable, and manage campaigns, ad sets, and ads\n- Research and apply audience targeting (interests, locations, categories)\n- Monitor ad performance with insights at account, campaign, and ad set levels\n- All authentication via secure MCP Connector link—no local credentials needed\n- Full workflow support with error handling and compliance tools",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2bd579549cc0e78ebb43ed2235c9fbfc4d4909ecb3e7826a5e87aba62ca9e19"
+}

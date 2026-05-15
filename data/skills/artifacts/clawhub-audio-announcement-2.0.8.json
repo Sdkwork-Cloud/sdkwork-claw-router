@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audio-announcement@2.0.8",
+  "version": "2.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_announcement",
+  "skill": {
+    "id": 65521,
+    "skillKey": "clawhub-audio-announcement",
+    "name": "Audio Announcement"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-announcement",
+    "url": "https://clawhub.ai/skills/audio-announcement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-announcement-6e3a6bc98c5d005c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实时语音播报 AI 操作状态，支持多语言和消息队列，提升透明度与安全感，适配多平台。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wililam",
+      "userId": "s17bs8ksqhf8p90dsmtvbpsn2583g8s3",
+      "displayName": "AI-GUO",
+      "image": "https://avatars.githubusercontent.com/u/8183952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "2.0.8",
+      "createdAt": 1775401497734,
+      "changelog": "**Upgrade summary:** This is a significant update with new scripts, improved packaging, enhanced CLI tools, config system, and stricter integration checks.\n\n- Added 12 new files, removed 4 obsolete scripts, and updated 5 others including README and package info.\n- Introduced a Python package structure with `audio_announcement/` modules and new CLI support.\n- Added central configuration via `requirements.txt`, `setup.py`, and a config file (see docs for paths).\n- Replaced and unified announce scripts (`announce.sh`, `.py`) for better path resolution and platform reliability.\n- Updated documentation and integration workflow to guide self-checks, best practices, and fail-safes.\n- Enhanced safety boundaries—certain destructive operations now require explicit confirmation.\n- All announcements are now played locally in the background with improved volume defaults; no longer sent as files to chats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6744d3216b9f323321b800bb351c6a7a300ea9a5211f3282641230c76a3e883"
+}

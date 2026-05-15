@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daojia@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daojia",
+  "skill": {
+    "id": 72136,
+    "skillKey": "clawhub-daojia",
+    "name": "Daojia"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daojia",
+    "url": "https://clawhub.ai/skills/daojia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daojia-61d29f297da9312c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供京东到家公开商家与商品信息查询，包含价格、库存、评价及配送时效的摘要与对比分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773972355127,
+      "changelog": "jd-daojia-hot-trend v0.1.0\n\n- Initial release registering \"京东到家\" (JD Daojia) hot trend skill.\n- Supports public business and product page info retrieval and price/stock summarization.\n- Limits: No order placement, reverse engineering, or bulk scraping; only for lightweight analysis and alerts on public pages.\n- Key tasks: business listing summaries, product detail extraction, category comparisons.\n- Adheres to compliance rules: respects platform permissions, no API usage, and results for internal analysis only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a57e9f6b3d70f0c73a54051d5daabfc10fd2e3ae656165796ef2899ad51d9ac"
+}

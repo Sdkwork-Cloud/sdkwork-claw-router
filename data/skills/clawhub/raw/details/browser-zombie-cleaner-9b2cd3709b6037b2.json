@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "browser-zombie-cleaner",
+    "displayName": "Browser Zombie Cleaner",
+    "summary": "Detect and clean up zombie browser processes left by OpenClaw's browser tool. When the OpenClaw Gateway restarts, Playwright-launched browser processes get o...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1772887030765,
+    "updatedAt": 1778305272488
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1772887030765,
+    "changelog": "Initial release of browser-zombie-cleaner.\n\n- Detects orphaned browser processes left by OpenClaw's browser tool after Gateway restarts.\n- Default safe mode: only detects and reports zombie browsers; uses triple verification before termination.\n- Option to terminate zombie processes with --kill, supporting grace periods and logging all actions.\n- Filters processes by user, age, and OpenClaw browser signature to prevent accidental terminations.\n- Supports Linux and macOS; logs actions to /tmp/openclaw/zombie-browser-cleanup.log for auditability.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "guoqunabc",
+    "userId": "s1751bafvdydz5m2jxahw6dyrs83hqr3",
+    "displayName": "Madoka",
+    "image": "https://avatars.githubusercontent.com/u/9532020?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778305272488
+  }
+}

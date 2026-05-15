@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-rfp-response-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_rfp_response_generator",
+  "skill": {
+    "id": 32222,
+    "skillKey": "clawhub-afrexai-rfp-response-generator",
+    "name": "Rfp Response Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-rfp-response-generator",
+    "url": "https://clawhub.ai/skills/afrexai-rfp-response-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-rfp-response-generator-81cd8ef862168898.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate structured, compliant RFP responses by analyzing requirements, mapping company strengths, identifying gaps, and producing tailored proposal sections..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "afrexai-cto",
+      "userId": "s176d3cp92hzph7jd2dtka26md83h078",
+      "displayName": "afrexai-cto",
+      "image": "https://avatars.githubusercontent.com/u/261321054?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773774081688,
+      "changelog": "Initial release of the RFP Response Generator skill.\n\n- Generates structured, persuasive responses to RFPs, RFIs, and RFQs using a detailed multi-step process.\n- Extracts and maps requirements, analyzes company fit, and flags compliance gaps with mitigation suggestions.\n- Produces executive summaries, technical/management approaches, past performance narratives, and compliance matrices.\n- Ensures outputs are compliant, evidence-based, concise, and tailored to customer language and evaluation criteria.\n- Includes strict quality rules and anti-patterns for factual and impactful responses.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93f434cd11a36372c4fa2228204ab4286d8bab3538b41fc428a9720ac031f81f"
+}

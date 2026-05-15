@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-companion@2.7.1",
+  "version": "2.7.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_companion",
+  "skill": {
+    "id": 69033,
+    "skillKey": "clawhub-my-companion",
+    "name": "My Companion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-companion",
+    "url": "https://clawhub.ai/skills/my-companion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-companion-d2655b3c5a150258.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文AI伴侣服务，提供情感陪伴、智能记忆与个性化性格切换，每次对话均附带情绪头像图片。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryanbihai",
+      "userId": "s171em0jpp8yeqxqds2n145fyx83q5q8",
+      "displayName": "ryanbihai",
+      "image": "https://avatars.githubusercontent.com/u/89728875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 312,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.7.1",
+      "createdAt": 1778132719070,
+      "changelog": "Security: generalized character descriptions from photorealistic to anime illustration style; added entertainment-purpose disclaimer; added image safety guidelines",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36e9c68b1e0b986feba656f1e873ae33ac4c5070151d94cb23876a943417d990"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apple-mail-search-safe@5.0.4",
+  "version": "5.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_mail_search_safe",
+  "skill": {
+    "id": 9140,
+    "skillKey": "clawhub-apple-mail-search-safe",
+    "name": "Apple Mail Search Safe (fruitmail)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-mail-search-safe",
+    "url": "https://clawhub.ai/skills/apple-mail-search-safe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-mail-search-safe-b461d6a761834289.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Apple Mail search on macOS with fast metadata and full body lookup. Use for finding messages in Mail.app by subject/sender/recipient/date, opening messages,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gumadeiras",
+      "userId": "s1753zvp6tjqvngzbef17gxshh849mep",
+      "displayName": "Gustavo Madeira Santana",
+      "image": "https://avatars.githubusercontent.com/u/5599352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4447,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 4,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "5.0.4",
+      "createdAt": 1771448906692,
+      "changelog": "Set display title to Apple Mail Search Safe (fruitmail).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:90248dffaeb331b58b596bbaee844ecab46f674f46b81a93a30a6dd322a03eff"
+}

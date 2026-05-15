@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16029,
+  "uuid": "skill-clawhub-surrealfs",
+  "skillKey": "clawhub-surrealfs",
+  "name": "surrealfs",
+  "summary": "SurrealFS virtual filesystem for AI agents. Rust core + Python agent (Pydantic AI). Persistent file operations backed by SurrealDB. Part of the surreal-skill...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.surrealfs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Basit Mustafa",
+      "features": [
+        "SurrealFS virtual filesystem for AI agents",
+        "Rust core + Python agent (Pydantic AI)",
+        "Persistent file operations backed by SurrealDB",
+        "Part of the surreal-skill..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/surrealfs@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1157207?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "surrealfs",
+      "url": "https://clawhub.ai/skills/surrealfs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "surrealfs",
+    "url": "https://clawhub.ai/skills/surrealfs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/surrealfs-98581ce6fc94cf9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/surrealfs@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-surrealfs-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb42950c7733645179711de1d644a67e66a3619c99d2efe5a229c332b0b727fb",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T20:06:03.827Z"
+}

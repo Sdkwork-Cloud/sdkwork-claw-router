@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-local-model@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_local_model",
+  "skill": {
+    "id": 46485,
+    "skillKey": "clawhub-text-to-video-local-model",
+    "name": "Text To Video Local Model"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-local-model",
+    "url": "https://clawhub.ai/skills/text-to-video-local-model",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-local-model-eb527ebe34446df6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text prompts into AI-generated videos with this skill. Works with TXT, JSON, CSV, MD files up to 500MB. developers and AI enthusiasts use it for gen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776362827270,
+      "changelog": "Initial release of text-to-video-local-model.\n\n- Generate short AI-driven videos (up to 1080p MP4) from text prompts using a local model via a cloud backend.\n- Supports TXT, JSON, CSV, and MD files up to 500MB.\n- Handles uploads, prompt-based edits, exports, state checks, and credit balance through clear user commands.\n- Automated setup, including anonymous token generation and session management.\n- Cloud GPU processing delivers videos in 1–3 minutes per prompt.\n- Comprehensive error handling and workflow tips for a smooth editing experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:40528700f4dfc0da07c34ba56a82d48de40cdcf7905e35c36d6e8c41ec90aebb"
+}

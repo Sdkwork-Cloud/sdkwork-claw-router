@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vetclaw-bundle@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vetclaw_bundle",
+  "skill": {
+    "id": 64334,
+    "skillKey": "clawhub-vetclaw-bundle",
+    "name": "VetClaw Bundle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vetclaw-bundle",
+    "url": "https://clawhub.ai/skills/vetclaw-bundle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vetclaw-bundle-cb6b121616a14c95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "VetClaw - 52个宠物医院/兽医诊所AI自动化技能套装。覆盖排班管理、病历记录、客户回访、经营分析等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daimingvip-a11y",
+      "userId": "s17d8mhtb3mhewbjj388vd38z983mfnf",
+      "displayName": "daimingvip-a11y",
+      "image": "https://avatars.githubusercontent.com/u/232273827?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774500262950,
+      "changelog": "- No changes detected in this version.\n- Version updated to 1.0.1 with no modifications to files or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5236182dcbcb062cc7defdd2851f96a41dc15e88e93356e480d04245ebbd16f"
+}

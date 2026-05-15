@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentsbank@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentsbank",
+  "skill": {
+    "id": 11425,
+    "skillKey": "clawhub-agentsbank",
+    "name": "AgentsBank"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentsbank",
+    "url": "https://clawhub.ai/skills/agentsbank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentsbank-d015faa3e0c54e29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure multi-chain crypto wallet management for AI agents with read-only access by default and explicit user consent required for transactions and wallet cre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cryruz",
+      "userId": "publishers:cryruz",
+      "displayName": "cryruz",
+      "image": "https://avatars.githubusercontent.com/u/84926537?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1834,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1770766525833,
+      "changelog": "# Changelog\n\nAll notable changes to the AgentsBank SDK are documented in this file.\n\n## [1.0.6] - 2026-02-11\n\n### Changed\n- Cleaned up repository: removed generated `index.d.mts` build artifact\n- Removed old `CHANGELOG_1.0.4.md` (consolidated into single CHANGELOG.md)\n- Improved `.npmignore` to exclude non-essential files\n\n### Dependencies\n- No dependency changes\n\n## [1.0.6] - 2026-02-11\n\n### Added\n- Comprehensive error types and handling in new `src/errors.ts`\n- Enhanced type definitions for better IDE support and type safety\n- Improved error messages for SDK consumers\n\n### Changed\n- Enhanced client implementation with better request handling\n- Updated type definitions in `src/types.ts` for clarity and completeness\n- Improved error propagation throughout SDK\n\n### Fixed\n- Better error context in API responses\n- Type consistency across client methods\n\n### Dependencies\n- Updated package dependencies to latest compatible versions\n\n## [1.0.4] - 2026-02-10\n\n### Added\n- `estimateGas` parameter validation (address format, amount value, chain type)\n- `listWallets` pagination support with `limit` and `offset` parameters\n- Enhanced client-side validation for all SDK methods\n\n### Fixed\n- **estimateGas**: Full parameter validation before API calls\n- **signMessage**: Improved key format handling for EVM and Solana chains\n- **listWallets**: Pagination support for bulk wallet listing\n- Better error messages and graceful fallbacks across all chains\n\n### Changed\n- Validation happens earlier (client-side) to catch errors before API calls\n- More robust key handling across Ethereum, BSC, Solana, and Bitcoin chains\n\n## [1.0.3] - 2026-02-06\n\n### Fixed\n- Fixed missing `wallet_id` in wallet response objects\n\n## [1.0.2] - 2026-02-06\n\n### Added\n- X-API-Key authentication support for programmatic access\n\n## [1.0.1] - 2026-02-03\n\n### Added\n- Initial SDK release\n- Multi-chain wallet support (Ethereum, BSC, Solana, Bitcoin)\n- Transaction creation and monitoring\n- Message signing capabilities\n- Agent self-registration\n- Balance and transaction history queries",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a3a4bbbc3f2bb5c09e02ca5f56327045ef0d3caffb2c28fbb361c4048d74697c"
+}

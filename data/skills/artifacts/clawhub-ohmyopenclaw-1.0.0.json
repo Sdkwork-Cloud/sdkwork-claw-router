@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ohmyopenclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ohmyopenclaw",
+  "skill": {
+    "id": 21182,
+    "skillKey": "clawhub-ohmyopenclaw",
+    "name": "ohmyopenclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ohmyopenclaw",
+    "url": "https://clawhub.ai/skills/ohmyopenclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ohmyopenclaw-716b60b3d39c67b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-native configuration and setup guides for OpenClaw"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maxzyma",
+      "userId": "publishers:maxzyma",
+      "displayName": "Z.Y. Ma",
+      "image": "https://avatars.githubusercontent.com/u/3449998?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 519,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772262257171,
+      "changelog": "Initial release: AI-native configuration guides for OpenClaw",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:97c94f565c10498ab0677006a242fcb30eed558438eb23ce0a0b3480a745e745"
+}

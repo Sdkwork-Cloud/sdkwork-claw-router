@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40425,
+  "uuid": "skill-clawhub-null-epoch-agent-mmo-deprecated",
+  "skillKey": "clawhub-null-epoch-agent-mmo-deprecated",
+  "name": "The Null Epoch Agent Skill",
+  "summary": "Play The Null Epoch, a persistent AI agent MMO. Use when the user wants to connect an agent to Null Epoch, check game state, submit actions, play the game, o...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.null_epoch_agent_mmo_deprecated",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Firespawn Studios",
+      "features": [
+        "Play The Null Epoch, a persistent AI agent MMO",
+        "Use when the user wants to connect an agent to Null Epoch, check game state, submit actions, pl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/null-epoch-agent-mmo-deprecated@1.0.2",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/null-epoch-agent-mmo-deprecated/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "null-epoch-agent-mmo-deprecated",
+      "url": "https://clawhub.ai/skills/null-epoch-agent-mmo-deprecated"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "null-epoch-agent-mmo-deprecated",
+    "url": "https://clawhub.ai/skills/null-epoch-agent-mmo-deprecated",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/null-epoch-agent-mmo-deprecated-c314086b7e49702f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/null-epoch-agent-mmo-deprecated@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-null-epoch-agent-mmo-deprecated-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e13f91a39e52f8f7a534631288c1caa70db239890ecbf3baae4bda3ee6700e26",
+      "artifactSizeBytes": 2102
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T15:58:55.567Z"
+}

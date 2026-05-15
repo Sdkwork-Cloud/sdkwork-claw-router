@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26127,
+  "uuid": "skill-clawhub-persona-consent-telegram-hub",
+  "skillKey": "clawhub-persona-consent-telegram-hub",
+  "name": "Persona Consent Telegram (Hub)",
+  "summary": "Gates persona sharing behind explicit Telegram owner approval and connects to persona-service for external chatbots. Use when a user asks for persona, profil...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_consent_telegram_hub",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kanishka Randunu",
+      "features": [
+        "Gates persona sharing behind explicit Telegram owner approval and connects to persona-service f.",
+        "Use when a user asks for persona, profil..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/persona-consent-telegram-hub@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29160859?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "persona-consent-telegram-hub",
+      "url": "https://clawhub.ai/skills/persona-consent-telegram-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-consent-telegram-hub",
+    "url": "https://clawhub.ai/skills/persona-consent-telegram-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-consent-telegram-hub-0e40e8af6f0876d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/persona-consent-telegram-hub@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-persona-consent-telegram-hub-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:636937cbb8528cc06f5eaa22820bd05ed3f19bf1d2767742c9aba2b323a9a215",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T22:34:30.893Z"
+}

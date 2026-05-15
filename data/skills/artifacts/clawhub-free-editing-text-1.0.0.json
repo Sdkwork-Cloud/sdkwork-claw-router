@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-editing-text@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_editing_text",
+  "skill": {
+    "id": 47268,
+    "skillKey": "clawhub-free-editing-text",
+    "name": "Free Editing Text"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-editing-text",
+    "url": "https://clawhub.ai/skills/free-editing-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-editing-text-6f5a180c6e2f82bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute tutorial video with on-screen text into 1080p text-edited videos just by typing what you need. Whether it's editing on-screen text in videos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777219759276,
+      "changelog": "Free Editing Text — First Release\n\n- Instantly edit and export video text overlays by simply describing your changes — no video timeline or manual export setup required.\n- Automatic cloud GPU processing: uploads, edits, and renders 1080p MP4 videos in 20–40 seconds for most clips.\n- Seamless user onboarding: auto-connects and manages secure tokens and sessions without exposing technical details.\n- Supports video, audio, and image formats up to 500MB, with clear error handling and status updates.\n- Workflow covers uploads, credit checks, project state, and instant exports with easy-to-understand prompts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bfdd525662c94efa05cffb6787fc4ed9de6b084fe89e1d88a332889edb238559"
+}

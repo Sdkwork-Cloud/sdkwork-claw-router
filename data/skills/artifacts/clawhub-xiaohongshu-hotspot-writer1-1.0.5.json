@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-hotspot-writer1@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_hotspot_writer1",
+  "skill": {
+    "id": 62983,
+    "skillKey": "clawhub-xiaohongshu-hotspot-writer1",
+    "name": "Xiaohongshu Hotspot Writer1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-hotspot-writer1",
+    "url": "https://clawhub.ai/skills/xiaohongshu-hotspot-writer1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-hotspot-writer1-aa99b2478a5d2c75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日热点文案助手，专为AI/科技账号设计。用户说\"帮我生成今日小红书热点文案日报\"、\"今日AI热点\"、\"帮我写小红书\"时触发此skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ztnt-816",
+      "userId": "s17czphfkeafnecg0cz5kv13t984gwy3",
+      "displayName": "ZTNT-816",
+      "image": "https://avatars.githubusercontent.com/u/192766300?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1287,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773557208416,
+      "changelog": "- 增加了严格限制说明：全程只能使用 web_fetch 和直接文字输出，严禁使用 edit、write、exec、bash 等工具。\n- 原有流程未作其他调整，依旧保持AI热点抓取、筛选、文案生成及日报输出的核心功能。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70f232eb0d14bd7d4605a4d033a42b34b8efaf83182bb0023db53dbecfb42acc"
+}

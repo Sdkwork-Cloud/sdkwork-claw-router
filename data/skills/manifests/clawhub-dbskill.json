@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44619,
+  "uuid": "skill-clawhub-dbskill",
+  "skillKey": "clawhub-dbskill",
+  "name": "database_skill",
+  "summary": "Python-based database connectivity skill supporting MySQL, PostgreSQL, Oracle, SQL Server, and SQLite. Provides connection management, parameterized query ex...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dbskill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jami-Lin",
+      "features": [
+        "Python-based database connectivity skill supporting MySQL, PostgreSQL, Oracle, SQL Server, and.",
+        "Provides connection management, parameterized query ex..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dbskill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59037276?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dbskill",
+      "url": "https://clawhub.ai/skills/dbskill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dbskill",
+    "url": "https://clawhub.ai/skills/dbskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dbskill-99ec7befb16b27e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dbskill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dbskill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e117aeb992464d02e8b7bc0ffecd87e5c325b7b7985f2601b28b1bcd1e1fae73",
+      "artifactSizeBytes": 2477
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T16:19:11.957Z"
+}

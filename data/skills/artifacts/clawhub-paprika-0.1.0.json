@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paprika@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paprika",
+  "skill": {
+    "id": 10755,
+    "skillKey": "clawhub-paprika",
+    "name": "Paprika"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paprika",
+    "url": "https://clawhub.ai/skills/paprika",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paprika-67aa6b6c143c6683.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access recipes, meal plans, and grocery lists from Paprika Recipe Manager. Use when user asks about recipes, meal planning, or cooking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mjrussell",
+      "userId": "publishers:mjrussell",
+      "displayName": "Matt Russell",
+      "image": "https://avatars.githubusercontent.com/u/1641895?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2124,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1767852419667,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:81bd7c60b6ff0cab068d26ad258118fb782da6be26d8582bb683d5e821eb2f1b"
+}

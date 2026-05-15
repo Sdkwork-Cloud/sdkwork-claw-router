@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28737,
+  "uuid": "skill-clawhub-zoho-creator",
+  "skillKey": "clawhub-zoho-creator",
+  "name": "Zoho Creator",
+  "summary": "Zoho Creator integration. Manage Applications, Users, Roles. Use when the user wants to interact with Zoho Creator data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoho_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Zoho Creator integration",
+        "Manage Applications, Users, Roles",
+        "Use when the user wants to interact with Zoho Creator data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zoho-creator@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zoho-creator",
+      "url": "https://clawhub.ai/skills/zoho-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoho-creator",
+    "url": "https://clawhub.ai/skills/zoho-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoho-creator-4e182f7eaff0351c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zoho-creator@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-zoho-creator-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9937309d1ba3e7c6179a2ef47233242026b848a8251a7fc20475257ac9a26d1",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:06:00.171Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53056,
+  "uuid": "skill-clawhub-100-percent-bars",
+  "skillKey": "clawhub-100-percent-bars",
+  "name": "100 Percent Bars",
+  "summary": "Compare composition across segments using 100% stacked bars. Use for competitive analysis, cost structure comparison, and portfolio composition.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.100_percent_bars",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linuszz",
+      "features": [
+        "Compare composition across segments using 100% stacked bars",
+        "Use for competitive analysis, cost structure comparison, and portfolio composition."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/100-percent-bars@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46770204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "100-percent-bars",
+      "url": "https://clawhub.ai/skills/100-percent-bars"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "100-percent-bars",
+    "url": "https://clawhub.ai/skills/100-percent-bars",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/100-percent-bars-564c6e36e592baf5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/100-percent-bars@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-100-percent-bars-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1422e9c04503122fd7c298558ca3f091bf3a17eff1db82088b8f7a8bb12fb3b",
+      "artifactSizeBytes": 2216
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:41:35.986Z"
+}

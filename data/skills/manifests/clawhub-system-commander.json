@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20683,
+  "uuid": "skill-clawhub-system-commander",
+  "skillKey": "clawhub-system-commander",
+  "name": "System Commander",
+  "summary": "Convert user tasks to optimal Linux/Python commands. Use when user needs file processing, data extraction, text manipulation, or any task that can be solved...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.system_commander",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nelohenriq",
+      "features": [
+        "Convert user tasks to optimal Linux/Python commands",
+        "Use when user needs file processing, data extraction, text manipulation, or any task that can b."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/system-commander@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4016200?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "system-commander",
+      "url": "https://clawhub.ai/skills/system-commander"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "system-commander",
+    "url": "https://clawhub.ai/skills/system-commander",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/system-commander-c4a75e2c2a4c0fbb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/system-commander@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-system-commander-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e532e8ab1213600fac8e9460f55166daaf0d3203b4b903f1e6552d63f40c813",
+      "artifactSizeBytes": 2505
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T05:32:16.554Z"
+}

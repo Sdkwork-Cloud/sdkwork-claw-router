@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26222,
+  "uuid": "skill-clawhub-realtime-campaign-monitor",
+  "skillKey": "clawhub-realtime-campaign-monitor",
+  "name": "Ads Campaign Monitor",
+  "summary": "Monitor live campaign health and anomalies across Meta (Facebook/Instagram), Google Ads, TikTok Ads, YouTube Ads, Amazon Ads, and DSP/programmatic.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.realtime_campaign_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danyangliu",
+      "features": [
+        "Monitor live campaign health and anomalies across Meta (Facebook/Instagram), Google Ads, TikTok."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/realtime-campaign-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184733968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "realtime-campaign-monitor",
+      "url": "https://clawhub.ai/skills/realtime-campaign-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "realtime-campaign-monitor",
+    "url": "https://clawhub.ai/skills/realtime-campaign-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/realtime-campaign-monitor-18b678c563ee2595.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/realtime-campaign-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-realtime-campaign-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1ede0ab23f61c2543527b071d4fb84cdf96da33abb4716a1aa2c4b7059437d0",
+      "artifactSizeBytes": 2502
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T05:55:40.055Z"
+}

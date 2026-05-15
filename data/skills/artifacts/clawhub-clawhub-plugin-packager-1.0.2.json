@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-plugin-packager@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_plugin_packager",
+  "skill": {
+    "id": 36008,
+    "skillKey": "clawhub-clawhub-plugin-packager",
+    "name": "ClawHub Plugin Packager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-plugin-packager",
+    "url": "https://clawhub.ai/skills/clawhub-plugin-packager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-plugin-packager-3d5c3dc1ffe2d1ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate, repair, or audit publish-ready native OpenClaw/ClawHub plugin packages from rough, partial, or inconsistent requirements while keeping the plugin z..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neomagnetar",
+      "userId": "s17e1jqn9ah7hndm31h3ze01x983k1xx",
+      "displayName": "Christopher L Haynes",
+      "image": "https://avatars.githubusercontent.com/u/130129909?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776354472025,
+      "changelog": "v1.1.0 — Adds explicit plugin-native modes, stronger generation rules, and starter spec examples.\n\nAdded explicit plugin-native operating modes for native tool, provider, channel, audit-only, and repair-existing plugin jobs.\nAdded starter YAML plugin spec examples in examples/ for provider and channel plugin generation.\nExpanded generation guidance with clearer native plugin type selection rules, minimum publishable contract requirements, and stricter output separation rules.\nClarified audit-only and repair-existing behaviors, including review expectations and critique-file boundaries.\nRefined documentation and examples to better align the skill with native OpenClaw/ClawHub plugin generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a7227d42d687b8b495af1ee202b838b3010d38634a987fa2abbdc00c03a1038"
+}

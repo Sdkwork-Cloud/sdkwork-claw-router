@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32876,
+  "uuid": "skill-clawhub-adversus",
+  "skillKey": "clawhub-adversus",
+  "name": "Adversus",
+  "summary": "Adversus integration. Manage data, records, and automate workflows. Use when the user wants to interact with Adversus data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adversus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Adversus integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Adversus data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adversus@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adversus",
+      "url": "https://clawhub.ai/skills/adversus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adversus",
+    "url": "https://clawhub.ai/skills/adversus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adversus-fe9710b0f4d0299e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adversus@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-adversus-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3664cd6140ccffa1915f4842b88521e4f341a6b2598ab8dd6d78853e60deced",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:16:17.324Z"
+}

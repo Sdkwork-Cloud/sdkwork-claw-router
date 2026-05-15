@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/imessage@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imessage",
+  "skill": {
+    "id": 61005,
+    "skillKey": "clawhub-imessage",
+    "name": "Imessage Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imessage",
+    "url": "https://clawhub.ai/skills/imessage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imessage-2c38fed6649ab2bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 macOS Messages 应用发送和接收 iMessage 消息，支持文本和图片，管理最近聊天记录与联系人列表。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lilei0311",
+      "userId": "publishers:lilei0311",
+      "displayName": "MaxStormSpace",
+      "image": "https://avatars.githubusercontent.com/u/67162380?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1651,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771211476011,
+      "changelog": "- 新增远程控制功能：可通过 iMessage 接收命令远程控制 OpenClaw。\n- 新增管理员管理，只有 admin_contacts 内的联系人可执行远程命令。\n- 控制命令支持白名单和黑名单机制，提升安全性。\n- 配置项新增远程控制、安全日志与控制日志分离。\n- 文档增加远程控制使用说明及相关故障排查。\n- 升级版本号至 1.0.2。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:522cc5058a18623203652ba2c3fa6548ae848c31860c12ca4fb06d16cca916d2"
+}

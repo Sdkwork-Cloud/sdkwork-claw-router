@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40135,
+  "uuid": "skill-clawhub-feednest",
+  "skillKey": "clawhub-feednest",
+  "name": "FeedNest",
+  "summary": "Aggregate and manage articles, highlights, notes, and tags from your personal trusted feeds, podcasts, and news sources with FeedNest integration.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feednest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Luca Iaconelli",
+      "features": [
+        "Aggregate and manage articles, highlights, notes, and tags from your personal trusted feeds, po."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feednest@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8015379?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feednest",
+      "url": "https://clawhub.ai/skills/feednest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feednest",
+    "url": "https://clawhub.ai/skills/feednest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feednest-6fc8cb52f26a6fda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feednest@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feednest-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ecb0aac5dd529b427c24179f570d311d76fcdaf12c3364863b5a1f3084438f48",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T08:17:14.073Z"
+}

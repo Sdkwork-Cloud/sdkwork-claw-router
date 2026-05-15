@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/asia-llm-router-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asia_llm_router_skills",
+  "skill": {
+    "id": 14659,
+    "skillKey": "clawhub-asia-llm-router-skills",
+    "name": "One API key. 70+ models. Route requests to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asia-llm-router-skills",
+    "url": "https://clawhub.ai/skills/asia-llm-router-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asia-llm-router-skills-36ff3f3194509539.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "renning22",
+      "userId": "s170hey90qee9bets5ysrasphn83eh82",
+      "displayName": "Ning Ren",
+      "image": "https://avatars.githubusercontent.com/u/4597657?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1158,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770766616687,
+      "changelog": "asia-llm-router-skills v1.0.0\n\n- Initial release of the LLM Router skill powered by OpenClaw.\n- Provides a unified API gateway to 70+ AI models (GPT, Claude, Gemini, Qwen, Deepseek, Grok, and more) with a single API key.\n- Features OpenAI-compatible endpoints for chat, model comparison, vision, function calling, and cost optimization.\n- Includes example usage via curl and a Python CLI and SDK client.\n- Supports advanced features like routing, model fallback, unified billing, and tracking.\n- Extensive documentation for setup, endpoints, parameters, and supported model families.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8a08cdad25969f7664f437b95ef7cc1eca35345f938ec0fc8a9abe121b79aabb"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agnic-check-balance@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agnic_check_balance",
+  "skill": {
+    "id": 29652,
+    "skillKey": "clawhub-agnic-check-balance",
+    "name": "Agnic Check Balance (x402)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agnic-check-balance",
+    "url": "https://clawhub.ai/skills/agnic-check-balance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agnic-check-balance-ba21426599d5d214.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check USDC balance across networks (Base, Solana). Use when the user wants to check balance, see how much USDC is available, view funds, or verify wallet bal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agnicpay-prog",
+      "userId": "s1777853tw7s2n47974ggs0xad84d8pq",
+      "displayName": "Agnic.AI",
+      "image": "https://avatars.githubusercontent.com/u/240652244?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1776953910093,
+      "changelog": "v2.0.2 — Synced with upstream agnic-wallet-skills check-balance skill:\n- Standardized authentication (browser OAuth + headless AGNIC_TOKEN)\n- Rebranded references from \"AgnicPay\" to \"Agnic\"",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31d4a758456e6b6b78a3e25ac84259622bdb8f9dab863a01bbaa1011e7f07c1c"
+}

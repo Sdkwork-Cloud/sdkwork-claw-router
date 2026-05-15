@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13783,
+  "uuid": "skill-clawhub-questions-form",
+  "skillKey": "clawhub-questions-form",
+  "name": "Questions Form",
+  "summary": "Present multiple clarifying questions as an interactive Telegram form using inline buttons. Use when the agent needs to ask the user 2 or more clarifying questions before proceeding with a task, and wants to present them all at once in a s.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.questions_form",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Emrick Donadei",
+      "features": [
+        "Present multiple clarifying questions as an interactive Telegram form using inline buttons",
+        "Use when the agent needs to ask the user 2 or more clarifying questions before proceeding with.",
+        "Triggers when: gathering multi-faceted requirements, onboarding flows, preference collection, o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/questions-form@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21025565?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "questions-form",
+      "url": "https://clawhub.ai/skills/questions-form"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "questions-form",
+    "url": "https://clawhub.ai/skills/questions-form",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/questions-form-d76e47ef30bfdafd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/questions-form@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-questions-form-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94c415736c2861b3e500af4db899e2cec7da2d81d6ee06a04b3c06499e091e2b",
+      "artifactSizeBytes": 2039
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T22:32:30.443Z"
+}

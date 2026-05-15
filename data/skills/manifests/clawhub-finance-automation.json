@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13127,
+  "uuid": "skill-clawhub-finance-automation",
+  "skillKey": "clawhub-finance-automation",
+  "name": "Finance Automation",
+  "summary": "Automates payments, invoices, expenses, and financial reports with Stripe webhooks and real-time Telegram notifications for streamlined finance management.",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finance_automation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chloe Park",
+      "features": [
+        "Automates payments, invoices, expenses, and financial reports with Stripe webhooks and real-tim."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finance-automation@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15118976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finance-automation",
+      "url": "https://clawhub.ai/skills/finance-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finance-automation",
+    "url": "https://clawhub.ai/skills/finance-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finance-automation-91db92577f7c5028.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finance-automation@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-finance-automation-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27fd6419e368b9ba4d0d1ac8d12d50b1ff3675cc8c811854bc088c167146d40a",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T10:51:41.152Z"
+}

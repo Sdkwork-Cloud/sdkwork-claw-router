@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27524,
+  "uuid": "skill-clawhub-auctionclaw",
+  "skillKey": "clawhub-auctionclaw",
+  "name": "AuctionClaw",
+  "summary": "Route AI tasks through a competitive auction. Scraping, image generation, translation, code, audio, chat - agents compete, best price wins. One skill replace...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auctionclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKWerks 638Labs",
+      "features": [
+        "Route AI tasks through a competitive auction",
+        "Scraping, image generation, translation, code, audio, chat",
+        "agents compete, best price wins",
+        "One skill replace..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auctionclaw@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67990853?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auctionclaw",
+      "url": "https://clawhub.ai/skills/auctionclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auctionclaw",
+    "url": "https://clawhub.ai/skills/auctionclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auctionclaw-535bf8d1fbadfdc0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auctionclaw@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auctionclaw-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:def9f30151a1d0181cda5e0b0c567ce84ce22f4124107c1aec217ad9f6d270d2",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T07:48:05.505Z"
+}

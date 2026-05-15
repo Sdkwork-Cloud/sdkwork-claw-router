@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53110,
+  "uuid": "skill-clawhub-parliament-cli",
+  "skillKey": "clawhub-parliament-cli",
+  "name": "Parliament CLI",
+  "summary": "UK Parliament CLI — search bills, divisions, members, and written questions from official UK Parliament APIs, with stable JSON envelopes for agents. Use when...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parliament_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shan8851",
+      "features": [
+        "UK Parliament CLI — search bills, divisions, members, and written questions from official UK Pa.",
+        "Use when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/parliament-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39712238?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "parliament-cli",
+      "url": "https://clawhub.ai/skills/parliament-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parliament-cli",
+    "url": "https://clawhub.ai/skills/parliament-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parliament-cli-e0d5856755c1d794.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/parliament-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-parliament-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78d4d5e12a41313c87e077db5867fb530487742417c3b8a387f062676f29e8df",
+      "artifactSizeBytes": 1906
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T08:54:32.374Z"
+}

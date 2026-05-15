@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29603,
+  "uuid": "skill-clawhub-work-log",
+  "skillKey": "clawhub-work-log",
+  "name": "work-log",
+  "summary": "Automated work log management with daily/weekly report generation. Use when users need to record, track, or manage work tasks, generate daily/weekly reports...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.work_log",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "william-w",
+      "features": [
+        "Automated work log management with daily/weekly report generation",
+        "Use when users need to record, track, or manage work tasks, generate daily/weekly reports..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/work-log@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56250829?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "work-log",
+      "url": "https://clawhub.ai/skills/work-log"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "work-log",
+    "url": "https://clawhub.ai/skills/work-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/work-log-6a2dea1ac8ffca6b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/work-log@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-work-log-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcec53fda87b60d4404da2954967fb7c006239176ea0d676808f743d3dd2a611",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T01:37:25.673Z"
+}

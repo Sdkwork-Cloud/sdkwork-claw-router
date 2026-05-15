@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40471,
+  "uuid": "skill-clawhub-weekly-update",
+  "skillKey": "clawhub-weekly-update",
+  "name": "Weekly Update",
+  "summary": "Transform raw weekly activity notes into a clean, organized personal weekly update covering all active projects. Automatically reads OpenClaw session logs fo...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_update",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paolo Antonio Rossi",
+      "features": [
+        "Transform raw weekly activity notes into a clean, organized personal weekly update covering all.",
+        "Automatically reads OpenClaw session logs fo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weekly-update@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1569913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weekly-update",
+      "url": "https://clawhub.ai/skills/weekly-update"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-update",
+    "url": "https://clawhub.ai/skills/weekly-update",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-update-779b35abfe688298.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weekly-update@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weekly-update-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7078facf442aa876e3dfcef036331e5cc5e3d7e3b2f288e4576314f66edd983",
+      "artifactSizeBytes": 2325
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T10:05:12.981Z"
+}

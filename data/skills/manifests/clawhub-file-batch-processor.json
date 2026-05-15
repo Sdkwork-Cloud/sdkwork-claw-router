@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19786,
+  "uuid": "skill-clawhub-file-batch-processor",
+  "skillKey": "clawhub-file-batch-processor",
+  "name": "File Batch Processor",
+  "summary": "One-click batch processing for all files: rename, compress images, convert to PDF, auto organize. No software installation needed, runs locally, safe and ad-...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_batch_processor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lx19840614",
+      "features": [
+        "One-click batch processing for all files: rename, compress images, convert to PDF, auto organize",
+        "No software installation needed, runs locally, safe and ad-..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-batch-processor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48274819?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-batch-processor",
+      "url": "https://clawhub.ai/skills/file-batch-processor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-batch-processor",
+    "url": "https://clawhub.ai/skills/file-batch-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-batch-processor-ac535206cd9975f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-batch-processor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-batch-processor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9e3ba82caf244c83747d5aa3d021bb4fc42761862eb8a39a74cbc029632a8d5",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T11:42:19.647Z"
+}

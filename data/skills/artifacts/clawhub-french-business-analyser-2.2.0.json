@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/french-business-analyser@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.french_business_analyser",
+  "skill": {
+    "id": 29800,
+    "skillKey": "clawhub-french-business-analyser",
+    "name": "French Business Analyser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "french-business-analyser",
+    "url": "https://clawhub.ai/skills/french-business-analyser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/french-business-analyser-b0eff2c05d1f4018.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verified French business data for autonomous B2B agents. Without this MCP, agents hallucinate financial data. With it, they get real-time signals from 9 offi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vannelier",
+      "userId": "s1708qmmf2ra87k8rgvbv34dms83wrgr",
+      "displayName": "Vannelier",
+      "image": "https://avatars.githubusercontent.com/u/167007017?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1775407456327,
+      "changelog": "Address security scanner flag: rewrite Data section with neutral language, add explicit consent gate for paid tools, remove X402_WALLET_PRIVATE_KEY from optional env vars list. Same transparency, no alarmist phrasing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60b5e9ba77280f4c2de6b667d528f36dd9818f5d3de1955ae0f865de757fcd93"
+}

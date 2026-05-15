@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66658,
+  "uuid": "skill-clawhub-kling-omni-video",
+  "skillKey": "clawhub-kling-omni-video",
+  "name": "可灵视频生成",
+  "summary": "使用可灵 Omni-Video API 生成或编辑视频。凡是涉及可灵视频的操作都应触发此 skill，包括但不限于：可灵生成视频、kling视频、文生视频(可灵)、图生视频(可灵)、视频编辑(可灵)、视频参考。当用户明确提到\"可灵\"或\"kling\"并需要视频生成/编辑时触发。配置：环境变量 HSAI_API_KEY。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kling_omni_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gayyzxyx",
+      "features": [
+        "使用可灵 Omni-Video API 生成或编辑视频。凡是涉及可灵视频的操作都应触发此 skill，包括但不限于：可灵生成视频、kling视频、文生视频(可灵)、图生视频(可灵)、视频编辑."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kling-omni-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2884605?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kling-omni-video",
+      "url": "https://clawhub.ai/skills/kling-omni-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kling-omni-video",
+    "url": "https://clawhub.ai/skills/kling-omni-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kling-omni-video-465bb2eebcf41fa5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kling-omni-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kling-omni-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45a4a3ffce836e2cf1a15541950b25de94e6bdaae7d5ba59a00767198b377636",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T07:25:45.789Z"
+}

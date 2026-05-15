@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hauscout@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hauscout",
+  "skill": {
+    "id": 59987,
+    "skillKey": "clawhub-hauscout",
+    "name": "Hauscout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hauscout",
+    "url": "https://clawhub.ai/skills/hauscout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hauscout-c4667476f5ca8ef2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hauscout 부동산 데이터 수집/분석 파이프라인. HouseSigma에서 매물을 자동 수집하고 AI 분석 후 Neon PostgreSQL에 저장. '매물 수집', '부동산 데이터 수집', 'hauscout', '수집 실행', '부동산 크롤링' 요청 시 사용."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sonim1",
+      "userId": "publishers:sonim1",
+      "displayName": "sonim1",
+      "image": "https://avatars.githubusercontent.com/u/2497849?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 380,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772626149517,
+      "changelog": "hauscout 1.0.0 – Initial release\n\n- Automated pipeline to collect and analyze HouseSigma real estate listings with AI, storing results in Neon PostgreSQL.\n- CLI supports targeted listing/profile, headless/headed browser, and dry-run options.\n- Playwright used for search, AI models for analysis, and price history tracked.\n- Post-collection checklist ensures data integrity and supports easy reporting.\n- Includes database query and profile management instructions.\n- Special handling for SPA content, accurate price extraction, and rate-limiting strategies.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1863890058f20650868325ad2118adfe3c01973583320bb904a22b59e4803d81"
+}

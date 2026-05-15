@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72872,
+  "uuid": "skill-clawhub-bazi-analysis-cn",
+  "skillKey": "clawhub-bazi-analysis-cn",
+  "name": "八字命理分析",
+  "summary": "八字命理分析技能。当用户想要进行八字排盘、命理分析、五行分析、大运流年推算、 子女运势预测、婚姻分析、事业财运分析等任何与八字/四柱/命理/算命相关的事情时， 使用此技能。触发场景包括：用户提供出生年月日时要求看八字、询问命理运势、 想了解五行喜忌、问姻缘/婚姻/子女/事业/财运等命理问题。支持农历和公历输入，...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bazi_analysis_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fbbyqsyea",
+      "features": [
+        "八字命理分析技能。当用户想要进行八字排盘、命理分析、五行分析、大运流年推算、 子女运势预测、婚姻分析、事业财运分析等任何与八字/四柱/命理/算命相关的事情时， 使用此技能。触发场景包括：用户."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bazi-analysis-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59274835?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bazi-analysis-cn",
+      "url": "https://clawhub.ai/skills/bazi-analysis-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bazi-analysis-cn",
+    "url": "https://clawhub.ai/skills/bazi-analysis-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bazi-analysis-cn-d6cc40134225dd97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bazi-analysis-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bazi-analysis-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:248f985f0eb6cbc8d17da2229c256359f7762463c60deafa15b522b17959607e",
+      "artifactSizeBytes": 2281
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T15:53:49.664Z"
+}

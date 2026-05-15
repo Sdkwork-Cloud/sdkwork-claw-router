@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17527,
+  "uuid": "skill-clawhub-didit-phone-verification",
+  "skillKey": "clawhub-didit-phone-verification",
+  "name": "Didit Phone Verification",
+  "summary": "Integrate Didit Phone Verification standalone API to verify phone numbers via OTP. Use when the user wants to verify phones, send SMS or WhatsApp or Telegram...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.didit_phone_verification",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Didit",
+      "features": [
+        "Integrate Didit Phone Verification standalone API to verify phone numbers via OTP",
+        "Use when the user wants to verify phones, send SMS or WhatsApp or Telegram..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/didit-phone-verification@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47662054?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "didit-phone-verification",
+      "url": "https://clawhub.ai/skills/didit-phone-verification"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "didit-phone-verification",
+    "url": "https://clawhub.ai/skills/didit-phone-verification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/didit-phone-verification-a5e61ef330b942f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/didit-phone-verification@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-didit-phone-verification-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35a757b39fb9627dee4455371e66bbe96ed0593891ea25738e4807cffacfbba5",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T05:15:03.117Z"
+}

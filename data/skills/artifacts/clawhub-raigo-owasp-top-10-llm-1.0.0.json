@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/raigo-owasp-top-10-llm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raigo_owasp_top_10_llm",
+  "skill": {
+    "id": 55556,
+    "skillKey": "clawhub-raigo-owasp-top-10-llm",
+    "name": "OWASP Top 10 AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raigo-owasp-top-10-llm",
+    "url": "https://clawhub.ai/skills/raigo-owasp-top-10-llm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raigo-owasp-top-10-llm-3124c688a0522ea0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "RAIGO × OWASP LLM Top 10 — official OWASP LLM Application Security Top 10 (2025) enforcement rules for OpenClaw agents. Covers all 10 OWASP LLM risks: prompt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "musharsec",
+      "userId": "s1772nr8nxscpx426vqbp5k4xs83q6gw",
+      "displayName": "musharsec",
+      "image": "https://avatars.githubusercontent.com/u/45098359?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774942200218,
+      "changelog": "- Initial release with enforcement rules for the official OWASP LLM Application Security Top 10 (2025).\n- Maps each of the 10 OWASP LLM risks (including prompt injection, sensitive information disclosure, output handling, model poisoning, supply chain, and others) directly to practical deny/warn/audit rules.\n- Includes clear detection patterns and required responses for each risk.\n- Designed for seamless integration with OpenClaw agents; works standalone or alongside raigo Agent Firewall.\n- No engine, compile step, or extra configuration required—works out of the box for OWASP LLM compliance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8372b0120d09b357a7b623320e94ed30c7a1bcecef2824ba11e1f816f7b18f94"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proactive-agent-hub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proactive_agent_hub",
+  "skill": {
+    "id": 26220,
+    "skillKey": "clawhub-proactive-agent-hub",
+    "name": "Pub Proactive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proactive-agent-hub",
+    "url": "https://clawhub.ai/skills/proactive-agent-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proactive-agent-hub-bdca288153eac986.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform AI agents from task-followers into proactive partners that anticipate needs and continuously improve. And also 50+ models for image generation, vid..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "modestyrichards",
+      "userId": "s17069c392wb17n1nvrdv0kq1h84qjrk",
+      "displayName": "ModestyRichards",
+      "image": "https://avatars.githubusercontent.com/u/261238899?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773295611389,
+      "changelog": "proactive-agent-hub 1.0.0\n\n- Initial release introducing the proactive-agent skill.\n- Transforms AI agents from task followers into proactive partners that anticipate needs and improve continuously.\n- Provides access to 50+ models for tasks including image/video generation, text-to-speech, speech-to-text, music, chat, web search, document parsing, email, and SMS via a unified API.\n- Supports smart routing to automatically select the most cost-effective or high-quality model for a given task.\n- Includes comprehensive usage documentation for all supported model types.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5621796d031f3e489205036e508729d5cb6fbdbdba835a1fcfb1c5f5515b8519"
+}

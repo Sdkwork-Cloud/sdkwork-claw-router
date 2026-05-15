@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31121,
+  "uuid": "skill-clawhub-omniconvert",
+  "skillKey": "clawhub-omniconvert",
+  "name": "Omniconvert",
+  "summary": "Omniconvert integration. Manage Persons, Organizations, Deals, Leads, Projects, Activities and more. Use when the user wants to interact with Omniconvert data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omniconvert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Omniconvert integration",
+        "Manage Persons, Organizations, Deals, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with Omniconvert data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/omniconvert@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "omniconvert",
+      "url": "https://clawhub.ai/skills/omniconvert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omniconvert",
+    "url": "https://clawhub.ai/skills/omniconvert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omniconvert-8d7b54bdef4a4e38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/omniconvert@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-omniconvert-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4058638f4a0deb73cd54229182bbe906f42b80a342624c0ef6fb64a770ea1037",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:19:06.064Z"
+}

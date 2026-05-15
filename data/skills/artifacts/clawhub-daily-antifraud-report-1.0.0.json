@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-antifraud-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_antifraud_report",
+  "skill": {
+    "id": 64108,
+    "skillKey": "clawhub-daily-antifraud-report",
+    "name": "Daily Antifraud Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-antifraud-report",
+    "url": "https://clawhub.ai/skills/daily-antifraud-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-antifraud-report-d473557d7b5bc6b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每天早上生成反诈简报：查询中国国内银行以及支付机构等反欺诈新闻，需要详细的反诈信息。 Use when: 用户说\"生成今日反诈简报\"，或 cron 在早上 8 点触发。 NOT FOR: 国外银行或金融机构的新闻。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wdl2005",
+      "userId": "s17aanqv9nw9ed1wfhnj69aeex85pxvc",
+      "displayName": "wdl2005",
+      "image": "https://avatars.githubusercontent.com/u/26435323?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773894461623,
+      "changelog": "Initial release of daily-antifraud-report skill:\n\n- Automatically generates a daily anti-fraud news briefing every morning at 8:00 AM or upon user request.\n- Focuses exclusively on anti-fraud news related to Chinese domestic banks and payment institutions.\n- Gathers and summarizes incident details: date, case process, bank involved, amount, and relevant information.\n- Outputs the report in a standardized, structured format for easy distribution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a79efd5defe23df0f25046e4f084a68b4fe6f6587a0485b09630e03f61737cea"
+}

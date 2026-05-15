@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61531,
+  "uuid": "skill-clawhub-travel-cn",
+  "skillKey": "clawhub-travel-cn",
+  "name": "Travel CN",
+  "summary": "旅行信息查询 - 去哪儿/携程/飞猪数据查询（Expedia 中国版）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_cn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guohongbin",
+      "features": [
+        "去哪儿/携程/飞猪数据查询（Expedia 中国版）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/travel-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202475309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "travel-cn",
+      "url": "https://clawhub.ai/skills/travel-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-cn",
+    "url": "https://clawhub.ai/skills/travel-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-cn-1a7222e5d9269671.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/travel-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-travel-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bfe5ef82c5738fd000cf1bd8dbf57fabf5b57ffe70c43f7c84db761880c580f",
+      "artifactSizeBytes": 2223
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T11:57:54.717Z"
+}

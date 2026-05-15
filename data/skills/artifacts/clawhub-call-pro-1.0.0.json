@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/call-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.call_pro",
+  "skill": {
+    "id": 41273,
+    "skillKey": "clawhub-call-pro",
+    "name": "call-pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "call-pro",
+    "url": "https://clawhub.ai/skills/call-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/call-pro-d3855b822ad83b81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call management system with preparation, real-time capture, and follow-up tracking. Use when user mentions phone calls, meetings, conversations, commitments..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pratilsudra",
+      "userId": "s17b96gpjqjhmnp803c7txtg5x83r0ts",
+      "displayName": "pratilsudra",
+      "image": "https://avatars.githubusercontent.com/u/18642740?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774700946616,
+      "changelog": "- Initial release of \"call\": a comprehensive call management system.\n- Supports preparation, real-time note capture, tracking of commitments, follow-ups, and creating conversation history.\n- Emphasizes privacy: all call data is stored locally, no recordings or external CRM connections by default.\n- Provides modular scripts for each workflow stage (preparation, capture, summary, follow-up, history).\n- Adds built-in templates and structured data storage for contacts, calls, commitments, and follow-ups.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3637e34706976bbc7fd88b463245b11b26914dea8a569876c401ccb9ec23dd3a"
+}

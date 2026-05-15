@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mineru-document-explorer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mineru_document_explorer",
+  "skill": {
+    "id": 51643,
+    "skillKey": "clawhub-mineru-document-explorer",
+    "name": "MinerU Document Explorer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mineru-document-explorer",
+    "url": "https://clawhub.ai/skills/mineru-document-explorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mineru-document-explorer-05992a562ffc191f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "REQUIRED for any task involving reading or understanding PDF contents. Use when a user asks about a .pdf file — reading pages, answering questions, extractin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rise-1210",
+      "userId": "s17d20p78xfh5s74jty053b6ds83mvvc",
+      "displayName": "Rise-1210",
+      "image": "https://avatars.githubusercontent.com/u/194394453?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774927303642,
+      "changelog": "- Added optional credential fields for external services (PageIndex, embedding/reranker APIs, MinerU cloud).\n- Enabled optional network capabilities with external API calls and FastAPI server support; all network features are opt-in and disabled by default.\n- Updated documentation to clarify network functionality and new credential options.\n- No code or file structure changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55c2268fa440cde807e18a0b18315a252c6f5a2a17347688bfa8fb3aef5e11df"
+}

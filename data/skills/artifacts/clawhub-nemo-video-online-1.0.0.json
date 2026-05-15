@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nemo-video-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nemo_video_online",
+  "skill": {
+    "id": 46855,
+    "skillKey": "clawhub-nemo-video-online",
+    "name": "Nemo Video Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nemo-video-online",
+    "url": "https://clawhub.ai/skills/nemo-video-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nemo-video-online-5f112944a6be3c63.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited MP4 videos ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"trim t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776441851028,
+      "changelog": "Nemo Video Online 1.0.0 - Initial Release\n\n- Instantly edit and export videos online with simple, plain-English commands. No installation needed.\n- Upload video clips (MP4, MOV, AVI, WebM; up to 500MB) and describe your desired edits—get a ready-to-post 1080p MP4 download in under 2 minutes.\n- Supports fast background operations: automatic authentication, cloud GPU rendering, and multiple export formats.\n- Features easy workflows for quick edits, batch processing, and iterative refinement within a session.\n- Handles common errors (credits, token expiry, file issues) with helpful instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3297d94221f71e7142024f98df6c923ec1b52ed3d5a85ca300add55ab905b92"
+}

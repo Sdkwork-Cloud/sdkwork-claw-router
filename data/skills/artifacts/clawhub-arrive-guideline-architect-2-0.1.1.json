@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arrive-guideline-architect-2@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arrive_guideline_architect_2",
+  "skill": {
+    "id": 29402,
+    "skillKey": "clawhub-arrive-guideline-architect-2",
+    "name": "Arrive Guideline Architect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arrive-guideline-architect-2",
+    "url": "https://clawhub.ai/skills/arrive-guideline-architect-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arrive-guideline-architect-2-89ffdc59cae22567.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate ARRIVE 2.0 compliant animal research protocols with structured experimental design, sample size calculations, and reporting checklists. Ensures tran..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theresayao0614-sudo",
+      "userId": "s17ea40c1y75h06x45mjjxwg3583qhxm",
+      "displayName": "Theresa",
+      "image": "https://avatars.githubusercontent.com/u/259492064?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 303,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773395638910,
+      "changelog": "- Initial sample data and documentation added: includes ARRIVE checklist, example protocol, and study brief files.\n- Introduced primary script (`scripts/main.py`) to support protocol generation or workflow tasks.\n- No changes to the core skill logic; this update focuses on supplementary examples and startup resources.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f53359d157eb0c46293b3ae9a823b73a41d9ea1bd76da6929390f5a9f6f7661"
+}

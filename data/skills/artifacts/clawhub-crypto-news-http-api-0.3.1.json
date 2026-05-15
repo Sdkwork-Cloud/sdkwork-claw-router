@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-news-http-api@0.3.1",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_news_http_api",
+  "skill": {
+    "id": 32292,
+    "skillKey": "clawhub-crypto-news-http-api",
+    "name": "Crypto News Http Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-news-http-api",
+    "url": "https://clawhub.ai/skills/crypto-news-http-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-news-http-api-a436eb47de2f9390.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when calling the Crypto News Analyzer HTTP API for async analysis jobs, semantic search, datasource management, or health checks from OpenClaw."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laceletho",
+      "userId": "s1711j71qhdb72tgw6r3r22ra184d1mn",
+      "displayName": "Letho",
+      "image": "https://avatars.githubusercontent.com/u/3763819?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.3.1",
+      "createdAt": 1778070755999,
+      "changelog": "Add pagination to intel interfaces",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5770eebba9fd0bd19378b1e86ff838cfee048bde9191052a5e57d1bd98567e29"
+}

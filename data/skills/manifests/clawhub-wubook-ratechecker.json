@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35100,
+  "uuid": "skill-clawhub-wubook-ratechecker",
+  "skillKey": "clawhub-wubook-ratechecker",
+  "name": "Wubook Ratechecker",
+  "summary": "WuBook RateChecker integration. Manage data, records, and automate workflows. Use when the user wants to interact with WuBook RateChecker data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wubook_ratechecker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "WuBook RateChecker integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with WuBook RateChecker data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wubook-ratechecker@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wubook-ratechecker",
+      "url": "https://clawhub.ai/skills/wubook-ratechecker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wubook-ratechecker",
+    "url": "https://clawhub.ai/skills/wubook-ratechecker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wubook-ratechecker-ae37c3ffdb209e0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wubook-ratechecker@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-wubook-ratechecker-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74c188d1f399e9feb57ad7ddd25d7e58b1201d03883a9d4b01d2dd59c27bb911",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:03:31.042Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39065,
+  "uuid": "skill-clawhub-web-shells",
+  "skillKey": "clawhub-web-shells",
+  "name": "Web Shells",
+  "summary": "Provides diverse web shell samples in PHP, ASP, ASPX, JSP, Python, and Perl for detection, malware analysis, and security testing under authorized conditions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_shells",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PandaAI-1337",
+      "features": [
+        "Provides diverse web shell samples in PHP, ASP, ASPX, JSP, Python, and Perl for detection, malw."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-shells@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264713685?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-shells",
+      "url": "https://clawhub.ai/skills/web-shells"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-shells",
+    "url": "https://clawhub.ai/skills/web-shells",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-shells-aa427c81a070b670.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-shells@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-shells-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9157e3182e52ca61e7ebbb1d99e48da5180cf687e3d8536f4e12b3113ce0de46",
+      "artifactSizeBytes": 2159
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T15:35:45.450Z"
+}

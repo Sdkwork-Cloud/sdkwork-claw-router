@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tcm-clinic-en@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tcm_clinic_en",
+  "skill": {
+    "id": 35531,
+    "skillKey": "clawhub-tcm-clinic-en",
+    "name": "TCM Clinic - English Edition"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tcm-clinic-en",
+    "url": "https://clawhub.ai/skills/tcm-clinic-en",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tcm-clinic-en-ee96837fe7f7b3ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A full-featured management tool for solo Traditional Chinese Medicine (TCM) practitioners. Manages patient records, medical charts (Four Diagnostic Methods,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "slamw",
+      "userId": "s178r2gqmf35ybvg22bgqkk6m584chwa",
+      "displayName": "Phal studio",
+      "image": "https://avatars.githubusercontent.com/u/212455601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777454334910,
+      "changelog": "tcm-clinic-en 1.0.1 Changelog\n\n- Added Python binary and \"openpyxl\" package requirements to SKILL.md for clearer dependency specification.\n- No functional or workflow changes. This is a metadata update clarifying runtime and package prerequisites.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3dec2ca1c6a60f84c9a6bd30c367988334fabe89b4f8f9f686d13a27c440a05"
+}

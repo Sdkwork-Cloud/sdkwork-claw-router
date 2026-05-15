@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47514,
+  "uuid": "skill-clawhub-swanlog",
+  "skillKey": "clawhub-swanlog",
+  "name": "swanlog",
+  "summary": "Pull a SwanLab cloud experiment (metrics + config + metadata + requirements) down to a local directory in one shot. Use this whenever the user wants to inspe...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swanlog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cunnan Wei",
+      "features": [
+        "Pull a SwanLab cloud experiment (metrics + config + metadata + requirements) down to a local di.",
+        "Use this whenever the user wants to inspe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swanlog@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126946848?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swanlog",
+      "url": "https://clawhub.ai/skills/swanlog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swanlog",
+    "url": "https://clawhub.ai/skills/swanlog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swanlog-e07d6c90212c5d76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swanlog@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-swanlog-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c92e7146ce63029bde2b3938362f8757a47cd8998683da122ef4463c644945d",
+      "artifactSizeBytes": 2457
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T10:51:34.446Z"
+}

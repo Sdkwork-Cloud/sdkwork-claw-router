@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51662,
+  "uuid": "skill-clawhub-agenttrust-scanner",
+  "skillKey": "clawhub-agenttrust-scanner",
+  "name": "AgentTrust — Security Scanner for AI Skills",
+  "summary": "Scan AI skills for malware, injections, data leaks, verify integrity, and check agent wallet reputation without API keys or accounts.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agenttrust_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "poteshniy",
+      "features": [
+        "Scan AI skills for malware, injections, data leaks, verify integrity, and check agent wallet re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agenttrust-scanner@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/161839817?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agenttrust-scanner",
+      "url": "https://clawhub.ai/skills/agenttrust-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agenttrust-scanner",
+    "url": "https://clawhub.ai/skills/agenttrust-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agenttrust-scanner-4fbbb8e5eeee63a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agenttrust-scanner@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-agenttrust-scanner-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f34439cb319087046bc503a40e84bb508ee617666597c12a0a8d57c63ed4ab03",
+      "artifactSizeBytes": 2056
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T19:53:39.766Z"
+}

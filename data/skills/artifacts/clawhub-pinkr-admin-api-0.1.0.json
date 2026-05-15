@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pinkr-admin-api@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pinkr_admin_api",
+  "skill": {
+    "id": 64637,
+    "skillKey": "clawhub-pinkr-admin-api",
+    "name": "Pinkr Crm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pinkr-admin-api",
+    "url": "https://clawhub.ai/skills/pinkr-admin-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pinkr-admin-api-4a7d52fe8ff51d2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "品氪后台 API 调用工具，用于 AI 模型自动调用品氪 CRM 系统。所有接口均为 POST，参数通过 JSON 请求体传递，包含会员查询等常用接口。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "double-jin",
+      "userId": "s17150nsppn32bkbx99tpbmp3h83zrzn",
+      "displayName": "Double-Jin",
+      "image": "https://avatars.githubusercontent.com/u/48013971?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774951453380,
+      "changelog": "Initial release of the 品氪后台 API skill (pinkr-crm):\n\n- Provides unified API access to 品氪 CRM system for AI model orchestration.\n- Supports login authentication, token management (with auto-retry), and error handling.\n- Main features: 查询会员列表 (GetCustomers) and 查询会员详情 (GetCustomer).\n- All API requests use JSON POST and Bearer token authentication.\n- Includes user-friendly CLI commands for login, API calls, cache management, and configuration display.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6756da12f9690196fc33ba7fbdd1df353c2a76d93ca2da8143c707c6b78cf9bc"
+}

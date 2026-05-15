@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24349,
+  "uuid": "skill-clawhub-open-thoughts",
+  "skillKey": "clawhub-open-thoughts",
+  "name": "Open Thoughts",
+  "summary": "Structured free-thinking and exploration for agents. Invoke to explore a topic (or let the agent choose), journal the exploration, and manage action items. A...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_thoughts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matt Culpepper",
+      "features": [
+        "Structured free-thinking and exploration for agents",
+        "Invoke to explore a topic (or let the agent choose), journal the exploration, and manage action."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-thoughts@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129983?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-thoughts",
+      "url": "https://clawhub.ai/skills/open-thoughts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-thoughts",
+    "url": "https://clawhub.ai/skills/open-thoughts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-thoughts-ee7f26c26fd80cb6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-thoughts@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-thoughts-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd20202741a0f6e9a3c80391e9823469e89209aafbb28b861f5c1f530c597b4e",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T03:37:44.837Z"
+}

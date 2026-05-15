@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69831,
+  "uuid": "skill-clawhub-ai-insights",
+  "skillKey": "clawhub-ai-insights",
+  "name": "AI Insights",
+  "summary": "搜索并分析过去N天内AI领域的重大事件，生成深度洞察报告。当用户需要了解最新AI动态、行业趋势、头部厂家新闻、政策变化时触发此技能。输出为标准Markdown格式的结构化报告文件。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_insights",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FrankMei",
+      "features": [
+        "搜索并分析过去N天内AI领域的重大事件，生成深度洞察报告。当用户需要了解最新AI动态、行业趋势、头部厂家新闻、政策变化时触发此技能。输出为标准Markdown格式的结构化报告文件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-insights@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4946322?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-insights",
+      "url": "https://clawhub.ai/skills/ai-insights"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-insights",
+    "url": "https://clawhub.ai/skills/ai-insights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-insights-9a8ef83422173762.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-insights@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-insights-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6de27028630d18fc198178b5b2e335fc2d2b0001658ad9215fabceb2520f0c7e",
+      "artifactSizeBytes": 2047
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T12:43:10.308Z"
+}

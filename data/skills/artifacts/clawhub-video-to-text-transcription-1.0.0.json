@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-to-text-transcription@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_to_text_transcription",
+  "skill": {
+    "id": 42762,
+    "skillKey": "clawhub-video-to-text-transcription",
+    "name": "Video To Text Transcription"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-to-text-transcription",
+    "url": "https://clawhub.ai/skills/video-to-text-transcription",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-to-text-transcription-87bf53e4e2d43844.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get text transcripts ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"transcr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776167791355,
+      "changelog": "Initial release of the Video to Text Transcription skill.\n\n- Upload video files (MP4, MOV, AVI, WebM up to 500MB) and transcribe spoken dialogue into editable text documents quickly.\n- Automatically connect to backend and handle authentication, granting 100 free credits for new users.\n- Cloud processing streams back 1080p MP4 or text transcript in about 1–2 minutes for typical clips.\n- Supports export, balance checks, status queries, and multiple video/audio/text formats.\n- Handles common errors (file size, expiration, unsupported formats) and provides user-friendly workflow guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b71d598ce012be6ec4a228581e687ceb0e1455aaeac58a5df2c40a57bd81e68"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vwu-openai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vwu_openai",
+  "skill": {
+    "id": 59542,
+    "skillKey": "clawhub-vwu-openai",
+    "name": "vwu.ai OpenAI Models"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vwu-openai",
+    "url": "https://clawhub.ai/skills/vwu-openai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vwu-openai-5ba7207bd18f228f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用 vwu.ai 平台上的多款 GPT-4 和 GPT-5 系列模型，兼容 OpenAI API，支持标准聊天补全接口。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a3273283",
+      "userId": "s175jabaxjxb6749jqkdczqb4n842w5q",
+      "displayName": "a3273283",
+      "image": "https://avatars.githubusercontent.com/u/92772341?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 395,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773635935178,
+      "changelog": "初始发布 - vwu.ai OpenAI 模型集合",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8f3da27dfedaf06b2d6c1b5febf40b765713bc076a6109d4e95e39ad25455d8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/orgx@3.1.0",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orgx",
+  "skill": {
+    "id": 53581,
+    "skillKey": "clawhub-orgx",
+    "name": "OrgX"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orgx",
+    "url": "https://clawhub.ai/skills/orgx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orgx-efcefb8889f24f0c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when managing work with OrgX — reporting progress, requesting decisions, registering artifacts, syncing memory, checking quality gates, or viewing org st..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hopeatina",
+      "userId": "s175213zaq94gs2yqe41yekrqh83rxtf",
+      "displayName": "Hope Atina",
+      "image": "https://avatars.githubusercontent.com/u/8039862?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.1.0",
+      "createdAt": 1774732012558,
+      "changelog": "Align the OrgX OpenClaw skill with the current plugin MCP surface and safe reporting contract.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48d855ebb0561d8ed9e4c664f273266f8090650733f4d6928dcdab9641bd864f"
+}

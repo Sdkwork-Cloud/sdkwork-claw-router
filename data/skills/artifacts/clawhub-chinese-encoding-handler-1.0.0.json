@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-encoding-handler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_encoding_handler",
+  "skill": {
+    "id": 62016,
+    "skillKey": "clawhub-chinese-encoding-handler",
+    "name": "Chinese-Encoding-Handler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-encoding-handler",
+    "url": "https://clawhub.ai/skills/chinese-encoding-handler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-encoding-handler-5a3a5c32840a92c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "解决PowerShell环境中文文件乱码，支持自动编码检测、安全读写及终端中文显示修复。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "petersunpingww-droid",
+      "userId": "s17c2gv9htdk6qvxjfhx5ga7c983xytx",
+      "displayName": "petersunpingww-droid",
+      "image": "https://avatars.githubusercontent.com/u/249421977?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774860110411,
+      "changelog": "Initial release: Chinese encoding detection, safe read/write, terminal fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8fccafd0cf3377b51db44cb1e4e858ded48fbfad0f106ebf19186c2cedcb0e84"
+}

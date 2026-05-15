@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26580,
+  "uuid": "skill-clawhub-byterovers",
+  "skillKey": "clawhub-byterovers",
+  "name": "Pub Byterover",
+  "summary": "Knowledge management for AI agents. Store and retrieve project context before any work. And also 50+ models for image generation, video generation, text-to-s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byterovers",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlvisDunlop",
+      "features": [
+        "Knowledge management for AI agents",
+        "Store and retrieve project context before any work",
+        "And also 50+ models for image generation, video generation, text-to-s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byterovers@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255881479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byterovers",
+      "url": "https://clawhub.ai/skills/byterovers"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byterovers",
+    "url": "https://clawhub.ai/skills/byterovers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byterovers-ae98804a6ba6af36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byterovers@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-byterovers-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ce12db1744b85c581ea5310f6258d41a800b28f8ea618c1822c77da6a0cf332",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T06:13:07.514Z"
+}

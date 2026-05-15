@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70451,
+  "uuid": "skill-clawhub-wechat-knowledge-builder",
+  "skillKey": "clawhub-wechat-knowledge-builder",
+  "name": "微信聊天记录知识卡片提取工具",
+  "summary": "微信聊天记录知识卡片提取工具。将WeFlow导出的JSON数据转换为个人知识库、知识卡片和个人分身训练数据。触发场景：(1) 用户需要分析微信聊天记录；(2) 从微信数据中提取知识卡片；(3) 构建个人知识库；(4) 整理客户画像；(5) 生成训练数据用于AI分身。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_knowledge_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weebrclb123-del",
+      "features": [
+        "微信聊天记录知识卡片提取工具。将WeFlow导出的JSON数据转换为个人知识库、知识卡片和个人分身训练数据。触发场景：(1) 用户需要分析微信聊天记录；(2) 从微信数据中提取知识卡片；(3."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-knowledge-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267354932?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-knowledge-builder",
+      "url": "https://clawhub.ai/skills/wechat-knowledge-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-knowledge-builder",
+    "url": "https://clawhub.ai/skills/wechat-knowledge-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-knowledge-builder-e5dfb8fd0030dbf8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-knowledge-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-knowledge-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:558f7f9cdb41bfa55c4a6bed7cc5e5a467a6fa93d087e2f5ab4efbbcf58cb757",
+      "artifactSizeBytes": 2658
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T00:59:40.047Z"
+}

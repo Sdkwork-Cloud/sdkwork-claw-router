@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50141,
+  "uuid": "skill-clawhub-suno-music-skill",
+  "skillKey": "clawhub-suno-music-skill",
+  "name": "suno-music.skill",
+  "summary": "AI music generation via Suno API. Submit prompts, style tags, and lyrics to generate songs. Check generation status and download audio/cover art. Use when us...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.suno_music_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kennedydqz-del",
+      "features": [
+        "AI music generation via Suno API",
+        "Submit prompts, style tags, and lyrics to generate songs",
+        "Check generation status and download audio/cover art",
+        "Use when us..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/suno-music-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259596298?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "suno-music-skill",
+      "url": "https://clawhub.ai/skills/suno-music-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "suno-music-skill",
+    "url": "https://clawhub.ai/skills/suno-music-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/suno-music-skill-0e5315127e3df365.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/suno-music-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-suno-music-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c3708b69a503be0d7d81033e89421e6cf398e1fee1d81c457c8fc9a00d70b3e",
+      "artifactSizeBytes": 2201
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T00:38:08.399Z"
+}

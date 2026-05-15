@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-quality-audit-ecc@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_quality_audit_ecc",
+  "skill": {
+    "id": 23274,
+    "skillKey": "clawhub-web-quality-audit-ecc",
+    "name": "Web Quality Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-quality-audit-ecc",
+    "url": "https://clawhub.ai/skills/web-quality-audit-ecc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-quality-audit-ecc-5b8f740b7a7681bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive web quality audit covering performance, accessibility, SEO, best practices, and browser automation testing. Supports automated testing with Pin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huamu668",
+      "userId": "publishers:huamu668",
+      "displayName": "huamu668",
+      "image": "https://avatars.githubusercontent.com/u/202473531?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 436,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772941752420,
+      "changelog": "Version 2.0.0 — Major update introducing browser automation and expanded audit functionality.\n\n- Adds browser automation testing using PinchTab for real-world validation during audits.\n- Expands audit scope: now covers 150+ checks for performance, accessibility, SEO, and best practices.\n- Provides clearer severity levels and actionable, categorized recommendations (with code examples).\n- Introduces structured audit output format and quick deployment/review checklists.\n- Includes detailed documentation for PinchTab setup and integration with audits.\n- Improves guidance on Core Web Vitals, accessibility, and technical SEO requirements.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e59f7d375814be9c717ef171c2b9e6953960d91887b62b2331ef99c0de30aaaa"
+}

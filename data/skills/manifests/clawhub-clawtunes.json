@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12719,
+  "uuid": "skill-clawhub-clawtunes",
+  "skillKey": "clawhub-clawtunes",
+  "name": "clawtunes",
+  "summary": "Control Apple Music on macOS via the `clawtunes` CLI (play songs/albums/playlists, control playback, volume, shuffle, repeat, search, catalog lookup, AirPlay...",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtunes",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "forketyfork",
+      "features": [
+        "Control Apple Music on macOS via the `clawtunes` CLI (play songs/albums/playlists, control play."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawtunes@0.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1592872?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawtunes",
+      "url": "https://clawhub.ai/skills/clawtunes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtunes",
+    "url": "https://clawhub.ai/skills/clawtunes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtunes-0aa811a7683af8c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawtunes@0.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawtunes-0.3.1.json",
+      "version": "0.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a7156b5d703059cddd8fe0b036b3bfeb7d52b42835696ec01088c40f678baff",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T07:22:46.150Z"
+}

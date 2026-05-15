@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23705,
+  "uuid": "skill-clawhub-grabgrab",
+  "skillKey": "clawhub-grabgrab",
+  "name": "GrabGrab",
+  "summary": "Use when the user wants to download a video or audio from a URL. Supports 20+ platforms including YouTube, X/Twitter, TikTok, Instagram, Facebook, Reddit, Bi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grabgrab",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xizhen",
+      "features": [
+        "Use when the user wants to download a video or audio from a URL",
+        "Supports 20+ platforms including YouTube, X/Twitter, TikTok, Instagram, Facebook, Reddit, Bi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grabgrab@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12782730?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grabgrab",
+      "url": "https://clawhub.ai/skills/grabgrab"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grabgrab",
+    "url": "https://clawhub.ai/skills/grabgrab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grabgrab-610733e6f4e282d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grabgrab@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grabgrab-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03ceea4880dfb25d48b506c079fc55a58200a58eee2511a6c0eb117d319aa9b5",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T03:47:27.262Z"
+}

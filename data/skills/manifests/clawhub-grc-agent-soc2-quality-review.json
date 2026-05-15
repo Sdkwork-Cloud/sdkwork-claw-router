@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42184,
+  "uuid": "skill-clawhub-grc-agent-soc2-quality-review",
+  "skillKey": "clawhub-grc-agent-soc2-quality-review",
+  "name": "GRC-Agent | SOC 2 Quality Review",
+  "summary": "Evaluate SOC 2 report quality using the SOC 2 Quality Guild rubric (Structure, Substance, Source). Use when reviewing a vendor SOC 2 Type 1/Type 2 report, tr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grc_agent_soc2_quality_review",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Simon Tin-Yul Kok",
+      "features": [
+        "Evaluate SOC 2 report quality using the SOC 2 Quality Guild rubric (Structure, Substance, Sourc.",
+        "Use when reviewing a vendor SOC 2 Type 1/Type 2 report, tr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grc-agent-soc2-quality-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5124548?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grc-agent-soc2-quality-review",
+      "url": "https://clawhub.ai/skills/grc-agent-soc2-quality-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grc-agent-soc2-quality-review",
+    "url": "https://clawhub.ai/skills/grc-agent-soc2-quality-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grc-agent-soc2-quality-review-150335e2e664fea6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grc-agent-soc2-quality-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grc-agent-soc2-quality-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11aa58a1e70955cd5d5d9ee3038e8607719a78305d094e336779cba70bf3ce2f",
+      "artifactSizeBytes": 2616
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T06:29:23.480Z"
+}

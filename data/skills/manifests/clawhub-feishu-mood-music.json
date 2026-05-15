@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66474,
+  "uuid": "skill-clawhub-feishu-mood-music",
+  "skillKey": "clawhub-feishu-mood-music",
+  "name": "Feishu Mood Music",
+  "summary": "飞书音乐心情伴侣。识别用户的情绪状态，生成匹配的治愈/陪伴音乐并发送到飞书群。 三级触发机制： (1) 显式触发（直接要歌）：\"来首歌\"、\"想听歌\"、\"来首应景的\"、\"音乐治愈\"、\"解压音乐\"、\"放首歌\" (2) 半隐式触发（情绪词 + @机器人）：\"心情不好\"、\"有点累\"、\"好烦\"、\"需要放松\"、\"emo了\"、...",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_mood_music",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rong",
+      "features": [
+        "飞书音乐心情伴侣。识别用户的情绪状态，生成匹配的治愈/陪伴音乐并发送到飞书群。 三级触发机制： (1) 显式触发（直接要歌）：\"来首歌\"、\"想听歌\"、\"来首应景的\"、\"音乐治愈\"、\"解压音乐."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-mood-music@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220700654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-mood-music",
+      "url": "https://clawhub.ai/skills/feishu-mood-music"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-mood-music",
+    "url": "https://clawhub.ai/skills/feishu-mood-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-mood-music-a3904d8854075500.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-mood-music@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-mood-music-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28b1b07855e4834d64e866907c740af95b231d954fe3d0aed52d789a9f683033",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T05:40:34.675Z"
+}

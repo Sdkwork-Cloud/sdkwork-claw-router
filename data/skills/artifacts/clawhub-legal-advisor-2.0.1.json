@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/legal-advisor@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_advisor",
+  "skill": {
+    "id": 10551,
+    "skillKey": "clawhub-legal-advisor",
+    "name": "Legal Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-advisor",
+    "url": "https://clawhub.ai/skills/legal-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-advisor-04aa0bbbe409b3c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate legal templates for labor, consumer, rental, and traffic disputes. Use when drafting dispute letters, reviewing tenant rights, preparing claims. Sup..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2105,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 4,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774620558487,
+      "changelog": "Bilingual and Quality Enhancement",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1eaac28f1ba801a2bdb4de55de53d5ca191713cdf489df42c8db4f1625ef7f8"
+}

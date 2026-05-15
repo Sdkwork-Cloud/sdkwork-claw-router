@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70311,
+  "uuid": "skill-clawhub-liverpool",
+  "skillKey": "clawhub-liverpool",
+  "name": "Liverpool",
+  "summary": "提供利物浦足球俱乐部历史、商业模式与文化传承分析，涵盖球队成就、球迷基础与FSG投资运营模式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liverpool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供利物浦足球俱乐部历史、商业模式与文化传承分析，涵盖球队成就、球迷基础与FSG投资运营模式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/liverpool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "liverpool",
+      "url": "https://clawhub.ai/skills/liverpool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liverpool",
+    "url": "https://clawhub.ai/skills/liverpool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liverpool-9e861941ad8bf5bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/liverpool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-liverpool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5586979bc1b53ab924dbbe49db1aacf030b8d9d33ebb764687f516da3c255826",
+      "artifactSizeBytes": 2249
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T10:04:13.382Z"
+}

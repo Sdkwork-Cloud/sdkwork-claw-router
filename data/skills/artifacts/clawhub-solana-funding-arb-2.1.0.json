@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solana-funding-arb@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solana_funding_arb",
+  "skill": {
+    "id": 12089,
+    "skillKey": "clawhub-solana-funding-arb",
+    "name": "Solana Funding Rate Arbitrage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solana-funding-arb",
+    "url": "https://clawhub.ai/skills/solana-funding-arb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solana-funding-arb-3a61bd9c7e746998.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Solana perpetual DEX funding rate arbitrage - scanner and auto-trader. Compares funding rates across Drift and Flash Trade to find and execute cross-DEX arbitrage opportunities. Use when analyzing Solana perp funding rates, finding funding."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zedit42",
+      "userId": "publishers:zedit42",
+      "displayName": "Zedit42",
+      "image": "https://avatars.githubusercontent.com/u/87221822?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1769,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1770548681424,
+      "changelog": "Added: Auto-trading with Drift + Flash Trade integration, DRY_RUN mode, position manager, risk controls, cron support",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5cf889ab342834c899ceeddf245d1063d5c3fadde32552486c9d37601a2e33f2"
+}

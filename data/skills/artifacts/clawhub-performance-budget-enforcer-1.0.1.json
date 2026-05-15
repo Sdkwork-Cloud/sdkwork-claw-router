@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/performance-budget-enforcer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.performance_budget_enforcer",
+  "skill": {
+    "id": 52715,
+    "skillKey": "clawhub-performance-budget-enforcer",
+    "name": "Performance Budget Enforcer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "performance-budget-enforcer",
+    "url": "https://clawhub.ai/skills/performance-budget-enforcer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/performance-budget-enforcer-159f97f9793b4ccb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Define, measure, and enforce web performance budgets — bundle sizes, asset counts, image weights, third-party scripts. Fails CI when budgets are exceeded. Tr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777593735850,
+      "changelog": "- No file changes detected in this release.\n- Documentation and command descriptions remain unchanged.\n- No code or functionality updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:896235d36afe269f50c24bdec983104a8f53fad318b97576d9cfaa047c5823ba"
+}

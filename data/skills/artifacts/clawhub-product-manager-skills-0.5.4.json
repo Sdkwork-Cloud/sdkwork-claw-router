@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/product-manager-skills@0.5.4",
+  "version": "0.5.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_manager_skills",
+  "skill": {
+    "id": 10497,
+    "skillKey": "clawhub-product-manager-skills",
+    "name": "Product Manager Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-manager-skills",
+    "url": "https://clawhub.ai/skills/product-manager-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-manager-skills-aa6ddfa6b7cf0206.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PM skill for Claude Code, Codex, Cursor, and Windsurf. Diagnoses SaaS metrics, critiques PRDs, plans roadmaps, runs discovery, coaches PM career transitions,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "digidai",
+      "userId": "s179e8m4pfbxpv4djf5mq478p983g37a",
+      "displayName": "Gene Dai",
+      "image": "https://avatars.githubusercontent.com/u/2595292?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1842,
+      "installsAllTime": 22,
+      "installsCurrent": 22,
+      "stars": 6,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.5.4",
+      "createdAt": 1775963133330,
+      "changelog": "Release v0.5.4: remove automatic helper-script execution from SKILL.md and make update-check manual-only for better transparency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3daf0fdc437fe7751e8aa84b56de6efb673b8d737cae30ad914742b0abc7129f"
+}

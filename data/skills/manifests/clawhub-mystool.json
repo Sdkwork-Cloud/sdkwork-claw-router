@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72758,
+  "uuid": "skill-clawhub-mystool",
+  "skillKey": "clawhub-mystool",
+  "name": "米游社工具",
+  "summary": "米游社工具插件。当用户消息包含以下任意关键词时触发：米游社登录、米游社绑定、米游社账号、米游社解绑、米游社任务、米游币任务、米游社签到、原神便笺、星铁便笺、开拓力、树脂、米游币商品、米游社兑换、米游社帮助、扫码补全stoken。支持短信登录、扫码登录、Cookie 登录三种方式。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mystool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "carcloud-ml",
+      "features": [
+        "米游社工具插件。当用户消息包含以下任意关键词时触发：米游社登录、米游社绑定、米游社账号、米游社解绑、米游社任务、米游币任务、米游社签到、原神便笺、星铁便笺、开拓力、树脂、米游币商品、米游社兑."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mystool@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110646310?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mystool",
+      "url": "https://clawhub.ai/skills/mystool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mystool",
+    "url": "https://clawhub.ai/skills/mystool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mystool-87aaed29325da4c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mystool@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mystool-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b27e55000d5641585db42ad589da0ae5a915bdc64147b178a0201bebb7cb47e",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:22:35.228Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shorts-video-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shorts_video_generator",
+  "skill": {
+    "id": 49411,
+    "skillKey": "clawhub-shorts-video-generator",
+    "name": "Shorts Video Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shorts-video-generator",
+    "url": "https://clawhub.ai/skills/shorts-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shorts-video-generator-610261e089f79756.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate long-form video into vertical short clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. TikTok and YouTube Shorts creators use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 79,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778064913569,
+      "changelog": "Shorts Video Generator 1.0.0 — Initial Release\n\n- Generate short, vertical clips from long-form videos (MP4, MOV, AVI, WebM up to 500MB).\n- Cloud GPU processing delivers 1080p MP4 files in 1-2 minutes.\n- Supports automated session setup; 100 free credits for anonymous users.\n- Handles TikTok, YouTube Shorts, and similar workflows with seamless upload, edit, and export.\n- Action routing, multi-language commands, error handling, and detailed API integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b65dbf040257393cfb908f57eb0920cd16560e5377f6bf9d0d9fc97b4a3677e"
+}

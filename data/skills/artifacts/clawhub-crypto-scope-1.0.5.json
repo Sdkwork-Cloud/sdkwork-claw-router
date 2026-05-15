@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-scope@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_scope",
+  "skill": {
+    "id": 65297,
+    "skillKey": "clawhub-crypto-scope",
+    "name": "Crypto Scope"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-scope",
+    "url": "https://clawhub.ai/skills/crypto-scope",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-scope-e5c22a8d10104a57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供加密货币实时价格查询、技术指标分析（MA/RSI/MACD）和交易信号生成，支持多币种批量监控。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imgolye",
+      "userId": "publishers:imgolye",
+      "displayName": "imgolye",
+      "image": "https://avatars.githubusercontent.com/u/7943209?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 548,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1772980448153,
+      "changelog": "- Upgrade version to 1.0.5 in SKILL.md.\n- No user-facing feature updates or documentation changes except for version bump.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1459f74f3875a2e5984645e7ed42c182b750964d46adf27afae89b8525d7eaa4"
+}

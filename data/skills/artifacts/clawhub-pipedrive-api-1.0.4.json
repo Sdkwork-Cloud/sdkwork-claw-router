@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pipedrive-api@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipedrive_api",
+  "skill": {
+    "id": 8434,
+    "skillKey": "clawhub-pipedrive-api",
+    "name": "Pipedrive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipedrive-api",
+    "url": "https://clawhub.ai/skills/pipedrive-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipedrive-api-299bfd020b6a7089.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pipedrive API integration with managed OAuth. Manage deals, persons, organizations, activities, and pipelines. Use this skill when users want to interact wit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 15844,
+      "installsAllTime": 10,
+      "installsCurrent": 8,
+      "stars": 7,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777593072328,
+      "changelog": "- Updated all API references and example URLs to use https://api.maton.ai instead of previous gateway domain.\n- Connection management instructions now use https://api.maton.ai endpoints.\n- Added section on security and requiring explicit user approval for all write operations.\n- Clarified the need to specify the connection with the Maton-Connection header if using multiple Pipedrive accounts.\n- Removed LICENSE.txt file from the package.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e32691acc4d76348d73c65c1c43fd85c6bc7e34c142e01f6fe5b6f04468776b5"
+}

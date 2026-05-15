@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nate-clawrank@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nate_clawrank",
+  "skill": {
+    "id": 32426,
+    "skillKey": "clawhub-nate-clawrank",
+    "name": "Clawrank"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nate-clawrank",
+    "url": "https://clawhub.ai/skills/nate-clawrank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nate-clawrank-2d7469ce70f6a141.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent performance scoring system for OpenClaw agents. 7 dimensions scored 0-10, crab-themed tiers, evidence-based, with trajectory tracking. Use at session e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joeycacciatore3",
+      "userId": "s17639jhqpxc4e367kct4f924n83y3w5",
+      "displayName": "JoeyCacciatore3",
+      "image": "https://avatars.githubusercontent.com/u/219585745?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774926744022,
+      "changelog": "Initial release of ClawRank: a comprehensive agent performance scoring system for OpenClaw agents.\n\n- Introduces 7 evidence-based scoring dimensions (0–10 each), normalized to a 100-point scale.\n- Crab-themed performance tiers (Frozen to King Crab) with defined ranges and meanings.\n- Standardized session-ending format for score reports, including evidence for each dimension.\n- Weekly trajectory tracking for progress monitoring.\n- Peer review integration via agent-sync; enforces explanation on major self/peer disagreement.\n- Strict rules for scoring consistency, evidence, and trend focus.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf829a0aed2a259f87a4cba824d706421358797bf875a13bcb333f6f8404e13a"
+}

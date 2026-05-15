@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bt-download@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bt_download",
+  "skill": {
+    "id": 60718,
+    "skillKey": "clawhub-bt-download",
+    "name": "BT Download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bt-download",
+    "url": "https://clawhub.ai/skills/bt-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bt-download-d16268cf7158969c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BT下载助手，支持 aria2 RPC 模式下载、监控和自动做种"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "n0nsense11",
+      "userId": "s17e1c1h4wyz6x7z4673knkw2583gx3c",
+      "displayName": "n0nsense",
+      "image": "https://avatars.githubusercontent.com/u/49099455?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 415,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773462009153,
+      "changelog": "初始版本，提供了基于 aria2 RPC 的 BT 下载助手：\n\n- 支持磁力链接、BT 文件和普通链接的下载\n- 提供 aria2 安装、检测、启动等辅助工具\n- 支持 DHT 检测与启用、自动做种与监控、做种完成自动停止\n- 下载目录可灵活指定，未指定时智能提示确认\n- 跨平台支持，兼容 Windows、macOS 和 Linux 默认下载目录",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38c5ac2794577145c84fb5b1fee27d9f8d5872844a319144728e93dd20cce9b6"
+}

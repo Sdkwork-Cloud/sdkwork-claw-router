@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49210,
+  "uuid": "skill-clawhub-video-trimmer-high",
+  "skillKey": "clawhub-video-trimmer-high",
+  "name": "Video Trimmer High",
+  "summary": "Get trimmed HD clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_trimmer_high",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vcarolxhberger",
+      "features": [
+        "Get trimmed HD clips ready to post, without touching a single slider",
+        "Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-trimmer-high@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210890217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-trimmer-high",
+      "url": "https://clawhub.ai/skills/video-trimmer-high"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-trimmer-high",
+    "url": "https://clawhub.ai/skills/video-trimmer-high",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-trimmer-high-55f5e8039b32e63a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-trimmer-high@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-trimmer-high-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a30eac2bf37f75f862138054ee4c1c2454be1f1c8aa616d2fdeaccfdd43eef66",
+      "artifactSizeBytes": 2481
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T22:31:02.268Z"
+}

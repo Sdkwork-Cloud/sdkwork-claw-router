@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/emp@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emp",
+  "skill": {
+    "id": 55953,
+    "skillKey": "clawhub-emp",
+    "name": "EMP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emp",
+    "url": "https://clawhub.ai/skills/emp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emp-9d586dc0a48a2ed0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "EMP Skill for OpenClaw – empathetic, role-based task routing"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zzj0402",
+      "userId": "publishers:zzj0402",
+      "displayName": "Zingg",
+      "image": "https://avatars.githubusercontent.com/u/15345547?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772692363164,
+      "changelog": "emp v0.1.1\n\n- Updated homepage URL and metadata to point to a new repository and shell deploy method.\n- Added a shell-based “Deploy EMP Soul” step in install instructions for improved deployment.\n- No code or skill logic changes; documentation and metadata improvements only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5ee447a7c6df4f22f6be43208a5a1a377be49e904d7a0b2f77623ddf2118a273"
+}

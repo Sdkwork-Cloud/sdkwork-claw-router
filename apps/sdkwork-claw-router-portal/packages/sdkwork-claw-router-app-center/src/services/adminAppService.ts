@@ -1,5 +1,5 @@
 import {
-  createRequestToken,
+  createRequestParams,
   ensurePlusApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
@@ -17,7 +17,6 @@ import type {
   AdminAppConfig,
   AdminAppCreateRequest,
   AdminAppItemResponse,
-  AdminAppListRequest,
   AdminAppUpdateRequest,
 } from '@sdkwork/clawrouter-backend-sdk';
 
@@ -102,11 +101,31 @@ export interface AdminAppUpdateInput {
   downloadUrl?: string | null;
 }
 
+export interface AdminAppListInput {
+  searchQuery?: unknown;
+  status?: AdminAppStatus;
+  marketStatus?: AdminAppMarketStatus;
+  appType?: unknown;
+  page?: unknown;
+  pageSize?: unknown;
+}
+
+interface AdminAppListSdkParams {
+  q?: string;
+  status?: AdminAppStatus;
+  marketStatus?: AdminAppMarketStatus;
+  appType?: string;
+  page?: number;
+  pageSize?: number;
+}
+
 export class AdminAppService {
-  static async fetchApps(query: AdminAppListRequest = {}): Promise<AdminApp[]> {
-    const result = await getClawRouterBackendSdkClient().app.fetchApps(
-      normalizeListRequest(query),
-      requestToken('admin-app-list'),
+  static async fetchApps(query: AdminAppListInput = {}): Promise<AdminApp[]> {
+    const result = await getClawRouterBackendSdkClient().platform.apps.list(
+      {
+        ...normalizeListRequest(query),
+        ...createRequestParams('admin-app-list'),
+      },
     );
     ensurePlusApiSuccess(result, 'Failed to fetch apps');
     return readRequiredApiItems(result, 'Failed to fetch apps')
@@ -114,77 +133,73 @@ export class AdminAppService {
   }
 
   static async fetchApp(appId: string): Promise<AdminApp> {
-    const result = await getClawRouterBackendSdkClient().app.fetchApp(
+    const result = await getClawRouterBackendSdkClient().platform.apps.retrieve(
       requiredSafePathSegment(appId, 'appId'),
-      requestToken('admin-app-fetch'),
+      createRequestParams('admin-app-fetch'),
     );
     ensurePlusApiSuccess(result, 'Failed to fetch app');
     return normalizeAdminApp(readRequiredApiItem(result, 'App response is missing data'));
   }
 
   static async createApp(input: AdminAppCreateInput): Promise<AdminApp> {
-    const result = await getClawRouterBackendSdkClient().app.createApp(
+    const result = await getClawRouterBackendSdkClient().platform.apps.create(
       normalizeCreateRequest(input),
-      requestToken('admin-app-create'),
+      createRequestParams('admin-app-create'),
     );
     ensurePlusApiSuccess(result, 'Failed to create app');
     return normalizeAdminApp(readRequiredApiItem(result, 'Created app response is missing data'));
   }
 
   static async updateApp(appId: string, input: AdminAppUpdateInput): Promise<AdminApp> {
-    const result = await getClawRouterBackendSdkClient().app.updateApp(
+    const result = await getClawRouterBackendSdkClient().platform.apps.update(
       requiredSafePathSegment(appId, 'appId'),
       normalizeUpdateRequest(input),
-      requestToken('admin-app-update'),
+      createRequestParams('admin-app-update'),
     );
     ensurePlusApiSuccess(result, 'Failed to update app');
     return normalizeAdminApp(readRequiredApiItem(result, 'Updated app response is missing data'));
   }
 
   static async deleteApp(appId: string): Promise<boolean> {
-    const result = await getClawRouterBackendSdkClient().app.deleteApp(
+    const result = await getClawRouterBackendSdkClient().platform.apps.delete(
       requiredSafePathSegment(appId, 'appId'),
-      requestToken('admin-app-delete'),
+      createRequestParams('admin-app-delete'),
     );
     ensurePlusApiSuccess(result, 'Failed to delete app');
     return readBoolean(readApiRecord(result), 'deleted', false);
   }
 
   static async enableApp(appId: string): Promise<AdminApp> {
-    const result = await getClawRouterBackendSdkClient().app.enableApp(
+    const result = await getClawRouterBackendSdkClient().platform.apps.enable(
       requiredSafePathSegment(appId, 'appId'),
-      undefined,
-      requestToken('admin-app-enable'),
+      createRequestParams('admin-app-enable'),
     );
     ensurePlusApiSuccess(result, 'Failed to enable app');
     return normalizeAdminApp(readRequiredApiItem(result, 'Enabled app response is missing data'));
   }
 
   static async disableApp(appId: string): Promise<AdminApp> {
-    const result = await getClawRouterBackendSdkClient().app.disableApp(
+    const result = await getClawRouterBackendSdkClient().platform.apps.disable(
       requiredSafePathSegment(appId, 'appId'),
-      undefined,
-      requestToken('admin-app-disable'),
+      createRequestParams('admin-app-disable'),
     );
     ensurePlusApiSuccess(result, 'Failed to disable app');
     return normalizeAdminApp(readRequiredApiItem(result, 'Disabled app response is missing data'));
   }
 
   static async publishApp(appId: string): Promise<AdminApp> {
-    const result = await getClawRouterBackendSdkClient().app.publishApp(
+    const result = await getClawRouterBackendSdkClient().platform.apps.publish(
       requiredSafePathSegment(appId, 'appId'),
-      undefined,
-      requestToken('admin-app-publish'),
+      createRequestParams('admin-app-publish'),
     );
     ensurePlusApiSuccess(result, 'Failed to publish app');
     return normalizeAdminApp(readRequiredApiItem(result, 'Published app response is missing data'));
   }
 
   static async offlineApp(appId: string): Promise<AdminApp> {
-    const result = await getClawRouterBackendSdkClient().app.offlineApp(
+    const result = await getClawRouterBackendSdkClient().platform.apps.unpublish(
       requiredSafePathSegment(appId, 'appId'),
-      undefined,
-      requestToken('admin-app-offline'),
+      createRequestParams('admin-app-offline'),
     );
     ensurePlusApiSuccess(result, 'Failed to offline app');
     return normalizeAdminApp(readRequiredApiItem(result, 'Offline app response is missing data'));
@@ -211,11 +226,11 @@ export function updateAdminAppInputFromForm(form: FormData): AdminAppUpdateInput
   return input;
 }
 
-function normalizeListRequest(input: AdminAppListRequest): AdminAppListRequest {
-  const request: AdminAppListRequest = {};
-  const keyword = optionalText(input.keyword, 'keyword', 128);
-  if (keyword) {
-    request.keyword = keyword;
+function normalizeListRequest(input: AdminAppListInput): AdminAppListSdkParams {
+  const request: AdminAppListSdkParams = {};
+  const searchQuery = optionalText(input.searchQuery, 'searchQuery', 128);
+  if (searchQuery) {
+    request.q = searchQuery;
   }
   if (input.status) {
     request.status = readStatus(input.status);
@@ -227,8 +242,8 @@ function normalizeListRequest(input: AdminAppListRequest): AdminAppListRequest {
   if (appType) {
     request.appType = appType;
   }
-  if (input.pageNo !== undefined) {
-    request.pageNo = positiveInteger(input.pageNo, 'pageNo', 1_000_000);
+  if (input.page !== undefined) {
+    request.page = positiveInteger(input.page, 'page', 1_000_000);
   }
   if (input.pageSize !== undefined) {
     request.pageSize = positiveInteger(input.pageSize, 'pageSize', 200);
@@ -629,10 +644,6 @@ function parseJsonObject(value: string, fieldName: string): Record<string, unkno
     }
     throw new Error(`${fieldName} must be valid JSON`);
   }
-}
-
-function requestToken(scope: string): string {
-  return createRequestToken(scope);
 }
 
 function pruneUndefined<T extends Record<string, unknown>>(value: T): T {

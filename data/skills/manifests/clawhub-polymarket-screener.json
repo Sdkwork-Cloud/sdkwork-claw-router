@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18770,
+  "uuid": "skill-clawhub-polymarket-screener",
+  "skillKey": "clawhub-polymarket-screener",
+  "name": "Polymarket Screener",
+  "summary": "Filter Polymarket prediction markets and track probabilities. Use when screening bets, drafting analyses, outlining trends, tracking price movements.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_screener",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Filter Polymarket prediction markets and track probabilities",
+        "Use when screening bets, drafting analyses, outlining trends, tracking price movements."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-screener@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-screener",
+      "url": "https://clawhub.ai/skills/polymarket-screener"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-screener",
+    "url": "https://clawhub.ai/skills/polymarket-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-screener-44af11dc8346c7ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-screener@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-screener-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b2fcc1cd73d58569344d6bec8e82c65d7f3d77333c9d8dbaf1014c861d274e8",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:48:53.923Z"
+}

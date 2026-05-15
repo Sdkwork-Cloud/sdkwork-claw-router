@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19487,
+  "uuid": "skill-clawhub-todoist-api-rest",
+  "skillKey": "clawhub-todoist-api-rest",
+  "name": "Todoist Api Rest",
+  "summary": "Direct Todoist API integration via curl/jq. Lightweight, reliable, and uses working v1/v2 endpoints.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todoist_api_rest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NitsujY",
+      "features": [
+        "Direct Todoist API integration via curl/jq",
+        "Lightweight, reliable, and uses working v1/v2 endpoints."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/todoist-api-rest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2851659?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "todoist-api-rest",
+      "url": "https://clawhub.ai/skills/todoist-api-rest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todoist-api-rest",
+    "url": "https://clawhub.ai/skills/todoist-api-rest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todoist-api-rest-677bd226b7760eba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/todoist-api-rest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-todoist-api-rest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17538cd1d3a3131be56f7e793bf6493964b0facc5d4adf4fd96787c9b9978663",
+      "artifactSizeBytes": 2143
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T18:22:16.646Z"
+}

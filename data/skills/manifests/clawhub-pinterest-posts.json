@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29380,
+  "uuid": "skill-clawhub-pinterest-posts",
+  "skillKey": "clawhub-pinterest-posts",
+  "name": "pinterest-posts",
+  "summary": "When the user wants to create Pinterest Pins, optimize Pin descriptions, or grow Pinterest presence. Also use when the user mentions \"Pinterest,\" \"Pin,\" \"Pin...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pinterest_posts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to create Pinterest Pins, optimize Pin descriptions, or grow Pinterest pres.",
+        "Also use when the user mentions \"Pinterest,\" \"Pin,\" \"Pin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pinterest-posts@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pinterest-posts",
+      "url": "https://clawhub.ai/skills/pinterest-posts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pinterest-posts",
+    "url": "https://clawhub.ai/skills/pinterest-posts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pinterest-posts-e971f708e3654c82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pinterest-posts@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pinterest-posts-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c85d99bb74f988d6d9b029c3efded284679ef48d01dd46aa9e5ad214b729e4fc",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T15:03:56.385Z"
+}

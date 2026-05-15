@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42383,
+  "uuid": "skill-clawhub-fox-veille",
+  "skillKey": "clawhub-fox-veille",
+  "name": "Fox Veille",
+  "summary": "RSS feed aggregator, deduplication engine, LLM scoring, and output dispatcher for OpenClaw agents. Use when: fetching recent articles from configured sources...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fox_veille",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GarfieldQin",
+      "features": [
+        "RSS feed aggregator, deduplication engine, LLM scoring, and output dispatcher for OpenClaw agen.",
+        "Use when: fetching recent articles from configured sources..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fox-veille@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12707224?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fox-veille",
+      "url": "https://clawhub.ai/skills/fox-veille"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fox-veille",
+    "url": "https://clawhub.ai/skills/fox-veille",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fox-veille-0f4b0ef95d325262.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fox-veille@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fox-veille-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0aaeb2b6f07f3be36ab535fc73236f777751efe6468313300859a48a362bd7d3",
+      "artifactSizeBytes": 2605
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T00:00:58.139Z"
+}

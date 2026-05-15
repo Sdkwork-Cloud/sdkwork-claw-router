@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62853,
+  "uuid": "skill-clawhub-nutstore-webdav-storage",
+  "skillKey": "clawhub-nutstore-webdav-storage",
+  "name": "Nutstore WebDAV Storage",
+  "summary": "使用坚果云 WebDAV 为 OpenClaw 多 agent 工作区做备份、归档与恢复的 skill。默认按 agent 备份身份信息文件与 memory 目录；如有明确要求，也支持自定义文件或目录备份到坚果云，并保留默认排除敏感文件的执行规则。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nutstore_webdav_storage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "辰慕霆",
+      "features": [
+        "使用坚果云 WebDAV 为 OpenClaw 多 agent 工作区做备份、归档与恢复的 skill。默认按 agent 备份身份信息文件与 memory 目录；如有明确要求，也支持自定义."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nutstore-webdav-storage@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102965501?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nutstore-webdav-storage",
+      "url": "https://clawhub.ai/skills/nutstore-webdav-storage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nutstore-webdav-storage",
+    "url": "https://clawhub.ai/skills/nutstore-webdav-storage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nutstore-webdav-storage-ce8d829fd9fc626b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nutstore-webdav-storage@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nutstore-webdav-storage-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51d79d63478231f6f2e7435e5002a9697dbbe3d26fafba66e39dbc6129ef574e",
+      "artifactSizeBytes": 2306
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T04:24:00.892Z"
+}

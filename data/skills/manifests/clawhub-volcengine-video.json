@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64272,
+  "uuid": "skill-clawhub-volcengine-video",
+  "skillKey": "clawhub-volcengine-video",
+  "name": "volcengine-video",
+  "summary": "通过自然语言调用火山引擎API生成AI视频或查询视频生成任务状态和结果。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZzBpaq123",
+      "features": [
+        "通过自然语言调用火山引擎API生成AI视频或查询视频生成任务状态和结果。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcengine-video@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132890035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcengine-video",
+      "url": "https://clawhub.ai/skills/volcengine-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-video",
+    "url": "https://clawhub.ai/skills/volcengine-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-video-9aab1bf0f2f64912.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcengine-video@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-video-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0fcaf003428e54c3d09d63f90ce0267898e59af62f071bbca997006c9dae9d40",
+      "artifactSizeBytes": 1831
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T07:20:53.927Z"
+}

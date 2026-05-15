@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-guru@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_guru",
+  "skill": {
+    "id": 53324,
+    "skillKey": "clawhub-agent-guru",
+    "name": "Agent Guru"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-guru",
+    "url": "https://clawhub.ai/skills/agent-guru",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-guru-fdd19c43a2722fd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when building, designing, or reviewing a multi-agent system for production — routing agents, orchestrating subagents, guarding tools with permissions, ma..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weixuanjiang",
+      "userId": "s17021bbexv9kms7yjm1x3fvbh840de3",
+      "displayName": "Weixuan Jiang",
+      "image": "https://avatars.githubusercontent.com/u/45199329?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775084497837,
+      "changelog": "Initial release: Comprehensive multi-agent production design patterns and reference for LangGraph-based frameworks.\n\n- Introduces best practices and architectural patterns for scalable, safe, and observable agent systems.\n- Includes decision trees for agent topology and framework selection (LangGraph, Strands).\n- Provides modular, on-demand reference files for each system layer (routing, orchestrator, tools, memory, observability, resilience, persistence, checklist).\n- Documents concrete implementation tips, safeguards, and gotchas for production reliability and cost control.\n- Emphasizes code-level enforcement of safety, memory management, error handling, and concurrency controls.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8221394e8db91711c6069f72899fc19d972c502cb273daf7f262b716bd789406"
+}

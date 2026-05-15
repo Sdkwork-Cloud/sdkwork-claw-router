@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-notes@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_notes",
+  "skill": {
+    "id": 12118,
+    "skillKey": "clawhub-personal-notes",
+    "name": "Personal Notes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-notes",
+    "url": "https://clawhub.ai/skills/personal-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-notes-05cd42fd91a0870f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Acts as the user's note-taking and journaling assistant in the Notes topic. Captures thoughts, reflections, daily logs, random notes. Use when in Personal ch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gekacross",
+      "userId": "s17cym2ktv2gg2z1x3v5zg6xn983yakp",
+      "displayName": "GekaCross",
+      "image": "https://avatars.githubusercontent.com/u/57638140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1838,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771412991177,
+      "changelog": "Initial release. Personal notebook and diary with timestamps and tags.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eec4ed4ab1d811fcb249f500378c0455d4b1b4e4a943cb56a9beb2608a83d77a"
+}

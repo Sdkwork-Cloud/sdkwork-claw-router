@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66047,
+  "uuid": "skill-clawhub-stock-query",
+  "skillKey": "clawhub-stock-query",
+  "name": "Stock Query",
+  "summary": "查询全球股票实时行情（A 股、港股、美股）、ETF、场外基金、指数，支持批量查询、历史K线（含均线）与自选股管理。 TRIGGER when: 用户查询股价/行情/净值/历史K线/自选盈亏/大盘指数时。NOT for: 加密货币、期货、期权、外汇。",
+  "version": "2.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "asfamilybank",
+      "features": [
+        "查询全球股票实时行情（A 股、港股、美股）、ETF、场外基金、指数，支持批量查询、历史K线（含均线）与自选股管理。 TRIGGER when: 用户查询股价/行情/净值/历史K线/自选盈亏/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-query@2.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90023470?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-query",
+      "url": "https://clawhub.ai/skills/stock-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-query",
+    "url": "https://clawhub.ai/skills/stock-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-query-19eb5145e23a92ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-query@2.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-query-2.6.0.json",
+      "version": "2.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80b9cdf8c038821b91f1c7ae14e4d27c1bd8c2398261e888390a2d1b4e2dbda1",
+      "artifactSizeBytes": 2432
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T01:55:57.805Z"
+}

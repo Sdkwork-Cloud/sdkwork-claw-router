@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59747,
+  "uuid": "skill-clawhub-openclaw-workspace-cleaner",
+  "skillKey": "clawhub-openclaw-workspace-cleaner",
+  "name": "Workspace Cleaner",
+  "summary": "优化 OpenClaw 工作区基础文件（AGENTS/MEMORY/SOUL/TOOLS/IDENTITY/USER），减少上下文噪音。执行前必须列出优化方案并获得确认。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_workspace_cleaner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AxelHu",
+      "features": [
+        "优化 OpenClaw 工作区基础文件（AGENTS/MEMORY/SOUL/TOOLS/IDENTITY/USER），减少上下文噪音。执行前必须列出优化方案并获得确认。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-workspace-cleaner@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12809280?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-workspace-cleaner",
+      "url": "https://clawhub.ai/skills/openclaw-workspace-cleaner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-workspace-cleaner",
+    "url": "https://clawhub.ai/skills/openclaw-workspace-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-workspace-cleaner-dada4bdb8c6cc3c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-workspace-cleaner@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-workspace-cleaner-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5189bf659fd3f5521846371f9052ef0bbd079dddf660b71bd4bcc612b24e06d5",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T09:30:21.394Z"
+}

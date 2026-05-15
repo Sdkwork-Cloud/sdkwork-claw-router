@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19094,
+  "uuid": "skill-clawhub-claude-code-dispatch",
+  "skillKey": "clawhub-claude-code-dispatch",
+  "name": "Claude Code Dispatch",
+  "summary": "Invoke Claude Code CLI as a subprocess for coding tasks that require file access, editing, and shell execution",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_dispatch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EZPeasyDave",
+      "features": [
+        "Invoke Claude Code CLI as a subprocess for coding tasks that require file access, editing, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-dispatch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264388301?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-dispatch",
+      "url": "https://clawhub.ai/skills/claude-code-dispatch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-dispatch",
+    "url": "https://clawhub.ai/skills/claude-code-dispatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-dispatch-c3d10d7cab0b08c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-dispatch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-dispatch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:773b9ea64b77061afc50d4b9b89dca561ccbce5960bb3ddce3f0a12ef1fac6b7",
+      "artifactSizeBytes": 2361
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T10:52:33.478Z"
+}

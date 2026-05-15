@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58918,
+  "uuid": "skill-clawhub-session-memory-structured",
+  "skillKey": "clawhub-session-memory-structured",
+  "name": "Session Memory Structured",
+  "summary": "在 /new 或 /reset 时，为刚结束的会话生成结构化纪要并归档到 memory/YYYY-MM-DD.md",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_memory_structured",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Thelast0802",
+      "features": [
+        "在 /new 或 /reset 时，为刚结束的会话生成结构化纪要并归档到 memory/YYYY-MM-DD.md"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-memory-structured@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70422154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-memory-structured",
+      "url": "https://clawhub.ai/skills/session-memory-structured"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-memory-structured",
+    "url": "https://clawhub.ai/skills/session-memory-structured",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-memory-structured-9202e62cff70ff74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-memory-structured@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-memory-structured-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10cf573f05e11c52e4fe37d4f306f0ccb97ce0ab012eec753d39497c9dd67d53",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T06:03:24.806Z"
+}

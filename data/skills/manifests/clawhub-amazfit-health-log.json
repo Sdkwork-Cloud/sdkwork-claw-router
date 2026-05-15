@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34190,
+  "uuid": "skill-clawhub-amazfit-health-log",
+  "skillKey": "clawhub-amazfit-health-log",
+  "name": "Amazfit Health Log",
+  "summary": "Fetches Amazfit GTR3 health data from HCGateway and writes a daily Obsidian log note. Use when user says \"health log\", \"GTR3 data\", \"write health data\", \"fet...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazfit_health_log",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sanweb",
+      "features": [
+        "Fetches Amazfit GTR3 health data from HCGateway and writes a daily Obsidian log note",
+        "Use when user says \"health log\", \"GTR3 data\", \"write health data\", \"fet..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazfit-health-log@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78940573?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazfit-health-log",
+      "url": "https://clawhub.ai/skills/amazfit-health-log"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazfit-health-log",
+    "url": "https://clawhub.ai/skills/amazfit-health-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazfit-health-log-41466f54652d2541.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazfit-health-log@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazfit-health-log-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29705d2d2e107954d13ed86024f696d8640a84b0b9b34259cc3b5df9650de9b2",
+      "artifactSizeBytes": 2069
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T22:53:02.789Z"
+}

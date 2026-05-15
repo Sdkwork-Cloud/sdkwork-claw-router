@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42579,
+  "uuid": "skill-clawhub-qui-context-manager",
+  "skillKey": "clawhub-qui-context-manager",
+  "name": "qui-context-manager",
+  "summary": "AI-powered context management for OpenClaw sessions",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qui_context_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QuincyGunter",
+      "features": [
+        "AI-powered context management for OpenClaw sessions"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qui-context-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260427166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qui-context-manager",
+      "url": "https://clawhub.ai/skills/qui-context-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qui-context-manager",
+    "url": "https://clawhub.ai/skills/qui-context-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qui-context-manager-def9d520acd0f326.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qui-context-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qui-context-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56ec44045e4cab41718f66540015e72cbf86194bde840456ad1a22588892663b",
+      "artifactSizeBytes": 2272
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T03:57:44.934Z"
+}

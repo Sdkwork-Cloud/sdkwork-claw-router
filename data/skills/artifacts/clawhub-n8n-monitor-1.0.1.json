@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/n8n-monitor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n8n_monitor",
+  "skill": {
+    "id": 9000,
+    "skillKey": "clawhub-n8n-monitor",
+    "name": "N8n Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n8n-monitor",
+    "url": "https://clawhub.ai/skills/n8n-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n8n-monitor-15616c0bdc6e4091.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitora o estado, saúde, logs recentes e uso de CPU/memória dos containers N8N via comandos Docker."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smitti7971",
+      "userId": "publishers:smitti7971",
+      "displayName": "Smitti7971",
+      "image": "https://avatars.githubusercontent.com/u/199005793?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7078,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769632206443,
+      "changelog": "- Initial release version 1.0.1.\n- Added main.js to provide core monitoring functionality for n8n containers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0aae7b7e4430b7d1bb65fa1a89d7801675dee5a35d82262ce1184905c58b5d6a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aviation-web-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aviation_web_scraper",
+  "skill": {
+    "id": 60442,
+    "skillKey": "clawhub-aviation-web-scraper",
+    "name": "Openclaw Version"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aviation-web-scraper",
+    "url": "https://clawhub.ai/skills/aviation-web-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aviation-web-scraper-a852101ed21ee2c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "항공 기관(ICAO, FAA, EASA, 국토교통부 등) 웹사이트에서 정보를 수집하여 JSON으로 구조화하고 태깅한 뒤, Word/Excel/PDF/Markdown 문서로 변환하는 스킬. 일회성 수집과 정기 스케줄 수집 모두 지원."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parkbeomjun-gkgkgk",
+      "userId": "s1783m6q1m9gbf3fnbgmd720bn84abb6",
+      "displayName": "parkbeomjun-gkgkgk",
+      "image": "https://avatars.githubusercontent.com/u/219679755?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775455500922,
+      "changelog": "Initial release - 첫 번째 ClawHub 퍼블리시",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0807ece789012285c30f8b53c739865a5f4f38bbc27d4abf031abff334cb7944"
+}

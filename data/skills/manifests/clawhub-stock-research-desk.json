@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35412,
+  "uuid": "skill-clawhub-stock-research-desk",
+  "skillKey": "clawhub-stock-research-desk",
+  "name": "Stock Research Desk",
+  "summary": "Claude Code skill for multi-agent equity research. Produces buy-side memos with debate, scenario projection, and bilingual DOCX delivery. Use when researchin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_research_desk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Da Wei",
+      "features": [
+        "Claude Code skill for multi-agent equity research",
+        "Produces buy-side memos with debate, scenario projection, and bilingual DOCX delivery",
+        "Use when researchin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-research-desk@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258555668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-research-desk",
+      "url": "https://clawhub.ai/skills/stock-research-desk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-research-desk",
+    "url": "https://clawhub.ai/skills/stock-research-desk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-research-desk-ae7a438c818ec671.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-research-desk@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-research-desk-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a711153d5b3bfa20e5cd72092cd724b0951e6ba691c695c2f8f60683e190a59",
+      "artifactSizeBytes": 2274
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T20:41:57.589Z"
+}

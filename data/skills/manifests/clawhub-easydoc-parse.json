@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22118,
+  "uuid": "skill-clawhub-easydoc-parse",
+  "skillKey": "clawhub-easydoc-parse",
+  "name": "easydoc-parse",
+  "summary": "Use when tasks need EasyDoc REST API to convert unstructured documents into structured JSON or markdown on either China EasyLink platform or global EasyDoc p...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easydoc_parse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sycamore",
+      "features": [
+        "Use when tasks need EasyDoc REST API to convert unstructured documents into structured JSON or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/easydoc-parse@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76979997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "easydoc-parse",
+      "url": "https://clawhub.ai/skills/easydoc-parse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easydoc-parse",
+    "url": "https://clawhub.ai/skills/easydoc-parse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easydoc-parse-2adec61fb8b99052.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/easydoc-parse@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-easydoc-parse-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ce57a9e76a9758220fcdcf941281fb536dec5b23bd84bd587b8d4de4a3bc015",
+      "artifactSizeBytes": 2478
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T03:31:59.381Z"
+}

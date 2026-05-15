@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8420,
+  "uuid": "skill-clawhub-video-transcript-downloader",
+  "skillKey": "clawhub-video-transcript-downloader",
+  "name": "Video Transcript Downloader",
+  "summary": "Download videos, audio, subtitles, and clean paragraph-style transcripts from YouTube and any other yt-dlp supported site. Use when asked to “download this video”, “save this clip”, “rip audio”, “get subtitles”, “get transcript”, or to tro.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_transcript_downloader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peter Steinberger",
+      "features": [
+        "Download videos, audio, subtitles, and clean paragraph-style transcripts from YouTube and any o.",
+        "Use when asked to “download this video”, “save this clip”, “rip audio”, “get subtitles”, “get t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-transcript-downloader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-transcript-downloader",
+      "url": "https://clawhub.ai/skills/video-transcript-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-transcript-downloader",
+    "url": "https://clawhub.ai/skills/video-transcript-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-transcript-downloader-b1f83ab0e8a64bdb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-transcript-downloader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-transcript-downloader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92c4a34fc328518feae5d027ae9195178682c88770e762a75712ec9bb47b43ba",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-05T22:27:09.078Z"
+}

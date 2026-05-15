@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fly-flight@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fly_flight",
+  "skill": {
+    "id": 20939,
+    "skillKey": "clawhub-fly-flight",
+    "name": "Fly Flight"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fly-flight",
+    "url": "https://clawhub.ai/skills/fly-flight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fly-flight-ca0b3f8f86a9b86b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query China domestic transport options through one skill. Use when a user wants domestic flight or high-speed rail results, departure and arrival times, stat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baizhexue",
+      "userId": "s174pgxn8pbrtvea84bawkqdvn83z997",
+      "displayName": "baizhexue",
+      "image": "https://avatars.githubusercontent.com/u/28719172?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 530,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1773941767052,
+      "changelog": "Emphasized runtime requirements in both GitHub and ClawHub docs. Added prominent dependency notes for python3, node, and network access. 补充并重点强调了依赖环境说明，明确要求 python3、node 以及可访问公开航班页面和 12306 官方接口的网络环境。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35358783a57edd89cddaca9a62aa48a46c7c8787d7300dc3af9a76f5bbaa6998"
+}

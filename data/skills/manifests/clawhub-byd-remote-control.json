@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42212,
+  "uuid": "skill-clawhub-byd-remote-control",
+  "skillKey": "clawhub-byd-remote-control",
+  "name": "BYD Remote Control",
+  "summary": "Control and check a BYD vehicle using portable Python helper scripts built on pyBYD. Use when the user wants to check battery state, lock the car, flash ligh...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byd_remote_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hiimivantang",
+      "features": [
+        "Control and check a BYD vehicle using portable Python helper scripts built on pyBYD",
+        "Use when the user wants to check battery state, lock the car, flash ligh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byd-remote-control@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4137197?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byd-remote-control",
+      "url": "https://clawhub.ai/skills/byd-remote-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byd-remote-control",
+    "url": "https://clawhub.ai/skills/byd-remote-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byd-remote-control-af05cc3d05ccfc67.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byd-remote-control@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-byd-remote-control-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b4255983b01cf842b4defa9d330093f425ebe4e665bac961be46de2d2468ead",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T11:11:53.832Z"
+}

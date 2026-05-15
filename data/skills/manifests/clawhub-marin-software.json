@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34227,
+  "uuid": "skill-clawhub-marin-software",
+  "skillKey": "clawhub-marin-software",
+  "name": "Marin Software",
+  "summary": "Marin Software integration. Manage data, records, and automate workflows. Use when the user wants to interact with Marin Software data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marin_software",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Marin Software integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Marin Software data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/marin-software@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "marin-software",
+      "url": "https://clawhub.ai/skills/marin-software"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marin-software",
+    "url": "https://clawhub.ai/skills/marin-software",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marin-software-b602808c8ba162c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/marin-software@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-marin-software-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24bc859ff9ea518b141af6551c0770c825ae0b6ad37944fb2ae48382524511a2",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:43:46.406Z"
+}

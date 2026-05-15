@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33410,
+  "uuid": "skill-clawhub-wordpress-optimizer",
+  "skillKey": "clawhub-wordpress-optimizer",
+  "name": "WordPress Optimizer",
+  "summary": "Optimize and tune WordPress sites for performance and security with automated analysis and configuration management.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wordpress_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Optimize and tune WordPress sites for performance and security with automated analysis and conf."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wordpress-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wordpress-optimizer",
+      "url": "https://clawhub.ai/skills/wordpress-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wordpress-optimizer",
+    "url": "https://clawhub.ai/skills/wordpress-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wordpress-optimizer-7f58d5f9d21ca362.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wordpress-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wordpress-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ddcb2b04dc9b5acb0a8a2ad12f4aabdd2b97f8a72393a0454bfacc2f5097c57",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T04:46:43.483Z"
+}

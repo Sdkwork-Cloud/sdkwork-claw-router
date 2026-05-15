@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61295,
+  "uuid": "skill-clawhub-aiznt-volcseed",
+  "skillKey": "clawhub-aiznt-volcseed",
+  "name": "Volcseed",
+  "summary": "即梦 Volcseed 智能修图。Use when: 用户要按提示词改图、需提交参考图 URL 与轮询任务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiznt_volcseed",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tianshu",
+      "features": [
+        "即梦 Volcseed 智能修图。Use when: 用户要按提示词改图、需提交参考图 URL 与轮询任务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aiznt-volcseed@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100948785?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aiznt-volcseed",
+      "url": "https://clawhub.ai/skills/aiznt-volcseed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiznt-volcseed",
+    "url": "https://clawhub.ai/skills/aiznt-volcseed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiznt-volcseed-1b5d870b5273335a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aiznt-volcseed@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aiznt-volcseed-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5701da8dccc660b807368a282aca8d523c9219d4191913eee425f117b8861809",
+      "artifactSizeBytes": 1827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T13:23:02.841Z"
+}

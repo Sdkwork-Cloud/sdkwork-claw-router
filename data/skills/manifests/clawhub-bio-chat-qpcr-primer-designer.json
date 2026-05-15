@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60694,
+  "uuid": "skill-clawhub-bio-chat-qpcr-primer-designer",
+  "skillKey": "clawhub-bio-chat-qpcr-primer-designer",
+  "name": "qpcr-primer-designer",
+  "summary": "为 RT-qPCR 设计引物和 TaqMan 探针，支持跨外显子、3' 端错配校验及同源映射硬核模式。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bio_chat_qpcr_primer_designer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zjuphD",
+      "features": [
+        "为 RT-qPCR 设计引物和 TaqMan 探针，支持跨外显子、3' 端错配校验及同源映射硬核模式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bio-chat-qpcr-primer-designer@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210981987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bio-chat-qpcr-primer-designer",
+      "url": "https://clawhub.ai/skills/bio-chat-qpcr-primer-designer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bio-chat-qpcr-primer-designer",
+    "url": "https://clawhub.ai/skills/bio-chat-qpcr-primer-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bio-chat-qpcr-primer-designer-5f58ad8440fd0f08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bio-chat-qpcr-primer-designer@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-bio-chat-qpcr-primer-designer-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:680caa888096b60b0a12e81bc63699dc6e85f349daf3f987a5af1a9ec214e99d",
+      "artifactSizeBytes": 2398
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T15:02:26.032Z"
+}

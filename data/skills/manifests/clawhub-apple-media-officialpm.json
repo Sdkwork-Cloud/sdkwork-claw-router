@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12892,
+  "uuid": "skill-clawhub-apple-media-officialpm",
+  "skillKey": "clawhub-apple-media-officialpm",
+  "name": "Apple Media",
+  "summary": "Discover and control Apple media/AirPlay devices (HomePod, Apple TV, AirPlay speakers) from macOS. Use when you want to scan for AirPlay devices, map names→IPs/IDs, pair/connect, and control playback/volume using pyatv (atvremote) and Airf.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_media_officialpm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "officialpm",
+      "features": [
+        "Discover and control Apple media/AirPlay devices (HomePod, Apple TV, AirPlay speakers) from mac.",
+        "Use when you want to scan for AirPlay devices, map names→IPs/IDs, pair/connect, and control pla."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apple-media-officialpm@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45627498?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apple-media-officialpm",
+      "url": "https://clawhub.ai/skills/apple-media-officialpm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-media-officialpm",
+    "url": "https://clawhub.ai/skills/apple-media-officialpm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-media-officialpm-084577a4ec65991b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apple-media-officialpm@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-apple-media-officialpm-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:543aade810398af23d8cc48259a59e16dfd30334c24730cca646a0568a834a19",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T20:45:04.558Z"
+}

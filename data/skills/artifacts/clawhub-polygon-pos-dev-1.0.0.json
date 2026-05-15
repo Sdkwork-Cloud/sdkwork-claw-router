@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polygon-pos-dev@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polygon_pos_dev",
+  "skill": {
+    "id": 13179,
+    "skillKey": "clawhub-polygon-pos-dev",
+    "name": "Polygon PoS Development"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polygon-pos-dev",
+    "url": "https://clawhub.ai/skills/polygon-pos-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polygon-pos-dev-1ccbc078cd17d5aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive guide for Polygon PoS blockchain development. Use when deploying smart contracts to Polygon, testing on Amoy testnet, getting test tokens from faucets, or verifying contracts on Polygonscan. Supports Foundry framework with de."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "akshatgada",
+      "userId": "publishers:akshatgada",
+      "displayName": "AkshatGada",
+      "image": "https://avatars.githubusercontent.com/u/96907514?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1541,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770288151744,
+      "changelog": "Initial release of Polygon PoS development skill with:\n- Two development paths: Quick Start (5-10 min) for agents and Complete Guide (30-60 min) for production\n- Foundry-based deployment workflow with automated scripts\n- Support for Amoy testnet and Polygon mainnet\n- Interactive deployment script (deploy-foundry.sh)\n- Contract verification helper (verify-contract.sh)\n- Multi-faucet helper with 5+ options (get-testnet-tokens.sh)\n- Comprehensive reference guides for deployment, testing, and verification\n- Sample contracts and templates (HelloWorld.sol, foundry.toml, Deploy.s.sol)\n- Complete testing strategies (unit tests, fork testing, testnet testing)\n- Troubleshooting guides and safety checklists",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f8c68ad005fecac258e02adb01ebfa5050d1928683efcfb29eb643e4f7528b45"
+}

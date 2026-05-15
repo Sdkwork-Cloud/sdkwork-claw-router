@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60361,
+  "uuid": "skill-clawhub-sjtu-canvas",
+  "skillKey": "clawhub-sjtu-canvas",
+  "name": "SJTU Canvas 课程助手",
+  "summary": "SJTU Canvas LMS 课程助手。管理上海交通大学 Canvas (oc.sjtu.edu.cn) 课程数据。 也适用于其他基于 Canvas LMS 的高校，修改 base_url 即可。 触发场景: (1) 查看/下载课程文件(PPT/PDF)、批量下载课件 (2) 查看作业列表、DDL、提交状态、提...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sjtu_canvas",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xhh678876",
+      "features": [
+        "SJTU Canvas LMS 课程助手。管理上海交通大学 Canvas (oc.sjtu.edu.cn) 课程数据。 也适用于其他基于 Canvas LMS 的高校，修改 base_url."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sjtu-canvas@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210980016?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sjtu-canvas",
+      "url": "https://clawhub.ai/skills/sjtu-canvas"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sjtu-canvas",
+    "url": "https://clawhub.ai/skills/sjtu-canvas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sjtu-canvas-9e8fe22744f3105c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sjtu-canvas@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sjtu-canvas-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:428fa132932291155c0ca12aa7d913b3eca671102402aecd01c597c18ab6baa4",
+      "artifactSizeBytes": 2118
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T17:37:09.637Z"
+}

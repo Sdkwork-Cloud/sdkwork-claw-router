@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68676,
+  "uuid": "skill-clawhub-zeelin-search-gsdata-es-bigdata",
+  "skillKey": "clawhub-zeelin-search-gsdata-es-bigdata",
+  "name": "智灵大数据搜索",
+  "summary": "使用智灵搜索进行数据查询。当用户说\"使用智灵搜索\"、\"智灵搜索帮我查询\"、\"调用智灵搜索\"、\"用智灵搜索\"、\"智灵搜索查询\"、\"舆情数据\"、\"舆情\"、\"新闻报道\"、\"...评论\"、\"热点话题\"、\"动态\"、\"相关报道\"、\"最新趋势\"等时使用此技能。首先检查Zeelin_Api_Key是否已配置，如果未配置则给出友好...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeelin_search_gsdata_es_bigdata",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "urhd528",
+      "features": [
+        "使用智灵搜索进行数据查询。当用户说\"使用智灵搜索\"、\"智灵搜索帮我查询\"、\"调用智灵搜索\"、\"用智灵搜索\"、\"智灵搜索查询\"、\"舆情数据\"、\"舆情\"、\"新闻报道\"、\"...评论\"、\"热点话题."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zeelin-search-gsdata-es-bigdata@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211808151?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zeelin-search-gsdata-es-bigdata",
+      "url": "https://clawhub.ai/skills/zeelin-search-gsdata-es-bigdata"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeelin-search-gsdata-es-bigdata",
+    "url": "https://clawhub.ai/skills/zeelin-search-gsdata-es-bigdata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeelin-search-gsdata-es-bigdata-cc52b8aab6a9c0a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zeelin-search-gsdata-es-bigdata@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zeelin-search-gsdata-es-bigdata-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64998363c535e5121304749c27d57b0758eb91626399fc9b38dbfbba34b47f1a",
+      "artifactSizeBytes": 2704
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T11:03:11.931Z"
+}

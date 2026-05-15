@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54238,
+  "uuid": "skill-clawhub-persona-team-lead",
+  "skillKey": "clawhub-persona-team-lead",
+  "name": "Persona Team Lead",
+  "summary": "Lead a team — run standups, coordinate tasks, and communicate.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_team_lead",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Lead a team — run standups, coordinate tasks, and communicate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/persona-team-lead@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "persona-team-lead",
+      "url": "https://clawhub.ai/skills/persona-team-lead"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-team-lead",
+    "url": "https://clawhub.ai/skills/persona-team-lead",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-team-lead-2dcb29f6f9740fa8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/persona-team-lead@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-persona-team-lead-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32057984c7ebc2451acc98bd845c2d3aeb2d522eb6b5118c728bc99b1d94cea0",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:35:36.633Z"
+}

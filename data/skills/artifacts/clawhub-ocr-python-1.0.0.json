@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocr-python@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocr_python",
+  "skill": {
+    "id": 11652,
+    "skillKey": "clawhub-ocr-python",
+    "name": "OCR with python"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocr-python",
+    "url": "https://clawhub.ai/skills/ocr-python",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocr-python-3bd6bdc189a2817d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract Chinese and English text from images and scanned PDFs, including documents like invoices and contracts, using PaddleOCR in Python."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roamer-remote",
+      "userId": "s175wscrjbc6yvhxa7yrm073wh83m7pt",
+      "displayName": "Roamer 徐",
+      "image": "https://avatars.githubusercontent.com/u/267348107?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1959,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771704541442,
+      "changelog": "- Initial release of the OCR skill using PaddleOCR.\n- Supports text extraction from PDF and image files in both Chinese and English.\n- Output includes recognized text and confidence scores in JSON format.\n- Typical use cases covered: scanned PDFs, images, invoices, contracts, and multi-page documents.\n- Includes quick start guide and dependency installation instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:54bf8f651d0e5051f73cc2d94d979fdc6123d32948308c73e1df1906c8b30a07"
+}

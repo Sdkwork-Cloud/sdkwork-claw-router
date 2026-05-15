@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28593,
+  "uuid": "skill-clawhub-tbc-bank-api",
+  "skillKey": "clawhub-tbc-bank-api",
+  "name": "Tbc Bank Api",
+  "summary": "Use when the user mentions TBC Bank, tbcbank.ge, Georgian bank APIs, PSD2 integration with TBC, account information services (AIS), payment initiation (PIS)...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tbc_bank_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "erekle1",
+      "features": [
+        "Use when the user mentions TBC Bank, tbcbank.ge, Georgian bank APIs, PSD2 integration with TBC,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tbc-bank-api@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10990536?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tbc-bank-api",
+      "url": "https://clawhub.ai/skills/tbc-bank-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tbc-bank-api",
+    "url": "https://clawhub.ai/skills/tbc-bank-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tbc-bank-api-48dd82fddc9428e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tbc-bank-api@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tbc-bank-api-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8c48adb22d0fbe612a1bad8e3cbe63711db7ef3b50484fdf761b911397a2d5d",
+      "artifactSizeBytes": 2310
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T16:20:36.631Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ainclaw-mind@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ainclaw_mind",
+  "skill": {
+    "id": 53298,
+    "skillKey": "clawhub-ainclaw-mind",
+    "name": "ClawMind"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ainclaw-mind",
+    "url": "https://clawhub.ai/skills/ainclaw-mind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ainclaw-mind-37bd480bd2089e5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Save up to 90% on Token costs. One agent explores, all agents benefit. Cloud-cached workflows with zero inference cost."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ainclaw",
+      "userId": "s17dmbmaenebbv89tz8zc0bfts83h405",
+      "displayName": "ainclaw",
+      "image": "https://avatars.githubusercontent.com/u/252712074?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773909882634,
+      "changelog": "- Updated skill name and branding from \"workflow-cache\" to \"ClawMind\"\n- Changed all documentation references and installation instructions to use the new ainclaw-mind package name\n- No feature or functionality changes—documentation and naming improvements only",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e230b9fd91efb2be892c79ba4ea9411d1fdd09431a414d7dddb016847f1a37e5"
+}

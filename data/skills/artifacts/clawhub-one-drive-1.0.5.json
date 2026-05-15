@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/one-drive@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.one_drive",
+  "skill": {
+    "id": 8744,
+    "skillKey": "clawhub-one-drive",
+    "name": "Microsoft OneDrive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "one-drive",
+    "url": "https://clawhub.ai/skills/one-drive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/one-drive-c6e7ef4ddafb1951.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OneDrive API integration with managed OAuth via Microsoft Graph. Manage files, folders, and sharing. Use this skill when users want to upload, download, orga..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6520,
+      "installsAllTime": 20,
+      "installsCurrent": 18,
+      "stars": 10,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1778148450568,
+      "changelog": "- Added CLI usage examples throughout the documentation, including commands for listing, creating, viewing, and deleting items and connections.\n- Expanded installation section with NPM and Homebrew methods for the Maton CLI.\n- Provided explicit separation and examples for CLI, Python, and API usage for each main operation.\n- Improved connection management instructions, including how to specify connections in CLI commands.\n- Enhanced API reference with corresponding CLI commands for every endpoint example.\n- Clarified authentication steps and ways to manage API keys for both CLI and manual integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74e8b457f03dae87e538938df2e978a1ce71b9413e0504111f1f751a238998ec"
+}

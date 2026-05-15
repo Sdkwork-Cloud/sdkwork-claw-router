@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/p0-systems@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.p0_systems",
+  "skill": {
+    "id": 11546,
+    "skillKey": "clawhub-p0-systems",
+    "name": "P0 Systems"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "p0-systems",
+    "url": "https://clawhub.ai/skills/p0-systems",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/p0-systems-5d66c1a5830b589c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy tokens on Solana, trade on pump.fun & Jupiter, earn creator fees"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "serpepe",
+      "userId": "publishers:serpepe",
+      "displayName": "p0 Systems",
+      "image": "https://avatars.githubusercontent.com/u/129111136?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1706,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770045016133,
+      "changelog": "Initial release of p0-for-agents ClawHub Skill.\n\n- Deploy tokens on Solana and trade via pump.fun & Jupiter\n- Earn and claim creator fees; integrated fee management endpoints\n- API key-based authentication with setup instructions\n- Batch deployment, project management, trading, alerts, and position endpoints supported\n- Free and Pro pricing tiers detailed, including limits and feature access\n- Strategy guide included for maximizing agent earnings and token deployment",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:54edf10174e3c98213c6f7e1b7011fa54b51121518478c9eba343d0f3dbe71e9"
+}

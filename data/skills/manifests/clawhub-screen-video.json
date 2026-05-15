@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43155,
+  "uuid": "skill-clawhub-screen-video",
+  "skillKey": "clawhub-screen-video",
+  "name": "Screen Video",
+  "summary": "Get polished screen videos ready to post, without touching a single slider. Upload your screen recordings (MP4, MOV, AVI, WebM, up to 500MB), say something l...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.screen_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linmillsd7",
+      "features": [
+        "Get polished screen videos ready to post, without touching a single slider",
+        "Upload your screen recordings (MP4, MOV, AVI, WebM, up to 500MB), say something l..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/screen-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208832666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "screen-video",
+      "url": "https://clawhub.ai/skills/screen-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "screen-video",
+    "url": "https://clawhub.ai/skills/screen-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/screen-video-100bf1a4bb20ff80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/screen-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-screen-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f00758b00869c0b492ab6d230cb1c88845171c4d1edaabad212392d0227c6235",
+      "artifactSizeBytes": 2448
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T08:50:17.593Z"
+}

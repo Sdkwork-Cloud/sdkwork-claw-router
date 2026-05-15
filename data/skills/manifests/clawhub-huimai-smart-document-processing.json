@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68646,
+  "uuid": "skill-clawhub-huimai-smart-document-processing",
+  "skillKey": "clawhub-huimai-smart-document-processing",
+  "name": "Summarize Pro",
+  "summary": "长文档、合同、文章扔进来，自动抽骨架。20+种摘要模板，合同拆条款、论文抓结论、报告列数据。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huimai_smart_document_processing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yezhaowang888-stack",
+      "features": [
+        "长文档、合同、文章扔进来，自动抽骨架。20+种摘要模板，合同拆条款、论文抓结论、报告列数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huimai-smart-document-processing@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274244352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huimai-smart-document-processing",
+      "url": "https://clawhub.ai/skills/huimai-smart-document-processing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huimai-smart-document-processing",
+    "url": "https://clawhub.ai/skills/huimai-smart-document-processing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huimai-smart-document-processing-a6b8236a4d078c0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huimai-smart-document-processing@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-huimai-smart-document-processing-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5514cc4c80724e515cc18f8fca8674c195a1cef94ce8f7f1abf95250e59daf2e",
+      "artifactSizeBytes": 2057
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T00:20:14.759Z"
+}

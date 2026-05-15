@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-crawler-xie@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_crawler_xie",
+  "skill": {
+    "id": 64985,
+    "skillKey": "clawhub-xhs-crawler-xie",
+    "name": "Openclaw封装Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-crawler-xie",
+    "url": "https://clawhub.ai/skills/xhs-crawler-xie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-crawler-xie-52795beedc9f75a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于Python模拟浏览器搜索小红书关键词，自动管理Cookie并将搜索结果以卡片形式推送到飞书群。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xie07418",
+      "userId": "publishers:xie07418",
+      "displayName": "xie07418",
+      "image": "https://avatars.githubusercontent.com/u/230926537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773827739779,
+      "changelog": "xhs-crawler-xie 1.0.0\n\n- 首发版本，基于Python，实现小红书关键词笔记爬取并推送到飞书群\n- 支持通过浏览器模拟抓取，可绕过API限制\n- 自动管理Cookie，支持失效时二维码登录提醒\n- 飞书集成，支持以卡片形式推送笔记抓取结果\n- 提供简单指令（run-xhs:关键词），易于在飞书群调用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac3e36703ea783eadb04a4fa6daf0435b094591b4f7d130d2b985ed3f066e7ca"
+}

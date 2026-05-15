@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14972,
+  "uuid": "skill-clawhub-meeting-prep-agent",
+  "skillKey": "clawhub-meeting-prep-agent",
+  "name": "Meeting Prep Agent",
+  "summary": "Never walk into a meeting unprepared again. Your agent researches all attendees before calendar events—pulling LinkedIn profiles, recent company news, mutual connections, and conversation starters. Generates a briefing doc with talking poi.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_prep_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "audsmith28",
+      "features": [
+        "Never walk into a meeting unprepared again",
+        "Your agent researches all attendees before calendar events—pulling LinkedIn profiles, recent co.",
+        "Generates a briefing doc with talking points, icebreakers, and context so you show up informed.",
+        "Triggered automatically before meetings or on-demand"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-prep-agent@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223534942?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-prep-agent",
+      "url": "https://clawhub.ai/skills/meeting-prep-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-prep-agent",
+    "url": "https://clawhub.ai/skills/meeting-prep-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-prep-agent-fb5d8cc2b0db0e00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-prep-agent@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-prep-agent-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:466372a981b73ee8cd77c196fcb48ab29928eda58233738e7a547cbb453770ed",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T20:42:14.758Z"
+}

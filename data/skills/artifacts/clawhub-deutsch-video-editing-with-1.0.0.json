@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deutsch-video-editing-with@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deutsch_video_editing_with",
+  "skill": {
+    "id": 41573,
+    "skillKey": "clawhub-deutsch-video-editing-with",
+    "name": "Deutsch Video Editing With"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deutsch-video-editing-with",
+    "url": "https://clawhub.ai/skills/deutsch-video-editing-with",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deutsch-video-editing-with-3bd5345c0ef76496.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit raw video footage into edited video clips with this deutsch-video-editing-with skill. Works with MP4, MOV, AVI, WebM files up to 500MB. German-speaking..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775871745202,
+      "changelog": "Initial release of Deutsch Video Editing With AI.\n\n- Edit German-language videos (MP4, MOV, AVI, WebM up to 500MB) using AI, no local setup required.\n- Automatic cloud connection and session setup; 100 free credits on first use.\n- Supports video editing, adding transitions, text overlays, BGM, and exporting to 1080p MP4.\n- Handles uploads, exports, credit checks, and session management via simple chat prompts.\n- Detailed API error handling and session persistence for smooth workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d23473dd543ad80b6404f9e0fb66202c87a77efd0e26c7363c5a20a85ed6a551"
+}

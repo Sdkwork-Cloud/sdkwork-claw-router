@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-bom-scan@0.86.2",
+  "version": "0.86.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_bom_scan",
+  "skill": {
+    "id": 20913,
+    "skillKey": "clawhub-agent-bom-scan",
+    "name": "agent-bom scan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-bom-scan",
+    "url": "https://clawhub.ai/skills/agent-bom-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-bom-scan-6c5e0d387743f83c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Open security scanner for agentic infrastructure — agents, MCP, packages, blast radius, runtime, and trust for package CVEs (OSV, NVD, EPSS, KEV), container..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "msaad00",
+      "userId": "s173dmtq1jwv3yxcgnmcxnn45583ey2y",
+      "displayName": "Agent Bom",
+      "image": "https://avatars.githubusercontent.com/u/34316639?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1096,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 46
+    },
+    "latestVersion": {
+      "version": "0.86.2",
+      "createdAt": 1778168717496,
+      "changelog": "Release v0.86.2",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d57dcb93e893dcc39626c51cfbe048c7af083ec7ec67e276bcec609d39bff2ce"
+}

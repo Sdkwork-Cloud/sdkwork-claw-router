@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32280,
+  "uuid": "skill-clawhub-blender-animation",
+  "skillKey": "clawhub-blender-animation",
+  "name": "Blender Animation",
+  "summary": "Generate and render 3D animations using Blender headless mode, including scene setup, object and camera animation, lighting, and output to MP4 video.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blender_animation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vignesh G",
+      "features": [
+        "Generate and render 3D animations using Blender headless mode, including scene setup, object an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blender-animation@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222296409?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blender-animation",
+      "url": "https://clawhub.ai/skills/blender-animation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blender-animation",
+    "url": "https://clawhub.ai/skills/blender-animation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blender-animation-04c3be82954827cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blender-animation@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-blender-animation-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8ac0c7ca0a7897d631c8a1c2d7e1ed9f2386e5f80e0552861939d1a9af6028d",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T01:57:56.346Z"
+}

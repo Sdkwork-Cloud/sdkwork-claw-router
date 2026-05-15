@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ferrari@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ferrari",
+  "skill": {
+    "id": 56865,
+    "skillKey": "clawhub-ferrari",
+    "name": "Ferrari"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ferrari",
+    "url": "https://clawhub.ai/skills/ferrari",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ferrari-b8510932dad3ddf0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Information assistant for Ferrari 法拉利. Search models, specs, pricing, reviews, and dealership info."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776533702804,
+      "changelog": "- 更新了技能简介，突出了“法拉利 Ferrari”为意大利超跑及F1赛车领域的传奇品牌。\n- 用表格形式详细梳理法拉利的历史关键节点及发展里程碑。\n- 补充并量化了核心特点、优势与关键经营数据（营收、产量、净利润率、员工数）。\n- 强调法拉利二手车的升值属性和经典车型的高拍卖价值。\n- 精简内容结构，提升查阅和理解效率。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0051b813155bb9c1539dc5dff1e139174816576f83a4d8959e1bead0c35d6ac5"
+}

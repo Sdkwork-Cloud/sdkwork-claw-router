@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72954,
+  "uuid": "skill-clawhub-xiaohongshu-video-publish",
+  "skillKey": "clawhub-xiaohongshu-video-publish",
+  "name": "小红书视频发布",
+  "summary": "小红书视频发布。使用浏览器自动化在网页版小红书创作者服务平台发布视频笔记。当用户说\"发布视频到小红书\"、\"发小红书视频\"时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_video_publish",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Johnnyxu820",
+      "features": [
+        "小红书视频发布。使用浏览器自动化在网页版小红书创作者服务平台发布视频笔记。当用户说\"发布视频到小红书\"、\"发小红书视频\"时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-video-publish@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/154959104?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-video-publish",
+      "url": "https://clawhub.ai/skills/xiaohongshu-video-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-video-publish",
+    "url": "https://clawhub.ai/skills/xiaohongshu-video-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-video-publish-c2e19c7ebcec98b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-video-publish@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-video-publish-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dadfafeaf36378b97e43c41280a1a7a1d49c283c0fee8b184dcb83a1502a7748",
+      "artifactSizeBytes": 2427
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T02:42:37.689Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phi-readiness-stages@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phi_readiness_stages",
+  "skill": {
+    "id": 34583,
+    "skillKey": "clawhub-phi-readiness-stages",
+    "name": "PHI Readiness Stages"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phi-readiness-stages",
+    "url": "https://clawhub.ai/skills/phi-readiness-stages",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phi-readiness-stages-e84c8dfcf7e2e9b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assess the current PHI Readiness Stage (PRS) of a workload, repository, system, or environment; determine HIPAA applicability and role; identify evidence gap..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nickzren",
+      "userId": "publishers:nickzren",
+      "displayName": "Nick Ren",
+      "image": "https://avatars.githubusercontent.com/u/6598524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773882989055,
+      "changelog": "v1.1.0: add evidence handling, detailed Security Rule crosswalk, calibrated examples, and expanded output contract",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e3eb0706faaf0857998a7fc3763c6eb78ce991c95fdeab440cc2df0a413f78d7"
+}

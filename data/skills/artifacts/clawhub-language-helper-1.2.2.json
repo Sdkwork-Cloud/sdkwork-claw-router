@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/language-helper@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.language_helper",
+  "skill": {
+    "id": 58292,
+    "skillKey": "clawhub-language-helper",
+    "name": "language-helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "language-helper",
+    "url": "https://clawhub.ai/skills/language-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/language-helper-8f03707a78822b53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever the user wants to learn how to say something in another language. Triggers include: language tags like 【日语】【英语】【韩语】【法语】【西班牙语】【德语】 fol..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "igloomatics",
+      "userId": "s173bz569qgrver92httc9gac5841f19",
+      "displayName": "Igloos",
+      "image": "https://avatars.githubusercontent.com/u/140521398?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1774014963424,
+      "changelog": "- Dropped requirement for Feishu-related environment variables; now only `SENSEAUDIO_API_KEY` is required.\n- Clarified that Feishu voice message support is optional, not required for core functionality.\n- No changes to feature set or workflow; skill behavior remains the same for language learning and pronunciation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e2238b3e1022bc49940438e378cc25ab83c31cb14ca23268a7a70b0d61469fb"
+}

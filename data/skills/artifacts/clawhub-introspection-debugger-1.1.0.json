@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/introspection-debugger@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.introspection_debugger",
+  "skill": {
+    "id": 64910,
+    "skillKey": "clawhub-introspection-debugger",
+    "name": "AI Agent 自省调试框架"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "introspection-debugger",
+    "url": "https://clawhub.ai/skills/introspection-debugger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/introspection-debugger-be1a3a6ca944db7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent 自省调试框架 - 让 AI Agent 具备自我诊断和自动修复能力。用于捕获错误、根因分析、自动修复、生成报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danihe001",
+      "userId": "s178m7yvxnmse4eckjhshjra4x83kg23",
+      "displayName": "steve xia",
+      "image": "https://avatars.githubusercontent.com/u/122467183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773543781136,
+      "changelog": "v1.1.0 优化：修复根因分析字段、增强调试日志、修复 installDependency 返回值、完善测试报告",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32f69185232fe33a7528fdaa4703793c48123d7819b95d7d8a01ab90a90aced0"
+}

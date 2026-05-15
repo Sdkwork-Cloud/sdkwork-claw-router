@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ui-inspiration-library@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ui_inspiration_library",
+  "skill": {
+    "id": 29301,
+    "skillKey": "clawhub-ui-inspiration-library",
+    "name": "UI Inspiration Library"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ui-inspiration-library",
+    "url": "https://clawhub.ai/skills/ui-inspiration-library",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ui-inspiration-library-e186719996f8151a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Archive UI screenshots into a searchable inspiration library and retrieve matching references by style, page type, use case, or visual goal."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "khalilhsu",
+      "userId": "s17f5ana46rx5yzw628b9rregh83ptzz",
+      "displayName": "Khalil",
+      "image": "https://avatars.githubusercontent.com/u/65265303?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1773557314822,
+      "changelog": "Remove Chinese examples and bilingual labels for a more globally neutral public release; make highlights and summaries follow the user's language.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac36b9951b7b9d1b57b5142ffc5c95935c93bb3c2f838a46614529667958cd05"
+}

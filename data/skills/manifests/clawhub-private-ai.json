@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52345,
+  "uuid": "skill-clawhub-private-ai",
+  "skillKey": "clawhub-private-ai",
+  "name": "Private Ai",
+  "summary": "Private AI — run LLMs, image generation, speech-to-text, and embeddings on your own hardware. Private AI keeps all data on your network. No cloud APIs, no te...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.private_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Private AI — run LLMs, image generation, speech-to-text, and embeddings on your own hardware",
+        "Private AI keeps all data on your network",
+        "No cloud APIs, no te..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/private-ai@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "private-ai",
+      "url": "https://clawhub.ai/skills/private-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "private-ai",
+    "url": "https://clawhub.ai/skills/private-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/private-ai-07caeb59ed773676.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/private-ai@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-private-ai-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d37b57e5c8dc9643ecfe46a29cadb6de42f529e518a2ab2e041e3c1977460b43",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T22:18:39.967Z"
+}

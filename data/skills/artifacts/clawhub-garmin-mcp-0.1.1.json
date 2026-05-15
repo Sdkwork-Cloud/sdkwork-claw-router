@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/garmin-mcp@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.garmin_mcp",
+  "skill": {
+    "id": 48425,
+    "skillKey": "clawhub-garmin-mcp",
+    "name": "Garmin MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "garmin-mcp",
+    "url": "https://clawhub.ai/skills/garmin-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/garmin-mcp-a439482d4bb0f81f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect an MCP-compatible agent to local Garmin Connect sleep, Body Battery, HRV, stress, activities, and training readiness. Use when an AI agent needs setu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidmosiah",
+      "userId": "s179ta33e7njh2mv4jrf0yxb5n83f191",
+      "displayName": "David Batista",
+      "image": "https://avatars.githubusercontent.com/u/624359?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 99,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1778063906199,
+      "changelog": "Rename skill for provider-first discovery and keep Delx branding in content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:893b02fef4f1390a798a266fb896cdaa30d7843d4352176b12a3441470623db9"
+}

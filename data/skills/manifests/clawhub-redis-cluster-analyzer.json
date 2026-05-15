@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46565,
+  "uuid": "skill-clawhub-redis-cluster-analyzer",
+  "skillKey": "clawhub-redis-cluster-analyzer",
+  "name": "Redis Cluster Analyzer",
+  "summary": "Analyze Redis Sentinel and Cluster configurations for high availability, performance, and memory efficiency. Checks sentinel topology, cluster slot distribut...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redis_cluster_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Analyze Redis Sentinel and Cluster configurations for high availability, performance, and memor.",
+        "Checks sentinel topology, cluster slot distribut..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/redis-cluster-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "redis-cluster-analyzer",
+      "url": "https://clawhub.ai/skills/redis-cluster-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redis-cluster-analyzer",
+    "url": "https://clawhub.ai/skills/redis-cluster-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redis-cluster-analyzer-59577cb1fd97fc71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/redis-cluster-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-redis-cluster-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94e837a1fa0241a01413b5e08abc561080149ee27a800e84bc026f7966691caf",
+      "artifactSizeBytes": 2528
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T11:46:10.453Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67205,
+  "uuid": "skill-clawhub-aastock-daily",
+  "skillKey": "clawhub-aastock-daily",
+  "name": "Aastock Daily",
+  "summary": "A股日报 + 持仓管家，自动推送盘前/收盘/夜间简报，监控持仓股动态及股吧舆情，支持周末资讯。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aastock_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "moer",
+      "features": [
+        "A股日报 + 持仓管家，自动推送盘前/收盘/夜间简报，监控持仓股动态及股吧舆情，支持周末资讯。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aastock-daily@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42177272?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aastock-daily",
+      "url": "https://clawhub.ai/skills/aastock-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aastock-daily",
+    "url": "https://clawhub.ai/skills/aastock-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aastock-daily-6febd0d76c5f4ba7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aastock-daily@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aastock-daily-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be7985ae445ea6f179a1dce4ac2f833f453d97e9ed533fe5e8f9371800dc5dc9",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T09:39:43.584Z"
+}

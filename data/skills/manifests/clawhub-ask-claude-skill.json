@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50512,
+  "uuid": "skill-clawhub-ask-claude-skill",
+  "skillKey": "clawhub-ask-claude-skill",
+  "name": "Ask Claude Skill",
+  "summary": "Delegate a task to Claude Code CLI and immediately report the result back in chat. Supports persistent sessions — Claude Code remembers previous context with...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ask_claude_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xManel",
+      "features": [
+        "Delegate a task to Claude Code CLI and immediately report the result back in chat",
+        "Supports persistent sessions — Claude Code remembers previous context with..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ask-claude-skill@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168010365?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ask-claude-skill",
+      "url": "https://clawhub.ai/skills/ask-claude-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ask-claude-skill",
+    "url": "https://clawhub.ai/skills/ask-claude-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ask-claude-skill-51b0a743c6ae881e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ask-claude-skill@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ask-claude-skill-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fedc4b4906e658db742437bf67faa1253334fc6218c9481894c47cc13f9931c",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T17:42:13.343Z"
+}

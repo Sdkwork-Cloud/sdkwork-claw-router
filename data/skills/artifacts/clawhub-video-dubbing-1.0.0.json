@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-dubbing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_dubbing",
+  "skill": {
+    "id": 67895,
+    "skillKey": "clawhub-video-dubbing",
+    "name": "VoxCPM中文配音"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-dubbing",
+    "url": "https://clawhub.ai/skills/video-dubbing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-dubbing-c4c43011d04e49be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🎯 **唯一使用VoxCPM的中文配音技能** - 外语视频一键中文配音，支持硬字幕检测、断点续传、智能BGM。触发场景：(1) 用户需要给外语视频配音 (2) 视频翻译需求 (3) 多语言内容本地化"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newaiguy",
+      "userId": "s176zqcw03n2wnp2q2g7rbn4rs83g8kh",
+      "displayName": "Newaiguy",
+      "image": "https://avatars.githubusercontent.com/u/97015274?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774504259515,
+      "changelog": "No changes detected in this version.\n\n- Version number and documentation remain unchanged.\n- No file or feature updates recorded.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:26b47bd4f7dd3aba795a76ff38c941fee944d770fea8930bdbde06b8210793da"
+}

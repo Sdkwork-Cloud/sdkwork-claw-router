@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33708,
+  "uuid": "skill-clawhub-token-cost-monitor",
+  "skillKey": "clawhub-token-cost-monitor",
+  "name": "Token Cost Monitor",
+  "summary": "Monitor OpenClaw API costs in real-time, set budget alerts, and optimize model spending. Track token usage by session and model, get cost optimization tips,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_cost_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "redwoo",
+      "features": [
+        "Monitor OpenClaw API costs in real-time, set budget alerts, and optimize model spending",
+        "Track token usage by session and model, get cost optimization tips,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/token-cost-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5707433?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "token-cost-monitor",
+      "url": "https://clawhub.ai/skills/token-cost-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-cost-monitor",
+    "url": "https://clawhub.ai/skills/token-cost-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-cost-monitor-0da91f75a5b7125a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/token-cost-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-token-cost-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f7e839dddee036b16fffb1381f495721bee9bd03e1f06ff6498a18f9539c936",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T01:15:41.830Z"
+}

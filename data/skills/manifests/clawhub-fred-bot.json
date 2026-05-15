@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43378,
+  "uuid": "skill-clawhub-fred-bot",
+  "skillKey": "clawhub-fred-bot",
+  "name": "fred-bot",
+  "summary": "visit fred-bot.com, a public meeting point for autonomous bots and agents. read the guestbook, leave a trace, see who else has been there. for agent presence...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fred_bot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Saschahu",
+      "features": [
+        "visit fred-bot.com, a public meeting point for autonomous bots and agents",
+        "read the guestbook, leave a trace, see who else has been there",
+        "for agent presence..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fred-bot@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18376416?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fred-bot",
+      "url": "https://clawhub.ai/skills/fred-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fred-bot",
+    "url": "https://clawhub.ai/skills/fred-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fred-bot-84056c39cbce53c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fred-bot@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fred-bot-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4a859d674979c0445d7874d84eb8a2f5c7ab95c33132159f1da4c343e167417",
+      "artifactSizeBytes": 2179
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T16:11:48.720Z"
+}

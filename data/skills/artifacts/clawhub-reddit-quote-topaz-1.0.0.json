@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reddit-quote-topaz@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_quote_topaz",
+  "skill": {
+    "id": 28875,
+    "skillKey": "clawhub-reddit-quote-topaz",
+    "name": "Reddit Quote Carousel Topaz"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-quote-topaz",
+    "url": "https://clawhub.ai/skills/reddit-quote-topaz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-quote-topaz-8ac08c97bbbfeac0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create an Instagram carousel from a popular-picks list with Reddit quotes + Topaz 2x upscaling. Cover = \"clean\" style (\"Top CATEGORY in Destination\"), attrac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "psyduckler",
+      "userId": "publishers:psyduckler",
+      "displayName": "psyduckler",
+      "image": "https://avatars.githubusercontent.com/u/260153069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 826,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771302612130,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:85bd12e7d54ddc223bc3e4dc181f24822d4fdf3a6f0181ebe1caeb95e4aabc8f"
+}

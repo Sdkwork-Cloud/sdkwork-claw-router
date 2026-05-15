@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48863,
+  "uuid": "skill-clawhub-red-flights",
+  "skillKey": "clawhub-red-flights",
+  "name": "red-flights",
+  "summary": "Search red eye flights, overnight flights and late-night departures with after-midnight arrival deals. Also supports: flight booking, hotel reservation, trai...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.red_flights",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yangki Zhang",
+      "features": [
+        "Search red eye flights, overnight flights and late-night departures with after-midnight arrival.",
+        "Also supports: flight booking, hotel reservation, trai..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/red-flights@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10104255?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "red-flights",
+      "url": "https://clawhub.ai/skills/red-flights"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "red-flights",
+    "url": "https://clawhub.ai/skills/red-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/red-flights-c1cc3dbce90fa0fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/red-flights@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-red-flights-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:901d93417b3c35a72182b671514b5d6d59f5090c7482dbbc256569c05bc5af72",
+      "artifactSizeBytes": 2515
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T02:43:14.047Z"
+}

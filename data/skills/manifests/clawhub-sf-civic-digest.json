@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52894,
+  "uuid": "skill-clawhub-sf-civic-digest",
+  "skillKey": "clawhub-sf-civic-digest",
+  "name": "SF Civic Digest",
+  "summary": "Track San Francisco city government activity — Board of Supervisors, Land Use committee, Public Safety committee, SFMTA Engineering Public Hearings, SF Plann...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sf_civic_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sean Gillen",
+      "features": [
+        "Track San Francisco city government activity — Board of Supervisors, Land Use committee, Public."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sf-civic-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9152639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sf-civic-digest",
+      "url": "https://clawhub.ai/skills/sf-civic-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sf-civic-digest",
+    "url": "https://clawhub.ai/skills/sf-civic-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sf-civic-digest-b010d7e1be858b3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sf-civic-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sf-civic-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb062ba99ccdceeee2ebfac18f3562796a585b1f2d8cb9d1a85880d477df4c28",
+      "artifactSizeBytes": 2611
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T17:55:35.529Z"
+}

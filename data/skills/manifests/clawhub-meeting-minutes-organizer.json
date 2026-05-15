@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73164,
+  "uuid": "skill-clawhub-meeting-minutes-organizer",
+  "skillKey": "clawhub-meeting-minutes-organizer",
+  "name": "会议纪要自动整理工具",
+  "summary": "会议纪要自动整理工具 | 将原始会议记录智能整理为结构化会议纪要（议题、决议、待办、责任人和截止日期）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_minutes_organizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yongjie666888",
+      "features": [
+        "会议纪要自动整理工具 | 将原始会议记录智能整理为结构化会议纪要（议题、决议、待办、责任人和截止日期）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-minutes-organizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177016990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-minutes-organizer",
+      "url": "https://clawhub.ai/skills/meeting-minutes-organizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-minutes-organizer",
+    "url": "https://clawhub.ai/skills/meeting-minutes-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-minutes-organizer-6f15fe451cd9a3f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-minutes-organizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-minutes-organizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f4c4befe5253706198114e1ea6c1b55a330069c3af89cac282a3dc972fff582",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T14:52:50.378Z"
+}

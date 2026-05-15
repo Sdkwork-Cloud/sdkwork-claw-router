@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-rotate-80@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_rotate_80",
+  "skill": {
+    "id": 51060,
+    "skillKey": "clawhub-session-rotate-80",
+    "name": "Session Rotate 80"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-rotate-80",
+    "url": "https://clawhub.ai/skills/session-rotate-80",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-rotate-80-6034ac7dd2d93d49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-create a new session when OpenClaw context usage reaches 80% without requiring Mem0 or file memory systems. Use when users want default OpenClaw to proa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0range-x",
+      "userId": "publishers:0range-x",
+      "displayName": "0r@nge",
+      "image": "https://avatars.githubusercontent.com/u/82167391?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772720165307,
+      "changelog": "Add README and practical usage guide; clarify default OpenClaw no-memory mode",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9d872d346c0de6dae7f1c497f0d6b8649f7baadc4583b97cf0f8fa2e7f71dee4"
+}

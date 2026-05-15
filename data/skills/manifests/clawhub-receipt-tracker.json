@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66275,
+  "uuid": "skill-clawhub-receipt-tracker",
+  "skillKey": "clawhub-receipt-tracker",
+  "name": "Receipt Tracker",
+  "summary": "Распознает фотографии чеков, разбивает расходы по категориям (продукты, заправка, аптека, такси, животные и др.) и сохраняет их в базу (expenses.csv). Генери...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.receipt_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergei Shibanov",
+      "features": [
+        "Распознает фотографии чеков, разбивает расходы по категориям (продукты, заправка, аптека, такси.",
+        "Генери..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/receipt-tracker@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/123983403?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "receipt-tracker",
+      "url": "https://clawhub.ai/skills/receipt-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "receipt-tracker",
+    "url": "https://clawhub.ai/skills/receipt-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/receipt-tracker-e666bc8c1067e14b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/receipt-tracker@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-receipt-tracker-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e139a9c106e854548a0e7086fba891006a07fea31686c23c6227c13430a4c886",
+      "artifactSizeBytes": 2038
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T21:43:04.109Z"
+}

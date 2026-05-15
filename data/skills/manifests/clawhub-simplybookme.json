@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33177,
+  "uuid": "skill-clawhub-simplybookme",
+  "skillKey": "clawhub-simplybookme",
+  "name": "Simplybookme",
+  "summary": "SimplyBook.me integration. Manage data, records, and automate workflows. Use when the user wants to interact with SimplyBook.me data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simplybookme",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "SimplyBook.me integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with SimplyBook.me data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/simplybookme@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "simplybookme",
+      "url": "https://clawhub.ai/skills/simplybookme"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simplybookme",
+    "url": "https://clawhub.ai/skills/simplybookme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simplybookme-07afaed6c5dd81a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/simplybookme@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-simplybookme-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b547088769ab01d998023228f2a2f2c70a6b0776d4487011a073198b0d37d598",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:00:37.535Z"
+}

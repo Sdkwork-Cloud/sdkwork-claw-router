@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-report-bian@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_report_bian",
+  "skill": {
+    "id": 68524,
+    "skillKey": "clawhub-daily-report-bian",
+    "name": "daily-report-bian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-report-bian",
+    "url": "https://clawhub.ai/skills/daily-report-bian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-report-bian-0c7d99cbf77dc8f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动生成并在指定时间通过飞书推送每日研究进展报告，内容涵盖今日进展、延续项目、明日计划及系统状态，字数不超1000字。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "databian",
+      "userId": "publishers:databian",
+      "displayName": "databian",
+      "image": "https://avatars.githubusercontent.com/u/34913384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 364,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773393371230,
+      "changelog": "- Clarified and expanded the feature description, core logic, and file structure in SKILL.md.\n- Detailed project extraction, report generation, memory update, and push notification configuration.\n- Added explanations on report sections and included usage instructions for manual and scheduled runs.\n- Provided specifics on the heatmap visualization and its color meanings.\n- Listed precautions and best practices for accurate report generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:231383183255a184af0a727c72701691c9d953828889dd75720fbe685f4b54de"
+}

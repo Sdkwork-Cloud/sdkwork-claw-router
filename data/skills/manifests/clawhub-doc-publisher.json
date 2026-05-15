@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62401,
+  "uuid": "skill-clawhub-doc-publisher",
+  "skillKey": "clawhub-doc-publisher",
+  "name": "Doc Publisher",
+  "summary": "文档系列发布工具 - 将本地 Markdown 文档自动转换为微信公众号文章并发布",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "403914291",
+      "features": [
+        "文档系列发布工具",
+        "将本地 Markdown 文档自动转换为微信公众号文章并发布"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doc-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95468942?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doc-publisher",
+      "url": "https://clawhub.ai/skills/doc-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-publisher",
+    "url": "https://clawhub.ai/skills/doc-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-publisher-de43bae1a72199a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doc-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doc-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a0903b6dc2178c823dbc54c0f167b2bea1fc9f6ce610e84d3ca225644fcd155",
+      "artifactSizeBytes": 2106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T06:42:05.171Z"
+}

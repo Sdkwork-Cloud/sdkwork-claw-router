@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grafana-api@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grafana_api",
+  "skill": {
+    "id": 50697,
+    "skillKey": "clawhub-grafana-api",
+    "name": "Grafana"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grafana-api",
+    "url": "https://clawhub.ai/skills/grafana-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grafana-api-ba780955a0636117.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Grafana API integration with managed authentication. This is a write-capable integration — it can read, create, update, and delete dashboards, data sources,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 467,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777631104000,
+      "changelog": "- Added detailed security guidelines: all write operations now require explicit user approval with specific resource identifiers before execution.\n- Updated base URLs from gateway.maton.ai and ctrl.maton.ai to api.maton.ai for all API and connection management endpoints.\n- Expanded documentation on connection setup, emphasizing least-privilege service account use and safe practices.\n- Improved description to clarify that the integration supports both read and write operations, but always defaults to read-only and user confirmation is mandatory for changes.\n- Removed LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89d1e9c09b067fa642a0b453a2773ba507366248ff7c7300ecd17e0a5463ce07"
+}

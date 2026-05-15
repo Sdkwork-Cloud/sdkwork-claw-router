@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63693,
+  "uuid": "skill-clawhub-yaoyao-cloud-backup",
+  "skillKey": "clawhub-yaoyao-cloud-backup",
+  "name": "Yaoyao Cloud Backup V2",
+  "summary": "云端与外部备份同步套件 【首次自动引导】安装后首次访问即自动引导配置 【多云支持】IMA、WebDAV、S3、FTP/SFTP、Samba 等 【小白友好】全对话式操作，无需查看任何文档",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yaoyao_cloud_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "taobaoaz",
+      "features": [
+        "云端与外部备份同步套件 【首次自动引导】安装后首次访问即自动引导配置 【多云支持】IMA、WebDAV、S3、FTP/SFTP、Samba 等 【小白友好】全对话式操作，无需查看任何文档"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yaoyao-cloud-backup@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118969539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yaoyao-cloud-backup",
+      "url": "https://clawhub.ai/skills/yaoyao-cloud-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yaoyao-cloud-backup",
+    "url": "https://clawhub.ai/skills/yaoyao-cloud-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yaoyao-cloud-backup-cd1195fcb03726da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yaoyao-cloud-backup@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-yaoyao-cloud-backup-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70d735c4c4a91e80d381518cff20b4b0fc25770025bd2e9b2a25fe55cae8eb3e",
+      "artifactSizeBytes": 2328
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T14:24:43.604Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doc-structurer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_structurer",
+  "skill": {
+    "id": 62935,
+    "skillKey": "clawhub-doc-structurer",
+    "name": "Doc Structurer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-structurer",
+    "url": "https://clawhub.ai/skills/doc-structurer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-structurer-b894f86b9f513df8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "파싱된 문서 텍스트를 분석하여 문서 유형을 자동 분류하고, 핵심 정보를 구조화된 데이터(JSON)로 변환하는 스킬. doc-parser 결과를 받아 후속 처리하는 파이프라인 스킬."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parkbeomjun-gkgkgk",
+      "userId": "s1783m6q1m9gbf3fnbgmd720bn84abb6",
+      "displayName": "parkbeomjun-gkgkgk",
+      "image": "https://avatars.githubusercontent.com/u/219679755?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775455516493,
+      "changelog": "Initial release - 첫 번째 ClawHub 퍼블리시",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ace59bdd0365bd43d553284981dbe39ce66ff5bcb3a344e31e65ef5b08354e64"
+}

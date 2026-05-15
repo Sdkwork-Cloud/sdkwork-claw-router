@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28831,
+  "uuid": "skill-clawhub-clawpacker",
+  "skillKey": "clawhub-clawpacker",
+  "name": "clawpacker",
+  "summary": "Use when exporting, importing, packaging, cloning, restoring, or moving an OpenClaw agent between machines or instances, especially when the user mentions cl...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawpacker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Albarn",
+      "features": [
+        "Use when exporting, importing, packaging, cloning, restoring, or moving an OpenClaw agent betwe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawpacker@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32480616?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawpacker",
+      "url": "https://clawhub.ai/skills/clawpacker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawpacker",
+    "url": "https://clawhub.ai/skills/clawpacker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawpacker-4325db19318dbe34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawpacker@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawpacker-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0311be586007da1d1f8ab62f15bdc520d1415cf0839524317692b5a2f7cc64da",
+      "artifactSizeBytes": 2378
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T23:52:40.300Z"
+}

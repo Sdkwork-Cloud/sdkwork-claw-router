@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63777,
+  "uuid": "skill-clawhub-x-deep-miner",
+  "skillKey": "clawhub-x-deep-miner",
+  "name": "X Deep Miner",
+  "summary": "X (Twitter) 深度挖掘与归档 Skill。每小时自动扫描 AI/美股/生活类高热度推文（收藏>1000），自动翻译为专业中文文章，输出 Obsidian 格式。适用于构建个人知识库、每日情报简报。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_deep_miner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "forvendettaw",
+      "features": [
+        "X (Twitter) 深度挖掘与归档 Skill。每小时自动扫描 AI/美股/生活类高热度推文（收藏>1000），自动翻译为专业中文文章，输出 Obsidian 格式。适用于构建个人知识库."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-deep-miner@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24313853?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-deep-miner",
+      "url": "https://clawhub.ai/skills/x-deep-miner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-deep-miner",
+    "url": "https://clawhub.ai/skills/x-deep-miner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-deep-miner-3e6f3c4c11f7bae9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-deep-miner@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-deep-miner-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d2c0982e28defc2d35191d6a345d02dbd8cb86482fc0d1c5557278e6e3f1f18",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T08:13:06.602Z"
+}

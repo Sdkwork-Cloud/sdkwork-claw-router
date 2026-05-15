@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-read-x@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_read_x",
+  "skill": {
+    "id": 20572,
+    "skillKey": "clawhub-browser-read-x",
+    "name": "browser-read-x"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-read-x",
+    "url": "https://clawhub.ai/skills/browser-read-x",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-read-x-e1b892fc07d90290.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract the main X/Twitter post or article content from a page that is already open in the browser (using browser act evaluate)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bill492",
+      "userId": "publishers:bill492",
+      "displayName": "bill492",
+      "image": "https://avatars.githubusercontent.com/u/257063863?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 349,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773795414999,
+      "changelog": "- Initial release: Extracts the main X/Twitter post or article content from an already open browser page.\n- Filters out UI chrome such as sidebars, login prompts, reaction counts, and promotional blocks.\n- Returns cleaned content fields: title, content (plain markdown-ish), excerpt, byline, siteName, length, and url.\n- Designed for use when web_fetch is blocked or too noisy, especially on X/Twitter.\n- Works by running a provided JS script via browser act evaluate.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b5b95da68282149ce7c6c703d3e97e56c55b76ca341d3463e98b6036505adf2"
+}

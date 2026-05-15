@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-to-pptx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_to_pptx",
+  "skill": {
+    "id": 23908,
+    "skillKey": "clawhub-pdf-to-pptx",
+    "name": "PDF To PPTX"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-to-pptx",
+    "url": "https://clawhub.ai/skills/pdf-to-pptx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-to-pptx-53185527cc916392.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Converts PDF documents into editable PowerPoint presentations with intelligent content extraction and formatting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 417,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774038114568,
+      "changelog": "- Initial release of PDF to PowerPoint conversion API.\n- Converts PDF files to editable PPTX format, preserving text, images, and layout.\n- Simple endpoint for file upload and automated conversion.\n- Includes detailed API documentation, sample requests/responses, and error handling.\n- Features usage-based pricing tiers for different user needs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52348e344a3cbb917fa50717b81babfa071a985bd4a763022d76771ff640d8c5"
+}

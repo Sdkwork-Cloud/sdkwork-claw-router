@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11261,
+  "uuid": "skill-clawhub-mayar-payment",
+  "skillKey": "clawhub-mayar-payment",
+  "name": "Mayar Payment Integration",
+  "summary": "Integrate Mayar.id payments to create invoices, generate payment links, track Indonesian payment methods, manage subscriptions, and automate payment workflows.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mayar_payment",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ahsanatha",
+      "features": [
+        "Integrate Mayar.id payments to create invoices, generate payment links, track Indonesian paymen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mayar-payment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12840926?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mayar-payment",
+      "url": "https://clawhub.ai/skills/mayar-payment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mayar-payment",
+    "url": "https://clawhub.ai/skills/mayar-payment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mayar-payment-cb96a471f2163044.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mayar-payment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mayar-payment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da73619d62c350bd560000d98ae9b38fd1edaae53b2333d077cdfda076919ba5",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T05:24:46.941Z"
+}

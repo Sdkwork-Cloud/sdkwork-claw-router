@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/goal-chunking-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goal_chunking_helper",
+  "skill": {
+    "id": 43252,
+    "skillKey": "clawhub-goal-chunking-helper",
+    "name": "Goal Chunking Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goal-chunking-helper",
+    "url": "https://clawhub.ai/skills/goal-chunking-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goal-chunking-helper-8bace2bd18bfe966.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps break a big goal into clear milestones, next actions, dependencies, and a review checkpoint for actionable progress and reduced overwhelm."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776218564692,
+      "changelog": "Goal-chunking-helper 1.0.0 initial release\n\n- Breaks down vague or overwhelming goals into clear milestones, tiny next actions, dependencies, and checkpoints.\n- Provides a step-by-step workflow and markdown output format for structured goal planning.\n- Helps surface dependencies and risks early to avoid delays.\n- Focuses on easy-to-start actions and reducing overwhelm.\n- Includes quality guidelines and limits for realistic, actionable plans.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a6cbea9840a19ec361b5c08f1f4f3ab5b7b7a73913f1f2c9025ccc7f96104079"
+}

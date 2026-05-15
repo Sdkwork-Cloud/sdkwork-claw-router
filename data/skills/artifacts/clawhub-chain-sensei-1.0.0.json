@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chain-sensei@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chain_sensei",
+  "skill": {
+    "id": 45832,
+    "skillKey": "clawhub-chain-sensei",
+    "name": "Chain Sensei"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chain-sensei",
+    "url": "https://clawhub.ai/skills/chain-sensei",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chain-sensei-6faaac1d56206401.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "On-chain intelligence for AI agents. Analyze wallets, detect risks, trace transactions, and get instant insights on any Ethereum address. Built by an agent,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agustinastie2",
+      "userId": "s17b782njdhx4ftpq61kym5jzd8469gm",
+      "displayName": "agustinastie2",
+      "image": "https://avatars.githubusercontent.com/u/26693217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775332896528,
+      "changelog": "chain-sensei v1.0.0 – Initial Release\n\n- Provides instant on-chain analysis of Ethereum wallets and tokens with a simple natural language interface.\n- Free tier includes wallet snapshots, basic token info, and transaction traces across major EVM chains.\n- Premium tier (via x402) enables deep risk scores, batch wallet analysis, and event alerts.\n- Built-in local cache to reduce duplicate API calls and save resources.\n- No private keys or transaction signing required—safe for autonomous agent operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d6e0f52637b3db1086836b1a7e76c735b70fa11e0565188a3cefa78dad41d380"
+}

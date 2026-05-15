@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43132,
+  "uuid": "skill-clawhub-minimax-tokenplan-music",
+  "skillKey": "clawhub-minimax-tokenplan-music",
+  "name": "minimax-tokenplan-music",
+  "summary": "Generate music using MiniMax music-2.6 model. Supports text-to-music (vocal/instrumental), cover generation, and automatic lyrics generation via lyrics_gener...",
+  "version": "0.9.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_tokenplan_music",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "k.x.",
+      "features": [
+        "Generate music using MiniMax music-2.6 model",
+        "Supports text-to-music (vocal/instrumental), cover generation, and automatic lyrics generation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-tokenplan-music@0.9.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128761670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-tokenplan-music",
+      "url": "https://clawhub.ai/skills/minimax-tokenplan-music"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-tokenplan-music",
+    "url": "https://clawhub.ai/skills/minimax-tokenplan-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-tokenplan-music-d1e89e19b8c92aa1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-tokenplan-music@0.9.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-tokenplan-music-0.9.0.json",
+      "version": "0.9.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e5be2d8453fe994f02d5e915063e5e11c30b64e9d391be114d5e5f6cd7ff42c",
+      "artifactSizeBytes": 2604
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T07:19:29.230Z"
+}

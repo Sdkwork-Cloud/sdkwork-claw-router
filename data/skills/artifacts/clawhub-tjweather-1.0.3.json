@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tjweather@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tjweather",
+  "skill": {
+    "id": 62402,
+    "skillKey": "clawhub-tjweather",
+    "name": "tjweather天气查询助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tjweather",
+    "url": "https://clawhub.ai/skills/tjweather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tjweather-0beafefeefaa5b1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全球地点天气预报及地理编码分析（TJWeather API）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qiansonguio",
+      "userId": "s17ekmagn7zhj4xc4k4xhpqwqn84126b",
+      "displayName": "QianSongUIO",
+      "image": "https://avatars.githubusercontent.com/u/21357885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 280,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776050898927,
+      "changelog": "tjweather 1.0.3\n\n- 精简说明及输出规范，突出“必须三段式回复”结构（首行自适应提示、天气数据、温润总结）。\n- 增强地理信息查询回退提示，遇到模糊地理匹配时需在首行明确说明。\n- 明确禁止 Agent 使用外部Web地理查询，只能调用指定脚本。\n- 加强夏令时（DST）判定要求，需结合知识进行最终确认。\n- 进一步礼貌化“超10天数据只展现前10天，需告知用户”。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2cd8692bdb9bc77bb4a5413c450038dc69d8a86e9e135cb53ae8823aceda1990"
+}

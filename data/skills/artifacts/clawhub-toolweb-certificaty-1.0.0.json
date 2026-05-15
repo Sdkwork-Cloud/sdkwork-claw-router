@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-certificaty@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_certificaty",
+  "skill": {
+    "id": 41668,
+    "skillKey": "clawhub-toolweb-certificaty",
+    "name": "Certificaty"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-certificaty",
+    "url": "https://clawhub.ai/skills/toolweb-certificaty",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-certificaty-f0e948f7d474cb51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate, manage, and download SSL/TLS certificates with token-based verification and multi-domain support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775135502960,
+      "changelog": "Initial release of Certificaty 1.0.0:\n\n- Provides an API for generating, managing, and downloading SSL/TLS certificates with support for token-based workflows and multi-domain certificates.\n- Includes endpoints for certificate ordering, verification token generation, certificate issuance, and direct certificate file download.\n- Supports email-based verification, audit logging, and compliance-ready management features.\n- Offers multiple pricing plans, from a free tier to enterprise-level usage.\n- Comprehensive API documentation and usage examples included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:10ff5ff8e86f675308cd4eb340e1daa84c474a7c8418eb31092ba8e33d792e30"
+}

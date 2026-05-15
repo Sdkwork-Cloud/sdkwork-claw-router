@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/decleormx-wechat-gzh-publish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decleormx_wechat_gzh_publish",
+  "skill": {
+    "id": 73150,
+    "skillKey": "clawhub-decleormx-wechat-gzh-publish",
+    "name": "微信公众号自动发布"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decleormx-wechat-gzh-publish",
+    "url": "https://clawhub.ai/skills/decleormx-wechat-gzh-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decleormx-wechat-gzh-publish-08d669ea02c4aac4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动登录微信公众号，自动填写标题正文，生成并设置AI封面图，支持草稿保存、摘要留言赞赏配置，提升发布效率。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiebbs",
+      "userId": "s179ztmsxxx7dq58bpvz7f60mh84cp68",
+      "displayName": "DecleorMX",
+      "image": "https://avatars.githubusercontent.com/u/319641?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773821901663,
+      "changelog": "Decleormx WeChat Official Account publishing tool v1.0.0\n\n- Initial release: Automates article publication, including AI-generated images for cover and body insertion.\n- Supports one-time login via QR and automatic login with cookies after first use.\n- AI image generation creates 4 pictures per post, picks the best, and falls back to an image library on failure.\n- Flexible article parameters: custom prompts, abstract, comment/discussion and reward settings, content from file, manual cover, draft vs. direct publish.\n- Automated troubleshooting (screenshots, error handling) and clear cookie/session management included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cad5498632909d8e5581a627e56e861e64058124628fe44139441e677eabacd9"
+}

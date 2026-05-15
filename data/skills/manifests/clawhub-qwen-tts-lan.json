@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71902,
+  "uuid": "skill-clawhub-qwen-tts-lan",
+  "skillKey": "clawhub-qwen-tts-lan",
+  "name": "Qwen Tts",
+  "summary": "阿里云千问语音合成（TTS）技能，支持将文本转换为自然语音。当用户要求朗读、语音合成、文字转语音、TTS、读一段话、把文字转成声音时使用。支持多种音色（中文/英文/方言），支持流式输出边合成边播放。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen_tts_lan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "woodylan",
+      "features": [
+        "阿里云千问语音合成（TTS）技能，支持将文本转换为自然语音。当用户要求朗读、语音合成、文字转语音、TTS、读一段话、把文字转成声音时使用。支持多种音色（中文/英文/方言），支持流式输出边合成."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qwen-tts-lan@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190467295?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qwen-tts-lan",
+      "url": "https://clawhub.ai/skills/qwen-tts-lan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen-tts-lan",
+    "url": "https://clawhub.ai/skills/qwen-tts-lan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen-tts-lan-e040dac398170229.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qwen-tts-lan@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-qwen-tts-lan-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b687b18f1e9d9f355dd6cdb715ad62c85b398f3f96888dbae17522b5b4fca4ef",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T12:51:56.343Z"
+}

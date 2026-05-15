@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xauusd-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xauusd_analyzer",
+  "skill": {
+    "id": 17440,
+    "skillKey": "clawhub-xauusd-analyzer",
+    "name": "trading skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xauusd-analyzer",
+    "url": "https://clawhub.ai/skills/xauusd-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xauusd-analyzer-c62a4f7e3c2817c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Menganalisis peluang BUY intraday XAUUSD di H1 dengan konfirmasi multi-indikator dan manajemen risiko ketat untuk sinyal akurat dan probabilitas tinggi."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bagass98",
+      "userId": "publishers:bagass98",
+      "displayName": "Bagass98",
+      "image": "https://avatars.githubusercontent.com/u/90477355?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 480,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773523856891,
+      "changelog": "XAUUSD Analyzer v1.0 memperkenalkan sistem multi-indikator komprehensif untuk analisis BELI intraday.\n\n- Menyusun langkah analisis XAUUSD intraday BUY secara sistematis, gabungkan: RSI, Stochastic, EMA, MACD, Bollinger Bands, Fibonacci, ATR, serta Supply & Demand.\n- Menambahkan sistem scoring 12 poin untuk objektivitas dan keputusan trade (BUY kuat, BUY, WAIT, NO TRADE).\n- Menetapkan aturan risk management detail dan manajemen posisi berbasis ATR.\n- Detail format output sinyal trading, lengkap dengan breakdown indikator dan kriteria.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e6cbbcb9e617fd81dbf75f5d6f22646ba6a362c1818affb779a8863368e6ff1"
+}

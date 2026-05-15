@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51216,
+  "uuid": "skill-clawhub-vagrant-skill",
+  "skillKey": "clawhub-vagrant-skill",
+  "name": "Vagrant Skill",
+  "summary": "Disposable VMs for safe testing — full sudo, Docker, Go, nested KVM, destroy and recreate. Use when you need a sandbox to build, test, or break things withou...",
+  "version": "0.7.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vagrant_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jpoley",
+      "features": [
+        "Disposable VMs for safe testing — full sudo, Docker, Go, nested KVM, destroy and recreate",
+        "Use when you need a sandbox to build, test, or break things withou..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vagrant-skill@0.7.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15873?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vagrant-skill",
+      "url": "https://clawhub.ai/skills/vagrant-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vagrant-skill",
+    "url": "https://clawhub.ai/skills/vagrant-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vagrant-skill-6d38dc6db82537d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vagrant-skill@0.7.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-vagrant-skill-0.7.4.json",
+      "version": "0.7.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ab624e0fb13d545a870ce324c66e6ffe2c680e734f42e76296b82c0e7c5ab47",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T03:11:47.699Z"
+}

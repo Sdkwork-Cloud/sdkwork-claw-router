@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scavio-walmart@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scavio_walmart",
+  "skill": {
+    "id": 34163,
+    "skillKey": "clawhub-scavio-walmart",
+    "name": "Scavio Walmart"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scavio-walmart",
+    "url": "https://clawhub.ai/skills/scavio-walmart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scavio-walmart-4f5e4a6f84e25562.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Walmart products and look up product details by product ID. Supports delivery speed, ZIP code, and in-store availability filters. Returns structured J..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scavio-ai",
+      "userId": "s175sr0x7m30cfs7kpvrpmg0ns83z36t",
+      "displayName": "scavio-ai",
+      "image": "https://avatars.githubusercontent.com/u/264839281?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775039391627,
+      "changelog": "Major update: improved documentation, workflow guidance, and usage guardrails.\n\n- Overhauled SKILL.md: clearer workflow, use cases, and step-by-step instructions on when and how to trigger product search or details.\n- Expanded parameter explanations, including delivery speed, ZIP code, and in-store pickup filters.\n- Added usage guardrails: don’t fabricate data, always pass ZIP code for delivery questions, and handle errors proactively.\n- Provided concise Python example requests reflecting best practices.\n- Added new sections on failure handling and edge cases.\n- Updated metadata, tags, and homepage link for clarity and discoverability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3345c3bd0efdc79c09076380f23fc1aed551d0ee159c61d6a095b01c7c0e5ae4"
+}

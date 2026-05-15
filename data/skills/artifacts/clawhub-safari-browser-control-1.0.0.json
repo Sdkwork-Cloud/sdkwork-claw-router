@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/safari-browser-control@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safari_browser_control",
+  "skill": {
+    "id": 50089,
+    "skillKey": "clawhub-safari-browser-control",
+    "name": "Safari Browser Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safari-browser-control",
+    "url": "https://clawhub.ai/skills/safari-browser-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safari-browser-control-a140bb4c3be7dc30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control the user's real Safari browser on macOS using AppleScript and screencapture. Read pages, click elements, type text, take screenshots, navigate tabs —..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdlll",
+      "userId": "publishers:sdlll",
+      "displayName": "SDLLL",
+      "image": "https://avatars.githubusercontent.com/u/74636753?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 578,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773040091975,
+      "changelog": "Safari browser automation — control your real Safari via native AppleScript. Zero install.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12e3fe034fa4db9ed26ae0cac7a1b8cc8d7ce45c463dbb19090d7ca9d57b6059"
+}

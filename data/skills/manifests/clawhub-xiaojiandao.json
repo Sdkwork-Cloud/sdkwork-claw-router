@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66488,
+  "uuid": "skill-clawhub-xiaojiandao",
+  "skillKey": "clawhub-xiaojiandao",
+  "name": "小剪刀视频剪辑",
+  "summary": "小剪刀AI视频剪辑skill。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaojiandao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xjd",
+      "features": [
+        "小剪刀AI视频剪辑skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaojiandao@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35220301?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaojiandao",
+      "url": "https://clawhub.ai/skills/xiaojiandao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaojiandao",
+    "url": "https://clawhub.ai/skills/xiaojiandao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaojiandao-031304438ed49dca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaojiandao@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaojiandao-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:037fa297a616af3316aa9381fa02b76853853d8033afb64a478c84d1db059db9",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T08:05:30.902Z"
+}

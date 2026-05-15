@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gomboc-security-community@0.2.5",
+  "version": "0.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gomboc_security_community",
+  "skill": {
+    "id": 42098,
+    "skillKey": "clawhub-gomboc-security-community",
+    "name": "Code Remediation with Gomboc.ai Community Edition"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gomboc-security-community",
+    "url": "https://clawhub.ai/skills/gomboc-security-community",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gomboc-security-community-8f04a8fb389d48ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically scans and generates deterministic, merge-ready code fixes for infrastructure, app code, and configs using Gomboc.ai's Open Remediation Language."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gomboc-ai",
+      "userId": "s174bb9dazwpw2ey0k2sz1hv5s83hea9",
+      "displayName": "Gomboc AI",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.2.5",
+      "createdAt": 1774505027270,
+      "changelog": "- Added a new \"Token Scope & Security (Least Privilege)\" section detailing API token permissions and usage best practices.\n- Clarified that tokens grant read-only API access and cannot modify or delete Gomboc configurations.\n- Provided guidance for secure token management in CI/CD environments (e.g., GitHub Secrets).\n- No code or functional changes; documentation enhancement only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:579b083c312c2a1f2b2b8c6af71e987ff9d329fcb79af0a2fc98e7b595d35920"
+}

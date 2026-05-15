@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firecrawler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firecrawler",
+  "skill": {
+    "id": 9380,
+    "skillKey": "clawhub-firecrawler",
+    "name": "Firecrawler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firecrawler",
+    "url": "https://clawhub.ai/skills/firecrawler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firecrawler-3f233577a7bf0c67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web scraping and crawling with Firecrawl API. Fetch webpage content as markdown, take screenshots, extract structured data, search the web, and crawl documentation sites. Use when the user needs to scrape a URL, get current web info, captu."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "capt-marbles",
+      "userId": "publishers:capt-marbles",
+      "displayName": "captmarbles",
+      "image": "https://avatars.githubusercontent.com/u/5841195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3865,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769464128110,
+      "changelog": "Initial release - markdown, screenshot, extract, search, crawl, map",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8681c7ec59f25a93d8b0f706cd39eb141d6156a4dbf5646f397f6579fc60f3de"
+}

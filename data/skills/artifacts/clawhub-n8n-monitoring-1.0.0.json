@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/n8n-monitoring@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n8n_monitoring",
+  "skill": {
+    "id": 35052,
+    "skillKey": "clawhub-n8n-monitoring",
+    "name": "Monitor n8n Automations with OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n8n-monitoring",
+    "url": "https://clawhub.ai/skills/n8n-monitoring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n8n-monitoring-df182c513e26afe7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor and debug n8n workflow executions via webhook. Provides health checks (GREEN/YELLOW/RED), failure analysis, error debugging, and formatted alerting t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samirsaci",
+      "userId": "s175s6mz4dr20am0797ype1yy5846xm2",
+      "displayName": "Samir Saci",
+      "image": "https://avatars.githubusercontent.com/u/77899321?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775309402011,
+      "changelog": "Automated monitoring and debugging of self-hosted n8n workflow executions. Connects OpenClaw to your n8n instance via a webhook, provides health checks (GREEN/YELLOW/RED), failure analysis with per-workflow metrics, error debugging with failed node identification, and formatted Telegram alerts. Includes notification templates for cron-based monitoring with alert deduplication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82625092e839618c84d58446286953f27910425335e48ee7da9c83c1666a1bf6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bricks-cli@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bricks_cli",
+  "skill": {
+    "id": 16234,
+    "skillKey": "clawhub-bricks-cli",
+    "name": "BRICKS CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bricks-cli",
+    "url": "https://clawhub.ai/skills/bricks-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bricks-cli-d9c15ef9c41738b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage BRICKS workspace devices, groups, apps, modules, media, and projects via CLI for control, monitoring, updates, and deployments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jhen0409",
+      "userId": "publishers:jhen0409",
+      "displayName": "Jhen-Jie Hong",
+      "image": "https://avatars.githubusercontent.com/u/3001525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 910,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1773730984800,
+      "changelog": "bricks-cli 0.1.4 changelog\n\n- Expanded description and skill scope to explicitly cover local network device discovery, LAN operations, ACP (agent communication protocol) bridging, and integration with the BRICKS Project Desktop agent.\n- Updated documentation to clarify capabilities for scanning/connecting to local BRICKS Foundation devices on LAN and creating applications via the desktop agent.\n- Included additional triggers for LAN device discovery, ACP bridge operations, and desktop agent interactions.\n- No functional or code changes—documentation and metadata improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:898571e6715a5247e8484291b6fd66a88a92148a3a984c6d378c2d05da0c44fd"
+}

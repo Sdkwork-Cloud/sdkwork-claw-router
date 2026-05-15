@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63508,
+  "uuid": "skill-clawhub-sx-self-safety-guard",
+  "skillKey": "clawhub-sx-self-safety-guard",
+  "name": "sx-self-safety-guard",
+  "summary": "AI自我安全防护系统v2。多层防御：提示注入、身份冒充、系统提示泄露、 过度代理、供应链攻击、凭证窃取、恶意代码、敏感数据泄露、行为异常检测。 触发词：安全防护、身份验证、prompt injection、system prompt、 权限升级、MCP安全、self-safety-guard、安全检查。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sx_self_safety_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhuxiaobao-y",
+      "features": [
+        "AI自我安全防护系统v2。多层防御：提示注入、身份冒充、系统提示泄露、 过度代理、供应链攻击、凭证窃取、恶意代码、敏感数据泄露、行为异常检测。 触发词：安全防护、身份验证、prompt in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sx-self-safety-guard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242132972?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sx-self-safety-guard",
+      "url": "https://clawhub.ai/skills/sx-self-safety-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sx-self-safety-guard",
+    "url": "https://clawhub.ai/skills/sx-self-safety-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sx-self-safety-guard-30e6358b741da92c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sx-self-safety-guard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sx-self-safety-guard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2d6629089241165b9a3aba651969e7ed8b6ba30262faef57e231ac84e2e7758",
+      "artifactSizeBytes": 3149
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T05:37:14.381Z"
+}

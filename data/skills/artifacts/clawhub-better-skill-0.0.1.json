@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/better-skill@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.better_skill",
+  "skill": {
+    "id": 22798,
+    "skillKey": "clawhub-better-skill",
+    "name": "Better Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "better-skill",
+    "url": "https://clawhub.ai/skills/better-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/better-skill-5427a2f7f66557d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A better test skill with more content"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jazzqi",
+      "userId": "publishers:jazzqi",
+      "displayName": "jazzqi",
+      "image": "https://avatars.githubusercontent.com/u/1389319?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 451,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1773681698020,
+      "changelog": "- Initial release of better-test skill (version 0.0.1).\n- Includes new features for enhanced testing: \"Feature 1\" and \"Feature 2\".\n- Expanded documentation and example usage provided.\n- Designed to offer more content and utility for testing scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e889a2938e015654c0f33ac021d9c974b25fdd2a79387e3ec57026e26685e312"
+}

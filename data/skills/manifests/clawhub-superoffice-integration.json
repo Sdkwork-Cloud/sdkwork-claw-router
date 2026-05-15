@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49380,
+  "uuid": "skill-clawhub-superoffice-integration",
+  "skillKey": "clawhub-superoffice-integration",
+  "name": "Superoffice",
+  "summary": "SuperOffice integration. Manage Persons, Organizations, Deals, Leads, Projects, Activities and more. Use when the user wants to interact with SuperOffice data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.superoffice_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "SuperOffice integration",
+        "Manage Persons, Organizations, Deals, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with SuperOffice data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/superoffice-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "superoffice-integration",
+      "url": "https://clawhub.ai/skills/superoffice-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "superoffice-integration",
+    "url": "https://clawhub.ai/skills/superoffice-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/superoffice-integration-aaaa05e5b1c0b9bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/superoffice-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-superoffice-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c4068d1273d0478b045f6fbe877b741a1df51ea2d74107c242edf52485e6c98",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T14:58:32.373Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/astro-transits@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.astro_transits",
+  "skill": {
+    "id": 27726,
+    "skillKey": "clawhub-astro-transits",
+    "name": "Astro Transits"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "astro-transits",
+    "url": "https://clawhub.ai/skills/astro-transits",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/astro-transits-6669637a73d785e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Astrological transit calculator with natal chart support. Daily transits, weekly forecasts, void-of-course Moon, aspects, stations, and ingresses. Uses Swiss..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mizukaizen",
+      "userId": "publishers:mizukaizen",
+      "displayName": "mizukaizen",
+      "image": "https://avatars.githubusercontent.com/u/262249859?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773110835401,
+      "changelog": "Astro Transits v1.0.0\n\n- Initial release of a comprehensive astrological transit calculator.\n- Supports daily and weekly transits, including planetary positions, aspects to natal charts, Moon phases, stations, and ingresses.\n- Detects void-of-course Moon periods and provides interpretations for active aspects.\n- All calculations are local—no API key or external service required.\n- Uses Swiss Ephemeris with Moshier fallback for high-accuracy results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b738d06c29be9b36db07d8d0ec21a0933a1908c36303356f62868549570184d"
+}

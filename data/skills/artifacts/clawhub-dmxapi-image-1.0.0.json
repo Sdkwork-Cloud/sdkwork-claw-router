@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dmxapi-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dmxapi_image",
+  "skill": {
+    "id": 63974,
+    "skillKey": "clawhub-dmxapi-image",
+    "name": "MiniMax文生图"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dmxapi-image",
+    "url": "https://clawhub.ai/skills/dmxapi-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dmxapi-image-8ad77ddfe6505885.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 MiniMax (image-01) 和其他模型生成图片。支持文生图、图片编辑。当用户需要生成图片、AI绘图时使用此技能。使用方法：用户需要配置 DMXAPI_API_KEY 环境变量。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaoliang1319-cloud",
+      "userId": "s170rxzm26q76m70z8d6sa2nwh83kpbm",
+      "displayName": "xiaoliang1319-cloud",
+      "image": "https://avatars.githubusercontent.com/u/247145506?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774888147648,
+      "changelog": "首个版本，支持MiniMax image-01模型文生图",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9826b2e804feefdbe49f3384168d28e7a83592d4b750ea3f758172c1eda33036"
+}

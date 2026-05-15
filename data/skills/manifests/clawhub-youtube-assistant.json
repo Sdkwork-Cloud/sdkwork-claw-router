@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37001,
+  "uuid": "skill-clawhub-youtube-assistant",
+  "skillKey": "clawhub-youtube-assistant",
+  "name": "YouTube Assistant",
+  "summary": "Fetch YouTube video transcripts, metadata, and channel info with AI-powered summarization, key takeaway extraction, and multi-video analysis. Powered by evol...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EvolinkAI",
+      "features": [
+        "Fetch YouTube video transcripts, metadata, and channel info with AI-powered summarization, key.",
+        "Powered by evol..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-assistant@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253253881?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-assistant",
+      "url": "https://clawhub.ai/skills/youtube-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-assistant",
+    "url": "https://clawhub.ai/skills/youtube-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-assistant-e9638b7d9f434bef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-assistant@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-assistant-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29a567a1ce8ebd747ec396b6f026a29c67f60cd4b9ee62b238a6297142e3e703",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T07:40:47.361Z"
+}

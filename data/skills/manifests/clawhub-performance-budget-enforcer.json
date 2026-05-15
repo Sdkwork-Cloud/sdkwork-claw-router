@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52715,
+  "uuid": "skill-clawhub-performance-budget-enforcer",
+  "skillKey": "clawhub-performance-budget-enforcer",
+  "name": "Performance Budget Enforcer",
+  "summary": "Define, measure, and enforce web performance budgets — bundle sizes, asset counts, image weights, third-party scripts. Fails CI when budgets are exceeded. Tr...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.performance_budget_enforcer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Define, measure, and enforce web performance budgets — bundle sizes, asset counts, image weight.",
+        "Fails CI when budgets are exceeded"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/performance-budget-enforcer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "performance-budget-enforcer",
+      "url": "https://clawhub.ai/skills/performance-budget-enforcer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "performance-budget-enforcer",
+    "url": "https://clawhub.ai/skills/performance-budget-enforcer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/performance-budget-enforcer-159f97f9793b4ccb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/performance-budget-enforcer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-performance-budget-enforcer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:896235d36afe269f50c24bdec983104a8f53fad318b97576d9cfaa047c5823ba",
+      "artifactSizeBytes": 2120
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:02:15.850Z"
+}

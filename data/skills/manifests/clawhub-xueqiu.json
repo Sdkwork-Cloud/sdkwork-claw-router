@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16527,
+  "uuid": "skill-clawhub-xueqiu",
+  "skillKey": "clawhub-xueqiu",
+  "name": "Xueqiu",
+  "summary": "Access and summarize public posts and stock data from Xueqiu for basic market insights without trading or bulk data extraction.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xueqiu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "Access and summarize public posts and stock data from Xueqiu for basic market insights without."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xueqiu@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xueqiu",
+      "url": "https://clawhub.ai/skills/xueqiu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xueqiu",
+    "url": "https://clawhub.ai/skills/xueqiu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xueqiu-db8fd859fb1b398b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xueqiu@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xueqiu-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c52c3953e043c1ac9d2321cd46842d4fe8c4888089832271d6478c75eb7ef74e",
+      "artifactSizeBytes": 2128
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T01:25:49.929Z"
+}

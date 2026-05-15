@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intelligent-file-renamer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intelligent_file_renamer",
+  "skill": {
+    "id": 45747,
+    "skillKey": "clawhub-intelligent-file-renamer",
+    "name": "Intelligent File Renamer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intelligent-file-renamer",
+    "url": "https://clawhub.ai/skills/intelligent-file-renamer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intelligent-file-renamer-b96e4ebacefee4c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Batch rename files using pattern matching and AI suggestions"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777068086791,
+      "changelog": "Initial release of skylv-smart-renamer.\n\n- Batch rename files using 12 intelligent rules, including lowercase, uppercase, date prefix, sequence, replace, and more.\n- Preview file renaming results before applying changes.\n- Undo renaming actions if needed.\n- Triggerable with keywords such as \"rename\", \"batch rename\", and \"organize files\".\n- Designed for efficient file organization and automation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:07c966656f7846853f0d275126d4e370dc2eef102ba5a986c360f41c76f83fc1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-context@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_context",
+  "skill": {
+    "id": 35960,
+    "skillKey": "clawhub-resume-context",
+    "name": "Resume Context"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-context",
+    "url": "https://clawhub.ai/skills/resume-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-context-73d7837e43de6600.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ALWAYS use this skill (never memory_search or exec alone) when the user asks about coding sessions, recent dev work, project briefings, or developer notes. T..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nickleodoen",
+      "userId": "s1778z1dc1dvz674c67tgmf0z183jwsw",
+      "displayName": "Nikhil Yachareni",
+      "image": "https://avatars.githubusercontent.com/u/99355528?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774474501784,
+      "changelog": "- Expanded and clarified the Requirements section with detailed setup steps for resume, ANTHROPIC_API_KEY, and Redis.\n- Added installation instructions for the resume CLI and steps for enabling its shell hook.\n- Provided clearer guidance on obtaining a Redis Cloud URL.\n- No changes to code or environment; documentation improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc0ce34c62c8466dc3657ee6a524b375a4645a3dc1518eb03c414859a74cfb90"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43297,
+  "uuid": "skill-clawhub-self-improvement-vic",
+  "skillKey": "clawhub-self-improvement-vic",
+  "name": "Self-Improvement Plus",
+  "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improvement_vic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chungvic",
+      "features": [
+        "Captures learnings, errors, and corrections to enable continuous improvement",
+        "Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-improvement-vic@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264721513?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-improvement-vic",
+      "url": "https://clawhub.ai/skills/self-improvement-vic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improvement-vic",
+    "url": "https://clawhub.ai/skills/self-improvement-vic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improvement-vic-99ebd68adedf8520.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-improvement-vic@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-improvement-vic-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8286d3043802e7214bd5f3593d305a29b28c1a27681efaa448c3e8ddb5a9d3a0",
+      "artifactSizeBytes": 2818
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T09:11:29.860Z"
+}

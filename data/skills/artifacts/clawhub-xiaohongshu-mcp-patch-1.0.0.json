@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-mcp-patch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_mcp_patch",
+  "skill": {
+    "id": 70050,
+    "skillKey": "clawhub-xiaohongshu-mcp-patch",
+    "name": "小红书MCP补丁包"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-mcp-patch",
+    "url": "https://clawhub.ai/skills/xiaohongshu-mcp-patch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-mcp-patch-1a1e807829d88e49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动检测并修复小红书MCP部署常见问题，包括端口占用、cookie路径、服务状态及超时等待。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tinadu-ai",
+      "userId": "s178xc11mj68f9c018344m5xw183y7z8",
+      "displayName": "NANA",
+      "image": "https://avatars.githubusercontent.com/u/133653633?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 602,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772635056971,
+      "changelog": "- 初始发布，提供小红书 MCP 常见部署问题的自动化修复脚本集。\n- 修复端口占用、cookie 路径缺失、Chrome 安装卡住、服务状态异常等问题。\n- 每个问题提供独立的 Bash 修复脚本及使用说明。\n- 提供一键修复总脚本，实现端到端自动检测与修正。\n- 适用于小红书 MCP 服务部署常见故障场景。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6f0db4ff6157140a0fe73ff9b945f07e72e08a9e02ca86f08b8c224c08730e2f"
+}

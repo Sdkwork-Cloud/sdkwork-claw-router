@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68089,
+  "uuid": "skill-clawhub-website-monitor-skill",
+  "skillKey": "clawhub-website-monitor-skill",
+  "name": "WebsiteMonitor",
+  "summary": "构建一个自定义网站监控系统，能够每5分钟检测目标网站的HTTP状态码和响应时延， 并在每天早上9点自动生成一份基于监控数据的HTML网页报告。 当用户提到以下场景时，请务必使用此 skill： - 想要监控某个或多个网站是否正常运行 - 想要记录网站的响应时间、延迟、可用性 - 想要定时检查 HTTP 状态码（2...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.website_monitor_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yb0554",
+      "features": [
+        "构建一个自定义网站监控系统，能够每5分钟检测目标网站的HTTP状态码和响应时延， 并在每天早上9点自动生成一份基于监控数据的HTML网页报告。 当用户提到以下场景时，请务必使用此 skill：",
+        "想要监控某个或多个网站是否正常运行",
+        "想要记录网站的响应时间、延迟、可用性",
+        "想要定时检查 HTTP 状态码（2..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/website-monitor-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32742701?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "website-monitor-skill",
+      "url": "https://clawhub.ai/skills/website-monitor-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "website-monitor-skill",
+    "url": "https://clawhub.ai/skills/website-monitor-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/website-monitor-skill-329d91265d57704b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/website-monitor-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-website-monitor-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:347e2e9c1241009b8dd696eaffda6446bac1fedef1dc7404a367695b199479a7",
+      "artifactSizeBytes": 2831
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T12:55:52.110Z"
+}

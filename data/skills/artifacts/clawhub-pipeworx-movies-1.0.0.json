@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pipeworx-movies@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_movies",
+  "skill": {
+    "id": 54772,
+    "skillKey": "clawhub-pipeworx-movies",
+    "name": "Pipeworx movies"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-movies",
+    "url": "https://clawhub.ai/skills/pipeworx-movies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-movies-1fc2957e1808fa98.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Movies MCP — wraps iTunes Search API (movies, free, no auth) and TVmaze API (TV shows, free, no au"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "b-gutman",
+      "userId": "s17de0904v925begb7h04jkph984bgct",
+      "displayName": "Bruce Gutman",
+      "image": "https://avatars.githubusercontent.com/u/270792185?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776104945684,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:acaf683e2b63ae496fd1fbd6e250d9708104de12d4dc0784cbf9c2ff276cc3da"
+}

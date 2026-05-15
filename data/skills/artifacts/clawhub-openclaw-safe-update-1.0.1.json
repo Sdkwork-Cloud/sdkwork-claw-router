@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-safe-update@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_safe_update",
+  "skill": {
+    "id": 21589,
+    "skillKey": "clawhub-openclaw-safe-update",
+    "name": "OpenClaw Safe Update"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-safe-update",
+    "url": "https://clawhub.ai/skills/openclaw-safe-update",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-safe-update-4d9a94b3b2918195.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safely verify and apply OpenClaw upgrades with isolated sidecar checks. Use when asked to update OpenClaw, verify a target version before upgrading, avoid gl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ianchenx",
+      "userId": "publishers:ianchenx",
+      "displayName": "ianchenx",
+      "image": "https://avatars.githubusercontent.com/u/85614583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 494,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772626054732,
+      "changelog": "Docs update: add cron templates and clarify scheduled usage, behavior, and safety notes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a41033a9f6660fceb9b0d6f3c864f07477b5b0756c91e456b39f9fd90e5a6008"
+}

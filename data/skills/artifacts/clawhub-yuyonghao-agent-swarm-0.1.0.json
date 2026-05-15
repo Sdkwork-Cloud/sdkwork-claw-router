@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yuyonghao-agent-swarm@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuyonghao_agent_swarm",
+  "skill": {
+    "id": 34175,
+    "skillKey": "clawhub-yuyonghao-agent-swarm",
+    "name": "Agent Swarm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuyonghao-agent-swarm",
+    "url": "https://clawhub.ai/skills/yuyonghao-agent-swarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuyonghao-agent-swarm-2bc8ed5b85317b85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages multi-agent swarms with coordination, task sharding, self-organization, emergent behavior, and real-time monitoring for intelligent collective action."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuyonghao-123",
+      "userId": "s173qtadqbwthef9dwg283f54n83np6t",
+      "displayName": "yuyonghao-123",
+      "image": "https://avatars.githubusercontent.com/u/267580628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774942725412,
+      "changelog": "- Initial release of Agent Swarm - 群体智能核心 (version 0.1.0)\n- Implements core modules: SwarmCoordinator, TaskSharder, SelfOrganizer, EmergentBehavior, and SwarmMonitor\n- Features swarm coordination, task sharding, self-organization, emergent behaviors, and monitoring\n- Provides lifecycle management, consensus, load balancing, dynamic reorganization, collective decision-making, and metrics export\n- Includes usage examples and an API reference in SKILL.md",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43c4d0c421efe5ffb02384ddf18feadbb31726dd653a625fbb066b524dd4f940"
+}

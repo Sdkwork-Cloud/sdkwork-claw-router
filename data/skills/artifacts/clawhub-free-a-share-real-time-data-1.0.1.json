@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-a-share-real-time-data@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_a_share_real_time_data",
+  "skill": {
+    "id": 13991,
+    "skillKey": "clawhub-free-a-share-real-time-data",
+    "name": "Free A Share Real Time Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-a-share-real-time-data",
+    "url": "https://clawhub.ai/skills/free-a-share-real-time-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-a-share-real-time-data-378e5695c7a51172.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch China A-share stock market data (bars, realtime quotes, tick-by-tick transactions) via mootdx/TDX protocol. Use when working with Chinese stock data, mootdx library, TDX quotes, intraday minute bars, transaction history, or real-time."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangdinglu",
+      "userId": "publishers:wangdinglu",
+      "displayName": "taktiko",
+      "image": "https://avatars.githubusercontent.com/u/27430103?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1182,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770646239742,
+      "changelog": "- Renamed the skill to \"mootdx-china-stock-data\" and enhanced the description for clarity.\n- Added detailed installation, verification, and demo instructions.\n- Documented critical timezone, trading hours, and trading day validation requirements.\n- Expanded API reference with usage examples and result formats for bars, quotes, and tick-by-tick transactions.\n- Provided troubleshooting tips and common pitfalls to avoid empty results or data inconsistencies.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d407330f05f0d951884f86279e848cddfdbfda4cc2efd364cbcce525ac6201d3"
+}

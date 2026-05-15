@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20287,
+  "uuid": "skill-clawhub-elytro-cli",
+  "skillKey": "clawhub-elytro-cli",
+  "name": "Elytro Smart Account CLI",
+  "summary": "Entry point for the Elytro wallet skill plus the curated DeFi sub-skills. Start here before loading any individual protocol skill.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elytro_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CodeExplorer29",
+      "features": [
+        "Entry point for the Elytro wallet skill plus the curated DeFi sub-skills",
+        "Start here before loading any individual protocol skill."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/elytro-cli@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1399563?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "elytro-cli",
+      "url": "https://clawhub.ai/skills/elytro-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elytro-cli",
+    "url": "https://clawhub.ai/skills/elytro-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elytro-cli-5237cd2cd927dff3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/elytro-cli@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-elytro-cli-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7cfcdb45a9847e8f6d50bbc03237a83dc196c0b7626d9a266b725c3395f533e",
+      "artifactSizeBytes": 2454
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T09:45:10.812Z"
+}

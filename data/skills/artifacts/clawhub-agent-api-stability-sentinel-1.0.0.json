@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-api-stability-sentinel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_api_stability_sentinel",
+  "skill": {
+    "id": 25733,
+    "skillKey": "clawhub-agent-api-stability-sentinel",
+    "name": "Agent Api Stability Sentinel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-api-stability-sentinel",
+    "url": "https://clawhub.ai/skills/agent-api-stability-sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-api-stability-sentinel-845e7b7c99bf4d08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "API compatibility and breaking-change detection specialist."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nntrivi2001",
+      "userId": "s179r5ge1jnhf1sr1kvb6ky3fx83mcs1",
+      "displayName": "Nguyễn Ngọc Trí Vĩ",
+      "image": "https://avatars.githubusercontent.com/u/74729720?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773803407549,
+      "changelog": "Initial release of agent-api-stability-sentinel.\n\n- Introduces a specialist role focused on API compatibility and breaking-change detection.\n- Enforces mandatory live API testing—requiring real HTTP requests and payload verification before declaring stability.\n- Details responsibilities: baseline analysis, live endpoint testing, breaking change detection, contract validation, and edge-case coverage.\n- Specifies a strict output format for change reports, including breaking/non-breaking changes and migration guidance.\n- Emphasizes: No claims of API stability without actual end-to-end tests on every scenario.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92cea7075854282808c4da0a614f0739b9347746be989edd85f628ce90fe3b09"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-48h-cross-asset-sync-trader@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_48h_cross_asset_sync_trader",
+  "skill": {
+    "id": 30261,
+    "skillKey": "clawhub-polymarket-48h-cross-asset-sync-trader",
+    "name": "Polymarket 48h Cross Asset Sync Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-48h-cross-asset-sync-trader",
+    "url": "https://clawhub.ai/skills/polymarket-48h-cross-asset-sync-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-48h-cross-asset-sync-trader-c83bf76f7db443d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trades cross-asset correlation divergences in 5-minute crypto \"Up or Down\" markets on Polymarket. When BTC, ETH, SOL, DOGE, XRP, and BNB have overlapping tim..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diagnostikon",
+      "userId": "s17bf2qvfsqakddyh674vczxqs83fcwb",
+      "displayName": "diagnostikon",
+      "image": "https://avatars.githubusercontent.com/u/17246180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 286,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1777386157505,
+      "changelog": "SDK resilience: try/except runt apply_skill_config",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e842fa180c513d3fd16e6e1c4bbb2718f5341f7cbf6165b7b2fb07a73806e8f4"
+}

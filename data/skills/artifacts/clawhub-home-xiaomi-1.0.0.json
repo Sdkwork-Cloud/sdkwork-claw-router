@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/home-xiaomi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_xiaomi",
+  "skill": {
+    "id": 58417,
+    "skillKey": "clawhub-home-xiaomi",
+    "name": "Xiaomi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-xiaomi",
+    "url": "https://clawhub.ai/skills/home-xiaomi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-xiaomi-cd876dce04380c95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "[English] Control Xiaomi Home devices via local LAN using miiocli. Supports status checks, toggling power, and MIOT property manipulation for devices like smart plugs, humidifiers, and rice cookers. | [中文] 通过局域网利用 miiocli 控制米家智能设备。支持查看状态、开."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yiqiezhenxi",
+      "userId": "publishers:yiqiezhenxi",
+      "displayName": "yiqiezhenxi",
+      "image": "https://avatars.githubusercontent.com/u/10209519?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1513,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770277478866,
+      "changelog": "Initial release:\n\n- Control Xiaomi Home devices locally over LAN using miiocli.\n- Supports status checks, power toggling, and MIOT property control for smart plugs, humidifiers, and rice cookers.\n- Includes a built-in script for extracting device IPs and tokens from Xiaomi Cloud.\n- Provides pre-configured command workflows for commonly used devices.\n- Installs dependencies and handles common library conflicts automatically.\n- Offers documentation and natural language command examples in both English and Chinese.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7d016807a115b629efb58fde9bf2ab1652a635b672dd6f916915651757da9b93"
+}

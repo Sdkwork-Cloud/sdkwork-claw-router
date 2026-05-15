@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nano-banana-image-t8-alluse@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_banana_image_t8_alluse",
+  "skill": {
+    "id": 61206,
+    "skillKey": "clawhub-nano-banana-image-t8-alluse",
+    "name": "Nano Banana Image T8"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-banana-image-t8-alluse",
+    "url": "https://clawhub.ai/skills/nano-banana-image-t8-alluse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-banana-image-t8-alluse-895f5925b4975602.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用 Nano Banana API 生成或编辑图片，支持文生图和图生图，需提供API Key和提示词，支持自定义尺寸比例。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flywhale-666",
+      "userId": "publishers:flywhale-666",
+      "displayName": "flywhale",
+      "image": "https://avatars.githubusercontent.com/u/136772759?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 449,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1773234731132,
+      "changelog": "Version 0.1.4\n\n- 增加了更多中文及英文触发词，如“香蕉生图”“香蕉技能”等，提升中文关键词兼容性\n- 其余功能和参数说明保持不变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b09f94ee46c47ba927965a261d1193a38f79c369223eef1af5fef95c9b1230a"
+}

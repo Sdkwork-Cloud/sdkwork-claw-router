@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caring-memory@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caring_memory",
+  "skill": {
+    "id": 41910,
+    "skillKey": "clawhub-caring-memory",
+    "name": "Caring Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caring-memory",
+    "url": "https://clawhub.ai/skills/caring-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caring-memory-a2f154560074c3e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI task reminder using priority, Ebbinghaus intervals, gamification, and active time tracking for effective task management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wukai8289",
+      "userId": "s17agmwwtdttcyy5gp7phhqg55847jdg",
+      "displayName": "wukai8289",
+      "image": "https://avatars.githubusercontent.com/u/126007574?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775276129947,
+      "changelog": "v2.0: Ebbinghaus curve + gamification + active time learning",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce1c2eeb213aad09bd89d35bb7d158959f45ef72c45c67fa940e3aa7dd3b0137"
+}

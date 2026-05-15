@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37622,
+  "uuid": "skill-clawhub-legend-config-manager",
+  "skillKey": "clawhub-legend-config-manager",
+  "name": "Config Manager",
+  "summary": "Safe configuration file editing for JSON, YAML, TOML, and other config formats. Use when working with configuration files for: (1) Reading config values, (2)...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legend_config_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dougchambers",
+      "features": [
+        "Safe configuration file editing for JSON, YAML, TOML, and other config formats",
+        "Use when working with configuration files for: (1) Reading config values, (2)..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legend-config-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48635513?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legend-config-manager",
+      "url": "https://clawhub.ai/skills/legend-config-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legend-config-manager",
+    "url": "https://clawhub.ai/skills/legend-config-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legend-config-manager-df06228a13590a08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legend-config-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-legend-config-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed69d7ab377e2234cf372683df1d38f51b2f84aa3e6dcaf8ba32085a12d30cf9",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:16:26.801Z"
+}

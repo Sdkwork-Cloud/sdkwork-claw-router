@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72181,
+  "uuid": "skill-clawhub-9kvr-panorama",
+  "skillKey": "clawhub-9kvr-panorama",
+  "name": "芊云VR全景运营小助手",
+  "summary": "全景 VR 作品管理技能，覆盖账号登录配置（uid/token）、作品、素材、场景、热点、配乐、语音讲解、评分查询与接入指引。用户提出“配置登录信息”、“创建/修改/查看 VR 作品”、“上传素材”、“配置场景与热点”、“给作品加音乐或配音”、“查看评分”、“生成接入代码”等需求时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.9kvr_panorama",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tianming",
+      "features": [
+        "全景 VR 作品管理技能，覆盖账号登录配置（uid/token）、作品、素材、场景、热点、配乐、语音讲解、评分查询与接入指引。用户提出“配置登录信息”、“创建/修改/查看 VR 作品”、“上."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/9kvr-panorama@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10571546?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "9kvr-panorama",
+      "url": "https://clawhub.ai/skills/9kvr-panorama"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "9kvr-panorama",
+    "url": "https://clawhub.ai/skills/9kvr-panorama",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/9kvr-panorama-954a73e94a4298dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/9kvr-panorama@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-9kvr-panorama-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3fcac8de7a5323a8650ccf54c2ebb6ee233fa41aa542890d91c281c54391840f",
+      "artifactSizeBytes": 2767
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T18:12:47.785Z"
+}

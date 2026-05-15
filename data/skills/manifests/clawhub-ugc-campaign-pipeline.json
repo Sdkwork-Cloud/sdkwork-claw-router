@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52361,
+  "uuid": "skill-clawhub-ugc-campaign-pipeline",
+  "skillKey": "clawhub-ugc-campaign-pipeline",
+  "name": "UGC Campaign Pipeline",
+  "summary": "Complete UGC video campaign pipeline: product → hero image → variations → videos → edited final. ✅ USE WHEN: - User says \"crear campaña UGC\" or \"pipeline completo\" - Need end-to-end UGC video production - Starting from product image/URL →.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ugc_campaign_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul de Lavallaz",
+      "features": [
+        "Complete UGC video campaign pipeline: product → hero image → variations → videos → edited final",
+        "✅ USE WHEN:",
+        "User says \"crear campaña UGC\" or \"pipeline completo\"",
+        "Need end-to-end UGC video production"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ugc-campaign-pipeline@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51497690?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ugc-campaign-pipeline",
+      "url": "https://clawhub.ai/skills/ugc-campaign-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ugc-campaign-pipeline",
+    "url": "https://clawhub.ai/skills/ugc-campaign-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ugc-campaign-pipeline-11ffbc8dd5797b4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ugc-campaign-pipeline@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ugc-campaign-pipeline-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4e00ede778e83fd2f3ac40b9bb203d04fb4bac4f10b471109dee30d9cdec686",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T01:18:43.931Z"
+}

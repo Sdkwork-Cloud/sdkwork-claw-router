@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73222,
+  "uuid": "skill-clawhub-a-share-market-query",
+  "skillKey": "clawhub-a-share-market-query",
+  "name": "我的技能",
+  "summary": "获取股票行情与新闻情报并结构化输出。用户要求查询个股/指数、新闻追踪或多源交叉验证时调用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_market_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sunnycpk",
+      "features": [
+        "获取股票行情与新闻情报并结构化输出。用户要求查询个股/指数、新闻追踪或多源交叉验证时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-share-market-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30063698?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-share-market-query",
+      "url": "https://clawhub.ai/skills/a-share-market-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-market-query",
+    "url": "https://clawhub.ai/skills/a-share-market-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-market-query-76ae073a88e3919a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-share-market-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-share-market-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35251eca06f79fca8cec37f4c4329102e4caa8093998f0823a123bf7dbf803dc",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T02:37:34.152Z"
+}

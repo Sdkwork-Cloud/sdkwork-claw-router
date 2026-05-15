@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40594,
+  "uuid": "skill-clawhub-prooftrail-mcp",
+  "skillKey": "clawhub-prooftrail-mcp",
+  "name": "ProofTrail MCP Skill",
+  "summary": "Teach an agent to install ProofTrail's governed stdio MCP server, use the safest read and proof tools first, and keep future package or listing claims honest.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prooftrail_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yifeng[Terry] Yu",
+      "features": [
+        "Teach an agent to install ProofTrail's governed stdio MCP server, use the safest read and proof."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prooftrail-mcp@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125581657?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prooftrail-mcp",
+      "url": "https://clawhub.ai/skills/prooftrail-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prooftrail-mcp",
+    "url": "https://clawhub.ai/skills/prooftrail-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prooftrail-mcp-78be3bc9862c44a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prooftrail-mcp@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-prooftrail-mcp-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1544770a57ceade2926f8e62436037cc3650af4f895e2e0f3913f5081ca88a7",
+      "artifactSizeBytes": 2516
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T02:06:46.597Z"
+}

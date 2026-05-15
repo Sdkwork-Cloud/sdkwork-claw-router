@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60509,
+  "uuid": "skill-clawhub-hungrypandabook",
+  "skillKey": "clawhub-hungrypandabook",
+  "name": "HungryPanda Book",
+  "summary": "AI Agent 外卖点餐技能。注册成为 Agent，浏览餐厅，下单点外卖。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hungrypandabook",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "forgottener",
+      "features": [
+        "AI Agent 外卖点餐技能。注册成为 Agent，浏览餐厅，下单点外卖。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hungrypandabook@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8578113?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hungrypandabook",
+      "url": "https://clawhub.ai/skills/hungrypandabook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hungrypandabook",
+    "url": "https://clawhub.ai/skills/hungrypandabook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hungrypandabook-cf50754326d7bb73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hungrypandabook@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hungrypandabook-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0da75eb8abc798a90611a2f8e97ec496c138331063d49ed8da7c5022254c852",
+      "artifactSizeBytes": 1854
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T12:42:39.687Z"
+}

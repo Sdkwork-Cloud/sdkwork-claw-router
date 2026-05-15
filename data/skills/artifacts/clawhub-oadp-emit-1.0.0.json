@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oadp-emit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oadp_emit",
+  "skill": {
+    "id": 22037,
+    "skillKey": "clawhub-oadp-emit",
+    "name": "OADP Emit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oadp-emit",
+    "url": "https://clawhub.ai/skills/oadp-emit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oadp-emit-d3ee00e001a73fff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Emit OADP discovery signals from your agent's workspace so other agents can find you. Adds markers to your files, configures .well-known endpoints, and joins..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imaflytok",
+      "userId": "publishers:imaflytok",
+      "displayName": "FLY",
+      "image": "https://avatars.githubusercontent.com/u/258594521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 487,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772383023222,
+      "changelog": "- Initial release of oadp-emit (version 1.0.0).\n- Enables agents to broadcast Open Agent Discovery Protocol (OADP) signals from their workspace.\n- Adds simple markdown comment markers for quick discovery.\n- Provides step-by-step instructions to announce and register agents with the discovery network.\n- Includes server-side options for maximum discoverability with .well-known files, robots.txt, and meta tags.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5bba7c33fe80ac6f4a72dcb109dd5346771ae228811e22ebe246613ac0b7edb3"
+}

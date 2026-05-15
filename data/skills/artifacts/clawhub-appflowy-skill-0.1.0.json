@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/appflowy-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appflowy_skill",
+  "skill": {
+    "id": 60155,
+    "skillKey": "clawhub-appflowy-skill",
+    "name": "Appflowy Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appflowy-skill",
+    "url": "https://clawhub.ai/skills/appflowy-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appflowy-skill-72299e4816dd0dbf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AppFlowy Cloud/GoTrue API 的认证与调用流程（获取 token、workspace/文档/数据库/搜索等）。在本仓库用 Python 编写或调试 AppFlowy API 客户端、脚本、自动化或排查接口问题时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "balonegit",
+      "userId": "publishers:balonegit",
+      "displayName": "BaloneGit",
+      "image": "https://avatars.githubusercontent.com/u/49984597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 485,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772421037659,
+      "changelog": "Initial release of appflowy-api skill.\n\n- Provides authentication and API invocation flows for AppFlowy Cloud/GoTrue, including obtaining tokens and accessing workspace, document, database, and search APIs.\n- Supports Python client scripts for automation, debugging, and troubleshooting AppFlowy API issues.\n- Compatible with AppFlowy Cloud version 0.12.3 (with health check and version warning in doctor.py).\n- Unified command-line and script entry points with configurable priority for parameters, config files, and environment variables.\n- Includes example scripts for token retrieval, workspace management, document generation, and grid/template operations.\n- Documentation covers required API request headers, handling of default empty rows, and troubleshooting tips.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:49e1031d8b0fca28186961bd8570c5f82e0e3f5533257e2743baf987bf7251cd"
+}

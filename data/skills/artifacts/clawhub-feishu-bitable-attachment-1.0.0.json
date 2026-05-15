@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-bitable-attachment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bitable_attachment",
+  "skill": {
+    "id": 51864,
+    "skillKey": "clawhub-feishu-bitable-attachment",
+    "name": "Feishu Bitable Attachment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bitable-attachment",
+    "url": "https://clawhub.ai/skills/feishu-bitable-attachment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bitable-attachment-0f8f6a1419eb0263.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "uploads files from local/url/feishu-message to any accessible feishu bitable attachment field via material upload flow (parent_type=bitable_file)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gyjbazinga-stack",
+      "userId": "s17173patpcw0mewznem7mf8jh83pma0",
+      "displayName": "gyjbazinga-stack",
+      "image": "https://avatars.githubusercontent.com/u/259223731?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774590721037,
+      "changelog": "Initial release of feishu-bitable-attachment skill:\n\n- Uploads files from local disk, URL, or Feishu message to any Feishu Bitable attachment field using material upload flow.\n- Supports flexible target resolution: app_token, table_id/table_name, field_id/field_name, record_id/lookup/create-new.\n- Input validation, detailed structure, and error handling (with friendly error messages for resolution, auth, upload errors, and more).\n- Handles both direct and chunked upload flows depending on file size.\n- Works with any accessible Bitable—no hardcoded table or field values.\n- Usage examples, output formats, and environment setup instructions included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a21937d221f33a8ecdb3853ddcb40a31df5d9ff1426ea7b417d64b13bf9629df"
+}

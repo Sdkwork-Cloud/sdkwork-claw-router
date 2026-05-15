@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/critical-debater@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.critical_debater",
+  "skill": {
+    "id": 28753,
+    "skillKey": "clawhub-critical-debater",
+    "name": "Critical Debater Suite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "critical-debater",
+    "url": "https://clawhub.ai/skills/critical-debater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/critical-debater-53fe7a23851e46c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent adversarial debate system with 4 roles (Pro, Con, Judge, Orchestrator), per-round evidence refresh, 5-element reasoning chains, and structured bi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xwxga",
+      "userId": "s171e34qveqzq8tsej3c1nzjzn83mpyn",
+      "displayName": "xwxga",
+      "image": "https://avatars.githubusercontent.com/u/17403035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 317,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773368023488,
+      "changelog": "Initial v2 release: 4-agent adversarial debate with per-round evidence refresh",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2722b4863528e3c92c520f6c7e5e519d71ae2b51e896a2e6a36555dfb7b99cc4"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32208,
+  "uuid": "skill-clawhub-token-safety-checker",
+  "skillKey": "clawhub-token-safety-checker",
+  "name": "Token Safety Checker",
+  "summary": "Scan openclaw.json for plaintext secrets (tokens, API keys, passwords) and migrate them to environment variables using SecretRef. Use when the user asks to \"...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_safety_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xinyu",
+      "features": [
+        "Scan openclaw.json for plaintext secrets (tokens, API keys, passwords) and migrate them to envi.",
+        "Use when the user asks to \"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/token-safety-checker@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4215405?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "token-safety-checker",
+      "url": "https://clawhub.ai/skills/token-safety-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-safety-checker",
+    "url": "https://clawhub.ai/skills/token-safety-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-safety-checker-46a614e69336d3f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/token-safety-checker@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-token-safety-checker-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82531475836cd335fcb9bc5b2bc60dcd29ab5bae20d8f089bcebe5305fc36e5a",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T12:08:41.009Z"
+}

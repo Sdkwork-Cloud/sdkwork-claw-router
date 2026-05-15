@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8429,
+  "uuid": "skill-clawhub-memory-tiering",
+  "skillKey": "clawhub-memory-tiering",
+  "name": "Memory Tiering",
+  "summary": "Automated multi-tiered memory management (HOT, WARM, COLD). Use this skill to organize, prune, and archive context during memory operations or compactions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_tiering",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SarielWang93",
+      "features": [
+        "Automated multi-tiered memory management (HOT, WARM, COLD)",
+        "Use this skill to organize, prune, and archive context during memory operations or compactions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-tiering@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47969932?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-tiering",
+      "url": "https://clawhub.ai/skills/memory-tiering"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-tiering",
+    "url": "https://clawhub.ai/skills/memory-tiering",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-tiering-055149b169c14089.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-tiering@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-tiering-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e8c4428521a07dbbf566ef29662f49bd43f999e75b986537139bd505fdce2903",
+      "artifactSizeBytes": 2236
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T13:17:27.573Z"
+}

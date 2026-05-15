@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pop-obsidian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pop_obsidian",
+  "skill": {
+    "id": 26607,
+    "skillKey": "clawhub-pop-obsidian",
+    "name": "Plugin Orchestration Protocol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pop-obsidian",
+    "url": "https://clawhub.ai/skills/pop-obsidian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pop-obsidian-cb7bc58100d6c866.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plugin Orchestration Protocol (POP) for Obsidian integration. Use this skill when the user mentions \"POP\", \"Obsidian plugin\", \"pipeline orchestration\", \"idea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "toolate28",
+      "userId": "publishers:toolate28",
+      "displayName": "toolated",
+      "image": "https://avatars.githubusercontent.com/u/105518313?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 364,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773327164806,
+      "changelog": "Initial release of pop-obsidian: real-time multi-step plugin orchestration for Obsidian via POP protocol.\n\n- Implements 5-phase Plugin Orchestration Protocol (POP) using JSON-RPC over WebSocket.\n- Supports pipeline discovery, execution, progress tracking, coherence assessment, and error handling.\n- Allows orchestration of complex workflows (e.g., \"idea to publish\") with step dependencies.\n- Integrates with Rust WebSocket bridge and TUI dashboard for real-time monitoring.\n- Uses ATOM token authentication with five-strand anyon braid topology.\n- Provides extensible protocol for Obsidian plugin integration and automation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e32743ab3cd78c25d4b2bb1a791fb3179a51d16eb4d12af300e23787b72dddc"
+}

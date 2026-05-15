@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arc-shield@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arc_shield",
+  "skill": {
+    "id": 15109,
+    "skillKey": "clawhub-arc-shield",
+    "name": "Arc Shield"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arc-shield",
+    "url": "https://clawhub.ai/skills/arc-shield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arc-shield-1784a84726b1e1c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Output sanitization for agent responses - prevents accidental secret leaks"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arc-claw-bot",
+      "userId": "publishers:arc-claw-bot",
+      "displayName": "arc-claw-bot",
+      "image": "https://avatars.githubusercontent.com/u/258497391?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1078,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770642853017,
+      "changelog": "arc-shield 1.0.0 initial release\n\n- Adds outbound message sanitization to block accidental leaks of secrets, API keys, passwords, tokens, wallet mnemonics, and PII.\n- Supports multiple scan modes: pass-through, strict blocking, redaction, and reporting.\n- Pattern-based detection for major secret types (1Password, GitHub, OpenAI, AWS, Slack, Discord, etc) plus high-entropy detection (Python).\n- Provides easy shell and Python integration for OpenClaw agents via wrappers and hooks.\n- Fully configurable patterns and severity in a single config file.\n- Includes comprehensive CLI, test suite, and best practices for safe agent messaging.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:006b61e21c89b0677710e04ca6e1e6b7024e98c65706499e48e19c10b3312856"
+}

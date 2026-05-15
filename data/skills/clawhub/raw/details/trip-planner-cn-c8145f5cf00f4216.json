@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "trip-planner-cn",
+    "displayName": "Trip Planner CN",
+    "summary": "行程规划助手，支持往返/单程行程规划。触发词：规划行程、高铁查询、航班查询、机场周边、时间安排、出行方案、当天往返。 涵盖：航班/高铁时刻查询、中转方案、时间约束筛选、详细时间线生成。",
+    "tags": {
+      "latest": "1.0.3"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "createdAt": 1777022669500,
+    "updatedAt": 1777527919376
+  },
+  "latestVersion": {
+    "version": "1.0.3",
+    "createdAt": 1777333870628,
+    "changelog": "- Clarified携程 connector航班数据解析规则，新增必须同时校验到达机场名称，避免遗漏直飞航班\n- 新增具体如何筛选直飞航班的条件说明（len(flights)==1 且到达机场等于目标机场名称）\n- 补充数据完整性验证要求，包括出现遗漏时的确认操作\n- 常见错误中加入数据解析错误示例，指出只用len(flights)==1会导致筛选遗漏\n- 文档内容更直接面向实际数据解析细节，并强化典型失误提示",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "doushen-cloud",
+    "userId": "s177b1w9hkemw0ab61dfzd133d83q950",
+    "displayName": "doushen-cloud",
+    "image": "https://avatars.githubusercontent.com/u/265686125?v=4"
+  },
+  "moderation": null
+}

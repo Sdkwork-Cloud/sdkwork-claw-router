@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30467,
+  "uuid": "skill-clawhub-open-source-license",
+  "skillKey": "clawhub-open-source-license",
+  "name": "Open Source License",
+  "summary": "Open Source License guidance, selection, compliance review, and drafting. Use this skill when users ask about choosing open source licenses, checking license...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_source_license",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xudong Guo",
+      "features": [
+        "Open Source License guidance, selection, compliance review, and drafting",
+        "Use this skill when users ask about choosing open source licenses, checking license..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-source-license@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24563928?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-source-license",
+      "url": "https://clawhub.ai/skills/open-source-license"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-source-license",
+    "url": "https://clawhub.ai/skills/open-source-license",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-source-license-2e625fd998384a1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-source-license@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-source-license-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1cc05814af40cd803d5fcdb2f6baaf08c1b500292a062580047daba856048a3",
+      "artifactSizeBytes": 2594
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T02:31:09.408Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23296,
+  "uuid": "skill-clawhub-feishu-print",
+  "skillKey": "clawhub-feishu-print",
+  "name": "Feishu Print",
+  "summary": "Print files uploaded to a Feishu group chat. Supports smart matching: multiple files, filename prefix/keyword filter, file type (pdf/image), and time range (...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_print",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "caigang78",
+      "features": [
+        "Print files uploaded to a Feishu group chat",
+        "Supports smart matching: multiple files, filename prefix/keyword filter, file type (pdf/image),."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-print@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7031130?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-print",
+      "url": "https://clawhub.ai/skills/feishu-print"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-print",
+    "url": "https://clawhub.ai/skills/feishu-print",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-print-cad5c27176f488d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-print@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-print-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f48cd6de15c2710b29bade9d559445f567969f154c5ee8ad9535c45aff64aa2d",
+      "artifactSizeBytes": 2231
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T06:13:19.726Z"
+}

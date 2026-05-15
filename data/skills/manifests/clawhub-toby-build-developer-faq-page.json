@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43317,
+  "uuid": "skill-clawhub-toby-build-developer-faq-page",
+  "skillKey": "clawhub-toby-build-developer-faq-page",
+  "name": "build-developer-faq-page",
+  "summary": "Generate customer-facing answers for common developer questions. Use when working on FAQ content for developers, technical founders, product engineers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toby_build_developer_faq_page",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TobeyRebecca",
+      "features": [
+        "Generate customer-facing answers for common developer questions",
+        "Use when working on FAQ content for developers, technical founders, product engineers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toby-build-developer-faq-page@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260428668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toby-build-developer-faq-page",
+      "url": "https://clawhub.ai/skills/toby-build-developer-faq-page"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toby-build-developer-faq-page",
+    "url": "https://clawhub.ai/skills/toby-build-developer-faq-page",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toby-build-developer-faq-page-67f613a4632809cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toby-build-developer-faq-page@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toby-build-developer-faq-page-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d241c36ba594bcdf6994f2a45b282305950bc25819cf141f106346e0640e0b20",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T04:03:36.967Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/send-imessage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.send_imessage",
+  "skill": {
+    "id": 22101,
+    "skillKey": "clawhub-send-imessage",
+    "name": "send-imessage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "send-imessage",
+    "url": "https://clawhub.ai/skills/send-imessage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/send-imessage-52ad4248ef8fbc40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send iMessages via macOS Messages app using AppleScript. Use when user wants to send a text message/SMS to a phone number. Supports Chinese and English messa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dezhihe91",
+      "userId": "publishers:dezhihe91",
+      "displayName": "dezhihe91",
+      "image": "https://avatars.githubusercontent.com/u/51137834?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 475,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773119319854,
+      "changelog": "Version 1.0.0 Changelog\n\n- Initial release of iMessage skill.\n- Removed all previous implementation, documentation, and configuration files.\n- Dramatically simplified: sends iMessages via macOS Messages app using AppleScript.\n- Now only requires phone number and message; supports both English and Chinese.\n- Drops all previous safety, admin, logging, and remote control features.\n- Usage instructions and AppleScript command included for clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6f14f15af00af2d649b2df477ff549a6e31f7274d861022b55cb3d10cecf0cd8"
+}

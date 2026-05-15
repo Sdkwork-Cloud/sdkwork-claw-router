@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64504,
+  "uuid": "skill-clawhub-meta-skill-generator",
+  "skillKey": "clawhub-meta-skill-generator",
+  "name": "skills creator",
+  "summary": "AI 技能自动生成框架。用于自动扫描、注册、检索、生成、评估、测试、优化技能。 触发场景： 1. 用户要求创建\"技能工厂\" 2. 需要检索/生成/评估技能 3. 需要测试/优化技能代码 状态：核心功能已完成 ⚠️ 注意：首次使用需运行 `python scripts/embed_skill.py` 重建向量搜索库",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_skill_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xjxjdnsnak-cell",
+      "features": [
+        "AI 技能自动生成框架。用于自动扫描、注册、检索、生成、评估、测试、优化技能。 触发场景： 1",
+        "用户要求创建\"技能工厂\" 2",
+        "需要检索/生成/评估技能 3",
+        "需要测试/优化技能代码 状态：核心功能已完成 ⚠️ 注意：首次使用需运行 `python scripts/embed_skill.py` 重建向量搜索库"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meta-skill-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256383799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meta-skill-generator",
+      "url": "https://clawhub.ai/skills/meta-skill-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-skill-generator",
+    "url": "https://clawhub.ai/skills/meta-skill-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-skill-generator-ec34e35351a2d570.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meta-skill-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meta-skill-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d325f70dd44d58ca867249023aa1568118768575f1898bb1e998e562a45f1a67",
+      "artifactSizeBytes": 2713
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T09:39:31.682Z"
+}

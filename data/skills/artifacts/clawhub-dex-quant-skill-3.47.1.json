@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dex-quant-skill@3.47.1",
+  "version": "3.47.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dex_quant_skill",
+  "skill": {
+    "id": 59982,
+    "skillKey": "clawhub-dex-quant-skill",
+    "name": "Dex Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dex-quant-skill",
+    "url": "https://clawhub.ai/skills/dex-quant-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dex-quant-skill-51a9f5f062160879.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "加密货币量化交易 AI Skill。用自然语言描述交易规则 → 生成策略脚本 → 服务器回测 → 参数优化 → 实时监控。 支持 Binance/Hyperliquid 全币种，6 种优化算法（genetic/bayesian/grid/random/annealing/pso），异步进度推送。 Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "miyaosk",
+      "userId": "s17c5x6vewh0hdenasczfe9ffd83grxs",
+      "displayName": "paddy",
+      "image": "https://avatars.githubusercontent.com/u/48668758?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 594,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 97
+    },
+    "latestVersion": {
+      "version": "3.47.1",
+      "createdAt": 1777283326749,
+      "changelog": "Switch default DEX Quant server from Railway to quant.supersafeclaw.com.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c14df76fba9de0104c6c528d94ae9057240cd022adab161c1c1803487439f259"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proxy-veil@1.5.4",
+  "version": "1.5.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxy_veil",
+  "skill": {
+    "id": 54363,
+    "skillKey": "clawhub-proxy-veil",
+    "name": "Proxy Veil"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxy-veil",
+    "url": "https://clawhub.ai/skills/proxy-veil",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxy-veil-587f887d7a08ce9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Residential proxy for AI agents — fetch any URL through 2M+ real IPs, bypass anti-bot, geo-target, sticky sessions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goldentrii",
+      "userId": "s17bhpy1pfez75z0gpe7rrh3b583eskq",
+      "displayName": "Memijashi",
+      "image": "https://avatars.githubusercontent.com/u/232191022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.5.4",
+      "createdAt": 1775743658825,
+      "changelog": "Fix: declare all env vars in metadata to resolve ClawHub security review. Pin install to proxy-veil@1.5.3.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e22516e8cbd1c5464c81e03a8f366470b33cf64790c0dc6388f7f568b3dca4b3"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40942,
+  "uuid": "skill-clawhub-boxed-fs",
+  "skillKey": "clawhub-boxed-fs",
+  "name": "Boxed fs",
+  "summary": "WebAssembly sandboxed file system operations for secure file read/write within explicitly declared directories. Use when needing to read, write, append, copy...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boxed_fs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guyoung",
+      "features": [
+        "WebAssembly sandboxed file system operations for secure file read/write within explicitly decla.",
+        "Use when needing to read, write, append, copy..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/boxed-fs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1448308?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "boxed-fs",
+      "url": "https://clawhub.ai/skills/boxed-fs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boxed-fs",
+    "url": "https://clawhub.ai/skills/boxed-fs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boxed-fs-0db03ffa5511ad48.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/boxed-fs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-boxed-fs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf86fba587963b138ed46058b3bcac3655c12922476127a9a63f9e518bf09ab7",
+      "artifactSizeBytes": 2206
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T08:36:43.210Z"
+}

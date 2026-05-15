@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arxiv-paper-writer@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_paper_writer",
+  "skill": {
+    "id": 46067,
+    "skillKey": "clawhub-arxiv-paper-writer",
+    "name": "Arxiv Paper Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-paper-writer",
+    "url": "https://clawhub.ai/skills/arxiv-paper-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-paper-writer-51b7132e6635c104.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever the user wants Claude Code to write, scaffold, compile, debug, or review an arXiv-style academic paper, especially survey papers with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "16miku",
+      "userId": "s17afqafc9cxg79k2at04c4ydd83gnaq",
+      "displayName": "16Miku",
+      "image": "https://avatars.githubusercontent.com/u/196724264?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1777164329160,
+      "changelog": "增强 agent-survey 复用资产：新增 9 章节 survey 模板、39 条真实 BibTeX 示例、TikZ/表格模板、实践指南、Linux TeX Live 指南和流程图资产。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:770a5801f2b680d1eddf0daca04fd2944f84cfb90ca4d7f68a736c8b5332571a"
+}

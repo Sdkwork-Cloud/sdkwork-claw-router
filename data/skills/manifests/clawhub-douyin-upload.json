@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23927,
+  "uuid": "skill-clawhub-douyin-upload",
+  "skillKey": "clawhub-douyin-upload",
+  "name": "Douyin Upload",
+  "summary": "Automatically generates and publishes articles to Douyin (TikTok China). Users provide a topic, and this skill generates engaging markdown content and cover...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_upload",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yidahis",
+      "features": [
+        "Automatically generates and publishes articles to Douyin (TikTok China)",
+        "Users provide a topic, and this skill generates engaging markdown content and cover..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-upload@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6274202?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-upload",
+      "url": "https://clawhub.ai/skills/douyin-upload"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-upload",
+    "url": "https://clawhub.ai/skills/douyin-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-upload-02bc1239801f9eaf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-upload@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-upload-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4635f798af8e82ca9758cf21309d8d526b49ac7e67a26dfada6a9489ec93eb34",
+      "artifactSizeBytes": 2305
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T01:24:24.639Z"
+}

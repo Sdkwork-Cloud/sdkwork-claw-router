@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33037,
+  "uuid": "skill-clawhub-zoho-subscriptions",
+  "skillKey": "clawhub-zoho-subscriptions",
+  "name": "Zoho Subscriptions",
+  "summary": "Zoho Subscriptions integration. Manage data, records, and automate workflows. Use when the user wants to interact with Zoho Subscriptions data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoho_subscriptions",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Zoho Subscriptions integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Zoho Subscriptions data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zoho-subscriptions@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zoho-subscriptions",
+      "url": "https://clawhub.ai/skills/zoho-subscriptions"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoho-subscriptions",
+    "url": "https://clawhub.ai/skills/zoho-subscriptions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoho-subscriptions-724d2f35a4a98297.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zoho-subscriptions@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zoho-subscriptions-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71d98f56effe99292b11e0bfd2c0cf260bba31d5a0cb6fd3f2ea2bd201a8408a",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:13:59.402Z"
+}

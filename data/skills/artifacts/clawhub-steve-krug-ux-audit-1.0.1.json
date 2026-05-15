@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/steve-krug-ux-audit@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.steve_krug_ux_audit",
+  "skill": {
+    "id": 32705,
+    "skillKey": "clawhub-steve-krug-ux-audit",
+    "name": "Steve Krug Ux Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "steve-krug-ux-audit",
+    "url": "https://clawhub.ai/skills/steve-krug-ux-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/steve-krug-ux-audit-6ada7960b20c3996.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform a UX audit on any website or web app using Steve Krug's proven methodology. Provide a URL or local path and get a structured usability review grounde..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "couriard",
+      "userId": "s174084bjv3r7z4nvxnd0xfhgh83hzcf",
+      "displayName": "Chris Couriard",
+      "image": "https://avatars.githubusercontent.com/u/128924221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773830643139,
+      "changelog": "- Shortened references to Steve Krug's book title in the description and methodology attribution for conciseness.\n- Removed the extended subtitle from the description, focusing on core functionality.\n- Trimmed methodology attribution wording, keeping the emphasis on Krug's UX approach while making it more concise.\n- No changes to features or audit steps; only editorial improvements for clarity and brevity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12265e9864e87209822381e7be207befeb77f61e73cd39f4dc30ae6224aef5fc"
+}

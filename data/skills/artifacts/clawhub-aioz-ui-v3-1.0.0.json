@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aioz-ui-v3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aioz_ui_v3",
+  "skill": {
+    "id": 20344,
+    "skillKey": "clawhub-aioz-ui-v3",
+    "name": "AIOZ UI V3 Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aioz-ui-v3",
+    "url": "https://clawhub.ai/skills/aioz-ui-v3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aioz-ui-v3-11019ad40fa6ff4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build UI components and pages using AIOZ UI V3 design system. Use this skill whenever the user wants to create, edit, or style React components using AIOZ UI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datnguyen26730",
+      "userId": "publishers:datnguyen26730",
+      "displayName": "datnguyenaioz",
+      "image": "https://avatars.githubusercontent.com/u/141386571?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 560,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771928064478,
+      "changelog": "AIOZ UI V3 Figma MCP → Code Mapping Skill v1.0.0\n\n- Initial release of the skill for translating Figma MCP UI output into production React code using the AIOZ UI V3 design system.\n- Provides detailed mapping between Figma design tokens (color, typography, component names, icons, variants) and React component imports/usage.\n- Enforces rules on token/class naming and import paths, including separation of chart and standard UI components.\n- Includes reference tables for component, variant, and import translation.\n- Supports tasks involving React components, styling, icons, brand colors, typography, and data visualization using AIOZ UI standards.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:54cf8575a54327131d1c206b16c9ed1d889313e208515496b199f54493a5b275"
+}

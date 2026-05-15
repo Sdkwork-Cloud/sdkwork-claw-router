@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43967,
+  "uuid": "skill-clawhub-gate-info-risk-check-staging",
+  "skillKey": "clawhub-gate-info-risk-check-staging",
+  "name": "gate-info-riskcheck",
+  "summary": "Token and address risk assessment. Use this skill ONLY when the user's query is exclusively about token/contract/address security with no other analysis dime...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_info_risk_check_staging",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaixg",
+      "features": [
+        "Token and address risk assessment",
+        "Use this skill ONLY when the user's query is exclusively about token/contract/address security."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-info-risk-check-staging@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12163126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-info-risk-check-staging",
+      "url": "https://clawhub.ai/skills/gate-info-risk-check-staging"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-info-risk-check-staging",
+    "url": "https://clawhub.ai/skills/gate-info-risk-check-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-info-risk-check-staging-6c9d2fe2289c485a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-info-risk-check-staging@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-info-risk-check-staging-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31cbbee6024a9784a609d00bb026bca410d83e9d6bd56e4c0e3097ab8a7ac025",
+      "artifactSizeBytes": 2608
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T01:16:08.862Z"
+}

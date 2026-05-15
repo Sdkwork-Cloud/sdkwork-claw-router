@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-opportunity-radar@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_opportunity_radar",
+  "skill": {
+    "id": 33414,
+    "skillKey": "clawhub-ai-opportunity-radar",
+    "name": "AI Opportunity Radar — Discover What In Your Life Should Be Automated"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-opportunity-radar",
+    "url": "https://clawhub.ai/skills/ai-opportunity-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-opportunity-radar-ce9f97dbceaa5592.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover what in your life could be automated through casual daily conversations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "itsukikuchiki",
+      "userId": "s17f0m11grz2c8crgby3qq12yh83mkwp",
+      "displayName": "itsukikuchiki",
+      "image": "https://avatars.githubusercontent.com/u/175526252?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 571,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773706542604,
+      "changelog": "- Documentation streamlined for clarity and brevity.\n- Key features summarized with clear headings.\n- Setup instructions simplified for easier onboarding.\n- Technical architecture and detailed memory descriptions removed for a more user-friendly overview.\n- Focus shifted to conversational experience and practical outcomes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ee2e91f24946cac030ed078b8dfe6f756d6c2c732eb4e0d50a0485594010e61"
+}

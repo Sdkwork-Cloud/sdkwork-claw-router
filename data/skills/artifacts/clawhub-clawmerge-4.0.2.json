@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawmerge@4.0.2",
+  "version": "4.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmerge",
+  "skill": {
+    "id": 65307,
+    "skillKey": "clawhub-clawmerge",
+    "name": "clawmerge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmerge",
+    "url": "https://clawhub.ai/skills/clawmerge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmerge-67a06f69a3adc1b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw workspace 备份/恢复/合并工具。 支持：完整备份、合并恢复（不覆盖已有）、Cron 任务备份、会话记录备份、配置导出。 新增：灾难备份包含系统配置 + workspace + sessions；恢复默认安全合并，避免误覆盖运行配置。 触发词：「备份」「恢复」「迁移」「换电脑」「导出配置..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sinoslug",
+      "userId": "s1767tsjgz8fkahkcjz0faka4583kajy",
+      "displayName": "sinoslug",
+      "image": "https://avatars.githubusercontent.com/u/125179548?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 404,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 23
+    },
+    "latestVersion": {
+      "version": "4.0.2",
+      "createdAt": 1777902906432,
+      "changelog": "v4.0.2: Add manual backup/restore instructions, OpenClaw natural-language usage examples, safer restore-mode documentation, and publish checklist noting ClawHub CLI has no publish dry-run.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e31ac7215b86bf3e22dea577120a2fd1085612dbbd6752fe6d126837036181a8"
+}

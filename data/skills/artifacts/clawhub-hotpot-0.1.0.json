@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hotpot@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotpot",
+  "skill": {
+    "id": 66415,
+    "skillKey": "clawhub-hotpot",
+    "name": "hotpot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotpot",
+    "url": "https://clawhub.ai/skills/hotpot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotpot-8297490ad1d7edab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中国最具社交属性的传统美食"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774870427611,
+      "changelog": "Initial release of the \"hotpot\" skill.\n\n- Provides comprehensive information about Chinese hotpot, including history, facts, news, data, and resources.\n- Supports real-time queries using web search for up-to-date results.\n- Offers example queries for easy exploration.\n- Includes metadata such as author, version, emoji, and tags.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1336d6307ab03d481de96ebd9f372932b1297397ebcb3754cd7d688b9abd4bbb"
+}

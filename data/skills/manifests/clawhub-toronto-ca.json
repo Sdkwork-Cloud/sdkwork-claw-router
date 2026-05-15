@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70520,
+  "uuid": "skill-clawhub-toronto-ca",
+  "skillKey": "clawhub-toronto-ca",
+  "name": "Toronto Ca",
+  "summary": "提供多伦多旅游、文化、餐饮、住宿和交通等实用信息，助您规划加拿大最大城市旅行。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toronto_ca",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供多伦多旅游、文化、餐饮、住宿和交通等实用信息，助您规划加拿大最大城市旅行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toronto-ca@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toronto-ca",
+      "url": "https://clawhub.ai/skills/toronto-ca"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toronto-ca",
+    "url": "https://clawhub.ai/skills/toronto-ca",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toronto-ca-bb0eea3989a01f67.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toronto-ca@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-toronto-ca-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5eb3149b5a3d6c74a182049b5d4287766d766fdfe1091aa52413ce8ce33bde0",
+      "artifactSizeBytes": 2231
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:27:34.502Z"
+}

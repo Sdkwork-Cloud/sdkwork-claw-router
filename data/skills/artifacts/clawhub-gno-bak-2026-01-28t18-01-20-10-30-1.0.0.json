@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gno-bak-2026-01-28t18-01-20-10-30@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gno_bak_2026_01_28t18_01_20_10_30",
+  "skill": {
+    "id": 12268,
+    "skillKey": "clawhub-gno-bak-2026-01-28t18-01-20-10-30",
+    "name": "Gno.Bak 2026 01 28T18:01:20+10:30"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gno-bak-2026-01-28t18-01-20-10-30",
+    "url": "https://clawhub.ai/skills/gno-bak-2026-01-28t18-01-20-10-30",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gno-bak-2026-01-28t18-01-20-10-30-b8f04f7df658848c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search local documents, files, notes, and knowledge bases. Index directories, search with BM25/vector/hybrid, get AI answers with citations. Use when user wants to search files, find documents, query notes, look up information in local fol."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicoataiza",
+      "userId": "publishers:nicoataiza",
+      "displayName": "nicoataiza",
+      "image": "https://avatars.githubusercontent.com/u/65964857?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1841,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769585539997,
+      "changelog": "gno 1.0.0 – Initial Release\n\n- Search and index local documents, files, notes, and knowledge bases with semantic, keyword, and hybrid search modes.\n- Organize information with tags, filters, backlinks, and visualize relationships as knowledge graphs.\n- Serve a local web UI and provide AI-generated answers with citations.\n- Includes quick start, command overviews, flags, and reference docs for setup and usage.\n- No cloud required; works fully offline with local AI models.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0a721b0d87ab3c59494c28e5229f63fe9575196c1e1d662a91150ff752bfbc45"
+}

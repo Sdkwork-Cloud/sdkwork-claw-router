@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72679,
+  "uuid": "skill-clawhub-real-estate-strategy",
+  "skillKey": "clawhub-real-estate-strategy",
+  "name": "地产项目前期产策报告",
+  "summary": "地产项目前期产策定位专业技能。覆盖新项目立项研判、竞品分析报告、产品定位方案、投前风险排查、客户研究报告。 触发条件：用户提及\"产策定位\"\"竞品分析\"\"土地研判\"\"产品定位\"\"投前风险\"等关键词，或用户提供项目名称+城市时激活。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.real_estate_strategy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LuoJiangYong",
+      "features": [
+        "地产项目前期产策定位专业技能。覆盖新项目立项研判、竞品分析报告、产品定位方案、投前风险排查、客户研究报告。 触发条件：用户提及\"产策定位\"\"竞品分析\"\"土地研判\"\"产品定位\"\"投前风险\"等关."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/real-estate-strategy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34528708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "real-estate-strategy",
+      "url": "https://clawhub.ai/skills/real-estate-strategy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "real-estate-strategy",
+    "url": "https://clawhub.ai/skills/real-estate-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/real-estate-strategy-2177e5936f62f3a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/real-estate-strategy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-real-estate-strategy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e079852b0823181dc5ab12960a3ec42655d7fa649cdb8588dd3842cce1b2a44e",
+      "artifactSizeBytes": 2410
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T17:44:50.458Z"
+}

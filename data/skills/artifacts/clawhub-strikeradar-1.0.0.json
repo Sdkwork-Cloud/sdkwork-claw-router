@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/strikeradar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strikeradar",
+  "skill": {
+    "id": 19888,
+    "skillKey": "clawhub-strikeradar",
+    "name": "strikeradar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strikeradar",
+    "url": "https://clawhub.ai/skills/strikeradar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strikeradar-ee7532f547f2dd6b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor US-Iran strike probability using open-source indicators - news alerts, Iran internet connectivity, oil prices, flight traffic, military tanker detect..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexpolonsky",
+      "userId": "publishers:alexpolonsky",
+      "displayName": "alexpolonsky",
+      "image": "https://avatars.githubusercontent.com/u/7319921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 586,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771625725362,
+      "changelog": "Initial ClawHub release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:43216c8bfb422cc84f5aa2bbaf91263bd5a73106040eea97e96270363161f6d0"
+}

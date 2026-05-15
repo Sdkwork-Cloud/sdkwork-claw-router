@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/immich-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.immich_api",
+  "skill": {
+    "id": 13924,
+    "skillKey": "clawhub-immich-api",
+    "name": "Immich API Connector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "immich-api",
+    "url": "https://clawhub.ai/skills/immich-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/immich-api-f174638951350fe7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to self-hosted Immich instances to manage photos, albums, users, search media, upload/download files, and handle jobs via REST API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ninjazan420",
+      "userId": "s17f8j53yjh784x929nc161yt185tjmt",
+      "displayName": "Administrator",
+      "image": "https://avatars.githubusercontent.com/u/57876954?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 901,
+      "installsAllTime": 2,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771092226645,
+      "changelog": "Initial release of Immich Photo Management API Bridge.\n\n- Enables interaction with self-hosted Immich instances via REST API.\n- Provides quick-start guides for authentication and common operations (albums, assets, users, search, libraries, jobs).\n- Includes usage examples for managing photos, albums, and user accounts.\n- Bundled scripts for bulk uploading, downloading albums, and synchronizing libraries.\n- Reference to full API endpoint documentation included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c2d491063c2f507e7476048647b443403d7095ee34725686878df7db6ea01ac0"
+}

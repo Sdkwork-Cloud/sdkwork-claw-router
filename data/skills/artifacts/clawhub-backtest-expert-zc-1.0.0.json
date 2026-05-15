@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/backtest-expert-zc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.backtest_expert_zc",
+  "skill": {
+    "id": 30376,
+    "skillKey": "clawhub-backtest-expert-zc",
+    "name": "Backtest Expert Zc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "backtest-expert-zc",
+    "url": "https://clawhub.ai/skills/backtest-expert-zc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/backtest-expert-zc-f8c4e19c3404dc91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert guidance for systematic backtesting of trading strategies. Use when developing, testing, stress-testing, or validating quantitative trading strategies..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lean-zhouchao",
+      "userId": "s178rxdgn3z5d3avc5xwvvghx183kh7y",
+      "displayName": "lean-zhouchao",
+      "image": "https://avatars.githubusercontent.com/u/23061177?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774485649187,
+      "changelog": "- Initial release of backtest-expert-zc, providing expert guidance for systematic backtesting of trading strategies.\n- Covers robust professional methodology: stress-testing, parameter sensitivity, realistic slippage modeling, and bias prevention.\n- Includes workflow and best practices for developing, validating, and troubleshooting trading strategies.\n- Emphasizes warning signs and common failure patterns to avoid overfitting and misleading results.\n- Offers reference documentation for detailed methodology and failure case studies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5fdbe945817998a270debcaa2a4b653f173188a6a1724afa7580d0eea50e5156"
+}

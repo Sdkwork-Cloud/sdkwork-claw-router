@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notify-bot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notify_bot",
+  "skill": {
+    "id": 20510,
+    "skillKey": "clawhub-notify-bot",
+    "name": "Notify Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notify-bot",
+    "url": "https://clawhub.ai/skills/notify-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notify-bot-a6cb78311ef4d138.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send task notifications to specified Telegram bots in a group to activate their sessions and trigger bot actions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "slk1061569042-lab",
+      "userId": "publishers:slk1061569042-lab",
+      "displayName": "slk1061569042-lab",
+      "image": "https://avatars.githubusercontent.com/u/246635832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 551,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772468843672,
+      "changelog": "初始版本：向指定 Telegram bot 发送任务通知，激活群组 session",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5bfe7d90aee8668ef7e2f616e3556d8e742e3999b354a376f170a2d3d1924115"
+}

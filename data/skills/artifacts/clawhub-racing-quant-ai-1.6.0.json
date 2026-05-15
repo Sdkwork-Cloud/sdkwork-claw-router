@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/racing-quant-ai@1.6.0",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.racing_quant_ai",
+  "skill": {
+    "id": 69554,
+    "skillKey": "clawhub-racing-quant-ai",
+    "name": "Racing Quant AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "racing-quant-ai",
+    "url": "https://clawhub.ai/skills/racing-quant-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/racing-quant-ai-4aa8e46390543297.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "赛马量化AI选股系统，集成量化策略选股+个股智能推荐分析。从量化策略数据库筛选符合需求的策略，获取持仓个股，再进行深度分析，最终给出投资参考。触发词：量化选股，racing quant，策略选股，数据库选股，量化分析，AI选股。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenxyzcyxpp",
+      "userId": "s171x55q0y9se0j6pbswb1cfd583mtef",
+      "displayName": "chenxyzcyxpp",
+      "image": "https://avatars.githubusercontent.com/u/80017356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.6.0",
+      "createdAt": 1777547988348,
+      "changelog": "**v1.6.0（重要更新：引入双数据源自动切换与强数据校验）**\n\n- 新增 baostock 作为行情、财务与资金数据的自动降级备用数据源，确保系统稳定可用。\n- 所有分析维度（行情、财务、资金等）支持 new-akshare-stock/baostock 自动切换，报告强制标注实际使用的数据源。\n- 强化数据准确性校验，对量价、市值、估值、资金流关键数值必须校验，异常结果高亮标记。\n- 个股分析报告中强制注明量化数据来源，提升溯源和可信度。\n- 明确要求不得编造/沿用错误数据，提升分析合规性和专业性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8bb2dc3f4e336fb6a8af5e8c7ed952bd4ebb6285d12d9be27849fffb6007ca2e"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34795,
+  "uuid": "skill-clawhub-solo-landing-gen",
+  "skillKey": "clawhub-solo-landing-gen",
+  "name": "Landing Gen",
+  "summary": "Generate landing page content from PRD — hero section, features, A/B headline variants, CTA, and SEO meta tags. Use when user says \"create landing page\", \"wr...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solo_landing_gen",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rust",
+      "features": [
+        "Generate landing page content from PRD — hero section, features, A/B headline variants, CTA, an.",
+        "Use when user says \"create landing page\", \"wr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solo-landing-gen@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1236751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solo-landing-gen",
+      "url": "https://clawhub.ai/skills/solo-landing-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solo-landing-gen",
+    "url": "https://clawhub.ai/skills/solo-landing-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solo-landing-gen-890b50d6ecb2da4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solo-landing-gen@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-solo-landing-gen-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bf806f25901a8e22409c0680f9cd012064a4d8569ee0d56431b2467d0637dd7",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T22:06:41.043Z"
+}

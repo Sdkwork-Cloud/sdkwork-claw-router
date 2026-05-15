@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/walking-program-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.walking_program_builder",
+  "skill": {
+    "id": 54464,
+    "skillKey": "clawhub-walking-program-builder",
+    "name": "Walking Program Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "walking-program-builder",
+    "url": "https://clawhub.ai/skills/walking-program-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/walking-program-builder-2fc6e86a15de3bb7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build a progressive, safe walking routine from your current baseline — with reflection prompts and gentle goal-setting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 78,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777607827980,
+      "changelog": "Initial release: document-only health literacy skill with explicit safety boundaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a1cff207bdb41e8a07de14fc4a81d5eed0ff4a9bd893a3366a2c1d834d65a95"
+}

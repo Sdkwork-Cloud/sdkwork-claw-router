@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trade-show-exhibitor-search@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trade_show_exhibitor_search",
+  "skill": {
+    "id": 56880,
+    "skillKey": "clawhub-trade-show-exhibitor-search",
+    "name": "Trade Show Exhibitor Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trade-show-exhibitor-search",
+    "url": "https://clawhub.ai/skills/trade-show-exhibitor-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trade-show-exhibitor-search-e4bf8bad65c46a9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find ICP-matching exhibitors, prospects, and partners at any trade show using the Lensmor API. \"Who is exhibiting at this show?\" / \"参展商搜索\" / \"Aussteller find..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weilun88313",
+      "userId": "s1723bcbr1g507y1ekdjmbyct983h3dw",
+      "displayName": "weilun88313",
+      "image": "https://avatars.githubusercontent.com/u/33587196?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775091239884,
+      "changelog": "Version 1.2.0 — Major workflow, input, and output clarity update.\n\n- Adds detailed multi-step workflow, requiring an API key check before all searches\n- Introduces new inputs: accept either a company URL (for automatic ICP profiling) or a free-text target audience description\n- Fully documents request/response schema and exhibitor data fields, including new fields like tech stack, funding, and event IDs\n- Implements structured output formatting, precise ICP match rationale, and updated error handling for all user-facing messages\n- Enforces quality checks, number formatting, and output rules for clear, actionable exhibitor lists",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d23339ef82baeb2421a1f46a4e96f312c030a36d125d4c224856a9b530d05e4f"
+}

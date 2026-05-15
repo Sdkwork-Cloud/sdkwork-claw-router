@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22773,
+  "uuid": "skill-clawhub-mixmax",
+  "skillKey": "clawhub-mixmax",
+  "name": "Mixmax",
+  "summary": "MixMax integration. Manage Users, Organizations. Use when the user wants to interact with MixMax data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mixmax",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "MixMax integration",
+        "Manage Users, Organizations",
+        "Use when the user wants to interact with MixMax data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mixmax@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mixmax",
+      "url": "https://clawhub.ai/skills/mixmax"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mixmax",
+    "url": "https://clawhub.ai/skills/mixmax",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mixmax-799b35d9315cdc7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mixmax@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mixmax-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f6fdc42a374610efae19137fc2c9a7816d17b3f37a0c2e9063c2b113be9fdc2",
+      "artifactSizeBytes": 1795
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:14:39.311Z"
+}

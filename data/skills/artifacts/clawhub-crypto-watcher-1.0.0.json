@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-watcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_watcher",
+  "skill": {
+    "id": 12823,
+    "skillKey": "clawhub-crypto-watcher",
+    "name": "Crypto Watcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-watcher",
+    "url": "https://clawhub.ai/skills/crypto-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-watcher-d819b22b66b53e06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor ETH wallets and DeFi positions across chains with alerts for balance changes, gas prices, health factors, and large token transfers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xraini",
+      "userId": "publishers:0xraini",
+      "displayName": "0xRaini",
+      "image": "https://avatars.githubusercontent.com/u/190923101?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1269,
+      "installsAllTime": 8,
+      "installsCurrent": 6,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770651430479,
+      "changelog": "Initial release of crypto-watcher.\n\n- Track ETH and token balances across multiple chains.\n- Monitor DeFi positions, LP health, and staking rewards.\n- Get alerts for low gas prices and large token transfers.\n- Configure alert thresholds for gas, balance changes, and DeFi position health.\n- Integrates with heartbeat checks for automated monitoring.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cbbab754a55794629a2fa47723b2d9203bf72c1d0dc2bef0aff06486b381d993"
+}

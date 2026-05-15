@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yc@0.3.2",
+  "version": "0.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yc",
+  "skill": {
+    "id": 50377,
+    "skillKey": "clawhub-yc",
+    "name": "yc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yc",
+    "url": "https://clawhub.ai/skills/yc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yc-95474ef85f37ce52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI for YC Startup School, a16z Speedrun, SPC, and startup program discovery — weekly updates, dashboard, applications, accelerator deadlines"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lucasygu",
+      "userId": "s178n5dtwwsjcmy1nhtkhtj4ph83m208",
+      "displayName": "lucasygu",
+      "image": "https://avatars.githubusercontent.com/u/37234721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 658,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.3.2",
+      "createdAt": 1772943124719,
+      "changelog": "- Bumped version to 0.3.2.\n- Updated SKILL.md to reflect this version change.\n- No new features or breaking changes introduced in this release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e2ea5fa4230511824e5e009d7a287907b7ef52b0ffcabdef1aa9a5aafd8c69b7"
+}

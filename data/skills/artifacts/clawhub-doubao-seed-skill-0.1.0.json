@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doubao-seed-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubao_seed_skill",
+  "skill": {
+    "id": 62623,
+    "skillKey": "clawhub-doubao-seed-skill",
+    "name": "Doubao Seed Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubao-seed-skill",
+    "url": "https://clawhub.ai/skills/doubao-seed-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubao-seed-skill-c260c86d3dc91ddc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "豆包图像分析技能：调用豆包（字节跳动）视觉大模型，分析图片内容。AI agent 调用时，必须使用 --output 将结果写入临时文件（如 /tmp/doubao_result.txt），再通过读文件工具获取结果，禁止直接解析 stdout。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maoyutofu",
+      "userId": "s17a1kjsbgnkx9mhccgedtkqmn84hr5y",
+      "displayName": "Helix",
+      "image": "https://avatars.githubusercontent.com/u/13342773?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 472,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773280110423,
+      "changelog": "doubao-seed-skill v0.1.0 — Initial release\n\n- Introduced an image analysis skill leveraging ByteDance Doubao vision models.\n- Provides cross-platform binaries for Linux, macOS, and Windows.\n- Supports configuration via CLI parameters or environment variables (API key, model, base URL, etc).\n- Strongly recommends using --output to save inference results to a file for reliable agent integration.\n- Includes detailed installation, usage, and agent integration instructions in Chinese.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac0a138287f02f701338aa553d00022940a18063136925606ecbf3acde2b8786"
+}

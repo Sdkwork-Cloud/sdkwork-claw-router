@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69072,
+  "uuid": "skill-clawhub-financial-roe-analysis",
+  "skillKey": "clawhub-financial-roe-analysis",
+  "name": "financial roe analysis",
+  "summary": "以资深财务分析师视角，基于杜邦分析体系对上市公司进行深度财务分析。适用场景：(1) 分析某只股票/上市公司的财务状况，(2) 深度拆解ROE驱动因素，(3) 评估公司盈利质量、资产运营效率、杠杆风险，(4) 输出机构投研标准的财务分析报告。触发词：财务分析、ROE分析、杜邦分析、股票财务、盈利质量、净利润质量、资...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_roe_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "三水清",
+      "features": [
+        "以资深财务分析师视角，基于杜邦分析体系对上市公司进行深度财务分析。适用场景：(1) 分析某只股票/上市公司的财务状况，(2) 深度拆解ROE驱动因素，(3) 评估公司盈利质量、资产运营效率、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/financial-roe-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1073262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "financial-roe-analysis",
+      "url": "https://clawhub.ai/skills/financial-roe-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-roe-analysis",
+    "url": "https://clawhub.ai/skills/financial-roe-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-roe-analysis-60eb9595d0ba0f20.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/financial-roe-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-financial-roe-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ba321e1978ba8abc27d83c47ddb0618b0e1f5ce56db62f73c23023e6dd7e57a",
+      "artifactSizeBytes": 2640
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T11:46:32.109Z"
+}

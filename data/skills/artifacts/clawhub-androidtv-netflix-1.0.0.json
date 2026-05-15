@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/androidtv-netflix@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.androidtv_netflix",
+  "skill": {
+    "id": 21033,
+    "skillKey": "clawhub-androidtv-netflix",
+    "name": "Android TV Netflix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "androidtv-netflix",
+    "url": "https://clawhub.ai/skills/androidtv-netflix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/androidtv-netflix-c917e8838682b73c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and play Netflix content on Android TV. When the user asks to play a specific Netflix title on TV, the agent looks up the title ID and executes ADB co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiayun",
+      "userId": "s171wwv1jmqkcp57pt80amgfx58429xz",
+      "displayName": "Jiayun Zhou (Claudia)",
+      "image": "https://avatars.githubusercontent.com/u/752076?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 525,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772511931552,
+      "changelog": "Initial release of androidtv-netflix.\n\n- Search and play specific Netflix titles on Android TV via ADB commands.\n- Automatically finds Netflix title IDs and deep-links to content.\n- Provides setup instructions for ADB connection and network configuration.\n- Supports basic playback controls and troubleshooting via ADB key events.\n- Compatible with macOS and Linux systems.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0f7f30a28f7efb9f829aa883bc9472ac6d04793e2363e5af067a64768b18192f"
+}

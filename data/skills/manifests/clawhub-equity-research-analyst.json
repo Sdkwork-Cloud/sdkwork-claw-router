@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46304,
+  "uuid": "skill-clawhub-equity-research-analyst",
+  "skillKey": "clawhub-equity-research-analyst",
+  "name": "equity-research-analyst-skill",
+  "summary": "Use when the user asks for institutional-style equity research on a public company, ETF, or TradingView-resolvable ticker, including initiation reports, earn...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.equity_research_analyst",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hypier",
+      "features": [
+        "Use when the user asks for institutional-style equity research on a public company, ETF, or Tra."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/equity-research-analyst@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20377329?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "equity-research-analyst",
+      "url": "https://clawhub.ai/skills/equity-research-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "equity-research-analyst",
+    "url": "https://clawhub.ai/skills/equity-research-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/equity-research-analyst-778bf5e72fbef672.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/equity-research-analyst@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-equity-research-analyst-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b080fba8cd863aa73d68fa5bf20e31d39e2427ccfb5ea44c86adc1cd92fbe0c7",
+      "artifactSizeBytes": 2531
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T22:53:10.435Z"
+}

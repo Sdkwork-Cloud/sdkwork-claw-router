@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huntdownacrypto-trading-bot@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huntdownacrypto_trading_bot",
+  "skill": {
+    "id": 32301,
+    "skillKey": "clawhub-huntdownacrypto-trading-bot",
+    "name": "Crypto Trading Bot (BTC/ETH or choose any)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huntdownacrypto-trading-bot",
+    "url": "https://clawhub.ai/skills/huntdownacrypto-trading-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huntdownacrypto-trading-bot-5499d6436493de5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze BTC or ETH setups and generate precise trading bot rules with structured entry, exit, and risk management logic."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lwuigi",
+      "userId": "publishers:lwuigi",
+      "displayName": "Lwuigi",
+      "image": "https://avatars.githubusercontent.com/u/115905453?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 254,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773840826935,
+      "changelog": "Initial release of crypto trading bot.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d8ca5337fdbbbece1786545b0c181972f14d1775f54427604fea3dc274cac37"
+}

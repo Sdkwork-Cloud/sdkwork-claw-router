@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54071,
+  "uuid": "skill-clawhub-stock-rumors-slot3",
+  "skillKey": "clawhub-stock-rumors-slot3",
+  "name": "Stock Rumors",
+  "summary": "Rumor Scanner — find early signals including M&A rumors, insider activity, analyst upgrades/downgrades, social whispers, and SEC/regulatory activity via AIsa...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_rumors_slot3",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIsa",
+      "features": [
+        "Rumor Scanner — find early signals including M&A rumors, insider activity, analyst upgrades/dow."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-rumors-slot3@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245991925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-rumors-slot3",
+      "url": "https://clawhub.ai/skills/stock-rumors-slot3"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-rumors-slot3",
+    "url": "https://clawhub.ai/skills/stock-rumors-slot3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-rumors-slot3-c5d2a29bde10d5f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-rumors-slot3@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-rumors-slot3-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0844bf513c324b193ab46395a18ff5172bc1335335d1560924b13ab456a9a5a4",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:43:38.822Z"
+}

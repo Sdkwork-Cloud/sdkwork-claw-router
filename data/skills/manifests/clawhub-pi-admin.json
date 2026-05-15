@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9651,
+  "uuid": "skill-clawhub-pi-admin",
+  "skillKey": "clawhub-pi-admin",
+  "name": "Pi Admin",
+  "summary": "Raspberry Pi system administration. Monitor resources, manage services, perform updates and maintenance.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pi_admin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Seth Rose",
+      "features": [
+        "Raspberry Pi system administration",
+        "Monitor resources, manage services, perform updates and maintenance."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pi-admin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10383809?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pi-admin",
+      "url": "https://clawhub.ai/skills/pi-admin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pi-admin",
+    "url": "https://clawhub.ai/skills/pi-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pi-admin-130fc9c74cb5deff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pi-admin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pi-admin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7156898ca0f5f928b534450b083c5f239bb6be3ccde616bb75cb394588bf072c",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-14T03:47:32.803Z"
+}

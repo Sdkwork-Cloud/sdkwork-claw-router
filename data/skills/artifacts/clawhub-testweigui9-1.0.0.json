@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/testweigui9@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.testweigui9",
+  "skill": {
+    "id": 72592,
+    "skillKey": "clawhub-testweigui9",
+    "name": "测试212"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "testweigui9",
+    "url": "https://clawhub.ai/skills/testweigui9",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/testweigui9-4ca16bc44ec83df9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在任何创造性工作之前必须使用 - 创建功能、构建组件、添加新功能或修改行为。通过协作对话探索用户意图、需求和设计。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lky115",
+      "userId": "s17eyw94gx00cf2kh08jj3234183ncam",
+      "displayName": "LKY115",
+      "image": "https://avatars.githubusercontent.com/u/166357382?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774599705365,
+      "changelog": "- Introduced core-brainstorming skill for transforming ideas into designs through collaborative dialogue\n- Added structured workflow: understand ideas, explore solutions, present designs in 200-300 word sections\n- Included domain-specific hooks for embedded and simulation projects with recommended sub-skills\n- Emphasized core principles like one question at a time, multiple alternatives, and incremental validation\n- Added documentation output to `docs/plans/` with git commit integration\n- Required use of `core-writing-plans` sub-skill for implementation phase",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ccff183f35de6a3705994a32c2975f0aa20bf84b8bfb95e5d5049ab10072b728"
+}

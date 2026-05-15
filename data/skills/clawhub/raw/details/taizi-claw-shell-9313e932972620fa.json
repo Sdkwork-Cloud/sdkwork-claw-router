@@ -1,0 +1,46 @@
+{
+  "skill": {
+    "slug": "taizi-claw-shell",
+    "displayName": "Taizi Claw Shell",
+    "summary": "Runs shell commands inside a dedicated tmux session named 'claw', returning command output and prompting before destructive commands.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773633768884,
+    "updatedAt": 1778309831740
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773633768884,
+    "changelog": "Initial release of taizi-claw-shell.\n\n- Runs shell commands safely inside a dedicated tmux session named \"claw\".\n- Provides a single tool, `claw_shell_run`, for sending commands and reading back output.\n- Strictly avoids interfering with other tmux sessions.\n- Asks for user confirmation before executing potentially destructive commands (e.g., `sudo`, `rm`, `reboot`).\n- Ensures clear separation of safe and dangerous command handling.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "fresh3",
+    "userId": "publishers:fresh3",
+    "displayName": "fresh3",
+    "image": "https://avatars.githubusercontent.com/u/23310067?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778309831740
+  }
+}

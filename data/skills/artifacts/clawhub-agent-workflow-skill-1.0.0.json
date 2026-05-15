@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-workflow-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_workflow_skill",
+  "skill": {
+    "id": 48325,
+    "skillKey": "clawhub-agent-workflow-skill",
+    "name": "Agent Workflow Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-workflow-skill",
+    "url": "https://clawhub.ai/skills/agent-workflow-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-workflow-skill-5d474407d129f630.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Decompose complex user tasks into multi-step workflows using DAG-based execution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keweizhan",
+      "userId": "s17fn8gh500c6ppq33e0adymqx864n2a",
+      "displayName": "keweizhan",
+      "image": "https://avatars.githubusercontent.com/u/56283830?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777949144035,
+      "changelog": "Task Graph Executor skill initial release\n\n- Enables decomposition of complex tasks into multi-step, dependency-aware workflows.\n- Uses Directed Acyclic Graphs (DAG) to manage and parallelize execution of subtasks.\n- Structures outputs with clear task breakdowns and statuses.\n- Designed for scenarios requiring sequential or parallel task execution beyond single-step tool use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7370ae43a01d76a0a348969f29d2ba9dc621e4d5a08be42999f189d32bb9ccf6"
+}

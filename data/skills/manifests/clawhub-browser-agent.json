@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59409,
+  "uuid": "skill-clawhub-browser-agent",
+  "skillKey": "clawhub-browser-agent",
+  "name": "Browser Agent - Chrome CDP 自动化",
+  "summary": "通过 Chrome DevTools Protocol 直接控制浏览器，实现登录状态复用和多场景自动化操作，支持 Windows 和 OpenClaw 集成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kaka4413",
+      "features": [
+        "通过 Chrome DevTools Protocol 直接控制浏览器，实现登录状态复用和多场景自动化操作，支持 Windows 和 OpenClaw 集成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111060228?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-agent",
+      "url": "https://clawhub.ai/skills/browser-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-agent",
+    "url": "https://clawhub.ai/skills/browser-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-agent-763cb183a735563d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a61d9515dc5c0267e4e31e9ed107326276a15cde5ab103bd5a675e525a1cf90",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T03:42:51.140Z"
+}

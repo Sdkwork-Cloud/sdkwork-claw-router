@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/state-farm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.state_farm",
+  "skill": {
+    "id": 28685,
+    "skillKey": "clawhub-state-farm",
+    "name": "State Farm Insurance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "state-farm",
+    "url": "https://clawhub.ai/skills/state-farm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/state-farm-71f7cf5a4be5b3ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "State Farm insurance skill. Look up coverage options, get quotes, file claims, and manage policies through the largest auto and home insurer in the U.S."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jononovo",
+      "userId": "s17eyjmk8pyvczxpmy73dtgn4d83frwx",
+      "displayName": "jononovo",
+      "image": "https://avatars.githubusercontent.com/u/22595409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 320,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773193257595,
+      "changelog": "Initial release of the State Farm insurance skill.\n\n- Look up coverage options across auto, home, life, health, and financial services.\n- Get insurance quotes online, via the State Farm app, or through local agents.\n- File and track claims using multiple channels—app, web, phone, or agent.\n- View policy and discount details for auto and home insurance.\n- Access contact information for claims, agents, roadside assistance, and customer support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d35795a60a3ec970017ee261638e8b9c787f479b4510ea0b198b30d684c1fefb"
+}

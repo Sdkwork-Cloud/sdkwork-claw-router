@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nix-memory@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nix_memory",
+  "skill": {
+    "id": 22901,
+    "skillKey": "clawhub-nix-memory",
+    "name": "nix-memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nix-memory",
+    "url": "https://clawhub.ai/skills/nix-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nix-memory-fe568f652a11b727.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors and scores agent identity and memory integrity by hashing key files, tracking changes, detecting drift, and providing continuity alerts for OpenClaw..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cassh100k",
+      "userId": "publishers:cassh100k",
+      "displayName": "Cassh",
+      "image": "https://avatars.githubusercontent.com/u/128089099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 448,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773650480993,
+      "changelog": "v1.1.0 - Added quickstart installer, memory-hub docs, agent.json discovery support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fe07c4a5b9f6cbf9d8d86f8aa2656f70990bcb29b3678ca368fa7ac73178ad6"
+}

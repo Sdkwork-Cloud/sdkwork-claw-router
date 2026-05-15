@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71180,
+  "uuid": "skill-clawhub-openclaw-feishu-docs-perm-auto",
+  "skillKey": "clawhub-openclaw-feishu-docs-perm-auto",
+  "name": "飞书文档权限自动添加",
+  "summary": "自动为飞书文档添加用户权限。每次创建飞书文档（多维表格/文档/电子表格/文件夹/云空间文件/知识库节点等）后自动添加用户权限，或用户反馈文档无权限时补充添加权限。适用于 OpenClaw Agent。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_feishu_docs_perm_auto",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JinYu",
+      "features": [
+        "自动为飞书文档添加用户权限。每次创建飞书文档（多维表格/文档/电子表格/文件夹/云空间文件/知识库节点等）后自动添加用户权限，或用户反馈文档无权限时补充添加权限。适用于 OpenClaw A."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-feishu-docs-perm-auto@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27802765?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-feishu-docs-perm-auto",
+      "url": "https://clawhub.ai/skills/openclaw-feishu-docs-perm-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-feishu-docs-perm-auto",
+    "url": "https://clawhub.ai/skills/openclaw-feishu-docs-perm-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-feishu-docs-perm-auto-e3d03275396714ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-feishu-docs-perm-auto@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-feishu-docs-perm-auto-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e0497bc50108fbae3852969b80a0175294cd9d703d4f0f2f87c36d0ae9c8f5d",
+      "artifactSizeBytes": 2244
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T09:11:14.825Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-airdrop-hunter@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_airdrop_hunter",
+  "skill": {
+    "id": 36781,
+    "skillKey": "clawhub-crypto-airdrop-hunter",
+    "name": "Isma Airdrop Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-airdrop-hunter",
+    "url": "https://clawhub.ai/skills/crypto-airdrop-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-airdrop-hunter-decac0e08e41adac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated crypto airdrop discovery and daily market analysis. Finds high-funding projects, tracks market structure, support/resistance, and macro news. No AP..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ismaonezain",
+      "userId": "s17bwb7yy60xh1syvj38z8w60983hcd4",
+      "displayName": "ismaonezain",
+      "image": "https://avatars.githubusercontent.com/u/88978640?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774343592971,
+      "changelog": "v1.0.1: Removed external dependencies, self-contained state",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b57a2e0766d0be5db3f7323173225b719bef8c66bf162498148b1f1dba46907"
+}

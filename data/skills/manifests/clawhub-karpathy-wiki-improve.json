@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54068,
+  "uuid": "skill-clawhub-karpathy-wiki-improve",
+  "skillKey": "clawhub-karpathy-wiki-improve",
+  "name": "karpathy-wiki",
+  "summary": "Karpathy LLM Wiki pattern implementation — full ingest/query/relink/lint/DeepResearch pipeline, automatic knowledge graph maintenance, URL-level source trace...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.karpathy_wiki_improve",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zack",
+      "features": [
+        "Karpathy LLM Wiki pattern implementation — full ingest/query/relink/lint/DeepResearch pipeline,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/karpathy-wiki-improve@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30715984?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "karpathy-wiki-improve",
+      "url": "https://clawhub.ai/skills/karpathy-wiki-improve"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "karpathy-wiki-improve",
+    "url": "https://clawhub.ai/skills/karpathy-wiki-improve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/karpathy-wiki-improve-627c45fb2b47e176.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/karpathy-wiki-improve@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-karpathy-wiki-improve-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9562fc41dfabd7b4f6c9d2f782174b75b3288187897205429af6f4c379985ff8",
+      "artifactSizeBytes": 2283
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T09:56:22.610Z"
+}

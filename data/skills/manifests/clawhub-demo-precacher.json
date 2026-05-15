@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50632,
+  "uuid": "skill-clawhub-demo-precacher",
+  "skillKey": "clawhub-demo-precacher",
+  "name": "Demo Precacher",
+  "summary": "Pre-generate and cache all demo content before live presentations — hit every API endpoint in advance, verify playback, report coverage gaps. Use before hack...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.demo_precacher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nissan Dookeran",
+      "features": [
+        "Pre-generate and cache all demo content before live presentations — hit every API endpoint in a.",
+        "Use before hack..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/demo-precacher@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "demo-precacher",
+      "url": "https://clawhub.ai/skills/demo-precacher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "demo-precacher",
+    "url": "https://clawhub.ai/skills/demo-precacher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/demo-precacher-35c094994f07b06c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/demo-precacher@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-demo-precacher-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9526f0b1833502914adb9a8a0068fb3c8face40ddd24479b2ddca424eacefd07",
+      "artifactSizeBytes": 2163
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T22:20:10.521Z"
+}

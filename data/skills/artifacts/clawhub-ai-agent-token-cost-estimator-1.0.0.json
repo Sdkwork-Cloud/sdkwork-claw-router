@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-agent-token-cost-estimator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_agent_token_cost_estimator",
+  "skill": {
+    "id": 27322,
+    "skillKey": "clawhub-ai-agent-token-cost-estimator",
+    "name": "AI Agent Token Cost Estimator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-agent-token-cost-estimator",
+    "url": "https://clawhub.ai/skills/ai-agent-token-cost-estimator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-agent-token-cost-estimator-e0d880e0abfa4219.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Estimate token usage and approximate API cost of AI agents by analyzing model, reasoning steps, tools, and output size before deployment."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "showmethemoney2023",
+      "userId": "s175re25be6brgqdsnz07yw38983ppnr",
+      "displayName": "ShowMeTheMoney2023",
+      "image": "https://avatars.githubusercontent.com/u/127740459?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773655865129,
+      "changelog": "AI Agent Token Cost Estimator 1.0.0\n\n- Initial release.\n- Provides a structured method for estimating token usage and API cost per run for AI agents based on workflow description.\n- Considers factors including model choice, reasoning steps, tool usage, and expected outputs.\n- Offers optimization suggestions to reduce cost and token consumption.\n- Designed to help AI builders predict and manage API expenses before deployment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a7a3aeff2c1de580733361cb5e4560aa6a2aac1d213d95bbec6059766183862"
+}

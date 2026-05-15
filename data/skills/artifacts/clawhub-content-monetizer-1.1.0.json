@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-monetizer@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_monetizer",
+  "skill": {
+    "id": 68179,
+    "skillKey": "clawhub-content-monetizer",
+    "name": "Content Monetizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-monetizer",
+    "url": "https://clawhub.ai/skills/content-monetizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-monetizer-0553863ce5050266.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分析文章、视频或代码内容，评估价值并推荐最佳平台与变现方式，实现多渠道内容收益最大化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 430,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773643718775,
+      "changelog": "优化功能，修复问题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3bf6cb86c4fd2aed51d7cce20ca90a78190ac16367366d41e9835089bed93d72"
+}

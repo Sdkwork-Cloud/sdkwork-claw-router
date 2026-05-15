@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sanointel-by-probevc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sanointel_by_probevc",
+  "skill": {
+    "id": 61802,
+    "skillKey": "clawhub-sanointel-by-probevc",
+    "name": "Sano Intel — 中国医疗产业情报引擎（探针资本出品）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sanointel-by-probevc",
+    "url": "https://clawhub.ai/skills/sanointel-by-probevc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sanointel-by-probevc-ffe909dd30dbb84c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "探针资本出品。中国医疗产业情报引擎，覆盖10万+医疗公司、50万+融资事件、109万条专利、全市场临床试验、A/港/美三地行情。查公司/融资/临床试验/专利/赛道热度/二级市场行情。By Probe Capital. Use when user asks about Chinese healthcare/biot..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yanjj-cmd",
+      "userId": "s1732rarsf99x61mjefzrpdnfh83tk1x",
+      "displayName": "yanjj-cmd",
+      "image": "https://avatars.githubusercontent.com/u/261740287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774753011498,
+      "changelog": "Initial release of sano-intel — Chinese healthcare industry intelligence engine:\n\n- Covers 100,000+ companies, 500,000+ financing events, 1.09 million patents, clinical trials, and market data across China/A/HK/US.\n- Provides curl-based API for company search, financing, sector trends, clinical trials, secondary market data, daily news, and patent lookups.\n- Requires API Token for all queries; application link and configuration instructions included.\n- User-friendly query mapping examples and best-practice usage principles provided.\n- Supports typical industry queries, automatically selects the right API endpoint based on question intent.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b06ba8cf4a10d796b1ffc89b2ab0c6569432701220503a0b30ff042ab1484c9a"
+}

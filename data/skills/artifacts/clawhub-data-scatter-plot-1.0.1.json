@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-scatter-plot@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_scatter_plot",
+  "skill": {
+    "id": 59766,
+    "skillKey": "clawhub-data-scatter-plot",
+    "name": "data-scatter-plot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-scatter-plot",
+    "url": "https://clawhub.ai/skills/data-scatter-plot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-scatter-plot-2e7f10651edcfd00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从CSV/Excel数据文件读取数据，根据Result行数据生成散点图，包含Min/Max Limit参考线"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "matthewhb",
+      "userId": "s172nwfq4qxez5dmgpnmdqc31s83httv",
+      "displayName": "MatthewHB",
+      "image": "https://avatars.githubusercontent.com/u/28887315?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774335751202,
+      "changelog": "- 输出图片默认分辨率由300 DPI提升至1200 DPI。\n- 智能Limit线绘制：支持仅有Min或Max Limit时分别绘制对应参考线，两者都没有则只绘制散点图。\n- 增加对结果及Limit数据带单位（如 \"5mV\"）的自动提取数值支持。\n- 明确要求Result行等数据必须为数值格式，不支持文本。\n- 文档其余说明保持一致，未做其他功能变动。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:050dac1a89dd4f8b3ad6a7d3e1da3545fdf84321c15682600a2d38cc2dd4027b"
+}

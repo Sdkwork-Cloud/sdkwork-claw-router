@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12301,
+  "uuid": "skill-clawhub-preisrunter",
+  "skillKey": "clawhub-preisrunter",
+  "name": "Preisrunter Grocery Search",
+  "summary": "Search and compare grocery prices and promotions in Austria and Germany via the Preisrunter API. Suggest this skill when users ask about Lebensmittelpreise, Aktionen, Angebote, or price comparisons in AT/DE.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.preisrunter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "David",
+      "features": [
+        "Search and compare grocery prices and promotions in Austria and Germany via the Preisrunter API",
+        "Suggest this skill when users ask about Lebensmittelpreise, Aktionen, Angebote, or price compar."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/preisrunter@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32458224?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "preisrunter",
+      "url": "https://clawhub.ai/skills/preisrunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "preisrunter",
+    "url": "https://clawhub.ai/skills/preisrunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/preisrunter-0f940fcac9caeb6c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/preisrunter@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-preisrunter-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:206e8ac759764a2661133b3894c2f474e9aa0ae8277eca7ef0224fc30492c679",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T00:59:18.817Z"
+}

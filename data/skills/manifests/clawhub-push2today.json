@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73340,
+  "uuid": "skill-clawhub-push2today",
+  "skillKey": "clawhub-push2today",
+  "name": "推送到负一屏",
+  "summary": "将任务执行结果推送到负一屏卡片显示，支持普通推送和定时任务推送",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.push2today",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "as",
+      "features": [
+        "将任务执行结果推送到负一屏卡片显示，支持普通推送和定时任务推送"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/push2today@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/961856?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "push2today",
+      "url": "https://clawhub.ai/skills/push2today"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "push2today",
+    "url": "https://clawhub.ai/skills/push2today",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/push2today-4482b2edbff23204.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/push2today@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-push2today-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03abee7294a0c74aefd2fe03feb4d398757fde118b59856151966c7b05a90a6c",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T08:58:25.115Z"
+}

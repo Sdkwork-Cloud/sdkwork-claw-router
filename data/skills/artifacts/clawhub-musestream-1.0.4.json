@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/musestream@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.musestream",
+  "skill": {
+    "id": 38922,
+    "skillKey": "clawhub-musestream",
+    "name": "AI-Music-Stream"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "musestream",
+    "url": "https://clawhub.ai/skills/musestream",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/musestream-e8efe8753db7529a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI music from text prompts and stream continuously in-browser with a shareable player URL; all tracks are saved locally in a library."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asriverwang",
+      "userId": "s1747y2ca8xhb5z6ksja1gsvms83h2q0",
+      "displayName": "Ju-Chiang Wang",
+      "image": "https://avatars.githubusercontent.com/u/9029902?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774397228990,
+      "changelog": "MuseStream 1.0.4\n\n- Default server port changed from 5000 to 5001.\n- Environment variable setup instructions updated: `MUSESTREAM_PORT` now highlighted, and agents are prompted for preferred port; default paths/ports clarified.\n- `restart_musestream.sh` now loads `.env` automatically; no need to source manually.\n- All example requests and documentation updated to use port 5001.\n- Improves clarity and flexibility for setup, especially around configuration of output directory and port.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:681b77a710679229522c7284334a4d1bc31a9d342312a017666d78461e3f1c9f"
+}

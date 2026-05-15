@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53899,
+  "uuid": "skill-clawhub-sidekiq-job-analyzer",
+  "skillKey": "clawhub-sidekiq-job-analyzer",
+  "name": "Sidekiq Job Analyzer",
+  "summary": "Analyze Sidekiq job configurations for reliability, performance, queue design, retry policies, and memory safety — optimize Ruby background processing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sidekiq_job_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Analyze Sidekiq job configurations for reliability, performance, queue design, retry policies,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sidekiq-job-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sidekiq-job-analyzer",
+      "url": "https://clawhub.ai/skills/sidekiq-job-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sidekiq-job-analyzer",
+    "url": "https://clawhub.ai/skills/sidekiq-job-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sidekiq-job-analyzer-bafe0b07373b000d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sidekiq-job-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sidekiq-job-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af82333c600a898cc3ff5bdbbc8b9182b0c5fd34a63c9de9e6a094ba811acba2",
+      "artifactSizeBytes": 2466
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T13:47:01.848Z"
+}

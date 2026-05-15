@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-task-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_task_agent",
+  "skill": {
+    "id": 71855,
+    "skillKey": "clawhub-feishu-task-agent",
+    "name": "飞书任务智能体"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-task-agent",
+    "url": "https://clawhub.ai/skills/feishu-task-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-task-agent-4f923bd889379a59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书任务总入口技能。用于统一处理四类请求：一是把行动项、交付物、跟进项、拆解请求和周期性请求编排为飞书任务；二是处理未开始任务的轮询筛选与执行；三是处理“飞书任务智能体”明确注册或初始化请求；四是把当前应用内最新日报提炼成 `daily.json`。 当以下情况时使用本 Skill： (1) 用户明确要求创建任务..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tengchengwei",
+      "userId": "s173xc5f7nwqrf7kxsrd3ac181868rbq",
+      "displayName": "tengchengwei",
+      "image": "https://avatars.githubusercontent.com/u/273331198?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 68,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778141042690,
+      "changelog": "Initial Commit",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c94938e3d38ea1de39ba705df820729ad34c3ee646de9dcab38bdb3c8d43796a"
+}

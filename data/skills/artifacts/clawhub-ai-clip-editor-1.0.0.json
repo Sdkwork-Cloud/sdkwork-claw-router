@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-clip-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_clip_editor",
+  "skill": {
+    "id": 40477,
+    "skillKey": "clawhub-ai-clip-editor",
+    "name": "Ai Clip Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-clip-editor",
+    "url": "https://clawhub.ai/skills/ai-clip-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-clip-editor-deb9d3f82016c8aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute raw screen recording into 1080p edited clip just by typing what you need. Whether it's trimming and polishing short clips for social media or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776596432586,
+      "changelog": "AI Clip Editor 1.0.0 — initial release\n\n- Instantly edit and export polished 1080p video clips using simple text prompts.\n- Seamless cloud-based processing—upload a video and get an edited MP4 in 30–90 seconds.\n- Automatic session and token management with free credits for new users.\n- Supports trimming, silence detection, transitions, aspect ratio changes, text overlays, and audio tracks via natural language.\n- No timeline dragging or manual export settings; simple and fast workflow for content creators.\n- Handles common errors gracefully and offers step-by-step feedback during all key actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5ca6b3891bc7591ec82059e2d887bad0aa63177ca1e80b399edd0d954302d5a"
+}

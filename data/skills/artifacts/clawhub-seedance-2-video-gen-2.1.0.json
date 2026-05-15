@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedance-2-video-gen@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_2_video_gen",
+  "skill": {
+    "id": 11446,
+    "skillKey": "clawhub-seedance-2-video-gen",
+    "name": "seedance-2-video-gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-2-video-gen",
+    "url": "https://clawhub.ai/skills/seedance-2-video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-2-video-gen-75ae2ee55d90a681.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Seedance 2.0 AI video generation via EvoLink API. Three modes — text-to-video, image-to-video (1-2 images), reference-to-video (images + videos + audio). Aut..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evolinkai",
+      "userId": "s176k82x7tm60j2kx309p7evxs83j3z7",
+      "displayName": "EvolinkAI",
+      "image": "https://avatars.githubusercontent.com/u/253253881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2149,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 5,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1775210112950,
+      "changelog": "Sync from GitHub: latest skill updates",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c8cb6d94a80e747c012a59fa1f3dcc47abdaf4fc194961ef967af4518a2c25a"
+}

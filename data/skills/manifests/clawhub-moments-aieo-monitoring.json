@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65774,
+  "uuid": "skill-clawhub-moments-aieo-monitoring",
+  "skillKey": "clawhub-moments-aieo-monitoring",
+  "name": "AIEO monitoring",
+  "summary": "AIEO 效果监控与追踪工具，用于定期监测品牌在 AI 搜索平台的可见性变化、内容质量评估和业务转化追踪。当用户提到\"AIEO监控\"、\"AI可见性追踪\"、\"效果监控\"、\"监控报告\"、\"定期测试\"或需要追踪品牌在AI平台表现变化时，自动调用此Skill。监控报告保存至 monitoring/ 目录，文件名格式：{品...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moments_aieo_monitoring",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kaden Lau",
+      "features": [
+        "AIEO 效果监控与追踪工具，用于定期监测品牌在 AI 搜索平台的可见性变化、内容质量评估和业务转化追踪。当用户提到\"AIEO监控\"、\"AI可见性追踪\"、\"效果监控\"、\"监控报告\"、\"定期测."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moments-aieo-monitoring@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/141212002?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moments-aieo-monitoring",
+      "url": "https://clawhub.ai/skills/moments-aieo-monitoring"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moments-aieo-monitoring",
+    "url": "https://clawhub.ai/skills/moments-aieo-monitoring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moments-aieo-monitoring-be6f5e328a23b5f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moments-aieo-monitoring@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moments-aieo-monitoring-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e85a3abe12352e94708ca0f39c2b2655c8f94e74f9d332c0e851c394e233b03a",
+      "artifactSizeBytes": 2808
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:10:57.058Z"
+}

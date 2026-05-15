@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27005,
+  "uuid": "skill-clawhub-shll-run",
+  "skillKey": "clawhub-shll-run",
+  "name": "SHLL Safe Execution",
+  "summary": "Execute DeFi transactions on BSC via SHLL AgentNFA. The AI handles all commands and users only need to chat.",
+  "version": "6.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shll_run",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kledx",
+      "features": [
+        "Execute DeFi transactions on BSC via SHLL AgentNFA",
+        "The AI handles all commands and users only need to chat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shll-run@6.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259126602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shll-run",
+      "url": "https://clawhub.ai/skills/shll-run"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shll-run",
+    "url": "https://clawhub.ai/skills/shll-run",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shll-run-96f82f81b7c1d4b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shll-run@6.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-shll-run-6.0.4.json",
+      "version": "6.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3cee5d01ab531523f9f333b792d255f36e6a4aa5d268a29d7e96b78c7de623a",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T21:49:01.446Z"
+}

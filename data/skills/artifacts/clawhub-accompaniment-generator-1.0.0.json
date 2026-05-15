@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/accompaniment-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.accompaniment_generator",
+  "skill": {
+    "id": 68233,
+    "skillKey": "clawhub-accompaniment-generator",
+    "name": "伴奏提取器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "accompaniment-generator",
+    "url": "https://clawhub.ai/skills/accompaniment-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/accompaniment-generator-d1e94753a0f8836c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从 YouTube 或本地音频文件分离人声和伴奏，生成纯伴奏音乐。当用户需要提取伴奏、消除人声、制作卡拉OK版音频时使用。支持三种模式：(1) 歌名+歌手搜索 YouTube 下载后分离，(2) 直接提供视频 URL，(3) 处理本地音频文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gycdsj",
+      "userId": "s170qyets8z1f4rfcsxdc0a61n86ax5g",
+      "displayName": "GuoGe",
+      "image": "https://avatars.githubusercontent.com/u/44032706?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 70,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778257125837,
+      "changelog": "Accompaniment Generator 1.0.0 初始发布\n\n- 支持从 YouTube 或本地音频文件分离人声与伴奏，生成纯伴奏 MP3。\n- 提供四种使用方式：歌名+歌手检索、视频 URL、本地文件、带 cookies 下载。\n- 采用 Demucs AI 人声分离，输出伴奏和可选人声文件。\n- 输出目录集中管理，支持 JSON 格式结构化返回，方便自动化集成。\n- 提供详细依赖安装与 YouTube cookies 获取指引。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fcf10e5a882dc148f4592c0549002bd14fd46c429626af0a60588a80295c6d0d"
+}

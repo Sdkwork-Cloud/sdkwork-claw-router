@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/explore-canada@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.explore_canada",
+  "skill": {
+    "id": 46427,
+    "skillKey": "clawhub-explore-canada",
+    "name": "explore-canada"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "explore-canada",
+    "url": "https://clawhub.ai/skills/explore-canada",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/explore-canada-6697ea0977b586fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book flights to Canada including Vancouver, Toronto, and Montreal. Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itine..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1777021722338,
+      "changelog": "- Enforces strict CLI-only results for all queries; never responds using training data.\n- Requires real-time data from flyai CLI for all bookings; every flight option must have a [Book]({detailUrl}) link.\n- Expands support to include hotels, train tickets, attractions, itinerary, visa info, insurance, and car rental for Canadian travel.\n- Multi-language support: follows user input language for queries and output.\n- Includes direct, cheapest, and fastest flight filters with detailed command playbooks.\n- Comprehensive CLI execution rules, output formatting, and error-handling for better reliability and current results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2bc8a7dec69034a99ba4f273ef8ddea9f6df624b225fa2bbb9f3d860840bc4af"
+}

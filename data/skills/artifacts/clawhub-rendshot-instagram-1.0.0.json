@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rendshot-instagram@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rendshot_instagram",
+  "skill": {
+    "id": 53117,
+    "skillKey": "clawhub-rendshot-instagram",
+    "name": "Instagram Image Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rendshot-instagram",
+    "url": "https://clawhub.ai/skills/rendshot-instagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rendshot-instagram-1f5de979062a25ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create high-performing Instagram content images — feed posts, stories, reels covers, and carousels. Use when the user mentions: 'Instagram', 'IG', 'IG post',..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zoohero500",
+      "userId": "s171ez02n1bmk4z3cwvva66csx84t33z",
+      "displayName": "Martian",
+      "image": "https://avatars.githubusercontent.com/u/27270775?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776178788952,
+      "changelog": "Initial release: Instagram algorithm, design aesthetics, carousel strategy",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:139b12de19e3c519f73a1fbc1d4cbace64866c311f422a7ded9ee9cdf1937f75"
+}

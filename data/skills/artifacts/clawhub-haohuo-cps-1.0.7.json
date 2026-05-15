@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/haohuo-cps@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.haohuo_cps",
+  "skill": {
+    "id": 66998,
+    "skillKey": "clawhub-haohuo-cps",
+    "name": "星罗好货电商CPS助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "haohuo-cps",
+    "url": "https://clawhub.ai/skills/haohuo-cps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/haohuo-cps-c4a650867b014f30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "电商 CPS 助手，面向 CPS 推广者的电商选品与转链工具。支持商品链接转链、淘口令/短链解析、佣金率查询、关键词选品比价。目前支持京东/淘宝/天猫平台。请联系服务提供方(www.haohuo.com)获取授权 key 并配置到 Skill 中"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zachariah-77",
+      "userId": "s175kv6sy0d4byjxzjg9fjjces83j8gf",
+      "displayName": "zachariah-77",
+      "image": "https://avatars.githubusercontent.com/u/228875721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1776423030994,
+      "changelog": "haohuo-cps v1.0.7\n\n- Removed duplicate/extra details in documentation and made instructions more concise.\n- No changes to code or functionality; update is documentation only.\n- Changelog clarifications: product info format and mandatory inclusion of promotion, commission rate, and link in recommended responses.\n- Dropped mention of number of search results (was previously 5 per platform).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f92fb8331f0890a057f4e960ca612da490e9e9ba84bf0118015a362505caf18"
+}

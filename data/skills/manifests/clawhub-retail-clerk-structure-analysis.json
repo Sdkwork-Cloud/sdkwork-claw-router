@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70611,
+  "uuid": "skill-clawhub-retail-clerk-structure-analysis",
+  "skillKey": "clawhub-retail-clerk-structure-analysis",
+  "name": "导购结构分析",
+  "summary": "导购结构分析工具。分析门店导购的表现结构，识别导购波动对门店业绩波动的贡献度。 核心能力： 1. 导购表现结构分析（人效分布、帕累托分析） 2. TOP/腰部/尾部导购识别 3. 业绩集中度评估 4. 导购波动归因（各导购对门店业绩变化的贡献度） 5. 增长型vs下滑型导购分类 6. 基于累计贡献度的关键人识别...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retail_clerk_structure_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xtechmerge.AI",
+      "features": [
+        "导购结构分析工具。分析门店导购的表现结构，识别导购波动对门店业绩波动的贡献度。 核心能力： 1",
+        "导购表现结构分析（人效分布、帕累托分析） 2",
+        "TOP/腰部/尾部导购识别 3",
+        "业绩集中度评估 4"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/retail-clerk-structure-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176652150?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "retail-clerk-structure-analysis",
+      "url": "https://clawhub.ai/skills/retail-clerk-structure-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retail-clerk-structure-analysis",
+    "url": "https://clawhub.ai/skills/retail-clerk-structure-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retail-clerk-structure-analysis-a7b3ab28506fe1d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/retail-clerk-structure-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-retail-clerk-structure-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:693659bafcece0838696b13541fb8208c8ee10e78b419de7c1769dde696e1e49",
+      "artifactSizeBytes": 2302
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T11:59:22.160Z"
+}

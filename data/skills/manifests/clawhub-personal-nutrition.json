@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15693,
+  "uuid": "skill-clawhub-personal-nutrition",
+  "skillKey": "clawhub-personal-nutrition",
+  "name": "Personal Nutrition",
+  "summary": "Acts as the user's personal nutrition coach in the Nutrition topic. Tracks meals, calories, water intake, and eating habits. Gives advice for balanced diet....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_nutrition",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GekaCross",
+      "features": [
+        "Acts as the user's personal nutrition coach in the Nutrition topic",
+        "Tracks meals, calories, water intake, and eating habits",
+        "Gives advice for balanced diet...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-nutrition@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57638140?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-nutrition",
+      "url": "https://clawhub.ai/skills/personal-nutrition"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-nutrition",
+    "url": "https://clawhub.ai/skills/personal-nutrition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-nutrition-3c61381d0f8b0f73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-nutrition@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-nutrition-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91781b26c29585619457f54a9f7c61acd90edaf34394c9e78a1d02c7e2d4c4b9",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T15:22:58.529Z"
+}

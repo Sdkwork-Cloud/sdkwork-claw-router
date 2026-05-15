@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34608,
+  "uuid": "skill-clawhub-thinkforce",
+  "skillKey": "clawhub-thinkforce",
+  "name": "ThinkForce",
+  "summary": "Dispatch tasks to your ThinkForce AI agents via REST API and poll for results easily without server setup or complex configuration.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thinkforce",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ade5791",
+      "features": [
+        "Dispatch tasks to your ThinkForce AI agents via REST API and poll for results easily without se."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/thinkforce@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38266156?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "thinkforce",
+      "url": "https://clawhub.ai/skills/thinkforce"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thinkforce",
+    "url": "https://clawhub.ai/skills/thinkforce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thinkforce-daec1184c52ce377.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/thinkforce@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-thinkforce-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97b20d31d397a4dbf77d63c0a53babf6e4f1dfcf50f6a8b6163b118c5c4b9a45",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T15:03:25.908Z"
+}

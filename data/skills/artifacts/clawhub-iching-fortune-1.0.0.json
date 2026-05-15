@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iching-fortune@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iching_fortune",
+  "skill": {
+    "id": 56270,
+    "skillKey": "clawhub-iching-fortune",
+    "name": "I Ching Fortune Telling 易经算命"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iching-fortune",
+    "url": "https://clawhub.ai/skills/iching-fortune",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iching-fortune-7c8134ab05619990.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete fortune-telling service with interactive divination sessions. Supports Chinese methods (I Ching, Ba Zi, Zi Wei, Palmistry, Face Reading, Feng Shui,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yw-0311",
+      "userId": "s170v5k1h3knxct957cyskptm983n9b8",
+      "displayName": "Yong Wu",
+      "image": "https://avatars.githubusercontent.com/u/76426819?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 433,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774107320719,
+      "changelog": "Complete fortune-telling service with Chinese and Western divination methods including I Ching, Ba Zi, Tarot and more.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7044dc8a040d984cda9f1c2af528e0bc1fb29a9db3bce24051489b67c118ccb6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/safe-cron-runner@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_cron_runner",
+  "skill": {
+    "id": 21904,
+    "skillKey": "clawhub-safe-cron-runner",
+    "name": "Safe Cron Runner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-cron-runner",
+    "url": "https://clawhub.ai/skills/safe-cron-runner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-cron-runner-839627630d359d9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Executes background tasks safely by dropping privileges and enforcing timeouts. Includes ISNAD signed manifest."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "horn111",
+      "userId": "s17ewjef3wzrsjt6xav1sr2n79841mpt",
+      "displayName": "horn111",
+      "image": "https://avatars.githubusercontent.com/u/101348952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 472,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772634411832,
+      "changelog": "Fixed technical mismatches: aligned code with documentation claims and removed unverified features.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6b0c0a215e5c1ef86a4f9e299447135c2720b9b8aa53254d9bcc117284b3ab99"
+}

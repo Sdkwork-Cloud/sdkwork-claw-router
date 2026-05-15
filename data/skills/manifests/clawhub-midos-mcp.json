@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54018,
+  "uuid": "skill-clawhub-midos-mcp",
+  "skillKey": "clawhub-midos-mcp",
+  "name": "MidOS MCP — Knowledge OS for AI Agents",
+  "summary": "MidOS — The MCP Knowledge OS. 134 tools for knowledge management, multi-agent orchestration, search, planning, and memory. 670K+ vectors, 46K+ chunks, EUREKA...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.midos_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "msruruguay",
+      "features": [
+        "MidOS — The MCP Knowledge OS",
+        "134 tools for knowledge management, multi-agent orchestration, search, planning, and memory",
+        "670K+ vectors, 46K+ chunks, EUREKA..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/midos-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85544849?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "midos-mcp",
+      "url": "https://clawhub.ai/skills/midos-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "midos-mcp",
+    "url": "https://clawhub.ai/skills/midos-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/midos-mcp-55b202a62a7af638.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/midos-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-midos-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16b6b5a8f20404409286c7622a979f851fb2a5b9334929b80997b4d0e61ca395",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T10:59:24.884Z"
+}

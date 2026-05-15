@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50998,
+  "uuid": "skill-clawhub-structured-pr-review",
+  "skillKey": "clawhub-structured-pr-review",
+  "name": "Structured PR Review",
+  "summary": "Structured PR code review with layered analysis and severity tiers. Two modes: (1) Giving reviews — walk through security, correctness, conventions, IaC, and...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.structured_pr_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Grace Gettert",
+      "features": [
+        "Structured PR code review with layered analysis and severity tiers",
+        "Two modes: (1) Giving reviews — walk through security, correctness, conventions, IaC, and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/structured-pr-review@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9805362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "structured-pr-review",
+      "url": "https://clawhub.ai/skills/structured-pr-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "structured-pr-review",
+    "url": "https://clawhub.ai/skills/structured-pr-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/structured-pr-review-2d1e7856ec153a52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/structured-pr-review@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-structured-pr-review-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5656e5ef171d7a3ca6fce46f345dca9fe7042c1961858ad3e96db2c036cfff0",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:52:54.595Z"
+}

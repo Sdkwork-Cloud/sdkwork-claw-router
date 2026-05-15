@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scamper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scamper",
+  "skill": {
+    "id": 14419,
+    "skillKey": "clawhub-scamper",
+    "name": "Scamper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scamper",
+    "url": "https://clawhub.ai/skills/scamper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scamper-31fa3f5c3307b51c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Apply SCAMPER creative thinking method to develop ideas, adapt frameworks, generate hackathon concepts, or break through when stuck. Use when Enzo says \"SCAMPER this\", asks to develop/expand an idea, wants hackathon concepts from existing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "enzoricciulli",
+      "userId": "s17480q6pd11kddn9b78sahxfh83gjdd",
+      "displayName": "enzoricciulli",
+      "image": "https://avatars.githubusercontent.com/u/16671702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1196,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770547050971,
+      "changelog": "Initial release of \"scamper\" skill—apply the SCAMPER creative thinking method for idea development and problem-solving.\n\n- Guides users through 7 SCAMPER lenses: Substitute, Combine, Adapt, Modify, Put to other uses, Eliminate, Reverse.\n- Supports Quick, Full, and Targeted SCAMPER brainstorming modes.\n- Integrates with idea saving, framework adaptation, and hackathon ideation workflows.\n- Provides a structured markdown output template for generated ideas.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:421391ff8f590f2d0479c6f793034f9f900d79a4a796a7d48d58c01287b098d1"
+}

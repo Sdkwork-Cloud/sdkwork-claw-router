@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-imap-smtp@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_imap_smtp",
+  "skill": {
+    "id": 25631,
+    "skillKey": "clawhub-email-imap-smtp",
+    "name": "Email IMAP/SMTP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-imap-smtp",
+    "url": "https://clawhub.ai/skills/email-imap-smtp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-imap-smtp-95f50f0af7f17666.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to mainstream email providers and perform reliable send/receive workflows through IMAP and SMTP with password or OAuth2 authentication. Use when a us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wazixuan",
+      "userId": "publishers:wazixuan",
+      "displayName": "WaziXuan",
+      "image": "https://avatars.githubusercontent.com/u/100177960?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773294587453,
+      "changelog": "Initial release: IMAP/SMTP email ops with password and OAuth2, plus auth-url support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1dd934ca4ec976dba7f1b1a8a52b719a94fec7b8d1bed5432ce3192cb6f2a380"
+}

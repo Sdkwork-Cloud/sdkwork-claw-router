@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60696,
+  "uuid": "skill-clawhub-dajiala-article-fetcher",
+  "skillKey": "clawhub-dajiala-article-fetcher",
+  "name": "Dajiala Article Fetcher",
+  "summary": "从大咖啦API获取微信公众号文章链接列表，并保存到Excel文件",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dajiala_article_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mabao-laodie",
+      "features": [
+        "从大咖啦API获取微信公众号文章链接列表，并保存到Excel文件"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dajiala-article-fetcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265467880?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dajiala-article-fetcher",
+      "url": "https://clawhub.ai/skills/dajiala-article-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dajiala-article-fetcher",
+    "url": "https://clawhub.ai/skills/dajiala-article-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dajiala-article-fetcher-5b8a974947f7a894.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dajiala-article-fetcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dajiala-article-fetcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2dde59be99d00e662878cc908a151b3f7b913f502253273170b52fe63933fe8",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T07:53:26.159Z"
+}

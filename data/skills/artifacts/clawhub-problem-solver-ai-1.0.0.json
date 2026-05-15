@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/problem-solver-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.problem_solver_ai",
+  "skill": {
+    "id": 16791,
+    "skillKey": "clawhub-problem-solver-ai",
+    "name": "Problem Solver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "problem-solver-ai",
+    "url": "https://clawhub.ai/skills/problem-solver-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/problem-solver-ai-40981ebf7657a57d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When user asks to solve a problem, fix an issue, troubleshoot, debug, find solution, brainstorm, help me decide, should I, pros and cons, root cause, what sh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mkpareek0315",
+      "userId": "s177xftdngf7e244bg15634m5x83yz4j",
+      "displayName": "Manish Pareek",
+      "image": "https://avatars.githubusercontent.com/u/71243646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 630,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771819861189,
+      "changelog": "v1.0.0 — 20-feature AI problem solver with 10 frameworks",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8a24dd8a3a7ef15e74fd8f2201026fe569a3c060ba0276fc66e7f08aa3980816"
+}

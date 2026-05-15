@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pixel-attribution-readiness-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pixel_attribution_readiness_checker",
+  "skill": {
+    "id": 23309,
+    "skillKey": "clawhub-pixel-attribution-readiness-checker",
+    "name": "Ads Pixel Readiness"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pixel-attribution-readiness-checker",
+    "url": "https://clawhub.ai/skills/pixel-attribution-readiness-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pixel-attribution-readiness-checker-fc1c09826c83d01f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validate event tracking and attribution readiness for Meta Pixel, Google Ads tags, TikTok Pixel, and cross-channel optimization."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danyangliu-sandwichlab",
+      "userId": "publishers:danyangliu-sandwichlab",
+      "displayName": "danyangliu",
+      "image": "https://avatars.githubusercontent.com/u/184733968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 346,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772594340232,
+      "changelog": "- Initial release of pixel-attribution-readiness-checker skill.\n- Validates install, event integrity, and attribution setup for Meta Pixel, Google Ads tags, TikTok Pixel, and key channels.\n- Outlines clear input/output contracts and workflow for incident/audit handling.\n- Distinct platform-specific recommendations and decision rules.\n- Includes readiness scoring, anomaly triage, and escalation ticket examples.\n- Requires actionable, measurable plans with rollback/stop-loss options for spend risk.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:191a82f2ad88e18fc6847ac9053ddfd7fe1d29c69ce577023191183aed1cddc1"
+}

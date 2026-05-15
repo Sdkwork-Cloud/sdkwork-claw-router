@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16449,
+  "uuid": "skill-clawhub-shelv",
+  "skillKey": "clawhub-shelv",
+  "name": "Openclaw Skill",
+  "summary": "Convert PDFs into structured Markdown filesystems and hydrate them into your workspace for exploration with standard Unix tools",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shelv",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JoshuaOHanlon",
+      "features": [
+        "Convert PDFs into structured Markdown filesystems and hydrate them into your workspace for expl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shelv@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65781355?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shelv",
+      "url": "https://clawhub.ai/skills/shelv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shelv",
+    "url": "https://clawhub.ai/skills/shelv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shelv-1843dc690c763512.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shelv@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-shelv-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aede8f6d85cd92dc613aed44ea9f25b3473e3c869418ec0f7bddc84dd3e113c1",
+      "artifactSizeBytes": 1822
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T06:39:12.173Z"
+}

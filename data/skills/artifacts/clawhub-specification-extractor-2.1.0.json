@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/specification-extractor@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.specification_extractor",
+  "skill": {
+    "id": 13345,
+    "skillKey": "clawhub-specification-extractor",
+    "name": "Specification Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "specification-extractor",
+    "url": "https://clawhub.ai/skills/specification-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/specification-extractor-002eced677efe4a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract structured data from construction specifications. Parse CSI sections, requirements, submittals, and product data from spec documents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datadrivenconstruction",
+      "userId": "publishers:datadrivenconstruction",
+      "displayName": "datadrivenconstruction",
+      "image": "https://avatars.githubusercontent.com/u/94158709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1428,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1771173865310,
+      "changelog": "- Added comprehensive README-style documentation to SKILL.md, detailing feature overview, business case, and technical implementation.\n- Provided full Python implementation in SKILL.md, including data models and extraction logic for parsing CSI sections, products, submittals, and referenced standards from construction specification documents.\n- Updated metadata with supported OS, required binaries, and custom emoji.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:88b5f88e6886d0b6f8481b2fe5b697fb2be1d20c18d13e91aed0f5c5d6b36bc2"
+}

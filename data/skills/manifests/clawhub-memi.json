@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26942,
+  "uuid": "skill-clawhub-memi",
+  "skillKey": "clawhub-memi",
+  "name": "Memi",
+  "summary": "Personal CRM and relationship intelligence. Extracts contacts from conversations, tracks commitments, detects cooling relationships, delivers morning briefs,...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memi",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mukund Kunapareddy",
+      "features": [
+        "Personal CRM and relationship intelligence",
+        "Extracts contacts from conversations, tracks commitments, detects cooling relationships, delive."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memi@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29647736?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memi",
+      "url": "https://clawhub.ai/skills/memi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memi",
+    "url": "https://clawhub.ai/skills/memi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memi-2b3414e1ea7dd24f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memi@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memi-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fac7a4082ee82eb1ff46d79ba104710731fdf5764320db7ae729a537f214a2e4",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T01:13:01.567Z"
+}

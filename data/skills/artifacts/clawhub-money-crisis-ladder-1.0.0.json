@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/money-crisis-ladder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.money_crisis_ladder",
+  "skill": {
+    "id": 34757,
+    "skillKey": "clawhub-money-crisis-ladder",
+    "name": "Money Crisis Ladder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "money-crisis-ladder",
+    "url": "https://clawhub.ai/skills/money-crisis-ladder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/money-crisis-ladder-cb6030a46b6c9f07.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Three-phase money crisis protocol: immediate triage when you can't pay bills, surviving on drastically reduced income, and building financial resilience once..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "howtousehumans",
+      "userId": "s17ftae1txxqa39a87v3p6ta1583js3w",
+      "displayName": "HowToUseHumans",
+      "image": "https://avatars.githubusercontent.com/u/151727669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774521026626,
+      "changelog": "Money Crisis Ladder v1.0.0 – Initial Release\n\n- Introduces a three-phase protocol for navigating financial emergencies: immediate triage, survival on reduced income, and post-crisis financial resilience.\n- Provides clear, actionable guidance on payment priorities, creditor communication, and available assistance programs, with US-centric resources.\n- Includes detailed scripts and checklists for contacting creditors, finding emergency cash, and applying for benefits.\n- Features an agent adaptation block for localization to non-US countries, including strict rules for substituting local assistance programs.\n- Outlines when and how to use the protocol, safety checks, and critical do’s/don’ts for crisis situations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d6ae446137a88decc927d42d0aa37ef169cfcdb6f7252238d43d256338d16119"
+}

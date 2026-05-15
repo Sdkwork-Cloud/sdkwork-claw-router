@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-search-posts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_search_posts",
+  "skill": {
+    "id": 28584,
+    "skillKey": "clawhub-linkedin-search-posts",
+    "name": "LinkedIn Search Posts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-search-posts",
+    "url": "https://clawhub.ai/skills/linkedin-search-posts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-search-posts-f6b58c89e3b4b655.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search LinkedIn posts by keywords using the Apify actor harvestapi/linkedin-post-search. Use when the user wants to search, scrape, or retrieve LinkedIn post..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "godefroy",
+      "userId": "publishers:godefroy",
+      "displayName": "Godefroy",
+      "image": "https://avatars.githubusercontent.com/u/148421?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 322,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772880930656,
+      "changelog": "Initial release of linkedin-search-posts skill.\n\n- Search and retrieve LinkedIn posts by keywords using Apify actor.\n- Supports filtering by author, company, and posting date.\n- Optional scraping of post reactions and comments.\n- Configurable result sorting, pagination, and volume controls.\n- Requires APIFY_API_TOKEN to function.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aee7f34fef85804f690df9a4bd2fad311e5a32a8f2e544e02f9146889b65e8db"
+}

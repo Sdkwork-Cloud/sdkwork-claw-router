@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71638,
+  "uuid": "skill-clawhub-gold-price-checker",
+  "skillKey": "clawhub-gold-price-checker",
+  "name": "gold-price-checker",
+  "summary": "国内金价查询工具。用于查询黄金实时价格、银行金条价格、金店零售价、国际金价和黄金未来趋势分析。当用户询问金价、黄金价格、今日金价、金店价格、银行金条、国际金价、伦敦金、黄金走势或未来趋势时触发此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gold_price_checker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anmu14641",
+      "features": [
+        "国内金价查询工具。用于查询黄金实时价格、银行金条价格、金店零售价、国际金价和黄金未来趋势分析。当用户询问金价、黄金价格、今日金价、金店价格、银行金条、国际金价、伦敦金、黄金走势或未来趋势时触."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gold-price-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239561593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gold-price-checker",
+      "url": "https://clawhub.ai/skills/gold-price-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gold-price-checker",
+    "url": "https://clawhub.ai/skills/gold-price-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gold-price-checker-f9e14dbc6aae2947.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gold-price-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gold-price-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b47c046f4bc2b9522cd228ca6d561e7d18d218307e64366ec7e4e7c6d9f6043",
+      "artifactSizeBytes": 2579
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T06:30:19.254Z"
+}

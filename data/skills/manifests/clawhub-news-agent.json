@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69497,
+  "uuid": "skill-clawhub-news-agent",
+  "skillKey": "clawhub-news-agent",
+  "name": "news-agent-skills",
+  "summary": "新闻智能体系统 API 集成。支持查询新闻、触发采集/分析任务、获取仪表盘数据、趋势分析等。使用场景：新闻数据管理、采集任务自动化、趋势分析、词云生成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wanping",
+      "features": [
+        "新闻智能体系统 API 集成。支持查询新闻、触发采集/分析任务、获取仪表盘数据、趋势分析等。使用场景：新闻数据管理、采集任务自动化、趋势分析、词云生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71005156?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-agent",
+      "url": "https://clawhub.ai/skills/news-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-agent",
+    "url": "https://clawhub.ai/skills/news-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-agent-28fe4f20edd4fd55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b7e56cb31d5aa8c19587bbe202aa7307e9ef3ca66ce004630bcfbb2e00ddede",
+      "artifactSizeBytes": 2443
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T09:09:40.243Z"
+}

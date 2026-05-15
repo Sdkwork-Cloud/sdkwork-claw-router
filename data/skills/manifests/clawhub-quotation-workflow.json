@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59707,
+  "uuid": "skill-clawhub-quotation-workflow",
+  "skillKey": "clawhub-quotation-workflow",
+  "name": "Quotation Workflow",
+  "summary": "自动化生成报价单（Excel/Word/HTML/PDF），集成数据验证防止示例数据，支持 OKKI CRM",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quotation_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaden's built a claw",
+      "features": [
+        "自动化生成报价单（Excel/Word/HTML/PDF），集成数据验证防止示例数据，支持 OKKI CRM"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quotation-workflow@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64246343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quotation-workflow",
+      "url": "https://clawhub.ai/skills/quotation-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quotation-workflow",
+    "url": "https://clawhub.ai/skills/quotation-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quotation-workflow-84b418f29986bd23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quotation-workflow@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quotation-workflow-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ecc403ecae69a51bb7ea69ba09417645abf80a1595183ffdb9b1aee66431430",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:21:48.956Z"
+}

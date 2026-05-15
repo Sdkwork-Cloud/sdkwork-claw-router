@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60152,
+  "uuid": "skill-clawhub-tts-synthesizer",
+  "skillKey": "clawhub-tts-synthesizer",
+  "name": "TTS Synthesizer | TTS 合成器",
+  "summary": "文字转语音（Text-to-Speech / TTS）工具。 支持 edge-tts（微软神经网络 TTS，在线合成）和 OpenAI 兼容 API TTS。 触发词：语音回复、TTS、文字转语音、语音合成、语音对话。 适用平台：Linux / Windows / macOS。",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tts_synthesizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Morois",
+      "features": [
+        "文字转语音（Text-to-Speech / TTS）工具。 支持 edge-tts（微软神经网络 TTS，在线合成）和 OpenAI 兼容 API TTS。 触发词：语音回复、TTS、文字."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tts-synthesizer@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98001108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tts-synthesizer",
+      "url": "https://clawhub.ai/skills/tts-synthesizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tts-synthesizer",
+    "url": "https://clawhub.ai/skills/tts-synthesizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tts-synthesizer-bf9fec45a92753ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tts-synthesizer@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-tts-synthesizer-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6398f859212e97fea4da813814b2038940098d43c011134b981eeece34a8928d",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T14:52:50.848Z"
+}

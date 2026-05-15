@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-maker-free-app-download@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_maker_free_app_download",
+  "skill": {
+    "id": 47320,
+    "skillKey": "clawhub-video-maker-free-app-download",
+    "name": "Video Maker Free App Download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-maker-free-app-download",
+    "url": "https://clawhub.ai/skills/video-maker-free-app-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-maker-free-app-download-a1dd7ea2763803de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get polished MP4 videos ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"trim..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776184819917,
+      "changelog": "Initial release of Video Maker Free App Download — Create and Export Videos Online.\n\n- Instantly upload video clips (up to 500MB) and use simple natural language commands to trim, add music, and export 1080p MP4 videos.\n- No need to install a desktop app; all processing happens on fast cloud GPUs.\n- Seamless setup with anonymous authentication—100 free credits, no account required.\n- Supports MP4, MOV, AVI, WebM, and other popular video/audio formats.\n- Includes built-in error handling for token, session, credits, and file compatibility issues.\n- User-friendly prompts and workflow: upload, edit, export, and download—typically ready in 1–2 minutes for short clips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21d4284e2f7d8ee7043435774b0ebbeea99b70e3c8d1d13b62668b9b1487c0c7"
+}

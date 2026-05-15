@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13785,
+  "uuid": "skill-clawhub-cloud-architect",
+  "skillKey": "clawhub-cloud-architect",
+  "name": "Cloud Architect",
+  "summary": "Use when designing cloud architectures, planning migrations, or optimizing multi-cloud deployments. Invoke for Well-Architected Framework, cost optimization,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_architect",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lhwa8685",
+      "features": [
+        "Use when designing cloud architectures, planning migrations, or optimizing multi-cloud deployme.",
+        "Invoke for Well-Architected Framework, cost optimization,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloud-architect@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195074450?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloud-architect",
+      "url": "https://clawhub.ai/skills/cloud-architect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-architect",
+    "url": "https://clawhub.ai/skills/cloud-architect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-architect-eef53e81d845570d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloud-architect@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloud-architect-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73d4023f6fde27d7a5ba54fbbdab5fc9484d122927b9d5286e5bb74360f5c1e9",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T14:16:26.422Z"
+}

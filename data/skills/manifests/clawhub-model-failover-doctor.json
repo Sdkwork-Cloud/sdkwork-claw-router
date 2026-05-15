@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21095,
+  "uuid": "skill-clawhub-model-failover-doctor",
+  "skillKey": "clawhub-model-failover-doctor",
+  "name": "Model Failover Doctor",
+  "summary": "Diagnose and fix OpenClaw \"All models failed\" errors by detecting invalid model IDs, provider mismatches, and session fallback issues with optional auto-repair.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_failover_doctor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "halfmoon82",
+      "features": [
+        "Diagnose and fix OpenClaw \"All models failed\" errors by detecting invalid model IDs, provider m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-failover-doctor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261569221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-failover-doctor",
+      "url": "https://clawhub.ai/skills/model-failover-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-failover-doctor",
+    "url": "https://clawhub.ai/skills/model-failover-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-failover-doctor-f02a984c4080ff0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-failover-doctor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-failover-doctor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f5ac6ea41d80f70b060bf451644577b6d221664419291e74edef636ae5ede49",
+      "artifactSizeBytes": 2527
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T15:34:50.046Z"
+}

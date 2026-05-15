@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23567,
+  "uuid": "skill-clawhub-ai-detector",
+  "skillKey": "clawhub-ai-detector",
+  "name": "AI Detector",
+  "summary": "Detect whether text is human-written, AI-generated, AI-humanized, or lightly edited.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_detector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mattc95",
+      "features": [
+        "Detect whether text is human-written, AI-generated, AI-humanized, or lightly edited."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-detector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40258107?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-detector",
+      "url": "https://clawhub.ai/skills/ai-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-detector",
+    "url": "https://clawhub.ai/skills/ai-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-detector-31cda09e3c704e05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-detector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-detector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28f461e75697b95f0bcb43238a3549702025a91496ad777b00c8b137f1ab5647",
+      "artifactSizeBytes": 1786
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T07:02:22.223Z"
+}

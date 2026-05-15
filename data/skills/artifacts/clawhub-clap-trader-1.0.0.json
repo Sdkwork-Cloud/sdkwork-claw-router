@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clap-trader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clap_trader",
+  "skill": {
+    "id": 16266,
+    "skillKey": "clawhub-clap-trader",
+    "name": "Clap Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clap-trader",
+    "url": "https://clawhub.ai/skills/clap-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clap-trader-9a48bdd1aaf0f359.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A skill for OpenClaw to research crypto market trends (technical & sentiment) and trade ETH on Binance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dymx101",
+      "userId": "publishers:dymx101",
+      "displayName": "dymx101",
+      "image": "https://avatars.githubusercontent.com/u/3862533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 896,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770980553752,
+      "changelog": "Initial release of the Crypto Trader & Analyst skill for OpenClaw:\n\n- Enables technical and sentiment analysis of crypto markets, focusing on ETH/USDT.\n- Provides scripts for market data retrieval, sentiment analysis, structured analysis logging, and Binance trading execution.\n- Includes guidance on required dependencies, environment variable setup, and safe trading practices.\n- Automated logging for all market analyses and trade transactions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0baacfff99bf3bcf27ec14225c69c340e426b20624b1e3f1ca459dbe840d8693"
+}

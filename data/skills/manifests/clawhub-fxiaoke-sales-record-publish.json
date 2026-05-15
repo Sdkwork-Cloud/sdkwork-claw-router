@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62540,
+  "uuid": "skill-clawhub-fxiaoke-sales-record-publish",
+  "skillKey": "clawhub-fxiaoke-sales-record-publish",
+  "name": "Fxiaoke Sales Record Publish",
+  "summary": "自动检测登录并使用保存的cookies，智能填写销售记录必填项，一键发布纷享销客CRM销售记录，保证100%成功率。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fxiaoke_sales_record_publish",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qinlong",
+      "features": [
+        "自动检测登录并使用保存的cookies，智能填写销售记录必填项，一键发布纷享销客CRM销售记录，保证100%成功率。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fxiaoke-sales-record-publish@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4972175?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fxiaoke-sales-record-publish",
+      "url": "https://clawhub.ai/skills/fxiaoke-sales-record-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fxiaoke-sales-record-publish",
+    "url": "https://clawhub.ai/skills/fxiaoke-sales-record-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fxiaoke-sales-record-publish-cd488322436f494f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fxiaoke-sales-record-publish@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fxiaoke-sales-record-publish-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:864c36d04b63d1ecc9631bbfa5e08457811b50e090ad95754eda6e06583192cd",
+      "artifactSizeBytes": 2224
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T15:11:56.095Z"
+}

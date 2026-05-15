@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36649,
+  "uuid": "skill-clawhub-business-blueprint-skill",
+  "skillKey": "clawhub-business-blueprint-skill",
+  "name": "Business Blueprint Skill",
+  "summary": "Use when turning presales requirements, meeting notes, or solution materials into editable business capability blueprints, swimlane flows, and application ar...",
+  "version": "0.11.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_blueprint_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kaiser",
+      "features": [
+        "Use when turning presales requirements, meeting notes, or solution materials into editable busi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/business-blueprint-skill@0.11.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4091099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "business-blueprint-skill",
+      "url": "https://clawhub.ai/skills/business-blueprint-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-blueprint-skill",
+    "url": "https://clawhub.ai/skills/business-blueprint-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-blueprint-skill-38ca369e44ebafb3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/business-blueprint-skill@0.11.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-business-blueprint-skill-0.11.1.json",
+      "version": "0.11.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6583da47a71d0be0d14745c20f9e4b51e0b70a1c4bc7a7f84a613ad6c7803ce7",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T17:13:36.719Z"
+}

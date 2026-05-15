@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47842,
+  "uuid": "skill-clawhub-justoneapi-zhihu-get-answer-list",
+  "skillKey": "clawhub-justoneapi-zhihu-get-answer-list",
+  "name": "Zhihu Answer List API",
+  "summary": "Call GET /api/zhihu/get-answer-list/v1 for Zhihu Answer List through JustOneAPI with questionId.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_zhihu_get_answer_list",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/zhihu/get-answer-list/v1 for Zhihu Answer List through JustOneAPI with questionId."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-zhihu-get-answer-list@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-zhihu-get-answer-list",
+      "url": "https://clawhub.ai/skills/justoneapi-zhihu-get-answer-list"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-zhihu-get-answer-list",
+    "url": "https://clawhub.ai/skills/justoneapi-zhihu-get-answer-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-zhihu-get-answer-list-b24b81d69a54801f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-zhihu-get-answer-list@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-zhihu-get-answer-list-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:148ea8b4924058a319b123e139e891e7ca0a25949ecfcfcdb107bdd951359152",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T12:02:15.883Z"
+}

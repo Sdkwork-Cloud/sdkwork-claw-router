@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16262,
+  "uuid": "skill-clawhub-rose-container-tools",
+  "skillKey": "clawhub-rose-container-tools",
+  "name": "Build ROSE tools using a container",
+  "summary": "Build and run ROSE compiler tools using ROSE installed in a Docker container. Use when developing source-to-source translators, call graph analyzers, AST processors, or any tool that links against librose.so. Triggers on \"ROSE tool\", \"call.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rose_container_tools",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chunhua Liao",
+      "features": [
+        "Build and run ROSE compiler tools using ROSE installed in a Docker container",
+        "Use when developing source-to-source translators, call graph analyzers, AST processors, or any.",
+        "Triggers on \"ROSE tool\", \"callgraph\", \"AST traversal\", \"source-to-source\", \"build with ROSE\", \"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rose-container-tools@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1627206?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rose-container-tools",
+      "url": "https://clawhub.ai/skills/rose-container-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rose-container-tools",
+    "url": "https://clawhub.ai/skills/rose-container-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rose-container-tools-26fd4b0d900f854c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rose-container-tools@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rose-container-tools-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4dafd11af7830824735ecf34624bfd40d92e8b228edb81bb5644ffa78f0abb15",
+      "artifactSizeBytes": 2460
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T07:12:13.234Z"
+}

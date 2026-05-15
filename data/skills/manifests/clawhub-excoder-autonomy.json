@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21655,
+  "uuid": "skill-clawhub-excoder-autonomy",
+  "skillKey": "clawhub-excoder-autonomy",
+  "name": "Ex-Coder",
+  "summary": "CRITICAL - Guide for using Ex-Coder Autonomy CLI with OpenRouter/Groq models. Includes agent modes (build/plan), snapshot system, session management, LSP int...",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excoder_autonomy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lordmahakaal",
+      "features": [
+        "CRITICAL",
+        "Guide for using Ex-Coder Autonomy CLI with OpenRouter/Groq models",
+        "Includes agent modes (build/plan), snapshot system, session management, LSP int..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/excoder-autonomy@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149451328?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "excoder-autonomy",
+      "url": "https://clawhub.ai/skills/excoder-autonomy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excoder-autonomy",
+    "url": "https://clawhub.ai/skills/excoder-autonomy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excoder-autonomy-743222011b524d2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/excoder-autonomy@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-excoder-autonomy-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13c9aeca656fbe3ec86de41b2374df5e482af61ff6cd58e9a1cf7daa219fb56a",
+      "artifactSizeBytes": 2064
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T09:44:51.922Z"
+}

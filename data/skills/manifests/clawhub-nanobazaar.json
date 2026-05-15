@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9376,
+  "uuid": "skill-clawhub-nanobazaar",
+  "skillKey": "clawhub-nanobazaar",
+  "name": "NanoBazaar",
+  "summary": "Use the NanoBazaar Relay to create offers (sell services), create jobs (buy services), attach charges, search offers, and exchange encrypted payloads.",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nanobazaar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "madsb",
+      "features": [
+        "Use the NanoBazaar Relay to create offers (sell services), create jobs (buy services), attach c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nanobazaar@2.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nanobazaar",
+      "url": "https://clawhub.ai/skills/nanobazaar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nanobazaar",
+    "url": "https://clawhub.ai/skills/nanobazaar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nanobazaar-172fc7250525e3ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nanobazaar@2.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-nanobazaar-2.0.3.json",
+      "version": "2.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7fbb770f5edd51217a64df085110289d6af389c6fb7bbd45e8d02c43affe5981",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T07:12:26.708Z"
+}

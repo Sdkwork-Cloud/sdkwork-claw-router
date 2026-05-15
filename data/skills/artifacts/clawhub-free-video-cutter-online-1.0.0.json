@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-cutter-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_cutter_online",
+  "skill": {
+    "id": 41938,
+    "skillKey": "clawhub-free-video-cutter-online",
+    "name": "Free Video Cutter Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-cutter-online",
+    "url": "https://clawhub.ai/skills/free-video-cutter-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-cutter-online-f9b9faa26e6b7482.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get 1080p MP4 files from your video clips using this free-video-cutter-online tool. It runs video trimming and cutting on cloud GPUs, so your machine does ze..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775670390879,
+      "changelog": "Free Video Cutter Online — Initial Release\n\n- Launches the first version of the Free Video Cutter Online skill.\n- Lets users trim, cut, and export video clips to 1080p MP4, WebM, or GIF formats via cloud GPU processing.\n- Supports upload and editing of MP4, MOV, AVI, and WebM files; handles export jobs within 20-40 seconds.\n- Automates session management and authentication with free token provisioning (100 credits, 7-day validity).\n- Provides a simple prompt-based interface for video trimming, export, credits check, and status updates.\n- All exports and heavy processing are handled on the backend—no local CPU/GPU required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2dfb137de181a1df526c643bdfe8008901d22763a36cb875644ab72389a00fb4"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36144,
+  "uuid": "skill-clawhub-mindbreeze",
+  "skillKey": "clawhub-mindbreeze",
+  "name": "Mindbreeze",
+  "summary": "Mindbreeze integration. Manage data, records, and automate workflows. Use when the user wants to interact with Mindbreeze data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mindbreeze",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Mindbreeze integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Mindbreeze data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mindbreeze@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mindbreeze",
+      "url": "https://clawhub.ai/skills/mindbreeze"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mindbreeze",
+    "url": "https://clawhub.ai/skills/mindbreeze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mindbreeze-1daf943b9ccc8f53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mindbreeze@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mindbreeze-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82aeab1e95671792615a68864e3a5b907d17ca3b371012954a8c3b61a2070453",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:14:18.752Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subtitle-translator-mcbai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_translator_mcbai",
+  "skill": {
+    "id": 37979,
+    "skillKey": "clawhub-subtitle-translator-mcbai",
+    "name": "Subtitle Translator - MCB AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-translator-mcbai",
+    "url": "https://clawhub.ai/skills/subtitle-translator-mcbai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-translator-mcbai-f05d93015f5db2d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translate SRT subtitle files into any target language using AI. Processes subtitles in batches to handle large files efficiently, preserves exact SRT format..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mcbaivn",
+      "userId": "s17eshjzkvkbdnj5rbbbd5a8js849m8g",
+      "displayName": "MCB AI",
+      "image": "https://avatars.githubusercontent.com/u/132585065?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775377585016,
+      "changelog": "Initial release by MCB AI",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:99a1cd6f1935d212a0a846762be576a1ff2e4d7acd124338fe547a3b7ffb31f3"
+}

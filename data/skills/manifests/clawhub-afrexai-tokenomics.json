@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20378,
+  "uuid": "skill-clawhub-afrexai-tokenomics",
+  "skillKey": "clawhub-afrexai-tokenomics",
+  "name": "Token Economics Analyzer",
+  "summary": "Analyze token types and score tokenomics health to guide acceptance, holding, launching, or rejecting tokens with risk and cost insights.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_tokenomics",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1kalin",
+      "features": [
+        "Analyze token types and score tokenomics health to guide acceptance, holding, launching, or rej."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/afrexai-tokenomics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15705344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "afrexai-tokenomics",
+      "url": "https://clawhub.ai/skills/afrexai-tokenomics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-tokenomics",
+    "url": "https://clawhub.ai/skills/afrexai-tokenomics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-tokenomics-1507acc52791b536.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/afrexai-tokenomics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-tokenomics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bcf6073f92728c3cada85a85ec26b3c6555f99951c682412ade284b2574b81db",
+      "artifactSizeBytes": 2521
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T18:45:54.847Z"
+}

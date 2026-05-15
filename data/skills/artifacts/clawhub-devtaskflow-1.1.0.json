@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/devtaskflow@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.devtaskflow",
+  "skill": {
+    "id": 60089,
+    "skillKey": "clawhub-devtaskflow",
+    "name": "Devtaskflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "devtaskflow",
+    "url": "https://clawhub.ai/skills/devtaskflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/devtaskflow-c85028d290700269.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用自然语言发起开发任务，AI 驱动的开发流水线。Describe your idea, get working software. 适合产品、运营、业务人员从 0 搭建项目。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cwyhkyochen-a11y",
+      "userId": "s178d1zg80mbk3ay3b5abegn6n83gd1b",
+      "displayName": "cwyhkyochen-a11y",
+      "image": "https://avatars.githubusercontent.com/u/231615738?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 643,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 24
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774886344768,
+      "changelog": "全面代码审查修复: 安全加固 + Bug修复 + 架构改进",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f84e0db8edd61639ed86b47d247728d99c8c9c46cb4c4ae8f5ef815ebb8e5f4"
+}

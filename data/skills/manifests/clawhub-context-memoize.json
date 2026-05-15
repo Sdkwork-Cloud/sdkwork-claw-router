@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38034,
+  "uuid": "skill-clawhub-context-memoize",
+  "skillKey": "clawhub-context-memoize",
+  "name": "Context Memoize",
+  "summary": "Caches and manages frequently used context fragments to avoid redundant processing by saving, listing, and clearing cached data.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_memoize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shaoxiang616",
+      "features": [
+        "Caches and manages frequently used context fragments to avoid redundant processing by saving, l."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-memoize@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267339286?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-memoize",
+      "url": "https://clawhub.ai/skills/context-memoize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-memoize",
+    "url": "https://clawhub.ai/skills/context-memoize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-memoize-f599d3aa26ba35e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-memoize@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-memoize-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb368fa781659ed8c03506ef32e5dec77353193b1e93fb364bb24c29f990df90",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T00:44:37.152Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flaky-test-detective@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flaky_test_detective",
+  "skill": {
+    "id": 45080,
+    "skillKey": "clawhub-flaky-test-detective",
+    "name": "Flaky Test Detective"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flaky-test-detective",
+    "url": "https://clawhub.ai/skills/flaky-test-detective",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flaky-test-detective-4bce97e9fe6f620b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect, diagnose, and fix flaky tests. Identify tests with non-deterministic outcomes by analyzing CI history, test timing, shared state, race conditions, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777593689257,
+      "changelog": "Version 1.0.1 of flaky-test-detective\n\n- No file or documentation changes detected.\n- No new features, fixes, or adjustments in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a190b7c1009686ce2b7eb858e8460093df774122d5fe735d9da9f0aec38720b7"
+}

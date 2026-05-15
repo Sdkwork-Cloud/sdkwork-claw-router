@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kalshi@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi",
+  "skill": {
+    "id": 10121,
+    "skillKey": "clawhub-kalshi",
+    "name": "Kalshi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi",
+    "url": "https://clawhub.ai/skills/kalshi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-b064bbfa28ec0440.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read-only Kalshi prediction market integration. Use for viewing markets, checking portfolio positions, analyzing prediction opportunities, and finding high-payoff/high-certainty trades. Triggers on Kalshi, prediction markets, event contrac."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "henrik-openclaw",
+      "userId": "publishers:henrik-openclaw",
+      "displayName": "henrik-openclaw",
+      "image": "https://avatars.githubusercontent.com/u/258677299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2635,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1769987842859,
+      "changelog": "Kalshi skill 1.1.0 improves setup instructions for portfolio access.\n\n- Updated setup guide to use direct Kalshi API key and private key from kalshi.com\n- Now documents installing required Python packages: requests and cryptography\n- Portfolio authentication section rewritten for clarity, including credentials file location and permissions\n- Added instructions for interactive setup via script for user convenience\n- General setup is more streamlined and beginner-friendly",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7f0eb468c22fad4ad2606d72222e194742e7bf11afba7902d2c25bc8412f1277"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49107,
+  "uuid": "skill-clawhub-gog-dormant-sweep",
+  "skillKey": "clawhub-gog-dormant-sweep",
+  "name": "GOG Dormant Game Sweep",
+  "summary": "Scan GOG library for installed games not played in 30+ days, email a summary report via himalaya, and add per-game reminders to Apple Reminders Gaming list....",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gog_dormant_sweep",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "Scan GOG library for installed games not played in 30+ days, email a summary report via himalay."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gog-dormant-sweep@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gog-dormant-sweep",
+      "url": "https://clawhub.ai/skills/gog-dormant-sweep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gog-dormant-sweep",
+    "url": "https://clawhub.ai/skills/gog-dormant-sweep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gog-dormant-sweep-697ecd7e00ff0a88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gog-dormant-sweep@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gog-dormant-sweep-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa823734aa88486c3915928b6e65a65e1171769f352a0b151c6281b2b6765918",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T19:06:54.991Z"
+}

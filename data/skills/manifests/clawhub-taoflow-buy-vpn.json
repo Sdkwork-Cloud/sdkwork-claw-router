@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25245,
+  "uuid": "skill-clawhub-taoflow-buy-vpn",
+  "skillKey": "clawhub-taoflow-buy-vpn",
+  "name": "Buy Taoflow VPN",
+  "summary": "Guide users to choose and purchase Taoflow VPN plans safely and efficiently. Use when users ask about buying Taoflow VPN, selecting a plan, comparing billing...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taoflow_buy_vpn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "taoflownetwork",
+      "features": [
+        "Guide users to choose and purchase Taoflow VPN plans safely and efficiently",
+        "Use when users ask about buying Taoflow VPN, selecting a plan, comparing billing..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taoflow-buy-vpn@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264297735?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taoflow-buy-vpn",
+      "url": "https://clawhub.ai/skills/taoflow-buy-vpn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taoflow-buy-vpn",
+    "url": "https://clawhub.ai/skills/taoflow-buy-vpn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taoflow-buy-vpn-6dcd0c58129e08f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taoflow-buy-vpn@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-taoflow-buy-vpn-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a564dd7f96c067093e018bde42d377ac4936e61e55f25a3a4f7c19f4e25bd69f",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T09:22:37.366Z"
+}

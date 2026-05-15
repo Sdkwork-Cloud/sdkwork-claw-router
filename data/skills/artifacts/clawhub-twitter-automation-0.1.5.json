@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twitter-automation@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_automation",
+  "skill": {
+    "id": 10221,
+    "skillKey": "clawhub-twitter-automation",
+    "name": "Twitter Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-automation",
+    "url": "https://clawhub.ai/skills/twitter-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-automation-0e88a7ec1ceab90d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Twitter/X with posting, engagement, and user management via inference.sh CLI. Apps: x/post-tweet, x/post-create (with media), x/post-like, x/post-re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2469,
+      "installsAllTime": 21,
+      "installsCurrent": 21,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403459652,
+      "changelog": "- Expanded documentation with detailed CLI usage examples for posting, engagement, and user management on Twitter/X.\n- Clarified available apps and their usage, including new examples for posting media, liking, retweeting, DMs, following users, and more.\n- Added workflow examples to automate posting of AI-generated images and videos.\n- Provided installation, security notes, and links to related skills and platform documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9baec5d7f4b06a4d0be44394abfd18bbf93a9fc650e15c8095f733c5014995fa"
+}

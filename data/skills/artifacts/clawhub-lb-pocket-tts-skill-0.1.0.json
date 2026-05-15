@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lb-pocket-tts-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lb_pocket_tts_skill",
+  "skill": {
+    "id": 19126,
+    "skillKey": "clawhub-lb-pocket-tts-skill",
+    "name": "Pocket TTS Complete Documentation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lb-pocket-tts-skill",
+    "url": "https://clawhub.ai/skills/lb-pocket-tts-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lb-pocket-tts-skill-f4e0a91f2fa8d830.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate speech from text using Kyutai Pocket TTS - lightweight, CPU-friendly, streaming TTS with voice cloning. English only. ~6x real-time on M4 MacBook Air."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leonaaardob",
+      "userId": "publishers:leonaaardob",
+      "displayName": "leonaaardob",
+      "image": "https://avatars.githubusercontent.com/u/207195840?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770833205480,
+      "changelog": "- Initial release of Pocket-TTS skill.\n- Generate English speech from text using Kyutai Pocket TTS, optimized for CPU-only use with no GPU required.\n- Supports voice cloning from 3–10 second audio samples and streaming, low-latency audio generation (~6x real-time on modern CPUs).\n- Provides both CLI and Python API interfaces for text-to-speech generation and voice management.\n- Outputs high-quality 24kHz mono WAV files.\n- Includes guidance for installation, usage, voice cloning, and performance optimization.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:00655d3643f2c893319f7aa0b9295ed4c1a3d5db08b9a41c46e471b985befd4e"
+}

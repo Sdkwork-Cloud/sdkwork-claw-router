@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tomoviee-text-to-sound-effects@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tomoviee_text_to_sound_effects",
+  "skill": {
+    "id": 55943,
+    "skillKey": "clawhub-tomoviee-text-to-sound-effects",
+    "name": "Tomoviee Text to Sound Effects"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tomoviee-text-to-sound-effects",
+    "url": "https://clawhub.ai/skills/tomoviee-text-to-sound-effects",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tomoviee-text-to-sound-effects-8ff45a8caca6c575.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate sound effects from text prompts using Tomoviee Text-to-Sound-Effect API (`tm_text2sfx`) through Wondershare OpenAPI gateway (`https://openapi.wonder..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wondershare-boop",
+      "userId": "s1707d6v06e1pv7bbn814sjdq583gtne",
+      "displayName": "wondershare-boop",
+      "image": "https://avatars.githubusercontent.com/u/208894930?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 397,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774625356028,
+      "changelog": "- Added scripts/tomoviee_text_to_sound_effect_client.py and related compiled Python files to the repository.\n- Updated documentation to clarify the API provider, runtime endpoint provenance, and credential handling.\n- Added explicit resource and reference file mapping in SKILL.md.\n- Documented installation requirements and structured Python client usage with enhanced parameter descriptions.\n- Improved workflow instructions and status code explanations for asynchronous tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae270576ce1241cb41a49bcea8c5faf4f9bef27d503ad9fb604ca6ba18da794f"
+}

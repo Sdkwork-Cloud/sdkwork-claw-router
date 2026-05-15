@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bamboohr-automation@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bamboohr_automation",
+  "skill": {
+    "id": 12186,
+    "skillKey": "clawhub-bamboohr-automation",
+    "name": "Bamboohr Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bamboohr-automation",
+    "url": "https://clawhub.ai/skills/bamboohr-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bamboohr-automation-a4a64a4f0820619f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate BambooHR tasks via Rube MCP (Composio): employees, time-off, benefits, dependents, employee updates. Always search tools first for current schemas."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sohamganatra",
+      "userId": "publishers:sohamganatra",
+      "displayName": "sohamganatra",
+      "image": "https://avatars.githubusercontent.com/u/7982102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1749,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770367259855,
+      "changelog": "- Initial release of BambooHR automation toolkit for Rube MCP via Composio.\n- Supports employee directory, detail lookup, incremental sync, and employee updates.\n- Enables time-off management: list types, check balances, request, update requests.\n- Adds tools to manage dependents and benefit coverages, with security and permission guidance.\n- Includes step-by-step workflow patterns, API pitfalls, and parameter references for reliability.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6d621a7a8881af2b01ef02129337d6e94be8ee355990e6964653115ca7debdf2"
+}

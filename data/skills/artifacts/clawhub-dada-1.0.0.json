@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dada@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dada",
+  "skill": {
+    "id": 70719,
+    "skillKey": "clawhub-dada",
+    "name": "Dada"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dada",
+    "url": "https://clawhub.ai/skills/dada",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dada-47c7ef39cfa6b7bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "达达快送开发助手，精通即时配送API、订单管理、运力调度、数据对接"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 303,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773652772736,
+      "changelog": "Initial public release with full Dada delivery platform integration guide and API documentation.\n\n- Updated skill name and version to “达达快送” 1.0.0 with a focus on instant delivery integration.\n- Provided detailed API usage examples for order creation, status query, cancellation, and fee estimation.\n- Added comprehensive instructions for API authentication and MD5 signature generation.\n- Included explanations for order status flow, callback handling, and error best practices.\n- Expanded merchant and store management interface documentation for onboarding developers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a2ba1044fc7df36419e9282cfcd8a72eae9f3f7d4f47d02b81463054152f9f15"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nadmail@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nadmail",
+  "skill": {
+    "id": 11921,
+    "skillKey": "clawhub-nadmail",
+    "name": "Nadmail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nadmail",
+    "url": "https://clawhub.ai/skills/nadmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nadmail-7dc71da06945a025.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "NadMail - Email for AI Agents on Monad. Register yourname@nadmail.ai, send emails that micro-invest in meme coins, boost with emo-buy. SIWE auth, no CAPTCHA,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daaab",
+      "userId": "s1734aczwq16mt7vnhrq68bkq5841wa6",
+      "displayName": "Ju Chun Ko",
+      "image": "https://avatars.githubusercontent.com/u/1607280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1655,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1771564511496,
+      "changelog": "nadmail 2.0.0\n\n- Major update with security and interface improvements.\n- Emo-buy now always requires interactive confirmation; the `--yes` flag is removed.\n- Direct buy flow and `buy-name.js` script support has been removed.\n- Documentation (SKILL.md) fully revised for clarity and simplified instructions.\n- Updated scripts and API documentation to match new requirements and behaviors.\n- Added `_meta.json` for improved metadata structure.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:09c86475bbecdfc839c54d8c2a5e011051751980db1ed23ff6d2d43dcd28314d"
+}

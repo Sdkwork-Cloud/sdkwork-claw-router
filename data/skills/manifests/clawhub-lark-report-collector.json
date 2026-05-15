@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17209,
+  "uuid": "skill-clawhub-lark-report-collector",
+  "skillKey": "clawhub-lark-report-collector",
+  "name": "Lark Report Collector",
+  "summary": "Collect weekly reports from Lark Reports (oa.larksuite.com), summarize into Lark Docs, and notify. Use when: (1) collecting weekly reports from specific team...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lark_report_collector",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pengxiao-Wang",
+      "features": [
+        "Collect weekly reports from Lark Reports (oa.larksuite.com), summarize into Lark Docs, and noti.",
+        "Use when: (1) collecting weekly reports from specific team..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lark-report-collector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38279174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lark-report-collector",
+      "url": "https://clawhub.ai/skills/lark-report-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lark-report-collector",
+    "url": "https://clawhub.ai/skills/lark-report-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lark-report-collector-257346e190f52968.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lark-report-collector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lark-report-collector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:282d691f00f2a6d37c6846255760173c9531d3d1269b0594e041150b4de5dfe0",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T14:03:11.960Z"
+}

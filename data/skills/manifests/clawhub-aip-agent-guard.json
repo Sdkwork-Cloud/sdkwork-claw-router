@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46502,
+  "uuid": "skill-clawhub-aip-agent-guard",
+  "skillKey": "clawhub-aip-agent-guard",
+  "name": "AIP Agent Guard",
+  "summary": "Verify skill authorship, enforce capability manifests, and audit tool usage to secure and control your OpenClaw skills with identity and access management.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aip_agent_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sunilp",
+      "features": [
+        "Verify skill authorship, enforce capability manifests, and audit tool usage to secure and contr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aip-agent-guard@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/633213?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aip-agent-guard",
+      "url": "https://clawhub.ai/skills/aip-agent-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aip-agent-guard",
+    "url": "https://clawhub.ai/skills/aip-agent-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aip-agent-guard-0860ae938a193a77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aip-agent-guard@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aip-agent-guard-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af35847037e29e339755d83b0c48d4503aedbbf8870f74427190f6617c2eaddc",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T06:35:36.001Z"
+}

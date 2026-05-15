@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18577,
+  "uuid": "skill-clawhub-agentfolio",
+  "skillKey": "clawhub-agentfolio",
+  "name": "AgentFolio",
+  "summary": "Discover and register autonomous AI agents. Use when: browsing the agent registry, submitting an agent for verification, or embedding agent badges. NOT for:...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentfolio",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bobrenze-bot",
+      "features": [
+        "Discover and register autonomous AI agents",
+        "Use when: browsing the agent registry, submitting an agent for verification, or embedding agent.",
+        "NOT for:..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentfolio@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258452996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentfolio",
+      "url": "https://clawhub.ai/skills/agentfolio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentfolio",
+    "url": "https://clawhub.ai/skills/agentfolio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentfolio-8495cfafb4630f81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentfolio@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentfolio-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2aa9bb3b794950ccf7e3065011f1d625477e91326b16b092a1590941ac87c981",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T13:00:10.835Z"
+}

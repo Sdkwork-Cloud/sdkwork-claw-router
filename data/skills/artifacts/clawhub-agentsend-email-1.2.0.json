@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentsend-email@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentsend_email",
+  "skill": {
+    "id": 24451,
+    "skillKey": "clawhub-agentsend-email",
+    "name": "AgentSend Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentsend-email",
+    "url": "https://clawhub.ai/skills/agentsend-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentsend-email-e975adb1994fcdaa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your OpenClaw agent its own email inbox. Use AgentSend to create inboxes, send and receive email, inspect threads, and register webhooks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luv005",
+      "userId": "s17f3nchtkpmam3c9yvzx6b9n98590vt",
+      "displayName": "luv005",
+      "image": "https://avatars.githubusercontent.com/u/179096862?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1776773127405,
+      "changelog": "Align OpenClaw metadata with ClawHub install flow and document sandbox auto-provisioning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0db1c9b76a7c43344e899dbb28f8d7edee3975a15e0f86f12596e19ccd761b70"
+}

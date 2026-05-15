@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29360,
+  "uuid": "skill-clawhub-doc-to-html",
+  "skillKey": "clawhub-doc-to-html",
+  "name": "Doc To HTML",
+  "summary": "Convert Word documents (.doc, .docx) to HTML using MinerU's document processing engine. Produces clean HTML output preserving document structure and formatti...",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_to_html",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mzlzyCA",
+      "features": [
+        "Convert Word documents (.doc, .docx) to HTML using MinerU's document processing engine",
+        "Produces clean HTML output preserving document structure and formatti..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doc-to-html@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87289074?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doc-to-html",
+      "url": "https://clawhub.ai/skills/doc-to-html"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-to-html",
+    "url": "https://clawhub.ai/skills/doc-to-html",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-to-html-507a105f7b3cee24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doc-to-html@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doc-to-html-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d1af56d354526c0a07d85de703edc427b94053893b1c884f36842f854f5b84f",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:58:04.516Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60993,
+  "uuid": "skill-clawhub-baidu-map-jsapi-ui-kit",
+  "skillKey": "clawhub-baidu-map-jsapi-ui-kit",
+  "name": "Baidu Map JSAPI UI Kit（百度地图官方 JSAPI UI-Kit SKills）",
+  "summary": "百度地图官方 UI 交互组件，提供地点自动补全（PlaceAutocomplete）、地点检索（PlaceSearch）、地点详情（PlaceDetail）和路径规划（RoutePlan）组件的使用参考，快速实现地图界面，大幅提升开发效率。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_map_jsapi_ui_kit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baidu-maps",
+      "features": [
+        "百度地图官方 UI 交互组件，提供地点自动补全（PlaceAutocomplete）、地点检索（PlaceSearch）、地点详情（PlaceDetail）和路径规划（RoutePlan）组."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-map-jsapi-ui-kit@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268489846?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-map-jsapi-ui-kit",
+      "url": "https://clawhub.ai/skills/baidu-map-jsapi-ui-kit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-map-jsapi-ui-kit",
+    "url": "https://clawhub.ai/skills/baidu-map-jsapi-ui-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-map-jsapi-ui-kit-d33df9710fa01a39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-map-jsapi-ui-kit@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-map-jsapi-ui-kit-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f79800fb6b52634d557dc6bc56979637224decc827d687822d172bd72d33bf7d",
+      "artifactSizeBytes": 2406
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T06:36:13.365Z"
+}

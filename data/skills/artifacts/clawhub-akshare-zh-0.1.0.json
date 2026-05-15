@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/akshare-zh@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.akshare_zh",
+  "skill": {
+    "id": 14453,
+    "skillKey": "clawhub-akshare-zh",
+    "name": "Akshare Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "akshare-zh",
+    "url": "https://clawhub.ai/skills/akshare-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/akshare-zh-17d82b8275aa91bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use AKShare Python library to access authoritative real-time and historical financial data for stocks, futures, options, funds, forex, bonds, and crypto mark..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anyjohn",
+      "userId": "publishers:anyjohn",
+      "displayName": "anyJohn",
+      "image": "https://avatars.githubusercontent.com/u/33611794?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1069,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773389588769,
+      "changelog": "Initial release of akshare-skill.\n\n- Provides a concise guide on using AKShare to access a wide range of financial data via Python.\n- Includes installation instructions and quick validation steps.\n- Lists available AKShare interfaces covering stocks, futures, options, bonds, macroeconomics, cryptocurrencies, and more.\n- Organizes API functions by data category with brief descriptions.\n- Serves as an introductory reference for users to explore and utilize AKShare’s capabilities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d08510e37477f72d1fd636bb88e63a70546028ba968449525680fd227c7ed76f"
+}

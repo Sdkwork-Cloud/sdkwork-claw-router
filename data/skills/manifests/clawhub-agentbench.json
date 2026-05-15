@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16837,
+  "uuid": "skill-clawhub-agentbench",
+  "skillKey": "clawhub-agentbench",
+  "name": "AgentBench",
+  "summary": "Benchmark your OpenClaw agent across 40 real-world tasks. Tests file creation, research, data analysis, multi-step workflows, memory, error handling, and too...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentbench",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Exe215",
+      "features": [
+        "Benchmark your OpenClaw agent across 40 real-world tasks",
+        "Tests file creation, research, data analysis, multi-step workflows, memory, error handling, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentbench@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23108591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentbench",
+      "url": "https://clawhub.ai/skills/agentbench"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentbench",
+    "url": "https://clawhub.ai/skills/agentbench",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentbench-012c41d3eb9b3a6c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentbench@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentbench-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3911e975c357d61c0650256cda368f8aa6c6bccc766c93aed55cf221d93a4367",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T15:05:33.635Z"
+}

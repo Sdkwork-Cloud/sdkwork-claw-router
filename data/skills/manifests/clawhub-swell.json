@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30170,
+  "uuid": "skill-clawhub-swell",
+  "skillKey": "clawhub-swell",
+  "name": "Swell",
+  "summary": "Swell integration. Manage Organizations, Pipelines, Users, Filters. Use when the user wants to interact with Swell data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swell",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Swell integration",
+        "Manage Organizations, Pipelines, Users, Filters",
+        "Use when the user wants to interact with Swell data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swell@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swell",
+      "url": "https://clawhub.ai/skills/swell"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swell",
+    "url": "https://clawhub.ai/skills/swell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swell-36603efb55eb1ebf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swell@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-swell-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1793f051a5f4808c59ecb0018ff0dae16653b3773d57c343f09a744f0849819c",
+      "artifactSizeBytes": 1806
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:49:23.496Z"
+}

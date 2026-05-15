@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12572,
+  "uuid": "skill-clawhub-abstract-toolkit",
+  "skillKey": "clawhub-abstract-toolkit",
+  "name": "Abstract Toolkit",
+  "summary": "Deploy smart contracts and bridge assets to Abstract (ZK Stack L2). Use when an agent needs to deploy contracts on Abstract, bridge ETH/tokens to Abstract, trade/swap tokens, check balances, transfer assets, or interact with Abstract mainn.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abstract_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Masoncags-tech",
+      "features": [
+        "Deploy smart contracts and bridge assets to Abstract (ZK Stack L2)",
+        "Use when an agent needs to deploy contracts on Abstract, bridge ETH/tokens to Abstract, trade/s.",
+        "Covers zksolc compilation, Hardhat deployment, Relay bridging, DEX trading, and key contract ad."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abstract-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257425459?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abstract-toolkit",
+      "url": "https://clawhub.ai/skills/abstract-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abstract-toolkit",
+    "url": "https://clawhub.ai/skills/abstract-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abstract-toolkit-ed91873b317cd288.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abstract-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-abstract-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5e73b4555d47fba1cf87db8403e7148d9244ce1cc21e59d0cf23170185d1056",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T04:20:41.426Z"
+}

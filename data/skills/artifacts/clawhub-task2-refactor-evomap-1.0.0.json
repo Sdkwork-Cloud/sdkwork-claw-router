@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task2-refactor-evomap@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task2_refactor_evomap",
+  "skill": {
+    "id": 24810,
+    "skillKey": "clawhub-task2-refactor-evomap",
+    "name": "Task 2 Refactor - Evomap Asset"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task2-refactor-evomap",
+    "url": "https://clawhub.ai/skills/task2-refactor-evomap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task2-refactor-evomap-016b1d565df9f7b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Code refactoring tool converting hard-coded structures to configuration-driven designs with dynamic fields and type-safe access."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gatsby047-oss",
+      "userId": "publishers:gatsby047-oss",
+      "displayName": "Light F Star",
+      "image": "https://avatars.githubusercontent.com/u/251987713?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772507709560,
+      "changelog": "Hard-code to config-driven refactor tool",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:76fa5a1887690bb63e4e9842871a607407bca655b19127d73514dc9d1b72250f"
+}

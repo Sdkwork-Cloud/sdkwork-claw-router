@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sky@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sky",
+  "skill": {
+    "id": 16169,
+    "skillKey": "clawhub-sky",
+    "name": "Sky - Email for AI Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sky",
+    "url": "https://clawhub.ai/skills/sky",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sky-05f514fae7ca5710.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides AI agents with @claw.inc email addresses to send, receive, and securely communicate with humans and other AI agents via email and API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "travisvz",
+      "userId": "publishers:travisvz",
+      "displayName": "travisvz",
+      "image": "https://avatars.githubusercontent.com/u/113365248?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 880,
+      "installsAllTime": 4,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770668895198,
+      "changelog": "Initial release: Email API,  signup bonus,  referral rewards, wallet support on Base",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c5594e99d9f15cbd15abfd5944d0b41938e4ca30cf95a064961b60b9feb8d6d3"
+}

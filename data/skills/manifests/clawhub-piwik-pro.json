@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32620,
+  "uuid": "skill-clawhub-piwik-pro",
+  "skillKey": "clawhub-piwik-pro",
+  "name": "Piwik Pro",
+  "summary": "Piwik Pro integration. Manage data, records, and automate workflows. Use when the user wants to interact with Piwik Pro data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.piwik_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Piwik Pro integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Piwik Pro data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/piwik-pro@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "piwik-pro",
+      "url": "https://clawhub.ai/skills/piwik-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "piwik-pro",
+    "url": "https://clawhub.ai/skills/piwik-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/piwik-pro-de352e53f505a937.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/piwik-pro@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-piwik-pro-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5e0bfbb82e2ac40464c815a95f4e0f1e960497c2ee677de9656ab758fcbb305",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:24:37.952Z"
+}

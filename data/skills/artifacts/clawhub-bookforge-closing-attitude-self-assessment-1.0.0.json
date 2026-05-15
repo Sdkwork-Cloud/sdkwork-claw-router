@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-closing-attitude-self-assessment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_closing_attitude_self_assessment",
+  "skill": {
+    "id": 52180,
+    "skillKey": "clawhub-bookforge-closing-attitude-self-assessment",
+    "name": "Closing Attitude Self Assessment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-closing-attitude-self-assessment",
+    "url": "https://clawhub.ai/skills/bookforge-closing-attitude-self-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-closing-attitude-self-assessment-871bd4c31ff29a7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Administer and score the Closing-Attitude Scale — a 15-item validated psychometric from SPIN Selling research. Use when a salesperson wants to evaluate wheth..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776765764389,
+      "changelog": "- Initial release of the Closing-Attitude Self-Assessment skill based on the SPIN Selling 15-item validated psychometric scale.\n- Interactively administers all 15 official scale items and calculates a total closing-attitude score (15–75).\n- Collects specific selling context (deal value, buyer sophistication, post-sale relationship) to interpret results accurately.\n- Delivers a written assessment and tailored remediation guidance when the user's closing attitude is mismatched to their sales context.\n- Supports discovery by answering queries like “evaluate my closing attitude,” “should I close harder,” and “am I closing too aggressively.”",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c464005f7af6db53ec137b19ace35259c11c275a1a802e44ac86e11031890fd"
+}

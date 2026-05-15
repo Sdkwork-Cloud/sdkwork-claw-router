@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-search-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_search_engine",
+  "skill": {
+    "id": 25205,
+    "skillKey": "clawhub-web-search-engine",
+    "name": "web-search-engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-search-engine",
+    "url": "https://clawhub.ai/skills/web-search-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-search-engine-a040aa3eded77658.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Retrieve search results from web search engines."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lwq057",
+      "userId": "s17911ybagm82pj9tvz2g7478h83m1f5",
+      "displayName": "小祺先生",
+      "image": "https://avatars.githubusercontent.com/u/31727301?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774535855575,
+      "changelog": "Initial release of web-search-engine skill.\n\n- Retrieve search results using multiple web search engines (Baidu, 360, Bing, Sogou).\n- Supports searches via Node.js script with customizable engine selection.\n- Returns JSON-serialized arrays of search results.\n- Enables simultaneous multi-engine searches for efficiency.\n- Designed for lightweight operation and token-saving.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a6268057dc3e2a2d6c91257dfbec7a0114f59aa2c96ab48f3261260e6cd7bc5"
+}

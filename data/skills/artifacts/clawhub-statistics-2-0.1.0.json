@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/statistics-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.statistics_2",
+  "skill": {
+    "id": 16380,
+    "skillKey": "clawhub-statistics-2",
+    "name": "Pywayne Statistics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "statistics-2",
+    "url": "https://clawhub.ai/skills/statistics-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/statistics-2-f39163a3c1a1d482.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive statistical testing library with 37+ methods for normality tests, location tests, correlation tests, time series tests, and model diagnostics...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangyendt",
+      "userId": "publishers:wangyendt",
+      "displayName": "wangyendt",
+      "image": "https://avatars.githubusercontent.com/u/18455758?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 883,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771259011974,
+      "changelog": "Initial release of pywayne-statistics.\n\n- Introduces a unified statistical testing library supporting 37+ tests across normality, location, correlation, time series, and model diagnostics.\n- All test methods return standardized TestResult objects with fields for p-value, statistic, confidence interval, effect size, and more.\n- Provides easy-to-use API classes: NormalityTests, LocationTests, CorrelationTests, TimeSeriesTests, and ModelDiagnostics.\n- Includes utility functions to list available tests and display usage instructions.\n- Offers method selection guides and examples for fast onboarding.\n- Supports multiple testing correction guidance and a consistent interface for hypothesis testing and data validation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cc8918508b8d1d6b49ad90ccf59453fa9326cd5838f20767196a0eed429d9710"
+}

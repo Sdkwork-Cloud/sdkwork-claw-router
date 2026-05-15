@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meitu-beauty@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meitu_beauty",
+  "skill": {
+    "id": 65082,
+    "skillKey": "clawhub-meitu-beauty",
+    "name": "Meitu Beauty"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meitu-beauty",
+    "url": "https://clawhub.ai/skills/meitu-beauty",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meitu-beauty-008ec6722a694ab3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对人像照片进行 AI 美颜处理（磨皮、美白、精修五官）。当用户提到美颜、磨皮、美白、精修、beautify、beauty enhance、让照片更好看时触发。仅支持单人照片。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meitu",
+      "userId": "s172p5qvrgas7cdjrj2jbw28mx83hxmx",
+      "displayName": "Meitu",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 394,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775309710875,
+      "changelog": "Version 1.1.0 introduces a comprehensive AI-powered portrait beautification workflow, supporting single-person photos only.\n\n- Added detailed workflow for input validation, preflight checks, command execution, and output delivery.\n- Strong input checks: only allows images with exactly one clear face, alerts users on errors or quality issues.\n- Two beautify strength modes: natural and enhanced, mapped to user intent.\n- Improved error handling and fallback strategies for common CLI errors and user input problems.\n- Automatic output directory resolution and standardized output file naming.\n- Clear dependency and credential requirements for setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7825cfdd1e19d6511bae115993b7c9ff04e87022076f07ea6a694480fc502252"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skills-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_builder",
+  "skill": {
+    "id": 21723,
+    "skillKey": "clawhub-skills-builder",
+    "name": "Skills Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-builder",
+    "url": "https://clawhub.ai/skills/skills-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-builder-f720bf7ae59eac96.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps non-technical users create their own Skills through natural conversation. Triggers when users say \"I want to create a Skill\", \"turn this workflow into..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shuita666",
+      "userId": "publishers:shuita666",
+      "displayName": "shuita666",
+      "image": "https://avatars.githubusercontent.com/u/184085282?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 380,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772680738160,
+      "changelog": "Initial release — skill-builder 1.0.0\n\n- Guides non-technical users through creating custom Skills via natural conversation.\n- Uses step-by-step questions and real-life examples to draw out user needs without jargon.\n- Automatically generates a ready-to-use SKILL.md, summarizing agreed rules and output format.\n- Includes safeguards for quality by silently checking each Skill against a bundled checklist before delivery.\n- Offers users a simple method to test their new Skills after installation, with clear, non-technical guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:19830bfa3feebbd698fe1fbb54db47a34cc36381e24f844a68c5d0d4f200cb38"
+}

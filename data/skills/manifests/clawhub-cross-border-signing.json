@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43813,
+  "uuid": "skill-clawhub-cross-border-signing",
+  "skillKey": "clawhub-cross-border-signing",
+  "name": "Cross-Border Signing",
+  "summary": "Help users plan a cross-border electronic signing workflow with Nota Sign. Use when someone needs cross-border signing, international agreement setup, signin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_border_signing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "notasign",
+      "features": [
+        "Help users plan a cross-border electronic signing workflow with Nota Sign",
+        "Use when someone needs cross-border signing, international agreement setup, signin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cross-border-signing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268593162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cross-border-signing",
+      "url": "https://clawhub.ai/skills/cross-border-signing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-border-signing",
+    "url": "https://clawhub.ai/skills/cross-border-signing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-border-signing-568671902eb9a0d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cross-border-signing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cross-border-signing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80c75b3d3026c586701167a603c778ddae9cf4f1a270b84d4565903864c73bb2",
+      "artifactSizeBytes": 2477
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T10:15:37.770Z"
+}

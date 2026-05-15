@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47035,
+  "uuid": "skill-clawhub-pharmaceuticals-exploration",
+  "skillKey": "clawhub-pharmaceuticals-exploration",
+  "name": "Pharmaceuticals Exploration",
+  "summary": "Used for answering drug-related questions. For early-stage drugs, search and summarize related patents, academic literature, database records, clinical trial...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pharmaceuticals_exploration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XK",
+      "features": [
+        "Used for answering drug-related questions",
+        "For early-stage drugs, search and summarize related patents, academic literature, database reco."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pharmaceuticals-exploration@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/275897758?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pharmaceuticals-exploration",
+      "url": "https://clawhub.ai/skills/pharmaceuticals-exploration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pharmaceuticals-exploration",
+    "url": "https://clawhub.ai/skills/pharmaceuticals-exploration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pharmaceuticals-exploration-22198c417b547410.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pharmaceuticals-exploration@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pharmaceuticals-exploration-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3294b0c31fe78b64e5af782ffbfb5097908dce4d2b084eabdf989263ffcd4e84",
+      "artifactSizeBytes": 2317
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T09:16:48.058Z"
+}

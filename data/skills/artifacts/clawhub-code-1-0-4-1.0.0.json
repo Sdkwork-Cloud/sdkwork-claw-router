@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-1-0-4@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_1_0_4",
+  "skill": {
+    "id": 10815,
+    "skillKey": "clawhub-code-1-0-4",
+    "name": "Code 1.0.4"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-1-0-4",
+    "url": "https://clawhub.ai/skills/code-1-0-4",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-1-0-4-6a7282d16b81c783.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coding workflow with planning, implementation, verification, and testing for clean software development."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lion504",
+      "userId": "publishers:lion504",
+      "displayName": "Lion504",
+      "image": "https://avatars.githubusercontent.com/u/178696698?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2067,
+      "installsAllTime": 38,
+      "installsCurrent": 37,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771971266913,
+      "changelog": "- Improved the SKILL.md description for better discoverability.\n- No changes to code execution behavior or workflow – guidance only, as before.\n- All user preferences remain stored only on explicit request. \n- No new endpoints or permissions added.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ce669ee689cf26690d5026559797cefd2c04a8b70a37974f280086778aae7e40"
+}

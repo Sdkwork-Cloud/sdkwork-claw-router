@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-local-storage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_local_storage",
+  "skill": {
+    "id": 65919,
+    "skillKey": "clawhub-openclaw-local-storage",
+    "name": "Openclaw Local Storage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-local-storage",
+    "url": "https://clawhub.ai/skills/openclaw-local-storage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-local-storage-28fc70b0d8f9d1ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用Node.js实现本地文件存储数据，支持增删改查功能。第一次使用时自动分析数据字段，之后可通过一句话命令进行操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anbangzhiguo",
+      "userId": "s1754kmvcw51w5by5c7ehx1v7s84d5s1",
+      "displayName": "周小虎",
+      "image": "https://avatars.githubusercontent.com/u/7563965?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777003681350,
+      "changelog": "openclaw-local-storage v1.0.0\n\n- 实现基于Node.js的本地JSON文件数据存储，无需外部数据库。\n- 首次使用自动分析并定义数据字段结构。\n- 支持通过自然语言一句话命令完成数据的添加、查询、修改和删除操作。\n- 操作对象和字段内容可定制，适用于多种类型的数据管理场景。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8bd63e73c24c8045e44927b6a8d314764b525a7dd02d4ced3cea23b07eff4b4"
+}

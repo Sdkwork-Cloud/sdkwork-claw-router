@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chatmask@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chatmask",
+  "skill": {
+    "id": 24944,
+    "skillKey": "clawhub-chatmask",
+    "name": "ChatMask"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chatmask",
+    "url": "https://clawhub.ai/skills/chatmask",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chatmask-140682d137a25a1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pixelate chat/messaging app screenshots (WeChat, WhatsApp, Telegram, iMessage, Slack, Discord, etc.) to hide chat name, profile pics, and/or display names. U..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "frankz2020",
+      "userId": "s1769n0k86pktedt4t975sa0tn83yckh",
+      "displayName": "frankz2020",
+      "image": "https://avatars.githubusercontent.com/u/85169409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1773915892698,
+      "changelog": "## [1.1.1] — 2026-03-19\n\n### Added\n- `--bbox-json` flag on `process.py`: accepts pre-computed bounding-box JSON (or `-` for stdin), bypassing the vision API entirely. No `OPENROUTER_API_KEY` is required when this flag is used. Input directory must contain exactly one image per invocation.\n- OpenClaw skill (`SKILL.md`) now uses the agent's own built-in AI for image analysis instead of routing through OpenRouter — zero credentials required, zero runtime network calls.\n- `metadata` frontmatter in `SKILL.md`: explicit `requires.bins` gates (`python3`, `git`) and `homepage` link so OpenClaw can surface and gate the skill correctly.\n- `requirements-standalone.txt`: separates the `requests` package (only needed for standalone/OpenRouter mode) from the skill-mode install, so the skill setup installs the minimum possible footprint.\n\n### Changed\n- `SKILL.md` workflow restructured for correctness: each image is now analysed and pixelated in its own isolated invocation (separate `$IN_DIR` per image). Previously a single `process.py` call covered all images with one shared bounding-box dict, which would silently apply one image's coordinates to all others.\n- `process.py` enforces the single-image constraint when `--bbox-json` is supplied: exits with a clear error if more than one image is found in the input directory.\n- `vision.py`: replaced bare `assert` on missing API key with a `ValueError` whose message explicitly identifies the standalone-only context and points OpenClaw users to `--bbox-json`.\n- `dotenv` and `vision` imports are now lazy (loaded only in the standalone code path), so `process.py` has zero module-level side-effects and passes ruff E402.\n- Removed three spurious `f`-string prefixes (ruff F541).\n- Removed `OpenRouter` badge from README header; updated Features table, How It Works diagrams, Requirements, Installation, Usage, Configuration, and module descriptions to accurately reflect both operating modes.\n- Dependency versions in `requirements.txt` pinned exactly (`Pillow==11.2.1`, `python-dotenv==1.2.2`) — previously `>=` floor bounds allowed silent upgrades to unreviewed versions.\n\n### Security\n- Eliminated credential prompt and `.env` write from the OpenClaw skill Setup block. No secret is ever requested, stored on disk, or written by the skill.\n- Narrowed inbound file copy from a wildcard glob (`*.{png,jpg,jpeg}`) to explicit per-image copy, limiting file-system access to only the files the user sent.\n- Skill Setup now executes `git checkout <sha>` after cloning, enforcing the pinned audited commit (`62b0d1132e8cad8455ef29f74a98da486ff102d4`). Previously the SHA was documented in a comment but never actually checked out, so installs silently tracked the branch tip.\n- Replaced all remaining `assert` statements in `process.py` with explicit `ValueError` / `sys.exit(1)` calls. `assert` can be silenced by running Python with `-O`, which would have bypassed input validation in `_parse_elements()`, `_parse_json_response()`, and the input-directory existence check.\n- Removed `requests` from `requirements.txt` (skill-mode install). The package is only used by `vision.py` in standalone mode and had no purpose in skill operation; its presence in the install unnecessarily added a network-capable dependency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c616b928ca70341c9126af6f95496c3bb0c1a86d33d8fd65ed06b82091e34d7"
+}

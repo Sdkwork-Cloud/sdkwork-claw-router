@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/supabase-api@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supabase_api",
+  "skill": {
+    "id": 21565,
+    "skillKey": "clawhub-supabase-api",
+    "name": "Supabase"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supabase-api",
+    "url": "https://clawhub.ai/skills/supabase-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supabase-api-afc84f3bb275768a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Supabase API integration with managed authentication. Access database tables via PostgREST, manage auth users, and handle storage buckets. Use this skill whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 406,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777583555544,
+      "changelog": "**Major endpoint and URL changes for improved API stability and security:**\n\n- All gateway URLs updated from `gateway.maton.ai` and `ctrl.maton.ai` to unified `api.maton.ai`.\n- Only documented endpoints in the API Reference section are now supported.\n- Added a dedicated Security & Permissions section: all write operations (POST, PATCH, DELETE) require explicit user approval, and warnings about affecting production data.\n- Clarified connection selection guidance when using multiple Supabase projects.\n- Removed sample LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20b5ac4dbe1a2ea460402fce84300499e07b5bc38866fff09fba3106b0512ac1"
+}

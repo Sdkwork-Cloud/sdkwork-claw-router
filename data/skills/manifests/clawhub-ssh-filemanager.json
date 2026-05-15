@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45788,
+  "uuid": "skill-clawhub-ssh-filemanager",
+  "skillKey": "clawhub-ssh-filemanager",
+  "name": "ssh_file_manager",
+  "summary": "Manage files on remote machines over Tailscale SSH (Tailnet). Use this skill when the user needs to list, read, write, delete, move, copy, search, chmod, pus...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssh_filemanager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XEON0v0",
+      "features": [
+        "Manage files on remote machines over Tailscale SSH (Tailnet)",
+        "Use this skill when the user needs to list, read, write, delete, move, copy, search, chmod, pus."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssh-filemanager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198232570?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssh-filemanager",
+      "url": "https://clawhub.ai/skills/ssh-filemanager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssh-filemanager",
+    "url": "https://clawhub.ai/skills/ssh-filemanager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssh-filemanager-2849dae9cc326f49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssh-filemanager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssh-filemanager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b23c3aab124ef1987596069555fde8d13ca34e1890976484fc4c4b01dcaa7123",
+      "artifactSizeBytes": 2514
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:18:17.766Z"
+}

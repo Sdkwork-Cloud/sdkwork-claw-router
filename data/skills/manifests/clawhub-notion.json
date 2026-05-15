@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8208,
+  "uuid": "skill-clawhub-notion",
+  "skillKey": "clawhub-notion",
+  "name": "Notion",
+  "summary": "Notion API for creating and managing pages, databases, and blocks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peter Steinberger",
+      "features": [
+        "Notion API for creating and managing pages, databases, and blocks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notion",
+      "url": "https://clawhub.ai/skills/notion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion",
+    "url": "https://clawhub.ai/skills/notion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-31f61ed3e6e210c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54130b681312c343f48505070650441521092e88546a64d4251e5a85e3c3412d",
+      "artifactSizeBytes": 1732
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-04T16:49:20.889Z"
+}

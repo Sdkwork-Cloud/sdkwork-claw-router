@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ubuntu-wsl-system-cleanup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ubuntu_wsl_system_cleanup",
+  "skill": {
+    "id": 38834,
+    "skillKey": "clawhub-ubuntu-wsl-system-cleanup",
+    "name": "Ubuntu WSL System Cleanup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ubuntu-wsl-system-cleanup",
+    "url": "https://clawhub.ai/skills/ubuntu-wsl-system-cleanup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ubuntu-wsl-system-cleanup-6529205fc9f4e5af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit and safely clean Ubuntu 24.04 system junk, caches, logs, temp files, and unused local tool artifacts outside /mnt. Use when the user asks to clean the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenzheke",
+      "userId": "s172n57g0qq11eqe9wqfckfcsd83pwag",
+      "displayName": "shenzheke",
+      "image": "https://avatars.githubusercontent.com/u/3626262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775471770112,
+      "changelog": "Initial release: safe Ubuntu/WSL cleanup, cache/log cleanup, and second-round orphaned-tool residue detection guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a1329da61972468925b32be38ba624bb272c03a95deb077bb926d673c7a80d0"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69533,
+  "uuid": "skill-clawhub-lann-booking",
+  "skillKey": "clawhub-lann-booking",
+  "name": "蘭(Lann)泰式按摩预约技能",
+  "summary": "提供蘭泰式按摩（Lann Thai Massage）的门店查询、SPA服务查询和在线预约功能。支持泰式古法按摩、精油护理、草本热敷等专业服务预约，覆盖上海、杭州、成都等多城市门店。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lann_booking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lystrosaurus",
+      "features": [
+        "提供蘭泰式按摩（Lann Thai Massage）的门店查询、SPA服务查询和在线预约功能。支持泰式古法按摩、精油护理、草本热敷等专业服务预约，覆盖上海、杭州、成都等多城市门店。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lann-booking@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3240489?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lann-booking",
+      "url": "https://clawhub.ai/skills/lann-booking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lann-booking",
+    "url": "https://clawhub.ai/skills/lann-booking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lann-booking-a6815b57ce781001.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lann-booking@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-lann-booking-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d16bbc522be5235ab906dbf332449ebcd722c3e9cfe869f9597a649dd7389ad1",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T03:23:03.440Z"
+}

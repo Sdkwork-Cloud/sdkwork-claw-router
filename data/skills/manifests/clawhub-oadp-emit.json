@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22037,
+  "uuid": "skill-clawhub-oadp-emit",
+  "skillKey": "clawhub-oadp-emit",
+  "name": "OADP Emit",
+  "summary": "Emit OADP discovery signals from your agent's workspace so other agents can find you. Adds markers to your files, configures .well-known endpoints, and joins...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oadp_emit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FLY",
+      "features": [
+        "Emit OADP discovery signals from your agent's workspace so other agents can find you",
+        "Adds markers to your files, configures .well-known endpoints, and joins..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oadp-emit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258594521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oadp-emit",
+      "url": "https://clawhub.ai/skills/oadp-emit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oadp-emit",
+    "url": "https://clawhub.ai/skills/oadp-emit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oadp-emit-d3ee00e001a73fff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oadp-emit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oadp-emit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5bba7c33fe80ac6f4a72dcb109dd5346771ae228811e22ebe246613ac0b7edb3",
+      "artifactSizeBytes": 2232
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T16:37:03.222Z"
+}

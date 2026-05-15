@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flyai-vacation-planner@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyai_vacation_planner",
+  "skill": {
+    "id": 72622,
+    "skillKey": "clawhub-flyai-vacation-planner",
+    "name": "帮我凑假"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyai-vacation-planner",
+    "url": "https://clawhub.ai/skills/flyai-vacation-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyai-vacation-planner-9e8b183e33546d1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能拼假日历助手，帮助用户计算最优请假方案。输入目的地、可请假天数和出发城市，自动生成拼假方案并查询机票价格。当用户提到\"凑假\"、\"拼假\"、\"请假方案\"、\"怎么请假划算\"、\"假期规划\"时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hello-ahang",
+      "userId": "s173amcatjt4szds3pjwe405r584382h",
+      "displayName": "hello_hang",
+      "image": "https://avatars.githubusercontent.com/u/19886468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775237209520,
+      "changelog": "Version 1.0.1 Changelog\n\n- 初步引入 reference 目录，新增12份详细命令及规则文档（如机票、酒店、签证、用户画像等）。\n- 拼假助手主流程整理为分步操作，明确每步用到的能力和命令调用方法。\n- 引入“用户画像双模式”方案，支持调用 search_memory/本地文件混合存储用户偏好。\n- 安装 FlyAI CLI 流程优化为统一幂等升级命令，无需手动判断已装状态。\n- 支持签证规则/目的地等信息动态查阅与提示，流程可扩展性更强。\n- 详细补充标准输出格式、推荐标签以及方案后续引导。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:282b4c84747bd6006bb01b0204b0c1660b8222ce0cbe9ce87e195bbebc707b91"
+}

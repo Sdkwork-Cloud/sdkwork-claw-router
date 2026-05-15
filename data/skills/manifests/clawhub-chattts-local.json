@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63941,
+  "uuid": "skill-clawhub-chattts-local",
+  "skillKey": "clawhub-chattts-local",
+  "name": "chattts_local",
+  "summary": "本地 ChatTTS 语音合成技能。使用 ChatTTS 模型将文字转换为自然流畅的中文语音。完全本地运行，免费无需 API Key。支持调节语速、音调、情感。使用场景：(1) QQ 消息语音回复 (2) 文档朗读 (3) 通知提醒语音化 (4) 长文本转语音",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chattts_local",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wodecanyun66-spec",
+      "features": [
+        "本地 ChatTTS 语音合成技能。使用 ChatTTS 模型将文字转换为自然流畅的中文语音。完全本地运行，免费无需 API Key。支持调节语速、音调、情感。使用场景：(1) QQ 消息语."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chattts-local@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267828386?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chattts-local",
+      "url": "https://clawhub.ai/skills/chattts-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chattts-local",
+    "url": "https://clawhub.ai/skills/chattts-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chattts-local-6f08babdb1ea0bf8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chattts-local@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chattts-local-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9abcb9e74a8ddadaa622be89146fa12d89f6a1a9b437d61ba2d70bd8e2392d1",
+      "artifactSizeBytes": 2656
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T05:28:17.317Z"
+}

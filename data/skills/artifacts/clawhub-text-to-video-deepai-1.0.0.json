@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-deepai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_deepai",
+  "skill": {
+    "id": 45912,
+    "skillKey": "clawhub-text-to-video-deepai",
+    "name": "Text To Video Deepai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-deepai",
+    "url": "https://clawhub.ai/skills/text-to-video-deepai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-deepai-5aa5baee5706b2b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a two-sentence description of a sunset over a mountain lake into 720p AI generated video just by typing what you need. Whether it's generating short vid..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776920968484,
+      "changelog": "- Initial release of Text to Video DeepAI — generate 720p AI videos from short text prompts in minutes.\n- Automatic setup: supports both NEMO_TOKEN and free token via anonymous registration.\n- Simple workflows: send a text prompt, get a download link when ready; no need for manual exports or complex timeline editing.\n- Supports credit management, video uploads, real-time session tracking, and batch processing.\n- Error handling and tips included for smooth video creation and export.\n- Multiple output formats supported: mp4, mov, avi, webm, mkv, jpg, png, gif, webp, mp3, wav, m4a, aac.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4ffe27831daff0de2497be991d459fc38e46ab0e6c7e5a7fb680ebd12224523"
+}

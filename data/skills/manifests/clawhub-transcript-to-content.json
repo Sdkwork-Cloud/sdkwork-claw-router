@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11083,
+  "uuid": "skill-clawhub-transcript-to-content",
+  "skillKey": "clawhub-transcript-to-content",
+  "name": "Transcript to Content",
+  "summary": "This skill transforms training and onboarding meeting transcripts into structured learning materials, documentation, and actionable review content. Use this skill when processing meeting transcripts from onboarding sessions, training meeti.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transcript_to_content",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TomsTools",
+      "features": [
+        "This skill transforms training and onboarding meeting transcripts into structured learning mate.",
+        "Use this skill when processing meeting transcripts from onboarding sessions, training meetings,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/transcript-to-content@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/167941621?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "transcript-to-content",
+      "url": "https://clawhub.ai/skills/transcript-to-content"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transcript-to-content",
+    "url": "https://clawhub.ai/skills/transcript-to-content",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transcript-to-content-377cb7b81b72f5d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/transcript-to-content@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-transcript-to-content-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e522dbd10d660e59b68277bfec5966d00edfe878042c308b58cb223978512fd5",
+      "artifactSizeBytes": 2581
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T20:03:15.412Z"
+}

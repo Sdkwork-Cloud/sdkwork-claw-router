@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-cache-kit@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_cache_kit",
+  "skill": {
+    "id": 18971,
+    "skillKey": "clawhub-openclaw-cache-kit",
+    "name": "Openclaw Cache Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-cache-kit",
+    "url": "https://clawhub.ai/skills/openclaw-cache-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-cache-kit-08cc955d2954cb39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically apply Claude prompt caching optimizations to OpenClaw. Reduces API costs by up to 89% via cacheRetention long, 59-minute heartbeat, cache-ttl p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lifeissea",
+      "userId": "s170g3z8qxdg1sz9j7s6tkffvn83s571",
+      "displayName": "Tomas",
+      "image": "https://avatars.githubusercontent.com/u/67946543?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 996,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1771978899420,
+      "changelog": "Auto-update 2026-02-25: maintenance & improvements",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3a3e19f72214486a5953e2459dc5c3542e0a408a4289996b296233fe44aa5926"
+}

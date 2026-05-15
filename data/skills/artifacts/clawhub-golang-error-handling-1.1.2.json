@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/golang-error-handling@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.golang_error_handling",
+  "skill": {
+    "id": 54935,
+    "skillKey": "clawhub-golang-error-handling",
+    "name": "Golang Error Handling"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "golang-error-handling",
+    "url": "https://clawhub.ai/skills/golang-error-handling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/golang-error-handling-827f478108b7c058.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Idiomatic Golang error handling — creation, wrapping with %w, errors.Is/As, errors.Join, custom error types, sentinel errors, panic/recover, the single handl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samber",
+      "userId": "s173arkhs3131fq5jf769qq75583hdgt",
+      "displayName": "Samuel Berthe",
+      "image": "https://avatars.githubusercontent.com/u/2951285?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1777504089105,
+      "changelog": "- Skill is now user-invocable (`user-invocable: true`).\n- Version updated to 1.1.2.\n- Added cross-reference to the `golang-continuous-integration` skill for AI-driven code review in CI.\n- No changes to core best practices or workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1d49d8bff25a2862ead7bbaae219a1cccd995e42895116e4096b961d3a71717c"
+}

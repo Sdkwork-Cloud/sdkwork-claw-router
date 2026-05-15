@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-launch-checklist@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_launch_checklist",
+  "skill": {
+    "id": 32277,
+    "skillKey": "clawhub-amazon-launch-checklist",
+    "name": "Amazon Launch Checklist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-launch-checklist",
+    "url": "https://clawhub.ai/skills/amazon-launch-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-launch-checklist-fb7795b10d5901d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon product launch audit agent. Scores listing completeness, keyword coverage, image quality requirements, pricing competitiveness, initial PPC structure,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773989422709,
+      "changelog": "amazon-launch-checklist v1.0.0\n\n- Initial release of Amazon product launch audit agent.\n- Performs automated readiness scoring for new Amazon listings across core launch components.\n- Provides detailed audits on keywords, images, pricing, PPC plan, and launch timeline.\n- Generates prioritized action lists, launch plans, and workspace organization per product.\n- Prevents launching incomplete listings by flagging blockers and readiness bands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89cc11ef518d331995beb7eaa579c09448d42e6d2c34e974c1c449c587f9e655"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-acquisition@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_acquisition",
+  "skill": {
+    "id": 41094,
+    "skillKey": "clawhub-auto-acquisition",
+    "name": "Auto Acquisition"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-acquisition",
+    "url": "https://clawhub.ai/skills/auto-acquisition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-acquisition-606f4ce4c70a3f71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Customer acquisition and marketing automation expert."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776301703063,
+      "changelog": "- Initial release of the auto-acquisition skill for customer acquisition and marketing automation.\n- Provides comprehensive workflows for developing strategies, analyzing markets, optimizing funnels, and managing channels.\n- Includes templates for campaign launching, funnel optimization, and lead nurturing.\n- Offers guidance on metrics, lead scoring, automation workflows, and core marketing tools.\n- Emphasizes a data-driven, full-funnel, and multi-channel approach to acquisition and growth.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d75f9973a2863b25702fbc8ac4e97e24b590db0e1345b6d00f0b45966b7a80ff"
+}

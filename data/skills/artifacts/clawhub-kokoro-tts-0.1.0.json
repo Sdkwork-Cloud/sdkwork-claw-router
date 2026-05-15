@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kokoro-tts@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kokoro_tts",
+  "skill": {
+    "id": 8823,
+    "skillKey": "clawhub-kokoro-tts",
+    "name": "Kokoro TTS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kokoro-tts",
+    "url": "https://clawhub.ai/skills/kokoro-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kokoro-tts-9227ae7386190fba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate spoken audio from text using the local Kokoro TTS engine. Use when the user asks to \"say\" something, requests a voice message, or wants text converted to speech."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edkief",
+      "userId": "publishers:edkief",
+      "displayName": "edkief",
+      "image": "https://avatars.githubusercontent.com/u/17440999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6389,
+      "installsAllTime": 35,
+      "installsCurrent": 34,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769905003380,
+      "changelog": "kokoro-tts 0.1.0\n\n- Initial release of the Kokoro TTS skill for generating speech audio from text.\n- Supports configuration via the KOKORO_API_URL environment variable.\n- Includes a Node.js script for generating audio files with customizable voice and speed.\n- Outputs MP3 file paths in a format compatible with OpenClaw for automatic audio attachment.\n- Provides several built-in voice options and instructions for listing all available voices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:40d438fb3c9bb11a5c08291eec925d4ded9188803800ed61f479b4ba592a97bc"
+}

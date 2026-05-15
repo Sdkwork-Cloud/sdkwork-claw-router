@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21670,
+  "uuid": "skill-clawhub-surgical-contributor",
+  "skillKey": "clawhub-surgical-contributor",
+  "name": "Surgical Contributor (Minimal Diff PR Skill)",
+  "summary": "Deliver small, high-signal contributions by finding and fixing one real pain point with the narrowest safe change, adding regression protection, and writing...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.surgical_contributor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andy Arijs",
+      "features": [
+        "Deliver small, high-signal contributions by finding and fixing one real pain point with the nar."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/surgical-contributor@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78924184?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "surgical-contributor",
+      "url": "https://clawhub.ai/skills/surgical-contributor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "surgical-contributor",
+    "url": "https://clawhub.ai/skills/surgical-contributor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/surgical-contributor-9e937d9707e03dce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/surgical-contributor@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-surgical-contributor-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9598ff08da7218dc0afef2cd7c5c3c3b6bba443e8b7ebcb4389212ac74bfe4a",
+      "artifactSizeBytes": 2535
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T20:51:31.195Z"
+}

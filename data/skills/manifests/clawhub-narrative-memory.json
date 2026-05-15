@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71556,
+  "uuid": "skill-clawhub-narrative-memory",
+  "skillKey": "clawhub-narrative-memory",
+  "name": "Narrative Memory",
+  "summary": "叙事记忆系统v2：捕捉生命中有意义的时刻，编织成连贯的个人叙事。三层过滤确保记忆精华，支持模式识别和决策反思。触发条件：里程碑事件、关键决策、价值判断、情感转折、首次体验、深度反思。",
+  "version": "0.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.narrative_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Louis Z.",
+      "features": [
+        "叙事记忆系统v2：捕捉生命中有意义的时刻，编织成连贯的个人叙事。三层过滤确保记忆精华，支持模式识别和决策反思。触发条件：里程碑事件、关键决策、价值判断、情感转折、首次体验、深度反思。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/narrative-memory@0.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58058619?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "narrative-memory",
+      "url": "https://clawhub.ai/skills/narrative-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "narrative-memory",
+    "url": "https://clawhub.ai/skills/narrative-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/narrative-memory-84c8d7b3659cd5df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/narrative-memory@0.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-narrative-memory-0.6.0.json",
+      "version": "0.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9e4136eb79368525d926a599753fa96c2db178ef9ad3e6bb3b772f247aa84c8",
+      "artifactSizeBytes": 2114
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T05:52:07.164Z"
+}

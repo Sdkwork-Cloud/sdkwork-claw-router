@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nbj-ob1-agent-memory-openclaw@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nbj_ob1_agent_memory_openclaw",
+  "skill": {
+    "id": 46346,
+    "skillKey": "clawhub-nbj-ob1-agent-memory-openclaw",
+    "name": "NBJ OB1 Agent Memory for OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nbj-ob1-agent-memory-openclaw",
+    "url": "https://clawhub.ai/skills/nbj-ob1-agent-memory-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nbj-ob1-agent-memory-openclaw-a6a6c1fc4bcd2f46.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Nate Jones OB1 Agent Memory from OpenClaw with provenance, scope, review, and use-policy discipline."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "natebjones",
+      "userId": "s170zpw6s4czr5vmmx27v4y76986350t",
+      "displayName": "Nate Jones",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777873561195,
+      "changelog": "- Initial release of nbj-ob1-agent-memory-openclaw skill.\n- Enables OpenClaw tasks to interact with NBJ OB1 Agent Memory for recall and write-back, following provenance, scope, review, and use-policy discipline.\n- Provides detailed guidelines for task-specific memory recall and concise, labeled memory write-back.\n- Integrates memory usage reporting to support debugging and accountability.\n- Includes specialized modes for code review and TaskFlow work logging.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3147a5f145c0325614db6687d68ee486af8b559f7aa2bb8697252f39bd1f6726"
+}

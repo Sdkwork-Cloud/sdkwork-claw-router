@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-server-setup-kit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_server_setup_kit",
+  "skill": {
+    "id": 25793,
+    "skillKey": "clawhub-mcp-server-setup-kit",
+    "name": "MCP Server Setup Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-server-setup-kit",
+    "url": "https://clawhub.ai/skills/mcp-server-setup-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-server-setup-kit-b7c79932f86e0f9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guides you step-by-step to quickly connect Claude to Notion, Linear, Slack, and GitHub using a tested MCP server setup protocol with config templates and tes..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flynndavid",
+      "userId": "publishers:flynndavid",
+      "displayName": "flynndavid",
+      "image": "https://avatars.githubusercontent.com/u/11565009?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 380,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772923363070,
+      "changelog": "mcp-server-setup-kit 1.0.0 – Initial Release\n\n- Launches the 5-Minute Connect Protocol to streamline MCP server connections with Claude.\n- Step-by-step structured workflow for integrating Notion, Linear, Slack, and GitHub.\n- Provides pre-built, copy-paste config templates for all four tools, plus a unified multi-tool stack template.\n- Includes readiness checklists, troubleshooting decision tree, and scoring rubric for setup validation.\n- Designed to reduce setup friction and ensure reliable agent workflows in under 5 minutes per tool.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1a48004acada05215b28f858efd6181d5ca6fa1cc6c8a74c7905a66443232f3d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/football-value-bets@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.football_value_bets",
+  "skill": {
+    "id": 15074,
+    "skillKey": "clawhub-football-value-bets",
+    "name": "football-value-bets"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "football-value-bets",
+    "url": "https://clawhub.ai/skills/football-value-bets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/football-value-bets-9a52b1521f099363.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional football bet analysis skill. Generates data-driven bet slips based on form, H2H, standings, injuries and value analysis. Includes result trackin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nandichi",
+      "userId": "publishers:nandichi",
+      "displayName": "Naoufal Andichi",
+      "image": "https://avatars.githubusercontent.com/u/89518229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1075,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771193480694,
+      "changelog": "- Initial release of football-value-bets skill.\n- Generates professional football bet slips using data-driven analysis (form, H2H, standings, injuries, value).\n- Tracks bet results with hitrate and ROI; provides statistics and bet history.\n- Strict criteria for pick selection, slip generation, and responsible gambling limits.\n- Honest output: only generates bet slips when real value is found.\n- Activation on user requests for football bets, accumulators, tips, or match analysis.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6fb2ae211262a3ddbb6791e7a71c1cde1c6d526ef3bffb11b22227807fbfb00a"
+}

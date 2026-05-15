@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30528,
+  "uuid": "skill-clawhub-justoneapi-imdb",
+  "skillKey": "clawhub-justoneapi-imdb",
+  "name": "IMDb API",
+  "summary": "Analyze IMDb workflows with JustOneAPI, including release Expectation, extended Details, and top Cast and Crew across 19 operations.",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_imdb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Analyze IMDb workflows with JustOneAPI, including release Expectation, extended Details, and to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-imdb@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-imdb",
+      "url": "https://clawhub.ai/skills/justoneapi-imdb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-imdb",
+    "url": "https://clawhub.ai/skills/justoneapi-imdb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-imdb-997f2ed79b8f043e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-imdb@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-imdb-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b61bada4eba12ed3d88cff11cb100a4664ee9b624f38d152ab48e24a2bf1a31b",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:07:29.131Z"
+}

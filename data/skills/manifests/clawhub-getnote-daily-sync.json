@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59748,
+  "uuid": "skill-clawhub-getnote-daily-sync",
+  "skillKey": "clawhub-getnote-daily-sync",
+  "name": "Getnote Daily Sync",
+  "summary": "每日自动将 Get笔记（biji.com）当天的录音笔记、会议记录、待办事项汇总后写入 Notion 数据库，生成结构化日报页面。 Use when user says \"同步今日 Get笔记\", \"生成今日日报\", \"把今天的笔记写到 Notion\", \"getnote daily sync\", or trig...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.getnote_daily_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "phoenixyy",
+      "features": [
+        "每日自动将 Get笔记（biji.com）当天的录音笔记、会议记录、待办事项汇总后写入 Notion 数据库，生成结构化日报页面。 Use when user says \"同步今日 Get笔."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/getnote-daily-sync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16120579?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "getnote-daily-sync",
+      "url": "https://clawhub.ai/skills/getnote-daily-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "getnote-daily-sync",
+    "url": "https://clawhub.ai/skills/getnote-daily-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/getnote-daily-sync-0fec9a22485fd4a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/getnote-daily-sync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-getnote-daily-sync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:652f7230845b0530586076512971f313335a76c4d85f6e0cb37f8930f64763f9",
+      "artifactSizeBytes": 2562
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T04:20:17.104Z"
+}

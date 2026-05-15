@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66890,
+  "uuid": "skill-clawhub-accounts-payable-agent",
+  "skillKey": "clawhub-accounts-payable-agent",
+  "name": "Accounts Payable Agent",
+  "summary": "自主支付处理专家，负责执行供应商付款、承包商发票和定期账单，支持加密货币、法币、稳定币等多种支付通道，通过 MCP 与 AI 智能体工作流集成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.accounts_payable_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hang",
+      "features": [
+        "自主支付处理专家，负责执行供应商付款、承包商发票和定期账单，支持加密货币、法币、稳定币等多种支付通道，通过 MCP 与 AI 智能体工作流集成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/accounts-payable-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20177249?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "accounts-payable-agent",
+      "url": "https://clawhub.ai/skills/accounts-payable-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "accounts-payable-agent",
+    "url": "https://clawhub.ai/skills/accounts-payable-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/accounts-payable-agent-d8d32eaca892571a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/accounts-payable-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-accounts-payable-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:085962d3e8148708fb4edf122b53869fc1421a8fe7989ebd62a8046e64a5cd4d",
+      "artifactSizeBytes": 2479
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T10:57:00.940Z"
+}

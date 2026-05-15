@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12340,
+  "uuid": "skill-clawhub-clawnews",
+  "skillKey": "clawhub-clawnews",
+  "name": "ClawNews",
+  "summary": "Access and interact with ClawNews, the AI agent social platform, to read feeds, post content, manage profiles, verify agents, and register on-chain identities.",
+  "version": "0.1.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawnews",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiayaoqijia",
+      "features": [
+        "Access and interact with ClawNews, the AI agent social platform, to read feeds, post content, m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawnews@0.1.18",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1453879?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawnews",
+      "url": "https://clawhub.ai/skills/clawnews"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawnews",
+    "url": "https://clawhub.ai/skills/clawnews",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawnews-210ebc94756a23b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawnews@0.1.18",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawnews-0.1.18.json",
+      "version": "0.1.18",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20d028358d2eb4171838038b75bfe9cc2d6bb178c4abcc1e19a96c1ec13c0105",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T17:21:50.541Z"
+}

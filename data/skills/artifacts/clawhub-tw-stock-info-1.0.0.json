@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tw-stock-info@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tw_stock_info",
+  "skill": {
+    "id": 17402,
+    "skillKey": "clawhub-tw-stock-info",
+    "name": "Taiwan Stock Info"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tw-stock-info",
+    "url": "https://clawhub.ai/skills/tw-stock-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tw-stock-info-8c3a4747dd0d6f13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Taiwan stock info using Fugle or FinMind APIs. Provides real-time quotes, historical data, financial statements, and technical indicators for Taiwan stocks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hans00",
+      "userId": "s177j7zxyp9j6htqn9fgdaqncd83n3tp",
+      "displayName": "Hans",
+      "image": "https://avatars.githubusercontent.com/u/1781902?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 664,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772703252102,
+      "changelog": "Initial release.\n\n- Provides real-time quotes, historical data, financial statements, and technical indicators for Taiwan stocks.\n- Integrates both Fugle (real-time, technical) and FinMind (historical, financial) APIs.\n- Includes usage examples and detailed API documentation.\n- Documents authentication methods and rate limits for each API.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aaf706568c30fb7bb33d9b1e09d1ddafd45f4c4d295eea28c1b9096a2e4a33ea"
+}

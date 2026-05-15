@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aetherlang-claude-code@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aetherlang_claude_code",
+  "skill": {
+    "id": 14807,
+    "skillKey": "clawhub-aetherlang-claude-code",
+    "name": "AetherLang V3 for Claude Code"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aetherlang-claude-code",
+    "url": "https://clawhub.ai/skills/aetherlang-claude-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aetherlang-claude-code-b966005aadb83d57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute AetherLang V3 AI workflows from Claude Code using nine specialized engines for culinary, business, research, marketing, and strategic analyses."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "contrario",
+      "userId": "s1792c5vx84nge37ssxtv8y23h83gyvv",
+      "displayName": "Hlias Staurou",
+      "image": "https://avatars.githubusercontent.com/u/12682510?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 906,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772877043259,
+      "changelog": "v1.0.3: Declared optional AETHER_KEY env var for Pro tier consistency",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b73b0c7c9a30c5d548096208b6e13ac9fa5e88239b68f6f0bf7247d5ae587349"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42216,
+  "uuid": "skill-clawhub-claude-swarm",
+  "skillKey": "clawhub-claude-swarm",
+  "name": "Claude Swarm",
+  "summary": "Claude-native multi-agent swarm orchestration for parallel coding. Use when spawning multiple Claude Code agents to work in parallel on a project with git wo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_swarm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linkbag",
+      "features": [
+        "Claude-native multi-agent swarm orchestration for parallel coding",
+        "Use when spawning multiple Claude Code agents to work in parallel on a project with git wo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-swarm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208331216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-swarm",
+      "url": "https://clawhub.ai/skills/claude-swarm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-swarm",
+    "url": "https://clawhub.ai/skills/claude-swarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-swarm-11b9095d6604ed4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-swarm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-swarm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25a917c027e71bc5559cea1cd0173dd614d46ab8fed2725e92b473f971ad42fd",
+      "artifactSizeBytes": 2580
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T15:44:46.116Z"
+}

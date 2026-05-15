@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dom-to-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dom_to_image",
+  "skill": {
+    "id": 49226,
+    "skillKey": "clawhub-dom-to-image",
+    "name": "HTML DOM To Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dom-to-image",
+    "url": "https://clawhub.ai/skills/dom-to-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dom-to-image-895424bf93f886f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert HTML DOM nodes to images (PNG/JPEG/SVG/Blob). Supports rendering options such as filter, backgroundColor, quality, and pixelRatio."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 84,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777512086507,
+      "changelog": "Initial release of dom-to-image.\n\n- Convert HTML DOM nodes to PNG, JPEG, SVG, or Blob images.\n- Supports customizable rendering options: filter, background color, quality, pixel ratio, and more.\n- Includes example for downloading generated images in browser.\n- Supports usage with React components.\n- Notes on compatibility and rendering limitations provided.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a528ba430cedd537c77447cfdd7df1e1e17bded81e1cffcbfc33a84e4f63954"
+}

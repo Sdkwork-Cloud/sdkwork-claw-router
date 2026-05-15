@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71559,
+  "uuid": "skill-clawhub-60s-api",
+  "skillKey": "clawhub-60s-api",
+  "name": "60s API 综合技能",
+  "summary": "60s API 综合技能，提供每日新闻、AI资讯、热搜榜单、天气查询、数据查询、娱乐内容、媒体信息和实用工具。当用户询问新闻、热搜、天气、汇率、农历、笑话、运势、音乐排行、电影票房、翻译、IP查询等中文信息时触发。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.60s_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Logan Reed",
+      "features": [
+        "60s API 综合技能，提供每日新闻、AI资讯、热搜榜单、天气查询、数据查询、娱乐内容、媒体信息和实用工具。当用户询问新闻、热搜、天气、汇率、农历、笑话、运势、音乐排行、电影票房、翻译、I."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/60s-api@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95275520?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "60s-api",
+      "url": "https://clawhub.ai/skills/60s-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "60s-api",
+    "url": "https://clawhub.ai/skills/60s-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/60s-api-97df67462b571608.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/60s-api@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-60s-api-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf8388a002a46c4dd004dcf981ca96b48d90f371de934ea285d2e19546cbcf53",
+      "artifactSizeBytes": 2194
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T14:00:06.863Z"
+}

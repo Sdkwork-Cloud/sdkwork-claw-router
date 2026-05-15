@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12864,
+  "uuid": "skill-clawhub-azure-cosmos-py",
+  "skillKey": "clawhub-azure-cosmos-py",
+  "name": "Azure Cosmos DB Python",
+  "summary": "Azure Cosmos DB SDK for Python (NoSQL API). Use for document CRUD, queries, containers, and globally distributed data. Triggers: \"cosmos db\", \"CosmosClient\", \"container\", \"document\", \"NoSQL\", \"partition key\".",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.azure_cosmos_py",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thegovind",
+      "features": [
+        "Azure Cosmos DB SDK for Python (NoSQL API)",
+        "Use for document CRUD, queries, containers, and globally distributed data",
+        "Triggers: \"cosmos db\", \"CosmosClient\", \"container\", \"document\", \"NoSQL\", \"partition key\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/azure-cosmos-py@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18152044?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "azure-cosmos-py",
+      "url": "https://clawhub.ai/skills/azure-cosmos-py"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "azure-cosmos-py",
+    "url": "https://clawhub.ai/skills/azure-cosmos-py",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/azure-cosmos-py-77c75337e25d78b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/azure-cosmos-py@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-azure-cosmos-py-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2c55cebede15852834243d26c41a006aaa9fc54be4f388e61b2b733f2027f3c",
+      "artifactSizeBytes": 2525
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T14:50:00.833Z"
+}

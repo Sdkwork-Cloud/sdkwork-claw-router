@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33612,
+  "uuid": "skill-clawhub-graph-interpretation",
+  "skillKey": "clawhub-graph-interpretation",
+  "name": "Graph Interpretation",
+  "summary": "Use when interpreting scientific graphs and charts, explaining data visualizations for research presentations, writing figure captions for publications, or a...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.graph_interpretation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Use when interpreting scientific graphs and charts, explaining data visualizations for research."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/graph-interpretation@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "graph-interpretation",
+      "url": "https://clawhub.ai/skills/graph-interpretation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "graph-interpretation",
+    "url": "https://clawhub.ai/skills/graph-interpretation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/graph-interpretation-15b58435463512f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/graph-interpretation@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-graph-interpretation-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:600b6da1342b05f121b0ff267481b3b1a819509119b75dd0bbafaae90d9b25c4",
+      "artifactSizeBytes": 2708
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:29:59.536Z"
+}

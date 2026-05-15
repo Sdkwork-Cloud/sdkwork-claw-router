@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61137,
+  "uuid": "skill-clawhub-lovtrip-content",
+  "skillKey": "clawhub-lovtrip-content",
+  "name": "LovTrip Content Browser",
+  "summary": "旅行内容查询 / Travel Content Browser — 搜索攻略、目的地、行程，零 API Key。当用户需要搜索旅行攻略、浏览目的地、查看行程方案时使用。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lovtrip_content",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KLeo",
+      "features": [
+        "旅行内容查询 / Travel Content Browser — 搜索攻略、目的地、行程，零 API Key。当用户需要搜索旅行攻略、浏览目的地、查看行程方案时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lovtrip-content@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2713983?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lovtrip-content",
+      "url": "https://clawhub.ai/skills/lovtrip-content"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lovtrip-content",
+    "url": "https://clawhub.ai/skills/lovtrip-content",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lovtrip-content-063e8d5591a1e852.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lovtrip-content@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lovtrip-content-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffb194f188abdd23c62d63e3ff5593d0995c907e96719ff8fdffabc19cd9711e",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T05:29:15.539Z"
+}

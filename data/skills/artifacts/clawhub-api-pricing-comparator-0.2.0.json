@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-pricing-comparator@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_pricing_comparator",
+  "skill": {
+    "id": 30182,
+    "skillKey": "clawhub-api-pricing-comparator",
+    "name": "API Pricing Comparator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-pricing-comparator",
+    "url": "https://clawhub.ai/skills/api-pricing-comparator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-pricing-comparator-535748e08303ace5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compare AI API or model pricing across providers and produce a structured summary for product pages, blog posts, or buyer guides. Works with OpenAI-compatibl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xujfcn",
+      "userId": "publishers:xujfcn",
+      "displayName": "xujfcn",
+      "image": "https://avatars.githubusercontent.com/u/7953794?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1773650769307,
+      "changelog": "Initial public pilot release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b0291631cd21d25530b0fe1c104c412e08725c2b936b5af970880f81b14c2ce"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52463,
+  "uuid": "skill-clawhub-bloodhound-narrator",
+  "skillKey": "clawhub-bloodhound-narrator",
+  "name": "BloodHound Narrator",
+  "summary": "Turn BloodHound attack path exports into dual-layer security reports — CISO executive prose on top, technical remediation playbook below. Automates Active Di...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bloodhound_narrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kuro",
+      "features": [
+        "Turn BloodHound attack path exports into dual-layer security reports — CISO executive prose on.",
+        "Automates Active Di..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bloodhound-narrator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144298308?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bloodhound-narrator",
+      "url": "https://clawhub.ai/skills/bloodhound-narrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bloodhound-narrator",
+    "url": "https://clawhub.ai/skills/bloodhound-narrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bloodhound-narrator-c549ad620176035b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bloodhound-narrator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bloodhound-narrator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ede487a3b62b25b84bdc16bbdd5421f9832ce613a5d2c69c90185205759841c",
+      "artifactSizeBytes": 2415
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T16:21:30.886Z"
+}

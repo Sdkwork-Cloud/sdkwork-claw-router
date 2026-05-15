@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23169,
+  "uuid": "skill-clawhub-fortytwo-mcp",
+  "skillKey": "clawhub-fortytwo-mcp",
+  "name": "Fortytwo MCP",
+  "summary": "Fortytwo Prime: collective multi-agent inference for high-stakes questions. ALWAYS use when the user says \"Ask Fortytwo\", \"Ask Prime\", \"ask Fortytwo Prime\",...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fortytwo_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "inikitin",
+      "features": [
+        "Fortytwo Prime: collective multi-agent inference for high-stakes questions",
+        "ALWAYS use when the user says \"Ask Fortytwo\", \"Ask Prime\", \"ask Fortytwo Prime\",..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fortytwo-mcp@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/870643?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fortytwo-mcp",
+      "url": "https://clawhub.ai/skills/fortytwo-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fortytwo-mcp",
+    "url": "https://clawhub.ai/skills/fortytwo-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fortytwo-mcp-864acacd78fd2bfb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fortytwo-mcp@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fortytwo-mcp-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28c883d97e4f829131016c76e1fec500a6d776a21da185307170ad5fef86750d",
+      "artifactSizeBytes": 2409
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T18:32:23.231Z"
+}

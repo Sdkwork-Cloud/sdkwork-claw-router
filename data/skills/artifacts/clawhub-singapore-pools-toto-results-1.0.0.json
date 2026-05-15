@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/singapore-pools-toto-results@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.singapore_pools_toto_results",
+  "skill": {
+    "id": 28860,
+    "skillKey": "clawhub-singapore-pools-toto-results",
+    "name": "Singapore Pools TOTO Results"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "singapore-pools-toto-results",
+    "url": "https://clawhub.ai/skills/singapore-pools-toto-results",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/singapore-pools-toto-results-b116057a0e2db5f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and summarize latest Singapore Pools TOTO results from official Singapore Pools data files (normal, cascade, hongbao, special). Use when users ask for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bluesneed",
+      "userId": "publishers:bluesneed",
+      "displayName": "bluesneed",
+      "image": "https://avatars.githubusercontent.com/u/8289994?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774072694534,
+      "changelog": "Singapore Pools Toto Results skill initial release:\n\n- Fetches and summarizes the latest Singapore Pools TOTO results from official data files.\n- Supports all draw types: normal, cascade, hongbao, and special.\n- Outputs winning numbers, additional number, draw details, Group 1 prize, and winning shares table.\n- Allows output in clean text or JSON format for various use cases.\n- Includes source URL for citation and troubleshooting guidance for network or parsing issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96290e30c8133d5240fdecc1eaa4d2a83d64c81e2815826c8864445007a962bd"
+}

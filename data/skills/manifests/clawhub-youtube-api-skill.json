@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8293,
+  "uuid": "skill-clawhub-youtube-api-skill",
+  "skillKey": "clawhub-youtube-api-skill",
+  "name": "YouTube",
+  "summary": "YouTube Data API integration with managed OAuth. Search videos, manage playlists, access channel data, and interact with comments. Use this skill when users...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_api_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "YouTube Data API integration with managed OAuth",
+        "Search videos, manage playlists, access channel data, and interact with comments",
+        "Use this skill when users..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-api-skill@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-api-skill",
+      "url": "https://clawhub.ai/skills/youtube-api-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-api-skill",
+    "url": "https://clawhub.ai/skills/youtube-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-api-skill-fc1653111d15bcbd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-api-skill@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-api-skill-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:144b0413b1cd13f9295575f4d29bcb42c6f65fd471dc6d970025cdf92f8505ff",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T10:09:21.936Z"
+}

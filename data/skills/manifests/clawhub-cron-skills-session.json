@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40817,
+  "uuid": "skill-clawhub-cron-skills-session",
+  "skillKey": "clawhub-cron-skills-session",
+  "name": "cron-skills-session",
+  "summary": "Standardizes OpenClaw cron job entries to always use the current user session as target. Use when creating or editing cron jobs to ensure they deliver messag...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_skills_session",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TheGoalDev",
+      "features": [
+        "Standardizes OpenClaw cron job entries to always use the current user session as target",
+        "Use when creating or editing cron jobs to ensure they deliver messag..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cron-skills-session@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152638117?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cron-skills-session",
+      "url": "https://clawhub.ai/skills/cron-skills-session"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-skills-session",
+    "url": "https://clawhub.ai/skills/cron-skills-session",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-skills-session-86c1a9a5e9edf32d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cron-skills-session@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cron-skills-session-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15e0cccbbfb27802f7d0c7ca89018942eb61dadc9a6a9f38c43780e4d52a5b81",
+      "artifactSizeBytes": 2452
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T07:53:09.161Z"
+}

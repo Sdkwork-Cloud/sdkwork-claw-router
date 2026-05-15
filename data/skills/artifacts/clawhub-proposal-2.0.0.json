@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proposal@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proposal",
+  "skill": {
+    "id": 23882,
+    "skillKey": "clawhub-proposal",
+    "name": "Proposal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proposal",
+    "url": "https://clawhub.ai/skills/proposal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proposal-ecd1378bc9dc1300.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design, structure, and improve proposals for sales, services, partnerships, projects, and strategic opportunities. Use when someone needs to turn interest in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "depinhq",
+      "userId": "publishers:depinhq",
+      "displayName": "depinHQ",
+      "image": "https://avatars.githubusercontent.com/u/216470578?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 418,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773163575177,
+      "changelog": "Version 2.0.0 – Major update with documentation and examples\n\n- Added README.md, examples.md, and skill.json files for improved documentation and usage guidance.\n- No changes to core skill logic; functionality remains consistent with the previous version.\n- New files make it easier for users to understand, implement, and demonstrate the skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:596bfde270b7bfb4f9dd3c8abbb9d5dd6ae785d48efa5b90d6169306ead9f1c5"
+}

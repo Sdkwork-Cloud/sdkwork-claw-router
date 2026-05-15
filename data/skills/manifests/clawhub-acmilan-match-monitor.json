@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51620,
+  "uuid": "skill-clawhub-acmilan-match-monitor",
+  "skillKey": "clawhub-acmilan-match-monitor",
+  "name": "AC Milan Match Monitor",
+  "summary": "Check if AC Milan played yesterday and send the result. Uses ESPN public API — no token, no region restrictions. Works with curl directly. Silent if no match...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acmilan_match_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PaoloXiaMN",
+      "features": [
+        "Check if AC Milan played yesterday and send the result",
+        "Uses ESPN public API — no token, no region restrictions",
+        "Works with curl directly",
+        "Silent if no match..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acmilan-match-monitor@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250343763?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acmilan-match-monitor",
+      "url": "https://clawhub.ai/skills/acmilan-match-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acmilan-match-monitor",
+    "url": "https://clawhub.ai/skills/acmilan-match-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acmilan-match-monitor-4dd69a2c159f9d97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acmilan-match-monitor@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-acmilan-match-monitor-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e8a482d25de114538eb829005d880e4ce54385d0f49cee3e543dc743d74cc06",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T06:59:07.733Z"
+}

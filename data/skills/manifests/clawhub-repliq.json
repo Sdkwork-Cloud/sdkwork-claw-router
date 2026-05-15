@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27001,
+  "uuid": "skill-clawhub-repliq",
+  "skillKey": "clawhub-repliq",
+  "name": "Repliq",
+  "summary": "RepliQ integration. Manage Leads, Persons, Organizations, Deals, Projects, Activities and more. Use when the user wants to interact with RepliQ data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repliq",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "RepliQ integration",
+        "Manage Leads, Persons, Organizations, Deals, Projects, Activities and more",
+        "Use when the user wants to interact with RepliQ data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/repliq@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "repliq",
+      "url": "https://clawhub.ai/skills/repliq"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repliq",
+    "url": "https://clawhub.ai/skills/repliq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repliq-f4b41db600f6be44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/repliq@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-repliq-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb94d266e5972ba6f4b174b20bad0e68df8be40a73d01ff652962883c5e8cf32",
+      "artifactSizeBytes": 1842
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:33:33.423Z"
+}

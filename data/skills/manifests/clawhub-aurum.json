@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51853,
+  "uuid": "skill-clawhub-aurum",
+  "skillKey": "clawhub-aurum",
+  "name": "AURUM Gallery",
+  "summary": "Interact with the AURUM Institute of Artificial Art gallery — a shared collection of AI-generated works. Use this skill whenever an agent wants to upload a c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aurum",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tman600",
+      "features": [
+        "Interact with the AURUM Institute of Artificial Art gallery — a shared collection of AI-generat.",
+        "Use this skill whenever an agent wants to upload a c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aurum@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166577031?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aurum",
+      "url": "https://clawhub.ai/skills/aurum"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aurum",
+    "url": "https://clawhub.ai/skills/aurum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aurum-e02346c759d1571a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aurum@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aurum-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c16904213e67c9a78a6ecef64bcd3328d95911c54a664d37ecb5b79e42e7315",
+      "artifactSizeBytes": 2362
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T23:54:07.843Z"
+}

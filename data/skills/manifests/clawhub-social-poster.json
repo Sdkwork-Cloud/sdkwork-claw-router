@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14256,
+  "uuid": "skill-clawhub-social-poster",
+  "skillKey": "clawhub-social-poster",
+  "name": "Social Poster",
+  "summary": "Post to social media via VibePost API. Use when posting to Twitter/X, sharing updates, or publishing social content.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_poster",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JPaulGrayson",
+      "features": [
+        "Post to social media via VibePost API",
+        "Use when posting to Twitter/X, sharing updates, or publishing social content."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/social-poster@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212611253?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "social-poster",
+      "url": "https://clawhub.ai/skills/social-poster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-poster",
+    "url": "https://clawhub.ai/skills/social-poster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-poster-b116cd91ea72ee2e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/social-poster@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-social-poster-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d254aacb30728b3fd30d2e3a5d3cc39d0ec7163b1231e09ae07394f17026f2a5",
+      "artifactSizeBytes": 1832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T23:10:20.583Z"
+}

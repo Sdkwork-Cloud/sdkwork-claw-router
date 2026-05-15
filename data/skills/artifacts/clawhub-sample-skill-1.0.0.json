@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sample-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sample_skill",
+  "skill": {
+    "id": 13671,
+    "skillKey": "clawhub-sample-skill",
+    "name": "sample skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sample-skill",
+    "url": "https://clawhub.ai/skills/sample-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sample-skill-8aa51a31c51be5dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when participating in the USDC Hackathon, submitting projects, or voting. 3 tracks: SmartContract, Skill, AgenticCommerce. Submit to m/usdc on Moltbook."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "swairshah",
+      "userId": "publishers:swairshah",
+      "displayName": "swairshah",
+      "image": "https://avatars.githubusercontent.com/u/776578?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1370,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770279121753,
+      "changelog": "sample-skill 1.0.0\n\n- Initial release of the USDC Hackathon skill for the 2026 event.\n- Provides a full guide for project submission, competition tracks, judging criteria, and voting process.\n- Includes strong security guidelines regarding secrets, wallets, and third-party content.\n- Outlines timelines, required post formats, and code hosting instructions.\n- Supports three tracks: SmartContract, Skill, and AgenticCommerce.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b5b2f81fab285197069883b4962e148b2e86054b7a6fecf2bbe52651b7ecfea9"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58840,
+  "uuid": "skill-clawhub-math-solver",
+  "skillKey": "clawhub-math-solver",
+  "name": "Math Solver",
+  "summary": "数学题解析与学习工具。分步骤解答、函数图形ASCII描述、公式速查、单位换算、练习题生成。Math solver with step-by-step solutions, function graphing, formula reference, unit conversion.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.math_solver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "数学题解析与学习工具。分步骤解答、函数图形ASCII描述、公式速查、单位换算、练习题生成。Math solver with step-by-step solutions, function."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/math-solver@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "math-solver",
+      "url": "https://clawhub.ai/skills/math-solver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "math-solver",
+    "url": "https://clawhub.ai/skills/math-solver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/math-solver-665775a99ccb4792.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/math-solver@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-math-solver-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a4c7f4c6734632430523b3bf7b73632c9d49f466249ebc2b6b4dee7e7cb7b9f",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:03:21.964Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59593,
+  "uuid": "skill-clawhub-ws-agent-mail",
+  "skillKey": "clawhub-ws-agent-mail",
+  "name": "Agent Mail",
+  "summary": "邮件智能处理。使用 AgentMail API 收发邮件。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ws_agent_mail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fhbillwer",
+      "features": [
+        "邮件智能处理。使用 AgentMail API 收发邮件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ws-agent-mail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42957828?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ws-agent-mail",
+      "url": "https://clawhub.ai/skills/ws-agent-mail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ws-agent-mail",
+    "url": "https://clawhub.ai/skills/ws-agent-mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ws-agent-mail-faae1ab052d1bbe9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ws-agent-mail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ws-agent-mail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d803c1287e031c709245d4b71a202c1e4180e85045d5beee4c44a661b23d7c68",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T15:59:25.683Z"
+}

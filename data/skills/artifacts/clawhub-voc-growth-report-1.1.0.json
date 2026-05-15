@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voc-growth-report@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voc_growth_report",
+  "skill": {
+    "id": 57594,
+    "skillKey": "clawhub-voc-growth-report",
+    "name": "VOC Growth Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voc-growth-report",
+    "url": "https://clawhub.ai/skills/voc-growth-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voc-growth-report-117c77d6318c74de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn exported social media comments — especially Xiaohongshu/小红书 CSV exports from 社媒助手 — into VOC insight, growth analysis, Feishu-ready operating structures..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "happyandlg123321-maker",
+      "userId": "s170a1nazsvq7yabjh7y27jbwx83h4tt",
+      "displayName": "happyandlg123321-maker",
+      "image": "https://avatars.githubusercontent.com/u/266227102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776492478044,
+      "changelog": "Upgrade to V1.1 with delivery-first report workflow, Feishu schema guidance, real CSV proof points, and demo HTML report assets.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60e0a9071b8774f00da5692a8c7a3557feba022a81586d8618d6a544f67e55ad"
+}

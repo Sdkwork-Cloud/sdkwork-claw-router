@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20112,
+  "uuid": "skill-clawhub-papersgpt-for-zotero",
+  "skillKey": "clawhub-papersgpt-for-zotero",
+  "name": "papersgpt-for-zotero",
+  "summary": "A privacy-first, local-first search assistant and MCP server for your Zotero library, enabling AI agents to search and analyze your research papers securely.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.papersgpt_for_zotero",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "papersgpt",
+      "features": [
+        "A privacy-first, local-first search assistant and MCP server for your Zotero library, enabling."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/papersgpt-for-zotero@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/189297095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "papersgpt-for-zotero",
+      "url": "https://clawhub.ai/skills/papersgpt-for-zotero"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "papersgpt-for-zotero",
+    "url": "https://clawhub.ai/skills/papersgpt-for-zotero",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/papersgpt-for-zotero-a4778b98884871d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/papersgpt-for-zotero@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-papersgpt-for-zotero-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1aae88cb2cbef11f3f21747b181c3d4c6f7e7083acdd3620a402573819f5d93a",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T09:16:50.805Z"
+}

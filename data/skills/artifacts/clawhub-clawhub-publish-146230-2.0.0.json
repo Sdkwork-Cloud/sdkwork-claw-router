@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-publish-146230@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_publish_146230",
+  "skill": {
+    "id": 24373,
+    "skillKey": "clawhub-clawhub-publish-146230",
+    "name": "Clawhub Publish 146230"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-publish-146230",
+    "url": "https://clawhub.ai/skills/clawhub-publish-146230",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-publish-146230-e2d2612c88236c9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images using the internal Google Antigravity API (Gemini 3 Pro Image). High quality, native generation without browser automation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gxw975",
+      "userId": "s17brjt0pw2p1p8924sqmk4t9d84xt6h",
+      "displayName": "gxw975",
+      "image": "https://avatars.githubusercontent.com/u/236547209?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773371032330,
+      "changelog": "Version 2.0.0 introduces a major update with new image generation capabilities.\n\n- Now generates images using the internal Google Antigravity API (Gemini 3 Pro Image) for high-quality, native output.\n- Removes the need for browser automation by connecting directly via OAuth credentials.\n- Adds flexible command-line options for prompt, output path, and aspect ratio selection.\n- Handles common error cases with clear troubleshooting guidance.\n- Outputs images in a way that Clawdbot can automatically detect and display results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7d5245ed282afb98551896a07f6e16de28825b0e44de0d595f3ec44a52111d1"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28485,
+  "uuid": "skill-clawhub-vocabulary-anti-forgetting",
+  "skillKey": "clawhub-vocabulary-anti-forgetting",
+  "name": "Vocabulary Anti Forgetting",
+  "summary": "Anti-forgetting vocabulary review using spaced repetition. Selects 10 words from asset/vocabulary_bank.md and presents each with English, Chinese translation...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vocabulary_anti_forgetting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joe Hu",
+      "features": [
+        "Anti-forgetting vocabulary review using spaced repetition",
+        "Selects 10 words from asset/vocabulary_bank.md and presents each with English, Chinese translat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vocabulary-anti-forgetting@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6365707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vocabulary-anti-forgetting",
+      "url": "https://clawhub.ai/skills/vocabulary-anti-forgetting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vocabulary-anti-forgetting",
+    "url": "https://clawhub.ai/skills/vocabulary-anti-forgetting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vocabulary-anti-forgetting-33cda0e362de4c19.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vocabulary-anti-forgetting@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vocabulary-anti-forgetting-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7a2c4d083b390e6cd32acbbf6bec850f8bf1bb742b2b731316a0ecbe83517ff",
+      "artifactSizeBytes": 2718
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T13:52:26.015Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49616,
+  "uuid": "skill-clawhub-capsule-crm-integration",
+  "skillKey": "clawhub-capsule-crm-integration",
+  "name": "Capsule Crm",
+  "summary": "Capsule CRM integration. Manage crm and sales data, records, and workflows. Use when the user wants to interact with Capsule CRM data.",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.capsule_crm_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Capsule CRM integration",
+        "Manage crm and sales data, records, and workflows",
+        "Use when the user wants to interact with Capsule CRM data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/capsule-crm-integration@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "capsule-crm-integration",
+      "url": "https://clawhub.ai/skills/capsule-crm-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "capsule-crm-integration",
+    "url": "https://clawhub.ai/skills/capsule-crm-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/capsule-crm-integration-250c70a15408059e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/capsule-crm-integration@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-capsule-crm-integration-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:376f70663f3f9242293acb0adf684374d4675b69e113d8819bc04931116e90eb",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:16:45.779Z"
+}

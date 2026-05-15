@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/game-architecture-maintainability-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.game_architecture_maintainability_audit",
+  "skill": {
+    "id": 36920,
+    "skillKey": "clawhub-game-architecture-maintainability-audit",
+    "name": "Game Architecture Maintainability Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "game-architecture-maintainability-audit",
+    "url": "https://clawhub.ai/skills/game-architecture-maintainability-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/game-architecture-maintainability-audit-9d13f88308d9cff4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit architecture, state management, boundaries, coupling, and maintainability risks that will make future AI or human iteration harder."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike007jd",
+      "userId": "s17445vjamxwgyr2d1q1jysg1d83qskv",
+      "displayName": "mike007jd",
+      "image": "https://avatars.githubusercontent.com/u/31256541?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774857059166,
+      "changelog": "- Initial release of the game architecture maintainability audit skill.\n- Audits code for maintainability risks in architecture, state management, boundaries, and coupling.\n- Reports findings to summary, scorecard, and risk register files in the `docs/game-studio/audit` directory.\n- Uses shared checklists and reference abstractions to guide the audit process.\n- Compatible with Claude Code and Codex, with enhanced results when file and shell access are available.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0d045687cd425ea4f015bdc00c4386c8a169096166f1dad9015c91413e80fd9"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tech-debt-ledger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_debt_ledger",
+  "skill": {
+    "id": 51302,
+    "skillKey": "clawhub-tech-debt-ledger",
+    "name": "Tech Debt Ledger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-debt-ledger",
+    "url": "https://clawhub.ai/skills/tech-debt-ledger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-debt-ledger-86ed1be2c181c0cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tracks technical debt as actual financial debt — with principal, interest rates, minimum payments, and compound growth. Turns vague \"we should fix that somed..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jcools1977",
+      "userId": "publishers:jcools1977",
+      "displayName": "John DeVere Cooley",
+      "image": "https://avatars.githubusercontent.com/u/75928463?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772575732309,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a29f1cf745da30ac3b2682f7ee36bf437e42d869d29668581d903c4552d561d8"
+}

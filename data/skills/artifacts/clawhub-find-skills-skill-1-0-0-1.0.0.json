@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-skills-skill-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_skills_skill_1_0_0",
+  "skill": {
+    "id": 14538,
+    "skillKey": "clawhub-find-skills-skill-1-0-0",
+    "name": "Find Skills Skill 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-skills-skill-1-0-0",
+    "url": "https://clawhub.ai/skills/find-skills-skill-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-skills-skill-1-0-0-4025ed3f031e45ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and discover OpenClaw skills from various sources. Use when: user wants to find available skills, search for specific functionality, or discover new s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lq-productor",
+      "userId": "s173x4b8t93b5nmpd7whp0mp6183jm8b",
+      "displayName": "LQ-Productor",
+      "image": "https://avatars.githubusercontent.com/u/189585085?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1043,
+      "installsAllTime": 15,
+      "installsCurrent": 14,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774452028481,
+      "changelog": "Initial release of the find-skills skill.\n\n- Enables searching and discovering OpenClaw skills from multiple sources.\n- Provides clear guidance on when to use the skill versus other tools.\n- Lists recommended sources: ClawHub, OpenClaw Directory, LobeHub, GitHub, and community forums.\n- Includes search strategies for functionality, provider, and popularity.\n- Offers best practices and troubleshooting tips for finding and using skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fa113863b4da611b66971cf5121c5657d2d0214775798583cf79330b0143e59"
+}

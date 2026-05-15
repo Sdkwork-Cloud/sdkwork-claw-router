@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wifi-qr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wifi_qr",
+  "skill": {
+    "id": 12017,
+    "skillKey": "clawhub-wifi-qr",
+    "name": "Wifi Qr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wifi-qr",
+    "url": "https://clawhub.ai/skills/wifi-qr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wifi-qr-b394ad03de868cbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate QR code for Wi-Fi credentials"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xejrax",
+      "userId": "publishers:xejrax",
+      "displayName": "Xejrax",
+      "image": "https://avatars.githubusercontent.com/u/148405630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1827,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770135701544,
+      "changelog": "Initial publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:090be1d5bd6b1a51c38bbbf0ef6b20f3ce99300d84890528c8469322c63d9b2f"
+}

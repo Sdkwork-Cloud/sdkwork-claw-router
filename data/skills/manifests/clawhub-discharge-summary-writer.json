@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32411,
+  "uuid": "skill-clawhub-discharge-summary-writer",
+  "skillKey": "clawhub-discharge-summary-writer",
+  "name": "Discharge Summary Writer",
+  "summary": "Generate hospital discharge summaries from admission data, hospital course, medications, and follow-up plans. Trigger when user needs to create a discharge s...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discharge_summary_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Generate hospital discharge summaries from admission data, hospital course, medications, and fo.",
+        "Trigger when user needs to create a discharge s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discharge-summary-writer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discharge-summary-writer",
+      "url": "https://clawhub.ai/skills/discharge-summary-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discharge-summary-writer",
+    "url": "https://clawhub.ai/skills/discharge-summary-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discharge-summary-writer-80fc0ca83bec2d4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discharge-summary-writer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-discharge-summary-writer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af90a8905b582c81d1ba0d62096e3e60105ed3bb3c6a0ce1801cd2589e2bcf3f",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:52:33.635Z"
+}

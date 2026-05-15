@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66937,
+  "uuid": "skill-clawhub-tech-evaluation",
+  "skillKey": "clawhub-tech-evaluation",
+  "name": "tech-evaluation",
+  "summary": "技术/产品选型分析。当用户提到\"选型\"、\"对比\"、\"比较\"、\"哪个好\"、\"推荐\"、\"evaluate\"、\"选哪个\"、\"技术选型\"、\"产品选型\"、\"方案对比\"时激活。 输入可以是：自然语言需求、产品名、官网/GH链接、使用场景、技术约束、报错信息、零散想法。 输出：一句话结论 → 需求提取 → 产品解析 → 同类盘...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_evaluation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sid",
+      "features": [
+        "技术/产品选型分析。当用户提到\"选型\"、\"对比\"、\"比较\"、\"哪个好\"、\"推荐\"、\"evaluate\"、\"选哪个\"、\"技术选型\"、\"产品选型\"、\"方案对比\"时激活。 输入可以是：自然语言需求."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tech-evaluation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30753647?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tech-evaluation",
+      "url": "https://clawhub.ai/skills/tech-evaluation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-evaluation",
+    "url": "https://clawhub.ai/skills/tech-evaluation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-evaluation-2de587ab123d43d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tech-evaluation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tech-evaluation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54dec3790077ef3d7c328cef04204a899b47a729fa992a3468342b7f06a3f9b8",
+      "artifactSizeBytes": 2746
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T08:34:42.410Z"
+}

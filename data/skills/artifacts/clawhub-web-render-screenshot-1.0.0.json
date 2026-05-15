@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-render-screenshot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_render_screenshot",
+  "skill": {
+    "id": 44058,
+    "skillKey": "clawhub-web-render-screenshot",
+    "name": "Web Render Screenshot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-render-screenshot",
+    "url": "https://clawhub.ai/skills/web-render-screenshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-render-screenshot-914cb4748b9a1ed8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate ultra-high-resolution screenshots from HTML content using Playwright. Default 4x device scale factor produces crisp, pixel-perfect output ideal for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wujiaming88",
+      "userId": "s171ccng28wdj2n2tdtw8q70zd83ha4q",
+      "displayName": "Garming",
+      "image": "https://avatars.githubusercontent.com/u/7887545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777012933702,
+      "changelog": "HTML超高清截图技能, Playwright 4x渲染, 默认7680x4320分辨率, 适合网页UI/数据可视化/文字密集型图片",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a30a15175053639df059acf0df50abe4c3368b061e9c7c71c9b0c6885b52514a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rune-kit@2.15.0",
+  "version": "2.15.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rune_kit",
+  "skill": {
+    "id": 19570,
+    "skillKey": "clawhub-rune-kit",
+    "name": "Rune"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rune-kit",
+    "url": "https://clawhub.ai/skills/rune-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rune-kit-9488b27fb306d686.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs adversarial red-team analysis on approved plans to identify edge cases, security risks, scalability issues, error paths, and integration risks befor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nhadaututtheky",
+      "userId": "s175aq6qavk2a5dggrfwh08p6h83h13x",
+      "displayName": "NGUYEN VIET NAM",
+      "image": "https://avatars.githubusercontent.com/u/36666537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 594,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "2.15.0",
+      "createdAt": 1777288168519,
+      "changelog": "• feat(v2.15.0): Second Opinion + Cross-Provider + Routing Clarity",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d32e78576e60e5f02b629640fa76eb68a3f68b80a43d4be69ac1e993472853fd"
+}

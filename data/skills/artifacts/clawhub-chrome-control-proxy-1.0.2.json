@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chrome-control-proxy@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chrome_control_proxy",
+  "skill": {
+    "id": 58809,
+    "skillKey": "clawhub-chrome-control-proxy",
+    "name": "Chrome Control Proxy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chrome-control-proxy",
+    "url": "https://clawhub.ai/skills/chrome-control-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chrome-control-proxy-f83ecf08156b810c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "宿主机 chrome-control-proxy 服务调用指南。通过 HTTP 控制 Chrome 生命周期与 Playwright（page-dom 快照、run 脚本）。适用于 OpenClaw 在容器内访问 host.docker.internal:3333 或宿主机直接访问 127.0.0.1:3333。..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhengxiangqi",
+      "userId": "s177j8566g7vwkqmps25fnhdv1840n64",
+      "displayName": "KiKi",
+      "image": "https://avatars.githubusercontent.com/u/7187990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775300176167,
+      "changelog": "- Added documentation for the new /playwright/pipeline endpoint, supporting chained actions and snapshots in a single request.\n- Recommended using the compact Playwright snapshot mode (\"playwrightSnapshotMode: 'compact'\") for high-frequency analysis scenarios in /playwright/page-dom.\n- Updated suggested parameter usage for /playwright/page-dom and described preferred snapshot and selector options.\n- Recommended /playwright/pipeline over sequential /page-dom and /run when both pre- and post-action page analysis are needed.\n- Expanded and clarified the relation table for Playwright endpoints, now including /playwright/pipeline.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8aca353389fe526324518cfbc86c491950f12a2c1386a7acf4f89373e180c84a"
+}

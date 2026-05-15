@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33533,
+  "uuid": "skill-clawhub-book-quotes",
+  "skillKey": "clawhub-book-quotes",
+  "name": "Book Quotes",
+  "summary": "Extract memorable quotes and passages from books. Get the most inspiring and thought-provoking quotes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_quotes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "heardlyapp",
+      "features": [
+        "Extract memorable quotes and passages from books",
+        "Get the most inspiring and thought-provoking quotes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-quotes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13566006?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-quotes",
+      "url": "https://clawhub.ai/skills/book-quotes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-quotes",
+    "url": "https://clawhub.ai/skills/book-quotes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-quotes-dab8e565b8fe349d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-quotes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-quotes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:459b3fd683af0456ee271f719d7dcb7c8345e3dd61e535f9dd4bfdfb891e245f",
+      "artifactSizeBytes": 2202
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T07:33:21.089Z"
+}

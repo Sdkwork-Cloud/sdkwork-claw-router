@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29281,
+  "uuid": "skill-clawhub-justoneapi-bilibili",
+  "skillKey": "clawhub-justoneapi-bilibili",
+  "name": "Bilibili API",
+  "summary": "Analyze Bilibili workflows with JustOneAPI, including video Details, user Published Videos, and user Profile across 9 operations.",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_bilibili",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Analyze Bilibili workflows with JustOneAPI, including video Details, user Published Videos, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-bilibili@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-bilibili",
+      "url": "https://clawhub.ai/skills/justoneapi-bilibili"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-bilibili",
+    "url": "https://clawhub.ai/skills/justoneapi-bilibili",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-bilibili-3248102c44217219.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-bilibili@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-bilibili-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7316ad1151b9dab85d54ac407ff4e3dd02b90397968def09b3391deadc9aef72",
+      "artifactSizeBytes": 2194
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:07:00.722Z"
+}

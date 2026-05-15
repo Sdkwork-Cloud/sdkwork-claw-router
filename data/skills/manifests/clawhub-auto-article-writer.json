@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67277,
+  "uuid": "skill-clawhub-auto-article-writer",
+  "skillKey": "clawhub-auto-article-writer",
+  "name": "Auto Article Writer",
+  "summary": "基于AI自动生成符合公众号、知乎、小红书等多平台风格的原创自媒体文章，支持多格式导出与批量生产。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_article_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bingze00000",
+      "features": [
+        "基于AI自动生成符合公众号、知乎、小红书等多平台风格的原创自媒体文章，支持多格式导出与批量生产。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-article-writer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268100670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-article-writer",
+      "url": "https://clawhub.ai/skills/auto-article-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-article-writer",
+    "url": "https://clawhub.ai/skills/auto-article-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-article-writer-2a9c43b82d5fc40c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-article-writer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-article-writer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b403392fddcf7941320894e0fec0e0c678435f78f4d34e260031210955c40fd",
+      "artifactSizeBytes": 2435
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T09:46:41.600Z"
+}

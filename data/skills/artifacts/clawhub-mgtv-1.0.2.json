@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mgtv@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mgtv",
+  "skill": {
+    "id": 66939,
+    "skillKey": "clawhub-mgtv",
+    "name": "MGTV"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mgtv",
+    "url": "https://clawhub.ai/skills/mgtv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mgtv-05a26bc4653cc956.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "搜索芒果 TV 视频资源并在系统浏览器中播放"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kllb520",
+      "userId": "s17dwafm9f78gdantxsa78k9a583m3ky",
+      "displayName": "mgtv",
+      "image": "https://avatars.githubusercontent.com/u/264925702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776215285493,
+      "changelog": "安全修复：移除未使用的playwright依赖；将child_process.exec替换为spawn消除命令注入风险；修正跨平台bin元数据",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ab686689d79b1e4dadf51947d27b7a4fbd6d90292cd48c96729db2de5b72dfd"
+}

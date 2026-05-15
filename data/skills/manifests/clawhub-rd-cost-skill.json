@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72755,
+  "uuid": "skill-clawhub-rd-cost-skill",
+  "skillKey": "clawhub-rd-cost-skill",
+  "name": "Rd Cost",
+  "summary": "研发费用评估、研发预算测算、项目研发成本分析的专业技能。 当用户需要进行研发费用评估、研发预算编制、项目成本测算、研发投资回报分析、研发项目可行性分析时，务必使用此技能。 适用于企业研发部门、财务部门、项目管理团队进行研发成本控制和预算规划。 支持软件开发、硬件研发、AI算法研发、工艺技术研发等各类项目的成本评估...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rd_cost_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yejinlei",
+      "features": [
+        "研发费用评估、研发预算测算、项目研发成本分析的专业技能。 当用户需要进行研发费用评估、研发预算编制、项目成本测算、研发投资回报分析、研发项目可行性分析时，务必使用此技能。 适用于企业研发部门."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rd-cost-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1418455?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rd-cost-skill",
+      "url": "https://clawhub.ai/skills/rd-cost-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rd-cost-skill",
+    "url": "https://clawhub.ai/skills/rd-cost-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rd-cost-skill-e4c702aae40bd37e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rd-cost-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rd-cost-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aca1b1068f3ad29c6be99dc5bcacc5b957ea7d3c8123ad471ad5d0f553cd811a",
+      "artifactSizeBytes": 2671
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T00:46:13.046Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ssa-customer-segmentation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssa_customer_segmentation",
+  "skill": {
+    "id": 40338,
+    "skillKey": "clawhub-ssa-customer-segmentation",
+    "name": "Customer Segmentation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssa-customer-segmentation",
+    "url": "https://clawhub.ai/skills/ssa-customer-segmentation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssa-customer-segmentation-2fe094fe857eae0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically segment customers into five levels using OKKI CRM data, score them, sync tags safely, and provide lifecycle and value-based strategy recommenda..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cjboy007",
+      "userId": "s17c8f5qp6wpzyxcf0v2588kmd83qzw7",
+      "displayName": "Jaden's built a claw",
+      "image": "https://avatars.githubusercontent.com/u/64246343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774593850807,
+      "changelog": "Initial release: AI-powered customer scoring and segmentation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9432b3c998a6e9c95b98d62e9b205031a1f4e6bf3e70ef0d44b16a23199d45c1"
+}

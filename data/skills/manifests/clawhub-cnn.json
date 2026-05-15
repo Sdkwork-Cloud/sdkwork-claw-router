@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54436,
+  "uuid": "skill-clawhub-cnn",
+  "skillKey": "clawhub-cnn",
+  "name": "Cnn",
+  "summary": "Provides 24/7 news coverage from CNN's flagship channel, international editions, and key programs like Anderson Cooper 360°.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cnn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides 24/7 news coverage from CNN's flagship channel, international editions, and key progra."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cnn@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cnn",
+      "url": "https://clawhub.ai/skills/cnn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cnn",
+    "url": "https://clawhub.ai/skills/cnn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cnn-4aa08612a8f6e9e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cnn@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cnn-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c84c52fcc34015471d749749078d11f32f1f9f6e95e03af3cbb76fe6bd2c8c39",
+      "artifactSizeBytes": 2123
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:29:48.731Z"
+}

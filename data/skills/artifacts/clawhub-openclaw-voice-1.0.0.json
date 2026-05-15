@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-voice@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_voice",
+  "skill": {
+    "id": 15157,
+    "skillKey": "clawhub-openclaw-voice",
+    "name": "openclaw-voice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-voice",
+    "url": "https://clawhub.ai/skills/openclaw-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-voice-5389c2e9c75ffcd1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transcribe audio to text and generate spoken AI responses using Whisper and ElevenLabs via CLI with transcript storage and search."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "frank-bot07",
+      "userId": "publishers:frank-bot07",
+      "displayName": "frank-bot07",
+      "image": "https://avatars.githubusercontent.com/u/259001718?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 831,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771576587954,
+      "changelog": "Initial release: Voice interaction. 10 tests.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a6cf15e0bf98caf1d741ad98896a79925d26fd07c50e35bbe289ae0d9fc36374"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/serial-novel-architect@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serial_novel_architect",
+  "skill": {
+    "id": 69883,
+    "skillKey": "clawhub-serial-novel-architect",
+    "name": "长篇小说架构师 | Serial Novel Architect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serial-novel-architect",
+    "url": "https://clawhub.ai/skills/serial-novel-architect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serial-novel-architect-1490e3088f091b82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户需要搭建、重构或撰写长篇小说、系列小说或网文连载项目时使用此技能。它适合把零散灵感整理成可持续推进的写作系统，包括世界观、时间线、人物弧线、分卷结构、章节卡、线索回收、平台化开篇优化和 Markdown 写作工程整理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daveroey96",
+      "userId": "s179gxnvnzenhqzvva0wdbc2hx8443k5",
+      "displayName": "DaveRoey96",
+      "image": "https://avatars.githubusercontent.com/u/176374301?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 407,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775197563025,
+      "changelog": "- 全面更新为中文策划说明，适配中文长篇小说与网文连载需求\n- 优化适用场景、资源导航与默认工作流程描述，明确每个写作环节步骤\n- 强化故事驱动与情节压力系统，避免设定主导\n- 新增文件产出优先级和平台化专用改造节点\n- 质量检查清单更细化，新增多人协作与资料同步建议",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e9edd97966313f324f3038def4de1e61328c4fe5421c533463f115483172677c"
+}

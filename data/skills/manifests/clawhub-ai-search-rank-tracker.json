@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24535,
+  "uuid": "skill-clawhub-ai-search-rank-tracker",
+  "skillKey": "clawhub-ai-search-rank-tracker",
+  "name": "Ai Search Rank Tracker",
+  "summary": "Track whether ChatGPT, Claude, Gemini, and Perplexity recommend a startup or brand across a prompt set. Use when you need AI search visibility tracking, GEO...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_search_rank_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "X-RayLuan",
+      "features": [
+        "Track whether ChatGPT, Claude, Gemini, and Perplexity recommend a startup or brand across a pro.",
+        "Use when you need AI search visibility tracking, GEO..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-search-rank-tracker@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150766707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-search-rank-tracker",
+      "url": "https://clawhub.ai/skills/ai-search-rank-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-search-rank-tracker",
+    "url": "https://clawhub.ai/skills/ai-search-rank-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-search-rank-tracker-38f1b7fea6bd69b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-search-rank-tracker@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-search-rank-tracker-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f22a78507c47570b1ef8676e740bae62a53062cf6df39dd59417e927fc0446ef",
+      "artifactSizeBytes": 2564
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T08:59:42.558Z"
+}

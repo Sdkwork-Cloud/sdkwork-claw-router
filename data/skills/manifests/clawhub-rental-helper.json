@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69260,
+  "uuid": "skill-clawhub-rental-helper",
+  "skillKey": "clawhub-rental-helper",
+  "name": "Rental Helper",
+  "summary": "租房助手 - 帮助用户记录房源信息、计算租房预算、生成对比表格、提供租房避坑指南、智能推荐房源、批量导入、网页解析、图片识别、网站抓取。使用场景：(1) 记录和筛选房源信息 - 说\"记录一个新房源\"或\"查看我的房源列表\"；(2) 计算租房预算 - 说\"帮我算一下租房预算\"或\"这个房子每月要花多少钱\"；(3) 生成...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rental_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sosshuai",
+      "features": [
+        "帮助用户记录房源信息、计算租房预算、生成对比表格、提供租房避坑指南、智能推荐房源、批量导入、网页解析、图片识别、网站抓取。使用场景：(1) 记录和筛选房源信息",
+        "说\"记录一个新房源\"或\"查看我的房源列表\"；(2) 计算租房预算",
+        "说\"帮我算一下租房预算\"或\"这个房子每月要花多少钱\"；(3) 生成..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rental-helper@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264465433?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rental-helper",
+      "url": "https://clawhub.ai/skills/rental-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rental-helper",
+    "url": "https://clawhub.ai/skills/rental-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rental-helper-887065d50e3ecfce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rental-helper@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rental-helper-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e8c82baadeadb20a898a8fae1980bd40f9ebbca997e47b3f8f0e286ddbe241e",
+      "artifactSizeBytes": 2174
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T10:35:30.910Z"
+}

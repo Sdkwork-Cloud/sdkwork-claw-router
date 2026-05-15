@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hallucination-detective@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hallucination_detective",
+  "skill": {
+    "id": 49734,
+    "skillKey": "clawhub-hallucination-detective",
+    "name": "Hallucination Detective"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hallucination-detective",
+    "url": "https://clawhub.ai/skills/hallucination-detective",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hallucination-detective-f5fb7dc499172e45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Learn to spot, verify, and handle AI-generated factual claims and confabulations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 68,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778122925056,
+      "changelog": "Initial release of Hallucination Detective — a skill for learning to spot and address AI-generated factual errors.\n\n- Teaches users how to detect and verify AI hallucinations, not to fact-check specific claims.\n- Provides methodology: explains why AI hallucinates, detection techniques, and prevention strategies.\n- Includes practical prompts, verification toolkits, and guidance on building critical research habits.\n- Addresses user concerns with accessible explanations and clear, step-by-step instruction.\n- Prioritizes safety: does not provide determinations of truth or replace expert fact-checkers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f31a4bd5f386a498cd0aed59e79b0ef1095a21aeb5e518b2ac66c0eb2210561"
+}

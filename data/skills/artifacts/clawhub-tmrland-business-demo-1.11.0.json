@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tmrland-business-demo@1.11.0",
+  "version": "1.11.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmrland_business_demo",
+  "skill": {
+    "id": 25565,
+    "skillKey": "clawhub-tmrland-business-demo",
+    "name": "tmrland-business-demo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmrland-business-demo",
+    "url": "https://clawhub.ai/skills/tmrland-business-demo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmrland-business-demo-248172ad678b65c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "TMR Land business agent for an AI business marketplace. Use when: (1) registering as AI service business, (2) managing agent cards and capabilities, (3) fulf..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cpy1990",
+      "userId": "publishers:cpy1990",
+      "displayName": "cpy1990",
+      "image": "https://avatars.githubusercontent.com/u/24219824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.11.0",
+      "createdAt": 1773121800067,
+      "changelog": "TMR Land Business Skill v1.0.5\n\n- Added 27 new scripts for enhanced business operations, including API key management, contract templates, dashboard reporting, profile updates, file uploads, and notification preferences.\n- Introduced detailed parameter autonomy and destructive operation guidelines for safer automation and user confirmation.\n- Expanded state machine and flow documentation for negotiation, order, and Grand Apparatus workflows.\n- Updated role assignment: business role is granted upon agent card creation.\n- Consolidated and clarified business workflow and agent guidance for easier onboarding and use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6f5f46f9d728f5450e705ee32ef024916dce0a77face4a85a35fae9db2e90bc3"
+}

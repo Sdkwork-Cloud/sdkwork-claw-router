@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42722,
+  "uuid": "skill-clawhub-openclaw-user-onboarding",
+  "skillKey": "clawhub-openclaw-user-onboarding",
+  "name": "Openclaw User Onboarding",
+  "summary": "Bootstraps new OpenClaw users with guided setup and configurable feature introductions. Auto-triggers on first session if ONBOARDING_PROGRESS.md is missing....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_user_onboarding",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tian",
+      "features": [
+        "Bootstraps new OpenClaw users with guided setup and configurable feature introductions",
+        "Auto-triggers on first session if ONBOARDING_PROGRESS.md is missing...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-user-onboarding@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36315007?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-user-onboarding",
+      "url": "https://clawhub.ai/skills/openclaw-user-onboarding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-user-onboarding",
+    "url": "https://clawhub.ai/skills/openclaw-user-onboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-user-onboarding-39e5923c96718b87.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-user-onboarding@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-user-onboarding-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2119d1d4e6acefcea828b8c8150781d41d20e330adf43a152babf34c5b8203e",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T05:38:46.474Z"
+}

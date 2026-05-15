@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apishield@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apishield",
+  "skill": {
+    "id": 54319,
+    "skillKey": "clawhub-apishield",
+    "name": "apishield"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apishield",
+    "url": "https://clawhub.ai/skills/apishield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apishield-455de3a636ec5132.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "API endpoint security auditor — scans route definitions for missing auth, rate limiting, CORS issues, and input validation holes"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suhteevah",
+      "userId": "s17b8q91y0grcxtcbcmvck351n84tdze",
+      "displayName": "suhteevah",
+      "image": "https://avatars.githubusercontent.com/u/2342183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776179048829,
+      "changelog": "Fix: declare all deps, JWT signature verification, configPaths",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98201aacbe23235923511edbf99b85fc8325046834eeaafb21b6f4b0a4887121"
+}

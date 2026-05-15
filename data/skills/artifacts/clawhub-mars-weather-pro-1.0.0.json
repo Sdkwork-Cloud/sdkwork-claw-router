@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mars-weather-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mars_weather_pro",
+  "skill": {
+    "id": 43699,
+    "skillKey": "clawhub-mars-weather-pro",
+    "name": "Mars Weather Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mars-weather-pro",
+    "url": "https://clawhub.ai/skills/mars-weather-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mars-weather-pro-19613522a7407837.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get current weather and forecasts (no API key required)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mars82311111",
+      "userId": "s17ft7r4x02ndyd3z98hhdv6zn83w86s",
+      "displayName": "mars82311111",
+      "image": "https://avatars.githubusercontent.com/u/265482749?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774963137385,
+      "changelog": "- Initial release of the weather skill.\n- Get current weather and forecasts using wttr.in and Open-Meteo—no API key required.\n- Supports quick text summaries, compact formats, and full multi-day forecasts.\n- Includes tips for locations, units, and output formats (including PNG images).\n- Provides fallback to Open-Meteo API with JSON output for programmatic use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:585e40c5c18fa27859a312d494a5ad556bfa549d4b307a3bb488eca4f3ecf187"
+}

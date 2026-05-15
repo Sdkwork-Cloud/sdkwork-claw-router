@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travelassistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travelassistant",
+  "skill": {
+    "id": 71402,
+    "skillKey": "clawhub-travelassistant",
+    "name": "Travel Assistant-CN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travelassistant",
+    "url": "https://clawhub.ai/skills/travelassistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travelassistant-77fda20b88d151ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI智能旅游规划助手。当用户需要规划旅行、查询目的地信息、获取出行建议时触发，包括但不限于：制定旅行计划、分析目的地天气、分析景点推荐、规划交通住宿、推荐当地美食、制定行李清单、查询旅行注意事项。触发词：旅游助手、帮我规划旅行、去XX旅行要带什么、XX城市天气如何、推荐XX景点、XX有什么好吃的、旅行建议、自驾游..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhuyifeiruichuang",
+      "userId": "s17epvhrds2pfme2p93kw1bdjh84yc0r",
+      "displayName": "zhu",
+      "image": "https://avatars.githubusercontent.com/u/209306256?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776393078281,
+      "changelog": "The travel assistant, applicable to the Chinese region, will be enriched and improved based on accumulated life experience, and is suitable for ordinary families with total assets less than 5 million RMB.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:046d722a0c18cfd583406e1e1d02940c83498ecd54abbc88bcce96466be9eb02"
+}

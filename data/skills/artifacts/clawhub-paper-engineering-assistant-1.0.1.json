@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-engineering-assistant@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_engineering_assistant",
+  "skill": {
+    "id": 64591,
+    "skillKey": "clawhub-paper-engineering-assistant",
+    "name": "Paper Engineering Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-engineering-assistant",
+    "url": "https://clawhub.ai/skills/paper-engineering-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-engineering-assistant-aaf3667d74a9c828.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于“框架层-总结层-正文层”三层架构的自动化论文写作与文献管理助手。严格按照用户指定的目录（`workspace/毕业论文`）组织所有文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrchenkuan",
+      "userId": "publishers:mrchenkuan",
+      "displayName": "陈宽同学",
+      "image": "https://avatars.githubusercontent.com/u/9814867?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 609,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772258058484,
+      "changelog": "- Initial metadata file (_meta.json) added for skill packaging and cataloging.\n- No changes to core functionality or user-facing features in this version.\n- All previous logic and workflows remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f0779e9d37cd130216e8ea3003f01488ae0592fccc0bb0eb5ca1e335c25a3546"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/devcontainer-validator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.devcontainer_validator",
+  "skill": {
+    "id": 33545,
+    "skillKey": "clawhub-devcontainer-validator",
+    "name": "Devcontainer Validator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "devcontainer-validator",
+    "url": "https://clawhub.ai/skills/devcontainer-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/devcontainer-validator-8eab652df8e00eb5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validate devcontainer.json files for syntax, structure, features, ports, lifecycle scripts, customizations, and security best practices in VS Code Dev Contai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777593675556,
+      "changelog": "- Added STATUS.md file to the project.\n- No changes to validation functionality or usage.\n- Version bump to 1.0.1.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b56172778ed035847c833df1d77c308ca771640248417557a6c88797d6c0683"
+}

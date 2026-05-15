@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-hot-recommend@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_hot_recommend",
+  "skill": {
+    "id": 71637,
+    "skillKey": "clawhub-bilibili-hot-recommend",
+    "name": "bilibili 热门视频推荐排行榜"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-hot-recommend",
+    "url": "https://clawhub.ai/skills/bilibili-hot-recommend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-hot-recommend-32a9d0e2e89832e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实时获取B站首页热门推荐视频榜单，输出视频标题、作者、链接及分类，无需登录，内容实时更新。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lvleiai123",
+      "userId": "s17eprpvnr5r680xr2z0ftnsbn83hh57",
+      "displayName": "Ley",
+      "image": "https://avatars.githubusercontent.com/u/59639597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775121202272,
+      "changelog": "- 更新脚本信息，补充脚本依赖需安装 requests 库\n- 优化描述，明确无需登录即可获取 B 站首页热门推荐视频\n- 修正“脚本位置”为“脚本信息”，增强可读性\n- update_time 字段由 2026-04-22 更新为 2026-04-02",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cbddc723b80e25a342063a084c97074095c4aaefa86e6c10c6883344d237b1f2"
+}

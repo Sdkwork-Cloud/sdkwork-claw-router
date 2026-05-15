@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "flyai-hotel-picker",
+    "displayName": "酒店三选一",
+    "summary": "酒店N选1决策助手，帮助用户从海量酒店中精选3家进行对比决策。结合景点POI数据评估位置价值，给出\"选它的理由\"和\"不选的理由\"，帮用户快速拍板。当用户提到\"选哪家酒店\"、\"酒店推荐\"、\"帮我选酒店\"、\"酒店对比\"、\"住哪里好\"、\"酒店三选一\"、\"酒店N选1\"时使用。",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1775103302462,
+    "updatedAt": 1777527074835
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1775237309922,
+    "changelog": "**flyai-hotel-picker v1.0.1**\n\n- 新增详细 reference 文档，涵盖酒店/景点/航班/火车等多种搜索与用户画像存储的 API 命令说明\n- CLI 安装流程优化：统一采用“npm install -g @fly-ai/flyai-cli@latest”，确保首次安装或升级均适用\n- 搜索能力主命令更名与细化：原 `search-hotels` 调整为 `search-hotel`，并增加 `search-marriott-hotel`、`search-marriott-package` 支持\n- 引入双模式用户画像（search_memory 优先，read_file 降级），减少重复询问，提升体验\n- 增加偏好保存指导，支持发现新偏好时提示确认\n- 全面增加 reference 目录，便于查询和调用各类搜索/用户信息能力",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "hello-ahang",
+    "userId": "s173amcatjt4szds3pjwe405r584382h",
+    "displayName": "hello_hang",
+    "image": "https://avatars.githubusercontent.com/u/19886468?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527074835
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cocktail-boy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cocktail_boy",
+  "skill": {
+    "id": 69299,
+    "skillKey": "clawhub-cocktail-boy",
+    "name": "Cocktail Boy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cocktail-boy",
+    "url": "https://clawhub.ai/skills/cocktail-boy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cocktail-boy-59cb153564cc9f19.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "你的私人调酒师 - 提供鸡尾酒推荐、配方查询和调制指南。支持搜索特定鸡尾酒、按原料查找、随机推荐和场景化推荐。数据库中包含 1635+ 款鸡尾酒配方！"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flarecentury",
+      "userId": "publishers:flarecentury",
+      "displayName": "flarecentury",
+      "image": "https://avatars.githubusercontent.com/u/32118570?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772987777427,
+      "changelog": "cocktail-boy v1.0.0\n\n- 首次发布：你的私人调酒师技能上线\n- 支持按鸡尾酒名称、原料、场景查询鸡尾酒及其配方\n- 提供 1635+ 种鸡尾酒的详细调制步骤\n- 一键获取随机或场景化鸡尾酒推荐",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0268fdea26bbe47c7d148306489402b5f94530dad018df86d18f0c6c72d4a704"
+}

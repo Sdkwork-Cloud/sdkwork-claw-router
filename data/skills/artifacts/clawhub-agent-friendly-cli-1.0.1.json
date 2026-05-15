@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-friendly-cli@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_friendly_cli",
+  "skill": {
+    "id": 32804,
+    "skillKey": "clawhub-agent-friendly-cli",
+    "name": "Agent-Friendly CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-friendly-cli",
+    "url": "https://clawhub.ai/skills/agent-friendly-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-friendly-cli-042e8019dff5cfa2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design and audit CLIs for agent usability. Use when building a new CLI tool, auditing an existing CLI for agent compatibility, reviewing CLI UX for AI agents..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "g9pedro",
+      "userId": "s170qw9ry89qte3815nzjvz1sh83mzvt",
+      "displayName": "G9Pedro",
+      "image": "https://avatars.githubusercontent.com/u/78662829?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775773575205,
+      "changelog": "Repackaged from workspace and published for skills.sh compatibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cafa489201906cc2c6388007156ae170b7ae40c4f955fbc287ac7f31d1f146b5"
+}

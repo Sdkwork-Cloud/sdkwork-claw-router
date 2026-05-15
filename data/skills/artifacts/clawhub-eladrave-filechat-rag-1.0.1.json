@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eladrave-filechat-rag@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eladrave_filechat_rag",
+  "skill": {
+    "id": 39615,
+    "skillKey": "clawhub-eladrave-filechat-rag",
+    "name": "FileChat RAG"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eladrave-filechat-rag",
+    "url": "https://clawhub.ai/skills/eladrave-filechat-rag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eladrave-filechat-rag-ec61f3fa78632fb9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, retrieve, and chat with documents securely stored in ANY Google Drive folder using semantic vector search (RAG). Use when: (1) a user asks to save a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eladrave",
+      "userId": "s173v5nncrn4twk8aykszn2tr583et7r",
+      "displayName": "eladrave",
+      "image": "https://avatars.githubusercontent.com/u/86946294?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774240745444,
+      "changelog": "Added multi-folder support and OpenAI embedding provider",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c39e91affcfa5f121bf8eab797ca33faabca4c0857e2a25bdc0115d582b128f"
+}

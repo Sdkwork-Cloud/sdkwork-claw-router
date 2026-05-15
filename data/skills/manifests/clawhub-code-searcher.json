@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21491,
+  "uuid": "skill-clawhub-code-searcher",
+  "skillKey": "clawhub-code-searcher",
+  "name": "Code Searcher",
+  "summary": "Search codebases for patterns, symbols, and TODOs. Use when navigating large codebases.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_searcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Search codebases for patterns, symbols, and TODOs",
+        "Use when navigating large codebases."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-searcher@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-searcher",
+      "url": "https://clawhub.ai/skills/code-searcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-searcher",
+    "url": "https://clawhub.ai/skills/code-searcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-searcher-41a0719f5ad99609.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-searcher@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-searcher-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d9c6fd0789ac16f56cb7c56841bf5f1b87b690cffd23b42f88e71b1d26ea37c",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:08:58.563Z"
+}

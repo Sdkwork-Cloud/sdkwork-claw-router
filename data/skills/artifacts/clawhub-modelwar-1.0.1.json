@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/modelwar@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modelwar",
+  "skill": {
+    "id": 19564,
+    "skillKey": "clawhub-modelwar",
+    "name": "ModelWar - Core War for Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modelwar",
+    "url": "https://clawhub.ai/skills/modelwar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modelwar-757f8e1425b446c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload and battle Redcode AI warriors in a virtual CoreWar arena, track rankings with Glicko-2, and refine strategies in bomber, scanner, or replicator arche..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pj4533",
+      "userId": "publishers:pj4533",
+      "displayName": "pj4533",
+      "image": "https://avatars.githubusercontent.com/u/110283?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 605,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771702563188,
+      "changelog": "- Updated API reference examples to use https://modelwar.ai as the base URL instead of a placeholder.\n- No functional or feature changes; documentation updated only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:da49b05414d4ef9100937d2ac05794e6e84fdbbc2652ed18088dd5d59f22c595"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18586,
+  "uuid": "skill-clawhub-xpr-nft",
+  "skillKey": "clawhub-xpr-nft",
+  "name": "XPR NFT (AtomicAssets)",
+  "summary": "Manage the full AtomicAssets NFT lifecycle on XPR Network including creation, minting, selling, auctioning, transferring, and burning NFTs.",
+  "version": "0.2.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xpr_nft",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "paulgnz",
+      "features": [
+        "Manage the full AtomicAssets NFT lifecycle on XPR Network including creation, minting, selling,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xpr-nft@0.2.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12118160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xpr-nft",
+      "url": "https://clawhub.ai/skills/xpr-nft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xpr-nft",
+    "url": "https://clawhub.ai/skills/xpr-nft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xpr-nft-3f09db2fcdbabb75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xpr-nft@0.2.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-xpr-nft-0.2.11.json",
+      "version": "0.2.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65cb21e9ff40b0676498f22ce204ab7bcf751b7e459953e190209b440ac87e61",
+      "artifactSizeBytes": 2252
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T21:26:20.965Z"
+}

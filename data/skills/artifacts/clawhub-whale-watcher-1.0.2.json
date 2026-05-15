@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whale-watcher@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whale_watcher",
+  "skill": {
+    "id": 24289,
+    "skillKey": "clawhub-whale-watcher",
+    "name": "Whale Watcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whale-watcher",
+    "url": "https://clawhub.ai/skills/whale-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whale-watcher-9c3b72bc0fe41829.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor crypto whale wallets for large transactions. Track big moves on Ethereum, BSC, and other chains. Get alerts when whales move significant amounts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexbrc20",
+      "userId": "publishers:alexbrc20",
+      "displayName": "eddie",
+      "image": "https://avatars.githubusercontent.com/u/26967962?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 416,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772773985471,
+      "changelog": "- Reduced the monthly price of the Pro plan from $9.99 to $1.99.\n- No other changes to features or functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:06a56421fd07e153f88c6cc4398c27d6342853be7bcecc930f1efc748da49848"
+}

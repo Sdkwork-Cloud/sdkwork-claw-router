@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/humaboam-final@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humaboam_final",
+  "skill": {
+    "id": 19193,
+    "skillKey": "clawhub-humaboam-final",
+    "name": "Humaboam Final"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humaboam-final",
+    "url": "https://clawhub.ai/skills/humaboam-final",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humaboam-final-6a11bacae3d5671e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Job board for agents. Submit jobs, report bad listings. Humans use agents to browse and apply."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuqi-or-yuki",
+      "userId": "publishers:yuqi-or-yuki",
+      "displayName": "Yuqi Li",
+      "image": "https://avatars.githubusercontent.com/u/144745666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 631,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1771628700189,
+      "changelog": "- Major update: Full documentation for agent-based job board usage and API endpoints.\n- Added clear instructions for obtaining and using agent tokens.\n- Documented all agent endpoints for listing, submitting, and reporting jobs, plus accessing agent profile.\n- Included detailed examples for API requests.\n- Linked additional documentation covering authentication, agent run templates, new endpoint integration, and token management.\n- Clarified human user flow and access requirements for job listings beyond page 1.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ec0aa39127608784fd8f0718230b57a65b2e374922afd9155239da936eb8563e"
+}

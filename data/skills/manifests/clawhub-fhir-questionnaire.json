@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15764,
+  "uuid": "skill-clawhub-fhir-questionnaire",
+  "skillKey": "clawhub-fhir-questionnaire",
+  "name": "FHIR Questionnaire Designer",
+  "summary": "Helps creating FHIR conforming questionnaire definitions from plain requirement ideation docs. Contains scripts to look up LOINC and SNOMED CT codes for medical conditions, findings, observations, medications, procedures from a official co.",
+  "version": "0.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fhir_questionnaire",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "elmariachi111",
+      "features": [
+        "Helps creating FHIR conforming questionnaire definitions from plain requirement ideation docs",
+        "Contains scripts to look up LOINC and SNOMED CT codes for medical conditions, findings, observa.",
+        "No API keys required at the moment."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fhir-questionnaire@0.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1344649?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fhir-questionnaire",
+      "url": "https://clawhub.ai/skills/fhir-questionnaire"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fhir-questionnaire",
+    "url": "https://clawhub.ai/skills/fhir-questionnaire",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fhir-questionnaire-695078fd1c456729.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fhir-questionnaire@0.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-fhir-questionnaire-0.2.4.json",
+      "version": "0.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:651489625c5d4cda99465c7aa03a410b04eaf726d5f11d10c8618ecd80adf66b",
+      "artifactSizeBytes": 2558
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T15:13:18.003Z"
+}

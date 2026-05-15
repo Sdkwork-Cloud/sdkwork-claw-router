@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66077,
+  "uuid": "skill-clawhub-generic-drug",
+  "skillKey": "clawhub-generic-drug",
+  "name": "Generic Drug",
+  "summary": "查询药品名称对应的通用名，若无结果则返回原名称，基于本地 SearXNG 搜索结果智能分析识别。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generic_drug",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DDDWinter",
+      "features": [
+        "查询药品名称对应的通用名，若无结果则返回原名称，基于本地 SearXNG 搜索结果智能分析识别。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/generic-drug@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75260795?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "generic-drug",
+      "url": "https://clawhub.ai/skills/generic-drug"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generic-drug",
+    "url": "https://clawhub.ai/skills/generic-drug",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generic-drug-f7995f6c4b8afb8c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/generic-drug@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-generic-drug-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b67d15271f6c77ccec2296372281de892a1f5fbbbbc6361dfdd0a2ced25fcf5d",
+      "artifactSizeBytes": 2378
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T00:36:43.674Z"
+}

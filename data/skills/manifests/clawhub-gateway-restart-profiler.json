@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60530,
+  "uuid": "skill-clawhub-gateway-restart-profiler",
+  "skillKey": "clawhub-gateway-restart-profiler",
+  "name": "Gateway Restart Profiler",
+  "summary": "OpenClaw Gateway 重启性能分析工具。分析 Gateway 重启速度、排查启动慢的原因、生成性能报告、诊断启动问题。支持 Windows (PowerShell) 和 Linux (Bash) 平台。触发场景包括：分析 gateway 重启、检查启动时间、gateway 太慢了、生成性能报告、诊断...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gateway_restart_profiler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tstj007",
+      "features": [
+        "OpenClaw Gateway 重启性能分析工具。分析 Gateway 重启速度、排查启动慢的原因、生成性能报告、诊断启动问题。支持 Windows (PowerShell) 和 Linu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gateway-restart-profiler@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264632798?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gateway-restart-profiler",
+      "url": "https://clawhub.ai/skills/gateway-restart-profiler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gateway-restart-profiler",
+    "url": "https://clawhub.ai/skills/gateway-restart-profiler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gateway-restart-profiler-5c2f51b21152c7ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gateway-restart-profiler@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gateway-restart-profiler-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aad74fa1deaf33798a9cb33a53b7b6103e66773098a74ead8ab1343164ba6ed8",
+      "artifactSizeBytes": 2180
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T09:09:43.931Z"
+}

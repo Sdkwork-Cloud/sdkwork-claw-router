@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-stt-tts@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_stt_tts",
+  "skill": {
+    "id": 20091,
+    "skillKey": "clawhub-voice-stt-tts",
+    "name": "Voice messaging setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-stt-tts",
+    "url": "https://clawhub.ai/skills/voice-stt-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-stt-tts-b28c1c2a797760a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full voice message setup (STT + TTS) for OpenClaw using faster-whisper and Edge TTS"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aksenkin",
+      "userId": "publishers:aksenkin",
+      "displayName": "Dmitry Aksenkin",
+      "image": "https://avatars.githubusercontent.com/u/511448?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 564,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772348571338,
+      "changelog": "No significant changes detected in this version.\n\n- No file changes were detected between versions.\n- All installation and configuration instructions remain the same.\n- Functionality and behavior are unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:33742eaedbb33af86c2fc35a6f98ab961b9c4f0e3696741f291f5c374cdf18aa"
+}

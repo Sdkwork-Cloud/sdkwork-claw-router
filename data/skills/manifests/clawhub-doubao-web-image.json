@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37927,
+  "uuid": "skill-clawhub-doubao-web-image",
+  "skillKey": "clawhub-doubao-web-image",
+  "name": "Doubao Web Image",
+  "summary": "Use Playwright to host a browser and call Doubao Web's image generation function. Call this skill when the user requests to draw or generate an image using D...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubao_web_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "atmosphere16happy",
+      "features": [
+        "Use Playwright to host a browser and call Doubao Web's image generation function",
+        "Call this skill when the user requests to draw or generate an image using D..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doubao-web-image@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214950689?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doubao-web-image",
+      "url": "https://clawhub.ai/skills/doubao-web-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubao-web-image",
+    "url": "https://clawhub.ai/skills/doubao-web-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubao-web-image-5758a4bc3355f966.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doubao-web-image@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doubao-web-image-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:073eaadd38181b7227d007585a6f9fd700ec155013678473abd26d833be89e86",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T03:26:15.608Z"
+}

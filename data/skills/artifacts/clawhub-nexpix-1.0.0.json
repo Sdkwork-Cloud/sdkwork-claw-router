@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nexpix@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexpix",
+  "skill": {
+    "id": 51799,
+    "skillKey": "clawhub-nexpix",
+    "name": "NexPix — Cloudflare Image Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexpix",
+    "url": "https://clawhub.ai/skills/nexpix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexpix-7eb21ce5c5e8383b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI image generation via Cloudflare Workers AI (free tier, FLUX models) with premium EvoLink fallback. Use when generating images from text prompts, creating..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "finndottllc-ui",
+      "userId": "publishers:finndottllc-ui",
+      "displayName": "finndottllc-ui",
+      "image": "https://avatars.githubusercontent.com/u/242692176?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774107712442,
+      "changelog": "Initial release: Free tier image gen (FLUX) + premium fallback (EvoLink). CLI, API, Discord/Telegram integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:17fe21053a55b47ba524fb0ef759d8dea593b4f63b76b2993ac8c2ee4f70edbd"
+}

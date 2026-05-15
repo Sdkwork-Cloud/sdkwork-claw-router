@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60371,
+  "uuid": "skill-clawhub-openclaw-rescue-instances",
+  "skillKey": "clawhub-openclaw-rescue-instances",
+  "name": "OpenClaw Rescue Instances",
+  "summary": "一键创建和管理完全隔离的 OpenClaw 救援 Gateway 实例，支持端口自动分配及批量创建。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_rescue_instances",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yangkai258",
+      "features": [
+        "一键创建和管理完全隔离的 OpenClaw 救援 Gateway 实例，支持端口自动分配及批量创建。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-rescue-instances@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78720784?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-rescue-instances",
+      "url": "https://clawhub.ai/skills/openclaw-rescue-instances"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-rescue-instances",
+    "url": "https://clawhub.ai/skills/openclaw-rescue-instances",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-rescue-instances-e0ac230411a87a2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-rescue-instances@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-rescue-instances-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:376e46908da9929284f93477dfddbc3aa90d5b7be0645cda04c621b14c382472",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:09:21.990Z"
+}

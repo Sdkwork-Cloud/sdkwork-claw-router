@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41304,
+  "uuid": "skill-clawhub-geo-push-ops",
+  "skillKey": "clawhub-geo-push-ops",
+  "name": "Geo Push Ops",
+  "summary": "Handles Feishu message construction, sending with retries, rate limit detection, delivery diagnostics, and dead-letter queue management for geo alerts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_push_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liweijie0709-cmyk",
+      "features": [
+        "Handles Feishu message construction, sending with retries, rate limit detection, delivery diagn."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/geo-push-ops@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266322839?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "geo-push-ops",
+      "url": "https://clawhub.ai/skills/geo-push-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-push-ops",
+    "url": "https://clawhub.ai/skills/geo-push-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-push-ops-1846c7ca8d1890da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/geo-push-ops@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-geo-push-ops-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7079179650215caf1aeb1407e0dc8a04c24490f352241a781c373ac8340fb37b",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:12:21.230Z"
+}

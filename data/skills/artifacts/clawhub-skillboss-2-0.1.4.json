@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skillboss-2@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillboss_2",
+  "skill": {
+    "id": 46964,
+    "skillKey": "clawhub-skillboss-2",
+    "name": "Skillboss"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillboss-2",
+    "url": "https://clawhub.ai/skills/skillboss-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillboss-2-8a779e6db0f6cf9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-AI gateway for fullstack apps. Build/deploy websites, React apps, SaaS, ecommerce to Cloudflare Workers. DB (D1/KV/R2), Stripe payments/subscriptions/c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yshuolu",
+      "userId": "s179kmny7zy66a1bcdby1d6j1n83hsav",
+      "displayName": "Phineas",
+      "image": "https://avatars.githubusercontent.com/u/1445962?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1773121559929,
+      "changelog": "- Removed install/install.sh and install/update.sh scripts.\n- Deprecated direct install/update script usage as part of the setup and update process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c1e8f7d3d0b387e41464fbf059f3e166c9e23a66e7d4904f5bfd0c1b3ce4c74"
+}

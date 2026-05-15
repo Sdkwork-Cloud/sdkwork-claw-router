@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27294,
+  "uuid": "skill-clawhub-openclaw-skill-eval",
+  "skillKey": "clawhub-openclaw-skill-eval",
+  "name": "Skill Eval",
+  "summary": "Skill evaluation framework. Use when: testing trigger rate, quality compare (with/without skill), or model comparison. Runs via sessions_spawn + sessions_his...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_eval",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiaoxing9",
+      "features": [
+        "Skill evaluation framework",
+        "Use when: testing trigger rate, quality compare (with/without skill), or model comparison",
+        "Runs via sessions_spawn + sessions_his..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-eval@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107669875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-eval",
+      "url": "https://clawhub.ai/skills/openclaw-skill-eval"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-eval",
+    "url": "https://clawhub.ai/skills/openclaw-skill-eval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-eval-d9cfc16b38829336.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-eval@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-eval-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:303531dbb393060d2d9b369ad7333dd95099344b618598b5a26593fd75181eb2",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T01:00:35.409Z"
+}

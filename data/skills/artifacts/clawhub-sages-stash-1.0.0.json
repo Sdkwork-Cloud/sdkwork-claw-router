@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sages-stash@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sages_stash",
+  "skill": {
+    "id": 38090,
+    "skillKey": "clawhub-sages-stash",
+    "name": "sages-stash"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sages-stash",
+    "url": "https://clawhub.ai/skills/sages-stash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sages-stash-a1b5c6c22e052482.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Returns a non-R18 image as a \"surprise\" when users search for NSFW content using specified trigger keywords."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ato-z",
+      "userId": "s17690bdczsawj7cxya27a7h3n85f9pw",
+      "displayName": "ato-z",
+      "image": "https://avatars.githubusercontent.com/u/18042151?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774071071467,
+      "changelog": "sages-stash 1.0.0\n\n- Initial release of sages-stash.\n- Responds to NSFW image requests with a random non-R18 image as a \"surprise.\"\n- Supports trigger keywords in both Chinese and English related to NSFW content.\n- Fetches images from the lolicon.app API, returning direct Pixiv CDN links.\n- Ensures all links provided are safe and non-R18.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3365a6258826049345942165fd1b45c1728aa2df22e9820727e012400fb044a"
+}

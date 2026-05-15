@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23992,
+  "uuid": "skill-clawhub-lock-me-in",
+  "skillKey": "clawhub-lock-me-in",
+  "name": "lock-me-in",
+  "summary": "Remote browser login and session persistence for headless servers. Start an interactive browser session via a temporary public URL (cloudflared tunnel), let...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lock_me_in",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MichaelLod",
+      "features": [
+        "Remote browser login and session persistence for headless servers",
+        "Start an interactive browser session via a temporary public URL (cloudflared tunnel), let..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lock-me-in@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26215602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lock-me-in",
+      "url": "https://clawhub.ai/skills/lock-me-in"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lock-me-in",
+    "url": "https://clawhub.ai/skills/lock-me-in",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lock-me-in-f8b3303d5a748558.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lock-me-in@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lock-me-in-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64e35fd954d963f82782c2f7e0d3d577385efdd6de4903356a6c793ec8127371",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T17:44:50.015Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-ghostwriting@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_ghostwriting",
+  "skill": {
+    "id": 51403,
+    "skillKey": "clawhub-linkedin-ghostwriting",
+    "name": "Linkedin Ghostwriting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-ghostwriting",
+    "url": "https://clawhub.ai/skills/linkedin-ghostwriting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-ghostwriting-571919f81ba8a51e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "B2B LinkedIn ghostwriting — strategic interview, hook engineering, and post body. Use when the user wants to write LinkedIn content, create ghostwritten post..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samber",
+      "userId": "s173arkhs3131fq5jf769qq75583hdgt",
+      "displayName": "Samuel Berthe",
+      "image": "https://avatars.githubusercontent.com/u/2951285?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1775847156480,
+      "changelog": "- Adds a new \"Final polish\" section recommending use of a humanizer skill to scrub AI-generated patterns after writing the post.\n- Specifies to preserve the engineered hook during humanization for copywriting effectiveness.\n- Updates `allowed-tools` to include AskUserQuestion.\n- Bumps version to 1.1.2 in metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4e5ae0865edaf76326e01113a43f3ce2204ed463e861b8e61a0a4db41d250e2"
+}

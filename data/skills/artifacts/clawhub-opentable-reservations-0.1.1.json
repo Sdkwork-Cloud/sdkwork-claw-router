@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opentable-reservations@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opentable_reservations",
+  "skill": {
+    "id": 38804,
+    "skillKey": "clawhub-opentable-reservations",
+    "name": "OpenTable Reservations"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opentable-reservations",
+    "url": "https://clawhub.ai/skills/opentable-reservations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opentable-reservations-6ea108b1a4aa0fb9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find and book restaurant reservations via OpenTable with date, time, party size, location, cuisine filters, or direct booking links for named restaurants."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikehe123",
+      "userId": "s1766wyz6rx7vabctgkecjypr184ma4z",
+      "displayName": "mikehe123",
+      "image": "https://avatars.githubusercontent.com/u/71740368?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775953666456,
+      "changelog": "Docs: added BENCHMARK.md with full head-to-head comparison against eeshita-pande/opentable-booking and ivangdavila/opentable (3-query battery, isolated fresh sessions, side-effect audit). README links to the benchmark. No script or contract changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0089d17ef844ac15dd58244cfa504847443be69766c7bbdcecc61f276b46ded"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sheetsmith@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sheetsmith",
+  "skill": {
+    "id": 9633,
+    "skillKey": "clawhub-sheetsmith",
+    "name": "Sheetsmith"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sheetsmith",
+    "url": "https://clawhub.ai/skills/sheetsmith",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sheetsmith-031790267ce091ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pandas-powered CSV & Excel management for quick previews, summaries, filtering, transforming, and format conversions. Use this skill whenever you need to inspect spreadsheet files, compute column-level summaries, apply queries or expressio."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crimsondevil333333",
+      "userId": "s1744z3a1b8mpdjzvrgn6tz82985gp0p",
+      "displayName": "CrimsonDevil333333",
+      "image": "https://avatars.githubusercontent.com/u/49252920?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3336,
+      "installsAllTime": 11,
+      "installsCurrent": 10,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770280049905,
+      "changelog": "Updating metadata",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b4acb2583b0623cb24f7d9c775d934c601f54bc9fca198a632985de1c424374f"
+}

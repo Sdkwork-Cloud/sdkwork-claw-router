@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38038,
+  "uuid": "skill-clawhub-delivery-preference-resolver",
+  "skillKey": "clawhub-delivery-preference-resolver",
+  "name": "Delivery Preference Resolver",
+  "summary": "Determines user intent, destination, known/missing fields, and need for follow-up in a structured JSON output for delivery preference resolution.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delivery_preference_resolver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Donigwapo",
+      "features": [
+        "Determines user intent, destination, known/missing fields, and need for follow-up in a structur."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/delivery-preference-resolver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145357656?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "delivery-preference-resolver",
+      "url": "https://clawhub.ai/skills/delivery-preference-resolver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delivery-preference-resolver",
+    "url": "https://clawhub.ai/skills/delivery-preference-resolver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delivery-preference-resolver-709e0168bc0e068c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/delivery-preference-resolver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-delivery-preference-resolver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f588c80422c0c5ab32162b31a42af46908fd16efe116c56bb7673d8150a51bb",
+      "artifactSizeBytes": 2469
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T07:53:23.471Z"
+}

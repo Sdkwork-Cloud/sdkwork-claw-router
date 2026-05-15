@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/business-license-ocr@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_license_ocr",
+  "skill": {
+    "id": 69293,
+    "skillKey": "clawhub-business-license-ocr",
+    "name": "Business License Ocr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-license-ocr",
+    "url": "https://clawhub.ai/skills/business-license-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-license-ocr-b4819ab8b700ff80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "精准识别中国大陆本营业执照。自动提取统一社会信用代码、企业名称、法定代表人、注册资本、成立日期、经营范围、住所等信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scnet-sugon",
+      "userId": "s17aan1jdk93c5398r3ypc523d83hqys",
+      "displayName": "SCNet-sugon",
+      "image": "https://avatars.githubusercontent.com/u/267813088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776242399167,
+      "changelog": "- Bumped version to 1.0.4.\n- No changes to source code or configuration.\n- No new features, fixes, or updates in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:163c1103d751ec2cdad69d9d31839df7da987d23c558b4290d34eb851f548bdb"
+}

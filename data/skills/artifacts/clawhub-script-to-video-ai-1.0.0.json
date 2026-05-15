@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/script-to-video-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.script_to_video_ai",
+  "skill": {
+    "id": 49159,
+    "skillKey": "clawhub-script-to-video-ai",
+    "name": "Script To Video Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "script-to-video-ai",
+    "url": "https://clawhub.ai/skills/script-to-video-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/script-to-video-ai-7d793d3f2b3f1ee8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get AI-generated videos ready to post, without touching a single slider. Upload your written script (TXT, DOCX, PDF, SRT, up to 10MB), say something like \"tu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 85,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778063566039,
+      "changelog": "Script-to-Video AI skill initial release.\n\n- Instantly converts user-uploaded scripts (TXT, DOCX, PDF, SRT) into AI-generated videos with visuals, voiceover, and subtitles.\n- Handles backend authentication and session management automatically, granting 100 free credits for 7 days.\n- Supports 1080p MP4 export with fast cloud GPU rendering (typical jobs take 1–2 minutes).\n- Provides upload, preview, status, and export commands; summarizes timeline edits in plain text.\n- Guides users with clear error messages, supported formats, and actionable tips for best results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df91bb7f3ea4cc9284514626fed897f74793268d78a6bfed64f0d64bc01ffc9a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hermes-work-visualization@1.1.4",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_work_visualization",
+  "skill": {
+    "id": 60724,
+    "skillKey": "clawhub-hermes-work-visualization",
+    "name": "Hermes Work Visualization"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-work-visualization",
+    "url": "https://clawhub.ai/skills/hermes-work-visualization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-work-visualization-725f678275d09359.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将Hermes Agent的工作过程可视化 - 包括任务进度、技能使用、代码改动、会话统计等"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "erich1566",
+      "userId": "s17amde2emhcgwty2p2w954ebn84yrw7",
+      "displayName": "Eric JIE",
+      "image": "https://avatars.githubusercontent.com/u/29330089?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.4",
+      "createdAt": 1776743279692,
+      "changelog": "- Added bilingual documentation (Chinese and English) with comprehensive usage, configuration, and visualization instructions.\n- Introduced detailed configuration options, including metrics selection, report frequency, output formats, and chart customization.\n- Documented supported visualization types: task progress, skill usage, tool statistics, code tracking, and session summaries.\n- Described automatic and manual language detection settings and supported language codes.\n- Provided extension suggestions and listed related skills for enhanced workflow integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16707cb204ae2df613611696d391e3900e2325c084f5c41e849b3921bc54febc"
+}

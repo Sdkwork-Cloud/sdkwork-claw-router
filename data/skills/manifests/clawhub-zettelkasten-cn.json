@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68544,
+  "uuid": "skill-clawhub-zettelkasten-cn",
+  "skillKey": "clawhub-zettelkasten-cn",
+  "name": "Zettelkasten CN",
+  "summary": "卢曼卡片学习法（Zettelkasten）全生命周期管理系统，支持九大人生领域分类、撤销操作、交互式创建流程。处理闪念笔记、文献笔记、永久笔记、项目笔记的增删改查，以及与Agent记忆系统的双向关联。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zettelkasten_cn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WittFan",
+      "features": [
+        "卢曼卡片学习法（Zettelkasten）全生命周期管理系统，支持九大人生领域分类、撤销操作、交互式创建流程。处理闪念笔记、文献笔记、永久笔记、项目笔记的增删改查，以及与Agent记忆系统的."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zettelkasten-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50908106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zettelkasten-cn",
+      "url": "https://clawhub.ai/skills/zettelkasten-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zettelkasten-cn",
+    "url": "https://clawhub.ai/skills/zettelkasten-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zettelkasten-cn-e2d80972bc6664fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zettelkasten-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zettelkasten-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61c238f7663a39fddf933bc6564748773b1c588cad014e2f8287fd5360676edf",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T14:52:54.661Z"
+}

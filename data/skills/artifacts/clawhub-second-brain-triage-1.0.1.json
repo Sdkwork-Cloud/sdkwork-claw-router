@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/second-brain-triage@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.second_brain_triage",
+  "skill": {
+    "id": 31942,
+    "skillKey": "clawhub-second-brain-triage",
+    "name": "Second Brain Triage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "second-brain-triage",
+    "url": "https://clawhub.ai/skills/second-brain-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/second-brain-triage-7ad8a40ac6745478.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent information triage system based on Tiago Forte's PARA method (Projects/Areas/Resources/Archive) for automatic categorization and priority scoring..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774071760694,
+      "changelog": "**Streamlined triage system: Reimplemented with automated PARA classification and urgency scoring.**\n\n- Introduced core source files for content analysis, PARA categorization, urgency scoring, and relatedness detection\n- Switched to Tiago Forte's PARA method (Projects/Areas/Resources/Archive) for automatic content sorting\n- Added batch triage, report export, and CLI usage examples\n- Updated documentation with simplified features and technical architecture\n- Removed older technical specification in favor of a concise, user-facing README",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7b6803bc379bfde2773a96b1cef824154c80743ee95759cdf98c9d2afb3a56b"
+}

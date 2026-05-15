@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53461,
+  "uuid": "skill-clawhub-protein-qc-strict",
+  "skillKey": "clawhub-protein-qc-strict",
+  "name": "Protein QC Strict",
+  "summary": "Strictest protein sequence analysis quality control workflow (3365→456 sequences). Includes literature validation, CD-HIT redundancy removal, complexity chec...",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.protein_qc_strict",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Billwanttobetop",
+      "features": [
+        "Strictest protein sequence analysis quality control workflow (3365→456 sequences)",
+        "Includes literature validation, CD-HIT redundancy removal, complexity chec..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/protein-qc-strict@4.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103113834?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "protein-qc-strict",
+      "url": "https://clawhub.ai/skills/protein-qc-strict"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "protein-qc-strict",
+    "url": "https://clawhub.ai/skills/protein-qc-strict",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/protein-qc-strict-b2138bdcc32b2bf0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/protein-qc-strict@4.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-protein-qc-strict-4.0.0.json",
+      "version": "4.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ddc7972a6c4f8f97503a9bb8b5e89daa9b67e87226d3f4600ba34cc666c56e23",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T14:22:36.894Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lemonade-server-manager@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lemonade_server_manager",
+  "skill": {
+    "id": 31254,
+    "skillKey": "clawhub-lemonade-server-manager",
+    "name": "Lemonade Server Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lemonade-server-manager",
+    "url": "https://clawhub.ai/skills/lemonade-server-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lemonade-server-manager-62ee035d2f8fa282.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Lemonade Servers natively. Use when checking system info, health status, listing available models, pulling or loading new models, completing LLM chats..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "james-martinez",
+      "userId": "s17dwfngg4bdepqmt9tmvfnxnh83hrb1",
+      "displayName": "James Martinez",
+      "image": "https://avatars.githubusercontent.com/u/1388493?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1774142206378,
+      "changelog": "Release v1.0.7",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8e97129357f71fcc18a16258b785811de7e88538880eb2b322a45ebbe3395a8"
+}

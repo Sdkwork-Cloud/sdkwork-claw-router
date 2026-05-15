@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25049,
+  "uuid": "skill-clawhub-hs-ti",
+  "skillKey": "clawhub-hs-ti",
+  "name": "Hs Ti",
+  "summary": "Hillstone Threat Intelligence Skill. Query IP addresses, domains, URLs, and file hashes in Hillstone threat intelligence database.",
+  "version": "2.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hs_ti",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maxjia",
+      "features": [
+        "Hillstone Threat Intelligence Skill",
+        "Query IP addresses, domains, URLs, and file hashes in Hillstone threat intelligence database."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hs-ti@2.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13901379?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hs-ti",
+      "url": "https://clawhub.ai/skills/hs-ti"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hs-ti",
+    "url": "https://clawhub.ai/skills/hs-ti",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hs-ti-2be66c74cdeed814.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hs-ti@2.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-hs-ti-2.2.5.json",
+      "version": "2.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e91ffa0591eca1c8ca2da4a3f35a629b59faf8c86e7df6b08511443450499727",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T17:25:54.938Z"
+}

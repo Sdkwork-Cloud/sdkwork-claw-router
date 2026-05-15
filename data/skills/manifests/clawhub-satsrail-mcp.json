@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50168,
+  "uuid": "skill-clawhub-satsrail-mcp",
+  "skillKey": "clawhub-satsrail-mcp",
+  "name": "SatsRail MCP — Bitcoin Lightning Payments for AI Agents",
+  "summary": "Enable AI agents to create Bitcoin Lightning payment orders, generate invoices, check payment status, and manage payments via natural language with SatsRail...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.satsrail_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ruby Tuesday",
+      "features": [
+        "Enable AI agents to create Bitcoin Lightning payment orders, generate invoices, check payment s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/satsrail-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258065303?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "satsrail-mcp",
+      "url": "https://clawhub.ai/skills/satsrail-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "satsrail-mcp",
+    "url": "https://clawhub.ai/skills/satsrail-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/satsrail-mcp-5962db857ad6fa92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/satsrail-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-satsrail-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8ec4b92977d32cd9953926b487bee38435835981ebaf32dfec3747114c37d23",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T18:56:36.248Z"
+}

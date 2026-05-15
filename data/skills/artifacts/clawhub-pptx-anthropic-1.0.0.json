@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pptx-anthropic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pptx_anthropic",
+  "skill": {
+    "id": 50534,
+    "skillKey": "clawhub-pptx-anthropic",
+    "name": "Pptx Anthropic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pptx-anthropic",
+    "url": "https://clawhub.ai/skills/pptx-anthropic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pptx-anthropic-77d3d37aec3b5895.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill any time a .pptx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations;..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pupuking723",
+      "userId": "publishers:pupuking723",
+      "displayName": "pupuking723",
+      "image": "https://avatars.githubusercontent.com/u/169750518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 454,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773506078676,
+      "changelog": "Initial release of the pptx-anthropic skill.\n\n- Enables reading, creating, editing, and modifying .pptx files, including extracting text, using templates, and working with slide layouts, notes, and comments.\n- Automatically triggers for any task involving presentations, decks, slides, or .pptx filenames—regardless of input or output needs.\n- Provides detailed design guidance for slide creation, including color palettes, layout ideas, font pairings, and spacing tips to avoid generic or unattractive presentations.\n- Outlines recommended workflows for both editing existing presentations and creating slides from scratch, with references to usage guides.\n- Includes comprehensive QA instructions for both content and visual review to ensure high-quality, error-free slide decks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42bb18f9d2a4b9a41e3744aa000fc7ed02533999b18545fe80bcd40e74654cf4"
+}

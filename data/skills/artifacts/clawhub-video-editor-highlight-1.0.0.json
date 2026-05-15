@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-highlight@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_highlight",
+  "skill": {
+    "id": 41681,
+    "skillKey": "clawhub-video-editor-highlight",
+    "name": "Video Editor Highlight"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-highlight",
+    "url": "https://clawhub.ai/skills/video-editor-highlight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-highlight-6ea6ee366e4e93a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 10-minute gameplay or event recording into 1080p highlight reel clips just by typing what you need. Whether it's generating short highlight reels from..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776752752070,
+      "changelog": "- Initial release of video-editor-highlight.\n- Enables AI-powered highlight extraction from raw video footage via a cloud backend.\n- Users upload video files and describe desired highlight reels; automated export produces 1080p MP4 clips within minutes.\n- Automatic setup of API connection with free trial credits; seamless session and token management.\n- Supports a range of media formats (video, audio, image).\n- Provides clear workflow guidance for upload, edit, and export operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8075fa597c7b57c53a5c594a67bf42bf27cd3445e67e832b436a9ea5928ae116"
+}

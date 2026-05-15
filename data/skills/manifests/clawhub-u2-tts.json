@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23775,
+  "uuid": "skill-clawhub-u2-tts",
+  "skillKey": "clawhub-u2-tts",
+  "name": "U2-tts",
+  "summary": "Text-to-speech conversion using UniSound's TTS WebSocket API for generating high-quality Chinese Mandarin audio from text. Supports multiple voices, adjustab...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.u2_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aaiccee",
+      "features": [
+        "Text-to-speech conversion using UniSound's TTS WebSocket API for generating high-quality Chines.",
+        "Supports multiple voices, adjustab..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/u2-tts@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45053675?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "u2-tts",
+      "url": "https://clawhub.ai/skills/u2-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "u2-tts",
+    "url": "https://clawhub.ai/skills/u2-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/u2-tts-f1e86506147be544.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/u2-tts@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-u2-tts-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:948c09b9b20fde3576915229cff6bb65dd200f3845208e54ce6eb643108b2376",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T06:52:48.857Z"
+}

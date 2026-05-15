@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trip-expense-summary@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trip_expense_summary",
+  "skill": {
+    "id": 62691,
+    "skillKey": "clawhub-trip-expense-summary",
+    "name": "出行报销汇总"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trip-expense-summary",
+    "url": "https://clawhub.ai/skills/trip-expense-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trip-expense-summary-ea5fd52685437941.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能报销助手，支持差旅费用报销、发票管理、费用审批、报销进度查询、费用分析等功能。可处理机票、酒店、用车、餐饮等多种费用类型，自动识别发票信息，智能匹配差旅订单。Invoke when user needs to submit expense report, upload invoice, check reimb..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaogao605",
+      "userId": "s17cxwwzm94v9ntkczkmq0r2x983km1s",
+      "displayName": "fenbeitong-trip",
+      "image": "https://avatars.githubusercontent.com/u/265222913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774949818526,
+      "changelog": "fb-expense-skill 1.0.0 — 首发\n\n- 新增差旅费用报销助手，支持机票、酒店、用车、餐饮等多种类型费用的录入和管理  \n- 支持发票自动识别、真伪验证、查重防止重复报销  \n- 报销单自动生成，一键提交，审批流程自动分配与实时追踪  \n- 费用分析、统计报表和预算执行跟踪  \n- 严格合规校验：发票有效性、金额、报销周期、费用标准等  \n- 丰富的API接口，便于集成与自动化操作",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90f893a2e9a8ae666cd9fad91ccf070b515a77ecbd585a4ed90fa6e8982045a2"
+}

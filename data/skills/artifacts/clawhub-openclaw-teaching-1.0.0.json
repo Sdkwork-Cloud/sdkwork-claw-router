@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-teaching@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_teaching",
+  "skill": {
+    "id": 62944,
+    "skillKey": "clawhub-openclaw-teaching",
+    "name": "OpenClaw Teaching"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-teaching",
+    "url": "https://clawhub.ai/skills/openclaw-teaching",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-teaching-e9201c25e9065b72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 知识教学技能 - 用于持续更新和管理 OpenClaw 平台知识，支持将知识内容导出为 PPT 或 Word 文档。适用场景：OpenClaw 平台使用教程、技能开发指南、最佳实践分享、知识库维护与更新。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roadherogb",
+      "userId": "publishers:roadherogb",
+      "displayName": "RoadheroGB",
+      "image": "https://avatars.githubusercontent.com/u/132873551?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773218275189,
+      "changelog": "OpenClaw teaching skill initial release.\n\n- Introduces the openclaw-teaching tool for managing and updating the OpenClaw knowledge base.\n- Supports exporting knowledge as professional PPT and Word documents with custom templates.\n- Enables knowledge categorization, version control, and fast retrieval.\n- Provides scripts for adding and updating knowledge, and generating documents.\n- Includes detailed usage instructions and requirements for setup.\n\nOpenClaw 知识教学技能 v1.0.0 首次发布。\n\n- 提供 OpenClaw 平台知识的收集、分类、检索与版本管理\n- 自动生成专业 PPT 和 Word 教学文档，支持自定义模板\n- 支持增量与批量知识更新及自动同步官方文档\n- 附带详细的使用指南、命令行操作示例和依赖说明\n- 知识库结构清晰，方便持续维护与快速检索",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:023ab5945fb18b249ae69645e58899c7d84b4b8c22943e32507e0f51bd7f8ccd"
+}

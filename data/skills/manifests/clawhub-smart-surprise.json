@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33089,
+  "uuid": "skill-clawhub-smart-surprise",
+  "skillKey": "clawhub-smart-surprise",
+  "name": "Smart Surprise",
+  "summary": "Proactively engages users with personalized casual messages at random intervals, learning preferences to deliver warm, varied conversations and check-ins.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_surprise",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TuringCorp.net",
+      "features": [
+        "Proactively engages users with personalized casual messages at random intervals, learning prefe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-surprise@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229416261?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-surprise",
+      "url": "https://clawhub.ai/skills/smart-surprise"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-surprise",
+    "url": "https://clawhub.ai/skills/smart-surprise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-surprise-0fe13e1b4d662e0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-surprise@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-surprise-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7612d7828d89f649fa1ff990c3eda847c817eed0d376bfba2e8fa5bab9fd2d38",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T02:25:24.613Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57872,
+  "uuid": "skill-clawhub-github-test",
+  "skillKey": "clawhub-github-test",
+  "name": "GitHub",
+  "summary": "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alex",
+      "features": [
+        "Interact with GitHub using the `gh` CLI",
+        "Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-test@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91515770?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-test",
+      "url": "https://clawhub.ai/skills/github-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-test",
+    "url": "https://clawhub.ai/skills/github-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-test-7aec7d1bd9d3f639.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-test@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-test-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9679314a506cbbdaae490f3462af84276fd5838956b4eb9a3230519d2168f3ba",
+      "artifactSizeBytes": 1818
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T23:21:07.848Z"
+}

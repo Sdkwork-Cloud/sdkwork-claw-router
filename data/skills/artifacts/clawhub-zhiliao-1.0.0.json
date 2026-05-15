@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhiliao@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhiliao",
+  "skill": {
+    "id": 70366,
+    "skillKey": "clawhub-zhiliao",
+    "name": "zhiliao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhiliao",
+    "url": "https://clawhub.ai/skills/zhiliao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhiliao-db7b5c3ada15b029.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "知了 - AI 话题追踪与资讯聚合服务。通过自然语言创建追踪话题，自动从全网聚合相关文章并定时更新。适用场景：(1) 创建信息追踪话题（如追踪黄金价格、科技新闻、行业动态），(2) 获取和浏览话题下的聚合文章，(3) 设置定时任务定期抓取新文章，(4) 查看/管理话题列表，(5) 取消订阅不需要的话题。触发关键词..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jfeng03-dev",
+      "userId": "s1724azatwcr78xynxqb5ww98d83gdwx",
+      "displayName": "jfeng03-dev",
+      "image": "https://avatars.githubusercontent.com/u/81132768?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774361733916,
+      "changelog": "知了 (zhiliao) 1.0.0 — 首个版本发布\n\n- 提供基于自然语言的话题追踪与全网资讯聚合服务。\n- 支持两步式话题创建（预览+确认），并可直接关注或新建追踪主题。\n- 可获取和本地缓存订阅话题的最新相关文章，支持分页浏览。\n- 支持话题列表查看、详细信息展示与一键取消订阅。\n- 内置定时任务与批量更新功能，便于实现自动化资讯推送。\n- 所有数据及配置本地私有化保存，命令行工具易于集成与扩展。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5dea2cb08135cc4bfcee5087a6d0dbdee6330d456dd3c897a5f675d3536a851a"
+}

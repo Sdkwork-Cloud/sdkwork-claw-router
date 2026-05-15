@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44585,
+  "uuid": "skill-clawhub-add-subtitle-to-video-extension",
+  "skillKey": "clawhub-add-subtitle-to-video-extension",
+  "name": "Add Subtitle To Video Extension",
+  "summary": "Get captioned video files ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"ad...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_subtitle_to_video_extension",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "Get captioned video files ready to post, without touching a single slider",
+        "Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"ad..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/add-subtitle-to-video-extension@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "add-subtitle-to-video-extension",
+      "url": "https://clawhub.ai/skills/add-subtitle-to-video-extension"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-subtitle-to-video-extension",
+    "url": "https://clawhub.ai/skills/add-subtitle-to-video-extension",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-subtitle-to-video-extension-580c9329b8dbcdef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/add-subtitle-to-video-extension@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-add-subtitle-to-video-extension-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f528c8bf88491ed8a6004f02ec857c0ca5a16d583f6bf8c57dfdf4f50cae21e",
+      "artifactSizeBytes": 2617
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T04:57:21.127Z"
+}

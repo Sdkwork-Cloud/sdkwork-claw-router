@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/freenow@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freenow",
+  "skill": {
+    "id": 69362,
+    "skillKey": "clawhub-freenow",
+    "name": "Freenow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freenow",
+    "url": "https://clawhub.ai/skills/freenow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freenow-7682cc532e6196c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供欧洲100+城市出租车、网约车和电动滑板车叫车、行程查询及费用估算服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776238674672,
+      "changelog": "- 精简并优化了品牌介绍和使用说明，使内容结构更加清晰易读。\n- 用表情符号突出品牌历史、业务、市场分布等关键信息导航。\n- 简化了“何时使用”场景说明，更贴合实际需求。\n- 强调官方网站为权威信息来源。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b513f89e0eafdb44b2caadb9cb310dd103a86da0ebc45534fad8ddbf7f6858b"
+}

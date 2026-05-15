@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/orderly-sdk-dex-architecture@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orderly_sdk_dex_architecture",
+  "skill": {
+    "id": 28070,
+    "skillKey": "clawhub-orderly-sdk-dex-architecture",
+    "name": "Orderly Sdk Dex Architecture"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orderly-sdk-dex-architecture",
+    "url": "https://clawhub.ai/skills/orderly-sdk-dex-architecture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orderly-sdk-dex-architecture-07306fe26b33fb4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete DEX architecture guide including project structure, provider hierarchy, network configuration, TradingView setup, and provider configuration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tarnadas",
+      "userId": "publishers:tarnadas",
+      "displayName": "Mario Reder",
+      "image": "https://avatars.githubusercontent.com/u/5855071?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772875706108,
+      "changelog": "- Initial release of the comprehensive DEX architecture guide for Orderly Network SDK.\n- Covers project structure, required provider hierarchy, and essential network configuration for mainnet/testnet.\n- Includes setup instructions for TradingView chart integration.\n- Provides guidance on runtime configuration, wallet connector setup, and deployment.\n- Emphasizes critical configuration steps, such as required brokerId and trading chart dependencies.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2bb1ccbf1ba2b94ee07e30e28b1f427978b7f272a94787755dbb4a89a7b9d27c"
+}

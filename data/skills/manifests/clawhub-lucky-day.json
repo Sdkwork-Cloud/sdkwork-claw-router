@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70123,
+  "uuid": "skill-clawhub-lucky-day",
+  "skillKey": "clawhub-lucky-day",
+  "name": "Lucky Day",
+  "summary": "择吉选日，根据用户需求（嫁娶、开业、搬家、动土等）选择最近的好日子",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lucky_day",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mingo_318",
+      "features": [
+        "择吉选日，根据用户需求（嫁娶、开业、搬家、动土等）选择最近的好日子"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lucky-day@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62329898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lucky-day",
+      "url": "https://clawhub.ai/skills/lucky-day"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lucky-day",
+    "url": "https://clawhub.ai/skills/lucky-day",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lucky-day-bb7be9e86837237a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lucky-day@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lucky-day-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50a43c6b80da3859c9dd401aeddaa79750b94a7834d1f4d9c194dd639029b1ca",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T06:31:49.577Z"
+}

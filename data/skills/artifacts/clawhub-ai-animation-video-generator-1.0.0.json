@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-animation-video-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_animation_video_generator",
+  "skill": {
+    "id": 45570,
+    "skillKey": "clawhub-ai-animation-video-generator",
+    "name": "Ai Animation Video Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-animation-video-generator",
+    "url": "https://clawhub.ai/skills/ai-animation-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-animation-video-generator-dace8ff2512e59e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a short text prompt describing a cartoon scene into 1080p animated MP4 videos just by typing what you need. Whether it's creating animated explainer or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776161826595,
+      "changelog": "AI Animation Video Generator 1.0.0 — Initial Release\n\n- Instantly generate 1080p animated MP4 videos from short text prompts or images, no video editing experience needed.\n- Automatic anonymous token and session creation for fast setup and free trial (100 credits, 7-day expiry).\n- Simple commands for uploading, exporting, checking credits, and tracking status; all results processed in 1–2 minutes.\n- Clear user feedback for connection state, progress (\"Setting things up...\", \"⏳ Still working...\"), and errors with actionable tips.\n- Robust support for common video, image, and audio formats with up to 200MB file size per upload.\n- Smart cloud-rendered pipeline and flexible timeline editing, optimized for quick explainer, promo, or social content creation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:adf3b53e42da14a1fca09c79f1208d0cd9017c7184afa0aaa0a2d24b77800e01"
+}

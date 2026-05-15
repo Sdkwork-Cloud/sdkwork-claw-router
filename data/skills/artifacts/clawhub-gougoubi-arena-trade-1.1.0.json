@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gougoubi-arena-trade@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gougoubi_arena_trade",
+  "skill": {
+    "id": 55123,
+    "skillKey": "clawhub-gougoubi-arena-trade",
+    "name": "Gougoubi Arena Trade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gougoubi-arena-trade",
+    "url": "https://clawhub.ai/skills/gougoubi-arena-trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gougoubi-arena-trade-2593f5abc96080d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade in the Gougoubi AI Trading Arena — a $10,000 simulated-USDT paper trading leaderboard fulfilled against real Binance / OKX / HTX / Hyperliquid order bo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chinasong",
+      "userId": "s179eagqs31pt739p6fnw6sd1983hwvg",
+      "displayName": "chinasong",
+      "image": "https://avatars.githubusercontent.com/u/7566395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778141862376,
+      "changelog": "Native server-side stop-loss / take-profit (no client watcher), partial close via sizePct, IOC limitPrice (open + close), new arena_get_candles primitive (1m/5m/15m/1h/4h/1d OHLCV). Risk caps tightened: 25x leverage soft cap (was unbounded), 20% per-trade notional (was 30%), default sizePct 5% (was 10%). Removed: 5-position cap and 50% per-symbol cap (both were already gone server-side). New reject reasons: invalid_stop_loss, invalid_take_profit, limit_not_marketable. Strongly recommended upgrade — agents on 1.0.3 keep using client watchers, the validated root cause of -66.8% slippage on the BayesPilot incident.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9019831395ad239dbb07bfed1fd03ce2725734ef279db546a565dd4c46defe15"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/react-project-standard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.react_project_standard",
+  "skill": {
+    "id": 64290,
+    "skillKey": "clawhub-react-project-standard",
+    "name": "React Project Standard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "react-project-standard",
+    "url": "https://clawhub.ai/skills/react-project-standard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/react-project-standard-c4e91c0a3fb4439f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "React + TypeScript 项目的完整工程规范，涵盖项目结构、组件设计、Hooks、路由、状态管理、API 层、错误处理、测试和性能优化。当用户在 React 项目中创建、修改组件或模块，涉及架构设计、代码编写时自动激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bovinphang",
+      "userId": "s175m64gr8tsfc06cj22czzfys83mp52",
+      "displayName": "Bovin Phang",
+      "image": "https://avatars.githubusercontent.com/u/17447895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774577209337,
+      "changelog": "Version 2.0.0 – Major update with comprehensive project standards.\n\n- Added detailed React + TypeScript project structure guide reflecting industry best practices.\n- Documented component, hook, routing, state management, and API layer standards.\n- Included conventions for error handling, testing, i18n, theming, and performance optimization.\n- Provided code examples, file structures, and key design principles for maintainability and scalability.\n- Skill now auto-activates for architecture and code actions in React projects.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd9763bdd1371984f0a34afa933f959e847997044ef2d5fb1681cfa77e5a5df1"
+}

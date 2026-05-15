@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73297,
+  "uuid": "skill-clawhub-math-edu-assistant",
+  "skillKey": "clawhub-math-edu-assistant",
+  "name": "数学教育助手",
+  "summary": "数学教材同步教育助手。本技能应在用户提出数学学习相关请求时触发，涵盖知识点讲解、 智能出题、作业批改、解题答疑等场景。支持小学至高中全阶段教材内容，严格按照教材 章节范围输出，不超纲。用户无需使用固定指令，自然语言描述即可被正确理解并响应。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.math_edu_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gzybt",
+      "features": [
+        "数学教材同步教育助手。本技能应在用户提出数学学习相关请求时触发，涵盖知识点讲解、 智能出题、作业批改、解题答疑等场景。支持小学至高中全阶段教材内容，严格按照教材 章节范围输出，不超纲。用户无."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/math-edu-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63904346?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "math-edu-assistant",
+      "url": "https://clawhub.ai/skills/math-edu-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "math-edu-assistant",
+    "url": "https://clawhub.ai/skills/math-edu-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/math-edu-assistant-85730368f1fcbf03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/math-edu-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-math-edu-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99e0523f66b8bff56e4483be1919f29e1cc74843a1553076c32b1e9ab4dc7198",
+      "artifactSizeBytes": 2596
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T12:26:32.196Z"
+}

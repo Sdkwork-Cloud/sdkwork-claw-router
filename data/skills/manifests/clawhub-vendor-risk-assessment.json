@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19574,
+  "uuid": "skill-clawhub-vendor-risk-assessment",
+  "skillKey": "clawhub-vendor-risk-assessment",
+  "name": "Vendor Risk Assessment",
+  "summary": "Assess third-party vendor risk for AI and SaaS products. Evaluates security posture, data handling, compliance, financial stability, and operational resilien...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vendor_risk_assessment",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1kalin",
+      "features": [
+        "Assess third-party vendor risk for AI and SaaS products",
+        "Evaluates security posture, data handling, compliance, financial stability, and operational res."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vendor-risk-assessment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15705344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vendor-risk-assessment",
+      "url": "https://clawhub.ai/skills/vendor-risk-assessment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vendor-risk-assessment",
+    "url": "https://clawhub.ai/skills/vendor-risk-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vendor-risk-assessment-1b311337541b631d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vendor-risk-assessment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vendor-risk-assessment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01ff678925d3a83be3ef1d4d101127e56363c860d62e1b9af62393b31755d2d4",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T20:16:30.262Z"
+}

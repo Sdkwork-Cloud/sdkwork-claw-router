@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-agent-group-chat@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_agent_group_chat",
+  "skill": {
+    "id": 61882,
+    "skillKey": "clawhub-multi-agent-group-chat",
+    "name": "Multi Agent Group Chat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-agent-group-chat",
+    "url": "https://clawhub.ai/skills/multi-agent-group-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-agent-group-chat-898b5f10001933f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多 Agent 群聊协作插件。子 Agent 完成 sessions_send 任务后，自动将回复发送到来源群聊。 支持 Telegram 和飞书，无需配置群 ID，自动检测消息来源。 适用于：多 Bot 协作、团队分工、群聊表演等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harven-droid",
+      "userId": "s17b95kvfzb5cdt2sy8s534dns842jax",
+      "displayName": "harven-droid",
+      "image": "https://avatars.githubusercontent.com/u/210953820?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 536,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773896921726,
+      "changelog": "首次发布：多Agent群聊协作，支持Telegram/飞书，自动检测来源群",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4f8c25591841e6aada449cab7f93d0c64a6c301ae6d5008dad214bf5efaa487"
+}

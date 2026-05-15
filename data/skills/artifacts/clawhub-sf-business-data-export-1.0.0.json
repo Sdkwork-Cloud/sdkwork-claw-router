@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sf-business-data-export@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sf_business_data_export",
+  "skill": {
+    "id": 45533,
+    "skillKey": "clawhub-sf-business-data-export",
+    "name": "sf-business-data-export"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sf-business-data-export",
+    "url": "https://clawhub.ai/skills/sf-business-data-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sf-business-data-export-01af632bfe54a923.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Export Salesforce business data into business-readable Excel files from natural-language requests. Use when pull large Salesforce datasets beyond Report limi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evonne528",
+      "userId": "s170kvxd1n5ts4ywagt7gmh13183jgkb",
+      "displayName": "Evonne528",
+      "image": "https://avatars.githubusercontent.com/u/57257415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775464438618,
+      "changelog": "Initial release for sf-business-data-export.  \nAllows natural-language Salesforce business data exports into business-readable Excel files.\n\n- Supports export of large Salesforce datasets beyond standard Report limits.\n- Maps layout-visible fields and handles parent-child or polymorphic relationships.\n- Includes execution, validation, and fallback rules for reliable exports.\n- Provides repeatable, script-driven workflows and bundled documentation.\n- Known limitations: no single command for end-to-end orchestration yet; partial automation in page field collection.\n- Ready for limited real-world trials to validate workflows and inform next steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e37b2b8ef72b286d5f72f37062e43e8901f2924aad624e560d95970129ef31ef"
+}

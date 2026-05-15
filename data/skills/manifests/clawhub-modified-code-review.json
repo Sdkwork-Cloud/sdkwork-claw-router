@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16200,
+  "uuid": "skill-clawhub-modified-code-review",
+  "skillKey": "clawhub-modified-code-review",
+  "name": "Modified Code Review",
+  "summary": "Reviews user-modified code (diffs/PRs), provides best-practice recommendations, analyzes cost-effectiveness of the approach, and outputs a code score. Use wh...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modified_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangzhiming",
+      "features": [
+        "Reviews user-modified code (diffs/PRs), provides best-practice recommendations, analyzes cost-e.",
+        "Use wh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/modified-code-review@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48944224?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "modified-code-review",
+      "url": "https://clawhub.ai/skills/modified-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modified-code-review",
+    "url": "https://clawhub.ai/skills/modified-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modified-code-review-c967f40bf85624f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/modified-code-review@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-modified-code-review-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf6623710afc2a43547376bbdc5390ebf1d0fe08ba60eda3d324bea7cc741d7f",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T06:57:34.541Z"
+}

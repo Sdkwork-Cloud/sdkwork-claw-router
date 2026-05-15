@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71018,
+  "uuid": "skill-clawhub-crypto-price-pro",
+  "skillKey": "clawhub-crypto-price-pro",
+  "name": "Crypto Price Pro",
+  "summary": "查询虚拟币实时价格和历史数据，支持生成趋势图、周报和邮件推送。当用户询问虚拟币价格、加密货币行情、需要币价分析报告或定时推送时使用此技能。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_price_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cscsxx",
+      "features": [
+        "查询虚拟币实时价格和历史数据，支持生成趋势图、周报和邮件推送。当用户询问虚拟币价格、加密货币行情、需要币价分析报告或定时推送时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-price-pro@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10043543?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-price-pro",
+      "url": "https://clawhub.ai/skills/crypto-price-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-price-pro",
+    "url": "https://clawhub.ai/skills/crypto-price-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-price-pro-dca6e2149014956c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-price-pro@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-price-pro-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e0abcc503f77c4ad51297c3c408eed6e5e6cea7291afe02e3c973e48c626d83",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T10:29:04.080Z"
+}

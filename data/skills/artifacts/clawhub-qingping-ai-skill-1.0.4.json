@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qingping-ai-skill@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qingping_ai_skill",
+  "skill": {
+    "id": 66696,
+    "skillKey": "clawhub-qingping-ai-skill",
+    "name": "青萍 AI 平台"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qingping-ai-skill",
+    "url": "https://clawhub.ai/skills/qingping-ai-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qingping-ai-skill-d7e48f0850f1bd41.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "青萍 AI 图片生成工具。通过 API 生成高质量图片并自动下载到本地。使用场景：(1) 用户需要生成 AI 图片，(2) 提到\"青萍\"、\"qingping\"、\"生成图片\"、\"AI生图\"等关键词，(3) 需要快速生成设计素材或创意图片。支持多种模型、尺寸和比例配置。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lusyoe",
+      "userId": "s173pz4mkr554w91amkqrbrfy583n7jp",
+      "displayName": "lusyoe",
+      "image": "https://avatars.githubusercontent.com/u/6604572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 556,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773671860876,
+      "changelog": "v1.0.4 主要变更：移除云端认证，优化默认参数\n\n- 统一认证方式为 API Key，移除云端托管环境认证支持\n- 默认图片比例由 1:1 调整为 16:9，更适合封面和主流需求\n- 优化认证错误提示，提高易用性\n- 简化参数说明，精简文档内容",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b693caff3ec538f3470f3484e5f193908c5f76c11ba503c8c45366ae73afd3a2"
+}

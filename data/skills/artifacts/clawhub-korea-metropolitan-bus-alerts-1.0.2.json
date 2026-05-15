@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/korea-metropolitan-bus-alerts@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.korea_metropolitan_bus_alerts",
+  "skill": {
+    "id": 57535,
+    "skillKey": "clawhub-korea-metropolitan-bus-alerts",
+    "name": "Korea metropolitan bus alerts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "korea-metropolitan-bus-alerts",
+    "url": "https://clawhub.ai/skills/korea-metropolitan-bus-alerts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/korea-metropolitan-bus-alerts-bb4eb17780bed166.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage scheduled bus arrival alerts using Korea TAGO (국토교통부) OpenAPI and Clawdbot cron. Use when a user wants to register weekday/weekend schedules like \"평일 오전 7시, <정류소명>, <노선들>\" and receive automatic arrival summaries via their."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hsooooo",
+      "userId": "publishers:hsooooo",
+      "displayName": "Hsooooo",
+      "image": "https://avatars.githubusercontent.com/u/35364686?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1838,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770978607854,
+      "changelog": "Declare required env/bins (TAGO_SERVICE_KEY, systemctl; clawdbot optional) + clarify prerequisites",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e9135aae3783c0a99e3ff83afde5eecc88d41cd1c7570c20b933ffee56444f28"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45473,
+  "uuid": "skill-clawhub-docker-devbox",
+  "skillKey": "clawhub-docker-devbox",
+  "name": "Devbox",
+  "summary": "One-command Docker dev environment for any project. Auto-detects 20+ types (Nuxt/Next/Vite/Python/Go/Rust/Java/Ruby/PHP/C#/Swift/Hugo), matches local languag...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_devbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Little Moon",
+      "features": [
+        "One-command Docker dev environment for any project",
+        "Auto-detects 20+ types (Nuxt/Next/Vite/Python/Go/Rust/Java/Ruby/PHP/C#/Swift/Hugo), matches loc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docker-devbox@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75648776?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docker-devbox",
+      "url": "https://clawhub.ai/skills/docker-devbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-devbox",
+    "url": "https://clawhub.ai/skills/docker-devbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-devbox-0246bea72a99be59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docker-devbox@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-docker-devbox-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a8cffcb8b9979ea132983888d0a208f3d8700a15721b885460644f8dc38b51f",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T03:29:14.290Z"
+}

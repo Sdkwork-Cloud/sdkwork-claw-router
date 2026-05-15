@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18187,
+  "uuid": "skill-clawhub-peloton-stats",
+  "skillKey": "clawhub-peloton-stats",
+  "name": "Peloton Stats",
+  "summary": "Fetch and report Peloton cycling workout statistics. Use when the user wants to see their Peloton workout data, weekly cycling stats, ride history, or perfor...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.peloton_stats",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ryan William Niemes",
+      "features": [
+        "Fetch and report Peloton cycling workout statistics",
+        "Use when the user wants to see their Peloton workout data, weekly cycling stats, ride history,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/peloton-stats@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8837846?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "peloton-stats",
+      "url": "https://clawhub.ai/skills/peloton-stats"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "peloton-stats",
+    "url": "https://clawhub.ai/skills/peloton-stats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/peloton-stats-9ca6d9a366da9eda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/peloton-stats@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-peloton-stats-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f532b08ec61dbc4e21d539e296f18a78809c628f0a1f26532ad32df2d5f9aff9",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T12:01:09.095Z"
+}

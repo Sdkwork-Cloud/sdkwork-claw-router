@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36948,
+  "uuid": "skill-clawhub-microsoft-365-people",
+  "skillKey": "clawhub-microsoft-365-people",
+  "name": "Microsoft 365 People",
+  "summary": "Microsoft 365 People integration. Manage data, records, and automate workflows. Use when the user wants to interact with Microsoft 365 People data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microsoft_365_people",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Microsoft 365 People integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Microsoft 365 People data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/microsoft-365-people@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "microsoft-365-people",
+      "url": "https://clawhub.ai/skills/microsoft-365-people"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microsoft-365-people",
+    "url": "https://clawhub.ai/skills/microsoft-365-people",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microsoft-365-people-19bf0aa25ff2430f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/microsoft-365-people@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-microsoft-365-people-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6143861c86586aba9caa2a963593b1d37e73d5d2f5a0df64c95b8a60141c4309",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:44:42.601Z"
+}

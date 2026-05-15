@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/master-data-matching@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.master_data_matching",
+  "skill": {
+    "id": 32115,
+    "skillKey": "clawhub-master-data-matching",
+    "name": "Master Data Matching"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "master-data-matching",
+    "url": "https://clawhub.ai/skills/master-data-matching",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/master-data-matching-5cda25a7648cd056.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Production-ready Master Data Intelligent Matching System. Use when: matching vendor/customer/employee records, deduplicating master data, resolving OCR-extra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "woaim65",
+      "userId": "s177xckxh31ydc09g7szydvb4s842y9t",
+      "displayName": "woaim65",
+      "image": "https://avatars.githubusercontent.com/u/98373717?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773924754364,
+      "changelog": "Initial release of the production-ready Master Data Intelligent Matching System.\n\n- Supports entity resolution for procurement, finance, sales, and HR domains\n- Dual-path retrieval: exact-match and vector-semantic matching\n- OCR-to-schema mapping with confidence coloring (green/yellow/red/blue)\n- 4-state per-field value verification and human-in-the-loop review flow\n- Active learning tracks errors, feedback, and auto-adjusts thresholds\n- Modular API for integration and orchestration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a1be5a168be918d91695879112600126e95d101fa0b7837540824cb05657908"
+}

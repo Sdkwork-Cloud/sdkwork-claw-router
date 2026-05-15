@@ -25,7 +25,7 @@ struct MapSecretResolver {
 }
 
 impl ProviderSecretResolver for MapSecretResolver {
-    fn resolve_bearer_token(
+    fn resolve_secret_value(
         &self,
         secret_ref: &str,
     ) -> sdkwork_claw_product::domain::DomainResult<String> {

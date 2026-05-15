@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44128,
+  "uuid": "skill-clawhub-http-header-analyzer",
+  "skillKey": "clawhub-http-header-analyzer",
+  "name": "HTTP Header Analyzer",
+  "summary": "Analyze HTTP security headers and TLS configuration. Find missing headers, weak ciphers, and misconfigurations in web applications.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.http_header_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HostileSpider",
+      "features": [
+        "Analyze HTTP security headers and TLS configuration",
+        "Find missing headers, weak ciphers, and misconfigurations in web applications."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/http-header-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47485616?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "http-header-analyzer",
+      "url": "https://clawhub.ai/skills/http-header-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "http-header-analyzer",
+    "url": "https://clawhub.ai/skills/http-header-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/http-header-analyzer-636383a81aa352de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/http-header-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-http-header-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee47180f4e8024df27a798fa99ba27d5621a7c75720e6218b650f5a69e517222",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T20:20:54.707Z"
+}

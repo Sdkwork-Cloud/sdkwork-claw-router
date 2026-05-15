@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26189,
+  "uuid": "skill-clawhub-beehiiv-integration",
+  "skillKey": "clawhub-beehiiv-integration",
+  "name": "Beehiiv",
+  "summary": "Beehiiv integration. Manage Users, Publications. Use when the user wants to interact with Beehiiv data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beehiiv_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Beehiiv integration",
+        "Manage Users, Publications",
+        "Use when the user wants to interact with Beehiiv data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beehiiv-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beehiiv-integration",
+      "url": "https://clawhub.ai/skills/beehiiv-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beehiiv-integration",
+    "url": "https://clawhub.ai/skills/beehiiv-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beehiiv-integration-d7412b508885db00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beehiiv-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-beehiiv-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c4bcc0034bdfa521aded1f73e481e27f1de392156c8439a7c55853d9d898e90",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:06:35.666Z"
+}

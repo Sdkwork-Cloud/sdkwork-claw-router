@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37078,
+  "uuid": "skill-clawhub-lukaizj-notion",
+  "skillKey": "clawhub-lukaizj-notion",
+  "name": "Notion Integration",
+  "summary": "Notion integration - Manage pages, databases, and content in Notion",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lukaizj_notion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lukaizj",
+      "features": [
+        "Notion integration",
+        "Manage pages, databases, and content in Notion"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lukaizj-notion@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92360203?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lukaizj-notion",
+      "url": "https://clawhub.ai/skills/lukaizj-notion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lukaizj-notion",
+    "url": "https://clawhub.ai/skills/lukaizj-notion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lukaizj-notion-f6aed96f7c7cd9d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lukaizj-notion@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lukaizj-notion-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78215164fcff12b9f9739a71b8c001138560431f85248f51d242f867e7adb9d6",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T08:35:20.198Z"
+}

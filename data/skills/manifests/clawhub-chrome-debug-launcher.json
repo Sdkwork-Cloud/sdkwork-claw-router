@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57884,
+  "uuid": "skill-clawhub-chrome-debug-launcher",
+  "skillKey": "clawhub-chrome-debug-launcher",
+  "name": "Chrome Debug Launcher",
+  "summary": "Launch two independent Chrome browser instances — one normal and one with remote debugging enabled on port 9222. Activate when user says \"打开两个浏览器\", \"开调试浏览器\",...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chrome_debug_launcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chengzongxin",
+      "features": [
+        "Launch two independent Chrome browser instances — one normal and one with remote debugging enab.",
+        "Activate when user says \"打开两个浏览器\", \"开调试浏览器\",..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chrome-debug-launcher@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12250722?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chrome-debug-launcher",
+      "url": "https://clawhub.ai/skills/chrome-debug-launcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chrome-debug-launcher",
+    "url": "https://clawhub.ai/skills/chrome-debug-launcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chrome-debug-launcher-2f33e2c1a18ffcdd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chrome-debug-launcher@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-chrome-debug-launcher-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38efaddcdd7e30e0535bf5fc1c6af21dd83b3e36a10b71fdb20eab4a7a9f2433",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T03:50:07.438Z"
+}

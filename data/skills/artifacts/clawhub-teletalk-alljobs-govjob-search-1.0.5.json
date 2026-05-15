@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/teletalk-alljobs-govjob-search@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teletalk_alljobs_govjob_search",
+  "skill": {
+    "id": 36196,
+    "skillKey": "clawhub-teletalk-alljobs-govjob-search",
+    "name": "Teletalk AllJobs Gov Job Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teletalk-alljobs-govjob-search",
+    "url": "https://clawhub.ai/skills/teletalk-alljobs-govjob-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teletalk-alljobs-govjob-search-abe6844daba7215c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Bangladesh government jobs from the Teletalk AllJobs API, filter out excluded keywords, present matching jobs, and track applied job IDs. Use when the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sazidulalam47",
+      "userId": "s17b12zhzf7w2h8yf578ff3sth84g7rq",
+      "displayName": "Sazidul Alam",
+      "image": "https://avatars.githubusercontent.com/u/81089575?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775893299404,
+      "changelog": "- Improved job filtering to skip listings whose application deadline has already passed.\n- Deadline dates now specify date and BST (Bangladesh Standard Time) when possible.\n- Clarified that all skill data must be stored inside this skill's folder.\n- Updated script instructions to reinforce filtering by deadline and data directory structure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12ef30129f1f2b8cfa7f814e48cc84dc047b4df13b6d92d9fcae1484660092a7"
+}

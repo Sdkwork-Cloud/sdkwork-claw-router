@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63584,
+  "uuid": "skill-clawhub-a-stock-quant-lab",
+  "skillKey": "clawhub-a-stock-quant-lab",
+  "name": "A Stock Quant Lab",
+  "summary": "A 股量化实验室：基于 zvt 框架的数据采集 + 因子研究 + 回测执行一站式。 覆盖 31 个场景——机构持仓、财报、指数成分、MACD/MA/量能择时。仅限中国 A 股。",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_quant_lab",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "A 股量化实验室：基于 zvt 框架的数据采集 + 因子研究 + 回测执行一站式。 覆盖 31 个场景——机构持仓、财报、指数成分、MACD/MA/量能择时。仅限中国 A 股。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-stock-quant-lab@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-stock-quant-lab",
+      "url": "https://clawhub.ai/skills/a-stock-quant-lab"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-quant-lab",
+    "url": "https://clawhub.ai/skills/a-stock-quant-lab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-quant-lab-51ad787e122a2e6c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-stock-quant-lab@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-stock-quant-lab-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbdc939cf703c032b692197bb2f0eaddd7bce81e92b95ac7bf81b188a9c5beff",
+      "artifactSizeBytes": 2143
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:06:46.013Z"
+}

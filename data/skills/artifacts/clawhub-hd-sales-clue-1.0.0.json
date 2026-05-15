@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hd-sales-clue@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hd_sales_clue",
+  "skill": {
+    "id": 70324,
+    "skillKey": "clawhub-hd-sales-clue",
+    "name": "好多素教需求单相关skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hd-sales-clue",
+    "url": "https://clawhub.ai/skills/hd-sales-clue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hd-sales-clue-b8edeb4b00f21fd1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "后台系统/运营平台/销售系统的需求单操作指南。当用户提到需求单、线索管理、审核需求单，或需要登录后台/运营端/平台端（xiaonei-web）处理学校需求时，必须使用此技能。包含完整的 CAS 统一登录平台登录流程、需求单列表页和详情页操作、审核状态流转等。适用于 haoduo.vip 域名下的运营管理系统。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "prerabale",
+      "userId": "s172vhpsk0tyn1fh8nzd0yrh8d83y020",
+      "displayName": "prerabale",
+      "image": "https://avatars.githubusercontent.com/u/8097876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 536,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772185342894,
+      "changelog": "Initial release of the sales-clue skill with full operation guides for the sales requirement system.\n\n- Provides comprehensive instructions for managing sales requirement forms (需求单) in the haoduo.vip backend/运营平台/销售系统.\n- Covers unified CAS login steps, including when and how to request user credentials.\n- Details standard operations: viewing, creating, editing, submitting, and auditing requirement forms.\n- Includes page layouts, search/filter options, environment/domain rules, and common process flows.\n- Strictly mandates using formal environment by default, only switching per user request.\n- Emphasizes a \"try action first, only inquire if necessary\" user interaction principle.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1eb9e2cad4e5a7841e37c824bf27385401a21c193e03b41302ae32988f166efa"
+}

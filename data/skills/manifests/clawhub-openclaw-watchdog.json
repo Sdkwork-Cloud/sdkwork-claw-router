@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10304,
+  "uuid": "skill-clawhub-openclaw-watchdog",
+  "skillKey": "clawhub-openclaw-watchdog",
+  "name": "OpenClaw Watch Dog",
+  "summary": "Self-healing monitoring system for OpenClaw gateway. Auto-detects failures, fixes crashes, and sends Telegram alerts.",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_watchdog",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Abdullah AlRashoudi",
+      "features": [
+        "Self-healing monitoring system for OpenClaw gateway",
+        "Auto-detects failures, fixes crashes, and sends Telegram alerts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-watchdog@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92252803?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-watchdog",
+      "url": "https://clawhub.ai/skills/openclaw-watchdog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-watchdog",
+    "url": "https://clawhub.ai/skills/openclaw-watchdog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-watchdog-6c3be3f1b98d7601.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-watchdog@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-watchdog-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f509aadb8c6b846b217e11199ec1ed5da9764c06d72d24da6abb686eb67d2d6",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T18:51:50.743Z"
+}

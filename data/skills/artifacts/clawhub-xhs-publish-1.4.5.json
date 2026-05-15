@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-publish@1.4.5",
+  "version": "1.4.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_publish",
+  "skill": {
+    "id": 70560,
+    "skillKey": "clawhub-xhs-publish",
+    "name": "Xhs Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-publish",
+    "url": "https://clawhub.ai/skills/xhs-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-publish-446465a4cfe90e84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书一键发布 — AI 全流程搞定：自动生成标题 → 撰写正文 → 封面/知识卡片/视频（三种形式） → 一键发布。3 分钟从创意到上线，支持多模型自由切换。触发词：发小红书、发布笔记、小红书发布、发笔记、小红书笔记、写小红书、写笔记。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qianduoduo1422608857",
+      "userId": "s17a0wrf2yndwe5z6cqae0d28n83ghjs",
+      "displayName": "qianduoduo8021",
+      "image": "https://avatars.githubusercontent.com/u/42595612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 587,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 8,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.4.5",
+      "createdAt": 1773896844530,
+      "changelog": "优化知识卡片流程",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4aa85812a75eb7e8b3d51e2d2f1e0f5302ac0e306d9f3b818b6b8ccf0ca4f36b"
+}

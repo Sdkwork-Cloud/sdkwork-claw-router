@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27057,
+  "uuid": "skill-clawhub-musify",
+  "skillKey": "clawhub-musify",
+  "name": "Musify MooreThreads",
+  "summary": "Convert CUDA code to MUSA (Moore Threads GPU) using the musify tool. Use when migrating CUDA codebases to MUSA platform, converting CUDA kernels/APIs to MUSA...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.musify",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dongyang-mt",
+      "features": [
+        "Convert CUDA code to MUSA (Moore Threads GPU) using the musify tool",
+        "Use when migrating CUDA codebases to MUSA platform, converting CUDA kernels/APIs to MUSA..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/musify@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109267197?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "musify",
+      "url": "https://clawhub.ai/skills/musify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "musify",
+    "url": "https://clawhub.ai/skills/musify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/musify-c169e54ea87a75d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/musify@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-musify-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23dc0754544a12839cfdde5660c8261e4d2a112cd059610d9035079fae7d2be7",
+      "artifactSizeBytes": 2360
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T15:36:39.201Z"
+}

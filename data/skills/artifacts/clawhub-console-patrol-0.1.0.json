@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/console-patrol@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.console_patrol",
+  "skill": {
+    "id": 45070,
+    "skillKey": "clawhub-console-patrol",
+    "name": "Console Patrol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "console-patrol",
+    "url": "https://clawhub.ai/skills/console-patrol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/console-patrol-6ad6bc4fdcba7883.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically scans web apps for console errors and warnings, providing framework-specific diagnostics and fix suggestions for React, Ant Design, and Element..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhzgao",
+      "userId": "s176wvqhd2977sdm1cqd44gc2h83zda0",
+      "displayName": "ThatsD",
+      "image": "https://avatars.githubusercontent.com/u/28346003?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774943127633,
+      "changelog": "Initial release of console-patrol skill.\n\n- Detects and reports console errors and warnings on web applications.\n- Supports framework-specific rules for Ant Design, React, and Element UI.\n- Provides CLI and Python API for scanning URLs and routes, with auto-discovery and framework detection options.\n- Categorizes findings by severity (P0: Fatal, P1: Warning, P2: Hint) with built-in detection rules.\n- Includes response formats and usage guides for both end-users and automated workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38e47fb03b8d2bd092c7cf2321609a1fce957710c916d4c7f58a07e7bf2319c4"
+}

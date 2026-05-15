@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/side-hustle-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.side_hustle_agent",
+  "skill": {
+    "id": 72846,
+    "skillKey": "clawhub-side-hustle-agent",
+    "name": "AI 副业顾问"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "side-hustle-agent",
+    "url": "https://clawhub.ai/skills/side-hustle-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/side-hustle-agent-beda66fee75ffc23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动扫描国内外接单平台，分析项目可行性，推荐最适合你的副业赚钱机会和报价方案。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 485,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773215177954,
+      "changelog": "首次发布 - 自动扫描接单平台，分析项目可行性，推荐赚钱机会",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43a86d728b22b0671eafac3eab028edeeeac2da31fe5db55427d3ccbbb5d354d"
+}

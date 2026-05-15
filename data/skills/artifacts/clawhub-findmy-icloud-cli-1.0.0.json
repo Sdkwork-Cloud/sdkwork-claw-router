@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/findmy-icloud-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.findmy_icloud_cli",
+  "skill": {
+    "id": 46629,
+    "skillKey": "clawhub-findmy-icloud-cli",
+    "name": "Find My iCloud CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "findmy-icloud-cli",
+    "url": "https://clawhub.ai/skills/findmy-icloud-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/findmy-icloud-cli-2980582691275256.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Apple Find My device and family-device locations through the pyicloud iCloud CLI, using a locally stored Apple ID username in a deterministic state fil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rolandkakonyi",
+      "userId": "s1730b386gfc8sbrma8yqavyqn84mtrx",
+      "displayName": "Roland Kákonyi",
+      "image": "https://avatars.githubusercontent.com/u/2691371?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775984630959,
+      "changelog": "Initial release: Apple Find My device and family-device lookup via pyicloud CLI with local state for username and person aliases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:569b11ec2a6b1c17e7908af8352480df00a5807a83a9749518972baab1c2385d"
+}

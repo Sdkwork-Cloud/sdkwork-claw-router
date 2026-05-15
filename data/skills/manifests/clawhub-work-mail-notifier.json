@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68239,
+  "uuid": "skill-clawhub-work-mail-notifier",
+  "skillKey": "clawhub-work-mail-notifier",
+  "name": "work-mail-notifier",
+  "summary": "QQ邮箱工作邮件监控与标注已读。当用户提到工作邮件通知、邮件日报、新邮件提醒、或需要标注邮件已读时触发。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.work_mail_notifier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangjiongjie",
+      "features": [
+        "QQ邮箱工作邮件监控与标注已读。当用户提到工作邮件通知、邮件日报、新邮件提醒、或需要标注邮件已读时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/work-mail-notifier@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15936226?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "work-mail-notifier",
+      "url": "https://clawhub.ai/skills/work-mail-notifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "work-mail-notifier",
+    "url": "https://clawhub.ai/skills/work-mail-notifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/work-mail-notifier-d48ce9891b3c376f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/work-mail-notifier@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-work-mail-notifier-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4167cbc9da9106efdc8d7a4431cfe8a2982a03eae8ccf5d1ac1e61217c8d900",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T02:58:46.304Z"
+}

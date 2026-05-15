@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67217,
+  "uuid": "skill-clawhub-akshare-stock-tmp",
+  "skillKey": "clawhub-akshare-stock-tmp",
+  "name": "Akshare Stock.Tmp",
+  "summary": "A股量化数据分析工具，基于AkShare库获取A股行情、财务数据、板块信息等。用于回答关于A股股票查询、行情数据、财务分析、选股等问题。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.akshare_stock_tmp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hexx89",
+      "features": [
+        "A股量化数据分析工具，基于AkShare库获取A股行情、财务数据、板块信息等。用于回答关于A股股票查询、行情数据、财务分析、选股等问题。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/akshare-stock-tmp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139135892?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "akshare-stock-tmp",
+      "url": "https://clawhub.ai/skills/akshare-stock-tmp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "akshare-stock-tmp",
+    "url": "https://clawhub.ai/skills/akshare-stock-tmp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/akshare-stock-tmp-3a8d3fc7f3473ffc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/akshare-stock-tmp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-akshare-stock-tmp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6357bbf0a6b759e9bf1503db368af46694d9b59a3564793e7c9a8969475490f",
+      "artifactSizeBytes": 2358
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T05:20:21.737Z"
+}

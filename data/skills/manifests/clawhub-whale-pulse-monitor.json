@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20203,
+  "uuid": "skill-clawhub-whale-pulse-monitor",
+  "skillKey": "clawhub-whale-pulse-monitor",
+  "name": "Whale Pulse Monitor",
+  "summary": "Real-time BTC Orderbook Imbalance (OBI) tracking for professional traders. Detects high-conviction whale activity before it hits the tape. Powered by Soverei...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whale_pulse_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "System Architect Zero",
+      "features": [
+        "Real-time BTC Orderbook Imbalance (OBI) tracking for professional traders",
+        "Detects high-conviction whale activity before it hits the tape",
+        "Powered by Soverei..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whale-pulse-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261739543?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whale-pulse-monitor",
+      "url": "https://clawhub.ai/skills/whale-pulse-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whale-pulse-monitor",
+    "url": "https://clawhub.ai/skills/whale-pulse-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whale-pulse-monitor-bc1ddd81c18bfccb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whale-pulse-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whale-pulse-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84f77c143ba7c4332cadad5c94aeb23446b2ea53ef3180ebe8464c334dea6b3e",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T14:26:17.578Z"
+}

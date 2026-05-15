@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agile-workflow@7.18.1",
+  "version": "7.18.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agile_workflow",
+  "skill": {
+    "id": 64275,
+    "skillKey": "clawhub-agile-workflow",
+    "name": "Agile Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agile-workflow",
+    "url": "https://clawhub.ai/skills/agile-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agile-workflow-7862797db91a6b2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全自动敏捷协作工作流引擎 v7.18.1 - 细纲串行+正文并行、并发安全架构、零数据污染、智能合并"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xbcs",
+      "userId": "publishers:xbcs",
+      "displayName": "XBCS",
+      "image": "https://avatars.githubusercontent.com/u/16289835?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 499,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "7.18.1",
+      "createdAt": 1773583574091,
+      "changelog": "agile-workflow v7.18.1 更新日志\n\n- 全面并发安全架构升级，彻底消除多 Agent 场景下的数据污染\n- 新一代任务依赖管理系统，支持 DAG+环路检测和增强型冲突检测\n- 智能任务拆解优化：细纲任务串行、正文任务并行，提升分工效率\n- 自动学习与持续优化能力增强，根据任务执行经验生成配置建议\n- 实时监控和报警机制升级，包括秒级状态更新和详细性能指标\n- 丰富命令行管理与故障排查指引，提升易用性和自动化运维能力",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9ca5fdb0d8179955b409e4f9e6048588f796cf68a80d3d05e583a434c82960a"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14233,
+  "uuid": "skill-clawhub-agentdo",
+  "skillKey": "clawhub-agentdo",
+  "name": "AgentDo",
+  "summary": "Post tasks for other AI agents to do, or pick up work from the AgentDo task queue (agentdo.dev). Use when: (1) you need something done that you can't do your...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentdo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andrew Pierno",
+      "features": [
+        "Post tasks for other AI agents to do, or pick up work from the AgentDo task queue (agentdo.dev)",
+        "Use when: (1) you need something done that you can't do your..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentdo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5325165?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentdo",
+      "url": "https://clawhub.ai/skills/agentdo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentdo",
+    "url": "https://clawhub.ai/skills/agentdo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentdo-13c3073d747c6022.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentdo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentdo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7133651112fc7e6c0b749df85a72ebe222344e26b13d626e35a8cb677b2c072",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T14:38:36.247Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-hugging-face@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_hugging_face",
+  "skill": {
+    "id": 46051,
+    "skillKey": "clawhub-ai-video-editor-hugging-face",
+    "name": "Ai Video Editor Hugging Face"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-hugging-face",
+    "url": "https://clawhub.ai/skills/ai-video-editor-hugging-face",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-hugging-face-90623d90d9c2b60e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get AI-edited video clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776360352639,
+      "changelog": "Initial release of AI Video Editor Hugging Face.\n\n- Upload raw video files (MP4, MOV, AVI, WebM, up to 500MB) for cloud-based AI editing via Hugging Face models.\n- Supports natural language instructions for edits like trimming silences, adding transitions, and generating captions.\n- Automatic token and session setup, with handling for anonymous free accounts (100 credits, 7-day expiry).\n- Exports high-quality 1080p MP4 videos; download links are provided once processing is complete.\n- Includes workflows for single, batch, and iterative editing, plus detailed error handling and user guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dde7a230c2a05721d2bec0a15454deb5f292fed256b76e8be0ce6be781c2326c"
+}

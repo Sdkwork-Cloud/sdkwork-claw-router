@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chat-vitals@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chat_vitals",
+  "skill": {
+    "id": 42654,
+    "skillKey": "clawhub-chat-vitals",
+    "name": "Chat Vitals"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chat-vitals",
+    "url": "https://clawhub.ai/skills/chat-vitals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chat-vitals-54d0bc5128d28b7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chat Vitals - Monitor chat conversation health with real-time insights. Tracks conversation quality metrics: first-try success rate, promise fulfillment, tok..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "carolava",
+      "userId": "s170azghzkpw7qr8fyy9r94msd84ebhn",
+      "displayName": "珈乐不困",
+      "image": "https://avatars.githubusercontent.com/u/46141343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775644248761,
+      "changelog": "**Major update with auto-collection and real-time dashboard features:**\n\n- Added zero-friction auto-collection for conversation monitoring—start with one command.\n- Introduced a live real-time dashboard for session health, scores, and instant alerts.\n- Unified health scoring with a 4-tier color system and expanded actionable metric reports.\n- Simplified command-line interface with new and updated commands for quick status, summaries, and detailed reports.\n- Core metrics and health threshold configurations are now easier to customize.\n- Legacy manual tracking is still available, with enhanced programmatic access for advanced users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:607395b277ba1588a419caae4de5f46f69e0fa3dbf82534a67e8ed10b68c56e0"
+}

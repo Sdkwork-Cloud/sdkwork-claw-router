@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18303,
+  "uuid": "skill-clawhub-pocketlens",
+  "skillKey": "clawhub-pocketlens",
+  "name": "PocketLens",
+  "summary": "Use when user wants to track expenses, scan receipts, upload card payment screenshots, categorize spending, record transactions, check spending summaries, vi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pocketlens",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eden Jeongwoo Hong",
+      "features": [
+        "Use when user wants to track expenses, scan receipts, upload card payment screenshots, categori."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pocketlens@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2323545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pocketlens",
+      "url": "https://clawhub.ai/skills/pocketlens"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pocketlens",
+    "url": "https://clawhub.ai/skills/pocketlens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pocketlens-f76950588d8082ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pocketlens@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pocketlens-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:066eb887b32d26628076a1f1e80f0455e28f576b7502ddbdb51f451cb31469d4",
+      "artifactSizeBytes": 2366
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T14:45:37.941Z"
+}

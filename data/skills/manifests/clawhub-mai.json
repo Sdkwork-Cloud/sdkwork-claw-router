@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25792,
+  "uuid": "skill-clawhub-mai",
+  "skillKey": "clawhub-mai",
+  "name": "Mai Marketplace Agent",
+  "summary": "AI shopping matchmaking agent for OpenClaw and Hermes. Use when merchants want to publish products, manage stock, answer buyer questions, and handle order re...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "AI shopping matchmaking agent for OpenClaw and Hermes",
+        "Use when merchants want to publish products, manage stock, answer buyer questions, and handle o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mai@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mai",
+      "url": "https://clawhub.ai/skills/mai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mai",
+    "url": "https://clawhub.ai/skills/mai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mai-7d980bbde514db41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mai@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mai-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80f2036a4e9661f0cf56b3221463a5b3cf6b248e91411f12b76fa9047608aff5",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T01:55:39.374Z"
+}

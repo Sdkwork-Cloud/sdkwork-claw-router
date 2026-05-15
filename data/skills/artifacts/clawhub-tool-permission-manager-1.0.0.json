@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tool-permission-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tool_permission_manager",
+  "skill": {
+    "id": 60600,
+    "skillKey": "clawhub-tool-permission-manager",
+    "name": "Tool Permission Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tool-permission-manager",
+    "url": "https://clawhub.ai/skills/tool-permission-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tool-permission-manager-5997315fea3ca5f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "工具分级授权 - 细粒度管理每个工具的使用权限"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "soroyue",
+      "userId": "s17ekeztpecdazpd2cw9dnqd9183h4s4",
+      "displayName": "Simon Lau",
+      "image": "https://avatars.githubusercontent.com/u/145274992?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 474,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775239839524,
+      "changelog": "工具分级授权管理",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6716c6b9d46b193b382a97bcff0893c84486876a378a7e0c3434a990cc56474"
+}

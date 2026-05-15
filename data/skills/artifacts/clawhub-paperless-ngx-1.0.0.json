@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paperless-ngx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paperless_ngx",
+  "skill": {
+    "id": 9948,
+    "skillKey": "clawhub-paperless-ngx",
+    "name": "Paperless-ngx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paperless-ngx",
+    "url": "https://clawhub.ai/skills/paperless-ngx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paperless-ngx-d98970309b28f0e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Paperless-ngx document management system via REST API. Use when users want to search, upload, download, organize documents, manage tags, correspondents, or document types in their Paperless-ngx instance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oskarstark",
+      "userId": "publishers:oskarstark",
+      "displayName": "Oskar Stark",
+      "image": "https://avatars.githubusercontent.com/u/995707?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2707,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769376237106,
+      "changelog": "Initial release with document management, search, upload, download, tags, correspondents, and document types support.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d57b72a6c4ff34df35cf16a41ffe33563032dc3979dd75c2feb4586266f00e19"
+}

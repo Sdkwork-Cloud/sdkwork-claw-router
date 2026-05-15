@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/protea-self-evolving-life-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.protea_self_evolving_life_agent",
+  "skill": {
+    "id": 18485,
+    "skillKey": "clawhub-protea-self-evolving-life-agent",
+    "name": "Protea Self Evolving Life Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "protea-self-evolving-life-agent",
+    "url": "https://clawhub.ai/skills/protea-self-evolving-life-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/protea-self-evolving-life-agent-348a7c9be397dcd3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-evolving artificial life agent. Three-ring architecture: Ring 0 (Sentinel) supervises, Ring 1 (Intelligence) drives LLM-powered evolution, Ring 2 (Evolv..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edisonchenai",
+      "userId": "publishers:edisonchenai",
+      "displayName": "EdisonChenAI",
+      "image": "https://avatars.githubusercontent.com/u/27086130?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 557,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772873664865,
+      "changelog": "Initial release of protea-Self-evolving life agent.\n\n- Introduces a three-ring architecture: Sentinel (supervisor), Intelligence (LLM-driven evolution), and Evolvable Code (self-restructuring program).\n- Supports multiple LLM providers: Anthropic, OpenAI, DeepSeek, and Qwen.\n- Features code self-evolution with automatic mutation, rollback, and fitness-based survivor selection.\n- Implements fitness scoring, gene pool inheritance, tiered memory management, and skill crystallization.\n- Includes a Telegram bot for interaction and a local web dashboard for monitoring.\n- Ships with comprehensive test coverage (1098 tests).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:07038e024296fcf63afef9e8e094c76ae3e61014600827e3ce85f1c3102a995f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dole@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dole",
+  "skill": {
+    "id": 71675,
+    "skillKey": "clawhub-dole",
+    "name": "Dole"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dole",
+    "url": "https://clawhub.ai/skills/dole",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dole-06fd3644fcda2423.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dole是全球领先的新鲜水果供应商，专注香蕉、菠萝等热带水果的种植、包装和冷链物流全产业链控制。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777054202552,
+      "changelog": "Dole 1.0.0 – 初始版本上线\n\n- 提供Dole公司从菠萝种植园到全球农产品巨头的百年发展历史和核心数据\n- 梳理Dole的商业模式、护城河分析与多元化战略\n- 收录全球化扩张、冷链物流和供应链管理的案例\n- 集成品牌重塑与转型的经典商业分析视角\n- 补充关键事实与行业影响力数据",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2bfe4538bd1a65bd9376cf600c7f0c391e972081764d7f1cd2051752459fd2f4"
+}

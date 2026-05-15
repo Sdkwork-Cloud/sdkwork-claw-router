@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63532,
+  "uuid": "skill-clawhub-adaptive-rag-engine",
+  "skillKey": "clawhub-adaptive-rag-engine",
+  "name": "Adaptive Rag Engine",
+  "summary": "Adaptive RAG 引擎 — 从线性检索到自主认知循环。集成胶囊预筛选、智能路由、CRAG纠错、L3校验。当需要搜索记忆/检索信息/回答复杂问题时触发。关键词：RAG、检索、记忆搜索、向量检索、Agentic RAG、CRAG。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adaptive_rag_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luaqnyin",
+      "features": [
+        "Adaptive RAG 引擎 — 从线性检索到自主认知循环。集成胶囊预筛选、智能路由、CRAG纠错、L3校验。当需要搜索记忆/检索信息/回答复杂问题时触发。关键词：RAG、检索、记忆搜索、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adaptive-rag-engine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162386609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adaptive-rag-engine",
+      "url": "https://clawhub.ai/skills/adaptive-rag-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adaptive-rag-engine",
+    "url": "https://clawhub.ai/skills/adaptive-rag-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adaptive-rag-engine-53492aa1d56c9a86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adaptive-rag-engine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-adaptive-rag-engine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2ac4c566f1873d985ad4b81abbc27054f4c567d09942432deda24bd5b56daf4",
+      "artifactSizeBytes": 2730
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T23:52:51.928Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-llm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_llm",
+  "skill": {
+    "id": 42800,
+    "skillKey": "clawhub-cn-llm",
+    "name": "Cn LLM"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-llm",
+    "url": "https://clawhub.ai/skills/cn-llm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-llm-0230982a791eeaa5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use AIsa for model routing, provider setup, and Chinese LLM access. Use when: the user needs model configuration, provider guidance, or routing workflows. Su..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baofeng-tech",
+      "userId": "s1709d2takksyrxgx2kpxs3rj18433sv",
+      "displayName": "baofeng-tech",
+      "image": "https://avatars.githubusercontent.com/u/273012742?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776797145268,
+      "changelog": "Initial release of cn-llm skill.\n\n- Provides model routing, provider setup, and Chinese LLM access via AIsa.\n- Supports provider configuration, routing workflows, and model operations.\n- Requires Python 3 and the AISA_API_KEY environment variable.\n- Includes guides for provider setup, supported model inspection, and runtime preparation.\n- Designed for both direct user requests and integration within supported environments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b47d589c71e6de0acba4e457fa1d1e1244b52b4bc55d3c48c2c897b5d5f9cf48"
+}

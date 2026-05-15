@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-to@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_to",
+  "skill": {
+    "id": 53884,
+    "skillKey": "clawhub-video-to",
+    "name": "Video To"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-to",
+    "url": "https://clawhub.ai/skills/video-to",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-to-d73682c5a5d722a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — convert this video to a vertical format with captions for Instagram Reels..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776442415988,
+      "changelog": "Video To 1.0.0 — AI-powered, cloud-based video file conversion\n\n- Instantly convert and export video files to various formats and aspect ratios using plain language prompts.\n- Upload videos (MP4, MOV, AVI, WebM, up to 500MB) and request edits for social platforms like Instagram Reels.\n- Automated onboarding connects to the processing API, including free anonymous access (100 credits, 7 days).\n- Cloud render pipeline applies compression and returns processed video files in 30-90 seconds.\n- Supports text overlays, audio tracks, previewing timelines, and batch processing.\n- Clear error handling for issues like file size, format, or credit limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69393dfda35642bd1c3aa1caf6dd1dcaaefcd4c20d0e6433bcf765f51d825108"
+}

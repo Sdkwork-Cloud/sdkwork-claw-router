@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20633,
+  "uuid": "skill-clawhub-super-ocr",
+  "skillKey": "clawhub-super-ocr",
+  "name": "Super Ocr",
+  "summary": "Production-grade OCR with intelligent engine selection. Tesseract (lightweight, fast) and PaddleOCR (high accuracy, Chinese-optimized). Use when extracting t...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_ocr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nima Chu",
+      "features": [
+        "Production-grade OCR with intelligent engine selection",
+        "Tesseract (lightweight, fast) and PaddleOCR (high accuracy, Chinese-optimized)",
+        "Use when extracting t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/super-ocr@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210636628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "super-ocr",
+      "url": "https://clawhub.ai/skills/super-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-ocr",
+    "url": "https://clawhub.ai/skills/super-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-ocr-cdb7f0b8fe6e9f90.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/super-ocr@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-super-ocr-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cd6a7c31122f20270dc7abe8fc4f76d87878d3546aa65a7953e798518763995",
+      "artifactSizeBytes": 2415
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T04:48:25.235Z"
+}

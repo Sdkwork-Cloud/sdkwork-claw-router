@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/music-to-best@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_to_best",
+  "skill": {
+    "id": 45108,
+    "skillKey": "clawhub-music-to-best",
+    "name": "Music To Best"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-to-best",
+    "url": "https://clawhub.ai/skills/music-to-best",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-to-best-8aa1c63f4f292891.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert audio files into music-synced videos with this skill. Works with MP3, WAV, AAC, M4A files up to 500MB. musicians and content creators use it for turn..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776934860449,
+      "changelog": "Music to Best — Turn Music Into Synced Videos v1.0.0\n\n- Initial release: convert audio files (MP3, WAV, AAC, M4A, up to 500MB) into music-synced 1080p MP4 highlight videos using a cloud rendering pipeline.\n- Features automatic setup with free token generation for new users, plus cloud GPU processing with fast turnaround (1–2 minutes).\n- Supports upload, export, credits checking, timeline preview, and batch processing—all handled via clear, mapped API actions.\n- Multilingual command support and robust error handling for file size, format, credits, and session management.\n- Optimized for musicians and content creators needing beat-synced, polished video exports from their music tracks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de54f4fa37666c54ad3231418001c5dde802eae32913c0d09b40436e11aeff5a"
+}

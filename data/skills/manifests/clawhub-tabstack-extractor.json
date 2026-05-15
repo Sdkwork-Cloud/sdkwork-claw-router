@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11805,
+  "uuid": "skill-clawhub-tabstack-extractor",
+  "skillKey": "clawhub-tabstack-extractor",
+  "name": "Tabstack Extractor",
+  "summary": "Extract structured data from websites using Tabstack API. Use when you need to scrape job listings, news articles, product pages, or any structured web content. Provides JSON schema-based extraction and clean markdown conversion. Requires.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tabstack_extractor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "noblepayne",
+      "features": [
+        "Extract structured data from websites using Tabstack API",
+        "Use when you need to scrape job listings, news articles, product pages, or any structured web c.",
+        "Provides JSON schema-based extraction and clean markdown conversion",
+        "Requires TABSTACK_API_KEY environment variable."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tabstack-extractor@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33278192?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tabstack-extractor",
+      "url": "https://clawhub.ai/skills/tabstack-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tabstack-extractor",
+    "url": "https://clawhub.ai/skills/tabstack-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tabstack-extractor-63f4a8bca2193afb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tabstack-extractor@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tabstack-extractor-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5f8dcbc7720b7fffb02da8ef9592b081da5a1ceec051d3c3f9de8724b01cefe",
+      "artifactSizeBytes": 2464
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T04:39:03.429Z"
+}

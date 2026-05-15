@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19836,
+  "uuid": "skill-clawhub-mupeng-release-discipline",
+  "skillKey": "clawhub-mupeng-release-discipline",
+  "name": "Release Discipline",
+  "summary": "Enforce release discipline for AI agents and developers. Prevents version spam, forces quality checks before publishing, and maintains a 24-hour cooldown bet...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mupeng_release_discipline",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mupengi-bot",
+      "features": [
+        "Enforce release discipline for AI agents and developers",
+        "Prevents version spam, forces quality checks before publishing, and maintains a 24-hour cooldow."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mupeng-release-discipline@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259087580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mupeng-release-discipline",
+      "url": "https://clawhub.ai/skills/mupeng-release-discipline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mupeng-release-discipline",
+    "url": "https://clawhub.ai/skills/mupeng-release-discipline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mupeng-release-discipline-bd57d8dfd5118e7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mupeng-release-discipline@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mupeng-release-discipline-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12a2503c567d5e3f8ab467b8fdae20e3f824c4577817e4a4dad83945d98668ed",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T23:31:35.436Z"
+}

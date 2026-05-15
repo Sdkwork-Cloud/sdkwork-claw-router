@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34194,
+  "uuid": "skill-clawhub-analytics-tracking-dv",
+  "skillKey": "clawhub-analytics-tracking-dv",
+  "name": "Analytics & Tracking Setup",
+  "summary": "Track events and user behavior using Segment.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analytics_tracking_dv",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RunByDaVinci",
+      "features": [
+        "Track events and user behavior using Segment."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/analytics-tracking-dv@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266047309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "analytics-tracking-dv",
+      "url": "https://clawhub.ai/skills/analytics-tracking-dv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analytics-tracking-dv",
+    "url": "https://clawhub.ai/skills/analytics-tracking-dv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analytics-tracking-dv-a7813ea83b489013.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/analytics-tracking-dv@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-analytics-tracking-dv-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:925ee1046a33e792b542c563a589c0afd7133b21dc569b6eb61eb0b8da083c9b",
+      "artifactSizeBytes": 1832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T09:22:11.428Z"
+}

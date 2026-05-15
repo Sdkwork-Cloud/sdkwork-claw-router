@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18775,
+  "uuid": "skill-clawhub-crypto-2",
+  "skillKey": "clawhub-crypto-2",
+  "name": "Pywayne Crypto",
+  "summary": "Encryption and decryption toolkit for string and byte data. Supports Fernet (AES-128) symmetric encryption, fallback XOR encryption, custom password protecti...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangyendt",
+      "features": [
+        "Encryption and decryption toolkit for string and byte data",
+        "Supports Fernet (AES-128) symmetric encryption, fallback XOR encryption, custom password protec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-2@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18455758?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-2",
+      "url": "https://clawhub.ai/skills/crypto-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-2",
+    "url": "https://clawhub.ai/skills/crypto-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-2-92e4463b88ee9300.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-2@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-2-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1e63c0ae721d30f1ebf76f261c4ad49a06685c7d23d40608a5d2a573d96b009",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T14:31:16.407Z"
+}

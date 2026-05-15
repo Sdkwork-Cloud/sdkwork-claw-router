@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72295,
+  "uuid": "skill-clawhub-hot-tracker",
+  "skillKey": "clawhub-hot-tracker",
+  "name": "hot-tracker",
+  "summary": "全网热点客观扫描与去噪排行技能。用于在微博、抖音、小红书、微信公众号、知乎、B站、快手等平台之间抓取当前热点，按讨论度、传播度、转发度、情绪强度、对立程度和时效性综合排序，输出默认 Top10 的去噪热点清单。适用于“最近什么最热”“帮我抓全网热点”“按当前话题度排行”“找高讨论度话题”“做热点监测”这类请求。默...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hot_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "e2e5g",
+      "features": [
+        "全网热点客观扫描与去噪排行技能。用于在微博、抖音、小红书、微信公众号、知乎、B站、快手等平台之间抓取当前热点，按讨论度、传播度、转发度、情绪强度、对立程度和时效性综合排序，输出默认 Top1."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hot-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130967590?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hot-tracker",
+      "url": "https://clawhub.ai/skills/hot-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hot-tracker",
+    "url": "https://clawhub.ai/skills/hot-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hot-tracker-e121c26f11555824.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hot-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hot-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4dc7bb0da8fb287bb7aa14a9c525f0dedb838abb391270019650f43f780aca7",
+      "artifactSizeBytes": 2891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T16:18:09.824Z"
+}

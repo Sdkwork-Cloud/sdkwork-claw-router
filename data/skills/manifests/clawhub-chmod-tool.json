@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48418,
+  "uuid": "skill-clawhub-chmod-tool",
+  "skillKey": "clawhub-chmod-tool",
+  "name": "Chmod Tool",
+  "summary": "Change file permissions using symbolic or numeric modes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chmod_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Change file permissions using symbolic or numeric modes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chmod-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chmod-tool",
+      "url": "https://clawhub.ai/skills/chmod-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chmod-tool",
+    "url": "https://clawhub.ai/skills/chmod-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chmod-tool-385e2ecea709a7fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chmod-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chmod-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de39c87f7e291f62ef8697d441ca75c7f39617ee3bb95dc426b61a8e66576755",
+      "artifactSizeBytes": 1749
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T19:52:42.162Z"
+}

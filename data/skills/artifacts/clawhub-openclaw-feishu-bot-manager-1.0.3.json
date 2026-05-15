@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-feishu-bot-manager@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_feishu_bot_manager",
+  "skill": {
+    "id": 65877,
+    "skillKey": "clawhub-openclaw-feishu-bot-manager",
+    "name": "OpenClaw Feishu Bot Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-feishu-bot-manager",
+    "url": "https://clawhub.ai/skills/openclaw-feishu-bot-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-feishu-bot-manager-eee0d02d7c994cec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书多账户机器人配置管理 skill。用于新增飞书机器人账户、将机器人或特定群聊绑定到指定 Agent，并安全地更新 OpenClaw 的 Feishu 路由配置。适用于用户提到“添加飞书机器人”、“配置飞书机器人”、“新增飞书账户”、“飞书多账户”这类场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caoychn",
+      "userId": "s173jqtj3hgs8emqxxf31yr2kn84q54x",
+      "displayName": "caoychn",
+      "image": "https://avatars.githubusercontent.com/u/183274669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775961369328,
+      "changelog": "Add polished README and stronger ClawHub listing copy",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8bb0b925e0abd1e3020b94cb154a34057f1dc70b8790c06fb5d2776b5c5324b"
+}

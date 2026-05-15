@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27984,
+  "uuid": "skill-clawhub-ai-agent-wallet",
+  "skillKey": "clawhub-ai-agent-wallet",
+  "name": "Agent-Wallet",
+  "summary": "Single-source wallet skill for generate, import, get-balance, sign, and send flows using local wallet files plus executable Node scripts. Use when the user a...",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_agent_wallet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Akinsuyi Joshua",
+      "features": [
+        "Single-source wallet skill for generate, import, get-balance, sign, and send flows using local.",
+        "Use when the user a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-agent-wallet@1.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27169253?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-agent-wallet",
+      "url": "https://clawhub.ai/skills/ai-agent-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-agent-wallet",
+    "url": "https://clawhub.ai/skills/ai-agent-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-agent-wallet-1b9fb8394064c8a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-agent-wallet@1.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-agent-wallet-1.2.4.json",
+      "version": "1.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c69c567e21563a274480ca9d7862eb0798bd96e5892f6d07c9f4f1e60b05c23",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T22:27:24.974Z"
+}

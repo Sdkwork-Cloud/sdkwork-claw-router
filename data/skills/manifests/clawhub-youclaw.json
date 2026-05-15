@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63126,
+  "uuid": "skill-clawhub-youclaw",
+  "skillKey": "clawhub-youclaw",
+  "name": "youclaw",
+  "summary": "有米云智能营销分析助手，深度拆解广告创意，挖掘品牌投放策略，支持创意策略讨论、营销策略探讨。触发：关键词 分析品牌, 品牌分析, 策略探索, 投放策略, 创意质询, 压力测试, 创意激发, 创意打磨；命令 /youclaw、/youmiyun、/creative-chat、/grill-chat、/grill-y...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YouCloud",
+      "features": [
+        "有米云智能营销分析助手，深度拆解广告创意，挖掘品牌投放策略，支持创意策略讨论、营销策略探讨。触发：关键词 分析品牌, 品牌分析, 策略探索, 投放策略, 创意质询, 压力测试, 创意激发,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youclaw@1.2.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/youclaw/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youclaw",
+      "url": "https://clawhub.ai/skills/youclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youclaw",
+    "url": "https://clawhub.ai/skills/youclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youclaw-5812c1a28769e952.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youclaw@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-youclaw-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:affd3d2b0da414aa9cfb333c87c4612f5654385aa0462c8daf6601cf9399b386",
+      "artifactSizeBytes": 2358
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T13:51:39.549Z"
+}

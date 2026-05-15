@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flexible-flights@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flexible_flights",
+  "skill": {
+    "id": 43962,
+    "skillKey": "clawhub-flexible-flights",
+    "name": "flexible-flights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flexible-flights",
+    "url": "https://clawhub.ai/skills/flexible-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flexible-flights-c7c83d198c067e21.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find the cheapest day to fly within a date range. Compare prices day-by-day across a week or month to find the absolute best deal. Also supports: flight book..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "v3.2.2",
+      "createdAt": 1775719330252,
+      "changelog": "v3.2.2 Changelog\n\n- No file changes detected in this release.\n- Skill documentation, workflow, and logic remain unchanged from v3.2.0.\n- Version remains at 3.2.0 in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12f8ab55f4e31a6b639080d5022c16c18ee6ed9d412a4eda660b1b822d44f87c"
+}

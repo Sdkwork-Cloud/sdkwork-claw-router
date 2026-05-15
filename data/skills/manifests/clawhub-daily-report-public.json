@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43372,
+  "uuid": "skill-clawhub-daily-report-public",
+  "skillKey": "clawhub-daily-report-public",
+  "name": "Daily Report Public",
+  "summary": "Generate structured daily reports for the user, summarizing completed tasks, ongoing work, pending items, and notable notes. Use when user asks for daily rep...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_report_public",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nopedijah",
+      "features": [
+        "Generate structured daily reports for the user, summarizing completed tasks, ongoing work, pend.",
+        "Use when user asks for daily rep..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-report-public@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269079192?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-report-public",
+      "url": "https://clawhub.ai/skills/daily-report-public"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-report-public",
+    "url": "https://clawhub.ai/skills/daily-report-public",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-report-public-534f793a3c253c4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-report-public@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-report-public-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7710ee5f6999f5ecef6cf773e0c0a9b38e8dca569eba08e763773e7970e0ecf9",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T17:22:13.098Z"
+}

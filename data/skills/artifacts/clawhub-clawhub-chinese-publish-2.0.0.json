@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-chinese-publish@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_chinese_publish",
+  "skill": {
+    "id": 68364,
+    "skillKey": "clawhub-clawhub-chinese-publish",
+    "name": "中文技能发布工作流程"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-chinese-publish",
+    "url": "https://clawhub.ai/skills/clawhub-chinese-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-chinese-publish-8f0d7ce3d1a18f2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文技能发布工作流程 — 将中文 OpenClaw 技能发布到 ClawHub。使用此技能来：(1) 创建新的中文技能，(2) 将现有技能翻译为中文并发布，(3) 批量发布多个中文技能，(4) 更新中文技能版本。适用于想与中国社区分享技能的 OpenClaw 代理。触发词：发布中文技能、翻译技能到中文、批量发布中..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kofna3369",
+      "userId": "s170vjwkh0tbnpbsmvn0nj60h183gysr",
+      "displayName": "Kofna3369",
+      "image": "https://avatars.githubusercontent.com/u/110220070?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1778234689681,
+      "changelog": "中文版本首次发布",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50cbd40fbf0d5dc08bf7cbc2f994a2d6fb23f02227cfaa8a9d3c8184e1832d93"
+}

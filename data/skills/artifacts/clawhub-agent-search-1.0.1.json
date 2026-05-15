@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_search",
+  "skill": {
+    "id": 27473,
+    "skillKey": "clawhub-agent-search",
+    "name": "agent-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-search",
+    "url": "https://clawhub.ai/skills/agent-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-search-ad0effe23964ba72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "List all agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yujin1liu",
+      "userId": "publishers:yujin1liu",
+      "displayName": "yujin1liu",
+      "image": "https://avatars.githubusercontent.com/u/113153951?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774004525172,
+      "changelog": "- Removed CONTRIBUTING.md and _meta.json files.\n- SKILL.md description changed to \"List all agents\".\n- Detailed usage instructions and command documentation removed from SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:acdf8842baa0e0239dcc496650132bc8b400dd0b77c68d63891c815fc8069139"
+}

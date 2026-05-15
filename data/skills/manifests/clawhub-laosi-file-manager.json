@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68953,
+  "uuid": "skill-clawhub-laosi-file-manager",
+  "skillKey": "clawhub-laosi-file-manager",
+  "name": "Windows文件管理器",
+  "summary": "Windows文件管理器 - 原创技能。让AI执行Windows文件操作，包括文件/文件夹的创建、复制、移动、删除、搜索、重命名等。适用于文件整理、批量处理、自动化工作流等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.laosi_file_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "534422530",
+      "features": [
+        "Windows文件管理器",
+        "原创技能。让AI执行Windows文件操作，包括文件/文件夹的创建、复制、移动、删除、搜索、重命名等。适用于文件整理、批量处理、自动化工作流等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/laosi-file-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82763531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "laosi-file-manager",
+      "url": "https://clawhub.ai/skills/laosi-file-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "laosi-file-manager",
+    "url": "https://clawhub.ai/skills/laosi-file-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/laosi-file-manager-877419b0d218cb47.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/laosi-file-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-laosi-file-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:527b32fe50e2c7c042e8d2ba3723635a411f061dd7f73ad3ee31e12ced59b44e",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T08:18:20.479Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/usage-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usage_tracker",
+  "skill": {
+    "id": 23776,
+    "skillKey": "clawhub-usage-tracker",
+    "name": "Usage Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usage-tracker",
+    "url": "https://clawhub.ai/skills/usage-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usage-tracker-c17599b9ab977db1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track and log AI API usage across providers, calculate costs, and generate daily, weekly, or monthly reports filtered by model and task type."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "punkaze",
+      "userId": "publishers:punkaze",
+      "displayName": "punkaze",
+      "image": "https://avatars.githubusercontent.com/u/16140252?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772444518205,
+      "changelog": "- Initial release of Usage Tracker Skill.\n- Tracks AI model usage across multiple providers (MiniMax, Anthropic, OpenAI, Google, xAI, Voyage, Mistral).\n- Logs API calls and calculates costs based on current provider pricing.\n- Generates daily, weekly, and monthly usage/cost reports with optional filters.\n- Offers real-time 24h usage reports.\n- Provides Telegram commands for quick reporting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bff4ae785a352ada7f2d6f0921b680ba7370342247d8871d64d8e100a4026831"
+}

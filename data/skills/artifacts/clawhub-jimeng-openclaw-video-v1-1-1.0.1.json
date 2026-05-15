@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jimeng-openclaw-video-v1-1@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jimeng_openclaw_video_v1_1",
+  "skill": {
+    "id": 38564,
+    "skillKey": "clawhub-jimeng-openclaw-video-v1-1",
+    "name": "jimeng-openclaw-video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jimeng-openclaw-video-v1-1",
+    "url": "https://clawhub.ai/skills/jimeng-openclaw-video-v1-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jimeng-openclaw-video-v1-1-38a0d158011cdfc0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate videos from text prompts using Jimeng OpenClaw with customizable frame counts and asynchronous task handling."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liangshenghzj888-stack",
+      "userId": "s173trxbspmx475e35zmtnffmh84dngc",
+      "displayName": "liangshenghzj888-stack",
+      "image": "https://avatars.githubusercontent.com/u/233961624?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776652223405,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0b8ae36f9581d0660219064a267e6df90ee68fcaab4b85e5b39405178e266c4"
+}

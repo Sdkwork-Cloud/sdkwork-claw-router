@@ -40,33 +40,33 @@ export type AnnouncementUpdateInput = {
 
 export class AnnouncementService {
   static async fetchAnnouncements(): Promise<Announcement[]> {
-    const result = await announcementBackendClient().router.fetchAnnouncements();
+    const result = await announcementBackendClient().content.announcements.list();
     ensurePlusApiSuccess(result, 'Failed to fetch announcements');
     return readRequiredApiItems(result, 'Failed to fetch announcements')
       .map(normalizeAnnouncement);
   }
 
   static async updateAnnouncement(id: string, updates: AnnouncementUpdateInput): Promise<Announcement> {
-    const result = await announcementBackendClient().router.updateAnnouncement(
+    const result = await announcementBackendClient().content.announcements.update(
       requiredSafePathSegment(id, 'announcementId'),
       toUpdateAnnouncementRequest(updates),
-      requestToken('admin-announcement-update'),
+      requestParams('admin-announcement-update'),
     );
     ensurePlusApiSuccess(result, 'Failed to update announcement');
     return normalizeAnnouncement(readRequiredApiItem(result, 'Updated announcement response is missing data'));
   }
 
   static async addAnnouncement(ann: AnnouncementCreateInput): Promise<Announcement> {
-    const result = await announcementBackendClient().router.addAnnouncement(
+    const result = await announcementBackendClient().content.announcements.create(
       toCreateAnnouncementRequest(ann),
-      requestToken('admin-announcement-create'),
+      requestParams('admin-announcement-create'),
     );
     ensurePlusApiSuccess(result, 'Failed to add announcement');
     return normalizeAnnouncement(readRequiredApiItem(result, 'Created announcement response is missing data'));
   }
 
   static async deleteAnnouncement(id: string): Promise<boolean> {
-    const result = await announcementBackendClient().router.deleteAnnouncement(
+    const result = await announcementBackendClient().content.announcements.delete(
       requiredSafePathSegment(id, 'announcementId'),
     );
     ensurePlusApiSuccess(result, 'Failed to delete announcement');
@@ -131,8 +131,8 @@ function announcementStatus(value: string): AdminAnnouncementCreateRequest['stat
   throw new Error('status must be one of published, draft');
 }
 
-function requestToken(scope: string): string {
-  return createRequestToken(scope);
+function requestParams(scope: string): { xRequestId: string } {
+  return { xRequestId: createRequestToken(scope) };
 }
 
 function normalizeAnnouncement(value: unknown): Announcement {

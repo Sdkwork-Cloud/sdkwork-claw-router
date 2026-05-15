@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-retention-mapper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_retention_mapper",
+  "skill": {
+    "id": 59442,
+    "skillKey": "clawhub-data-retention-mapper",
+    "name": "Data Retention Mapper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-retention-mapper",
+    "url": "https://clawhub.ai/skills/data-retention-mapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-retention-mapper-2671bf32153cb752.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "梳理数据保留周期、落盘位置、清理责任与过期处置建议。；use for data-retention, governance, privacy workflows；do not use for 替代正式合规意见, 隐瞒敏感存储位置风险."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 299,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773649269005,
+      "changelog": "Initial release of data-retention-mapper.\n\n- Provides structured mapping of data retention periods, storage locations, cleanup responsibilities, and expiry handling recommendations.\n- Designed for use in data retention, governance, privacy, and audit workflows.\n- Outputs include: data asset lists, storage locations, retention periods, risks, and actionable improvement suggestions.\n- Does not replace formal compliance advice; highlights boundaries and risk when needed.\n- Supports review drafts and executable checklists, with explicit handling of missing information and high-risk scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b0e42aa860948ce4f13362b4e61d1db1be3696eb20e7de74006d0ecc522a68e"
+}

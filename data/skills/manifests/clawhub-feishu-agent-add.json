@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58077,
+  "uuid": "skill-clawhub-feishu-agent-add",
+  "skillKey": "clawhub-feishu-agent-add",
+  "name": "feishuAgentAdd",
+  "summary": "Use this skill when users want to add a Feishu agent for OpenClaw, especially when they say things like “帮我增加一个名字叫xxx，用来做xxx的飞书agent”, want a guided prompt f...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_agent_add",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cyecho-io",
+      "features": [
+        "Use this skill when users want to add a Feishu agent for OpenClaw, especially when they say thi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-agent-add@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19159859?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-agent-add",
+      "url": "https://clawhub.ai/skills/feishu-agent-add"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-agent-add",
+    "url": "https://clawhub.ai/skills/feishu-agent-add",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-agent-add-fa41c27f03582dc8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-agent-add@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-agent-add-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7d25f54fe6a5205aa1ac397160e68a7aafe44e564f690f332eacb7d05fa2380",
+      "artifactSizeBytes": 2413
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T05:39:28.625Z"
+}

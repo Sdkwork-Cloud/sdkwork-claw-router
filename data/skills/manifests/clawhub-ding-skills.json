@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19446,
+  "uuid": "skill-clawhub-ding-skills",
+  "skillKey": "clawhub-ding-skills",
+  "name": "Ding Skills",
+  "summary": "Web scraping using local Crawl4AI instance. Use for fetching full page content with JavaScript rendering. Better than Tavily for complex pages. Unlimited usage.",
+  "version": "2.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ding_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hione",
+      "features": [
+        "Web scraping using local Crawl4AI instance",
+        "Use for fetching full page content with JavaScript rendering",
+        "Better than Tavily for complex pages",
+        "Unlimited usage."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ding-skills@2.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24585615?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ding-skills",
+      "url": "https://clawhub.ai/skills/ding-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ding-skills",
+    "url": "https://clawhub.ai/skills/ding-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ding-skills-cd2eb91414c2ccc4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ding-skills@2.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ding-skills-2.3.1.json",
+      "version": "2.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68b4aa307e046182c640100c8a18d0ac61e6105898037d43e3569d2bc805069d",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T06:52:11.944Z"
+}

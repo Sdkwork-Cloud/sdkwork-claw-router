@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-belief-discoverer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_belief_discoverer",
+  "skill": {
+    "id": 54049,
+    "skillKey": "clawhub-agent-belief-discoverer",
+    "name": "Agent Belief Discoverer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-belief-discoverer",
+    "url": "https://clawhub.ai/skills/agent-belief-discoverer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-belief-discoverer-ed1a7a972e8a3bc9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically discover what your AI agent believes by analyzing its real outputs — Pattern-Based Distillation for agent behavior"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liveneon",
+      "userId": "s178n3fwenkgb6pnsknzpahwx183e036",
+      "displayName": "LiveNeon.ai",
+      "image": "https://avatars.githubusercontent.com/u/261327260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774692543246,
+      "changelog": "Initial release of Agent Belief Discoverer: automatically extract, cluster, and map AI agent beliefs from real outputs using Pattern-Based Distillation.\n\n- Enables belief and responsibility discovery from sources like GitHub, websites, RSS, Twitter/X, and LinkedIn exports.\n- Evidence-backed extraction with structured identity outputs and signal strength scoring.\n- Includes a full suite of commands: register, sync, discover, review, prompt, diff, status, and group/consensus tools.\n- Continuous, approval-based workflow for updating agent identities with new behaviors and patterns.\n- Simple, registration-free API onboarding and curl/jq integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:626d2cc2038c470cb111646d52b5daca2400ff47393e849bc9a68b5c51c52075"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56604,
+  "uuid": "skill-clawhub-period-care-assistant",
+  "skillKey": "clawhub-period-care-assistant",
+  "name": "Period Care Assistant",
+  "summary": "Track menstrual cycle history, answer current cycle status questions, record new period start dates from natural-language messages such as \"月经来了\", predict th...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.period_care_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangjian124",
+      "features": [
+        "Track menstrual cycle history, answer current cycle status questions, record new period start d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/period-care-assistant@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72865244?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "period-care-assistant",
+      "url": "https://clawhub.ai/skills/period-care-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "period-care-assistant",
+    "url": "https://clawhub.ai/skills/period-care-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/period-care-assistant-7c32468058fad73c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/period-care-assistant@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-period-care-assistant-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cdba96ffb2798bc82059a79c77f65a538d0ec03ba503a219f417b200e0599a44",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T14:47:07.875Z"
+}

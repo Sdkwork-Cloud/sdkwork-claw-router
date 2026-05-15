@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50499,
+  "uuid": "skill-clawhub-cpbox-answers",
+  "skillKey": "clawhub-cpbox-answers",
+  "name": "cpbox-answers",
+  "summary": "USE FOR AI-grounded answers via OpenAI-compatible /chat/completions. Two modes: single-search (fast) or deep research (enable_research=true, thorough multi-s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cpbox_answers",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "springmint",
+      "features": [
+        "USE FOR AI-grounded answers via OpenAI-compatible /chat/completions",
+        "Two modes: single-search (fast) or deep research (enable_research=true, thorough multi-s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cpbox-answers@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166361573?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cpbox-answers",
+      "url": "https://clawhub.ai/skills/cpbox-answers"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cpbox-answers",
+    "url": "https://clawhub.ai/skills/cpbox-answers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cpbox-answers-23097e03ead4be73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cpbox-answers@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cpbox-answers-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a87b2eba2cbe4804bf5461828ec972f2f0981c7e616d1c945a74fdbb0bff5c8",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T07:31:26.986Z"
+}

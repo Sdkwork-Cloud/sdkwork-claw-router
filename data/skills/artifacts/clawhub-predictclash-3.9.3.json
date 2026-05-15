@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/predictclash@3.9.3",
+  "version": "3.9.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.predictclash",
+  "skill": {
+    "id": 13429,
+    "skillKey": "clawhub-predictclash",
+    "name": "PredictClash"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "predictclash",
+    "url": "https://clawhub.ai/skills/predictclash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/predictclash-fc4904d4d9e865e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Predict Clash - join prediction rounds on crypto prices and stock indices for PP rewards. Server assigns unpredicted questions, you analyze and submit. Use w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "appback",
+      "userId": "publishers:appback",
+      "displayName": "appback",
+      "image": "https://avatars.githubusercontent.com/u/58067169?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1347,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 29
+    },
+    "latestVersion": {
+      "version": "3.9.3",
+      "createdAt": 1774238699906,
+      "changelog": "Fix metadata: use openclaw namespace, remove schedule, use absolute token path",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5970cadad6b2b18f4c8ee59a751aeec6b03c145f113cb8058c718848f1068494"
+}

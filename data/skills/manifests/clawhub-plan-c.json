@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72228,
+  "uuid": "skill-clawhub-plan-c",
+  "skillKey": "clawhub-plan-c",
+  "name": "Plan C",
+  "summary": "于已有规划文件继续对话：智能识别“显式文件加载”意图，优先提供状态总结，支持按需深度迭代。",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plan_c",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xin Ding",
+      "features": [
+        "于已有规划文件继续对话：智能识别“显式文件加载”意图，优先提供状态总结，支持按需深度迭代。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plan-c@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74651863?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plan-c",
+      "url": "https://clawhub.ai/skills/plan-c"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plan-c",
+    "url": "https://clawhub.ai/skills/plan-c",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plan-c-c6d8b30b8cc1ba87.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plan-c@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-plan-c-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc19bf6fec391f8f04a26d850ff7467bc171bb19426bbbe320657893bb8deedd",
+      "artifactSizeBytes": 2325
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T11:11:17.377Z"
+}

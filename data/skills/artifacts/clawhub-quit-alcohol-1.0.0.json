@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quit-alcohol@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quit_alcohol",
+  "skill": {
+    "id": 12027,
+    "skillKey": "clawhub-quit-alcohol",
+    "name": "Quit Alcohol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quit-alcohol",
+    "url": "https://clawhub.ai/skills/quit-alcohol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quit-alcohol-b5d828f10c62d1db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track sobriety with alcohol-free streaks, craving management, and recovery milestones"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jhillin8",
+      "userId": "publishers:jhillin8",
+      "displayName": "jhillin8",
+      "image": "https://avatars.githubusercontent.com/u/79551560?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1842,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769326545654,
+      "changelog": "Initial release – a comprehensive sobriety tracking and support skill.\n\n- Tracks alcohol-free streaks in days, weeks, and months\n- Logs cravings, suggests coping strategies, and analyzes triggers\n- Celebrates key recovery milestones (24h, 1w, 30d, 90d, 1y)\n- Provides progress dashboards and money saved calculations\n- Connects users to local recovery meetings and support resources\n- Maintains user privacy; all data is stored locally",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d2350c5d49fb439f28120e1d3bf4d49d967474a860a61f8ea7f6a45bf2bc2b4c"
+}

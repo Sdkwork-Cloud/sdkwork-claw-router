@@ -141,22 +141,22 @@ export function CreateKeyDrawer({
   return (
     <div className="fixed inset-0 z-[100] flex justify-end bg-black/50 backdrop-blur-sm animate-in fade-in duration-300">
       <div
-        className="w-full max-w-xl bg-[#1e1e1e] h-full shadow-2xl flex flex-col animate-in slide-in-from-right duration-300 border-l border-white/10"
+        className="w-full max-w-xl bg-white dark:bg-[#1e1e1e] h-full shadow-2xl flex flex-col animate-in slide-in-from-right duration-300 border-l border-slate-200 dark:border-white/10"
         onClick={(event) => event.stopPropagation()}
       >
-        <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 shrink-0">
-          <div className="flex items-center gap-2 text-white font-bold text-lg">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-white/10 shrink-0">
+          <div className="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-lg">
             <Key className="w-5 h-5 text-lobster-500" />
             {title}
           </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-white hover:bg-white/10 p-2 rounded-full transition-colors">
+          <button onClick={onClose} className="text-slate-400 hover:text-slate-900 hover:bg-slate-100 dark:hover:text-white dark:hover:bg-white/10 p-2 rounded-full transition-colors">
             <X className="w-5 h-5" />
           </button>
         </div>
 
         <div className="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar">
           {isView && initialData && (
-            <div className="bg-[#252525] p-5 rounded-xl border border-white/5 space-y-4">
+            <div className="bg-slate-50 dark:bg-[#252525] p-5 rounded-xl border border-slate-200 dark:border-white/5 space-y-4">
               <ReadOnlyRow label="Masked token" value={initialData.maskedKey} monospace />
               <ReadOnlyRow label="Status" value={initialData.status} />
               <ReadOnlyRow label="Used quota" value={initialData.usedQuota} />
@@ -166,23 +166,23 @@ export function CreateKeyDrawer({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-slate-300 mb-1.5">Name</label>
+              <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Name</label>
               <input
                 type="text"
                 disabled={isView}
                 value={name}
                 onChange={(event) => setName(event.target.value)}
-                className="w-full bg-[#252525] border border-white/10 px-3 py-2 rounded-lg text-white text-sm focus:outline-none focus:border-blue-500 disabled:opacity-60"
+                className="w-full bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/10 px-3 py-2 rounded-lg text-slate-900 dark:text-white text-sm focus:outline-none focus:border-blue-500 disabled:opacity-60"
                 placeholder="Production key"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-slate-300 mb-1.5">Group</label>
+              <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Group</label>
               <select
                 disabled={isView}
                 value={group}
                 onChange={(event) => setGroup(event.target.value)}
-                className="w-full bg-[#252525] border border-white/10 px-3 py-2 rounded-lg text-white text-sm focus:outline-none focus:border-blue-500 disabled:opacity-60"
+                className="w-full bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/10 px-3 py-2 rounded-lg text-slate-900 dark:text-white text-sm focus:outline-none focus:border-blue-500 disabled:opacity-60"
               >
                 {groups.map((item) => (
                   <option key={item.code} value={item.code}>
@@ -195,9 +195,9 @@ export function CreateKeyDrawer({
             </div>
           </div>
 
-          <section className="bg-[#252525] p-5 rounded-xl border border-white/5 space-y-4">
+          <section className="bg-slate-50 dark:bg-[#252525] p-5 rounded-xl border border-slate-200 dark:border-white/5 space-y-4">
             <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-3">
-              <span className="text-sm font-bold text-white flex items-center gap-2">
+              <span className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-blue-400" />
                 Expiration
               </span>
@@ -208,7 +208,7 @@ export function CreateKeyDrawer({
                       key={item}
                       onClick={() => handleExpiryShortcut(item)}
                       className={`px-2.5 py-1 rounded transition-colors ${
-                        expiryType === item ? 'bg-blue-600 text-white' : 'bg-white/10 text-white hover:bg-white/20'
+                        expiryType === item ? 'bg-blue-600 text-white' : 'bg-white text-slate-700 hover:bg-slate-100 dark:bg-white/10 dark:text-white dark:hover:bg-white/20'
                       }`}
                     >
                       {item === 'never' ? 'Never' : item.toUpperCase()}
@@ -225,7 +225,7 @@ export function CreateKeyDrawer({
                 setExpiryDate(event.target.value);
                 setExpiryType('custom');
               }}
-              className="w-full bg-[#1e1e1e] border border-white/10 px-3 py-2 rounded-lg text-white text-sm focus:outline-none focus:border-blue-500 disabled:opacity-50"
+              className="w-full bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 px-3 py-2 rounded-lg text-slate-900 dark:text-white text-sm focus:outline-none focus:border-blue-500 disabled:opacity-50"
             />
             {expiryType === 'never' && (
               <div className="text-xs text-emerald-500 flex items-center gap-1.5">
@@ -236,38 +236,38 @@ export function CreateKeyDrawer({
           </section>
 
           {!isView && (
-            <section className="bg-[#252525] p-5 rounded-xl border border-white/5 space-y-3">
-              <span className="text-sm font-bold text-white block">Create count</span>
+            <section className="bg-slate-50 dark:bg-[#252525] p-5 rounded-xl border border-slate-200 dark:border-white/5 space-y-3">
+              <span className="text-sm font-bold text-slate-900 dark:text-white block">Create count</span>
               <input
                 type="number"
                 min="1"
                 max="100"
                 value={createCount}
                 onChange={(event) => setCreateCount(Number(event.target.value))}
-                className="w-full bg-[#1e1e1e] border border-white/10 px-3 py-2 rounded-lg text-white text-sm focus:outline-none focus:border-blue-500"
+                className="w-full bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 px-3 py-2 rounded-lg text-slate-900 dark:text-white text-sm focus:outline-none focus:border-blue-500"
               />
             </section>
           )}
 
-          <section className="bg-[#252525] p-5 rounded-xl border border-white/5 space-y-4">
+          <section className="bg-slate-50 dark:bg-[#252525] p-5 rounded-xl border border-slate-200 dark:border-white/5 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">
                 <CreditCard className="w-4 h-4 text-white" />
               </div>
-              <span className="text-sm font-bold text-white">Quota</span>
+              <span className="text-sm font-bold text-slate-900 dark:text-white">Quota</span>
             </div>
-            <div className="flex items-center bg-[#1e1e1e] border border-white/10 rounded-lg px-3 py-2">
+            <div className="flex items-center bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2">
               <Zap className={`w-4 h-4 mr-2 ${isUnlimitedQuota ? 'text-slate-500' : 'text-amber-500'}`} />
               <input
                 type="text"
                 disabled={isView || isUnlimitedQuota}
                 value={quota}
                 onChange={(event) => setQuota(event.target.value)}
-                className="w-full bg-transparent text-white text-sm focus:outline-none disabled:opacity-50"
+                className="w-full bg-transparent text-slate-900 dark:text-white text-sm focus:outline-none disabled:opacity-50"
               />
             </div>
-            <div className="flex items-center justify-between border-t border-white/5 pt-4">
-              <span className="text-sm font-bold text-white">Unlimited</span>
+            <div className="flex items-center justify-between border-t border-slate-200 dark:border-white/5 pt-4">
+              <span className="text-sm font-bold text-slate-900 dark:text-white">Unlimited</span>
               <button
                 disabled={isView}
                 onClick={() => setIsUnlimitedQuota((value) => !value)}
@@ -281,7 +281,7 @@ export function CreateKeyDrawer({
           </section>
 
           <section className="space-y-3">
-            <label className="block text-sm font-bold text-slate-300">Modalities</label>
+            <label className="block text-sm font-bold text-slate-700 dark:text-slate-300">Modalities</label>
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
               {MODALITIES.map((item) => {
                 const Icon = item.icon;
@@ -305,7 +305,7 @@ export function CreateKeyDrawer({
           </section>
 
           <div>
-            <label className="block text-sm font-bold text-slate-300 mb-1.5">IP allowlist</label>
+            <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">IP allowlist</label>
             <div className="relative">
               <MapPin className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
               <input
@@ -313,15 +313,15 @@ export function CreateKeyDrawer({
                 disabled={isView}
                 value={ipLimit}
                 onChange={(event) => setIpLimit(event.target.value)}
-                className="w-full bg-[#252525] border border-white/10 pl-9 pr-3 py-2 rounded-lg text-white text-sm focus:outline-none focus:border-blue-500 disabled:opacity-50"
+                className="w-full bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/10 pl-9 pr-3 py-2 rounded-lg text-slate-900 dark:text-white text-sm focus:outline-none focus:border-blue-500 disabled:opacity-50"
                 placeholder="192.168.1.1, 10.0.0.0/24"
               />
             </div>
           </div>
         </div>
 
-        <div className="p-4 border-t border-white/10 bg-[#1a1a1a] flex justify-end gap-3 shrink-0">
-          <button onClick={onClose} className="px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 border border-white/10 transition-colors">
+        <div className="p-4 border-t border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#1a1a1a] flex justify-end gap-3 shrink-0">
+          <button onClick={onClose} className="px-4 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 border border-slate-200 dark:border-white/10 transition-colors">
             {isView ? 'Close' : 'Cancel'}
           </button>
           {!isView && (
@@ -341,9 +341,9 @@ export function CreateKeyDrawer({
 
 function ReadOnlyRow({ label, value, monospace = false }: { label: string; value: string; monospace?: boolean }) {
   return (
-    <div className="flex justify-between items-center text-sm border-t first:border-t-0 border-white/10 pt-3 first:pt-0">
-      <span className="text-slate-400">{label}</span>
-      <span className={`font-medium text-slate-200 ${monospace ? 'font-mono' : ''}`}>{value}</span>
+    <div className="flex justify-between items-center text-sm border-t first:border-t-0 border-slate-200 dark:border-white/10 pt-3 first:pt-0">
+      <span className="text-slate-500 dark:text-slate-400">{label}</span>
+      <span className={`font-medium text-slate-800 dark:text-slate-200 ${monospace ? 'font-mono' : ''}`}>{value}</span>
     </div>
   );
 }

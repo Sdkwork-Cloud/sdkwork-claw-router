@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28908,
+  "uuid": "skill-clawhub-vmware-pilot",
+  "skillKey": "clawhub-vmware-pilot",
+  "name": "Vmware Pilot",
+  "summary": "Use this skill whenever the user wants to design, execute, or manage complex multi-step VMware workflows with human approval and automatic rollback. Pilot is...",
+  "version": "1.5.17",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vmware_pilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zw008",
+      "features": [
+        "Use this skill whenever the user wants to design, execute, or manage complex multi-step VMware.",
+        "Pilot is..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vmware-pilot@1.5.17",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10613299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vmware-pilot",
+      "url": "https://clawhub.ai/skills/vmware-pilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vmware-pilot",
+    "url": "https://clawhub.ai/skills/vmware-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vmware-pilot-6d03de6beb98eca2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vmware-pilot@1.5.17",
+      "artifactUrl": "data/skills/artifacts/clawhub-vmware-pilot-1.5.17.json",
+      "version": "1.5.17",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0cff7b18474f2d434c4179f0559f5172acb713abad432c15ebea0884b43f2de5",
+      "artifactSizeBytes": 2109
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T11:47:20.822Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10717,
+  "uuid": "skill-clawhub-catfact",
+  "skillKey": "clawhub-catfact",
+  "name": "Cat Fact",
+  "summary": "Random cat facts and breed information from catfact.ninja (free, no API key)",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.catfact",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Seth Rose",
+      "features": [
+        "Random cat facts and breed information from catfact.ninja (free, no API key)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/catfact@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10383809?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "catfact",
+      "url": "https://clawhub.ai/skills/catfact"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "catfact",
+    "url": "https://clawhub.ai/skills/catfact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/catfact-dc87a6a38cc2bc26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/catfact@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-catfact-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f63ad3261797d36e560a5f847bb797a45f4f1af23f5b26fb4992689ee10e5ec2",
+      "artifactSizeBytes": 1777
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-10T10:38:41.761Z"
+}

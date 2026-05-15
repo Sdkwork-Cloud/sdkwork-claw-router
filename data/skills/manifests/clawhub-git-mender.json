@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53487,
+  "uuid": "skill-clawhub-git-mender",
+  "skillKey": "clawhub-git-mender",
+  "name": "git-mender",
+  "summary": "git-mender — Automatically fix GitHub issues end-to-end: reads the issue, analyzes repository code, implements a fix, and submits a pull request. Use when th...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_mender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "t8g",
+      "features": [
+        "git-mender — Automatically fix GitHub issues end-to-end: reads the issue, analyzes repository c.",
+        "Use when th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-mender@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89574863?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-mender",
+      "url": "https://clawhub.ai/skills/git-mender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-mender",
+    "url": "https://clawhub.ai/skills/git-mender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-mender-59e20f1dceb10c03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-mender@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-mender-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9386d0b62fc8c165c4560c2ecd53e475e34e455b4cbd5da50d9ccf3b38901013",
+      "artifactSizeBytes": 2475
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T05:20:58.438Z"
+}

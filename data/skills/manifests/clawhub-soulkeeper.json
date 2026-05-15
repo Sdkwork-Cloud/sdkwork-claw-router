@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19045,
+  "uuid": "skill-clawhub-soulkeeper",
+  "skillKey": "clawhub-soulkeeper",
+  "name": "SoulKeeper",
+  "summary": "Ensures AI agents maintain consistent identity by auditing soul rules, detecting behavioral drift in transcripts, and injecting context-aware reminders.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soulkeeper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cassh",
+      "features": [
+        "Ensures AI agents maintain consistent identity by auditing soul rules, detecting behavioral dri."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soulkeeper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128089099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soulkeeper",
+      "url": "https://clawhub.ai/skills/soulkeeper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soulkeeper",
+    "url": "https://clawhub.ai/skills/soulkeeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soulkeeper-eb3f14ffa5f193ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soulkeeper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-soulkeeper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed613afe9f07207e7bf3e97d60473b637b105deff8f3159ed2f5b900113accef",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T21:08:19.679Z"
+}

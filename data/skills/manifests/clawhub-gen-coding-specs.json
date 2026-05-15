@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60621,
+  "uuid": "skill-clawhub-gen-coding-specs",
+  "skillKey": "clawhub-gen-coding-specs",
+  "name": "Gen Coding Specs",
+  "summary": "基于模板为当前工作空间生成完整技术编码规范，写入 docs/coding-specs/，供 gen-code 与其它技能消费。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gen_coding_specs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Liu Feng",
+      "features": [
+        "基于模板为当前工作空间生成完整技术编码规范，写入 docs/coding-specs/，供 gen-code 与其它技能消费。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gen-coding-specs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10513100?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gen-coding-specs",
+      "url": "https://clawhub.ai/skills/gen-coding-specs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gen-coding-specs",
+    "url": "https://clawhub.ai/skills/gen-coding-specs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gen-coding-specs-48ca04514c8673ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gen-coding-specs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gen-coding-specs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1f2a22cad2320d95bb74c4830e700f652691096702440f89665d0ede2e7268d",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T15:14:04.634Z"
+}

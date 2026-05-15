@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37106,
+  "uuid": "skill-clawhub-pushpay",
+  "skillKey": "clawhub-pushpay",
+  "name": "Pushpay",
+  "summary": "Pushpay integration. Manage data, records, and automate workflows. Use when the user wants to interact with Pushpay data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pushpay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Pushpay integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Pushpay data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pushpay@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pushpay",
+      "url": "https://clawhub.ai/skills/pushpay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pushpay",
+    "url": "https://clawhub.ai/skills/pushpay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pushpay-8f7fca1cdca7d683.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pushpay@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-pushpay-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3226a7d9823949d750482c654c891d0a8829cfd1ed96786ce8182640cddadaf9",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:53:57.882Z"
+}

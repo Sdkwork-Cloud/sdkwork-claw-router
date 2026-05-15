@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-agent-pipeline@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_agent_pipeline",
+  "skill": {
+    "id": 50479,
+    "skillKey": "clawhub-multi-agent-pipeline",
+    "name": "Multi Agent Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-agent-pipeline",
+    "url": "https://clawhub.ai/skills/multi-agent-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-agent-pipeline-cbe8a27522a2a4fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generic multi-agent content pipeline — sequential and parallel agent stages with status tracking, error recovery, and progress callbacks. Use when building m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nissan",
+      "userId": "s17f2fw07zktjmcgagf5c29tbd83rt7v",
+      "displayName": "Nissan Dookeran",
+      "image": "https://avatars.githubusercontent.com/u/12583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 468,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773613608389,
+      "changelog": "- Added a dedicated \"security_notes\" field to metadata clarifying patterns that may trigger automated security scanners.\n- Updated skill version to 1.0.1.\n- No changes to the core pipeline logic or behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90d6a680c002a019ffcc219fd8ca1f34854af06c471a3efe309d769d9ca50e85"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/converter-best@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.converter_best",
+  "skill": {
+    "id": 47755,
+    "skillKey": "clawhub-converter-best",
+    "name": "Converter Best"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "converter-best",
+    "url": "https://clawhub.ai/skills/converter-best",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/converter-best-8b113e44ce0a1fbb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get converted video files ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777396833041,
+      "changelog": "Initial release of Converter Best — fast, reliable video format conversion in the cloud.\n\n- Upload video files (MP4, MOV, AVI, WebM up to 500MB) and request conversions with simple instructions.\n- Automatic setup for both registered and anonymous users; free 7-day tokens available.\n- Supports 1080p MP4 export by default, optimized for speedy turnaround (20–40 seconds typical).\n- Handles uploads, credits, export, and session state with clear error messages and guided workflows.\n- Designed for quick edits, batch processing, or iterative cuts without needing local video software.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9cf210f2a4b48c900b960db596426eac0509feec85d51683990884502353116f"
+}

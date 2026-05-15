@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cronlint@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cronlint",
+  "skill": {
+    "id": 44848,
+    "skillKey": "clawhub-cronlint",
+    "name": "cronlint"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cronlint",
+    "url": "https://clawhub.ai/skills/cronlint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cronlint-a40fdc8e4836cf43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scheduled task & cron job anti-pattern analyzer -- detects overlapping execution risks, timezone scheduling errors, missing error recovery, resource contenti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suhteevah",
+      "userId": "s17b8q91y0grcxtcbcmvck351n84tdze",
+      "displayName": "suhteevah",
+      "image": "https://avatars.githubusercontent.com/u/2342183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776180049346,
+      "changelog": "Fix: declare all deps, JWT verification, configPaths",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e405aa59802a0a490a89a6694dafa41bfd5983e6a779053a324dc17752e1809e"
+}

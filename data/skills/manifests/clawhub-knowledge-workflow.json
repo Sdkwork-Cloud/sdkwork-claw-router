@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66748,
+  "uuid": "skill-clawhub-knowledge-workflow",
+  "skillKey": "clawhub-knowledge-workflow",
+  "name": "knowledge-workflow",
+  "summary": "知识管理工作流 - 完整的知识管理工作流：收集→打标→存储→发芽→产出。支持飞书/微信读书/URL，5 种发芽类型（灵光/心智模型/跨界/微习惯/潜意识）。",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lj22503",
+      "features": [
+        "完整的知识管理工作流：收集→打标→存储→发芽→产出。支持飞书/微信读书/URL，5 种发芽类型（灵光/心智模型/跨界/微习惯/潜意识）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledge-workflow@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170225356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledge-workflow",
+      "url": "https://clawhub.ai/skills/knowledge-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-workflow",
+    "url": "https://clawhub.ai/skills/knowledge-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-workflow-f2c3985a1bcd34ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledge-workflow@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-workflow-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88e8713767e4682d8a80f7bbadb6eca3b984cd0d404ab0cda1da2197fa851374",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T11:45:39.980Z"
+}

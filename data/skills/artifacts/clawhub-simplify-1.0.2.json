@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/simplify@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simplify",
+  "skill": {
+    "id": 10910,
+    "skillKey": "clawhub-simplify",
+    "name": "Simplify Code"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simplify",
+    "url": "https://clawhub.ai/skills/simplify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simplify-e55dea01f8db239d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Refactor code for clarity, consistency, and maintainability without changing behavior. Use when the user types /simplify or asks to simplify code."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bestisblessed",
+      "userId": "s179qhkgs0350567tyc17d8kg5858kzd",
+      "displayName": "bestisblessed",
+      "image": "https://avatars.githubusercontent.com/u/59031057?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2060,
+      "installsAllTime": 14,
+      "installsCurrent": 13,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772864395081,
+      "changelog": "Polish description and detail page formatting; update public title to Simplify Code",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:257afcf0ed26d384caf2ca01e016ed232fbe7556508fa7eadaaf3f5ec5c03250"
+}

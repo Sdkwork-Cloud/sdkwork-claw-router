@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73605,
+  "uuid": "skill-clawhub-japanese-voice-scorer",
+  "skillKey": "clawhub-japanese-voice-scorer",
+  "name": "日语朗读作业批改模板",
+  "summary": "提供日语朗读多维评分与详细发音反馈，支持课文、语法、会话、写作、听力、翻译六大闭环练习。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.japanese_voice_scorer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bianmaxingkong",
+      "features": [
+        "提供日语朗读多维评分与详细发音反馈，支持课文、语法、会话、写作、听力、翻译六大闭环练习。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/japanese-voice-scorer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24936795?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "japanese-voice-scorer",
+      "url": "https://clawhub.ai/skills/japanese-voice-scorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "japanese-voice-scorer",
+    "url": "https://clawhub.ai/skills/japanese-voice-scorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/japanese-voice-scorer-723cdbc93ed8682c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/japanese-voice-scorer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-japanese-voice-scorer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4de8a9996e125d74d2b3dc45a1493ab368eff873d6d80c369c3193233d1f9fce",
+      "artifactSizeBytes": 2620
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T09:41:08.968Z"
+}

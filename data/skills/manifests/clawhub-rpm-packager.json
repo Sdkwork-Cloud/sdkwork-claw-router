@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21719,
+  "uuid": "skill-clawhub-rpm-packager",
+  "skillKey": "clawhub-rpm-packager",
+  "name": "rpm-packager",
+  "summary": "Build installable RPM packages from source code on CentOS/RHEL by creating SPEC files and compiling for versions 7, 8, or 9 RPM-based systems.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rpm_packager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yukariccccccc",
+      "features": [
+        "Build installable RPM packages from source code on CentOS/RHEL by creating SPEC files and compi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rpm-packager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235014537?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rpm-packager",
+      "url": "https://clawhub.ai/skills/rpm-packager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rpm-packager",
+    "url": "https://clawhub.ai/skills/rpm-packager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rpm-packager-3692224acbb8199a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rpm-packager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rpm-packager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f680951b02b7f784dc6addd5a94d8da612e21ac138c346128b25058e60e7659d",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T09:52:48.432Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24679,
+  "uuid": "skill-clawhub-clawmem",
+  "skillKey": "clawhub-clawmem",
+  "name": "ClawMem",
+  "summary": "Bootstrap, repair, and verify the ClawMem OpenClaw plugin. Use when ClawMem is not yet installed, not selected as the active memory plugin, missing per-agent...",
+  "version": "0.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmem",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ian",
+      "features": [
+        "Bootstrap, repair, and verify the ClawMem OpenClaw plugin",
+        "Use when ClawMem is not yet installed, not selected as the active memory plugin, missing per-ag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawmem@0.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10701973?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawmem",
+      "url": "https://clawhub.ai/skills/clawmem"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmem",
+    "url": "https://clawhub.ai/skills/clawmem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmem-60decc26394b022a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawmem@0.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawmem-0.2.4.json",
+      "version": "0.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdd43a00ab96a5c5f8e3d870d9fded1b82ba0a582ac0c79cfb7ca2629fe2cd8d",
+      "artifactSizeBytes": 2353
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T13:41:47.330Z"
+}

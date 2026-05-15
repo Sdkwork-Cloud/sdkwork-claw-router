@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70834,
+  "uuid": "skill-clawhub-hts-job-assistant-generator",
+  "skillKey": "clawhub-hts-job-assistant-generator",
+  "name": "HTS全岗位通用AI助理生成器，支持管理、技术、业务、职能等各类岗位，自动生成负责人画像、助理规范及OpenClaw完整配置文件，实现一岗一AI助手。",
+  "summary": "HTS全岗位通用AI助理生成器，支持管理、技术、业务、职能等各类岗位，自动生成负责人画像、助理规范及OpenClaw完整配置文件，实现一岗一AI助手。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hts_job_assistant_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hill Jiang",
+      "features": [
+        "HTS全岗位通用AI助理生成器，支持管理、技术、业务、职能等各类岗位，自动生成负责人画像、助理规范及OpenClaw完整配置文件，实现一岗一AI助手。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hts-job-assistant-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40165251?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hts-job-assistant-generator",
+      "url": "https://clawhub.ai/skills/hts-job-assistant-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hts-job-assistant-generator",
+    "url": "https://clawhub.ai/skills/hts-job-assistant-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hts-job-assistant-generator-9d629a6d83e29921.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hts-job-assistant-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hts-job-assistant-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1f4b3bc0cc85e1d6ea3d06b5d860e96f0884d4085888f24b8ed0be432b8b06d",
+      "artifactSizeBytes": 2674
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:20:03.137Z"
+}

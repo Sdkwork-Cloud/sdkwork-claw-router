@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/br-risk-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.br_risk_analyzer",
+  "skill": {
+    "id": 58219,
+    "skillKey": "clawhub-br-risk-analyzer",
+    "name": "Br Risk Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "br-risk-analyzer",
+    "url": "https://clawhub.ai/skills/br-risk-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/br-risk-analyzer-44d0767b122dbd30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据需求文档分析风险，分析代码漏洞。analyzes code changes between commits against requirement documents to identify and prioritize risk points."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhijialin",
+      "userId": "s1758x21vxc6jqkz9gq77ykfts83mmhz",
+      "displayName": "ZhiJialin",
+      "image": "https://avatars.githubusercontent.com/u/44286450?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774945601876,
+      "changelog": "Initial release of br-risk-analyzer skill\n\n- Analyzes code changes between commits against requirement documents to identify and prioritize risks.\n- Provides a structured, requirement-driven code review protocol covering correctness, boundaries, concurrency, failure paths, config, security, dependencies, and compatibility.\n- Delivers risks categorized by priority (P0–P3) with paths, locations, behaviors, and recommendations.\n- Persists analysis results and understanding for future use, maintaining historical project context.\n- Offers mandatory markdown output template and checklist integration for systematic coverage.\n- Supports test scenario suggestions for identified risks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:22271e612b2d449fd531e474f6b212644088a71703786fbb50101d0a8be2971b"
+}

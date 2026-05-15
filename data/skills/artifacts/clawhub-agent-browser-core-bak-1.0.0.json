@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-browser-core-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser_core_bak",
+  "skill": {
+    "id": 45695,
+    "skillKey": "clawhub-agent-browser-core-bak",
+    "name": "Agent Browser Core.Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser-core-bak",
+    "url": "https://clawhub.ai/skills/agent-browser-core-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser-core-bak-0afc6593431f95d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw skill for the agent-browser CLI (Rust-based with Node.js fallback) enabling AI-friendly web automation with snapshots, refs, and structured commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tang2606",
+      "userId": "s17db0kwsxnvk288qdz8ys9tds84dp65",
+      "displayName": "Wade",
+      "image": "https://avatars.githubusercontent.com/u/19337304?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775573494340,
+      "changelog": "Initial release of agent-browser-core skill for the agent-browser CLI.\n\n- Provides AI-friendly web automation via CLI, with Rust-based speed and Node.js fallback.\n- Supports snapshots, refs, and structured commands for deterministic agent control.\n- Includes operational guardrails, safety defaults, and security best practices.\n- Documentation covers setup, command details, troubleshooting, and workflow recommendations.\n- Not intended as a full SDK or for complex media uploads.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cdc208bce78d85ba748f56dcf2c37759104ffc0d24b1644caee023896b1f298d"
+}

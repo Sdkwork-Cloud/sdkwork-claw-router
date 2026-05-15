@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71234,
+  "uuid": "skill-clawhub-legacy",
+  "skillKey": "clawhub-legacy",
+  "name": "Legacy",
+  "summary": "提供财富继承策略、遗嘱订立指导、信托架构搭建及法务风险防范。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legacy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mikeclaw007",
+      "features": [
+        "提供财富继承策略、遗嘱订立指导、信托架构搭建及法务风险防范。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legacy@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265502950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legacy",
+      "url": "https://clawhub.ai/skills/legacy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legacy",
+    "url": "https://clawhub.ai/skills/legacy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legacy-c49fea7425fa7f86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legacy@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-legacy-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2ef27327ac385e2a22b2457e19aa33f913d3f5c9b07b2a155f29af2de889b87",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:19:54.156Z"
+}

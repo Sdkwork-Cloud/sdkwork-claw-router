@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23728,
+  "uuid": "skill-clawhub-daily-standup-generator",
+  "skillKey": "clawhub-daily-standup-generator",
+  "name": "Daily Standup Generator",
+  "summary": "Generate a concise daily standup report summarizing completed tasks, today's plan, and blockers from provided data or user input.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_standup_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guaiyu11",
+      "features": [
+        "Generate a concise daily standup report summarizing completed tasks, today's plan, and blockers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-standup-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38230797?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-standup-generator",
+      "url": "https://clawhub.ai/skills/daily-standup-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-standup-generator",
+    "url": "https://clawhub.ai/skills/daily-standup-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-standup-generator-23d851490d1d8d7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-standup-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-standup-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5e1920779c8299b4604a265b06c9b55ffeddd24fe23316efd5f60243b30e77f",
+      "artifactSizeBytes": 2366
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T12:45:21.554Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44986,
+  "uuid": "skill-clawhub-hijack-defender",
+  "skillKey": "clawhub-hijack-defender",
+  "name": "Hijack Defender",
+  "summary": "Create a monitoring and response plan for Amazon listing hijacking, including detection triggers, Brand Registry escalation steps, and counterfeit removal pr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hijack_defender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Create a monitoring and response plan for Amazon listing hijacking, including detection trigger."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hijack-defender@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hijack-defender",
+      "url": "https://clawhub.ai/skills/hijack-defender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hijack-defender",
+    "url": "https://clawhub.ai/skills/hijack-defender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hijack-defender-8af73d99291e9864.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hijack-defender@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hijack-defender-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:065a254875c659a38f7abde29061f8677fedb95a894aea18dab35cc63c331445",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T03:22:19.454Z"
+}

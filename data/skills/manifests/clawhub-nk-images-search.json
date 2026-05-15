@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9999,
+  "uuid": "skill-clawhub-nk-images-search",
+  "skillKey": "clawhub-nk-images-search",
+  "name": "NK Images Search",
+  "summary": "Search 1+ million free high-quality AI stock photos. Generate up to 240 free AI images daily. No API key, no tokens, no cost. 235+ niches and growing.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nk_images_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tompltw",
+      "features": [
+        "Search 1+ million free high-quality AI stock photos",
+        "Generate up to 240 free AI images daily",
+        "No API key, no tokens, no cost",
+        "235+ niches and growing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nk-images-search@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258432537?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nk-images-search",
+      "url": "https://clawhub.ai/skills/nk-images-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nk-images-search",
+    "url": "https://clawhub.ai/skills/nk-images-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nk-images-search-7927c406ade3d510.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nk-images-search@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-nk-images-search-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45e7f013202f1499066ea7f2f304c5783f8ffa5a10ef4f08c907486f813f129e",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T05:34:40.792Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54896,
+  "uuid": "skill-clawhub-pipeworx-breweries",
+  "skillKey": "clawhub-pipeworx-breweries",
+  "name": "Pipeworx breweries",
+  "summary": "Discover craft breweries across the US — search by name, city, or ID via Open Brewery DB",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_breweries",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Discover craft breweries across the US — search by name, city, or ID via Open Brewery DB"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-breweries@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-breweries",
+      "url": "https://clawhub.ai/skills/pipeworx-breweries"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-breweries",
+    "url": "https://clawhub.ai/skills/pipeworx-breweries",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-breweries-2054be766f7cd91d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-breweries@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-breweries-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d80b2dec09a9f3e186c983b62e3a519d5fb8cf5c1dbd2314785c1d9b0554efc",
+      "artifactSizeBytes": 1851
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T18:02:37.626Z"
+}

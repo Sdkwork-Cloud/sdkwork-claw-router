@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/babel-abyss@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.babel_abyss",
+  "skill": {
+    "id": 57517,
+    "skillKey": "clawhub-babel-abyss",
+    "name": "巴别渊"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "babel-abyss",
+    "url": "https://clawhub.ai/skills/babel-abyss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/babel-abyss-1617fbd5923a698c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "transform any input into a deliberately degraded, semantically corrupted, non-explanatory experimental text stream. use when the user invokes \"巴别渊\" or \"劣化\",..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daoforhere",
+      "userId": "s179cmf4pqmzjq1rhyhwm7b1ch844z01",
+      "displayName": "daoforhere",
+      "image": "https://avatars.githubusercontent.com/u/104357970?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773126809329,
+      "changelog": "Trigger with \"巴别渊\" or \"劣化\" plus any input; output should be non-structural, non-explanatory semantic degradation text.\n\n输入“巴别渊”或“劣化”并附任意文本，输出应为非结构化、非解释性的语义劣化文本流。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:005177610f3da57327240600771ad4f613a8d7a173efc3292504ad6d54c667f2"
+}

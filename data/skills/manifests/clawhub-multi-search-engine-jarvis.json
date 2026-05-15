@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32062,
+  "uuid": "skill-clawhub-multi-search-engine-jarvis",
+  "skillKey": "clawhub-multi-search-engine-jarvis",
+  "name": "Multi Search Engine Jarvis",
+  "summary": "Multi search engine integration with 17 engines (8 CN + 9 Global). Supports advanced search operators, time filters, site search, privacy engines, and Wolfra...",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_search_engine_jarvis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bingze00000",
+      "features": [
+        "Multi search engine integration with 17 engines (8 CN + 9 Global)",
+        "Supports advanced search operators, time filters, site search, privacy engines, and Wolfra..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-search-engine-jarvis@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268100670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-search-engine-jarvis",
+      "url": "https://clawhub.ai/skills/multi-search-engine-jarvis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-search-engine-jarvis",
+    "url": "https://clawhub.ai/skills/multi-search-engine-jarvis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-search-engine-jarvis-4a6cea2ec4b2efcb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-search-engine-jarvis@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-search-engine-jarvis-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78364f288ecfcd76cbdc75f98161d67337647864d91028465d4c0dfb15e875f8",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T12:19:05.416Z"
+}

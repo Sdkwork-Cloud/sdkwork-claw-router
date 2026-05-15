@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "omg",
+    "displayName": "omg",
+    "summary": "反蒸馏被动检测与告警技能 - 监控请求模式，检测潜在的知识蒸馏行为并告警操作者。仅被动检测，不修改任何响应内容。",
+    "tags": {
+      "latest": "1.0.8"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "createdAt": 1775424454495,
+    "updatedAt": 1777527207548
+  },
+  "latestVersion": {
+    "version": "1.0.8",
+    "createdAt": 1775440377633,
+    "changelog": "Version 1.0.8 Changelog\n\n- Added `disable_model_invocation: true` to explicitly prevent model calls.\n- Introduced a `requires_env` section to specify required environment variables when using webhook or email alert channels.\n- Expanded documentation on precisely which request metadata fields may be accessed, and clarified which data is strictly excluded for privacy.\n- Detailed alert channel credentials/environment requirements and enforced usage of secure secret storage for sensitive configurations.\n- No logic, detection, or permission scope changes outside of SKILL.md documentation/config refactor.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "wscats",
+    "userId": "s17bw1sf2hsjw09jmyh7nhzshn83h2gf",
+    "displayName": "enoyao",
+    "image": "https://avatars.githubusercontent.com/u/17243165?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527207548
+  }
+}

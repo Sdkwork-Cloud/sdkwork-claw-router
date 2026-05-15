@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flyai-price-advisor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyai_price_advisor",
+  "skill": {
+    "id": 71929,
+    "skillKey": "clawhub-flyai-price-advisor",
+    "name": "历史价格参谋"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyai-price-advisor",
+    "url": "https://clawhub.ai/skills/flyai-price-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyai-price-advisor-0adee88e98e47e18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "历史价格参谋——现在订划算吗？帮助用户解决\"买还是等\"的预订焦虑。输入具体航班/酒店信息，AI 结合实时价格和旅行定价规律，给出价格水位评估、趋势预判和明确的\"买/等\"建议。当用户提到\"现在买划算吗\"、\"会不会降价\"、\"该买还是等\"、\"价格评估\"、\"价格参谋\"、\"机票贵不贵\"、\"酒店现在订合适吗\"、\"价格趋势\"时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hello-ahang",
+      "userId": "s173amcatjt4szds3pjwe405r584382h",
+      "displayName": "hello_hang",
+      "image": "https://avatars.githubusercontent.com/u/19886468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775236911960,
+      "changelog": "Version 1.0.1\n\n- Major documentation expansion with 11 new reference files, including command guides and usage examples.\n- User profile workflow and storage now clearly documented, supporting both memory and local file modes.\n- Workflows, search command usage, and advanced extension scenarios are modularized and referenced from accompanying docs.\n- Changelog introduces a more concise SKILL.md, reducing in-place step-by-step instructions, instead referring to new detailed reference materials.\n- Enhanced support for advanced user learning and preference retention, with clearly documented dual-mode user profile retrieval and update processes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:15b914e9f70222416f912da0741fc77d652224dcc007bca721498f6a315d593a"
+}

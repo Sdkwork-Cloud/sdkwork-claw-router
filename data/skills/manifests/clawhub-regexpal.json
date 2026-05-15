@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25146,
+  "uuid": "skill-clawhub-regexpal",
+  "skillKey": "clawhub-regexpal",
+  "name": "Regexpal",
+  "summary": "Test and debug regex patterns against sample text. Use when checking match groups, validating patterns, generating replacements, linting syntax.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.regexpal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Test and debug regex patterns against sample text",
+        "Use when checking match groups, validating patterns, generating replacements, linting syntax."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/regexpal@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "regexpal",
+      "url": "https://clawhub.ai/skills/regexpal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "regexpal",
+    "url": "https://clawhub.ai/skills/regexpal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/regexpal-8c99b0233bd277d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/regexpal@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-regexpal-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66beca8118f9bf78f70015302447fc472c94fec7a27acc07429159cbc4149467",
+      "artifactSizeBytes": 1834
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:44:13.421Z"
+}

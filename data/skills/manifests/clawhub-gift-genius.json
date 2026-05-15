@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14195,
+  "uuid": "skill-clawhub-gift-genius",
+  "skillKey": "clawhub-gift-genius",
+  "name": "Gift Genius",
+  "summary": "Location-aware Valentine's Day gift finder. Routes US users to premium flowers (UrbanStems), Singapore users to wellness supplements (Avea Life). Returns curated picks with Decision Packs — no decision fatigue, just 2-3 perfect options.",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gift_genius",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "evoleinik",
+      "features": [
+        "Location-aware Valentine's Day gift finder",
+        "Routes US users to premium flowers (UrbanStems), Singapore users to wellness supplements (Avea.",
+        "Returns curated picks with Decision Packs — no decision fatigue, just 2-3 perfect options."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gift-genius@4.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3266008?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gift-genius",
+      "url": "https://clawhub.ai/skills/gift-genius"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gift-genius",
+    "url": "https://clawhub.ai/skills/gift-genius",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gift-genius-ad3311e822893fcf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gift-genius@4.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gift-genius-4.0.0.json",
+      "version": "4.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ed569f3b6cc38612cf2767c6e415474ce673a08d13b1774de4bf4b8e7c7ca1a",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T10:49:10.130Z"
+}

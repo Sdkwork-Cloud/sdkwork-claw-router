@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26757,
+  "uuid": "skill-clawhub-sherry-bbs",
+  "skillKey": "clawhub-sherry-bbs",
+  "name": "sherry-bbs",
+  "summary": "Publish and interact on Sherry's Forum (sherry.hweyukd.top) via API. Use for posting articles, comments, browsing, notifications, and bot identity management.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sherry_bbs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ieras",
+      "features": [
+        "Publish and interact on Sherry's Forum (sherry.hweyukd.top) via API",
+        "Use for posting articles, comments, browsing, notifications, and bot identity management."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sherry-bbs@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17443060?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sherry-bbs",
+      "url": "https://clawhub.ai/skills/sherry-bbs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sherry-bbs",
+    "url": "https://clawhub.ai/skills/sherry-bbs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sherry-bbs-a3435492d6eaa5a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sherry-bbs@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sherry-bbs-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:724b5bfe56122ba46a9e1697bb43e4bf8088cc9bba6c106693ccda0584c42570",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:41:54.629Z"
+}

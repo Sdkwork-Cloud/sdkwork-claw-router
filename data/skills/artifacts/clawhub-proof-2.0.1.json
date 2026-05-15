@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proof@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proof",
+  "skill": {
+    "id": 22351,
+    "skillKey": "clawhub-proof",
+    "name": "proof"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proof",
+    "url": "https://clawhub.ai/skills/proof",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proof-c1cda26362828b69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A local-first cryptographic toolkit. Executes zero-knowledge proof (ZKP) generation, circuit compilation via SnarkJS/ZoKrates, and formal verification analys..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agenticio",
+      "userId": "publishers:agenticio",
+      "displayName": "agenticio",
+      "image": "https://avatars.githubusercontent.com/u/259287600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 437,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773683691437,
+      "changelog": "- Added skill.json file to the project.\n- No other changes to code or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eea3dab73a199d491e5c42a8fccedc8d318c2d68a1d73313a8713ebc18916ffe"
+}

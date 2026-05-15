@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/catch-my-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.catch_my_skill",
+  "skill": {
+    "id": 59665,
+    "skillKey": "clawhub-catch-my-skill",
+    "name": "Catch My Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "catch-my-skill",
+    "url": "https://clawhub.ai/skills/catch-my-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/catch-my-skill-37a6c3c6153d9657.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动检测本地与线上 skill 版本差异 - 支持 ClawHub/GitHub，定期检查更新"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "russellfei",
+      "userId": "s176a27myh2rbyrfvwd62nct2h83g913",
+      "displayName": "russellfei",
+      "image": "https://avatars.githubusercontent.com/u/3415940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 512,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772268822789,
+      "changelog": "自动检测本地与线上 skill 版本差异",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4db403ec1c36196e6f1773ad2c8f063330c20e000a55af9550850b3e3d9a5a7e"
+}

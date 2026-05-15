@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fakex-till-youai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fakex_till_youai",
+  "skill": {
+    "id": 45725,
+    "skillKey": "clawhub-fakex-till-youai",
+    "name": "FakeX-Till-YouAI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fakex-till-youai",
+    "url": "https://clawhub.ai/skills/fakex-till-youai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fakex-till-youai-5ce505187b0e9db5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate X post drafts from a daily AI digest, collect the user's style/profile preferences, let the user choose drafts and posting times, and either auto-pu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zimmw",
+      "userId": "s171a4xt4a88bjaj1ca8gfkyyn84ce6b",
+      "displayName": "Zim Wang",
+      "image": "https://avatars.githubusercontent.com/u/111806704?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775556556854,
+      "changelog": "Initial release of fakex-till-you-ai\n\n- Generates X (Twitter) post drafts from a daily AI digest, tailored to user style and profile preferences.\n- Supports fully automatic posting (via user’s X API credentials) or half-automatic draft generation for manual posting.\n- Guides users through onboarding: posting mode, positioning, content style, and reference accounts.\n- Stores user configuration and preferences locally for persistent, personalized workflows.\n- Presents multiple draft options per digest, allows custom scheduling, and manages source attribution flexibly in posts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96e23a6016892f1804ef17a23cfd089aafc0920e78c56fb5d990156058ed24ab"
+}

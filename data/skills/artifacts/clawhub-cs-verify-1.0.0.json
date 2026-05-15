@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cs-verify@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cs_verify",
+  "skill": {
+    "id": 18070,
+    "skillKey": "clawhub-cs-verify",
+    "name": "Clawhub Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cs-verify",
+    "url": "https://clawhub.ai/skills/cs-verify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cs-verify-10cc929fadcb0c72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verify factual claims against live data sources. Returns structured verdicts with confidence scores."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cutthemustard",
+      "userId": "s173h8p9g1rpxh3vdhvjvhdy9d83kfqn",
+      "displayName": "CutTheMustard",
+      "image": "https://avatars.githubusercontent.com/u/63439451?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 720,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771839455616,
+      "changelog": "Initial release of cs-verify skill.\n\n- Verify factual claims against live data sources with structured verdicts and confidence scores.\n- Supports claim categories for faster and specialized verification (financial, entity, geo, factcheck).\n- Provides a trending claims endpoint showing the top 100 queried claims in the last 24 hours.\n- Free tier available (25 queries/day, no auth); paid tier supports unlimited queries via USDC.\n- Includes unique referral system for earning credits on agent queries.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f3986b7b62297d42e380d3bb2c95e970518cf6fc314507a8634c960197f53737"
+}

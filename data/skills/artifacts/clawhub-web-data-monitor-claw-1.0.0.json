@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-data-monitor-claw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_data_monitor_claw",
+  "skill": {
+    "id": 71494,
+    "skillKey": "clawhub-web-data-monitor-claw",
+    "name": "全网数据探测虾"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-data-monitor-claw",
+    "url": "https://clawhub.ai/skills/web-data-monitor-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-data-monitor-claw-1e2924739a176e71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全网数据探测虾 — 监控竞品官网或特定站点的页面变动，自动巡查并在关键内容变化时发送通知。 适用场景：竞品价格监控、法规更新监控、招聘信息监控、新闻舆情监控、技术文档更新监控。 触发关键词：监控 爬虫 网页变动 竞品监控 价格监控 法规更新 舆情监控 数据采集 网站监控 页面变化 自动抓取 web-data-mo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tujinsama",
+      "userId": "s177vqraepq71bz6ynj98rrtdd83j0pd",
+      "displayName": "Ricky",
+      "image": "https://avatars.githubusercontent.com/u/82147388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776744443544,
+      "changelog": "初始发布：竞品官网/特定站点页面变动监控，支持价格监控、法规更新、舆情监控等场景，含反爬虫策略和数据提取模板",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:702964f26cca0d6a11fbc63b86689c44fd263ca1ca68e3f863f10f0c9dd7c8c4"
+}

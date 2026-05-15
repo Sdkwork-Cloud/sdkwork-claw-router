@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12365,
+  "uuid": "skill-clawhub-openclaw-warden",
+  "skillKey": "clawhub-openclaw-warden",
+  "name": "Openclaw Warden",
+  "summary": "Verify workspace file integrity and scan for prompt injection patterns in agent identity and memory files. Detects unauthorized modifications to SOUL.md, AGENTS.md, IDENTITY.md, memory files, and installed skills. Free detection layer — up.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_warden",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AtlasPA",
+      "features": [
+        "Verify workspace file integrity and scan for prompt injection patterns in agent identity and me.",
+        "Detects unauthorized modifications to SOUL.md, AGENTS.md, IDENTITY.md, memory files, and instal.",
+        "Free detection layer — upgrade to openclaw-warden-pro for automated countermeasures."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-warden@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231540010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-warden",
+      "url": "https://clawhub.ai/skills/openclaw-warden"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-warden",
+    "url": "https://clawhub.ai/skills/openclaw-warden",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-warden-d5c7f89a741eeb6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-warden@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-warden-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8229d14ee31f07351219cff342e7a596a01dcb5b09232224528d816429c8d127",
+      "artifactSizeBytes": 2180
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T10:26:52.579Z"
+}

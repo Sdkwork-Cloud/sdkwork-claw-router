@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63026,
+  "uuid": "skill-clawhub-xiaohongshu-publisher-setup",
+  "skillKey": "clawhub-xiaohongshu-publisher-setup",
+  "name": "小红书自动排版发布---一键安装",
+  "summary": "部署小红书发布Agent团队（灵格排版设计+星阑运营发布），含XHS格式排版、浏览器自动化发布、数据分析。使用 /xiaohongshu-publisher-setup 触发部署，需先安装 content-creation。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_publisher_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Little-ke",
+      "features": [
+        "部署小红书发布Agent团队（灵格排版设计+星阑运营发布），含XHS格式排版、浏览器自动化发布、数据分析。使用 /xiaohongshu-publisher-setup 触发部署，需先安装."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-publisher-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61963028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-publisher-setup",
+      "url": "https://clawhub.ai/skills/xiaohongshu-publisher-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-publisher-setup",
+    "url": "https://clawhub.ai/skills/xiaohongshu-publisher-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-publisher-setup-112429a19adc0144.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-publisher-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-publisher-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba8ed9fc1079171e311a31e3febb8ed0257565c205290d197e47e876918af826",
+      "artifactSizeBytes": 2588
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T08:56:40.761Z"
+}

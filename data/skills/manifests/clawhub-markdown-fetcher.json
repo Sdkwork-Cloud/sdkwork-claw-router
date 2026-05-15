@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59095,
+  "uuid": "skill-clawhub-markdown-fetcher",
+  "skillKey": "clawhub-markdown-fetcher",
+  "name": "Markdown Fetcher",
+  "summary": "将网页内容转换为 Markdown 格式。 当需要获取网页内容并转换为可读 Markdown 时使用此 Skill。 优先级：markdown.new > defuddle.md > r.jina.ai > Scrapling",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jiaqi-Guo-0114",
+      "features": [
+        "将网页内容转换为 Markdown 格式。 当需要获取网页内容并转换为可读 Markdown 时使用此 Skill。 优先级：markdown.new > defuddle.md > r.j."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/markdown-fetcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264645355?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "markdown-fetcher",
+      "url": "https://clawhub.ai/skills/markdown-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-fetcher",
+    "url": "https://clawhub.ai/skills/markdown-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-fetcher-7ed9d39c5a74e7cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/markdown-fetcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-markdown-fetcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a99e46499cff85045a5dbf01888850b36dd128690ae97de72135ccbe2bd10d72",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T00:41:03.194Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73494,
+  "uuid": "skill-clawhub-liuyao-najia-skill",
+  "skillKey": "clawhub-liuyao-najia-skill",
+  "name": "六爻纳甲技能",
+  "summary": "六爻纳甲排盘与断卦技能。支持起卦、纳甲、装卦、六亲、世应、六神排布，以及自动化断卦分析。",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liuyao_najia_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dglijin-oss",
+      "features": [
+        "六爻纳甲排盘与断卦技能。支持起卦、纳甲、装卦、六亲、世应、六神排布，以及自动化断卦分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/liuyao-najia-skill@3.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251980243?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "liuyao-najia-skill",
+      "url": "https://clawhub.ai/skills/liuyao-najia-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liuyao-najia-skill",
+    "url": "https://clawhub.ai/skills/liuyao-najia-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liuyao-najia-skill-9577bd332eafdf64.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/liuyao-najia-skill@3.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-liuyao-najia-skill-3.0.1.json",
+      "version": "3.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcf107ec8f0a15b8263e7193768115136e98c90036e85636182ea78e0cb060ea",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T15:12:24.367Z"
+}

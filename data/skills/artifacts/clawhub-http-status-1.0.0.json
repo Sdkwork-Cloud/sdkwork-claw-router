@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/http-status@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.http_status",
+  "skill": {
+    "id": 51986,
+    "skillKey": "clawhub-http-status",
+    "name": "Http Status"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "http-status",
+    "url": "https://clawhub.ai/skills/http-status",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/http-status-6d0b801fff605cdf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "HTTP status code reference — instant lookup of any status code with meaning, common causes, and fix suggestions. Use when the user asks about an HTTP status..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobewin",
+      "userId": "s174rz3f0862tcfw7pzfh5w8kn83hv2z",
+      "displayName": "ToBeWin",
+      "image": "https://avatars.githubusercontent.com/u/145168989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774013380611,
+      "changelog": "- Initial release of **http-status**: an instant, offline reference for all HTTP status codes.\n- Provides lookup of meaning, common causes, and fix suggestions for any standard or unofficial code.\n- Covers RFC, WebDAV, Nginx, Cloudflare, and other commonly used codes.\n- Supports single-code explanations, code comparisons (e.g. 401 vs 403), and lists of retryable errors.\n- No network, no dependencies — works fully offline.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6318f8f7976072602bb87e92b09e288e03f358de51b3df56349fbaf046d2b1fc"
+}

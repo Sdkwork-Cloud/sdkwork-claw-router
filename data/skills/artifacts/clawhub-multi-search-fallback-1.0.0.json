@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-search-fallback@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_search_fallback",
+  "skill": {
+    "id": 69115,
+    "skillKey": "clawhub-multi-search-fallback",
+    "name": "Multi-Search Fallback"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-search-fallback",
+    "url": "https://clawhub.ai/skills/multi-search-fallback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-search-fallback-20eb8388eb0ba378.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多源搜索聚合技能。当用户需要搜索信息、查资料、做研究时，自动调用多个搜索源进行交叉验证，提高结果准确性。触发场景：搜索某事、查证某个说法、做研究、多源验证、compare multiple sources、搜索结果不一致时主动复核。**只要是搜索类需求，一律优先使用此技能**，它会自动决定是单源快速返回还是多源深..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ruogu1992",
+      "userId": "s177atrs72sfyqwpyfrgrhcvxn83ye9m",
+      "displayName": "ruogu1992",
+      "image": "https://avatars.githubusercontent.com/u/57170563?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774916395002,
+      "changelog": "Initial release of multi-search-fallback, an aggregated multi-source search skill.\n\n- Automatically triggers multiple search sources to cross-verify results, increasing accuracy for all search-related needs.\n- Dynamically chooses between quick single-source search and deep multi-source validation based on the complexity of user's query.\n- Implements a fallback search chain to ensure high availability: switches to backup sources if earlier ones fail or return empty.\n- Performs cross-verification of findings: tags as \"一致\", \"分歧\", or \"补充\", calculates an overall confidence score, and clearly displays the consensus level.\n- Structured output: provides confidence level, key findings, multi-source comparison, and collapsible raw results.\n- Custom strategies for research, fact-checking, academic, finance, and domestic search scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb5b199a9161677bb3df4bccaefb2d9d5db244a8be6dbcb22b6fa3c40d5a83ab"
+}

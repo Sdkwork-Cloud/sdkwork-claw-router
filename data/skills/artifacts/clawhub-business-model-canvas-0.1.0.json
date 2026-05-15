@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/business-model-canvas@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_model_canvas",
+  "skill": {
+    "id": 9041,
+    "skillKey": "clawhub-business-model-canvas",
+    "name": "Business Model Canvas"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-model-canvas",
+    "url": "https://clawhub.ai/skills/business-model-canvas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-model-canvas-638cdafe58389844.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build, fill, stress-test, and iterate on a Business Model Canvas for a solopreneur. Use when designing or redesigning how a business creates, delivers, and captures value — covering all nine BMC blocks plus solopreneur-specific adaptations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jk-0001",
+      "userId": "s172spfmwsf80c1ymt8rffcz9h83gbzb",
+      "displayName": "Jatin Khatri",
+      "image": "https://avatars.githubusercontent.com/u/103896999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4660,
+      "installsAllTime": 31,
+      "installsCurrent": 30,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770341750447,
+      "changelog": "- Initial release of the Business Model Canvas skill tailored for solopreneurs.\n- Covers all standard nine BMC blocks with an added \"Time & Energy\" block unique to solo founders.\n- Provides step-by-step guidance, validation checks, and unit economics sanity checks.\n- Includes solopreneur-specific tips for channels, customer relationships, and managing personal resources.\n- Triggers on a wide set of business model-related queries.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:76a2d53da233379e7fd444be1f05c9fefbe7dc27433033ac9af5100d7aec482b"
+}

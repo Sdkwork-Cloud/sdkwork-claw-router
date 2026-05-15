@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51724,
+  "uuid": "skill-clawhub-dailytech",
+  "skillKey": "clawhub-dailytech",
+  "name": "Dailytech",
+  "summary": "Daily AI & tech news in 60 seconds — LLM updates, product launches, startup funding, developer tools. Bilingual EN/CN visual card. Morning & evening push.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dailytech",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiajiaoy",
+      "features": [
+        "Daily AI & tech news in 60 seconds — LLM updates, product launches, startup funding, developer.",
+        "Bilingual EN/CN visual card",
+        "Morning & evening push."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dailytech@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254620896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dailytech",
+      "url": "https://clawhub.ai/skills/dailytech"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dailytech",
+    "url": "https://clawhub.ai/skills/dailytech",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dailytech-4d8e8f89126b4e4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dailytech@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dailytech-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:788884853c4c2b394ff027806bdea3974d6406510513c05533861b76fdd2387c",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T10:50:13.679Z"
+}

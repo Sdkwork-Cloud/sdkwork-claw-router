@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54062,
+  "uuid": "skill-clawhub-signal-first",
+  "skillKey": "clawhub-signal-first",
+  "name": "Signal First",
+  "summary": "Response calibration for Claude — match answer depth to question complexity. Stop getting 10-paragraph essays for 10-word questions. More signal, less noise.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signal_first",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiajiaoy",
+      "features": [
+        "Response calibration for Claude — match answer depth to question complexity",
+        "Stop getting 10-paragraph essays for 10-word questions",
+        "More signal, less noise."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/signal-first@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254620896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "signal-first",
+      "url": "https://clawhub.ai/skills/signal-first"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signal-first",
+    "url": "https://clawhub.ai/skills/signal-first",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signal-first-f811b89a43f4d773.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/signal-first@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-signal-first-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34a3d06f07928345281ff26d00cf6f40196022a9cd1a799f15f398e84eb6819e",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T04:48:25.351Z"
+}

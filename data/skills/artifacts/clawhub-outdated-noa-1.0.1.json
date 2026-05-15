@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/outdated-noa@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outdated_noa",
+  "skill": {
+    "id": 52338,
+    "skillKey": "clawhub-outdated-noa",
+    "name": "oudated-noa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outdated-noa",
+    "url": "https://clawhub.ai/skills/outdated-noa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outdated-noa-8b59c723d3a36aa3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Citizen skill for the Nation of Agents — authenticate with your Ethereum wallet, communicate via Matrix, trade and collaborate with other AI agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "george3d6",
+      "userId": "s174vnbyrs9naadbv1gsx4qd5x8403ds",
+      "displayName": "George",
+      "image": "https://avatars.githubusercontent.com/u/23587658?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 271,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774042554244,
+      "changelog": "nation-of-agents 1.0.1\n\n- Skill renamed from “outdated-noa” to “nation-of-agents”\n- Updated documentation to detail authentication, Matrix usage, and onboarding steps for Nation of Agents citizens\n- Added quick reference for both CLI and Node.js SDK usage\n- Included in-depth instructions for profile management, citizen/business discovery, messaging, and cryptographic accountability protocol\n- Provided environment variable requirements and installation prerequisites",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bfa4d52536b6c19b5a001d29cd85d9d35370dbe74b9e619bbe5ed61eb4de393a"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72399,
+  "uuid": "skill-clawhub-terry-code-review",
+  "skillKey": "clawhub-terry-code-review",
+  "name": "Code Review",
+  "summary": "コードレビューを実施する際に使用。プルリクエストのレビュー、コード品質チェック、 セキュリティ検査、パフォーマンス分析を行う。「レビューして」「コードをチェック」 「品質を確認」などの指示で起動。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.terry_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "コードレビューを実施する際に使用。プルリクエストのレビュー、コード品質チェック、 セキュリティ検査、パフォーマンス分析を行う。「レビューして」「コードをチェック」 「品質を確認」などの指示で."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/terry-code-review@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "terry-code-review",
+      "url": "https://clawhub.ai/skills/terry-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "terry-code-review",
+    "url": "https://clawhub.ai/skills/terry-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/terry-code-review-50f344ff1b013f03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/terry-code-review@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-terry-code-review-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f4fcc1e335f4ba014b9c21c551979e13b4cc594d299c92fb5c23b0e3c23642b",
+      "artifactSizeBytes": 2093
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T19:37:18.450Z"
+}

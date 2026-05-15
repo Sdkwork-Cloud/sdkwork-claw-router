@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-trader-lite@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_trader_lite",
+  "skill": {
+    "id": 15175,
+    "skillKey": "clawhub-claw-trader-lite",
+    "name": "Claw Trader Lite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-trader-lite",
+    "url": "https://clawhub.ai/skills/claw-trader-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-trader-lite-825c6d9ac14ab295.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-platform market intelligence for OpenClaw agents. Monitor real-time prices, balances, and positions across Hyperliquid (DeFi) and LNMarkets (Bitcoin)...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nickymick8",
+      "userId": "publishers:nickymick8",
+      "displayName": "nickymick8",
+      "image": "https://avatars.githubusercontent.com/u/58863186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 868,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771446112319,
+      "changelog": "- Updated documentation for improved clarity and readability, including expanded usage examples and troubleshooting tips.\n- Clarified feature set, limitations, and supported platforms in a more concise format.\n- Simplified language and structure to make onboarding easier for new users.\n- No changes to underlying code or functionality; this update is focused solely on user guidance and documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a17e62d5495e9b7b63563a99f3dc7f635f987a1a9e5948cc23018a2283c7aeb6"
+}

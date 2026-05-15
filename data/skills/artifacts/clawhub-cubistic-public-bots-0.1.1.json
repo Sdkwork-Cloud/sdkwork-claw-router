@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cubistic-public-bots@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cubistic_public_bots",
+  "skill": {
+    "id": 18392,
+    "skillKey": "clawhub-cubistic-public-bots",
+    "name": "cubistic.com Painter Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cubistic-public-bots",
+    "url": "https://clawhub.ai/skills/cubistic-public-bots",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cubistic-public-bots-3ef9abf0ae654176.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explain how external/public bots can participate in Cubistic (cubistic.com) and help maintain the Public Bot API docs (PoW challenge + /act). Use when Andrea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andreasnordenadler",
+      "userId": "publishers:andreasnordenadler",
+      "displayName": "andreasnordenadler",
+      "image": "https://avatars.githubusercontent.com/u/260216388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 694,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1771850922167,
+      "changelog": "- Rewrote the skill documentation for clarity and to make it documentation-first, enabling use without requiring a local repo.\n- Improved instructions for publishing docs and emphasized producing a single public doc with examples and guidance.\n- Clarified that repo commits should only happen when explicitly requested by the owner.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:af2134a2c507c648423c01fdd8e56bebd7b8b68cae954f7e6e26fe3b4766c756"
+}

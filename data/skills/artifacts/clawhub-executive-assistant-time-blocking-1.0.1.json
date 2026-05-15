@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/executive-assistant-time-blocking@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.executive_assistant_time_blocking",
+  "skill": {
+    "id": 42378,
+    "skillKey": "clawhub-executive-assistant-time-blocking",
+    "name": "Executive Assistant Time Blocking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "executive-assistant-time-blocking",
+    "url": "https://clawhub.ai/skills/executive-assistant-time-blocking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/executive-assistant-time-blocking-a48856b3b31a1a4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Standard Operating Procedure (SOP) that acts as an executive assistant to block out calendar time using TS atomic plugins."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zvirb",
+      "userId": "s178ycq6n64frv7zswtx5rvyfd85kc2g",
+      "displayName": "zvirb",
+      "image": "https://avatars.githubusercontent.com/u/130008533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777335315290,
+      "changelog": "- Updated workflow to use TS atomic plugins and autonomous-workflows-plugin instead of a markdown-based loop.\n- Refined each step of the Standard Operating Procedure (SOP) for clarity and strict sequence, with Jidoka stops after every major action.\n- Added task gap analysis and schedule overlap auditing using dedicated TS atomic tools.\n- Improved reliability by specifying plugin/tool-based error handling and retries.\n- Clarified outputs to focus on concise, overlap-free schedule summaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d8dd360349e6dffbcfc077875721f38b0585b258c4a7c4e1415246024004049"
+}

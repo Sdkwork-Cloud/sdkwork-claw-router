@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38002,
+  "uuid": "skill-clawhub-solo-factory",
+  "skillKey": "clawhub-solo-factory",
+  "name": "Factory",
+  "summary": "Install the full Solo Factory toolkit — 23 startup skills + solograph MCP server for code intelligence, KB search, and web search. Use when user says \"instal...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solo_factory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rust",
+      "features": [
+        "Install the full Solo Factory toolkit — 23 startup skills + solograph MCP server for code intel.",
+        "Use when user says \"instal..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solo-factory@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1236751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solo-factory",
+      "url": "https://clawhub.ai/skills/solo-factory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solo-factory",
+    "url": "https://clawhub.ai/skills/solo-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solo-factory-80f93ee0b7dc5402.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solo-factory@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-solo-factory-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbb4e3b2684ad39d6f404b767f5e560aebbd864e1fb228ce4a0510f4f0e604f1",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T22:06:21.156Z"
+}

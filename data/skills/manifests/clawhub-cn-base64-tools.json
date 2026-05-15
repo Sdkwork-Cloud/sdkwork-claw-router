@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60079,
+  "uuid": "skill-clawhub-cn-base64-tools",
+  "skillKey": "clawhub-cn-base64-tools",
+  "name": "Cn Base64 Tools",
+  "summary": "Base64编码解码工具。支持文本编码/解码、URL安全Base64、文件Base64转换。纯Python标准库，无需API Key。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_base64_tools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "Base64编码解码工具。支持文本编码/解码、URL安全Base64、文件Base64转换。纯Python标准库，无需API Key。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-base64-tools@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-base64-tools",
+      "url": "https://clawhub.ai/skills/cn-base64-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-base64-tools",
+    "url": "https://clawhub.ai/skills/cn-base64-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-base64-tools-184a307dc3013026.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-base64-tools@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-base64-tools-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:215936ce4bda89e394c74ea2de2177a4b5ea3d99b3e23525eaf9b9c38da1ebd7",
+      "artifactSizeBytes": 2106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T05:18:39.681Z"
+}

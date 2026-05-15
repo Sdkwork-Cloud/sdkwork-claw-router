@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19237,
+  "uuid": "skill-clawhub-kafka",
+  "skillKey": "clawhub-kafka",
+  "name": "Kafka",
+  "summary": "Produce, consume, and manage Kafka topics with lag monitoring and data export. Use when publishing messages, consuming topics, monitoring consumer lag.",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kafka",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Produce, consume, and manage Kafka topics with lag monitoring and data export",
+        "Use when publishing messages, consuming topics, monitoring consumer lag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kafka@3.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kafka",
+      "url": "https://clawhub.ai/skills/kafka"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kafka",
+    "url": "https://clawhub.ai/skills/kafka",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kafka-cbbf241eebedba6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kafka@3.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kafka-3.0.1.json",
+      "version": "3.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7577a8adfdb18f5789d623870d2032c8eeab800b6561dc829cb54cc833f3bce",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:53:47.979Z"
+}

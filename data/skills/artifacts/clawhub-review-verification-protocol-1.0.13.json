@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/review-verification-protocol@1.0.13",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_verification_protocol",
+  "skill": {
+    "id": 26420,
+    "skillKey": "clawhub-review-verification-protocol",
+    "name": "Review Verification Protocol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-verification-protocol",
+    "url": "https://clawhub.ai/skills/review-verification-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-verification-protocol-2975a7c07018ced1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mandatory verification steps for all code reviews to reduce false positives. Load this skill before reporting ANY code review findings."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "1.0.13",
+      "createdAt": 1776831354743,
+      "changelog": "- Shortened and streamlined all verification gates for Rust code review findings; each step now references explicit Rust concepts and edition-aware concerns.\n- Updated all checklist and \"before flagging\" requirements to reflect Rust-specific features (trait impls, lifetimes, edition changes, concurrency primitives).\n- Added explicit edition checks for Rust 2024, including new language behaviors (lifetime capture, unsafe block requirements).\n- Expanded common false positive lists and \"do NOT flag\" sections with Rust-relevant guidance.\n- Significantly revised and extended the \"Valid Patterns\" section, focusing on Rust language and ecosystem best practices.\n- Removed most JavaScript/TypeScript and framework-specific content; protocol now targets Rust projects.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:40caa0b92e5f437ca3a8ebcbbbb2b47eca800a6a0973615578af686ff24bd429"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_skill",
+  "skill": {
+    "id": 40362,
+    "skillKey": "clawhub-ai-skill",
+    "name": "Ai Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-skill",
+    "url": "https://clawhub.ai/skills/ai-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-skill-df7a596b1c645dc5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables AI to create and trade shares in prediction markets, query positions and history, and execute automated trading strategies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "watchmer20-ctrl",
+      "userId": "s172hxmv4sfh2z5p160gkc51m5841b5s",
+      "displayName": "watchmer20-ctrl",
+      "image": "https://avatars.githubusercontent.com/u/257205400?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775119354625,
+      "changelog": "ClawMarkets Trading Skill released – provides AI trading abilities for prediction markets.\n\n- Enables creating, trading, and querying prediction market positions.\n- Supports buying and selling of market shares.\n- Includes automated trading strategies (momentum, value, arbitrage).\n- Offers API usage examples and environment variable configuration.\n- Requires Python 3.8+, aiohttp, websockets, pandas, and numpy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ff7873986a645e502df392d8010aafdf86e6e81abf45bccdb96f720608c9741"
+}

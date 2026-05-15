@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58257,
+  "uuid": "skill-clawhub-douyin-report-search",
+  "skillKey": "clawhub-douyin-report-search",
+  "name": "抖音搜索视频全量分析工具，支持扫码登录，自动图片验证",
+  "summary": "This skill automates end-to-end Douyin topic research and report generation. Given a search keyword and a target video count, it handles QR-code login, batch...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_report_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hhofchina",
+      "features": [
+        "This skill automates end-to-end Douyin topic research and report generation",
+        "Given a search keyword and a target video count, it handles QR-code login, batch..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-report-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20396503?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-report-search",
+      "url": "https://clawhub.ai/skills/douyin-report-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-report-search",
+    "url": "https://clawhub.ai/skills/douyin-report-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-report-search-35dc2c2880b89edc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-report-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-report-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17102f6f15bd62570db71bd33cffa272f7e3f6e4c198489afe71e0d5f50670fd",
+      "artifactSizeBytes": 2608
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T02:02:08.211Z"
+}

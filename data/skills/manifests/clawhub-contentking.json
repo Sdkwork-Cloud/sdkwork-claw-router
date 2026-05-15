@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31674,
+  "uuid": "skill-clawhub-contentking",
+  "skillKey": "clawhub-contentking",
+  "name": "Contentking",
+  "summary": "ContentKing integration. Manage data, records, and automate workflows. Use when the user wants to interact with ContentKing data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contentking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "ContentKing integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ContentKing data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/contentking@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "contentking",
+      "url": "https://clawhub.ai/skills/contentking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contentking",
+    "url": "https://clawhub.ai/skills/contentking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contentking-4b0556a63653e046.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/contentking@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-contentking-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1ceec683db54dc77077c7dd1aa6e5634327ceb028167c5d8c855ed8e8a73bd6",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:34:30.545Z"
+}

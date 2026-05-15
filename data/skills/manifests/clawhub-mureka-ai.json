@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46345,
+  "uuid": "skill-clawhub-mureka-ai",
+  "skillKey": "clawhub-mureka-ai",
+  "name": "Mureka Ai",
+  "summary": "Get AI composed songs ready to post, without touching a single slider. Upload your audio files (MP3, WAV, MP4, AAC, up to 200MB), say something like \"generat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mureka_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "Get AI composed songs ready to post, without touching a single slider",
+        "Upload your audio files (MP3, WAV, MP4, AAC, up to 200MB), say something like \"generat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mureka-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mureka-ai",
+      "url": "https://clawhub.ai/skills/mureka-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mureka-ai",
+    "url": "https://clawhub.ai/skills/mureka-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mureka-ai-bb2c6cbb71b1dc57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mureka-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mureka-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb55e8dac11ed349de9d2988d41ff26c0317a8f7fe6de2ef0785243cb9ba369b",
+      "artifactSizeBytes": 2408
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T04:37:11.808Z"
+}

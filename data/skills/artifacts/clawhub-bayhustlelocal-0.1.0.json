@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bayhustlelocal@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bayhustlelocal",
+  "skill": {
+    "id": 50083,
+    "skillKey": "clawhub-bayhustlelocal",
+    "name": "BayHustleLocal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bayhustlelocal",
+    "url": "https://clawhub.ai/skills/bayhustlelocal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bayhustlelocal-3e71d36b8d3ed678.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local Bay Area parking spot research and flip opportunities (resale arbitrage, spot hunting) using goplaces, web_search, Craigslist scraping via browser, loc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaronmda",
+      "userId": "s17e94e7fsc6q38t734pe57fa5869aha",
+      "displayName": "Aaron Daley",
+      "image": "https://avatars.githubusercontent.com/u/26989992?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 42,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778354071514,
+      "changelog": "Initial parking/flip research skill for Bay Area hustles.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2657f72125f6a06632bd241ba0743bf75d42c7b00ac7b30333e08ea8133d55b6"
+}

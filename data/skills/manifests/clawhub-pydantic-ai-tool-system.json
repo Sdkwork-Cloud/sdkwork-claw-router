@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30307,
+  "uuid": "skill-clawhub-pydantic-ai-tool-system",
+  "skillKey": "clawhub-pydantic-ai-tool-system",
+  "name": "Pydantic Ai Tool System",
+  "summary": "Register and implement PydanticAI tools with proper context handling, type annotations, and docstrings. Use when adding tool capabilities to agents, implemen...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pydantic_ai_tool_system",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Register and implement PydanticAI tools with proper context handling, type annotations, and doc.",
+        "Use when adding tool capabilities to agents, implemen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pydantic-ai-tool-system@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pydantic-ai-tool-system",
+      "url": "https://clawhub.ai/skills/pydantic-ai-tool-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pydantic-ai-tool-system",
+    "url": "https://clawhub.ai/skills/pydantic-ai-tool-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pydantic-ai-tool-system-0ba10f745aa7b047.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pydantic-ai-tool-system@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pydantic-ai-tool-system-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7cc1bca415cbb7b91bb83f39efb1c116285de3fc81884f084cf1e2ba3605dcd9",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:09:36.124Z"
+}

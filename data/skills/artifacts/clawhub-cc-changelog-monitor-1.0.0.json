@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cc-changelog-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cc_changelog_monitor",
+  "skill": {
+    "id": 51198,
+    "skillKey": "clawhub-cc-changelog-monitor",
+    "name": "Claude Code Changelog Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cc-changelog-monitor",
+    "url": "https://clawhub.ai/skills/cc-changelog-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cc-changelog-monitor-152f141609a7765d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor Claude Code releases and get Telegram alerts when new versions ship. Zero AI credits — pure bash monitoring."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "assistant-design",
+      "userId": "publishers:assistant-design",
+      "displayName": "Samantha",
+      "image": "https://avatars.githubusercontent.com/u/257703115?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772717119405,
+      "changelog": "Initial release - monitors Claude Code on npm, sends Telegram alerts on new versions. Zero AI credits.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:082b9ae53d42e25afad08c7a4fc036f89633ace374304304c79f5dc1c14ca3f3"
+}

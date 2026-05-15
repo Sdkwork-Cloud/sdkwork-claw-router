@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64646,
+  "uuid": "skill-clawhub-pdf-to-image-preview",
+  "skillKey": "clawhub-pdf-to-image-preview",
+  "name": "Pdf To Image Preview",
+  "summary": "将PDF文件的每一页转换为图片文件；支持自定义图片格式（PNG/JPG）和分辨率；适用于文档处理、图片化存档等场景",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_to_image_preview",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "无处不在",
+      "features": [
+        "将PDF文件的每一页转换为图片文件；支持自定义图片格式（PNG/JPG）和分辨率；适用于文档处理、图片化存档等场景"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-to-image-preview@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42382506?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-to-image-preview",
+      "url": "https://clawhub.ai/skills/pdf-to-image-preview"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-to-image-preview",
+    "url": "https://clawhub.ai/skills/pdf-to-image-preview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-to-image-preview-a87347491da60874.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-to-image-preview@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-to-image-preview-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:593fb9ae19b3b13d31a6fde53baa36cef1bf60aa15489acedee2bc5bd400f4de",
+      "artifactSizeBytes": 2375
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T07:43:01.932Z"
+}

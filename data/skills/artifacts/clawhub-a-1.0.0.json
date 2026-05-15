@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a",
+  "skill": {
+    "id": 11198,
+    "skillKey": "clawhub-a",
+    "name": "a"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a",
+    "url": "https://clawhub.ai/skills/a",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-ca978112ca1bbdca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Live stream as an AI VTuber on Lobster.fun. Control your Live2D avatar with emotions, gestures, GIFs, and YouTube videos while interacting with chat in real-time."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ricketh137",
+      "userId": "publishers:ricketh137",
+      "displayName": "Lobster Tv",
+      "image": "https://avatars.githubusercontent.com/u/196302411?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2113,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769970281742,
+      "changelog": "Initial release of the Lobster skill.\n\n- Stream live as an AI VTuber using a Live2D avatar on Lobster.fun.\n- Control your avatar with emotion, gesture, GIF, and YouTube video tags for interactive streams.\n- Real-time chat interaction and avatar responses via API or WebSocket.\n- Simple API endpoints for agent registration, going live, sending messages, and reading chat.\n- Includes detailed tag reference and behavior rules for avatar control.\n- Quick start and example usage guides provided.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:639cf510af70de5fc39b56e66fd77d6ce8fa427118dc6fdd0f52f2f3018377e1"
+}

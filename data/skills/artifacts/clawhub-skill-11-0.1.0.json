@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-11@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_11",
+  "skill": {
+    "id": 56832,
+    "skillKey": "clawhub-skill-11",
+    "name": "Agent Reach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-11",
+    "url": "https://clawhub.ai/skills/skill-11",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-11-1cc037a429218927.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the internet: search, read, and interact with 13+ platforms including Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu (小红书), Douyin (抖音), WeCha..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raiway",
+      "userId": "publishers:raiway",
+      "displayName": "Raiway",
+      "image": "https://avatars.githubusercontent.com/u/58356235?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 565,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772815664799,
+      "changelog": "Initial release of agent-reach, enabling internet interaction across 13+ platforms.\n\n- Supports searching, reading, and posting on Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu (小红书), Douyin (抖音), WeChat Articles, LinkedIn, Boss直聘, RSS, Exa web search, and arbitrary web pages.\n- Provides usage command examples and guides for each supported platform.\n- Adds troubleshooting instructions and workspace rules.\n- Allows configuration and setup of platform channels.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d7ad27d10f1ec41a510b7c95e5626034154217ae9f098a0e78f16305444ed132"
+}

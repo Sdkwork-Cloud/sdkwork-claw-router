@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/begin-end-thinking@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.begin_end_thinking",
+  "skill": {
+    "id": 39086,
+    "skillKey": "clawhub-begin-end-thinking",
+    "name": "fencha-thinking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "begin-end-thinking",
+    "url": "https://clawhub.ai/skills/begin-end-thinking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/begin-end-thinking-cbc3f706bf857c40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when encountering problems that feel messy or unclear, when unsure how to handle a situation, or when needing to communicate something more effectively."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0251xia",
+      "userId": "s170v9p1njm0ee0evtkr5n0fch83y275",
+      "displayName": "0251XIA",
+      "image": "https://avatars.githubusercontent.com/u/247758910?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 80,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778203715738,
+      "changelog": "以终为始的思维+抓主要矛盾，分解问题，细化问题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d0c96635fd1a82bed1c0ccbec858a090ff575c60b2ec6b99283a03c54cfcc58"
+}

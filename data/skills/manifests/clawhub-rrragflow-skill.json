@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37766,
+  "uuid": "skill-clawhub-rrragflow-skill",
+  "skillKey": "clawhub-rrragflow-skill",
+  "name": "rrragflow-skill",
+  "summary": "Use for RAGFlow dataset tasks: create, list, inspect, update, or delete datasets; upload, list, update, or delete documents; start or stop parsing; check par...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rrragflow_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "redredrrred",
+      "features": [
+        "Use for RAGFlow dataset tasks: create, list, inspect, update, or delete datasets",
+        "upload, list, update, or delete documents",
+        "start or stop parsing",
+        "check par..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rrragflow-skill@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177295320?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rrragflow-skill",
+      "url": "https://clawhub.ai/skills/rrragflow-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rrragflow-skill",
+    "url": "https://clawhub.ai/skills/rrragflow-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rrragflow-skill-fd7b17bfe554355a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rrragflow-skill@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-rrragflow-skill-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71d0260e0b6ef89f1fb803c7caa9213b4a6f11346a69302053725b9a836a5637",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T05:50:49.635Z"
+}

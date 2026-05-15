@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72351,
+  "uuid": "skill-clawhub-wecom-weisheng-scrm",
+  "skillKey": "clawhub-wecom-weisheng-scrm",
+  "name": "微盛企微管家SCRM",
+  "summary": "当用户需要查询或管理微盛企微管家（企业微信） SCRM 中的客户信息、客户标签、客户群、营销素材、活码、群发、跟进记录、聊天记录、联系人、商机、汇报、抽奖、客户日程等相关业务能力时触发。即使用户未明确提到 SCRM、企微管家、开放接口或 API，也应在这些企业微信客户运营与管理场景下触发。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wecom_weisheng_scrm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangfang19",
+      "features": [
+        "当用户需要查询或管理微盛企微管家（企业微信） SCRM 中的客户信息、客户标签、客户群、营销素材、活码、群发、跟进记录、聊天记录、联系人、商机、汇报、抽奖、客户日程等相关业务能力时触发。即使."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wecom-weisheng-scrm@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225168928?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wecom-weisheng-scrm",
+      "url": "https://clawhub.ai/skills/wecom-weisheng-scrm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wecom-weisheng-scrm",
+    "url": "https://clawhub.ai/skills/wecom-weisheng-scrm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wecom-weisheng-scrm-47695e8233567aea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wecom-weisheng-scrm@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-wecom-weisheng-scrm-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd15890846e80535c62d1dc1813bc67bbcaf4e3bd6a8ad75131c8f022a2abee6",
+      "artifactSizeBytes": 2541
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T08:15:13.771Z"
+}

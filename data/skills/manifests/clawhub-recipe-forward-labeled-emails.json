@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20487,
+  "uuid": "skill-clawhub-recipe-forward-labeled-emails",
+  "skillKey": "clawhub-recipe-forward-labeled-emails",
+  "name": "Recipe Forward Labeled Emails",
+  "summary": "Find Gmail messages with a specific label and forward them to another address.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_forward_labeled_emails",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Find Gmail messages with a specific label and forward them to another address."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe-forward-labeled-emails@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe-forward-labeled-emails",
+      "url": "https://clawhub.ai/skills/recipe-forward-labeled-emails"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-forward-labeled-emails",
+    "url": "https://clawhub.ai/skills/recipe-forward-labeled-emails",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-forward-labeled-emails-0d6e172861932104.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe-forward-labeled-emails@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-forward-labeled-emails-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6cd53b5a9568c6951a3286f7c849d61224c68fc0a6886da371032c2abdffc57d",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:36:33.932Z"
+}

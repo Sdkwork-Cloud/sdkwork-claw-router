@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wininsales-crm@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wininsales_crm",
+  "skill": {
+    "id": 70964,
+    "skillKey": "clawhub-wininsales-crm",
+    "name": "Wininsales crm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wininsales-crm",
+    "url": "https://clawhub.ai/skills/wininsales-crm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wininsales-crm-c33b187a8a4c9ee0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "赢在销客CRM（24个API）。覆盖：客户录入/查重/归属查询、跟进记录、客户分析、团队业绩、客户分配/共享、合同回款、到期客户、未跟进客户、商机管理、线索管理（添加/查询/分配/通话标记）、公海捡回、产品查询、员工查询、日报。触发词：CRM、客户、录入、查重、在谁名下、谁的客户、客户存在吗、公司存在吗、跟进、合..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hijasongithub",
+      "userId": "s176pac8dbjf3aw5y109cfpqzn83g0dj",
+      "displayName": "hijasongithub",
+      "image": "https://avatars.githubusercontent.com/u/53066561?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1778294875333,
+      "changelog": "wininsales-crm 1.0.7\n\n- 更新了token说明：如果没有token，将引导用户注册和登录赢在销客CRM，并提供登录地址。\n- curl调用示例中的token字段内容为空，需自行补充实际token。\n- 其他内容保持不变，未检测到功能或API调整。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e565fc16cdc8e442d528b5609644dd8fbdd26e63166c651eeed9727e38ab6a8"
+}

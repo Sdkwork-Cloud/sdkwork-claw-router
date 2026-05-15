@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72192,
+  "uuid": "skill-clawhub-briefing-visualizer",
+  "skillKey": "clawhub-briefing-visualizer",
+  "name": "briefing-visualizer简报转手机长图",
+  "summary": "简报转手机长图。将结构化文字简报（行业简报、市场简报、动态简报等）转化为适合手机阅读的长图。支持自定义资讯内容、标题、出品方、底部通栏广告图。触发词：做简报长图、生成手机长图、简报转图片、行业周报转图、市场简报转长图、转成手机长图",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.briefing_visualizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xieliuzhu888",
+      "features": [
+        "简报转手机长图。将结构化文字简报（行业简报、市场简报、动态简报等）转化为适合手机阅读的长图。支持自定义资讯内容、标题、出品方、底部通栏广告图。触发词：做简报长图、生成手机长图、简报转图片、行."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/briefing-visualizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/278043576?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "briefing-visualizer",
+      "url": "https://clawhub.ai/skills/briefing-visualizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "briefing-visualizer",
+    "url": "https://clawhub.ai/skills/briefing-visualizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/briefing-visualizer-9c240780e3106841.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/briefing-visualizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-briefing-visualizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a83900a1f988e4fc8b0042325a8b1c95d4eab428ad4f170af286eda9b678df47",
+      "artifactSizeBytes": 2659
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T06:18:16.680Z"
+}

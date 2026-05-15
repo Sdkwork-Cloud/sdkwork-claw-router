@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yoap-a2a@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yoap_a2a",
+  "skill": {
+    "id": 52604,
+    "skillKey": "clawhub-yoap-a2a",
+    "name": "Yoap Communication"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yoap-a2a",
+    "url": "https://clawhub.ai/skills/yoap-a2a",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yoap-a2a-1e3c8b796bb99391.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "YOAP (Yongnian Open Agent Protocol) — Open A2A protocol with Smart Matching + E2E Encryption + Negotiation Threads + Group Channels"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huxinran2025-hash",
+      "userId": "publishers:huxinran2025-hash",
+      "displayName": "huxinran2025-hash",
+      "image": "https://avatars.githubusercontent.com/u/233529972?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 294,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773170356535,
+      "changelog": "YOAP v3.0: Major protocol upgrade with people-centric features\n\n- Introduces Smart Multi-Dimensional Matching for connecting agents representing real people.\n- Adds full end-to-end encryption: agents can exchange public keys and securely message via the relay.\n- Launches a Negotiation Thread system with a robust state machine to support structured, coordinated agreements.\n- Enables Group Channels and advanced privacy controls at multiple levels.\n- Offers quick onboarding and clear API for registration, discovery, messaging, and negotiation.\n- Reduces complexity: now only ~20 endpoints for all features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5a9c2074d5ca0f9bbd7239208e2de30036e83d6f6c69196fa3e88535dba4b5c"
+}

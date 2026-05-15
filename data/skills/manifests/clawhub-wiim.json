@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13328,
+  "uuid": "skill-clawhub-wiim",
+  "skillKey": "clawhub-wiim",
+  "name": "WiiM",
+  "summary": "Control WiiM audio devices (play, pause, stop, next, prev, volume, mute, play URLs, presets). Use when the user wants to control music playback, adjust volume, discover WiiM/LinkPlay speakers on the network, or play audio from a URL on a W.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wiim",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "geodeterra",
+      "features": [
+        "Control WiiM audio devices (play, pause, stop, next, prev, volume, mute, play URLs, presets)",
+        "Use when the user wants to control music playback, adjust volume, discover WiiM/LinkPlay speake."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wiim@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258517480?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wiim",
+      "url": "https://clawhub.ai/skills/wiim"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wiim",
+    "url": "https://clawhub.ai/skills/wiim",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wiim-0f077a57f3224035.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wiim@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wiim-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0aa455924b2eb261b951b97e7b8b9789bbda4fa17479a37531deac53b49b6a7",
+      "artifactSizeBytes": 1942
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T04:03:24.008Z"
+}

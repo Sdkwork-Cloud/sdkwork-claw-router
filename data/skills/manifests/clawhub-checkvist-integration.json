@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42215,
+  "uuid": "skill-clawhub-checkvist-integration",
+  "skillKey": "clawhub-checkvist-integration",
+  "name": "Checkvist",
+  "summary": "Checkvist integration. Manage Lists, Tags, Users, Teams. Use when the user wants to interact with Checkvist data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.checkvist_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Checkvist integration",
+        "Manage Lists, Tags, Users, Teams",
+        "Use when the user wants to interact with Checkvist data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/checkvist-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "checkvist-integration",
+      "url": "https://clawhub.ai/skills/checkvist-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "checkvist-integration",
+    "url": "https://clawhub.ai/skills/checkvist-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/checkvist-integration-e571732c196e24f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/checkvist-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-checkvist-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8f39947ff3efb2f1a3efb6e16073c7f3e68bbe25395ee311daefcbd090de118",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:18:02.346Z"
+}

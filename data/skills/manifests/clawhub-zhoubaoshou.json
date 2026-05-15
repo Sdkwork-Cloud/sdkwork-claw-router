@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72494,
+  "uuid": "skill-clawhub-zhoubaoshou",
+  "skillKey": "clawhub-zhoubaoshou",
+  "name": "周报速整助手",
+  "summary": "周报速整助手。将零散日常工作记录快速整理为符合通用企业规范的结构化周报。自动划分「工作完成情况」「后续计划」「待协调问题」三大标准模块，优化表述的正式度与专业性。适用场景：(1) 用户提供散乱的工作笔记/聊天记录/待办清单需要整理成周报 (2) 需要将口语化工作描述转为正式书面汇报 (3) 周报、日报、月报等周期...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhoubaoshou",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "周报速整助手。将零散日常工作记录快速整理为符合通用企业规范的结构化周报。自动划分「工作完成情况」「后续计划」「待协调问题」三大标准模块，优化表述的正式度与专业性。适用场景：(1) 用户提供散."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhoubaoshou@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhoubaoshou",
+      "url": "https://clawhub.ai/skills/zhoubaoshou"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhoubaoshou",
+    "url": "https://clawhub.ai/skills/zhoubaoshou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhoubaoshou-a7421b95c367225b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhoubaoshou@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhoubaoshou-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95fec52040ba52a594e652ae56ab17b7a52d747411b394db04258f8ec99f5ad7",
+      "artifactSizeBytes": 2166
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T23:29:33.889Z"
+}

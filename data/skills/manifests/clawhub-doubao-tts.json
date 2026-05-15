@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68163,
+  "uuid": "skill-clawhub-doubao-tts",
+  "skillKey": "clawhub-doubao-tts",
+  "name": "doubao-tts",
+  "summary": "使用豆包（火山引擎）语音合成大模型 API 将文本转换为语音音频文件。支持声音复刻音色（S_ 开头的音色ID）和官方预置音色。当用户要求\"语音合成\"、\"文字转语音\"、\"TTS\"、\"朗读文本\"、\"生成语音\"、\"用我的声音读\"、\"豆包语音\"、\"声音复刻合成\"等相关请求时，务必使用此 skill。即使用户只是说\"帮我把...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubao_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jianjun",
+      "features": [
+        "使用豆包（火山引擎）语音合成大模型 API 将文本转换为语音音频文件。支持声音复刻音色（S_ 开头的音色ID）和官方预置音色。当用户要求\"语音合成\"、\"文字转语音\"、\"TTS\"、\"朗读文本\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doubao-tts@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3888213?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doubao-tts",
+      "url": "https://clawhub.ai/skills/doubao-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubao-tts",
+    "url": "https://clawhub.ai/skills/doubao-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubao-tts-52eccbe4ba83c2f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doubao-tts@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-doubao-tts-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d43252f964dfccdd80cb75fdeac815c8db13a9956d11d0feb8a61cf07c735226",
+      "artifactSizeBytes": 2424
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T06:36:06.912Z"
+}

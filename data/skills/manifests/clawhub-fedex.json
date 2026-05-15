@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43239,
+  "uuid": "skill-clawhub-fedex",
+  "skillKey": "clawhub-fedex",
+  "name": "Fedex",
+  "summary": "Provides detailed information on FedEx's global logistics operations, services, network, and competitive market position.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fedex",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides detailed information on FedEx's global logistics operations, services, network, and co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fedex@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fedex",
+      "url": "https://clawhub.ai/skills/fedex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fedex",
+    "url": "https://clawhub.ai/skills/fedex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fedex-3ee49785593999ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fedex@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fedex-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a58adcbdd0f0d80992aad4e9cfa282534563666f614bc8eae325a10566ac92b6",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T10:05:02.752Z"
+}

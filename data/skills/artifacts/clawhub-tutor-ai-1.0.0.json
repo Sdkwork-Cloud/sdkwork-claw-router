@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tutor-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tutor_ai",
+  "skill": {
+    "id": 66564,
+    "skillKey": "clawhub-tutor-ai",
+    "name": "AI Tutor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tutor-ai",
+    "url": "https://clawhub.ai/skills/tutor-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tutor-ai-ef9f1057817358da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI智能家教老师。专为小学生、初中生、高中生提供全学科辅导。 特点：(1) 个性化教育，根据学生反馈调整 (2) 深入浅出讲解，支持追问 (3) 互动式教学，主动提问 (4) 课程连贯性，学习记录延续 (5) 支持语音+图形讲解 触发条件：(1) 学生问作业题 (2) 辅导功课 (3) 知识点讲解 (4) 学习规划"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "armholder",
+      "userId": "publishers:armholder",
+      "displayName": "armholder",
+      "image": "https://avatars.githubusercontent.com/u/4537567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 422,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773488877639,
+      "changelog": "- 新增 tutor-ai 智能家教老师技能，覆盖小学、初高中全学科在线辅导。\n- 支持个性化教学，依据学生反馈与能力调整讲解与节奏。\n- 具备互动式教学：主动提问、追问和误区提醒，促进理解。\n- 提供课程连贯性与学习进度追踪，便于复习与薄弱点提升。\n- 支持文字、语音和图形多模态讲解形式，满足不同学习习惯。\n- 适用于作业讲解、知识疑问、学科辅导及学习规划等场景。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afd3cc9706ede000f109e2d12b50fae18afc4f3ebd1230f5c7c6e41585499e31"
+}

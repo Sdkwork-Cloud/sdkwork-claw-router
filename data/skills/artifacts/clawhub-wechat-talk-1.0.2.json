@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-talk@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_talk",
+  "skill": {
+    "id": 71419,
+    "skillKey": "clawhub-wechat-talk",
+    "name": "给微信的联系人或者群发送信息"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-talk",
+    "url": "https://clawhub.ai/skills/wechat-talk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-talk-84915d8490e33c33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Windows 电脑端微信消息自动发送技能，通过键盘模拟给指定联系人发送消息。快捷命令：wt"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangpuego123",
+      "userId": "s1716xrqa6k9ye33angp5d504s83j0zr",
+      "displayName": "返璞归真",
+      "image": "https://avatars.githubusercontent.com/u/265751874?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 324,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774435903244,
+      "changelog": "- Added new files: __pycache__/server.cpython-314.pyc, input_verify.png, result.png, and verify.png.\n- Removed test_config.json.\n- No user-facing functional changes described in SKILL.md.\n- Likely enhancements for verification and result visualization with newly added images.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e9ea108c40cd29c3bcbc6733b03beb20834c852db2e0ff7433ae2b627a63a8b"
+}

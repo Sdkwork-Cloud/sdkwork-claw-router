@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72781,
+  "uuid": "skill-clawhub-jike-idiom-query",
+  "skillKey": "clawhub-jike-idiom-query",
+  "name": "成语词典 - 即刻数据",
+  "summary": "成语词典。支持搜索成语、成语详情、随机成语和成语接龙，返回成语、拼音、解释、出处、例句、故事、用法、近义词和反义词。适用场景：用户说“一丘之貉是什么意思”“搜一心相关成语”“来几个随机成语”“比翼双飞怎么接龙”等。数据由即刻数据（jikeapi.cn）开放接口提供。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_idiom_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jikeapi",
+      "features": [
+        "成语词典。支持搜索成语、成语详情、随机成语和成语接龙，返回成语、拼音、解释、出处、例句、故事、用法、近义词和反义词。适用场景：用户说“一丘之貉是什么意思”“搜一心相关成语”“来几个随机成语”."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jike-idiom-query@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26078515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jike-idiom-query",
+      "url": "https://clawhub.ai/skills/jike-idiom-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-idiom-query",
+    "url": "https://clawhub.ai/skills/jike-idiom-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-idiom-query-4e19203692d999dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jike-idiom-query@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jike-idiom-query-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbb3ff96da527da3f4aa1747e17e008b5165a5dee46450a6914934e714c4481e",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T07:04:30.701Z"
+}

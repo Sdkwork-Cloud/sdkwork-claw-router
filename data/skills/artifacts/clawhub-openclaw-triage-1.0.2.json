@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-triage@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_triage",
+  "skill": {
+    "id": 13043,
+    "skillKey": "clawhub-openclaw-triage",
+    "name": "Openclaw Triage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-triage",
+    "url": "https://clawhub.ai/skills/openclaw-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-triage-9cf420b3435179b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Incident response and forensics for agent workspaces. Investigate compromises, build timelines, assess blast radius, and collect evidence. Cross-references data from warden, ledger, signet, and sentinel for unified analysis. Free alert lay."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "atlaspa",
+      "userId": "publishers:atlaspa",
+      "displayName": "AtlasPA",
+      "image": "https://avatars.githubusercontent.com/u/231540010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1736,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770892004851,
+      "changelog": "- Removed all references to openclaw-triage-pro and upgrade prompts from documentation.\n- README and SKILL.md now describe only the core free features included with openclaw-triage.\n- No changes to commands, outputs, or forensic capabilities.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:909b4cd8c0ca20d2e3c80ade9212bcf6ce15e905a85d9803897a4e122323b689"
+}

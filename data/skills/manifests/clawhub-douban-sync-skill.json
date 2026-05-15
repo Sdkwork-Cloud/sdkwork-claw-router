@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28998,
+  "uuid": "skill-clawhub-douban-sync-skill",
+  "skillKey": "clawhub-douban-sync-skill",
+  "name": "Douban Sync",
+  "summary": "Export and sync Douban (豆瓣) book/movie/music/game collections to local CSV files (Obsidian-compatible). Use when the user wants to export their Douban readin...",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douban_sync_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cosformula",
+      "features": [
+        "Export and sync Douban (豆瓣) book/movie/music/game collections to local CSV files (Obsidian-comp.",
+        "Use when the user wants to export their Douban readin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douban-sync-skill@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18232501?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douban-sync-skill",
+      "url": "https://clawhub.ai/skills/douban-sync-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douban-sync-skill",
+    "url": "https://clawhub.ai/skills/douban-sync-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douban-sync-skill-241e8283ee0649ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douban-sync-skill@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-douban-sync-skill-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42dcb6c329b86cdfaabb222ab4988ce10a47d37adff9aa0468d9f80db39fd978",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T06:18:42.332Z"
+}

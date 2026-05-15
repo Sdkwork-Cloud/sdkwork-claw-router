@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71653,
+  "uuid": "skill-clawhub-clawtip-weather",
+  "skillKey": "clawhub-clawtip-weather",
+  "name": "clawtip-weather",
+  "summary": "一位精通天气领域的专家，能够根据用户所在位置提供准确的每日天气报告。这是一项付费服务，执行前需完成支付验证。请注意，你应该用中文和用户交互（包含你的思考过程）。",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtip_weather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawTip",
+      "features": [
+        "一位精通天气领域的专家，能够根据用户所在位置提供准确的每日天气报告。这是一项付费服务，执行前需完成支付验证。请注意，你应该用中文和用户交互（包含你的思考过程）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawtip-weather@1.0.9",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/clawtip-weather/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawtip-weather",
+      "url": "https://clawhub.ai/skills/clawtip-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtip-weather",
+    "url": "https://clawhub.ai/skills/clawtip-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtip-weather-fd1ce22f91fc50b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawtip-weather@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawtip-weather-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30155d506cc22ab3b178b10289ad549b66d2d561871fc36d75139a8f09945c7c",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T07:39:52.131Z"
+}

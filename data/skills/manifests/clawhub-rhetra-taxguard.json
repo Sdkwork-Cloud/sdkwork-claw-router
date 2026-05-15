@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37114,
+  "uuid": "skill-clawhub-rhetra-taxguard",
+  "skillKey": "clawhub-rhetra-taxguard",
+  "name": "Rhetra TaxGuard",
+  "summary": "Silent tax advisor that checks every trade for wash sales, PDT triggers, and optimization, logs results, and delivers a daily tax risk and opportunity report.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rhetra_taxguard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aaronahadi23",
+      "features": [
+        "Silent tax advisor that checks every trade for wash sales, PDT triggers, and optimization, logs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rhetra-taxguard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/240986754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rhetra-taxguard",
+      "url": "https://clawhub.ai/skills/rhetra-taxguard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rhetra-taxguard",
+    "url": "https://clawhub.ai/skills/rhetra-taxguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rhetra-taxguard-7fa442952b224029.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rhetra-taxguard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rhetra-taxguard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc0a50ce1fc77a0e05e62c11d9ca3ae692b0eaab9157c613d3cb95e0ba424948",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T18:04:06.821Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59111,
+  "uuid": "skill-clawhub-hf-daily-papers-ofr",
+  "skillKey": "clawhub-hf-daily-papers-ofr",
+  "name": "HF Daily Papers (OFR Edition)",
+  "summary": "筛选并按六大领域分类推送每日 Hugging Face 热门 OFR 相关论文，支持 Markdown 和 Telegram 格式输出。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hf_daily_papers_ofr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Feifan Cai",
+      "features": [
+        "筛选并按六大领域分类推送每日 Hugging Face 热门 OFR 相关论文，支持 Markdown 和 Telegram 格式输出。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hf-daily-papers-ofr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45095739?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hf-daily-papers-ofr",
+      "url": "https://clawhub.ai/skills/hf-daily-papers-ofr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hf-daily-papers-ofr",
+    "url": "https://clawhub.ai/skills/hf-daily-papers-ofr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hf-daily-papers-ofr-7c6ed7acab387afc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hf-daily-papers-ofr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hf-daily-papers-ofr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e80a55a9ad2b693b99b53b187bf6cd32bd87a323454836e83b6796a798169447",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T03:06:07.627Z"
+}

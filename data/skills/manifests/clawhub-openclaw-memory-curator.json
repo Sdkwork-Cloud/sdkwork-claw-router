@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37851,
+  "uuid": "skill-clawhub-openclaw-memory-curator",
+  "skillKey": "clawhub-openclaw-memory-curator",
+  "name": "OpenClaw Memory Curator",
+  "summary": "Organize, deduplicate, summarize, and compress OpenClaw or Clawd memory files. Use when the user asks to organize memory, reduce duplication, convert raw dai...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_memory_curator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zeruel",
+      "features": [
+        "Organize, deduplicate, summarize, and compress OpenClaw or Clawd memory files",
+        "Use when the user asks to organize memory, reduce duplication, convert raw dai..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-memory-curator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78832692?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-memory-curator",
+      "url": "https://clawhub.ai/skills/openclaw-memory-curator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-memory-curator",
+    "url": "https://clawhub.ai/skills/openclaw-memory-curator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-memory-curator-8407797139a9e39b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-memory-curator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-memory-curator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffba5e8874fa624bc7b40bad669d901263db09cc222bb3fc3fe7f238f5989171",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T03:50:39.149Z"
+}

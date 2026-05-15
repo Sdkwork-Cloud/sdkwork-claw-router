@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uniclaw-skill@0.1.19",
+  "version": "0.1.19",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uniclaw_skill",
+  "skill": {
+    "id": 18063,
+    "skillKey": "clawhub-uniclaw-skill",
+    "name": "Uniclaw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uniclaw-skill",
+    "url": "https://clawhub.ai/skills/uniclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uniclaw-skill-000ef967c3aec387.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade on UniClaw prediction markets. Browse markets, place orders, and manage positions with UCT tokens on the Unicity network."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jvsteiner",
+      "userId": "publishers:jvsteiner",
+      "displayName": "jvsteiner",
+      "image": "https://avatars.githubusercontent.com/u/1165328?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 721,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.19",
+      "createdAt": 1771342137139,
+      "changelog": "Update sphere-sdk to 0.4.7",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:41a6e66ad48bbc8f3df8c57b4e55b215ce16509a453e3767357f5f1a796582d8"
+}

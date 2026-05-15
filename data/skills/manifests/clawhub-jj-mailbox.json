@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22769,
+  "uuid": "skill-clawhub-jj-mailbox",
+  "skillKey": "clawhub-jj-mailbox",
+  "name": "Jj Mailbox",
+  "summary": "Send and receive messages between AI agents using jj (Jujutsu) version control as a file-based mailbox. Enables cross-machine agent collaboration with zero i...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jj_mailbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MiaoDX",
+      "features": [
+        "Send and receive messages between AI agents using jj (Jujutsu) version control as a file-based.",
+        "Enables cross-machine agent collaboration with zero i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jj-mailbox@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8840792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jj-mailbox",
+      "url": "https://clawhub.ai/skills/jj-mailbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jj-mailbox",
+    "url": "https://clawhub.ai/skills/jj-mailbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jj-mailbox-584bf62ed2812d3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jj-mailbox@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-jj-mailbox-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:959702fc43cd1817ef5e57773c35d90579439b7854fba9a44de6657434897ac2",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T03:34:49.567Z"
+}

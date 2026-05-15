@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-agent-skill-sync@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_agent_skill_sync",
+  "skill": {
+    "id": 38179,
+    "skillKey": "clawhub-multi-agent-skill-sync",
+    "name": "Skill Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-agent-skill-sync",
+    "url": "https://clawhub.ai/skills/multi-agent-skill-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-agent-skill-sync-b834aac2fc27b209.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit and converge local skills across Codex, Claude, OpenClaw, OpenCode, workspace skills, and shared agent libraries; compute a hygiene score, classify sha..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "donttal",
+      "userId": "s170n1zzh48g4h3cz991rgeby183xs6s",
+      "displayName": "casper",
+      "image": "https://avatars.githubusercontent.com/u/30567352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1775228454802,
+      "changelog": "Tighten skill copy, fix public install docs, and add CLI round-trip tests for export/import/apply/restore.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:216debc405e32d6f079f821b381b6a054a8b56c77fc48f913d654f095d9f7418"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32951,
+  "uuid": "skill-clawhub-zephyr-essential-cloud",
+  "skillKey": "clawhub-zephyr-essential-cloud",
+  "name": "Zephyr Essential Cloud",
+  "summary": "Zephyr Essential Cloud integration. Manage data, records, and automate workflows. Use when the user wants to interact with Zephyr Essential Cloud data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zephyr_essential_cloud",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Zephyr Essential Cloud integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Zephyr Essential Cloud data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zephyr-essential-cloud@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zephyr-essential-cloud",
+      "url": "https://clawhub.ai/skills/zephyr-essential-cloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zephyr-essential-cloud",
+    "url": "https://clawhub.ai/skills/zephyr-essential-cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zephyr-essential-cloud-36a2a6c001556840.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zephyr-essential-cloud@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zephyr-essential-cloud-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d5d910f36e01c6e13437ecc4c7cd4ebb93ee95a85ba079fe89b75c82a32d93c",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:12:59.262Z"
+}

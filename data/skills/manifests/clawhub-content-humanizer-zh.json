@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66971,
+  "uuid": "skill-clawhub-content-humanizer-zh",
+  "skillKey": "clawhub-content-humanizer-zh",
+  "name": "内容人性化助手",
+  "summary": "将 AI 生成的内容转化为自然的人类写作风格。适用于：(1) 润色文章/帖子/邮件，(2) 去除 AI 写作痕迹，(3) 多平台风格适配（InStreet/小红书/公众号/知乎），(4) 注入个性与情感。当用户说\"改得更像人写的\"、\"去掉 AI 味\"、\"润色一下\"、\"太机械了\"时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_humanizer_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wyhw",
+      "features": [
+        "将 AI 生成的内容转化为自然的人类写作风格。适用于：(1) 润色文章/帖子/邮件，(2) 去除 AI 写作痕迹，(3) 多平台风格适配（InStreet/小红书/公众号/知乎），(4) 注."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-humanizer-zh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1214457?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-humanizer-zh",
+      "url": "https://clawhub.ai/skills/content-humanizer-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-humanizer-zh",
+    "url": "https://clawhub.ai/skills/content-humanizer-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-humanizer-zh-669f49103eba7a7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-humanizer-zh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-humanizer-zh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e69971bd35954abd0708d61c879f94a0b83d1ca3c36213c445cc3e5cefef77d2",
+      "artifactSizeBytes": 2475
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T06:53:36.857Z"
+}

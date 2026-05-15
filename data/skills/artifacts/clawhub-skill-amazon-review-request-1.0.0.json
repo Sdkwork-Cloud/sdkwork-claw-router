@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-amazon-review-request@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_amazon_review_request",
+  "skill": {
+    "id": 23593,
+    "skillKey": "clawhub-skill-amazon-review-request",
+    "name": "Skill Amazon Review Request"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-amazon-review-request",
+    "url": "https://clawhub.ai/skills/skill-amazon-review-request",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-amazon-review-request-e51c14c757410c07.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sends Amazon review requests for eligible shipped orders using SP-API with retry, deduplication, eligibility checks, and optional dry-run mode."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zero2ai-hub",
+      "userId": "s17a1b8dv4hc6x68q9m057m67n83ryrt",
+      "displayName": "Zero2Ai",
+      "image": "https://avatars.githubusercontent.com/u/244362887?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 426,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772403342281,
+      "changelog": "- Initial release of skill-amazon-review-request.\n- Sends Amazon review requests for eligible shipped orders using the SP-API Messaging API.\n- Includes retry logic, deduplication, eligibility window enforcement (5–30 days old), and dry-run mode.\n- Provides tracking and text logs for transparency and troubleshooting.\n- Simple CLI usage with options for dry runs and live requests.\n- Designed for easy daily scheduling via cron.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:011053b5bc59b5b325b324149f92eddcf3481128a041ef9d0d63c390d2de39cf"
+}

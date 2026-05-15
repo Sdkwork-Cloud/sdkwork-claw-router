@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25028,
+  "uuid": "skill-clawhub-agentbnb",
+  "skillKey": "clawhub-agentbnb",
+  "name": "AgentBnB",
+  "summary": "Find, hire, and serve specialist AI agents on the AgentBnB network from OpenClaw or Claude Code. Use when you need multi-agent delegation, provider discovery...",
+  "version": "9.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentbnb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiaoher-C",
+      "features": [
+        "Find, hire, and serve specialist AI agents on the AgentBnB network from OpenClaw or Claude Code",
+        "Use when you need multi-agent delegation, provider discovery..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentbnb@9.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/207363423?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentbnb",
+      "url": "https://clawhub.ai/skills/agentbnb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentbnb",
+    "url": "https://clawhub.ai/skills/agentbnb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentbnb-acc17ab90a430c85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentbnb@9.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentbnb-9.2.3.json",
+      "version": "9.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a22005e593ebf6401bb3800d911c330632573e004cea97905b5b916bd30fec7",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T09:29:03.493Z"
+}

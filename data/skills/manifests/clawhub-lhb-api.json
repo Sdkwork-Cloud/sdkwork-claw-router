@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70379,
+  "uuid": "skill-clawhub-lhb-api",
+  "skillKey": "clawhub-lhb-api",
+  "name": "A股龙虎榜API接口",
+  "summary": "支持查询当日及历史龙虎榜、营业部明细，每天18:00更新当日数据。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lhb_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fffy520",
+      "features": [
+        "支持查询当日及历史龙虎榜、营业部明细，每天18:00更新当日数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lhb-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125139423?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lhb-api",
+      "url": "https://clawhub.ai/skills/lhb-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lhb-api",
+    "url": "https://clawhub.ai/skills/lhb-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lhb-api-658b07584df7e819.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lhb-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lhb-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a45f98080eb8a4f66f257dda56536d89462aa45f98597fa05397b801bc725ebe",
+      "artifactSizeBytes": 1797
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T02:19:36.294Z"
+}

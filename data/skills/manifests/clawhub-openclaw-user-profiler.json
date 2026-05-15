@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26945,
+  "uuid": "skill-clawhub-openclaw-user-profiler",
+  "skillKey": "clawhub-openclaw-user-profiler",
+  "name": "Openclaw User Profiler",
+  "summary": "Two things: (1) Build a user.md through conversation so your OpenClaw lobster knows who it's working with. (2) Recommend Claude Code Skills based on the user...",
+  "version": "2.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_user_profiler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eamanc",
+      "features": [
+        "Two things: (1) Build a user.md through conversation so your OpenClaw lobster knows who it's wo.",
+        "(2) Recommend Claude Code Skills based on the user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-user-profiler@2.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33925426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-user-profiler",
+      "url": "https://clawhub.ai/skills/openclaw-user-profiler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-user-profiler",
+    "url": "https://clawhub.ai/skills/openclaw-user-profiler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-user-profiler-5a78fce9f8e5f618.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-user-profiler@2.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-user-profiler-2.3.1.json",
+      "version": "2.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3084c7684669940275a200644347bf05f703b0a4785a3de6adf6840e6be6b288",
+      "artifactSizeBytes": 2089
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T06:59:26.126Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beauty-freeship-topup@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beauty_freeship_topup",
+  "skill": {
+    "id": 54715,
+    "skillKey": "clawhub-beauty-freeship-topup",
+    "name": "Beauty Freeship Topup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beauty-freeship-topup",
+    "url": "https://clawhub.ai/skills/beauty-freeship-topup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beauty-freeship-topup-cb95d00c7599da95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Designs checkout “top up to free shipping” recommendation logic for high-frequency beauty stores (e.g. lipsticks, eyeshadows). Use when the user mentions fre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rijoyai",
+      "userId": "s17968d4vetrx5cj2yx3105heh83hrb4",
+      "displayName": "RIJOY-AI",
+      "image": "https://avatars.githubusercontent.com/u/219251023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773137547097,
+      "changelog": "- Initial release with core documentation and evaluation framework.\n- Added dedicated guides and quick-reference files for freeship top-up recommendations.\n- Introduced evaluation assets for testing logic and output consistency.\n- Included references and sample scripts to support onboarding and usage.\n- No functional changes to the skill logic; groundwork for future enhancements laid out.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21586ff7bf4bfd814b1b6ccc574926e3b8c027ee4a5a03ed74f1380349f0efbd"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/near-name-service@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.near_name_service",
+  "skill": {
+    "id": 14589,
+    "skillKey": "clawhub-near-name-service",
+    "name": "Near Name Service"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "near-name-service",
+    "url": "https://clawhub.ai/skills/near-name-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/near-name-service-cc1afd879f182ce7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage NEAR Name Service (.near domains) - check availability, register, resolve, and manage names."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaiss",
+      "userId": "publishers:shaiss",
+      "displayName": "shaiss",
+      "image": "https://avatars.githubusercontent.com/u/113060?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770554390743,
+      "changelog": "Initial release of NEAR Name Service CLI skill:\n\n- Check availability of .near domain names\n- Register .near domains to a NEAR account\n- Resolve .near domains to associated account IDs\n- List all .near domains owned by an account\n- Simple, user-friendly command-line interface",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:73a058aba63200249a91cd52cc391b212338451adaa659e62f3ea1a3d6404c52"
+}

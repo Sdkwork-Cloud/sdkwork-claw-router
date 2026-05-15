@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dev-serve@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dev_serve",
+  "skill": {
+    "id": 19419,
+    "skillKey": "clawhub-dev-serve",
+    "name": "Dev Serve"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dev-serve",
+    "url": "https://clawhub.ai/skills/dev-serve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dev-serve-76cf0b65a5d18df9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Start and manage tmux-backed dev servers exposed through Caddy at wildcard subdomains."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brennerspear",
+      "userId": "s17ebpr0c7y6bpmzatrjw5rdt583fggy",
+      "displayName": "BrennerSpear",
+      "image": "https://avatars.githubusercontent.com/u/12127609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 583,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771989500479,
+      "changelog": "Initial publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:00bb81ea92dd04dbe213eb387402b067bdf8f16f7d5b6eb470ab9769026f690d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/teller-borrow@0.2.2",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teller_borrow",
+  "skill": {
+    "id": 21056,
+    "skillKey": "clawhub-teller-borrow",
+    "name": "Teller MCP – Borrow USDC & Altcoins (no margin calls)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teller-borrow",
+    "url": "https://clawhub.ai/skills/teller-borrow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teller-borrow-f1217247530d8d48.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expose the Teller delta-neutral + lending Model Context Protocol server. Use this when you need to install, run, or update the Tellermcp MCP backend so agent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rbcp18",
+      "userId": "publishers:rbcp18",
+      "displayName": "rbcp18",
+      "image": "https://avatars.githubusercontent.com/u/45776981?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 792,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.2",
+      "createdAt": 1771208787474,
+      "changelog": "Fresh repo publish v0.2.2",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6b6b19a5493c38d3fdb11a041d448d6dcddf23ec835749885e16b6186c24e968"
+}

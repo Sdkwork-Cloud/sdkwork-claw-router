@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39251,
+  "uuid": "skill-clawhub-successware21",
+  "skillKey": "clawhub-successware21",
+  "name": "Successware21",
+  "summary": "SuccessWare21 integration. Manage data, records, and automate workflows. Use when the user wants to interact with SuccessWare21 data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.successware21",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SuccessWare21 integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with SuccessWare21 data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/successware21@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "successware21",
+      "url": "https://clawhub.ai/skills/successware21"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "successware21",
+    "url": "https://clawhub.ai/skills/successware21",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/successware21-11987a079f245c21.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/successware21@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-successware21-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f660ee91f9789e7483404f914a5ffbd63bef3a79796bcc5bc76c4bb3d757aecd",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:48:13.825Z"
+}

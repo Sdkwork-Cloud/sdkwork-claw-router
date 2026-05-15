@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mingli@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mingli",
+  "skill": {
+    "id": 29039,
+    "skillKey": "clawhub-mingli",
+    "name": "AsianSeeker - Openclaw FortuneTeller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mingli",
+    "url": "https://clawhub.ai/skills/mingli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mingli-de6e6a7d2644e941.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mingli (命理) — Multi-system daily horoscope: Western astrology (natal chart + transits), Ba-Zi / Four Pillars (Bát Tự), numerology, I Ching (Kinh Dịch). Kerykeion + astronomyapi.com. Telegram delivery."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lukebaze",
+      "userId": "s172p8wgrrx4mfxhvtw2baw63h83hfqf",
+      "displayName": "lukebaze",
+      "image": "https://avatars.githubusercontent.com/u/67284748?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2812,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770029292103,
+      "changelog": "No changes detected in this version.\n\n- Version number updated from 1.0.2 to 2.0.0, but no file or functionality changes were made.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:49cf39318673df681262676cf3b6cb339f8a07b88eb380ff35226986e944c7a5"
+}

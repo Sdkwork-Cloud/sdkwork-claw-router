@@ -225,6 +225,10 @@ ORDER BY published_at DESC NULLS LAST, id DESC
 LIMIT 16
 "#;
 
+const PUBLIC_SKILLS_TENANT_ID: i64 = 0;
+const PUBLIC_SKILLS_ORGANIZATION_ID: i64 = 0;
+const PUBLIC_SKILLS_USER_ID: i64 = 0;
+
 #[derive(Debug, Clone)]
 pub struct PostgresAppSkillsReadStore {
     pool: PgPool,
@@ -243,7 +247,7 @@ impl AppSkillsReadStore for PostgresAppSkillsReadStore {
         subject: Option<AppSkillsSubject>,
     ) -> AppSkillsReadFuture<'a, Vec<AppSkillItem>> {
         Box::pin(async move {
-            let subject = require_subject(subject)?;
+            let subject = app_skills_scope(subject);
             let page_size = query.page_size.unwrap_or(100).clamp(1, 100);
             let page_no = query.page_no.unwrap_or(1).max(1);
             let offset = (page_no - 1) * page_size;
@@ -277,7 +281,7 @@ impl AppSkillsReadStore for PostgresAppSkillsReadStore {
         subject: Option<AppSkillsSubject>,
     ) -> AppSkillsReadFuture<'a, Option<AppSkillItem>> {
         Box::pin(async move {
-            let subject = require_subject(subject)?;
+            let subject = app_skills_scope(subject);
             let row = sqlx::query(LOAD_SKILL_BY_ID)
                 .bind(subject.tenant_id)
                 .bind(subject.organization_id)
@@ -301,16 +305,19 @@ impl AppSkillsReadStore for PostgresAppSkillsReadStore {
         subject: Option<AppSkillsSubject>,
     ) -> AppSkillsReadFuture<'a, Vec<String>> {
         Box::pin(async move {
-            let subject = require_subject(subject)?;
+            let subject = app_skills_scope(subject);
             let rows = sqlx::query(
                 r#"
-                SELECT DISTINCT COALESCE(NULLIF(name, ''), '') AS name
+                SELECT DISTINCT
+                    COALESCE(NULLIF(name, ''), '') AS name,
+                    COALESCE(sort_weight, 999999) AS sort_weight,
+                    id
                 FROM plus_category
                 WHERE ((tenant_id = $1 AND organization_id = $2) OR (tenant_id = 0 AND organization_id = 0))
                   AND type IN ($3, $4)
                   AND COALESCE(visible, true) = true
                   AND COALESCE(status, 1) = 1
-                ORDER BY name
+                ORDER BY sort_weight ASC, id ASC, name ASC
                 LIMIT 100
                 "#,
             )
@@ -334,7 +341,9 @@ impl AppSkillsReadStore for PostgresAppSkillsReadStore {
         subject: Option<AppSkillsSubject>,
     ) -> AppSkillsReadFuture<'a, Vec<AppInstalledSkillItem>> {
         Box::pin(async move {
-            let subject = require_subject(subject)?;
+            let Some(subject) = subject else {
+                return Ok(Vec::new());
+            };
             let rows = sqlx::query(LOAD_USER_SKILLS)
                 .bind(subject.tenant_id)
                 .bind(subject.organization_id)
@@ -549,8 +558,12 @@ fn row_to_artifact(row: &sqlx::postgres::PgRow) -> RawCatalogArtifact {
     }
 }
 
-fn require_subject(subject: Option<AppSkillsSubject>) -> DomainResult<AppSkillsSubject> {
-    subject.ok_or_else(|| DomainError::new("trusted request subject is required for app skills"))
+fn app_skills_scope(subject: Option<AppSkillsSubject>) -> AppSkillsSubject {
+    subject.unwrap_or(AppSkillsSubject {
+        tenant_id: PUBLIC_SKILLS_TENANT_ID,
+        organization_id: PUBLIC_SKILLS_ORGANIZATION_ID,
+        user_id: PUBLIC_SKILLS_USER_ID,
+    })
 }
 
 #[derive(Debug, Clone)]

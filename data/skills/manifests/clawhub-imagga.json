@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30033,
+  "uuid": "skill-clawhub-imagga",
+  "skillKey": "clawhub-imagga",
+  "name": "Imagga",
+  "summary": "Imagga integration. Manage data, records, and automate workflows. Use when the user wants to interact with Imagga data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imagga",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Imagga integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Imagga data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/imagga@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "imagga",
+      "url": "https://clawhub.ai/skills/imagga"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imagga",
+    "url": "https://clawhub.ai/skills/imagga",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imagga-af0c479f35d71b8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/imagga@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-imagga-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4112cc50bd8eb10cc83d7541c82826a8deb0004f8d18752abbbf99cf069b8f4c",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:58:50.348Z"
+}

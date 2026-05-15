@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/psbc@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.psbc",
+  "skill": {
+    "id": 72470,
+    "skillKey": "clawhub-psbc",
+    "name": "Psbc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "psbc",
+    "url": "https://clawhub.ai/skills/psbc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/psbc-802fed305741a946.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供邮储银行公开产品、账单和公告的关键信息摘要，不涉及账号登录或资金操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773854830420,
+      "changelog": "psbc-hot-trend v0.1.0\n\n- Initial release of the psbc-hot-trend skill.\n- Provides automated summaries for Postal Savings Bank of China product, billing, and announcement pages.\n- Only processes non-sensitive, visible information from public product pages and personal e-banking within logged-in sessions.\n- Does not support login automation, money transfer, payments, or security bypass.\n- Includes clear compliance boundaries: no sensitive data handling, no automation on pages requiring human verification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3eef97fe058ed1e2a507c9c0528288c9d8ab1e21b90604589159300cf3bd4c65"
+}

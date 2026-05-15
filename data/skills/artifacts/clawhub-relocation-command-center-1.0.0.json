@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/relocation-command-center@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.relocation_command_center",
+  "skill": {
+    "id": 49811,
+    "skillKey": "clawhub-relocation-command-center",
+    "name": "Relocation Command Center"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "relocation-command-center",
+    "url": "https://clawhub.ai/skills/relocation-command-center",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/relocation-command-center-c4e013ff2e5edd49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a structured moving plan with timelines, packing zones, address and utility updates, and day-of checklists for organized relocation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 66,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778270320917,
+      "changelog": "Relocation Command Center skill version 1.0.0\n\n- Initial release with a structured workflow for planning moves, including timelines, packing plans, and address/utility updates.\n- Supports organized intake, conversion of messy notes into clear checklists and timelines, and provides ready-to-use drafts.\n- Includes a built-in verification step to clarify uncertainties and highlight assumptions.\n- Offers suggested output formats such as summaries, action tables, and scripts for communication.\n- Boundaries: provides planning only—no bookings, price estimates, or legal/immigration guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed1eb84ae55f9fd334c8bcbc7cb2da9ef5436302fc6dc71336fcf59866e20f2d"
+}

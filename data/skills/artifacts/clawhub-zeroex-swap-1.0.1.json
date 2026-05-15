@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zeroex-swap@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeroex_swap",
+  "skill": {
+    "id": 17918,
+    "skillKey": "clawhub-zeroex-swap",
+    "name": "ZeroEx Swap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeroex-swap",
+    "url": "https://clawhub.ai/skills/zeroex-swap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeroex-swap-694784d7c17bdada.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute token swaps using the 0x API with support for price quotes, gasless meta-transactions, and on-chain trade history retrieval."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aviclaw",
+      "userId": "publishers:aviclaw",
+      "displayName": "aviclaw",
+      "image": "https://avatars.githubusercontent.com/u/260149483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 724,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771653189172,
+      "changelog": "- Declared required environment variables (`ZEROEX_API_KEY`, `PRIVATE_KEY`) in the documentation for clarity.\n- No functional or API changes; documentation update only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2cb92c742abd827ca44e286339bbae9d91e70bbe05dffea92ae0b78df5b9901a"
+}

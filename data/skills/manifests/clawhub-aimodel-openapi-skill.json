@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56020,
+  "uuid": "skill-clawhub-aimodel-openapi-skill",
+  "skillKey": "clawhub-aimodel-openapi-skill",
+  "name": "AI Model for Clothing Brand – API-powered",
+  "summary": "Fashion model photos — replace the model, swap the scene or background while keeping the garment",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aimodel_openapi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sparkleMing",
+      "features": [
+        "Fashion model photos — replace the model, swap the scene or background while keeping the garment"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aimodel-openapi-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38350996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aimodel-openapi-skill",
+      "url": "https://clawhub.ai/skills/aimodel-openapi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aimodel-openapi-skill",
+    "url": "https://clawhub.ai/skills/aimodel-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aimodel-openapi-skill-07db2156c2aa94be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aimodel-openapi-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aimodel-openapi-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c33cbc83b04f8bd4fb0a7c7a2bc2f952d8670b3d481a48cb036053d518f0e0a4",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T02:36:53.003Z"
+}

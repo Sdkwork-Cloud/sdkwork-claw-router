@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-requesting-code-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_requesting_code_review",
+  "skill": {
+    "id": 30161,
+    "skillKey": "clawhub-openclaw-requesting-code-review",
+    "name": "Superpowers Requesting Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-requesting-code-review",
+    "url": "https://clawhub.ai/skills/openclaw-requesting-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-requesting-code-review-3f3524f6ad4e2684.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when completing tasks, implementing major features, or before merging - dispatches code review subagent to catch issues before they cascade, adapted for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "axelhu",
+      "userId": "s172yaxxd2drm0sc92554g9aq983hegj",
+      "displayName": "AxelHu",
+      "image": "https://avatars.githubusercontent.com/u/12809280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 288,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774509923551,
+      "changelog": "Initial release: OpenClaw-adapted skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2210408c79925ba6a24271b180e3fd2f26f42de6c7d9a767f263ba45a850e937"
+}

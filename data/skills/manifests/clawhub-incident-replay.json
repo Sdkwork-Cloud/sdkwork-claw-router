@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24079,
+  "uuid": "skill-clawhub-incident-replay",
+  "skillKey": "clawhub-incident-replay",
+  "name": "Incident Replay",
+  "summary": "Post-mortem analysis for AI agent failures. Capture state, reconstruct timelines, identify root causes. When your agent breaks, know what happened, why, and...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.incident_replay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Post-mortem analysis for AI agent failures",
+        "Capture state, reconstruct timelines, identify root causes",
+        "When your agent breaks, know what happened, why, and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/incident-replay@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "incident-replay",
+      "url": "https://clawhub.ai/skills/incident-replay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "incident-replay",
+    "url": "https://clawhub.ai/skills/incident-replay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/incident-replay-0f7aae4e224200f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/incident-replay@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-incident-replay-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4c01ac9269ffafc4119c0e06bc9c00ab3db34c8ba97e20e21b7cac0b8c38455",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T12:48:41.791Z"
+}

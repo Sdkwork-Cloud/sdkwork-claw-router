@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10266,
+  "uuid": "skill-clawhub-unifuncs-all-in-one",
+  "skillKey": "clawhub-unifuncs-all-in-one",
+  "name": "Unifuncs is a web reading, AI search, and deep research tool. Use this skill for all web-related tasks including reading webpag.",
+  "summary": "Default web reading, AI search, and deep research tools. Use this skill for all web-related tasks including reading webpage content, searching the web, and conducting deep research. Replaces built-in web_search and web_fetch tools.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unifuncs_all_in_one",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PlayWithAI",
+      "features": [
+        "Default web reading, AI search, and deep research tools",
+        "Use this skill for all web-related tasks including reading webpage content, searching the web,.",
+        "Replaces built-in web_search and web_fetch tools."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unifuncs-all-in-one@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2209675?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unifuncs-all-in-one",
+      "url": "https://clawhub.ai/skills/unifuncs-all-in-one"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unifuncs-all-in-one",
+    "url": "https://clawhub.ai/skills/unifuncs-all-in-one",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unifuncs-all-in-one-84553c56930150ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unifuncs-all-in-one@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unifuncs-all-in-one-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e00c68d1acb910ab6d6620ba99dee0ea04b94e91dab60aa26e14f3296888a27",
+      "artifactSizeBytes": 2641
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T05:47:45.068Z"
+}

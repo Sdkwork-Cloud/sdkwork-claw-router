@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yunxiao-devops-mcp@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yunxiao_devops_mcp",
+  "skill": {
+    "id": 65121,
+    "skillKey": "clawhub-yunxiao-devops-mcp",
+    "name": "云效 DevOps MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yunxiao-devops-mcp",
+    "url": "https://clawhub.ai/skills/yunxiao-devops-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yunxiao-devops-mcp-8f2f55f3f96c0edc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "阿里云云效 MCP 操作工具。通过 MCP SSE 协议操作云效平台，支持项目管理、工作项管理、流水线管理、代码仓库等 165+ 工具。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jonasgao",
+      "userId": "s1750kyxngca0hmh2r3c4ac1ns83n3d1",
+      "displayName": "JonasGao",
+      "image": "https://avatars.githubusercontent.com/u/4549584?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1774950282650,
+      "changelog": "删除无用的代码，精简项目结构",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:56a17721249169543dea1755602a0128c9074663c85ad7bcb3f1547db67d1c12"
+}

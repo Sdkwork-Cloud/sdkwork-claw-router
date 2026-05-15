@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/graphical-abstract-wizard@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.graphical_abstract_wizard",
+  "skill": {
+    "id": 39001,
+    "skillKey": "clawhub-graphical-abstract-wizard",
+    "name": "Graphical Abstract Wizard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "graphical-abstract-wizard",
+    "url": "https://clawhub.ai/skills/graphical-abstract-wizard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/graphical-abstract-wizard-a16b9d533069bb76.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate graphical abstract layout recommendations based on paper abstracts"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774236641803,
+      "changelog": "Initial release of Graphical Abstract Wizard.\n\n- Analyzes academic paper abstracts to generate graphical abstract layout recommendations.\n- Provides suggestions on visual elements, color palettes, and arrangement.\n- Generates AI art prompts optimized for Midjourney and DALL-E.\n- Supports custom visual styles and multiple output formats (markdown, JSON, text).\n- CLI tool with flexible input and output options.\n- Includes security guidelines and a clear risk assessment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fcb9965466b87c3645a1ee96ff29524f7cb043fcd69db7ce2fd839395e0ddd5c"
+}

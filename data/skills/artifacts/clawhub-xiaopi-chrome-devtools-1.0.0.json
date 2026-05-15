@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaopi-chrome-devtools@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaopi_chrome_devtools",
+  "skill": {
+    "id": 34028,
+    "skillKey": "clawhub-xiaopi-chrome-devtools",
+    "name": "Xiaopi Chrome Devtools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaopi-chrome-devtools",
+    "url": "https://clawhub.ai/skills/xiaopi-chrome-devtools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaopi-chrome-devtools-6e63983fa659a543.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Uses Chrome DevTools via MCP for efficient debugging, troubleshooting and browser automation. Use when debugging web pages, automating browser interactions,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a-din",
+      "userId": "s17c7djh1gag2b7k7dst2mkr6983sy0v",
+      "displayName": "Adin",
+      "image": "https://avatars.githubusercontent.com/u/22701008?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774724788262,
+      "changelog": "chrome-devtools 1.0.0 initial release\n\n- Introduces integration with Chrome DevTools via MCP for browser debugging, troubleshooting, and automation.\n- Supports persistent Chrome profiles and configurable browser lifecycle via CLI arguments.\n- Enables page selection, structured element interaction using unique uids, and efficient data retrieval options.\n- Documents recommended workflow for navigation, waiting, snapshotting, and element interaction.\n- Highlights parallel tool call support and troubleshooting resources for setup and UI issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38d0fd301f43e1e94510f591684600ae81e80a669d58e3824fbbe52b034fe220"
+}

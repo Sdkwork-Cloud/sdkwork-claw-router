@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57370,
+  "uuid": "skill-clawhub-subject-library",
+  "skillKey": "clawhub-subject-library",
+  "name": "题材库分析师 (A-Share Theme Analyst)",
+  "summary": "Use when user asks about A-share market themes (题材), subject analysis, stock-theme correlation, theme heat ranking, or needs AI-driven investment insights ba...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subject_library",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QingYiXiaoYao",
+      "features": [
+        "Use when user asks about A-share market themes (题材), subject analysis, stock-theme correlation,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subject-library@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58292274?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subject-library",
+      "url": "https://clawhub.ai/skills/subject-library"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subject-library",
+    "url": "https://clawhub.ai/skills/subject-library",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subject-library-a561484d909fb55f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subject-library@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-subject-library-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ed158a0340f27ae4a88bb759efdec032d1d02eb2b9f0c2d2f81e5920eaa7aeb",
+      "artifactSizeBytes": 2496
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T10:38:17.157Z"
+}

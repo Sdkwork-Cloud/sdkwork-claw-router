@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/virtual-tryon-scorer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtual_tryon_scorer",
+  "skill": {
+    "id": 38719,
+    "skillKey": "clawhub-virtual-tryon-scorer",
+    "name": "virtual-tryon-scorer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtual-tryon-scorer",
+    "url": "https://clawhub.ai/skills/virtual-tryon-scorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtual-tryon-scorer-f3d177ac4cb288be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Score and evaluate virtual try-on (VTON) results by analyzing identity preservation, garment fidelity, body consistency, and background stability. Use this s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xavierjiezou",
+      "userId": "s1753byez28asgw04kpbp9v2qs83hx80",
+      "displayName": "TuringParty",
+      "image": "https://avatars.githubusercontent.com/u/43515350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774720243792,
+      "changelog": "virtual-tryon-scorer 1.0.0\n\n- Initial release of the virtual try-on quality assessment skill.\n- Evaluates AI-generated virtual try-on results based on four weighted criteria: face identity preservation, garment fidelity & fit, non-face body identity preservation, and background preservation.\n- Supports both separate and concatenated image input formats, with logic for identifying image roles and prompting user clarification if needed.\n- Provides detailed, structured scoring (0–100 per dimension), weighted total score, and concise explanations for each aspect.\n- Triggers automatically when users request virtual try-on evaluation, scoring, or feedback, including common English and Chinese phrases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1defa72b196ad517da04cc00b46d0801ed9f1014b10cf0e94fbe516053374dff"
+}

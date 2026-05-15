@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56179,
+  "uuid": "skill-clawhub-six-layer-memory",
+  "skillKey": "clawhub-six-layer-memory",
+  "name": "6层记忆",
+  "summary": "Set up or repair a local-first six-layer memory structure for an OpenClaw/Codex workspace. Use when a user wants durable HOT/WARM/COLD/CURATED memory files,...",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.six_layer_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "煮酒社群",
+      "features": [
+        "Set up or repair a local-first six-layer memory structure for an OpenClaw/Codex workspace",
+        "Use when a user wants durable HOT/WARM/COLD/CURATED memory files,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/six-layer-memory@2.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198321274?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "six-layer-memory",
+      "url": "https://clawhub.ai/skills/six-layer-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "six-layer-memory",
+    "url": "https://clawhub.ai/skills/six-layer-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/six-layer-memory-6ded8f3fbae25602.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/six-layer-memory@2.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-six-layer-memory-2.0.4.json",
+      "version": "2.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:917f7b464ffc9b0902cdf8231d105da2995be50011ad24ab70bbde73434fb259",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T04:08:44.382Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-workflow-1-0-0-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_workflow_1_0_0_1",
+  "skill": {
+    "id": 41258,
+    "skillKey": "clawhub-auto-workflow-1-0-0-1",
+    "name": "Auto Workflow 1.0.0 (1)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-workflow-1-0-0-1",
+    "url": "https://clawhub.ai/skills/auto-workflow-1-0-0-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-workflow-1-0-0-1-a2428ac41fca45c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Builds automation workflows from repetitive tasks. Use when user mentions \"automate\", \"save time\", \"reduce manual work\", or has repeated tasks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangyingzhuangk",
+      "userId": "s1745jre4s1dpyqce9y646s8gh84v3k6",
+      "displayName": "zhangyingzhuangk",
+      "image": "https://avatars.githubusercontent.com/u/16957705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776128343150,
+      "changelog": "- Initial release of auto-workflow skill.\n- Automates repetitive tasks by transforming them into executable workflows and scripts.\n- Designed to identify, abstract, and implement automation for manual and recurring actions.\n- Supports workflow steps from observation to optimization.\n- Proactively suggests automation when repetitive work is detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29f29beca1ac7154ba62ea197f5131199f9bb2e5410e078dfcd83a7678c21eff"
+}

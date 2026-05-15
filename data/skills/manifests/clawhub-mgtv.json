@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66939,
+  "uuid": "skill-clawhub-mgtv",
+  "skillKey": "clawhub-mgtv",
+  "name": "MGTV",
+  "summary": "搜索芒果 TV 视频资源并在系统浏览器中播放",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mgtv",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mgtv",
+      "features": [
+        "搜索芒果 TV 视频资源并在系统浏览器中播放"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mgtv@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264925702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mgtv",
+      "url": "https://clawhub.ai/skills/mgtv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mgtv",
+    "url": "https://clawhub.ai/skills/mgtv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mgtv-05a26bc4653cc956.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mgtv@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mgtv-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ab686689d79b1e4dadf51947d27b7a4fbd6d90292cd48c96729db2de5b72dfd",
+      "artifactSizeBytes": 1835
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T01:08:05.493Z"
+}

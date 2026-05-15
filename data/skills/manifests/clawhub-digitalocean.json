@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14856,
+  "uuid": "skill-clawhub-digitalocean",
+  "skillKey": "clawhub-digitalocean",
+  "name": "DigitalOcean",
+  "summary": "Manage DigitalOcean resources via API — Droplets (create/destroy/resize/power), DNS zones and records, Spaces (object storage), Databases, Firewalls, Load Balancers, Kubernetes, and account/billing info.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.digitalocean",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rexlunae",
+      "features": [
+        "Manage DigitalOcean resources via API — Droplets (create/destroy/resize/power), DNS zones and r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/digitalocean@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6726134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "digitalocean",
+      "url": "https://clawhub.ai/skills/digitalocean"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "digitalocean",
+    "url": "https://clawhub.ai/skills/digitalocean",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/digitalocean-042e9398f2cc8902.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/digitalocean@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-digitalocean-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ede83dfa741d92eb19977a85964672872196539c9bbc782b15c494d76abd49e",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T00:26:41.496Z"
+}

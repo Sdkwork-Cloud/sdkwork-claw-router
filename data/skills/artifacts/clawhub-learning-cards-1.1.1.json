@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/learning-cards@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learning_cards",
+  "skill": {
+    "id": 22897,
+    "skillKey": "clawhub-learning-cards",
+    "name": "Learning Cards (Spaced Repetition)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learning-cards",
+    "url": "https://clawhub.ai/skills/learning-cards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learning-cards-28967fe3406909e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Spaced-repetition flashcard system backed by Feishu Bitable (multi-dimensional table). Create flashcards from any book or knowledge base, quiz the user inter..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guoqunabc",
+      "userId": "s1751bafvdydz5m2jxahw6dyrs83hqr3",
+      "displayName": "Madoka",
+      "image": "https://avatars.githubusercontent.com/u/9532020?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1773797749471,
+      "changelog": "v1.1.1: Fix rendering — separate EN/CN into distinct paragraphs, use proper numbered lists and blank lines between items for clean web display.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afab6526b384f1d5ad0ca11a136c51b9b4d4e79a5d9fa3659914986916522b2e"
+}

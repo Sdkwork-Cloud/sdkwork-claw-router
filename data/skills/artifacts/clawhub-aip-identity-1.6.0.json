@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aip-identity@1.6.0",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aip_identity",
+  "skill": {
+    "id": 13187,
+    "skillKey": "clawhub-aip-identity",
+    "name": "Aip Identity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aip-identity",
+    "url": "https://clawhub.ai/skills/aip-identity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aip-identity-dc11985fa246d62e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Digital identity, authentication, and trust for AI agents. Verify who an agent is, prove your own identity, sign skills to prove authorship, send encrypted m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "the-nexus-guard",
+      "userId": "publishers:the-nexus-guard",
+      "displayName": "The-Nexus-Guard",
+      "image": "https://avatars.githubusercontent.com/u/258640850?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1538,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.6.0",
+      "createdAt": 1771102245504,
+      "changelog": "Sync with AIP v0.5.21: aip doctor fix, --version flag, AIP_CREDENTIALS_PATH env var",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f7b6812662e945631443c66aa29f198841d610e8e41c7f350d9ba3059f97720c"
+}

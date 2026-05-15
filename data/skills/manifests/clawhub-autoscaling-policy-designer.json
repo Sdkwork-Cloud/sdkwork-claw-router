@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46510,
+  "uuid": "skill-clawhub-autoscaling-policy-designer",
+  "skillKey": "clawhub-autoscaling-policy-designer",
+  "name": "Autoscaling Policy Designer",
+  "summary": "Design autoscaling policies based on traffic patterns, cost constraints, and performance SLOs",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autoscaling_policy_designer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Design autoscaling policies based on traffic patterns, cost constraints, and performance SLOs"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autoscaling-policy-designer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autoscaling-policy-designer",
+      "url": "https://clawhub.ai/skills/autoscaling-policy-designer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autoscaling-policy-designer",
+    "url": "https://clawhub.ai/skills/autoscaling-policy-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autoscaling-policy-designer-980889506a58a47d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autoscaling-policy-designer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-autoscaling-policy-designer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d37c0d77c5cca9c7d77f37f54796c9bd96566c56eb399c78cae73a621fd12f4",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:59:47.134Z"
+}

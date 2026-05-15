@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60712,
+  "uuid": "skill-clawhub-bilibili-automation",
+  "skillKey": "clawhub-bilibili-automation",
+  "name": "Bilibili Automation",
+  "summary": "B站自动化 - 观看视频、提取字幕、总结内容",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maxsuki",
+      "features": [
+        "观看视频、提取字幕、总结内容"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83916849?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-automation",
+      "url": "https://clawhub.ai/skills/bilibili-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-automation",
+    "url": "https://clawhub.ai/skills/bilibili-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-automation-036ded3e508d021b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f92e533454d89585e32f8dc888d3c8ee61342e798e5921df4ededc7f9956b6c7",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T20:14:52.879Z"
+}

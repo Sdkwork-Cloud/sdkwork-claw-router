@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "employee-skills-importer",
+    "displayName": "employee-skills-importer",
+    "summary": "Parse employee skills CSV files, identify skill categories and individual skills, look up employee IDs from an employees table, and generate idempotent SQL I...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 818,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1771537700666,
+    "updatedAt": 1778386920016
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1771537700666,
+    "changelog": "Employee skills importer skill initial release\n\n- Added functionality to parse employee skills CSV files and identify skill categories and individual skills.\n- Generates idempotent SQL INSERT statements for skill_categories and skills tables, avoiding duplicates.\n- Includes fuzzy matching and correction of employee names for matching against the employees table.\n- Produces deduplicated employee_skills SQL insert scripts, using TRIM() and ON CONFLICT for data integrity.\n- Outputs a report of automatic name corrections and skipped employees/skills.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "inna-demidova",
+    "userId": "publishers:inna-demidova",
+    "displayName": "inna-demidova",
+    "image": "https://avatars.githubusercontent.com/u/245897643?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778386920016
+  }
+}

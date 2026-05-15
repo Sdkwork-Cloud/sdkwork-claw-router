@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-content-fetcher@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_content_fetcher",
+  "skill": {
+    "id": 58579,
+    "skillKey": "clawhub-web-content-fetcher",
+    "name": "Web Content Fetcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-content-fetcher",
+    "url": "https://clawhub.ai/skills/web-content-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-content-fetcher-51684cc0e98968e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "网页内容获取工具 | 当常规爬虫被过滤时，使用替代服务获取网页内容。支持：1) r.jina.ai - 最稳定 2) markdown.new - Cloudflare 专用 3) defuddle.md - 备用方案。触发词：获取网页内容、网页转markdown、内容抓取、fetch webpage、bypas..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrtommywu",
+      "userId": "publishers:mrtommywu",
+      "displayName": "MRTommyWU",
+      "image": "https://avatars.githubusercontent.com/u/207718777?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 11869,
+      "installsAllTime": 126,
+      "installsCurrent": 119,
+      "stars": 22,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772768760754,
+      "changelog": "Version 1.0.1 of web-content-fetcher\n\n- No file changes detected in this release.\n- No updates to features, documentation, or scripts.\n- Version bump only; functionality remains unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2b37ed0a0384c44805d49864bbe5d50a11394ecca72cb359e14aece0a792f76f"
+}

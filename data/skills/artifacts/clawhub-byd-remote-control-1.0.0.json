@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/byd-remote-control@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byd_remote_control",
+  "skill": {
+    "id": 42212,
+    "skillKey": "clawhub-byd-remote-control",
+    "name": "BYD Remote Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byd-remote-control",
+    "url": "https://clawhub.ai/skills/byd-remote-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byd-remote-control-af05cc3d05ccfc67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control and check a BYD vehicle using portable Python helper scripts built on pyBYD. Use when the user wants to check battery state, lock the car, flash ligh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hiimivantang",
+      "userId": "s175dsay4wsjbxxycv6a1kjeas84df91",
+      "displayName": "hiimivantang",
+      "image": "https://avatars.githubusercontent.com/u/4137197?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776769913832,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b4255983b01cf842b4defa9d330093f425ebe4e665bac961be46de2d2468ead"
+}

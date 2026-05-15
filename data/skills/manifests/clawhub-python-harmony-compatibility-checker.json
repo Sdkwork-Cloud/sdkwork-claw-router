@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57621,
+  "uuid": "skill-clawhub-python-harmony-compatibility-checker",
+  "skillKey": "clawhub-python-harmony-compatibility-checker",
+  "name": "Python包鸿蒙兼容性测试技能",
+  "summary": "Check Python library compatibility with HarmonyOS. Downloads source from GitHub/PyPI, detects Windows-specific dependencies, runs pytest with per-test-case r...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.python_harmony_compatibility_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terry.King",
+      "features": [
+        "Check Python library compatibility with HarmonyOS",
+        "Downloads source from GitHub/PyPI, detects Windows-specific dependencies, runs pytest with per-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/python-harmony-compatibility-checker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22629426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "python-harmony-compatibility-checker",
+      "url": "https://clawhub.ai/skills/python-harmony-compatibility-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "python-harmony-compatibility-checker",
+    "url": "https://clawhub.ai/skills/python-harmony-compatibility-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/python-harmony-compatibility-checker-753911bcda372986.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/python-harmony-compatibility-checker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-python-harmony-compatibility-checker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dafde217956fdf0930564b01a6e88e779651b2a07d0e5239c73e866bf5056fb1",
+      "artifactSizeBytes": 3145
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T15:49:13.151Z"
+}

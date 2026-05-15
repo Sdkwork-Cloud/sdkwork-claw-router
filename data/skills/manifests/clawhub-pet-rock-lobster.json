@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41630,
+  "uuid": "skill-clawhub-pet-rock-lobster",
+  "skillKey": "clawhub-pet-rock-lobster",
+  "name": "Pet Rock Lobster",
+  "summary": "Call when you're stuck. A free API that helps agents get unstuck. Returns personalized wisdom, jokes, and practical tips. Remembers you across calls with a b...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pet_rock_lobster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lisa Maraventano",
+      "features": [
+        "Call when you're stuck",
+        "A free API that helps agents get unstuck",
+        "Returns personalized wisdom, jokes, and practical tips",
+        "Remembers you across calls with a b..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pet-rock-lobster@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261433524?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pet-rock-lobster",
+      "url": "https://clawhub.ai/skills/pet-rock-lobster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pet-rock-lobster",
+    "url": "https://clawhub.ai/skills/pet-rock-lobster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pet-rock-lobster-0c0280f76bdc6481.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pet-rock-lobster@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pet-rock-lobster-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8528fce6e5e3d9d9b94e7df72116c8d860a08f969f702ac51d665d99c214250a",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T19:55:11.792Z"
+}

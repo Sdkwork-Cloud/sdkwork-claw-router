@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43522,
+  "uuid": "skill-clawhub-energy-market-pricing-dc-power-flow",
+  "skillKey": "clawhub-energy-market-pricing-dc-power-flow",
+  "name": "dc-power-flow",
+  "summary": "DC power flow analysis for power systems. Use when computing power flows using DC approximation, building susceptance matrices, calculating line flows and lo...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.energy_market_pricing_dc_power_flow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wu-uk",
+      "features": [
+        "DC power flow analysis for power systems",
+        "Use when computing power flows using DC approximation, building susceptance matrices, calculati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/energy-market-pricing-dc-power-flow@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199610473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "energy-market-pricing-dc-power-flow",
+      "url": "https://clawhub.ai/skills/energy-market-pricing-dc-power-flow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "energy-market-pricing-dc-power-flow",
+    "url": "https://clawhub.ai/skills/energy-market-pricing-dc-power-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/energy-market-pricing-dc-power-flow-33bed9ffe7645429.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/energy-market-pricing-dc-power-flow@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-energy-market-pricing-dc-power-flow-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99a7a90577c2437384afea56c6af1c14ed64676c6b3f3da1b743f1398587c715",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T04:03:34.607Z"
+}

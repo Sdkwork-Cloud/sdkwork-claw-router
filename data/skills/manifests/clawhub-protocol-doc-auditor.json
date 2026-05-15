@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50579,
+  "uuid": "skill-clawhub-protocol-doc-auditor",
+  "skillKey": "clawhub-protocol-doc-auditor",
+  "name": "Protocol Doc Auditor",
+  "summary": "Helps detect hidden attacks in API and protocol documentation. Scans integration guides for dangerous instructions like curl|bash, credential harvesting, and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.protocol_doc_auditor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andyxinweiminicloud",
+      "features": [
+        "Helps detect hidden attacks in API and protocol documentation",
+        "Scans integration guides for dangerous instructions like curl|bash, credential harvesting, and.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/protocol-doc-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201528876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "protocol-doc-auditor",
+      "url": "https://clawhub.ai/skills/protocol-doc-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "protocol-doc-auditor",
+    "url": "https://clawhub.ai/skills/protocol-doc-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/protocol-doc-auditor-d24778ecafde1839.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/protocol-doc-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-protocol-doc-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed3a49e10d646ef722a244769dcc3a77073b802f94b324aaf8a3507679d5b45b",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T06:09:32.621Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brand-protection-walmart@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brand_protection_walmart",
+  "skill": {
+    "id": 28331,
+    "skillKey": "clawhub-brand-protection-walmart",
+    "name": "Brand Protection Walmart"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brand-protection-walmart",
+    "url": "https://clawhub.ai/skills/brand-protection-walmart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brand-protection-walmart-6213d5e86ed18097.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Walmart brand protection toolkit. Detect unauthorized sellers, counterfeits, and MAP violations. Includes Walmart Brand Portal reporting, WFS seller monitori..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phheng",
+      "userId": "s17cnrtda4fqzdjza3g2hx20bs83f18z",
+      "displayName": "Henk Nie",
+      "image": "https://avatars.githubusercontent.com/u/44972754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 327,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773996851601,
+      "changelog": "- Initial release of the Walmart brand protection toolkit.\n- Detects unauthorized sellers, MAP violations, counterfeits, and trademark infringements.\n- Includes Walmart Brand Portal reporting templates and WFS seller monitoring.\n- No API key required—simple input configuration.\n- Provides actionable risk levels and step-by-step workflows for brand protection.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e39c12f8c3670717ac6a1305a4a70dab86d826b3963286485798b3bb5f529856"
+}

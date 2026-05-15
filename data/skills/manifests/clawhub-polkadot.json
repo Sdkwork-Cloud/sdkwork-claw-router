@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15423,
+  "uuid": "skill-clawhub-polkadot",
+  "skillKey": "clawhub-polkadot",
+  "name": "Polkadot",
+  "summary": "Assist with Polkadot DOT transactions, staking, parachains, and cross-chain transfers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polkadot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Assist with Polkadot DOT transactions, staking, parachains, and cross-chain transfers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polkadot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polkadot",
+      "url": "https://clawhub.ai/skills/polkadot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polkadot",
+    "url": "https://clawhub.ai/skills/polkadot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polkadot-bfeb3d7f31acf7a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polkadot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polkadot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a1587679d478e508cd2e58346dda579d546fcccba2956bb3647ec8f65fb5715",
+      "artifactSizeBytes": 1766
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T18:17:13.095Z"
+}

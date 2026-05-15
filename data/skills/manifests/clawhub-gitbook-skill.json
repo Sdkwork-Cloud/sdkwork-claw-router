@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30631,
+  "uuid": "skill-clawhub-gitbook-skill",
+  "skillKey": "clawhub-gitbook-skill",
+  "name": "GitBook Documentation",
+  "summary": "Provides detailed guidance on editing, structuring, configuring, and maintaining GitBook documentation in external editors and file-based workflows.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitbook_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Addison",
+      "features": [
+        "Provides detailed guidance on editing, structuring, configuring, and maintaining GitBook docume."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gitbook-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42930383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gitbook-skill",
+      "url": "https://clawhub.ai/skills/gitbook-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitbook-skill",
+    "url": "https://clawhub.ai/skills/gitbook-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitbook-skill-2af7c39e79bb4104.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gitbook-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gitbook-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d82e426310c8c1de121930d629d13586e2ee14e011e3ef001f80ca97370931e1",
+      "artifactSizeBytes": 2451
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T11:18:03.165Z"
+}

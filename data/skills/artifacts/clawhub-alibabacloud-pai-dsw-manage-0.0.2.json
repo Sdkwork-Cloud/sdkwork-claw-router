@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-pai-dsw-manage@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_pai_dsw_manage",
+  "skill": {
+    "id": 51995,
+    "skillKey": "clawhub-alibabacloud-pai-dsw-manage",
+    "name": "Alibabacloud Pai Dsw Manage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-pai-dsw-manage",
+    "url": "https://clawhub.ai/skills/alibabacloud-pai-dsw-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-pai-dsw-manage-250e7814b4100ba5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage the full lifecycle of Alibaba Cloud PAI DSW (Data Science Workshop) instances — create, update, query, list, start, stop, and look up ECS specs. Trigg..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1776685837206,
+      "changelog": "alibabacloud-pai-dsw-manage v0.0.2 changelog\n\n- Increased minimum Aliyun CLI version from 3.3.1 to 3.3.3.\n- Updated installation instructions: Added mandatory plugin update step (`aliyun plugin update`).\n- Enforced user-agent string: All CLI commands must now include `--user-agent AlibabaCloud-Agent-Skills/alibabacloud-pai-dsw-manage`.\n- Clarified installation and workspace listing procedures for greater accuracy and reliability.\n- Improved documentation for parameter confirmation and version verification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:832df6f624144f0f7c94fccfda5e99d855b573255e5cb397f3c30f0f36faec2e"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35164,
+  "uuid": "skill-clawhub-leiga",
+  "skillKey": "clawhub-leiga",
+  "name": "Leiga",
+  "summary": "Leiga integration. Manage data, records, and automate workflows. Use when the user wants to interact with Leiga data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leiga",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Leiga integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Leiga data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/leiga@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "leiga",
+      "url": "https://clawhub.ai/skills/leiga"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leiga",
+    "url": "https://clawhub.ai/skills/leiga",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leiga-c85ad1b6dfde6e23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/leiga@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-leiga-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2fa8ebeea4252d3759241cb6c1efa0b49e02d45ff5c36d3ff293a53930684181",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:06:42.734Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18070,
+  "uuid": "skill-clawhub-cs-verify",
+  "skillKey": "clawhub-cs-verify",
+  "name": "Clawhub Skill",
+  "summary": "Verify factual claims against live data sources. Returns structured verdicts with confidence scores.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cs_verify",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CutTheMustard",
+      "features": [
+        "Verify factual claims against live data sources",
+        "Returns structured verdicts with confidence scores."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cs-verify@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63439451?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cs-verify",
+      "url": "https://clawhub.ai/skills/cs-verify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cs-verify",
+    "url": "https://clawhub.ai/skills/cs-verify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cs-verify-10cc929fadcb0c72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cs-verify@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cs-verify-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3986b7b62297d42e380d3bb2c95e970518cf6fc314507a8634c960197f53737",
+      "artifactSizeBytes": 2294
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T09:37:35.616Z"
+}

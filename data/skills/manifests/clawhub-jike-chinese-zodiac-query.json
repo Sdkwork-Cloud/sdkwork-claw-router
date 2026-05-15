@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72346,
+  "uuid": "skill-clawhub-jike-chinese-zodiac-query",
+  "skillKey": "clawhub-jike-chinese-zodiac-query",
+  "name": "生肖查询 - 即刻数据",
+  "summary": "生肖查询。输入生肖名称，查询五行、本命佛、出生年份、幸运数字、幸运花、性格、事业、爱情和运势。 适用场景：用户询问相关传统文化、生活常识或配对资料时使用。数据由即刻数据（jikeapi.cn）开放接口提供。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_chinese_zodiac_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jikeapi",
+      "features": [
+        "生肖查询。输入生肖名称，查询五行、本命佛、出生年份、幸运数字、幸运花、性格、事业、爱情和运势。 适用场景：用户询问相关传统文化、生活常识或配对资料时使用。数据由即刻数据（jikeapi.cn."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jike-chinese-zodiac-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26078515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jike-chinese-zodiac-query",
+      "url": "https://clawhub.ai/skills/jike-chinese-zodiac-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-chinese-zodiac-query",
+    "url": "https://clawhub.ai/skills/jike-chinese-zodiac-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-chinese-zodiac-query-bb1f3cd28b114915.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jike-chinese-zodiac-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jike-chinese-zodiac-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b7efee359e8f98313624939488274e28172b119449412ae219158b95bfec750",
+      "artifactSizeBytes": 2121
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T06:51:03.933Z"
+}

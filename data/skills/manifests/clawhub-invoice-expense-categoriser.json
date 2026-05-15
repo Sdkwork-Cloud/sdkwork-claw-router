@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41599,
+  "uuid": "skill-clawhub-invoice-expense-categoriser",
+  "skillKey": "clawhub-invoice-expense-categoriser",
+  "name": "Invoice & Expense Categoriser (HMRC)",
+  "summary": "Categorise UK business expenses and invoices against HMRC Self Assessment categories. Generates quarterly P&L summaries, VAT-ready reports, and MTD-compatibl...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_expense_categoriser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ExternalOS",
+      "features": [
+        "Categorise UK business expenses and invoices against HMRC Self Assessment categories",
+        "Generates quarterly P&L summaries, VAT-ready reports, and MTD-compatibl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/invoice-expense-categoriser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270515205?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "invoice-expense-categoriser",
+      "url": "https://clawhub.ai/skills/invoice-expense-categoriser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-expense-categoriser",
+    "url": "https://clawhub.ai/skills/invoice-expense-categoriser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-expense-categoriser-220ebaf4bb640664.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/invoice-expense-categoriser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-invoice-expense-categoriser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1ee5aad76f0fa81056adb89d52fe9311daef195c973ce5e7cc71aa055e2b36d",
+      "artifactSizeBytes": 2615
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:55:54.644Z"
+}

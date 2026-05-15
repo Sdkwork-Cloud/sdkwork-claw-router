@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57228,
+  "uuid": "skill-clawhub-finance-knowledge",
+  "skillKey": "clawhub-finance-knowledge",
+  "name": "金融知识",
+  "summary": "A retrieval skill that answers finance questions from the `article_fin_knowledge/` knowledge base (8 markdown files covering banking, funds, M&A, derivatives...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finance_knowledge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "krillingone",
+      "features": [
+        "A retrieval skill that answers finance questions from the `article_fin_knowledge/` knowledge ba."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finance-knowledge@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42474763?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finance-knowledge",
+      "url": "https://clawhub.ai/skills/finance-knowledge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finance-knowledge",
+    "url": "https://clawhub.ai/skills/finance-knowledge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finance-knowledge-071dca1556ca4c4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finance-knowledge@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-finance-knowledge-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d35e0141fd237e95a27db8ded67840cab6b014772fb2faa3ec0bbb09b8cebac",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T03:36:36.381Z"
+}

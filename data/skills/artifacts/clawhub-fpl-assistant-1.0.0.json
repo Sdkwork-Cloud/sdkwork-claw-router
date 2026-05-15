@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fpl-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fpl_assistant",
+  "skill": {
+    "id": 47344,
+    "skillKey": "clawhub-fpl-assistant",
+    "name": "FPL(Fantasy Premier League) assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fpl-assistant",
+    "url": "https://clawhub.ai/skills/fpl-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fpl-assistant-012d4642dca2c16b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fantasy Premier League (FPL) assistant for squad management, transfer planning, captain selection, and chip strategy. Use when users ask about FPL lineup dec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dongbinnie",
+      "userId": "s17ft9e0kst7sg56ecv4t4ks6985pjm8",
+      "displayName": "dyIdx(y')",
+      "image": "https://avatars.githubusercontent.com/u/8368713?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777402022612,
+      "changelog": "- Initial release of FPL Assistant skill.\n- Provides Fantasy Premier League squad management, transfer planning, captain selection, and chip strategy support.\n- Integrates live FPL API data with multi-dimensional analysis for recommendations.\n- Offers guidance on transfer use, starting lineups, captaincy, and optimal chip timing.\n- Designed to trigger on common FPL and gameweek-related queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d52a16d9124cffaef68fde45972ad462109de83fa39ba55bc1a7edb93ca4d4b"
+}

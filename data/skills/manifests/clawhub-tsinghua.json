@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39340,
+  "uuid": "skill-clawhub-tsinghua",
+  "skillKey": "clawhub-tsinghua",
+  "name": "Tsinghua",
+  "summary": "Provides structured details on tsinghua's background, core products, market position, and latest developments for quick business insights.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tsinghua",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides structured details on tsinghua's background, core products, market position, and lates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tsinghua@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tsinghua",
+      "url": "https://clawhub.ai/skills/tsinghua"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tsinghua",
+    "url": "https://clawhub.ai/skills/tsinghua",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tsinghua-051500e859418b0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tsinghua@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tsinghua-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c3a2c47697b317736081ed82dd47049341bc3e8794ce39903d11e813cf886e8",
+      "artifactSizeBytes": 1825
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T00:42:23.552Z"
+}

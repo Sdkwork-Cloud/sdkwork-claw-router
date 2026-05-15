@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-auth@1.6.0",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_auth",
+  "skill": {
+    "id": 13883,
+    "skillKey": "clawhub-browser-auth",
+    "name": "Browser Auth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-auth",
+    "url": "https://clawhub.ai/skills/browser-auth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-auth-78d9f38e06c2179a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Start a secure remote browser tunnel for manual user authentication (solving Captchas, 2FA, logins) and capture session data. Built for AI Commander."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lksrz",
+      "userId": "publishers:lksrz",
+      "displayName": "Coder AI",
+      "image": "https://avatars.githubusercontent.com/u/72931508?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1311,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.6.0",
+      "createdAt": 1771405754016,
+      "changelog": "Default host changed to 0.0.0.0 so the printed URL is accessible from outside (not localhost-only)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:30ac0991ff68e6a1f7806933194754264c911bf5f27ede0387f9ef5ab1b876b3"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31753,
+  "uuid": "skill-clawhub-bitopro-skills-hub",
+  "skillKey": "clawhub-bitopro-skills-hub",
+  "name": "bitopro-spot",
+  "summary": "BitoPro exchange API wrapper covering both public market data and private trading on the spot market. Public tools (no API key required): real-time ticker, o...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitopro_skills_hub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bitopro",
+      "features": [
+        "BitoPro exchange API wrapper covering both public market data and private trading on the spot m.",
+        "Public tools (no API key required): real-time ticker, o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bitopro-skills-hub@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49395162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bitopro-skills-hub",
+      "url": "https://clawhub.ai/skills/bitopro-skills-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitopro-skills-hub",
+    "url": "https://clawhub.ai/skills/bitopro-skills-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitopro-skills-hub-c9fae1dfd74b09ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bitopro-skills-hub@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-bitopro-skills-hub-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3564fc326f54ca7c7bedb2b490b66812480fc13b4953c72a5b6f2eec824da2d",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T06:05:32.057Z"
+}

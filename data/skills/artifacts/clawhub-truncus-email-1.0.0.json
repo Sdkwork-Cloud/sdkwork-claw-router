@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/truncus-email@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.truncus_email",
+  "skill": {
+    "id": 28554,
+    "skillKey": "clawhub-truncus-email",
+    "name": "Truncus Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "truncus-email",
+    "url": "https://clawhub.ai/skills/truncus-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/truncus-email-d521d6d804d0bb32.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send transactional emails (alerts, reports, receipts, notifications) via the Truncus API. Use when a workflow needs to deliver email to a recipient."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codevanmoose",
+      "userId": "publishers:codevanmoose",
+      "displayName": "codevanmoose",
+      "image": "https://avatars.githubusercontent.com/u/194485378?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 323,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773252866546,
+      "changelog": "Initial release: send transactional emails via Truncus API",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16df238b9383c6a4dc77b148904a2a72b4fc0636ddab661e11b300b144d94a17"
+}

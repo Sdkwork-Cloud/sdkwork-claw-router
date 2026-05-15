@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/side-project-validator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.side_project_validator",
+  "skill": {
+    "id": 72685,
+    "skillKey": "clawhub-side-project-validator",
+    "name": "副业验证 skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "side-project-validator",
+    "url": "https://clawhub.ai/skills/side-project-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/side-project-validator-6e56f5037e94ee7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "副业/独立开发项目验证工具。当用户有了一个副业想法、产品 idea、或者想验证某个方向能不能做时使用。帮助分析需求真伪、竞品情况、市场规模、变现可能和实施难度。适用于副业规划、独立开发、产品验证等场景。附带真实案例库、数据调研脚本。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "belivar",
+      "userId": "s1711mfnevta5j2kw04cq6jqrs84644f",
+      "displayName": "yoyo",
+      "image": "https://avatars.githubusercontent.com/u/9319166?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774169766751,
+      "changelog": "Initial release of side-project-validator.\n\n- Provides a structured 5-step validation method for side project and product ideas (需求验证, 竞品分析, 市场规模, 变现模式, 实施难度)\n- Features real case studies and data-backed analysis for idea validation\n- Includes scripts for keyword research, competitor analysis, and market trend investigation\n- Outputs standardized validation reports with actionable recommendations and scoring\n- Designed for side project planning, indie development, and product idea testing, with emphasis on data and practical experience",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6354471c7cc98c6d2655bd37b43f79267d7d1c379243be76c3289444adf1808f"
+}

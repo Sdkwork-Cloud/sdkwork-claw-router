@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12253,
+  "uuid": "skill-clawhub-luban-cli",
+  "skillKey": "clawhub-luban-cli",
+  "name": "luban-cli skill",
+  "summary": "Development and management of the Luban CLI for MLOps. Use this skill when building or using the Luban CLI to manage experiment environments, training tasks, and online services.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.luban_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guunergooner",
+      "features": [
+        "Development and management of the Luban CLI for MLOps",
+        "Use this skill when building or using the Luban CLI to manage experiment environments, training."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/luban-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18660867?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "luban-cli",
+      "url": "https://clawhub.ai/skills/luban-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "luban-cli",
+    "url": "https://clawhub.ai/skills/luban-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/luban-cli-0dbfed3c7d3e5f65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/luban-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-luban-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0fe5fb90ba0faed3708d4da2743d1b7a5885ba940c6322ed88956bf0392f5cfa",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T04:04:36.849Z"
+}

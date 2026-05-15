@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40978,
+  "uuid": "skill-clawhub-gh-complete",
+  "skillKey": "clawhub-gh-complete",
+  "name": "Github CLI Complete",
+  "summary": "Complete skill for operating GitHub CLI (gh) on cli-trunk: full command map, subcommands, usage patterns, JSON output, and practical workflows for Issues, PR...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gh_complete",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iroaK",
+      "features": [
+        "Complete skill for operating GitHub CLI (gh) on cli-trunk: full command map, subcommands, usage."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gh-complete@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55340002?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gh-complete",
+      "url": "https://clawhub.ai/skills/gh-complete"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gh-complete",
+    "url": "https://clawhub.ai/skills/gh-complete",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gh-complete-b22ea390999bd934.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gh-complete@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gh-complete-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f099d9c94c3ecf3182ef27989ddf04f3ff676a886f88924dc71aee1b3b9fd4fc",
+      "artifactSizeBytes": 2570
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T22:46:13.531Z"
+}

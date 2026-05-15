@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21313,
+  "uuid": "skill-clawhub-dev-factory",
+  "skillKey": "clawhub-dev-factory",
+  "name": "Dev Factory",
+  "summary": "Automates software development by discovering ideas from GitHub, CVEs, and news, generating code with ChatDev 2.0 agents, testing, self-correcting, and publi...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dev_factory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rebugui",
+      "features": [
+        "Automates software development by discovering ideas from GitHub, CVEs, and news, generating cod."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dev-factory@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51498462?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dev-factory",
+      "url": "https://clawhub.ai/skills/dev-factory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dev-factory",
+    "url": "https://clawhub.ai/skills/dev-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dev-factory-7f588eec0121ffd9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dev-factory@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dev-factory-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8ee8636d986bb9cf8cd3b5436aa4062d2749e61330d8874b108ac51eea8af4e",
+      "artifactSizeBytes": 2481
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:13:25.752Z"
+}

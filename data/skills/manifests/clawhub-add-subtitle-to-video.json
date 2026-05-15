@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45566,
+  "uuid": "skill-clawhub-add-subtitle-to-video",
+  "skillKey": "clawhub-add-subtitle-to-video",
+  "name": "Add Subtitle To Video",
+  "summary": "Get captioned video files ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"ad...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_subtitle_to_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tk8544-b",
+      "features": [
+        "Get captioned video files ready to post, without touching a single slider",
+        "Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"ad..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/add-subtitle-to-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "add-subtitle-to-video",
+      "url": "https://clawhub.ai/skills/add-subtitle-to-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-subtitle-to-video",
+    "url": "https://clawhub.ai/skills/add-subtitle-to-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-subtitle-to-video-60c30c0daf6b6cea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/add-subtitle-to-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-add-subtitle-to-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:629ad478ba82940c5ddebbbbdaa12612f2c3109d91ff4f3019db1724b5b6efb1",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T20:32:47.317Z"
+}

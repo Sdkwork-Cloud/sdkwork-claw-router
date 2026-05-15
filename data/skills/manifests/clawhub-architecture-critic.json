@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44078,
+  "uuid": "skill-clawhub-architecture-critic",
+  "skillKey": "clawhub-architecture-critic",
+  "name": "Architecture Critic",
+  "summary": "Adversarial pre-build architecture review. Spawns a structurally independent agent that reviews proposed builds, features, or operational decisions BEFORE an...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.architecture_critic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JJ",
+      "features": [
+        "Adversarial pre-build architecture review",
+        "Spawns a structurally independent agent that reviews proposed builds, features, or operational."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/architecture-critic@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262581161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "architecture-critic",
+      "url": "https://clawhub.ai/skills/architecture-critic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "architecture-critic",
+    "url": "https://clawhub.ai/skills/architecture-critic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/architecture-critic-0b2c483dd819d978.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/architecture-critic@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-architecture-critic-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b74ce888af8ad7da451ee8e1f3ef3bc5c1553559b1a0e82b4e080b12a77da0a2",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T13:08:35.075Z"
+}

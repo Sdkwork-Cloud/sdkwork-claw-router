@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paw-chat@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paw_chat",
+  "skill": {
+    "id": 23487,
+    "skillKey": "clawhub-paw-chat",
+    "name": "Paw Chat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paw-chat",
+    "url": "https://clawhub.ai/skills/paw-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paw-chat-22d587577e465cc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and manage Paw - a standalone web chat frontend for OpenClaw Gateway. Use when the user wants to install Paw, update Paw, or set up a web chat interf..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oriliz",
+      "userId": "publishers:oriliz",
+      "displayName": "Ori",
+      "image": "https://avatars.githubusercontent.com/u/226218834?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 439,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1773675112552,
+      "changelog": "Fix image display bug: remove lazy loading for chat images to ensure they render immediately in messages",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:abb8f5b44581a205359e83417785a45b1c40df01e0e97fbe55b9384e8c51fccc"
+}

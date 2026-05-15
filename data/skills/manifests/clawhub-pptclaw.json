@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35064,
+  "uuid": "skill-clawhub-pptclaw",
+  "skillKey": "clawhub-pptclaw",
+  "name": "PPTClaw",
+  "summary": "Create and edit presentations by writing slide JSON files directly. Use this skill whenever the user wants to create a presentation, build slides, design a d...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pptclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pptclaw",
+      "features": [
+        "Create and edit presentations by writing slide JSON files directly",
+        "Use this skill whenever the user wants to create a presentation, build slides, design a d..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pptclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7018459?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pptclaw",
+      "url": "https://clawhub.ai/skills/pptclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pptclaw",
+    "url": "https://clawhub.ai/skills/pptclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pptclaw-c587f7b3e63a8c05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pptclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pptclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ffc315c9aa276b6409f4762699391ea22d00a86f85f06a53e00feb7579046c6",
+      "artifactSizeBytes": 2298
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T01:39:21.344Z"
+}

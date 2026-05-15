@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21743,
+  "uuid": "skill-clawhub-skills-weather",
+  "skillKey": "clawhub-skills-weather",
+  "name": "skills-weather",
+  "summary": "Get the weather for a specific location or coordinates",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_weather",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mangonob",
+      "features": [
+        "Get the weather for a specific location or coordinates"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skills-weather@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8557712?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skills-weather",
+      "url": "https://clawhub.ai/skills/skills-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-weather",
+    "url": "https://clawhub.ai/skills/skills-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-weather-f16323146e704292.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skills-weather@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-skills-weather-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7d86101c3497e2998a0a1d66fc3b60cfa531465009ca65ad0dadc9a0e618701",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T07:45:40.819Z"
+}

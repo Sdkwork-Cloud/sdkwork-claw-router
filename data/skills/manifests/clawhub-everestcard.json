@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36343,
+  "uuid": "skill-clawhub-everestcard",
+  "skillKey": "clawhub-everestcard",
+  "name": "Everestcard",
+  "summary": "Everestcard integration. Manage data, records, and automate workflows. Use when the user wants to interact with Everestcard data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.everestcard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Everestcard integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Everestcard data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/everestcard@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "everestcard",
+      "url": "https://clawhub.ai/skills/everestcard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "everestcard",
+    "url": "https://clawhub.ai/skills/everestcard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/everestcard-b1a3c53965afa748.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/everestcard@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-everestcard-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e54e498260d15b214c846cfd40e4a1de9fb4330b26edf14a69d0ced82754e70",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:26:16.719Z"
+}

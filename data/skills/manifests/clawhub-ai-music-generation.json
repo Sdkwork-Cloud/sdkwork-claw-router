@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12436,
+  "uuid": "skill-clawhub-ai-music-generation",
+  "skillKey": "clawhub-ai-music-generation",
+  "name": "Ai Music Generation",
+  "summary": "Generate AI music and songs with Diffrythm, Tencent Song Generation via inference.sh CLI. Models: Diffrythm (fast song generation), Tencent Song Generation (...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_music_generation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ömer Karışman",
+      "features": [
+        "Generate AI music and songs with Diffrythm, Tencent Song Generation via inference.sh CLI",
+        "Models: Diffrythm (fast song generation), Tencent Song Generation (..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-music-generation@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1448702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-music-generation",
+      "url": "https://clawhub.ai/skills/ai-music-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-music-generation",
+    "url": "https://clawhub.ai/skills/ai-music-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-music-generation-6be39f39ecb67e88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-music-generation@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-music-generation-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bdc7c4d85abb58f11a836117c53fceb714f4a12c56746cedfce7bfda40303fd",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T08:23:28.210Z"
+}

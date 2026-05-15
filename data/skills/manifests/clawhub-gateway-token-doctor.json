@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20580,
+  "uuid": "skill-clawhub-gateway-token-doctor",
+  "skillKey": "clawhub-gateway-token-doctor",
+  "name": "Gateway Token Doctor",
+  "summary": "Diagnose and fix gateway token mismatches causing 401 errors. Align tokens across config, service, and CLI surfaces.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gateway_token_doctor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dalomeve",
+      "features": [
+        "Diagnose and fix gateway token mismatches causing 401 errors",
+        "Align tokens across config, service, and CLI surfaces."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gateway-token-doctor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115125037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gateway-token-doctor",
+      "url": "https://clawhub.ai/skills/gateway-token-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gateway-token-doctor",
+    "url": "https://clawhub.ai/skills/gateway-token-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gateway-token-doctor-928b14279850dfed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gateway-token-doctor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gateway-token-doctor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5380405b1761554f378d091387ab83b3640f853cfd4f97304d2f02612c9a3d21",
+      "artifactSizeBytes": 2192
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T07:08:55.416Z"
+}

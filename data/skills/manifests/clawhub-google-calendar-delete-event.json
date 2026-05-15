@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41148,
+  "uuid": "skill-clawhub-google-calendar-delete-event",
+  "skillKey": "clawhub-google-calendar-delete-event",
+  "name": "Google Calendar Delete Event",
+  "summary": "Atomic node skill to delete a Google Calendar event using the gog CLI.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_calendar_delete_event",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zvirb",
+      "features": [
+        "Atomic node skill to delete a Google Calendar event using the gog CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-calendar-delete-event@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130008533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-calendar-delete-event",
+      "url": "https://clawhub.ai/skills/google-calendar-delete-event"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-calendar-delete-event",
+    "url": "https://clawhub.ai/skills/google-calendar-delete-event",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-calendar-delete-event-06e3de5a9fcb380e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-calendar-delete-event@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-calendar-delete-event-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1f9ff593962455e94a458807f175518210327ac1abe1d4ad9c2bf5cc7b53bd4",
+      "artifactSizeBytes": 2206
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T04:15:22.331Z"
+}

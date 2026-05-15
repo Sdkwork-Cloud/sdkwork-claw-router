@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37566,
+  "uuid": "skill-clawhub-ticketmax",
+  "skillKey": "clawhub-ticketmax",
+  "name": "Ticketmax",
+  "summary": "Print markdown files to an ESC/POS thermal receipt printer over TCP, USB, or serial. Supports headings, bold, underline, tables, images, QR codes, paper cuts...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ticketmax",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yatesdr",
+      "features": [
+        "Print markdown files to an ESC/POS thermal receipt printer over TCP, USB, or serial",
+        "Supports headings, bold, underline, tables, images, QR codes, paper cuts..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ticketmax@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6937857?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ticketmax",
+      "url": "https://clawhub.ai/skills/ticketmax"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ticketmax",
+    "url": "https://clawhub.ai/skills/ticketmax",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ticketmax-2173317cf42dbf85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ticketmax@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ticketmax-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd3a0d133812cdd4a8386bacacb6307e029a6bb87a9ed10763ed7c7f8d18776d",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T03:31:07.488Z"
+}

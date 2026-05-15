@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65691,
+  "uuid": "skill-clawhub-marriott",
+  "skillKey": "clawhub-marriott",
+  "name": "marriott",
+  "summary": "搜索并预订万豪旅享家酒店（marriott.com.cn）。当用户提到酒店搜索、万豪预订、查找入住等需求时调用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marriott",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qianjunye",
+      "features": [
+        "搜索并预订万豪旅享家酒店（marriott.com.cn）。当用户提到酒店搜索、万豪预订、查找入住等需求时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/marriott@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3345643?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "marriott",
+      "url": "https://clawhub.ai/skills/marriott"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marriott",
+    "url": "https://clawhub.ai/skills/marriott",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marriott-82eaf348d48ce5d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/marriott@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-marriott-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df46f3041301c0a1372ddfb88f5f64f01f146b3cf99c8bd78a3b49421fb4fd2e",
+      "artifactSizeBytes": 2298
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T11:06:15.270Z"
+}

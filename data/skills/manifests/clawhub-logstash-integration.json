@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38491,
+  "uuid": "skill-clawhub-logstash-integration",
+  "skillKey": "clawhub-logstash-integration",
+  "name": "Logstash",
+  "summary": "Logstash integration. Manage data, records, and automate workflows. Use when the user wants to interact with Logstash data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logstash_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Logstash integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Logstash data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/logstash-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "logstash-integration",
+      "url": "https://clawhub.ai/skills/logstash-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logstash-integration",
+    "url": "https://clawhub.ai/skills/logstash-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logstash-integration-fc1d03ea7a03095c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/logstash-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-logstash-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80f9495515eacea89ce09ddfc9f722a0f2d779243bef43ed5980e9c19b2e52c6",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:09:03.314Z"
+}

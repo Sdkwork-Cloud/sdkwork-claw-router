@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58171,
+  "uuid": "skill-clawhub-hoang-vn-stock-scanner",
+  "skillKey": "clawhub-hoang-vn-stock-scanner",
+  "name": "VN Stock Scanner",
+  "summary": "Chuyên gia phân tích chứng khoán Việt Nam (VN-Index, HoSE, HNX, UPCoM). Sử dụng để LẤY TIN TỨC CHỨNG KHOÁN (cập nhật CafeF, tin đồn, tin chủ tịch mua/bán, ch...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hoang_vn_stock_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Do Van Hoang",
+      "features": [
+        "Chuyên gia phân tích chứng khoán Việt Nam (VN-Index, HoSE, HNX, UPCoM)",
+        "Sử dụng để LẤY TIN TỨC CHỨNG KHOÁN (cập nhật CafeF, tin đồn, tin chủ tịch mua/bán, ch..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hoang-vn-stock-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134345665?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hoang-vn-stock-scanner",
+      "url": "https://clawhub.ai/skills/hoang-vn-stock-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hoang-vn-stock-scanner",
+    "url": "https://clawhub.ai/skills/hoang-vn-stock-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hoang-vn-stock-scanner-b550128898ed97d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hoang-vn-stock-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hoang-vn-stock-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be77a82846afe7c7435602172dd989d74cd558379e6d514bc3c5679e2ab9b9c5",
+      "artifactSizeBytes": 2039
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:23:05.629Z"
+}

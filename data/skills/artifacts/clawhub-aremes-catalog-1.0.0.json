@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aremes-catalog@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aremes_catalog",
+  "skill": {
+    "id": 36316,
+    "skillKey": "clawhub-aremes-catalog",
+    "name": "aremes-catalog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aremes-catalog",
+    "url": "https://clawhub.ai/skills/aremes-catalog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aremes-catalog-80bb0300321f71d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Ryan Seslow's art & design catalog, look up individual works, check x402 quotes, and log purchase intent via the AREMES autonomous commerce agent."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryanseslow",
+      "userId": "s17et9z0d4j0ddkebmqc4639fx83f5fy",
+      "displayName": "RYAN SESLOW",
+      "image": "https://avatars.githubusercontent.com/u/21285648?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774203207485,
+      "changelog": "aremes-catalog 1.1.0 introduces a comprehensive update, clarifying capabilities and workflows for querying and purchasing Ryan Seslow's art.\n\n- Added detailed documentation for all five commerce tools: full catalog fetch, REST/paginated browse, x402 quote, x402 verification, and Stripe purchase intent.\n- Included example API calls, parameter explanations, and suggested usage for each endpoint.\n- Outlined standard workflows for both Stripe/fiat and on-chain USDC (x402) purchases.\n- Provided license tier reference and pricing table for clarity on purchasing options.\n- Listed x402 network/contract details and agent identity for trust verification.\n- Noted all endpoints are public and documented data freshness and order expiration behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:07c2f8963cb6c266c8b17bd13f7e5354c06347b9b0bc661bbfe3d10fbff1e4a8"
+}

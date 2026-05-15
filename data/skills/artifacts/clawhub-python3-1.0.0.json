@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/python3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.python3",
+  "skill": {
+    "id": 14398,
+    "skillKey": "clawhub-python3",
+    "name": "python"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "python3",
+    "url": "https://clawhub.ai/skills/python3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/python3-c1cc69e61c0f1c7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Python for practical project setup, dependency install, script execution, and environment troubleshooting with safe defaults. Use when tasks involve pypr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jvy",
+      "userId": "s17drhqvqmrfz94tm5320kfgj983kf7m",
+      "displayName": "jvy",
+      "image": "https://avatars.githubusercontent.com/u/5337221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1170,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773499368911,
+      "changelog": "- Initial release of the \"python\" skill focused on safe project setup and reproducible Python workflows.\n- Added a standardized workflow for virtual environment creation, dependency installation, and script execution using a bundled helper script.\n- Emphasized best practices for avoiding interpreter mismatches and unsafe global installs.\n- Provided troubleshooting tips for common Python errors.\n- Included a new helper: `scripts/python_env_tool.py` for automating environment management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:063e85217bade6742ea9ba08fb8ae200a708bf0232414d35c35f76731b1ff472"
+}

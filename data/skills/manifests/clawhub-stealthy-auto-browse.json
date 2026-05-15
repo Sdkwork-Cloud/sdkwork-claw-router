@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10197,
+  "uuid": "skill-clawhub-stealthy-auto-browse",
+  "skillKey": "clawhub-stealthy-auto-browse",
+  "name": "stealthy-auto-browse",
+  "summary": "Browser automation that passes CreepJS, BrowserScan, Pixelscan, and Cloudflare — zero CDP exposure, OS-level input, persistent fingerprints. Use when standar...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stealthy_auto_browse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ciprian Mandache",
+      "features": [
+        "Browser automation that passes CreepJS, BrowserScan, Pixelscan, and Cloudflare — zero CDP expos.",
+        "Use when standar..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stealthy-auto-browse@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12934156?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stealthy-auto-browse",
+      "url": "https://clawhub.ai/skills/stealthy-auto-browse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stealthy-auto-browse",
+    "url": "https://clawhub.ai/skills/stealthy-auto-browse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stealthy-auto-browse-04aec897a14b0ba9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stealthy-auto-browse@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stealthy-auto-browse-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ecbe69a601c303278b82bd7e6b5bddb5dfdd6901ecc816e3206d94c76cde4f27",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T01:42:46.554Z"
+}

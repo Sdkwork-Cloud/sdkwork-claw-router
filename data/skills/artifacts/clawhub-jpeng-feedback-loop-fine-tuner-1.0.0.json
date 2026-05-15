@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jpeng-feedback-loop-fine-tuner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpeng_feedback_loop_fine_tuner",
+  "skill": {
+    "id": 36583,
+    "skillKey": "clawhub-jpeng-feedback-loop-fine-tuner",
+    "name": "feedback-loop-fine-tuner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpeng-feedback-loop-fine-tuner",
+    "url": "https://clawhub.ai/skills/jpeng-feedback-loop-fine-tuner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpeng-feedback-loop-fine-tuner-e1db559a56162c9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides tools for implementing feedback loops to fine-tune LLM agents using user feedback for continuous personalization and improvement, including training..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpengcheng523-netizen",
+      "userId": "s177n9nwg73ep3g6fp9z19025n83h4xr",
+      "displayName": "jpengcheng523-netizen",
+      "image": "https://avatars.githubusercontent.com/u/226868999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774548159542,
+      "changelog": "Initial release of Feedback Loop Fine-Tuner.\n\n- Introduces tools for collecting and aggregating user feedback to improve LLM agents.\n- Supports generation of fine-tuning datasets from feedback history in multiple formats.\n- Enables prompt optimization using feedback data and analysis.\n- Provides improvement tracking and reporting functionality over time.\n- Adds A/B testing for prompt template variants with experiment management.\n- Includes modular classes: FeedbackCollector, TrainingDatasetGenerator, PromptOptimizer, ImprovementTracker, and ABTester.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d9754f801a0b2a4e4aa6c26b314076e43e23f2faff1535e9ec4c9fea55c7bb1"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15114,
+  "uuid": "skill-clawhub-email-formatter-skill",
+  "skillKey": "clawhub-email-formatter-skill",
+  "name": "Cerbug45 Email Formatter",
+  "summary": "Transform rough email drafts into polished, professional messages. Use this skill when the user wants to improve email quality, fix grammar and tone, format business emails, or convert casual messages into professional communication. Trigg.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_formatter_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cerbug45",
+      "features": [
+        "Transform rough email drafts into polished, professional messages",
+        "Use this skill when the user wants to improve email quality, fix grammar and tone, format busin.",
+        "Triggers include: 'format my email', 'make this professional', 'improve this message', 'fix my.",
+        "Also use when converting bullet points or notes into complete emails, adjusting tone (formal/ca."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-formatter-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43820349?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-formatter-skill",
+      "url": "https://clawhub.ai/skills/email-formatter-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-formatter-skill",
+    "url": "https://clawhub.ai/skills/email-formatter-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-formatter-skill-0dfaf07c31a99a21.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-formatter-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-formatter-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c441c83f766d681ed7c1d6b032e97567f366ce20aa671afec2887424ca271de",
+      "artifactSizeBytes": 2871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T00:06:36.861Z"
+}

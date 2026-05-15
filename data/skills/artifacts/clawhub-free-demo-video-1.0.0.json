@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-demo-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_demo_video",
+  "skill": {
+    "id": 55610,
+    "skillKey": "clawhub-free-demo-video",
+    "name": "Free Demo Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-demo-video",
+    "url": "https://clawhub.ai/skills/free-demo-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-demo-video-2ae823aca794c7f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim the intro, add captions, and export a clean demo video — and get poli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775956571141,
+      "changelog": "Initial release of Free Demo Video — Create and Export Demo Videos.\n\n- Upload video files (MP4, MOV, WebM, AVI up to 500MB) and describe desired edits (trim, captions, etc.).\n- Automated AI handles demo creation and cloud rendering; get a polished 1080p MP4 in 30–90 seconds.\n- Free anonymous usage with 100 credits (valid 7 days); seamless backend connection and session creation.\n- Supports direct editing commands, status/credits checks, and easy exports via simple chat prompts.\n- User-friendly error handling and feedback during uploads, editing, and export workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c57eba58f25811720091a5b9895873d0be218008b1928db7277a8e3ddc1c8191"
+}

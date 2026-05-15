@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-to@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_to",
+  "skill": {
+    "id": 40544,
+    "skillKey": "clawhub-free-video-to",
+    "name": "Free Video To"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-to",
+    "url": "https://clawhub.ai/skills/free-video-to",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-to-076e5b8399f687ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get converted video files ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776655034958,
+      "changelog": "- Initial release of \"Free Video To — Convert and Export Video Files\"\n- Supports uploading MP4, MOV, AVI, and WebM files up to 500MB\n- Automatic cloud-based video conversion, editing, and export to 1080p MP4\n- Simple, prompt-based interface for quick edits, captions, and music\n- Tracks session state, credits balance, and export status via API\n- Instant onboarding with token management and anonymous user support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8cc0d16791bae9b51ca1aa6c45e592685818765190a1f32a896f0842cedd555f"
+}

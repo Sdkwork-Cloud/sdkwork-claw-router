@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quantum-portfolio-yand@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quantum_portfolio_yand",
+  "skill": {
+    "id": 37764,
+    "skillKey": "clawhub-quantum-portfolio-yand",
+    "name": "quantum-portfolio-yand"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quantum-portfolio-yand",
+    "url": "https://clawhub.ai/skills/quantum-portfolio-yand",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quantum-portfolio-yand-0ab5ba8e221965f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Quantum-inspired portfolio optimizer using classical, QUBO-simulated, and YAND geometric solvers to optimize mean-variance-skewness-kurtosis portfolios on th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0x2hacks",
+      "userId": "s1704gatdk4h5wzqx7bqvvdttn85wjrh",
+      "displayName": "0x2Hacks",
+      "image": "https://avatars.githubusercontent.com/u/99119378?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777603847756,
+      "changelog": "**Initial release of quantum-portfolio-yand skill**:\n\n- Introduces a quantum-inspired portfolio optimization assistant that integrates classical, QUBO (quantum-unconstrained binary optimization) via simulated annealing, and geometric (YAND) solvers.\n- Cross-validates all portfolio outputs among three diverse solver paradigms (SLSQP, QUBO+neal, YAND/YAND-MVSK) and visualizes discrepancies.\n- Provides scripts for synthetic or user-supplied data loading, QUBO encoding/solving, YAND-MVSK geometric optimization, and a full pipeline driver with figure outputs.\n- Enforces strong data validation, risk diagnostics, and reference-based correction by consulting provided domain-specific patterns and validation rules.\n- Supports higher-moment portfolio optimization (mean, variance, skewness, kurtosis) and robust handling of challenging optimization cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dfa173fbdc0355b936dc6c9d6be16544a2257785a55a6b525e4194cc1a7f63b5"
+}

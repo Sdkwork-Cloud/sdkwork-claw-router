@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eastmoney-skills@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eastmoney_skills",
+  "skill": {
+    "id": 67808,
+    "skillKey": "clawhub-eastmoney-skills",
+    "name": "eastmoney skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eastmoney-skills",
+    "url": "https://clawhub.ai/skills/eastmoney-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eastmoney-skills-93444ce237a332f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "东方财富妙想提供的金融技能集合，涵盖金融数据查询、资讯搜索、智能选股、自选股管理和模拟组合管理，所有技能均需通过MX_APIKEY进行认证。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qqk000",
+      "userId": "s17frcy5ptth9431pqd3x1fxg183kmjr",
+      "displayName": "eastmoney_dev",
+      "image": "https://avatars.githubusercontent.com/u/109639273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 789,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 4,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773993050699,
+      "changelog": "- Updated all skill download links from wry-manatee-359.convex.site to marketdfs.dfcfw.com for more direct and official access.\n- No functional or feature changes to the skills themselves.\n- Metadata now includes both required env vars and 环境变量 sections for clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b02eb5425da9efd11c9c2fa00c02e08a2e4132959fbb65523dbafb1734c291b"
+}

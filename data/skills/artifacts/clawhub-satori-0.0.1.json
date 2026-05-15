@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/satori@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.satori",
+  "skill": {
+    "id": 11851,
+    "skillKey": "clawhub-satori",
+    "name": "Satori"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "satori",
+    "url": "https://clawhub.ai/skills/satori",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/satori-f2f54bd8e3db16fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent long term memory for for continuity in ai sessions between providers and codegen tools. TRIGGERS - Activate this skill when: - User explicitly mentions \"satori\", \"remember this\", \"save\", \"add\", \"save this for later\", \"store this."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joelachance",
+      "userId": "publishers:joelachance",
+      "displayName": "joelachance",
+      "image": "https://avatars.githubusercontent.com/u/3891660?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1976,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1769558719466,
+      "changelog": "Satori v0.0.1 initial release:\n\n- Provides persistent long-term memory across AI sessions and tools.\n- Detects when to save or recall facts based on trigger phrases and conversation context.\n- Integrates with Satori CLI for saving and searching notable facts in vector/knowledge graph databases.\n- Automates authentication and setup with no manual configuration required.\n- Includes workflows for proactive context retrieval and fact saving, with clear criteria for what information to store.\n- Handles CLI errors gracefully, with user-friendly error messages and guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bc988b04150bbf16928845fcd599eb21f6b8a4a3a45e01f6a0e26f3857cc17bc"
+}

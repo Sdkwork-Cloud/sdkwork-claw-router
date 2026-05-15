@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eval@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eval",
+  "skill": {
+    "id": 52963,
+    "skillKey": "clawhub-eval",
+    "name": "Eval"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eval",
+    "url": "https://clawhub.ai/skills/eval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eval-1bbd174404efbce9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluate everything the PA agent manages — tasks, skills, PA network health, billing, calendar connections, and memory quality. Use when: owner asks for an e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "netanel-abergel",
+      "userId": "s17ber573ejk857tr938jb5dqs8413hk",
+      "displayName": "Netanel Abergel",
+      "image": "https://avatars.githubusercontent.com/u/89765095?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1775332276611,
+      "changelog": "**Minor update with behavioral checks and context loading improvements.**\n\n- Added explicit \"Load Local Context\" step for sourcing environment variables.\n- Introduced \"Pre-Eval Behavioral Checks\" section, including automatic reactions when eval is triggered and completed.\n- Clarified use of PA directory file and requirement to use direct calendar API.\n- Removed non-English trigger phrases for clarity and consistency.\n- No structural changes to main eval logic or scoring.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:07d14f20ed88af62e5954912210123818dabdcf1513eda38ce33140bc7a49b96"
+}

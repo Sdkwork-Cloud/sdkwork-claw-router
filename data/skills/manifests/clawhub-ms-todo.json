@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60268,
+  "uuid": "skill-clawhub-ms-todo",
+  "skillKey": "clawhub-ms-todo",
+  "name": "Ms Todo",
+  "summary": "Microsoft To Do 任务管理集成。管理任务列表和任务，创建、完成、删除任务。通过 MorphixAI 代理安全访问 Microsoft Graph API。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ms_todo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Leo",
+      "features": [
+        "Microsoft To Do 任务管理集成。管理任务列表和任务，创建、完成、删除任务。通过 MorphixAI 代理安全访问 Microsoft Graph API。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ms-todo@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55380315?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ms-todo",
+      "url": "https://clawhub.ai/skills/ms-todo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ms-todo",
+    "url": "https://clawhub.ai/skills/ms-todo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ms-todo-e40d1bf4c3b5078d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ms-todo@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ms-todo-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbc2efe8d229049ef44659fe159702c975da6cb19b4a36fa4e522fd7462631f7",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T08:40:43.029Z"
+}

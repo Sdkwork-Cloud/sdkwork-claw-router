@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46624,
+  "uuid": "skill-clawhub-eb-dev-workflow",
+  "skillKey": "clawhub-eb-dev-workflow",
+  "name": "Dev Workflow",
+  "summary": "Master orchestrator for the full autonomous development lifecycle. Use this skill whenever the user mentions starting a new feature, has an idea to implement...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eb_dev_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Emerson Braun",
+      "features": [
+        "Master orchestrator for the full autonomous development lifecycle",
+        "Use this skill whenever the user mentions starting a new feature, has an idea to implement..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eb-dev-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25778027?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eb-dev-workflow",
+      "url": "https://clawhub.ai/skills/eb-dev-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eb-dev-workflow",
+    "url": "https://clawhub.ai/skills/eb-dev-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eb-dev-workflow-92ebb3778f402bbf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eb-dev-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eb-dev-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d61865ac8f30096243f6c0899d32294f12b0ae4cb3c5dc521a9c6b899574eca",
+      "artifactSizeBytes": 2572
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T23:07:35.050Z"
+}

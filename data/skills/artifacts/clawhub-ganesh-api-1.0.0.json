@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ganesh-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ganesh_api",
+  "skill": {
+    "id": 39375,
+    "skillKey": "clawhub-ganesh-api",
+    "name": "Ganesh API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ganesh-api",
+    "url": "https://clawhub.ai/skills/ganesh-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ganesh-api-cfc5675e4354c72f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ganesh Image Hosting API for image hosting. Use when user mentions \"Ganesh\", \"upload image\", \"image hosting\", or asks about image sharing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidbergman121",
+      "userId": "s17famks4317rpe114m59s5eys855zd1",
+      "displayName": "davidbergman121",
+      "image": "https://avatars.githubusercontent.com/u/270659359?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776616072231,
+      "changelog": "Ganesh Image Hosting API skill initial release.\n\n- Introduces Ganesh, a free image hosting service.\n- Supports uploading images and generating shareable URLs.\n- Can be used for image sharing, embedding, or documentation.\n- Allows anonymous uploads without requiring an account.\n- Links to official API documentation for up-to-date usage details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51e0a441f194fde599a5970a63fb51a3b280424673ed877a37bca249e36a7221"
+}

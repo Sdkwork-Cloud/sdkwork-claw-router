@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openpecha-frontend-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openpecha_frontend_skill",
+  "skill": {
+    "id": 32689,
+    "skillKey": "clawhub-openpecha-frontend-skill",
+    "name": "Openpecha frontend skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openpecha-frontend-skill",
+    "url": "https://clawhub.ai/skills/openpecha-frontend-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openpecha-frontend-skill-618c22b3624f9df7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, or appli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tenkus47",
+      "userId": "s17d18hq9nprqmbxzw9rzgzdsn83nyq6",
+      "displayName": "tenkus47",
+      "image": "https://avatars.githubusercontent.com/u/42644738?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773918194230,
+      "changelog": "- Major skill refocus: transitioned from a full-stack/TypeScript-next-supabase-GraphQL technical skill to a dedicated, high-impact frontend design skill.\n- Added new design philosophy prioritizing bold, memorable aesthetics and extreme intentionality—avoid all generic AI-style UI.\n- Emphasized unique typography, committed color themes, strong spatial composition, and rich visual details.\n- Outlined guidelines for creative motion and animation, layered backgrounds, and non-generic fonts/colors/layouts.\n- Replaced previous backend and architectural conventions with frontend-focused creative and technical direction.\n- Removed prior documentation and backend/API/infra guidance. Added new frontend design consistency doc.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2817f956196deed8564e97227c4817d36e352b78d31942a2c84ca32d724bb9c4"
+}

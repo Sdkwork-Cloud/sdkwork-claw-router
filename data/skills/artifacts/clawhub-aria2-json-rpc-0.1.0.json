@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aria2-json-rpc@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aria2_json_rpc",
+  "skill": {
+    "id": 12477,
+    "skillKey": "clawhub-aria2-json-rpc",
+    "name": "Aria2 Json Rpc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aria2-json-rpc",
+    "url": "https://clawhub.ai/skills/aria2-json-rpc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aria2-json-rpc-12e91f31cc766fff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with aria2 download manager via JSON-RPC 2.0. Manage downloads, query status, and control tasks through natural language commands. Use when working with aria2, download management, or torrent operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "azzgo",
+      "userId": "publishers:azzgo",
+      "displayName": "azzgo",
+      "image": "https://avatars.githubusercontent.com/u/5636512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1657,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770273051710,
+      "changelog": "No changes detected in code or documentation for version 0.1.0.\n\n- Initial version; no updates since previous release.\n- Functionality and documentation remain the same.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f9dc0033dd52ed328f5491bcce2483d48cfe879531748041761b34f3bb04a245"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30828,
+  "uuid": "skill-clawhub-stackhawk",
+  "skillKey": "clawhub-stackhawk",
+  "name": "Stackhawk",
+  "summary": "StackHawk integration. Manage data, records, and automate workflows. Use when the user wants to interact with StackHawk data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stackhawk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "StackHawk integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with StackHawk data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stackhawk@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stackhawk",
+      "url": "https://clawhub.ai/skills/stackhawk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stackhawk",
+    "url": "https://clawhub.ai/skills/stackhawk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stackhawk-68f99bbfc45673fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stackhawk@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-stackhawk-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ab3d3efc95a47a142ee87175a36381a9fc68f9426f6c3d35fcc64049dae7f5c",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:46:40.633Z"
+}

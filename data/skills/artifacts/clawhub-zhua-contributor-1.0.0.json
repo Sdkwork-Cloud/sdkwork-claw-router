@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhua-contributor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhua_contributor",
+  "skill": {
+    "id": 62681,
+    "skillKey": "clawhub-zhua-contributor",
+    "name": "Zhua Contributor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhua-contributor",
+    "url": "https://clawhub.ai/skills/zhua-contributor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhua-contributor-4a93307cd9ab0cd7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "爪爪社区贡献系统 —— 发布技能到skillhub、撰写文档、分享经验。Use when 爪爪需要向OpenClaw社区贡献、发布技能、或建立影响力。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beipian261",
+      "userId": "publishers:beipian261",
+      "displayName": "beipian261",
+      "image": "https://avatars.githubusercontent.com/u/210724771?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 292,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773768926065,
+      "changelog": "Initial release of zhua-contributor.\n\n- Enables publishing skills to skillhub, writing documentation, and sharing experience within the OpenClaw community.\n- Supports key contribution types: skill release, documentation, bug fixes, community support, and knowledge sharing.\n- Provides step-by-step workflow for packaging, validating, documenting, and releasing skills.\n- Introduces influence metrics such as downloads, community activity, and feedback scores.\n- Defines Zhuazhua branding and roles within the community.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16a2679750174ee2cdefc1a6297c9d69f8b7c773e67291be4fa56326ce03ef4b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-novel-chongshengfuchou@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_novel_chongshengfuchou",
+  "skill": {
+    "id": 67408,
+    "skillKey": "clawhub-ai-novel-chongshengfuchou",
+    "name": "AI重生复仇爽文自动生成"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-novel-chongshengfuchou",
+    "url": "https://clawhub.ai/skills/ai-novel-chongshengfuchou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-novel-chongshengfuchou-e1560bf55eba1691.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全自动\"重生爽文\"短视频流水线。给定题材，依次完成： AI生成小说 → TTS语音合成 → FFmpeg竖屏视频合成。 触发关键词：生成爽文、生成小说视频、重生爽文流水线、 novel pipeline、tts 合成视频、爽文视频。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "h1456942763",
+      "userId": "s1765cggzgnk8qdwm17k5tj6md83mb5r",
+      "displayName": "ZeroH",
+      "image": "https://avatars.githubusercontent.com/u/37604527?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 518,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773197485321,
+      "changelog": "ai-novel-chongshengfuchou v1.0.2\n\n- No file changes detected in this version.\n- Documentation and SKILL.md remain unchanged.\n- No user-facing features or bug fixes in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ae1ea9092acd9fc68400ab0c3572e56b31f4ceb96039c9b66cdc3d0a21b3ad1"
+}

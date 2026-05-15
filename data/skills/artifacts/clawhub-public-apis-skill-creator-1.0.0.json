@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/public-apis-skill-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.public_apis_skill_creator",
+  "skill": {
+    "id": 59863,
+    "skillKey": "clawhub-public-apis-skill-creator",
+    "name": "Public APIs Skill Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "public-apis-skill-creator",
+    "url": "https://clawhub.ai/skills/public-apis-skill-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/public-apis-skill-creator-c40b56b02f134988.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "公共API/免费API SKILL生成器：从 public-apis/public-apis 自动检索免费 API，按功能推荐并给出最小可用调用示例（curl/Python/JS），并可自动生成自定义名称的 API skill。用户提到“公共API”“免费API”“public APIs”“找接口/找API”“生..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "547895019",
+      "userId": "s1700dbw372a56f2bh7btr8vwh83g45x",
+      "displayName": "547895019",
+      "image": "https://avatars.githubusercontent.com/u/7350824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 868,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771166504800,
+      "changelog": "Initial release: search/list public-apis, generate usage snippets, auto-generate custom-named API skills, support --pick selection",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b7624ebd6490aa58bf9ae36db4d54ccc6aca506098a8c5a8822a351fdde51b02"
+}

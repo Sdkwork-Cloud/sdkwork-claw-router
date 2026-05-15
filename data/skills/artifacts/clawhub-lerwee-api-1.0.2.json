@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lerwee-api@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lerwee_api",
+  "skill": {
+    "id": 64262,
+    "skillKey": "clawhub-lerwee-api",
+    "name": "Lerwee API Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lerwee-api",
+    "url": "https://clawhub.ai/skills/lerwee-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lerwee-api-66152317978497d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "乐维监控系统 API 集成工具。提供完整的 API 签名认证、监控对象管理、告警查询、事件平台等 86+ 个接口的调用能力。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lerwee",
+      "userId": "s179drnz45v8z453519b5s430583nh0a",
+      "displayName": "Lerwee",
+      "image": "https://avatars.githubusercontent.com/u/162661167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 976,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 6,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773911009187,
+      "changelog": "- Added structured frontmatter with skill name and description to improve discoverability.\n- Clarified skill capabilities in the description, highlighting API integration, signature authentication, and support for 86+ interfaces.\n- No functional changes to usage steps, API details, or code examples.\n- The rest of the documentation content remains in sync with the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9bbe7094211138955bed235d9cb4c201f4d91a130e15c581694678b7a2ac35fb"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jiekou-multimodal@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiekou_multimodal",
+  "skill": {
+    "id": 67024,
+    "skillKey": "clawhub-jiekou-multimodal",
+    "name": "Jiekou Multimodal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiekou-multimodal",
+    "url": "https://clawhub.ai/skills/jiekou-multimodal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiekou-multimodal-23c8ce29bb0daa04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用接口AI 执行多模态任务：文生图、图生图、文生视频、图生视频、TTS、STT。 适用于：生成图片、生成视频、文字转语音、语音识别。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ximasadila",
+      "userId": "s17a1yve62qf41hcw7n8zs0w198425k8",
+      "displayName": "bbear",
+      "image": "https://avatars.githubusercontent.com/u/133744881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 427,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1773338467938,
+      "changelog": "**简要版本更新内容：本版本优化了 API Key 配置流程，增强了用户体验提示，简化了文档结构。**\n\n- 支持三种 API Key 配置方式：配置文件（推荐）、环境变量、或直接传参，优先级明确。\n- 增加详细的进度提示规范，执行前先向用户说明处理进度和预计耗时。\n- 优化了视频生成的轮询状态提示，每 15 秒自动更新进度。\n- 删除了部分原有功能说明（如图片/音频/视频理解），聚焦“文生图、图生图、文生视频、图生视频、TTS、STT”六大任务类型。\n- 简化并梳理 API 端点与调用示例，明确“快速模型”触发词和场景。\n- 更新了错误处理与费用说明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c921c51bfbe7ff824d4502449161acfee206a29a1fb5e6074c91de8a2a333ca3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawpressor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawpressor",
+  "skill": {
+    "id": 18538,
+    "skillKey": "clawhub-clawpressor",
+    "name": "Session Context Compressor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawpressor",
+    "url": "https://clawhub.ai/skills/clawpressor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawpressor-decc9983b88fefc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compress OpenClaw session context to reduce token usage and extend session lifetime. Uses NLP summarization (Sumy) to intelligently compact conversation history while preserving essential context. Triggers on mentions of session compressio."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beboxos",
+      "userId": "publishers:beboxos",
+      "displayName": "beboxos",
+      "image": "https://avatars.githubusercontent.com/u/33153857?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1022,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770937388253,
+      "changelog": "Initial release - Session context compression using Sumy NLP.\nReduces token usage by 84-96%, extends session lifetime by 400%.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:589acd7a9a2df43a90b6470045ce2242a62f146aa50c0c0ad8f83fdbd55dc446"
+}

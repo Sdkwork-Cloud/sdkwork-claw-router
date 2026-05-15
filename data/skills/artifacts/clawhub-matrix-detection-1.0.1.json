@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/matrix-detection@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.matrix_detection",
+  "skill": {
+    "id": 32488,
+    "skillKey": "clawhub-matrix-detection",
+    "name": "Matrix Detection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "matrix-detection",
+    "url": "https://clawhub.ai/skills/matrix-detection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/matrix-detection-c22f62714be94822.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Identify illusions, hype, false narratives, and systemic manipulation; classify signal vs noise with evidence and risk tags."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mzfshark",
+      "userId": "s17c7t947t48hg8ymjbywz1th583y2n6",
+      "displayName": "Mauricio Z.",
+      "image": "https://avatars.githubusercontent.com/u/26634695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 251,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777051979672,
+      "changelog": "Version 2.0.0 — Major feature and scope expansion\n\n- Expanded from descriptive detection to a structured evaluation framework with required inputs and classification steps.\n- Added specific input fields: narrative, context, and optional source + incentives.\n- Introduced detailed analysis steps including trigger identification, asymmetry detection, verification, historical comparison, and risk assignment.\n- Outputs now include classification, evidence-based reasoning, risk level, and concrete verification steps.\n- New safety guidelines to prevent unsupported claims and clarify uncertainty.\n- Provided clear usage scenarios and practical example output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad5883a7edfda93cbe8db055abe26395fed560923db877f7ae8817e1adb1c797"
+}

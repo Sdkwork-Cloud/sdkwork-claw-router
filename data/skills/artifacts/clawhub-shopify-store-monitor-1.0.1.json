@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopify-store-monitor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_store_monitor",
+  "skill": {
+    "id": 38418,
+    "skillKey": "clawhub-shopify-store-monitor",
+    "name": "Shopify Sale Tracker & Shopify Store Tracker + Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-store-monitor",
+    "url": "https://clawhub.ai/skills/shopify-store-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-store-monitor-0b5608832939ed00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track Shopify store sales and monitor store performance using PPSPY sales monitoring tools. Create monitoring tasks, inspect hourly and daily sales, and mana..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fanyanggod",
+      "userId": "s176gtyby3x3jz51q780av8wjn83paxt",
+      "displayName": "fanyanggod",
+      "image": "https://avatars.githubusercontent.com/u/44659216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775098989991,
+      "changelog": "- Updated setup instructions to clarify how to access the real-time dashboard and product UI via the official website.\n- Added details about visiting the API site for obtaining the API key and managing billing.\n- No functional or code changes; documentation improvement only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a6157dcbc3ddb8fb84ecdc96844ecf60b4860b0f01dfbf72ba26523733bbfd8"
+}

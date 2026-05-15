@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/public-opinion-insights@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.public_opinion_insights",
+  "skill": {
+    "id": 62057,
+    "skillKey": "clawhub-public-opinion-insights",
+    "name": "public-opinion-insights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "public-opinion-insights",
+    "url": "https://clawhub.ai/skills/public-opinion-insights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/public-opinion-insights-59d6b0c34e38a927.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用 Midu 舆情分析接口，针对指定主体进行指定维度的舆情分析。分析维度包括：['事件概况', '事件进程', '信息总量', '传播速度', '热搜情况', '跨平台传播', '媒体报道情况', 'KOL参与情况', '传播层级', '热门信息', '情绪烈度', '媒体观点分析', 'KOL观点分析', '..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bitallin",
+      "userId": "s17fbc977wmez255xj0vrg1n1n8438qf",
+      "displayName": "bitallin",
+      "image": "https://avatars.githubusercontent.com/u/35096126?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1775131640537,
+      "changelog": "Initial release of public-opinion-insights:\n\n- Provides structured public opinion analysis for specified subjects using the Midu API.\n- Supports a wide range of analytical dimensions such as event overview, media coverage, propagation levels, sentiment intensity, and more.\n- Requires configuration of the MIDU_API_KEY environment variable.\n- Focuses on concise, dimension-specific insights instead of full-length reports.\n- Highlights best practices and usage notes, including timeout configuration and single-request workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59d737c14a5b6ac2622e724728fab8d33a14bb138a2d055fdcc1437fc5e90387"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13610,
+  "uuid": "skill-clawhub-dilemm-ai",
+  "skillKey": "clawhub-dilemm-ai",
+  "name": "DilemmAI Competition",
+  "summary": "Compete in DilemmAI, the prisoner's dilemma AI arena at dilemm.ai. Use when an OpenClaw agent wants to create an account, design and submit strategy prompts for their bot, enter matchmaking, analyze historical matches and leaderboards, and.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dilemm_ai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zyori",
+      "features": [
+        "Compete in DilemmAI, the prisoner's dilemma AI arena at dilemm.ai",
+        "Use when an OpenClaw agent wants to create an account, design and submit strategy prompts for t.",
+        "Requires headless browser automation (no API available yet)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dilemm-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15717413?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dilemm-ai",
+      "url": "https://clawhub.ai/skills/dilemm-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dilemm-ai",
+    "url": "https://clawhub.ai/skills/dilemm-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dilemm-ai-9af3b2608796092a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dilemm-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dilemm-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c890edd38082b16f8981f98f6f0fa39498ff25649f2f9d3164cd3e2713946654",
+      "artifactSizeBytes": 2084
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T17:17:31.274Z"
+}

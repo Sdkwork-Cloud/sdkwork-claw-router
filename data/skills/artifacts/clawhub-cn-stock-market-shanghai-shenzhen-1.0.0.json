@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-stock-market-shanghai-shenzhen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_stock_market_shanghai_shenzhen",
+  "skill": {
+    "id": 34814,
+    "skillKey": "clawhub-cn-stock-market-shanghai-shenzhen",
+    "name": "China Stock Market Shanghai Shenzhen Index"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-stock-market-shanghai-shenzhen",
+    "url": "https://clawhub.ai/skills/cn-stock-market-shanghai-shenzhen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-stock-market-shanghai-shenzhen-fcf4500e23d2ee6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get China A-share market data (Shanghai/SH and Shenzhen/SZ) via FinanceAgent on OneKey Gateway."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ai-hub-admin",
+      "userId": "s17d1vfn6f6qk27s9f66nbe8ed83hcrr",
+      "displayName": "AI-Hub-Admin",
+      "image": "https://avatars.githubusercontent.com/u/184629057?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774883017772,
+      "changelog": "- Initial release of cn-stock-market-shanghai-shenzhen skill.\n- Provides access to China A-share (Shanghai/SH and Shenzhen/SZ) market data.\n- Uses OneKey Gateway and FinanceAgent for data retrieval.\n- Requires a OneKey Gateway API key for authentication.\n- Supports CLI and HTTP (curl) usage for querying stock symbols with SH/SZ prefixes.\n- Returns stock quote data in JSON format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c5fab6f485d142db1f93570abf67bbe1fadbfddf90d73baa02e0c1888eb2859"
+}

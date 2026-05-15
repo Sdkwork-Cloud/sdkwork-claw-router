@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9671,
+  "uuid": "skill-clawhub-tinyfish-web-agent",
+  "skillKey": "clawhub-tinyfish-web-agent",
+  "name": "TinyFish Web Agent",
+  "summary": "Use TinyFish web agent to extract/scrape websites, extract data, and automate browser actions using natural language. Use when you need to extract/scrape dat...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tinyfish_web_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Simantak Dabhade",
+      "features": [
+        "Use TinyFish web agent to extract/scrape websites, extract data, and automate browser actions u.",
+        "Use when you need to extract/scrape dat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tinyfish-web-agent@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67303107?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tinyfish-web-agent",
+      "url": "https://clawhub.ai/skills/tinyfish-web-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tinyfish-web-agent",
+    "url": "https://clawhub.ai/skills/tinyfish-web-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tinyfish-web-agent-469408ed84cebdfc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tinyfish-web-agent@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-tinyfish-web-agent-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6153c394260eead5bb2625705e5a214e17c0f6e7d796a4b132f622f1285e7137",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T00:47:01.510Z"
+}

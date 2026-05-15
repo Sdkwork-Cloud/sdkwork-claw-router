@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8403,
+  "uuid": "skill-clawhub-polymarket-odds",
+  "skillKey": "clawhub-polymarket-odds",
+  "name": "Polymarket Odds",
+  "summary": "Query Polymarket prediction market odds and events via CLI. Search for markets, get current prices, list events by category. Supports sports betting (NFL, NBA, soccer/EPL, Champions League), politics, crypto, elections, geopolitics. Real m.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_odds",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "deanpress",
+      "features": [
+        "Query Polymarket prediction market odds and events via CLI",
+        "Search for markets, get current prices, list events by category",
+        "Supports sports betting (NFL, NBA, soccer/EPL, Champions League), politics, crypto, elections,.",
+        "Real money markets = more accurate than polls"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-odds@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31391056?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-odds",
+      "url": "https://clawhub.ai/skills/polymarket-odds"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-odds",
+    "url": "https://clawhub.ai/skills/polymarket-odds",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-odds-06e055a2fc245857.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-odds@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-odds-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a648b4e807c8977459c2b671021ccf690df54d602b430ccb23454d8ca0b138af",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T18:03:27.598Z"
+}

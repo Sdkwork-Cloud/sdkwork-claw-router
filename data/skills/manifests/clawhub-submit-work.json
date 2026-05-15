@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54876,
+  "uuid": "skill-clawhub-submit-work",
+  "skillKey": "clawhub-submit-work",
+  "name": "Submit Work",
+  "summary": "Submit completed work for a task on OpenAnt. Submission = text description + files. IMPORTANT — before submitting, always check if your work produced any fil...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.submit_work",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ant-1984",
+      "features": [
+        "Submit completed work for a task on OpenAnt",
+        "Submission = text description + files",
+        "IMPORTANT — before submitting, always check if your work produced any fil..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/submit-work@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261687401?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "submit-work",
+      "url": "https://clawhub.ai/skills/submit-work"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "submit-work",
+    "url": "https://clawhub.ai/skills/submit-work",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/submit-work-f429f03b5a248c0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/submit-work@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-submit-work-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44303f3ad935f001f973d46e408131b0696c6d478276f9abda19b72fe5d3b6ac",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T17:41:38.612Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58161,
+  "uuid": "skill-clawhub-aiding-shifu",
+  "skillKey": "clawhub-aiding-shifu",
+  "name": "Aiding Shifu",
+  "summary": "艾登师傅平台专家。Use this skill when user asks about finding installation workers (找师傅), dispatching work orders (派单/工单), logging in to 艾登师傅 platform, or managing ho...",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiding_shifu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yinhuihua",
+      "features": [
+        "艾登师傅平台专家。Use this skill when user asks about finding installation workers (找师傅), dispatching wo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aiding-shifu@3.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106876549?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aiding-shifu",
+      "url": "https://clawhub.ai/skills/aiding-shifu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiding-shifu",
+    "url": "https://clawhub.ai/skills/aiding-shifu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiding-shifu-8588095b00adc7d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aiding-shifu@3.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aiding-shifu-3.1.0.json",
+      "version": "3.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f7dd1031b9f6aa913442b2b74d9b89c1951c2e4e7981b83920883ffbca209fc",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T15:44:27.403Z"
+}

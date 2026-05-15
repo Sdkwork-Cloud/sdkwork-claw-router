@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69518,
+  "uuid": "skill-clawhub-daily-meal-planner",
+  "skillKey": "clawhub-daily-meal-planner",
+  "name": "Daily Meal Planner",
+  "summary": "每日智能菜谱推荐。触发词：今天吃什么/中午吃什么/晚餐推荐/下午茶/夜宵/一周菜单/清淡/辣的/快手菜/减肥。支持按餐次、口味、心情、季节、天气、地域智能推荐，带详细做法和营养数据。",
+  "version": "1.2.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_meal_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jiaqi",
+      "features": [
+        "每日智能菜谱推荐。触发词：今天吃什么/中午吃什么/晚餐推荐/下午茶/夜宵/一周菜单/清淡/辣的/快手菜/减肥。支持按餐次、口味、心情、季节、天气、地域智能推荐，带详细做法和营养数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-meal-planner@1.2.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48824215?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-meal-planner",
+      "url": "https://clawhub.ai/skills/daily-meal-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-meal-planner",
+    "url": "https://clawhub.ai/skills/daily-meal-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-meal-planner-60390ea7f65bf6cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-meal-planner@1.2.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-meal-planner-1.2.6.json",
+      "version": "1.2.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22d41a6f4b83230295b9e733d07aff9884fe926643ee5f062a32e4cab9c1b1f7",
+      "artifactSizeBytes": 2430
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T09:42:26.361Z"
+}

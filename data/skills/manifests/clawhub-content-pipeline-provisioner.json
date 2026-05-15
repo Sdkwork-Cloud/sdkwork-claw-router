@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40813,
+  "uuid": "skill-clawhub-content-pipeline-provisioner",
+  "skillKey": "clawhub-content-pipeline-provisioner",
+  "name": "Content Pipeline Provisioner",
+  "summary": "Self-serve AI content pipeline skill for OpenClaw. Sets up and runs a fully automated social media content engine on your own OpenClaw instance using your ow...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_pipeline_provisioner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "olivimic",
+      "features": [
+        "Self-serve AI content pipeline skill for OpenClaw",
+        "Sets up and runs a fully automated social media content engine on your own OpenClaw instance us."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-pipeline-provisioner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250288610?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-pipeline-provisioner",
+      "url": "https://clawhub.ai/skills/content-pipeline-provisioner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-pipeline-provisioner",
+    "url": "https://clawhub.ai/skills/content-pipeline-provisioner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-pipeline-provisioner-3584a5957ac3407e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-pipeline-provisioner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-pipeline-provisioner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17df1d9a869791cc63e50d860e157acad2be1869134fd41d6572f8c774b13271",
+      "artifactSizeBytes": 2101
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T23:25:03.527Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17879,
+  "uuid": "skill-clawhub-keychain-bridge",
+  "skillKey": "clawhub-keychain-bridge",
+  "name": "Keychain Bridge Publish",
+  "summary": "Manage secrets via macOS Keychain instead of plaintext files. Migrate existing secrets, read/write keychain entries, bridge to files for bash tools, audit fo...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keychain_bridge",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Euda1mon1a",
+      "features": [
+        "Manage secrets via macOS Keychain instead of plaintext files",
+        "Migrate existing secrets, read/write keychain entries, bridge to files for bash tools, audit fo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/keychain-bridge@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214782221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "keychain-bridge",
+      "url": "https://clawhub.ai/skills/keychain-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keychain-bridge",
+    "url": "https://clawhub.ai/skills/keychain-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keychain-bridge-fdf0f5702d41127c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/keychain-bridge@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-keychain-bridge-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e5a9769138799d0f4eda6b05cdf5620949bde86bfa4e6a10a36f5d6064a533a",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T05:27:11.923Z"
+}

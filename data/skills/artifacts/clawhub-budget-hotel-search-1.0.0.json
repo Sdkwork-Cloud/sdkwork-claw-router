@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/budget-hotel-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.budget_hotel_search",
+  "skill": {
+    "id": 73685,
+    "skillKey": "clawhub-budget-hotel-search",
+    "name": "今夜特价酒店"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "budget-hotel-search",
+    "url": "https://clawhub.ai/skills/budget-hotel-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/budget-hotel-search-7f9c9d74c78895a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分贝通酒店预定助手，实时查询搜索酒店、展示酒店列表、查询酒店房型、展示房型产品和报价、预定酒店、查看订单、取消订单、查看酒店基础信息和酒店评论信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaogao605",
+      "userId": "s17cxwwzm94v9ntkczkmq0r2x983km1s",
+      "displayName": "fenbeitong-trip",
+      "image": "https://avatars.githubusercontent.com/u/265222913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774497010678,
+      "changelog": "今夜特价酒店-budget-hotel-search",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d343271c377e4ac88e4e716f437c35364d0319eefe03d47f2c4df2637eeac82e"
+}

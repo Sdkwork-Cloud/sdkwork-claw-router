@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_video",
+  "skill": {
+    "id": 46103,
+    "skillKey": "clawhub-openclaw-video",
+    "name": "Openclaw Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-video",
+    "url": "https://clawhub.ai/skills/openclaw-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-video-c63dddf26bf9e795.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute unedited screen recording into 1080p edited video clips just by typing what you need. Whether it's quickly editing and trimming raw video foo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776230884572,
+      "changelog": "- Initial release of openclaw-video: AI-powered video editing for quick, high-quality 1080p exports from raw footage.\n- Upload raw video (mp4, mov, avi, webm, mkv, image/audio formats) and describe the desired edit; no manual timeline or export settings needed.\n- Authentication automatically handled on first run via free, 7-day NEMO_TOKEN (100 credits); all processing happens securely on remote GPU nodes.\n- Key features: instant trimming, automated silence detection, background music, text overlays, rapid cloud rendering (usually 30–90 seconds).\n- Clear, guided workflows for uploading, editing, previewing, and exporting video content; concise error handling and status feedback.\n- Credits and session management integrated; supports registered and anonymous usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb23dd3438b5c185542dd5fc7e4c2aeab1806be124a3beda54708dd0eb596d1a"
+}

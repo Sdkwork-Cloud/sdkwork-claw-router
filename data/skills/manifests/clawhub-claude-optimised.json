@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8953,
+  "uuid": "skill-clawhub-claude-optimised",
+  "skillKey": "clawhub-claude-optimised",
+  "name": "OpenClaw Optimised",
+  "summary": "Guide for writing and optimizing CLAUDE.md files for maximum Claude Code performance. Use when creating new CLAUDE.md, reviewing existing ones, or when user asks about CLAUDE.md best practices. Covers structure, content, pruning, and commo.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_optimised",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hexnickk",
+      "features": [
+        "Guide for writing and optimizing CLAUDE.md files for maximum Claude Code performance",
+        "Use when creating new CLAUDE.md, reviewing existing ones, or when user asks about CLAUDE.md bes.",
+        "Covers structure, content, pruning, and common mistakes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-optimised@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6112517?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-optimised",
+      "url": "https://clawhub.ai/skills/claude-optimised"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-optimised",
+    "url": "https://clawhub.ai/skills/claude-optimised",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-optimised-7be581fd3cb9ea74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-optimised@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-optimised-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebe9e3942a7ab8731236806e52cc87c48f91283a1aee0bb6f576f3c2af5fbe6d",
+      "artifactSizeBytes": 2356
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T18:00:16.158Z"
+}

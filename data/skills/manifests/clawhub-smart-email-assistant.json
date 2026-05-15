@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62856,
+  "uuid": "skill-clawhub-smart-email-assistant",
+  "skillKey": "clawhub-smart-email-assistant",
+  "name": "Smart Email",
+  "summary": "AI智能邮件管理助手，支持 QQ、126、163、Outlook 多邮箱 IMAP 收取，本地归档，AI 智能判断紧急邮件，自动发送到用户指定渠道（Telegram/钉钉/企业微信/飞书等）。",
+  "version": "2.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_email_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bubu lamb",
+      "features": [
+        "AI智能邮件管理助手，支持 QQ、126、163、Outlook 多邮箱 IMAP 收取，本地归档，AI 智能判断紧急邮件，自动发送到用户指定渠道（Telegram/钉钉/企业微信/飞书等）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-email-assistant@2.5.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71304697?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-email-assistant",
+      "url": "https://clawhub.ai/skills/smart-email-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-email-assistant",
+    "url": "https://clawhub.ai/skills/smart-email-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-email-assistant-29716549fe77b191.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-email-assistant@2.5.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-email-assistant-2.5.2.json",
+      "version": "2.5.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a4ee960ca11727b5f1183e5b594a3a3382d7e06309c2bbf38528b0ab03d4b29",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T05:44:55.130Z"
+}

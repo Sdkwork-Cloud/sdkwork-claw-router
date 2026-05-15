@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawiser@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawiser",
+  "skill": {
+    "id": 58832,
+    "skillKey": "clawhub-clawiser",
+    "name": "ClaWiser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawiser",
+    "url": "https://clawhub.ai/skills/clawiser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawiser-5fa8cbd61e330a20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent 记忆与工作流增强套件。包含 8 个模块：记忆系统（memory-deposit、retrieval-enhance、noise-reduction）+ 工作流（hdd、sdd、save-game、load-game、project-skill-pairing）。当用户说\"安装 ClaWiser\"、\"初..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mattwenjun",
+      "userId": "publishers:mattwenjun",
+      "displayName": "WenJun",
+      "image": "https://avatars.githubusercontent.com/u/20513371?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 393,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773917162165,
+      "changelog": "Add Claude Code compatibility; refine SKILL.md evaluation flow",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7095f63ddbe06673cfd3afcf1e8ed9316b3748270c7a76df576b28ac6521a9e2"
+}

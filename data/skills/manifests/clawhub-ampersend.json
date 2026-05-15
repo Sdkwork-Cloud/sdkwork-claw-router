@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18344,
+  "uuid": "skill-clawhub-ampersend",
+  "skillKey": "clawhub-ampersend",
+  "name": "ampersend",
+  "summary": "Ampersend CLI for agent payments",
+  "version": "1.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ampersend",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matias",
+      "features": [
+        "Ampersend CLI for agent payments"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ampersend@1.0.14",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/185088275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ampersend",
+      "url": "https://clawhub.ai/skills/ampersend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ampersend",
+    "url": "https://clawhub.ai/skills/ampersend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ampersend-3ea5798c3068dac8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ampersend@1.0.14",
+      "artifactUrl": "data/skills/artifacts/clawhub-ampersend-1.0.14.json",
+      "version": "1.0.14",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ee02589d1cb6218715be4b40395b2c069aba5f06bac610af99d58f8d033ef55",
+      "artifactSizeBytes": 2111
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T13:57:48.374Z"
+}

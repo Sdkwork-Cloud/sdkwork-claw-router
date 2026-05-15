@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62491,
+  "uuid": "skill-clawhub-cmaiot",
+  "skillKey": "clawhub-cmaiot",
+  "name": "cmaiot-basic-general-kit",
+  "summary": "查询并控制cmaiot平台上的产品和设备，并可获取视频设备的播放地址。cmaiot平台的正式名称是中国移动AIoT平台(iot.10086.cn)。连接需要的产品API Key和产品ID由cmaiot工具保存。目前只支持使用物模型的设备。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmaiot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ch2925",
+      "features": [
+        "查询并控制cmaiot平台上的产品和设备，并可获取视频设备的播放地址。cmaiot平台的正式名称是中国移动AIoT平台(iot.10086.cn)。连接需要的产品API Key和产品ID由c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cmaiot@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46040749?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cmaiot",
+      "url": "https://clawhub.ai/skills/cmaiot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmaiot",
+    "url": "https://clawhub.ai/skills/cmaiot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmaiot-313c66c23aed3dd0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cmaiot@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-cmaiot-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65f4a4b06545b4be56ad5f4657ea937f5ae275bc8bb6b9179a98e309d4128eb2",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T02:32:15.742Z"
+}

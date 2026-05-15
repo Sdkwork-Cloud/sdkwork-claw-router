@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68117,
+  "uuid": "skill-clawhub-city-walker",
+  "skillKey": "clawhub-city-walker",
+  "name": "city-walker",
+  "summary": "城市漫游者，发现城市隐藏角落的半日步行路线。当用户想\"逛逛城市\"\"探索附近\"\"找个地方散步\"\"发现小众景点\"或需要城市微旅行方案时使用此 skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.city_walker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "厉云涵",
+      "features": [
+        "城市漫游者，发现城市隐藏角落的半日步行路线。当用户想\"逛逛城市\"\"探索附近\"\"找个地方散步\"\"发现小众景点\"或需要城市微旅行方案时使用此 skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/city-walker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5434045?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "city-walker",
+      "url": "https://clawhub.ai/skills/city-walker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "city-walker",
+    "url": "https://clawhub.ai/skills/city-walker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/city-walker-a57987c865491ee2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/city-walker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-city-walker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3961c9978d68c035a176b9936e60d4af88260ac78d606dfc26d31707f4b0242",
+      "artifactSizeBytes": 2490
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:14:54.120Z"
+}

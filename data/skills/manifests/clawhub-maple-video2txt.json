@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64693,
+  "uuid": "skill-clawhub-maple-video2txt",
+  "skillKey": "clawhub-maple-video2txt",
+  "name": "video2txt-视频理解字幕提取",
+  "summary": "将本地视频或音频文件转写为 SRT 字幕文件和 TXT 纯文本文件",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maple_video2txt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chentx1243",
+      "features": [
+        "将本地视频或音频文件转写为 SRT 字幕文件和 TXT 纯文本文件"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maple-video2txt@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149167066?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maple-video2txt",
+      "url": "https://clawhub.ai/skills/maple-video2txt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maple-video2txt",
+    "url": "https://clawhub.ai/skills/maple-video2txt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maple-video2txt-2cc9589cd62581a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maple-video2txt@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-maple-video2txt-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b81bfd8a7f3d773e98d0c6375bfd7605f9b34a3f9838d7154e557809832baa69",
+      "artifactSizeBytes": 2115
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T05:48:18.267Z"
+}

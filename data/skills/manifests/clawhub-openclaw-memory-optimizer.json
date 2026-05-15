@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61817,
+  "uuid": "skill-clawhub-openclaw-memory-optimizer",
+  "skillKey": "clawhub-openclaw-memory-optimizer",
+  "name": "OpenClaw: memory optimizer",
+  "summary": "自动优化 OpenClaw 4.2 记忆搜索参数。当用户提到记忆不准确、搜索结果太少、MMR 关闭、时间衰减未启用、session 同步阈值过高，或者要求优化 OpenClaw 记忆系统时触发。也用于定期检查和调整 memory-search 配置。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_memory_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NICSHLIU",
+      "features": [
+        "自动优化 OpenClaw 4.2 记忆搜索参数。当用户提到记忆不准确、搜索结果太少、MMR 关闭、时间衰减未启用、session 同步阈值过高，或者要求优化 OpenClaw 记忆系统时触."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-memory-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264651867?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-memory-optimizer",
+      "url": "https://clawhub.ai/skills/openclaw-memory-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-memory-optimizer",
+    "url": "https://clawhub.ai/skills/openclaw-memory-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-memory-optimizer-d492a5bf7c68471d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-memory-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-memory-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79f7c30fad3f94d3a6927c019e32f4c8558743a4d933a8f68120a23d04eb1b6d",
+      "artifactSizeBytes": 2155
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T02:30:57.329Z"
+}

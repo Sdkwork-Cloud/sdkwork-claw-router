@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36409,
+  "uuid": "skill-clawhub-timeflow-systematic-debugging",
+  "skillKey": "clawhub-timeflow-systematic-debugging",
+  "name": "Systematic Debugging",
+  "summary": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.timeflow_systematic_debugging",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "soponcd",
+      "features": [
+        "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/timeflow-systematic-debugging@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31302208?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "timeflow-systematic-debugging",
+      "url": "https://clawhub.ai/skills/timeflow-systematic-debugging"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "timeflow-systematic-debugging",
+    "url": "https://clawhub.ai/skills/timeflow-systematic-debugging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/timeflow-systematic-debugging-475f38300f73e756.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/timeflow-systematic-debugging@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-timeflow-systematic-debugging-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:963b0acd70ff7576db3dddf2a6f9edffc5b4188be89020eee2e043f224bd513e",
+      "artifactSizeBytes": 2443
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:10:45.408Z"
+}

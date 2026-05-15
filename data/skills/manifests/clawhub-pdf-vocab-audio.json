@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61595,
+  "uuid": "skill-clawhub-pdf-vocab-audio",
+  "skillKey": "clawhub-pdf-vocab-audio",
+  "name": "Pdf Vocab Audio",
+  "summary": "从 PDF 提取词汇生成朗读音频，每个词组读两遍",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_vocab_audio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "effeceee",
+      "features": [
+        "从 PDF 提取词汇生成朗读音频，每个词组读两遍"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-vocab-audio@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195583691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-vocab-audio",
+      "url": "https://clawhub.ai/skills/pdf-vocab-audio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-vocab-audio",
+    "url": "https://clawhub.ai/skills/pdf-vocab-audio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-vocab-audio-b8a205768bd9ba97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-vocab-audio@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-vocab-audio-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97ea33efe7e85bd11ee719ba8af8603abf487b1c15ba68fcd716f043ecc2b8c6",
+      "artifactSizeBytes": 1784
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T16:14:32.824Z"
+}

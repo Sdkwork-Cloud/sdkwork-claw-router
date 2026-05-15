@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/y-ddd-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.y_ddd_skills",
+  "skill": {
+    "id": 70049,
+    "skillKey": "clawhub-y-ddd-skills",
+    "name": "DDD领域驱动设计技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "y-ddd-skills",
+    "url": "https://clawhub.ai/skills/y-ddd-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/y-ddd-skills-aef22ad27bedcbdd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DDD 领域驱动设计完整技能套件。适用场景：当用户提到 DDD 领域驱动设计、或需要全面覆盖新项目开发、老项目重构、架构规范、战术设计、代码审查等多个维度时使用此总入口 Skill。该 Skill 会引导用户根据具体场景选择对应的专业 Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "renyangy",
+      "userId": "s178z7hx44q9xshh6g18j02s3h83pgwh",
+      "displayName": "renyangY",
+      "image": "https://avatars.githubusercontent.com/u/168532868?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774834530516,
+      "changelog": "Y-DDD-SKILLS 1.0.0 introduces a comprehensive DDD guidance skill set:\n\n- Covers all major DDD stages: concept, architecture, tactics, new project, refactoring, and code review.\n- Provides entry points for each scenario, guiding users to specialized skills.\n- Includes recommended usage paths for new development and legacy refactoring.\n- Supports Java/Kotlin + Spring/JPA for code examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3eddde275cc20bc1f399db37231ae6efaa1266e65097e5ab25cb03eb966feaf"
+}

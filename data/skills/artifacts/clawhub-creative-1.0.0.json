@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/creative@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creative",
+  "skill": {
+    "id": 52687,
+    "skillKey": "clawhub-creative",
+    "name": "Creative"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creative",
+    "url": "https://clawhub.ai/skills/creative",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creative-828febb7609afd5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use for creative agencies, design studios, and content teams — project management, client communication, creative briefs, review workflows, content calendars..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rithythul",
+      "userId": "s170yzwahsbw4t8tkmxb8pjc7984cp8b",
+      "displayName": "rithythul",
+      "image": "https://avatars.githubusercontent.com/u/5461492?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775562759733,
+      "changelog": "Initial release: streamlined creative operations blueprint for agencies and content teams.\n\n- Provides project management templates including creative briefs, project tracking, and status roll-ups\n- Defines review & approval workflows for internal and client-facing deliverables\n- Introduces structured client communication protocols and feedback request processes\n- Outlines detailed content calendar planning and content production pipelines\n- Offers copywriting guidance, including headline generation, A/B testing, and CTA best practices\n- Emphasizes brand guideline management and asset organization through living references",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a353e87ed6813c76cdbc8b826078c0798d3b8822e9117ef2fa14505fe3c94017"
+}

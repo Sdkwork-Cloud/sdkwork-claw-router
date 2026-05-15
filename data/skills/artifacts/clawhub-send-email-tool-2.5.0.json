@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/send-email-tool@2.5.0",
+  "version": "2.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.send_email_tool",
+  "skill": {
+    "id": 67320,
+    "skillKey": "clawhub-send-email-tool",
+    "name": "Send Email Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "send-email-tool",
+    "url": "https://clawhub.ai/skills/send-email-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/send-email-tool-139b9f63e546c898.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "邮件发送工具。配置 SMTP 发件人后，通过脚本发送纯文本或 HTML 邮件，支持附件、抄送、密送。在需要发送邮件通知、报告、自动化邮件时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flyingtimes",
+      "userId": "s17a1crq2ecdvx8g934wzyh9yn83q44e",
+      "displayName": "flyingtimes",
+      "image": "https://avatars.githubusercontent.com/u/5668052?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 707,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "2.5.0",
+      "createdAt": 1772465690174,
+      "changelog": "优化 Markdown 自动检测和图片内嵌功能，改进文档说明",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c4dd2ca3d24b9111785edb6ab5306e0ed20917939c2d720dcb7f44075019c798"
+}

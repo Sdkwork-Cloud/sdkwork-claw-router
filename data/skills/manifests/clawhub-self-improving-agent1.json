@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35855,
+  "uuid": "skill-clawhub-self-improving-agent1",
+  "skillKey": "clawhub-self-improving-agent1",
+  "name": "Learning Capture",
+  "summary": "Capture user corrections, failed tool runs, recurring gotchas, and useful lessons as short structured notes. Use when a mistake or workflow learning should b...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_agent1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brasco05",
+      "features": [
+        "Capture user corrections, failed tool runs, recurring gotchas, and useful lessons as short stru.",
+        "Use when a mistake or workflow learning should b..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-improving-agent1@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256532966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-improving-agent1",
+      "url": "https://clawhub.ai/skills/self-improving-agent1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-agent1",
+    "url": "https://clawhub.ai/skills/self-improving-agent1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-agent1-f1e1415a5d016822.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-improving-agent1@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-improving-agent1-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:502bdc9d9a37cbc8674d95b3842d9c063743fc56fd3cd4ecc4897be61040ac49",
+      "artifactSizeBytes": 2057
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T08:22:34.820Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/todoist-td@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todoist_td",
+  "skill": {
+    "id": 11702,
+    "skillKey": "clawhub-todoist-td",
+    "name": "Todoist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todoist-td",
+    "url": "https://clawhub.ai/skills/todoist-td",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todoist-td-32b9564d149fd85a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the td (Todoist CLI) to read and manage Todoist todos/to-dos/tasks from the terminal. Trigger when the user asks about their todos/tasks/agenda/checklist (today/upcoming/overdue), wants to list inbox/tasks/projects/labels, add a task/t."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mattjefferson",
+      "userId": "publishers:mattjefferson",
+      "displayName": "mattjefferson",
+      "image": "https://avatars.githubusercontent.com/u/1720223?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2031,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1769218326270,
+      "changelog": "Rename display name to 'Todoist'.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:814ac62c52ce8f6698f4de31d3ee720d58f433ba7e7f9a7d69fca2d9babebda8"
+}

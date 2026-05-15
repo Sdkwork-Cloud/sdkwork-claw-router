@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21656,
+  "uuid": "skill-clawhub-feishu-api-lookup",
+  "skillKey": "clawhub-feishu-api-lookup",
+  "name": "Feishu API Lookup",
+  "summary": "Look up Feishu Open API documentation. Activate when: needing to find a specific Feishu API endpoint, understanding API parameters/response, writing scripts...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_api_lookup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "deadblue",
+      "features": [
+        "Look up Feishu Open API documentation",
+        "Activate when: needing to find a specific Feishu API endpoint, understanding API parameters/res."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-api-lookup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/448649?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-api-lookup",
+      "url": "https://clawhub.ai/skills/feishu-api-lookup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-api-lookup",
+    "url": "https://clawhub.ai/skills/feishu-api-lookup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-api-lookup-c73d307d73c80a5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-api-lookup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-api-lookup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b220504eddb1044861694a7ab2afcd9526c85a3959a6ed1786e2c5d6c27c8fc",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T16:31:08.917Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69788,
+  "uuid": "skill-clawhub-wuxingbazi-daily",
+  "skillKey": "clawhub-wuxingbazi-daily",
+  "name": "wuxingbazi-daily",
+  "summary": "老黄历Daily - 传统五行命理与每日运势工具。当用户询问生辰八字、五行属性、命格分析、每日运势提醒、黄历宜忌时使用此 Skill。功能包括：根据生日计算五行命理（金木水火土）、分析八字命格、生成每日运势与宜忌建议。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wuxingbazi_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "timyljob2011-sudo",
+      "features": [
+        "老黄历Daily",
+        "传统五行命理与每日运势工具。当用户询问生辰八字、五行属性、命格分析、每日运势提醒、黄历宜忌时使用此 Skill。功能包括：根据生日计算五行命理（金木水火土）、分析八字命格、生成每日运势与宜忌."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wuxingbazi-daily@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253444946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wuxingbazi-daily",
+      "url": "https://clawhub.ai/skills/wuxingbazi-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wuxingbazi-daily",
+    "url": "https://clawhub.ai/skills/wuxingbazi-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wuxingbazi-daily-50812740536b85fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wuxingbazi-daily@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wuxingbazi-daily-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40fb047e083d3e3652fcc0bf55c2ca91dec680423ad87068d4249f39bfba01e9",
+      "artifactSizeBytes": 2621
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:35:05.267Z"
+}

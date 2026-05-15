@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-deep-study@3.1.1",
+  "version": "3.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_deep_study",
+  "skill": {
+    "id": 70744,
+    "skillKey": "clawhub-book-deep-study",
+    "name": "Book Deep Study"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-deep-study",
+    "url": "https://clawhub.ai/skills/book-deep-study",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-deep-study-efb355e0086690cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "把一本书、PDF、长文章或学习材料变成角色扮演式、对话式、分阶段的深度学习过程。用于用户想真正读懂、看透、吸收、内化一本书，而不是只要摘要的时候。触发场景包括：\"陪我读这本书\"、\"帮我把这本书看透\"、\"像老师一样带我学\"、\"给我一个学习路径\"、\"一章一章带我读\"、\"和我对话式读这本书\"，或用户直接发来书名、PDF..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tanjinlimkelvin-dot",
+      "userId": "s17ftbnyep3rsqrbkyww8xnsph83hy2b",
+      "displayName": "tanjinlimkelvin-dot",
+      "image": "https://avatars.githubusercontent.com/u/266243000?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "3.1.1",
+      "createdAt": 1776559105696,
+      "changelog": "- Marked the skill as DEPRECATED in SKILL.md.\n- Added clear instructions to use the canonical skill file instead.\n- Removed all previous documentation and guidance from SKILL.md.\n- Kept the file minimal to prevent usage of outdated information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d95a36ba058e135728366fb0759a6336af6eb2f5b0e4e46c1a78ff92cd3ae39f"
+}

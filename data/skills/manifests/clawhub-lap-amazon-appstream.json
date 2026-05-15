@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48271,
+  "uuid": "skill-clawhub-lap-amazon-appstream",
+  "skillKey": "clawhub-lap-amazon-appstream",
+  "name": "Lap Amazon Appstream",
+  "summary": "Amazon AppStream API skill. Use when working with Amazon AppStream for root. Covers 79 endpoints.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lap_amazon_appstream",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mickmicksh",
+      "features": [
+        "Amazon AppStream API skill",
+        "Use when working with Amazon AppStream for root",
+        "Covers 79 endpoints."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lap-amazon-appstream@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214470470?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lap-amazon-appstream",
+      "url": "https://clawhub.ai/skills/lap-amazon-appstream"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lap-amazon-appstream",
+    "url": "https://clawhub.ai/skills/lap-amazon-appstream",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lap-amazon-appstream-91a74f984b5281c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lap-amazon-appstream@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lap-amazon-appstream-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9d97dfcf2b1da03a7c1678f17d225068f6ee0a3bd23a861ea7e0912d46c1317",
+      "artifactSizeBytes": 2317
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T09:48:11.492Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rag-knowledge-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rag_knowledge_assistant",
+  "skill": {
+    "id": 60913,
+    "skillKey": "clawhub-rag-knowledge-assistant",
+    "name": "rag-knowledge-assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rag-knowledge-assistant",
+    "url": "https://clawhub.ai/skills/rag-knowledge-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rag-knowledge-assistant-db5b241a7bb13a67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于向量数据库的 RAG(检索增强生成) 知识库助手。支持语义检索、多格式文档 (PDF/Word/Excel/Markdown) 处理、智能问答。使用 Chroma 向量库 + BGE-M3 Embedding 模型。适用于从 knowledge 目录快速检索信息、回答基于文档的问题。触发词：\"从知识库查\"、\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aixbinge",
+      "userId": "s178dgfgag9jq3knvh04yy26td83rtqp",
+      "displayName": "AI小兵哥",
+      "image": "https://avatars.githubusercontent.com/u/221703242?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774666677327,
+      "changelog": "Initial release - RAG knowledge base assistant with vector search, multi-format document support (PDF/Word/Excel/Markdown), intelligent Q&A using Chroma + BGE-M3 embedding model.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:caa7beab7b2d2a0b9afd2a0342f0e4e041f815b601bd9ea2ec7cc11225e9f60b"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35131,
+  "uuid": "skill-clawhub-chronicler",
+  "skillKey": "clawhub-chronicler",
+  "name": "Chronicler",
+  "summary": "Turn your session history into publish-ready stories. An embedded AI journalist reviews your conversations and writes narrative dispatches about what you've...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chronicler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "moltbotmolty-del",
+      "features": [
+        "Turn your session history into publish-ready stories",
+        "An embedded AI journalist reviews your conversations and writes narrative dispatches about what."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chronicler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261833849?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chronicler",
+      "url": "https://clawhub.ai/skills/chronicler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chronicler",
+    "url": "https://clawhub.ai/skills/chronicler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chronicler-1e0b5b255e5024cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chronicler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chronicler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b6b50eeffaf3338779725db6b339e9d9d00079d7e171157d5c74fc85fc8256f",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:19:25.724Z"
+}

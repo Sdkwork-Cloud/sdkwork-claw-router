@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14337,
+  "uuid": "skill-clawhub-habib-pdf-to-json",
+  "skillKey": "clawhub-habib-pdf-to-json",
+  "name": "habib-pdf-to-json",
+  "summary": "Extract structured data from construction PDFs. Convert specifications, BOMs, schedules, and reports from PDF to Excel/CSV/JSON. Use OCR for scanned documents and pdfplumber for native PDFs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.habib_pdf_to_json",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dbmoradi60",
+      "features": [
+        "Extract structured data from construction PDFs",
+        "Convert specifications, BOMs, schedules, and reports from PDF to Excel/CSV/JSON",
+        "Use OCR for scanned documents and pdfplumber for native PDFs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/habib-pdf-to-json@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52333061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "habib-pdf-to-json",
+      "url": "https://clawhub.ai/skills/habib-pdf-to-json"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "habib-pdf-to-json",
+    "url": "https://clawhub.ai/skills/habib-pdf-to-json",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/habib-pdf-to-json-136aae57ed4a8d33.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/habib-pdf-to-json@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-habib-pdf-to-json-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fc3fe0b2abcdc02af7d516a4945ed2ccd7daefa16c4a6704b8b002a98a7c559",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T14:58:57.191Z"
+}

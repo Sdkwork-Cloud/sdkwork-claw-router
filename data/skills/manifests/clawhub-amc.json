@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48743,
+  "uuid": "skill-clawhub-amc",
+  "skillKey": "clawhub-amc",
+  "name": "Amc",
+  "summary": "Provides detailed insights on AMC's cinema operations, AMC Networks content strategy, and impacts of streaming and meme stock trends on the entertainment ind...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides detailed insights on AMC's cinema operations, AMC Networks content strategy, and impac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amc",
+      "url": "https://clawhub.ai/skills/amc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amc",
+    "url": "https://clawhub.ai/skills/amc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amc-c7f623bf946e4657.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59de2ba9833275bdc8395b77b286eb21671f3618ee07b72322be493968cfd32c",
+      "artifactSizeBytes": 2243
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T21:05:27.772Z"
+}

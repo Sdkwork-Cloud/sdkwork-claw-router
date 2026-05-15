@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51890,
+  "uuid": "skill-clawhub-openclawpanel",
+  "skillKey": "clawhub-openclawpanel",
+  "name": "OpenClaw Panel",
+  "summary": "Control an OpenClaw LED panel (64x32 HUB75 on ESP32-S3) over HTTP — display text, graphics, shapes, play sounds, and read status.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclawpanel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joaquinckronoset",
+      "features": [
+        "Control an OpenClaw LED panel (64x32 HUB75 on ESP32-S3) over HTTP — display text, graphics, sha."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclawpanel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245905443?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclawpanel",
+      "url": "https://clawhub.ai/skills/openclawpanel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclawpanel",
+    "url": "https://clawhub.ai/skills/openclawpanel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclawpanel-b21719aa7d7d343c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclawpanel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclawpanel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:670f0712c0b3f853ee1d81fde791cb3d52f9b35547712edc77f3599e0e15f357",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:53:26.518Z"
+}

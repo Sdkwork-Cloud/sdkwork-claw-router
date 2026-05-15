@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10259,
+  "uuid": "skill-clawhub-media-player",
+  "skillKey": "clawhub-media-player",
+  "name": "Media Player",
+  "summary": "Play audio/video locally on the host",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.media_player",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xejrax",
+      "features": [
+        "Play audio/video locally on the host"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/media-player@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/148405630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "media-player",
+      "url": "https://clawhub.ai/skills/media-player"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "media-player",
+    "url": "https://clawhub.ai/skills/media-player",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/media-player-cf6f3680dc69d40d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/media-player@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-media-player-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:246dd420aaa45737fdd3e535068a072d532ba56325c18f76d0fc36da39630164",
+      "artifactSizeBytes": 1727
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T16:21:21.140Z"
+}

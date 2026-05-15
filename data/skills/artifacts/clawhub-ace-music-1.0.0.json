@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ace-music@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ace_music",
+  "skill": {
+    "id": 9577,
+    "skillKey": "clawhub-ace-music",
+    "name": "ACE Music - Free Suno Alternative Generate unlimited AI music for free using ACE-Step 1.5. Full songs with vocals, lyrics, any."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ace-music",
+    "url": "https://clawhub.ai/skills/ace-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ace-music-54ebf8fafdf793bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI music using ACE-Step 1.5 via ACE Music's free API. Use when the user asks to create, generate, or compose music, songs, beats, instrumentals, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fspecii",
+      "userId": "publishers:fspecii",
+      "displayName": "fspecii",
+      "image": "https://avatars.githubusercontent.com/u/4722521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3335,
+      "installsAllTime": 21,
+      "installsCurrent": 19,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771464200986,
+      "changelog": "Initial release of ace-music – generate AI music using ACE-Step 1.5 via ACE Music's free API.\n\n- Supports generating music, songs, beats, instrumentals, covers, and repainting using text, style prompts, and lyrics.\n- Easy setup: guides users to obtain and store a free API key.\n- Provides a script for quick one-shot music generation with customizable parameters (lyrics, style, genre, key, tempo, language, etc.).\n- Supports advanced API usage for covers and audio editing tasks.\n- No cost: utilizes ACE Music's confirmed free API.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:66adf295f14d26c92b16cba15862029d95cc257661960768818189504fc2ec2e"
+}

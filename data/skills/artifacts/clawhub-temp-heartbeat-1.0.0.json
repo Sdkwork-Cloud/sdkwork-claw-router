@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/temp-heartbeat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.temp_heartbeat",
+  "skill": {
+    "id": 69145,
+    "skillKey": "clawhub-temp-heartbeat",
+    "name": "Temp Heartbeat - 临时心跳"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "temp-heartbeat",
+    "url": "https://clawhub.ai/skills/temp-heartbeat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/temp-heartbeat-73350dccffe9e22c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "设置一次性临时心跳任务，在指定时间执行提醒、检查或操作，任务完成后自动删除，无需永久配置。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rfdiosuao",
+      "userId": "s176m0k7cncqqrh1hnapx8zbz183f0gt",
+      "displayName": "rfdiosuao",
+      "image": "https://avatars.githubusercontent.com/u/190207982?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775242083526,
+      "changelog": "- Initial release of Temp Heartbeat v1.0.0.\n- Enables creation of one-time temporary heartbeat tasks, automatically executed and deleted after completion.\n- Supports flexible time parsing for both relative (e.g., \"10 分钟后\") and absolute times (e.g., specific date/time).\n- Task management via commands: create, list, cancel individual, or cancel all temporary heartbeats.\n- Provides clear output templates for task creation, listing, and execution, supporting both Chinese and English triggers.\n- Designed to avoid permanent changes to HEARTBEAT.md, ideal for ad-hoc reminders and scheduled tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8181142603f26b16150285cf844eab338dde3132bd19a5e4bbf6d9f3b0fb36cf"
+}

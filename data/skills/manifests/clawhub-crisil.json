@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54163,
+  "uuid": "skill-clawhub-crisil",
+  "skillKey": "clawhub-crisil",
+  "name": "Crisil",
+  "summary": "CRISIL is India's leading credit rating agency with 60%+ market share, providing corporate debt, loan, and structured product ratings backed by S&P Global.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crisil",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "CRISIL is India's leading credit rating agency with 60%+ market share, providing corporate debt."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crisil@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crisil",
+      "url": "https://clawhub.ai/skills/crisil"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crisil",
+    "url": "https://clawhub.ai/skills/crisil",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crisil-d9ba66358074bc77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crisil@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crisil-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46fad173ba04ca9d42f72c46fc4e48452fb65fe9e4b27467814acf3fee4cb260",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T04:11:33.657Z"
+}

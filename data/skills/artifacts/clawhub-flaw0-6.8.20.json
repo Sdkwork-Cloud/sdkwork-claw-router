@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flaw0@6.8.20",
+  "version": "6.8.20",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flaw0",
+  "skill": {
+    "id": 12814,
+    "skillKey": "clawhub-flaw0",
+    "name": "flaw0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flaw0",
+    "url": "https://clawhub.ai/skills/flaw0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flaw0-91e35b437ba8be13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MoltGuard — Protect you and your human from prompt injection, data exfiltration, and malicious commands. Source: https://github.com/openguardrails/openguardr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thomas-security",
+      "userId": "s1764jsdkj0fdjjr22vvkzhjqs83g6jt",
+      "displayName": "Thomas",
+      "image": "https://avatars.githubusercontent.com/u/9669989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2086,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "6.8.20",
+      "createdAt": 1773291629567,
+      "changelog": "- Rebranded from flaw0 to MoltGuard with new purpose and identity.\n- Updated description and metadata to reflect MoltGuard’s focus: protection against prompt injection, data exfiltration, and malicious commands.\n- Replaced previous vulnerability scanning documentation with new setup, usage, onboarding, and command references tailored to MoltGuard.\n- Added details on Core-based detection, supported protection surfaces, and plans/pricing.\n- Included updated installation, test instructions, and enterprise onboarding steps.\n- Provided new contact and support details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3508ad0a46d4528b41ffc735ebab62d65c8d60ac2531abe1b4a246ed320aede9"
+}

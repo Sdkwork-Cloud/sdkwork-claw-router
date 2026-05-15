@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gws-script@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_script",
+  "skill": {
+    "id": 33838,
+    "skillKey": "clawhub-gws-script",
+    "name": "Gws Script"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-script",
+    "url": "https://clawhub.ai/skills/gws-script",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-script-baa9f9e9b457d506.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Google Apps Script projects."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "googleworkspace-bot",
+      "userId": "s17d07d7j6wvs7e49gkh2nncms83fh1m",
+      "displayName": "googleworkspace-bot",
+      "image": "https://avatars.githubusercontent.com/u/109114539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774982078268,
+      "changelog": "- Bumped internal version from 0.22.4 to 0.22.5 in SKILL.md metadata.\n- No changes to functionality or documentation content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c957bb833b127b3309689ca6f7d9f5d23e91f86874b75317e3d77a22add0a1aa"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-security-code-resolver-openclaw-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_security_code_resolver_openclaw_skill",
+  "skill": {
+    "id": 34813,
+    "skillKey": "clawhub-cn-security-code-resolver-openclaw-skill",
+    "name": "Cn Security Code Resolver Openclaw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-security-code-resolver-openclaw-skill",
+    "url": "https://clawhub.ai/skills/cn-security-code-resolver-openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-security-code-resolver-openclaw-skill-b55600cfe8f94bc7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Resolve A-share stocks, ETFs, funds, and other mainland China securities from Chinese names into tradable codes using Eastmoney search. This skill should be..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mr-11even",
+      "userId": "s170m29zvqv1dwq2cdpp3ejv4x83e6d3",
+      "displayName": "mr-11even",
+      "image": "https://avatars.githubusercontent.com/u/223068415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774322744447,
+      "changelog": "Initial release of CN Security Code Resolver.\n\n- Resolves Chinese stock, ETF, or fund names into tradable mainland codes using Eastmoney search.\n- Supports batch and single-name resolution with precise matching logic for code, exchange, and instrument type.\n- Provides usage workflow and output formatting guidelines for deterministic and verifiable results.\n- Includes CLI script and API reference for integration or advanced use.\n- Offers validation and fallback steps to ensure result accuracy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d259332991ba5a0396544e7d39843d3f36eecb6dd3809839d03a3c4d5f952fa"
+}

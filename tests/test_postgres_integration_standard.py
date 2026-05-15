@@ -1,4 +1,4 @@
-import unittest
+﻿import unittest
 from pathlib import Path
 
 
@@ -31,17 +31,17 @@ class PostgresIntegrationStandardTest(unittest.TestCase):
             source,
         )
         self.assertIn(
-            "postgres_playground_history_loads_visible_statuses_without_sensitive_fields",
+            "postgres_generation_history_loads_visible_statuses_without_sensitive_fields",
             source,
         )
         self.assertIn(
-            "postgres_playground_history_orders_newest_first_and_limits_to_100",
+            "postgres_generation_history_orders_newest_first_and_limits_to_100",
             source,
         )
         self.assertIn("PostgresPaymentCallbackStore", source)
         self.assertIn("PostgresBillingStore", source)
-        self.assertIn("PostgresAppPlaygroundHistoryReadStore", source)
-        self.assertIn("AppPlaygroundHistorySubject", source)
+        self.assertIn("PostgresAppGenerationHistoryReadStore", source)
+        self.assertIn("AppGenerationHistorySubject", source)
         self.assertIn("tokio::join!", source)
         self.assertIn("uk_plus_account_user_type", source)
 

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acquire-first-1000-users-on-reddit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acquire_first_1000_users_on_reddit",
+  "skill": {
+    "id": 18956,
+    "skillKey": "clawhub-acquire-first-1000-users-on-reddit",
+    "name": "Reddit User Acquisition"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acquire-first-1000-users-on-reddit",
+    "url": "https://clawhub.ai/skills/acquire-first-1000-users-on-reddit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acquire-first-1000-users-on-reddit-af9bb85cdf167ecc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered Reddit seeding agent for founders. Analyzes a product spec, maps relevant subreddits, finds real threads where target users need help, drafts pers..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xconal",
+      "userId": "publishers:0xconal",
+      "displayName": "Conal",
+      "image": "https://avatars.githubusercontent.com/u/164912023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 647,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771839369282,
+      "changelog": "Initial release of an AI-powered Reddit seeding agent for startup founders.\n\n- Analyzes product specs to generate target audience signals and relevant subreddit maps.\n- Discovers and ranks real Reddit threads where potential users express matching needs or frustrations.\n- Drafts personalized replies and DMs for specific Reddit conversations, tailored by context and engagement rules.\n- Enforces a strict approval step—no outreach is sent without explicit human review.\n- Automates outreach via Reddit API following human approval, and monitors engagement on posts and DMs.\n- Designed for early-stage growth, product launches, and community-led user acquisition without a marketing budget.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fa6ab1828275519886a808d22a9d7af8f55174bc149f20a78f87d17517c005c1"
+}

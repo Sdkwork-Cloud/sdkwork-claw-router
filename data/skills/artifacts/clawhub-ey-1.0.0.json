@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ey@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ey",
+  "skill": {
+    "id": 68382,
+    "skillKey": "clawhub-ey",
+    "name": "Ey"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ey",
+    "url": "https://clawhub.ai/skills/ey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ey-2bdd94c004581aa9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "EY是全球四大会计师事务所之一，专注于税务咨询和跨境交易，FY2024营收近500亿美元。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776884765519,
+      "changelog": "- 发布ey技能1.0.0版本，聚焦安永（EY）作为全球四大会计师事务所之一的战略地位与业务结构。\n- 详解EY四大业务板块，突出其在税务咨询和跨境交易领域的领先优势。\n- 回顾重要历史事件，包括1989年重大合并和2023年Project Everest拆分计划的失败。\n- 提供关键数据（FY2024营收、员工规模、行业地位），便于横向对比。\n- 适用于了解四大格局、审计与咨询拆分趋势、专业服务业数字化转型等场景。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5eb3b432404898f0a2f27d262317014c47a8a8c6fe70a888fdc192c8f8bd1dff"
+}

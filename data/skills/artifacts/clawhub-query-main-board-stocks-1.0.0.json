@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/query-main-board-stocks@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.query_main_board_stocks",
+  "skill": {
+    "id": 72414,
+    "skillKey": "clawhub-query-main-board-stocks",
+    "name": "主板股票查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "query-main-board-stocks",
+    "url": "https://clawhub.ai/skills/query-main-board-stocks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/query-main-board-stocks-fb4dcfdfa7b9dadf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询沪深主板 A 股股票列表（排除创业板、科创板）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dxyu94",
+      "userId": "s174vbxej4r73dcey6635g09sn83m108",
+      "displayName": "dxyu94",
+      "image": "https://avatars.githubusercontent.com/u/231416046?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776007148161,
+      "changelog": "- Initial release of query-main-board-stocks.\n- Query and retrieve the main board A-share stocks from Shanghai and Shenzhen exchanges.\n- Excludes ChiNext (创业板) and STAR Market (科创板) stocks.\n- Supports output in both JSON and CSV formats.\n- Utilizes Baostock API for data access.\n- Example outputs and usage instructions included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47df83e833581991f28dbed9c22067653a401ba5b677311bc79461e6d3d06616"
+}

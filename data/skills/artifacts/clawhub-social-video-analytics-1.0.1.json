@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-video-analytics@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_video_analytics",
+  "skill": {
+    "id": 28863,
+    "skillKey": "clawhub-social-video-analytics",
+    "name": "Social Video Analytics Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-video-analytics",
+    "url": "https://clawhub.ai/skills/social-video-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-video-analytics-fb8765fc2e436206.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Social Video Analytics is an AI analytics assistant for measuring how videos perform across social platforms and why some clips win. It helps teams read watc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imwyvern",
+      "userId": "s17as2pe33fqm26ag8dqnwe0gx83gd3q",
+      "displayName": "wes",
+      "image": "https://avatars.githubusercontent.com/u/1765672?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774896858813,
+      "changelog": "- Added frontmatter with name and description for improved skill metadata and discoverability.\n- Description now includes additional context in both English and Chinese for broader accessibility.\n- No changes to core functionality or user-facing features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42484343afec11e23cca7f35282fae8b4cfbd9bf950982a45d99a71721f0d2f5"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tradingview-screener@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tradingview_screener",
+  "skill": {
+    "id": 9959,
+    "skillKey": "clawhub-tradingview-screener",
+    "name": "TradingView Screener"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tradingview-screener",
+    "url": "https://clawhub.ai/skills/tradingview-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tradingview-screener-fe9685afe0c4decc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Screen markets across 6 asset classes using TradingView data. API pre-filters + pandas computed signals. YAML-driven strategies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lukebaze",
+      "userId": "s172p8wgrrx4mfxhvtw2baw63h83hfqf",
+      "displayName": "lukebaze",
+      "image": "https://avatars.githubusercontent.com/u/67284748?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2755,
+      "installsAllTime": 12,
+      "installsCurrent": 11,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770630705720,
+      "changelog": "Add install.sh for portable venv setup; fix hardcoded Python paths to use skill-local .venv",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1b17c52cdbf8cf60406d915c0ddf110c5053ebb1aaa84e6245ee3229cc06e137"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/humanizer-pro@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanizer_pro",
+  "skill": {
+    "id": 37940,
+    "skillKey": "clawhub-humanizer-pro",
+    "name": "Humanizer Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanizer-pro",
+    "url": "https://clawhub.ai/skills/humanizer-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanizer-pro-1117de4b0b12f266.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dannybrcbrown",
+      "userId": "s1788d2xtfpvt4hyte28kxyv0h83gdg1",
+      "displayName": "Dannybrcbrown",
+      "image": "https://avatars.githubusercontent.com/u/263098005?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1774340869093,
+      "changelog": "v2.1.1 - 24种AI写作模式检测，基于Wikipedia Signs of AI写作指南，完整保留所有检测规则和去痕方法",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9fb9200085deee85c10ff3cfd53a806e1f7a15a2708d6d2a6a00ee029366605"
+}

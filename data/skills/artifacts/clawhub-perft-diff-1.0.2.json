@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/perft-diff@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perft_diff",
+  "skill": {
+    "id": 31713,
+    "skillKey": "clawhub-perft-diff",
+    "name": "Chess Engine Perft Buddy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perft-diff",
+    "url": "https://clawhub.ai/skills/perft-diff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perft-diff-29f6f04a31bcf32c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Finds an incorrect or missing move of user's chess engine by comparing perft results with Stockfish. Use when user reports getting wrong perft results."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ottofreund",
+      "userId": "s1752gxfa4ynrpsf5n4ym0f23585hmd2",
+      "displayName": "ottofreund",
+      "image": "https://avatars.githubusercontent.com/u/180272391?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777191316800,
+      "changelog": "Cleaned up messy characters in YAML",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b83013796b245853cdf44cf312e3b64b1851aba2459b6f11920d04ddd4621737"
+}

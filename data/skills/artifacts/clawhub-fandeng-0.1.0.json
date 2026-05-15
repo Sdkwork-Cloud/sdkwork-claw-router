@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fandeng@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fandeng",
+  "skill": {
+    "id": 57026,
+    "skillKey": "clawhub-fandeng",
+    "name": "Fandeng"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fandeng",
+    "url": "https://clawhub.ai/skills/fandeng",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fandeng-07fecf0c875ca5c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides summaries and key details of public courses, books, and topics from the 樊登读书 site without accessing paid content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikeclaw007",
+      "userId": "s173n2mnssqbs3ebpdz3b52ssh83gshx",
+      "displayName": "mikeclaw007",
+      "image": "https://avatars.githubusercontent.com/u/265502950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774226961455,
+      "changelog": "fandeng-hot-trend skill v0.1.0\n\n- Initial release for extracting and summarizing public course and book information from 樊登读书 (dushu.io).\n- Supports tasks like course/lesson summaries, extracting key points from book pages, and compiling topic directories.\n- Handles only publicly available content; no access to paid or download-restricted material.\n- Emphasizes compliance with platform rules and rate limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:941fe3e96c936bfc2f2a74c05264f5f5876e557fa234ef30c3264341bf4cb73f"
+}

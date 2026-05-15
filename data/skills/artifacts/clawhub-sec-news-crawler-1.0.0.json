@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sec-news-crawler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sec_news_crawler",
+  "skill": {
+    "id": 70423,
+    "skillKey": "clawhub-sec-news-crawler",
+    "name": "网络安全情报爬虫"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sec-news-crawler",
+    "url": "https://clawhub.ai/skills/sec-news-crawler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sec-news-crawler-41c480ccdab59131.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "网络安全新闻爬虫，每小时自动从多个安全社区 RSS 抓取文章，存入 IMA 笔记。 触发场景：用户说\"抓取安全新闻\"、\"网络安全日报\"、\"定时爬取安全资讯\"、\"安全新闻源管理\" 或需要查看/管理安全新闻爬虫任务时使用此 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fallenqu",
+      "userId": "s176hgyq8sqv9qdbz7armxh2dh83qw6w",
+      "displayName": "FallenQu",
+      "image": "https://avatars.githubusercontent.com/u/62645537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774582042002,
+      "changelog": "首次发布：漏洞情报 + 安全新闻双爬虫，支持英文描述智能翻译为中文",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d97b883d47e3e8d6213181176dcaa7f626a7f1d1106c46f3f28600a32570e28"
+}

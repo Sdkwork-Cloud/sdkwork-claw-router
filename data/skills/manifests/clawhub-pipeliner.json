@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21556,
+  "uuid": "skill-clawhub-pipeliner",
+  "skillKey": "clawhub-pipeliner",
+  "name": "Pipeliner",
+  "summary": "Pipeliner integration. Manage Leads, Deals, Persons, Organizations, Activities, Notes and more. Use when the user wants to interact with Pipeliner data.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeliner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Pipeliner integration",
+        "Manage Leads, Deals, Persons, Organizations, Activities, Notes and more",
+        "Use when the user wants to interact with Pipeliner data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeliner@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeliner",
+      "url": "https://clawhub.ai/skills/pipeliner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeliner",
+    "url": "https://clawhub.ai/skills/pipeliner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeliner-b7778e3b682f2d20.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeliner@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeliner-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0024e01e2e12852ee273771ee3ea8b806128f168f9c9cbf449d6d364babf0c98",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:51:56.594Z"
+}

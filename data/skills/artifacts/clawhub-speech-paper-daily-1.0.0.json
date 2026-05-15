@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/speech-paper-daily@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.speech_paper_daily",
+  "skill": {
+    "id": 58658,
+    "skillKey": "clawhub-speech-paper-daily",
+    "name": "speech-paper-daily"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "speech-paper-daily",
+    "url": "https://clawhub.ai/skills/speech-paper-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/speech-paper-daily-a46aee2986d58e1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "语音领域每日论文速递。搜索最新语音大模型（Speech LLM、TTS、ASR、codec、speech generation）和语音前端（speech enhancement、noise suppression、beamforming、source separation、dereverberation）预印本论..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jusperlee",
+      "userId": "s1792dz6bmwkx0te3tbx7nfvn183hwfe",
+      "displayName": "JusperLee",
+      "image": "https://avatars.githubusercontent.com/u/33806018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774247712309,
+      "changelog": "- 首次发布 speech-paper-daily v1.0.0\n- 每日自动抓取 arXiv 最新语音/音频领域论文（cs.SD、eess.AS 分类）\n- 采用专家视角精读每篇论文，输出简介、技术方案、实验结果与10分制评分\n- 支持提取论文 Demo/代码链接，严格过滤非领域论文\n- 结果标准化分为「语音大模型」和「语音前端」类别，写入腾讯文档「每日论文速递」文件夹\n- 遇写入异常自动回退至对话输出",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19162cb7ed9469ba5bf6f32ca1d6722cc7a162f96b4358b0d5ea0398f49e0a1b"
+}

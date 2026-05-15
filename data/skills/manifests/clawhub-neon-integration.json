@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25710,
+  "uuid": "skill-clawhub-neon-integration",
+  "skillKey": "clawhub-neon-integration",
+  "name": "Neon",
+  "summary": "Neon integration. Manage Organizations, Users, Goals, Filters. Use when the user wants to interact with Neon data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neon_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Neon integration",
+        "Manage Organizations, Users, Goals, Filters",
+        "Use when the user wants to interact with Neon data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neon-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neon-integration",
+      "url": "https://clawhub.ai/skills/neon-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neon-integration",
+    "url": "https://clawhub.ai/skills/neon-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neon-integration-5167f520580b4823.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neon-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-neon-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a012ad31eaeaedfacc9bf5ba1a02db333a82f70fd71e0795c5e8677fd444c1ce",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:46:19.980Z"
+}

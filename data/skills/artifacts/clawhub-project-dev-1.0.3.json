@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/project-dev@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_dev",
+  "skill": {
+    "id": 52037,
+    "skillKey": "clawhub-project-dev",
+    "name": "Project Developer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-dev",
+    "url": "https://clawhub.ai/skills/project-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-dev-0ee3e237bdd5bc7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Software Developer Project Skill — coordination, workflow, and team interoperation for FE and BE developer agents working on managed software projects. Use t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "encryptshawn",
+      "userId": "s17acjjwshpqj4xkbngejj57nx83zbcy",
+      "displayName": "EncryptShawn",
+      "image": "https://avatars.githubusercontent.com/u/56897824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777506368647,
+      "changelog": "Updated to work with the Openclaw Projects and Build a dev team skills more cohesively   |   https://clawhub.ai/encryptshawn/openclaw-projects   |  https://clawhub.ai/encryptshawn/build-dev-team\n- Expanded agent workspace requirements: now references HEARTBEAT.md and AGENTS.md in addition to USER.md and TOOLS.md, specifying their contents and operational roles.\n- Added structured format and strict rules for HEARTBEAT.md to guide queue checking, including model selection, minimal reasoning, and multi-project participation.\n- Introduced protocols for ClickUp task management as an alternative to Asana, using the same heartbeat structure.\n- Clarified that heartbeat runs must always use the cheapest available model, explicitly disallowing fallback to primary models to conserve resources.\n- Defined clear failure-handling behavior for heartbeat sessions: fail cheap, log, and never escalate or retry with higher-cost models.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:763958c3a9a6a4352d2ae954e763ba358a85d8c11c9046cbb97a03368350b227"
+}

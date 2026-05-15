@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29004,
+  "uuid": "skill-clawhub-caring",
+  "skillKey": "clawhub-caring",
+  "name": "Caring",
+  "summary": "Perform a thorough quality review focusing on genuine care, addressing the real problem, completeness, clarity, and ensuring work meets high standards rather...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caring",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "minerva-care",
+      "features": [
+        "Perform a thorough quality review focusing on genuine care, addressing the real problem, comple."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/caring@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263688754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "caring",
+      "url": "https://clawhub.ai/skills/caring"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caring",
+    "url": "https://clawhub.ai/skills/caring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caring-e49a417471c3aaa3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/caring@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-caring-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4813dc62a879c2ae8d56efc22acfee97529d56e20dd5d038813b8dc345ad3db7",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:02:52.176Z"
+}

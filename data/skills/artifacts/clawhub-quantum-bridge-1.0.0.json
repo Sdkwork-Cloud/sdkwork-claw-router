@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quantum-bridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quantum_bridge",
+  "skill": {
+    "id": 27969,
+    "skillKey": "clawhub-quantum-bridge",
+    "name": "Quantum Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quantum-bridge",
+    "url": "https://clawhub.ai/skills/quantum-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quantum-bridge-8149cb13e6355634.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transpile quantum circuits between Qiskit (OpenQASM) and OriginIR, run IBC multi-agent consensus, validate OriginIR, and submit circuits to real quantum hard..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adjusternwachukwu-bot",
+      "userId": "publishers:adjusternwachukwu-bot",
+      "displayName": "adjusternwachukwu-bot",
+      "image": "https://avatars.githubusercontent.com/u/261576222?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773326990461,
+      "changelog": "Initial release — transpile, validate, IBC consensus, Wukong hardware submission",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0ba2d889240c7c4940becb2ba5002c54b6426f287e75153975534d9e602b1d2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ui-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ui_review",
+  "skill": {
+    "id": 26764,
+    "skillKey": "clawhub-ui-review",
+    "name": "nielsen-ui-review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ui-review",
+    "url": "https://clawhub.ai/skills/ui-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ui-review-2e13743cbd5953f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a structured UI/UX heuristic review based on Nielsen's 10 usability principles for screenshots, mockups, wireframes, product pages, app screens, and desi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dawen-ye",
+      "userId": "s170c3war4qf0e4e726jvk5xwx83wjna",
+      "displayName": "Dawen-Ye",
+      "image": "https://avatars.githubusercontent.com/u/124484461?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773849973158,
+      "changelog": "Initial release of nielsen-ui-review: a structured UI/UX heuristic review skill based on Nielsen's 10 usability principles.\n\n- Guides users through a concise clarification round using selectable options before reviewing UI screenshots.\n- Systematically evaluates interfaces against all 10 Nielsen heuristics, focusing on usability impact rather than visual taste.\n- Provides prioritized, actionable findings and recommendations for each review.\n- Explicitly separates visible evidence from assumed context.\n- Offers clear severity ratings and confidence levels for each issue.\n- Outlines a consistent, structured report format for all reviews.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4bba01593342b35770802937cc9a196a6bbde88abb8cabde8faf4a3afacef76"
+}

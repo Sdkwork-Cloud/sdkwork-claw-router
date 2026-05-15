@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30094,
+  "uuid": "skill-clawhub-m365-planner-v2",
+  "skillKey": "clawhub-m365-planner-v2",
+  "name": "M365 Planner",
+  "summary": "Manage Microsoft 365 Planner plans, buckets, and tasks via Microsoft Graph API. Use when creating, listing, updating, or deleting Planner resources. Supports...",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.m365_planner_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Felix M.",
+      "features": [
+        "Manage Microsoft 365 Planner plans, buckets, and tasks via Microsoft Graph API",
+        "Use when creating, listing, updating, or deleting Planner resources",
+        "Supports..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/m365-planner-v2@1.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249820014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "m365-planner-v2",
+      "url": "https://clawhub.ai/skills/m365-planner-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "m365-planner-v2",
+    "url": "https://clawhub.ai/skills/m365-planner-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/m365-planner-v2-2bac7e01e78680ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/m365-planner-v2@1.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-m365-planner-v2-1.2.3.json",
+      "version": "1.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf32aa8f5fbb046d803b438aa6ba6a360e9f8a93ee05b02ea68c8078051724bf",
+      "artifactSizeBytes": 2164
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T13:08:24.799Z"
+}

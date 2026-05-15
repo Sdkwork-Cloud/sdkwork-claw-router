@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/run-coach@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.run_coach",
+  "skill": {
+    "id": 52293,
+    "skillKey": "clawhub-run-coach",
+    "name": "Run Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "run-coach",
+    "url": "https://clawhub.ai/skills/run-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/run-coach-2f8115ce81424336.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Science-based running coach with HD visual training plans and Garmin sync. For all runners — from 5K fitness to marathon."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "enawareness",
+      "userId": "s1738xfvyva2ffz6d8jn9z772h83sdn5",
+      "displayName": "LeoYann",
+      "image": "https://avatars.githubusercontent.com/u/166632095?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 413,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1774067585531,
+      "changelog": "- Removed Garmin environment variables (GARMIN_EMAIL, GARMIN_PASSWORD) from required list; Garmin sync is now fully optional.\n- Updated metadata to reflect only required environment variables (Telegram).\n- No changes to user-facing features or instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0867fb94b865368fa878a4d82f17577927d6a4aca4b7f28cb7d238afe1e1b5d4"
+}

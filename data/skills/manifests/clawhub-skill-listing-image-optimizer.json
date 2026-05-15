@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50166,
+  "uuid": "skill-clawhub-skill-listing-image-optimizer",
+  "skillKey": "clawhub-skill-listing-image-optimizer",
+  "name": "Amazon Listing Image Optimizer",
+  "summary": "Audit Amazon product listing images for non-square dimensions, auto-pad them to 2000×2000 white background, and push corrected images to live listings via SP...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_listing_image_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zero2Ai",
+      "features": [
+        "Audit Amazon product listing images for non-square dimensions, auto-pad them to 2000×2000 white."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-listing-image-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244362887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-listing-image-optimizer",
+      "url": "https://clawhub.ai/skills/skill-listing-image-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-listing-image-optimizer",
+    "url": "https://clawhub.ai/skills/skill-listing-image-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-listing-image-optimizer-1dd43e51ed09e1fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-listing-image-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-listing-image-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eecfaa38d1fd926aff9baf8c1945ce25d26d7ed4b43e4abcbe96ab3f074cf94a",
+      "artifactSizeBytes": 2057
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T03:37:57.681Z"
+}

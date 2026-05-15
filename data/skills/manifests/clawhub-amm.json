@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32581,
+  "uuid": "skill-clawhub-amm",
+  "skillKey": "clawhub-amm",
+  "name": "Amm",
+  "summary": "Analyze amm operations. Use when you need to understand amm mechanisms, evaluate protocol security, or reference on-chain concepts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "Analyze amm operations",
+        "Use when you need to understand amm mechanisms, evaluate protocol security, or reference on-cha."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amm",
+      "url": "https://clawhub.ai/skills/amm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amm",
+    "url": "https://clawhub.ai/skills/amm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amm-31a05c57690089d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f6170206797b0c7eb93747804a4613707f0984755285e8d638f7daa5f75b69a",
+      "artifactSizeBytes": 1785
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T20:18:26.287Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/miromind@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miromind",
+  "skill": {
+    "id": 59509,
+    "skillKey": "clawhub-miromind",
+    "name": "Miromind"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miromind",
+    "url": "https://clawhub.ai/skills/miromind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miromind-4c58b0c300aad7e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MiroMind Deep Research Skill - 使用 MiroThinker AI 进行深度研究。触发词：/miromind。当用户想对某个主题进行深度研究时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "karminski",
+      "userId": "s176tmt90g3y4ve4a50mkfrhsn83gfcg",
+      "displayName": "karminski",
+      "image": "https://avatars.githubusercontent.com/u/1567626?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 290,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773944428465,
+      "changelog": "- Added MIROMIND_EMAIL and MIROMIND_PASSWORD as required environment variables in the skill metadata.\n- Updated metadata to include the primaryEnv field for improved configuration guidance.\n- Now enforces environment variable checks before execution, improving configuration error handling.\n- No code or user-facing feature changes; documentation and metadata only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3bb1dff8eabe9b2e548a73246032a58e898c7d8be835c89600f55c1a1fb3baa1"
+}

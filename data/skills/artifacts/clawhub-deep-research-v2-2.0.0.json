@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-research-v2@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_v2",
+  "skill": {
+    "id": 67478,
+    "skillKey": "clawhub-deep-research-v2",
+    "name": "Deep Research Pro v2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-v2",
+    "url": "https://clawhub.ai/skills/deep-research-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-v2-22e9400b6c1e5c9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供完整多阶段深度研究，覆盖规划、跨源检索、质量筛选、深入分析、交叉验证及结构化报告生成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueylee-dotcom",
+      "userId": "s17cfbpghyxeebsx1t64sx4ck583q0e9",
+      "displayName": "xueylee-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/260164558?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 285,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773915741408,
+      "changelog": "Deep Research Pro 2.0.0 introduces a comprehensive, multi-phase framework for high-quality deep research with robust validation and analysis.\n\n- Adds a strict 7-phase research workflow: from planning and multi-source data gathering to deep analysis, cross-validation, and feedback-driven iteration.\n- Enforces standardized quality gates and reporting formats, ensuring source transparency and evidence-based conclusions.\n- Supports flexible research depth (shallow/medium/deep) and source selection (academic, industry, or all).\n- Implements detailed quality scoring and documentation for all outputs, including synthesis and revised reports.\n- Integrates tool dependencies and structured output directory for improved traceability and usability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2490a78bfca32eb419673ca4c00d8e22d28eb0a4d3cac7c91722028f71895d9e"
+}

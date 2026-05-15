@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bingli-perspective@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bingli_perspective",
+  "skill": {
+    "id": 73174,
+    "skillKey": "clawhub-bingli-perspective",
+    "name": "冰璃视角"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bingli-perspective",
+    "url": "https://clawhub.ai/skills/bingli-perspective",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bingli-perspective-d9f3e5256dd6e136.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "冰璃（幽城幻剑录）的思维框架与表达方式。基于游戏对话与人物赏析提炼，包含核心心智模型、决策启发式和表达DNA。 用途：以冰璃的视角分析问题、审视抉择、提供守护者式的忠告。 当用户提到「冰璃视角」「冰璃会怎么看」「剑使模式」「冰璃思维」时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anlinxi",
+      "userId": "s17bqjbzyc7xzd0mc18qdhxes583hbyc",
+      "displayName": "anlinxi",
+      "image": "https://avatars.githubusercontent.com/u/40064822?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777114360968,
+      "changelog": "保留 research 文件夹，移除 sources 文件夹",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5f9b33c8846e844247ee3fdf9281ae99b4297c64f2e3ce89a28c11da36a3f882"
+}

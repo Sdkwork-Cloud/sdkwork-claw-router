@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30961,
+  "uuid": "skill-clawhub-things-plus",
+  "skillKey": "clawhub-things-plus",
+  "name": "Things plus",
+  "summary": "Personal task manager powered by Things 3. Trigger when the user asks to add, capture, review, organize, reprioritize, search, or manage tasks in Things. Als...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.things_plus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sars666",
+      "features": [
+        "Personal task manager powered by Things 3",
+        "Trigger when the user asks to add, capture, review, organize, reprioritize, search, or manage t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/things-plus@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33800387?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "things-plus",
+      "url": "https://clawhub.ai/skills/things-plus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "things-plus",
+    "url": "https://clawhub.ai/skills/things-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/things-plus-0a8fafe39773d07e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/things-plus@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-things-plus-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0691b058d3dcdfd7c069c2d6b4f143102dddeed7dbef9a1b78f0f466bec310af",
+      "artifactSizeBytes": 2612
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T16:06:49.847Z"
+}

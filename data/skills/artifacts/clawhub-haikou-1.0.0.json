@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/haikou@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.haikou",
+  "skill": {
+    "id": 45190,
+    "skillKey": "clawhub-haikou",
+    "name": "Haikou Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "haikou",
+    "url": "https://clawhub.ai/skills/haikou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/haikou-c86457c97110a83a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your comprehensive guide to Haikou, capital of Hainan Island. Use when: user asks about Haikou attractions, food, hotels, weather, transportation, history, c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "58",
+      "userId": "s17fv3f5wdjkh3jmv77bjc4bq984gn7m",
+      "displayName": "58",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776529597158,
+      "changelog": "Haikou Skill 1.0.0 – Your comprehensive guide to Haikou, Hainan’s tropical capital.\n\n- Initial release with detailed coverage of Haikou attractions, food, hotels, weather, transportation, history, and culture.\n- Includes travel tips, emergency contacts, visa info, local phrases, and practical advice for visitors.\n- Features recommended food districts, accommodation areas, and popular local experiences.\n- Offers tables and quick facts for easy reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a03b8d9d0453b00be1b25941d94c47bcdf90da0d0a0249bd17d56f73fe2a134"
+}

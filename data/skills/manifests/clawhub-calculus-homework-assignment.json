@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72673,
+  "uuid": "skill-clawhub-calculus-homework-assignment",
+  "skillKey": "clawhub-calculus-homework-assignment",
+  "name": "高等数学智能作业布置Skill",
+  "summary": "基于学生能力画像，智能生成高等数学个性化自适应作业，支持多模态题目和定时发布管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calculus_homework_assignment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "math",
+      "features": [
+        "基于学生能力画像，智能生成高等数学个性化自适应作业，支持多模态题目和定时发布管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/calculus-homework-assignment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48268142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "calculus-homework-assignment",
+      "url": "https://clawhub.ai/skills/calculus-homework-assignment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calculus-homework-assignment",
+    "url": "https://clawhub.ai/skills/calculus-homework-assignment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calculus-homework-assignment-1195ed38b1955222.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/calculus-homework-assignment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-calculus-homework-assignment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6202de95e53f2ed14cbee8f196c4d6fda6bebfa008a410d3a597682b3813e643",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T02:51:41.822Z"
+}

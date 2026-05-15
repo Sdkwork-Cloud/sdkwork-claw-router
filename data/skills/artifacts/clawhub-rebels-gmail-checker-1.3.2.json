@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rebels-gmail-checker@1.3.2",
+  "version": "1.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rebels_gmail_checker",
+  "skill": {
+    "id": 34162,
+    "skillKey": "clawhub-rebels-gmail-checker",
+    "name": "Gmail Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rebels-gmail-checker",
+    "url": "https://clawhub.ai/skills/rebels-gmail-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rebels-gmail-checker-d7ef29806042e0b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check Gmail for unread inbox emails, filtered by priority. Use when asked to check emails, check inbox, email digest, email summary, or \"any new mail\". Outpu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "99rebels",
+      "userId": "s17b17x5vmnh2q27ane7sj7an5843qs4",
+      "displayName": "99rebels",
+      "image": "https://avatars.githubusercontent.com/u/148632105?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.3.2",
+      "createdAt": 1775333595664,
+      "changelog": "Cleaned display name",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d6aaa079e26965dc22a9e2d1015e2d27fa5042722fc1b76ba376bd4baa3d155e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/music-to-a@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_to_a",
+  "skill": {
+    "id": 46205,
+    "skillKey": "clawhub-music-to-a",
+    "name": "Music To A"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-to-a",
+    "url": "https://clawhub.ai/skills/music-to-a",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-to-a-6e17db4b2e670722.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add video clips into music-synced videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for adding background mus..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776504601805,
+      "changelog": "- Initial release of the \"Music to a Video — Add Music and Export Video\" skill.\n- Automatically syncs background music to video clips using cloud GPU processing.\n- Supports MP4, MOV, AVI, WebM input files up to 500MB; outputs 1080p MP4.\n- Handles user authentication and session management with 100 free credits upon first use.\n- Exposes upload, edit, preview, and export actions via user-friendly chat prompts.\n- Implements robust error handling and clear status feedback for seamless editing workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf1b5fecfcf79003efbc5e6d4edab7afb9d7915d4678c939625b5792b244acdf"
+}

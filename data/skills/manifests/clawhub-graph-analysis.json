@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53950,
+  "uuid": "skill-clawhub-graph-analysis",
+  "skillKey": "clawhub-graph-analysis",
+  "name": "Graph Analysis",
+  "summary": "Analyze graphs and networks using Python NetworkX — centrality, shortest paths, community detection, and visualization.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.graph_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Owen Ciantar",
+      "features": [
+        "Analyze graphs and networks using Python NetworkX — centrality, shortest paths, community detec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/graph-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204434906?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "graph-analysis",
+      "url": "https://clawhub.ai/skills/graph-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "graph-analysis",
+    "url": "https://clawhub.ai/skills/graph-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/graph-analysis-5887a1be41ce14e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/graph-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-graph-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4bab9b0a766376ebe25efc28b3470a94cfd17b7da46038749913b237a388642b",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T07:01:00.937Z"
+}

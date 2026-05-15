@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rune@1.1.5",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rune",
+  "skill": {
+    "id": 17833,
+    "skillKey": "clawhub-rune",
+    "name": "Rune - Self-Improving AI Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rune",
+    "url": "https://clawhub.ai/skills/rune",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rune-dcd69bed70a827d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-improving AI memory system with intelligent context injection and adaptive learning"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thebobloblaw",
+      "userId": "publishers:thebobloblaw",
+      "displayName": "Cory Freeman",
+      "image": "https://avatars.githubusercontent.com/u/5572715?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 731,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.1.5",
+      "createdAt": 1771986256333,
+      "changelog": "FINAL: Metadata integrity fix & proper display name\n\n🎯 REGISTRY METADATA RESOLVED:\n✅ Fixed 'instruction-only' vs installable inconsistency\n✅ Proper display name: 'Rune - Self-Improving AI Memory' \n✅ Clear installation specifications in registry metadata\n✅ Accurate reflection of install.sh and workflow components\n\n🔧 WHAT THIS FIXES:\n• Registry now correctly shows this as installable skill\n• Display name shows 'Rune' instead of generic 'Skill'\n• Installation metadata properly synchronized  \n• Clear documentation of system-level integration requirements\n\n⚠️  IMPORTANT: This is an INSTALLABLE skill with system integration\n• Modifies ~/.openclaw/workspace/HEARTBEAT.md\n• Creates workflow automation scripts  \n• Includes session hooks for automatic memory usage\n• Intrusive by design to prevent memory system non-usage\n\n📋 FINAL PRODUCTION-READY RELEASE\nComplete memory system with workflow integration, security fixes,\nand accurate metadata. Ready for users who want systematic memory usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:39067d2a6bf328f4e37726803bffc258daf8e38a9b77f495629de1bb813a2b5f"
+}

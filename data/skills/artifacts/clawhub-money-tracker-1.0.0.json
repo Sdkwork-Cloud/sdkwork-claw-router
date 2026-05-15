@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/money-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.money_tracker",
+  "skill": {
+    "id": 67387,
+    "skillKey": "clawhub-money-tracker",
+    "name": "Personal Money Tracker Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "money-tracker",
+    "url": "https://clawhub.ai/skills/money-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/money-tracker-da79c1cde4768d0c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地 SQLite 记账 skill。用于处理中文自然语言记账、查账、分类管理、钱包账户管理、账户余额查询、周期性交易管理、最近账单查询、修改账单和删除账单请求，例如“记账 我喝奶茶用了10元”“用支付宝记一笔午饭 25 元”“显示所有账户余额”“我现在还有多少美元”“添加周期性支出 每月 1 号交房租 3000..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seanmwx",
+      "userId": "s172p33xvek7whzrfrhyrh33cn83tbn0",
+      "displayName": "Xinhai Zou",
+      "image": "https://avatars.githubusercontent.com/u/69373538?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774809241659,
+      "changelog": "money-tracker 1.0.0\n\n- Initial release: Local SQLite bookkeeping skill for managing records in Chinese natural language.\n- Supports: adding, querying, updating, and deleting transactions, category and wallet management, recurring payments, account balance queries, and statistical analysis by day/week/month/year.\n- Handles multiple wallets and currencies, with customizable categories and accounts.\n- Flexible reporting (totals, category/account shares, recent or period records) and strict mapping to user-defined categories/accounts.\n- Includes workflows for both regular and recurring transactions.\n- All data stored locally; uses only standard Python library and bundled script.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:306dd8ea75b6af02cef3d6d5fd0f1b375f39115d2b00dd03332a244738a165b9"
+}

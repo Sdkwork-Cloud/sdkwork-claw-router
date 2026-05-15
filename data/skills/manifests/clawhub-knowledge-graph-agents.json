@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28719,
+  "uuid": "skill-clawhub-knowledge-graph-agents",
+  "skillKey": "clawhub-knowledge-graph-agents",
+  "name": "Knowledge Graph for Agents",
+  "summary": "Add a knowledge graph layer to an AI agent for relationship reasoning and multi-hop recall. Use when agents need to answer \"who works with whom\", \"what's con...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_graph_agents",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SARAI Defence",
+      "features": [
+        "Add a knowledge graph layer to an AI agent for relationship reasoning and multi-hop recall",
+        "Use when agents need to answer \"who works with whom\", \"what's con..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledge-graph-agents@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271494098?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledge-graph-agents",
+      "url": "https://clawhub.ai/skills/knowledge-graph-agents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-graph-agents",
+    "url": "https://clawhub.ai/skills/knowledge-graph-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-graph-agents-e1e4b4c18555b89c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledge-graph-agents@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-graph-agents-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3cba0ef10a32d7db0a442ba353efdd1066611687f347bf8f238a436c0c614b8",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T18:19:00.834Z"
+}

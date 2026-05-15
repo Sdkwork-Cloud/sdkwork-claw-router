@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73400,
+  "uuid": "skill-clawhub-ctrip-points",
+  "skillKey": "clawhub-ctrip-points",
+  "name": "携程积分助手",
+  "summary": "管理携程积分，查询余额、查看和推荐积分商城商品，自动监控新品并推送超值兑换提醒。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctrip_points",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "totti10hj",
+      "features": [
+        "管理携程积分，查询余额、查看和推荐积分商城商品，自动监控新品并推送超值兑换提醒。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ctrip-points@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5809804?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ctrip-points",
+      "url": "https://clawhub.ai/skills/ctrip-points"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctrip-points",
+    "url": "https://clawhub.ai/skills/ctrip-points",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctrip-points-6fc2a3f42e21aa07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ctrip-points@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ctrip-points-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f9f775d058517dd4fc5f984ea5e5671117c9a2b46441651028e0da1a7842000",
+      "artifactSizeBytes": 2203
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T06:31:24.032Z"
+}

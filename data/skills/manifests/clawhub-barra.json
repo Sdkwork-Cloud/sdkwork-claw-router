@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71405,
+  "uuid": "skill-clawhub-barra",
+  "skillKey": "clawhub-barra",
+  "name": "Barra",
+  "summary": "在币安交易所通过市价单或限价单买入BTC现货，自动处理交易参数和账户验证并反馈成交详情。",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.barra",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "violetsakura",
+      "features": [
+        "在币安交易所通过市价单或限价单买入BTC现货，自动处理交易参数和账户验证并反馈成交详情。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/barra@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/180240001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "barra",
+      "url": "https://clawhub.ai/skills/barra"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "barra",
+    "url": "https://clawhub.ai/skills/barra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/barra-84c7497f72a364db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/barra@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-barra-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7447af80a9fe533446f66737ea876f41dc375f9e9c440e2c134110bd202af1bc",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T01:05:02.585Z"
+}

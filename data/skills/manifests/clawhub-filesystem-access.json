@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59685,
+  "uuid": "skill-clawhub-filesystem-access",
+  "skillKey": "clawhub-filesystem-access",
+  "name": "Filesystem Access",
+  "summary": "安全的本地文件读/写/列表能力，默认只在 OpenClaw workspace 目录内工作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.filesystem_access",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bukas",
+      "features": [
+        "安全的本地文件读/写/列表能力，默认只在 OpenClaw workspace 目录内工作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/filesystem-access@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5865669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "filesystem-access",
+      "url": "https://clawhub.ai/skills/filesystem-access"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "filesystem-access",
+    "url": "https://clawhub.ai/skills/filesystem-access",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/filesystem-access-6d1dff814295f502.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/filesystem-access@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-filesystem-access-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1981d5695952bce47eae460dfe0d61659c74fa5fbffa18970113c119c791ec5f",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T03:12:36.762Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41900,
+  "uuid": "skill-clawhub-bangumi-trackr",
+  "skillKey": "clawhub-bangumi-trackr",
+  "name": "bangumi-tracker",
+  "summary": "Manage Bangumi collections and track watch progress via OAuth. Use when user wants to track anime/book/game/music progress, manage wish/doing/collect lists,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bangumi_trackr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MountLynx",
+      "features": [
+        "Manage Bangumi collections and track watch progress via OAuth",
+        "Use when user wants to track anime/book/game/music progress, manage wish/doing/collect lists,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bangumi-trackr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165305764?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bangumi-trackr",
+      "url": "https://clawhub.ai/skills/bangumi-trackr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bangumi-trackr",
+    "url": "https://clawhub.ai/skills/bangumi-trackr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bangumi-trackr-9d44f0850076e6c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bangumi-trackr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bangumi-trackr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c09c422915234d91cb17c1ad82c5947b07ac44544855d82fe9ceda57bc3d19b3",
+      "artifactSizeBytes": 2062
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T13:30:56.920Z"
+}

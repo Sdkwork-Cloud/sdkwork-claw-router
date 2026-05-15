@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-vision-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_vision_scraper",
+  "skill": {
+    "id": 16955,
+    "skillKey": "clawhub-agent-vision-scraper",
+    "name": "Agent Vision Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-vision-scraper",
+    "url": "https://clawhub.ai/skills/agent-vision-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-vision-scraper-f97735cef24ff4bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dockerized AI-powered web scraper using Playwright with virtual display and vision-based captcha solving, no third-party captcha services needed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tedtalk",
+      "userId": "publishers:tedtalk",
+      "displayName": "Tedtalk",
+      "image": "https://avatars.githubusercontent.com/u/249558148?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 742,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772521627564,
+      "changelog": "Initial release of Dockerized Vision Agent Scraper.\n\n- Runs autonomously in a pre-configured Docker container with virtual screen support.\n- Uses Playwright with stealth capabilities to bypass anti-scraping measures.\n- Vision-based CAPTCHA solving—no third-party services required.\n- VNC support (port 5900) allows real-time operation viewing.\n- Easy startup and build instructions included in documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:52615eb14a3db334eea503ffe6f3c7078d6d6fc5a6dde1eb783128e31a0f12c4"
+}

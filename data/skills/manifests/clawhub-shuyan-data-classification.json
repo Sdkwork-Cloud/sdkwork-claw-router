@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72851,
+  "uuid": "skill-clawhub-shuyan-data-classification",
+  "skillKey": "clawhub-shuyan-data-classification",
+  "name": "数安云智数据分类分级",
+  "summary": "数安云智数据分类分级同步接口 - 用于批量处理字段信息的分类分级。支持敏感数据识别、数据分类、数据分级等功能。使用前需配置API地址和认证密钥。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shuyan_data_classification",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PILAO",
+      "features": [
+        "数安云智数据分类分级同步接口",
+        "用于批量处理字段信息的分类分级。支持敏感数据识别、数据分类、数据分级等功能。使用前需配置API地址和认证密钥。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shuyan-data-classification@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23326819?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shuyan-data-classification",
+      "url": "https://clawhub.ai/skills/shuyan-data-classification"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shuyan-data-classification",
+    "url": "https://clawhub.ai/skills/shuyan-data-classification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shuyan-data-classification-876b9fdf235e7f8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shuyan-data-classification@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-shuyan-data-classification-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0c160df131dc277e63de80d14cafc4f07af8a0c733dc8cf9cad06f7ded2b16f",
+      "artifactSizeBytes": 2234
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T11:57:43.260Z"
+}

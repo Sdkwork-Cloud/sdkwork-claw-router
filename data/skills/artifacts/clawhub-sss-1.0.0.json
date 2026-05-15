@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sss@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sss",
+  "skill": {
+    "id": 16906,
+    "skillKey": "clawhub-sss",
+    "name": "Maay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sss",
+    "url": "https://clawhub.ai/skills/sss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sss-a871c47a7f48a12b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access ATXP paid API tools for web search, AI image generation, music creation, video generation, and X/Twitter search. Use when users need real-time web sea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "syveraerp",
+      "userId": "publishers:syveraerp",
+      "displayName": "syveraerp",
+      "image": "https://avatars.githubusercontent.com/u/214673178?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 838,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771272844160,
+      "changelog": "Initial release of ATXP tools integration.\n\n- Enables access to ATXP’s paid API tools via CLI for web search, AI image, music, video generation, and X/Twitter search.\n- Requires authentication with npx atxp login.\n- Provides both CLI commands and programmatic usage examples.\n- Lists available MCP servers and corresponding tools.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:63bf0f0f1b90cff0bb98cc69f65c7dba5f1394bfc4f2b103038a405a4a08000f"
+}

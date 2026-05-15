@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63145,
+  "uuid": "skill-clawhub-pypi-package-changelog-generator",
+  "skillKey": "clawhub-pypi-package-changelog-generator",
+  "name": "Pypi Package Changelog Generator",
+  "summary": "分析 PyPI 包在不同版本之间的变动，并生成结构化的变更日志证据。适用于升级说明、版本差异、release notes、依赖变更、兼容性风险和破坏性变更分析。",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pypi_package_changelog_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AnnAngela",
+      "features": [
+        "分析 PyPI 包在不同版本之间的变动，并生成结构化的变更日志证据。适用于升级说明、版本差异、release notes、依赖变更、兼容性风险和破坏性变更分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pypi-package-changelog-generator@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9762652?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pypi-package-changelog-generator",
+      "url": "https://clawhub.ai/skills/pypi-package-changelog-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pypi-package-changelog-generator",
+    "url": "https://clawhub.ai/skills/pypi-package-changelog-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pypi-package-changelog-generator-ae2b31047a89128c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pypi-package-changelog-generator@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pypi-package-changelog-generator-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:120f89d180a72452c667793ff41ad24d172445baa852f6bde46a83e59f4de63a",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T02:32:12.689Z"
+}

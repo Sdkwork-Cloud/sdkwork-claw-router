@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/songmaker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.songmaker",
+  "skill": {
+    "id": 51282,
+    "skillKey": "clawhub-songmaker",
+    "name": "Songmaker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "songmaker",
+    "url": "https://clawhub.ai/skills/songmaker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/songmaker-2a3ecfcde4678889.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a complete song from a text description — AI writes lyrics then composes music. Use when users want to create a song, turn a description into audio,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scikkk",
+      "userId": "s171sgccp6wt09makas274ye9584ktsf",
+      "displayName": "scikkk",
+      "image": "https://avatars.githubusercontent.com/u/77485593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773557769382,
+      "changelog": "- Initial release of SenseAudio Songmaker.\n- Generate a complete song from a text description: auto-writes lyrics and composes music.\n- Supports user-supplied lyrics or full AI creation (lyrics → music).\n- Customization options for style, vocal gender, and instrumental/background music.\n- Returns downloadable audio and cover art links upon completion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be98143820565654244c8501a6033af8199525c9f979c5e108f2c516e327787a"
+}

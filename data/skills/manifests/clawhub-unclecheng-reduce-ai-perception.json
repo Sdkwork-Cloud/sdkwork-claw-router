@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69437,
+  "uuid": "skill-clawhub-unclecheng-reduce-ai-perception",
+  "skillKey": "clawhub-unclecheng-reduce-ai-perception",
+  "name": "Remove the AI flavor",
+  "summary": "去除文本中的AI写作痕迹，让文字读起来更像人类写作。当用户要求'去AI味'、'降AI味'、'让回复更像人话'、'润色'、'改写得更自然'时使用。检测并修复：AI高频词汇、过度结构化、虚假客观性、机械化连接词、完美主义陷阱、公式化结尾、过度修饰、情感缺失等问题。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unclecheng_reduce_ai_perception",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Unclecheng",
+      "features": [
+        "去除文本中的AI写作痕迹，让文字读起来更像人类写作。当用户要求'去AI味'、'降AI味'、'让回复更像人话'、'润色'、'改写得更自然'时使用。检测并修复：AI高频词汇、过度结构化、虚假客观."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unclecheng-reduce-ai-perception@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55303635?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unclecheng-reduce-ai-perception",
+      "url": "https://clawhub.ai/skills/unclecheng-reduce-ai-perception"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unclecheng-reduce-ai-perception",
+    "url": "https://clawhub.ai/skills/unclecheng-reduce-ai-perception",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unclecheng-reduce-ai-perception-f567f74bdf4e45cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unclecheng-reduce-ai-perception@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unclecheng-reduce-ai-perception-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab45564afb8c1a20da3d1ff9a5e48a54224fd9bbddc21f219f6439dfa895d0f2",
+      "artifactSizeBytes": 2743
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T13:23:52.128Z"
+}

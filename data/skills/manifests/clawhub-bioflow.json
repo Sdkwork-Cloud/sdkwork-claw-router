@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33352,
+  "uuid": "skill-clawhub-bioflow",
+  "skillKey": "clawhub-bioflow",
+  "name": "BioFlow",
+  "summary": "Concise guide for BioFlow API usage covering signup/login, file upload/download, token balance check, task submission, and result retrieval with example endp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bioflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ashipiling",
+      "features": [
+        "Concise guide for BioFlow API usage covering signup/login, file upload/download, token balance."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bioflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44961008?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bioflow",
+      "url": "https://clawhub.ai/skills/bioflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bioflow",
+    "url": "https://clawhub.ai/skills/bioflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bioflow-a2a9d9eb278a016e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bioflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bioflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebb70f7a5e44f3d492a5fabf9a3ec399faa4dc4bb127ee66972c5ebcbfd4a8ad",
+      "artifactSizeBytes": 1818
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:07:22.273Z"
+}

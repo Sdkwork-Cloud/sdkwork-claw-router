@@ -1,14 +1,17 @@
-import { ChevronDown, Plus, Sparkles } from 'lucide-react';
+import { Plus, Sparkles } from 'lucide-react';
+import { createFallbackModel, PlaygroundModelPicker } from '../PlaygroundModelPicker';
 import { PLAYGROUND_READ_ONLY_REASON, ReadOnlyPlaygroundButton } from '../ReadOnlyPlaygroundControl';
 import { SharedHistoryView } from './SharedHistoryView';
 import type { PlaygroundAssetViewProps } from '../../playgroundTypes';
 
+const FALLBACK_IMAGE_MODEL = createFallbackModel('Image 3.0', 'Image generation contract pending', '3.0', 'images');
+
 export function ImageView({
   agentHistory,
   setPreviewItem,
-  setSelectedModel,
-  activeSelectedModel,
-  activeModelOptions,
+  modelGroups,
+  selectedModelId,
+  setSelectedModelId,
   showModelMenu,
   setShowModelMenu,
 }: PlaygroundAssetViewProps) {
@@ -16,48 +19,15 @@ export function ImageView({
     <div className="relative z-10 flex h-full w-full flex-row bg-[#0a0a0a]">
       <div className="custom-scrollbar relative z-20 flex w-[450px] shrink-0 flex-col overflow-y-auto border-r border-white/5 bg-[#151515] xl:w-[510px]">
         <div className="mt-2 flex w-full flex-col gap-6 p-4">
-          <div className="relative">
-            <div
-              onClick={() => setShowModelMenu(!showModelMenu)}
-              className="flex cursor-pointer items-center justify-between rounded-xl border border-white/5 bg-[#1a1a1a] p-3 shadow-sm transition-colors hover:border-indigo-500/50"
-            >
-              <div className="flex items-center gap-3">
-                <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-400 p-[1.5px] shadow-[0_0_15px_rgba(99,102,241,0.2)]">
-                  <div className="flex h-full w-full items-center justify-center rounded-[6px] bg-[#1a1a1a] font-mono text-[10px] font-bold text-white">
-                    {activeSelectedModel?.ver || '3.0'}
-                  </div>
-                </div>
-                <div>
-                  <div className="mb-0.5 text-[13px] font-bold tracking-wide text-slate-200">{activeSelectedModel?.name || 'Image 3.0'}</div>
-                  <div className="line-clamp-1 text-[10px] tracking-wide text-slate-500">{activeSelectedModel?.desc || PLAYGROUND_READ_ONLY_REASON}</div>
-                </div>
-              </div>
-              <ChevronDown className={`h-3.5 w-3.5 shrink-0 text-slate-500 transition-transform duration-300 ${showModelMenu ? 'rotate-180' : ''}`} />
-            </div>
-
-            {showModelMenu && (
-              <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-50 origin-top overflow-hidden rounded-xl border border-white/10 bg-[#252528] py-1.5 shadow-2xl">
-                {activeModelOptions.map((model) => (
-                  <div
-                    key={model.name}
-                    onClick={() => {
-                      setSelectedModel(model.name);
-                      setShowModelMenu(false);
-                    }}
-                    className="flex cursor-pointer items-center justify-between border-b border-white/5 p-3 transition-colors last:border-b-0 hover:bg-white/5"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-7 w-7 items-center justify-center rounded border border-white/10 bg-black/20 font-mono text-[9px] text-slate-400">{model.ver}</div>
-                      <div>
-                        <div className={`text-sm font-bold tracking-wide ${model.name === activeSelectedModel?.name ? 'text-indigo-400' : 'text-slate-300'}`}>{model.name}</div>
-                        <div className="mt-0.5 text-[11px] text-slate-500">{model.desc}</div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+          <PlaygroundModelPicker
+            bucket="images"
+            modelGroups={modelGroups}
+            selectedModelId={selectedModelId}
+            onSelectModel={setSelectedModelId}
+            showModelMenu={showModelMenu}
+            setShowModelMenu={setShowModelMenu}
+            fallback={FALLBACK_IMAGE_MODEL}
+          />
 
           <div className="flex flex-col gap-2">
             <div className="flex items-center justify-between">

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37021,
+  "uuid": "skill-clawhub-bakeries",
+  "skillKey": "clawhub-bakeries",
+  "name": "Nearby Bakeries",
+  "summary": "Find nearby bakeries. Invoke when user asks for bakeries near me.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bakeries",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawkk",
+      "features": [
+        "Find nearby bakeries",
+        "Invoke when user asks for bakeries near me."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bakeries@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bakeries",
+      "url": "https://clawhub.ai/skills/bakeries"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bakeries",
+    "url": "https://clawhub.ai/skills/bakeries",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bakeries-9043419c06061702.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bakeries@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bakeries-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4adf599fbc3f2baddeab488c619c2996914207457b487f1f2a8df1b5552a54de",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:44:54.379Z"
+}

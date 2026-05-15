@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53011,
+  "uuid": "skill-clawhub-fraud-filter",
+  "skillKey": "clawhub-fraud-filter",
+  "name": "Fraud Filter",
+  "summary": "Community trust scores for AI agent payment endpoints — checks endpoint reputation before payment and queues anonymous failure reports locally (network repor...",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fraud_filter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mattpolly",
+      "features": [
+        "Community trust scores for AI agent payment endpoints — checks endpoint reputation before payme."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fraud-filter@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134074941?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fraud-filter",
+      "url": "https://clawhub.ai/skills/fraud-filter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fraud-filter",
+    "url": "https://clawhub.ai/skills/fraud-filter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fraud-filter-2f14148bec4feeaf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fraud-filter@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fraud-filter-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3b2c2bcc09c576e73a93bd017bea3f56ecf4c149455a34bad52a1e2022a6bf6",
+      "artifactSizeBytes": 2161
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T00:23:18.999Z"
+}

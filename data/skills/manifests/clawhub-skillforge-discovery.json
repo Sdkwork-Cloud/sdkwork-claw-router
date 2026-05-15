@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61277,
+  "uuid": "skill-clawhub-skillforge-discovery",
+  "skillKey": "clawhub-skillforge-discovery",
+  "name": "SkillForge API 服务发现",
+  "summary": "SkillForge API 服务发现 - 自动发现和调用付费 AI 服务。当 OpenClaw Agent 需要某个能力但本地没有时，自动查找并推荐可用服务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillforge_discovery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leongfans",
+      "features": [
+        "SkillForge API 服务发现",
+        "自动发现和调用付费 AI 服务。当 OpenClaw Agent 需要某个能力但本地没有时，自动查找并推荐可用服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillforge-discovery@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2830960?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillforge-discovery",
+      "url": "https://clawhub.ai/skills/skillforge-discovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillforge-discovery",
+    "url": "https://clawhub.ai/skills/skillforge-discovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillforge-discovery-f85bc4a0192e4390.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillforge-discovery@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillforge-discovery-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d1c9e5578a48e98836aed1649e9106d002d30d4f2bd8ee783db9c76b515d659",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T01:08:04.493Z"
+}

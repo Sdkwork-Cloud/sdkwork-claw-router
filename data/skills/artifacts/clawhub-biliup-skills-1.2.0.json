@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/biliup-skills@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.biliup_skills",
+  "skill": {
+    "id": 60508,
+    "skillKey": "clawhub-biliup-skills",
+    "name": "biliup-skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "biliup-skills",
+    "url": "https://clawhub.ai/skills/biliup-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/biliup-skills-e023ff7fc7de2602.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用命令行工具 biliup（Python 版官方 CLI，非 biliup-rs）向 B 站（bilibili）投稿视频。触发场景：用户说\"投稿 B 站\"、\"上传到 B 站\"、\"发 B 站\"、\"bilibili 投稿\"、\"B 站发视频\"、\"上传视频到 bilibili\"等相关关键字。功能：(1) 自动检测并通过..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pokerskun",
+      "userId": "publishers:pokerskun",
+      "displayName": "PokersKun",
+      "image": "https://avatars.githubusercontent.com/u/32659429?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 483,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773196731062,
+      "changelog": "修复: 改用 pip install biliup（PyPI 官方包）替代手动下载二进制，消除安全误报；修复 setup_biliup.sh 错误引用 biliup-rs 的 bug；完善 cookies.json 说明，补充安全注释",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d41243947c8e0a8a8e70fe01c175679a45a7ed0f257d95437a70f89d8fccb8c0"
+}

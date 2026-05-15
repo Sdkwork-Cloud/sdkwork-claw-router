@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-context@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_context",
+  "skill": {
+    "id": 12751,
+    "skillKey": "clawhub-auto-context",
+    "name": "Auto Context"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-context",
+    "url": "https://clawhub.ai/skills/auto-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-context-4ba418f7a61992f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically read relevant context before major actions. Loads TODO.md, roadmap.md, handoffs, task plans, and other project context files so the AI operates with full situational awareness. Use when starting a task, implementing a feature."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1404,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770728451667,
+      "changelog": "- Initial release of the auto-context skill for situational awareness.\n- Automatically loads key project context files (TODO.md, roadmap.md, handoffs, task plans, findings, and more) before major actions.\n- Dynamically determines which files to read based on task type, with clear priority and fallback paths.\n- Detects file staleness and provides age-based warnings to prevent reliance on outdated information.\n- Generates a concise, structured context summary before proceeding with any task.\n- Integrates as a precursor to common project commands (start-task, intent, workflow, etc.) to ensure full situational awareness.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d3d093ba3bb187ab1a92ec2d5dac58bbec19adbded6b45efdee1ab745b41142a"
+}

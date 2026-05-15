@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-download@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_download",
+  "skill": {
+    "id": 55673,
+    "skillKey": "clawhub-free-video-download",
+    "name": "Free Video Download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-download",
+    "url": "https://clawhub.ai/skills/free-video-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-download-bb4edb9d7cf892b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — download this video as an MP4 file I can keep offline — and get downloaded..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777229049116,
+      "changelog": "Initial release of Free Video Download — Download and Save Videos Locally\n\n- Quickly download and convert online videos (MP4, MOV, AVI, WebM up to 500MB) to MP4 for offline use.\n- No need for complex editing software — just describe your request in plain language.\n- Automatic backend connection and token handling for fast setup (100 free credits, no registration needed).\n- Supports exporting at up to 1080p; process typically completes in 20–40 seconds.\n- Handles uploads, status checks, credit queries, and video exports—all from a simple chat interface.\n- Clear error handling and helpful status updates throughout the process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8216ca2a23ec663a4ff2cddc528101586cd73866790a52766dc658d6672a40fc"
+}

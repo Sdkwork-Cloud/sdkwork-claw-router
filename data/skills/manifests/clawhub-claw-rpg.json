@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18346,
+  "uuid": "skill-clawhub-claw-rpg",
+  "skillKey": "clawhub-claw-rpg",
+  "name": "Claw Rpg",
+  "summary": "D&D-style lobster RPG system generating characters from SOUL and MEMORY, tracking XP, leveling up to 999 with prestige, and providing a web dashboard.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_rpg",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RAMBOXIE",
+      "features": [
+        "D&D-style lobster RPG system generating characters from SOUL and MEMORY, tracking XP, leveling."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-rpg@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74229868?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-rpg",
+      "url": "https://clawhub.ai/skills/claw-rpg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-rpg",
+    "url": "https://clawhub.ai/skills/claw-rpg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-rpg-cebbc01ef50f8d95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-rpg@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-rpg-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74ffb8333f6ca7bdf14dd1b9f643eb890df4485cbb783fc947500b474b257bbc",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T13:11:38.321Z"
+}

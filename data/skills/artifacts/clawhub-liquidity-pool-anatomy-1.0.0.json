@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/liquidity-pool-anatomy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liquidity_pool_anatomy",
+  "skill": {
+    "id": 49518,
+    "skillKey": "clawhub-liquidity-pool-anatomy",
+    "name": "Liquidity Pool Anatomy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liquidity-pool-anatomy",
+    "url": "https://clawhub.ai/skills/liquidity-pool-anatomy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liquidity-pool-anatomy-8290357816911b4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explains how liquidity pools work, impermanent loss with concrete examples, fee structures, and LP risks - from user-provided pool information."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 76,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778173660630,
+      "changelog": "Initial release of Liquidity Pool Anatomy skill:\n\n- Provides structured explanations of liquidity pools, impermanent loss scenarios, fee structures, and LP risks based strictly on user-supplied information.\n- Guides users to separate facts, claims, assumptions, and unknowns before making liquidity decisions.\n- Outputs consistent sections: pool type, IL examples, fees, LP vs hold, info gaps, verification checklist, and a clear takeaway.\n- Emphasizes safety boundaries and refuses to interact with wallets, execute code, verify claims, or predict returns.\n- Designed for educational purposes—does not offer financial, legal, or investment advice.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2041521e1598b084737b4300b3b4a80363444f4bac9c25b40b0217d006d6469c"
+}

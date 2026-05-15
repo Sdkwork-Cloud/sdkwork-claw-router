@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mintyouragent@3.6.3",
+  "version": "3.6.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mintyouragent",
+  "skill": {
+    "id": 11059,
+    "skillKey": "clawhub-mintyouragent",
+    "name": "mintyouragent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mintyouragent",
+    "url": "https://clawhub.ai/skills/mintyouragent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mintyouragent-70a4632909027dd3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI agent toolkit for Solana — launch tokens, play poker, link your agent identity to mintyouragent.com. Reads agent personality files (SOUL.md) for profile l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "operatingdev",
+      "userId": "publishers:operatingdev",
+      "displayName": "operatingdev",
+      "image": "https://avatars.githubusercontent.com/u/253821908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2670,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 34
+    },
+    "latestVersion": {
+      "version": "3.6.3",
+      "createdAt": 1771973232565,
+      "changelog": "- Launching tokens now requires a fee of 0.01 SOL per launch (previously free).\n- Updated documentation to include the new fee and a Discord link.\n- Default environment variable names changed from MYA_* to SOUL_* for API configuration in .env files.\n- Minor copy and formatting updates for clarity and consistency.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0d569fa2ee056c66929315e1b7aea68eada0846ea4a8c5461baaef7e6fd6ee52"
+}

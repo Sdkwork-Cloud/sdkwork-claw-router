@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-self-guard@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_self_guard",
+  "skill": {
+    "id": 42129,
+    "skillKey": "clawhub-openclaw-self-guard",
+    "name": "openclawselfguard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-self-guard",
+    "url": "https://clawhub.ai/skills/openclaw-self-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-self-guard-d2983428d815ed5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors local OpenClaw version daily at 06:00 Beijing time against NVD and GitHub advisories, reporting found CVEs with remediation steps."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaronjager92",
+      "userId": "s178zmkhhe22hesyqac26w9fqs83jx7b",
+      "displayName": "aaronjager92",
+      "image": "https://avatars.githubusercontent.com/u/140129711?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774955032718,
+      "changelog": "- Clarified and simplified data sources: now only NVD and GitHub Security Advisories are listed.\n- Updated cron job section: clarified that delivery is console output by default, with instructions for customizing the output channel.\n- Removed references to international/intelligence sources and CVE.org for improved accuracy.\n- Updated features and usage documentation for clarity and conciseness.\n- Updated requirements to include `lxml` in addition to `requests` and `beautifulsoup4`.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c017ec63caa834db7b5cf8faa6f4fcf706183cdb97c217c32fd01c50100ef917"
+}

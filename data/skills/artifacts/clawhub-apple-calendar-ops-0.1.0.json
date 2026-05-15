@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apple-calendar-ops@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_calendar_ops",
+  "skill": {
+    "id": 17686,
+    "skillKey": "clawhub-apple-calendar-ops",
+    "name": "Apple Calendar Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-calendar-ops",
+    "url": "https://clawhub.ai/skills/apple-calendar-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-calendar-ops-df9dcbc894cc9854.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read, create, update, and delete Apple Calendar events via CalDAV. Use when the user wants to inspect calendars or events, add a calendar event, change an ex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivy-end",
+      "userId": "publishers:ivy-end",
+      "displayName": "ClawEnd",
+      "image": "https://avatars.githubusercontent.com/u/3644544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 755,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773286088518,
+      "changelog": "Initial release: Apple Calendar read/create/update/delete via CalDAV with structured JSON output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a1121c522b722a013e8bd346df1f015f9d2dc86fd68fb5bc715f061cfc2b4950"
+}

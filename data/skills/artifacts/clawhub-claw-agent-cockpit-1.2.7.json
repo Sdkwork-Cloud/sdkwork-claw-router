@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-agent-cockpit@1.2.7",
+  "version": "1.2.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_agent_cockpit",
+  "skill": {
+    "id": 60720,
+    "skillKey": "clawhub-claw-agent-cockpit",
+    "name": "CLAW Agent 智控驾驶舱"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-agent-cockpit",
+    "url": "https://clawhub.ai/skills/claw-agent-cockpit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-agent-cockpit-ac489fd155756e31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLAW Agent 智控驾驶舱 - 专为 OpenClaw Coding Plan 订阅用户打造的一站式运维监控平台。功能包括：(1) API 额度监控与四级告警 (2) 自学习预测引擎（越用越准）(3) 每日用量趋势分析 (4) Token 用量透视 (5) Cron 定时任务管理 (6) 多 Agent 状..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mumuli2021",
+      "userId": "s17djgncfc9af4m20ehgeqt8yn83sygb",
+      "displayName": "mumuli2021",
+      "image": "https://avatars.githubusercontent.com/u/91624118?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.2.7",
+      "createdAt": 1776331420084,
+      "changelog": "v1.2.7: 修复 API 路由无法处理带查询参数的 URL（cache-busting 时间戳导致额度监控区域不显示）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c112dacdee5ecf8db178576b11ee1510a78b99ee172e6e6a9578a551b0d0d47c"
+}

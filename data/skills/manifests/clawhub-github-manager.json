@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62390,
+  "uuid": "skill-clawhub-github-manager",
+  "skillKey": "clawhub-github-manager",
+  "name": "AutoGitHub",
+  "summary": "全面管理GitHub仓库，支持自动代码审查、部署、changelog生成、CI/CD配置、Bug跟踪和项目管理自动化。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shiiyyo",
+      "features": [
+        "全面管理GitHub仓库，支持自动代码审查、部署、changelog生成、CI/CD配置、Bug跟踪和项目管理自动化。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198002361?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-manager",
+      "url": "https://clawhub.ai/skills/github-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-manager",
+    "url": "https://clawhub.ai/skills/github-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-manager-2ade673cdbcfebe7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:257f134253f5384ec32652782121b44e18f849ba8c3867221397848164b01776",
+      "artifactSizeBytes": 4330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T04:11:51.433Z"
+}

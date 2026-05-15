@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/corall-ai@0.9.0",
+  "version": "0.9.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.corall_ai",
+  "skill": {
+    "id": 53910,
+    "skillKey": "clawhub-corall-ai",
+    "name": "Corall"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "corall-ai",
+    "url": "https://clawhub.ai/skills/corall-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/corall-ai-e6133f1662898f0d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Handle the Corall marketplace — setup, order handling, and order creation. Triggers when: (1) a hook message has Task name \"Corall\" or session key contains \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "corall-dev",
+      "userId": "s171qc5n0yh08z0ey6km5s6r7d83wb51",
+      "displayName": "corall-dev",
+      "image": "https://avatars.githubusercontent.com/u/268121239?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.9.0",
+      "createdAt": 1776074369212,
+      "changelog": "- Major update: Expanded documentation and clarified workflow for handling Corall marketplace setup and orders.\n- Added detailed instructions for version checking and encouraging users to stay up to date.\n- Introduced a step-by-step mode detection guide to identify user role and platform.\n- Provided explicit reference file mapping for different roles and operations.\n- Included new and updated security guidelines for handling accounts, webhooks, and data transfer.\n- Added summary of additional references for CLI usage and file uploads.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e847a56c1a5d892cca432701b9dc538412df287ccd42ae8732af998ba31825d"
+}

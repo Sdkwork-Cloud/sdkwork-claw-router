@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15799,
+  "uuid": "skill-clawhub-expanso-log-sanitize",
+  "skillKey": "clawhub-expanso-log-sanitize",
+  "name": "Expanso log-sanitize",
+  "summary": "Sanitize log entries by removing passwords, tokens, and other sensitive patterns using Expanso Edge pipelines.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expanso_log_sanitize",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Expanso",
+      "features": [
+        "Sanitize log entries by removing passwords, tokens, and other sensitive patterns using Expanso."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/expanso-log-sanitize@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "expanso-log-sanitize",
+      "url": "https://clawhub.ai/skills/expanso-log-sanitize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expanso-log-sanitize",
+    "url": "https://clawhub.ai/skills/expanso-log-sanitize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expanso-log-sanitize-cc9a77b85273f302.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/expanso-log-sanitize@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-expanso-log-sanitize-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55b1f3162b7ac4183f39c3457daaa0164b170f3e599d94c330641a8c0381196a",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T19:51:57.809Z"
+}

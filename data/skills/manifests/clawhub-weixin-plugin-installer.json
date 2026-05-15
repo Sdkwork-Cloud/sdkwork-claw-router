@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66143,
+  "uuid": "skill-clawhub-weixin-plugin-installer",
+  "skillKey": "clawhub-weixin-plugin-installer",
+  "name": "Weixin Plugin Installer",
+  "summary": "通过聊天指令安装微信连接、刷新最新二维码、查询当前二维码状态、取消当前二维码刷新任务。",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weixin_plugin_installer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zyg",
+      "features": [
+        "通过聊天指令安装微信连接、刷新最新二维码、查询当前二维码状态、取消当前二维码刷新任务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weixin-plugin-installer@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5683892?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weixin-plugin-installer",
+      "url": "https://clawhub.ai/skills/weixin-plugin-installer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weixin-plugin-installer",
+    "url": "https://clawhub.ai/skills/weixin-plugin-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weixin-plugin-installer-2450cb24cf5b2ce1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weixin-plugin-installer@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-weixin-plugin-installer-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e2440e540e6f1ca0a664bd9945a38e1d64bb1df3986d05330ed66c3362d0319",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T04:22:06.289Z"
+}

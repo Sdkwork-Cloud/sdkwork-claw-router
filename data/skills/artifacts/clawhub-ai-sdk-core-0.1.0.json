@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-sdk-core@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_sdk_core",
+  "skill": {
+    "id": 11748,
+    "skillKey": "clawhub-ai-sdk-core",
+    "name": "Ai Sdk Core"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-sdk-core",
+    "url": "https://clawhub.ai/skills/ai-sdk-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-sdk-core-42549d86a61ce580.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build backend AI with Vercel AI SDK v6 stable. Covers Output API (replaces generateObject/streamObject), speech synthesis, transcription, embeddings, MCP tools with security guidance. Includes v4→v5 migration and 15 error solutions with wo."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2032,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769871161364,
+      "changelog": "ai-sdk-core v0.1.0\n\n- Initial release for backend AI development with Vercel AI SDK v6 (stable).\n- Adds comprehensive Output API, replacing generateObject/streamObject (with migration guide).\n- Documents speech synthesis, transcription, embeddings, agent abstraction, and MCP tools with security guidance.\n- Includes guidance for v4→v5 migration and 15 common error solutions.\n- Provides best practices for human-in-the-loop tool permissions and secure tool integration.\n- Offers troubleshooting help for key AI SDK platform issues.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6ef7b6086acef155ff38c145133da9e2a5d941796837735b64e2f7569523f173"
+}

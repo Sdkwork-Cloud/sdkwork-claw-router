@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-company-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_company_search",
+  "skill": {
+    "id": 40566,
+    "skillKey": "clawhub-mcp-company-search",
+    "name": "mcp-company-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-company-search",
+    "url": "https://clawhub.ai/skills/mcp-company-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-company-search-733286ef7b912313.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search corporate registries across multiple jurisdictions via L402 API. Find companies by name and jurisdiction for due diligence, compliance, and business r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haveblue997",
+      "userId": "s172mms5r1fhkhzy7cmpsn7t2h841xv3",
+      "displayName": "HaveBlue997",
+      "image": "https://avatars.githubusercontent.com/u/23174278?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775052511215,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0d069913e60b3c7aa4111eb779b83d677bf29ae60baf75a20d0a9cd45651e70"
+}

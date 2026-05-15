@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openai-codex-multi-oauth@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openai_codex_multi_oauth",
+  "skill": {
+    "id": 24661,
+    "skillKey": "clawhub-openai-codex-multi-oauth",
+    "name": "OpenAI Codex Multi OAuth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openai-codex-multi-oauth",
+    "url": "https://clawhub.ai/skills/openai-codex-multi-oauth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openai-codex-multi-oauth-fae7088372df1f0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and debug multiple OpenAI Codex OAuth profiles inside OpenClaw, including native multi-profile auth stores and external-router setups where one active..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wthh031230",
+      "userId": "s1741nr1y7mc0pe2wfrxzf2q2n844kx0",
+      "displayName": "WTHH031230",
+      "image": "https://avatars.githubusercontent.com/u/184518394?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 406,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1773754399738,
+      "changelog": "Make the skill more human-facing: clarify common commands and surfaces such as /status, optional /codex_profile, optional /codex_usage, auto-switch behavior, and operator usage flows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:15f318eeb27368fea2ee68656e478da01742bfa02cf2a8994278b14e8d4d8c10"
+}

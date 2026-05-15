@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/muguozi1-openclaw-proactivity@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.muguozi1_openclaw_proactivity",
+  "skill": {
+    "id": 23709,
+    "skillKey": "clawhub-muguozi1-openclaw-proactivity",
+    "name": "Muguozi1 Openclaw Proactivity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "muguozi1-openclaw-proactivity",
+    "url": "https://clawhub.ai/skills/muguozi1-openclaw-proactivity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/muguozi1-openclaw-proactivity-e1a3e6c85e80116d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Anticipates needs, keeps work moving, and improves through use so the agent gets more proactive over time."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "muguozi1",
+      "userId": "s17197vrn391tcfkwt2y7v215n83gb4q",
+      "displayName": "muguozi1",
+      "image": "https://avatars.githubusercontent.com/u/63887927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 432,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773638484709,
+      "changelog": "Proactivity 1.0.1 is a significant update to strengthen the agent’s proactive behaviors.\n\n- Adds reverse prompting to surface relevant next steps and ideas before the user asks.\n- Improves self-healing and graceful adaptation when workflows break.\n- Recovers context faster with a working-buffer for long tasks and interruptions.\n- Enhances clarity in SOUL and AGENTS setup and workspace integration boundaries.\n- Emphasizes local proactive state management, user approval for external actions, and security.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:187f04e2cc9253855af7c9e814ff665a80adfdfdb68c445e1a50b061a839d7b0"
+}

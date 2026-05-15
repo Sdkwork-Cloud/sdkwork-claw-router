@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58596,
+  "uuid": "skill-clawhub-uapi-get-game-epic-free",
+  "skillKey": "clawhub-uapi-get-game-epic-free",
+  "name": "UAPI Epic 免费游戏 接口",
+  "summary": "使用 UAPI 的“Epic 免费游戏”单接口 skill，处理 Epic 免费游戏、Epic免费游戏、游戏资料 等请求。 Use when the user wants get game epic free, game epic-free, epic-free, epic free games, or when...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uapi_get_game_epic_free",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "速冻饺子",
+      "features": [
+        "使用 UAPI 的“Epic 免费游戏”单接口 skill，处理 Epic 免费游戏、Epic免费游戏、游戏资料 等请求。 Use when the user wants get game."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uapi-get-game-epic-free@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149454909?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uapi-get-game-epic-free",
+      "url": "https://clawhub.ai/skills/uapi-get-game-epic-free"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uapi-get-game-epic-free",
+    "url": "https://clawhub.ai/skills/uapi-get-game-epic-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uapi-get-game-epic-free-d233ee9f2972b60b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uapi-get-game-epic-free@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uapi-get-game-epic-free-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b97e5d9d5c821ecba0defd77a129ef8c39984b5d3b606e19d7d89a7dd65e85a",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T20:35:58.530Z"
+}

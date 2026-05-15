@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62890,
+  "uuid": "skill-clawhub-tophot-chinese",
+  "skillKey": "clawhub-tophot-chinese",
+  "name": "TopHotCN",
+  "summary": "抓取 tophub.today 支持网站的热榜列表并生成 JSON 文件，可进一步抓取并保存文章正文内容。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tophot_chinese",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aesopdeng",
+      "features": [
+        "抓取 tophub.today 支持网站的热榜列表并生成 JSON 文件，可进一步抓取并保存文章正文内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tophot-chinese@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168056688?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tophot-chinese",
+      "url": "https://clawhub.ai/skills/tophot-chinese"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tophot-chinese",
+    "url": "https://clawhub.ai/skills/tophot-chinese",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tophot-chinese-b49cc3180c4a1ab3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tophot-chinese@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tophot-chinese-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:473856845ddcb0c6b53b7593e27fd08ed0e855602ab431ca3867962635126ed8",
+      "artifactSizeBytes": 2429
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T06:51:51.045Z"
+}

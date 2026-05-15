@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9826,
+  "uuid": "skill-clawhub-speech-to-text",
+  "skillKey": "clawhub-speech-to-text",
+  "name": "Speech To Text",
+  "summary": "Transcribe audio to text with Whisper models via inference.sh CLI. Models: Fast Whisper Large V3, Whisper V3 Large. Capabilities: transcription, translation,...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.speech_to_text",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ömer Karışman",
+      "features": [
+        "Transcribe audio to text with Whisper models via inference.sh CLI",
+        "Models: Fast Whisper Large V3, Whisper V3 Large",
+        "Capabilities: transcription, translation,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/speech-to-text@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1448702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "speech-to-text",
+      "url": "https://clawhub.ai/skills/speech-to-text"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "speech-to-text",
+    "url": "https://clawhub.ai/skills/speech-to-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/speech-to-text-f9b954eac6019216.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/speech-to-text@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-speech-to-text-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e1b4ec41a596bf01b1d418ae8833203d1bf703bd8dbffb31a44521a1e6e1497",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T08:29:50.089Z"
+}

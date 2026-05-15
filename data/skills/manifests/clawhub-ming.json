@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58782,
+  "uuid": "skill-clawhub-ming",
+  "skillKey": "clawhub-ming",
+  "name": "Ming",
+  "summary": "中国传统命理分析工具，提供八字排盘、五行分析、运势预测、姓名学解析等功能。Use when user asks about Chinese fortune telling, BaZi (八字), Five Elements (五行), destiny analysis, lucky directions, aus...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ming",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "中国传统命理分析工具，提供八字排盘、五行分析、运势预测、姓名学解析等功能。Use when user asks about Chinese fortune telling, BaZi (八字."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ming@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ming",
+      "url": "https://clawhub.ai/skills/ming"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ming",
+    "url": "https://clawhub.ai/skills/ming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ming-5dd52596b1ac068f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ming@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ming-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:291e6b528af59edadcf588578d9c322c666b16acceea9f093a5eb28391cdb8e0",
+      "artifactSizeBytes": 2649
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T09:21:26.527Z"
+}

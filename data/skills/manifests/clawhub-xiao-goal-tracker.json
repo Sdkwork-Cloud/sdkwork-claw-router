@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61608,
+  "uuid": "skill-clawhub-xiao-goal-tracker",
+  "skillKey": "clawhub-xiao-goal-tracker",
+  "name": "Xiao Goal Tracker",
+  "summary": "目标追踪 - 目标设定、进度跟踪、里程碑庆祝",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiao_goal_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kaising-openclaw1",
+      "features": [
+        "目标设定、进度跟踪、里程碑庆祝"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiao-goal-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266910723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiao-goal-tracker",
+      "url": "https://clawhub.ai/skills/xiao-goal-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiao-goal-tracker",
+    "url": "https://clawhub.ai/skills/xiao-goal-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiao-goal-tracker-cb002b43bb35bdf2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiao-goal-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiao-goal-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f162d77b91979540cdd47f0f798e284744aa4999e5eabc6565f5505e3b5a1850",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T13:28:41.942Z"
+}

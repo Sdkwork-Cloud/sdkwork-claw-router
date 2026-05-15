@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12150,
+  "uuid": "skill-clawhub-professional-communication",
+  "skillKey": "clawhub-professional-communication",
+  "name": "Professional Communication",
+  "summary": "Write effective professional messages for software teams. Use when drafting emails, Slack/Teams messages, meeting agendas, status updates, or translating technical concepts for non-technical audiences. Triggers on email, slack, teams, mess.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.professional_communication",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Write effective professional messages for software teams",
+        "Use when drafting emails, Slack/Teams messages, meeting agendas, status updates, or translating.",
+        "Triggers on email, slack, teams, message, meeting agenda, status update, stakeholder communicat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/professional-communication@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "professional-communication",
+      "url": "https://clawhub.ai/skills/professional-communication"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "professional-communication",
+    "url": "https://clawhub.ai/skills/professional-communication",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/professional-communication-4febdf59db0dc226.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/professional-communication@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-professional-communication-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ccc0ffc82e888829cd09c460bd7c6652008f7bb1f36fd20bbf9484f81ea6755",
+      "artifactSizeBytes": 2563
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T13:41:03.065Z"
+}

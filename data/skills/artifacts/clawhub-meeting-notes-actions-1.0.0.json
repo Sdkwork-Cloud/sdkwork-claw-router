@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meeting-notes-actions@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_notes_actions",
+  "skill": {
+    "id": 38069,
+    "skillKey": "clawhub-meeting-notes-actions",
+    "name": "Meeting Notes to Actions"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-notes-actions",
+    "url": "https://clawhub.ai/skills/meeting-notes-actions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-notes-actions-ae41cab9db447993.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform raw meeting notes or transcripts into structured summaries, action items with owners and deadlines, individual follow-up emails, and next meeting a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamespatrickthom2003-star",
+      "userId": "s175sm574s69gbqvacsbvd8n3n84fq3m",
+      "displayName": "ExternalOS",
+      "image": "https://avatars.githubusercontent.com/u/270515205?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775648801199,
+      "changelog": "Initial release: meeting-notes-actions 1.0.0\n\n- Transform raw meeting notes or transcripts into structured, copy-paste-ready summaries, action items, follow-up emails, agendas, and status updates.\n- Supports a wide range of input formats: messy notes, transcripts, message threads, and more; no need for formatting clarification.\n- Multiple modes: quick process (all sections), meeting type presets (with type-specific output), follow-up only, actions only, and status update.\n- Actionable, owner-assigned action tables and individualized follow-up emails for each attendee.\n- Context-aware agenda and project status update generation, with clarity on owner, deadlines, and priorities.\n- Includes rules for clarity, brevity, and handling ambiguous or incomplete information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e7316048b8c66029eab512f3c66786e775b66e8b1c01afaf75a3395fd769c8d"
+}

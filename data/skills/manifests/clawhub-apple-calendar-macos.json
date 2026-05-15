@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14882,
+  "uuid": "skill-clawhub-apple-calendar-macos",
+  "skillKey": "clawhub-apple-calendar-macos",
+  "name": "Apple Calendar (MacOS)",
+  "summary": "Use local CLI to manage Apple, Google, iCloud, Outlook, CalDAV, and other calendars synced in macOS Calendar, without API keys or OAuth.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_calendar_macos",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Use local CLI to manage Apple, Google, iCloud, Outlook, CalDAV, and other calendars synced in m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apple-calendar-macos@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apple-calendar-macos",
+      "url": "https://clawhub.ai/skills/apple-calendar-macos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-calendar-macos",
+    "url": "https://clawhub.ai/skills/apple-calendar-macos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-calendar-macos-7a00a90319f6b6a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apple-calendar-macos@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apple-calendar-macos-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bec6debde2c29a012d405dfac3fce9c98fe340954594cea7d2f1b6dbdf0538be",
+      "artifactSizeBytes": 2012
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T16:23:50.892Z"
+}

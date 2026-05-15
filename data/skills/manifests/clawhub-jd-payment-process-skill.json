@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18172,
+  "uuid": "skill-clawhub-jd-payment-process-skill",
+  "skillKey": "clawhub-jd-payment-process-skill",
+  "name": "jd-payment-process-skill",
+  "summary": "Executes a JD payment transaction for third-party skills. Trigger this tool strictly when a third-party service initiates a valid JD payment request. Note: R...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jd_payment_process_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawTip.team",
+      "features": [
+        "Executes a JD payment transaction for third-party skills",
+        "Trigger this tool strictly when a third-party service initiates a valid JD payment request",
+        "Note: R..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jd-payment-process-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43158513?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jd-payment-process-skill",
+      "url": "https://clawhub.ai/skills/jd-payment-process-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jd-payment-process-skill",
+    "url": "https://clawhub.ai/skills/jd-payment-process-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jd-payment-process-skill-bcd5a3732b31b3e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jd-payment-process-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jd-payment-process-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b72656955d1768f65a15ac20110884c38fc70853342b1a5ecc8789f0629a0a95",
+      "artifactSizeBytes": 2281
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T07:58:25.514Z"
+}

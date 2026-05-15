@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/disposable-email@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.disposable_email",
+  "skill": {
+    "id": 27626,
+    "skillKey": "clawhub-disposable-email",
+    "name": "Disposable Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "disposable-email",
+    "url": "https://clawhub.ai/skills/disposable-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/disposable-email-2f493768f6755ecf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create disposable Mail.tm inboxes and programmatically read incoming emails/OTP codes. Use when asked to generate a temporary email, poll inbox messages, ext..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fantaclaw-ai",
+      "userId": "s17e01023j2ae49yssazdnymdx83gkb6",
+      "displayName": "fantaclaw-ai",
+      "image": "https://avatars.githubusercontent.com/u/258181007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773914056812,
+      "changelog": "- Documentation updated: references to \"Mail.tm\" removed from the main heading for clarity.\n- No functional or script changes; only SKILL.md was revised.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fcba610f9328b00dd6fe083c72f04dc45592650d03d4e731491de1de2c6ba64c"
+}

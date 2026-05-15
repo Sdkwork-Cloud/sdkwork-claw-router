@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10229,
+  "uuid": "skill-clawhub-alpaca-trading",
+  "skillKey": "clawhub-alpaca-trading",
+  "name": "Alpaca Trading",
+  "summary": "Trade stocks, ETFs, options, and crypto via Alpaca's REST API using curl. Full options support (buy/sell calls & puts, covered calls, cash-secured puts, spre...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alpaca_trading",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lacymorrow",
+      "features": [
+        "Trade stocks, ETFs, options, and crypto via Alpaca's REST API using curl",
+        "Full options support (buy/sell calls & puts, covered calls, cash-secured puts, spre..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alpaca-trading@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1311301?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alpaca-trading",
+      "url": "https://clawhub.ai/skills/alpaca-trading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alpaca-trading",
+    "url": "https://clawhub.ai/skills/alpaca-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alpaca-trading-3a9eab1957eb6a4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alpaca-trading@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alpaca-trading-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8f360b83ee7843f84f1180173becfb47fc9e68e1078ff0b0c5fd5ac6cda61d7",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T13:58:16.412Z"
+}

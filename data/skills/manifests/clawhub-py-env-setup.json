@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50793,
+  "uuid": "skill-clawhub-py-env-setup",
+  "skillKey": "clawhub-py-env-setup",
+  "name": "Python Env Setup",
+  "summary": "Host-specific Python execution guidance for OpenClaw on this machine. Prefer $PYTHON over python/python3 in PATH, because OpenClaw exec runs in a non-interac...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.py_env_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cndaqiang",
+      "features": [
+        "Host-specific Python execution guidance for OpenClaw on this machine",
+        "Prefer $PYTHON over python/python3 in PATH, because OpenClaw exec runs in a non-interac..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/py-env-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26620270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "py-env-setup",
+      "url": "https://clawhub.ai/skills/py-env-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "py-env-setup",
+    "url": "https://clawhub.ai/skills/py-env-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/py-env-setup-2d1e37fa1e3d9ecb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/py-env-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-py-env-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55b7af4fd9a2010531e5356b9dc4a4b3b50121260e1d0aff9c414fdac6c7f14f",
+      "artifactSizeBytes": 2304
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T06:42:50.643Z"
+}

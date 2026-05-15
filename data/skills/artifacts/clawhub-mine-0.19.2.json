@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mine@0.19.2",
+  "version": "0.19.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mine",
+  "skill": {
+    "id": 50859,
+    "skillKey": "clawhub-mine",
+    "name": "Mine Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mine",
+    "url": "https://clawhub.ai/skills/mine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mine-3fd30542fe3f61b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Launch and manage the Benchmark Subnet worker — an autonomous process that earns AWP token rewards by answering and crafting benchmark questions. Handles the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kilb",
+      "userId": "s17721r0m967d8j56q9shvs86583gj87",
+      "displayName": "awp-core",
+      "image": "https://avatars.githubusercontent.com/u/9641495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.19.2",
+      "createdAt": 1774108794063,
+      "changelog": "Mine Skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e4fd129a848104f98ab38a883fb4596168830512d57b1cf3f6b05fe601e8cbd1"
+}

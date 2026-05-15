@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ir35-assessment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ir35_assessment",
+  "skill": {
+    "id": 41787,
+    "skillKey": "clawhub-ir35-assessment",
+    "name": "IR35 Status Assessment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ir35-assessment",
+    "url": "https://clawhub.ai/skills/ir35-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ir35-assessment-b9c4527a7b46789f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assess IR35 employment status for UK contractors using HMRC criteria and case law factors. Generates risk ratings, recommended contract amendments, and Statu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamespatrickthom2003-star",
+      "userId": "s175sm574s69gbqvacsbvd8n3n84fq3m",
+      "displayName": "ExternalOS",
+      "image": "https://avatars.githubusercontent.com/u/270515205?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775645159092,
+      "changelog": "Initial release — provides a structured IR35 employment status assessment for UK contractors using legal tests and case law.\n\n- Assesses Mutuality of Obligation, Control, and Personal Service/Substitution against detailed, case law-backed criteria.\n- Includes analysis of secondary factors: financial risk, integration, exclusivity, equipment, benefits, and payment structure.\n- Generates risk ratings, contract amendment suggestions, and a Status Determination Statement.\n- Always includes a legal disclaimer and recommends professional advice for borderline or complex cases.\n- User-invocable for contractors or businesses seeking to determine employment status under IR35.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eabc4e5cf2c466717095a8bdd6e29c20781bdb319b6772f6a1a3ae1e9eed799a"
+}

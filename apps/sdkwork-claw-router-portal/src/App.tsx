@@ -1,10 +1,16 @@
-import React, { useState, useEffect, Suspense, lazy } from 'react';
+import React, { useState, useEffect, useLayoutEffect, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { Navbar, Footer } from 'sdkwork-claw-router-commons';
+import {
+  persistThemePreference,
+  resolveInitialThemePreference,
+  type ThemePreference,
+} from './themePreference';
+import { RequirePortalSession } from './auth/protectedPortalRoutes';
 
 const Home = lazyRoute(() => import('sdkwork-claw-router-home'), 'Home');
-const Models = lazyRoute(() => import('sdkwork-claw-router-models'), 'Models');
-const ModelDetails = lazyRoute(() => import('sdkwork-claw-router-models'), 'ModelDetails');
+const Models = lazyRoute(() => import('sdkwork-claw-router-models/models'), 'Models');
+const ModelDetails = lazyRoute(() => import('sdkwork-claw-router-models/details'), 'ModelDetails');
 const Rankings = lazyRoute(() => import('sdkwork-claw-router-rankings'), 'Rankings');
 const AppCenter = lazyRoute(() => import('sdkwork-claw-router-app-center'), 'AppCenter');
 const AppDetails = lazyRoute(() => import('sdkwork-claw-router-app-center'), 'AppDetails');
@@ -21,9 +27,14 @@ const ForumPostView = lazyRoute(() => import('sdkwork-claw-router-forum'), 'Foru
 const CoursesView = lazyRoute(() => import('sdkwork-claw-router-courses'), 'CoursesView');
 const CourseDetailView = lazyRoute(() => import('sdkwork-claw-router-courses'), 'CourseDetailView');
 const ClawRouterAuthRoutes = lazyRoute(() => import('./auth/ClawRouterAuthRoutes'), 'ClawRouterAuthRoutes');
-const ClawRouterAuthOAuthCallbackRoute = lazyRoute(() => import('./auth/ClawRouterAuthRoutes'), 'ClawRouterAuthOAuthCallbackRoute');
 
 type ShellLayoutProps = {
+  isDark: boolean;
+  toggleTheme: () => void;
+  setTheme: (theme: ThemePreference) => void;
+};
+
+type AdminLayoutProps = {
   isDark: boolean;
   toggleTheme: () => void;
 };
@@ -44,7 +55,7 @@ const MessagesView = lazyRoute(() => import('sdkwork-claw-router-console-message
 const ProvidersView = lazyRoute(() => import('sdkwork-claw-router-console-providers'), 'ProvidersView');
 const RechargeView = lazyRoute(() => import('sdkwork-claw-router-console-recharge'), 'RechargeView');
 
-const AdminLayout = lazyRoute<ShellLayoutProps>(() => import('./AdminLayout'), 'AdminLayout');
+const AdminLayout = lazyRoute<AdminLayoutProps>(() => import('./AdminLayout'), 'AdminLayout');
 const DashboardAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-dashboard'), 'DashboardAdmin');
 const UserAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-user'), 'UserAdmin');
 const GroupAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-group'), 'GroupAdmin');
@@ -69,6 +80,14 @@ function lazyRoute<TProps extends object>(
 }
 
 function RouteFallback() {
+  const { pathname } = useLocation();
+
+  if (pathname.startsWith('/auth')) {
+    return (
+      <div className="sdkwork-auth-route-fallback fixed inset-0 z-[60] h-[100dvh] min-h-[100dvh] w-full bg-slate-950" />
+    );
+  }
+
   return <div className="min-h-[40vh] bg-white dark:bg-slate-950" />;
 }
 
@@ -115,17 +134,23 @@ function MainLayout({ isDark, toggleTheme }: { isDark: boolean, toggleTheme: () 
 }
 
 export default function App() {
-  const [isDark, setIsDark] = useState(true);
+  const [theme, setThemeState] = useState<ThemePreference>(() => resolveInitialThemePreference());
+  const isDark = theme === 'dark';
 
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDark]);
+  useLayoutEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+    persistThemePreference(theme);
+  }, [theme]);
 
-  const toggleTheme = () => setIsDark(!isDark);
+  const setTheme = (nextTheme: ThemePreference) => {
+    setThemeState(nextTheme);
+  };
+
+  const toggleTheme = () => {
+    setThemeState((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'));
+  };
 
   return (
     <BrowserRouter>
@@ -133,16 +158,13 @@ export default function App() {
       <div className="min-h-screen flex flex-col selection:bg-lobster-500/30">
         <Suspense fallback={<RouteFallback />}>
           <Routes>
-            <Route path="/auth/login" element={<ClawRouterAuthRoutes />} />
-            <Route path="/auth/register" element={<ClawRouterAuthRoutes />} />
-            <Route path="/auth/forgot-password" element={<ClawRouterAuthRoutes />} />
-            <Route path="/auth/oauth/callback/:provider" element={<ClawRouterAuthOAuthCallbackRoute />} />
+            <Route path="/auth/*" element={<ClawRouterAuthRoutes />} />
 
             <Route path="/apps/:id" element={<AppDetails />} />
             <Route path="/skills-hub/:id" element={<SkillDetails />} />
 
             {/* Console Routes - standalone structure with global Navbar */}
-            <Route path="/console" element={<ConsoleLayout isDark={isDark} toggleTheme={toggleTheme} />}>
+            <Route path="/console" element={<RequirePortalSession><ConsoleLayout isDark={isDark} toggleTheme={toggleTheme} setTheme={setTheme} /></RequirePortalSession>}>
               <Route index element={<Navigate to="/console/dashboard" replace />} />
               <Route path="dashboard" element={<DashboardView />} />
               <Route path="usage" element={<UsageView />} />
@@ -158,10 +180,11 @@ export default function App() {
               <Route path="settings" element={<SettingsView />} />
               <Route path="messages" element={<MessagesView />} />
               <Route path="providers" element={<ProvidersView />} />
+              <Route path="*" element={<Navigate to="/console/dashboard" replace />} />
             </Route>
 
             {/* Admin Routes */}
-            <Route path="/admin" element={<AdminLayout isDark={isDark} toggleTheme={toggleTheme} />}>
+            <Route path="/admin" element={<RequirePortalSession><AdminLayout isDark={isDark} toggleTheme={toggleTheme} /></RequirePortalSession>}>
               <Route index element={<Navigate to="/admin/dashboard" replace />} />
               <Route path="dashboard" element={<DashboardAdmin />} />
               <Route path="user" element={<UserAdmin />} />
@@ -176,6 +199,7 @@ export default function App() {
               <Route path="monitor" element={<MonitorAdmin />} />
               <Route path="ratelimit" element={<RateLimitAdmin />} />
               <Route path="finance" element={<FinanceAdmin />} />
+              <Route path="*" element={<Navigate to="/admin/dashboard" replace />} />
             </Route>
 
             <Route path="*" element={<MainLayout isDark={isDark} toggleTheme={toggleTheme} />} />

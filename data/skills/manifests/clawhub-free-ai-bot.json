@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59292,
+  "uuid": "skill-clawhub-free-ai-bot",
+  "skillKey": "clawhub-free-ai-bot",
+  "name": "Free AI Bot",
+  "summary": "🤖 Free AI Bot - 免费 AI 聚合器。整合 Ollama 本地模型 + Cloudflare Workers AI + Groq 等免费资源，智能路由+故障转移，让 AI 零成本运行。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_ai_bot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bo-Aibot",
+      "features": [
+        "🤖 Free AI Bot",
+        "免费 AI 聚合器。整合 Ollama 本地模型 + Cloudflare Workers AI + Groq 等免费资源，智能路由+故障转移，让 AI 零成本运行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-ai-bot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177507727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-ai-bot",
+      "url": "https://clawhub.ai/skills/free-ai-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-ai-bot",
+    "url": "https://clawhub.ai/skills/free-ai-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-ai-bot-1e971477cc8a8b6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-ai-bot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-ai-bot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:087c3a806a4bde5f46e59f3ccf543ebb59d4f3c33117e98bd0e31d3dee8e1320",
+      "artifactSizeBytes": 2319
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T03:26:56.911Z"
+}

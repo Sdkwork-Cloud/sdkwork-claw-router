@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58940,
+  "uuid": "skill-clawhub-leave-doc",
+  "skillKey": "clawhub-leave-doc",
+  "name": "Leave Doc",
+  "summary": "请假条生成器。事假、病假、年假、婚假、产假模板、多天请假自动计算工作日、紧急请假、年假规划。Leave application generator for personal, sick, annual, marriage, maternity leave with workday calculation, eme...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leave_doc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "请假条生成器。事假、病假、年假、婚假、产假模板、多天请假自动计算工作日、紧急请假、年假规划。Leave application generator for personal, sick, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/leave-doc@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "leave-doc",
+      "url": "https://clawhub.ai/skills/leave-doc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leave-doc",
+    "url": "https://clawhub.ai/skills/leave-doc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leave-doc-38c97714f038b608.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/leave-doc@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-leave-doc-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb77fe98f84c0d78550e0daaf8f7deb9b480a2e7fb714b100e96243cffacdd2c",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:56:25.843Z"
+}

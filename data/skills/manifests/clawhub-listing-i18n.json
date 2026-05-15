@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58856,
+  "uuid": "skill-clawhub-listing-i18n",
+  "skillKey": "clawhub-listing-i18n",
+  "name": "Listing I18n",
+  "summary": "在 OpenClaw 中把中文产品 Excel 或 CSV 本地化为 Amazon 和 Shopify 的多语言 Listing。适用于翻译产品、跨境电商 Listing 本地化、Amazon listing、Shopify listing、localize products 等场景。",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.listing_i18n",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hugochougt",
+      "features": [
+        "在 OpenClaw 中把中文产品 Excel 或 CSV 本地化为 Amazon 和 Shopify 的多语言 Listing。适用于翻译产品、跨境电商 Listing 本地化、Amazo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/listing-i18n@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4479803?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "listing-i18n",
+      "url": "https://clawhub.ai/skills/listing-i18n"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "listing-i18n",
+    "url": "https://clawhub.ai/skills/listing-i18n",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/listing-i18n-4fd876bdf3d8f0f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/listing-i18n@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-listing-i18n-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f0ee35d5eccbae5602de7c23e90c106a919259958e2cc188ec3998a5ee2885a",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T10:46:32.993Z"
+}

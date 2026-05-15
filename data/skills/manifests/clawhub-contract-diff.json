@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44847,
+  "uuid": "skill-clawhub-contract-diff",
+  "skillKey": "clawhub-contract-diff",
+  "name": "Contract Diff",
+  "summary": "Compare contract templates with scanned stamped contracts, list all differences (additions, deletions, modifications). Output as Word document for easy downl...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contract_diff",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "russell-yu",
+      "features": [
+        "Compare contract templates with scanned stamped contracts, list all differences (additions, del.",
+        "Output as Word document for easy downl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/contract-diff@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253503690?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "contract-diff",
+      "url": "https://clawhub.ai/skills/contract-diff"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contract-diff",
+    "url": "https://clawhub.ai/skills/contract-diff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contract-diff-8c50bf4eede627fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/contract-diff@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-contract-diff-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26dde6a7c1e6650b1caa76a67e96f3ec216239fdd50aa0175c9ce543fd27384d",
+      "artifactSizeBytes": 2297
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T07:41:47.584Z"
+}

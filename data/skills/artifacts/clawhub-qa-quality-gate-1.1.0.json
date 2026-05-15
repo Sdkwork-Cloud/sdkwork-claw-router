@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qa-quality-gate@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qa_quality_gate",
+  "skill": {
+    "id": 57926,
+    "skillKey": "clawhub-qa-quality-gate",
+    "name": "QA测试主管 质量门禁验收"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qa-quality-gate",
+    "url": "https://clawhub.ai/skills/qa-quality-gate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qa-quality-gate-e08eb1c6e1162ba0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "QA lead skill for evidence review, gate enforcement, release-readiness assessment, and quality signoff recommendations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiweline",
+      "userId": "s172136s34q2fy2f6r88gdpzm985z150",
+      "displayName": "Aiweline",
+      "image": "https://avatars.githubusercontent.com/u/32635766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778210432196,
+      "changelog": "Publish_WelineFramework_Multica_role_skills",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c450e6b6f5ae0da87d60e0a7e84378d6b1de07566c5b391645b24e1b685eaed4"
+}

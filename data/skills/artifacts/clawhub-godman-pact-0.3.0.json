@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/godman-pact@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.godman_pact",
+  "skill": {
+    "id": 53667,
+    "skillKey": "clawhub-godman-pact",
+    "name": "Pact Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "godman-pact",
+    "url": "https://clawhub.ai/skills/godman-pact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/godman-pact-8c46b55031d572a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PACT — Protocol for Agent Constitutional Trust. Five-chamber agent-to-agent trust and negotiation protocol. Handles identity verification, intent analysis, c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skingem1",
+      "userId": "s175end1bsbdtz390458041hf1843bqr",
+      "displayName": "Godman Protocols",
+      "image": "https://avatars.githubusercontent.com/u/259339698?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1775154909569,
+      "changelog": "godman-pact 0.3.0 introduces the PACT protocol for structured agent-to-agent trust establishment and negotiation.\n\n- Implements a five-chamber trust protocol covering identity verification, intent analysis, negotiation, and secure channel creation.\n- Introduces trust score bands that directly affect session ceiling, duration, and pricing.\n- Supports constitutional negotiation and capability-locked session tokens with automatic expiry.\n- Produces on-chain audit trails via EAS attestation on Base network.\n- Integrates with LAX for agent discovery and DRS for deal receipts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3482831f04382af5bcf779f554fc38b4d1e01876e973ef626d188820868aceb"
+}

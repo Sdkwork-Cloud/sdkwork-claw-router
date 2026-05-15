@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/marriott@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marriott",
+  "skill": {
+    "id": 65691,
+    "skillKey": "clawhub-marriott",
+    "name": "marriott"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marriott",
+    "url": "https://clawhub.ai/skills/marriott",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marriott-82eaf348d48ce5d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "搜索并预订万豪旅享家酒店（marriott.com.cn）。当用户提到酒店搜索、万豪预订、查找入住等需求时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qianjunye",
+      "userId": "s178x03n0v7kt6nmv474ewqe8983kmk2",
+      "displayName": "qianjunye",
+      "image": "https://avatars.githubusercontent.com/u/3345643?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 483,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772276775270,
+      "changelog": "Marriott 1.0.0\n\n- 新增万豪旅享家酒店搜索与预订流程：支持目的地、日期、人数等参数快速查询。\n- 分步指引用户完成酒店筛选、房型选择、房价确认和在线预订。\n- 明确异常处理指南（如Akamai拦截、登录弹窗、无房型等），增强使用稳定性。\n- 适配中英文界面，自动高亮用户偏好匹配的房型房价组合，提升预订体验。\n- 支持Mac与Linux环境切换，保障预订指令流程通畅。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:df46f3041301c0a1372ddfb88f5f64f01f146b3cf99c8bd78a3b49421fb4fd2e"
+}

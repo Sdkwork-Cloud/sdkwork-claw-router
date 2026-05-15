@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "meeting-agenda-tool",
+    "displayName": "会议议程生成助手",
+    "summary": "This skill should be used when the user provides meeting-related information (title, venue, time, agenda items, participants, etc.) and wants to generate a f...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775178371536,
+    "updatedAt": 1777527110650
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775178371536,
+    "changelog": "- Major update: skill refocused to generate standardized Chinese meeting agenda documents in Word and PDF formats based on user-provided meeting details.\n- Removed shell scripts and tips; now uses a new Python script (generate_agenda.py) to handle document generation.\n- Added clear workflow: collect meeting info, format as JSON (following new template), run the Python script, and deliver both .docx and .pdf files.\n- Updated documentation with detailed input fields, example JSON, step-by-step usage, font/style requirements, and error handling notes.\n- The skill strictly follows Chinese government/enterprise meeting document standards for layout and typography.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "ywwzzsgit",
+    "userId": "s17fz7fcwzmfgx539gw8vg6rh983gdwv",
+    "displayName": "YWWZZsgit",
+    "image": "https://avatars.githubusercontent.com/u/215634836?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527110650
+  }
+}

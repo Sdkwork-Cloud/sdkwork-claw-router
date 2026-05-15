@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15871,
+  "uuid": "skill-clawhub-recipe-finder",
+  "skillKey": "clawhub-recipe-finder",
+  "name": "recipe-finder",
+  "summary": "Search and suggest recipes by ingredients, cuisine, or dietary preferences using TheMealDB API with detailed meal info and instructions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_finder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sai Harsha",
+      "features": [
+        "Search and suggest recipes by ingredients, cuisine, or dietary preferences using TheMealDB API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe-finder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125227333?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe-finder",
+      "url": "https://clawhub.ai/skills/recipe-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-finder",
+    "url": "https://clawhub.ai/skills/recipe-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-finder-321e4c09e6357bc6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe-finder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-finder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4bb126282b54cdb0a4c1bca5272bfb4182becaeb601704ba4ed1df63cf6efe07",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T21:19:57.873Z"
+}

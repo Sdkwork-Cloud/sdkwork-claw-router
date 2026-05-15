@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prefy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prefy",
+  "skill": {
+    "id": 50768,
+    "skillKey": "clawhub-prefy",
+    "name": "Prefy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prefy",
+    "url": "https://clawhub.ai/skills/prefy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prefy-849d87d7fc8c1308.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to Prefy AI platform — Conductor API (19 models, OpenAI-compatible), server management, web search, image generation, phone calls (AutoCall). Use whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "runrelay",
+      "userId": "publishers:runrelay",
+      "displayName": "runrelay",
+      "image": "https://avatars.githubusercontent.com/u/260778404?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 463,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772493486936,
+      "changelog": "Prefy 1.0.0 — Initial Release\n\n- Connects to the Prefy AI platform, supporting 19 AI models (OpenAI-compatible Conductor API).\n- Provides server management features: provision, control VPS servers, manage agent commands.\n- Integrates web search, image generation (FLUX Schnell), and upcoming city events lookup.\n- Includes AutoCall: AI-driven phone calls to venues for tasks like bookings.\n- Supports agent API with intent detection for chat, search, flights, hotels, and calling.\n- Offers clear rate limits and easy authentication. Full docs at https://prefy.com/docs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3d81b910bae0ea370cae81f75c68577e097c7f9c5c0f43900ed30957353f6ee7"
+}

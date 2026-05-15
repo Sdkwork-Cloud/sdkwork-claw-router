@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "wjx-mcp-use",
+    "displayName": "wjx-mcp-use",
+    "summary": "Guide for using wjx-mcp-server MCP tools to interact with the Wenjuanxing (问卷星) platform. Use when the user mentions: 问卷, 调查, 收集, 表单, 投票, 考试, 测评, 满意度, NPS, 问...",
+    "tags": {
+      "latest": "0.3.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "createdAt": 1775530834062,
+    "updatedAt": 1777527261680
+  },
+  "latestVersion": {
+    "version": "0.3.2",
+    "createdAt": 1777356230354,
+    "changelog": "Version 0.3.2\n\n- Improved handling and user guidance for API Key errors (“API Key is required”, “Invalid API Key”, etc.): now requires stopping further tool calls and giving clear, natural-language instructions to obtain or update `WJX_API_KEY`.\n- Enhanced instructions for mapping `submitdata` field in survey submissions: clarified q_index usage, and added detailed examples for complex question types (matrix, ranking, etc).\n- Updated rules: configuration checks are only required on first use, user request, or when actual API Key errors are returned, reducing unnecessary validation.\n- Updated error handling section: now includes exact error messages and required user reminders for missing or invalid API Key situations.\n- No changes to core tools, prompts, or resources coverage.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "orzwq",
+    "userId": "s179r4v6tnneb7g20yr2njras184a0qd",
+    "displayName": "orzwq",
+    "image": "https://avatars.githubusercontent.com/u/85607760?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527261680
+  }
+}

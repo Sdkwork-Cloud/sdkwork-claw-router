@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shared-brain@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shared_brain",
+  "skill": {
+    "id": 35522,
+    "skillKey": "clawhub-shared-brain",
+    "name": "Shared Brain"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shared-brain",
+    "url": "https://clawhub.ai/skills/shared-brain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shared-brain-781f706ff467e482.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Shared persistent memory layer across multiple AI agents. Use when setting up a multi-agent workspace for the first time, when an agent discovers a permanent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ohernandez-dev-blossom",
+      "userId": "publishers:ohernandez-dev-blossom",
+      "displayName": "Omar Hernandez",
+      "image": "https://avatars.githubusercontent.com/u/86250007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774179691599,
+      "changelog": "Security hardening: validación de input en sb-write (key format, max length, injection patterns), sed -i portable macOS, --dry-run en sb-install",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ad1f642495a3208a3abc8f0f9de1e545fd781bfffe6c2c92ac9382f18075f20"
+}

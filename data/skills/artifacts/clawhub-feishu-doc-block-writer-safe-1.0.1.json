@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-doc-block-writer-safe@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_doc_block_writer_safe",
+  "skill": {
+    "id": 68218,
+    "skillKey": "clawhub-feishu-doc-block-writer-safe",
+    "name": "飞书文档 Block 拆分写入（安全版）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-doc-block-writer-safe",
+    "url": "https://clawhub.ai/skills/feishu-doc-block-writer-safe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-doc-block-writer-safe-2b0792fc1ae4079f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动将超过500字的内容智能拆分为多个Block，逐块安全写入飞书文档，支持Mermaid图表且避免空白文档问题。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "icesumer-lgtm",
+      "userId": "s177qrnn1tw4tydz6g6neevw0d83tmha",
+      "displayName": "icesumer-lgtm",
+      "image": "https://avatars.githubusercontent.com/u/262824601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773807593927,
+      "changelog": "修复安全问题：config.json 改用占位符，添加到.clawhubignore",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9376b82c1647a41913cc79d1e264065537412d0930815c112e30e3572f4fa30d"
+}

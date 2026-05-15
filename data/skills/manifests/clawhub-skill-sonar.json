@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14126,
+  "uuid": "skill-clawhub-skill-sonar",
+  "skillKey": "clawhub-skill-sonar",
+  "name": "SKILL Sonar",
+  "summary": "Lifecycle guard. Route to preflight or runtime.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_sonar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiaofang Yang",
+      "features": [
+        "Lifecycle guard",
+        "Route to preflight or runtime."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-sonar@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128906103?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-sonar",
+      "url": "https://clawhub.ai/skills/skill-sonar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-sonar",
+    "url": "https://clawhub.ai/skills/skill-sonar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-sonar-edd955499060eefe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-sonar@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-sonar-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a942d1615fc6508f35311443804c5061da94804eac9d463d148b622186ae299",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T01:35:54.755Z"
+}

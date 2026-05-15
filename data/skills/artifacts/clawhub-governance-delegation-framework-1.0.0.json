@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/governance-delegation-framework@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.governance_delegation_framework",
+  "skill": {
+    "id": 49619,
+    "skillKey": "clawhub-governance-delegation-framework",
+    "name": "Governance Delegation Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "governance-delegation-framework",
+    "url": "https://clawhub.ai/skills/governance-delegation-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/governance-delegation-framework-d9b85f1763ae8801.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps users decide whether to delegate governance power, how to choose a delegate, and how to monitor delegate performance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 73,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778173771429,
+      "changelog": "Initial release of the Governance Delegation Framework skill.\n\n- Guides users through the decision to delegate governance power, how to choose a delegate, and how to monitor delegate performance.\n- Provides structured response sections: delegation mechanics, delegate evaluation criteria, personal priorities worksheet, monitoring routine, self-assessment for delegates, information gaps, verification checklist, and a plain-English takeaway.\n- Uses only information provided by the user and separates facts from assumptions and unknowns.\n- Clearly outlines safety boundaries—cannot interact with wallets, recommend specific delegates, or guarantee safety or outcomes.\n- Refuses to execute sensitive actions or provide legal, financial, or investment advice.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e403f4c872331eb44cd868ab60352b7770a154cc6da8f61c49d604f010f9656"
+}

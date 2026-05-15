@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/business-ride@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_ride",
+  "skill": {
+    "id": 59809,
+    "skillKey": "clawhub-business-ride",
+    "name": "差旅打车"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-ride",
+    "url": "https://clawhub.ai/skills/business-ride",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-ride-194d59a2844c0e4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业用车服务助手，支持即时用车、预约用车、接送机、包车等多种用车场景，提供车型选择、费用预估、订单管理等功能。Invoke when user needs to book a car, schedule a ride, airport transfer, or manage car service orders."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fbt",
+      "userId": "s17b028ma06693er7e776v6ncn83yyed",
+      "displayName": "分贝通旅行",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774925864225,
+      "changelog": "fb-car-service-skill 1.0.0\n\n- Initial release of the 企业用车服务助手 skill.\n- Supports instant car booking, scheduled rides, airport transfer, and charter services for business travel needs.\n- Provides vehicle selection, real-time price estimates, intelligent dispatch, and order management features.\n- Includes detailed input and output parameters, cost breakdown, and cancellation rules.\n- Integrates with real car service platforms, ensuring all data is obtained via API (no fabricated data).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:671fa1e66d9d64907b511b4f63ccd545a08cf3fdd5afaf7b552452d5ff329e84"
+}

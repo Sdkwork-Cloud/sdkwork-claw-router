@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tmp-self-improving-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmp_self_improving_agent",
+  "skill": {
+    "id": 45545,
+    "skillKey": "clawhub-tmp-self-improving-agent",
+    "name": "Tmp Self Improving Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmp-self-improving-agent",
+    "url": "https://clawhub.ai/skills/tmp-self-improving-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmp-self-improving-agent-c682f81bf1285509.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiongyj625",
+      "userId": "s17fdf3gffqmmwn3j4ffg3jddn84002x",
+      "displayName": "XiongYJ625",
+      "image": "https://avatars.githubusercontent.com/u/270311120?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775637254943,
+      "changelog": "Self-Improvement Skill v1.0.0 — Initial Release\n\n- Introduces a structured workflow for logging learnings, errors, and feature requests to markdown files for continuous agent improvement.\n- Provides detailed logging formats and templates for learnings (`LEARNINGS.md`), errors (`ERRORS.md`), and feature requests (`FEATURE_REQUESTS.md`).\n- Defines criteria and process for promoting insights to project memory files (`CLAUDE.md`, `AGENTS.md`, `.github/copilot-instructions.md`, etc.).\n- Designed for OpenClaw platform with setup instructions and workspace integration; also supports generic setups for other agents.\n- Includes guidelines for resolving and updating logged entries, with metadata and resolution tracking.\n- Offers optional session hooks and inter-session communication tools to enhance memory sharing and workflow improvements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5fca04715a3c3129fcd8185078ae33cde0cc3426c0f2ba048393e0e7a9670a97"
+}

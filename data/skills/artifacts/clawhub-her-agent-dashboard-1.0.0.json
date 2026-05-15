@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/her-agent-dashboard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.her_agent_dashboard",
+  "skill": {
+    "id": 61773,
+    "skillKey": "clawhub-her-agent-dashboard",
+    "name": "Her Agent Dashboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "her-agent-dashboard",
+    "url": "https://clawhub.ai/skills/her-agent-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/her-agent-dashboard-81b67f52dff9c29c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Her-Agent发展进度看板 - 实时显示自我意识、情感、知识图谱、学习进度、进化状态。打开web dashboard查看详细数据。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wenqin1688",
+      "userId": "s17f9yxzhwtytyw1bb2hxwc9v983n30j",
+      "displayName": "wenqin1688",
+      "image": "https://avatars.githubusercontent.com/u/46556755?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774537452462,
+      "changelog": "Initial release of Her-Agent Dashboard.\n\n- 实时展示 Her-Agent 的自我意识、情感、知识图谱、学习进度与进化状态。\n- 提供进化等级、能力提升、情感状态、知识图谱、学习曲线和自我反思等核心模块。\n- 可通过本地 web dashboard 快速访问和查看详细数据。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d7b1bd2c2af378a4fe9382e9ef881c13da8e2bb8ecb33d63eb2768669339b9b3"
+}

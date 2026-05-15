@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tomoviee-image-redraw@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tomoviee_image_redraw",
+  "skill": {
+    "id": 56460,
+    "skillKey": "clawhub-tomoviee-image-redraw",
+    "name": "Tomoviee Image Redraw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tomoviee-image-redraw",
+    "url": "https://clawhub.ai/skills/tomoviee-image-redraw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tomoviee-image-redraw-744305e152ce6a14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Redraw image content using Tomoviee Image Redrawing API (`tm_redrawing`) through Wondershare OpenAPI gateway (`https://openapi.wondershare.cc`). Use when use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wondershare-boop",
+      "userId": "s1707d6v06e1pv7bbn814sjdq583gtne",
+      "displayName": "wondershare-boop",
+      "image": "https://avatars.githubusercontent.com/u/208894930?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 380,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774617086763,
+      "changelog": "Tomoviee-image-redraw 1.0.2 adds gateway and API source documentation, new client module, and workflow clarifications.\n\n- Added main Python client (`scripts/tomoviee_redrawing_client.py`) for the Wondershare OpenAPI gateway.\n- Provided a compatibility shim and updated usage examples.\n- Documented endpoint provenance, status codes, and parameter details in SKILL.md.\n- Listed dependencies in `requirements.txt`.\n- Updated resource references, quick start steps, and clarified recommended usage scenarios.\n- Ensured all API calls are routed exclusively through `openapi.wondershare.cc`.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e850443f856ec05b5a8c8707598ea0c8b57449105af2602bfea120e61e5224c7"
+}

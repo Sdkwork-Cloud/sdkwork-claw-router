@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-runner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_runner",
+  "skill": {
+    "id": 8461,
+    "skillKey": "clawhub-test-runner",
+    "name": "Test Runner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-runner",
+    "url": "https://clawhub.ai/skills/test-runner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-runner-597fbc141b11df74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write, run, and manage unit, integration, and E2E tests across TypeScript, Python, and Swift using recommended frameworks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cmanfre7",
+      "userId": "publishers:cmanfre7",
+      "displayName": "cmanfre7",
+      "image": "https://avatars.githubusercontent.com/u/232135881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 12487,
+      "installsAllTime": 114,
+      "installsCurrent": 108,
+      "stars": 15,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769625021186,
+      "changelog": "Initial release with guides for writing and running tests across major languages and frameworks:\n\n- Lists preferred test frameworks for TypeScript/JS, Python, and Swift (unit, integration, E2E).\n- Provides setup instructions and example commands for Vitest, Jest, pytest, XCTest, and Playwright.\n- Outlines common workflows (TDD) and test patterns (Arrange-Act-Assert, mocking, async).\n- Includes example snippets for testing API endpoints and UI components.\n- Documents coverage commands and strategies for both JavaScript/TypeScript and Python.\n- Clarifies “what to test” with practical recommendations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:23ce8ec734d767598874b3fbc928862030e446ac7dc041c79595050e0853fe1b"
+}

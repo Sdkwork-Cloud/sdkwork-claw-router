@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66025,
+  "uuid": "skill-clawhub-aim-trade-news",
+  "skillKey": "clawhub-aim-trade-news",
+  "name": "aim-trade-news",
+  "summary": "外贸资讯查询：查询最近1~3天的外贸相关资讯，返回AI生成的标题和摘要。Use when: 用户询问外贸资讯、外贸动态、外贸新闻、进出口政策、国际贸易资讯、trade news。NOT for: 国内新闻、娱乐资讯、实时行情（汇率/股价）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aim_trade_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "focus-aim",
+      "features": [
+        "外贸资讯查询：查询最近1~3天的外贸相关资讯，返回AI生成的标题和摘要。Use when: 用户询问外贸资讯、外贸动态、外贸新闻、进出口政策、国际贸易资讯、trade news。NOT fo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aim-trade-news@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243727233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aim-trade-news",
+      "url": "https://clawhub.ai/skills/aim-trade-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aim-trade-news",
+    "url": "https://clawhub.ai/skills/aim-trade-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aim-trade-news-0610e1b1f0563c43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aim-trade-news@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aim-trade-news-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16545b52cbc50fcd0226ca5af6d35af6b24d8cdccb1025ebb1a65bc2c807022b",
+      "artifactSizeBytes": 2542
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T01:59:44.405Z"
+}

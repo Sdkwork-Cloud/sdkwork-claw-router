@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35845,
+  "uuid": "skill-clawhub-propstack",
+  "skillKey": "clawhub-propstack",
+  "name": "Propstack",
+  "summary": "Propstack integration. Manage data, records, and automate workflows. Use when the user wants to interact with Propstack data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.propstack",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Propstack integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Propstack data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/propstack@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "propstack",
+      "url": "https://clawhub.ai/skills/propstack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "propstack",
+    "url": "https://clawhub.ai/skills/propstack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/propstack-daf88ab6c4bc6688.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/propstack@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-propstack-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cba0075cb9a16e25c28e751e18788fd888942694df5124c2eb39e309e38bdfb",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:53:36.566Z"
+}

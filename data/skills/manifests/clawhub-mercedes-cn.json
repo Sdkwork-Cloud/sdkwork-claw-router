@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68327,
+  "uuid": "skill-clawhub-mercedes-cn",
+  "skillKey": "clawhub-mercedes-cn",
+  "name": "Mercedes Cn",
+  "summary": "提供奔驰车型、电动车、AMG高性能车信息，查询价格，4S店和试驾预约，支持保养维修服务咨询。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mercedes_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供奔驰车型、电动车、AMG高性能车信息，查询价格，4S店和试驾预约，支持保养维修服务咨询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mercedes-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mercedes-cn",
+      "url": "https://clawhub.ai/skills/mercedes-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mercedes-cn",
+    "url": "https://clawhub.ai/skills/mercedes-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mercedes-cn-5d8bfa55a1e8b79f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mercedes-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mercedes-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f23b66eb3b151f0fb23e87677255971d0ceaea51f967f6729f7be87fbd81f671",
+      "artifactSizeBytes": 2169
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T07:32:29.486Z"
+}

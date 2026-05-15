@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22120,
+  "uuid": "skill-clawhub-expertpack-eval",
+  "skillKey": "clawhub-expertpack-eval",
+  "name": "ExpertPack Eval",
+  "summary": "Measure ExpertPack EK (Esoteric Knowledge) ratio and run automated quality evals. Use when: (1) Measuring what percentage of a pack's content frontier LLMs c...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expertpack_eval",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian Hearn",
+      "features": [
+        "Measure ExpertPack EK (Esoteric Knowledge) ratio and run automated quality evals",
+        "Use when: (1) Measuring what percentage of a pack's content frontier LLMs c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/expertpack-eval@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1640595?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "expertpack-eval",
+      "url": "https://clawhub.ai/skills/expertpack-eval"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expertpack-eval",
+    "url": "https://clawhub.ai/skills/expertpack-eval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expertpack-eval-826fa0fc5e6497a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/expertpack-eval@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-expertpack-eval-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13734f29108ff068564a2cbb79a8480a0e59ef0cbe16cf3d40c436dc1a9a3913",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T19:39:57.735Z"
+}

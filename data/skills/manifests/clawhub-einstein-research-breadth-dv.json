@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54911,
+  "uuid": "skill-clawhub-einstein-research-breadth-dv",
+  "skillKey": "clawhub-einstein-research-breadth-dv",
+  "name": "Einstein Research — Market Breadth Analyzer",
+  "summary": "Quantifies market breadth health using TraderMonty's public CSV data. Generates a 0-100 composite score across 6 components (100 = healthy). No API key requi...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.einstein_research_breadth_dv",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RunByDaVinci",
+      "features": [
+        "Quantifies market breadth health using TraderMonty's public CSV data",
+        "Generates a 0-100 composite score across 6 components (100 = healthy)",
+        "No API key requi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/einstein-research-breadth-dv@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266047309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "einstein-research-breadth-dv",
+      "url": "https://clawhub.ai/skills/einstein-research-breadth-dv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "einstein-research-breadth-dv",
+    "url": "https://clawhub.ai/skills/einstein-research-breadth-dv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/einstein-research-breadth-dv-8ed46c4301731f91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/einstein-research-breadth-dv@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-einstein-research-breadth-dv-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aeebf0b398e281bd8e5ba0446c006550a2b6c505e50ec92f05c021a329aa154d",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T10:24:17.884Z"
+}

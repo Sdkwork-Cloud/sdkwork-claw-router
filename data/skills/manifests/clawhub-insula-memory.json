@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10202,
+  "uuid": "skill-clawhub-insula-memory",
+  "skillKey": "clawhub-insula-memory",
+  "name": "Insula Memory",
+  "summary": "Internal state awareness for AI agents. Energy, mood, and interoception. Part of the AI Brain series.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insula_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ImpKind",
+      "features": [
+        "Internal state awareness for AI agents",
+        "Energy, mood, and interoception",
+        "Part of the AI Brain series."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/insula-memory@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54905270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "insula-memory",
+      "url": "https://clawhub.ai/skills/insula-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insula-memory",
+    "url": "https://clawhub.ai/skills/insula-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insula-memory-d6fe37ed664578dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/insula-memory@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-insula-memory-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:320a4a4a60bf1e22411fcb95516f0a800ad031786e1fc7114dd75ffdb308e6cd",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T01:29:15.504Z"
+}

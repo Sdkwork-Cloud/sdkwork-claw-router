@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deal-closer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deal_closer",
+  "skill": {
+    "id": 65233,
+    "skillKey": "clawhub-deal-closer",
+    "name": "成交加速器 / Deal Closer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deal-closer",
+    "url": "https://clawhub.ai/skills/deal-closer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deal-closer-49b6de12cca11490.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "成交加速器 — 智能CRM助手，邮件信号提取、销售漏斗分析、AI跟进邮件起草、自学习销售智能、CRM知识图谱、IMAP/SMTP原生邮件"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanjing5024064",
+      "userId": "s17c9xtrdqnyqr9gcp876pa9fh83k36z",
+      "displayName": "Jun Zhang",
+      "image": "https://avatars.githubusercontent.com/u/11209115?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 280,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773927578373,
+      "changelog": "deal-closer v1.1.0 brings advanced Chinese-language CRM features for sales teams.\n\n- Added support for Gmail/Outlook/IMAP/SMTP email integration for signal extraction, auto-linking emails to deals, and native email operations.\n- Introduced sales funnel analysis, income forecasting, weekly/monthly/trend reporting, with free and paid-tier distinction.\n- Implemented AI-powered follow-up email drafting, plan scheduling, and pending to-do listing.\n- Added self-learning engine for win/loss analysis, predictive deal scoring, sales coaching, and best practice statistics.\n- Enabled CRM knowledge graph: contact relationships, company org charts, influence tracking, and entity/relation querying.\n- Enhanced deal, meeting, and pipeline management workflows; CSV import/export and proactive user onboarding for first-time use.\n- Multiple paid features require relevant environment variables for activation and personalization.\n\n智能 CRM 助手，支持邮件信号提取、销售漏斗分析、AI 跟进邮件起草、自学习销售智能、CRM 知识图谱，原生 IMAP/SMTP 邮件集成。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b20adb6ac663f98b141e2388318cf858f4260954e0764abf4d24ff52f666e746"
+}

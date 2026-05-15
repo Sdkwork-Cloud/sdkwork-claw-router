@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61520,
+  "uuid": "skill-clawhub-clawguard-auditor",
+  "skillKey": "clawhub-clawguard-auditor",
+  "name": "ClawGuard-Auditor",
+  "summary": "ClawGuard v3 Auditor - 企业级 Skill 安全审计器，支持意图偏离检测、SAST、供应链安全、ML 异常检测。当用户要求审计、检测、安装前检查一个 Skill 的安全性时触发。",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawguard_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stardreaming",
+      "features": [
+        "ClawGuard v3 Auditor",
+        "企业级 Skill 安全审计器，支持意图偏离检测、SAST、供应链安全、ML 异常检测。当用户要求审计、检测、安装前检查一个 Skill 的安全性时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawguard-auditor@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160408334?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawguard-auditor",
+      "url": "https://clawhub.ai/skills/clawguard-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawguard-auditor",
+    "url": "https://clawhub.ai/skills/clawguard-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawguard-auditor-247ea418b39f1e2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawguard-auditor@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawguard-auditor-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41b6debe31c8387d211e5a71dbe9f6559cf3710dc3bf81d71aa9214e2ca22aa1",
+      "artifactSizeBytes": 2530
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T09:08:26.892Z"
+}

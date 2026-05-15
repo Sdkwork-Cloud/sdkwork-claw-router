@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aws-global-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aws_global_search",
+  "skill": {
+    "id": 43075,
+    "skillKey": "clawhub-aws-global-search",
+    "name": "AWS Global Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aws-global-search",
+    "url": "https://clawhub.ai/skills/aws-global-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aws-global-search-f549241b67f51d89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query AWS (Amazon Web Services) product information, documentation, parameters, features, and pricing from official sources without login. Use when the user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangbingpeng",
+      "userId": "s173ngq2jm0da73nhbpj7et9vx84803e",
+      "displayName": "WBP",
+      "image": "https://avatars.githubusercontent.com/u/273774793?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776753981078,
+      "changelog": "Initial release of aws-global-search.\n\n- Query AWS product information, documentation, parameters, features, and pricing from official sources without login.\n- Supports both English and Chinese user queries for AWS services.\n- Provides full AWS product catalog with product names, categories, and descriptions.\n- Assists users in identifying AWS products based on keywords, aliases, and functional/business requirements.\n- Enables easy comparison and lookup of specifications, pricing, and documentation for AWS products.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dcfbe565aa81ff29802832ee717f174ad25b203c2b7d62d874c72a895244a1e8"
+}

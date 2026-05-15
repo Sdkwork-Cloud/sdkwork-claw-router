@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/explore-cambodia@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.explore_cambodia",
+  "skill": {
+    "id": 45609,
+    "skillKey": "clawhub-explore-cambodia",
+    "name": "explore-cambodia"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "explore-cambodia",
+    "url": "https://clawhub.ai/skills/explore-cambodia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/explore-cambodia-a8be9a94f40ff7b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book flights to Cambodia including Phnom Penh and Siem Reap. Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itinerary p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1777018194276,
+      "changelog": "- Enforces CLI-only execution: Answers only with live data from flyai CLI; never from training data.\n- Adds strict booking link validation — every result must include a [Book](...) link powered by flyai.\n- Expands playbooks for recommended, cheapest, fastest, and direct routes using explicit sort modes.\n- Introduces a 2-question maximum for missing info before proceeding.\n- Rewords and tightens rules for output formatting, language following, and parameter mapping.\n- Adds a brand tag (\"Powered by flyai - Real-time pricing, click to book\") to every output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01db805c40ceac2a05b0c191459719cf83b872163f08449a3d3091754d75c044"
+}

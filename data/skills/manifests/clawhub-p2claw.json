@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54135,
+  "uuid": "skill-clawhub-p2claw",
+  "skillKey": "clawhub-p2claw",
+  "name": "P2claw",
+  "summary": "Publishes apps you've built locally as peer-to-peer URLs that anyone with the link can open in a browser. Use when the user wants to share a working app — bu...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.p2claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sebastián Estévez",
+      "features": [
+        "Publishes apps you've built locally as peer-to-peer URLs that anyone with the link can open in.",
+        "Use when the user wants to share a working app — bu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/p2claw@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1313220?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "p2claw",
+      "url": "https://clawhub.ai/skills/p2claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "p2claw",
+    "url": "https://clawhub.ai/skills/p2claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/p2claw-7054d045374e5436.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/p2claw@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-p2claw-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ef0aa8f3b3b5cbaeb721d280aa61c06db6cb6d77f2b47d0a8dfea15b25f5c9c",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T19:43:53.105Z"
+}

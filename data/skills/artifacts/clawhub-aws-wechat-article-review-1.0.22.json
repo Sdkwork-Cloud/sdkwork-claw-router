@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aws-wechat-article-review@1.0.22",
+  "version": "1.0.22",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aws_wechat_article_review",
+  "skill": {
+    "id": 73012,
+    "skillKey": "clawhub-aws-wechat-article-review",
+    "name": "公众号审稿 / 合规 / 校对"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aws-wechat-article-review",
+    "url": "https://clawhub.ai/skills/aws-wechat-article-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aws-wechat-article-review-db64fae9ad80a7de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "公众号审稿｜公众号校对｜敏感词检测｜内容合规 — 公众号发布前合规审查：敏感词扫描、错别字检测、政治合规、平台规范校验，一次性输出修改清单。面向公众号编辑、自媒体作者、合规岗。触发词：「审稿」「审核」「校对」「合规」「敏感词」「错别字」「稿子检查一下」「稿子帮我看看」「稿子写完了」「文章检查一下」「检查下有没有问..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiworkskills",
+      "userId": "s170f08a9xbhfkfp1vjv33y1ph842r9a",
+      "displayName": "marsatwechat",
+      "image": "https://avatars.githubusercontent.com/u/19565483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 332,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.22",
+      "createdAt": 1776900240121,
+      "changelog": "软化版套件完整性提示：说明工作流会读跨 skill 共享文档、单独安装时会 file-not-found；纯信息性语气，无 shell 循环、无 Agent 强指令",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32a39ec287043d6c15c566c5bef57e3d9b97672226e65cbcc2613a4645f36bf8"
+}

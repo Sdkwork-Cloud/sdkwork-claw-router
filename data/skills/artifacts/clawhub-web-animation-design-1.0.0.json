@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-animation-design@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_animation_design",
+  "skill": {
+    "id": 18011,
+    "skillKey": "clawhub-web-animation-design",
+    "name": "Web Animation Design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-animation-design",
+    "url": "https://clawhub.ai/skills/web-animation-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-animation-design-085fae0a95261f26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design and implement web animations that feel natural and purposeful. Use this skill proactively whenever the user asks questions about animations, motion, e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aa-on-ai",
+      "userId": "s17c7rw6zqf32g9sv6mqgxjxhh83fa3a",
+      "displayName": "ai-ron",
+      "image": "https://avatars.githubusercontent.com/u/94061050?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 696,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774046988749,
+      "changelog": "Initial release of **web-animation-design** skill for web animation best practices:\n\n- Provides a comprehensive guide for designing purposeful, natural-feeling web animations, based on Emil Kowalski's animations.dev course.\n- Includes clear triggers: activates for questions about motion, easing, timing, transitions, performance, or popular animation libraries (CSS, Framer Motion, React Spring, GSAP).\n- Enforces accessibility: always check and respect `prefers-reduced-motion`.\n- Specifies required review output as a markdown table (not \"Before/After\" text lists).\n- Offers practical decision tree for choosing tools (CSS, Framer Motion, etc.) based on animation type and performance needs.\n- Details best practices for duration, easing, and accessibility for different interaction types.\n- Covers spring animation usage, configuration, and guidelines for lively or interruptible motion.\n- Sets clear scope: only applies when animation or motion is explicitly requested.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76ac956e01dc97aaedeb1c1539200e8bffecd7b40010ba30f7f09faf9a7b5ce4"
+}

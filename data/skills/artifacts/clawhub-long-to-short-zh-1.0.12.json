@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/long-to-short-zh@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_to_short_zh",
+  "skill": {
+    "id": 62526,
+    "skillKey": "clawhub-long-to-short-zh",
+    "name": "长视频转短视频"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-to-short-zh",
+    "url": "https://clawhub.ai/skills/long-to-short-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-to-short-zh-031369d75f5b4a2b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向长视频切片场景的 Sparki skill 变体，沿用最新版官方 Sparki 安装、API key、上传和命令说明，同时保留 long-to-short 场景定位。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fischerlam",
+      "userId": "s175gts36jrk6k1qvqehh2d0v583fwg7",
+      "displayName": "fischerlam",
+      "image": "https://avatars.githubusercontent.com/u/168167263?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1774307677442,
+      "changelog": "Improved engagement-oriented positioning with a stronger result-focused summary, one-copy quick start command, prompt templates, and related-skill cross-links while keeping the official shared Sparki core workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d25412172b01139e5eeabc3a950f90aa75d73950a84d7ba9d1e7ce80e81cf488"
+}

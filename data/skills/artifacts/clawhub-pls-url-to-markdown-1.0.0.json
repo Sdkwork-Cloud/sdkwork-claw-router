@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pls-url-to-markdown@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pls_url_to_markdown",
+  "skill": {
+    "id": 14493,
+    "skillKey": "clawhub-pls-url-to-markdown",
+    "name": "PLS URL to Markdown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pls-url-to-markdown",
+    "url": "https://clawhub.ai/skills/pls-url-to-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pls-url-to-markdown-348340f8f2c40320.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch a URL and convert its web page content into clean Markdown for research, documentation, or knowledge base creation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mattvalenta",
+      "userId": "publishers:mattvalenta",
+      "displayName": "Matt Valenta",
+      "image": "https://avatars.githubusercontent.com/u/153394211?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1153,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771810391383,
+      "changelog": "Initial release of URL to Markdown Converter.\n\n- Fetch any URL and convert web pages to clean Markdown format.\n- Supports use cases like research, knowledge base creation, article extraction, and documentation conversion.\n- Provides sample Python scripts, CLI tool commands, and extraction patterns.\n- Includes guidance for handling code blocks and basic error handling.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a113ef9295fc1bc57e090ed7778157d2cf0238c24e0ac3528b1beca96ecfaf38"
+}

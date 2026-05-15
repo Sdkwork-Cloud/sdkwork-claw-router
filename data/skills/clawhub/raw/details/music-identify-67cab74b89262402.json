@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "music-identify",
+    "displayName": "Music Identify",
+    "summary": "Identify songs from audio clips using AudD API and optionally queue them to Spotify. Triggers on /songsearch command, voice messages with song identification...",
+    "tags": {
+      "latest": "1.2.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "createdAt": 1774219826829,
+    "updatedAt": 1777622622056
+  },
+  "latestVersion": {
+    "version": "1.2.0",
+    "createdAt": 1774383725166,
+    "changelog": "v1.2.0: Security fix — removed all Telegram bot token references and config path grep instructions from SKILL.md. Audio download from messaging platforms is now explicitly delegated to the host agent. Skill only handles local audio files. Removed undocumented config path access. Should resolve VirusTotal and OpenClaw security scan flags.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "playoffp",
+    "userId": "s17270caa9rndzqeqjfnten0j183hwwc",
+    "displayName": "PlayOffP",
+    "image": "https://avatars.githubusercontent.com/u/191060148?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777622622056
+  }
+}

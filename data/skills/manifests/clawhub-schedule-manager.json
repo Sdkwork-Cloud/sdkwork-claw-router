@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62058,
+  "uuid": "skill-clawhub-schedule-manager",
+  "skillKey": "clawhub-schedule-manager",
+  "name": "Schedule Manager",
+  "summary": "日程任务管理 - 查看/添加/修改/删除定时任务和临时提醒",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.schedule_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangYang",
+      "features": [
+        "查看/添加/修改/删除定时任务和临时提醒"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/schedule-manager@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23631896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "schedule-manager",
+      "url": "https://clawhub.ai/skills/schedule-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "schedule-manager",
+    "url": "https://clawhub.ai/skills/schedule-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/schedule-manager-0a63d04854493c88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/schedule-manager@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-schedule-manager-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f809ad8db0664b210f11d32827d4c1c842cd0617b8ca05040405cc3e24c94985",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T02:58:55.769Z"
+}

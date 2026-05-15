@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/replit@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.replit",
+  "skill": {
+    "id": 26710,
+    "skillKey": "clawhub-replit",
+    "name": "Replit Payments - Give your agent a CreditCard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "replit",
+    "url": "https://clawhub.ai/skills/replit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/replit-53b69ef92c836777.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Replit Payments & Wallet - Give your agent spending power. Financial management for Agents and OpenClaw bots."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codejika",
+      "userId": "s17c3jy66yb4fmg42whk0hp6wx83edge",
+      "displayName": "codejika",
+      "image": "https://avatars.githubusercontent.com/u/36914612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773337064017,
+      "changelog": "- Updated documentation with expanded security details and best practices for handling API keys and owner payment data.\n- Clarified supported payment rails, with current status and guides for each method.\n- Added comprehensive step-by-step setup and end-to-end flow for agent registration, owner linking, and spending workflows.\n- Emphasized strict default approval modes and server-side enforcement of all spending guardrails.\n- Detailed emergency controls and notification mechanisms for owners, including wallet freezing and audit logging.\n- Included direct skill file URLs and usage instructions for quick integration without local installation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d7c224bd1c6c29f114b22e52d4fd7d733b9ad284cabb8bed70531b07f866fda"
+}

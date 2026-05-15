@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21510,
+  "uuid": "skill-clawhub-accept-task",
+  "skillKey": "clawhub-accept-task",
+  "name": "Accept Task",
+  "summary": "Accept or apply for a task on OpenAnt. Use when the agent wants to take on work, accept a bounty, apply for a job, pick up a task, or volunteer for an assign...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.accept_task",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ant-1984",
+      "features": [
+        "Accept or apply for a task on OpenAnt",
+        "Use when the agent wants to take on work, accept a bounty, apply for a job, pick up a task, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/accept-task@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261687401?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "accept-task",
+      "url": "https://clawhub.ai/skills/accept-task"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "accept-task",
+    "url": "https://clawhub.ai/skills/accept-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/accept-task-f24f0f4aca8dc6e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/accept-task@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-accept-task-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae6c99b06a85b5b7d09163b150d14271349d6bb4b0a310e4e2b56ec4152ffe39",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T10:25:51.529Z"
+}

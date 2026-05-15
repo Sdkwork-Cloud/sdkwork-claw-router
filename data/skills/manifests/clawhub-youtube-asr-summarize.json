@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22790,
+  "uuid": "skill-clawhub-youtube-asr-summarize",
+  "skillKey": "clawhub-youtube-asr-summarize",
+  "name": "YouTube ASR Summarize (Local)",
+  "summary": "Summarize YouTube videos with NO subtitles by doing local ASR (yt-dlp + faster-whisper) and extracting a few screenshot frames via ffmpeg. Use when the user...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_asr_summarize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yifany-github",
+      "features": [
+        "Summarize YouTube videos with NO subtitles by doing local ASR (yt-dlp + faster-whisper) and ext.",
+        "Use when the user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-asr-summarize@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71915211?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-asr-summarize",
+      "url": "https://clawhub.ai/skills/youtube-asr-summarize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-asr-summarize",
+    "url": "https://clawhub.ai/skills/youtube-asr-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-asr-summarize-5a98aacccc3cffdf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-asr-summarize@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-asr-summarize-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fb67bbbc193b4a62287f95e0d861097d63c565fb8a08a06893c74320c8c924f",
+      "artifactSizeBytes": 2070
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T20:18:03.193Z"
+}

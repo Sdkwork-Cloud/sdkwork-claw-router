@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/marvel-entertainment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marvel_entertainment",
+  "skill": {
+    "id": 62018,
+    "skillKey": "clawhub-marvel-entertainment",
+    "name": "Marvel Entertainment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marvel-entertainment",
+    "url": "https://clawhub.ai/skills/marvel-entertainment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marvel-entertainment-e3ce32e2eaa7beb9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "了解漫威娱乐从漫画破产到 MCU 300 亿美元票房帝国，及其 IP 运营和跨媒体商业模式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777230339345,
+      "changelog": "Marvel Entertainment skill v1.0.0 — 漫威娱乐发展与商业模式全览\n\n- 首次发布，覆盖漫威从创立到成为全球顶级 IP 帝国的历史。\n- 包含关键时间线、MCU 电影宇宙里程碑与票房数据。\n- 梳理漫威商业模式与迪士尼收购整合策略。\n- 分析 IP 护城河和跨媒体叙事优势。\n- 附带有趣行业事实和授权商品信息。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81d2cdd4d25bada8a738746f5523387ebb5e08ee2366d0c2463ca6373d1626d7"
+}

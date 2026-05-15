@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-pilot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_pilot",
+  "skill": {
+    "id": 8635,
+    "skillKey": "clawhub-web-pilot",
+    "name": "Web Pilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-pilot",
+    "url": "https://clawhub.ai/skills/web-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-pilot-f5d8860fb6ece51f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web and read page contents without API keys. Use when you need to search via DuckDuckGo/Brave/Google (multi-page), extract readable text from URLs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liranudi",
+      "userId": "publishers:liranudi",
+      "displayName": "Liran Udi",
+      "image": "https://avatars.githubusercontent.com/u/154533573?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 8530,
+      "installsAllTime": 111,
+      "installsCurrent": 105,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771349856982,
+      "changelog": "Initial release: browser automation & accessibility skill with 20+ actions — search, browse, interact, screenshot, form fill, JS eval, PDF export",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:33feab7d5c2a4a4d6ea3d08de364e8c0a172927914084b05d87e6fe8e5bdeb67"
+}

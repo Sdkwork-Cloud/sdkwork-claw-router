@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21071,
+  "uuid": "skill-clawhub-limesurvey-openclaw-skill",
+  "skillKey": "clawhub-limesurvey-openclaw-skill",
+  "name": "Limesurvey Openclaw Skill",
+  "summary": "Automate LimeSurvey operations via RemoteControl 2 API. Use when: (1) managing surveys, questions, groups, or participants, (2) exporting responses or statis...",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.limesurvey_openclaw_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Marques",
+      "features": [
+        "Automate LimeSurvey operations via RemoteControl 2 API",
+        "Use when: (1) managing surveys, questions, groups, or participants, (2) exporting responses or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/limesurvey-openclaw-skill@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20705440?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "limesurvey-openclaw-skill",
+      "url": "https://clawhub.ai/skills/limesurvey-openclaw-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "limesurvey-openclaw-skill",
+    "url": "https://clawhub.ai/skills/limesurvey-openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/limesurvey-openclaw-skill-d62c3748746e68f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/limesurvey-openclaw-skill@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-limesurvey-openclaw-skill-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:409ba8e59f1f3dfee4d29c41c208ce37d90f8a7a358a91c7f24492f2f9e63caa",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T12:22:08.392Z"
+}

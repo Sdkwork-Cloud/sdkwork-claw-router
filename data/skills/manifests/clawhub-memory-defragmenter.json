@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35168,
+  "uuid": "skill-clawhub-memory-defragmenter",
+  "skillKey": "clawhub-memory-defragmenter",
+  "name": "Memory Defragmenter",
+  "summary": "Defragment and optimize agent memory files by cleaning duplicates, merging similar entries, archiving stale content, and ensuring proper tiering. Use when: (...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_defragmenter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "klemenska",
+      "features": [
+        "Defragment and optimize agent memory files by cleaning duplicates, merging similar entries, arc.",
+        "Use when: (..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-defragmenter@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62469076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-defragmenter",
+      "url": "https://clawhub.ai/skills/memory-defragmenter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-defragmenter",
+    "url": "https://clawhub.ai/skills/memory-defragmenter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-defragmenter-f7d475ce8e6f0b88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-defragmenter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-defragmenter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5222fa02ea6cce94ad8a211fe95fe28a463b735e2c3fa8371ddd375a66c53356",
+      "artifactSizeBytes": 2136
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T21:24:49.343Z"
+}

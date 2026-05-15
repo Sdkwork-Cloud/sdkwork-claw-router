@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/japanese-translation-and-tutor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.japanese_translation_and_tutor",
+  "skill": {
+    "id": 9323,
+    "skillKey": "clawhub-japanese-translation-and-tutor",
+    "name": "Japanese Translation And Tutor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "japanese-translation-and-tutor",
+    "url": "https://clawhub.ai/skills/japanese-translation-and-tutor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/japanese-translation-and-tutor-051c790f5aea4120.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Japanese-English translator and language tutor. Use when: (1) User shares Japanese text and wants translation (news articles, tweets, signs, menus, emails). (2) User asks \"what does X mean\" for Japanese words/phrases. (3) User wants to lea."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "itsjaydesu",
+      "userId": "publishers:itsjaydesu",
+      "displayName": "itsjaydesu",
+      "image": "https://avatars.githubusercontent.com/u/220390?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4076,
+      "installsAllTime": 14,
+      "installsCurrent": 13,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769350292080,
+      "changelog": "japanese-translation-and-tutor 1.0.0\n\n- Initial release providing Japanese-English translation and language tutoring\n- Outputs structured translations including kanji readings, vocabulary breakdowns, and cultural/grammar notes\n- Enforces kanji readings in all outputs for clarity\n- Adapts output formatting to platform (Slack/Discord or plain text)\n- Offers explanations of formality, idioms, and cultural context on request",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:63c7c77b87bf74d49606f0a950f298fe2701c978fa3b0b2cbecca26a6c2ffeca"
+}

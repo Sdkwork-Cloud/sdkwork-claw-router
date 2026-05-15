@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/family-health-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.family_health_tracker",
+  "skill": {
+    "id": 44241,
+    "skillKey": "clawhub-family-health-tracker",
+    "name": "Family Health Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "family-health-tracker",
+    "url": "https://clawhub.ai/skills/family-health-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/family-health-tracker-95e5cd94b2d44c50.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track medications, allergies, doctor visits, immunizations, insurance, prescriptions, and health records for your whole family. Smart reminders for checkups,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chris-openclaw",
+      "userId": "s17f63svb641q2stekk1cmcdn183k4rq",
+      "displayName": "chris-openclaw",
+      "image": "https://avatars.githubusercontent.com/u/271059507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775932540026,
+      "changelog": "Family Health Tracker 1.0.0 – Initial Release\n\n- Track medications, allergies, doctor visits, immunizations, insurance, prescriptions, and health records for multiple family members.\n- Smart reminders for checkups, medication refills, and immunization schedules, with built-in standard health timelines.\n- All data stored locally on the user’s device; no sensitive data like SSNs or full policy numbers.\n- Individual profiles for each family member and a shared provider directory.\n- Persistent health data in a single local JSON file, with robust privacy standards.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79a7f26c52704837aeac98b827d5f2d22f2d5195b26b3911a280da48636ffe3c"
+}

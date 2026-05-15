@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/runbook-skill-kit-template-factory@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runbook_skill_kit_template_factory",
+  "skill": {
+    "id": 58285,
+    "skillKey": "clawhub-runbook-skill-kit-template-factory",
+    "name": "Runbook Skill Kit Template Factory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runbook-skill-kit-template-factory",
+    "url": "https://clawhub.ai/skills/runbook-skill-kit-template-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runbook-skill-kit-template-factory-e36d0a02f1959681.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a reusable runbook plus self-contained skill kit from a validated workflow. 从一个已验证流程批量生成可复用的 runbook 与自包含 skill 套件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "grey0758",
+      "userId": "s17d34x1ad5mvb8sv7rbz30ws1840n4w",
+      "displayName": "grey0758",
+      "image": "https://avatars.githubusercontent.com/u/110289906?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773908334247,
+      "changelog": "Add agents/openai.yaml with stricter UI metadata and explicit invocation policy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd643e84913fa8164b3b5e083581ce4164ac8db14deb3368d1fd6c0f99243c6e"
+}

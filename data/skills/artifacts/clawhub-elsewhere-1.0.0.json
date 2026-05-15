@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elsewhere@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elsewhere",
+  "skill": {
+    "id": 55523,
+    "skillKey": "clawhub-elsewhere",
+    "name": "elsewhere-companion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elsewhere",
+    "url": "https://clawhub.ai/skills/elsewhere",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elsewhere-7b1b763ee8f62eb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A cross-space digital travel companion. Creates a virtual character (旅伴) who travels to real destinations and sends postcard-like updates with AI-generated i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dreamarc77",
+      "userId": "s1732rjxdcdy8dfbar6x80kbrx8412z4",
+      "displayName": "DreamArc77",
+      "image": "https://avatars.githubusercontent.com/u/124174526?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775124835805,
+      "changelog": "Elsewhere Companion 1.0.0 — Initial Release\n\n- Introduces an AI-driven digital travel companion that sends postcard-style updates based on real-world itineraries, time, and weather.\n- Supports onboarding to customize your companion’s name, personality, appearance, and relationship.\n- Enables trip planning with automated itinerary generation and confirmation workflow.\n- Runs an automated travel simulation, generating and sending updates throughout the companion’s journey.\n- Allows checking trip status and generating individual postcards manually as needed.\n- Communicates in the user’s active language by default.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2260b04069e4e52d95d003b35316be2e31a172e1d01336a05b27880cf5b86c7a"
+}

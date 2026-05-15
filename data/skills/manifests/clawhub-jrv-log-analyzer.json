@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27543,
+  "uuid": "skill-clawhub-jrv-log-analyzer",
+  "skillKey": "clawhub-jrv-log-analyzer",
+  "name": "Log Analyzer",
+  "summary": "Analyze log files to detect error patterns, aggregate by severity, group repeated errors by fingerprint, and flag anomaly time windows. Use when asked to ana...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jrv_log_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Wang",
+      "features": [
+        "Analyze log files to detect error patterns, aggregate by severity, group repeated errors by fin.",
+        "Use when asked to ana..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jrv-log-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20619402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jrv-log-analyzer",
+      "url": "https://clawhub.ai/skills/jrv-log-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jrv-log-analyzer",
+    "url": "https://clawhub.ai/skills/jrv-log-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jrv-log-analyzer-f23d379aa841c55f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jrv-log-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jrv-log-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cad25f0cc2f127c4d361470fe5cece376e0168701a73eaa0191a5b52e7db5a4",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T13:07:36.750Z"
+}

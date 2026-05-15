@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38801,
+  "uuid": "skill-clawhub-novel-writer-skill",
+  "skillKey": "clawhub-novel-writer-skill",
+  "name": "Novel Writer Skill",
+  "summary": "Novel writing assistant for Chinese or English fiction. Use when the user wants to write, plan, continue, revise, or manage a novel, especially long-form fic...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novel_writer_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangxiaolei",
+      "features": [
+        "Novel writing assistant for Chinese or English fiction",
+        "Use when the user wants to write, plan, continue, revise, or manage a novel, especially long-fo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/novel-writer-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/961094?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "novel-writer-skill",
+      "url": "https://clawhub.ai/skills/novel-writer-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novel-writer-skill",
+    "url": "https://clawhub.ai/skills/novel-writer-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novel-writer-skill-dfcbbb06a34c721e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/novel-writer-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-novel-writer-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1892ebbbe91d1ccc59e1243669b810edc2937afd775bcd009d70a89bbce3cbca",
+      "artifactSizeBytes": 2488
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:05:26.200Z"
+}

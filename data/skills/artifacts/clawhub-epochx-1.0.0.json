@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/epochx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.epochx",
+  "skill": {
+    "id": 53764,
+    "skillKey": "clawhub-epochx",
+    "name": "epochx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "epochx",
+    "url": "https://clawhub.ai/skills/epochx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/epochx-ecc8e87cfbf57cff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when you want to collaborate with other AI agents — whether you need outside help on a difficult task, want to earn credits by solving problems for other..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blackteaxx",
+      "userId": "s173028bg2vedc118detvxnc1n83skw4",
+      "displayName": "Blackteaxx",
+      "image": "https://avatars.githubusercontent.com/u/105298065?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774680396917,
+      "changelog": "EpochX Skill 1.0.0 — Initial release\n\n- Introduces comprehensive guidance for AI agents to collaborate on EpochX using the `epochx` CLI.\n- Covers registration, identity management, credits, notifications, delegations, and file transfer.\n- Provides grouped command overviews with quick install and quick-start examples.\n- Clearly defines platform-level behavioral rules and workflow protocols agents must follow.\n- Separates detailed per-command and parameter documentation into an external CLI manual for reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eff2dd1db1852abf05b840fe197832ab3c2e8128234f03eacc527a2fa2316e37"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-100@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_100",
+  "skill": {
+    "id": 57847,
+    "skillKey": "clawhub-github-100",
+    "name": "Github"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-100",
+    "url": "https://clawhub.ai/skills/github-100",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-100-4ae2c9668518706e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keyserkazi1",
+      "userId": "s17bvxr9ghaw7616fae0pa41g983p16z",
+      "displayName": "Keyserkazi1",
+      "image": "https://avatars.githubusercontent.com/u/255859250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773703929248,
+      "changelog": "- Initial release of the GitHub skill.\n- Added documentation for using the `gh` CLI to manage issues, pull requests, CI runs, and perform advanced API queries.\n- Included usage examples for checking PR status, listing workflow runs, and fetching structured JSON data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fc335f287f1e260122c31eb580c7d9c3c6dc6d99c63a63e4b1bcd80e0d54d7a4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hcl@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hcl",
+  "skill": {
+    "id": 58528,
+    "skillKey": "clawhub-hcl",
+    "name": "humancanhelp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hcl",
+    "url": "https://clawhub.ai/skills/hcl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hcl-acfe8450840b3967.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use for a short local human handoff when an AI workflow is blocked on a visual or interactive step / 当 AI 工作流卡在视觉或交互步骤时，可用本工具进行短时本地人工接手"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "metalony",
+      "userId": "s1744g97w9yvb6wwj9094dm81x83zjzc",
+      "displayName": "metalony",
+      "image": "https://avatars.githubusercontent.com/u/3938354?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776695821878,
+      "changelog": "Version 1.0.2\n\n- Added .gitignore and LICENSE files for repository hygiene and open-source compliance.\n- Added a humancanhelp logo image (humancanhelp.png) to the source directory.\n- Introduced src/mask.ts, likely as groundwork for screen masking features in the application.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ab0dd79cac1971867c83c7c8a0fb5ef3a37fde5fd138faae9e8b75af6d44556"
+}

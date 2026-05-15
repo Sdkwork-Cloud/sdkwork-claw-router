@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60223,
+  "uuid": "skill-clawhub-duivytools-skills",
+  "skillKey": "clawhub-duivytools-skills",
+  "name": "DuIvyTools Skills",
+  "summary": "DuIvyTools (dit) 命令行工具使用指南。当 Agent 需要使用 DuIvyTools 但不清楚命令用法时调用。功能覆盖：(1) XVG 数据可视化 - RMSD、RMSF、能量、氢键、回转半径等；(2) XPM 矩阵可视化 - DCCM、FEL、DSSP 二级结构热图；(3) NDX 索引文件操作...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.duivytools_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CharlesHahn",
+      "features": [
+        "DuIvyTools (dit) 命令行工具使用指南。当 Agent 需要使用 DuIvyTools 但不清楚命令用法时调用。功能覆盖：(1) XVG 数据可视化",
+        "RMSD、RMSF、能量、氢键、回转半径等；(2) XPM 矩阵可视化",
+        "DCCM、FEL、DSSP 二级结构热图；(3) NDX 索引文件操作..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/duivytools-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40332300?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "duivytools-skills",
+      "url": "https://clawhub.ai/skills/duivytools-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "duivytools-skills",
+    "url": "https://clawhub.ai/skills/duivytools-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/duivytools-skills-192159b91d593b30.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/duivytools-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-duivytools-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3873866b379d0616023b2e69326fc3b17042f95f4772076bef94d85b00a23171",
+      "artifactSizeBytes": 2606
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:55:46.822Z"
+}

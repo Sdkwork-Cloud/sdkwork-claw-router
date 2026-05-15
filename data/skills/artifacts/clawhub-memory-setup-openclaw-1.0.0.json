@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-setup-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_setup_openclaw",
+  "skill": {
+    "id": 8668,
+    "skillKey": "clawhub-memory-setup-openclaw",
+    "name": "Memory Setup (OpenClaw)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-setup-openclaw",
+    "url": "https://clawhub.ai/skills/memory-setup-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-setup-openclaw-95db4eff4db7e780.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure and validate OpenClaw memory recall for persistent context. Use when enabling memory_search/memory_get, fixing poor memory recall, or setting up ME..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "syajask",
+      "userId": "s1786mnv47sgz1s9b903s4tbx183n7vr",
+      "displayName": "Kaw0n",
+      "image": "https://avatars.githubusercontent.com/u/112311289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 8317,
+      "installsAllTime": 67,
+      "installsCurrent": 63,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771838978689,
+      "changelog": "- Initial release of memory-setup for OpenClaw memory recall configuration and validation.\n- Provides step-by-step instructions for organizing MEMORY.md and daily note files.\n- Details setup for enabling and customizing memory search in OpenClaw's config.\n- Includes guidance for testing agent recall and troubleshooting common issues.\n- Recommends operational best practices for memory usage to ensure reliable context recall.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b0f3086dc74d84e44177fcf6f637ee72803af7c1e513952441c8e0f76e252869"
+}

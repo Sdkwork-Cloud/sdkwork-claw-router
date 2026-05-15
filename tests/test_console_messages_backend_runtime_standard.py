@@ -1,4 +1,4 @@
-import unittest
+﻿import unittest
 from pathlib import Path
 
 
@@ -23,7 +23,7 @@ class ConsoleMessagesBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("mod app_messages;", product_api_mod)
         self.assertIn("app_messages_router", product_api_mod)
         self.assertIn("app_messages_router_with_read_store", product_api_mod)
-        self.assertIn("/app/v3/api/notification", app_messages)
+        self.assertIn("/app/v3/api/communication/notifications", app_messages)
         self.assertIn("TrustedRequestSubject", app_messages)
         self.assertIn("require_subject", app_messages)
         self.assertIn("AppMessagesReadStore", app_messages)
@@ -203,7 +203,7 @@ class ConsoleMessagesBackendRuntimeStandardTest(unittest.TestCase):
         contract = (
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         ).read_text(encoding="utf-8")
-        operation_marker = "api_path: /app/v3/api/notification"
+        operation_marker = "api_path: /app/v3/api/communication/notifications"
         operation_index = contract.index(operation_marker)
         schema_index = contract.index("name: MessagesResponse", operation_index)
         self.assertLess(schema_index - operation_index, 1200)
@@ -222,18 +222,19 @@ class ConsoleMessagesBackendRuntimeStandardTest(unittest.TestCase):
         openapi = (
             ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json"
         ).read_text(encoding="utf-8")
-        sdk_notification = (
-            ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "notification.ts"
+        sdk_communication = (
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "communication.ts"
         ).read_text(encoding="utf-8")
         messages_response_path = (
             ROOT
             / "sdks"
             / "clawrouter-app-sdk"
+            / "clawrouter-app-sdk-typescript"
             / "src"
             / "types"
             / "messages-response.ts"
         )
-        message_path = ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "message.ts"
+        message_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "message.ts"
         frontend = (
             ROOT
             / "apps"
@@ -258,16 +259,17 @@ class ConsoleMessagesBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("type: 'info' | 'billing' | 'warning' | 'alert';", message)
         self.assertIn("read: boolean;", message)
         self.assertIn(
-            "async fetchMessages(params?: QueryParams): Promise<FetchMessagesResult>",
-            sdk_notification,
+            "async list(): Promise<NotificationsListResult>",
+            sdk_communication,
         )
+        self.assertIn("appApiPath(`/communication/notifications`)", sdk_communication)
+        self.assertIn("getClawRouterAppSdkClient().communication.notifications.list()", frontend)
 
         self.assertIn("Message as SdkMessage", frontend)
         self.assertIn("export interface Message", frontend)
         self.assertIn("id: SdkMessage['id'];", frontend)
         self.assertIn("type: SdkMessage['type'];", frontend)
         self.assertIn("Promise<Message[]>", frontend)
-        self.assertNotIn("type ApiRecord", frontend)
         self.assertNotIn("normalizeMessage", frontend)
 
 

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33763,
+  "uuid": "skill-clawhub-ledger",
+  "skillKey": "clawhub-ledger",
+  "name": "Ledger",
+  "summary": "Calculate ledger financial metrics and business data. Use when tracking expenses, analyzing investments, or generating financial reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ledger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Calculate ledger financial metrics and business data",
+        "Use when tracking expenses, analyzing investments, or generating financial reports."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ledger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ledger",
+      "url": "https://clawhub.ai/skills/ledger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ledger",
+    "url": "https://clawhub.ai/skills/ledger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ledger-fe14010b4fe83303.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ledger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ledger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc809b50d642c8a24e39be275f6a65be8996f49925fe728b7d2363fc011e01c8",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T11:18:19.599Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-receptionist-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_receptionist_skills",
+  "skill": {
+    "id": 53673,
+    "skillKey": "clawhub-ai-receptionist-skills",
+    "name": "AI Receptionist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-receptionist-skills",
+    "url": "https://clawhub.ai/skills/ai-receptionist-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-receptionist-skills-7ae6f919a8990f6b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your 24/7 AI front desk. Polly answers incoming calls, filters spam, takes messages, and routes important calls — so you never miss what matters."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hi-yox",
+      "userId": "s17b60ytt6m70z6ms6644s7ngx857y8r",
+      "displayName": "hi-yox",
+      "image": "https://avatars.githubusercontent.com/u/8189379?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776679070972,
+      "changelog": "**ai-receptionist 1.0.0 — Initial Release**\n\n- Launches the first version of the AI Receptionist skill, \"Polly,\" providing a 24/7 AI front desk with dedicated phone number and intelligent call handling.\n- Includes setup scripts for activation, outbound/inbound calls, balance check, prompt customization, and call result polling.\n- Supports caller identification, spam filtering, message routing, and real-time voicemail.\n- Guides users through registration, activation, and testing, with clear instructions and automatic status checks.\n- Outlines core capabilities for both outbound calling (task messaging, language support) and professional inbound call answering.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74df2049bdadbaf8447bf4e90055c90effafd9a65d27724fa2e45aa8754d3ea2"
+}

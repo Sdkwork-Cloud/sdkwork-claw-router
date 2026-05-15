@@ -1,0 +1,51 @@
+{
+  "skill": {
+    "slug": "tradingagents-cn-skill",
+    "displayName": "tradingagents-cn-skill",
+    "summary": "股票多智能体分析报告生成。通过 6 个分析师串行分析 + 多空辩论 + 交易计划 + 风险评估， 生成专业 PDF 报告。触发场景：用户要求分析股票、生成股票报告、提供截图或代码进行分析、 询问买卖建议、要求技术分析或基本面分析或风险评估。",
+    "tags": {
+      "latest": "2.0.0",
+      "multi-agent": "1.0.4",
+      "stock-analysis": "1.0.4",
+      "trading": "1.0.4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "createdAt": 1775539685246,
+    "updatedAt": 1777527268336
+  },
+  "latestVersion": {
+    "version": "2.0.0",
+    "createdAt": 1775818183391,
+    "changelog": "tradingagents-cn-skill 2.0.0\n\n- 全面重构为 12 步的多智能体串行分析流程，每步 LLM 输出均通过 validate_step.py 自动验收，显著提升结果准确性。\n- 全流程支持截图 OCR、结构化数据提取、新闻聚合，并强制严格 JSON 验证与格式提示机制，显著减少幻觉和错误输出。\n- 新增 6 个分析角色（多头、空头、技术、基本面、新闻、社交），每步输出独立验证，支持多空辩论及研究经理、交易员、风险经理串联。\n- 引入详细日志机制，每次分析自动记录日志，所有交互统一保存以便溯源。\n- 支持对用户截图、文本或股票代码输入自动适应数据清洗提取，构建标准化分析上下文。\n- 代码结构优化并增加 data_schema、自动报告生成与数据校验脚本，精简冗余脚本",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "tanteng",
+    "userId": "s17arxxkc5tdc79a7pbqxxapad83jnyw",
+    "displayName": "Tony",
+    "image": "https://avatars.githubusercontent.com/u/3405598?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527268336
+  }
+}

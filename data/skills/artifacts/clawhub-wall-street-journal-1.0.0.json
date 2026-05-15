@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wall-street-journal@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wall_street_journal",
+  "skill": {
+    "id": 48321,
+    "skillKey": "clawhub-wall-street-journal",
+    "name": "Wall Street Journal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wall-street-journal",
+    "url": "https://clawhub.ai/skills/wall-street-journal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wall-street-journal-44e309f5e3626860.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The Wall Street Journal is the largest US newspaper by circulation, focusing on premium business and financial news with a subscription-driven revenue model."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777989936149,
+      "changelog": "Wall Street Journal Skill v1.0.0\n\n- Introduced an overview of The Wall Street Journal, highlighting its leading role in business and financial news.\n- Added a historical timeline from its 1889 founding to present-day milestones, including digital subscription growth.\n- Detailed WSJ’s subscription-driven business model and unique market position.\n- Included a “moat analysis” outlining WSJ’s affluent readership and proprietary data advantages.\n- Provided key data on circulation, revenue, and ownership.\n- Listed notable facts about WSJ’s visual identity and the creation of the Dow Jones Industrial Average.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:572e0d8f24fa8858be801afc0bbbf41c61ab238a933bcbfe4bdd23179b429dd9"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8692,
+  "uuid": "skill-clawhub-google-docs",
+  "skillKey": "clawhub-google-docs",
+  "name": "Google Docs",
+  "summary": "Google Docs API integration with managed OAuth. Create documents, insert text, apply formatting, and manage content. Use this skill when users want to intera...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_docs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Google Docs API integration with managed OAuth",
+        "Create documents, insert text, apply formatting, and manage content",
+        "Use this skill when users want to intera..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-docs@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-docs",
+      "url": "https://clawhub.ai/skills/google-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-docs",
+    "url": "https://clawhub.ai/skills/google-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-docs-8e91eabebb7d857b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-docs@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-docs-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17ef099d18d6040d04153f98f88c15cc2f051c3d5f22e06ec3a2e8be330bc8c3",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T10:04:39.022Z"
+}

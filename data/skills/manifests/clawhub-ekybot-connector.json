@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18725,
+  "uuid": "skill-clawhub-ekybot-connector",
+  "skillKey": "clawhub-ekybot-connector",
+  "name": "Ekybot Connector",
+  "summary": "Connect OpenClaw to Ekybot for remote agent control, Companion machine health, and project memory sync. Use when installing/configuring the connector, valida...",
+  "version": "6.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ekybot_connector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Dusong",
+      "features": [
+        "Connect OpenClaw to Ekybot for remote agent control, Companion machine health, and project memo.",
+        "Use when installing/configuring the connector, valida..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ekybot-connector@6.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3803152?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ekybot-connector",
+      "url": "https://clawhub.ai/skills/ekybot-connector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ekybot-connector",
+    "url": "https://clawhub.ai/skills/ekybot-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ekybot-connector-20cf9221f75b2fec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ekybot-connector@6.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ekybot-connector-6.1.0.json",
+      "version": "6.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36d27c9a26e23934433d9aed233f108cdda2a5a8a2d588b90b6405d8af53819c",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T13:41:07.087Z"
+}

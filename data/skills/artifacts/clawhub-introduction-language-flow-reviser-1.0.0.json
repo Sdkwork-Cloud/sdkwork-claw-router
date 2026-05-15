@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/introduction-language-flow-reviser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.introduction_language_flow_reviser",
+  "skill": {
+    "id": 42403,
+    "skillKey": "clawhub-introduction-language-flow-reviser",
+    "name": "introduction-language-flow-reviser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "introduction-language-flow-reviser",
+    "url": "https://clawhub.ai/skills/introduction-language-flow-reviser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/introduction-language-flow-reviser-419dc26a995c0f40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Revise complete English research-paper Introduction sections using a p3-derived language-and-writing checklist for verb tense choices, sentence linkage, tran..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junwugit",
+      "userId": "s171bkct515qe194zt2r7s6fs1851hns",
+      "displayName": "John Do",
+      "image": "https://avatars.githubusercontent.com/u/44743340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776798792627,
+      "changelog": "- Initial release of \"introduction-language-flow-reviser\": a tool to stepwise revise research-paper Introduction sections for improved language flow, structure, and clarity.\n- Checks and revises verb tense choices, sentence linkage, transition signals, passive/active voice, and paragraphing, with preserved content and terminology.\n- Produces two Markdown outputs for each run: a detailed step-by-step method report, and the fully revised Introduction.\n- Follows a strict, documented workflow; preserves example drafts and justifies every change at each step.\n- Constraints ensure precision: no invention of facts or research content, justified tense/voice changes, and careful handling of pronouns and citation placement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b002441c5528c4aa3bdc1c8ad2e3a812b742d1a2e840de5341a4749fac9cf1b7"
+}

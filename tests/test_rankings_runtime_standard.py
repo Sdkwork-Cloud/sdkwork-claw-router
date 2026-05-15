@@ -65,8 +65,8 @@ class RankingsRuntimeStandardTest(unittest.TestCase):
         self.assertIn("searchQuery", page_source)
         self.assertIn("limit: 200", page_source)
         self.assertIn("vendorOptions.vendorCodesByLabel", page_source)
-        self.assertIn("Snapshot Benchmark", page_source)
-        self.assertIn("Benchmark Index", page_source)
+        self.assertIn("rankings.snapshotBenchmark", page_source)
+        self.assertIn("rankings.benchmarkIndex", page_source)
 
         self.assertIn("export const DEFAULT_RANKING_SNAPSHOT_SOURCE", catalog_source)
         self.assertIn("export const EMPTY_RANKING_CATALOG", catalog_source)

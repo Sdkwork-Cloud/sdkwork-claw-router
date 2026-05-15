@@ -1,0 +1,49 @@
+{
+  "skill": {
+    "slug": "signet-guardian",
+    "displayName": "Signet Guardian",
+    "summary": "Payment guard middleware for AI agents. Use whenever any skill is about to initiate a payment. Runs a preflight check against the user's policy (payments enabled, per-transaction limit, monthly cap). Returns ALLOW, DENY, or CONFIRM_REQUIRED. Other payment-capable skills must call signet-preflight before proceeding and signet-record after a successful payment.",
+    "tags": {
+      "latest": "0.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 953,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1770903090988,
+    "updatedAt": 1778385352960
+  },
+  "latestVersion": {
+    "version": "0.1.0",
+    "createdAt": 1770903090988,
+    "changelog": "Initial release",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "rafalzacher1",
+    "userId": "publishers:rafalzacher1",
+    "displayName": "rafalzacher1",
+    "image": "https://avatars.githubusercontent.com/u/46526911?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778385352960
+  }
+}

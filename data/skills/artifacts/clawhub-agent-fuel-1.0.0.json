@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-fuel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_fuel",
+  "skill": {
+    "id": 37792,
+    "skillKey": "clawhub-agent-fuel",
+    "name": "Agent Fuel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-fuel",
+    "url": "https://clawhub.ai/skills/agent-fuel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-fuel-5889c6f380610918.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous agent wallet management with MoonPay auto top-up, x402 payments, and OpenWallet Standard. Agents never run out of gas."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zedit42",
+      "userId": "publishers:zedit42",
+      "displayName": "Zedit42",
+      "image": "https://avatars.githubusercontent.com/u/87221822?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774176727500,
+      "changelog": "Initial release: MoonPay CLI auto top-up, x402 payments, OpenWallet Standard",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:44ccc5f2fa4caa60f0c37437ed985534c592b11e1690591c7b035e2c3e5533d5"
+}

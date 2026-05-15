@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jpeng-video-thumbnail@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpeng_video_thumbnail",
+  "skill": {
+    "id": 40987,
+    "skillKey": "clawhub-jpeng-video-thumbnail",
+    "name": "video-thumbnail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpeng-video-thumbnail",
+    "url": "https://clawhub.ai/skills/jpeng-video-thumbnail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpeng-video-thumbnail-1189521c99e4d187.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate thumbnails from videos"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpengcheng523-netizen",
+      "userId": "s177n9nwg73ep3g6fp9z19025n83h4xr",
+      "displayName": "jpengcheng523-netizen",
+      "image": "https://avatars.githubusercontent.com/u/226868999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774411338572,
+      "changelog": "Initial release of jpeng-video-thumbnail.\n\n- Generate thumbnails from videos via a command-line interface.\n- Supports automation of video thumbnail tasks.\n- Requires THUMBNAIL_API_KEY environment variable for operation.\n- Outputs results in JSON format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9ecf2d84fadd7659f5944063e4afd8445d0b2924363b44cd4563c1e2a743630"
+}

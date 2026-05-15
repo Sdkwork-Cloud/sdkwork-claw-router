@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37164,
+  "uuid": "skill-clawhub-code-write",
+  "skillKey": "clawhub-code-write",
+  "name": "Code Write",
+  "summary": "Implement or modify code in the current project to match style and handle edge cases, focusing only on requested feature, bugfix, or test updates.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_write",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sf0799",
+      "features": [
+        "Implement or modify code in the current project to match style and handle edge cases, focusing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-write@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65325612?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-write",
+      "url": "https://clawhub.ai/skills/code-write"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-write",
+    "url": "https://clawhub.ai/skills/code-write",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-write-1c8c38a3288ba29c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-write@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-write-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7fce10d8edfc51841fd473f56924028db0f958fd95a58b14df6054a7a02fff4",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T07:20:12.107Z"
+}

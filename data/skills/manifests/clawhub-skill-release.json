@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47857,
+  "uuid": "skill-clawhub-skill-release",
+  "skillKey": "clawhub-skill-release",
+  "name": "Skill Release",
+  "summary": "Publish and manage Claude Code skills on ClawHub (clawhub.ai). Use when user wants to \"publish skill\", \"update skill version\", \"release to clawhub\", \"clawhub...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_release",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Casper",
+      "features": [
+        "Publish and manage Claude Code skills on ClawHub (clawhub.ai)",
+        "Use when user wants to \"publish skill\", \"update skill version\", \"release to clawhub\", \"clawhub.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-release@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4013050?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-release",
+      "url": "https://clawhub.ai/skills/skill-release"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-release",
+    "url": "https://clawhub.ai/skills/skill-release",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-release-b7f54f2ee661cb8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-release@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-release-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac3b61f9c8ad5df7c572e65b107826cd689203070b94b92b93abc4d002166653",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T01:26:07.275Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61003,
+  "uuid": "skill-clawhub-contract-review-revise",
+  "skillKey": "clawhub-contract-review-revise",
+  "name": "contract-review-revise",
+  "summary": "专业合同审查与修改系统，集成 Legal Document Review Agent，提供风险识别、法律分析、修改建议及自动文档更新功能。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contract_review_revise",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baichen",
+      "features": [
+        "专业合同审查与修改系统，集成 Legal Document Review Agent，提供风险识别、法律分析、修改建议及自动文档更新功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/contract-review-revise@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67148952?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "contract-review-revise",
+      "url": "https://clawhub.ai/skills/contract-review-revise"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contract-review-revise",
+    "url": "https://clawhub.ai/skills/contract-review-revise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contract-review-revise-9beccb62239e5bcb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/contract-review-revise@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-contract-review-revise-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec5229e98e9e07dfa4da4bc89a873331b8700b2399fa1f5aa03e392accb627ef",
+      "artifactSizeBytes": 2262
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:28:17.997Z"
+}

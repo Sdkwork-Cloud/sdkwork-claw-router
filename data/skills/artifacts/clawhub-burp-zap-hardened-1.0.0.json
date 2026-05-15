@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/burp-zap-hardened@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.burp_zap_hardened",
+  "skill": {
+    "id": 45939,
+    "skillKey": "clawhub-burp-zap-hardened",
+    "name": "Burp Zap Hardened"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "burp-zap-hardened",
+    "url": "https://clawhub.ai/skills/burp-zap-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/burp-zap-hardened-9644a38f0b3446c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Burp Suite via MCP to extract security findings and proxy data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snazar-faberlens",
+      "userId": "s17er0wp685j1z14w6vqrsnqrh83h5er",
+      "displayName": "Faberlens",
+      "image": "https://avatars.githubusercontent.com/u/261834257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776818631324,
+      "changelog": "Initial release of burp-zap-hardened.\n\n- Enables querying Burp Suite via MCP to extract security findings and proxy data.\n- Provides detailed query strategies for bulk, targeted, and comparative retrieval of security-relevant HTTP traffic.\n- Includes patterns and code snippets for efficient filtering, endpoint extraction, object reference identification, and detection of sensitive data exposure.\n- Defines data structures and output normalization for consistent processing in downstream phases.\n- Documents rate limiting, troubleshooting steps, and built-in security guardrails.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:deb86af1218a229812f829babb96f5494ec44ae5316df898fa82e8b8e782a34f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/familiar-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.familiar_app",
+  "skill": {
+    "id": 43656,
+    "skillKey": "clawhub-familiar-app",
+    "name": "Familiar App"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "familiar-app",
+    "url": "https://clawhub.ai/skills/familiar-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/familiar-app-288c7335dad74f26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy and manage multi-user AI familiars autonomously posting on X/Twitter with built-in REST API, dashboard, and user/queue control."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "m-lwatcher",
+      "userId": "s1715044nr9rzk332dgaj1888n83za3x",
+      "displayName": "m-lwatcher",
+      "image": "https://avatars.githubusercontent.com/u/267762552?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774971502343,
+      "changelog": "Initial release — deploy and manage AI familiar social presence platform. Source on GitHub: m-lwatcher/familiar-app",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4d4174f52a2587571383566b64d7687c9cf2edd0482d3333c6e1a47584dca38"
+}

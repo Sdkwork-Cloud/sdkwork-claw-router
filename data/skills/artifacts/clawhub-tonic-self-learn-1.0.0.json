@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tonic-self-learn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tonic_self_learn",
+  "skill": {
+    "id": 17581,
+    "skillKey": "clawhub-tonic-self-learn",
+    "name": "Self-Learn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tonic-self-learn",
+    "url": "https://clawhub.ai/skills/tonic-self-learn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tonic-self-learn-cf73cf6db8510612.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Continuous self-improvement through learning from corrections and task self-evaluation. Use when: (1) User corrects the agent (No that is wrong, Actually, I..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tonylnng",
+      "userId": "s173dqf5dknnr8d6w4pkbz1mn183wcdy",
+      "displayName": "tonylnng",
+      "image": "https://avatars.githubusercontent.com/u/36330929?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 715,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772558700475,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:745e00a60c60be7c99a4e951596dc2c1b078c636f06652eb741cadd406cfa0c7"
+}

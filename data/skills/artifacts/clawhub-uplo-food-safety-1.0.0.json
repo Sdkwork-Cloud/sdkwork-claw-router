@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uplo-food-safety@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uplo_food_safety",
+  "skill": {
+    "id": 32389,
+    "skillKey": "clawhub-uplo-food-safety",
+    "name": "Uplo Food Safety"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uplo-food-safety",
+    "url": "https://clawhub.ai/skills/uplo-food-safety",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uplo-food-safety-34c663f962dd44c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered food safety knowledge management. Search HACCP plans, FDA compliance records, traceability documentation, and quality control data with structured..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roojenkins",
+      "userId": "publishers:roojenkins",
+      "displayName": "RooJenkins",
+      "image": "https://avatars.githubusercontent.com/u/47111622?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774010782192,
+      "changelog": "uplo-food-safety 1.0.0 — Initial release\n\n- Launches AI-powered food safety knowledge management for HACCP, FDA compliance, traceability, and quality control documentation.\n- Enables structured search and extraction across critical food safety documents such as audit records, supplier verification, and monitoring logs.\n- Provides workflow examples for recalls, audits, and regulatory response.\n- Introduces key tools: search_knowledge, search_with_context, get_directives, report_knowledge_gap, log_conversation.\n- Offers practical tips to optimize food safety queries and maintain up-to-date compliance documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:99d55f9b5598b42ade7c6261e0bf52e493d4cd68f200f9ffed2dc6b0b33fdf2a"
+}

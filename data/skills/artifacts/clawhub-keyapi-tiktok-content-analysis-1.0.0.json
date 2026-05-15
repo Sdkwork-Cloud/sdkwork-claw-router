@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/keyapi-tiktok-content-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keyapi_tiktok_content_analysis",
+  "skill": {
+    "id": 52683,
+    "skillKey": "clawhub-keyapi-tiktok-content-analysis",
+    "name": "Keyapi Tiktok Content Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keyapi-tiktok-content-analysis",
+    "url": "https://clawhub.ai/skills/keyapi-tiktok-content-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keyapi-tiktok-content-analysis-b6e6d2e742c8c860.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze TikTok content at scale — extract insights from videos, hashtags, music tracks, and live streams including engagement trends, comment sentiment, capt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lycici",
+      "userId": "s17bzc9482bw65ggtax2tfmx4583h9sz",
+      "displayName": "lycici",
+      "image": "https://avatars.githubusercontent.com/u/38585775?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775183141331,
+      "changelog": "- Initial release of keyapi-tiktok-content-analysis.\n- Provides scalable TikTok content analysis: videos, hashtags, music, and live streams.\n- Enables insights into engagement trends, comment sentiment, caption transcription, and commerce attribution.\n- Supports robust analytic workflows using multiple Node.js tool endpoints.\n- Requires a KEYAPI_TOKEN and Node.js v18+ for setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9232dd7663f35c80fc3250a54da3c73822fb14ab5976ab17c543dabeb277b6a2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/expense-tracker@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expense_tracker",
+  "skill": {
+    "id": 14663,
+    "skillKey": "clawhub-expense-tracker",
+    "name": "Expense Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expense-tracker",
+    "url": "https://clawhub.ai/skills/expense-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expense-tracker-0791a2bf71ede9b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track daily expenses in structured markdown files organized by month. Use when the user wants to log spending, view expense summaries, analyze spending patte..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aholake",
+      "userId": "publishers:aholake",
+      "displayName": "Loc Vo",
+      "image": "https://avatars.githubusercontent.com/u/10195964?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1076,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772291309254,
+      "changelog": "Add auto backup to ~/Documents/expenses_backup before each write to prevent data loss",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6a7ba266e915bffd8b4d9be29515cbc4c9981d92f30f18a56dc04b9303c3d099"
+}

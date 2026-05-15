@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23643,
+  "uuid": "skill-clawhub-pg-setup",
+  "skillKey": "clawhub-pg-setup",
+  "name": "Pg Setup",
+  "summary": "Use when setting up ProxyGate for the first time, installing the CLI, configuring auth (API key or wallet), or connecting to the gateway. Make sure to use th...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pg_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jwelten",
+      "features": [
+        "Use when setting up ProxyGate for the first time, installing the CLI, configuring auth (API key.",
+        "Make sure to use th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pg-setup@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194850832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pg-setup",
+      "url": "https://clawhub.ai/skills/pg-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pg-setup",
+    "url": "https://clawhub.ai/skills/pg-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pg-setup-a73808db2e6e66c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pg-setup@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pg-setup-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bed4ec5455862f3e2d0470768c23ba767a6a9495e4a9dfd019a552d6586f3b7f",
+      "artifactSizeBytes": 1896
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T22:33:37.134Z"
+}

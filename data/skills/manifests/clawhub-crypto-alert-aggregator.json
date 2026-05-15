@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42366,
+  "uuid": "skill-clawhub-crypto-alert-aggregator",
+  "skillKey": "clawhub-crypto-alert-aggregator",
+  "name": "Crypto Alert Aggregator",
+  "summary": "Aggregates real-time crypto market data and Twitter signals into actionable alerts for traders and researchers. Use when you need to monitor price movements,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_alert_aggregator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jackfeng0614-prog",
+      "features": [
+        "Aggregates real-time crypto market data and Twitter signals into actionable alerts for traders.",
+        "Use when you need to monitor price movements,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-alert-aggregator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228274443?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-alert-aggregator",
+      "url": "https://clawhub.ai/skills/crypto-alert-aggregator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-alert-aggregator",
+    "url": "https://clawhub.ai/skills/crypto-alert-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-alert-aggregator-dd7a11062c0c8853.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-alert-aggregator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-alert-aggregator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da023af72d80694931f26988075cc6ee3c3f5b6002ad2ab7242c37ad4a9993e1",
+      "artifactSizeBytes": 2288
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T02:57:24.534Z"
+}

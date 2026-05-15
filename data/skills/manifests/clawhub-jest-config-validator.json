@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34486,
+  "uuid": "skill-clawhub-jest-config-validator",
+  "skillKey": "clawhub-jest-config-validator",
+  "name": "Jest Config Validator",
+  "summary": "Validate jest.config.ts/js/json and Jest configuration in package.json for deprecated options, transform conflicts, and best practices. Use when validating J...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jest_config_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Validate jest.config.ts/js/json and Jest configuration in package.json for deprecated options,.",
+        "Use when validating J..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jest-config-validator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jest-config-validator",
+      "url": "https://clawhub.ai/skills/jest-config-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jest-config-validator",
+    "url": "https://clawhub.ai/skills/jest-config-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jest-config-validator-3d446750dbea17b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jest-config-validator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jest-config-validator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0c6636ea9a33e0bf5d78aafc9a51fdfbddd3e5882c6c1ac4c49f54b4a3277b2",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:01:51.217Z"
+}

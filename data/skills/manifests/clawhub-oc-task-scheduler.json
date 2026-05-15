@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38685,
+  "uuid": "skill-clawhub-oc-task-scheduler",
+  "skillKey": "clawhub-oc-task-scheduler",
+  "name": "OpenClaw Task Scheduler",
+  "summary": "Task queue management with WebSocket real-time updates. Schedule, monitor, and control background tasks. Supports immediate, scheduled, and recurring tasks w...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_task_scheduler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "michealxie001",
+      "features": [
+        "Task queue management with WebSocket real-time updates",
+        "Schedule, monitor, and control background tasks",
+        "Supports immediate, scheduled, and recurring tasks w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oc-task-scheduler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231448030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oc-task-scheduler",
+      "url": "https://clawhub.ai/skills/oc-task-scheduler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-task-scheduler",
+    "url": "https://clawhub.ai/skills/oc-task-scheduler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-task-scheduler-f2e6947f29d0115a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oc-task-scheduler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oc-task-scheduler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1a21cfd0a58836e78f08b34e24ea9f4c9b3ed33e585ffcc9c42f1a089fc0f6d",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T11:23:37.503Z"
+}

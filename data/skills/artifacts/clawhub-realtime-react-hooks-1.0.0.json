@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/realtime-react-hooks@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.realtime_react_hooks",
+  "skill": {
+    "id": 14908,
+    "skillKey": "clawhub-realtime-react-hooks",
+    "name": "Realtime React Hooks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "realtime-react-hooks",
+    "url": "https://clawhub.ai/skills/realtime-react-hooks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/realtime-react-hooks-e9ee71a4d9464edc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "React hooks for real-time data with SSE, WebSocket, and SWR integration. Covers connection management, reconnection logic, and optimistic updates. Use when building React apps with real-time features. Triggers on SSE hook, WebSocket hook,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1075,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770729647001,
+      "changelog": "Initial release of realtime-react-hooks: React hooks for real-time data with SSE, WebSocket, and SWR.\n\n- Provides hooks for Server-Sent Events (SSE) and WebSocket with connection management, reconnection, and cleanup logic.\n- Integrates real-time updates with SWR for optimistic UI updates.\n- Includes a subscription pattern for channel-based real-time events.\n- Offers a connection status component for UI feedback.\n- Documents best practices and anti-patterns for real-time connections in React apps.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1b23dc56289429d47c12108bd268c4a3f61ac35f49582969e01c71130f73500b"
+}

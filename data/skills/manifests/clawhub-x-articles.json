@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9514,
+  "uuid": "skill-clawhub-x-articles",
+  "skillKey": "clawhub-x-articles",
+  "name": "X Articles",
+  "summary": "Publish viral X (Twitter) Articles with AI. Long-form content that gets engagement. Proven hook patterns, browser automation. Works with Claude, Cursor, OpenClaw.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_articles",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Next Frontier AI",
+      "features": [
+        "Publish viral X (Twitter) Articles with AI",
+        "Long-form content that gets engagement",
+        "Proven hook patterns, browser automation",
+        "Works with Claude, Cursor, OpenClaw."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-articles@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257253317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-articles",
+      "url": "https://clawhub.ai/skills/x-articles"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-articles",
+    "url": "https://clawhub.ai/skills/x-articles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-articles-c5f273d9f778127b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-articles@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-articles-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09c40bf4babe4e2b66cdcfb4043c4d8ffbafe3900975659299eaf70584329e34",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T15:59:19.945Z"
+}

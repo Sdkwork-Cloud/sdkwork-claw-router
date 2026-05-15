@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gv-caller@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gv_caller",
+  "skill": {
+    "id": 60845,
+    "skillKey": "clawhub-gv-caller",
+    "name": "Gv Caller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gv-caller",
+    "url": "https://clawhub.ai/skills/gv-caller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gv-caller-dfe0efa95f9cad21.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 Google Voice 自动拨打电话并播放 AI 生成的语音（TTS）或本地音频。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joe12801",
+      "userId": "s170paks6vj4s9bvx4s1fx60f183gc5d",
+      "displayName": "joe12801",
+      "image": "https://avatars.githubusercontent.com/u/70465495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774215785318,
+      "changelog": "Initial release documentation update and changelog addition.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ff818aedd5503b689965e352b3723fcac85520e99afc4868bbc564f81bb2381"
+}

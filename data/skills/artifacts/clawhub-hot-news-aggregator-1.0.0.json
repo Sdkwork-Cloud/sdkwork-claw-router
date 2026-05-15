@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hot-news-aggregator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hot_news_aggregator",
+  "skill": {
+    "id": 66180,
+    "skillKey": "clawhub-hot-news-aggregator",
+    "name": "hot-news-aggregator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hot-news-aggregator",
+    "url": "https://clawhub.ai/skills/hot-news-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hot-news-aggregator-9011eb0a5c21d455.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "国内外社会、科技、军事新闻汇总。自动搜索、筛选、整理新闻要点。Use When 需要获取最新的国内外社会、科技、军事新闻，并且希望自动筛选和整理新闻要点时。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "henryzhuhr",
+      "userId": "s177nyrs631v41hx4r1ptjctzx84k78t",
+      "displayName": "henryzhuhr",
+      "image": "https://avatars.githubusercontent.com/u/38650110?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5449,
+      "installsAllTime": 27,
+      "installsCurrent": 25,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773123743098,
+      "changelog": "- Initial release of Hot News Aggregator.\n- Aggregates and automatically summarizes domestic and international news in society, technology, and military.\n- Supports automatic searching, filtering, and structured summarization of key news points from multiple trusted sources.\n- Includes credibility guidelines prioritizing official and authoritative sources.\n- Provides clear output formatting for easy news review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:770193782a35023e9109138e3aede4a673453654de0b26aa49e53c6e97560df3"
+}

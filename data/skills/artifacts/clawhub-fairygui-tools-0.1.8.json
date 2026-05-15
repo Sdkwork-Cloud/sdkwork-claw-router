@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fairygui-tools@0.1.8",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fairygui_tools",
+  "skill": {
+    "id": 64510,
+    "skillKey": "clawhub-fairygui-tools",
+    "name": "fairygui-tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fairygui-tools",
+    "url": "https://clawhub.ai/skills/fairygui-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fairygui-tools-30daec8392c31967.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "解析 FairyGUI 工程、根据 UI 效果图生成示意图与白模 XML，并输出可直接导入 FairyGUI 编辑器的闭环包结构。适用于工程解析、图转原型、XML 结构讨论、自然语言生成界面原型等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "slinkz",
+      "userId": "s17607fsfaavvrb0cad30hgmx183h3xa",
+      "displayName": "slinkz",
+      "image": "https://avatars.githubusercontent.com/u/132036?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 409,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.1.8",
+      "createdAt": 1774784114938,
+      "changelog": "Version 0.1.8\n\n- 明确规定 `<list>` 的 `defaultItem` 必须使用 `ui://包ID资源ID` URL 格式，禁止使用文件路径，增强与 FairyGUI 兼容性。\n- 在规则 2、规则 4 中新增和强调 list 的 `defaultItem` 相关用法及错误示例。\n- 无其他结构、接口或描述变动。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64fc82e5be68bd4bc7ef72323e70938aa925161665ab9e4371f6f9f50c0449cd"
+}

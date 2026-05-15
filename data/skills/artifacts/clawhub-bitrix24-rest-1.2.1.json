@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bitrix24-rest@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitrix24_rest",
+  "skill": {
+    "id": 58612,
+    "skillKey": "clawhub-bitrix24-rest",
+    "name": "Bitrix24 REST API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitrix24-rest",
+    "url": "https://clawhub.ai/skills/bitrix24-rest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitrix24-rest-053ca4fb76764877.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work with Bitrix24 (Битрикс24) via REST API and MCP documentation server. Triggers on: CRM — \"сделки\", \"контакты\", \"лиды\", \"воронка\", \"клиенты\", \"deals\", \"co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bitrix24",
+      "userId": "s172b6r64hct4ba0ssswjb4fxs83n9fp",
+      "displayName": "Bitrix24",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1775030198186,
+      "changelog": "**Changelog for version 1.2.1**\n\n- Major simplification: The webhook is now provided only via the BITRIX24_WEBHOOK_URL environment variable; all local credential storage logic removed.\n- Security model updated in documentation to reflect no disk storage and clarify environment variable usage.\n- Removed scripts/save_webhook.py, as secure storage setup is no longer needed.\n- SKILL.md updated to clearly describe the new setup process, environment variable requirement, and cleaner cache handling.\n- All previous references to keyring, encrypted storage, and multi-level fallback have been eliminated for improved simplicity and security.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ef70977a57cd30bf1a0f9f19a9d63d01538cd56c7ef6b72d7e65d54876abe6c"
+}

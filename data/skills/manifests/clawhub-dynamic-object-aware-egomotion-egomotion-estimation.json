@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44507,
+  "uuid": "skill-clawhub-dynamic-object-aware-egomotion-egomotion-estimation",
+  "skillKey": "clawhub-dynamic-object-aware-egomotion-egomotion-estimation",
+  "name": "egomotion-estimation",
+  "summary": "Estimate camera motion with optical flow + affine/homography, allow multi-label per frame.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dynamic_object_aware_egomotion_egomotion_estimation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wu-uk",
+      "features": [
+        "Estimate camera motion with optical flow + affine/homography, allow multi-label per frame."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dynamic-object-aware-egomotion-egomotion-estimation@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199610473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dynamic-object-aware-egomotion-egomotion-estimation",
+      "url": "https://clawhub.ai/skills/dynamic-object-aware-egomotion-egomotion-estimation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dynamic-object-aware-egomotion-egomotion-estimation",
+    "url": "https://clawhub.ai/skills/dynamic-object-aware-egomotion-egomotion-estimation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dynamic-object-aware-egomotion-egomotion-estimation-ac5c36c50905bf27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dynamic-object-aware-egomotion-egomotion-estimation@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dynamic-object-aware-egomotion-egomotion-estimation-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8b41a38918277f6d37bbfb3c3080f83590470f8478a47ac07e0f008b62b10da",
+      "artifactSizeBytes": 2062
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T20:19:13.422Z"
+}

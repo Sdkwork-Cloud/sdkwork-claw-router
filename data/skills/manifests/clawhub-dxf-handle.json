@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64383,
+  "uuid": "skill-clawhub-dxf-handle",
+  "skillKey": "clawhub-dxf-handle",
+  "name": "Dxf Handle",
+  "summary": "DWG/DXF CAD 图纸处理工具。使用 ezdxf 读取图纸，遍历图层信息，计算面积或周长。适用于室内设计房间量房统计。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dxf_handle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mapleslove",
+      "features": [
+        "DWG/DXF CAD 图纸处理工具。使用 ezdxf 读取图纸，遍历图层信息，计算面积或周长。适用于室内设计房间量房统计。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dxf-handle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10831075?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dxf-handle",
+      "url": "https://clawhub.ai/skills/dxf-handle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dxf-handle",
+    "url": "https://clawhub.ai/skills/dxf-handle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dxf-handle-c6a3d1c986df39c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dxf-handle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dxf-handle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f625c855c83ec597f5127b4546cb229855157148bf04884f1f7149f9f6d10615",
+      "artifactSizeBytes": 2227
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T11:11:08.675Z"
+}

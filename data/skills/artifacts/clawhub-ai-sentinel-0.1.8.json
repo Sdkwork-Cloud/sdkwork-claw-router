@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-sentinel@0.1.8",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_sentinel",
+  "skill": {
+    "id": 12592,
+    "skillKey": "clawhub-ai-sentinel",
+    "name": "Openclaw Sentinel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-sentinel",
+    "url": "https://clawhub.ai/skills/ai-sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-sentinel-b75b707ed415d0bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prompt injection detection and security scanning for OpenClaw agents. Installs the ai-sentinel plugin via OpenClaw CLI, configures plugin settings, and offer..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amandiwakar",
+      "userId": "publishers:amandiwakar",
+      "displayName": "amandiwakar",
+      "image": "https://avatars.githubusercontent.com/u/11379893?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1600,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "0.1.8",
+      "createdAt": 1771223053586,
+      "changelog": "- Major update: transitions from SDK-based middleware setup to native OpenClaw plugin configuration.\n- Now installs AI Sentinel via `openclaw plugins install ai-sentinel` instead of direct SDK integration.\n- Plugin configuration is managed under the OpenClaw `plugins.entries` section, supporting both Community (local) and Pro (dashboard) modes.\n- Updated steps and consent flow for choosing protection level, detection mode, and (in Pro) reporting/telemetry options.\n- All file writes and configuration changes require explicit user confirmation.\n- Clarified data transmission for Pro mode and improved step-by-step integration guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:87831c630e715c2f4bdc1402f89eb2398b388a07bcd53ef02cc43b7dbb414113"
+}

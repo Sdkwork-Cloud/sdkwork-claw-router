@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70276,
+  "uuid": "skill-clawhub-ai-resource-master",
+  "skillKey": "clawhub-ai-resource-master",
+  "name": "Ai Resource Master",
+  "summary": "大模型服务器资源评估。用于医疗行业大模型应用场景的算力资源需求评估和测算，根据门诊/住院诊疗量和大模型应用场景数推导GPU算力需求。使用场景：用户询问大模型算力评估、AI服务器资源配置、GPU算力需求测算等。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_resource_master",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hellohushuai",
+      "features": [
+        "大模型服务器资源评估。用于医疗行业大模型应用场景的算力资源需求评估和测算，根据门诊/住院诊疗量和大模型应用场景数推导GPU算力需求。使用场景：用户询问大模型算力评估、AI服务器资源配置、GP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-resource-master@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40168227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-resource-master",
+      "url": "https://clawhub.ai/skills/ai-resource-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-resource-master",
+    "url": "https://clawhub.ai/skills/ai-resource-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-resource-master-61d274cf84bd3bad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-resource-master@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-resource-master-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73a1b2c5b3dc1b3cd40b6475712fa8a5b4c7cacb386d15663ecd162634340abe",
+      "artifactSizeBytes": 2197
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:31:18.396Z"
+}

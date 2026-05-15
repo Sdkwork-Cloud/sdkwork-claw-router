@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68476,
+  "uuid": "skill-clawhub-qq-mail-read-send",
+  "skillKey": "clawhub-qq-mail-read-send",
+  "name": "qq-mail-read-send",
+  "summary": "读取和发送QQ邮箱邮件。使用IMAP协议读取，SMTP协议发送。支持多种编码解析。触发场景：用户要求查看邮箱、读取邮件、查看最近邮件、筛选特定邮件、发送邮件等",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qq_mail_read_send",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "张翀",
+      "features": [
+        "读取和发送QQ邮箱邮件。使用IMAP协议读取，SMTP协议发送。支持多种编码解析。触发场景：用户要求查看邮箱、读取邮件、查看最近邮件、筛选特定邮件、发送邮件等"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qq-mail-read-send@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270544860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qq-mail-read-send",
+      "url": "https://clawhub.ai/skills/qq-mail-read-send"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qq-mail-read-send",
+    "url": "https://clawhub.ai/skills/qq-mail-read-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qq-mail-read-send-db28f47f52ca3ae5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qq-mail-read-send@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-qq-mail-read-send-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c0215a1913caa48f6c7476d0f54e0bff025df405f8a3619ba4c89e538366e5a",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T15:36:59.500Z"
+}

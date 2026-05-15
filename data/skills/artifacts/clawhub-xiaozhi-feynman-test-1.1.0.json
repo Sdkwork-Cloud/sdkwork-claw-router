@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaozhi-feynman-test@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaozhi_feynman_test",
+  "skill": {
+    "id": 72960,
+    "skillKey": "clawhub-xiaozhi-feynman-test",
+    "name": "费曼学习法"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaozhi-feynman-test",
+    "url": "https://clawhub.ai/skills/xiaozhi-feynman-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaozhi-feynman-test-98fca665a3498939.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用“教会小龙虾”来检验学生是否真正学会了的深度理解验证系统。 当学生说“我来给你讲讲”“我懂了想测试一下自己”“帮我检验一下我学没学会”， 或学完某个重要知识点后想验证理解时，必须激活此SKILL。 当前版本已整合苏格拉底挑战者模式、理解深度档案、第五跳批判性验证、 AI答案主动验证与思维主权保护机制。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qizhitang",
+      "userId": "s17egdt3mjea4rhm19wt7tm77x852sxg",
+      "displayName": "xiaozhi",
+      "image": "https://avatars.githubusercontent.com/u/2926929?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 60,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778224465792,
+      "changelog": "费曼测试 skill 1.1.0 重大升级：\n\n- 新增“苏格拉底挑战者模式”，深度追问学生理解边界和推理逻辑。\n- 集成“第五跳批判性验证”，动态适配不同学段，增强怀疑和批判性思考。\n- 强化与学习DNA档案联动，自动写回每次测试的理解深度和盲区。\n- 明确AI答案主动验证流程，避免学生依赖现成答案。\n- 优化“亲子费曼日”模式，支持家长陪练和复盘。\n- 完善评估结构与行为准则，确保教学标准统一且以学生思维为核心。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31e461c47863c3ad18a65eab1661e52250e567411daad6145fea34821a9b0fdf"
+}

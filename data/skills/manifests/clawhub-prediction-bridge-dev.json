@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14751,
+  "uuid": "skill-clawhub-prediction-bridge-dev",
+  "skillKey": "clawhub-prediction-bridge-dev",
+  "name": "Prediction Bridge Dev",
+  "summary": "Search Prediction Bridge prediction-market events by text or X (Twitter) link via the backend API.",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prediction_bridge_dev",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smallyunet",
+      "features": [
+        "Search Prediction Bridge prediction-market events by text or X (Twitter) link via the backend A."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prediction-bridge-dev@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20765689?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prediction-bridge-dev",
+      "url": "https://clawhub.ai/skills/prediction-bridge-dev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prediction-bridge-dev",
+    "url": "https://clawhub.ai/skills/prediction-bridge-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prediction-bridge-dev-1a6504593179b71b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prediction-bridge-dev@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-prediction-bridge-dev-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9abb9b48a4298d066c2419d618de2b8a56e0263d85aac246bf87f71132c044b7",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T10:50:01.500Z"
+}

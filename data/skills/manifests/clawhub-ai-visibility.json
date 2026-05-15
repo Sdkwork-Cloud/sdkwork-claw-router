@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39835,
+  "uuid": "skill-clawhub-ai-visibility",
+  "skillKey": "clawhub-ai-visibility",
+  "name": "Ai Visibility",
+  "summary": "Track and analyze brand visibility across AI platforms (ChatGPT, Perplexity, Claude, Gemini). Check mention rates, sentiment, competitors, and get improvemen...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_visibility",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sharozdawa",
+      "features": [
+        "Track and analyze brand visibility across AI platforms (ChatGPT, Perplexity, Claude, Gemini)",
+        "Check mention rates, sentiment, competitors, and get improvemen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-visibility@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31814833?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-visibility",
+      "url": "https://clawhub.ai/skills/ai-visibility"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-visibility",
+    "url": "https://clawhub.ai/skills/ai-visibility",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-visibility-8f105f64788f78ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-visibility@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-visibility-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9716a28dd7b58bba178b76f27135e601b27709ba01b84a8f31e2e9bb564c9595",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T19:19:44.244Z"
+}

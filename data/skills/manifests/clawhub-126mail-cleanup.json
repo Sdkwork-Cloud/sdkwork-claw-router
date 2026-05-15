@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44819,
+  "uuid": "skill-clawhub-126mail-cleanup",
+  "skillKey": "clawhub-126mail-cleanup",
+  "name": "126 Mail Cleanup",
+  "summary": "Use this skill when the user wants to clean up, back up, or optimize their 126.com (NetEase) email account. Covers local backup, spam/subscription bulk delet...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.126mail_cleanup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YinghaoJia",
+      "features": [
+        "Use this skill when the user wants to clean up, back up, or optimize their 126.com (NetEase) em.",
+        "Covers local backup, spam/subscription bulk delet..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/126mail-cleanup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23326844?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "126mail-cleanup",
+      "url": "https://clawhub.ai/skills/126mail-cleanup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "126mail-cleanup",
+    "url": "https://clawhub.ai/skills/126mail-cleanup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/126mail-cleanup-c95e46b14d7a1e8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/126mail-cleanup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-126mail-cleanup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63b34c9ca96ad8c30d90cffdb7af67a2edadd262c1f08102598a1bec5a41f4a4",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T22:49:15.116Z"
+}

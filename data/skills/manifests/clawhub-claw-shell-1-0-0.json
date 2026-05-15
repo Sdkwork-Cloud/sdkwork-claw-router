@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17793,
+  "uuid": "skill-clawhub-claw-shell-1-0-0",
+  "skillKey": "clawhub-claw-shell-1-0-0",
+  "name": "Claw Shell 1.0.0",
+  "summary": "Runs shell commands exclusively inside tmux session 'claw', captures output, and requests confirmation for potentially destructive commands.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_shell_1_0_0",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shiny",
+      "features": [
+        "Runs shell commands exclusively inside tmux session 'claw', captures output, and requests confi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-shell-1-0-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4814669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-shell-1-0-0",
+      "url": "https://clawhub.ai/skills/claw-shell-1-0-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-shell-1-0-0",
+    "url": "https://clawhub.ai/skills/claw-shell-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-shell-1-0-0-312b51e2a25bc97e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-shell-1-0-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-shell-1-0-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07ac356eab9338b6edb4a65e0c21bc5a4c206245c8ea58d4ebb19bc7caae6240",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T09:42:16.022Z"
+}

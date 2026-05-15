@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68136,
+  "uuid": "skill-clawhub-feishu-log",
+  "skillKey": "clawhub-feishu-log",
+  "name": "Feishu Log",
+  "summary": "飞书日志记录 - 用户主动提供日志内容，智能整理、结构化、层次化后写入飞书文档，不使用固定模板。使用场景：(1) 会议记录，(2) 项目日志，(3) 工作复盘，(4) 重要事件记录",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_log",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tonyvics",
+      "features": [
+        "用户主动提供日志内容，智能整理、结构化、层次化后写入飞书文档，不使用固定模板。使用场景：(1) 会议记录，(2) 项目日志，(3) 工作复盘，(4) 重要事件记录"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-log@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78476971?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-log",
+      "url": "https://clawhub.ai/skills/feishu-log"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-log",
+    "url": "https://clawhub.ai/skills/feishu-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-log-e3a6bb11a3e95f1c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-log@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-log-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e56d73481f39307961a36d24086d6fcb2605766cfa6bf46a645dda03fb15a31e",
+      "artifactSizeBytes": 2291
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:21:30.933Z"
+}

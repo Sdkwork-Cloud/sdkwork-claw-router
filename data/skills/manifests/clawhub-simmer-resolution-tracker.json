@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19211,
+  "uuid": "skill-clawhub-simmer-resolution-tracker",
+  "skillKey": "clawhub-simmer-resolution-tracker",
+  "name": "Simmer Resolution Tracker",
+  "summary": "Monitors your Simmer positions for resolutions, logs wins/losses to your trade journal, and automatically redeems winning positions on-chain. Built for Simme...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simmer_resolution_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dyll",
+      "features": [
+        "Monitors your Simmer positions for resolutions, logs wins/losses to your trade journal, and aut.",
+        "Built for Simme..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/simmer-resolution-tracker@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6473326?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "simmer-resolution-tracker",
+      "url": "https://clawhub.ai/skills/simmer-resolution-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simmer-resolution-tracker",
+    "url": "https://clawhub.ai/skills/simmer-resolution-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simmer-resolution-tracker-89b1cd696cca2fc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/simmer-resolution-tracker@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-simmer-resolution-tracker-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a11766e75cd3a9cbf58eb2b316b850c3b2ece23e9388638fae5615a472040b1",
+      "artifactSizeBytes": 2408
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T04:52:47.051Z"
+}

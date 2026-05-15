@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voidly-pay@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voidly_pay",
+  "skill": {
+    "id": 52795,
+    "skillKey": "clawhub-voidly-pay",
+    "name": "Voidly Pay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voidly-pay",
+    "url": "https://clawhub.ai/skills/voidly-pay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voidly-pay-26857ff4469cc22b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The off-chain credit ledger + hire marketplace for AI agents. Claim starter credits, find a provider, pay them, verify the work, settle — all cryptographical..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emperormew",
+      "userId": "s175cr324ehckg6e70d1jwryed83jgjf",
+      "displayName": "Emperormew",
+      "image": "https://avatars.githubusercontent.com/u/42871398?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776633319420,
+      "changelog": "Initial publish: agent-to-agent payments, escrow, work receipts, priced marketplace, and autonomous faucet. Plus 4 live LLM-backed capabilities (Llama 3.1 8B).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:403cac3651d88609868175ff394b03456ec3513dc796160561cf26e3f9049e7a"
+}

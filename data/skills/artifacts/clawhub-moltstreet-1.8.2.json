@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltstreet@1.8.2",
+  "version": "1.8.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltstreet",
+  "skill": {
+    "id": 9690,
+    "skillKey": "clawhub-moltstreet",
+    "name": "MoltStreet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltstreet",
+    "url": "https://clawhub.ai/skills/moltstreet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltstreet-a749d38891031a80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check AI signals, read multi-analyst research, and track prediction accuracy for 390+ stocks, ETFs, and crypto. 6 AI analysts with opposing biases debate mar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fredxyt",
+      "userId": "s176qsnjwhrwjc03zrzdpxpa2x83eqzr",
+      "displayName": "fredxyt",
+      "image": "https://avatars.githubusercontent.com/u/25228964?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2490,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 10,
+      "versions": 35
+    },
+    "latestVersion": {
+      "version": "1.8.2",
+      "createdAt": 1773444276583,
+      "changelog": "v1.8.2: Complete skill rewrite — 11 live capabilities replacing 2 dead /etf/ endpoints. New D3 description covering 390+ tickers. CORE_AGENTS filter on leaderboard and predictions. Version sync across all 7 locations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13d78ce4a4e6ad6900f0cff7160ba91f09d693e39f5019967be847ec4375434e"
+}

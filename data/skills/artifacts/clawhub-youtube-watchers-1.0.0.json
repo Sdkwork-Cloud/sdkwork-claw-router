@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-watchers@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_watchers",
+  "skill": {
+    "id": 26723,
+    "skillKey": "clawhub-youtube-watchers",
+    "name": "Pub Youtube"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-watchers",
+    "url": "https://clawhub.ai/skills/youtube-watchers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-watchers-417e6742ec25e568.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and read transcripts from YouTube videos for summarization and content extraction. And also 50+ models for image generation, video generation, text-to-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abeltennyson",
+      "userId": "s174gfyzm9cmcv1mx6226h2s3584rfxt",
+      "displayName": "AbelTennyson",
+      "image": "https://avatars.githubusercontent.com/u/261241122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773295956027,
+      "changelog": "- Initial release of youtube-watcher skill.\n- Fetch and read transcripts from YouTube videos for summarization and content extraction.\n- Includes access to 50+ models for image/video generation, text-to-speech, speech-to-text, music, chat, web search, document parsing, email, and SMS through SkillBoss API.\n- Requires a SKILLBOSS_API_KEY for authentication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b28d8999a258d5ea1c981fecb79adecba7a7d695ca434398f5a2509a953de494"
+}

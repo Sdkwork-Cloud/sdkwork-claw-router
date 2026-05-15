@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/portrait-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.portrait_generator",
+  "skill": {
+    "id": 23438,
+    "skillKey": "clawhub-portrait-generator",
+    "name": "Portrait Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "portrait-generator",
+    "url": "https://clawhub.ai/skills/portrait-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/portrait-generator-dbd03afd524392bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate hyper-detailed AI portraits via ComfyDeploy Morfeo Portrait workflow. Control every facial feature: eyes, nose, lips, jawline, skin, hair, expressio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pauldelavallaz",
+      "userId": "publishers:pauldelavallaz",
+      "displayName": "Paul de Lavallaz",
+      "image": "https://avatars.githubusercontent.com/u/51497690?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772494968923,
+      "changelog": "Initial release. Full facial feature control via ComfyDeploy Morfeo Portrait workflow.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6d88c2b1eb7bd5e1ff60cccb7976cca4dbe35f6e2cd75119ec7b09124adfa437"
+}

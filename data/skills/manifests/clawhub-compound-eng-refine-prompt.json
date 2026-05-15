@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24499,
+  "uuid": "skill-clawhub-compound-eng-refine-prompt",
+  "skillKey": "clawhub-compound-eng-refine-prompt",
+  "name": "ia-refine-prompt",
+  "summary": "Transforms vague prompts into precise, structured AI instructions. Use when asked to refine, improve, or sharpen a prompt, do prompt engineering, write a sys...",
+  "version": "3.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compound_eng_refine_prompt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ilia Alshanetsky",
+      "features": [
+        "Transforms vague prompts into precise, structured AI instructions",
+        "Use when asked to refine, improve, or sharpen a prompt, do prompt engineering, write a sys..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/compound-eng-refine-prompt@3.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/158724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "compound-eng-refine-prompt",
+      "url": "https://clawhub.ai/skills/compound-eng-refine-prompt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compound-eng-refine-prompt",
+    "url": "https://clawhub.ai/skills/compound-eng-refine-prompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compound-eng-refine-prompt-e754b75b52c73102.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/compound-eng-refine-prompt@3.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-compound-eng-refine-prompt-3.0.5.json",
+      "version": "3.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d5b8509e24425a0bbc1c2340cb2a25cccda4e2a51a4a5dcd7a51a32aa765f2c",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T00:03:44.289Z"
+}

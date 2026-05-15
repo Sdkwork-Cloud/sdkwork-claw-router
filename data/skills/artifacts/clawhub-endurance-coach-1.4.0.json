@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/endurance-coach@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.endurance_coach",
+  "skill": {
+    "id": 10079,
+    "skillKey": "clawhub-endurance-coach",
+    "name": "Endurance Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "endurance-coach",
+    "url": "https://clawhub.ai/skills/endurance-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/endurance-coach-4cd69e7c9a1c5695.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create personalized triathlon, marathon, and ultra-endurance training plans. Use when athletes ask for training plans, workout schedules, race preparation, or coaching advice. Can sync with Strava to analyze training history, or work from."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shiv19",
+      "userId": "publishers:shiv19",
+      "displayName": "shiv19",
+      "image": "https://avatars.githubusercontent.com/u/9407019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2714,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1770967495855,
+      "changelog": "**Summary: Major update to prioritize athlete context management and token efficiency.**\n\n- Added support for post workout interviews (Reflection as Data)\n- Added detailed instructions for checking and managing Athlete_Context.md before any data gathering.\n- Introduced a decision tree to use existing context or initiate a token-efficient context-building workflow.\n- Clarified when and how to update Athlete_Context.md based on interview count or life/training changes.\n- Reordered workflow to make athlete context check the first step in every process.\n- Initial setup, validation, and planning workflows now reference the new context-first logic.\n- All coaching actions are now to be guided primarily by the athlete context document, when present.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a8e6fd015f94f1f2aba388378f5331506d9d107fa1a8667ff114055bc4014274"
+}

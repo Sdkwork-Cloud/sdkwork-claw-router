@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33764,
+  "uuid": "skill-clawhub-lite-research",
+  "skillKey": "clawhub-lite-research",
+  "name": "Lite Research",
+  "summary": "Perform lite research using web search and web fetch tools. Use when user asks to \"research\" something (not \"deep research\"). Uses advanced search strategies...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lite_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chand1012",
+      "features": [
+        "Perform lite research using web search and web fetch tools",
+        "Use when user asks to \"research\" something (not \"deep research\")",
+        "Uses advanced search strategies..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lite-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3521582?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lite-research",
+      "url": "https://clawhub.ai/skills/lite-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lite-research",
+    "url": "https://clawhub.ai/skills/lite-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lite-research-6a5428d0972ac293.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lite-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lite-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31211270c1572c68e0427e7889d8e5753f375444777e52afbb161a7df7d56ad4",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:51:33.659Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67396,
+  "uuid": "skill-clawhub-viral-content-dissecter",
+  "skillKey": "clawhub-viral-content-dissecter",
+  "name": "内容爆款拆解师",
+  "summary": "爆款拆解神器。用户发送任何抖音/小红书/B站/视频链接， 自动解析内容，拆解爆款元素，生成3个SEO标题 + 800-1500字长文 （公众号/小红书风格） + 5条配图建议 + 3条Hashtag。 支持飞书推送。当用户提到\"拆解\"、\"爆款拆解\"、\"分析这条链接\"、 \"帮我分析这个视频/笔记\"、\"拆解这篇内容\"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.viral_content_dissecter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hadderyes",
+      "features": [
+        "爆款拆解神器。用户发送任何抖音/小红书/B站/视频链接， 自动解析内容，拆解爆款元素，生成3个SEO标题 + 800-1500字长文 （公众号/小红书风格） + 5条配图建议 + 3条Has."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/viral-content-dissecter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/189217632?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "viral-content-dissecter",
+      "url": "https://clawhub.ai/skills/viral-content-dissecter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "viral-content-dissecter",
+    "url": "https://clawhub.ai/skills/viral-content-dissecter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/viral-content-dissecter-ce928138ea80ea56.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/viral-content-dissecter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-viral-content-dissecter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91b31bc78f8d2bfa333eb0c047e800c98ad0a838c4e0f625dc476e59052f02ba",
+      "artifactSizeBytes": 2865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T08:35:14.887Z"
+}

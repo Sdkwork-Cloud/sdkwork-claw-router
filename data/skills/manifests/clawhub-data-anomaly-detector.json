@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9216,
+  "uuid": "skill-clawhub-data-anomaly-detector",
+  "skillKey": "clawhub-data-anomaly-detector",
+  "name": "Data Anomaly Detector",
+  "summary": "Detect anomalies and outliers in construction data: unusual costs, schedule variances, productivity spikes. Statistical and ML-based detection methods.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_anomaly_detector",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "datadrivenconstruction",
+      "features": [
+        "Detect anomalies and outliers in construction data: unusual costs, schedule variances, producti.",
+        "Statistical and ML-based detection methods."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-anomaly-detector@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94158709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-anomaly-detector",
+      "url": "https://clawhub.ai/skills/data-anomaly-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-anomaly-detector",
+    "url": "https://clawhub.ai/skills/data-anomaly-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-anomaly-detector-5223255807d8afe5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-anomaly-detector@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-anomaly-detector-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:995fd585a0c5e4c7a5d7f07f0b8d862911e35ffe6626a71ab2f41736d4fc05cc",
+      "artifactSizeBytes": 2335
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T16:59:47.782Z"
+}

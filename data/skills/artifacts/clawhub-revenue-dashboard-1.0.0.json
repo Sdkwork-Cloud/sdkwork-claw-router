@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/revenue-dashboard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.revenue_dashboard",
+  "skill": {
+    "id": 41030,
+    "skillKey": "clawhub-revenue-dashboard",
+    "name": "Revenue Dashboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "revenue-dashboard",
+    "url": "https://clawhub.ai/skills/revenue-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/revenue-dashboard-d3307de9e70e0938.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track revenue across multiple Stripe accounts with automated daily reports, goal tracking, and anomaly alerts. Use when checking revenue, running nightly rev..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "son-of-poseidon",
+      "userId": "s17d5v5m0h8rksjbh9sw6659tx83tz0h",
+      "displayName": "son-of-poseidon",
+      "image": "https://avatars.githubusercontent.com/u/267848730?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774742810473,
+      "changelog": "Initial release: multi-account Stripe revenue tracking with MRR, goal tracking, anomaly detection, and automated nightly reviews.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d650caa0d27132a2abbb41819edf7d3afaec4c840983e660c12e73a03a758d4"
+}

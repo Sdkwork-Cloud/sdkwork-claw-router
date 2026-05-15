@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57149,
+  "uuid": "skill-clawhub-wechat-official-account",
+  "skillKey": "clawhub-wechat-official-account",
+  "name": "WeChat Official Account (公众号发文)",
+  "summary": "Create and publish WeChat Official Account (公众号) articles. Use when: (1) User wants to auto-post to WeChat Official Account, (2) Create draft from title + co...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_official_account",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "antaeus001",
+      "features": [
+        "Create and publish WeChat Official Account (公众号) articles",
+        "Use when: (1) User wants to auto-post to WeChat Official Account, (2) Create draft from title +."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-official-account@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/744597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-official-account",
+      "url": "https://clawhub.ai/skills/wechat-official-account"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-official-account",
+    "url": "https://clawhub.ai/skills/wechat-official-account",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-official-account-eeb02d944b77ba31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-official-account@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-official-account-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2a7cffbe499af9b12df90ef067d08e18b480ae37b05e72acecb4225282e1345",
+      "artifactSizeBytes": 2091
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T13:47:47.173Z"
+}

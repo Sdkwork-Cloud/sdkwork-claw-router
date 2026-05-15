@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71243,
+  "uuid": "skill-clawhub-qqlive",
+  "skillKey": "clawhub-qqlive",
+  "name": "Qqlive",
+  "summary": "腾讯视频内容助手，精通视频推荐、内容分析、观影指南、创作建议",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qqlive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "腾讯视频内容助手，精通视频推荐、内容分析、观影指南、创作建议"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qqlive@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qqlive",
+      "url": "https://clawhub.ai/skills/qqlive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qqlive",
+    "url": "https://clawhub.ai/skills/qqlive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qqlive-d915e3a270943271.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qqlive@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qqlive-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e25cfd45038bab8356203b088c7872aa99f5cd82bc616cbb714f9cafb6c97d10",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:20:10.677Z"
+}

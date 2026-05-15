@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67550,
+  "uuid": "skill-clawhub-chronosync",
+  "skillKey": "clawhub-chronosync",
+  "name": "ChronoSync",
+  "summary": "跨会话聊天记录同步工具。自动备份 OpenClaw 各会话的聊天记录， 实现会话间记忆共享，避免切换会话后丢失上下文。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chronosync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smallccwc",
+      "features": [
+        "跨会话聊天记录同步工具。自动备份 OpenClaw 各会话的聊天记录， 实现会话间记忆共享，避免切换会话后丢失上下文。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chronosync@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98419489?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chronosync",
+      "url": "https://clawhub.ai/skills/chronosync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chronosync",
+    "url": "https://clawhub.ai/skills/chronosync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chronosync-cdfb4b4b9d1d82c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chronosync@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-chronosync-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41ab1e713f2d5374b9263de6f3cdc678db838a7059f594a945f9aa774563ce3a",
+      "artifactSizeBytes": 2921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T05:13:42.440Z"
+}

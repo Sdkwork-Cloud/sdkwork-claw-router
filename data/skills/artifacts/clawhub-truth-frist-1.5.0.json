@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/truth-frist@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.truth_frist",
+  "skill": {
+    "id": 24364,
+    "skillKey": "clawhub-truth-frist",
+    "name": "Truth first"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "truth-frist",
+    "url": "https://clawhub.ai/skills/truth-frist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/truth-frist-540e74d9ebaf7df0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evidence-first verification for status, config, file contents, actions, connectivity, mounts, and model selection. Use before answering any such claim."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "royhk920",
+      "userId": "s179273w43zh8y75zyzst8wa2h83gwxh",
+      "displayName": "royhk920",
+      "image": "https://avatars.githubusercontent.com/u/129730053?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 414,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1773579140004,
+      "changelog": "updated to 1.5 version, 100% fit for clawhub skill format",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ed59151dd9fe1978cd21d47bf3458d2a7a48483cb7b83cb4869bbc304fe8f21"
+}

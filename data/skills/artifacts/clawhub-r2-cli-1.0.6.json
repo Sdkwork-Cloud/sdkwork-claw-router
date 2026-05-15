@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/r2-cli@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.r2_cli",
+  "skill": {
+    "id": 19584,
+    "skillKey": "clawhub-r2-cli",
+    "name": "Cloudflare R2 CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "r2-cli",
+    "url": "https://clawhub.ai/skills/r2-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/r2-cli-4b06e90a579fb485.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Minimal Python CLI for secure upload, download, list, and delete operations on Cloudflare R2 storage using AWS Signature V4 authentication."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zororaka00",
+      "userId": "publishers:zororaka00",
+      "displayName": "Web3 Hungry",
+      "image": "https://avatars.githubusercontent.com/u/24318495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 604,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1771659057692,
+      "changelog": "Version 1.0.6\n\n- Added required_env_vars, primaryEnv, and primarySecretEnv entries to the skill metadata for clearer environment variable usage and secret designation.\n- No changes to code or functional behavior; documentation updated only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c80974d4a337d993cd20ebd8ccc6ab13d2199a05cfa7cb5912f45b3a7cdaa927"
+}

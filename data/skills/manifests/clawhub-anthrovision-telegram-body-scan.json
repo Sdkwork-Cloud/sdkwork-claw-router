@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14061,
+  "uuid": "skill-clawhub-anthrovision-telegram-body-scan",
+  "skillKey": "clawhub-anthrovision-telegram-body-scan",
+  "name": "AnthroVision Telegram Body Scan",
+  "summary": "Run end-to-end body-scan measurement flow in Telegram using AnthroVision bridge tools.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anthrovision_telegram_body_scan",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dr2101",
+      "features": [
+        "Run end-to-end body-scan measurement flow in Telegram using AnthroVision bridge tools."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anthrovision-telegram-body-scan@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20160415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anthrovision-telegram-body-scan",
+      "url": "https://clawhub.ai/skills/anthrovision-telegram-body-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anthrovision-telegram-body-scan",
+    "url": "https://clawhub.ai/skills/anthrovision-telegram-body-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anthrovision-telegram-body-scan-f1ce68472f613033.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anthrovision-telegram-body-scan@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-anthrovision-telegram-body-scan-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e1665176ea07c26a4ee5756ef6140af153350fc2496e563642d08a3b7e74d4d",
+      "artifactSizeBytes": 2218
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T19:35:02.765Z"
+}

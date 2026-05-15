@@ -1,0 +1,58 @@
+{
+  "skill": {
+    "slug": "vorim-ai",
+    "displayName": "Vorim AI — Agent Identity & Trust",
+    "summary": "AI agent identity, permissions, trust scores, and audit trails via Vorim AI. Gives your OpenClaw agent a cryptographic identity so every action is verified,...",
+    "tags": {
+      "audit": "1.0.1",
+      "identity": "1.0.1",
+      "latest": "1.0.1",
+      "permissions": "1.0.1",
+      "security": "1.0.1",
+      "trust": "1.0.1",
+      "aiidentity": "1.0.0",
+      "aisecurity": "1.0.0",
+      "aitrust": "1.0.0",
+      "compliance": "1.0.0",
+      "mcp": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1777569683923,
+    "updatedAt": 1778199228610
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1778199003906,
+    "changelog": "v1.0.1 — Republish with cleaner manifest and standalone repo.\n\nChanges since previous version:\n- SKILL.md frontmatter cleaned to use only supported attributes\n  (name, description, license, metadata)\n- Explicit license: MIT-0 at the top level\n- 17 MCP tools across identity, permissions, credentials, audit, and trust\n- README updated with both global and workspace-specific install steps\n- Now backed by a standalone GitHub repo: github.com/Kzino/vorim-openclaw-skill\n\nThe skill provides cryptographic agent identity (Ed25519), scoped permissions, hash-linked audit trails, and a publicly verifiable trust score (0-100) for any OpenClaw agent. Free tier includes 3 agents and 10K events per month, no credit card.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "kzino",
+    "userId": "s17bavm3309nkcnppysrc46nhh855ave",
+    "displayName": "Kzino",
+    "image": "https://avatars.githubusercontent.com/u/30327181?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.exposed_secret_literal",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.exposed_secret_literal, suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778199228610
+  }
+}

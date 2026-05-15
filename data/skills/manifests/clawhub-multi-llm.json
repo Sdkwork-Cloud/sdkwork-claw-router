@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47502,
+  "uuid": "skill-clawhub-multi-llm",
+  "skillKey": "clawhub-multi-llm",
+  "name": "Multi-LLM Ensemble (MoA)",
+  "summary": "Use this skill when the agent needs the highest-quality answer by querying multiple LLM providers (Claude, Gemini, GPT, Ollama) in parallel and synthesizing...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_llm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "goodmorning0000",
+      "features": [
+        "Use this skill when the agent needs the highest-quality answer by querying multiple LLM provide."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-llm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143760492?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-llm",
+      "url": "https://clawhub.ai/skills/multi-llm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-llm",
+    "url": "https://clawhub.ai/skills/multi-llm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-llm-e623bbda514e4cf0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-llm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-llm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b783593a7b5ca823dfb9bdd1fc6086a018cbe1d05ceff590b49cb5c644956aa",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T23:41:32.415Z"
+}

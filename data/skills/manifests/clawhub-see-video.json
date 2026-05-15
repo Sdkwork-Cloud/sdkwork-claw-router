@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52929,
+  "uuid": "skill-clawhub-see-video",
+  "skillKey": "clawhub-see-video",
+  "name": "see-video",
+  "summary": "Use when the user sends a video file or asks about video content. Extracts frames and injects them as an image grid directly into the LLM context — no proxy...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.see_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "john-ver",
+      "features": [
+        "Use when the user sends a video file or asks about video content",
+        "Extracts frames and injects them as an image grid directly into the LLM context — no proxy..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/see-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46668752?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "see-video",
+      "url": "https://clawhub.ai/skills/see-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "see-video",
+    "url": "https://clawhub.ai/skills/see-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/see-video-2972d0ad62606c54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/see-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-see-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4230f72639ce79c5de4ac9f2ca7c2918341eb1cba5aab47e47b537cc1c7c7b62",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T16:27:13.754Z"
+}

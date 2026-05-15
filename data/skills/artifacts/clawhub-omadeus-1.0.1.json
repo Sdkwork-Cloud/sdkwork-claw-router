@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/omadeus@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omadeus",
+  "skill": {
+    "id": 16962,
+    "skillKey": "clawhub-omadeus",
+    "name": "omadeus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omadeus",
+    "url": "https://clawhub.ai/skills/omadeus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omadeus-584974b0aa47c259.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Omadeus entities via the Omadeus REST API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mohammadsheikhian",
+      "userId": "publishers:mohammadsheikhian",
+      "displayName": "mohammadsheikhian",
+      "image": "https://avatars.githubusercontent.com/u/39209592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 832,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771160028663,
+      "changelog": "- Updated curl command examples to use the custom HTTP method 'LIST' instead of 'GET'.\n- Added a note that custom method names like 'list', 'create', etc., should be used in API calls.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6b50f8ac8febb97c9810f7d63dcda1d4e20b8041ce8bbfdef09ae4c30e2e9e84"
+}

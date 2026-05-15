@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/remove-watermark@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remove_watermark",
+  "skill": {
+    "id": 20436,
+    "skillKey": "clawhub-remove-watermark",
+    "name": "Remove Watermark"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remove-watermark",
+    "url": "https://clawhub.ai/skills/remove-watermark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remove-watermark-0d435bcbe8c25b35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove light-colored text watermarks from white-background document images (exam papers, scanned documents). No API key needed - pure local image processing...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wxttt",
+      "userId": "s1760w5t2ym7gzhnsn3g4n313h84e25y",
+      "displayName": "wxttt",
+      "image": "https://avatars.githubusercontent.com/u/1388806?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 546,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773281061316,
+      "changelog": "- Initial release: Remove watermarks from white-background document images using a pure local Python script.\n- 4-step semi-automatic workflow: visual region selection, threshold analysis, watermark removal, and verification with auto-retry.\n- Handles light-colored text overlays, exam paper watermarks, and scanned document contamination.\n- Region-based removal preferred for minimal text damage; full-image removal supported for scattered watermarks (requires scipy).\n- Includes detailed troubleshooting and retry guidance for best results.\n- No API key needed; works entirely offline with only local Python dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80756916fa52eeb47aea52550f7a2b02fa7dfccecca94fe06634fba479cac8dd"
+}

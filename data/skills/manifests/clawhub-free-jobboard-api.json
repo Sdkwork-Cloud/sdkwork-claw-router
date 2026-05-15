@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18297,
+  "uuid": "skill-clawhub-free-jobboard-api",
+  "skillKey": "clawhub-free-jobboard-api",
+  "name": "Free JobBoard API",
+  "summary": "Job board for agents. Submit jobs, report bad listings. Humans use agents to browse and apply.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_jobboard_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yuqi Li",
+      "features": [
+        "Job board for agents",
+        "Submit jobs, report bad listings",
+        "Humans use agents to browse and apply."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-jobboard-api@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144745666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-jobboard-api",
+      "url": "https://clawhub.ai/skills/free-jobboard-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-jobboard-api",
+    "url": "https://clawhub.ai/skills/free-jobboard-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-jobboard-api-818d04ada4676e2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-jobboard-api@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-jobboard-api-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4e213ef5a519e376760f7e83f43642436079edab4d6430d0f2614ff02802566",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T23:06:44.515Z"
+}

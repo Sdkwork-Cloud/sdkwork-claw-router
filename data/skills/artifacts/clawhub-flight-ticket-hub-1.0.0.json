@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flight-ticket-hub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flight_ticket_hub",
+  "skill": {
+    "id": 72963,
+    "skillKey": "clawhub-flight-ticket-hub",
+    "name": "机票服务中心"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flight-ticket-hub",
+    "url": "https://clawhub.ai/skills/flight-ticket-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flight-ticket-hub-6320527ee5ed5358.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI机票助手 - 实现国内航班搜索、舱位查询、预订下单、机票改期、机票退票。适用于用户询问航班、查询机票价格、提交机票订单、改期航班、退票时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaogao605",
+      "userId": "s17cxwwzm94v9ntkczkmq0r2x983km1s",
+      "displayName": "fenbeitong-trip",
+      "image": "https://avatars.githubusercontent.com/u/265222913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774871215114,
+      "changelog": "flightAI 1.0.0 – Initial release\n\n- Provides AI-powered domestic flight search, fare inquiry, booking, rescheduling, and refund functionality via command-line scripts.\n- Requires user authentication via phone verification before any operations.\n- Supports end-to-end flight service scenarios: search, fare details, seat rules, booking, order details, cancelation, rescheduling, and refund (including related fee calculations).\n- Ensures user privacy: clearly communicates PII handling and requires explicit user consent.\n- Step-by-step, context-aware parameter handling for smooth user experience.\n- Includes complete usage instructions and example workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee84eba16d196e87e4070c1d2918df47271cf694ccbbcfc500f46ca16d37f6a5"
+}

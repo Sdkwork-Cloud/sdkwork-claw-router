@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/best-highlight-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.best_highlight_editor",
+  "skill": {
+    "id": 43630,
+    "skillKey": "clawhub-best-highlight-editor",
+    "name": "Best Highlight Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "best-highlight-editor",
+    "url": "https://clawhub.ai/skills/best-highlight-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/best-highlight-editor-48ca8d0b1e1b8b6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get highlight reel clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something lik..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775943083383,
+      "changelog": "Best Highlight Editor — Version 1.0.0\n\n- Initial release: AI-powered highlight reel editor for rapid video auto-cut and export.\n- Supports upload of MP4, MOV, AVI, WebM (up to 500MB) and export of 1080p MP4 highlight reels.\n- Automatic cloud-based highlight detection, session/token management, and easy download.\n- User-friendly workflows: quick edit, batch processing, and iterative refinement.\n- Integrated with cloud GPU backend with credit and error handling.\n- Requires brief setup; no manual slider or local installation needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1169827ffaedb41eb5c270939720bde4c17830648b06744d6a464c3e850db8a7"
+}

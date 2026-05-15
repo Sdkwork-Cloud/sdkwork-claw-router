@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arc-department-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arc_department_manager",
+  "skill": {
+    "id": 14610,
+    "skillKey": "clawhub-arc-department-manager",
+    "name": "Department Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arc-department-manager",
+    "url": "https://clawhub.ai/skills/arc-department-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arc-department-manager-2a1b51e4aa3f7772.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage a team of AI sub-agents organized into departments. Use when you need to delegate tasks to specialized agents, track department outputs, assign roles,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trypto1019",
+      "userId": "publishers:trypto1019",
+      "displayName": "ArcSelf",
+      "image": "https://avatars.githubusercontent.com/u/91297640?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1077,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771185213849,
+      "changelog": "Initial release: Manage and coordinate tasks among multiple AI agent departments.\n\n- Organize AI agents into user-defined departments for specialized workflows.\n- Assign, track, and complete tasks within and across departments.\n- Commands for creating, listing, and removing departments; assigning and completing tasks; generating department reports.\n- Supports setting department roles, models, and custom responsibilities.\n- Stores all department/project data locally for persistence and review.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eaa053124414473895a238634f3f7f5cf07996400156902f4b88e7c5d746d212"
+}

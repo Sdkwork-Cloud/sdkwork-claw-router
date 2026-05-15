@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/irenkfng-verified-agent-identity@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.irenkfng_verified_agent_identity",
+  "skill": {
+    "id": 49401,
+    "skillKey": "clawhub-irenkfng-verified-agent-identity",
+    "name": "Irenk_FNG"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "irenkfng-verified-agent-identity",
+    "url": "https://clawhub.ai/skills/irenkfng-verified-agent-identity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/irenkfng-verified-agent-identity-8cb2dde482791744.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Billions decentralized identity for agents. Link agents to human identities using Billions ERC-8004 and Attestation Registries. Verify and generate authentic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "idraniw29",
+      "userId": "s172gy1xxcedkwq66z7j957yt585xsny",
+      "displayName": "Idraniw29",
+      "image": "https://avatars.githubusercontent.com/u/268196358?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 80,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777604859957,
+      "changelog": "Initial release: Decentralized identity management for agents using Billions ERC-8004 and Attestation Registries.\n\n- Enables agents to create and manage self-sovereign identities and link them to human owners.\n- Provides scripts for identity creation, agent-human linking, challenge generation, signing, and signature verification.\n- Enforces strict guardrails: check for existing identities and halt on script failures.\n- All identity data stored in $HOME/.openclaw/billions for security and compatibility.\n- Includes clear usage examples and detailed descriptions for each script.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b54acad20c70658a01f8957981ed4aa2530e43509bfab523321036c89ee456d6"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19219,
+  "uuid": "skill-clawhub-consensus-code-merge-guard",
+  "skillKey": "clawhub-consensus-code-merge-guard",
+  "name": "consensus-code-merge-guard",
+  "summary": "Persona-weighted merge governance for AI-assisted engineering. Evaluates PR risk (tests, security markers, reliability signals), returns MERGE/BLOCK/REVISE d...",
+  "version": "1.1.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consensus_code_merge_guard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kai Cianflone",
+      "features": [
+        "Persona-weighted merge governance for AI-assisted engineering",
+        "Evaluates PR risk (tests, security markers, reliability signals), returns MERGE/BLOCK/REVISE d.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/consensus-code-merge-guard@1.1.15",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30943151?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "consensus-code-merge-guard",
+      "url": "https://clawhub.ai/skills/consensus-code-merge-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consensus-code-merge-guard",
+    "url": "https://clawhub.ai/skills/consensus-code-merge-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consensus-code-merge-guard-7c7e23646fdeec70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/consensus-code-merge-guard@1.1.15",
+      "artifactUrl": "data/skills/artifacts/clawhub-consensus-code-merge-guard-1.1.15.json",
+      "version": "1.1.15",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc798e548b33015d33d93418950a4865089f4d6233f32f8e167f277f9eee3a03",
+      "artifactSizeBytes": 2059
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T19:44:01.305Z"
+}

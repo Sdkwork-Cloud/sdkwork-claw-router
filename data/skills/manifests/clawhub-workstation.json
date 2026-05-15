@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55068,
+  "uuid": "skill-clawhub-workstation",
+  "skillKey": "clawhub-workstation",
+  "name": "WORKSTATION.md - Your Agent's Own Linux Server",
+  "summary": "Create and SSH into cloud Linux servers with root access, instantly hosting websites on https://<name>.workstation.md via nginx on port 80.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workstation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ning Ren",
+      "features": [
+        "Create and SSH into cloud Linux servers with root access, instantly hosting websites on https:/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workstation@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4597657?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workstation",
+      "url": "https://clawhub.ai/skills/workstation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workstation",
+    "url": "https://clawhub.ai/skills/workstation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workstation-d195d36bd79da7df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workstation@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-workstation-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c927fe672848f4eab5477126e07fd4c159177a54eb9769b435a99fefea7a79f",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T10:19:35.256Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-health-monitor@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_health_monitor",
+  "skill": {
+    "id": 67173,
+    "skillKey": "clawhub-skill-health-monitor",
+    "name": "Skill Health Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-health-monitor",
+    "url": "https://clawhub.ai/skills/skill-health-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-health-monitor-73d89e48d8accb39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实时监控技能健康，六维度评分，三级预警，支持单技能及组合分析并生成优化建议和历史追踪。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pagoda111king",
+      "userId": "s1746mhemcg917609xsdwamt1183gyw3",
+      "displayName": "pagoda111king",
+      "image": "https://avatars.githubusercontent.com/u/177529007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1775432817517,
+      "changelog": "skill-health-monitor v0.2.0\n\n- 规划新增功能预告，包括数据持久化、定时自动健康检查、告警通知、健康趋势图表及自适应阈值调整。\n- 详细阐述设计模式（单例、责任链、模板方法）在健康监控中的具体实现和应用场景。\n- 补充实际工作流程、六维健康度评估模型、使用方法、服务定价和头部对标信息。\n- 明确已知局限与未来版本规划，便于用户了解工具定位和发展方向。\n- 增添丰富使用技巧和常见场景，提升用户上手体验。\n- 补充项目结构说明及完整联系方式，以便支持和二次开发。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f4a51385f066b59049b73aed4bf3fd110b71358fafe0f4cd71452afea182a682"
+}

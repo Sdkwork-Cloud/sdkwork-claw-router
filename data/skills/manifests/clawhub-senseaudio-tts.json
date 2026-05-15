@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56602,
+  "uuid": "skill-clawhub-senseaudio-tts",
+  "skillKey": "clawhub-senseaudio-tts",
+  "name": "SenseAudio-TTS",
+  "summary": "Build and debug SenseAudio text-to-speech integrations on `/v1/t2a_v2` and `/ws/v1/t2a_v2`, including sync HTTP, SSE stream, WebSocket event sequencing, hex...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.senseaudio_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scikkk",
+      "features": [
+        "Build and debug SenseAudio text-to-speech integrations on `/v1/t2a_v2` and `/ws/v1/t2a_v2`, inc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/senseaudio-tts@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77485593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "senseaudio-tts",
+      "url": "https://clawhub.ai/skills/senseaudio-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "senseaudio-tts",
+    "url": "https://clawhub.ai/skills/senseaudio-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/senseaudio-tts-bd0c41513f4743c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/senseaudio-tts@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-senseaudio-tts-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92a62ad9b5a9471cf81a2995b20724bdb6eb8281dda31be8424a6c8ba8c783d8",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T08:11:27.793Z"
+}

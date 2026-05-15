@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-discovery-framing-technique-selection@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_discovery_framing_technique_selection",
+  "skill": {
+    "id": 44608,
+    "skillKey": "clawhub-bookforge-discovery-framing-technique-selection",
+    "name": "Discovery Framing Technique Selection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-discovery-framing-technique-selection",
+    "url": "https://clawhub.ai/skills/bookforge-discovery-framing-technique-selection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-discovery-framing-technique-selection-8c78b3e0137858b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Select and execute the right discovery framing technique before building. Use when value risk is High and the underlying problem is not yet clearly defined,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776159931634,
+      "changelog": "Initial release providing guided selection and execution of discovery framing techniques for product teams.\n\n- Helps classify product efforts (typical, large, or new product/business) and matches them with the appropriate framing tool: Opportunity Assessment, Customer Letter, or Startup Canvas.\n- Guides users through input gathering and decision steps to clarify the problem before any discovery work begins.\n- Produces a structured framing document to align teams on what problem they are solving.\n- Recommended when value risk is High or the problem is not well defined, especially before ideation, prototyping, or delivery planning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:58b4eb17bb054610c0cc4b299ede63144bf6994d997e5036dde6f868c799948a"
+}

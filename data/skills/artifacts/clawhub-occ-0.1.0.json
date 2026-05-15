@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/occ@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.occ",
+  "skill": {
+    "id": 25997,
+    "skillKey": "clawhub-occ",
+    "name": "occ"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "occ",
+    "url": "https://clawhub.ai/skills/occ",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/occ-5db2b9c0d7a494a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control OpenCode to execute development tasks. Provides session management and task execution capabilities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gongxh13",
+      "userId": "publishers:gongxh13",
+      "displayName": "gongxh13",
+      "image": "https://avatars.githubusercontent.com/u/44743148?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 376,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773460679104,
+      "changelog": "Initial release of the OCC (OpenCode Controller) skill.\n\n- Enables session management and task execution for OpenCode via CLI.\n- Supports querying, creating, and continuing OpenCode development sessions.\n- Automatically detects and starts the OpenCode Server as needed.\n- Designed for integration with external systems or to automate coding workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:051d289ce08a16274e77ef11bc985096f716de810b6aebbcb29c18445b55c156"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51256,
+  "uuid": "skill-clawhub-ibkr-cli",
+  "skillKey": "clawhub-ibkr-cli",
+  "name": "ibkr-cli",
+  "summary": "Guide users through Interactive Brokers CLI operations — from installing IB Gateway/TWS and ibkr-cli itself, to trading stocks, monitoring accounts, retrievi...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ibkr_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fatwang2",
+      "features": [
+        "Guide users through Interactive Brokers CLI operations — from installing IB Gateway/TWS and ibk."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ibkr-cli@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134143178?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ibkr-cli",
+      "url": "https://clawhub.ai/skills/ibkr-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ibkr-cli",
+    "url": "https://clawhub.ai/skills/ibkr-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ibkr-cli-9c42ddb2ccaa9042.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ibkr-cli@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ibkr-cli-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:631f2f8877ab5d496a472ab4ca7e6deadd6b700de30716a8fed8019db99290ff",
+      "artifactSizeBytes": 2427
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T11:56:21.689Z"
+}

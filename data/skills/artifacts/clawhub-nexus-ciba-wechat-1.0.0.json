@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nexus-ciba-wechat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexus_ciba_wechat",
+  "skill": {
+    "id": 57909,
+    "skillKey": "clawhub-nexus-ciba-wechat",
+    "name": "词霸每日一句"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexus-ciba-wechat",
+    "url": "https://clawhub.ai/skills/nexus-ciba-wechat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexus-ciba-wechat-6593bb3cffe99c9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate shareable html and png cards from the ciba or iciba daily sentence api. use when the user asks for 词霸每日一句, iciba, ciba, open.iciba.com/dsapi, daily..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lwter",
+      "userId": "s176d675ym6asee2mm13zz5c558652j6",
+      "displayName": "Neway Lau",
+      "image": "https://avatars.githubusercontent.com/u/5044960?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 92,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777951807699,
+      "changelog": "Initial release of nexus-ciba-wechat skill.\n\n- Generates shareable HTML and PNG cards from the 词霸每日一句 (Ciba Daily Sentence) API.\n- Supports multiple magazine-style templates: vertical friends-circle and horizontal postcard layouts.\n- Embeds QR codes for pronunciation audio (tts field from API).\n- Automatically fetches daily sentences, prefers available API images, and falls back to generated images on failure.\n- Uses Playwright to render HTML templates to downloadable PNGs.\n- Simple template system enables customization; full documentation included on usage and output structure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b0810df95d934ce605d0c12a9e277aa7c8d3df112fb2d75dc3bab6766ff9946"
+}

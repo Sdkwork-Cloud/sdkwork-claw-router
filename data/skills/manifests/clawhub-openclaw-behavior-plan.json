@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21433,
+  "uuid": "skill-clawhub-openclaw-behavior-plan",
+  "skillKey": "clawhub-openclaw-behavior-plan",
+  "name": "openclaw-behavior-plan",
+  "summary": "Generates structured behavior plans for OpenClaw agents based on user requirements. Use when the user asks to create a plan, design agent behavior, plan mult...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_behavior_plan",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Umfl",
+      "features": [
+        "Generates structured behavior plans for OpenClaw agents based on user requirements",
+        "Use when the user asks to create a plan, design agent behavior, plan mult..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-behavior-plan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37808507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-behavior-plan",
+      "url": "https://clawhub.ai/skills/openclaw-behavior-plan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-behavior-plan",
+    "url": "https://clawhub.ai/skills/openclaw-behavior-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-behavior-plan-6d3137ad22003526.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-behavior-plan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-behavior-plan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee0f656dd0c29d83e9506b44bf33da3682ae35b7c4c1b4ba53a694aca96d47e5",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T08:56:24.128Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alvis-a-stock-trading-assistant@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvis_a_stock_trading_assistant",
+  "skill": {
+    "id": 65906,
+    "skillKey": "clawhub-alvis-a-stock-trading-assistant",
+    "name": "A Stock Trading Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvis-a-stock-trading-assistant",
+    "url": "https://clawhub.ai/skills/alvis-a-stock-trading-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvis-a-stock-trading-assistant-035189765526ee2e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供中国大陆沪深A股实时行情、个股技术与基本面分析、大盘情绪、热点板块、交易策略和价格预警服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvisdunlop",
+      "userId": "s17fq465rgqaeb4mjcdf3p9dkh84s6zy",
+      "displayName": "AlvisDunlop",
+      "image": "https://avatars.githubusercontent.com/u/255881479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 282,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776237294637,
+      "changelog": "Fixed API to api.skillboss.co",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df136115d7a42e8e483bd01d296b44636790f8d80e41fc8ea8c0e287ef4be4dd"
+}

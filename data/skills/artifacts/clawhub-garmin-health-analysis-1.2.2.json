@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/garmin-health-analysis@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.garmin_health_analysis",
+  "skill": {
+    "id": 8903,
+    "skillKey": "clawhub-garmin-health-analysis",
+    "name": "Garmin Health Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "garmin-health-analysis",
+    "url": "https://clawhub.ai/skills/garmin-health-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/garmin-health-analysis-bdfd8a5880a82326.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Talk to your Garmin data naturally - \"what was my fastest speed snowboarding?\", \"how did I sleep last night?\", \"what was my heart rate at 3pm?\". Access 20+ metrics (sleep stages, Body Battery, HRV, VO2 max, training readiness, body composi."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eversonl",
+      "userId": "publishers:eversonl",
+      "displayName": "eversonl",
+      "image": "https://avatars.githubusercontent.com/u/54025?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4823,
+      "installsAllTime": 16,
+      "installsCurrent": 15,
+      "stars": 11,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1769387065409,
+      "changelog": "Repository cleanup: Removed old MCP server files (CLAUDE_DESKTOP.md, mcp_server.py, requirements.txt). This repo is now focused exclusively on the Clawdbot skill for automated health monitoring. Claude Desktop users should use the dedicated MCP server at github.com/eversonl/garmin-health-mcp-server. Both can coexist with shared authentication.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:012c4a848f8ebb1f5fb1c00396af0c3fccbf853602a18a6a457fa150402da20f"
+}

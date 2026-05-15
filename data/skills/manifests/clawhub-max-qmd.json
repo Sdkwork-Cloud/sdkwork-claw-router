@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26118,
+  "uuid": "skill-clawhub-max-qmd",
+  "skillKey": "clawhub-max-qmd",
+  "name": "Max QMD Search",
+  "summary": "Local search/indexing CLI (BM25 + vectors + rerank) with MCP mode.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.max_qmd",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sonnenberglauramarie-afk",
+      "features": [
+        "Local search/indexing CLI (BM25 + vectors + rerank) with MCP mode."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/max-qmd@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258647823?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "max-qmd",
+      "url": "https://clawhub.ai/skills/max-qmd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "max-qmd",
+    "url": "https://clawhub.ai/skills/max-qmd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/max-qmd-ffb828e055f32dc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/max-qmd@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-max-qmd-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0521e2596201ef42eb33750abf51a74416cd9764029b7def4a18d3c4a79d9ea",
+      "artifactSizeBytes": 1816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T18:15:37.632Z"
+}

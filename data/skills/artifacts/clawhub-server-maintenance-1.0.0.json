@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/server-maintenance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.server_maintenance",
+  "skill": {
+    "id": 15780,
+    "skillKey": "clawhub-server-maintenance",
+    "name": "Server Maintenance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "server-maintenance",
+    "url": "https://clawhub.ai/skills/server-maintenance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/server-maintenance-89f663e38d61b6b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates server maintenance by checking disk usage, cleaning caches, optimizing resources, and supporting local and remote multi-server batch operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2233admin",
+      "userId": "s17146zc2bhwqgxe6pp8t34acs83rnqt",
+      "displayName": "2233admin",
+      "image": "https://avatars.githubusercontent.com/u/57929895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 941,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772504438908,
+      "changelog": "Initial release of automated server maintenance skill:\n\n- Automates disk usage checks, cache cleanup, and system optimization.\n- Supports batch operations across multiple servers via SSH.\n- Provides clear maintenance reports, including before/after disk usage and total space freed.\n- Offers safe defaults: only known cache is cleaned, config backups, and dry-run mode.\n- Easy integration with OpenClaw scheduling and supports flexible configuration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a0e2ba7a9c426a11e101fd3e56b8dbd1a0fecfb59ddcf897652c21ac300a1bef"
+}

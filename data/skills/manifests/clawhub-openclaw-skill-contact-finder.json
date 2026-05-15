@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22217,
+  "uuid": "skill-clawhub-openclaw-skill-contact-finder",
+  "skillKey": "clawhub-openclaw-skill-contact-finder",
+  "name": "Contact Finder",
+  "summary": "Find professional emails and contacts from a name + company/domain using SerpAPI + OpenAI GPT-4o-mini.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_contact_finder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marouane",
+      "features": [
+        "Find professional emails and contacts from a name + company/domain using SerpAPI + OpenAI GPT-4."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-contact-finder@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25495967?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-contact-finder",
+      "url": "https://clawhub.ai/skills/openclaw-skill-contact-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-contact-finder",
+    "url": "https://clawhub.ai/skills/openclaw-skill-contact-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-contact-finder-659ebceab37fd211.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-contact-finder@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-contact-finder-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b21e566316c99e9b6d413d162eb1052ef83c2c17de433d15ef5aae2dd696c4ea",
+      "artifactSizeBytes": 2253
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T01:41:26.077Z"
+}

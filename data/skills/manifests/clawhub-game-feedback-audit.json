@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36921,
+  "uuid": "skill-clawhub-game-feedback-audit",
+  "skillKey": "clawhub-game-feedback-audit",
+  "name": "Game Feedback Audit",
+  "summary": "Audit interaction feedback quality: input acknowledgment, hit/collect/reward/failure signaling, danger telegraphing, and state-transition clarity.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.game_feedback_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike007jd",
+      "features": [
+        "Audit interaction feedback quality: input acknowledgment, hit/collect/reward/failure signaling,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/game-feedback-audit@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31256541?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "game-feedback-audit",
+      "url": "https://clawhub.ai/skills/game-feedback-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "game-feedback-audit",
+    "url": "https://clawhub.ai/skills/game-feedback-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/game-feedback-audit-cc3fb04c83d12f4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/game-feedback-audit@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-game-feedback-audit-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:802ca7886f79cab79a8fb22600e41aab5ed57088b94c6eeb6422881c2f99f220",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T08:20:13.507Z"
+}

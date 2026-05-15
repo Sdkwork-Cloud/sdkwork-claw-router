@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48759,
+  "uuid": "skill-clawhub-ln-tool",
+  "skillKey": "clawhub-ln-tool",
+  "name": "Ln Tool",
+  "summary": "Create hard and symbolic links between files. Use for file referencing, shortcuts, and directory organization.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ln_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Create hard and symbolic links between files",
+        "Use for file referencing, shortcuts, and directory organization."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ln-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ln-tool",
+      "url": "https://clawhub.ai/skills/ln-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ln-tool",
+    "url": "https://clawhub.ai/skills/ln-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ln-tool-86d1211c6f6f6d84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ln-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ln-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4782aa3cd72552c333308e95f71273e430ddb958bf3890a5558602bc6b968d97",
+      "artifactSizeBytes": 1781
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T16:55:07.032Z"
+}

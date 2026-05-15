@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19431,
+  "uuid": "skill-clawhub-yfinance",
+  "skillKey": "clawhub-yfinance",
+  "name": "Yfinance",
+  "summary": "Fetch live and historical stock data from Yahoo Finance, optimised for Indonesia (IDX) stocks. Use this skill when the user asks about stock prices, historic...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yfinance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "temmyraharjo",
+      "features": [
+        "Fetch live and historical stock data from Yahoo Finance, optimised for Indonesia (IDX) stocks",
+        "Use this skill when the user asks about stock prices, historic..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yfinance@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8713243?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yfinance",
+      "url": "https://clawhub.ai/skills/yfinance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yfinance",
+    "url": "https://clawhub.ai/skills/yfinance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yfinance-4d93dddb39519a93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yfinance@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-yfinance-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2afc2fecab0477025c8857c935eb9723541bf91c4b7a63396468343ecb9ba97d",
+      "artifactSizeBytes": 2170
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T00:47:47.590Z"
+}

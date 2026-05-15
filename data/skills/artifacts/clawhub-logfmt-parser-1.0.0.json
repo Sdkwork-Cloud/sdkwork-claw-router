@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/logfmt-parser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logfmt_parser",
+  "skill": {
+    "id": 45103,
+    "skillKey": "clawhub-logfmt-parser",
+    "name": "Logfmt Parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logfmt-parser",
+    "url": "https://clawhub.ai/skills/logfmt-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logfmt-parser-47bc113919554045.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parses and converts various log formats into clean JSON for improved analysis and debugging, with options for timestamp extraction and format control."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "albionaiinc-del",
+      "userId": "s17a02897swm2wgc0ge6g3j8ss83mx5y",
+      "displayName": "albionaiinc-del",
+      "image": "https://avatars.githubusercontent.com/u/269741383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776181823259,
+      "changelog": "Initial release!  \n- Converts log files from any format into uniform JSON.\n- Supports direct file conversion and piping through standard input.\n- Optional timestamp extraction and omission of original log lines.\n- Command-line interface for flexible usage.\n- Priced at $2.50.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2d60be8d3802f3e7a7a1f65341f7aac2e2d77597a71b7317ea433a9e246cc898"
+}

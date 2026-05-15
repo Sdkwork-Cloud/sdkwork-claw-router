@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10478,
+  "uuid": "skill-clawhub-gandi-skill",
+  "skillKey": "clawhub-gandi-skill",
+  "name": "Gandi - Registrar & DNS",
+  "summary": "Comprehensive Gandi domain registrar integration for domain and DNS management. Register and manage domains, create/update/delete DNS records (A, AAAA, CNAME...",
+  "version": "0.2.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gandi_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Giddy",
+      "features": [
+        "Comprehensive Gandi domain registrar integration for domain and DNS management",
+        "Register and manage domains, create/update/delete DNS records (A, AAAA, CNAME..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gandi-skill@0.2.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3966673?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gandi-skill",
+      "url": "https://clawhub.ai/skills/gandi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gandi-skill",
+    "url": "https://clawhub.ai/skills/gandi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gandi-skill-47c8774b3b6b297b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gandi-skill@0.2.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-gandi-skill-0.2.7.json",
+      "version": "0.2.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9538adc6d193f6a555e683e29ac4c9502ea8310907284f6bbd25c0b9faa8f9ec",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T22:54:47.154Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kc-gui@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kc_gui",
+  "skill": {
+    "id": 49953,
+    "skillKey": "clawhub-kc-gui",
+    "name": "Kc Gui"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kc-gui",
+    "url": "https://clawhub.ai/skills/kc-gui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kc-gui-fb8a95425e2af920.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the bundled kc.exe Windows agent to perform GUI-based desktop automation tasks that cannot be handled through CLI or scripting alone. Use this skill when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 46,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778348372021,
+      "changelog": "Initial release of kc-gui skill for Windows desktop automation.\n\n- Enables GUI-based automation tasks via bundled kc.exe agent, targeting visual interactions (clicks, forms, menus, etc.).\n- Strictly limited to 8 whitelisted applications: 腾讯会议, QQ音乐, 网易云音乐, 腾讯视频, 爱奇艺, B站, WeGame, Steam.\n- Enforces whitelist at skill level; all non-listed apps or system tools are refused with clear messages.\n- Usage requires a special PowerShell wrapper command for process integrity and isolation.\n- Includes detailed error handling, retry logic, and manual user interruption detection.\n- Long-running tasks supported (up to 10 minutes); Bash tool timeout must be set to 600 seconds.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4788e7152429d60ee67801a2c68997b55097b8a59a9906f976baa55015544894"
+}

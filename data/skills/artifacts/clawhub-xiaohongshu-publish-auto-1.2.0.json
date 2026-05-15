@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-publish-auto@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_publish_auto",
+  "skill": {
+    "id": 72153,
+    "skillKey": "clawhub-xiaohongshu-publish-auto",
+    "name": "小红书自动发布"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-publish-auto",
+    "url": "https://clawhub.ai/skills/xiaohongshu-publish-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-publish-auto-a9d863dee30f79e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动读取指定文件夹当日视频和标题，连接Chrome通过脚本将内容发布到小红书账号。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weishuai34-bit",
+      "userId": "s177zcr46jtrnm457731sj3t0x83w1jv",
+      "displayName": "weishuai34-bit",
+      "image": "https://avatars.githubusercontent.com/u/260324733?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774874059899,
+      "changelog": "支持持久化登录，账号长期在线",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25c01cd39eb82d3637c2ca17778c0056de61fcc97a64ab8720486ac110250337"
+}

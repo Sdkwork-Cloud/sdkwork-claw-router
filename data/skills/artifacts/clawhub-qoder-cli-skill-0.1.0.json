@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qoder-cli-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qoder_cli_skill",
+  "skill": {
+    "id": 21322,
+    "skillKey": "clawhub-qoder-cli-skill",
+    "name": "Qoder CLI skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qoder-cli-skill",
+    "url": "https://clawhub.ai/skills/qoder-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qoder-cli-skill-7d0bc955a42d318e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Delegate coding tasks to Qoder CLI using Print mode (non-interactive). Use when: (1) building/creating new features or apps, (2) code reviews, (3) refactorin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lfeng",
+      "userId": "publishers:lfeng",
+      "displayName": "PenaFong",
+      "image": "https://avatars.githubusercontent.com/u/103457?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 513,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772197040629,
+      "changelog": "qoder-cli-skill v0.1.0\n\n- Initial release of the qoder-agent skill using Qoder CLI in Print mode (non-interactive).\n- Supports feature development, code review, refactoring, and iterative coding tasks that require file exploration.\n- Compatible with all session types, including direct chat, group chat, and Discord.\n- Includes documentation for model selection, Quest Mode, subagents, worktree jobs, and MCP server integration.\n- Requires qodercli to be installed; TUI mode is not supported in automated environments.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:60c33ebded64fe7687f27d1aa5271ae685d23aff29a69ab46b3ff7d9f42086c2"
+}

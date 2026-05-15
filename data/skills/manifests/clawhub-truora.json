@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35212,
+  "uuid": "skill-clawhub-truora",
+  "skillKey": "clawhub-truora",
+  "name": "Truora",
+  "summary": "Truora integration. Manage data, records, and automate workflows. Use when the user wants to interact with Truora data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.truora",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Truora integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Truora data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/truora@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "truora",
+      "url": "https://clawhub.ai/skills/truora"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "truora",
+    "url": "https://clawhub.ai/skills/truora",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/truora-91a084999b393a65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/truora@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-truora-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ff2348c42f1f56099010b4ee726aa0241486b709b22f66f8424bab447de96db",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:55:38.151Z"
+}

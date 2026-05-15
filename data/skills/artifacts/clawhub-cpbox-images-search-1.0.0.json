@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cpbox-images-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cpbox_images_search",
+  "skill": {
+    "id": 21393,
+    "skillKey": "clawhub-cpbox-images-search",
+    "name": "cpbox-images-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cpbox-images-search",
+    "url": "https://clawhub.ai/skills/cpbox-images-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cpbox-images-search-21199d6e9c749ae4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "USE FOR image search. Returns images with title, source URL, thumbnail. Supports SafeSearch filter. Up to 200 results."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sprintmint",
+      "userId": "publishers:sprintmint",
+      "displayName": "springmint",
+      "image": "https://avatars.githubusercontent.com/u/166361573?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 310,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773991894437,
+      "changelog": "Initial\n  publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ec3b553fa23ac854b18cfc7e51779eaf83d88dda4bf8a6583515b6a1382dad5"
+}

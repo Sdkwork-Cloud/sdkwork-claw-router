@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62349,
+  "uuid": "skill-clawhub-ecom-intel",
+  "skillKey": "clawhub-ecom-intel",
+  "name": "Ecom Intel",
+  "summary": "电商情报站：竞品分析+评论分析+价格监控三合一。融合 Competitor Analysis + Price Tracker + Review Analyzer 三大技能，帮电商卖家盯竞品、分析评论、监控价格，数据驱动决策。适合电商卖家、运营、选品经理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecom_intel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Freeman88-tch",
+      "features": [
+        "电商情报站：竞品分析+评论分析+价格监控三合一。融合 Competitor Analysis + Price Tracker + Review Analyzer 三大技能，帮电商卖家盯竞品、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecom-intel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212022282?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecom-intel",
+      "url": "https://clawhub.ai/skills/ecom-intel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecom-intel",
+    "url": "https://clawhub.ai/skills/ecom-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecom-intel-b4b8dd021226edcf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecom-intel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecom-intel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76d1abdeeacb73a69170f79eb1ef6195e1f37d7a873ca1fbde88c7cd927028e4",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T18:47:51.751Z"
+}

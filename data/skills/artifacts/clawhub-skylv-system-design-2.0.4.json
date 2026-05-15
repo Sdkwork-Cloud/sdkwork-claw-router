@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-system-design@2.0.4",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_system_design",
+  "skill": {
+    "id": 59211,
+    "skillKey": "clawhub-skylv-system-design",
+    "name": "Skylv System Design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-system-design",
+    "url": "https://clawhub.ai/skills/skylv-system-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-system-design-cedeb307eb2516b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "系统设计架构师。提供 20+ 种经典架构模式（电商/社交/直播/支付），包含架构图、技术选型、扩展性设计。Triggers: system design, architecture design, scalable system, distributed system, 系统设计."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.4",
+      "createdAt": 1776648399926,
+      "changelog": "- Updated the description field for improved clarity and English localization.\n- Minor trimming of examples in trigger phrases and usage instructions.\n- No technical or functionality changes; documentation cleanup only.\n- Version bump from 2.0.3 to 2.0.4.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0149a28e8b81fc9cd7dc64dbe77441811e92a49eb07b2e84fcb39866a4e4a710"
+}

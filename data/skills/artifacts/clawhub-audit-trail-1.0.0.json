@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audit-trail@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audit_trail",
+  "skill": {
+    "id": 53925,
+    "skillKey": "clawhub-audit-trail",
+    "name": "Audit Trail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audit-trail",
+    "url": "https://clawhub.ai/skills/audit-trail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audit-trail-3b1124832a9b0e7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Governance — immutable, timestamped, hash-chained audit log of all agent actions. Forensic-ready for compliance, investigation, and accountability."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arhadnane",
+      "userId": "s17atsjv2c1a86fqvanj1x35as83yc1w",
+      "displayName": "Adnane Arharbi",
+      "image": "https://avatars.githubusercontent.com/u/14889338?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775253091785,
+      "changelog": "Initial release: Immutable, forensic-ready audit log for agent actions.\n\n- Logs all agent activities (tools, skills, memory, messages, config, errors) in append-only, hash-chained JSONL.\n- Timestamps, user hashes, and redacted arguments ensure compliance and privacy.\n- Integrity verification with chain validation and alerting on tampering.\n- Automatic log retention and compression policy by age; manual purge requires approval.\n- Query examples provided for flexible investigation and auditing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9cac9740fa5a7f87804c7509158ea0c9a2542167a96a1d4748258e7827bd2c8"
+}

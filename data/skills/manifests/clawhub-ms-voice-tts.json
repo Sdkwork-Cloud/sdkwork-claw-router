@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67406,
+  "uuid": "skill-clawhub-ms-voice-tts",
+  "skillKey": "clawhub-ms-voice-tts",
+  "name": "Voice TTS",
+  "summary": "使用 edge-tts 生成高质量中文语音消息并发送。当用户要求发语音、语音回复、TTS、文字转语音、语音播报、语音消息时使用。支持多种中文声音（男声/女声/方言），可调节语速音调，适用于飞书/Telegram/Discord 等渠道的语音消息发送。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ms_voice_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "彬彬哦",
+      "features": [
+        "使用 edge-tts 生成高质量中文语音消息并发送。当用户要求发语音、语音回复、TTS、文字转语音、语音播报、语音消息时使用。支持多种中文声音（男声/女声/方言），可调节语速音调，适用于飞."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ms-voice-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32067712?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ms-voice-tts",
+      "url": "https://clawhub.ai/skills/ms-voice-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ms-voice-tts",
+    "url": "https://clawhub.ai/skills/ms-voice-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ms-voice-tts-228a4658ae615324.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ms-voice-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ms-voice-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d356a627c02d6fb722d5cef939b90c1791ac275a5eb9e75760591d429fffd3eb",
+      "artifactSizeBytes": 2406
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T18:30:23.496Z"
+}

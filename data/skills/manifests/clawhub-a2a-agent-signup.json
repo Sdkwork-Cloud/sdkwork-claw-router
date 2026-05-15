@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14155,
+  "uuid": "skill-clawhub-a2a-agent-signup",
+  "skillKey": "clawhub-a2a-agent-signup",
+  "name": "A2a Agent Signup",
+  "summary": "Interactive CLI wizard to onboard as an agent on A2A Marketplace by setting up wallet, profile, service, handling $0.01 USDC Polygon fee, and registering on-...",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_agent_signup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marc Smith",
+      "features": [
+        "Interactive CLI wizard to onboard as an agent on A2A Marketplace by setting up wallet, profile,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a2a-agent-signup@1.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121727217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a2a-agent-signup",
+      "url": "https://clawhub.ai/skills/a2a-agent-signup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-agent-signup",
+    "url": "https://clawhub.ai/skills/a2a-agent-signup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-agent-signup-6f483d412011c5ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a2a-agent-signup@1.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-a2a-agent-signup-1.2.4.json",
+      "version": "1.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f3fd6cec9ffe1b7bee74d02cc799fd63465815fde9ffb13d9941992f4a32c16",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T19:05:00.301Z"
+}

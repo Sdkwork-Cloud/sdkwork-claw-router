@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13700,
+  "uuid": "skill-clawhub-comfy-ui",
+  "skillKey": "clawhub-comfy-ui",
+  "name": "ComfyUI Skill",
+  "summary": "Generate high-quality images using a local ComfyUI instance. Use when the user wants private, powerful image generation via their own hardware and custom wor...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfy_ui",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dihan",
+      "features": [
+        "Generate high-quality images using a local ComfyUI instance",
+        "Use when the user wants private, powerful image generation via their own hardware and custom wo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comfy-ui@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2371576?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comfy-ui",
+      "url": "https://clawhub.ai/skills/comfy-ui"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfy-ui",
+    "url": "https://clawhub.ai/skills/comfy-ui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfy-ui-0cea66368b4891b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comfy-ui@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-comfy-ui-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3207e5784e595c293781ef61fbe9d5fff42be39068ba91fbfd14b2dbb3287ff7",
+      "artifactSizeBytes": 1844
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T14:07:42.329Z"
+}

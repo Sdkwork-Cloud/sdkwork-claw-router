@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8645,
+  "uuid": "skill-clawhub-content-stock",
+  "skillKey": "clawhub-content-stock",
+  "name": "content-stock",
+  "summary": "Analyze themes/news for stock selection",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_stock",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fonilye",
+      "features": [
+        "Analyze themes/news for stock selection"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-stock@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22760497?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-stock",
+      "url": "https://clawhub.ai/skills/content-stock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-stock",
+    "url": "https://clawhub.ai/skills/content-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-stock-489242a24854ea1a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-stock@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-stock-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bba559a80d326d5acb79dd92e7d8825c01bd9dfee08f404bc09a5c0d3f2cddb",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T08:22:45.039Z"
+}

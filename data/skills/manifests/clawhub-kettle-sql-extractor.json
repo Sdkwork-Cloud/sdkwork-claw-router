@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60147,
+  "uuid": "skill-clawhub-kettle-sql-extractor",
+  "skillKey": "clawhub-kettle-sql-extractor",
+  "name": "kettle-sql-extractor",
+  "summary": "从Kettle作业（.kjb/.ktr）中提取SQL脚本，支持批量提取、合并SQL组件和简洁输出",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kettle_sql_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenjunhan633-glitch",
+      "features": [
+        "从Kettle作业（.kjb/.ktr）中提取SQL脚本，支持批量提取、合并SQL组件和简洁输出"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kettle-sql-extractor@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259140734?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kettle-sql-extractor",
+      "url": "https://clawhub.ai/skills/kettle-sql-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kettle-sql-extractor",
+    "url": "https://clawhub.ai/skills/kettle-sql-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kettle-sql-extractor-bc5938acb41884b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kettle-sql-extractor@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kettle-sql-extractor-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:faaec93ef8d520ca54779b45673d786fd5379e258a3e62314e0d0c3c062f4cd5",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T05:26:55.217Z"
+}

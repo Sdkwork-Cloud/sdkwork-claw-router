@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemini-video-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_video_editor",
+  "skill": {
+    "id": 45964,
+    "skillKey": "clawhub-gemini-video-editor",
+    "name": "Gemini Video Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-video-editor",
+    "url": "https://clawhub.ai/skills/gemini-video-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-video-editor-0cce0aee7b8debe7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn raw footage into polished, publish-ready videos using the gemini-video-editor skill. Powered by Google Gemini's multimodal intelligence, this skill anal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775134896449,
+      "changelog": "Gemini Video Editor Skill 1.0.0 — Initial Release\n\n- Launches AI-powered video editing using Google Gemini, offering intelligent scene analysis, caption generation, and smart editing suggestions.\n- Supports video uploads via file or URL, and natural language prompts for editing tasks.\n- Automates session and token management, including anonymous token retrieval and guided setup.\n- Provides detailed API documentation for all core operations: upload, analysis, export, credits, and error handling.\n- Responds to user prompts with ready-to-use timelines, captions, cut lists, and voiceover scripts.\n- Integrates cloud-based processing to keep local resources free during intensive video tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e4b23d4eb94aae414e9178db16cd062b8c8c4e268f55c565ea9b64b8898a9fb5"
+}

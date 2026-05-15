@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-listing-optimizer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_listing_optimizer",
+  "skill": {
+    "id": 50345,
+    "skillKey": "clawhub-skill-listing-optimizer",
+    "name": "Listing Image Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-listing-optimizer",
+    "url": "https://clawhub.ai/skills/skill-listing-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-listing-optimizer-b45b4ed59a8a8c27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit Amazon product listing images for non-square dimensions, auto-pad them to 2000×2000 white background, and push corrected images to live listings via SP..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zero2ai-hub",
+      "userId": "s17a1b8dv4hc6x68q9m057m67n83ryrt",
+      "displayName": "Zero2Ai",
+      "image": "https://avatars.githubusercontent.com/u/244362887?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 515,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772250342236,
+      "changelog": "Audit, pad, and push square product listing images via SP-API",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:172a2dc2b7761f039d4be2f675e67aa1e01b9435f1b2fce84b9299022df9bb6f"
+}

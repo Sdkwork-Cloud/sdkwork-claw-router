@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/archive-daily-note@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.archive_daily_note",
+  "skill": {
+    "id": 29931,
+    "skillKey": "clawhub-archive-daily-note",
+    "name": "Archive Daily Note"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "archive-daily-note",
+    "url": "https://clawhub.ai/skills/archive-daily-note",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/archive-daily-note-8e01e0dbbca73a74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically moves yesterday's Obsidian daily note into a past-days/ archive folder using the Obsidian CLI move command to preserve wiki-links."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meimakes",
+      "userId": "s176b3312npmthbt2chf2mccw183grfh",
+      "displayName": "Mei Park",
+      "image": "https://avatars.githubusercontent.com/u/223051250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774372787126,
+      "changelog": "Republish to fix broken ClawHub listing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a32518325ecd0fca94179d090008245b72b9f70a09747b10d6d8e051eb22fb79"
+}

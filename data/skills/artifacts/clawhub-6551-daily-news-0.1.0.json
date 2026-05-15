@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/6551-daily-news@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.6551_daily_news",
+  "skill": {
+    "id": 10976,
+    "skillKey": "clawhub-6551-daily-news",
+    "name": "Daily News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "6551-daily-news",
+    "url": "https://clawhub.ai/skills/6551-daily-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/6551-daily-news-29e27255f52bc9ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily news and hot topics via the 6551 API. Supports news categories, hot news articles, and trending tweets by category."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "infra403",
+      "userId": "publishers:infra403",
+      "displayName": "infra403",
+      "image": "https://avatars.githubusercontent.com/u/117965724?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2338,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773740122529,
+      "changelog": "Initial release of Daily News skill.\n\n- Provides daily news and trending topics using the 6551 API.\n- Supports fetching news categories, hot news articles, and trending tweets by category/subcategory.\n- No authentication required.\n- Compatible with macOS, Linux, and Windows.\n- Requires curl for API calls.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36b6e18893f72dd9d34215518b992b7f013bd074b22b6104597f43f8c18d624b"
+}

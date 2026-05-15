@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51317,
+  "uuid": "skill-clawhub-daily-desk-orion",
+  "skillKey": "clawhub-daily-desk-orion",
+  "name": "Daily Desk — Orion",
+  "summary": "Get a daily pre-session crypto market brief with BTC bias, Korean exchange flows, whale activity, Fear & Greed index, and macro context valid for 24 hours.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_desk_orion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jun seo",
+      "features": [
+        "Get a daily pre-session crypto market brief with BTC bias, Korean exchange flows, whale activit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-desk-orion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55351836?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-desk-orion",
+      "url": "https://clawhub.ai/skills/daily-desk-orion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-desk-orion",
+    "url": "https://clawhub.ai/skills/daily-desk-orion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-desk-orion-8b24dcc8490ee21a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-desk-orion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-desk-orion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf976da5d67ebb1a0d1e55409abf11d8d95d370431262ba20de31537cd5ac947",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T00:31:35.461Z"
+}

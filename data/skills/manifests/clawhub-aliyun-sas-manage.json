@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45165,
+  "uuid": "skill-clawhub-aliyun-sas-manage",
+  "skillKey": "clawhub-aliyun-sas-manage",
+  "name": "Aliyun Sas Manage",
+  "summary": "Use when managing Alibaba Cloud Security Center (Sas) via OpenAPI/SDK, including the user needs Security Center resource operations, configuration updates, s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_sas_manage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Use when managing Alibaba Cloud Security Center (Sas) via OpenAPI/SDK, including the user needs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aliyun-sas-manage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aliyun-sas-manage",
+      "url": "https://clawhub.ai/skills/aliyun-sas-manage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-sas-manage",
+    "url": "https://clawhub.ai/skills/aliyun-sas-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-sas-manage-80e15ce8cc629f89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aliyun-sas-manage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aliyun-sas-manage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a672c002caeeefd49ebd5431e775405e2e6998644e66d895fcfaae0cabecd9d5",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T04:26:48.218Z"
+}

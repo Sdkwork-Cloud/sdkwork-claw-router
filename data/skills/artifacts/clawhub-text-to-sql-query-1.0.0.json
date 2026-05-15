@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-sql-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_sql_query",
+  "skill": {
+    "id": 62731,
+    "skillKey": "clawhub-text-to-sql-query",
+    "name": "Aloudata CAN SKILLS - text-to-sql-query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-sql-query",
+    "url": "https://clawhub.ai/skills/text-to-sql-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-sql-query-884f188fe511b0bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "直接通过 Text-to-SQL 方式查询零售数据库。根据用户自然语言描述，生成 SQL 查询语句并执行。 本 Skill 不依赖语义层或指标平台，而是直接基于数据库 schema 生成 SQL。 触发场景：用户需要查询零售数据、生成 SQL 查询、分析销售/客户/商品数据时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackyujun",
+      "userId": "s172qm3yezbbjev7q8rsxxbd1s83he2f",
+      "displayName": "jackyujun",
+      "image": "https://avatars.githubusercontent.com/u/4506268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774604851988,
+      "changelog": "text-to-sql-query 1.0.0\n\n- Initial release of the Text-to-SQL 数据查询 Skill for querying retail databases via natural language.\n- Supports automatic SQL generation and execution directly against 6 whitelist tables using provided schema.\n- Execution supported via curl or Python, with results returned in Markdown table format.\n- Enforces SELECT-only queries, table whitelist, and basic security constraints (e.g., no multi-statement or DML).\n- Schema documentation included for all fact and dimension tables.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7156658fa63ea6a34a32017f289a43f78d08f17b8780af8329ad0f376b3dd9a4"
+}

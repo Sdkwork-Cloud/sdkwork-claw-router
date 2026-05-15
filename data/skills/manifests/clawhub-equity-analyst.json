@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59718,
+  "uuid": "skill-clawhub-equity-analyst",
+  "skillKey": "clawhub-equity-analyst",
+  "name": "Equity Analyst",
+  "summary": "전문 투자 분석가 AI로, 한국 주식 종목의 재무제표, 뉴스, 차트를 분석하여 Investment Attractiveness Score (0-100)와 BUY/HOLD/AVOID 추천을 제공합니다. 네이버 금융 데이터를 사용하며, 프롬프트에 명시된 엄격한 우선순위(Financial > News > Chart)와 가중치를 따릅니다.",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.equity_analyst",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Saebyeok-Im",
+      "features": [
+        "전문 투자 분석가 AI로, 한국 주식 종목의 재무제표, 뉴스, 차트를 분석하여 Investment Attractiveness Score (0-100)와 BUY/HOLD/A.",
+        "네이버 금융 데이터를 사용하며, 프롬프트에 명시된 엄격한 우선순위(Financial > News > Chart)와 가중치를 따릅니다."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/equity-analyst@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55320507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "equity-analyst",
+      "url": "https://clawhub.ai/skills/equity-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "equity-analyst",
+    "url": "https://clawhub.ai/skills/equity-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/equity-analyst-ac702f7473966dc6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/equity-analyst@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-equity-analyst-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f67dfe85baf8188a8841ad92732c0a21548455813566c21bca554636254ac019",
+      "artifactSizeBytes": 2348
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T04:01:07.763Z"
+}

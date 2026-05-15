@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48541,
+  "uuid": "skill-clawhub-touch-tool",
+  "skillKey": "clawhub-touch-tool",
+  "name": "Touch Tool",
+  "summary": "Create empty files or update file timestamps. Use for file creation, timestamp management, and build system operations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.touch_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Create empty files or update file timestamps",
+        "Use for file creation, timestamp management, and build system operations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/touch-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "touch-tool",
+      "url": "https://clawhub.ai/skills/touch-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "touch-tool",
+    "url": "https://clawhub.ai/skills/touch-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/touch-tool-4b957d6701cf8576.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/touch-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-touch-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97c190b60cb4744ca14253c5043b546405c62e6ebd6efaa00f23348c6b5db986",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T19:58:05.805Z"
+}

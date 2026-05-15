@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27887,
+  "uuid": "skill-clawhub-openclaw-scheduler-token-auditor",
+  "skillKey": "clawhub-openclaw-scheduler-token-auditor",
+  "name": "OpenClaw Scheduler Token Auditor",
+  "summary": "Audit OpenClaw scheduler token usage for cron jobs, scheduled tasks, and heartbeat sessions. Use when the user wants to know which scheduled job is expensive...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_scheduler_token_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YueeLi",
+      "features": [
+        "Audit OpenClaw scheduler token usage for cron jobs, scheduled tasks, and heartbeat sessions",
+        "Use when the user wants to know which scheduled job is expensive..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-scheduler-token-auditor@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170390084?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-scheduler-token-auditor",
+      "url": "https://clawhub.ai/skills/openclaw-scheduler-token-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-scheduler-token-auditor",
+    "url": "https://clawhub.ai/skills/openclaw-scheduler-token-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-scheduler-token-auditor-a51f995d93cf1983.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-scheduler-token-auditor@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-scheduler-token-auditor-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5cac54899769f5a0e5778ff014bb19a4d60ab492a3f31adef15de6cc5118fbf",
+      "artifactSizeBytes": 2099
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:51:34.297Z"
+}

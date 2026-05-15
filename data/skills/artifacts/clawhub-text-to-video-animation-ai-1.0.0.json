@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-animation-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_animation_ai",
+  "skill": {
+    "id": 49077,
+    "skillKey": "clawhub-text-to-video-animation-ai",
+    "name": "Text To Video Animation Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-animation-ai",
+    "url": "https://clawhub.ai/skills/text-to-video-animation-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-animation-ai-92f8622c7d83df15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text prompts into animated video clips with this skill. Works with TXT, DOCX, PDF, PNG files up to 200MB. content creators use it for generating ani..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 88,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777870662621,
+      "changelog": "Initial release of Text to Video Animation AI, enabling fast animated video generation from text prompts.\n\n- Generate 1080p animated video clips from text, with support for TXT, DOCX, PDF, and PNG inputs (up to 200MB).\n- Seamless onboarding with automatic cloud session/token management and up to 100 free credits.\n- Full pipeline: prompt processing, timeline editing, video/audio/text track support, and MP4 export via cloud GPUs.\n- Command-based workflow for uploading, generating, exporting, and checking credits/status.\n- Robust error handling with clear instructions for common issues (token, credits, file size, etc.).\n- Timeline summary and state management for iterative editing and batch processing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:502519558e47c467147b2bbd52d9f7a7d43fc56b8af8f0c059b0d73a19da06bf"
+}

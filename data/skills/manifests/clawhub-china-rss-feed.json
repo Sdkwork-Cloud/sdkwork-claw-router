@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59048,
+  "uuid": "skill-clawhub-china-rss-feed",
+  "skillKey": "clawhub-china-rss-feed",
+  "name": "a skill for Chinese users access RSS subscription aggregation through the openclaw on cloud services, enabling them to view RSS.",
+  "summary": "帮助用户设置带有中国镜像支持的RSS订阅系统，包括安装feed工具、导入RSS订阅源和聚合订阅内容。特别适合部署在阿里云火山云腾讯云上的openclaw使用，本地安装请按操作系统切换。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_rss_feed",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rory",
+      "features": [
+        "帮助用户设置带有中国镜像支持的RSS订阅系统，包括安装feed工具、导入RSS订阅源和聚合订阅内容。特别适合部署在阿里云火山云腾讯云上的openclaw使用，本地安装请按操作系统切换。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-rss-feed@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/740817?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-rss-feed",
+      "url": "https://clawhub.ai/skills/china-rss-feed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-rss-feed",
+    "url": "https://clawhub.ai/skills/china-rss-feed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-rss-feed-e8da3261997e1f9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-rss-feed@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-rss-feed-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e0e3484392080e26e49581667ae007d6da23f46c58b1eb4d6bd924f39c47c96",
+      "artifactSizeBytes": 2552
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T03:51:41.731Z"
+}

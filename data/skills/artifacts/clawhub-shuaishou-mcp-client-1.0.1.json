@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shuaishou-mcp-client@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shuaishou_mcp_client",
+  "skill": {
+    "id": 57780,
+    "skillKey": "clawhub-shuaishou-mcp-client",
+    "name": "甩手店长一键采集，刊登"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shuaishou-mcp-client",
+    "url": "https://clawhub.ai/skills/shuaishou-mcp-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shuaishou-mcp-client-602dcd76fe06453b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Builds and uses an MCP client (Streamable HTTP transport) to connect to the htyd MCP server and invoke all available tools (including login). Use when connec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wang-jie-ss",
+      "userId": "s172z0cyndfq0jqxmz9argd6rh83gz8w",
+      "displayName": "WangJie",
+      "image": "https://avatars.githubusercontent.com/u/92045183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774838518236,
+      "changelog": "Production version release with expanded Temu publishing features.\n\n- Declares this as the production (\"正式生产环境版本\") release for the htyd MCP client for https://dz.shuaishou.com/mcp.\n- Adds and documents powerful new Temu-related tools and workflows: one-step collect + claim + publish (\"collect_and_publish\"), publish-and-track commands, and itemId-based publish record queries.\n- Enhances documentation with complete workflow explanations (采集→认领→发布), recommended usage, automatic result tracking, platform support matrix, default publishing settings, and environment variable configuration.\n- Clarifies that full automation (publish) currently only supports Temu (platId 68); other platforms stop at claim.\n- Provides both English and Chinese usage instructions and parameter references.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9fa5be463e406d7108fc73b60572ee736832bcd73274093a92293af1cc4f138"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notify@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notify",
+  "skill": {
+    "id": 9299,
+    "skillKey": "clawhub-notify",
+    "name": "Notify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notify",
+    "url": "https://clawhub.ai/skills/notify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notify-6cd6f41455d78245.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure notification channels and conditional alerts. Track what's being watched, log what's been sent."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3863,
+      "installsAllTime": 20,
+      "installsCurrent": 20,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770854700486,
+      "changelog": "Version 1.0.1 of the Notify skill\n\n- No file changes detected in this version.\n- Documentation and SKILL.md remain unchanged from the previous release.\n- No new features, bug fixes, or behavioral modifications introduced.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e2858876e37433c1bfee3b6d72780a748d04d02df53caca0024f776fed97c6c1"
+}

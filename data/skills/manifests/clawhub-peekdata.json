@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30880,
+  "uuid": "skill-clawhub-peekdata",
+  "skillKey": "clawhub-peekdata",
+  "name": "Peekdata",
+  "summary": "Peekdata integration. Manage data, records, and automate workflows. Use when the user wants to interact with Peekdata data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.peekdata",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Peekdata integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Peekdata data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/peekdata@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "peekdata",
+      "url": "https://clawhub.ai/skills/peekdata"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "peekdata",
+    "url": "https://clawhub.ai/skills/peekdata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/peekdata-335315f34d792690.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/peekdata@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-peekdata-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93e1e69157fcbb095bfcad6136ab31e23ad3ea7e4f4722d3d822ec779843eb71",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:23:19.003Z"
+}

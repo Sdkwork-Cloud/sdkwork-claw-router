@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ts-sdk-transactions@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ts_sdk_transactions",
+  "skill": {
+    "id": 35537,
+    "skillKey": "clawhub-ts-sdk-transactions",
+    "name": "Ts Sdk Transactions"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ts-sdk-transactions",
+    "url": "https://clawhub.ai/skills/ts-sdk-transactions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ts-sdk-transactions-7d23e0e2875fb7b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "How to build, sign, submit, and simulate transactions in @aptos-labs/ts-sdk. Covers build.simple(), signAndSubmitTransaction(), waitForTransaction(), simulat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iskysun96",
+      "userId": "publishers:iskysun96",
+      "displayName": "iskysun96",
+      "image": "https://avatars.githubusercontent.com/u/52557585?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773876982165,
+      "changelog": "- Initial release of the ts-sdk-transactions skill.\n- Provides guidance on building, signing, submitting, and simulating transactions using @aptos-labs/ts-sdk.\n- Covers flows for standard, sponsored (fee payer), and multi-agent transactions.\n- Documents best practices, common mistakes, and code examples for transaction lifecycle methods.\n- Lists important \"always\" and \"never\" rules for safe usage.\n- Includes usage guides for simulation, gas profiling, and transaction options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:690d0a4ee5691b51e18dd7eb949c5fa7fbe5f5a1ca6e99c0ec5fbcb15ed16ad0"
+}

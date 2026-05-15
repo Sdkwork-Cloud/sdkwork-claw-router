@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twexapi-cli@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twexapi_cli",
+  "skill": {
+    "id": 29967,
+    "skillKey": "clawhub-twexapi-cli",
+    "name": "Twexapi CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twexapi-cli",
+    "url": "https://clawhub.ai/skills/twexapi-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twexapi-cli-b690c8e9e53a747a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the task should be done through the twexapi command-line client, including installing the CLI, configuring app or profile auth, previewin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yeahjjyy",
+      "userId": "publishers:yeahjjyy",
+      "displayName": "yeahjjyy",
+      "image": "https://avatars.githubusercontent.com/u/47559180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 291,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773912625574,
+      "changelog": "twexapi-cli 0.1.1\n\n- Expanded authentication docs: now documents support for `TWEXAPI_BASE_URL`, `TWEXAPI_CONFIG_DIR`, persistent config in `~/.twexapi/config.json`, and credential isolation on shared machines.\n- Clarified config and credential storage, including how saved apps and profiles are handled.\n- Noted that `auth cookie` includes the `auth_token` in request paths and should be treated carefully in logs.\n- Documentation improvements throughout for clarity and explicit safety recommendations.\n- No changes to CLI command behavior—documentation updates only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d685df96a258b0141c03411763de134c496460df5d00d2654e67df663cf3b8ac"
+}

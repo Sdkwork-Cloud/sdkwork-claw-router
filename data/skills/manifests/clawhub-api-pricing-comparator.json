@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30182,
+  "uuid": "skill-clawhub-api-pricing-comparator",
+  "skillKey": "clawhub-api-pricing-comparator",
+  "name": "API Pricing Comparator",
+  "summary": "Compare AI API or model pricing across providers and produce a structured summary for product pages, blog posts, or buyer guides. Works with OpenAI-compatibl...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_pricing_comparator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xujfcn",
+      "features": [
+        "Compare AI API or model pricing across providers and produce a structured summary for product p.",
+        "Works with OpenAI-compatibl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-pricing-comparator@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7953794?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-pricing-comparator",
+      "url": "https://clawhub.ai/skills/api-pricing-comparator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-pricing-comparator",
+    "url": "https://clawhub.ai/skills/api-pricing-comparator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-pricing-comparator-535748e08303ace5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-pricing-comparator@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-pricing-comparator-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b0291631cd21d25530b0fe1c104c412e08725c2b936b5af970880f81b14c2ce",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T08:46:09.307Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amd@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amd",
+  "skill": {
+    "id": 29313,
+    "skillKey": "clawhub-amd",
+    "name": "Amd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amd",
+    "url": "https://clawhub.ai/skills/amd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amd-240389f4b730bad4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Information assistant for AMD. Search products, news, financials, and official resources for AMD."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 295,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776232808335,
+      "changelog": "- Added a version field (1.0.4) to SKILL.md for clearer documentation.  \n- No other content changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:489d2decfdc047fd5531cf6b6e1d811fb2b4b681f9e0402ffbf36f213c91a57d"
+}

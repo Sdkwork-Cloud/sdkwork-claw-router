@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40320,
+  "uuid": "skill-clawhub-plan-manager",
+  "skillKey": "clawhub-plan-manager",
+  "name": "Plan Manager",
+  "summary": "Unified plan management system for coordinating OpenClaw Agent and Human plans. Use when managing both AI agent execution workflows and human task plans in a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plan_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DaXuan",
+      "features": [
+        "Unified plan management system for coordinating OpenClaw Agent and Human plans",
+        "Use when managing both AI agent execution workflows and human task plans in a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plan-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33819629?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plan-manager",
+      "url": "https://clawhub.ai/skills/plan-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plan-manager",
+    "url": "https://clawhub.ai/skills/plan-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plan-manager-165748b1b5a426d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plan-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-plan-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5876507c9f7b4ddc2d6f1a7b8af1ce66ca13a8531a5783f4dabf73f934a90f69",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T20:51:14.961Z"
+}

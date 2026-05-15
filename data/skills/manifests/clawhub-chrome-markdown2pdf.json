@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58813,
+  "uuid": "skill-clawhub-chrome-markdown2pdf",
+  "skillKey": "clawhub-chrome-markdown2pdf",
+  "name": "Chrome Markdown to PDF",
+  "summary": "使用 Chrome headless 将 Markdown 文件转为排版精美的 PDF，支持表格、代码块、中文。 Activate when user mentions: md转pdf、markdown转pdf、转PDF、导出PDF、生成PDF、chrome转pdf。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chrome_markdown2pdf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Earl-chen",
+      "features": [
+        "使用 Chrome headless 将 Markdown 文件转为排版精美的 PDF，支持表格、代码块、中文。 Activate when user mentions: md转pdf、ma."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chrome-markdown2pdf@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29749997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chrome-markdown2pdf",
+      "url": "https://clawhub.ai/skills/chrome-markdown2pdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chrome-markdown2pdf",
+    "url": "https://clawhub.ai/skills/chrome-markdown2pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chrome-markdown2pdf-c016efacbe157fea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chrome-markdown2pdf@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chrome-markdown2pdf-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76d45aa2290ff153347c4b105ba41f112314f22773580c9c44577ec3faab134c",
+      "artifactSizeBytes": 2521
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T09:43:24.851Z"
+}

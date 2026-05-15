@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anti-sycophancy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anti_sycophancy",
+  "skill": {
+    "id": 44221,
+    "skillKey": "clawhub-anti-sycophancy",
+    "name": "anti-sycophancy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anti-sycophancy",
+    "url": "https://clawhub.ai/skills/anti-sycophancy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anti-sycophancy-c370ffb4bac18b0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Three-layer sycophancy defense based on ArXiv 2602.23971. Use /anti-sycophancy install to deploy all layers, or manage individually via install-claude-code /..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xcjl",
+      "userId": "s17c0swjv7p83sgyqfwvqqkbed83hk19",
+      "displayName": "Jialin",
+      "image": "https://avatars.githubusercontent.com/u/38884292?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775552603684,
+      "changelog": "Initial release: three-layer sycophancy defense system",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c004b15855e7836baa270cb9bb45d7e131a7ebae4803c31f604096563278fa1"
+}

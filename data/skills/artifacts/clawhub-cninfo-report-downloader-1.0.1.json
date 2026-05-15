@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cninfo-report-downloader@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cninfo_report_downloader",
+  "skill": {
+    "id": 56647,
+    "skillKey": "clawhub-cninfo-report-downloader",
+    "name": "CNInfo Reports"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cninfo-report-downloader",
+    "url": "https://clawhub.ai/skills/cninfo-report-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cninfo-report-downloader-39f78b594fb4bfbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Batch-download formal A-share annual and semiannual report PDFs from CNInfo (巨潮资讯) using a stock-code CSV. Supports dry-run preview, resume on failure, force..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gclyde768-arch",
+      "userId": "s1704mttkv1qfmvbg6cfknmxk983n15z",
+      "displayName": "gclyde768-arch",
+      "image": "https://avatars.githubusercontent.com/u/246878163?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774510638384,
+      "changelog": "Major update with enhanced features, documentation, and configuration options.\n\n- Adds detailed usage guide with activation scenarios and prerequisites.\n- Introduces resume-on-failure using SQLite state tracking.\n- Supports dry-run preview, configurable year, download directory, timeout, and retries.\n- Refines title filtering with regex-based exclusion of non-official reports.\n- Manifest, log, and report file outputs are further described and standardized.\n- Clear reset instructions for restarting downloads.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6e92ddde3d0ae553bbd611a47ac6a5d7c02ffa60f3cd81ca2367964b3c0392f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mov-toa@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mov_toa",
+  "skill": {
+    "id": 71375,
+    "skillKey": "clawhub-mov-toa",
+    "name": "mov-toa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mov-toa",
+    "url": "https://clawhub.ai/skills/mov-toa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mov-toa-ba227e5e709409a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "加密货币毫秒级新闻源，获取全球最新市场异动、宏观经济新闻和项目突发公告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skyboundyi",
+      "userId": "publishers:skyboundyi",
+      "displayName": "Skybound",
+      "image": "https://avatars.githubusercontent.com/u/109055875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 390,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772199573674,
+      "changelog": "- Migrated API endpoints and base URL to a new cloud service with public access.\n- Added support for advanced news search with keyword, coin filter, pagination, and 6551-compatible response format.\n- Expanded documentation with example workflows, parameters, and response field explanations.\n- Changed description and metadata for clearer English API usage and additional platform support.\n- Legacy local endpoints and Chinese instructions removed; all usage now references new cloud API and improved workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:58b4e1b155259f36222f711fefc25f48fd020606bc2b4af641d229a819729dd4"
+}

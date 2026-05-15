@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/companion-checkin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.companion_checkin",
+  "skill": {
+    "id": 45381,
+    "skillKey": "clawhub-companion-checkin",
+    "name": "companion-checkin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "companion-checkin",
+    "url": "https://clawhub.ai/skills/companion-checkin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/companion-checkin-455891e16c061e70.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run warm, adaptive personal check-ins for habits, mood, sleep, meals, focus, and daily progress. Use when the user wants a habit tracker, daily check-in flow..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sqizzo",
+      "userId": "s178avnpcvsfjcecfx2rnx5g7585hr41",
+      "displayName": "sqizzo",
+      "image": "https://avatars.githubusercontent.com/u/202400488?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777081826568,
+      "changelog": "- Initial release of companion-checkin skill for smart, adaptive daily check-ins.\n- Provides warm check-in prompts for morning, afternoon, and evening reflecting user habits, mood, energy, meals, and daily focus.\n- Supports logging user responses, generating weekly recaps, and delivering friendly, conversational summaries.\n- Prompts and recaps are personalized, caring, and lightly playful, with data handled as private.\n- Designed for easy integration with reminder systems for automatic nudges.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:546c86d4a3d7c04ce3cf366762f609817c49bd27c9e00bdf8f17130d761327eb"
+}

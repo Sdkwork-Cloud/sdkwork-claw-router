@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/growth-hub@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.growth_hub",
+  "skill": {
+    "id": 27956,
+    "skillKey": "clawhub-growth-hub",
+    "name": "Growth Hub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "growth-hub",
+    "url": "https://clawhub.ai/skills/growth-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/growth-hub-dba3d8f62f123c5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Top-level orchestration skill that manages ads operations and enterprise growth decisions across Meta (Facebook/Instagram), Google Ads, TikTok Ads, YouTube A..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danyangliu-sandwichlab",
+      "userId": "publishers:danyangliu-sandwichlab",
+      "displayName": "danyangliu",
+      "image": "https://avatars.githubusercontent.com/u/184733968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773208366401,
+      "changelog": "Version 1.0.1 — Major upgrade and rebranding from \"lanbow-ads\" to \"growth-hub\"\n\n- Skill renamed from \"lanbow-ads\" to \"growth-hub\", expanding scope to enterprise-wide growth orchestration.\n- Core mission and workflow updated to include end-to-end planning across ads, marketing, finance, and growth teams.\n- New input and output contracts focused on unified intent mapping, orchestration, and KPI trees.\n- Enhanced governance, failure handling, and escalation procedures for cross-team and cross-domain requests.\n- Documentation examples and high-signal trigger keywords broadened to cover both advertising execution and broader growth strategies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02ee1d7ed9d29b1b6d7363f52d07621d2a47ae2c9de35b502da548e058c61322"
+}

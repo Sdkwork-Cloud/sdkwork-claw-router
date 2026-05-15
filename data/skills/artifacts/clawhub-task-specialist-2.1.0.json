@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-specialist@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_specialist",
+  "skill": {
+    "id": 15989,
+    "skillKey": "clawhub-task-specialist",
+    "name": "Task Specialist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-specialist",
+    "url": "https://clawhub.ai/skills/task-specialist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-specialist-6d7b90d5171a3b6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A robust, local SQLite-backed task management system designed to elevate your AI agent's project execution. Excellent for both simple tasks and large multi-s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oboda0",
+      "userId": "s175zz0zc4tnascjy884gctxjn85x3x8",
+      "displayName": "OBODA",
+      "image": "https://avatars.githubusercontent.com/u/178504767?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 722,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1773112925204,
+      "changelog": "Added Due Dates, Assignees, Tags, Unblock, and Restart. Security constraint for verify_cmd execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:851b56f617b52e51d7b8c174d90d03e24201e68fe49d7284121c4f4d39acb805"
+}

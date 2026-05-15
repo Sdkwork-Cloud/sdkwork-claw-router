@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32649,
+  "uuid": "skill-clawhub-advantage-csp",
+  "skillKey": "clawhub-advantage-csp",
+  "name": "Advantage Csp",
+  "summary": "Advantage CSP integration. Manage data, records, and automate workflows. Use when the user wants to interact with Advantage CSP data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.advantage_csp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Advantage CSP integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Advantage CSP data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/advantage-csp@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "advantage-csp",
+      "url": "https://clawhub.ai/skills/advantage-csp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "advantage-csp",
+    "url": "https://clawhub.ai/skills/advantage-csp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/advantage-csp-3f4622ac5a320051.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/advantage-csp@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-advantage-csp-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6034498f979098014b7d054dbe806fe7dc92fcce7873ef7141c7f382668d5dec",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:16:14.226Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zopia-skill@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zopia_skill",
+  "skill": {
+    "id": 66237,
+    "skillKey": "clawhub-zopia-skill",
+    "name": "Zopia Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zopia-skill",
+    "url": "https://clawhub.ai/skills/zopia-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zopia-skill-df488be2c5a59140.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Zopia AI 视频创作技能 - 通过 Zopia 平台的 AI Agent 进行视频/图片创作。覆盖场景包括：AI 视频生成（文生视频、图生视频）、AI 图片生成（角色设定图、分镜关键帧）、剧本创作（对话/旁白/场景描述）、角色设计、分镜设计、多集连续剧制作。当用户提到 zopia、视频创作、短剧制作、分镜、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lambdua",
+      "userId": "s178f21p50r99865h2g2798kzh83md9g",
+      "displayName": "Lambdua",
+      "image": "https://avatars.githubusercontent.com/u/47845208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1074,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777097440625,
+      "changelog": "新增分镜/角色场景图模型配置，支持 GPT Image 2",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b99b25e9af5ca85636c852cb36e33a2741d6208182d1eef71b23315d60c7a40"
+}

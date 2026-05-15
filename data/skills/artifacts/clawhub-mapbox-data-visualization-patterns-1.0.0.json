@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mapbox-data-visualization-patterns@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mapbox_data_visualization_patterns",
+  "skill": {
+    "id": 33378,
+    "skillKey": "clawhub-mapbox-data-visualization-patterns",
+    "name": "Mapbox Data Visualization Patterns"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mapbox-data-visualization-patterns",
+    "url": "https://clawhub.ai/skills/mapbox-data-visualization-patterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mapbox-data-visualization-patterns-309730c072deeff4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Patterns for visualizing data on maps including choropleth maps, heat maps, 3D visualizations, data-driven styling, and animated data. Covers layer types, co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mapbox",
+      "userId": "s1788z7b0bkaaj7e70n1x8vr0583qtta",
+      "displayName": "Mapbox",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774889541653,
+      "changelog": "- Initial release providing best-practice patterns for data visualization on Mapbox maps.\n- Includes step-by-step guides for choropleth maps, heat maps, and 3D visualizations.\n- Covers color scale strategies for continuous and categorical data.\n- Offers tips for accessibility, error handling, and large dataset performance.\n- Reference files for advanced topics like clustering, animation, and optimization are linked.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a1859623ffb1cf25dd6bbcb45e55dd64b75acfcc21310c432bfa1938da0c4257"
+}

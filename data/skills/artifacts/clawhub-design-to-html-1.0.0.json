@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/design-to-html@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.design_to_html",
+  "skill": {
+    "id": 47338,
+    "skillKey": "clawhub-design-to-html",
+    "name": "Design To Html"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "design-to-html",
+    "url": "https://clawhub.ai/skills/design-to-html",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/design-to-html-e6e5fc6b5232b6f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert design images to pixel-perfect HTML/CSS by analyzing layout, colors, fonts, then iteratively refining code through automated visual comparison."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nodermachine",
+      "userId": "s17b3vxhkjd78hz30qvjtn8y5s83k3js",
+      "displayName": "nodermachine",
+      "image": "https://avatars.githubusercontent.com/u/58065346?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777451194723,
+      "changelog": "- Initial release of the design-to-html skill.\n- Converts visual design mockups or images into pixel-perfect HTML/CSS code through an automated, iterative refinement workflow.\n- Includes step-by-step process with visual comparison, diff reports, and optimization instructions.\n- Supports command-line interface for running analysis, rendering, comparison, and pipeline scripts.\n- Provides setup instructions, examples for common design types, tips, and outlines current limitations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cfdc5ba9317dd56e41ed409d990f8946af792c8a9d62339f1e3bb1f059cf73b8"
+}

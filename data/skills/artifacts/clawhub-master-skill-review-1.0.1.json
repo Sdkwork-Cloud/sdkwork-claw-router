@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/master-skill-review@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.master_skill_review",
+  "skill": {
+    "id": 35931,
+    "skillKey": "clawhub-master-skill-review",
+    "name": "Skill Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "master-skill-review",
+    "url": "https://clawhub.ai/skills/master-skill-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/master-skill-review-e42b59c288e3ab86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Review an OpenClaw skill for token efficiency, scriptability, and clean action boundaries; back up first, then improve the skill."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kid0114",
+      "userId": "s17bzaag7cdze025z40t2avdr583kqfy",
+      "displayName": "kid0114",
+      "image": "https://avatars.githubusercontent.com/u/97738241?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774845626118,
+      "changelog": "Renamed local skill-review to master-skill-review and aligned local naming references.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78edd8b30c8c31c0ff608e25d2aed2a159093d9082d1d45e9654782c4d41bbb4"
+}

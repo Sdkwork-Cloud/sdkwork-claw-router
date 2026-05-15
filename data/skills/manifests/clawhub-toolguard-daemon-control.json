@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16287,
+  "uuid": "skill-clawhub-toolguard-daemon-control",
+  "skillKey": "clawhub-toolguard-daemon-control",
+  "name": "toolguard-daemon-control",
+  "summary": "Manage macOS launchd user agents to start, stop, restart, check status, and access logs of persistent background services without sudo.",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolguard_daemon_control",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "johnnylambada",
+      "features": [
+        "Manage macOS launchd user agents to start, stop, restart, check status, and access logs of pers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toolguard-daemon-control@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/180409?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toolguard-daemon-control",
+      "url": "https://clawhub.ai/skills/toolguard-daemon-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolguard-daemon-control",
+    "url": "https://clawhub.ai/skills/toolguard-daemon-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolguard-daemon-control-5e1a93ac3f786394.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toolguard-daemon-control@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-toolguard-daemon-control-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:102b3a1a34926ec1e6cc33cfc03db1ad6c5c66b11611bcf352a9b6a628803af7",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T06:04:07.988Z"
+}

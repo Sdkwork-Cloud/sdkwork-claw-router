@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-config-guardian@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_config_guardian",
+  "skill": {
+    "id": 25475,
+    "skillKey": "clawhub-openclaw-config-guardian",
+    "name": "config-guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-config-guardian",
+    "url": "https://clawhub.ai/skills/openclaw-config-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-config-guardian-047c47bce2a1693b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Protect openclaw.json with automatic rollback, lock mode, multi-version baseline snapshots, audit log, and SIGUSR1 gateway hot-reload. Use when you need to s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xbcvv",
+      "userId": "publishers:xbcvv",
+      "displayName": "xbcvv",
+      "image": "https://avatars.githubusercontent.com/u/55967978?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773916570486,
+      "changelog": "Rename runtime script to openclaw-config-guardian.sh so it appears in package manifest; fix install.sh cp source path accordingly",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51e81640ba83e08e54bfb4b6417322a94ba65e84464cf9b91f01037bcedef9bf"
+}

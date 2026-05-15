@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentledger-crm@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentledger_crm",
+  "skill": {
+    "id": 24450,
+    "skillKey": "clawhub-agentledger-crm",
+    "name": "Client Relationship Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentledger-crm",
+    "url": "https://clawhub.ai/skills/agentledger-crm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentledger-crm-ce5cc05f0297a83a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight AI-native CRM for solopreneurs and freelancers. Track clients, relationships, follow-ups, deal stages, and interaction history in plain text file..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawdssen",
+      "userId": "publishers:clawdssen",
+      "displayName": "Clawdssen",
+      "image": "https://avatars.githubusercontent.com/u/262485069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 410,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772928027304,
+      "changelog": "Fix: add url field, quote version, standardize frontmatter",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:189fbd37cf7f92287c04406e5d057b0ee421a396c8405c595610722b20c4c084"
+}

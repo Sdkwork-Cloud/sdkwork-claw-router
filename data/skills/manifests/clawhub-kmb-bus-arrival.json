@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21262,
+  "uuid": "skill-clawhub-kmb-bus-arrival",
+  "skillKey": "clawhub-kmb-bus-arrival",
+  "name": "KMB and LWB Bus Arrivals",
+  "summary": "Get real-time KMB bus arrival times by route, direction, and stop using the official API for accurate next bus ETAs.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kmb_bus_arrival",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Steven Ho",
+      "features": [
+        "Get real-time KMB bus arrival times by route, direction, and stop using the official API for ac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kmb-bus-arrival@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75365123?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kmb-bus-arrival",
+      "url": "https://clawhub.ai/skills/kmb-bus-arrival"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kmb-bus-arrival",
+    "url": "https://clawhub.ai/skills/kmb-bus-arrival",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kmb-bus-arrival-b06d965c78fb7051.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kmb-bus-arrival@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kmb-bus-arrival-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:558a5fdabc42816b4bf3256df52ddf05e0b3992adcb9283ddc329615b2400dba",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T05:54:18.082Z"
+}

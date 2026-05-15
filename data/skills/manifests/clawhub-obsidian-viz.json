@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21072,
+  "uuid": "skill-clawhub-obsidian-viz",
+  "skillKey": "clawhub-obsidian-viz",
+  "name": "Obsidian Viz",
+  "summary": "Generate Obsidian-compatible visualization files (Excalidraw / Mermaid / Canvas). Supports text descriptions and image inputs, outputs editable diagrams in O...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_viz",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jialin",
+      "features": [
+        "Generate Obsidian-compatible visualization files (Excalidraw / Mermaid / Canvas)",
+        "Supports text descriptions and image inputs, outputs editable diagrams in O..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-viz@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38884292?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-viz",
+      "url": "https://clawhub.ai/skills/obsidian-viz"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-viz",
+    "url": "https://clawhub.ai/skills/obsidian-viz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-viz-d723f80285e4e684.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-viz@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-viz-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce8e1c9479ee885723bf9666f950ff4f9fdbe2aa300e4614def7db9cc337f47b",
+      "artifactSizeBytes": 2202
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:55:48.502Z"
+}

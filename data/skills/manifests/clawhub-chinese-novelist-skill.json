@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68078,
+  "uuid": "skill-clawhub-chinese-novelist-skill",
+  "skillKey": "clawhub-chinese-novelist-skill",
+  "name": "Chinese Novelist Skill",
+  "summary": "分章节创作引人入胜的中文小说。支持各种题材（悬疑/言情/奇幻/科幻/历史等），支持10-50章长篇创作，每章3000-5000字，结尾设置悬念钩子。强调深度润色去除AI痕迹，确保文字自然流畅。 当用户要求：写小说、创作故事、分章节写作、连续剧情、章节悬念、长篇小说时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_novelist_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ckrissun",
+      "features": [
+        "分章节创作引人入胜的中文小说。支持各种题材（悬疑/言情/奇幻/科幻/历史等），支持10-50章长篇创作，每章3000-5000字，结尾设置悬念钩子。强调深度润色去除AI痕迹，确保文字自然流畅."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chinese-novelist-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4631752?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chinese-novelist-skill",
+      "url": "https://clawhub.ai/skills/chinese-novelist-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-novelist-skill",
+    "url": "https://clawhub.ai/skills/chinese-novelist-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-novelist-skill-b08fe80134ad6b6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chinese-novelist-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chinese-novelist-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7259247c39a4e938db0296a33d1a7292d989b5dabc58f88a207f059ba059fd2b",
+      "artifactSizeBytes": 2685
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T02:31:37.732Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-bulk-connect@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_bulk_connect",
+  "skill": {
+    "id": 13579,
+    "skillKey": "clawhub-linkedin-bulk-connect",
+    "name": "LinkedIn Bulk Connect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-bulk-connect",
+    "url": "https://clawhub.ai/skills/linkedin-bulk-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-bulk-connect-1e8c017427d2c9a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send LinkedIn connection requests to a list of people via browser automation and track status in a CSV/TSV file. Use when the user wants to bulk-connect with a list of people on LinkedIn (founders, speakers, leads, etc.) from a spreadsheet."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "10madh",
+      "userId": "publishers:10madh",
+      "displayName": "10Madh",
+      "image": "https://avatars.githubusercontent.com/u/211179505?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1316,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770982652890,
+      "changelog": "v1.1.0: mandatory feed navigation before every profile (anti-detection), pre-flight checklist (data file + browser setup confirmation), fixed tier order (Direct URL → Google → LinkedIn search), raised session cap to 20-25 requests, both Chrome Relay and openclaw isolated browser supported.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7866a5120cbbd3e8658df9e9a08787726a49c061f7753625d00bec184b263f30"
+}

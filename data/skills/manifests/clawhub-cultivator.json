@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71098,
+  "uuid": "skill-clawhub-cultivator",
+  "skillKey": "clawhub-cultivator",
+  "name": "cultivator修道者",
+  "summary": "藏在戒指中的戒指老爷爷，为使用者（主角）提供修行中的帮助和指导，传授修炼的相关知识。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cultivator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "imomoe233",
+      "features": [
+        "藏在戒指中的戒指老爷爷，为使用者（主角）提供修行中的帮助和指导，传授修炼的相关知识。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cultivator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43236705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cultivator",
+      "url": "https://clawhub.ai/skills/cultivator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cultivator",
+    "url": "https://clawhub.ai/skills/cultivator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cultivator-edff87649c938815.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cultivator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cultivator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d5c3b83ec48798a6025663ab90625386958e15f123c348cd86fbc9f0ad02cda",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T07:05:43.844Z"
+}

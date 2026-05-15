@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rolls-royce-brand@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rolls_royce_brand",
+  "skill": {
+    "id": 64422,
+    "skillKey": "clawhub-rolls-royce-brand",
+    "name": "Rolls Royce Brand"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rolls-royce-brand",
+    "url": "https://clawhub.ai/skills/rolls-royce-brand",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rolls-royce-brand-31e08500e5ee379b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供Rolls-Royce品牌历史、商业模式、手工定制工艺及市场定位等专业知识，助力超豪华汽车行业研究。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777831513776,
+      "changelog": "- 首个版本发布，系统化梳理Rolls-Royce Motor Cars品牌历史、商业模式与核心数据。\n- 覆盖公司发展时间线、市场定位、手工定制细节与战略产品节点（如Cullinan、Spectre）。\n- 提供品牌护城河、独特圈层与BMW集团关系等深度洞见。\n- 列举关键财务数据与有趣品牌轶事，帮助快速理解该超豪华汽车品牌的行业地位和价值。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:034b8e44d704af043abf5f11b271c38ddc596770205ef7b5a2815d5b7c30a997"
+}

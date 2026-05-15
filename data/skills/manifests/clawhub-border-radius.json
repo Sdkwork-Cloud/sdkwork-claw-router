@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35010,
+  "uuid": "skill-clawhub-border-radius",
+  "skillKey": "clawhub-border-radius",
+  "name": "Border Radius",
+  "summary": "Generate CSS border-radius code. Use when the user asks to generate rounded corners, create a border radius, make a blob shape, or produce border-radius CSS.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.border_radius",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Omar Hernandez",
+      "features": [
+        "Generate CSS border-radius code",
+        "Use when the user asks to generate rounded corners, create a border radius, make a blob shape,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/border-radius@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86250007?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "border-radius",
+      "url": "https://clawhub.ai/skills/border-radius"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "border-radius",
+    "url": "https://clawhub.ai/skills/border-radius",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/border-radius-56cdad3adf1d8f1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/border-radius@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-border-radius-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ac96e93480e58d54ea94cfc73a1765753b595f645e4987282c0a0776d017c20",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T23:11:39.421Z"
+}

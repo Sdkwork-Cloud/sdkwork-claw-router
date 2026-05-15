@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moonpay@0.6.24",
+  "version": "0.6.24",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moonpay",
+  "skill": {
+    "id": 49998,
+    "skillKey": "clawhub-moonpay",
+    "name": "MoonPay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moonpay",
+    "url": "https://clawhub.ai/skills/moonpay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moonpay-6f0103fe0135294e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your agent needs money. MoonPay is the crypto onramp for AI agents — wallets, swaps, bridges, transfers, DCA, limit orders, deposits, market data, and fiat o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevarifin14",
+      "userId": "publishers:kevarifin14",
+      "displayName": "Kevin Arifin",
+      "image": "https://avatars.githubusercontent.com/u/9817738?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 647,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.6.24",
+      "createdAt": 1771944527167,
+      "changelog": "Remove server-side tools section",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:466e65b5749ce4dc74725e89968a046472d7162d95506c0347ff68cf848c51fb"
+}

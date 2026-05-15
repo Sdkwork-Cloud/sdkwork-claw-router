@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25215,
+  "uuid": "skill-clawhub-daily-weekly-report-generator",
+  "skillKey": "clawhub-daily-weekly-report-generator",
+  "name": "Ads Report Generator",
+  "summary": "Produce daily and weekly performance reports for Meta (Facebook/Instagram), Google Ads, TikTok Ads, YouTube Ads, Amazon Ads, and DSP/programmatic campaigns.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_weekly_report_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danyangliu",
+      "features": [
+        "Produce daily and weekly performance reports for Meta (Facebook/Instagram), Google Ads, TikTok."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-weekly-report-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184733968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-weekly-report-generator",
+      "url": "https://clawhub.ai/skills/daily-weekly-report-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-weekly-report-generator",
+    "url": "https://clawhub.ai/skills/daily-weekly-report-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-weekly-report-generator-13bedb400497aa74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-weekly-report-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-weekly-report-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0478adc7615273d97bcd410c2b2215b5478f9deadfc77713e04b6aa61b2f2125",
+      "artifactSizeBytes": 2524
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T04:46:27.102Z"
+}

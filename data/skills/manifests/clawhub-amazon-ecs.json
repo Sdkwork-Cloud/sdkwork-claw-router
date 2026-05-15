@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30723,
+  "uuid": "skill-clawhub-amazon-ecs",
+  "skillKey": "clawhub-amazon-ecs",
+  "name": "Amazon Ecs",
+  "summary": "Amazon ECS integration. Manage data, records, and automate workflows. Use when the user wants to interact with Amazon ECS data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_ecs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Amazon ECS integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Amazon ECS data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-ecs@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-ecs",
+      "url": "https://clawhub.ai/skills/amazon-ecs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-ecs",
+    "url": "https://clawhub.ai/skills/amazon-ecs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-ecs-9d5e9ec267d3b9c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-ecs@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-ecs-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3692d84dae39a3d2e0b8f47a02a24fbd378e78ea72e434614252d47912b7b91",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:18:50.524Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dobby-harness@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dobby_harness",
+  "skill": {
+    "id": 44970,
+    "skillKey": "clawhub-dobby-harness",
+    "name": "Dobby Harness Self-improving Coding Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dobby-harness",
+    "url": "https://clawhub.ai/skills/dobby-harness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dobby-harness-580d11802a801c18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides multi-agent orchestration with task decomposition, parallel execution, result aggregation, and self-improving workflows for complex coding tasks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "panb-kg",
+      "userId": "s175cn66m09zjjgmet8afqrq15853qft",
+      "displayName": "Panb-KG",
+      "image": "https://avatars.githubusercontent.com/u/218860235?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776488197205,
+      "changelog": "dobby-harness 1.0.0 – Initial Release\n\n- Introduces a production-ready multi-agent orchestration system with task decomposition, parallel execution, result aggregation, and self-improving capabilities.\n- Supports five orchestration patterns: parallel, sequential, map-reduce, pipeline, and fan-out.\n- Provides out-of-the-box production workflows including code review, test generation, documentation, and CI/CD integration.\n- Offers persistent state management via WAL protocol and working buffer modules.\n- Includes comprehensive examples, configuration options, and core documentation for quick onboarding.\n- Features documented test suite with full coverage and initial security audit report.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8672518d3849c514637f1eb93c212986b6e4b7457219d668755259bcc54ed85b"
+}

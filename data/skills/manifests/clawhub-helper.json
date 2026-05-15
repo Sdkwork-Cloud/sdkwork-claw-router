@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18336,
+  "uuid": "skill-clawhub-helper",
+  "skillKey": "clawhub-helper",
+  "name": "Pywayne Helper",
+  "summary": "Project configuration management helper for YAML config files. Use when projects need cross-process/cross-file parameter sharing via a centralized config fil...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.helper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangyendt",
+      "features": [
+        "Project configuration management helper for YAML config files",
+        "Use when projects need cross-process/cross-file parameter sharing via a centralized config fil.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/helper@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18455758?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "helper",
+      "url": "https://clawhub.ai/skills/helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "helper",
+    "url": "https://clawhub.ai/skills/helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/helper-e81d3b0e9d82feaa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/helper@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-helper-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30ba8a5a96ad29127ae743af936b2b46cd81d4379f6cc1cd2ad2e2b041bab961",
+      "artifactSizeBytes": 2310
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T04:11:42.369Z"
+}

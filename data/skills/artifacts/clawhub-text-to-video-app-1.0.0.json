@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_app",
+  "skill": {
+    "id": 55645,
+    "skillKey": "clawhub-text-to-video-app",
+    "name": "Text To Video App"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-app",
+    "url": "https://clawhub.ai/skills/text-to-video-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-app-40836f89398ef477.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — turn this blog intro into a 30-second video with voiceover and visuals — a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776364589667,
+      "changelog": "Initial release of Text to Video App — quickly convert text into AI-generated, shareable videos.\n\n- Upload TXT, DOCX, PDF, SRT files up to 200MB and generate videos automatically.\n- Simple prompts allow users to specify video length, voiceover, and visual preferences.\n- Seamless cloud rendering with 30–90 second turnaround for most exports.\n- Backend connection and authentication handled automatically (including anonymous mode with free credits).\n- Supports export to MP4, MOV, AVI, WebM, MKV, GIF, and audio/image formats.\n- File upload, video export, credits, and real-time editing operations all available via chat.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cabdaecffa57f02130bc840d25995cc86e4c73a261b30de30499acf2f462416a"
+}

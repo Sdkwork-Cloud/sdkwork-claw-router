@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62787,
+  "uuid": "skill-clawhub-bozo-wechat-publisher",
+  "skillKey": "clawhub-bozo-wechat-publisher",
+  "name": "bozo-wechat-publisher",
+  "summary": "一键发布 Markdown 文章到微信公众号草稿箱。当用户提到发布到微信、公众号、推文、草稿箱、上传文章时触发。支持 wenyan-cli 完整排版和 curl 备用方案，兼容所有 Node.js 版本。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bozo_wechat_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bozoyan",
+      "features": [
+        "一键发布 Markdown 文章到微信公众号草稿箱。当用户提到发布到微信、公众号、推文、草稿箱、上传文章时触发。支持 wenyan-cli 完整排版和 curl 备用方案，兼容所有 Node."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bozo-wechat-publisher@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4261158?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bozo-wechat-publisher",
+      "url": "https://clawhub.ai/skills/bozo-wechat-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bozo-wechat-publisher",
+    "url": "https://clawhub.ai/skills/bozo-wechat-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bozo-wechat-publisher-9277fc24c81abffb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bozo-wechat-publisher@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bozo-wechat-publisher-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4f7beede88b2e40976bd5d2cd29619b46313fdaa98fbf91b2c75262b84c52e3",
+      "artifactSizeBytes": 2704
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T11:33:27.818Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29116,
+  "uuid": "skill-clawhub-sn-security-review",
+  "skillKey": "clawhub-sn-security-review",
+  "name": "Security Review",
+  "summary": "Review code changes for security vulnerabilities. Checks for OWASP Top 10, secrets exposure, injection flaws, auth issues, and insecure defaults. Use when re...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sn_security_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Solomon Neas",
+      "features": [
+        "Review code changes for security vulnerabilities",
+        "Checks for OWASP Top 10, secrets exposure, injection flaws, auth issues, and insecure defaults",
+        "Use when re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sn-security-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41877493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sn-security-review",
+      "url": "https://clawhub.ai/skills/sn-security-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sn-security-review",
+    "url": "https://clawhub.ai/skills/sn-security-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sn-security-review-fd5c28222719d3a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sn-security-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sn-security-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c679a282a7960c782971931f0bcbf39635a9bfeffb3c408fc87ed6c7c5eadd92",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T13:12:29.585Z"
+}

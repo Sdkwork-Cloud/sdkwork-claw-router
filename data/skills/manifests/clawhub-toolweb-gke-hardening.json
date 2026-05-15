@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39339,
+  "uuid": "skill-clawhub-toolweb-gke-hardening",
+  "skillKey": "clawhub-toolweb-gke-hardening",
+  "name": "GKE Hardening",
+  "summary": "Generates CIS Benchmark-aligned security hardening configurations for Google Kubernetes Engine clusters.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_gke_hardening",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Generates CIS Benchmark-aligned security hardening configurations for Google Kubernetes Engine."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toolweb-gke-hardening@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toolweb-gke-hardening",
+      "url": "https://clawhub.ai/skills/toolweb-gke-hardening"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-gke-hardening",
+    "url": "https://clawhub.ai/skills/toolweb-gke-hardening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-gke-hardening-430d5170a896a04d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toolweb-gke-hardening@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toolweb-gke-hardening-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91d6ace0d9e87c7639a6fd985fcf0a1344d3292d87e5ac6aacf5b44c43a27557",
+      "artifactSizeBytes": 2286
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T20:21:25.465Z"
+}

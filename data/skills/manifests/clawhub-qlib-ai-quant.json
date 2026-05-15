@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62047,
+  "uuid": "skill-clawhub-qlib-ai-quant",
+  "skillKey": "clawhub-qlib-ai-quant",
+  "name": "Qlib Ai Quant",
+  "summary": "基于微软 qlib 的 AI 量化平台：覆盖预测模型、因子挖掘（Alpha158/TFT）、 组合优化、多频回测。支持 A 股 + 美股 + 港股多市场。",
+  "version": "0.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qlib_ai_quant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "基于微软 qlib 的 AI 量化平台：覆盖预测模型、因子挖掘（Alpha158/TFT）、 组合优化、多频回测。支持 A 股 + 美股 + 港股多市场。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qlib-ai-quant@0.3.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qlib-ai-quant",
+      "url": "https://clawhub.ai/skills/qlib-ai-quant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qlib-ai-quant",
+    "url": "https://clawhub.ai/skills/qlib-ai-quant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qlib-ai-quant-8f199879e9c9ca09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qlib-ai-quant@0.3.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-qlib-ai-quant-0.3.2.json",
+      "version": "0.3.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:daeca793a82993c23cbabe779286698d8d59b20f9dcbf413a1a8729ca170cb86",
+      "artifactSizeBytes": 2070
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:06:55.436Z"
+}

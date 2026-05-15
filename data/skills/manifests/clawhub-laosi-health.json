@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70633,
+  "uuid": "skill-clawhub-laosi-health",
+  "skillKey": "clawhub-laosi-health",
+  "name": "健康追踪",
+  "summary": "健康追踪技能 - 追踪饮水、睡眠、步数等健康数据，JSON存储。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.laosi_health",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "534422530",
+      "features": [
+        "追踪饮水、睡眠、步数等健康数据，JSON存储。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/laosi-health@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82763531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "laosi-health",
+      "url": "https://clawhub.ai/skills/laosi-health"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "laosi-health",
+    "url": "https://clawhub.ai/skills/laosi-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/laosi-health-d456ad42b0b4b187.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/laosi-health@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-laosi-health-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e4733c92a78f74d5b3075f867cff959a9677e9b8f6135d1b2d76fc341ff9480",
+      "artifactSizeBytes": 1825
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T08:47:58.111Z"
+}

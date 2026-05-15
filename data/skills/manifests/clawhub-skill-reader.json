@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60795,
+  "uuid": "skill-clawhub-skill-reader",
+  "skillKey": "clawhub-skill-reader",
+  "name": "Skill Reader",
+  "summary": "深入解读任意 Skill 的使用方法。输入 Skill 名称、安装地址或 SKILL.md 文档，输出结构化的使用说明：主要功能、使用场景、核心命令、安装依赖、API Key 需求、版本号、注意事项等。Triggers: skill reader, 读skill, 解读skill, skill怎么用, skill...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ken Wang",
+      "features": [
+        "深入解读任意 Skill 的使用方法。输入 Skill 名称、安装地址或 SKILL.md 文档，输出结构化的使用说明：主要功能、使用场景、核心命令、安装依赖、API Key 需求、版本号、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166790577?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-reader",
+      "url": "https://clawhub.ai/skills/skill-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-reader",
+    "url": "https://clawhub.ai/skills/skill-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-reader-82f61a59c8693fb3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af92b5f62488cfcecdb4df32aba34d32818a1d76868b2ab12bf54883e41ca615",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T00:15:37.864Z"
+}

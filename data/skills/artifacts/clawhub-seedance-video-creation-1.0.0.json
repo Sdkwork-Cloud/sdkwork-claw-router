@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedance-video-creation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_video_creation",
+  "skill": {
+    "id": 41833,
+    "skillKey": "clawhub-seedance-video-creation",
+    "name": "Seedance Video Creation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-video-creation",
+    "url": "https://clawhub.ai/skills/seedance-video-creation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-video-creation-26988969059b115c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI videos using ByteDance Seedance. Use when the user wants to: (1) generate videos from text prompts, (2) generate videos from images (first frame,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asikochen",
+      "userId": "s177fwwdkq5e1m492q19a2mvkx83fs39",
+      "displayName": "AsikoChen",
+      "image": "https://avatars.githubusercontent.com/u/48797225?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774241898533,
+      "changelog": "Initial release of seedance-video-creation skill.\n\n- Generate AI videos from text prompts, single images (first frame), pairs of images (first & last frame), or reference images using ByteDance Seedance models.\n- Supports multiple Seedance models: 1.5 Pro (with audio, draft mode), 1.0 Pro, 1.0 Pro Fast, and 1.0 Lite (T2V/I2V).\n- Python CLI tool included for easy task creation, waiting, downloading, querying, and management.\n- Alternative curl command examples provided for direct API interaction.\n- Requires user to set ARK_API_KEY environment variable for authorization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:618bf057e8ebae709eabefca566ac260b37b8cdee0c5925cb755001f45aaeb6e"
+}

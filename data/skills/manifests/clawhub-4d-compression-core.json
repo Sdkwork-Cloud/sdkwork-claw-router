@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60337,
+  "uuid": "skill-clawhub-4d-compression-core",
+  "skillKey": "clawhub-4d-compression-core",
+  "name": "4d Compression Core",
+  "summary": "把长内容压缩成结构化 4D 向量——节省约 60-80% Token，保留核心信息",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.4d_compression_core",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "largetool",
+      "features": [
+        "把长内容压缩成结构化 4D 向量——节省约 60-80% Token，保留核心信息"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/4d-compression-core@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128457415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "4d-compression-core",
+      "url": "https://clawhub.ai/skills/4d-compression-core"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "4d-compression-core",
+    "url": "https://clawhub.ai/skills/4d-compression-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/4d-compression-core-50b4008e651c1259.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/4d-compression-core@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-4d-compression-core-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da0ba88184631d61c612413836f9af9956ac23773bb9f07e1627cc23db7f08af",
+      "artifactSizeBytes": 2296
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T10:25:42.916Z"
+}

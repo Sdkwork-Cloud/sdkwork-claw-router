@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71769,
+  "uuid": "skill-clawhub-main-force-scan",
+  "skillKey": "clawhub-main-force-scan",
+  "name": "主力建仓扫描",
+  "summary": "主力建仓前兆扫描 - 通过量价数据识别主力悄悄吸筹的潜力股。当用户要求\"扫股\"、\"主力扫描\"、\"找主力\"、\"识别建仓\"时使用。每日盘后（15:30后）运行效果最佳，也可盘中实时扫描全市场候选。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.main_force_scan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2459762052-spec",
+      "features": [
+        "主力建仓前兆扫描",
+        "通过量价数据识别主力悄悄吸筹的潜力股。当用户要求\"扫股\"、\"主力扫描\"、\"找主力\"、\"识别建仓\"时使用。每日盘后（15:30后）运行效果最佳，也可盘中实时扫描全市场候选。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/main-force-scan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/275690346?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "main-force-scan",
+      "url": "https://clawhub.ai/skills/main-force-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "main-force-scan",
+    "url": "https://clawhub.ai/skills/main-force-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/main-force-scan-3d6c82ba7ee1d910.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/main-force-scan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-main-force-scan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7cc0318c53ec780125b384fa345d354aaffbe8fed51dbe090afe188150f9a7a",
+      "artifactSizeBytes": 2437
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T11:11:54.887Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52075,
+  "uuid": "skill-clawhub-buddy-followup",
+  "skillKey": "clawhub-buddy-followup",
+  "name": "Buddy Followup",
+  "summary": "Agents say \"I'll follow up\" — and then forget. This skill fixes that. When you kick off a long-running task (sub-agent, build, API call, script), set a timer...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buddy_followup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiaobing Li",
+      "features": [
+        "Agents say \"I'll follow up\" — and then forget",
+        "This skill fixes that",
+        "When you kick off a long-running task (sub-agent, build, API call, script), set a timer..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/buddy-followup@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3783600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "buddy-followup",
+      "url": "https://clawhub.ai/skills/buddy-followup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buddy-followup",
+    "url": "https://clawhub.ai/skills/buddy-followup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buddy-followup-cc08d6864e2d0a6c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/buddy-followup@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-buddy-followup-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb83f4e5a0c7a1d198ae949ef834101e7da220e3286f6c274eadb0e4b186b6a1",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T22:14:40.781Z"
+}

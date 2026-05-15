@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bible-research@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bible_research",
+  "skill": {
+    "id": 22991,
+    "skillKey": "clawhub-bible-research",
+    "name": "Bible Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bible-research",
+    "url": "https://clawhub.ai/skills/bible-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bible-research-b4fce8bb0c7af583.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A Jehovah's Witness-style Bible research agent that reasons on the scriptures using JW methodology. Use when asked to research Bible topics, explain scriptur..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marvel1click",
+      "userId": "publishers:marvel1click",
+      "displayName": "Marvellous",
+      "image": "https://avatars.githubusercontent.com/u/138071495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 455,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772188151222,
+      "changelog": "Add accuracy guardrails, citation discipline, and doctrinal wording polish.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:458a9ab39e489d8e0bcc4740565bf4ca54301ed658ae0be0ff95c5c2bd273e66"
+}

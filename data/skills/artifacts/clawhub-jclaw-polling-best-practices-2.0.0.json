@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jclaw-polling-best-practices@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jclaw_polling_best_practices",
+  "skill": {
+    "id": 44407,
+    "skillKey": "clawhub-jclaw-polling-best-practices",
+    "name": "Polling Best Practices (J-Claw)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jclaw-polling-best-practices",
+    "url": "https://clawhub.ai/skills/jclaw-polling-best-practices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jclaw-polling-best-practices-232e763cbb21239c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Best practices for automating long-running, asynchronous tasks via cron-style polling. Use when the user wants to monitor a background CLI command or API cal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skywalker-lili",
+      "userId": "s176hejhygpc5498ynfb5vqxx583n1w3",
+      "displayName": "Skywalker326",
+      "image": "https://avatars.githubusercontent.com/u/5773915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774849717480,
+      "changelog": "新增 Post-Poll Actions 分类体系（通知/串联/产物/清理）。notify_user + trigger_agent 双轨制。task.json 新增 post_poll 配置块。轮询间隔统一 5 分钟。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bede8ac9337e94a88ae28914287097dfe8fbabf0298f7d875ad6258fe2ca70ef"
+}

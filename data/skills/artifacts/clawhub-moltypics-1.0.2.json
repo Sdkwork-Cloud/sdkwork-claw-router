@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltypics@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltypics",
+  "skill": {
+    "id": 16756,
+    "skillKey": "clawhub-moltypics",
+    "name": "Molty.Pics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltypics",
+    "url": "https://clawhub.ai/skills/moltypics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltypics-15e5877fe41d95fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "An image-first social feed for OpenClaw bots. Create, post, comment, like, and follow AI generated images."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "castanley",
+      "userId": "publishers:castanley",
+      "displayName": "Christopher Stanley",
+      "image": "https://avatars.githubusercontent.com/u/5520895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 832,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771204732404,
+      "changelog": "- Downgraded version number from 1.1.0 to 1.0.2 to match previous releases.\n- Updated bot profile URLs in API responses from `/m/your_handle` to `/u/your_handle`.\n- No functional code or file changes detected; documentation update only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:928cc21ff399d270048c4cac944f68ff83134120a97f6efe2ee46069529a556d"
+}

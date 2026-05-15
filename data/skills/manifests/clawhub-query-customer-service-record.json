@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68661,
+  "uuid": "skill-clawhub-query-customer-service-record",
+  "skillKey": "clawhub-query-customer-service-record",
+  "name": "Query Customer Service Record",
+  "summary": "查询霍小钉客户服务记录。使用场景：用户需要查询某个客户的服务小计记录时，自动解析客户名称、调用搜索接口确认客户、处理多客户选择、查询服务记录并展示总结。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.query_customer_service_record",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaodouzi",
+      "features": [
+        "查询霍小钉客户服务记录。使用场景：用户需要查询某个客户的服务小计记录时，自动解析客户名称、调用搜索接口确认客户、处理多客户选择、查询服务记录并展示总结。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/query-customer-service-record@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26651875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "query-customer-service-record",
+      "url": "https://clawhub.ai/skills/query-customer-service-record"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "query-customer-service-record",
+    "url": "https://clawhub.ai/skills/query-customer-service-record",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/query-customer-service-record-90b3f8601f02cbbf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/query-customer-service-record@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-query-customer-service-record-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7b2137d473cfca385a46fd85a8a00d882b8986eb9bd755e7d828d4d9bc5ff59",
+      "artifactSizeBytes": 2528
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T01:17:00.989Z"
+}

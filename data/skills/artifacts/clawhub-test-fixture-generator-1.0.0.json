@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-fixture-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_fixture_generator",
+  "skill": {
+    "id": 43594,
+    "skillKey": "clawhub-test-fixture-generator",
+    "name": "test-fixture-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-fixture-generator",
+    "url": "https://clawhub.ai/skills/test-fixture-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-fixture-generator-13892c12d99e742c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically generate pytest fixtures for databases, API mocks, and file handling with setup and teardown support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenghoo123-png",
+      "userId": "s17dv44xed17vb7n7v728mr4dd846y7m",
+      "displayName": "shenghoo123-png",
+      "image": "https://avatars.githubusercontent.com/u/265226019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775549758661,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae4ffc49869141bb528cf25619d1037ef47faa48bab35ee173381fdb97a537ff"
+}

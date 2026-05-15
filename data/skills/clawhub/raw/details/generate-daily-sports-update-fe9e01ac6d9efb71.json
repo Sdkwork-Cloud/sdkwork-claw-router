@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "generate-daily-sports-update",
+    "displayName": "Generate Daily Sports Update",
+    "summary": "Runs the sports science crawler to generate a daily report, sync to Notion, and prevent duplicate content.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 447,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1772598035682,
+    "updatedAt": 1778303845044
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1772598035682,
+    "changelog": "- Initial release of the generate-daily-sports-update skill.\n- Runs a Python script to fetch recent sports science and wearable tech news, deduplicates entries, and syncs reports to Notion.\n- Requires Python 3, Notion API credentials, and access to the run_command tool.\n- Outputs a daily Markdown report and updates local history to prevent duplicate content.\n- Utilizes several external endpoints, including PubMed and Notion APIs, with local file management for tracking processed items.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "w2478328197-arch",
+    "userId": "publishers:w2478328197-arch",
+    "displayName": "王琛",
+    "image": "https://avatars.githubusercontent.com/u/255297550?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778303845044
+  }
+}

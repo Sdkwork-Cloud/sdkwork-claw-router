@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wecom-webhook@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wecom_webhook",
+  "skill": {
+    "id": 68182,
+    "skillKey": "clawhub-wecom-webhook",
+    "name": "企业微信通知提醒"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wecom-webhook",
+    "url": "https://clawhub.ai/skills/wecom-webhook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wecom-webhook-38a7e89c5586686e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过企业微信Webhook发送文本或Markdown消息，实现快速通知推送和定时提醒管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiekch",
+      "userId": "s17bcah6akqc5s1wwzqqwe9a9h83hjs4",
+      "displayName": "xiekch",
+      "image": "https://avatars.githubusercontent.com/u/30189965?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774363799147,
+      "changelog": "- Added detailed usage documentation in SKILL.md, including instructions for obtaining Webhook URLs and message examples.\n- Provided quick start commands to send text and Markdown messages, with support for @-mentions.\n- Included steps for scheduling and managing automated message tasks with openclaw cron.\n- Documented supported message JSON formats and options for customization.\n- Listed script dependencies and clarified the file structure for easier setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64cee5999bad237eea9c2e46673d1802784f5330a244e9e85af30715b516460e"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54459,
+  "uuid": "skill-clawhub-tts-responder",
+  "skillKey": "clawhub-tts-responder",
+  "name": "Tts Responder",
+  "summary": "Convierte texto a audio OGG usando Piper y envía respuestas habladas por Telegram cuando se activa el modo de voz.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tts_responder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JULIAN GOMEZ FERNANDEZ",
+      "features": [
+        "Convierte texto a audio OGG usando Piper y envía respuestas habladas por Telegram cuando se act."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tts-responder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22173008?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tts-responder",
+      "url": "https://clawhub.ai/skills/tts-responder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tts-responder",
+    "url": "https://clawhub.ai/skills/tts-responder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tts-responder-081b93dcc2b16ae7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tts-responder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tts-responder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b08600f52793111080e20ada843ca8050133b84f5def2f73b16483d9838c17f",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T23:38:30.422Z"
+}

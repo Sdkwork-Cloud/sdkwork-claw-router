@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44646,
+  "uuid": "skill-clawhub-log-collector",
+  "skillKey": "clawhub-log-collector",
+  "name": "Log Collector",
+  "summary": "Permanent log collection agent. Collects logs and history from all nodes via SSH/VPN every 3 hours. Stores in logs.db with 30-day retention. Multi-node capab...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.log_collector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KikiKari",
+      "features": [
+        "Permanent log collection agent",
+        "Collects logs and history from all nodes via SSH/VPN every 3 hours",
+        "Stores in logs.db with 30-day retention",
+        "Multi-node capab..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/log-collector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272986081?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "log-collector",
+      "url": "https://clawhub.ai/skills/log-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "log-collector",
+    "url": "https://clawhub.ai/skills/log-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/log-collector-86a83b3800c77b01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/log-collector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-log-collector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:405e043ff1219f961fe885349edb7ee34b0cfc82c521b7e9c81f39aabb1e1b1d",
+      "artifactSizeBytes": 2464
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T12:14:30.407Z"
+}

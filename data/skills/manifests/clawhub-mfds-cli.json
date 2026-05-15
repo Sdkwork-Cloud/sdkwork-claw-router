@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58119,
+  "uuid": "skill-clawhub-mfds-cli",
+  "skillKey": "clawhub-mfds-cli",
+  "name": "Mfds Cli",
+  "summary": "Korean Ministry of Food and Drug Safety (식품의약품안전처) public API CLI. Search drug product permissions (의약품 허가정보), consumer-friendly drug info (e약은요), DUR contra...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mfds_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chloe Park",
+      "features": [
+        "Korean Ministry of Food and Drug Safety (식품의약품안전처) public API CLI",
+        "Search drug product permissions (의약품 허가정보), consumer-friendly drug info (e약은요), DUR contra..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mfds-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15118976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mfds-cli",
+      "url": "https://clawhub.ai/skills/mfds-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mfds-cli",
+    "url": "https://clawhub.ai/skills/mfds-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mfds-cli-5a95bdcdb7e2101b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mfds-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mfds-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c49854c4cb8b3fc20ac3ebc3da0bfcc936260c3b96fae949f49200da7381d121",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T00:10:34.468Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26991,
+  "uuid": "skill-clawhub-mxchip-smart-control",
+  "skillKey": "clawhub-mxchip-smart-control",
+  "name": "mxchip-smart-control",
+  "summary": "Control smart home devices configured in Smart Plus APP. Use when you need to: (1) Query devices and scenes (lights, AC, switches), (2) Control device power...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mxchip_smart_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mxchip",
+      "features": [
+        "Control smart home devices configured in Smart Plus APP",
+        "Use when you need to: (1) Query devices and scenes (lights, AC, switches), (2) Control device p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mxchip-smart-control@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23303414?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mxchip-smart-control",
+      "url": "https://clawhub.ai/skills/mxchip-smart-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mxchip-smart-control",
+    "url": "https://clawhub.ai/skills/mxchip-smart-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mxchip-smart-control-778931b67974a26c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mxchip-smart-control@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mxchip-smart-control-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d66872d1b095e00a4d7964a846cec5b5fdfd7b7c266deee7c0a30afdb3eef83b",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T09:23:11.192Z"
+}

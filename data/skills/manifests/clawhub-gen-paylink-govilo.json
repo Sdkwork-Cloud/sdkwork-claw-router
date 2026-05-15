@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16395,
+  "uuid": "skill-clawhub-gen-paylink-govilo",
+  "skillKey": "clawhub-gen-paylink-govilo",
+  "name": "Gen Paylink Govilo",
+  "summary": "Upload files to Govilo and generate unlock links via Bot API. Use when: (1) Creating a Govilo unlock link from a ZIP, folder, or individual files, (2) Automating file upload to Govilo R2 storage with presigned URLs, (3) Managing Govilo Bot.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gen_paylink_govilo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hau823823",
+      "features": [
+        "Upload files to Govilo and generate unlock links via Bot API",
+        "Use when: (1) Creating a Govilo unlock link from a ZIP, folder, or individual files, (2) Automa.",
+        "Requires GOVILO_API_KEY and SELLER_ADDRESS env vars",
+        "If missing, guides user to register at https://govilo.xyz/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gen-paylink-govilo@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102650578?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gen-paylink-govilo",
+      "url": "https://clawhub.ai/skills/gen-paylink-govilo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gen-paylink-govilo",
+    "url": "https://clawhub.ai/skills/gen-paylink-govilo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gen-paylink-govilo-a98fb078f534e001.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gen-paylink-govilo@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gen-paylink-govilo-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afa33c4206c00fcbd0de95ec61e4bf52f4d0c5c0f65b4f24ad0a336895cce88b",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T02:07:45.348Z"
+}

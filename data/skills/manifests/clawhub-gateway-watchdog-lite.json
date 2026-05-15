@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23900,
+  "uuid": "skill-clawhub-gateway-watchdog-lite",
+  "skillKey": "clawhub-gateway-watchdog-lite",
+  "name": "Gateway Watchdog Lite",
+  "summary": "Installs a macOS or Linux service that probes the OpenClaw gateway every 2 minutes and auto-recovers it on failure, sending Telegram alerts.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gateway_watchdog_lite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ConfusedUser.com",
+      "features": [
+        "Installs a macOS or Linux service that probes the OpenClaw gateway every 2 minutes and auto-rec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gateway-watchdog-lite@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262103184?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gateway-watchdog-lite",
+      "url": "https://clawhub.ai/skills/gateway-watchdog-lite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gateway-watchdog-lite",
+    "url": "https://clawhub.ai/skills/gateway-watchdog-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gateway-watchdog-lite-847886a8c5cc9391.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gateway-watchdog-lite@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gateway-watchdog-lite-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b62b72c9e4dae416055f4057166aff36cc4058c87b3e40ca32fadda9b3f5d20f",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T10:28:51.817Z"
+}

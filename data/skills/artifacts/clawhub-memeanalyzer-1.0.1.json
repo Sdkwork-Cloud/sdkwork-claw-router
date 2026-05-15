@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memeanalyzer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memeanalyzer",
+  "skill": {
+    "id": 55886,
+    "skillKey": "clawhub-memeanalyzer",
+    "name": "solana meme token analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memeanalyzer",
+    "url": "https://clawhub.ai/skills/memeanalyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memeanalyzer-1f2a02def1969e78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Solana meme token (CA) risk by scanning holder distribution, detecting insider wallets (老鼠仓/rat warehouse), and evaluating top-holder concentration...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ultranumblol",
+      "userId": "s173bc4c25bxkf7g35mssfrt6n85ahcr",
+      "displayName": "Lougseus",
+      "image": "https://avatars.githubusercontent.com/u/15081029?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 415,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772695661477,
+      "changelog": "- Added API server files for hosted (pay-per-request) usage: api/server.py, api/requirements.txt, and railway.json.\n- Introduced support for x402 micropayment API access on Railway for Solana token analysis, enabling simple paid API requests with no subscription.\n- Updated documentation to highlight new paid API endpoint, payment instructions, and recommend it for agent use.\n- No changes to self-hosted analysis scripts or risk calculation logic.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f4667635f5f3a949af5a027512fd293ca740348c16acc58df201f8cb83d89517"
+}

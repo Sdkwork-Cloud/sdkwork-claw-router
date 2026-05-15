@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68608,
+  "uuid": "skill-clawhub-sql-doc",
+  "skillKey": "clawhub-sql-doc",
+  "name": "sql-doc",
+  "summary": "通过数据库API查询表数据，对指定数据进行分析并生成包含多维度信息的Word格式分析报告。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sql_doc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rm-ra",
+      "features": [
+        "通过数据库API查询表数据，对指定数据进行分析并生成包含多维度信息的Word格式分析报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sql-doc@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54269145?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sql-doc",
+      "url": "https://clawhub.ai/skills/sql-doc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sql-doc",
+    "url": "https://clawhub.ai/skills/sql-doc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sql-doc-75d6ff809674b076.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sql-doc@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sql-doc-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2741e53dfc435ed938d8f7343b71390e52deeba036ae4d5e5bf6e89bdbe98929",
+      "artifactSizeBytes": 1796
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T10:01:13.727Z"
+}

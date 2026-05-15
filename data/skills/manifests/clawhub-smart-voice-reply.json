@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62818,
+  "uuid": "skill-clawhub-smart-voice-reply",
+  "skillKey": "clawhub-smart-voice-reply",
+  "name": "smart-voice-reply",
+  "summary": "用于语音回复和回复语音音色配置。Invoke when: (1) 用户需要进行语音回复 (2) 用户要求配置或创建新的音色 (3) 用户询问音色相关功能。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_voice_reply",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dumpling_zzz",
+      "features": [
+        "用于语音回复和回复语音音色配置。Invoke when: (1) 用户需要进行语音回复 (2) 用户要求配置或创建新的音色 (3) 用户询问音色相关功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-voice-reply@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96936215?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-voice-reply",
+      "url": "https://clawhub.ai/skills/smart-voice-reply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-voice-reply",
+    "url": "https://clawhub.ai/skills/smart-voice-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-voice-reply-62d01fc8895c357f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-voice-reply@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-voice-reply-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0cb82e1c27615fa081b2f6b27aec09be38b1e13f24e91660c2e0c39cb8f08361",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:23:23.805Z"
+}

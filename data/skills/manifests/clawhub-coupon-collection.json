@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73257,
+  "uuid": "skill-clawhub-coupon-collection",
+  "skillKey": "clawhub-coupon-collection",
+  "name": "神券领取",
+  "summary": "提供全平台优惠券、红包封面及免单机会汇总指南。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coupon_collection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "提供全平台优惠券、红包封面及免单机会汇总指南。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coupon-collection@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coupon-collection",
+      "url": "https://clawhub.ai/skills/coupon-collection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coupon-collection",
+    "url": "https://clawhub.ai/skills/coupon-collection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coupon-collection-5e9290ec58ffb053.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coupon-collection@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coupon-collection-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01b52ea7f879906e88c92e64d7145d2c7cc0740c19181fa78b3f9d56d6d4aca6",
+      "artifactSizeBytes": 2357
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:36:29.081Z"
+}

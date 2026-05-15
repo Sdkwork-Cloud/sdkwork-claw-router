@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13987,
+  "uuid": "skill-clawhub-sport-mode",
+  "skillKey": "clawhub-sport-mode",
+  "name": "Sport Mode",
+  "summary": "Activate \"Sport Mode\" for high-frequency monitoring (default 3m heartbeat) and auto-cleanup. Use when supervising intense tasks (Codex, builds, migrations).",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sport_mode",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "l1veIn",
+      "features": [
+        "Activate \"Sport Mode\" for high-frequency monitoring (default 3m heartbeat) and auto-cleanup",
+        "Use when supervising intense tasks (Codex, builds, migrations)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sport-mode@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25759624?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sport-mode",
+      "url": "https://clawhub.ai/skills/sport-mode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sport-mode",
+    "url": "https://clawhub.ai/skills/sport-mode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sport-mode-367704c828a93a76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sport-mode@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sport-mode-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77b1725aa44188ecf7593e959995fce9b6c17b07d66729cd88adbfb3ddbb4fc5",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T13:17:23.681Z"
+}

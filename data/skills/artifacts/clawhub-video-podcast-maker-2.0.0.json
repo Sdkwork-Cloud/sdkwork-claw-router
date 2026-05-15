@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-podcast-maker@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_podcast_maker",
+  "skill": {
+    "id": 41521,
+    "skillKey": "clawhub-video-podcast-maker",
+    "name": "Video Podcast Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-podcast-maker",
+    "url": "https://clawhub.ai/skills/video-podcast-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-podcast-maker-96f825d2d0a3d48d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user provides a topic and wants an automated video podcast created, OR when user wants to learn/analyze video design patterns from reference videos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agents365-ai",
+      "userId": "s177ks88grnjrm2y5799tcjned83g880",
+      "displayName": "Agents365.ai",
+      "image": "https://avatars.githubusercontent.com/u/221161299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775476593695,
+      "changelog": "v2.0.0 — Major release\n\n- Remotion-native Subtitles component with per-user script templates\n- Multi-platform: YouTube, Bilibili, Douyin, Xiaohongshu, WeChat Channels\n- Multi-language: English/Chinese script templates\n- 6 TTS backends: Edge (free default), Azure, Doubao, CosyVoice, ElevenLabs, OpenAI, Google Cloud\n- 1500+ Lucide icons with semantic selection guide\n- Subtitle safe zone and improved section layout\n- File-based phoneme dictionary system\n- Parallel render support with runtime timing.json loading\n- Preference migration system (v1.1 → v1.3)\n- Mandatory Remotion Studio preview before 4K render",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:998c9ea54bd1fba2ae6bb4bee42e8ef8a95e3447b9847fd32ef00b48a7d6a5ab"
+}

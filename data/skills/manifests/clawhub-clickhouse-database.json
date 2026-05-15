@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61324,
+  "uuid": "skill-clawhub-clickhouse-database",
+  "skillKey": "clawhub-clickhouse-database",
+  "name": "Clickhouse Database",
+  "summary": "ClickHouse 数据库操作技能。通过 clickhouse-client CLI 连接数据库，执行 SELECT 查询、INSERT/UPDATE/DELETE 增删改、批量 SQL 执行、数据库/表管理、JSON 格式输出。适用场景：大数据查询、统计分析、数据导入导出、数据库巡检、表结构查看、远程连接、生...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clickhouse_database",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "429668385",
+      "features": [
+        "ClickHouse 数据库操作技能。通过 clickhouse-client CLI 连接数据库，执行 SELECT 查询、INSERT/UPDATE/DELETE 增删改、批量 SQL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clickhouse-database@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16751044?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clickhouse-database",
+      "url": "https://clawhub.ai/skills/clickhouse-database"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clickhouse-database",
+    "url": "https://clawhub.ai/skills/clickhouse-database",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clickhouse-database-2bc473dce4ac9d14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clickhouse-database@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clickhouse-database-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aeffde87390bd90950f157951e169aa768052097f67a07a691141f16fc9d10f3",
+      "artifactSizeBytes": 2627
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T10:15:28.173Z"
+}

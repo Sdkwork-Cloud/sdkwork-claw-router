@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23954,
+  "uuid": "skill-clawhub-codex-delegate",
+  "skillKey": "clawhub-codex-delegate",
+  "name": "Codex Delegate",
+  "summary": "Decide when to delegate code-heavy, multi-file, or repo-intensive tasks to Codex while keeping final judgment and context in the main agent.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_delegate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "G-Hanasq",
+      "features": [
+        "Decide when to delegate code-heavy, multi-file, or repo-intensive tasks to Codex while keeping."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codex-delegate@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74138794?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codex-delegate",
+      "url": "https://clawhub.ai/skills/codex-delegate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-delegate",
+    "url": "https://clawhub.ai/skills/codex-delegate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-delegate-490ee0bb20cae8d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codex-delegate@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-codex-delegate-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f29e8951718fc1ae8ae31e6cc165cb6329c8454056e2e0d838de4d2e0a01e5a9",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T17:44:11.465Z"
+}

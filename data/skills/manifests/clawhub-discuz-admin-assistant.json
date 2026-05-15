@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68107,
+  "uuid": "skill-clawhub-discuz-admin-assistant",
+  "skillKey": "clawhub-discuz-admin-assistant",
+  "name": "Discuz Admin Assistant",
+  "summary": "Discuz! X3.5 企飞版后台管理助手。专门解答 Discuz! 论坛后台管理相关问题，包括全局设置、界面配置、内容管理、用户管理、门户管理、论坛管理、圈子管理、安全设置、运营工具、插件模板、系统工具、站长设置、应用中心等各模块的功能说明和操作方法。当用户询问 Discuz! 后台管理相关问题时触发此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discuz_admin_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guohui1301",
+      "features": [
+        "Discuz! X3.5 企飞版后台管理助手。专门解答 Discuz! 论坛后台管理相关问题，包括全局设置、界面配置、内容管理、用户管理、门户管理、论坛管理、圈子管理、安全设置、运营工具、插."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discuz-admin-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4188570?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discuz-admin-assistant",
+      "url": "https://clawhub.ai/skills/discuz-admin-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discuz-admin-assistant",
+    "url": "https://clawhub.ai/skills/discuz-admin-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discuz-admin-assistant-b3f66721a84a482f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discuz-admin-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-discuz-admin-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2163679e8263ec7c3786d39bccacd3aae5a5f8c0cf9d09a1486da3276b807bb",
+      "artifactSizeBytes": 2781
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T13:05:02.644Z"
+}

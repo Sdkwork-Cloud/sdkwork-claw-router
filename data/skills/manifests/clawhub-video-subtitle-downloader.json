@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43611,
+  "uuid": "skill-clawhub-video-subtitle-downloader",
+  "skillKey": "clawhub-video-subtitle-downloader",
+  "name": "Video Subtitle Downloader",
+  "summary": "Download and convert subtitles from YouTube, Bilibili, and 1000+ platforms into SRT, JSON, or TXT with automatic timestamps and GPU acceleration support.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_subtitle_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenghoo123-png",
+      "features": [
+        "Download and convert subtitles from YouTube, Bilibili, and 1000+ platforms into SRT, JSON, or T."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-subtitle-downloader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265226019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-subtitle-downloader",
+      "url": "https://clawhub.ai/skills/video-subtitle-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-subtitle-downloader",
+    "url": "https://clawhub.ai/skills/video-subtitle-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-subtitle-downloader-f4b14a6237782242.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-subtitle-downloader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-subtitle-downloader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ade92314754c1b0b796ff271b1d9a36a6c9c6b9f40d76bd20c7f91054915694",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T04:43:07.266Z"
+}

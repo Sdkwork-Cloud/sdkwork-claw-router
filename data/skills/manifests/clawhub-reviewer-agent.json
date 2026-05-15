@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66195,
+  "uuid": "skill-clawhub-reviewer-agent",
+  "skillKey": "clawhub-reviewer-agent",
+  "name": "Reviewer Agent",
+  "summary": "独立评审Agent。为每个项目提供第三方视角的评审，确保质量、可维护性和进度可控。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reviewer_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nic-yuan",
+      "features": [
+        "独立评审Agent。为每个项目提供第三方视角的评审，确保质量、可维护性和进度可控。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reviewer-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195308903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reviewer-agent",
+      "url": "https://clawhub.ai/skills/reviewer-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reviewer-agent",
+    "url": "https://clawhub.ai/skills/reviewer-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reviewer-agent-396cebd4b87721b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reviewer-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reviewer-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f10ce435e69a9dc013cf16108fb3ea7b548ff2e09201adc9c854aa08031b8f36",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T13:37:11.685Z"
+}

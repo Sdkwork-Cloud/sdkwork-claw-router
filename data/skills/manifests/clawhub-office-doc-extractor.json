@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43995,
+  "uuid": "skill-clawhub-office-doc-extractor",
+  "skillKey": "clawhub-office-doc-extractor",
+  "name": "Office Document Extractor",
+  "summary": "Convert Microsoft Office documents (DOCX, XLSX, PPTX) to Markdown without any external dependencies. Use when the user needs to extract text from Word docume...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.office_doc_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "michealxie001",
+      "features": [
+        "Convert Microsoft Office documents (DOCX, XLSX, PPTX) to Markdown without any external dependen.",
+        "Use when the user needs to extract text from Word docume..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/office-doc-extractor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231448030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "office-doc-extractor",
+      "url": "https://clawhub.ai/skills/office-doc-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "office-doc-extractor",
+    "url": "https://clawhub.ai/skills/office-doc-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/office-doc-extractor-b15e3b516fd0a5ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/office-doc-extractor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-office-doc-extractor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c4d5b85d264c3ce029b7e8bd3cbcf09fe5590f2df0d26d628f63246d353e84b",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T10:08:40.701Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecommerce-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_analyzer",
+  "skill": {
+    "id": 15347,
+    "skillKey": "clawhub-ecommerce-analyzer",
+    "name": "Ecommerce Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-analyzer",
+    "url": "https://clawhub.ai/skills/ecommerce-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-analyzer-06a4ee03fcbafca4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides data analysis and monitoring for sales, prices, reviews, keywords, and competitors across major Chinese ecommerce platforms."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bingze00000",
+      "userId": "s171p56g2sqsp1dnezw0ar4w1183swz6",
+      "displayName": "bingze00000",
+      "image": "https://avatars.githubusercontent.com/u/268100670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1021,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774691248902,
+      "changelog": "Initial release of Ecommerce Analyzer:\n\n- Supports analysis across major platforms: 淘宝/天猫, 京东, 拼多多, 抖音电商, 快手电商, and 亚马逊.\n- Key features include sales data analysis, competitor monitoring, price tracking, review sentiment analysis, keyword optimization, and shop operations analysis.\n- Provides commands for product analysis, competitor tracking, comment sentiment analysis, and keyword research.\n- Multi-format report export: Excel, CSV, and PDF.\n- Includes real-time monitoring, automatic reports, price alerts, sentiment analysis, and data visualization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf8153b4767aef39c71cb856de2261094eb1d82c98ec755fe436b58b44a86930"
+}

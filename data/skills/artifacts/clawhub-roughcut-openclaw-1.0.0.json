@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/roughcut-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.roughcut_openclaw",
+  "skill": {
+    "id": 39453,
+    "skillKey": "clawhub-roughcut-openclaw",
+    "name": "RoughCut"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "roughcut-openclaw",
+    "url": "https://clawhub.ai/skills/roughcut-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/roughcut-openclaw-dbe39d9245928416.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run RoughCut headlessly on macOS to generate Final Cut Pro (FCPXML) rough-cut timeline variants from a talking-head video — local-first, no media upload."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samergmtm22",
+      "userId": "publishers:samergmtm22",
+      "displayName": "samerGMTM22",
+      "image": "https://avatars.githubusercontent.com/u/154885572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 794,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771130019486,
+      "changelog": "Initial release of roughcut-openclaw.\n\n- Allows OpenClaw agents to run RoughCut locally on macOS to generate Final Cut Pro (FCPXML) rough-cut timeline variants from talking-head videos.\n- Supports processing videos from local files or direct HTTPS download URLs without uploading media.\n- Optionally removes bad takes and \"fluff\" (off-topic content) using a GEMINI_API_KEY environment variable.\n- Provides clear user prompts and operational commands, including handling synced folders and download URLs.\n- Returns output zip file paths for easy import into Final Cut Pro.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d1e1a3f449d334fca6cfc6625be6bb672e6455513908ecfd244c894ba8fe23e7"
+}

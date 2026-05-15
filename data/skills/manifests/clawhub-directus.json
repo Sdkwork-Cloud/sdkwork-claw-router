@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29982,
+  "uuid": "skill-clawhub-directus",
+  "skillKey": "clawhub-directus",
+  "name": "Directus",
+  "summary": "Directus integration. Manage Collections, Users, Presets, Dashboards, Flows. Use when the user wants to interact with Directus data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.directus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Directus integration",
+        "Manage Collections, Users, Presets, Dashboards, Flows",
+        "Use when the user wants to interact with Directus data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/directus@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "directus",
+      "url": "https://clawhub.ai/skills/directus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "directus",
+    "url": "https://clawhub.ai/skills/directus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/directus-943e891bf6042f2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/directus@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-directus-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ada655724961d0137076d63a13f87881f5e4d0598314fd7999f01cbcf68da40f",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:39:28.932Z"
+}

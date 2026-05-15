@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69215,
+  "uuid": "skill-clawhub-amap-walk-route",
+  "skillKey": "clawhub-amap-walk-route",
+  "name": "Amap Walk Route",
+  "summary": "告诉我你在哪、想走多远，自动规划一条经过公园、湖边、咖啡馆的散步路线。生成高德地图二维码，扫码即可边走边导航。适合周末散步、跑步、遛狗、City Walk。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amap_walk_route",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SmartVicky",
+      "features": [
+        "告诉我你在哪、想走多远，自动规划一条经过公园、湖边、咖啡馆的散步路线。生成高德地图二维码，扫码即可边走边导航。适合周末散步、跑步、遛狗、City Walk。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amap-walk-route@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270828245?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amap-walk-route",
+      "url": "https://clawhub.ai/skills/amap-walk-route"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amap-walk-route",
+    "url": "https://clawhub.ai/skills/amap-walk-route",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amap-walk-route-638ee9fb01980511.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amap-walk-route@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amap-walk-route-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6cd8c388c15f770dbd05097947ac5e8b3fe02d2f389217038f0a7ec9aa1b2cd9",
+      "artifactSizeBytes": 2543
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T13:29:48.482Z"
+}

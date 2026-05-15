@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64699,
+  "uuid": "skill-clawhub-tushare-openclaw-skill",
+  "skillKey": "clawhub-tushare-openclaw-skill",
+  "name": "Tushare Openclaw Skill",
+  "summary": "Tushare Pro 金融数据 API 查询助手。用于帮助用户查询中国股票、基金、期货、债券等金融数据。当用户需要获取股票行情、财务数据、基础信息、宏观经济数据时使用此 skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tushare_openclaw_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ulnacranium17",
+      "features": [
+        "Tushare Pro 金融数据 API 查询助手。用于帮助用户查询中国股票、基金、期货、债券等金融数据。当用户需要获取股票行情、财务数据、基础信息、宏观经济数据时使用此 skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tushare-openclaw-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257941027?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tushare-openclaw-skill",
+      "url": "https://clawhub.ai/skills/tushare-openclaw-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tushare-openclaw-skill",
+    "url": "https://clawhub.ai/skills/tushare-openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tushare-openclaw-skill-da66d392dc2ae9a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tushare-openclaw-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tushare-openclaw-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed5ae553090735e3d292bff7fd5168ec41eae2df11276dae4ebf97fbbc012e38",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T02:48:35.362Z"
+}

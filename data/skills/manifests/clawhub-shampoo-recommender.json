@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71055,
+  "uuid": "skill-clawhub-shampoo-recommender",
+  "skillKey": "clawhub-shampoo-recommender",
+  "name": "娜可露露洗发水推荐助手",
+  "summary": "娜可露露洗发水专业推荐助手。当用户提到\"洗发水\"、\"推荐洗发水\"、\"给我推荐洗发水\"、\"什么洗发水好用\"、\"洗发水推荐\"、\"娜可露露\"、\"游泳洗头\"、\"海边游泳\"、\"泳池洗头\"、\"去氯\"、\"游泳后洗头\"、\"比赛洗头\"等相关字眼时触发。根据用户的发质（干性/油性/受损/中性）、头皮问题（去屑/控油/防脱/敏感）、使...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shampoo_recommender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "crazyXingXing",
+      "features": [
+        "娜可露露洗发水专业推荐助手。当用户提到\"洗发水\"、\"推荐洗发水\"、\"给我推荐洗发水\"、\"什么洗发水好用\"、\"洗发水推荐\"、\"娜可露露\"、\"游泳洗头\"、\"海边游泳\"、\"泳池洗头\"、\"去氯\"、\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shampoo-recommender@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26996690?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shampoo-recommender",
+      "url": "https://clawhub.ai/skills/shampoo-recommender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shampoo-recommender",
+    "url": "https://clawhub.ai/skills/shampoo-recommender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shampoo-recommender-654af27ac7aae4e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shampoo-recommender@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shampoo-recommender-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90be603eb3e18e7875faed3eea774af50ed805941ec6773f4c07a86fc59ab9ed",
+      "artifactSizeBytes": 2698
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T08:24:42.390Z"
+}

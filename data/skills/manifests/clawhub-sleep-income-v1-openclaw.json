@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67335,
+  "uuid": "skill-clawhub-sleep-income-v1-openclaw",
+  "skillKey": "clawhub-sleep-income-v1-openclaw",
+  "name": "睡后收入系统 V1（OpenClaw版）",
+  "summary": "通过OpenClaw自动生成并发布公众号内容，打造持续积累的AI副业闭环，实现睡眠中被动收入。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sleep_income_v1_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suda6632",
+      "features": [
+        "通过OpenClaw自动生成并发布公众号内容，打造持续积累的AI副业闭环，实现睡眠中被动收入。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sleep-income-v1-openclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194589286?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sleep-income-v1-openclaw",
+      "url": "https://clawhub.ai/skills/sleep-income-v1-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sleep-income-v1-openclaw",
+    "url": "https://clawhub.ai/skills/sleep-income-v1-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sleep-income-v1-openclaw-e57a82688de8e19b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sleep-income-v1-openclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sleep-income-v1-openclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:627ff45f72bb41754c40b6f80b8aa21f3267dd82bd13d50b13c0bf0329d7d7f2",
+      "artifactSizeBytes": 2324
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T13:05:18.282Z"
+}

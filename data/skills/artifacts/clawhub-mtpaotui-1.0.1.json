@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mtpaotui@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mtpaotui",
+  "skill": {
+    "id": 72977,
+    "skillKey": "clawhub-mtpaotui",
+    "name": "mtpaotui"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mtpaotui",
+    "url": "https://clawhub.ai/skills/mtpaotui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mtpaotui-5a50131812259c08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "美团跑腿下单助手。通过直接调用下单接口完成跑腿全流程，支持帮取送、帮买等场景。适用于工作场景：寄送合同/文件/设备、同城取件、办公室间物品转运、紧急采购等。触发词：帮我下跑腿、跑腿下单、美团跑腿、帮我送东西、跑腿订单、帮我取号、帮我搬、帮我买、寄文件、送合同、取快递、同城配送。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meituan-tech",
+      "userId": "s172cvmv1t8e5hqav8jvf9mfjd84s3z8",
+      "displayName": "meituan-tech",
+      "image": "https://avatars.githubusercontent.com/u/47880557?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 67,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778136643927,
+      "changelog": "**Changelog for mtpaotui v1.0.1**\n\n- Removed 10 files, including documentation and all \"dist\", \"references\", and meta files.\n- Internal references and technical documentation (e.g., README.md, params, commands, errors, and built scripts) were deleted.\n- No changes to user-facing logic or SKILL.md instructions. All usage and workflow remain as before.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ea2061f1d945223449b922f13c455f01f642925383af979528023347530e0e4"
+}

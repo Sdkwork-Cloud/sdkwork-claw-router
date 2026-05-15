@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18010,
+  "uuid": "skill-clawhub-shelly-competitor-analyzer",
+  "skillKey": "clawhub-shelly-competitor-analyzer",
+  "name": "Competitor Analyzer",
+  "summary": "Generates a detailed report on a company's market position, pricing, social activity, recent news, and strengths by analyzing its name or URL.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shelly_competitor_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "claudiodrusus",
+      "features": [
+        "Generates a detailed report on a company's market position, pricing, social activity, recent ne."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shelly-competitor-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258132540?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shelly-competitor-analyzer",
+      "url": "https://clawhub.ai/skills/shelly-competitor-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shelly-competitor-analyzer",
+    "url": "https://clawhub.ai/skills/shelly-competitor-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shelly-competitor-analyzer-54b175d49edd17b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shelly-competitor-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shelly-competitor-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee48e29a2fb0c12e62b19ba32c40983ddb40929db83db0e97dfc3ef8f6fd6b47",
+      "artifactSizeBytes": 2333
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T20:35:06.639Z"
+}

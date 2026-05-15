@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/testcase-generator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.testcase_generator",
+  "skill": {
+    "id": 72778,
+    "skillKey": "clawhub-testcase-generator",
+    "name": "根据用户输入的需求描述生成测试用例"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "testcase-generator",
+    "url": "https://clawhub.ai/skills/testcase-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/testcase-generator-b7b08c796d1fe5e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业的测试用例生成技能。支持文本/文档输入，自动生成高质量测试用例。内置依赖检测、质量评分、多格式导出、测试数据生成、用例评审、增量更新等高级功能。支持自定义 prompt 和配置。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newhackerman",
+      "userId": "s17b91nfeywmd7q7q2f991sawh83g0a7",
+      "displayName": "newhackerman",
+      "image": "https://avatars.githubusercontent.com/u/15150570?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773725558015,
+      "changelog": "- 文档更新，版本号由“2.0（完整版）”调整为“1.0.1”，内容未发生变更\n- 无功能、脚本或配置的实际变动\n- 适用于所有现有用户，无需额外操作",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea95efe91dd56904e5b47dd7d9fdb9c3a21720d25b275eee6095f3aab460c0ad"
+}

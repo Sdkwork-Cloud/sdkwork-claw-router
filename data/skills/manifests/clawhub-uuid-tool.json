@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50023,
+  "uuid": "skill-clawhub-uuid-tool",
+  "skillKey": "clawhub-uuid-tool",
+  "name": "Uuid Tool",
+  "summary": "Generate universally unique identifiers (UUIDs) in versions v1, v4, v5, v7, and nil format, with bulk generation and namespace-based deterministic IDs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uuid_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Generate universally unique identifiers (UUIDs) in versions v1, v4, v5, v7, and nil format, wit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uuid-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uuid-tool",
+      "url": "https://clawhub.ai/skills/uuid-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uuid-tool",
+    "url": "https://clawhub.ai/skills/uuid-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uuid-tool-8a6fbbf2d3e1017f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uuid-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uuid-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26cecb6d44a6320bf6b278f1d278768f56aa6f5f1622802d97fe906d79b73616",
+      "artifactSizeBytes": 1836
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T16:30:08.900Z"
+}

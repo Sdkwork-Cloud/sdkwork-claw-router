@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "find-souls",
+    "displayName": "Find Souls",
+    "summary": "Search and install AI persona prompts from Agent Souls library. Use when user wants to roleplay as a historical figure, fictional character, or expert person...",
+    "tags": {
+      "latest": "1.0.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "createdAt": 1773406632244,
+    "updatedAt": 1777619207840
+  },
+  "latestVersion": {
+    "version": "1.0.2",
+    "createdAt": 1773408044995,
+    "changelog": "**Changed backup system for soul installs and rollbacks (version 1.0.2):**\n\n- Backups now use the soul's unique slug (from the URL) as the filename instead of a Unix timestamp, e.g. `SOUL.md.sun_wukong`.\n- When a soul is installed, if a backup with the same slug exists, it is overwritten (only one backup per soul is kept).\n- Rollback interface lists backups by slug for easy identification, rather than by timestamp.\n- The original user persona is still preserved as `SOUL.md.original`.\n- No file changes detected; SKILL.md workflow and backup logic updated.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "wklken",
+    "userId": "s17b3d3qskqvvke32yrvg4c3f583w5bh",
+    "displayName": "wklken",
+    "image": "https://avatars.githubusercontent.com/u/2002216?v=4"
+  },
+  "moderation": null
+}

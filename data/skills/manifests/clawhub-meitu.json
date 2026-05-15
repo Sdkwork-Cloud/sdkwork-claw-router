@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71482,
+  "uuid": "skill-clawhub-meitu",
+  "skillKey": "clawhub-meitu",
+  "name": "meitu",
+  "summary": "提供居家适老化改造、养老院筛选、社区食堂位置及预约指引。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meitu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mikeclaw007",
+      "features": [
+        "提供居家适老化改造、养老院筛选、社区食堂位置及预约指引。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meitu@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265502950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meitu",
+      "url": "https://clawhub.ai/skills/meitu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meitu",
+    "url": "https://clawhub.ai/skills/meitu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meitu-4c780e2bfebf48b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meitu@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meitu-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6156ea1c2436a48a000b693cc0dcdf3a6451c7657d5a0475297d0aa2fb90d2d2",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T14:58:22.882Z"
+}

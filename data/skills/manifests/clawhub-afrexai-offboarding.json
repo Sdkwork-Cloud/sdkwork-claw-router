@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17538,
+  "uuid": "skill-clawhub-afrexai-offboarding",
+  "skillKey": "clawhub-afrexai-offboarding",
+  "name": "Employee Offboarding Manager",
+  "summary": "Generates detailed offboarding checklists, knowledge transfer plans, compliance steps, manager transitions, and day-by-day timelines for departing employees.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_offboarding",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1kalin",
+      "features": [
+        "Generates detailed offboarding checklists, knowledge transfer plans, compliance steps, manager."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/afrexai-offboarding@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15705344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "afrexai-offboarding",
+      "url": "https://clawhub.ai/skills/afrexai-offboarding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-offboarding",
+    "url": "https://clawhub.ai/skills/afrexai-offboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-offboarding-fc8269b7bcad3680.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/afrexai-offboarding@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-offboarding-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23d4fc5fdee91b103b6208951c5f1fdb7620f24a3fd722cfa5e4c61ef604e2c0",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T11:43:21.289Z"
+}

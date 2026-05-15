@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/url-structure@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.url_structure",
+  "skill": {
+    "id": 44459,
+    "skillKey": "clawhub-url-structure",
+    "name": "url-structure"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "url-structure",
+    "url": "https://clawhub.ai/skills/url-structure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/url-structure-ecd0d758a0db2560.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to optimize URL structure, fix URL issues, or plan URL hierarchy. Also use when the user mentions \"URL structure,\" \"URL optimization,\" \"s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775401870350,
+      "changelog": "Automated batch sync",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d91991eed4b580565cbf50ed352a1db424c26515410f09042b8a4573607b589"
+}

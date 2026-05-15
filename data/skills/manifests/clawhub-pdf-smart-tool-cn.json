@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60190,
+  "uuid": "skill-clawhub-pdf-smart-tool-cn",
+  "skillKey": "clawhub-pdf-smart-tool-cn",
+  "name": "Pdf Smart Tool Cn",
+  "summary": "PDF智能处理工具 v2.1 | PDF Smart Tool. 支持PDF转换、OCR识别、合并拆分、数字签名、批量处理、水印添加、加密解密。触发词：PDF、转换、识别。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_smart_tool_cn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huyong2023",
+      "features": [
+        "PDF智能处理工具 v2.1 | PDF Smart Tool",
+        "支持PDF转换、OCR识别、合并拆分、数字签名、批量处理、水印添加、加密解密。触发词：PDF、转换、识别。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-smart-tool-cn@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138767654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-smart-tool-cn",
+      "url": "https://clawhub.ai/skills/pdf-smart-tool-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-smart-tool-cn",
+    "url": "https://clawhub.ai/skills/pdf-smart-tool-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-smart-tool-cn-6a681a682c0b53d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-smart-tool-cn@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-smart-tool-cn-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3f6a135824f5280d7036cc8e351c08a6e590ce47862774ad669b608345af325",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T08:28:14.133Z"
+}

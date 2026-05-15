@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-maker-guru@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_maker_guru",
+  "skill": {
+    "id": 46584,
+    "skillKey": "clawhub-video-maker-guru",
+    "name": "Video Maker Guru"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-maker-guru",
+    "url": "https://clawhub.ai/skills/video-maker-guru",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-maker-guru-acd8ef3e05b4975f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute unedited screen recording into 1080p polished edited videos just by typing what you need. Whether it's turning raw footage into publish-ready..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776244245892,
+      "changelog": "Video Maker Guru 1.0.0\n\n- Initial release of Video Maker Guru: turn raw video footage into polished, edited videos by describing your requirements in plain text.\n- Automatic cloud setup and token management with up to 100 free credits for new users.\n- Supports fast upload, AI editing (cut, background music, text, etc.), 1080p export, and major video/audio/image formats.\n- User-friendly error handling, export workflow, and session management for seamless editing and downloads.\n- Guidance included for common workflows and tips for efficient use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:704a7f8df693f698fb16c804324ca1da405c966f03caf17e54ffb7c94e50e5e2"
+}

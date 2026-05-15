@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trains@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trains",
+  "skill": {
+    "id": 58946,
+    "skillKey": "clawhub-trains",
+    "name": "train"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trains",
+    "url": "https://clawhub.ai/skills/trains",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trains-3e2b8f7655a26936.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分贝通火车预订助手，实时查询火车票、展示车次列表、预订火车票、查看订单、取消订单。Invoke when user wants to search trains, book train tickets, check train orders, or cancel train bookings."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaogao605",
+      "userId": "s17cxwwzm94v9ntkczkmq0r2x983km1s",
+      "displayName": "fenbeitong-trip",
+      "image": "https://avatars.githubusercontent.com/u/265222913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774859761647,
+      "changelog": "- Initial release: switched from 极速数据火车 API to 分贝通火车预订助手 & API.\n- Now supports real-time train search, viewing train/seat details, booking, order checking, and cancellations, all via 分贝通 API.\n- Updated skill invocation and response workflow: search & select trains, view seats, book, pay, and manage orders using new functions in scripts/fb_train_api.py.\n- Deprecated and removed previous train.py script; new API adapters added.\n- Strictly requires calling provided functions—no data fabrication or modification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8215f49f337eedb6a945a656a56be6e8f1b0fed84e08a996869c037b61a66746"
+}

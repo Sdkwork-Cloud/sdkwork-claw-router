@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ez-google@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ez_google",
+  "skill": {
+    "id": 10132,
+    "skillKey": "clawhub-ez-google",
+    "name": "ez-google"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ez-google",
+    "url": "https://clawhub.ai/skills/ez-google",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ez-google-86dcac45c3363e35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when asked to send email, check inbox, read emails, check calendar, schedule meetings, create events, search Google Drive, create Google Docs, read or write spreadsheets, find contacts, or any task involving Gmail, Google Calendar, Dri."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "araa47",
+      "userId": "publishers:araa47",
+      "displayName": "araa47",
+      "image": "https://avatars.githubusercontent.com/u/22760261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2935,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770125177138,
+      "changelog": "- Added bulk Gmail operations: bulk-label and bulk-trash commands for batch labeling and deleting emails.\n- Updated Gmail documentation with usage examples for new bulk features.\n- No other changes detected.-",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:567cf7b9691004db3463baa6212e6bfb9dbd6e0af3bfc3cf4b3bffbff2281aba"
+}

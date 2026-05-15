@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/del-taco@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.del_taco",
+  "skill": {
+    "id": 49770,
+    "skillKey": "clawhub-del-taco",
+    "name": "Del Taco"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "del-taco",
+    "url": "https://clawhub.ai/skills/del-taco",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/del-taco-75c429fa000a6288.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Del Taco is a Western US QSR chain combining Mexican and American fast food, known for dual menus, breakfast burritos, and a dedicated cult following."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 67,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778270686611,
+      "changelog": "- Initial release introducing background, business model, timeline, and key facts about Del Taco.\n- Covers history, unique menu strategy, private equity and acquisition details, moat analysis, and fun facts.\n- Aimed at those researching fast-food chains, QSR trends, regional dynamics, and industry investment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2bbd36dfd87d13e4a6be6446e014d403560d152750e0d6ae1def9256fac35c0"
+}

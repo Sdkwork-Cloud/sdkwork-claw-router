@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42772,
+  "uuid": "skill-clawhub-abe-clawlist",
+  "skillKey": "clawhub-abe-clawlist",
+  "name": "clawlist",
+  "summary": "MUST use for any multi-step project, long-running task, or infinite monitoring workflow. Plan, execute, track, and verify tasks with checkpoint validation. F...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abe_clawlist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AbelTennyson",
+      "features": [
+        "MUST use for any multi-step project, long-running task, or infinite monitoring workflow",
+        "Plan, execute, track, and verify tasks with checkpoint validation"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abe-clawlist@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261241122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abe-clawlist",
+      "url": "https://clawhub.ai/skills/abe-clawlist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abe-clawlist",
+    "url": "https://clawhub.ai/skills/abe-clawlist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abe-clawlist-2579f92f4fcd6bc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abe-clawlist@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-abe-clawlist-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbbc52fc70b83424e0ba3306f94c368cfdb39c26063288d3d254df17fda24eb9",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T02:19:13.262Z"
+}

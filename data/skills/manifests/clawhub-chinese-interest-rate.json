@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25404,
+  "uuid": "skill-clawhub-chinese-interest-rate",
+  "skillKey": "clawhub-chinese-interest-rate",
+  "name": "Chinese Interest Rate",
+  "summary": "Monitor China bank deposit and government bond interest rates daily and receive alerts when any rate changes.",
+  "version": "3.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_interest_rate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryanbihai",
+      "features": [
+        "Monitor China bank deposit and government bond interest rates daily and receive alerts when any."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chinese-interest-rate@3.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89728875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chinese-interest-rate",
+      "url": "https://clawhub.ai/skills/chinese-interest-rate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-interest-rate",
+    "url": "https://clawhub.ai/skills/chinese-interest-rate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-interest-rate-a63e654b37d257a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chinese-interest-rate@3.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-chinese-interest-rate-3.2.1.json",
+      "version": "3.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:047d2eaf9d2546e034935f5f7e9a8a4a09c403adefd6074480fad2922b1425fe",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T03:09:17.481Z"
+}

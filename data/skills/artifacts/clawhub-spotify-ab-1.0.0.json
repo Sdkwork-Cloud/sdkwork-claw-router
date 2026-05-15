@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spotify-ab@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spotify_ab",
+  "skill": {
+    "id": 42744,
+    "skillKey": "clawhub-spotify-ab",
+    "name": "Spotify Ab"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spotify-ab",
+    "url": "https://clawhub.ai/skills/spotify-ab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spotify-ab-3e448102f0303731.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed insights on Spotify's business model, recommendation algorithms, podcast strategy, and music revenue distribution in the streaming industry."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776960210164,
+      "changelog": "Spotify-ab 1.0.0 初始版本发布\n\n- 提供 Spotify 行业地位、历史时间线、商业模式、护城河和关键数据的详细梳理\n- 覆盖流媒体音乐、推荐算法、播客战略及行业争议\n- 支持行业分析、算法研究、收益模式拆解等多种应用场景\n- 适合想全方位了解 Spotify 及其商业挑战的用户",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b564f2c575fec9e7231c3e9cddda17c17164f1e293762b240ff32585744fb5ea"
+}

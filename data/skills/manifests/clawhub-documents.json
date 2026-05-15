@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9468,
+  "uuid": "skill-clawhub-documents",
+  "skillKey": "clawhub-documents",
+  "name": "Documents",
+  "summary": "Build a personal document system for instant access to IDs, contracts, certificates, and important files.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.documents",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build a personal document system for instant access to IDs, contracts, certificates, and import."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/documents@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "documents",
+      "url": "https://clawhub.ai/skills/documents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "documents",
+    "url": "https://clawhub.ai/skills/documents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/documents-9b16b44d0e0a5cac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/documents@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-documents-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c49d11e7590d4baf6782ca9d1e2688e09601bede27b7942d55e0cdde1b30734c",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T01:12:20.171Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14626,
+  "uuid": "skill-clawhub-routemesh-crypto-rpc",
+  "skillKey": "clawhub-routemesh-crypto-rpc",
+  "name": "RouteMesh Crypto RPC",
+  "summary": "Call RouteMesh's unified JSON-RPC endpoint (lb.routeme.sh) for any EVM chainId using a helper script. Use when you need to fetch onchain data (eth_* methods), debug RPC responses, or demo RouteMesh routing for a chain/method.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.routemesh_crypto_rpc",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kermankohli",
+      "features": [
+        "Call RouteMesh's unified JSON-RPC endpoint (lb.routeme.sh) for any EVM chainId using a helper s.",
+        "Use when you need to fetch onchain data (eth_* methods), debug RPC responses, or demo RouteMesh."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/routemesh-crypto-rpc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2050929?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "routemesh-crypto-rpc",
+      "url": "https://clawhub.ai/skills/routemesh-crypto-rpc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "routemesh-crypto-rpc",
+    "url": "https://clawhub.ai/skills/routemesh-crypto-rpc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/routemesh-crypto-rpc-359564d009144746.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/routemesh-crypto-rpc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-routemesh-crypto-rpc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb0d56570586d0f3d90402f73ffd2bcde8feb94ab5507d296c263127efb855e6",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T08:37:12.741Z"
+}

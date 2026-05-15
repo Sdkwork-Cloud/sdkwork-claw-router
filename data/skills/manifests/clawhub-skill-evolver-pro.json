@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69939,
+  "uuid": "skill-clawhub-skill-evolver-pro",
+  "skillKey": "clawhub-skill-evolver-pro",
+  "name": "Skill Evolver Pro - 技能进化器专业版",
+  "summary": "基于技能使用数据，自动分析短板、生成优化方案，支持进化状态机、持久化存储和多阶段流水线，实现技能自我进化和中断恢复。",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_evolver_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pagoda111king",
+      "features": [
+        "基于技能使用数据，自动分析短板、生成优化方案，支持进化状态机、持久化存储和多阶段流水线，实现技能自我进化和中断恢复。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-evolver-pro@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177529007?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-evolver-pro",
+      "url": "https://clawhub.ai/skills/skill-evolver-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-evolver-pro",
+    "url": "https://clawhub.ai/skills/skill-evolver-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-evolver-pro-e80b9688769082e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-evolver-pro@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-evolver-pro-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:480498f967e8082a8ec00ce0bdca893644ecf3e1084849fc389a0824adff2623",
+      "artifactSizeBytes": 2026
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T06:14:50.089Z"
+}

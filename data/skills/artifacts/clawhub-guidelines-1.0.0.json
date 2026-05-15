@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/guidelines@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guidelines",
+  "skill": {
+    "id": 66714,
+    "skillKey": "clawhub-guidelines",
+    "name": "guidelines"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guidelines",
+    "url": "https://clawhub.ai/skills/guidelines",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guidelines-a54bfd9a10390756.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据用户自然语言描述自动生成符合FTdesign规范的列表页、表单页和详情页HTML预览页面，实现浏览器内直接预览。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nero1510",
+      "userId": "publishers:nero1510",
+      "displayName": "Nero1510",
+      "image": "https://avatars.githubusercontent.com/u/23610353?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 912,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772184228533,
+      "changelog": "FTdesign HTML 生成器技能 1.0.0\n\n- 首次发布，支持通过自然语言描述自动生成FTdesign规范的HTML预览界面（列表页、表单页、详情页）。\n- 实现页面类型智能识别、模板选择、字段和操作接口解析，并输出可直接预览的HTML文件。\n- 集成完整FTdesign设计系统规范、组件样式及CSS变量系统，保证页面一致性和美观。\n- 侧边栏及常用菜单项强制图标映射，统一视觉体验。\n- 提供可扩展模板、自定义样式与命令行生成脚本，满足多场景使用需求。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ee596c8b70fcb0d1c7e436aaed595f917a07a3980950d9e8f711aa688eb1cc78"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/police-nerre-test@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.police_nerre_test",
+  "skill": {
+    "id": 69318,
+    "skillKey": "clawhub-police-nerre-test",
+    "name": "police-NERRE"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "police-nerre-test",
+    "url": "https://clawhub.ai/skills/police-nerre-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/police-nerre-test-6b1f1afe25b2d59f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "公安警情文本实体关系抽取工具，从警情文本中精准抽取指定实体与关系，输出严格结构化JSON，无任何多余内容"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andy020326",
+      "userId": "s1739xk0hewvadpy4v1g61yczs84e0az",
+      "displayName": "Andy020326",
+      "image": "https://avatars.githubusercontent.com/u/73181153?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775813585059,
+      "changelog": "- Removed example data and extraction script files: examples/sample.json, scripts/extract.py.\n- Updated skill name to \"police-nerre-test\" and version to 1.0.3.\n- Expanded and revised schema: added new entity types (如昵称、外貌、涉案物品、危险物品、银行卡号、开户行、车牌号).\n- Expanded and clarified relationship types; now includes多种亲属和所有权/纠纷关系类型.\n- Enforced stricter output constraints: only strict JSON output allowed, no Markdown, explanations, or extra text.\n- Output JSON structure and field order are fixed and must be preserved even if some entries are empty.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b41a7f820ec0ce058da553dd0124b8373504e5869990b7e7f4bebf25a2c812d5"
+}

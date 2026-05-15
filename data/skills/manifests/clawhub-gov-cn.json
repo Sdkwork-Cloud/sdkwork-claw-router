@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71983,
+  "uuid": "skill-clawhub-gov-cn",
+  "skillKey": "clawhub-gov-cn",
+  "name": "Gov Cn",
+  "summary": "提供中国政府政策、机构信息与政务服务查询，助您获取最新官方政务数据与办事指南。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gov_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供中国政府政策、机构信息与政务服务查询，助您获取最新官方政务数据与办事指南。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gov-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gov-cn",
+      "url": "https://clawhub.ai/skills/gov-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gov-cn",
+    "url": "https://clawhub.ai/skills/gov-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gov-cn-f18df5f0d8d8436a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gov-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gov-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14c5f940be32a0b0ae5bcda49f3eeaefced16f6a0771e08560dcf2fb3173eabc",
+      "artifactSizeBytes": 2089
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T01:29:33.104Z"
+}

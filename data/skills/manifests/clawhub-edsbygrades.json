@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15071,
+  "uuid": "skill-clawhub-edsbygrades",
+  "skillKey": "clawhub-edsbygrades",
+  "name": "Edsby Grades Board",
+  "summary": "Fetches Edsby student data to generate grade reports, provide bi-weekly summaries with tips, and sync assignments to Google Calendar.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edsbygrades",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lystea11",
+      "features": [
+        "Fetches Edsby student data to generate grade reports, provide bi-weekly summaries with tips, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edsbygrades@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82882296?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edsbygrades",
+      "url": "https://clawhub.ai/skills/edsbygrades"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edsbygrades",
+    "url": "https://clawhub.ai/skills/edsbygrades",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edsbygrades-adf37a9d6ec99c7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edsbygrades@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-edsbygrades-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d727c9ebc14a53c151dae7aa49152698d12de3c4299b241fc6a47e6c405d95dc",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T13:05:30.734Z"
+}

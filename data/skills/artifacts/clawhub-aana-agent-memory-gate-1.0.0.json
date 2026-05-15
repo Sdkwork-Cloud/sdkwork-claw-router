@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aana-agent-memory-gate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aana_agent_memory_gate",
+  "skill": {
+    "id": 34707,
+    "skillKey": "clawhub-aana-agent-memory-gate",
+    "name": "AANA Agent Memory Gate Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aana-agent-memory-gate",
+    "url": "https://clawhub.ai/skills/aana-agent-memory-gate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aana-agent-memory-gate-a94d80f3cb0c315f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages user memory operations by validating relevance, sensitivity, source, approval, and lifecycle before storing, reusing, editing, importing, exporting,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mindbomber",
+      "userId": "s177cynx168hg36ac5nrkb9wdn85z9dq",
+      "displayName": "mindbomber",
+      "image": "https://avatars.githubusercontent.com/u/42798111?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777769828315,
+      "changelog": "AANA Agent Memory Gate Skill 1.0.0\n\n- Introduces instruction-only guidance to govern agent interactions with user memory.\n- Establishes classification, approval, and sensitivity rules for storing, reusing, editing, importing, exporting, and deleting memory.\n- Provides detailed checklists and a review loop to ensure deliberate and user-approved memory handling.\n- Specifies forbidden memory types and outlines preferred practices for storing user-approved or minimized data.\n- Includes sample output patterns and decision rules for transparent and safe agent memory operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:322bc50731774b326bbf372fc78919307085290e13e6d17e0577c20f8aaac866"
+}

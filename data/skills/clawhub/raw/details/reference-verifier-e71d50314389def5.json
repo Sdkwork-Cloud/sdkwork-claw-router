@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "reference-verifier",
+    "displayName": "yu",
+    "summary": "自动核查AI生成内容中的学术参考文献，验证真实性、评估相关性，生成规范引用格式，推荐替代文献并支持PDF匹配验证。",
+    "tags": {
+      "latest": "1.3.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1778054864571,
+    "updatedAt": 1778055111576
+  },
+  "latestVersion": {
+    "version": "1.3.0",
+    "createdAt": 1778054864571,
+    "changelog": "- 新增支持 PDF 上传，实现文献列表与正文引用的自动匹配核查，并输出详细匹配报告及改进建议。\n- 优化真实性验证流程：多数据库交叉（CrossRef/Semantic Scholar/OpenAlex）并行，DOI 优先。\n- 引入主题相关性评估，输出分级建议（高度/中度/低度相关）。\n- 自动生成标准化 BibTeX 与 APA 引用格式，并区分真实、存疑、幻觉文献。\n- 针对存疑或幻觉文献，智能推荐3-5篇高质量、相关的可替代文献（含DOI和理由）。\n- 增强批量处理与异常容错机制，大幅提高复杂或大规模文献列表的核查效率。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "793943403",
+    "userId": "s17eczk1kw5nx23xtaz2tdjxh9866xcq",
+    "displayName": "793943403",
+    "image": "https://avatars.githubusercontent.com/u/109473923?v=4"
+  },
+  "moderation": null
+}

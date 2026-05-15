@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/security-sweep@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_sweep",
+  "skill": {
+    "id": 36722,
+    "skillKey": "clawhub-security-sweep",
+    "name": "security-sweep"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-sweep",
+    "url": "https://clawhub.ai/skills/security-sweep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-sweep-41740b26f149d431.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security scanner for OpenClaw skills and plugins. Scans for hardcoded secrets, dangerous exec patterns, dependency vulnerabilities, and network egress. Use w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rhombusmaximus",
+      "userId": "s176hc37w8grpmpx9rh4crq55183hzvr",
+      "displayName": "RhombusMaximus",
+      "image": "https://avatars.githubusercontent.com/u/31224721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1774549498230,
+      "changelog": "Fix set -u crash: scan_skill output now captured via tail -1 to isolate return values from progress printf. Fixes unbound variable error on command-center and other complex skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4987f45f125c4bcd2b8d03a15e21c4e5def0b2c506de622b04cfcbc8804fc463"
+}

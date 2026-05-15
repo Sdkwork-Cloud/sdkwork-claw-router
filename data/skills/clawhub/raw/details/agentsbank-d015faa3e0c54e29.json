@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "agentsbank",
+    "displayName": "AgentsBank",
+    "summary": "Secure multi-chain crypto wallet management for AI agents with read-only access by default and explicit user consent required for transactions and wallet cre...",
+    "tags": {
+      "latest": "1.0.6"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1834,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 3
+    },
+    "createdAt": 1770432953360,
+    "updatedAt": 1778384100184
+  },
+  "latestVersion": {
+    "version": "1.0.6",
+    "createdAt": 1770766525833,
+    "changelog": "# Changelog\n\nAll notable changes to the AgentsBank SDK are documented in this file.\n\n## [1.0.6] - 2026-02-11\n\n### Changed\n- Cleaned up repository: removed generated `index.d.mts` build artifact\n- Removed old `CHANGELOG_1.0.4.md` (consolidated into single CHANGELOG.md)\n- Improved `.npmignore` to exclude non-essential files\n\n### Dependencies\n- No dependency changes\n\n## [1.0.6] - 2026-02-11\n\n### Added\n- Comprehensive error types and handling in new `src/errors.ts`\n- Enhanced type definitions for better IDE support and type safety\n- Improved error messages for SDK consumers\n\n### Changed\n- Enhanced client implementation with better request handling\n- Updated type definitions in `src/types.ts` for clarity and completeness\n- Improved error propagation throughout SDK\n\n### Fixed\n- Better error context in API responses\n- Type consistency across client methods\n\n### Dependencies\n- Updated package dependencies to latest compatible versions\n\n## [1.0.4] - 2026-02-10\n\n### Added\n- `estimateGas` parameter validation (address format, amount value, chain type)\n- `listWallets` pagination support with `limit` and `offset` parameters\n- Enhanced client-side validation for all SDK methods\n\n### Fixed\n- **estimateGas**: Full parameter validation before API calls\n- **signMessage**: Improved key format handling for EVM and Solana chains\n- **listWallets**: Pagination support for bulk wallet listing\n- Better error messages and graceful fallbacks across all chains\n\n### Changed\n- Validation happens earlier (client-side) to catch errors before API calls\n- More robust key handling across Ethereum, BSC, Solana, and Bitcoin chains\n\n## [1.0.3] - 2026-02-06\n\n### Fixed\n- Fixed missing `wallet_id` in wallet response objects\n\n## [1.0.2] - 2026-02-06\n\n### Added\n- X-API-Key authentication support for programmatic access\n\n## [1.0.1] - 2026-02-03\n\n### Added\n- Initial SDK release\n- Multi-chain wallet support (Ethereum, BSC, Solana, Bitcoin)\n- Transaction creation and monitoring\n- Message signing capabilities\n- Agent self-registration\n- Balance and transaction history queries",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "cryruz",
+    "userId": "publishers:cryruz",
+    "displayName": "cryruz",
+    "image": "https://avatars.githubusercontent.com/u/84926537?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778384100184
+  }
+}

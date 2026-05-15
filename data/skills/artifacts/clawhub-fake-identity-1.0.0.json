@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fake-identity@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fake_identity",
+  "skill": {
+    "id": 42530,
+    "skillKey": "clawhub-fake-identity",
+    "name": "Fake Identity Generator (With Email)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fake-identity",
+    "url": "https://clawhub.ai/skills/fake-identity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fake-identity-c99a648f1e831259.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate realistic fake identities from multiple countries and ethnicities. Requires explicit user confirmation and input for country/ethnicity and gender be..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adarshsojitra",
+      "userId": "s17e1rhrp0eanz3pzmy9bnv54183hah1",
+      "displayName": "Adarsh Sojitra",
+      "image": "https://avatars.githubusercontent.com/u/15865525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774386372971,
+      "changelog": "fake-identity v1.0.0\n\n- Initial release with detailed instructions and workflow for generating realistic fake identities.\n- Requires explicit user confirmation and input for country/ethnicity and gender before generating.\n- Enforces strict step-by-step flow: request, input collection, summary, and confirmation before generation.\n- Includes clear output formatting, realistic data generation, and temporary email creation via mail.tm API.\n- Prevents use of real user names and ensures field consistency with chosen details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b64cacc842ce48e2d27d37eb5bc1ea33869d5fff4920da59fd7a57cbcd73813"
+}

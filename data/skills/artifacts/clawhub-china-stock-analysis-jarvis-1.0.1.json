@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-stock-analysis-jarvis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_stock_analysis_jarvis",
+  "skill": {
+    "id": 30672,
+    "skillKey": "clawhub-china-stock-analysis-jarvis",
+    "name": "China Stock Analysis Jarvis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-stock-analysis-jarvis",
+    "url": "https://clawhub.ai/skills/china-stock-analysis-jarvis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-stock-analysis-jarvis-3af945041e24aa1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Chinese stock prices (A-shares, HK stocks) and provide investment recommendations. Use when the user asks about stock analysis for Chinese companies,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bingze00000",
+      "userId": "s171p56g2sqsp1dnezw0ar4w1183swz6",
+      "displayName": "bingze00000",
+      "image": "https://avatars.githubusercontent.com/u/268100670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774768514099,
+      "changelog": "- Clarified supported stock markets and code formats for A-shares (Shanghai, Shenzhen), Hong Kong, and US stocks.\n- Added a step-by-step workflow for stock price analysis, including data search, context gathering, and structured result formatting.\n- Provided a standardized analysis template with technical indicators and investment recommendations.\n- Outlined specific guidelines for generating buy, hold, or sell signals.\n- Emphasized the inclusion of a risk disclaimer on all analyses.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d281806ebde0e12417b828f7fbafcc709474fef9985a291aa18fb4010440e00f"
+}

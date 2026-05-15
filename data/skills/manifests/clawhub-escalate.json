@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10474,
+  "uuid": "skill-clawhub-escalate",
+  "skillKey": "clawhub-escalate",
+  "name": "Escalate",
+  "summary": "Self-learn to decide when to act, when to ask, and which actions should always need approval.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.escalate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Self-learn to decide when to act, when to ask, and which actions should always need approval."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/escalate@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "escalate",
+      "url": "https://clawhub.ai/skills/escalate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "escalate",
+    "url": "https://clawhub.ai/skills/escalate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/escalate-f965e5fbf98dd531.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/escalate@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-escalate-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb57ce093ae654a92211e056a229f7ae942431ce9e18466cd8d4f6d8973b9256",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T09:41:13.163Z"
+}

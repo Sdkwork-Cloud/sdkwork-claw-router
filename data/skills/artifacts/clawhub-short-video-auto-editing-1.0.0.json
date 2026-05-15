@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/short-video-auto-editing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.short_video_auto_editing",
+  "skill": {
+    "id": 60708,
+    "skillKey": "clawhub-short-video-auto-editing",
+    "name": "Short Video Auto Editing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "short-video-auto-editing",
+    "url": "https://clawhub.ai/skills/short-video-auto-editing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/short-video-auto-editing-eaaf1ae4d94f5c2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 MoviePy 和 Edge TTS，实现短视频素材自动筛选、裁剪、AI配音、字幕同步及批量混剪生成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dally-bee",
+      "userId": "s171bp8hpt2eswfa27y9m3dg8983gh0g",
+      "displayName": "Dally-bee",
+      "image": "https://avatars.githubusercontent.com/u/263806882?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774442326220,
+      "changelog": "Initial release of short-video-auto-editing:\n\n- Automates short video mashup generation for platforms like 抖音, 视频号, 小红书.\n- Integrates MoviePy for video editing, Edge TTS for AI voiceover, and automated subtitle syncing.\n- Supports bulk video production with material deduplication and voice rotation.\n- Includes quality control checks (duration, resolution, file size, etc.) and material usage tracking to keep repetition ≤40%.\n- Modular workflow: material management, copywriting, audio generation, video editing, subtitles, QC, and batch automation.\n- Provides template setups for different brands and scenarios, with self-iteration guidelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:116ad98d4b6dd2c996fbe9a96371ba5f69949a9c46d86f9e74a32661e38507e9"
+}

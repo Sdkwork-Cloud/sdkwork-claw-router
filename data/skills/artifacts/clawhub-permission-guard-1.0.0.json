@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/permission-guard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.permission_guard",
+  "skill": {
+    "id": 61536,
+    "skillKey": "clawhub-permission-guard",
+    "name": "Permission Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "permission-guard",
+    "url": "https://clawhub.ai/skills/permission-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/permission-guard-d803aa4b2f398a4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分层权限守卫系统。基于 Claude Code Permission System 设计，包含危险命令拦截、规则优先级链、自动模式白名单和拒绝追踪。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sinnzen",
+      "userId": "s177s7vheczz1x1a7w33rn1qgh8410gg",
+      "displayName": "Sinnzen",
+      "image": "https://avatars.githubusercontent.com/u/130019564?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775038853877,
+      "changelog": "Initial release: 分层权限守卫系统，基于 Claude Code Permission System，包含危险命令拦截、规则优先级链、自动白名单、拒绝追踪和敏感信息检测",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9da40bf126111e8544e4222b4c8bf1876f1647a1109bb3ea51cadda26877c64"
+}

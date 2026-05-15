@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-architect@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_architect",
+  "skill": {
+    "id": 38358,
+    "skillKey": "clawhub-code-architect",
+    "name": "Code Architect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-architect",
+    "url": "https://clawhub.ai/skills/code-architect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-architect-d1a312821e04786a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design minimal implementation plans aligned with the existing codebase, including architecture, task breakdown, risk analysis, and migration steps before cod..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sf0799",
+      "userId": "s175a2gydqwpmq0pqjcykvhnq584b17r",
+      "displayName": "sf0799",
+      "image": "https://avatars.githubusercontent.com/u/65325612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775460008350,
+      "changelog": "initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afe3cfdfb175de83b7f2fd4530b79bc433dc2cd504bdac41610ff330fa831c62"
+}

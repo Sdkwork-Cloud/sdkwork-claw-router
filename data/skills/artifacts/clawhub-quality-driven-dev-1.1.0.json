@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quality-driven-dev@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quality_driven_dev",
+  "skill": {
+    "id": 18292,
+    "skillKey": "clawhub-quality-driven-dev",
+    "name": "Quality-Driven Development (QDD)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quality-driven-dev",
+    "url": "https://clawhub.ai/skills/quality-driven-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quality-driven-dev-240bb063ba340169.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Quality-driven development with automatic TDD/DDD methodology selection and TRUST 5 quality framework. Use when building features, refactoring code, fixing b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kimky1122",
+      "userId": "publishers:kimky1122",
+      "displayName": "kimky1122",
+      "image": "https://avatars.githubusercontent.com/u/7430339?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 664,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772099023033,
+      "changelog": "Added logging strategy with level-based approach",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c394d4b7c8070d2d4235e576360e7620b67baa434adf77c2e0ee1298f339b8f2"
+}

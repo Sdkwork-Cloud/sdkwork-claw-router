@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cliproxy-media@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cliproxy_media",
+  "skill": {
+    "id": 50849,
+    "skillKey": "clawhub-cliproxy-media",
+    "name": "CLIProxy Media"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cliproxy-media",
+    "url": "https://clawhub.ai/skills/cliproxy-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cliproxy-media-e49619e4a3633eed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze images (jpg, png, gif, webp) and PDFs via CLIProxyAPI — a Claude Max proxy that routes requests through your subscription at zero extra cost. Use thi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bencoremans",
+      "userId": "publishers:bencoremans",
+      "displayName": "bencoremans",
+      "image": "https://avatars.githubusercontent.com/u/38985877?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 414,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773484549338,
+      "changelog": "Added source URL in SKILL.md for transparency",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b7d4e76c9fb81e6a3ccf583cb061cec0f2349b469a0b05be55b656d20de0fb2"
+}

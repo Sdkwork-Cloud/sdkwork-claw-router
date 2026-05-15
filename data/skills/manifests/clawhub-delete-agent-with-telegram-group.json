@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48821,
+  "uuid": "skill-clawhub-delete-agent-with-telegram-group",
+  "skillKey": "clawhub-delete-agent-with-telegram-group",
+  "name": "Delete Agent With Telegram Group",
+  "summary": "Safely and thoroughly delete an OpenClaw agent and its artifacts. Use when user asks to remove an agent completely, including workspace, agent files under ~/...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delete_agent_with_telegram_group",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sheeta",
+      "features": [
+        "Safely and thoroughly delete an OpenClaw agent and its artifacts",
+        "Use when user asks to remove an agent completely, including workspace, agent files under ~/..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/delete-agent-with-telegram-group@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4032009?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "delete-agent-with-telegram-group",
+      "url": "https://clawhub.ai/skills/delete-agent-with-telegram-group"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delete-agent-with-telegram-group",
+    "url": "https://clawhub.ai/skills/delete-agent-with-telegram-group",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delete-agent-with-telegram-group-cf5e10fe4da4b7a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/delete-agent-with-telegram-group@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-delete-agent-with-telegram-group-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:020567477e704cabf939f544a614d4668e0a1b50175b58af5637b0260d506b61",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T15:58:02.951Z"
+}

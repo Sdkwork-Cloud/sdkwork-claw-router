@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50487,
+  "uuid": "skill-clawhub-coral-memory",
+  "skillKey": "clawhub-coral-memory",
+  "name": "Coral Memory (Deprecated)",
+  "summary": "DEPRECATED — Use persistent-agent-memory instead. This skill has been replaced by persistent-agent-memory (clawhub install persistent-agent-memory).",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coral_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Divy",
+      "features": [
+        "DEPRECATED — Use persistent-agent-memory instead",
+        "This skill has been replaced by persistent-agent-memory (clawhub install persistent-agent-memor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coral-memory@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4976197?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coral-memory",
+      "url": "https://clawhub.ai/skills/coral-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coral-memory",
+    "url": "https://clawhub.ai/skills/coral-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coral-memory-e4f7a428f131a92a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coral-memory@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-coral-memory-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bad45850892f9d1dd7661a3127e687da67edf71ae480fae4af0d016538d355a6",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T19:12:05.369Z"
+}

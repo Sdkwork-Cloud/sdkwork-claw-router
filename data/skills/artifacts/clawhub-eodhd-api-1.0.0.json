@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eodhd-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eodhd_api",
+  "skill": {
+    "id": 22259,
+    "skillKey": "clawhub-eodhd-api",
+    "name": "EODHD API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eodhd-api",
+    "url": "https://clawhub.ai/skills/eodhd-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eodhd-api-506259748ab6aa2b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides tools and workflows to interact with the EODHD (EOD Historical Data) API for financial data. Use this skill to fetch market data, fundamental data,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "simonpierreboucher02",
+      "userId": "publishers:simonpierreboucher02",
+      "displayName": "Simon-Pierrre Boucher",
+      "image": "https://avatars.githubusercontent.com/u/213884491?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772723530957,
+      "changelog": "- Initial release of the eodhd-api skill providing tools to interact with the EOD Historical Data (EODHD) API.\n- Supports fetching market data, fundamentals, technical indicators, financial news, and more.\n- Enforces API token setup, requiring entry and storage in a config file.\n- Interactions must use the provided Python client, which handles authentication and error reporting.\n- Detailed workflow guidance included for setup, data fetching, error handling, and presenting results.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:07fa473c59a44c7b4d4d8e50ec4c3871f0a5b5e3f2a72524ce836ae274003846"
+}

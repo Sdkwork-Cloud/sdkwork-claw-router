@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38477,
+  "uuid": "skill-clawhub-fly-io",
+  "skillKey": "clawhub-fly-io",
+  "name": "Fly.io",
+  "summary": "Deploy and manage applications on Fly.io using the flyctl CLI and Machines API. Use when asked to deploy an app, scale machines, check app status, view logs,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fly_io",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dwhite-oss",
+      "features": [
+        "Deploy and manage applications on Fly.io using the flyctl CLI and Machines API",
+        "Use when asked to deploy an app, scale machines, check app status, view logs,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fly-io@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256912923?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fly-io",
+      "url": "https://clawhub.ai/skills/fly-io"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fly-io",
+    "url": "https://clawhub.ai/skills/fly-io",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fly-io-ddffa04bd7079595.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fly-io@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fly-io-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f54eaa51452eff3af8b4d8a4b1db5e2766c2c010a2697fb4cbf1d20ae927e7bf",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T19:08:04.229Z"
+}

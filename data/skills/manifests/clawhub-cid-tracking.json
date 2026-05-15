@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66830,
+  "uuid": "skill-clawhub-cid-tracking",
+  "skillKey": "clawhub-cid-tracking",
+  "name": "Cid Tracking",
+  "summary": "支持抖音、快手、腾讯三平台广告CID生成、转化回传、ROI分析、异常监控及专业Excel报表，助力二类电商投流管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cid_tracking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhaohang497-tech",
+      "features": [
+        "支持抖音、快手、腾讯三平台广告CID生成、转化回传、ROI分析、异常监控及专业Excel报表，助力二类电商投流管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cid-tracking@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259231090?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cid-tracking",
+      "url": "https://clawhub.ai/skills/cid-tracking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cid-tracking",
+    "url": "https://clawhub.ai/skills/cid-tracking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cid-tracking-0b12505572afa52d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cid-tracking@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cid-tracking-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:497a18e73289302690a65291a306e296e33c99a3daafc758870e549c1d9670a9",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T15:50:40.383Z"
+}

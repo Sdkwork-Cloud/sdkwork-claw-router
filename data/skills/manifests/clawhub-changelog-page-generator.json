@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32815,
+  "uuid": "skill-clawhub-changelog-page-generator",
+  "skillKey": "clawhub-changelog-page-generator",
+  "name": "changelog-page-generator",
+  "summary": "When the user wants to create, optimize, or structure a changelog or release notes page. Also use when the user mentions \"changelog,\" \"release notes,\" \"what'...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.changelog_page_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to create, optimize, or structure a changelog or release notes page",
+        "Also use when the user mentions \"changelog,\" \"release notes,\" \"what'..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/changelog-page-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "changelog-page-generator",
+      "url": "https://clawhub.ai/skills/changelog-page-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "changelog-page-generator",
+    "url": "https://clawhub.ai/skills/changelog-page-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/changelog-page-generator-335d2ef354cb52ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/changelog-page-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-changelog-page-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a973e76a95be3a35fba3792fcd6ff1e094f9a4e2410fee798b98b8b209f2bbc1",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T09:35:30.490Z"
+}

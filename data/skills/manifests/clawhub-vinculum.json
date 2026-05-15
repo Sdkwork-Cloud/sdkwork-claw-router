@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9989,
+  "uuid": "skill-clawhub-vinculum",
+  "skillKey": "clawhub-vinculum",
+  "name": "Vinculum - Shared Consciousness",
+  "summary": "Shared consciousness between Clawdbot instances. Links multiple bots into a collective, sharing memories, activities, and decisions in real-time over local network using Gun.js P2P sync.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vinculum",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Koba42Corp",
+      "features": [
+        "Shared consciousness between Clawdbot instances",
+        "Links multiple bots into a collective, sharing memories, activities, and decisions in real-time."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vinculum@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76798369?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vinculum",
+      "url": "https://clawhub.ai/skills/vinculum"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vinculum",
+    "url": "https://clawhub.ai/skills/vinculum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vinculum-878aefe3f235bb53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vinculum@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vinculum-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14a6046d64ca6adde6e42ccd40290b14dd6bb31de52e927db60f9c66537833dc",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T23:21:53.759Z"
+}

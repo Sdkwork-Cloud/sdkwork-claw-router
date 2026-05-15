@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ctf-ai-ml@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctf_ai_ml",
+  "skill": {
+    "id": 33543,
+    "skillKey": "clawhub-ctf-ai-ml",
+    "name": "Ctf Ai Ml"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctf-ai-ml",
+    "url": "https://clawhub.ai/skills/ctf-ai-ml",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctf-ai-ml-811a1deb715ecd9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides AI and machine learning techniques for CTF challenges. Use when attacking ML models, crafting adversarial examples, performing model extraction, pro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gandli",
+      "userId": "s17c214vqwcqpk2wczqpbmyngd83xsas",
+      "displayName": "gandli",
+      "image": "https://avatars.githubusercontent.com/u/85359251?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774845540522,
+      "changelog": "Initial release for ctf-ai-ml skill\n\n- Provides a comprehensive quick reference for AI and machine learning techniques relevant to CTF challenges.\n- Covers model analysis, adversarial example generation, LLM attacks, model extraction, membership inference, and gradient-based attacks.\n- Includes prerequisite package installation commands and platform-specific tips.\n- Adds practical one-liner commands for inspecting models, performing prompt injections, and testing adversarial robustness.\n- Outlines pivot points to other skills when the challenge type changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f4539dcf037d83a9dd46eb6cdeef40122dc6d434c1cfa9c6ee487c5ad65a993b"
+}

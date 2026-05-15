@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-father@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_father",
+  "skill": {
+    "id": 62451,
+    "skillKey": "clawhub-agent-father",
+    "name": "agent-father"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-father",
+    "url": "https://clawhub.ai/skills/agent-father",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-father-627d2317d652b1c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "创建和管理 AI Agent/员工的全流程工具。支持一键创建 Agent、飞书群组、工作区配置、员工入职。自动从 openclaw.json 读取配置。使用场景：(1) 创建新 Agent/员工，(2) 批量入职，(3) 群组配置，(4) 岗前培训，(5) 员工管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meichuanyi",
+      "userId": "s17fs80z5n1s94me082qqqyg9985a58e",
+      "displayName": "meichuanyi",
+      "image": "https://avatars.githubusercontent.com/u/35057768?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 653,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772551668705,
+      "changelog": "Initial release introducing a full workflow tool for creating and managing AI Agent/employees, with automated scripting support.\n\n- Added shell scripts for one-click creation, batch onboarding, Feishu group management, and offboarding.\n- Introduced template-based agent configuration (IDENTITY.md, SOUL.md, agent.json) with auto population from openclaw.json.\n- Provided sample templates, CSVs, and quickstart/quickref documentation.\n- Included troubleshooting, naming rules, and step-by-step command usage in docs.\n- Removed legacy content focused on philosophy/personality; shifted to practical onboarding and management tools.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a3ea35119403cd4e061c6aeb04a549e3b5e929407e283040fd51001387b70177"
+}

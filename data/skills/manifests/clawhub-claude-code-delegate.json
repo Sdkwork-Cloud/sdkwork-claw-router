@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15366,
+  "uuid": "skill-clawhub-claude-code-delegate",
+  "skillKey": "clawhub-claude-code-delegate",
+  "name": "Claude Code Delegate",
+  "summary": "Delegate programming tasks to Claude Code CLI",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_delegate",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenhab03",
+      "features": [
+        "Delegate programming tasks to Claude Code CLI"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-delegate@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18511646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-delegate",
+      "url": "https://clawhub.ai/skills/claude-code-delegate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-delegate",
+    "url": "https://clawhub.ai/skills/claude-code-delegate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-delegate-d30126ebcc0b246f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-delegate@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-delegate-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:324e796c11c0eda4597cc66fe70cfd78780f182b5794a864aec12d7e57a4c5a3",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T12:01:32.860Z"
+}

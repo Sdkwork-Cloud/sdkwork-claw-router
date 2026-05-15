@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/invoice-merger@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_merger",
+  "skill": {
+    "id": 67652,
+    "skillKey": "clawhub-invoice-merger",
+    "name": "invoice-merger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-merger",
+    "url": "https://clawhub.ai/skills/invoice-merger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-merger-47a3ed7cb524b420.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "合并发票文件。PDF 按两两上下排版，图片按四宫格排版，统一裁剪线与安全边距，输出到 YYYYMMDD--已合并 目录，重复执行会自动跳过历史合并文件并按编号继续生成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cdk1025",
+      "userId": "s17adgneynd3d7v3enyrjjvwth83gm9g",
+      "displayName": "cdk1025",
+      "image": "https://avatars.githubusercontent.com/u/58164432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774589066335,
+      "changelog": "支持跨平台自动打开输出文件",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8b56b7bdaf636d45dae604b58687c33202826cd5e2c9343f34b341e4aeef1e0"
+}

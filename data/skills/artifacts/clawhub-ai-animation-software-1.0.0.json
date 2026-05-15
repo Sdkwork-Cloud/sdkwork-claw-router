@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-animation-software@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_animation_software",
+  "skill": {
+    "id": 45444,
+    "skillKey": "clawhub-ai-animation-software",
+    "name": "Ai Animation Software"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-animation-software",
+    "url": "https://clawhub.ai/skills/ai-animation-software",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-animation-software-4ae5e8def6f93828.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get animated video clips ready to post, without touching a single slider. Upload your images or text (PNG, JPG, MP4, GIF, up to 500MB), say something like \"a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776358795669,
+      "changelog": "AI Animation Software skill — initial release.\n\n- Generate animated videos from user-uploaded images or text, with automatic motion and transitions.\n- Supports common file types (PNG, JPG, MP4, GIF, etc.) up to 500MB.\n- Streamlined cloud-based processing with simple setup and free credits for new users.\n- Action routing based on user intent (generate, edit, export, check credits, etc.).\n- Download high-quality 1080p MP4 videos, ready for posting.\n- Includes robust error handling, session management, and helpful workflow tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76ea5571751d3370b25e736cd88c87a29769a01e90cf2c0879dbda6d70a9e562"
+}

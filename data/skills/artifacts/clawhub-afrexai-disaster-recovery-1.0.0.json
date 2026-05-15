@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-disaster-recovery@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_disaster_recovery",
+  "skill": {
+    "id": 18106,
+    "skillKey": "clawhub-afrexai-disaster-recovery",
+    "name": "IT Disaster Recovery Plan Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-disaster-recovery",
+    "url": "https://clawhub.ai/skills/afrexai-disaster-recovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-disaster-recovery-390ef30cefca575a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates detailed IT disaster recovery plans with RTO/RPO targets, failover procedures, backup strategies, communication plans, testing schedules, and cost..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 698,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771073015439,
+      "changelog": "afrexai-disaster-recovery v1.0.0\n\n- Initial release of an IT Disaster Recovery Plan generator.\n- Generates complete, actionable DR plans: infrastructure, data, applications, and communications.\n- Covers RTO/RPO targets, risk assessment, recovery tiers, failover and backup runbooks, testing schedules, cost modeling, and compliance mapping.\n- Designed for compliance documentation, outage retrospectives, team onboarding, and annual DR reviews.\n- Outputs include detailed step-by-step procedures, CLI examples, risk flagging, cost estimates, and controls mapping for SOC 2, ISO 27001, HIPAA, PCI DSS.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dd01912443173b64fc5f7b09b534faf43f98550ff7bb5bc434adb0c2c04671fc"
+}

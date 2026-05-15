@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/basic-plumbing-troubleshooting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.basic_plumbing_troubleshooting",
+  "skill": {
+    "id": 41097,
+    "skillKey": "clawhub-basic-plumbing-troubleshooting",
+    "name": "Basic Plumbing Troubleshooting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "basic-plumbing-troubleshooting",
+    "url": "https://clawhub.ai/skills/basic-plumbing-troubleshooting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/basic-plumbing-troubleshooting-d47416d31cee7e39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Step-by-step plumbing fixes for common household problems without calling a plumber. Use when someone has a clogged sink or toilet, running toilet, dripping..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "howtousehumans",
+      "userId": "s17ftae1txxqa39a87v3p6ta1583js3w",
+      "displayName": "HowToUseHumans",
+      "image": "https://avatars.githubusercontent.com/u/151727669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774456412145,
+      "changelog": "Basic Plumbing Troubleshooting 1.0.0\n\n- Initial release.\n- Step-by-step instructions to fix clogged sinks or toilets, running toilets, dripping faucets, and minor leaks yourself.\n- Includes clear criteria for when to stop and call a professional plumber.\n- Focus on safety: helps users locate water shut-off valves before emergencies.\n- Methods use readily available tools and non-chemical solutions; avoids damage from harsh cleaners.\n- Draws on expert-reviewed sources like This Old House, Family Handyman, and official plumbing codes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ca8a9eb3222bb53b1c19e2cb65e5dcecc0d1a09f4b43f5ff911cecd4e066187"
+}

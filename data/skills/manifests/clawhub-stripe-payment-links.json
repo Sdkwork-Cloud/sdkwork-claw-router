@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35084,
+  "uuid": "skill-clawhub-stripe-payment-links",
+  "skillKey": "clawhub-stripe-payment-links",
+  "name": "Stripe Payment Links",
+  "summary": "Stripe Payment Links integration. Manage data, records, and automate workflows. Use when the user wants to interact with Stripe Payment Links data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stripe_payment_links",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Stripe Payment Links integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Stripe Payment Links data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stripe-payment-links@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stripe-payment-links",
+      "url": "https://clawhub.ai/skills/stripe-payment-links"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stripe-payment-links",
+    "url": "https://clawhub.ai/skills/stripe-payment-links",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stripe-payment-links-50f2ececc3a377b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stripe-payment-links@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-stripe-payment-links-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:215003c1ea09d9c373bb10ad7660e3729797b029947c7195d11f91f060011d48",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:47:48.499Z"
+}

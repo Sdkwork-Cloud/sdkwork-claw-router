@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-maker-chenxi@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_maker_chenxi",
+  "skill": {
+    "id": 66060,
+    "skillKey": "clawhub-skill-maker-chenxi",
+    "name": "Skill Maker (ChenXi)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-maker-chenxi",
+    "url": "https://clawhub.ai/skills/skill-maker-chenxi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-maker-chenxi-dcf1a1baaff41196.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用于根据对话记忆提炼可复用工作流并生成高质量 SKILL.md，适用于“从聊天沉淀方法论”“把一次性操作升级为可复用技能”场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenxi-hub",
+      "userId": "s17dwbd0e5zm3nv63bgyvp9qqx84cz5t",
+      "displayName": "ChenXi-hub",
+      "image": "https://avatars.githubusercontent.com/u/176729112?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 664,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772698327373,
+      "changelog": "v1.2.0: adopt popular skill-maker forging framework, add 5-stage flow, decision tree, self-check gates, and strict output path rules.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:362db9aa7f95cc81ca81623917d9625d632b48139c764f7625a5423b6f7b6089"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ghostfolio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghostfolio",
+  "skill": {
+    "id": 27953,
+    "skillKey": "clawhub-ghostfolio",
+    "name": "Ghostfolio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghostfolio",
+    "url": "https://clawhub.ai/skills/ghostfolio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghostfolio-8b76b86ba4ac83c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and query Ghostfolio portfolio data (performance, holdings, dividends) using API endpoints and token auth patterns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nsimonfr",
+      "userId": "s17c58y8fqqksnq374nqymfa6983eyzc",
+      "displayName": "nSimon (Nicolas)",
+      "image": "https://avatars.githubusercontent.com/u/13413730?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772723203266,
+      "changelog": "Initial release of Ghostfolio skill.\n\n- Enables querying Ghostfolio portfolio data: performance, holdings, and dividends via API.\n- Supports both direct bearer and anonymous token exchange authentication modes.\n- Provides example `curl` commands and troubleshooting guidance.\n- Relies on `GHOSTFOLIO_TOKEN` environment variable for authentication.\n- Supports custom timezone via `GHOSTFOLIO_TIMEZONE`.\n- Includes connectivity probing scripts and common error diagnostics.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dab807172d7280fd45c5308fa2b3392c5d3a7428c46205069b74f963a9040112"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57475,
+  "uuid": "skill-clawhub-wol",
+  "skillKey": "clawhub-wol",
+  "name": "WOL",
+  "summary": "Wake-on-LAN (WOL) skill to remotely wake computers and manage device configurations. Use when user says: (1) 帮我唤醒XXX电脑 or 唤醒XXX (wake a specific computer by...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wol",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lroyia",
+      "features": [
+        "Wake-on-LAN (WOL) skill to remotely wake computers and manage device configurations",
+        "Use when user says: (1) 帮我唤醒XXX电脑 or 唤醒XXX (wake a specific computer by..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wol@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24525315?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wol",
+      "url": "https://clawhub.ai/skills/wol"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wol",
+    "url": "https://clawhub.ai/skills/wol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wol-a3da79f283bcc136.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wol@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wol-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff9b4e6094855c07ee66763f7b1135d187cc0e81ad3deb52064ca3b58846fef8",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T05:37:38.281Z"
+}

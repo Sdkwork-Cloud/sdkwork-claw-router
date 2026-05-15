@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38285,
+  "uuid": "skill-clawhub-oatda-generate-image",
+  "skillKey": "clawhub-oatda-generate-image",
+  "name": "OATDA Generate Image",
+  "summary": "Generate images from text descriptions using AI models through OATDA's unified API. Triggers when the user wants to generate, create, or produce AI images, a...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oatda_generate_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "devcsde",
+      "features": [
+        "Generate images from text descriptions using AI models through OATDA's unified API",
+        "Triggers when the user wants to generate, create, or produce AI images, a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oatda-generate-image@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29840319?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oatda-generate-image",
+      "url": "https://clawhub.ai/skills/oatda-generate-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oatda-generate-image",
+    "url": "https://clawhub.ai/skills/oatda-generate-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oatda-generate-image-6f7b372e362d600c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oatda-generate-image@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-oatda-generate-image-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03af78b79516c921e445982ca39f4e197f32eff546b1e075b909b01234ff14c4",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T12:14:28.755Z"
+}

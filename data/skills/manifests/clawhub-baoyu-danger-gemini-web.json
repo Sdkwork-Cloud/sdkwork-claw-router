@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13270,
+  "uuid": "skill-clawhub-baoyu-danger-gemini-web",
+  "skillKey": "clawhub-baoyu-danger-gemini-web",
+  "name": "Baoyu Danger Gemini Web",
+  "summary": "Generates images and text via reverse-engineered Gemini Web API. Supports text generation, image generation from prompts, reference images for vision input,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baoyu_danger_gemini_web",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "逝去小时光",
+      "features": [
+        "Generates images and text via reverse-engineered Gemini Web API",
+        "Supports text generation, image generation from prompts, reference images for vision input,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baoyu-danger-gemini-web@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14144996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baoyu-danger-gemini-web",
+      "url": "https://clawhub.ai/skills/baoyu-danger-gemini-web"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baoyu-danger-gemini-web",
+    "url": "https://clawhub.ai/skills/baoyu-danger-gemini-web",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baoyu-danger-gemini-web-f77e40dfb122d7d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baoyu-danger-gemini-web@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baoyu-danger-gemini-web-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:201664292a11f0c1b60e3952eecb57c8f5fbbe20c00595760b0e1263dc702a4a",
+      "artifactSizeBytes": 2622
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T01:45:25.756Z"
+}

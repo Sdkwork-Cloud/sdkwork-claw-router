@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/explore-singapore@3.2.1",
+  "version": "3.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.explore_singapore",
+  "skill": {
+    "id": 53221,
+    "skillKey": "clawhub-explore-singapore",
+    "name": "Explore Singapore"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "explore-singapore",
+    "url": "https://clawhub.ai/skills/explore-singapore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/explore-singapore-c226e1c6659513c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan your Singapore visit — Marina Bay Sands, Gardens by the Bay, Sentosa Island, hawker center food trails, and multicultural neighborhood walks. Also suppo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.2.1",
+      "createdAt": 1775702026339,
+      "changelog": "Bug fixes and improvements",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2ec25bd1c06f1d244430bf8671de52e7fba3138a34f2d4c1e9ccef41398d87c"
+}

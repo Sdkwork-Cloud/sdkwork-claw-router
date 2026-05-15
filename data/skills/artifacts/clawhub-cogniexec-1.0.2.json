@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cogniexec@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cogniexec",
+  "skill": {
+    "id": 72254,
+    "skillKey": "clawhub-cogniexec",
+    "name": "Cogniexec"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cogniexec",
+    "url": "https://clawhub.ai/skills/cogniexec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cogniexec-01ca09a4e95010db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "认知执行技能 — 整合认知套件与执行框架两大能力层，并配备编排引擎。 认知层：四种思维操作码（直用/改进/迁移/构建）覆盖所有思考任务； 执行层：大语言模型 + 命令执行工具，自动化代码生成与脚本执行； 编排引擎：将所有操作统一为基元，自由组合为任意复杂度的执行链条。 此技能应用于认知与代码执行类任务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangjiaocheng",
+      "userId": "s175zq13kt63ypfry5rgxh1pv18440m2",
+      "displayName": "波动几何",
+      "image": "https://avatars.githubusercontent.com/u/25478397?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775805578789,
+      "changelog": "认知执行技能。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c5ecc1adc6f803932298bacd85305bd1e18240c01f875127a6581a5d21a206b"
+}

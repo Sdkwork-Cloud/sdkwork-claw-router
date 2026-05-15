@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/citation-injector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.citation_injector",
+  "skill": {
+    "id": 56634,
+    "skillKey": "clawhub-citation-injector",
+    "name": "Citation Injector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "citation-injector",
+    "url": "https://clawhub.ai/skills/citation-injector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/citation-injector-3ba5601e46663aa9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Apply a `citation-diversifier` budget report by injecting *in-scope* citations into an existing draft (NO NEW FACTS), so the run passes the global unique-cit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "willoscar",
+      "userId": "publishers:willoscar",
+      "displayName": "WILLOSCAR",
+      "image": "https://avatars.githubusercontent.com/u/63443351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773926985870,
+      "changelog": "Initial release of the citation-injector skill:\n\n- Injects in-scope citations into an existing draft according to a citation budget report, with no new facts or citation dumps.\n- Ensures global unique-citation targets are met, reducing over-reuse and avoiding automated-sounding citation lists.\n- Only uses citation keys listed for each H3 and present in the reference file.\n- Provides detailed placement and stylistic guidance for evidence-neutral, paper-voice injections.\n- Outputs an updated draft and injection report indicating all changes and pass/fail status.\n- Includes an optional deterministic script for automated application and validation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc2d7bbdb3bee6ebe82bb737ec4b9a6f808e9543c8e6bab46553cd36db658d9b"
+}

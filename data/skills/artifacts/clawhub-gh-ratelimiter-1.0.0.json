@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gh-ratelimiter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gh_ratelimiter",
+  "skill": {
+    "id": 42680,
+    "skillKey": "clawhub-gh-ratelimiter",
+    "name": "Ratelimiter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gh-ratelimiter",
+    "url": "https://clawhub.ai/skills/gh-ratelimiter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gh-ratelimiter-cca7eb9959784a61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "In-memory sliding window rate limiter for AI agents. Create rate limits per API key, check quota before calling, consume requests, reset, and list all limits..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mirni",
+      "userId": "s1711srsc0t5e7tx4tkwpmygw584bfmq",
+      "displayName": "mirni",
+      "image": "https://avatars.githubusercontent.com/u/13551232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776104715881,
+      "changelog": "Initial release of gh-ratelimiter.\n\n- Provides an in-memory sliding window rate limiter with REST API.\n- Allows creation and management of per-key API rate limits.\n- Includes endpoints to check quota, consume requests, reset, and list limits.\n- Helps AI agents avoid exceeding external API rate limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:933bdfa201ca0052d9d00bd3c2c823a9e83a50508d0f7de53ee319d5c0b6b25e"
+}

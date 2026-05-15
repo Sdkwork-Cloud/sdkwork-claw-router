@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43038,
+  "uuid": "skill-clawhub-test-02",
+  "skillKey": "clawhub-test-02",
+  "name": "Test",
+  "summary": "Automatically posts curated Reddit discussions on open source tools and resources for OpenClaw in a daily subreddit sequence.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_02",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sébastien Conejo",
+      "features": [
+        "Automatically posts curated Reddit discussions on open source tools and resources for OpenClaw."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-02@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11723962?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-02",
+      "url": "https://clawhub.ai/skills/test-02"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-02",
+    "url": "https://clawhub.ai/skills/test-02",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-02-96fcb840cd5494cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-02@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-02-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0d5641e54c3c228463c481f7e1f21f7e8bc929fdaf67e6313b99f11211ef057",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T00:27:01.223Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/echoflow-banana@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.echoflow_banana",
+  "skill": {
+    "id": 62017,
+    "skillKey": "clawhub-echoflow-banana",
+    "name": "使用Nano Banana Pro（Gemini 3 Pro Image）通过第三方中转API站清云EchoFlow API生成或编辑图像。支持图像生成、图像编辑和多图像合成（最多14张图像）。当用户请求生成图像、创建图像、编辑图像或组合图像时使用。关键."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "echoflow-banana",
+    "url": "https://clawhub.ai/skills/echoflow-banana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/echoflow-banana-272f56380c53bdaf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过清云 EchoFlow API 生成和编辑图片（基于 Nano Banana Pro / Gemini 3 Pro Image）。 支持图片生成、单图编辑、多图合成（最多14张）、多种分辨率（1K/2K/4K）。 触发词：图像生成、图片生成、AI绘画、生成美女、生成图片、Nano Banana Pro、Gem..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zjx15296694073",
+      "userId": "s177yqpc6zjy3ekxf9c9jzgrx183rt7b",
+      "displayName": "清云AI",
+      "image": "https://avatars.githubusercontent.com/u/100604536?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 297,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774801025129,
+      "changelog": "- Documentation updated to be fully bilingual (Chinese + English) for all sections.\n- Descriptions, requirements, setup instructions, parameters, model/resolution info, security notes, and examples are now provided in both languages.\n- Trigger keywords expanded with additional Chinese terms.\n- No code or functionality changes—documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fbb184f1a729aa675f0ebaf43b63318bd7fac4031a04cfe8c6f5fbad0bc6eabc"
+}

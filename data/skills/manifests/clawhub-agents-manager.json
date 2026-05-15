@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9126,
+  "uuid": "skill-clawhub-agents-manager",
+  "skillKey": "clawhub-agents-manager",
+  "name": "Agent manager",
+  "summary": "Manage Clawdbot agents: discover, profile, track capabilities, define routing hierarchy, and assign tasks. Use when: (1) Listing available agents, (2) Profiling agent capabilities and communication methods, (3) Defining agent routing (can_.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agents_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "agentandbot",
+      "features": [
+        "Manage Clawdbot agents: discover, profile, track capabilities, define routing hierarchy, and as.",
+        "Use when: (1) Listing available agents, (2) Profiling agent capabilities and communication meth."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agents-manager@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258481583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agents-manager",
+      "url": "https://clawhub.ai/skills/agents-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agents-manager",
+    "url": "https://clawhub.ai/skills/agents-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agents-manager-281f44ce730c988d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agents-manager@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-agents-manager-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b2156ae1d6368f97c94c9f5438e7374ef3ea62f08b9d2b7d00a2f870f036b3b",
+      "artifactSizeBytes": 2611
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T23:29:07.665Z"
+}

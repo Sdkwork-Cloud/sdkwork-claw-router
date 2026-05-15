@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14295,
+  "uuid": "skill-clawhub-flight",
+  "skillKey": "clawhub-flight",
+  "name": "Flight",
+  "summary": "Search, compare, book, and manage flights with price tracking, multi-platform comparison, and loyalty optimization.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flight",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Search, compare, book, and manage flights with price tracking, multi-platform comparison, and l."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flight@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flight",
+      "url": "https://clawhub.ai/skills/flight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flight",
+    "url": "https://clawhub.ai/skills/flight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flight-03b6b3e9163de296.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flight@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-flight-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee23fe4b35b63b9187269587f4b68a7d1ae4ad96a1d0cb7efb9be6cca061ef75",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T19:35:04.129Z"
+}

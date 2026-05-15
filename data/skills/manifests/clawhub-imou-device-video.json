@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58441,
+  "uuid": "skill-clawhub-imou-device-video",
+  "skillKey": "clawhub-imou-device-video",
+  "name": "Imou Open Device Video",
+  "summary": "imou / Imou / 乐橙 / lechange 设备视频与录像技能。支持实时预览 live HLS、本地/云录像片段查询、录像回放 HLS。 Imou/Lechange device video skill for live HLS, local/cloud record clips, and playb...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imou_device_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Imou-OpenPlatform",
+      "features": [
+        "imou / Imou / 乐橙 / lechange 设备视频与录像技能。支持实时预览 live HLS、本地/云录像片段查询、录像回放 HLS。 Imou/Lechange device."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/imou-device-video@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/188283209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "imou-device-video",
+      "url": "https://clawhub.ai/skills/imou-device-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imou-device-video",
+    "url": "https://clawhub.ai/skills/imou-device-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imou-device-video-72f99680f17d2e5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/imou-device-video@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-imou-device-video-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fe87736592d8510ab8ca3cbb3bb6dc335848116638ee4af686fb9025a9c1ab8",
+      "artifactSizeBytes": 2486
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T02:52:43.682Z"
+}

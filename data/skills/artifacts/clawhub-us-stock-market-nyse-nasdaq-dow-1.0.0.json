@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/us-stock-market-nyse-nasdaq-dow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.us_stock_market_nyse_nasdaq_dow",
+  "skill": {
+    "id": 40615,
+    "skillKey": "clawhub-us-stock-market-nyse-nasdaq-dow",
+    "name": "US Stock Market NYSE NASDAQ DOW"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "us-stock-market-nyse-nasdaq-dow",
+    "url": "https://clawhub.ai/skills/us-stock-market-nyse-nasdaq-dow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/us-stock-market-nyse-nasdaq-dow-e280dd4b9b37a0ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get US stock market data (NYSE, NASDAQ, and major indices) via FinanceAgent on OneKey Gateway."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ai-hub-admin",
+      "userId": "s17d1vfn6f6qk27s9f66nbe8ed83hcrr",
+      "displayName": "AI-Hub-Admin",
+      "image": "https://avatars.githubusercontent.com/u/184629057?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774883097168,
+      "changelog": "- Initial release of the US Stock Market NYSE/NASDAQ/DOW skill.\n- Provides US stock market data (including NYSE, NASDAQ, and major indices) through the OneKey Gateway.\n- Requires a OneKey Gateway API key for access.\n- Supports querying multiple stock symbols using standard US tickers.\n- Offers CLI and HTTP example commands for easy integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7a5c8a2dfaf59654c814e0db9894554d676f1694ea395a6e90d05db3e45a84f"
+}

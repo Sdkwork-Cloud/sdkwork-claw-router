@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "eridian",
+    "displayName": "Eridian",
+    "summary": "Runtime security hardening for OpenClaw agents. Protects against prompt injection, data exfiltration, credential leaks, and unauthorized operations. Use when setting up agent security, performing security audits, protecting credentials, preventing data leaks, hardening agent configurations, or defending against indirect prompt injection attacks. Complements pre-installation skill scanners by hardening the agent itself at runtime.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 879,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1770996744406,
+    "updatedAt": 1778385612802
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1770996744406,
+    "changelog": "Initial release: Adds carapace runtime hardening for OpenClaw agents.\n\n- Provides defense against prompt injection, data exfiltration, credential leaks, and unauthorized operations.\n- Enforces explicit confirmation for sensitive actions (file writes, execs, config changes, external navigation).\n- Introduces strict credential and data sharing protections, with exceptions only for explicit owner requests.\n- Supplies implementation resources: security rules for AGENTS.md, audit template, and reference attack patterns.\n- Supports browser allowlisting for domain-level navigation controls.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "iampaulpatterson-boop",
+    "userId": "s171ncwg8vrfj3yeecj0vm29jx84rvtq",
+    "displayName": "EridianCarapace",
+    "image": "https://avatars.githubusercontent.com/u/228373334?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.prompt_injection_instructions"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.prompt_injection_instructions",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778385612802
+  }
+}

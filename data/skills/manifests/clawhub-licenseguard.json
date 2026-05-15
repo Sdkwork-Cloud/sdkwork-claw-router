@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54025,
+  "uuid": "skill-clawhub-licenseguard",
+  "skillKey": "clawhub-licenseguard",
+  "name": "licenseguard",
+  "summary": "Open source license compliance scanner — catches copyleft, viral, and problematic licenses in your dependencies before they create legal risk",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.licenseguard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suhteevah",
+      "features": [
+        "Open source license compliance scanner — catches copyleft, viral, and problematic licenses in y."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/licenseguard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2342183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "licenseguard",
+      "url": "https://clawhub.ai/skills/licenseguard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "licenseguard",
+    "url": "https://clawhub.ai/skills/licenseguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/licenseguard-2fdec746438a570d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/licenseguard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-licenseguard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd17d1215946e3db75ea09845343c7910ec0d3979dfeb8e2b3af7c01873f5558",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T09:03:17.996Z"
+}

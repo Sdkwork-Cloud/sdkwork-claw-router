@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69268,
+  "uuid": "skill-clawhub-news-gongxiao",
+  "skillKey": "clawhub-news-gongxiao",
+  "name": "news-skill",
+  "summary": "每日新闻获取技能。通过 API 获取每日新闻摘要和详情，支持按日期查询、热点新闻排行、新闻详情阅读。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_gongxiao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Victoria",
+      "features": [
+        "每日新闻获取技能。通过 API 获取每日新闻摘要和详情，支持按日期查询、热点新闻排行、新闻详情阅读。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-gongxiao@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/178981575?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-gongxiao",
+      "url": "https://clawhub.ai/skills/news-gongxiao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-gongxiao",
+    "url": "https://clawhub.ai/skills/news-gongxiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-gongxiao-cc51e0a775da7082.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-gongxiao@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-gongxiao-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78711cbff78d50fb2b7443b9a2618276d314774c471fd4344d99a10038c1ea1f",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T04:40:25.527Z"
+}

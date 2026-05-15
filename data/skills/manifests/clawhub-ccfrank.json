@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64514,
+  "uuid": "skill-clawhub-ccfrank",
+  "skillKey": "clawhub-ccfrank",
+  "name": "ccfrank",
+  "summary": "查询会议/期刊的 CCF 等级。当用户提到 CCF 等级、论文评级、会议排名、期刊等级，或需要查询某个会议/期刊是 CCF-A/B/C 时使用此技能。支持通过会议简称（如 PLDI、ICSE）、全称、或 DBLP URL 查询。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccfrank",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "m2kar",
+      "features": [
+        "查询会议/期刊的 CCF 等级。当用户提到 CCF 等级、论文评级、会议排名、期刊等级，或需要查询某个会议/期刊是 CCF-A/B/C 时使用此技能。支持通过会议简称（如 PLDI、ICSE."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ccfrank@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16930652?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ccfrank",
+      "url": "https://clawhub.ai/skills/ccfrank"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccfrank",
+    "url": "https://clawhub.ai/skills/ccfrank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccfrank-677a13e1fd475243.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ccfrank@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ccfrank-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c06e6d8db3ab6887f92516605919f55f485b30d7fde091f85f343164b6914753",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T07:03:17.091Z"
+}

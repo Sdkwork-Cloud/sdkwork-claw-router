@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gateway-auto-rollback@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gateway_auto_rollback",
+  "skill": {
+    "id": 20605,
+    "skillKey": "clawhub-gateway-auto-rollback",
+    "name": "Gateway Auto-Rollback"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gateway-auto-rollback",
+    "url": "https://clawhub.ai/skills/gateway-auto-rollback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gateway-auto-rollback-75e3205e4ffd0f86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatic configuration rollback mechanism for OpenClaw Gateway. Provides three-layer protection: pre-modification backup, post-modification validation, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "halfmoon82",
+      "userId": "s173a0sd7rjbb7s3bsayc8607s83n58t",
+      "displayName": "halfmoon82",
+      "image": "https://avatars.githubusercontent.com/u/261569221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 517,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772315711076,
+      "changelog": "v1.1.0: Improved watch daemon with auto-exit on stability, universal path support, comprehensive test suite",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9cfb29fab238fe7fee13b524fb837a99dbe1a6a981794c2f077fc5acbad9ce69"
+}

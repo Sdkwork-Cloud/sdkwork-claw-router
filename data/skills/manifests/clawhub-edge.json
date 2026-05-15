@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11494,
+  "uuid": "skill-clawhub-edge",
+  "skillKey": "clawhub-edge",
+  "name": "Edge.Trade",
+  "summary": "Use when user asks about crypto tokens, trading, portfolios, or price alerts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lexomis",
+      "features": [
+        "Use when user asks about crypto tokens, trading, portfolios, or price alerts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95214604?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edge",
+      "url": "https://clawhub.ai/skills/edge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edge",
+    "url": "https://clawhub.ai/skills/edge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edge-a1cb100f57e971ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-edge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:529d1b0f255fae38c9e306c732f1212c7763b1ce95b953333f3fade9c241c475",
+      "artifactSizeBytes": 1842
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T10:36:33.690Z"
+}

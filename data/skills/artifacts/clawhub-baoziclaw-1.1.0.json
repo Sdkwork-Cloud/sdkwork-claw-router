@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baoziclaw@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baoziclaw",
+  "skill": {
+    "id": 55072,
+    "skillKey": "clawhub-baoziclaw",
+    "name": "Baoziclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baoziclaw",
+    "url": "https://clawhub.ai/skills/baoziclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baoziclaw-06358cb4a998852c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Solana prediction markets skill for Baozi — list markets, get odds, place bets, claim winnings"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marcusfranca12",
+      "userId": "s1728ja6yxamrkbyz2ye00tdg186ehy2",
+      "displayName": "marcusfranca12",
+      "image": "https://avatars.githubusercontent.com/u/96327869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 0,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778378691593,
+      "changelog": "**Added more tools and improved functionality in baozi-claw 1.1.0**\n\n- Expanded the toolset in index.ts, enabling more actions with Baozi prediction markets.\n- Improved features for listing markets, viewing odds, placing bets, checking portfolios, and claiming winnings.\n- Tool definitions are now richer and include better parameter validation.\n- Enhanced documentation in SKILL.md for easier installation and feature overview.\n- Updated handler logic for better error handling and output parsing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:357285ba527d0f8ef3e84951087616261eb2ceda5981a7949da1da29624fb40e"
+}

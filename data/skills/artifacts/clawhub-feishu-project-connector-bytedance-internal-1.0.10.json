@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-project-connector-bytedance-internal@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_project_connector_bytedance_internal",
+  "skill": {
+    "id": 59282,
+    "skillKey": "clawhub-feishu-project-connector-bytedance-internal",
+    "name": "Feishu Project(Meego) Connector - Bytedance Internal Version"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-project-connector-bytedance-internal",
+    "url": "https://clawhub.ai/skills/feishu-project-connector-bytedance-internal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-project-connector-bytedance-internal-861cd7d535cf0f58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 MCP 服务连接 Meego（飞书项目字节内网版），支持 OAuth 认证，可查询和管理工作项、视图等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wadxm",
+      "userId": "publishers:wadxm",
+      "displayName": "wadxm",
+      "image": "https://avatars.githubusercontent.com/u/9190997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 702,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1773759500050,
+      "changelog": "Version 1.0.10\n\n- Clarified and strengthened credential management and security instructions in the documentation.\n- Updated agent behavior guidelines to require explicit user confirmation for credential operations.\n- Added detailed step-by-step instructions for remote OAuth scenarios.\n- Improved safety warnings and cleanup requirements for sensitive files.\n- Updated metadata install section: revised binaries (mcporter → meego-mcporter, quoted package name).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:798669e2381452a587b43cf2f07b5b764441c98a87c7f6784e0aa0e7489957eb"
+}

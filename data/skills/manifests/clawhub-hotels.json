@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72961,
+  "uuid": "skill-clawhub-hotels",
+  "skillKey": "clawhub-hotels",
+  "name": "hotel",
+  "summary": "分贝通酒店预定助手，实时查询搜索酒店、展示酒店列表、查询酒店房型、展示房型产品和报价、预定酒店、查看订单、取消订单、查看酒店基础信息和酒店评论信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotels",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fenbeitong-trip",
+      "features": [
+        "分贝通酒店预定助手，实时查询搜索酒店、展示酒店列表、查询酒店房型、展示房型产品和报价、预定酒店、查看订单、取消订单、查看酒店基础信息和酒店评论信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hotels@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265222913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hotels",
+      "url": "https://clawhub.ai/skills/hotels"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotels",
+    "url": "https://clawhub.ai/skills/hotels",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotels-5b6c989793686afe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hotels@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hotels-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3799d86fc41d6dc3cbd784a2a165f9b1a196b351ba6b3ad36ed65bbd418d2513",
+      "artifactSizeBytes": 2881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T05:48:38.295Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50892,
+  "uuid": "skill-clawhub-maxclaw-helper",
+  "skillKey": "clawhub-maxclaw-helper",
+  "name": "MaxClaw Helper",
+  "summary": "Usage guidance and runtime diagnostics for MaxClaw / OpenClaw. Activate when: (1) User asks how to use a feature — e.g. 'how to enable Feishu long polling',...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maxclaw_helper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kris",
+      "features": [
+        "Usage guidance and runtime diagnostics for MaxClaw / OpenClaw",
+        "Activate when: (1) User asks how to use a feature — e.g",
+        "'how to enable Feishu long polling',..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maxclaw-helper@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/174239318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maxclaw-helper",
+      "url": "https://clawhub.ai/skills/maxclaw-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maxclaw-helper",
+    "url": "https://clawhub.ai/skills/maxclaw-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maxclaw-helper-853b3892497afaca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maxclaw-helper@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-maxclaw-helper-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e24505b3bf258bb5f1e8c5fc1ad993fabdd4808aee86f121a11ddde046f5a8e0",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T03:34:59.942Z"
+}

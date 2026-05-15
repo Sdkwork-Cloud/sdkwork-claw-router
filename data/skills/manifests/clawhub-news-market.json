@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60064,
+  "uuid": "skill-clawhub-news-market",
+  "skillKey": "clawhub-news-market",
+  "name": "News Market",
+  "summary": "专注中国A股市场资讯查询。聚合热点要闻、科技媒体、证券网站、官方渠道等资讯，支持关键词包含/排除过滤（通过https://skillsmp.com/zh/skills/countbot-ai-countbot-skills-news-skill-md改造而成的）。",
+  "version": "1.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_market",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mc82465",
+      "features": [
+        "专注中国A股市场资讯查询。聚合热点要闻、科技媒体、证券网站、官方渠道等资讯，支持关键词包含/排除过滤（通过https://skillsmp.com/zh/skills/countbot-ai."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-market@1.1.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43158816?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-market",
+      "url": "https://clawhub.ai/skills/news-market"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-market",
+    "url": "https://clawhub.ai/skills/news-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-market-84817dd1ce9c8b14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-market@1.1.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-market-1.1.9.json",
+      "version": "1.1.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbf8fc9dc7aae3c1b531aa71212d5953eb0c252ff8972e527bdc069c6e73d7b4",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T14:18:19.227Z"
+}

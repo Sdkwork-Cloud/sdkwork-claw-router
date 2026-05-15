@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27936,
+  "uuid": "skill-clawhub-willhaben-search",
+  "skillKey": "clawhub-willhaben-search",
+  "name": "Willhaben Search",
+  "summary": "Willhaben marketplace search API for finding listings, browsing categories, and getting listing details on Austria's largest classifieds platform.",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.willhaben_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Saimo",
+      "features": [
+        "Willhaben marketplace search API for finding listings, browsing categories, and getting listing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/willhaben-search@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5740385?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "willhaben-search",
+      "url": "https://clawhub.ai/skills/willhaben-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "willhaben-search",
+    "url": "https://clawhub.ai/skills/willhaben-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/willhaben-search-0c3b48774bc34dad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/willhaben-search@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-willhaben-search-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01579bfa5ed52553c4b1931da20c21c19628d7ecc69c15303f148c670aa10286",
+      "artifactSizeBytes": 2172
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T05:16:31.628Z"
+}

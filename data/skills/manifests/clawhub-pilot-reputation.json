@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39155,
+  "uuid": "skill-clawhub-pilot-reputation",
+  "skillKey": "clawhub-pilot-reputation",
+  "name": "Pilot Reputation",
+  "summary": "Advanced reputation analytics and trend visualization for Pilot Protocol agents. Use this skill when: 1. You need to track polo score trends over time for ag...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_reputation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Advanced reputation analytics and trend visualization for Pilot Protocol agents",
+        "Use this skill when: 1",
+        "You need to track polo score trends over time for ag..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-reputation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-reputation",
+      "url": "https://clawhub.ai/skills/pilot-reputation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-reputation",
+    "url": "https://clawhub.ai/skills/pilot-reputation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-reputation-6db7618e378c1842.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-reputation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-reputation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7fab4bdd05e2689e0283085e0da491ce5aec096f37974621572c142e4fca7e9",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T08:28:24.699Z"
+}

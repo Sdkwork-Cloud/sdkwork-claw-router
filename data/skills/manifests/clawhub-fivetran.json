@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54665,
+  "uuid": "skill-clawhub-fivetran",
+  "skillKey": "clawhub-fivetran",
+  "name": "Fivetran",
+  "summary": "Fivetran — manage connectors, destinations, sync status, and groups via REST API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fivetran",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Fivetran — manage connectors, destinations, sync status, and groups via REST API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fivetran@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fivetran",
+      "url": "https://clawhub.ai/skills/fivetran"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fivetran",
+    "url": "https://clawhub.ai/skills/fivetran",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fivetran-b35a1639496c6390.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fivetran@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fivetran-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2ab22d52b226e08740379a357fd652500e0f5fe634a1d0fdc7b7a2de71c4b6a",
+      "artifactSizeBytes": 2245
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T00:53:29.895Z"
+}

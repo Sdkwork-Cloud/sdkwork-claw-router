@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46505,
+  "uuid": "skill-clawhub-airport-lounge",
+  "skillKey": "clawhub-airport-lounge",
+  "name": "airport-lounge",
+  "summary": "Search for flights with airport lounge access and premium terminal options. Also supports: flight booking, hotel reservation, train tickets, attraction ticke...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airport_lounge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dingtom336-gif",
+      "features": [
+        "Search for flights with airport lounge access and premium terminal options",
+        "Also supports: flight booking, hotel reservation, train tickets, attraction ticke..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/airport-lounge@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256118512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "airport-lounge",
+      "url": "https://clawhub.ai/skills/airport-lounge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airport-lounge",
+    "url": "https://clawhub.ai/skills/airport-lounge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airport-lounge-5bb972e2f8c2aeae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/airport-lounge@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-airport-lounge-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92991ea1eff92dd0dc1136c11019cc42d5bdae3fc0aac794e428b72e71aad1d7",
+      "artifactSizeBytes": 2567
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T06:20:12.659Z"
+}

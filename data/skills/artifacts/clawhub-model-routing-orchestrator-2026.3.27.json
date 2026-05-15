@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-routing-orchestrator@2026.3.27",
+  "version": "2026.3.27",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_routing_orchestrator",
+  "skill": {
+    "id": 19901,
+    "skillKey": "clawhub-model-routing-orchestrator",
+    "name": "Model Routing Orchestrator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-routing-orchestrator",
+    "url": "https://clawhub.ai/skills/model-routing-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-routing-orchestrator-a03f17b1dfdd3a14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Route each user request to the most cost-effective model or multi-model workflow based on task type, complexity, risk, latency, budget, tool needs, and verif..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stephensu66",
+      "userId": "s176hf39hrx3v04rsjk8k9as2183mmsc",
+      "displayName": "stephensu66",
+      "image": "https://avatars.githubusercontent.com/u/143712578?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2026.3.27",
+      "createdAt": 1774531190565,
+      "changelog": "No user-visible changes. Version bumped from 2026.3.26 to 2026.3.27 with no file or documentation updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb308f3d7025bb72fd3d4da8fc0e9d9e79a20268b14ac108aaf47cf4a995b175"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9629,
+  "uuid": "skill-clawhub-video-agent",
+  "skillKey": "clawhub-video-agent",
+  "name": "Video Agent (Deprecated)",
+  "summary": "[DEPRECATED — uses outdated v1/v2 endpoints] Use `create-video` for prompt-based video generation (v3 Video Agent) or `avatar-video` for precise avatar/scene...",
+  "version": "2.23.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Wang",
+      "features": [
+        "[DEPRECATED — uses outdated v1/v2 endpoints] Use `create-video` for prompt-based video generati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-agent@2.23.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11284232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-agent",
+      "url": "https://clawhub.ai/skills/video-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-agent",
+    "url": "https://clawhub.ai/skills/video-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-agent-74628403b3965e16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-agent@2.23.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-agent-2.23.0.json",
+      "version": "2.23.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1c71d4b6f18b4fae3d570e2757261e1e20b40d0108cf63d03284ea0be841140",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T18:12:12.448Z"
+}

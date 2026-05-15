@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-scout@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_scout",
+  "skill": {
+    "id": 60029,
+    "skillKey": "clawhub-web-scout",
+    "name": "Web Scout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-scout",
+    "url": "https://clawhub.ai/skills/web-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-scout-88ff77cbd21b679a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "给 AI Agent 一键装上全网采集能力。基于 Agent Reach，支持 Twitter/X、Reddit、YouTube、B站、小红书、抖音、GitHub、LinkedIn、Boss直聘、RSS、全网搜索等平台。一条命令安装，零 API 费用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aizain",
+      "userId": "publishers:aizain",
+      "displayName": "子豪",
+      "image": "https://avatars.githubusercontent.com/u/17040353?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 924,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772181392708,
+      "changelog": "- 首发版本，基于 Agent Reach 封装，助力 AI Agent 一键集成全网采集能力\n- 支持 Twitter/X、Reddit、YouTube、B站、小红书、抖音、GitHub、LinkedIn、Boss直聘、RSS、全网搜索等主流平台\n- 提供简单的安装配置流程，支持自动依赖安装、平台 Cookie 配置和代理设置\n- 丰富命令速查表，覆盖多平台采集、搜索与内容提取操作\n- 强调安全性：本地存储 Cookie、可选安全/预览模式、全开源可审查",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:61d3cc069a6369798ca911cf3a4281d43fd1cca834f7ae70d17cd56a12432cbd"
+}

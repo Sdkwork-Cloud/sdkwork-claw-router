@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45474,
+  "uuid": "skill-clawhub-eb-code-review",
+  "skillKey": "clawhub-eb-code-review",
+  "name": "Code Review",
+  "summary": "Multi-agent code review for pull requests. Checks for bugs, CLAUDE.md compliance, git history context, and previous PR comments. Uses confidence scoring to f...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eb_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Emerson Braun",
+      "features": [
+        "Multi-agent code review for pull requests",
+        "Checks for bugs, CLAUDE.md compliance, git history context, and previous PR comments",
+        "Uses confidence scoring to f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eb-code-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25778027?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eb-code-review",
+      "url": "https://clawhub.ai/skills/eb-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eb-code-review",
+    "url": "https://clawhub.ai/skills/eb-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eb-code-review-aa7725081674effc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eb-code-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eb-code-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:031f1bfa5927cb80a09e269329c0c0a106d051312ce3deb9796902188856a9c5",
+      "artifactSizeBytes": 2477
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T23:07:15.572Z"
+}

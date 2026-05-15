@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11801,
+  "uuid": "skill-clawhub-nix-mode",
+  "skillKey": "clawhub-nix-mode",
+  "name": "Nix Mode",
+  "summary": "Handle Clawdbot operations in Nix mode (configuration management, environment detection).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nix_mode",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chronicuser21",
+      "features": [
+        "Handle Clawdbot operations in Nix mode (configuration management, environment detection)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nix-mode@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147739946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nix-mode",
+      "url": "https://clawhub.ai/skills/nix-mode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nix-mode",
+    "url": "https://clawhub.ai/skills/nix-mode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nix-mode-ffadd2a34f603b67.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nix-mode@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nix-mode-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0f09872d581104a7c545f973810559363181a969372f86ffc6251aeaf415506",
+      "artifactSizeBytes": 1774
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T19:14:41.596Z"
+}

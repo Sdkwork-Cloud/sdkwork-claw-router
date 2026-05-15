@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20815,
+  "uuid": "skill-clawhub-job",
+  "skillKey": "clawhub-job",
+  "name": "Job",
+  "summary": "Complete job search intelligence system for anyone looking for work, changing careers, or trying to advance professionally. Trigger whenever someone needs he...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.job",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EthAgent",
+      "features": [
+        "Complete job search intelligence system for anyone looking for work, changing careers, or tryin.",
+        "Trigger whenever someone needs he..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/job@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216467966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "job",
+      "url": "https://clawhub.ai/skills/job"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "job",
+    "url": "https://clawhub.ai/skills/job",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/job-5e8c9902207afaeb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/job@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-job-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e09a1bf523ce52c201f36c491652cefba9d29d4eb8cd0003affd3bce3f6e5b92",
+      "artifactSizeBytes": 1793
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T17:49:01.092Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20861,
+  "uuid": "skill-clawhub-sage-accounting",
+  "skillKey": "clawhub-sage-accounting",
+  "name": "Sage Accounting",
+  "summary": "Sage Accounting integration. Manage accounting data, records, and workflows. Use when the user wants to interact with Sage Accounting data.",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sage_accounting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Sage Accounting integration",
+        "Manage accounting data, records, and workflows",
+        "Use when the user wants to interact with Sage Accounting data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sage-accounting@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sage-accounting",
+      "url": "https://clawhub.ai/skills/sage-accounting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sage-accounting",
+    "url": "https://clawhub.ai/skills/sage-accounting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sage-accounting-cfa79839afeda6ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sage-accounting@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-sage-accounting-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a08051b7e709c3c73515462bcba55436bc98e6525ddb8f688a5c2d7b86c942f",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:36:19.422Z"
+}

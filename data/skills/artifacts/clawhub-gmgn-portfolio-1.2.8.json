@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gmgn-portfolio@1.2.8",
+  "version": "1.2.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmgn_portfolio",
+  "skill": {
+    "id": 50661,
+    "skillKey": "clawhub-gmgn-portfolio",
+    "name": "GMGN Skill Portfolio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmgn-portfolio",
+    "url": "https://clawhub.ai/skills/gmgn-portfolio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmgn-portfolio-c728eaf07bdbbddb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze any crypto wallet by address — holdings, realized/unrealized P&L, win rate, trading history, performance stats, specific token balance, and tokens cr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gmgnai",
+      "userId": "s177c720763b1tta2ba4daftmd83x323",
+      "displayName": "GMGN.AI",
+      "image": "https://avatars.githubusercontent.com/u/141223802?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.8",
+      "createdAt": 1777452385080,
+      "changelog": "gmgn-portfolio 1.2.8\n\n- Added Ethereum (eth) as a supported chain for all portfolio analysis commands.\n- Updated usage examples and argument hints to include Ethereum.\n- No code changes detected—documentation and metadata only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a8a56ca11e1225a67eceb445b208b4438a4d32e5c6017e92f3880cc42c6fbfa"
+}

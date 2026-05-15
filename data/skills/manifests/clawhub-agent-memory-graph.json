@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23279,
+  "uuid": "skill-clawhub-agent-memory-graph",
+  "skillKey": "clawhub-agent-memory-graph",
+  "name": "Memory Graph",
+  "summary": "Agent-agnostic personal knowledge graph stored as markdown files with YAML frontmatter. Use when you need persistent context about the user's life, projects,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_graph",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "afgonullu",
+      "features": [
+        "Agent-agnostic personal knowledge graph stored as markdown files with YAML frontmatter",
+        "Use when you need persistent context about the user's life, projects,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-memory-graph@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47690646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-memory-graph",
+      "url": "https://clawhub.ai/skills/agent-memory-graph"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-graph",
+    "url": "https://clawhub.ai/skills/agent-memory-graph",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-graph-23112b89baf342fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-memory-graph@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-graph-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b58d34f2e8351b4a2dcf633c3b3fca7ea84372d489276712e4bf2a0ccea938c7",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T15:20:29.282Z"
+}

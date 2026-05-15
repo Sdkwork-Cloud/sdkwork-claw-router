@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32513,
+  "uuid": "skill-clawhub-zoho-people-integration",
+  "skillKey": "clawhub-zoho-people-integration",
+  "name": "Zoho People",
+  "summary": "Zoho People integration. Manage data, records, and automate workflows. Use when the user wants to interact with Zoho People data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoho_people_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Zoho People integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Zoho People data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zoho-people-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zoho-people-integration",
+      "url": "https://clawhub.ai/skills/zoho-people-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoho-people-integration",
+    "url": "https://clawhub.ai/skills/zoho-people-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoho-people-integration-22c0d970cd44b2a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zoho-people-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zoho-people-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f490e6109771a9f92f95d920272ecc4f6766ed15bb321fa4bca485b1804ec7d",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:06:16.830Z"
+}

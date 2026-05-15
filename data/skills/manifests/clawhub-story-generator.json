@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21695,
+  "uuid": "skill-clawhub-story-generator",
+  "skillKey": "clawhub-story-generator",
+  "name": "An automated script generator for creating viral videos.",
+  "summary": "Story generation pipeline skill. Supports multi-episode continuous generation, graph management, AI quality check + human confirmation dual control mechanism...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.story_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hexidyg",
+      "features": [
+        "Story generation pipeline skill",
+        "Supports multi-episode continuous generation, graph management, AI quality check + human confir."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/story-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254915923?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "story-generator",
+      "url": "https://clawhub.ai/skills/story-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "story-generator",
+    "url": "https://clawhub.ai/skills/story-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/story-generator-89a001072d2d08b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/story-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-story-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63508a8b27c2413232a07b7e35b4888b5357059a3c2465467c7048ed9b5672ca",
+      "artifactSizeBytes": 2113
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T07:51:48.249Z"
+}

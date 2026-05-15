@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seo-content-factory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seo_content_factory",
+  "skill": {
+    "id": 15315,
+    "skillKey": "clawhub-seo-content-factory",
+    "name": "SEO Content Factory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seo-content-factory",
+    "url": "https://clawhub.ai/skills/seo-content-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seo-content-factory-fe81e242c601771f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate fully SEO-optimized blog posts and articles with keyword research, competitor analysis, and SERP-aware content. Use when creating SEO content, blog posts, articles, or content for clients."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seanwyngaard",
+      "userId": "s17cbgx0qmxw2p9k4mvca4z40n83mae0",
+      "displayName": "Sean Wyngaard",
+      "image": "https://avatars.githubusercontent.com/u/187758643?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1025,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770985790858,
+      "changelog": "Initial release — end-to-end SEO content automation:\n\n- Generates SEO-optimized blog posts and articles from a single keyword or batch file\n- Includes automated keyword research, competitor analysis, and SERP-aware topic selection\n- Builds draft structure with title, meta, headings, FAQ, and unique angles before writing\n- Produces two ready-to-publish formats: clean Markdown and WordPress-ready HTML (with meta tags and schema markup)\n- Outputs on-page SEO elements, image and internal/external link suggestions, and full schema (JSON-LD)\n- Batch mode supports multi-article creation and automated internal linking map\n- Built-in quality checks for keyword targeting, engagement, word count, and on-page SEO best practices",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6992754470ae8cdc19524e848fa26daee61208f55e207b425b8b7b401ee77819"
+}

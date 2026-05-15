@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73190,
+  "uuid": "skill-clawhub-multi-city-flight-optimizer",
+  "skillKey": "clawhub-multi-city-flight-optimizer",
+  "name": "多目的地航线组合比价助手",
+  "summary": "多目的地跨城比价航线优化助手，自动收集出行约束（出发地、假期时间窗、候选城市），一键比价筛出最优往返城市组合（更便宜+更少中转/更短飞行），输出Top3方案并给出可玩性建议。触发词：跨城比价、航线优化、机票比价、多城市飞、往返组合、机票怎么买最便宜、帮我搜机票、去程回程怎么选。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_city_flight_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lushengteng",
+      "features": [
+        "多目的地跨城比价航线优化助手，自动收集出行约束（出发地、假期时间窗、候选城市），一键比价筛出最优往返城市组合（更便宜+更少中转/更短飞行），输出Top3方案并给出可玩性建议。触发词：跨城比价."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-city-flight-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8475155?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-city-flight-optimizer",
+      "url": "https://clawhub.ai/skills/multi-city-flight-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-city-flight-optimizer",
+    "url": "https://clawhub.ai/skills/multi-city-flight-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-city-flight-optimizer-e893311ea854881a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-city-flight-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-city-flight-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8fe7ec750e2b2fee363c9b9103010ef192bd3ebbb01934a5d4291d3ccdb587e",
+      "artifactSizeBytes": 2886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T12:20:43.213Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/contract-reviewer-dongjie@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contract_reviewer_dongjie",
+  "skill": {
+    "id": 36455,
+    "skillKey": "clawhub-contract-reviewer-dongjie",
+    "name": "Contract Reviewer Dongjie"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contract-reviewer-dongjie",
+    "url": "https://clawhub.ai/skills/contract-reviewer-dongjie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contract-reviewer-dongjie-152406124d3f4ff2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes contract text to extract key clauses, risks, party obligations, compliance notes, and negotiation recommendations for faster legal review."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dj-520-ai",
+      "userId": "s17f4e7mmx51ts19g62qfjb891848pa7",
+      "displayName": "DJ-520-ai",
+      "image": "https://avatars.githubusercontent.com/u/175697365?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775386947067,
+      "changelog": "Initial release of Contract Reviewer Dongjie.\n\n- Analyzes legal contract text to extract key clauses, risks, obligations, compliance notes, and negotiation recommendations.\n- Returns structured summaries of contract provisions.\n- Designed for consultants, freelancers, small business owners, and analysts seeking quick insights into contracts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7533741bc30797906aee55eaf45be787b87cda965d87186a5a6af86e86b506bd"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63488,
+  "uuid": "skill-clawhub-sum2slides",
+  "skillKey": "clawhub-sum2slides",
+  "name": "Sum2Slides",
+  "summary": "自动将纯文本或Markdown内容智能摘要并生成结构化的PowerPoint幻灯片，支持多模板和主题自定义。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sum2slides",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wei Wu",
+      "features": [
+        "自动将纯文本或Markdown内容智能摘要并生成结构化的PowerPoint幻灯片，支持多模板和主题自定义。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sum2slides@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5894591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sum2slides",
+      "url": "https://clawhub.ai/skills/sum2slides"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sum2slides",
+    "url": "https://clawhub.ai/skills/sum2slides",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sum2slides-16cc64d2aae9ef31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sum2slides@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sum2slides-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:032b9e5aa78a9794b486319652d22397b0b0f0cf3f43d53157cd9329208c0f10",
+      "artifactSizeBytes": 2265
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T11:13:25.884Z"
+}

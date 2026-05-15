@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inkjet@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inkjet",
+  "skill": {
+    "id": 20297,
+    "skillKey": "clawhub-inkjet",
+    "name": "InkJet - Bluetooth Thermal Printer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inkjet",
+    "url": "https://clawhub.ai/skills/inkjet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inkjet-97c05d2786670dd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Print text, images, and QR codes to a wireless Bluetooth thermal printer from a MacOS device. Use `inkjet print` for output, `inkjet scan` to discover printers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaronchartier",
+      "userId": "s174zx2175svy15t702vwy1mrd83seew",
+      "displayName": "Aaron Chartier",
+      "image": "https://avatars.githubusercontent.com/u/58902111?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 2214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774701190271,
+      "changelog": "- Homepage URL updated to the GitHub repository.\n- Expanded install instructions for both pip and Homebrew, including version checks.\n- Added section on piping content from stdin for both text and images.\n- Clarified configuration file priority, with advice on direct JSON edits for advanced usage.\n- Minor rewording and format streamlining throughout for improved clarity and conciseness.\n- All primary feature content remains functionally unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08c529fcf395b83c5bb855d9474f67efd8e07955fbebf9cf4defbd68dbdd5675"
+}

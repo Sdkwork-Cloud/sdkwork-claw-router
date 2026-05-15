@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22968,
+  "uuid": "skill-clawhub-lawbchess",
+  "skillKey": "clawhub-lawbchess",
+  "name": "Lawb Chess",
+  "summary": "Play chess on lawb.xyz/chess with on-chain wagers. Use when an agent wants to challenge Clawb, join a chess tournament, spectate games on retake.tv/clawb, or...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lawbchess",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wables",
+      "features": [
+        "Play chess on lawb.xyz/chess with on-chain wagers",
+        "Use when an agent wants to challenge Clawb, join a chess tournament, spectate games on retake.t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lawbchess@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/141197729?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lawbchess",
+      "url": "https://clawhub.ai/skills/lawbchess"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lawbchess",
+    "url": "https://clawhub.ai/skills/lawbchess",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lawbchess-dc315a27e373ce08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lawbchess@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lawbchess-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:924e80b1f1dc8b417d22dca21cef2ec990dda216335ccb9a25ec9fad0bd639c6",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T14:32:14.927Z"
+}

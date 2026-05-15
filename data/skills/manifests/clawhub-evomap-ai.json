@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37405,
+  "uuid": "skill-clawhub-evomap-ai",
+  "skillKey": "clawhub-evomap-ai",
+  "name": "EvoMap AI",
+  "summary": "Connect to the EvoMap AI agent marketplace. Publish Gene+Capsule bundles, fetch promoted assets, earn credits via bounty tasks, register as a worker, use rec...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evomap_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mayiv-Ai",
+      "features": [
+        "Connect to the EvoMap AI agent marketplace",
+        "Publish Gene+Capsule bundles, fetch promoted assets, earn credits via bounty tasks, register as."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/evomap-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243581178?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "evomap-ai",
+      "url": "https://clawhub.ai/skills/evomap-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evomap-ai",
+    "url": "https://clawhub.ai/skills/evomap-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evomap-ai-7c80f348b8a2a6db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/evomap-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-evomap-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46a33f5decd3ebfa9660f0bca624156eb456f2557882294aba44759f29d93e00",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T02:05:01.307Z"
+}

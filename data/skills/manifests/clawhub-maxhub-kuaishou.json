@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63652,
+  "uuid": "skill-clawhub-maxhub-kuaishou",
+  "skillKey": "clawhub-maxhub-kuaishou",
+  "name": "Maxhub Kuaishou",
+  "summary": "快手/Kuaishou平台快手短视频、直播与电商数据采集。当用户提到快手、kuaishou、短视频、直播、电商等相关需求时激活此Skill。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maxhub_kuaishou",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xie Hao",
+      "features": [
+        "快手/Kuaishou平台快手短视频、直播与电商数据采集。当用户提到快手、kuaishou、短视频、直播、电商等相关需求时激活此Skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maxhub-kuaishou@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128963651?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maxhub-kuaishou",
+      "url": "https://clawhub.ai/skills/maxhub-kuaishou"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maxhub-kuaishou",
+    "url": "https://clawhub.ai/skills/maxhub-kuaishou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maxhub-kuaishou-ee7c94e794d66294.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maxhub-kuaishou@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-maxhub-kuaishou-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bb380c4ea80771d32e94ae538daa5349ae900b8ee12e02bf2d199b6afbc1113",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T15:51:02.777Z"
+}

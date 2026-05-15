@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12291,
+  "uuid": "skill-clawhub-pokerpal",
+  "skillKey": "clawhub-pokerpal",
+  "name": "pokerpal",
+  "summary": "Query PokerPal poker game data - games, players, buy-ins, settlements",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pokerpal",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vvardhan14",
+      "features": [
+        "Query PokerPal poker game data",
+        "games, players, buy-ins, settlements"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pokerpal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16073429?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pokerpal",
+      "url": "https://clawhub.ai/skills/pokerpal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pokerpal",
+    "url": "https://clawhub.ai/skills/pokerpal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pokerpal-1f07f4134477ecd6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pokerpal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pokerpal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca301451508d35c84a49fe852d0a2f8ef49bbace22400b8e2bd6ed7f138acfeb",
+      "artifactSizeBytes": 2083
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T01:41:13.218Z"
+}

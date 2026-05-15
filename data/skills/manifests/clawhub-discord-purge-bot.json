@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20284,
+  "uuid": "skill-clawhub-discord-purge-bot",
+  "skillKey": "clawhub-discord-purge-bot",
+  "name": "Discord Purge Bot",
+  "summary": "Operate a Discord message cleanup workflow with an official bot token and Discord HTTP API. Use when asked to purge guild channel history, delete messages by...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_purge_bot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JunhuaShao",
+      "features": [
+        "Operate a Discord message cleanup workflow with an official bot token and Discord HTTP API",
+        "Use when asked to purge guild channel history, delete messages by..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discord-purge-bot@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1681830?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discord-purge-bot",
+      "url": "https://clawhub.ai/skills/discord-purge-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-purge-bot",
+    "url": "https://clawhub.ai/skills/discord-purge-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-purge-bot-9bc458478f382dd0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discord-purge-bot@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-discord-purge-bot-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbaef20829473e21402259949321eec2f7bf19e16f9d5049df14759f3d562686",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T10:15:03.665Z"
+}

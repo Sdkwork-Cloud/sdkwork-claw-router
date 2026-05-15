@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mayiv-feishu-voice@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mayiv_feishu_voice",
+  "skill": {
+    "id": 65033,
+    "skillKey": "clawhub-mayiv-feishu-voice",
+    "name": "Feishu Voice Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mayiv-feishu-voice",
+    "url": "https://clawhub.ai/skills/mayiv-feishu-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mayiv-feishu-voice-f4f49f5780dd5f36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 Edge TTS 把文字转语音，发送到飞书。支持纯语音发送和文字+语音同时发送。环境变量配置，无硬编码凭证，完全免费无需 API Key。触发词：飞书语音、发语音、feishu voice、语音发送、文字转语音"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mayiv-ai",
+      "userId": "s17886n6xr2zjws9x60y1xbmfh83z807",
+      "displayName": "Mayiv-Ai",
+      "image": "https://avatars.githubusercontent.com/u/243581178?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774922689723,
+      "changelog": "add Feishu group invite link, enhance description",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb14b47ee76e59541992fa482b5534f3309a386b379ac091b1d8b5bedf4eb935"
+}

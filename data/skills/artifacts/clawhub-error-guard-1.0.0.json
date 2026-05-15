@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/error-guard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.error_guard",
+  "skill": {
+    "id": 9552,
+    "skillKey": "clawhub-error-guard",
+    "name": "Error Guard — Control‑Plane Safety"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "error-guard",
+    "url": "https://clawhub.ai/skills/error-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/error-guard-e885d8af639e2d58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "System safety and control-plane skill that prevents agent deadlocks and freezes. Provides non-LLM control commands to inspect task state, flush message queues, cancel long-running work, and recover safely without restarting the container.."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amar1432",
+      "userId": "publishers:amar1432",
+      "displayName": "Amar1432",
+      "image": "https://avatars.githubusercontent.com/u/30319096?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 3289,
+      "installsAllTime": 13,
+      "installsCurrent": 13,
+      "stars": 8,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769934317761,
+      "changelog": "Control‑plane safety skill for OpenClaw that prevents agent freezes and deadlocks using sub‑agent isolation, event‑driven execution, watchdogs, and crash‑safe recovery.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:93f6e0779ae6ba02860daff398cb0cc0f593d7f89237371e432f51f60ade152f"
+}

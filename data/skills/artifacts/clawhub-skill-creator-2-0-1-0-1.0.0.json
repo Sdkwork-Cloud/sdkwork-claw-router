@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-creator-2-0-1-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_creator_2_0_1_0",
+  "skill": {
+    "id": 45900,
+    "skillKey": "clawhub-skill-creator-2-0-1-0",
+    "name": "Skill Creator 2 0.1.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-creator-2-0-1-0",
+    "url": "https://clawhub.ai/skills/skill-creator-2-0-1-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-creator-2-0-1-0-de03afafdbd6c93b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunyue1977",
+      "userId": "s175rt0962sq081rw8jpv65xmx83f1e9",
+      "displayName": "SunYue1977",
+      "image": "https://avatars.githubusercontent.com/u/267276324?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777312441425,
+      "changelog": "Initial release of Skill Creator — a comprehensive guide for designing effective skills that extend Claude's capabilities.\n\n- Introduces concepts for modular, context-efficient skill design.\n- Details required and optional components of a skill: SKILL.md, scripts, references, and assets.\n- Emphasizes concise instructions and separating core workflow from detailed resources.\n- Provides patterns and principles for progressive disclosure and managing context window usage.\n- Explicitly advises against including non-essential auxiliary documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96f66535602e38cf0a122b494306f5a2f81841b8afd0abf2264d12779a282ead"
+}

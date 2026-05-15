@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/app-rank-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.app_rank_monitor",
+  "skill": {
+    "id": 68814,
+    "skillKey": "clawhub-app-rank-monitor",
+    "name": "App Rank Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "app-rank-monitor",
+    "url": "https://clawhub.ai/skills/app-rank-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/app-rank-monitor-188a3e33ef273637.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "爬取苹果官方和点点数据应用榜单，自动生成日报报告并通过钉钉发送，支持数据管理和历史清理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cfans731",
+      "userId": "s174gdt90hwyqj4z3evfecaty984s3gg",
+      "displayName": "cfans731",
+      "image": "https://avatars.githubusercontent.com/u/62880059?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776110711323,
+      "changelog": "App Rank Monitor 1.0.0\n\n- 移除下架检测相关功能，专注榜单爬取和日报生成\n- 清理下架检测模块、数据模型及命令参数\n- 移除七麦数据相关功能和配置，仅保留苹果官方 RSS 和点点数据\n- 优化定时任务、数据管理与日报生成逻辑",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c61d0000e8367a2f6c53e6b31844742c2523b7502937bce3165859f6106ad55b"
+}

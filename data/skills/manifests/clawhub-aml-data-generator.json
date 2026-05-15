@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68307,
+  "uuid": "skill-clawhub-aml-data-generator",
+  "skillKey": "clawhub-aml-data-generator",
+  "name": "Aml Data Generator",
+  "summary": "生成符合AMLSim格式的合成交易数据，将交易日志转换为用于反洗钱检测系统测试的模拟数据集，支持按银行ID分割账户、合并多源输出并生成交易网络图。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aml_data_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "生成符合AMLSim格式的合成交易数据，将交易日志转换为用于反洗钱检测系统测试的模拟数据集，支持按银行ID分割账户、合并多源输出并生成交易网络图。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aml-data-generator@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aml-data-generator",
+      "url": "https://clawhub.ai/skills/aml-data-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aml-data-generator",
+    "url": "https://clawhub.ai/skills/aml-data-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aml-data-generator-7c68ba05ca2ff379.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aml-data-generator@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-aml-data-generator-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc65352920180edd4169a34aea5f0051cf423b86290976bd10f5a875a5368c68",
+      "artifactSizeBytes": 2095
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:23:23.588Z"
+}

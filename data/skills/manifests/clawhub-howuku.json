@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36796,
+  "uuid": "skill-clawhub-howuku",
+  "skillKey": "clawhub-howuku",
+  "name": "Howuku",
+  "summary": "Howuku integration. Manage Organizations, Users, Goals, Filters. Use when the user wants to interact with Howuku data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.howuku",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Howuku integration",
+        "Manage Organizations, Users, Goals, Filters",
+        "Use when the user wants to interact with Howuku data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/howuku@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "howuku",
+      "url": "https://clawhub.ai/skills/howuku"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "howuku",
+    "url": "https://clawhub.ai/skills/howuku",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/howuku-1473c0f0ae1c76cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/howuku@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-howuku-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39dde1190a65d60a90fc32e1ebace5a118e911a84e01cc45d1e7b29461489a47",
+      "artifactSizeBytes": 1793
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:52:20.326Z"
+}

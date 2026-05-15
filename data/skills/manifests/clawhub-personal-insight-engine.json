@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50945,
+  "uuid": "skill-clawhub-personal-insight-engine",
+  "skillKey": "clawhub-personal-insight-engine",
+  "name": "Personal Insight Engine",
+  "summary": "Personal Insight Engine (PIE) - A strategic analysis tool that scans local session logs (memory/*.md) and extracts 3 strategic insights using LLMs.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_insight_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaofei",
+      "features": [
+        "Personal Insight Engine (PIE)",
+        "A strategic analysis tool that scans local session logs (memory/*.md) and extracts 3 strategic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-insight-engine@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/236318269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-insight-engine",
+      "url": "https://clawhub.ai/skills/personal-insight-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-insight-engine",
+    "url": "https://clawhub.ai/skills/personal-insight-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-insight-engine-41672f02f98ef528.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-insight-engine@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-insight-engine-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ddc1e2e93b7294c708b2d0a301f5608fb3f3182a092b2c8f162e6ae52352b10f",
+      "artifactSizeBytes": 2056
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T00:50:59.933Z"
+}

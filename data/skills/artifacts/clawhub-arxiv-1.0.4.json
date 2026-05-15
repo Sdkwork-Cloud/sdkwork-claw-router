@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arxiv@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv",
+  "skill": {
+    "id": 8729,
+    "skillKey": "clawhub-arxiv",
+    "name": "arXiv Research Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv",
+    "url": "https://clawhub.ai/skills/arxiv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-93112796882f0bfb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, download, and summarize academic papers from arXiv. Built for AI/ML researchers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ractorrr",
+      "userId": "publishers:ractorrr",
+      "displayName": "Ractorrr",
+      "image": "https://avatars.githubusercontent.com/u/142397305?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6625,
+      "installsAllTime": 63,
+      "installsCurrent": 59,
+      "stars": 7,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1770397716359,
+      "changelog": "- Added YAML frontmatter to SKILL.md with skill name and description.\n- Updated description in SKILL.md to highlight focus on AI/ML researchers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7730798d11e3fda0dd6eb5ac0a6ba15a7c7520136d8da171a33909374b1ed3b0"
+}

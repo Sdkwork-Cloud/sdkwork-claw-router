@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopify-manager-cli@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_manager_cli",
+  "skill": {
+    "id": 50245,
+    "skillKey": "clawhub-shopify-manager-cli",
+    "name": "Shopify Manager Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-manager-cli",
+    "url": "https://clawhub.ai/skills/shopify-manager-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-manager-cli-3c4ed7f113c8f12b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Shopify store — products, metafields, metaobjects, blogs & articles via Shopify Admin GraphQL API. Pure official Shopify API wrapper with no third-par..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asenwang",
+      "userId": "s17ee2bfgayv6anm00t6dm8z7n83n5jr",
+      "displayName": "Asenwang",
+      "image": "https://avatars.githubusercontent.com/u/15796935?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 455,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773136748288,
+      "changelog": "- Added SHOPIFY_API_VERSION to required environment variables in metadata.\n- Declared SHOPIFY_ACCESS_TOKEN as primaryEnv in metadata.\n- No other functional changes; documentation and command references remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1797f7da0024691338880551c1e954005120cdaf686073907d1d4635640c2f00"
+}

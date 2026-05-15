@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27566,
+  "uuid": "skill-clawhub-crewhaus",
+  "skillKey": "clawhub-crewhaus",
+  "name": "CrewHaus Startup Validation",
+  "summary": "Quick startup idea evaluation from your terminal. Score ideas on 3 dimensions, run deeper scans with real competitor data and risk assessment. A structured t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crewhaus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "crewhaus",
+      "features": [
+        "Quick startup idea evaluation from your terminal",
+        "Score ideas on 3 dimensions, run deeper scans with real competitor data and risk assessment",
+        "A structured t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crewhaus@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261488301?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crewhaus",
+      "url": "https://clawhub.ai/skills/crewhaus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crewhaus",
+    "url": "https://clawhub.ai/skills/crewhaus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crewhaus-1288da468bfd5c82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crewhaus@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crewhaus-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9d2c0797084502d4f70c8bfe1b23446ce19b48966c2b5987e904962843f25d8",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T04:26:51.564Z"
+}

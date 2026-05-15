@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11077,
+  "uuid": "skill-clawhub-tencent-ima-skill",
+  "skillKey": "clawhub-tencent-ima-skill",
+  "name": "Tencent IMA Skill",
+  "summary": "Control the IMA (ima.copilot) desktop application for AI search and private knowledge retrieval.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_ima_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hyddd",
+      "features": [
+        "Control the IMA (ima.copilot) desktop application for AI search and private knowledge retrieval."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencent-ima-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2434958?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencent-ima-skill",
+      "url": "https://clawhub.ai/skills/tencent-ima-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-ima-skill",
+    "url": "https://clawhub.ai/skills/tencent-ima-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-ima-skill-bf0ad44e51ee4efb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencent-ima-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencent-ima-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:294ed370e1d290b9bfae1a036a73a9df1306d25ed26deee381195aeb7a8f3ad4",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T03:28:33.406Z"
+}

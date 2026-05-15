@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34373,
+  "uuid": "skill-clawhub-chat-distill",
+  "skillKey": "clawhub-chat-distill",
+  "name": "Chat Distill",
+  "summary": "Distill a person's chat style from exported conversation records and generate replies that mimic their voice. Use when (1) analyzing chat history to extract...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chat_distill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MengqiYu9",
+      "features": [
+        "Distill a person's chat style from exported conversation records and generate replies that mimi.",
+        "Use when (1) analyzing chat history to extract..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chat-distill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61173613?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chat-distill",
+      "url": "https://clawhub.ai/skills/chat-distill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chat-distill",
+    "url": "https://clawhub.ai/skills/chat-distill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chat-distill-875db7b244536c0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chat-distill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chat-distill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa4a7495dece35951b11e0263336b4109e28aa75b77871b30ea58be202ad28a7",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T08:11:51.482Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/klarity-booking-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.klarity_booking_guide",
+  "skill": {
+    "id": 43848,
+    "skillKey": "clawhub-klarity-booking-guide",
+    "name": "Klarity Booking Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "klarity-booking-guide",
+    "url": "https://clawhub.ai/skills/klarity-booking-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/klarity-booking-guide-5a362669f9329fdf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide users through booking an online psychiatrist or psychiatric nurse practitioner (PMHNP) appointment on Klarity Health (helloklarity.com) for conditions..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gsuklarity",
+      "userId": "s17a7r60gfbptc5bxbsvdw6bwx843g86",
+      "displayName": "Klarity Health",
+      "image": "https://avatars.githubusercontent.com/u/127636956?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775155334135,
+      "changelog": "Initial release: tested & hardened booking skill for online psychiatry",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:abf848eb973ca972f93b44ea281eed4f6196cdabf4bbb072b94d8c45cc16ee2e"
+}

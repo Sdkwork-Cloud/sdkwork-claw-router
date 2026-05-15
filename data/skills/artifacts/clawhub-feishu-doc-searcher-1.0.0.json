@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-doc-searcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_doc_searcher",
+  "skill": {
+    "id": 73582,
+    "skillKey": "clawhub-feishu-doc-searcher",
+    "name": "飞书文档搜索助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-doc-searcher",
+    "url": "https://clawhub.ai/skills/feishu-doc-searcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-doc-searcher-1ee51cb3b11bc20c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用飞书文档搜索助手。根据配置的文档根目录和触发条件，自动在指定文档空间及其子目录中搜索信息并回答用户问题。**当用户表达搜索/查询知识意图时触发此技能**。支持零配置启动，首次使用时自动引导配置。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "carolyn0719",
+      "userId": "s17ebsqzgexzxg959cwbk88q8583qgkv",
+      "displayName": "Carolyn0719",
+      "image": "https://avatars.githubusercontent.com/u/7722467?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774591238770,
+      "changelog": "首次发布：支持零配置启动的飞书文档搜索助手",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4266707eeac9ee1e2c14f4cda230d3c98bca248f16ac970e50270bc592512f2"
+}

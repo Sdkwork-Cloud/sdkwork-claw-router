@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-auto-tool-builder@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_auto_tool_builder",
+  "skill": {
+    "id": 63678,
+    "skillKey": "clawhub-social-auto-tool-builder",
+    "name": "social-auto-tool-builder-1.1.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-auto-tool-builder",
+    "url": "https://clawhub.ai/skills/social-auto-tool-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-auto-tool-builder-b82c0d9634b73f0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "复用“小红书自动回复项目”实战经验，快速构建新的本地AI自动化工具（含多平台选择器映射模板）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cruciata",
+      "userId": "publishers:cruciata",
+      "displayName": "范士轶",
+      "image": "https://avatars.githubusercontent.com/u/35017791?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 969,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773813515984,
+      "changelog": "social-auto-tool-builder v1.1.0 introduces multi-platform selector mapping for broader automation support.\n\n- Added multi-platform selector mapping template for Xiaohongshu, Douyin, and Kuaishou.\n- CLI and workflow now require specifying target platform with --platform.\n- Main workflow and EXE support platform-agnostic operation via selector table.\n- Updated standard input/checklist to ensure platform-parametric adaptation and delivery.\n- Documentation, prompts, and Windows command templates revised to reflect multi-platform design.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f870882a1ac5d56f8217ac97787f676fe7ba34ddd95b6794b63b9e06e9b7abe"
+}

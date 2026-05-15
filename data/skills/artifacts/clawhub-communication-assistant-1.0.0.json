@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/communication-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.communication_assistant",
+  "skill": {
+    "id": 59345,
+    "skillKey": "clawhub-communication-assistant",
+    "name": "Communication Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "communication-assistant",
+    "url": "https://clawhub.ai/skills/communication-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/communication-assistant-62b2547cdd5dce67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全能通信助理技能 - 统一管理iMessage短信、邮件和通知发送。支持BlueBubbles(iMessage)和Himalaya(邮件)集成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775686461313,
+      "changelog": "Initial release: iMessage + Email integration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8ae4a6d2919f0ea753243c7aa4740436aa18da66414178486e4b9e456ace89f"
+}

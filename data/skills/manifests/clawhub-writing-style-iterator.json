@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70891,
+  "uuid": "skill-clawhub-writing-style-iterator",
+  "skillKey": "clawhub-writing-style-iterator",
+  "name": "Writing Style Iterator",
+  "summary": "个性化写作风格记忆系统。在帮用户写作时，加载用户的写作风格 按用户偏好生成内容，并从用户的修改中自动提取风格规则，不断学习用户的写作风格，越用越好用。 当用户的请求涉及写作、改写、润色等文字创作场景时自动激活。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.writing_style_iterator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shanjiaming",
+      "features": [
+        "个性化写作风格记忆系统。在帮用户写作时，加载用户的写作风格 按用户偏好生成内容，并从用户的修改中自动提取风格规则，不断学习用户的写作风格，越用越好用。 当用户的请求涉及写作、改写、润色等文字."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/writing-style-iterator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68770027?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "writing-style-iterator",
+      "url": "https://clawhub.ai/skills/writing-style-iterator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "writing-style-iterator",
+    "url": "https://clawhub.ai/skills/writing-style-iterator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/writing-style-iterator-d44b094de6710ded.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/writing-style-iterator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-writing-style-iterator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f65315ccee8bb10e5726a61a0a2f798fdc731874052ed6a3814a58922c75caa",
+      "artifactSizeBytes": 2697
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T02:10:32.397Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70767,
+  "uuid": "skill-clawhub-voice-broadcast",
+  "skillKey": "clawhub-voice-broadcast",
+  "name": "Voice Broadcast",
+  "summary": "语音播报控制技能。将AI回复内容转换为语音朗读。触发方式：（1）用户说\"朗读\"时，自动将AI最后一条文字回复转为语音；（2）用户说\"开启语音播报\"时，之后所有回复自动朗读；（3）用户说\"静音\"时，暂停语音播报。用于：用户（尤其是iOS用户）希望通过语音方式接收信息，或双手不便时通过TTS播放回复内容。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_broadcast",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gabriel-ZZ",
+      "features": [
+        "语音播报控制技能。将AI回复内容转换为语音朗读。触发方式：（1）用户说\"朗读\"时，自动将AI最后一条文字回复转为语音；（2）用户说\"开启语音播报\"时，之后所有回复自动朗读；（3）用户说\"静音."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voice-broadcast@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62314854?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voice-broadcast",
+      "url": "https://clawhub.ai/skills/voice-broadcast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-broadcast",
+    "url": "https://clawhub.ai/skills/voice-broadcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-broadcast-00c2e7af7f2d935b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voice-broadcast@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-voice-broadcast-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bca7644af75a3bb2b33e4a66719df240dcaa5f96bd7ec51270d732fd34519571",
+      "artifactSizeBytes": 2646
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:57:43.820Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/office-hour-legends@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.office_hour_legends",
+  "skill": {
+    "id": 43416,
+    "skillKey": "clawhub-office-hour-legends",
+    "name": "Office Hour Legends"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "office-hour-legends",
+    "url": "https://clawhub.ai/skills/office-hour-legends",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/office-hour-legends-cd0ca356a2f80433.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Legends - run a YC-style office hours session simulated by a specific YC partner or alumnus of your choice. Drop markdown persona files (identity.md, soul.md..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "prodigalson",
+      "userId": "s174ewpafgvrq775tcbma9svjs8588x2",
+      "displayName": "prodigalson",
+      "image": "https://avatars.githubusercontent.com/u/3868095?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776751461949,
+      "changelog": "Initial release - YC-style office hours simulated by a specific YC partner or alumnus",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d196676986caf00b04e267df78daeae6fc1a323b16541e5b982a87ee312ab521"
+}

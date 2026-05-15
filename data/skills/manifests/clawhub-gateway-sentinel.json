@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50938,
+  "uuid": "skill-clawhub-gateway-sentinel",
+  "skillKey": "clawhub-gateway-sentinel",
+  "name": "Gateway Sentinel",
+  "summary": "Production-hardened OpenClaw gateway watchdog. Monitors the gateway process using graduated health checks, performs escalating repairs (restart → doctor fix...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gateway_sentinel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Don Zurbrick",
+      "features": [
+        "Production-hardened OpenClaw gateway watchdog",
+        "Monitors the gateway process using graduated health checks, performs escalating repairs (restar."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gateway-sentinel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24554955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gateway-sentinel",
+      "url": "https://clawhub.ai/skills/gateway-sentinel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gateway-sentinel",
+    "url": "https://clawhub.ai/skills/gateway-sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gateway-sentinel-a573751af8ee6e8c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gateway-sentinel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gateway-sentinel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:daf7b9a6b9a46ad119c2110ba78377901d61ff4bc915f30d9f32be1003beab06",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T18:05:50.982Z"
+}

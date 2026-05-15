@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69322,
+  "uuid": "skill-clawhub-wechat-style-writer",
+  "skillKey": "clawhub-wechat-style-writer",
+  "name": "wechat-style-writer",
+  "summary": "模仿指定老师/作者的写作风格改写公众号文章。当用户说\"用XX风格改写\"、\"模仿XX写一篇\"、\"按XX老师的风格重写\"、\"帮我改成XX的风格\"、或上传文章要求风格改写时触发。也适用于用户提到\"风格模仿\"、\"文章改写\"、\"公众号改写\"等场景。即使用户只说\"帮我改写这篇文章\"也应触发此技能，因为改写是它的核心功能。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_style_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "harven-droid",
+      "features": [
+        "模仿指定老师/作者的写作风格改写公众号文章。当用户说\"用XX风格改写\"、\"模仿XX写一篇\"、\"按XX老师的风格重写\"、\"帮我改成XX的风格\"、或上传文章要求风格改写时触发。也适用于用户提到\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-style-writer@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210953820?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-style-writer",
+      "url": "https://clawhub.ai/skills/wechat-style-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-style-writer",
+    "url": "https://clawhub.ai/skills/wechat-style-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-style-writer-7053e66b183f2cf5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-style-writer@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-style-writer-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2aaa64fa5b459928de10f5f1ecaac974f1ff35774b70472945d72d1fc3770912",
+      "artifactSizeBytes": 2779
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T10:40:48.092Z"
+}

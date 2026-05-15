@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/last-ai-standing@0.1.3",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.last_ai_standing",
+  "skill": {
+    "id": 17691,
+    "skillKey": "clawhub-last-ai-standing",
+    "name": "Agent Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "last-ai-standing",
+    "url": "https://clawhub.ai/skills/last-ai-standing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/last-ai-standing-8984d1bd56e7183b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pay USDC to stay alive. Dead agents fund the living. Survival game on Base."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawd800",
+      "userId": "publishers:clawd800",
+      "displayName": "clawd800",
+      "image": "https://avatars.githubusercontent.com/u/257470662?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 755,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.3",
+      "createdAt": 1771567669368,
+      "changelog": "- Updated contract address to 0x88beBFeA498619D4eA891E707c47C43E2D43E62d throughout documentation.\n- Bumped skill version to 0.1.3.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2b701c151b592f51f382e082d08538d36c53c19004f71bef41ca64576eb5d292"
+}

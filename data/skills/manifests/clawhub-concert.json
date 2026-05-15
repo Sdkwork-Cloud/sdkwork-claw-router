@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70426,
+  "uuid": "skill-clawhub-concert",
+  "skillKey": "clawhub-concert",
+  "name": "Concert",
+  "summary": "提供演唱会、音乐节、话剧舞剧官方订票通道及现场打卡攻略。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.concert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "提供演唱会、音乐节、话剧舞剧官方订票通道及现场打卡攻略。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/concert@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "concert",
+      "url": "https://clawhub.ai/skills/concert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "concert",
+    "url": "https://clawhub.ai/skills/concert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/concert-5359565a1aca1516.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/concert@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-concert-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81c18300fa8be4c89df2283413639a442c753129fc9c1aa65d2fc48978274fe5",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T18:40:19.433Z"
+}

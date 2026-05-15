@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34672,
+  "uuid": "skill-clawhub-newclaw-pdf-text-replace",
+  "skillKey": "clawhub-newclaw-pdf-text-replace",
+  "name": "PDF Text Replace",
+  "summary": "Replace text in PDF files while preserving visual fidelity. Handles custom font encodings, embedded subsets, encrypted PDFs, image-based scans (OCR), variabl...",
+  "version": "2.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newclaw_pdf_text_replace",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "newclaw26",
+      "features": [
+        "Replace text in PDF files while preserving visual fidelity",
+        "Handles custom font encodings, embedded subsets, encrypted PDFs, image-based scans (OCR), varia."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/newclaw-pdf-text-replace@2.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/193198183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "newclaw-pdf-text-replace",
+      "url": "https://clawhub.ai/skills/newclaw-pdf-text-replace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newclaw-pdf-text-replace",
+    "url": "https://clawhub.ai/skills/newclaw-pdf-text-replace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newclaw-pdf-text-replace-6573dc58f52625e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/newclaw-pdf-text-replace@2.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-newclaw-pdf-text-replace-2.1.4.json",
+      "version": "2.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e8a18123a91595c33d3e077418862ef1aaffe68f6e4a646069dbce2e6d16f2d",
+      "artifactSizeBytes": 2087
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T17:56:23.499Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/icalendar-events-parser@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.icalendar_events_parser",
+  "skill": {
+    "id": 42106,
+    "skillKey": "clawhub-icalendar-events-parser",
+    "name": "iCalendar Events Parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "icalendar-events-parser",
+    "url": "https://clawhub.ai/skills/icalendar-events-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/icalendar-events-parser-712687c5df5ae627.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parse .ics / iCalendar files or URLs, expand recurring events (RRULE), filter by date range / keywords, and return clean list of events. Use this instead of..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baptiste00001",
+      "userId": "s1792d5qsaf0bzs7e0gcdxskgx843fdb",
+      "displayName": "baptiste00001",
+      "image": "https://avatars.githubusercontent.com/u/54464650?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775103921460,
+      "changelog": "Update instructions to run npm install because the node_modules directory is stripped down by clawhub when publishing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa129ea347d6a963649474a715d875c52d3a62281f91d17b03d12f233bef46bf"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16668,
+  "uuid": "skill-clawhub-solo-swarm",
+  "skillKey": "clawhub-solo-swarm",
+  "name": "Swarm",
+  "summary": "Launch 3 parallel research agents (market, users, tech) to investigate an idea from multiple angles simultaneously. Use when user says \"swarm research\", \"par...",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solo_swarm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rust",
+      "features": [
+        "Launch 3 parallel research agents (market, users, tech) to investigate an idea from multiple an.",
+        "Use when user says \"swarm research\", \"par..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solo-swarm@1.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1236751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solo-swarm",
+      "url": "https://clawhub.ai/skills/solo-swarm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solo-swarm",
+    "url": "https://clawhub.ai/skills/solo-swarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solo-swarm-784382a6421ca319.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solo-swarm@1.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-solo-swarm-1.6.0.json",
+      "version": "1.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b673a99aaf5b17d9aff576f32ba553ad728439d2982d998e1ab74716ca2a394b",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T18:33:48.682Z"
+}

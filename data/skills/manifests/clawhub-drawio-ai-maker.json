@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62119,
+  "uuid": "skill-clawhub-drawio-ai-maker",
+  "skillKey": "clawhub-drawio-ai-maker",
+  "name": "drawio-AI-maker",
+  "summary": "将自然语言或文档（docx/pdf/txt）转换为 draw.io 可编辑 XML 图表（.drawio 文件）。当用户说\"画个流程图\"、\"生成图表\"、\"画架构图/时序图/网络拓扑图\"、\"帮我画xxx流程\"、\"生成draw.io\"等时自动触发。使用流程：接收描述→生成JSON→用户确认→调用gen.py生成.dr...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drawio_ai_maker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuliwenjing",
+      "features": [
+        "将自然语言或文档（docx/pdf/txt）转换为 draw.io 可编辑 XML 图表（.drawio 文件）。当用户说\"画个流程图\"、\"生成图表\"、\"画架构图/时序图/网络拓扑图\"、\"帮."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drawio-ai-maker@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23123229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drawio-ai-maker",
+      "url": "https://clawhub.ai/skills/drawio-ai-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drawio-ai-maker",
+    "url": "https://clawhub.ai/skills/drawio-ai-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drawio-ai-maker-c7638d0cbd207fc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drawio-ai-maker@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-drawio-ai-maker-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb32acd7e38d8477e86e6fbfb56fd1dcbadf0d121dca9e0641b57ffd56c03ee1",
+      "artifactSizeBytes": 2452
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:30:49.013Z"
+}

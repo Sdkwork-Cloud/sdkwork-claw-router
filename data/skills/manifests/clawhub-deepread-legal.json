@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37922,
+  "uuid": "skill-clawhub-deepread-legal",
+  "skillKey": "clawhub-deepread-legal",
+  "name": "DeepRead Legal Documents",
+  "summary": "Extract structured data from contracts, legal agreements, court filings, and compliance documents. Pre-built schemas for parties, clauses, dates, obligations...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepread_legal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DeepRead.tech",
+      "features": [
+        "Extract structured data from contracts, legal agreements, court filings, and compliance documen.",
+        "Pre-built schemas for parties, clauses, dates, obligations..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepread-legal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253471566?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepread-legal",
+      "url": "https://clawhub.ai/skills/deepread-legal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepread-legal",
+    "url": "https://clawhub.ai/skills/deepread-legal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepread-legal-3de8b25e2a063b91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepread-legal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepread-legal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12c302f8074b5db5a9049265b8a0e1aadd4d8dbeacf454d656a96e31c8eb39f2",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T15:34:53.773Z"
+}

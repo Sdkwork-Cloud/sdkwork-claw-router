@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23482,
+  "uuid": "skill-clawhub-gov-grants",
+  "skillKey": "clawhub-gov-grants",
+  "name": "Gov Grants",
+  "summary": "Search Grants.gov for federal funding opportunities by agency, category, and eligibility. 4 tools.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gov_grants",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Martin",
+      "features": [
+        "Search Grants.gov for federal funding opportunities by agency, category, and eligibility",
+        "4 tools."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gov-grants@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138740843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gov-grants",
+      "url": "https://clawhub.ai/skills/gov-grants"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gov-grants",
+    "url": "https://clawhub.ai/skills/gov-grants",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gov-grants-25e86902ce02020a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gov-grants@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gov-grants-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf7ca2bbde8fec528d1c86a35ac5b016e0eddcac518c2a613d59b3e996beb2ff",
+      "artifactSizeBytes": 2141
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T17:58:58.380Z"
+}

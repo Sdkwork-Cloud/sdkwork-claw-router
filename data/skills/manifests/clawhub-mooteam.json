@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29764,
+  "uuid": "skill-clawhub-mooteam",
+  "skillKey": "clawhub-mooteam",
+  "name": "MooTeam CRM",
+  "summary": "MooTeam (moo.team) API v1 for OpenClaw: projects, teams, tasks, drafts, comments, workflows, statuses, labels, timer and time logs, activity logs. Requires M...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mooteam",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "antokhin-seo",
+      "features": [
+        "MooTeam (moo.team) API v1 for OpenClaw: projects, teams, tasks, drafts, comments, workflows, st.",
+        "Requires M..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mooteam@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195454978?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mooteam",
+      "url": "https://clawhub.ai/skills/mooteam"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mooteam",
+    "url": "https://clawhub.ai/skills/mooteam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mooteam-00f3fef310a30b1a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mooteam@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mooteam-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe721b1691db06d7488187f1a52b34197f62d4ab2db8150e3e333c465e4ac958",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T18:30:04.623Z"
+}

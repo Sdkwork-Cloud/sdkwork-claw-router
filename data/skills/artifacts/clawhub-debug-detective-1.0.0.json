@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/debug-detective@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.debug_detective",
+  "skill": {
+    "id": 18976,
+    "skillKey": "clawhub-debug-detective",
+    "name": "debug detective"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "debug-detective",
+    "url": "https://clawhub.ai/skills/debug-detective",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/debug-detective-fb7db7000ed153c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Activate this skill whenever a user needs help debugging, diagnosing, or profiling issues in their application. Covers systematic debugging methodology, git..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "royhk920",
+      "userId": "s179273w43zh8y75zyzst8wa2h83gwxh",
+      "displayName": "royhk920",
+      "image": "https://avatars.githubusercontent.com/u/129730053?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 637,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773592936911,
+      "changelog": "Initial release of **debug-detective** skill.\n\n- Provides systematic debugging guidance across application, system, and network layers.\n- Covers debugging workflows, cognitive bias pitfalls, and rapid fault isolation strategies.\n- Includes deep dives into tools like Chrome DevTools, Node.js/Python debuggers, strace, tcpdump, and database analyzers.\n- Offers step-by-step guidance for git bisect, performance profiling, distributed tracing, and production diagnostics.\n- Features practical checklists, code/documentation snippets, and prevention strategies for robust debugging.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:671e19900b86ae49223593db5310ceb66f9cb5d1c30362c6932c319d4cb7f2c8"
+}

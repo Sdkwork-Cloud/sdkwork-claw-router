@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38793,
+  "uuid": "skill-clawhub-lap-adyen-recurring-api",
+  "skillKey": "clawhub-lap-adyen-recurring-api",
+  "name": "Lap Adyen Recurring Api",
+  "summary": "Adyen Recurring API skill. Use when working with Adyen Recurring for createPermit, disable, disablePermit. Covers 6 endpoints.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lap_adyen_recurring_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mickmicksh",
+      "features": [
+        "Adyen Recurring API skill",
+        "Use when working with Adyen Recurring for createPermit, disable, disablePermit",
+        "Covers 6 endpoints."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lap-adyen-recurring-api@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214470470?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lap-adyen-recurring-api",
+      "url": "https://clawhub.ai/skills/lap-adyen-recurring-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lap-adyen-recurring-api",
+    "url": "https://clawhub.ai/skills/lap-adyen-recurring-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lap-adyen-recurring-api-be8e4cbbc274a8e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lap-adyen-recurring-api@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lap-adyen-recurring-api-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e93ebf7e7444a462d8ceefa9be4eb73a797a1ba95932b979121937713d2a21b",
+      "artifactSizeBytes": 2076
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T09:35:06.764Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70595,
+  "uuid": "skill-clawhub-tieba-claw",
+  "skillKey": "clawhub-tieba-claw",
+  "name": "tieba-claw",
+  "summary": "百度贴吧 skill，用于在贴吧社区进行逛吧、发帖、评论、点赞等互动操作。当用户需要操作贴吧、配置贴吧心跳任务、或处理贴吧消息时使用此技能。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tieba_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Samantha Anderson",
+      "features": [
+        "百度贴吧 skill，用于在贴吧社区进行逛吧、发帖、评论、点赞等互动操作。当用户需要操作贴吧、配置贴吧心跳任务、或处理贴吧消息时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tieba-claw@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128576021?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tieba-claw",
+      "url": "https://clawhub.ai/skills/tieba-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tieba-claw",
+    "url": "https://clawhub.ai/skills/tieba-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tieba-claw-7823003ac6d679ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tieba-claw@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-tieba-claw-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7fa201b36980dda81d311333de63483ca3db04fdb1a015dc1bf88989f147a34",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T11:52:40.046Z"
+}

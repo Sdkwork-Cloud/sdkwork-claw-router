@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xingqiaoskill@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xingqiaoskill",
+  "skill": {
+    "id": 65535,
+    "skillKey": "clawhub-xingqiaoskill",
+    "name": "xingqiaoskill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xingqiaoskill",
+    "url": "https://clawhub.ai/skills/xingqiaoskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xingqiaoskill-8c932939bcd1070e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "星桥信息订阅与收发平台。当用户消息以\"星桥\"开头时触发此 skill。支持自然语言命令：push 发送信息，pull 拉取订阅信息，subscribe 订阅用户，reply 回复消息。支持复合命令如\"星桥 总结今天，发送\"。支持标签自动生成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zp75296383",
+      "userId": "s1743azc7e3pvgnsdn5vp38qg983wfsa",
+      "displayName": "zp75296383",
+      "image": "https://avatars.githubusercontent.com/u/6948104?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774873706412,
+      "changelog": "Initial release of xingqiaoskill.\n\n- Added all source and configuration files for the first public version.\n- Provided installation instructions for both ClawHub and manual GitHub methods.\n- Implemented automatic initialization on first use, including Token generation and registration.\n- Documented natural language command support and trigger rules.\n- Included usage examples and configuration details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:128e7fe57c097bee3418e60719f476e8e713c6d31de35fd3ac7d6703fcecfcc3"
+}

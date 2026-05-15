@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13770,
+  "uuid": "skill-clawhub-folders",
+  "skillKey": "clawhub-folders",
+  "name": "Folders",
+  "summary": "Index important directories and perform safe folder operations with proper security checks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.folders",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Index important directories and perform safe folder operations with proper security checks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/folders@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "folders",
+      "url": "https://clawhub.ai/skills/folders"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "folders",
+    "url": "https://clawhub.ai/skills/folders",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/folders-63b8533061410c19.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/folders@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-folders-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df5e01ce5953f80d8115001a1d6b255412245d1d977c42089b80214718e31dbe",
+      "artifactSizeBytes": 1765
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T12:56:51.316Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21769,
+  "uuid": "skill-clawhub-oneshot-ship",
+  "skillKey": "clawhub-oneshot-ship",
+  "name": "Oneshot Ship",
+  "summary": "Ship code with oneshot CLI. One command that plans, executes, reviews, and opens a PR. Runs over SSH or locally. Use when the user wants to ship code changes...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oneshot_ship",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andrew Wilkinson",
+      "features": [
+        "Ship code with oneshot CLI",
+        "One command that plans, executes, reviews, and opens a PR",
+        "Runs over SSH or locally",
+        "Use when the user wants to ship code changes..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oneshot-ship@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29403976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oneshot-ship",
+      "url": "https://clawhub.ai/skills/oneshot-ship"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oneshot-ship",
+    "url": "https://clawhub.ai/skills/oneshot-ship",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oneshot-ship-ea2f7cfa522d10fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oneshot-ship@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-oneshot-ship-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b372060ca4ec0ac18a2e5c9db88dff02191442a982f884ce4572390c13a29338",
+      "artifactSizeBytes": 2331
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T08:13:27.234Z"
+}

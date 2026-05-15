@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21014,
+  "uuid": "skill-clawhub-ssl-checker",
+  "skillKey": "clawhub-ssl-checker",
+  "name": "Ssl Checker",
+  "summary": "Check SSL certificate health, protocols, and cipher suites on domains. Use when auditing web security.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssl_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Check SSL certificate health, protocols, and cipher suites on domains",
+        "Use when auditing web security."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssl-checker@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssl-checker",
+      "url": "https://clawhub.ai/skills/ssl-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssl-checker",
+    "url": "https://clawhub.ai/skills/ssl-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssl-checker-f602260121ef0679.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssl-checker@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssl-checker-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:032e20658b315b2ff4c25c72ad87d039e35b2c7f58bac23584cd1588e52532ed",
+      "artifactSizeBytes": 1814
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T14:23:25.518Z"
+}

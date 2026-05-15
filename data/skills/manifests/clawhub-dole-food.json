@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47088,
+  "uuid": "skill-clawhub-dole-food",
+  "skillKey": "clawhub-dole-food",
+  "name": "dole-food",
+  "summary": "Provides detailed information on Dole Food's history, global produce operations, supply chain, and market leadership in bananas and pineapples.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dole_food",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides detailed information on Dole Food's history, global produce operations, supply chain,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dole-food@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dole-food",
+      "url": "https://clawhub.ai/skills/dole-food"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dole-food",
+    "url": "https://clawhub.ai/skills/dole-food",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dole-food-8eef02b03a27b567.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dole-food@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dole-food-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c4372eb0cd85cbeb933eff6607bae4ddab49d5778b7a78851568f008c778d4d",
+      "artifactSizeBytes": 1842
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T18:32:40.593Z"
+}

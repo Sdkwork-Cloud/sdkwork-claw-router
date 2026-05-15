@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ccusage-report@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccusage_report",
+  "skill": {
+    "id": 20524,
+    "skillKey": "clawhub-ccusage-report",
+    "name": "Ccusage Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccusage-report",
+    "url": "https://clawhub.ai/skills/ccusage-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccusage-report-c4fd9142ac034f15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Report Claude Code token consumption and costs using ccusage. Use when the user asks about their Claude Code usage, token consumption, API costs, spending, o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spideystreet",
+      "userId": "publishers:spideystreet",
+      "displayName": "𝑠𝑝𝑖𝑑𝑒𝑦",
+      "image": "https://avatars.githubusercontent.com/u/146075220?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 550,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772721991545,
+      "changelog": "Declare `bunx` in `metadata.openclaw.requires.bins` and normalize install slug.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0d63dd7a5850d17e7729344ed4ca05e78b8ea597134648ffe391e7e97ac2362c"
+}

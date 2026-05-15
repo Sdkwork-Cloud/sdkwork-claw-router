@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52927,
+  "uuid": "skill-clawhub-code-explainer-tool",
+  "skillKey": "clawhub-code-explainer-tool",
+  "name": "Code Explainer Tool",
+  "summary": "Explain any code snippet or file in plain English. Paste code → get a clear explanation of what it does, how it works, and key concepts. Use when the user sh...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_explainer_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CJ Hauser",
+      "features": [
+        "Explain any code snippet or file in plain English",
+        "Paste code → get a clear explanation of what it does, how it works, and key concepts",
+        "Use when the user sh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-explainer-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201248601?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-explainer-tool",
+      "url": "https://clawhub.ai/skills/code-explainer-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-explainer-tool",
+    "url": "https://clawhub.ai/skills/code-explainer-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-explainer-tool-c5de9a96e349a3a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-explainer-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-explainer-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae3f11ce73b25c6ca596bfa90aef583651a4dec697190b99057c604871f4bd51",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T15:19:06.320Z"
+}

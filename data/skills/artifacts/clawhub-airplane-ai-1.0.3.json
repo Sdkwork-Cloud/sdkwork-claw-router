@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/airplane-ai@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airplane_ai",
+  "skill": {
+    "id": 56591,
+    "skillKey": "clawhub-airplane-ai",
+    "name": "Airplane AI / 断网 AI 助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airplane-ai",
+    "url": "https://clawhub.ai/skills/airplane-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airplane-ai-53bfc03bac9629c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give LM Studio or Ollama users a browser-based AI chat interface that works completely offline. Use when the user wants an offline-capable personal AI, needs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robinflw",
+      "userId": "s17bsdd180251g1e0h7qxt78y185vt4q",
+      "displayName": "robinflw",
+      "image": "https://avatars.githubusercontent.com/u/275027184?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777543979429,
+      "changelog": "- Removed the macOS app step-by-step guide markdown file (references/macos-app-guide.md).\n- Updated macOS .app packaging instructions directly in SKILL.md with a concise summary and new GitHub references link.\n- No feature or code changes; documentation for Mac users is now integrated and easier to find.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35a529e31bfe1f79e0805854e2b23d5db1fdd1be92f894c0414181c5812037ba"
+}

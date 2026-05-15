@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59207,
+  "uuid": "skill-clawhub-xia-desktop-agent",
+  "skillKey": "clawhub-xia-desktop-agent",
+  "name": "Xia Desktop Agent",
+  "summary": "Windows桌面自动化代理。通过自然语言或预设指令控制桌面：截图、点击、输入、按键、打开应用、微信发消息/文件、ToDesk远程连接。Use when user asks to control desktop, send WeChat messages, establish ToDesk remote conn...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xia_desktop_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Oldairman",
+      "features": [
+        "Windows桌面自动化代理。通过自然语言或预设指令控制桌面：截图、点击、输入、按键、打开应用、微信发消息/文件、ToDesk远程连接。Use when user asks to contr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xia-desktop-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/182534032?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xia-desktop-agent",
+      "url": "https://clawhub.ai/skills/xia-desktop-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xia-desktop-agent",
+    "url": "https://clawhub.ai/skills/xia-desktop-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xia-desktop-agent-b6cd638397a61664.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xia-desktop-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xia-desktop-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37affa77ce1c22bd93213fd113e7a0ace892e7bf09ba0477bf39e1d01ab5d841",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T01:55:54.012Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/legal-cog@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_cog",
+  "skill": {
+    "id": 12512,
+    "skillKey": "clawhub-legal-cog",
+    "name": "Legal Cog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-cog",
+    "url": "https://clawhub.ai/skills/legal-cog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-cog-1f3082d7f82e520f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI legal document generation powered by CellCog. Contracts, NDAs, terms of service, privacy policies, freelance agreements, employment contracts, compliance..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nitishgargiitd",
+      "userId": "s1766yx1dct3dffeec508gjrz983fce7",
+      "displayName": "CellCog",
+      "image": "https://avatars.githubusercontent.com/u/14193431?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1514,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1776925145991,
+      "changelog": "- Added explicit system requirements to metadata: now declares python3 binary and CELLCOG_API_KEY environment variable.\n- No changes to the core functionality or usage instructions.\n- Documentation improved for clarity around prerequisites.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8e61930a5de9068cc9c05f444195ea9f7097ee0075658d0b2fca25e4d6ae33f"
+}

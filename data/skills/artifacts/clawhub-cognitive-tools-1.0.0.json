@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cognitive-tools@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cognitive_tools",
+  "skill": {
+    "id": 73152,
+    "skillKey": "clawhub-cognitive-tools",
+    "name": "李继刚认知工具箱"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cognitive-tools",
+    "url": "https://clawhub.ai/skills/cognitive-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cognitive-tools-4e354f2668dbdc8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "整合李继刚原创的11个认知工具，实现逻辑分析、问题挖掘、抽象表达、多角度思考和公文写作等深度认知任务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "18678837882",
+      "userId": "s17b2mpr98ny7xerc9wmaf8fr584nq9m",
+      "displayName": "18678837882",
+      "image": "https://avatars.githubusercontent.com/u/260680779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 285,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775876979177,
+      "changelog": "- Initial release of \"认知工具箱 (Cognitive Tools)\" skill, featuring 11 distinct AI cognitive tools distilled from seven classic books.\n- Enables users to activate tools like 逻辑之刃, 问题之锤, 抽象之梯, and others using simple trigger words for in-depth analysis, concept definition, multi-angle perspectives, and more.\n- Supports both single-tool invocation and recommended toolchain workflows to address complex problems systematically.\n- Incorporates original prompts by 李继刚 for each cognitive tool; seamlessly integrates with other skills and requires no external API.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47e5edbcce726a299d26ed2294a3c05dd4915332c23e32af9e91830836c59707"
+}

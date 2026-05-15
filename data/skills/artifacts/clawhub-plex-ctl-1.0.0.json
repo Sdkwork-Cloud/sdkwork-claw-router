@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plex-ctl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plex_ctl",
+  "skill": {
+    "id": 16286,
+    "skillKey": "clawhub-plex-ctl",
+    "name": "PLEX-CTL"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plex-ctl",
+    "url": "https://clawhub.ai/skills/plex-ctl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plex-ctl-a18044a424177c8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Command-line tool for searching, playing, and controlling Plex Media Server and clients via the Plex API on your local network."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "akivasolutions",
+      "userId": "s177f2j8e9h7qxk74bxe93qgks83hbrg",
+      "displayName": "akivasolutions",
+      "image": "https://avatars.githubusercontent.com/u/259251553?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 805,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771046104704,
+      "changelog": "Initial release — standalone Plex Media Server CLI. Play, search, pause, resume, browse libraries, and control any Plex client directly via API.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:043fd653cf86b1a3827fbb68224a25a06f39087f31009b66408a2fcff2961f48"
+}

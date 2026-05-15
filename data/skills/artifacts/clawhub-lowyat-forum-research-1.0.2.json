@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lowyat-forum-research@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lowyat_forum_research",
+  "skill": {
+    "id": 38677,
+    "skillKey": "clawhub-lowyat-forum-research",
+    "name": "Lowyat Forum Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lowyat-forum-research",
+    "url": "https://clawhub.ai/skills/lowyat-forum-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lowyat-forum-research-2c0bab703de40edc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research any topic by searching Lowyat forum (forum.lowyat.net), scraping relevant threads into Excel, and analyzing the results. Use this skill whenever the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "superoo7",
+      "userId": "s17a8v8210dnhnvc10qyhbwdc183wc1s",
+      "displayName": "Johnson",
+      "image": "https://avatars.githubusercontent.com/u/15358452?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774874421567,
+      "changelog": "- Cleaned up and simplified Python package installation instructions for the scraper.\n- Provided clearer guidance on using pip or uv for dependencies.\n- Removed detailed setup steps for uv and consolidated installation commands.\n- No changes to features or core workflow; documentation/editing updates only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f6b524413161f6e28e03d17da6e57091eb8c72134b4a3a256421e61496def2d"
+}

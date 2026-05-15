@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elite-tools@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elite_tools",
+  "skill": {
+    "id": 14945,
+    "skillKey": "clawhub-elite-tools",
+    "name": "Elite CLI Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elite-tools",
+    "url": "https://clawhub.ai/skills/elite-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elite-tools-db65127c9af9a802.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Elite CLI tooling for efficient shell operations with optimized token usage. Use when executing shell commands, traversing directories, or manipulating files..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bezkom",
+      "userId": "publishers:bezkom",
+      "displayName": "bezkom",
+      "image": "https://avatars.githubusercontent.com/u/190393007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1008,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1771871275862,
+      "changelog": "Initial release with newline encoding fix",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a57d909d56a5d769b0c910161afe2701b8b53d4fe4800b091a91edf2e167ed2b"
+}

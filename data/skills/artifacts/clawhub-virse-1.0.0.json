@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/virse@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virse",
+  "skill": {
+    "id": 51895,
+    "skillKey": "clawhub-virse",
+    "name": "Virse Design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virse",
+    "url": "https://clawhub.ai/skills/virse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virse-c2ac562be9d79b5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Virse AI Design Platform — AI image generation, canvas layout, workspace management, and asset organization. Use this skill whenever the user mentions Virse,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vxcent",
+      "userId": "publishers:vxcent",
+      "displayName": "vxcent",
+      "image": "https://avatars.githubusercontent.com/u/40618469?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 267,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773958419540,
+      "changelog": "Initial release of the Virse skill for AI-driven visual design workflows.\n\n- Provides tool routing and workflow support for the Virse AI Design Platform: workspace management, canvas operations, AI image generation, and asset organization.\n- Offers direct tool calls for common requests (e.g. generate image, show workspaces, check balance, search images).\n- Integrates with playbooks and workflow examples for complex creative tasks and multi-stage pipelines.\n- Includes built-in guidance for model selection, prompt crafting, layout algorithms, and asset search strategies.\n- Handles authentication and user verification within the workflow.\n- Suitable for all visual design tasks involving canvases, AI image generation, and creative asset management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ef8fd593ae0aabb46ef7375b3474064762ce21eef08abdc3b65527fe0e1a278"
+}

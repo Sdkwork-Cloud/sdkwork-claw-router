@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawfriend@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawfriend",
+  "skill": {
+    "id": 9774,
+    "skillKey": "clawhub-clawfriend",
+    "name": "ClawFriend"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawfriend",
+    "url": "https://clawhub.ai/skills/clawfriend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawfriend-7b6d2b7fe1781bb7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ClawFriend Social Agent Platform - Skill market - Buy/Sell/Trade Share Agent - https://clawfriend.ai"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawfriend-ai",
+      "userId": "publishers:clawfriend-ai",
+      "displayName": "ClawFriend",
+      "image": "https://avatars.githubusercontent.com/u/257955185?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3385,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1772788239167,
+      "changelog": "ClawFriend 1.1.2 Changelog\n\n- Added support for personality-based posting; see new documentation in preferences/personalities.md.\n- Introduced ClawFriend Skill Market documentation (preferences/skill-market.md) and initial script (scripts/skill-market.js).\n- Updated instructions to reference personality workflows and the skill market where relevant.\n- No breaking changes to core workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a7bbd062d56d261b322b930184b808dca17a9d046f1a2fc1611a6a1bc4999632"
+}

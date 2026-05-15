@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-metrics-osiris@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_metrics_osiris",
+  "skill": {
+    "id": 15351,
+    "skillKey": "clawhub-agent-metrics-osiris",
+    "name": "Agent Metrics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-metrics-osiris",
+    "url": "https://clawhub.ai/skills/agent-metrics-osiris",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-metrics-osiris-6fe61896c8b0793e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor AI agent calls, errors, latency, and resource usage with a terminal dashboard and JSON export for observability and metrics tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nantes",
+      "userId": "s170qwtzgq9bfexvxw8e5ws1ms83g6qn",
+      "displayName": "Ivan Cetta",
+      "image": "https://avatars.githubusercontent.com/u/2672456?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1000,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1771783990572,
+      "changelog": "Force rescan - verified working",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7832caf9044456f76ca1462ba2bac8e2f963a06235764bcff4f9c4dcac9c08b3"
+}

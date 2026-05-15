@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caption-generator-in-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caption_generator_in_video",
+  "skill": {
+    "id": 46612,
+    "skillKey": "clawhub-caption-generator-in-video",
+    "name": "Caption Generator In Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caption-generator-in-video",
+    "url": "https://clawhub.ai/skills/caption-generator-in-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caption-generator-in-video-1025eced2af689eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add video files into captioned video files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. YouTubers, TikTok creators, marketers use it fo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776054836182,
+      "changelog": "Initial release of Caption Generator in Video.\n\n- Add captions and subtitles to MP4, MOV, AVI, and WebM videos up to 500MB.\n- Automatic setup with free NEMO_TOKEN if needed; all processing handled in the cloud.\n- Fast 30–60 second AI-powered caption generation and 1080p MP4 export.\n- Supports quick edits, batch processing, and iterative workflows with session tracking.\n- Clear error handling and easy commands for export, credits, status, and upload.\n- No local installation required — just upload your video and specify caption details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b75d51b5f6ec0579585bf51e124b9afeb44849a76b37895571f33c4420958ea"
+}

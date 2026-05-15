@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68375,
+  "uuid": "skill-clawhub-content-creation",
+  "skillKey": "clawhub-content-creation",
+  "name": "自媒体内容创作大师",
+  "summary": "部署内容创作Agent团队（墨白主编+探风选题+锦书文案），平台无关的内容生产核心。使用 /content-creation 触发，交互式引导配置品牌信息并自动部署。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_creation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Little-ke",
+      "features": [
+        "部署内容创作Agent团队（墨白主编+探风选题+锦书文案），平台无关的内容生产核心。使用 /content-creation 触发，交互式引导配置品牌信息并自动部署。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-creation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61963028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-creation",
+      "url": "https://clawhub.ai/skills/content-creation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-creation",
+    "url": "https://clawhub.ai/skills/content-creation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-creation-b3b99b749eab0104.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-creation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-creation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:789449027a1251da4e83a3cbb93dc6e596ec542463dc36f31d13aba7914749c6",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T16:22:00.422Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8272,
+  "uuid": "skill-clawhub-apple-notes",
+  "skillKey": "clawhub-apple-notes",
+  "name": "Apple Notes",
+  "summary": "Manage Apple Notes via the `memo` CLI on macOS (create, view, edit, delete, search, move, and export notes). Use when a user asks Clawdbot to add a note, list notes, search notes, or manage note folders.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_notes",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peter Steinberger",
+      "features": [
+        "Manage Apple Notes via the `memo` CLI on macOS (create, view, edit, delete, search, move, and e.",
+        "Use when a user asks Clawdbot to add a note, list notes, search notes, or manage note folders."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apple-notes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apple-notes",
+      "url": "https://clawhub.ai/skills/apple-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-notes",
+    "url": "https://clawhub.ai/skills/apple-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-notes-a39986f7caba3a6b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apple-notes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apple-notes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12555246f73349c2d1ddf37f06eac7d2c3a439841e1871546a30b1159a8e00e2",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-04T16:48:14.031Z"
+}

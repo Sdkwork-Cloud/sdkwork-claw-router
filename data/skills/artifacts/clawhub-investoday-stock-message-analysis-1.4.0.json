@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/investoday-stock-message-analysis@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investoday_stock_message_analysis",
+  "skill": {
+    "id": 69487,
+    "skillKey": "clawhub-investoday-stock-message-analysis",
+    "name": "investoday-stock-message-analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investoday-stock-message-analysis",
+    "url": "https://clawhub.ai/skills/investoday-stock-message-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investoday-stock-message-analysis-ce0e0c2036fbb99d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向A股个股消息解读，聚焦近期新闻、事件情绪、机构验证与市场反馈。基于今日投资金融数据接口，自动识别股票代码并输出结构化消息解读报告。触发词：最近新闻、消息面、消息解读、事件驱动、利好利空、催化、风险消息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kenneth-bro",
+      "userId": "s177j0jytadhmffa017fzg5tcs83gmm6",
+      "displayName": "investoday",
+      "image": "https://avatars.githubusercontent.com/u/19256972?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1774681394328,
+      "changelog": "Automated release from GitHub Actions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81236b15267408d49624cfbe3951c5d7b4ee103e20cd98b12c35a080096c4b71"
+}

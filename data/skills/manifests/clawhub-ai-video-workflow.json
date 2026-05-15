@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67440,
+  "uuid": "skill-clawhub-ai-video-workflow",
+  "skillKey": "clawhub-ai-video-workflow",
+  "name": "AI视频完整制作工作流",
+  "summary": "AI视频完整制作工作流技能。适用于： 1. 用户要求\"制作AI视频\"、\"做AI视频\"、\"AI视频创作\" 2. 用户提到\"视频工作流\"、\"视频制作流程\" 3. 用户需要AI视频制作的系统化指导 核心：七步流程 + 打磨检查贯穿每步 + 提示词模板",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "892153301",
+      "features": [
+        "AI视频完整制作工作流技能。适用于： 1",
+        "用户要求\"制作AI视频\"、\"做AI视频\"、\"AI视频创作\" 2",
+        "用户提到\"视频工作流\"、\"视频制作流程\" 3",
+        "用户需要AI视频制作的系统化指导 核心：七步流程 + 打磨检查贯穿每步 + 提示词模板"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-video-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49800950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-video-workflow",
+      "url": "https://clawhub.ai/skills/ai-video-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-workflow",
+    "url": "https://clawhub.ai/skills/ai-video-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-workflow-7e681a1e64a38c23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-video-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-video-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35afef47f105d9c72b61dd78a8237399c433910e3e7aff2c9b8fc291ab11e157",
+      "artifactSizeBytes": 2067
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T08:07:18.792Z"
+}

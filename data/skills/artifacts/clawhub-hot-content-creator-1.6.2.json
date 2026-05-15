@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hot-content-creator@1.6.2",
+  "version": "1.6.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hot_content_creator",
+  "skill": {
+    "id": 71696,
+    "skillKey": "clawhub-hot-content-creator",
+    "name": "Hot Content Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hot-content-creator",
+    "url": "https://clawhub.ai/skills/hot-content-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hot-content-creator-21c9f19bef6ca990.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "热点内容创作助手：自动抓取多平台热点，筛选创作方向，生成小红书封面图和虚拟博主形象， 写出有人味的爆款内容。触发词：热点创作、追热点、创作方向、小红书方向、抖音方向。 适用场景：需要从热点中挖掘内容创作方向并生成配图+文案的完整工作流。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pengpengliu1212-art",
+      "userId": "s17a6yf887wep91zg3hjwpvfsx85pxge",
+      "displayName": "DayuCyrus",
+      "image": "https://avatars.githubusercontent.com/u/273726579?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 319,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.6.2",
+      "createdAt": 1777717751237,
+      "changelog": "v1.6.2: 删除自检表（分离为内部文件），清理所有私有参数，封面和虚拟形象均改为通用工作流",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4b67b4ba5e5ce88a005376248a517b98aad24826dc8740413c47a8c8f3cb582"
+}

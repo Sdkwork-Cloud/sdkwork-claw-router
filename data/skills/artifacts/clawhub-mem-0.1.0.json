@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mem@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mem",
+  "skill": {
+    "id": 13385,
+    "skillKey": "clawhub-mem",
+    "name": "mem"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mem",
+    "url": "https://clawhub.ai/skills/mem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mem-6fe2e0f6071ac2bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search local memory index (local-first). Use for /mem queries in Telegram."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trumppo",
+      "userId": "publishers:trumppo",
+      "displayName": "Trumppo",
+      "image": "https://avatars.githubusercontent.com/u/9217263?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1413,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770573482979,
+      "changelog": "Initial publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:13791cb8b15c776a6e7d3635fc597bce7d5c6467abae0c84c001e27826b1bfd1"
+}

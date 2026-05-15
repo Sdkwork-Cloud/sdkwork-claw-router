@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55695,
+  "uuid": "skill-clawhub-video-json-ai",
+  "skillKey": "clawhub-video-json-ai",
+  "name": "Video Json Ai",
+  "summary": "Skip the learning curve of professional editing software. Describe what you want — extract video metadata and scene data as structured JSON — and get structu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_json_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "Skip the learning curve of professional editing software",
+        "Describe what you want — extract video metadata and scene data as structured JSON — and get str."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-json-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-json-ai",
+      "url": "https://clawhub.ai/skills/video-json-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-json-ai",
+    "url": "https://clawhub.ai/skills/video-json-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-json-ai-8d72b8793aa32171.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-json-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-json-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db328c574f8878fc342dde650df13a795071fe919b50789bc9b634eade765794",
+      "artifactSizeBytes": 2485
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T03:22:40.923Z"
+}

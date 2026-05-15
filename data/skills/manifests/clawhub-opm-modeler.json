@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39777,
+  "uuid": "skill-clawhub-opm-modeler",
+  "skillKey": "clawhub-opm-modeler",
+  "name": "OPM Modeler",
+  "summary": "Model systems using Object-Process Methodology (OPM/ISO 19450). Use when the user asks to model a system, create an SD, build OPDs, write OPL sentences, refi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opm_modeler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "felix-antonio-sl",
+      "features": [
+        "Model systems using Object-Process Methodology (OPM/ISO 19450)",
+        "Use when the user asks to model a system, create an SD, build OPDs, write OPL sentences, refi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opm-modeler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143637936?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opm-modeler",
+      "url": "https://clawhub.ai/skills/opm-modeler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opm-modeler",
+    "url": "https://clawhub.ai/skills/opm-modeler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opm-modeler-f33c6ea65a3d23f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opm-modeler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opm-modeler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ded6f6b2a6570fbc67b88c2aac8191bc79bec095e59288d306adc5a8316048e3",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T20:17:58.793Z"
+}

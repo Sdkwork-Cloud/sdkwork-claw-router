@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/teams-delegate@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teams_delegate",
+  "skill": {
+    "id": 19984,
+    "skillKey": "clawhub-teams-delegate",
+    "name": "Teams Delegate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teams-delegate",
+    "url": "https://clawhub.ai/skills/teams-delegate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teams-delegate-6547a2117ceaffbf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Delegate Microsoft Teams inbox management to your AI agent for auto-replies, message summaries, priority filtering, and context-aware responses."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "takeovernat",
+      "userId": "publishers:takeovernat",
+      "displayName": "Natnael Teshome",
+      "image": "https://avatars.githubusercontent.com/u/78238029?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 580,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1772470068245,
+      "changelog": "Update author display name to Nate Teshome and website to stellarsitesai.com",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ef9b5c8a5ecfa0e8f0a24b18fd052d9c3643bbed8f10cadea595869ac311edb3"
+}

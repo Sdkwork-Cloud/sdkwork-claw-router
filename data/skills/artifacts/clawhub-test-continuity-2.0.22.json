@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-continuity@2.0.22",
+  "version": "2.0.22",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_continuity",
+  "skill": {
+    "id": 48392,
+    "skillKey": "clawhub-test-continuity",
+    "name": "Test Continuity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-continuity",
+    "url": "https://clawhub.ai/skills/test-continuity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-continuity-c099f49fbeb1e3d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured continuity and follow-up skill for OpenClaw agents. Use when an agent needs to decide whether natural user dialogue should stay as casual chat, be..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kylnwu",
+      "userId": "s1702znpjvc7ezfa9fcs8tjg4183sdf8",
+      "displayName": "kylnwu",
+      "image": "https://avatars.githubusercontent.com/u/74576340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.22",
+      "createdAt": 1777336305803,
+      "changelog": "- Clarified and expanded documentation in SKILL.md, describing the skill's purpose, feature scope, runtime boundaries, and setup steps.\n- Outlined V2 public scope, including context-sensitive memory classification, event chains, and deterministic first-run setup.\n- Specified clear exclusions: no default companionship rhythm or generic proactive chatting.\n- Provided detailed configuration and setup instructions.\n- Listed entry points for developers, highlighting interaction with core scripts and functions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb4bb5bf0ffddfb5a0217efdfe81a7674f5b9d1146e0ae1ccbcba865fe1b5553"
+}

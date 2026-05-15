@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51660,
+  "uuid": "skill-clawhub-ogp-project",
+  "skillKey": "clawhub-ogp-project",
+  "name": "Ogp Project",
+  "summary": "Tool-agnostic project collaboration for AI assistants. Users keep their own tools (Linear, Jira, Obsidian, GitHub, iCloud, local files — anything). This skil...",
+  "version": "0.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ogp_project",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "latentgenius",
+      "features": [
+        "Tool-agnostic project collaboration for AI assistants",
+        "Users keep their own tools (Linear, Jira, Obsidian, GitHub, iCloud, local files — anything)",
+        "This skil..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ogp-project@0.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203848779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ogp-project",
+      "url": "https://clawhub.ai/skills/ogp-project"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ogp-project",
+    "url": "https://clawhub.ai/skills/ogp-project",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ogp-project-803342452a74db91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ogp-project@0.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ogp-project-0.6.0.json",
+      "version": "0.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1b0d4628825ce299f51fd0f6c2321f1515a0dc690846bc59da45d03beff0126",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T16:10:39.765Z"
+}

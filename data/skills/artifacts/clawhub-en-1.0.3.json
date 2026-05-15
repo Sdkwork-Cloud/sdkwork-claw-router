@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/en@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.en",
+  "skill": {
+    "id": 57346,
+    "skillKey": "clawhub-en",
+    "name": "测试文件夹上传"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "en",
+    "url": "https://clawhub.ai/skills/en",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/en-dbd3a49d0d906b4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weina0925",
+      "userId": "s173fq6t0gmaj6rb3ehht3tdgh84gm9m",
+      "displayName": "weina0925",
+      "image": "https://avatars.githubusercontent.com/u/38428668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 291,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776935474517,
+      "changelog": "**New skill: Self-Improvement logging and workflow**\n\n- Adds the self-improvement skill, enabling systematic logging of learnings, errors, and feature requests to markdown files for continuous agent improvement.\n- Provides ready-to-use assets and templates (`LEARNINGS.md`, `ERRORS.md`, `FEATURE_REQUESTS.md`) for easy setup.\n- Includes a detailed skill guide for proper file initialization, usage scenarios, promotion workflows, and logging formats across different agent environments.\n- Supplies OpenClaw integration: install instructions, workspace structure, inter-session sharing, and a hook for automatic reminders.\n- Supports both OpenClaw and generic agent setups, with clear action steps for each use case.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95bab11a10c4d2ca5989a4b38aa792fc68fe888fe3586a8f6528d65870dbe6a3"
+}

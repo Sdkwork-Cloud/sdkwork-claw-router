@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56785,
+  "uuid": "skill-clawhub-contextledger",
+  "skillKey": "clawhub-contextledger",
+  "name": "知识账本",
+  "summary": "Evidence-first knowledge auditing skill that upgrades connected knowledge into an auditable conclusion card. It traces which sources support a conclusion, ma...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contextledger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Evidence-first knowledge auditing skill that upgrades connected knowledge into an auditable con.",
+        "It traces which sources support a conclusion, ma..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/contextledger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "contextledger",
+      "url": "https://clawhub.ai/skills/contextledger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contextledger",
+    "url": "https://clawhub.ai/skills/contextledger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contextledger-1a1379fbf503da95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/contextledger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-contextledger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0917657f5eba6888802f9d3d8b1557fbf42da557b5a2aec48e2d6bf528411641",
+      "artifactSizeBytes": 2069
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T08:41:55.608Z"
+}

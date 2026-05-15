@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22938,
+  "uuid": "skill-clawhub-reporead",
+  "skillKey": "clawhub-reporead",
+  "name": "Reporead",
+  "summary": "Analyze GitHub repositories using RepoRead AI. Use when the user asks to \"analyze a repo\", \"generate docs\", \"security audit a repo\", \"create a README\", or wa...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reporead",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gddp",
+      "features": [
+        "Analyze GitHub repositories using RepoRead AI",
+        "Use when the user asks to \"analyze a repo\", \"generate docs\", \"security audit a repo\", \"create a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reporead@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21368383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reporead",
+      "url": "https://clawhub.ai/skills/reporead"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reporead",
+    "url": "https://clawhub.ai/skills/reporead",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reporead-1b4af0cce9dfd0da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reporead@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reporead-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33cc936584eb8fe4fa65581ade3e2cf37b55f65b44083bc0144c9b0af7873769",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T14:38:11.622Z"
+}

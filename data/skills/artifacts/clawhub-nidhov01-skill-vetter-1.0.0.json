@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nidhov01-skill-vetter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nidhov01_skill_vetter",
+  "skill": {
+    "id": 21900,
+    "skillKey": "clawhub-nidhov01-skill-vetter",
+    "name": "Skill Vetter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nidhov01-skill-vetter",
+    "url": "https://clawhub.ai/skills/nidhov01-skill-vetter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nidhov01-skill-vetter-ef7d19336e5869ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security-first skill vetting for AI agents. Use before installing any skill from ClawdHub, GitHub, or other sources. Checks for red flags, permission scope,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nidhov01",
+      "userId": "publishers:nidhov01",
+      "displayName": "nidhov01",
+      "image": "https://avatars.githubusercontent.com/u/235751867?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 483,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773629533730,
+      "changelog": "Fork - 2026.3.16",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3583ffb114390048a74162e26aa6aad9f17b4fbb3c4684aaeec5550fe87c41a6"
+}

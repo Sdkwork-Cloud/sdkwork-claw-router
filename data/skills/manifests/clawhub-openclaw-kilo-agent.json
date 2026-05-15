@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31577,
+  "uuid": "skill-clawhub-openclaw-kilo-agent",
+  "skillKey": "clawhub-openclaw-kilo-agent",
+  "name": "openclaw-kilo-agent",
+  "summary": "High-performance coding agent and browser automation orchestrator using the Kilo CLI. Use when you need to: (1) Offload heavy-duty coding tasks (refactoring,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_kilo_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sabyaghosh",
+      "features": [
+        "High-performance coding agent and browser automation orchestrator using the Kilo CLI",
+        "Use when you need to: (1) Offload heavy-duty coding tasks (refactoring,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-kilo-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34610540?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-kilo-agent",
+      "url": "https://clawhub.ai/skills/openclaw-kilo-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-kilo-agent",
+    "url": "https://clawhub.ai/skills/openclaw-kilo-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-kilo-agent-f722bd71b64c55b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-kilo-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-kilo-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd6020183aa0618da2708e30bc83f938c9ea940eadb97b98cb3fbb957a5d5e28",
+      "artifactSizeBytes": 2492
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T03:26:23.837Z"
+}

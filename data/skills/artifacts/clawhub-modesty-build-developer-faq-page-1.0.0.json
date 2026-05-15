@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/modesty-build-developer-faq-page@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modesty_build_developer_faq_page",
+  "skill": {
+    "id": 41336,
+    "skillKey": "clawhub-modesty-build-developer-faq-page",
+    "name": "build-developer-faq-page"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modesty-build-developer-faq-page",
+    "url": "https://clawhub.ai/skills/modesty-build-developer-faq-page",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modesty-build-developer-faq-page-bfb5451b1cfe73aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate customer-facing answers for common developer questions. Use when working on FAQ content for developers, technical founders, product engineers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "modestyrichards",
+      "userId": "s17069c392wb17n1nvrdv0kq1h84qjrk",
+      "displayName": "ModestyRichards",
+      "image": "https://avatars.githubusercontent.com/u/261238899?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776834644435,
+      "changelog": "Initial release of Build Developer FAQ Page skill.\n\n- Generates customer-facing answers for common developer questions.\n- Designed for use by developers, technical founders, and product engineers.\n- Includes a clear workflow for drafting and refining FAQ content.\n- Supports relevant SEO keywords and integrates with chat and web search APIs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20c49fbd1371e5fe2c9df1d9d2aeb79ad1cffbc6e4d62dce2cb686c5311f2998"
+}

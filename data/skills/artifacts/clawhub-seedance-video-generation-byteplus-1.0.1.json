@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedance-video-generation-byteplus@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_video_generation_byteplus",
+  "skill": {
+    "id": 14171,
+    "skillKey": "clawhub-seedance-video-generation-byteplus",
+    "name": "Seedance Video Generation BytePlus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-video-generation-byteplus",
+    "url": "https://clawhub.ai/skills/seedance-video-generation-byteplus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-video-generation-byteplus-5da0d7ed68cf9627.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI videos using BytePlus Seedance API (International). Use when the user wants to: (1) generate videos from text prompts, (2) generate videos from images (first frame, first+last frame, reference images), or (3) query/manage video."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackycser",
+      "userId": "s171mymere9sg3qvm7s3jembyn83gfbv",
+      "displayName": "JackyCSer",
+      "image": "https://avatars.githubusercontent.com/u/10410898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1260,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770883807374,
+      "changelog": "seedance-video-generation-byteplus v1.0.1\n\n- Added LICENSE.txt file to the project.\n- No functional changes to the skill code or documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bedc0c980b0aaade500f5bfdc7365e549f1102dab73bed9b1dc927a5a8e98632"
+}

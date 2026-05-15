@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lensmor-exhibitor-search@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lensmor_exhibitor_search",
+  "skill": {
+    "id": 56884,
+    "skillKey": "clawhub-lensmor-exhibitor-search",
+    "name": "Lensmor Exhibitor Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lensmor-exhibitor-search",
+    "url": "https://clawhub.ai/skills/lensmor-exhibitor-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lensmor-exhibitor-search-3f1ef33e81a45dcb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find ICP-matching exhibitors, prospects, and partners at any trade show using the Lensmor API. \"Who is exhibiting at this show?\" / \"参展商搜索\" / \"Aussteller find..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weilun88313",
+      "userId": "s1723bcbr1g507y1ekdjmbyct983h3dw",
+      "displayName": "weilun88313",
+      "image": "https://avatars.githubusercontent.com/u/33587196?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775030117570,
+      "changelog": "**Expanded multilingual support and clarified descriptions for global users.**\n\n- Enhanced description and keywords for discoverability in multiple languages (English, Chinese, German, Japanese, Spanish).\n- No technical or workflow changes to the skill's logic or API.\n- Improved clarity in the skill’s purpose: now highlights prospects and partners, not just exhibitors.\n- No impact on existing user prompts, API calls, or error handling.\n- Version bump from 1.1.0 to 1.2.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed5f69c05eb9adbc88d0dac987f924f734b6efb985e94c7292cfd52764a593ad"
+}

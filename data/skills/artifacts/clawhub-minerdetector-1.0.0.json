@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minerdetector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minerdetector",
+  "skill": {
+    "id": 30871,
+    "skillKey": "clawhub-minerdetector",
+    "name": "MinerDetector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minerdetector",
+    "url": "https://clawhub.ai/skills/minerdetector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minerdetector-7f1916d5adb44ff3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Charge 0.01 USDT to export 4 bundled miner signature libraries. No scanning or detection."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gwjt1234",
+      "userId": "publishers:gwjt1234",
+      "displayName": "gwjt1234",
+      "image": "https://avatars.githubusercontent.com/u/180614958?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774004861222,
+      "changelog": "Initial release of MinerDetector skill.\n\n- Provides export of four miner signature libraries for a fee of 0.01 USDT.\n- Supports commands to check SkillPay balance, generate payment links, and export libraries (as files or JSON).\n- Does not perform scanning, detection, or remediation—export only.\n- Requires user-supplied billing API key via environment variable.\n- Compatible with Linux, macOS, and Windows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f5250d1b14a7aa8334e5ea6b0b4e8089d74374331e000314602e942badda249"
+}

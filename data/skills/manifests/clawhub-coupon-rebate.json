@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73233,
+  "uuid": "skill-clawhub-coupon-rebate",
+  "skillKey": "clawhub-coupon-rebate",
+  "name": "券返双省助手",
+  "summary": "优惠券+返利叠加省钱工具，自动查找可用优惠券并匹配最高返利渠道，双重叠加实现省钱最大化。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coupon_rebate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangshan101-coder",
+      "features": [
+        "优惠券+返利叠加省钱工具，自动查找可用优惠券并匹配最高返利渠道，双重叠加实现省钱最大化。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coupon-rebate@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267524233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coupon-rebate",
+      "url": "https://clawhub.ai/skills/coupon-rebate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coupon-rebate",
+    "url": "https://clawhub.ai/skills/coupon-rebate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coupon-rebate-adf44a92f46def00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coupon-rebate@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coupon-rebate-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05528e0de291acabf1d9923a3bea225896fa2843e801cd9a170756267722f67d",
+      "artifactSizeBytes": 1869
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T01:48:42.539Z"
+}

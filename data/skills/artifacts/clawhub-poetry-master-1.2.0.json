@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/poetry-master@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poetry_master",
+  "skill": {
+    "id": 69818,
+    "skillKey": "clawhub-poetry-master",
+    "name": "Poetry Master - Chinese Classical Poetry Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poetry-master",
+    "url": "https://clawhub.ai/skills/poetry-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poetry-master-3ff48d5c34ad05e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "诗词雅韵助手——中华传统诗词专业点评与润色。此技能应在以下场景触发：用户提交古体诗、近体诗（五绝、七绝、五律、七律）、宋词、元曲等中华传统诗词作品并请求点评、赏析、修改或润色；用户询问诗词格律（平仄、押韵、对仗、词谱）；用户请求诗词创作指导或灵感建议。覆盖体裁包括但不限于古风、绝句、律诗、词（小令、中调、长调）、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ilovecode2018",
+      "userId": "s1746c1zwe9n493sdms39ybhg983ry2b",
+      "displayName": "ilovecode2018",
+      "image": "https://avatars.githubusercontent.com/u/41527437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774795406881,
+      "changelog": "v1.2: Added local cipu database (13 cipai), Ci Lin Zheng Yun 19 parts reference, improved ge-lu verification workflow. v1.1: Added sou-yun.cn online verification. v1.0: Initial release with comprehensive poetry review capabilities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8905f8577acd430ae8a6a9bec6094c7de5adcd9cb48bb352eb4f8821167f2d8"
+}

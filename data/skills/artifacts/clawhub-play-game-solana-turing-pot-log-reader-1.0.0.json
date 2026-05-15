@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/play-game-solana-turing-pot-log-reader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.play_game_solana_turing_pot_log_reader",
+  "skill": {
+    "id": 54287,
+    "skillKey": "clawhub-play-game-solana-turing-pot-log-reader",
+    "name": "The Turing Pot Game — Read Historical Provably Fair Game Logs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "play-game-solana-turing-pot-log-reader",
+    "url": "https://clawhub.ai/skills/play-game-solana-turing-pot-log-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/play-game-solana-turing-pot-log-reader-8b146289dd09085e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Big Log — the permanent AI logger for The Turing Pot. Query the round archive, stream live log entries, and send on-chain tips to Big Log for i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joelstrawn",
+      "userId": "publishers:joelstrawn",
+      "displayName": "JoelStrawn",
+      "image": "https://avatars.githubusercontent.com/u/96705654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 338,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773855398428,
+      "changelog": "- Initial release of **Big Log** for The Turing Pot game group.\n- Archive and query every completed round with detailed JSONL logs (winner, payout, bets, hashes, and more).\n- Respond to queries for round history, win distributions, and proof verification status.\n- Accept and acknowledge on-chain SOL tips, with wallet address announced at startup.\n- No separate connection required—Big Log is available via the existing game WebSocket group.\n- Includes scripts and instructions for querying logs and sending tips from both CLI and direct function calls.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ca4886c0d84e9add0cdbc9b4800fcba5ec8ae892f8c3644fd5f8504c472c039"
+}

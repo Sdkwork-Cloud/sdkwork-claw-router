@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31451,
+  "uuid": "skill-clawhub-amber-md",
+  "skillKey": "clawhub-amber-md",
+  "name": "Amber Molecular Dynamics Simulation",
+  "summary": "Official-style Amber24 molecular dynamics workflow guide for proteins. Includes a standard end-to-end Amber MD procedure, command templates, input-file templ...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amber_md",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ning-kun",
+      "features": [
+        "Official-style Amber24 molecular dynamics workflow guide for proteins",
+        "Includes a standard end-to-end Amber MD procedure, command templates, input-file templ..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amber-md@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/181131131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amber-md",
+      "url": "https://clawhub.ai/skills/amber-md"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amber-md",
+    "url": "https://clawhub.ai/skills/amber-md",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amber-md-8f0ea7a57b1cd2e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amber-md@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-amber-md-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3ca1a14a43ec9cdd9c4a9ff80b70f35cab5c84cefaa0be3ebb8126107fbe04d",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T10:24:54.717Z"
+}

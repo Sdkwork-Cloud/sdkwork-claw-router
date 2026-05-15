@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prism-alerts@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prism_alerts",
+  "skill": {
+    "id": 11268,
+    "skillKey": "clawhub-prism-alerts",
+    "name": "Prism Alerts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prism-alerts",
+    "url": "https://clawhub.ai/skills/prism-alerts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prism-alerts-08f91c3dd84039d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time Pump.fun token alerts for Solana traders. New launches, graduations, volume spikes. For trading bots, Discord, Telegram, AI agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nextfrontierbuilds",
+      "userId": "s173crrwz6a8ksnw7w0q36yky18408nb",
+      "displayName": "Next Frontier AI",
+      "image": "https://avatars.githubusercontent.com/u/257253317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1770220767719,
+      "changelog": "Rebranded to OpenClaw",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:be1e46bea5320dbe4214ce2dc12487ecd65bb64f0b7dafbd21120d6bf8f3b281"
+}

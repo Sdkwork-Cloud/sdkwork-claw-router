@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29196,
+  "uuid": "skill-clawhub-iga-pages",
+  "skillKey": "clawhub-iga-pages",
+  "name": "IGA Pages",
+  "summary": "Deploy frontend and full-stack projects to IGA Pages. Use when the user mentions IGA Pages or requests deployment (\"deploy my app\", \"publish this site\", \"pus...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iga_pages",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "seasonrui",
+      "features": [
+        "Deploy frontend and full-stack projects to IGA Pages",
+        "Use when the user mentions IGA Pages or requests deployment (\"deploy my app\", \"publish this sit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iga-pages@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13701848?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iga-pages",
+      "url": "https://clawhub.ai/skills/iga-pages"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iga-pages",
+    "url": "https://clawhub.ai/skills/iga-pages",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iga-pages-e71d3fa6c424afd5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iga-pages@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-iga-pages-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6731cbcc181945995a294cc8c9713581770b9d01bc212b60e28b55a7d105afb0",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:10:04.026Z"
+}

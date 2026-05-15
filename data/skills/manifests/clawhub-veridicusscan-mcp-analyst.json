@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26765,
+  "uuid": "skill-clawhub-veridicusscan-mcp-analyst",
+  "skillKey": "clawhub-veridicusscan-mcp-analyst",
+  "name": "VeridicusScan MCP Analyst",
+  "summary": "Use when the user wants to inspect a prompt, local file, or public HTTPS URL with VeridicusScan through its MCP bridge, triage prompt-injection or hidden-ins...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veridicusscan_mcp_analyst",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sabaaziz991-hash",
+      "features": [
+        "Use when the user wants to inspect a prompt, local file, or public HTTPS URL with VeridicusScan."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/veridicusscan-mcp-analyst@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/240928286?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "veridicusscan-mcp-analyst",
+      "url": "https://clawhub.ai/skills/veridicusscan-mcp-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veridicusscan-mcp-analyst",
+    "url": "https://clawhub.ai/skills/veridicusscan-mcp-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veridicusscan-mcp-analyst-927ae1f148426cfb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/veridicusscan-mcp-analyst@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-veridicusscan-mcp-analyst-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5355df505d40738b0f9b5df6a58079f3c2db387753ea41d0f37afddc88811f2",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T07:09:34.623Z"
+}

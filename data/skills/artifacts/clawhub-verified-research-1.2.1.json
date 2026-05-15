@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/verified-research@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.verified_research",
+  "skill": {
+    "id": 69606,
+    "skillKey": "clawhub-verified-research",
+    "name": "Verified Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "verified-research",
+    "url": "https://clawhub.ai/skills/verified-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/verified-research-989e89310ffb2138.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "执行多源核实的深入研究，拆解复杂问题，优先采集高可信度来源，核实信息时效性并生成结构化报告，支持三天缓存。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ashanzzz",
+      "userId": "s175ehx49gd7de4ab3sm8bakrs83nnan",
+      "displayName": "ashanzzz",
+      "image": "https://avatars.githubusercontent.com/u/19986978?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1775475590740,
+      "changelog": "Republish with English summary; add 3-day research cache + auto-archive to MEMORY.md",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53a237d1003c7a4bf2c5cb1dc11de8d248bab8787e263a44172ee3d7fed382a1"
+}

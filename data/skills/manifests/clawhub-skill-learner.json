@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21815,
+  "uuid": "skill-clawhub-skill-learner",
+  "skillKey": "clawhub-skill-learner",
+  "name": "Skill Learner",
+  "summary": "Identify repeated workflows, recurring user asks, common failures, and reusable procedures that should become new skills or improvements to existing skills....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_learner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "noahfleming",
+      "features": [
+        "Identify repeated workflows, recurring user asks, common failures, and reusable procedures that."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-learner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19826605?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-learner",
+      "url": "https://clawhub.ai/skills/skill-learner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-learner",
+    "url": "https://clawhub.ai/skills/skill-learner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-learner-07361eec466d1bef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-learner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-learner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ceafcabfb269d00e52eb9b4693daadcf928c2dd86910c29743fb82903c44d1da",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:37:42.365Z"
+}

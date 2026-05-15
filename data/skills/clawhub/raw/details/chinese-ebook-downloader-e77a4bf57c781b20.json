@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "chinese-ebook-downloader",
+    "displayName": "Chinese Ebook Downloader",
+    "summary": "Download Chinese-language ebooks from multiple sources with automatic A→B→C fallback. Primary source: online book library with ~100% coverage, no daily limit...",
+    "tags": {
+      "latest": "2.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "createdAt": 1774321299915,
+    "updatedAt": 1777622914484
+  },
+  "latestVersion": {
+    "version": "2.0.0",
+    "createdAt": 1774429754416,
+    "changelog": "Major upgrade: Adds multi-source fallback, EPUB→PDF conversion, Anna's Archive support, and new scripts.\n\n- Introduced automatic multi-source (A→B→C) download fallback with `multi_source_download.py`\n- Added direct Anna's Archive (libgen.li) search and download as last-resort source\n- Implemented EPUB to PDF auto-conversion using `epub_to_pdf.py` and weasyprint\n- Deprecated Z-Library due to strict download limits; Anna's Archive replaces as tertiary source\n- Added new scripts: `multi_source_download.py`, `epub_to_pdf.py`, `search_source_c.py`, `anna_async_download.py`, `anna_batch_download.py`, `anna_iso_batch.sh`\n- Updated documentation: streamlined workflows, expanded troubleshooting, and modernized usage instructions",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "lb1121",
+    "userId": "s17e13xn9xcw4jzk4ecp8ymx3n83hfh7",
+    "displayName": "lb1121",
+    "image": "https://avatars.githubusercontent.com/u/4757885?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777622914484
+  }
+}

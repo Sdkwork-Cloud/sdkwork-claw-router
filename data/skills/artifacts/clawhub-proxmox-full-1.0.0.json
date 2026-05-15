@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proxmox-full@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxmox_full",
+  "skill": {
+    "id": 9478,
+    "skillKey": "clawhub-proxmox-full",
+    "name": "Proxmox Full"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxmox-full",
+    "url": "https://clawhub.ai/skills/proxmox-full",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxmox-full-d790b36f9e61a68b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Proxmox VE management - create/clone/start/stop VMs and LXC containers, manage snapshots, backups, storage, and templates. Use when user wants to manage Proxmox infrastructure, virtual machines, or containers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "msarheed",
+      "userId": "publishers:msarheed",
+      "displayName": "Mortada Sarheed",
+      "image": "https://avatars.githubusercontent.com/u/6534633?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3190,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 7,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769279195141,
+      "changelog": "Initial release - Complete Proxmox VE management: create/clone VMs & LXC, snapshots, backups, templates, storage, and more",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7924c8ab7b90ea658204af9b108ed95e4d498f816e40690fac253c7472582bc2"
+}

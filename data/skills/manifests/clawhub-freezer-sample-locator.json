@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52751,
+  "uuid": "skill-clawhub-freezer-sample-locator",
+  "skillKey": "clawhub-freezer-sample-locator",
+  "name": "Freezer Sample Locator",
+  "summary": "Track and retrieve sample locations in -80°C freezers with hierarchical storage organization. Trigger conditions: - User needs to record sample storage posit...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freezer_sample_locator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Track and retrieve sample locations in -80°C freezers with hierarchical storage organization",
+        "Trigger conditions:",
+        "User needs to record sample storage posit..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/freezer-sample-locator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "freezer-sample-locator",
+      "url": "https://clawhub.ai/skills/freezer-sample-locator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freezer-sample-locator",
+    "url": "https://clawhub.ai/skills/freezer-sample-locator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freezer-sample-locator-5f4bb744509aedea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/freezer-sample-locator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-freezer-sample-locator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b9dad1d511e9cda2ae5c867de9e3d52ccb8dc1355270e408c110ca517075b1b",
+      "artifactSizeBytes": 2521
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T01:54:37.490Z"
+}

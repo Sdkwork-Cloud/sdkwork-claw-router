@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/francais-photo-video-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.francais_photo_video_maker",
+  "skill": {
+    "id": 46310,
+    "skillKey": "clawhub-francais-photo-video-maker",
+    "name": "Francais Photo Video Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "francais-photo-video-maker",
+    "url": "https://clawhub.ai/skills/francais-photo-video-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/francais-photo-video-maker-e6190c133167184b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cloud-based francais-photo-video-maker tool that handles creating French-language videos from photos. Upload JPG, PNG, WEBP, HEIC files (up to 200MB), descri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775869812087,
+      "changelog": "Initial release of Français Photo Video Maker.\n\n- Create French-language videos from uploaded photos (JPG, PNG, WEBP, HEIC up to 200MB)\n- Supports fast 1080p MP4 video export in 30–60 seconds\n- Automatic handling of user tokens with up to 100 free credits for new users\n- Easy drag-and-drop photo upload and simple, natural-language prompts\n- Built-in workflows for adding music, text overlays, and more\n- Clear user feedback on connection, export status, and errors\n- Designed for French-speaking content creators working with images",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efe4621bbdbea9f7f1ddea40206ed9de5c5d6b66d29b2b147898dbf0813d02c1"
+}

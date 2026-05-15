@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14433,
+  "uuid": "skill-clawhub-alicloud-platform-openapi-product-api-discovery",
+  "skillKey": "clawhub-alicloud-platform-openapi-product-api-discovery",
+  "name": "Alicloud Platform Openapi Product Api Discovery",
+  "summary": "Discover and reconcile Alibaba Cloud product catalogs from Ticket System, Support & Service, and BSS OpenAPI; fetch OpenAPI product/version/API metadata; and...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alicloud_platform_openapi_product_api_discovery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Discover and reconcile Alibaba Cloud product catalogs from Ticket System, Support & Service, an.",
+        "fetch OpenAPI product/version/API metadata"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alicloud-platform-openapi-product-api-discovery@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alicloud-platform-openapi-product-api-discovery",
+      "url": "https://clawhub.ai/skills/alicloud-platform-openapi-product-api-discovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alicloud-platform-openapi-product-api-discovery",
+    "url": "https://clawhub.ai/skills/alicloud-platform-openapi-product-api-discovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alicloud-platform-openapi-product-api-discovery-f2d72a4eeea96a81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alicloud-platform-openapi-product-api-discovery@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alicloud-platform-openapi-product-api-discovery-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:471e10e46cfab8599131cb0a0d7162bdfa2f11d5f9a0f4dd75dba121dc6d7f40",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:40:25.206Z"
+}

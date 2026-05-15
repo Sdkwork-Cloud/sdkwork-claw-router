@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-sonar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_sonar",
+  "skill": {
+    "id": 43567,
+    "skillKey": "clawhub-openclaw-sonar",
+    "name": "Perplexity Sonar via Openrouter in CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-sonar",
+    "url": "https://clawhub.ai/skills/openclaw-sonar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-sonar-53b62bec333a0304.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local OpenRouter Sonar web search CLI using the user's OpenRouter API key. Use when you want OpenRouter-backed web search or cited research from a local comm..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iamjameskeane",
+      "userId": "s179nz2551qszdyg88r80114y5858qdt",
+      "displayName": "James Keane",
+      "image": "https://avatars.githubusercontent.com/u/81018496?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776776342539,
+      "changelog": "Initial release of OpenRouter Sonar CLI skill.\n\n- Provides a local `sonar` command-line interface for OpenRouter-backed web search and cited research.\n- Supports multiple Sonar models and convenient short model names.\n- Includes utilities for listing models, research queries, and saving output in various formats (`text`, `md`, `json`).\n- Uses the user's `OPENROUTER_API_KEY` and optional environment variables for configuration.\n- Offers file output and model selection via CLI options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c69acaefea95690e17ee5f24be16b81d086ad8e0fc41791cc606d8e355af095b"
+}

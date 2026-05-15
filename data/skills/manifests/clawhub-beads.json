@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11044,
+  "uuid": "skill-clawhub-beads",
+  "skillKey": "clawhub-beads",
+  "name": "Beads Task Tracker",
+  "summary": "Git-backed issue tracker for AI agents. Use when managing tasks, dependencies, or multi-step work. Triggers on task tracking, issue management, dependency graphs, ready work queues, or mentions of \"beads\" / \"bd\" CLI.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beads",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rnijhara",
+      "features": [
+        "Git-backed issue tracker for AI agents",
+        "Use when managing tasks, dependencies, or multi-step work",
+        "Triggers on task tracking, issue management, dependency graphs, ready work queues, or mentions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beads@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11149239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beads",
+      "url": "https://clawhub.ai/skills/beads"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beads",
+    "url": "https://clawhub.ai/skills/beads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beads-5c2309d2de8b4a92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beads@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-beads-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25454d8dab88f02715faebdd6d54b3476e183100e275fb2fe3434ef93c964428",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T10:17:57.946Z"
+}

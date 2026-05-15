@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56157,
+  "uuid": "skill-clawhub-a-share-claw",
+  "skillKey": "clawhub-a-share-claw",
+  "name": "A-Share Claw (A股龙虾)",
+  "summary": "A-share paper-trading automation workflow for MX APIs. Use when user asks to run scheduled A-share mock trading, enforce risk limits (single position cap, to...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZHAO Youjun",
+      "features": [
+        "A-share paper-trading automation workflow for MX APIs",
+        "Use when user asks to run scheduled A-share mock trading, enforce risk limits (single position."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-share-claw@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76503872?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-share-claw",
+      "url": "https://clawhub.ai/skills/a-share-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-claw",
+    "url": "https://clawhub.ai/skills/a-share-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-claw-cf35952dc35ca1c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-share-claw@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-share-claw-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ccc63e9f7d939599d37565cc9c76f597f9eebea111384378354b7cfd87d97ebb",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T13:27:25.723Z"
+}

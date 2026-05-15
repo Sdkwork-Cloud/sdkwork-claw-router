@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70474,
+  "uuid": "skill-clawhub-investoday-hotspot-event-decoding",
+  "skillKey": "clawhub-investoday-hotspot-event-decoding",
+  "name": "investoday-hotspot-event-decoding",
+  "summary": "面向市场热点、主题赛道与行业事件解码，聚焦近期核心事件、逻辑链条、机会风险与后续验证点。基于今日投资金融数据接口，自动提炼主题关键词并输出结构化热点事件解码报告。触发词：热点解码、主题事件、赛道催化、最近有什么重要事件、这波热点意味着什么。",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investoday_hotspot_event_decoding",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "investoday",
+      "features": [
+        "面向市场热点、主题赛道与行业事件解码，聚焦近期核心事件、逻辑链条、机会风险与后续验证点。基于今日投资金融数据接口，自动提炼主题关键词并输出结构化热点事件解码报告。触发词：热点解码、主题事件、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/investoday-hotspot-event-decoding@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19256972?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "investoday-hotspot-event-decoding",
+      "url": "https://clawhub.ai/skills/investoday-hotspot-event-decoding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investoday-hotspot-event-decoding",
+    "url": "https://clawhub.ai/skills/investoday-hotspot-event-decoding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investoday-hotspot-event-decoding-1535e8985875c0a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/investoday-hotspot-event-decoding@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-investoday-hotspot-event-decoding-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8bdf7c36242ab049373a4b0b8c9944f839956bee39b7dad10bdee7e8aeea96a",
+      "artifactSizeBytes": 2245
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:03:57.672Z"
+}

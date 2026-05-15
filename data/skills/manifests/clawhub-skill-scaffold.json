@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9187,
+  "uuid": "skill-clawhub-skill-scaffold",
+  "skillKey": "clawhub-skill-scaffold",
+  "name": "Skill Scaffold",
+  "summary": "AI agent skill scaffolding CLI. Create skills for OpenClaw, Moltbot, Claude, Cursor, ChatGPT, Copilot instantly. Vibe-coding ready. MCP compatible.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_scaffold",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Next Frontier AI",
+      "features": [
+        "AI agent skill scaffolding CLI",
+        "Create skills for OpenClaw, Moltbot, Claude, Cursor, ChatGPT, Copilot instantly",
+        "Vibe-coding ready",
+        "MCP compatible."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-scaffold@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257253317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-scaffold",
+      "url": "https://clawhub.ai/skills/skill-scaffold"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-scaffold",
+    "url": "https://clawhub.ai/skills/skill-scaffold",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-scaffold-a96aeef520022fa3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-scaffold@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-scaffold-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ade1332c476082f800921f7f4b5bb159cf970df5a4c0041f6e990872664f91a4",
+      "artifactSizeBytes": 2198
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T08:37:30.273Z"
+}

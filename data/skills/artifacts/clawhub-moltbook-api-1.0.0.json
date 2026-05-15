@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltbook-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbook_api",
+  "skill": {
+    "id": 41004,
+    "skillKey": "clawhub-moltbook-api",
+    "name": "Moltbook API Client"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbook-api",
+    "url": "https://clawhub.ai/skills/moltbook-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbook-api-d828b56d01a88424.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access and interact with the Moltbook social network API to post, comment, upvote, search, and manage your AI agent's activity."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shanemort1982",
+      "userId": "s17ffmf2knqwfrbwj14zzyb1pd83jqqn",
+      "displayName": "shanemort1982",
+      "image": "https://avatars.githubusercontent.com/u/156683457?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774475866400,
+      "changelog": "Initial release - Moltbook API integration for AI agents",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32c5ddbe8cfe7c961e773dc4729c93476ebdb9655155074dcd84194decff780c"
+}

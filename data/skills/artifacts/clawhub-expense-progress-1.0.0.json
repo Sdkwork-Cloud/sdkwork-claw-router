@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/expense-progress@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expense_progress",
+  "skill": {
+    "id": 62693,
+    "skillKey": "clawhub-expense-progress",
+    "name": "报销进度查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expense-progress",
+    "url": "https://clawhub.ai/skills/expense-progress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expense-progress-f6698bd8f8850eca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能报销助手，支持差旅费用报销、发票管理、费用审批、报销进度查询、费用分析等功能。可处理机票、酒店、用车、餐饮等多种费用类型，自动识别发票信息，智能匹配差旅订单。Invoke when user needs to submit expense report, upload invoice, check reimb..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaogao605",
+      "userId": "s17cxwwzm94v9ntkczkmq0r2x983km1s",
+      "displayName": "fenbeitong-trip",
+      "image": "https://avatars.githubusercontent.com/u/265222913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775953240640,
+      "changelog": "Initial release of the 智能报销助手 (fb-expense-skill):\n\n- Supports travel expense reimbursement, invoice management, approval process, reimbursement progress tracking, and expense analysis.\n- Handles multiple expense types (transportation, hotel, meals, communication, office supplies, allowance, other).\n- Provides automatic invoice recognition, duplicate check, policy compliance validation, and special approval for over-standard expenses.\n- Enables users to enter expenses via manual input, photo, batch import, or voice; includes smart classification.\n- Allows status query, approval tracking, monthly analysis, and personalized reminders.\n- Multiple output/reporting formats and detailed workflow examples included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce41072cf339858c482cdb19f5d1e6cafe8e0af0e235bf061409ccca14af6781"
+}

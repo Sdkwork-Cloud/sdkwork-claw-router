@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/playwright-dev@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.playwright_dev",
+  "skill": {
+    "id": 17529,
+    "skillKey": "clawhub-playwright-dev",
+    "name": "Playwright Dev"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "playwright-dev",
+    "url": "https://clawhub.ai/skills/playwright-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/playwright-dev-00474cc56a4c9a5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image). Use for image create/modify requests incl. edits. Supports text-to-image + image-to-image; 1K..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "icesumer-lgtm",
+      "userId": "s177qrnn1tw4tydz6g6neevw0d83tmha",
+      "displayName": "icesumer-lgtm",
+      "image": "https://avatars.githubusercontent.com/u/262824601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 760,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773741241738,
+      "changelog": "Nano Banana Pro image generation & editing skill initial release:\n\n- Enables both new image creation and image editing using Google's Gemini 3 Pro Image API.\n- Supports prompt-based text-to-image and image-to-image workflows with 1K, 2K, or 4K resolutions.\n- Introduces a clear filename scheme: `{timestamp}-{descriptive-name}.png` for easy organization.\n- Handles resolution requests and API keys with user-friendly defaults and error messages.\n- Provides robust usage documentation, editing instructions, and high-quality prompt templates for better results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7b7c3e182364ac084f6af706c77f079aae28d0994868942b01cb22422454025"
+}

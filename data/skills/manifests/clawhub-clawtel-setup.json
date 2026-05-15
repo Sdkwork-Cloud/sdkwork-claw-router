@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38027,
+  "uuid": "skill-clawhub-clawtel-setup",
+  "skillKey": "clawhub-clawtel-setup",
+  "name": "Setup claw.tech",
+  "summary": "Use when setting up clawtel to report token usage from a project that calls the Anthropic API (SDK, Claude Code, or any tapes-wrapped agent) to the claw.tech...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtel_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian Douglas",
+      "features": [
+        "Use when setting up clawtel to report token usage from a project that calls the Anthropic API (."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawtel-setup@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5713670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawtel-setup",
+      "url": "https://clawhub.ai/skills/clawtel-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtel-setup",
+    "url": "https://clawhub.ai/skills/clawtel-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtel-setup-e10c66f6e115de5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawtel-setup@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawtel-setup-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56f3da1da23187ee2deb24f1892efa47df60de73a2e033f05d8872106e44c58c",
+      "artifactSizeBytes": 2356
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T15:53:41.388Z"
+}

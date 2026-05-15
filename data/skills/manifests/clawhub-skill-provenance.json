@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19361,
+  "uuid": "skill-clawhub-skill-provenance",
+  "skillKey": "clawhub-skill-provenance",
+  "name": "Skill Provenance",
+  "summary": "Version tracking for Agent Skills bundles and their associated files across sessions, surfaces, and platforms. Use when creating, editing, versioning, valida...",
+  "version": "4.9.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_provenance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sam Rogers",
+      "features": [
+        "Version tracking for Agent Skills bundles and their associated files across sessions, surfaces,.",
+        "Use when creating, editing, versioning, valida..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-provenance@4.9.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57973674?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-provenance",
+      "url": "https://clawhub.ai/skills/skill-provenance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-provenance",
+    "url": "https://clawhub.ai/skills/skill-provenance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-provenance-ee9da4c42fb0de5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-provenance@4.9.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-provenance-4.9.0.json",
+      "version": "4.9.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3a088a5f761ef3240641dbe2224ff4b2f764d8f754e0207e8f9dd97afaad673",
+      "artifactSizeBytes": 2113
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T22:01:04.944Z"
+}

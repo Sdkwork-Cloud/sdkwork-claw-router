@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-cinematic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_cinematic",
+  "skill": {
+    "id": 47193,
+    "skillKey": "clawhub-editor-cinematic",
+    "name": "Editor Cinematic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-cinematic",
+    "url": "https://clawhub.ai/skills/editor-cinematic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-cinematic-9ad3f517c3c6f11c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "transform raw video footage into cinematic edited video with this skill. Works with MP4, MOV, AVI, ProRes files up to 500MB. filmmakers, content creators, vi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777402141745,
+      "changelog": "- Initial release of the \"Editor Cinematic\" skill.\n- Transform raw video footage (MP4, MOV, AVI, ProRes up to 500MB) into cinematic-style edited videos.\n- Cloud GPU processing with 1-2 minute turnaround; outputs 4K MP4 files.\n- Automatic setup using a token system; free anonymous sessions supported.\n- Supports color grading, dramatic transitions, music sync, and quick export.\n- Handles uploads, track management, preview summaries, and exports with error handling and timeline state.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61d6c0d057fff4f87b2f9e8c9789c9fd252ac4f3431d7cf7977e8d0ea00c7222"
+}

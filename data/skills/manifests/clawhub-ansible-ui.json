@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23981,
+  "uuid": "skill-clawhub-ansible-ui",
+  "skillKey": "clawhub-ansible-ui",
+  "name": "Ansible Ui",
+  "summary": "Modern UI and powerful API for Ansible, Terraform/OpenTofu/Terragrunt, PowerShell and other DevOps t ansible-ui, go, ansible, awx, ci, cicd.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ansible_ui",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Modern UI and powerful API for Ansible, Terraform/OpenTofu/Terragrunt, PowerShell and other Dev."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ansible-ui@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ansible-ui",
+      "url": "https://clawhub.ai/skills/ansible-ui"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ansible-ui",
+    "url": "https://clawhub.ai/skills/ansible-ui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ansible-ui-8c8807c608388416.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ansible-ui@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ansible-ui-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb81220a1391f9e85d5bcea4333e061da199ebff1f409c2c21efcbf844a5d191",
+      "artifactSizeBytes": 1889
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:06:44.936Z"
+}

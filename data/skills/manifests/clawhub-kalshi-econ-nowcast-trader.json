@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44529,
+  "uuid": "skill-clawhub-kalshi-econ-nowcast-trader",
+  "skillKey": "clawhub-kalshi-econ-nowcast-trader",
+  "name": "Kalshi Econ Nowcast Trader",
+  "summary": "Trades CPI bin markets on Kalshi using the Cleveland Fed CPI Nowcast to compute fair bin probabilities via a normal distribution model. Requires SIMMER_API_K...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_econ_nowcast_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades CPI bin markets on Kalshi using the Cleveland Fed CPI Nowcast to compute fair bin probab.",
+        "Requires SIMMER_API_K..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kalshi-econ-nowcast-trader@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kalshi-econ-nowcast-trader",
+      "url": "https://clawhub.ai/skills/kalshi-econ-nowcast-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-econ-nowcast-trader",
+    "url": "https://clawhub.ai/skills/kalshi-econ-nowcast-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-econ-nowcast-trader-101af33f1ca381db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kalshi-econ-nowcast-trader@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kalshi-econ-nowcast-trader-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c18c93332d2906f9c99376d36e84124cfcbcd3a84ccb991069e8ffd503bd7ce8",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T21:35:13.865Z"
+}

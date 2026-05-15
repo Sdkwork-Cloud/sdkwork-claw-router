@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15123,
+  "uuid": "skill-clawhub-mindgardener",
+  "skillKey": "clawhub-mindgardener",
+  "name": "MindGardener",
+  "summary": "Local-first long-term memory for autonomous agents. Built for OpenClaw. Creates wiki knowledge graph from conversations, scores events by surprise, detects c...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mindgardener",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marcus Widing",
+      "features": [
+        "Local-first long-term memory for autonomous agents",
+        "Built for OpenClaw",
+        "Creates wiki knowledge graph from conversations, scores events by surprise, detects c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mindgardener@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245375637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mindgardener",
+      "url": "https://clawhub.ai/skills/mindgardener"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mindgardener",
+    "url": "https://clawhub.ai/skills/mindgardener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mindgardener-b351958e50e41299.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mindgardener@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mindgardener-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13920e20597aab96b787f577e914061cb0d217c98ad3af512cead8d7caab45bc",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T09:19:10.970Z"
+}

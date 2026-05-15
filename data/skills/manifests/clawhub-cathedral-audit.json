@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26840,
+  "uuid": "skill-clawhub-cathedral-audit",
+  "skillKey": "clawhub-cathedral-audit",
+  "name": "Cathedral Audit",
+  "summary": "Run a full spec-code audit on the Cathedral codebase. Use after build waves, major refactors, or when spec-code drift is suspected. Produces forward audit (s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cathedral_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hydroculator",
+      "features": [
+        "Run a full spec-code audit on the Cathedral codebase",
+        "Use after build waves, major refactors, or when spec-code drift is suspected",
+        "Produces forward audit (s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cathedral-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59405571?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cathedral-audit",
+      "url": "https://clawhub.ai/skills/cathedral-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cathedral-audit",
+    "url": "https://clawhub.ai/skills/cathedral-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cathedral-audit-febeb5e9d8678108.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cathedral-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cathedral-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63fcd0fa862cafb303c09a2a282e910cdb86cfe04d91da706d4556b4f406f53d",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T10:05:40.741Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sqlboot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sqlboot",
+  "skill": {
+    "id": 46109,
+    "skillKey": "clawhub-sqlboot",
+    "name": "SQLBot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sqlboot",
+    "url": "https://clawhub.ai/skills/sqlboot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sqlboot-5d1c0a097700e704.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage SQLBot workspaces, datasources, ask-data flows, and dashboards, including listing and switching workspace or datasource context, asking questions agai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuwei-fit2cloud",
+      "userId": "s17fg8wxa367ztwx2jx0nmca3x83kk4e",
+      "displayName": "xuwei-fit2cloud",
+      "image": "https://avatars.githubusercontent.com/u/1892127?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774927269512,
+      "changelog": "Initial release of the sqlbot-workspace-dashboard skill.\n\n- Enables management of SQLBot workspaces, datasources, ask-data flows, and dashboards.\n- Provides commands for listing and switching workspaces or datasources, asking questions, and handling dashboards (list, show, export).\n- Supports exporting dashboards as PNG or PDF.\n- Requires environment file (.env) setup and Playwright for export functionality.\n- Summarizes command outputs after execution for clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05b4493b1594e4b803d7bba7c974abef901140615ea78a9242b362c4e0776335"
+}

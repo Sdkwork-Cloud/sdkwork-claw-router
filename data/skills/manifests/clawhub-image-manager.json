@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27045,
+  "uuid": "skill-clawhub-image-manager",
+  "skillKey": "clawhub-image-manager",
+  "name": "Image Manager",
+  "summary": "Manage local images by category with original and thumbnail storage, enabling fast tag, date, and keyword search through a JSON index file.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaobu2020",
+      "features": [
+        "Manage local images by category with original and thumbnail storage, enabling fast tag, date, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71875436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-manager",
+      "url": "https://clawhub.ai/skills/image-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-manager",
+    "url": "https://clawhub.ai/skills/image-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-manager-8cfbce7b7ee46cfd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66ac42b1d1e29e6c090b41fd00f1c96e970af0a46d12d1452122193c94b7be90",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T16:59:26.283Z"
+}

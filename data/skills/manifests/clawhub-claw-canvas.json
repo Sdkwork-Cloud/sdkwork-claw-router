@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19130,
+  "uuid": "skill-clawhub-claw-canvas",
+  "skillKey": "clawhub-claw-canvas",
+  "name": "Claw Canvas",
+  "summary": "A virtual canvas for OpenClaw to output content and visualize its thinking during development.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_canvas",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austindixson",
+      "features": [
+        "A virtual canvas for OpenClaw to output content and visualize its thinking during development."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-canvas@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52183161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-canvas",
+      "url": "https://clawhub.ai/skills/claw-canvas"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-canvas",
+    "url": "https://clawhub.ai/skills/claw-canvas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-canvas-5093a95b49045370.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-canvas@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-canvas-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7fe2cd317684f77a5fe0bf07920d788ad30040447c588be92cdfb6972259013",
+      "artifactSizeBytes": 2205
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T13:05:09.039Z"
+}

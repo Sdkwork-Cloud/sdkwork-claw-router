@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skills-search@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_search",
+  "skill": {
+    "id": 8653,
+    "skillKey": "clawhub-skills-search",
+    "name": "Skills.sh Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-search",
+    "url": "https://clawhub.ai/skills/skills-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-search-2430eae74b231eab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search skills.sh registry from CLI. Find and discover agent skills from the skills.sh ecosystem."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thesethrose",
+      "userId": "publishers:thesethrose",
+      "displayName": "Seth Rose",
+      "image": "https://avatars.githubusercontent.com/u/10383809?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7098,
+      "installsAllTime": 47,
+      "installsCurrent": 45,
+      "stars": 19,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1768970984785,
+      "changelog": "Added --popular flag to show top skills by installs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8c2b3a91fcc96320f1fb4599d669b54bdf8a7e71fc48ec4c13e03fef8a787f69"
+}

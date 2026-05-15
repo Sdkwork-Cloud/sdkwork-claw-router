@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40966,
+  "uuid": "skill-clawhub-diffusion-video",
+  "skillKey": "clawhub-diffusion-video",
+  "name": "Diffusion Video",
+  "summary": "Turn a still landscape photo or short reference clip into 1080p diffusion-generated video clips just by typing what you need. Whether it's generating AI anim...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diffusion_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tk8544-b",
+      "features": [
+        "Turn a still landscape photo or short reference clip into 1080p diffusion-generated video clips.",
+        "Whether it's generating AI anim..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/diffusion-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "diffusion-video",
+      "url": "https://clawhub.ai/skills/diffusion-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diffusion-video",
+    "url": "https://clawhub.ai/skills/diffusion-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diffusion-video-f880d4a677e0c78d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/diffusion-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-diffusion-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03c26142183d9a136613755521ace115d28cd43c8452df5ed00f6e355048297d",
+      "artifactSizeBytes": 2493
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T13:51:11.618Z"
+}

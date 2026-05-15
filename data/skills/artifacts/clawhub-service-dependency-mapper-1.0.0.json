@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/service-dependency-mapper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.service_dependency_mapper",
+  "skill": {
+    "id": 47788,
+    "skillKey": "clawhub-service-dependency-mapper",
+    "name": "Service Dependency Mapper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "service-dependency-mapper",
+    "url": "https://clawhub.ai/skills/service-dependency-mapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/service-dependency-mapper-d483c4ad0a080cd8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-discover and map service dependencies from code, configs, and runtime data. Generate dependency graphs, identify critical paths, find single points of f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777639686764,
+      "changelog": "Initial release of service-dependency-mapper.\n\n- Auto-discovers and maps service dependencies from code, config files, and runtime/running data.\n- Generates dependency graphs and architecture visualizations (Mermaid, DOT, PlantUML, D2).\n- Identifies critical paths and single points of failure.\n- Assesses blast radius and user impact for each service.\n- Provides commands for discovery, blast radius analysis, visualization, and architecture health assessment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ce9e8ae4e2139ca5cf2394809cff8b2c28a8df9e0d3fd472833b0b93ba7532a"
+}

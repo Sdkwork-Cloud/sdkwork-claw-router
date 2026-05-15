@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jq-hardened@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jq_hardened",
+  "skill": {
+    "id": 48643,
+    "skillKey": "clawhub-jq-hardened",
+    "name": "Jq Hardened"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jq-hardened",
+    "url": "https://clawhub.ai/skills/jq-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jq-hardened-b98760bf83ea2e42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Command-line JSON processor. Extract, filter, transform JSON."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snazar-faberlens",
+      "userId": "s17er0wp685j1z14w6vqrsnqrh83h5er",
+      "displayName": "Faberlens",
+      "image": "https://avatars.githubusercontent.com/u/261834257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 97,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776913222810,
+      "changelog": "Initial release of jq-hardened skill.\n\n- Provides a quick reference and usage guide for jq, a command-line JSON processor.\n- Includes installation instructions for various platforms.\n- Lists common jq filters, options, and example commands.\n- Adds security guardrails for safe use of jq, including quoting tips and handling of sensitive data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4cb631351047d4c36b0fb95d1fdcfbb46199241c6296cf9539a0209ebadcd01"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40590,
+  "uuid": "skill-clawhub-plantuml-render",
+  "skillKey": "clawhub-plantuml-render",
+  "name": "plantuml-render",
+  "summary": "Render PlantUML diagrams using the PlantUML JAR. Use this skill to generate PNG/SVG/PDF images from PlantUML source code.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plantuml_render",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Thomas",
+      "features": [
+        "Render PlantUML diagrams using the PlantUML JAR",
+        "Use this skill to generate PNG/SVG/PDF images from PlantUML source code."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plantuml-render@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16031366?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plantuml-render",
+      "url": "https://clawhub.ai/skills/plantuml-render"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plantuml-render",
+    "url": "https://clawhub.ai/skills/plantuml-render",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plantuml-render-f7b8e71ba0876e48.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plantuml-render@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-plantuml-render-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45a7f7918fe3d8d70ba7ff7a081e5dffcc424a56b466500e33e9d84bce4c557f",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T14:24:06.145Z"
+}

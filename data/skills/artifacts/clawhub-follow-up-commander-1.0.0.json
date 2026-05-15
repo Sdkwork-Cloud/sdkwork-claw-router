@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/follow-up-commander@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.follow_up_commander",
+  "skill": {
+    "id": 59636,
+    "skillKey": "clawhub-follow-up-commander",
+    "name": "Follow Up Commander"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "follow-up-commander",
+    "url": "https://clawhub.ai/skills/follow-up-commander",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/follow-up-commander-ffe5dd88a51587a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "把会后事项拆成行动清单、催办节奏、邮件草稿和下次同步议题。；use for followup, meeting, email workflows；do not use for 直接发送邮件, 伪造完成状态."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773736634483,
+      "changelog": "Initial release: organize meeting follow-ups into clear, actionable steps.\n\n- Converts meeting outcomes into action items, follow-up schedules, email drafts, and next-sync topics.\n- Clearly separates appropriate and inappropriate use cases (no direct email sending or status forgery).\n- Structures outputs as: action list, owner mapping, email draft, escalation/rules, next topics, open issues.\n- Provides review-ready drafts before executable lists.\n- Outlines safety and compliance boundaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:363a8279a411486f9a563fbebb837fe5eee6283194583e0b3ec515586a172894"
+}

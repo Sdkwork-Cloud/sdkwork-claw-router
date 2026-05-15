@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/camscanner-image-detect-tampering@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camscanner_image_detect_tampering",
+  "skill": {
+    "id": 48745,
+    "skillKey": "clawhub-camscanner-image-detect-tampering",
+    "name": "CamScanner Detect Tampering"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camscanner-image-detect-tampering",
+    "url": "https://clawhub.ai/skills/camscanner-image-detect-tampering",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camscanner-image-detect-tampering-62d2915db1111f46.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use CamScanner to detect whether an image has been PS-edited, manipulated, or tampered with. Powered by a manipulation-detection engine that identifies photo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "camscanner-ai",
+      "userId": "s173fgwczhaenp3btzq1h17qss84dnaa",
+      "displayName": "CamScanner-AI",
+      "image": "https://avatars.githubusercontent.com/u/269073986?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777536058236,
+      "changelog": "- Initial release of CamScanner image tampering detection skill.\n- Detects if an image has been photoshopped, manipulated, or tampered with using CamScanner’s manipulation-detection engine.\n- Returns a JSON result with `is_tampered` (boolean) and `result_text` (human-readable conclusion).\n- Automatically responds to queries and trigger phrases related to image authenticity in both Chinese and English.\n- Sends images to CamScanner’s official servers for real-time processing; no files are stored.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96abd054662ec0bea939d80ba83f4fc76f5204603af82d0d1187cb3e6e0d4b66"
+}

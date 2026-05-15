@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gcp-networking-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gcp_networking_audit",
+  "skill": {
+    "id": 29017,
+    "skillKey": "clawhub-gcp-networking-audit",
+    "name": "Gcp Networking Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gcp-networking-audit",
+    "url": "https://clawhub.ai/skills/gcp-networking-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gcp-networking-audit-23da19b2f3374ac8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GCP VPC Network audit covering global VPC design, firewall rule priority evaluation with hierarchical policies, Cloud NAT egress analysis, Cloud Interconnect..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vahagn-madatyan",
+      "userId": "s172e0s6wm08gdxkw6pxzkwzgh841b69",
+      "displayName": "Vahagn Madatyan",
+      "image": "https://avatars.githubusercontent.com/u/74753362?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 302,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774167555852,
+      "changelog": "Initial release of GCP VPC Network security audit skill.\n\n- Provides a structured, step-by-step guide to auditing GCP VPC network architecture, firewall posture, and connectivity.\n- Covers evaluation of global VPC design, firewall rules with priority and hierarchical policy analysis, Cloud NAT egress, Cloud Interconnect & Shared VPC, and Cloud Router BGP validation.\n- Focuses on security, compliance, connectivity troubleshooting, and resource optimization using read-only gcloud CLI commands.\n- Emphasizes review of auto-mode vs custom-mode VPC networks, subnet IP ranges, firewall rule justification, and VPC Flow Log enablement.\n- Includes prerequisites, recommended gcloud commands, and detailed assessment criteria for each audit step.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d10d524f55377bf76578fce1627d40ea252695b94dfdee73db1e955812c23876"
+}

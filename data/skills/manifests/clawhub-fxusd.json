@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36126,
+  "uuid": "skill-clawhub-fxusd",
+  "skillKey": "clawhub-fxusd",
+  "name": "fxUSD",
+  "summary": "Use when the user wants to deploy, unwind, or compare fxUSD-related yield strategies on Base. Covers minting and redeeming fxSAVE, discovering and managing H...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fxusd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tao Wang",
+      "features": [
+        "Use when the user wants to deploy, unwind, or compare fxUSD-related yield strategies on Base",
+        "Covers minting and redeeming fxSAVE, discovering and managing H..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fxusd@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3118467?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fxusd",
+      "url": "https://clawhub.ai/skills/fxusd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fxusd",
+    "url": "https://clawhub.ai/skills/fxusd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fxusd-1463ac1ae8b6e58d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fxusd@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fxusd-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3437cae9ea8c746123b6b9350c9cb112a6efa2efb0afb6a7e0a3eb7cd200cb71",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T04:08:30.843Z"
+}

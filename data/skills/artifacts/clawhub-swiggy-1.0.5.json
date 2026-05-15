@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swiggy@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swiggy",
+  "skill": {
+    "id": 9574,
+    "skillKey": "clawhub-swiggy",
+    "name": "Swiggy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swiggy",
+    "url": "https://clawhub.ai/skills/swiggy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swiggy-e5f2f4ada0333086.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Order food, groceries, and book restaurants in India via Swiggy's MCP servers. Food delivery, Instamart groceries, and Dineout restaurant bookings with safety-first confirmation workflow."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "regalstreak",
+      "userId": "s175b1k0z33n2zr6w18ekhmenx8434z5",
+      "displayName": "Neil Agarwal",
+      "image": "https://avatars.githubusercontent.com/u/7759208?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 3097,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 6,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1769664601572,
+      "changelog": "Fix: Point bin entry to swiggy-cli.js at root level (ClawdHub doesn't package subdirectories)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:522186052308359f5377060c0e969f099b9e4bc99372ffddc5cd99ff9ba60a0d"
+}

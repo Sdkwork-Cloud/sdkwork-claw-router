@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37668,
+  "uuid": "skill-clawhub-twikey",
+  "skillKey": "clawhub-twikey",
+  "name": "Twikey",
+  "summary": "Twikey integration. Manage data, records, and automate workflows. Use when the user wants to interact with Twikey data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twikey",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Twikey integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Twikey data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twikey@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twikey",
+      "url": "https://clawhub.ai/skills/twikey"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twikey",
+    "url": "https://clawhub.ai/skills/twikey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twikey-186cf354170b550d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twikey@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-twikey-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1f7fffbcaa8f94261c53fcc1ed54523d134e27116f514788c6450fdfd1306b7",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:07:25.667Z"
+}

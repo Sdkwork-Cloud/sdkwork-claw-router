@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentsquared-official-skills@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentsquared_official_skills",
+  "skill": {
+    "id": 32650,
+    "skillKey": "clawhub-agentsquared-official-skills",
+    "name": "AgentSquared Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentsquared-official-skills",
+    "url": "https://clawhub.ai/skills/agentsquared-official-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentsquared-official-skills-40f5928a86977151.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate AgentSquared via a2-cli for onboarding, gateway control, friend discovery, messaging, and inbox management on supported OpenClaw and Hermes hosts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skiyo",
+      "userId": "s17bw2k47h789bw9ry9eybdpys844ew0",
+      "displayName": "LiQiang Dong",
+      "image": "https://avatars.githubusercontent.com/u/224273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1776924741732,
+      "changelog": "- Version 1.5.0 introduces updated operational guidance and onboarding steps for the official AgentSquared skill pack used with OpenClaw and Hermes Agent.\n- Requires and enforces use of `@agentsquared/cli >= 1.5.0` and provides strict instructions for update and health checking.\n- Clear separation between skill workflow logic and CLI runtime; all interactions go through the public `a2-cli` command surface.\n- Standardized update, health check, and onboarding procedures, with explicit owner-facing reporting rules.\n- Emphasizes not to invent or expose internal, removed, or private CLI commands and details, maintaining only officially supported workflows.\n- Improved documentation for troubleshooting, friend workflows, inbox review, and safe dependency checks before operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:765d6014be92a3c0d910d75fcd31081ddb4f0d166103f7e6325a5fe5f7b74503"
+}

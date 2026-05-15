@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60954,
+  "uuid": "skill-clawhub-inkroam-bijian-writing",
+  "skillKey": "clawhub-inkroam-bijian-writing",
+  "name": "Bijian AI Writing Expert",
+  "summary": "笔尖写作专家：三要素收集 → 调用笔尖AI生成文章 → 输出可发布内容。Use when user asks to 用笔尖写文章 / 生成公众号文章 / 写一篇文章.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inkroam_bijian_writing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "inkroam",
+      "features": [
+        "笔尖写作专家：三要素收集 → 调用笔尖AI生成文章 → 输出可发布内容。Use when user asks to 用笔尖写文章 / 生成公众号文章 / 写一篇文章."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inkroam-bijian-writing@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252960819?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inkroam-bijian-writing",
+      "url": "https://clawhub.ai/skills/inkroam-bijian-writing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inkroam-bijian-writing",
+    "url": "https://clawhub.ai/skills/inkroam-bijian-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inkroam-bijian-writing-55fa55e5dc7d52b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inkroam-bijian-writing@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inkroam-bijian-writing-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b40eb0f7bbd9c691bbec2bfae51877550dfe5d31b1156713f9f2e28776d13de",
+      "artifactSizeBytes": 2206
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T03:11:14.033Z"
+}

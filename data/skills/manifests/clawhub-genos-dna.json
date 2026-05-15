@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66701,
+  "uuid": "skill-clawhub-genos-dna",
+  "skillKey": "clawhub-genos-dna",
+  "name": "Genos基因序列分析",
+  "summary": "使用 Genos 模型进行 DNA 序列分析。当用户提到 DNA、基因、基因组、碱基序列、ACGT 等生物信息学相关问题时使用此技能。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.genos_dna",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flowertusi",
+      "features": [
+        "使用 Genos 模型进行 DNA 序列分析。当用户提到 DNA、基因、基因组、碱基序列、ACGT 等生物信息学相关问题时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/genos-dna@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28643943?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "genos-dna",
+      "url": "https://clawhub.ai/skills/genos-dna"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "genos-dna",
+    "url": "https://clawhub.ai/skills/genos-dna",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/genos-dna-b1f30644e01a798c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/genos-dna@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-genos-dna-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e88a701eba47d14ad96a65f36a40de1bd892583ab26041fe56e59b2724d2b2c0",
+      "artifactSizeBytes": 2278
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T18:17:39.589Z"
+}

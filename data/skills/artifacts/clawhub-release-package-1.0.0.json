@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/release-package@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.release_package",
+  "skill": {
+    "id": 46664,
+    "skillKey": "clawhub-release-package",
+    "name": "Release Package"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "release-package",
+    "url": "https://clawhub.ai/skills/release-package",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/release-package-b6346ffb4a33cfc4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Feishu Bitable Storage Manager - Integrated tool for item storage, retrieval, and location updates"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ruoruochen",
+      "userId": "s17ef8t3y7mdyebmcx2rkrc3rh84tgq0",
+      "displayName": "ruoruochen",
+      "image": "https://avatars.githubusercontent.com/u/62226539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776145517085,
+      "changelog": "Initial release of Storage Manager.\n\n- Integrated with Feishu Bitable for smart item storage management.\n- Supports adding, searching, and updating storage items and their locations.\n- Command-line interface for easy item and location management.\n- Requires Python 3.6+, requests library, and Feishu app credentials.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ca62676379ca1cdc1b8aec553da211ff6b42c19ff0ed02c91e8db472206ff46"
+}

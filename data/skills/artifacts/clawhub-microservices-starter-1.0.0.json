@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/microservices-starter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microservices_starter",
+  "skill": {
+    "id": 18600,
+    "skillKey": "clawhub-microservices-starter",
+    "name": "Microservices Starter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microservices-starter",
+    "url": "https://clawhub.ai/skills/microservices-starter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microservices-starter-8b55389a393f87af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up and deploy production-ready microservices with API gateway, service templates, service mesh support, distributed tracing, and container orchestration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunshine-del-ux",
+      "userId": "publishers:sunshine-del-ux",
+      "displayName": "Sunshine-del-ux",
+      "image": "https://avatars.githubusercontent.com/u/83053073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 626,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772651917838,
+      "changelog": "Microservices Starter 1.0.0\n\n- Initial release with a production-ready microservices architecture.\n- Features API Gateway with routing, authentication, rate limiting, and load balancing.\n- Includes service templates for Node.js, Python, and Go.\n- Ready for service mesh with Kubernetes, Istio, and Prometheus integrations.\n- Distributed tracing support via OpenTelemetry and Jaeger.\n- Docker Compose, Kubernetes manifests, and Helm charts for container orchestration.\n- Predefined services: User, Order, Product, Payment, and Notification.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:701dbc7c484ef34cd67f67825df1cb1382975efaeb3ab2b09b6791b9d5f046b2"
+}

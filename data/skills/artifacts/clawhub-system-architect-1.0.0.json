@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/system-architect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.system_architect",
+  "skill": {
+    "id": 10555,
+    "skillKey": "clawhub-system-architect",
+    "name": "System Architect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "system-architect",
+    "url": "https://clawhub.ai/skills/system-architect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/system-architect-42487641f54106ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Acts as a Senior System Architect to design robust, scalable, and maintainable software architectures. Enforces industry standards (PEP 8 for Python, ESLint for JS/TS), modular design, and security best practices. Use this skill when the u."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1999azzar",
+      "userId": "publishers:1999azzar",
+      "displayName": "azzar budiyanto",
+      "image": "https://avatars.githubusercontent.com/u/48999412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2192,
+      "installsAllTime": 22,
+      "installsCurrent": 22,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770939015246,
+      "changelog": "Initial release of the \"system-architect\" skill.\n\n- Provides expert guidance on high-level software system design, project scaffolding, and tech stack selection.\n- Enforces industry standards (PEP 8 for Python, ESLint for JS/TS), modular design, and security best practices.\n- Generates directory structures, configuration files, code standard templates, and documentation starters.\n- Supports system visualization with architectural diagrams (Mermaid). \n- Prioritizes security, scalability, and minimalism in all recommendations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3a04b6d311edef36e9f8f789fad938230bcc77bb60782b7a870a8a44beb12293"
+}

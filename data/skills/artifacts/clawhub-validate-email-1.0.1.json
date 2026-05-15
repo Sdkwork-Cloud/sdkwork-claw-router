@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/validate-email@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.validate_email",
+  "skill": {
+    "id": 36854,
+    "skillKey": "clawhub-validate-email",
+    "name": "validate email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "validate-email",
+    "url": "https://clawhub.ai/skills/validate-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/validate-email-4012a524ea5fe67c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validate email addresses with format checking and risk scoring. Use when users need to verify email format, check disposable emails, or validate bulk email l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kennyzir",
+      "userId": "s17cffj9ap2f7pqdtjc91f3m2983gfab",
+      "displayName": "claw0x",
+      "image": "https://avatars.githubusercontent.com/u/169416751?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774525287763,
+      "changelog": "- Adds full local (offline) email validation: no external API calls or API keys needed.\n- Streamlines documentation with clear quickstart, integration recipes, and usage scenarios.\n- Expands and clarifies input/output schema and error handling.\n- Introduces local-only logic for format validation, domain checks, and risk scoring.\n- Clearly explains what the skill does and does NOT do for user transparency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd51dbab5ff07c74c0854e4ae3e37e0e2343633c4f0bc2bb7b4f069e0b3e79c3"
+}

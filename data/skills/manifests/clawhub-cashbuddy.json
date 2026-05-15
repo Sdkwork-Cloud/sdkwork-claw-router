@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35243,
+  "uuid": "skill-clawhub-cashbuddy",
+  "skillKey": "clawhub-cashbuddy",
+  "name": "Cashbuddy",
+  "summary": "Cashbuddy integration. Manage data, records, and automate workflows. Use when the user wants to interact with Cashbuddy data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cashbuddy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Cashbuddy integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Cashbuddy data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cashbuddy@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cashbuddy",
+      "url": "https://clawhub.ai/skills/cashbuddy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cashbuddy",
+    "url": "https://clawhub.ai/skills/cashbuddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cashbuddy-5a0e4399b1693d29.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cashbuddy@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cashbuddy-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed8c019003848dcd60f447bd3b3d248fe38db9d47a34e99ace9d98706395b4c1",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:16:54.973Z"
+}

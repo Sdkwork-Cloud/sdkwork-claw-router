@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51611,
+  "uuid": "skill-clawhub-tai-alpha-stock",
+  "skillKey": "clawhub-tai-alpha-stock",
+  "name": "Tai Alpha Stock",
+  "summary": "Tai Alpha stock analysis — collect, VectorBT backtest (RSI/MACD/BB), conviction score, optional ML. Persistence is SQLite (default tai_alpha_output/tai_alpha...",
+  "version": "1.33.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tai_alpha_stock",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eric",
+      "features": [
+        "Tai Alpha stock analysis — collect, VectorBT backtest (RSI/MACD/BB), conviction score, optional.",
+        "Persistence is SQLite (default tai_alpha_output/tai_alpha..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tai-alpha-stock@1.33.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38715806?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tai-alpha-stock",
+      "url": "https://clawhub.ai/skills/tai-alpha-stock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tai-alpha-stock",
+    "url": "https://clawhub.ai/skills/tai-alpha-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tai-alpha-stock-ca168f3970ace58c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tai-alpha-stock@1.33.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tai-alpha-stock-1.33.1.json",
+      "version": "1.33.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23f8f6ae93efdf4d06c8364c7b44553ba761c51e0fe5095ddb170c0a86f13587",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T14:54:47.373Z"
+}

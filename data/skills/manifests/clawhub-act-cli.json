@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55589,
+  "uuid": "skill-clawhub-act-cli",
+  "skillKey": "clawhub-act-cli",
+  "name": "ACT Runtime",
+  "summary": "Run ACT WebAssembly component tools via `act call`. Use when the user asks to use an ACT component, run a .wasm tool, or needs sandboxed tools (SQLite, HTTP,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.act_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ACT Core",
+      "features": [
+        "Run ACT WebAssembly component tools via `act call`",
+        "Use when the user asks to use an ACT component, run a .wasm tool, or needs sandboxed tools (SQL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/act-cli@0.1.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/act-cli/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "act-cli",
+      "url": "https://clawhub.ai/skills/act-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "act-cli",
+    "url": "https://clawhub.ai/skills/act-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/act-cli-fc12549edbd648de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/act-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-act-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:427ac8477dc3f7235f2813e3490626b6b2a282aba71aff708f8b7017cf8db3bf",
+      "artifactSizeBytes": 2253
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T01:01:59.871Z"
+}

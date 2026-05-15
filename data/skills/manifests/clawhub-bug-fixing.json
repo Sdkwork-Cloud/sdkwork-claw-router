@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57257,
+  "uuid": "skill-clawhub-bug-fixing",
+  "skillKey": "clawhub-bug-fixing",
+  "name": "bug-fixing",
+  "summary": "Zero-regression bug fix workflow: triage → reproduce → root cause → impact analysis → fix → verify → knowledge deposit → self-reflect. Use when: - Feature br...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bug_fixing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TinkCarlos",
+      "features": [
+        "Zero-regression bug fix workflow: triage → reproduce → root cause → impact analysis → fix → ver.",
+        "Use when:",
+        "Feature br..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bug-fixing@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151288587?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bug-fixing",
+      "url": "https://clawhub.ai/skills/bug-fixing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bug-fixing",
+    "url": "https://clawhub.ai/skills/bug-fixing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bug-fixing-e9d798ca5a1cccc7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bug-fixing@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-bug-fixing-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2f33a3814c97d213f3acb081e810f71fcad736624543cc862bda513ad0334bd",
+      "artifactSizeBytes": 2137
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T06:46:47.135Z"
+}

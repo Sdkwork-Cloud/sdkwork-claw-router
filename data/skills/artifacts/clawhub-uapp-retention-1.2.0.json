@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uapp-retention@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uapp_retention",
+  "skill": {
+    "id": 63924,
+    "skillKey": "clawhub-uapp-retention",
+    "name": "用户留存查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uapp-retention",
+    "url": "https://clawhub.ai/skills/uapp-retention",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uapp-retention-5cedcab103e3b48d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "友盟 U-App 留存率查询技能，支持通过 umeng-cli call 调用友盟 OpenAPI（gateway.open.umeng.com）的 1 个只读留存接口，覆盖新增/活跃用户的次日/3日/7日/14日/30日留存率查询、版本与渠道维度的留存对比分析。当用户需要查询应用留存率、次日留存、7日留存、版本..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "squall0925",
+      "userId": "s178qv5gja5sbh0bq8t6wbhq8x83rmg5",
+      "displayName": "Umeng+",
+      "image": "https://avatars.githubusercontent.com/u/195273084?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1777463268355,
+      "changelog": "**重大变更：切换查询方案，完全移除内置 Python 客户端与 SDK，改为调用官方 umeng-cli 命令行工具。**\n\n- 重写 Skill，删除所有自带脚本、SDK 及相关说明，仅保留文档级指引和操作示例\n- 依赖 `umeng-cli` 实现留存率查询，提供 CLI 级调用样例与参数详解\n- skill 仅聚焦于「友盟 U-App 留存率查询」主能力，不再包含版本/渠道枚举等扩展接口\n- 更新 Skill 名，与 `umeng-cli` 套件一致\n- 详细说明授权流程、调用方式、核心输出结构与适用场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d24c66cb8434f1382500983f783ef9690c944edf171728cbfd0e0b480ccb3a3"
+}

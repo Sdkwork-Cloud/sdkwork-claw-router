@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidudisk-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidudisk_mcp",
+  "skill": {
+    "id": 23952,
+    "skillKey": "clawhub-baidudisk-mcp",
+    "name": "Baidudisk Mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidudisk-mcp",
+    "url": "https://clawhub.ai/skills/baidudisk-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidudisk-mcp-ea7e5c2ae4ccd3d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Baidu Netdisk via mcporter + stdio MCP server with hot-reload token file credentials. Triggers when you need Baidu Netdisk operations (official 2.0 tools..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "forevershu",
+      "userId": "publishers:forevershu",
+      "displayName": "forevershu",
+      "image": "https://avatars.githubusercontent.com/u/254035882?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 404,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772891224451,
+      "changelog": "Initial release of baidudisk-mcp\n\n- Provides Baidu Netdisk access through mcporter with an MCP stdio server, supporting hot-reload of token credentials.\n- Implements a wide set of official-aligned file management tools (aligned with Baidu API 2.0) and maintains compatibility with legacy tool aliases.\n- Supports batch operations with unified return envelope format for copy, move, and rename.\n- Credentials are read from a local JSON file on every call, enabling seamless token updates without restart.\n- Includes extensive examples for mcporter usage and recommended server setup steps.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a5914fb7f22a85845ef4e710338ea7e12b61a12d887fbdf5e8d6679d00cfce8f"
+}

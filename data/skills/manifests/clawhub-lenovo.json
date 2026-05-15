@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57150,
+  "uuid": "skill-clawhub-lenovo",
+  "skillKey": "clawhub-lenovo",
+  "name": "Lenovo",
+  "summary": "Information assistant for 联想 Lenovo. Search products, news, financials, and official resources for 联想 Lenovo.",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lenovo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for 联想 Lenovo",
+        "Search products, news, financials, and official resources for 联想 Lenovo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lenovo@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lenovo",
+      "url": "https://clawhub.ai/skills/lenovo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lenovo",
+    "url": "https://clawhub.ai/skills/lenovo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lenovo-56018fe135c84cb3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lenovo@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-lenovo-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:089cba3a7df9411a556ce979b04886916965565c74b8ca76fd18f3750400455f",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T17:36:57.306Z"
+}

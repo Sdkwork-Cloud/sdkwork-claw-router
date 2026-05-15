@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65741,
+  "uuid": "skill-clawhub-jinyun",
+  "skillKey": "clawhub-jinyun",
+  "name": "backend-api-designer",
+  "summary": "高级软件架构师级别的业务方案设计与后端技术落地。功能包括：(1) 工程分析 - 读取现有工程，分析代码结构、接口风格、数据模型；(2) 业务方案设计 - 需求分析、架构设计、技术选型、实施规划；(3) 流程图设计 - 业务流程图、状态机图、时序图、架构图；(4) 接口设计 - Go proto 风格的 gRPC/...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jinyun",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jjjypink1211",
+      "features": [
+        "高级软件架构师级别的业务方案设计与后端技术落地。功能包括：(1) 工程分析",
+        "读取现有工程，分析代码结构、接口风格、数据模型；(2) 业务方案设计",
+        "需求分析、架构设计、技术选型、实施规划；(3) 流程图设计",
+        "业务流程图、状态机图、时序图、架构图；(4) 接口设计"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jinyun@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/157344319?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jinyun",
+      "url": "https://clawhub.ai/skills/jinyun"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jinyun",
+    "url": "https://clawhub.ai/skills/jinyun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jinyun-0edf98e66090d824.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jinyun@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jinyun-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:898a04a5c47ed2c80748a8436631ff812935fb8292c37e172b8746490ce4cfdd",
+      "artifactSizeBytes": 2636
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T10:22:01.102Z"
+}

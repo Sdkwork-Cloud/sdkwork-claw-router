@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evalanche@1.9.7",
+  "version": "1.9.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evalanche",
+  "skill": {
+    "id": 15360,
+    "skillKey": "clawhub-evalanche",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evalanche",
+    "url": "https://clawhub.ai/skills/evalanche",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evalanche-ea8ac935cee29181.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-EVM agent wallet SDK with onchain identity (ERC-8004), payment rails (x402), cross-chain liquidity (Li.Fi bridging + DEX aggregation + DeFi Composer),..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ijaack",
+      "userId": "s17e3gjpsxfdsgxv67gc3hm3tx83g435",
+      "displayName": "Giacomo Barbieri",
+      "image": "https://avatars.githubusercontent.com/u/6631681?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 938,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 31
+    },
+    "latestVersion": {
+      "version": "1.9.7",
+      "createdAt": 1778238758853,
+      "changelog": "## Highlights\n\n- Hardened MCP HTTP mode so it now requires an explicit bearer token, binds to loopback by default, enforces request timeouts, and rejects oversized request bodies before parsing.\n- Routed high-risk execution helpers through active spending-policy checks, including approve-and-call, UUPS proxy upgrades, Li.Fi bridge/swap execution, and Gas.zip funding.\n- Tightened x402 paid-service hosting so settled endpoints require a settlement verifier by default, while preserving explicit `signed-intent` mode for trusted peer flows and tests.\n- Fixed Polymarket collateral normalization for live pUSD spender allowances, and made `pm_approve` / `pm_deposit` sync both wallet USDC.e -> CLOB approval and Polygon pUSD spender approvals.\n\n## Validation\n\n- `npm test`\n- `npm run typecheck`\n- `npm run build`\n\n## Notes\n\n- HTTP MCP users must now set `EVALANCHE_MCP_HTTP_TOKEN` or pass `startHTTP({ authToken })`.\n- Polymarket venue balance reads now prefer live pUSD spender approvals over the stale single-allowance assumption, with wallet-side USDC.e -> CLOB approval retained as fallback.\n- This release folds the previously prepared 1.9.4/1.9.5 hardening work together with the pending Polymarket allowance fix into one clean public release line: `v1.9.7`.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6a6e535ee96ccddc46c0235cd044995bf87e45047be4c84ebf9719e62292e305"
+}

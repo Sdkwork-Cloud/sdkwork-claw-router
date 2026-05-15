@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/istore-build-openclash@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.istore_build_openclash",
+  "skill": {
+    "id": 58398,
+    "skillKey": "clawhub-istore-build-openclash",
+    "name": "iStore Build OpenClash"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "istore-build-openclash",
+    "url": "https://clawhub.ai/skills/istore-build-openclash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/istore-build-openclash-5e6ffbb403930de4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "创建 OpenClash GitHub Actions 构建 workflow 并直接推送到用户 GitHub 仓库。触发词：构建 OpenClash、istore-build-openclash、创建 OpenClash workflow"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veelove",
+      "userId": "s17dmjbc6fb2b7tpsde7744bt98660m2",
+      "displayName": "VEE",
+      "image": "https://avatars.githubusercontent.com/u/47690181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 75,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778245157306,
+      "changelog": "直接通过 GitHub API 推送 workflow，无需克隆仓库",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc4d4406ba1fa9a1a10c7be7d7eab77bd0e7400e68764faacb9441cc64d624c8"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9247,
+  "uuid": "skill-clawhub-scrapling-web-scraper",
+  "skillKey": "clawhub-scrapling-web-scraper",
+  "name": "Scrapling Web Scraping",
+  "summary": "Zero-bot-detection web scraping for OpenClaw. Bypass Cloudflare, handle JavaScript-heavy sites, and adapt to website changes automatically. Use when you need...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scrapling_web_scraper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhengxinjipai",
+      "features": [
+        "Zero-bot-detection web scraping for OpenClaw",
+        "Bypass Cloudflare, handle JavaScript-heavy sites, and adapt to website changes automatically",
+        "Use when you need..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scrapling-web-scraper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130424576?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scrapling-web-scraper",
+      "url": "https://clawhub.ai/skills/scrapling-web-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scrapling-web-scraper",
+    "url": "https://clawhub.ai/skills/scrapling-web-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scrapling-web-scraper-543a40b642c56391.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scrapling-web-scraper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scrapling-web-scraper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4dd1838f822549526256d3bd6829e53571cc13f4cef2ce791db4417fa824cff",
+      "artifactSizeBytes": 2370
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T08:09:29.531Z"
+}

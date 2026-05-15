@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-spec@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_spec",
+  "skill": {
+    "id": 32564,
+    "skillKey": "clawhub-skill-spec",
+    "name": "Standardize the de-upgrading and iteration of SKILL"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-spec",
+    "url": "https://clawhub.ai/skills/skill-spec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-spec-95aea50c56a2759b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when identifying skill candidates from repeated work, managing skill change proposals, reviewing candidates, or chaining skills into workflows. Also invo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chamberz40",
+      "userId": "s17cs7cgsjsdxbpcbavswwgg8985t189",
+      "displayName": "Chamber Zhang",
+      "image": "https://avatars.githubusercontent.com/u/55274082?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778125620239,
+      "changelog": "- Added duplicate skill detection before scaffolding: now checks existing skills’ name and description; proposes changes to similar skills instead of creating duplicates.\n- Updated review mode in candidate logging to proceed to scaffolding only after confirming no similar skill exists.\n- Clarified the Phase 2 (Scaffold) process to include duplicate check and conditional proposal creation.\n- No code or implementation changes; SKILL.md documentation updated for clarity and improved workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da2d102f1600f65cc1307e70facc5d58b7f2174bcdd7cc7d6ec2c2f3802f4ef3"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55831,
+  "uuid": "skill-clawhub-admirarr",
+  "skillKey": "clawhub-admirarr",
+  "name": "Admirarr",
+  "summary": "Manage a Jellyfin/Plex + *Arr media server stack — check status, add content, monitor downloads, diagnose issues, restart services.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.admirarr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Max Techera",
+      "features": [
+        "Manage a Jellyfin/Plex + *Arr media server stack — check status, add content, monitor downloads."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/admirarr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9321946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "admirarr",
+      "url": "https://clawhub.ai/skills/admirarr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "admirarr",
+    "url": "https://clawhub.ai/skills/admirarr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/admirarr-7aae57367e3ac563.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/admirarr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-admirarr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:441aa0fbb4e75dccfe161806fdfeb53d54283f987d79226c51bb783870874027",
+      "artifactSizeBytes": 1862
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T20:50:33.359Z"
+}

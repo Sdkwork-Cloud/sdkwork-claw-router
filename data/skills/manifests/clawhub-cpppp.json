@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23925,
+  "uuid": "skill-clawhub-cpppp",
+  "skillKey": "clawhub-cpppp",
+  "name": "cpppp",
+  "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cpppp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "blockcloud",
+      "features": [
+        "Captures learnings, errors, and corrections to enable continuous improvement",
+        "Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cpppp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19220974?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cpppp",
+      "url": "https://clawhub.ai/skills/cpppp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cpppp",
+    "url": "https://clawhub.ai/skills/cpppp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cpppp-8bb7d982357d1976.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cpppp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cpppp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5251f21165c1eb84dc75d73723414f255615e32162123c4b7fc7f08af31c43a8",
+      "artifactSizeBytes": 2607
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T13:59:22.059Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dropmail@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dropmail",
+  "skill": {
+    "id": 51349,
+    "skillKey": "clawhub-dropmail",
+    "name": "DropMail – disposable email manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dropmail",
+    "url": "https://clawhub.ai/skills/dropmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dropmail-b3c85180c351a51b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage disposable email addresses using GuerrillaMail. Use when a user wants to create a temporary/throwaway email address, check a disposable inbox for mess..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cprite",
+      "userId": "s17a19yasw7t3ckfwdk1gahpmh84vj85",
+      "displayName": "Nikolay",
+      "image": "https://avatars.githubusercontent.com/u/98195072?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776174113539,
+      "changelog": "Fix: Add SSL context to dropmail.py for macOS compatibility",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b42a7486b16e5dac834f8728b1aeef2be264e541dde5f3122f57c612d24f112a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/truecaller@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.truecaller",
+  "skill": {
+    "id": 65394,
+    "skillKey": "clawhub-truecaller",
+    "name": "Truecaller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "truecaller",
+    "url": "https://clawhub.ai/skills/truecaller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/truecaller-c92f0a55ddf68fe8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "整理Truecaller公开官网的功能介绍、版本信息、下载入口、权限说明及帮助文档内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774245501511,
+      "changelog": "Initial release of the Truecaller skill.\n\n- Organizes official information from Truecaller’s homepage, download pages, feature descriptions, and help centers.\n- Provides summaries of platform versions, download links, key features, privacy explanations, and FAQ/help entries.\n- Does not handle device control, system bypass, or access to private/non-public content.\n- Focuses on clear distinctions between platforms (Android, iOS, Windows, macOS) and adheres to official privacy and permissions documentation.\n- Ensures all outputs are based only on publicly available information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df6639400d1f03b1682fdf23690f14f373de51177305febdbd6742bab570bd28"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27811,
+  "uuid": "skill-clawhub-trend-tap",
+  "skillKey": "clawhub-trend-tap",
+  "name": "Trend Tap",
+  "summary": "Real-time trending topics aggregator across 7 platforms (X/Twitter, Reddit, Google Trends, Hacker News, Zhihu, Bilibili, Weibo). Trigger: when user says 'tre...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trend_tap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XiaoYiWeio",
+      "features": [
+        "Real-time trending topics aggregator across 7 platforms (X/Twitter, Reddit, Google Trends, Hack.",
+        "Trigger: when user says 'tre..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trend-tap@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50070170?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trend-tap",
+      "url": "https://clawhub.ai/skills/trend-tap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trend-tap",
+    "url": "https://clawhub.ai/skills/trend-tap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trend-tap-3450351eee0a063e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trend-tap@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trend-tap-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54af3c527fe5f1fbdabd953e2ef20fb74140fc854dd10768c1d4479a0a0d3d20",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:47:15.676Z"
+}

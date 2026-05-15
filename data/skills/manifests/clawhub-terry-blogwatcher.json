@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48771,
+  "uuid": "skill-clawhub-terry-blogwatcher",
+  "skillKey": "clawhub-terry-blogwatcher",
+  "name": "BlogWatcher (Terry)",
+  "summary": "Monitor blogs and RSS feeds",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.terry_blogwatcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "Monitor blogs and RSS feeds"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/terry-blogwatcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "terry-blogwatcher",
+      "url": "https://clawhub.ai/skills/terry-blogwatcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "terry-blogwatcher",
+    "url": "https://clawhub.ai/skills/terry-blogwatcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/terry-blogwatcher-a354f1f732048b4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/terry-blogwatcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-terry-blogwatcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b98fc38cd7e954a7716882bcebced84a4a63fa5dbdc110885fddfa11d2328002",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T19:17:28.697Z"
+}

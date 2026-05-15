@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71608,
+  "uuid": "skill-clawhub-polya-problem-solving",
+  "skillKey": "clawhub-polya-problem-solving",
+  "name": "怎样解题",
+  "summary": "基于 George Pólya《怎样解题》方法论的思维引导工具。当用户说\"这道题怎么做\"、\"讲下这道题\"、\"帮我分析这个问题\"、\"我不会解\"、\"解题思路是什么\"、\"帮我规划一下\"、\"分析一下这个问题\"时触发。提供数学解题和通用思维两种模式，通过苏格拉底式提问引导用户自主走完理解→计划→执行→检验四步。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polya_problem_solving",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FanX",
+      "features": [
+        "基于 George Pólya《怎样解题》方法论的思维引导工具。当用户说\"这道题怎么做\"、\"讲下这道题\"、\"帮我分析这个问题\"、\"我不会解\"、\"解题思路是什么\"、\"帮我规划一下\"、\"分析一下."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polya-problem-solving@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231185438?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polya-problem-solving",
+      "url": "https://clawhub.ai/skills/polya-problem-solving"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polya-problem-solving",
+    "url": "https://clawhub.ai/skills/polya-problem-solving",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polya-problem-solving-24c8025f77fa2b3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polya-problem-solving@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polya-problem-solving-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6667554ccbb6ebe0dfc199f33446c46eb83970f0be75abdd548848f50d398323",
+      "artifactSizeBytes": 2219
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T04:15:56.179Z"
+}

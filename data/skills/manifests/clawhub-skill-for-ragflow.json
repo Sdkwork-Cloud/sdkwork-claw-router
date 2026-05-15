@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31514,
+  "uuid": "skill-clawhub-skill-for-ragflow",
+  "skillKey": "clawhub-skill-for-ragflow",
+  "name": "RAGFlow Skill",
+  "summary": "Operate RAGFlow v0.25.1 deployments through the bundled Node CLI and API client. Use when user needs to manage RAGFlow datasets, documents, uploads, parsing,...",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_for_ragflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lunar Cache",
+      "features": [
+        "Operate RAGFlow v0.25.1 deployments through the bundled Node CLI and API client",
+        "Use when user needs to manage RAGFlow datasets, documents, uploads, parsing,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-for-ragflow@1.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104379509?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-for-ragflow",
+      "url": "https://clawhub.ai/skills/skill-for-ragflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-for-ragflow",
+    "url": "https://clawhub.ai/skills/skill-for-ragflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-for-ragflow-593c5a15f95c7049.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-for-ragflow@1.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-for-ragflow-1.2.3.json",
+      "version": "1.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90af0f05532963a5d0c170c1587fab434d23eb6893a90d2f8474f9840237b02d",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T05:51:59.017Z"
+}

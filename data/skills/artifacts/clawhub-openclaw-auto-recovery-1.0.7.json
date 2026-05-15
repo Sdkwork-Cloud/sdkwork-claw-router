@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-auto-recovery@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_auto_recovery",
+  "skill": {
+    "id": 61287,
+    "skillKey": "clawhub-openclaw-auto-recovery",
+    "name": "Openclaw Auto Recovery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-auto-recovery",
+    "url": "https://clawhub.ai/skills/openclaw-auto-recovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-auto-recovery-d05f51538763f616.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 基础设施心跳监控与自动恢复。用于：部署/卸载心跳守护进程、配置主机监控（Gateway/磁盘/内存/CPU/进程）、设置飞书告警、自动重启故障 Gateway。当用户提到\"心跳监控\"、\"heartbeat daemon\"、\"服务器告警\"、\"自动重启\"、\"健康检查\"、\"auto recovery\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "u0003-yxuan",
+      "userId": "s17e5qgj7ppr81ynvnz2e8hg6d83ngs1",
+      "displayName": "u0003-yxuan",
+      "image": "https://avatars.githubusercontent.com/u/67730072?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1775541942630,
+      "changelog": "修复CPU检测：改用vmstat 1 1（列15固定为idle）替代top，避免中文locale列位置不稳定；说明飞书99992361为API频率限制非代码bug",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:300a15637b9b59f5a22a1453327e81583af101b74792daad12ab2cf907108e3d"
+}

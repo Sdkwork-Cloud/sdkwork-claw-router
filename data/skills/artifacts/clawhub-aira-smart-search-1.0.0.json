@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aira-smart-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aira_smart_search",
+  "skill": {
+    "id": 27910,
+    "skillKey": "clawhub-aira-smart-search",
+    "name": "smart-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aira-smart-search",
+    "url": "https://clawhub.ai/skills/aira-smart-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aira-smart-search-bd747049b389e069.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent web search routing across Gemini and Brave APIs with quota management, circuit breaker, and web_fetch fallback. Routes finance queries to Gemini,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "airaalfredsf",
+      "userId": "publishers:airaalfredsf",
+      "displayName": "AiraAlfredSF",
+      "image": "https://avatars.githubusercontent.com/u/262962928?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773789082938,
+      "changelog": "smart-search 1.0.0 — Initial release with multi-provider web search, automatic routing logic, and robust quota management.\n\n- Added automatic search routing between Gemini and Brave APIs, with web scraping fallback if APIs are unavailable.\n- Introduced daily quota management per agent and shared pool, with persistent coordination across agents.\n- Developed two execution strategies: scheduled agents prioritize APIs; general agent prioritizes scraping to save quota.\n- Exposed three tools: `smart_search` for search, `search_quota_status` for quota checking, and `search_mark_agent_complete`.\n- All allocations, provider routing rules, and quota ceilings are config-driven and reloadable without restart.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:56af4dca015054096e97622b6ae202966eb435f98050f869ba31811ceaf710e9"
+}

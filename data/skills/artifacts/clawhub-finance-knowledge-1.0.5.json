@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/finance-knowledge@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finance_knowledge",
+  "skill": {
+    "id": 57228,
+    "skillKey": "clawhub-finance-knowledge",
+    "name": "金融知识"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finance-knowledge",
+    "url": "https://clawhub.ai/skills/finance-knowledge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finance-knowledge-071dca1556ca4c4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A retrieval skill that answers finance questions from the `article_fin_knowledge/` knowledge base (8 markdown files covering banking, funds, M&A, derivatives..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krillingone",
+      "userId": "s176tr4gfk2akfkz4bs0f8zwh983jsmy",
+      "displayName": "krillingone",
+      "image": "https://avatars.githubusercontent.com/u/42474763?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 267,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775532996381,
+      "changelog": "update user guide",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d35e0141fd237e95a27db8ded67840cab6b014772fb2faa3ec0bbb09b8cebac"
+}

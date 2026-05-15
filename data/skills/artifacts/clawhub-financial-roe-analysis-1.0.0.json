@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/financial-roe-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_roe_analysis",
+  "skill": {
+    "id": 69072,
+    "skillKey": "clawhub-financial-roe-analysis",
+    "name": "financial roe analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-roe-analysis",
+    "url": "https://clawhub.ai/skills/financial-roe-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-roe-analysis-60eb9595d0ba0f20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "以资深财务分析师视角，基于杜邦分析体系对上市公司进行深度财务分析。适用场景：(1) 分析某只股票/上市公司的财务状况，(2) 深度拆解ROE驱动因素，(3) 评估公司盈利质量、资产运营效率、杠杆风险，(4) 输出机构投研标准的财务分析报告。触发词：财务分析、ROE分析、杜邦分析、股票财务、盈利质量、净利润质量、资..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ksky521",
+      "userId": "s177z4s6dabs1y9tx72np0acxs83zsfm",
+      "displayName": "三水清",
+      "image": "https://avatars.githubusercontent.com/u/1073262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 414,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774179992109,
+      "changelog": "- Initial release of financial-roe-analysis skill.\n- Provides in-depth financial analysis of listed companies using DuPont (ROE decomposition) framework.\n- Supports both quick and deep report output modes, tailored to user needs.\n- Includes strict data handling, competitor/industry benchmarking, and standardized reporting templates.\n- Implements early warning rules for financial risk and fraud based on multi-year data and industry context.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ba321e1978ba8abc27d83c47ddb0618b0e1f5ce56db62f73c23023e6dd7e57a"
+}

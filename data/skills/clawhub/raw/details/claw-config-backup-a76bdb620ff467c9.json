@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "claw-config-backup",
+    "displayName": "openclaw configure backup",
+    "summary": "Backup OpenClaw configuration file with hash-based change detection. Use when user asks to backup, create backup of, or save OpenClaw config (openclaw.json)....",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773927562318,
+    "updatedAt": 1777621364145
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773927562318,
+    "changelog": "Initial version—adds OpenClaw config backup capability with hash-based change detection.\n\n- Added Python script (config_backup.py) to backup OpenClaw JSON config file.\n- Automatically validates JSON5 before backup.\n- Backs up only if file content has changed (SHA256 hash check).\n- Creates timestamped backups in a specified or default directory.\n- Removed legacy token.sh script.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "goog",
+    "userId": "s17em2bafnnpytnkgk2apn7p6h83fqsf",
+    "displayName": "Jay",
+    "image": "https://avatars.githubusercontent.com/u/1488374?v=4"
+  },
+  "moderation": null
+}

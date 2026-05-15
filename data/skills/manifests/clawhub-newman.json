@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16055,
+  "uuid": "skill-clawhub-newman",
+  "skillKey": "clawhub-newman",
+  "name": "Newman",
+  "summary": "Automated API testing with Postman collections via Newman CLI. Use when user requests API testing, collection execution, automated testing, CI/CD integration, or mentions \"Postman\", \"Newman\", \"API tests\", \"run collection\", or \"automated te.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newman",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "azzar budiyanto",
+      "features": [
+        "Automated API testing with Postman collections via Newman CLI",
+        "Use when user requests API testing, collection execution, automated testing, CI/CD integration,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/newman@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48999412?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "newman",
+      "url": "https://clawhub.ai/skills/newman"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newman",
+    "url": "https://clawhub.ai/skills/newman",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newman-5380b4faddb75750.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/newman@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-newman-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4219709587899d2fed352e260477d54b02542a9d8a07562e0ec95f75339e287c",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T23:33:31.714Z"
+}

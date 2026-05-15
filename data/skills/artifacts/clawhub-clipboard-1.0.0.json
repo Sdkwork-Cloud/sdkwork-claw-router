@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clipboard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clipboard",
+  "skill": {
+    "id": 11983,
+    "skillKey": "clawhub-clipboard",
+    "name": "Clipboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clipboard",
+    "url": "https://clawhub.ai/skills/clipboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clipboard-a78c94675455b620.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with the system clipboard (text only) using `xclip` from any OpenClaw session."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xejrax",
+      "userId": "publishers:xejrax",
+      "displayName": "Xejrax",
+      "image": "https://avatars.githubusercontent.com/u/148405630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3677,
+      "installsAllTime": 24,
+      "installsCurrent": 24,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770135647866,
+      "changelog": "Initial publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e78cc90ff384349f2c1c62a553ed29a6d36009e592eaba2d1f8fd8197e162f1c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/epaiskill@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.epaiskill",
+  "skill": {
+    "id": 64202,
+    "skillKey": "clawhub-epaiskill",
+    "name": "EPAI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "epaiskill",
+    "url": "https://clawhub.ai/skills/epaiskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/epaiskill-2304d01240f5753a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "EPAI 平台管理技能，通过 CLI 操作知识库、文档和目录。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iamlovingit",
+      "userId": "publishers:iamlovingit",
+      "displayName": "Iamlovingit",
+      "image": "https://avatars.githubusercontent.com/u/38182824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 607,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1771929521530,
+      "changelog": "- No changes were made in this version.\n- The SKILL.md file remains unchanged from the previous release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7cda2ed8ab7b16d31a975e3d39473e64569df819b73adb3d3caa5ea2f523abdc"
+}

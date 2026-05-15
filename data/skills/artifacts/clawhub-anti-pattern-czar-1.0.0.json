@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anti-pattern-czar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anti_pattern_czar",
+  "skill": {
+    "id": 18140,
+    "skillKey": "clawhub-anti-pattern-czar",
+    "name": "Anti-Pattern Czar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anti-pattern-czar",
+    "url": "https://clawhub.ai/skills/anti-pattern-czar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anti-pattern-czar-52cc4b15804a22b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect and fix TypeScript error handling anti-patterns with state persistence and approval workflows. Use when scanning a codebase for silent error failures,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "glucksberg",
+      "userId": "s174ntjpaez2r36rkj193c5j3183jww8",
+      "displayName": "Glucksberg",
+      "image": "https://avatars.githubusercontent.com/u/80581902?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 715,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771476915839,
+      "changelog": "Initial release: autonomous TypeScript error handling anti-pattern detector and fixer with state persistence, 5 operation modes, approval workflows, and 10 pattern types.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:af68b8fad08024a443ae7df54943959f2a356310d3543ea75690974e1c407260"
+}

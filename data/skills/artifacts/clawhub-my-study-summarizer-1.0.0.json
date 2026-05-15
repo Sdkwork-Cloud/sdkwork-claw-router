@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-study-summarizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_study_summarizer",
+  "skill": {
+    "id": 26342,
+    "skillKey": "clawhub-my-study-summarizer",
+    "name": "summarizer for school"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-study-summarizer",
+    "url": "https://clawhub.ai/skills/my-study-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-study-summarizer-60303649c7739ced.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Processes any supported file type to extract key information and produce concise, structured summaries tailored for school study needs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iuri-siqueira",
+      "userId": "publishers:iuri-siqueira",
+      "displayName": "Zedjxxxx",
+      "image": "https://avatars.githubusercontent.com/u/218712517?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773588562921,
+      "changelog": "**Universal content processor skill initial release:**\n- Enables intelligent extraction and synthesis from virtually any file format KIMI can process.\n- Automatically detects file types, applies optimal parsing, and handles errors or unsupported formats gracefully.\n- Produces structured, high-quality outputs and maintains source fidelity while transforming content.\n- Supports a wide range of document, code, data, image, audio, and archive formats with detailed fallback strategies.\n- Designed for seamless, autonomous operation without requiring user clarification on file formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c70fdbceda9ce7cf74bd657b7ed5b381179f9db7294ceedd6f66cc16a278bc7a"
+}

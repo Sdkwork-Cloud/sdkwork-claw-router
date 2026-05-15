@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/retail-trade-report-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retail_trade_report_generator",
+  "skill": {
+    "id": 12428,
+    "skillKey": "clawhub-retail-trade-report-generator",
+    "name": "retail-trade-report-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retail-trade-report-generator",
+    "url": "https://clawhub.ai/skills/retail-trade-report-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retail-trade-report-generator-761476a97885e4ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates a consolidated weekly retail trade report by processing 12 Excel sales files, mapping stores to regions, calculating ADA metrics, WoW comparisons,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wuminmin",
+      "userId": "publishers:wuminmin",
+      "displayName": "wuminmin",
+      "image": "https://avatars.githubusercontent.com/u/16083471?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1675,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770002572661,
+      "changelog": "Retail Trade Weekly Report Generator 1.0.0\n\n- Initial release.\n- Consolidates 12 weekly sales Excel files into a comprehensive Retail Trade Weekly Report with channel, region, and product breakdown.\n- Calculates Average Daily Acquisition (ADA) and Week-over-Week (WoW) performance.\n- Uses detailed mapping rules to aggregate data by standard regions, handling fuzzy store name matching.\n- Outputs a formatted Excel workbook with styled summary tables and three embedded charts.\n- Includes robust error handling for missing or mismatched input files.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:78401826b862de9e58e0a5c99e1ed53afc358e36de51f437b143fd9093394fe4"
+}

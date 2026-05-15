@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57928,
+  "uuid": "skill-clawhub-amber-electric-pro",
+  "skillKey": "clawhub-amber-electric-pro",
+  "name": "Amber Electric 的实时电价、预测电价及站点信息",
+  "summary": "Access real-time electricity prices, forecasts, and site details from Amber Electric. Supports fetching current price data, 24-hour forecasts, and account si...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amber_electric_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kingmaxmmxweisun",
+      "features": [
+        "Access real-time electricity prices, forecasts, and site details from Amber Electric",
+        "Supports fetching current price data, 24-hour forecasts, and account si..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amber-electric-pro@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/158125378?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amber-electric-pro",
+      "url": "https://clawhub.ai/skills/amber-electric-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amber-electric-pro",
+    "url": "https://clawhub.ai/skills/amber-electric-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amber-electric-pro-2932a097bdb73b4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amber-electric-pro@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-amber-electric-pro-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d5686515636bd63d7dd2d972c040a974fb4e30d58b7117913a2f60c12984d74",
+      "artifactSizeBytes": 2292
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:03:35.554Z"
+}

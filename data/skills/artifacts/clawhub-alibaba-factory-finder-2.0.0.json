@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibaba-factory-finder@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibaba_factory_finder",
+  "skill": {
+    "id": 29450,
+    "skillKey": "clawhub-alibaba-factory-finder",
+    "name": "Alibaba Factory Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibaba-factory-finder",
+    "url": "https://clawhub.ai/skills/alibaba-factory-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibaba-factory-finder-877f8f7e9eb3b74a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and verify Alibaba.com manufacturers by filtering for verified suppliers, checking certifications, factory audits, and supplier profiles with tracking..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zeyu426",
+      "userId": "s17bq25xegcyvjvn29wme9cwpn83n8hh",
+      "displayName": "Zeyu426",
+      "image": "https://avatars.githubusercontent.com/u/61571196?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 292,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773746370522,
+      "changelog": "Simplified SKILL.md following skill-creator 规范，统一英文格式",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02d830a09f21b59c93ee35cade2446ff8a39742ed03701e4bc96a39d873d4dae"
+}

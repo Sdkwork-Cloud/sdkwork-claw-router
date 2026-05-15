@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61556,
+  "uuid": "skill-clawhub-sloth-d2c-skills",
+  "skillKey": "clawhub-sloth-d2c-skills",
+  "name": "Sloth D2C Skills",
+  "summary": "将Figma设计稿转换为前端组件代码（Design to Code）。通过 `sloth d2c` CLI 获取设计稿数据，分片处理并生成最终代码。当用户提到Figma转代码、设计稿转代码、D2C、design to code、生成页面时使用。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sloth_d2c_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cherokeeli",
+      "features": [
+        "将Figma设计稿转换为前端组件代码（Design to Code）。通过 `sloth d2c` CLI 获取设计稿数据，分片处理并生成最终代码。当用户提到Figma转代码、设计稿转代码、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sloth-d2c-skills@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17857090?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sloth-d2c-skills",
+      "url": "https://clawhub.ai/skills/sloth-d2c-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sloth-d2c-skills",
+    "url": "https://clawhub.ai/skills/sloth-d2c-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sloth-d2c-skills-8e32dc643a33e580.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sloth-d2c-skills@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sloth-d2c-skills-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6898725e45e03e4a561426de9d3dc2302e5000f01fda71aa4edcbb524f1c927d",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T08:39:41.164Z"
+}

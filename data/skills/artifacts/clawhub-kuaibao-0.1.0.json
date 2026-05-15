@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kuaibao@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kuaibao",
+  "skill": {
+    "id": 31626,
+    "skillKey": "clawhub-kuaibao",
+    "name": "Kuaibao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kuaibao",
+    "url": "https://clawhub.ai/skills/kuaibao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kuaibao-d6750ec144c5b0ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides summaries and analysis of public short videos and topics from Kuaibao/QQ Kankan for keyword, account, and trending list data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 264,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773972604704,
+      "changelog": "kuaibao-video-hot-trend 0.1.0\n\n- Initial release of the skill for 天天快报/QQ看点短视频公开短视频与话题分析\n- Supports keyword/topic-based video retrieval and summary (likes/comments/favorites)\n- Enables comparison of video performance for user homepages\n- Provides leaderboards and category statistics for trending videos\n- Designed for light, compliant analysis—no downloads or API reverse engineering\n- All data extracted from public pages only, intended for internal insights and alerts",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2d3a864fe2f0056d2bc89bba3a5c3a02788bf915694e30d2762d61ea789a9d5"
+}

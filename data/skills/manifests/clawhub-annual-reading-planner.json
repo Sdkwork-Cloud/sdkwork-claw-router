@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49175,
+  "uuid": "skill-clawhub-annual-reading-planner",
+  "skillKey": "clawhub-annual-reading-planner",
+  "name": "Annual Reading Planner",
+  "summary": "Builds an annual reading plan from the user's own goals, constraints, themes, and selected reading pool.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.annual_reading_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Builds an annual reading plan from the user's own goals, constraints, themes, and selected read."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/annual-reading-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "annual-reading-planner",
+      "url": "https://clawhub.ai/skills/annual-reading-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "annual-reading-planner",
+    "url": "https://clawhub.ai/skills/annual-reading-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/annual-reading-planner-6221cd7e49b78451.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/annual-reading-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-annual-reading-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03783986f4508c600918e4999c333a80ac33c08d6acc9522f622795fe194baeb",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T17:31:56.455Z"
+}

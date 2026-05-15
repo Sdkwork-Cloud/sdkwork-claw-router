@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dolphindb-quant-finance@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dolphindb_quant_finance",
+  "skill": {
+    "id": 67591,
+    "skillKey": "clawhub-dolphindb-quant-finance",
+    "name": "DolphinDB 量化金融技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dolphindb-quant-finance",
+    "url": "https://clawhub.ai/skills/dolphindb-quant-finance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dolphindb-quant-finance-88e7a0d76b2c302d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 DolphinDB 提供因子计算、策略回测、行情处理、绩效归因及投资组合优化的量化金融专业解决方案。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ugpoor",
+      "userId": "s177qqrp481qedfn5w9m5nmte183ge14",
+      "displayName": "superStupidBear",
+      "image": "https://avatars.githubusercontent.com/u/6762468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1775116713398,
+      "changelog": "v1.4.0：添加强制环境检测流程，支持全局包装器调用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a141e456f3b7b7fca60e21bcf0400faf13c834ebb74b33cf7b97cbd641b8d1a"
+}

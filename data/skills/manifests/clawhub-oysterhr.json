@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33498,
+  "uuid": "skill-clawhub-oysterhr",
+  "skillKey": "clawhub-oysterhr",
+  "name": "Oysterhr",
+  "summary": "OysterHR integration. Manage data, records, and automate workflows. Use when the user wants to interact with OysterHR data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oysterhr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "OysterHR integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with OysterHR data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oysterhr@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oysterhr",
+      "url": "https://clawhub.ai/skills/oysterhr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oysterhr",
+    "url": "https://clawhub.ai/skills/oysterhr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oysterhr-2d177b531b105991.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oysterhr@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-oysterhr-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd86399b3eea20286003b5c9ff8354d98822f283a6d7ea930eba48e1d417f1ed",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:21:07.633Z"
+}

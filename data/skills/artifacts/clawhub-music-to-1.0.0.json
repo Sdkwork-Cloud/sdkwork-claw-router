@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/music-to@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_to",
+  "skill": {
+    "id": 55848,
+    "skillKey": "clawhub-music-to",
+    "name": "Music To"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-to",
+    "url": "https://clawhub.ai/skills/music-to",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-to-5195e5ab99c4ec7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — turn this music track into a synced video with visuals and beat cuts — and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776488448291,
+      "changelog": "Music To Video — v1.0.0\n\n- Initial release: turn music tracks into synced videos with visuals and beat cuts in 1–2 minutes, no manual editing required.\n- Supports MP3, WAV, AAC, M4A uploads up to 200MB.\n- Automatic cloud setup: handles tokens and session creation seamlessly.\n- Exports 1080p MP4 by default with options for other formats.\n- Clear workflows for quick edits, batch processing, and iterative tweaks.\n- User-friendly error messages and credits management included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7db0db742deefa0a037fe063474aa653b8c9eae330d7200448b83777f435ae9f"
+}

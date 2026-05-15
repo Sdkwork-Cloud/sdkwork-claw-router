@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-scraping@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_scraping",
+  "skill": {
+    "id": 8578,
+    "skillKey": "clawhub-web-scraping",
+    "name": "Web Scraping"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-scraping",
+    "url": "https://clawhub.ai/skills/web-scraping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-scraping-40a1a2f08e0ab660.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract structured information from websites using web_fetch for simple pages and browser automation for dynamic sites, login-gated flows, pagination, infini..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangqixin9527",
+      "userId": "publishers:zhangqixin9527",
+      "displayName": "zhangqixin9527",
+      "image": "https://avatars.githubusercontent.com/u/24785815?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 9794,
+      "installsAllTime": 48,
+      "installsCurrent": 47,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773817868323,
+      "changelog": "- Initial release of the web-scraping skill.\n- Supports data extraction from both static and dynamic websites.\n- Automatically chooses between direct HTML fetching and browser automation based on site complexity and interaction needs.\n- Handles dynamic content, authentication, infinite scroll, pagination, and search/filter flows.\n- Outputs structured data in concise bullet lists, JSON, or CSV formats.\n- Includes reliability rules for deduplication, error handling, and workspace file management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcc8637295060ccabdf6301dc6330c103cb9aeb3db856522e5a3286be5f10204"
+}

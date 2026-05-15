@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-spoken-script@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_spoken_script",
+  "skill": {
+    "id": 14310,
+    "skillKey": "clawhub-text-spoken-script",
+    "name": "Text Spoken Script"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-spoken-script",
+    "url": "https://clawhub.ai/skills/text-spoken-script",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-spoken-script-fbefb28b01601691.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill is used to guide the AI in generating short video spoken scripts with high contrast, strong resonance, a sense of story, and personal IP attribute..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlazyai",
+      "userId": "s170j1ymymrxasgd00dsk7tckx84cf45",
+      "displayName": "dlazy",
+      "image": "https://avatars.githubusercontent.com/u/274158181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1224,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1778076878487,
+      "changelog": "- Updated version to 1.1.1.\n- Minor documentation edits in both English and Chinese SKILL.md files.\n- No structural or functional logic changes; content and guidance remain consistent.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce857f2cdd4b9e10b74f716222bd24651f2413f62ef562bc31985ba15b2fd34d"
+}

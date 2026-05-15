@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zworkeragentskillopenclaw@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zworkeragentskillopenclaw",
+  "skill": {
+    "id": 65438,
+    "skillKey": "clawhub-zworkeragentskillopenclaw",
+    "name": "ZworkerAgentSkillOpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zworkeragentskillopenclaw",
+    "url": "https://clawhub.ai/skills/zworkeragentskillopenclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zworkeragentskillopenclaw-f9834d55a56809c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "控制zworker AI自动化任务应用，支持任务管理、定时计划控制、用户信息同步和消息通知转发。当用户提到“zworker”关键词时使用此技能，例如：同步用户信息、获取任务列表、执行任务、管理定时计划、获取并发送通知等。技能通过HTTP接口与本地运行的zworker应用（localhost:18803）通信。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peterpan0630",
+      "userId": "s172ekkqfgg6pk30p3my97sqd98585pz",
+      "displayName": "peterpan0630",
+      "image": "https://avatars.githubusercontent.com/u/53331724?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776841891432,
+      "changelog": "zworkeragentskillopenclaw v1.0.2\n\n- 新增完善的中文文档（SKILL.md），详述所有功能、接口与使用方法。\n- 明确列出同步用户信息、消息通知、任务及定时计划管理等核心能力。\n- 详细描述各操作的输入语句、接口调用流程和输出格式。\n- 列出所有脚本工具及关键配置说明，便于快速集成和故障排查。\n- 重点强调本地HTTP接口调用与后续可能的认证需求。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1be7bbbedaffc835c4cf8b21ca8f5574865734330afc595f81800584837f907e"
+}

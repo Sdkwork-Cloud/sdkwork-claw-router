@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-product-launch-coach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_product_launch_coach",
+  "skill": {
+    "id": 48709,
+    "skillKey": "clawhub-ai-product-launch-coach",
+    "name": "Ai Product Launch Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-product-launch-coach",
+    "url": "https://clawhub.ai/skills/ai-product-launch-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-product-launch-coach-2da6c2af8c408f51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "End-to-end coach for founders / PMs / engineers shipping an AI-first product (LLM-powered SaaS, AI agent, copilot, RAG-based vertical app, voice agent, multi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778025166630,
+      "changelog": "- Initial release of ai-product-launch-coach, an end-to-end coaching tool for teams launching AI-first products.\n- Guides founders, PMs, and engineers through critical stages: model/architecture selection, evals & guardrails, unit economics, and defensibility.\n- Designed for questions on LLM model choice, prompt vs fine-tune vs RAG, cost/pricing, hallucination & customer trust, vendor lock-in, and safety/regulation.\n- Distinct from general SaaS coaching by focusing on AI-specific concerns like eval, model risk, inference cost, and regulatory landscape.\n- Includes a detailed diagnostic questionnaire to identify failure modes unique to AI product launches.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25c09b6ff05af1944eab078ba244ea91f95f1cfc4ef4298b180e57d8c354741c"
+}

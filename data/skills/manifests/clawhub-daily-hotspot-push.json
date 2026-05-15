@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70181,
+  "uuid": "skill-clawhub-daily-hotspot-push",
+  "skillKey": "clawhub-daily-hotspot-push",
+  "name": "Daily Hotspot Push",
+  "summary": "自包含的每日热点订阅推送技能。用于创建、查询、修改、取消固定时间自动发送的新闻简报订阅，适合“每天中午12点推送国际科技和国际军事”“工作日早上8点推送今日热点”这类场景。不用于一次性临时查新闻。内置时区管理、中文时间解析、订阅状态存储与 OpenClaw cron 调度，QQ 用户首次创建前需先设置时区。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_hotspot_push",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zykkk-power",
+      "features": [
+        "自包含的每日热点订阅推送技能。用于创建、查询、修改、取消固定时间自动发送的新闻简报订阅，适合“每天中午12点推送国际科技和国际军事”“工作日早上8点推送今日热点”这类场景。不用于一次性临时查."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-hotspot-push@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/185013102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-hotspot-push",
+      "url": "https://clawhub.ai/skills/daily-hotspot-push"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-hotspot-push",
+    "url": "https://clawhub.ai/skills/daily-hotspot-push",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-hotspot-push-a14aa11fafd004d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-hotspot-push@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-hotspot-push-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50f7d1aeb9b54345e982fa697d03ffbb6d25b86638f7b7bbd3cb8a19cc8ac9e1",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T13:07:02.929Z"
+}

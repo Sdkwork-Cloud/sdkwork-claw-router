@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12418,
+  "uuid": "skill-clawhub-chain-of-density",
+  "skillKey": "clawhub-chain-of-density",
+  "name": "Chain of Density",
+  "summary": "Iteratively densify text summaries using Chain-of-Density technique. Use when compressing verbose documentation, condensing requirements, or creating executive summaries while preserving information density.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chain_of_density",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vaskin Kissoyan",
+      "features": [
+        "Iteratively densify text summaries using Chain-of-Density technique",
+        "Use when compressing verbose documentation, condensing requirements, or creating executive summ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chain-of-density@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31700?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chain-of-density",
+      "url": "https://clawhub.ai/skills/chain-of-density"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chain-of-density",
+    "url": "https://clawhub.ai/skills/chain-of-density",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chain-of-density-d4ab43053e4cffcd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chain-of-density@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chain-of-density-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9b42a9a1e52b327e5c8c07472c8d55dd047bc10beda7eeed541cee4bcdfd561",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T03:46:34.938Z"
+}

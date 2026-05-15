@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nsg-firewall-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nsg_firewall_auditor",
+  "skill": {
+    "id": 23520,
+    "skillKey": "clawhub-nsg-firewall-auditor",
+    "name": "Nsg Firewall Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nsg-firewall-auditor",
+    "url": "https://clawhub.ai/skills/nsg-firewall-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nsg-firewall-auditor-409e07034cdffb07.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit Azure NSG rules and Azure Firewall policies for dangerous internet exposure"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anmolnagpal",
+      "userId": "publishers:anmolnagpal",
+      "displayName": "Anmol Nagpal",
+      "image": "https://avatars.githubusercontent.com/u/4303310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 438,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772622273722,
+      "changelog": "Initial release: Azure NSG & Firewall Auditor skill (v1.0.0).\n\n- Provides step-by-step instructions to audit Azure NSG rules and firewall policies for risky internet exposure.\n- Analyzes user-supplied exports of NSG, effective rules, and Azure Firewall policies for critical misconfigurations.\n- Checks for internet-exposed management/database ports, missing NSGs, permissive rules, and disabled flow logs.\n- Outputs findings with recommendations, including tightened JSON NSG rules and Azure Policy examples.\n- Recommends Azure Bastion and JIT VM Access for management port security.\n- Does not run CLI commands or request credentials; user provides exported data only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7f794866ae9c9c5e01d6f3286f60fa8445a4e27945c744509f80108fded4b6f8"
+}

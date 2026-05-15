@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73419,
+  "uuid": "skill-clawhub-fortune-career",
+  "skillKey": "clawhub-fortune-career",
+  "name": "职业与健康命理分析",
+  "summary": "基于八字和紫微斗数为用户提供职业方向和健康状况的命理分析及具体建议。",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fortune_career",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DeviosLang",
+      "features": [
+        "基于八字和紫微斗数为用户提供职业方向和健康状况的命理分析及具体建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fortune-career@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5735268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fortune-career",
+      "url": "https://clawhub.ai/skills/fortune-career"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fortune-career",
+    "url": "https://clawhub.ai/skills/fortune-career",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fortune-career-4bec89ed47a93780.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fortune-career@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fortune-career-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f93f55e6deac566d99f3bb05d1d9fb36d66b1597eb800708aca1dfb2c3edcf75",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T02:43:20.621Z"
+}

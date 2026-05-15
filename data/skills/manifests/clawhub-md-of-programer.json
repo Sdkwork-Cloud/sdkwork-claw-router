@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45106,
+  "uuid": "skill-clawhub-md-of-programer",
+  "skillKey": "clawhub-md-of-programer",
+  "name": "Md Of Programer",
+  "summary": "Insert mind maps and architecture diagrams into Markdown documents. Triggered when the user says \"draw a mind map\", \"draw an architecture diagram\", \"insert a...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_of_programer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "drunkpig",
+      "features": [
+        "Insert mind maps and architecture diagrams into Markdown documents",
+        "Triggered when the user says \"draw a mind map\", \"draw an architecture diagram\", \"insert a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/md-of-programer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60862764?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "md-of-programer",
+      "url": "https://clawhub.ai/skills/md-of-programer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-of-programer",
+    "url": "https://clawhub.ai/skills/md-of-programer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-of-programer-02cd5499369a3507.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/md-of-programer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-md-of-programer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be40fc3481e7c4c0a3973616c6b49810364acc2f32a1c033dd1bf519296200d8",
+      "artifactSizeBytes": 2453
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T11:15:07.154Z"
+}

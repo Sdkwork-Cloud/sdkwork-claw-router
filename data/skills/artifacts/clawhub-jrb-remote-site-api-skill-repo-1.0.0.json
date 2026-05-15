@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jrb-remote-site-api-skill-repo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jrb_remote_site_api_skill_repo",
+  "skill": {
+    "id": 20527,
+    "skillKey": "clawhub-jrb-remote-site-api-skill-repo",
+    "name": "Jrb Remote Site Api Skill Repo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jrb-remote-site-api-skill-repo",
+    "url": "https://clawhub.ai/skills/jrb-remote-site-api-skill-repo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jrb-remote-site-api-skill-repo-585797e6fa7970b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interface with WordPress sites via jrb-remote-site-api plugin for admin tasks, content CRUD, plugin/theme management, and Fluent suite integrations through R..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jrbconsulting-joel",
+      "userId": "s1725vb5phnk18wyg4f6ryzqbx83ezc4",
+      "displayName": "Joel",
+      "image": "https://avatars.githubusercontent.com/u/142711651?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 550,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772170192110,
+      "changelog": "Initial release: Interface for remote WordPress administration via the JRB Remote Site API.\n\n- Connect to and authenticate with WordPress sites using secure tokens.\n- Full CRUD support for posts, pages, and media files.\n- Manage plugins and themes (install, activate, update, delete, or switch).\n- Integrate and automate tasks with the Fluent suite (CRM, Forms, Support, Project, Boards).\n- Simple curl usage examples and installation instructions included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:41e5085f28b93c7a895bc45becbdb262b4daa891d9b79190a6b82f46e8b24890"
+}

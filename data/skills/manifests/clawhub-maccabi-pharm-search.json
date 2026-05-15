@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56707,
+  "uuid": "skill-clawhub-maccabi-pharm-search",
+  "skillKey": "clawhub-maccabi-pharm-search",
+  "name": "maccabi-pharm-search",
+  "summary": "Search for medications and check real-time stock availability at Maccabi pharmacies in Israel. Use when searching for drugs like \"nurofen\", \"acamol/אקמול\", \"...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maccabi_pharm_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alexpolonsky",
+      "features": [
+        "Search for medications and check real-time stock availability at Maccabi pharmacies in Israel",
+        "Use when searching for drugs like \"nurofen\", \"acamol/אקמול\", \"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maccabi-pharm-search@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7319921?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maccabi-pharm-search",
+      "url": "https://clawhub.ai/skills/maccabi-pharm-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maccabi-pharm-search",
+    "url": "https://clawhub.ai/skills/maccabi-pharm-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maccabi-pharm-search-9a92e1b81eff9a83.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maccabi-pharm-search@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-maccabi-pharm-search-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75f7d78b9bc943b7706f4e68e9df166aed5e28c46dfbd3812277d0148441bfcc",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T22:15:19.001Z"
+}

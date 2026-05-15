@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45619,
+  "uuid": "skill-clawhub-happyhorse-video-gen-edit",
+  "skillKey": "clawhub-happyhorse-video-gen-edit",
+  "name": "HappyHorse Video Generation and Editting",
+  "summary": "Video Generation and Editing with HappyHorse models. Supports text2video, image2video (first-frame based), reference2video (multi-image character fusion), an...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.happyhorse_video_gen_edit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "krisyejh",
+      "features": [
+        "Video Generation and Editing with HappyHorse models",
+        "Supports text2video, image2video (first-frame based), reference2video (multi-image character fu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/happyhorse-video-gen-edit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40165079?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "happyhorse-video-gen-edit",
+      "url": "https://clawhub.ai/skills/happyhorse-video-gen-edit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "happyhorse-video-gen-edit",
+    "url": "https://clawhub.ai/skills/happyhorse-video-gen-edit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/happyhorse-video-gen-edit-e7f7e2a28c12eb09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/happyhorse-video-gen-edit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-happyhorse-video-gen-edit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbd5f228b90a487a7053558d8482aee3f222174889f32f86879253a1d8748e8f",
+      "artifactSizeBytes": 2703
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T18:08:13.745Z"
+}

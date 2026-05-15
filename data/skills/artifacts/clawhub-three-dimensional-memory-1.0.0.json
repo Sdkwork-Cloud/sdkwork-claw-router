@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/three-dimensional-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.three_dimensional_memory",
+  "skill": {
+    "id": 19429,
+    "skillKey": "clawhub-three-dimensional-memory",
+    "name": "Three-Dimensional Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "three-dimensional-memory",
+    "url": "https://clawhub.ai/skills/three-dimensional-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/three-dimensional-memory-f06914ca4212d066.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages AI assistant memory by organizing files across three dimensions: timeline logs, full conversation backups, and topic-based project folders for easy r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amlyx",
+      "userId": "publishers:amlyx",
+      "displayName": "amlyx",
+      "image": "https://avatars.githubusercontent.com/u/48619129?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 613,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771835595987,
+      "changelog": "Initial release of three-dimensional-memory: a human-centric memory management system for AI assistants.\n\n- Organizes memory across three axes: timeline (by date), conversation (by transcript), and topic (by project or subject).\n- Provides clear rationale and examples for each memory dimension.\n- Offers a recommended directory structure and quick start guidance.\n- Includes best practices and troubleshooting tips for both users and AI assistants.\n- Helps users and AI efficiently store, retrieve, and contextualize information inspired by human memory.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a41ec82d1d7f379d3fb832dc9ae741233a1df473f578c5b91bf20ada2c9b4ce3"
+}

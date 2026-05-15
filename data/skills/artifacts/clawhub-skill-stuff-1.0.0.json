@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-stuff@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_stuff",
+  "skill": {
+    "id": 36186,
+    "skillKey": "clawhub-skill-stuff",
+    "name": "Skill Stuff"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-stuff",
+    "url": "https://clawhub.ai/skills/skill-stuff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-stuff-8d931d516feccc7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Recaps the user's day in the style of any of 50 TV shows with episode title, arc, and cliffhanger. Use when a user wants a fun shareable daily summary delive..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rednix",
+      "userId": "s170cvfh9s59w5610ah2tznmxd83fyk2",
+      "displayName": "Nico Lumma",
+      "image": "https://avatars.githubusercontent.com/u/3120412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774784607223,
+      "changelog": "Main Character Recap skill initial release:\n\n- Recaps the user's day as an episode of any of 50 TV shows, complete with title, arc, and cliffhanger.\n- Automated daily delivery; builds running season memory and shareable recaps.\n- Simple setup: choose a show, channel, and trigger time; supports both current and classic TV shows.\n- Pulls events from connected sources (Google Calendar, Gmail, Slack, etc.) or prompts for input if none are connected.\n- Highly efficient: only loads the necessary files for each automated run, preserving token discipline.\n- Generates a creative text recap and a shareable HTML card after each run.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:157d34de46bb24d422c3c9670c097c2628e511433d397fd7a3f2703e57d3a9b0"
+}

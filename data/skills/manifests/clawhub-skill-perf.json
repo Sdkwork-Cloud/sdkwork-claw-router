@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62640,
+  "uuid": "skill-clawhub-skill-perf",
+  "skillKey": "clawhub-skill-perf",
+  "name": "Skill Perf",
+  "summary": "测量 OpenClaw 环境中 Skill 的 token 消耗和性能开销（仅适用于 OpenClaw Agent 环境）。当用户提到「测量」「测试」「性能」「token 消耗」「多少 token」「开销」「成本」「效率」或想要评估、对比、优化某个 skill 的资源使用时，立即使用此 skill。也适用于 sk...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_perf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kincaidwoo",
+      "features": [
+        "测量 OpenClaw 环境中 Skill 的 token 消耗和性能开销（仅适用于 OpenClaw Agent 环境）。当用户提到「测量」「测试」「性能」「token 消耗」「多少 to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-perf@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92858305?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-perf",
+      "url": "https://clawhub.ai/skills/skill-perf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-perf",
+    "url": "https://clawhub.ai/skills/skill-perf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-perf-63a58d426b5b0d2a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-perf@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-perf-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf84b14ad50e44fb5b9bc25044ccf16b446915c66bc1ea58c9802fc742654e03",
+      "artifactSizeBytes": 2644
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T09:57:54.586Z"
+}

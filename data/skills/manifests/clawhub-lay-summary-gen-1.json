@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45100,
+  "uuid": "skill-clawhub-lay-summary-gen-1",
+  "skillKey": "clawhub-lay-summary-gen-1",
+  "name": "Lay Summary Gen",
+  "summary": "Converts complex medical abstracts into plain language summaries for.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lay_summary_gen_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Converts complex medical abstracts into plain language summaries for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lay-summary-gen-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lay-summary-gen-1",
+      "url": "https://clawhub.ai/skills/lay-summary-gen-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lay-summary-gen-1",
+    "url": "https://clawhub.ai/skills/lay-summary-gen-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lay-summary-gen-1-de4f3159fa169365.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lay-summary-gen-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lay-summary-gen-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f37a60307cc63c2d0b5801e6d2fe742fd29a2192039280678793db4df9930bcc",
+      "artifactSizeBytes": 2400
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T06:45:48.756Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ionsec-threat-intel@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ionsec_threat_intel",
+  "skill": {
+    "id": 39385,
+    "skillKey": "clawhub-ionsec-threat-intel",
+    "name": "IONSEC Threat Intel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ionsec-threat-intel",
+    "url": "https://clawhub.ai/skills/ionsec-threat-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ionsec-threat-intel-9230740f26566cdc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query multiple threat intelligence services for IOC enrichment including IP reputation, domain analysis, URL scanning, hash lookups, and malware detection. U..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nirhalfon",
+      "userId": "s17ff1p5gdb2c2mwwab2he481h83rxah",
+      "displayName": "nirhalfon",
+      "image": "https://avatars.githubusercontent.com/u/8653644?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775849726829,
+      "changelog": "- Updated API key setup instructions to include additional supported environment variables.\n- Adjusted and simplified the lists of available free and paid threat intelligence services.\n- Refined service descriptions and observable type mappings for clarity.\n- Streamlined workflow recommendations and script references.\n- Improved consistency in output format instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac342cee7af18ad21c307af6f005a8a7f4a15a8e6554ab2778e1cc74a17176bf"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59141,
+  "uuid": "skill-clawhub-futurespro-panda",
+  "skillKey": "clawhub-futurespro-panda",
+  "name": "futurespro-panda",
+  "summary": "期货手续费与保证金查询工具。提供期货品种手续费、保证金、特殊品种开户条件、交易公告、交易日历等数据查询。Invoke when user asks about futures fees, margins, special variety conditions, trading announcements, or...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.futurespro_panda",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mabtush13",
+      "features": [
+        "期货手续费与保证金查询工具。提供期货品种手续费、保证金、特殊品种开户条件、交易公告、交易日历等数据查询。Invoke when user asks about futures fees, m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/futurespro-panda@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253283299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "futurespro-panda",
+      "url": "https://clawhub.ai/skills/futurespro-panda"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "futurespro-panda",
+    "url": "https://clawhub.ai/skills/futurespro-panda",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/futurespro-panda-80c7cc8d14367bef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/futurespro-panda@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-futurespro-panda-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b6f49eeb5c3f8e87a34c648cf70eae3ee52da02e6f9426a412daee17c8ae4f5",
+      "artifactSizeBytes": 2560
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T00:15:13.137Z"
+}

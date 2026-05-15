@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14102,
+  "uuid": "skill-clawhub-esign-automation",
+  "skillKey": "clawhub-esign-automation",
+  "name": "eSign Automation",
+  "summary": "Automate contract signing, esign, and signature workflows by calling the eSignGlobal CLI tool. The eSignGlobal CLI is agent-friendly, with JSON output by def...",
+  "version": "1.7.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.esign_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "esign-cn-open-source",
+      "features": [
+        "Automate contract signing, esign, and signature workflows by calling the eSignGlobal CLI tool",
+        "The eSignGlobal CLI is agent-friendly, with JSON output by def..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/esign-automation@1.7.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211654876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "esign-automation",
+      "url": "https://clawhub.ai/skills/esign-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "esign-automation",
+    "url": "https://clawhub.ai/skills/esign-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/esign-automation-85de568e8fa60e95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/esign-automation@1.7.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-esign-automation-1.7.5.json",
+      "version": "1.7.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8c1167d832eb2344a1da67dba8b11498b14bb9760efa22500434386da44e7da",
+      "artifactSizeBytes": 2556
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T09:25:58.018Z"
+}

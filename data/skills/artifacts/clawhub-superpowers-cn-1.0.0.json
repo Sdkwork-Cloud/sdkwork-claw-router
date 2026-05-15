@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/superpowers-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.superpowers_cn",
+  "skill": {
+    "id": 62284,
+    "skillKey": "clawhub-superpowers-cn",
+    "name": "Superpowers Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "superpowers-cn",
+    "url": "https://clawhub.ai/skills/superpowers-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/superpowers-cn-2a52bda6f447c2cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文AI工作流框架 - 先理解需求再执行，让AI做事更有逻辑"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openxcn",
+      "userId": "s178ppcgrx0xmy3pj7p6wwwse183rkdz",
+      "displayName": "openxcn",
+      "image": "https://avatars.githubusercontent.com/u/266845377?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 761,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774673460605,
+      "changelog": "- 首次发布：推出 Superpowers CN 中文 AI 工作流框架\n- 引入“四步工作流”方法：澄清需求、制定设计、分解任务、执行验证\n- 支持中文开发场景，提升AI任务执行的逻辑性及有序性\n- 内置常用触发词，快速激活工作流\n- 提供实际工作流示例，助力用户上手",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:40871a8c1a207f66478e82bd638b6ab7380be3eca4e1a1398b87b02c5b347359"
+}

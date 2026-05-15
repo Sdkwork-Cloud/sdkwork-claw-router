@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60164,
+  "uuid": "skill-clawhub-agentcloud",
+  "skillKey": "clawhub-agentcloud",
+  "name": "agentcloud",
+  "summary": "AgentCloud（AI Agent 云存储）— 一键注册 Agent，上传/下载文件，创建分享链接，查询用量。支持 Hermes Agent 和 OpenClaw 用户直接使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentcloud",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiangzh0202",
+      "features": [
+        "AgentCloud（AI Agent 云存储）— 一键注册 Agent，上传/下载文件，创建分享链接，查询用量。支持 Hermes Agent 和 OpenClaw 用户直接使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentcloud@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258497507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentcloud",
+      "url": "https://clawhub.ai/skills/agentcloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentcloud",
+    "url": "https://clawhub.ai/skills/agentcloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentcloud-773f0ccdb9b451c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentcloud@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentcloud-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4f3fdb1055273b8a592b51d778575590a2d2b06fd25f3e6eaf0a5c5139ee880",
+      "artifactSizeBytes": 2504
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T21:10:26.143Z"
+}

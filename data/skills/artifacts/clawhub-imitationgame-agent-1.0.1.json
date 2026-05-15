@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/imitationgame-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imitationgame_agent",
+  "skill": {
+    "id": 11286,
+    "skillKey": "clawhub-imitationgame-agent",
+    "name": "Imitation Game Agent Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imitationgame-agent",
+    "url": "https://clawhub.ai/skills/imitationgame-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imitationgame-agent-444fc571473dd0b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mandatory operational logic for playing The Imitation Game. Use this when the user says \"play\" or \"start game\". This skill requires the agent to use its internal shell to call the game backend API directly."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyberverse2",
+      "userId": "s1788fn5nwqq1chty5pjz60nc184ntzy",
+      "displayName": "Ejiofor Celestine Chinaza",
+      "image": "https://avatars.githubusercontent.com/u/121381551?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2198,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769972396052,
+      "changelog": "- Added instructions for handling CDP wallet private keys when joining for the first time—private key is now shown only once and must be saved to your config immediately.\n- Updated first-time setup section to include walletAddress and privateKey in the config file, with a warning about security and loss of access if the key is lost.\n- No changes to API endpoints or core gameplay flow.\n- Documentation improvements clarify wallet management and agent configuration for reward access.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:33e4e3e5c9a4d4be3a8bf877cf6ffdc6e9acb437cd339a5b4f4f5a8218661217"
+}

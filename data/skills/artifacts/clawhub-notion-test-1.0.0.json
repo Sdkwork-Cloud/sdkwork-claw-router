@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notion-test@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_test",
+  "skill": {
+    "id": 27447,
+    "skillKey": "clawhub-notion-test",
+    "name": "notion-test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-test",
+    "url": "https://clawhub.ai/skills/notion-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-test-9e499f717ccf4470.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Notion API for creating and managing pages, databases, and blocks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qfish",
+      "userId": "s171h37nkw352xbnyzvabj0tmx840ejj",
+      "displayName": "qfish",
+      "image": "https://avatars.githubusercontent.com/u/679824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773167478250,
+      "changelog": "v1.0.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bdbd868136a6ff11797f6f6eb5b6a0b38380f1dc615d4853c00589f56bf718d0"
+}

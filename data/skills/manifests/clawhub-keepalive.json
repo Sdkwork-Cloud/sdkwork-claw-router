@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23584,
+  "uuid": "skill-clawhub-keepalive",
+  "skillKey": "clawhub-keepalive",
+  "name": "Openclaw Keepalive",
+  "summary": "Keep OpenClaw gateway running 24/7 on a laptop or workstation. Use when: (1) user reports gateway disconnects or crashes, (2) user asks how to make OpenClaw...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keepalive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lgy2020",
+      "features": [
+        "Keep OpenClaw gateway running 24/7 on a laptop or workstation",
+        "Use when: (1) user reports gateway disconnects or crashes, (2) user asks how to make OpenClaw..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/keepalive@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126315502?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "keepalive",
+      "url": "https://clawhub.ai/skills/keepalive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keepalive",
+    "url": "https://clawhub.ai/skills/keepalive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keepalive-4f361b43bd568fc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/keepalive@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-keepalive-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bdab5ba60d6a7c435098a713f0968581683b856f87b03abc2e0fc841d64aa3e",
+      "artifactSizeBytes": 2396
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:07:31.025Z"
+}

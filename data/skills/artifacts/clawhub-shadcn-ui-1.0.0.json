@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shadcn-ui@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shadcn_ui",
+  "skill": {
+    "id": 8659,
+    "skillKey": "clawhub-shadcn-ui",
+    "name": "Shadcn Ui"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shadcn-ui",
+    "url": "https://clawhub.ai/skills/shadcn-ui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shadcn-ui-6856b8604967eb95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when building UI with shadcn/ui components, Tailwind CSS layouts, form patterns with react-hook-form and zod, theming, dark mode, sidebar layouts, mobile navigation, or any shadcn component question."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jgarrison929",
+      "userId": "publishers:jgarrison929",
+      "displayName": "jgarrison929",
+      "image": "https://avatars.githubusercontent.com/u/21370704?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7912,
+      "installsAllTime": 64,
+      "installsCurrent": 60,
+      "stars": 8,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770008226029,
+      "changelog": "shadcn-ui 1.0.0 – Initial Release\n\n- Provides expert guidance for building UIs with shadcn/ui, Tailwind CSS, react-hook-form, and zod.\n- Covers installation steps, component categories, and usage best practices.\n- Includes detailed component tables for layout, navigation, data display, forms, actions, and feedback.\n- Offers a complete react-hook-form + zod form pattern example using shadcn/ui components.\n- Supports theming, dark mode, sidebar layouts, and mobile navigation use cases.\n- Triggered by keywords like shadcn, radix, UI components, form pattern, and theming.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a4f2b7375139bf5fa64dde2cd22edabea7e1f3232c745c98f48ce65c541910ba"
+}

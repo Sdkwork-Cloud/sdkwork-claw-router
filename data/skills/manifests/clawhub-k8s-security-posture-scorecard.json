@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25547,
+  "uuid": "skill-clawhub-k8s-security-posture-scorecard",
+  "skillKey": "clawhub-k8s-security-posture-scorecard",
+  "name": "Kubernetes Security Posture Scorecard",
+  "summary": "Assess Kubernetes cluster security posture across 30 controls covering RBAC, workload security, network policies, IaC, runtime monitoring, and secrets manage...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.k8s_security_posture_scorecard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Assess Kubernetes cluster security posture across 30 controls covering RBAC, workload security,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/k8s-security-posture-scorecard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "k8s-security-posture-scorecard",
+      "url": "https://clawhub.ai/skills/k8s-security-posture-scorecard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "k8s-security-posture-scorecard",
+    "url": "https://clawhub.ai/skills/k8s-security-posture-scorecard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/k8s-security-posture-scorecard-d06822c3637d931d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/k8s-security-posture-scorecard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-k8s-security-posture-scorecard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39b495e02906174b1cbdac3573c1529785fa634c0980577eb0fbd26bf03ee55e",
+      "artifactSizeBytes": 2718
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T05:11:06.086Z"
+}

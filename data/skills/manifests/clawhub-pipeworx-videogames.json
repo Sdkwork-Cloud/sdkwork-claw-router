@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45779,
+  "uuid": "skill-clawhub-pipeworx-videogames",
+  "skillKey": "clawhub-pipeworx-videogames",
+  "name": "Pipeworx videogames",
+  "summary": "Browse and search free-to-play PC and browser games by platform, category, and sort order using data from the FreeToGame database.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_videogames",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Browse and search free-to-play PC and browser games by platform, category, and sort order using."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-videogames@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270792185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-videogames",
+      "url": "https://clawhub.ai/skills/pipeworx-videogames"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-videogames",
+    "url": "https://clawhub.ai/skills/pipeworx-videogames",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-videogames-76744ef54e678ae2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-videogames@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-videogames-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32fa7455f0b768ae2f145c35d1a77b87e10b0a6fcde3819afab1f867342e705d",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T17:12:17.430Z"
+}

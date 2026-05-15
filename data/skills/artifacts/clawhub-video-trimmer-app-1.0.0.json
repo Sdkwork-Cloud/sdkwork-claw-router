@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-trimmer-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_trimmer_app",
+  "skill": {
+    "id": 48404,
+    "skillKey": "clawhub-video-trimmer-app",
+    "name": "Video Trimmer App"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-trimmer-app",
+    "url": "https://clawhub.ai/skills/video-trimmer-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-trimmer-app-0be6d45fd96bf1dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "trim video clips into trimmed video clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for cutting unwanted sec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777310802734,
+      "changelog": "video-trimmer-app 1.0.0\n\n- Initial release.\n- Trim, edit, and export videos (MP4, MOV, AVI, WebM up to 500MB) using a cloud-based processing backend.\n- Automatic backend authentication and session management with up to 100 free credits.\n- Support for quick trims, batch editing, and iterative workflows—all in 1080p MP4 output.\n- Handles files via chat upload; responds to commands for export, credits balance, upload status, and more.\n- Robust error handling and detailed guidance for supported formats and workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8626569c044482ba5b7207c407b1d0159b51e78059dc1e008b53ed7f3794812"
+}

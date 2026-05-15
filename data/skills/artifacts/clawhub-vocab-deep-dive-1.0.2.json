@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vocab-deep-dive@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vocab_deep_dive",
+  "skill": {
+    "id": 71830,
+    "skillKey": "clawhub-vocab-deep-dive",
+    "name": "Vocab Deep Dive - 单词深度解析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vocab-deep-dive",
+    "url": "https://clawhub.ai/skills/vocab-deep-dive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vocab-deep-dive-d10bb45a184f4185.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "深度解析英语单词的全方位学习信息。当用户提供单词并需要完整的学习资料时使用。包括释义、用法、搭配、例句、同反义词、词根词缀、易错点、雅思考点等。适用于词汇学习、备考复习、写作口语提升场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaojie66",
+      "userId": "s17ehdnye7wd71cvdv60myvdws840w6c",
+      "displayName": "Shaojie66",
+      "image": "https://avatars.githubusercontent.com/u/73728610?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773591828558,
+      "changelog": "安全加固：优先使用 LLM 知识，移除 web 抓取，API 仅作可选验证",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3369e6bc1fc7e0f58a30aea29c59934e28c2fdb5cd9426bc99981b0dae28a969"
+}

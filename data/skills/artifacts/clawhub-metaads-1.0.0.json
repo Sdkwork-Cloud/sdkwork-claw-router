@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/metaads@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metaads",
+  "skill": {
+    "id": 45879,
+    "skillKey": "clawhub-metaads",
+    "name": "Meta Ads Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metaads",
+    "url": "https://clawhub.ai/skills/metaads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metaads-1b2989e7d2555b14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Meta ad campaigns by reading, creating, updating campaigns, ad sets, ads, creatives, and retrieving insights via the Marketing API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "otman-ai",
+      "userId": "s17an9k73kt1d0ehh9b9vce7qs83k0b7",
+      "displayName": "Otman Heddouch",
+      "image": "https://avatars.githubusercontent.com/u/85652350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777042865954,
+      "changelog": "Meta Ads API Skill v1.0.0\n\n- Initial release enabling agents to read, create, and manage Meta (Facebook/Instagram) ad campaigns via the Marketing API.\n- Supports campaign, ad set, and ad retrieval and creation, including key campaign analytics (impressions, clicks, spend, CTR, CPC).\n- Includes guidelines for authentication, permissions, pagination, error handling, and rate limits.\n- Provides agent rules on safety, efficiency, and reliability, plus logic for automated campaign performance analysis.\n- Comprehensive request and payload examples documented for all major API operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac4456c2421dd3b125113ba8f509139ab550841808e792e2e084862951f3a082"
+}

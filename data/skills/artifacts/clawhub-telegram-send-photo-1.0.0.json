@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/telegram-send-photo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_send_photo",
+  "skill": {
+    "id": 19633,
+    "skillKey": "clawhub-telegram-send-photo",
+    "name": "telegram-send-photo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-send-photo",
+    "url": "https://clawhub.ai/skills/telegram-send-photo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-send-photo-d56effa36c3a3ba1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send photos via Telegram Bot API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suileyan",
+      "userId": "publishers:suileyan",
+      "displayName": "suileyan",
+      "image": "https://avatars.githubusercontent.com/u/115875436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 591,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771996456929,
+      "changelog": "Initial release of telegram-send-photo skill:\n\n- Send image files to Telegram using the Bot API.\n- Requires Python 3.x, requests library, Bot Token, and Chat ID.\n- Supports file upload with optional caption.\n- Example script and configuration details included for quick setup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:508be9f8be8737f10659a84766558fcb23da568c2e9213e0d31cd302b0fbd3a6"
+}

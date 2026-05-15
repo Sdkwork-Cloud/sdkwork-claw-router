@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "batch-plan-execute",
+    "displayName": "Batch Plan Execute",
+    "summary": "Use when the user wants AI to turn a requirement text, requirement document, and existing reviewed plan files into dependency-ordered implementation plans an...",
+    "tags": {
+      "latest": "0.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775143432837,
+    "updatedAt": 1777527099556
+  },
+  "latestVersion": {
+    "version": "0.1.0",
+    "createdAt": 1775143432837,
+    "changelog": "Batch Plan Execute v0.1.0 – Initial Release\n\n- Adds a skill for generating and executing dependency-ordered implementation plans from requirements and existing plan files.\n- Supports two explicit modes: `plan` (default) for creating/revising plans and `execute` for implementing plans after user command.\n- Handles input from requirement text, files, plan files, or `plans/` directories, following strict selection and validation rules.\n- Builds dependency graphs to model parallel and serial execution, conservatively sequencing modules where needed.\n- Maintains a consistent state in `.batch-plan-state.json`, capturing module lineage and plan status.\n- Only enters `execute` mode upon explicit user instruction; review or approval alone does not trigger execution.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "micooz",
+    "userId": "s1744zrfwp0jpat3y37kw8dm6x842zy8",
+    "displayName": "micooz",
+    "image": "https://avatars.githubusercontent.com/u/8897063?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527099556
+  }
+}

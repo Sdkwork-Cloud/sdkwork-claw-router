@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70367,
+  "uuid": "skill-clawhub-patent-assistant",
+  "skillKey": "clawhub-patent-assistant",
+  "name": "Patent Assistant",
+  "summary": "专利交底书撰写与专利检索助手。帮助研发人员将技术方案转化为结构化交底书，并进行专利检索分析。当用户要求写专利、写交底书、专利检索、查新时使用。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patent_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TY-teo",
+      "features": [
+        "专利交底书撰写与专利检索助手。帮助研发人员将技术方案转化为结构化交底书，并进行专利检索分析。当用户要求写专利、写交底书、专利检索、查新时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/patent-assistant@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108162553?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "patent-assistant",
+      "url": "https://clawhub.ai/skills/patent-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patent-assistant",
+    "url": "https://clawhub.ai/skills/patent-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patent-assistant-c824a7435cc50fe5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/patent-assistant@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-patent-assistant-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d344cf8e14ec22cc3e34ad986ec0b0add2254207fffed9a5d2a9fd60bcaab09",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T09:38:20.723Z"
+}

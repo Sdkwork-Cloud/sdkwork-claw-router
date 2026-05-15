@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mem-orchestrator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mem_orchestrator",
+  "skill": {
+    "id": 42843,
+    "skillKey": "clawhub-mem-orchestrator",
+    "name": "memory-orchestrator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mem-orchestrator",
+    "url": "https://clawhub.ai/skills/mem-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mem-orchestrator-b38c2866f6ccbd42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Layered memory orchestration for OpenClaw conversations. Use when implementing or maintaining a memory system that must classify user input by domain, captur..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jl1914",
+      "userId": "s174d2jy35jp4vmnw76mcgvtt183tdb3",
+      "displayName": "jil",
+      "image": "https://avatars.githubusercontent.com/u/10116013?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774811741827,
+      "changelog": "**Initial release with complete codebase and documentation reorganization.**\n\n- Introduces a layered memory system focused on session state, daily logs, topic cards, durable objects, and reflection outputs.\n- Replaces monolithic script structure with clear scripts for event extraction, memory gating, classification, recall, reflection, and object/topic management.\n- Adds comprehensive reference documentation (architecture, models, retrieval strategy, openclaw integration).\n- Removes installation scripts, old workflow YAMLs, and legacy multi-modal/emotion tagging modules.\n- Provides new workflow: gate→classify→capture→recall→answer→reflect, with scripts supporting each stage. \n- New plain-text directory structure and data shapes, focused on practicality and extensibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae2e82c5ed5a65f0537186b595d01e7add3127a4adf2e66d40eb5d3394ada915"
+}

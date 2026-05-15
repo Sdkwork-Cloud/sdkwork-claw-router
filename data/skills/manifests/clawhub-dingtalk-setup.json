@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61902,
+  "uuid": "skill-clawhub-dingtalk-setup",
+  "skillKey": "clawhub-dingtalk-setup",
+  "name": "DingTalk Channel Setup",
+  "summary": "钉钉企业内部机器人渠道快速对接。Use when: 用户需要对接钉钉渠道、配置钉钉 Stream 模式、排查钉钉消息问题。NOT for: 飞书/Lark、企业微信等其他平台。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shaoyunhao0107",
+      "features": [
+        "钉钉企业内部机器人渠道快速对接。Use when: 用户需要对接钉钉渠道、配置钉钉 Stream 模式、排查钉钉消息问题。NOT for: 飞书/Lark、企业微信等其他平台。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dingtalk-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/181611992?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dingtalk-setup",
+      "url": "https://clawhub.ai/skills/dingtalk-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-setup",
+    "url": "https://clawhub.ai/skills/dingtalk-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-setup-fb631c6949ad9a97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dingtalk-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dingtalk-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22b4b161eebb2789313c4b5e8ba42aa652010447be261bef3ea77158b417aefd",
+      "artifactSizeBytes": 2130
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T06:05:45.705Z"
+}

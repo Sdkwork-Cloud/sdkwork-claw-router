@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20366,
+  "uuid": "skill-clawhub-cardpointers",
+  "skillKey": "clawhub-cardpointers",
+  "name": "CardPointers",
+  "summary": "Query CardPointers card recommendations, wallet cards, and offers via the CardPointers CLI. Use when the user asks about which credit card to use for a purch...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cardpointers",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Emmanuel Crouvisier",
+      "features": [
+        "Query CardPointers card recommendations, wallet cards, and offers via the CardPointers CLI",
+        "Use when the user asks about which credit card to use for a purch..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cardpointers@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/689374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cardpointers",
+      "url": "https://clawhub.ai/skills/cardpointers"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cardpointers",
+    "url": "https://clawhub.ai/skills/cardpointers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cardpointers-5efd3742b252e31f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cardpointers@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cardpointers-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbf4246bed85dc0cc09ac20eda5533138ecff1918ac74fc01aab0ca320e9b119",
+      "artifactSizeBytes": 1896
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T20:11:13.809Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/simple-verifier@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simple_verifier",
+  "skill": {
+    "id": 32322,
+    "skillKey": "clawhub-simple-verifier",
+    "name": "Simple Verifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simple-verifier",
+    "url": "https://clawhub.ai/skills/simple-verifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simple-verifier-4e84e4f6adfea155.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fast lightweight verification pass for recent work. Use proactively after medium or large tasks, coding passes, app changes, or long replies when you need a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "noahfleming",
+      "userId": "publishers:noahfleming",
+      "displayName": "noahfleming",
+      "image": "https://avatars.githubusercontent.com/u/19826605?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774255055615,
+      "changelog": "Initial release of simple-verifier: a lightweight verification tool for recent work.\n\n- Provides a strict, evidence-based check for task completion without redoing work.\n- Flags missed asks, partial completion, unsupported “done” claims, and stale statuses.\n- Uses a concise, checklist-driven output format for clarity.\n- Designed for proactive, fast verification after significant coding or task changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69c65a40238c818af1a0fb5445bf3654d0a7088cef15551d9c9aa06117da5e0d"
+}

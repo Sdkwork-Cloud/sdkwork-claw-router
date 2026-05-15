@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/focus-deep-work@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.focus_deep_work",
+  "skill": {
+    "id": 8614,
+    "skillKey": "clawhub-focus-deep-work",
+    "name": "Focus Deep Work"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "focus-deep-work",
+    "url": "https://clawhub.ai/skills/focus-deep-work",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/focus-deep-work-4bcae69e40105879.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Maximize deep work with focus sessions, distraction logging, and productivity tracking"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jhillin8",
+      "userId": "publishers:jhillin8",
+      "displayName": "jhillin8",
+      "image": "https://avatars.githubusercontent.com/u/79551560?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 8479,
+      "installsAllTime": 66,
+      "installsCurrent": 62,
+      "stars": 9,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769326446742,
+      "changelog": "Initial release of Focus & Deep Work.\n\n- Introduces guided focus sessions with Pomodoro, Ultradian, and custom timers.\n- Enables distraction logging without interrupting workflow.\n- Provides productivity tracking with session summaries and weekly/monthly statistics.\n- Automates environment setup (notifications silenced, apps blocked, etc.) for distraction-free work.\n- All data stored locally—no cloud syncing or server uploads.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e60bd8dc7749fb198b6b179e28822563152f9ba56cc207fc49b9f2157bf6a1be"
+}

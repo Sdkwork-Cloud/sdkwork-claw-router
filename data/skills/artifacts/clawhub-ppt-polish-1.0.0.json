@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ppt-polish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt_polish",
+  "skill": {
+    "id": 38508,
+    "skillKey": "clawhub-ppt-polish",
+    "name": "PPT Polish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt-polish",
+    "url": "https://clawhub.ai/skills/ppt-polish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt-polish-3f18c29e4853a1a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rebuild, beautify, and optimize editable PowerPoint flowcharts, topology diagrams, architecture diagrams, and process visuals from existing PPT/PPTX files or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuyongliang-eccom",
+      "userId": "s17fp5xmt9fkkpfap18esxa1h183mfev",
+      "displayName": "xuyongliang",
+      "image": "https://avatars.githubusercontent.com/u/105618971?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775201802765,
+      "changelog": "Initial release: editable PPT diagram polishing workflow, references, and topology rebuild script.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74a3701370e98b9a39b70e6a7e1db1a9295d53c03f92b29dbf0e9237fc0d8293"
+}

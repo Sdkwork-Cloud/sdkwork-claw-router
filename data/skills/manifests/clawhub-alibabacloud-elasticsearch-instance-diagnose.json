@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40790,
+  "uuid": "skill-clawhub-alibabacloud-elasticsearch-instance-diagnose",
+  "skillKey": "clawhub-alibabacloud-elasticsearch-instance-diagnose",
+  "name": "Alibabacloud Elasticsearch Instance Diagnose",
+  "summary": "Alibaba Cloud Elasticsearch instance diagnosis skill. Use for cluster health checks, troubleshooting, and performance analysis on Elasticsearch instances. Tr...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_elasticsearch_instance_diagnose",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Alibaba Cloud Elasticsearch instance diagnosis skill",
+        "Use for cluster health checks, troubleshooting, and performance analysis on Elasticsearch insta."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-elasticsearch-instance-diagnose@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-elasticsearch-instance-diagnose",
+      "url": "https://clawhub.ai/skills/alibabacloud-elasticsearch-instance-diagnose"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-elasticsearch-instance-diagnose",
+    "url": "https://clawhub.ai/skills/alibabacloud-elasticsearch-instance-diagnose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-elasticsearch-instance-diagnose-ed78033b2cfaaac2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-elasticsearch-instance-diagnose@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-elasticsearch-instance-diagnose-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c11c202b3ab10d03efa9a5507eb93d9dd680af71fda1ec9342dbd2cf26cce713",
+      "artifactSizeBytes": 2748
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T01:51:39.753Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27108,
+  "uuid": "skill-clawhub-mockup-gen-skill",
+  "skillKey": "clawhub-mockup-gen-skill",
+  "name": "Mockup Gen Skill",
+  "summary": "Generate ai mockup generator images with AI via the Neta AI image generation API (free trial at neta.art/open).",
+  "version": "1.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mockup_gen_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wkl-nieta",
+      "features": [
+        "Generate ai mockup generator images with AI via the Neta AI image generation API (free trial at."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mockup-gen-skill@1.8.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/187257012?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mockup-gen-skill",
+      "url": "https://clawhub.ai/skills/mockup-gen-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mockup-gen-skill",
+    "url": "https://clawhub.ai/skills/mockup-gen-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mockup-gen-skill-0ce8ec46fcddccee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mockup-gen-skill@1.8.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mockup-gen-skill-1.8.0.json",
+      "version": "1.8.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35f05426f6ba89793c34d80e542943262d8058208a4e1ba35933add70763150b",
+      "artifactSizeBytes": 2139
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T01:01:46.475Z"
+}

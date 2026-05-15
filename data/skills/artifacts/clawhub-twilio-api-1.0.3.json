@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twilio-api@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twilio_api",
+  "skill": {
+    "id": 9139,
+    "skillKey": "clawhub-twilio-api",
+    "name": "Twilio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twilio-api",
+    "url": "https://clawhub.ai/skills/twilio-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twilio-api-f4a2d00f987af6ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Twilio API integration with managed OAuth. SMS, voice calls, phone numbers, and communications. Use this skill when users want to send SMS messages, make voi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4182,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 7,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777589046788,
+      "changelog": "- Changed all API and connection management endpoints from gateway.maton.ai/ctrl.maton.ai to api.maton.ai.\n- Updated quick start and usage examples to match new endpoint URLs.\n- Clarified security practices; all write operations now require explicit user approval.\n- Added a new Security & Permissions section to the documentation.\n- Removed the LICENSE.txt file from the repository.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92586d8a97d81415d533c688fa0a933d2aba051f97d1bb9dda36b5b432faf2ed"
+}

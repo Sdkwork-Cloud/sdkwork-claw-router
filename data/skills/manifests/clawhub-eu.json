@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72621,
+  "uuid": "skill-clawhub-eu",
+  "skillKey": "clawhub-eu",
+  "name": "Eu",
+  "summary": "提供欧洲联盟（27国政治经济联盟）的历史、业务、产品服务、行业地位及最新动态信息查询。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供欧洲联盟（27国政治经济联盟）的历史、业务、产品服务、行业地位及最新动态信息查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eu@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eu",
+      "url": "https://clawhub.ai/skills/eu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eu",
+    "url": "https://clawhub.ai/skills/eu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eu-4d0282941aaf2d69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eu@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-eu-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f88826a18970fc776fdea295b7a7a6bd1dc8b6108317de80bb16b6399dbf6dc1",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:36:58.746Z"
+}

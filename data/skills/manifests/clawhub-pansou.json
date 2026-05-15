@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70883,
+  "uuid": "skill-clawhub-pansou",
+  "skillKey": "clawhub-pansou",
+  "name": "PanSou 网盘搜索",
+  "summary": "网盘资源搜索引擎。支持百度网盘、阿里云盘、夸克网盘、天翼云盘、UC网盘、移动云盘、115、PikPak、迅雷、123网盘、磁力链接、电驴等12种网盘类型。支持按网盘类型、插件、TG频道过滤搜索结果。当用户需要搜索电影、剧集、软件、学习资料等网盘资源时使用此技能。触发词：搜索网盘、找资源、pan搜、网盘搜索、pan...",
+  "version": "1.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pansou",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "212-mei",
+      "features": [
+        "网盘资源搜索引擎。支持百度网盘、阿里云盘、夸克网盘、天翼云盘、UC网盘、移动云盘、115、PikPak、迅雷、123网盘、磁力链接、电驴等12种网盘类型。支持按网盘类型、插件、TG频道过滤搜."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pansou@1.1.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62559713?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pansou",
+      "url": "https://clawhub.ai/skills/pansou"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pansou",
+    "url": "https://clawhub.ai/skills/pansou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pansou-4f99c9304b722ae1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pansou@1.1.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-pansou-1.1.6.json",
+      "version": "1.1.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b300ceab5f5c0e3049d9084cba759e3e7073e5e09faab7178f2123b5f1a2661",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T06:48:20.703Z"
+}

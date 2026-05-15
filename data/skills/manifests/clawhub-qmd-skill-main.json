@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11351,
+  "uuid": "skill-clawhub-qmd-skill-main",
+  "skillKey": "clawhub-qmd-skill-main",
+  "name": "Qmd Skill Main",
+  "summary": "Local hybrid search for markdown notes and docs. Use when searching notes, finding related content, or retrieving documents from indexed collections.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qmd_skill_main",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Patrick Maeter",
+      "features": [
+        "Local hybrid search for markdown notes and docs",
+        "Use when searching notes, finding related content, or retrieving documents from indexed collect."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qmd-skill-main@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43902331?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qmd-skill-main",
+      "url": "https://clawhub.ai/skills/qmd-skill-main"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qmd-skill-main",
+    "url": "https://clawhub.ai/skills/qmd-skill-main",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qmd-skill-main-7d3f392473498054.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qmd-skill-main@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qmd-skill-main-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b37ac840c195644985d658d4cde35d1dd389af18adf06d633fcab3e00bba9bb3",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T17:55:15.147Z"
+}

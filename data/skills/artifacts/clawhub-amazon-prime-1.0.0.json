@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-prime@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_prime",
+  "skill": {
+    "id": 43926,
+    "skillKey": "clawhub-amazon-prime",
+    "name": "Amazon Prime"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-prime",
+    "url": "https://clawhub.ai/skills/amazon-prime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-prime-3e56a14fae20dcd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon Prime is a subscription service offering free shipping, streaming, gaming, and discounts with over 200 million global members."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776935258010,
+      "changelog": "Amazon Prime Skill 1.0.0\n\n- 新增技能，全面介绍 Amazon Prime 的历史、商业模式与核心优势\n- 包含关键发展节点：从两天免费配送到 Prime Video、Prime Day 及广告层\n- 提供 Prime 会员数、价格、年度消费等关键数据\n- 解析飞轮效应与护城河，助力理解订阅经济及捆绑服务战略\n- 增加有趣历史与会员行为的心理学洞见",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c79c0002762aaa1d9bd003202de45fab998385fb75d36592345ccfffc38f373"
+}

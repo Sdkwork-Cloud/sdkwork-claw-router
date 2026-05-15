@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uapi-get-game-minecraft-historyid@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uapi_get_game_minecraft_historyid",
+  "skill": {
+    "id": 58521,
+    "skillKey": "clawhub-uapi-get-game-minecraft-historyid",
+    "name": "UAPI 查询 MC 曾用名 接口"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uapi-get-game-minecraft-historyid",
+    "url": "https://clawhub.ai/skills/uapi-get-game-minecraft-historyid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uapi-get-game-minecraft-historyid-2008e27c356822fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 UAPI 的“查询 MC 曾用名”单接口 skill，处理 查询 MC 曾用名、MC曾用名 等请求。 Use when the user wants get game minecraft historyid, game minecraft historyid, historyid, minecraft pl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shuakami",
+      "userId": "publishers:shuakami",
+      "displayName": "速冻饺子",
+      "image": "https://avatars.githubusercontent.com/u/149454909?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 339,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773080948164,
+      "changelog": "Initial publish.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a73780b3c5d51f7a8f9a035754a9771226ea614154d09916471f51fa1436b45"
+}

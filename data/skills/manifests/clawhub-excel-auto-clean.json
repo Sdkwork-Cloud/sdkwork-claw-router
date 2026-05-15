@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60823,
+  "uuid": "skill-clawhub-excel-auto-clean",
+  "skillKey": "clawhub-excel-auto-clean",
+  "name": "Excel Auto Clean",
+  "summary": "自动整理Excel表格、去重、排序、生成报表",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excel_auto_clean",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "橙子",
+      "features": [
+        "自动整理Excel表格、去重、排序、生成报表"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/excel-auto-clean@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23025523?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "excel-auto-clean",
+      "url": "https://clawhub.ai/skills/excel-auto-clean"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excel-auto-clean",
+    "url": "https://clawhub.ai/skills/excel-auto-clean",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excel-auto-clean-5470dc2bc79cc5b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/excel-auto-clean@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-excel-auto-clean-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43f9a54b37cd151034531ee26ee3913af6403e0806833440c19c6e868dc5fb63",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T02:54:03.901Z"
+}

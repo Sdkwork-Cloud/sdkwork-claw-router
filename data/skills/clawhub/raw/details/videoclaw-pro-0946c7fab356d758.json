@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "videoclaw-pro",
+    "displayName": "VideoClaw Pro",
+    "summary": "视频剪辑脚本执行助手（增强版）- 根据飞书提示词库和直播素材文字档生成剪辑建议脚本。 支持飞书文档（docx）和知识库（wiki）链接，自动解析权限问题。 ⚠️ 重要：本 skill 所有文档读取必须通过 Python CLI 脚本，不使用内置 feishu_doc 工具！ 触发指令格式：「剪辑脚本 [视频类型]...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775728198376,
+    "updatedAt": 1775728311998
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775728198376,
+    "changelog": "videoclaw-pro 1.0.0\n\n- 全新发布的视频剪辑脚本助手，专为飞书环境设计，支持 docx 及 wiki 链接解析。\n- 强制采用 Python CLI 执行文档读写，彻底弃用内置 feishu_doc 工具，确保兼容飞书 wiki 链接。\n- 提供权限问题友好提示，指导用户正确分配文档访问权限。\n- 以飞书提示词库和直播素材自动生成结构化剪辑建议脚本，支持完善的时间轴与细节标注。\n- 完整独立封装，所有功能均整合于单一 skill，提升部署与管理效率。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "xiangxueweb",
+    "userId": "s176jkm2zjvagzg6s381bnwwex84gq48",
+    "displayName": "xiangxueweb",
+    "image": "https://avatars.githubusercontent.com/u/152760458?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.2.0",
+    "updatedAt": 1775728311998
+  }
+}

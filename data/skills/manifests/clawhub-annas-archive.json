@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22112,
+  "uuid": "skill-clawhub-annas-archive",
+  "skillKey": "clawhub-annas-archive",
+  "name": "Annas Archive",
+  "summary": "Find and download ebooks or papers from Anna's Archive with EPUB-first selection and /tmp storage. Use when a user asks to fetch a book/article, especially w...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.annas_archive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ricardo Almeida",
+      "features": [
+        "Find and download ebooks or papers from Anna's Archive with EPUB-first selection and /tmp stora.",
+        "Use when a user asks to fetch a book/article, especially w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/annas-archive@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100843099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "annas-archive",
+      "url": "https://clawhub.ai/skills/annas-archive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "annas-archive",
+    "url": "https://clawhub.ai/skills/annas-archive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/annas-archive-ffe7500e08d876b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/annas-archive@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-annas-archive-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a908392ee098c9aca7ca6781de20b7967a81b3303362d155c74999875a1cfe0",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T22:00:34.096Z"
+}

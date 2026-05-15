@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68950,
+  "uuid": "skill-clawhub-youdaonote-web",
+  "skillKey": "clawhub-youdaonote-web",
+  "name": "Youdao Note Web",
+  "summary": "安全地操作用户的有道云笔记，支持读取、搜索、创建笔记。当用户要求操作有道云笔记时调用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youdaonote_web",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wendy199804",
+      "features": [
+        "安全地操作用户的有道云笔记，支持读取、搜索、创建笔记。当用户要求操作有道云笔记时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youdaonote-web@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52653923?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youdaonote-web",
+      "url": "https://clawhub.ai/skills/youdaonote-web"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youdaonote-web",
+    "url": "https://clawhub.ai/skills/youdaonote-web",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youdaonote-web-8198475b4af060ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youdaonote-web@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youdaonote-web-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72d359fa0836fb383cd996dde2be20ca7856df90f719399e3970d4ac127f628f",
+      "artifactSizeBytes": 2333
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:50:00.200Z"
+}

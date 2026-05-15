@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66044,
+  "uuid": "skill-clawhub-tianshu-short-script",
+  "skillKey": "clawhub-tianshu-short-script",
+  "name": "Tianshu Short Script",
+  "summary": "根据主题与时长生成短视频口播分镜表：镜号、秒数、画面、口播、花字/字幕提示。 Use when: 用户要做短视频、口播、分镜、抖音/B 站/视频号脚本；用户说「口播脚本」「分镜表」「60 秒视频怎么拍」。 NOT for: 直接导出剪映工程文件；复杂多机位院线级分镜（本 skill 偏口播/Vlog 结构）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianshu_short_script",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tianshu",
+      "features": [
+        "根据主题与时长生成短视频口播分镜表：镜号、秒数、画面、口播、花字/字幕提示。 Use when: 用户要做短视频、口播、分镜、抖音/B 站/视频号脚本；用户说「口播脚本」「分镜表」「60 秒."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tianshu-short-script@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100948785?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tianshu-short-script",
+      "url": "https://clawhub.ai/skills/tianshu-short-script"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianshu-short-script",
+    "url": "https://clawhub.ai/skills/tianshu-short-script",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianshu-short-script-b7168fcbfd545fd3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tianshu-short-script@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tianshu-short-script-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e908aefbad64b5f964c459875ef0bdf8e2a2068e5f7c79252676a3c87ad8c09",
+      "artifactSizeBytes": 2224
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:29:26.978Z"
+}

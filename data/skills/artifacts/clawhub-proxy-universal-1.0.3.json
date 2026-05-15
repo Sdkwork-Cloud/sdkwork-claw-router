@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proxy-universal@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxy_universal",
+  "skill": {
+    "id": 63218,
+    "skillKey": "clawhub-proxy-universal",
+    "name": "通用代理管理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxy-universal",
+    "url": "https://clawhub.ai/skills/proxy-universal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxy-universal-c03f7818984fb48e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "跨平台代理管理助手 (Universal Proxy Manager)。自动检测环境，首次使用自动安装，后续自动管理。支持 Windows/Linux/macOS，一键开启/关闭/切换节点/更新订阅/故障排查。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "libulibu161",
+      "userId": "publishers:libulibu161",
+      "displayName": "bulil",
+      "image": "https://avatars.githubusercontent.com/u/225640250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 395,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773578925112,
+      "changelog": "更新说明：ClawHub排除二进制，首次使用需从GitHub下载，已提供替代方案",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1709d50e0aad31b08348348295fed997a28bae27d2eb03b1fe12867b8a83a322"
+}

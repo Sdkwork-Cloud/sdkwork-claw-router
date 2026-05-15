@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38408,
+  "uuid": "skill-clawhub-polymarket-whale-scanner-trader",
+  "skillKey": "clawhub-polymarket-whale-scanner-trader",
+  "name": "Polymarket Whale Scanner Trader",
+  "summary": "Scans public Polymarket leaderboards to identify top-performing whale wallets by SmartScore, then trades markets where these whales have high-conviction posi...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_whale_scanner_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Scans public Polymarket leaderboards to identify top-performing whale wallets by SmartScore, th."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-whale-scanner-trader@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-whale-scanner-trader",
+      "url": "https://clawhub.ai/skills/polymarket-whale-scanner-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-whale-scanner-trader",
+    "url": "https://clawhub.ai/skills/polymarket-whale-scanner-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-whale-scanner-trader-d76f9341b6c0a2c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-whale-scanner-trader@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-whale-scanner-trader-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7dd2b4b9deabc1ca09b85d16d37adf4ac8a138acae9e36435f917d46f75ce57",
+      "artifactSizeBytes": 2047
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:32:38.220Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawcall-phone@2.0.11",
+  "version": "2.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawcall_phone",
+  "skill": {
+    "id": 20315,
+    "skillKey": "clawhub-clawcall-phone",
+    "name": "clawcall-phone"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawcall-phone",
+    "url": "https://clawhub.ai/skills/clawcall-phone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawcall-phone-5338ecd698142160.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give this agent a real phone number. Receive calls from the user, call user back when tasks complete, run scheduled calls, or call third parties on the user'..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawcall",
+      "userId": "s17afx129z31yk1v5y4trkrgm983gyt9",
+      "displayName": "ClawCall",
+      "image": "https://avatars.githubusercontent.com/u/64463251?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 560,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "2.0.11",
+      "createdAt": 1776074672100,
+      "changelog": "ClawCall 2.0.11 introduces an HTTP bridge for low-latency, real-time phone call handling.\n\n- Added HTTP bridge server: `bridge/phone-agent-server.js` for fast call routing.\n- Added supporting bridge modules: `bridge/phone-context.js` and `bridge/phone-prompt.js`.\n- Updated setup instructions to prioritize bridge-based operation over CLI fallback.\n- Improved troubleshooting and operational guidance for running and verifying bridge/listener processes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a961a8eae8455c554668d17652b13ad5358ad3742fc4defaadb75594c0dcae1c"
+}

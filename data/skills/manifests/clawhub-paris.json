@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20060,
+  "uuid": "skill-clawhub-paris",
+  "skillKey": "clawhub-paris",
+  "name": "Paris",
+  "summary": "Navigate Paris as visitor, resident, tech worker, student, or entrepreneur with arrondissements, transport, costs, safety, and local insights.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paris",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Navigate Paris as visitor, resident, tech worker, student, or entrepreneur with arrondissements."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paris@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paris",
+      "url": "https://clawhub.ai/skills/paris"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paris",
+    "url": "https://clawhub.ai/skills/paris",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paris-1670f2e42fefa504.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paris@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paris-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae56e601f05b2ec67a668c8167f97ea5039756ca0bcc750046ae86e276a1966f",
+      "artifactSizeBytes": 1801
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T20:39:54.436Z"
+}

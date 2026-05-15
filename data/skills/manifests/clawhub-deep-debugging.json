@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23425,
+  "uuid": "skill-clawhub-deep-debugging",
+  "skillKey": "clawhub-deep-debugging",
+  "name": "Deep Debugging",
+  "summary": "Systematic evidence-first debugging for unclear, recurring, or high-risk software bugs. Use when the user asks to debug/root-cause an issue, says a fix did n...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_debugging",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brasco05",
+      "features": [
+        "Systematic evidence-first debugging for unclear, recurring, or high-risk software bugs",
+        "Use when the user asks to debug/root-cause an issue, says a fix did n..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deep-debugging@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256532966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deep-debugging",
+      "url": "https://clawhub.ai/skills/deep-debugging"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-debugging",
+    "url": "https://clawhub.ai/skills/deep-debugging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-debugging-5b0f35720587d6d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deep-debugging@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-deep-debugging-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c07d1480794dbe5c494da6e3c6ca7c89f352893b1402c0b1bb71b8d8d62b1b5",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T08:11:27.313Z"
+}

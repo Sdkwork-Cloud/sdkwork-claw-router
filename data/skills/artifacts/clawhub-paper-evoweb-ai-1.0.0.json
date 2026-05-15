@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-evoweb-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_evoweb_ai",
+  "skill": {
+    "id": 15117,
+    "skillKey": "clawhub-paper-evoweb-ai",
+    "name": "Scientific Article PDF Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-evoweb-ai",
+    "url": "https://clawhub.ai/skills/paper-evoweb-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-evoweb-ai-7305ba59413a0446.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate publication-ready scientific articles in PDF format with AI-powered research and citations"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "galizki",
+      "userId": "s17byxwhjg8dn0f62ys0r1jca183qh6e",
+      "displayName": "galizki",
+      "image": "https://avatars.githubusercontent.com/u/67021003?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 969,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770742318514,
+      "changelog": "Initial release of Scientific Article PDF Generator skill.\n\n- Generate publication-ready scientific articles in PDF format with AI-powered content enrichment and citations.\n- Supports adding product information, research focus, and data visualizations (charts).\n- Customizable options for deep research mode, source inclusion, and citation formatting.\n- Simple API integration with detailed parameter support.\n- Automatic PDF download in browser; generation time: 2–5 minutes.\n- Provides clear workflow, error handling, and user prompts for efficient scientific writing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:804137a4cf08f0a6cbdb2d5060a83f6ad0319bf6b9a8db2556113ab82717187e"
+}

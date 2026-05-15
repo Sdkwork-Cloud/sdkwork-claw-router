@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37175,
+  "uuid": "skill-clawhub-digital-ip-agent",
+  "skillKey": "clawhub-digital-ip-agent",
+  "name": "Digital IP Agent",
+  "summary": "Turn a public creator, blogger, podcaster, YouTuber, or X/Twitter personality into a deployable OpenClaw agent. Use when the user provides a YouTube URL, X h...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.digital_ip_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aliciawque",
+      "features": [
+        "Turn a public creator, blogger, podcaster, YouTuber, or X/Twitter personality into a deployable.",
+        "Use when the user provides a YouTube URL, X h..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/digital-ip-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166712943?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "digital-ip-agent",
+      "url": "https://clawhub.ai/skills/digital-ip-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "digital-ip-agent",
+    "url": "https://clawhub.ai/skills/digital-ip-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/digital-ip-agent-1f66b6682fba905e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/digital-ip-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-digital-ip-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a736e8a74efe40d0e0ccc7d4df5e1509ea2c0239d45486453f6fa0ba8a7b3cd",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T06:16:51.799Z"
+}

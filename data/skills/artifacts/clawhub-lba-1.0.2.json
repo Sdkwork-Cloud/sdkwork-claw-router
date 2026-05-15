@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lba@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lba",
+  "skill": {
+    "id": 24162,
+    "skillKey": "clawhub-lba",
+    "name": "LBA"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lba",
+    "url": "https://clawhub.ai/skills/lba",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lba-fd536ed9bb9b886b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Linear.app workflows in the OpenClaw-managed browser profile using browser tool actions (open, navigate, snapshot, act). Use when users want UI-base..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hassam-powerhouse",
+      "userId": "publishers:hassam-powerhouse",
+      "displayName": "Hassam",
+      "image": "https://avatars.githubusercontent.com/u/206915949?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 418,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772067934521,
+      "changelog": "- Introduced the linear-browser-automation skill for UI-based workflow automation in Linear.app using the OpenClaw-managed browser.\n- Enforced strict required-input policies for creating, editing, and updating issues (team, title, status, comments, etc.).\n- Added real-time authentication checks, auto-navigation to login, and resumable flows after login via browser alerts.\n- Implemented deterministic action execution with pre/post visual state verification and strict selector usage for reliability.\n- Added safety and confirmation requirements for sensitive/destructive actions and ambiguous contexts.\n- Provided explicit example prompts for all supported automations, including creating, editing, moving, commenting, searching, and bulk triage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:026970e4e2a0818739a16503d4b3a42c1f8139035e6f97997d2837b10650b79d"
+}

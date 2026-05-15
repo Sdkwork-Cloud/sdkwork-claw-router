@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/korean-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.korean_scraper",
+  "skill": {
+    "id": 16193,
+    "skillKey": "clawhub-korean-scraper",
+    "name": "Korean Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "korean-scraper",
+    "url": "https://clawhub.ai/skills/korean-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/korean-scraper-c09188d547e16d9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Korean website specialized scraper with anti-bot protection (Naver, Coupang, Daum, Instagram)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mupengi-bot",
+      "userId": "s17cb0n67gxg14m41wrqex0hr183j5d2",
+      "displayName": "mupengi-bot",
+      "image": "https://avatars.githubusercontent.com/u/259087580?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 906,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771256318187,
+      "changelog": "Initial release of korean-scraper:\n\n- Specialized scraper for major Korean websites (Naver, Coupang, Daum) with Playwright and anti-bot protection (stealth, delay, user-agent rotation).\n- Provides CLI scripts for blog, cafe, news, and product data extraction with structured JSON outputs.\n- Implements rate limiting and detailed error handling to handle site restrictions and blocks.\n- Customizable via environment variables (headless mode, screenshot, user-agent, wait time).\n- Includes usage examples, integration instructions, compliance/ethics guidelines, and troubleshooting tips.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:12954955cca471403e5131e679debe714c840ad1eeb7df0f581db6b117b39424"
+}

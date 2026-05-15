@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/catallax@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.catallax",
+  "skill": {
+    "id": 14292,
+    "skillKey": "clawhub-catallax",
+    "name": "Catallax"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "catallax",
+    "url": "https://clawhub.ai/skills/catallax",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/catallax-1296eb9138857cab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with the Catallax decentralized contract work protocol on Nostr. Use when the user mentions tasks, bounties, contract work, arbiters, escrow, labor market, gigs, or Catallax. Supports browsing open tasks, creating task proposals,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kai-familiar",
+      "userId": "publishers:kai-familiar",
+      "displayName": "kai-familiar",
+      "image": "https://avatars.githubusercontent.com/u/259354661?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1037,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770818301937,
+      "changelog": "Initial release of the Catallax skill for decentralized contract work on Nostr.\n\n- Supports browsing, filtering, and displaying open tasks/bounties and arbiter services.\n- Allows users to create task proposals, submit work, update status, and conclude tasks via protocol events.\n- Handles querying multiple relays, parsing tags/content, and key protocol edge cases.\n- Provides clear output formats for both tasks and arbiters.\n- Follows NIP-3400 and associated kind conventions for contract workflow.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3619c23a8cf4b36f3dd85fc2bb89f315393f6f25a6f14e7d784642d44038b5bb"
+}

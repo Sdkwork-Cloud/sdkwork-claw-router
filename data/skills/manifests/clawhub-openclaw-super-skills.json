@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42273,
+  "uuid": "skill-clawhub-openclaw-super-skills",
+  "skillKey": "clawhub-openclaw-super-skills",
+  "name": "Openclaw Super Skills",
+  "summary": "Decomposes complex user requests into executable subtasks, identifies required capabilities, searches for existing skills at skills.sh, and creates new skill...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_super_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jpzhengcn",
+      "features": [
+        "Decomposes complex user requests into executable subtasks, identifies required capabilities, se."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-super-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268075627?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-super-skills",
+      "url": "https://clawhub.ai/skills/openclaw-super-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-super-skills",
+    "url": "https://clawhub.ai/skills/openclaw-super-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-super-skills-b1626a6ecfa8dc63.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-super-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-super-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78db941729e242a04be509f2542b311e1e9a3687d7c17bcc2b5b1f84edca151c",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T11:08:55.899Z"
+}

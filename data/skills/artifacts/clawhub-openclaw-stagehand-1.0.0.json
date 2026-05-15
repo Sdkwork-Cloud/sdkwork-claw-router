@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-stagehand@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_stagehand",
+  "skill": {
+    "id": 36049,
+    "skillKey": "clawhub-openclaw-stagehand",
+    "name": "Browser Stagehand"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-stagehand",
+    "url": "https://clawhub.ai/skills/openclaw-stagehand",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-stagehand-2852040cb40cd392.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate web browser interactions using natural language via CLI commands. Use when the user asks to browse websites, navigate web pages, extract data from w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hsyhph",
+      "userId": "s177fkfb3339cez7neb1kaj1f183g848",
+      "displayName": "hsyhph",
+      "image": "https://avatars.githubusercontent.com/u/73018559?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774780205836,
+      "changelog": "openclaw-stagehand 1.0.0\n\n- Initial release: Automate web browser interactions via Stagehand CLI using natural language.\n- Supports both local Chrome and remote Browserbase environments with automatic selection based on configuration.\n- Provides commands for navigation, form filling, element interaction, data extraction, screenshots, and browser control.\n- Identical command set for both local and remote modes.\n- Includes troubleshooting tips and best practices for setup and usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:730a285ff8dad4606c19709d330669131c31c7cc683ebea864423d1c5327c11e"
+}

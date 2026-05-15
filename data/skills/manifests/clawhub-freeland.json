@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27484,
+  "uuid": "skill-clawhub-freeland",
+  "skillKey": "clawhub-freeland",
+  "name": "Freeland",
+  "summary": "Agent-first API for wallet, cards, inbox OTP, Mr. Freeman, eSIM, VPN, and crypto invoices.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freeland",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "elvismusli",
+      "features": [
+        "Agent-first API for wallet, cards, inbox OTP, Mr",
+        "Freeman, eSIM, VPN, and crypto invoices."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/freeland@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149376360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "freeland",
+      "url": "https://clawhub.ai/skills/freeland"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freeland",
+    "url": "https://clawhub.ai/skills/freeland",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freeland-513ad9e2606b5ab3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/freeland@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-freeland-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7aa550aa4d9aec7d398ead41330d329380972a186c0a63e1df7769397b7cc274",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T04:43:34.664Z"
+}

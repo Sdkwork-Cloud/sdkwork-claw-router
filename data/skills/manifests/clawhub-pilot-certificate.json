@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44432,
+  "uuid": "skill-clawhub-pilot-certificate",
+  "skillKey": "clawhub-pilot-certificate",
+  "name": "Pilot Certificate",
+  "summary": "Issue and verify Ed25519-signed capability certificates for Pilot Protocol agents. Use this skill when: 1. You need to issue capability proofs or authorizati...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_certificate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Issue and verify Ed25519-signed capability certificates for Pilot Protocol agents",
+        "Use this skill when: 1",
+        "You need to issue capability proofs or authorizati..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-certificate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-certificate",
+      "url": "https://clawhub.ai/skills/pilot-certificate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-certificate",
+    "url": "https://clawhub.ai/skills/pilot-certificate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-certificate-f2042f4c50f20b0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-certificate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-certificate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e84cc373a420bb087ccd3940cd4131126f496c8e7752b05cbdb7659f0cac6bc",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T23:15:03.185Z"
+}

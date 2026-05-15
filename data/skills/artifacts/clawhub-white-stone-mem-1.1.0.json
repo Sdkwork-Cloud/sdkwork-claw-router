@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/white-stone-mem@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.white_stone_mem",
+  "skill": {
+    "id": 58159,
+    "skillKey": "clawhub-white-stone-mem",
+    "name": "White Stone Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "white-stone-mem",
+    "url": "https://clawhub.ai/skills/white-stone-mem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/white-stone-mem-3d7b05d4cb2c5ae3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Memory system with 5 categories - knowledge, projects, error log, daily review, and tasks. Load on demand to avoid memory pollution. 记忆系统 - 包含常识记忆、项目记忆、错题本、每..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "russellfei",
+      "userId": "s176a27myh2rbyrfvwd62nct2h83g913",
+      "displayName": "russellfei",
+      "image": "https://avatars.githubusercontent.com/u/3415940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 418,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772512637349,
+      "changelog": "Consolidate memory structure around 5 categories (knowledge/projects/errors/diary/tasks). Full bilingual EN/CN support for SKILL.md and all memory entries. Add Rule #5: mandatory bilingual logging. Retrofit error logs with bilingual format.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dfde194764a505f49080b4facc998dca46d6bb7f835eadf243de1ba718672813"
+}

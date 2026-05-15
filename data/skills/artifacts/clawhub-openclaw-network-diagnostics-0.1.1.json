@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-network-diagnostics@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_network_diagnostics",
+  "skill": {
+    "id": 21660,
+    "skillKey": "clawhub-openclaw-network-diagnostics",
+    "name": "Openclaw Network Diagnostics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-network-diagnostics",
+    "url": "https://clawhub.ai/skills/openclaw-network-diagnostics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-network-diagnostics-f9288bd48677644a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Standalone advanced network diagnostics for OpenClaw to continuously test end-to-end connectivity from OpenClaw agent to Telegram Bot API and approximate del..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "h8kxrfp68z-lgtm",
+      "userId": "publishers:h8kxrfp68z-lgtm",
+      "displayName": "h8kxrfp68z-lgtm",
+      "image": "https://avatars.githubusercontent.com/u/247819571?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 491,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772801724938,
+      "changelog": "openclaw-network-diagnostics v0.1.1\n\n- Updated `scripts/netdiag.py` (details not shown, likely minor or internal changes).\n- No changes to features, configuration, usage, or documentation.\n- No impact on main workflow or CLI arguments.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:da09403da3c27068b35209469412fd59e312ddf573e5ab2f08f28519590aa331"
+}

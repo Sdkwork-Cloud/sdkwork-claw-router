@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26798,
+  "uuid": "skill-clawhub-memberspotio",
+  "skillKey": "clawhub-memberspotio",
+  "name": "Memberspotio",
+  "summary": "Memberspot.io integration. Manage Organizations. Use when the user wants to interact with Memberspot.io data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memberspotio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Memberspot.io integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Memberspot.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memberspotio@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memberspotio",
+      "url": "https://clawhub.ai/skills/memberspotio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memberspotio",
+    "url": "https://clawhub.ai/skills/memberspotio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memberspotio-1d37f09cdd62436b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memberspotio@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-memberspotio-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c7e464c546e9eb8d7ac411e5d818ec78fcbe70e57172957eeeab1f3e9aa3fe4",
+      "artifactSizeBytes": 1844
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:12:43.742Z"
+}

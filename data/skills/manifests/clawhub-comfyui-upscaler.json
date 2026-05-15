@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68388,
+  "uuid": "skill-clawhub-comfyui-upscaler",
+  "skillKey": "clawhub-comfyui-upscaler",
+  "name": "ComfyUI 多重扩散放大",
+  "summary": "ComfyUI 多重扩散放大自动化工具。当用户想要放大 AI 生成的图片、处理高清图像、放大小图、提高图片分辨率时使用。支持文生图和图生图两种基础工作流，自动执行三重放大（潜空间放大→区块放大→模型放大）。使用场景包括：(1) 将低分辨率 AI 绘画放大到 4K/8K (2) 增强图片细节和清晰度 (3) Com...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfyui_upscaler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JMin1113",
+      "features": [
+        "ComfyUI 多重扩散放大自动化工具。当用户想要放大 AI 生成的图片、处理高清图像、放大小图、提高图片分辨率时使用。支持文生图和图生图两种基础工作流，自动执行三重放大（潜空间放大→区块放."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comfyui-upscaler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258832386?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comfyui-upscaler",
+      "url": "https://clawhub.ai/skills/comfyui-upscaler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfyui-upscaler",
+    "url": "https://clawhub.ai/skills/comfyui-upscaler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfyui-upscaler-2c1d36999f91f1fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comfyui-upscaler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-comfyui-upscaler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ce1e032e8fc3ef077139b9d81f53f8c360a51cadd4983f81112c1ff4283a416",
+      "artifactSizeBytes": 2143
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T02:40:24.836Z"
+}

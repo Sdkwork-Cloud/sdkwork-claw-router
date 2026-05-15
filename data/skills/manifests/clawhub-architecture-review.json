@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68213,
+  "uuid": "skill-clawhub-architecture-review",
+  "skillKey": "clawhub-architecture-review",
+  "name": "Architecture Review",
+  "summary": "架构评审助手。用于评审技术架构、评估架构方案、制定改进建议。当需要进行架构评审、设计评审时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.architecture_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yongjie666888",
+      "features": [
+        "架构评审助手。用于评审技术架构、评估架构方案、制定改进建议。当需要进行架构评审、设计评审时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/architecture-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177016990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "architecture-review",
+      "url": "https://clawhub.ai/skills/architecture-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "architecture-review",
+    "url": "https://clawhub.ai/skills/architecture-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/architecture-review-0d694babd1af805f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/architecture-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-architecture-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f42c335fab0a71d238230295c577ab35eca39184ee364d35ffd8d2eb32ba3178",
+      "artifactSizeBytes": 1915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T18:35:19.317Z"
+}

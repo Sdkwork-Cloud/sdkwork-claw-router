@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quick-converter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quick_converter",
+  "skill": {
+    "id": 54103,
+    "skillKey": "clawhub-quick-converter",
+    "name": "Quick Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quick-converter",
+    "url": "https://clawhub.ai/skills/quick-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quick-converter-e23ace7004fb55e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fast offline unit/time/currency/crypto conversions — ideal for quick everyday math in agent chats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nihalmehta007",
+      "userId": "publishers:nihalmehta007",
+      "displayName": "Nihal Mehta",
+      "image": "https://avatars.githubusercontent.com/u/228205181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773137170481,
+      "changelog": "Quick Converter skill initial release:\n\n- Instantly converts units (length, weight, temperature, etc.) with built-in formulas.\n- Provides offline, approximate currency conversions (focus on INR, USD, EUR, GBP) with March 2026 rates.\n- Supports crypto price approximations for BTC/ETH to INR/USD.\n- Calculates time delta to a given event or time, based on IST (Ahmedabad context).\n- Requires no external APIs or dependencies; designed for fast, everyday utility.\n- Clearly displays formulas used and clarifies when values are approximate.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e36a75cb7f991ec1ba6ae7740f5bc4acd53b94341b29aa7be0063ddb5329f28"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71012,
+  "uuid": "skill-clawhub-uwvwko-limit-authority",
+  "skillKey": "clawhub-uwvwko-limit-authority",
+  "name": "limit-authority",
+  "summary": "文件操作权限限制技能。强制要求对任何文件（文本、代码、图片、音频等）进行增删改、复制粘贴操作前， 必须详细打印完整路径并获得用户的明确授权。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uwvwko_limit_authority",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "uwvwko",
+      "features": [
+        "文件操作权限限制技能。强制要求对任何文件（文本、代码、图片、音频等）进行增删改、复制粘贴操作前， 必须详细打印完整路径并获得用户的明确授权。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uwvwko-limit-authority@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222942329?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uwvwko-limit-authority",
+      "url": "https://clawhub.ai/skills/uwvwko-limit-authority"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uwvwko-limit-authority",
+    "url": "https://clawhub.ai/skills/uwvwko-limit-authority",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uwvwko-limit-authority-69ef91d5cfa49233.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uwvwko-limit-authority@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uwvwko-limit-authority-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d712a1d544ddd11021d12e83c145e81176423f12ab1afd03491e71c6845ffb18",
+      "artifactSizeBytes": 2723
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:03:10.686Z"
+}

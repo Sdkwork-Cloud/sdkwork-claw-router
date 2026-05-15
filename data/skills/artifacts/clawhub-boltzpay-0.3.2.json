@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/boltzpay@0.3.2",
+  "version": "0.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boltzpay",
+  "skill": {
+    "id": 52425,
+    "skillKey": "clawhub-boltzpay",
+    "name": "BoltzPay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boltzpay",
+    "url": "https://clawhub.ai/skills/boltzpay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boltzpay-8f86abb1de0a24c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pay for API data automatically — multi-protocol (x402 + L402 + MPP), multi-chain, streaming sessions"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leventilo",
+      "userId": "s17173f7090ccdjdbh2tgb3g4h841gav",
+      "displayName": "leventilo",
+      "image": "https://avatars.githubusercontent.com/u/220921133?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 557,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.3.2",
+      "createdAt": 1775017600641,
+      "changelog": "Release v0.3.2",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87b10133237631700ff1323aa39e2f1667e3e1c70e1b85dbabf483abd6e75e4a"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43878,
+  "uuid": "skill-clawhub-prediction-market-arb",
+  "skillKey": "clawhub-prediction-market-arb",
+  "name": "Prediction Markets Arbitrage",
+  "summary": "Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prediction_market_arb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Karen Sheng",
+      "features": [
+        "Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prediction-market-arb@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46656667?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prediction-market-arb",
+      "url": "https://clawhub.ai/skills/prediction-market-arb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prediction-market-arb",
+    "url": "https://clawhub.ai/skills/prediction-market-arb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prediction-market-arb-4418d203766c65d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prediction-market-arb@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prediction-market-arb-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2bd92e9fc198ee7e20795b67a7cf4cc85fa833a8d567812df590c87f1f1fdef",
+      "artifactSizeBytes": 2279
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T02:48:59.755Z"
+}

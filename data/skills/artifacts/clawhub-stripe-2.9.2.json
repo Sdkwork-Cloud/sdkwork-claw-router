@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stripe@2.9.2",
+  "version": "2.9.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stripe",
+  "skill": {
+    "id": 11972,
+    "skillKey": "clawhub-stripe",
+    "name": "Stripe Agent Wallet | Use Stripe top-up your agentic wallet - Private Beta"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stripe",
+    "url": "https://clawhub.ai/skills/stripe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stripe-2bed2032ed3d8300.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "With CreditClaw and backed by Stripe, you can shop anywhere."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jononovo",
+      "userId": "s17eyjmk8pyvczxpmy73dtgn4d83frwx",
+      "displayName": "jononovo",
+      "image": "https://avatars.githubusercontent.com/u/22595409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2138,
+      "installsAllTime": 26,
+      "installsCurrent": 24,
+      "stars": 3,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.9.2",
+      "createdAt": 1773808927018,
+      "changelog": "**Major update: Expanded payment platform support and improved documentation structure.**\n\n- Added dedicated guides for major e-commerce platforms (Shopify, Amazon, WooCommerce, Squarespace, BigCommerce, Wix, Magento, Generic) for better merchant detection and checkout handling.\n- Introduced new agent-specific guides and webhooks documentation for improved extensibility and integration (OPENCLAW, CLAUDE-PLUGIN, WEBHOOK).\n- Streamlined documentation: consolidated procurement/shopping and checkout/platform files into clear, purpose-specific guides.\n- Updated security section to clarify OpenClaw sub-agent isolation and key handling.\n- Removed redundant and obsolete platform/checkouts documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6888e5bc7c5972e0621e20348017ac92e4b9b5a0d2738fb709ce46c29f4e0fe2"
+}

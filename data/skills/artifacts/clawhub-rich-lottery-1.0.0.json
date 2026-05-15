@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rich-lottery@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rich_lottery",
+  "skill": {
+    "id": 63116,
+    "skillKey": "clawhub-rich-lottery",
+    "name": "Rich Lottery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rich-lottery",
+    "url": "https://clawhub.ai/skills/rich-lottery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rich-lottery-2aa99793e5980dd3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🎯 Rich彩票分析 - 双色球/大乐透智能号码推荐，基于历史数据分析"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinboh68-prog",
+      "userId": "publishers:jinboh68-prog",
+      "displayName": "jinboh68-prog",
+      "image": "https://avatars.githubusercontent.com/u/264225243?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 457,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773563129691,
+      "changelog": "Initial release of Rich彩票分析 (rich-lottery):\n\n- Offers intelligent lottery number recommendations for 双色球 and 大乐透 based on historical data analysis.\n- Provides API endpoints for both lottery types with sample output formats.\n- Integrates x402 protocol for secure, on-chain payment: 0.01 USDC per call (Base chain).\n- Clearly states pricing, usage instructions, and wallet information.\n- Includes responsible gambling disclaimer.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b7b77055e5862fc0cc8ed88c97e5035caa048479cc96335ed78f2742d48f24e"
+}

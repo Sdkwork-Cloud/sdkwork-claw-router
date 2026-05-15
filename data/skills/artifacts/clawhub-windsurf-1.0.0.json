@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/windsurf@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windsurf",
+  "skill": {
+    "id": 58775,
+    "skillKey": "clawhub-windsurf",
+    "name": "Windsurf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windsurf",
+    "url": "https://clawhub.ai/skills/windsurf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windsurf-5d0c0ab127fdea24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Windsurf AI IDE 助手，精通 Cascade Agent、AI Flow、规则配置、快捷键"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 304,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774087555581,
+      "changelog": "Windsurf 1.0.0 – Initial Release\n\n- 专为 Codeium Windsurf AI IDE 打造，深度集成 Cascade AI Agent、AI Flow 智能补全、规则与快捷键配置\n- 提供详细 Cascade Agent 使用技巧和多场景应用说明\n- 支持基于 .windsurfrules/全局规则，自定义 AI 输出风格和项目规范\n- 覆盖 Cascade、AI Flow、内联编辑、Chat 面板等核心功能及操作快捷键\n- 与 Cursor 详细对比，便于用户选择\n- 总结最佳实践，适用于团队协作和个人开发",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7fb9f516d824d5eab3db9232634976dcd31c2aeb08712d8cd00865eb57c4cd64"
+}

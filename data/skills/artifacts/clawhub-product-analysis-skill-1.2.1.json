@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/product-analysis-skill@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_analysis_skill",
+  "skill": {
+    "id": 44015,
+    "skillKey": "clawhub-product-analysis-skill",
+    "name": "Product Analysis Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-analysis-skill",
+    "url": "https://clawhub.ai/skills/product-analysis-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-analysis-skill-ce2b00cdad879298.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes market trends and competitor products to provide data-driven recommendations for product selection and optimization."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "534422530",
+      "userId": "s170k9770tgh0506hw0dwtb6pd83kwyq",
+      "displayName": "534422530",
+      "image": "https://avatars.githubusercontent.com/u/82763531?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1777290385429,
+      "changelog": "Version 1.2.1\n\n- No file changes detected.  \n- This release contains no updates to functionality, features, or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c55339ff7b35811054d92494b978bb28d9a4c7e6a54b55af74011bdf5fb4376e"
+}

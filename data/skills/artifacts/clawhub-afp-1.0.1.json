@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afp@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afp",
+  "skill": {
+    "id": 70655,
+    "skillKey": "clawhub-afp",
+    "name": "Afp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afp",
+    "url": "https://clawhub.ai/skills/afp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afp-cf979e9ac9cbbc24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供覆盖200+国家，150+语言的全球新闻和多媒体服务，支持新闻业研究、事实核查和法语媒体影响力分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776963858076,
+      "changelog": "- Updated version in SKILL.md from 1.0.1 to 1.0.0.\n- No changes to content—only the version number was modified.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69665652cf71db990d562da275b2bc9b7f23f6f10b1a7cd64ae154cbe7fa7e87"
+}

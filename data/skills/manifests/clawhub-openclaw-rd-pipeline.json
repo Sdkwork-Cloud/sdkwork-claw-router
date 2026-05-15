@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23010,
+  "uuid": "skill-clawhub-openclaw-rd-pipeline",
+  "skillKey": "clawhub-openclaw-rd-pipeline",
+  "name": "Openclaw Rd Pipeline",
+  "summary": "Orchestrate OpenClaw end-to-end R&D delivery in Feishu from requirement intake to closure using PM, developer, reviewer, and tester subagents. Use when handl...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_rd_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yinlihudong",
+      "features": [
+        "Orchestrate OpenClaw end-to-end R&D delivery in Feishu from requirement intake to closure using.",
+        "Use when handl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-rd-pipeline@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38398281?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-rd-pipeline",
+      "url": "https://clawhub.ai/skills/openclaw-rd-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-rd-pipeline",
+    "url": "https://clawhub.ai/skills/openclaw-rd-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-rd-pipeline-c3f51f7620fe0d47.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-rd-pipeline@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-rd-pipeline-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9621d7fbfb5a82edf5757d51e417ce3b75ad75c6a33caf5b0cbe2014015be285",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T04:41:12.718Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-local@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_local",
+  "skill": {
+    "id": 55827,
+    "skillKey": "clawhub-video-local",
+    "name": "Video Local"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-local",
+    "url": "https://clawhub.ai/skills/video-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-local-fbbff9157ede6c6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim the intro, add background music, and export for YouTube — and get edi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 107,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777228043978,
+      "changelog": "Initial release of Video Local — fast, simple AI-powered editing for local video files.\n\n- Upload MP4, MOV, AVI, or WebM files up to 500MB and get AI-edited videos in 1–2 minutes.\n- Edit by describing your needs (e.g., trim, add audio, export for YouTube) without using complex software.\n- Automatic session and token management for quick onboarding; free token available at startup.\n- Cloud GPU rendering with easy export/download, supporting various formats and quality settings.\n- Simple commands for editing, status check, credits, and export, all managed via a streamlined chat workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fcf8e3d44672a5c8609935270fce74d5de17898a66a57a8c342ac1bc0d661c79"
+}

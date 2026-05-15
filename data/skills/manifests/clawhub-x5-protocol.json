@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41866,
+  "uuid": "skill-clawhub-x5-protocol",
+  "skillKey": "clawhub-x5-protocol",
+  "name": "X5 Protocol Client",
+  "summary": "Send X5 protocol API requests from the terminal. Use this skill whenever the user wants to test, call, or send X5 API requests; parse .x5 files; generate X5...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x5_protocol",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GrowingPPP",
+      "features": [
+        "Send X5 protocol API requests from the terminal",
+        "Use this skill whenever the user wants to test, call, or send X5 API requests",
+        "parse .x5 files",
+        "generate X5..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x5-protocol@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30253998?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x5-protocol",
+      "url": "https://clawhub.ai/skills/x5-protocol"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x5-protocol",
+    "url": "https://clawhub.ai/skills/x5-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x5-protocol-ea51c4a9f9941040.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x5-protocol@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x5-protocol-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc801d2f102d3aaeff34ca8ffcf41a63dec033442c4f45aa4d332a6d3f456bf2",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T07:24:23.082Z"
+}

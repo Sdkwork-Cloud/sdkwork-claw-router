@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73641,
+  "uuid": "skill-clawhub-software-dev-cost-dashboard",
+  "skillKey": "clawhub-software-dev-cost-dashboard",
+  "name": "软件成本评估办法",
+  "summary": "软件成本评估看板。当用户提到软件开发成本评估、项目报价、工时估算、成本分析、立项评估、软件预算时，务必使用此技能。",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.software_dev_cost_dashboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "allinherog-star",
+      "features": [
+        "软件成本评估看板。当用户提到软件开发成本评估、项目报价、工时估算、成本分析、立项评估、软件预算时，务必使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/software-dev-cost-dashboard@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243965348?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "software-dev-cost-dashboard",
+      "url": "https://clawhub.ai/skills/software-dev-cost-dashboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "software-dev-cost-dashboard",
+    "url": "https://clawhub.ai/skills/software-dev-cost-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/software-dev-cost-dashboard-265e231d8f714254.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/software-dev-cost-dashboard@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-software-dev-cost-dashboard-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d619309f3c5f34a95bbf111270fc62851f31d4cfef8555c757df3a258b7606b",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T06:55:10.734Z"
+}

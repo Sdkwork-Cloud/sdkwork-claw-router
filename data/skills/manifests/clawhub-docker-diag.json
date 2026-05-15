@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9775,
+  "uuid": "skill-clawhub-docker-diag",
+  "skillKey": "clawhub-docker-diag",
+  "name": "Docker Diag",
+  "summary": "Advanced log analysis for Docker containers using signal extraction.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_diag",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mkrdiop",
+      "features": [
+        "Advanced log analysis for Docker containers using signal extraction."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docker-diag@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67843975?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docker-diag",
+      "url": "https://clawhub.ai/skills/docker-diag"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-diag",
+    "url": "https://clawhub.ai/skills/docker-diag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-diag-f53a1fb0cf38f6a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docker-diag@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-docker-diag-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c097cbeff99f0542771f393373a8ffbaabd30dab44a3b21b92f09aa7592bbf7",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T18:51:24.425Z"
+}

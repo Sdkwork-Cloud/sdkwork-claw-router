@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59612,
+  "uuid": "skill-clawhub-knowledge-mesh",
+  "skillKey": "clawhub-knowledge-mesh",
+  "name": "知识网格 / Knowledge Mesh",
+  "summary": "知识网格 — 跨平台知识搜索聚合器，统一搜索 GitHub、Stack Overflow、Discord、Confluence、Notion、Slack、百度、Obsidian，支持自学习排序",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_mesh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jun Zhang",
+      "features": [
+        "知识网格 — 跨平台知识搜索聚合器，统一搜索 GitHub、Stack Overflow、Discord、Confluence、Notion、Slack、百度、Obsidian，支持自学习排序"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledge-mesh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11209115?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledge-mesh",
+      "url": "https://clawhub.ai/skills/knowledge-mesh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-mesh",
+    "url": "https://clawhub.ai/skills/knowledge-mesh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-mesh-b083251f1e1c7c26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledge-mesh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-mesh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76130ae43eb63fe5ea3e8d9d18e67f0c3724f804b4372814cc4bc038c2f2c8ea",
+      "artifactSizeBytes": 2568
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T13:43:36.223Z"
+}

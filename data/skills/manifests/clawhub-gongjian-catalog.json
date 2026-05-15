@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71622,
+  "uuid": "skill-clawhub-gongjian-catalog",
+  "skillKey": "clawhub-gongjian-catalog",
+  "name": "臻选顾问",
+  "summary": "臻选顾问 - 共健臻选AI产品顾问，查询保健品信息、推荐产品",
+  "version": "1.20260419.1133",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gongjian_catalog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "foxbabby",
+      "features": [
+        "共健臻选AI产品顾问，查询保健品信息、推荐产品"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gongjian-catalog@1.20260419.1133",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17000435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gongjian-catalog",
+      "url": "https://clawhub.ai/skills/gongjian-catalog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gongjian-catalog",
+    "url": "https://clawhub.ai/skills/gongjian-catalog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gongjian-catalog-5161583ea1378704.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gongjian-catalog@1.20260419.1133",
+      "artifactUrl": "data/skills/artifacts/clawhub-gongjian-catalog-1.20260419.1133.json",
+      "version": "1.20260419.1133",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f58688e032178a5ae7966b2792f3077d60ae9537e3f1702535985be6fb18d33e",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T03:33:27.326Z"
+}

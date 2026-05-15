@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58948,
+  "uuid": "skill-clawhub-test-slug-check-dev",
+  "skillKey": "clawhub-test-slug-check-dev",
+  "name": "Test Slug Check",
+  "summary": "测试 ClawHub slug 命名规范和发布流程",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_slug_check_dev",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "测试 ClawHub slug 命名规范和发布流程"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-slug-check-dev@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-slug-check-dev",
+      "url": "https://clawhub.ai/skills/test-slug-check-dev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-slug-check-dev",
+    "url": "https://clawhub.ai/skills/test-slug-check-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-slug-check-dev-8d09363f77156303.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-slug-check-dev@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-slug-check-dev-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:467a4c9366a5e789a99c0ca55fc7fe6fac2621cfa577f33539f2cdff6afd4014",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T02:13:16.522Z"
+}

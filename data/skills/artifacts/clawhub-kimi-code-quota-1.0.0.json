@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kimi-code-quota@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kimi_code_quota",
+  "skill": {
+    "id": 32181,
+    "skillKey": "clawhub-kimi-code-quota",
+    "name": "Kimi Code Quota"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kimi-code-quota",
+    "url": "https://clawhub.ai/skills/kimi-code-quota",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kimi-code-quota-591ebd661fb792f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Kimi Code Plan quota and usage information. Use when the user wants to check their Kimi Code subscription quota, usage percentage, reset time, or API k..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "doraohm1",
+      "userId": "s17exbmwmhv36bgxevfxmsven983r81g",
+      "displayName": "doraohm1",
+      "image": "https://avatars.githubusercontent.com/u/220819121?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774672061142,
+      "changelog": "kimi-code-quota 1.0.0 - Initial Release\n\n- Introduces a skill to query and report Kimi Code Plan subscription quota, usage percentage, and API Keys status.\n- Supports both login-guided and logged-in user flows.\n- Gathers and summarizes key information: weekly usage, rate limits, membership level, model access, API Key details.\n- Triggered by keywords such as “kimi code额度”, “查看kimi code”, and related phrases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0cf52d23a37a119b371c812721c7b87828efe20893e287955a6a9fb746ffae1"
+}

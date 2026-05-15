@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-test-pool@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_test_pool",
+  "skill": {
+    "id": 17102,
+    "skillKey": "clawhub-create-test-pool",
+    "name": "Uniswap Create Test Pool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-test-pool",
+    "url": "https://clawhub.ai/skills/create-test-pool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-test-pool-685b8a3df57a809d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy a custom Uniswap pool on the local testnet with configurable parameters. Create pools with specific conditions (thin liquidity, wide spreads, exact tick ranges) to test agent behavior under controlled scenarios. Requires a running l."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 815,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770745264422,
+      "changelog": "Initial release: Easily deploy custom Uniswap pools on a local testnet with configurable parameters for controlled agent testing.\n\n- Deploys V2 or V3 pools with chosen tokens, price, fee, liquidity, and tick range.\n- Resolves token addresses/symbols, sets up initial liquidity, and auto-funds test accounts.\n- Handles price-to-tick math, token sorting, and selects defaults for sensible edge-case testing.\n- Includes built-in error handling and next-step guidance after pool creation.\n- Requires a running local testnet; suggests setup if not detected.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5440e4ef3ae8ae27112ce9e805c264bedca3f62f716548409d4baee9fa34f57c"
+}

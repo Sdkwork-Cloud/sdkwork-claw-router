@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59025,
+  "uuid": "skill-clawhub-double-search",
+  "skillKey": "clawhub-double-search",
+  "name": "Double search（Tavily + Kimi）",
+  "summary": "双搜索功能 (Tavily + Kimi) - 支持并行搜索和结果合并",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.double_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wjs028-coder",
+      "features": [
+        "双搜索功能 (Tavily + Kimi)",
+        "支持并行搜索和结果合并"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/double-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268494385?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "double-search",
+      "url": "https://clawhub.ai/skills/double-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "double-search",
+    "url": "https://clawhub.ai/skills/double-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/double-search-7b14a1e7c00ee60e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/double-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-double-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:087e60d4fea3e0c78e47f1b3a151dc5143a00b0418f20afbfbea64ff6ed75ebd",
+      "artifactSizeBytes": 2294
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T04:52:17.660Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30089,
+  "uuid": "skill-clawhub-ipinfoio",
+  "skillKey": "clawhub-ipinfoio",
+  "name": "Ipinfoio",
+  "summary": "IPinfo.io integration. Manage Domains, ASNs, Companies. Use when the user wants to interact with IPinfo.io data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ipinfoio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "IPinfo.io integration",
+        "Manage Domains, ASNs, Companies",
+        "Use when the user wants to interact with IPinfo.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ipinfoio@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ipinfoio",
+      "url": "https://clawhub.ai/skills/ipinfoio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ipinfoio",
+    "url": "https://clawhub.ai/skills/ipinfoio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ipinfoio-2e5dfecc9ebd9bce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ipinfoio@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ipinfoio-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41748db21dfe3b59bb8e36fef5c1980da27c851f366470e29b2bb3a9928c8359",
+      "artifactSizeBytes": 1827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:38:30.968Z"
+}

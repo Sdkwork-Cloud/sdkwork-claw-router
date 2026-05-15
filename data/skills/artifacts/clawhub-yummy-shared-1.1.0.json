@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yummy-shared@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yummy_shared",
+  "skill": {
+    "id": 38111,
+    "skillKey": "clawhub-yummy-shared",
+    "name": "Yummy Shared"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yummy-shared",
+    "url": "https://clawhub.ai/skills/yummy-shared",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yummy-shared-c8e3ba8b95b95bc1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when operating yummycli for the first time, checking Gemini credential status, handling yummycli JSON command output, or applying shared CLI safety rules..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yummysource",
+      "userId": "s171xbx4pasz0j8j5j3nct0cs984p697",
+      "displayName": "yummysource",
+      "image": "https://avatars.githubusercontent.com/u/260192779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776412410464,
+      "changelog": "- Expanded output contract documentation to include both image and video JSON response examples.\n- Clarified that all `yummycli` generation commands return JSON on stdout, not just image commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1703213e863245bbeace001b47069b0ff6adb389058a6cddc18891c112fe8aa"
+}

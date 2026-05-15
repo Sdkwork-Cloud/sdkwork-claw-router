@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63030,
+  "uuid": "skill-clawhub-proxy-ip-manager",
+  "skillKey": "clawhub-proxy-ip-manager",
+  "name": "kuaidaili-proxy-ip-manager",
+  "summary": "快代理(Kuaidaili)智能管理技能，专为快代理用户设计。支持API配置、订单信息获取、到期提醒、IP健康检测、智能并发调度、使用统计。触发场景：(1) 用户提及\"快代理\"、\"kuaidaili\"、\"kdlapi\"、\"代理IP\"；(2) 用户需要检查快代理订单状态、IP质量、并发设置；(3) 用户使用命令 s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxy_ip_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kuaidaili-ai",
+      "features": [
+        "快代理(Kuaidaili)智能管理技能，专为快代理用户设计。支持API配置、订单信息获取、到期提醒、IP健康检测、智能并发调度、使用统计。触发场景：(1) 用户提及\"快代理\"、\"kuaid."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proxy-ip-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/273062336?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proxy-ip-manager",
+      "url": "https://clawhub.ai/skills/proxy-ip-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxy-ip-manager",
+    "url": "https://clawhub.ai/skills/proxy-ip-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxy-ip-manager-3350572cf370d1c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proxy-ip-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proxy-ip-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5bd0e1a2bbe72d06bf64852f72295f27d8afa00f58e2c804117e7d0d6ff6ede",
+      "artifactSizeBytes": 2627
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T07:54:35.157Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49331,
+  "uuid": "skill-clawhub-justoneapi-tiktok-get-post-sub-comment",
+  "skillKey": "clawhub-justoneapi-tiktok-get-post-sub-comment",
+  "name": "TikTok Comment Replies API",
+  "summary": "Call GET /api/tiktok/get-post-sub-comment/v1 for TikTok Comment Replies through JustOneAPI with awemeId and commentId.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_tiktok_get_post_sub_comment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/tiktok/get-post-sub-comment/v1 for TikTok Comment Replies through JustOneAPI with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-tiktok-get-post-sub-comment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-tiktok-get-post-sub-comment",
+      "url": "https://clawhub.ai/skills/justoneapi-tiktok-get-post-sub-comment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-tiktok-get-post-sub-comment",
+    "url": "https://clawhub.ai/skills/justoneapi-tiktok-get-post-sub-comment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-tiktok-get-post-sub-comment-a9557e33ea98f229.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-tiktok-get-post-sub-comment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-tiktok-get-post-sub-comment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc819bc63f3d8cb773ca7e8539c2fc804f8c3a1f7c6bdcd44695ca65fbd0172c",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T09:31:53.935Z"
+}

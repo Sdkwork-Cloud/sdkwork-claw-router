@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/futu-trading-bot@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.futu_trading_bot",
+  "skill": {
+    "id": 16052,
+    "skillKey": "clawhub-futu-trading-bot",
+    "name": "Futu Trading Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "futu-trading-bot",
+    "url": "https://clawhub.ai/skills/futu-trading-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/futu-trading-bot-392d0e52d06451bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Futu Trade Bot Skills to run account, quote, and trade workflows with real HK market data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeffersonling1217-png",
+      "userId": "s178bcyctp44ydnda4m1apj4hx83hv3f",
+      "displayName": "AlienTree",
+      "image": "https://avatars.githubusercontent.com/u/235218406?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 783,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1774319399800,
+      "changelog": "Docs: sync latest README/docs; add strategy helpers and runtime; add unified quote/orderbook stream startup",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70b03ab7bca7bf56719b2a745f6bb3bfe28e86ecb09b1e78be2780bfd203760d"
+}

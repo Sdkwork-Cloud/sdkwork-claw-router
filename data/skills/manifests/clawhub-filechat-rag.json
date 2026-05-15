@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32543,
+  "uuid": "skill-clawhub-filechat-rag",
+  "skillKey": "clawhub-filechat-rag",
+  "name": "Filechat",
+  "summary": "Search, retrieve, and chat with documents securely stored in ANY Google Drive folder using semantic vector search (RAG). Use when: (1) a user asks to save a...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.filechat_rag",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eladrave",
+      "features": [
+        "Search, retrieve, and chat with documents securely stored in ANY Google Drive folder using sema.",
+        "Use when: (1) a user asks to save a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/filechat-rag@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86946294?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "filechat-rag",
+      "url": "https://clawhub.ai/skills/filechat-rag"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "filechat-rag",
+    "url": "https://clawhub.ai/skills/filechat-rag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/filechat-rag-9fa8cc869b6c1a5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/filechat-rag@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-filechat-rag-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae5408a6c6790e99b6ca1ac64f7595377be81b0c176c051105399a89526375ec",
+      "artifactSizeBytes": 2420
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T21:14:38.990Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16627,
+  "uuid": "skill-clawhub-autonomy-windowed",
+  "skillKey": "clawhub-autonomy-windowed",
+  "name": "Windowed Autonomy",
+  "summary": "Time-windowed autonomous task queue. Autonomy works only during specific time windows (e.g., 8 AM - 8 PM UTC), while cron jobs run overnight. Separates conce...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomy_windowed",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luciusrockwing",
+      "features": [
+        "Time-windowed autonomous task queue",
+        "Autonomy works only during specific time windows (e.g., 8 AM",
+        "8 PM UTC), while cron jobs run overnight",
+        "Separates conce..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autonomy-windowed@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2353385?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autonomy-windowed",
+      "url": "https://clawhub.ai/skills/autonomy-windowed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomy-windowed",
+    "url": "https://clawhub.ai/skills/autonomy-windowed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomy-windowed-a77d2d7f658e2629.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autonomy-windowed@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-autonomy-windowed-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b2bd021b957e10bc545601b319cf8363e4cf64448869efbb7eb909912f60798",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T01:57:44.302Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/invoice-chaser-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_chaser_pro",
+  "skill": {
+    "id": 38904,
+    "skillKey": "clawhub-invoice-chaser-pro",
+    "name": "Invoice Chaser Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-chaser-pro",
+    "url": "https://clawhub.ai/skills/invoice-chaser-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-chaser-pro-c2010226cf456023.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate escalating payment reminder emails that match days-past-due. Four stages: friendly, firm, urgent, final notice. Supports contractor, professional, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "josh4hire",
+      "userId": "s17e3nrp9yyqpwghyh4fmtht9d83h6vq",
+      "displayName": "josh4hire",
+      "image": "https://avatars.githubusercontent.com/u/176786426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774327879906,
+      "changelog": "Initial release of Invoice Chaser.\n\n- Generates escalating payment reminder emails based on days overdue, with four stages: friendly, firm, urgent, and final.\n- Supports contractor, professional, and general business verticals with tailored templates and tones.\n- Gathers key invoice and client details, never fabricating missing information.\n- Includes payment and payment plan links if provided.\n- Responds to common invoice and collections triggers; outputs emails in a standardized format.\n- Offers full sequence generation and lets users adjust tone or stage as needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f03510dd06b205d9f21febee1915e935c6e3c0dd1143560c3179791137ea2da6"
+}

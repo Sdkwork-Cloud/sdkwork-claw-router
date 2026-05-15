@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lifi-skill@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lifi_skill",
+  "skill": {
+    "id": 9856,
+    "skillKey": "clawhub-lifi-skill",
+    "name": "LI.FI Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lifi-skill",
+    "url": "https://clawhub.ai/skills/lifi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lifi-skill-c6cce53045cd2a50.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "v4 - Use LI.FI API for cross-chain and same-chain swaps, bridges, and contract calls. Use when quoting routes, validating chains/tokens, building transaction requests, and tracking status."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fabriziogianni7",
+      "userId": "publishers:fabriziogianni7",
+      "displayName": "fabriziogianni7",
+      "image": "https://avatars.githubusercontent.com/u/46995085?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2975,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1770541979786,
+      "changelog": "LI.FI Skill 2.0.1 Changelog\n\n- Major skill rewrite with stricter security and usage rules for all DeFi swaps and bridges.\n- Default slippage increased to 10%; dynamically adjustable if user requests.\n- All /v1/quote requests now require &skipSimulation=true to ensure compatibility with delegated wallets.\n- Explicit support and special instructions for Sui chain swaps and bridging (chain ID 9270000000000000).\n- Clear separation for handling ERC-20 approval flows, ensuring all approvals use provided tools.\n- After transaction, always return a clickable block explorer link for easy tracking.\n- Only documented LI.FI API endpoints may be used; no guessing or external API calls.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d6617c6037a2cd76aa44dbd93fa15e487ac7dec91be7879959d6870aea73c91b"
+}

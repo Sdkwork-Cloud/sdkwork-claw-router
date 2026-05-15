@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37292,
+  "uuid": "skill-clawhub-businesslogic",
+  "skillKey": "clawhub-businesslogic",
+  "name": "Businesslogic",
+  "summary": "BusinessLogic integration. Manage data, records, and automate workflows. Use when the user wants to interact with BusinessLogic data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.businesslogic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "BusinessLogic integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with BusinessLogic data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/businesslogic@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "businesslogic",
+      "url": "https://clawhub.ai/skills/businesslogic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "businesslogic",
+    "url": "https://clawhub.ai/skills/businesslogic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/businesslogic-19245b3f179236d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/businesslogic@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-businesslogic-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4b4c657d8117a952ca64d67e30d6f7f30f587aba69f356daff52db7629a3490",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:26:55.046Z"
+}

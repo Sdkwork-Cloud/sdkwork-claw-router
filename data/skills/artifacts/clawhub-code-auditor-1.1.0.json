@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-auditor@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_auditor",
+  "skill": {
+    "id": 20874,
+    "skillKey": "clawhub-code-auditor",
+    "name": "Code Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-auditor",
+    "url": "https://clawhub.ai/skills/code-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-auditor-375dbf97d107c1ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit any GitHub repo or raw code for security, quality, or gas optimization. Returns score, findings, severity counts, and summary."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "unixlamadev-spec",
+      "userId": "s173nr0teechvmbjjz4j5r9nen83gjtb",
+      "displayName": "unixlamadev-spec",
+      "image": "https://avatars.githubusercontent.com/u/251052015?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 494,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773473705011,
+      "changelog": "Now supports model selection — specify any of 19 models across 5 providers per request (e.g. gemini-2.5-flash, mistral-large-latest, claude-opus-4-5-20251101)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3a43aa47cefc00c745026585223470d1242b6ab20e2f8aeee3945f57cfc0454"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63664,
+  "uuid": "skill-clawhub-memory-integration",
+  "skillKey": "clawhub-memory-integration",
+  "name": "Memory Integration",
+  "summary": "同步 OpenClaw 记忆文件到共现图和语义向量库，支持增量更新及语义加共现的统一搜索接口。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whoisme007",
+      "features": [
+        "同步 OpenClaw 记忆文件到共现图和语义向量库，支持增量更新及语义加共现的统一搜索接口。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-integration@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6497382?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-integration",
+      "url": "https://clawhub.ai/skills/memory-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-integration",
+    "url": "https://clawhub.ai/skills/memory-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-integration-42596842b0d30287.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-integration@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-integration-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73e5960a30aa0a2d9e008bcdcae25303fdf0fbec3a7249d9db837ab06963e6d4",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:47:35.176Z"
+}

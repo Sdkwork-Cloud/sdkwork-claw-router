@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72895,
+  "uuid": "skill-clawhub-intelligent-diagnosis-report",
+  "skillKey": "clawhub-intelligent-diagnosis-report",
+  "name": "创建智能诊断报告",
+  "summary": "域名测试",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intelligent_diagnosis_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jim Adara",
+      "features": [],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intelligent-diagnosis-report@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48739679?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intelligent-diagnosis-report",
+      "url": "https://clawhub.ai/skills/intelligent-diagnosis-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intelligent-diagnosis-report",
+    "url": "https://clawhub.ai/skills/intelligent-diagnosis-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intelligent-diagnosis-report-d0250679fd2301f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intelligent-diagnosis-report@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-intelligent-diagnosis-report-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cca5148f8604bc7d3f12d61d4aeacf2529ddd87cfecaa04102f6f3f4cf4691ad",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T08:50:44.934Z"
+}

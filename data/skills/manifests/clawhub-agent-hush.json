@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23109,
+  "uuid": "skill-clawhub-agent-hush",
+  "skillKey": "clawhub-agent-hush",
+  "name": "Agent Hush",
+  "summary": "Invisible privacy guardian for agent workspaces. Automatically intercepts outbound actions (git push, skill publish, file sharing) and checks for sensitive d...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_hush",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Elliot Liu",
+      "features": [
+        "Invisible privacy guardian for agent workspaces",
+        "Automatically intercepts outbound actions (git push, skill publish, file sharing) and checks fo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-hush@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55885132?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-hush",
+      "url": "https://clawhub.ai/skills/agent-hush"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-hush",
+    "url": "https://clawhub.ai/skills/agent-hush",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-hush-701e946ee3d9c0bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-hush@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-hush-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18387acada4d5a72e17b32f94a2dbba0a7c980e4deae47b7dde4bd3afc87485c",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T05:04:10.464Z"
+}

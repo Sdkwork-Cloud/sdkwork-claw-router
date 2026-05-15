@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52545,
+  "uuid": "skill-clawhub-wcs-helper-server-skill",
+  "skillKey": "clawhub-wcs-helper-server-skill",
+  "name": "Wcs Helper Server Skill",
+  "summary": "Your server's automatic caretaker — checks CPU, memory, and disk health, alerts you only when real action is needed. Use when: server feels slow, a cron job...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wcs_helper_server_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "无上宗师",
+      "features": [
+        "Your server's automatic caretaker — checks CPU, memory, and disk health, alerts you only when r.",
+        "Use when: server feels slow, a cron job..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wcs-helper-server-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49145037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wcs-helper-server-skill",
+      "url": "https://clawhub.ai/skills/wcs-helper-server-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wcs-helper-server-skill",
+    "url": "https://clawhub.ai/skills/wcs-helper-server-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wcs-helper-server-skill-f53164a4fc04b0d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wcs-helper-server-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wcs-helper-server-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d0c574e0c942e3224d4bd1a17b475cf8eb771bbe1f472352286ccb9353f5ad2",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T08:34:18.208Z"
+}

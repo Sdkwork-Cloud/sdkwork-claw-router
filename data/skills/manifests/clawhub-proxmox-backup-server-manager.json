@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40881,
+  "uuid": "skill-clawhub-proxmox-backup-server-manager",
+  "skillKey": "clawhub-proxmox-backup-server-manager",
+  "name": "Proxmox Backup Server Manager",
+  "summary": "Create and manage Proxmox Backup Server (PBS) backups for VMs and LXC containers. Guided first-time setup including PBS installation, NAS storage, Proxmox ho...",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxmox_backup_server_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MaikiMolto",
+      "features": [
+        "Create and manage Proxmox Backup Server (PBS) backups for VMs and LXC containers",
+        "Guided first-time setup including PBS installation, NAS storage, Proxmox ho..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proxmox-backup-server-manager@1.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150596096?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proxmox-backup-server-manager",
+      "url": "https://clawhub.ai/skills/proxmox-backup-server-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxmox-backup-server-manager",
+    "url": "https://clawhub.ai/skills/proxmox-backup-server-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxmox-backup-server-manager-b5dddfda15e181b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proxmox-backup-server-manager@1.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proxmox-backup-server-manager-1.6.0.json",
+      "version": "1.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:405cde3a6da50dfa3445adf4bfbaea861bbeb8bb59ccca74132a48246fb824fc",
+      "artifactSizeBytes": 2315
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T13:16:08.387Z"
+}

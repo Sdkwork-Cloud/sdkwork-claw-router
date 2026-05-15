@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24369,
+  "uuid": "skill-clawhub-agent-forge",
+  "skillKey": "clawhub-agent-forge",
+  "name": "Agent Forge",
+  "summary": "Create and deploy independent OpenClaw agents via an 11-step interview, generating personalized files, configuring tools, channels, permissions, and updating...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_forge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "limoxt",
+      "features": [
+        "Create and deploy independent OpenClaw agents via an 11-step interview, generating personalized."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-forge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102217440?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-forge",
+      "url": "https://clawhub.ai/skills/agent-forge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-forge",
+    "url": "https://clawhub.ai/skills/agent-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-forge-f3a8cfece8813c8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-forge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-forge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c73920bdc5807c8bf8c3fcd238bcf05818e3bc557eb8e42b9a99f3950200f3ac",
+      "artifactSizeBytes": 1846
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T17:03:16.145Z"
+}

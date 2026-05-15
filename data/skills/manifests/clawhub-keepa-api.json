@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63034,
+  "uuid": "skill-clawhub-keepa-api",
+  "skillKey": "clawhub-keepa-api",
+  "name": "Keepa Api",
+  "summary": "Keepa API 客户端 - 亚马逊产品价格历史追踪工具。提供 ASIN 查询、价格历史等数据查询功能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keepa_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yang Jun",
+      "features": [
+        "Keepa API 客户端",
+        "亚马逊产品价格历史追踪工具。提供 ASIN 查询、价格历史等数据查询功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/keepa-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/815438?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "keepa-api",
+      "url": "https://clawhub.ai/skills/keepa-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keepa-api",
+    "url": "https://clawhub.ai/skills/keepa-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keepa-api-b5b8bc51d9864293.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/keepa-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-keepa-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e876b89262fcd77ba32e40b4e5e787f061d5cb67f3525413de5bb55c3e847de6",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T11:46:48.294Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54630,
+  "uuid": "skill-clawhub-spring-hotel",
+  "skillKey": "clawhub-spring-hotel",
+  "name": "Book Hotels with Hot Spring Baths — Onsen Pools, Private Hot Spring Rooms, Ryokan Stays",
+  "summary": "Find and book hotels with hot spring baths — onsen pools, private hot spring rooms, ryokan stays, thermal spa resorts. Also supports: flight booking, hotel r...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spring_hotel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiejinsong",
+      "features": [
+        "Find and book hotels with hot spring baths — onsen pools, private hot spring rooms, ryokan stay.",
+        "Also supports: flight booking, hotel r..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spring-hotel@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1642572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spring-hotel",
+      "url": "https://clawhub.ai/skills/spring-hotel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spring-hotel",
+    "url": "https://clawhub.ai/skills/spring-hotel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spring-hotel-a375785149503620.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spring-hotel@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spring-hotel-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:effce3d3675f08a0d50efb020e5a3511b330dd7ed63695c9d84e00dab906d122",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T13:41:59.482Z"
+}

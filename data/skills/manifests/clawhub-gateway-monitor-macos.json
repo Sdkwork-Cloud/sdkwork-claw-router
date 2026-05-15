@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18857,
+  "uuid": "skill-clawhub-gateway-monitor-macos",
+  "skillKey": "clawhub-gateway-monitor-macos",
+  "name": "Gateway Monitor (macOS)",
+  "summary": "Install and operate a local OpenClaw Gateway Monitor stack on macOS with LaunchAgent + watchdog. Use when setting up, repairing, or validating gateway-monito...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gateway_monitor_macos",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yes999zc",
+      "features": [
+        "Install and operate a local OpenClaw Gateway Monitor stack on macOS with LaunchAgent + watchdog",
+        "Use when setting up, repairing, or validating gateway-monito..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gateway-monitor-macos@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127926029?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gateway-monitor-macos",
+      "url": "https://clawhub.ai/skills/gateway-monitor-macos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gateway-monitor-macos",
+    "url": "https://clawhub.ai/skills/gateway-monitor-macos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gateway-monitor-macos-034266d7b8089da0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gateway-monitor-macos@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gateway-monitor-macos-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e54f94ebe9421ac8d8fd5cc7b509534a5e8fdfaf1d1b57a3d268c801f8bf6a15",
+      "artifactSizeBytes": 2047
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T16:31:50.001Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kai-master-builder@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kai_master_builder",
+  "skill": {
+    "id": 28890,
+    "skillKey": "clawhub-kai-master-builder",
+    "name": "Kai Master Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kai-master-builder",
+    "url": "https://clawhub.ai/skills/kai-master-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kai-master-builder-a97182e03679fcff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Developer, Code, Engineer. Guide the Agent to build apps/features/goals efficiently and securely. Creates project plans, task lists, and provides building pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ogdegenblaze",
+      "userId": "publishers:ogdegenblaze",
+      "displayName": "Blaze🔥",
+      "image": "https://avatars.githubusercontent.com/u/9932412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774005043616,
+      "changelog": "- Added keywords \"Developer, Code, Engineer\" to the skill description for improved discoverability.\n- No functional or process changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:40bca3960544afecfb53084910d25b33da1c5dce16db48bc8cbff70ea67c2f59"
+}

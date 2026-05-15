@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-zulip-channel@2026.4.7",
+  "version": "2026.4.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_zulip_channel",
+  "skill": {
+    "id": 30470,
+    "skillKey": "clawhub-openclaw-zulip-channel",
+    "name": "OpenClaw Zulip Channel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-zulip-channel",
+    "url": "https://clawhub.ai/skills/openclaw-zulip-channel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-zulip-channel-e9a42ec5b10e774f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and configure the OpenClaw Zulip channel plugin from npm. Use when OpenClaw needs to add Zulip support, switch from a local path install to the publi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ftlc-ian",
+      "userId": "s173nqswybpdm2ccrqecba915984da1m",
+      "displayName": "FtlC-ian",
+      "image": "https://avatars.githubusercontent.com/u/40432656?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2026.4.7",
+      "createdAt": 1775605575953,
+      "changelog": "Add explicit MIT license file so registry metadata matches the published Zulip plugin license.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab18551026bdfa03c312d4c27eb6b097f58303a935d2aa4ec33244df95566787"
+}

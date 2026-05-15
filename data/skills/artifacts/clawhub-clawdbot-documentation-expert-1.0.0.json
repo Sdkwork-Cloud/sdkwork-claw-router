@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdbot-documentation-expert@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdbot_documentation_expert",
+  "skill": {
+    "id": 9056,
+    "skillKey": "clawhub-clawdbot-documentation-expert",
+    "name": "Clawdbot Documentation Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdbot-documentation-expert",
+    "url": "https://clawhub.ai/skills/clawdbot-documentation-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdbot-documentation-expert-27cb417c880027d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert guidance on navigating, understanding, configuring, troubleshooting, and automating Clawdbot using official documentation and config snippets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "janhcla",
+      "userId": "publishers:janhcla",
+      "displayName": "janhcla",
+      "image": "https://avatars.githubusercontent.com/u/95102948?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 4733,
+      "installsAllTime": 47,
+      "installsCurrent": 46,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768237244010,
+      "changelog": "- Initial release of Clawdbot Documentation Expert skill.\n- Provides a decision tree to help users find relevant Clawdbot documentation by topic or problem.\n- Lists core scripts for searching, indexing, and tracking changes in documentation.\n- Gives summaries of all major documentation categories.\n- Offers instructions for sharing config snippets and linking to source docs.\n- Includes example interactions to guide usage and troubleshooting steps.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7dfe1df363d6d832e3f0b75b597b20a7c7036020c6c81280b8e1c07ec3004ddf"
+}

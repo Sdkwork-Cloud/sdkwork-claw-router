@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geepers-data@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geepers_data",
+  "skill": {
+    "id": 51786,
+    "skillKey": "clawhub-geepers-data",
+    "name": "Geepers Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geepers-data",
+    "url": "https://clawhub.ai/skills/geepers-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geepers-data-611d3cd5645390b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch structured data from 17 authoritative APIs — arXiv, Census Bureau, GitHub, NASA, Wikipedia, PubMed, news, weather, finance, FEC, and more — through a s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lukeslp",
+      "userId": "publishers:lukeslp",
+      "displayName": "Lucas Steuber",
+      "image": "https://avatars.githubusercontent.com/u/78874798?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 846,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771397533298,
+      "changelog": "geepers-data 1.0.0 – Initial Release\n\n- Unified access to 17 authoritative data sources (arXiv, Census Bureau, NASA, Wikipedia, GitHub, PubMed, finance, weather, news, and more).\n- Simple authentication and endpoint structure for both source listing and cross-source searching.\n- Designed for research, visualizations, and data analysis needing verified external data.\n- Provides clear usage guidance and a comprehensive source table.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d5d4c6f91ef9a6e55f653e9e7c3955e41c5457e1560463ad051cc1e9aed079d8"
+}

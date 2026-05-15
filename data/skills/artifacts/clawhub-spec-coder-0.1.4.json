@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spec-coder@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spec_coder",
+  "skill": {
+    "id": 27603,
+    "skillKey": "clawhub-spec-coder",
+    "name": "Spec Coder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spec-coder",
+    "url": "https://clawhub.ai/skills/spec-coder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spec-coder-3216391aa643d504.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured spec-first development workflow with multi-role expert review gates: clarify requirements, author spec documents (requirements/design/tasks), gene..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xhuaustc",
+      "userId": "s17e7je7mwrfq3h85z06vmn7ss83wgpk",
+      "displayName": "Pan Xiaohua",
+      "image": "https://avatars.githubusercontent.com/u/2708612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1775011776329,
+      "changelog": "spec-coder 1.0.0\n\n- Clarified file reading rules: explicitly skip `specs/changes/archive/` (ignore archived/merged changes).\n- All workflows and usage instructions unchanged except for archive exclusion.\n- No file changes or functionality updates outside documentation clarification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b61b0abda466cc9590195f11d3355f22a6c6b058649e73daec7365cc96c8efc4"
+}

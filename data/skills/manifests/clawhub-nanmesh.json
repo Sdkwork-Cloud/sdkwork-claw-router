@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26802,
+  "uuid": "skill-clawhub-nanmesh",
+  "skillKey": "clawhub-nanmesh",
+  "name": "Nanmesh",
+  "summary": "Connect to the NaN Mesh trust network to search entities, compare tools, get AI recommendations, review products, and post trust-backed content.",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nanmesh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wayne Ma",
+      "features": [
+        "Connect to the NaN Mesh trust network to search entities, compare tools, get AI recommendations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nanmesh@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14896569?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nanmesh",
+      "url": "https://clawhub.ai/skills/nanmesh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nanmesh",
+    "url": "https://clawhub.ai/skills/nanmesh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nanmesh-0b8aedab35a21f76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nanmesh@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nanmesh-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:120549fd3da2dd3e3649086ebab1a29372f9ccb4b5ab89eeddf139b3ba431ec3",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T17:33:10.473Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/garmin-tracker@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.garmin_tracker",
+  "skill": {
+    "id": 16687,
+    "skillKey": "clawhub-garmin-tracker",
+    "name": "Garmin Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "garmin-tracker",
+    "url": "https://clawhub.ai/skills/garmin-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/garmin-tracker-d577a53f6f32422c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rebuild and maintain garmin_tracking.json from Garmin web data (activities + training plan) with a fixed schema from 2026-02-01."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ricardotrevisan",
+      "userId": "publishers:ricardotrevisan",
+      "displayName": "Ricardo Trevisan",
+      "image": "https://avatars.githubusercontent.com/u/1165694?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 859,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771276613468,
+      "changelog": "Hardened auth/config handling: removed implicit env fallbacks, moved to explicit CLI flags for credentials/config, added required runtime bins metadata, and aligned docs/messages with behavior.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:69b2388d899f8c78b08f3bf259bcb92ae67227d7b1a28f395eab9885448f01c5"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-reader@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_reader",
+  "skill": {
+    "id": 12711,
+    "skillKey": "clawhub-x-reader",
+    "name": "X Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-reader",
+    "url": "https://clawhub.ai/skills/x-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-reader-18cd5f7aa8c30707.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch, transcribe, and analyze content from URLs, files, or transcripts across multiple platforms, providing personalized, multi-dimensional insights."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lifecn",
+      "userId": "publishers:lifecn",
+      "displayName": "Yujun",
+      "image": "https://avatars.githubusercontent.com/u/4187101?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1361,
+      "installsAllTime": 23,
+      "installsCurrent": 22,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1772352805352,
+      "changelog": "x-reader 0.2.0\n\n- Added detailed SKILL.md documentation outlining triggers, analysis pipeline, output modes, and customization options.\n- Clarified supported platforms for content extraction and transcription, with toolchains for each type (web, file, transcript).\n- Introduced customizable multi-dimensional analysis with guidance for domain-specific adaptation.\n- Defined best practices for actionable, sourced analysis with ROI consideration.\n- Listed dependencies and provided links for source code and issue tracking.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:548484fe5c9e14f393f6054217aadddd9f1d605419afeb8c8425771f0b577fdd"
+}

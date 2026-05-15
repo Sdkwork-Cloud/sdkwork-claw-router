@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quick-capture@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quick_capture",
+  "skill": {
+    "id": 65627,
+    "skillKey": "clawhub-quick-capture",
+    "name": "Quick Capture"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quick-capture",
+    "url": "https://clawhub.ai/skills/quick-capture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quick-capture-3fdf52c02c3e48c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "帮用户把信息写入笔记系统：碎片化信息原样追加到当日 Journal（不改），待整理的笔记归纳成结构化知识写到 Inbox（要完善）。触发于：记笔记、记碎片、存一下、写到 inbox/journal 等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daowuu",
+      "userId": "s17ekd62805dxqaxqw8vt41qds83h8aa",
+      "displayName": "wuu Dao",
+      "image": "https://avatars.githubusercontent.com/u/74347577?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774526609356,
+      "changelog": "Initial release: quickly capture notes to Journal or Inbox",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9d8efbcdf5ed209d2eabcdb53854baf43399c14746e54fb6bcd435d5b649ea2"
+}

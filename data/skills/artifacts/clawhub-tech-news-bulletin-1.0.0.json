@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tech-news-bulletin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_news_bulletin",
+  "skill": {
+    "id": 42601,
+    "skillKey": "clawhub-tech-news-bulletin",
+    "name": "tech-news-bulletin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-news-bulletin",
+    "url": "https://clawhub.ai/skills/tech-news-bulletin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-news-bulletin-0bf71ac0aba6a174.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Collect latest technology and AI news from RSS feeds AND the TLDR.tech AI newsletter, merge them into a unified daily digest, and send via email."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "juniarto-samsudin",
+      "userId": "s174mykysvtqs6wk761brwry4583jxrr",
+      "displayName": "juniarto-samsudin",
+      "image": "https://avatars.githubusercontent.com/u/34150708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774248117216,
+      "changelog": "Initial release of tech-news-bulletin skill:\n\n- Collects latest technology and AI news from selected RSS feeds and the TLDR.tech AI newsletter.\n- Merges, deduplicates, and summarizes articles, generating a daily HTML email digest.\n- Supports per-article source badges (RSS feed name or \"TLDR AI\") and strips sponsor content from TLDR.\n- Sends digest via SMTP to configured email addresses.\n- Provides configurable sources, email recipients, digest length, and supports direct or scheduled (cron) execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb91b952273903396934b7d3983b15180d0dfe4e07e52d1dd5683865dd23842b"
+}

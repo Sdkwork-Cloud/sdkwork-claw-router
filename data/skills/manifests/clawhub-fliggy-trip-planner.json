@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68537,
+  "uuid": "skill-clawhub-fliggy-trip-planner",
+  "skillKey": "clawhub-fliggy-trip-planner",
+  "name": "fliggy-trip-planner",
+  "summary": "智能行程规划师，整合航班、酒店、景点数据，一键生成完整旅行方案。当用户需要规划旅行行程、制定旅游计划、安排度假方案或询问\"去哪里玩\"\"怎么安排行程\"时使用此 skill。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fliggy_trip_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "厉云涵",
+      "features": [
+        "智能行程规划师，整合航班、酒店、景点数据，一键生成完整旅行方案。当用户需要规划旅行行程、制定旅游计划、安排度假方案或询问\"去哪里玩\"\"怎么安排行程\"时使用此 skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fliggy-trip-planner@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5434045?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fliggy-trip-planner",
+      "url": "https://clawhub.ai/skills/fliggy-trip-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fliggy-trip-planner",
+    "url": "https://clawhub.ai/skills/fliggy-trip-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fliggy-trip-planner-550977194f90fb6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fliggy-trip-planner@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fliggy-trip-planner-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a96d92cad89059da731adaed66e9be1767058b8189727a226be265e667431e72",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T08:08:19.508Z"
+}

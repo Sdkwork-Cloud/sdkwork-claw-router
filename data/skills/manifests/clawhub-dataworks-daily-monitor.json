@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62850,
+  "uuid": "skill-clawhub-dataworks-daily-monitor",
+  "skillKey": "clawhub-dataworks-daily-monitor",
+  "name": "Dataworks Daily Monitor",
+  "summary": "每天统计并汇总昨日 DataWorks 任务运行状态，包括成功、失败、运行中数量及失败任务告警通知。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dataworks_daily_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alexmayanjun-collab",
+      "features": [
+        "每天统计并汇总昨日 DataWorks 任务运行状态，包括成功、失败、运行中数量及失败任务告警通知。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dataworks-daily-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/247089206?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dataworks-daily-monitor",
+      "url": "https://clawhub.ai/skills/dataworks-daily-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dataworks-daily-monitor",
+    "url": "https://clawhub.ai/skills/dataworks-daily-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dataworks-daily-monitor-53749f014e91bb45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dataworks-daily-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dataworks-daily-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:661c9d549bfcc694effa4103cba1dc35b318cbc4bce12ac6cc8aa4a240f840c8",
+      "artifactSizeBytes": 2406
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T20:01:28.590Z"
+}

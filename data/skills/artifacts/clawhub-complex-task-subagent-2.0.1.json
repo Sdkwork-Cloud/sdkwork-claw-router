@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/complex-task-subagent@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.complex_task_subagent",
+  "skill": {
+    "id": 23956,
+    "skillKey": "clawhub-complex-task-subagent",
+    "name": "Complex Task Subagent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "complex-task-subagent",
+    "url": "https://clawhub.ai/skills/complex-task-subagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/complex-task-subagent-6e392a7eb6a25066.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complex task orchestration and subagent command framework. Execute multi-stage complex tasks via subagent (sessions_spawn), including task breakdown, state m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "miyan1221",
+      "userId": "s179k4whbg6nemkay67hmbbhf983z42b",
+      "displayName": "sundayplus",
+      "image": "https://avatars.githubusercontent.com/u/103588276?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 414,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774957303013,
+      "changelog": "**Changelog for version 2.0.1:**\n\n- Updated installation instructions: now only supports git-based install; ClawHub install instructions removed.\n- Clarified that skill changes are effective immediately without restarting the gateway.\n- Added detailed usage and trigger keywords for automatic activation.\n- Extensive new documentation on cron tasks: parameters, message passing, agent selection, and troubleshooting.\n- Included practical examples and troubleshooting advice for cron and heartbeat features.\n- Improved clarity for new users, especially regarding cron/heartbeat set-up and differences.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:346024139bd0d34bc5db8b917674ad54524845a647b828093edbbaaac7eceabe"
+}

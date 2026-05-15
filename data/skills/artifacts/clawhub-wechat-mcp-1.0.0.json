@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_mcp",
+  "skill": {
+    "id": 62732,
+    "skillKey": "clawhub-wechat-mcp",
+    "name": "Wechat Mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-mcp",
+    "url": "https://clawhub.ai/skills/wechat-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-mcp-f123b28f94810c89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Windows 电脑端微信消息监控与发送 MCP，实现在微信上给指定联系人发送消息"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dragon015",
+      "userId": "s175zzb45wmdd31bgsvsjhv0sh83gjrf",
+      "displayName": "dragon015",
+      "image": "https://avatars.githubusercontent.com/u/43516666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3049,
+      "installsAllTime": 13,
+      "installsCurrent": 13,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772260288957,
+      "changelog": "WeChat MCP v1.0.0 初始发布\n\n- 实现 Windows 端微信消息监控与发送能力\n- 支持截图、搜索并打开联系人、发送消息功能\n- 可通过 MCP 协议或 Python 调用\n- 支持独立聊天窗口识别与消息发送\n- 包含微信窗口状态获取工具",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6e164030154a141f60ff1f9dfb1f9a75c5963db74900cdaf4f9ec0fc33dbc57e"
+}

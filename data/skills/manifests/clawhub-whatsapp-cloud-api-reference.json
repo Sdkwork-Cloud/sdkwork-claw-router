@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22307,
+  "uuid": "skill-clawhub-whatsapp-cloud-api-reference",
+  "skillKey": "clawhub-whatsapp-cloud-api-reference",
+  "name": "WhatsApp cloud api reference",
+  "summary": "Use when implementing WhatsApp messaging via Meta Cloud API, or diagnosing failures like message not delivered, template rejected, webhook issues, phone not...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_cloud_api_reference",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roman",
+      "features": [
+        "Use when implementing WhatsApp messaging via Meta Cloud API, or diagnosing failures like messag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whatsapp-cloud-api-reference@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17747132?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whatsapp-cloud-api-reference",
+      "url": "https://clawhub.ai/skills/whatsapp-cloud-api-reference"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-cloud-api-reference",
+    "url": "https://clawhub.ai/skills/whatsapp-cloud-api-reference",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-cloud-api-reference-8fd02cd03e8362ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whatsapp-cloud-api-reference@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whatsapp-cloud-api-reference-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b94704e4aa6754cd61b038a62f0f9403d93442f549afe70d500da4867be3da4a",
+      "artifactSizeBytes": 2596
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T18:32:05.350Z"
+}

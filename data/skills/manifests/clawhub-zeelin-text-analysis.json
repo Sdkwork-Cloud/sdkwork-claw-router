@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67147,
+  "uuid": "skill-clawhub-zeelin-text-analysis",
+  "skillKey": "clawhub-zeelin-text-analysis",
+  "name": "zeelin-text-analysis",
+  "summary": "文本分析技能，支持本地文件直接上传分析。当用户说'分析文本'、'文本处理'、'分析这个文档'等并上传文本文件时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeelin_text_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liyayong",
+      "features": [
+        "文本分析技能，支持本地文件直接上传分析。当用户说'分析文本'、'文本处理'、'分析这个文档'等并上传文本文件时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zeelin-text-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/247490724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zeelin-text-analysis",
+      "url": "https://clawhub.ai/skills/zeelin-text-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeelin-text-analysis",
+    "url": "https://clawhub.ai/skills/zeelin-text-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeelin-text-analysis-e8abfabf5cb0e364.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zeelin-text-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zeelin-text-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cebdaefab20d2f0da04ef861e3faa4875ce7ccd56ae7a65dcf2cfe13887998ff",
+      "artifactSizeBytes": 2461
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T05:54:27.558Z"
+}

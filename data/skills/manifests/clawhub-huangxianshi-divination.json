@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68385,
+  "uuid": "skill-clawhub-huangxianshi-divination",
+  "skillKey": "clawhub-huangxianshi-divination",
+  "name": "Huangxianshi Divination",
+  "summary": "黄仙师灵签抽签与解签。用户说“聊签/求签/抽一签/来一签/解签/全部解签”时使用。随机抽取1签并返回吉凶、签号、签题、签诗、典故全文；支持按方向解签或全部解签。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huangxianshi_divination",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo",
+      "features": [
+        "黄仙师灵签抽签与解签。用户说“聊签/求签/抽一签/来一签/解签/全部解签”时使用。随机抽取1签并返回吉凶、签号、签题、签诗、典故全文；支持按方向解签或全部解签。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huangxianshi-divination@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151178676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huangxianshi-divination",
+      "url": "https://clawhub.ai/skills/huangxianshi-divination"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huangxianshi-divination",
+    "url": "https://clawhub.ai/skills/huangxianshi-divination",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huangxianshi-divination-96a0829a0a3be983.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huangxianshi-divination@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-huangxianshi-divination-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:accf8896364a364237b70668511986e6d04493e8e80eb5fdd81e134ee4febd40",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T06:54:04.864Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-candle-cross-asset-divergence-trader@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_candle_cross_asset_divergence_trader",
+  "skill": {
+    "id": 30943,
+    "skillKey": "clawhub-polymarket-candle-cross-asset-divergence-trader",
+    "name": "Polymarket Candle Cross Asset Divergence Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-candle-cross-asset-divergence-trader",
+    "url": "https://clawhub.ai/skills/polymarket-candle-cross-asset-divergence-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-candle-cross-asset-divergence-trader-0189d35895561763.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detects cross-asset divergence in Polymarket crypto 5-minute interval markets. When normally correlated assets like BTC and ETH show contradictory candle dir..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diagnostikon",
+      "userId": "s17bf2qvfsqakddyh674vczxqs83fcwb",
+      "displayName": "diagnostikon",
+      "image": "https://avatars.githubusercontent.com/u/17246180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1777386589525,
+      "changelog": "SDK resilience: try/except runt apply_skill_config",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36d7e705afdc242fb26f008cd0b7abb35558dcac3dca33164738530ac583e70d"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66540,
+  "uuid": "skill-clawhub-enterprise-wechat",
+  "skillKey": "clawhub-enterprise-wechat",
+  "name": "WeChat Work",
+  "summary": "提供企业内部通讯、私域流量管理及办公协同指引。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enterprise_wechat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "提供企业内部通讯、私域流量管理及办公协同指引。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/enterprise-wechat@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "enterprise-wechat",
+      "url": "https://clawhub.ai/skills/enterprise-wechat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enterprise-wechat",
+    "url": "https://clawhub.ai/skills/enterprise-wechat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enterprise-wechat-6437c4407bf3af35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/enterprise-wechat@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-enterprise-wechat-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:434fb18e02584f36a56e6a6152e3b8388e913ff170ff5982d548fd549c2bfdeb",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:45:57.049Z"
+}

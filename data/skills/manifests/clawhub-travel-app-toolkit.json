@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65699,
+  "uuid": "skill-clawhub-travel-app-toolkit",
+  "skillKey": "clawhub-travel-app-toolkit",
+  "name": "目的地必备应用APP入口：出国一键直达",
+  "summary": "[user] 旅行目的地必备 App 一键清单生成器，根据目的地国家/城市、旅行风格和偏好，生成分类App推荐清单，附带 iOS App Store 和 Android Google Play 双平台下载直达链接，输出为可直接在浏览器打开的交互式 HTML 页面（支持平台切换、分类过滤、搜索）。当用户提到\"旅行A...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_app_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LMerCy",
+      "features": [
+        "[user] 旅行目的地必备 App 一键清单生成器，根据目的地国家/城市、旅行风格和偏好，生成分类App推荐清单，附带 iOS App Store 和 Android Google Pla."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/travel-app-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13573827?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "travel-app-toolkit",
+      "url": "https://clawhub.ai/skills/travel-app-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-app-toolkit",
+    "url": "https://clawhub.ai/skills/travel-app-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-app-toolkit-efbf1dca55a37e55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/travel-app-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-travel-app-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e1a477fd1ed001d0a12796751a46c6341172567c8700e41c36fe947532575e6",
+      "artifactSizeBytes": 2523
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T15:10:44.306Z"
+}

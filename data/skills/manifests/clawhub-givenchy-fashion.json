@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62399,
+  "uuid": "skill-clawhub-givenchy-fashion",
+  "skillKey": "clawhub-givenchy-fashion",
+  "name": "Givenchy Fashion",
+  "summary": "提供Givenchy品牌历史、设计风格演变及LVMH管理下的高级时装和美妆业务分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.givenchy_fashion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供Givenchy品牌历史、设计风格演变及LVMH管理下的高级时装和美妆业务分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/givenchy-fashion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "givenchy-fashion",
+      "url": "https://clawhub.ai/skills/givenchy-fashion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "givenchy-fashion",
+    "url": "https://clawhub.ai/skills/givenchy-fashion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/givenchy-fashion-6be226bda3734359.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/givenchy-fashion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-givenchy-fashion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:583fa74f97f39ed320b9eea370f7bf25eefc562ca0ebcabc8b628fed4210f40f",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T22:06:18.687Z"
+}

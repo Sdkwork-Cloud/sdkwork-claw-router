@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/airtable@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airtable",
+  "skill": {
+    "id": 8634,
+    "skillKey": "clawhub-airtable",
+    "name": "Airtable"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airtable",
+    "url": "https://clawhub.ai/skills/airtable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airtable-40c57bb53c07338b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Airtable API integration with managed OAuth. Manage bases, tables, and records. Use this skill when users want to read, create, update, or delete Airtable re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 8026,
+      "installsAllTime": 22,
+      "installsCurrent": 21,
+      "stars": 15,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1777593696454,
+      "changelog": "- Switched all API and connection endpoints from `gateway.maton.ai`/`ctrl.maton.ai` to `api.maton.ai`.\n- Updated SKILL.md metadata to add a `homepage` field with the Maton homepage link.\n- Revised documentation to clarify connection header usage: always include `Maton-Connection` if you have multiple connections.\n- Added a new \"Security & Permissions\" section emphasizing the requirement for explicit user approval for write operations.\n- Removed the LICENSE.txt file from the skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e45d187d87f9af7d61f48273dc62667676a79fed258c89616bb4dbcfdd0cbeb5"
+}

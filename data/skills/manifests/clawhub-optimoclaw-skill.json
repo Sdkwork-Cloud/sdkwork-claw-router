@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29533,
+  "uuid": "skill-clawhub-optimoclaw-skill",
+  "skillKey": "clawhub-optimoclaw-skill",
+  "name": "OptimoClaw",
+  "summary": "Analyze OpenClaw configs and session data to recommend specific, cost-effective token usage and model tuning changes with clear trade-offs and explanations.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.optimoclaw_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marc4211",
+      "features": [
+        "Analyze OpenClaw configs and session data to recommend specific, cost-effective token usage and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/optimoclaw-skill@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128075967?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "optimoclaw-skill",
+      "url": "https://clawhub.ai/skills/optimoclaw-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "optimoclaw-skill",
+    "url": "https://clawhub.ai/skills/optimoclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/optimoclaw-skill-2595affdcd766617.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/optimoclaw-skill@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-optimoclaw-skill-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95b15f2e4eb85f0f3bfeae9b42c39c9b3f0a2fa32ec3a182ead18e73fcc75301",
+      "artifactSizeBytes": 2139
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T20:48:16.886Z"
+}

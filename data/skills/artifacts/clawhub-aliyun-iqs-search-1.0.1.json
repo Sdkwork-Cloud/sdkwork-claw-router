@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-iqs-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_iqs_search",
+  "skill": {
+    "id": 62579,
+    "skillKey": "clawhub-aliyun-iqs-search",
+    "name": "阿里云的联网搜索"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-iqs-search",
+    "url": "https://clawhub.ai/skills/aliyun-iqs-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-iqs-search-6133b1c84962a5e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "阿里云信息查询服务（IQS）UnifiedSearch API联网搜索"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lilisidu1210-ui",
+      "userId": "publishers:lilisidu1210-ui",
+      "displayName": "lilisidu1210-ui",
+      "image": "https://avatars.githubusercontent.com/u/222349015?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 563,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773380478656,
+      "changelog": "Initial release of aliyun-iqs-search skill.\n\n- Integrates with Aliyun IQS UnifiedSearch API for web searches.\n- Requires ALI_IQS_API_KEY environment variable.\n- Provides structured results with title, link, content, and rerank score.\n- Automatically filters results with scores below 0.5.\n- CLI usage via Node.js script.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38a2c81aa0aa3c061a7a7a9e9cb30ff7d169597d85d20a4020817223c793c7b1"
+}

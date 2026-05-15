@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15652,
+  "uuid": "skill-clawhub-pay",
+  "skillKey": "clawhub-pay",
+  "name": "Pay",
+  "summary": "Choose the right payment method, optimize rewards, handle disputes, and manage bills safely.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pay",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Choose the right payment method, optimize rewards, handle disputes, and manage bills safely."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pay@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pay",
+      "url": "https://clawhub.ai/skills/pay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pay",
+    "url": "https://clawhub.ai/skills/pay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pay-9350872d712a127c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pay@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pay-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:896413a289a221dc62b51754eb6832793a1ad3b068a1c6579394c37777711fd0",
+      "artifactSizeBytes": 1737
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T11:56:31.601Z"
+}

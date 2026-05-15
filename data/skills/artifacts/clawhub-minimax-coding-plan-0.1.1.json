@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-coding-plan@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_coding_plan",
+  "skill": {
+    "id": 14569,
+    "skillKey": "clawhub-minimax-coding-plan",
+    "name": "MiniMax Coding Plan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-coding-plan",
+    "url": "https://clawhub.ai/skills/minimax-coding-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-coding-plan-c1384dccdbd3a39b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MiniMax Coding Plan native web search and image understanding for OpenClaw. Use when the user specifically wants MiniMax-native search or image analysis, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yjli-new",
+      "userId": "publishers:yjli-new",
+      "displayName": "YJLi-new",
+      "image": "https://avatars.githubusercontent.com/u/175589775?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1154,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772870913165,
+      "changelog": "Remove build artifacts and keep the public package portable across OpenClaw installs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8d964588a09f7d3932833a6d3fb48de03c629522c18ff94eb111ca64bf7fe326"
+}

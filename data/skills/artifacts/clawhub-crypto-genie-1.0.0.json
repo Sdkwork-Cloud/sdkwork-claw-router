@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-genie@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_genie",
+  "skill": {
+    "id": 17377,
+    "skillKey": "clawhub-crypto-genie",
+    "name": "Crypto Genie"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-genie",
+    "url": "https://clawhub.ai/skills/crypto-genie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-genie-1b1e4ae2ba89d3a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered cryptocurrency safety assistant with database-first architecture. Protects users from phishing, honeypots, rug pulls, and ponzi schemes. No extern..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "princedoss77",
+      "userId": "publishers:princedoss77",
+      "displayName": "princedoss77",
+      "image": "https://avatars.githubusercontent.com/u/16186079?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 785,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771579510721,
+      "changelog": "Crypto Genie v2.0 is a major upgrade focusing on local database-powered scam detection with instant results and expanded scam detection capabilities.\n\n- All scam checks are now instant and privacy-preserving—no external API calls are made during user lookups.\n- Introduced a local SQLite database architecture and background sync worker for data updates from Etherscan.\n- Automatically queues new/unknown addresses for background analysis.\n- New deep scam detection, now catches phishing, honeypots, rug pulls, exploit group activity, and social engineering attempts missed before.\n- Enhanced risk scoring and detection based on address activity, contract status, keywords, and suspicious transaction patterns.\n- Added robust CLI tools for installation, encrypted API key setup, manual and automated background sync, and convenient address checks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:26c9eb2aff3e3f2093e80465c33b7ebdd92b649a4d7201457cbad3d3fdcdbcdf"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fun-asr-nano@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fun_asr_nano",
+  "skill": {
+    "id": 59463,
+    "skillKey": "clawhub-fun-asr-nano",
+    "name": "Local fun-asr-nano powered by sherpa-onnx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fun-asr-nano",
+    "url": "https://clawhub.ai/skills/fun-asr-nano",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fun-asr-nano-b3729c37c6941f88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fun-ASR-Nano 基于 sherpa-onnx 引擎的本地语音识别，完全离线运行。当用户需要转录音频文件时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pengzhendong",
+      "userId": "s179856pnn9myhsmeat1x7h2y5841rwb",
+      "displayName": "彭震东",
+      "image": "https://avatars.githubusercontent.com/u/10704539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774010526231,
+      "changelog": "- Initial release of Fun-ASR-Nano (version 1.0.0).\n- Provides fully offline, local speech-to-text based on the sherpa-onnx engine.\n- Supports recognition for seven major Chinese dialects, 26 regional accents, as well as English and Japanese with multiple accents.\n- Handles various audio formats such as .wav, .mp3, .m4a, .flac, and .ogg.\n- Includes specialized support for lyrics and rap speech recognition.\n- Focused on privacy by running entirely offline without requiring any network connection.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fae9b6b86e511ee6168369ea208be962aaccca1f177ff28e70929f80986df8f7"
+}

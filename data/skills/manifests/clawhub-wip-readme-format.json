@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16681,
+  "uuid": "skill-clawhub-wip-readme-format",
+  "skillKey": "clawhub-wip-readme-format",
+  "name": "Wip Readme Format",
+  "summary": "Reformat any repo's README to follow the WIP Computer standard.",
+  "version": "1.9.72",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wip_readme_format",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Parker Todd Brooks",
+      "features": [
+        "Reformat any repo's README to follow the WIP Computer standard."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wip-readme-format@1.9.72",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/585456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wip-readme-format",
+      "url": "https://clawhub.ai/skills/wip-readme-format"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wip-readme-format",
+    "url": "https://clawhub.ai/skills/wip-readme-format",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wip-readme-format-39e4e8f9a6413bcf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wip-readme-format@1.9.72",
+      "artifactUrl": "data/skills/artifacts/clawhub-wip-readme-format-1.9.72.json",
+      "version": "1.9.72",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03eee41cea67792f49299e5ff08e8c8fd36d9ed15ec202f20ecda61444d8a99d",
+      "artifactSizeBytes": 3469
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T21:25:14.541Z"
+}

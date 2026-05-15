@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-guard-security@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_guard_security",
+  "skill": {
+    "id": 41362,
+    "skillKey": "clawhub-skill-guard-security",
+    "name": "SkillGuard Security Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-guard-security",
+    "url": "https://clawhub.ai/skills/skill-guard-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-guard-security-2ed48ea0ad034dcb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security auditing for OpenClaw agent skills. Scans skills for dangerous patterns, vulnerable dependencies, and suspicious behaviors before installation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jonathanliu811026",
+      "userId": "s176ke45ja87cazngxgkxx3evn83grd1",
+      "displayName": "Jonathanliu811026",
+      "image": "https://avatars.githubusercontent.com/u/83127677?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775641184526,
+      "changelog": "Initial release of skillguard: security auditing for OpenClaw agent skills.\n\n- Scans skills for dangerous code patterns, filesystem risks, and network vulnerabilities before installation.\n- Supports both CLI and API server modes for auditing.\n- Provides clear verdicts: SAFE, CAUTION, or DANGEROUS, with detailed risk breakdowns.\n- Integrates with ClawHub for streamlined skill auditing.\n- Outputs machine-readable reports for programmatic review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f558b280b3167d9df2a419c3079531b49c1dec2f1e9abffb15afedff1508dd7f"
+}

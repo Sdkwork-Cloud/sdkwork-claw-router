@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38049,
+  "uuid": "skill-clawhub-format-converter",
+  "skillKey": "clawhub-format-converter",
+  "name": "Format Converter",
+  "summary": "Get converted MP4 files ready to post, without touching a single slider. Upload your video files (AVI, MOV, MKV, WebM, up to 500MB), say something like \"conv...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.format_converter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "francemichaell-15",
+      "features": [
+        "Get converted MP4 files ready to post, without touching a single slider",
+        "Upload your video files (AVI, MOV, MKV, WebM, up to 500MB), say something like \"conv..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/format-converter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208906142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "format-converter",
+      "url": "https://clawhub.ai/skills/format-converter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "format-converter",
+    "url": "https://clawhub.ai/skills/format-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/format-converter-ca2dc2a5a15d4823.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/format-converter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-format-converter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b818a4d016fcee25920dc18b5cc21e15996ab3d698f694f70bb5480f7266944a",
+      "artifactSizeBytes": 2523
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T23:55:58.155Z"
+}

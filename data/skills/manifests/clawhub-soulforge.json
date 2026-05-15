@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14507,
+  "uuid": "skill-clawhub-soulforge",
+  "skillKey": "clawhub-soulforge",
+  "name": "Soulforge",
+  "summary": "Run high-signal autonomous coding loops with Soulforge (feature-dev/bugfix/review-loop) using strict worktree isolation, review gates, and scoped fix cycles.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soulforge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jamesrp13",
+      "features": [
+        "Run high-signal autonomous coding loops with Soulforge (feature-dev/bugfix/review-loop) using s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soulforge@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11344110?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soulforge",
+      "url": "https://clawhub.ai/skills/soulforge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soulforge",
+    "url": "https://clawhub.ai/skills/soulforge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soulforge-5842a9abe95881a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soulforge@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-soulforge-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0734340daca968c3bbf56b9bd9be803656e8de94036a789ba8a5f33852e0e25",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T18:37:56.378Z"
+}

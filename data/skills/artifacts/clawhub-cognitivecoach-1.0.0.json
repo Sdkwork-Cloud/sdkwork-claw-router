@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cognitivecoach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cognitivecoach",
+  "skill": {
+    "id": 68613,
+    "skillKey": "clawhub-cognitivecoach",
+    "name": "Cognitive Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cognitivecoach",
+    "url": "https://clawhub.ai/skills/cognitivecoach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cognitivecoach-8c0ea50444e53252.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "私人认知图谱教练，去噪提炼高价值知识，次日9点用费曼技巧提问，助你长期内化核心认知内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dearchenzj",
+      "userId": "s1774sp1n3kccn5jxzznsd8bn183ggv0",
+      "displayName": "DearChenzj",
+      "image": "https://avatars.githubusercontent.com/u/45252571?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 324,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773826673783,
+      "changelog": "Cognitive Coach v1.0.0 – Initial Release\n\n- Provides Feynman-style knowledge extraction for developers/geeks using chat history ingestion and value filtering.\n- Automatically schedules a next-morning (9:00) proactive knowledge review trigger.\n- Differentiates between low-value (e.g., simple debugging, translations) and high-value (deep explorations, explanations) conversation snippets.\n- Generates and silently stores review cards without revealing answers or lengthy analysis to the user.\n- Delivers concise, mentor-like prompts and feedback focused on critical understanding and self-explanation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8cb59d87e9630f941458c171ed37ab2e254ebb9f42cb27f39b549731c368379c"
+}

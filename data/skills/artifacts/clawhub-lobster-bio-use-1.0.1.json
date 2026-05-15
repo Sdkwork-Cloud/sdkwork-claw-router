@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobster-bio-use@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_bio_use",
+  "skill": {
+    "id": 15235,
+    "skillKey": "clawhub-lobster-bio-use",
+    "name": "LobsterBio - Use"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-bio-use",
+    "url": "https://clawhub.ai/skills/lobster-bio-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-bio-use-4d4ac7da3fe484b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze biological data using Lobster AI — single-cell RNA-seq, bulk RNA-seq, literature mining, dataset discovery, quality control, and visualization. USE THIS SKILL WHEN: - Analyzing single-cell or bulk RNA-seq data - Searching PubMed/GE."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cewinharhar",
+      "userId": "publishers:cewinharhar",
+      "displayName": "cewinharhar",
+      "image": "https://avatars.githubusercontent.com/u/64527798?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1406,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770985943508,
+      "changelog": "- Added detailed installation and upgrade instructions for Lobster AI across all platforms, including uv tool, pip, and PowerShell methods.\n- Provided guidance for adding specialist agent packages using uv tool and lobster init.\n- Clarified agent availability, indicating Proteomics, Genomics, and ML agents as [alpha] rather than [premium].\n- No code or logic changes; documentation and usage guide expanded to improve onboarding and setup clarity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fccf75ce4174349a86773e6c7e8ccc0e2c616b24204dd48eda7998817a202f9a"
+}

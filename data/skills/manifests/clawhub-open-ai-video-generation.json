@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41480,
+  "uuid": "skill-clawhub-open-ai-video-generation",
+  "skillKey": "clawhub-open-ai-video-generation",
+  "name": "Open Ai Video Generation",
+  "summary": "marketers generate text prompts into AI generated videos using this skill. Accepts MP4, MOV, WebM, GIF up to 500MB, renders on cloud GPUs at 1080p, and retur...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_ai_video_generation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "marketers generate text prompts into AI generated videos using this skill",
+        "Accepts MP4, MOV, WebM, GIF up to 500MB, renders on cloud GPUs at 1080p, and retur..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-ai-video-generation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-ai-video-generation",
+      "url": "https://clawhub.ai/skills/open-ai-video-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-ai-video-generation",
+    "url": "https://clawhub.ai/skills/open-ai-video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-ai-video-generation-75b2730ed39a1a69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-ai-video-generation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-ai-video-generation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f47f453cd524025e3682f7894b168dd6240a07dff2d6745b2169fdabb3a79465",
+      "artifactSizeBytes": 2435
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T21:27:17.223Z"
+}

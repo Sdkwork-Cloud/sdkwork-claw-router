@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44506,
+  "uuid": "skill-clawhub-dynamic-object-aware-egomotion-dyn-object-masks",
+  "skillKey": "clawhub-dynamic-object-aware-egomotion-dyn-object-masks",
+  "name": "dyn-object-masks",
+  "summary": "Generate dynamic-object binary masks after global motion compensation, output CSR sparse format.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dynamic_object_aware_egomotion_dyn_object_masks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wu-uk",
+      "features": [
+        "Generate dynamic-object binary masks after global motion compensation, output CSR sparse format."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dynamic-object-aware-egomotion-dyn-object-masks@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199610473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dynamic-object-aware-egomotion-dyn-object-masks",
+      "url": "https://clawhub.ai/skills/dynamic-object-aware-egomotion-dyn-object-masks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dynamic-object-aware-egomotion-dyn-object-masks",
+    "url": "https://clawhub.ai/skills/dynamic-object-aware-egomotion-dyn-object-masks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dynamic-object-aware-egomotion-dyn-object-masks-7a6c6183cb00bd39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dynamic-object-aware-egomotion-dyn-object-masks@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dynamic-object-aware-egomotion-dyn-object-masks-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:928844837b3b65ee5b4e86dbacce4a99b0bbca3302cfdaab081c67e3122d4187",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T19:17:52.827Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66827,
+  "uuid": "skill-clawhub-local-hub",
+  "skillKey": "clawhub-local-hub",
+  "name": "Local Hub",
+  "summary": "本地能力中心。通过 HTTP 调用本机麦克风、摄像头、Ollama、YOLO、Stable Diffusion、TTS/转写、通知、剪贴板、天气、白名单脚本等。当需要「验证是否有声音、拍一张照、用本地模型对话、文生图/图生图、朗读、系统通知、读剪贴板、看图描述、列模型、天气、跑脚本」时使用。需先确保 local_...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_hub",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DamianLeeMoha",
+      "features": [
+        "本地能力中心。通过 HTTP 调用本机麦克风、摄像头、Ollama、YOLO、Stable Diffusion、TTS/转写、通知、剪贴板、天气、白名单脚本等。当需要「验证是否有声音、拍一张."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-hub@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192185645?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-hub",
+      "url": "https://clawhub.ai/skills/local-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-hub",
+    "url": "https://clawhub.ai/skills/local-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-hub-824773780bd3da86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-hub@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-hub-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:915658a7b59649b34b594cab280ae78d0bb7e7fb168393d0fad0d3a9b8075330",
+      "artifactSizeBytes": 2143
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T04:27:43.521Z"
+}

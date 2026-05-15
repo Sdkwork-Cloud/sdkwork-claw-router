@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73503,
+  "uuid": "skill-clawhub-security-log-analyzer",
+  "skillKey": "clawhub-security-log-analyzer",
+  "name": "安全事件日志调查助手",
+  "summary": "基于大模型的安全事件日志分析工具，支持快速提取关键信息和深度攻击链细节分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_log_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Terry S Fisher",
+      "features": [
+        "基于大模型的安全事件日志分析工具，支持快速提取关键信息和深度攻击链细节分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-log-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42956557?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-log-analyzer",
+      "url": "https://clawhub.ai/skills/security-log-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-log-analyzer",
+    "url": "https://clawhub.ai/skills/security-log-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-log-analyzer-ce569960bfd8ea2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-log-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-log-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efb3fdfa652e3d180a47564018364d32a8718013c0379910e656c450d2dadbbd",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T13:51:08.306Z"
+}

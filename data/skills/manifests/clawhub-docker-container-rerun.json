@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30678,
+  "uuid": "skill-clawhub-docker-container-rerun",
+  "skillKey": "clawhub-docker-container-rerun",
+  "name": "Docker Container Rerun",
+  "summary": "Safely check whether a Docker container's image has changed and, only when needed, recreate that docker run container with a user-provided original docker ru...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_container_rerun",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HongWei Jiang",
+      "features": [
+        "Safely check whether a Docker container's image has changed and, only when needed, recreate tha."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docker-container-rerun@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11488705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docker-container-rerun",
+      "url": "https://clawhub.ai/skills/docker-container-rerun"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-container-rerun",
+    "url": "https://clawhub.ai/skills/docker-container-rerun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-container-rerun-87e3da640cef6ef3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docker-container-rerun@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-docker-container-rerun-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d7aea470711f275a87c35155c0ed7f2251446a0198a214d8f945b79fc830e6d",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T16:12:09.314Z"
+}

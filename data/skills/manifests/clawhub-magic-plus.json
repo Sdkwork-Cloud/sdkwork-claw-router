@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60734,
+  "uuid": "skill-clawhub-magic-plus",
+  "skillKey": "clawhub-magic-plus",
+  "name": "magic-plus",
+  "summary": "面向 magic-api 开发、排障、二开与升版审查的本地源码技能。基于 magic-api、magic-api-plugin、magic-script、magic-api-example 四个仓库整理，强调按问题类型快速定位源码、样例与升级审查资料。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.magic_plus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kwin-lv",
+      "features": [
+        "面向 magic-api 开发、排障、二开与升版审查的本地源码技能。基于 magic-api、magic-api-plugin、magic-script、magic-api-example."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/magic-plus@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21353605?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "magic-plus",
+      "url": "https://clawhub.ai/skills/magic-plus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "magic-plus",
+    "url": "https://clawhub.ai/skills/magic-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/magic-plus-f85c42b470dc84ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/magic-plus@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-magic-plus-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:738aa839593699648e418743633ccf551163e0c66f2a88573e302b0dd28d66b1",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T08:56:52.764Z"
+}

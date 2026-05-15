@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/myosin-hivemind@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.myosin_hivemind",
+  "skill": {
+    "id": 17693,
+    "skillKey": "clawhub-myosin-hivemind",
+    "name": "Myosin Hivemind Knowledge Retrieval"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "myosin-hivemind",
+    "url": "https://clawhub.ai/skills/myosin-hivemind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/myosin-hivemind-5d751e390183e38f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Hivemind's curated Web3 marketing knowledge base (RAG) for practitioner insights, frameworks, playbooks, and case studies. Use this skill when: (1) an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "divine-comedian",
+      "userId": "publishers:divine-comedian",
+      "displayName": "divine-comedian",
+      "image": "https://avatars.githubusercontent.com/u/67759413?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 755,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771279975568,
+      "changelog": "- Added required environment variables (`HIVEMIND_API_URL`, `HIVEMIND_API_KEY`, `HIVEMIND_VERCEL_BYPASS`) to the skill manifest.\n- Clarified API key issuance: added instructions to request access via email to product@myosin.xyz.\n- No changes to functionality or usage; documentation updates only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f63431489504122dcfbd7b76eb7b3d2c3f24cd6d8347319ed3c15e6ebb20b841"
+}

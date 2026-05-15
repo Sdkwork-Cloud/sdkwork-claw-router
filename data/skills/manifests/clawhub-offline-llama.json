@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15774,
+  "uuid": "skill-clawhub-offline-llama",
+  "skillKey": "clawhub-offline-llama",
+  "name": "Offline Llama",
+  "summary": "Manage local Ollama models autonomously with health monitoring, automatic fallback, self-healing, and offline operation without internet dependency.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.offline_llama",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "and-ray-m",
+      "features": [
+        "Manage local Ollama models autonomously with health monitoring, automatic fallback, self-healin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/offline-llama@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257538632?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "offline-llama",
+      "url": "https://clawhub.ai/skills/offline-llama"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "offline-llama",
+    "url": "https://clawhub.ai/skills/offline-llama",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/offline-llama-8ca5c109f9fa0d22.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/offline-llama@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-offline-llama-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d10416a153db9d477d3cbeca8cddfbbfb7c926e63180962d5cfb6e31f881e0f0",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T07:07:18.302Z"
+}

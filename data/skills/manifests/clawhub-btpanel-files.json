@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70616,
+  "uuid": "skill-clawhub-btpanel-files",
+  "skillKey": "clawhub-btpanel-files",
+  "name": "btpanel files 宝塔面板文件管理",
+  "summary": "宝塔面板文件管理技能，提供远程服务器文件/目录浏览、读取、编辑、创建、删除、权限管理等基本文件操作能力",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.btpanel_files",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aapanel.com",
+      "features": [
+        "宝塔面板文件管理技能，提供远程服务器文件/目录浏览、读取、编辑、创建、删除、权限管理等基本文件操作能力"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/btpanel-files@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31841517?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "btpanel-files",
+      "url": "https://clawhub.ai/skills/btpanel-files"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "btpanel-files",
+    "url": "https://clawhub.ai/skills/btpanel-files",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/btpanel-files-8935bcc27a851b2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/btpanel-files@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-btpanel-files-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d6a7abca41d2419c9c2dcdc46e3ea8445af00137e24008c8816d3b7e273a4ff",
+      "artifactSizeBytes": 2218
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T04:18:56.185Z"
+}

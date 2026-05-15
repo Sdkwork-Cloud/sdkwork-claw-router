@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bolt-new@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bolt_new",
+  "skill": {
+    "id": 60102,
+    "skillKey": "clawhub-bolt-new",
+    "name": "Bolt New"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bolt-new",
+    "url": "https://clawhub.ai/skills/bolt-new",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bolt-new-4a3caa1db3c969f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bolt.new AI 全栈开发助手，精通浏览器内开发、WebContainer、一键部署"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774087562618,
+      "changelog": "Initial release of Bolt.new AI fullstack development assistant.\n\n- Provides browser-based Node.js development powered by WebContainer with zero setup.\n- Supports AI-generated fullstack projects from natural language prompts, including multi-step revision.\n- One-click deploys to Netlify for instant public sharing.\n- Compatible with major modern frameworks (React, Vue, Svelte, Astro, Next.js, etc.) and tooling (TypeScript, Vite, Express, SQLite, etc.).\n- Offers recommendations and prompt templates for optimal usage.\n- Documents current limitations and best practices for using Bolt.new.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b44f66e7dd2188d610c4827db3fdbaa073a9807ae0c8d2a388604ba52f8d50d"
+}

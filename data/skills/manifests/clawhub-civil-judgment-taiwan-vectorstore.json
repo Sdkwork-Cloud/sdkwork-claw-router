@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54932,
+  "uuid": "skill-clawhub-civil-judgment-taiwan-vectorstore",
+  "skillKey": "clawhub-civil-judgment-taiwan-vectorstore",
+  "name": "Civil Judgment Taiwan Vectorstore",
+  "summary": "Ingest Taiwan civil court judgments (HTML or PDF) — exclusively covering Taiwan civil cases — into Qdrant with Ollama embeddings, preserving traceability, de...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.civil_judgment_taiwan_vectorstore",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alex02131926",
+      "features": [
+        "Ingest Taiwan civil court judgments (HTML or PDF) — exclusively covering Taiwan civil cases — i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/civil-judgment-taiwan-vectorstore@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263180172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "civil-judgment-taiwan-vectorstore",
+      "url": "https://clawhub.ai/skills/civil-judgment-taiwan-vectorstore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "civil-judgment-taiwan-vectorstore",
+    "url": "https://clawhub.ai/skills/civil-judgment-taiwan-vectorstore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/civil-judgment-taiwan-vectorstore-7de0874377f5f37c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/civil-judgment-taiwan-vectorstore@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-civil-judgment-taiwan-vectorstore-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:191b959e83ea2d49b9640b22a96f6f7a1db7fcbebc2bc9366c7fa88517ae9021",
+      "artifactSizeBytes": 2594
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T09:38:26.864Z"
+}

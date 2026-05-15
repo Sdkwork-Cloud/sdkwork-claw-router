@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66046,
+  "uuid": "skill-clawhub-binance-narrative-newsroom",
+  "skillKey": "clawhub-binance-narrative-newsroom",
+  "name": "币安热点编辑部",
+  "summary": "当用户想发现今天最值得写的 Binance 市场热点、判断当前叙事所处阶段、整理 watchlist、生成 Binance Square 中文草稿，或输出一张适合分享的热点卡片时使用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_narrative_newsroom",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "richard7463",
+      "features": [
+        "当用户想发现今天最值得写的 Binance 市场热点、判断当前叙事所处阶段、整理 watchlist、生成 Binance Square 中文草稿，或输出一张适合分享的热点卡片时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance-narrative-newsroom@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13402558?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance-narrative-newsroom",
+      "url": "https://clawhub.ai/skills/binance-narrative-newsroom"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-narrative-newsroom",
+    "url": "https://clawhub.ai/skills/binance-narrative-newsroom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-narrative-newsroom-28ef2332703a08ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance-narrative-newsroom@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-narrative-newsroom-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b4e28f03b6e1424cd01d3b2a86ee30411869e07adad8ef215b06537014d603b",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T14:03:05.358Z"
+}

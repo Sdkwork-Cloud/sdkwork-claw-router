@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31964,
+  "uuid": "skill-clawhub-adatree",
+  "skillKey": "clawhub-adatree",
+  "name": "Adatree",
+  "summary": "Adatree integration. Manage data, records, and automate workflows. Use when the user wants to interact with Adatree data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adatree",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Adatree integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Adatree data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adatree@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adatree",
+      "url": "https://clawhub.ai/skills/adatree"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adatree",
+    "url": "https://clawhub.ai/skills/adatree",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adatree-45df524c4f482aee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adatree@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-adatree-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83a2e59f834757c4e76a786db5f2420ffdccfc03e95f00af78f20f2aa9672251",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:15:36.395Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/det@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.det",
+  "skill": {
+    "id": 20731,
+    "skillKey": "clawhub-det",
+    "name": "DailyExpenseTracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "det",
+    "url": "https://clawhub.ai/skills/det",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/det-3c2d493a01a75bfe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DailyExpenseTracker API integration for recording expenses, checking balances, and managing transactions. Use when user mentions expenses, spending, transact..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gurpreetkaits",
+      "userId": "publishers:gurpreetkaits",
+      "displayName": "Gurpreet Kait",
+      "image": "https://avatars.githubusercontent.com/u/100063447?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 540,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771717902464,
+      "changelog": "Fixed: removed hardcoded tokens, use config instead",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:feb6ebd23f3d67e0f7698eb4686dc890481b2738a6949680971fa4981fe3f5d4"
+}

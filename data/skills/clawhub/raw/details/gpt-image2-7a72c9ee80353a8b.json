@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "gpt-image2",
+    "displayName": "Gpt Image2",
+    "summary": "Generate high-quality images with GPT Image 2 (OpenAI gpt-image-2) via the ClawdChat tool gateway. Use when the user asks to create / generate / draw / paint...",
+    "tags": {
+      "latest": "0.5.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "createdAt": 1777554258059,
+    "updatedAt": 1777647109105
+  },
+  "latestVersion": {
+    "version": "0.5.0",
+    "createdAt": 1777645944929,
+    "changelog": "Refactor bin/uno.py into a 56-line launcher that delegates to the new uno-cli>=1.0.0 PyPI package. The launcher pins UNO_OAUTH_SCOPE=mcp:gpt-image-2 and UNO_ALLOWED_TOOLS=gpt-image-2.* in code so any tool call outside this skill's declared scope is rejected locally before any network request. Add a 'Part of Uno' section to surface the 2000+ tool upgrade path for users who need more than gpt-image-2.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "lxyd-ai",
+    "userId": "s175jrdxqpq98yx7etkaqne2md83tf6g",
+    "displayName": "Agentrix",
+    "image": "https://avatars.githubusercontent.com/u/156587109?v=4"
+  },
+  "moderation": null
+}

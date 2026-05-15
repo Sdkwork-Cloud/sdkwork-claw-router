@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71136,
+  "uuid": "skill-clawhub-bitmap-vectorize",
+  "skillKey": "clawhub-bitmap-vectorize",
+  "name": "Bitmap Vectorize",
+  "summary": "将位图图像（截图、手绘照片、示意图等）转换为精确的矢量图形代码（SVG或Canvas）。当用户提供一张图片并希望将其重新绘制成可缩放、可编辑的矢量图形时，应使用本技能。特别适合物理示意图、几何图形、电路图、标注图等需要精确还原的场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitmap_vectorize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wxdwqy",
+      "features": [
+        "将位图图像（截图、手绘照片、示意图等）转换为精确的矢量图形代码（SVG或Canvas）。当用户提供一张图片并希望将其重新绘制成可缩放、可编辑的矢量图形时，应使用本技能。特别适合物理示意图、几."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bitmap-vectorize@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/161022141?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bitmap-vectorize",
+      "url": "https://clawhub.ai/skills/bitmap-vectorize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitmap-vectorize",
+    "url": "https://clawhub.ai/skills/bitmap-vectorize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitmap-vectorize-9a410ecd3d07e86f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bitmap-vectorize@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bitmap-vectorize-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:561a4021e54e85c24a8b9700f1e48ddf68762c254bab066565e55b7f509615fb",
+      "artifactSizeBytes": 2651
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T11:50:50.183Z"
+}

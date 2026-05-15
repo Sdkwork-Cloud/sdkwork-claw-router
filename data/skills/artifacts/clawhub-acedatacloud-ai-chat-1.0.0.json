@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acedatacloud-ai-chat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acedatacloud_ai_chat",
+  "skill": {
+    "id": 34275,
+    "skillKey": "clawhub-acedatacloud-ai-chat",
+    "name": "Ai Chat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acedatacloud-ai-chat",
+    "url": "https://clawhub.ai/skills/acedatacloud-ai-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acedatacloud-ai-chat-ebbd354afc021ef3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access 50+ LLM models through a unified OpenAI-compatible API via AceDataCloud. Use when you need chat completions from GPT, Claude, Gemini, DeepSeek, Grok,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "germey",
+      "userId": "publishers:germey",
+      "displayName": "Germey",
+      "image": "https://avatars.githubusercontent.com/u/8678661?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774150629793,
+      "changelog": "Initial release: Unified API for 50+ LLMs via AceDataCloud\n\n- Provides a single OpenAI-compatible endpoint for GPT, Claude, Gemini, DeepSeek, Grok, and others.\n- Supports chat completions, streaming, function calling, and vision/multimodal inputs.\n- Drop-in replacement for the OpenAI SDK; requires `ACEDATACLOUD_API_TOKEN`.\n- Supports flexible model selection and usage across multiple vendors.\n- Features token-based billing and standard OpenAI-compatible responses.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d4d1c00f7678d8facae565b55d0b06a2c38f55fd7e47bde61576e979d33dcbc5"
+}

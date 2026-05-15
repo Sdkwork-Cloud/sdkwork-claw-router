@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36960,
+  "uuid": "skill-clawhub-openclaw-coinbase",
+  "skillKey": "clawhub-openclaw-coinbase",
+  "name": "Coinbase",
+  "summary": "Access Coinbase API to fetch balances, get EUR trading pairs, create market or limit crypto orders, and view order history and fills.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_coinbase",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MTrab",
+      "features": [
+        "Access Coinbase API to fetch balances, get EUR trading pairs, create market or limit crypto ord."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-coinbase@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14296463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-coinbase",
+      "url": "https://clawhub.ai/skills/openclaw-coinbase"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-coinbase",
+    "url": "https://clawhub.ai/skills/openclaw-coinbase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-coinbase-9f3b7ae9b5564c6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-coinbase@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-coinbase-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a87f8a480af51b7e8012534acf69e0014cadbae6dc59644f1dc8c72d0ac559c4",
+      "artifactSizeBytes": 2376
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T10:31:26.209Z"
+}

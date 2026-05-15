@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/send2tv@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.send2tv",
+  "skill": {
+    "id": 27599,
+    "skillKey": "clawhub-send2tv",
+    "name": "Send2tv"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "send2tv",
+    "url": "https://clawhub.ai/skills/send2tv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/send2tv-834d74bc36de3c2b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Push text messages, images, or audio to Huawei Smart Screen via DLNA/UPnP. Use when user wants to display something on TV or play audio/TTS on TV. Triggers:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seanshen-lec",
+      "userId": "s172hbm867s8yjzcw49b4k5ar983jgw9",
+      "displayName": "SeanShen",
+      "image": "https://avatars.githubusercontent.com/u/265736325?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774977191484,
+      "changelog": "新增音频推送和 TTS 语音播报功能：支持 --audio 推送音频文件，支持 --tts 文字转语音推送到电视播放。需要配合 edge-tts skill 使用。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2682ca1c38ecf8e5d6a2d1e3120e526fe22ac9287aae04b8da4b903b4020e83"
+}

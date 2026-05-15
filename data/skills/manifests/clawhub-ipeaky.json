@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15920,
+  "uuid": "skill-clawhub-ipeaky",
+  "skillKey": "clawhub-ipeaky",
+  "name": "ipeaky",
+  "summary": "Secure API key management for OpenClaw. Store, list, test, and delete API keys without exposing them in chat history. Keys are stored directly in openclaw.js...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ipeaky",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "christiancattaneo",
+      "features": [
+        "Secure API key management for OpenClaw",
+        "Store, list, test, and delete API keys without exposing them in chat history",
+        "Keys are stored directly in openclaw.js..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ipeaky@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194160638?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ipeaky",
+      "url": "https://clawhub.ai/skills/ipeaky"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ipeaky",
+    "url": "https://clawhub.ai/skills/ipeaky",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ipeaky-67e7f62749a1bf74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ipeaky@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ipeaky-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6bec9e6b9aff25f022d9919b13c67861e36116188cd109ffff68e4d75bf4168b",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T19:13:07.408Z"
+}

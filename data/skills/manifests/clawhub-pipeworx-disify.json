@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54383,
+  "uuid": "skill-clawhub-pipeworx-disify",
+  "skillKey": "clawhub-pipeworx-disify",
+  "name": "Pipeworx disify",
+  "summary": "Detect disposable and temporary email addresses — validate emails and check domains against known throwaway services",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_disify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Detect disposable and temporary email addresses — validate emails and check domains against kno."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-disify@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-disify",
+      "url": "https://clawhub.ai/skills/pipeworx-disify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-disify",
+    "url": "https://clawhub.ai/skills/pipeworx-disify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-disify-38a5eb86bc31c1a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-disify@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-disify-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c0c787e65fae76cf3f9aed6d0c66234686fcc5a550f2ae7e23b4a3d50c96ffd",
+      "artifactSizeBytes": 1858
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T21:19:35.913Z"
+}

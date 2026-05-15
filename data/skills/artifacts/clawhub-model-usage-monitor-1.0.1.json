@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-usage-monitor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_usage_monitor",
+  "skill": {
+    "id": 66451,
+    "skillKey": "clawhub-model-usage-monitor",
+    "name": "Model Usage Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-usage-monitor",
+    "url": "https://clawhub.ai/skills/model-usage-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-usage-monitor-1dce82a7720ec42a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "监控并统计模型调用次数和成本，计算缓存命中率，支持实时监控与每小时自动告警。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "halfmoon82",
+      "userId": "s173a0sd7rjbb7s3bsayc8607s83n58t",
+      "displayName": "halfmoon82",
+      "image": "https://avatars.githubusercontent.com/u/261569221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 488,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773290673290,
+      "changelog": "Version 1.0.1 of model-usage-monitor\n\n- Added detailed security & permissions declaration to documentation, clarifying all operations are read-only except notifications.\n- Introduced new files, including setup and library modules, for improved installation and modular monitoring logic.\n- Updated documentation structure, including new README files in both English and Chinese.\n- Refined file organization with dedicated config and script directories.\n- No changes to monitoring logic or user-facing features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7cd46c2cbad9786b65eb1815ecef365d0bc4424ac8d1fab11f5272bd5fb2d507"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clevrpay@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clevrpay",
+  "skill": {
+    "id": 44366,
+    "skillKey": "clawhub-clevrpay",
+    "name": "Clevr Pay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clevrpay",
+    "url": "https://clawhub.ai/skills/clevrpay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clevrpay-4b218610aba23edb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cleanverse / ClevrPay skill for trusted global payments, compliant stablecoin settlement, financial-identity-based payments, Access Pass (A-Pass) eligibility..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "umy997",
+      "userId": "s175b1bmkq069qdrypd9hsh7nn842b40",
+      "displayName": "umy997",
+      "image": "https://avatars.githubusercontent.com/u/200921531?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775121195622,
+      "changelog": "clevrpay 1.0.1\n\n- Added explicit security & compliance notice that API endpoints are routed internally and not exposed in user instructions.\n- Updated A-Pass workflow: users are now always instructed to manually open the Magic Link for authentication instead of automated/conditional browser handling.\n- Clarified the withdrawal workflow by emphasizing use of the built-in withdraw command and referencing Access Core documentation.\n- Refined API Reference to document only the available in-skill commands and their purposes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:055c068da026f71cc6db2d00281d3b663f0112c72975d176a8ae311936b88f54"
+}

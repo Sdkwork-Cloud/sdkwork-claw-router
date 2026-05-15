@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/music-ai-generator-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_ai_generator_free",
+  "skill": {
+    "id": 47849,
+    "skillKey": "clawhub-music-ai-generator-free",
+    "name": "Music Ai Generator Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-ai-generator-free",
+    "url": "https://clawhub.ai/skills/music-ai-generator-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-ai-generator-free-9fd8c020c73bc017.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get music-backed videos ready to post, without touching a single slider. Upload your video or images (MP4, MOV, AVI, WebM, up to 500MB), say something like \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777826201076,
+      "changelog": "Initial release — AI-powered free music generator for videos and images.\n\n- Upload your video or images and generate AI background music to match your content.\n- Supports MP4, MOV, AVI, WebM and other common formats (up to 500MB).\n- Automatic 1080p MP4 export for easy sharing.\n- Simple chat interface: just describe the mood or prompt for music generation.\n- No copyright issues and built for fast, hassle-free content creation.\n- Free credits with anonymous sign-in; seamless session and cloud GPU processing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3fd3668cd93c23f9299f1ed1634e0a46e7084bc4299477f733ab8dde949d036c"
+}

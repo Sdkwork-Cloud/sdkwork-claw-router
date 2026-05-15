@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kucoin-trader@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kucoin_trader",
+  "skill": {
+    "id": 18981,
+    "skillKey": "clawhub-kucoin-trader",
+    "name": "KuCoin Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kucoin-trader",
+    "url": "https://clawhub.ai/skills/kucoin-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kucoin-trader-c29ead9c240b752e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional KuCoin (KC) trading system - multi-account support, spot/margin/futures trading, asset transfers. Use to check balances, transfer assets, open/c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "govor2026",
+      "userId": "s176e3t73awwsfe81cjvbf5qe583pjzc",
+      "displayName": "govor",
+      "image": "https://avatars.githubusercontent.com/u/5636461?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 526,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773154392340,
+      "changelog": "kucoin-trader 1.0.1\n\n- Removed support for the KUCOIN_IS_SANDBOX environment variable.\n- Updated \"Create Account\" link with a referral code.\n- Removed examples for enabling/disabling isolated margin and for asset transfers within margin section.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76dac981e0906c00a120f8d2e09c67b4c871332702cf73d1de2d5498f6b9b757"
+}

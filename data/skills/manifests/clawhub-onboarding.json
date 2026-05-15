@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14029,
+  "uuid": "skill-clawhub-onboarding",
+  "skillKey": "clawhub-onboarding",
+  "name": "Onboarding",
+  "summary": "Design user onboarding flows that maximize activation and time-to-value.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onboarding",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Design user onboarding flows that maximize activation and time-to-value."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/onboarding@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "onboarding",
+      "url": "https://clawhub.ai/skills/onboarding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onboarding",
+    "url": "https://clawhub.ai/skills/onboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onboarding-a4963c49961afb23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/onboarding@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-onboarding-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ebfcc42039703d87f71b067232fc7b28d70ef32bfe845a2c765d38c64e38369",
+      "artifactSizeBytes": 1767
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T03:49:16.328Z"
+}

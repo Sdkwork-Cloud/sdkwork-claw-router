@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22370,
+  "uuid": "skill-clawhub-shelly",
+  "skillKey": "clawhub-shelly",
+  "name": "Shelly",
+  "summary": "Control and automate Shelly devices with local RPC workflows, secure access modes, cloud API coordination, and safe multi-device execution.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shelly",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Control and automate Shelly devices with local RPC workflows, secure access modes, cloud API co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shelly@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shelly",
+      "url": "https://clawhub.ai/skills/shelly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shelly",
+    "url": "https://clawhub.ai/skills/shelly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shelly-8f613377728ddcd0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shelly@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shelly-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ae6813f59be334a19df5ec2ae68953df7c32e057547000598fc0615df8dd9bc",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T08:27:07.750Z"
+}

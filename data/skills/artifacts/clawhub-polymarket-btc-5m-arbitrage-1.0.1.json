@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-btc-5m-arbitrage@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_btc_5m_arbitrage",
+  "skill": {
+    "id": 59034,
+    "skillKey": "clawhub-polymarket-btc-5m-arbitrage",
+    "name": "Polymarket BTC 5m Arbitrage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-btc-5m-arbitrage",
+    "url": "https://clawhub.ai/skills/polymarket-btc-5m-arbitrage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-btc-5m-arbitrage-f27b63e94d1a07e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Polymarket BTC 5分钟高频套利机器人 - 自动交易BTC涨跌预测市场，支持 SkillPay 计费"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whh110112",
+      "userId": "s17c1h8vj8rk22j14t28det89983nz1g",
+      "displayName": "whh110112",
+      "image": "https://avatars.githubusercontent.com/u/7043147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 463,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772684504959,
+      "changelog": "- Added support for SkillPay billing system (optional): users must pay before accessing, non-paying users are given a payment link, and developers receive 95% of revenue.\n- Updated documentation to reflect billing option and provide configuration examples for SkillPay.\n- General improvements to usage instructions and feature descriptions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6057854ad39362b7e669f0f4812f2cccef8e7ca33b4a52d5aaf91f84b07ac132"
+}

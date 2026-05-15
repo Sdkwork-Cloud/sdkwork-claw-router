@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hf-papers@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hf_papers",
+  "skill": {
+    "id": 22454,
+    "skillKey": "clawhub-hf-papers",
+    "name": "HF Papers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hf-papers",
+    "url": "https://clawhub.ai/skills/hf-papers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hf-papers-2aa40f0f7bd84a3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse trending papers, search by keyword, and get paper details from Hugging Face Papers"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "willamhou",
+      "userId": "s17a68d3sp1pca7zzhqgmzn60h83s0yr",
+      "displayName": "Will.hou",
+      "image": "https://avatars.githubusercontent.com/u/8574759?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 472,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773653614739,
+      "changelog": "Remove executable code to resolve security flags",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8a041aeb034dd4be17d2b879828b9a546fccfc170c6fb483ed23639d4541436"
+}

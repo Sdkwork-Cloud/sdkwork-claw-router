@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flowmind@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flowmind",
+  "skill": {
+    "id": 9383,
+    "skillKey": "clawhub-flowmind",
+    "name": "FlowMind"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flowmind",
+    "url": "https://clawhub.ai/skills/flowmind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flowmind-a9e3dd159449f15d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage productivity with FlowMind — goals, tasks (with subtasks), notes, people, and tags via REST API. Use when the user wants to create, list, update, or delete goals, tasks, notes, contacts, or tags; manage focus/priorities; track progr."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fancygobot",
+      "userId": "publishers:fancygobot",
+      "displayName": "fancygobot",
+      "image": "https://avatars.githubusercontent.com/u/258339936?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4011,
+      "installsAllTime": 16,
+      "installsCurrent": 15,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1769852295339,
+      "changelog": "Re-publish: updated API docs and skill references",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0fbd6e9161f91b27c448e8f9e0d74d5d0931ab1cf42f827246ff943c25e7b8c7"
+}

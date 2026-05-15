@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/credit-transition-matrix@0.3.3",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.credit_transition_matrix",
+  "skill": {
+    "id": 63498,
+    "skillKey": "clawhub-credit-transition-matrix",
+    "name": "Credit Transition Matrix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "credit-transition-matrix",
+    "url": "https://clawhub.ai/skills/credit-transition-matrix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/credit-transition-matrix-bfa94dd1a31b3fcc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "处理信用评级转移矩阵，支持Not-Rated状态重分配、年度与月度矩阵转换、状态空间定义及数据集表征。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangweigang-jpg",
+      "userId": "s17ewpx5vannmrm5gje4p746kd83hyk1",
+      "displayName": "Tang Weigang",
+      "image": "https://avatars.githubusercontent.com/u/259277235?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.3.3",
+      "createdAt": 1776954278793,
+      "changelog": "v0.3.3: bilingual metadata injected. H1 shows 信用转移矩阵; tagline replaced with skill-specific Chinese hook; tags upgraded to Level 1-4.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b67753a8fa0b50957703cdd4502d120a2a7767be423b96061a10963bda27c02e"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33093,
+  "uuid": "skill-clawhub-sqlalchemy-code-review",
+  "skillKey": "clawhub-sqlalchemy-code-review",
+  "name": "Sqlalchemy Code Review",
+  "summary": "Reviews SQLAlchemy code for session management, relationships, N+1 queries, and migration patterns. Use when reviewing SQLAlchemy 2.0 code, checking session...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sqlalchemy_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Reviews SQLAlchemy code for session management, relationships, N+1 queries, and migration patte.",
+        "Use when reviewing SQLAlchemy 2.0 code, checking session..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sqlalchemy-code-review@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sqlalchemy-code-review",
+      "url": "https://clawhub.ai/skills/sqlalchemy-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sqlalchemy-code-review",
+    "url": "https://clawhub.ai/skills/sqlalchemy-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sqlalchemy-code-review-4a2efdfd2ab33677.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sqlalchemy-code-review@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sqlalchemy-code-review-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a065aaf5edd8c8b7404b7b37495e25545f2e283ee93b60a79988c7740a62720e",
+      "artifactSizeBytes": 2239
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:14:39.371Z"
+}

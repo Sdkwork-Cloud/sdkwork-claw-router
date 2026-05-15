@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71470,
+  "uuid": "skill-clawhub-tvdr-team-review",
+  "skillKey": "clawhub-tvdr-team-review",
+  "name": "团队每小时复盘",
+  "summary": "每小时由PM触发复盘，团队提交错误、收获与改进，管家整理到Obsidian知识库，形成技能文件和复盘日志。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tvdr_team_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "admirobot",
+      "features": [
+        "每小时由PM触发复盘，团队提交错误、收获与改进，管家整理到Obsidian知识库，形成技能文件和复盘日志。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tvdr-team-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5316996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tvdr-team-review",
+      "url": "https://clawhub.ai/skills/tvdr-team-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tvdr-team-review",
+    "url": "https://clawhub.ai/skills/tvdr-team-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tvdr-team-review-ee31a6a5cbf36317.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tvdr-team-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tvdr-team-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b45bdccd6ee20c1a09cdb4f2be74e25c25d55c5972c564e2e794a1c5e4dbec3a",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T07:23:42.768Z"
+}

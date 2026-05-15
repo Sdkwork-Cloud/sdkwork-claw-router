@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67331,
+  "uuid": "skill-clawhub-subagent-orchestrator-whhh",
+  "skillKey": "clawhub-subagent-orchestrator-whhh",
+  "name": "subagent-orchestrator (汪哈哈版)",
+  "summary": "将复杂大型任务拆解为多个子任务，通过 Subagent 并行/串行执行，三文件持久化防丢失，Main Agent 统筹整合。适用于任何需要多步骤、多信息源、长时间运行的任务，也适用于即将超出上下文窗口时的任务分流。触发词：任务分工、子任务编排、多agent协作、上下文溢出、任务分流、context快满了。",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subagent_orchestrator_whhh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whhh1994",
+      "features": [
+        "将复杂大型任务拆解为多个子任务，通过 Subagent 并行/串行执行，三文件持久化防丢失，Main Agent 统筹整合。适用于任何需要多步骤、多信息源、长时间运行的任务，也适用于即将超出."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subagent-orchestrator-whhh@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74339286?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subagent-orchestrator-whhh",
+      "url": "https://clawhub.ai/skills/subagent-orchestrator-whhh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subagent-orchestrator-whhh",
+    "url": "https://clawhub.ai/skills/subagent-orchestrator-whhh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subagent-orchestrator-whhh-5d8919536bb3c4db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subagent-orchestrator-whhh@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-subagent-orchestrator-whhh-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1eef516c7d46f74a63f4ebcfd0960ba605929b8aadd2e0125aca0c5813481159",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T15:25:02.722Z"
+}

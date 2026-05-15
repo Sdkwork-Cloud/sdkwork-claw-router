@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/database-migration-manager@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.database_migration_manager",
+  "skill": {
+    "id": 43514,
+    "skillKey": "clawhub-database-migration-manager",
+    "name": "Database Migration Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "database-migration-manager",
+    "url": "https://clawhub.ai/skills/database-migration-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/database-migration-manager-193f53cd1e6d785c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Database migration manager. Detects ORM/migration tool in use, generates migrations, handles rollbacks, creates seed scripts, diffs schemas between environme..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "llcsamih",
+      "userId": "s17dbr8dtp3fpa2xt5k10xh19x84ey42",
+      "displayName": "Samih Mansour",
+      "image": "https://avatars.githubusercontent.com/u/164091210?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775627207791,
+      "changelog": "Added explicit security notes, required-tools declaration, and safety guards for production operations",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92ccefcae8fbe86e86f19712fca34e17df3fa7a9042ab5b69088bc045a629749"
+}

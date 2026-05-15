@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-in-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_in_free",
+  "skill": {
+    "id": 46937,
+    "skillKey": "clawhub-image-to-video-in-free",
+    "name": "Image To Video In Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-in-free",
+    "url": "https://clawhub.ai/skills/image-to-video-in-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-in-free-41e024578ab81a17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn three product photos in JPG format into 1080p animated video clips just by typing what you need. Whether it's converting still photos into shareable vid..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776360512551,
+      "changelog": "Initial release of Image to Video Free — Convert Images Into Video Clips.\n\n- Instantly turn up to three JPG product photos into 1080p MP4 video clips via chat.\n- No manual video editing: just upload images and describe your desired outcome.\n- Fully cloud-based with fast processing (30–60 seconds per export).\n- Automatic session and token setup included; 100 free credits on first use.\n- Supports export, credits check, balance, and progress/status queries.\n- Error handling for token expiry, missing credits, unsupported files, and more.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92023e3b7e741b9bb38f8b819a009ad0b45140d5d84c653e13b5d63b94f12350"
+}

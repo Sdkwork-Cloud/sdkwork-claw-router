@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_tracker",
+  "skill": {
+    "id": 39436,
+    "skillKey": "clawhub-social-tracker",
+    "name": "Social Tracker Clean"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-tracker",
+    "url": "https://clawhub.ai/skills/social-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-tracker-04c6e7ff0c3845c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track competitor social content across LinkedIn, X, and Instagram. Analyzes posting frequency, top-performing hooks, content pillars, and engagement patterns..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drivenautoplex1",
+      "userId": "s17amw9603tjt6jg530q93xzvx83syaf",
+      "displayName": "drivenautoplex1",
+      "image": "https://avatars.githubusercontent.com/u/186228539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774722076057,
+      "changelog": "- Initial release of Social Tracker for monitoring competitor social content strategies.\n- Tracks posting frequency, engagement patterns, top hooks, and content pillars across LinkedIn, X, and Instagram.\n- Provides actionable output: best posting times, top-performing hook templates, and gap analysis for missed topics.\n- Supports tiered plans: free (1 competitor, X only), standard, and pro for deeper analysis and platform coverage.\n- Automates extraction of swipe-ready hook templates and summarizes competitive intel for users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8fba37033156ecfef3f011b97323b4aa0c338873b39751db32ca205c9e0ad06"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12027,
+  "uuid": "skill-clawhub-quit-alcohol",
+  "skillKey": "clawhub-quit-alcohol",
+  "name": "Quit Alcohol",
+  "summary": "Track sobriety with alcohol-free streaks, craving management, and recovery milestones",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quit_alcohol",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jhillin8",
+      "features": [
+        "Track sobriety with alcohol-free streaks, craving management, and recovery milestones"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quit-alcohol@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79551560?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quit-alcohol",
+      "url": "https://clawhub.ai/skills/quit-alcohol"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quit-alcohol",
+    "url": "https://clawhub.ai/skills/quit-alcohol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quit-alcohol-b5d828f10c62d1db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quit-alcohol@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quit-alcohol-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2350c5d49fb439f28120e1d3bf4d49d967474a860a61f8ea7f6a45bf2bc2b4c",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T07:35:45.654Z"
+}

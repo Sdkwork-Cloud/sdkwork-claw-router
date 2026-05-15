@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28949,
+  "uuid": "skill-clawhub-telegram-openapi-skill",
+  "skillKey": "clawhub-telegram-openapi-skill",
+  "name": "Telegram OpenAPI Skill",
+  "summary": "Operate Telegram Bot API through UXC with a curated OpenAPI schema, bot-token path auth, polling-based reads, and webhook management guardrails.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_openapi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Operate Telegram Bot API through UXC with a curated OpenAPI schema, bot-token path auth, pollin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telegram-openapi-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telegram-openapi-skill",
+      "url": "https://clawhub.ai/skills/telegram-openapi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-openapi-skill",
+    "url": "https://clawhub.ai/skills/telegram-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-openapi-skill-459916b5d7bfecfd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telegram-openapi-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-telegram-openapi-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ecd2a90d739a25552710b606bb63bea7993d8bd57e5a572d1c1037f4228dd7f0",
+      "artifactSizeBytes": 2522
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:11:42.309Z"
+}

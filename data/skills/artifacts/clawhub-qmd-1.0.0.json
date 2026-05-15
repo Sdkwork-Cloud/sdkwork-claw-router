@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qmd@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qmd",
+  "skill": {
+    "id": 8282,
+    "skillKey": "clawhub-qmd",
+    "name": "Qmd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qmd",
+    "url": "https://clawhub.ai/skills/qmd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qmd-4750ada0d4984041.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local search/indexing CLI (BM25 + vectors + rerank) with MCP mode."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "steipete",
+      "userId": "s179zksw999xz8ms4cy7pb2fr183m5jq",
+      "displayName": "Peter Steinberger",
+      "image": "https://avatars.githubusercontent.com/u/58493?v=4"
+    },
+    "stats": {
+      "comments": 5,
+      "downloads": 30212,
+      "installsAllTime": 405,
+      "installsCurrent": 378,
+      "stars": 103,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767545374981,
+      "changelog": "",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2711eda50d26927060dbcdcd3b2d4131b5ff93d6de5239b8eb838c3d31b0f942"
+}

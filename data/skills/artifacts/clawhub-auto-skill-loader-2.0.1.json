@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-skill-loader@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_skill_loader",
+  "skill": {
+    "id": 61748,
+    "skillKey": "clawhub-auto-skill-loader",
+    "name": "Auto Skill Loader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-skill-loader",
+    "url": "https://clawhub.ai/skills/auto-skill-loader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-skill-loader-fda093618e6e7937.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动检测当前任务类型，动态加载对应的 Skill。当收到新任务时，分析任务意图， 匹配最佳 Skill 并自动加载。支持 Skill 分级保护（core/protected/dynamic）， 即插即用零配置，兼容任何 OpenClaw 部署。 触发词：\"自动加载skill\"、\"动态加载\"、\"智能匹配skill\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zqleslie",
+      "userId": "publishers:zqleslie",
+      "displayName": "zqleslie",
+      "image": "https://avatars.githubusercontent.com/u/262965293?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773912080255,
+      "changelog": "v2.0.1 - 完善 Step 6 Agent 路由失败处理说明，明确\"无法发现其他 Agent\"的4种场景，提供标准回复模板和Fail Fast设计原则解释。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60f3d0eee6f8d6dfbe38118984ed251981fa7a56575e3c4c7e54d329edf93bb1"
+}

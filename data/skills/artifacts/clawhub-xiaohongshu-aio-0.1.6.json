@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-aio@0.1.6",
+  "version": "0.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_aio",
+  "skill": {
+    "id": 70997,
+    "skillKey": "clawhub-xiaohongshu-aio",
+    "name": "小红书操作全集 Xiaohongshu All In One 基于api接口稳定快速"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-aio",
+    "url": "https://clawhub.ai/skills/xiaohongshu-aio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-aio-d6fc7c9743b3b2bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书MCP服务下载、启动、重启、检测，小红书多账号管理、登录、状态检查、内容发布、小红书笔记和视频发布、点赞评论操作和用户信息查询等需要调用本技能。当用户需要从小红书获取笔记和视频数据、用户数据、发布笔记或视频时需要调用本技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cn-p5",
+      "userId": "s17c7h4yyrbdcfj758ge102qth83fzpg",
+      "displayName": "CN-P5",
+      "image": "https://avatars.githubusercontent.com/u/6131031?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.6",
+      "createdAt": 1774296103459,
+      "changelog": "- Added built-in MCP 服务器下载、启动、停止、重启和状态检测命令，简化环境依赖管理\n- 删除 check-service.sh、download_mcp.sh 等 shell 工具，相关功能集成到 CLI\n- 新增 mcp_service.py，统一管理服务器相关流程和命令接口\n- 优化并统一命令结构：所有服务器操作均可用 `xhs mcp ...` 命令完成\n- 文档全面更新，明确强调“一体化”管理与全流程自动化体验\n- 其他细节修正和结构调整，提升技能易用性",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9fb2d3aed2ba5e9353d640790dc835fb13b9381acb1c407963855b80a455c741"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aimpact-crypto@0.8.1",
+  "version": "0.8.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aimpact_crypto",
+  "skill": {
+    "id": 60267,
+    "skillKey": "clawhub-aimpact-crypto",
+    "name": "aimpact-crypto"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aimpact-crypto",
+    "url": "https://clawhub.ai/skills/aimpact-crypto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aimpact-crypto-fc527550eaaf20c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AIMPACT Crypto 技能提供 Crypto 领域早报、晚报、热点新闻和精选内容，基于 AI 评分智能排序，支持定时推送。当用户说\"查询 AIMPACT Crypto 早报\"、\"查询 AIMPACT Crypto 晚报\"、\"查询 Crypto 24H 热点榜\"或\"查询 Crypto 精选内容\"时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamesmenews",
+      "userId": "s177x32ba36jaspp47v9qdzqnh83gzf0",
+      "displayName": "AIMPACT",
+      "image": "https://avatars.githubusercontent.com/u/254596585?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.8.1",
+      "createdAt": 1776670530271,
+      "changelog": "Version 0.8.1\n\n- 添加 version 字段到 SKILL.md，实现版本化描述\n- 明确依赖要求，将 tools 依赖调整为 bins: [curl]，只在可选项中保留 tools: [web_fetch, message]\n- 明确说明技能本身不内置或管理任何渠道凭据，推送能力依赖 OpenClaw 配置和 message 工具\n- 去重逻辑修正为只针对本批次（非历史数据）\n- 优化定时推送与配置描述，使其明确仅调用已配置的 message 工具和渠道\n- 增加“本技能不负责管理第三方渠道密钥，也不要求写入本地持久化存储”等使用限制说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4f8d02b38b7e12ce2ae96626d876e0b80e4e820cd5d230a73983d89a7ac8058"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25255,
+  "uuid": "skill-clawhub-ar-collections",
+  "skillKey": "clawhub-ar-collections",
+  "name": "AR Collections",
+  "summary": "AR Collections & Aging Analysis pipeline for QBO clients. Produces a 7-tab Excel workbook with AR aging buckets (Current/1-30/31-60/61-90/90+), DSO, collecti...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ar_collections",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "AR Collections & Aging Analysis pipeline for QBO clients",
+        "Produces a 7-tab Excel workbook with AR aging buckets (Current/1-30/31-60/61-90/90+), DSO, coll."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ar-collections@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ar-collections",
+      "url": "https://clawhub.ai/skills/ar-collections"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ar-collections",
+    "url": "https://clawhub.ai/skills/ar-collections",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ar-collections-2c94f3446940721f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ar-collections@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ar-collections-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ccbe79a2a6d02d5a5763833b800da63ff37044486fa0ab3ccb6f39185470cab0",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T08:01:53.882Z"
+}

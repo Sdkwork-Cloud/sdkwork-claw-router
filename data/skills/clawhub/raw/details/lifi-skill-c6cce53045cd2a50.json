@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "lifi-skill",
+    "displayName": "LI.FI Skill",
+    "summary": "v4 - Use LI.FI API for cross-chain and same-chain swaps, bridges, and contract calls. Use when quoting routes, validating chains/tokens, building transaction requests, and tracking status.",
+    "tags": {
+      "latest": "2.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2975,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 13
+    },
+    "createdAt": 1770211980405,
+    "updatedAt": 1778383507694
+  },
+  "latestVersion": {
+    "version": "2.0.1",
+    "createdAt": 1770541979786,
+    "changelog": "LI.FI Skill 2.0.1 Changelog\n\n- Major skill rewrite with stricter security and usage rules for all DeFi swaps and bridges.\n- Default slippage increased to 10%; dynamically adjustable if user requests.\n- All /v1/quote requests now require &skipSimulation=true to ensure compatibility with delegated wallets.\n- Explicit support and special instructions for Sui chain swaps and bridging (chain ID 9270000000000000).\n- Clear separation for handling ERC-20 approval flows, ensuring all approvals use provided tools.\n- After transaction, always return a clickable block explorer link for easy tracking.\n- Only documented LI.FI API endpoints may be used; no guessing or external API calls.",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "fabriziogianni7",
+    "userId": "publishers:fabriziogianni7",
+    "displayName": "fabriziogianni7",
+    "image": "https://avatars.githubusercontent.com/u/46995085?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778383507694
+  }
+}

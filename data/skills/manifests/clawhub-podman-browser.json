@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10998,
+  "uuid": "skill-clawhub-podman-browser",
+  "skillKey": "clawhub-podman-browser",
+  "name": "podman-browser",
+  "summary": "Run a headless Chromium browser via Podman to fetch text or HTML from JavaScript-rendered web pages using Playwright in a container.",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podman_browser",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ricardodantas",
+      "features": [
+        "Run a headless Chromium browser via Podman to fetch text or HTML from JavaScript-rendered web p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/podman-browser@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "podman-browser",
+      "url": "https://clawhub.ai/skills/podman-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podman-browser",
+    "url": "https://clawhub.ai/skills/podman-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podman-browser-f5ff6a783ba99926.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/podman-browser@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-podman-browser-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:769a3755f5f82799aa91e30e0005661627206317dc329035be3a0d7b343accee",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T22:08:33.577Z"
+}

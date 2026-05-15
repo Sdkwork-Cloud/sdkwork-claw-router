@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34080,
+  "uuid": "skill-clawhub-puma",
+  "skillKey": "clawhub-puma",
+  "name": "Puma",
+  "summary": "Information assistant for Puma. Search products, news, financials, and official resources for Puma.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.puma",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for Puma",
+        "Search products, news, financials, and official resources for Puma."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/puma@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "puma",
+      "url": "https://clawhub.ai/skills/puma"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "puma",
+    "url": "https://clawhub.ai/skills/puma",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/puma-86505085bb4773d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/puma@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-puma-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c3852b41db2573c91c952b897b45bd4a80ab6433d42b00edf8341ce4857b46f",
+      "artifactSizeBytes": 2150
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T23:10:08.347Z"
+}

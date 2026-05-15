@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kosu@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kosu",
+  "skill": {
+    "id": 28472,
+    "skillKey": "clawhub-kosu",
+    "name": "Kosu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kosu",
+    "url": "https://clawhub.ai/skills/kosu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kosu-b3df459294d436db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add, reorder, and manage content in a Kosu queue via API. Use when adding URLs, checking what's queued, suggesting content, reordering items, or tracking wha..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "matthewspear",
+      "userId": "s1787qr2b9302r7wmkcxzdh4z583wd2c",
+      "displayName": "Matt Spear",
+      "image": "https://avatars.githubusercontent.com/u/1668863?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773375818902,
+      "changelog": "Kosu 1.1.0\n\n- Added a version field and expanded metadata (including API base, homepage, emoji, environment variable).\n- Clarified and improved installation and setup instructions, especially around API key handling and security.\n- Added guidance for handling missing API keys (now suggests to guide the user through setup, not fail silently).\n- Documented new user-configurable decay period options and ability to disable decay.\n- Updated the skill description for increased clarity on feature scope and usage.\n- Provided explicit references to the OpenAPI spec for troubleshooting and keeping up-to-date.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e590934160c31ec4bc186ee3c4f4f1ffd95e891731b919716dc3dcae2cfce822"
+}

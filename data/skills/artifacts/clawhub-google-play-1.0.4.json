@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-play@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_play",
+  "skill": {
+    "id": 8431,
+    "skillKey": "clawhub-google-play",
+    "name": "Google Play"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-play",
+    "url": "https://clawhub.ai/skills/google-play",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-play-7427ad684a3ae3e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Play Developer API (Android Publisher) integration with managed OAuth. Manage apps, subscriptions, in-app purchases, and reviews. Use this skill when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 15598,
+      "installsAllTime": 14,
+      "installsCurrent": 12,
+      "stars": 12,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777593149155,
+      "changelog": "- Updated all endpoints to use https://api.maton.ai instead of https://gateway.maton.ai and https://ctrl.maton.ai.\n- Simplified connection management instructions and updated example code to new base URL.\n- Improved connection selection guidance, recommending always specifying the Maton-Connection header if multiple connections exist.\n- Added a section on security and permissions, clarifying required user approval for write operations.\n- Removed the LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd5a84fe4a8b15b95307dcdabdb220ada65497a0cbc2a129d5874025d6fed2a9"
+}

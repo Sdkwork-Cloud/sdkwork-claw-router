@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10692,
+  "uuid": "skill-clawhub-highlevel",
+  "skillKey": "clawhub-highlevel",
+  "name": "GoHighLevel",
+  "summary": "Connect your AI assistant to GoHighLevel CRM via the official API v2. Manage contacts, conversations, calendars, pipelines, invoices, payments, workflows, an...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.highlevel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "10xcoldleads",
+      "features": [
+        "Connect your AI assistant to GoHighLevel CRM via the official API v2",
+        "Manage contacts, conversations, calendars, pipelines, invoices, payments, workflows, an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/highlevel@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/175161021?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "highlevel",
+      "url": "https://clawhub.ai/skills/highlevel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "highlevel",
+    "url": "https://clawhub.ai/skills/highlevel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/highlevel-d79059c6efd7e419.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/highlevel@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-highlevel-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c97f2c0cb6e8c9d00b6cccaf3f9b2c8d3b8dc8f24a29be8918f7da75410481f7",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T19:14:47.671Z"
+}

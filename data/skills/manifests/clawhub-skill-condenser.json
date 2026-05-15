@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11435,
+  "uuid": "skill-clawhub-skill-condenser",
+  "skillKey": "clawhub-skill-condenser",
+  "name": "skill-condenser",
+  "summary": "Compress verbose SKILL.md files using Chain-of-Density with skill-aware formatting. Use when a skill exceeds 200 lines or needs terse refactoring.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_condenser",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vaskin Kissoyan",
+      "features": [
+        "Compress verbose SKILL.md files using Chain-of-Density with skill-aware formatting",
+        "Use when a skill exceeds 200 lines or needs terse refactoring."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-condenser@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31700?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-condenser",
+      "url": "https://clawhub.ai/skills/skill-condenser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-condenser",
+    "url": "https://clawhub.ai/skills/skill-condenser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-condenser-f1d1bf94cc9df0bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-condenser@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-condenser-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c62b861eb56c97346ec0cdf6d449fdf6100a72b1c35aa4e13ad6a9a6f933ce0",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T03:47:00.267Z"
+}

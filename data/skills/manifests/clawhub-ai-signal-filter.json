@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71495,
+  "uuid": "skill-clawhub-ai-signal-filter",
+  "skillKey": "clawhub-ai-signal-filter",
+  "name": "AI信号筛选",
+  "summary": "从海量AI动态中筛选真正有决策价值的信号，每条必须回答\"所以呢\"和\"该做什么",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_signal_filter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hao Li",
+      "features": [
+        "从海量AI动态中筛选真正有决策价值的信号，每条必须回答\"所以呢\"和\"该做什么"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-signal-filter@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5256066?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-signal-filter",
+      "url": "https://clawhub.ai/skills/ai-signal-filter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-signal-filter",
+    "url": "https://clawhub.ai/skills/ai-signal-filter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-signal-filter-198f381918904557.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-signal-filter@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-signal-filter-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac90018fd532b2001e3c3f7e2f73e0bacff8528c660b33a09999ca09514e2b37",
+      "artifactSizeBytes": 2699
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T14:08:22.516Z"
+}

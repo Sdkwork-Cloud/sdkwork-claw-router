@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56673,
+  "uuid": "skill-clawhub-cnblogs-publisher",
+  "skillKey": "clawhub-cnblogs-publisher",
+  "name": "CNBlogs Publisher",
+  "summary": "Manage CNBlogs (博客园) articles via MetaWeblog API. Supports save drafts, publish, update, and delete posts.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cnblogs_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sue",
+      "features": [
+        "Manage CNBlogs (博客园) articles via MetaWeblog API",
+        "Supports save drafts, publish, update, and delete posts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cnblogs-publisher@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29352759?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cnblogs-publisher",
+      "url": "https://clawhub.ai/skills/cnblogs-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cnblogs-publisher",
+    "url": "https://clawhub.ai/skills/cnblogs-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cnblogs-publisher-bc1365fbfe953fd4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cnblogs-publisher@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cnblogs-publisher-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c3d3ffcb7022c866ddf44753c8295917d91c5f5be9a949397fc9c5ffab522be",
+      "artifactSizeBytes": 2215
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T16:10:16.809Z"
+}

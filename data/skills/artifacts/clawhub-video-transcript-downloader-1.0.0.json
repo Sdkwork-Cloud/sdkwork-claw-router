@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-transcript-downloader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_transcript_downloader",
+  "skill": {
+    "id": 8420,
+    "skillKey": "clawhub-video-transcript-downloader",
+    "name": "Video Transcript Downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-transcript-downloader",
+    "url": "https://clawhub.ai/skills/video-transcript-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-transcript-downloader-b1f83ab0e8a64bdb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download videos, audio, subtitles, and clean paragraph-style transcripts from YouTube and any other yt-dlp supported site. Use when asked to “download this video”, “save this clip”, “rip audio”, “get subtitles”, “get transcript”, or to tro."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "steipete",
+      "userId": "s179zksw999xz8ms4cy7pb2fr183m5jq",
+      "displayName": "Peter Steinberger",
+      "image": "https://avatars.githubusercontent.com/u/58493?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 11787,
+      "installsAllTime": 95,
+      "installsCurrent": 90,
+      "stars": 81,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767652029078,
+      "changelog": "",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:92c4a34fc328518feae5d027ae9195178682c88770e762a75712ec9bb47b43ba"
+}

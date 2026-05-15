@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59914,
+  "uuid": "skill-clawhub-youtube-publisher",
+  "skillKey": "clawhub-youtube-publisher",
+  "name": "YouTube Publisher",
+  "summary": "YouTube 视频自动上传工具。支持视频上传、设置标题/描述/标签/缩略图、管理频道和播放列表。基于 YouTube Data API v3 + OAuth 2.0。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_publisher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leogao",
+      "features": [
+        "YouTube 视频自动上传工具。支持视频上传、设置标题/描述/标签/缩略图、管理频道和播放列表。基于 YouTube Data API v3 + OAuth 2.0。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232205444?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-publisher",
+      "url": "https://clawhub.ai/skills/youtube-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-publisher",
+    "url": "https://clawhub.ai/skills/youtube-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-publisher-ebae8b525177e433.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f88ea8be1e0977602fe7d5a31fb9433138cb250d99c2c7206c558eb41deda051",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T12:45:17.793Z"
+}

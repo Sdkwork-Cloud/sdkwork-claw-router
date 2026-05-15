@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62115,
+  "uuid": "skill-clawhub-bargins",
+  "skillKey": "clawhub-bargins",
+  "name": "Ruofan Bargain Arena",
+  "summary": "若饭砍价擂台 — 和若小饭讨价还价，赢取专属优惠码",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bargins",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "若饭实验室",
+      "features": [
+        "若饭砍价擂台 — 和若小饭讨价还价，赢取专属优惠码"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bargins@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13448083?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bargins",
+      "url": "https://clawhub.ai/skills/bargins"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bargins",
+    "url": "https://clawhub.ai/skills/bargins",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bargins-1d497506f836b3a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bargins@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bargins-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13e8bc6df6ab728fe224050a4b9bf30af3ef4a7bdc93a6e5ee1add9a8d7688ba",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T20:01:53.582Z"
+}

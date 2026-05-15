@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deapi-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deapi_ai",
+  "skill": {
+    "id": 27189,
+    "skillKey": "clawhub-deapi-ai",
+    "name": "deAPI - AI Media Generation Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deapi-ai",
+    "url": "https://clawhub.ai/skills/deapi-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deapi-ai-2887cbc45d18ffb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI media generation via deAPI. Transcribe YouTube/audio/video, generate images from text, text-to-speech, OCR, remove backgrounds, upscale images, create vid..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aleglowa",
+      "userId": "s17c492vs8h6gp7j0n9mhsg4xh83hwzz",
+      "displayName": "Alex Glowacki",
+      "image": "https://avatars.githubusercontent.com/u/22919693?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 353,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773309526370,
+      "changelog": "Initial release\n\n- Text-to-image generation (Flux Klein 4B, Flux Schnell, ZImageTurbo)\n- Image-to-image transformation with multi-image support\n- Text-to-speech with 54+ voices across 8 languages (Kokoro)\n- Text and image to video generation\n- YouTube, Twitch, Kick, and X video/audio transcription (Whisper Large V3)\n- OCR text extraction from images\n- Background removal with transparency output\n- Image upscaling at 4x (RealESRGAN)\n- Text embeddings generation (BGE-M3, 1024-dim)\n- Account balance checking\n- Configurable result delivery via polling, webhooks, or WebSockets",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2e508b78e4fb6968bdb9533cdc7bb4aa0566c6be42c912024d8582f9b56ed2c"
+}

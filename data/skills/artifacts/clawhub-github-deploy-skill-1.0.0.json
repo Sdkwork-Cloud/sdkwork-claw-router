@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-deploy-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_deploy_skill",
+  "skill": {
+    "id": 23199,
+    "skillKey": "clawhub-github-deploy-skill",
+    "name": "auto-git"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-deploy-skill",
+    "url": "https://clawhub.ai/skills/github-deploy-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-deploy-skill-b1428d40cc07436b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Commit and push local project changes to GitHub, with optional repo creation and deployment hints."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cruciata",
+      "userId": "publishers:cruciata",
+      "displayName": "范士轶",
+      "image": "https://avatars.githubusercontent.com/u/35017791?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 438,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773119565674,
+      "changelog": "- Initial release of GitHub Deploy Skill\n- Provides a reusable PowerShell script to automate git checks, commits, and pushes to any remote branch\n- Supports optional creation of a new GitHub repository using GitHub CLI\n- Offers deployment hints, useful for Streamlit flow (optionally suppressible)\n- Handles first-commit scenarios and automatic remote configuration if needed\n- Requires Git and, for repo creation, GitHub CLI (`gh`)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e55a72f2077aed1838b93b7d6061a807bf76bdf7681c905bed49556cbd8576a"
+}

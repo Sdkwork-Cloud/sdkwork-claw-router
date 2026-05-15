@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/approve-pairing@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.approve_pairing",
+  "skill": {
+    "id": 50149,
+    "skillKey": "clawhub-approve-pairing",
+    "name": "Approve Pairing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "approve-pairing",
+    "url": "https://clawhub.ai/skills/approve-pairing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/approve-pairing-d06f6b200dca6f6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Approve a pending DM pairing request without the openclaw CLI, by directly editing credential files. Use when `openclaw pairing approve` is unavailable (CLI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "madan-wego",
+      "userId": "publishers:madan-wego",
+      "displayName": "madan-wego",
+      "image": "https://avatars.githubusercontent.com/u/222174212?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1771878110887,
+      "changelog": "Approve DM pairing requests without the openclaw CLI",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:36a571b4ce156b400d7f0d50a6a5558aea7f6969c99fc481dfc6e318936044e7"
+}

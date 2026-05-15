@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/patent-eou@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patent_eou",
+  "skill": {
+    "id": 27499,
+    "skillKey": "clawhub-patent-eou",
+    "name": "patent-eou"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patent-eou",
+    "url": "https://clawhub.ai/skills/patent-eou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patent-eou-1feecba73f17e717.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evidence of Use (EOU) patent analysis skill. Use this skill whenever the user wants to: analyze whether a product infringes a patent, generate an EOU claim c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaochaosz",
+      "userId": "s17aqnhgyt2gmfqt1j9zm7p2mx83wch8",
+      "displayName": "chaochaoSZ",
+      "image": "https://avatars.githubusercontent.com/u/39897272?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773817432945,
+      "changelog": "v1.0.1 Changelog\n\n- Updated skill description to add \"infringing products\" as a recognized trigger keyword and clarify output requirements.\n- Patsnap disclaimer revised: now only included in report files, not printed in chat; wording simplified and attribution updated.\n- Removed Chinese from all instruction/disclaimer text; all guidance and disclaimers are now in English.\n- Clarified placement of disclaimer: now inserted as Section 0 and the final section of each report file.\n- Minor edits to instructions on lead discovery and reporting, including more concise search example queries.\n- No code or logic changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c723e6eae51c664f43e0779d89253f29a0aae03be22264dc9245cf509164d9e6"
+}

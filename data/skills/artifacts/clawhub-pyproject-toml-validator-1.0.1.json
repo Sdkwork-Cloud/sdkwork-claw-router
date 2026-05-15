@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pyproject-toml-validator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pyproject_toml_validator",
+  "skill": {
+    "id": 32695,
+    "skillKey": "clawhub-pyproject-toml-validator",
+    "name": "Pyproject Toml Validator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pyproject-toml-validator",
+    "url": "https://clawhub.ai/skills/pyproject-toml-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pyproject-toml-validator-ce844bf117e936fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validate Python project pyproject.toml files against PEP 517/621 rules for project metadata, build system, and tool configurations with detailed reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777593755902,
+      "changelog": "- Added STATUS.md file to the repository.\n- No functional or behavioral changes to the skill itself.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4c6b93f78dc5c3e78e33a3a9b5d93aa06b9a6a4725e2caaced7ea9c9951f6d7"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ab-test-setup-migrated@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ab_test_setup_migrated",
+  "skill": {
+    "id": 40085,
+    "skillKey": "clawhub-ab-test-setup-migrated",
+    "name": "Ab Test Setup Migrated"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ab-test-setup-migrated",
+    "url": "https://clawhub.ai/skills/ab-test-setup-migrated",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ab-test-setup-migrated-d9c1b7a993f9814c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill migrada desde examples - ab-test-setup con capacidades completas"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jacr6",
+      "userId": "s17dqsqs043wcqj4wnwffxbz9183sq5c",
+      "displayName": "José Cuevas",
+      "image": "https://avatars.githubusercontent.com/u/15861188?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774884074106,
+      "changelog": "ab-test-setup skill v1.0.0 migrated and enhanced:\n\n- Migrated from the examples directory to standalone usage.\n- Improved for compatibility with Qwen Code.\n- Includes detailed usage and integration examples.\n- Enhanced with quota optimizations: context compression, limited tools, iteration cap, and result caching.\n- Updated documentation and tags to reflect origin and migration status.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:313d8f670c46bc6e08109ff4bcdac0b8f0ff5391036a4d75b01e0b18155e0518"
+}

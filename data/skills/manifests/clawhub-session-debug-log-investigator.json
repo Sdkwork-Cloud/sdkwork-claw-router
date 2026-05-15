@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42740,
+  "uuid": "skill-clawhub-session-debug-log-investigator",
+  "skillKey": "clawhub-session-debug-log-investigator",
+  "name": "Session Debug Log Investigator",
+  "summary": "Use when diagnosing a failing or confusing Claude Code session by enabling debug logging, tailing recent logs, and explaining warnings or errors.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_debug_log_investigator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wimi321",
+      "features": [
+        "Use when diagnosing a failing or confusing Claude Code session by enabling debug logging, taili."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-debug-log-investigator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34830250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-debug-log-investigator",
+      "url": "https://clawhub.ai/skills/session-debug-log-investigator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-debug-log-investigator",
+    "url": "https://clawhub.ai/skills/session-debug-log-investigator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-debug-log-investigator-21878a3ebaf229dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-debug-log-investigator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-debug-log-investigator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31c9c67a385f8aa6d23b021856eb74860a663bf5a3bc84234e4d6b48b0111a98",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T18:19:10.673Z"
+}

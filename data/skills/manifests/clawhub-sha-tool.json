@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48005,
+  "uuid": "skill-clawhub-sha-tool",
+  "skillKey": "clawhub-sha-tool",
+  "name": "Sha Tool",
+  "summary": "Compute SHA family hash values for file integrity verification. Use for checksums, data validation, and security verification.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sha_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Compute SHA family hash values for file integrity verification",
+        "Use for checksums, data validation, and security verification."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sha-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sha-tool",
+      "url": "https://clawhub.ai/skills/sha-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sha-tool",
+    "url": "https://clawhub.ai/skills/sha-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sha-tool-757ac94921055eb4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sha-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sha-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6def475e58952f8c808873339ca88bf31c9740a121bdfbd0a08aef9abf926b22",
+      "artifactSizeBytes": 1805
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T21:30:11.153Z"
+}

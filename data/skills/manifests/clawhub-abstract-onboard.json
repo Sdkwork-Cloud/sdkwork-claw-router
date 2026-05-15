@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10286,
+  "uuid": "skill-clawhub-abstract-onboard",
+  "skillKey": "clawhub-abstract-onboard",
+  "name": "Abstract Onboard",
+  "summary": "Deploy smart contracts and bridge assets to Abstract (ZK Stack L2). Use when an agent needs to deploy contracts on Abstract, bridge ETH/tokens to Abstract, trade/swap tokens, place predictions on Myriad Markets, check balances, transfer as.",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abstract_onboard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Masoncags-tech",
+      "features": [
+        "Deploy smart contracts and bridge assets to Abstract (ZK Stack L2)",
+        "Use when an agent needs to deploy contracts on Abstract, bridge ETH/tokens to Abstract, trade/s.",
+        "Covers zksolc compilation, Hardhat deployment, Relay bridging, DEX trading (Kona, Aborean), Myr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abstract-onboard@1.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257425459?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abstract-onboard",
+      "url": "https://clawhub.ai/skills/abstract-onboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abstract-onboard",
+    "url": "https://clawhub.ai/skills/abstract-onboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abstract-onboard-7e7319617940f6e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abstract-onboard@1.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-abstract-onboard-1.6.0.json",
+      "version": "1.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:105fdd8739d4dbaa358790a8b573f89dd0de2baf4fbcf2b2ea9d9385206b4a1c",
+      "artifactSizeBytes": 2038
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T03:49:29.670Z"
+}

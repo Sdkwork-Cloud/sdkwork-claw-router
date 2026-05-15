@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65298,
+  "uuid": "skill-clawhub-north-face",
+  "skillKey": "clawhub-north-face",
+  "name": "North Face",
+  "summary": "提供The North Face产品信息、门店位置、户外装备推荐及最新商品动态，助力户外运动装备选购与咨询。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.north_face",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供The North Face产品信息、门店位置、户外装备推荐及最新商品动态，助力户外运动装备选购与咨询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/north-face@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "north-face",
+      "url": "https://clawhub.ai/skills/north-face"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "north-face",
+    "url": "https://clawhub.ai/skills/north-face",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/north-face-96dbcd39f63ec610.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/north-face@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-north-face-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13292cf301eb4d0d687cebab0eb82b5b1be98ed057db03e18ebfc8f17ea1d31b",
+      "artifactSizeBytes": 2219
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:25:00.837Z"
+}

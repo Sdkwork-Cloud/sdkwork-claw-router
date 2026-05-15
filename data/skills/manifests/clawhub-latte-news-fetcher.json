@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63682,
+  "uuid": "skill-clawhub-latte-news-fetcher",
+  "skillKey": "clawhub-latte-news-fetcher",
+  "name": "Latte News Fetcher",
+  "summary": "新闻获取工具。支持获取新闻列表、绕过付费墙获取全文。 使用 archive.today、smry.ai、12ft.io 等公开服务访问付费内容。 触发词：新闻、今日新闻、付费墙、文章、阅读。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.latte_news_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luogao2333",
+      "features": [
+        "新闻获取工具。支持获取新闻列表、绕过付费墙获取全文。 使用 archive.today、smry.ai、12ft.io 等公开服务访问付费内容。 触发词：新闻、今日新闻、付费墙、文章、阅读。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/latte-news-fetcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244123296?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "latte-news-fetcher",
+      "url": "https://clawhub.ai/skills/latte-news-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "latte-news-fetcher",
+    "url": "https://clawhub.ai/skills/latte-news-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/latte-news-fetcher-84ca04e209a78da0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/latte-news-fetcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-latte-news-fetcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:894c9e3b060be727d72d62c5fe7aacf5cdf5c5970005fc6486f96b5bb6eb4c21",
+      "artifactSizeBytes": 2370
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T09:52:20.658Z"
+}

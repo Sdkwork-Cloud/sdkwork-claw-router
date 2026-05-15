@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vt-sentinel-installer@1.10.0",
+  "version": "1.10.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vt_sentinel_installer",
+  "skill": {
+    "id": 21799,
+    "skillKey": "clawhub-vt-sentinel-installer",
+    "name": "Vt Sentinel Installer 1.10.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vt-sentinel-installer",
+    "url": "https://clawhub.ai/skills/vt-sentinel-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vt-sentinel-installer-5404483b41cd04b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install or upgrade VT Sentinel security plugin. Use when the user asks to install, set up, enable, update, or upgrade VT Sentinel, VirusTotal scanning, malwa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "king-tero",
+      "userId": "s1777s7z33cdkb6brdybza9snh83kga6",
+      "displayName": "king-tero",
+      "image": "https://avatars.githubusercontent.com/u/4201239?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 496,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.10.0",
+      "createdAt": 1776161531669,
+      "changelog": "Rewrite installer to use openclaw plugins update/uninstall CLI subcommands. Eliminates rm -rf, inline node -e JSON editing, and npm pack/tar Windows fallback flagged by VirusTotal Code Insight. Fixes requires.anyBins to declare real dependency (openclaw CLI) instead of unused npm/pnpm/yarn/bun. Uses openclaw gateway restart as cross-platform wrapper.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c7105b1a54ec674d0f85ab3730416a09885426394c3c7b31884024e1ae24601"
+}

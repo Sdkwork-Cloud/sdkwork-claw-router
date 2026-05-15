@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61201,
+  "uuid": "skill-clawhub-openclaw-update-researcher",
+  "skillKey": "clawhub-openclaw-update-researcher",
+  "name": "openclaw-update-researcher",
+  "summary": "专门用于调研 OpenClaw 最新更新的 Skill。该 Skill 能够自动抓取 GitHub 上的 Release 和 Tag 信息，筛选出指定日期（通常是当前日期的前一天）的更新内容，并生成结构化的 Markdown 报告。特别关注记忆（Memory）相关的更新。适用场景：(1) 自动化生成 OpenCl...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_update_researcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liuxin-lixiang",
+      "features": [
+        "专门用于调研 OpenClaw 最新更新的 Skill。该 Skill 能够自动抓取 GitHub 上的 Release 和 Tag 信息，筛选出指定日期（通常是当前日期的前一天）的更新内容."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-update-researcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220653503?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-update-researcher",
+      "url": "https://clawhub.ai/skills/openclaw-update-researcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-update-researcher",
+    "url": "https://clawhub.ai/skills/openclaw-update-researcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-update-researcher-7cdbcb283ed06ef4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-update-researcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-update-researcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ad695ee33e4368ba9810a0bc7647b9ee1a5bed95958f28126801fac4216c966",
+      "artifactSizeBytes": 2653
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T01:24:41.502Z"
+}

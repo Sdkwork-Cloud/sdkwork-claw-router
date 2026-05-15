@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kirk-brainstorming@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kirk_brainstorming",
+  "skill": {
+    "id": 46542,
+    "skillKey": "clawhub-kirk-brainstorming",
+    "name": "brainstorming"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kirk-brainstorming",
+    "url": "https://clawhub.ai/skills/kirk-brainstorming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kirk-brainstorming-c621b771841feed2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirkraman",
+      "userId": "s171c4e2zwz2yy69j6tp9xcfc184vnxz",
+      "displayName": "KirkRaman",
+      "image": "https://avatars.githubusercontent.com/u/255880392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776421054927,
+      "changelog": "- Initial release of the brainstorming skill.\n- Guides users through idea exploration, requirement refinement, and early design with structured, question-driven dialogue.\n- Encourages multiple-choice questions, one at a time, to avoid overwhelm and ensure clarity.\n- Requires proposing 2–3 design approaches with reasoning before proceeding.\n- Designs are presented incrementally (200–300 words per section) with validation at each step.\n- Documents validated designs and supports seamless transition to implementation planning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:22557671cadc47572bf8c239a21fcfbd1c2da48c4825c7b5ece540b791ecf36b"
+}

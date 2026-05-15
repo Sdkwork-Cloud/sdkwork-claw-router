@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wallabag@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wallabag",
+  "skill": {
+    "id": 18732,
+    "skillKey": "clawhub-wallabag",
+    "name": "Wallabag"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wallabag",
+    "url": "https://clawhub.ai/skills/wallabag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wallabag-9acd5100a6ff41e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Wallabag bookmarks through the Wallabag Developer API with OAuth2 authentication, including creating, reading, updating, deleting, searching, and tag..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fbrandel",
+      "userId": "publishers:fbrandel",
+      "displayName": "Florian Brandel",
+      "image": "https://avatars.githubusercontent.com/u/201162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 655,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771875797230,
+      "changelog": "- Clarified runtime requirements in SKILL.md, specifying the need for bash, curl, and jq.\n- Updated auth command: access tokens are only printed if --show-token is used.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3f310a781a5665d3a278ce329b8b9780ce217fd180e147f684ddb0229513b58f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-log@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_log",
+  "skill": {
+    "id": 68136,
+    "skillKey": "clawhub-feishu-log",
+    "name": "Feishu Log"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-log",
+    "url": "https://clawhub.ai/skills/feishu-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-log-e3a6bb11a3e95f1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书日志记录 - 用户主动提供日志内容，智能整理、结构化、层次化后写入飞书文档，不使用固定模板。使用场景：(1) 会议记录，(2) 项目日志，(3) 工作复盘，(4) 重要事件记录"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tonyvics",
+      "userId": "publishers:tonyvics",
+      "displayName": "tonyvics",
+      "image": "https://avatars.githubusercontent.com/u/78476971?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 399,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773393690933,
+      "changelog": "feishu-log 1.0.2 Changelog\n\n- 优化了「使用方式」中的示例内容，使用户更容易理解日志内容输入格式。\n- 精简和优化了文档开头部分，统一使用更直观的 Markdown 列表。\n- 移除了冗余文本，保持说明简明易读，避免信息重复。\n- 其余流程、权限说明、输出示例等未做功能性更改，仅修正文档表达。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e56d73481f39307961a36d24086d6fcb2605766cfa6bf46a645dda03fb15a31e"
+}

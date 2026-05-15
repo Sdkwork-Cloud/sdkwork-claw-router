@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18043,
+  "uuid": "skill-clawhub-doro-email-to-calendar",
+  "skillKey": "clawhub-doro-email-to-calendar",
+  "name": "Doro Email To Calendar",
+  "summary": "Extract calendar events and deadlines from emails, present them for user review, and create or update calendar entries with duplicate detection and undo supp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doro_email_to_calendar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mus Titou",
+      "features": [
+        "Extract calendar events and deadlines from emails, present them for user review, and create or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doro-email-to-calendar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27785308?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doro-email-to-calendar",
+      "url": "https://clawhub.ai/skills/doro-email-to-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doro-email-to-calendar",
+    "url": "https://clawhub.ai/skills/doro-email-to-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doro-email-to-calendar-521a0ffeb439e698.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doro-email-to-calendar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doro-email-to-calendar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8efe581e0b9ffe74f187ed2f5b7449ee180ae5a490817f57c3f35a6ae13a4c7a",
+      "artifactSizeBytes": 2520
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T06:42:33.347Z"
+}

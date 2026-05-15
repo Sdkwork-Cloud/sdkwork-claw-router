@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flyelep-intelligent-extension@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyelep_intelligent_extension",
+  "skill": {
+    "id": 64195,
+    "skillKey": "clawhub-flyelep-intelligent-extension",
+    "name": "intelligent-extension"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyelep-intelligent-extension",
+    "url": "https://clawhub.ai/skills/flyelep-intelligent-extension",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyelep-intelligent-extension-62263fd454a60b60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 Flyelep AI 工具接口对图片进行智能延展，支持批量处理并指定目标比例。 当用户要求扩图、延展图片边缘、补全画布、适配 16:9/1:1 等比例时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flyelepai",
+      "userId": "s175rfkzzv81fcfhp65sjggxa984fmry",
+      "displayName": "flyelep",
+      "image": "https://avatars.githubusercontent.com/u/272408277?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777262253270,
+      "changelog": "- 修订认证方式说明，明确 Flyelep 开放平台的链接增加了空格符。\n- 文档其余内容与前一版本保持一致，无功能或参数变更。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e23d6f24ec0c67bf76d545d18329b6ee4fdb978c7ac6f0afe98774cdb036fa6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-portfolio-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_portfolio_auditor",
+  "skill": {
+    "id": 22614,
+    "skillKey": "clawhub-local-portfolio-auditor",
+    "name": "local-portfolio-auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-portfolio-auditor",
+    "url": "https://clawhub.ai/skills/local-portfolio-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-portfolio-auditor-302ab23875c09a4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audits cryptocurrency addresses and stock tickers from a local file, providing current values using public APIs without storing private keys."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sahil1005",
+      "userId": "publishers:sahil1005",
+      "displayName": "Sahil Bhonde",
+      "image": "https://avatars.githubusercontent.com/u/52518789?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 467,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771857973494,
+      "changelog": "Initial release of the privacy-focused Local Portfolio Auditor skill. Supports local JSON configuration for tracking crypto addresses and stock tickers using public APIs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:48f3cd7af7027038231486d7465978b8b727a01524baa240ea0c80e9dc540d40"
+}

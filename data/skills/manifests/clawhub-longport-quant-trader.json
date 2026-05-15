@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67220,
+  "uuid": "skill-clawhub-longport-quant-trader",
+  "skillKey": "clawhub-longport-quant-trader",
+  "name": "LongPort Quant Trader",
+  "summary": "长桥证券量化交易集成 - 自动超跌/动量策略 + 飞书推送 + 绩效跟踪。支持港股/美股自动交易，每 5 分钟监控，止盈止损管理。适用于想要自动化交易的个人投资者和量化爱好者。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.longport_quant_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fxm1618-gmail",
+      "features": [
+        "长桥证券量化交易集成",
+        "自动超跌/动量策略 + 飞书推送 + 绩效跟踪。支持港股/美股自动交易，每 5 分钟监控，止盈止损管理。适用于想要自动化交易的个人投资者和量化爱好者。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/longport-quant-trader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265743492?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "longport-quant-trader",
+      "url": "https://clawhub.ai/skills/longport-quant-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "longport-quant-trader",
+    "url": "https://clawhub.ai/skills/longport-quant-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/longport-quant-trader-cd51a431d8eda37f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/longport-quant-trader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-longport-quant-trader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8ff880aa9ed7e2dccede590f08f05657bae8c7a16ac229ee110275872bb1c07",
+      "artifactSizeBytes": 2375
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T06:23:46.597Z"
+}

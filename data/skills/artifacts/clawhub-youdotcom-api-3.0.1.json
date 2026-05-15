@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youdotcom-api@3.0.1",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youdotcom_api",
+  "skill": {
+    "id": 15509,
+    "skillKey": "clawhub-youdotcom-api",
+    "name": "You.com Web Search & Research API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youdotcom-api",
+    "url": "https://clawhub.ai/skills/youdotcom-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youdotcom-api-b7b8ecc16bbc4a7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate You.com APIs (Research, Search, Contents) into any language using direct HTTP calls — no SDK required. - MANDATORY TRIGGERS: YDC API, You.com API i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edwardirby",
+      "userId": "s17ddf7f8acaadsv9xrjm63es1842mbj",
+      "displayName": "Edward Irby",
+      "image": "https://avatars.githubusercontent.com/u/1058725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1500,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "3.0.1",
+      "createdAt": 1773693965487,
+      "changelog": "**Breaking change:** Skill renamed and repositioned for direct HTTP API integration in any language.\n\n- Renamed from \"youdotcom-cli\" to \"youdotcom-api\" to reflect broad, language-agnostic API access.\n- Description and documentation now target developers integrating You.com APIs via direct HTTP (no Bash-specific examples).\n- Compatibility expanded to all languages with HTTP client support; CLI tool requirements (curl, jq) removed.\n- Allowed tools now enable install commands for any developer environment (Read/Write/Edit/Bash with pip/npm/bun).\n- Improved API reference, use-case guidance, and developer onboarding instructions.\n- No code changes detected in this update.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fefffe1580092a9349a1a9355cb897e57585163d79f5b57fd350329ffb7d1535"
+}

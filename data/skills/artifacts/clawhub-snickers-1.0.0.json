@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snickers@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snickers",
+  "skill": {
+    "id": 67574,
+    "skillKey": "clawhub-snickers",
+    "name": "Snickers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snickers",
+    "url": "https://clawhub.ai/skills/snickers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snickers-62708057fa8cb452.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供 Snickers 士力架品牌信息、历史、配方、经典广告与全球市场数据，解析其市场竞争与营销策略。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776412065639,
+      "changelog": "Snickers skill v1.0.0 — 全球最畅销巧克力棒品牌档案上线！\n\n- 新增品牌历史、产品配方和名字由来的详细介绍\n- 收录“你饿的时候就不是你了”等经典广告案例及市场表现数据\n- 完整展示产品矩阵与市场覆盖、体育赞助等关键信息\n- 设置常见研究、查询、市场分析等推荐使用场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4bcb400cdc37c985a16eb594f4f78475e647846059e5213b24e18e1e41c99c1f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11848,
+  "uuid": "skill-clawhub-openclaw-cost-optimizer",
+  "skillKey": "clawhub-openclaw-cost-optimizer",
+  "name": "OpenClaw Cost Optimizer",
+  "summary": "Add cheap model aliases to your OpenRouter setup for tasks from simple to complex, cutting API costs 50-90% without changing your default model.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_cost_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jeff J Hunter",
+      "features": [
+        "Add cheap model aliases to your OpenRouter setup for tasks from simple to complex, cutting API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-cost-optimizer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252698242?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-cost-optimizer",
+      "url": "https://clawhub.ai/skills/openclaw-cost-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-cost-optimizer",
+    "url": "https://clawhub.ai/skills/openclaw-cost-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-cost-optimizer-9311e0066ab1ccd6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-cost-optimizer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-cost-optimizer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:345e80e65e51f77613d3273a6a1237498c50830ab6da7ed3fc89b51f6062613f",
+      "artifactSizeBytes": 3435
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T18:31:39.120Z"
+}

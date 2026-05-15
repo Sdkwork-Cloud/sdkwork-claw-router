@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chen-word-docx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chen_word_docx",
+  "skill": {
+    "id": 28830,
+    "skillKey": "clawhub-chen-word-docx",
+    "name": "Chen Word Docx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chen-word-docx",
+    "url": "https://clawhub.ai/skills/chen-word-docx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chen-word-docx-7db99082a99bb664.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, inspect, and edit Microsoft Word documents and DOCX files with reliable styles, numbering, tracked changes, tables, sections, and compatibility check..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cs995279497-byte",
+      "userId": "s1752x7jpsq8e6496yg8h0rps183jrna",
+      "displayName": "cs995279497-byte",
+      "image": "https://avatars.githubusercontent.com/u/254620949?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774237739516,
+      "changelog": "- Skill is now focused on fragile review workflows, reference stability, and minimizing layout drift after stricter audit.\n- Expanded documentation with detailed best practices for editing, formatting, and reviewing DOCX/Word files.\n- Emphasizes round-trip editing, tracked changes, comments, fields, and compatibility checks.\n- Updated traps, rules, and when-to-use guidance for users editing complex or heavily reviewed Word documents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f6f4d97731cc7e9407d14832a4a09a833a1dcf473383d2784f8a43e757f3a5e"
+}

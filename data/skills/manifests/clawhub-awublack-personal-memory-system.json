@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65291,
+  "uuid": "skill-clawhub-awublack-personal-memory-system",
+  "skillKey": "clawhub-awublack-personal-memory-system",
+  "name": "Awublack Personal Memory System",
+  "summary": "一个智能化、高可靠性的个人知识操作系统。它不仅自动同步你的 MEMORY.md 到 SQLite 数据库并提供自然语言查询，更通过 Git 版本控制、守护进程和日志监控，确保你的记忆**永不丢失、可追溯、可恢复**。 **使用场景**： (1) 用户需要查询“我过去对 AI 模型的看法？” (2) 用户希望系统自...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.awublack_personal_memory_system",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "awublack",
+      "features": [
+        "一个智能化、高可靠性的个人知识操作系统。它不仅自动同步你的 MEMORY.md 到 SQLite 数据库并提供自然语言查询，更通过 Git 版本控制、守护进程和日志监控，确保你的记忆**永不."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/awublack-personal-memory-system@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22994037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "awublack-personal-memory-system",
+      "url": "https://clawhub.ai/skills/awublack-personal-memory-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "awublack-personal-memory-system",
+    "url": "https://clawhub.ai/skills/awublack-personal-memory-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/awublack-personal-memory-system-577febaff072266b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/awublack-personal-memory-system@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-awublack-personal-memory-system-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dec2a33a98904edbe86dda68cbf4e8cfbf110ee7de18ab59801e824b9df0cd47",
+      "artifactSizeBytes": 2710
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T02:36:58.997Z"
+}

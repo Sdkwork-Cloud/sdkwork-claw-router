@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16746,
+  "uuid": "skill-clawhub-hostinger-vps-optimizer",
+  "skillKey": "clawhub-hostinger-vps-optimizer",
+  "name": "Hostinger VPS Optimizer",
+  "summary": "Applies kernel tuning, web server optimization, security hardening, and resource limits to boost Hostinger VPS performance and reduce costs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hostinger_vps_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Goroni",
+      "features": [
+        "Applies kernel tuning, web server optimization, security hardening, and resource limits to boos."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hostinger-vps-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86142972?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hostinger-vps-optimizer",
+      "url": "https://clawhub.ai/skills/hostinger-vps-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hostinger-vps-optimizer",
+    "url": "https://clawhub.ai/skills/hostinger-vps-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hostinger-vps-optimizer-ed30bd82b84e051e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hostinger-vps-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hostinger-vps-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:569caea02aab2a87547780d3cbdd4e4730e3bf309a70b312beeef598815e534f",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T14:41:42.832Z"
+}

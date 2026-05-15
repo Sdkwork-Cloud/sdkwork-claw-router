@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38206,
+  "uuid": "skill-clawhub-shieldpay",
+  "skillKey": "clawhub-shieldpay",
+  "name": "Shieldpay",
+  "summary": "Shieldpay integration. Manage data, records, and automate workflows. Use when the user wants to interact with Shieldpay data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shieldpay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Shieldpay integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Shieldpay data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shieldpay@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shieldpay",
+      "url": "https://clawhub.ai/skills/shieldpay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shieldpay",
+    "url": "https://clawhub.ai/skills/shieldpay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shieldpay-455bb2e90e5b4bd6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shieldpay@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-shieldpay-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b279b5321b573ead33e46ab99669cfeb801f455c9ef47ae2c6791df85aa176f0",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:40:40.369Z"
+}

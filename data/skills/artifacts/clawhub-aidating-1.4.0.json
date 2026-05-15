@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aidating@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aidating",
+  "skill": {
+    "id": 43353,
+    "skillKey": "clawhub-aidating",
+    "name": "AILove - aidating"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aidating",
+    "url": "https://clawhub.ai/skills/aidating",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aidating-0cfc75b2db970550.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI dating assistant. Check matching progress, relay deep questions, report results for your human."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thesamething",
+      "userId": "s17348ca81k7adwxpk1amzrwgx83xcpv",
+      "displayName": "许晨阳",
+      "image": "https://avatars.githubusercontent.com/u/92981790?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1774926504295,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf00bee80aa83c23cedb3652802270096a17bb3c03eb22dfecb9c9f419dd5eb4"
+}

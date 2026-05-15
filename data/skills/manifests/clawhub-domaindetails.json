@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9923,
+  "uuid": "skill-clawhub-domaindetails",
+  "skillKey": "clawhub-domaindetails",
+  "name": "Domain Details",
+  "summary": "Look up domain WHOIS/RDAP info and check marketplace listings. Free API, no auth required.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.domaindetails",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "julianengel",
+      "features": [
+        "Look up domain WHOIS/RDAP info and check marketplace listings",
+        "Free API, no auth required."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/domaindetails@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10634231?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "domaindetails",
+      "url": "https://clawhub.ai/skills/domaindetails"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "domaindetails",
+    "url": "https://clawhub.ai/skills/domaindetails",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/domaindetails-f99b777567b444d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/domaindetails@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-domaindetails-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fbf464b89052a5b2add30e2fb2ce66351577eca7f18a85a77bf0f29b715a0f5",
+      "artifactSizeBytes": 1846
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-06T08:19:19.054Z"
+}

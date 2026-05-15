@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71686,
+  "uuid": "skill-clawhub-retail-customer-list-analysis",
+  "skillKey": "clawhub-retail-customer-list-analysis",
+  "name": "客户清单分析",
+  "summary": "客户清单分析工具。基于Shop API客户清单数据，快速查询不同类型客户的数量、试用情况汇总、导购匹配情况。 核心能力： 1. 客户类型分布统计（普通/潜在/意向/成交客户数量及占比） 2. 客户试用情况汇总（感兴趣商品数、试用商品数、试用后成交转化） 3. 导购匹配分析（各导购关联客户数、匹配失败数量及原因）...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retail_customer_list_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xtechmerge.AI",
+      "features": [
+        "客户清单分析工具。基于Shop API客户清单数据，快速查询不同类型客户的数量、试用情况汇总、导购匹配情况。 核心能力： 1",
+        "客户类型分布统计（普通/潜在/意向/成交客户数量及占比） 2",
+        "客户试用情况汇总（感兴趣商品数、试用商品数、试用后成交转化） 3",
+        "导购匹配分析（各导购关联客户数、匹配失败数量及原因）..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/retail-customer-list-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176652150?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "retail-customer-list-analysis",
+      "url": "https://clawhub.ai/skills/retail-customer-list-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retail-customer-list-analysis",
+    "url": "https://clawhub.ai/skills/retail-customer-list-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retail-customer-list-analysis-fa47132c77e5bc54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/retail-customer-list-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-retail-customer-list-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0b1302ab76474cde34b47ac2f65e5d775fb392a03309b3d228a69d1e47fb4b7",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:39:28.505Z"
+}

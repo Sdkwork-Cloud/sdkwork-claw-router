@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-tool-audit@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_tool_audit",
+  "skill": {
+    "id": 33079,
+    "skillKey": "clawhub-openclaw-tool-audit",
+    "name": "OpenClaw Tool Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-tool-audit",
+    "url": "https://clawhub.ai/skills/openclaw-tool-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-tool-audit-d6e0ba1d279ed7a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit OpenClaw agent tool exposure versus observed use. Use when reviewing allowed tools, spotting broad or unused tool allowances, or checking whether agent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pfrederiksen",
+      "userId": "s17fk3ter6h1bve6rnejmqxjfx83eymx",
+      "displayName": "Paul Frederiksen",
+      "image": "https://avatars.githubusercontent.com/u/908172?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1776798402636,
+      "changelog": "Remove remote pip install guidance, clarify trusted-local prerequisite model, and add explicit metadata/prerequisites.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8faa5e63faa0427ca4c918b0a66e6a1b38e61c14c4722fb2155c974a7568b4e3"
+}

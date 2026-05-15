@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-summarize-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_summarize_pro",
+  "skill": {
+    "id": 15694,
+    "skillKey": "clawhub-claw-summarize-pro",
+    "name": "Claw Summarize Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-summarize-pro",
+    "url": "https://clawhub.ai/skills/claw-summarize-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-summarize-pro-e377c460004f94ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "williamwang-wh",
+      "userId": "s172rhar6d3wa14s0z6j1e0pbs83wt9z",
+      "displayName": "Williamwang-wh",
+      "image": "https://avatars.githubusercontent.com/u/75006654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 975,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774861028714,
+      "changelog": "Summarize skill version 1.0.0 initial release:\n\n- Provides fast CLI summarization for URLs, local files (including PDFs, images, audio), and YouTube links.\n- Supports multiple AI model providers: Google, OpenAI, Anthropic, and xAI.\n- Includes flexible output options: summary length, JSON formatting, token limits, and extraction settings.\n- Allows API key configuration via environment variables or an optional config file.\n- Integrates fallback services for web (Firecrawl) and YouTube (Apify) extraction.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84a0f73bf46d7860a05077eed1e18301271ea1b12cb4447b5d11fee4aae3b66c"
+}

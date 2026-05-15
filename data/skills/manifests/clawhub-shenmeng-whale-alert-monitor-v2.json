@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65508,
+  "uuid": "skill-clawhub-shenmeng-whale-alert-monitor-v2",
+  "skillKey": "clawhub-shenmeng-whale-alert-monitor-v2",
+  "name": "Whale Alert Monitor 鲸鱼监控",
+  "summary": "追踪加密货币巨鲸动向、大额转账预警、交易所资金流向分析。 当你想追踪聪明钱的每一步，监测大户交易行为时使用此技能。 已接入 SkillPay，每次调用 0.01 USDT。",
+  "version": "1.99.99",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shenmeng_whale_alert_monitor_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenmeng",
+      "features": [
+        "追踪加密货币巨鲸动向、大额转账预警、交易所资金流向分析。 当你想追踪聪明钱的每一步，监测大户交易行为时使用此技能。 已接入 SkillPay，每次调用 0.01 USDT。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shenmeng-whale-alert-monitor-v2@1.99.99",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6897076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shenmeng-whale-alert-monitor-v2",
+      "url": "https://clawhub.ai/skills/shenmeng-whale-alert-monitor-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shenmeng-whale-alert-monitor-v2",
+    "url": "https://clawhub.ai/skills/shenmeng-whale-alert-monitor-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shenmeng-whale-alert-monitor-v2-c816bff476ea5e97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shenmeng-whale-alert-monitor-v2@1.99.99",
+      "artifactUrl": "data/skills/artifacts/clawhub-shenmeng-whale-alert-monitor-v2-1.99.99.json",
+      "version": "1.99.99",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f84876f8a7a642cd48e6d7104d8cb60edfe34aa00fb19b4513639ccbde0806b",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T08:33:58.246Z"
+}

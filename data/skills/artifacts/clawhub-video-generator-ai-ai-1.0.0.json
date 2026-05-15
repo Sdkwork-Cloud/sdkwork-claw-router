@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-generator-ai-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generator_ai_ai",
+  "skill": {
+    "id": 38837,
+    "skillKey": "clawhub-video-generator-ai-ai",
+    "name": "Video Generator Ai Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generator-ai-ai",
+    "url": "https://clawhub.ai/skills/video-generator-ai-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generator-ai-ai-86333fed860786c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a short text prompt describing a 30-second product scene into 1080p AI generated videos just by typing what you need. Whether it's generating videos fro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776591481664,
+      "changelog": "Video Generator AI — Generate Videos with AI: initial release.\n\n- Users can generate 1080p product scene videos from short text prompts or clips.\n- Automatic cloud connection and session management, including anonymous authentication and setup.\n- Upload, edit, check credits, preview timeline state, and export videos using simple, natural prompts.\n- Error handling for tokens, credits, file types, and rate limits is built in.\n- Batch upload, iterative editing, and quick export supported.\n- Supports video, audio, and image file uploads up to 500MB.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4105a559f18610a0e5ad296ac87f4fd0b1c6de2702e97c58533d0376781b6c13"
+}

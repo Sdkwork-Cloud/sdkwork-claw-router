@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yc-cold-outreach@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yc_cold_outreach",
+  "skill": {
+    "id": 9419,
+    "skillKey": "clawhub-yc-cold-outreach",
+    "name": "YC Cold Outreach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yc-cold-outreach",
+    "url": "https://clawhub.ai/skills/yc-cold-outreach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yc-cold-outreach-3fa72b0f6ec0d1f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert in Y Combinator (YC) cold email outreach techniques based on Startup School principles. Use to draft, critique, or iterate on cold emails to potential customers, partners, or investors. Based on Aaron Epstein's methodology for high-."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pors",
+      "userId": "s1726anyehf7sx1t7vgh6pjnr183vjsp",
+      "displayName": "Mark Pors 🦖",
+      "image": "https://avatars.githubusercontent.com/u/1078320?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3251,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 8,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770039490176,
+      "changelog": "Made the skill more generic by removing personal and scientist-specific references.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f418be76709be6a628127325e4dfa1e952e259d5cb5e1f76ce4b09f90ff978e4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cigna@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cigna",
+  "skill": {
+    "id": 47178,
+    "skillKey": "clawhub-cigna",
+    "name": "Cigna"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cigna",
+    "url": "https://clawhub.ai/skills/cigna",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cigna-f19cb2e90d327cf8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cigna is the second-largest US health insurer, combining medical insurance and Express Scripts PBM to serve 17M+ members and manage 15B+ prescriptions annually."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777280789301,
+      "changelog": "Cigna skill version 1.0.0 — Launch\n\n- 新增 Cigna 公司概览，涵盖历史、业务模式、核心护城河与关键数据\n- 梳理 Cigna 历史时间线，对重大并购与战略转型节点进行说明\n- 详细解析双引擎（医保+PBM）商业模式及 Evernorth 整合策略\n- 总结行业地位、PBM 规模效应、国际化及数据能力等护城河要素\n- 提供主要营收、用户覆盖、医保份额等关键运营数据及行业有趣事实",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8466e9adfbd1c92f267ba24818ba6cf6cba6334ca30b5eeaa8266ec412694072"
+}

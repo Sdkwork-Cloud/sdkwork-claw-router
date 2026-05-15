@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aholake-expense-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aholake_expense_tracker",
+  "skill": {
+    "id": 16368,
+    "skillKey": "clawhub-aholake-expense-tracker",
+    "name": "Expense Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aholake-expense-tracker",
+    "url": "https://clawhub.ai/skills/aholake-expense-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aholake-expense-tracker-c163f7a726d6846b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track daily expenses in structured markdown files organized by month. Use when the user wants to log spending, view expense summaries, analyze spending patte..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aholake",
+      "userId": "publishers:aholake",
+      "displayName": "Loc Vo",
+      "image": "https://avatars.githubusercontent.com/u/10195964?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 872,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771285560987,
+      "changelog": "Initial release: Daily expense tracking with categories, tags, and monthly summaries",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:45277579948fc5c2aa70127d340c3c97aa9a96b8ee7de489253ba3a114009d27"
+}

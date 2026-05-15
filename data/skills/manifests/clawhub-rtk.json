@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50503,
+  "uuid": "skill-clawhub-rtk",
+  "skillKey": "clawhub-rtk",
+  "name": "cli output compression for token savings with rtk",
+  "summary": "RTK (Rust Token Kit) - CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Use rtk to wrap commands like git, ls, cat, grep, test...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rtk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mark Jones",
+      "features": [
+        "RTK (Rust Token Kit)",
+        "CLI proxy that reduces LLM token consumption by 60-90% on common dev commands",
+        "Use rtk to wrap commands like git, ls, cat, grep, test..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rtk@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1967630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rtk",
+      "url": "https://clawhub.ai/skills/rtk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rtk",
+    "url": "https://clawhub.ai/skills/rtk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rtk-3dc0deea30053c57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rtk@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rtk-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2caca14be2d4ad680a8a9c74e915cee5bb4bf6bed3032b350687a5e312716727",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T01:02:42.005Z"
+}

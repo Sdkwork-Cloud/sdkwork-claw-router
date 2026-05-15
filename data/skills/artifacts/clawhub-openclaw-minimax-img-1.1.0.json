@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-minimax-img@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_minimax_img",
+  "skill": {
+    "id": 41177,
+    "skillKey": "clawhub-openclaw-minimax-img",
+    "name": "Minimax Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-minimax-img",
+    "url": "https://clawhub.ai/skills/openclaw-minimax-img",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-minimax-img-d69e30f5fbc93c99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images using MiniMax API (image-01 model). Automatically optimizes prompts for better results. Use when user asks to generate images, create picture..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lilmrmeeseeks",
+      "userId": "s173dk4fhp2hw27vr60wy25w9983h0bd",
+      "displayName": "LilMrmeeseeks",
+      "image": "https://avatars.githubusercontent.com/u/150769737?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774340496768,
+      "changelog": "**MiniMax Image Generator v1.1.0 introduces automatic prompt optimization for improved image generation results.**\n\n- Automatically converts user input to concise, clear English prompts for image generation.\n- Optimizes prompts with relevant keywords for better style, lighting, and quality.\n- Supports direct user commands in Chinese or English.\n- Uses 'image-01' model via MiniMax API with a 16:9 aspect ratio by default.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76d391e454d1eb75219249965bf22fb4cdb1c9c692fabdb4684e8749a46a91c1"
+}

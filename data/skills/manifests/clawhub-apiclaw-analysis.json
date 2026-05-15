@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32811,
+  "uuid": "skill-clawhub-apiclaw-analysis",
+  "skillKey": "clawhub-apiclaw-analysis",
+  "name": "Amazon Product Research & Seller Analytics",
+  "summary": "Amazon product research and seller analytics for FBA and FBM businesses. Find winning products with 14 selection strategies, track competitors, monitor BSR t...",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apiclaw_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "christine-srp",
+      "features": [
+        "Amazon product research and seller analytics for FBA and FBM businesses",
+        "Find winning products with 14 selection strategies, track competitors, monitor BSR t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apiclaw-analysis@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237009973?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apiclaw-analysis",
+      "url": "https://clawhub.ai/skills/apiclaw-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apiclaw-analysis",
+    "url": "https://clawhub.ai/skills/apiclaw-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apiclaw-analysis-f76518e1f72107a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apiclaw-analysis@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-apiclaw-analysis-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ebab435295dc79028ec595aa625048e6c4389537030037efac310011654cc20",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:40:36.907Z"
+}

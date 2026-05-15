@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/best-buy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.best_buy",
+  "skill": {
+    "id": 61572,
+    "skillKey": "clawhub-best-buy",
+    "name": "Best Buy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "best-buy",
+    "url": "https://clawhub.ai/skills/best-buy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/best-buy-e94e5802ac455600.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Best Buy 是美国最大消费电子零售商，凭借门店体验和 Geek Squad 服务实现转型，2024 财年营收约 434 亿美元。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776565173525,
+      "changelog": "Best Buy skill v1.0.0\n\n- 新增详细公司介绍，包括历史、业务结构、核心护城河及关键数据。\n- 涵盖 Showrooming 危机与转型案例，总结经营模式和主要护城河。\n- 提供投资/竞品分析常用信息，如门店数、年营收、业务拆分、会员数据等。\n- 增加企业文化及趣味资料，便于多维了解百思买。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6f0875b2b84798fa352a00d68d1debfcb55c768f7bd19bdba269b21f85fe5a2e"
+}

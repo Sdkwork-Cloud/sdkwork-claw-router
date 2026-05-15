@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33975,
+  "uuid": "skill-clawhub-gateway-watchdog-v2",
+  "skillKey": "clawhub-gateway-watchdog-v2",
+  "name": "Gateway Watchdog",
+  "summary": "Production-grade bash watchdog for the OpenClaw gateway. Runs via launchd every 5 minutes. Handles boot grace periods, progressive retry with backoff, port-l...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gateway_watchdog_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bryan Tegomoh, MD, MPH",
+      "features": [
+        "Production-grade bash watchdog for the OpenClaw gateway",
+        "Runs via launchd every 5 minutes",
+        "Handles boot grace periods, progressive retry with backoff, port-l..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gateway-watchdog-v2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67350434?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gateway-watchdog-v2",
+      "url": "https://clawhub.ai/skills/gateway-watchdog-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gateway-watchdog-v2",
+    "url": "https://clawhub.ai/skills/gateway-watchdog-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gateway-watchdog-v2-cff478e210b021ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gateway-watchdog-v2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gateway-watchdog-v2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3f51eafa3fe890270edfb8aa5d7497e69615e979e0d679d8ea83beb25d84d10",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T16:14:00.244Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13883,
+  "uuid": "skill-clawhub-browser-auth",
+  "skillKey": "clawhub-browser-auth",
+  "name": "Browser Auth",
+  "summary": "Start a secure remote browser tunnel for manual user authentication (solving Captchas, 2FA, logins) and capture session data. Built for AI Commander.",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_auth",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Coder AI",
+      "features": [
+        "Start a secure remote browser tunnel for manual user authentication (solving Captchas, 2FA, log.",
+        "Built for AI Commander."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-auth@1.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72931508?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-auth",
+      "url": "https://clawhub.ai/skills/browser-auth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-auth",
+    "url": "https://clawhub.ai/skills/browser-auth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-auth-78d9f38e06c2179a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-auth@1.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-auth-1.6.0.json",
+      "version": "1.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30ac0991ff68e6a1f7806933194754264c911bf5f27ede0387f9ef5ab1b876b3",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T09:09:14.016Z"
+}

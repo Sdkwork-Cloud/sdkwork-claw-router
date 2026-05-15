@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72885,
+  "uuid": "skill-clawhub-a-stock-real-time-monitor",
+  "skillKey": "clawhub-a-stock-real-time-monitor",
+  "name": "A股实时盯盘",
+  "summary": "中国A股实时盯盘技能 - 支持实时行情监控、异动提醒（价格/量比）、主力资金流向监测、消息面热点监测。交易时段自动高频刷新，支持多股并行、彩色提醒、企业微信推送。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_real_time_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "P4x1s",
+      "features": [
+        "中国A股实时盯盘技能",
+        "支持实时行情监控、异动提醒（价格/量比）、主力资金流向监测、消息面热点监测。交易时段自动高频刷新，支持多股并行、彩色提醒、企业微信推送。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-stock-real-time-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7390055?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-stock-real-time-monitor",
+      "url": "https://clawhub.ai/skills/a-stock-real-time-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-real-time-monitor",
+    "url": "https://clawhub.ai/skills/a-stock-real-time-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-real-time-monitor-148fd1fb5b9f1a7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-stock-real-time-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-stock-real-time-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9691d63f8c626f20bad6ba6023b020cd6325f4a87f2e617f29894212d99518c",
+      "artifactSizeBytes": 2580
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T08:04:41.775Z"
+}

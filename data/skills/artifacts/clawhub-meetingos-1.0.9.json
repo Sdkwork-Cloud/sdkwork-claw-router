@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meetingos@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meetingos",
+  "skill": {
+    "id": 57151,
+    "skillKey": "clawhub-meetingos",
+    "name": "会议智脑（MeetingOS）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meetingos",
+    "url": "https://clawhub.ai/skills/meetingos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meetingos-0192a952f60eb51f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto meeting notes and action item execution loop. Trigger this skill whenever the user mentions meeting notes, meeting summary, action items, follow-up, tra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dttnpole-commits",
+      "userId": "s17cs5g1zpt2hr1s5447vve4as83ha4h",
+      "displayName": "DTTNpole-commits",
+      "image": "https://avatars.githubusercontent.com/u/264905216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 267,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1774094702130,
+      "changelog": "- Updated argument-hint to clarify free tier (10 meetings/month) and SkillPay billing option.\n- No code or file changes detected in this release. \n- Documentation and user guidance improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ddffc18400b5c6ea168dba89f2ac65a61398c7d76e19026308a713a3ebef0921"
+}

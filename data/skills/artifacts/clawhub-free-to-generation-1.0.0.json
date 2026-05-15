@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-to-generation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_to_generation",
+  "skill": {
+    "id": 47410,
+    "skillKey": "clawhub-free-to-generation",
+    "name": "Free To Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-to-generation",
+    "url": "https://clawhub.ai/skills/free-to-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-to-generation-98e152e60352f5c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text prompts into AI generated videos with this skill. Works with MP4, MOV, WebM, GIF files up to 500MB. content creators use it for generating vide..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777306462777,
+      "changelog": "Initial release of Free to Generation — generate videos from text prompts.\n\n- Generate MP4, MOV, WebM, or GIF videos (up to 500MB) from natural language prompts.\n- Automatic free token provisioning for new users; quick cloud-based session setup.\n- 1080p video rendering on cloud GPUs, returning download links within 1–2 minutes.\n- File upload, export, session management, credits check, and status tracking supported.\n- Workflow examples, error handling, and translation of backend GUI instructions to text output included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7d2c068d7e3d1340a9e37ae2e468c491ac440c509bdd5242a7ee41b6d58aa0d"
+}

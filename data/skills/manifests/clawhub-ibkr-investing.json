@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49994,
+  "uuid": "skill-clawhub-ibkr-investing",
+  "skillKey": "clawhub-ibkr-investing",
+  "name": "IBKR Investing with Permission Gate",
+  "summary": "Invest on Interactive Brokers (stocks/ETFs) via IB Gateway with the same human-in-the-loop confirmation gate as okx-trading. Use when the user asks to check...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ibkr_investing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vadym Malakhatko",
+      "features": [
+        "Invest on Interactive Brokers (stocks/ETFs) via IB Gateway with the same human-in-the-loop conf.",
+        "Use when the user asks to check..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ibkr-investing@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49589920?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ibkr-investing",
+      "url": "https://clawhub.ai/skills/ibkr-investing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ibkr-investing",
+    "url": "https://clawhub.ai/skills/ibkr-investing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ibkr-investing-a6d1b77f755c88a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ibkr-investing@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ibkr-investing-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0472ed0d1aea4a3ae31c42ab012e7498d687bce6ed9aa4fcc895b893577a49b6",
+      "artifactSizeBytes": 2284
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T14:19:25.025Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14418,
+  "uuid": "skill-clawhub-pets",
+  "skillKey": "clawhub-pets",
+  "name": "Pets",
+  "summary": "Track and care for your pets with profiles, routines, behavior logging, training progress, and creative projects.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pets",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Track and care for your pets with profiles, routines, behavior logging, training progress, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pets@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pets",
+      "url": "https://clawhub.ai/skills/pets"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pets",
+    "url": "https://clawhub.ai/skills/pets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pets-3be1d422a46085e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pets@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pets-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:890dc2c596552d19f86620260840484d9c6c7d619f65f11f9ed94084b9eec25d",
+      "artifactSizeBytes": 1765
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T10:06:15.311Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/explore-vietnam@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.explore_vietnam",
+  "skill": {
+    "id": 46307,
+    "skillKey": "clawhub-explore-vietnam",
+    "name": "explore-vietnam"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "explore-vietnam",
+    "url": "https://clawhub.ai/skills/explore-vietnam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/explore-vietnam-12c49d91d46e200d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book flights to Vietnam including Hanoi, Ho Chi Minh City, and Da Nang. Also supports: flight booking, hotel reservation, train tickets, attraction tickets,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "palexu",
+      "userId": "s170461ffv14mp1a5kjjeyk9bs85f2wj",
+      "displayName": "palexu",
+      "image": "https://avatars.githubusercontent.com/u/16065217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1777016272035,
+      "changelog": "- Clarified the workflow to strictly require CLI (flyai) outputs for all travel queries.\n- Enhanced parameter collection rules and made asking follow-ups more precise.\n- Expanded and clarified playbooks for various flight search scenarios (cheapest, fastest, direct).\n- Added new validation and formatting rules for output, including mandatory booking links and brand tags.\n- Improved domain knowledge and parameter mapping table for better accuracy.\n- Updated compatibility section and enriched usage examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8056fe2f59aef0ede3508f38978e8ebf07b6334784bc25dd90baf22b57307378"
+}

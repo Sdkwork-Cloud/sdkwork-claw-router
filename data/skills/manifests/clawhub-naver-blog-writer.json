@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19497,
+  "uuid": "skill-clawhub-naver-blog-writer",
+  "skillKey": "clawhub-naver-blog-writer",
+  "name": "Naver Blog Publisher",
+  "summary": "Publish Naver Blog posts through the ACP marketplace flow (buyer-local thin-runner + sealed payload + offering execute). Use when a user asks to write/publis...",
+  "version": "0.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.naver_blog_writer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "y80163442-boop",
+      "features": [
+        "Publish Naver Blog posts through the ACP marketplace flow (buyer-local thin-runner + sealed pay.",
+        "Use when a user asks to write/publis..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/naver-blog-writer@0.6.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261833808?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "naver-blog-writer",
+      "url": "https://clawhub.ai/skills/naver-blog-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "naver-blog-writer",
+    "url": "https://clawhub.ai/skills/naver-blog-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/naver-blog-writer-d7cb6cc33137ba91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/naver-blog-writer@0.6.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-naver-blog-writer-0.6.1.json",
+      "version": "0.6.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1ea4e4c965c04dd9b584d011fe8996cb2d5ddbb07bead9e6381a7e74007f16f",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T15:16:41.356Z"
+}

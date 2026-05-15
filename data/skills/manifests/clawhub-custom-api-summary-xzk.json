@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70536,
+  "uuid": "skill-clawhub-custom-api-summary-xzk",
+  "skillKey": "clawhub-custom-api-summary-xzk",
+  "name": "调用自定义摘要 API",
+  "summary": "调用自定义摘要 API，对用户提供的文本进行处理并返回结果",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.custom_api_summary_xzk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "heqq-github",
+      "features": [
+        "调用自定义摘要 API，对用户提供的文本进行处理并返回结果"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/custom-api-summary-xzk@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31650754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "custom-api-summary-xzk",
+      "url": "https://clawhub.ai/skills/custom-api-summary-xzk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "custom-api-summary-xzk",
+    "url": "https://clawhub.ai/skills/custom-api-summary-xzk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/custom-api-summary-xzk-17cd67d774c6315b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/custom-api-summary-xzk@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-custom-api-summary-xzk-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54c4cb0220375a65051676372c548c6d6c23decc67d08d4c8b2de58ec2d7a0cf",
+      "artifactSizeBytes": 2351
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T02:48:13.184Z"
+}

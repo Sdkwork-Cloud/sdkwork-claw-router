@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72770,
+  "uuid": "skill-clawhub-yahoo-auction-estimator",
+  "skillKey": "clawhub-yahoo-auction-estimator",
+  "name": "日本雅虎拍卖估价",
+  "summary": "日本雅虎拍卖商品估价工具 - 自动获取商品信息、查询历史成交价、计算建议出价",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yahoo_auction_estimator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HiddenPuppy",
+      "features": [
+        "日本雅虎拍卖商品估价工具",
+        "自动获取商品信息、查询历史成交价、计算建议出价"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yahoo-auction-estimator@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257965685?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yahoo-auction-estimator",
+      "url": "https://clawhub.ai/skills/yahoo-auction-estimator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yahoo-auction-estimator",
+    "url": "https://clawhub.ai/skills/yahoo-auction-estimator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yahoo-auction-estimator-0d64dc8c848d9394.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yahoo-auction-estimator@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-yahoo-auction-estimator-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f3e957e8d5f31a0d56de75ebf17d4d74d4fd5c405873295fe673211af42daac",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T09:35:42.160Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sensitivity-charts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sensitivity_charts",
+  "skill": {
+    "id": 34511,
+    "skillKey": "clawhub-sensitivity-charts",
+    "name": "Sensitivity Charts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sensitivity-charts",
+    "url": "https://clawhub.ai/skills/sensitivity-charts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sensitivity-charts-3a625b1e9a8820c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Visualize how changes in variables affect outcomes. Use for risk analysis and decision support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linuszz",
+      "userId": "s17e0e5q8g0sjf5mpwdq1sy65183gmj7",
+      "displayName": "linuszz",
+      "image": "https://avatars.githubusercontent.com/u/46770204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774091108409,
+      "changelog": "- Initial release of the skill for visualizing sensitivity and tornado charts.\n- Supports performing sensitivity analysis for user-provided variables.\n- Offers templates for tornado charts and variable impact tables.\n- Guides users through scenario analysis, variable ranking, and risk mitigation.\n- Includes practical tips for effective sensitivity analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:937ed7b0f8db16fa99f35da98cdb8779075e29e050eb852932bb2264ddadbd56"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49791,
+  "uuid": "skill-clawhub-twitter-post-aisa-aisa-one",
+  "skillKey": "clawhub-twitter-post-aisa-aisa-one",
+  "name": "Twitter Post AIsa",
+  "summary": "Run Twitter/X likes, follows, replies, and OAuth-gated posting through AIsa. Use when: the user already knows which account, tweet, or campaign to act on and...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_post_aisa_aisa_one",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIsa",
+      "features": [
+        "Run Twitter/X likes, follows, replies, and OAuth-gated posting through AIsa",
+        "Use when: the user already knows which account, tweet, or campaign to act on and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twitter-post-aisa-aisa-one@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245991925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twitter-post-aisa-aisa-one",
+      "url": "https://clawhub.ai/skills/twitter-post-aisa-aisa-one"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-post-aisa-aisa-one",
+    "url": "https://clawhub.ai/skills/twitter-post-aisa-aisa-one",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-post-aisa-aisa-one-f5d67fdf2ddb8da4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twitter-post-aisa-aisa-one@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-twitter-post-aisa-aisa-one-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53556df31ea6a72bc295943190e0f9f0370d5118b1a5805c6ddbb29def1dcd8c",
+      "artifactSizeBytes": 2244
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T12:35:27.500Z"
+}

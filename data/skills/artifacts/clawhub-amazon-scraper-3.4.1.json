@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-scraper@3.4.1",
+  "version": "3.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_scraper",
+  "skill": {
+    "id": 9898,
+    "skillKey": "clawhub-amazon-scraper",
+    "name": "Amazon Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-scraper",
+    "url": "https://clawhub.ai/skills/amazon-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-scraper-52aa979d555db1b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "High-performance containerized Amazon scraper (Docker + playwright-extra + Stealth plugin). Bypasses Amazon headless detection. Supports Amazon BSR, search r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiafar",
+      "userId": "s171dacsa9hkrd446pra6ma8sd83q3hc",
+      "displayName": "jiafar",
+      "image": "https://avatars.githubusercontent.com/u/94378558?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2536,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 6,
+      "versions": 26
+    },
+    "latestVersion": {
+      "version": "3.4.1",
+      "createdAt": 1776856182546,
+      "changelog": "- Added: config/proxies.json with built-in proxy list\\n- Proxy loaded from config file, no env var needed",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5583f6cf3d21f9bb222eb9e9a654f7d7880a3a98202247fded8deefa450ab2c9"
+}

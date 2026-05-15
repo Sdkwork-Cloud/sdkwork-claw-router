@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/total-recall@1.5.1",
+  "version": "1.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.total_recall",
+  "skill": {
+    "id": 13391,
+    "skillKey": "clawhub-total-recall",
+    "name": "Total Recall"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "total-recall",
+    "url": "https://clawhub.ai/skills/total-recall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/total-recall-907b0236969b5a52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The only memory skill that watches on its own. No database. No vectors. No manual saves. Just an LLM observer that compresses your conversations into priorit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gavdalf",
+      "userId": "publishers:gavdalf",
+      "displayName": "gavdalf",
+      "image": "https://avatars.githubusercontent.com/u/74862585?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1161,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.5.1",
+      "createdAt": 1772275594344,
+      "changelog": "Documentation cleanup: removed internal development phases and work package references, made all docs user-facing",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ae7b07c7a1cc1a62d1966269ba2edcff3c4c087393641d55069d720fc5805251"
+}

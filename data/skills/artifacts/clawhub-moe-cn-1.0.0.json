@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moe-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moe_cn",
+  "skill": {
+    "id": 71572,
+    "skillKey": "clawhub-moe-cn",
+    "name": "Moe Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moe-cn",
+    "url": "https://clawhub.ai/skills/moe-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moe-cn-2e3c6c147a1a8e7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供中国教育部最新教育政策、考试招生、学历认证及学校信息查询服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775957397227,
+      "changelog": "- 首次发布中国教育部技能，支持教育政策查询、考试招生、学历认证等服务\n- 提供高校名单、学科建设、教师资格、国际教育等相关信息\n- 明确技能使用场景和注意事项",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97dc4b9cdb09b4b29fafe5d1586777e48eb1d72b08bf4211e49eb56c1beb89a8"
+}

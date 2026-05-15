@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/factory-floor@3.5.1",
+  "version": "3.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.factory_floor",
+  "skill": {
+    "id": 21602,
+    "skillKey": "clawhub-factory-floor",
+    "name": "Factory Floor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "factory-floor",
+    "url": "https://clawhub.ai/skills/factory-floor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/factory-floor-5c0b8cde1298714d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Startup coach for founders and early-stage teams. Trigger when someone mentions: \"what should we focus on\", \"should we build X\", \"should we raise\", \"we're st..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mmichelli",
+      "userId": "publishers:mmichelli",
+      "displayName": "Mario",
+      "image": "https://avatars.githubusercontent.com/u/82415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 24
+    },
+    "latestVersion": {
+      "version": "3.5.1",
+      "createdAt": 1774002864306,
+      "changelog": "Add alignment section to strategy pillar (mission command, constraint naming as alignment act). Update CLAUDE.md with strategy pillar relationships.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0878449a36483bcec8499a81bb54351a53b5fd58fd09f749eb05c5c84b803826"
+}

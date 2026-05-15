@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60154,
+  "uuid": "skill-clawhub-huo15-crm-agent",
+  "skillKey": "clawhub-huo15-crm-agent",
+  "name": "Huo15 Crm Agent",
+  "summary": "绿火 — 火一五旗下 CRM 销售员智能体（拓客 / 获客 / 跟进 / 客户画像 / 销售话术 / 信号识别）。**必须先装 @huo15/huo15-huihuoyun-odoo** 才能落地操作辉火云 Odoo19 企业版 CRM。v0.2 起接入企查查 OpenAPI 工商底座（需配 qichacha_a...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_crm_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Job Zhao",
+      "features": [
+        "绿火 — 火一五旗下 CRM 销售员智能体（拓客 / 获客 / 跟进 / 客户画像 / 销售话术 / 信号识别）。**必须先装 @huo15/huo15-huihuoyun-odoo** 才."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huo15-crm-agent@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13188275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huo15-crm-agent",
+      "url": "https://clawhub.ai/skills/huo15-crm-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-crm-agent",
+    "url": "https://clawhub.ai/skills/huo15-crm-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-crm-agent-859a59f690e28e79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huo15-crm-agent@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-huo15-crm-agent-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c82409f991ed958bddf408c4f26063fb8641627d40fdac12b1a6500a66a27ab",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T05:52:11.122Z"
+}

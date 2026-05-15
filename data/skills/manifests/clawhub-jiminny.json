@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36580,
+  "uuid": "skill-clawhub-jiminny",
+  "skillKey": "clawhub-jiminny",
+  "name": "Jiminny",
+  "summary": "Jiminny integration. Manage data, records, and automate workflows. Use when the user wants to interact with Jiminny data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiminny",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Jiminny integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Jiminny data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jiminny@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jiminny",
+      "url": "https://clawhub.ai/skills/jiminny"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiminny",
+    "url": "https://clawhub.ai/skills/jiminny",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiminny-923f38dd8bb00353.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jiminny@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-jiminny-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e2a1e1e2fde61c3fb34339ac85c330dc0da92cbe3db4eee55476c4bfae8d2d0",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:38:57.090Z"
+}

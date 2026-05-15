@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nivea@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nivea",
+  "skill": {
+    "id": 72244,
+    "skillKey": "clawhub-nivea",
+    "name": "Nivea"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nivea",
+    "url": "https://clawhub.ai/skills/nivea",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nivea-98e85841afa89d7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供妮维雅护肤品信息、价格、门店查询及护肤建议，助您了解经典及新品产品详情。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776295493985,
+      "changelog": "- 内容精简为“nivea知识卡片”，突出快速了解用途\n- 提供表格式关键事实，便于速查品牌基本信息\n- 限定应用场景为商业、学术等背景学习\n- 移除详细产品功能、使用场景与注意事项，专注简介\n- 增加查阅官方与行业报告的建议",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a7e9dd11a73e71a9ab96b760a8deb0585dfce63ab3b410d07dabba1ff46ffe3"
+}

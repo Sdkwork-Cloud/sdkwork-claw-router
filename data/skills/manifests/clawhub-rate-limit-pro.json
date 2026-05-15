@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16436,
+  "uuid": "skill-clawhub-rate-limit-pro",
+  "skillKey": "clawhub-rate-limit-pro",
+  "name": "Rate Limit Pro",
+  "summary": "Advanced rate limiting with tiered controls and quota management",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rate_limit_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "raghulpasupathi",
+      "features": [
+        "Advanced rate limiting with tiered controls and quota management"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rate-limit-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15859053?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rate-limit-pro",
+      "url": "https://clawhub.ai/skills/rate-limit-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rate-limit-pro",
+    "url": "https://clawhub.ai/skills/rate-limit-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rate-limit-pro-0387102c4613ba5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rate-limit-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rate-limit-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aca7a0bd1c439cfa0fd536b3b20137958a0382080fcf2d30c88986f97e9058fe",
+      "artifactSizeBytes": 2169
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T16:18:38.094Z"
+}

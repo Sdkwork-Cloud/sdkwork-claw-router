@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20497,
+  "uuid": "skill-clawhub-gitee-create-pr",
+  "skillKey": "clawhub-gitee-create-pr",
+  "name": "Create Pr",
+  "summary": "Use this skill when the user asks to create a PR, open a pull request, \"create-pr\", \"submit a pull request\", or \"open a merge request\". Requires Gitee MCP Se...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitee_create_pr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "开源中国",
+      "features": [
+        "Use this skill when the user asks to create a PR, open a pull request, \"create-pr\", \"submit a p.",
+        "Requires Gitee MCP Se..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gitee-create-pr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1540855?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gitee-create-pr",
+      "url": "https://clawhub.ai/skills/gitee-create-pr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitee-create-pr",
+    "url": "https://clawhub.ai/skills/gitee-create-pr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitee-create-pr-67d72e05105a8f77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gitee-create-pr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gitee-create-pr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:054906b655c4df0ff46ffa8aa1e994f66910eba689ed100178cf074c30b701cf",
+      "artifactSizeBytes": 2345
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T08:12:57.843Z"
+}

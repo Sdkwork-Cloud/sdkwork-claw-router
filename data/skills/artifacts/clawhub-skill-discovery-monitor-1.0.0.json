@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-discovery-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_discovery_monitor",
+  "skill": {
+    "id": 24925,
+    "skillKey": "clawhub-skill-discovery-monitor",
+    "name": "Skill Discovery Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-discovery-monitor",
+    "url": "https://clawhub.ai/skills/skill-discovery-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-discovery-monitor-0cb275394c1efae2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor and discover popular skills across platforms with daily reports, analytics, usage flowcharts, and multi-channel notifications."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhdryanchang",
+      "userId": "s176vtxqys9dn59s845h1ht27d844hwf",
+      "displayName": "zhdryanchang",
+      "image": "https://avatars.githubusercontent.com/u/252296405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772781268598,
+      "changelog": "Initial release: Discover trending skills across Clawhub, GitHub Actions, and npm. Features include multi-platform monitoring, usage flowcharts, feature summaries, and scheduled daily reports with SkillPay integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:28340dac46053ba6cb5c2902e866a48dfcf969a6f89413e8960297de5d8f6e24"
+}

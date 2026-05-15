@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69585,
+  "uuid": "skill-clawhub-local-community-group-buying-product-selection",
+  "skillKey": "clawhub-local-community-group-buying-product-selection",
+  "name": "01 Product Selection",
+  "summary": "社区团购选品策略全链路技能包。涵盖选品战略、品类分级、各平台选品逻辑对比、定价方法论、选品 SOP 及配套工具。不含供应链执行（见模块四）、仓储物流（见模块五）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_community_group_buying_product_selection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nic-yuan",
+      "features": [
+        "社区团购选品策略全链路技能包。涵盖选品战略、品类分级、各平台选品逻辑对比、定价方法论、选品 SOP 及配套工具。不含供应链执行（见模块四）、仓储物流（见模块五）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-community-group-buying-product-selection@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195308903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-community-group-buying-product-selection",
+      "url": "https://clawhub.ai/skills/local-community-group-buying-product-selection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-community-group-buying-product-selection",
+    "url": "https://clawhub.ai/skills/local-community-group-buying-product-selection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-community-group-buying-product-selection-f670c89c8a555384.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-community-group-buying-product-selection@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-community-group-buying-product-selection-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc4a424a0f6f43f9f22eff0cc699952b614ad3f0284d0e3bc64a44ab11b73378",
+      "artifactSizeBytes": 2838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T07:52:32.475Z"
+}

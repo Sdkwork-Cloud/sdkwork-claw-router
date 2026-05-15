@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60525,
+  "uuid": "skill-clawhub-uos-packager",
+  "skillKey": "clawhub-uos-packager",
+  "name": "Uos Packager",
+  "summary": "基于统信规范，使用 deb 格式将应用文件打包到 /opt/apps/${appid}/，并生成符合要求的 info、desktop 和图标文件。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uos_packager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZaneNiu",
+      "features": [
+        "基于统信规范，使用 deb 格式将应用文件打包到 /opt/apps/${appid}/，并生成符合要求的 info、desktop 和图标文件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uos-packager@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5901440?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uos-packager",
+      "url": "https://clawhub.ai/skills/uos-packager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uos-packager",
+    "url": "https://clawhub.ai/skills/uos-packager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uos-packager-a45752c5d4afdc66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uos-packager@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uos-packager-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7247db9b852c47d44578f67d167f84014632f6fa365d663091bd8e6d78d0f03b",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T13:30:04.564Z"
+}

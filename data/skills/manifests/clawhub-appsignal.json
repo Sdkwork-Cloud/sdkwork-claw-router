@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31377,
+  "uuid": "skill-clawhub-appsignal",
+  "skillKey": "clawhub-appsignal",
+  "name": "Appsignal",
+  "summary": "AppSignal integration. Manage data, records, and automate workflows. Use when the user wants to interact with AppSignal data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appsignal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "AppSignal integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with AppSignal data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/appsignal@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "appsignal",
+      "url": "https://clawhub.ai/skills/appsignal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appsignal",
+    "url": "https://clawhub.ai/skills/appsignal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appsignal-adcab169a9eb3a2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/appsignal@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-appsignal-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d327d5dbd946d01af9acfa139a7fc19a6cdd0258dc891d24f3d43ca5adce1b2e",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:20:33.999Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47995,
+  "uuid": "skill-clawhub-one-video",
+  "skillKey": "clawhub-one-video",
+  "name": "One Video",
+  "summary": "edit single video file into polished edited clip with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for editing a sin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.one_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "francemichaell-15",
+      "features": [
+        "edit single video file into polished edited clip with this skill",
+        "Works with MP4, MOV, AVI, WebM files up to 500MB",
+        "content creators use it for editing a sin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/one-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208906142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "one-video",
+      "url": "https://clawhub.ai/skills/one-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "one-video",
+    "url": "https://clawhub.ai/skills/one-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/one-video-e8e5cdd77d913c9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/one-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-one-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec8abf1fc1fb3d46c8db2076a021d3bea7e0ecf0403057c44d736651a005f995",
+      "artifactSizeBytes": 2381
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T16:44:55.355Z"
+}

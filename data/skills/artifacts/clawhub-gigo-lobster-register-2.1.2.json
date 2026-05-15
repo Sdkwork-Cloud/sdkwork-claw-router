@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gigo-lobster-register@2.1.2",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gigo_lobster_register",
+  "skill": {
+    "id": 58690,
+    "skillKey": "clawhub-gigo-lobster-register",
+    "name": "Gigo Lobster Register"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gigo-lobster-register",
+    "url": "https://clawhub.ai/skills/gigo-lobster-register",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gigo-lobster-register-edde73d1471f800e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🦞 GIGO · gigo-lobster-register: 分享页模式：跑完整评测并生成个人结果页，但不上排行榜。 Triggers: 注册龙虾结果页 / 分享我的龙虾 / register lobster share page / share my lobster without leaderboard."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gigolab",
+      "userId": "s17epban6811fzs3wawrk0cb5585nww2",
+      "displayName": "gigolab",
+      "image": "https://avatars.githubusercontent.com/u/279745280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 440,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 23
+    },
+    "latestVersion": {
+      "version": "2.1.2",
+      "createdAt": 1777365807556,
+      "changelog": "2.1.2: fix leaderboard wording on cert/report so total_entries consistently means ranked entries, not all evaluations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38de67b2a74df20ca32020a31e6ba4a3a8bf699d3f78d1456e8c60520b1cefa3"
+}

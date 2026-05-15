@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/human-paced-web-ops@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.human_paced_web_ops",
+  "skill": {
+    "id": 34554,
+    "skillKey": "clawhub-human-paced-web-ops",
+    "name": "Human Paced Web Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "human-paced-web-ops",
+    "url": "https://clawhub.ai/skills/human-paced-web-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/human-paced-web-ops-ce8c401e99e43e44.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use human-paced browser interaction patterns for web navigation and search tasks with variable delays, hover-before-click, and light randomness. Improves rob..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1477009639zw-blip",
+      "userId": "s17ezgebx1rdjg5v6ddseykg2183rt6j",
+      "displayName": "1477009639zw-blip",
+      "image": "https://avatars.githubusercontent.com/u/266505725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774810678049,
+      "changelog": "- Initial release of the human-paced-web-ops skill.\n- Adds human-like navigation for web browsing, search, and collection tasks by introducing variable delays, hover-before-click actions, and light randomness.\n- Increases workflow robustness and reduces brittle, bot-like behavior on dynamic web pages.\n- Implements guardrails for handling CAPTCHAs, login walls, paywalls, and anti-bot defenses.\n- Provides structured output: visited pages, extracted data, access issues, and next steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7b3c9ac6986d1fa3e26b9a1e6e560958ef854ae134e498a70b6a57cbcf37be8"
+}

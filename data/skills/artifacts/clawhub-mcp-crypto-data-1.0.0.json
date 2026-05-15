@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-crypto-data@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_crypto_data",
+  "skill": {
+    "id": 37079,
+    "skillKey": "clawhub-mcp-crypto-data",
+    "name": "mcp-crypto-data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-crypto-data",
+    "url": "https://clawhub.ai/skills/mcp-crypto-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-crypto-data-ef80aa211b82ed1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time cryptocurrency prices, network fee estimates, and Lightning Network statistics via L402 API. Use when agents need crypto market data, fee planning,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haveblue997",
+      "userId": "s172mms5r1fhkhzy7cmpsn7t2h841xv3",
+      "displayName": "HaveBlue997",
+      "image": "https://avatars.githubusercontent.com/u/23174278?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775056283302,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a1f925bc130700865573b2ce8051ae4eea3abd53c6a5261ffbcb458348dd345"
+}

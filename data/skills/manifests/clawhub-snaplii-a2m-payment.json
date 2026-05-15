@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51465,
+  "uuid": "skill-clawhub-snaplii-a2m-payment",
+  "skillKey": "clawhub-snaplii-a2m-payment",
+  "name": "Snaplii AI Agent Cashback Payment",
+  "summary": "This is a skill of Agent-to-Merchant (A2M) payments — where AI agents complete transactions without checkout. Snaplii uses pre-funded gift cards as a payment...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snaplii_a2m_payment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "snapliiai",
+      "features": [
+        "This is a skill of Agent-to-Merchant (A2M) payments — where AI agents complete transactions wit.",
+        "Snaplii uses pre-funded gift cards as a payment..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/snaplii-a2m-payment@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/234501887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "snaplii-a2m-payment",
+      "url": "https://clawhub.ai/skills/snaplii-a2m-payment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snaplii-a2m-payment",
+    "url": "https://clawhub.ai/skills/snaplii-a2m-payment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snaplii-a2m-payment-6aefe463fd0c538e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/snaplii-a2m-payment@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-snaplii-a2m-payment-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5ab4369cf922b2863607e360b08079aaa2b25852e599859c3473dea59f25c19",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T16:18:12.801Z"
+}

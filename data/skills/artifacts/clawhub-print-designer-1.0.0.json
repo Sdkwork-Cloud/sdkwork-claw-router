@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/print-designer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.print_designer",
+  "skill": {
+    "id": 71103,
+    "skillKey": "clawhub-print-designer",
+    "name": "AI印刷设计师"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "print-designer",
+    "url": "https://clawhub.ai/skills/print-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/print-designer-d63434b5ff425a35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI印刷设计师。输入印刷品类型/尺寸/材质/工艺，自动生成专业印刷版面设计建议、CMYK色彩规范、文件输出格式和印前检查清单。适用场景：名片/画册/海报/包装彩盒/不干胶/宣传单。触发词：帮我设计/设计版面/怎么排版/CMYK规范/印前检查"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tlcyqj2023",
+      "userId": "s17eyg25wdfar2hgps3pfq5z4183gp56",
+      "displayName": "tlcyqj2023",
+      "image": "https://avatars.githubusercontent.com/u/71183635?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774586866810,
+      "changelog": "- Initial release of the \"print-designer\" skill.\n- Guides users through professional print layout design by asking for essential parameters (type, size, material, color, process).\n- Provides detailed CMYK color specifications and warns about common color pitfalls in print.\n- Offers standardized design guidelines for a variety of printed items (business cards, catalogs, posters, packaging, stickers, flyers).\n- Supplies file output best practices, print-ready checklist, and templates for design specs and layout suggestions.\n- Tailored for print professionals and clients seeking accurate, efficient print design advice in Chinese-language environments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f468086ecccc63f1942d2000040235edc9bcda610f1a00bed43e2b165b90b950"
+}

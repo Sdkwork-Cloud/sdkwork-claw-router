@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/referral-letter-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.referral_letter_generator",
+  "skill": {
+    "id": 39786,
+    "skillKey": "clawhub-referral-letter-generator",
+    "name": "Referral Letter Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "referral-letter-generator",
+    "url": "https://clawhub.ai/skills/referral-letter-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/referral-letter-generator-2bc005cb756b9e56.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate medical referral letters with patient summary, reason for referral."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774933978606,
+      "changelog": "Initial release of referral-letter-generator.\n\n- Generates structured medical referral letters with patient summary and reason for referral.\n- Supports multiple output formats: PDF (default), DOCX, HTML, and TXT.\n- Validates required fields and provides documented fallback for missing/incomplete inputs.\n- Includes packaged script entry point (`scripts/main.py`), sample assets, and reference materials.\n- Processes patient data locally with privacy and security guidelines in mind.\n- Provides clear implementation details, workflow steps, and audit-ready commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:636655934b1060620e0952d04e62202a82495fddb0f771e12b0a9854173ae81d"
+}

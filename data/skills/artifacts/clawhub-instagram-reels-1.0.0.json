@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/instagram-reels@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagram_reels",
+  "skill": {
+    "id": 13825,
+    "skillKey": "clawhub-instagram-reels",
+    "name": "Instagram Reels"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagram-reels",
+    "url": "https://clawhub.ai/skills/instagram-reels",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagram-reels-420cace96c1dda11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download Instagram Reels, transcribe audio, and extract captions. Share a reel URL and get back a full transcript with the original description."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "antoinedc",
+      "userId": "publishers:antoinedc",
+      "displayName": "antoinedc",
+      "image": "https://avatars.githubusercontent.com/u/1327779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1115,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770995490281,
+      "changelog": "Initial release. Download Instagram Reels, transcribe audio with Groq Whisper, extract captions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:045f45ee462c2fd54c3599b0794f00ea7058c7a28bf283e673e3c0084b524b60"
+}

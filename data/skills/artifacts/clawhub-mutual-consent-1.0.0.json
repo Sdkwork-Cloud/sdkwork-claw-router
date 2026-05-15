@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mutual-consent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mutual_consent",
+  "skill": {
+    "id": 14863,
+    "skillKey": "clawhub-mutual-consent",
+    "name": "Mutual Consent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mutual-consent",
+    "url": "https://clawhub.ai/skills/mutual-consent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mutual-consent-c59bf6aca3540c72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enforces real-time mutual consent by ensuring interactions proceed only while all stakeholders' constraints on cost, risk, and relation overlap within tolera..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "otherpowers",
+      "userId": "s17810eyaktqpr5cakxrfkdm2d83hdtf",
+      "displayName": "OtherPowers",
+      "image": "https://avatars.githubusercontent.com/u/44530314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1004,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770682304525,
+      "changelog": "A governance skill that treats consent as a live relational condition across humans, agents, and ecological systems with the hope of enabling interaction without coercion, extraction, or irreversible harm-accumulation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:72da9fb920b936918d8ff0d776b4dbc7f5af87c320a8619eb2977e8e0bda3fd6"
+}

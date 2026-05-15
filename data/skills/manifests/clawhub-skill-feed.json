@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17504,
+  "uuid": "skill-clawhub-skill-feed",
+  "skillKey": "clawhub-skill-feed",
+  "name": "Skill Feed",
+  "summary": "Scenario-driven skill recommendation engine for ClawHub. Detects failed or stuck workflows, builds targeted search queries, and returns ranked skill recommen...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_feed",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jack Lee",
+      "features": [
+        "Scenario-driven skill recommendation engine for ClawHub",
+        "Detects failed or stuck workflows, builds targeted search queries, and returns ranked skill rec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-feed@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20477587?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-feed",
+      "url": "https://clawhub.ai/skills/skill-feed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-feed",
+    "url": "https://clawhub.ai/skills/skill-feed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-feed-8cfdc05702c70b3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-feed@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-feed-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:559dd8f1f7d7a70be677d58d706d1826bbe6435ccb29e3500bbb2d6aa3d73127",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T10:38:30.881Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13041,
+  "uuid": "skill-clawhub-tl-dw",
+  "skillKey": "clawhub-tl-dw",
+  "name": "tl;dw - YouTube Video Summarizer",
+  "summary": "Extract and summarize YouTube video transcripts into concise overviews with main points, arguments, and conclusions using video captions.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tl_dw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vovavvk",
+      "features": [
+        "Extract and summarize YouTube video transcripts into concise overviews with main points, argume."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tl-dw@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33007437?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tl-dw",
+      "url": "https://clawhub.ai/skills/tl-dw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tl-dw",
+    "url": "https://clawhub.ai/skills/tl-dw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tl-dw-74eb020949d33bcc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tl-dw@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tl-dw-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2791bf4429ca7d8e24dba70230fbc185449878e28c1b93962cf48d3a2bf300a",
+      "artifactSizeBytes": 2159
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T07:37:22.832Z"
+}

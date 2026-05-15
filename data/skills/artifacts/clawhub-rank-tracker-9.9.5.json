@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rank-tracker@9.9.5",
+  "version": "9.9.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rank_tracker",
+  "skill": {
+    "id": 56681,
+    "skillKey": "clawhub-rank-tracker",
+    "name": "Rank Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rank-tracker",
+    "url": "https://clawhub.ai/skills/rank-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rank-tracker-e56dba0f9447503f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track keyword rankings and SERP feature changes in traditional search and AI responses over time. 排名追踪/SERP监控"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaron-he-zhu",
+      "userId": "s17e1tg8pjra8dn1dvtq21sahx83hrxj",
+      "displayName": "Aaron Zhu",
+      "image": "https://avatars.githubusercontent.com/u/139607425?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2668,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 24
+    },
+    "latestVersion": {
+      "version": "9.9.5",
+      "createdAt": 1777349140456,
+      "changelog": "Published from main @ 7ecc77b",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41e58fef57bc78bd1887f4265894bd7cde62f85e859a4c02076df165c7433b4c"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54148,
+  "uuid": "skill-clawhub-claws-security-scanner",
+  "skillKey": "clawhub-claws-security-scanner",
+  "name": "Skill Security Scanner",
+  "summary": "Scan any OpenClaw skill for security issues before installing — malware, prompt injection, obfuscation, supply chain attacks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claws_security_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Blossom",
+      "features": [
+        "Scan any OpenClaw skill for security issues before installing — malware, prompt injection, obfu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claws-security-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19878893?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claws-security-scanner",
+      "url": "https://clawhub.ai/skills/claws-security-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claws-security-scanner",
+    "url": "https://clawhub.ai/skills/claws-security-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claws-security-scanner-d38106eaab09e9ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claws-security-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claws-security-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:173cc1b924894642d874f92779af65dfa1283449fbd92f01b58b7eef9c268d49",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T07:25:11.168Z"
+}

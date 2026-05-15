@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13259,
+  "uuid": "skill-clawhub-org-memory",
+  "skillKey": "clawhub-org-memory",
+  "name": "org-memory",
+  "summary": "Extends the org-cli skill so the agent also persists its own memory (knowledge, observations, daily notes) to an org workspace.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.org_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DCPRevere",
+      "features": [
+        "Extends the org-cli skill so the agent also persists its own memory (knowledge, observations, d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/org-memory@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10855272?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "org-memory",
+      "url": "https://clawhub.ai/skills/org-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "org-memory",
+    "url": "https://clawhub.ai/skills/org-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/org-memory-f66d3ff35a2d5800.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/org-memory@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-org-memory-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:884476e654a37e1992c5e6cdaf0d103dcd21fe2438831713424d12f7f46a8ed1",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T09:01:36.953Z"
+}

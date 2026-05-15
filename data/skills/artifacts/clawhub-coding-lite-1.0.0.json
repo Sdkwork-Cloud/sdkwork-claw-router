@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coding-lite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coding_lite",
+  "skill": {
+    "id": 63287,
+    "skillKey": "clawhub-coding-lite",
+    "name": "Coding Lite - 轻量级编码助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coding-lite",
+    "url": "https://clawhub.ai/skills/coding-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coding-lite-c3a83cdb261ae6a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "轻量级编码助手，支持 Python 脚本生成与执行、Excel/WPS 函数自动化、小程序代码生成、SQL 查询助手。快速响应，不占用过多 context。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cp3d1455926-svg",
+      "userId": "s177dnrcxaj8y42437mjj0m9y583t54n",
+      "displayName": "cp3d1455926-svg",
+      "image": "https://avatars.githubusercontent.com/u/268315927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 705,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774862694675,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c5a4f1d93cd18957e0326fb083ea04c08c28286db0386f760059d148f89641da"
+}

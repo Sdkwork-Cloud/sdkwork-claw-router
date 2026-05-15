@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63539,
+  "uuid": "skill-clawhub-personal-memory-system-published",
+  "skillKey": "clawhub-personal-memory-system-published",
+  "name": "Personal Memory System Published",
+  "summary": "一个自动化、双层记忆系统，用于持久化和可查询个人知识。它将用户在 MEMORY.md 中的长期记忆，自动同步到 SQLite 数据库 memory.db，实现“自然语言 → SQL 查询”的智能检索。 **使用场景**： (1) 用户需要查询“我过去对 AI 模型的看法？” (2) 用户希望系统自动记录重要决策，...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_memory_system_published",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "awublack",
+      "features": [
+        "一个自动化、双层记忆系统，用于持久化和可查询个人知识。它将用户在 MEMORY.md 中的长期记忆，自动同步到 SQLite 数据库 memory.db，实现“自然语言 → SQL 查询”的."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-memory-system-published@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22994037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-memory-system-published",
+      "url": "https://clawhub.ai/skills/personal-memory-system-published"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-memory-system-published",
+    "url": "https://clawhub.ai/skills/personal-memory-system-published",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-memory-system-published-99a3f42f61201c78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-memory-system-published@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-memory-system-published-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5db9b6a6dcc47f37b36148624a104a836ceb73325201776a18b0f4e1cca062a6",
+      "artifactSizeBytes": 2596
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T01:31:50.720Z"
+}

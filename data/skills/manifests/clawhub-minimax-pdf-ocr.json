@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58494,
+  "uuid": "skill-clawhub-minimax-pdf-ocr",
+  "skillKey": "clawhub-minimax-pdf-ocr",
+  "name": "MiniMax PDF OCR",
+  "summary": "使用 MiniMax Vision API 识别 PDF/图片中的文字",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_pdf_ocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chongjie-ran",
+      "features": [
+        "使用 MiniMax Vision API 识别 PDF/图片中的文字"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-pdf-ocr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198864991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-pdf-ocr",
+      "url": "https://clawhub.ai/skills/minimax-pdf-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-pdf-ocr",
+    "url": "https://clawhub.ai/skills/minimax-pdf-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-pdf-ocr-8eed6b4685366550.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-pdf-ocr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-pdf-ocr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26ef31411648f0bd1c7f7d4061c62de1f50399c6d85d6dfd2384caa86854c33b",
+      "artifactSizeBytes": 2236
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T00:27:46.640Z"
+}

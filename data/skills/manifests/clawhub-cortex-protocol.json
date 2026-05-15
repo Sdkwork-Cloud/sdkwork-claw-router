@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50415,
+  "uuid": "skill-clawhub-cortex-protocol",
+  "skillKey": "clawhub-cortex-protocol",
+  "name": "Cortex Protocol",
+  "summary": "Register your agent on Cortex Protocol — gasless on-chain identity (ERC-8004) on Base. One command to get a verifiable agent identity.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cortex_protocol",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "quriustus",
+      "features": [
+        "Register your agent on Cortex Protocol — gasless on-chain identity (ERC-8004) on Base",
+        "One command to get a verifiable agent identity."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cortex-protocol@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145394137?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cortex-protocol",
+      "url": "https://clawhub.ai/skills/cortex-protocol"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cortex-protocol",
+    "url": "https://clawhub.ai/skills/cortex-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cortex-protocol-69bc163613bb1b6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cortex-protocol@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cortex-protocol-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed3e49925f82c9d9f7ad9be89c204a46035aba7b176e768f43ee6a1b6f60a3f6",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T21:29:25.992Z"
+}

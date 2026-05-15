@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/byted-bytehouse-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_bytehouse_mcp",
+  "skill": {
+    "id": 61905,
+    "skillKey": "clawhub-byted-bytehouse-mcp",
+    "name": "Byted Bytehouse Mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-bytehouse-mcp",
+    "url": "https://clawhub.ai/skills/byted-bytehouse-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-bytehouse-mcp-47a3af1f093b1b49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在本地拉起ByteHouse MCP Server并调用其tools的技能，用于连接ByteHouse数据库查询数据、使用MCP协议与ByteHouse交互、生成数据资产目录和血缘分析。当用户需要连接ByteHouse数据库查询数据、使用MCP协议与ByteHouse交互、生成数据资产目录和血缘分析时，使用此Sk..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "volcengine-skills",
+      "userId": "s17bcxs73bckd3eercvtn6cmsx83g5kg",
+      "displayName": "volcengine-skills",
+      "image": "https://avatars.githubusercontent.com/u/260939792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774526917824,
+      "changelog": "byted-bytehouse-mcp v1.0.0 – Initial Release\n\n- Provides tools for local setup and management of ByteHouse MCP Server, supporting connection, query, and data asset analysis for ByteHouse.\n- Includes new support for automated data asset catalog and lineage analysis via `data_asset_analyzer.py`.\n- Offers tools to list databases and tables, run SELECT/DML/DDL queries, and retrieve ByteHouse table engine docs.\n- Supplies bash scripts for starting, stopping, checking status, and restarting the MCP Server.\n- Example scripts provided for common database operations and MCP client usage.\n- Requires pre-configured environment variables and Python 3.8+.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a7989069bcc4da8ac5ef822518879d425e466718d520ef72e5d4bc7558fcdd3"
+}

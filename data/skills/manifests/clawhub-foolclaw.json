@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55890,
+  "uuid": "skill-clawhub-foolclaw",
+  "skillKey": "clawhub-foolclaw",
+  "name": "FoolClaw",
+  "summary": "OpenClaw prank skill with local pranks and a quiet background operator. `Start FoolClaw` leaves a desktop prank and quietly arms FoolClaw in one step.",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.foolclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Treap Huai",
+      "features": [
+        "OpenClaw prank skill with local pranks and a quiet background operator",
+        "`Start FoolClaw` leaves a desktop prank and quietly arms FoolClaw in one step."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/foolclaw@0.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34394212?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "foolclaw",
+      "url": "https://clawhub.ai/skills/foolclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "foolclaw",
+    "url": "https://clawhub.ai/skills/foolclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/foolclaw-4e4ad9f968373ffd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/foolclaw@0.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-foolclaw-0.5.0.json",
+      "version": "0.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b64ce6dba892f71e024d0f4e7786b03672f592a216fb1680d3b458ad41cdd6e9",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T00:17:18.672Z"
+}

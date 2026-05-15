@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61613,
+  "uuid": "skill-clawhub-feishu-group-mention-responder",
+  "skillKey": "clawhub-feishu-group-mention-responder",
+  "name": "Feishu Group Mention Responder",
+  "summary": "在飞书群中，当机器人被@提及或接收到直接消息时，自动进行回复。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_group_mention_responder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lorpha",
+      "features": [
+        "在飞书群中，当机器人被@提及或接收到直接消息时，自动进行回复。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-group-mention-responder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115758665?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-group-mention-responder",
+      "url": "https://clawhub.ai/skills/feishu-group-mention-responder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-group-mention-responder",
+    "url": "https://clawhub.ai/skills/feishu-group-mention-responder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-group-mention-responder-b2dcfad6fb612b75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-group-mention-responder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-group-mention-responder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a320b422f692e431b05df508ea4edc0cf04f55bb5e5f3807296ac11eda1e5211",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T16:13:48.145Z"
+}

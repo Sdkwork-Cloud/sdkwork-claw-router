@@ -348,7 +348,8 @@ class SchemaQualityGateTest(unittest.TestCase):
     def write_generated_sdks(self, root: Path) -> None:
         self.write_generated_sdk(
             root,
-            sdk_dir="clawrouter-app-sdk",
+            family_dir="clawrouter-app-sdk",
+            package_dir="clawrouter-app-sdk-typescript",
             package_name="@sdkwork/clawrouter-app-sdk",
             sdk_type="app",
             client_name="SdkworkAppClient",
@@ -356,23 +357,97 @@ class SchemaQualityGateTest(unittest.TestCase):
         )
         self.write_generated_sdk(
             root,
-            sdk_dir="clawrouter-backend-sdk",
+            family_dir="clawrouter-backend-sdk",
+            package_dir="clawrouter-backend-sdk-typescript",
             package_name="@sdkwork/clawrouter-backend-sdk",
             sdk_type="backend",
             client_name="SdkworkBackendClient",
             api_prefix="/backend/v3/api",
         )
+        self.write_generated_sdk(
+            root,
+            family_dir="clawrouter-open-sdk",
+            package_dir="clawrouter-open-sdk-typescript",
+            package_name="@sdkwork/clawrouter-open-sdk",
+            sdk_type="ai",
+            client_name="SdkworkAiClient",
+            api_prefix="/v1",
+        )
 
     def write_generated_sdk(
         self,
         root: Path,
-        sdk_dir: str,
+        family_dir: str,
+        package_dir: str,
         package_name: str,
         sdk_type: str,
         client_name: str,
         api_prefix: str,
     ) -> None:
-        base = root / "sdks" / sdk_dir
+        family = root / "sdks" / family_dir
+        base = family / package_dir
+        (family / "openapi").mkdir(parents=True, exist_ok=True)
+        (family / "bin").mkdir(parents=True, exist_ok=True)
+        (family / "tests").mkdir(parents=True, exist_ok=True)
+        (family / "README.md").write_text(f"# {family_dir}\n", encoding="utf-8")
+        (family / ".sdkwork-assembly.json").write_text(
+            json.dumps(
+                {
+                    "workspace": family_dir,
+                    "authoritySpec": f"openapi/{family_dir}.openapi.json",
+                    "derivedSpec": f"openapi/{family_dir}.sdkgen.json",
+                    "languages": [
+                        {
+                            "language": "typescript",
+                            "workspace": package_dir,
+                            "generationState": "materialized",
+                            "packagePath": package_dir,
+                            "manifestPath": f"{package_dir}/package.json",
+                            "name": package_name,
+                        }
+                    ]
+                    + [
+                        {
+                            "language": language,
+                            "workspace": f"{family_dir}-{language}",
+                            "generationState": "generation_available",
+                            "releaseState": "reserved",
+                            "generatedPath": f"{family_dir}-{language}/generated/server-openapi",
+                        }
+                        for language in [
+                            "flutter",
+                            "rust",
+                            "java",
+                            "csharp",
+                            "swift",
+                            "kotlin",
+                            "go",
+                            "python",
+                        ]
+                    ],
+                }
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        (family / "openapi" / f"{family_dir}.openapi.json").write_text(
+            '{"openapi":"3.1.0","info":{"title":"fixture","version":"0.1.0"},"paths":{}}\n',
+            encoding="utf-8",
+        )
+        (family / "openapi" / f"{family_dir}.sdkgen.json").write_text(
+            '{"openapi":"3.1.0","info":{"title":"fixture","version":"0.1.0"},"paths":{}}\n',
+            encoding="utf-8",
+        )
+        (family / "bin" / "generate-sdk.mjs").write_text(
+            "const OFFICIAL_LANGUAGES = ['typescript', 'flutter', 'rust', 'java', 'csharp', 'swift', 'kotlin', 'go', 'python'];\n"
+            "const sdkFamily = 'fixture';\n"
+            "const sdkgenInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.sdkgen.json`;\n"
+            "console.log('--language');\n"
+            "console.log(\"'-i', sdkgenInputPath\");\n"
+            "console.log('sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi');\n",
+            encoding="utf-8",
+        )
+        (family / "bin" / "verify-sdk.mjs").write_text("console.log('verify');\n", encoding="utf-8")
         (base / "src" / "api").mkdir(parents=True, exist_ok=True)
         (base / "src" / "types").mkdir(parents=True, exist_ok=True)
         (base / ".sdkwork").mkdir(parents=True, exist_ok=True)
@@ -413,19 +488,55 @@ class SchemaQualityGateTest(unittest.TestCase):
         (base / "custom" / "README.md").write_text("custom\n", encoding="utf-8")
         (base / "custom" / "build-runtime.mjs").write_text("console.log('build');\n", encoding="utf-8")
         (base / ".sdkwork" / "sdkwork-generator-manifest.json").write_text("{}\n", encoding="utf-8")
-        (base / "src" / "sdk.ts").write_text(f"export class {client_name} {{}}\n", encoding="utf-8")
+        sdk_source = f"export class {client_name} {{}}\n"
+        if family_dir == "clawrouter-backend-sdk":
+            sdk_source = (
+                "import { EcosystemApi, createEcosystemApi } from './api/ecosystem';\n"
+                f"export class {client_name} {{\n"
+                "  private httpClient: unknown;\n"
+                "  public readonly ecosystem: EcosystemApi;\n"
+                "  constructor() { this.ecosystem = createEcosystemApi(this.httpClient); }\n"
+                "}\n"
+            )
+        (base / "src" / "sdk.ts").write_text(sdk_source, encoding="utf-8")
         (base / "src" / "api" / "base.ts").write_text("export class BaseApi {}\n", encoding="utf-8")
-        (base / "src" / "api" / "index.ts").write_text(
-            "export { BaseApi } from './base';\n"
-            + (
-                "export { appApiPath } from './paths';\n"
-                if sdk_type == "app"
-                else "export { backendApiPath } from './paths';\n"
-            ),
+        api_index_source = "export { BaseApi } from './base';\n"
+        api_index_source += (
+            "export { appApiPath } from './paths';\n"
+            if sdk_type == "app"
+            else "export { backendApiPath } from './paths';\n"
+        )
+        if family_dir == "clawrouter-backend-sdk":
+            api_index_source += "export { EcosystemApi } from './ecosystem';\n"
+            (base / "src" / "api" / "ecosystem.ts").write_text(
+                "export class EcosystemSkillsReviewApi { async approve() {} async reject() {} }\n"
+                "export class EcosystemSkillsPackageApi { async create() {} async list() {} async delete() {} async retrieve() {} async update() {} async disable() {} async enable() {} }\n"
+                "export class EcosystemSkillsCategoriesApi { async list() {} async create() {} }\n"
+                "export class EcosystemSkillsAssetsApi { async list() {} async create() {} async delete() {} async retrieve() {} async update() {} }\n"
+                "export class EcosystemSkillsArtifactsApi { async list() {} async create() {} async delete() {} async retrieve() {} async update() {} }\n"
+                "export class EcosystemSkillsApi {\n"
+                "  public readonly categories: EcosystemSkillsCategoriesApi;\n"
+                "  public readonly package: EcosystemSkillsPackageApi;\n"
+                "  public readonly artifacts: EcosystemSkillsArtifactsApi;\n"
+                "  public readonly assets: EcosystemSkillsAssetsApi;\n"
+                "  public readonly review: EcosystemSkillsReviewApi;\n"
+                "  async create() {} async list() {} async delete() {} async retrieve() {} async update() {} async disable() {} async enable() {} async publish() {} async unpublish() {}\n"
+                "}\n"
+                "export class EcosystemApi { public readonly skills: EcosystemSkillsApi; }\n"
+                "export function createEcosystemApi(client: unknown): EcosystemApi { return new EcosystemApi(); }\n",
+                encoding="utf-8",
+            )
+        (base / "src" / "api" / "index.ts").write_text(api_index_source, encoding="utf-8")
+        (base / "src" / "api" / "paths.ts").write_text(f"{api_prefix}\n", encoding="utf-8")
+        (base / "src" / "types" / "common.ts").write_text(
+            "export interface BasePlusVO {}\n"
+            "export interface BasePlusEntity extends BasePlusVO {}\n"
+            "export interface QueryListForm {}\n"
+            "export type { Page, RequestConfig, RequestOptions, QueryParams } from '@sdkwork/sdk-common';\n",
             encoding="utf-8",
         )
-        (base / "src" / "api" / "paths.ts").write_text(f"{api_prefix}\n", encoding="utf-8")
-        if sdk_dir == "clawrouter-app-sdk":
+        common_export = "export * from './common';\n"
+        if family_dir == "clawrouter-app-sdk":
             (base / "src" / "types" / "app-model-catalog-price-availability.ts").write_text(
                 "export interface AppModelCatalogPriceAvailability {\n"
                 "  reason?: string | null;\n"
@@ -448,12 +559,13 @@ class SchemaQualityGateTest(unittest.TestCase):
                 encoding="utf-8",
             )
             (base / "src" / "types" / "index.ts").write_text(
-                "export type { AppModelCatalogPriceAvailability } from './app-model-catalog-price-availability';\n"
+                common_export
+                + "export type { AppModelCatalogPriceAvailability } from './app-model-catalog-price-availability';\n"
                 "export type { AppModelCatalogItem } from './app-model-catalog-item';\n",
                 encoding="utf-8",
             )
         else:
-            (base / "src" / "types" / "index.ts").write_text("export {};\n", encoding="utf-8")
+            (base / "src" / "types" / "index.ts").write_text(common_export, encoding="utf-8")
         (base / "dist" / "index.js").write_text("export {};\n", encoding="utf-8")
         (base / "dist" / "index.cjs").write_text('"use strict";\n', encoding="utf-8")
         (base / "dist" / "index.d.ts").write_text("export {};\n", encoding="utf-8")
@@ -463,11 +575,11 @@ class SchemaQualityGateTest(unittest.TestCase):
         commons = portal / "packages" / "sdkwork-claw-router-commons"
         (commons / "src").mkdir(parents=True, exist_ok=True)
         (portal / "package.json").write_text(
-            '{"scripts":{"dev":"vite --configLoader native","browser:dev":"vite --configLoader native","build":"vite build --configLoader native"},"dependencies":{"@sdkwork/clawrouter-app-sdk":"file:../../sdks/clawrouter-app-sdk","@sdkwork/clawrouter-backend-sdk":"file:../../sdks/clawrouter-backend-sdk"}}\n',
+            '{"scripts":{"dev":"vite --configLoader native","browser:dev":"vite --configLoader native","build":"vite build --configLoader native"},"dependencies":{"@sdkwork/clawrouter-app-sdk":"workspace:*","@sdkwork/clawrouter-backend-sdk":"workspace:*"}}\n',
             encoding="utf-8",
         )
         (commons / "package.json").write_text(
-            '{"dependencies":{"@sdkwork/clawrouter-app-sdk":"file:../../../../sdks/clawrouter-app-sdk","@sdkwork/clawrouter-backend-sdk":"file:../../../../sdks/clawrouter-backend-sdk"}}\n',
+            '{"dependencies":{"@sdkwork/clawrouter-app-sdk":"workspace:*","@sdkwork/clawrouter-backend-sdk":"workspace:*"}}\n',
             encoding="utf-8",
         )
         (commons / "src" / "index.ts").write_text("export * from './components/CopyButton';\n", encoding="utf-8")
@@ -503,10 +615,11 @@ class SchemaQualityGateTest(unittest.TestCase):
             """
             ---
             name: clawrouter-app-sdk-integration
-            description: Use @sdkwork/clawrouter-app-sdk for /app/v3/api integration.
+            description: Use @sdkwork/clawrouter-app-sdk for product contract surface integration.
             ---
             Use @sdkwork/clawrouter-app-sdk.
-            Keep /app/v3/api aligned.
+            Select the SDK by contract surface.
+            URL path prefixes are not the source of truth.
             Block raw fetch and axios for remote business endpoints.
             Never hand-edit generated SDK output.
             Regenerate with sdkwork-sdk-generator.
@@ -519,10 +632,11 @@ class SchemaQualityGateTest(unittest.TestCase):
             """
             ---
             name: clawrouter-backend-sdk-integration
-            description: Use @sdkwork/clawrouter-backend-sdk for /backend/v3/api integration.
+            description: Use @sdkwork/clawrouter-backend-sdk for management contract surface integration.
             ---
             Use @sdkwork/clawrouter-backend-sdk.
-            Keep /backend/v3/api aligned.
+            Select the SDK by contract surface.
+            URL path prefixes are not the source of truth.
             Block raw fetch and axios for remote business endpoints.
             Never hand-edit generated SDK output.
             Regenerate with sdkwork-sdk-generator.
@@ -535,9 +649,10 @@ class SchemaQualityGateTest(unittest.TestCase):
             """
             ---
             name: clawrouter-sdk-generation
-            description: Regenerate @sdkwork/clawrouter-app-sdk and @sdkwork/clawrouter-backend-sdk.
+            description: Regenerate @sdkwork/clawrouter-app-sdk, @sdkwork/clawrouter-backend-sdk, and @sdkwork/clawrouter-open-sdk.
             ---
-            Generate @sdkwork/clawrouter-app-sdk and @sdkwork/clawrouter-backend-sdk.
+            Generate exactly three SDK systems: @sdkwork/clawrouter-app-sdk, @sdkwork/clawrouter-backend-sdk, and @sdkwork/clawrouter-open-sdk.
+            URL path prefixes are not used as the standard for SDK ownership.
             Read generated/api/api-contract-manifest.json.
             Write generated/openapi/clawrouter-app-openapi.json.
             Write generated/openapi/clawrouter-backend-openapi.json.
@@ -564,7 +679,15 @@ class SchemaQualityGateTest(unittest.TestCase):
             encoding="utf-8",
         )
         (skills_root / "categories.json").write_text(
-            json.dumps([{"id": 1901, "uuid": "cat", "code": "agent-productivity"}]),
+            json.dumps(
+                [
+                    {
+                        "id": 1901,
+                        "uuid": "skill-category-sdkwork-official",
+                        "code": "sdkwork-official",
+                    }
+                ]
+            ),
             encoding="utf-8",
         )
         (skills_root / "packages.json").write_text(
@@ -591,6 +714,8 @@ class SchemaQualityGateTest(unittest.TestCase):
                         "name": "Prompt Optimizer",
                         "categoryId": 1901,
                         "packageId": 7101,
+                        "provider": "SDKWork",
+                        "sourceType": "OFFICIAL",
                         "manifestUrl": "data/skills/manifests/prompt-optimizer.json",
                         "version": "1.0.0",
                         "versionName": "1.0.0",
@@ -773,7 +898,9 @@ class SchemaQualityGateTest(unittest.TestCase):
             registry = self.write_registry(root, self.valid_registry())
             self.write_generated_artifacts(root, registry)
             stale = root / "apps" / "sdkwork-claw-router-portal" / "public" / "openapi.json"
-            stale.write_text("{}\n", encoding="utf-8")
+            stale_spec = json.loads(stale.read_text(encoding="utf-8"))
+            stale_spec["info"]["description"] = "Stale generated fixture"
+            stale.write_text(json.dumps(stale_spec, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
             self.write_app(root)
             self.write_frontend_contract(root)
 
@@ -798,34 +925,63 @@ class SchemaQualityGateTest(unittest.TestCase):
                           ai_model_vendor: [vendor_code, display_name]
                     frontend_operations:
                       - source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-models/src/modelService.ts
-                        operation: createModelVendor
+                        operation: fetchModelVendors
                         route: /models
-                        kind: create
+                        kind: read
                         api_surface: app
-                        api_method: POST
-                        api_path: /app/v3/api/model-vendors
+                        api_method: GET
+                        api_path: /app/v3/api/model_vendors
+                        query_parameters: []
                         read_sources: [ai_model_vendor]
-                        write_tables: [ai_model_vendor]
+                        write_tables: []
+                        response_schema:
+                          name: ModelVendorListResponse
+                          type: object
+                          properties:
+                            items:
+                              type: array
+                              items:
+                                type: object
+                                additionalProperties: false
+                                name: ModelVendorListItem
+                                required: [id, vendorCode]
+                                properties:
+                                  id: { type: string }
+                                  vendorCode: { type: string }
                     """
                 ).strip()
                 + "\n",
                 encoding="utf-8",
             )
             self.write_generated_artifacts(root, registry)
+            source = (
+                root
+                / "apps"
+                / "sdkwork-claw-router-portal"
+                / "packages"
+                / "sdkwork-claw-router-console-models"
+                / "src"
+                / "modelService.ts"
+            )
+            source.parent.mkdir(parents=True, exist_ok=True)
+            source.write_text(
+                textwrap.dedent(
+                    """
+                    import { getClawRouterAppSdkClient } from '@sdkwork-claw-router/commons';
+
+                    export async function fetchModelVendors() {
+                      return getClawRouterAppSdkClient().ai.modelVendors.list();
+                    }
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
+            FrontendOperationAudit(root=root).write()
             spec_path = root / "generated" / "openapi" / "clawrouter-app-openapi.json"
             spec = json.loads(spec_path.read_text(encoding="utf-8"))
-            spec["components"]["schemas"]["CreateModelVendorResult"] = {
-                "type": "object",
-                "additionalProperties": False,
-                "required": ["code"],
-                "x-operation-id": "createModelVendor",
-                "properties": {
-                    "code": {"type": "string"},
-                    "data": {"$ref": "#/components/schemas/AiModelVendorRecord"},
-                },
-            }
-            spec["paths"]["/app/v3/api/model-vendors"]["post"]["responses"]["200"]["content"]["application/json"]["schema"] = {
-                "$ref": "#/components/schemas/CreateModelVendorResult"
+            spec["paths"]["/app/v3/api/ai/model_vendors"]["get"]["responses"]["200"]["content"]["application/json"]["schema"] = {
+                "$ref": "#/components/schemas/PlusApiResult"
             }
             spec_path.write_text(json.dumps(spec, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
             self.write_app(root)
@@ -834,7 +990,30 @@ class SchemaQualityGateTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "app createModelVendor must use PlusApiResult because precise responses require GET, one read source, and an existing record schema",
+                "app modelVendors.list 200 response must reference #/components/schemas/ModelVendorsListResult",
+                result.messages,
+            )
+
+    def test_quality_gate_reports_openapi_contract_strength_drift(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = self.write_registry(root, self.valid_registry())
+            self.write_generated_artifacts(root, registry)
+            spec_path = root / "generated" / "openapi" / "clawrouter-app-openapi.json"
+            spec = json.loads(spec_path.read_text(encoding="utf-8"))
+            spec["components"]["schemas"]["OperationRequest"] = {
+                "type": "object",
+                "additionalProperties": {"$ref": "#/components/schemas/JsonValue"},
+            }
+            spec_path.write_text(json.dumps(spec, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+            self.write_app(root)
+            self.write_frontend_contract(root)
+
+            result = SchemaQualityGate(root=root, registry_path=registry).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "app schema component OperationRequest is forbidden; use operation-specific request DTOs",
                 result.messages,
             )
 
@@ -843,14 +1022,17 @@ class SchemaQualityGateTest(unittest.TestCase):
             root = Path(tmp)
             registry = self.write_registry(root, self.valid_registry())
             self.write_generated_artifacts(root, registry)
-            (root / "sdks" / "clawrouter-app-sdk" / "package.json").write_text('{"name":"wrong"}\n', encoding="utf-8")
+            (root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "package.json").write_text('{"name":"wrong"}\n', encoding="utf-8")
             self.write_app(root)
             self.write_frontend_contract(root)
 
             result = SchemaQualityGate(root=root, registry_path=registry).run()
 
             self.assertFalse(result.ok)
-            self.assertIn("clawrouter-app-sdk package.json name must be @sdkwork/clawrouter-app-sdk", result.messages)
+            self.assertIn(
+                "clawrouter-app-sdk-typescript package.json name must be @sdkwork/clawrouter-app-sdk",
+                result.messages,
+            )
 
     def test_quality_gate_reports_project_skill_gap(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -991,6 +1173,22 @@ class SchemaQualityGateTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn("payload sdk audit drift", result.messages)
+
+    def test_quality_gate_includes_openapi_contract_audit(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = self.write_registry(root, self.valid_registry())
+            self.write_generated_artifacts(root, registry)
+            self.write_app(root)
+            self.write_frontend_contract(root)
+
+            with patch("tools.schema_quality_gate.ClawRouterOpenApiContractAudit") as audit_class:
+                audit_class.return_value.run.return_value = Mock(ok=False, messages=["openapi contract audit drift"])
+
+                result = SchemaQualityGate(root=root, registry_path=registry).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn("openapi contract audit drift", result.messages)
 
 
 def artifact_payload_checksum(payload: dict) -> str:

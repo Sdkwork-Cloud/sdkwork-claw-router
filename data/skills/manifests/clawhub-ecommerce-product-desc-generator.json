@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73029,
+  "uuid": "skill-clawhub-ecommerce-product-desc-generator",
+  "skillKey": "clawhub-ecommerce-product-desc-generator",
+  "name": "电商产品描述批量生成器",
+  "summary": "批量生成多平台电商产品标题、卖点和详情描述，支持中文英文及CSV导入，提升跨境及本土化文案效率。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_product_desc_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenghoo123-png",
+      "features": [
+        "批量生成多平台电商产品标题、卖点和详情描述，支持中文英文及CSV导入，提升跨境及本土化文案效率。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecommerce-product-desc-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265226019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecommerce-product-desc-generator",
+      "url": "https://clawhub.ai/skills/ecommerce-product-desc-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-product-desc-generator",
+    "url": "https://clawhub.ai/skills/ecommerce-product-desc-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-product-desc-generator-c93e0334d86a50e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecommerce-product-desc-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecommerce-product-desc-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7b3d3b0365bb7d459fbe9b8cb78d463c23da87cbafac6c7e8593edf51ae37f1",
+      "artifactSizeBytes": 2448
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T02:15:46.074Z"
+}

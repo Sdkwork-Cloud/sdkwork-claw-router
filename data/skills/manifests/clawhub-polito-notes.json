@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37967,
+  "uuid": "skill-clawhub-polito-notes",
+  "skillKey": "clawhub-polito-notes",
+  "name": "Polito Notes",
+  "summary": "Convert PDF lecture slides into comprehensive bilingual (IT+EN) markdown notes for Polito university courses. Use when the user sends a PDF and specifies a c...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polito_notes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LookUpMark",
+      "features": [
+        "Convert PDF lecture slides into comprehensive bilingual (IT+EN) markdown notes for Polito unive.",
+        "Use when the user sends a PDF and specifies a c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polito-notes@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93028124?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polito-notes",
+      "url": "https://clawhub.ai/skills/polito-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polito-notes",
+    "url": "https://clawhub.ai/skills/polito-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polito-notes-4fa9b76d60f3e9a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polito-notes@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-polito-notes-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e19d7b283c0c14a79f29c3ac2d25a7589d0eafd98b30d8a853b628e5b6ad217",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T07:33:39.543Z"
+}

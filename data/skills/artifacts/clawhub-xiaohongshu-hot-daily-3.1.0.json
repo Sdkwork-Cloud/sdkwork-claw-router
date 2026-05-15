@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-hot-daily@3.1.0",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_hot_daily",
+  "skill": {
+    "id": 66031,
+    "skillKey": "clawhub-xiaohongshu-hot-daily",
+    "name": "Xiaohongshu Hot Daily"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-hot-daily",
+    "url": "https://clawhub.ai/skills/xiaohongshu-hot-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-hot-daily-9f185b14fb699e43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "📕 小红书热榜日报 v3.1 - 使用浏览器获取真实数据！支持定时任务和数据分析。自媒体运营必备！免费使用，定制开发请联系作者。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qq853632587",
+      "userId": "s17dwzvbvbwhww06k4jsp30agd83qghw",
+      "displayName": "蓝天",
+      "image": "https://avatars.githubusercontent.com/u/49087597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "3.1.0",
+      "createdAt": 1774757337195,
+      "changelog": "新增定时任务支持，优化数据存储",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59a6ae45df26a36ba86c0f8c99e68b7c5db10ba59194a83d898d63b494dea7a2"
+}

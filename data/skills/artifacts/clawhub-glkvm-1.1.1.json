@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glkvm@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glkvm",
+  "skill": {
+    "id": 25000,
+    "skillKey": "clawhub-glkvm",
+    "name": "glkvm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glkvm",
+    "url": "https://clawhub.ai/skills/glkvm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glkvm-be7a329dba96023d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remotely control a target host via GLKVM HTTP API, supporting keyboard/mouse input, screenshot capture, OCR recognition, Fingerbot physical button control, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duzefu",
+      "userId": "publishers:duzefu",
+      "displayName": "duzefu",
+      "image": "https://avatars.githubusercontent.com/u/12474623?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 397,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1773214664790,
+      "changelog": "No user-visible changes in this release.\n\n- Version bump to 1.1.1 with no modifications to documentation or features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87ad9f02489fd084641256de8f59425a4a047c305c9763a09e29cd3cc9c4bdca"
+}

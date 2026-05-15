@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pans-deal-coach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pans_deal_coach",
+  "skill": {
+    "id": 62903,
+    "skillKey": "clawhub-pans-deal-coach",
+    "name": "Pans Deal Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pans-deal-coach",
+    "url": "https://clawhub.ai/skills/pans-deal-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pans-deal-coach-f9b1dc914a31a47a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI算力销售谈判教练。输入客户异议，输出专业应对话术和策略。 覆盖价格、竞品、技术、流程、安全等20+常见异议场景。 触发词：谈判话术, 客户异议, 应对策略, 销售教练, objection handling, deal coaching"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dashiming",
+      "userId": "s175tbqc6kczpya7xzy4rksefs83p4hp",
+      "displayName": "dashiming",
+      "image": "https://avatars.githubusercontent.com/u/28342384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776400830044,
+      "changelog": "pans-deal-coach 1.0.0 初始版本发布\n\n- 提供AI算力销售异议话术和策略，覆盖20+常见场景（价格、竞品、技术、流程、安全等）。\n- 支持一键生成三种应对话术（简短、详细、邮件）。\n- 可按客户类型与销售阶段定制建议。\n- 命令行工具，支持多参数输入和JSON格式输出，方便集成。\n- 内置详细参数与使用说明，适合销售团队快速上手。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c58ba9dcb71600ade81642917552004bab4e9c467e07909715675e206a6f8c1b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-requirement-document-generator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_requirement_document_generator",
+  "skill": {
+    "id": 70949,
+    "skillKey": "clawhub-feishu-requirement-document-generator",
+    "name": "飞书需求整理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-requirement-document-generator",
+    "url": "https://clawhub.ai/skills/feishu-requirement-document-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-requirement-document-generator-bd42199e07c70975.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "客户需求智能整理与文档生成专家。从沟通记录（飞书文档、妙记、会议纪要等）中提取、分析并整理成结构化的需求文档，自动生成飞书文档。触发场景：(1) 用户需要整理客户需求文档 (2) 需要将会议纪要转换为需求文档 (3) 需要从沟通记录提取关键需求 (4) 需要生成项目需求说明书 (5) 需要创建业务需求文档 (BR..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "664624249",
+      "userId": "publishers:664624249",
+      "displayName": "641",
+      "image": "https://avatars.githubusercontent.com/u/49388494?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 922,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773302485884,
+      "changelog": "- 新增高质量文档标准，明确15000字级别的结构和要素，覆盖权限矩阵、自动化场景、视图与仪表盘、数据表设计等关键章节。\n- 增加参考模板文档，包括自动化场景模板、权限矩阵模板、高质量标准、视图与仪表盘模板，可用于快速生成和校验专业需求文档。\n- 扩充最佳实践与标准，细化各环节写作与设计的具体指标（如不同复杂度对应的建议字数、表设计和自动化规范）。\n- 文档结构和说明优化，使输出结果更具条理性和操作性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c8d384f36317fdd0317ef05e34e4fac74c0ef75966275defb32e4c236ff9d4a"
+}

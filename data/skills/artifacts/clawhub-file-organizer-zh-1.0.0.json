@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-organizer-zh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_organizer_zh",
+  "skill": {
+    "id": 61404,
+    "skillKey": "clawhub-file-organizer-zh",
+    "name": "File Organizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-organizer-zh",
+    "url": "https://clawhub.ai/skills/file-organizer-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-organizer-zh-2e5c31c1f02c67cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "文件整理器，按类型自动分类（中文版）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huangjingzhi07",
+      "userId": "publishers:huangjingzhi07",
+      "displayName": "huangjingzhi07",
+      "image": "https://avatars.githubusercontent.com/u/131267927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7198,
+      "installsAllTime": 86,
+      "installsCurrent": 84,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772884172616,
+      "changelog": "Initial release of file-organizer-zh:\n\n- 自动按类型分类整理文件（图片、文档、代码、视频、音频、压缩包）\n- 支持智能归类：可根据文件内容进行分类\n- 提供重复文件识别与清理功能\n- 支持多种整理、分类相关中文触发关键词\n- 详细文件类型映射，覆盖常见格式",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:52fd7a60da4f101a6ad5d6b13a61b8f2f1083d293a5597a98c032f40ca03ca22"
+}

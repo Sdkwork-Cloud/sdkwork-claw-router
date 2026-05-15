@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32133,
+  "uuid": "skill-clawhub-similarweb-digitalrank-api",
+  "skillKey": "clawhub-similarweb-digitalrank-api",
+  "name": "Similarweb Digitalrank Api",
+  "summary": "Similarweb DigitalRank API integration. Manage Websites. Use when the user wants to interact with Similarweb DigitalRank API data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.similarweb_digitalrank_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Similarweb DigitalRank API integration",
+        "Manage Websites",
+        "Use when the user wants to interact with Similarweb DigitalRank API data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/similarweb-digitalrank-api@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "similarweb-digitalrank-api",
+      "url": "https://clawhub.ai/skills/similarweb-digitalrank-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "similarweb-digitalrank-api",
+    "url": "https://clawhub.ai/skills/similarweb-digitalrank-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/similarweb-digitalrank-api-a0167e6cff788951.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/similarweb-digitalrank-api@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-similarweb-digitalrank-api-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6afdbc9c5d8b203d98643f778d7b995b27a700789ec442e928a464d0ec629b65",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:42:00.605Z"
+}

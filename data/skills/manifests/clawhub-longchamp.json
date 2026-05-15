@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66580,
+  "uuid": "skill-clawhub-longchamp",
+  "skillKey": "clawhub-longchamp",
+  "name": "Longchamp",
+  "summary": "提供Longchamp珑骧品牌历史、经典产品线及工艺传承信息，助力品牌分析与时尚内容创作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.longchamp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供Longchamp珑骧品牌历史、经典产品线及工艺传承信息，助力品牌分析与时尚内容创作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/longchamp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "longchamp",
+      "url": "https://clawhub.ai/skills/longchamp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "longchamp",
+    "url": "https://clawhub.ai/skills/longchamp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/longchamp-416a90af68678596.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/longchamp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-longchamp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed4c9e8bba79a82503181278c9647198bfa1b712e483a9708d3e6bd8c1123316",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T02:01:24.784Z"
+}

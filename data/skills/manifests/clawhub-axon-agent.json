@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22916,
+  "uuid": "skill-clawhub-axon-agent",
+  "skillKey": "clawhub-axon-agent",
+  "name": "Axon Agent",
+  "summary": "Register, monitor, and maintain AI Agents on Axon blockchain, managing registration, status, heartbeat daemon, and troubleshooting agent operations.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axon_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "6tizer",
+      "features": [
+        "Register, monitor, and maintain AI Agents on Axon blockchain, managing registration, status, he."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/axon-agent@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260656772?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "axon-agent",
+      "url": "https://clawhub.ai/skills/axon-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axon-agent",
+    "url": "https://clawhub.ai/skills/axon-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axon-agent-da7bf3d4f6c97353.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/axon-agent@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-axon-agent-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30600f6b442f05378b5ae548165db8ab97fa40ead0b31b26032ec6526b23218d",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T12:37:16.644Z"
+}

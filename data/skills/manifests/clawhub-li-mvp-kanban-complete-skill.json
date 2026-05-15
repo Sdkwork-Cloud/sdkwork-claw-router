@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62447,
+  "uuid": "skill-clawhub-li-mvp-kanban-complete-skill",
+  "skillKey": "clawhub-li-mvp-kanban-complete-skill",
+  "name": "Mvp Kanban Complete Skill",
+  "summary": "提供完整MVP看板任务管理，支持任务和泳道管理、批量操作、AI分析、向量搜索，含Docker镜像和21个MCP工具接口。",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.li_mvp_kanban_complete_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Terry S Fisher",
+      "features": [
+        "提供完整MVP看板任务管理，支持任务和泳道管理、批量操作、AI分析、向量搜索，含Docker镜像和21个MCP工具接口。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/li-mvp-kanban-complete-skill@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42956557?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "li-mvp-kanban-complete-skill",
+      "url": "https://clawhub.ai/skills/li-mvp-kanban-complete-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "li-mvp-kanban-complete-skill",
+    "url": "https://clawhub.ai/skills/li-mvp-kanban-complete-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/li-mvp-kanban-complete-skill-b9a137dd81d336fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/li-mvp-kanban-complete-skill@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-li-mvp-kanban-complete-skill-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d98137d311ea36828a2d0b7f84f1cd1f12576a6fe521a8a86e98c2ae8b43e392",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T13:21:58.322Z"
+}

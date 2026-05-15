@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11849,
+  "uuid": "skill-clawhub-capa-officer",
+  "skillKey": "clawhub-capa-officer",
+  "name": "Capa Officer",
+  "summary": "CAPA system management for medical device QMS. Covers root cause analysis, corrective action planning, effectiveness verification, and CAPA metrics. Use for...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.capa_officer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alireza Rezvani",
+      "features": [
+        "CAPA system management for medical device QMS",
+        "Covers root cause analysis, corrective action planning, effectiveness verification, and CAPA me.",
+        "Use for..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/capa-officer@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5697919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "capa-officer",
+      "url": "https://clawhub.ai/skills/capa-officer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "capa-officer",
+    "url": "https://clawhub.ai/skills/capa-officer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/capa-officer-2fab44adcc7ecc2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/capa-officer@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-capa-officer-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4712312e4aaba587638470e5e54619557d10c50e2d9522e48130a8bcd2428c3e",
+      "artifactSizeBytes": 1906
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T15:32:58.237Z"
+}

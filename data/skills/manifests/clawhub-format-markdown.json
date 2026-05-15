@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33609,
+  "uuid": "skill-clawhub-format-markdown",
+  "skillKey": "clawhub-format-markdown",
+  "name": "format-markdown-mkdocs",
+  "summary": "Summarize and format markdown files, then apply mkdocs/material-compatible structural spacing fixes for math, list, and table blocks. Outputs to {filename}_f...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.format_markdown",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SmilingWayne",
+      "features": [
+        "Summarize and format markdown files, then apply mkdocs/material-compatible structural spacing f.",
+        "Outputs to {filename}_f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/format-markdown@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69518108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "format-markdown",
+      "url": "https://clawhub.ai/skills/format-markdown"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "format-markdown",
+    "url": "https://clawhub.ai/skills/format-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/format-markdown-2392c99411b96f3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/format-markdown@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-format-markdown-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b69e738c7e86304b42f1c88631495c19a6c77763bc78e3be9308e8ea2471f7c1",
+      "artifactSizeBytes": 3210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T06:50:07.935Z"
+}

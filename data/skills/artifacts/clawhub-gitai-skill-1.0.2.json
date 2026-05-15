@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gitai-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitai_skill",
+  "skill": {
+    "id": 9683,
+    "skillKey": "clawhub-gitai-skill",
+    "name": "Gitai - Git Commit Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitai-skill",
+    "url": "https://clawhub.ai/skills/gitai-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitai-skill-c556ebf0c4d6863a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Boost developer productivity with Gitai: An AI-powered Git automation tool that analyzes code changes and generates semantic Conventional Commits instantly. Supports Node.js, Python, Java, Go, PHP, and more. Compatible with OpenAI, Anthrop."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leandrosilvaferreira",
+      "userId": "publishers:leandrosilvaferreira",
+      "displayName": "leandrosilvaferreira",
+      "image": "https://avatars.githubusercontent.com/u/1790346?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3375,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770374204782,
+      "changelog": "- Removed installation and update scripts (`scripts/install.sh`, `scripts/update.sh`) from the project.\n- Updated documentation to require manual installation and configuration of the `@notyped/gitai` CLI tool before use.\n- Clarified that the agent must not attempt installation or configuration of dependencies.\n- Updated setup instructions to enforce prerequisite checks for both the CLI tool and its configuration file. \n- Removed all references to automated install/update commands from the usage guide.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8f9d2d86301bf9c2c76a64bc860a0593ccbcde031eb121e5eac9b3c988a35e4b"
+}

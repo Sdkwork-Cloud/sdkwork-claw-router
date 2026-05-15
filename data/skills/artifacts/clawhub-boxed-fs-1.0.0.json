@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/boxed-fs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boxed_fs",
+  "skill": {
+    "id": 40942,
+    "skillKey": "clawhub-boxed-fs",
+    "name": "Boxed fs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boxed-fs",
+    "url": "https://clawhub.ai/skills/boxed-fs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boxed-fs-0db03ffa5511ad48.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WebAssembly sandboxed file system operations for secure file read/write within explicitly declared directories. Use when needing to read, write, append, copy..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guyoung",
+      "userId": "s1791jtrp7z0s6h87f8f0twdk183pq6y",
+      "displayName": "guyoung",
+      "image": "https://avatars.githubusercontent.com/u/1448308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775723803210,
+      "changelog": "Initial release of boxed-fs providing secure, sandboxed file system operations via WASM.\n\n- Supports file read, write, append, copy, and remove within user-declared directories.\n- All operations run inside a WebAssembly sandbox with access controls.\n- Includes atomic write, directory creation, and file/directory listing.\n- Detailed usage and commands documented in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf86fba587963b138ed46058b3bcac3655c12922476127a9a63f9e518bf09ab7"
+}

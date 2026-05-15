@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wrike@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wrike",
+  "skill": {
+    "id": 18137,
+    "skillKey": "clawhub-wrike",
+    "name": "Wrike"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wrike",
+    "url": "https://clawhub.ai/skills/wrike",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wrike-0549e836108aab45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Wrike tasks, projects, folders, and comments via the Wrike REST API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tallhamn",
+      "userId": "publishers:tallhamn",
+      "displayName": "tallhamn",
+      "image": "https://avatars.githubusercontent.com/u/54941?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 716,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771506236325,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:62bf7e0368c98a8d6ba9a536571940e3f2ccc51be73f3fa51a86a923b236212f"
+}

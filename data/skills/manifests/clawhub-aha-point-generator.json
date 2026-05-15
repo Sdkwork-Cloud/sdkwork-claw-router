@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60999,
+  "uuid": "skill-clawhub-aha-point-generator",
+  "skillKey": "clawhub-aha-point-generator",
+  "name": "AhaPoint 生成专家",
+  "summary": "AhaPoint 生成专家。按 AhaPoints Protocol v1.0 标准，挖掘并生成独立的 aha point 报告（痛点🔴/妙点🟢/乐点🟡）。当用户说\"生成 aha point\"、\"挖掘 XX 领域的点\"、\"按模板写报告\"时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aha_point_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DZ_2026",
+      "features": [
+        "AhaPoint 生成专家。按 AhaPoints Protocol v1.0 标准，挖掘并生成独立的 aha point 报告（痛点🔴/妙点🟢/乐点🟡）。当用户说\"生成 aha po."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aha-point-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41491904?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aha-point-generator",
+      "url": "https://clawhub.ai/skills/aha-point-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aha-point-generator",
+    "url": "https://clawhub.ai/skills/aha-point-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aha-point-generator-732950a14c31f0f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aha-point-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aha-point-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db0ab61e0f73e15f35f19a5ac8be808a4282a7461c8fbfdf05d4b40c130a5c61",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T05:55:56.830Z"
+}

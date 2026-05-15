@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14099,
+  "uuid": "skill-clawhub-subagent-spawn-command-builder",
+  "skillKey": "clawhub-subagent-spawn-command-builder",
+  "name": "Subagent Spawn Command Builder",
+  "summary": "Build sessions_spawn command payloads from JSON profiles. Use when you want reusable subagent profiles (model/thinking/timeout/cleanup/agentId/label) and com...",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subagent_spawn_command_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Altair",
+      "features": [
+        "Build sessions_spawn command payloads from JSON profiles",
+        "Use when you want reusable subagent profiles (model/thinking/timeout/cleanup/agentId/label) and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subagent-spawn-command-builder@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1401591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subagent-spawn-command-builder",
+      "url": "https://clawhub.ai/skills/subagent-spawn-command-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subagent-spawn-command-builder",
+    "url": "https://clawhub.ai/skills/subagent-spawn-command-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subagent-spawn-command-builder-578ebea9724226c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subagent-spawn-command-builder@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-subagent-spawn-command-builder-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c60d702ed7f06fa292cddef5397c3e28a531f89628ad187ab66d6ffedbce94a",
+      "artifactSizeBytes": 2192
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T08:22:41.165Z"
+}

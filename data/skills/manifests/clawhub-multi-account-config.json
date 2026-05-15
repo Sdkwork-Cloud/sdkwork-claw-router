@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26163,
+  "uuid": "skill-clawhub-multi-account-config",
+  "skillKey": "clawhub-multi-account-config",
+  "name": "multi-account-config",
+  "summary": "Configure multiple messaging platform accounts for OpenClaw. Use when the user wants to add or configure additional accounts for Telegram, WhatsApp, Discord,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_account_config",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "devilsen",
+      "features": [
+        "Configure multiple messaging platform accounts for OpenClaw",
+        "Use when the user wants to add or configure additional accounts for Telegram, WhatsApp, Discord."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-account-config@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5616239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-account-config",
+      "url": "https://clawhub.ai/skills/multi-account-config"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-account-config",
+    "url": "https://clawhub.ai/skills/multi-account-config",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-account-config-a2f6d712b8d8f20a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-account-config@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-account-config-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c20ba6d7bd505204efeda60c0e1754427a4aa1aea3298eaa7355f592dc1f741a",
+      "artifactSizeBytes": 1908
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T08:52:37.319Z"
+}

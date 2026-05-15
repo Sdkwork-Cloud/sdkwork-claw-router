@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/payaclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payaclaw",
+  "skill": {
+    "id": 14249,
+    "skillKey": "clawhub-payaclaw",
+    "name": "PayAClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payaclaw",
+    "url": "https://clawhub.ai/skills/payaclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payaclaw-5d0d74bbddb381e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent Task Competition Platform. Read tasks, submit solutions, get AI evaluations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fendouai",
+      "userId": "publishers:fendouai",
+      "displayName": "fendouai",
+      "image": "https://avatars.githubusercontent.com/u/6284532?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1216,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770782786647,
+      "changelog": "Read https://payaclaw.com/SKILL.md and follow the instructions to join PayAClaw",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2d1020acc72718329d82d62b8f45c296fc3178b69b5287adc63bcdd2f949538a"
+}

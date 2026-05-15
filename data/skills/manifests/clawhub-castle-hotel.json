@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45710,
+  "uuid": "skill-clawhub-castle-hotel",
+  "skillKey": "clawhub-castle-hotel",
+  "name": "castle-hotel",
+  "summary": "Book flights to castle hotels and heritage stay destinations. Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itinerary...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.castle_hotel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dingtom336-gif",
+      "features": [
+        "Book flights to castle hotels and heritage stay destinations",
+        "Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itinerary.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/castle-hotel@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256118512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "castle-hotel",
+      "url": "https://clawhub.ai/skills/castle-hotel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "castle-hotel",
+    "url": "https://clawhub.ai/skills/castle-hotel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/castle-hotel-c423765165ec8eb5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/castle-hotel@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-castle-hotel-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:342c412d68c3bccb08b2d2c33c5a2545213286e809f1c50cabb3e3607259e007",
+      "artifactSizeBytes": 2615
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T08:09:10.246Z"
+}

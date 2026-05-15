@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73298,
+  "uuid": "skill-clawhub-skill-shop",
+  "skillKey": "clawhub-skill-shop",
+  "name": "技能商店客户端",
+  "summary": "技能商店客户端，支持查询在线技能、一键下载安装技能包",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_shop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "呱仔",
+      "features": [
+        "技能商店客户端，支持查询在线技能、一键下载安装技能包"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-shop@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/80743187?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-shop",
+      "url": "https://clawhub.ai/skills/skill-shop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-shop",
+    "url": "https://clawhub.ai/skills/skill-shop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-shop-905d1eaca5e6fb34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-shop@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-shop-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f058c176eec91edab29c8ace22496201916c7ca8b979baaf8481682f53327023",
+      "artifactSizeBytes": 1786
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T13:12:55.084Z"
+}

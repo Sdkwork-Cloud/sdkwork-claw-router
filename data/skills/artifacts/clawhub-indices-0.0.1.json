@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/indices@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.indices",
+  "skill": {
+    "id": 53965,
+    "skillKey": "clawhub-indices",
+    "name": "Indices"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "indices",
+    "url": "https://clawhub.ai/skills/indices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/indices-91744de3d4d85742.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill for any operation with the Indices CLI — authentication, tasks, runs, and secrets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "itsaphel",
+      "userId": "publishers:itsaphel",
+      "displayName": "itsaphel",
+      "image": "https://avatars.githubusercontent.com/u/2878052?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 468,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1772513753273,
+      "changelog": "- Initial release of the Indices CLI skill.\n- Supports authentication commands: login, auth-test, logout.\n- Manage tasks: create (with flags or JSON), list, get, retry, regenerate API key, delete.\n- Manage runs: create (with arguments and secret bindings), list (per task), get.\n- Manage secrets: create (via value, prompt, or stdin), list, delete.\n- Global flags for output format, API base, and timeout supported.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9b458eb3aabadfc568765b775382b2e82354153b3a6c7c402f41792518c709fb"
+}

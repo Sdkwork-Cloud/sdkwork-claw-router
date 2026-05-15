@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64858,
+  "uuid": "skill-clawhub-financial-data-gateway",
+  "skillKey": "clawhub-financial-data-gateway",
+  "name": "financial-data-gateway",
+  "summary": "提供从巨潮资讯自动下载A股上市公司年报PDF并提取结构化财务数据，支持数据验证和批量处理。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_data_gateway",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shi Changlong",
+      "features": [
+        "提供从巨潮资讯自动下载A股上市公司年报PDF并提取结构化财务数据，支持数据验证和批量处理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/financial-data-gateway@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256095008?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "financial-data-gateway",
+      "url": "https://clawhub.ai/skills/financial-data-gateway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-data-gateway",
+    "url": "https://clawhub.ai/skills/financial-data-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-data-gateway-48bc6cd3d8e901dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/financial-data-gateway@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-financial-data-gateway-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36c4f8f22175cf5eeb8bff6223adab8e5ee6610582de22d2839de9114c8d0bdb",
+      "artifactSizeBytes": 2074
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T08:52:32.917Z"
+}

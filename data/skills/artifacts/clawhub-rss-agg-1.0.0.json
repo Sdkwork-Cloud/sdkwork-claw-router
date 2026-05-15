@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rss-agg@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rss_agg",
+  "skill": {
+    "id": 47573,
+    "skillKey": "clawhub-rss-agg",
+    "name": "Rss Aggregator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rss-agg",
+    "url": "https://clawhub.ai/skills/rss-agg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rss-agg-1b9ae1bb94a66191.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parse, aggregate and process RSS/Atom feeds. Use when user wants to track multiple RSS feeds, create personalized news digest, monitor blog updates, or build..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dinghaibin",
+      "userId": "s170ed26v1mh4qzy7v9cnn7msx85mrn1",
+      "displayName": "BIN",
+      "image": "https://avatars.githubusercontent.com/u/9191597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777307067834,
+      "changelog": "Initial release: RSS/Atom feed aggregation with filtering and multiple output formats",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:28eaea85f7b6f461c45cf270de97c478bcc09f45aa482c692de71e42d9748523"
+}

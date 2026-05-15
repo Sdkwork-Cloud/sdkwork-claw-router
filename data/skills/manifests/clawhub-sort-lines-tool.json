@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47583,
+  "uuid": "skill-clawhub-sort-lines-tool",
+  "skillKey": "clawhub-sort-lines-tool",
+  "name": "Sort Lines Tool",
+  "summary": "Sort lines of text alphabetically or numerically. Use for data organization, list management, and text file preparation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sort_lines_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Sort lines of text alphabetically or numerically",
+        "Use for data organization, list management, and text file preparation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sort-lines-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sort-lines-tool",
+      "url": "https://clawhub.ai/skills/sort-lines-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sort-lines-tool",
+    "url": "https://clawhub.ai/skills/sort-lines-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sort-lines-tool-a1869a09ced520f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sort-lines-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sort-lines-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b61be5984138e6e83fc3ae5f03d825cf06ed6529955be303f44e1b5974e2528",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T16:30:10.699Z"
+}

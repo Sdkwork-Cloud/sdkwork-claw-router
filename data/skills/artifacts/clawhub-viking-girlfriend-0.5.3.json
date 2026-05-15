@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/viking-girlfriend@0.5.3",
+  "version": "0.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.viking_girlfriend",
+  "skill": {
+    "id": 36857,
+    "skillKey": "clawhub-viking-girlfriend",
+    "name": "Viking Girlfriend"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "viking-girlfriend",
+    "url": "https://clawhub.ai/skills/viking-girlfriend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/viking-girlfriend-bca4c48d29dca403.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "An autonomous Norse Pagan AI companion with emotional depth, episodic memory, biological cycle simulation, oracular insight, and ethical safeguards."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hrabanazviking",
+      "userId": "s170ejnh5h017w72a9tscc482n85mfd1",
+      "displayName": "Hrabanaz Viking",
+      "image": "https://avatars.githubusercontent.com/u/122174898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.5.3",
+      "createdAt": 1774201422543,
+      "changelog": "- Added new knowledge and culture data files: OPENCLAW_COMMS_CULTURE.md and soul_anchor.md (plus full version).\n- Removed SECURITY_RESEARCH_context_resilience.md data file.\n- Expanded the soul and cultural reference material for enhanced persona depth.\n- No changes to main functionality or installation instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af354945bd2551403a023f719e54ad909922a750e370a79b4a02399bc846a8fc"
+}

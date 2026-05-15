@@ -1,4 +1,4 @@
-import json
+﻿import json
 import unittest
 from pathlib import Path
 
@@ -45,7 +45,7 @@ class WorkspaceDeliveryStandardTest(unittest.TestCase):
             / "build-portal.mjs"
         ).read_text(encoding="utf-8")
 
-        self.assertEqual("node scripts/build-portal.mjs", portal_package_json["scripts"]["build"])
+        self.assertEqual("pnpm deps:check && node scripts/build-portal.mjs", portal_package_json["scripts"]["build"])
         self.assertIn("MAX_OLD_SPACE_SIZE_MB = 8192", build_script)
         self.assertIn("CLAWROUTER_PORTAL_BUILD_HEAP_BOOTSTRAPPED", build_script)
         self.assertIn("process.execPath", build_script)
@@ -110,7 +110,7 @@ class WorkspaceDeliveryStandardTest(unittest.TestCase):
         self.assertIn("docker version", source)
         self.assertIn("cargo", source)
         self.assertIn("sdkwork-claw-product", source)
-        self.assertIn("postgres_playground_history_sql_contract", source)
+        self.assertIn("postgres_generation_history_sql_contract", source)
         self.assertIn("postgres_transaction_integration", source)
 
     def test_postgres_docker_compose_is_ephemeral_and_health_checked(self) -> None:
@@ -142,6 +142,15 @@ class WorkspaceDeliveryStandardTest(unittest.TestCase):
             "apps/*/.vite/",
             "sdks/*/node_modules/",
             "sdks/*/dist/",
+            "sdks/*/*/node_modules/",
+            "sdks/*/*/dist/",
+            "sdks/*/*/build/",
+            "sdks/*/*/target/",
+            "sdks/*/*/obj/",
+            "sdks/*/*/.dart_tool/",
+            "sdks/*/*/.sdkwork/manual-backups/",
+            "sdks/*/*-typescript/node_modules/",
+            "sdks/*/*-typescript/dist/",
             "target/",
         ]:
             with self.subTest(pattern=pattern):

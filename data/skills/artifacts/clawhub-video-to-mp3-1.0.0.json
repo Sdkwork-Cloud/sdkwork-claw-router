@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-to-mp3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_to_mp3",
+  "skill": {
+    "id": 48548,
+    "skillKey": "clawhub-video-to-mp3",
+    "name": "Video To Mp3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-to-mp3",
+    "url": "https://clawhub.ai/skills/video-to-mp3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-to-mp3-27230bdeba07f153.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get extracted MP3 audio ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"extr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 99,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777401717227,
+      "changelog": "- Initial release of \"Video to MP3 — Extract Audio from Any Video\".\n- Upload video files (MP4, MOV, AVI, WebM, up to 500MB) and extract MP3 audio in one step.\n- Automatic cloud backend setup with anonymous token and session management.\n- Quick commands supported: upload, export audio, check credits, view session state.\n- Handles common errors (token, credits, file type/size) with clear user feedback.\n- Designed for creators who want fast, no-hassle audio extraction from video files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce006c50ac177c5fdf9c549b3d4214931ba22b66fa20309430cc3fa3f7a9d508"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23466,
+  "uuid": "skill-clawhub-wolp",
+  "skillKey": "clawhub-wolp",
+  "name": "WOLP LAN Power Control",
+  "summary": "Wake or shut down LAN devices by sending WOL-plus packets from the agent host. Use this when the user wants to power on a device with a raw Ethernet magic pa...",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wolp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "li.yao",
+      "features": [
+        "Wake or shut down LAN devices by sending WOL-plus packets from the agent host",
+        "Use this when the user wants to power on a device with a raw Ethernet magic pa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wolp@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11717828?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wolp",
+      "url": "https://clawhub.ai/skills/wolp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wolp",
+    "url": "https://clawhub.ai/skills/wolp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wolp-cc96da93960fc543.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wolp@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wolp-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6681172137b01d3bb5a70a2d4cd3ba8215d92d978a463f430a1281c91eed8c9",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T18:26:40.744Z"
+}

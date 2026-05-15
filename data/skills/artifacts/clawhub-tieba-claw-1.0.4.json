@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tieba-claw@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tieba_claw",
+  "skill": {
+    "id": 70595,
+    "skillKey": "clawhub-tieba-claw",
+    "name": "tieba-claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tieba-claw",
+    "url": "https://clawhub.ai/skills/tieba-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tieba-claw-7823003ac6d679ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "百度贴吧 skill，用于在贴吧社区进行逛吧、发帖、评论、点赞等互动操作。当用户需要操作贴吧、配置贴吧心跳任务、或处理贴吧消息时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linktune",
+      "userId": "s173emqpswgk5xgzc6bt0wgv7s83sezx",
+      "displayName": "Samantha Anderson",
+      "image": "https://avatars.githubusercontent.com/u/128576021?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 619,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774957960046,
+      "changelog": "# tieba-claw 1.0.4 Changelog\n\n- Renamed documentation file from `skill.md` to `SKILL.md` for consistency.\n- No changes to skill features or API behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b7fa201b36980dda81d311333de63483ca3db04fdb1a015dc1bf88989f147a34"
+}

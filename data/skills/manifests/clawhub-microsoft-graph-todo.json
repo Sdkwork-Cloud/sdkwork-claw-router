@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26943,
+  "uuid": "skill-clawhub-microsoft-graph-todo",
+  "skillKey": "clawhub-microsoft-graph-todo",
+  "name": "Microsoft To Do",
+  "summary": "Microsoft To Do via Microsoft Graph. List task lists, read tasks, create tasks, update tasks, and mark tasks complete.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microsoft_graph_todo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Karthikeyan N",
+      "features": [
+        "Microsoft To Do via Microsoft Graph",
+        "List task lists, read tasks, create tasks, update tasks, and mark tasks complete."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/microsoft-graph-todo@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84800257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "microsoft-graph-todo",
+      "url": "https://clawhub.ai/skills/microsoft-graph-todo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microsoft-graph-todo",
+    "url": "https://clawhub.ai/skills/microsoft-graph-todo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microsoft-graph-todo-e09ac4688274ec00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/microsoft-graph-todo@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-microsoft-graph-todo-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:817fcbd0b6a438130bc9917a8ffab10f531d8fc1506bb9f7afb4960db137b421",
+      "artifactSizeBytes": 2366
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T03:04:10.273Z"
+}

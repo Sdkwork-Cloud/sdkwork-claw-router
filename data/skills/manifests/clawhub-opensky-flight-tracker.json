@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39230,
+  "uuid": "skill-clawhub-opensky-flight-tracker",
+  "skillKey": "clawhub-opensky-flight-tracker",
+  "name": "OpenSky Flight Tracker",
+  "summary": "Use this skill when the user asks about live flight positions, aircraft tracking by callsign or flight number, or flights currently overhead a location. Trig...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opensky_flight_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Javier Ruiz",
+      "features": [
+        "Use this skill when the user asks about live flight positions, aircraft tracking by callsign or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opensky-flight-tracker@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57181237?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opensky-flight-tracker",
+      "url": "https://clawhub.ai/skills/opensky-flight-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opensky-flight-tracker",
+    "url": "https://clawhub.ai/skills/opensky-flight-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opensky-flight-tracker-d5dc0af94ebec9fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opensky-flight-tracker@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opensky-flight-tracker-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e22f022715da93b84cf829a4e8f4cc88546720fd96674924b1dee1a9be3d17a",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T18:54:45.899Z"
+}

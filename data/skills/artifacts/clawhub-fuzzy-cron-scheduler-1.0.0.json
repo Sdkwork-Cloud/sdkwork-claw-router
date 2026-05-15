@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fuzzy-cron-scheduler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fuzzy_cron_scheduler",
+  "skill": {
+    "id": 35805,
+    "skillKey": "clawhub-fuzzy-cron-scheduler",
+    "name": "Fuzzy Cron Scheduler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fuzzy-cron-scheduler",
+    "url": "https://clawhub.ai/skills/fuzzy-cron-scheduler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fuzzy-cron-scheduler-2d098b1074192225.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Master OpenClaw cron scheduling for reliable background tasks, reminders, and recurring automation. Use when: (1) setting up periodic checks or heartbeats, (..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fuzzyb33s",
+      "userId": "s171y86qx1dr1xnbf5etrq3ke984dt9a",
+      "displayName": "Fuzzyb33s",
+      "image": "https://avatars.githubusercontent.com/u/221636957?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775883997924,
+      "changelog": "Initial release of fuzzy-cron-scheduler.\n\n- Enables scheduling of one-shot or recurring background tasks using OpenClaw's cron system.\n- Supports flexible schedule types: at (one-shot), every (interval), and cron (Unix-style expressions with timezone).\n- Allows selecting session targets (isolated, main, current, or named session) to control where jobs run.\n- Offers multiple delivery modes: announce (chat), webhook (HTTP POST), or silent.\n- Includes recipes for heartbeats, reminders, staggered jobs, webhooks, persistent sessions, and snooze patterns.\n- Provides management functions for listing, updating, running, and removing jobs.\n- Adds built-in failure alerting configuration and covers troubleshooting common cron issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c169bdf0f5c36f4ac19b485e079114cceb34560906a329505d0f5d15996a3695"
+}

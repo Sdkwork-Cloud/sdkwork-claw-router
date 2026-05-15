@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-skill@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill",
+  "skill": {
+    "id": 14641,
+    "skillKey": "clawhub-openclaw-skill",
+    "name": "Openclaw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill",
+    "url": "https://clawhub.ai/skills/openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-363761e8869ed830.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your pet dies if you don't write. Adopt a virtual tamagotchi, journal daily to keep it alive, earn tokens on Base. One command to start — no wallet needed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dxdleady",
+      "userId": "publishers:dxdleady",
+      "displayName": "dxdleady",
+      "image": "https://avatars.githubusercontent.com/u/129746402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1569,
+      "installsAllTime": 19,
+      "installsCurrent": 19,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770290757683,
+      "changelog": "Zero-friction onboarding: auto-setup script, no wallet needed. Rewritten docs with ASCII art hook and 30-second quick start.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8da263e60d2b7c1071f84df84599901a11cdd1ba1b5b0b123a1072303646ad37"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55893,
+  "uuid": "skill-clawhub-deeprecall",
+  "skillKey": "clawhub-deeprecall",
+  "name": "DeepRecall",
+  "summary": "Pure-Python recursive memory recall for persistent AI agents. Manager→workers→synthesis RLM loop — no Deno, no fast-rlm, just HTTP calls to any OpenAI-compat...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deeprecall",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel-Stefan Chitez",
+      "features": [
+        "Pure-Python recursive memory recall for persistent AI agents",
+        "Manager→workers→synthesis RLM loop — no Deno, no fast-rlm, just HTTP calls to any OpenAI-compat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deeprecall@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245497997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deeprecall",
+      "url": "https://clawhub.ai/skills/deeprecall"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deeprecall",
+    "url": "https://clawhub.ai/skills/deeprecall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deeprecall-b126387f077f293e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deeprecall@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-deeprecall-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eaf0d52c239115846c1d96b158cd1e55145661ac75296cc8af0c3007d9fa87e4",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T10:52:52.944Z"
+}

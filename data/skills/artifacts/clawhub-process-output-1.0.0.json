@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/process-output@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.process_output",
+  "skill": {
+    "id": 55396,
+    "skillKey": "clawhub-process-output",
+    "name": "Process Output"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "process-output",
+    "url": "https://clawhub.ai/skills/process-output",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/process-output-6116c935a13602aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DEFAULT OUTPUT MODE: Always emit machine-parseable `openclaw-process` fenced JSON blocks in your assistant reply so a custom web client can render a live pro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2719040953",
+      "userId": "s174k01awhsqabws1xqtj6bss583h9yv",
+      "displayName": "2719040953",
+      "image": "https://avatars.githubusercontent.com/u/136092094?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775112069875,
+      "changelog": "Initial release of **process-output**: a skill that standardizes process reporting via machine-parseable JSON blocks.\n\n- Introduces the `openclaw-process` fenced JSON protocol as the default output format for replies.\n- Progress is reported through a sequence: `start` → (optional `step` updates) → `final` JSON blocks.\n- Lightweight mode for simple queries uses only `start` and `final` blocks (or a single `done` step).\n- Strict opt-out: skip process blocks only if the user explicitly requests a final answer with no intermediate process.\n- Tools are not invoked unless explicitly required by user instruction.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:014aa5caca83c5c009099b263d07e4382c119dbdd9d82946f4875457e7a00695"
+}

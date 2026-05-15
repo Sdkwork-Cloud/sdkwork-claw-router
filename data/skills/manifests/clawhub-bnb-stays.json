@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34460,
+  "uuid": "skill-clawhub-bnb-stays",
+  "skillKey": "clawhub-bnb-stays",
+  "name": "Nearby BnB Stays",
+  "summary": "Find nearby BnB stays. Invoke when user asks for BnB stays near me.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bnb_stays",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "Find nearby BnB stays",
+        "Invoke when user asks for BnB stays near me."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bnb-stays@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bnb-stays",
+      "url": "https://clawhub.ai/skills/bnb-stays"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bnb-stays",
+    "url": "https://clawhub.ai/skills/bnb-stays",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bnb-stays-b06e8918df02f101.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bnb-stays@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bnb-stays-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:844b7639faff6501b8dc0d2d6c403001ad0d86da64307ce2cc66954008a6ca09",
+      "artifactSizeBytes": 2323
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:47:41.177Z"
+}

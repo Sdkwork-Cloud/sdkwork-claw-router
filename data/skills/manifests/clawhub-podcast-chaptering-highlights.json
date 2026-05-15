@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13140,
+  "uuid": "skill-clawhub-podcast-chaptering-highlights",
+  "skillKey": "clawhub-podcast-chaptering-highlights",
+  "name": "Podcast Chaptering Highlights",
+  "summary": "Create chapters, highlights, and show notes from podcast audio or transcripts. Use when a user wants chapter markers, highlight clips, or show-note drafts without publishing or distribution actions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_chaptering_highlights",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codedao12",
+      "features": [
+        "Create chapters, highlights, and show notes from podcast audio or transcripts",
+        "Use when a user wants chapter markers, highlight clips, or show-note drafts without publishing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/podcast-chaptering-highlights@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249323427?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "podcast-chaptering-highlights",
+      "url": "https://clawhub.ai/skills/podcast-chaptering-highlights"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-chaptering-highlights",
+    "url": "https://clawhub.ai/skills/podcast-chaptering-highlights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-chaptering-highlights-5fc768e18912e167.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/podcast-chaptering-highlights@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-podcast-chaptering-highlights-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4928032da5e1c8dae6fc89615aa38a975ef35883fed950008cf3e3ccbe01e3f",
+      "artifactSizeBytes": 2379
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T09:53:54.139Z"
+}

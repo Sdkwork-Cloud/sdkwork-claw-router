@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-aisa-llm-router@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aisa_llm_router",
+  "skill": {
+    "id": 12983,
+    "skillKey": "clawhub-openclaw-aisa-llm-router",
+    "name": "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aisa-llm-router",
+    "url": "https://clawhub.ai/skills/openclaw-aisa-llm-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aisa-llm-router-0142bfdd822b52d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisadocs",
+      "userId": "s172yz541n4361fw0sapygg0r583eghk",
+      "displayName": "AIsa",
+      "image": "https://avatars.githubusercontent.com/u/245991925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1384,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770280046445,
+      "changelog": "- Initial release of OpenClaw LLM Router: a unified gateway for 70+ LLMs with one API key.\n- OpenAI-compatible API for chat, vision analysis, model comparison, and function calling.\n- Built-in cost optimization, fallback, and model switching features.\n- Unified billing and key management for easier integration.\n- Supports major model families: OpenAI, Anthropic, Google, xAI, Alibaba, Deepseek, and more.\n- Python client and CLI tool provided for quick integration and testing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8347a0cb61666750e99bdd06192380ed8481b516a81bb3aef4b756a91d71abc7"
+}

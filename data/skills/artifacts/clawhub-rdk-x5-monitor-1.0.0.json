@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rdk-x5-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rdk_x5_monitor",
+  "skill": {
+    "id": 58771,
+    "skillKey": "clawhub-rdk-x5-monitor",
+    "name": "Rdk X5 Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rdk-x5-monitor",
+    "url": "https://clawhub.ai/skills/rdk-x5-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rdk-x5-monitor-a3e62c601ec36452.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "只读查询 RDK X5 实时硬件状态：CPU 使用率与频率、BPU 算力占用、内存/磁盘使用、芯片温度、GPU 频率、网络 IP 地址。Use when the user wants to READ or CHECK current CPU usage, BPU utilization, memory, temp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "katherineedwards2475",
+      "userId": "s171fb3mdcgkeseprx9k9hd0v583wsb1",
+      "displayName": "qiaolongli",
+      "image": "https://avatars.githubusercontent.com/u/262944264?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773054766039,
+      "changelog": "Initial release: Real-time hardware status monitoring",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8ae61fdb62af761b2ed08e996c76816ee5e45df08b3161b0985a43439769fc4"
+}

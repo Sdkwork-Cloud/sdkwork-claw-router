@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72728,
+  "uuid": "skill-clawhub-hotspot-aggregator-clawd",
+  "skillKey": "clawhub-hotspot-aggregator-clawd",
+  "name": "热点聚合监控",
+  "summary": "🔥 热点聚合监控 - 一站式聚合微博/百度/知乎/抖音热搜榜，自动生成每日热点报告，支持关键词订阅推送。适用于自媒体运营、内容创作、市场分析等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotspot_aggregator_clawd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "onlyloveher",
+      "features": [
+        "🔥 热点聚合监控",
+        "一站式聚合微博/百度/知乎/抖音热搜榜，自动生成每日热点报告，支持关键词订阅推送。适用于自媒体运营、内容创作、市场分析等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hotspot-aggregator-clawd@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/972832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hotspot-aggregator-clawd",
+      "url": "https://clawhub.ai/skills/hotspot-aggregator-clawd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotspot-aggregator-clawd",
+    "url": "https://clawhub.ai/skills/hotspot-aggregator-clawd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotspot-aggregator-clawd-e2bb50d63eb98604.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hotspot-aggregator-clawd@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hotspot-aggregator-clawd-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40ac59b95f3d286219afff08620f237b55688bb5846b33e86977e82ef8d29d32",
+      "artifactSizeBytes": 2038
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T03:04:26.946Z"
+}

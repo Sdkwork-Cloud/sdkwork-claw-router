@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45008,
+  "uuid": "skill-clawhub-oldglycine-paper-add-citations",
+  "skillKey": "clawhub-oldglycine-paper-add-citations",
+  "name": "oldglycine-paper-add-citations",
+  "summary": "Automatically adds relevant academic references to research papers. Supports Overleaf project directories, extracts keywords from TeX files, searches Google...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oldglycine_paper_add_citations",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OldGlycine",
+      "features": [
+        "Automatically adds relevant academic references to research papers",
+        "Supports Overleaf project directories, extracts keywords from TeX files, searches Google..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oldglycine-paper-add-citations@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118947350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oldglycine-paper-add-citations",
+      "url": "https://clawhub.ai/skills/oldglycine-paper-add-citations"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oldglycine-paper-add-citations",
+    "url": "https://clawhub.ai/skills/oldglycine-paper-add-citations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oldglycine-paper-add-citations-0a0764697b3aa7ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oldglycine-paper-add-citations@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oldglycine-paper-add-citations-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:279896f200ea77b8cb5957497ef7d910267863e96099934a337da30bea6aa2f6",
+      "artifactSizeBytes": 3817
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T14:55:01.478Z"
+}

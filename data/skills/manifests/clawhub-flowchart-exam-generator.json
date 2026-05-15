@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67575,
+  "uuid": "skill-clawhub-flowchart-exam-generator",
+  "skillKey": "clawhub-flowchart-exam-generator",
+  "name": "Flowchart Exam Generator",
+  "summary": "根据流程图图片自动生成应知应会考试题（单选题、多选题）。当用户要求\"根据流程图出考试题\"、\"根据流程图生成题目\"、\"根据流程图出应知应会\"时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flowchart_exam_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "geming416684729-svg",
+      "features": [
+        "根据流程图图片自动生成应知应会考试题（单选题、多选题）。当用户要求\"根据流程图出考试题\"、\"根据流程图生成题目\"、\"根据流程图出应知应会\"时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flowchart-exam-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258606201?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flowchart-exam-generator",
+      "url": "https://clawhub.ai/skills/flowchart-exam-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flowchart-exam-generator",
+    "url": "https://clawhub.ai/skills/flowchart-exam-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flowchart-exam-generator-62977215c3d3d981.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flowchart-exam-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flowchart-exam-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85921e4602c2ee78d057a658cbde112aaaefbf63bf704eb22caab32414a33e06",
+      "artifactSizeBytes": 2466
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T01:28:28.074Z"
+}

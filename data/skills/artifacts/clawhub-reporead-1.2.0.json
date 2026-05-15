@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reporead@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reporead",
+  "skill": {
+    "id": 22938,
+    "skillKey": "clawhub-reporead",
+    "name": "Reporead"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reporead",
+    "url": "https://clawhub.ai/skills/reporead",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reporead-1b4af0cce9dfd0da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze GitHub repositories using RepoRead AI. Use when the user asks to \"analyze a repo\", \"generate docs\", \"security audit a repo\", \"create a README\", or wa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gdperkins",
+      "userId": "publishers:gdperkins",
+      "displayName": "Gddp",
+      "image": "https://avatars.githubusercontent.com/u/21368383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 457,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774017491622,
+      "changelog": "Fix shell injection vulnerability in reporead-api.sh: sanitize user inputs before JSON embedding and URL path interpolation to prevent command substitution",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33cc936584eb8fe4fa65581ade3e2cf37b55f65b44083bc0144c9b0af7873769"
+}

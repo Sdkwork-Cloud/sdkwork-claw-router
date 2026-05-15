@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/forgex-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forgex_skill",
+  "skill": {
+    "id": 38048,
+    "skillKey": "clawhub-forgex-skill",
+    "name": "forgex-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forgex-skill",
+    "url": "https://clawhub.ai/skills/forgex-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forgex-skill-78a09ff9cc4c7d25.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ForgeX CLI enables on-chain market making on Solana with wallet management, token launches, batch trades, and volume bots via a simple command-line interface."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "catlina-2b",
+      "userId": "s174tsa61vb6te4fanjnhbgsy983gyb4",
+      "displayName": "Catlina-2B",
+      "image": "https://avatars.githubusercontent.com/u/37170346?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774508472603,
+      "changelog": "- Added Raydium support to the list of supported platforms in documentation.\n- No code changes—documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92c937376d9dc5546e4a434e071ebed81288fafb88b612cbf0aa766c0e42115a"
+}

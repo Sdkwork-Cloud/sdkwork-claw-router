@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42088,
+  "uuid": "skill-clawhub-finskills-portfolio-manager",
+  "skillKey": "clawhub-finskills-portfolio-manager",
+  "name": "portfolio-manager",
+  "summary": "Monitor and rebalance a multi-asset portfolio using real-time quotes, sector allocation, and risk metrics from the Finskills API.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finskills_portfolio_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "finskills",
+      "features": [
+        "Monitor and rebalance a multi-asset portfolio using real-time quotes, sector allocation, and ri."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finskills-portfolio-manager@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32382589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finskills-portfolio-manager",
+      "url": "https://clawhub.ai/skills/finskills-portfolio-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finskills-portfolio-manager",
+    "url": "https://clawhub.ai/skills/finskills-portfolio-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finskills-portfolio-manager-04fe27dc7244d57e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finskills-portfolio-manager@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-finskills-portfolio-manager-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1be251ffb5b359394a29a20efd800e15ad10319483b47082ba953207424390d",
+      "artifactSizeBytes": 2230
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T16:02:56.016Z"
+}

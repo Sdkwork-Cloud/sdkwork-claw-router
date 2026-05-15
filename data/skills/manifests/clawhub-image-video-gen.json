@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60028,
+  "uuid": "skill-clawhub-image-video-gen",
+  "skillKey": "clawhub-image-video-gen",
+  "name": "Image & Video Generation",
+  "summary": "AI 图片与视频异步生成技能，调用 AI Artist API 根据文本提示词生成图片或视频，自动轮询直到任务完成。 ⚠️ 使用前必须设置环境变量 AI_ARTIST_TOKEN 为你自己的 API Key！ 需要 API Key 授权：已有账号请前往 https://ai.deepsop.com/login?s...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_video_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kukuoAI",
+      "features": [
+        "AI 图片与视频异步生成技能，调用 AI Artist API 根据文本提示词生成图片或视频，自动轮询直到任务完成。 ⚠️ 使用前必须设置环境变量 AI_ARTIST_TOKEN 为你自己的."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-video-gen@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/275868190?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-video-gen",
+      "url": "https://clawhub.ai/skills/image-video-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-video-gen",
+    "url": "https://clawhub.ai/skills/image-video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-video-gen-8ce952927e6d4b52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-video-gen@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-video-gen-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf54bf0483bbcb156ef46af4346622a420eaae43e5c4ed54c81217189314c9d2",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T12:10:04.917Z"
+}

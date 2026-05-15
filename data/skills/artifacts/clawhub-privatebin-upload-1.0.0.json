@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/privatebin-upload@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.privatebin_upload",
+  "skill": {
+    "id": 21098,
+    "skillKey": "clawhub-privatebin-upload",
+    "name": "PrivateBin Upload Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "privatebin-upload",
+    "url": "https://clawhub.ai/skills/privatebin-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/privatebin-upload-5f732ddb18acbde7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload content to a PrivateBin instance and return a shareable link. Use when the user wants to share text, code, reports, or files via paste URL with option..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kafcoppelia",
+      "userId": "s175mmws988j29b5rdstf21b5s83kaff",
+      "displayName": "KafCoppelia",
+      "image": "https://avatars.githubusercontent.com/u/69038090?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 523,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772333836392,
+      "changelog": "Initial release of the privatebin-upload skill:\n\n- Enables uploading text, code, or files to a PrivateBin instance and returns a shareable link.\n- Supports options such as expiry settings, password protection, burn-after-reading, and attachment uploads.\n- Guides automatic detection of CLI presence and configuration, with setup instructions on missing prerequisites.\n- Flexible input handling for plain text, markdown, syntax-highlighted code, or file attachments.\n- Returns paste URL, expiry details, and password information (if set).\n- Provides clear error handling and usage recommendations for common issues.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:78f81e9425a42d90c0442d890e3d9fb034d96fbb526abeace8ba1b355561e700"
+}

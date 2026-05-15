@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/instagram-video-caption-download@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagram_video_caption_download",
+  "skill": {
+    "id": 48178,
+    "skillKey": "clawhub-instagram-video-caption-download",
+    "name": "Instagram Video Caption Download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagram-video-caption-download",
+    "url": "https://clawhub.ai/skills/instagram-video-caption-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagram-video-caption-download-aeab7cd49f5a861d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 60-second Instagram Reel with spoken dialogue into 1080p captioned video files just by typing what you need. Whether it's downloading captions from In..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777229140405,
+      "changelog": "Initial release enabling quick extraction and download of captions from Instagram videos.\n\n- Upload a 60-second Instagram Reel and request captions as a 1080p video or text/SRT file.\n- Automated backend workflow: quick API-based caption extraction and export, no timeline editing or manual export needed.\n- Supports multiple formats (mp4, mov, avi, webm, jpg, png, gif, mp3, wav, etc.) with up to 500MB file size.\n- Offers anonymous token workflow for easy onboarding and 100 free credits valid for 7 days.\n- Designed for fast turnaround — typical clip processes in 20–40 seconds; all operations run on remote GPU servers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43188990753217e7b68361c40bcadf9577a73d4e3b4ff24b66beb9e937a9078b"
+}

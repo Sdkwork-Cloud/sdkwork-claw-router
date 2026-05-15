@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huo15-autoresearch-loop@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_autoresearch_loop",
+  "skill": {
+    "id": 58197,
+    "skillKey": "clawhub-huo15-autoresearch-loop",
+    "name": "Huo15 Autoresearch Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-autoresearch-loop",
+    "url": "https://clawhub.ai/skills/huo15-autoresearch-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-autoresearch-loop-df48582d5fc24dd6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 Karpathy 自主研究循环的 OpenClaw Skill，Modify → Verify → Keep/Discard → Repeat forever"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaobod1",
+      "userId": "s17f6q72skfgyjycm2frgdc8dn83v5mk",
+      "displayName": "Job Zhao",
+      "image": "https://avatars.githubusercontent.com/u/13188275?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 315,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777004123163,
+      "changelog": "No file changes detected for this version.\n\n- No updates or changes were made in version 1.0.3.  \n- The skill contents remain identical to the previous version (1.0.2).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1fbf5c996b5b6cc1aabe5d7b07ab54319bcdc11da3308762994243b65f3c282b"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70665,
+  "uuid": "skill-clawhub-ai-kujiale-design",
+  "skillKey": "clawhub-ai-kujiale-design",
+  "name": "ai-kujiale-design",
+  "summary": "通过用户的自然语言需求，自动调用酷家乐AI设计工厂（OpenAPI+网页操作）完成室内住宅方案的户型获取/临摹导入、风格匹配、智能布局与渲染，最终返回多张效果图与全景图，并提供拟人化进度反馈；当用户表示要做房子/室内设计、提到小区/户型/风格（如北欧、现代）、或要求生成效果图/全景图/使用酷家乐时触发。适用于住宅...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_kujiale_design",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuweiqi1993",
+      "features": [
+        "通过用户的自然语言需求，自动调用酷家乐AI设计工厂（OpenAPI+网页操作）完成室内住宅方案的户型获取/临摹导入、风格匹配、智能布局与渲染，最终返回多张效果图与全景图，并提供拟人化进度反馈."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-kujiale-design@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32814990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-kujiale-design",
+      "url": "https://clawhub.ai/skills/ai-kujiale-design"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-kujiale-design",
+    "url": "https://clawhub.ai/skills/ai-kujiale-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-kujiale-design-47f618338dcec1ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-kujiale-design@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-kujiale-design-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2fb773892ce5eda56381641c37b0ee697b43b9c04261ced52be10636eea9eeb",
+      "artifactSizeBytes": 2233
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:05:48.572Z"
+}

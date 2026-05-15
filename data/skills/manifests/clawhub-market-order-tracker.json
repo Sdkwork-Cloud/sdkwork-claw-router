@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69998,
+  "uuid": "skill-clawhub-market-order-tracker",
+  "skillKey": "clawhub-market-order-tracker",
+  "name": "Market Order Tracker",
+  "summary": "从接单到交付的全生命周期追踪。智能管理订单状态，自动提醒交期节点，让订单多而不乱、交付准时可靠，适合订单繁忙的贸易公司和工厂外贸部门。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_order_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangM-A3",
+      "features": [
+        "从接单到交付的全生命周期追踪。智能管理订单状态，自动提醒交期节点，让订单多而不乱、交付准时可靠，适合订单繁忙的贸易公司和工厂外贸部门。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/market-order-tracker@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274818589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "market-order-tracker",
+      "url": "https://clawhub.ai/skills/market-order-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-order-tracker",
+    "url": "https://clawhub.ai/skills/market-order-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-order-tracker-9484f2cc570bc2ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/market-order-tracker@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-market-order-tracker-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f738814bcc644a5b88ae731017e24c881a8aa9c57926febc2915a69d8f9d91b0",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T00:33:49.085Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-cache@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_cache",
+  "skill": {
+    "id": 16480,
+    "skillKey": "clawhub-code-cache",
+    "name": "Code Cache"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-cache",
+    "url": "https://clawhub.ai/skills/code-cache",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-cache-07602f5694930b5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Semantic code caching for AI agents. Cache, retrieve, and reuse code from prior agent executions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryx2",
+      "userId": "publishers:ryx2",
+      "displayName": "ryx2",
+      "image": "https://avatars.githubusercontent.com/u/21298347?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 880,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770919501668,
+      "changelog": "Initial release: semantic code caching for AI agents via Raysurfer API",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:73fde96e6ca7fd9fba354743d984c22272ca78ed9be647c71c20b59e0cdfea1c"
+}

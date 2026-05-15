@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68886,
+  "uuid": "skill-clawhub-stealth-break",
+  "skillKey": "clawhub-stealth-break",
+  "name": "stealth-break",
+  "summary": "健康摸鱼技能，提供隐蔽的休息策略和定时提醒，使用 macOS 系统通知推送，帮助缓解工作压力、眼睛疲劳、腰椎问题，预防猝死。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stealth_break",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryan987123",
+      "features": [
+        "健康摸鱼技能，提供隐蔽的休息策略和定时提醒，使用 macOS 系统通知推送，帮助缓解工作压力、眼睛疲劳、腰椎问题，预防猝死。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stealth-break@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39294007?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stealth-break",
+      "url": "https://clawhub.ai/skills/stealth-break"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stealth-break",
+    "url": "https://clawhub.ai/skills/stealth-break",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stealth-break-2ad5003a013555cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stealth-break@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stealth-break-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:833903c6f75fb2d3ad09e6862ffbe8c09b76f9e3c9c75eee73f509ee8ffc08e3",
+      "artifactSizeBytes": 2375
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:59:27.369Z"
+}

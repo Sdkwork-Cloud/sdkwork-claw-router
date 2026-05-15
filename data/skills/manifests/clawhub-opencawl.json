@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28144,
+  "uuid": "skill-clawhub-opencawl",
+  "skillKey": "clawhub-opencawl",
+  "name": "OpenCawl",
+  "summary": "Add phone calling to your agent through OpenCawl. Use this skill to place calls, check outcomes, end active calls, and review voicemails.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencawl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ammon Brown",
+      "features": [
+        "Add phone calling to your agent through OpenCawl",
+        "Use this skill to place calls, check outcomes, end active calls, and review voicemails."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opencawl@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1533979?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opencawl",
+      "url": "https://clawhub.ai/skills/opencawl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencawl",
+    "url": "https://clawhub.ai/skills/opencawl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencawl-1673f3e3888fc09e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opencawl@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-opencawl-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45fb14c7da99f2d75e46698cd04a77b080c0ec7d203ab1e45d76b69a922a7b4a",
+      "artifactSizeBytes": 2456
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T22:25:26.439Z"
+}

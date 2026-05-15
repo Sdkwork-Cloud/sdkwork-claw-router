@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63895,
+  "uuid": "skill-clawhub-video-transcriber",
+  "skillKey": "clawhub-video-transcriber",
+  "name": "Video Transcriber",
+  "summary": "视频转写工作流，支持B站和YouTube视频。自动判断有字幕/无字幕，有字幕则获取字幕，无字幕则下载音频+whisper转写。触发场景：(1) 用户要求总结视频内容 (2) 用户要求获取视频字幕 (3) 用户要求转写视频 (4) 处理B站/YouTube视频",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_transcriber",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xing2xian",
+      "features": [
+        "视频转写工作流，支持B站和YouTube视频。自动判断有字幕/无字幕，有字幕则获取字幕，无字幕则下载音频+whisper转写。触发场景：(1) 用户要求总结视频内容 (2) 用户要求获取视频."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-transcriber@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22139894?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-transcriber",
+      "url": "https://clawhub.ai/skills/video-transcriber"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-transcriber",
+    "url": "https://clawhub.ai/skills/video-transcriber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-transcriber-32272f46a7bf4394.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-transcriber@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-transcriber-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:febccef0ea4f6089510ee07a4d4263ada0cd81a2f20b2b87856dbbec38a4acb4",
+      "artifactSizeBytes": 2472
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T11:48:41.135Z"
+}

@@ -33,7 +33,11 @@ export type ForumPost = {
   tags: string[];
   likes: number;
   views: number;
+  shareCount: number;
+  isLiked: boolean;
+  isCollected: boolean;
   publishedAt: string;
+  commentCount: number;
   comments: ForumComment[];
   isPinned?: boolean;
 };
@@ -78,11 +82,19 @@ export type ForumCommunityLinkView = {
   id: string;
   label: string;
   qrCodeUrl: string;
-  tone: string;
+  tone: 'green' | 'blue' | 'teal' | 'red' | 'pink';
+};
+
+export type ForumOverviewViewInput = {
+  totalPosts: number;
+  memberCount: number;
+  onlineMembers: number;
+  communityLinks: ForumCommunityLinkView[];
+  source?: ForumContentSource;
 };
 
 export type ForumCatalogViewModel = {
-  snapshotSource: typeof FORUM_CONTENT_SNAPSHOT_SOURCE;
+  contentSource: ForumContentSource;
   categoryOptions: ForumFilterOption[];
   sortTabs: ForumSortTabView[];
   filteredPosts: ForumPostCardView[];
@@ -100,148 +112,36 @@ export type ForumRelatedPostView = {
 
 export type ForumPostDetailViewModel = {
   post: ForumPost;
-  snapshotSource: typeof FORUM_CONTENT_SNAPSHOT_SOURCE;
+  contentSource: ForumContentSource;
   authorHandle: string;
   publishedAtLabel: string;
   viewsLabel: string;
   likesLabel: string;
+  shareCountLabel: string;
+  isLiked: boolean;
+  isCollected: boolean;
   totalCommentCount: number;
   relatedPosts: ForumRelatedPostView[];
 };
 
-export const FORUM_CONTENT_SNAPSHOT_SOURCE = {
-  sourceLabel: 'Curated forum content snapshot',
-  sourceDescription: 'Derived from Java-compatible PlusFeeds, PlusComments, vote, and favorite seed content.',
-  observedAt: '2026-05-03',
+export type ForumContentSource = {
+  sourceLabel: string;
+  sourceDescription: string;
+  observedAt: string;
+  sourceTables: readonly string[];
+};
+
+export const FORUM_CONTENT_SOURCE = {
+  sourceLabel: 'Live forum content',
+  sourceDescription: 'Derived from PlusFeeds, PlusComments, vote, and favorite tables.',
+  observedAt: '',
   sourceTables: [
     'plus_feeds',
     'plus_comments',
     'plus_content_vote',
     'plus_favorite',
   ],
-} as const;
-
-export const FORUM_POSTS: ForumPost[] = [
-  {
-    id: '1',
-    title: 'How to optimize routing performance in the latest release?',
-    author: {
-      name: 'Alex Johnson',
-      avatar: 'https://i.pravatar.cc/150?u=1',
-      role: 'Maintainer',
-    },
-    content: `I have been looking into the recent changes in the router architecture and noticed specific opportunities for improving route resolution speed.
-
-The current dynamic segment matching path still behaves like a linear scan in highly dynamic route maps. A radix tree based index would keep static and dynamic path branches easier to inspect while improving lookup behavior for large API surfaces.
-
-The benchmark target should compare the current path against an indexed path matcher using the same route corpus, request mix, and middleware chain. That keeps the discussion tied to measurable routing behavior instead of synthetic microbenchmarks.`,
-    contentSnippet: 'A focused radix indexing proposal for measuring and improving route resolution behavior in large dynamic route maps.',
-    category: 'Performance',
-    tags: ['routing', 'performance', 'v2.0'],
-    likes: 124,
-    views: 3204,
-    publishedAt: '2026-05-03 10:00 UTC',
-    isPinned: true,
-    comments: [
-      {
-        id: 'c1',
-        author: { name: 'Sarah Chen', avatar: 'https://i.pravatar.cc/150?u=2' },
-        content: 'We saw a similar pattern in a large API workspace. The useful benchmark was route lookup plus middleware resolution, not lookup alone.',
-        likes: 45,
-        publishedAt: '2026-05-03 10:45 UTC',
-        replies: [
-          {
-            id: 'c1-1',
-            author: {
-              name: 'Alex Johnson',
-              avatar: 'https://i.pravatar.cc/150?u=1',
-              role: 'Maintainer',
-            },
-            content: 'That makes sense. I will add a mixed route corpus and middleware chain to the benchmark notes.',
-            likes: 12,
-            publishedAt: '2026-05-03 11:15 UTC',
-          },
-        ],
-      },
-      {
-        id: 'c2',
-        author: {
-          name: 'David Smith',
-          avatar: 'https://i.pravatar.cc/150?u=3',
-          role: 'Core Team',
-        },
-        content: 'The indexed matcher is worth exploring. The key constraint is keeping parameter precedence visible and testable.',
-        likes: 89,
-        publishedAt: '2026-05-03 11:30 UTC',
-      },
-    ],
-  },
-  {
-    id: '2',
-    title: 'Best practices for organizing large API specs',
-    author: { name: 'Sarah Chen', avatar: 'https://i.pravatar.cc/150?u=2' },
-    content: `Large OpenAPI documents become easier to maintain when ownership and release cadence drive the split, not only file size.
-
-We use one package per bounded API surface, shared schema components only for stable cross-surface concepts, and generated SDK compatibility checks for every published operation.`,
-    contentSnippet: 'A practical structure for splitting large OpenAPI definitions without losing ownership or SDK compatibility.',
-    category: 'Best Practices',
-    tags: ['openapi', 'architecture'],
-    likes: 89,
-    views: 1840,
-    publishedAt: '2026-05-03 08:30 UTC',
-    comments: [
-      {
-        id: 'c3',
-        author: { name: 'Maya Lin', avatar: 'https://i.pravatar.cc/150?u=4' },
-        content: 'The bounded-surface rule helped us keep generated SDK packages from depending on unrelated admin models.',
-        likes: 26,
-        publishedAt: '2026-05-03 09:10 UTC',
-      },
-    ],
-  },
-  {
-    id: '3',
-    title: 'Introducing the new Middleware Hooks',
-    author: {
-      name: 'David Smith',
-      avatar: 'https://i.pravatar.cc/150?u=3',
-      role: 'Core Team',
-    },
-    content: `The new middleware hooks separate request enrichment, route selection, provider relay, and response settlement into clearer extension points.
-
-This should make custom policy checks easier to test without patching the provider relay path directly.`,
-    contentSnippet: 'A release note for the middleware hook structure used by routing, policy, and provider relay extensions.',
-    category: 'Announcements',
-    tags: ['features', 'middleware'],
-    likes: 256,
-    views: 5200,
-    publishedAt: '2026-05-02 16:00 UTC',
-    comments: [
-      {
-        id: 'c4',
-        author: { name: 'Noah Reed', avatar: 'https://i.pravatar.cc/150?u=5' },
-        content: 'Keeping provider relay outside policy middleware makes the extension contract much easier to reason about.',
-        likes: 33,
-        publishedAt: '2026-05-02 17:20 UTC',
-      },
-    ],
-  },
-  {
-    id: '4',
-    title: 'How should API keys be rotated across environments?',
-    author: { name: 'Priya Shah', avatar: 'https://i.pravatar.cc/150?u=6' },
-    content: `We are standardizing API key rotation across development, staging, and production workspaces.
-
-The main question is whether rotation should be driven by a single policy per tenant or by separate policies per key group.`,
-    contentSnippet: 'A support thread about API key rotation policy boundaries for tenant and key-group workflows.',
-    category: 'Help & Support',
-    tags: ['api-keys', 'security'],
-    likes: 41,
-    views: 936,
-    publishedAt: '2026-05-02 09:45 UTC',
-    comments: [],
-  },
-];
+} as const satisfies ForumContentSource;
 
 export function filterForumPostsForCatalog(
   posts: readonly ForumPost[],
@@ -269,9 +169,11 @@ export function filterForumPostsForCatalog(
 export function deriveForumCatalogViewModel({
   posts,
   filters,
+  overview,
 }: {
   posts: readonly ForumPost[];
   filters: ForumCatalogFilters;
+  overview?: ForumOverviewViewInput;
 }): ForumCatalogViewModel {
   const filteredPosts = filterForumPostsForCatalog(posts, filters);
   const categoryOrder: ForumCategoryFilter[] = [
@@ -284,7 +186,7 @@ export function deriveForumCatalogViewModel({
   ];
 
   return {
-    snapshotSource: FORUM_CONTENT_SNAPSHOT_SOURCE,
+    contentSource: overview?.source ?? FORUM_CONTENT_SOURCE,
     categoryOptions: categoryOrder.map((category) => ({
       id: category,
       label: category === 'All' ? 'All Categories' : category,
@@ -298,11 +200,11 @@ export function deriveForumCatalogViewModel({
     filteredPosts: filteredPosts.map(deriveForumPostCard),
     resultCount: filteredPosts.length,
     stats: {
-      membersLabel: formatForumCount(45_219),
-      totalPostsLabel: formatForumCount(12_504),
-      onlineMembersLabel: formatForumCount(842),
+      membersLabel: formatForumCount(overview?.memberCount ?? 0),
+      totalPostsLabel: formatForumCount(overview?.totalPosts ?? 0),
+      onlineMembersLabel: formatForumCount(overview?.onlineMembers ?? 0),
     },
-    communityLinks: deriveCommunityLinks(),
+    communityLinks: overview?.communityLinks ?? [],
   };
 }
 
@@ -317,12 +219,15 @@ export function deriveForumPostDetailView(
 
   return {
     post,
-    snapshotSource: FORUM_CONTENT_SNAPSHOT_SOURCE,
+    contentSource: FORUM_CONTENT_SOURCE,
     authorHandle: `@${normalizeHandle(post.author.name)}`,
     publishedAtLabel: post.publishedAt,
     viewsLabel: formatForumCount(post.views),
     likesLabel: formatForumCount(post.likes),
-    totalCommentCount: countForumComments(post.comments),
+    shareCountLabel: formatForumCount(post.shareCount),
+    isLiked: post.isLiked,
+    isCollected: post.isCollected,
+    totalCommentCount: forumPostCommentCount(post),
     relatedPosts: deriveRelatedForumPosts(posts, post),
   };
 }
@@ -353,10 +258,14 @@ function deriveForumPostCard(post: ForumPost): ForumPostCardView {
     category: post.category,
     tags: [...post.tags],
     likesLabel: formatForumCount(post.likes),
-    commentsLabel: formatForumCount(countForumComments(post.comments)),
+    commentsLabel: formatForumCount(forumPostCommentCount(post)),
     publishedAtLabel: post.publishedAt,
     isPinned: post.isPinned === true,
   };
+}
+
+function forumPostCommentCount(post: ForumPost): number {
+  return Math.max(0, Math.round(post.commentCount), countForumComments(post.comments));
 }
 
 function deriveRelatedForumPosts(posts: readonly ForumPost[], post: ForumPost): ForumRelatedPostView[] {
@@ -369,19 +278,8 @@ function deriveRelatedForumPosts(posts: readonly ForumPost[], post: ForumPost): 
     id: candidate.id,
     title: candidate.title,
     category: candidate.category,
-    commentsLabel: formatForumCount(countForumComments(candidate.comments)),
+    commentsLabel: formatForumCount(forumPostCommentCount(candidate)),
   }));
-}
-
-function deriveCommunityLinks(): ForumCommunityLinkView[] {
-  return [
-    { id: 'wechat', label: 'WeChat', qrCodeUrl: qrCodeUrl('WeChatGroup_ClawRouter'), tone: 'green' },
-    { id: 'official', label: 'Official Account', qrCodeUrl: qrCodeUrl('OfficialAccount_ClawRouter'), tone: 'green' },
-    { id: 'qq', label: 'QQ Group', qrCodeUrl: qrCodeUrl('QQGroup_ClawRouter'), tone: 'blue' },
-    { id: 'feishu', label: 'Feishu', qrCodeUrl: qrCodeUrl('FeishuGroup_ClawRouter'), tone: 'teal' },
-    { id: 'video', label: 'Video Account', qrCodeUrl: qrCodeUrl('VideoAccount_ClawRouter'), tone: 'red' },
-    { id: 'douyin', label: 'Douyin', qrCodeUrl: qrCodeUrl('Douyin_ClawRouter'), tone: 'pink' },
-  ];
 }
 
 function sortForumPosts(posts: ForumPost[], sort: ForumSortKey): ForumPost[] {
@@ -391,7 +289,7 @@ function sortForumPosts(posts: ForumPost[], sort: ForumSortKey): ForumPost[] {
   }
   if (sort === 'unanswered') {
     return sorted
-      .filter((post) => countForumComments(post.comments) === 0)
+      .filter((post) => forumPostCommentCount(post) === 0)
       .sort((left, right) => right.publishedAt.localeCompare(left.publishedAt));
   }
   return sorted.sort((left, right) => {
@@ -400,13 +298,6 @@ function sortForumPosts(posts: ForumPost[], sort: ForumSortKey): ForumPost[] {
     }
     return right.publishedAt.localeCompare(left.publishedAt);
   });
-}
-
-function qrCodeUrl(value: string): string {
-  const url = new URL('https://api.qrserver.com/v1/create-qr-code/');
-  url.searchParams.set('size', '150x150');
-  url.searchParams.set('data', value);
-  return url.toString();
 }
 
 function normalizeSearchText(value: string): string {

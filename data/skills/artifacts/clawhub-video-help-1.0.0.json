@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-help@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_help",
+  "skill": {
+    "id": 47920,
+    "skillKey": "clawhub-video-help",
+    "name": "Video Help"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-help",
+    "url": "https://clawhub.ai/skills/video-help",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-help-32bb9f72ea176b8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit video clips into edited video files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for quickly editing and c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 107,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777481170650,
+      "changelog": "Initial release of video-help: fast, AI-powered video editing and export.\n\n- Upload MP4, MOV, AVI, or WebM videos up to 500MB for quick edits and 1080p exports.\n- Instantly connects to a cloud video editing API (automatic token/session management).\n- Supports trimming pauses, adding subtitles, aspect ratio changes, text overlays, and audio tracks via keywords.\n- Download 1080p MP4 files in 1–2 minutes; free tier included.\n- Clear error messages and workflow summaries provided throughout editing and export.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e3e98811d3ebf4cf33ba71a1a73f3dda630e36b0dbb5a2f77e120c6f3186db2"
+}

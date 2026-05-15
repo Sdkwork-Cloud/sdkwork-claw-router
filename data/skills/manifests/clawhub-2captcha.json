@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9101,
+  "uuid": "skill-clawhub-2captcha",
+  "skillKey": "clawhub-2captcha",
+  "name": "2Captcha CLI",
+  "summary": "Solve CAPTCHAs using 2Captcha service via CLI. Use for bypassing captchas during web automation, account creation, or form submission.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.2captcha",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "adinvadim",
+      "features": [
+        "Solve CAPTCHAs using 2Captcha service via CLI",
+        "Use for bypassing captchas during web automation, account creation, or form submission."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/2captcha@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8646071?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "2captcha",
+      "url": "https://clawhub.ai/skills/2captcha"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "2captcha",
+    "url": "https://clawhub.ai/skills/2captcha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/2captcha-04bcc61f129a06ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/2captcha@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-2captcha-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9bab15731346764dea08612eefbb61ebac45789a9e284d17fd23146cc7d4c539",
+      "artifactSizeBytes": 2250
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T15:39:14.151Z"
+}

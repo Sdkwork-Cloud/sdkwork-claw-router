@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57608,
+  "uuid": "skill-clawhub-holdem-poker",
+  "skillKey": "clawhub-holdem-poker",
+  "name": "德州扑克",
+  "summary": "Text-based Texas Hold'em poker game with auto AI players for OpenClaw",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.holdem_poker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DreamPig",
+      "features": [
+        "Text-based Texas Hold'em poker game with auto AI players for OpenClaw"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/holdem-poker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44577163?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "holdem-poker",
+      "url": "https://clawhub.ai/skills/holdem-poker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "holdem-poker",
+    "url": "https://clawhub.ai/skills/holdem-poker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/holdem-poker-cf8262a5ee3d3f1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/holdem-poker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-holdem-poker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd10850fdb921ed00b00af63808e19ad9cceb323d1cd6d269f538bf6f6c4a206",
+      "artifactSizeBytes": 2051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T15:18:39.185Z"
+}

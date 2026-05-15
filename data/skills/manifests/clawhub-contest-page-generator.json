@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33540,
+  "uuid": "skill-clawhub-contest-page-generator",
+  "skillKey": "clawhub-contest-page-generator",
+  "name": "contest-page-generator",
+  "summary": "When the user wants to create, optimize, or audit a giveaway, contest, or promotional campaign page. Also use when the user mentions \"giveaway,\" \"contest,\" \"...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contest_page_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to create, optimize, or audit a giveaway, contest, or promotional campaign.",
+        "Also use when the user mentions \"giveaway,\" \"contest,\" \"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/contest-page-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "contest-page-generator",
+      "url": "https://clawhub.ai/skills/contest-page-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contest-page-generator",
+    "url": "https://clawhub.ai/skills/contest-page-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contest-page-generator-d17229ac9e272e90.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/contest-page-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-contest-page-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2e6bb173ee7f72ba74c9324bb5d0d0559d396ab035248b19cfb48f5a089975a",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T15:03:53.774Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wimbledon-tennis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wimbledon_tennis",
+  "skill": {
+    "id": 68158,
+    "skillKey": "clawhub-wimbledon-tennis",
+    "name": "Wimbledon Tennis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wimbledon-tennis",
+    "url": "https://clawhub.ai/skills/wimbledon-tennis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wimbledon-tennis-97143e6ef339ff82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供温布尔登网球锦标赛的赛程、球员、比分、冠军历史及赛事新闻等详细信息查询服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776295741700,
+      "changelog": "- Updated documentation for wimbledon-tennis, focusing on brand background and overview.\n- Added sections for founding story, core features, global presence, and recent developments.\n- Revised recommended use cases to emphasize market research and competitor analysis.\n- Removed previous tennis event–specific details and functions.\n- Included a note recommending official sources for accurate information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:651ce2346cfd8439a12cf48c24e3d1d6d4c699f5e3d7a571ba10d761e486501f"
+}

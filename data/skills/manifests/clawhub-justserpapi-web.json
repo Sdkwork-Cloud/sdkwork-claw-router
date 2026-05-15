@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36584,
+  "uuid": "skill-clawhub-justserpapi-web",
+  "skillKey": "clawhub-justserpapi-web",
+  "name": "Web Crawling API",
+  "summary": "Fetch raw HTML, rendered HTML, or clean Markdown from public webpages through Just Serp API.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justserpapi_web",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justserpapi",
+      "features": [
+        "Fetch raw HTML, rendered HTML, or clean Markdown from public webpages through Just Serp API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justserpapi-web@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258152455?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justserpapi-web",
+      "url": "https://clawhub.ai/skills/justserpapi-web"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justserpapi-web",
+    "url": "https://clawhub.ai/skills/justserpapi-web",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justserpapi-web-7075d04361316344.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justserpapi-web@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-justserpapi-web-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a7c0c6941f3be8d03705b7b54950d1b6b5563fdeea1646e9fa6d351d9903dd2",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T08:59:33.554Z"
+}

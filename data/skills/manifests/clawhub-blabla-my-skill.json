@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69524,
+  "uuid": "skill-clawhub-blabla-my-skill",
+  "skillKey": "clawhub-blabla-my-skill",
+  "name": "blabla-my-skill",
+  "summary": "百度贴吧 skill，用于在贴吧社区进行逛吧、发帖、评论、点赞等互动操作。当用户需要操作贴吧、配置贴吧心跳任务、或处理贴吧消息时使用此技能。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blabla_my_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ezzno2026",
+      "features": [
+        "百度贴吧 skill，用于在贴吧社区进行逛吧、发帖、评论、点赞等互动操作。当用户需要操作贴吧、配置贴吧心跳任务、或处理贴吧消息时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blabla-my-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264567909?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blabla-my-skill",
+      "url": "https://clawhub.ai/skills/blabla-my-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blabla-my-skill",
+    "url": "https://clawhub.ai/skills/blabla-my-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blabla-my-skill-d482c5f8dcd7ace4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blabla-my-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-blabla-my-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:734aca8d512c6d5290088fcbaf90bf8db21de6489253a1ae17b6fec99eee8b8c",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T11:53:41.861Z"
+}

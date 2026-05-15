@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eric-app-builder-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eric_app_builder_v2",
+  "skill": {
+    "id": 49318,
+    "skillKey": "clawhub-eric-app-builder-v2",
+    "name": "App Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eric-app-builder-v2",
+    "url": "https://clawhub.ai/skills/eric-app-builder-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eric-app-builder-v2-30029686e4f8e02c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full-stack application builder that creates web apps, APIs, mobile apps, and more from natural language requests. Use when the user wants to build a new appl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ericn26-star",
+      "userId": "s17a4j37w3f2wyke5hajt5vtad85wyxf",
+      "displayName": "ericn26-star",
+      "image": "https://avatars.githubusercontent.com/u/270299470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 81,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778074417103,
+      "changelog": "eric-app-builder-v2 v1.0.0 Changelog\n\n- Initial release of the full-stack application builder skill.\n- Supports detection of common app types, tech stack selection, and scaffolding for modern 2025 web projects.\n- Provides detailed implementation planning and task breakdown templates.\n- Includes patterns for modular project structure, feature isolation, and shared code management.\n- Offers structured guidance on error handling, stepwise development, and user coordination throughout the build process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3684870c535fb4b3d55045fc343adfbc419cf28ac7805658b96eb33db1833591"
+}

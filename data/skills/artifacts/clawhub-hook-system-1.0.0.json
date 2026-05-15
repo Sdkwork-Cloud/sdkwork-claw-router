@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hook-system@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hook_system",
+  "skill": {
+    "id": 63887,
+    "skillKey": "clawhub-hook-system",
+    "name": "Hook System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hook-system",
+    "url": "https://clawhub.ai/skills/hook-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hook-system-b1ef256b28cedc4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "工具钩子系统。在工具执行前后注入自定义逻辑，支持： - PreToolUse: 工具执行前调用，可修改输入或阻止执行 - PostToolUse: 工具执行后调用，可修改输出或记录日志 当用户说\"添加钩子\"、\"hook\"、\"拦截工具\"、\"工具前后处理\"时触发。 依赖：Node.js 18+"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xhmqq616",
+      "userId": "s17evsy03dtqhcsv6fqy5yyqs184bmrr",
+      "displayName": "xhmqq616",
+      "image": "https://avatars.githubusercontent.com/u/230696037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775482458965,
+      "changelog": "Initial release of hook-system — a tool hook framework for injecting custom logic before and after tool execution.\n\n- Supports PreToolUse and PostToolUse hooks for input validation, logging, output modification, and more.\n- Allows hooks to modify inputs, block execution, or process outputs with exit codes.\n- Provides environment variables and configuration file examples for flexible customization.\n- Includes built-in example hooks for logging, input validation, and sensitive info filtering.\n- Requires Node.js 18 or newer.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8bb990d114c86831acdaf05771a80175cb60bda3aff46de523d43eccc48f9ca6"
+}

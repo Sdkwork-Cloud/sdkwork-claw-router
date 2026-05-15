@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llm-monitor@0.7.5",
+  "version": "0.7.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_monitor",
+  "skill": {
+    "id": 31485,
+    "skillKey": "clawhub-llm-monitor",
+    "name": "LLM Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-monitor",
+    "url": "https://clawhub.ai/skills/llm-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-monitor-2c4fa26bbf29b327.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor and report usage, costs, quotas, and rate limits for LLM providers, plus manage clawmeter setup and daemon status securely."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielithomas",
+      "userId": "s175813sqtdwve7j1esbjfprw183qbk0",
+      "displayName": "Daniel Thomas",
+      "image": "https://avatars.githubusercontent.com/u/60994952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.7.5",
+      "createdAt": 1775996288739,
+      "changelog": "llm-monitor 0.7.5 changelog\n\n- Adds robust pre-flight checks for clawmeter installation, configuration, and daemon status before answering usage queries.\n- Enhances support for multiple LLM providers, with secure setup guidance for Claude, OpenAI, Grok, Ollama, or all at once.\n- Expands query handling: now supports simple summaries, detailed breakdowns, historical usage, provider-specific, and fresh/live data requests.\n- Implements strict security rules: never handles credentials directly, and warns users if secrets are shared.\n- Guides users through first-time setup and troubleshooting, including config creation and daemon management steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d482d6e74313d42b1b1c14a80c24a9e2266e8d02bab2b426313e9ed080cd34ad"
+}

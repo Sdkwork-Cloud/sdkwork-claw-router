@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46674,
+  "uuid": "skill-clawhub-text-to-video-gemini",
+  "skillKey": "clawhub-text-to-video-gemini",
+  "name": "Text To Video Gemini",
+  "summary": "generate text prompts into AI generated videos with this skill. Works with TXT, DOCX, PDF, plain text files up to 500MB. content creators use it for generati...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_gemini",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linmillsd7",
+      "features": [
+        "generate text prompts into AI generated videos with this skill",
+        "Works with TXT, DOCX, PDF, plain text files up to 500MB",
+        "content creators use it for generati..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text-to-video-gemini@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208832666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text-to-video-gemini",
+      "url": "https://clawhub.ai/skills/text-to-video-gemini"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-gemini",
+    "url": "https://clawhub.ai/skills/text-to-video-gemini",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-gemini-fb0f4e185655fcb2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text-to-video-gemini@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-text-to-video-gemini-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0a6e2828103f2e084262efbe86a480a7539d2460a073b4c840f09005a21cda5",
+      "artifactSizeBytes": 2492
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T18:53:35.318Z"
+}

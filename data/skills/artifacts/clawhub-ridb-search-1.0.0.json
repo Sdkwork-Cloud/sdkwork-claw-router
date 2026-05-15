@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ridb-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ridb_search",
+  "skill": {
+    "id": 11885,
+    "skillKey": "clawhub-ridb-search",
+    "name": "Recreation Information Database Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ridb-search",
+    "url": "https://clawhub.ai/skills/ridb-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ridb-search-4f7f2bfcb3b37235.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the Recreation Information Database (RIDB) for campgrounds and recreation facilities near a location. Use when finding campgrounds, recreation areas, or federal facilities by location/radius. Supports geocoding (city names) and lat/."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seanrea",
+      "userId": "publishers:seanrea",
+      "displayName": "seanrea",
+      "image": "https://avatars.githubusercontent.com/u/4061929?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1867,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769724536230,
+      "changelog": "Initial release of ridb-search: search for campgrounds and recreation facilities near a location using the Recreation Information Database (RIDB).\n\n- Search by city name (auto-geocoded) or latitude/longitude coordinates.\n- Filter by radius, camping-only, reservable-only, and limit results.\n- Supports both human-readable and JSON outputs.\n- Requires a free RIDB API key for use.\n- Ideal for finding federal campgrounds and recreation areas near a specified location.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7a37f55289052662d36e7b7f318d85eb10baf2d301d23b5c728427b5f2a61a15"
+}

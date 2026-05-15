@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19572,
+  "uuid": "skill-clawhub-server-host-hardening",
+  "skillKey": "clawhub-server-host-hardening",
+  "name": "Host Hardening",
+  "summary": "Harden an OpenClaw Linux server with SSH key-only auth, UFW firewall, fail2ban brute-force protection, and credential permissions. Use when setting up a new...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.server_host_hardening",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ppiankov",
+      "features": [
+        "Harden an OpenClaw Linux server with SSH key-only auth, UFW firewall, fail2ban brute-force prot.",
+        "Use when setting up a new..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/server-host-hardening@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103106369?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "server-host-hardening",
+      "url": "https://clawhub.ai/skills/server-host-hardening"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "server-host-hardening",
+    "url": "https://clawhub.ai/skills/server-host-hardening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/server-host-hardening-0f5b38da1d6a30fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/server-host-hardening@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-server-host-hardening-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8339d0d8101533614558c2eaa062ff7da42ae6d19bcfae3b50b637eefa8a488",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T11:46:25.534Z"
+}

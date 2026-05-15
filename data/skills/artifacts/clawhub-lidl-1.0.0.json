@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lidl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lidl",
+  "skill": {
+    "id": 70359,
+    "skillKey": "clawhub-lidl",
+    "name": "Lidl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lidl",
+    "url": "https://clawhub.ai/skills/lidl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lidl-712739d2658cd5ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "德国折扣零售巨头，拥有12,000+门店，专注有限品类和自有品牌，致力于高效供应链与数字化转型。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776584652195,
+      "changelog": "Initial release of the Lidl skill:\n\n- 提供 Lidl 公司详尽概览，包括历史、业务模式、核心护城河与关键数据\n- 涵盖 Lidl 的全球门店扩张、数字化战略与可持续发展目标\n- 支持查询行业地位、竞争格局、业务结构等内容\n- 适用于投资分析、行业研究及商业模式对比场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd40d535b3af9197ee2719def14e191f1dcddf5dd7cc0c6e597a8fa4bc2e0a91"
+}

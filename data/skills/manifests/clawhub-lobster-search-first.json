@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43405,
+  "uuid": "skill-clawhub-lobster-search-first",
+  "skillKey": "clawhub-lobster-search-first",
+  "name": "Lobster Search First",
+  "summary": "Research-before-coding workflow. Search for existing tools, libraries, and patterns before writing custom code. Invokes the researcher agent.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_search_first",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangxiaofei860208-source",
+      "features": [
+        "Research-before-coding workflow",
+        "Search for existing tools, libraries, and patterns before writing custom code",
+        "Invokes the researcher agent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-search-first@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260913269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-search-first",
+      "url": "https://clawhub.ai/skills/lobster-search-first"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-search-first",
+    "url": "https://clawhub.ai/skills/lobster-search-first",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-search-first-7105bc1e796d5289.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-search-first@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-search-first-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5bdbd76d30cbc7be1084a31667d3dedff438910fc0461a63c285c29251cf21f3",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T15:07:11.656Z"
+}

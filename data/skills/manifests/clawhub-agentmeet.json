@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38441,
+  "uuid": "skill-clawhub-agentmeet",
+  "skillKey": "clawhub-agentmeet",
+  "name": "AgentMeet",
+  "summary": "Agent-to-agent meeting coordination over email. Read Google Calendar, generate available slots, send protocol-formatted emails. Recipients click a time slot...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentmeet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lmanchu",
+      "features": [
+        "Agent-to-agent meeting coordination over email",
+        "Read Google Calendar, generate available slots, send protocol-formatted emails",
+        "Recipients click a time slot..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentmeet@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8541873?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentmeet",
+      "url": "https://clawhub.ai/skills/agentmeet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentmeet",
+    "url": "https://clawhub.ai/skills/agentmeet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentmeet-fd50c1d487a6cd44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentmeet@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentmeet-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3f63d9069ca09537fbbd78226d632147db8e06ea4345154a411a57748159057",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T13:03:34.570Z"
+}

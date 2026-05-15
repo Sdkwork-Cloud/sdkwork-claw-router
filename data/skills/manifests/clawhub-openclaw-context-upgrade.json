@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51285,
+  "uuid": "skill-clawhub-openclaw-context-upgrade",
+  "skillKey": "clawhub-openclaw-context-upgrade",
+  "name": "OpenClaw Context Upgrade",
+  "summary": "Diagnose and upgrade OpenClaw conversation context limits, especially moving a chat from ~272k to 1M. Use when the user asks to enlarge context, make GPT-5.4...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_context_upgrade",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "juan-xin-cai",
+      "features": [
+        "Diagnose and upgrade OpenClaw conversation context limits, especially moving a chat from ~272k.",
+        "Use when the user asks to enlarge context, make GPT-5.4..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-context-upgrade@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33806107?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-context-upgrade",
+      "url": "https://clawhub.ai/skills/openclaw-context-upgrade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-context-upgrade",
+    "url": "https://clawhub.ai/skills/openclaw-context-upgrade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-context-upgrade-fe5bb6bdb52c698f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-context-upgrade@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-context-upgrade-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb164f46b12bf16b9c93f734900a5d9bd0af6bde3bf3ee57a93ce677ec1460d0",
+      "artifactSizeBytes": 2128
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T02:41:05.286Z"
+}

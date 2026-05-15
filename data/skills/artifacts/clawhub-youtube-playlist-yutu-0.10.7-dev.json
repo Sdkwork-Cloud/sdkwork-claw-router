@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-playlist-yutu@0.10.7-dev",
+  "version": "0.10.7-dev",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_playlist_yutu",
+  "skill": {
+    "id": 51341,
+    "skillKey": "clawhub-youtube-playlist-yutu",
+    "name": "YouTube Playlist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-playlist-yutu",
+    "url": "https://clawhub.ai/skills/youtube-playlist-yutu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-playlist-yutu-9806ab1323b976f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage YouTube playlists. Use this skill to list, create, update, or delete playlists. Useful when working with YouTube playlist — provides commands to delet..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openwaygate",
+      "userId": "s17ceqc046w9bhxqw6az7jvb9h83j6hq",
+      "displayName": "OpenWaygate",
+      "image": "https://avatars.githubusercontent.com/u/27287694?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.10.7-dev",
+      "createdAt": 1773497165367,
+      "changelog": "- Added OpenClaw compatibility metadata, including required env vars, bins, config files, and install instructions.\n- Updated skill metadata to include homepage link and emoji.\n- Previous compatibility section has been replaced and expanded with structured OpenClaw metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d2a25003471870013c25d7761ca116906647a5f4e8978b623b9d68862419e93"
+}

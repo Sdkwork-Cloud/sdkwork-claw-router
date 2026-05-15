@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-gatekeeper@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_gatekeeper",
+  "skill": {
+    "id": 62113,
+    "skillKey": "clawhub-skill-gatekeeper",
+    "name": "Skill Gatekeeper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-gatekeeper",
+    "url": "https://clawhub.ai/skills/skill-gatekeeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-gatekeeper-0cc661aab824f0ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "技能門禁系統 - 自動審核、沙盒測試、安全放行"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lanew197894fun-cmd",
+      "userId": "publishers:lanew197894fun-cmd",
+      "displayName": "lanew197894fun-cmd",
+      "image": "https://avatars.githubusercontent.com/u/234675142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773886131322,
+      "changelog": "v2.0 - 自動化安全審核門禁系統",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14f1e142e69ed7e304cd8899ce8f49a6d9565cd7a8e45871f71829bdd0283812"
+}

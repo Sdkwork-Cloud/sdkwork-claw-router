@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/signalloom-transcription@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signalloom_transcription",
+  "skill": {
+    "id": 40050,
+    "skillKey": "clawhub-signalloom-transcription",
+    "name": "Transcription"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signalloom-transcription",
+    "url": "https://clawhub.ai/skills/signalloom-transcription",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signalloom-transcription-e309223f69ed574e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transcribe audio and video files using the Signal Loom AI API. Supports MP3, WAV, M4A, MP4, MOV, and more. Runs locally on Apple Silicon for speed and privacy."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "avale-slai",
+      "userId": "s17582f1qg9k74rdd8q7vn5f65848mzy",
+      "displayName": "AVale-SLAI",
+      "image": "https://avatars.githubusercontent.com/u/270702039?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775605889198,
+      "changelog": "- Maintenance update to install.sh script.\n- No user-facing features or documentation changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2402f0271a72c2a64c410783e5ad74a0e61732cfef029ab2f4dda5cdf85fa4a9"
+}

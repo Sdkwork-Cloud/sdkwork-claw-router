@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-book-match@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_book_match",
+  "skill": {
+    "id": 58084,
+    "skillKey": "clawhub-feishu-book-match",
+    "name": "Feishu Book Match"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-book-match",
+    "url": "https://clawhub.ai/skills/feishu-book-match",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-book-match-aeb7f45d15cf4ea4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fill book match results (匹配结果) and Amazon links (书籍链接) into a Feishu Bitable by querying Amazon with ISBN. Use when asked to match books, fill 匹配结果, 填充书籍链接,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jakliao",
+      "userId": "s172s9acw7jb51ckxjaatmrpgh83gs66",
+      "displayName": "xingxiuye",
+      "image": "https://avatars.githubusercontent.com/u/3507733?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774242864234,
+      "changelog": "Initial release: fill 匹配结果 and 书籍链接 in Feishu Bitable by querying Amazon UK/US with ISBN",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1e639783e4331357b09a7a5aab8909ff49067b70f0e8b0891a8fa511391e11c"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30738,
+  "uuid": "skill-clawhub-english-check",
+  "skillKey": "clawhub-english-check",
+  "name": "Language Coach",
+  "summary": "Multi-language writing coach for grammar, word choice, collocations, and idiom errors. Supports English, Chinese, Spanish, French, and Japanese. Activated vi...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.english_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KaigeGao",
+      "features": [
+        "Multi-language writing coach for grammar, word choice, collocations, and idiom errors",
+        "Supports English, Chinese, Spanish, French, and Japanese",
+        "Activated vi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/english-check@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200879999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "english-check",
+      "url": "https://clawhub.ai/skills/english-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "english-check",
+    "url": "https://clawhub.ai/skills/english-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/english-check-0745112c24bc8550.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/english-check@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-english-check-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fde8b55437cf5474c0f132f084178b93d9d794130c0814ef5b4a33f58b0be69",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T20:24:47.915Z"
+}

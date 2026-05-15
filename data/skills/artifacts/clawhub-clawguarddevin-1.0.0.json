@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawguarddevin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawguarddevin",
+  "skill": {
+    "id": 19536,
+    "skillKey": "clawhub-clawguarddevin",
+    "name": "Devin Floyd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawguarddevin",
+    "url": "https://clawhub.ai/skills/clawguarddevin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawguarddevin-88c68b04200fd7e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security scanner for OpenClaw/Clawdbot skills - detect malicious patterns before installation"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devinfloyd1",
+      "userId": "publishers:devinfloyd1",
+      "displayName": "Devin Floyd",
+      "image": "https://avatars.githubusercontent.com/u/85371107?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 607,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771447875529,
+      "changelog": "Initial release — ClawGuard skill security scanner for OpenClaw/Clawdbot.\n\n- Scans skills for malicious patterns, including reverse shells, data exfiltration, credential harvesting, obfuscation, code execution, and campaign-specific indicators.\n- Supports scanning by skill name, file path, or all installed skills.\n- Outputs results in console, JSON, or Markdown formats.\n- Detailed risk scoring system with guidance based on score.\n- IOC database includes 70+ compromise indicators, with ClawHavoc campaign coverage.\n- Python 3.8+ only, no external dependencies required.\n- Includes test fixture samples for clean and multiple types of malicious skills.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f8961a2244fe2d6778844207236b0063d3ec5c3419d9f3cc4ce6767d811de61e"
+}

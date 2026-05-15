@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12501,
+  "uuid": "skill-clawhub-pi-health",
+  "skillKey": "clawhub-pi-health",
+  "name": "Pi Health",
+  "summary": "Raspberry Pi health monitor. Check CPU temperature, throttling status, voltage levels, memory/disk usage, fan RPM, overclock detection, and power issues. Use when monitoring Pi health, diagnosing thermal throttling, checking for under-volt.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pi_health",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jonas Pfalzgraf",
+      "features": [
+        "Raspberry Pi health monitor",
+        "Check CPU temperature, throttling status, voltage levels, memory/disk usage, fan RPM, overclock.",
+        "Use when monitoring Pi health, diagnosing thermal throttling, checking for under-voltage, or ve."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pi-health@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20913954?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pi-health",
+      "url": "https://clawhub.ai/skills/pi-health"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pi-health",
+    "url": "https://clawhub.ai/skills/pi-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pi-health-aace323367d8d8c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pi-health@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pi-health-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32a60e882a0d4995e4cda3556e6106a679c30fc111c4fae8b7af5a1c598daac2",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T13:06:02.900Z"
+}

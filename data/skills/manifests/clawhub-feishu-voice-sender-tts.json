@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60352,
+  "uuid": "skill-clawhub-feishu-voice-sender-tts",
+  "skillKey": "clawhub-feishu-voice-sender-tts",
+  "name": "飞书语音发送器（TTS） Feishu Voice Sender",
+  "summary": "飞书语音发送器 | Feishu Voice Sender 支持 TTS 语音合成，以及可选的 ASR 语音识别功能。 当用户明确要求发送飞书语音消息时调用此工具，例如：发语音、用语音回复、发送语音消息等。 This skill may be invoked only when the user explicit...",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_voice_sender_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sunxq1017",
+      "features": [
+        "飞书语音发送器 | Feishu Voice Sender 支持 TTS 语音合成，以及可选的 ASR 语音识别功能。 当用户明确要求发送飞书语音消息时调用此工具，例如：发语音、用语音回复、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-voice-sender-tts@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266310142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-voice-sender-tts",
+      "url": "https://clawhub.ai/skills/feishu-voice-sender-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-voice-sender-tts",
+    "url": "https://clawhub.ai/skills/feishu-voice-sender-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-voice-sender-tts-5909a24279160783.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-voice-sender-tts@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-voice-sender-tts-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5e8a678d80ff992557061ebb12444df79f2414de767f45277759fe5ec5b0a62",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:42:33.971Z"
+}

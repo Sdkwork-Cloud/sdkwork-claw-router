@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23594,
+  "uuid": "skill-clawhub-smarthome",
+  "skillKey": "clawhub-smarthome",
+  "name": "smarthome",
+  "summary": "Control global smart home devices via Home Assistant (preferred) and Tuya Smart (fallback) with fuzzy name matching and local device caching.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smarthome",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "airoom-ai",
+      "features": [
+        "Control global smart home devices via Home Assistant (preferred) and Tuya Smart (fallback) with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smarthome@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263522073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smarthome",
+      "url": "https://clawhub.ai/skills/smarthome"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smarthome",
+    "url": "https://clawhub.ai/skills/smarthome",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smarthome-a443135390df8297.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smarthome@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smarthome-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae08f9ede892b12bdaea3eb30ea135c7f56a32b92dad4dbd55b918763f48f9a4",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T15:12:31.730Z"
+}

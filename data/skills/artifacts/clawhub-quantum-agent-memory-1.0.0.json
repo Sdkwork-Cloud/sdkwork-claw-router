@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quantum-agent-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quantum_agent_memory",
+  "skill": {
+    "id": 41987,
+    "skillKey": "clawhub-quantum-agent-memory",
+    "name": "Quantum Agent Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quantum-agent-memory",
+    "url": "https://clawhub.ai/skills/quantum-agent-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quantum-agent-memory-ea391b95d1b4c5f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "QAOA-powered memory optimization for AI agents. Uses quantum computing (Qiskit) to solve three memory management problems: clustering related memories, selec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dustin-a11y",
+      "userId": "s179g7vgvnhzq2bk9r2s3py8m584ccq3",
+      "displayName": "Coinkong",
+      "image": "https://avatars.githubusercontent.com/u/256475402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775570331219,
+      "changelog": "- Initial release of quantum-agent-memory.\n- Implements QAOA-powered memory management for AI agents, replacing classical heuristics for clustering, compaction, and recall.\n- Supports integration with Mem0 and OpenClaw plugins.\n- Allows benchmarking and submission of circuits to IBM Quantum hardware.\n- Provides a FastAPI server for live agent integration and API endpoints.\n- Includes technical references for setup, systemd, and a whitepaper.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db7d95dca2e52dc03e08dcdaa0ac397ca9b59e432f59726a57bed04454ef366a"
+}

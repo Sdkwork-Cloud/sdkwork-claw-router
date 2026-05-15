@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aisa-twitter-research-engage-relay@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_twitter_research_engage_relay",
+  "skill": {
+    "id": 38123,
+    "skillKey": "clawhub-aisa-twitter-research-engage-relay",
+    "name": "AIsa Twitter Research Engage Relay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-twitter-research-engage-relay",
+    "url": "https://clawhub.ai/skills/aisa-twitter-research-engage-relay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-twitter-research-engage-relay-aee179b72b0150b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run Twitter/X likes, follows, replies, and OAuth-gated posting through AIsa. Use when: the user already knows which account, tweet, or campaign to act on and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baofeng-tech",
+      "userId": "s1709d2takksyrxgx2kpxs3rj18433sv",
+      "displayName": "baofeng-tech",
+      "image": "https://avatars.githubusercontent.com/u/273012742?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1777406963549,
+      "changelog": "- Major update: Now focused on Twitter/X likes, follows, replies, and explicit engagement actions.\n- Refined to support workflows where the user already knows the tweet, account, or campaign to target.\n- Removed general-purpose monitoring and search in favor of action/engagement workflows.\n- Documentation updated to clarify approved posting, read-before-engage context, and required explicit approval.\n- License changed from Apache-2.0 to MIT-0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cb9d55d2ca61e1bd160db82c77e6f3fd06fc0e253b2497cbd8358dd2b23fb68"
+}

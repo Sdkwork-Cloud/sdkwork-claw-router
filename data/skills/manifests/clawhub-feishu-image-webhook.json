@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61655,
+  "uuid": "skill-clawhub-feishu-image-webhook",
+  "skillKey": "clawhub-feishu-image-webhook",
+  "name": "飞书群Webhook发送图片",
+  "summary": "上传本地图片到飞书并通过 webhook 发送到群。使用方式：python send_image.py <图片路径>",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_image_webhook",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BING",
+      "features": [
+        "上传本地图片到飞书并通过 webhook 发送到群。使用方式：python send_image.py <图片路径>"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-image-webhook@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6907564?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-image-webhook",
+      "url": "https://clawhub.ai/skills/feishu-image-webhook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-image-webhook",
+    "url": "https://clawhub.ai/skills/feishu-image-webhook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-image-webhook-21aba45da44dc485.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-image-webhook@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-image-webhook-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a80c13a764b749e28bed529181ebf69ddefab1a8c1524361244d443fa677aec5",
+      "artifactSizeBytes": 1860
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T14:50:18.524Z"
+}

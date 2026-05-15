@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18323,
+  "uuid": "skill-clawhub-nini-skill-reviewer",
+  "skillKey": "clawhub-nini-skill-reviewer",
+  "name": "Skill Reviewer",
+  "summary": "Use this skill to audit, review, or validate Claude Code skills (.md files in .claude/commands/). Invoke when user wants to check skill quality, cross-platfo...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nini_skill_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Niracler",
+      "features": [
+        "Use this skill to audit, review, or validate Claude Code skills (.md files in .claude/commands/)",
+        "Invoke when user wants to check skill quality, cross-platfo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nini-skill-reviewer@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24842631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nini-skill-reviewer",
+      "url": "https://clawhub.ai/skills/nini-skill-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nini-skill-reviewer",
+    "url": "https://clawhub.ai/skills/nini-skill-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nini-skill-reviewer-2fc820c418f6212e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nini-skill-reviewer@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nini-skill-reviewer-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:accf5c4a6ef8d1e33a937d97d3030dbb6112f1c07f79bfc3eb45de3855ad1687",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T01:33:26.666Z"
+}

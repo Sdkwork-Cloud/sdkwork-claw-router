@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tomba-contact-intelligence@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tomba_contact_intelligence",
+  "skill": {
+    "id": 31660,
+    "skillKey": "clawhub-tomba-contact-intelligence",
+    "name": "Tomba Contact Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tomba-contact-intelligence",
+    "url": "https://clawhub.ai/skills/tomba-contact-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tomba-contact-intelligence-aff7995be5db7d55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Tomba MCP tools for contact discovery, verification, enrichment, and company research."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "benemohamed",
+      "userId": "s173eqcjmn0px5b84f2tyvpca1842fvt",
+      "displayName": "Mohamed Benr",
+      "image": "https://avatars.githubusercontent.com/u/49129795?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775140213160,
+      "changelog": "Initial release of tomba-contact-intelligence.\n\n- Provides tools for contact discovery, email verification, enrichment, phone lookup, domain and company research using Tomba MCP.\n- Supports tasks like finding key company contacts, validating and enriching emails, building target company lists, and researching domain technology or competitors.\n- Offers clear guidance for workflow best practices and tool selection based on user goals.\n- Outlines expectations for concise, decision-oriented results, with clear distinction between verified and inferred data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50f4c946640e4a3637ec098aa56b53c82ed544bd6f307ed2048889145b0f7d39"
+}

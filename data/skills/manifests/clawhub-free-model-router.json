@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42824,
+  "uuid": "skill-clawhub-free-model-router",
+  "skillKey": "clawhub-free-model-router",
+  "name": "Free Model Router",
+  "summary": "Manages free AI models from OpenRouter for OpenClaw. Automatically ranks models by quality, configures fallbacks for rate-limit handling, and updates opencla...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_model_router",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rick AI",
+      "features": [
+        "Manages free AI models from OpenRouter for OpenClaw",
+        "Automatically ranks models by quality, configures fallbacks for rate-limit handling, and update."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-model-router@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264822655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-model-router",
+      "url": "https://clawhub.ai/skills/free-model-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-model-router",
+    "url": "https://clawhub.ai/skills/free-model-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-model-router-bc3935ebbcb9a780.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-model-router@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-model-router-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ea83b78d437751c4f53a5ab90d8ed9bf8c201080c2a1a5eaca2e20c006c0aeb",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T11:54:36.980Z"
+}

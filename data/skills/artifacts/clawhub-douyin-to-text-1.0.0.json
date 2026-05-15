@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-to-text@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_to_text",
+  "skill": {
+    "id": 67843,
+    "skillKey": "clawhub-douyin-to-text",
+    "name": "douyin-to-text"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-to-text",
+    "url": "https://clawhub.ai/skills/douyin-to-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-to-text-f10e23205b707cad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抖音文案提取。使用场景：(1) 用户要求提取抖音视频文案/字幕 (2) 用户发送抖音分享链接需要转文字 (3) 用户查询积分余额或转写历史。首次使用会自动引导注册。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xwchris",
+      "userId": "s174mf86hts8jg6wepnsbpydjs842333",
+      "displayName": "xwchris",
+      "image": "https://avatars.githubusercontent.com/u/13817144?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 84,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778165480563,
+      "changelog": "Initial release of douyin-to-text (dytext):\n\n- Extract Douyin/TikTok video captions and transcriptions using npx dytext-cli.\n- Supports direct processing of Douyin share links or text containing links.\n- On first use, automatically guides users through registration and API key setup.\n- Allows querying of balance and transcription history from the command line.\n- Supports multiple languages including Simplified Chinese, Traditional Chinese, English, Japanese, and Korean.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d798c0aaede1dd035151eca8bfc5252cac4524369765b60ad366ac6a8567f26c"
+}

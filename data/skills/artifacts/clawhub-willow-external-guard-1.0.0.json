@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/willow-external-guard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.willow_external_guard",
+  "skill": {
+    "id": 53470,
+    "skillKey": "clawhub-willow-external-guard",
+    "name": "Willow External Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "willow-external-guard",
+    "url": "https://clawhub.ai/skills/willow-external-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/willow-external-guard-13f903bda1eba6ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when Willow is about to ingest, summarize, or act on external content — web fetches, jeles inbound messages, corpus archaeology files, or sub-agent outpu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rudi193-cmd",
+      "userId": "s17ekax2rasmfrwg7yp6nm3bk9852hmb",
+      "displayName": "Sean  Campbell",
+      "image": "https://avatars.githubusercontent.com/u/236912655?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777090066630,
+      "changelog": "Initial release of Willow External Guard for protecting Willow’s external content pipeline.\n\n- Scans and wraps all untrusted external content (web, jeles messages, corpus files, sub-agent outputs) before LLM processing.\n- Detects and responds to prompt injection, role hijack, leak attacks, and approval bypass attempts.\n- Applies graded response levels: WARN (log and proceed), CONFIRM (ask user), BLOCK (refuse content).\n- Logs all suspicious or blocked events to a dedicated file without recording sensitive content.\n- Includes robust sandwich defense markers for minimizing LLM execution risk.\n- Designed for use in Linux and Darwin environments, requiring Python 3.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59425869c2d0955206798a0c20c3d708f9e506cce0ccc1cb0e997cd133afaa5c"
+}

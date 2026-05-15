@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-dub@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_dub",
+  "skill": {
+    "id": 32269,
+    "skillKey": "clawhub-video-dub",
+    "name": "Video Dub Clawhub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-dub",
+    "url": "https://clawhub.ai/skills/video-dub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-dub-11b2bdf69c1738ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Windows-first video localization pipeline for downloading, transcribing, translating, dubbing, and retiming YouTube or Bilibili videos."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bzxcup-afk",
+      "userId": "s17a5pb0h3fqqtn9gv9yvdcj3184zamt",
+      "displayName": "bzxcup-afk",
+      "image": "https://avatars.githubusercontent.com/u/271237288?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776310872932,
+      "changelog": "Rebundle: Sync with latest video_pipeline code from D:\\video_pipeline",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a37a213c10fde061bfa5761cdf1fbc2471891fa02beeebb169e6e55938ba0cf"
+}

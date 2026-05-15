@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26238,
+  "uuid": "skill-clawhub-wavelet-worldmodel-skill",
+  "skillKey": "clawhub-wavelet-worldmodel-skill",
+  "name": "WaveletWorldModel",
+  "summary": "Generates a world model representation from state inputs using discrete wavelet transforms (DWT) to capture multi-resolution temporal and spatial features.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wavelet_worldmodel_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Krishna Aditya",
+      "features": [
+        "Generates a world model representation from state inputs using discrete wavelet transforms (DWT."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wavelet-worldmodel-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12190815?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wavelet-worldmodel-skill",
+      "url": "https://clawhub.ai/skills/wavelet-worldmodel-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wavelet-worldmodel-skill",
+    "url": "https://clawhub.ai/skills/wavelet-worldmodel-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wavelet-worldmodel-skill-264ff426a67eaa53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wavelet-worldmodel-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wavelet-worldmodel-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:527effd3e666d9d96866dc74a291873c7ce9a1e9c0ca5f304cc62fbe7a7c8fd7",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T19:04:59.672Z"
+}

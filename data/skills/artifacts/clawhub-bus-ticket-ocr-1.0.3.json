@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bus-ticket-ocr@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bus_ticket_ocr",
+  "skill": {
+    "id": 60262,
+    "skillKey": "clawhub-bus-ticket-ocr",
+    "name": "Bus Ticket Ocr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bus-ticket-ocr",
+    "url": "https://clawhub.ai/skills/bus-ticket-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bus-ticket-ocr-560b75ccd801edb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持识别汽车票票据。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scnet-sugon",
+      "userId": "s17aan1jdk93c5398r3ypc523d83hqys",
+      "displayName": "SCNet-sugon",
+      "image": "https://avatars.githubusercontent.com/u/267813088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776317868116,
+      "changelog": "bus-ticket-ocr v1.0.3\n\n- Added skill.yaml metadata file.\n- SKILL.md now specifies required/optional environment variables, dependencies, and safer configuration steps.\n- Improved documentation: clarified API key handling, installation requirements, and updated sample usage.\n- Enhanced security guidance for API key management in configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ac3e6a1d3f81e6b348d172b0ece65b00a6c85c690b5e7a445cb0d01a1dda6d5"
+}

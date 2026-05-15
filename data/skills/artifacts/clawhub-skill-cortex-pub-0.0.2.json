@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-cortex-pub@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_cortex_pub",
+  "skill": {
+    "id": 16709,
+    "skillKey": "clawhub-skill-cortex-pub",
+    "name": "Skill Cortex Pub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-cortex-pub",
+    "url": "https://clawhub.ai/skills/skill-cortex-pub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-cortex-pub-e1db7b6471595632.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill Cortex is the system's capability cortex. When lacking ability, it autonomously acquires Skills from ClawHub or GitHub, then releases them after use. E..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ankwu001",
+      "userId": "publishers:ankwu001",
+      "displayName": "Ank Wu",
+      "image": "https://avatars.githubusercontent.com/u/221829228?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 718,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1772215478212,
+      "changelog": "- Streamlined and simplified the SKILL.md documentation for clarity and brevity.\n- Removed detailed internal process descriptions, edge case handling, confidence scaling, and pruning specifics.\n- Condensed multi-phase workflow and rules to a high-level overview, focusing on key user-facing steps.\n- Updated file and schema references for consistency.\n- Boundary rules summarized and clarified for easier understanding.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8f5f1c18361c78219d3575ddff8d843e3d390443905f190621942c37434b21bd"
+}

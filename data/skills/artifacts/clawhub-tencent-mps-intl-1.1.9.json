@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencent-mps-intl@1.1.9",
+  "version": "1.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_mps_intl",
+  "skill": {
+    "id": 46012,
+    "skillKey": "clawhub-tencent-mps-intl",
+    "name": "Tencent MPS Intl."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-mps-intl",
+    "url": "https://clawhub.ai/skills/tencent-mps-intl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-mps-intl-d1eb9a669baebcdd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tencent Cloud MPS: [Transcode] transcode/compress/H.264/H.265/AV1/MP4/bitrate/resolution/fps. [Enhance] quality-enhance/restore/super-res/anti-shake/2K/4K. [..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tencent-mpaas-skills",
+      "userId": "s172dymwd68zz4gb81ansjp35x83k7pr",
+      "displayName": "tencent-mpaas-skills",
+      "image": "https://avatars.githubusercontent.com/u/270562592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.9",
+      "createdAt": 1778385593724,
+      "changelog": "**Skill tencent-mps-intl v1.1.9 changelog:**\n\n- Enforces explicit user confirmation before executing any processing command; always restate the generated command and require user approval (\"Proceed?\") before submission (cost-control safeguard).\n- Strongly recommends running high-cost/parameter-uncertain operations with `--dry-run` first to preview expected charges.\n- Adds a new requirements.txt for standardized dependency installation and upgrade instructions.\n- Expands/updates supported processing and AIGC features in the description.\n- Adds a reference to configure budget alerts and monthly caps in Tencent Cloud Billing Center to help prevent overspending.\n- Includes best practices documentation and clarifies dependency management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3adbc1bb905850d07162328c35bb55ccaf38d499045cea866cc47adae8454cfc"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73508,
+  "uuid": "skill-clawhub-five-steps-to-wisdom",
+  "skillKey": "clawhub-five-steps-to-wisdom",
+  "name": "沟通五部曲",
+  "summary": "基于听→想→说→做→看五步骤流程，帮助双方透明沟通、发现偏差、协同提升并构建知识闭环。",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.five_steps_to_wisdom",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarkMa84",
+      "features": [
+        "基于听→想→说→做→看五步骤流程，帮助双方透明沟通、发现偏差、协同提升并构建知识闭环。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/five-steps-to-wisdom@3.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19796416?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "five-steps-to-wisdom",
+      "url": "https://clawhub.ai/skills/five-steps-to-wisdom"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "five-steps-to-wisdom",
+    "url": "https://clawhub.ai/skills/five-steps-to-wisdom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/five-steps-to-wisdom-cd47723902cf514c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/five-steps-to-wisdom@3.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-five-steps-to-wisdom-3.1.0.json",
+      "version": "3.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25311b0a8851522fce36741771009a5c143a739e047e8080becde6fbbf6ea079",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T00:38:48.778Z"
+}

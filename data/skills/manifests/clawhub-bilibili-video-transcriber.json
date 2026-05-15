@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72557,
+  "uuid": "skill-clawhub-bilibili-video-transcriber",
+  "skillKey": "clawhub-bilibili-video-transcriber",
+  "name": "B站视频转录专家",
+  "summary": "【B站字幕获取】专业处理 B 站视频字幕问题，支持语音转文字、字幕下载、内容分析。基于实际 B 站字幕系统错误问题开发，提供完整的解决方案。",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_video_transcriber",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "adolescen-he",
+      "features": [
+        "【B站字幕获取】专业处理 B 站视频字幕问题，支持语音转文字、字幕下载、内容分析。基于实际 B 站字幕系统错误问题开发，提供完整的解决方案。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-video-transcriber@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/193141536?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-video-transcriber",
+      "url": "https://clawhub.ai/skills/bilibili-video-transcriber"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-video-transcriber",
+    "url": "https://clawhub.ai/skills/bilibili-video-transcriber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-video-transcriber-1a721127e529419e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-video-transcriber@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-video-transcriber-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1c0252fe71de985680a6fe4959124fe0b08a70531acb795479bd862747fe5dc",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T06:40:18.521Z"
+}

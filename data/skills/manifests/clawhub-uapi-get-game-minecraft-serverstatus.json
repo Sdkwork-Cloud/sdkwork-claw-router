@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58564,
+  "uuid": "skill-clawhub-uapi-get-game-minecraft-serverstatus",
+  "skillKey": "clawhub-uapi-get-game-minecraft-serverstatus",
+  "name": "UAPI 查询 MC 服务器 接口",
+  "summary": "使用 UAPI 的“查询 MC 服务器”单接口 skill，处理 查询 MC 服务器、MC服务器状态 等请求。 Use when the user wants get game minecraft serverstatus, game minecraft serverstatus, serverstatus, m...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uapi_get_game_minecraft_serverstatus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "速冻饺子",
+      "features": [
+        "使用 UAPI 的“查询 MC 服务器”单接口 skill，处理 查询 MC 服务器、MC服务器状态 等请求。 Use when the user wants get game minecr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uapi-get-game-minecraft-serverstatus@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149454909?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uapi-get-game-minecraft-serverstatus",
+      "url": "https://clawhub.ai/skills/uapi-get-game-minecraft-serverstatus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uapi-get-game-minecraft-serverstatus",
+    "url": "https://clawhub.ai/skills/uapi-get-game-minecraft-serverstatus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uapi-get-game-minecraft-serverstatus-928d56991d0772f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uapi-get-game-minecraft-serverstatus@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uapi-get-game-minecraft-serverstatus-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbc0727697f8adcd3473b6953a0edc639771ce155d9ae5a7d889c1dd30dc873d",
+      "artifactSizeBytes": 2089
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T20:36:05.279Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43816,
+  "uuid": "skill-clawhub-daily-decision-helper",
+  "skillKey": "clawhub-daily-decision-helper",
+  "name": "Daily Decision Helper",
+  "summary": "Analyze daily decisions with pros and cons, alternatives, and provide structured tools and processes for clearer choices.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_decision_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Analyze daily decisions with pros and cons, alternatives, and provide structured tools and proc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-decision-helper@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-decision-helper",
+      "url": "https://clawhub.ai/skills/daily-decision-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-decision-helper",
+    "url": "https://clawhub.ai/skills/daily-decision-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-decision-helper-3c898e344823f1e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-decision-helper@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-decision-helper-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e89e29cb30b7daad2a7af433eabcfc7105bfe5aaa357c540530a8f8fc1f6a582",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T03:35:29.872Z"
+}

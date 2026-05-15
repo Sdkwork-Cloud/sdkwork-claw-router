@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qq-email@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qq_email",
+  "skill": {
+    "id": 16694,
+    "skillKey": "clawhub-qq-email",
+    "name": "Qq Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qq-email",
+    "url": "https://clawhub.ai/skills/qq-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qq-email-72a4d80bdcfaacd9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send and receive emails via QQ Mail SMTP/IMAP. Use when: user wants to send/receive emails, check inbox, read messages, or share documents via email. Require..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chao-nj-cn",
+      "userId": "s17cztbg8s8k1wnaw4rrgy4qzs83kmf3",
+      "displayName": "Chao-NJ-CN",
+      "image": "https://avatars.githubusercontent.com/u/28804354?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 709,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772451213425,
+      "changelog": "- Initial release of the qq-email skill.\n- Send and receive emails via QQ Mail using SMTP/IMAP.\n- Supports sending standard or HTML emails, attachments, and marking emails as read.\n- Includes inbox checking, reading specific emails (with optional attachment saving), and filtering by unread status.\n- Requires QQ email authorization code configuration before use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6d937a94f85ade9cd9a464fa4d213ee76a6764f42058ef080ccf7568870c2fc3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cm-runbook-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cm_runbook_generator",
+  "skill": {
+    "id": 47822,
+    "skillKey": "clawhub-cm-runbook-generator",
+    "name": "Runbook Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cm-runbook-generator",
+    "url": "https://clawhub.ai/skills/cm-runbook-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cm-runbook-generator-ef08b163922f2fab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate operational runbooks from project files. Scans Dockerfiles, docker-compose.yml, systemd units, Makefiles, package.json, and config files to produce..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777639576925,
+      "changelog": "Initial release of Runbook Generator.\n\n- Scans project files (Dockerfile, docker-compose.yml, systemd units, Makefiles, package.json, config files) to extract operational details.\n- Generates structured operational runbooks in Markdown or JSON with build, deploy, start/stop/restart, rollback, troubleshooting, and monitoring procedures.\n- CLI script with flexible output formats and easy integration.\n- Designed for creation of deployment guides, SRE runbooks, and operational documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5aa63498167b29b2de3c702c11275c4adc9f024b2ec1c75528d9cec03872b908"
+}

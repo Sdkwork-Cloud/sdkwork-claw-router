@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16256,
+  "uuid": "skill-clawhub-wip-repos",
+  "skillKey": "clawhub-wip-repos",
+  "name": "Wip Repos",
+  "summary": "Repo manifest reconciler. Makes repos-manifest.json the single source of truth for repo organization.",
+  "version": "1.9.72",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wip_repos",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Parker Todd Brooks",
+      "features": [
+        "Repo manifest reconciler",
+        "Makes repos-manifest.json the single source of truth for repo organization."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wip-repos@1.9.72",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/585456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wip-repos",
+      "url": "https://clawhub.ai/skills/wip-repos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wip-repos",
+    "url": "https://clawhub.ai/skills/wip-repos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wip-repos-933fae10235d9c40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wip-repos@1.9.72",
+      "artifactUrl": "data/skills/artifacts/clawhub-wip-repos-1.9.72.json",
+      "version": "1.9.72",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4d9fb915e85bdac59026c04f7bc1a33acde040b8c21dcb0359dc162f62a8a9c",
+      "artifactSizeBytes": 3451
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T21:25:35.168Z"
+}

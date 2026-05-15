@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47292,
+  "uuid": "skill-clawhub-openclaw-config-safety",
+  "skillKey": "clawhub-openclaw-config-safety",
+  "name": "OpenClaw Config Safety v2",
+  "summary": "Validate, normalize, export, and import openclaw.json configs safely with automatic backups and schema checks before applying changes or upgrades.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_config_safety",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austrian_guy",
+      "features": [
+        "Validate, normalize, export, and import openclaw.json configs safely with automatic backups and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-config-safety@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33156212?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-config-safety",
+      "url": "https://clawhub.ai/skills/openclaw-config-safety"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-config-safety",
+    "url": "https://clawhub.ai/skills/openclaw-config-safety",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-config-safety-9c758e9420d929c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-config-safety@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-config-safety-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14d2637e7d02b7bae6e0e70934477376b4492cc84a324bb9a9b1c8820aee860c",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T18:36:39.082Z"
+}

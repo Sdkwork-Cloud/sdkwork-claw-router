@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/company-onepager@7.1.0",
+  "version": "7.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.company_onepager",
+  "skill": {
+    "id": 63622,
+    "skillKey": "clawhub-company-onepager",
+    "name": "Company Onepager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "company-onepager",
+    "url": "https://clawhub.ai/skills/company-onepager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/company-onepager-6d05f6f1b00aa5ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成上市公司\"一页纸\"调研简报，整合基本信息、市场数据、近10年财务数据表格、近10年月K线图、股东结构、近期新闻。数据优先级：iFinD → Tushare → AkShare + Web Search。每个章节标注数据来源。使用场景：(1) 调研股票/公司信息 (2) 生成股票分析报告 (3) 整合多维数据形..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laigen",
+      "userId": "s174c3qf7rzby58ss8ght6wmyd83hx75",
+      "displayName": "赖根",
+      "image": "https://avatars.githubusercontent.com/u/42961557?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "7.1.0",
+      "createdAt": 1776068018357,
+      "changelog": "v7.1: Add credential metadata declaration (TUSHARE_TOKEN env var, iFinD auth_token config file). Clarify setup instructions in SKILL.md. Fix metadata incoherence issue.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0de316bb555d0f85a023c35acfe8fc2ce187977593b35e067748cb773097bd8"
+}

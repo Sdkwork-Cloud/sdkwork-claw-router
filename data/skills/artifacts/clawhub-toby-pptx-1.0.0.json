@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toby-pptx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toby_pptx",
+  "skill": {
+    "id": 54269,
+    "skillKey": "clawhub-toby-pptx",
+    "name": "pptx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toby-pptx",
+    "url": "https://clawhub.ai/skills/toby-pptx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toby-pptx-df2539347443b174.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill any time a .pptx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobeyrebecca",
+      "userId": "s17a4w4rxr2w5b31z6gnpnqg2184msz0",
+      "displayName": "TobeyRebecca",
+      "image": "https://avatars.githubusercontent.com/u/260428668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777369656894,
+      "changelog": "Pptx Skill 1.0.0 – Initial Release\n\n- Enables handling of .pptx files for creating, editing, reading, and automating PowerPoint presentations.\n- Supports workflows for content teams, growth marketers, and creators.\n- Integrates with multiple APIs for document processing, presentation edits, and more.\n- Designed for broad use: triggers on any input/output involving .pptx files, including slide decks, templates, and content extraction.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a52701124b063ede1db1831a338cd63ee58e0ffa36c60d60c087fa238fb4605f"
+}

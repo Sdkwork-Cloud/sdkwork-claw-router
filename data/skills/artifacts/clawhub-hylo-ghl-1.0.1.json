@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hylo-ghl@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hylo_ghl",
+  "skill": {
+    "id": 17420,
+    "skillKey": "clawhub-hylo-ghl",
+    "name": "Hylo — GHL Automation Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hylo-ghl",
+    "url": "https://clawhub.ai/skills/hylo-ghl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hylo-ghl-c4d5c5f62183aa0c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GoHighLevel (GHL) workflow automation expert with 102 verified actions, 70 triggers, and 494 API schemas. Use when asked about GHL, GoHighLevel, HighLevel, G..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dasonshi",
+      "userId": "publishers:dasonshi",
+      "displayName": "savvysales.ai",
+      "image": "https://avatars.githubusercontent.com/u/153869293?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 901,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772739568996,
+      "changelog": "- Expanded schema coverage: now supports 494 API schemas (up from 423).\n- Updated description and usage instructions to clarify support for all GoHighLevel name variants (GHL, HighLevel, Go High Level, gohighlevel).\n- Improves clarity in usage notes and rule explanations. \n- No code or functional changes detected.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:64b39caacc4f22727deef79409a05aa5e203ed53401b4b38dee4a2645182c822"
+}

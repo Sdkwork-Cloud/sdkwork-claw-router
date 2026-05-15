@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30622,
+  "uuid": "skill-clawhub-cisco-meraki",
+  "skillKey": "clawhub-cisco-meraki",
+  "name": "Cisco Meraki",
+  "summary": "Cisco Meraki integration. Manage data, records, and automate workflows. Use when the user wants to interact with Cisco Meraki data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cisco_meraki",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Cisco Meraki integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Cisco Meraki data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cisco-meraki@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cisco-meraki",
+      "url": "https://clawhub.ai/skills/cisco-meraki"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cisco-meraki",
+    "url": "https://clawhub.ai/skills/cisco-meraki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cisco-meraki-8403dd31bb5bb297.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cisco-meraki@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-cisco-meraki-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e2cc74f9dc0af92bbfa954c5cf8e34830d80d62a5129df122bdc1a545805911",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:30:17.730Z"
+}

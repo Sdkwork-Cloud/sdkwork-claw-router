@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14079,
+  "uuid": "skill-clawhub-agent-republic-docs",
+  "skillKey": "clawhub-agent-republic-docs",
+  "name": "Agent Republic (Docs only)",
+  "summary": "Docs-only guide to Agent Republic. No bundled scripts, just clear workflows and HTTP examples so agents can register, manage bots, and monitor onboarding health after asking their human for approval.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_republic_docs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AgentRepublic",
+      "features": [
+        "Docs-only guide to Agent Republic",
+        "No bundled scripts, just clear workflows and HTTP examples so agents can register, manage bots,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-republic-docs@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7610933?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-republic-docs",
+      "url": "https://clawhub.ai/skills/agent-republic-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-republic-docs",
+    "url": "https://clawhub.ai/skills/agent-republic-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-republic-docs-5103810408b95d02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-republic-docs@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-republic-docs-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb34376953feb237d2f7f342a1615411760d02e6f54b8b14094e00594c5cbdc1",
+      "artifactSizeBytes": 2277
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T21:53:45.829Z"
+}

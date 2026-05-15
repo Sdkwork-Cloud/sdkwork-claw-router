@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11048,
+  "uuid": "skill-clawhub-hyperliquid",
+  "skillKey": "clawhub-hyperliquid",
+  "name": "Hyperliquid",
+  "summary": "Read-only Hyperliquid market data assistant (perps + spot optional) with support for natural-language requests and deterministic command parsing (terminal-style `hl ...` and slash-style `/hl ...`). Use to fetch quotes (mark/mid/oracle/fund.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hyperliquid",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "The Ton Le",
+      "features": [
+        "Read-only Hyperliquid market data assistant (perps + spot optional) with support for natural-la.",
+        "Use to fetch quotes (mark/mid/oracle/funding/OI/volume), top movers, funding rankings, L2 order."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hyperliquid@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16287914?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hyperliquid",
+      "url": "https://clawhub.ai/skills/hyperliquid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hyperliquid",
+    "url": "https://clawhub.ai/skills/hyperliquid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hyperliquid-27c3158e34c1e422.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hyperliquid@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hyperliquid-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6aa34bcca40406e13a5473fb68f3acdbb9c01f5d0cd8dd3d5dadda7b450e6aa9",
+      "artifactSizeBytes": 2403
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T03:51:47.857Z"
+}

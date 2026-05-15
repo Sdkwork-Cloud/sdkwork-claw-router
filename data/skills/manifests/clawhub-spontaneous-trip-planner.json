@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67792,
+  "uuid": "skill-clawhub-spontaneous-trip-planner",
+  "skillKey": "clawhub-spontaneous-trip-planner",
+  "name": "spontaneous trip planner",
+  "summary": "使用飞猪旅行工具生成个性化旅行计划。当用户提到旅行、游玩、景点、规划行程时自动触发。触发后必须先与用户确认：1) 出发地 2) 旅行场景 3) 出行人数 4) 旅行三要素选两个（价格实惠/时间充裕/景点品质），确认后结合当前季节，使用 flyai 工具生成定制化方案",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spontaneous_trip_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenshinan",
+      "features": [
+        "使用飞猪旅行工具生成个性化旅行计划。当用户提到旅行、游玩、景点、规划行程时自动触发。触发后必须先与用户确认：1) 出发地 2) 旅行场景 3) 出行人数 4) 旅行三要素选两个（价格实惠/时."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spontaneous-trip-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34239298?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spontaneous-trip-planner",
+      "url": "https://clawhub.ai/skills/spontaneous-trip-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spontaneous-trip-planner",
+    "url": "https://clawhub.ai/skills/spontaneous-trip-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spontaneous-trip-planner-b028e6883d96607d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spontaneous-trip-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spontaneous-trip-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa2dbe687b14f1878d493f1294d9d3ea75a0032adbeabc813804c82daa746e04",
+      "artifactSizeBytes": 2857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T06:19:41.365Z"
+}

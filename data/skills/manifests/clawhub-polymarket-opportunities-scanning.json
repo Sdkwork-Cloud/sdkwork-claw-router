@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26564,
+  "uuid": "skill-clawhub-polymarket-opportunities-scanning",
+  "skillKey": "clawhub-polymarket-opportunities-scanning",
+  "name": "Polymarket Opportunities Scanning",
+  "summary": "Scan Polymarket prediction markets for book arbitrage opportunities (overbooked/underbooked multi-outcome markets), generate a formatted report, and deliver...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_opportunities_scanning",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "caoooqiii",
+      "features": [
+        "Scan Polymarket prediction markets for book arbitrage opportunities (overbooked/underbooked mul."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-opportunities-scanning@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/430893?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-opportunities-scanning",
+      "url": "https://clawhub.ai/skills/polymarket-opportunities-scanning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-opportunities-scanning",
+    "url": "https://clawhub.ai/skills/polymarket-opportunities-scanning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-opportunities-scanning-fe461e279551a19e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-opportunities-scanning@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-opportunities-scanning-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5adc65a2187178d352acb1e86facf94534c1c327a5cb2450053eb1bf1f713f28",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T08:10:08.466Z"
+}

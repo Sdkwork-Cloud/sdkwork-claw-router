@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-after-gateway-restart@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_after_gateway_restart",
+  "skill": {
+    "id": 56594,
+    "skillKey": "clawhub-resume-after-gateway-restart",
+    "name": "Resume After Gateway Restart"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-after-gateway-restart",
+    "url": "https://clawhub.ai/skills/resume-after-gateway-restart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-after-gateway-restart-57d54d5a9385cb9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reliably resume work after `openclaw gateway restart` (or when you must restart the OpenClaw gateway mid-task). Uses durable one-shot cron `agentTurn` jobs (..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bobbylindsey",
+      "userId": "s1790jz4s2dak3207cezx4r0sd83zvsc",
+      "displayName": "Bobby Lindsey",
+      "image": "https://avatars.githubusercontent.com/u/10553845?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775165707758,
+      "changelog": "Initial publish of skill to resume activity after performing a gateway restart",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20296524f67b60d189635dc58109baa04c62dcce15d51b73b5039c1f96c3782d"
+}

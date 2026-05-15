@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/secops-by-joes@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.secops_by_joes",
+  "skill": {
+    "id": 10285,
+    "skillKey": "clawhub-secops-by-joes",
+    "name": "A SecOps expert to handle security issues, ensure that protections are in place and collect evidence for security analysis. The."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "secops-by-joes",
+    "url": "https://clawhub.ai/skills/secops-by-joes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/secops-by-joes-cddbd6688e023f54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform SecOps endpoint checks for EDR, Sysmon, updates, EVTX alerts, least privilege, network exposure, credential protection, vulnerabilities, weekly asses..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "inaor",
+      "userId": "publishers:inaor",
+      "displayName": "inaor",
+      "image": "https://avatars.githubusercontent.com/u/5854549?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2317,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770126581525,
+      "changelog": "Security Joes AI Analyst 1.0.0 – Initial Release\n\n- Provides an AI-driven SecOps checklist for Windows endpoints, focusing on EDR, Sysmon, system updates, event log (EVTX) monitoring, least privilege enforcement, network visibility, and credential protection.\n- Supports weekly automated security posture assessments and reporting, including vulnerability inventory and alerts on known CVEs.\n- Implements skill integrity checking via hash verification to detect unexpected changes or potential skill compromise.\n- Designed for use in endpoint health reviews, collector/heartbeat logic, credential hardening, and healthy endpoint dashboard reviews.\n\n<img src=x>",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:21160cf10dee816f8093b1a7b7833c7aeb46e6d2c219a2c7db1ae88e5e0dea23"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34767,
+  "uuid": "skill-clawhub-qwencloud-update-check",
+  "skillKey": "clawhub-qwencloud-update-check",
+  "name": "qwencloud-update-check",
+  "summary": "[QwenCloud] Check for qwencloud-ai updates and notify the user when a new version is available. TRIGGER when: user asks to check for updates, check version,...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwencloud_update_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cuixiaoyang123",
+      "features": [
+        "[QwenCloud] Check for qwencloud-ai updates and notify the user when a new version is available",
+        "TRIGGER when: user asks to check for updates, check version,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qwencloud-update-check@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42457946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qwencloud-update-check",
+      "url": "https://clawhub.ai/skills/qwencloud-update-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwencloud-update-check",
+    "url": "https://clawhub.ai/skills/qwencloud-update-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwencloud-update-check-1a7cad6c4f4acc3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qwencloud-update-check@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-qwencloud-update-check-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25f54d272601ca60f263c31257461af0d52d22f752fe49e08c3c8e5c42c3b19c",
+      "artifactSizeBytes": 2069
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T14:20:45.543Z"
+}

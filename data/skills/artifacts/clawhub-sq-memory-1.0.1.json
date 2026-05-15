@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sq-memory@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sq_memory",
+  "skill": {
+    "id": 13893,
+    "skillKey": "clawhub-sq-memory",
+    "name": "SQ Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sq-memory",
+    "url": "https://clawhub.ai/skills/sq-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sq-memory-62cbc1800a21860d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables OpenClaw agents to store, recall, update, list, and forget persistent hierarchical memories across sessions via the SQ protocol."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wbic16",
+      "userId": "publishers:wbic16",
+      "displayName": "wbic16",
+      "image": "https://avatars.githubusercontent.com/u/88622?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770872890771,
+      "changelog": "- Replaced LICENSE.md with LICENSE for standard naming.\n- Updated installation instructions in documentation to use the new `npx clawhub install sq-memory` method.\n- Configuration examples now recommend using `http://localhost:1337` as the default endpoint.\n- Adjusted self-hosted and hosted setup steps in the documentation for clarity.\n- Minor edits for documentation consistency and updated tool/feature naming.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:04f7249daa50ee8ae7a2e827a1a5d480f5236c48025ca21fe2667a9fb442b56d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/organizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.organizer",
+  "skill": {
+    "id": 23711,
+    "skillKey": "clawhub-organizer",
+    "name": "Organizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "organizer",
+    "url": "https://clawhub.ai/skills/organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/organizer-0bf7ab78559a0494.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Organize information, tasks, ideas, projects, notes, files, workflows, and priorities into clear structures that are easier to understand and act on. Use whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agimodel",
+      "userId": "publishers:agimodel",
+      "displayName": "AGImodel",
+      "image": "https://avatars.githubusercontent.com/u/216470445?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 413,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773143981883,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc8eb5271d90b8594ccec667a576008477da3fde0a3c0346acc6fd6ace5611b5"
+}

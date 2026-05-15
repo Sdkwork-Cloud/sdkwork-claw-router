@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9497,
+  "uuid": "skill-clawhub-x402-payment-tron",
+  "skillKey": "clawhub-x402-payment-tron",
+  "name": "x402-payment-tron",
+  "summary": "Pay for x402-enabled Agent endpoints using USDT on TRON",
+  "version": "0.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x402_payment_tron",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "open-aibank",
+      "features": [
+        "Pay for x402-enabled Agent endpoints using USDT on TRON"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x402-payment-tron@0.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195556239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x402-payment-tron",
+      "url": "https://clawhub.ai/skills/x402-payment-tron"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x402-payment-tron",
+    "url": "https://clawhub.ai/skills/x402-payment-tron",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x402-payment-tron-af6c8b72267f1a82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x402-payment-tron@0.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-x402-payment-tron-0.0.4.json",
+      "version": "0.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:438a388ef8fbd2f0998c76add1ffb4bbcdae37630109a81c934cd0c48f15c4e4",
+      "artifactSizeBytes": 1878
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T17:09:54.820Z"
+}

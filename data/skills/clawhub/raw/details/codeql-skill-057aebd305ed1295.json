@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "codeql-skill",
+    "displayName": "codeql-skill",
+    "summary": "CodeQL security audit pipeline: static scanning, SARIF triage, and QL query optimization. Trigger on: CodeQL, .ql, .sarif, taint tracking, source→sink, LGTM,...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 441,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773208768421,
+    "updatedAt": 1778306740334
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773208768421,
+    "changelog": "Initial release of codeql-skill.\n\n- Introduces three independent modes: SCAN (static scanning & SARIF generation), AUDIT (SARIF triage & reporting), and TUNE (QL query optimization).\n- Scripts provided for each mode: `scan.sh` (repo scanning), `audit.py` (SARIF auditing), and `tune.py` (query tuning).\n- Supports multiple languages: Java, JavaScript, Python, and C++.\n- Includes user guidance for custom queries, audit limitations, and query tuning steps.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "k2-l",
+    "userId": "publishers:k2-l",
+    "displayName": "k2-l",
+    "image": "https://avatars.githubusercontent.com/u/219258419?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778306740334
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-free-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_free_video",
+  "skill": {
+    "id": 44325,
+    "skillKey": "clawhub-ai-free-video",
+    "name": "Ai Free Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-free-video",
+    "url": "https://clawhub.ai/skills/ai-free-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-free-video-16c2c465ba6da1a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute smartphone recording into 1080p polished MP4 videos just by typing what you need. Whether it's creating edited videos using free AI tools wit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775941768147,
+      "changelog": "AI Free Video 1.0.0 — Initial Release\n\n- Instantly turn raw smartphone footage into polished 1080p MP4 videos using AI, for free.\n- No subscriptions or export limits; anonymous sign-in offers 100 credits valid for 7 days.\n- Upload, describe edits, and export videos in 1–2 minutes—no timeline or export settings needed.\n- Supports multiple export formats: mp4, mov, avi, webm, mkv, jpg, png, gif, webp, mp3, wav, m4a, aac.\n- Includes error handling and clear user feedback for credits, file support, and session status.\n- All video processing runs on secure cloud GPU servers—no software installation required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8409622627127226d33c589918ca6d422b6d604197369e307225895dcfaac815"
+}

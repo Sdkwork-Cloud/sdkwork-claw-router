@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-fallback@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_fallback",
+  "skill": {
+    "id": 18684,
+    "skillKey": "clawhub-model-fallback",
+    "name": "Multi-model automatic fallback system"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-fallback",
+    "url": "https://clawhub.ai/skills/model-fallback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-fallback-d697a95806cb5548.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-model automatic fallback system. Monitors model availability and automatically falls back to backup models when the primary model fails. Supports MiniM..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "azure5100",
+      "userId": "s174xwgapg883y2t66ef5paj5s83h5w0",
+      "displayName": "azure5100",
+      "image": "https://avatars.githubusercontent.com/u/207019459?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 638,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772176060419,
+      "changelog": "- Initial release of model-fallback skill.\n- Provides automatic fallback across multiple AI models by monitoring availability, response time, and rate limits.\n- Supports MiniMax, Kimi, Zhipu, and OpenAI-compatible APIs.\n- Features configurable fallback chains, health monitoring, logging, and cost optimization for simple versus complex tasks.\n- Includes manual control scripts and integration guidance for OpenClaw agents.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ba69c1d8ef137942a47acf0b189d6fc5e98ca8212aaa5fb01f139b61aa8f6caf"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/transistorfm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transistorfm",
+  "skill": {
+    "id": 21050,
+    "skillKey": "clawhub-transistorfm",
+    "name": "Transistor FM"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transistorfm",
+    "url": "https://clawhub.ai/skills/transistorfm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transistorfm-2fcdecc07dd4f8e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage podcasts on Transistor.fm via their API. Use when creating, publishing, updating, or deleting podcast episodes, uploading audio files, listing shows/e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "christophrumpel",
+      "userId": "s178j5s5s84smqc7zxw7kp8max85t3bz",
+      "displayName": "Christoph Rumpel",
+      "image": "https://avatars.githubusercontent.com/u/1394539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 525,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772093818982,
+      "changelog": "- Initial release of Transistor.fm podcast management skill.\n- Supports listing shows and episodes, uploading audio files, creating and publishing episodes, checking analytics, and managing private podcast subscribers.\n- Guides included for authorization, common workflows, and API usage tips.\n- Requires a Transistor.fm API key for all operations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8a92a8047ea63c40f171bcf2a070f2ff43f65a3b000d73ce6839d3d4658b6aa4"
+}

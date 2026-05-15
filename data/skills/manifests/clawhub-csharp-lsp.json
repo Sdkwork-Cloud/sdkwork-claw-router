@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24151,
+  "uuid": "skill-clawhub-csharp-lsp",
+  "skillKey": "clawhub-csharp-lsp",
+  "name": "C# LSP",
+  "summary": "C# language server providing code intelligence, diagnostics, and navigation for .cs and .csx files. Uses csharp-ls (lightweight Roslyn-based). Requires .sln...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.csharp_lsp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "choi sung ki",
+      "features": [
+        "C# language server providing code intelligence, diagnostics, and navigation for .cs and .csx fi.",
+        "Uses csharp-ls (lightweight Roslyn-based)",
+        "Requires .sln..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/csharp-lsp@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1848621?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "csharp-lsp",
+      "url": "https://clawhub.ai/skills/csharp-lsp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "csharp-lsp",
+    "url": "https://clawhub.ai/skills/csharp-lsp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/csharp-lsp-6a23e1d4f70508f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/csharp-lsp@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-csharp-lsp-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3639bb743852f8133eb99fe8b2dc775d7c63908b5ecc64dc177ad90b0fa2de2",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T02:47:14.832Z"
+}

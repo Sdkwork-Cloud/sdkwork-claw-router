@@ -42,7 +42,7 @@ import { IconSidebarItem } from '../components/IconSidebarItem';
 import { PLAYGROUND_READ_ONLY_REASON, ReadOnlyPlaygroundButton } from '../components/ReadOnlyPlaygroundControl';
 import { getDeterministicWaveBarStyle } from '../components/waveform';
 import { PlaygroundService } from '../playgroundService';
-import type { PlaygroundHistoryItem, PlaygroundMedia, PlaygroundModelOption } from '../playgroundTypes';
+import type { PlaygroundHistoryItem, PlaygroundMedia, PlaygroundModelBucket, PlaygroundModelGroup } from '../playgroundTypes';
 
 export type Modality = 'agent' | 'image' | 'video' | 'music' | 'audio' | 'sfx' | 'package';
 
@@ -70,26 +70,6 @@ const READ_ONLY_SECONDARY_ACTIONS = [
   { key: 'reedit', labelKey: 'playground.preview.action.reedit', icon: Edit3 },
   { key: 'regenerate', labelKey: 'playground.preview.action.regenerate', icon: RefreshCw },
 ] as const;
-
-const modelOptions: Record<Modality, PlaygroundModelOption[]> = {
-  agent: [{ name: 'Agent Runtime', desc: 'Contract pending', ver: 'SDK' }],
-  image: [
-    { name: 'Image 3.0', desc: 'Image generation contract pending', ver: '3.0' },
-    { name: 'Image 2.1', desc: 'Image generation contract pending', ver: '2.1' },
-    { name: 'Image 5.0 Pro', desc: 'Image generation contract pending', ver: '5.0' },
-  ],
-  video: [
-    { name: 'Video 1.5', desc: 'Video generation contract pending', ver: '1.5' },
-    { name: 'Video 1.0', desc: 'Video generation contract pending', ver: '1.0' },
-  ],
-  music: [{ name: 'Music 4.0', desc: 'Music generation contract pending', ver: '4.0' }],
-  audio: [
-    { name: 'Voice Pro', desc: 'Audio generation contract pending', ver: 'Pro' },
-    { name: 'Voice Lite', desc: 'Audio generation contract pending', ver: 'Lite' },
-  ],
-  sfx: [{ name: 'SFX Engine', desc: 'Sound effect generation contract pending', ver: 'V1' }],
-  package: [{ name: 'Package 1.0', desc: 'Package generation contract pending', ver: '1.0' }],
-};
 
 const typeOptions = [
   { id: DEFAULT_FILTER, label: 'All' },
@@ -135,22 +115,56 @@ function getPreviewKind(item: PlaygroundHistoryItem) {
   return 'audio';
 }
 
+function toModelBucket(value: Modality): PlaygroundModelBucket | null {
+  switch (value) {
+    case 'agent':
+      return 'llms';
+    case 'image':
+      return 'images';
+    case 'video':
+      return 'videos';
+    case 'music':
+      return 'music';
+    case 'audio':
+      return 'audios';
+    case 'sfx':
+      return 'sfx';
+    case 'package':
+      return null;
+  }
+}
+
+function readFirstModelId(groups: PlaygroundModelGroup[], bucket: PlaygroundModelBucket): string {
+  for (const group of groups) {
+    const first = group[bucket][0];
+    if (first) {
+      return first.id;
+    }
+  }
+  return '';
+}
+
+function hasSelectedModel(groups: PlaygroundModelGroup[], bucket: PlaygroundModelBucket, selectedModelId: string): boolean {
+  return groups.some((group) => group[bucket].some((model) => model.id === selectedModelId));
+}
+
 export function Playground() {
   const { t } = useTranslation();
   const [modality, setModality] = useState<Modality>('image');
   const [selectedModality, setSelectedModality] = useState<Modality>('image');
   const [previewItem, setPreviewItem] = useState<PlaygroundHistoryItem | null>(null);
   const [agentHistory, setAgentHistory] = useState<PlaygroundHistoryItem[]>([]);
+  const [modelGroups, setModelGroups] = useState<PlaygroundModelGroup[]>([]);
   const activeIndex = previewItem?.activeIndex || 0;
 
   const [selectedModels, setSelectedModels] = useState<Record<Modality, string>>({
-    agent: 'Agent Runtime',
-    image: 'Image 3.0',
-    video: 'Video 1.5',
-    music: 'Music 4.0',
-    audio: 'Voice Pro',
-    sfx: 'SFX Engine',
-    package: 'Package 1.0',
+    agent: '',
+    image: '',
+    video: '',
+    music: '',
+    audio: '',
+    sfx: '',
+    package: '',
   });
   const [showModelMenu, setShowModelMenu] = useState(false);
   const [openFilter, setOpenFilter] = useState<'time' | 'type' | 'action' | null>(null);
@@ -190,6 +204,50 @@ export function Playground() {
       cancelled = true;
     };
   }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    PlaygroundService.fetchModelGroups()
+      .then((groups) => {
+        if (!cancelled) {
+          setModelGroups(groups);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setModelGroups([]);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (modelGroups.length === 0) {
+      return;
+    }
+
+    setSelectedModels((current) => {
+      let next = current;
+      (['agent', 'image', 'video', 'music', 'audio', 'sfx'] as Modality[]).forEach((targetModality) => {
+        const bucket = toModelBucket(targetModality);
+        if (!bucket || hasSelectedModel(modelGroups, bucket, current[targetModality])) {
+          return;
+        }
+        const firstModelId = readFirstModelId(modelGroups, bucket);
+        if (firstModelId) {
+          if (next === current) {
+            next = { ...current };
+          }
+          next[targetModality] = firstModelId;
+        }
+      });
+      return next;
+    });
+  }, [modelGroups]);
 
   const filteredAgentHistory = useMemo(() => {
     let result = agentHistory;
@@ -244,7 +302,7 @@ export function Playground() {
   const previewThumbnails = previewKind === 'video' ? previewItem?.videos : previewItem?.images;
 
   return (
-    <div className="flex h-[100dvh] w-full overflow-hidden bg-[#0a0a0a] pt-[58px]">
+    <div className="theme-aware-dark-surface flex h-[100dvh] w-full overflow-hidden bg-slate-50 dark:bg-[#0a0a0a] pt-[58px]">
       <div className="z-20 flex w-[80px] shrink-0 flex-col items-center gap-4 border-r border-white/5 bg-[#111111] py-4">
         <IconSidebarItem active={modality === 'agent'} icon={<Bot className="h-5 w-5" />} label={t('playground.modality.agent')} onClick={() => setModality('agent')} isPrimary />
         <div className="my-1 h-px w-8 bg-white/10" />
@@ -327,9 +385,11 @@ export function Playground() {
             <AgentView
               agentHistory={filteredAgentHistory}
               setPreviewItem={setPreviewItem}
-              modality={modality}
               selectedModality={selectedModality}
               setSelectedModality={setSelectedModality}
+              modelGroups={modelGroups}
+              selectedModels={selectedModels}
+              setSelectedModel={updateSelectedModel}
             />
           )}
 
@@ -340,10 +400,9 @@ export function Playground() {
                   <ImageView
                     agentHistory={filteredAgentHistory}
                     setPreviewItem={setPreviewItem}
-                    selectedModel={selectedModels.image}
-                    setSelectedModel={updateSelectedModel('image')}
-                    activeSelectedModel={modelOptions.image.find((model) => model.name === selectedModels.image) || modelOptions.image[0]}
-                    activeModelOptions={modelOptions.image}
+                    modelGroups={modelGroups}
+                    selectedModelId={selectedModels.image}
+                    setSelectedModelId={updateSelectedModel('image')}
                     showModelMenu={showModelMenu}
                     setShowModelMenu={setShowModelMenu}
                   />
@@ -352,10 +411,9 @@ export function Playground() {
                   <VideoView
                     agentHistory={filteredAgentHistory}
                     setPreviewItem={setPreviewItem}
-                    selectedModel={selectedModels.video}
-                    setSelectedModel={updateSelectedModel('video')}
-                    activeSelectedModel={modelOptions.video.find((model) => model.name === selectedModels.video) || modelOptions.video[0]}
-                    activeModelOptions={modelOptions.video}
+                    modelGroups={modelGroups}
+                    selectedModelId={selectedModels.video}
+                    setSelectedModelId={updateSelectedModel('video')}
                     showModelMenu={showModelMenu}
                     setShowModelMenu={setShowModelMenu}
                   />
@@ -364,10 +422,9 @@ export function Playground() {
                   <MusicView
                     agentHistory={filteredAgentHistory}
                     setPreviewItem={setPreviewItem}
-                    selectedModel={selectedModels.music}
-                    setSelectedModel={updateSelectedModel('music')}
-                    activeSelectedModel={modelOptions.music.find((model) => model.name === selectedModels.music) || modelOptions.music[0]}
-                    activeModelOptions={modelOptions.music}
+                    modelGroups={modelGroups}
+                    selectedModelId={selectedModels.music}
+                    setSelectedModelId={updateSelectedModel('music')}
                     showModelMenu={showModelMenu}
                     setShowModelMenu={setShowModelMenu}
                   />
@@ -376,10 +433,9 @@ export function Playground() {
                   <AudioView
                     agentHistory={filteredAgentHistory}
                     setPreviewItem={setPreviewItem}
-                    selectedModel={selectedModels.audio}
-                    setSelectedModel={updateSelectedModel('audio')}
-                    activeSelectedModel={modelOptions.audio.find((model) => model.name === selectedModels.audio) || modelOptions.audio[0]}
-                    activeModelOptions={modelOptions.audio}
+                    modelGroups={modelGroups}
+                    selectedModelId={selectedModels.audio}
+                    setSelectedModelId={updateSelectedModel('audio')}
                     showModelMenu={showModelMenu}
                     setShowModelMenu={setShowModelMenu}
                   />
@@ -388,10 +444,9 @@ export function Playground() {
                   <SfxView
                     agentHistory={filteredAgentHistory}
                     setPreviewItem={setPreviewItem}
-                    selectedModel={selectedModels.sfx}
-                    setSelectedModel={updateSelectedModel('sfx')}
-                    activeSelectedModel={modelOptions.sfx.find((model) => model.name === selectedModels.sfx) || modelOptions.sfx[0]}
-                    activeModelOptions={modelOptions.sfx}
+                    modelGroups={modelGroups}
+                    selectedModelId={selectedModels.sfx}
+                    setSelectedModelId={updateSelectedModel('sfx')}
                     showModelMenu={showModelMenu}
                     setShowModelMenu={setShowModelMenu}
                   />

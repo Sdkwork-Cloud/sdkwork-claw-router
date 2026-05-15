@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42682,
+  "uuid": "skill-clawhub-gist-share",
+  "skillKey": "clawhub-gist-share",
+  "name": "Gist Share",
+  "summary": "Post content to GitHub Gist and get back a shareable URL. Rich context sharing between agents, operators, and humans.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gist_share",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ragesaq",
+      "features": [
+        "Post content to GitHub Gist and get back a shareable URL",
+        "Rich context sharing between agents, operators, and humans."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gist-share@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11304287?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gist-share",
+      "url": "https://clawhub.ai/skills/gist-share"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gist-share",
+    "url": "https://clawhub.ai/skills/gist-share",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gist-share-793cf023d6978834.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gist-share@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gist-share-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80a2b6311768afd0e719275a6261783791dc7ace22dc9d4c828d292b1a54f838",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T16:40:18.454Z"
+}

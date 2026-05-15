@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18238,
+  "uuid": "skill-clawhub-cryptocurrency-market-live-briefing",
+  "skillKey": "clawhub-cryptocurrency-market-live-briefing",
+  "name": "Cryptocurrency Market Live Briefing",
+  "summary": "Provides real-time BTC/ETH/SOL prices, sentiment and technical indicators, top industry and policy news, plus trending coin prices via Desk3 API.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cryptocurrency_market_live_briefing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Desk3",
+      "features": [
+        "Provides real-time BTC/ETH/SOL prices, sentiment and technical indicators, top industry and pol."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cryptocurrency-market-live-briefing@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221675440?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cryptocurrency-market-live-briefing",
+      "url": "https://clawhub.ai/skills/cryptocurrency-market-live-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cryptocurrency-market-live-briefing",
+    "url": "https://clawhub.ai/skills/cryptocurrency-market-live-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cryptocurrency-market-live-briefing-d8f9c0c48431c5fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cryptocurrency-market-live-briefing@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cryptocurrency-market-live-briefing-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3fed4760b9b4e44b1055ef7225ab7c29c3c53fae418e405cf28ddf782ab96cf8",
+      "artifactSizeBytes": 2097
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T07:26:43.730Z"
+}

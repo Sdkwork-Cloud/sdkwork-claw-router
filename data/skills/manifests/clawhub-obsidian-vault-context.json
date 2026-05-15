@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33997,
+  "uuid": "skill-clawhub-obsidian-vault-context",
+  "skillKey": "clawhub-obsidian-vault-context",
+  "name": "Obsidian Vault Context",
+  "summary": "Teach Claude to use an Obsidian vault as a shared workspace with persistent state across sessions. Covers vault navigation, orchestration file management, ou...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_vault_context",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tristin E",
+      "features": [
+        "Teach Claude to use an Obsidian vault as a shared workspace with persistent state across sessio.",
+        "Covers vault navigation, orchestration file management, ou..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-vault-context@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146785768?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-vault-context",
+      "url": "https://clawhub.ai/skills/obsidian-vault-context"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-vault-context",
+    "url": "https://clawhub.ai/skills/obsidian-vault-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-vault-context-b9f722bbb0120ed4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-vault-context@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-vault-context-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:922a9786416f969e3ce724eb65037f2550f07c60839d0b0e2a514d0b6340ce10",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T06:42:44.183Z"
+}

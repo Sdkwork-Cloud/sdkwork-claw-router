@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64740,
+  "uuid": "skill-clawhub-fanqie-novel-auto-publish",
+  "skillKey": "clawhub-fanqie-novel-auto-publish",
+  "name": "番茄小说自动创作发布一条龙",
+  "summary": "番茄小说创作发布一条龙技能。整合 open-novel-writing (AI创作) + fanqie-publisher (番茄发布)，从想法一键生成到发布到番茄小说。 完整流程：想法 → 设定 → 大纲 → 生成多章 → 评审修订 → 自动发布到番茄小说。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fanqie_novel_auto_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GaoBai",
+      "features": [
+        "番茄小说创作发布一条龙技能。整合 open-novel-writing (AI创作) + fanqie-publisher (番茄发布)，从想法一键生成到发布到番茄小说。 完整流程：想法 →."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fanqie-novel-auto-publish@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88292533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fanqie-novel-auto-publish",
+      "url": "https://clawhub.ai/skills/fanqie-novel-auto-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fanqie-novel-auto-publish",
+    "url": "https://clawhub.ai/skills/fanqie-novel-auto-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fanqie-novel-auto-publish-8b921ef4e1219103.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fanqie-novel-auto-publish@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-fanqie-novel-auto-publish-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:feaf55e5f54f5f2f936ec9c5bd8e724e98876f87c14e3361370f11b25263b9d8",
+      "artifactSizeBytes": 2215
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T17:34:59.356Z"
+}

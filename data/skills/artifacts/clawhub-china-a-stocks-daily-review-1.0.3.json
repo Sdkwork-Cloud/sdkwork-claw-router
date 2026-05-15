@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-a-stocks-daily-review@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_a_stocks_daily_review",
+  "skill": {
+    "id": 58678,
+    "skillKey": "clawhub-china-a-stocks-daily-review",
+    "name": "A股市场分析报告/china A stocks daily review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-a-stocks-daily-review",
+    "url": "https://clawhub.ai/skills/china-a-stocks-daily-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-a-stocks-daily-review-6999590e5d1538a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股市场行情分析 Skill，支持生成三类报告：盘前市场综述、盘中市场简评、盘后复盘报告。 China A-Share Market Daily Review Skill — generates 3 report types: Pre-Market Briefing, Intraday Snapshot, Pos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kooui",
+      "userId": "s179rjgyhzv1p1esffzv3whf0h83gw0g",
+      "displayName": "kooui",
+      "image": "https://avatars.githubusercontent.com/u/35019576?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 251,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775649792705,
+      "changelog": "Version 2.0.0 — Major update with new report generation modules.\n\n- Added new files: fetch_review_v2.py, render_report.py, and report_template.md to support modular data fetching and report rendering.\n- Improved code structure for generating daily A-share market reports.\n- Enhanced maintainability and separation of data fetching, templating, and report output logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b866e0ad5901a4f7eefa9faa48224f50d93560359d833f79480c8a1a8c2c4c90"
+}

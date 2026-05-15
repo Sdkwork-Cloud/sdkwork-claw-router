@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doro-email-to-calendar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doro_email_to_calendar",
+  "skill": {
+    "id": 18043,
+    "skillKey": "clawhub-doro-email-to-calendar",
+    "name": "Doro Email To Calendar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doro-email-to-calendar",
+    "url": "https://clawhub.ai/skills/doro-email-to-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doro-email-to-calendar-521a0ffeb439e698.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract calendar events and deadlines from emails, present them for user review, and create or update calendar entries with duplicate detection and undo supp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a2mus",
+      "userId": "s172mjwztzdm6s5qzz91sac38d83e7dk",
+      "displayName": "Mus Titou",
+      "image": "https://avatars.githubusercontent.com/u/27785308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 722,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772001753347,
+      "changelog": "doro-email-to-calendar 1.0.0\n\n- Initial release: extract calendar events from emails and create calendar entries.\n- Supports both direct inbox monitoring and forwarded email processing modes.\n- Includes smart onboarding, event tracking, undo support, deadline detection with reminder events, and pending invite reminders.\n- Utilizes wrapper scripts for all operations to ensure tracking and prevent duplicates.\n- Features strict rules to prevent erroneous event creation and manage duplicates reliably.\n- Announces robust configuration and extensibility for multiple calendar/email providers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8efe581e0b9ffe74f187ed2f5b7449ee180ae5a490817f57c3f35a6ae13a4c7a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lx-music-assistant@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lx_music_assistant",
+  "skill": {
+    "id": 65454,
+    "skillKey": "clawhub-lx-music-assistant",
+    "name": "lx-music-assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lx-music-assistant",
+    "url": "https://clawhub.ai/skills/lx-music-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lx-music-assistant-00061df52ecf599a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "控制洛雪音乐助手桌面版播放音乐。 支持：搜索歌曲并唤醒程序、播放/暂停/切换、调节音量、查看播放状态和歌词、收藏歌曲。 使用 Scheme URL 控制操作，HTTP API 查询状态。 每次执行命令后自动查询状态并用 Markdown 表格汇报结果。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ly14sh",
+      "userId": "s174f9qjm1z3wchk2tfx38asgx852qgk",
+      "displayName": "ly14sh",
+      "image": "https://avatars.githubusercontent.com/u/238834311?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1778296692551,
+      "changelog": "- 新增 _meta.json 文件。\n- 在播放控制命令中加入 seek（调整播放进度）指令说明。\n-修复了API被AI臆想造成失效的问题\n- 其他内容保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ef5dd5ffabb44d56610b8c486dba21b8511d2aa70b709f28d136ae11e5d776c"
+}

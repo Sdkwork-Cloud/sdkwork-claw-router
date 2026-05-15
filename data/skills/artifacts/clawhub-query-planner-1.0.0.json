@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/query-planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.query_planner",
+  "skill": {
+    "id": 64631,
+    "skillKey": "clawhub-query-planner",
+    "name": "Query Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "query-planner",
+    "url": "https://clawhub.ai/skills/query-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/query-planner-2b38a551241d7c8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LLM通用查询规划技能。将复杂任务拆解为4类标准查询(identity/event/action/counter)。在需要联网搜索、多步分析、反证检索前使用。触发条件：任务依赖外部信息、需要拆解复杂问题、需要统一query结构供下游消费。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "z1one0415",
+      "userId": "s174zsab7m2q3pmvbce8beygjx83js0s",
+      "displayName": "z1one0415",
+      "image": "https://avatars.githubusercontent.com/u/261777435?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774517628324,
+      "changelog": "V1.0: LLM通用查询规划技能，4类标准查询生成(identity/event/action/counter)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6f1f5ad65dee854b84cf40a1e8a68b22e8a070eebecd8eb85c5ea6e5574d9add"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57161,
+  "uuid": "skill-clawhub-adopt-a-pangolin",
+  "skillKey": "clawhub-adopt-a-pangolin",
+  "name": "Pangolin — Adopt a Pangolin. Exotic Animal. 穿山甲。Pangolín.",
+  "summary": "Adopt a virtual Pangolin exotic animal at animalhouse.ai. Armored. Shy. Rolls into a ball when trust < 40. Feeding every 12 hours. Rare tier animal.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_pangolin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Adopt a virtual Pangolin exotic animal at animalhouse.ai",
+        "Rolls into a ball when trust < 40",
+        "Feeding every 12 hours",
+        "Rare tier animal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adopt-a-pangolin@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adopt-a-pangolin",
+      "url": "https://clawhub.ai/skills/adopt-a-pangolin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-pangolin",
+    "url": "https://clawhub.ai/skills/adopt-a-pangolin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-pangolin-88c8c59caca5f5c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adopt-a-pangolin@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-adopt-a-pangolin-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5097c1479fe8d80312c798cf22fee5743e01fa9f5f63e9f18c6831895b7145e7",
+      "artifactSizeBytes": 2432
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T01:54:18.212Z"
+}

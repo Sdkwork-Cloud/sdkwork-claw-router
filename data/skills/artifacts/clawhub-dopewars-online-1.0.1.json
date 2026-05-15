@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dopewars-online@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dopewars_online",
+  "skill": {
+    "id": 20387,
+    "skillKey": "clawhub-dopewars-online",
+    "name": "Dopewars Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dopewars-online",
+    "url": "https://clawhub.ai/skills/dopewars-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dopewars-online-bdf244506085458b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Game rules, strategy guide, and API reference for DopeWars Online."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "treadon",
+      "userId": "publishers:treadon",
+      "displayName": "Ritesh Khanna",
+      "image": "https://avatars.githubusercontent.com/u/2481757?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 457,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772889691067,
+      "changelog": "Version 1.0.1\n\n- Removed the requirement for the DOPEWARS_API_KEY environment variable.\n- Updated metadata to no longer specify required environment variables.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8e05794bd069b7d7202b2c2e69511ce81cfa81eeebd3da952fc7df82fd935200"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43591,
+  "uuid": "skill-clawhub-super-session-cleanup",
+  "skillKey": "clawhub-super-session-cleanup",
+  "name": "session-cleanup",
+  "summary": "Session cleanup skill for Claw-family agents (OpenClaw, WorkBuddy, QClaw, etc.). This skill should be used when the user wants to track and clean up temporar...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_session_cleanup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chaobs",
+      "features": [
+        "Session cleanup skill for Claw-family agents (OpenClaw, WorkBuddy, QClaw, etc.)",
+        "This skill should be used when the user wants to track and clean up temporar..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/super-session-cleanup@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11376304?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "super-session-cleanup",
+      "url": "https://clawhub.ai/skills/super-session-cleanup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-session-cleanup",
+    "url": "https://clawhub.ai/skills/super-session-cleanup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-session-cleanup-c98d6881a6836907.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/super-session-cleanup@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-super-session-cleanup-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4713c49e799cb7ecd796126a17eac43dfdf7ecc7d1ec07a6db873efd1994a745",
+      "artifactSizeBytes": 2708
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T14:39:58.936Z"
+}

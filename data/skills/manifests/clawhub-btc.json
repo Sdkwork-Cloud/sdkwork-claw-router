@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53086,
+  "uuid": "skill-clawhub-btc",
+  "skillKey": "clawhub-btc",
+  "name": "BTC Bot | Give your agent a wallet or credit card",
+  "summary": "Is your claw a shopaholic? Provide payment wallets and strict controls.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.btc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codejika",
+      "features": [
+        "Is your claw a shopaholic? Provide payment wallets and strict controls."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/btc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36914612?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "btc",
+      "url": "https://clawhub.ai/skills/btc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "btc",
+    "url": "https://clawhub.ai/skills/btc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/btc-e40605e6a26268a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/btc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-btc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0a4d75a2209d2cf2e3a3e6b0653cab1b42e386249eb35d306a1ada9cb6d5821",
+      "artifactSizeBytes": 2270
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T01:01:12.027Z"
+}

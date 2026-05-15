@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/museum-tour@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.museum_tour",
+  "skill": {
+    "id": 53903,
+    "skillKey": "clawhub-museum-tour",
+    "name": "Museum Tour"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "museum-tour",
+    "url": "https://clawhub.ai/skills/museum-tour",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/museum-tour-3f51d1bc0049e9e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find museums, art galleries, and exhibitions in any city. Many are free but require advance reservation — get ticket links and visiting tips. Also supports:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775974836705,
+      "changelog": "- Major update: strict CLI-executor rules for all responses; no travel data from knowledge base.\n- All queries must be answered with `flyai` CLI output, with mandatory `[Book]({detailUrl})` links included.\n- Expanded scope: now supports booking for flights, hotels, trains, attractions, visas, insurance, car rentals, and itinerary planning via Fliggy.\n- New, detailed step-by-step workflow for parameter collection, CLI command execution, and structured Markdown output.\n- Added critical output validation: any CLI failure or missing booking link halts response and prompts user for manual installation.\n- Full multilingual support (Chinese/English) and explicit category mapping for museums, galleries, and exhibitions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7bba0aa17fc9607820469228c4d589df2640bf385b7af63f767dc779aa0f25a1"
+}

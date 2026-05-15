@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21785,
+  "uuid": "skill-clawhub-clawreceipt",
+  "skillKey": "clawhub-clawreceipt",
+  "name": "ClawReceipt",
+  "summary": "Use this skill to extract receipt information, record expenses, track budgets, and manage financial receipts using the ClawReceipt CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawreceipt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sakurako",
+      "features": [
+        "Use this skill to extract receipt information, record expenses, track budgets, and manage finan."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawreceipt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104028329?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawreceipt",
+      "url": "https://clawhub.ai/skills/clawreceipt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawreceipt",
+    "url": "https://clawhub.ai/skills/clawreceipt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawreceipt-00483b9223093030.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawreceipt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawreceipt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b3f51dfde239f34d29c566ab621dd814f21e0b8ed724097386cbcd50531129c",
+      "artifactSizeBytes": 2279
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T03:58:35.608Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/love-text@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.love_text",
+  "skill": {
+    "id": 27696,
+    "skillKey": "clawhub-love-text",
+    "name": "Love Text Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "love-text",
+    "url": "https://clawhub.ai/skills/love-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/love-text-efe92651327e4214.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Love Text is the definitive AI love messaging skill for people who want better love words, stronger love messages, and more natural romantic texting. It help..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imwyvern",
+      "userId": "s17as2pe33fqm26ag8dqnwe0gx83gd3q",
+      "displayName": "wes",
+      "image": "https://avatars.githubusercontent.com/u/1765672?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 323,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775320521643,
+      "changelog": "- Added a \"Love Messaging Framework\" section to guide tone, stage, and user context for every message.\n- Expanded the description to emphasize versatility for all relationship stages and types of love.\n- Clarified role: not just a text generator, but the user's go-to messaging skill for real romantic moments.\n- Provided example follow-up questions for missing context, making messages more personalized.\n- Refined language to highlight authenticity and user voice in message creation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0fc394d6c5d707bef1d77a51c62069c0569d41c2098494e7ed8f22576484ad7a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-browser-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser_0",
+  "skill": {
+    "id": 16156,
+    "skillKey": "clawhub-agent-browser-0",
+    "name": "Agent Browser 0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser-0",
+    "url": "https://clawhub.ai/skills/agent-browser-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser-0-0c43254bd342ad99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents to navigate, click, type, and snapshot pages via structured co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kdegeek",
+      "userId": "publishers:kdegeek",
+      "displayName": "darthn8er",
+      "image": "https://avatars.githubusercontent.com/u/130706262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 801,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771807515588,
+      "changelog": "Initial public release of Agent Browser.\n\n- Fast Rust-based CLI tool for headless browser automation, with Node.js fallback.\n- Enables AI agents and scripts to navigate, interact, and extract data from web pages.\n- Supports structured commands for navigation, clicking, typing, snapshotting, and more.\n- Offers advanced features: screenshots, video recording, PDF export, network interception, and session state management.\n- Includes semantic element locators and rich support for cookies, storage, tabs, windows, and frames.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f43c5bf3c190e25974968ff47acbb3e77c4cfb3f12454d84e166118d3824f46c"
+}

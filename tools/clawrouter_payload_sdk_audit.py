@@ -23,8 +23,8 @@ class ClawRouterPayloadSdkAudit:
         "backend": "clawrouter-backend-openapi.json",
     }
     SDK_DIRECTORIES = {
-        "app": "clawrouter-app-sdk",
-        "backend": "clawrouter-backend-sdk",
+        "app": "clawrouter-app-sdk/clawrouter-app-sdk-typescript",
+        "backend": "clawrouter-backend-sdk/clawrouter-backend-sdk-typescript",
     }
     METHODS_WITH_JSON_BODY = {"POST", "PUT", "PATCH"}
     METHOD_VERB_PARTS = {"get", "fetch", "list", "create", "update", "patch", "delete", "enable", "disable", "publish", "offline", "head", "options", "trace"}
@@ -32,6 +32,7 @@ class ClawRouterPayloadSdkAudit:
     RESERVED_GROUP_SEGMENTS_AFTER_PREFIX = {"management", "manage", "admin", "internal"}
     ENTITY_RESPONSE_PROPERTIES = frozenset({"item", "key", "batch", "codes", "vendors", "models"})
     STABLE_ID_FIELDS = ("id", "vendorId", "couponId", "batchId")
+    SEARCH_TEXT_ALIASES = frozenset({"keyword", "search", "search_query", "searchQuery"})
 
     def __init__(
         self,
@@ -106,15 +107,32 @@ class ClawRouterPayloadSdkAudit:
         sdk_types_dir = self.sdk_root / self.SDK_DIRECTORIES[surface] / "src" / "types"
         sdk_type_index = self._safe_read_text(sdk_types_dir / "index.ts")
 
+        if operation_spec is not None and sdk_method_records:
+            messages.extend(
+                self._check_sdk_query_serialization(surface, operation_id, operation_spec, sdk_method_records)
+            )
+
         request_schema = self._payload_schema_name(operation.get("request_schema"))
-        if request_schema is not None:
+        explicit_no_body = self._explicit_no_body_operation(operation, method)
+        if explicit_no_body:
+            if operation_spec is not None and "requestBody" in operation_spec:
+                messages.append(f"{surface} {operation_id} OpenAPI operation must not declare requestBody for explicit no-body operation")
+            if sdk_method_records:
+                if any(self._signature_has_body_parameter(signature) for signature, _ in sdk_method_records):
+                    messages.append(f"{surface} {operation_id} SDK method must not accept body parameter for explicit no-body operation")
+                if any(self._method_passes_body_argument(body) for _, body in sdk_method_records):
+                    messages.append(f"{surface} {operation_id} SDK client call must not send body for explicit no-body operation")
+        elif request_schema is not None:
             expected_ref = f"#/components/schemas/{request_schema}"
             if request_schema not in schemas:
                 messages.append(f"{surface} {operation_id} request schema component is missing: {request_schema}")
             if operation_spec is None:
                 messages.append(f"{surface} {operation_id} is missing from OpenAPI path {self._string(operation.get('api_path'))} {method}")
             elif method in self.METHODS_WITH_JSON_BODY:
-                request_ref = self._request_body_schema_ref(operation_spec)
+                request_ref = self._request_body_schema_ref(
+                    operation_spec,
+                    self._request_content_type(operation),
+                )
                 if request_ref != expected_ref:
                     messages.append(f"{surface} {operation_id} requestBody must reference {expected_ref}")
                 expected_required = self._expected_request_body_required(operation)
@@ -132,10 +150,30 @@ class ClawRouterPayloadSdkAudit:
                     schemas.get(request_schema),
                 )
             )
+            messages.extend(
+                self._check_request_schema_search_text_names(
+                    surface,
+                    operation_id,
+                    request_schema,
+                    schemas.get(request_schema),
+                )
+            )
+            messages.extend(
+                self._check_sdk_request_type_search_text_names(
+                    surface,
+                    operation_id,
+                    request_schema,
+                    sdk_types_dir,
+                )
+            )
             if not sdk_method_records:
                 messages.append(f"{surface} {operation_id} SDK method is missing")
             else:
-                expected_body = f"body: {request_schema}" if self._expected_request_body_required(operation) else f"body?: {request_schema}"
+                expected_body = (
+                    f"body: {request_schema}"
+                    if self._expected_request_body_required(operation)
+                    else f"body?: {request_schema}"
+                )
                 if not any(expected_body in signature for signature, _ in sdk_method_records):
                     messages.append(f"{surface} {operation_id} SDK method must accept {expected_body}")
 
@@ -162,22 +200,23 @@ class ClawRouterPayloadSdkAudit:
             else:
                 data_schema = result_component.get("properties", {}).get("data") if isinstance(result_component.get("properties"), dict) else None
                 expected_data_schema = {"$ref": f"#/components/schemas/{response_schema}"}
-                if data_schema != expected_data_schema:
+                if not self._schema_matches_ref(data_schema, expected_data_schema["$ref"]):
                     messages.append(f"{surface} {operation_id} result data schema must be {expected_data_schema}")
             if operation_spec is None:
                 messages.append(f"{surface} {operation_id} is missing from OpenAPI path {self._string(operation.get('api_path'))} {method}")
             elif self._success_response_schema_ref(operation_spec) != result_ref:
                 messages.append(f"{surface} {operation_id} 200 response must reference {result_ref}")
-            messages.extend(
-                self._check_sdk_type(
-                    surface,
-                    operation_id,
-                    response_schema,
-                    sdk_types_dir,
-                    sdk_type_index,
-                    response_component,
+            if response_schema != "NoData":
+                messages.extend(
+                    self._check_sdk_type(
+                        surface,
+                        operation_id,
+                        response_schema,
+                        sdk_types_dir,
+                        sdk_type_index,
+                        response_component,
+                    )
                 )
-            )
             messages.extend(
                 self._check_sdk_type(
                     surface,
@@ -207,6 +246,55 @@ class ClawRouterPayloadSdkAudit:
                     messages.append(f"{surface} {operation_id} SDK client call must use {result_schema}")
 
         return messages
+
+    def _check_request_schema_search_text_names(
+        self,
+        surface: str,
+        operation_id: str,
+        request_schema_name: str,
+        request_schema: Any,
+    ) -> list[str]:
+        if not isinstance(request_schema, dict):
+            return []
+        properties = request_schema.get("properties")
+        if not isinstance(properties, dict):
+            return []
+        messages: list[str] = []
+        for property_name, property_schema in properties.items():
+            if self._is_search_text_property_alias(property_name, property_schema):
+                messages.append(
+                    f"{surface} {operation_id} request schema {request_schema_name}.{property_name} must use q for search text"
+                )
+        return messages
+
+    def _check_sdk_request_type_search_text_names(
+        self,
+        surface: str,
+        operation_id: str,
+        request_schema_name: str,
+        sdk_types_dir: Path,
+    ) -> list[str]:
+        type_file = sdk_types_dir / self._type_file_name(request_schema_name)
+        source = self._safe_read_text(type_file)
+        if source is None:
+            return []
+        messages: list[str] = []
+        for property_name in sorted(self.SEARCH_TEXT_ALIASES):
+            if re.search(rf"^\s*{re.escape(property_name)}\??\s*:", source, flags=re.MULTILINE):
+                messages.append(
+                    f"{surface} {operation_id} SDK request type {request_schema_name}.{property_name} must use q for search text"
+                )
+        return messages
+
+    def _is_search_text_property_alias(self, property_name: Any, property_schema: Any) -> bool:
+        if property_name not in self.SEARCH_TEXT_ALIASES:
+            return False
+        if not isinstance(property_schema, dict):
+            return False
+        schema_type = property_schema.get("type")
+        if isinstance(schema_type, list):
+            return "string" in schema_type
+        return schema_type in {None, "string"}
 
     def _check_sdk_response_entity_types(
         self,
@@ -249,7 +337,7 @@ class ClawRouterPayloadSdkAudit:
         entity_schema = self._entity_payload_schema(schema)
         if entity_schema is None:
             return None
-        ref = self._string(entity_schema.get("$ref"))
+        ref = self._schema_ref(entity_schema)
         if ref.startswith("#/components/schemas/"):
             return ref.rsplit("/", 1)[-1]
         for name, candidate in schemas.items():
@@ -300,7 +388,7 @@ class ClawRouterPayloadSdkAudit:
         return schema
 
     def _resolve_schema(self, schema: dict[str, Any], schemas: dict[str, Any]) -> dict[str, Any]:
-        ref = self._string(schema.get("$ref"))
+        ref = self._schema_ref(schema)
         if ref.startswith("#/components/schemas/"):
             name = ref.rsplit("/", 1)[-1]
             resolved = schemas.get(name)
@@ -366,18 +454,21 @@ class ClawRouterPayloadSdkAudit:
             return {}
         return {name: schema for name, schema in schemas.items() if isinstance(name, str)}
 
-    def _request_body_schema_ref(self, operation_spec: dict[str, Any]) -> str:
+    def _request_body_schema_ref(self, operation_spec: dict[str, Any], content_type: str = "application/json") -> str:
         request_body = operation_spec.get("requestBody", {})
         if not isinstance(request_body, dict):
             return ""
         content = request_body.get("content", {})
         if not isinstance(content, dict):
             return ""
-        json_content = content.get("application/json", {})
-        if not isinstance(json_content, dict):
+        media_content = content.get(content_type or "application/json")
+        if not isinstance(media_content, dict):
             return ""
-        schema = json_content.get("schema", {})
+        schema = media_content.get("schema", {})
         return self._string(schema.get("$ref")) if isinstance(schema, dict) else ""
+
+    def _request_content_type(self, operation: dict[str, Any]) -> str:
+        return self._string(operation.get("request_content_type")) or "application/json"
 
     def _request_body_required(self, operation_spec: dict[str, Any]) -> bool | None:
         request_body = operation_spec.get("requestBody", {})
@@ -424,19 +515,93 @@ class ClawRouterPayloadSdkAudit:
         if not type_file.exists() or not type_file.is_file():
             messages.append(f"{surface} {operation_id} SDK type file is missing: {type_file_name}")
         elif not self._sdk_type_file_declares_type(type_name, source, schema):
-            messages.append(f"{surface} {operation_id} SDK type file must declare interface {type_name}: {type_file_name}")
+            declaration = "type alias" if self._schema_uses_type_alias(schema) else "interface"
+            messages.append(f"{surface} {operation_id} SDK type file must declare {declaration} {type_name}: {type_file_name}")
         if sdk_type_index is None:
             messages.append(f"{surface} {operation_id} SDK types index is missing")
         elif f"{{ {type_name} }}" not in sdk_type_index or f"'./{type_file_name.removesuffix('.ts')}'" not in sdk_type_index:
             messages.append(f"{surface} {operation_id} SDK types index must export {type_name}")
         return messages
 
+    def _check_sdk_query_serialization(
+        self,
+        surface: str,
+        operation_id: str,
+        operation_spec: dict[str, Any],
+        sdk_method_records: list[tuple[str, str]],
+    ) -> list[str]:
+        expected_names = self._operation_query_parameter_names(operation_spec)
+        if not expected_names:
+            return []
+
+        serialized_names: set[str] = set()
+        for _, body in sdk_method_records:
+            serialized_names.update(self._sdk_serialized_query_parameter_names(body))
+
+        messages: list[str] = []
+        for name in expected_names:
+            if name not in serialized_names:
+                messages.append(
+                    f"{surface} {operation_id} SDK query serialization must include OpenAPI query parameter {name}"
+                )
+        return messages
+
+    def _operation_query_parameter_names(self, operation_spec: dict[str, Any]) -> list[str]:
+        parameters = operation_spec.get("parameters")
+        if not isinstance(parameters, list):
+            return []
+        names: list[str] = []
+        seen: set[str] = set()
+        for parameter in parameters:
+            if not isinstance(parameter, dict) or parameter.get("in") != "query":
+                continue
+            name = parameter.get("name")
+            if isinstance(name, str) and name and name not in seen:
+                names.append(name)
+                seen.add(name)
+        return names
+
+    def _sdk_serialized_query_parameter_names(self, body: str) -> set[str]:
+        return {
+            match.group(1)
+            for match in re.finditer(r"\bname\s*:\s*['\"]([^'\"]+)['\"]", body)
+        }
+
     def _sdk_type_file_declares_type(self, type_name: str, source: str | None, schema: Any | None) -> bool:
         if source is None:
             return False
-        if isinstance(schema, dict) and schema.get("type") == "array":
+        if self._schema_uses_type_alias(schema):
             return re.search(rf"\bexport\s+type\s+{re.escape(type_name)}\s*=", source) is not None
         return f"interface {type_name}" in source
+
+    def _schema_uses_type_alias(self, schema: Any | None) -> bool:
+        if not isinstance(schema, dict):
+            return False
+        if self._is_closed_empty_object_schema(schema):
+            return True
+        return schema.get("type") in {"array", "boolean", "integer", "number", "string"}
+
+    def _is_closed_empty_object_schema(self, schema: dict[str, Any]) -> bool:
+        properties = schema.get("properties")
+        return (
+            schema.get("type") == "object"
+            and schema.get("additionalProperties") is False
+            and isinstance(properties, dict)
+            and not properties
+        )
+
+    def _explicit_no_body_operation(self, operation: dict[str, Any], method: str) -> bool:
+        return (
+            method in self.METHODS_WITH_JSON_BODY
+            and operation.get("request_body_required") is False
+            and self._payload_schema_name(operation.get("request_schema")) is None
+        )
+
+    def _signature_has_body_parameter(self, signature: str) -> bool:
+        return re.search(r"[\(,]\s*body\??\s*:", signature) is not None
+
+    def _method_passes_body_argument(self, body: str) -> bool:
+        return re.search(r"\bthis\.client\.(?:post|put|patch)\s*<[^>]+>\s*\([^,\n]+,\s*body\b", body) is not None
 
     def _sdk_method_records(
         self,
@@ -458,6 +623,10 @@ class ClawRouterPayloadSdkAudit:
                     records.append((signature, body))
                     if self._method_body_matches_path(body, operation):
                         path_records.append((signature, body))
+            if not path_records:
+                for signature, body in self._all_method_records(source):
+                    if self._method_body_matches_path(body, operation):
+                        path_records.append((signature, body))
         return path_records or records
 
     def _method_records(self, source: str, method_name: str) -> list[tuple[str, str]]:
@@ -465,6 +634,17 @@ class ClawRouterPayloadSdkAudit:
             rf"async\s+{re.escape(method_name)}\s*\([^)]*\)\s*:\s*Promise<[^>]+>\s*\{{",
             re.S,
         )
+        records: list[tuple[str, str]] = []
+        for match in pattern.finditer(source):
+            body_start = match.end()
+            body_end = self._matching_brace_index(source, match.end() - 1)
+            if body_end is None:
+                continue
+            records.append((match.group(0).split("{", 1)[0].strip(), source[body_start:body_end]))
+        return records
+
+    def _all_method_records(self, source: str) -> list[tuple[str, str]]:
+        pattern = re.compile(r"async\s+[A-Za-z_][A-Za-z0-9_]*\s*\([^)]*\)\s*:\s*Promise<[^>]+>\s*\{", re.S)
         records: list[tuple[str, str]] = []
         for match in pattern.finditer(source):
             body_start = match.end()
@@ -522,8 +702,13 @@ class ClawRouterPayloadSdkAudit:
         api_path = self._string(operation.get("api_path"))
         prefix = "/app/v3/api" if operation.get("api_surface") == "app" else "/backend/v3/api"
         relative_path = api_path[len(prefix) :] if api_path.startswith(prefix) else api_path
-        if not relative_path or "{" in relative_path:
+        if not relative_path:
             return False
+        if "{" in relative_path:
+            static_parts = [part for part in re.split(r"\{[^}]+\}", relative_path) if part]
+            if not static_parts:
+                return False
+            return re.search(".*?".join(re.escape(part) for part in static_parts), body, re.S) is not None
         return f"`{relative_path}`" in body or f"'{relative_path}'" in body or f'"{relative_path}"' in body
 
     def _sdk_method_name(self, operation_id: str, tag: str) -> str:
@@ -552,6 +737,9 @@ class ClawRouterPayloadSdkAudit:
             operation_id,
             self._sdk_method_name(operation_id, self._sdk_group_tag(operation)),
         ]
+        operation_parts = self._identifier_parts(operation_id)
+        if operation_parts:
+            candidates.append(operation_parts[-1])
         path_method = self._sdk_path_resource_method_name(operation_id, operation)
         if path_method:
             candidates.append(path_method)
@@ -652,27 +840,21 @@ class ClawRouterPayloadSdkAudit:
         return parts[0] + "".join(part[:1].upper() + part[1:] for part in parts[1:])
 
     def _operation_ids(self, operations: list[dict[str, Any]]) -> dict[int, str]:
-        counts: dict[str, int] = {}
-        for operation in operations:
-            base = self._safe_operation_id(self._string(operation.get("operation")) or "operation")
-            counts[base] = counts.get(base, 0) + 1
-
         result: dict[int, str] = {}
         used: set[str] = set()
         for operation in operations:
-            base = self._safe_operation_id(self._string(operation.get("operation")) or "operation")
-            if counts[base] > 1:
-                candidate = self._safe_operation_id(f"{self._string(operation.get('tag'))}_{base}")
-            else:
-                candidate = base
-            unique = candidate
-            suffix = 2
-            while unique in used:
-                unique = f"{candidate}{suffix}"
-                suffix += 1
-            used.add(unique)
-            result[id(operation)] = unique
+            base = self._operation_id_base(operation)
+            if base in used:
+                raise ValueError(f"duplicate OpenAPI operationId: {base}")
+            used.add(base)
+            result[id(operation)] = base
         return result
+
+    def _operation_id_base(self, operation: dict[str, Any]) -> str:
+        raw = self._string(operation.get("operation_id")) or self._string(operation.get("operation")) or "operation"
+        if re.match(r"^[a-z][A-Za-z0-9]*(?:\.[a-z][A-Za-z0-9]*)+$", raw):
+            return raw
+        raise ValueError(f"OpenAPI operation_id must use dotted lowerCamel segments: {raw}")
 
     def _safe_operation_id(self, value: str) -> str:
         parts = [part for part in re.split(r"[^A-Za-z0-9]+", value) if part]
@@ -688,7 +870,21 @@ class ClawRouterPayloadSdkAudit:
     def _operation_result_component_name(self, operation_id: str) -> str:
         if not operation_id:
             return "OperationResult"
-        return operation_id[0].upper() + operation_id[1:] + "Result"
+        safe = self._component_safe_operation_name(operation_id)
+        return safe[0].upper() + safe[1:] + "Result"
+
+    def _component_safe_operation_name(self, operation_id: str) -> str:
+        if re.match(r"^[A-Za-z_][A-Za-z0-9_]*$", operation_id):
+            return operation_id
+        parts = [part for part in re.split(r"[^A-Za-z0-9]+", operation_id) if part]
+        if not parts:
+            return "operation"
+        first = parts[0][0].lower() + parts[0][1:]
+        rest = "".join(part[0].upper() + part[1:] for part in parts[1:])
+        candidate = first + rest
+        if not re.match(r"^[A-Za-z_]", candidate):
+            candidate = f"operation{candidate[0].upper()}{candidate[1:]}"
+        return candidate
 
     def _payload_schema_name(self, value: Any) -> str | None:
         if not isinstance(value, dict):
@@ -698,6 +894,29 @@ class ClawRouterPayloadSdkAudit:
         if not isinstance(name, str) or not isinstance(schema, dict):
             return None
         return name
+
+    def _schema_matches_ref(self, schema: Any, expected_ref: str) -> bool:
+        if not isinstance(schema, dict):
+            return False
+        if schema.get("$ref") == expected_ref:
+            return True
+        all_of = schema.get("allOf")
+        return isinstance(all_of, list) and all_of == [{"$ref": expected_ref}]
+
+    def _schema_ref(self, schema: Any) -> str:
+        if not isinstance(schema, dict):
+            return ""
+        ref = self._string(schema.get("$ref"))
+        if ref:
+            return ref
+        all_of = schema.get("allOf")
+        if (
+            isinstance(all_of, list)
+            and len(all_of) == 1
+            and isinstance(all_of[0], dict)
+        ):
+            return self._string(all_of[0].get("$ref"))
+        return ""
 
     def _type_file_name(self, type_name: str) -> str:
         parts = re.findall(r"[A-Z]+(?=[A-Z][a-z]|\d|$)|[A-Z]?[a-z]+|\d+", type_name)

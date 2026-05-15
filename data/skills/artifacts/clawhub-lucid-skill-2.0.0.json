@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lucid-skill@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lucid_skill",
+  "skill": {
+    "id": 27402,
+    "skillKey": "clawhub-lucid-skill",
+    "name": "Lucid Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lucid-skill",
+    "url": "https://clawhub.ai/skills/lucid-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lucid-skill-80bfd7a6f38c5d70.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-native data analysis via natural language. Connect Excel, CSV, MySQL, PostgreSQL data sources and query with SQL. Use when: (1) user asks to query, analyz..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wenkang-xie",
+      "userId": "publishers:wenkang-xie",
+      "displayName": "wenkang-xie",
+      "image": "https://avatars.githubusercontent.com/u/58462870?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773796391958,
+      "changelog": "Python rewrite: TS→Python, DuckDB unified storage, zero native compilation, install via pip/uv",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba6ee5ff65bad461d1665463606b718e12953dcd436d7d0cbbf5551de2afcb54"
+}

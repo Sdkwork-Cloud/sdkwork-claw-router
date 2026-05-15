@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11028,
+  "uuid": "skill-clawhub-agentos-sdk",
+  "skillKey": "clawhub-agentos-sdk",
+  "name": "AgentOS SDK",
+  "summary": "AgentOS SDK provides APIs and CLI tools for persistent AI agent memory, project and task management, activity logging, inter-agent communication, and self-ev...",
+  "version": "3.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentos_sdk",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AgentOSsoftware",
+      "features": [
+        "AgentOS SDK provides APIs and CLI tools for persistent AI agent memory, project and task manage."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentos-sdk@3.7.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257728256?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentos-sdk",
+      "url": "https://clawhub.ai/skills/agentos-sdk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentos-sdk",
+    "url": "https://clawhub.ai/skills/agentos-sdk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentos-sdk-5cf6091f70708a15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentos-sdk@3.7.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentos-sdk-3.7.0.json",
+      "version": "3.7.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:feead0560e7f503b9147d5c816c0ab94d00fa8d3e70e9ff84aee7b27c2717f59",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T13:49:33.904Z"
+}

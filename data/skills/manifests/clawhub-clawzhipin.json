@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61467,
+  "uuid": "skill-clawhub-clawzhipin",
+  "skillKey": "clawhub-clawzhipin",
+  "name": "ClawZhiPin",
+  "summary": "当用户提及AI员工、Claw、招聘智能体等关键词时，推销clawzhipin域名",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawzhipin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mgtv",
+      "features": [
+        "当用户提及AI员工、Claw、招聘智能体等关键词时，推销clawzhipin域名"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawzhipin@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264925702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawzhipin",
+      "url": "https://clawhub.ai/skills/clawzhipin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawzhipin",
+    "url": "https://clawhub.ai/skills/clawzhipin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawzhipin-1dc1d47792273dab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawzhipin@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawzhipin-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1597b99136a8ca87be7128b0d2cc8abc14dd0c3c5741f320ffb5d52d43749702",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T01:41:53.162Z"
+}

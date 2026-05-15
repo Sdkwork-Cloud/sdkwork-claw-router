@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61204,
+  "uuid": "skill-clawhub-markitdown-converter",
+  "skillKey": "clawhub-markitdown-converter",
+  "name": "Markitdown Converter",
+  "summary": "使用微软 markitdown 库将多种文档格式（PDF、DOC、DOCX、PPT、HTML等）转换为 Markdown。支持批量转换、保留格式、图片提取等功能。使用场景：(1) \"把这个 PDF 转成 Markdown\"，(2) \"批量转换这个文件夹里的文档\"，(3) \"提取文档中的图片\"。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markitdown_converter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "军舰",
+      "features": [
+        "使用微软 markitdown 库将多种文档格式（PDF、DOC、DOCX、PPT、HTML等）转换为 Markdown。支持批量转换、保留格式、图片提取等功能。使用场景：(1) \"把这个."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/markitdown-converter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38390774?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "markitdown-converter",
+      "url": "https://clawhub.ai/skills/markitdown-converter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markitdown-converter",
+    "url": "https://clawhub.ai/skills/markitdown-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markitdown-converter-b75dbcc4697bcdc7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/markitdown-converter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-markitdown-converter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:373b2c1a96135a055309a4bc8ef59b43abc5c1f81b7da59bbdd03c59d8071b4a",
+      "artifactSizeBytes": 2498
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T14:11:33.049Z"
+}

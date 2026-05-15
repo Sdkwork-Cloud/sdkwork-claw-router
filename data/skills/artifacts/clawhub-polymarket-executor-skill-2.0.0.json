@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-executor-skill@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_executor_skill",
+  "skill": {
+    "id": 20277,
+    "skillKey": "clawhub-polymarket-executor-skill",
+    "name": "Polymarket Executor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-executor-skill",
+    "url": "https://clawhub.ai/skills/polymarket-executor-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-executor-skill-963c28405588db72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous multi-strategy trading bot for Polymarket prediction markets. Scans ALL markets (crypto, politics, sports, economics, entertainment) for parity ar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "georges91560",
+      "userId": "publishers:georges91560",
+      "displayName": "Wesley Armando",
+      "image": "https://avatars.githubusercontent.com/u/130360599?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 453,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772749211453,
+      "changelog": "Polymarket Executor 2.0.0 — Major update introducing full multi-strategy trading, risk management, and adaptive optimizer integration.\n\n- Scans all Polymarket markets for arbitrage, tail-end, and logical trading opportunities.\n- Paper trading mode enabled by default, requiring no credentials and zero risk.\n- Implements Kelly Criterion sizing, position/trade caps, circuit breakers, and stop-loss.\n- Automatically optimizes strategy parameters via `learned_config.json` (refreshed every 6 hours).\n- Sends trade/result alerts and portfolio stats via Telegram integration.\n- Enhanced setup guidance, live-readiness checklist, and VPS/proxy compatibility notes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:588d238e94ad9c09064b9dc67d2234fb4e647ecf292bde5d3ca5c3b9b6cee980"
+}

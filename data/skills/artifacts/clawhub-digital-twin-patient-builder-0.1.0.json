@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/digital-twin-patient-builder@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.digital_twin_patient_builder",
+  "skill": {
+    "id": 26781,
+    "skillKey": "clawhub-digital-twin-patient-builder",
+    "name": "Digital Twin Patient Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "digital-twin-patient-builder",
+    "url": "https://clawhub.ai/skills/digital-twin-patient-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/digital-twin-patient-builder-02e5e9255aa073c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build digital twin patient models to test drug efficacy and toxicity in virtual environments"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773888715693,
+      "changelog": "Initial release of Digital Twin Patient Builder.\n\n- Enables building of virtual patient models with genotype, clinical, and imaging data.\n- Simulates drug efficacy, toxicity, and optimal dosing in a virtual environment.\n- Provides command-line and Python API interfaces.\n- Includes example input/output formats for patient and drug profiles.\n- Incorporates modular architecture for genotype, clinical, imaging, and PK/PD simulation.\n- Documentation outlines security, usage, and evaluation criteria.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7fd33bebdb5c9175aabe2b163d228e014c2937bf3b931409522e843024a83113"
+}

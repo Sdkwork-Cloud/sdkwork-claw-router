@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generate-mindmap@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_mindmap",
+  "skill": {
+    "id": 63192,
+    "skillKey": "clawhub-generate-mindmap",
+    "name": "Generate Mindmap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-mindmap",
+    "url": "https://clawhub.ai/skills/generate-mindmap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-mindmap-feb4454279b33b74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成交互式思维导图，支持从文本/摘要构建层级结构，直接输出 HTML、PNG、JPG、SVG、PDF、XMind 格式。所有图片格式仅需 pillow（pip install pillow），无需任何系统级C库。当用户要求生成思维导图、脑图、可视化结构图时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ftois",
+      "userId": "s176spg8pxyyfvga7tve8jecw183hk25",
+      "displayName": "FtoIS",
+      "image": "https://avatars.githubusercontent.com/u/49223291?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 540,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773984525536,
+      "changelog": "- Switched all image and PDF export formats to use only Pillow (`pip install pillow`), removing the need for any system-level C libraries; works on all platforms.\n- Updated dependency declaration: now requires only Python 3 and Pillow via pip.\n- Revised documentation: clarified that PNG/JPG/PDF exports no longer require cairosvg or additional system packages—only Pillow is needed.\n- Strongly recommends default output as HTML + PNG + XMind formats together for user convenience.\n- Enforced rule that all main mind map branches must start with an emoji (for dual-coding/visual memory).\n- Refined mind mapping best practices, cognitive principles, and quality self-checks based on updated research.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1bac65ed23237f1ea7ee73e821b2247696ce83e93e1110d023241c4b5a75edcf"
+}

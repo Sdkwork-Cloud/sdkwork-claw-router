@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43525,
+  "uuid": "skill-clawhub-esign-api",
+  "skillKey": "clawhub-esign-api",
+  "name": "E-Sign API",
+  "summary": "Guide users through integrating API-based e-sign flows, signer routing, document sending, and status tracking for business documents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.esign_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "notasign",
+      "features": [
+        "Guide users through integrating API-based e-sign flows, signer routing, document sending, and s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/esign-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268593162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "esign-api",
+      "url": "https://clawhub.ai/skills/esign-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "esign-api",
+    "url": "https://clawhub.ai/skills/esign-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/esign-api-0977ee16f619a5ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/esign-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-esign-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d614b6ddbb7e056f0cd34eb1b986ca10aa2fe02aa4f68cfd25e521732ff42836",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T10:04:12.957Z"
+}

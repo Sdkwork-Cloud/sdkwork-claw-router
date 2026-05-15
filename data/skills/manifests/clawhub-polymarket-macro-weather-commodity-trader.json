@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27296,
+  "uuid": "skill-clawhub-polymarket-macro-weather-commodity-trader",
+  "skillKey": "clawhub-polymarket-macro-weather-commodity-trader",
+  "name": "Polymarket Macro Weather Commodity Trader",
+  "summary": "Trades commodity markets based on extreme weather signals. When temperature markets show unusual readings (extreme heat or cold), it signals potential energy...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_macro_weather_commodity_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades commodity markets based on extreme weather signals",
+        "When temperature markets show unusual readings (extreme heat or cold), it signals potential ene."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-macro-weather-commodity-trader@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-macro-weather-commodity-trader",
+      "url": "https://clawhub.ai/skills/polymarket-macro-weather-commodity-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-macro-weather-commodity-trader",
+    "url": "https://clawhub.ai/skills/polymarket-macro-weather-commodity-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-macro-weather-commodity-trader-6c7e09bbc901e1cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-macro-weather-commodity-trader@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-macro-weather-commodity-trader-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f09b03b7edb6b892ff99dc00f2018bfb2f254408778b9c49740c9f04d0c0e090",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:30:58.055Z"
+}

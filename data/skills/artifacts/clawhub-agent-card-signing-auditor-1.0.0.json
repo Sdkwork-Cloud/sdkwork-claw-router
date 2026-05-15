@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-card-signing-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_card_signing_auditor",
+  "skill": {
+    "id": 17464,
+    "skillKey": "clawhub-agent-card-signing-auditor",
+    "name": "agent-card-signing-auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-card-signing-auditor",
+    "url": "https://clawhub.ai/skills/agent-card-signing-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-card-signing-auditor-9b6bea8e694f8ab4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps audit Agent Card signing practices in A2A protocol implementations. Identifies missing signatures, weak signing schemes, and revocation gaps that allow..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andyxinweiminicloud",
+      "userId": "publishers:andyxinweiminicloud",
+      "displayName": "andyxinweiminicloud",
+      "image": "https://avatars.githubusercontent.com/u/201528876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 758,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771749289466,
+      "changelog": "Initial release of agent-card-signing-auditor.\n\n- Audits Agent Card signing practices for A2A protocol implementations.\n- Checks for signature presence, strength of signing schemes, and key transparency.\n- Verifies existence of revocation mechanisms and key rotation audit trails.\n- Provides risk ratings and actionable remediation recommendations.\n- Supports Agent Card auditing via JSON, URL, or snapshots for rotation history.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8c5ae683a2384ad5396b31ead7a27f6b341fa9d5d855613920221fc2c5554802"
+}

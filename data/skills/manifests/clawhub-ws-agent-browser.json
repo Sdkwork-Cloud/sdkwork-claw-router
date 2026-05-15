@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62771,
+  "uuid": "skill-clawhub-ws-agent-browser",
+  "skillKey": "clawhub-ws-agent-browser",
+  "name": "Agent Browser",
+  "summary": "浏览器智能控制。自动化操作、截图、填表、数据抓取。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ws_agent_browser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fhbillwer",
+      "features": [
+        "浏览器智能控制。自动化操作、截图、填表、数据抓取。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ws-agent-browser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42957828?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ws-agent-browser",
+      "url": "https://clawhub.ai/skills/ws-agent-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ws-agent-browser",
+    "url": "https://clawhub.ai/skills/ws-agent-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ws-agent-browser-3df51117409c1c18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ws-agent-browser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ws-agent-browser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89f621ee43b3170afdbd17e4bc0493cdf643c5b2bac4880473d8e2bb5a9c489f",
+      "artifactSizeBytes": 2108
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T15:59:19.803Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentmemo-karl@3.2.2",
+  "version": "3.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentmemo_karl",
+  "skill": {
+    "id": 41074,
+    "skillKey": "clawhub-agentmemo-karl",
+    "name": "agentMemo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentmemo-karl",
+    "url": "https://clawhub.ai/skills/agentmemo-karl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentmemo-karl-a22795b15a68bf1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "agentMemo is a Semantic Memory Mesh server for AI agents. Use this skill when you need to store, search, or retrieve agent memory across sessions with semant..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yxjsxy",
+      "userId": "s17dtjmwsg1vgzp3gpwpxgttts83kjbr",
+      "displayName": "Karl Yang",
+      "image": "https://avatars.githubusercontent.com/u/34668252?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "3.2.2",
+      "createdAt": 1774477101468,
+      "changelog": "Fix auth documentation contradictions: README, .env.example, benchmark all now consistently say AGENTMEMO_ADMIN_KEY is mandatory. No more open-access-if-unset language anywhere.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:37cb5003f8294cc8799e739aeacf6ff2bd9d226cf18ad184778753a2eef221fc"
+}

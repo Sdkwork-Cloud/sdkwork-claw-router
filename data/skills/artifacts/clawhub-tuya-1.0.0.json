@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tuya@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tuya",
+  "skill": {
+    "id": 24742,
+    "skillKey": "clawhub-tuya",
+    "name": "Tuya Smart"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tuya",
+    "url": "https://clawhub.ai/skills/tuya",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tuya-aec50aa92e2a3c54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control and automate Tuya Smart devices with official cloud APIs, secure request signing, region-aware routing, and safe command execution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 395,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772699202236,
+      "changelog": "Initial release with end-to-end Tuya Smart workflows for authentication, account linking, device control, diagnostics, and safe rollout playbooks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f55b23fa5eca013aeeff5b6308bbf17b92b00b4d68f0641e749d6528f5b262d0"
+}

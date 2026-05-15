@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23570,
+  "uuid": "skill-clawhub-cerebro-openclaw-memory-boost-kb",
+  "skillKey": "clawhub-cerebro-openclaw-memory-boost-kb",
+  "name": "Cerebro Openclaw Memory Boost Kb",
+  "summary": "Enforce Cerebro-first protocol by identifying domain, reading source docs and recent logs, building Known State, and citing rules before all actions.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cerebro_openclaw_memory_boost_kb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ptaramona",
+      "features": [
+        "Enforce Cerebro-first protocol by identifying domain, reading source docs and recent logs, buil."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cerebro-openclaw-memory-boost-kb@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65972483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cerebro-openclaw-memory-boost-kb",
+      "url": "https://clawhub.ai/skills/cerebro-openclaw-memory-boost-kb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cerebro-openclaw-memory-boost-kb",
+    "url": "https://clawhub.ai/skills/cerebro-openclaw-memory-boost-kb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cerebro-openclaw-memory-boost-kb-15498a8933aad54f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cerebro-openclaw-memory-boost-kb@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cerebro-openclaw-memory-boost-kb-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71c66b5aa1b86214545116addd9b0df2608a765cc012490d5562fee8fda07fa2",
+      "artifactSizeBytes": 2572
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T17:58:31.563Z"
+}

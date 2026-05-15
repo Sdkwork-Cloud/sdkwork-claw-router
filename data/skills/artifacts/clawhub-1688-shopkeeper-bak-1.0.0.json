@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/1688-shopkeeper-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1688_shopkeeper_bak",
+  "skill": {
+    "id": 63431,
+    "skillKey": "clawhub-1688-shopkeeper-bak",
+    "name": "1688 Shopkeeper.Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1688-shopkeeper-bak",
+    "url": "https://clawhub.ai/skills/1688-shopkeeper-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1688-shopkeeper-bak-161a1bed005d8444.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "1688选品铺货 + 商机趋势专家。用于：(1) 在1688搜索商品/选品找货源 (2) 查询已绑定的下游店铺 (3) 将商品铺货到抖音/拼多多/小红书/淘宝等平台 (4) 配置1688 AK密钥 (5) 查看即时商机热榜 (6) 查看类目/行业趋势与价格分布 (7) 生成店铺经营日报并输出主营商品选品建议。 触..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenyongzhen",
+      "userId": "s1732w85kta5vpncvq9s7c6f9183tt9r",
+      "displayName": "CHENYONGZHEN",
+      "image": "https://avatars.githubusercontent.com/u/28255576?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775059294422,
+      "changelog": "Initial release of 1688-shopkeeper skill.\n\n- Supports searching products and sourcing from 1688, with downstream shop querying and direct listing (铺货) to platforms like Douyin, Pinduoduo, Xiaohongshu, Taobao.\n- Allows configuration of 1688 AK key, and provides clear guides and error handling for missing/invalid AK or shop information.\n- Includes commands for viewing real-time business opportunities, category/industry trends, price distributions, and generating shop management daily reports with product selection advice.\n- Implements strict pre-checks and dry-runs for all write actions, following robust safety and ambiguity-handling rules.\n- Agent integrates markdown output directly from commands, with separate, rule-based user guidance for error handling and shop/AK binding scenarios.\n- On first use of each capability within a session, requires pre-reading of linked documentation files for reliable execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cb1c504173f6e236a3f6569dcb20a0390dce53b2082fd7286351d95a199f42e"
+}

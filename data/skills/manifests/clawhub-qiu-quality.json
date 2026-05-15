@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72448,
+  "uuid": "skill-clawhub-qiu-quality",
+  "skillKey": "clawhub-qiu-quality",
+  "name": "邱国鹭品质分析",
+  "summary": "［何时使用］当用户需要分析公司品质时；当用户问\"这是好公司吗\"时；当需要进行 ROE/毛利率/行业地位分析时；当应用邱国鹭品质标准时",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qiu_quality",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lj22503",
+      "features": [
+        "［何时使用］当用户需要分析公司品质时；当用户问\"这是好公司吗\"时；当需要进行 ROE/毛利率/行业地位分析时；当应用邱国鹭品质标准时"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qiu-quality@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170225356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qiu-quality",
+      "url": "https://clawhub.ai/skills/qiu-quality"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qiu-quality",
+    "url": "https://clawhub.ai/skills/qiu-quality",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qiu-quality-ad6ace108def3474.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qiu-quality@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qiu-quality-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a856f8cde5680172594c832a742d770fa7edc86059f829609321f8c950008a70",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T03:09:56.801Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cbre@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cbre",
+  "skill": {
+    "id": 66291,
+    "skillKey": "clawhub-cbre",
+    "name": "Cbre"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cbre",
+    "url": "https://clawhub.ai/skills/cbre",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cbre-bee10fcea1e42a2e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全球最大商业地产服务公司，2024年营收超330亿美元，业务覆盖100+国家，员工超105,000，提供全链条综合服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776618370829,
+      "changelog": "CBRE skill v1.0.0\n\n- 新增公司简介和详细历史时间线，涵盖 1906–2024 年关键事件\n- 完整梳理了业务结构，包括顾问与租赁、全球工作场所解决方案、地产投资、估值与开发等板块\n- 总结公司核心竞争护城河和行业地位，突出全球网络和品牌优势\n- 列举 2024 年最新运营与财务关键数据\n- 加入“值得了解”部分，罗列 CBRE 行业亮点和创新实践",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90ac1f700683f4ffd7420b6934bd6886a690af91ca84ded9b0022e363e2adb5d"
+}

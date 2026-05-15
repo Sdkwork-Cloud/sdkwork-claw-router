@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/one-championship@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.one_championship",
+  "skill": {
+    "id": 66469,
+    "skillKey": "clawhub-one-championship",
+    "name": "One Championship"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "one-championship",
+    "url": "https://clawhub.ai/skills/one-championship",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/one-championship-6d37e3d75578054a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供ONE冠军赛的规则、历史、知名选手及赛程信息，涵盖MMA、泰拳、踢拳等多武种综合格斗赛事内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776361101621,
+      "changelog": "- 首次发布，介绍 ONE 冠军赛（ONE Championship）的核心信息\n- 详述赛事历史与发展里程碑\n- 总结多种赛制规则，包括独特的 hydration 测试\n- 列出代表性知名选手\n- 提供赛事频率、转播渠道和组织价值观",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cea2a242738420db75be88db933f88e17b583dc9dff75909022a49200934341f"
+}

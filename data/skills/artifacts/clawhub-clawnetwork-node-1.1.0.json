@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawnetwork-node@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawnetwork_node",
+  "skill": {
+    "id": 53330,
+    "skillKey": "clawhub-clawnetwork-node",
+    "name": "ClawNetwork Node"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawnetwork-node",
+    "url": "https://clawhub.ai/skills/clawnetwork-node",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawnetwork-node-5bb7585592c362c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Earn CLAW by running a 20MB blockchain node. Your OpenClaw agent becomes a miner — 4 min setup, zero cost. Built for OpenClaw and all AI agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flute",
+      "userId": "s17a68scamsb1jcrwmh26ab95x83j50d",
+      "displayName": "ludis",
+      "image": "https://avatars.githubusercontent.com/u/5842406?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775822966053,
+      "changelog": "Updated description: Earn CLAW by running a 20MB blockchain node. Your OpenClaw agent becomes a miner — 4 min setup, zero cost.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01b879adf3ad91e7a924998590438d9a8af5c10b6730bf729678fec5e1a9e485"
+}

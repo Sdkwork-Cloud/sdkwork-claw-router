@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-to-markdown@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_to_markdown",
+  "skill": {
+    "id": 17290,
+    "skillKey": "clawhub-file-to-markdown",
+    "name": "File to Markdown Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-to-markdown",
+    "url": "https://clawhub.ai/skills/file-to-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-to-markdown-8c477cc599c9b1a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert documents, spreadsheets, images, and structured files into clean, structured Markdown optimized for AI processing without authentication."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alaminrifat",
+      "userId": "publishers:alaminrifat",
+      "displayName": "alaminrifat",
+      "image": "https://avatars.githubusercontent.com/u/61446438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 794,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771910789743,
+      "changelog": "Initial release.\n\n- Convert 20+ file formats to clean AI-ready Markdown\n- Supports URL and file upload conversion\n- Cloudflare Workers AI powered\n- No API key required\n- Includes examples for curl, JS, and Python",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5ed65ecf150343c2f129f152d9cf5a5b7f61f783ce671ad3468b92abbb7573e0"
+}

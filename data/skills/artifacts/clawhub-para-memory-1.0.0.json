@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/para-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.para_memory",
+  "skill": {
+    "id": 25797,
+    "skillKey": "clawhub-para-memory",
+    "name": "PARA Memory System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "para-memory",
+    "url": "https://clawhub.ai/skills/para-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/para-memory-9744809c38443fda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up and maintain a 3-layer PARA memory system for OpenClaw agents. Provides durable knowledge persistence across sessions using daily notes, a structured..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisoftgg",
+      "userId": "s1731g5q971jp1dt6x025g6v5x845a6d",
+      "displayName": "aisoftgg",
+      "image": "https://avatars.githubusercontent.com/u/262477218?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 380,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773236990610,
+      "changelog": "Initial release — 3-layer PARA memory system for OpenClaw agents. Includes AGENTS.md template, tacit knowledge template, daily notes template, and nightly consolidation workflow. Built by KaiShips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:185ee626c1d98718fd961d0e44dac5ee7b0c9bd03e2f5f48e107f9a8dec23247"
+}

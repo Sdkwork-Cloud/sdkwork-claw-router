@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-content@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_content",
+  "skill": {
+    "id": 21838,
+    "skillKey": "clawhub-news-content",
+    "name": "news-content"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-content",
+    "url": "https://clawhub.ai/skills/news-content",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-content-a1e0df69b6b14e5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Input a news URL to efficiently extract the body, title, author, and date using a remote API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fonilye",
+      "userId": "s17923zn1yfrbkdb9c0t7437d983pc9y",
+      "displayName": "fonilye",
+      "image": "https://avatars.githubusercontent.com/u/22760497?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 484,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773733646946,
+      "changelog": "- Updated documentation to include instructions for obtaining the `EASYALPHA_API_KEY`.\n- Added default value for `NEWS_EXTRACTOR_SERVER_URL` and provided corresponding production API URL.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc983df2f8f449967a159c22aa12a2fd2304d39b33f92bcad0db83d9658e2b13"
+}

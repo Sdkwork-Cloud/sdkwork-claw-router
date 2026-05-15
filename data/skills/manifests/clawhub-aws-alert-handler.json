@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48671,
+  "uuid": "skill-clawhub-aws-alert-handler",
+  "skillKey": "clawhub-aws-alert-handler",
+  "name": "AWS Alert Handler",
+  "summary": "Normalize Security Hub ASFF, Inspector v2, and CloudWatch alarm JSON into a consistent shape. Auto-unwraps SNS and EventBridge envelopes. Use when an AWS ale...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aws_alert_handler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Grace Gettert",
+      "features": [
+        "Normalize Security Hub ASFF, Inspector v2, and CloudWatch alarm JSON into a consistent shape",
+        "Auto-unwraps SNS and EventBridge envelopes",
+        "Use when an AWS ale..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aws-alert-handler@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9805362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aws-alert-handler",
+      "url": "https://clawhub.ai/skills/aws-alert-handler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aws-alert-handler",
+    "url": "https://clawhub.ai/skills/aws-alert-handler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aws-alert-handler-44064077838bfefa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aws-alert-handler@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aws-alert-handler-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64c600992da48fe453c76a6476ca4d2fb8c5f12253c8fc29d4bd631a471920d4",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T02:28:02.701Z"
+}

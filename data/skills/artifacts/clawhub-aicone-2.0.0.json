@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aicone@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aicone",
+  "skill": {
+    "id": 66915,
+    "skillKey": "clawhub-aicone",
+    "name": "aiclone"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aicone",
+    "url": "https://clawhub.ai/skills/aicone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aicone-41935326ae3f7363.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用 AI 机器人克隆技能（安全加固版 v2.0）。支持导出/导入配置，ZIP Slip 防护，元数据脱敏，敏感文件自动排除。用于 A→B 能力复制、团队共享、备份恢复。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "srchengtao2025",
+      "userId": "s17bmafmck04axg6tdb4m0qbkx83jpmm",
+      "displayName": "Dreamcalste",
+      "image": "https://avatars.githubusercontent.com/u/237932126?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 395,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772803682837,
+      "changelog": "ai-clone 2.0.0 (安全加固版) —— 提升克隆操作安全性\n\n- 修复 ZIP Slip 漏洞：导入时增加路径验证与规范化检查，防止路径穿越攻击\n- 临时目录使用 tempfile.TemporaryDirectory，提升操作安全性与清理保障\n- 元数据默认脱敏，隐藏绝对路径和敏感环境信息\n- 敏感文件自动排除（如 .env、*.key、*.secret 等），减少泄露风险\n- 所有导入导出命令参数标准化，文档与代码完全一致\n- 新增 verify 命令，可在导入前校验克隆包安全性",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:20e62e45ab63322136609d4c7dc80d99e822f3c86184c62194298ee6b5c52056"
+}

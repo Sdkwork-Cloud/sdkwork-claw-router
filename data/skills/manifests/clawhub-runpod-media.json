@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50508,
+  "uuid": "skill-clawhub-runpod-media",
+  "skillKey": "clawhub-runpod-media",
+  "name": "Runpod Media",
+  "summary": "Generate images from text, edit images with text instructions, animate images to video, and generate video from text — all via RunPod public AI endpoints. Us...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runpod_media",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Itamar C",
+      "features": [
+        "Generate images from text, edit images with text instructions, animate images to video, and gen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/runpod-media@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26421901?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "runpod-media",
+      "url": "https://clawhub.ai/skills/runpod-media"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runpod-media",
+    "url": "https://clawhub.ai/skills/runpod-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runpod-media-5aee04aa91553b00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/runpod-media@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-runpod-media-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:021a0ef44ff0b9a16783f4cbc2a60ce080807296adeef5e70d207db59f58c94f",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T15:59:50.487Z"
+}

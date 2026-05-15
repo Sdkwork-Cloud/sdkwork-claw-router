@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smartclaws-producer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smartclaws_producer",
+  "skill": {
+    "id": 39672,
+    "skillKey": "clawhub-smartclaws-producer",
+    "name": "Smartclaws Producer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smartclaws-producer",
+    "url": "https://clawhub.ai/skills/smartclaws-producer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smartclaws-producer-cde6d9cb0aebaf8b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up IoT sensors and publish data to SKALE blockchain via SmartClaws. Use when: setting up smartclaws, registering devices, connecting sensors, publishing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dmytrotkk",
+      "userId": "s173a6819f6k5zdas35jy644r184a28m",
+      "displayName": "Dmytro",
+      "image": "https://avatars.githubusercontent.com/u/15244591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775558722259,
+      "changelog": "**This version introduces a Real Hardware Rule to prevent accidental use of mock data for actual sensor setups.**\n\n- Added a new “Real Hardware Rule”: Always assume a real hardware sensor unless the user clearly requests simulation or mock data.\n- Updated guidance for writing publisher scripts: Verify the exact sensor model and connection method before generating any code.\n- Included prompts for clarifying sensor details when ambiguous user requests are made.\n- Emphasized: Do not auto-create mock publishers for real hardware queries—explicitly ask for missing information first.\n- Made minor updates to installation instructions (e.g., curl -fL flag).\n- Clarified common mistakes and correct handling of mock vs. real sensor setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b5e76e8d464ed159531053ef6e1ba40773e94465e7a1ebc6d9a3210acf38f8c"
+}

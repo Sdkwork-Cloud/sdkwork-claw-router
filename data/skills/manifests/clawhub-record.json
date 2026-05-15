@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11176,
+  "uuid": "skill-clawhub-record",
+  "skillKey": "clawhub-record",
+  "name": "Record screen, microphone or camera from macOS terminal",
+  "summary": "macOS CLI tool to record microphone audio, screen video or screenshot, and camera video or photo from the terminal with device listing and output control.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.record",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "atacan",
+      "features": [
+        "macOS CLI tool to record microphone audio, screen video or screenshot, and camera video or phot."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/record@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/765873?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "record",
+      "url": "https://clawhub.ai/skills/record"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "record",
+    "url": "https://clawhub.ai/skills/record",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/record-70ce871f8a3d3fb4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/record@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-record-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc28a02652dd4aa076f22d731459ed781eda4a3567e1105699ffc6457564bd22",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T19:27:03.245Z"
+}

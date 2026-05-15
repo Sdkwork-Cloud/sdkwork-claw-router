@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38848,
+  "uuid": "skill-clawhub-kernel",
+  "skillKey": "clawhub-kernel",
+  "name": "Kernel",
+  "summary": "Avoid common Linux kernel mistakes — atomic context violations, allocation failures, and locking traps.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kernel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Avoid common Linux kernel mistakes — atomic context violations, allocation failures, and lockin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kernel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kernel",
+      "url": "https://clawhub.ai/skills/kernel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kernel",
+    "url": "https://clawhub.ai/skills/kernel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kernel-6923dd1bc0460082.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kernel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kernel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7954398bd34d93c797b7934ec5fb110144116e8d946e20f7f4a62d4ecac3b826",
+      "artifactSizeBytes": 1771
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T00:12:15.831Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-refactor-for-reproducibility@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_refactor_for_reproducibility",
+  "skill": {
+    "id": 27092,
+    "skillKey": "clawhub-code-refactor-for-reproducibility",
+    "name": "Code Refactor For Reproducibility"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-refactor-for-reproducibility",
+    "url": "https://clawhub.ai/skills/code-refactor-for-reproducibility",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-refactor-for-reproducibility-0d03fd4f2409dc9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when refactoring research code for publication, adding documentation to existing analysis scripts, creating reproducible computational workflows, or prep..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ewankeynes",
+      "userId": "s17007tpbkd82mxz1myqfx545183jqn9",
+      "displayName": "ewankeynes",
+      "image": "https://avatars.githubusercontent.com/u/68137408?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773395011436,
+      "changelog": "- Initial release of \"code-refactor-for-reproducibility\" skill.\n- Provides structured workflow for making research code publication-ready and reproducible.\n- Adds step-by-step guidance on code analysis, refactoring (docstrings, parameterization, error handling), environment specification, documentation, and validation.\n- Includes detailed checklists, code examples, and best practices for ensuring computational reproducibility.\n- Supplies templates and instructions for README, requirements.txt, environment.yml, and reproducibility verification.\n- References comprehensive user guides and example resources.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:369c9f303ae30dc880801c7695c23714308363bccf9f5f13ac354eee3596da0c"
+}

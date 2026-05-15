@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-post-antaeus@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_post_antaeus",
+  "skill": {
+    "id": 55933,
+    "skillKey": "clawhub-xiaohongshu-post-antaeus",
+    "name": "Xiaohongshu Post (Browser Auto)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-post-antaeus",
+    "url": "https://clawhub.ai/skills/xiaohongshu-post-antaeus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-post-antaeus-d1f5dfab67d725a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and publish Xiaohongshu (小红书/RED) notes. Use when: user wants to publish a note to Xiaohongshu, schedule or batch post content, generate Xiaohongshu-s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "antaeus001",
+      "userId": "s1765mt4ttp30m7fgyvgh32ejh83fez8",
+      "displayName": "antaeus001",
+      "image": "https://avatars.githubusercontent.com/u/744597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1773671027568,
+      "changelog": "修复：恢复稳定版本（模型驱动），修复图片上传、标题填写、正文写入、发布按钮点击等流程",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:688aaf56c6aca26cb269ddbe6e2552e9b25985fc5d8d85f3d0e32bac3b36b622"
+}

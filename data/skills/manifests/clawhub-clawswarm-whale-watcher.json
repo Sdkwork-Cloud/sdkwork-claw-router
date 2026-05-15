@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20895,
+  "uuid": "skill-clawhub-clawswarm-whale-watcher",
+  "skillKey": "clawhub-clawswarm-whale-watcher",
+  "name": "ClawSwarm Whale Watcher",
+  "summary": "Monitor large Hedera (HBAR and HTS) token transfers in real-time using Mirror Node API without requiring an API key.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawswarm_whale_watcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FLY",
+      "features": [
+        "Monitor large Hedera (HBAR and HTS) token transfers in real-time using Mirror Node API without."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawswarm-whale-watcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258594521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawswarm-whale-watcher",
+      "url": "https://clawhub.ai/skills/clawswarm-whale-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawswarm-whale-watcher",
+    "url": "https://clawhub.ai/skills/clawswarm-whale-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawswarm-whale-watcher-a0ad0cbb3b064e85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawswarm-whale-watcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawswarm-whale-watcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f8db7e418fd83b215f19bb64979a3885f7364e5ea4ce00c1e66e58de0443304",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T18:34:15.783Z"
+}

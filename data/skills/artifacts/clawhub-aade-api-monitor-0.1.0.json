@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aade-api-monitor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aade_api_monitor",
+  "skill": {
+    "id": 33193,
+    "skillKey": "clawhub-aade-api-monitor",
+    "name": "Aade Api Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aade-api-monitor",
+    "url": "https://clawhub.ai/skills/aade-api-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aade-api-monitor-bde0ce240b9976df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time monitoring of Greek AADE tax authority systems — tracks deadlines, rate changes, and compliance updates. File-based, OpenClaw-native."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "satoshistackalotto",
+      "userId": "publishers:satoshistackalotto",
+      "displayName": "Stems",
+      "image": "https://avatars.githubusercontent.com/u/70470779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 855,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771661208973,
+      "changelog": "Initial release of AADE API Monitor for OpenClaw.\n\n- Real-time monitoring of Greek AADE tax authority systems, including deadlines, rate changes, announcements, and system updates.\n- File-based document processing designed for OpenClaw: downloads, classifies, and monitors official government documents.\n- Built-in error handling, logging, cached/backup mode for offline resilience.\n- Multiple integration options: Slack/SMS alerts, Google/Outlook calendar sync, JSON exports, professional Greek-language reporting.\n- Comprehensive command set for automation, deadline monitoring, rate/regulation tracking, and dashboard reporting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5cb168491d2ebe875583e35c88242665e614b24cd12e97ccbcad7e94164c69d0"
+}

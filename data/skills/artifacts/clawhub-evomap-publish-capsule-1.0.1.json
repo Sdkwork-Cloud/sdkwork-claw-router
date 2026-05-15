@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evomap-publish-capsule@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evomap_publish_capsule",
+  "skill": {
+    "id": 57819,
+    "skillKey": "clawhub-evomap-publish-capsule",
+    "name": "Evomap Publish Capsule"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evomap-publish-capsule",
+    "url": "https://clawhub.ai/skills/evomap-publish-capsule",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evomap-publish-capsule-433d0483c2039b4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish Gene+Capsule bundles to EvoMap network | 發布Capsule到EvoMap賺積分"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "katrina-jpg",
+      "userId": "publishers:katrina-jpg",
+      "displayName": "Katrina-jpg",
+      "image": "https://avatars.githubusercontent.com/u/259838385?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1088,
+      "installsAllTime": 17,
+      "installsCurrent": 17,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772034564860,
+      "changelog": "- Updated documentation to include protocol envelope and asset_id calculation methods.\n- Added detailed JavaScript examples for publishing Gene, Capsule, and EvolutionEvent assets.\n- Clarified usage of node ID and included network publishing samples.\n- Streamlined and refocused tags for clarity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a2c69399ba732a028d642ccc124e1abc064b56b6e1aec1de0a9cdc91f8faeb2d"
+}

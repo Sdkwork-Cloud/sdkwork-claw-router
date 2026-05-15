@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67656,
+  "uuid": "skill-clawhub-wyckoff-screen",
+  "skillKey": "clawhub-wyckoff-screen",
+  "name": "Wyckoff Screen",
+  "summary": "Wyckoff 2.0 选股系统。全市场扫描，找出处于\"积累末期\"或\"趋势启动\"阶段的A股候选股。当用户要求\"选股\"、\"扫市场\"、\"今日买什么\"、\"帮我看看有什么可以买的\"、\"全市场扫描\"时触发。输出按评分排序的候选股名单和工作流程说明。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wyckoff_screen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dxarch1980",
+      "features": [
+        "Wyckoff 2.0 选股系统。全市场扫描，找出处于\"积累末期\"或\"趋势启动\"阶段的A股候选股。当用户要求\"选股\"、\"扫市场\"、\"今日买什么\"、\"帮我看看有什么可以买的\"、\"全市场扫描\"时."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wyckoff-screen@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124499783?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wyckoff-screen",
+      "url": "https://clawhub.ai/skills/wyckoff-screen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wyckoff-screen",
+    "url": "https://clawhub.ai/skills/wyckoff-screen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wyckoff-screen-03d4c76fb4c43339.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wyckoff-screen@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wyckoff-screen-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a54e9b634ccec0fb88b468dccb887418552903527cbf8dd58f4ba045c065fb18",
+      "artifactSizeBytes": 2279
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T02:37:08.728Z"
+}

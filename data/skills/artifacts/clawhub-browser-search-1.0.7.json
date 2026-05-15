@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-search@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_search",
+  "skill": {
+    "id": 62543,
+    "skillKey": "clawhub-browser-search",
+    "name": "Browser Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-search",
+    "url": "https://clawhub.ai/skills/browser-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-search-083378ccbb8a518a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "浏览器搜索技能 - 安全的网页搜索工具 使用本地浏览器进行自动化搜索和内容提取 支持 Bing、Google、Baidu、DuckDuckGo 等公开搜索引擎 无需 API 配置，路径输出受限"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linshuikeji",
+      "userId": "s1799jw82979m1bnz4a5mq7h1n83hejh",
+      "displayName": "中国山东肥城林水科技",
+      "image": "https://avatars.githubusercontent.com/u/129362705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 829,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1773980496517,
+      "changelog": "- Updated metadata in _meta.json; no changes to features or functionality.\n- No impact on user experience or usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:711f17a1aca19009466859020c2d8ced72a5a1c5cf084da2bfb6a9b638ceeed2"
+}

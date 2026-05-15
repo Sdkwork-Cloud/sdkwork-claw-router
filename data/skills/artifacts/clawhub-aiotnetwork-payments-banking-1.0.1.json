@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aiotnetwork-payments-banking@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiotnetwork_payments_banking",
+  "skill": {
+    "id": 23361,
+    "skillKey": "clawhub-aiotnetwork-payments-banking",
+    "name": "Payments & Banking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiotnetwork-payments-banking",
+    "url": "https://clawhub.ai/skills/aiotnetwork-payments-banking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiotnetwork-payments-banking-2896b21a7bfdedf6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fund wallets, transfer money, send remittances, and convert currencies. Includes top-up via multiple payment methods and international money transfers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "d9m1n1c",
+      "userId": "publishers:d9m1n1c",
+      "displayName": "D9m1n1c",
+      "image": "https://avatars.githubusercontent.com/u/109327351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 443,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773994070869,
+      "changelog": "- Added configuration instructions for setting the API base URL with the AIOT_API_BASE_URL environment variable.\n- Documented the default API endpoint and how to override it for local development.\n- Added metadata indicating required environment variables for the skill.\n- No changes to endpoints or functional flows; documentation updates only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b2c3ed6c8febd2956e8f6bb8b915a7fe86e4a38f38b7b441593630185a9b732f"
+}

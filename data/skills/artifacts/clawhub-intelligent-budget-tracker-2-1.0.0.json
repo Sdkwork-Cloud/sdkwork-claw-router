@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intelligent-budget-tracker-2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intelligent_budget_tracker_2",
+  "skill": {
+    "id": 48718,
+    "skillKey": "clawhub-intelligent-budget-tracker-2",
+    "name": "Intelligent Budget Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intelligent-budget-tracker-2",
+    "url": "https://clawhub.ai/skills/intelligent-budget-tracker-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intelligent-budget-tracker-2-ee7ff24e2da10799.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent budget tracking and financial management library for AI agents - expense tracking, income management, budgets, savings goals, and SkillBoss API H..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marjoriebroad",
+      "userId": "s17evr8hna69xbf4mv5z0nppgx84m26f",
+      "displayName": "MarjorieBroad",
+      "image": "https://avatars.githubusercontent.com/u/260425366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 95,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777262393426,
+      "changelog": "Agent Money Tracker 1.0.0 initial release:\n\n- Provides programmatic budget tracking for AI agents—track expenses, income, budgets, and savings goals.\n- Supports natural language transaction parsing and AI-powered financial insights via SkillBoss API Hub.\n- Includes recurring transactions, customizable categories, analytics, reports, and export/backup features.\n- Cross-platform local data storage, with environment variable support for paths and API key configuration.\n- No frontend; designed for integration with agent or bot workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49a22db878bacd83ba88df710c074cbe67a92d05f57c5600e3d6fa7d4e5332dd"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/databricks-data@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.databricks_data",
+  "skill": {
+    "id": 49002,
+    "skillKey": "clawhub-databricks-data",
+    "name": "Databricks Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "databricks-data",
+    "url": "https://clawhub.ai/skills/databricks-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/databricks-data-67495134f6c957d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Databricks is a cloud-agnostic unified data lakehouse platform offering scalable batch and stream processing, AI/ML integration, and enterprise-grade securit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 89,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777543519116,
+      "changelog": "- Initial release introducing Databricks skill (v1.0.0).\n- Provides a historical timeline from 2013 to 2024, including key funding rounds and product launches.\n- Covers Databricks' business model, unique competitive advantages, and core metrics.\n- Summarizes platform evolution, lakehouse architecture, and AI integration.\n- Includes notable facts about the founders and origins of Apache Spark.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9cc014d4bd176fe256b1a22742a77343baec5e3808ef0faa10e9712957334ff"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21806,
+  "uuid": "skill-clawhub-call",
+  "skillKey": "clawhub-call",
+  "name": "Call",
+  "summary": "Call management system with preparation, real-time capture, and follow-up tracking. Use when user mentions phone calls, meetings, conversations, commitments...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.call",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "agenticio",
+      "features": [
+        "Call management system with preparation, real-time capture, and follow-up tracking",
+        "Use when user mentions phone calls, meetings, conversations, commitments..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/call@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259287600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "call",
+      "url": "https://clawhub.ai/skills/call"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "call",
+    "url": "https://clawhub.ai/skills/call",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/call-7edb360f06acaef2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/call@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-call-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc04729217c749f193a800b58874a82b16b9a4c3410ee47ec93e42125e244785",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T04:36:51.561Z"
+}

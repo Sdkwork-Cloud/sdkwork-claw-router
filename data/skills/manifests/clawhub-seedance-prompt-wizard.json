@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62802,
+  "uuid": "skill-clawhub-seedance-prompt-wizard",
+  "skillKey": "clawhub-seedance-prompt-wizard",
+  "name": "Seedance Prompt Wizard",
+  "summary": "Seedance 2.0 提示词生成向导。通过引导式对话， 逐步收敛用户需求，生成精准的 Seedance 2.0 Prompt。 不做任何 API 调用，不涉及认证。 触发词：帮我写提示词、生成视频提示词、Seedance提示词、视频生成提示词，制作提示词",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_prompt_wizard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaoke321",
+      "features": [
+        "Seedance 2.0 提示词生成向导。通过引导式对话， 逐步收敛用户需求，生成精准的 Seedance 2.0 Prompt。 不做任何 API 调用，不涉及认证。 触发词：帮我写提示词."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seedance-prompt-wizard@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249103362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seedance-prompt-wizard",
+      "url": "https://clawhub.ai/skills/seedance-prompt-wizard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-prompt-wizard",
+    "url": "https://clawhub.ai/skills/seedance-prompt-wizard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-prompt-wizard-c2dc42edb004deff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seedance-prompt-wizard@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-seedance-prompt-wizard-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0af15ee6f5a0fa7723bdce4b7eb0a351219c123f557f7ac5e05d9877c26b7fe3",
+      "artifactSizeBytes": 2100
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T16:44:22.252Z"
+}

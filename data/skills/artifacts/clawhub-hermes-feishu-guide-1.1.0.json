@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hermes-feishu-guide@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_feishu_guide",
+  "skill": {
+    "id": 60095,
+    "skillKey": "clawhub-hermes-feishu-guide",
+    "name": "Hermes Feishu Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-feishu-guide",
+    "url": "https://clawhub.ai/skills/hermes-feishu-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-feishu-guide-51e230a29925ecb5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hermes Agent 飞书 Bot 本地部署指南（WebSocket 模式）。包含 Kimi API 配置、WebSocket vs Webhook 对比、环境变量配置等完整步骤。适合本地机器部署，不需要公网域名。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cindypapa",
+      "userId": "s171tsgfz5gnz75p6mgabptb6x8416qw",
+      "displayName": "Cindypapa",
+      "image": "https://avatars.githubusercontent.com/u/128971646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776230846506,
+      "changelog": "- Added configuration and documentation for FEISHU_GROUP_POLICY to control group chat behavior.\n- Updated required permission list to include im:message:group_at_msg for group @mentions.\n- Clarified group chat strategy, including default value, allowlist usage, and open mode.\n- Added troubleshooting and usage tips specific to group chat issues.\n- Version bumped to 1.1.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53ec0a3650f5087003bc131b9b78cd4ccd1f8c75eac4fe3b23a1bff2d678e994"
+}

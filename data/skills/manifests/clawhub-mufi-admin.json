@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21432,
+  "uuid": "skill-clawhub-mufi-admin",
+  "skillKey": "clawhub-mufi-admin",
+  "name": "mufi-admin",
+  "summary": "Manage MUFI events by creating and connecting festivals, campaigns, frame templates, and frames with specified details and images via admin.muinfilm.com.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mufi_admin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mupengi-bot",
+      "features": [
+        "Manage MUFI events by creating and connecting festivals, campaigns, frame templates, and frames."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mufi-admin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259087580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mufi-admin",
+      "url": "https://clawhub.ai/skills/mufi-admin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mufi-admin",
+    "url": "https://clawhub.ai/skills/mufi-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mufi-admin-835c3befb7297d98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mufi-admin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mufi-admin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9b542485c20da18ccca8660d58d21226a80602315c46af3f6a550155f405832",
+      "artifactSizeBytes": 1854
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T15:33:51.309Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ahrs-tools@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ahrs_tools",
+  "skill": {
+    "id": 19089,
+    "skillKey": "clawhub-ahrs-tools",
+    "name": "Pywayne Ahrs Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ahrs-tools",
+    "url": "https://clawhub.ai/skills/ahrs-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ahrs-tools-6041075333d62a29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides quaternion decomposition into Euler angles and roll/pitch compensation utilities for AHRS orientation handling with pywayne.ahrs.tools."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangyendt",
+      "userId": "publishers:wangyendt",
+      "displayName": "wangyendt",
+      "image": "https://avatars.githubusercontent.com/u/18455758?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 638,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771106027730,
+      "changelog": "Initial release of pywayne-ahrs-tools.\n\n- Provides quaternion decomposition utility to extract rotation, heading, and inclination angles.\n- Includes roll/pitch compensation function to adjust orientation quaternions to zero pitch and roll.\n- Compatible with numpy arrays and uses the qmt library for quaternion operations.\n- Designed for use with the pywayne.ahrs.tools module.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b7ae1d3a874cdad379a9b41efb1edbe5d99184d4c7a2feedc359909466e00832"
+}

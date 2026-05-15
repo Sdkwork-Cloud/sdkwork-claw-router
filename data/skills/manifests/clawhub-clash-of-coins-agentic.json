@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30244,
+  "uuid": "skill-clawhub-clash-of-coins-agentic",
+  "skillKey": "clawhub-clash-of-coins-agentic",
+  "name": "Clash of Coins - Agentic Gateway",
+  "summary": "Use when an agent needs one universal entrypoint to discover and use the unified Clash of Coins gateway (sale + shop), choose the active protocol on the live...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clash_of_coins_agentic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Clash of Coins Deployer",
+      "features": [
+        "Use when an agent needs one universal entrypoint to discover and use the unified Clash of Coins."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clash-of-coins-agentic@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192592355?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clash-of-coins-agentic",
+      "url": "https://clawhub.ai/skills/clash-of-coins-agentic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clash-of-coins-agentic",
+    "url": "https://clawhub.ai/skills/clash-of-coins-agentic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clash-of-coins-agentic-592f164b3da4c2b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clash-of-coins-agentic@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-clash-of-coins-agentic-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4d183a70b2e3cf71dea5f851f39ff0df3618b882e0841a6bc5c2d6d9d780077",
+      "artifactSizeBytes": 2647
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T15:04:38.097Z"
+}

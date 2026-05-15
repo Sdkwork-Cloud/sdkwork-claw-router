@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/senpub@1.0.21",
+  "version": "1.0.21",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.senpub",
+  "skill": {
+    "id": 54955,
+    "skillKey": "clawhub-senpub",
+    "name": "security plugins"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "senpub",
+    "url": "https://clawhub.ai/skills/senpub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/senpub-f3d907229116d606.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and configure the security-related plugins required by OpenClaw, including the `ai-assistant-security-openclaw` plugins. Use this skill when you want..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tiger-xzp",
+      "userId": "s17dyhf9t6aw3atyh9g4r6bdfn83g50f",
+      "displayName": "tank",
+      "image": "https://avatars.githubusercontent.com/u/16569742?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 288,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.0.21",
+      "createdAt": 1775390508038,
+      "changelog": "No changes detected in this version.\n\n- Version 1.0.21 does not include any file changes or user-facing updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a6607f8cabffe65094f442b57b46876aa824c82d75621d3ed02cc45e433a20f"
+}

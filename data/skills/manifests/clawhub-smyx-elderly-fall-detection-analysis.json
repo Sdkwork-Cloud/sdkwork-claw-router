@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57431,
+  "uuid": "skill-clawhub-smyx-elderly-fall-detection-analysis",
+  "skillKey": "clawhub-smyx-elderly-fall-detection-analysis",
+  "name": "老人跌倒检测技能",
+  "summary": "Utilizes vision and radar technology for contactless detection of falls. It triggers alarms within seconds and is suitable for home safety monitoring of elde...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_elderly_fall_detection_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-skills",
+      "features": [
+        "Utilizes vision and radar technology for contactless detection of falls",
+        "It triggers alarms within seconds and is suitable for home safety monitoring of elde..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-elderly-fall-detection-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272124705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-elderly-fall-detection-analysis",
+      "url": "https://clawhub.ai/skills/smyx-elderly-fall-detection-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-elderly-fall-detection-analysis",
+    "url": "https://clawhub.ai/skills/smyx-elderly-fall-detection-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-elderly-fall-detection-analysis-7d9b056a6e79bf8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-elderly-fall-detection-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-elderly-fall-detection-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:682bfee306172e5f516caf9f6c77a9f41278b8c3e7a8bca07bcb4b0388bc104f",
+      "artifactSizeBytes": 2205
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T16:48:38.318Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prioritization-funnel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prioritization_funnel",
+  "skill": {
+    "id": 31938,
+    "skillKey": "clawhub-prioritization-funnel",
+    "name": "Prioritization Funnel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prioritization-funnel",
+    "url": "https://clawhub.ai/skills/prioritization-funnel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prioritization-funnel-a8d381ca2fd51969.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluate and prioritize opportunities through a structured filtering process. Use for resource allocation, strategic decision support, and project management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linuszz",
+      "userId": "s17e0e5q8g0sjf5mpwdq1sy65183gmj7",
+      "displayName": "linuszz",
+      "image": "https://avatars.githubusercontent.com/u/46770204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774137914483,
+      "changelog": "Initial release — introduces a structured opportunity prioritization funnel.\n\n- Provides a multi-stage process: Definition, Rapid Appraisal, Financial Modeling, and Decision Making.\n- Includes detailed tables and criteria for each funnel stage.\n- Offers guidance on resource allocation, governance, and monitoring.\n- Gives practical tips and references for best practices.\n- Designed to support strategic decision-making and project portfolio management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e36a70ea473f3afe518d813dfc7998c04b231889152e7684318ff6877faa1ea7"
+}

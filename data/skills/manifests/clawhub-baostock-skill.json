@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37909,
+  "uuid": "skill-clawhub-baostock-skill",
+  "skillKey": "clawhub-baostock-skill",
+  "name": "Baostock Skill",
+  "summary": "Query Chinese A-share market data using BaoStock. Use when user asks for stock quotes, historical K-line, fundamentals, or market analysis. Supports real-tim...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baostock_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liyico",
+      "features": [
+        "Query Chinese A-share market data using BaoStock",
+        "Use when user asks for stock quotes, historical K-line, fundamentals, or market analysis",
+        "Supports real-tim..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baostock-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52720709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baostock-skill",
+      "url": "https://clawhub.ai/skills/baostock-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baostock-skill",
+    "url": "https://clawhub.ai/skills/baostock-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baostock-skill-c8111529bbb8bab2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baostock-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baostock-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb4ebe198af6d55d51b38a7f7be90b2d26429c383d4ec4a66919cfd7d779568d",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T18:47:55.502Z"
+}

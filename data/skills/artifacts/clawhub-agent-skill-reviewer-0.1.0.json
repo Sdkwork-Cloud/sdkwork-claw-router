@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-skill-reviewer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_skill_reviewer",
+  "skill": {
+    "id": 61560,
+    "skillKey": "clawhub-agent-skill-reviewer",
+    "name": "Skill Reviewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-skill-reviewer",
+    "url": "https://clawhub.ai/skills/agent-skill-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-skill-reviewer-b4a473171c61e537.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "审核/审查 Skill 代码质量的专业工具。当用户说\"检查 skill\"、\"审核 skill\"、\"review {名称} skill\"、\"skill 写得怎么样\"、\"帮我看看这个 skill 有什么问题\"时使用。依据 Anthropic 官方指南进行结构验证、YAML 前置信息检查、描述质量评估、指令完整性审查，..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xzxiaoshan",
+      "userId": "s170y6v7mvvm2nghnte4vpph8n83y0px",
+      "displayName": "xzxiaoshan",
+      "image": "https://avatars.githubusercontent.com/u/16459864?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 297,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773320419468,
+      "changelog": "- Initial release of the \"skill-reviewer\" tool for auditing Skill code quality against Anthropic's official guidelines.\n- Provides a comprehensive checklist and scoring system covering structure, YAML metadata, description quality, task organization, instructions, example quality, and more.\n- Includes a detailed workflow for both regular and strict audit modes, based on user intent.\n- Offers templates for quick audits and full review reports, including publishability recommendations.\n- Documents common critical, major, and minor issues, with clear steps for self-check and peer audit before publication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee9cf0bd98427f3a83a3af1d38f89852461966a5a36428cb768f33ad1d615142"
+}

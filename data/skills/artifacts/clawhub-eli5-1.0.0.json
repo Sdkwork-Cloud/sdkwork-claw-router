@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eli5@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eli5",
+  "skill": {
+    "id": 53989,
+    "skillKey": "clawhub-eli5",
+    "name": "ELI5"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eli5",
+    "url": "https://clawhub.ai/skills/eli5",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eli5-ff7d986cb3f9d7c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explain complex topics in the simplest possible words — like talking to a 5-year-old. Uses analogies, no jargon, everyday language."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coghost",
+      "userId": "s171q3b0kyhdzfdax8jrgfb29h83scr9",
+      "displayName": "Hex",
+      "image": "https://avatars.githubusercontent.com/u/3401691?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776092888951,
+      "changelog": "Initial release — ELI5 skill version 1.0.0\n\n- Explains complex topics using analogies, simple words, and concrete examples—like talking to a 5-year-old.\n- No jargon; explanations use everyday language and familiar comparisons.\n- Customizable options: set language, number of steps, bonus explanations, and freshness/data checks.\n- Supports `/eli5 <concept>`, language switching, web fetch for latest data, and more.\n- Built-in \"Freshness indicator\" for every answer, showing data recency and suggestions for updating.\n- Comprehensive, conversational help and clear command list.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8fba636bf4d9aa3cdada7f7b973cf513ed016464f69ba5012a811987e5d6ccf1"
+}

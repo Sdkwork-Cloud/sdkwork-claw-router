@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67417,
+  "uuid": "skill-clawhub-feishu-group-chat",
+  "skillKey": "clawhub-feishu-group-chat",
+  "name": "Feishu Group Chat",
+  "summary": "让你的飞书Bot可以在群里与其他（使用了本skill的）Bot/用户聊天。 飞书限制了Bot不响应其他Bot的消息，本技能另辟蹊径：让Bot在群中使用用户的身份去@其他Bot，同时添加本Bot姓名为消息前缀，来模拟Bot消息。把你的多个Bot加到一个群里，他们就能相互聊天甚至分配任务了。 触发场景：需要在飞书群里...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_group_chat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clear0",
+      "features": [
+        "让你的飞书Bot可以在群里与其他（使用了本skill的）Bot/用户聊天。 飞书限制了Bot不响应其他Bot的消息，本技能另辟蹊径：让Bot在群中使用用户的身份去@其他Bot，同时添加本Bo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-group-chat@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51185122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-group-chat",
+      "url": "https://clawhub.ai/skills/feishu-group-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-group-chat",
+    "url": "https://clawhub.ai/skills/feishu-group-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-group-chat-dd525a1bb5b69204.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-group-chat@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-group-chat-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0634cf1496d8447f763d6eedabf217db650e084f835f51918e38781c593334e0",
+      "artifactSizeBytes": 2135
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T08:13:39.356Z"
+}

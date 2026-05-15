@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35260,
+  "uuid": "skill-clawhub-ganai",
+  "skillKey": "clawhub-ganai",
+  "name": "Ganai",
+  "summary": "Gan.AI integration. Manage data, records, and automate workflows. Use when the user wants to interact with Gan.AI data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ganai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Gan.AI integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Gan.AI data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ganai@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ganai",
+      "url": "https://clawhub.ai/skills/ganai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ganai",
+    "url": "https://clawhub.ai/skills/ganai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ganai-b369911ac40aa822.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ganai@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ganai-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07965cf1baa419b12a9a474d7e82dc1c967ee3c056159deddf80f6cd886526e3",
+      "artifactSizeBytes": 1805
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:50:56.895Z"
+}

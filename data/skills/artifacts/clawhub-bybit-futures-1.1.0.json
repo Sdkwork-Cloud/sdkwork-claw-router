@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bybit-futures@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bybit_futures",
+  "skill": {
+    "id": 12303,
+    "skillKey": "clawhub-bybit-futures",
+    "name": "Bybit Futures"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bybit-futures",
+    "url": "https://clawhub.ai/skills/bybit-futures",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bybit-futures-6298b4826781d355.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Bybit USDT perpetual futures trading system with risk management, paper trading, and live execution. Use when building a crypto futures trading bot,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunnyztj",
+      "userId": "s17btfjyrwnnb18e8gyhagfarx83mpxf",
+      "displayName": "SunnyZhou",
+      "image": "https://avatars.githubusercontent.com/u/5576491?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1387,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771414994195,
+      "changelog": "Added HYPE and PEPE RSI strategies (73% and 53% WR)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:44d528fd70152ce601ec6ea99910c76f77169d0da7d325683d29cac21ebf96fe"
+}

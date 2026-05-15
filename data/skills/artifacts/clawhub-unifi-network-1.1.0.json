@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unifi-network@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unifi_network",
+  "skill": {
+    "id": 35754,
+    "skillKey": "clawhub-unifi-network",
+    "name": "UniFi Network"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unifi-network",
+    "url": "https://clawhub.ai/skills/unifi-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unifi-network-a44fe212bd1aee51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and monitor UniFi network via local gateway API (Cloud Gateway Ultra / UniFi OS). Use when the user asks to \"check UniFi\", \"list UniFi devices\", \"show..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ricanwarfare",
+      "userId": "s177bhc17epc6hk7skpkdgzc5n83x0fn",
+      "displayName": "ricanwarfare",
+      "image": "https://avatars.githubusercontent.com/u/33404913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775606491673,
+      "changelog": "Synced from openclaw-skills repo",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a9c5a52342fd6825d3d4d8137f45fb6c5929948b18d856ded1dc15284065f77"
+}

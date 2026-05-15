@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61602,
+  "uuid": "skill-clawhub-naver-shopping-plus",
+  "skillKey": "clawhub-naver-shopping-plus",
+  "name": "Naver Shopping Plus",
+  "summary": "한국형 쇼핑 검색 스킬. 네이버 쇼핑 API + 쿠팡/11번가 웹 스크래핑으로 배송비 포함 최저가를 자동 비교합니다.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.naver_shopping_plus",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mupengi-bot",
+      "features": [
+        "한국형 쇼핑 검색 스킬",
+        "네이버 쇼핑 API + 쿠팡/11번가 웹 스크래핑으로 배송비 포함 최저가를 자동 비교합니다."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/naver-shopping-plus@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259087580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "naver-shopping-plus",
+      "url": "https://clawhub.ai/skills/naver-shopping-plus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "naver-shopping-plus",
+    "url": "https://clawhub.ai/skills/naver-shopping-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/naver-shopping-plus-e490b3e70b3ccae9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/naver-shopping-plus@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-naver-shopping-plus-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d42c2bf2de6cb8f7eac76800238cf70ce0f868c308c9f30616ef55d6e9806673",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T15:37:57.130Z"
+}

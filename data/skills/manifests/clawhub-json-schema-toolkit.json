@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33619,
+  "uuid": "skill-clawhub-json-schema-toolkit",
+  "skillKey": "clawhub-json-schema-toolkit",
+  "name": "Json Schema Toolkit",
+  "summary": "Validate JSON data against JSON Schema, generate schemas from sample JSON, and convert schemas to TypeScript interfaces, Python dataclasses, or Markdown docs...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.json_schema_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Wang",
+      "features": [
+        "Validate JSON data against JSON Schema, generate schemas from sample JSON, and convert schemas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/json-schema-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20619402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "json-schema-toolkit",
+      "url": "https://clawhub.ai/skills/json-schema-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "json-schema-toolkit",
+    "url": "https://clawhub.ai/skills/json-schema-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/json-schema-toolkit-d07d54fd42bd6eda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/json-schema-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-json-schema-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f03d0624490ceb4169b9700ee3107903830066bdbc1cf8dcd67d99286e68dab0",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T13:07:32.435Z"
+}

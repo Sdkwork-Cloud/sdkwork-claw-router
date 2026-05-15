@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18423,
+  "uuid": "skill-clawhub-mindgraph",
+  "skillKey": "clawhub-mindgraph",
+  "name": "Mindgraph",
+  "summary": "Create and query an Obsidian-style [[wikilink]] knowledge graph with learnable repeatable MindSkills for managing and analyzing workspace files.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mindgraph",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hulkworks",
+      "features": [
+        "Create and query an Obsidian-style [[wikilink]] knowledge graph with learnable repeatable MindS."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mindgraph@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5690804?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mindgraph",
+      "url": "https://clawhub.ai/skills/mindgraph"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mindgraph",
+    "url": "https://clawhub.ai/skills/mindgraph",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mindgraph-3fbcdb1c903dc008.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mindgraph@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mindgraph-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c2e362a8ef2faad991c1549c67ee81cf0f05bcbd60ad34d17781af2e10f9d2f",
+      "artifactSizeBytes": 2466
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T15:11:22.967Z"
+}

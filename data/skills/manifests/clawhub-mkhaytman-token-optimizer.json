@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16245,
+  "uuid": "skill-clawhub-mkhaytman-token-optimizer",
+  "skillKey": "clawhub-mkhaytman-token-optimizer",
+  "name": "Token Optimizer",
+  "summary": "Automatically analyze and reduce OpenClaw token waste through context compression, tool-call deduplication insights, model selection guidance, and session hygiene checks. Use when sessions are nearing context limits, costs are climbing, or.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mkhaytman_token_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mkhaytman87",
+      "features": [
+        "Automatically analyze and reduce OpenClaw token waste through context compression, tool-call de.",
+        "Use when sessions are nearing context limits, costs are climbing, or you want proactive token o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mkhaytman-token-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24794258?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mkhaytman-token-optimizer",
+      "url": "https://clawhub.ai/skills/mkhaytman-token-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mkhaytman-token-optimizer",
+    "url": "https://clawhub.ai/skills/mkhaytman-token-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mkhaytman-token-optimizer-682c19a379904a95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mkhaytman-token-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mkhaytman-token-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd082c238df2d8dcce78f9e666c3a71bedb5dffa9104e51b34ea0d24a950b710",
+      "artifactSizeBytes": 2565
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T17:32:13.203Z"
+}

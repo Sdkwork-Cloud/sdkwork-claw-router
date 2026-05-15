@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65254,
+  "uuid": "skill-clawhub-github-search",
+  "skillKey": "clawhub-github-search",
+  "name": "github-search",
+  "summary": "GitHub 仓库深度搜索与分析。支持按关键词、语言、stars、更新时间筛选，获取细分领域最新开源项目。专为技术调研设计。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tbxsx",
+      "features": [
+        "GitHub 仓库深度搜索与分析。支持按关键词、语言、stars、更新时间筛选，获取细分领域最新开源项目。专为技术调研设计。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19223302?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-search",
+      "url": "https://clawhub.ai/skills/github-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-search",
+    "url": "https://clawhub.ai/skills/github-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-search-8164b8ca4f899da7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7527547c82a632205febf9f2b41610cc47ad4467aa72a9e25e31803ba019bae4",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T11:22:15.043Z"
+}

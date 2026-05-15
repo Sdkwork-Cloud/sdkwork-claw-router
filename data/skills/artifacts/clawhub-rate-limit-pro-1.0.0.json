@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rate-limit-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rate_limit_pro",
+  "skill": {
+    "id": 16436,
+    "skillKey": "clawhub-rate-limit-pro",
+    "name": "Rate Limit Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rate-limit-pro",
+    "url": "https://clawhub.ai/skills/rate-limit-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rate-limit-pro-0387102c4613ba5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced rate limiting with tiered controls and quota management"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raghulpasupathi",
+      "userId": "s17ea3bzwjbttkwd39h6mqkr6n83g14c",
+      "displayName": "raghulpasupathi",
+      "image": "https://avatars.githubusercontent.com/u/15859053?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 847,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771604318094,
+      "changelog": "Initial release of Rate Limit Pro.\n\n- Introduces advanced rate limiting with customizable tier-based controls.\n- Supports per-user request quotas and rolling time window management.\n- Provides methods to check limits, reset usage, and fetch user stats.\n- Easy configuration for multiple user tiers (e.g., free, basic, pro).\n- Includes clear usage examples for quick integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aca7a0bd1c439cfa0fd536b3b20137958a0382080fcf2d30c88986f97e9058fe"
+}

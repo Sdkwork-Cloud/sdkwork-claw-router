@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56481,
+  "uuid": "skill-clawhub-dedao-dl-skill",
+  "skillKey": "clawhub-dedao-dl-skill",
+  "name": "得到 Skill",
+  "summary": "Handles interactions with the dedao-dl CLI tool for downloading and managing content from the Dedao (得到) App. Use when the user wants to list bought courses,...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dedao_dl_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ANGJustinl",
+      "features": [
+        "Handles interactions with the dedao-dl CLI tool for downloading and managing content from the D.",
+        "Use when the user wants to list bought courses,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dedao-dl-skill@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96008766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dedao-dl-skill",
+      "url": "https://clawhub.ai/skills/dedao-dl-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dedao-dl-skill",
+    "url": "https://clawhub.ai/skills/dedao-dl-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dedao-dl-skill-5a0f7c7ba41680e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dedao-dl-skill@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dedao-dl-skill-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c201bafad6b5327e7bd72d5635b344ae237e6cdcb23dbf713b2bc1e9daeeb500",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T00:01:19.746Z"
+}

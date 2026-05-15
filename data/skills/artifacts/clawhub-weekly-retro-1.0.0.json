@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weekly-retro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_retro",
+  "skill": {
+    "id": 41056,
+    "skillKey": "clawhub-weekly-retro",
+    "name": "Weekly Retro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-retro",
+    "url": "https://clawhub.ai/skills/weekly-retro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-retro-d2cef09b9d91bf7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Weekly retrospective that analyzes memory logs to identify accomplishments, recurring patterns, friction points, and forward-looking recommendations. More st..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newageinvestments25-byte",
+      "userId": "s1750zbb4q7vnt30b4h3mhgarx83n6hn",
+      "displayName": "New Age Investments",
+      "image": "https://avatars.githubusercontent.com/u/243381911?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774873767567,
+      "changelog": "Weekly Retro 1.0.0 — initial release\n\n- Introduces a full pipeline to generate strategic weekly retrospectives from memory logs, focusing on accomplishments, patterns, and recommendations.\n- Includes scripts for data gathering, pattern analysis, markdown report generation, and history tracking.\n- Provides options for customization (date range, config files, output paths).\n- Output is Obsidian-compatible markdown designed for long-term review.\n- Requires only Python standard library; no external dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47fe3339e60da916d730f18504d2671558667a0a2a7cf7d4fbef99c7012a05c4"
+}

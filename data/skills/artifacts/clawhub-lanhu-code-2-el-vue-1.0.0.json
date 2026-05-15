@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lanhu-code-2-el-vue@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lanhu_code_2_el_vue",
+  "skill": {
+    "id": 59081,
+    "skillKey": "clawhub-lanhu-code-2-el-vue",
+    "name": "lanhu-code-2-el-vue"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lanhu-code-2-el-vue",
+    "url": "https://clawhub.ai/skills/lanhu-code-2-el-vue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lanhu-code-2-el-vue-59c599b663db1c40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将静态 Vue 页面(index.vue)改造为动态页面(Custom.vue)；执行前必须先应用 ui-ux-max-pro 做 UI/UX 分析；稿源仅限 index.vue、其引用的 CSS 与资源路径，禁止参考仓库内其他文件。Invoke when user wants to transform a st..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "781818761",
+      "userId": "s175pz2ryf1av4yj44dtx0xx6s8667r1",
+      "displayName": "long ago",
+      "image": "https://avatars.githubusercontent.com/u/23630229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 75,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778067287898,
+      "changelog": "lanhu-code-2-el-vue v1.0.0\n\n- Initial release: transform static Vue pages (index.vue) into dynamic Vue 2 + Element UI pages (Custom.vue) using only the target page and directly referenced CSS/resources as sources.\n- Strictly enforces \"single source of truth\": no reading or referencing any files outside the current index.vue and its imported styles/resources.\n- Requires prior execution of ui-ux-max-pro skill for UI/UX analysis before transformation can begin.\n- Provides detailed, enforceable rules for file structure, dynamic data extraction, Element UI component replacement, naming conventions, and scoped styling.\n- File operations must directly generate Custom.vue with full <template>, <script>, and <style scoped> blocks—never modify the original index.vue.\n- Sets clear error handling for missing source files or dependencies, and defines precise usage and non-usage scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca17c7ed569b0eeb4f443c254ee8beae0cd33b1254a4f79e837960fd372069ac"
+}

@@ -1,0 +1,49 @@
+{
+  "skill": {
+    "slug": "skill-c-fetch-minutes",
+    "displayName": "skill-c-fetch-minutes",
+    "summary": "【会后纪要抓取与issue草稿生成】每10分钟由 OpenClaw cron 触发一次。负责在会议结束后从腾讯会议拉取转录与AI智能纪要，由 OpenClaw 做两阶段issue抽取，生成 draft_issue.md 等四个文件并提交到 Gitea，最后通知组织者审核。不处理会议创建、会前简报、issue落地等场景。",
+    "tags": {
+      "latest": "1.0.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "createdAt": 1776571555687,
+    "updatedAt": 1777527735895
+  },
+  "latestVersion": {
+    "version": "1.0.2",
+    "createdAt": 1777484617990,
+    "changelog": "- Adds a mandatory 20-minute grace period after meeting end before post-processing starts; only meetings ended for over 20 minutes are processed.\n- `scan` now includes a `ready_for_postprocess` flag and only returns eligible meetings; `set-waiting` requires this condition and returns `skipped=true` if not met.\n- B and C class meeting scanning fields enhanced (`meeting_end_time`, `ready_after_time`, etc.) for improved timing and retry logic.\n- Workflow and error handling updated: meetings not past the 20-minute waiting window are skipped until eligible, ensuring accurate status transitions.\n- No code or file logic changes; documentation and workflow are aligned for stricter, safer meeting post-processing.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "myd2002",
+    "userId": "s175zrvz5m28epr76c6rt4dtex8474t6",
+    "displayName": "myd2002",
+    "image": "https://avatars.githubusercontent.com/u/165788146?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527735895
+  }
+}

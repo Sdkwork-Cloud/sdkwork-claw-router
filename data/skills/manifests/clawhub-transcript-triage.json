@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19138,
+  "uuid": "skill-clawhub-transcript-triage",
+  "skillKey": "clawhub-transcript-triage",
+  "name": "transcript triage",
+  "summary": "Parses long transcripts into topics under ordered lists, to triage in your notes system",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transcript_triage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nicholas Frota",
+      "features": [
+        "Parses long transcripts into topics under ordered lists, to triage in your notes system"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/transcript-triage@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "transcript-triage",
+      "url": "https://clawhub.ai/skills/transcript-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transcript-triage",
+    "url": "https://clawhub.ai/skills/transcript-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transcript-triage-8458e6a2f64c8cf7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/transcript-triage@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-transcript-triage-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:635f0ef45ccc9fa382e3a10e1db1756d789b9fcc95e24e5f401ceb339b80472a",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T03:46:58.347Z"
+}

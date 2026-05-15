@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52632,
+  "uuid": "skill-clawhub-ai-retrospective-skill",
+  "skillKey": "clawhub-ai-retrospective-skill",
+  "name": "ai-retrospective",
+  "summary": "AI Collaboration Retrospective — a tool-agnostic post-session analysis framework. After each AI-assisted coding/development session, it systematically review...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_retrospective_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Amos",
+      "features": [
+        "AI Collaboration Retrospective — a tool-agnostic post-session analysis framework",
+        "After each AI-assisted coding/development session, it systematically review..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-retrospective-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34994144?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-retrospective-skill",
+      "url": "https://clawhub.ai/skills/ai-retrospective-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-retrospective-skill",
+    "url": "https://clawhub.ai/skills/ai-retrospective-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-retrospective-skill-202792fe3512e4b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-retrospective-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-retrospective-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9da0c83e00b79cf537aa120c5689cc85110d54fdf90b6df972a4711ba063cc2c",
+      "artifactSizeBytes": 2559
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T08:07:42.370Z"
+}

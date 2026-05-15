@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crmy@0.5.11",
+  "version": "0.5.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crmy",
+  "skill": {
+    "id": 50802,
+    "skillKey": "clawhub-crmy",
+    "name": "CRMy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crmy",
+    "url": "https://clawhub.ai/skills/crmy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crmy-ca5d026d4458cebc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CRMy agent — manages contacts, accounts, deals, and pipeline using the CRMy CRM. Search before creating. Log every meaningful interaction. Always suggest nex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codycharris",
+      "userId": "publishers:codycharris",
+      "displayName": "crmy",
+      "image": "https://avatars.githubusercontent.com/u/2575990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.5.11",
+      "createdAt": 1773811854993,
+      "changelog": "- The openclaw.extensions field now points OpenClaw's runtime directly to ./dist/index.js\n- No user-facing changes; SKILL.md remains the same in this release.\n- No file changes detected in version 0.5.11.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33c039c64ee5a537809905a8b8bd4f5f85a9d977856106c9e79854560e411582"
+}

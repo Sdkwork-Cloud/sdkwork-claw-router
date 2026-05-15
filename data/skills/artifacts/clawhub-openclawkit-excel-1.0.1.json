@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclawkit-excel@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclawkit_excel",
+  "skill": {
+    "id": 62794,
+    "skillKey": "clawhub-openclawkit-excel",
+    "name": "openclawkit-excel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclawkit-excel",
+    "url": "https://clawhub.ai/skills/openclawkit-excel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclawkit-excel-c584648b5ce823ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Excel文件操作工具套件，提供基础的Excel文件读写、数据处理和报表生成功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wanghao20150901",
+      "userId": "s171mkrycntxergzkaw3jea96183s663",
+      "displayName": "wanghao20150901",
+      "image": "https://avatars.githubusercontent.com/u/26130035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774675688299,
+      "changelog": "- 首个公开版本发布，提供完整的Excel文件操作工具。\n- 支持Excel文件的创建、读取、写入、合并和拆分。\n- 增加数据处理功能，包括清洗、格式转换、聚合与数据验证。\n- 报表生成功能，支持多表统计与可视化报表。\n- 提供命令行和Python API两种使用方式。\n- 完善的错误处理与性能优化机制。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5f73c17ebb995d29f71ba20f142530e2e5731d3996171eeb1cfeb894d978c758"
+}

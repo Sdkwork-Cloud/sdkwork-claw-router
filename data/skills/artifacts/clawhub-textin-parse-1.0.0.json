@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/textin-parse@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.textin_parse",
+  "skill": {
+    "id": 60627,
+    "skillKey": "clawhub-textin-parse",
+    "name": "Textin Parse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "textin-parse",
+    "url": "https://clawhub.ai/skills/textin-parse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/textin-parse-f5b28e480995fb0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Textin 文档解析 API 封装，支持上传图片/pdf/word/html/excel/ppt/txt 等格式进行版面检测、文字识别、表格识别，生成 markdown 文档及结构化数据。 用于：(1) 解析 PDF/图片/文档为 markdown；(2) 提取文档结构化数据；(3) 识别表格和公式；(4) 提..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kingjus",
+      "userId": "s178awa3kg2809wvrna6xaws6583hdct",
+      "displayName": "KingJus",
+      "image": "https://avatars.githubusercontent.com/u/18291072?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 310,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774230393593,
+      "changelog": "Initial release of textin-parse\n\n- 提供文档解析 API 封装，支持图片、PDF、Word、Excel、PPT、HTML、Txt 等格式。\n- 支持版面检测、文字识别、表格和公式识别，生成 Markdown 文档及结构化数据。\n- 支持多种文件输出格式和解析模式，可选参数丰富。\n- 支持表格、目录结构、图像等内容提取。\n- 明确注册、配置和使用流程说明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a2ab5bd8429902050881f188f85bedb831ed9cf3d1655c24278ffc03d20e9ec5"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28929,
+  "uuid": "skill-clawhub-github-actions-runtime-regression-audit",
+  "skillKey": "clawhub-github-actions-runtime-regression-audit",
+  "name": "GitHub Actions Runtime Regression Audit",
+  "summary": "Compare baseline vs current GitHub Actions run exports to catch workflow/job runtime regressions before CI costs and lead time spike.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_runtime_regression_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Compare baseline vs current GitHub Actions run exports to catch workflow/job runtime regression."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-actions-runtime-regression-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-actions-runtime-regression-audit",
+      "url": "https://clawhub.ai/skills/github-actions-runtime-regression-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-runtime-regression-audit",
+    "url": "https://clawhub.ai/skills/github-actions-runtime-regression-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-runtime-regression-audit-504793dc75ecd4df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-actions-runtime-regression-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-runtime-regression-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8790b306b3f08288bec724b10a1e56612738b09828d110548dbb1d25152e7c2e",
+      "artifactSizeBytes": 2145
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T08:07:20.244Z"
+}

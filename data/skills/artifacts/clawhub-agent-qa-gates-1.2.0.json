@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-qa-gates@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_qa_gates",
+  "skill": {
+    "id": 24532,
+    "skillKey": "clawhub-agent-qa-gates",
+    "name": "Agent QA Gates"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-qa-gates",
+    "url": "https://clawhub.ai/skills/agent-qa-gates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-qa-gates-d2050605d4bc1bb7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Output validation gates for AI agent systems. Prevents hallucinated data, leaked internal context, wrong formats, duplicate sends, post-compaction drift, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zurbrick",
+      "userId": "s17644fr465554b2j12pdyaxrh83ekff",
+      "displayName": "Don Zurbrick",
+      "image": "https://avatars.githubusercontent.com/u/24554955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774727079005,
+      "changelog": "Add delegated-work acceptance gates, empty-success rejection, and stale-task classification for non-trivial delegated work",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2860c57c66f06c4f726b7349d3461f3614c127d787c4d95acee452c5f4f23873"
+}

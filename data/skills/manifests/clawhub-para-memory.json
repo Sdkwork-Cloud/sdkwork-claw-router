@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25797,
+  "uuid": "skill-clawhub-para-memory",
+  "skillKey": "clawhub-para-memory",
+  "name": "PARA Memory System",
+  "summary": "Set up and maintain a 3-layer PARA memory system for OpenClaw agents. Provides durable knowledge persistence across sessions using daily notes, a structured...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.para_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aisoftgg",
+      "features": [
+        "Set up and maintain a 3-layer PARA memory system for OpenClaw agents",
+        "Provides durable knowledge persistence across sessions using daily notes, a structured..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/para-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262477218?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "para-memory",
+      "url": "https://clawhub.ai/skills/para-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "para-memory",
+    "url": "https://clawhub.ai/skills/para-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/para-memory-9744809c38443fda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/para-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-para-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:185ee626c1d98718fd961d0e44dac5ee7b0c9bd03e2f5f48e107f9a8dec23247",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T13:49:50.610Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-info-defianalysis@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_info_defianalysis",
+  "skill": {
+    "id": 36350,
+    "skillKey": "clawhub-gate-info-defianalysis",
+    "name": "gate-info-defianalysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-info-defianalysis",
+    "url": "https://clawhub.ai/skills/gate-info-defianalysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-info-defianalysis-8be543cae164f839.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DeFi ecosystem analysis via Gate-Info MCP. Use this skill whenever the user wants TVL rankings, protocol metrics, yield/APY, stablecoins, bridges, exchange r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gate-exchange",
+      "userId": "s172g4d1dcv6ccs6desbb2xw1583qza9",
+      "displayName": "Gate",
+      "image": "https://avatars.githubusercontent.com/u/33109813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775558057435,
+      "changelog": "- Significant cleanup of repository: removed obsolete CHANGELOG.md, README.md, scenario, and script files.\n- Migrated shared runtime rules to local references; now requires reading `references/gate-runtime-rules.md` and `references/info-news-runtime-rules.md`.\n- Updated installation and MCP server check instructions for clarity and local context.\n- Streamlined documentation to focus on active sub-scenarios, valid MCP tools, and core routing logic.\n- Enhanced progressive loading instructions and clarified the workflow for Bridges and Stablecoins.\n- No changes to supported features or user-facing toolset.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:136af9a2869ae1025e5ff82d0f7108c664bd5e44eee4e005f4fd9e4b7d92c024"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jarvis-mission-control@2.0.8",
+  "version": "2.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jarvis_mission_control",
+  "skill": {
+    "id": 12462,
+    "skillKey": "clawhub-jarvis-mission-control",
+    "name": "Free Mission Control for OpenClaw AI Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jarvis-mission-control",
+    "url": "https://clawhub.ai/skills/jarvis-mission-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jarvis-mission-control-ef26e88a7bf51224.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "JARVIS Mission Control v2 — free, self-hosted command center for OpenClaw AI agents. Kanban board, real-time chat, Claude Code session tracking, GitHub Issue..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asif2bd",
+      "userId": "s172w5rqenpwn4qb4g5n563hx9845890",
+      "displayName": "Asif",
+      "image": "https://avatars.githubusercontent.com/u/2099592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1792,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 4,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "2.0.8",
+      "createdAt": 1775195335189,
+      "changelog": "v2.0.8: Performance fix — surgical O(1) cache updates for /api/tasks. Eliminates 6000ms+ slow responses from full cache invalidation on every file write. updateCacheItem() updates single items in-place; 5-min TTL safety net added.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20514574682ccde6999c7812d5c8088953a015e41cdf877c05a2a644fa70962e"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68075,
+  "uuid": "skill-clawhub-flyelep-image-translate",
+  "skillKey": "clawhub-flyelep-image-translate",
+  "name": "image-translate",
+  "summary": "通过 Flyelep AI 工具接口识别并翻译图片中的文字，返回翻译后的新图片地址。 当用户要求翻译海报文字、翻译商品图文案、将图片文字改成目标语言时使用此技能。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyelep_image_translate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flyelep",
+      "features": [
+        "通过 Flyelep AI 工具接口识别并翻译图片中的文字，返回翻译后的新图片地址。 当用户要求翻译海报文字、翻译商品图文案、将图片文字改成目标语言时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flyelep-image-translate@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272408277?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flyelep-image-translate",
+      "url": "https://clawhub.ai/skills/flyelep-image-translate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyelep-image-translate",
+    "url": "https://clawhub.ai/skills/flyelep-image-translate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyelep-image-translate-295a1a48b01664b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flyelep-image-translate@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-flyelep-image-translate-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:069cf65948eff1e589445d6beae4baef0d86ab438ce4c69669dce62c9f0df7ba",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T03:57:10.205Z"
+}

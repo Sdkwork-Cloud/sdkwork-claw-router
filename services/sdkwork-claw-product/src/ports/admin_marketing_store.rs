@@ -42,8 +42,20 @@ pub struct ListAdminRechargeRecordsQuery {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct ListAdminRechargePackagesQuery {
+    pub subject: AdminMarketingSubject,
+    pub status: Option<AdminRechargePackageStatus>,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct ListAdminReferralStatsQuery {
     pub subject: AdminMarketingSubject,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum AdminRechargePackageStatus {
+    Active,
+    Inactive,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -89,6 +101,43 @@ pub struct UpdateAdminPromoCodeStatusCommand {
     pub subject: AdminMarketingSubject,
     pub promo_code_id: i64,
     pub status: String,
+    pub audit_log_uuid: String,
+    pub request_id: String,
+    pub requested_at: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct CreateAdminRechargePackageCommand {
+    pub subject: AdminMarketingSubject,
+    pub package_uuid: String,
+    pub product_uuid: String,
+    pub sku_uuid: String,
+    pub audit_log_uuid: String,
+    pub rmb: String,
+    pub bonus: i64,
+    pub status: AdminRechargePackageStatus,
+    pub request_id: String,
+    pub requested_at: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct UpdateAdminRechargePackageCommand {
+    pub subject: AdminMarketingSubject,
+    pub package_id: i64,
+    pub product_uuid: String,
+    pub sku_uuid: String,
+    pub audit_log_uuid: String,
+    pub rmb: String,
+    pub bonus: i64,
+    pub status: AdminRechargePackageStatus,
+    pub request_id: String,
+    pub requested_at: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct DeleteAdminRechargePackageCommand {
+    pub subject: AdminMarketingSubject,
+    pub package_id: i64,
     pub audit_log_uuid: String,
     pub request_id: String,
     pub requested_at: String,
@@ -156,6 +205,15 @@ pub struct AdminRechargeRecordItem {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct AdminRechargePackageItem {
+    pub id: String,
+    pub rmb: String,
+    pub bonus: i64,
+    pub points: i64,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
 pub struct AdminReferralStatItem {
     pub id: String,
     pub inviter: String,
@@ -210,6 +268,26 @@ pub trait AdminMarketingStore {
         &'a self,
         query: ListAdminRechargeRecordsQuery,
     ) -> AdminMarketingCommandFuture<'a, Vec<AdminRechargeRecordItem>>;
+
+    fn list_recharge_packages<'a>(
+        &'a self,
+        query: ListAdminRechargePackagesQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<AdminRechargePackageItem>>;
+
+    fn create_recharge_package<'a>(
+        &'a self,
+        command: CreateAdminRechargePackageCommand,
+    ) -> AdminMarketingCommandFuture<'a, AdminRechargePackageItem>;
+
+    fn update_recharge_package<'a>(
+        &'a self,
+        command: UpdateAdminRechargePackageCommand,
+    ) -> AdminMarketingCommandFuture<'a, AdminRechargePackageItem>;
+
+    fn delete_recharge_package<'a>(
+        &'a self,
+        command: DeleteAdminRechargePackageCommand,
+    ) -> AdminMarketingCommandFuture<'a, bool>;
 
     fn list_referral_stats<'a>(
         &'a self,

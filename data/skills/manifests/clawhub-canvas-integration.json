@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22918,
+  "uuid": "skill-clawhub-canvas-integration",
+  "skillKey": "clawhub-canvas-integration",
+  "name": "Canvas",
+  "summary": "Canvas integration. Manage Canvases. Use when the user wants to interact with Canvas data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canvas_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Canvas integration",
+        "Manage Canvases",
+        "Use when the user wants to interact with Canvas data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/canvas-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "canvas-integration",
+      "url": "https://clawhub.ai/skills/canvas-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canvas-integration",
+    "url": "https://clawhub.ai/skills/canvas-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canvas-integration-98291f28d5dfc87b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/canvas-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-canvas-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7bbb68c31ce0f2883b8dd1921cf6141553f21fc0dd9fe1594eea08e4fa1d3343",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:16:41.609Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kalshi-econ-revision-drift-trader@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_econ_revision_drift_trader",
+  "skill": {
+    "id": 52571,
+    "skillKey": "clawhub-kalshi-econ-revision-drift-trader",
+    "name": "Kalshi Econ Revision Drift Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-econ-revision-drift-trader",
+    "url": "https://clawhub.ai/skills/kalshi-econ-revision-drift-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-econ-revision-drift-trader-b90aa2a2b91c1568.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trades CPI bin markets on Kalshi accounting for systematic upward revision bias (~0.03 pp) in initial CPI releases. Markets pricing off initial releases unde..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diagnostikon",
+      "userId": "s17bf2qvfsqakddyh674vczxqs83fcwb",
+      "displayName": "diagnostikon",
+      "image": "https://avatars.githubusercontent.com/u/17246180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775338519705,
+      "changelog": "Rescan",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4a99e19ca221fd4706910e8ce5312bd31a9ace87ab091b57cfcad8ff88ed472"
+}

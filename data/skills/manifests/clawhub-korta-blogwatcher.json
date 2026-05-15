@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42252,
+  "uuid": "skill-clawhub-korta-blogwatcher",
+  "skillKey": "clawhub-korta-blogwatcher",
+  "name": "Korta Blogwatcher",
+  "summary": "Monitor blogs and RSS/Atom feeds for updates using the blogwatcher CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.korta_blogwatcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "landercortazarromero",
+      "features": [
+        "Monitor blogs and RSS/Atom feeds for updates using the blogwatcher CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/korta-blogwatcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268324391?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "korta-blogwatcher",
+      "url": "https://clawhub.ai/skills/korta-blogwatcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "korta-blogwatcher",
+    "url": "https://clawhub.ai/skills/korta-blogwatcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/korta-blogwatcher-b219fccfd3f460c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/korta-blogwatcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-korta-blogwatcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bee792c5ffe89c51ebf0b8929d89a42155b2df500d920e88ff9f0d6fa3d7de40",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T06:20:28.028Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23487,
+  "uuid": "skill-clawhub-paw-chat",
+  "skillKey": "clawhub-paw-chat",
+  "name": "Paw Chat",
+  "summary": "Install and manage Paw - a standalone web chat frontend for OpenClaw Gateway. Use when the user wants to install Paw, update Paw, or set up a web chat interf...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paw_chat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ori",
+      "features": [
+        "Install and manage Paw",
+        "a standalone web chat frontend for OpenClaw Gateway",
+        "Use when the user wants to install Paw, update Paw, or set up a web chat interf..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paw-chat@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226218834?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paw-chat",
+      "url": "https://clawhub.ai/skills/paw-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paw-chat",
+    "url": "https://clawhub.ai/skills/paw-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paw-chat-22d587577e465cc6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paw-chat@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-paw-chat-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abb8f5b44581a205359e83417785a45b1c40df01e0e97fbe55b9384e8c51fccc",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T15:31:52.552Z"
+}

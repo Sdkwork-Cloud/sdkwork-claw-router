@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32414,
+  "uuid": "skill-clawhub-formtitan",
+  "skillKey": "clawhub-formtitan",
+  "name": "Formtitan",
+  "summary": "FormTitan integration. Manage Forms, Submissions, Users, Roles, Integrations. Use when the user wants to interact with FormTitan data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.formtitan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "FormTitan integration",
+        "Manage Forms, Submissions, Users, Roles, Integrations",
+        "Use when the user wants to interact with FormTitan data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/formtitan@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "formtitan",
+      "url": "https://clawhub.ai/skills/formtitan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "formtitan",
+    "url": "https://clawhub.ai/skills/formtitan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/formtitan-b4191716a98970ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/formtitan@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-formtitan-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:356c09339bf87f77d9dc9ec081748b0d82e17184eb989c5f80cad93ee97bdb96",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:49:42.397Z"
+}

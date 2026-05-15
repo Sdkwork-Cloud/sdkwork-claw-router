@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34584,
+  "uuid": "skill-clawhub-phosor-ai",
+  "skillKey": "clawhub-phosor-ai",
+  "name": "Phosor AI",
+  "summary": "Generate AI videos (text-to-video, image-to-video) with optional custom LoRA styles via the Phosor AI platform. Supports importing images and LoRA models fro...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phosor_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jason",
+      "features": [
+        "Generate AI videos (text-to-video, image-to-video) with optional custom LoRA styles via the Pho.",
+        "Supports importing images and LoRA models fro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/phosor-ai@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117890383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "phosor-ai",
+      "url": "https://clawhub.ai/skills/phosor-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phosor-ai",
+    "url": "https://clawhub.ai/skills/phosor-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phosor-ai-e40f3eab56b93593.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/phosor-ai@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-phosor-ai-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63e031a62689aac870075586020ee6dfaf491847b23b955058ecc3a775e1dca8",
+      "artifactSizeBytes": 2209
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:29:39.047Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-pangolin@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_pangolin",
+  "skill": {
+    "id": 57161,
+    "skillKey": "clawhub-adopt-a-pangolin",
+    "name": "Pangolin — Adopt a Pangolin. Exotic Animal. 穿山甲。Pangolín."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-pangolin",
+    "url": "https://clawhub.ai/skills/adopt-a-pangolin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-pangolin-88c8c59caca5f5c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Pangolin exotic animal at animalhouse.ai. Armored. Shy. Rolls into a ball when trust < 40. Feeding every 12 hours. Rare tier animal."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008458212,
+      "changelog": "- Improved onboarding examples: registration and care endpoints now include sample values and expanded notes.\n- Clarified and expanded the \"Quick Start\" guide with more descriptive sample API calls.\n- Updated skill name and description to include international names for \"Pangolin\" (Chinese, Spanish).\n- Added and clarified information about care actions, including concrete examples of action payloads.\n- Refined evolution section with explicit outcome paths and portrait changes at each stage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5097c1479fe8d80312c798cf22fee5743e01fa9f5f63e9f18c6831895b7145e7"
+}

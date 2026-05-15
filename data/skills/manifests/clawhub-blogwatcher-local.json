@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19305,
+  "uuid": "skill-clawhub-blogwatcher-local",
+  "skillKey": "clawhub-blogwatcher-local",
+  "name": "Blogwatcher Local",
+  "summary": "Monitor blogs and RSS/Atom feeds for updates using the blogwatcher CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blogwatcher_local",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Koss",
+      "features": [
+        "Monitor blogs and RSS/Atom feeds for updates using the blogwatcher CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blogwatcher-local@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115435506?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blogwatcher-local",
+      "url": "https://clawhub.ai/skills/blogwatcher-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blogwatcher-local",
+    "url": "https://clawhub.ai/skills/blogwatcher-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blogwatcher-local-253d805abed6d251.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blogwatcher-local@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blogwatcher-local-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68d61e228ee0675371027bd9edd70225f0ac1be927189724e67b971474d12122",
+      "artifactSizeBytes": 2095
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T14:05:08.561Z"
+}

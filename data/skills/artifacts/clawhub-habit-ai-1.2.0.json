@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/habit-ai@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.habit_ai",
+  "skill": {
+    "id": 50383,
+    "skillKey": "clawhub-habit-ai",
+    "name": "Habit AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "habit-ai",
+    "url": "https://clawhub.ai/skills/habit-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/habit-ai-08c222b74e33fec5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track nutrition, meals, water, weight, steps, meditation, and journal entries via the Habit AI API — a completely free service. Use when logging food, checki..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "habitclaw",
+      "userId": "publishers:habitclaw",
+      "displayName": "habitclaw",
+      "image": "https://avatars.githubusercontent.com/u/262028653?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 533,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772906350669,
+      "changelog": "v1.2: Improved documentation, meal logging, AI coaching, meditation tracking",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1a8f5555e0c3bce5f0dba47aebfb97676797e8a6c89edde2cfa39299582d0851"
+}

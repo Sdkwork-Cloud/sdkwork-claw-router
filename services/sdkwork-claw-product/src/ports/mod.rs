@@ -19,8 +19,8 @@ mod api_key_command_store;
 mod api_key_management_read_store;
 mod app_auth_store;
 mod app_gateway_traces_read_store;
+mod app_generation_history_read_store;
 mod app_messages_read_store;
-mod app_playground_history_read_store;
 mod app_providers_read_store;
 mod app_routing_channel_command_store;
 mod app_routing_read_store;
@@ -33,6 +33,7 @@ mod billing_store;
 mod chat_completion_relay;
 mod chat_completion_stream_relay;
 mod checkout_store;
+mod course_store;
 mod dashboard_overview_read_store;
 mod embeddings_relay;
 mod forum_store;
@@ -49,6 +50,8 @@ mod settings_store;
 mod settlements_dashboard_read_store;
 mod usage_logs_read_store;
 mod usage_settlement_store;
+mod verification_code_sender;
+mod verification_delivery_config_store;
 
 pub use account_summary_read_store::{
     AccountConsumptionItem, AccountInvoiceSettings, AccountLoginLog, AccountSecuritySummary,
@@ -94,11 +97,14 @@ pub use admin_ip_rate_limit_store::{
 };
 pub use admin_marketing_store::{
     AdminCouponBatchItem, AdminCouponItem, AdminMarketingCommandFuture, AdminMarketingStore,
-    AdminMarketingSubject, AdminPromoCodeItem, AdminRechargeRecordItem, AdminRedemptionRecordItem,
-    AdminReferralStatItem, CreateAdminCouponCommand, DeleteAdminCouponCommand,
-    GenerateAdminCouponBatchCommand, ListAdminCouponBatchesQuery, ListAdminCouponsQuery,
-    ListAdminPromoCodesQuery, ListAdminRechargeRecordsQuery, ListAdminRedemptionRecordsQuery,
+    AdminMarketingSubject, AdminPromoCodeItem, AdminRechargePackageItem,
+    AdminRechargePackageStatus, AdminRechargeRecordItem, AdminRedemptionRecordItem,
+    AdminReferralStatItem, CreateAdminCouponCommand, CreateAdminRechargePackageCommand,
+    DeleteAdminCouponCommand, DeleteAdminRechargePackageCommand, GenerateAdminCouponBatchCommand,
+    ListAdminCouponBatchesQuery, ListAdminCouponsQuery, ListAdminPromoCodesQuery,
+    ListAdminRechargePackagesQuery, ListAdminRechargeRecordsQuery, ListAdminRedemptionRecordsQuery,
     ListAdminReferralStatsQuery, UpdateAdminPromoCodeStatusCommand,
+    UpdateAdminRechargePackageCommand,
 };
 pub use admin_model_rate_limit_store::{
     AdminModelRateLimitCommandFuture, AdminModelRateLimitItem, AdminModelRateLimitStore,
@@ -148,18 +154,22 @@ pub use api_key_command_store::{
 pub use api_key_management_read_store::{
     ApiKeyManagementReadFuture, GatewayApiKeyManagementReadStore, GatewayApiKeyManagementSnapshot,
 };
-pub use app_auth_store::{AppAuthFuture, AppAuthStore, AppAuthUserCredential};
+pub use app_auth_store::{
+    AppAuthFuture, AppAuthPasswordResetCodeCommand, AppAuthPasswordResetCommand,
+    AppAuthRegistrationCommand, AppAuthStore, AppAuthUserCredential,
+    AppAuthVerificationCodeCommand, AppAuthVerificationCodeLookup,
+};
 pub use app_gateway_traces_read_store::{
     AppGatewayTraceItem, AppGatewayTraceItems, AppGatewayTracesReadFuture,
     AppGatewayTracesReadStore, AppGatewayTracesSubject,
 };
+pub use app_generation_history_read_store::{
+    AppGenerationHistoryItem, AppGenerationHistoryItems, AppGenerationHistoryReadFuture,
+    AppGenerationHistoryReadStore, AppGenerationHistorySubject, AppGenerationMediaItem,
+};
 pub use app_messages_read_store::{
     AppMessageItem, AppMessageItems, AppMessagesReadFuture, AppMessagesReadStore,
     AppMessagesSubject,
-};
-pub use app_playground_history_read_store::{
-    AppPlaygroundHistoryItem, AppPlaygroundHistoryItems, AppPlaygroundHistoryReadFuture,
-    AppPlaygroundHistoryReadStore, AppPlaygroundHistorySubject, AppPlaygroundMediaItem,
 };
 pub use app_providers_read_store::{
     AppProviderItem, AppProvidersItems, AppProvidersReadFuture, AppProvidersReadStore,
@@ -199,8 +209,9 @@ pub use app_user_profile_read_store::{
     AppUserProfileSubject,
 };
 pub use billing_store::{
-    BillingCommandFuture, BillingReadFuture, BillingRechargeHistoryItem, BillingRedeemHistoryItem,
-    BillingStore, BillingSubject, RedeemCodeCommand, RedeemCodeOutcome,
+    BillingCommandFuture, BillingPointsBalance, BillingPointsHistoryItem, BillingReadFuture,
+    BillingRechargeHistoryItem, BillingRedeemHistoryItem, BillingStore, BillingSubject,
+    RedeemCodeCommand, RedeemCodeOutcome,
 };
 pub use chat_completion_relay::{
     ChatCompletionRelay, ChatCompletionRelayFuture, ChatCompletionRelayRequest,
@@ -212,6 +223,12 @@ pub use chat_completion_stream_relay::{
 pub use checkout_store::{
     CheckoutReadFuture, CheckoutStatusSnapshot, CheckoutStore, CheckoutSubject,
 };
+pub use course_store::{
+    CourseApplicationCommandStore, CourseApplicationItem, CourseCategoryItem, CourseCommandFuture,
+    CourseDetail, CourseEngagement, CourseInstructor, CourseItem, CourseLessonItem, CourseOverview,
+    CourseOverviewSource, CourseOverviewStats, CourseQuery, CourseReadFuture, CourseReadStore,
+    CourseSectionItem, CourseSubject, CreateCourseApplicationCommand,
+};
 pub use dashboard_overview_read_store::{
     DashboardAnnouncement, DashboardChartPoint, DashboardOverviewQuery,
     DashboardOverviewReadFuture, DashboardOverviewReadStore, DashboardOverviewSnapshot,
@@ -221,10 +238,11 @@ pub use embeddings_relay::{
     EmbeddingsRelay, EmbeddingsRelayFuture, EmbeddingsRelayRequest, EmbeddingsRelayResponse,
 };
 pub use forum_store::{
-    CreateForumCommentCommand, CreateForumFeedCommand, ForumAuthor, ForumBooleanResult,
-    ForumCommandFuture, ForumCommentCommandStore, ForumCommentDetail, ForumCommentItem,
-    ForumCommentPage, ForumCommentReadStore, ForumCommentStatistics, ForumFeedCommandStore,
-    ForumFeedItem, ForumFeedQuery, ForumFeedReadStore, ForumReadFuture, ForumStore, ForumSubject,
+    CreateForumCommentCommand, CreateForumFeedCommand, ForumAuthor, ForumCommandFuture,
+    ForumCommentCommandStore, ForumCommentDetail, ForumCommentItem, ForumCommentPage,
+    ForumCommentReadStore, ForumCommentStatistics, ForumCommunityLink, ForumFeedCommandStore,
+    ForumFeedItem, ForumFeedQuery, ForumFeedReadStore, ForumOverview, ForumOverviewSource,
+    ForumOverviewStats, ForumReadFuture, ForumStore, ForumSubject,
 };
 pub use gateway_usage_recorder::{
     GatewayUsageRecordCommand, GatewayUsageRecordFuture, GatewayUsageRecorder,
@@ -279,4 +297,15 @@ pub use usage_logs_read_store::{
 };
 pub use usage_settlement_store::{
     UsageSettlementCommand, UsageSettlementFuture, UsageSettlementOutcome, UsageSettlementStore,
+};
+pub use verification_code_sender::{
+    ConfiguredVerificationCodeSender, DebugVerificationCodeSender,
+    ProviderVerificationDeliveryFuture, ProviderVerificationDeliveryReceipt,
+    ProviderVerificationDeliveryRequest, ProviderVerificationDeliverySender,
+    RequiredConfiguredVerificationCodeSender, VerificationCodeDeliveryFuture,
+    VerificationCodeDeliveryReceipt, VerificationCodeDeliveryRequest, VerificationCodeSender,
+};
+pub use verification_delivery_config_store::{
+    VerificationDeliveryConfig, VerificationDeliveryConfigFuture, VerificationDeliveryConfigQuery,
+    VerificationDeliveryConfigStore,
 };

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27226,
+  "uuid": "skill-clawhub-aiprox-workflows",
+  "skillKey": "clawhub-aiprox-workflows",
+  "name": "Aiprox Workflows",
+  "summary": "Create and run multi-agent AI workflows on AIProx. Chain agents into scheduled pipelines. Pay per execution in sats.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiprox_workflows",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "unixlamadev-spec",
+      "features": [
+        "Create and run multi-agent AI workflows on AIProx",
+        "Chain agents into scheduled pipelines",
+        "Pay per execution in sats."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aiprox-workflows@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251052015?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aiprox-workflows",
+      "url": "https://clawhub.ai/skills/aiprox-workflows"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiprox-workflows",
+    "url": "https://clawhub.ai/skills/aiprox-workflows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiprox-workflows-da1a5bd511045d43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aiprox-workflows@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aiprox-workflows-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8875c3cecb5b22a6cc16a7f4e6bb9de139f14cd29d9793862f0d3c11022a1a12",
+      "artifactSizeBytes": 2019
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T22:13:54.821Z"
+}

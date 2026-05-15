@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-text-generation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_text_generation",
+  "skill": {
+    "id": 49322,
+    "skillKey": "clawhub-free-text-generation",
+    "name": "Free Text Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-text-generation",
+    "url": "https://clawhub.ai/skills/free-text-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-text-generation-462a162a2f546587.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text prompt into text-based videos with this skill. Works with TXT, DOCX, PDF, plain text files up to 500MB. marketers, content creators, social med..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 81,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778036939619,
+      "changelog": "- Initial release of Free Text Generation skill for creating videos from text prompts.\n- Supports TXT, DOCX, PDF, and plain text files up to 500MB.\n- Generates 1080p MP4 videos in 1–2 minutes using cloud GPUs.\n- Handles text-to-video, file uploads, status checks, credits, and video exports.\n- Anonymous users can get 100 free credits; direct NEMO_TOKEN usage supported for registered users.\n- Includes error handling, session management, and easy-to-follow chat instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b38c7d12fe1f15688d54c4be22b8f232ba2430f705cd6db50f2d3fc51f00c88"
+}

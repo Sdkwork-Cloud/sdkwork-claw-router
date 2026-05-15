@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14057,
+  "uuid": "skill-clawhub-repliz",
+  "skillKey": "clawhub-repliz",
+  "name": "Repliz Api",
+  "summary": "Repliz social media management API integration. Use when working with Repliz to manage social media accounts, schedules, and comments. Requires REPLIZ_ACCESS...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repliz",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stanyslaus Hary Muntoro",
+      "features": [
+        "Repliz social media management API integration",
+        "Use when working with Repliz to manage social media accounts, schedules, and comments",
+        "Requires REPLIZ_ACCESS..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/repliz@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67821697?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "repliz",
+      "url": "https://clawhub.ai/skills/repliz"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repliz",
+    "url": "https://clawhub.ai/skills/repliz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repliz-36445c12e58bc9f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/repliz@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-repliz-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:431e27c7242599bee1ec3ec222748c388a45f94009fc25872959a2dbe90f720f",
+      "artifactSizeBytes": 2130
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T09:14:45.321Z"
+}

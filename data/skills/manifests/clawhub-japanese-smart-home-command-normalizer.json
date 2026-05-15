@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40291,
+  "uuid": "skill-clawhub-japanese-smart-home-command-normalizer",
+  "skillKey": "clawhub-japanese-smart-home-command-normalizer",
+  "name": "Japanese Smart Home Command Normalizer",
+  "summary": "Normalize short Japanese smart-home voice transcripts after STT into safe structured intents and slots. Use when handling Japanese commands for lights and ai...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.japanese_smart_home_command_normalizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "t0yohei",
+      "features": [
+        "Normalize short Japanese smart-home voice transcripts after STT into safe structured intents an.",
+        "Use when handling Japanese commands for lights and ai..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/japanese-smart-home-command-normalizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30691457?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "japanese-smart-home-command-normalizer",
+      "url": "https://clawhub.ai/skills/japanese-smart-home-command-normalizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "japanese-smart-home-command-normalizer",
+    "url": "https://clawhub.ai/skills/japanese-smart-home-command-normalizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/japanese-smart-home-command-normalizer-88ae9d1ea3c466bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/japanese-smart-home-command-normalizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-japanese-smart-home-command-normalizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:309a4babe2bc518c6336b60571fb6f17b9eb02ae0254ec339953acb43a983a15",
+      "artifactSizeBytes": 2541
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T17:05:31.642Z"
+}

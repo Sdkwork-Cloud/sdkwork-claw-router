@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cls-custom@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cls_custom",
+  "skill": {
+    "id": 73322,
+    "skillKey": "clawhub-cls-custom",
+    "name": "财联社自定义新闻日报"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cls-custom",
+    "url": "https://clawhub.ai/skills/cls-custom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cls-custom-b578f7b34cdb88ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动获取财联社电报自定义关键词新闻并格式化为一句话新闻"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "frankle1117",
+      "userId": "s178723ft5d22f40gcfvs02scx83hfpt",
+      "displayName": "FrankLe1117",
+      "image": "https://avatars.githubusercontent.com/u/156928058?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 464,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773134035088,
+      "changelog": "- 新增自动安装 agent-browser 工具功能，无需用户手动操作\n- 使用说明与Workflow增加依赖检查和安装流程\n- 增补重要提醒，提示首次使用需联网自动安装依赖，并说明手动安装命令\n- 其余功能、输出要求与定时任务配置保持原有一致",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2cba7593efbaa0a4248eeccd1769ab2282276b80850c7a1dff775dbea7175610"
+}

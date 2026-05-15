@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/juya-ai-daily-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juya_ai_daily_skills",
+  "skill": {
+    "id": 24832,
+    "skillKey": "clawhub-juya-ai-daily-skills",
+    "name": "Fetch the latest AI daily brief from imjuya/juya-ai-daily (GitHub) and return the Overview (summary) section."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juya-ai-daily-skills",
+    "url": "https://clawhub.ai/skills/juya-ai-daily-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juya-ai-daily-skills-5a78cf7afe926fe9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch the latest AI daily brief from imjuya/juya-ai-daily (GitHub) and return the Overview (summary) section."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hunter-wrynn",
+      "userId": "publishers:hunter-wrynn",
+      "displayName": "Haoxuan Ma",
+      "image": "https://avatars.githubusercontent.com/u/93142335?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773720452554,
+      "changelog": "first try",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f7fd9dd146e31a43e5fc7163e5092e4665d00f264f0c7097c893d2001fb1262"
+}

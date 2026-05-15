@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69138,
+  "uuid": "skill-clawhub-ccy-ocr-local",
+  "skillKey": "clawhub-ccy-ocr-local",
+  "name": "Ccy Ocr Local",
+  "summary": "本地 OCR / 图表识别技能。对本机图片做离线文字识别，支持截图、文档图片、扫描件、表格/图表图片中的中英文文本与图表数据提取；默认不上传文件、不依赖外部 API。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccy_ocr_local",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "超控中国",
+      "features": [
+        "本地 OCR / 图表识别技能。对本机图片做离线文字识别，支持截图、文档图片、扫描件、表格/图表图片中的中英文文本与图表数据提取；默认不上传文件、不依赖外部 API。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ccy-ocr-local@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57010759?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ccy-ocr-local",
+      "url": "https://clawhub.ai/skills/ccy-ocr-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccy-ocr-local",
+    "url": "https://clawhub.ai/skills/ccy-ocr-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccy-ocr-local-97fd6b0666a59f21.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ccy-ocr-local@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ccy-ocr-local-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c18ae56ec012bae7788e0717dc20003462b4b9a4a7ffe41eb1a0496247ede8e6",
+      "artifactSizeBytes": 2671
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T01:06:01.585Z"
+}

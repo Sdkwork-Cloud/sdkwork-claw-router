@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66492,
+  "uuid": "skill-clawhub-hxd-deploy",
+  "skillKey": "clawhub-hxd-deploy",
+  "name": "Hxd Deploy",
+  "summary": "部署霍小钉服务到服务器。自动上传 JAR 文件、备份旧版本、重启服务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hxd_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaodouzi",
+      "features": [
+        "部署霍小钉服务到服务器。自动上传 JAR 文件、备份旧版本、重启服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hxd-deploy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26651875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hxd-deploy",
+      "url": "https://clawhub.ai/skills/hxd-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hxd-deploy",
+    "url": "https://clawhub.ai/skills/hxd-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hxd-deploy-eb5b2be6c5cc9e47.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hxd-deploy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hxd-deploy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ea07a94daf6257d7422c96e3e55f74fccdafd487f1dd8c509b29966b87517be",
+      "artifactSizeBytes": 2360
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T01:16:57.069Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/say@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.say",
+  "skill": {
+    "id": 16810,
+    "skillKey": "clawhub-say",
+    "name": "say"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "say",
+    "url": "https://clawhub.ai/skills/say",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/say-a0b967fc60136d2e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Text-to-Speech via macOS say command with Siri Natural Voices. Use for generating speech audio, TTS clips, or speaking text aloud on macOS."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobihagemann",
+      "userId": "publishers:tobihagemann",
+      "displayName": "tobihagemann",
+      "image": "https://avatars.githubusercontent.com/u/2924160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 828,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771132278117,
+      "changelog": "Re-trigger security scan",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1f917153e482e76ad5d26883893fa0793dad53ad11a9257ebfb466a15459bc33"
+}

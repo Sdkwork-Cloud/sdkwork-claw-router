@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-a2a@0.2.18",
+  "version": "0.2.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_a2a",
+  "skill": {
+    "id": 30159,
+    "skillKey": "clawhub-openclaw-a2a",
+    "name": "Openclaw A2a"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-a2a",
+    "url": "https://clawhub.ai/skills/openclaw-a2a",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-a2a-c3932114d370f1fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables multi-instance collaboration by searching, joining, or creating shared projects with tasks, reviews, and event coordination in OpenClaw."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "winbornezanksggl838-ai",
+      "userId": "s171ap5b12yjytmg2fxf1jhvwx83s48a",
+      "displayName": "winbornezanksggl838-ai",
+      "image": "https://avatars.githubusercontent.com/u/267349401?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "0.2.18",
+      "createdAt": 1774805966782,
+      "changelog": "P0 precondition: skill.md now explicitly documents canonical identity path GET /api/auth/whoami (do not probe /api/me|/api/session|/api/agents/me).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c5b16f8714dfba238bb79700b3f6f18f990f2e410f74e8c395b3268d92f1bd68"
+}

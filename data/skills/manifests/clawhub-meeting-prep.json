@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9097,
+  "uuid": "skill-clawhub-meeting-prep",
+  "skillKey": "clawhub-meeting-prep",
+  "name": "meeting-prep",
+  "summary": "Automated meeting preparation and daily commit summaries. Use when checking Google Calendar for upcoming meetings, generating standup updates from GitHub commits, or sending daily development summaries. Pulls meeting schedules and commit h.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_prep",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wayne",
+      "features": [
+        "Automated meeting preparation and daily commit summaries",
+        "Use when checking Google Calendar for upcoming meetings, generating standup updates from GitHub.",
+        "Pulls meeting schedules and commit history, then formats verbose developer-friendly updates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-prep@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105773686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-prep",
+      "url": "https://clawhub.ai/skills/meeting-prep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-prep",
+    "url": "https://clawhub.ai/skills/meeting-prep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-prep-cc974b9b4c004b5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-prep@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-prep-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfc89481ad48ba6fc5a008b5e6546ef4871829f4e0267b200365a448385373d0",
+      "artifactSizeBytes": 2428
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T19:00:28.897Z"
+}

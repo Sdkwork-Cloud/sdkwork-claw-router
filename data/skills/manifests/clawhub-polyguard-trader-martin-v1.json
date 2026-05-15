@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26415,
+  "uuid": "skill-clawhub-polyguard-trader-martin-v1",
+  "skillKey": "clawhub-polyguard-trader-martin-v1",
+  "name": "PolyGuard Martin Pro",
+  "summary": "Automates Polymarket trades locally by placing orders when configured price thresholds are met, with full transparency and no external data sharing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polyguard_trader_martin_v1",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ai-yuming",
+      "features": [
+        "Automates Polymarket trades locally by placing orders when configured price thresholds are met,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polyguard-trader-martin-v1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/154577590?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polyguard-trader-martin-v1",
+      "url": "https://clawhub.ai/skills/polyguard-trader-martin-v1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polyguard-trader-martin-v1",
+    "url": "https://clawhub.ai/skills/polyguard-trader-martin-v1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polyguard-trader-martin-v1-d75a86ab797d05fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polyguard-trader-martin-v1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polyguard-trader-martin-v1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbb6ac33e97dc42f2f04ba4c82da971f88797cb88ede4ad332892c7928c7afd1",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T22:48:53.781Z"
+}

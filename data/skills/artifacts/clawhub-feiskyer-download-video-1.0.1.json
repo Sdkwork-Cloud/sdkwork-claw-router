@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feiskyer-download-video@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feiskyer_download_video",
+  "skill": {
+    "id": 43529,
+    "skillKey": "clawhub-feiskyer-download-video",
+    "name": "download-video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feiskyer-download-video",
+    "url": "https://clawhub.ai/skills/feiskyer-download-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feiskyer-download-video-f61220f625219c76.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download videos from 1000+ websites (YouTube, Bilibili, Twitter/X, TikTok, Vimeo, Instagram, Twitch, etc.) using yt-dlp. Use this skill whenever a user share..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "feiskyer",
+      "userId": "s174q6bx170bf0qb9wjqhqfv6x83vv3e",
+      "displayName": "Pengfei Ni",
+      "image": "https://avatars.githubusercontent.com/u/676637?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776249485326,
+      "changelog": "- Expanded skill description to clarify supported video platforms and common user triggers.\n- Improved usage documentation with clear step-by-step instructions for checking prerequisites, installing dependencies, and downloading videos.\n- Added sample command-line options for audio extraction, format selection, subtitles, custom output directories, and using browser cookies.\n- Provided troubleshooting guidance for common download issues and platform-specific tips.\n- Included instructions for both the bundled script and advanced yt-dlp usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31bf68969f3ef46264f87542c93a6df37f1ceb777d3c9d9ed478728cff7c1137"
+}

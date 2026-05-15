@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/style-index@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.style_index",
+  "skill": {
+    "id": 42599,
+    "skillKey": "clawhub-style-index",
+    "name": "The Style Index"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "style-index",
+    "url": "https://clawhub.ai/skills/style-index",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/style-index-1b72504441829d6b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage your wardrobe, get AI outfit suggestions, and virtually try on clothes before you buy. Powered by The Style Index agent API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jjc7951",
+      "userId": "s1730w0sjybe9cfg9qnw0ytc9583r5d8",
+      "displayName": "jjc7951",
+      "image": "https://avatars.githubusercontent.com/u/200493441?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774714368426,
+      "changelog": "Initial release: wardrobe management, AI outfit suggestions, virtual try-on",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e08e76fd66e55b0623a737d7f682f5e8040abd2c3bad9063c69e7beaca52a103"
+}

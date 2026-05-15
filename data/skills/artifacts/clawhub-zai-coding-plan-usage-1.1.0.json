@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zai-coding-plan-usage@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zai_coding_plan_usage",
+  "skill": {
+    "id": 57409,
+    "skillKey": "clawhub-zai-coding-plan-usage",
+    "name": "ZAI Coding Plan Usage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zai-coding-plan-usage",
+    "url": "https://clawhub.ai/skills/zai-coding-plan-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zai-coding-plan-usage-36a55527dfe08f98.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Z.ai (智谱) Coding Plan usage and quota limits. Track token consumption, MCP usage, and subscription status. Use when user asks about \"智谱用量\"、\"ZAI usage\"、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hyizhou",
+      "userId": "s17c212kmjg6qss7zb5rf8grtx840p2w",
+      "displayName": "hyizhou",
+      "image": "https://avatars.githubusercontent.com/u/34365809?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 381,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773739687508,
+      "changelog": "更新发布",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87cd239d3cf22e2f8d47e3302fc80c9d203ce7d1f04a44e34b2280fcff6b1f6b"
+}

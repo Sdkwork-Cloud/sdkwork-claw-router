@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26520,
+  "uuid": "skill-clawhub-meta-skill-weaver",
+  "skillKey": "clawhub-meta-skill-weaver",
+  "name": "Meta Skill Weaver",
+  "summary": "Use this skill when orchestrating complex multi-step tasks. Provides first-principles task decomposition, EventBus event system, multi-skill collaboration wi...",
+  "version": "2.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_skill_weaver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pagoda111king",
+      "features": [
+        "Use this skill when orchestrating complex multi-step tasks",
+        "Provides first-principles task decomposition, EventBus event system, multi-skill collaboration."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meta-skill-weaver@2.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177529007?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meta-skill-weaver",
+      "url": "https://clawhub.ai/skills/meta-skill-weaver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-skill-weaver",
+    "url": "https://clawhub.ai/skills/meta-skill-weaver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-skill-weaver-d38a753eb878b92f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meta-skill-weaver@2.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meta-skill-weaver-2.5.0.json",
+      "version": "2.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d49dbabf0ca57afd70104f44afae22b0e405361a26408fdd8a098e2970a18911",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T02:02:41.409Z"
+}

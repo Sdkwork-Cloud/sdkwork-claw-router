@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firm-browser-audit-pack@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firm_browser_audit_pack",
+  "skill": {
+    "id": 26392,
+    "skillKey": "clawhub-firm-browser-audit-pack",
+    "name": "Firm Browser Audit Pack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firm-browser-audit-pack",
+    "url": "https://clawhub.ai/skills/firm-browser-audit-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firm-browser-audit-pack-7d02de6725e1b4d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser automation security audit pack. Validates Playwright/Puppeteer headless configuration for dangerous arguments. 1 audit tool."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "romainsantoli-web",
+      "userId": "publishers:romainsantoli-web",
+      "displayName": "romainsantoli-web",
+      "image": "https://avatars.githubusercontent.com/u/246739959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772407038745,
+      "changelog": "Initial release — 1 tool: Playwright/Puppeteer headless security audit",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f9263e920d6ca46969f32c3a51481ba75bdfac7d9d3c64379e443b4ab3bcd909"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-stock-sector-strategy@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_stock_sector_strategy",
+  "skill": {
+    "id": 60654,
+    "skillKey": "clawhub-china-stock-sector-strategy",
+    "name": "China Stock Sector Strategy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-stock-sector-strategy",
+    "url": "https://clawhub.ai/skills/china-stock-sector-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-stock-sector-strategy-f8818d69af97ae7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "板块策略分析（纯 OpenClaw 公开源版）：基于东财公开行业/概念板块快照。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luyao-inc",
+      "userId": "s172hx1vvacrt0ax452fyb3wvx83mg01",
+      "displayName": "luyao-inc",
+      "image": "https://avatars.githubusercontent.com/u/35760741?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776152139917,
+      "changelog": "- Major update to version 2.0.0.\n- Now uses only public OpenClaw sources for industry/concept sector snapshots.\n- Does not require WENCAI_COOKIE or python-tools dependencies.\n- Updated tool usage instructions and example in the documentation.\n- Result fields include: ok, payload, sectors_count, concepts_count.\n- Added note on restrictions for northbound funds data and a disclaimer that results are for reference only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d4b8448892d11e1d47382cf627bd2a3d19528b02e6dea6eb13d7c952c80057f"
+}

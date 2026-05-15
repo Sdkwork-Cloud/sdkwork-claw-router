@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beautiful-mermaid@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beautiful_mermaid",
+  "skill": {
+    "id": 57803,
+    "skillKey": "clawhub-beautiful-mermaid",
+    "name": "“Render Mermaid diagrams as beautiful SVG, PNG, or ASCII art. Supports 6 chart types (flowchart, sequence, state, class, ER, XY."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beautiful-mermaid",
+    "url": "https://clawhub.ai/skills/beautiful-mermaid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beautiful-mermaid-ad93f7fdebcc3b50.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Render Mermaid diagrams as beautiful SVG, PNG, or ASCII art. Supports 6 chart types (flowchart, sequence, state, class, ER, XY chart), 16 built-in themes, 5..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chouraycn",
+      "userId": "s17cgjcpz3n46wtafpz0mmxjtx83rk70",
+      "displayName": "chouray",
+      "image": "https://avatars.githubusercontent.com/u/267864603?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774672015689,
+      "changelog": "Initial release of beautiful-mermaid.\n\n- Render Mermaid diagrams as SVG, PNG, or ASCII art with 6 chart types supported (flowchart, sequence, state, class, ER, XY charts).\n- Includes 16 built-in themes, 5 style presets, and supports full CSS-level customization.\n- Features an interactive preview tool (requires using preview_url before rendering, unless user opts out).\n- Batch rendering and rich HTML export with multi-diagram aggregation, theme inheritance, and metadata support.\n- Works in terminal, chat, and web environments.\n- Supports React integration and both synchronous/asynchronous rendering APIs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d32f7519452be4573c62aedf6bb0be693b93a25d5142198c5bd7ca2e31c63e5"
+}

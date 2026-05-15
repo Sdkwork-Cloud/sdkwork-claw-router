@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59182,
+  "uuid": "skill-clawhub-reliable-api-client",
+  "skillKey": "clawhub-reliable-api-client",
+  "name": "Node.js API 客户端黄金标准",
+  "summary": "Node.js API 客户端黄金标准 v3.0 - 多Endpoint + 多Key轮询 + 限流 + 熔断器",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reliable_api_client",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "steve xia",
+      "features": [
+        "Node.js API 客户端黄金标准 v3.0",
+        "多Endpoint + 多Key轮询 + 限流 + 熔断器"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reliable-api-client@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/122467183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reliable-api-client",
+      "url": "https://clawhub.ai/skills/reliable-api-client"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reliable-api-client",
+    "url": "https://clawhub.ai/skills/reliable-api-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reliable-api-client-c35ae8b212d16e08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reliable-api-client@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reliable-api-client-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a63b04d767f9489348b5fb71cfcf69b492ee1b69cdc4c8379faacb074a140d30",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T03:03:15.714Z"
+}

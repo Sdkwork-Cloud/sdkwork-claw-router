@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/haiqing-self-improving-agent@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.haiqing_self_improving_agent",
+  "skill": {
+    "id": 44762,
+    "skillKey": "clawhub-haiqing-self-improving-agent",
+    "name": "Self Improving Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "haiqing-self-improving-agent",
+    "url": "https://clawhub.ai/skills/haiqing-self-improving-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/haiqing-self-improving-agent-e2fa0e60c6b584f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Self-Improving Agent v2 - Learn from mistakes, corrections, and successes. Three-layer system: passive capture + proactive check + proactive skill generat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haiqingge",
+      "userId": "s17bers3v7ev4amsvcn5290bxn84v3f9",
+      "displayName": "haiqingge",
+      "image": "https://avatars.githubusercontent.com/u/152826703?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776165423684,
+      "changelog": "Self-Improving Agent v2 introduces proactive Skill generation inspired by Hermes Agent.\n\n- Added a new three-layer learning system: passive capture, proactive check, and proactive Skill generation.\n- Agent now proposes generating reusable Skills after successful complex tasks and when repeated patterns are detected.\n- Improved memory and correction logging to prevent recurring mistakes and remember user preferences across sessions.\n- Automatic template and script generation based on best practices or multiple task repetitions.\n- Introduced a registry for auto-generated Skills and proactive task evaluation flows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4207deb8dbfe4950feeb43c2d56db58c88ad33e63b000b473028a7804ad4069"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/academic-humanization-low-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_humanization_low_ai",
+  "skill": {
+    "id": 62979,
+    "skillKey": "clawhub-academic-humanization-low-ai",
+    "name": "academic-humanization-low-ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-humanization-low-ai",
+    "url": "https://clawhub.ai/skills/academic-humanization-low-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-humanization-low-ai-80ac8f8708d7bcdf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对学术文本进行深度人类化重写以降低AI率。用于AI生成的学术文本需要降低AI检测特征时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhengqizhuang",
+      "userId": "s17ebkbe39tdm25yh9gfm6xchh83yahs",
+      "displayName": "ZhengqiZhuang",
+      "image": "https://avatars.githubusercontent.com/u/122677241?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774939474355,
+      "changelog": "- Initial release of \"academic-humanization-low-ai\" skill\n- Deeply rewrites academic texts to systematically reduce AI-generated characteristics\n- Optimizes syntactic and linguistic features, including sentence length variation, vocabulary diversity, and connection word replacement\n- Alters sentence and paragraph structure to disrupt common AI patterns\n- Maintains academic tone and core meaning without reducing information content\n- Provides only the rewritten text as output, with no process explanation or summary statements",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30fa358095f22ae20249ba9ba362764f5d2befd3faa85d9b31ceed22ba89483b"
+}

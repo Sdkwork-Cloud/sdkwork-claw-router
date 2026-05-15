@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11606,
+  "uuid": "skill-clawhub-get-ip",
+  "skillKey": "clawhub-get-ip",
+  "name": "ip lookup ( get ip )",
+  "summary": "Get current public IP address and geolocation information. Use when users ask about IP addresses, network location, or want to check their public IP. Supports both fetching IP info and displaying it clearly.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.get_ip",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "christo",
+      "features": [
+        "Get current public IP address and geolocation information",
+        "Use when users ask about IP addresses, network location, or want to check their public IP",
+        "Supports both fetching IP info and displaying it clearly."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/get-ip@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1757861?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "get-ip",
+      "url": "https://clawhub.ai/skills/get-ip"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "get-ip",
+    "url": "https://clawhub.ai/skills/get-ip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/get-ip-47f6ae554003b1fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/get-ip@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-get-ip-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8171e7c591ab54ca0f65a6fe626e4008619970d6d891ca6493286dafd31d087",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T06:46:41.220Z"
+}

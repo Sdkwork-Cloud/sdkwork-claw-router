@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/requirement-clarifier@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.requirement_clarifier",
+  "skill": {
+    "id": 68356,
+    "skillKey": "clawhub-requirement-clarifier",
+    "name": "requirement-clarifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "requirement-clarifier",
+    "url": "https://clawhub.ai/skills/requirement-clarifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/requirement-clarifier-5607a991109e897b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "需求澄清与分析技能。在实现任何需求前，先确保需求完整、清晰、无歧义。适用于需求开发、修改、分析、设计等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hcyyy0120",
+      "userId": "s173vzcqfv4b915ncgsy9j6mnd83gs0r",
+      "displayName": "Hcyyy0120",
+      "image": "https://avatars.githubusercontent.com/u/82436308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774330647468,
+      "changelog": "requirement-clarifier v1.0.0 初始发布：\n\n- 提供需求澄清与分析完整流程，确保需求实现前完整、清晰、无歧义\n- 定义核心自检问题与澄清问题模板，支持自动输出结构化澄清清单\n- 明确输出风格（简洁、结构化、便于回答）\n- 边界场景说明，支持处理特定用户指令及多模块需求\n- 提供示例和标准工作模板，便于实际操作",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57a10f80660254c04a453d767e55ca33b3fd1d891cdc0df9908b4e885b28b5db"
+}

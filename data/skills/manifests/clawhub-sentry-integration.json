@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21905,
+  "uuid": "skill-clawhub-sentry-integration",
+  "skillKey": "clawhub-sentry-integration",
+  "name": "Sentry",
+  "summary": "Sentry integration. Manage Organizations. Use when the user wants to interact with Sentry data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sentry_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Sentry integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Sentry data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sentry-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sentry-integration",
+      "url": "https://clawhub.ai/skills/sentry-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sentry-integration",
+    "url": "https://clawhub.ai/skills/sentry-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sentry-integration-ee8783127aaa9fa9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sentry-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sentry-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6727a9207715690b50238f329b903c9e4106cf5fb8625bc33da14afb1dc7b2b7",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:58:56.059Z"
+}

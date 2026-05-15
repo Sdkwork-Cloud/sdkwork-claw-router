@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eridian-carapace@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eridian_carapace",
+  "skill": {
+    "id": 16613,
+    "skillKey": "clawhub-eridian-carapace",
+    "name": "Eridian Carapace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eridian-carapace",
+    "url": "https://clawhub.ai/skills/eridian-carapace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eridian-carapace-c5bd7b38b39f60da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent security hardening and prompt injection defense for OpenClaw. Protects against ClawHavoc-style attacks including prompt injection, data exfiltration, credential theft, and unauthorized operations. Runtime protection that complements."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iampaulpatterson-boop",
+      "userId": "s171ncwg8vrfj3yeecj0vm29jx84rvtq",
+      "displayName": "EridianCarapace",
+      "image": "https://avatars.githubusercontent.com/u/228373334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 856,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770997228823,
+      "changelog": "- Renamed \"Carapace\" and related references to \"Eridian Carapace\" throughout the documentation.\n- Updated internal references and branding to reflect the new name.\n- No changes to security rules or implementation details.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f4fab47498811170fe09f1a1d2a4a31f9d929d0d9ac1f5557e2b0716cf773e0a"
+}

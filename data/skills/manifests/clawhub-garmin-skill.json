@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21822,
+  "uuid": "skill-clawhub-garmin-skill",
+  "skillKey": "clawhub-garmin-skill",
+  "name": "Garmin Skill",
+  "summary": "Talk to your Garmin data — ask questions about your activities, training load, VO2 Max, heart rate zones, and more using AI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.garmin_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nftechie",
+      "features": [
+        "Talk to your Garmin data — ask questions about your activities, training load, VO2 Max, heart r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/garmin-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2530972?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "garmin-skill",
+      "url": "https://clawhub.ai/skills/garmin-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "garmin-skill",
+    "url": "https://clawhub.ai/skills/garmin-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/garmin-skill-23fb0e7f477140c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/garmin-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-garmin-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:697da1ad70518b4cc7eaec545f6b11f85b058df0ce4ecbe4b4f6afd7f8f36620",
+      "artifactSizeBytes": 2360
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T21:34:00.496Z"
+}

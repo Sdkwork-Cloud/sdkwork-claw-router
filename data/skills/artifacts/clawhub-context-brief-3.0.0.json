@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-brief@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_brief",
+  "skill": {
+    "id": 26634,
+    "skillKey": "clawhub-context-brief",
+    "name": "Context Brief"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-brief",
+    "url": "https://clawhub.ai/skills/context-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-brief-fc9b2a08cb650c1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent context survival for OpenClaw. Writes file-based anchors to memory/anchors/ to preserve critical context across sessions. Reads MEMORY.md and dail..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tommot2",
+      "userId": "s17fzh9kw6g9v8fg9kppsbmwt183p1kd",
+      "displayName": "TommoT2",
+      "image": "https://avatars.githubusercontent.com/u/106430507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 364,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1775173715780,
+      "changelog": "Fixed contradiction: daily logs are now read-only, never modified. Auto-save removed — anchors only on user request. Declared MEMORY.md and HEARTBEAT.md as config paths.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1450b84be328213e091f3f6f721ab0eb5b0b28e387f15c78ee64a6630665fb76"
+}

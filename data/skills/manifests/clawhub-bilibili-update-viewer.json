@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59701,
+  "uuid": "skill-clawhub-bilibili-update-viewer",
+  "skillKey": "clawhub-bilibili-update-viewer",
+  "name": "Check the latest videos and updates of Bilibili ups and see if they have updated today",
+  "summary": "查看B站UP主的最新视频、动态，检查UP主今天是否更新。触发词：B站、UP主、视频更新、今天更新了吗、最新视频、最新动态、查看UP主",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_update_viewer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jianguo99",
+      "features": [
+        "查看B站UP主的最新视频、动态，检查UP主今天是否更新。触发词：B站、UP主、视频更新、今天更新了吗、最新视频、最新动态、查看UP主"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-update-viewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/80951029?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-update-viewer",
+      "url": "https://clawhub.ai/skills/bilibili-update-viewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-update-viewer",
+    "url": "https://clawhub.ai/skills/bilibili-update-viewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-update-viewer-ce2adbbc6d9145eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-update-viewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-update-viewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4ee1f8fbb95a1528b9dccd763d9b544e7b030c1ed0d15c922288a04da56ada9",
+      "artifactSizeBytes": 2304
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T13:10:15.232Z"
+}

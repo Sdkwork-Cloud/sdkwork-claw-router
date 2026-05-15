@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32324,
+  "uuid": "skill-clawhub-swiftdata-code-review",
+  "skillKey": "clawhub-swiftdata-code-review",
+  "name": "Swiftdata Code Review",
+  "summary": "Reviews SwiftData code for model design, queries, concurrency, and migrations. Use when reviewing .swift files with import SwiftData, @Model, @Query, @ModelA...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swiftdata_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Reviews SwiftData code for model design, queries, concurrency, and migrations",
+        "Use when reviewing .swift files with import SwiftData, @Model, @Query, @ModelA..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swiftdata-code-review@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swiftdata-code-review",
+      "url": "https://clawhub.ai/skills/swiftdata-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swiftdata-code-review",
+    "url": "https://clawhub.ai/skills/swiftdata-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swiftdata-code-review-06666b8a89cdd44e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swiftdata-code-review@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-swiftdata-code-review-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1d93c7c2d8bca2bdc7b0fa8d638ea114cd4cfa30aaa6222c4b6d13a2092759a",
+      "artifactSizeBytes": 2422
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:13:49.599Z"
+}

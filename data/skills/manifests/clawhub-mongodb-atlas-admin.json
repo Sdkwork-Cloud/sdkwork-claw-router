@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11505,
+  "uuid": "skill-clawhub-mongodb-atlas-admin",
+  "skillKey": "clawhub-mongodb-atlas-admin",
+  "name": "MongoDB Atlas",
+  "summary": "browse MongoDB Atlas Admin API specifications and execute operations (if credentials provided).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mongodb_atlas_admin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "David Wang",
+      "features": [
+        "browse MongoDB Atlas Admin API specifications and execute operations (if credentials provided)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mongodb-atlas-admin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22475291?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mongodb-atlas-admin",
+      "url": "https://clawhub.ai/skills/mongodb-atlas-admin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mongodb-atlas-admin",
+    "url": "https://clawhub.ai/skills/mongodb-atlas-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mongodb-atlas-admin-45b41da3c4b18970.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mongodb-atlas-admin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mongodb-atlas-admin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9c2eec79325da3f7c0c9e0f5734248a1656618ee629114ce2d3be2e4c4667b5",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T04:01:41.976Z"
+}

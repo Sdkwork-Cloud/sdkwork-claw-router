@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34007,
+  "uuid": "skill-clawhub-proxmox-complete",
+  "skillKey": "clawhub-proxmox-complete",
+  "name": "Proxmox Complete",
+  "summary": "Manage Proxmox VE clusters via REST API. List nodes, VMs, containers; control power states; manage snapshots, backups, storage, and tasks. Use when user asks...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxmox_complete",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ricanwarfare",
+      "features": [
+        "Manage Proxmox VE clusters via REST API",
+        "List nodes, VMs, containers",
+        "control power states",
+        "manage snapshots, backups, storage, and tasks"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proxmox-complete@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33404913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proxmox-complete",
+      "url": "https://clawhub.ai/skills/proxmox-complete"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxmox-complete",
+    "url": "https://clawhub.ai/skills/proxmox-complete",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxmox-complete-cc3aa8e1307ed73e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proxmox-complete@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proxmox-complete-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38c828c0e984c1ba400d209f8e933ac223e6a87121afb57353a74c7757de1e0d",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T00:01:26.578Z"
+}

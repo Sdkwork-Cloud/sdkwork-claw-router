@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/conoco@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conoco",
+  "skill": {
+    "id": 47825,
+    "skillKey": "clawhub-conoco",
+    "name": "Conoco"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conoco",
+    "url": "https://clawhub.ai/skills/conoco",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conoco-a563d946fc723400.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ConocoPhillips is a leading US independent oil and gas producer focused on upstream exploration and production with global operations and low-cost shale assets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777374266163,
+      "changelog": "- 首次发布ConocoPhillips（康菲石油）技能，涵盖公司历史、主要业务、全球定位及行业重要节点。\n- 提供合并、拆分、页岩油扩展等历史时间线，以及核心商业模式说明。\n- 分析公司护城河、关键数据与有趣历史细节，帮助理解其在美国及全球能源版图中的角色。\n- 适用于对美国独立油气公司、行业并购、能源结构及企业转型有兴趣的用户。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a577184dad4591d33320e50bfd3e2f56eb75a90cb16f3ccd2c831b0cb6d4e2ef"
+}

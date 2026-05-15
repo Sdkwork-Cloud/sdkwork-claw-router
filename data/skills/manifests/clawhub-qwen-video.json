@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55965,
+  "uuid": "skill-clawhub-qwen-video",
+  "skillKey": "clawhub-qwen-video",
+  "name": "Qwen Video (Wan)",
+  "summary": "Generate videos using Alibaba Cloud DashScope Wan (通义万相) text-to-video (t2v) API (e.g., wan2.6-t2v). Use when the user asks to create a short video from a te...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen_video",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "547895019",
+      "features": [
+        "Generate videos using Alibaba Cloud DashScope Wan (通义万相) text-to-video (t2v) API (e.g., wan2.6-.",
+        "Use when the user asks to create a short video from a te..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qwen-video@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7350824?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qwen-video",
+      "url": "https://clawhub.ai/skills/qwen-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen-video",
+    "url": "https://clawhub.ai/skills/qwen-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen-video-9b7f8aa770cd3356.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qwen-video@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qwen-video-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:418a77d73c092d41baa040399164136d46db353e234d05c49327b6b12198d246",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T04:43:46.434Z"
+}

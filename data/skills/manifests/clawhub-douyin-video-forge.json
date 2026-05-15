@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71147,
+  "uuid": "skill-clawhub-douyin-video-forge",
+  "skillKey": "clawhub-douyin-video-forge",
+  "name": "Douyin Video Forge",
+  "summary": "抖音短视频全链路自动化制作。适用于：收到客户项目需要制作抖音推广视频、 策划短视频内容、生成视频脚本、分析抖音热点趋势、制作爆款短视频。 通过浏览器采集抖音热榜和视频数据，生成分段脚本，调用可灵API生成视频并拼接成片。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_video_forge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce-Agnet",
+      "features": [
+        "抖音短视频全链路自动化制作。适用于：收到客户项目需要制作抖音推广视频、 策划短视频内容、生成视频脚本、分析抖音热点趋势、制作爆款短视频。 通过浏览器采集抖音热榜和视频数据，生成分段脚本，调用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-video-forge@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/175689742?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-video-forge",
+      "url": "https://clawhub.ai/skills/douyin-video-forge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-video-forge",
+    "url": "https://clawhub.ai/skills/douyin-video-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-video-forge-ef980cc01e709f57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-video-forge@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-video-forge-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd8801bc96cc87c966e8865d71280d64fbd16336d0a9b63d2737eebb2defa23f",
+      "artifactSizeBytes": 2683
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T16:26:59.142Z"
+}

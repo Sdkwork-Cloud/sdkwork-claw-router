@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20003,
+  "uuid": "skill-clawhub-berlin",
+  "skillKey": "clawhub-berlin",
+  "name": "Berlin",
+  "summary": "Navigate Berlin as visitor, resident, tech worker, student, or entrepreneur with neighborhoods, transport, costs, visas, and local insights.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.berlin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Navigate Berlin as visitor, resident, tech worker, student, or entrepreneur with neighborhoods,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/berlin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "berlin",
+      "url": "https://clawhub.ai/skills/berlin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "berlin",
+    "url": "https://clawhub.ai/skills/berlin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/berlin-fb38a93fd89e1a5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/berlin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-berlin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:277d50f747d91cb8094a8b1df75bf4093a7a03c3f0742d2849ab04c79da46eb9",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T00:43:16.742Z"
+}

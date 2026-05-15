@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopprentice@0.5.1",
+  "version": "0.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopprentice",
+  "skill": {
+    "id": 27169,
+    "skillKey": "clawhub-shopprentice",
+    "name": "Shopprentice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopprentice",
+    "url": "https://clawhub.ai/skills/shopprentice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopprentice-ec600a75f0cedefd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered parametric furniture modeling for Fusion 360. Generates production-ready CAD models with real joinery from natural language, images, or reference..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ylzha",
+      "userId": "s17efm7b015cqexmghbzwhhesd83kqag",
+      "displayName": "YLZha",
+      "image": "https://avatars.githubusercontent.com/u/5447824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "0.5.1",
+      "createdAt": 1776973512983,
+      "changelog": "- Added woodworking domain documentation at codex/woodworking/SKILL.md for improved modularity and reuse.\n- Updated installation instructions and developer documentation in DEVELOPMENT.md, README.md, and install.sh.\n- Enhanced or clarified guidance in SKILL.md without altering core modeling rules.\n- Minor internal and documentation updates preparing for wider woodworking use in Shopprentice.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:682078eea3b62e63d170fd347ca54afe1f30f0823887de99678b24f85c310f05"
+}

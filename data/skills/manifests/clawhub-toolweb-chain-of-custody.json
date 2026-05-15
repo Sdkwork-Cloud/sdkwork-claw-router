@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36297,
+  "uuid": "skill-clawhub-toolweb-chain-of-custody",
+  "skillKey": "clawhub-toolweb-chain-of-custody",
+  "name": "Chain Of Custody",
+  "summary": "Generates forensic chain of custody HTML reports for evidence management and legal compliance.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_chain_of_custody",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Generates forensic chain of custody HTML reports for evidence management and legal compliance."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toolweb-chain-of-custody@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toolweb-chain-of-custody",
+      "url": "https://clawhub.ai/skills/toolweb-chain-of-custody"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-chain-of-custody",
+    "url": "https://clawhub.ai/skills/toolweb-chain-of-custody",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-chain-of-custody-d4232e310b679cb5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toolweb-chain-of-custody@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toolweb-chain-of-custody-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fbf03ddc449563e90c7cf0e2a28e977d00248dca553fad22147fd81f0cd3bf9",
+      "artifactSizeBytes": 2319
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T14:43:42.383Z"
+}

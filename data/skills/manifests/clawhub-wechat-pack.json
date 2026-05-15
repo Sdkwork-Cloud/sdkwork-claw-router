@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20912,
+  "uuid": "skill-clawhub-wechat-pack",
+  "skillKey": "clawhub-wechat-pack",
+  "name": "wechat-pack",
+  "summary": "Convert local .docx or Markdown files into WeChat-ready HTML and generate a publish folder (source/assets/cover/wechat). Use when packaging documents for WeC...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_pack",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rockbotclub",
+      "features": [
+        "Convert local .docx or Markdown files into WeChat-ready HTML and generate a publish folder (sou.",
+        "Use when packaging documents for WeC..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-pack@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144894546?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-pack",
+      "url": "https://clawhub.ai/skills/wechat-pack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-pack",
+    "url": "https://clawhub.ai/skills/wechat-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-pack-76d5394a2e37b8eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-pack@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-pack-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ea8e0468d0b7288d8da5e73eea00ce058b83e05cd1df3b0604679c843238b9d",
+      "artifactSizeBytes": 2298
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T15:15:54.397Z"
+}

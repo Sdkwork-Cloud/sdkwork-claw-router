@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42830,
+  "uuid": "skill-clawhub-gmail-to-calendar",
+  "skillKey": "clawhub-gmail-to-calendar",
+  "name": "Gmail to Calendar",
+  "summary": "Promote schedule details from Gmail into Google Calendar via Maton. Reads Gmail messages, extracts structured or free-text event information, and creates Goo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_to_calendar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "orulink",
+      "features": [
+        "Promote schedule details from Gmail into Google Calendar via Maton",
+        "Reads Gmail messages, extracts structured or free-text event information, and creates Goo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gmail-to-calendar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270532634?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gmail-to-calendar",
+      "url": "https://clawhub.ai/skills/gmail-to-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-to-calendar",
+    "url": "https://clawhub.ai/skills/gmail-to-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-to-calendar-a50f8d691e1f9bbe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gmail-to-calendar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gmail-to-calendar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bef412231a058a56d98988e66d27c4c273ec6ee7afce891325449a21366afe0a",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T10:42:11.095Z"
+}

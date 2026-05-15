@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65296,
+  "uuid": "skill-clawhub-image-assets-resize",
+  "skillKey": "clawhub-image-assets-resize",
+  "name": "Image Assets Resize — 图片素材尺寸延展",
+  "summary": "直接以参考KV/海报/拍脸图为输入，调用 gpt-image-2 或 Nano Banana 模型，按目标规格批量生成精确尺寸的图片文件，交付前AI自检文字裁切、元素完整性等问题。支持自定义规范学习、产品设计语言积累。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_assets_resize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OrangeMoon",
+      "features": [
+        "直接以参考KV/海报/拍脸图为输入，调用 gpt-image-2 或 Nano Banana 模型，按目标规格批量生成精确尺寸的图片文件，交付前AI自检文字裁切、元素完整性等问题。支持自定义."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-assets-resize@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28438016?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-assets-resize",
+      "url": "https://clawhub.ai/skills/image-assets-resize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-assets-resize",
+    "url": "https://clawhub.ai/skills/image-assets-resize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-assets-resize-5bb29686ca83b389.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-assets-resize@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-assets-resize-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d830268d2ae5daa9be6c5566e81f2cb77d5e16c43bd1a543401ffcb1a0ea20af",
+      "artifactSizeBytes": 2712
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T16:15:37.686Z"
+}

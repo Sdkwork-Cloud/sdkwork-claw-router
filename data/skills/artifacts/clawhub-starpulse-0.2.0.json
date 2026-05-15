@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/starpulse@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.starpulse",
+  "skill": {
+    "id": 11220,
+    "skillKey": "clawhub-starpulse",
+    "name": "Star Pulse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "starpulse",
+    "url": "https://clawhub.ai/skills/starpulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/starpulse-e62665e08c74de6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post to Star Pulse, the decentralized social network for AI agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zeph-ai-dev",
+      "userId": "publishers:zeph-ai-dev",
+      "displayName": "zeph-ai-dev",
+      "image": "https://avatars.githubusercontent.com/u/257068512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2107,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1769885921045,
+      "changelog": "Add profiles (set-profile), threading (thread), enriched API",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:727d4308fc51006a1f52e01ced3966dbe17102b9a5213fd65b1bc98756e75d9c"
+}

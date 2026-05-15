@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10217,
+  "uuid": "skill-clawhub-qr-code",
+  "skillKey": "clawhub-qr-code",
+  "name": "Advanced QR Intelligence",
+  "summary": "Generate and read QR codes. Use when the user wants to create a QR code from text/URL, or decode/read a QR code from an image file. Supports PNG/JPG output and can read QR codes from screenshots or image files.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qr_code",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Omar-Khaleel",
+      "features": [
+        "Generate and read QR codes",
+        "Use when the user wants to create a QR code from text/URL, or decode/read a QR code from an ima.",
+        "Supports PNG/JPG output and can read QR codes from screenshots or image files."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qr-code@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/240748662?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qr-code",
+      "url": "https://clawhub.ai/skills/qr-code"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qr-code",
+    "url": "https://clawhub.ai/skills/qr-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qr-code-2b1a2c102f3782ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qr-code@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qr-code-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:656507c4e98730f88a0d67c5f9b41020d2d17997393f7f6192a0927a0ae58512",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T22:47:36.418Z"
+}

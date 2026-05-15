@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63007,
+  "uuid": "skill-clawhub-feishu-audio-messages",
+  "skillKey": "clawhub-feishu-audio-messages",
+  "name": "feishu-audio-messages",
+  "summary": "通过飞书Open API发送语音消息，支持文本转语音和上传多格式音频文件，自动转换为opus格式发送。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_audio_messages",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael-C-Matias",
+      "features": [
+        "通过飞书Open API发送语音消息，支持文本转语音和上传多格式音频文件，自动转换为opus格式发送。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-audio-messages@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/234448516?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-audio-messages",
+      "url": "https://clawhub.ai/skills/feishu-audio-messages"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-audio-messages",
+    "url": "https://clawhub.ai/skills/feishu-audio-messages",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-audio-messages-2bfb8c5570ec81e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-audio-messages@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-audio-messages-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d30e3badf9490553da454e1c483ac3c585e27a5d58c1219ed65b4ea841c24525",
+      "artifactSizeBytes": 2332
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T07:34:44.677Z"
+}

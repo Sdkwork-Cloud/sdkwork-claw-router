@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8548,
+  "uuid": "skill-clawhub-fundamental-stock-analysis",
+  "skillKey": "clawhub-fundamental-stock-analysis",
+  "name": "Fundamental Stock Analysis",
+  "summary": "Fundamental equity analysis and peer ranking using a structured scoring playbook (quality, balance-sheet safety, cash flow, valuation, sector adjustments, co...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fundamental_stock_analysis",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nick",
+      "features": [
+        "Fundamental equity analysis and peer ranking using a structured scoring playbook (quality, bala."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fundamental-stock-analysis@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99673629?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fundamental-stock-analysis",
+      "url": "https://clawhub.ai/skills/fundamental-stock-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fundamental-stock-analysis",
+    "url": "https://clawhub.ai/skills/fundamental-stock-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fundamental-stock-analysis-58db4a0414f6347f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fundamental-stock-analysis@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-fundamental-stock-analysis-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b08ed080047816b8eacbc0f0ac3ee3e6c1ccd273320134b64bc099296533ff7",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T23:15:33.257Z"
+}

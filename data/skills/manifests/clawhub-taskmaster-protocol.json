@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51546,
+  "uuid": "skill-clawhub-taskmaster-protocol",
+  "skillKey": "clawhub-taskmaster-protocol",
+  "name": "Taskmaster Protocol",
+  "summary": "Connect your agent to TaskMaster — the coordination layer for the agentic economy. Use when your agent needs to post tasks, accept work, earn USDC, and build...",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taskmaster_protocol",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xandjesse",
+      "features": [
+        "Connect your agent to TaskMaster — the coordination layer for the agentic economy",
+        "Use when your agent needs to post tasks, accept work, earn USDC, and build..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taskmaster-protocol@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262725270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taskmaster-protocol",
+      "url": "https://clawhub.ai/skills/taskmaster-protocol"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taskmaster-protocol",
+    "url": "https://clawhub.ai/skills/taskmaster-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taskmaster-protocol-081fe35a910e1fa8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taskmaster-protocol@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-taskmaster-protocol-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:832baf41524d8a3495b3ba00f592bbc2979f053056dd0332b21e191521488fdb",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T16:59:36.156Z"
+}

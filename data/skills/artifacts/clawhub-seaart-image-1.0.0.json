@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seaart-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seaart_image",
+  "skill": {
+    "id": 40600,
+    "skillKey": "clawhub-seaart-image",
+    "name": "SeaArt Image Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seaart-image",
+    "url": "https://clawhub.ai/skills/seaart-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seaart-image-56e593ab11e57644.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill to generate AI images using the SeaArt platform (seaart.ai). Supports text-to-image generation with multiple models, custom dimensions, LoRA m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seaartpublic",
+      "userId": "s174ghvv6mkzsjr8kjp7wstgqn84058j",
+      "displayName": "seaartpublic",
+      "image": "https://avatars.githubusercontent.com/u/242731008?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775020469961,
+      "changelog": "Initial release of SeaArt Image Generator skill. Features: 14 built-in models (SeaArt Infinity, Film series, Seedream series, Nano Banana series, Grok Imagine, Z Image Turbo, WAI-ANI-PONYXL), smart HD/SD resolution auto-scaling, 7 aspect ratios, LoRA support, negative prompts, and custom model support via URL.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9423050ebd06fb880248815a9f1846e369f20239575b9e6f8e0cc1351ff1b72a"
+}

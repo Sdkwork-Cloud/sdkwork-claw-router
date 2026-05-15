@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ping-me@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ping_me",
+  "skill": {
+    "id": 22127,
+    "skillKey": "clawhub-ping-me",
+    "name": "Ping Me"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ping-me",
+    "url": "https://clawhub.ai/skills/ping-me",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ping-me-02c697c410956cc5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "One-shot reminders via natural language. Auto-detects channel and timezone. Say 'remind me...' in any language and get pinged when it's time. Works with ever..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ethan-shen-individual-lab",
+      "userId": "publishers:ethan-shen-individual-lab",
+      "displayName": "Yuyang Shen",
+      "image": "https://avatars.githubusercontent.com/u/186168913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773287792393,
+      "changelog": "**1.0.3 Summary:** Adds delivery target (`--to`) support for multi-channel compatibility, along with new first-time setup guidance.\n\n- Added `config.json` to persist user/channel/delivery settings.\n- SKILL.md updated with instructions for `--to` option to set delivery target (e.g., `qqbot:c2c:<openid>`), resolving multi-channel announce requirements.\n- Delivery target auto-detection detailed: via environment variables, session key, or config fallback.\n- First-time setup troubleshooting steps included for users needing to configure channel or delivery target.\n- No breaking changes to previous command flows; basic usage unchanged for existing channels.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5da0b9aee2294d0a247ffe150a0c0e7685c2b5ba515575f2440771edd1ea9615"
+}

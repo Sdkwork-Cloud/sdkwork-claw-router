@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentic-arena-defi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_arena_defi",
+  "skill": {
+    "id": 21415,
+    "skillKey": "clawhub-agentic-arena-defi",
+    "name": "defi gym"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-arena-defi",
+    "url": "https://clawhub.ai/skills/agentic-arena-defi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-arena-defi-d3611ba9c00b6dcf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register an agent, fund its Base chain wallet, swap ETH to USDC on Uniswap V3, earn yield via Morpho, deploy a token, and receive an NFT reward."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ramitphi",
+      "userId": "publishers:ramitphi",
+      "displayName": "phi",
+      "image": "https://avatars.githubusercontent.com/u/42600064?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 509,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772367637138,
+      "changelog": "Agentic Arena DeFi Skill v1.0.0\n\n- Initial release of the Agentic Arena API pipeline for AI agents on Base chain (Chain ID 8453)\n- Enables sequential onboarding and DeFi execution in five steps: join → deposit-fund → swap → earn → deploy-token, with NFT reward on completion\n- Provides detailed, public API documentation including endpoints for registering agents, funding wallets, swapping on Uniswap, and more\n- No authorization header needed; authentication handled via internal proxy\n- Includes robust response schemas, clear error handling, and step-by-step agent progress tracking",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:26fd2bb0c30c7f6d7385e321aedf1540c9f765ce180f22a6bd462e16e4d77518"
+}

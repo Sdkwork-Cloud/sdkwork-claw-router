@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61420,
+  "uuid": "skill-clawhub-ai-self-awareness-tracker",
+  "skillKey": "clawhub-ai-self-awareness-tracker",
+  "name": "AI元认知置信度追踪器",
+  "summary": "小Z的元认知模块——\"知道自己知道什么\"的置信度检测。当小Z判断自己的回答置信度低于阈值时，在回复前加\"[🤔 不确定]\"标记。研究来源：UQLM (arXiv:2602.17431) + Hallucination Signals (arXiv:2604.13068)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_self_awareness_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freak30",
+      "features": [
+        "小Z的元认知模块——\"知道自己知道什么\"的置信度检测。当小Z判断自己的回答置信度低于阈值时，在回复前加\"[🤔 不确定]\"标记。研究来源：UQLM (arXiv:2602.17431) +."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-self-awareness-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56594001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-self-awareness-tracker",
+      "url": "https://clawhub.ai/skills/ai-self-awareness-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-self-awareness-tracker",
+    "url": "https://clawhub.ai/skills/ai-self-awareness-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-self-awareness-tracker-78f7c4d161350901.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-self-awareness-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-self-awareness-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efbb777ea1e2bd489557e36caefca981698d12dee105b63235e003d572e8ae7b",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T03:06:36.364Z"
+}

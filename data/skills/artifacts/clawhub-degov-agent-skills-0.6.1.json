@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/degov-agent-skills@0.6.1",
+  "version": "0.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.degov_agent_skills",
+  "skill": {
+    "id": 28250,
+    "skillKey": "clawhub-degov-agent-skills",
+    "name": "DAO Governance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "degov-agent-skills",
+    "url": "https://clawhub.ai/skills/degov-agent-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/degov-agent-skills-3c85ce74cb639f09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Load this skill when users ask about Web3 DAO governance. Use the Degov Agent API as the primary source for DAO governance facts and recent activity, then us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boundless-forest",
+      "userId": "publishers:boundless-forest",
+      "displayName": "boundless-forest",
+      "image": "https://avatars.githubusercontent.com/u/11801722?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.6.1",
+      "createdAt": 1773910533162,
+      "changelog": "- Introduced version 0.6.1 of the dao-governance skill.\n- Primary source for Web3 DAO governance facts is now the Degov Agent API, with web search as a fallback.\n- Clear new workflow: determine if the user's question can be answered with free API endpoints before prompting for wallet setup.\n- Paid Degov Agent API access now involves user consent, wallet management, and dynamic pricing checks.\n- Standardized two-option user prompt for choosing between API-backed or web search answers.\n- Improved documentation for API, wallet setup, command usage, and recommended answer workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c46595c9d44cef6b2537dcab64a31bc671e75b979002b513586d18c5b34f43ec"
+}

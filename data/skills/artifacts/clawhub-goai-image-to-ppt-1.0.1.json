@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/goai-image-to-ppt@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goai_image_to_ppt",
+  "skill": {
+    "id": 38374,
+    "skillKey": "clawhub-goai-image-to-ppt",
+    "name": "GoAI Image to PPT"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goai-image-to-ppt",
+    "url": "https://clawhub.ai/skills/goai-image-to-ppt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goai-image-to-ppt-f7bc3c1d4354d426.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert images to PowerPoint presentations via GoAI API. Use when the user asks to convert images to PPT, turn screenshots into slides, make a presentation f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goai",
+      "userId": "s17bth0ecttg4hrp00qrv4evbs83scf8",
+      "displayName": "GoAI",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774700484299,
+      "changelog": "Version 1.0.1 introduces a migration from shell scripts to a universal Python entrypoint using `uv`.\n\n- Replaced platform-specific shell scripts with a single Python script (`scripts/convert_images_to_ppt.py`) for cross-platform compatibility.\n- Updated dependencies and environment to require only the `uv` binary; shell and PowerShell scripts removed.\n- Added supporting Python files and a `pyproject.toml` for dependency and environment management.\n- SKILL.md revised to reflect new usage instructions and updated output contract.\n- Simplified setup: Users now only need to install `uv`; all Python dependencies handled automatically.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2367d9feb5e85cd99779eb40f6d9c4f6de0b1e354c10238e828879b6fdb67607"
+}

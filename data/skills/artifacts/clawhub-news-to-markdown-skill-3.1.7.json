@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-to-markdown-skill@3.1.7",
+  "version": "3.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_to_markdown_skill",
+  "skill": {
+    "id": 62208,
+    "skillKey": "clawhub-news-to-markdown-skill",
+    "name": "News To Markdown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-to-markdown-skill",
+    "url": "https://clawhub.ai/skills/news-to-markdown-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-to-markdown-skill-75dc581b534c840a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "输入文章 URL，输出干净的 Markdown 正文。支持17个平台专项优化（头条、微信公众号、知乎、36kr、虎嗅、华尔街见闻、澎湃、InfoQ 等），双引擎提取、图片本地化、三层抓取策略。常与 browser-web-search skill 配合：先用 bws 搜索拿到 url 列表，再逐篇调用本 skil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sipingme",
+      "userId": "s17867zbqf69d0mb2yqzym6nmh83hrxm",
+      "displayName": "PING SI",
+      "image": "https://avatars.githubusercontent.com/u/19371897?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 749,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 57
+    },
+    "latestVersion": {
+      "version": "3.1.7",
+      "createdAt": 1777448905572,
+      "changelog": "**Switch to safer, fixed-version install path (no runtime npx) with in-process invocation via launcher.**\n\n- Changed install method from dynamic `npx` invocation to global `npm install -g news-to-markdown@3.3.1` with process-internal require.\n- All usage/docs now recommend `node scripts/run.js convert ...` instead of direct `npx` calls.\n- Eliminated runtime version drift and sub-process risk; CLI args are allow-listed and strictly validated.\n- npx-based usage remains as backup, but is discouraged for regular or batch use.\n- Updated risk and security notices to reflect the new install and invocation approach.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a7a832ab3a6c5b860ea03e93e381c1a58533c4fe95294a1c0c22ad707056bb2"
+}

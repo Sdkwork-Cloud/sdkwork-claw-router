@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48334,
+  "uuid": "skill-clawhub-blackrock-fund",
+  "skillKey": "clawhub-blackrock-fund",
+  "name": "Blackrock Fund",
+  "summary": "Provides detailed insights on BlackRock's history, business model, Aladdin risk system, iShares ETFs, and impact on asset management and ESG investing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blackrock_fund",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides detailed insights on BlackRock's history, business model, Aladdin risk system, iShares."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blackrock-fund@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blackrock-fund",
+      "url": "https://clawhub.ai/skills/blackrock-fund"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blackrock-fund",
+    "url": "https://clawhub.ai/skills/blackrock-fund",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blackrock-fund-1d77fa6391d8443d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blackrock-fund@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blackrock-fund-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:695a9595b9f1cd803df2a45ebc8f3a6871450329f6b371e0424845152cd745ac",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T17:03:25.169Z"
+}

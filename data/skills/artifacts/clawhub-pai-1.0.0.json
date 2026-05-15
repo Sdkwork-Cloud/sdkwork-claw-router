@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pai",
+  "skill": {
+    "id": 26168,
+    "skillKey": "clawhub-pai",
+    "name": "PAI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pai",
+    "url": "https://clawhub.ai/skills/pai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pai-38f4b5f9aaa75a43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal AI Infrastructure core system using the PAI Algorithm for advanced general problem-solving and capability amplification."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "durtydhiana",
+      "userId": "publishers:durtydhiana",
+      "displayName": "DurtyDhiana",
+      "image": "https://avatars.githubusercontent.com/u/122058606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773796744377,
+      "changelog": "PAI 1.0.0 initial release\n\n- Introduces the Personal AI Infrastructure (PAI) core with authoritative reference documentation.\n- Details depth selection and required output formats (FULL, ITERATION, MINIMAL) for response handling.\n- Documents the PAI Algorithm v1.5.0, including stepwise ALGORITHM phase formatting and requirements.\n- Strictly enforces zero-delay, progressive output: token emission must begin immediately with task header.\n- Describes context recovery methods and hard speed gates for referencing previous work.\n- Provides phase guidelines, effort tiers, and critical rules for the handling of user requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be394386a42b9a391de32e78c34e585ed3acc293baa16088da77cbf9d3f7c8eb"
+}

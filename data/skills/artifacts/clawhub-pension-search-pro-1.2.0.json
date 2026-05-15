@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pension-search-pro@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pension_search_pro",
+  "skill": {
+    "id": 73006,
+    "skillKey": "clawhub-pension-search-pro",
+    "name": "企业年金查询技能 Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pension-search-pro",
+    "url": "https://clawhub.ai/skills/pension-search-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pension-search-pro-55e80afe92b0efab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业年金智能查询技能。搜索并确认企业年金信息，输出带来源链接和错误检查的标准化调查报告。只查询企业年金，不查询职业年金。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yanwenzhe",
+      "userId": "s17dj02f5m2xzfqz0wr9xfz19n83mp6s",
+      "displayName": "鄢文哲",
+      "image": "https://avatars.githubusercontent.com/u/31566708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1777193472738,
+      "changelog": "v1.2.0: 清理缓存文件，修复职业年金推断bug，只保留核心技能文件",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:361868e23e9609dd83a3df9d324007bd025a026e1f13a1b7bba5cd4b028dfa16"
+}

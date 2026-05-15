@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/funded-account@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.funded_account",
+  "skill": {
+    "id": 37186,
+    "skillKey": "clawhub-funded-account",
+    "name": "Hyperscaled Funded Account"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "funded-account",
+    "url": "https://clawhub.ai/skills/funded-account",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/funded-account-d3b1a00b28f285fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with the Hyperscaled funded trading platform. Use when the user wants to check their trading account, view positions/orders, submit or cancel trades..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taoshidev1",
+      "userId": "s1783sys83nf0b4j88hxk4ddr583kxeq",
+      "displayName": "taoshidev",
+      "image": "https://avatars.githubusercontent.com/u/68529441?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774655097000,
+      "changelog": "- Updated SKILL.md to clarify and expand outputs for account, risk, and leverage monitoring.\n- \"Account info\" command now explicitly lists intraday & EOD drawdown, account type, and leverages.\n- Added guidance to highlight risk warnings: drawdown approaching limits and leverage near cap, making distinction between \"challenge\" and \"funded\" accounts (challenge = 1/4 leverage cap).\n- Adjusted output formatting and risk warnings accordingly.\n- No functional logic changes, only improvements in documentation and user guidance.\n- Renamed SKILL.md to uppercase for consistency; removed old skill.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6007974208d04bb4fdcbab50e09517b8ec6e058df7b2994150820ee84723f76a"
+}

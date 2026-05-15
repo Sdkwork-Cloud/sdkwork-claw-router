@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moneysharks@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moneysharks",
+  "skill": {
+    "id": 51461,
+    "skillKey": "clawhub-moneysharks",
+    "name": "MoneySharks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moneysharks",
+    "url": "https://clawhub.ai/skills/moneysharks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moneysharks-caecf0c40864a6eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fully autonomous 24/7 Aster DEX perpetual futures trading agent. Manages the complete lifecycle — onboarding, live execution, bracket orders, trailing stop m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sharksdotmoney",
+      "userId": "s1704y38dqm63w8r8572rn832983psz4",
+      "displayName": "sharksdotmoney",
+      "image": "https://avatars.githubusercontent.com/u/241885711?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 324,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773788869492,
+      "changelog": "- Added a new `metadata` section to SKILL.md specifying required environment variables for deployment tools.\n- No code or functional changes; environment requirements are now machine-readable for better integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee3b97229073f42ab26c2385e12e062418e763085e13c7b62e1ab74249f97581"
+}

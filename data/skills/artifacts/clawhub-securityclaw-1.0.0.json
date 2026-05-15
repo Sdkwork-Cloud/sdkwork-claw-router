@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/securityclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.securityclaw",
+  "skill": {
+    "id": 10697,
+    "skillKey": "clawhub-securityclaw",
+    "name": "SecurityClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "securityclaw",
+    "url": "https://clawhub.ai/skills/securityclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/securityclaw-8ee714f7c20527d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security-first skill auditing and quarantine for OpenClaw skills. Use when installing new skills, reviewing skills from unknown sources, scanning skills for prompt injection/exfiltration/supply-chain risks, or when a bot suspects a skill i."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mallen-lbx",
+      "userId": "publishers:mallen-lbx",
+      "displayName": "mallen-lbx",
+      "image": "https://avatars.githubusercontent.com/u/122564472?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2151,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770099950718,
+      "changelog": "SecurityClaw is a security-first skill + toolkit for OpenClaw that audits installed skills for:\n\nmalicious behavior / exploit patterns\nprompt injection payloads embedded in docs\nsecret exfiltration and unsafe tool usage\nrisky install scripts / supply-chain issues\nWhen a suspicious or infected skill is detected, SecurityClaw’s workflow is:\n\nQuarantine the skill (move it out of the active skills directory)\nGenerate a forensic report (what matched, where, why it’s risky)\nNotify the owner and await explicit instruction:\nDelete (remove quarantined files)\nReport (open an issue / publish IOCs)\nAllow (add to allowlist and restore)\nScan all (deep scan all skills)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fbda9138580f258eecf47cd0fe8cbb67bf3994f4f7ef70892535ef1351d9b964"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/title-tag@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.title_tag",
+  "skill": {
+    "id": 42305,
+    "skillKey": "clawhub-title-tag",
+    "name": "title-tag"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "title-tag",
+    "url": "https://clawhub.ai/skills/title-tag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/title-tag-46fc7c26c5f8f325.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to optimize the title tag, page title, or SERP title. Also use when the user mentions \"title tag,\" \"meta title,\" \"page title,\" \"SEO title..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1775401864366,
+      "changelog": "Automated batch sync",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43c2e7887e1d69fe6b81f311aedf22c2fd6b24af13d33e4ff232bf4d21d43b49"
+}

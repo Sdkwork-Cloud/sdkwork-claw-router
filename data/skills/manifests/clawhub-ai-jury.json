@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40229,
+  "uuid": "skill-clawhub-ai-jury",
+  "skillKey": "clawhub-ai-jury",
+  "name": "Umnix jury system",
+  "summary": "Provides transparent AI dispute resolution using 12 independent AI jurors analyzing cases in parallel and a human panel reviewing verdicts and reasoning.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_jury",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vickygujjar17",
+      "features": [
+        "Provides transparent AI dispute resolution using 12 independent AI jurors analyzing cases in pa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-jury@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/207051751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-jury",
+      "url": "https://clawhub.ai/skills/ai-jury"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-jury",
+    "url": "https://clawhub.ai/skills/ai-jury",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-jury-45ac90e00fb60873.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-jury@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-jury-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:066289a0f77787c37828b4f24876351747501b69fb692573929e47e9c7c07fa8",
+      "artifactSizeBytes": 2728
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T15:45:16.621Z"
+}

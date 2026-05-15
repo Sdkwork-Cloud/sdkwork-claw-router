@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49622,
+  "uuid": "skill-clawhub-integrate-outreach",
+  "skillKey": "clawhub-integrate-outreach",
+  "name": "Outreach",
+  "summary": "Outreach integration. Manage sales data, records, and workflows. Use when the user wants to interact with Outreach data.",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integrate_outreach",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Outreach integration",
+        "Manage sales data, records, and workflows",
+        "Use when the user wants to interact with Outreach data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integrate-outreach@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integrate-outreach",
+      "url": "https://clawhub.ai/skills/integrate-outreach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integrate-outreach",
+    "url": "https://clawhub.ai/skills/integrate-outreach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integrate-outreach-49d43677c5451550.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integrate-outreach@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-integrate-outreach-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20143a5364979d867a6223425b8de391a04eec0f0a7ac897aa234e2444f1ba63",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:37:09.300Z"
+}

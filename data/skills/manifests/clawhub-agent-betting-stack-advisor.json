@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33118,
+  "uuid": "skill-clawhub-agent-betting-stack-advisor",
+  "skillKey": "clawhub-agent-betting-stack-advisor",
+  "name": "Agent Betting Stack Advisor",
+  "summary": "Recommend the right tools, APIs, and OpenClaw skills for building an autonomous betting agent. Assesses user goals (sports betting, prediction markets, or hy...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_betting_stack_advisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rsquaredsolutions2026",
+      "features": [
+        "Recommend the right tools, APIs, and OpenClaw skills for building an autonomous betting agent",
+        "Assesses user goals (sports betting, prediction markets, or hy..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-betting-stack-advisor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217474775?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-betting-stack-advisor",
+      "url": "https://clawhub.ai/skills/agent-betting-stack-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-betting-stack-advisor",
+    "url": "https://clawhub.ai/skills/agent-betting-stack-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-betting-stack-advisor-c750d00b89ad578b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-betting-stack-advisor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-betting-stack-advisor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9dd4beb79834f1c104460831a45ebbf46e99868f0677f9a083b9da0ceee78801",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T23:11:06.817Z"
+}

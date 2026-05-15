@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/asus-cn@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asus_cn",
+  "skill": {
+    "id": 71966,
+    "skillKey": "clawhub-asus-cn",
+    "name": "Asus Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asus-cn",
+    "url": "https://clawhub.ai/skills/asus-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asus-cn-00885a826bff5831.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供华硕电脑产品信息、价格查询、技术支持及电竞生态相关咨询，助您了解华硕全线产品与服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776232882804,
+      "changelog": "- Added version field to SKILL.md (version: 1.0.4).\n- No other content changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:11c4fcdd8b65e49aecc36d960e5cdf1aaa6caec97c3e68a20ffbd3122f663718"
+}

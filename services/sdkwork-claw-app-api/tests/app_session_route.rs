@@ -13,7 +13,7 @@ use sdkwork_claw_product::ports::{
 };
 use tower::ServiceExt;
 
-const APP_SESSION_PATH: &str = "/app/v3/api/auth/session";
+const APP_SESSION_PATH: &str = "/app/v3/api/auth/sessions";
 const TRUSTED_SUBJECT_SECRET: &str = "trusted-subject-secret-0123456789";
 const APP_SESSION_SECRET: &str = "app-session-secret-0123456789abcd";
 
@@ -104,7 +104,8 @@ async fn app_session_exchange_issues_session_from_signed_subject_and_audits_even
                 30,
             )
             .header("X-Request-Id", "session-request-1")
-            .body(Body::empty())
+            .header("content-type", "application/json")
+            .body(Body::from(r#"{"grantType":"session_bridge"}"#))
             .unwrap(),
         )
         .await
@@ -118,13 +119,32 @@ async fn app_session_exchange_issues_session_from_signed_subject_and_audits_even
     let payload: serde_json::Value = serde_json::from_str(&body_text).unwrap();
 
     assert_eq!("2000", payload["code"]);
-    assert_eq!("Bearer", payload["data"]["tokenType"]);
-    let token = payload["data"]["token"].as_str().unwrap();
-    let subject =
-        verify_app_session_token(&app_session_config(), token, current_unix_seconds()).unwrap();
-    assert_eq!(10, subject.tenant_id);
-    assert_eq!(20, subject.organization_id);
-    assert_eq!(30, subject.user_id);
+    let auth_token = payload["data"]["authToken"].as_str().unwrap();
+    let access_token = payload["data"]["accessToken"].as_str().unwrap();
+    assert_ne!(auth_token, access_token);
+    assert!(payload["data"]["refreshToken"].as_str().unwrap().len() > 32);
+    assert_eq!("sdkwork-claw-router", payload["data"]["context"]["appId"]);
+    assert_eq!("system", payload["data"]["context"]["authLevel"]);
+    assert_eq!("local", payload["data"]["context"]["deploymentMode"]);
+    assert_eq!("dev", payload["data"]["context"]["environment"]);
+    assert_eq!("10", payload["data"]["context"]["tenantId"]);
+    assert_eq!("20", payload["data"]["context"]["organizationId"]);
+    assert_eq!("30", payload["data"]["context"]["userId"]);
+    assert_eq!(
+        payload["data"]["sessionId"],
+        payload["data"]["context"]["sessionId"]
+    );
+    assert_eq!("30", payload["data"]["user"]["id"]);
+    assert_eq!("user-30", payload["data"]["user"]["username"]);
+    assert_eq!("SDKWork User 30", payload["data"]["user"]["displayName"]);
+
+    for token in [auth_token, access_token] {
+        let subject =
+            verify_app_session_token(&app_session_config(), token, current_unix_seconds()).unwrap();
+        assert_eq!(10, subject.tenant_id);
+        assert_eq!(20, subject.organization_id);
+        assert_eq!(30, subject.user_id);
+    }
 
     let events = event_store.events();
     assert_eq!(1, events.len());
@@ -133,7 +153,8 @@ async fn app_session_exchange_issues_session_from_signed_subject_and_audits_even
     assert_eq!(30, events[0].user_id);
     assert_eq!(Some("session-request-1".to_owned()), events[0].request_id);
     assert_eq!(64, events[0].session_id_hash.len());
-    assert!(!events[0].session_id_hash.contains(token));
+    assert!(!events[0].session_id_hash.contains(auth_token));
+    assert!(!events[0].session_id_hash.contains(access_token));
     assert!(!body_text.contains("x-sdkwork-subject-signature"));
 }
 
@@ -151,7 +172,8 @@ async fn app_session_exchange_rejects_direct_trusted_subject_headers() {
             .header("x-sdkwork-tenant-id", "999")
             .header("x-sdkwork-organization-id", "999")
             .header("x-sdkwork-user-id", "999")
-            .body(Body::empty())
+            .header("content-type", "application/json")
+            .body(Body::from(r#"{"grantType":"session_bridge"}"#))
             .unwrap(),
     )
     .await
@@ -165,8 +187,29 @@ async fn app_session_exchange_rejects_direct_trusted_subject_headers() {
     let payload: serde_json::Value = serde_json::from_str(&body_text).unwrap();
 
     assert_eq!("4010", payload["code"]);
-    assert!(body_text.contains("x-sdkwork-tenant-id header is required"));
+    assert!(body_text.contains("trusted request subject is required"));
     assert!(!body_text.contains("999"));
+}
+
+#[tokio::test]
+async fn app_session_legacy_singular_route_is_not_exposed() {
+    let response = sdkwork_claw_app_api::router_with_app_session_event_store_and_config(
+        Arc::new(TestAppSessionEventStore::default()),
+        trusted_subject_config(),
+        app_session_config(),
+    )
+    .oneshot(
+        Request::builder()
+            .method("POST")
+            .uri("/app/v3/api/auth/session")
+            .header("content-type", "application/json")
+            .body(Body::from(r#"{"grantType":"session_bridge"}"#))
+            .unwrap(),
+    )
+    .await
+    .unwrap();
+
+    assert_eq!(StatusCode::NOT_FOUND, response.status());
 }
 
 fn current_unix_seconds() -> i64 {

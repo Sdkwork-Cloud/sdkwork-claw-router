@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/portfolio@3.4.2",
+  "version": "3.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.portfolio",
+  "skill": {
+    "id": 19327,
+    "skillKey": "clawhub-portfolio",
+    "name": "Portfolio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "portfolio",
+    "url": "https://clawhub.ai/skills/portfolio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/portfolio-0e6a8e0b849ed9b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage investment portfolios. Use when adding positions, analyzing allocation, calculating returns, or generating rebalance advice."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain1",
+      "userId": "s17214ddq2ph75r81trqngwmtn83exsy",
+      "displayName": "bytesagain1",
+      "image": "https://avatars.githubusercontent.com/u/261107384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 592,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "3.4.2",
+      "createdAt": 1773830941896,
+      "changelog": "update",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cda6a69b71cc7cfdfb440982efb7ef810a5b2e934fbd24be9f06a68501cee768"
+}

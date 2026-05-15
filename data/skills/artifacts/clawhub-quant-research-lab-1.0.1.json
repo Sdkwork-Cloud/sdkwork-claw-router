@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quant-research-lab@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quant_research_lab",
+  "skill": {
+    "id": 66109,
+    "skillKey": "clawhub-quant-research-lab",
+    "name": "量化策略研发实验室"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quant-research-lab",
+    "url": "https://clawhub.ai/skills/quant-research-lab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quant-research-lab-6ccd580d7fdd75fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "量化策略研发实验室 — 让 Claude 按顶级机构角色分工（高盛策略架构师、文艺复兴回测引擎、Two Sigma 风控、Citadel Alpha 研究、Jane Street 做市、AQR 因子模型...共 15 个角色）系统性地设计、验证、风控、执行量化交易策略。当用户要求设计量化策略、做回测、构建因子、风..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yili1992",
+      "userId": "s17612wey0k7hn9mryf4xn4kbs862ktp",
+      "displayName": "易陆",
+      "image": "https://avatars.githubusercontent.com/u/3176589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777988905601,
+      "changelog": "quant-research-lab 1.0.1\n\n- Added .gitignore file to define files and directories to be ignored by Git.\n- Added LICENSE file to specify the project's licensing terms.\n- No other changes to source code or features in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5acde032a5b38b20f8cf69b40e693f8cee54c4e1ebd8e01ae3f317986e872d6"
+}

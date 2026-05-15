@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wen-cai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wen_cai",
+  "skill": {
+    "id": 65821,
+    "skillKey": "clawhub-wen-cai",
+    "name": "all in one skill for wencai 同花顺"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wen-cai",
+    "url": "https://clawhub.ai/skills/wen-cai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wen-cai-a80082a34a4a4f4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "同花顺问财全功能合并技能。集成行情数据查询、指数数据查询、财务数据查询、基本资料查询、事件数据查询、公司经营数据查询、机构研究与评级查询、研报搜索、公告搜索、新闻搜索、问财选A股、问财选板块共12个子功能。只需配置 IWENCAI_BASE_URL 和 IWENCAI_API_KEY 两个环境变量，无需任何外部库..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hhofchina",
+      "userId": "s17dqeh3nvm2frd4ss3rgwvba184yyga",
+      "displayName": "hhofchina",
+      "image": "https://avatars.githubusercontent.com/u/20396503?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 549,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776301863833,
+      "changelog": "Initial release — merges 12 sub-skills of 同花顺问财 (iWenCai) into a single, full-featured skill.\n\n- Supports market data, index data, financials, company info, events, operations, institutional ratings, research reports, announcements, news, A-share and sector screening—all via unified API.\n- Requires only two environment variables (`IWENCAI_BASE_URL`, `IWENCAI_API_KEY`); no external libraries (Python standard library only).\n- Auto-routing of queries based on user intent; smart query rewriting and error handling included.\n- CLI usage examples for all sub-functions; clear result formatting and source attribution.\n- Robust fallback and pagination logic; guides users in case of empty data or errors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cab19c3e3fc43491e730a832d800d2ecd81a311c3c6b99a74ab63475eb1f1990"
+}

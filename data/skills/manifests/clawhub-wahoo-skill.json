@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54392,
+  "uuid": "skill-clawhub-wahoo-skill",
+  "skillKey": "clawhub-wahoo-skill",
+  "name": "Wahoo Skill",
+  "summary": "Wahoo Fitness Cloud API — fetch workouts, download FIT files, parse power/HR/cadence/GPS into local SQLite for analysis",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wahoo_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tyler",
+      "features": [
+        "Wahoo Fitness Cloud API — fetch workouts, download FIT files, parse power/HR/cadence/GPS into l."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wahoo-skill@0.1.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1245864?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wahoo-skill",
+      "url": "https://clawhub.ai/skills/wahoo-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wahoo-skill",
+    "url": "https://clawhub.ai/skills/wahoo-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wahoo-skill-dfa3d1c63f61719e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wahoo-skill@0.1.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-wahoo-skill-0.1.8.json",
+      "version": "0.1.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0f44206af9c4dc8e5f98d96093edc132aaf59aff4d07e3cb0b5c2d8346e941c",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T13:46:31.095Z"
+}

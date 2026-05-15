@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23381,
+  "uuid": "skill-clawhub-tcp",
+  "skillKey": "clawhub-tcp",
+  "name": "tcp",
+  "summary": "Helps with TCP sockets, client/server connections, and network debugging. Use when the user needs to open TCP connections, write socket code, test ports, deb...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "openlang",
+      "features": [
+        "Helps with TCP sockets, client/server connections, and network debugging",
+        "Use when the user needs to open TCP connections, write socket code, test ports, deb..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45782174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tcp",
+      "url": "https://clawhub.ai/skills/tcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tcp",
+    "url": "https://clawhub.ai/skills/tcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tcp-00645195b9327227.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97777af7072da00cfd694595b5e5cecd78afdd25d5c793d3fa57de178aae59d8",
+      "artifactSizeBytes": 2216
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T01:45:40.039Z"
+}

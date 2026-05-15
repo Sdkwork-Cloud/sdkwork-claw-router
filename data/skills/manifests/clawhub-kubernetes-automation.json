@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40708,
+  "uuid": "skill-clawhub-kubernetes-automation",
+  "skillKey": "clawhub-kubernetes-automation",
+  "name": "Kubernetes Automation",
+  "summary": "Automate Kubernetes cluster management by deploying, scaling, monitoring, troubleshooting resources, and managing configurations efficiently.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kubernetes_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Automate Kubernetes cluster management by deploying, scaling, monitoring, troubleshooting resou."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kubernetes-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kubernetes-automation",
+      "url": "https://clawhub.ai/skills/kubernetes-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kubernetes-automation",
+    "url": "https://clawhub.ai/skills/kubernetes-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kubernetes-automation-7b0ecfe872d857d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kubernetes-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kubernetes-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be441e58ba3e37d50435a37c1f14c3507caa1a1599491dae81c2f84e356a4ee1",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T22:01:36.515Z"
+}

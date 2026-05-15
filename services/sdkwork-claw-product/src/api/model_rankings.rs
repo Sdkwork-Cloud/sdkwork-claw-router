@@ -39,12 +39,11 @@ struct ModelRankingsState {
 }
 
 #[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
 struct ModelRankingsHttpQuery {
     rank_scope: Option<String>,
     vendor_code: Option<String>,
     modality: Option<String>,
-    search_query: Option<String>,
+    q: Option<String>,
     limit: Option<i64>,
 }
 
@@ -96,7 +95,7 @@ impl ModelRankingsCacheInvalidator for UnconfiguredModelRankingsReadStore {}
 
 pub fn app_model_rankings_router() -> Router {
     model_rankings_router(
-        "/app/v3/api/router/model-rankings",
+        "/app/v3/api/ai/model_rankings",
         Arc::new(UnconfiguredModelRankingsReadStore),
         None,
         false,
@@ -108,7 +107,7 @@ pub fn app_model_rankings_router_with_read_store(
     read_store: Arc<dyn ModelRankingsReadModelStore + Send + Sync>,
 ) -> Router {
     model_rankings_router(
-        "/app/v3/api/router/model-rankings",
+        "/app/v3/api/ai/model_rankings",
         read_store,
         None,
         false,
@@ -118,7 +117,7 @@ pub fn app_model_rankings_router_with_read_store(
 
 pub fn admin_model_rankings_router() -> Router {
     model_rankings_router(
-        "/backend/v3/api/router/model-rankings",
+        "/backend/v3/api/ai/model_rankings",
         Arc::new(UnconfiguredModelRankingsReadStore),
         None,
         true,
@@ -130,7 +129,7 @@ pub fn admin_model_rankings_router_with_read_store(
     read_store: Arc<dyn ModelRankingsReadModelStore + Send + Sync>,
 ) -> Router {
     model_rankings_router(
-        "/backend/v3/api/router/model-rankings",
+        "/backend/v3/api/ai/model_rankings",
         read_store,
         None,
         true,
@@ -143,7 +142,7 @@ pub fn admin_model_rankings_router_with_read_store_and_refresh_store(
     refresh_store: Arc<dyn ModelRankingRefreshStore + Send + Sync>,
 ) -> Router {
     model_rankings_router(
-        "/backend/v3/api/router/model-rankings",
+        "/backend/v3/api/ai/model_rankings",
         read_store,
         Some(refresh_store),
         true,
@@ -368,13 +367,11 @@ async fn fetch_model_rankings(
 }
 
 #[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
 struct ModelRankingStatusHttpQuery {
     rank_scope: Option<String>,
 }
 
 #[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
 struct ModelRankingJobsHttpQuery {
     rank_scope: Option<String>,
     limit: Option<i64>,
@@ -440,7 +437,7 @@ fn validate_query(query: ModelRankingsHttpQuery) -> Result<ModelRankingsQuery, S
         rank_scope: Some(normalize_rank_scope(query.rank_scope.as_deref())),
         vendor_code: normalize_model_ranking_filter_value(query.vendor_code.as_deref()),
         modality: normalize_model_ranking_filter_value(query.modality.as_deref()),
-        search_query: normalize_model_ranking_filter_value(query.search_query.as_deref()),
+        search_query: normalize_model_ranking_filter_value(query.q.as_deref()),
         limit,
     })
 }

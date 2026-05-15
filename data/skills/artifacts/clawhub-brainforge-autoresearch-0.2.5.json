@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brainforge-autoresearch@0.2.5",
+  "version": "0.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brainforge_autoresearch",
+  "skill": {
+    "id": 40114,
+    "skillKey": "clawhub-brainforge-autoresearch",
+    "name": "Brainforge Autoresearch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brainforge-autoresearch",
+    "url": "https://clawhub.ai/skills/brainforge-autoresearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brainforge-autoresearch-bb2f70fb1d9847c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user wants to optimize, improve, benchmark, or evaluate a skill's prompt. Triggers on \"optimize skill\", \"improve skill prompt\", \"benchmark skill\", \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zning1994",
+      "userId": "s173qj6menrea848d3v13ma9qh83gb7k",
+      "displayName": "ZHANG Ning",
+      "image": "https://avatars.githubusercontent.com/u/6896818?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.5",
+      "createdAt": 1776911507121,
+      "changelog": "Renamed skill to brainforge-autoresearch. Old slug openclaw-autoresearch will be merged as redirect.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:275d2a8740f2da326352bb94aacbe0dfa958d2defa9b9ba08a7d8c3611b00de6"
+}

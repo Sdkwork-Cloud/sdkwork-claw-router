@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-installer-usm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_installer_usm",
+  "skill": {
+    "id": 42884,
+    "skillKey": "clawhub-skill-installer-usm",
+    "name": "Skill Installer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-installer-usm",
+    "url": "https://clawhub.ai/skills/skill-installer-usm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-installer-usm-09cbdf24bfb348f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install, search, update, and manage skills from public registries like ClawHub using the clawhub CLI within the OpenClaw workspace."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hulk-yin",
+      "userId": "s175k3bvj8zmgqj7cd7v2h4s4s83m9eq",
+      "displayName": "Hulk",
+      "image": "https://avatars.githubusercontent.com/u/1487095?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774262144454,
+      "changelog": "Initial USM release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2782a2b0a156565583c78a407a3be850d2d3e5b773bbe14682e6e2e42acde020"
+}

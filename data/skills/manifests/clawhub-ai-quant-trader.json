@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64888,
+  "uuid": "skill-clawhub-ai-quant-trader",
+  "skillKey": "clawhub-ai-quant-trader",
+  "name": "Ai Quant Trader",
+  "summary": "基于AKShare的AI量化交易助手，实现策略生成、参数优化、自动交易、止盈止损及实时选股模拟。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_quant_trader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuhuijiang2025-cell",
+      "features": [
+        "基于AKShare的AI量化交易助手，实现策略生成、参数优化、自动交易、止盈止损及实时选股模拟。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-quant-trader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262733151?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-quant-trader",
+      "url": "https://clawhub.ai/skills/ai-quant-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-quant-trader",
+    "url": "https://clawhub.ai/skills/ai-quant-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-quant-trader-0da1ad596a34901c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-quant-trader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-quant-trader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8984d009a962165ddcbc9d8a30846e3d45b878dfd8624a189102e810c14f75bb",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T18:01:01.701Z"
+}

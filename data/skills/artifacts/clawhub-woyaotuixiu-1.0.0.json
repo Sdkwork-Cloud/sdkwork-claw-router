@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/woyaotuixiu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.woyaotuixiu",
+  "skill": {
+    "id": 70870,
+    "skillKey": "clawhub-woyaotuixiu",
+    "name": "我要退休"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "woyaotuixiu",
+    "url": "https://clawhub.ai/skills/woyaotuixiu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/woyaotuixiu-d21d89e8a7ac0450.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "此 Skill 用于计算中国用户的退休时间和社保缴费总额。当用户询问\"我什么时候能退休\"、\"计算退休年龄\"、\"社保要交多少钱\"、\"退休规划\"、\"灵活就业社保\"等问题时，应使用此 Skill。支持根据最新延迟退休政策（2025年1月1日起实施）计算退休年龄，并根据用户工资、所在城市、就业类型（职工/灵活就业）计算从..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "feversaga",
+      "userId": "s17dq32jpmwx7csf55pbqnr07s85gzxm",
+      "displayName": "feversaga",
+      "image": "https://avatars.githubusercontent.com/u/84792360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777100728041,
+      "changelog": "woyaotuixiu 1.0.0\n\n- 首次发布，用于计算中国用户的退休时间和社保缴费总额\n- 支持2025年起最新延迟退休政策，自动区分性别、干部/工人身份\n- 按照所在城市、工资、就业类型（职工/灵活就业）精确计算从现在到退休的总社保缴费\n- 灵活就业可选缴费档次，自动给出分档费用及总额\n- 包含住房公积金、公积金缺失提醒与各城市医疗保险比例参考\n- 详细对话引导，助力养老与退休规划\n支持2025延迟退休政策，计算退休年龄和社保缴费总额，支持职工社保和灵活就业两种模式",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ff3c95e4e6a05b285faa1c07d9d856157a944a960ae0e5fac21353484135940"
+}

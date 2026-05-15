@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26212,
+  "uuid": "skill-clawhub-nexus-meeting-notes",
+  "skillKey": "clawhub-nexus-meeting-notes",
+  "name": "NEXUS Meeting Notes",
+  "summary": "Convert meeting transcripts into structured notes",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexus_meeting_notes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CyberForexBlockchain",
+      "features": [
+        "Convert meeting transcripts into structured notes"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nexus-meeting-notes@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37193064?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nexus-meeting-notes",
+      "url": "https://clawhub.ai/skills/nexus-meeting-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexus-meeting-notes",
+    "url": "https://clawhub.ai/skills/nexus-meeting-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexus-meeting-notes-10706a369b66f979.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nexus-meeting-notes@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nexus-meeting-notes-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e5fd258c509a7d620443a1111e3bf5235418a89a692f2f8f2ebb56010d4cfa5",
+      "artifactSizeBytes": 1922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T17:12:28.808Z"
+}

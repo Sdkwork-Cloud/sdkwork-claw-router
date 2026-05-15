@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45496,
+  "uuid": "skill-clawhub-image-to-video-on-canva",
+  "skillKey": "clawhub-image-to-video-on-canva",
+  "name": "Image To Video On Canva",
+  "summary": "Get animated video clips ready to post, without touching a single slider. Upload your images (JPG, PNG, WEBP, HEIC, up to 200MB), say something like \"turn my...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_on_canva",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "Get animated video clips ready to post, without touching a single slider",
+        "Upload your images (JPG, PNG, WEBP, HEIC, up to 200MB), say something like \"turn my..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-to-video-on-canva@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-to-video-on-canva",
+      "url": "https://clawhub.ai/skills/image-to-video-on-canva"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-on-canva",
+    "url": "https://clawhub.ai/skills/image-to-video-on-canva",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-on-canva-f8b462bf640f5d4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-to-video-on-canva@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-to-video-on-canva-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eff79839c71ca46f5f607d6f62c4c3337e88c119a0e6836a3ef550b5954bc6ca",
+      "artifactSizeBytes": 2588
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T16:25:53.118Z"
+}

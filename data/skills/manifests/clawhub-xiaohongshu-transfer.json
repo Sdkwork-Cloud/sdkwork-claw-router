@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62994,
+  "uuid": "skill-clawhub-xiaohongshu-transfer",
+  "skillKey": "clawhub-xiaohongshu-transfer",
+  "name": "小红书笔记搬运",
+  "summary": "小红书笔记搬运到 Facebook 和 WordPress 的自动化流程。当用户要求搬运小红书笔记、发布小红书内容到 Facebook/WordPress 时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_transfer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weilixiong",
+      "features": [
+        "小红书笔记搬运到 Facebook 和 WordPress 的自动化流程。当用户要求搬运小红书笔记、发布小红书内容到 Facebook/WordPress 时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-transfer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37475384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-transfer",
+      "url": "https://clawhub.ai/skills/xiaohongshu-transfer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-transfer",
+    "url": "https://clawhub.ai/skills/xiaohongshu-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-transfer-a87d5ab1da7d6263.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-transfer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-transfer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a1e5f26ed119b09b2ee7f1e056f24e69960fef41c4de29165f1688b76bc51ec",
+      "artifactSizeBytes": 2113
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T11:13:12.551Z"
+}

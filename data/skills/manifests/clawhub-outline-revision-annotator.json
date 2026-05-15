@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40169,
+  "uuid": "skill-clawhub-outline-revision-annotator",
+  "skillKey": "clawhub-outline-revision-annotator",
+  "name": "Outline Revision Annotator",
+  "summary": "Use when comparing a revised PDF outline, script, treatment, beat sheet, season map, or character bio against an older DOCX/PDF version and you need a high-s...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outline_revision_annotator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "贺苏桓",
+      "features": [
+        "Use when comparing a revised PDF outline, script, treatment, beat sheet, season map, or charact."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/outline-revision-annotator@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/175308167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "outline-revision-annotator",
+      "url": "https://clawhub.ai/skills/outline-revision-annotator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outline-revision-annotator",
+    "url": "https://clawhub.ai/skills/outline-revision-annotator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outline-revision-annotator-7da7cd5201b560c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/outline-revision-annotator@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-outline-revision-annotator-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d31c595c9e996a9f58c79907a2fe72dc3a4cfb6d1974f4ac2e022fd4ee65fca",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T07:00:58.874Z"
+}

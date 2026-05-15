@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiktok-research-kit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_research_kit",
+  "skill": {
+    "id": 39164,
+    "skillKey": "clawhub-tiktok-research-kit",
+    "name": "tiktok-research-kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-research-kit",
+    "url": "https://clawhub.ai/skills/tiktok-research-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-research-kit-4b07d478cf726922.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract and analyze TikTok content using yt-dlp. Supports video metadata, caption extraction, sound/music info, user profile analysis, and engagement stats...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuya227939",
+      "userId": "s17b5efpzv31z4fq3nxeym7gys83g9k7",
+      "displayName": "江辰",
+      "image": "https://avatars.githubusercontent.com/u/16217324?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774344031254,
+      "changelog": "Initial release of TikTok Research Kit.\n\n- Extracts structured data from TikTok videos, profiles, sounds, and hashtags using yt-dlp—no API key required.\n- Supports metadata extraction: captions, creator info, engagement stats, music details, and thumbnails.\n- Provides user profile analysis, trending sound lookup, and hashtag/challenge extraction.\n- Includes tools for extracting top comments and formatting results for easy research.\n- Handles errors like private accounts, removed videos, and regional restrictions with clear guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87e1c6e1f96be0fd614d7bba07406631efd49666a30f23f9e9287d59fc7d9c6e"
+}

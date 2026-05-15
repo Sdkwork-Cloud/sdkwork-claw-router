@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68622,
+  "uuid": "skill-clawhub-baijiahao-publish",
+  "skillKey": "clawhub-baijiahao-publish",
+  "name": "百家号发布器",
+  "summary": "使用 auth 登录态打开百家号发布页，可填入标题与正文（支持 .md 转富文本）、选封面、存草稿或发布。当用户需要发布百家号、用 cookie 打开编辑页、或配合 OpenClaw 自动发布/存草稿时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baijiahao_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lilisidu1210-ui",
+      "features": [
+        "使用 auth 登录态打开百家号发布页，可填入标题与正文（支持 .md 转富文本）、选封面、存草稿或发布。当用户需要发布百家号、用 cookie 打开编辑页、或配合 OpenClaw 自动发."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baijiahao-publish@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222349015?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baijiahao-publish",
+      "url": "https://clawhub.ai/skills/baijiahao-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baijiahao-publish",
+    "url": "https://clawhub.ai/skills/baijiahao-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baijiahao-publish-0a81bcb525bc2a23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baijiahao-publish@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baijiahao-publish-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec0a75ff0c52e81033e99b11e807faf945e1d4b4cffb8a31a37b78b858bad08c",
+      "artifactSizeBytes": 2489
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T05:45:40.020Z"
+}

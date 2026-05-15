@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59494,
+  "uuid": "skill-clawhub-persistent-browser",
+  "skillKey": "clawhub-persistent-browser",
+  "name": "Persistent Browser Scraper",
+  "summary": "用 Playwright 持久化上下文（main-identity）抓取需要登录态的网站（YouTube、GitHub、HuggingFace、Reddit、Kaggle、X/Twitter）。当用户要求外网搜索或指定这些网站时自动触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persistent_browser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ckncg",
+      "features": [
+        "用 Playwright 持久化上下文（main-identity）抓取需要登录态的网站（YouTube、GitHub、HuggingFace、Reddit、Kaggle、X/Twitter."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/persistent-browser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52412272?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "persistent-browser",
+      "url": "https://clawhub.ai/skills/persistent-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persistent-browser",
+    "url": "https://clawhub.ai/skills/persistent-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persistent-browser-ab6150396bdc30a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/persistent-browser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-persistent-browser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a027f6d662b55a29c3d10d4dc1fe18e51d2b79c40b0077b751c024495defd0a1",
+      "artifactSizeBytes": 2570
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T11:15:25.483Z"
+}

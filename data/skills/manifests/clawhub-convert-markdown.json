@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62538,
+  "uuid": "skill-clawhub-convert-markdown",
+  "skillKey": "clawhub-convert-markdown",
+  "name": "文档整理技能 (convert-markdown)",
+  "summary": "文档处理与转换技能，基于 MarkItDown 工具。支持将 PDF、Word、PowerPoint、Excel、图片、音频等多种格式文件批量转换为 Markdown。适用于文档数字化、知识库构建、内容提取等场景。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.convert_markdown",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byteuser1977",
+      "features": [
+        "文档处理与转换技能，基于 MarkItDown 工具。支持将 PDF、Word、PowerPoint、Excel、图片、音频等多种格式文件批量转换为 Markdown。适用于文档数字化、知识."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/convert-markdown@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/182427717?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "convert-markdown",
+      "url": "https://clawhub.ai/skills/convert-markdown"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "convert-markdown",
+    "url": "https://clawhub.ai/skills/convert-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/convert-markdown-17f89202a4c5177b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/convert-markdown@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-convert-markdown-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3f9700d3fec4dd331e08580d9b0f68056cebc3d64d1dcd849502b6c08f96abe",
+      "artifactSizeBytes": 2189
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T15:13:54.108Z"
+}

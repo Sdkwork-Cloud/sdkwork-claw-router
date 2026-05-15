@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oss-upload-online-access@1.7.0",
+  "version": "1.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oss_upload_online_access",
+  "skill": {
+    "id": 18097,
+    "skillKey": "clawhub-oss-upload-online-access",
+    "name": "Aliyun OSS or Tencent COS oss upload online access"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oss-upload-online-access",
+    "url": "https://clawhub.ai/skills/oss-upload-online-access",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oss-upload-online-access-d297f1d997c83f3a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload files to Aliyun OSS or Tencent COS and return public access URLs. Use when the user wants to upload files, access files online, upload to OSS, get rem..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuhean2021",
+      "userId": "s1773bvsrm9jfn4r09wkx1ywg583mgd2",
+      "displayName": "Hean Liu",
+      "image": "https://avatars.githubusercontent.com/u/10606051?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 718,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.7.0",
+      "createdAt": 1773391636925,
+      "changelog": "- 增加“参与贡献”章节，提供了开源仓库地址和贡献说明\n- 其余功能和接口文档未变，未检测到其他内容变更",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:230fcfa1215cd3979a2bc6c3260f1ea5dcdb61ac71c15962d2e6304dc040e9f1"
+}

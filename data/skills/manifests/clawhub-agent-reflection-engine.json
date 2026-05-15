@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42192,
+  "uuid": "skill-clawhub-agent-reflection-engine",
+  "skillKey": "clawhub-agent-reflection-engine",
+  "name": "Agent Reflection Engine",
+  "summary": "Enables AI agents to self-audit decision steps, identify reasoning bottlenecks, and generate improvement patches via chain-of-thought critique.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_reflection_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "albionaiinc-del",
+      "features": [
+        "Enables AI agents to self-audit decision steps, identify reasoning bottlenecks, and generate im."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-reflection-engine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269741383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-reflection-engine",
+      "url": "https://clawhub.ai/skills/agent-reflection-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-reflection-engine",
+    "url": "https://clawhub.ai/skills/agent-reflection-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-reflection-engine-157ecf53fe94566f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-reflection-engine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-reflection-engine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:328e6e0e3657b92016cd952e2ebf92f775b0d5a442b1a79cff01049ecba702de",
+      "artifactSizeBytes": 2270
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T18:04:47.054Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/melodylab-ai-song@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.melodylab_ai_song",
+  "skill": {
+    "id": 63015,
+    "skillKey": "clawhub-melodylab-ai-song",
+    "name": "ZeeLin Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "melodylab-ai-song",
+    "url": "https://clawhub.ai/skills/melodylab-ai-song",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/melodylab-ai-song-8d7c1ac30ea082f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 全自动音乐创作神器：一句话描述，瞬间生成完整歌曲，支持人声演唱/纯音乐、流行/摇滚/民谣等多种风格 - Powered by ZeeLin"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dongjiangliu9-tech",
+      "userId": "s1759f4j94yhjfk5hxcjtpavkx83ktzf",
+      "displayName": "dongjiangliu9-tech",
+      "image": "https://avatars.githubusercontent.com/u/253016939?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 686,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773201535924,
+      "changelog": "接入智灵Skill计费体系，用户使用自己的App-Key独立计费，每次生成音乐消耗200额度",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12ae2febb98e98cf1fe6559e5491db0ee16772a0f2d74cfec4584512bc78a281"
+}

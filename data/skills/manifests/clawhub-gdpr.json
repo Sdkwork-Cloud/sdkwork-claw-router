@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28419,
+  "uuid": "skill-clawhub-gdpr",
+  "skillKey": "clawhub-gdpr",
+  "name": "Gdpr",
+  "summary": "Audit GDPR compliance, generate privacy policies, and document data flows. Use when auditing practices, drafting policies, or checking consent flows.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gdpr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Audit GDPR compliance, generate privacy policies, and document data flows",
+        "Use when auditing practices, drafting policies, or checking consent flows."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gdpr@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gdpr",
+      "url": "https://clawhub.ai/skills/gdpr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gdpr",
+    "url": "https://clawhub.ai/skills/gdpr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gdpr-8b16477e3abe1de3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gdpr@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gdpr-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6c5c30521784716a600a2fcacc1e07c7da3360bb15bff8bdf71e6a60ec7d9df",
+      "artifactSizeBytes": 1819
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T04:28:27.029Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63287,
+  "uuid": "skill-clawhub-coding-lite",
+  "skillKey": "clawhub-coding-lite",
+  "name": "Coding Lite - 轻量级编码助手",
+  "summary": "轻量级编码助手，支持 Python 脚本生成与执行、Excel/WPS 函数自动化、小程序代码生成、SQL 查询助手。快速响应，不占用过多 context。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coding_lite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cp3d1455926-svg",
+      "features": [
+        "轻量级编码助手，支持 Python 脚本生成与执行、Excel/WPS 函数自动化、小程序代码生成、SQL 查询助手。快速响应，不占用过多 context。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coding-lite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268315927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coding-lite",
+      "url": "https://clawhub.ai/skills/coding-lite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coding-lite",
+    "url": "https://clawhub.ai/skills/coding-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coding-lite-c3a83cdb261ae6a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coding-lite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coding-lite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5a4f1d93cd18957e0326fb083ea04c08c28286db0386f760059d148f89641da",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T09:24:54.675Z"
+}

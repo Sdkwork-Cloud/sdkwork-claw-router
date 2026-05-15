@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44867,
+  "uuid": "skill-clawhub-go-dev",
+  "skillKey": "clawhub-go-dev",
+  "name": "go-dev",
+  "summary": "Opinionated Go development setup with golangci-lint v2 + gofumpt + gotestsum + golang-migrate + just. Use when creating new Go projects, setting up linting/f...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.go_dev",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Misha Kolesnik",
+      "features": [
+        "Opinionated Go development setup with golangci-lint v2 + gofumpt + gotestsum + golang-migrate +.",
+        "Use when creating new Go projects, setting up linting/f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/go-dev@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22403766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "go-dev",
+      "url": "https://clawhub.ai/skills/go-dev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "go-dev",
+    "url": "https://clawhub.ai/skills/go-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/go-dev-f5464c4bb4f58906.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/go-dev@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-go-dev-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f9fbc120352493afb53ed5f112c5493ab6307d3d16130605dc4050e2ef35f9d",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:04:19.964Z"
+}

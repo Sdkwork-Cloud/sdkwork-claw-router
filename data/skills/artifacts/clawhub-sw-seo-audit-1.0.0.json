@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sw-seo-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sw_seo_audit",
+  "skill": {
+    "id": 31657,
+    "skillKey": "clawhub-sw-seo-audit",
+    "name": "SEO Audit Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sw-seo-audit",
+    "url": "https://clawhub.ai/skills/sw-seo-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sw-seo-audit-cee83ced1f2de807.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conduct comprehensive SEO audits by analyzing metadata, headings, content, and competitors to provide prioritized, actionable fixes for ranking improvements."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amdf01-debug",
+      "userId": "publishers:amdf01-debug",
+      "displayName": "amdf01-debug",
+      "image": "https://avatars.githubusercontent.com/u/252609374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 264,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774085399904,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:257957f1f7093edcc7411432b5bb0460a056b49c0ce7991aa8c422b4f7c83851"
+}

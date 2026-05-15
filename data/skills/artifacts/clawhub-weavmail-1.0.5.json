@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weavmail@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weavmail",
+  "skill": {
+    "id": 21991,
+    "skillKey": "clawhub-weavmail",
+    "name": "weavmail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weavmail",
+    "url": "https://clawhub.ai/skills/weavmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weavmail-b6b1a9d308c916f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use weavmail CLI to manage emails for the current task. Use when you need to read, send, reply to, or move emails as part of completing a task."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yankeguo",
+      "userId": "s17ftcv59wc7c426je34q9ecz184eggr",
+      "displayName": "Yan-ke Guo",
+      "image": "https://avatars.githubusercontent.com/u/52509957?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 489,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1772727969004,
+      "changelog": "- Added support for batch operations in the `trash` and `archive` commands: multiple mail files can now be processed in one call.\n- Updated documentation to clarify that `trash` and `archive` commands now accept multiple `MAIL_FILE` arguments for batch moves.\n- Clarified how the account is determined for `trash` and `archive` (always from the mail file's front matter; no `--account` option).\n- Adjusted edge case notes for command account handling and batch processing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bef26e4b570909d8e61c831bca7d6aed976c4efd44d248369fb24973beea6e83"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/klickanalytics-cli@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.klickanalytics_cli",
+  "skill": {
+    "id": 56126,
+    "skillKey": "clawhub-klickanalytics-cli",
+    "name": "KlickAnalytics CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "klickanalytics-cli",
+    "url": "https://clawhub.ai/skills/klickanalytics-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/klickanalytics-cli-efacc417bb5af3e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Demonstrates and teaches the KlickAnalytics CLI (`ka`) — a powerful analytics tool and agent-ready interface for financial markets intelligence. Use this ski..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "klickanalytics",
+      "userId": "s173qxewgkr0famdr0e61aksd183g8vn",
+      "displayName": "klickanalytics",
+      "image": "https://avatars.githubusercontent.com/u/66142146?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 254,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773793999822,
+      "changelog": "klickanalytics-cli 1.0.3\n\n- Updated skill metadata to use `requires.env` and `primaryEnv` for environment variable definition.\n- Removed legacy `compatibility.runtime` field for improved configuration alignment.\n- No changes to commands, features, or documentation content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c4e263afd38c966fb4b74842a7bfc151d6f66a30f40d7467f74c62682cb3eaf"
+}

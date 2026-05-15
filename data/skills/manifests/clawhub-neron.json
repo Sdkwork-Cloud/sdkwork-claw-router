@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31415,
+  "uuid": "skill-clawhub-neron",
+  "skillKey": "clawhub-neron",
+  "name": "Neron",
+  "summary": "Personal knowledge graph. Record notes, track moods, manage tasks, spot patterns in someone's life.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neron",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vladikasik",
+      "features": [
+        "Personal knowledge graph",
+        "Record notes, track moods, manage tasks, spot patterns in someone's life."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neron@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40665208?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neron",
+      "url": "https://clawhub.ai/skills/neron"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neron",
+    "url": "https://clawhub.ai/skills/neron",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neron-bfaf79fb28345884.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neron@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-neron-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d940df3432a06ecc9a122229ae82083b106b60442466ff169ac026e99e959b16",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:43:41.640Z"
+}

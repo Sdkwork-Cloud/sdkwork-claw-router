@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jwdiario@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jwdiario",
+  "skill": {
+    "id": 51339,
+    "skillKey": "clawhub-jwdiario",
+    "name": "Jwdiario"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jwdiario",
+    "url": "https://clawhub.ai/skills/jwdiario",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jwdiario-c2d5ceb92ac448b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Buscar y obtener el texto diario de la página oficial de los Testigos de Jehová para la Librería Watchtower en español (wol.jw.org/es/). Utiliza web_fetch pa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "djismgaming",
+      "userId": "publishers:djismgaming",
+      "displayName": "djismgaming",
+      "image": "https://avatars.githubusercontent.com/u/25346053?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2007,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773444891608,
+      "changelog": "Version 1.0.2\n\n- Added main implementation file (main.js) with core functionality.\n- Added metadata file (_meta.json) for skill registration and configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e516d506f088b6ee750c01eb8b9a0a5ef6cea9949b159a44edd46d4958cd1f64"
+}

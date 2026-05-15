@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-tokenapi-qiehuan-skills@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_tokenapi_qiehuan_skills",
+  "skill": {
+    "id": 61025,
+    "skillKey": "clawhub-openclaw-tokenapi-qiehuan-skills",
+    "name": "Openclaw Tokenapi Qiehuan Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-tokenapi-qiehuan-skills",
+    "url": "https://clawhub.ai/skills/openclaw-tokenapi-qiehuan-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-tokenapi-qiehuan-skills-4a928e72dbd2fd9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供基于WebUI的快速AI模型切换工具，支持保存配置、一键切换、批量导入及API Key本地存储管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peter-zx",
+      "userId": "s17ctzydrcsq9aggvmca4daqz183fxdg",
+      "displayName": "左小空空",
+      "image": "https://avatars.githubusercontent.com/u/10544948?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774298220444,
+      "changelog": "OpenClaw Model Switcher 0.1.0 – Initial Release\n\n- Provides a WebUI for managing and switching between AI model providers quickly.\n- Features include a saved list of model configurations, one-click switching, batch import, provider filtering, and API key memory via browser localStorage.\n- Built-in presets for Aliyun, Volcano Engine, Kimi, DeepSeek, OpenAI, MiniMax, and more.\n- Triggered by natural language phrases such as \"切换模型\" or \"切换到 deepseek 模型\".\n- FastAPI backend (on port 9131) with a Vue 3 frontend; also supports command-line quick switching via Python script.\n- Ensures security by storing API keys only locally and never uploading them to servers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4cd6922934fc1d1d5e4324d459e9768ef0b7adeb9b9d332dc84e499f3c4a02d5"
+}

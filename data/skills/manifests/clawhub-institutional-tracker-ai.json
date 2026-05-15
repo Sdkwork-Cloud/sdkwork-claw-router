@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67157,
+  "uuid": "skill-clawhub-institutional-tracker-ai",
+  "skillKey": "clawhub-institutional-tracker-ai",
+  "name": "Institutional Tracker Ai",
+  "summary": "AI链条机构建仓探测算法。基于Tushare结构化数据，通过5维信号评分体系（资金流+量价+筹码+北向+事件） 识别A股AI链条（算力/芯片/大模型/应用）机构建仓行为，生成买入信号（10日持有期、-15%止损）。 含市场环境判断（11指标）、外部情绪聚合（5源）、日内分钟线分析、大规模回测框架。 回测结果：54...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.institutional_tracker_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "casparzhong-cloud",
+      "features": [
+        "AI链条机构建仓探测算法。基于Tushare结构化数据，通过5维信号评分体系（资金流+量价+筹码+北向+事件） 识别A股AI链条（算力/芯片/大模型/应用）机构建仓行为，生成买入信号（10日."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/institutional-tracker-ai@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64838236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "institutional-tracker-ai",
+      "url": "https://clawhub.ai/skills/institutional-tracker-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "institutional-tracker-ai",
+    "url": "https://clawhub.ai/skills/institutional-tracker-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/institutional-tracker-ai-ac2b9ffb070bb45f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/institutional-tracker-ai@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-institutional-tracker-ai-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:344f1d65e175bcd9cec589cd14c4421eb99a6a41a72ffb25ea7036f13035d47e",
+      "artifactSizeBytes": 2854
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T11:25:32.500Z"
+}

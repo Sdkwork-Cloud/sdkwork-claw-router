@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/can-dbc-matrix@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.can_dbc_matrix",
+  "skill": {
+    "id": 40945,
+    "skillKey": "clawhub-can-dbc-matrix",
+    "name": "can-dbc-matrix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "can-dbc-matrix",
+    "url": "https://clawhub.ai/skills/can-dbc-matrix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/can-dbc-matrix-d34bc1a386b9b32e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automation skill for can-dbc-matrix."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "frankie-zeng",
+      "userId": "s1703n8khn5gvz11y93j10q2k984sx0x",
+      "displayName": "frankie",
+      "image": "https://avatars.githubusercontent.com/u/43364599?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776062812234,
+      "changelog": "- Initial release: Parse and analyze CAN DBC matrix JSON files exported by canmatrix.\n- Provides detailed JSON key reference for messages, signals, ECUs, and attributes.\n- Includes example Python code for loading, searching, decoding, and summarizing CAN messages and signals.\n- Documents signal extraction, value formatting, and ECU-based filtering workflows.\n- Offers notes and usage tips for handling data conversions and JSON structure quirks.\n- Describes DBC-to-JSON conversion workflow using canmatrix tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78d247dfea68383d7d8bd9839c5d5ce90dc5942221503d24c930b0d55066ac1e"
+}

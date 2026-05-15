@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65026,
+  "uuid": "skill-clawhub-mysteelmeeting",
+  "skillKey": "clawhub-mysteelmeeting",
+  "name": "mysteelmeeting",
+  "summary": "查询我的钢铁网会展频道（huizhan.mysteel.com/zhuanti）行业会议信息，支持行业筛选（钢材/铁矿石/废钢/煤焦/铁合金/不锈钢/有色金属/建筑材料/新能源/农产品）、地区筛选（东北/华北/华东/华南/华中/西北/西南/港澳台/全球）、省份筛选（吉林/辽宁/黑龙江/北京/上海/广东/浙江/江苏...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysteelmeeting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mysteel",
+      "features": [
+        "查询我的钢铁网会展频道（huizhan.mysteel.com/zhuanti）行业会议信息，支持行业筛选（钢材/铁矿石/废钢/煤焦/铁合金/不锈钢/有色金属/建筑材料/新能源/农产品）、地."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mysteelmeeting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49762508?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mysteelmeeting",
+      "url": "https://clawhub.ai/skills/mysteelmeeting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysteelmeeting",
+    "url": "https://clawhub.ai/skills/mysteelmeeting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysteelmeeting-b20ecd83fc510c96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mysteelmeeting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mysteelmeeting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:096624558aade7b0a146f81257c1982ab9fdffbce14ade254abce287224cf055",
+      "artifactSizeBytes": 2539
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T08:41:08.972Z"
+}

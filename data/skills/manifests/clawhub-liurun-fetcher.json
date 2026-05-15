@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48758,
+  "uuid": "skill-clawhub-liurun-fetcher",
+  "skillKey": "clawhub-liurun-fetcher",
+  "name": "Liurun Fetcher",
+  "summary": "Automatically fetches Liu Run's latest WeChat public articles daily, extracts full text, and generates structured summaries with key insights and trend analy...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liurun_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coolfzb",
+      "features": [
+        "Automatically fetches Liu Run's latest WeChat public articles daily, extracts full text, and ge."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/liurun-fetcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/277456260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "liurun-fetcher",
+      "url": "https://clawhub.ai/skills/liurun-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liurun-fetcher",
+    "url": "https://clawhub.ai/skills/liurun-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liurun-fetcher-fc5a610d3efbbf50.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/liurun-fetcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-liurun-fetcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c74e95e5f67cb55f09f371a1d05eb96172403a3a9d3ab6c8a36f75508cb6a47a",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T03:59:47.086Z"
+}

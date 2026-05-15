@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gbrow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gbrow",
+  "skill": {
+    "id": 43248,
+    "skillKey": "clawhub-gbrow",
+    "name": "Gbrow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gbrow",
+    "url": "https://clawhub.ai/skills/gbrow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gbrow-f3bd97db017a302f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full-featured headless browser for OpenClaw agents. Navigate, snapshot with accessibility tree (@ref clicks), tabs, JS execution, cookie import. No vision mo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ashish797",
+      "userId": "s175ft1vnyw1bf8hkdtnp03k5583tvhp",
+      "displayName": "ashish797",
+      "image": "https://avatars.githubusercontent.com/u/31034163?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775063744671,
+      "changelog": "Initial release: Full-featured headless browser for OpenClaw agents. Accessibility tree snapshot, @ref clicks, tabs, JS execution. No vision model needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:17c8b1852a8b2e015828d667260c9d04d34af722f2d408ecda627f5a8074a8b4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-filters@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_filters",
+  "skill": {
+    "id": 53199,
+    "skillKey": "clawhub-video-editor-filters",
+    "name": "Video Editor Filters"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-filters",
+    "url": "https://clawhub.ai/skills/video-editor-filters",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-filters-1f1dfa5e6ada9af0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — apply a cinematic color grade filter and smooth skin tone across the whole..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776838909539,
+      "changelog": "Initial release: Effortless video filter application and AI-powered video editing.\n\n- Upload MP4, MOV, AVI, or WebM files up to 500MB and describe the desired filters and effects.\n- Automatic backend handles AI filter application, color grading, skin smoothing, and exports polished clips in 30–90 seconds.\n- Session and authentication managed seamlessly, with 100 free credits for new users (token valid 7 days).\n- Supports common video tasks: color grading, style filters, text overlays, audio tracks, and easy export to MP4 and more.\n- Error handling and user feedback integrated for issues like unsupported files, expired tokens, or missing subscription.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb4d7f4ab524a55305b8bce02c13482a82c360423b1270b7a32530f262fff4c4"
+}

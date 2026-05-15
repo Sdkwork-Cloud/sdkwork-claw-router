@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61519,
+  "uuid": "skill-clawhub-fitness-personal-assistant",
+  "skillKey": "clawhub-fitness-personal-assistant",
+  "name": "Fitness Personal Assistant",
+  "summary": "一体化健身追踪系统。自动同步饮食记录和身体状态到 intervals.icu。支持配置引导和错误处理。",
+  "version": "3.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fitness_personal_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leos",
+      "features": [
+        "一体化健身追踪系统。自动同步饮食记录和身体状态到 intervals.icu。支持配置引导和错误处理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fitness-personal-assistant@3.6.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1546505?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fitness-personal-assistant",
+      "url": "https://clawhub.ai/skills/fitness-personal-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fitness-personal-assistant",
+    "url": "https://clawhub.ai/skills/fitness-personal-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fitness-personal-assistant-9e1e26a9e65db9cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fitness-personal-assistant@3.6.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fitness-personal-assistant-3.6.1.json",
+      "version": "3.6.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3eb264630d683c975e5f4475e3cc7784b23d8dfd9548d1dd1574d3fb72f52674",
+      "artifactSizeBytes": 2576
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T16:46:06.459Z"
+}

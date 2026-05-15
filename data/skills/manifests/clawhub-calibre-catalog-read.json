@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56023,
+  "uuid": "skill-clawhub-calibre-catalog-read",
+  "skillKey": "clawhub-calibre-catalog-read",
+  "name": "Calibre Catalog Read",
+  "summary": "Read-only Calibre catalog lookup (including ID-based read-only lookups like \"ID 1021 を確認して\") and one-book analysis-comments workflow over a running Content s...",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calibre_catalog_read",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Altair",
+      "features": [
+        "Read-only Calibre catalog lookup (including ID-based read-only lookups like \"ID 1021 を確認して\") an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/calibre-catalog-read@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1401591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "calibre-catalog-read",
+      "url": "https://clawhub.ai/skills/calibre-catalog-read"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calibre-catalog-read",
+    "url": "https://clawhub.ai/skills/calibre-catalog-read",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calibre-catalog-read-6a140c0bccc98da8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/calibre-catalog-read@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-calibre-catalog-read-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a03dd9de35323b95a2b1fed8e219fcde29de75091e6719a0922e57edbbe643aa",
+      "artifactSizeBytes": 2525
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T10:51:08.260Z"
+}

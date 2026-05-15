@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/koompi-executive@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.koompi_executive",
+  "skill": {
+    "id": 53727,
+    "skillKey": "clawhub-koompi-executive",
+    "name": "Executive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "koompi-executive",
+    "url": "https://clawhub.ai/skills/koompi-executive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/koompi-executive-835a4da78d15c1c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use for C-level executives, ministers, and leaders — daily briefings, decision support, information gathering, report drafting, schedule awareness, and strat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rithythul",
+      "userId": "s170yzwahsbw4t8tkmxb8pjc7984cp8b",
+      "displayName": "rithythul",
+      "image": "https://avatars.githubusercontent.com/u/5461492?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1775571316175,
+      "changelog": "- Initial release of the \"executive\" skill for C-level leaders and decision-makers.\n- Provides structured daily briefings, decision support, meeting preparation, and information gathering frameworks.\n- Includes clear processes for morning briefings, heartbeat checks, report drafting, and weekly reviews.\n- Emphasizes concise, direct, actionable communication tailored for executive workflows.\n- Prioritizes decision needs, proactive alerts, and quiet hours for minimal disruption.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:450480ded874e550ab6c54fd29c8b0fa3a64f2d7d598df964f3b6310ab389009"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gongzhonghaoxieshou@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gongzhonghaoxieshou",
+  "skill": {
+    "id": 72990,
+    "skillKey": "clawhub-gongzhonghaoxieshou",
+    "name": "公众号写手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gongzhonghaoxieshou",
+    "url": "https://clawhub.ai/skills/gongzhonghaoxieshou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gongzhonghaoxieshou-3600f1cd0a7698c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业公众号内容创作专家，支持多平台文章写作（公众号/小红书/知乎等）。 基于传播学原理和新媒体运营实践，创作具有传播力、高质量的内容。 集成去AI痕迹技术，确保内容自然流畅、富有感染力。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fslong520",
+      "userId": "s179dxbepyx3dhgg6vsaj80yt583nxj7",
+      "displayName": "fslong",
+      "image": "https://avatars.githubusercontent.com/u/25819806?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 303,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774841736047,
+      "changelog": "Major refactor: SKILL.md 588->147 lines (75% reduction), docs split into 爆款方法论/写作技巧/去AI味指南, viral content creation methodology, AI-trace removal",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3623e2c8237f072026b3d2a33724abdcee8a3da38bbc0810b2cbbd7823f7473a"
+}

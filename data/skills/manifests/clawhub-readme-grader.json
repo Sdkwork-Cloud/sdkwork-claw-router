@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41194,
+  "uuid": "skill-clawhub-readme-grader",
+  "skillKey": "clawhub-readme-grader",
+  "name": "README Grader",
+  "summary": "Evaluate a README file text, score it out of 100, and provide specific, actionable improvement suggestions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readme_grader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xudong Guo",
+      "features": [
+        "Evaluate a README file text, score it out of 100, and provide specific, actionable improvement."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/readme-grader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24563928?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "readme-grader",
+      "url": "https://clawhub.ai/skills/readme-grader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readme-grader",
+    "url": "https://clawhub.ai/skills/readme-grader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readme-grader-86d78619c322ddbb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/readme-grader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-readme-grader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c485752161c267961e1884e33d33b3bf7b7b597d47672a16277537614cff53d1",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T09:00:01.451Z"
+}

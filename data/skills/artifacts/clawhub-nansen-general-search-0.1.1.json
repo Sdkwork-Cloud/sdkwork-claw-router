@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nansen-general-search@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_general_search",
+  "skill": {
+    "id": 29579,
+    "skillKey": "clawhub-nansen-general-search",
+    "name": "Nansen General Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-general-search",
+    "url": "https://clawhub.ai/skills/nansen-general-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-general-search-f020b0d0a821d24b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search for tokens or entities by name. Use when you have a token name and need the full address, or want to find an entity."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nansen-devops",
+      "userId": "s174hnr0xtfypzan2x804p4me183nkqz",
+      "displayName": "Nansen AI",
+      "image": "https://avatars.githubusercontent.com/u/93130718?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 290,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773742767560,
+      "changelog": "- No changes detected in this version.\n- Skill description, usage, and configuration remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:060f51d14e0b016eedb34357f2d5b1dfae2eeef264192a436a6024f6a96105ed"
+}

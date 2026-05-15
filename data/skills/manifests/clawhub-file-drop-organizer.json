@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60150,
+  "uuid": "skill-clawhub-file-drop-organizer",
+  "skillKey": "clawhub-file-drop-organizer",
+  "name": "File Drop Organizer",
+  "summary": "整理下载目录或临时资料目录，先给分类方案、命名建议和移动预案，再决定是否执行。；use for files, organize, downloads workflows；do not use for 直接删除文件, 修改系统目录.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_drop_organizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "整理下载目录或临时资料目录，先给分类方案、命名建议和移动预案，再决定是否执行。；use for files, organize, downloads workflows；do not use."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-drop-organizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-drop-organizer",
+      "url": "https://clawhub.ai/skills/file-drop-organizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-drop-organizer",
+    "url": "https://clawhub.ai/skills/file-drop-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-drop-organizer-872cb96796a5b508.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-drop-organizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-drop-organizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e816b649bd1040c818558253bcc3292cd92015f85b412feb4c8dd94311bf4bf3",
+      "artifactSizeBytes": 2552
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:37:06.413Z"
+}

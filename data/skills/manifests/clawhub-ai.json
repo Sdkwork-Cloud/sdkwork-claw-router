@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11687,
+  "uuid": "skill-clawhub-ai",
+  "skillKey": "clawhub-ai",
+  "name": "Artificial Intelligence",
+  "summary": "Answer AI questions with current info instead of outdated training data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Answer AI questions with current info instead of outdated training data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai",
+      "url": "https://clawhub.ai/skills/ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai",
+    "url": "https://clawhub.ai/skills/ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-32e83e92d45d71f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e36f5bccc0cc9e63cdefb74bef7d62653a178e38fe34d427263df5fe930ab25",
+      "artifactSizeBytes": 1734
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T11:41:00.693Z"
+}

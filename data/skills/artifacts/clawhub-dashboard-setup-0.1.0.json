@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dashboard-setup@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dashboard_setup",
+  "skill": {
+    "id": 67774,
+    "skillKey": "clawhub-dashboard-setup",
+    "name": "Dashboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dashboard-setup",
+    "url": "https://clawhub.ai/skills/dashboard-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dashboard-setup-d90cfba301c9fab4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供看板搭建的可落地指南与SOP。在开展看板搭建相关工作时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773877749637,
+      "changelog": "Initial release of dashboard-setup.\n\n- 提供看板搭建的落地指南和标准操作流程（SOP）。\n- 明确业务目标、核心指标、应用场景及负责人。\n- 包含操作步骤、指标体系、风险与合规指南。\n- 提供可复用模板、脚本、checklist等资源。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf65025b83ecb4ea1a169ff22e85046744208cca43a3e33ed4e24c77c9dd7864"
+}

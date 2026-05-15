@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-tool-lips-change@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_tool_lips_change",
+  "skill": {
+    "id": 52617,
+    "skillKey": "clawhub-video-tool-lips-change",
+    "name": "WeryAI video tool — lips change"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-tool-lips-change",
+    "url": "https://clawhub.ai/skills/video-tool-lips-change",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-tool-lips-change-5c0d7fec15669067.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lip-sync an existing HTTPS video to a separate audio URL via WeryAI (video-lips-change). Use when the user wants lip sync to new audio, not text-to-video."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zoucdr",
+      "userId": "s17112gmymgcv04spgyd4zzw3583h7ab",
+      "displayName": "parallel world",
+      "image": "https://avatars.githubusercontent.com/u/16458879?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774324631931,
+      "changelog": "- Initial release of video-tool-lips-change for lip-syncing an existing HTTPS video to a separate audio URL using WeryAI.\n- Supports only public HTTPS media URLs for both video and audio; no local file uploads or file path inputs.\n- Ships with a single documented and runnable entry script: scripts/video_lips_change.js.\n- Requires only WERYAI_API_KEY and Node.js 18+ as dependencies.\n- Emphasizes strict scope: other scripts, env vars, or local-file flows are out of scope and should not be used.\n- Users must validate both URLs and confirm before submitting a paid run.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:976e25e64786a5cd9f99bf20d26898bc25e2f8b0fe75484a66c022d76c0bab67"
+}

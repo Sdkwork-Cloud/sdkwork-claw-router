@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/esimagent@1.7.0",
+  "version": "1.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.esimagent",
+  "skill": {
+    "id": 24949,
+    "skillKey": "clawhub-esimagent",
+    "name": "eSIM Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "esimagent",
+    "url": "https://clawhub.ai/skills/esimagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/esimagent-de9f8fbd6414fef9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find eSIM plans for travel. Searches plans by country, filters by data and duration, ranks by value, checks device compatibility, and surfaces deals. Connect..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vladkomudrich",
+      "userId": "s17619rj17mzjw2sj7j4wcsa0d84h7p8",
+      "displayName": "Digital Vlad",
+      "image": "https://avatars.githubusercontent.com/u/50777866?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 299,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.7.0",
+      "createdAt": 1776344304572,
+      "changelog": "Emit click-tracked buyUrl field on plans/deals/providers and recommend it as the default buy link; raw affiliateUrl still disclosed on request for transparency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90c6277f1f986d05fcec0a8ff6e6cd6b46f29b0cba9f6017cf442f65382f5cd0"
+}

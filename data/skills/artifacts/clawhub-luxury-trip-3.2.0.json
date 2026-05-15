@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/luxury-trip@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.luxury_trip",
+  "skill": {
+    "id": 54632,
+    "skillKey": "clawhub-luxury-trip",
+    "name": "Plan Luxury Trips — Five-Star Hotels, First Class Flights, Premium Resorts & VIP Travel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "luxury-trip",
+    "url": "https://clawhub.ai/skills/luxury-trip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/luxury-trip-b20d888a3aa93efc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design premium luxury travel experiences — first class flights, 5-star resorts, private tours, Michelin dining, and VIP access to exclusive venues. Also supp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1776081915004,
+      "changelog": "Renamed and optimized per naming methodology v3",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d42a3600aad8f568246a193a952b4193d92e132116c046e6436c66f55b4dec2"
+}

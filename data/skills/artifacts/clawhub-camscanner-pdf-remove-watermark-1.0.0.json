@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/camscanner-pdf-remove-watermark@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camscanner_pdf_remove_watermark",
+  "skill": {
+    "id": 48415,
+    "skillKey": "clawhub-camscanner-pdf-remove-watermark",
+    "name": "CamScanner Remove PDF Watermark"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camscanner-pdf-remove-watermark",
+    "url": "https://clawhub.ai/skills/camscanner-pdf-remove-watermark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camscanner-pdf-remove-watermark-a84c2e1c0e858a3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use CamScanner to remove watermarks from PDF documents while preserving the underlying text, images, and original layout. Powered by a high-precision documen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "camscanner-ai",
+      "userId": "s173fgwczhaenp3btzq1h17qss84dnaa",
+      "displayName": "CamScanner-AI",
+      "image": "https://avatars.githubusercontent.com/u/269073986?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777535954870,
+      "changelog": "Initial release of CamScanner PDF Remove Watermark.\n\n- Remove watermarks, stamps, and translucent logos from PDF files while preserving original layout and content.\n- High-precision detection and erasure across all pages for clean, legible results.\n- Simple three-step pipeline: upload PDF, remove watermark, and download cleaned file.\n- Supports convenience \"raw\" mode to directly stream the processed PDF in a single call.\n- Robust CLI examples and troubleshooting guide included.\n- Files are processed securely via CamScanner servers; files are not retained.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e44a49f9f06ec26ee8b96ea7bff1727dea572e9a3efcd97e7b7d0ba4bf8a21b"
+}

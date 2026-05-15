@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "audit-verification-pipeline",
+    "displayName": "Audit Verification Pipeline",
+    "summary": "审计finding三级验收流水线：自身forge test验证 → GitHub CI → 审查员评审。确保提交真实可靠的验证级产出。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775128487257,
+    "updatedAt": 1777527088990
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775128487257,
+    "changelog": "audit-verification-pipeline v1.0.0 – Initial release\n\n- Introduces a three-level audit finding verification pipeline: Self-verification (forge test), GitHub CI, and auditor review.\n- Ensures findings have working PoCs, automated test verification, and independent review before submission.\n- Provides clear decision flowcharts, quality self-assessment templates, and common PoC pitfalls.\n- Includes severity assessment and checklists to reduce false positives and over/underestimation.\n- Targets Solidity projects using Foundry; not applicable for code review without PoC or non-Solidity audits.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "yuzengbaao",
+    "userId": "s17fbyh205m23rmgtzh66z24q583pgr6",
+    "displayName": "zengbao yu",
+    "image": "https://avatars.githubusercontent.com/u/43713212?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527088990
+  }
+}

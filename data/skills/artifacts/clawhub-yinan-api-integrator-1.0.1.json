@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yinan-api-integrator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yinan_api_integrator",
+  "skill": {
+    "id": 18825,
+    "skillKey": "clawhub-yinan-api-integrator",
+    "name": "Api Integrator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yinan-api-integrator",
+    "url": "https://clawhub.ai/skills/yinan-api-integrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yinan-api-integrator-43e4c8ddc551e859.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "API integration and automation skill for connecting services, webhooks, and third-party platforms. Use when integrating APIs, building webhooks, syncing data..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinanping-cpu",
+      "userId": "publishers:yinanping-cpu",
+      "displayName": "Yinanping",
+      "image": "https://avatars.githubusercontent.com/u/87659652?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 608,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772880085305,
+      "changelog": "- Introduced a new README.md to provide clearer project documentation.\n- Consolidated scripts into a unified api_client.py for both API testing and client code generation.\n- Simplified and streamlined feature list and usage instructions.\n- Updated usage examples and arguments to reflect changes in script names and options.\n- Retained detailed authentication, integration, and error handling sections for continuity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b21b48b27c0b545433e964d162c653c05dbf80c9713af182b80159bbbbb36994"
+}

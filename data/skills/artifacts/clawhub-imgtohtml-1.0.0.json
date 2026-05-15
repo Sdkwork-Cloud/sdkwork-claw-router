@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/imgtohtml@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imgtohtml",
+  "skill": {
+    "id": 22064,
+    "skillKey": "clawhub-imgtohtml",
+    "name": "imgtohtml"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imgtohtml",
+    "url": "https://clawhub.ai/skills/imgtohtml",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imgtohtml-eab0d86dadd441da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert UI screenshots/images into fully functional HTML/CSS copies. This skill is used when a user provides images of a website, application interface, dash..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinqiu193",
+      "userId": "s177dt00a16v9fm9px52kx8951843ven",
+      "displayName": "jinqiu193",
+      "image": "https://avatars.githubusercontent.com/u/130821904?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773043762010,
+      "changelog": "Version 1.0.0 – Initial release\n\n- Introduces the ability to convert UI screenshots or images into fully functional HTML/CSS replicas with high visual fidelity.\n- Supports analysis and recreation of layout, colors, typography, interactive elements, and responsive behavior.\n- Handles multiple images by processing each one individually for maximum accuracy; related pages may share CSS.\n- Outputs fully self-contained HTML files with accurate structure, styles, and detailed comments where needed.\n- Clearly communicates limitations on font matching, special effects, and interactivity.\n- Provides organization and naming best practices for generated files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ed31f77eeb57a0b3cae7dc855731ecaf74a421ddce97f35e3c8bf5ed3f9d612"
+}

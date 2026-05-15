@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63429,
+  "uuid": "skill-clawhub-bigmodel-image-video",
+  "skillKey": "clawhub-bigmodel-image-video",
+  "name": "BigModel Image Video Generator",
+  "summary": "使用 BigModel (CogView/CogVideoX) API 生成高质量图片和视频。当用户需要\"生成图片\"、\"制作视频\"、\"AI 绘画\"、\"创建封面\"、\"设计海报\"、\"视觉内容生成\"、或任何需要创建图像/视频内容的场景时使用此技能。即使没有明确提到\"生成\"，只要用户需要创建、设计或制作视觉内容（如小说封...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bigmodel_image_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "156554395@qq.com",
+      "features": [
+        "使用 BigModel (CogView/CogVideoX) API 生成高质量图片和视频。当用户需要\"生成图片\"、\"制作视频\"、\"AI 绘画\"、\"创建封面\"、\"设计海报\"、\"视觉内容生成."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bigmodel-image-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4717447?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bigmodel-image-video",
+      "url": "https://clawhub.ai/skills/bigmodel-image-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bigmodel-image-video",
+    "url": "https://clawhub.ai/skills/bigmodel-image-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bigmodel-image-video-03d2aa2d9d0ecd96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bigmodel-image-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bigmodel-image-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aae5b85ee9f5b435684c4a9a78d1343681c08d0dbfd4779356c78924298a3a35",
+      "artifactSizeBytes": 2611
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T11:23:45.651Z"
+}

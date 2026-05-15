@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67297,
+  "uuid": "skill-clawhub-ccxt-crypto-api",
+  "skillKey": "clawhub-ccxt-crypto-api",
+  "name": "Ccxt Crypto Api",
+  "summary": "CCXT 库统一封装全球主流加密货币交易所的交易 API，支持订单管理、市场行情查询、账户余额监控与自动化借贷等核心操作。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccxt_crypto_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "CCXT 库统一封装全球主流加密货币交易所的交易 API，支持订单管理、市场行情查询、账户余额监控与自动化借贷等核心操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ccxt-crypto-api@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ccxt-crypto-api",
+      "url": "https://clawhub.ai/skills/ccxt-crypto-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccxt-crypto-api",
+    "url": "https://clawhub.ai/skills/ccxt-crypto-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccxt-crypto-api-22ba3de930038358.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ccxt-crypto-api@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ccxt-crypto-api-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3ccf3640f6e601d4d39f6af5a64af16a4213425ecb5c16a0b8fff76dc46339b",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:24:08.702Z"
+}

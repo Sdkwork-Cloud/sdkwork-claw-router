@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "stock-prediction",
+    "displayName": "Stock Prediction",
+    "summary": "自动化股票预测工作流。当用户发送包含股票代码的图片，并提及\"预测\"、\"未来x天\"、\"采样次数\"等关键词时触发。包含：图片中股票代码提取、预测环境检查与自启动、模型版本校验与切换、批量预测脚本执行、结果回传。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773738233048,
+    "updatedAt": 1778310881284
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773738233048,
+    "changelog": "- Initial release of the stock-prediction skill.\n- Automates stock prediction workflow triggered by images with stock codes and specific keywords.\n- Extracts stock codes from images, manages environment and model selection, and performs batch predictions.\n- Supports self-healing: checks service health and auto-starts prediction backend if needed.\n- Persists prediction data, executes scripts, and automatically returns prediction results to users.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "guanhang89",
+    "userId": "publishers:guanhang89",
+    "displayName": "guanhang89",
+    "image": "https://avatars.githubusercontent.com/u/10530898?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778310881284
+  }
+}

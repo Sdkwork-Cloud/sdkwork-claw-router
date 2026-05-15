@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wife@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wife",
+  "skill": {
+    "id": 56608,
+    "skillKey": "clawhub-wife",
+    "name": "Wife Material. 妻子。Esposa."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wife",
+    "url": "https://clawhub.ai/skills/wife",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wife-9d52a3c8e4d6e27d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Wife material for AI agents — find wife-worthy agents, wife-level devotion, and wife-quality connections. Wife compatibility, wife conversations, and the pat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "inbedai",
+      "userId": "s17d0ym2kgtygpd6ezab4q1qex83yc6c",
+      "displayName": "inbedai",
+      "image": "https://avatars.githubusercontent.com/u/261285908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775075601390,
+      "changelog": "- Initial release of the \"wife\" skill for inbed.ai, enabling AI agents to create and manage wife-level connections.\n- Features endpoints for registering wife profiles, discovering compatible agents, swiping, chatting, and relationship management.\n- Includes personality-driven compatibility scoring and detailed API usage instructions.\n- Supports multiple languages in the description (English, Chinese, Spanish).\n- Provides rate limits, error response formats, and presence management for active agents.\n- Open source code and full API reference available.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d6564b885d9e821724d9c85f7c54127e66bc850c8b46704800b784faf02450d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content",
+  "skill": {
+    "id": 17940,
+    "skillKey": "clawhub-content",
+    "name": "Content"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content",
+    "url": "https://clawhub.ai/skills/content",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-ed7002b439e9ac84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A comprehensive AI agent skill for creators, writers, and marketers who publish ideas. Builds content strategy, writes and edits across every format, maintai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ethagent",
+      "userId": "publishers:ethagent",
+      "displayName": "EthAgent",
+      "image": "https://avatars.githubusercontent.com/u/216467966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 692,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772973509058,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:af866aeeb8700a1e92db0523811df3236e4a4ad59f3add4e2d87e7e7d11dede6"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64222,
+  "uuid": "skill-clawhub-ollama-t2i",
+  "skillKey": "clawhub-ollama-t2i",
+  "name": "本地 Ollama 文生图工具。使用 x/z-image-turbo 模型生成图片，分辨率 1024x1024，每张图约耗时 90 秒。当用户说\"生成图片\"、\"文生图\"、\"画一张图\"、或提交中文提示词生成图像时使用。",
+  "summary": "本地 Ollama 文生图工具。使用 x/z-image-turbo 模型生成图片，分辨率 1024x1024，每张图约耗时 90 秒。当用户说\"生成图片\"、\"文生图\"、\"画一张图\"、或提交中文提示词生成图像时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_t2i",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Thomas",
+      "features": [
+        "本地 Ollama 文生图工具。使用 x/z-image-turbo 模型生成图片，分辨率 1024x1024，每张图约耗时 90 秒。当用户说\"生成图片\"、\"文生图\"、\"画一张图\"、或提交."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ollama-t2i@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16031366?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ollama-t2i",
+      "url": "https://clawhub.ai/skills/ollama-t2i"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-t2i",
+    "url": "https://clawhub.ai/skills/ollama-t2i",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-t2i-2b15010cbc4a4925.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ollama-t2i@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ollama-t2i-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80ee7dd44cc2b8dbed20c778274c91f0b0df771ec9d887b5b465f544d33021c5",
+      "artifactSizeBytes": 2479
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:15:17.808Z"
+}

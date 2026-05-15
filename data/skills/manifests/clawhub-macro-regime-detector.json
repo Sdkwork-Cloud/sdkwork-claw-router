@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15562,
+  "uuid": "skill-clawhub-macro-regime-detector",
+  "skillKey": "clawhub-macro-regime-detector",
+  "name": "Macro Regime Detector",
+  "summary": "Detect the current macro regime (Risk-On, Risk-Off, Inflationary, Deflationary, Stagflation) using multi-source intelligence. Combines Fear & Greed, DXY, yie...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macro_regime_detector",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JamieRossouw",
+      "features": [
+        "Detect the current macro regime (Risk-On, Risk-Off, Inflationary, Deflationary, Stagflation) us.",
+        "Combines Fear & Greed, DXY, yie..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/macro-regime-detector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219507116?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "macro-regime-detector",
+      "url": "https://clawhub.ai/skills/macro-regime-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macro-regime-detector",
+    "url": "https://clawhub.ai/skills/macro-regime-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macro-regime-detector-20a38bfa529f4b6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/macro-regime-detector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-macro-regime-detector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2eb171d62838e3bfd3f5cc38de908fbbd9723f5e7283c719aebfffd06b30793",
+      "artifactSizeBytes": 2441
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T19:38:20.646Z"
+}

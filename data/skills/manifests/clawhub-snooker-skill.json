@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19869,
+  "uuid": "skill-clawhub-snooker-skill",
+  "skillKey": "clawhub-snooker-skill",
+  "name": "Snooker Skill",
+  "summary": "Look up snooker rankings, results, player profiles, live matches and head-to-head records via api.snooker.org.",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snooker_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Greg Stephens",
+      "features": [
+        "Look up snooker rankings, results, player profiles, live matches and head-to-head records via a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/snooker-skill@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/846052?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "snooker-skill",
+      "url": "https://clawhub.ai/skills/snooker-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snooker-skill",
+    "url": "https://clawhub.ai/skills/snooker-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snooker-skill-519869d1f1ae960d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/snooker-skill@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-snooker-skill-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9755d1e0a7f27d24d92fe5fc0d58e846c64025a05b9f96cb51fc2f96ed585b15",
+      "artifactSizeBytes": 2213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T20:28:55.750Z"
+}

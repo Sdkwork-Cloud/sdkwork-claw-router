@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13032,
+  "uuid": "skill-clawhub-build-session",
+  "skillKey": "clawhub-build-session",
+  "name": "Build Session",
+  "summary": "Facilitates focused autonomous sessions to build, create, or produce one concrete deliverable, then log and commit progress efficiently.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.build_session",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stevenartzt",
+      "features": [
+        "Facilitates focused autonomous sessions to build, create, or produce one concrete deliverable,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/build-session@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/122651625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "build-session",
+      "url": "https://clawhub.ai/skills/build-session"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "build-session",
+    "url": "https://clawhub.ai/skills/build-session",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/build-session-d62b36191b202dd1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/build-session@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-build-session-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9497e0a030835db72879f9beda370c6c001898ebbc5d2d2a63cf73ff113bff0",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T22:46:02.705Z"
+}

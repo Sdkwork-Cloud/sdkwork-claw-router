@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/readme-auto-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readme_auto_gen",
+  "skill": {
+    "id": 48201,
+    "skillKey": "clawhub-readme-auto-gen",
+    "name": "README Auto Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readme-auto-gen",
+    "url": "https://clawhub.ai/skills/readme-auto-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readme-auto-gen-35a9b34db82df505.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-generate comprehensive, well-structured README.md files by analyzing your project's codebase, dependencies, configuration, and structure. Scans package...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ericlooi504",
+      "userId": "s1728b3jrtnnagbdxjy2rmpndh84mk8e",
+      "displayName": "ericlooi504",
+      "image": "https://avatars.githubusercontent.com/u/275256771?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777939485202,
+      "changelog": "Initial release — auto-generate README.md from project structure and code analysis",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b187b6c69f6df96fd880dbfab26d86a0b7fcfa69ff8aa3ded1d270f08a370ec2"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33120,
+  "uuid": "skill-clawhub-ai21-labs",
+  "skillKey": "clawhub-ai21-labs",
+  "name": "Ai21 Labs",
+  "summary": "AI21 Labs integration. Manage data, records, and automate workflows. Use when the user wants to interact with AI21 Labs data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai21_labs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "AI21 Labs integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with AI21 Labs data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai21-labs@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai21-labs",
+      "url": "https://clawhub.ai/skills/ai21-labs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai21-labs",
+    "url": "https://clawhub.ai/skills/ai21-labs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai21-labs-24c4041ef79844d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai21-labs@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai21-labs-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae6e93c979b66a26b9f44fac8843cfbda8819355229bddfdd2a02d30e63c84b0",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:08:42.422Z"
+}

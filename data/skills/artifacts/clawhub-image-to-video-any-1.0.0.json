@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-any@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_any",
+  "skill": {
+    "id": 29723,
+    "skillKey": "clawhub-image-to-video-any",
+    "name": "Image To Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-any",
+    "url": "https://clawhub.ai/skills/image-to-video-any",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-any-f7537821b31aae76.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide users to VideoAny Image-to-Video, an uncensored AI video generator with multi-model support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaoq1",
+      "userId": "s17dr3s71j2xw2ev71hyr2654183yzq8",
+      "displayName": "Colin",
+      "image": "https://avatars.githubusercontent.com/u/15179604?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 297,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773797602126,
+      "changelog": "Image-to-Video Skill v1.0.0\n\n- Initial release with guidance for animating images using the VideoAny image-to-video platform.\n- Lists all supported models (VideoAny, Grok Imagine, Wan 2.5, LTX, Seedance 1.5/2.0, Kling3, Vidu Q3, Veo3/3.1, Sora2).\n- Provides clear usage instructions for the CLI helper script and copy-ready prompts for user workflows.\n- No third-party Python dependencies required.\n- Agent guidance focused on directing users to the VideoAny platform for uncensored multi-model video generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86b159a981440bc6c4110fa8ef70e4d555b14ba332d3e9c290ef56f40d9c81de"
+}

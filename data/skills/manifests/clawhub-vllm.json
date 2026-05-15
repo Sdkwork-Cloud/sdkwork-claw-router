@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59245,
+  "uuid": "skill-clawhub-vllm",
+  "skillKey": "clawhub-vllm",
+  "name": "Vllm",
+  "summary": "vLLM 推理引擎助手，精通高性能 LLM 部署、PagedAttention、OpenAI 兼容 API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vllm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "vLLM 推理引擎助手，精通高性能 LLM 部署、PagedAttention、OpenAI 兼容 API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vllm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vllm",
+      "url": "https://clawhub.ai/skills/vllm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vllm",
+    "url": "https://clawhub.ai/skills/vllm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vllm-ec8207a3dde607f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vllm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vllm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:906e4a715327f151e19bf86f2bfb6db804a5f2e439da4c55b541700528b44017",
+      "artifactSizeBytes": 2149
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T05:57:14.664Z"
+}

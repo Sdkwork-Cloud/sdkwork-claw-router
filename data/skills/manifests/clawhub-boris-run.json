@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28289,
+  "uuid": "skill-clawhub-boris-run",
+  "skillKey": "clawhub-boris-run",
+  "name": "Boris Workflow for OpenClaw",
+  "summary": "Run multiple independent tasks in parallel across AI agents with automatic load balancing, retries, progress tracking, optional verification, and organized a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boris_run",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mukston",
+      "features": [
+        "Run multiple independent tasks in parallel across AI agents with automatic load balancing, retr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/boris-run@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259592358?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "boris-run",
+      "url": "https://clawhub.ai/skills/boris-run"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boris-run",
+    "url": "https://clawhub.ai/skills/boris-run",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boris-run-2de084858e2699d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/boris-run@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-boris-run-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8dc5d60b26e5c9a2cea67de5102236b838355d74fd74f5d608cd917398efa6d",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T19:04:26.338Z"
+}

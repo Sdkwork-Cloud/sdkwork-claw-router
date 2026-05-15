@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phosor-ai@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phosor_ai",
+  "skill": {
+    "id": 34584,
+    "skillKey": "clawhub-phosor-ai",
+    "name": "Phosor AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phosor-ai",
+    "url": "https://clawhub.ai/skills/phosor-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phosor-ai-e40f3eab56b93593.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI videos (text-to-video, image-to-video) with optional custom LoRA styles via the Phosor AI platform. Supports importing images and LoRA models fro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jasonstarlight",
+      "userId": "s177f0hjvx6q4fxq5d8wkpszr583gzb5",
+      "displayName": "Jason",
+      "image": "https://avatars.githubusercontent.com/u/117890383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774232979047,
+      "changelog": "Phosor AI 1.0.0 – Initial Release\n\n  - AI content generation platform, supporting Wan 2.2 14B text-to-video and image-to-video\n  - Upload and use custom LoRA models for style customization\n  - 16 CLI commands for job submission, uploads, status, results, and model listing\n  - Supports preset resolutions (480p/720p/1080p), frame alignment rules, and usage quotas",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63e031a62689aac870075586020ee6dfaf491847b23b955058ecc3a775e1dca8"
+}

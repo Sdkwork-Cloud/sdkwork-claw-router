@@ -44,15 +44,31 @@ pub async fn gateway_openapi_document(State(state): State<ServiceState>) -> Resp
         return StatusCode::NOT_FOUND.into_response();
     }
 
-    (openapi_json_headers(), GATEWAY_OPENAPI_JSON).into_response()
+    gateway_openapi_response()
 }
 
 pub async fn openapi_schema_tabs(State(state): State<ServiceState>) -> Response {
+    openapi_schema_tabs_response_for_surface(state.contract_surface)
+}
+
+pub fn gateway_openapi_response() -> Response {
+    (openapi_json_headers(), GATEWAY_OPENAPI_JSON).into_response()
+}
+
+pub fn app_openapi_response() -> Response {
+    (openapi_json_headers(), APP_OPENAPI_JSON).into_response()
+}
+
+pub fn backend_openapi_response() -> Response {
+    (openapi_json_headers(), BACKEND_OPENAPI_JSON).into_response()
+}
+
+pub fn openapi_schema_tabs_response_for_surface(surface: Option<ApiSurface>) -> Response {
     (
         openapi_json_headers(),
         Json(OpenApiSchemaTabsDocument {
             cache_ttl_seconds: OPENAPI_SCHEMA_CACHE_TTL_SECONDS,
-            tabs: schema_tabs_for_surface(state.contract_surface),
+            tabs: schema_tabs_for_surface(surface),
         }),
     )
         .into_response()
@@ -63,13 +79,11 @@ pub async fn openapi_document(State(state): State<ServiceState>) -> Response {
         return StatusCode::NOT_FOUND.into_response();
     };
 
-    let body = match surface {
-        ApiSurface::App => APP_OPENAPI_JSON,
-        ApiSurface::Backend => BACKEND_OPENAPI_JSON,
-        ApiSurface::OpenAiV1 => return StatusCode::NOT_FOUND.into_response(),
-    };
-
-    (openapi_json_headers(), body).into_response()
+    match surface {
+        ApiSurface::App => app_openapi_response(),
+        ApiSurface::Backend => backend_openapi_response(),
+        ApiSurface::OpenAiV1 => StatusCode::NOT_FOUND.into_response(),
+    }
 }
 
 pub async fn contract_fallback(State(state): State<ServiceState>, request: Request) -> Response {

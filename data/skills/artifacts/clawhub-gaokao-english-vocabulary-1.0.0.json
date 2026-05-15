@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gaokao-english-vocabulary@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gaokao_english_vocabulary",
+  "skill": {
+    "id": 57796,
+    "skillKey": "clawhub-gaokao-english-vocabulary",
+    "name": "gaokao-english-vocabulary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gaokao-english-vocabulary",
+    "url": "https://clawhub.ai/skills/gaokao-english-vocabulary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gaokao-english-vocabulary-3830c39b378e1490.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill generates interactive \"高考英语词汇频率分级系统\" (Gaokao English Vocabulary Frequency Grading System) webpages. It creates beautiful, dark-themed, single-page..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xpscene-ux",
+      "userId": "s17e2k6e01321yjvg155wpzsv983xc7p",
+      "displayName": "xpscene-ux",
+      "image": "https://avatars.githubusercontent.com/u/263094148?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774829320955,
+      "changelog": "- Initial release of Gaokao English Vocabulary Frequency Grading System.\n- Generates interactive, dark-themed HTML webpages for studying English vocabulary with frequency classification based on Gaokao exam data (1977–2025).\n- Supports 4000+ words and 800+ phrases, categorized into 6 word and 6 phrase frequency levels, each with mastery and warning tags.\n- Features include sticky top bar, real-time search, multi-filter, sticky/collapsible section headers, and card-based responsive layout.\n- Vocabulary data is separated into an external JavaScript file for efficient loading.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c7522a1d93c61d2d04bbd6c44f700e9d3f72241df8ab0f9c50d6d66f777a1a6"
+}

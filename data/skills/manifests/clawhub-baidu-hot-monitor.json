@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58810,
+  "uuid": "skill-clawhub-baidu-hot-monitor",
+  "skillKey": "clawhub-baidu-hot-monitor",
+  "name": "百度热榜监控 | Baidu Hot Monitor",
+  "summary": "百度热榜监控 | Baidu Hot Topics Monitor. 获取百度热搜榜、搜索趋势、关键词热度 | Get Baidu trending searches, trends, keyword popularity. 触发词：百度、热搜、baidu.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_hot_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "noah",
+      "features": [
+        "百度热榜监控 | Baidu Hot Topics Monitor",
+        "获取百度热搜榜、搜索趋势、关键词热度 | Get Baidu trending searches, trends, keyword popularity",
+        "触发词：百度、热搜、baidu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-hot-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242364666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-hot-monitor",
+      "url": "https://clawhub.ai/skills/baidu-hot-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-hot-monitor",
+    "url": "https://clawhub.ai/skills/baidu-hot-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-hot-monitor-67bcd349656564ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-hot-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-hot-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2ea5513d32f6308af9035bd3b90f82431db39650c493f55850b5f6a7b6f99e6",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T22:10:59.796Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14573,
+  "uuid": "skill-clawhub-devvit-publishing-auditor",
+  "skillKey": "clawhub-devvit-publishing-auditor",
+  "name": "Devvit Publishing Auditor",
+  "summary": "Audits Reddit Devvit apps for environment, config, compliance, and documentation to ensure readiness before server upload.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.devvit_publishing_auditor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "asifdotpy",
+      "features": [
+        "Audits Reddit Devvit apps for environment, config, compliance, and documentation to ensure read."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/devvit-publishing-auditor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8067825?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "devvit-publishing-auditor",
+      "url": "https://clawhub.ai/skills/devvit-publishing-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "devvit-publishing-auditor",
+    "url": "https://clawhub.ai/skills/devvit-publishing-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/devvit-publishing-auditor-5e34c0fc1f105959.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/devvit-publishing-auditor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-devvit-publishing-auditor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec5ed3f97474050958dbd2043f09efb838f2727957e266ff7fa1480dcefb8dc1",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T07:27:16.135Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32083,
+  "uuid": "skill-clawhub-timeflow-tdd-workflow",
+  "skillKey": "clawhub-timeflow-tdd-workflow",
+  "name": "Tdd Workflow",
+  "summary": "Test-Driven Development workflow principles. RED-GREEN-REFACTOR cycle.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.timeflow_tdd_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "soponcd",
+      "features": [
+        "Test-Driven Development workflow principles",
+        "RED-GREEN-REFACTOR cycle."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/timeflow-tdd-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31302208?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "timeflow-tdd-workflow",
+      "url": "https://clawhub.ai/skills/timeflow-tdd-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "timeflow-tdd-workflow",
+    "url": "https://clawhub.ai/skills/timeflow-tdd-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/timeflow-tdd-workflow-acc14e521e173c08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/timeflow-tdd-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-timeflow-tdd-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcd7119d5fc414036ccdbb79572087e831c86c7d422707e5b6b42456d2c4df0d",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:10:30.699Z"
+}

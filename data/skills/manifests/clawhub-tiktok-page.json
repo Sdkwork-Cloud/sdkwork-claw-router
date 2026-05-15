@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26244,
+  "uuid": "skill-clawhub-tiktok-page",
+  "skillKey": "clawhub-tiktok-page",
+  "name": "TikTok Page",
+  "summary": "TikTok manager: post videos, list content & check account stats. Requires: powershell/pwsh. Reads ~/.config/tiktok-page/credentials.json (TIKTOK_ACCESS_TOKEN...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_page",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "seph",
+      "features": [
+        "TikTok manager: post videos, list content & check account stats",
+        "Requires: powershell/pwsh",
+        "Reads ~/.config/tiktok-page/credentials.json (TIKTOK_ACCESS_TOKEN..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiktok-page@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65636039?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiktok-page",
+      "url": "https://clawhub.ai/skills/tiktok-page"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-page",
+    "url": "https://clawhub.ai/skills/tiktok-page",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-page-8b4e5b5c4c31474d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiktok-page@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiktok-page-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08afd328bbaa9130f4f62b75e31389ec9de8ec1d7a57c780fb96a55a8ecfb7e5",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T08:51:46.385Z"
+}

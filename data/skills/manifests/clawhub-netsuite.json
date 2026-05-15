@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22068,
+  "uuid": "skill-clawhub-netsuite",
+  "skillKey": "clawhub-netsuite",
+  "name": "Netsuite",
+  "summary": "NetSuite integration. Manage accounting and erp data, records, and workflows. Use when the user wants to interact with NetSuite data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.netsuite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "NetSuite integration",
+        "Manage accounting and erp data, records, and workflows",
+        "Use when the user wants to interact with NetSuite data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/netsuite@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "netsuite",
+      "url": "https://clawhub.ai/skills/netsuite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "netsuite",
+    "url": "https://clawhub.ai/skills/netsuite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/netsuite-175144ba77273007.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/netsuite@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-netsuite-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffe75ebbf655215c6d2b670c2e2cdfc1d28478c0f55408395988c8e814073abc",
+      "artifactSizeBytes": 1846
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T11:46:23.814Z"
+}

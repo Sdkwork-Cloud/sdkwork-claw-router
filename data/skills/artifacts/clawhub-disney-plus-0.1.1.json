@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/disney-plus@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.disney_plus",
+  "skill": {
+    "id": 32664,
+    "skillKey": "clawhub-disney-plus",
+    "name": "Disney Plus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "disney-plus",
+    "url": "https://clawhub.ai/skills/disney-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/disney-plus-516934635cd0b20b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides information on Disney Plus public pages including membership plans, content channels, creator guidelines, and help resources without accessing perso..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774224172702,
+      "changelog": "- No code or documentation changes in this version.\n- Skill functionality, description, and usage guidelines remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61e3796f90051b2215c3220ab90f40753c9f447d121a648de32f6936fbd533e5"
+}

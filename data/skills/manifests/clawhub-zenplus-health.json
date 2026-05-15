@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15472,
+  "uuid": "skill-clawhub-zenplus-health",
+  "skillKey": "clawhub-zenplus-health",
+  "name": "Zen+ Health",
+  "summary": "Access your Zen+ Health wellness data - notifications, timeline, and catalogue",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zenplus_health",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ollieparsley",
+      "features": [
+        "Access your Zen+ Health wellness data",
+        "notifications, timeline, and catalogue"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zenplus-health@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/185771?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zenplus-health",
+      "url": "https://clawhub.ai/skills/zenplus-health"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zenplus-health",
+    "url": "https://clawhub.ai/skills/zenplus-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zenplus-health-119c40b8e19ad5d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zenplus-health@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-zenplus-health-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6ec93c971506051152059e8758ecd6b0c52e745ec444648ee737129daaf8ba2",
+      "artifactSizeBytes": 2111
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T21:47:03.696Z"
+}

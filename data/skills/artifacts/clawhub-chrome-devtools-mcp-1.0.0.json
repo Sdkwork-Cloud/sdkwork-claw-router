@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chrome-devtools-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chrome_devtools_mcp",
+  "skill": {
+    "id": 10292,
+    "skillKey": "clawhub-chrome-devtools-mcp",
+    "name": "Chrome Devtools Mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chrome-devtools-mcp",
+    "url": "https://clawhub.ai/skills/chrome-devtools-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chrome-devtools-mcp-33e35e70d28e4f3a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chrome DevTools MCP — Google's official browser automation and testing server. Control Chrome via Puppeteer through MCP protocol: click, fill forms, navigate..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2725,
+      "installsAllTime": 34,
+      "installsCurrent": 32,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771639489991,
+      "changelog": "Initial release of Chrome DevTools MCP.\n\n- Control a live Chrome browser with Puppeteer and the Chrome DevTools Protocol.\n- Automate clicks, form filling, navigation, and handle browser dialogs.\n- Capture screenshots, DOM snapshots, and run JavaScript in the page.\n- Record and analyze performance traces, inspect network requests, and review console messages.\n- Emulate mobile devices and resize the viewport for testing.\n- Designed for web automation, browser testing, performance analysis, and visual regression use cases.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b220b1ca64b976c016bf7d2160f7ec0a604b53f6040bbd9af669571107b289cc"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62314,
+  "uuid": "skill-clawhub-passive-income-tracker-xiaomolongxia",
+  "skillKey": "clawhub-passive-income-tracker-xiaomolongxia",
+  "name": "Passive Income Tracker",
+  "summary": "追踪多个被动收入来源，包括订阅收入、广告分成、技能销售佣金等。支持Webhook接入ClawHub统计。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.passive_income_tracker_xiaomolongxia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linbo405",
+      "features": [
+        "追踪多个被动收入来源，包括订阅收入、广告分成、技能销售佣金等。支持Webhook接入ClawHub统计。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/passive-income-tracker-xiaomolongxia@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259021343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "passive-income-tracker-xiaomolongxia",
+      "url": "https://clawhub.ai/skills/passive-income-tracker-xiaomolongxia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "passive-income-tracker-xiaomolongxia",
+    "url": "https://clawhub.ai/skills/passive-income-tracker-xiaomolongxia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/passive-income-tracker-xiaomolongxia-2461b3e281899e4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/passive-income-tracker-xiaomolongxia@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-passive-income-tracker-xiaomolongxia-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6e346144cec9c5be22b04d35b33ea743f7d0f3ecdb27a52d019dacdfced7ac3",
+      "artifactSizeBytes": 2253
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:10:29.831Z"
+}

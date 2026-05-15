@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57151,
+  "uuid": "skill-clawhub-meetingos",
+  "skillKey": "clawhub-meetingos",
+  "name": "会议智脑（MeetingOS）",
+  "summary": "Auto meeting notes and action item execution loop. Trigger this skill whenever the user mentions meeting notes, meeting summary, action items, follow-up, tra...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meetingos",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DTTNpole-commits",
+      "features": [
+        "Auto meeting notes and action item execution loop",
+        "Trigger this skill whenever the user mentions meeting notes, meeting summary, action items, fol."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meetingos@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264905216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meetingos",
+      "url": "https://clawhub.ai/skills/meetingos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meetingos",
+    "url": "https://clawhub.ai/skills/meetingos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meetingos-0192a952f60eb51f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meetingos@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-meetingos-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ddffc18400b5c6ea168dba89f2ac65a61398c7d76e19026308a713a3ebef0921",
+      "artifactSizeBytes": 2072
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:05:02.130Z"
+}

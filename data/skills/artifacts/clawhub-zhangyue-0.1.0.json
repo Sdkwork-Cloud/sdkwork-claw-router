@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhangyue@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhangyue",
+  "skill": {
+    "id": 71663,
+    "skillKey": "clawhub-zhangyue",
+    "name": "Zhangyue"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhangyue",
+    "url": "https://clawhub.ai/skills/zhangyue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhangyue-09b0879f8faffe14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "整理掌阅官网公开的书库入口、会员权益、帮助信息和活动页内容，提供合法合规的信息摘要服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774174719174,
+      "changelog": "Initial release of the \"zhangyue\" skill:\n\n- Supports organization of public information from iReader (\"掌阅\") website including book library, membership, and help pages.\n- Does not provide access to pirated resources, member sharing, or private account data.\n- Outputs categorized lists, membership details, help center summaries, and copyright notices from publicly accessible sections.\n- Emphasizes compliance with platform rules and outputs only visible, non-sensitive data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae90d75ae7239f411f5e925e2f7ce865726c795f2805b182a9986f432f839306"
+}

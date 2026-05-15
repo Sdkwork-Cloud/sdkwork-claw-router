@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arc-security@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arc_security",
+  "skill": {
+    "id": 10023,
+    "skillKey": "clawhub-arc-security",
+    "name": "Arc Security - Agent Trust Protocol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arc-security",
+    "url": "https://clawhub.ai/skills/arc-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arc-security-1e4a291e2de30419.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage skill trust by staking USDC bonds, paying micro-fees for verified skills, reporting malicious skills, and participating in decentralized governance vi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaivpidadi",
+      "userId": "s176gtst9b3sj98jytmvxc17gd83ggrw",
+      "displayName": "Shaishav Pidadi",
+      "image": "https://avatars.githubusercontent.com/u/26166520?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 2896,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770239693565,
+      "changelog": "- Major documentation overhaul with expanded usage instructions and protocol details\n- Added comprehensive command reference for skill trust checking, usage payment, bonding, reporting, voting, and earnings withdrawal\n- Updated environment variable configuration table with default values and optional cross-chain support\n- Detailed architecture, fee structure, and supported chains documentation\n- Improved trust score and governance process explanations",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dbe4460edde7d0ded73cccb963146cedb3b30667117b367901638c694a8d80fb"
+}

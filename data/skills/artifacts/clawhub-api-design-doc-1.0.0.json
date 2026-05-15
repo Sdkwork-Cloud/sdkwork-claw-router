@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-design-doc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_design_doc",
+  "skill": {
+    "id": 67395,
+    "skillKey": "clawhub-api-design-doc",
+    "name": "Api Design Doc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-design-doc",
+    "url": "https://clawhub.ai/skills/api-design-doc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-design-doc-318d7e69e24ae998.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "标准化API接口设计文档生成工具。根据需求文档、数据库DDL等输入，进行API的标准化、规范化设计，输出完整的API接口设计文档，包括错误码规范、接口格式规范、入参出参定义、JSON示例等，指导后续的代码开发和前后端联调。使用场景包括：(1) 根据业务需求设计RESTful API接口，(2) 基于数据库DDL生..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cnsunxuefeng",
+      "userId": "publishers:cnsunxuefeng",
+      "displayName": "cnsunxuefeng",
+      "image": "https://avatars.githubusercontent.com/u/35733511?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 341,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773657903762,
+      "changelog": "- 首发版本，提供API接口设计文档标准化生成工具。\n- 支持根据需求文档、数据库DDL等输入，自动生成规范化API设计文档。\n- 文档输出涵盖错误码规范、接口格式、入参出参定义、JSON示例等必备内容。\n- 包含详细工作流程、参考资料、标准模板使用说明及最佳实践指引。\n- 生成文档自动保存在 doc/API接口设计文档.md。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16c9e1563c39978f4794271b918390c691a4d636deb59fb22910f81fa923cf50"
+}

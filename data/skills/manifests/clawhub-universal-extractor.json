@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43172,
+  "uuid": "skill-clawhub-universal-extractor",
+  "skillKey": "clawhub-universal-extractor",
+  "name": "Universal Extractor",
+  "summary": "Extract clean text from URLs, articles, documents, and files. Four extraction micro-services. Use when you need to pull content from web pages, PDFs, or any...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.universal_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "renoblabs",
+      "features": [
+        "Extract clean text from URLs, articles, documents, and files",
+        "Four extraction micro-services",
+        "Use when you need to pull content from web pages, PDFs, or any..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/universal-extractor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211252113?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "universal-extractor",
+      "url": "https://clawhub.ai/skills/universal-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "universal-extractor",
+    "url": "https://clawhub.ai/skills/universal-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/universal-extractor-99e65c3576061d95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/universal-extractor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-universal-extractor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a65c7147460d13efc1f0041e5cf149cdeab0b9d6806ad9906c26adebbe52b6c6",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T06:42:12.675Z"
+}

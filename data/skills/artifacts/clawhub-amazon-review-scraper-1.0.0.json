@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-review-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_review_scraper",
+  "skill": {
+    "id": 53282,
+    "skillKey": "clawhub-amazon-review-scraper",
+    "name": "Amazon Review Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-review-scraper",
+    "url": "https://clawhub.ai/skills/amazon-review-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-review-scraper-288c195e740f29f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon Review Intelligence — input an ASIN, automatically fetch product reviews via VOC.AI and run Claude AI analysis. Outputs structured VOC report: sentime..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775098589358,
+      "changelog": "- Initial release of amazon-review-scraper.\n- Fetches Amazon product reviews by ASIN using VOC.AI API (no scraping or browser required).\n- Analyzes reviews with Claude AI to generate structured VOC reports, including sentiment breakdown, pain points, selling points, optimization suggestions, and SEO keywords.\n- Free tier supports up to 8 reviews per ASIN; higher limits available with a VOC.AI token.\n- Provides multiple output options, language support (English/Chinese), and integrates easily with Bash.\n- Compatible with all Amazon marketplaces through VOC.AI.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63c58195b879928f3825ad4f5c90df658d7bae5a4a2b1cdfe5d9c75fb0339983"
+}

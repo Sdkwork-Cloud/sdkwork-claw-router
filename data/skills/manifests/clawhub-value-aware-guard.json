@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66244,
+  "uuid": "skill-clawhub-value-aware-guard",
+  "skillKey": "clawhub-value-aware-guard",
+  "name": "Value Aware Guard",
+  "summary": "价值守护系统：监控价值漂移，检查边界违规，执行渐进式干预，支持独立CLI和proactive-engine协作。触发条件：价值偏离检测、边界违规、能量低警报、用户模式发现。",
+  "version": "0.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.value_aware_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Louis Z.",
+      "features": [
+        "价值守护系统：监控价值漂移，检查边界违规，执行渐进式干预，支持独立CLI和proactive-engine协作。触发条件：价值偏离检测、边界违规、能量低警报、用户模式发现。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/value-aware-guard@0.7.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58058619?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "value-aware-guard",
+      "url": "https://clawhub.ai/skills/value-aware-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "value-aware-guard",
+    "url": "https://clawhub.ai/skills/value-aware-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/value-aware-guard-76b451f2582805e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/value-aware-guard@0.7.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-value-aware-guard-0.7.0.json",
+      "version": "0.7.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a72c1fb709537cc981f78f06f1c32b685221c0ed5749c1981caa0873d0f11074",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T05:52:52.986Z"
+}

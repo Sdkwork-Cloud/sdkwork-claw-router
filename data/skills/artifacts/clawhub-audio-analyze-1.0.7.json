@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audio-analyze@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_analyze",
+  "skill": {
+    "id": 38128,
+    "skillKey": "clawhub-audio-analyze",
+    "name": "Audio Analyze"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-analyze",
+    "url": "https://clawhub.ai/skills/audio-analyze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-analyze-049139eff3fcaa85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "High-performance audio transcription and analysis using Gemini 3.1 Pro. Powered by Evolink.ai"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evolinkai",
+      "userId": "s176k82x7tm60j2kx309p7evxs83j3z7",
+      "displayName": "EvolinkAI",
+      "image": "https://avatars.githubusercontent.com/u/253253881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1774869112052,
+      "changelog": "Full localization: README files translated to all 9 supported languages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5ce97c09ea23627ccf53b48e419b052d3deb55ac6a817117d11cd713bfbfde4"
+}

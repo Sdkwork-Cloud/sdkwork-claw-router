@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloudflare-crawl-skill@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_crawl_skill",
+  "skill": {
+    "id": 48248,
+    "skillKey": "clawhub-cloudflare-crawl-skill",
+    "name": "Cloudflare Crawl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-crawl-skill",
+    "url": "https://clawhub.ai/skills/cloudflare-crawl-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-crawl-skill-1105ddbbf6154e2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crawl websites using Cloudflare's Browser Rendering API. Use when you need to scrape entire sites, build knowledge bases, extract content from multiple pages..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wirelessjoe",
+      "userId": "publishers:wirelessjoe",
+      "displayName": "Joe Alicata",
+      "image": "https://avatars.githubusercontent.com/u/36973?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773237864921,
+      "changelog": "- Added scripts/crawl.js to provide a command-line interface for starting, monitoring, and retrieving crawl jobs.\n- Updated SKILL.md to specify required environment variables and newly included scripts/crawl.js in the required files section.\n- Improved consistency of environment variable usage throughout documentation (now uses CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID everywhere).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:497e53e899201fab56852ef8cda33536f036b56d70854308b9cd19e0ae28af0d"
+}

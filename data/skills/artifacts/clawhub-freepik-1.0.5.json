@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/freepik@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freepik",
+  "skill": {
+    "id": 14107,
+    "skillKey": "clawhub-freepik",
+    "name": "Freepik"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freepik",
+    "url": "https://clawhub.ai/skills/freepik",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freepik-dc62886c852c8e24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images, videos, icons, audio, and more using Freepik's AI API. Supports Mystic, Flux, Kling, Hailuo, Seedream, RunWay, Magnific upscaling, stock con..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cohnen",
+      "userId": "s170vzyj2a2jpw4je5vt0t2c4h83n8g3",
+      "displayName": "cohnen",
+      "image": "https://avatars.githubusercontent.com/u/2776023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1046,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1772188296452,
+      "changelog": "Fix display name to Freepik (was Freepik 1.0.0)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:82ac2f0889bc4904d9edcf21531ea31e97f2d688efd48eeca8d253ba8562e971"
+}

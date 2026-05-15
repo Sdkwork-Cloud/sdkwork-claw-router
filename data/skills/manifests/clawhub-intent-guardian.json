@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20985,
+  "uuid": "skill-clawhub-intent-guardian",
+  "skillKey": "clawhub-intent-guardian",
+  "name": "Intent Guardian",
+  "summary": "Watches your desktop activity, maintains a real-time task stack, detects when you forget what you were doing after interruptions, and gently reminds you. You...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intent_guardian",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Huiling Pan",
+      "features": [
+        "Watches your desktop activity, maintains a real-time task stack, detects when you forget what y."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intent-guardian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114465654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intent-guardian",
+      "url": "https://clawhub.ai/skills/intent-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intent-guardian",
+    "url": "https://clawhub.ai/skills/intent-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intent-guardian-cb267913ea575c66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intent-guardian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-intent-guardian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36e1c4f3e7eb85d6ef11fe521c160d669a1d512ecf2b0de16ccd272bf9f96c02",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T14:52:48.311Z"
+}

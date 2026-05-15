@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73425,
+  "uuid": "skill-clawhub-wenshengtu",
+  "skillKey": "clawhub-wenshengtu",
+  "name": "文生图视频生成",
+  "summary": "根据用户提示词，实现文生图、文生视频、图生视频，制作的素材用于地震应急数字化演练。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wenshengtu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daixihu2026",
+      "features": [
+        "根据用户提示词，实现文生图、文生视频、图生视频，制作的素材用于地震应急数字化演练。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wenshengtu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255284666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wenshengtu",
+      "url": "https://clawhub.ai/skills/wenshengtu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wenshengtu",
+    "url": "https://clawhub.ai/skills/wenshengtu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wenshengtu-c38c508f7a0b36ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wenshengtu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wenshengtu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b7ed9b592ad88c842989fb585afbbb875bf011bafbc140b89fbfbf086fafba2",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T05:41:30.355Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26114,
+  "uuid": "skill-clawhub-gov-permit-scraper",
+  "skillKey": "clawhub-gov-permit-scraper",
+  "name": "Gov Permit Scraper",
+  "summary": "Scrape government permit databases (liquor licenses, business registrations, contractor permits, health permits) to generate B2B sales leads. Enriches raw pe...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gov_permit_scraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "merjua14",
+      "features": [
+        "Scrape government permit databases (liquor licenses, business registrations, contractor permits.",
+        "Enriches raw pe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gov-permit-scraper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40038194?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gov-permit-scraper",
+      "url": "https://clawhub.ai/skills/gov-permit-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gov-permit-scraper",
+    "url": "https://clawhub.ai/skills/gov-permit-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gov-permit-scraper-e5060febd92ff150.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gov-permit-scraper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gov-permit-scraper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c32a1c70efa1a47801cda283af76ca434f02fe59993396be3e61ae59c664fd6f",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T23:06:33.739Z"
+}

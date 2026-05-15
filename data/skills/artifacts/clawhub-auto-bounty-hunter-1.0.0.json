@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-bounty-hunter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_bounty_hunter",
+  "skill": {
+    "id": 26314,
+    "skillKey": "clawhub-auto-bounty-hunter",
+    "name": "Auto Bounty Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-bounty-hunter",
+    "url": "https://clawhub.ai/skills/auto-bounty-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-bounty-hunter-fa9a898b77b66867.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically scan GitHub repositories for open issues with 0 comments, evaluate their value, claim them, and submit PRs. Automates the entire GitHub bounty..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dagangtj",
+      "userId": "publishers:dagangtj",
+      "displayName": "dagangtj",
+      "image": "https://avatars.githubusercontent.com/u/65108318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773544576882,
+      "changelog": "Initial release: Fully automated GitHub bounty hunting system with scanning, evaluation, claiming, and PR submission",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e19f3125231ac8f1f50369e532c6c3d061efcd05aff8b9a0771be268b14ef20e"
+}

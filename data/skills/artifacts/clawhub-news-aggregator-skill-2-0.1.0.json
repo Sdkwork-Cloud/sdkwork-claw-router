@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-aggregator-skill-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_aggregator_skill_2",
+  "skill": {
+    "id": 9168,
+    "skillKey": "clawhub-news-aggregator-skill-2",
+    "name": "News Aggregator Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-aggregator-skill-2",
+    "url": "https://clawhub.ai/skills/news-aggregator-skill-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-aggregator-skill-2-d83e0ac681caa01c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive news aggregator that fetches, filters, and deeply analyzes real-time content from 8 major sources: Hacker News, GitHub Trending, Product Hunt, 36Kr, Tencent News, WallStreetCN, V2EX, and Weibo. Best for 'daily scans', 'tech n."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tonyliu9189",
+      "userId": "publishers:tonyliu9189",
+      "displayName": "tonyliu9189",
+      "image": "https://avatars.githubusercontent.com/u/154835352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4188,
+      "installsAllTime": 13,
+      "installsCurrent": 12,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769506445421,
+      "changelog": "Initial release of News Aggregator Skill.\n\n- Fetches and deeply analyzes real-time news from 8 major sources (Hacker News, GitHub Trending, Product Hunt, 36Kr, Tencent News, WallStreetCN, V2EX, Weibo).\n- Supports both broad \"Global Scan\" and targeted keyword searches with automatic keyword expansion for domain coverage.\n- Adds deep fetching mode (`--deep`) to extract and include full article content.\n- Implements smart time filtering and annotated \"smart fill\" for sparse results, ensuring rich reports.\n- Provides interactive menu/help system triggered by specific user commands.\n- Generates concise, structured magazine-style reports in Chinese, saving each session's report to the `reports/` directory.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a323b179bbfe5f3e14580ed4ac47a254f3661294d899a59cf15cd98a0a0c4b3a"
+}

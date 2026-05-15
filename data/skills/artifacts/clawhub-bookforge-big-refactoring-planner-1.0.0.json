@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-big-refactoring-planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_big_refactoring_planner",
+  "skill": {
+    "id": 52040,
+    "skillKey": "clawhub-bookforge-big-refactoring-planner",
+    "name": "Big Refactoring Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-big-refactoring-planner",
+    "url": "https://clawhub.ai/skills/bookforge-big-refactoring-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-big-refactoring-planner-1799e421ab59a937.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan and execute architectural-scale refactoring campaigns that take weeks to months — the four named patterns for large-scale structural restructuring from..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776622232995,
+      "changelog": "Initial release: plans and orchestrates major multi-week refactoring campaigns using four named architectural patterns from Fowler and Beck.\n\n- Identifies which of the four big refactoring patterns (Tease Apart Inheritance, Convert Procedural Design to Objects, Separate Domain from Presentation, Extract Hierarchy) applies based on structural signals in the codebase.\n- Produces a multi-phase campaign plan with decision points and milestones that interleave safely with ongoing feature development.\n- Accepts input via direct codebase analysis and/or a code-smell-diagnosis report.\n- Specifies when this skill must be used (structural or architectural problems too large for single-session refactoring) and when not to (smaller, local refactorings or preliminary test suite setup).\n- Guides toward a clear stopping condition tied to enabling the desired feature or unblocking key changes.\n- Targets experienced developers, tech leads, and architects familiar with OO design and legacy code transformation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9cc3cb4fb60a1e9733dd8a471f04a6a4f38637281a581b654f69c52101c926be"
+}

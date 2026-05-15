@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25945,
+  "uuid": "skill-clawhub-easy-todo",
+  "skillKey": "clawhub-easy-todo",
+  "name": "Easy TODO list management for busy crustaceans and their humans",
+  "summary": "Personal TODO list manager. Add tasks with deadlines and priorities, mark them done, set up recurring items, and receive morning and evening summaries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easy_todo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "simenfur",
+      "features": [
+        "Personal TODO list manager",
+        "Add tasks with deadlines and priorities, mark them done, set up recurring items, and receive mo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/easy-todo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/711538?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "easy-todo",
+      "url": "https://clawhub.ai/skills/easy-todo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easy-todo",
+    "url": "https://clawhub.ai/skills/easy-todo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easy-todo-d2e3063484c2c370.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/easy-todo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-easy-todo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1287fcd0d5eeda95534fbd64e47505fb2035ed700435f883446fae4a91ad91f",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:01:11.533Z"
+}

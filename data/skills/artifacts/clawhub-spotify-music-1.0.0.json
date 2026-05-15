@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spotify-music@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spotify_music",
+  "skill": {
+    "id": 68855,
+    "skillKey": "clawhub-spotify-music",
+    "name": "Spotify Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spotify-music",
+    "url": "https://clawhub.ai/skills/spotify-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spotify-music-bb262767e47b6ca0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供全球领先的音乐和播客流媒体服务，基于6亿用户数据实现个性化推荐与多平台覆盖。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778011561372,
+      "changelog": "- 首次发布 Spotify skill，深入介绍其历史、商业模式和核心竞争力\n- 涵盖从瑞典创业故事到全球扩张、播客战略及AI推荐创新\n- 提供最新关键数据（2023年用户数、营收、盈利等）\n- 分析平台护城河和网络效应\n- 收录有趣的产品趣闻和病毒营销案例",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85b2454714da4579f84ac9163d52c855d3199718e6d4777aed922e1b6d4e9305"
+}

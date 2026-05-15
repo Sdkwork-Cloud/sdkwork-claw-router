@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/privacy-policy@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.privacy_policy",
+  "skill": {
+    "id": 58959,
+    "skillKey": "clawhub-privacy-policy",
+    "name": "Privacy Policy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "privacy-policy",
+    "url": "https://clawhub.ai/skills/privacy-policy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/privacy-policy-d92443f92af063b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "隐私政策生成器。GDPR/CCPA合规、App/网站隐私政策、合规审计。Privacy policy generator with GDPR, CCPA compliance. 隐私政策、合规。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain-lab",
+      "userId": "s174pq5f3gzez3838vt2642fmx848f1d",
+      "displayName": "bytesagain-lab",
+      "image": "https://avatars.githubusercontent.com/u/271735676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 742,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773773413890,
+      "changelog": "v2.5 standard: Use-when desc, homepage, source, security fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be7c4afecde867493138bad9483e1abd059452f9a2c3645263d4775809746492"
+}

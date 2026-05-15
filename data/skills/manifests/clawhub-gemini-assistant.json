@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18420,
+  "uuid": "skill-clawhub-gemini-assistant",
+  "skillKey": "clawhub-gemini-assistant",
+  "name": "Gemini Assistant",
+  "summary": "General-purpose AI assistant using Gemini API with voice and text support. Use when you need a smart AI assistant that can answer questions, have conversatio...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ali Mostafa Radwan",
+      "features": [
+        "General-purpose AI assistant using Gemini API with voice and text support",
+        "Use when you need a smart AI assistant that can answer questions, have conversatio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gemini-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66019196?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gemini-assistant",
+      "url": "https://clawhub.ai/skills/gemini-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-assistant",
+    "url": "https://clawhub.ai/skills/gemini-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-assistant-acd7c5218b6da25e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gemini-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gemini-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bae51526d770eacb4cc6537319705da85082ac5e98e06e374e5dca356cbab427",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T09:33:34.163Z"
+}

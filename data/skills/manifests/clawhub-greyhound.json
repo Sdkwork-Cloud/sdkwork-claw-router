@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27748,
+  "uuid": "skill-clawhub-greyhound",
+  "skillKey": "clawhub-greyhound",
+  "name": "greyghound",
+  "summary": "Analyzes greyhound races, fetches data, and predicts winners/placings for upcoming races based on form, odds, and simple models.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.greyhound",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iglemanyte-ctrl",
+      "features": [
+        "Analyzes greyhound races, fetches data, and predicts winners/placings for upcoming races based."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/greyhound@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/247650369?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "greyhound",
+      "url": "https://clawhub.ai/skills/greyhound"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "greyhound",
+    "url": "https://clawhub.ai/skills/greyhound",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/greyhound-f6883335853e9c41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/greyhound@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-greyhound-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d17ad5c46a585d2fde2342b3c47b395600143168310a97c0b123475c4297043f",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T19:15:28.979Z"
+}

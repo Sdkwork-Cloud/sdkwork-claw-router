@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jubjub@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jubjub",
+  "skill": {
+    "id": 50758,
+    "skillKey": "clawhub-jubjub",
+    "name": "JubJub — Verified Media Ownership and Social Publishing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jubjub",
+    "url": "https://clawhub.ai/skills/jubjub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jubjub-86cfcf3e9b76822a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish content across TikTok, Instagram, YouTube, Facebook, LinkedIn, Vimeo, Vimeo OTT, and Mux. Manage team workflows, collaborate with your team, and trac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aquaflans",
+      "userId": "s174d78fzgc5v5t6neg7vva6m98410rf",
+      "displayName": "Tom McCarthy",
+      "image": "https://avatars.githubusercontent.com/u/145245594?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1777869354924,
+      "changelog": "### Version 1.1.1\n\n- Added a README.md file with documentation or usage instructions.\n- No changes to code or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff7f7d9b4947bfaa82597edb629f667bb09a5564efffbae27ae5a725838727a7"
+}

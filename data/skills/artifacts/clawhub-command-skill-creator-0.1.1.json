@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/command-skill-creator@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.command_skill_creator",
+  "skill": {
+    "id": 55150,
+    "skillKey": "clawhub-command-skill-creator",
+    "name": "command-skill-creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "command-skill-creator",
+    "url": "https://clawhub.ai/skills/command-skill-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/command-skill-creator-70f7d8893d1d6b32.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create automation command skills (slash commands) for Claude Code projects. Use when building `/slash-commands` that automate multi-step workflows - deploys,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tenequm",
+      "userId": "s17bp3v1hm1dnkzey0c9tfh02183j0y5",
+      "displayName": "Misha Kolesnik",
+      "image": "https://avatars.githubusercontent.com/u/22403766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1777572244036,
+      "changelog": "Updated command-skill-creator from 0.1.0 to 0.1.1.\nChanges:\n- modified `SKILL.md`",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cde5761c638d4c245fc8aeb448c1bc3c31e105ac09715fcc3287606867cde80"
+}

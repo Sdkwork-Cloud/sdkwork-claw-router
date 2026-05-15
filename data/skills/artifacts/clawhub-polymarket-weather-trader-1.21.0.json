@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-weather-trader@1.21.0",
+  "version": "1.21.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_weather_trader",
+  "skill": {
+    "id": 8966,
+    "skillKey": "clawhub-polymarket-weather-trader",
+    "name": "Polymarket Weather Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-weather-trader",
+    "url": "https://clawhub.ai/skills/polymarket-weather-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-weather-trader-ebaf3a0600ce0c95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade Polymarket weather markets using NOAA (US) and Open-Meteo (international) forecasts via Simmer API. Inspired by gopfan2's weather trading approach. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adlai88",
+      "userId": "s172hbaws6qnfk9a4zffkzfags83j0df",
+      "displayName": "AD88",
+      "image": "https://avatars.githubusercontent.com/u/6263940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5074,
+      "installsAllTime": 23,
+      "installsCurrent": 20,
+      "stars": 4,
+      "versions": 38
+    },
+    "latestVersion": {
+      "version": "1.21.0",
+      "createdAt": 1777791690103,
+      "changelog": "v1.21.0 introduces robust per-market weather station routing and expanded coverage for more accurate weather market trades.\n\n- Each market now routes to the specific weather station named in its `resolution_criteria`, matching Polymarket's source rather than using a fixed default. If a station is not recognized, the market is skipped with a log message.\n- Expanded NOAA station support: now covers KLGA, KJFK, KEWR, KNYC, KORD, KMDW, KSEA, KATL, KDAL, KDFW, KMIA, KBOS, KDCA, KIAD, KPHX, KLAS, KSFO, KLAX, KDEN, KMSP, KPHL.\n- Added international Open-Meteo routing for Madrid, Milan, Amsterdam, Taipei, as well as previously supported cities.\n- The skill now requires the new `?include=resolution_criteria` flag when calling `/api/sdk/markets` (supported as of 2026-05-03).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9431c21b67c8dcff339eb5c10ee9701ced902e560701a7e39db6ad6467de1564"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42154,
+  "uuid": "skill-clawhub-skillforge-cli",
+  "skillKey": "clawhub-skillforge-cli",
+  "name": "SkillForge",
+  "summary": "Generate and audit OpenClaw agent skills from natural language. Use when the operator asks to create a skill, build a skill, generate a skill, audit a skill,...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillforge_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shadoprizm",
+      "features": [
+        "Generate and audit OpenClaw agent skills from natural language",
+        "Use when the operator asks to create a skill, build a skill, generate a skill, audit a skill,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillforge-cli@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142634171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillforge-cli",
+      "url": "https://clawhub.ai/skills/skillforge-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillforge-cli",
+    "url": "https://clawhub.ai/skills/skillforge-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillforge-cli-97c866fd7f72204b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillforge-cli@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillforge-cli-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d74f124fa1efa7d82d656a3da272a5dc098872bcc3bbcf7b96fdd06d0c670ad3",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T23:42:16.314Z"
+}

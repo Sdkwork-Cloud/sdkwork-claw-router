@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29379,
+  "uuid": "skill-clawhub-openapi-generator",
+  "skillKey": "clawhub-openapi-generator",
+  "name": "Openapi Generator",
+  "summary": "OpenAPI Generator integration. Manage data, records, and automate workflows. Use when the user wants to interact with OpenAPI Generator data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openapi_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "OpenAPI Generator integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with OpenAPI Generator data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openapi-generator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openapi-generator",
+      "url": "https://clawhub.ai/skills/openapi-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openapi-generator",
+    "url": "https://clawhub.ai/skills/openapi-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openapi-generator-11fa238f273b93c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openapi-generator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openapi-generator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b31b29d09c0acdc54952a44e474590db683c69fcf28291737aa6005481e4990",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:48:23.797Z"
+}

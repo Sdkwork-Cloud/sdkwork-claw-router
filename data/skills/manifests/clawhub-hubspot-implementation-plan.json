@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40984,
+  "uuid": "skill-clawhub-hubspot-implementation-plan",
+  "skillKey": "clawhub-hubspot-implementation-plan",
+  "name": "Hubspot Implementation Plan",
+  "summary": "Generate a phased implementation plan from a HubSpot audit report. Creates prioritized, sequenced cleanup processes with effort estimates, dependencies, and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hubspot_implementation_plan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TomGranot",
+      "features": [
+        "Generate a phased implementation plan from a HubSpot audit report",
+        "Creates prioritized, sequenced cleanup processes with effort estimates, dependencies, and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hubspot-implementation-plan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8835035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hubspot-implementation-plan",
+      "url": "https://clawhub.ai/skills/hubspot-implementation-plan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hubspot-implementation-plan",
+    "url": "https://clawhub.ai/skills/hubspot-implementation-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hubspot-implementation-plan-b654aaf8280f9631.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hubspot-implementation-plan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hubspot-implementation-plan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67510d2d3381073321b1b177c0443a2a6aba419dfbedf0d295cd29c690a705c0",
+      "artifactSizeBytes": 2486
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T19:47:57.338Z"
+}

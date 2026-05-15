@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18023,
+  "uuid": "skill-clawhub-qqbot-prompt-optimizer",
+  "skillKey": "clawhub-qqbot-prompt-optimizer",
+  "name": "QQBot Prompt Optimizer",
+  "summary": "Fix robotic QQ Bot replies by replacing default prompts with your own personality. Supports soul files (SOUL.md) for character-driven AI responses.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qqbot_prompt_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2233admin",
+      "features": [
+        "Fix robotic QQ Bot replies by replacing default prompts with your own personality",
+        "Supports soul files (SOUL.md) for character-driven AI responses."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qqbot-prompt-optimizer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57929895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qqbot-prompt-optimizer",
+      "url": "https://clawhub.ai/skills/qqbot-prompt-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qqbot-prompt-optimizer",
+    "url": "https://clawhub.ai/skills/qqbot-prompt-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qqbot-prompt-optimizer-641c847611e7e4c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qqbot-prompt-optimizer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qqbot-prompt-optimizer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03401659462e56062d0b192c47daa4188b11f7b15ccbc6c5760f9df94e6772da",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T20:47:01.794Z"
+}

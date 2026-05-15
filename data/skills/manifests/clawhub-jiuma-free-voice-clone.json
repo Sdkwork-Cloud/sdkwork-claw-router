@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61184,
+  "uuid": "skill-clawhub-jiuma-free-voice-clone",
+  "skillKey": "clawhub-jiuma-free-voice-clone",
+  "name": "九马免费声音克隆",
+  "summary": "九马AI语音克隆技能，TTS。使用九马AI API进行语音克隆和合成，支持在线音色选择或自定义音频参考。当用户需要语音克隆、语音合成或选择不同音色时使用此技能。Jiuma AI voice cloning skill, TTS. Utilize Jiuma AI API for voice cloning and...",
+  "version": "1.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiuma_free_voice_clone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dddcn1",
+      "features": [
+        "九马AI语音克隆技能，TTS。使用九马AI API进行语音克隆和合成，支持在线音色选择或自定义音频参考。当用户需要语音克隆、语音合成或选择不同音色时使用此技能。Jiuma AI voice.",
+        "Utilize Jiuma AI API for voice cloning and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jiuma-free-voice-clone@1.0.14",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219089859?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jiuma-free-voice-clone",
+      "url": "https://clawhub.ai/skills/jiuma-free-voice-clone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiuma-free-voice-clone",
+    "url": "https://clawhub.ai/skills/jiuma-free-voice-clone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiuma-free-voice-clone-9a805a62e1bf6ba4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jiuma-free-voice-clone@1.0.14",
+      "artifactUrl": "data/skills/artifacts/clawhub-jiuma-free-voice-clone-1.0.14.json",
+      "version": "1.0.14",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e0441cca346f951242cee1d7848e1eac2f58f1fc000f23b3dd58744bc971b95",
+      "artifactSizeBytes": 2243
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T09:24:46.221Z"
+}

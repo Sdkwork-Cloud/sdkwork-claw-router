@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69722,
+  "uuid": "skill-clawhub-unsuck-your-thinking",
+  "skillKey": "clawhub-unsuck-your-thinking",
+  "name": "unsuck-your-thinking",
+  "summary": "当用户表达困惑、纠结、想不清楚、不知道怎么办时使用此 skill。哪怕用户只说了一句话、几个字、或者逻辑混乱，都应触发。专门处理\"说不清楚的困惑\"——通过逐层追问剥开表面问题，找到真正的卡点，最终给出清晰结论。当用户说\"我不知道该怎么办\"\"我有些纠结\"\"我有个困惑\"\"帮我想想\"时必须触发此 skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unsuck_your_thinking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RoninDT",
+      "features": [
+        "当用户表达困惑、纠结、想不清楚、不知道怎么办时使用此 skill。哪怕用户只说了一句话、几个字、或者逻辑混乱，都应触发。专门处理\"说不清楚的困惑\"——通过逐层追问剥开表面问题，找到真正的卡点."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unsuck-your-thinking@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/101232079?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unsuck-your-thinking",
+      "url": "https://clawhub.ai/skills/unsuck-your-thinking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unsuck-your-thinking",
+    "url": "https://clawhub.ai/skills/unsuck-your-thinking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unsuck-your-thinking-7f0e01548ab7610c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unsuck-your-thinking@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unsuck-your-thinking-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:970508326865806e7152eac00d39271f21a9d6ade9ac1d095f7f5bfb2c7d8026",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T13:17:15.249Z"
+}

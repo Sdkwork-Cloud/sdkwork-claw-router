@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inception-token-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inception_token_optimizer",
+  "skill": {
+    "id": 35817,
+    "skillKey": "clawhub-inception-token-optimizer",
+    "name": "Inception Token Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inception-token-optimizer",
+    "url": "https://clawhub.ai/skills/inception-token-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inception-token-optimizer-e508270b83267915.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Optimize Inception Labs token usage to minimize costs. Use when choosing Inception models (Mercury, etc.), crafting prompts for Inception, analyzing token co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nelmaz",
+      "userId": "s176x4jhvghz5tsywww6mmywh583gjka",
+      "displayName": "nelmaz",
+      "image": "https://avatars.githubusercontent.com/u/12268467?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774010730371,
+      "changelog": "Initial release: token bucket rate limiter, LRU cache, prompt compression guide, context pruning strategies",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85ac19fe8f5b88b78687f5805a2cd784e90221bf199b9a2150c609171dbf9f26"
+}

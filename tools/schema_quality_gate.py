@@ -7,6 +7,7 @@ from pathlib import Path
 from tools.api_contract_manifest import ApiContractManifestGenerator
 from tools.architecture_standard_guardian import ArchitectureStandardGuardian
 from tools.clawrouter_gateway_openapi_generator import ClawRouterGatewayOpenApiGenerator
+from tools.clawrouter_openapi_contract_audit import ClawRouterOpenApiContractAudit
 from tools.clawrouter_openapi_generator import ClawRouterOpenApiGenerator
 from tools.clawrouter_openapi_precision_audit import ClawRouterOpenApiPrecisionAudit
 from tools.clawrouter_payload_sdk_audit import ClawRouterPayloadSdkAudit
@@ -74,6 +75,9 @@ class SchemaQualityGate:
 
         clawrouter_gateway_openapi = ClawRouterGatewayOpenApiGenerator(root=self.root).check()
         messages.extend(clawrouter_gateway_openapi.messages)
+
+        clawrouter_openapi_contract = ClawRouterOpenApiContractAudit(root=self.root).run()
+        messages.extend(clawrouter_openapi_contract.messages)
 
         clawrouter_openapi_precision = ClawRouterOpenApiPrecisionAudit(root=self.root).run()
         messages.extend(clawrouter_openapi_precision.messages)

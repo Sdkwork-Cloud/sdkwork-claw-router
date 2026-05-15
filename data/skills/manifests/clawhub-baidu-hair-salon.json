@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71789,
+  "uuid": "skill-clawhub-baidu-hair-salon",
+  "skillKey": "clawhub-baidu-hair-salon",
+  "name": "百度理发店预约",
+  "summary": "当用户说\"预约理发\"、\"剪头发\"、\"预约发型师\"、\"查看预约记录\"时触发。用于百度理发店预约。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_hair_salon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fjjzy",
+      "features": [
+        "当用户说\"预约理发\"、\"剪头发\"、\"预约发型师\"、\"查看预约记录\"时触发。用于百度理发店预约。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-hair-salon@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169604091?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-hair-salon",
+      "url": "https://clawhub.ai/skills/baidu-hair-salon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-hair-salon",
+    "url": "https://clawhub.ai/skills/baidu-hair-salon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-hair-salon-0bc5c63d60cd97d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-hair-salon@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-hair-salon-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6db538d71e580ed226c4fc7818c35af40c7d1e56eed50b20046397cec04be363",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T07:51:05.831Z"
+}

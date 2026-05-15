@@ -5,6 +5,7 @@ mod model_ranking_refresh_worker;
 mod model_rankings_service;
 mod password_hash;
 mod pricing_resolver;
+mod provider_route_selector;
 mod usage_settlement_worker;
 
 pub use crate::ports::ModelRankingRefreshRunStatus;
@@ -24,5 +25,10 @@ pub use model_rankings_service::ModelRankingsService;
 pub use password_hash::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
 pub use pricing_resolver::{
     PricingResolver, ResolveModelPriceQuery, ResolvedModelPrice, ResolvedPriceSource,
+};
+pub use provider_route_selector::{
+    ProviderRouteSelectionError, ProviderRouteSelectionErrorKind, ProviderRouteSelector,
+    SelectProviderAccountPoolRouteQuery, SelectProviderRouteQuery,
+    SelectedProviderAccountPoolRoute, SelectedProviderRoute,
 };
 pub use usage_settlement_worker::{UsageSettlementWorker, UsageSettlementWorkerConfig};

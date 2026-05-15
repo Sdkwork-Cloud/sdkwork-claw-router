@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tunnel-proxy@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tunnel_proxy",
+  "skill": {
+    "id": 55062,
+    "skillKey": "clawhub-tunnel-proxy",
+    "name": "TunnelProxy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tunnel-proxy",
+    "url": "https://clawhub.ai/skills/tunnel-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tunnel-proxy-bf6ceccbe55ca938.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🐴 RAT (Remote Access Trojan) for AI agents. What it does: Agent sends commands → Your machine executes them. What it can do: Whatever you can do in a termin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "turinfohlen",
+      "userId": "s17fz4w553pec7mghb98bzaxsn850z9f",
+      "displayName": "TurinFohlen",
+      "image": "https://avatars.githubusercontent.com/u/208427613?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1777011936569,
+      "changelog": "- Version updated from 1.0.9 to 1.0.11.\n- No file or documentation content changes detected.\n- No new features, fixes, or modifications present in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1d56ef89eb0a1384ebd28806e3bdc1d38db575d93bb65278c6b0e75c03209f65"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23053,
+  "uuid": "skill-clawhub-waylay",
+  "skillKey": "clawhub-waylay",
+  "name": "Waylay",
+  "summary": "Waylay integration. Manage data, records, and automate workflows. Use when the user wants to interact with Waylay data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.waylay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Waylay integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Waylay data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/waylay@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "waylay",
+      "url": "https://clawhub.ai/skills/waylay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "waylay",
+    "url": "https://clawhub.ai/skills/waylay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/waylay-5844f4c2c56f12a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/waylay@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-waylay-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4d98f62c41bfee7b06445a9d31d49397a6541a9d0abd3288b8d35f7958cde5a",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:10:33.683Z"
+}

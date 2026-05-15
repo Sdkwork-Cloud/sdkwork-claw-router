@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33329,
+  "uuid": "skill-clawhub-seatable",
+  "skillKey": "clawhub-seatable",
+  "name": "Seatable",
+  "summary": "SeaTable integration. Manage data, records, and automate workflows. Use when the user wants to interact with SeaTable data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seatable",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SeaTable integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with SeaTable data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seatable@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seatable",
+      "url": "https://clawhub.ai/skills/seatable"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seatable",
+    "url": "https://clawhub.ai/skills/seatable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seatable-0ae92abfc3d0e9f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seatable@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-seatable-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:698870d32f088bc7b508a8d0a1474ebf06b25d9ee3402e8fbecb8a5b1dd60dae",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:38:42.155Z"
+}

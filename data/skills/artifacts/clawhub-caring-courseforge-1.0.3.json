@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caring-courseforge@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caring_courseforge",
+  "skill": {
+    "id": 12876,
+    "skillKey": "clawhub-caring-courseforge",
+    "name": "Caring CourseForge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caring-courseforge",
+    "url": "https://clawhub.ai/skills/caring-courseforge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caring-courseforge-d4e864f0a4c8af1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage online courses via the CourseForge API (caringcourseforge.com). Use when the user wants to create courses, modules, lessons, generate AI content, export to SCORM/xAPI, manage knowledge libraries, or interact with the Cour."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michaeljmoody",
+      "userId": "publishers:michaeljmoody",
+      "displayName": "michaeljmoody",
+      "image": "https://avatars.githubusercontent.com/u/192931359?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1431,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770916147271,
+      "changelog": "Version 1.0.3 of caring-courseforge\n\n- No file changes detected in this release.\n- No user-facing changes; documentation, features, and workflows remain the same.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8873ac6547748a214bde55afc25d4c1259d75cbd16c037b0367d644cacb838e5"
+}

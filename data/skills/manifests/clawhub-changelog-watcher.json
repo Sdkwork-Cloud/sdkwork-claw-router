@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40117,
+  "uuid": "skill-clawhub-changelog-watcher",
+  "skillKey": "clawhub-changelog-watcher",
+  "name": "Changelog Watcher",
+  "summary": "Monitor GitHub repos and npm packages for new releases and version updates. Summarizes changelogs and highlights breaking changes. Use when the user asks to...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.changelog_watcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "New Age Investments",
+      "features": [
+        "Monitor GitHub repos and npm packages for new releases and version updates",
+        "Summarizes changelogs and highlights breaking changes",
+        "Use when the user asks to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/changelog-watcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243381911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "changelog-watcher",
+      "url": "https://clawhub.ai/skills/changelog-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "changelog-watcher",
+    "url": "https://clawhub.ai/skills/changelog-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/changelog-watcher-ca6b2574d0c38471.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/changelog-watcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-changelog-watcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf4286117383a55ae5b9490d570cb37737aace0ef5775244f73b95a339469972",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T12:29:12.813Z"
+}

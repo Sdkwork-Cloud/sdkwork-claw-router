@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17507,
+  "uuid": "skill-clawhub-gettool",
+  "skillKey": "clawhub-gettool",
+  "name": "Pywayne Bin Gettool",
+  "summary": "Fetch and install C++ tools/libraries from cpp_tools repository. Use when users need to download or clone third-party C++ libraries such as eigen, opencv, pc...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gettool",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangyendt",
+      "features": [
+        "Fetch and install C++ tools/libraries from cpp_tools repository",
+        "Use when users need to download or clone third-party C++ libraries such as eigen, opencv, pc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gettool@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18455758?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gettool",
+      "url": "https://clawhub.ai/skills/gettool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gettool",
+    "url": "https://clawhub.ai/skills/gettool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gettool-4d87a2be57eceb6d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gettool@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gettool-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43eeedcab90da2fd4d14577ff016549024143796e81a78d4d6d427d7f6e0cd2c",
+      "artifactSizeBytes": 2309
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T13:24:50.478Z"
+}

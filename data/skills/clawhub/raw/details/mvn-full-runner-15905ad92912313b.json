@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "mvn-full-runner",
+    "displayName": "Maven Full Runner",
+    "summary": "Run Maven commands with full argument passthrough, optionally specifying the working directory, using a Node.js wrapper for safer execution.",
+    "tags": {
+      "latest": "1.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 457,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1772163753548,
+    "updatedAt": 1778388570173
+  },
+  "latestVersion": {
+    "version": "1.1.0",
+    "createdAt": 1772163753548,
+    "changelog": "## v1.1.0\n\n- Upgrade to full Maven passthrough mode\n- Wrapper now only parses `--dir`; all other args are forwarded to `mvn`\n- Supports all Maven goals/plugins/flags (e.g. `clean test`, `help:effective-pom`, `-P`, `-T`, `-D`)\n- Add wrapper help command: `--help-skill`",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "yuanyongm",
+    "userId": "s17f66q107t0hbqzmgfkw1vz6s83hwz0",
+    "displayName": "yuanyongm",
+    "image": "https://avatars.githubusercontent.com/u/132041450?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778388570173
+  }
+}

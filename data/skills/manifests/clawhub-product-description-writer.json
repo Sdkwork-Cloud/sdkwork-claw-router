@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18928,
+  "uuid": "skill-clawhub-product-description-writer",
+  "skillKey": "clawhub-product-description-writer",
+  "name": "Product Description Writer",
+  "summary": "Generate high-converting, SEO-optimized product descriptions for e-commerce stores. Use this skill whenever the user mentions product description, PDP copy,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_description_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RIJOY-AI",
+      "features": [
+        "Generate high-converting, SEO-optimized product descriptions for e-commerce stores",
+        "Use this skill whenever the user mentions product description, PDP copy,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-description-writer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219251023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-description-writer",
+      "url": "https://clawhub.ai/skills/product-description-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-description-writer",
+    "url": "https://clawhub.ai/skills/product-description-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-description-writer-8cdb6cd1b8d7e4cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-description-writer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-description-writer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24d6acffc6ce15fa2ccebeef72c64dc6e7009aa52fcc4838e52b403cc88bf9dc",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T08:06:10.221Z"
+}

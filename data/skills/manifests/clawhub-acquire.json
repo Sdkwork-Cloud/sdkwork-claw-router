@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29786,
+  "uuid": "skill-clawhub-acquire",
+  "skillKey": "clawhub-acquire",
+  "name": "Acquire",
+  "summary": "Acquire integration. Manage data, records, and automate workflows. Use when the user wants to interact with Acquire data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acquire",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Acquire integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Acquire data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acquire@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acquire",
+      "url": "https://clawhub.ai/skills/acquire"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acquire",
+    "url": "https://clawhub.ai/skills/acquire",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acquire-d5df61d74243bc94.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acquire@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-acquire-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f08ab94d8c7bbe96ace7edcb77b3a74dcaad640b595495db02f159478e72f4fa",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:07:52.692Z"
+}

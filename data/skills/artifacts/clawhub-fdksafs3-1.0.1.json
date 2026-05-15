@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fdksafs3@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fdksafs3",
+  "skill": {
+    "id": 58036,
+    "skillKey": "clawhub-fdksafs3",
+    "name": "这是我的test3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fdksafs3",
+    "url": "https://clawhub.ai/skills/fdksafs3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fdksafs3-710136a5d5c766c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yequanzheng",
+      "userId": "s177918deqfx02m7rdwh338scx83hcvp",
+      "displayName": "yequanzheng",
+      "image": "https://avatars.githubusercontent.com/u/107382370?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 341,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773910358163,
+      "changelog": "- Updated SKILL.md with a minor change to the \"githubdescription\" field.\n- Removed unnecessary files: _meta.json and skill.md.\n- Added SKILL.md as the documentation file for the skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1411e43114fbfee24b64072ebcd324d0b72341881644180ba7d958995354f6c6"
+}

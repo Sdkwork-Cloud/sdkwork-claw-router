@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42674,
+  "uuid": "skill-clawhub-free-ki-video-generation",
+  "skillKey": "clawhub-free-ki-video-generation",
+  "name": "Free Ki Video Generation",
+  "summary": "Get AI generated videos ready to post, without touching a single slider. Upload your text prompts or images (MP4, MOV, JPG, PNG, up to 200MB), say something...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_ki_video_generation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "Get AI generated videos ready to post, without touching a single slider",
+        "Upload your text prompts or images (MP4, MOV, JPG, PNG, up to 200MB), say something..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-ki-video-generation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-ki-video-generation",
+      "url": "https://clawhub.ai/skills/free-ki-video-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-ki-video-generation",
+    "url": "https://clawhub.ai/skills/free-ki-video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-ki-video-generation-68067deda9896de0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-ki-video-generation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-ki-video-generation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1d62bf49fb34eea1c77ba3dc3ded0c3a5070eef20b60b748d518b9eb2fcdcc8",
+      "artifactSizeBytes": 2449
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T13:58:42.608Z"
+}

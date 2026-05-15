@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20597,
+  "uuid": "skill-clawhub-coaching",
+  "skillKey": "clawhub-coaching",
+  "name": "Coaching",
+  "summary": "Coaching practice support with session preparation, question generation, client progress tracking, and goal setting. Use when user mentions coaching sessions...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coaching",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AGIstack",
+      "features": [
+        "Coaching practice support with session preparation, question generation, client progress tracki.",
+        "Use when user mentions coaching sessions..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coaching@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258523997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coaching",
+      "url": "https://clawhub.ai/skills/coaching"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coaching",
+    "url": "https://clawhub.ai/skills/coaching",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coaching-3e0f9f03a736ef32.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coaching@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coaching-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bcc233035cc87eb23556156b7f7a6cb22c03956c6eda89ada58be997563bc091",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T06:09:52.786Z"
+}

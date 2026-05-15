@@ -1,4 +1,4 @@
-import json
+﻿import json
 import unittest
 from pathlib import Path
 
@@ -57,22 +57,20 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
             / "src"
             / "modelService.ts"
         ).read_text(encoding="utf-8")
-        router_api = (ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "api" / "router.ts").read_text(
-            encoding="utf-8"
-        )
-        model_api = (ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "api" / "model.ts").read_text(
+        ai_api = (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "ai.ts").read_text(
             encoding="utf-8"
         )
         sync_request_type = (
             ROOT
             / "sdks"
             / "clawrouter-backend-sdk"
+            / "clawrouter-backend-sdk-typescript"
             / "src"
             / "types"
             / "admin-model-catalog-sync-request.ts"
         ).read_text(encoding="utf-8")
         type_exports = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "index.ts"
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "index.ts"
         ).read_text(encoding="utf-8")
         backend_openapi = json.loads((ROOT / "generated" / "openapi" / "clawrouter-backend-openapi.json").read_text(encoding="utf-8"))
         openapi_sync_request = backend_openapi["components"]["schemas"]["AdminModelCatalogSyncRequest"]
@@ -85,9 +83,9 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
             "toSyncCatalogRequest",
             "toCreateVendorRequest",
             "toCreateModelRequest",
-            "requestToken('admin-model-catalog-sync')",
-            "requestToken('admin-model-vendor-create')",
-            "requestToken('admin-ai-model-create')",
+            "createRequestParams('admin-model-catalog-sync')",
+            "createRequestParams('admin-model-vendor-create')",
+            "createRequestParams('admin-ai-model-create')",
         ]:
             self.assertIn(token, service)
 
@@ -113,13 +111,11 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("router.syncVendorsAndModels({})", service)
         self.assertNotIn("router.addVendor(vendor)", service)
         self.assertNotIn("model.add(model)", service)
-        self.assertNotIn("modelVendors", service)
-        self.assertNotIn(".models.", service)
         self.assertNotIn("as unknown as Record<string, unknown>", service)
-        self.assertIn("getClawRouterBackendSdkClient().router.fetchVendors()", service)
-        self.assertIn("getClawRouterBackendSdkClient().router.syncVendorsAndModels(", service)
-        self.assertIn("getClawRouterBackendSdkClient().router.addVendor(", service)
-        self.assertIn("getClawRouterBackendSdkClient().router.fetchModelRankings(", service)
+        self.assertIn("getClawRouterBackendSdkClient().ai.modelVendors.list()", service)
+        self.assertIn("getClawRouterBackendSdkClient().ai.models.refresh(", service)
+        self.assertIn("getClawRouterBackendSdkClient().ai.modelVendors.create(", service)
+        self.assertIn("getClawRouterBackendSdkClient().ai.modelRankings.list(", service)
         for count_field in [
             "meterCount",
             "vendorCount",
@@ -150,8 +146,8 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
         self.assertIn("Model catalog sync response meter count must be a non-negative integer", (ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-model-runtime.test.ts").read_text(encoding="utf-8"))
 
         self.assertIn(
-            "async syncVendorsAndModels(body: AdminModelCatalogSyncRequest, xRequestId?: string): Promise<SyncVendorsAndModelsResult>",
-            router_api,
+            "async refresh(body: AdminModelCatalogSyncRequest, params?: AiModelsRefreshParams): Promise<ModelsRefreshResult>",
+            ai_api,
         )
         for token in [
             "source?: string;",
@@ -169,17 +165,17 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
         )
         self.assertIn("sdkwork_models", openapi_sync_request["properties"]["source"]["description"])
         self.assertIn(
-            "async addVendor(body: AdminModelVendorCreateRequest, xRequestId?: string): Promise<AddVendorResult>",
-            router_api,
+            "async create(body: AdminModelVendorCreateRequest, params?: AiModelVendorsCreateParams): Promise<ModelVendorsCreateResult>",
+            ai_api,
         )
-        self.assertNotIn("async syncVendorsAndModels(body?: OperationRequest): Promise<PlusApiResult>", router_api)
-        self.assertNotIn("async addVendor(body?: OperationRequest): Promise<PlusApiResult>", router_api)
+        self.assertNotIn("async syncVendorsAndModels(body?: OperationRequest): Promise<PlusApiResult>", ai_api)
+        self.assertNotIn("async addVendor(body?: OperationRequest): Promise<PlusApiResult>", ai_api)
 
         self.assertIn(
-            "async add(body: AdminAiModelCreateRequest, xRequestId?: string): Promise<AddModelResult>",
-            model_api,
+            "async create(body: AdminAiModelCreateRequest, params?: AiModelsCreateParams): Promise<ModelsCreateResult>",
+            ai_api,
         )
-        self.assertNotIn("async add(body?: OperationRequest): Promise<PlusApiResult>", model_api)
+        self.assertNotIn("async add(body?: OperationRequest): Promise<PlusApiResult>", ai_api)
 
         for token in [
             "AdminModelCatalogSyncRequest",
@@ -188,9 +184,9 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
             "AdminModelVendorMutationResponse",
             "AdminAiModelCreateRequest",
             "AdminAiModelMutationResponse",
-            "SyncVendorsAndModelsResult",
-            "AddVendorResult",
-            "AddModelResult",
+            "ModelsRefreshResult",
+            "ModelVendorsCreateResult",
+            "ModelsCreateResult",
         ]:
             self.assertIn(f"export type {{ {token} }}", type_exports)
 
@@ -209,7 +205,7 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
         verifier = (ROOT / "scripts" / "verify-claw-router-product.mjs").read_text(encoding="utf-8")
 
         self.assertEqual(package["type"], "module")
-        self.assertEqual(package["scripts"]["typecheck"], "node ../../node_modules/typescript/bin/tsc -p tsconfig.json --noEmit")
+        self.assertEqual(package["scripts"]["typecheck"], "tsc --noEmit")
         self.assertIn("export type VendorCreateInput", service)
         self.assertIn("export type ModelCreateInput", service)
         self.assertIn("static async addVendor(vendor: VendorCreateInput): Promise<Vendor>", service)

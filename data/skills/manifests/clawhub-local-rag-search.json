@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9252,
+  "uuid": "skill-clawhub-local-rag-search",
+  "skillKey": "clawhub-local-rag-search",
+  "name": "Local Rag Search",
+  "summary": "Efficiently perform web searches using the mcp-local-rag server with semantic similarity ranking. Use this skill when you need to search the web for current information, research topics across multiple sources, or gather context from the i.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_rag_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nkapila6",
+      "features": [
+        "Efficiently perform web searches using the mcp-local-rag server with semantic similarity ranking",
+        "Use this skill when you need to search the web for current information, research topics across.",
+        "This skill teaches effective use of RAG-based web search with DuckDuckGo, Google, and multi-eng."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-rag-search@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12816113?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-rag-search",
+      "url": "https://clawhub.ai/skills/local-rag-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-rag-search",
+    "url": "https://clawhub.ai/skills/local-rag-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-rag-search-b28b1f67a85c1dda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-rag-search@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-rag-search-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb0b0d09b8cc3355fe9352ec7b1e1f7ef86dab3da450c4ba5a8a6ccb3025d550",
+      "artifactSizeBytes": 2515
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T11:42:50.944Z"
+}

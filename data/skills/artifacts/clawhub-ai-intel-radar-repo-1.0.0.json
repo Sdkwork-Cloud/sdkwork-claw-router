@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-intel-radar-repo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_intel_radar_repo",
+  "skill": {
+    "id": 32088,
+    "skillKey": "clawhub-ai-intel-radar-repo",
+    "name": "Ai Intel Radar Repo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-intel-radar-repo",
+    "url": "https://clawhub.ai/skills/ai-intel-radar-repo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-intel-radar-repo-bf6a50efd82d94e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build a high-signal AI intelligence brief from fresh web sources, with separate daily and weekly formats. Use when the user asks for latest AI news, trend mo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yikailucas",
+      "userId": "s172e5yn44ye22ycc4mcyn76k583hwa8",
+      "displayName": "Lucas",
+      "image": "https://avatars.githubusercontent.com/u/32409911?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773741714934,
+      "changelog": "ai-intel-radar-repo 1.0.0\n\n- Initial release of ai-intel-radar, providing concise, signal-rich AI intelligence briefs in Chinese.\n- Supports strict daily and weekly output formats for news, trends, technical insights, business impact, and actionable suggestions.\n- Prioritizes primary sources, avoids rumors, and flags uncertain claims for validation.\n- Includes safeguards for data integrity and reliability, including a \"low change day\" fallback if updates are limited.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f01e4a58416c8ba7fffbe68d82f35a829264c610caab3a102f68e03133d3e5f"
+}

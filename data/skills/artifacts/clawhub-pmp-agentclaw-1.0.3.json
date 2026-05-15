@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pmp-agentclaw@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pmp_agentclaw",
+  "skill": {
+    "id": 16935,
+    "skillKey": "clawhub-pmp-agentclaw",
+    "name": "PMP-Agentclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pmp-agentclaw",
+    "url": "https://clawhub.ai/skills/pmp-agentclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pmp-agentclaw-9f22cf64fc22a04f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI project management assistant for planning, tracking, and managing projects using industry-standard methodologies. Use when asked to plan projects, track s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyberneticsplus",
+      "userId": "publishers:cyberneticsplus",
+      "displayName": "CyberneticsPlus",
+      "image": "https://avatars.githubusercontent.com/u/126213735?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 835,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771520694916,
+      "changelog": "- Added package-lock.json for dependency tracking.\n- Updated rule instructions: WBS and Gantt chart generation now reference only templates, not CLI commands.\n- Rule 14: Health check command updated from `npx pmp-agent health-check` to `npx pmp-agentclaw health-check`.\n- No functional code or behavioral changes; documentation and config improvements only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1465d93aedfe5bccc47e9da5c22a46e73c689b2315ae21c5136472e7e2dd7d6b"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51268,
+  "uuid": "skill-clawhub-nansen-smart-money-tracker",
+  "skillKey": "clawhub-nansen-smart-money-tracker",
+  "name": "Nansen Smart Money Tracker",
+  "summary": "Smart money tracking — netflow, trades, holdings, perp trades. Use when finding what smart money wallets are buying/selling or tracking whale activity.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_smart_money_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nansen AI",
+      "features": [
+        "Smart money tracking — netflow, trades, holdings, perp trades",
+        "Use when finding what smart money wallets are buying/selling or tracking whale activity."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nansen-smart-money-tracker@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93130718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nansen-smart-money-tracker",
+      "url": "https://clawhub.ai/skills/nansen-smart-money-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-smart-money-tracker",
+    "url": "https://clawhub.ai/skills/nansen-smart-money-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-smart-money-tracker-99f37a652ddf6a93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nansen-smart-money-tracker@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nansen-smart-money-tracker-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02d60d244d8052ba16cecf21c8742942096d94e3f9251ebfc99729eaaf78a3b1",
+      "artifactSizeBytes": 2317
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:27:31.009Z"
+}

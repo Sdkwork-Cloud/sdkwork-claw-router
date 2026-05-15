@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60688,
+  "uuid": "skill-clawhub-feishucard-sender",
+  "skillKey": "clawhub-feishucard-sender",
+  "name": "feishu-card-sender",
+  "summary": "发送飞书卡片消息（支持纯文本和图片）。使用 message 工具的 card 参数，需要配置飞书应用凭证（App ID + App Secret）。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishucard_sender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "blackswan-mohu",
+      "features": [
+        "发送飞书卡片消息（支持纯文本和图片）。使用 message 工具的 card 参数，需要配置飞书应用凭证（App ID + App Secret）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishucard-sender@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73108372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishucard-sender",
+      "url": "https://clawhub.ai/skills/feishucard-sender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishucard-sender",
+    "url": "https://clawhub.ai/skills/feishucard-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishucard-sender-06fa29d7179a28b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishucard-sender@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishucard-sender-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5766b07cc8fae8efc8f26c48948937f0273cce77aac810b34e93291c21d60079",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T15:19:47.007Z"
+}

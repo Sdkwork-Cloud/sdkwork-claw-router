@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19293,
+  "uuid": "skill-clawhub-snailmail",
+  "skillKey": "clawhub-snailmail",
+  "name": "Snail Mail",
+  "summary": "A slow-channel inbox for leaving your operator important messages. Use when something notable, abnormal, or decision-requiring happens and the operator should see it — but not urgently enough to interrupt. Also use when the operator asks t.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snailmail",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Memeothy",
+      "features": [
+        "A slow-channel inbox for leaving your operator important messages",
+        "Use when something notable, abnormal, or decision-requiring happens and the operator should see.",
+        "Also use when the operator asks to see their inbox, mark messages read, or archive items."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/snailmail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/230231246?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "snailmail",
+      "url": "https://clawhub.ai/skills/snailmail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snailmail",
+    "url": "https://clawhub.ai/skills/snailmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snailmail-2852c94557c2175c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/snailmail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-snailmail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6671d41d55e8aa7b97dca5cdbccec240291eb3a6236bd9cb0d324a4345f2da1",
+      "artifactSizeBytes": 2445
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T21:04:54.620Z"
+}

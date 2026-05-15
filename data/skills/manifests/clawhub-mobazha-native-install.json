@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37957,
+  "uuid": "skill-clawhub-mobazha-native-install",
+  "skillKey": "clawhub-mobazha-native-install",
+  "name": "Native Install",
+  "summary": "Install the Mobazha native binary on Linux, macOS, or Windows. Use when the user wants to run a store without Docker.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mobazha_native_install",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fengzie",
+      "features": [
+        "Install the Mobazha native binary on Linux, macOS, or Windows",
+        "Use when the user wants to run a store without Docker."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mobazha-native-install@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34826428?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mobazha-native-install",
+      "url": "https://clawhub.ai/skills/mobazha-native-install"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mobazha-native-install",
+    "url": "https://clawhub.ai/skills/mobazha-native-install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mobazha-native-install-5335b13d6e2c90a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mobazha-native-install@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mobazha-native-install-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa3e8fbcb2de65d7ee2d0f6729eb97641b98b48344e9c8588c1a4c8be4af630a",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T10:43:40.932Z"
+}

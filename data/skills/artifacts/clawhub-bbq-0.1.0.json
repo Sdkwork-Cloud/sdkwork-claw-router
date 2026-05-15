@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bbq@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bbq",
+  "skill": {
+    "id": 72831,
+    "skillKey": "clawhub-bbq",
+    "name": "BBQ"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bbq",
+    "url": "https://clawhub.ai/skills/bbq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bbq-de433ed550a1624a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供关于网红烧烤的推荐清单、打卡路线与指南。用户搜索网红烧烤或规划相关出行时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774157037293,
+      "changelog": "网红烧烤技能首次发布，覆盖烧烤店筛选与路线规划：\n\n- 提供网红烧烤店清单、路线和指南，支持多维筛选（城市、预算、预约等）\n- 返回信息包括店名、亮点、预算、评分、排队情况、地址等实用字段\n- 给出步行/地铁串联路线及高峰期、雨天、亲子与情侣偏好建议\n- 每周数据迭代，结合实时人气和用户反馈优化推荐\n- 附加避坑提示及到店注意事项",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:334c3a96ce4727b387111587b61ca266985890a05aba0bd5dd395786daa80d63"
+}

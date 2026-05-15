@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/02-risk-scoring@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.02_risk_scoring",
+  "skill": {
+    "id": 65113,
+    "skillKey": "clawhub-02-risk-scoring",
+    "name": "02 Risk Scoring"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "02-risk-scoring",
+    "url": "https://clawhub.ai/skills/02-risk-scoring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/02-risk-scoring-35cecf8e329a1e4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对菜鸟物流供应商（承运商）和菜鸟驿站加盟商进行风险评分， 给出风险等级、核心问题诊断和建议措施。 基于行业标准KPI体系 + 菜鸟官方运营规则 + 供应商四维评估模型。 v1.7 新增：KPI量化计算公式详细版、行业基准对比表、权重调整权限边界、统一引用 GLOSSARY.md+INSUFFICIENCY-HAN..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777646514626,
+      "changelog": "Version 1.7.0 is a major update that enhances the risk scoring model and standardizes outputs.\n\n- Added detailed quantitative formulas for KPI calculation.\n- Provided industry benchmark comparison tables for clearer scoring references.\n- Introduced adjustable weight boundaries with specified permission scope.\n- Standardized terminology and process documentation by linking to GLOSSARY.md, INSUFFICIENCY-HANDLING.md, and RULE-UPDATE-SOP.md.\n- Improved clarity in mandatory data collection and reporting templates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c9aac9d29763f060ad92b20779b30c2fe47652fd244ebcc9c87f5a0e60c220f"
+}

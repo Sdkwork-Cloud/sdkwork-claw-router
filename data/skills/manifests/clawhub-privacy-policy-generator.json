@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43879,
+  "uuid": "skill-clawhub-privacy-policy-generator",
+  "skillKey": "clawhub-privacy-policy-generator",
+  "name": "Privacy Policy Generator",
+  "summary": "Generate and check privacy policy documents. Use when creating a privacy policy from scratch, checking existing policy completeness, or adding GDPR and CCPA...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.privacy_policy_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "loutai0307-prog",
+      "features": [
+        "Generate and check privacy policy documents",
+        "Use when creating a privacy policy from scratch, checking existing policy completeness, or addi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/privacy-policy-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266760463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "privacy-policy-generator",
+      "url": "https://clawhub.ai/skills/privacy-policy-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "privacy-policy-generator",
+    "url": "https://clawhub.ai/skills/privacy-policy-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/privacy-policy-generator-2178d1c219954317.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/privacy-policy-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-privacy-policy-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3de9579bf0a0b9fea0b92579821cb0054c1035df6685d44590da8244c2e7533b",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T08:41:24.336Z"
+}

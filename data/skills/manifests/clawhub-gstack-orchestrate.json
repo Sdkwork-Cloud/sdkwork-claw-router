@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38560,
+  "uuid": "skill-clawhub-gstack-orchestrate",
+  "skillKey": "clawhub-gstack-orchestrate",
+  "name": "Gstack Orchestrate",
+  "summary": "Master orchestration skill that takes a gstack implementation plan and ships it via parallel Claude Code subagents in isolated git worktrees. Sits between /a...",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gstack_orchestrate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kai Cianflone",
+      "features": [
+        "Master orchestration skill that takes a gstack implementation plan and ships it via parallel Cl.",
+        "Sits between /a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gstack-orchestrate@1.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30943151?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gstack-orchestrate",
+      "url": "https://clawhub.ai/skills/gstack-orchestrate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gstack-orchestrate",
+    "url": "https://clawhub.ai/skills/gstack-orchestrate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gstack-orchestrate-88519495119159de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gstack-orchestrate@1.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gstack-orchestrate-1.6.0.json",
+      "version": "1.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e39b5585ce8dc173c1b0071ff7bd6b0fa4742532317ee4aca5d08146c6d0782e",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T17:48:04.290Z"
+}

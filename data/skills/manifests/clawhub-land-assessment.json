@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37071,
+  "uuid": "skill-clawhub-land-assessment",
+  "skillKey": "clawhub-land-assessment",
+  "name": "Land Assessment",
+  "summary": "Evaluating and purchasing rural or semi-rural property. Use when someone is considering buying land, wants to homestead, is evaluating a property for food pr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.land_assessment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HowToUseHumans",
+      "features": [
+        "Evaluating and purchasing rural or semi-rural property",
+        "Use when someone is considering buying land, wants to homestead, is evaluating a property for f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/land-assessment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151727669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "land-assessment",
+      "url": "https://clawhub.ai/skills/land-assessment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "land-assessment",
+    "url": "https://clawhub.ai/skills/land-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/land-assessment-e04e61ecb7f5143e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/land-assessment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-land-assessment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3568a774af846c7e0c472bdd7268e5b4147b70f74a77bfa4b339ced97a3b57cf",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:23:43.395Z"
+}

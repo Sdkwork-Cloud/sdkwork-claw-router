@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yihui-agent-swarm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yihui_agent_swarm",
+  "skill": {
+    "id": 47157,
+    "skillKey": "clawhub-yihui-agent-swarm",
+    "name": "YiHui Agent Swarm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yihui-agent-swarm",
+    "url": "https://clawhub.ai/skills/yihui-agent-swarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yihui-agent-swarm-b6400957978f5884.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent orchestration framework for OpenClaw. Define roles, route tasks, manage state, and coordinate agent teams using structured YAML configs and a pro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1yihui",
+      "userId": "s17dkj69epg7yy8vn06c46hemn85dcap",
+      "displayName": "辉哥",
+      "image": "https://avatars.githubusercontent.com/u/197358991?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777366203973,
+      "changelog": "Initial release: multi-agent orchestration based on real YiHui team setup",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9ffb724496a1fd8379bb46c6b46c0725f75fdb36c0ba3b48836c49adc798b3c"
+}

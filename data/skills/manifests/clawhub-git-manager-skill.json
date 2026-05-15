@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45491,
+  "uuid": "skill-clawhub-git-manager-skill",
+  "skillKey": "clawhub-git-manager-skill",
+  "name": "Git Manager",
+  "summary": "This skill should be used when the user needs to perform Git repository operations, including cloning, pulling, merging, rebasing, committing, staging, Git L...",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_manager_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhuyijun",
+      "features": [
+        "This skill should be used when the user needs to perform Git repository operations, including c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-manager-skill@2.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60834716?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-manager-skill",
+      "url": "https://clawhub.ai/skills/git-manager-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-manager-skill",
+    "url": "https://clawhub.ai/skills/git-manager-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-manager-skill-ec1bb1fc50ebcbe7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-manager-skill@2.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-manager-skill-2.4.0.json",
+      "version": "2.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f3727af63a4dcc2397f3fad44be96aa9b0a0eb0ab077792540813162b3d9e2a",
+      "artifactSizeBytes": 2747
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T11:11:37.497Z"
+}

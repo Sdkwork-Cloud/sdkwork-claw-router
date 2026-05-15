@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uupt-delivery@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uupt_delivery",
+  "skill": {
+    "id": 67544,
+    "skillKey": "clawhub-uupt-delivery",
+    "name": "uupt-delivery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uupt-delivery",
+    "url": "https://clawhub.ai/skills/uupt-delivery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uupt-delivery-5a2729b4552375fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "UU跑腿同城配送服务。支持订单询价、发单下单、查询订单、取消订单、骑手实时追踪。当用户表达任何与\"送\"、\"取\"、\"寄\"、\"跑腿\"、\"发单\"、\"配送\"相关的配送需求时使用此skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "uupt-mcp",
+      "userId": "s178cybzbfaepvy5nb66hhgrwx83p45m",
+      "displayName": "uupt-mcp",
+      "image": "https://avatars.githubusercontent.com/u/207802739?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1775730305331,
+      "changelog": "- Added _meta.json metadata file for the skill.\n- No changes to core functionality or user-facing features.\n- Internal metadata additions only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f276bea030d67cceaf0752dab051c90c7a7dcefbf6ba15b31092e7d76fb17be"
+}

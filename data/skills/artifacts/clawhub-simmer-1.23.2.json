@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/simmer@1.23.2",
+  "version": "1.23.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simmer",
+  "skill": {
+    "id": 8563,
+    "skillKey": "clawhub-simmer",
+    "name": "Simmer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simmer",
+    "url": "https://clawhub.ai/skills/simmer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simmer-365fcc9a87e97904.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The prediction market interface for AI agents. Trade Polymarket and Kalshi through one API with self-custody wallets, safety rails, and smart context. Start..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adlai88",
+      "userId": "s172hbaws6qnfk9a4zffkzfags83j0df",
+      "displayName": "AD88",
+      "image": "https://avatars.githubusercontent.com/u/6263940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 8711,
+      "installsAllTime": 36,
+      "installsCurrent": 34,
+      "stars": 22,
+      "versions": 55
+    },
+    "latestVersion": {
+      "version": "1.23.2",
+      "createdAt": 1777870292064,
+      "changelog": "- Adds explicit guidance to always check result.success after client.trade(), clarifying that trade failures return a TradeResult object and do not raise exceptions.\n- Updates the quick start example to include trade failure handling and a code snippet to check result.error.\n- Bumps version to 1.23.2 in the metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cfa5841a37a7d49e21776dd329ffe1b31a244557b55e1836f16b7a837c8b34b0"
+}

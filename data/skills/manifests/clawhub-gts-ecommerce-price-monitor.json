@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48351,
+  "uuid": "skill-clawhub-gts-ecommerce-price-monitor",
+  "skillKey": "clawhub-gts-ecommerce-price-monitor",
+  "name": "GTS Ecommerce Price Monitor",
+  "summary": "Monitor competitor product prices on Shopee, Lazada, Amazon, and others with automated tracking, alerts, reports, and trend analysis for smarter pricing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gts_ecommerce_price_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ericlooi504",
+      "features": [
+        "Monitor competitor product prices on Shopee, Lazada, Amazon, and others with automated tracking."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gts-ecommerce-price-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/275256771?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gts-ecommerce-price-monitor",
+      "url": "https://clawhub.ai/skills/gts-ecommerce-price-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gts-ecommerce-price-monitor",
+    "url": "https://clawhub.ai/skills/gts-ecommerce-price-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gts-ecommerce-price-monitor-7b3ca6cd2db9696a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gts-ecommerce-price-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gts-ecommerce-price-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33970763fd8503ce7004fc7a4e23b05c9087039cddeae28ddfeb4eb20795d9e7",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T04:26:51.837Z"
+}

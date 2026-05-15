@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-seam-type-selector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_seam_type_selector",
+  "skill": {
+    "id": 48242,
+    "skillKey": "clawhub-bookforge-seam-type-selector",
+    "name": "Seam Type Selector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-seam-type-selector",
+    "url": "https://clawhub.ai/skills/bookforge-seam-type-selector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-seam-type-selector-d3d4309aa9154024.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Select the right seam type (Preprocessor / Link / Object) for breaking a dependency in legacy code. Use whenever a developer needs to substitute behavior for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777474228209,
+      "changelog": "Initial release – recommend the right seam type (Preprocessor / Link / Object) to break dependencies in legacy code for testing purposes.\n\n- Guides developers in choosing the appropriate seam type based on language, dependency pervasiveness, and codebase constraints.\n- Provides a detailed selection process following \"Working Effectively with Legacy Code\" principles.\n- Identifies enabling points and offers rationale for seam recommendations.\n- Targets situations where dependency substitution is needed but direct editing or DI frameworks are not feasible.\n- Output includes recommended seam type, rationale, enabling point location, and next steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea1375c810d1ef2bad9cd63e96e0df2ba102a0826bdb776eb33d593df7c97fb0"
+}

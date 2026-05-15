@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shucheng-summary-budget-model-and-new-script@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shucheng_summary_budget_model_and_new_script",
+  "skill": {
+    "id": 61916,
+    "skillKey": "clawhub-shucheng-summary-budget-model-and-new-script",
+    "name": "Summary Budget Model And New Script"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shucheng-summary-budget-model-and-new-script",
+    "url": "https://clawhub.ai/skills/shucheng-summary-budget-model-and-new-script",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shucheng-summary-budget-model-and-new-script-0d027d58ce067334.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用于总结和更新预算数据模型及脚本技能。当用户发出【总结对话内容】指令时，从对话历史中提取新的脚本写法、数据模型和字段信息，更新到 platform-script 和 budget-data-model 技能中。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lan2898408767",
+      "userId": "s171zfb64w6rnnwcbc72p7ecxx83pw2h",
+      "displayName": "Lan2898408767",
+      "image": "https://avatars.githubusercontent.com/u/134391587?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774666277218,
+      "changelog": "初始版本 - 用于持续更新和迭代预算数据模型及脚本技能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69e883415d766fdf7779121d74b441d3fd8ba53b30c88b1bed3621976f7baaed"
+}

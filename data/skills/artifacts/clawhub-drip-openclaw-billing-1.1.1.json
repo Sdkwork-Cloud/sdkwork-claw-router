@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/drip-openclaw-billing@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drip_openclaw_billing",
+  "skill": {
+    "id": 16644,
+    "skillKey": "clawhub-drip-openclaw-billing",
+    "name": "Drip OpenClaw Billing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drip-openclaw-billing",
+    "url": "https://clawhub.ai/skills/drip-openclaw-billing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drip-openclaw-billing-ccd0f61a0d10d62c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add usage metering and billing telemetry to OpenClaw agents using Drip. Use when you need per-run cost attribution, tool-call usage tracking, and customer-le..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lucas-309",
+      "userId": "s175vw40fhkr3bm546tvt7skw583zkwm",
+      "displayName": "lucas-309",
+      "image": "https://avatars.githubusercontent.com/u/73149140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 654,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1774951223428,
+      "changelog": "Security alignment update: metadata consistency fixes (owner + credential/env declarations), explicit OPENCLAW_IDENTITY_TOKEN naming, tightened privacy contract, and scanner-friendly _meta schema.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b722de458f3d402544558cbcaf80078ed51cee2e65d1d69ca6295ce7204c86f"
+}

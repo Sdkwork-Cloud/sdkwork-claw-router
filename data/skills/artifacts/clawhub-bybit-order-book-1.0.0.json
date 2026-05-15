@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bybit-order-book@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bybit_order_book",
+  "skill": {
+    "id": 12773,
+    "skillKey": "clawhub-bybit-order-book",
+    "name": "bybit-order-book"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bybit-order-book",
+    "url": "https://clawhub.ai/skills/bybit-order-book",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bybit-order-book-4c68b3c3bdbe75d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download, process, and backtest ByBit derivatives historical order book data. Use this skill when the user wants to: (1) download historical order book snapshots from ByBit's derivatives history-data page using Selenium automation, (2) pro."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidm413",
+      "userId": "s172sv4sjxc4b7c8sxmbb3zans83sfy3",
+      "displayName": "davidm413",
+      "image": "https://avatars.githubusercontent.com/u/86382522?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1456,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770481881141,
+      "changelog": "bybit-orderbook-backtester v1.0.0\n\n- Initial release with end-to-end pipeline: download ByBit derivatives order book data, process & filter order book snapshots, backtest 10 built-in trading strategies, and generate full performance reports.\n- Supports automated & manual data download, top-50 depth filtering, and optional downsampling for efficient processing.\n- Includes 10 strategies: Order Book Imbalance, Breakout, False Breakout, Scalping, Momentum, Reversal, Spoofing Detection, Optimal Execution, Market Making, Latency Arbitrage.\n- Generates detailed backtest reports: PnL, Sharpe ratio, win rate, drawdowns, equity curves, and strategy comparisons.\n- Extensible by editing strategy parameters or adding new strategies in `scripts/backtest.py`.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:93c84176cc63de519b630019f4eb2a1795e8bf94e6bd7497c821a492ab325dd5"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39180,
+  "uuid": "skill-clawhub-acedatacloud-producer-music",
+  "skillKey": "clawhub-acedatacloud-producer-music",
+  "name": "Producer Music",
+  "summary": "Generate AI music with Producer via AceDataCloud API. Use when creating songs, generating lyrics, extending tracks, creating covers, swapping vocals/instrume...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acedatacloud_producer_music",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Germey",
+      "features": [
+        "Generate AI music with Producer via AceDataCloud API",
+        "Use when creating songs, generating lyrics, extending tracks, creating covers, swapping vocals/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acedatacloud-producer-music@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8678661?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acedatacloud-producer-music",
+      "url": "https://clawhub.ai/skills/acedatacloud-producer-music"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acedatacloud-producer-music",
+    "url": "https://clawhub.ai/skills/acedatacloud-producer-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acedatacloud-producer-music-43b522990ac9d7a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acedatacloud-producer-music@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-acedatacloud-producer-music-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d06e43aa43f65e30dfff80598916e544203226761468ec2d08e8f458bcd3a66a",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T05:39:23.166Z"
+}

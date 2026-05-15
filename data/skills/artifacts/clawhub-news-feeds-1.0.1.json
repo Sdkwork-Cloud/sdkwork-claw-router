@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-feeds@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_feeds",
+  "skill": {
+    "id": 10809,
+    "skillKey": "clawhub-news-feeds",
+    "name": "Simple RSS news feed"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-feeds",
+    "url": "https://clawhub.ai/skills/news-feeds",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-feeds-3b180f70b240b6ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch latest news headlines from major RSS feeds (BBC, Reuters, AP, Al Jazeera, NPR, The Guardian, DW)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lknik",
+      "userId": "publishers:lknik",
+      "displayName": "lknik",
+      "image": "https://avatars.githubusercontent.com/u/13951853?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2229,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770380724773,
+      "changelog": "- Removed the requirement to specify {baseDir} in example command lines; commands now use direct paths (e.g., python3 scripts/news.py).\n- No longer mention that API keys are not required in the description.\n- No other changes to functionality or command options.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4a9b64c6b48d8413fba8d254c86a45655dbbdfb20dbe7d133ae397dae4f91ec9"
+}

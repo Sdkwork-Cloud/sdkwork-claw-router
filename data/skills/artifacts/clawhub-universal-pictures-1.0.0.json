@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/universal-pictures@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.universal_pictures",
+  "skill": {
+    "id": 65528,
+    "skillKey": "clawhub-universal-pictures",
+    "name": "Universal Pictures"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "universal-pictures",
+    "url": "https://clawhub.ai/skills/universal-pictures",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/universal-pictures-1c71211b54b674c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "环球影业，1912年成立好莱坞五大制片厂，拥有侏罗纪公园、速度与激情等知名电影IP，是NBC环球核心电影业务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776491981961,
+      "changelog": "Universal Pictures 1.0.0\n\n- 新增环球影业（Universal Pictures）详细知识卡片，介绍公司历史、主要IP、母公司架构与主题乐园布局。\n- 收录公司创立、收购历程及与NBC环球、康卡斯特关系。\n- 梳理侏罗纪系列、速度与激情、照明娱乐动画等知名IP成绩及影响。\n- 覆盖全球环球影城主题乐园的核心信息。\n- 适合检索环球影业基础信息、IP资源及行业背景。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e744c4e3835e8c47c66f2c260c86a30d073076941b18360fd30178c0de98a5e1"
+}

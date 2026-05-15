@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whatsapp-business-1-0-3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_business_1_0_3",
+  "skill": {
+    "id": 29257,
+    "skillKey": "clawhub-whatsapp-business-1-0-3",
+    "name": "Whatsapp Business 1.0.3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-business-1-0-3",
+    "url": "https://clawhub.ai/skills/whatsapp-business-1-0-3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-business-1-0-3-3d065568a2576ad8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WhatsApp Business API integration with managed OAuth. Send messages, manage templates, and handle conversations. Use this skill when users want to interact w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raidan-ai",
+      "userId": "s171w84n4n9cx836xsmjgd737s83k4ff",
+      "displayName": "Raidan Pro",
+      "image": "https://avatars.githubusercontent.com/u/175760272?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774401646406,
+      "changelog": "- Initial release of WhatsApp Business API integration via Maton platform.\n- Supports sending messages (text, template, image, document, video, audio, location, contacts, and interactive button messages).\n- Managed OAuth authentication for secure and seamless connection to WhatsApp Business accounts.\n- Includes full connection management (list, create, get, delete connections) through Maton control panel API.\n- API access via simple HTTP endpoints; includes cURL and Python code samples.\n- Requires network access and a valid Maton API key.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e07b38e6eda758b7994016f5805e51b50f8bb90eae0c03cd422e297e534790c"
+}

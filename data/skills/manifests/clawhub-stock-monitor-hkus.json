@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64157,
+  "uuid": "skill-clawhub-stock-monitor-hkus",
+  "skillKey": "clawhub-stock-monitor-hkus",
+  "name": "港股美股监控",
+  "summary": "港股/美股/加密货币实时监控。使用 Yahoo Finance (yfinance) 获取实时价格、技术指标监控。支持自定义股票池、涨跌提醒、均线/RSI/MACD信号。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_monitor_hkus",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sanduan003",
+      "features": [
+        "港股/美股/加密货币实时监控。使用 Yahoo Finance (yfinance) 获取实时价格、技术指标监控。支持自定义股票池、涨跌提醒、均线/RSI/MACD信号。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-monitor-hkus@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125126230?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-monitor-hkus",
+      "url": "https://clawhub.ai/skills/stock-monitor-hkus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-monitor-hkus",
+    "url": "https://clawhub.ai/skills/stock-monitor-hkus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-monitor-hkus-b8c02c0b6734eee3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-monitor-hkus@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-monitor-hkus-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62ded3745d00b6e0cc36db32bd2a0f6671b1dabccd112d04ca8653c05c132069",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T14:53:27.841Z"
+}

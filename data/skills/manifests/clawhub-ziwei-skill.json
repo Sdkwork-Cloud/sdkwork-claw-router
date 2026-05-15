@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73543,
+  "uuid": "skill-clawhub-ziwei-skill",
+  "skillKey": "clawhub-ziwei-skill",
+  "name": "紫微斗数技能",
+  "summary": "紫微斗数排盘技能。支持十四主星、十二宫位、四化飞星排盘，提供命运、性格、事业、婚姻、财运等分析。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ziwei_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dglijin-oss",
+      "features": [
+        "紫微斗数排盘技能。支持十四主星、十二宫位、四化飞星排盘，提供命运、性格、事业、婚姻、财运等分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ziwei-skill@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251980243?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ziwei-skill",
+      "url": "https://clawhub.ai/skills/ziwei-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ziwei-skill",
+    "url": "https://clawhub.ai/skills/ziwei-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ziwei-skill-f982a8f11c7d2af9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ziwei-skill@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ziwei-skill-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b38c74d96289c9913df8f30c49428bd85088bcbcfbae9c5d655b709f282d611b",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T15:10:38.444Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memic@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memic",
+  "skill": {
+    "id": 19158,
+    "skillKey": "clawhub-memic",
+    "name": "memic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memic",
+    "url": "https://clawhub.ai/skills/memic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memic-97421bbbaefa1cc1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Context engineering platform for AI agents. Upload documents, search with semantic + structured queries, and inject relevant context into LLM prompts. Suppor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "punithg",
+      "userId": "publishers:punithg",
+      "displayName": "Punith",
+      "image": "https://avatars.githubusercontent.com/u/13271547?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 424,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1772824352217,
+      "changelog": "- No code or documentation changes in this release.\n- Metadata updated: the install requirement was changed from the \"python3\" binary to \"pip\".\n- All functionality and usage remain unchanged from the previous version.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e26efc0fe9f53ef8415c847bd5e5f20302340d75837603fc9671ed1ae616fbe9"
+}

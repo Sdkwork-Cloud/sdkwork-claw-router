@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-workspace-backup-restore@1.5.4",
+  "version": "1.5.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_workspace_backup_restore",
+  "skill": {
+    "id": 20330,
+    "skillKey": "clawhub-openclaw-workspace-backup-restore",
+    "name": "OpenClaw Backup & Restore"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-workspace-backup-restore",
+    "url": "https://clawhub.ai/skills/openclaw-workspace-backup-restore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-workspace-backup-restore-290593dc3f85cece.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks for OpenClaw backup, restore, rollback, validation, GitHub backup, off-machine backup, workspace recovery, or pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "x-rayluan",
+      "userId": "s17c0n0ce78mre7mrytgzehcwn83hkp1",
+      "displayName": "X-RayLuan",
+      "image": "https://avatars.githubusercontent.com/u/150766707?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 460,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.5.4",
+      "createdAt": 1773546253759,
+      "changelog": "Release 1.5.4: tighten backup/restore validation, wire real tests, refresh docs/license/repo links, and publish a cleaner verified package.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ebe4c20c8c5ab477b5ecec7598afc874ed611d35ca3398c82bca2a485ecaf625"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-daily-report-zh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_daily_report_zh",
+  "skill": {
+    "id": 54713,
+    "skillKey": "clawhub-crypto-daily-report-zh",
+    "name": "Crypto Daily Report (中文)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-daily-report-zh",
+    "url": "https://clawhub.ai/skills/crypto-daily-report-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-daily-report-zh-6c024d6b87186505.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and send cryptocurrency daily reports with market overview, fear & greed index, liquidation data, economic calendar, and news aggregation. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "renyuke-cn",
+      "userId": "s170t4zydr87m9at7xnwsdq7dn83hcsn",
+      "displayName": "RenYuKe-CN",
+      "image": "https://avatars.githubusercontent.com/u/88797638?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 358,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773318878563,
+      "changelog": "Initial release with market overview, fear & greed index, liquidation data, and news aggregation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ecd27878e5490f4e57176fa369f64ed2ff86577a4c57a0b511c3e342731a4c9"
+}

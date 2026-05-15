@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workspace-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_backup",
+  "skill": {
+    "id": 50538,
+    "skillKey": "clawhub-workspace-backup",
+    "name": "Workspace Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-backup",
+    "url": "https://clawhub.ai/skills/workspace-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-backup-41b97a143d349bd0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated workspace backup to GitHub — git-based with auto-generated commit messages, proper .gitignore, and restore procedures. Cron-friendly for hands-free..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 443,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772931230334,
+      "changelog": "- Initial release of workspace-backup skill.\n- Automates backups of OpenClaw workspaces to GitHub with git-based versioning.\n- Features auto-generated commit messages, smart .gitignore handling, and timestamped change tracking.\n- Supports full or partial workspace restore from any backup point.\n- Designed to run hands-free as a cron job or on-demand.\n- Requires Git and GitHub SSH access for operation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0cbd93beafc27a0fbf620e4eab537b67e66d1202c41c5c98f22df887ef54bb22"
+}

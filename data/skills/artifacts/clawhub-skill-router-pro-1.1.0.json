@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-router-pro@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_router_pro",
+  "skill": {
+    "id": 42292,
+    "skillKey": "clawhub-skill-router-pro",
+    "name": "Skill Router Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-router-pro",
+    "url": "https://clawhub.ai/skills/skill-router-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-router-pro-9874b158b09c150c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill router and discovery assistant. Use when: - User says \"I want to do XXX, what skill do I have\" or \"is there a skill for XXX\" - User doesn't know which..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kennyzir",
+      "userId": "s17cffj9ap2f7pqdtjc91f3m2983gfab",
+      "displayName": "claw0x",
+      "image": "https://avatars.githubusercontent.com/u/169416751?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776061445234,
+      "changelog": "English-only rewrite, removed Chinese characters, decision flow uses plain text instead of box diagrams for better visibility",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90aff26d00ddf3d26b80c1896c1555ac3bdef3773105e5c78666d1d096137971"
+}

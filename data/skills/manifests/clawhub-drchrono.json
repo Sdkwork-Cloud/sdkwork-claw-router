@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30439,
+  "uuid": "skill-clawhub-drchrono",
+  "skillKey": "clawhub-drchrono",
+  "name": "Drchrono",
+  "summary": "DrChrono integration. Manage Patients, Appointments, ClinicalNotes, MedicationOrders, LabOrders, BillingProfiles and more. Use when the user wants to interac...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drchrono",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "DrChrono integration",
+        "Manage Patients, Appointments, ClinicalNotes, MedicationOrders, LabOrders, BillingProfiles and.",
+        "Use when the user wants to interac..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drchrono@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drchrono",
+      "url": "https://clawhub.ai/skills/drchrono"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drchrono",
+    "url": "https://clawhub.ai/skills/drchrono",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drchrono-753de883197df19d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drchrono@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-drchrono-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2a9f3be5990cfad53896e3d38c6a52c7f06932e697147158667d1f9c94f0100",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:41:03.189Z"
+}

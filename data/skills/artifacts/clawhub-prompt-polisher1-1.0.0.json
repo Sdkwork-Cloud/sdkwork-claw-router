@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-polisher1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_polisher1",
+  "skill": {
+    "id": 41640,
+    "skillKey": "clawhub-prompt-polisher1",
+    "name": "prompt-polisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-polisher1",
+    "url": "https://clawhub.ai/skills/prompt-polisher1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-polisher1-86a76c9996077c43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rewrite rough goals, scattered notes, or vague requests into clear, actionable prompts with explicit objective, constraints, output format, and missing assum..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenxiaojian985",
+      "userId": "s1738wdcgks0x521djwhb4dbts84zarv",
+      "displayName": "Xiaojian Chen",
+      "image": "https://avatars.githubusercontent.com/u/249710105?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776327583097,
+      "changelog": "- Initial release of Prompt Polisher.\n- Transforms rough, vague, or scattered user requests into clear, actionable prompts with explicit goals, constraints, output format, and assumptions.\n- Ensures prompts are concise, well-structured, and preserve the original user intent.\n- Automatically identifies and addresses missing but necessary details, explicitly labeling any assumptions made.\n- Provides the option to include follow-up questions when key information is lacking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:27adf2632963915e4a313e2e4df2e2a72a588bd8931c5ea9ec53a7f9083cab9b"
+}

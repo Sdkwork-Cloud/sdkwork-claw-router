@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/default-model@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.default_model",
+  "skill": {
+    "id": 38989,
+    "skillKey": "clawhub-default-model",
+    "name": "Default Model"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "default-model",
+    "url": "https://clawhub.ai/skills/default-model",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/default-model-d4f121eb0fbd8ad3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set the default model persistently via /default_model command with Telegram interactive picker"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jkyotnfjfbjnknh",
+      "userId": "s17365jr6kzwjcnqyb18g40rtn83wrt1",
+      "displayName": "jkyotnfjfbjnknh",
+      "image": "https://avatars.githubusercontent.com/u/167171060?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774926857259,
+      "changelog": "Initial release: /default_model command to set default model persistently via config file, with Telegram interactive picker",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a7ec0fa42684c99766521533602f28aef89773552bc80a9722c53f4804da9b42"
+}

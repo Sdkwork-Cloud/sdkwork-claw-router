@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kling-image-generate@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kling_image_generate",
+  "skill": {
+    "id": 63230,
+    "skillKey": "clawhub-kling-image-generate",
+    "name": "Kling Image Generate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kling-image-generate",
+    "url": "https://clawhub.ai/skills/kling-image-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kling-image-generate-5f96d18c8febfbd1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "可灵AI图像生成API工具。支持文生图、图生图、多图参考生成、图像Omni、扩图等功能。使用环境变量KLING_ACCESS_KEY和KLING_SECRET_KEY进行鉴权。当用户需要生成AI图像、图片编辑、图像扩展等任务时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "umrzcz-831",
+      "userId": "s175fm0j02mcch9xqa7zb11xxn83hcxh",
+      "displayName": "umrjs",
+      "image": "https://avatars.githubusercontent.com/u/52395980?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774017404890,
+      "changelog": "- Added a security notice specifying API usage and JWT authentication requirements.\n- Clarified that API credentials are stored only in local environment variables and not shared.\n- No changes to core functionality or usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5b41e16dcbe9f622663ec631943e8a35ba54369408f75762bf0ee0d97cb9779"
+}

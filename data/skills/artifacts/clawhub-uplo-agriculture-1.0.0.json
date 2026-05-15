@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uplo-agriculture@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uplo_agriculture",
+  "skill": {
+    "id": 26817,
+    "skillKey": "clawhub-uplo-agriculture",
+    "name": "Uplo Agriculture"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uplo-agriculture",
+    "url": "https://clawhub.ai/skills/uplo-agriculture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uplo-agriculture-575cb4bb8a2c2ec0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered agricultural knowledge management. Search crop management records, livestock data, compliance documentation, and sustainability reports with struc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roojenkins",
+      "userId": "publishers:roojenkins",
+      "displayName": "RooJenkins",
+      "image": "https://avatars.githubusercontent.com/u/47111622?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773794203258,
+      "changelog": "Initial release of uplo-agriculture:\n\n- AI-powered agricultural knowledge management skill\n- Search crop management records, livestock data, compliance docs, and sustainability reports\n- Structured extraction and querying tools for agriculture domain expertise\n- Session management: organizational context fetching and conversation logging\n- Guidance on when and how to use knowledge search and compliance features\n- Emphasis on source citation and respecting data classification",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b99409c7e62c8dda78ee9e9864338f16f5efb342fea7b3121a0326a4f3896dfb"
+}

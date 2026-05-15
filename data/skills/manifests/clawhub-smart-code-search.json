@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35625,
+  "uuid": "skill-clawhub-smart-code-search",
+  "skillKey": "clawhub-smart-code-search",
+  "name": "Smart Code Search",
+  "summary": "Search code and docs by meaning, not keywords. Powered by ColGREP/NextPlaid,",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_code_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brett Hammond",
+      "features": [
+        "Search code and docs by meaning, not keywords",
+        "Powered by ColGREP/NextPlaid,"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-code-search@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/649035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-code-search",
+      "url": "https://clawhub.ai/skills/smart-code-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-code-search",
+    "url": "https://clawhub.ai/skills/smart-code-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-code-search-fb7085e7b9c84789.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-code-search@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-code-search-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:906fe0a5f118b0308bc2bdac3f27b3c69dc257e26965cd0594ff108ac9e285fe",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T16:23:52.866Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xunfei-voice-reply@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xunfei_voice_reply",
+  "skill": {
+    "id": 67918,
+    "skillKey": "clawhub-xunfei-voice-reply",
+    "name": "XunFei Voice Reply"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xunfei-voice-reply",
+    "url": "https://clawhub.ai/skills/xunfei-voice-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xunfei-voice-reply-3c9d6083413b937f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "语音回复技能 - 使用讯飞 TTS 生成语音并发送到飞书。当需要用语音回复用户消息时使用。触发词：用语音、语音回复、切换语音模式、语音模式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wglnngt",
+      "userId": "publishers:wglnngt",
+      "displayName": "wglnngt",
+      "image": "https://avatars.githubusercontent.com/u/17468975?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 411,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773494933825,
+      "changelog": "xunfei-voice-reply 1.0.0 初始版本\n\n- 提供讯飞 TTS 语音生成并发送到飞书的语音回复能力\n- 支持文字/语音模式切换及模式持久化，含多种触发词\n- 配置项包括多种发音人、环境变量覆盖和标准临时音频路径\n- 详细的错误处理与依赖提示\n- 集成流程示例，需在 AGENTS.md 明确接入语音回复流程",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:104f2324422182f0011f05f20520a48af356380b54c6bc6db01b8a30cf554c26"
+}

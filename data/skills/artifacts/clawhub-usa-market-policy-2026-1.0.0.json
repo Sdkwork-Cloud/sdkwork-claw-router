@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/usa-market-policy-2026@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usa_market_policy_2026",
+  "skill": {
+    "id": 72573,
+    "skillKey": "clawhub-usa-market-policy-2026",
+    "name": "美国市场政策查询Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usa-market-policy-2026",
+    "url": "https://clawhub.ai/skills/usa-market-policy-2026",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usa-market-policy-2026-d8893a6e746ad53b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供美国市场政策、法规及投资环境的智能查询和分析，支持多语言和数据源灵活配置。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yezhaowang888-stack",
+      "userId": "s17ffxprqs0jtaf8w6n5gtnprd84cx12",
+      "displayName": "yezhaowang888-stack",
+      "image": "https://avatars.githubusercontent.com/u/274244352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776867618473,
+      "changelog": "usa-market-policy-2026 v1.0.0\n\n- Initial release of the intelligent US market policy query skill.\n- Powered by DeepSeek v4 for advanced policy analysis and prediction.\n- Features multi-agent collaboration for accuracy and real-time data.\n- Supports multiple languages including Simplified Chinese and US English, with automatic detection.\n- Configurable data sources to adapt to various business needs.\n- Guidance on secure installation and sensitive data management included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a05ae2e7cebb7f053e622022f77b9fd0a613ab9511f6f0cbe7cdc03dc1fd3d5"
+}

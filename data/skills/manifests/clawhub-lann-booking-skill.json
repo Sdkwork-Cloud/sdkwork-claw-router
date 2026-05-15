@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67420,
+  "uuid": "skill-clawhub-lann-booking-skill",
+  "skillKey": "clawhub-lann-booking-skill",
+  "name": "lann-booking",
+  "summary": "提供蘭泰式按摩（Lann Thai Massage）的门店查询、SPA服务查询和在线预约功能。支持泰式古法按摩、精油护理、草本热敷等专业服务预约，覆盖上海、杭州、成都等多城市门店。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lann_booking_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lystrosaurus",
+      "features": [
+        "提供蘭泰式按摩（Lann Thai Massage）的门店查询、SPA服务查询和在线预约功能。支持泰式古法按摩、精油护理、草本热敷等专业服务预约，覆盖上海、杭州、成都等多城市门店。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lann-booking-skill@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3240489?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lann-booking-skill",
+      "url": "https://clawhub.ai/skills/lann-booking-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lann-booking-skill",
+    "url": "https://clawhub.ai/skills/lann-booking-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lann-booking-skill-496180379794b782.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lann-booking-skill@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-lann-booking-skill-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7195be51896e30be4d9b1c04c509c7f2e9b19c6ccf72e9d2190ffcfe97c521da",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T09:11:22.600Z"
+}

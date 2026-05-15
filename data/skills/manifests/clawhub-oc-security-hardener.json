@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10903,
+  "uuid": "skill-clawhub-oc-security-hardener",
+  "skillKey": "clawhub-oc-security-hardener",
+  "name": "Security Hardener",
+  "summary": "Audit and harden OpenClaw configuration for security. Scans openclaw.json for vulnerabilities, exposed credentials, insecure gateway settings, overly permiss...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_security_hardener",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mariusfit",
+      "features": [
+        "Audit and harden OpenClaw configuration for security",
+        "Scans openclaw.json for vulnerabilities, exposed credentials, insecure gateway settings, overly."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oc-security-hardener@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53900085?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oc-security-hardener",
+      "url": "https://clawhub.ai/skills/oc-security-hardener"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-security-hardener",
+    "url": "https://clawhub.ai/skills/oc-security-hardener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-security-hardener-11aeca8bc919ad3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oc-security-hardener@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oc-security-hardener-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16c47cfd26751d60c3251784266213370be4d5959e4d12dc0c3e1e8b51df9d22",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T20:20:31.536Z"
+}

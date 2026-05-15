@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smiles-profiling@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smiles_profiling",
+  "skill": {
+    "id": 39049,
+    "skillKey": "clawhub-smiles-profiling",
+    "name": "SMILES Profiling"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smiles-profiling",
+    "url": "https://clawhub.ai/skills/smiles-profiling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smiles-profiling-d050ef9e258cfc15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive SMILES profiling through SwissTargetPrediction, PubChem, ADMETlab 3.0, ChEMBL, and PK-Smart. Use when given a single SMILES to extract predicte..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hendr15k",
+      "userId": "s1716bcbj94efvtys9zqjcy0yh83e7tq",
+      "displayName": "Hendrik Schmitz",
+      "image": "https://avatars.githubusercontent.com/u/46162994?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775755318353,
+      "changelog": "Add PubChem and ChEMBL integrations, plus a full profile script",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:291e68eb7c77aadbb8cd78779d766bbb1bc77c9ee652260074ab1c85a36ca4a0"
+}

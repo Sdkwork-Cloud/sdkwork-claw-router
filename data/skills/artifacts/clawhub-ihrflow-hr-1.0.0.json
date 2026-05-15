@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ihrflow-hr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ihrflow_hr",
+  "skill": {
+    "id": 24652,
+    "skillKey": "clawhub-ihrflow-hr",
+    "name": "iHRFlow HR Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ihrflow-hr",
+    "url": "https://clawhub.ai/skills/ihrflow-hr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ihrflow-hr-77d251e207bc6a6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "iHRFlow HR assistant for recruiting. Use when searching candidates, managing positions, scheduling interviews, advancing pipeline, or viewing recruitment stats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikeling",
+      "userId": "publishers:mikeling",
+      "displayName": "MikeLing",
+      "image": "https://avatars.githubusercontent.com/u/2166227?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 406,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773386257667,
+      "changelog": "iHRFlow HR assistant: 20 MCP tools for recruiting, candidate search, interview scheduling, pipeline management, and recruitment statistics",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b6ff65d7e003a5d1a9ddff30658923daada2d38d289fccbfff04ba57b8c76e1"
+}

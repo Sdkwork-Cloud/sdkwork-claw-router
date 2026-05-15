@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30269,
+  "uuid": "skill-clawhub-stock-a",
+  "skillKey": "clawhub-stock-a",
+  "name": "Stock-A",
+  "summary": "Provides real-time and historical A-share stock data from multiple free sources including mootdx, Sina, Tencent, Eastmoney, and Tushare.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_a",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "same1317",
+      "features": [
+        "Provides real-time and historical A-share stock data from multiple free sources including mootd."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-a@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102150766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-a",
+      "url": "https://clawhub.ai/skills/stock-a"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-a",
+    "url": "https://clawhub.ai/skills/stock-a",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-a-d629f4414ea49ab8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-a@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-a-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:449e18b0c4f36f025eb190ee7f68cc86b410fe057a53db6e834deb9e08abef9c",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T05:33:26.973Z"
+}

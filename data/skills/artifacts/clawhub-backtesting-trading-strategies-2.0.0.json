@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/backtesting-trading-strategies@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.backtesting_trading_strategies",
+  "skill": {
+    "id": 11604,
+    "skillKey": "clawhub-backtesting-trading-strategies",
+    "name": "Backtesting Trading Strategies"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "backtesting-trading-strategies",
+    "url": "https://clawhub.ai/skills/backtesting-trading-strategies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/backtesting-trading-strategies-8cfefea132d7d6c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Backtest crypto and traditional trading strategies against historical data. Calculates performance metrics (Sharpe, Sortino, max drawdown), generates equity..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhengxinjipai",
+      "userId": "s1730v5c386prna2echd6pyczn83x8km",
+      "displayName": "zhengxinjipai",
+      "image": "https://avatars.githubusercontent.com/u/130424576?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1970,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772790904521,
+      "changelog": "Major update: Comprehensive overhaul and feature expansion for strategy backtesting.\n\n- Added 8 built-in trading strategies, including SMA, EMA, RSI, MACD, and more.\n- Included advanced performance/risk metrics: Sharpe, Sortino, Calmar, VaR, max drawdown.\n- Introduced parameter grid search optimization and equity curve visualization.\n- Provided detailed trade-by-trade analysis and clear output reporting.\n- Enhanced user documentation with setup steps, usage examples, and configuration guidelines.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bc6d15ce787404704f7dd9356130865d8ca94cdc856a71593b5d9a22d7153180"
+}

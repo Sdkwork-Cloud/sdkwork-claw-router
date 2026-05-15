@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8691,
+  "uuid": "skill-clawhub-obsidian-direct",
+  "skillKey": "clawhub-obsidian-direct",
+  "name": "Obsidian - read, search, write and edit direct to obsidian vault.",
+  "summary": "Work with Obsidian vaults as a knowledge base. Features: fuzzy/phonetic search across all notes, auto-folder detection for new notes, create/read/edit notes with frontmatter, manage tags and wikilinks. Use when: querying knowledge base, sa.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_direct",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RuslanLanket",
+      "features": [
+        "Work with Obsidian vaults as a knowledge base",
+        "Features: fuzzy/phonetic search across all notes, auto-folder detection for new notes, create/r.",
+        "Use when: querying knowledge base, saving notes/documents, editing existing notes by user instr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-direct@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151464535?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-direct",
+      "url": "https://clawhub.ai/skills/obsidian-direct"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-direct",
+    "url": "https://clawhub.ai/skills/obsidian-direct",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-direct-a934864063f5accf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-direct@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-direct-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a5352edbcb3baf62c5572770922770aa2c51e629288146f787c1d32d42d6624",
+      "artifactSizeBytes": 2589
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T22:50:50.180Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gymnastics-program-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gymnastics_program_video",
+  "skill": {
+    "id": 39748,
+    "skillKey": "clawhub-gymnastics-program-video",
+    "name": "Gymnastics Program Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gymnastics-program-video",
+    "url": "https://clawhub.ai/skills/gymnastics-program-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gymnastics-program-video-b460aca9974df5cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create 60-90 second videos showcasing youth gymnastics programs' skill progression, coaching, and culture to boost athlete enrollment and engagement."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775081059187,
+      "changelog": "- Initial release of Gymnastics Program Video skill.\n- Helps youth gymnastics programs create engaging enrollment and showcase videos.\n- Guides users to gather key details (age groups, levels, coaching, results, facilities) for video creation.\n- Generates 60–90 second video scripts with suggested b-roll and scene structure.\n- Includes sample script outline and video prompt ideas for effective storytelling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed4921d8d3eedb18aaf654c6d51b352a34de8076420c01554ded806094f59f10"
+}

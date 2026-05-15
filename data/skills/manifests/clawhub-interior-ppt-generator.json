@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66871,
+  "uuid": "skill-clawhub-interior-ppt-generator",
+  "skillKey": "clawhub-interior-ppt-generator",
+  "name": "Interior Design PPT Generator",
+  "summary": "设计师把效果图放到文件夹里，一键自动生成交付PPT，每页一张图，自动加标题排版，直接就能给客户汇报。适合室内设计师快速生成方案交付文件。",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interior_ppt_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "137984917-cyber",
+      "features": [
+        "设计师把效果图放到文件夹里，一键自动生成交付PPT，每页一张图，自动加标题排版，直接就能给客户汇报。适合室内设计师快速生成方案交付文件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/interior-ppt-generator@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270913925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "interior-ppt-generator",
+      "url": "https://clawhub.ai/skills/interior-ppt-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interior-ppt-generator",
+    "url": "https://clawhub.ai/skills/interior-ppt-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interior-ppt-generator-ff2f16ea566b1399.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/interior-ppt-generator@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-interior-ppt-generator-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2c7d8a206bc60ac3d5ea6f9ecf13959361f245d1a614a21fd65506ed642ce5e",
+      "artifactSizeBytes": 2505
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T03:36:35.642Z"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51944,
+  "uuid": "skill-clawhub-agentmemo",
+  "skillKey": "clawhub-agentmemo",
+  "name": "Agentmemo",
+  "summary": "Give your AI agent persistent memory and human-in-the-loop approval — across sessions, across models. AgentMemo is a cloud API + MCP server that lets agents...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentmemo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iftach Ian Amit",
+      "features": [
+        "Give your AI agent persistent memory and human-in-the-loop approval — across sessions, across m.",
+        "AgentMemo is a cloud API + MCP server that lets agents..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentmemo@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1219407?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentmemo",
+      "url": "https://clawhub.ai/skills/agentmemo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentmemo",
+    "url": "https://clawhub.ai/skills/agentmemo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentmemo-055a1796d5076712.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentmemo@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentmemo-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:adb5d7f987d4b0b412d541fbacc6dea8dcf616c34994dc02290fa96d844a44ab",
+      "artifactSizeBytes": 2529
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T18:44:26.514Z"
+}

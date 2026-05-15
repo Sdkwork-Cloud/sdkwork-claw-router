@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mad-story@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mad_story",
+  "skill": {
+    "id": 18963,
+    "skillKey": "clawhub-mad-story",
+    "name": "MadStory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mad-story",
+    "url": "https://clawhub.ai/skills/mad-story",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mad-story-cdc8421a9e6f2f51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A creative director and storyboard assistant for Seedance 2.0. Use this skill when users want to create professional video prompts, movie scenes, or storyboa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qomob",
+      "userId": "s1712hx0t1qgg41g18p2bb0d6583ms02",
+      "displayName": "qomob",
+      "image": "https://avatars.githubusercontent.com/u/194083399?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 428,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774596576908,
+      "changelog": "MadStory 1.0.3: Adds 15-second timeline as core structure for storyboard prompts.\n\n- 引入“15 秒时间轴”强制规范，默认每次分镜为 15 秒\n- 新增“时间轴与节奏”阶段，支持逐秒级分镜构思和关键时间节点设定\n- 动态运镜部分支持逐秒镜头语言及运动强度建议\n- 声音与合成阶段同步 15 秒节奏\n- 优化分镜输出流程，更适应多模态 Seedance 2.0 需求",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72ef2e35a8418e331ff918e04a0ffccb7c6b94943ee8140cabdf8709928ea436"
+}

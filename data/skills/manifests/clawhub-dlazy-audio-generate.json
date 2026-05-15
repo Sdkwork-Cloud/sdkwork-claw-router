@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58252,
+  "uuid": "skill-clawhub-dlazy-audio-generate",
+  "skillKey": "clawhub-dlazy-audio-generate",
+  "name": "Dlazy Audio Generate",
+  "summary": "Audio generation skill. Automatically selects the best dlazy CLI audio/TTS model based on the prompt. 音频生成技能。根据提示词自动选择最佳的 dlazy CLI 音频/TTS 模型。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_audio_generate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dlazy",
+      "features": [
+        "Audio generation skill",
+        "Automatically selects the best dlazy CLI audio/TTS model based on the prompt",
+        "音频生成技能。根据提示词自动选择最佳的 dlazy CLI 音频/TTS 模型。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dlazy-audio-generate@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274158181?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dlazy-audio-generate",
+      "url": "https://clawhub.ai/skills/dlazy-audio-generate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-audio-generate",
+    "url": "https://clawhub.ai/skills/dlazy-audio-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-audio-generate-d2b495cc03a23b77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dlazy-audio-generate@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dlazy-audio-generate-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16e3d2d7b882226fe3a8ef1aa9de928aac0a2b86b3e401728d196103d9d3184d",
+      "artifactSizeBytes": 2509
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T07:45:00.167Z"
+}

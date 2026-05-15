@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27059,
+  "uuid": "skill-clawhub-netmap",
+  "skillKey": "clawhub-netmap",
+  "name": "Netmap",
+  "summary": "Scan and map all devices on the local network. Discovers IPs, hostnames, vendors, and device types. Tracks when devices first appeared and were last seen. Su...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.netmap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wrentheai",
+      "features": [
+        "Scan and map all devices on the local network",
+        "Discovers IPs, hostnames, vendors, and device types",
+        "Tracks when devices first appeared and were last seen"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/netmap@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257617545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "netmap",
+      "url": "https://clawhub.ai/skills/netmap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "netmap",
+    "url": "https://clawhub.ai/skills/netmap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/netmap-2924e0976f0408bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/netmap@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-netmap-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9589b508f43261a96e0c67f0b3f51211ba570e3458e2eea393c95b3dc6af87d",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T00:20:37.022Z"
+}

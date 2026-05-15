@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cnki@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cnki",
+  "skill": {
+    "id": 65409,
+    "skillKey": "clawhub-cnki",
+    "name": "Cnki"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cnki",
+    "url": "https://clawhub.ai/skills/cnki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cnki-a4f0a175073297e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中国知网 (CNKI) 统一入口 - 搜索、下载、导出、详情查询一体化技能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jirboy",
+      "userId": "s172kehers3wd9ajz7fymawqnn843cz8",
+      "displayName": "JIRBOY",
+      "image": "https://avatars.githubusercontent.com/u/49422297?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776332857520,
+      "changelog": "CNKI skill unified multiple features into a single streamlined tool for literature search, download, export, and journal access.\n\n- Integrates multiple related CNKI skills (search, detail, download, export, journal functions) into a single entry point.\n- Reduces tool call counts and speeds up batch operations (e.g., search + detail in one step, bulk export directly from results page).\n- Offers clear, unified command syntax for searching, advanced search, fetching details, downloading, exporting, and journal queries.\n- Enhances workflow with unified error handling and efficient browser script execution.\n- Provides user guidance for captcha, login requirements, and browser compatibility.\n- Backwards compatible with legacy skills and workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59c3983caf64ff949871ded4e23b5241ded7b976a6fa506fbcecc4d6dba42831"
+}

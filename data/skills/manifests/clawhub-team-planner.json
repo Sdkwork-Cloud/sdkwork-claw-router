@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35085,
+  "uuid": "skill-clawhub-team-planner",
+  "skillKey": "clawhub-team-planner",
+  "name": "Team Planner",
+  "summary": "This skill should be used when the user wants to plan a team of AI agents to work on a complex task. It analyzes task requirements, designs team structure, d...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GhOvOst",
+      "features": [
+        "This skill should be used when the user wants to plan a team of AI agents to work on a complex.",
+        "It analyzes task requirements, designs team structure, d..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/team-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37217699?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "team-planner",
+      "url": "https://clawhub.ai/skills/team-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-planner",
+    "url": "https://clawhub.ai/skills/team-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-planner-069c3ccb822b132c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/team-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-team-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2d7506cdbfcec894935dbc8d547fa4e55eff10ac9b2b395ea7ec85f229289ff",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T07:03:51.042Z"
+}

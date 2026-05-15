@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/octoclaw-print@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.octoclaw_print",
+  "skill": {
+    "id": 35221,
+    "skillKey": "clawhub-octoclaw-print",
+    "name": "OctoClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "octoclaw-print",
+    "url": "https://clawhub.ai/skills/octoclaw-print",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/octoclaw-print-79c29a0c2e897e5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control OctoPrint 3D printer — monitor status, capture webcam snapshots, manage prints, analyze gcode, and detect errors. Use when the user asks about their..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peterhanily",
+      "userId": "publishers:peterhanily",
+      "displayName": "peterhanily",
+      "image": "https://avatars.githubusercontent.com/u/4774894?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 811,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771291609091,
+      "changelog": "Initial release — OctoPrint monitoring, control, webcam snapshots, gcode analysis, Telegram integration",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ef530340e88ba28b7a56cc0b13599b757fd914333c3d66bca6773730eb9881b8"
+}

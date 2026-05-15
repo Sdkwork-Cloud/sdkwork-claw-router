@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52703,
+  "uuid": "skill-clawhub-ssh-server-watchdog",
+  "skillKey": "clawhub-ssh-server-watchdog",
+  "name": "SSH Server Watchdog",
+  "summary": "Monitor remote servers via SSH — check service health (PM2, systemd, Docker), database status (MongoDB, MySQL, PostgreSQL), disk space, memory, and auto-rest...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssh_server_watchdog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Qoohsuan",
+      "features": [
+        "Monitor remote servers via SSH — check service health (PM2, systemd, Docker), database status (."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssh-server-watchdog@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81729903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssh-server-watchdog",
+      "url": "https://clawhub.ai/skills/ssh-server-watchdog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssh-server-watchdog",
+    "url": "https://clawhub.ai/skills/ssh-server-watchdog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssh-server-watchdog-de707b0fcc40f368.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssh-server-watchdog@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssh-server-watchdog-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:324c9da8e33b36e39e3b2b86d1efb28e91b7571db50977dc5f101a6e23fb62b4",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:11:56.480Z"
+}

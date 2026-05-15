@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cbismb-harmonyos-publish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cbismb_harmonyos_publish",
+  "skill": {
+    "id": 60645,
+    "skillKey": "clawhub-cbismb-harmonyos-publish",
+    "name": "cbismb-harmonyos-publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cbismb-harmonyos-publish",
+    "url": "https://clawhub.ai/skills/cbismb-harmonyos-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cbismb-harmonyos-publish-dab7dc300171d713.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动发布文章到中小企业IT网 HarmonyOS 板块。当用户要求发布文章到中小企业IT网、cbismb.com、HarmonyOS开发者社区时触发此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "itcastwsy",
+      "userId": "s17ech5w424ywgapc93pwxpf8d83mmvt",
+      "displayName": "itcastWsy",
+      "image": "https://avatars.githubusercontent.com/u/33108189?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773057418576,
+      "changelog": "cbismb-harmonyos-publish 1.0.0 – Initial Release\n\n- Automates article publishing to the HarmonyOS section of the 中小企业IT网 (cbismb.com).\n- Supports customizable article category, tags, originality, privacy agreement, and comment settings.\n- Provides detailed publishing steps, prerequisite setup, and UI interaction guidance.\n- Includes troubleshooting advice and common issues documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a74e846e3d29d72803891f562d37ee9341b6bf576358a76c87147be88b57139a"
+}

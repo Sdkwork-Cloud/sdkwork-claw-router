@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glucose-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glucose_manager",
+  "skill": {
+    "id": 73692,
+    "skillKey": "clawhub-glucose-manager",
+    "name": "血糖管理助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glucose-manager",
+    "url": "https://clawhub.ai/skills/glucose-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glucose-manager-ded5856b3d12ebd2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "管理个人血糖数据，支持手动记录、文件导入、血糖趋势预测和健康建议。当用户提到血糖、糖尿病管理、血糖记录、血糖预测、饮食建议、运动建议时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liningg",
+      "userId": "s1700g11frh0dmkn3amsfwzx8s83gz5k",
+      "displayName": "lining",
+      "image": "https://avatars.githubusercontent.com/u/30205865?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774352394216,
+      "changelog": "我是专门用来帮助你管理血糖数据的智能助手，主要职责包括：\n\n我能帮你做什么：\n\n📝 记录血糖 - 支持手动输入、CSV/Excel 文件导入\n📊 分析趋势 - 生成日/周/月血糖报告，识别模式\n🔮 预测风险 - 短期血糖预测，低血糖/高血糖预警\n💡 健康建议 - 基于你的数据给出饮食、运动、用药建议",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21f93a2d7b03915289a2e09a2b220e85b2191d6de144021ffc3be8be84270a06"
+}

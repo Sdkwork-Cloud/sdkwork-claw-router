@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ezviz-open-capture@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ezviz_open_capture",
+  "skill": {
+    "id": 62566,
+    "skillKey": "clawhub-ezviz-open-capture",
+    "name": "Ezviz Open Capture Phone Detect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ezviz-open-capture",
+    "url": "https://clawhub.ai/skills/ezviz-open-capture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ezviz-open-capture-ce5a081dd15f4675.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过萤石摄像头抓拍并AI检测玩手机行为，检测到则生成语音告警并下发至设备播放。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ezviz-open",
+      "userId": "s174s8a00r18xwt2q5p7j85f5183gavv",
+      "displayName": "EzvizOpenTeam",
+      "image": "https://avatars.githubusercontent.com/u/16202450?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 467,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1773407187544,
+      "changelog": "- Clarified which environment variables are required and emphasized that they must be set before running the skill.\n- Improved security and privacy section: enhanced tables explaining all data flows to third parties, added explicit privacy impact symbols, and highlighted that no data is sent to the skill author, ClawHub, or OpenClaw.\n- Minor adjustments in metadata: removed unused optionalEnv config, but no behavioral change.\n- Updated documentation for clarity on credential usage, privacy, and security best practices.\n- No code changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a72738b432a90f43dd00b942c3f56cf9d2ac8772bbe702216ca9185af25fc625"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13223,
+  "uuid": "skill-clawhub-claw-wiki",
+  "skillKey": "clawhub-claw-wiki",
+  "name": "Claw Wiki",
+  "summary": "Reference and refresh a local OpenClaw documentation snapshot for product usage, deployment, configuration, CLI commands, channels, gateway behavior, tools,...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_wiki",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lueashes",
+      "features": [
+        "Reference and refresh a local OpenClaw documentation snapshot for product usage, deployment, co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-wiki@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/209020605?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-wiki",
+      "url": "https://clawhub.ai/skills/claw-wiki"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-wiki",
+    "url": "https://clawhub.ai/skills/claw-wiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-wiki-e8d89aa4250341a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-wiki@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-wiki-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:152afd278170ec6d82f00779b149e7780a7567f0c722abc3264142b0bcc1f1ca",
+      "artifactSizeBytes": 2386
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T16:41:58.602Z"
+}

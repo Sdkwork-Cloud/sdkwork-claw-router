@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23935,
+  "uuid": "skill-clawhub-linkedin-prospector",
+  "skillKey": "clawhub-linkedin-prospector",
+  "name": "LinkedIn Prospector",
+  "summary": "Score LinkedIn prospects by signal strength (0-3). Detect high-intent leads: new job, funding, recent post, active hiring. Free skill - full outreach methodo...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_prospector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "romainrabreau",
+      "features": [
+        "Score LinkedIn prospects by signal strength (0-3)",
+        "Detect high-intent leads: new job, funding, recent post, active hiring",
+        "Free skill",
+        "full outreach methodo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkedin-prospector@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190635843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkedin-prospector",
+      "url": "https://clawhub.ai/skills/linkedin-prospector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-prospector",
+    "url": "https://clawhub.ai/skills/linkedin-prospector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-prospector-b1c43405b0421667.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkedin-prospector@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkedin-prospector-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:401478ed22d317860136410d71634bc9d67be2de3fa0dbc5286fa30350547984",
+      "artifactSizeBytes": 2170
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T23:05:26.670Z"
+}

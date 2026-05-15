@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whatsapp-common-groups@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_common_groups",
+  "skill": {
+    "id": 17758,
+    "skillKey": "clawhub-whatsapp-common-groups",
+    "name": "WhatsApp Common Groups"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-common-groups",
+    "url": "https://clawhub.ai/skills/whatsapp-common-groups",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-common-groups-aaa55067f7ce1d64.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find groups shared between contacts and check group membership"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marcosrippel",
+      "userId": "publishers:marcosrippel",
+      "displayName": "Marcos Santos",
+      "image": "https://avatars.githubusercontent.com/u/74862230?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 749,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771443718125,
+      "changelog": "Initial release. Finds shared groups between contacts, checks if a number belongs to a specific group, and lists all members across all groups. Built on Baileys sender-key cache data.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:edf1cd98de7e3b710ad5f71469607799697245f2ca798795572c4347d7704470"
+}

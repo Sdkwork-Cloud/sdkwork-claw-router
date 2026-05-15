@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hilda-puppeteer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hilda_puppeteer",
+  "skill": {
+    "id": 39749,
+    "skillKey": "clawhub-hilda-puppeteer",
+    "name": "Hilda Puppeteer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hilda-puppeteer",
+    "url": "https://clawhub.ai/skills/hilda-puppeteer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hilda-puppeteer-f3b15868d25677da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Chrome and Chromium with Puppeteer for scraping, testing, screenshots, and browser workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuxingling55-sketch",
+      "userId": "s17bbd5gbm88hm1d7gt8f2ac7183kbmm",
+      "displayName": "xuxingling55-sketch",
+      "image": "https://avatars.githubusercontent.com/u/237804203?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774498823865,
+      "changelog": "Initial release of hilda-puppeteer for browser automation.\n\n- Automate Chrome/Chromium for scraping, E2E testing, screenshots, and PDF generation.\n- Includes guidance on stable selectors, waiting patterns, rate limiting, and browser management.\n- Organizes automation scripts and output in a dedicated directory structure.\n- Addresses common Puppeteer pitfalls and browser automation best practices.\n- Stores all data locally; no credentials or data sent externally.\n- Lists related skills for extended web automation capabilities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f90e71684cc17616b44d4cb238a4eb6890441595922a920f839f01caf33d3fc1"
+}

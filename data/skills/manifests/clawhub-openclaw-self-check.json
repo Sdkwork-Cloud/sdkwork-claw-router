@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63587,
+  "uuid": "skill-clawhub-openclaw-self-check",
+  "skillKey": "clawhub-openclaw-self-check",
+  "name": "Self-Check Enhanced",
+  "summary": "系统自检工具。全面检查环境配置、文件完整性、Gateway、备份状态、日志报错、磁盘用量等，汇报问题并给出修复建议（不主动修复）。兼容 workspace/workspace-xxx 两种命名。",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_self_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TangSuann",
+      "features": [
+        "系统自检工具。全面检查环境配置、文件完整性、Gateway、备份状态、日志报错、磁盘用量等，汇报问题并给出修复建议（不主动修复）。兼容 workspace/workspace-xxx 两种命."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-self-check@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244341551?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-self-check",
+      "url": "https://clawhub.ai/skills/openclaw-self-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-self-check",
+    "url": "https://clawhub.ai/skills/openclaw-self-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-self-check-a11fc3607da5b4c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-self-check@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-self-check-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b74ffef9d2f9551d7dd37d729b28b9412d587c51d1b5e49c25bb9379f8f54783",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T16:06:21.638Z"
+}

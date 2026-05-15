@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26514,
+  "uuid": "skill-clawhub-engagelab-app-push",
+  "skillKey": "clawhub-engagelab-app-push",
+  "name": "EngageLab App Push",
+  "summary": "Call EngageLab App Push REST APIs to send push notifications and in-app messages to Android, iOS, and HarmonyOS devices; manage tags and aliases; create sche...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.engagelab_app_push",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DevEngageLab",
+      "features": [
+        "Call EngageLab App Push REST APIs to send push notifications and in-app messages to Android, iO.",
+        "manage tags and aliases",
+        "create sche..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/engagelab-app-push@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/113164142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "engagelab-app-push",
+      "url": "https://clawhub.ai/skills/engagelab-app-push"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "engagelab-app-push",
+    "url": "https://clawhub.ai/skills/engagelab-app-push",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/engagelab-app-push-b2754d05a12d1134.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/engagelab-app-push@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-engagelab-app-push-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a53ec8f029911a72801b59d70813f79c94cbb5df3cf92d2b39ed881b2dd539b4",
+      "artifactSizeBytes": 2077
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T06:23:41.697Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63262,
+  "uuid": "skill-clawhub-lobster-market-2",
+  "skillKey": "clawhub-lobster-market-2",
+  "name": "Lobster Market",
+  "summary": "龙虾集市客户端 - Agent 任务交易市场。支持发布任务、认领任务、提交结果、验收付款。x402 链上 P2P 支付。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_market_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anonymous",
+      "features": [
+        "Agent 任务交易市场。支持发布任务、认领任务、提交结果、验收付款。x402 链上 P2P 支付。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-market-2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32920883?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-market-2",
+      "url": "https://clawhub.ai/skills/lobster-market-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-market-2",
+    "url": "https://clawhub.ai/skills/lobster-market-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-market-2-9abed0aaf28bde4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-market-2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-market-2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6176559930dc517c8b7842ea25890b711090bfaf6fe0a3aef9b7c49735c78dc",
+      "artifactSizeBytes": 2164
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T05:38:34.531Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-thread-reader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_thread_reader",
+  "skill": {
+    "id": 31286,
+    "skillKey": "clawhub-x-thread-reader",
+    "name": "X Thread Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-thread-reader",
+    "url": "https://clawhub.ai/skills/x-thread-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-thread-reader-ed73df4f6fd89eee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch full text or generate a PDF from any X/Twitter thread using twitter-thread.com. Use when asked to \"get the full thread\", \"read this tweet\", \"save this..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ngmeyer",
+      "userId": "publishers:ngmeyer",
+      "displayName": "Neal Meyer",
+      "image": "https://avatars.githubusercontent.com/u/3868701?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773814057781,
+      "changelog": "Initial release: fetch full text or PDF from X/Twitter threads via twitter-thread.com. Zero deps beyond curl + python3.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6e4d3c2fd90322cc1d707d3fed2de21344b425c7277980a33f5db1d908fcb13"
+}

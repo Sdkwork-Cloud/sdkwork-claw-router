@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30470,
+  "uuid": "skill-clawhub-openclaw-zulip-channel",
+  "skillKey": "clawhub-openclaw-zulip-channel",
+  "name": "OpenClaw Zulip Channel",
+  "summary": "Install and configure the OpenClaw Zulip channel plugin from npm. Use when OpenClaw needs to add Zulip support, switch from a local path install to the publi...",
+  "version": "2026.4.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_zulip_channel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FtlC-ian",
+      "features": [
+        "Install and configure the OpenClaw Zulip channel plugin from npm",
+        "Use when OpenClaw needs to add Zulip support, switch from a local path install to the publi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-zulip-channel@2026.4.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40432656?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-zulip-channel",
+      "url": "https://clawhub.ai/skills/openclaw-zulip-channel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-zulip-channel",
+    "url": "https://clawhub.ai/skills/openclaw-zulip-channel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-zulip-channel-e9a42ec5b10e774f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-zulip-channel@2026.4.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-zulip-channel-2026.4.7.json",
+      "version": "2026.4.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab18551026bdfa03c312d4c27eb6b097f58303a935d2aa4ec33244df95566787",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T23:46:15.953Z"
+}

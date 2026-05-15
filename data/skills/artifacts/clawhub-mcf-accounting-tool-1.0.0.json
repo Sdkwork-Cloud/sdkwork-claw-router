@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcf-accounting-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcf_accounting_tool",
+  "skill": {
+    "id": 54404,
+    "skillKey": "clawhub-mcf-accounting-tool",
+    "name": "Accounting Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcf-accounting-tool",
+    "url": "https://clawhub.ai/skills/mcf-accounting-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcf-accounting-tool-55667cd1d80df237.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Financial management with invoices, expenses, job costing, P&L reports, and QuickBooks sync — built for AI agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cameron48",
+      "userId": "s17drfmnfgy51netkcattne1118411vc",
+      "displayName": "Cameron48",
+      "image": "https://avatars.githubusercontent.com/u/135250315?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775101569660,
+      "changelog": "Initial release of Accounting Tool.\n\n- Provides API endpoints for invoices, expenses, job costing, P&L reports, and QuickBooks sync.\n- Designed for agent-driven financial management—supports invoice creation/sending, expense logging, and project profitability tracking.\n- All operations require x402 (USDC on Base L2) micropayments per call.\n- Includes detailed pricing and authentication notes in documentation.\n- Enables seamless automation of financial workflows and QuickBooks integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dbfc146b21b2e6471b03a59249af12ad0f54ba2ecd6eede7d7e01c1100b6fe80"
+}

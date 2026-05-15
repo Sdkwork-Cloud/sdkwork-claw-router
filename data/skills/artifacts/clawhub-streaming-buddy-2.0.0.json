@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/streaming-buddy@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.streaming_buddy",
+  "skill": {
+    "id": 10672,
+    "skillKey": "clawhub-streaming-buddy",
+    "name": "Streaming Buddy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "streaming-buddy",
+    "url": "https://clawhub.ai/skills/streaming-buddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/streaming-buddy-425a624394a9d7f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal streaming assistant with learning preferences. Tracks what you're watching, learns your taste, and suggests what to watch next based on your services, mood, and preferences. Use when asked about movies, TV shows, streaming service."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "udiedrichsen",
+      "userId": "publishers:udiedrichsen",
+      "displayName": "udiedrichsen",
+      "image": "https://avatars.githubusercontent.com/u/4386398?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2404,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1769431566851,
+      "changelog": "v2.0: Learning system, mood-based recommendations, match explanations",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:03dc0be9e9b8c4ee3fcaa6341fed9ae4726555a39eee7ae31bf87c00ebf8e7b9"
+}

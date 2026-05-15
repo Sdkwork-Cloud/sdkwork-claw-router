@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16656,
+  "uuid": "skill-clawhub-glm-image-gen",
+  "skillKey": "clawhub-glm-image-gen",
+  "name": "GLM-Image-Gen",
+  "summary": "Official skill for generating high-quality images from text prompts using ZhiPu GLM-Image API. Excellent at scientific illustrations, high-quality portraits,...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glm_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jared Wen",
+      "features": [
+        "Official skill for generating high-quality images from text prompts using ZhiPu GLM-Image API",
+        "Excellent at scientific illustrations, high-quality portraits,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/glm-image-gen@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142211841?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "glm-image-gen",
+      "url": "https://clawhub.ai/skills/glm-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glm-image-gen",
+    "url": "https://clawhub.ai/skills/glm-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glm-image-gen-34efbf4cdac6dd00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/glm-image-gen@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-glm-image-gen-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d47f0fe34deef657ae4d4e667b73b714d480fe692215994889c7c62472cb9ae",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T12:23:08.302Z"
+}

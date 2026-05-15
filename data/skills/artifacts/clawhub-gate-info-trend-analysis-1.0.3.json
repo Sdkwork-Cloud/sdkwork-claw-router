@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-info-trend-analysis@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_info_trend_analysis",
+  "skill": {
+    "id": 26462,
+    "skillKey": "clawhub-gate-info-trend-analysis",
+    "name": "gate-info-trendanalysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-info-trend-analysis",
+    "url": "https://clawhub.ai/skills/gate-info-trend-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-info-trend-analysis-a0e0901ef6eedfd0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trend and technical analysis. Use this skill ONLY when the user's query is exclusively about technical indicators or trend analysis for one coin with no othe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gate-exchange",
+      "userId": "s172g4d1dcv6ccs6desbb2xw1583qza9",
+      "displayName": "Gate",
+      "image": "https://avatars.githubusercontent.com/u/33109813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775558103363,
+      "changelog": "gate-info-trend-analysis 1.0.3\n\n- Updated shared rules references for better alignment with central documentation (now use relative paths in SKILL.md).\n- Clarified and simplified local maintenance flow—maintenance scripts are now optional and only referenced when present.\n- Removed the legacy scripts/update-skill.sh file.\n- No changes to core technical analysis workflow or tool usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19f66781be96ee2710ba9ada8afe16b52dc1dab354e44664bfc001e1e8552535"
+}

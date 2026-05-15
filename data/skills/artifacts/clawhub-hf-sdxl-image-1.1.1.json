@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hf-sdxl-image@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hf_sdxl_image",
+  "skill": {
+    "id": 24759,
+    "skillKey": "clawhub-hf-sdxl-image",
+    "name": "hf-sdxl-image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hf-sdxl-image",
+    "url": "https://clawhub.ai/skills/hf-sdxl-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hf-sdxl-image-92b924a9ccc9839b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate an image from a text prompt through the Hugging Face Inference API using stabilityai/stable-diffusion-xl-base-1.0 and the HUGGINGFACE_TOKEN environm..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "slippersheepig",
+      "userId": "s173ga2b39rqhtd9xy993f9zzd83kt2m",
+      "displayName": "sheepgreen",
+      "image": "https://avatars.githubusercontent.com/u/58287293?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 394,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1775394328569,
+      "changelog": "Clarify that generated images must be sent using the active chat provider's required outbound image format instead of assuming a universal local-file delivery flow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4cbd954bf9126892a676bb8699f2ac94ed76eba2de1ecede3c58f348161dc300"
+}

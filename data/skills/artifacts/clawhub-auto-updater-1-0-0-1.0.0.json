@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-updater-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_updater_1_0_0",
+  "skill": {
+    "id": 9998,
+    "skillKey": "clawhub-auto-updater-1-0-0",
+    "name": "Auto Updater 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-updater-1-0-0",
+    "url": "https://clawhub.ai/skills/auto-updater-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-updater-1-0-0-f82b4c540d4ef893.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically update Clawdbot and all installed skills once daily. Runs via cron, checks for updates, applies them, and messages the user with a summary of what changed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pntrivedy",
+      "userId": "publishers:pntrivedy",
+      "displayName": "pntrivedy",
+      "image": "https://avatars.githubusercontent.com/u/848537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2079,
+      "installsAllTime": 85,
+      "installsCurrent": 70,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769357210615,
+      "changelog": "Initial release of the Auto-Updater skill.\n\n- Automatically checks for and applies updates to Clawdbot and all installed skills daily via cron.\n- Sends users a summary message detailing what was updated and any issues encountered.\n- Supports configuration of update timing, timezone, and delivery session.\n- Provides troubleshooting steps, manual commands, and resources for further help.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c342c39cc5565d12379cf0e7959f179d2294f4644ded81d4db2b9aa473dd829e"
+}

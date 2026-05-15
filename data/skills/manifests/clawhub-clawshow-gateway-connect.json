@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25781,
+  "uuid": "skill-clawhub-clawshow-gateway-connect",
+  "skillKey": "clawhub-clawshow-gateway-connect",
+  "name": "ClawShow-Gateway-Connect",
+  "summary": "Install and activate @bowong/clawshow-gateway in OpenClaw, then migrate existing Gateway channel configuration to ClawShow with rollback safety. Use when a u...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawshow_gateway_connect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yudi-xiao",
+      "features": [
+        "Install and activate @bowong/clawshow-gateway in OpenClaw, then migrate existing Gateway channe.",
+        "Use when a u..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawshow-gateway-connect@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5916167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawshow-gateway-connect",
+      "url": "https://clawhub.ai/skills/clawshow-gateway-connect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawshow-gateway-connect",
+    "url": "https://clawhub.ai/skills/clawshow-gateway-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawshow-gateway-connect-986e91b94b5bae27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawshow-gateway-connect@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawshow-gateway-connect-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9297821b4aeedcca67cecd4f08271b491ba9b548519218092ec4a3b89ac27613",
+      "artifactSizeBytes": 2306
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T05:36:54.030Z"
+}

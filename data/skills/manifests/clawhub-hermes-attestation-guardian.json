@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42395,
+  "uuid": "skill-clawhub-hermes-attestation-guardian",
+  "skillKey": "clawhub-hermes-attestation-guardian",
+  "name": "hermes-attestation-guardian",
+  "summary": "Hermes-only runtime security attestation and drift detection skill for operator-managed Hermes infrastructure.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_attestation_guardian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "davida-ps",
+      "features": [
+        "Hermes-only runtime security attestation and drift detection skill for operator-managed Hermes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hermes-attestation-guardian@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232346510?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hermes-attestation-guardian",
+      "url": "https://clawhub.ai/skills/hermes-attestation-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-attestation-guardian",
+    "url": "https://clawhub.ai/skills/hermes-attestation-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-attestation-guardian-2497faeaec3a89e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hermes-attestation-guardian@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hermes-attestation-guardian-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b1f6604835a1fdfb5cee6d30847dc076e14a35677fbe47eb61e721302d36653",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T11:00:07.586Z"
+}

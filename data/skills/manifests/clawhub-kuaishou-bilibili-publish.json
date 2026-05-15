@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65767,
+  "uuid": "skill-clawhub-kuaishou-bilibili-publish",
+  "skillKey": "clawhub-kuaishou-bilibili-publish",
+  "name": "Kuaishou Bilibili Publish",
+  "summary": "通过浏览器自动化脚本实现快手、B站和抖音视频的批量上传、封面设置、标题与关键词填写和发布操作。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kuaishou_bilibili_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaohei2022",
+      "features": [
+        "通过浏览器自动化脚本实现快手、B站和抖音视频的批量上传、封面设置、标题与关键词填写和发布操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kuaishou-bilibili-publish@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100511719?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kuaishou-bilibili-publish",
+      "url": "https://clawhub.ai/skills/kuaishou-bilibili-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kuaishou-bilibili-publish",
+    "url": "https://clawhub.ai/skills/kuaishou-bilibili-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kuaishou-bilibili-publish-5f86a49e2c202dae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kuaishou-bilibili-publish@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-kuaishou-bilibili-publish-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a9c643db55799ed6069172c24b87f2d904816f75def89aff4c5e4cbde6f8cd8",
+      "artifactSizeBytes": 2010
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T01:31:51.860Z"
+}

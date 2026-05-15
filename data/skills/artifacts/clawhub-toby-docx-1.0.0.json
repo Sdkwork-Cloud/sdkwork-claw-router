@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toby-docx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toby_docx",
+  "skill": {
+    "id": 48471,
+    "skillKey": "clawhub-toby-docx",
+    "name": "docx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toby-docx",
+    "url": "https://clawhub.ai/skills/toby-docx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toby-docx-0816262a64fbada0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files). Triggers include: any mention of 'Word doc',..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobeyrebecca",
+      "userId": "s17a4w4rxr2w5b31z6gnpnqg2184msz0",
+      "displayName": "TobeyRebecca",
+      "image": "https://avatars.githubusercontent.com/u/260428668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777359433896,
+      "changelog": "Version 1.0.0\n\n- Initial release of the Docx skill for creating, reading, editing, and manipulating Word documents (.docx files).\n- Supports workflows for professional document production, including inserting images, tables of contents, and formatting enhancements.\n- Handles requests to extract, reorganize, and polish content in Word docs for various deliverables such as reports, memos, and templates.\n- Excludes use for PDFs, spreadsheets, Google Docs, or unrelated coding tasks.\n- Features clear triggers and usage guidelines for best results in creative and developer-focused workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95e515c621de049d08c49db53dcc4bc63c19dceb7fcea363fef4c4e419037325"
+}

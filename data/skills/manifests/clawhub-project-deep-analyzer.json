@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69177,
+  "uuid": "skill-clawhub-project-deep-analyzer",
+  "skillKey": "clawhub-project-deep-analyzer",
+  "name": "project-deep-analyzer",
+  "summary": "深度分析项目的系统边界、核心概念、模块架构、关键算法、技术选型以及错误排查。当用户需要深入理解代码库或定位疑难问题时调用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_deep_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mason",
+      "features": [
+        "深度分析项目的系统边界、核心概念、模块架构、关键算法、技术选型以及错误排查。当用户需要深入理解代码库或定位疑难问题时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project-deep-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27564626?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project-deep-analyzer",
+      "url": "https://clawhub.ai/skills/project-deep-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-deep-analyzer",
+    "url": "https://clawhub.ai/skills/project-deep-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-deep-analyzer-7e0eaebc4775ddf5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project-deep-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-deep-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1cbf54137981e2e2d47ea00eb5a51389eb72dce16dc4f630103809fd6e37dac",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T07:19:59.829Z"
+}

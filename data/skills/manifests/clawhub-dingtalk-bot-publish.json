@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61704,
+  "uuid": "skill-clawhub-dingtalk-bot-publish",
+  "skillKey": "clawhub-dingtalk-bot-publish",
+  "name": "Dingtalk Bot Publish",
+  "summary": "调用钉钉开放平台API，支持用户搜索/详情/查询、部门管理（搜索/详情/子部门/用户列表/父部门）、机器人单聊消息发送、群聊消息发送、群内机器人列表查询、Stream模式事件推送、多会话隔离管理等核心功能。Use when needing to search DingTalk users or departmen...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_bot_publish",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zao_hon",
+      "features": [
+        "调用钉钉开放平台API，支持用户搜索/详情/查询、部门管理（搜索/详情/子部门/用户列表/父部门）、机器人单聊消息发送、群聊消息发送、群内机器人列表查询、Stream模式事件推送、多会话隔离."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dingtalk-bot-publish@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17217613?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dingtalk-bot-publish",
+      "url": "https://clawhub.ai/skills/dingtalk-bot-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-bot-publish",
+    "url": "https://clawhub.ai/skills/dingtalk-bot-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-bot-publish-74f4de7214d0739a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dingtalk-bot-publish@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dingtalk-bot-publish-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:246706e5e79ca16ab1529b2030e9deb54598c61a5dfcdc037eb6eda3601e496c",
+      "artifactSizeBytes": 2620
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T03:43:21.757Z"
+}

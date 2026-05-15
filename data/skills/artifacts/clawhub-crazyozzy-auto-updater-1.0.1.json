@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crazyozzy-auto-updater@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crazyozzy_auto_updater",
+  "skill": {
+    "id": 28461,
+    "skillKey": "clawhub-crazyozzy-auto-updater",
+    "name": "CrazyOzzy Auto Updater"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crazyozzy-auto-updater",
+    "url": "https://clawhub.ai/skills/crazyozzy-auto-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crazyozzy-auto-updater-8aa85e645c067ac5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically update OpenClaw and installed skills on a schedule. Use when setting up or maintaining daily/weekly update automation, checking for OpenClaw up..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crazyozzy",
+      "userId": "publishers:crazyozzy",
+      "displayName": "crazyozzy",
+      "image": "https://avatars.githubusercontent.com/u/67761781?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 324,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773502183065,
+      "changelog": "Fork and modernize for current OpenClaw: replace legacy clawdbot/clawdhub flows with openclaw/clawhub, update scheduler guidance, and refresh maintenance workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7675ff2d5bedc3aca43b11ec23894bdd7a6ba16c916d87808675c05af8a19955"
+}

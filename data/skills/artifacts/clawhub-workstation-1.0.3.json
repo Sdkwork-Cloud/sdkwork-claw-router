@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workstation@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workstation",
+  "skill": {
+    "id": 55068,
+    "skillKey": "clawhub-workstation",
+    "name": "WORKSTATION.md - Your Agent's Own Linux Server"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workstation",
+    "url": "https://clawhub.ai/skills/workstation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workstation-d195d36bd79da7df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and SSH into cloud Linux servers with root access, instantly hosting websites on https://<name>.workstation.md via nginx on port 80."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "renning22",
+      "userId": "s170hey90qee9bets5ysrasphn83eh82",
+      "displayName": "Ning Ren",
+      "image": "https://avatars.githubusercontent.com/u/4597657?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774347575256,
+      "changelog": "- Major documentation overhaul for clarity and brevity.\n- Simplified step-by-step quick start guide for agents.\n- Added explicit SSH key setup and public URL info.\n- Clear workflow instructions for building and deploying projects.\n- Expanded real-world usage suggestions for agents.\n- No core functionality changes—documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c927fe672848f4eab5477126e07fd4c159177a54eb9769b435a99fefea7a79f"
+}

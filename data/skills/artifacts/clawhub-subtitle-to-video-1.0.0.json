@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subtitle-to-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_to_video",
+  "skill": {
+    "id": 48658,
+    "skillKey": "clawhub-subtitle-to-video",
+    "name": "Subtitle To Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-to-video",
+    "url": "https://clawhub.ai/skills/subtitle-to-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-to-video-4a634810545c06b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add subtitle files, video into captioned videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. YouTubers, content creators use it for add..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 97,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777338123498,
+      "changelog": "Initial release of subtitle-to-video skill\n\n- Embed subtitle files into videos up to 500MB (supports MP4, MOV, AVI, WebM).\n- Designed for YouTube creators and content makers to add captions; outputs 1080p MP4 files.\n- Connects to cloud GPU backend for fast, server-side rendering (20–40 seconds typical for short clips).\n- Handles user requests, uploads, exports, and tracks status via dedicated API endpoints.\n- Supports session-based workflows and stateful editing, with progress updates and error handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9200af4e248f741fb35562460a2782d794a37bd55d8d9ac02f408e00766dd94c"
+}

@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "31third-safe-rebalancer-simple",
+    "displayName": "31Third Safe Rebalancer (Simple)",
+    "summary": "One-step Safe rebalancer using on-chain 31Third policies.",
+    "tags": {
+      "latest": "0.2.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1008,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 7
+    },
+    "createdAt": 1771606282295,
+    "updatedAt": 1778387060102
+  },
+  "latestVersion": {
+    "version": "0.2.0",
+    "createdAt": 1773746036538,
+    "changelog": "**Summary:**  \nAdds price oracle support and improves deployment safety checks.\n\n- Added PriceOracle contract ABI and integration.\n- Safety checks now correctly validate executor address against ExecutorModule.executor.\n- Price oracle references (from StaticAllocation and Slippage) are now used for pricing.\n- Deployment verification output updated to include PriceOracle and Executor fields.\n- New tests and refactored CLI tools for expanded deployment and policy validation.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "phips0812",
+    "userId": "publishers:phips0812",
+    "displayName": "Phips0812",
+    "image": "https://avatars.githubusercontent.com/u/16557578?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.env_credential_access, suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778387060102
+  }
+}

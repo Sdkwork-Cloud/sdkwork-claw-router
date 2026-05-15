@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42692,
+  "uuid": "skill-clawhub-json-utils",
+  "skillKey": "clawhub-json-utils",
+  "name": "JSON Utils",
+  "summary": "Robust JSON parsing and validation with Pydantic schemas, JSON Schema validation, batch processing, and automatic JSON repair for LLM outputs. Use when Codex...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.json_utils",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KikiKari",
+      "features": [
+        "Robust JSON parsing and validation with Pydantic schemas, JSON Schema validation, batch process.",
+        "Use when Codex..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/json-utils@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272986081?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "json-utils",
+      "url": "https://clawhub.ai/skills/json-utils"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "json-utils",
+    "url": "https://clawhub.ai/skills/json-utils",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/json-utils-4fac2852035c243b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/json-utils@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-json-utils-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f93a13fff325b5c42a13079d8cd052b16ae758f5d2feab0f199e250279929268",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T06:12:25.579Z"
+}

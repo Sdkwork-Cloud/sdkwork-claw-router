@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/probar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.probar",
+  "skill": {
+    "id": 16151,
+    "skillKey": "clawhub-probar",
+    "name": "PROBAR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "probar",
+    "url": "https://clawhub.ai/skills/probar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/probar-1a2bf4b26a2769ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send WhatsApp messages to other people or search/sync WhatsApp history via the wacli CLI (not for normal user chats)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gabrielsayumi",
+      "userId": "publishers:gabrielsayumi",
+      "displayName": "gabrielsayumi",
+      "image": "https://avatars.githubusercontent.com/u/63942397?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 922,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770682297211,
+      "changelog": "valida que todo funcione sin restreicciones.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c1292fb784add16b7be0e581abb6d32a0faf5d3501f329f78b07d9cff4d8ef3a"
+}

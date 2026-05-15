@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50053,
+  "uuid": "skill-clawhub-flowconcierge",
+  "skillKey": "clawhub-flowconcierge",
+  "name": "FlowConcierge — AI Phone Receptionist for Any Business",
+  "summary": "AI phone receptionist for any business. Point it at your website and it scrapes your content, builds a knowledge base, spins up a VAPI voice assistant, conne...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flowconcierge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "windseeker1111",
+      "features": [
+        "AI phone receptionist for any business",
+        "Point it at your website and it scrapes your content, builds a knowledge base, spins up a VAPI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flowconcierge@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127914008?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flowconcierge",
+      "url": "https://clawhub.ai/skills/flowconcierge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flowconcierge",
+    "url": "https://clawhub.ai/skills/flowconcierge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flowconcierge-71e8fb123864adf6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flowconcierge@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flowconcierge-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edff36d2f07665641f76efa8a83890cf3d7c55cd03db629bdae03b8820d83924",
+      "artifactSizeBytes": 2115
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T06:59:13.372Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/superdesign@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.superdesign",
+  "skill": {
+    "id": 8265,
+    "skillKey": "clawhub-superdesign",
+    "name": "SuperDesign"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "superdesign",
+    "url": "https://clawhub.ai/skills/superdesign",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/superdesign-73597d244867772f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert frontend design guidelines for creating beautiful, modern UIs. Use when building landing pages, dashboards, or any user interface."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mpociot",
+      "userId": "publishers:mpociot",
+      "displayName": "mpociot",
+      "image": "https://avatars.githubusercontent.com/u/804684?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 34289,
+      "installsAllTime": 315,
+      "installsCurrent": 299,
+      "stars": 171,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767719074735,
+      "changelog": "Frontend design guidelines based on SuperDesign patterns",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4cc8b1b7ed0b6f57a09622e03bff4f0b257c47efb3d5d5d2c7f0fda7b6d5c0b1"
+}

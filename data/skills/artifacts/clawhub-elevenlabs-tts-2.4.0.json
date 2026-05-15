@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elevenlabs-tts@2.4.0",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elevenlabs_tts",
+  "skill": {
+    "id": 8771,
+    "skillKey": "clawhub-elevenlabs-tts",
+    "name": "Elevenlabs Tts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elevenlabs-tts",
+    "url": "https://clawhub.ai/skills/elevenlabs-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elevenlabs-tts-d8350b4d5c26c703.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ElevenLabs TTS - the best ElevenLabs integration for OpenClaw. ElevenLabs Text-to-Speech with emotional audio tags, ElevenLabs voice synthesis for WhatsApp,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaharsha",
+      "userId": "s1731v0zz0xz2rh03mt12r81t983g5b0",
+      "displayName": "shaharsh",
+      "image": "https://avatars.githubusercontent.com/u/11346965?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 6471,
+      "installsAllTime": 33,
+      "installsCurrent": 32,
+      "stars": 6,
+      "versions": 24
+    },
+    "latestVersion": {
+      "version": "2.4.0",
+      "createdAt": 1775035003031,
+      "changelog": "Fix: Updated TTS file path from /tmp/tts-*/ to /tmp/openclaw/tts-*/. Added safety check to always use latest file. Added workspace copy step for message tool compatibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e597680961607b9bec96fb1a5665473f41f0af3bb166ca7a06f3a3f5f97ca41d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-odoo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_odoo",
+  "skill": {
+    "id": 28740,
+    "skillKey": "clawhub-openclaw-odoo",
+    "name": "OpenClaw Odoo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-odoo",
+    "url": "https://clawhub.ai/skills/openclaw-odoo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-odoo-0d852f909a8dd42d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full-featured Odoo 17/18/19 ERP connector for OpenClaw — Sales, CRM, Purchase, Inventory, Projects, HR, Fleet, Manufacturing (80+ operations, TypeScript plug..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tuanle96",
+      "userId": "publishers:tuanle96",
+      "displayName": "Lê Anh Tuấn",
+      "image": "https://avatars.githubusercontent.com/u/23079288?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 792,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771865933329,
+      "changelog": "Initial release of openclaw-odoo: a full-featured Odoo ERP connector for OpenClaw.\n\n- Integrates Odoo 17/18/19 with OpenClaw for chat-driven business operations across 80+ modules (Sales, CRM, Purchase, Inventory, Projects, HR, Manufacturing, and more).\n- Supports 153+ Odoo modules with smart natural language commands.\n- Implements fuzzy search with auto-creation logic (smart actions) for customers, products, projects, and other dependencies.\n- Features TypeScript plugin, XML-RPC integration, and robust error handling.\n- Enables batch and auto-matched operations—no IDs required; works by names.\n- Provides extensive command coverage for everyday business tasks (quotations, orders, invoices, HR, inventory, manufacturing, fleet, calendar, eCommerce, and more).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2d448e5408042ba81df2df93240608d708bb07670287d84182074e0c2cc0df33"
+}

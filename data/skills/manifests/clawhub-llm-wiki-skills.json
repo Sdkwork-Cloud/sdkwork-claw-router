@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30208,
+  "uuid": "skill-clawhub-llm-wiki-skills",
+  "skillKey": "clawhub-llm-wiki-skills",
+  "name": "LLM-Wiki-skills",
+  "summary": "LLM-powered personal wiki knowledge base system. Use this when user wants to build and maintain a persistent wiki using LLMs following the LLM Wiki pattern (...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_wiki_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1knownothing",
+      "features": [
+        "LLM-powered personal wiki knowledge base system",
+        "Use this when user wants to build and maintain a persistent wiki using LLMs following the LLM W."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-wiki-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156494547?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-wiki-skills",
+      "url": "https://clawhub.ai/skills/llm-wiki-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-wiki-skills",
+    "url": "https://clawhub.ai/skills/llm-wiki-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-wiki-skills-ff90f06ec30a2bf0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-wiki-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-wiki-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0857eebc0dd9bc5f44e769672537957a0598b420baf4082584077eae5716f1a1",
+      "artifactSizeBytes": 2143
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T13:24:31.900Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67731,
+  "uuid": "skill-clawhub-consistency-checker",
+  "skillKey": "clawhub-consistency-checker",
+  "name": "Consistency Checker",
+  "summary": "一致性检查器 - 检测小说章节中的一致性问题。当需要检查角色名称、特征、时间线、地点描述是否前后一致时使用。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consistency_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuzhihui886",
+      "features": [
+        "检测小说章节中的一致性问题。当需要检查角色名称、特征、时间线、地点描述是否前后一致时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/consistency-checker@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213567314?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "consistency-checker",
+      "url": "https://clawhub.ai/skills/consistency-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consistency-checker",
+    "url": "https://clawhub.ai/skills/consistency-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consistency-checker-d0dea3bcb4b626bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/consistency-checker@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-consistency-checker-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3957cc4cf35fa56478621ef7c7024f3f141f2ed615d04bcd1fe6b544cbe00dd7",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T08:18:46.040Z"
+}

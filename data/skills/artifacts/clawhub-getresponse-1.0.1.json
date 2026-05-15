@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/getresponse@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.getresponse",
+  "skill": {
+    "id": 17922,
+    "skillKey": "clawhub-getresponse",
+    "name": "GetResponse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "getresponse",
+    "url": "https://clawhub.ai/skills/getresponse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/getresponse-dba22591a7db3e7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GetResponse API integration with managed OAuth. Manage email marketing campaigns, contacts, newsletters, autoresponders, and segments. Use this skill when us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 734,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777588310371,
+      "changelog": "- Updated all endpoint base URLs from gateway.maton.ai and ctrl.maton.ai to api.maton.ai for consistency and clarity.\n- Revised documentation examples and instructions to use the new endpoint base URLs.\n- Added a \"Security & Permissions\" section outlining user approval requirements on write operations.\n- Minor corrections to connection header usage instructions for clarity.\n- Removed obsolete LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d4ba7f722d18776d176fe267f28200821b156b970d9b33897d89f99fe541173"
+}

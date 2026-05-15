@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39650,
+  "uuid": "skill-clawhub-openclaw-browser-wsl-attach",
+  "skillKey": "clawhub-openclaw-browser-wsl-attach",
+  "name": "OpenClaw Browser WSL Attach",
+  "summary": "Automatically prepare, repair, and attach an OpenClaw-controlled Chromium browser in WSL or Linux environments where OpenClaw runs as root or in a headless s...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_browser_wsl_attach",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenzheke",
+      "features": [
+        "Automatically prepare, repair, and attach an OpenClaw-controlled Chromium browser in WSL or Lin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-browser-wsl-attach@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3626262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-browser-wsl-attach",
+      "url": "https://clawhub.ai/skills/openclaw-browser-wsl-attach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-browser-wsl-attach",
+    "url": "https://clawhub.ai/skills/openclaw-browser-wsl-attach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-browser-wsl-attach-b86d4c43b874399b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-browser-wsl-attach@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-browser-wsl-attach-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3e219d4669c8e4f4d26a5e6e02ffd953de6bdeedb43b7ffbf5330a7740ff30c",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T07:51:51.055Z"
+}

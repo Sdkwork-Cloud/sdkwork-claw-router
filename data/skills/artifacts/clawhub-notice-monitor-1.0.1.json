@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notice-monitor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notice_monitor",
+  "skill": {
+    "id": 70071,
+    "skillKey": "clawhub-notice-monitor",
+    "name": "Notice Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notice-monitor",
+    "url": "https://clawhub.ai/skills/notice-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notice-monitor-940f667e51d29a7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动监控任意网站公告列表页，支持关键词过滤、多层级分类、定时推送及多渠道通知（钉钉、微信、邮件）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jerryharbin",
+      "userId": "s179rb846jsq1tsxfstf45jq35842qe2",
+      "displayName": "jerryharbin",
+      "image": "https://avatars.githubusercontent.com/u/18597096?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 328,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773974712823,
+      "changelog": "修复 v1.0.1: 优化页面加载逻辑/增加数据等待/修复省级数据抓取/改进层级切换",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:40631b843c930ed17288991b687f73bfde42dcbcf2795863da063e65f67c90b8"
+}

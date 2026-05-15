@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-perf@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_perf",
+  "skill": {
+    "id": 36698,
+    "skillKey": "clawhub-openclaw-perf",
+    "name": "OpenClaw Performance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-perf",
+    "url": "https://clawhub.ai/skills/openclaw-perf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-perf-4dc09464ee3299ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performance analysis and optimization. Profiles code execution, identifies bottlenecks, and suggests optimizations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michealxie001",
+      "userId": "s170w0cbg2mpaewxv2748qq5cx83hwge",
+      "displayName": "michealxie001",
+      "image": "https://avatars.githubusercontent.com/u/231448030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775043026464,
+      "changelog": "Performance analysis and bottleneck detection tool",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:572a332ad3b726f86ac3c8a3fe09797a319d2a9eb9d808ad8a777337329154b7"
+}

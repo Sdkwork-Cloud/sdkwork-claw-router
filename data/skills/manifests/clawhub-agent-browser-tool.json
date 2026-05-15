@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56809,
+  "uuid": "skill-clawhub-agent-browser-tool",
+  "skillKey": "clawhub-agent-browser-tool",
+  "name": "Agent Browser - 浏览器自动化",
+  "summary": "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents to navigate, click, type, and snapshot pages via structured co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cp3d1455926-svg",
+      "features": [
+        "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-browser-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268315927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-browser-tool",
+      "url": "https://clawhub.ai/skills/agent-browser-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser-tool",
+    "url": "https://clawhub.ai/skills/agent-browser-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser-tool-f64fb1bbcd55bf3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-browser-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-browser-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34a2120a014f99f4ee02784bbf0a13c0faadaeec34c5eba66bed8f98bbe707b5",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T05:48:29.283Z"
+}

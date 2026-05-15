@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50593,
+  "uuid": "skill-clawhub-gateway-env-injector",
+  "skillKey": "clawhub-gateway-env-injector",
+  "name": "Gateway Env Injector",
+  "summary": "Safely inject API keys from 1Password into macOS LaunchAgent plists using PlistBuddy. Use when running OpenClaw on macOS and storing secrets in 1Password — a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gateway_env_injector",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nissan Dookeran",
+      "features": [
+        "Safely inject API keys from 1Password into macOS LaunchAgent plists using PlistBuddy",
+        "Use when running OpenClaw on macOS and storing secrets in 1Password — a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gateway-env-injector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gateway-env-injector",
+      "url": "https://clawhub.ai/skills/gateway-env-injector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gateway-env-injector",
+    "url": "https://clawhub.ai/skills/gateway-env-injector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gateway-env-injector-e5b705c4a69d1fd0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gateway-env-injector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gateway-env-injector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca96e0375a786228c42016e6fa0980ca494f45db1dd26e9795d226334a1059fe",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T19:05:58.636Z"
+}

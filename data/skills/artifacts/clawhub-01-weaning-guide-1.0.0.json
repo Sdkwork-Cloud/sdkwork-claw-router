@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/01-weaning-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.01_weaning_guide",
+  "skill": {
+    "id": 64196,
+    "skillKey": "clawhub-01-weaning-guide",
+    "name": "01 Weaning Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "01-weaning-guide",
+    "url": "https://clawhub.ai/skills/01-weaning-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/01-weaning-guide-6de97c04d5530ebe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Miki辅食指导 · 输入宝宝月龄+已添加食物+过敏史，输出当前阶段判断+下一步推荐+示例食谱"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777740214190,
+      "changelog": "Miki辅食指导技能首次发布：\n\n- 支持按输入的宝宝月龄、已尝试食物和过敏史，智能判断辅食添加阶段并个性化推荐下一步食材和典型食谱\n- 分类明确辅食添加四大阶段（6-7、8-9、10-12月龄及1-2岁家庭过渡），每期目标、推荐和注意事项一目了然\n- 提供高风险过敏食物添加指引与快速过敏反应应对建议\n- 明确补铁关键节点和优先级，强调红肉及铁强化米粉的重要性\n- 附详细输入与输出模板，方便照搬使用\n- 收录常见育儿疑问与权威解答",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fb3ad2b8fc25982d7e6c49b9d3bf7f77e1a0afabc87de3296df07ff70b4aedc"
+}

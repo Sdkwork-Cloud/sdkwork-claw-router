@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71542,
+  "uuid": "skill-clawhub-resource-master",
+  "skillKey": "clawhub-resource-master",
+  "name": "resource-master",
+  "summary": "根据知识库中的服务器资源测算文档进行服务器资源评估和汇总。使用场景：用户询问医疗产品项目的服务器资源配置、硬件资源测算、资源汇总等。支持多产品整合评估。",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resource_master",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hellohushuai",
+      "features": [
+        "根据知识库中的服务器资源测算文档进行服务器资源评估和汇总。使用场景：用户询问医疗产品项目的服务器资源配置、硬件资源测算、资源汇总等。支持多产品整合评估。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resource-master@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40168227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resource-master",
+      "url": "https://clawhub.ai/skills/resource-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resource-master",
+    "url": "https://clawhub.ai/skills/resource-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resource-master-8a7d5d8c009c5e0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resource-master@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-resource-master-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ec92d13f4b89595a2c2952ee38f70673a201b265e5f9140a27c8f0b71eb0932",
+      "artifactSizeBytes": 2319
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:51:35.241Z"
+}

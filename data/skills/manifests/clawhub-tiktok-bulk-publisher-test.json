@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28322,
+  "uuid": "skill-clawhub-tiktok-bulk-publisher-test",
+  "skillKey": "clawhub-tiktok-bulk-publisher-test",
+  "name": "Tiktok Bulk Publisher Test",
+  "summary": "Automate bulk uploading and publishing of TikTok videos with customizable titles, privacy, comment/duet/stitch controls, and upload status checks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_bulk_publisher_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fly3094",
+      "features": [
+        "Automate bulk uploading and publishing of TikTok videos with customizable titles, privacy, comm."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiktok-bulk-publisher-test@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23025507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiktok-bulk-publisher-test",
+      "url": "https://clawhub.ai/skills/tiktok-bulk-publisher-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-bulk-publisher-test",
+    "url": "https://clawhub.ai/skills/tiktok-bulk-publisher-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-bulk-publisher-test-ca1646b7cb9e7435.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiktok-bulk-publisher-test@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiktok-bulk-publisher-test-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:558e78b0e916a4c7ca8ccf0d3ca83f9694828aba90fbb61626c548cef6b2b3b9",
+      "artifactSizeBytes": 2323
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:12:30.656Z"
+}

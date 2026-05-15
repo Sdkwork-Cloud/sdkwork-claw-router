@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12540,
+  "uuid": "skill-clawhub-cairn-cli",
+  "skillKey": "clawhub-cairn-cli",
+  "name": "letcairn.work",
+  "summary": "Project management for AI agents using markdown files. Install and use the cairn CLI to create projects, manage tasks, track status, and coordinate human-AI collaboration through a shared workspace of markdown files.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cairn_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gregoryehill",
+      "features": [
+        "Project management for AI agents using markdown files",
+        "Install and use the cairn CLI to create projects, manage tasks, track status, and coordinate hu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cairn-cli@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59191663?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cairn-cli",
+      "url": "https://clawhub.ai/skills/cairn-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cairn-cli",
+    "url": "https://clawhub.ai/skills/cairn-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cairn-cli-561fadb98b0027c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cairn-cli@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cairn-cli-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1870ef85c14818c7a8f8342fa02f7153425e856bb06fa307679384197577eed",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T05:49:51.335Z"
+}

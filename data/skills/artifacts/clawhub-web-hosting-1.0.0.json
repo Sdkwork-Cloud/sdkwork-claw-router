@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-hosting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_hosting",
+  "skill": {
+    "id": 17606,
+    "skillKey": "clawhub-web-hosting",
+    "name": "Web Hosting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-hosting",
+    "url": "https://clawhub.ai/skills/web-hosting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-hosting-f985d4d1db2d7cb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy local web projects to live URLs by automating GitHub repo creation, Vercel/Netlify deployment, and optional custom domain setup with SSL and CI/CD."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "h4gen",
+      "userId": "s1789vg92zcrdcbajdp87fjxsh8487xv",
+      "displayName": "Hagen Hoferichter",
+      "image": "https://avatars.githubusercontent.com/u/12556763?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 762,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771087398794,
+      "changelog": "Initial release as an orchestration meta-skill for one-command web hosting:\n\n- Enables local project deployment to live, production URLs with SSL and CI/CD via Vercel or Netlify, orchestrated through above skills.\n- Automates repository creation, code push, host linking, deployment trigger, and live URL verification.\n- Supports optional custom domain DNS setup via domain-dns-ops or api-gateway if available.\n- Provides unified workflow and output contract for framework detection, infra gating, deploy status, and next steps.\n- Enforces explicit credential/auth checks, missing-stage reporting, and robust failure handling at all critical steps.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e2ff28ccf75a3912b749b18ef9ed343194d568e0c65e093c6cca68ee220c8355"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69591,
+  "uuid": "skill-clawhub-coder-helper",
+  "skillKey": "clawhub-coder-helper",
+  "name": "用自然语言描述需求 → 自动生成需求文档 → 打开编辑器",
+  "summary": "将自然语言需求转为需求文档生成requests.txt并自动用首选编辑器打开。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coder_helper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yuyang Wu",
+      "features": [
+        "将自然语言需求转为需求文档生成requests.txt并自动用首选编辑器打开。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coder-helper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216881812?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coder-helper",
+      "url": "https://clawhub.ai/skills/coder-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coder-helper",
+    "url": "https://clawhub.ai/skills/coder-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coder-helper-a6de886dc582772f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coder-helper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coder-helper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02f2ffc349dce74d9f43070f94f841752b3c9a3cbf52eea30db58d617fa18a10",
+      "artifactSizeBytes": 2170
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T15:41:44.598Z"
+}

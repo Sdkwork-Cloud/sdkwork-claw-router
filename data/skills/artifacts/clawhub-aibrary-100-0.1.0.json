@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aibrary-100@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aibrary_100",
+  "skill": {
+    "id": 28744,
+    "skillKey": "clawhub-aibrary-100",
+    "name": "Aibrary 100"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aibrary-100",
+    "url": "https://clawhub.ai/skills/aibrary-100",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aibrary-100-ee274d4820b27183.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "[Aibrary] Access Aibrary's curated list of 100 must-read books for the AI age, organized by category. Use when the user asks about essential books, wants the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asoiso",
+      "userId": "s173h1jpw4kgmsawn20r1fhjtd83nwy1",
+      "displayName": "asoiso",
+      "image": "https://avatars.githubusercontent.com/u/479822?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772713338318,
+      "changelog": "Aibrary-100 v0.1.0 — Initial Release\n\n- Introduces the Aibrary 100: a curated list of 100 must-read books for thriving in the AI age, organized by five core human capabilities.\n- Supports filtering and personalization based on user's category, number of results, and reading purpose.\n- Presents book recommendations with brief or detailed descriptions, plus a “start here” suggestion to help users begin.\n- Responds in the user's input language automatically.\n- Designed to serve essential book recommendations for critical thinking, creativity, systems thinking, execution, and human connection.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:908cde9c87bd75a2e29d8d58f0056da0e761a40f4232c08285c7cd68a5b76cff"
+}

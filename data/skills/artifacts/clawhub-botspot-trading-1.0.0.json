@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/botspot-trading@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.botspot_trading",
+  "skill": {
+    "id": 46704,
+    "skillKey": "clawhub-botspot-trading",
+    "name": "BotSpot Trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "botspot-trading",
+    "url": "https://clawhub.ai/skills/botspot-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/botspot-trading-824b8f9e9ecdc166.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build, backtest, and deploy algorithmic trading strategies using BotSpot's MCP server. Describe your strategy in plain English, AI generates the code, backte..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "grzesir",
+      "userId": "s17dkxxjt069akdnzennk9e5wh84zxvc",
+      "displayName": "Robert Grzesik",
+      "image": "https://avatars.githubusercontent.com/u/1148971?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776317750311,
+      "changelog": "Initial publish: AI trading strategy builder. Generate strategies from plain English, backtest on real data, deploy live to 10+ brokers. 32 MCP tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:225f7caf3ddf23aed6d26fd5f4453e22b1616cea652f240b2cecf1fc09dc7f77"
+}

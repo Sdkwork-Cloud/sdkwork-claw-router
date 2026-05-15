@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-mailbox-light@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_mailbox_light",
+  "skill": {
+    "id": 34109,
+    "skillKey": "clawhub-agent-mailbox-light",
+    "name": "Agent Mailbox Light"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-mailbox-light",
+    "url": "https://clawhub.ai/skills/agent-mailbox-light",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-mailbox-light-2fb6b38b6ba04da8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight cross-agent mailbox using per-workspace file inboxes with best-effort fanout and local read/archive flow. Use when you want a middle layer betwee..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangmeng6666",
+      "userId": "s174nynrh3dhcjsbhjah9txass84jcn0",
+      "displayName": "Meng Yang",
+      "image": "https://avatars.githubusercontent.com/u/37968818?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774151100046,
+      "changelog": "- Major simplification: Replaced previous full CLI/API TypeScript codebase with lightweight shell scripts for core mailbox operations.\n- Redesigned documentation to clarify new minimal, local, best-effort mailbox model and narrow the feature scope.\n- Removed cloud sync, webhook, guaranteed delivery, and execution workflow claims; mailbox is now strictly local and advisory.\n- Added shell scripts for mailbox init, send, list, archive, and cleanup.\n- Removed all previous Node.js source, package files, and TS docs/examples.\n- Target use case: very lightweight, low-noise, per-workspace mail fanout for agent coordination without chat or memory bloat.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:322da821b25bfb321097be587a366c2cac13f68533807bafb4dd3c0a906136da"
+}

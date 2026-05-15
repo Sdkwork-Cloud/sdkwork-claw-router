@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12492,
+  "uuid": "skill-clawhub-ore-miner",
+  "skillKey": "clawhub-ore-miner",
+  "name": "ORE Miner",
+  "summary": "Autonomous ORE mining on Solana via refinORE. Onboard humans, start/stop sessions, optimize tile strategies, track P&L, manage risk, auto-restart, multi-coin...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ore_miner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cubs",
+      "features": [
+        "Autonomous ORE mining on Solana via refinORE",
+        "Onboard humans, start/stop sessions, optimize tile strategies, track P&L, manage risk, auto-res."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ore-miner@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86676753?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ore-miner",
+      "url": "https://clawhub.ai/skills/ore-miner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ore-miner",
+    "url": "https://clawhub.ai/skills/ore-miner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ore-miner-83bd3b12bb5336e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ore-miner@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ore-miner-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f03c8753f59569f77b37b453971e3a2dac040e5941e2a799d616055ff5b0edc1",
+      "artifactSizeBytes": 2486
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T07:39:13.129Z"
+}

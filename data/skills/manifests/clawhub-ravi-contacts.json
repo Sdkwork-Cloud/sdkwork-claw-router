@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50580,
+  "uuid": "skill-clawhub-ravi-contacts",
+  "skillKey": "clawhub-ravi-contacts",
+  "name": "Ravi contacts",
+  "summary": "Manage contacts associated with your identity — list, search, create, update, and delete. Use ravi-contacts to resolve a person's name to their email or phon...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ravi_contacts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Raunak Singwi",
+      "features": [
+        "Manage contacts associated with your identity — list, search, create, update, and delete",
+        "Use ravi-contacts to resolve a person's name to their email or phon..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ravi-contacts@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18749768?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ravi-contacts",
+      "url": "https://clawhub.ai/skills/ravi-contacts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ravi-contacts",
+    "url": "https://clawhub.ai/skills/ravi-contacts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ravi-contacts-1f736ec053b1bcaf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ravi-contacts@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ravi-contacts-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66730ccae7eeba14497359cc70149d71fbb6abc1ba8d83ffb5af30096fc30f25",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T05:46:03.060Z"
+}

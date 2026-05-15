@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/user-growth-coach@2.3.1",
+  "version": "2.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.user_growth_coach",
+  "skill": {
+    "id": 66730,
+    "skillKey": "clawhub-user-growth-coach",
+    "name": "User Growth Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "user-growth-coach",
+    "url": "https://clawhub.ai/skills/user-growth-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/user-growth-coach-e34905456439c17c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "三层反馈复盘系统 + 随手记，连接当前输入、历史复盘和日常上下文，自动识别深层行为模式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jack-yang-ai",
+      "userId": "s17fy463zpx7rzw9znpvr534m183htbb",
+      "displayName": "Jack-Yang-ai",
+      "image": "https://avatars.githubusercontent.com/u/224765952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 394,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.3.1",
+      "createdAt": 1773135030916,
+      "changelog": "v2.3.1 修复元数据字段问题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:147833bcf79c43b36b85561c7c85e4b357ce6603d1074086e5c90ff17c42a776"
+}

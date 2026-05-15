@@ -158,15 +158,15 @@ export function AccountView() {
 
           {/* New Balance & Financial Widget */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-gradient-to-br from-[#1e1e1e] to-[#252525] dark:from-[#252525] dark:to-[#1e1e1e] border border-transparent dark:border-white/10 rounded-2xl p-6 shadow-lg relative overflow-hidden group">
+            <div className="bg-gradient-to-br from-lobster-50 to-amber-50 dark:from-[#252525] dark:to-[#1e1e1e] border border-lobster-100 dark:border-white/10 rounded-2xl p-6 shadow-lg relative overflow-hidden group">
               <div className="absolute right-0 bottom-0 w-32 h-32 bg-lobster-500/10 rounded-full blur-2xl -mr-10 -mb-10 pointer-events-none group-hover:bg-lobster-500/20 transition-all"></div>
               <div className="relative z-10 flex flex-col h-full justify-between">
                 <div>
-                  <div className="flex items-center gap-2 text-slate-300 mb-2">
-                    <Wallet className="w-5 h-5 text-lobster-400" />
+                  <div className="flex items-center gap-2 text-slate-600 dark:text-slate-300 mb-2">
+                    <Wallet className="w-5 h-5 text-lobster-500 dark:text-lobster-400" />
                     <span className="font-medium text-sm">主账户可用积分</span>
                   </div>
-                  <div className="text-4xl font-bold text-white tracking-tight flex items-end gap-2">
+                  <div className="text-4xl font-bold text-slate-900 dark:text-white tracking-tight flex items-end gap-2">
                    {data.availableCredits.toLocaleString()}<span className="text-xl font-medium text-slate-300 ml-1">积分</span>
                   </div>
                 </div>

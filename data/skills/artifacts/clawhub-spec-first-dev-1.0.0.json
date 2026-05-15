@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spec-first-dev@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spec_first_dev",
+  "skill": {
+    "id": 20512,
+    "skillKey": "clawhub-spec-first-dev",
+    "name": "Spec-First Development"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spec-first-dev",
+    "url": "https://clawhub.ai/skills/spec-first-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spec-first-dev-d83d7b76481d0d01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Spec-driven development workflow. Before writing any code, generates a comprehensive SPEC.md covering data models, user flows, API contracts, file structure,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevdogg102396-afk",
+      "userId": "publishers:kevdogg102396-afk",
+      "displayName": "kevdogg102396-afk",
+      "image": "https://avatars.githubusercontent.com/u/257070288?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 551,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772564921072,
+      "changelog": "- Introduces version 1.0.0 of the spec-first-dev skill.\n- Enforces a spec-driven development workflow: generate a detailed SPEC.md before starting any implementation.\n- Clarifies project intent, audits existing code, and creates specs covering models, flows, APIs, file structure, and edge cases.\n- Requires explicit user approval of SPEC.md before any coding begins.\n- Facilitates integration with task-tracking and code review processes.\n- Helps prevent misaligned builds by forcing clear planning and documentation upfront.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5b1c08223f04106ab2ef7aff41dd25cd1c53977fb0bd5d8ad357ab5b4050e1d0"
+}

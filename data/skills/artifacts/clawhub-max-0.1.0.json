@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/max@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.max",
+  "skill": {
+    "id": 72182,
+    "skillKey": "clawhub-max",
+    "name": "Max"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "max",
+    "url": "https://clawhub.ai/skills/max",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/max-9baf3a40312f3984.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "整理Max视频平台公开页面的频道、会员套餐、创作规则及帮助信息，汇总官方公开内容入口和说明。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773931576948,
+      "changelog": "Initial release of the \"max\" skill.\n\n- Registers the \"Max\" skill for organizing public information from the Max video platform.\n- Supports extraction of membership details, content channels, creator info, and help resources from public pages.\n- Focuses on summarizing visible content, membership options, creator rules, and support links.\n- Clearly excludes account sharing, bypassing copyright, membership trading, backend access, or any non-public data.\n- Emphasizes compliance with platform policies and handling of market-specific variations in content and membership offers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1dee1c49bc7f3538bd39f8948692d6ec17ee91beb16d45ff3975f2e8dd17f83a"
+}

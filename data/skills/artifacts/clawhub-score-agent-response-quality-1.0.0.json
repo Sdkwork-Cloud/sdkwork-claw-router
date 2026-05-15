@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/score-agent-response-quality@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.score_agent_response_quality",
+  "skill": {
+    "id": 49076,
+    "skillKey": "clawhub-score-agent-response-quality",
+    "name": "Score Agent Response Quality"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "score-agent-response-quality",
+    "url": "https://clawhub.ai/skills/score-agent-response-quality",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/score-agent-response-quality-efbd067bdc1a11c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Score an AI agent response 0-100 across 6 quality dimensions (depth, recommendations, citations, formatting, trust, monetization-readiness) with improvement..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "operon",
+      "userId": "s17cfjehavemq9hdpntrkaxhjs86686r",
+      "displayName": "Operon",
+      "image": "https://operon.so/assets/logo-wordmark.svg"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 87,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778090361292,
+      "changelog": "Initial release of the agent response quality scoring skill.\n\n- Enables scoring of a sample AI agent response across 6 detailed quality dimensions: Content Depth, Recommendation Surface, Citation Quality, Formatting & Structure, Trust Signals, and Monetization Readiness.\n- Provides a normalized 0–100 quality score and specific, actionable notes for each dimension.\n- Returns top 3 improvement suggestions with estimated score lifts and explanations.\n- Includes detailed Monetization Context based on supplied agent vertical (e.g., DeFi/Crypto, Fintech, etc.) and Operon's current demand pool.\n- Guides to next steps for revenue projection and monetization integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c7740394019dff7dab8e5024b903febbded59ba00a8e26efb60d2a126a523bb"
+}

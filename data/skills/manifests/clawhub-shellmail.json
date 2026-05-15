@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16769,
+  "uuid": "skill-clawhub-shellmail",
+  "skillKey": "clawhub-shellmail",
+  "name": "ShellMail - Email Built for AI Agents",
+  "summary": "Email API for AI agents. Check inbox, read emails, extract OTP codes, search messages via ShellMail. Trigger on \"check email\", \"inbox\", \"otp\", \"verification...",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shellmail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aaron Batchelder",
+      "features": [
+        "Email API for AI agents",
+        "Check inbox, read emails, extract OTP codes, search messages via ShellMail",
+        "Trigger on \"check email\", \"inbox\", \"otp\", \"verification..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shellmail@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8136602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shellmail",
+      "url": "https://clawhub.ai/skills/shellmail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shellmail",
+    "url": "https://clawhub.ai/skills/shellmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shellmail-f76e31ac07b1d05f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shellmail@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-shellmail-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b45ce8ee3c3e2383fae375ee269889e53d45ab641312c15239f92858300e0735",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T02:35:58.299Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69541,
+  "uuid": "skill-clawhub-mytaxi",
+  "skillKey": "clawhub-mytaxi",
+  "name": "Mytaxi",
+  "summary": "在欧洲使用MyTaxi快速叫车、查询行程、估算费用及查看司机和到达时间，支持应用内支付。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mytaxi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "在欧洲使用MyTaxi快速叫车、查询行程、估算费用及查看司机和到达时间，支持应用内支付。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mytaxi@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mytaxi",
+      "url": "https://clawhub.ai/skills/mytaxi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mytaxi",
+    "url": "https://clawhub.ai/skills/mytaxi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mytaxi-220da8556aebe9f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mytaxi@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mytaxi-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96c51bf6ee3a5e8ab008b4c53d77e38ac3c8600bc668c3f69e5935fc1173b070",
+      "artifactSizeBytes": 2135
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:24:25.965Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scrapling-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scrapling_ai",
+  "skill": {
+    "id": 26087,
+    "skillKey": "clawhub-scrapling-ai",
+    "name": "Scrapling AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scrapling-ai",
+    "url": "https://clawhub.ai/skills/scrapling-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scrapling-ai-318ea8e1603d1b47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Scrapling to scrape websites with adaptive parsing, Cloudflare bypass, and MCP support. Handles dynamic content, anti-bot detection, and provides clean H..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nanpaidashi",
+      "userId": "s17dywfy7tk8vm15t4tdtc4ebx83gmat",
+      "displayName": "nanpaidashi",
+      "image": "https://avatars.githubusercontent.com/u/158261059?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773522533161,
+      "changelog": "Initial release with adaptive parsing and Cloudflare bypass",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:712ada4b76791ed30462dd14be13ea2b4a30c183f535cd9b721209a7ea49d196"
+}

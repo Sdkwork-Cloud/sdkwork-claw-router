@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docker-lwops-deployer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_lwops_deployer",
+  "skill": {
+    "id": 64696,
+    "skillKey": "clawhub-docker-lwops-deployer",
+    "name": "Lerwee Docker Lwops Deployer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-lwops-deployer",
+    "url": "https://clawhub.ai/skills/docker-lwops-deployer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-lwops-deployer-ece78e8fcdeb7278.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地 Docker 容器自动化部署技能，支持乐维监控 8.1 环境的一键部署。 适用于：本地开发环境搭建、测试环境快速部署、容器化服务管理。 优势：自动检测系统架构、智能端口管理、Docker 自动安装、cgroup 兼容性处理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lerwee",
+      "userId": "s179drnz45v8z453519b5s430583nh0a",
+      "displayName": "Lerwee",
+      "image": "https://avatars.githubusercontent.com/u/162661167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774515155812,
+      "changelog": "Initial release of docker-lwops-deployer skill.\n\n- 支持乐维监控 8.1 Docker 容器的一键自动化部署，适用于本地开发与测试环境\n- 自动检测系统架构（x86_64、aarch64）并选择合适镜像\n- 实现 Docker 自动安装与 cgroup 兼容处理，无需用户手动配置\n- 提供智能端口分配与冲突检测，自动调整端口设置\n- 接收自然语言命令，支持容器部署、重建、状态查询等多种操作\n- 输出部署结果、容器状态、访问 URL 及详细错误信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7b53f7dee91bbea03f3cfd4046050e6adfe06d578eb3d9bbf2cf20f4b94300e"
+}

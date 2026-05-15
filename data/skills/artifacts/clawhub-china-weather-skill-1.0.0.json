@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-weather-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_weather_skill",
+  "skill": {
+    "id": 72773,
+    "skillKey": "clawhub-china-weather-skill",
+    "name": "⛅ 中国天气查询工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-weather-skill",
+    "url": "https://clawhub.ai/skills/china-weather-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-weather-skill-21aec7e158669c34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中国城市天气查询工具"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "woodcoal",
+      "userId": "s179221b0bprf4tvr4e6cb6zx183kz9d",
+      "displayName": "木炭",
+      "image": "https://avatars.githubusercontent.com/u/70026047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774111669677,
+      "changelog": "- Initial release: major update—completely rewritten for Chinese city weather queries.\n- Now supports querying weather for any Chinese city or county-level region using standard Chinese names.\n- Adds command line tool (weather.py) with the following options: output as JSON, show only today’s data, and include extended life indices (like clothing, UV, etc.).\n- Displays structured output with details such as temperature, wind, and various indices; includes sample output.\n- Fallback methods for weather query are documented, supporting alternate APIs.\n- Chinese interface and documentation, optimized for users in China.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32c63c95825d8f93b0174261ca01864f8a19df90b198eaf4fac3540bed152796"
+}

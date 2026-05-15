@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mistral-agents-orchestrator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mistral_agents_orchestrator",
+  "skill": {
+    "id": 50340,
+    "skillKey": "clawhub-mistral-agents-orchestrator",
+    "name": "Mistral Agents Orchestrator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mistral-agents-orchestrator",
+    "url": "https://clawhub.ai/skills/mistral-agents-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mistral-agents-orchestrator-67eba5eb20a3430a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent orchestration via Mistral's Agents API — register agents, manage conversations, delegate via handoffs, bind function calling tools. Use when buil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nissan",
+      "userId": "s17f2fw07zktjmcgagf5c29tbd83rt7v",
+      "displayName": "Nissan Dookeran",
+      "image": "https://avatars.githubusercontent.com/u/12583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 485,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773613623614,
+      "changelog": "- Updated to version 1.0.1.\n- Added detailed security_notes in metadata, clarifying the use of base64 encoding, UploadFile for document ingestion, and the meaning of \"system prompt.\"\n- No changes to functionality or code; documentation metadata improved for security transparency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1930ea068b6fd6e496a63f05e8bfdc890bac86afd9b5e592a695ea8f1d724962"
+}

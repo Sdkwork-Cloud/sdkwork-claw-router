@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-pan-per-auth-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_pan_per_auth_skill",
+  "skill": {
+    "id": 59659,
+    "skillKey": "clawhub-baidu-pan-per-auth-skill",
+    "name": "Baidu Pan OAuth2 Auth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-pan-per-auth-skill",
+    "url": "https://clawhub.ai/skills/baidu-pan-per-auth-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-pan-per-auth-skill-caaebeec416783ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "百度网盘OAuth2.0授权码模式，获取/刷新access_token。触发词：百度网盘授权、baidu pan auth、access_token过期、refresh_token刷新、百度网盘token。适用场景：(1)首次授权获取token (2)token过期后刷新 (3)定时刷新token保活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ugpoor",
+      "userId": "s177qqrp481qedfn5w9m5nmte183ge14",
+      "displayName": "superStupidBear",
+      "image": "https://avatars.githubusercontent.com/u/6762468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776965063277,
+      "changelog": "Initial release: OAuth2 authorization code flow for Baidu Pan personal apps, with access_token exchange, refresh_token rotation, and scheduled refresh guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b7ab02f3121cf6551568c752503835c6f9dbb134840e6104dbd64214d3a6fb2d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tldr-bak-2026-01-28t18-01-30-10-30@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tldr_bak_2026_01_28t18_01_30_10_30",
+  "skill": {
+    "id": 12514,
+    "skillKey": "clawhub-tldr-bak-2026-01-28t18-01-30-10-30",
+    "name": "Tldr.Bak 2026 01 28T18:01:30+10:30"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tldr-bak-2026-01-28t18-01-30-10-30",
+    "url": "https://clawhub.ai/skills/tldr-bak-2026-01-28t18-01-30-10-30",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tldr-bak-2026-01-28t18-01-30-10-30-f8f2002bae47f0fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Simplified man pages from tldr-pages. Use this to quickly understand CLI tools."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicoataiza",
+      "userId": "publishers:nicoataiza",
+      "displayName": "nicoataiza",
+      "image": "https://avatars.githubusercontent.com/u/65964857?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1654,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769585555988,
+      "changelog": "- Initial release of the tldr skill version 1.0.0.\n- Provides concise, community-driven man pages via the tldr-pages project.\n- Includes usage instructions for viewing command examples, updating the cache, and listing available pages.\n- Recommends using tldr over traditional manuals for quick CLI reference.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:15c8db9c969f3a7000fe51b9072b5eb2f27e23ef781f67e4c853dbc0e3d5bbde"
+}

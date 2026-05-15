@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/home-layout@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_layout",
+  "skill": {
+    "id": 67296,
+    "skillKey": "clawhub-home-layout",
+    "name": "Home Layout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-layout",
+    "url": "https://clawhub.ai/skills/home-layout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-layout-cfb9dd1faa409fc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供空间利用方案、软装搭配灵感及居家动线优化指引。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawkk",
+      "userId": "s170g5yz1q3ksjnn4gz6v24af983h1mh",
+      "displayName": "clawkk",
+      "image": "https://avatars.githubusercontent.com/u/265748372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774227310791,
+      "changelog": "- Initial release of \"Home Layout\" skill.\n- 提供空间利用方案、软装搭配灵感及居家动线优化指引。\n- 支持按地理距离、社交热度、消费档次进行筛选。\n- 返回实时排队、预约、电子票号、营业变动、停车和精准导航等信息。\n- 展示社区真实图库、探店笔记及避坑清单。\n- 建议节假日前查询状态，到店体验尊重商家规则。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:129793ae3879322bcfcfe91aa65af53774a935343201830888a3c3e1b86bf520"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30350,
+  "uuid": "skill-clawhub-paykickstart",
+  "skillKey": "clawhub-paykickstart",
+  "name": "Paykickstart",
+  "summary": "Paykickstart integration. Manage Campaigns. Use when the user wants to interact with Paykickstart data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paykickstart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Paykickstart integration",
+        "Manage Campaigns",
+        "Use when the user wants to interact with Paykickstart data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paykickstart@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paykickstart",
+      "url": "https://clawhub.ai/skills/paykickstart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paykickstart",
+    "url": "https://clawhub.ai/skills/paykickstart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paykickstart-a5223a51f6925954.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paykickstart@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-paykickstart-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8aae817a602fe358cabc9207e125c9bac5df322f81d50decbe73d9482980b4e",
+      "artifactSizeBytes": 1846
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:50:10.547Z"
+}

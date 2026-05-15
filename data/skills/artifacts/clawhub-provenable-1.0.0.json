@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/provenable@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.provenable",
+  "skill": {
+    "id": 43881,
+    "skillKey": "clawhub-provenable",
+    "name": "Verifiable-Recursive-Safety-Guardrails-Runtime"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "provenable",
+    "url": "https://clawhub.ai/skills/provenable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/provenable-bd1070789dd29ce1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Condensed single-file skill for the full AEGX Provenable repository. Use when you need the repository's complete operating model, architecture, CLI, integrat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielfoojunwei",
+      "userId": "s17f1g01v1cvanvy5v2deneeh583v13t",
+      "displayName": "Daniel Foo Jun Wei",
+      "image": "https://avatars.githubusercontent.com/u/122217524?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775359802015,
+      "changelog": "Initial release: condensed single-file skill documentation for AEGX Provenable.\n\n- Provides a complete, portable guide covering operating model, architecture, CLI, integration workflows, installer, bundle layout, and tracked-file map all in one SKILL.md.\n- Focuses on runtime behavior, guard surfaces, platform adaptation, degraded state handling, and explicit intake rules for conversion or repackaging.\n- Suitable for integrators, operators, and incident investigators needing in-depth operational and integration detail without referring to separate files.\n- Does not include raw source code; emphasizes usage, architecture, and operational safety.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70998d82e3a7205ad549e047eed00a6f718ef201b232f1b95b050d1d4b4d36cf"
+}

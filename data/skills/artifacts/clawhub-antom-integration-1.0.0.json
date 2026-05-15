@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/antom-integration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.antom_integration",
+  "skill": {
+    "id": 45263,
+    "skillKey": "clawhub-antom-integration",
+    "name": "antom-integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "antom-integration",
+    "url": "https://clawhub.ai/skills/antom-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/antom-integration-a4a9574529f028eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A skill dedicated to Antom payment integration, helping merchants select the right product and integration approach based on business needs, and build code...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ant-intl",
+      "userId": "s174nprs05n0g0s75behds1dr584yzs4",
+      "displayName": "ant-intl",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776420522257,
+      "changelog": "antom-integration 1.0.0\n\n- Initial release supporting Antom payment integration for merchants.\n- Provides guidance for product selection and integration approach based on business needs.\n- Covers integration for One-time Payments, Tokenized Payments (recurring), and Subscription Payments.\n- Supports multiple integration modes: Payment Element, Checkout Page (hosted/embedded), and API-only.\n- Includes key security guidelines and validation steps to ensure safe and compliant payment integration.\n- Directs users to official dynamic online documentation and SDK selection resources for up-to-date implementation details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90dfd9c4ffc9ab225079d1c8c4fa07961ee409cb26ac8d56003e51d1b28f1e45"
+}

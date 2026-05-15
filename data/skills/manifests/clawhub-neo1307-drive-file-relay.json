@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47126,
+  "uuid": "skill-clawhub-neo1307-drive-file-relay",
+  "skillKey": "clawhub-neo1307-drive-file-relay",
+  "name": "Drive File Relay",
+  "summary": "Copy (relay) a local file from this machine into Google Drive for desktop (GoogleDriveFS) so it can be downloaded from a phone when the phone is not on the s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neo1307_drive_file_relay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "neo1307",
+      "features": [
+        "Copy (relay) a local file from this machine into Google Drive for desktop (GoogleDriveFS) so it."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neo1307-drive-file-relay@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196853531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neo1307-drive-file-relay",
+      "url": "https://clawhub.ai/skills/neo1307-drive-file-relay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neo1307-drive-file-relay",
+    "url": "https://clawhub.ai/skills/neo1307-drive-file-relay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neo1307-drive-file-relay-80466dcd4256759c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neo1307-drive-file-relay@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-neo1307-drive-file-relay-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fe9e447dac310fa701a09d744c4d38ccbf9382c944e80cf0cba0833c4e5b580",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T20:03:36.953Z"
+}

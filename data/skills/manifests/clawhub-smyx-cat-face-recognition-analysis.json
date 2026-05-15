@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57121,
+  "uuid": "skill-clawhub-smyx-cat-face-recognition-analysis",
+  "skillKey": "clawhub-smyx-cat-face-recognition-analysis",
+  "name": "猫脸识别技能",
+  "summary": "Dentifies specific cats by comparing images or videos of their faces. It supports distinguishing between different individuals in multi-cat households, ensur...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_cat_face_recognition_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-skills",
+      "features": [
+        "Dentifies specific cats by comparing images or videos of their faces",
+        "It supports distinguishing between different individuals in multi-cat households, ensur..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-cat-face-recognition-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272124705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-cat-face-recognition-analysis",
+      "url": "https://clawhub.ai/skills/smyx-cat-face-recognition-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-cat-face-recognition-analysis",
+    "url": "https://clawhub.ai/skills/smyx-cat-face-recognition-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-cat-face-recognition-analysis-fa365ccf85887b3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-cat-face-recognition-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-cat-face-recognition-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62a3a862a517fde6a0c750fd5fa9cb0af120089c31baa43ff6aaae301a7a51d8",
+      "artifactSizeBytes": 2199
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T01:28:41.570Z"
+}

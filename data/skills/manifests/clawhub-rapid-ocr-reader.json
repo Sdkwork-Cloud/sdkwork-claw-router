@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33174,
+  "uuid": "skill-clawhub-rapid-ocr-reader",
+  "skillKey": "clawhub-rapid-ocr-reader",
+  "name": "Image Reader",
+  "summary": "Extract text from images using OCR (Optical Character Recognition). Use this skill when you need to read text content from images, screenshots, photos, or an...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rapid_ocr_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rendaixue-byte",
+      "features": [
+        "Extract text from images using OCR (Optical Character Recognition)",
+        "Use this skill when you need to read text content from images, screenshots, photos, or an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rapid-ocr-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264536296?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rapid-ocr-reader",
+      "url": "https://clawhub.ai/skills/rapid-ocr-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rapid-ocr-reader",
+    "url": "https://clawhub.ai/skills/rapid-ocr-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rapid-ocr-reader-224533ca63261ae2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rapid-ocr-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rapid-ocr-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28f2d792c878dd1917a7c96d1ead4828aed40a52b5178afb028bcac58121df88",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T00:51:25.040Z"
+}

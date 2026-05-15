@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10256,
+  "uuid": "skill-clawhub-stock-prices",
+  "skillKey": "clawhub-stock-prices",
+  "name": "Stock Prices",
+  "summary": "Query real-time stock prices and market data using the Stock Prices API. Responses are in TOON format—decode with @toon-format/toon. Use when fetching stock...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_prices",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anthonylee1994",
+      "features": [
+        "Query real-time stock prices and market data using the Stock Prices API",
+        "Responses are in TOON format—decode with @toon-format/toon",
+        "Use when fetching stock..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-prices@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2138598?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-prices",
+      "url": "https://clawhub.ai/skills/stock-prices"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-prices",
+    "url": "https://clawhub.ai/skills/stock-prices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-prices-0bfe2461b394fcba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-prices@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-prices-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c67ad7017a208bf6e1a6b1cbf49784e227ae6141b98bf43471c4ee65fdd315de",
+      "artifactSizeBytes": 2221
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T06:58:02.314Z"
+}

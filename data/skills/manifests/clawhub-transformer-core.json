@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58636,
+  "uuid": "skill-clawhub-transformer-core",
+  "skillKey": "clawhub-transformer-core",
+  "name": "Transformer Core",
+  "summary": "基于 Attention Is All You Need 论文，理解 AI 自身的底层架构",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transformer_core",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1580021414-afk",
+      "features": [
+        "基于 Attention Is All You Need 论文，理解 AI 自身的底层架构"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/transformer-core@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264829074?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "transformer-core",
+      "url": "https://clawhub.ai/skills/transformer-core"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transformer-core",
+    "url": "https://clawhub.ai/skills/transformer-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transformer-core-2469df74a57d5ca4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/transformer-core@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-transformer-core-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d89848a0e49478abe10ccba7b4ffdeb6bb2365370e91357cdc529790e9a91603",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T17:11:19.338Z"
+}

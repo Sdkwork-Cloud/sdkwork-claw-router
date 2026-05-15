@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35302,
+  "uuid": "skill-clawhub-shipamax",
+  "skillKey": "clawhub-shipamax",
+  "name": "Shipamax",
+  "summary": "Shipamax integration. Manage data, records, and automate workflows. Use when the user wants to interact with Shipamax data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shipamax",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Shipamax integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Shipamax data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shipamax@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shipamax",
+      "url": "https://clawhub.ai/skills/shipamax"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shipamax",
+    "url": "https://clawhub.ai/skills/shipamax",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shipamax-4b98edb33954bf02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shipamax@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-shipamax-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e093c038c3726c68c94acb98872244665df61250d85e7f812c768f1c80d6b11",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:59:34.120Z"
+}

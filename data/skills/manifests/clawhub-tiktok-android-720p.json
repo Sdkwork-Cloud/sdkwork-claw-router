@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60975,
+  "uuid": "skill-clawhub-tiktok-android-720p",
+  "skillKey": "clawhub-tiktok-android-720p",
+  "name": "tiktok-android-720p",
+  "summary": "使用 ADB 自动化 TikTok 互动。支持 AI 智能评论（Claude/GPT-4/OpenRouter 视觉分析）、搜索话题、评论、点赞、收藏视频、发布内容。无需网页抓取，无 CAPTCHA，智能 UI 识别实现 100% 成功率。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_android_720p",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MoLin-g",
+      "features": [
+        "使用 ADB 自动化 TikTok 互动。支持 AI 智能评论（Claude/GPT-4/OpenRouter 视觉分析）、搜索话题、评论、点赞、收藏视频、发布内容。无需网页抓取，无 CAP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiktok-android-720p@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26254235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiktok-android-720p",
+      "url": "https://clawhub.ai/skills/tiktok-android-720p"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-android-720p",
+    "url": "https://clawhub.ai/skills/tiktok-android-720p",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-android-720p-a1c0a7c51f344c6d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiktok-android-720p@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiktok-android-720p-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83ee9a695522b9e764793f82c9aea3ce08c7f6eec41be1d813eaa5c40036506e",
+      "artifactSizeBytes": 2636
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T09:00:48.116Z"
+}

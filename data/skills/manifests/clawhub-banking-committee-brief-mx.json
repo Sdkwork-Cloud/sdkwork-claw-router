@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40799,
+  "uuid": "skill-clawhub-banking-committee-brief-mx",
+  "skillKey": "clawhub-banking-committee-brief-mx",
+  "name": "Banking Brief",
+  "summary": "Genera un brief ejecutivo para Comite de Riesgos bancario en Mexico. Recibe indicadores CNBV y contexto de mercado via Telegram y devuelve un PDF estructurad...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.banking_committee_brief_mx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ricardo Mendoza",
+      "features": [
+        "Genera un brief ejecutivo para Comite de Riesgos bancario en Mexico",
+        "Recibe indicadores CNBV y contexto de mercado via Telegram y devuelve un PDF estructurad..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/banking-committee-brief-mx@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242335152?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "banking-committee-brief-mx",
+      "url": "https://clawhub.ai/skills/banking-committee-brief-mx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "banking-committee-brief-mx",
+    "url": "https://clawhub.ai/skills/banking-committee-brief-mx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/banking-committee-brief-mx-67c31967681d23ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/banking-committee-brief-mx@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-banking-committee-brief-mx-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4b019da97d0b58de4a165fe86835faef9998eeb328dc642b570efb9c5205fac",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T02:41:29.093Z"
+}

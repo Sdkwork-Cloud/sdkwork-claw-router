@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65115,
+  "uuid": "skill-clawhub-express-tracker",
+  "skillKey": "clawhub-express-tracker",
+  "name": "Express Tracker",
+  "summary": "快递物流查询技能，支持圆通、中通、申通、韵达、顺丰、京东等主流快递公司。自动识别快递公司，生成快递100查询链接。使用场景：(1) \"查询快递 YT2538259220416\"，(2) \"我的快递到哪了\"，(3) \"批量查询几个快递单号\"。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.express_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "军舰",
+      "features": [
+        "快递物流查询技能，支持圆通、中通、申通、韵达、顺丰、京东等主流快递公司。自动识别快递公司，生成快递100查询链接。使用场景：(1) \"查询快递 YT2538259220416\"，(2) \"我."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/express-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38390774?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "express-tracker",
+      "url": "https://clawhub.ai/skills/express-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "express-tracker",
+    "url": "https://clawhub.ai/skills/express-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/express-tracker-21963720459a75d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/express-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-express-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27c512d1b6066cfe535c3747639f8560563cc65a714d8abadb8cf4c5f18fabdb",
+      "artifactSizeBytes": 2437
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T14:07:59.227Z"
+}

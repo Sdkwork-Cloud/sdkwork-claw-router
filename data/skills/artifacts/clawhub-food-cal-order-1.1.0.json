@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/food-cal-order@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.food_cal_order",
+  "skill": {
+    "id": 13727,
+    "skillKey": "clawhub-food-cal-order",
+    "name": "Food Calendar Order"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "food-cal-order",
+    "url": "https://clawhub.ai/skills/food-cal-order",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/food-cal-order-21cee8978bb6036e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Order food delivery via browser automation, triggered by calendar events. Supports two modes — Direct (specific service + restaurant) and Discovery (criteria..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thisisjeron",
+      "userId": "publishers:thisisjeron",
+      "displayName": "ThisIsJeron",
+      "image": "https://avatars.githubusercontent.com/u/14175797?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1518,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772007303809,
+      "changelog": "Add security controls: explicit pre-checkout confirmation gate, security disclosure section, Chrome profile warnings, and calendar event trust/spoofing notice.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ae589b17c10c2b952ee10216ac77b27255bec34e88fb8bb17510aea49ecdc1bd"
+}

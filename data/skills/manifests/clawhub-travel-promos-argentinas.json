@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18522,
+  "uuid": "skill-clawhub-travel-promos-argentinas",
+  "skillKey": "clawhub-travel-promos-argentinas",
+  "name": "Promociones de Viajes Argentina",
+  "summary": "Consulta promociones de viajes desde Argentina usando Anduin Promos API. Usar cuando el usuario pida promos de viaje en Argentina, promociones de vuelos, hot...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_promos_argentinas",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fermin Rodriguez Penelas",
+      "features": [
+        "Consulta promociones de viajes desde Argentina usando Anduin Promos API",
+        "Usar cuando el usuario pida promos de viaje en Argentina, promociones de vuelos, hot..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/travel-promos-argentinas@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21282919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "travel-promos-argentinas",
+      "url": "https://clawhub.ai/skills/travel-promos-argentinas"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-promos-argentinas",
+    "url": "https://clawhub.ai/skills/travel-promos-argentinas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-promos-argentinas-c4596f4afd8ac9aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/travel-promos-argentinas@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-travel-promos-argentinas-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be991efd2a6b653a24add6a1995f4b3ebfc0ff0f64e6fa1db30ac094d5b9200f",
+      "artifactSizeBytes": 2457
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T22:01:19.415Z"
+}

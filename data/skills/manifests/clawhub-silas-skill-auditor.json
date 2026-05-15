@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67960,
+  "uuid": "skill-clawhub-silas-skill-auditor",
+  "skillKey": "clawhub-silas-skill-auditor",
+  "name": "Silas Skill Auditor",
+  "summary": "技能安全审查工具。深度审查已安装或远程技能的代码安全性、权限风险、数据泄露和内容合规性。支持预装审查（远程拉取）和已装审查两种模式。当用户说\"审查技能\"、\"检查安全\"、\"审核技能\"、\"skill audit\"时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.silas_skill_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "silas",
+      "features": [
+        "技能安全审查工具。深度审查已安装或远程技能的代码安全性、权限风险、数据泄露和内容合规性。支持预装审查（远程拉取）和已装审查两种模式。当用户说\"审查技能\"、\"检查安全\"、\"审核技能\"、\"ski."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/silas-skill-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169723524?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "silas-skill-auditor",
+      "url": "https://clawhub.ai/skills/silas-skill-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "silas-skill-auditor",
+    "url": "https://clawhub.ai/skills/silas-skill-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/silas-skill-auditor-0fcbde06cb6852a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/silas-skill-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-silas-skill-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b48222627e5b51670dec67696db63621ba9594fed1bf82419c963e6f2b8a55fa",
+      "artifactSizeBytes": 2070
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T12:34:17.808Z"
+}

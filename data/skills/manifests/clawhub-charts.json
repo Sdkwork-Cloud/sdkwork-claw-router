@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13451,
+  "uuid": "skill-clawhub-charts",
+  "skillKey": "clawhub-charts",
+  "name": "Charts",
+  "summary": "Generate 90-day candlestick charts with SMA 20/50, RSI, Fibonacci retracements, and pattern detection for BTC, ETH, XRP, SUI, Gold, and Silver.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.charts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryandeangraves",
+      "features": [
+        "Generate 90-day candlestick charts with SMA 20/50, RSI, Fibonacci retracements, and pattern det."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/charts@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/209055942?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "charts",
+      "url": "https://clawhub.ai/skills/charts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "charts",
+    "url": "https://clawhub.ai/skills/charts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/charts-38edf99fd4646246.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/charts@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-charts-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7688c06c0ca3411bff5175d6a5b280d81f1ecc653b5033254c707985e91706ba",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T20:05:40.860Z"
+}

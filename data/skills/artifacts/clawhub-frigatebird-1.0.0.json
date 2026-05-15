@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/frigatebird@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.frigatebird",
+  "skill": {
+    "id": 14434,
+    "skillKey": "clawhub-frigatebird",
+    "name": "frigatebird"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "frigatebird",
+    "url": "https://clawhub.ai/skills/frigatebird",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/frigatebird-315df3f6b81fbbdb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the frigatebird npm package to interact with X from the CLI with bird-style command parity, posting/reply/article support, and list automation without X API keys."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oceanswave",
+      "userId": "publishers:oceanswave",
+      "displayName": "Oceanswave",
+      "image": "https://avatars.githubusercontent.com/u/760674?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770616034973,
+      "changelog": "Initial release of the frigatebird skill for X CLI workflows.\n\n- Enables `bird`-style command-line interaction with X using the frigatebird npm package.\n- Supports posting, replying, article publishing, and list automation without X API keys.\n- Offers session-based authentication via browser cookies.\n- Includes robust tooling for read, mutation, and list management workflows.\n- Provides essential options for authentication, pagination, and output formatting.\n- Documents caveats regarding web UI selector drift and compatibility modes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ea9b92d369513aa5642cc8e3fbd299571c9469c8a0b81c10017ce9a55fee8361"
+}

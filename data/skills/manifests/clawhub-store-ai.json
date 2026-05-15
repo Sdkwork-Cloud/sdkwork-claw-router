@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69941,
+  "uuid": "skill-clawhub-store-ai",
+  "skillKey": "clawhub-store-ai",
+  "name": "shejian",
+  "summary": "舌尖香港门店AI助手（支持环境变量） 当用户发送任何与门店运营相关的中文信息时触发，包括但不限于： - 报告商品库存状态，如\"番茄卖完了\"、\"胡萝卜还剩5斤\"、\"白菜今天卖了20斤\" - 查询今日库存、销售情况、进货记录、操作日志 - 录入进货信息，如\"今天收到50斤胡萝卜\" - 查询门店所在城市天气，如\"明天天...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.store_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiaobing Mi",
+      "features": [
+        "舌尖香港门店AI助手（支持环境变量） 当用户发送任何与门店运营相关的中文信息时触发，包括但不限于：",
+        "报告商品库存状态，如\"番茄卖完了\"、\"胡萝卜还剩5斤\"、\"白菜今天卖了20斤\"",
+        "查询今日库存、销售情况、进货记录、操作日志",
+        "录入进货信息，如\"今天收到50斤胡萝卜\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/store-ai@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/120709911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "store-ai",
+      "url": "https://clawhub.ai/skills/store-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "store-ai",
+    "url": "https://clawhub.ai/skills/store-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/store-ai-d2db452b966e9e33.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/store-ai@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-store-ai-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6565093a5e6a4d491c00645a78be1262536d2c5802dd628b31533b6a6354f7ab",
+      "artifactSizeBytes": 2116
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T16:09:25.182Z"
+}

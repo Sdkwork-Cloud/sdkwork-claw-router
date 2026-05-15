@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maverick-hubspot-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maverick_hubspot_mcp",
+  "skill": {
+    "id": 46652,
+    "skillKey": "clawhub-maverick-hubspot-mcp",
+    "name": "Hubspot mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maverick-hubspot-mcp",
+    "url": "https://clawhub.ai/skills/maverick-hubspot-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maverick-hubspot-mcp-7934c3c6f875c485.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, read, and update HubSpot CRM contacts, companies, deals, tickets, associations, owners, and pipelines via HubSpot's hosted MCP server (https://mcp.hu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maverick",
+      "userId": "s17b4scyfsybdcep8c0034pgs186087n",
+      "displayName": "Maverick",
+      "image": "https://avatars.githubusercontent.com/u/261420589"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778002381891,
+      "changelog": "- Initial release providing search, read, and update capabilities for HubSpot CRM contacts, companies, deals, tickets, associations, owners, and pipelines via HubSpot's hosted MCP server.\n- Supports structured output and error handling using wrapper scripts and JSON envelopes.\n- Secure operations: distinguishes between read and write actions, with guidance for safe use of write tools.\n- Automated token management with support for OAuth refresh; includes troubleshooting steps for authorization errors.\n- Lists all required dependencies and provides automated installation for the primary CLI tool (`mcporter`).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a06ba1ac905f6c003de755c397f11b4a78dc0e3ace70eba509a53a8cb61e5550"
+}

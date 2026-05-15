@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-research-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_report",
+  "skill": {
+    "id": 68704,
+    "skillKey": "clawhub-deep-research-report",
+    "name": "Deep Research Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-report",
+    "url": "https://clawhub.ai/skills/deep-research-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-report-35855528faab2bd3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据用户提供的研究材料，生成结构完整、逻辑严密、观点清晰的正式深度研究报告，适用行业、公司、策略与政策分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hayashishungenn",
+      "userId": "s179ns5vh450stnn8t54dcrdfh842w48",
+      "displayName": "hayashishungenn",
+      "image": "https://avatars.githubusercontent.com/u/75163665?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775419219901,
+      "changelog": "deep-research-report v1.0.0\n\n- Initial release: Generates comprehensive, logically-structured research reports from user-provided materials.\n- Supports topics such as industry analysis, company research, policy review, and market strategy.\n- Output follows a standardized report structure, including sections: background, core issues, trends, risks, and conclusions.\n- Automatically extracts and synthesizes core points, differentiates facts from judgments, and requires analyst-level insights.\n- Ensures each section includes analysis (not just summaries) and clearly highlights key conclusions, trackable variables, and uncertainties.\n- Reports are saved automatically to a dedicated folder with a standardized file naming format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c2d3dc8dbbc2b2e5a8f91126c4bb515073b7048c56779a323f1a98114d52a28"
+}

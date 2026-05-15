@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18845,
+  "uuid": "skill-clawhub-gladia-youtube-transcribe",
+  "skillKey": "clawhub-gladia-youtube-transcribe",
+  "name": "Gladia YouTube Transcription (Free)",
+  "summary": "Transcribe speech from YouTube videos or audio URLs into text using Gladia API with up to 10 free hours of monthly transcription. Use when: you need to summa...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gladia_youtube_transcribe",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kanfred",
+      "features": [
+        "Transcribe speech from YouTube videos or audio URLs into text using Gladia API with up to 10 fr.",
+        "Use when: you need to summa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gladia-youtube-transcribe@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124653365?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gladia-youtube-transcribe",
+      "url": "https://clawhub.ai/skills/gladia-youtube-transcribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gladia-youtube-transcribe",
+    "url": "https://clawhub.ai/skills/gladia-youtube-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gladia-youtube-transcribe-70c292ab9e938541.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gladia-youtube-transcribe@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-gladia-youtube-transcribe-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e835edf972442f87ada1c18712e6c186b42a8860328accb8587970118164d586",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T08:31:15.833Z"
+}

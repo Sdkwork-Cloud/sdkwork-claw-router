@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-audit-guardian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_audit_guardian",
+  "skill": {
+    "id": 19240,
+    "skillKey": "clawhub-memory-audit-guardian",
+    "name": "Memory Audit Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-audit-guardian",
+    "url": "https://clawhub.ai/skills/memory-audit-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-audit-guardian-d34a83fbc1baafc9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Weekly memory governance audit for OpenClaw. Use when user asks to audit/optimize memory quality, reduce token overhead, verify MEMORY/TOOLS/AGENTS role boun..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "markisadesigner1992-eng",
+      "userId": "publishers:markisadesigner1992-eng",
+      "displayName": "markisadesigner1992-eng",
+      "image": "https://avatars.githubusercontent.com/u/254804547?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 468,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772691634330,
+      "changelog": "Initial release. Adds automated weekly memory audits for OpenClaw: validates file-role separation, token-budget thresholds, QMD routing quality, and keyword hygiene. Generates actionable reports and optimization reminders to keep memory high-value and low-noise over time.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0f5e9997818c53b6e6c16f6b90ce14233fd90b0d560d35bfac0eda9fc57ef9e2"
+}

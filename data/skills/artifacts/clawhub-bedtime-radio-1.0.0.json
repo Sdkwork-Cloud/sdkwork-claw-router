@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bedtime-radio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bedtime_radio",
+  "skill": {
+    "id": 51601,
+    "skillKey": "clawhub-bedtime-radio",
+    "name": "Bedtime Radio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bedtime-radio",
+    "url": "https://clawhub.ai/skills/bedtime-radio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bedtime-radio-237ecb06b42dc3b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a complete bedtime story audio program from a keyword — with intro, narration, character voices, and a sleepy outro. Use when parents or caregivers..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scikkk",
+      "userId": "s171sgccp6wt09makas274ye9584ktsf",
+      "displayName": "scikkk",
+      "image": "https://avatars.githubusercontent.com/u/77485593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 300,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773558089687,
+      "changelog": "senseaudio-bedtime-radio v1.0.0\n\n- Initial release of the skill.\n- Generates a complete bedtime story audio program from a keyword, with intro, multi-style narration, character voices, and a sleepy outro.\n- Customizes story complexity and vocabulary based on child's age, supporting ages 2–10.\n- Supports variable story lengths: short, standard, and long versions.\n- Outlines structured audio segment planning and provides Bash synthesis/assembly instructions.\n- Requires SENSEAUDIO_API_KEY for audio generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:050b0e120f1503e261bda4eba5c55d641981ac8a25da3048ff29b9dcb0510f8c"
+}

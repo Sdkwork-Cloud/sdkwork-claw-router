@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-control@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_control",
+  "skill": {
+    "id": 12204,
+    "skillKey": "clawhub-claude-code-control",
+    "name": "Claude Code Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-control",
+    "url": "https://clawhub.ai/skills/claude-code-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-control-787ff07cf4bf786f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Programmatically control Claude Code in visible macOS Terminal windows via AppleScript for command input, screenshots, session logging, and terminal management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "melichar-m",
+      "userId": "publishers:melichar-m",
+      "displayName": "Michael Melichar",
+      "image": "https://avatars.githubusercontent.com/u/35645069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1724,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1771733188131,
+      "changelog": "Fix exports, focus race condition, add route-task.js generic task router",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6b3647ef30e2718ad0e7ce91324b57d562e14bbf736b63226c12e96d7fd621c7"
+}

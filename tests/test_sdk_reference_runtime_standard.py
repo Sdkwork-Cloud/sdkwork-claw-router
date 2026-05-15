@@ -18,14 +18,16 @@ class SdkReferenceRuntimeStandardTest(unittest.TestCase):
         sdk_data = (SDK_REFERENCE_ROOT / "data" / "sdkData.ts").read_text(encoding="utf-8")
 
         for expected in [
-            "client.apikey.fetchApiKeysMap()",
-            "client.user.fetchUserProfile()",
+            "client.iam.apiKeys.list()",
+            "client.iam.users.current.retrieve()",
         ]:
             self.assertIn(expected, sdk_data)
 
         for stale_example in [
             "client.apiKeys.list()",
             "client.users.list()",
+            "client.user.fetchUserProfile()",
+            "client.apikey.fetchApiKeysMap()",
             "client.api_keys.list()",
             "client.users.list",
             "client.users().list()",
@@ -44,30 +46,27 @@ class SdkReferenceRuntimeStandardTest(unittest.TestCase):
 
         for token in [
             "import type { ApiReferenceEndpoint } from 'sdkwork-claw-router-api-reference/openapiTypes'",
-            "import type { ApiParameter } from 'sdkwork-claw-router-api-reference/openapiTypes'",
             "import type { OpenApiDocument } from 'sdkwork-claw-router-api-reference/openapiTypes'",
-            "import type { OpenApiJsonSchema } from 'sdkwork-claw-router-api-reference/openapiTypes'",
-            "import type { OpenApiOperation } from 'sdkwork-claw-router-api-reference/openapiTypes'",
-            "import type { OpenApiParameter } from 'sdkwork-claw-router-api-reference/openapiTypes'",
-            "import type { OpenApiPathItem } from 'sdkwork-claw-router-api-reference/openapiTypes'",
-            "isOpenApiDocument(payload)",
-            "isOpenApiOperation(operation)",
-            "OPEN_API_OPERATION_METHODS",
+            "loadSdkReferenceSystems()",
+            "activeSystemData?.openApiSpec",
         ]:
             self.assertIn(token, sdk_reference_source)
 
-        self.assertIn("interface GeneratedSdkToolConfig", sdk_reference_source)
+        sdk_runtime_source = (SDK_REFERENCE_ROOT / "sdkReferenceRuntime.ts").read_text(encoding="utf-8")
+        sdk_documentation_source = (SDK_REFERENCE_ROOT / "sdkEndpointDocumentation.ts").read_text(encoding="utf-8")
+
+        self.assertIn("export interface GeneratedSdkToolConfig", sdk_runtime_source)
         self.assertIn("const [activeSdkConfig, setActiveSdkConfig] = useState<GeneratedSdkToolConfig | null>(null)", sdk_reference_source)
-        self.assertIn("const payload: unknown = await response.json()", sdk_reference_source)
         self.assertIn("const errorData: unknown = await generateResponse.json()", sdk_reference_source)
         self.assertIn("readErrorMessage(errorData)", sdk_reference_source)
 
         self.assertIn("import type { ApiParameter } from 'sdkwork-claw-router-api-reference/openapiTypes'", endpoint_view_source)
         self.assertIn("import type { ApiReferenceEndpoint } from 'sdkwork-claw-router-api-reference/openapiTypes'", endpoint_view_source)
-        self.assertIn("interface SdkEndpointData", endpoint_view_source)
-        self.assertIn("function toSdkMethodName(endpoint: ApiReferenceEndpoint): string", endpoint_view_source)
-        self.assertIn("function upperPathSegment(_match: string, chr: string): string", endpoint_view_source)
-        self.assertIn("params.map((p: ApiParameter)", endpoint_view_source)
+        self.assertIn("export interface SdkEndpointData", sdk_documentation_source)
+        self.assertIn("function toSdkMethodName(endpoint: ApiReferenceEndpoint, language: string): string", sdk_documentation_source)
+        self.assertIn("function upperPathSegment(_match: string, chr: string): string", sdk_documentation_source)
+        self.assertIn("function flattenSdkParameters(parameters: ApiParameter[] = [], parentPath = '')", endpoint_view_source)
+        self.assertIn("flattenSdkParameters(documentation.parameters).map", endpoint_view_source)
 
         for source_name, source in [
             ("SdkReference.tsx", sdk_reference_source),

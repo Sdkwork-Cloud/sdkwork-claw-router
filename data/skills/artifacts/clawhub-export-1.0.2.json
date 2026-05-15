@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/export@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.export",
+  "skill": {
+    "id": 55127,
+    "skillKey": "clawhub-export",
+    "name": "Export"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "export",
+    "url": "https://clawhub.ai/skills/export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/export-d46aee08cc49f6d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Export a Codex session JSONL from ~/.codex/sessions into a clean Markdown transcript in ~/Documents/Exports. Use when the user wants to export, save, or conv..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bestisblessed",
+      "userId": "s179qhkgs0350567tyc17d8kg5858kzd",
+      "displayName": "bestisblessed",
+      "image": "https://avatars.githubusercontent.com/u/59031057?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777536501191,
+      "changelog": "- The export script now automatically creates the ~/Documents/Exports directory if it doesn't already exist.\n- Updated documentation to clarify that the export location is created as needed.\n- Added a \"Local Scope\" section explaining which files and directories are read/written, and that no network or package operations occur.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29322e8b341f88d1d39498733541620254544a41cadd36db59ae6133e588b9a6"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61228,
+  "uuid": "skill-clawhub-dataworks-smart-monitor",
+  "skillKey": "clawhub-dataworks-smart-monitor",
+  "name": "Dataworks Smart Monitor",
+  "summary": "DataWorks 智能监控技能 - 异步分析任务运行情况，智能告警分级（不阻塞主会话）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dataworks_smart_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alexmayanjun-collab",
+      "features": [
+        "DataWorks 智能监控技能",
+        "异步分析任务运行情况，智能告警分级（不阻塞主会话）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dataworks-smart-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/247089206?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dataworks-smart-monitor",
+      "url": "https://clawhub.ai/skills/dataworks-smart-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dataworks-smart-monitor",
+    "url": "https://clawhub.ai/skills/dataworks-smart-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dataworks-smart-monitor-0beed2babd53c824.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dataworks-smart-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dataworks-smart-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4248d1cb3915ab4ae89c53f168d300154a1eda431f783a7238b534f2133bb67",
+      "artifactSizeBytes": 2220
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T20:01:33.314Z"
+}

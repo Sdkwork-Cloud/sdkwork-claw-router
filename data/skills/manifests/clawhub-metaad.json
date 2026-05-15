@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30756,
+  "uuid": "skill-clawhub-metaad",
+  "skillKey": "clawhub-metaad",
+  "name": "meta_ad",
+  "summary": "This skill automates the creation of Meta (Facebook/Instagram) ads using the Marketing API. It handles campaign setup, audience targeting, media upload, and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metaad",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zine1993",
+      "features": [
+        "This skill automates the creation of Meta (Facebook/Instagram) ads using the Marketing API",
+        "It handles campaign setup, audience targeting, media upload, and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/metaad@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83816956?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "metaad",
+      "url": "https://clawhub.ai/skills/metaad"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metaad",
+    "url": "https://clawhub.ai/skills/metaad",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metaad-bd0dd5fb0eef9313.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/metaad@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-metaad-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aacd11dc8b6a0f38b2aebf4d26fa8172b6f444c3f7fafc9fc975c4cf11a9c6d2",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T08:05:33.124Z"
+}

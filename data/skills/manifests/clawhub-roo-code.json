@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59035,
+  "uuid": "skill-clawhub-roo-code",
+  "skillKey": "clawhub-roo-code",
+  "name": "Roo Code",
+  "summary": "Roo Code AI 编程助手，精通 VS Code 内 AI Agent、多模式切换、MCP 集成",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.roo_code",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "Roo Code AI 编程助手，精通 VS Code 内 AI Agent、多模式切换、MCP 集成"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/roo-code@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "roo-code",
+      "url": "https://clawhub.ai/skills/roo-code"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "roo-code",
+    "url": "https://clawhub.ai/skills/roo-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/roo-code-0d03cdda543c216d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/roo-code@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-roo-code-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7febde49da3ee6b71391c112436ca7b37626cf3fc06b48d34b7bbbf62f95514b",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T05:56:53.310Z"
+}

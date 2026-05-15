@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37493,
+  "uuid": "skill-clawhub-claude-settings-editor",
+  "skillKey": "clawhub-claude-settings-editor",
+  "name": "Claude Settings Editor",
+  "summary": "Use when the user wants to update Claude settings, hooks, permissions, MCP server toggles, or other JSON config safely and with scope awareness.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_settings_editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wimi321",
+      "features": [
+        "Use when the user wants to update Claude settings, hooks, permissions, MCP server toggles, or o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-settings-editor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34830250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-settings-editor",
+      "url": "https://clawhub.ai/skills/claude-settings-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-settings-editor",
+    "url": "https://clawhub.ai/skills/claude-settings-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-settings-editor-cf7050c22b387fa8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-settings-editor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-settings-editor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfa567eda43f3836b14a0d683842a53167488e27596dea744fdd630b69e2bd13",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T12:44:50.838Z"
+}

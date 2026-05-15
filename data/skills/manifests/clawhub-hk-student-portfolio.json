@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62676,
+  "uuid": "skill-clawhub-hk-student-portfolio",
+  "skillKey": "clawhub-hk-student-portfolio",
+  "name": "HK Student Portfolio Generator",
+  "summary": "基於香港真實收生標準，生成符合頁數限制及風格要求的中英雙語升中個人檔案Word文檔。",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hk_student_portfolio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuchenyao-tech",
+      "features": [
+        "基於香港真實收生標準，生成符合頁數限制及風格要求的中英雙語升中個人檔案Word文檔。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hk-student-portfolio@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266591022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hk-student-portfolio",
+      "url": "https://clawhub.ai/skills/hk-student-portfolio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hk-student-portfolio",
+    "url": "https://clawhub.ai/skills/hk-student-portfolio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hk-student-portfolio-90ab1f63244c67fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hk-student-portfolio@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hk-student-portfolio-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a0bd67e455c787e00b4c6c4ad6cf3402ec2718ed36ed51193ad30de3a553e9d",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T11:21:48.714Z"
+}

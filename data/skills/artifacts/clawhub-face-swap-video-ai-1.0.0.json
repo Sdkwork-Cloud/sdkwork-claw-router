@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/face-swap-video-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.face_swap_video_ai",
+  "skill": {
+    "id": 49147,
+    "skillKey": "clawhub-face-swap-video-ai",
+    "name": "Face Swap Video Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "face-swap-video-ai",
+    "url": "https://clawhub.ai/skills/face-swap-video-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/face-swap-video-ai-d096f8cc5f7a7e0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get face-swapped videos ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"swap..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 85,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778066237906,
+      "changelog": "Initial release of Face Swap Video AI.\n\n- Instantly swap faces in videos by uploading video clips (up to 500MB) and describing the swap you want.\n- Supports MP4, MOV, AVI, WebM inputs; outputs 1080p MP4 videos.\n- Automatic setup with anonymous token (100 free credits for 7 days).\n- Fast cloud rendering: get results in 30–90 seconds for typical clips.\n- Simple commands for upload, export, checking credits, and workflow management.\n- Designed for content creators who want fast, easy face swaps without complex editing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47c4659ac0a27781cf3f3340d0dcb04b4baddcb6bbff91a269b2737521967029"
+}

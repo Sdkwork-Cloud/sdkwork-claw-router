@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37674,
+  "uuid": "skill-clawhub-weather-zhouli",
+  "skillKey": "clawhub-weather-zhouli",
+  "name": "Weather",
+  "summary": "Get current weather and forecasts (no API key required).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_zhouli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "onlyloveher",
+      "features": [
+        "Get current weather and forecasts (no API key required)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-zhouli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/972832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-zhouli",
+      "url": "https://clawhub.ai/skills/weather-zhouli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-zhouli",
+    "url": "https://clawhub.ai/skills/weather-zhouli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-zhouli-3660b46e85260ab4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-zhouli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-zhouli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ca3b4a864d676ad54136e46d16edd49db7f21e4bf058f58b3545bc077f3606d",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T00:42:38.455Z"
+}

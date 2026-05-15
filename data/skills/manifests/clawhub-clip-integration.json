@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40665,
+  "uuid": "skill-clawhub-clip-integration",
+  "skillKey": "clawhub-clip-integration",
+  "name": "Clip",
+  "summary": "Clip integration. Manage Recordses. Use when the user wants to interact with Clip data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clip_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Clip integration",
+        "Manage Recordses",
+        "Use when the user wants to interact with Clip data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clip-integration@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clip-integration",
+      "url": "https://clawhub.ai/skills/clip-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clip-integration",
+    "url": "https://clawhub.ai/skills/clip-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clip-integration-b0e0ce43ff1c2b4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clip-integration@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clip-integration-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e32b98e048e2334f5ae2387669ad700bcf4d8e1dd30a7e55a7f34100285ebcdb",
+      "artifactSizeBytes": 1846
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:18:48.556Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swamp@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swamp",
+  "skill": {
+    "id": 54883,
+    "skillKey": "clawhub-swamp",
+    "name": "swamp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swamp",
+    "url": "https://clawhub.ai/skills/swamp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swamp-d83a900c42d48e2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Model any API with Swamp, test it, and enrich *Claw with new capabilities — full lifecycle from idea to working integration"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "umag",
+      "userId": "publishers:umag",
+      "displayName": "Magistr",
+      "image": "https://avatars.githubusercontent.com/u/2269529?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 744,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1772281483721,
+      "changelog": "Swamp 0.2.0 introduces extension management and swamp-club authentication:\n\n- Added step-by-step documentation for authenticating with swamp-club, including login, custom servers, and headless flows.\n- Introduced new sections on pulling, pushing, listing, and removing Swamp extensions.\n- Outlined the extension workflow for sharing custom model types via the registry.\n- Provided guidance on using both models (skills) and extensions for richer sharing and collaboration.\n- No changes to agent usage or core modeling/test workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9cbcaac594432b92b44fc2f27cfface587c0f1c8f559789f78a422604d459781"
+}

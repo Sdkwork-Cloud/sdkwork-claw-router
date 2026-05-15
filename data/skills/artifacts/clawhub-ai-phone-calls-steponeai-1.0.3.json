@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-phone-calls-steponeai@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_phone_calls_steponeai",
+  "skill": {
+    "id": 64319,
+    "skillKey": "clawhub-ai-phone-calls-steponeai",
+    "name": "ai-phone-calls-steponeai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-phone-calls-steponeai",
+    "url": "https://clawhub.ai/skills/ai-phone-calls-steponeai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-phone-calls-steponeai-d31de87aa1b816ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "可以拨打中国电话号码的机器人外呼, 专为openclaw(龙虾)用户打造的专业ai呼叫能力,只要一个prompt就可以帮你打电话干活了，支持查看电话对话记录，查看电话状态等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ustczz",
+      "userId": "s17d79wpwzsm24f8ejjmhhs9n583hf2m",
+      "displayName": "vincent",
+      "image": "https://avatars.githubusercontent.com/u/1067160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 662,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777762728500,
+      "changelog": "Sync safety fixes from ai-calls-china-phone: remove secret-like placeholders, require per-call confirmation, and keep prompt JSON encoding safe.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66cd190e1935575635ef01039fe5dfbdc2d1b85ed01b25002921f7304ca48496"
+}

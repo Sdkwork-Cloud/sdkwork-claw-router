@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58259,
+  "uuid": "skill-clawhub-static-webhost",
+  "skillKey": "clawhub-static-webhost",
+  "name": "Static Webhost",
+  "summary": "Deploy static web pages and apps via Caddy or Nginx (auto-detected). Use when: 通过 Caddy 或 Nginx 部署静态网页和应用（自动检测）。使用场景： (1) User asks to create a web page, dem...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.static_webhost",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lucky-chen",
+      "features": [
+        "Deploy static web pages and apps via Caddy or Nginx (auto-detected)",
+        "Use when: 通过 Caddy 或 Nginx 部署静态网页和应用（自动检测）。使用场景： (1) User asks to create a web page, dem..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/static-webhost@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54235276?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "static-webhost",
+      "url": "https://clawhub.ai/skills/static-webhost"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "static-webhost",
+    "url": "https://clawhub.ai/skills/static-webhost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/static-webhost-f63cbc21a9f045f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/static-webhost@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-static-webhost-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1cbc84736b115398b0c24f2518122626f6128dcf4539853491ad6b5a69bae93d",
+      "artifactSizeBytes": 2067
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T07:47:54.872Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-analysis-cn-full@4.0.0",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_analysis_cn_full",
+  "skill": {
+    "id": 63817,
+    "skillKey": "clawhub-stock-analysis-cn-full",
+    "name": "全方位智能股票分析v4"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-analysis-cn-full",
+    "url": "https://clawhub.ai/skills/stock-analysis-cn-full",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-analysis-cn-full-b9728ad64d386b6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股/港股/美股/ETF 全方位智能分析助手 v4.0。 核心特点：①结论先行②信号明确果断③盘中实时扫描④自动读取 ~/Desktop/股票知识库/。 数据来源：tushare realtime_quote（实时五档盘口）、akshare（资金流向/龙虎榜/研报）、yfinance（美股/港股）、Web搜索（消..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lin838465-ux",
+      "userId": "s177rbs1a6vbnhqctx96r0nns184t1ps",
+      "displayName": "lin838465-ux",
+      "image": "https://avatars.githubusercontent.com/u/224497069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "4.0.0",
+      "createdAt": 1776171443954,
+      "changelog": "v4:严格数据规范，禁止编造数字，所有结论必须标注数据来源，历史涨跌幅必须核实",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf3618ebeb1729bfcfc59d0a0041f95131b7445999cda0e70b5e335246c48c1c"
+}

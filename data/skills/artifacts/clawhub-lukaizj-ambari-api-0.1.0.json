@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lukaizj-ambari-api@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lukaizj_ambari_api",
+  "skill": {
+    "id": 42699,
+    "skillKey": "clawhub-lukaizj-ambari-api",
+    "name": "Ambari API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lukaizj-ambari-api",
+    "url": "https://clawhub.ai/skills/lukaizj-ambari-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lukaizj-ambari-api-2c693b23f0ce2471.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Hadoop clusters via Ambari REST API. Supports service start/stop/restart, component operations, and cluster monitoring. Use when managing Ambari clust..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lukaizj",
+      "userId": "s17fherr0tdzbm0p81gn7k2vgd83k135",
+      "displayName": "lukaizj",
+      "image": "https://avatars.githubusercontent.com/u/92360203?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776849570580,
+      "changelog": "Initial release of ambari-api skill for Hadoop cluster management via Ambari REST API.\n\n- Manage Hadoop services (start, stop, restart) and components at cluster or host level.\n- Monitor service and cluster status, list services, hosts, and components.\n- Store and manage multiple Ambari cluster configurations.\n- Supports Ambari versions 2.7.5 and 3.0.0.\n- Includes quick start guide and command examples for common operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba4b4a878ddad88bb22208564d6a9c6978c5eab14d35c476b5a2fb52d74887fd"
+}

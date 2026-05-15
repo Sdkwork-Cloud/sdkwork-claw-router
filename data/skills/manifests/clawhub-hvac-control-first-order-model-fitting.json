@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44129,
+  "uuid": "skill-clawhub-hvac-control-first-order-model-fitting",
+  "skillKey": "clawhub-hvac-control-first-order-model-fitting",
+  "name": "first-order-model-fitting",
+  "summary": "Fit first-order dynamic models to experimental step response data and extract K (gain) and tau (time constant) parameters.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hvac_control_first_order_model_fitting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wu-uk",
+      "features": [
+        "Fit first-order dynamic models to experimental step response data and extract K (gain) and tau."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hvac-control-first-order-model-fitting@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199610473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hvac-control-first-order-model-fitting",
+      "url": "https://clawhub.ai/skills/hvac-control-first-order-model-fitting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hvac-control-first-order-model-fitting",
+    "url": "https://clawhub.ai/skills/hvac-control-first-order-model-fitting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hvac-control-first-order-model-fitting-0902a486555c0034.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hvac-control-first-order-model-fitting@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hvac-control-first-order-model-fitting-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7439262e74afa9710c815207e07c5ecd0418b65c690c91d490122bff709e1151",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T10:27:58.938Z"
+}

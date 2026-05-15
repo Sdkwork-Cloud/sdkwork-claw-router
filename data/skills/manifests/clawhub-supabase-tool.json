@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41509,
+  "uuid": "skill-clawhub-supabase-tool",
+  "skillKey": "clawhub-supabase-tool",
+  "name": "Supabase Tool",
+  "summary": "Generate Supabase API curl commands and SQL query helpers. Use when querying tables, counting rows, inserting records, checking database health, auditing RLS...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supabase_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "loutai0307-prog",
+      "features": [
+        "Generate Supabase API curl commands and SQL query helpers",
+        "Use when querying tables, counting rows, inserting records, checking database health, auditing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/supabase-tool@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266760463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "supabase-tool",
+      "url": "https://clawhub.ai/skills/supabase-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supabase-tool",
+    "url": "https://clawhub.ai/skills/supabase-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supabase-tool-72ed7612cc6eeadc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/supabase-tool@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-supabase-tool-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c976f10cd13831f9bd92f31ee9079aacf6f84a445654b0cda3977291f2529b8a",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T07:01:36.576Z"
+}

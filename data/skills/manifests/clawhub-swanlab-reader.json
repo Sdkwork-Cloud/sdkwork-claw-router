@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59018,
+  "uuid": "skill-clawhub-swanlab-reader",
+  "skillKey": "clawhub-swanlab-reader",
+  "name": "SwanLab Reader",
+  "summary": "读取 SwanLab 实验数据。当用户发来 SwanLab run URL 时使用。",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swanlab_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CkQiao",
+      "features": [
+        "读取 SwanLab 实验数据。当用户发来 SwanLab run URL 时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swanlab-reader@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75972309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swanlab-reader",
+      "url": "https://clawhub.ai/skills/swanlab-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swanlab-reader",
+    "url": "https://clawhub.ai/skills/swanlab-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swanlab-reader-541b660e9af35f8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swanlab-reader@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-swanlab-reader-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86de1fa78f53a66e38fe4b15323e5f96e0973efc6320a5ae57519d34a6558384",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:22:35.847Z"
+}

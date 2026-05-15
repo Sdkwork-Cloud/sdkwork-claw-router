@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-upgrade-standard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_upgrade_standard",
+  "skill": {
+    "id": 38289,
+    "skillKey": "clawhub-openclaw-upgrade-standard",
+    "name": "OpenClaw Upgrade Standard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-upgrade-standard",
+    "url": "https://clawhub.ai/skills/openclaw-upgrade-standard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-upgrade-standard-0dedea0917f54a3b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safe OpenClaw upgrade procedure with backup, doctor fix, service migration, rollback, and post-upgrade testing. Prevents silent failures from Dashboard upgra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gjoham",
+      "userId": "s173bav8tnq6q3478m1r35mjq583em47",
+      "displayName": "gjoham",
+      "image": "https://avatars.githubusercontent.com/u/181919056?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774301527309,
+      "changelog": "Initial release: safe upgrade procedure with backup, doctor fix, entrypoint migration, rollback, and testing checklist. Based on real production failure during 2026.3.13 → 2026.3.22 upgrade.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ec5b5b35b42d74a93b849f28ef65c6196fffee24155633e3f60d52ea89b1f71"
+}

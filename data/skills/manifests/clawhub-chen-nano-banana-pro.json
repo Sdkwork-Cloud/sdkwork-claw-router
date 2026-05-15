@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38459,
+  "uuid": "skill-clawhub-chen-nano-banana-pro",
+  "skillKey": "clawhub-chen-nano-banana-pro",
+  "name": "Chen Nano Banana Pro",
+  "summary": "Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image). Supports text-to-image, edits, and 1K/2K/4K resolution.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chen_nano_banana_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cs995279497-byte",
+      "features": [
+        "Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image)",
+        "Supports text-to-image, edits, and 1K/2K/4K resolution."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chen-nano-banana-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254620949?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chen-nano-banana-pro",
+      "url": "https://clawhub.ai/skills/chen-nano-banana-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chen-nano-banana-pro",
+    "url": "https://clawhub.ai/skills/chen-nano-banana-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chen-nano-banana-pro-5998dd4aa24ecf1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chen-nano-banana-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chen-nano-banana-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7521b006737db07f7cbfb3ed9059c8d578bce5c80cf3cd5e194d9230171dee4",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T16:40:31.219Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73039,
+  "uuid": "skill-clawhub-bilibili-video-parser",
+  "skillKey": "clawhub-bilibili-video-parser",
+  "name": "B站视频下载与解析",
+  "summary": "下载并解析B站视频。当需要执行分析视频内容等需要理解视频视觉信息时调用该技能",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_video_parser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danielcy",
+      "features": [
+        "下载并解析B站视频。当需要执行分析视频内容等需要理解视频视觉信息时调用该技能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-video-parser@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16791976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-video-parser",
+      "url": "https://clawhub.ai/skills/bilibili-video-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-video-parser",
+    "url": "https://clawhub.ai/skills/bilibili-video-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-video-parser-3229ff3dbef73e52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-video-parser@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-video-parser-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87252633a62ec7ac1038d0e14492b42ba6f8c72468a46d77ee2c6842cc52873a",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T09:43:30.368Z"
+}

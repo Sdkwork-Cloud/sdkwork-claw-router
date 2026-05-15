@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nutcrackertestgpt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nutcrackertestgpt",
+  "skill": {
+    "id": 22709,
+    "skillKey": "clawhub-nutcrackertestgpt",
+    "name": "nutcrackertestgpt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nutcrackertestgpt",
+    "url": "https://clawhub.ai/skills/nutcrackertestgpt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nutcrackertestgpt-fd11cad351b9fbfe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Privacy-first UX research ethnography for OpenClaw. Use when asked to observe OpenClaw usage over time, extract local session data and conversations, analyze..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "giulianomorse",
+      "userId": "publishers:giulianomorse",
+      "displayName": "giulianomorse",
+      "image": "https://avatars.githubusercontent.com/u/210213190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 453,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772734712037,
+      "changelog": "Initial release of OpenClaw UX Ethnographer.\n\n- Adds privacy-first local UX research capture, consent management, and redaction guardrails.\n- Supports natural language and slash command invocations for running, setup, status, and purging data.\n- Collects and analyzes OpenClaw usage data with no third-party dependencies and no data ever leaving local storage.\n- Generates daily, redacted ethnography reports with behavioral insights, pain points, recommendations, and next-day research plans.\n- Implements built-in automated retention and purging according to user-configured consent and settings.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:25ab8423da5e209f2165dd38480b9b7c1fb3e9583e283f5280a5037aa684eb97"
+}

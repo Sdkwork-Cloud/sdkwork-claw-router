@@ -1,0 +1,49 @@
+{
+  "skill": {
+    "slug": "solpaw-launcher",
+    "displayName": "Solpaw-Launcher",
+    "summary": "Launch Solana tokens on Pump.fun via the SolPaw platform. 0.1 SOL one-time fee. Your wallet is the onchain creator.",
+    "tags": {
+      "latest": "3.0.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1034,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1770747771614,
+    "updatedAt": 1778384915889
+  },
+  "latestVersion": {
+    "version": "3.0.2",
+    "createdAt": 1770754666111,
+    "changelog": "- Added strong security guidance and warnings regarding private key usage; recommend dedicated ephemeral wallets for launches.\n- Enforced explicit user-invocation only—skill may not be called autonomously by agents.\n- Updated prerequisites: `SOLPAW_API_URL` must be set in environment variables.\n- Disabled model invocation: now requires explicit user action.\n- Expanded and clarified security section on transaction signing, API keys, environment variables, and daily launch limits.\n- Revised constraints to emphasize no logging or transmitting of private keys and stricter user-approval requirements.",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "lvcidpsyche",
+    "userId": "publishers:lvcidpsyche",
+    "displayName": "LvcidPsyche",
+    "image": "https://avatars.githubusercontent.com/u/160208855?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.env_credential_access, suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778384915889
+  }
+}

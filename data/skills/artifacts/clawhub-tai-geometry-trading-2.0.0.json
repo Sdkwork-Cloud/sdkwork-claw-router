@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tai-geometry-trading@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tai_geometry_trading",
+  "skill": {
+    "id": 73122,
+    "skillKey": "clawhub-tai-geometry-trading",
+    "name": "太几何交易"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tai-geometry-trading",
+    "url": "https://clawhub.ai/skills/tai-geometry-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tai-geometry-trading-7905b289496b2cfc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "融合东方智慧和几何数学的交易分析系统。使用几何结构分析，多周期MACD风洞结构共振、缩量短线进行技术分析，结合基本面分析、主流情绪分析和AI预测进行综合打分决策。当用户询问股票走势预测、买卖点分析、股票技术分析、股票评分等问题时触发此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "saitoshen",
+      "userId": "s17ctw5cxsxq0ghk0pbrtrw3bs83mh4n",
+      "displayName": "saitoshen",
+      "image": "https://avatars.githubusercontent.com/u/41047166?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774745944392,
+      "changelog": "修复 MiniMax API URL 从 api.minimaxi.com/anthropic 改为 api.minimax.chat/v1",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc489bd970e08e0f048ed366eec59d02c1dd0cbfb632619079a782b15660ec5b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/env-ops-standard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.env_ops_standard",
+  "skill": {
+    "id": 29570,
+    "skillKey": "clawhub-env-ops-standard",
+    "name": "Safe .env Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "env-ops-standard",
+    "url": "https://clawhub.ai/skills/env-ops-standard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/env-ops-standard-4b2a45588f4fded3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safe .env key-first operations (CRUD) with secret-safe defaults. Use when troubleshooting missing env keys, auth/config failures, or when asked to add/update..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pioneer-weirdo",
+      "userId": "s1740nb6xer4ybxtpqhb0vvjwh83gy1e",
+      "displayName": "Pioneer",
+      "image": "https://avatars.githubusercontent.com/u/80094616?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774440640134,
+      "changelog": "Initial release of env-ops-standard for secure, policy-driven .env file management.\n\n- Enforces a key-first, secret-safe workflow for adding, updating, listing, and removing .env entries.\n- Never prints secret values; all set operations default to stdin-only and require explicit flags for value-in-argv or destructive changes.\n- Mandates comment and naming conventions, policy validation, and atomic writes with timestamped backups.\n- Includes commands for linting, health checks, dry-run previews, and policy inspection.\n- Ensures org-wide consistency and safety, especially when troubleshooting missing keys or configuration errors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:286140c80b7e88e0f3221aea6019c970e3b685cb56c700087befd04dd93af3f8"
+}

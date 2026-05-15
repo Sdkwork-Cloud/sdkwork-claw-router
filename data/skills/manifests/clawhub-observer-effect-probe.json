@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50260,
+  "uuid": "skill-clawhub-observer-effect-probe",
+  "skillKey": "clawhub-observer-effect-probe",
+  "name": "Observer Effect Probe",
+  "summary": "Helps detect skills that behave differently when they sense they are being monitored — catching the class of evasion where conditional activation logic speci...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.observer_effect_probe",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andyxinweiminicloud",
+      "features": [
+        "Helps detect skills that behave differently when they sense they are being monitored — catching."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/observer-effect-probe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201528876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "observer-effect-probe",
+      "url": "https://clawhub.ai/skills/observer-effect-probe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "observer-effect-probe",
+    "url": "https://clawhub.ai/skills/observer-effect-probe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/observer-effect-probe-56e7a2202bb8e524.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/observer-effect-probe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-observer-effect-probe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23c2f272ae4afb0073da5e1a2c511c7d0f4a07c9e17fbed41cc747f617db52a3",
+      "artifactSizeBytes": 2581
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T09:59:17.824Z"
+}

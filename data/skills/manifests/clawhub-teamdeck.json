@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31658,
+  "uuid": "skill-clawhub-teamdeck",
+  "skillKey": "clawhub-teamdeck",
+  "name": "Teamdeck",
+  "summary": "Teamdeck integration. Manage Organizations. Use when the user wants to interact with Teamdeck data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teamdeck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Teamdeck integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Teamdeck data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/teamdeck@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "teamdeck",
+      "url": "https://clawhub.ai/skills/teamdeck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teamdeck",
+    "url": "https://clawhub.ai/skills/teamdeck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teamdeck-c8c771c7817c74a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/teamdeck@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-teamdeck-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5573167dcd4f37d9648dd31eccb03d0b7296022393ddcf1243b7b2480ff4d388",
+      "artifactSizeBytes": 1806
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:50:40.746Z"
+}

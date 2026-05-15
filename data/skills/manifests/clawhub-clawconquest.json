@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51898,
+  "uuid": "skill-clawhub-clawconquest",
+  "skillKey": "clawhub-clawconquest",
+  "name": "ClawConquest",
+  "summary": "AI agent skill for ClawConquest — submit one action per 120s tick via CLI.",
+  "version": "2.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawconquest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawConquest",
+      "features": [
+        "AI agent skill for ClawConquest — submit one action per 120s tick via CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawconquest@2.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5221072?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawconquest",
+      "url": "https://clawhub.ai/skills/clawconquest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawconquest",
+    "url": "https://clawhub.ai/skills/clawconquest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawconquest-19420ee5c124e138.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawconquest@2.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawconquest-2.6.0.json",
+      "version": "2.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8b36a708186957418827b96fde8b5cda06074a9c2f1a0685fa4d1bdbdaeb945",
+      "artifactSizeBytes": 1774
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T18:37:10.749Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/backtest-expert-0-1-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.backtest_expert_0_1_0",
+  "skill": {
+    "id": 13859,
+    "skillKey": "clawhub-backtest-expert-0-1-0",
+    "name": "Backtest Expert 0.1.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "backtest-expert-0-1-0",
+    "url": "https://clawhub.ai/skills/backtest-expert-0-1-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/backtest-expert-0-1-0-18c1258e2c5edf72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert guidance for systematic backtesting of trading strategies. Use when developing, testing, stress-testing, or validating quantitative trading strategies..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "itsjustfred",
+      "userId": "publishers:itsjustfred",
+      "displayName": "itsjustFred",
+      "image": "https://avatars.githubusercontent.com/u/151180638?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 858,
+      "installsAllTime": 28,
+      "installsCurrent": 27,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771796169432,
+      "changelog": "Initial release with expert guidance for rigorous backtesting of trading strategies.\n\n- Provides a step-by-step workflow for systematic backtest development and validation.\n- Emphasizes robust, pessimistic testing and stress tests over curve-fitting or optimistic results.\n- Covers key principles: parameter sensitivity, slippage/friction modeling, and bias prevention.\n- Includes detailed reminders, common failure patterns, and references for further methodology and failed tests.\n- Applicable to anyone developing, evaluating, or troubleshooting systematic trading strategies.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3a1e1c7595acdfe20001cf6566b3bf84c35bc69c648eea5faa03b9d9d16180f1"
+}

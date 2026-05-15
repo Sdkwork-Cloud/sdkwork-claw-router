@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19589,
+  "uuid": "skill-clawhub-x-recap",
+  "skillKey": "clawhub-x-recap",
+  "name": "x-recap",
+  "summary": "Monitor and recap official X (Twitter) updates using actionbook-rs screenshots. Use when the user asks to track/recap X posts (especially official accounts l...",
+  "version": "2026.2.25",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_recap",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jackworld",
+      "features": [
+        "Monitor and recap official X (Twitter) updates using actionbook-rs screenshots",
+        "Use when the user asks to track/recap X posts (especially official accounts l..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-recap@2026.2.25",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128350428?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-recap",
+      "url": "https://clawhub.ai/skills/x-recap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-recap",
+    "url": "https://clawhub.ai/skills/x-recap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-recap-fc07fead3c6a33e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-recap@2026.2.25",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-recap-2026.2.25.json",
+      "version": "2026.2.25",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea3db10b36d86233d0545cee44e1be57e4d7def00be00ef30617b84563910932",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T01:53:10.517Z"
+}

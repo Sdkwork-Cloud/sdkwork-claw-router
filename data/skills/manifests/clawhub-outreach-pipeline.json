@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62127,
+  "uuid": "skill-clawhub-outreach-pipeline",
+  "skillKey": "clawhub-outreach-pipeline",
+  "name": "outreach-pipeline",
+  "summary": "邮件外联自动化（批量邮件外联、序列发送、模板合并、节流与送达合规）。当用户要：1) 导入收件人列表（CSV/表格）并批量发送个性化外联邮件；2) 运行简单的邮件序列与跟进；3) 通过 SMTP 或常见 ESP（SendGrid/Mailgun）发送；4) 使用 Gmail/Outlook（OAuth/App Pa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outreach_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xianji520",
+      "features": [
+        "邮件外联自动化（批量邮件外联、序列发送、模板合并、节流与送达合规）。当用户要：1) 导入收件人列表（CSV/表格）并批量发送个性化外联邮件；2) 运行简单的邮件序列与跟进；3) 通过 SMT."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/outreach-pipeline@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250768986?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "outreach-pipeline",
+      "url": "https://clawhub.ai/skills/outreach-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outreach-pipeline",
+    "url": "https://clawhub.ai/skills/outreach-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outreach-pipeline-2bdb1c987db5669f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/outreach-pipeline@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-outreach-pipeline-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a26182118315dcfe7b47d5b487f2c4357d50bc5b0555dfdb169ad8e3b7a46113",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T10:09:08.381Z"
+}

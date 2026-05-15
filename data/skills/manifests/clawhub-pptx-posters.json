@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39538,
+  "uuid": "skill-clawhub-pptx-posters",
+  "skillKey": "clawhub-pptx-posters",
+  "name": "Slide Outline Generator",
+  "summary": "Generate PowerPoint presentations and academic posters from paper abstracts or full paper content, with automatic layout optimization and citation formatting.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pptx_posters",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Generate PowerPoint presentations and academic posters from paper abstracts or full paper conte."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pptx-posters@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pptx-posters",
+      "url": "https://clawhub.ai/skills/pptx-posters"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pptx-posters",
+    "url": "https://clawhub.ai/skills/pptx-posters",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pptx-posters-9eecb5c255476fa8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pptx-posters@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pptx-posters-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2372f2d58eb9d46f6e13a4c2c3676c3bcf48750615b64e75a461a98d8a1e4fff",
+      "artifactSizeBytes": 2360
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:15:44.243Z"
+}

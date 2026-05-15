@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63632,
+  "uuid": "skill-clawhub-tickdb-market-data",
+  "skillKey": "clawhub-tickdb-market-data",
+  "name": "TickDB Real-time Market Data API",
+  "summary": "TickDB 统一实时行情数据 API。覆盖外汇、贵金属、指数、美股、港股、A股、加密货币，提供实时行情、K线、订单簿、资金流向、股票基本面等数据查询。 当用户提及价格、行情、K线、买卖盘、市值、市盈率、资金流向、分时走势、交易日历等金融数据相关话题时触发。",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tickdb_market_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TickDB",
+      "features": [
+        "TickDB 统一实时行情数据 API。覆盖外汇、贵金属、指数、美股、港股、A股、加密货币，提供实时行情、K线、订单簿、资金流向、股票基本面等数据查询。 当用户提及价格、行情、K线、买卖盘、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tickdb-market-data@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252287337?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tickdb-market-data",
+      "url": "https://clawhub.ai/skills/tickdb-market-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tickdb-market-data",
+    "url": "https://clawhub.ai/skills/tickdb-market-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tickdb-market-data-b59926bf9111af90.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tickdb-market-data@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-tickdb-market-data-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f6dca8d08d5fc9ff80b8ec103cc142d5f0f12d76a0e5c267678add420ff36c7",
+      "artifactSizeBytes": 2286
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T13:45:56.734Z"
+}

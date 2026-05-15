@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workspace-heartbeat-integration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_heartbeat_integration",
+  "skill": {
+    "id": 27937,
+    "skillKey": "clawhub-workspace-heartbeat-integration",
+    "name": "Workspace Heartbeat Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-heartbeat-integration",
+    "url": "https://clawhub.ai/skills/workspace-heartbeat-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-heartbeat-integration-28b1d04a2b64f7a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates synchronized logging of work sessions, heartbeat state updates, and daily summaries by integrating HEARTBEAT.md, heartbeat-state.json, and workspac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "utopiabenben",
+      "userId": "s17cnh4v6k2vf1742dfy2z5vj183qz0q",
+      "displayName": "utopiabenben",
+      "image": "https://avatars.githubusercontent.com/u/19267750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773960099164,
+      "changelog": "自动同步 HEARTBEAT 和 self-improving 状态",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a159cbc1e4a8d0d4601b2dcd6adea772e4eb2fa811290d3bd2bbe39f64de8137"
+}

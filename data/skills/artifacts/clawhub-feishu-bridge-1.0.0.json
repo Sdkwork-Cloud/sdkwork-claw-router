@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-bridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bridge",
+  "skill": {
+    "id": 8550,
+    "skillKey": "clawhub-feishu-bridge",
+    "name": "Feishu Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bridge",
+    "url": "https://clawhub.ai/skills/feishu-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bridge-5b2c80248e7a9a27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect a Feishu (Lark) bot to Clawdbot via WebSocket long-connection. No public server, domain, or ngrok required. Use when setting up Feishu/Lark as a messaging channel, troubleshooting the Feishu bridge, or managing the bridge service (."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexanys",
+      "userId": "publishers:alexanys",
+      "displayName": "Yangsen AN",
+      "image": "https://avatars.githubusercontent.com/u/165750824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 10228,
+      "installsAllTime": 82,
+      "installsCurrent": 78,
+      "stars": 8,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769499526377,
+      "changelog": "Initial release: Feishu/Lark bot to Clawdbot bridge via WebSocket",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7ac3a40dda2619a0b0b7dc476714cdea5dc4587e99c9ff8f93385f30e66b4dc6"
+}

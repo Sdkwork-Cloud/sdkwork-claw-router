@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36060,
+  "uuid": "skill-clawhub-scheduled-reports",
+  "skillKey": "clawhub-scheduled-reports",
+  "name": "Scheduled Reports",
+  "summary": "Define, preview, approve, and manage recurring reports for OpenClaw. Use when the user asks for a scheduled report, daily or weekly report, automatic report,...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scheduled_reports",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Umbra",
+      "features": [
+        "Define, preview, approve, and manage recurring reports for OpenClaw",
+        "Use when the user asks for a scheduled report, daily or weekly report, automatic report,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scheduled-reports@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35642940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scheduled-reports",
+      "url": "https://clawhub.ai/skills/scheduled-reports"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scheduled-reports",
+    "url": "https://clawhub.ai/skills/scheduled-reports",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scheduled-reports-69a2c68df75b0787.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scheduled-reports@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scheduled-reports-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ea16ab446833d187c9fc0dee80c103d23acd5776b2de558b2fcd4480051d00a",
+      "artifactSizeBytes": 2358
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T06:41:33.384Z"
+}

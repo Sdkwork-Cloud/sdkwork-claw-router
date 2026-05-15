@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subagent-tasking-with-superpowers@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subagent_tasking_with_superpowers",
+  "skill": {
+    "id": 59413,
+    "skillKey": "clawhub-subagent-tasking-with-superpowers",
+    "name": "子代理任务拆分 + Superpowers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subagent-tasking-with-superpowers",
+    "url": "https://clawhub.ai/skills/subagent-tasking-with-superpowers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subagent-tasking-with-superpowers-00dffcf7ee217206.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "子代理任务拆分 + using-superpowers 技能执行。每次 spawn 子代理前必须遵守的铁律。结合 using-superpowers 和 subagent-tasking 规则。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weilixiong",
+      "userId": "s170c5mk13rn2tgxg3x8hv9sa983z7xa",
+      "displayName": "weilixiong",
+      "image": "https://avatars.githubusercontent.com/u/37475384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 332,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775959834397,
+      "changelog": "初始发布：子代理 spawn 前必须调用 using-superpowers 技能，任务拆分自检，写 Task Brief，每个 spawn 只做一件事",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0950200ee562ee9528adc7ce50e92626e45d4e484b6c39289a62bf2e02ee7de"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hackmd@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hackmd",
+  "skill": {
+    "id": 14819,
+    "skillKey": "clawhub-hackmd",
+    "name": "HackMD"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hackmd",
+    "url": "https://clawhub.ai/skills/hackmd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hackmd-2fa40fcd2b12e63e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work with HackMD documents. Use when reading, creating, updating, or deleting notes on HackMD. Supports change tracking to detect document modifications since last check. Supports personal and team workspaces."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nulltea",
+      "userId": "publishers:nulltea",
+      "displayName": "nulltea",
+      "image": "https://avatars.githubusercontent.com/u/23295017?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770581675788,
+      "changelog": "Initial release with HackMD document management and change tracking.\n\n- Read, create, update, and delete personal and team notes using HackMD CLI.\n- Supports listing notes, exporting content, and viewing note metadata.\n- Provides utilities for tracking document changes (change detection via lastChangedAt).\n- Includes command-line scripts for managing tracked notes and checking for updates.\n- Supports rate limits and both personal and team workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f8a8a1d909ec9af14ed9b258a73e30016f5ed0bb784bec8f964c4bdc5bd0c913"
+}

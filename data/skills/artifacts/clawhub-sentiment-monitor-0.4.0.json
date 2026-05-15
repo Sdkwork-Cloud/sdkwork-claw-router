@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sentiment-monitor@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sentiment_monitor",
+  "skill": {
+    "id": 33703,
+    "skillKey": "clawhub-sentiment-monitor",
+    "name": "Sentiment Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sentiment-monitor",
+    "url": "https://clawhub.ai/skills/sentiment-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sentiment-monitor-8a3e6fa9a70bf62f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Public opinion monitoring and structured report generation. Collects publicly available web information about celebrities, TV shows, or brands, performs sent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wubinghuang2019-source",
+      "userId": "s17dkre5tb9txjr9f9rzgn4tk985bk4g",
+      "displayName": "wubinghuang2019-source",
+      "image": "https://avatars.githubusercontent.com/u/267895047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1777357676368,
+      "changelog": "Version 0.4.0 of sentiment-monitor updates documentation and clarifies platform data usage and reporting rules.\n\n- Added explicit notes regarding the unavailability of precise platform metrics (view counts, follower numbers) from public web sources.\n- Clarified that only publicly visible, explicitly displayed metrics should be reported; qualitative descriptions are preferred when numbers are unavailable.\n- Provided an inline self-contained HTML report template, replacing the previous external template reference.\n- Updated tool prerequisites and instructions for environments lacking required web access tools.\n- Improved guidance for agents to prevent data fabrication and ensure strict adherence to public data sourcing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dddf5dd186904269e1903b8dffbc06e84850c4c0b7f159b7f87c588846847edb"
+}

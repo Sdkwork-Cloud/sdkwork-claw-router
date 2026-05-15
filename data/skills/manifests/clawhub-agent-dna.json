@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21280,
+  "uuid": "skill-clawhub-agent-dna",
+  "skillKey": "clawhub-agent-dna",
+  "name": "Agent DNA",
+  "summary": "Portable agent identity encoding. Compress SOUL.md/MEMORY.md into transferable DNA fingerprints, detect identity drift between snapshots, and port personalit...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_dna",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cassh",
+      "features": [
+        "Portable agent identity encoding",
+        "Compress SOUL.md/MEMORY.md into transferable DNA fingerprints, detect identity drift between sn."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-dna@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128089099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-dna",
+      "url": "https://clawhub.ai/skills/agent-dna"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-dna",
+    "url": "https://clawhub.ai/skills/agent-dna",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-dna-cdab965ec005bb91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-dna@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-dna-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a926e16ae862874331d1ecfcc2855ce9899ead73b183459a3cba9a39f757ef2",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T18:12:58.750Z"
+}

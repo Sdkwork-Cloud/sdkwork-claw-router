@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72785,
+  "uuid": "skill-clawhub-yes-md-zh",
+  "skillKey": "clawhub-yes-md-zh",
+  "name": "YES.md 中文版",
+  "summary": "當任務涉及修改檔案、設定、資料庫或部署時觸發。當除錯連續失敗 2 次以上時觸發。當即將猜測或假設而沒有證據時觸發（「應該是」「可能是」「我覺得」「感覺是」）。當把問題推給用戶時觸發（「請你檢查」「建議您手動」「你可能需要」）。當改完東西沒有驗證就說完成時觸發。當下結論或判定根因時觸發。當有工具卻不用時觸發（有 W...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yes_md_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tkman",
+      "features": [
+        "當任務涉及修改檔案、設定、資料庫或部署時觸發。當除錯連續失敗 2 次以上時觸發。當即將猜測或假設而沒有證據時觸發（「應該是」「可能是」「我覺得」「感覺是」）。當把問題推給用戶時觸發（「請你檢."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yes-md-zh@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90471971?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yes-md-zh",
+      "url": "https://clawhub.ai/skills/yes-md-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yes-md-zh",
+    "url": "https://clawhub.ai/skills/yes-md-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yes-md-zh-f0584c19af200ee6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yes-md-zh@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yes-md-zh-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c2e5ee0df42bc18d42ae54c1ee9d9223d0f699953e016e29bf0bc68fb107320",
+      "artifactSizeBytes": 2201
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T11:05:08.268Z"
+}

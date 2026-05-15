@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seeweb-uptime@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seeweb_uptime",
+  "skill": {
+    "id": 21352,
+    "skillKey": "clawhub-seeweb-uptime",
+    "name": "SeeWeb Uptime"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seeweb-uptime",
+    "url": "https://clawhub.ai/skills/seeweb-uptime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seeweb-uptime-f4577397bb55b6cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors websites, APIs, and cron jobs (watchdogs) using Watch.dog. Use it when the user asks to \"check the status of my monitors\", \"check uptime\", \"review w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robinson0594",
+      "userId": "s17819v17v0gfjf3gmtp9d4abd85ncak",
+      "displayName": "Robinson",
+      "image": "https://avatars.githubusercontent.com/u/36093088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 512,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1772656581285,
+      "changelog": "- Updated skill version to 1.0.5.\n- Changed author name from \"Watch.dog Team\" to \"SeeWeb Uptime Team.\"\n- No code or functional changes detected; documentation only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8586c9773d838c7dbee9a2ea47d538c92b83cb22737a77cb72560491de787037"
+}

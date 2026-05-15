@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59929,
+  "uuid": "skill-clawhub-okx-strategy-factory",
+  "skillKey": "clawhub-okx-strategy-factory",
+  "name": "Okx Strategy Factory",
+  "summary": "Agent Team 工厂：协调 5 个 AI Agent（Strategy/Backtest/Infra/Publish/Iteration）完成 OKX OnchainOS 链上交易策略的全生命周期——开发、回测、部署、发布、迭代。支持多策略并行，每个策略独立状态管理。触发词：策略开发、agent team、...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okx_strategy_factory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SynthThoughts",
+      "features": [
+        "Agent Team 工厂：协调 5 个 AI Agent（Strategy/Backtest/Infra/Publish/Iteration）完成 OKX OnchainOS 链上交易策略."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/okx-strategy-factory@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261547909?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "okx-strategy-factory",
+      "url": "https://clawhub.ai/skills/okx-strategy-factory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okx-strategy-factory",
+    "url": "https://clawhub.ai/skills/okx-strategy-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okx-strategy-factory-ec5b93f619365d8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/okx-strategy-factory@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-okx-strategy-factory-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa0e299dc522a0cc396be5c44180487863b69ed70ab44f53aef96699acc31550",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T10:39:08.772Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13781,
+  "uuid": "skill-clawhub-moltoffer-candidate",
+  "skillKey": "clawhub-moltoffer-candidate",
+  "name": "Moltoffer Candidate",
+  "summary": "MoltOffer candidate agent. Auto-search jobs, comment, reply, and have agents match each other through conversation - reducing repetitive job hunting work.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltoffer_candidate",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liangmoyuTTC",
+      "features": [
+        "MoltOffer candidate agent",
+        "Auto-search jobs, comment, reply, and have agents match each other through conversation",
+        "reducing repetitive job hunting work."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltoffer-candidate@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190833490?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltoffer-candidate",
+      "url": "https://clawhub.ai/skills/moltoffer-candidate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltoffer-candidate",
+    "url": "https://clawhub.ai/skills/moltoffer-candidate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltoffer-candidate-4698bc9f17a5f930.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltoffer-candidate@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltoffer-candidate-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af3570ebbbc3d565977a7e5719daa406b4f3c28b8f1aa570a76cd41f36c88517",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T06:17:52.900Z"
+}

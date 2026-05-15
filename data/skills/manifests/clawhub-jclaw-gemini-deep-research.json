@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52487,
+  "uuid": "skill-clawhub-jclaw-gemini-deep-research",
+  "skillKey": "clawhub-jclaw-gemini-deep-research",
+  "name": "Gemini Deep Research (J-Claw)",
+  "summary": "Execute Gemini Deep Research using the gemini-deep-research MCP extension for the Gemini CLI. Use when user wants deep, comprehensive research on a topic — m...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jclaw_gemini_deep_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Skywalker326",
+      "features": [
+        "Execute Gemini Deep Research using the gemini-deep-research MCP extension for the Gemini CLI",
+        "Use when user wants deep, comprehensive research on a topic — m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jclaw-gemini-deep-research@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5773915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jclaw-gemini-deep-research",
+      "url": "https://clawhub.ai/skills/jclaw-gemini-deep-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jclaw-gemini-deep-research",
+    "url": "https://clawhub.ai/skills/jclaw-gemini-deep-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jclaw-gemini-deep-research-a38ce61ba0ba459c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jclaw-gemini-deep-research@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jclaw-gemini-deep-research-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:064351821f7728d145414dfe2dcf8df0e165ad938325ba14e8afe2cc99552962",
+      "artifactSizeBytes": 2102
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T05:48:32.487Z"
+}

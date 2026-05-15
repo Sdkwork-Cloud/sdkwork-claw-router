@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67166,
+  "uuid": "skill-clawhub-camscanner",
+  "skillKey": "clawhub-camscanner",
+  "name": "Camscanner",
+  "summary": "整理并摘要CamScanner官网公开的功能说明、套餐信息、模板入口及帮助文档，支持办公协作产品信息展示。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camscanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "整理并摘要CamScanner官网公开的功能说明、套餐信息、模板入口及帮助文档，支持办公协作产品信息展示。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/camscanner@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "camscanner",
+      "url": "https://clawhub.ai/skills/camscanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camscanner",
+    "url": "https://clawhub.ai/skills/camscanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camscanner-027a72dfaabe7491.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/camscanner@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-camscanner-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57a72c515683ffbfb5b8c3544daa612108304beb89bb63731c0dbb7585dd3f27",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:59:27.599Z"
+}

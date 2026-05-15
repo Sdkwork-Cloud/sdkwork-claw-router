@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ttrpg-gm@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ttrpg_gm",
+  "skill": {
+    "id": 12478,
+    "skillKey": "clawhub-ttrpg-gm",
+    "name": "TTRPG Game Master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ttrpg-gm",
+    "url": "https://clawhub.ai/skills/ttrpg-gm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ttrpg-gm-96f46a3fb6f34b35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "TTRPG Game Master for mature dark-themed campaigns. Use for Cyberpunk, Dark Fantasy, Horror, character-driven narratives with consequence tracking. Features dual-consequence system (World + Relationships), autonomous NPCs, hidden D20 rolls."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rogerkink6",
+      "userId": "publishers:rogerkink6",
+      "displayName": "RogerKink6",
+      "image": "https://avatars.githubusercontent.com/u/18641414?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1776,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1770331939885,
+      "changelog": "ttrpg-gm 2.1.0 Changelog\n\n- Overhauled SKILL.md with detailed gameplay philosophy, rules, and narrative structure for mature TTRPG campaigns.\n- Introduced the dual-consequence system, tracking both World State and Relationships for every significant player choice.\n- Enhanced NPC autonomy, including independent NPC-NPC relationship tracking and evolving party dynamics.\n- Codified hidden and visible D20 resolution mechanics, with graduated narrative feedback for hidden rolls.\n- Added support for mature romance, psychological gauges, and an optional adult content module.\n- Updated invocation triggers for broader RPG and campaign keyword detection.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c985af79b901d69842b295d794ea2adf54bec3dd7b7ca32f93606102c2340d8b"
+}

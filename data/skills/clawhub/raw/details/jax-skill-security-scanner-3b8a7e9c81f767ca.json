@@ -1,0 +1,49 @@
+{
+  "skill": {
+    "slug": "jax-skill-security-scanner",
+    "displayName": "饺子安全扫描",
+    "summary": "🔐 OpenClaw技能安全扫描器 - 专业级安全审计工具，检测敏感操作、木马后门，保护您的AI助手生态安全",
+    "tags": {
+      "latest": "1.0.5"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 430,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "createdAt": 1773121830997,
+    "updatedAt": 1778306241020
+  },
+  "latestVersion": {
+    "version": "1.0.5",
+    "createdAt": 1773640866812,
+    "changelog": "**Major update: Added AI投毒（Prompt Poisoning）与虚假信息（Hallucination）检测能力。**\n\n- 新增 AI 投毒检测功能，支持识别提示注入、越狱攻击、系统提示提取、上下文污染等安全风险。\n- 新增 虚假信息与幻觉检测，能够识别虚假广告、诈骗、假冒产品及违规内容等风险内容。\n- 新增 dist/hallucination-detector.js 与 dist/prompt-poison-detector.js 两个检测模块。\n- 移除无关的元数据和更新说明文件，提升技能包精简性。\n- 文档升级，详细列出新检测能力和对应的使用示例。",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "jasonshieh",
+    "userId": "publishers:jasonshieh",
+    "displayName": "jasonshieh",
+    "image": "https://avatars.githubusercontent.com/u/1629384?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.potential_exfiltration",
+      "suspicious.prompt_injection_instructions"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.potential_exfiltration, suspicious.prompt_injection_instructions",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778306241020
+  }
+}

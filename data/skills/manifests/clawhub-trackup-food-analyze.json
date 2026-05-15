@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33098,
+  "uuid": "skill-clawhub-trackup-food-analyze",
+  "skillKey": "clawhub-trackup-food-analyze",
+  "name": "trackup food analyze",
+  "summary": "analyze a food image with AISpark TrackUp production APIs, using AnalyzeWholeFood for full analysis and dedicated endpoints for macros, ingredients, health i...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trackup_food_analyze",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "trackup",
+      "features": [
+        "analyze a food image with AISpark TrackUp production APIs, using AnalyzeWholeFood for full anal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trackup-food-analyze@1.0.4",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/trackup-food-analyze/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trackup-food-analyze",
+      "url": "https://clawhub.ai/skills/trackup-food-analyze"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trackup-food-analyze",
+    "url": "https://clawhub.ai/skills/trackup-food-analyze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trackup-food-analyze-5aa655cd590bef10.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trackup-food-analyze@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-trackup-food-analyze-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f05286691993b90c5e8a6947b4e1a99b4e39b0c15f6f3e70139fb22a658cc687",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T15:21:47.421Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quality-boost@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quality_boost",
+  "skill": {
+    "id": 70224,
+    "skillKey": "clawhub-quality-boost",
+    "name": "Quality Boost - 大模型回答质量提升器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quality-boost",
+    "url": "https://clawhub.ai/skills/quality-boost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quality-boost-658a7bf9432d95a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过9条严格规则系统评估并量化大模型回答质量，防止幻觉、跑偏、冗长和遗漏，确保准确、简洁、合规的输出。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jx-76",
+      "userId": "s171yt34379y1hr90tqkb226a9842e3c",
+      "displayName": "jjx",
+      "image": "https://avatars.githubusercontent.com/u/152524220?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775099120283,
+      "changelog": "质量评估版：质量检测工具、评分标准、A/B测试方法、持续优化建议",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:232d41782d10f03204f64efdb62002b62d755f364134c549c1409e4b68be3576"
+}

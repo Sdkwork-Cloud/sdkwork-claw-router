@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64326,
+  "uuid": "skill-clawhub-ai-image-cli",
+  "skillKey": "clawhub-ai-image-cli",
+  "name": "Ai Image Cli",
+  "summary": "AI 图像生成工具。支持文生图(text2img)和图生图(img2img)功能，基于 AIGW API。 激活场景：生成图片、画图、制作图像、修改图片、图片编辑、 或提到 \"生成图片\"、\"画一个\"、\"创建图像\"、\"修改这张图\"、\"改成\"、\"转为图片\" 时激活。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_image_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xxxxxzh1",
+      "features": [
+        "AI 图像生成工具。支持文生图(text2img)和图生图(img2img)功能，基于 AIGW API。 激活场景：生成图片、画图、制作图像、修改图片、图片编辑、 或提到 \"生成图片\"、\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-image-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33056502?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-image-cli",
+      "url": "https://clawhub.ai/skills/ai-image-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-image-cli",
+    "url": "https://clawhub.ai/skills/ai-image-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-image-cli-88e49a930dfb5ec5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-image-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-image-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f339cc812e8a913f9489ba6e3fa39d1f3f6e9b97235eea07306f1aa7bdb97c6",
+      "artifactSizeBytes": 2480
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:33:04.453Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71449,
+  "uuid": "skill-clawhub-weixin-article-read",
+  "skillKey": "clawhub-weixin-article-read",
+  "name": "微信文章读取",
+  "summary": "读取微信公众平台文章内容（mp.weixin.qq.com）。当用户发送微信文章链接、需要读取微信文章内容、提取公众号文章时自动激活。支持突破微信反爬限制，获取完整文章文本。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weixin_article_read",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lcwatergm-afk",
+      "features": [
+        "读取微信公众平台文章内容（mp.weixin.qq.com）。当用户发送微信文章链接、需要读取微信文章内容、提取公众号文章时自动激活。支持突破微信反爬限制，获取完整文章文本。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weixin-article-read@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246855023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weixin-article-read",
+      "url": "https://clawhub.ai/skills/weixin-article-read"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weixin-article-read",
+    "url": "https://clawhub.ai/skills/weixin-article-read",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weixin-article-read-c473f639cad441fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weixin-article-read@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weixin-article-read-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91964200cea7706f50964e2d9dfcb6b9d4dea5eb67b12303ff0a18a0276a1b4f",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T08:36:06.674Z"
+}

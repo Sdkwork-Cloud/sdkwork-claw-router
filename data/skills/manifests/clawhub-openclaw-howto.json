@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38578,
+  "uuid": "skill-clawhub-openclaw-howto",
+  "skillKey": "clawhub-openclaw-howto",
+  "name": "OpenClaw HowTo",
+  "summary": "Provides authoritative guidance on OpenClaw features, configs, CLI commands, troubleshooting, using both web search and local info with auto-cached environme...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_howto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OneSpark",
+      "features": [
+        "Provides authoritative guidance on OpenClaw features, configs, CLI commands, troubleshooting, u."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-howto@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22157758?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-howto",
+      "url": "https://clawhub.ai/skills/openclaw-howto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-howto",
+    "url": "https://clawhub.ai/skills/openclaw-howto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-howto-aebbb409d52f4e66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-howto@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-howto-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:522e9d81d98df46ca9bc52f94038ac298440d5a59886d92bdef7f7e06e719105",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T03:29:33.939Z"
+}

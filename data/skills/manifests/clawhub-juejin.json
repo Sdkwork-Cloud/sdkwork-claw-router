@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73283,
+  "uuid": "skill-clawhub-juejin",
+  "skillKey": "clawhub-juejin",
+  "name": "掘金自动化",
+  "summary": "掘金平台自动化操作。支持发布沸点、查询话题列表等功能。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juejin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lang50",
+      "features": [
+        "掘金平台自动化操作。支持发布沸点、查询话题列表等功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/juejin@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66066555?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "juejin",
+      "url": "https://clawhub.ai/skills/juejin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juejin",
+    "url": "https://clawhub.ai/skills/juejin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juejin-7af2465c9fb905c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/juejin@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-juejin-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffb119313eb76405abd8fdeaf8296fb285a542a15e7169489a94d71d5bc12c86",
+      "artifactSizeBytes": 1779
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:39:05.954Z"
+}

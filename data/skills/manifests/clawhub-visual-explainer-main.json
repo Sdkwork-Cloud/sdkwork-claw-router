@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23976,
+  "uuid": "skill-clawhub-visual-explainer-main",
+  "skillKey": "clawhub-visual-explainer-main",
+  "name": "Visual Explainer Main",
+  "summary": "Generate beautiful, self-contained HTML pages that visually explain systems, code changes, plans, and data. Use when the user asks for a diagram, architectur...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visual_explainer_main",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austindixson",
+      "features": [
+        "Generate beautiful, self-contained HTML pages that visually explain systems, code changes, plan.",
+        "Use when the user asks for a diagram, architectur..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/visual-explainer-main@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52183161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "visual-explainer-main",
+      "url": "https://clawhub.ai/skills/visual-explainer-main"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visual-explainer-main",
+    "url": "https://clawhub.ai/skills/visual-explainer-main",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visual-explainer-main-5c2fb96f9b291f71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/visual-explainer-main@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-visual-explainer-main-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e783b76ec813a87e7618e654dfb6b60d7d34f8675456838a894a7fb17a370ba",
+      "artifactSizeBytes": 2651
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T02:23:07.924Z"
+}

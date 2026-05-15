@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66663,
+  "uuid": "skill-clawhub-dannyleons",
+  "skillKey": "clawhub-dannyleons",
+  "name": "Danny_Skill",
+  "summary": "分析 AI Agent 相关资讯数据，提取热点话题、趋势分析和内容创作灵感。 用于：(1) 分析采集到的资讯找出热点话题 (2) 评估话题热度判断是否值得创作 (3) 提取可作为视频内容的核心要点 (4) 生成内容创作建议",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dannyleons",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "siansharoh",
+      "features": [
+        "分析 AI Agent 相关资讯数据，提取热点话题、趋势分析和内容创作灵感。 用于：(1) 分析采集到的资讯找出热点话题 (2) 评估话题热度判断是否值得创作 (3) 提取可作为视频内容的核."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dannyleons@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218326549?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dannyleons",
+      "url": "https://clawhub.ai/skills/dannyleons"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dannyleons",
+    "url": "https://clawhub.ai/skills/dannyleons",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dannyleons-aab0bc671c7a49ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dannyleons@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dannyleons-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad4c2be6100ad80c3bf5e7fed635dbea6d7a709f590ad715674b4544f1c6ccb6",
+      "artifactSizeBytes": 2415
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T07:35:43.557Z"
+}

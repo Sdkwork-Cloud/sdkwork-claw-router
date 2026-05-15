@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generate-insight-ppt@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_insight_ppt",
+  "skill": {
+    "id": 58639,
+    "skillKey": "clawhub-generate-insight-ppt",
+    "name": "Tech Report PPT Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-insight-ppt",
+    "url": "https://clawhub.ai/skills/generate-insight-ppt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-insight-ppt-c6e0be74e4797672.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 驱动的技术洞察 PPT 生成器"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xieyuantao7",
+      "userId": "s174fxh08pa9jahvc0rj674xk1843r35",
+      "displayName": "DeepWater",
+      "image": "https://avatars.githubusercontent.com/u/258605062?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1775435873943,
+      "changelog": "Major refactor: agent process split into a 5-step modular script flow, new file structure, and clear technical/formatting standards.\n\n- Implemented modular 5-step flow: search, extract insights, content generation, optimization, and PPT output, each as an explicit script.\n- Reorganized codebase: added dedicated script and library directories; removed monolithic generate_insight_ppt.js.\n- Added configuration (lib/config.js), logging, and utility modules for maintainability.\n- Defined clear output folder structure for each workflow stage and session.\n- Updated and separated agent/internal operation guide (SKILL.md) from user-facing instructions (README.md).\n- Specified strict design and content standards for slide formatting, page structure, and PPT style.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a6e1f332e5a586de409a0b4379273ec8334d1b9249bdf3b9a0cc5536ebda86d"
+}

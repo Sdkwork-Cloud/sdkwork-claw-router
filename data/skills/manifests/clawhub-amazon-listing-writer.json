@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30422,
+  "uuid": "skill-clawhub-amazon-listing-writer",
+  "skillKey": "clawhub-amazon-listing-writer",
+  "name": "Amazon Listing Writer",
+  "summary": "Write high-converting, SEO-optimized Amazon listings including title, bullets, description, A+ content, and backend search terms. Triggers: listing write, li...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_listing_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mguozhen",
+      "features": [
+        "Write high-converting, SEO-optimized Amazon listings including title, bullets, description, A+.",
+        "Triggers: listing write, li..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-listing-writer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1411875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-listing-writer",
+      "url": "https://clawhub.ai/skills/amazon-listing-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-listing-writer",
+    "url": "https://clawhub.ai/skills/amazon-listing-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-listing-writer-452a5a0d91dc1281.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-listing-writer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-listing-writer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a79b472fda43bf7df6d9a8d1c60065ae637fa68512d138372d06f8747cff8d6d",
+      "artifactSizeBytes": 2409
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T04:15:18.608Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rocm-vllm-deployment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rocm_vllm_deployment",
+  "skill": {
+    "id": 17710,
+    "skillKey": "clawhub-rocm-vllm-deployment",
+    "name": "ROCm vLLM Deployment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rocm-vllm-deployment",
+    "url": "https://clawhub.ai/skills/rocm-vllm-deployment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rocm-vllm-deployment-6db27bb35109f044.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Production-ready vLLM deployment on AMD ROCm GPUs. Combines environment auto-check, model parameter detection, Docker Compose deployment, health verification..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexhegit",
+      "userId": "s171kf01snarhftw5mqx3k0zas849cy4",
+      "displayName": "alexhegit",
+      "image": "https://avatars.githubusercontent.com/u/31022192?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 553,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772357570473,
+      "changelog": "Initial release - Deploy vLLM on AMD ROCm GPUs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:68a53a9681e5823fff986d2d601a4b7e4ff448ea7d62d53f851dcbf3887206b4"
+}

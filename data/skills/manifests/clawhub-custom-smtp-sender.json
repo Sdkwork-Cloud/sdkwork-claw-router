@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15318,
+  "uuid": "skill-clawhub-custom-smtp-sender",
+  "skillKey": "clawhub-custom-smtp-sender",
+  "name": "Custom Smtp Sender",
+  "summary": "A skill to send emails with support for markdown, HTML text, and attachments, leveraging existing SMTP configuration in `/home/bb/.openclaw/smtp-config.json`. Includes retry logic and logging.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.custom_smtp_sender",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scccmsd",
+      "features": [
+        "A skill to send emails with support for markdown, HTML text, and attachments, leveraging existi.",
+        "Includes retry logic and logging."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/custom-smtp-sender@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243490427?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "custom-smtp-sender",
+      "url": "https://clawhub.ai/skills/custom-smtp-sender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "custom-smtp-sender",
+    "url": "https://clawhub.ai/skills/custom-smtp-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/custom-smtp-sender-a0d181d777f0d70c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/custom-smtp-sender@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-custom-smtp-sender-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3724e2739a65f02d8d387463218ca0c3f088d5b853fd5a4b3cc29144e454b3a",
+      "artifactSizeBytes": 2254
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T18:19:16.847Z"
+}

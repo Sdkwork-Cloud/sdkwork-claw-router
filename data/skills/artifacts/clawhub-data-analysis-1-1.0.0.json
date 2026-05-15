@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-analysis-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_analysis_1",
+  "skill": {
+    "id": 26262,
+    "skillKey": "clawhub-data-analysis-1",
+    "name": "Data Analysis 1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-analysis-1",
+    "url": "https://clawhub.ai/skills/data-analysis-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-analysis-1-8e05c82b374bafae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Data analysis and visualization. Query databases, generate reports, automate spreadsheets, and turn raw data into clear, actionable insights. Use when (1) yo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tigertamvip",
+      "userId": "s171vwmtm81hafva67c196sr5n83hhtb",
+      "displayName": "tigertamvip",
+      "image": "https://avatars.githubusercontent.com/u/61303958?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774540982254,
+      "changelog": "- Added metric contracts, chart selection guidance, and decision brief templates for more reliable, decision-ready analysis.\n- Expanded documentation on analytical methodology, statistical rigor, and common pitfalls.\n- Provided clear rules for metric definition, output standards, and result communication.\n- Included quick reference files for KPIs, chart choice, and analytical techniques.\n- Outlined security, privacy, and skill boundaries; no external endpoints or persistent local storage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6554e49c59488f1dbf733a36572ee87872d7e351df6799af72adff983d01a2db"
+}

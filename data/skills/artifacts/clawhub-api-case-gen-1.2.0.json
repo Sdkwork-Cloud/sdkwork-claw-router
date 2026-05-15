@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-case-gen@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_case_gen",
+  "skill": {
+    "id": 64276,
+    "skillKey": "clawhub-api-case-gen",
+    "name": "API Test Case Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-case-gen",
+    "url": "https://clawhub.ai/skills/api-case-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-case-gen-a902f366394d01fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用 API 测试设计用例生成器。脚本 + AI 协作模式：脚本从 OpenAPI 规范自动提取 结构化约束并批量生成基础用例（schema 键 + 正则），AI 负责阅读所有自然语言 description 补全脚本无法理解的语义约束（字符集、复合规则、条件依赖等）。 检测参数间条件依赖/值联动/格式约束，输出..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liujianyeey-oss",
+      "userId": "s17cs7gjkkqk8sg5ap4tb5brdh83yhzj",
+      "displayName": "liujianyeey-oss",
+      "image": "https://avatars.githubusercontent.com/u/265681936?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774947512562,
+      "changelog": "通用 API 测试设计用例生成器。支持 OpenAPI/Swagger 规范，自动生成 P0/P1/P2 分层测试用例，含响应断言、CRUD 链分析、AI 约束补全流程。新增 slim 模式、分页边界、日期格式校验等特性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a4a9113dcb1d8923f3381c8bbb4fb660276fd223ed38e4501ba1cd842ce2638"
+}

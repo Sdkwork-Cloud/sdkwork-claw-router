@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59203,
+  "uuid": "skill-clawhub-skill-example-synthesizer",
+  "skillKey": "clawhub-skill-example-synthesizer",
+  "name": "Skill Example Synthesizer",
+  "summary": "为 Skill 生成高质量正例、反例和边界例，提升路由与可理解性。；use for skills, examples, routing workflows；do not use for 只给笼统例子, 忽视误触发场景.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_example_synthesizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "为 Skill 生成高质量正例、反例和边界例，提升路由与可理解性。；use for skills, examples, routing workflows；do not use for 只给."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-example-synthesizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-example-synthesizer",
+      "url": "https://clawhub.ai/skills/skill-example-synthesizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-example-synthesizer",
+    "url": "https://clawhub.ai/skills/skill-example-synthesizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-example-synthesizer-8a1f84fc91c9b845.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-example-synthesizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-example-synthesizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:392a1ad264b314a0fb2cb761d8d6f5ff11299b3bd329129c85b0d7144ea341c2",
+      "artifactSizeBytes": 2611
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T07:38:05.859Z"
+}

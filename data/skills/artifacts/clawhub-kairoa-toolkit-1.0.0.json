@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kairoa-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kairoa_toolkit",
+  "skill": {
+    "id": 31250,
+    "skillKey": "clawhub-kairoa-toolkit",
+    "name": "Kairoa Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kairoa-toolkit",
+    "url": "https://clawhub.ai/skills/kairoa-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kairoa-toolkit-797b2a4c9a4a5b4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Launch Kairoa desktop app to access 60+ developer tools including encoding, encryption, formatting, QR code generation, mock data, network diagnostics, and m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luduoxin",
+      "userId": "s17cnpmrsw54h2vbr823362y3183hxgt",
+      "displayName": "路多辛",
+      "image": "https://avatars.githubusercontent.com/u/3434402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773564617520,
+      "changelog": "Initial release. Launch Kairoa desktop app with 60+ developer tools including encoding, encryption, formatting, QR code, mock data, network tools. Supports deep links for programmatic access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ef8a53ffe9a9e913be42437ccea26f7896822d4671417339e3ae857896e547d"
+}

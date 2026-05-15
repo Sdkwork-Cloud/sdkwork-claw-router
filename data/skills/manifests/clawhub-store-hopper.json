@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71284,
+  "uuid": "skill-clawhub-store-hopper",
+  "skillKey": "clawhub-store-hopper",
+  "name": "store-hopper",
+  "summary": "一日探店规划师。融合天气查询、攻略搜索与路线规划，为用户规划一天内高效、不绕路的探店路线（不含住宿）。当用户想探店、逛吃、打卡、或问\"去XX玩/有什么好吃的\"时触发。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.store_hopper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ziyou979",
+      "features": [
+        "一日探店规划师。融合天气查询、攻略搜索与路线规划，为用户规划一天内高效、不绕路的探店路线（不含住宿）。当用户想探店、逛吃、打卡、或问\"去XX玩/有什么好吃的\"时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/store-hopper@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75418548?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "store-hopper",
+      "url": "https://clawhub.ai/skills/store-hopper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "store-hopper",
+    "url": "https://clawhub.ai/skills/store-hopper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/store-hopper-25b8f11056823af4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/store-hopper@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-store-hopper-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ad210dc0bd470fb32ea66c141eaffaf4ec6e2c1567c3ff827d584ad56ff2106",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T10:06:08.849Z"
+}

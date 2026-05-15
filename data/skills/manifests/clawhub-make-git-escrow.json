@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26338,
+  "uuid": "skill-clawhub-make-git-escrow",
+  "skillKey": "clawhub-make-git-escrow",
+  "name": "Make Git Escrow",
+  "summary": "Create a new git escrow bounty for a test suite. Use when the user wants to submit a challenge with escrowed token rewards for passing a failing test suite....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.make_git_escrow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "疒奀",
+      "features": [
+        "Create a new git escrow bounty for a test suite",
+        "Use when the user wants to submit a challenge with escrowed token rewards for passing a failing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/make-git-escrow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46226846?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "make-git-escrow",
+      "url": "https://clawhub.ai/skills/make-git-escrow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "make-git-escrow",
+    "url": "https://clawhub.ai/skills/make-git-escrow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/make-git-escrow-e0fd7bafa60ffd9f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/make-git-escrow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-make-git-escrow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bfb930409f935bee8d5cb30808b0bac19579d93bf94e968855383b89489953dc",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T12:28:04.147Z"
+}

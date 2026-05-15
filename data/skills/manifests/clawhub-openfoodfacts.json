@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37438,
+  "uuid": "skill-clawhub-openfoodfacts",
+  "skillKey": "clawhub-openfoodfacts",
+  "name": "Open Food Facts API",
+  "summary": "Interact with the Open Food Facts API to search for packaged food products by barcode and retrieve nutritional information. Use when the user asks to look up...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openfoodfacts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Patrik Ekenberg",
+      "features": [
+        "Interact with the Open Food Facts API to search for packaged food products by barcode and retri.",
+        "Use when the user asks to look up..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openfoodfacts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31476631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openfoodfacts",
+      "url": "https://clawhub.ai/skills/openfoodfacts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openfoodfacts",
+    "url": "https://clawhub.ai/skills/openfoodfacts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openfoodfacts-28d1defb03af1bc9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openfoodfacts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openfoodfacts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e4029674cec13ccb85da32af3fe5b6292131d37cb25be5fc408ddc001b45728",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T17:35:08.125Z"
+}

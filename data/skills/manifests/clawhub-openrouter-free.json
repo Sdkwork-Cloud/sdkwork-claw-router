@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60865,
+  "uuid": "skill-clawhub-openrouter-free",
+  "skillKey": "clawhub-openrouter-free",
+  "name": "Openrouter Free",
+  "summary": "查询 OpenRouter 上所有免费模型并调用进行智能对话。支持 Gemma、Llama、MiniMax 等 27 个免费大模型，无需付费即可使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openrouter_free",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "binsonHao",
+      "features": [
+        "查询 OpenRouter 上所有免费模型并调用进行智能对话。支持 Gemma、Llama、MiniMax 等 27 个免费大模型，无需付费即可使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openrouter-free@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/135806758?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openrouter-free",
+      "url": "https://clawhub.ai/skills/openrouter-free"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openrouter-free",
+    "url": "https://clawhub.ai/skills/openrouter-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openrouter-free-028593a842f86392.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openrouter-free@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openrouter-free-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:074eadc3888b0e80ac853cbd1c9dcbe00db15240d3c42c525073b51e377a3879",
+      "artifactSizeBytes": 2224
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T06:16:00.103Z"
+}

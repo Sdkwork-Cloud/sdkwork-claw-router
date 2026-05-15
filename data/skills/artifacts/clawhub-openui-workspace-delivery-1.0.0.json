@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openui-workspace-delivery@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openui_workspace_delivery",
+  "skill": {
+    "id": 45305,
+    "skillKey": "clawhub-openui-workspace-delivery",
+    "name": "OpenUI Workspace Delivery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openui-workspace-delivery",
+    "url": "https://clawhub.ai/skills/openui-workspace-delivery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openui-workspace-delivery-10be9c5af9cb8121.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Teach an agent how to install OpenUI MCP Studio, connect it to a host, and use the core UI generation and review workflow without overclaiming a live marketp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaojiou176",
+      "userId": "s170nkfkw4w7zm8rkrxee73k4984et24",
+      "displayName": "Yifeng[Terry] Yu",
+      "image": "https://avatars.githubusercontent.com/u/125581657?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775700403907,
+      "changelog": "Initial release of the openui-workspace-delivery skill.\n\n- Guides installation and setup of OpenUI MCP Studio for local UI generation and review.\n- Details workflow for connecting to a local MCP server and running proof loops.\n- Focuses on shadcn-style UI delivery with steps for planning, generation, and review gating.\n- Stresses that all claims and reviews remain local—no live marketplace or hosted listings.\n- Provides troubleshooting resources and clear success criteria for local UI review workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2ffaf9639f9e01a3404f213d60a3521f55fcffd1f760a6bd1af8e0e7ae23ec5"
+}

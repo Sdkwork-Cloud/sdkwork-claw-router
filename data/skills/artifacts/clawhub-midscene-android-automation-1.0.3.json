@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/midscene-android-automation@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.midscene_android_automation",
+  "skill": {
+    "id": 13288,
+    "skillKey": "clawhub-midscene-android-automation",
+    "name": "Midscene Automations Skills for Android"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "midscene-android-automation",
+    "url": "https://clawhub.ai/skills/midscene-android-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/midscene-android-automation-536bcbf6f82ed9cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Vision-driven Android device automation using Midscene. Operates entirely from screenshots — no DOM or accessibility labels required. Can interact with all v..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quanru",
+      "userId": "s1792azzwsceqz4d9m7cffzt7h83j8rx",
+      "displayName": "Leyang",
+      "image": "https://avatars.githubusercontent.com/u/11739753?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1923,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1778139997064,
+      "changelog": "**Expanded command set and more precise device automation features.**\n\n- Added new commands: `launch` (to open apps or URLs), `runadbshell` (to execute arbitrary ADB shell commands), and `assert` (for natural-language state verification).\n- Allowed reference image-based UI targeting using the `tap --locate` option with JSON configuration.\n- Documented full list of actions supported by `act` commands (tap, long-press, scroll, type, key events, navigation, etc.).\n- Improved best practices and workflow guidance, including the use of `-y` for non-interactive execution with npx.\n- Expanded description and trigger keywords to cover more automation and QA use cases.\n- Added instructions for using and converting detailed HTML/Markdown automation reports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f37d2d8cbb60e59ed02cfb3fa7dea97d0f46fb5109f8ed37640d60dbcf7254c"
+}

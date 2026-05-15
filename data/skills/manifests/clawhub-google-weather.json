@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8834,
+  "uuid": "skill-clawhub-google-weather",
+  "skillKey": "clawhub-google-weather",
+  "name": "Google Weather",
+  "summary": "Google Weather API - accurate, real-time weather data. Get current conditions, temperature, humidity, wind, and forecasts. Powered by Google's Weather API fo...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_weather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shaharsh",
+      "features": [
+        "Google Weather API",
+        "accurate, real-time weather data",
+        "Get current conditions, temperature, humidity, wind, and forecasts",
+        "Powered by Google's Weather API fo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-weather@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11346965?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-weather",
+      "url": "https://clawhub.ai/skills/google-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-weather",
+    "url": "https://clawhub.ai/skills/google-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-weather-37d373f6cd2e8ae4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-weather@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-weather-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7fbfcd49309680954c36f8fa30987d2852842956ce8c570e3e4f272bb8778be8",
+      "artifactSizeBytes": 2318
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T18:54:42.220Z"
+}

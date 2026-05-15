@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25283,
+  "uuid": "skill-clawhub-skill-safety-auditor",
+  "skillKey": "clawhub-skill-safety-auditor",
+  "name": "Skill Safety Auditor",
+  "summary": "Perform comprehensive security audits on skills to identify vulnerabilities, unsafe patterns, and compliance issues. Use when auditing skills for security, c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_safety_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Perform comprehensive security audits on skills to identify vulnerabilities, unsafe patterns, a.",
+        "Use when auditing skills for security, c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-safety-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-safety-auditor",
+      "url": "https://clawhub.ai/skills/skill-safety-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-safety-auditor",
+    "url": "https://clawhub.ai/skills/skill-safety-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-safety-auditor-f69c2a90449776ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-safety-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-safety-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:678ab5c3b4135a7fb666b197f5a72f8762c0e977f3a6e4e6c59548b6bc576a91",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:29:05.160Z"
+}

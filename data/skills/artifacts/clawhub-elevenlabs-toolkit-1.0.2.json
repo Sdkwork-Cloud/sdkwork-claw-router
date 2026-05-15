@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elevenlabs-toolkit@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elevenlabs_toolkit",
+  "skill": {
+    "id": 38115,
+    "skillKey": "clawhub-elevenlabs-toolkit",
+    "name": "Elevenlabs Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elevenlabs-toolkit",
+    "url": "https://clawhub.ai/skills/elevenlabs-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elevenlabs-toolkit-e6354769e0bebdb4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ElevenLabs voice API integration — TTS, sound effects, music generation, speech-to-text, voice isolation, and streaming. Use when building voice-enabled apps..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nissan",
+      "userId": "s17f2fw07zktjmcgagf5c29tbd83rt7v",
+      "displayName": "Nissan Dookeran",
+      "image": "https://avatars.githubusercontent.com/u/12583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 688,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774672832091,
+      "changelog": "Add security_notes explaining base64 audio encoding, UploadFile type, and system prompt config context",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:281ee03b4f54e712483fbc900b3f883bb21ce00a4e6f515b0c886d051f3409ff"
+}

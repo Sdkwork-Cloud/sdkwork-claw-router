@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11222,
+  "uuid": "skill-clawhub-exe-dev",
+  "skillKey": "clawhub-exe-dev",
+  "name": "exe-dev",
+  "summary": "Manage persistent VMs on exe.dev. Create VMs, configure HTTP proxies, share access, and set up custom domains. Use when working with exe.dev VMs for hosting, development, or running persistent services.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exe_dev",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bjesuiter",
+      "features": [
+        "Manage persistent VMs on exe.dev",
+        "Create VMs, configure HTTP proxies, share access, and set up custom domains",
+        "Use when working with exe.dev VMs for hosting, development, or running persistent services."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exe-dev@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2365676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exe-dev",
+      "url": "https://clawhub.ai/skills/exe-dev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exe-dev",
+    "url": "https://clawhub.ai/skills/exe-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exe-dev-f1e15234bc2b2c90.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exe-dev@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-exe-dev-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abc66e0b22216e618d2c0fb7397abb1a9a3a6d69177254904965b238bd4e7d98",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-18T00:38:39.056Z"
+}

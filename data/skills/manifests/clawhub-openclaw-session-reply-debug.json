@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20839,
+  "uuid": "skill-clawhub-openclaw-session-reply-debug",
+  "skillKey": "clawhub-openclaw-session-reply-debug",
+  "name": "OpenClaw Session Reply Debug & Model Fallback",
+  "summary": "Diagnose OpenClaw \"message sent but no assistant reply\" issues, then safely switch active model references with primary + multi-fallback support, including h...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_session_reply_debug",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zxs1633079383",
+      "features": [
+        "Diagnose OpenClaw \"message sent but no assistant reply\" issues, then safely switch active model."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-session-reply-debug@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68211742?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-session-reply-debug",
+      "url": "https://clawhub.ai/skills/openclaw-session-reply-debug"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-session-reply-debug",
+    "url": "https://clawhub.ai/skills/openclaw-session-reply-debug",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-session-reply-debug-7b8d91b67f088ef5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-session-reply-debug@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-session-reply-debug-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f136e9363394105cb26cf0452e98285977a53a3c6c60b6926d13826d84de1efc",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T05:22:40.397Z"
+}

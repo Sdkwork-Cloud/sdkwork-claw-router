@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53618,
+  "uuid": "skill-clawhub-python-typing-checker",
+  "skillKey": "clawhub-python-typing-checker",
+  "name": "Python Typing Checker",
+  "summary": "Analyze Python type annotation coverage and quality — check mypy compliance, find untyped functions, review Protocol usage, Generic types, TypeVar constraint...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.python_typing_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Analyze Python type annotation coverage and quality — check mypy compliance, find untyped funct."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/python-typing-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "python-typing-checker",
+      "url": "https://clawhub.ai/skills/python-typing-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "python-typing-checker",
+    "url": "https://clawhub.ai/skills/python-typing-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/python-typing-checker-5a8854dd3b00f5be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/python-typing-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-python-typing-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48cc5d579f000ab16f926dedfdf399565b4ad35edab21db0cd3eafde7afad7f7",
+      "artifactSizeBytes": 2514
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T11:45:39.721Z"
+}

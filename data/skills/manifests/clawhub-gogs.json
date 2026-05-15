@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26594,
+  "uuid": "skill-clawhub-gogs",
+  "skillKey": "clawhub-gogs",
+  "name": "Pub Gog",
+  "summary": "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs. And also 50+ models for image generation, video generation, text-to-speech, spee...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gogs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QuincyGunter",
+      "features": [
+        "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs",
+        "And also 50+ models for image generation, video generation, text-to-speech, spee..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gogs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260427166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gogs",
+      "url": "https://clawhub.ai/skills/gogs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gogs",
+    "url": "https://clawhub.ai/skills/gogs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gogs-e80065f9b08ac0aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gogs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gogs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71f4fd0eb6f39020e0aa8a90cad35510415f4bf59945592de214f2fa50ef6b04",
+      "artifactSizeBytes": 2399
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T05:51:54.176Z"
+}

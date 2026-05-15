@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jz-agent-guardrails@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jz_agent_guardrails",
+  "skill": {
+    "id": 24509,
+    "skillKey": "clawhub-jz-agent-guardrails",
+    "name": "Agent Guardrails"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jz-agent-guardrails",
+    "url": "https://clawhub.ai/skills/jz-agent-guardrails",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jz-agent-guardrails-eb6728e3ef66a860.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stop AI agents from secretly bypassing your rules. Mechanical enforcement with git hooks, secret detection, deployment verification, and import registries. B..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jzocb",
+      "userId": "s171w51c7np1cprte4r1ab11vs83g4bd",
+      "displayName": "jzOcb",
+      "image": "https://avatars.githubusercontent.com/u/258660657?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 409,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772336102149,
+      "changelog": "Mechanical enforcement with git hooks, secret detection, deployment verification. Stop AI from bypassing rules.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c28c65fedb27ad38cb056961572821d189b4e588de0a525cdcae6782225e1f00"
+}

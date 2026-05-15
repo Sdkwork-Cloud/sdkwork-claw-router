@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawgirl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawgirl",
+  "skill": {
+    "id": 60180,
+    "skillKey": "clawhub-clawgirl",
+    "name": "Ai Companion Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawgirl",
+    "url": "https://clawhub.ai/skills/clawgirl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawgirl-7941d8eb6e58c4c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在 OpenClaw 上搭建有记忆、能发语音/自拍/文字的 AI 陪伴 agent（完整踩坑指南）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evan966890",
+      "userId": "publishers:evan966890",
+      "displayName": "evan966890",
+      "image": "https://avatars.githubusercontent.com/u/236738035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 490,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772355184499,
+      "changelog": "ai-companion-setup 1.0.0 — Initial Release\n\n- Comprehensive guide for building a Feishu-based AI companion agent using OpenClaw.\n- Covers agent personality, heartbeat logic, memory system, message/voice/selfie sending scripts, and tool instructions.\n- Includes setup details, pitfalls, cron configuration, and recommended model/provider notes.\n- Designed for agents that can remember, speak, text, and send selfies with realistic persona.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f9036508aad66eaee7c534f58f313794112f91bac926a98c693f9128196dd775"
+}

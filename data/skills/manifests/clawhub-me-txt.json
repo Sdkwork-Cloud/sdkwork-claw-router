@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20736,
+  "uuid": "skill-clawhub-me-txt",
+  "skillKey": "clawhub-me-txt",
+  "name": "me.txt",
+  "summary": "Create, fetch, and validate me.txt personal identity files for AI agents",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.me_txt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rollsmorr",
+      "features": [
+        "Create, fetch, and validate me.txt personal identity files for AI agents"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/me-txt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55561695?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "me-txt",
+      "url": "https://clawhub.ai/skills/me-txt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "me-txt",
+    "url": "https://clawhub.ai/skills/me-txt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/me-txt-0068649d5810b6bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/me-txt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-me-txt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e4be83bf073fb096f44c8f94ce63dbda7b39317c6b28b3f1c18691a2ae085e2",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T22:55:55.999Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38576,
+  "uuid": "skill-clawhub-obsidian-to-expertpack",
+  "skillKey": "clawhub-obsidian-to-expertpack",
+  "name": "Obsidian To Expertpack",
+  "summary": "Convert an existing Obsidian Vault into an agent-ready ExpertPack. Restructures vault content for EK optimization, RAG retrieval, and OpenClaw integration. C...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_to_expertpack",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian Hearn",
+      "features": [
+        "Convert an existing Obsidian Vault into an agent-ready ExpertPack",
+        "Restructures vault content for EK optimization, RAG retrieval, and OpenClaw integration"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-to-expertpack@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1640595?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-to-expertpack",
+      "url": "https://clawhub.ai/skills/obsidian-to-expertpack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-to-expertpack",
+    "url": "https://clawhub.ai/skills/obsidian-to-expertpack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-to-expertpack-cdaaf78c203f26ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-to-expertpack@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-to-expertpack-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5af4a528ce60852490646c2f709eeccdef12f8de077c98d9f1abf07724e27a15",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T20:29:35.277Z"
+}

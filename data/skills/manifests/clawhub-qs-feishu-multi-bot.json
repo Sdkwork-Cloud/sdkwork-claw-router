@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65300,
+  "uuid": "skill-clawhub-qs-feishu-multi-bot",
+  "skillKey": "clawhub-qs-feishu-multi-bot",
+  "name": "飞书多机器人多Agent配置",
+  "summary": "OpenClaw 多飞书机器人 + 多 Agent 配置指南：一个 Gateway 实例运行多个飞书机器人，每个机器人绑定不同 Agent，实现独立工作空间、独立会话、独立人格。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qs_feishu_multi_bot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qushengswaych",
+      "features": [
+        "OpenClaw 多飞书机器人 + 多 Agent 配置指南：一个 Gateway 实例运行多个飞书机器人，每个机器人绑定不同 Agent，实现独立工作空间、独立会话、独立人格。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qs-feishu-multi-bot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23654374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qs-feishu-multi-bot",
+      "url": "https://clawhub.ai/skills/qs-feishu-multi-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qs-feishu-multi-bot",
+    "url": "https://clawhub.ai/skills/qs-feishu-multi-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qs-feishu-multi-bot-b54c3f006b6d9d24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qs-feishu-multi-bot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qs-feishu-multi-bot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6bc2e9674f808cc87519666becf415cd8bf96be163365868d68852e64e1a9c0a",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:02:49.313Z"
+}

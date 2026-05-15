@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-student-tutor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_student_tutor",
+  "skill": {
+    "id": 73009,
+    "skillKey": "clawhub-chinese-student-tutor",
+    "name": "高中学习助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-student-tutor",
+    "url": "https://clawhub.ai/skills/chinese-student-tutor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-student-tutor-6025c8400b1d8935.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专为初高中生打造的智能学习导师 Skill。当用户提问学科知识、请求解题辅导、或需要学习指导时触发此技能。支持语文、数学、英语、物理、化学、历史、地理、政治、生物等科目。 功能包括：① 基于课本知识精准回答并给出原文引用；② 提供解题思路引导和关键步骤分析；③ 分析提问语气并给予教师风格的温暖回应。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whatif146",
+      "userId": "s17ap73waph8jfa2g3f1xzawf9846ejj",
+      "displayName": "whatif146",
+      "image": "https://avatars.githubusercontent.com/u/232221529?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775398146727,
+      "changelog": "Initial release of the skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5eec7305185082bef375e4501d04eb9fba618af67c75a8c65e5a65a51b01f429"
+}

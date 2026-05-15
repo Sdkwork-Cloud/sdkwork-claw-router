@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/macos-gui-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macos_gui_automation",
+  "skill": {
+    "id": 14272,
+    "skillKey": "clawhub-macos-gui-automation",
+    "name": "Macos Gui Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macos-gui-automation",
+    "url": "https://clawhub.ai/skills/macos-gui-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macos-gui-automation-b9f6d78add12d08a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate macOS GUI via screen capture and OCR text reading, mouse and keyboard control, window management, and app launching using cliclick, screencapture, t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dhdragon",
+      "userId": "publishers:dhdragon",
+      "displayName": "DHDragon",
+      "image": "https://avatars.githubusercontent.com/u/30099625?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1091,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773804915685,
+      "changelog": "- Initial release of macOS GUI Automation Skill.\n- Automates mouse and keyboard actions using cliclick.\n- Captures screenshots and reads on-screen text via screencapture and tesseract OCR.\n- Manages app windows and controls apps using osascript and AppleScript.\n- Provides usage examples for common automation tasks.\n- Notes limitations (e.g., absolute coordinates, no built-in image recognition) and necessary security permissions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e4a2bf487475e610f5a744c7b8cdd3147a4278b39ffb00a38c57d394db7d8a8b"
+}

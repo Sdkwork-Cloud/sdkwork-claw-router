@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/keyapi-reddit-content-analytics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keyapi_reddit_content_analytics",
+  "skill": {
+    "id": 52932,
+    "skillKey": "clawhub-keyapi-reddit-content-analytics",
+    "name": "Keyapi Reddit Content Analytics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keyapi-reddit-content-analytics",
+    "url": "https://clawhub.ai/skills/keyapi-reddit-content-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keyapi-reddit-content-analytics-b833f0b34fbdefe1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explore and analyze Reddit content at scale — retrieve post details (single, batch, or large batch), comments, sub-comment threads, user activity, and curate..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lycici",
+      "userId": "s17bzc9482bw65ggtax2tfmx4583h9sz",
+      "displayName": "lycici",
+      "image": "https://avatars.githubusercontent.com/u/38585775?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775124060679,
+      "changelog": "keyapi-reddit-content-analytics 1.0.0\n\n- Initial release providing scalable Reddit content analysis via KeyAPI MCP.\n- Retrieve single or batch post details, including large batches (up to 30 posts).\n- Traverse comments and nested sub-comment threads for deep discussion analysis.\n- Explore user activity: fetch posts and comments published by specific users.\n- Access curated Reddit feeds: home, popular, games, news, subreddit, and community highlights.\n- Supports cache-first API workflow with simple CLI scripts and detailed usage documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23b4ac26a354069ae515dd151cd3819cb7fd23bc798ad79866a76adb91b92e54"
+}

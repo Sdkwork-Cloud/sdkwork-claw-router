@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18032,
+  "uuid": "skill-clawhub-nba-today-pulse",
+  "skillKey": "clawhub-nba-today-pulse",
+  "name": "NBA Today Pulse",
+  "summary": "Timezone-aware NBA daily intelligence using bundled public ESPN/NBA fetchers plus official NBA injury-report PDFs, with compact day fast path, same-day stats...",
+  "version": "1.0.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nba_today_pulse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stsk",
+      "features": [
+        "Timezone-aware NBA daily intelligence using bundled public ESPN/NBA fetchers plus official NBA."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nba-today-pulse@1.0.15",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107348714?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nba-today-pulse",
+      "url": "https://clawhub.ai/skills/nba-today-pulse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nba-today-pulse",
+    "url": "https://clawhub.ai/skills/nba-today-pulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nba-today-pulse-b1e1c1c3b4bef4c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nba-today-pulse@1.0.15",
+      "artifactUrl": "data/skills/artifacts/clawhub-nba-today-pulse-1.0.15.json",
+      "version": "1.0.15",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51a3fb2c60f8985dfa43dee9f51ebf8128f1920abb8e0a324437843db1b37490",
+      "artifactSizeBytes": 2458
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T12:35:31.133Z"
+}

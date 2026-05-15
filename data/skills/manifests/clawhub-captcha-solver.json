@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58228,
+  "uuid": "skill-clawhub-captcha-solver",
+  "skillKey": "clawhub-captcha-solver",
+  "name": "Captcha Solver",
+  "summary": "验证码识别与解决 - 本地OCR识别 + 第三方API / CAPTCHA Recognition and Solving - Local OCR + Third-party APIs",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.captcha_solver",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BOMBFUOCK",
+      "features": [
+        "验证码识别与解决",
+        "本地OCR识别 + 第三方API / CAPTCHA Recognition and Solving",
+        "Local OCR + Third-party APIs"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/captcha-solver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94738020?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "captcha-solver",
+      "url": "https://clawhub.ai/skills/captcha-solver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "captcha-solver",
+    "url": "https://clawhub.ai/skills/captcha-solver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/captcha-solver-d254368a3058469b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/captcha-solver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-captcha-solver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be542f7f8198c408fec79527045729895466cfc4e0906218af6cbaa188a5c119",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T03:31:11.379Z"
+}

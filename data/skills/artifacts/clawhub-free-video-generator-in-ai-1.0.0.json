@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-generator-in-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_generator_in_ai",
+  "skill": {
+    "id": 46533,
+    "skillKey": "clawhub-free-video-generator-in-ai",
+    "name": "Free Video Generator In Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-generator-in-ai",
+    "url": "https://clawhub.ai/skills/free-video-generator-in-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-generator-in-ai-b6be187e147864bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text or images into AI-generated videos with this skill. Works with MP4, MOV, JPG, PNG files up to 200MB. content creators, marketers, students use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776080763919,
+      "changelog": "Initial release of Free Video Generator in AI.\n\n- Generate AI-powered 1080p videos from text prompts or images (MP4, MOV, JPG, PNG, up to 200MB).\n- Automatic setup with free NEMO_TOKEN authentication (100 free credits, valid 7 days).\n- Simple workflows for exporting, checking credits, uploading files, and editing timelines.\n- Fast cloud processing (typically 1–2 minutes per video) with download-ready MP4 exports.\n- Supports multiple file types and session-based editing for batch and iterative workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9af1ebc529952947e7f23591b3ddd99a8bc5ad1396d8623f7ed50decb72f5084"
+}

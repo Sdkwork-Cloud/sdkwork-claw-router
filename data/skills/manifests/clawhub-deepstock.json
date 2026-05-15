@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66743,
+  "uuid": "skill-clawhub-deepstock",
+  "skillKey": "clawhub-deepstock",
+  "name": "🔥 DeepStock - A股量化投研助手 | 免费提供K线数据 · 技术指标 · 股东人数 · 官方公告解析",
+  "summary": "A股量化投研助手 | 免费提供K线数据 · 技术指标 · 股东人数 · 官方公告解析。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepstock",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jianfeng Chen",
+      "features": [
+        "A股量化投研助手 | 免费提供K线数据 · 技术指标 · 股东人数 · 官方公告解析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepstock@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13918606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepstock",
+      "url": "https://clawhub.ai/skills/deepstock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepstock",
+    "url": "https://clawhub.ai/skills/deepstock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepstock-5f5518458b300fd3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepstock@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepstock-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e29d19b2015846fbae1a62a74a43b35b2850414c28e46534d5cef0a6c604bb50",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T03:10:17.549Z"
+}

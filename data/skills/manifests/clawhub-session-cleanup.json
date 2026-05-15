@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66299,
+  "uuid": "skill-clawhub-session-cleanup",
+  "skillKey": "clawhub-session-cleanup",
+  "name": "Session Cleanup",
+  "summary": "定期清理过期会话，评估并保存有价值信息，自动清理无价值会话。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_cleanup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xaiohuangningde",
+      "features": [
+        "定期清理过期会话，评估并保存有价值信息，自动清理无价值会话。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-cleanup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143916959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-cleanup",
+      "url": "https://clawhub.ai/skills/session-cleanup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-cleanup",
+    "url": "https://clawhub.ai/skills/session-cleanup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-cleanup-1938e1ec447e98e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-cleanup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-cleanup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6fab050a1b18cc9bac23c4c8a71084462a6b8981871a4f549011a6e864fdcc9",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T11:23:44.974Z"
+}

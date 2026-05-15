@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35591,
+  "uuid": "skill-clawhub-ir-pdf-downloader",
+  "skillKey": "clawhub-ir-pdf-downloader",
+  "name": "IR PDF Downloader",
+  "summary": "Discover and download static PDF files from Investor Relations (IR) sites, including annual reports and quarterly result PDFs. Use when the task is to find a...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ir_pdf_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lu Wang",
+      "features": [
+        "Discover and download static PDF files from Investor Relations (IR) sites, including annual rep.",
+        "Use when the task is to find a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ir-pdf-downloader@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7668944?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ir-pdf-downloader",
+      "url": "https://clawhub.ai/skills/ir-pdf-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ir-pdf-downloader",
+    "url": "https://clawhub.ai/skills/ir-pdf-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ir-pdf-downloader-3b472c4090272e85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ir-pdf-downloader@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ir-pdf-downloader-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3062290a869ac9038e7deed02640eb04d1c36df072f4dc4d9ab838c4e677a5ae",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T03:54:02.599Z"
+}

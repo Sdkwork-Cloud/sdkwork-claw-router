@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32091,
+  "uuid": "skill-clawhub-backup-recovery",
+  "skillKey": "clawhub-backup-recovery",
+  "name": "Api",
+  "summary": "Backups, RPO/RTO, restores, and drills. Use when designing DR or testing restores.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.backup_recovery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "Backups, RPO/RTO, restores, and drills",
+        "Use when designing DR or testing restores."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/backup-recovery@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "backup-recovery",
+      "url": "https://clawhub.ai/skills/backup-recovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "backup-recovery",
+    "url": "https://clawhub.ai/skills/backup-recovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/backup-recovery-8fcc21f2f446531f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/backup-recovery@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-backup-recovery-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8563db8b3903a7fdfd46005292bc6ac03bfe617a9a633c09f8c3bd416ea4a8f5",
+      "artifactSizeBytes": 2357
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T15:19:09.861Z"
+}

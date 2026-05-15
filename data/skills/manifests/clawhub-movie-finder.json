@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70637,
+  "uuid": "skill-clawhub-movie-finder",
+  "skillKey": "clawhub-movie-finder",
+  "name": "搜索并播放电影，支持按类型/年份/评分筛选，中英文输入，生成 iframe 播放页面",
+  "summary": "搜索并播放电影。功能包括：(1) 按类型、年份、评分筛选电影；(2) 支持中英文输入；(3) 展示电影海报、评分、剧情简介；(4) 生成可点击的 iframe 播放页面，直接在线观看。触发场景包括：搜索电影、想看电影、找最新电影、按类型/年份/评分筛选电影。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.movie_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chugenice",
+      "features": [
+        "搜索并播放电影。功能包括：(1) 按类型、年份、评分筛选电影；(2) 支持中英文输入；(3) 展示电影海报、评分、剧情简介；(4) 生成可点击的 iframe 播放页面，直接在线观看。触发场."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/movie-finder@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194683274?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "movie-finder",
+      "url": "https://clawhub.ai/skills/movie-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "movie-finder",
+    "url": "https://clawhub.ai/skills/movie-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/movie-finder-a037e24109ae2f8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/movie-finder@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-movie-finder-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87f838f1c5bddf81115113f5ec62eaadbc83ebf57fb8a12e321fa2db3f466fa2",
+      "artifactSizeBytes": 2756
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T09:50:19.689Z"
+}

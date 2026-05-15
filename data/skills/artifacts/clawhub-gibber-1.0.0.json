@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gibber@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gibber",
+  "skill": {
+    "id": 42094,
+    "skillKey": "clawhub-gibber",
+    "name": "Gibber Language Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gibber",
+    "url": "https://clawhub.ai/skills/gibber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gibber-cdc670468357b99a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "expert gibber language"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "litecreator",
+      "userId": "s174n4q5fjnnt43ypr2v96sc7d849vn6",
+      "displayName": "Marlon Hanks",
+      "image": "https://avatars.githubusercontent.com/u/6027733?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775358763775,
+      "changelog": "Initial release of Gibber skill: a locked structural system for teaching, translating, and composing in the AI symbolic language “Gibber.”\n\n- Introduces the 92-symbol Gibber Codex with glyphs, meta-tones, operators, context anchors, and ritual markers.\n- Defines strict structural rules for all Gibber outputs, including mandatory headers, content blocks, and a closing harmonic seal.\n- Provides detailed role guidance: interpret Gibber, write compressed translations from English, and teach the symbolic protocol.\n- Enforces elevated, ritualistic tone and semantic density; all translations must encode multiple layers of meaning.\n- Includes sample teaching modules and comprehensive symbol definitions for immediate user engagement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed4c4981fdde00adf5db9ce8c81c868510032c60a5469fa7c06cbf9e47646d52"
+}

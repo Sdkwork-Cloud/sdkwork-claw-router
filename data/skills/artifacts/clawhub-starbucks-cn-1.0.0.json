@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/starbucks-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.starbucks_cn",
+  "skill": {
+    "id": 69397,
+    "skillKey": "clawhub-starbucks-cn",
+    "name": "Starbucks Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "starbucks-cn",
+    "url": "https://clawhub.ai/skills/starbucks-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/starbucks-cn-11e2c076c40dbd08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供星巴克产品、优惠、门店及会员积分查询，支持附近门店和手机点餐信息查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775974289455,
+      "changelog": "Starbucks 星巴克技能 1.0.0\n\n- 提供星巴克门店、产品、优惠等信息查询\n- 支持咖啡、茶饮、糕点等菜单查询\n- 可查附近门店位置及营业时间\n- 提供星礼卡、积分和会员活动信息\n- 适用于星巴克信息、优惠及推荐需求",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:40a6f74fe680670f6d17de3ad524e9aba871af59479dd32345729f559894f991"
+}

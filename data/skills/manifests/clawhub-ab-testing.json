@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24256,
+  "uuid": "skill-clawhub-ab-testing",
+  "skillKey": "clawhub-ab-testing",
+  "name": "Ab Testing",
+  "summary": "Experiment design, metrics, ethics, and analysis. Use when running product experiments responsibly.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ab_testing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "Experiment design, metrics, ethics, and analysis",
+        "Use when running product experiments responsibly."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ab-testing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ab-testing",
+      "url": "https://clawhub.ai/skills/ab-testing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ab-testing",
+    "url": "https://clawhub.ai/skills/ab-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ab-testing-f026e1fa041ed561.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ab-testing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ab-testing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d74d6e235256d21dc30f68e4465bb154c53914348ff51f020c61a368aff64542",
+      "artifactSizeBytes": 2280
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T10:23:11.956Z"
+}

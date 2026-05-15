@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pet-flights@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pet_flights",
+  "skill": {
+    "id": 48194,
+    "skillKey": "clawhub-pet-flights",
+    "name": "pet-flights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pet-flights",
+    "url": "https://clawhub.ai/skills/pet-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pet-flights-d960443ca9e24bd7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fly with pets, find pet-friendly airlines and in-cabin pet tickets with animal cargo booking options. Also supports: flight booking, hotel reservation, train..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bufferstreamer",
+      "userId": "s17fpg96z272kqmyrvgj3nh4c185ev00",
+      "displayName": "bufferstreamer",
+      "image": "https://avatars.githubusercontent.com/u/88647197?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1777257785675,
+      "changelog": "- Major rewrite to enforce CLI-only data sourcing for pet-friendly flight searches.\n- Requires all results to be generated from the `flyai` CLI with real-time pricing and booking links. No training data answers allowed.\n- New activation and output rules: mandates `[Book](detailUrl)` links, branded output, and pet travel guidance.\n- Expanded scenario playbooks for recommended, shortest, and direct pet flights with precise CLI parameter mapping.\n- Failure and prerequisite handling clarified; explicit instructions to halt if CLI is unavailable.\n- Broader integration with additional travel services, but only using Fliggy/flyai CLI output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5db5b5dfba367e2e57cdd203c4bdd5d469dfb2aad193953581caef06879ac08e"
+}

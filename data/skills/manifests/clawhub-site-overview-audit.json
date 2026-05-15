@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38704,
+  "uuid": "skill-clawhub-site-overview-audit",
+  "skillKey": "clawhub-site-overview-audit",
+  "name": "Site Overview Audit",
+  "summary": "Summarize one supported site's current snapshot records and highest-signal items.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.site_overview_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yifeng[Terry] Yu",
+      "features": [
+        "Summarize one supported site's current snapshot records and highest-signal items."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/site-overview-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125581657?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "site-overview-audit",
+      "url": "https://clawhub.ai/skills/site-overview-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "site-overview-audit",
+    "url": "https://clawhub.ai/skills/site-overview-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/site-overview-audit-35196ac10ac1db8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/site-overview-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-site-overview-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e2c28a9c522eef1ff27245af273ade5e70f1167caacc4522d374ec921416aaf",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T10:29:42.984Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60835,
+  "uuid": "skill-clawhub-mmx-cli",
+  "skillKey": "clawhub-mmx-cli",
+  "name": "MiniMax CLI (mmx)",
+  "summary": "MiniMax CLI (mmx) 多模态能力调用工具。当用户需要生成图片、视频、音乐、语音，或使用 minimax-cli/mmx 命令时触发。用途：(1) 生成图片/视频/音乐/语音；(2) 调用 MiniMax API；(3) 查询用量额度；(4) 配置或诊断 mmx。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mmx_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SSWhite",
+      "features": [
+        "MiniMax CLI (mmx) 多模态能力调用工具。当用户需要生成图片、视频、音乐、语音，或使用 minimax-cli/mmx 命令时触发。用途：(1) 生成图片/视频/音乐/语音；(."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mmx-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47471748?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mmx-cli",
+      "url": "https://clawhub.ai/skills/mmx-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mmx-cli",
+    "url": "https://clawhub.ai/skills/mmx-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mmx-cli-97e7e0a826dd8e8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mmx-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mmx-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:184c74b061a62f7abfad3cc929b5f6b2425009c4969e090555a10509f33294ae",
+      "artifactSizeBytes": 2056
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T08:03:48.878Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quantumexecute-skill@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quantumexecute_skill",
+  "skill": {
+    "id": 41641,
+    "skillKey": "clawhub-quantumexecute-skill",
+    "name": "Crypto Algo Execution"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quantumexecute-skill",
+    "url": "https://clawhub.ai/skills/quantumexecute-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quantumexecute-skill-e804c4e5d1f795b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crypto Algo Execution & TCA by QuantumExecute (QE): crypto algorithmic execution workflows across Binance, OKX, LTP, Deribit, Hyperliquid, and other supporte..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "l-kai890",
+      "userId": "s178kkes29475r8mb723dk0ph985pw5j",
+      "displayName": "quantumexecute",
+      "image": "https://avatars.githubusercontent.com/u/228420888?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777559045573,
+      "changelog": "quantumexecute-skill 1.0.3\n\n- Internal documentation updates: improved references in safety.md and trading.md.\n- requirements.txt refined for package updates or dependency clarity.\n- scripts/_client.py and scripts/create_paired_order.py updated (details not specified).\n- SKILL.md wording and structure updated for clarity; some institutional-grade language was simplified, default client endpoint requirement clarified.\n- No new features or major breaking changes; maintenance and documentation refresh.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67dec2f7dd8eeeef5f182b7bd49f07b6cecadfbe99200ad3473070e449df6a79"
+}

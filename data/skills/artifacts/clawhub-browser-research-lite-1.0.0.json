@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-research-lite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_research_lite",
+  "skill": {
+    "id": 13166,
+    "skillKey": "clawhub-browser-research-lite",
+    "name": "Browser Research Lite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-research-lite",
+    "url": "https://clawhub.ai/skills/browser-research-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-research-lite-92d55e2a1282c019.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "API-key-free online research via the built-in browser tool. Use this skill when web_search fails due to missing keys, and you still need web evidence."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wanng-ide",
+      "userId": "s176gjsdvgc0ce9sr8b6s9yzmx84mv9j",
+      "displayName": "WANGJUNJIE",
+      "image": "https://avatars.githubusercontent.com/u/32323900?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1385,
+      "installsAllTime": 6,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771173070203,
+      "changelog": "- Initial release of browser-research-lite skill.\n- Enables API-key-free online research using the built-in browser tool.\n- Designed to serve as a fallback when other web search skills fail due to missing API keys.\n- Provides step-by-step workflow for reliable web evidence retrieval and source quality control.\n- Includes clear policies on when to use browser-based research, trusted sources, and fallback procedures.\n- Adds instructions for handling browser/tool availability and reporting improvements to benchmarks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:238364a73921691647abfe728e4aadcc2340ac742c151db29fde58f8220d851f"
+}

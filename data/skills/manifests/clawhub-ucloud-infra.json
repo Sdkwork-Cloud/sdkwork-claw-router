@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26301,
+  "uuid": "skill-clawhub-ucloud-infra",
+  "skillKey": "clawhub-ucloud-infra",
+  "name": "ucloud-infra",
+  "summary": "UCloud Cloud Management - Complete Version",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ucloud_infra",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qianjunye",
+      "features": [
+        "UCloud Cloud Management",
+        "Complete Version"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ucloud-infra@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3345643?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ucloud-infra",
+      "url": "https://clawhub.ai/skills/ucloud-infra"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ucloud-infra",
+    "url": "https://clawhub.ai/skills/ucloud-infra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ucloud-infra-f84ce6c20d47ac0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ucloud-infra@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ucloud-infra-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edd7c1d8c2f7e50033c723ea60467031b77d6c8f63cff7c280a9bf50f0d07ef2",
+      "artifactSizeBytes": 10128
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T16:26:34.762Z"
+}

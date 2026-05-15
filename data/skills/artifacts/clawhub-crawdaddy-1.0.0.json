@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crawdaddy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crawdaddy",
+  "skill": {
+    "id": 27565,
+    "skillKey": "clawhub-crawdaddy",
+    "name": "Crawdaddy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crawdaddy",
+    "url": "https://clawhub.ai/skills/crawdaddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crawdaddy-9e93a626b40467b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous scanner detecting quantum-unsafe ECDSA, smart contract risks, and agent credential exposures with compliance-ready post-quantum security reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mbennett-labs",
+      "userId": "publishers:mbennett-labs",
+      "displayName": "Michael Bennett",
+      "image": "https://avatars.githubusercontent.com/u/86172375?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 344,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773946227649,
+      "changelog": "Initial release of CrawDaddy, an autonomous post-quantum security scanner.\n\n- Scans code repositories and smart contracts for quantum-vulnerable cryptography (ECDSA/RSA).\n- Targets healthcare CISOs, blockchain developers, agent builders, and compliance officers.\n- Detects exposed credentials and agent package security risks.\n- Generates auditable, compliance-ready reports with risk scores and mitigation guidance.\n- Offers migration recommendations to post-quantum cryptography standards (NIST).\n- Integrates with major platforms, supports multiple languages, and variable pricing based on project size.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f01aee7923c77110bbe047522adc9c19ab14a20a08d03817314c94315de4688"
+}

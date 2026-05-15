@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13033,
+  "uuid": "skill-clawhub-chromecast-with-google-tv",
+  "skillKey": "clawhub-chromecast-with-google-tv",
+  "name": "Chromecast With Google Tv",
+  "summary": "Cast YouTube videos, Tubi TV show episodes, and TV show episodes from other video streaming apps via ADB to Chromecast with Android TV (Chromecast 4K supported, Google TV Streamer support is unknown)",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chromecast_with_google_tv",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "antgly",
+      "features": [
+        "Cast YouTube videos, Tubi TV show episodes, and TV show episodes from other video streaming app."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chromecast-with-google-tv@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40376804?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chromecast-with-google-tv",
+      "url": "https://clawhub.ai/skills/chromecast-with-google-tv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chromecast-with-google-tv",
+    "url": "https://clawhub.ai/skills/chromecast-with-google-tv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chromecast-with-google-tv-fbfbad370c1df28f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chromecast-with-google-tv@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chromecast-with-google-tv-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e279fddececf9ceb7e9a3cb1b6bb6322962723ad811adcf895b7b47fa09edafa",
+      "artifactSizeBytes": 2477
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T06:54:32.275Z"
+}

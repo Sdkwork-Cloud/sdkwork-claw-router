@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/db-explorer-tool@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.db_explorer_tool",
+  "skill": {
+    "id": 50215,
+    "skillKey": "clawhub-db-explorer-tool",
+    "name": "Db Explorer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "db-explorer-tool",
+    "url": "https://clawhub.ai/skills/db-explorer-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/db-explorer-tool-5fb5d11f56ac6c34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to and explore databases (PostgreSQL, MySQL, SQLite, MongoDB, Redis). Run queries, inspect schemas, export data. Use when user wants to query a datab..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lrg913427-dot",
+      "userId": "s175nn6ap9fe4ne23bws9svzm185ywrq",
+      "displayName": "lrg913427-dot",
+      "image": "https://avatars.githubusercontent.com/u/279154854?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 0,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1778385742096,
+      "changelog": "db-explorer-tool 2.0.0 introduces major documentation and workflow improvements for database exploration and management.\n\n- New SKILL.md extensively describes usage, safety rules, and common workflows.\n- Expanded examples for PostgreSQL, MySQL, SQLite, MongoDB, and Redis, including connection, schema inspection, data export, and diagnostics.\n- Emphasizes strict safety practices: read-only by default, explicit confirmation for writes, and result limiting.\n- Includes ready-to-use performance and health check queries for major databases.\n- Provides backup and restore recipes for PostgreSQL, MySQL, and SQLite.\n- Helps identify when and how to use the tool via clear activation guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f960b6587fea4c7c3e77a7a1c871c99e8c4aa1c1ab8f76e98bef8f5767f7ee1"
+}

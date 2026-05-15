@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57592,
+  "uuid": "skill-clawhub-mdac-filler",
+  "skillKey": "clawhub-mdac-filler",
+  "name": "MDAC Auto-Filler",
+  "summary": "Auto-fill and submit Malaysia Digital Arrival Card (MDAC) for travelers entering Malaysia. Use when a user wants to fill or submit MDAC (马来西亚数字入境卡) for Malay...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mdac_filler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sid Yang",
+      "features": [
+        "Auto-fill and submit Malaysia Digital Arrival Card (MDAC) for travelers entering Malaysia",
+        "Use when a user wants to fill or submit MDAC (马来西亚数字入境卡) for Malay..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mdac-filler@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4581174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mdac-filler",
+      "url": "https://clawhub.ai/skills/mdac-filler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mdac-filler",
+    "url": "https://clawhub.ai/skills/mdac-filler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mdac-filler-2ae84fa8adfc1c9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mdac-filler@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mdac-filler-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:078634e7bf783ad4d0c559fae336f59593ba4ad649ed503cd050f1a694a97bdc",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T15:36:07.691Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor",
+  "skill": {
+    "id": 13886,
+    "skillKey": "clawhub-video-editor",
+    "name": "Video Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor",
+    "url": "https://clawhub.ai/skills/video-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-a207c52db956f08c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform video editing tasks with ffmpeg, including cutting, merging, converting formats, extracting audio, adding subtitles, resizing, cropping, adjusting sp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cntuang",
+      "userId": "s17fje3cczrajt3n8frc4ajre1842240",
+      "displayName": "cntuang",
+      "image": "https://avatars.githubusercontent.com/u/34436708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1082,
+      "installsAllTime": 15,
+      "installsCurrent": 13,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773618649093,
+      "changelog": "Initial release with cut, merge, convert, extract-audio, add-subtitles, resize, speed, and crop operations",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48b601b316e47e1669d3508dea584bcef4c3a17a97c81cf8296fc9a294aac553"
+}

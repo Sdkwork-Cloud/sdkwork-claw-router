@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yeeth-claw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yeeth_claw",
+  "skill": {
+    "id": 41392,
+    "skillKey": "clawhub-yeeth-claw",
+    "name": "Yeeth Claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yeeth-claw",
+    "url": "https://clawhub.ai/skills/yeeth-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yeeth-claw-4aa407e6b472f9c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Supply chain security hooks for Claude Code. Intercepts npm, pip, yarn, pnpm, and cargo install commands before execution and checks each package for supply..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bkojusner",
+      "userId": "s173mba52t0224tw6wg4edqnmx84bve8",
+      "displayName": "bkojusner",
+      "image": "https://avatars.githubusercontent.com/u/25017260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775518584548,
+      "changelog": "Initial release of yeeth-claw.\n\n- Adds supply chain security hooks for Claude Code, intercepting npm, pip, yarn, pnpm, and cargo install commands.\n- Flags or blocks packages based on package age, typosquat detection against popular targets, and presence of install scripts.\n- Supports risk tiering with WARN (flags), BLOCK (installs blocked), and ARGUS (full analysis via Argus API).\n- Easy installation with bash script and Claude Code hook configuration.\n- No external dependencies required (Python stdlib only).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4fa2811f1af399d4ef5bbb25aa710256c1fdef3a4fb2742d49a6c696161b723e"
+}

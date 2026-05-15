@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/section11@1.0.13",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.section11",
+  "skill": {
+    "id": 9943,
+    "skillKey": "clawhub-section11",
+    "name": "Section 11: Endurance Training Coach (Intervals.icu)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "section11",
+    "url": "https://clawhub.ai/skills/section11",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/section11-0073e84662ab2451.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evidence-based endurance coaching protocol (v11.35). Use when analyzing training data, reviewing sessions, generating pre/post-workout reports, planning work..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crankaddict",
+      "userId": "s173s763gjqda3sa68f3egnkx183hq9h",
+      "displayName": "CrankAddict",
+      "image": "https://avatars.githubusercontent.com/u/254267834?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2692,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 5,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "1.0.13",
+      "createdAt": 1776711388600,
+      "changelog": "**Expanded data source support, tighter data discipline, and multi-platform improvements:**\n\n- Clarified data and template file locations for both local and cloud/connector setups, supporting agents (e.g., Claude, ChatGPT, Mistral).\n- New support for additional JSON sources: intervals.json, ftp_history.json, and routes.json for granular analysis (intervals, DFAs, terrain).\n- Enforced strict data discipline: every metric cited must come from a JSON read in the current response—no use of prior conversation, memory, or estimation.\n- Improved agent platform guidance, specifying expected behavior for GitHub connectors, direct file reads, and persistent configuration (SOUL.md, system prompts).\n- Updated protocol to version 11.35 and revised action hierarchy and fetch precedence for all required files and reports.\n- Refined first-use setup instructions and directory checks for a smoother onboarding experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bfc6c6fb5b0065ddca937e4bf64cab96fabf81fa75573e5423df8ad9325a2a73"
+}

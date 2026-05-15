@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-finder@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_finder",
+  "skill": {
+    "id": 14490,
+    "skillKey": "clawhub-email-finder",
+    "name": "Email Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-finder",
+    "url": "https://clawhub.ai/skills/email-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-finder-9870bd222cd8106b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find email addresses for a domain by combining website scraping, search dorking, pattern guessing, DNS analysis, and SMTP verification. Use when prospecting..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "psyduckler",
+      "userId": "publishers:psyduckler",
+      "displayName": "psyduckler",
+      "image": "https://avatars.githubusercontent.com/u/260153069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1172,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771171696337,
+      "changelog": "Re-publish: find email addresses via website scraping, search dorking, pattern guessing, DNS analysis, and SMTP verification.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e95f27c7ae9f4dcab79e69a27e06f391ec77ff571e3eea2bfefb8d25de315af3"
+}

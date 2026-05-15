@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zero-trading@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zero_trading",
+  "skill": {
+    "id": 55751,
+    "skillKey": "clawhub-zero-trading",
+    "name": "ZERO Trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zero-trading",
+    "url": "https://clawhub.ai/skills/zero-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zero-trading-01cad389fd920bf7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "trading agent for hyperliquid via zero. evaluates markets through 9 intelligence layers. rejects 97% of setups. the 3% that pass become trades."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "squaeragent",
+      "userId": "s17etmsmnfe6whhj9dwmzv3jh183pytj",
+      "displayName": "squaeragent",
+      "image": "https://avatars.githubusercontent.com/u/260071014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1774877845372,
+      "changelog": "OpenClaw plugin bundle — .mcp.json auto-configures MCP server on install, /join onboarding endpoint, 42 tools with progressive unlock",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f570d7ad06b42877bd1cb2b530a8336a26a3fe6d591d3621e7bcddeacccf82c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-bookmarks-digest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_bookmarks_digest",
+  "skill": {
+    "id": 33653,
+    "skillKey": "clawhub-x-bookmarks-digest",
+    "name": "X Bookmarks Digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-bookmarks-digest",
+    "url": "https://clawhub.ai/skills/x-bookmarks-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-bookmarks-digest-8f208ba5d9569a06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically review X/Twitter bookmarks for useful tools, projects, repos, products, and ideas. Fetches via xurl, analyses for value, and outputs an actiona..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bearly-hodling",
+      "userId": "publishers:bearly-hodling",
+      "displayName": "BEARLY_HODLING",
+      "image": "https://avatars.githubusercontent.com/u/165153024?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774003424562,
+      "changelog": "Initial clean publish - tidy structure, updated skill metadata, removed stale files",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5bce7d4e7f51b99f080deec57202a81c8b59e523d2c4860103b671a5f5b91f0b"
+}

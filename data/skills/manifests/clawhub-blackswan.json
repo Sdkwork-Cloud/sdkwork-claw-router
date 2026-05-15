@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10748,
+  "uuid": "skill-clawhub-blackswan",
+  "skillKey": "clawhub-blackswan",
+  "name": "BlackClaw",
+  "summary": "Real-time crypto risk intelligence; before and as things break. Two tools: Flare (15-min precursor detection, immediate alarms) and Core (60-min state synthesis, context assessment). Free access to the last analysis. No API key required. U.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blackswan",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bilalmotiwala",
+      "features": [
+        "Real-time crypto risk intelligence",
+        "before and as things break",
+        "Two tools: Flare (15-min precursor detection, immediate alarms) and Core (60-min state synthesi.",
+        "Free access to the last analysis"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blackswan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63723475?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blackswan",
+      "url": "https://clawhub.ai/skills/blackswan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blackswan",
+    "url": "https://clawhub.ai/skills/blackswan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blackswan-9a422e3437f39526.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blackswan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blackswan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c86d4a6db835b031dd6a7c162950e9fc4c76424d6822e969cf943e298159b189",
+      "artifactSizeBytes": 2343
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T11:38:48.828Z"
+}

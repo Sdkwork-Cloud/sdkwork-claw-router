@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bdjobs-job-apply@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bdjobs_job_apply",
+  "skill": {
+    "id": 32884,
+    "skillKey": "clawhub-bdjobs-job-apply",
+    "name": "BDJobs Job Apply"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bdjobs-job-apply",
+    "url": "https://clawhub.ai/skills/bdjobs-job-apply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bdjobs-job-apply-db763ccd5d1c3781.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BDJobs job search, matching, applying, undoing, and salary-update automation for OpenClaw. Use when the user wants to set up BDJobs credentials/preferences,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sazidulalam47",
+      "userId": "s17b12zhzf7w2h8yf578ff3sth84g7rq",
+      "displayName": "Sazidul Alam",
+      "image": "https://avatars.githubusercontent.com/u/81089575?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776024445800,
+      "changelog": "- enhance job details retrieval and search functionality with postedWithin parameter",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7e9ee75f1225d4e1f937003f635361ba8271376846a1e2d062af8724b2a2a9b"
+}

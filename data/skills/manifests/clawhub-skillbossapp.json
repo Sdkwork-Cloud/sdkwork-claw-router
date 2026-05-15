@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46010,
+  "uuid": "skill-clawhub-skillbossapp",
+  "skillKey": "clawhub-skillbossapp",
+  "name": "SkillBoss",
+  "summary": "Give your OpenClaw agent access to 354+ tools (100+ LLMs, web scraping, search, image/video/audio generation, email) through one API key with signed JWT audi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillbossapp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Richiecyq",
+      "features": [
+        "Give your OpenClaw agent access to 354+ tools (100+ LLMs, web scraping, search, image/video/aud."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillbossapp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111052833?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillbossapp",
+      "url": "https://clawhub.ai/skills/skillbossapp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillbossapp",
+    "url": "https://clawhub.ai/skills/skillbossapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillbossapp-cd4e849316dd643b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillbossapp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillbossapp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3431c2472f196e2a28e4359b9f3396586f74fa04c6ee45e10fa3e89a596af0f0",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T03:38:32.108Z"
+}

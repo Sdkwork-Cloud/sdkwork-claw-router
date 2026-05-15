@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45843,
+  "uuid": "skill-clawhub-dark-factory",
+  "skillKey": "clawhub-dark-factory",
+  "name": "Dark-Factory-Agent",
+  "summary": "Autonomously validates specifications, runs behavioral tests, generates code, executes tests, and produces cryptographically signed outcome reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dark_factory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Foo Jun Wei",
+      "features": [
+        "Autonomously validates specifications, runs behavioral tests, generates code, executes tests, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dark-factory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/122217524?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dark-factory",
+      "url": "https://clawhub.ai/skills/dark-factory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dark-factory",
+    "url": "https://clawhub.ai/skills/dark-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dark-factory-db59923a689b3fa6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dark-factory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dark-factory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c00fca11ce4245b4f2ecd8444b59aec15f046194900edd6fe2d561ea2ac5b0b8",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T13:24:53.145Z"
+}

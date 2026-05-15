@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37008,
+  "uuid": "skill-clawhub-aana-support-reply-guardrail",
+  "skillKey": "clawhub-aana-support-reply-guardrail",
+  "name": "AANA Support Reply Guardrail Skill",
+  "summary": "Ensures customer support replies are accurate, policy-compliant, minimize private data, avoid unauthorized promises, and recommend safe next steps.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aana_support_reply_guardrail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mindbomber",
+      "features": [
+        "Ensures customer support replies are accurate, policy-compliant, minimize private data, avoid u."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aana-support-reply-guardrail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42798111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aana-support-reply-guardrail",
+      "url": "https://clawhub.ai/skills/aana-support-reply-guardrail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aana-support-reply-guardrail",
+    "url": "https://clawhub.ai/skills/aana-support-reply-guardrail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aana-support-reply-guardrail-ad6a29174331032e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aana-support-reply-guardrail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aana-support-reply-guardrail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d4c206aff6cc64c7649d81f2ce8ea17ce8132500b2c352b3d86cbc6ba52827c",
+      "artifactSizeBytes": 2602
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T22:21:44.190Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yuyonghao-rag-retriever@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuyonghao_rag_retriever",
+  "skill": {
+    "id": 65436,
+    "skillKey": "clawhub-yuyonghao-rag-retriever",
+    "name": "Rag Retriever"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuyonghao-rag-retriever",
+    "url": "https://clawhub.ai/skills/yuyonghao-rag-retriever",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuyonghao-rag-retriever-089bafade1f91492.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "RAG 2.0 检索系统，支持中文分词，混合向量与关键词搜索，智能文档分块与加权重排，自动生成 RAG 格式输出。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuyonghao-123",
+      "userId": "s173qtadqbwthef9dwg283f54n83np6t",
+      "displayName": "yuyonghao-123",
+      "image": "https://avatars.githubusercontent.com/u/267580628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774920483235,
+      "changelog": "- Updated package version to 0.1.1 in package.json.\n- No other functional or documentation changes in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dbda7149e11a2a01ded1de557e6707c4c57a214ef7e6a457f5fddde47c9b8d49"
+}

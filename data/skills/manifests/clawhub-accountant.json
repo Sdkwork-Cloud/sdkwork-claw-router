@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10164,
+  "uuid": "skill-clawhub-accountant",
+  "skillKey": "clawhub-accountant",
+  "name": "Accountant",
+  "summary": "Manage bookkeeping, financial statements, and tax planning with sound accounting practices.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.accountant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Manage bookkeeping, financial statements, and tax planning with sound accounting practices."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/accountant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "accountant",
+      "url": "https://clawhub.ai/skills/accountant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "accountant",
+    "url": "https://clawhub.ai/skills/accountant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/accountant-29d8c99ec25b2710.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/accountant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-accountant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26267c22d2b9bb584c9226e503cc798ca98d05987746b5c179b6bb413a88fad2",
+      "artifactSizeBytes": 1788
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T21:34:55.316Z"
+}

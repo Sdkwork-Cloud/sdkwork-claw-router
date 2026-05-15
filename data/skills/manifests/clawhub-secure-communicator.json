@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45126,
+  "uuid": "skill-clawhub-secure-communicator",
+  "skillKey": "clawhub-secure-communicator",
+  "name": "Secure Communicator",
+  "summary": "Secure communication using the Pieter Theijssen triple-layer XOR encryption algorithm. Use when encrypting or decrypting messages, files, or any sensitive da...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.secure_communicator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pieter Theijssen",
+      "features": [
+        "Secure communication using the Pieter Theijssen triple-layer XOR encryption algorithm",
+        "Use when encrypting or decrypting messages, files, or any sensitive da..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/secure-communicator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19203807?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "secure-communicator",
+      "url": "https://clawhub.ai/skills/secure-communicator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "secure-communicator",
+    "url": "https://clawhub.ai/skills/secure-communicator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/secure-communicator-d431df856d729182.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/secure-communicator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-secure-communicator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a16b8c01a9258df9c873612e676aff724304041ada10e21a7d6445503796b2d2",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T11:50:42.023Z"
+}

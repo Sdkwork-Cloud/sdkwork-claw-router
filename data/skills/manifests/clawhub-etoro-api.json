@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19704,
+  "uuid": "skill-clawhub-etoro-api",
+  "skillKey": "clawhub-etoro-api",
+  "name": "eToro API",
+  "summary": "Enables agents to interact with the eToro API to access market data, portfolio and social features, and execute trades programmatically.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.etoro_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mariano Pardo",
+      "features": [
+        "Enables agents to interact with the eToro API to access market data, portfolio and social featu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/etoro-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4909681?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "etoro-api",
+      "url": "https://clawhub.ai/skills/etoro-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "etoro-api",
+    "url": "https://clawhub.ai/skills/etoro-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/etoro-api-5045f9324ffcbc53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/etoro-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-etoro-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02f91abceecab7428653c760a9e5277b8a2abedcbbc554593dfce95b6f6c909f",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T19:19:38.163Z"
+}

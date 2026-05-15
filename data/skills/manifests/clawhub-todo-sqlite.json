@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32788,
+  "uuid": "skill-clawhub-todo-sqlite",
+  "skillKey": "clawhub-todo-sqlite",
+  "name": "Todo SQLite",
+  "summary": "Manage multi-project todos with SQLite, supporting subtasks, priority/urgency levels, keyword search, time filters, smart sorting, and scheduled reminders.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todo_sqlite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LaoYutang",
+      "features": [
+        "Manage multi-project todos with SQLite, supporting subtasks, priority/urgency levels, keyword s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/todo-sqlite@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98928624?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "todo-sqlite",
+      "url": "https://clawhub.ai/skills/todo-sqlite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todo-sqlite",
+    "url": "https://clawhub.ai/skills/todo-sqlite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todo-sqlite-dd20526060ce943e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/todo-sqlite@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-todo-sqlite-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b70ac05e293c6815b3598c6192cf8c54f8f1317bc01d92e8584819a040ae3f4",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:17:43.945Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68150,
+  "uuid": "skill-clawhub-novel-workshop",
+  "skillKey": "clawhub-novel-workshop",
+  "name": "Novel Workshop",
+  "summary": "多模型命题小说创作工坊。用户给出写作命题，自动完成：AI 写初稿 → 三路并行审阅（逻辑/文学/锐评）→ AI 改稿 → 飞书文档完整存档。 一键启动，全程自动，零手动干预。支持飞书实时进度推送。 触发词：命题写作、写一篇小说、命题小说、创作工坊、novel workshop",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novel_workshop",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "magicaldd",
+      "features": [
+        "多模型命题小说创作工坊。用户给出写作命题，自动完成：AI 写初稿 → 三路并行审阅（逻辑/文学/锐评）→ AI 改稿 → 飞书文档完整存档。 一键启动，全程自动，零手动干预。支持飞书实时进度."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/novel-workshop@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/137902365?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "novel-workshop",
+      "url": "https://clawhub.ai/skills/novel-workshop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novel-workshop",
+    "url": "https://clawhub.ai/skills/novel-workshop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novel-workshop-484ea0b3a2670199.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/novel-workshop@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-novel-workshop-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1dd9b5c9e90098b0e375bd673c54da1321da86bce5db55943d897a8a86f4875",
+      "artifactSizeBytes": 2618
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T15:15:56.066Z"
+}

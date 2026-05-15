@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-moderation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_moderation",
+  "skill": {
+    "id": 11689,
+    "skillKey": "clawhub-content-moderation",
+    "name": "Content Moderation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-moderation",
+    "url": "https://clawhub.ai/skills/content-moderation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-moderation-b2038a4322ebf6b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Moderate text, images, and video using Vettly's content moderation API via MCP server."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "code-with-brian",
+      "userId": "publishers:code-with-brian",
+      "displayName": "Brian Palmer",
+      "image": "https://avatars.githubusercontent.com/u/144558318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2055,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769879422690,
+      "changelog": "Initial release of the content-moderation skill.\n\n- Moderate text, images, and videos using Vettly's content moderation API via MCP server.\n- Includes tools to moderate content, validate YAML policies, list policies, get usage stats, and review recent moderation decisions.\n- Supports policy-based content checks with detailed results.\n- Requires VETTLY_API_KEY environment variable and npx.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:80787f38d0baa0cd0b372ce656478fab583ac16f94387331ea0f465eaf592d17"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cjpkg@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cjpkg",
+  "skill": {
+    "id": 41741,
+    "skillKey": "clawhub-cjpkg",
+    "name": "cjpkg"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cjpkg",
+    "url": "https://clawhub.ai/skills/cjpkg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cjpkg-1e42577df7433398.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps users discover, when they ask questions like \"how do I do X\", \"find a packages for Cangjie\", \"is there a X package for Cangjie...\", or express interest..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "l3gi0nxxxx",
+      "userId": "s17a71grmjxdm5fxddbvzakjn983gw6w",
+      "displayName": "l3gi0nXXXX",
+      "image": "https://avatars.githubusercontent.com/u/269360047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776012379875,
+      "changelog": "Initial release of cjpkg skill to help users discover and manage Cangjie packages.\n\n- Guides users to find, download, and configure Cangjie packages and third party components.\n- Provides step-by-step instructions for searching, installing, and using packages from the Cangjie Central Repository.\n- Includes key cjpm and helper script commands for publishing, searching, downloading, and managing Cangjie packages.\n- Offers guidance on setting up the Cangjie SDK environment and initializing Cangjie projects.\n- Supports both package discovery and package development workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d238073368d7a0c1235c33238bd4e0827a0e1f77c7510f5b3536fbfd7a3c220"
+}

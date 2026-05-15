@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feed-to-md@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feed_to_md",
+  "skill": {
+    "id": 15271,
+    "skillKey": "clawhub-feed-to-md",
+    "name": "Feed To Md"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feed-to-md",
+    "url": "https://clawhub.ai/skills/feed-to-md",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feed-to-md-252b9decf3900992.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert RSS or Atom feed URLs into Markdown using the bundled local converter script. Use this when a user asks to turn a feed URL into readable Markdown, op..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "myx0m0p",
+      "userId": "publishers:myx0m0p",
+      "displayName": "Andre P",
+      "image": "https://avatars.githubusercontent.com/u/10810328?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 834,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1771926397315,
+      "changelog": "- Added _meta.json file for metadata support.\n- Updated scripts/feed_to_md.py.\n- No user-facing usage or option changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c396ed4871e65f06430bc9b2ef1455290dc205348d9aaac7c32e59bbcfcaf94e"
+}

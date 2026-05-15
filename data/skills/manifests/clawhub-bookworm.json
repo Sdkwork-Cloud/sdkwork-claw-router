@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23569,
+  "uuid": "skill-clawhub-bookworm",
+  "skillKey": "clawhub-bookworm",
+  "name": "Bookworm",
+  "summary": "Log books, track reading habits, and review reading streaks over time. Use when recording reads, maintaining goals, or analyzing genre preferences.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookworm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Log books, track reading habits, and review reading streaks over time",
+        "Use when recording reads, maintaining goals, or analyzing genre preferences."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bookworm@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bookworm",
+      "url": "https://clawhub.ai/skills/bookworm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookworm",
+    "url": "https://clawhub.ai/skills/bookworm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookworm-84938191021c8811.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bookworm@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bookworm-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aad2b61b7f05182496f98d8d1496cd50c520b615b22427d51823df651f0c1f75",
+      "artifactSizeBytes": 1822
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:36:10.765Z"
+}

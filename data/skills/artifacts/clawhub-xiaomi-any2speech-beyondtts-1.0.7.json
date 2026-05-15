@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaomi-any2speech-beyondtts@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaomi_any2speech_beyondtts",
+  "skill": {
+    "id": 63118,
+    "skillKey": "clawhub-xiaomi-any2speech-beyondtts",
+    "name": "Xiaomi-any2speech"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaomi-any2speech-beyondtts",
+    "url": "https://clawhub.ai/skills/xiaomi-any2speech-beyondtts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaomi-any2speech-beyondtts-40ce7e788a7eb679.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "声音世界模型（Speech World Model）：不只是 TTS，而是理解场景、角色、情绪并自主规划表达的语音大模型。 原生支持长文+多人、中英双语，也支持上传参考音频进行音色克隆（Voice Prompt / voice cloning），内置高能创作模板，将任意内容转为播客/有声书/相声/Rap/广播剧等..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whiteshirt0429",
+      "userId": "s177n791nt6s19wt9nkrbjzhc183je3w",
+      "displayName": "Di Wu",
+      "image": "https://avatars.githubusercontent.com/u/24248462?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 649,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 7,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1775834229920,
+      "changelog": "**Expanded input options and Voice Prompt/voice cloning improvements**\n\n- 新增支持网页链接（URL）输入及模板合成，无需额外文本。\n- 参考音色（Voice Prompt）支持“用模板”与多角色映射，行为更可控（单/多人场景推荐两步式）。\n- 参考音色降噪默认关闭（可显式开启），详细说明各参数和接口用法。\n- 更丰富的触发意图：可通过“用模板”、“选模板”等关键词激活模板功能。\n- 细化输入安全策略与说明，提升使用灵活性和易用性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c47179334e170e55e3991f5b2c0650d54c117b2c37a9c8dbc609b36e8c32bb32"
+}

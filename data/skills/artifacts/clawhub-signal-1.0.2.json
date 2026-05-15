@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/signal@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signal",
+  "skill": {
+    "id": 15988,
+    "skillKey": "clawhub-signal",
+    "name": "Signal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signal",
+    "url": "https://clawhub.ai/skills/signal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signal-d041924c15885af6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive Signal channel integration via signal-cli. Use when you need to send messages, reactions, or handle group chat interactions in Signal, or when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blake-lucas",
+      "userId": "publishers:blake-lucas",
+      "displayName": "Blake Lucas",
+      "image": "https://avatars.githubusercontent.com/u/92932337?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 892,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771879671516,
+      "changelog": "No functional or documentation changes detected in this version.\n\n- Internal version update with no changes to files or documentation.\n- No user-facing impact.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4a9c7040d302fab67b790018898f0f79396af2bbec72316811554226078f1049"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evolutionary-model@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evolutionary_model",
+  "skill": {
+    "id": 30741,
+    "skillKey": "clawhub-evolutionary-model",
+    "name": "Evolutionary Model"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evolutionary-model",
+    "url": "https://clawhub.ai/skills/evolutionary-model",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evolutionary-model-d4da5484465bb288.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Framework for building AI agents that evolve with their owner. Use when: setting up a new agent from scratch, onboarding a team to AI-native workflow, explai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "borodich",
+      "userId": "s17cp1659xt5qhk5c0snsvm6es83yps1",
+      "displayName": "borodich",
+      "image": "https://avatars.githubusercontent.com/u/2129934?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774965314918,
+      "changelog": "Initial release: framework for AI agents that grow with their owner. Memory + Skills + Protocols.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c601cd0ba2befb3748d93db2020311c71591e1e6c35a28b14a13108dc23b1b2d"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9111,
+  "uuid": "skill-clawhub-crypto",
+  "skillKey": "clawhub-crypto",
+  "name": "Crypto Market",
+  "summary": "Cryptocurrency market data and price alert monitoring tool based on CCXT. Supports multiple exchanges, real-time price tracking, and configurable price/volat...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "manifold",
+      "features": [
+        "Cryptocurrency market data and price alert monitoring tool based on CCXT",
+        "Supports multiple exchanges, real-time price tracking, and configurable price/volat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62403180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto",
+      "url": "https://clawhub.ai/skills/crypto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto",
+    "url": "https://clawhub.ai/skills/crypto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-da2f073e06f78938.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36e98209d57385ab2f18b3b01c32d49893b6857679cdbc7ad5a6bc40cbd65fef",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:03:28.760Z"
+}

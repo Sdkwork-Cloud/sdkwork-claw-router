@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/excalidraw-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excalidraw_pro",
+  "skill": {
+    "id": 32413,
+    "skillKey": "clawhub-excalidraw-pro",
+    "name": "excalidraw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excalidraw-pro",
+    "url": "https://clawhub.ai/skills/excalidraw-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excalidraw-pro-3f31535fe6446fde.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate Excalidraw diagrams (.excalidraw files) from natural language descriptions. Use this skill whenever the user asks to create, draw, or visualize a di..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jannik689",
+      "userId": "s171t5cbg4tqff9p8spzh0ykw183gq4z",
+      "displayName": "jannik689",
+      "image": "https://avatars.githubusercontent.com/u/111683740?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774197347701,
+      "changelog": "Initial release of Excalidraw diagram generator.\n\n- Generate Excalidraw (.excalidraw) diagrams from natural language descriptions.\n- Auto-selects diagram type: flowchart, architecture, mind map, or sequence diagram based on user request.\n- Outputs intermediate JSON, then builds the diagram file via Python script.\n- Provides user instructions on how to open and use the generated diagram.\n- Includes error-handling tips and best practices for clear, effective diagrams.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2d77fb5f6ada3558b66e97e639fe04f1edeea334c959fdf2ccba5db552dacb04"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39499,
+  "uuid": "skill-clawhub-finskills-backtest-expert",
+  "skillKey": "clawhub-finskills-backtest-expert",
+  "name": "backtest-expert",
+  "summary": "Design, execute, and evaluate quantitative trading strategies using historical price data and Fama-French factor attribution via the Finskills API.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finskills_backtest_expert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "finskills",
+      "features": [
+        "Design, execute, and evaluate quantitative trading strategies using historical price data and F."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finskills-backtest-expert@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32382589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finskills-backtest-expert",
+      "url": "https://clawhub.ai/skills/finskills-backtest-expert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finskills-backtest-expert",
+    "url": "https://clawhub.ai/skills/finskills-backtest-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finskills-backtest-expert-534be8aa43ca3049.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finskills-backtest-expert@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-finskills-backtest-expert-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63fac571f22fc63f38bd8e5ed118b55494bd11916266c20a88a77eea2bc58e63",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T15:48:34.350Z"
+}

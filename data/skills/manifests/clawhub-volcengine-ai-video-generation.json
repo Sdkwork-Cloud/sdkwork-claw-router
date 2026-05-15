@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11988,
+  "uuid": "skill-clawhub-volcengine-ai-video-generation",
+  "skillKey": "clawhub-volcengine-ai-video-generation",
+  "name": "Volcengine Ai Video Generation",
+  "summary": "AI video generation workflow on Volcengine. Use when users need text-to-video, image-to-video, generation parameter tuning, or async task troubleshooting for video jobs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_ai_video_generation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "AI video generation workflow on Volcengine",
+        "Use when users need text-to-video, image-to-video, generation parameter tuning, or async task t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcengine-ai-video-generation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcengine-ai-video-generation",
+      "url": "https://clawhub.ai/skills/volcengine-ai-video-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-ai-video-generation",
+    "url": "https://clawhub.ai/skills/volcengine-ai-video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-ai-video-generation-88b6e9fb51e78b72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcengine-ai-video-generation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-ai-video-generation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9aca700384e680e100f710e6b79b9d4fbdb02a460806b79e484b5d7093711fd3",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T00:24:19.282Z"
+}

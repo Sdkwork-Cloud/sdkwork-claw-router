@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18579,
+  "uuid": "skill-clawhub-gws-gmail-forward",
+  "skillKey": "clawhub-gws-gmail-forward",
+  "name": "Gws Gmail Forward",
+  "summary": "Gmail: Forward a message to new recipients.",
+  "version": "1.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_gmail_forward",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Gmail: Forward a message to new recipients."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-gmail-forward@1.0.14",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-gmail-forward",
+      "url": "https://clawhub.ai/skills/gws-gmail-forward"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-gmail-forward",
+    "url": "https://clawhub.ai/skills/gws-gmail-forward",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-gmail-forward-80d5675dc410e7b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-gmail-forward@1.0.14",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-gmail-forward-1.0.14.json",
+      "version": "1.0.14",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56989115a5bca59c6fbc3bf2be817f9b1723d0607c55e3d96e14e7019fda6972",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:34:00.394Z"
+}

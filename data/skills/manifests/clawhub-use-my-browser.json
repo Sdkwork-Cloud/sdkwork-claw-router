@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15589,
+  "uuid": "skill-clawhub-use-my-browser",
+  "skillKey": "clawhub-use-my-browser",
+  "name": "Use My Browser",
+  "summary": "Control the user's REAL Chrome browser via Tampermonkey injection. Trigger when user says \"use my browser\", \"open in my browser\", \"check this page for me\", o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.use_my_browser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flyinghanger",
+      "features": [
+        "Control the user's REAL Chrome browser via Tampermonkey injection",
+        "Trigger when user says \"use my browser\", \"open in my browser\", \"check this page for me\", o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/use-my-browser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251348879?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "use-my-browser",
+      "url": "https://clawhub.ai/skills/use-my-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "use-my-browser",
+    "url": "https://clawhub.ai/skills/use-my-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/use-my-browser-3abc2dea1db8f427.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/use-my-browser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-use-my-browser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35685ad1547ed45997fd9b5d2b439a72b24ad2f175969a889e1be395fe3940bc",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T13:52:17.679Z"
+}

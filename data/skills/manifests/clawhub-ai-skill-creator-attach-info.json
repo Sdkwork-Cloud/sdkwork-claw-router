@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60726,
+  "uuid": "skill-clawhub-ai-skill-creator-attach-info",
+  "skillKey": "clawhub-ai-skill-creator-attach-info",
+  "name": "Skill Creator Attach Info",
+  "summary": "创建技能后完善头部信息。触发场景：(1) 调用 skill-creator 技能创建新技能后；(2) 用户说'创建技能'、'新建技能'、'添加技能'时；(3) 完成 SKILL.md 文件创建后。必须在创建任何技能后立即调用此技能添加 Author、Date、BusinessSupportVersion 信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_skill_creator_attach_info",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "quntion",
+      "features": [
+        "创建技能后完善头部信息。触发场景：(1) 调用 skill-creator 技能创建新技能后；(2) 用户说'创建技能'、'新建技能'、'添加技能'时；(3) 完成 SKILL.md 文件创."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-skill-creator-attach-info@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15528553?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-skill-creator-attach-info",
+      "url": "https://clawhub.ai/skills/ai-skill-creator-attach-info"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-skill-creator-attach-info",
+    "url": "https://clawhub.ai/skills/ai-skill-creator-attach-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-skill-creator-attach-info-6096a35fa5de180f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-skill-creator-attach-info@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-skill-creator-attach-info-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33fae3e312ab40c224423d4245b04cfbc38dc64c952ff4a72c5efe708cff27a4",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T16:23:41.435Z"
+}

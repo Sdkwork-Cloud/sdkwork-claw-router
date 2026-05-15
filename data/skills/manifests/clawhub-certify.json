@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30669,
+  "uuid": "skill-clawhub-certify",
+  "skillKey": "clawhub-certify",
+  "name": "Certify",
+  "summary": "Certify integration. Manage data, records, and automate workflows. Use when the user wants to interact with Certify data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.certify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Certify integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Certify data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/certify@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "certify",
+      "url": "https://clawhub.ai/skills/certify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "certify",
+    "url": "https://clawhub.ai/skills/certify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/certify-6706b672c3d63aa4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/certify@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-certify-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c66464f33571905af0ec0f5639c2b0cf355de6ee5343ae908c7d8498858ef850",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:28:31.016Z"
+}

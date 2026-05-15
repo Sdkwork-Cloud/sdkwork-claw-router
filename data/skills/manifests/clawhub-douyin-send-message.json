@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69502,
+  "uuid": "skill-clawhub-douyin-send-message",
+  "skillKey": "clawhub-douyin-send-message",
+  "name": "抖音私信发送",
+  "summary": "在抖音网页版发送私信消息。当用户想发送抖音私信、提醒续火花、或者提到\"抖音发消息\"、\"发抖音私信\"、\"douyin send message\"时触发。支持独立使用或配合人物关系管理技能使用。",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_send_message",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "calvin-dean",
+      "features": [
+        "在抖音网页版发送私信消息。当用户想发送抖音私信、提醒续火花、或者提到\"抖音发消息\"、\"发抖音私信\"、\"douyin send message\"时触发。支持独立使用或配合人物关系管理技能使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-send-message@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121805072?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-send-message",
+      "url": "https://clawhub.ai/skills/douyin-send-message"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-send-message",
+    "url": "https://clawhub.ai/skills/douyin-send-message",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-send-message-85f438088cd542ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-send-message@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-send-message-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6df1c732e51dadd6525e8ef8276b90175630c17a4d7fab94bfee19c3d4c69144",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T12:36:05.668Z"
+}

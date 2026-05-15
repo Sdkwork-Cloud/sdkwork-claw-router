@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36488,
+  "uuid": "skill-clawhub-pathology-roi-selector",
+  "skillKey": "clawhub-pathology-roi-selector",
+  "name": "Pathology ROI Selector",
+  "summary": "Use pathology roi selector for data analysis workflows that need structured execution, explicit assumptions, and clear output boundaries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pathology_roi_selector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Use pathology roi selector for data analysis workflows that need structured execution, explicit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pathology-roi-selector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pathology-roi-selector",
+      "url": "https://clawhub.ai/skills/pathology-roi-selector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pathology-roi-selector",
+    "url": "https://clawhub.ai/skills/pathology-roi-selector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pathology-roi-selector-63abbe8729225168.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pathology-roi-selector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pathology-roi-selector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54b63bdf58767db7df7d598d936c27f2120320321f6147f96ea209d9b5a2baab",
+      "artifactSizeBytes": 2604
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T05:54:56.777Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/article-formatter@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_formatter",
+  "skill": {
+    "id": 72724,
+    "skillKey": "clawhub-article-formatter",
+    "name": "写材料格式工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-formatter",
+    "url": "https://clawhub.ai/skills/article-formatter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-formatter-10a22e4929239c59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据调研报告或公文规范模板，将原始文本自动排版成标准.docx格式，支持格式自动识别和参考文件规范应用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunshineorangejuice",
+      "userId": "s178r3hn998exs4p2k2jyjmrnh83y33j",
+      "displayName": "SunShineOrangeJuice",
+      "image": "https://avatars.githubusercontent.com/u/26830382?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774946470515,
+      "changelog": "完全自包含，参考文件内容内嵌，无需外部依赖",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2721e4bb85ef324ec6917c1b2225795f91caeb491a82d8185a10a13c490ead69"
+}

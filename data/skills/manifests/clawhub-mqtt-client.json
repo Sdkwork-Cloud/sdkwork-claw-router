@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10535,
+  "uuid": "skill-clawhub-mqtt-client",
+  "skillKey": "clawhub-mqtt-client",
+  "name": "Mqtt Client",
+  "summary": "This is a simple client for connecting to an mqtt instance",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mqtt_client",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enchantedmotorcycle",
+      "features": [
+        "This is a simple client for connecting to an mqtt instance"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mqtt-client@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88115702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mqtt-client",
+      "url": "https://clawhub.ai/skills/mqtt-client"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mqtt-client",
+    "url": "https://clawhub.ai/skills/mqtt-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mqtt-client-ab390389b87af62d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mqtt-client@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-mqtt-client-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:971fda3dfa475d1f600aff075fc254b0663194ce9c566c8b8387a07afaeacdae",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T00:24:13.609Z"
+}

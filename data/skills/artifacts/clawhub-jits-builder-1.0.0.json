@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jits-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jits_builder",
+  "skill": {
+    "id": 11680,
+    "skillKey": "clawhub-jits-builder",
+    "name": "Jits Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jits-builder",
+    "url": "https://clawhub.ai/skills/jits-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jits-builder-02ce191b8345cb50.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Instantly build, deploy, and access single-page, vanilla JS mini-apps from voice or text descriptions via a Cloudflare tunnel URL."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dannyshmueli",
+      "userId": "s1785jgb7evz92f88z9psd4m7583gmsv",
+      "displayName": "Danny Shmueli",
+      "image": "https://avatars.githubusercontent.com/u/4062328?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2058,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769692782765,
+      "changelog": "- Initial release of JITS Builder (Just-In-Time Software).\n- Instantly generate and deploy mini-apps from simple voice or text descriptions.\n- Apps are single-file, mobile-friendly, dark-themed, and require no external dependencies.\n- Automatic deployment with Cloudflare tunnel for instant public access.\n- Simple management with commands to list and stop active JITS apps.\n- Includes guidelines and template structure for consistent JITS app generation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9100927d4f2227941b4bab0651c84173d8cf50918fd57c8fcd5d6e1fb72dffe7"
+}

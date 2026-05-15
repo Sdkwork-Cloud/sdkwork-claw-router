@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/research-planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_planner",
+  "skill": {
+    "id": 27002,
+    "skillKey": "clawhub-research-planner",
+    "name": "Research Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-planner",
+    "url": "https://clawhub.ai/skills/research-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-planner-dc32c1a4d6c06b9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Designs market and user research plans focused on methodology selection and research material authoring (screeners, surveys, interview guides, usability task..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nkz55",
+      "userId": "s175k45b27mynweb941nefg3td85998j",
+      "displayName": "NKZ55",
+      "image": "https://avatars.githubusercontent.com/u/94348744?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773370034039,
+      "changelog": "Minor update: Added installation instructions to the documentation.\n\n- Included step-by-step installation commands for Clawdhub and manual setup.\n- No changes to skill functionality or scope.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b818629ce071a7bd54ab0a5465663ec647bec33b82ff2f32d6dd238456203f2b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reky@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reky",
+  "skill": {
+    "id": 36057,
+    "skillKey": "clawhub-reky",
+    "name": "reky"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reky",
+    "url": "https://clawhub.ai/skills/reky",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reky-3cac9cd53eb5c3c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A personal productivity skill tailored for reky, providing smart coding assistance, project scaffolding, and workflow automation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wscats",
+      "userId": "s17bw1sf2hsjw09jmyh7nhzshn83h2gf",
+      "displayName": "enoyao",
+      "image": "https://avatars.githubusercontent.com/u/17243165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775458893911,
+      "changelog": "- Renamed the skill from \"hk-guide\" to \"reky\" and updated all relevant references.\n- Replaced the Hong Kong travel guide content with a new focus on personal productivity tools for reky, centered on coding and workflow automation.\n- Updated description, tags, and author to reflect the new skill purpose and owner.\n- Added features such as project scaffolding, code style enforcement, workflow automation, and smart reminders.\n- Provided concise usage instructions tailored to reky’s development workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e158368b3717bcbdf70f25a24c7258db3bbb36055dc35b5a397d21646da75f8"
+}

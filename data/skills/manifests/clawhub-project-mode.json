@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71368,
+  "uuid": "skill-clawhub-project-mode",
+  "skillKey": "clawhub-project-mode",
+  "name": "项目制多智能体开发协议",
+  "summary": "激活项目制多智能体开发协议。用于处理复杂的代码开发、系统搭建等需求。该工具将在后台自动拆解任务、调度程序员和测试员、更新 dev_project.md 并处理错误重试。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_mode",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tincomking",
+      "features": [
+        "激活项目制多智能体开发协议。用于处理复杂的代码开发、系统搭建等需求。该工具将在后台自动拆解任务、调度程序员和测试员、更新 dev_project.md 并处理错误重试。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project-mode@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32919939?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project-mode",
+      "url": "https://clawhub.ai/skills/project-mode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-mode",
+    "url": "https://clawhub.ai/skills/project-mode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-mode-081922516572e553.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project-mode@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-mode-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47ea637f20dfeaf95272324e988e84c3e009b103de2970a6d3f4b9db6328910c",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T14:49:01.775Z"
+}

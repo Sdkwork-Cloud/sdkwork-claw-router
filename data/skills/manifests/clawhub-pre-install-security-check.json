@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50589,
+  "uuid": "skill-clawhub-pre-install-security-check",
+  "skillKey": "clawhub-pre-install-security-check",
+  "name": "Security Check",
+  "summary": "🔒 Pre-installation security verification for external code and dependencies. Automated risk analysis for GitHub repos, npm packages, PyPI libraries, and she...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pre_install_security_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nullweave",
+      "features": [
+        "🔒 Pre-installation security verification for external code and dependencies",
+        "Automated risk analysis for GitHub repos, npm packages, PyPI libraries, and she..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pre-install-security-check@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221224470?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pre-install-security-check",
+      "url": "https://clawhub.ai/skills/pre-install-security-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pre-install-security-check",
+    "url": "https://clawhub.ai/skills/pre-install-security-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pre-install-security-check-04220c88a1ecbcf4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pre-install-security-check@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pre-install-security-check-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1857e0ad2e673b3762c8cc3b8a2d86da624b8e6ec06cec0aefe0f85ac5a6bb11",
+      "artifactSizeBytes": 2253
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T22:22:05.845Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67399,
+  "uuid": "skill-clawhub-ssa-okki-crm",
+  "skillKey": "clawhub-ssa-okki-crm",
+  "name": "OKKI CRM",
+  "summary": "连接 OKKI（小满）CRM 系统，支持查询客户、创建跟进记录、管理订单等操作。频道限定触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssa_okki_crm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaden's built a claw",
+      "features": [
+        "连接 OKKI（小满）CRM 系统，支持查询客户、创建跟进记录、管理订单等操作。频道限定触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssa-okki-crm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64246343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssa-okki-crm",
+      "url": "https://clawhub.ai/skills/ssa-okki-crm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssa-okki-crm",
+    "url": "https://clawhub.ai/skills/ssa-okki-crm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssa-okki-crm-401c7292db8128a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssa-okki-crm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssa-okki-crm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ecf0521cf1e40bdc9415ed700dbd98b09dadb45eeee81621b58933b725798f8c",
+      "artifactSizeBytes": 1898
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T10:44:38.033Z"
+}

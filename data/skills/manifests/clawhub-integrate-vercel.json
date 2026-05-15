@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37944,
+  "uuid": "skill-clawhub-integrate-vercel",
+  "skillKey": "clawhub-integrate-vercel",
+  "name": "Vercel",
+  "summary": "Vercel integration. Manage Projects, Users, Teams, Secrets. Use when the user wants to interact with Vercel data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integrate_vercel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Vercel integration",
+        "Manage Projects, Users, Teams, Secrets",
+        "Use when the user wants to interact with Vercel data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integrate-vercel@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integrate-vercel",
+      "url": "https://clawhub.ai/skills/integrate-vercel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integrate-vercel",
+    "url": "https://clawhub.ai/skills/integrate-vercel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integrate-vercel-450392b356a92416.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integrate-vercel@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-integrate-vercel-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:098c37af95d99aa08cf6c50419cec8543778ff36caa5c68d8960e55719f2c7bc",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:37:43.996Z"
+}

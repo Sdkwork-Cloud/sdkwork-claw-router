@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66698,
+  "uuid": "skill-clawhub-capability-radar",
+  "skillKey": "clawhub-capability-radar",
+  "name": "Capability Radar",
+  "summary": "检测并标记能力缺口、重复模式和规则冲突，供架构进化使用。当以下情况发生时使用：(1) 某项任务因工具能力缺失或损坏而失败，(2) 同类型请求出现 3 次以上，(3) 规则冲突导致了错误行为，(4) 不得不使用临时绕过方案。目的：让 Claude Cowork 下次会话时能看到明确的进化信号，而非淹没在 memor...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.capability_radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DottytheHomeless",
+      "features": [
+        "检测并标记能力缺口、重复模式和规则冲突，供架构进化使用。当以下情况发生时使用：(1) 某项任务因工具能力缺失或损坏而失败，(2) 同类型请求出现 3 次以上，(3) 规则冲突导致了错误行为，."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/capability-radar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118527088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "capability-radar",
+      "url": "https://clawhub.ai/skills/capability-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "capability-radar",
+    "url": "https://clawhub.ai/skills/capability-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/capability-radar-3f23ae9c438519ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/capability-radar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-capability-radar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b78b8f234ec9c53c2e0af316ab676762b1c4255c47d90453d28def68b996baa",
+      "artifactSizeBytes": 2670
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T11:29:38.705Z"
+}

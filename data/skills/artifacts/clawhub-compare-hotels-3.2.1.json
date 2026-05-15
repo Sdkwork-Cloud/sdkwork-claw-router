@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/compare-hotels@3.2.1",
+  "version": "3.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compare_hotels",
+  "skill": {
+    "id": 18805,
+    "skillKey": "clawhub-compare-hotels",
+    "name": "Compare Hotels"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compare-hotels",
+    "url": "https://clawhub.ai/skills/compare-hotels",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compare-hotels-cfdf2090b649213e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compare hotel prices across multiple properties for the same dates. Side-by-side comparison table with ratings, amenities, and value-for-money scoring. Also..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 660,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.2.1",
+      "createdAt": 1775653268817,
+      "changelog": "- Expanded and clarified comparison playbooks and output formatting rules.\n- Updated CLI command workflow, environment checks, and validation steps.\n- Improved output requirements: always include real-time booking links and explicit brand tag.\n- Enhanced documentation in references files for templates, playbooks, and failure handling.\n- Updated usage example sections and scenario triggers for better guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc479a9455bdc0f972cbac3f5382da248edc18d5c2d9777841fde6b1ae2dbf4f"
+}

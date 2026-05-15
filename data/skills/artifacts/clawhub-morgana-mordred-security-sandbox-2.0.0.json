@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/morgana-mordred-security-sandbox@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morgana_mordred_security_sandbox",
+  "skill": {
+    "id": 42422,
+    "skillKey": "clawhub-morgana-mordred-security-sandbox",
+    "name": "Morgana Mordred Security Sandbox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morgana-mordred-security-sandbox",
+    "url": "https://clawhub.ai/skills/morgana-mordred-security-sandbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morgana-mordred-security-sandbox-d14b9ea674a5eea5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Educational security training sandbox for AI agents. Contains 5 intentionally vulnerable systems with annotated vulnerability descriptions and tested patches..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kofna3369",
+      "userId": "s170vjwkh0tbnpbsmvn0nj60h183gysr",
+      "displayName": "Kofna3369",
+      "image": "https://avatars.githubusercontent.com/u/110220070?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775697304580,
+      "changelog": "**Major update: Adds prompt injection vulnerabilities and vaccines, revises system architecture, and expands documentation.**\n\n- Introduced a new `prompt_injection` system and corresponding `vaccine_prompt_injection.py`, increasing the vulnerable systems count to five.\n- Removed deprecated text input test files.\n- Refactored and updated core files and all system/vaccine modules for broader coverage and improved documentation.\n- Overhauled and expanded the documentation with clearer overviews, updated instructions, detailed vulnerability and patch explanations, and ethical use guidance.\n- Updated skill manifest (SKILL.md) with structured metadata, inputs, outputs, verification steps, and improved agent integration instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b1e8c55319dfc76f1abea069002e957c7b724e83d2482041d6f0bc32b7de93f"
+}

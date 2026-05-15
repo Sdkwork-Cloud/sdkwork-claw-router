@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-backup-safe@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_backup_safe",
+  "skill": {
+    "id": 10661,
+    "skillKey": "clawhub-openclaw-backup-safe",
+    "name": "OpenClaw Backup Safe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-backup-safe",
+    "url": "https://clawhub.ai/skills/openclaw-backup-safe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-backup-safe-e0b9f028f93efc59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Backup and restore OpenClaw data. Use when user asks to create backups, set up automatic backup schedules, restore from backup, or manage backup rotation. Ha..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alessandropcostabr",
+      "userId": "s17cd88cpsbdk489mxfazhmg5h84xq5x",
+      "displayName": "alessandropcostabr",
+      "image": "https://avatars.githubusercontent.com/u/191734104?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2128,
+      "installsAllTime": 22,
+      "installsCurrent": 22,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771291893890,
+      "changelog": "Hardening de restore sem rm -rf; backup.sh robustecido com validações e rotação segura.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b7cb74bb2a077a6831c06d86cf293b3bd7370e0681ed42e49fd1aa497c3fd1a8"
+}

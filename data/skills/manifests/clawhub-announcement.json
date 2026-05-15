@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52009,
+  "uuid": "skill-clawhub-announcement",
+  "skillKey": "clawhub-announcement",
+  "name": "Bingx Announcement",
+  "summary": "Query BingX official announcements by module type — latest announcements, promotions, product updates, maintenance notices, listing/delisting, funding rate,...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.announcement",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Julian-L",
+      "features": [
+        "Query BingX official announcements by module type — latest announcements, promotions, product u."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/announcement@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265714264?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "announcement",
+      "url": "https://clawhub.ai/skills/announcement"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "announcement",
+    "url": "https://clawhub.ai/skills/announcement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/announcement-86118a3b7fc92492.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/announcement@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-announcement-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:648b01a6c7379faae6e0c2aa48ad291f4c5375a0a89a8d0cd449eed4bbaa0523",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T11:01:53.030Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12172,
+  "uuid": "skill-clawhub-trimet",
+  "skillKey": "clawhub-trimet",
+  "name": "Trimet",
+  "summary": "Get Portland transit information including arrivals, trip planning, and alerts. Use when user asks about buses, MAX, trains, or transit in Portland.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trimet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matt Russell",
+      "features": [
+        "Get Portland transit information including arrivals, trip planning, and alerts",
+        "Use when user asks about buses, MAX, trains, or transit in Portland."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trimet@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1641895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trimet",
+      "url": "https://clawhub.ai/skills/trimet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trimet",
+    "url": "https://clawhub.ai/skills/trimet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trimet-0a7eb9fd8ffc224e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trimet@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trimet-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1baecd1da049331cea3ea5691156f863073ed99f03727a229ec39d2403688bee",
+      "artifactSizeBytes": 1807
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-08T06:07:02.671Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hpc-calculix@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hpc_calculix",
+  "skill": {
+    "id": 55289,
+    "skillKey": "clawhub-hpc-calculix",
+    "name": "Hpc Calculix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hpc-calculix",
+    "url": "https://clawhub.ai/skills/hpc-calculix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hpc-calculix-ab32c297111d2363.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build, review, debug, and automate CalculiX finite-element workflows. Use when working with CalculiX `.inp` decks, Abaqus-style keywords, materials, steps, c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fzj1214",
+      "userId": "s179j2kvrhsfwb68gnram8e99s83heyk",
+      "displayName": "fzj",
+      "image": "https://avatars.githubusercontent.com/u/183976049?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774012169651,
+      "changelog": "Initial release of hpc-calculix: automate and support CalculiX finite-element workflows.\n\n- Provides structured guidance for building, reviewing, and debugging CalculiX `.inp` decks.\n- Includes references and templates for materials, procedures, meshing, cluster execution, and error recovery.\n- Emphasizes use of standard Abaqus-style keywords supported by CalculiX.\n- Defines guardrails to prevent common deck and workflow errors.\n- Summarizes analysis setup and expected output files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a9f8f9f8969ee68c13df800f9f3a2750738bdd6d80a72d2b589b044288a1f5b"
+}

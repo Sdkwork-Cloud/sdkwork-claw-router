@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67032,
+  "uuid": "skill-clawhub-tongyong-shenhe",
+  "skillKey": "clawhub-tongyong-shenhe",
+  "name": "Tongyong Shenhe",
+  "summary": "通用内容审核 Skill。配置驱动，适用于所有 d.php 后台站点。内置审核规则自动判断 + 可选技术部API增强。其他组只需填写站点账号密码即可使用，审核规则可自行修改适配。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tongyong_shenhe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wulooongcha",
+      "features": [
+        "通用内容审核 Skill。配置驱动，适用于所有 d.php 后台站点。内置审核规则自动判断 + 可选技术部API增强。其他组只需填写站点账号密码即可使用，审核规则可自行修改适配。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tongyong-shenhe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270391360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tongyong-shenhe",
+      "url": "https://clawhub.ai/skills/tongyong-shenhe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tongyong-shenhe",
+    "url": "https://clawhub.ai/skills/tongyong-shenhe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tongyong-shenhe-44ab9a8f482eaa20.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tongyong-shenhe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tongyong-shenhe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1edf04e3679102d08982af667e859a338f8744f10f6ecb129c18bb12e7d2821",
+      "artifactSizeBytes": 2476
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T10:16:18.659Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/balltalk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.balltalk",
+  "skill": {
+    "id": 52727,
+    "skillKey": "clawhub-balltalk",
+    "name": "balltalk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "balltalk",
+    "url": "https://clawhub.ai/skills/balltalk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/balltalk-93605359f0df2f56.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user asks about basketball — NBA stats, player comparisons, fantasy advice, rules, play design, scouting, or coaching. Triggers: 'bal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kewang0622",
+      "userId": "s1778kyayy99sdjad1wxsr97j983f9hx",
+      "displayName": "Ke Wang",
+      "image": "https://avatars.githubusercontent.com/u/30745273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774567987478,
+      "changelog": "Initial release: AI basketball brain — stats, fantasy, scouting, plays",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3e191578ffc348443a830a9e67ab90130c3ff77f5151d4e157d9301a344a43a"
+}

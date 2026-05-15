@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dailybriefing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dailybriefing",
+  "skill": {
+    "id": 45471,
+    "skillKey": "clawhub-dailybriefing",
+    "name": "Daily Briefing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dailybriefing",
+    "url": "https://clawhub.ai/skills/dailybriefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dailybriefing-ae0c073a13b2a008.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate daily morning briefings with weather, traffic limits, and news. Provides structured data collection scripts for stable, reproducible briefing genera..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caoyachao",
+      "userId": "s17c8nwvz269n17p2y4dc46xfn83kk1d",
+      "displayName": "caoyachao",
+      "image": "https://avatars.githubusercontent.com/u/13848791?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775204927530,
+      "changelog": "Daily Briefing Skill v1.0.0\n\n- Initial release\n- Weather data retrieval via wttr.in API\n- Automated license plate restriction calculation and rules\n- Generates structured, reproducible daily briefings\n- Flexible output formats (text, JSON, simplified)\n- Includes fault tolerance and local data caching for 30 minutes",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c8d2b705cceec7ca6869414cfa4b4b00d0aacc99ef8ffd73ea0cc667b93eba1"
+}

@@ -4,7 +4,7 @@ use sqlx::{PgPool, Row};
 use crate::infrastructure::sql::rows::{
     AiModelRow, ApiKeyGroupMetricSnapshotRow, ApiKeyGroupRow, GatewayAccessPolicyRow,
     GatewayApiKeyRow, ModelPriceRow, ModelProviderRouteRow, ModelVendorRow, PricingPlanRow,
-    QuotaPolicyRow,
+    ProviderAccountPoolRouteRow, QuotaPolicyRow, RoutingPolicyRow, RoutingRuleRow,
 };
 
 pub async fn load_vendors(
@@ -68,8 +68,74 @@ pub async fn load_provider_routes(
             provider_model: row.try_get("provider_model")?,
             base_url: row.try_get("base_url")?,
             secret_ref: row.try_get("secret_ref")?,
+            auth_type: row.try_get("auth_type")?,
+            auth_config_json: row.try_get("auth_config_json")?,
             timeout_ms: row.try_get("timeout_ms")?,
             retry_policy_json: row.try_get("retry_policy_json")?,
+        })
+    })
+    .fetch(pool)
+    .await
+}
+
+pub async fn load_provider_account_pool_routes(
+    pool: &PgPool,
+    sql: &'static str,
+) -> Result<Vec<ProviderAccountPoolRouteRow>, sqlx::Error> {
+    map_query(sql, |row| {
+        Ok(ProviderAccountPoolRouteRow {
+            provider_code: row.try_get("provider_code")?,
+            channel_id: row.try_get("channel_id")?,
+            base_url: row.try_get("base_url")?,
+            secret_ref: row.try_get("secret_ref")?,
+            auth_type: row.try_get("auth_type")?,
+            auth_config_json: row.try_get("auth_config_json")?,
+            timeout_ms: row.try_get("timeout_ms")?,
+            retry_policy_json: row.try_get("retry_policy_json")?,
+        })
+    })
+    .fetch(pool)
+    .await
+}
+
+pub async fn load_routing_policies(
+    pool: &PgPool,
+    sql: &'static str,
+) -> Result<Vec<RoutingPolicyRow>, sqlx::Error> {
+    map_query(sql, |row| {
+        Ok(RoutingPolicyRow {
+            id: row.try_get("id")?,
+            tenant_id: row.try_get("tenant_id")?,
+            organization_id: row.try_get("organization_id")?,
+            policy_code: row.try_get("policy_code")?,
+            policy_scope: row.try_get("policy_scope")?,
+            subject_id: row.try_get("subject_id")?,
+            capability: row.try_get("capability")?,
+            default_profile_id: row.try_get("default_profile_id")?,
+            fallback_mode: row.try_get("fallback_mode")?,
+        })
+    })
+    .fetch(pool)
+    .await
+}
+
+pub async fn load_routing_rules(
+    pool: &PgPool,
+    sql: &'static str,
+) -> Result<Vec<RoutingRuleRow>, sqlx::Error> {
+    map_query(sql, |row| {
+        Ok(RoutingRuleRow {
+            id: row.try_get("id")?,
+            tenant_id: row.try_get("tenant_id")?,
+            organization_id: row.try_get("organization_id")?,
+            profile_id: row.try_get("profile_id")?,
+            rule_code: row.try_get("rule_code")?,
+            priority: row.try_get("priority")?,
+            match_expression_json: row.try_get("match_expression_json")?,
+            target_model: row.try_get("target_model")?,
+            candidate_channels_json: row.try_get("candidate_channels_json")?,
+            fallback_chain_json: row.try_get("fallback_chain_json")?,
+            constraints_json: row.try_get("constraints_json")?,
         })
     })
     .fetch(pool)

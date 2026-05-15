@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25740,
+  "uuid": "skill-clawhub-block",
+  "skillKey": "clawhub-block",
+  "name": "Block for OpenClaw - Spend anywhere or request payment from anyone.",
+  "summary": "Let your agent shop on Amazon with guardrailed wallets and owner approval.",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.block",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jononovo",
+      "features": [
+        "Let your agent shop on Amazon with guardrailed wallets and owner approval."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/block@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22595409?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "block",
+      "url": "https://clawhub.ai/skills/block"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "block",
+    "url": "https://clawhub.ai/skills/block",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/block-496aca80e4d8f29f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/block@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-block-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3779ee1fe122c473807d52de641bd11c370f8afefaec5674ecb09328ebed8e1c",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T01:05:03.426Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30945,
+  "uuid": "skill-clawhub-postgrid",
+  "skillKey": "clawhub-postgrid",
+  "name": "Postgrid",
+  "summary": "PostGrid integration. Manage Persons, Organizations, Addresses, Letters, Postcards, Templates and more. Use when the user wants to interact with PostGrid data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postgrid",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "PostGrid integration",
+        "Manage Persons, Organizations, Addresses, Letters, Postcards, Templates and more",
+        "Use when the user wants to interact with PostGrid data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/postgrid@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "postgrid",
+      "url": "https://clawhub.ai/skills/postgrid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postgrid",
+    "url": "https://clawhub.ai/skills/postgrid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postgrid-acf7d8b74c1c3a5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/postgrid@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-postgrid-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4d35d42a97bb3e75c05c9ea2b5435c12e3af271fee004e222c8e1ae7178f50d",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:27:00.359Z"
+}

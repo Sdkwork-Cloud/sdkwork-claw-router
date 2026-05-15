@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59145,
+  "uuid": "skill-clawhub-article-link-skill",
+  "skillKey": "clawhub-article-link-skill",
+  "name": "article-link-skill",
+  "summary": "文章链接提取工具。提交付费媒体文章链接，自动匹配已有内容并返回英文全文，或排队提取。支持 Barron's、Bloomberg、Financial Times、Foreign Policy、Handelsblatt、MarketWatch、New York Times、Reuters、The Atlantic、T...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_link_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1787812757",
+      "features": [
+        "文章链接提取工具。提交付费媒体文章链接，自动匹配已有内容并返回英文全文，或排队提取。支持 Barron's、Bloomberg、Financial Times、Foreign Policy、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/article-link-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87628441?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "article-link-skill",
+      "url": "https://clawhub.ai/skills/article-link-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-link-skill",
+    "url": "https://clawhub.ai/skills/article-link-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-link-skill-71f08a78a3170440.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/article-link-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-article-link-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d1b088c21a3d9333df662a35c7ce8a8e7faf165dd1d9251c56158f3c2e723b7",
+      "artifactSizeBytes": 2651
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T08:20:22.587Z"
+}

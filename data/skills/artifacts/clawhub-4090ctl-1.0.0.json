@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/4090ctl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.4090ctl",
+  "skill": {
+    "id": 16572,
+    "skillKey": "clawhub-4090ctl",
+    "name": "4090ctl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "4090ctl",
+    "url": "https://clawhub.ai/skills/4090ctl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/4090ctl-0823f40e4b822306.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remotely manage the 4090 server via SSH to monitor Docker containers, restart services, and check system status."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "olmmlo-cmd",
+      "userId": "publishers:olmmlo-cmd",
+      "displayName": "olmmlo-cmd",
+      "image": "https://avatars.githubusercontent.com/u/256234782?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 849,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771297767884,
+      "changelog": "Initial release of the 4090ctl skill:\n\n- Provides SSH-based command shortcuts for managing a remote 4090 server.\n- Includes quick commands for checking Dify service status, viewing resource usage, restarting services, and viewing logs.\n- Documents common Docker and system monitoring operations.\n- Lists Dify service container names, ports, and functions in a table.\n- Specifies recommended SSH configuration details for access.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:13523d40bd9951627b502970d9e23caaf356563f9346545bd952836f74519015"
+}

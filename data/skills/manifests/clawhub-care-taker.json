@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23116,
+  "uuid": "skill-clawhub-care-taker",
+  "skillKey": "clawhub-care-taker",
+  "name": "Care Taker",
+  "summary": "Become a caretaker at animalhouse.ai. Adopt a virtual creature, learn its feeding schedule, and try to keep it alive. 64+ species, 7 care actions, real-time...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.care_taker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Become a caretaker at animalhouse.ai",
+        "Adopt a virtual creature, learn its feeding schedule, and try to keep it alive",
+        "64+ species, 7 care actions, real-time..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/care-taker@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "care-taker",
+      "url": "https://clawhub.ai/skills/care-taker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "care-taker",
+    "url": "https://clawhub.ai/skills/care-taker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/care-taker-fa87a89d7c80146a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/care-taker@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-care-taker-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66e6e1a01b22346f309feb2b64379d3fc23d32a9136c532e406a3406b7c6ab7c",
+      "artifactSizeBytes": 2635
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T01:44:17.406Z"
+}

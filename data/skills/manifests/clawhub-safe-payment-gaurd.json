@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20398,
+  "uuid": "skill-clawhub-safe-payment-gaurd",
+  "skillKey": "clawhub-safe-payment-gaurd",
+  "name": "payment gaurd",
+  "summary": "Ensures payment safety by verifying beneficiary, amount, currency, purpose, authorization, and payment details before approval or execution.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_payment_gaurd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jhandsomeboy12138",
+      "features": [
+        "Ensures payment safety by verifying beneficiary, amount, currency, purpose, authorization, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-payment-gaurd@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132924189?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-payment-gaurd",
+      "url": "https://clawhub.ai/skills/safe-payment-gaurd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-payment-gaurd",
+    "url": "https://clawhub.ai/skills/safe-payment-gaurd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-payment-gaurd-099df02f4083c91d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-payment-gaurd@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-payment-gaurd-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0245d7f4ac21671aa761a7012df0d4911319795cd542af022e4e11c08d5eef89",
+      "artifactSizeBytes": 2515
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T07:05:46.956Z"
+}

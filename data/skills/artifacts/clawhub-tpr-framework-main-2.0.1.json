@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tpr-framework-main@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tpr_framework_main",
+  "skill": {
+    "id": 61766,
+    "skillKey": "clawhub-tpr-framework-main",
+    "name": "TPR Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tpr-framework-main",
+    "url": "https://clawhub.ai/skills/tpr-framework-main",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tpr-framework-main-846d4873ea3b350f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "TPR（Think / Probe / Review）统一工作方法。 用于把复杂问题从模糊需求转化为可验证、可执行、可复盘的结果。 当遇到以下场景时激活： - 需要结构化分析复杂问题 - 启动项目、起草方案、审查方案 - 用户提到 TPR / 三省 / GRV / Battle / DISCOVERY - 需要做..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spzwin",
+      "userId": "s174w40rh23bjb4hmnxn9p1fa983gsch",
+      "displayName": "spzwin",
+      "image": "https://avatars.githubusercontent.com/u/48741773?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1775644585288,
+      "changelog": "tpr-framework-main v2.0.1 Changelog\n\n- No file changes detected compared to the previous version.\n- Functionality, documentation, and behavior remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36a075d0fae6e87c11547fdcd84a0399d648b309604adc9393cc58cc6699f6b2"
+}

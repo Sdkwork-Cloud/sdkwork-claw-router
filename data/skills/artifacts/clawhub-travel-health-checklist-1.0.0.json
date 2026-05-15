@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travel-health-checklist@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_health_checklist",
+  "skill": {
+    "id": 49460,
+    "skillKey": "clawhub-travel-health-checklist",
+    "name": "Travel Health Checklist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-health-checklist",
+    "url": "https://clawhub.ai/skills/travel-health-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-health-checklist-03dafa73351d4bd6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pre-trip health preparation prompts for sleep, movement, hydration, comfort, medications, and clinician conversations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 79,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777618992466,
+      "changelog": "Initial release: document-only health literacy skill with explicit safety boundaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52951622400c3909a0df808de0464cd2cba2a921c64eca1316d8f598a32ef56b"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12094,
+  "uuid": "skill-clawhub-agentic-browser",
+  "skillKey": "clawhub-agentic-browser",
+  "name": "Agent Browser",
+  "summary": "Browser automation for AI agents via inference.sh. Navigate web pages, interact with elements using @e refs, take screenshots, record video. Capabilities: we...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_browser",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ömer Karışman",
+      "features": [
+        "Browser automation for AI agents via inference.sh",
+        "Navigate web pages, interact with elements using @e refs, take screenshots, record video",
+        "Capabilities: we..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentic-browser@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1448702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentic-browser",
+      "url": "https://clawhub.ai/skills/agentic-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-browser",
+    "url": "https://clawhub.ai/skills/agentic-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-browser-96811363f4c409b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentic-browser@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentic-browser-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbbf770e014037b57b93553e533933903edf4af1b5e71f8e6c64618ab3eedc80",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T08:22:02.253Z"
+}

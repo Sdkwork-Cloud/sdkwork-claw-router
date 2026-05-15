@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wenyan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wenyan",
+  "skill": {
+    "id": 62079,
+    "skillKey": "clawhub-wenyan",
+    "name": "文颜"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wenyan",
+    "url": "https://clawhub.ai/skills/wenyan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wenyan-ef4d14f0d815b440.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 wenyan-cli，快速将带 frontmatter 的 Markdown 文章发布到微信公众号，支持主题管理和图片自动上传。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caol64",
+      "userId": "s176fv9xssxhvq0qh5vnp77d8x842f38",
+      "displayName": "Lei",
+      "image": "https://avatars.githubusercontent.com/u/6183265?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 438,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773387701482,
+      "changelog": "Initial release of wenyan-cli publish guide.\n\n- Added step-by-step instructions for preparing Markdown articles with frontmatter.\n- Introduced installation and verification commands for wenyan-cli.\n- Documented the full set of publish options, including file, theme, highlight, and server settings.\n- Provided theme management commands for listing, adding, and removing themes.\n- Detailed frontmatter field requirements and behaviors for article metadata.\n- Included troubleshooting tips for common errors like image upload failures and invalid authentication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7dddd0348c7787b2885e545aa24e5494a314312270719a852ae6bc4064370e42"
+}

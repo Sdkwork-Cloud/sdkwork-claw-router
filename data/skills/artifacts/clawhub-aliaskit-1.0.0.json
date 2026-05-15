@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliaskit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliaskit",
+  "skill": {
+    "id": 46275,
+    "skillKey": "clawhub-aliaskit",
+    "name": "AliasKit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliaskit",
+    "url": "https://clawhub.ai/skills/aliaskit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliaskit-152f12742b95a2f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent digital identity for this agent. Provides real email, phone number, virtual payment card, and TOTP codes. Use this skill whenever the agent needs:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nalin-atmakur",
+      "userId": "s17ckmrs1ty5gtfv1mnvxpb7s184stza",
+      "displayName": "Nalin",
+      "image": "https://avatars.githubusercontent.com/u/234007742?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776094831048,
+      "changelog": "- Initial release of aliaskit skill, providing a persistent digital identity for the agent.\n- Offers real email, phone number, name, date of birth, and a virtual payment card.\n- Supports TOTP codes for 2FA/MFA and can handle email/SMS verification workflows.\n- Enables sending and receiving emails/SMS, online purchases with virtual cards, and real-time event listeners.\n- All identity data securely loaded from a local identity.json file; includes management and setup instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23807690d03f967824509c98516eea9c9d2242f703945a148d322c3592c78dc4"
+}

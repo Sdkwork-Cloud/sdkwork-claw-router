@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/online-text-to@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.online_text_to",
+  "skill": {
+    "id": 48971,
+    "skillKey": "clawhub-online-text-to",
+    "name": "Online Text To"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "online-text-to",
+    "url": "https://clawhub.ai/skills/online-text-to",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/online-text-to-284375bd905b880f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "marketers convert text script into text-based videos using this skill. Accepts TXT, DOCX, PDF, plain text up to 200MB, renders on cloud GPUs at 1080p, and re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777665917914,
+      "changelog": "Initial release of Online Text To Video.\n\n- Converts text scripts (TXT, DOCX, PDF, plain text up to 200MB) into shareable 1080p MP4 videos using cloud GPUs.\n- Fast processing: returns videos in 1–2 minutes after submission.\n- Supports file uploads, session management, balance checking, and status queries.\n- Automatic anonymous token generation and session setup on first use.\n- Handles common workflows: quick edits, batch uploads, and iterative video refinement.\n- Comprehensive error handling and clear guidance on best practices for optimal results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:208dbd076b747c4c5d8b667fe66e18492c875ff85b504014576c9ab94b756f08"
+}

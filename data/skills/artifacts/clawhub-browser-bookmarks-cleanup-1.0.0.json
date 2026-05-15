@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-bookmarks-cleanup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_bookmarks_cleanup",
+  "skill": {
+    "id": 21282,
+    "skillKey": "clawhub-browser-bookmarks-cleanup",
+    "name": "Browser Bookmarks Cleanup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-bookmarks-cleanup",
+    "url": "https://clawhub.ai/skills/browser-bookmarks-cleanup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-bookmarks-cleanup-98b00231b8022fbe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze, organize, and clean browser bookmarks on macOS using on-disk bookmark and history files. Detects duplicates, stale bookmarks, tracking parameters, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "makkoncept",
+      "userId": "publishers:makkoncept",
+      "displayName": "Mayank Nader",
+      "image": "https://avatars.githubusercontent.com/u/34679965?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 515,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771652315610,
+      "changelog": "Initial release of browser-bookmarks-cleanup.\n\n- Analyze, organize, and clean Chrome and Firefox bookmarks on macOS using local files.\n- Detect duplicate URLs, tracking parameter variants, weak names, folder issues, and stale or never-visited bookmarks.\n- All changes are opt-in, with dry-run and explicit user approval before any write operations.\n- Automatic backup and simple rollback before any modification.\n- Supports additional Chromium-based browsers by manually specifying their profile directories.\n- Guaranteed safety: no network requests to bookmark URLs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:026c4504d36b8cdc4c7e2558dac28f6df5380463dfb5944aae269e55b467ca86"
+}

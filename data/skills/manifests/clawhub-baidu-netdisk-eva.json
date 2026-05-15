@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65758,
+  "uuid": "skill-clawhub-baidu-netdisk-eva",
+  "skillKey": "clawhub-baidu-netdisk-eva",
+  "name": "百度网盘 EVA",
+  "summary": "管理和操作百度网盘文件，实现文件列出、搜索及目录创建功能，需配置AppID和access_token。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_netdisk_eva",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "382108113",
+      "features": [
+        "管理和操作百度网盘文件，实现文件列出、搜索及目录创建功能，需配置AppID和access_token。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-netdisk-eva@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44855569?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-netdisk-eva",
+      "url": "https://clawhub.ai/skills/baidu-netdisk-eva"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-netdisk-eva",
+    "url": "https://clawhub.ai/skills/baidu-netdisk-eva",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-netdisk-eva-d5054b44325b4062.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-netdisk-eva@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-netdisk-eva-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d18a39601821c564088f8367de8a6e9742cf87c616314035ba2d8eea6f64aa5",
+      "artifactSizeBytes": 2129
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T11:58:48.688Z"
+}

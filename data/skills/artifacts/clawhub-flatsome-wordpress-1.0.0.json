@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flatsome-wordpress@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flatsome_wordpress",
+  "skill": {
+    "id": 30857,
+    "skillKey": "clawhub-flatsome-wordpress",
+    "name": "Flatsome Wordpress"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flatsome-wordpress",
+    "url": "https://clawhub.ai/skills/flatsome-wordpress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flatsome-wordpress-10cfd1757a4bd800.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze images or URLs to recreate full Flatsome theme pages using UXBuilder shortcodes and CSS, producing production-ready WordPress code without raw HTML."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hungphamwp",
+      "userId": "s179qpn4dkq886ay2eckdtp9yd8457p0",
+      "displayName": "Hưng Phạm",
+      "image": "https://avatars.githubusercontent.com/u/83722939?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775225460264,
+      "changelog": "Initial release – systematizes the end-to-end workflow for converting design samples into Flatsome UXBuilder shortcodes.\n\n- Outlines strict analysis and reproduction process: visual breakdown, shortcode mapping, and CSS output.\n- Documents clear priorities for using shortcodes, HTML, PHP snippets, and theme modifications.\n- Provides detailed environment setup steps for WP-CLI, child theme creation, and required plugins.\n- Includes comprehensive reference for Flatsome UXBuilder shortcode structure and usage.\n- Emphasizes best practices, required conventions, and prohibited methods for consistent production-ready output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cdba09e2deadc61dbb3ccf5998a58f3ca385674adf16fb5a7ae3e512571305ec"
+}

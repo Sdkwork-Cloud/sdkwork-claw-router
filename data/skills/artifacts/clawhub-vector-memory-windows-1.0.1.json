@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vector-memory-windows@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vector_memory_windows",
+  "skill": {
+    "id": 22656,
+    "skillKey": "clawhub-vector-memory-windows",
+    "name": "Vector Memory (Windows) for OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vector-memory-windows",
+    "url": "https://clawhub.ai/skills/vector-memory-windows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vector-memory-windows-ced067d687f54e44.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full memory stack for OpenClaw on Windows. Includes LanceDB semantic memory, git-notes decision memory, and memory hygiene workflow."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sea2049",
+      "userId": "publishers:sea2049",
+      "displayName": "Sea2049",
+      "image": "https://avatars.githubusercontent.com/u/158456380?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 445,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772983332633,
+      "changelog": "Windows-ready full release: LanceDB + git-notes + memory-hygiene bundle.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aa986d79e1849e59bb4fad3bc52e7de832e808bba746934a55903206bd710dda"
+}

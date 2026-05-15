@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39351,
+  "uuid": "skill-clawhub-aemet",
+  "skillKey": "clawhub-aemet",
+  "name": "Aemet",
+  "summary": "Weather alerts and forecasts from AEMET OpenData for Spain",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aemet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pablomartinezcrespo",
+      "features": [
+        "Weather alerts and forecasts from AEMET OpenData for Spain"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aemet@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52440621?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aemet",
+      "url": "https://clawhub.ai/skills/aemet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aemet",
+    "url": "https://clawhub.ai/skills/aemet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aemet-c1c21894b1d51491.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aemet@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-aemet-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a9a140e8d8c80a17e73c61dc9757874fb9997fdef06f45abd197a1d32711722",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T20:27:59.488Z"
+}

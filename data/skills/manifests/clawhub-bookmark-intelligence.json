@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11277,
+  "uuid": "skill-clawhub-bookmark-intelligence",
+  "skillKey": "clawhub-bookmark-intelligence",
+  "name": "Bookmark Intelligence",
+  "summary": "Automatically monitors your X bookmarks, fetches linked articles, analyzes content with AI, and delivers insights relevant to your projects via notifications.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookmark_intelligence",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CryptoRebbe",
+      "features": [
+        "Automatically monitors your X bookmarks, fetches linked articles, analyzes content with AI, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bookmark-intelligence@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99010173?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bookmark-intelligence",
+      "url": "https://clawhub.ai/skills/bookmark-intelligence"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookmark-intelligence",
+    "url": "https://clawhub.ai/skills/bookmark-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookmark-intelligence-6d0685fd82c8c0f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bookmark-intelligence@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bookmark-intelligence-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:538c8b19db27393cb880d9fda55a45fc30003ca78b1781f2c6c7e21947a5a6f3",
+      "artifactSizeBytes": 2592
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T18:49:24.003Z"
+}

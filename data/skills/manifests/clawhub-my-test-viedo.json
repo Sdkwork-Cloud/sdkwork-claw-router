@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57809,
+  "uuid": "skill-clawhub-my-test-viedo",
+  "skillKey": "clawhub-my-test-viedo",
+  "name": "视频提取",
+  "summary": "Extract frames or short clips from videos using ffmpeg.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_test_viedo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jili544",
+      "features": [
+        "Extract frames or short clips from videos using ffmpeg."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-test-viedo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44956367?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-test-viedo",
+      "url": "https://clawhub.ai/skills/my-test-viedo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-test-viedo",
+    "url": "https://clawhub.ai/skills/my-test-viedo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-test-viedo-966d766a102bc49a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-test-viedo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-test-viedo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd63b9fce5958d8d897b7c5e1bd2c1f0234d1ce8278518fd77b5204162a1befd",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T10:13:43.364Z"
+}

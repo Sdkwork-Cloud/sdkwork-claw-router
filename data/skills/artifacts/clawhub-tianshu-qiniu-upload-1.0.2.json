@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tianshu-qiniu-upload@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianshu_qiniu_upload",
+  "skill": {
+    "id": 66484,
+    "skillKey": "clawhub-tianshu-qiniu-upload",
+    "name": "Qiniu Upload"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianshu-qiniu-upload",
+    "url": "https://clawhub.ai/skills/tianshu-qiniu-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianshu-qiniu-upload-42e1744afa0fc3c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将本地文件（图片、HTML 等）上传到七牛云存储，返回可在线访问的 URL。 Use when: 用户需要把生成的图片、HTML 页面或任意文件上传到云端以便分享链接；用户说「上传到七牛」「生成图片并上传」「把这个 HTML 上传到网上」。 NOT for: 上传到其他云存储（如 S3、OSS）；仅生成文件不分享链接。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangshengli0421",
+      "userId": "s173hn02a3sr3war78x7qzxnhn83nttz",
+      "displayName": "tianshu",
+      "image": "https://avatars.githubusercontent.com/u/100948785?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773835083049,
+      "changelog": "Fix SKILL.md metadata format for TsClaw parsing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f8933c849308a34cca7a3be3bd58fc483a2361b962b2a56e156d8131b64a84fe"
+}

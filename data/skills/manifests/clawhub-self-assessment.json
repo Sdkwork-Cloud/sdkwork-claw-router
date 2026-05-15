@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64047,
+  "uuid": "skill-clawhub-self-assessment",
+  "skillKey": "clawhub-self-assessment",
+  "name": "Self Assessment",
+  "summary": "接受任务前的自我评估协议。Agent 审视自身能力、已有 skills、历史经验，决定是否适合承接任务，或推荐更合适的 agent。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_assessment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EvianEvans",
+      "features": [
+        "接受任务前的自我评估协议。Agent 审视自身能力、已有 skills、历史经验，决定是否适合承接任务，或推荐更合适的 agent。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-assessment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57983274?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-assessment",
+      "url": "https://clawhub.ai/skills/self-assessment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-assessment",
+    "url": "https://clawhub.ai/skills/self-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-assessment-c9eaccf864700b30.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-assessment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-assessment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66a1017fe13c610ea84da0a4df46d8f9e6e2a514ef0a43ba38db65a5d579951a",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T17:30:25.465Z"
+}

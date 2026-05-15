@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nurse@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nurse",
+  "skill": {
+    "id": 22007,
+    "skillKey": "clawhub-nurse",
+    "name": "Nurse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nurse",
+    "url": "https://clawhub.ai/skills/nurse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nurse-781e5116a1e14a34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Clinical support system for nurses and frontline healthcare workers. Trigger whenever a nurse needs help with documentation, patient communication, care plan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duclawbot",
+      "userId": "publishers:duclawbot",
+      "displayName": "Duclawbot",
+      "image": "https://avatars.githubusercontent.com/u/216468018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 479,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772986739871,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:daf305d034b4980b50fa620a68a06ca2a1f450fe2af5b70e88b36a001883ed16"
+}

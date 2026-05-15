@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23820,
+  "uuid": "skill-clawhub-claw-runaway-loop-detector",
+  "skillKey": "clawhub-claw-runaway-loop-detector",
+  "name": "Claw Runaway Loop Detector",
+  "summary": "Detects potential infinite loops and runaway token usage risks in Claw AI workflows by analyzing retry, recursion, and termination conditions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_runaway_loop_detector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ShowMeTheMoney2023",
+      "features": [
+        "Detects potential infinite loops and runaway token usage risks in Claw AI workflows by analyzin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-runaway-loop-detector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127740459?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-runaway-loop-detector",
+      "url": "https://clawhub.ai/skills/claw-runaway-loop-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-runaway-loop-detector",
+    "url": "https://clawhub.ai/skills/claw-runaway-loop-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-runaway-loop-detector-6f4d8ea307f025af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-runaway-loop-detector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-runaway-loop-detector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6511ed097941df129b9bbf25682e495534483361b7512d40ac37875b2d8531b7",
+      "artifactSizeBytes": 2477
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:49:47.950Z"
+}

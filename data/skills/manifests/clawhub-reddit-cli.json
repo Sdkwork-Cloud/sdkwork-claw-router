@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9218,
+  "uuid": "skill-clawhub-reddit-cli",
+  "skillKey": "clawhub-reddit-cli",
+  "name": "Reddit Cli",
+  "summary": "Reddit CLI using cookies for authentication. Read posts, search, and get subreddit info.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kelsia",
+      "features": [
+        "Reddit CLI using cookies for authentication",
+        "Read posts, search, and get subreddit info."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reddit-cli@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229336714?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reddit-cli",
+      "url": "https://clawhub.ai/skills/reddit-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-cli",
+    "url": "https://clawhub.ai/skills/reddit-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-cli-26bc592d1bae17bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reddit-cli@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-reddit-cli-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed9e70fc5dc96616a94cc07b9f45311039d2a505393b01cfee060c8a33a3b539",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T21:31:18.049Z"
+}

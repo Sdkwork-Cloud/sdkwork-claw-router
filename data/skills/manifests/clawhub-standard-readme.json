@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36838,
+  "uuid": "skill-clawhub-standard-readme",
+  "skillKey": "clawhub-standard-readme",
+  "name": "standard-readme",
+  "summary": "Write or audit README files following the Standard Readme specification (github.com/RichardLitt/standard-readme). Use this skill whenever the user asks to cr...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.standard_readme",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Misha Kolesnik",
+      "features": [
+        "Write or audit README files following the Standard Readme specification (github.com/RichardLitt.",
+        "Use this skill whenever the user asks to cr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/standard-readme@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22403766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "standard-readme",
+      "url": "https://clawhub.ai/skills/standard-readme"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "standard-readme",
+    "url": "https://clawhub.ai/skills/standard-readme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/standard-readme-70f678da695d6fec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/standard-readme@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-standard-readme-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05940de2ad8cfad5126884bd5a0f85eb64a574ccc7b990cad649bf6d3f297051",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:05:10.237Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29639,
+  "uuid": "skill-clawhub-telegram-cli",
+  "skillKey": "clawhub-telegram-cli",
+  "name": "Telegram cli",
+  "summary": "CLI tool for Telegram via MTProto. Send/read messages, manage groups, search conversations, download media, and automate Telegram workflows. Use when the tas...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baontq23",
+      "features": [
+        "CLI tool for Telegram via MTProto",
+        "Send/read messages, manage groups, search conversations, download media, and automate Telegram.",
+        "Use when the tas..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telegram-cli@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65148766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telegram-cli",
+      "url": "https://clawhub.ai/skills/telegram-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-cli",
+    "url": "https://clawhub.ai/skills/telegram-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-cli-ebff5c0947a8c7fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telegram-cli@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-telegram-cli-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3731f75f35f714ceff02bbef016f37d863247a5937ceed03fb4ea214fd92ed9",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T06:09:31.120Z"
+}

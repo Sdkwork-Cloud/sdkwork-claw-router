@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19674,
+  "uuid": "skill-clawhub-astro-arxiv-search",
+  "skillKey": "clawhub-astro-arxiv-search",
+  "name": "Astro arXiv Search",
+  "summary": "Retrieve astronomy and astrophysics papers from the user's arXiv mirror API. Use when Codex needs to list papers from a given arXiv day, find papers related...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.astro_arxiv_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhang Qiqian",
+      "features": [
+        "Retrieve astronomy and astrophysics papers from the user's arXiv mirror API",
+        "Use when Codex needs to list papers from a given arXiv day, find papers related..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/astro-arxiv-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11002196?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "astro-arxiv-search",
+      "url": "https://clawhub.ai/skills/astro-arxiv-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "astro-arxiv-search",
+    "url": "https://clawhub.ai/skills/astro-arxiv-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/astro-arxiv-search-4070bfe22acdf27d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/astro-arxiv-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-astro-arxiv-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18d9b22ada3d8c5e840bb4edc870975fab5dea40bb3389f51efe169e31b38999",
+      "artifactSizeBytes": 2529
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T17:55:42.247Z"
+}

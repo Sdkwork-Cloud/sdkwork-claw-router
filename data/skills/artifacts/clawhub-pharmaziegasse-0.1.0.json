@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pharmaziegasse@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pharmaziegasse",
+  "skill": {
+    "id": 19030,
+    "skillKey": "clawhub-pharmaziegasse",
+    "name": "pharmaziegasse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pharmaziegasse",
+    "url": "https://clawhub.ai/skills/pharmaziegasse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pharmaziegasse-39a831d8137d4b36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pharmaziegasse namespace for Netsnek e.U. pharmacy management platform. Prescription tracking, inventory, compliance, and staff coordination."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kleberbaum",
+      "userId": "s179y7p0xkfm2kf6ncqxegwrzd84dvzm",
+      "displayName": "kleberbaum",
+      "image": "https://avatars.githubusercontent.com/u/26285351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 643,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771370934436,
+      "changelog": "Initial release: Pharmaziegasse pharmacy management namespace.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fb36f7224ff4d864f65e71cd3c92caa5ab597157dcae370ca58ea39db5d3688b"
+}

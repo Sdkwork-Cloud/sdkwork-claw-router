@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/italent-overtime@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.italent_overtime",
+  "skill": {
+    "id": 64382,
+    "skillKey": "clawhub-italent-overtime",
+    "name": "Italent Overtime"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "italent-overtime",
+    "url": "https://clawhub.ai/skills/italent-overtime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/italent-overtime-af5828067f7955d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "北森 iTalent 加班管理。当用户需要推送加班、查询加班、撤销加班、管理考勤时使用此技能。支持通过北森开放平台 API 执行加班数据推送、查询、撤销等操作。需要用户提供 AppKey、AppSecret 和员工邮箱/StaffId。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zjm1226",
+      "userId": "s173d8676rtq6mnvsmz1235pp983zfav",
+      "displayName": "zjm1226",
+      "image": "https://avatars.githubusercontent.com/u/54433106?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774939722227,
+      "changelog": "- Added a CLI wrapper script (scripts/italent-overtime) for easier command-line use and Python auto-detection.\n- Updated documentation and usage examples to use the new wrapper script, improving user guidance.\n- Added scripts/install.sh for installation support.\n- No changes to API or skill core functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ece4a10d357b879a28fc7263e77d82259e29db35304c6a213dacdfaaef441e8e"
+}

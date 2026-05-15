@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25531,
+  "uuid": "skill-clawhub-chen-china-stock-analysis",
+  "skillKey": "clawhub-chen-china-stock-analysis",
+  "name": "Chen China Stock Analysis",
+  "summary": "Analyze Chinese stock prices (A-shares, HK stocks) and provide investment recommendations. Use when the user asks about stock analysis for Chinese companies,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chen_china_stock_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cs995279497-byte",
+      "features": [
+        "Analyze Chinese stock prices (A-shares, HK stocks) and provide investment recommendations",
+        "Use when the user asks about stock analysis for Chinese companies,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chen-china-stock-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254620949?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chen-china-stock-analysis",
+      "url": "https://clawhub.ai/skills/chen-china-stock-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chen-china-stock-analysis",
+    "url": "https://clawhub.ai/skills/chen-china-stock-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chen-china-stock-analysis-fcff906c673cd6d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chen-china-stock-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chen-china-stock-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9078ca1959687dc593b93ee939ead587c843595b989180a7d5d1512ab76383af",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T15:33:49.263Z"
+}

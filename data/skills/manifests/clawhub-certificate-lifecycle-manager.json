@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52973,
+  "uuid": "skill-clawhub-certificate-lifecycle-manager",
+  "skillKey": "clawhub-certificate-lifecycle-manager",
+  "name": "Certificate Lifecycle Manager",
+  "summary": "Manage TLS/SSL certificate lifecycle — discovery, monitoring, renewal planning, and rotation. Track certificates across services, alert before expiry, automa...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.certificate_lifecycle_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Manage TLS/SSL certificate lifecycle — discovery, monitoring, renewal planning, and rotation",
+        "Track certificates across services, alert before expiry, automa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/certificate-lifecycle-manager@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "certificate-lifecycle-manager",
+      "url": "https://clawhub.ai/skills/certificate-lifecycle-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "certificate-lifecycle-manager",
+    "url": "https://clawhub.ai/skills/certificate-lifecycle-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/certificate-lifecycle-manager-08a9211b516828e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/certificate-lifecycle-manager@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-certificate-lifecycle-manager-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8727993fd8c6de9cded135a81f6dc27c379afae0fd3b460c72affc03ad3b0f7",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:00:17.911Z"
+}

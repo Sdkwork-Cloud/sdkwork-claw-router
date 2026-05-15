@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evolver-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evolver_bak",
+  "skill": {
+    "id": 44240,
+    "skillKey": "clawhub-evolver-bak",
+    "name": "Evolver.Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evolver-bak",
+    "url": "https://clawhub.ai/skills/evolver-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evolver-bak-00938ff477e20cf9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A self-evolution engine for AI agents. Analyzes runtime history to identify improvements and applies protocol-constrained evolution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chris8265-cl",
+      "userId": "s17185463fg4bq7v4kdv6wn27584txz8",
+      "displayName": "chris8265-cl",
+      "image": "https://avatars.githubusercontent.com/u/264188811?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776177220354,
+      "changelog": "Initial release of capability-evolver.\n\n- Introduces automated self-evolution for AI agents, including auto-log analysis and self-repair routines.\n- Supports multiple evolution strategies and modes (automated, review, infinite loop).\n- Implements auditable GEP protocol with structured local asset storage.\n- Provides robust configuration via environment variables and dynamic local overrides.\n- Includes risk mitigation features like single-process enforcement and git sync recommendation.\n- Documentation enforces DNA emoji only, supporting clear, focused communication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:770498920dfa18206b728a81c583e952449801e8d1e23361cb744f34fc339d73"
+}

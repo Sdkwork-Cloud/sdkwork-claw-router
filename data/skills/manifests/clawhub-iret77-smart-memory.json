@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19562,
+  "uuid": "skill-clawhub-iret77-smart-memory",
+  "skillKey": "clawhub-iret77-smart-memory",
+  "name": "Smart Memory",
+  "summary": "5-layer memory architecture for OpenClaw agents. Solves context bloat, the 48h fogging problem, and rule amnesia. Works for single-agent and multi-agent setu...",
+  "version": "1.5.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iret77_smart_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iret77",
+      "features": [
+        "5-layer memory architecture for OpenClaw agents",
+        "Solves context bloat, the 48h fogging problem, and rule amnesia",
+        "Works for single-agent and multi-agent setu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iret77-smart-memory@1.5.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63622643?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iret77-smart-memory",
+      "url": "https://clawhub.ai/skills/iret77-smart-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iret77-smart-memory",
+    "url": "https://clawhub.ai/skills/iret77-smart-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iret77-smart-memory-3d1a2340a23b0769.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iret77-smart-memory@1.5.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-iret77-smart-memory-1.5.5.json",
+      "version": "1.5.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c7fda6f65a4c8e254cd9b92f0caf239b86a01ccff1020199bf77b9c36176cd9",
+      "artifactSizeBytes": 2170
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T20:20:10.987Z"
+}

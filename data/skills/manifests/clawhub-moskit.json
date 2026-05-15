@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26521,
+  "uuid": "skill-clawhub-moskit",
+  "skillKey": "clawhub-moskit",
+  "name": "Moskit",
+  "summary": "Moskit integration. Manage Organizations, Activities, Notes, Files, Pipelines, Users and more. Use when the user wants to interact with Moskit data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moskit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Moskit integration",
+        "Manage Organizations, Activities, Notes, Files, Pipelines, Users and more",
+        "Use when the user wants to interact with Moskit data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moskit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moskit",
+      "url": "https://clawhub.ai/skills/moskit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moskit",
+    "url": "https://clawhub.ai/skills/moskit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moskit-24f5c2c2af437a11.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moskit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moskit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87bf585b5edba7312f21554eec59b41a2800f4379601b7346faf8ac413fd0353",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T22:03:41.202Z"
+}

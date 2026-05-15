@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/idea-forge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idea_forge",
+  "skill": {
+    "id": 42107,
+    "skillKey": "clawhub-idea-forge",
+    "name": "IdeaForge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idea-forge",
+    "url": "https://clawhub.ai/skills/idea-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idea-forge-c12ccdcae6ecd046.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates up to three high-ROI, actionable ideas focused on real demand, simplicity, and practical opportunities tailored to your goal."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theshimaw-svg",
+      "userId": "s17bqg08nqtkqtxp44tqkv87sh848ejp",
+      "displayName": "theshimaw-svg",
+      "image": "https://avatars.githubusercontent.com/u/266850601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775590408326,
+      "changelog": "Follow me on x for the best skills @SaasKafle",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce92b7991e9c1a3b089e8489cab0d175b2846d8fcaa2f758a17e76ea55f5740d"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73530,
+  "uuid": "skill-clawhub-yugioh-news",
+  "skillKey": "clawhub-yugioh-news",
+  "name": "游戏王日版新闻每日总结",
+  "summary": "每天自动搜索并中文总结前一天的游戏王日版新闻，包括新卡、规则、赛事及产品发售信息，推送至当前对话。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yugioh_news",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiangrongyong",
+      "features": [
+        "每天自动搜索并中文总结前一天的游戏王日版新闻，包括新卡、规则、赛事及产品发售信息，推送至当前对话。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yugioh-news@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1009867?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yugioh-news",
+      "url": "https://clawhub.ai/skills/yugioh-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yugioh-news",
+    "url": "https://clawhub.ai/skills/yugioh-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yugioh-news-9c25bfa192f8d2b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yugioh-news@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yugioh-news-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53ca6311aa6e715731839786f5b8114fc1613308c7e599f644c9ae8e3bc31097",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T14:12:18.446Z"
+}

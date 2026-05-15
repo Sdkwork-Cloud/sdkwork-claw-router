@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15000,
+  "uuid": "skill-clawhub-local-file-manager",
+  "skillKey": "clawhub-local-file-manager",
+  "name": "Local File Manager",
+  "summary": "Read, write, append, and list local files in the session's working directory. Use when you need to persist output to disk, read input files, or manipulate fi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_file_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liyico",
+      "features": [
+        "Read, write, append, and list local files in the session's working directory",
+        "Use when you need to persist output to disk, read input files, or manipulate fi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-file-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52720709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-file-manager",
+      "url": "https://clawhub.ai/skills/local-file-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-file-manager",
+    "url": "https://clawhub.ai/skills/local-file-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-file-manager-9eb43dedc55d63aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-file-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-file-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81c8aa7d0be1d4dd6c40ee28950e905a753d0fe2d117cc5f58231f5bd4e99e46",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T18:47:58.480Z"
+}

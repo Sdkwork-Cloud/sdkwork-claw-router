@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31165,
+  "uuid": "skill-clawhub-cubicl",
+  "skillKey": "clawhub-cubicl",
+  "name": "Cubicl",
+  "summary": "Cubicl integration. Manage data, records, and automate workflows. Use when the user wants to interact with Cubicl data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cubicl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Cubicl integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Cubicl data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cubicl@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cubicl",
+      "url": "https://clawhub.ai/skills/cubicl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cubicl",
+    "url": "https://clawhub.ai/skills/cubicl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cubicl-d0e986bfed674cef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cubicl@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-cubicl-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63833043abe5d23c20fe6b30c8b2c68de13903a8988ba77d08c8dbaa12e3a7a0",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:36:15.899Z"
+}

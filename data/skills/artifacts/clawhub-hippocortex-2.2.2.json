@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hippocortex@2.2.2",
+  "version": "2.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hippocortex",
+  "skill": {
+    "id": 24121,
+    "skillKey": "clawhub-hippocortex",
+    "name": "Hippocortex"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hippocortex",
+    "url": "https://clawhub.ai/skills/hippocortex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hippocortex-adfae83f46318545.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides an OpenClaw agent with persistent long-term memory by automatically remembering and recalling conversations, facts, and preferences across sessions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vmaiops-alt",
+      "userId": "publishers:vmaiops-alt",
+      "displayName": "vmaiops-alt",
+      "image": "https://avatars.githubusercontent.com/u/260309852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 419,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.2.2",
+      "createdAt": 1773692785423,
+      "changelog": "Auto-update notifications, version reporting headers, connector tracker support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1daaf37cdacc9c56c6c63dc4a73f09ca48c3fa8c7717c93271a29591d72cd857"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24181,
+  "uuid": "skill-clawhub-wordpress-expert",
+  "skillKey": "clawhub-wordpress-expert",
+  "name": "WordPress Expert",
+  "summary": "Enable WordPress superpowers for OpenClaw. Your Developer, Content Manager, Author, Security Specialists, Contributor, Subscriber and Admin and more.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wordpress_expert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "realM1lF",
+      "features": [
+        "Enable WordPress superpowers for OpenClaw",
+        "Your Developer, Content Manager, Author, Security Specialists, Contributor, Subscriber and Admi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wordpress-expert@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61932034?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wordpress-expert",
+      "url": "https://clawhub.ai/skills/wordpress-expert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wordpress-expert",
+    "url": "https://clawhub.ai/skills/wordpress-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wordpress-expert-739ac1e05273b7fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wordpress-expert@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-wordpress-expert-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab89c8db7009deb43825bf9be483ddc27d10a7b993305815d478ed7933dbd1d2",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T15:18:15.550Z"
+}

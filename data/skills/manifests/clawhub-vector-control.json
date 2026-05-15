@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12221,
+  "uuid": "skill-clawhub-vector-control",
+  "skillKey": "clawhub-vector-control",
+  "name": "Vector Control",
+  "summary": "Control a Vector robot via Wirepod’s local HTTP API on the same network. Use when you need to move Vector, tilt head/lift, speak text, capture camera frames, or run patrol/explore routines from the Pi/Wirepod host. Includes a CLI helper sc.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vector_control",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dbeadle1",
+      "features": [
+        "Control a Vector robot via Wirepod’s local HTTP API on the same network",
+        "Use when you need to move Vector, tilt head/lift, speak text, capture camera frames, or run pat.",
+        "Includes a CLI helper script and endpoint reference."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vector-control@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/158857972?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vector-control",
+      "url": "https://clawhub.ai/skills/vector-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vector-control",
+    "url": "https://clawhub.ai/skills/vector-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vector-control-4365bef7d2e88738.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vector-control@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vector-control-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62e291895ef16854b674360aa4c3750ce40424c9ed859b680e39687681c66e39",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T16:47:11.876Z"
+}

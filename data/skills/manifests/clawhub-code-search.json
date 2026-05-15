@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19387,
+  "uuid": "skill-clawhub-code-search",
+  "skillKey": "clawhub-code-search",
+  "name": "Code Search",
+  "summary": "Search codebase contents, filenames, or directory structures using ripgrep, fd, and tree with filters for file types, context, depth, and result limits.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yanxingang",
+      "features": [
+        "Search codebase contents, filenames, or directory structures using ripgrep, fd, and tree with f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17355243?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-search",
+      "url": "https://clawhub.ai/skills/code-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-search",
+    "url": "https://clawhub.ai/skills/code-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-search-911815c7a32001e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1679787eaf5aad060ea6b032a1433555e7b382bb9504313349834dbb5feb010c",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T03:21:20.001Z"
+}

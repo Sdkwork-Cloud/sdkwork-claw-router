@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rapidocr@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rapidocr",
+  "skill": {
+    "id": 26864,
+    "skillKey": "clawhub-rapidocr",
+    "name": "RapidOCR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rapidocr",
+    "url": "https://clawhub.ai/skills/rapidocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rapidocr-1698c33fd6f49b5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract text from local image files with RapidOCR. Use when the user wants OCR on a JPG, PNG, WEBP, BMP, or TIFF image and may want plain text or JSON output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rapidai",
+      "userId": "s174nep1yd6xrc380cy1zwza7x84f862",
+      "displayName": "RapidAI",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 260,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776915877423,
+      "changelog": "**Summary:** RapidOCR skill v1.0.3 introduces a new Node.js wrapper and updates usage instructions for improved clarity and reliability.\n\n- Added a wrapper script (`run_rapidocr.py`) for orchestrating OCR tasks via Node.js.\n- Updated documentation to focus on local image OCR only; dropped support details for remote URLs and PDFs.\n- Streamlined command execution and output handling (plain text or JSON).\n- Clarified dependency and installation instructions for easier troubleshooting.\n- Improved guidance on when and how to use the skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:15ce330a2fa439070647364a2f7192922168e64fa4318f9db7ec9976582ce1b7"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anti-hype-filter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anti_hype_filter",
+  "skill": {
+    "id": 46062,
+    "skillKey": "clawhub-anti-hype-filter",
+    "name": "Anti-hype Filter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anti-hype-filter",
+    "url": "https://clawhub.ai/skills/anti-hype-filter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anti-hype-filter-84fbc270e2e6705a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect hype cycles and neutralize emotional triggers by rewriting claims into verifiable structures and explicit risk/uncertainty."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mzfshark",
+      "userId": "s17c7t947t48hg8ymjbywz1th583y2n6",
+      "displayName": "Mauricio Z.",
+      "image": "https://avatars.githubusercontent.com/u/26634695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777129368735,
+      "changelog": "- Initial release of the anti-hype-filter skill.\n- Detects and classifies hype language in messages to prevent manipulation.\n- Extracts key claims, identifies hype triggers, and classifies messages as signal, noise, or manipulation risk.\n- Rewrites hype statements into verifiable claims including explicit risk, uncertainty, and required missing data.\n- Drafts minimal, non-repetitive responses demanding evidence and disclosure of risks.\n- Includes clear safety and validation rules to prevent undue accusations and financial promises.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a21ad342f3ea16655daff65f31e8d1e5500562092be64dfce8a088759d728b5f"
+}

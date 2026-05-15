@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54390,
+  "uuid": "skill-clawhub-review-vague-fixes",
+  "skillKey": "clawhub-review-vague-fixes",
+  "name": "Review Vague Fixes",
+  "summary": "Review comments are unactionable — \"improve this\", \"handle errors\", \"refactor\" without specifics or suggested alternatives.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_vague_fixes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mvogt99",
+      "features": [
+        "Review comments are unactionable — \"improve this\", \"handle errors\", \"refactor\" without specific."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/review-vague-fixes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/911083?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "review-vague-fixes",
+      "url": "https://clawhub.ai/skills/review-vague-fixes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-vague-fixes",
+    "url": "https://clawhub.ai/skills/review-vague-fixes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-vague-fixes-4aac145a0a8d2fff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/review-vague-fixes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-review-vague-fixes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12bf8258c0a6e0d050a9b4e577f63b929c112f3f1ab5e49d7037c667637723e4",
+      "artifactSizeBytes": 2188
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T18:25:11.781Z"
+}

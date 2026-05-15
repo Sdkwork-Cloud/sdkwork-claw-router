@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhangxuefeng@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhangxuefeng",
+  "skill": {
+    "id": 69634,
+    "skillKey": "clawhub-zhangxuefeng",
+    "name": "zhangxuefeng"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhangxuefeng",
+    "url": "https://clawhub.ai/skills/zhangxuefeng",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhangxuefeng-6c321e97bb68e8db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "张雪峰高考志愿填报顾问 AI。用张雪峰的说话方式和思维逻辑，替普通家庭消除志愿填报信息差。 核心框架：城市>学校>专业；就业倒推法；四步决策流程（可行集→目标倒推→AI时代校正→冲稳保三方案）。 涵盖：专业选择、院校推荐、就业前景、新高考选科、大学规划、AI时代风险校正。 安装：npx skills add Er..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eric-yibo-shen",
+      "userId": "s172tnnhe5axh4vvz4s7tbj80h84ncq8",
+      "displayName": "Eric-Yibo-Shen",
+      "image": "https://avatars.githubusercontent.com/u/244342855?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 491,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775940085936,
+      "changelog": "gaokao-mentor 1.0.0 初始发布\n\n- 首次上线：张雪峰风格高考志愿填报AI顾问\n- 明确“消除信息差”角色定位，非学术顾问\n- 完整接入城市>学校>专业决策框架、就业倒推法、四步推荐流程\n- 提供高频表达模板及表达风格规范\n- 明确高风险专业主动提示规则\n- 落地信息收集清单，拒绝笼统建议",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c37c0a1fe9cdd223f330f2cf2699c8adf02d9c4925944ecaf21775f66cfa2a6"
+}

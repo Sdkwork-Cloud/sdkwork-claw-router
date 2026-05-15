@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42607,
+  "uuid": "skill-clawhub-tm-robot",
+  "skillKey": "clawhub-tm-robot",
+  "name": "TM Robot Control",
+  "summary": "Control and monitor OMRON TM collaborative robots with motion commands, status feedback, safety controls, camera support, and IO handling.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tm_robot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robot_Qu",
+      "features": [
+        "Control and monitor OMRON TM collaborative robots with motion commands, status feedback, safety."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tm-robot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117743580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tm-robot",
+      "url": "https://clawhub.ai/skills/tm-robot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tm-robot",
+    "url": "https://clawhub.ai/skills/tm-robot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tm-robot-38b03857531266e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tm-robot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tm-robot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ee523141dbe0bc6dc6e83f461248edcda296f5d199fc7a646e103bcb3a08d48",
+      "artifactSizeBytes": 2196
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T15:08:49.282Z"
+}

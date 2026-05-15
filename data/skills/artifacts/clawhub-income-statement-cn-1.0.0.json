@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/income-statement-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.income_statement_cn",
+  "skill": {
+    "id": 72747,
+    "skillKey": "clawhub-income-statement-cn",
+    "name": "利润表生成"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "income-statement-cn",
+    "url": "https://clawhub.ai/skills/income-statement-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/income-statement-cn-f6929c409510560e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据明细表数据，自动生成规范格式利润表，收入支出按分类 2/3 分组动态汇总，含经营利润计算、固定格式和列宽。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "courage-zen",
+      "userId": "s173jr81bx6yefkd7kydgq6st98415m2",
+      "displayName": "zen",
+      "image": "https://avatars.githubusercontent.com/u/5386698?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775011861453,
+      "changelog": "从交易记录生成标准化利润表 Excel",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e01118e51aefbdac975131bc8f01f66b4e3d74ad1f7bca06e35d31a6817bf7c"
+}

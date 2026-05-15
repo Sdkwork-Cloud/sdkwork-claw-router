@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44916,
+  "uuid": "skill-clawhub-rfm-segmenter",
+  "skillKey": "clawhub-rfm-segmenter",
+  "name": "RFM Segmenter",
+  "summary": "Segment your customer base by Recency, Frequency, and Monetary value to identify VIPs, at-risk churners, and dormant buyers, then generate targeted re-engage...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rfm_segmenter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Segment your customer base by Recency, Frequency, and Monetary value to identify VIPs, at-risk."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rfm-segmenter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rfm-segmenter",
+      "url": "https://clawhub.ai/skills/rfm-segmenter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rfm-segmenter",
+    "url": "https://clawhub.ai/skills/rfm-segmenter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rfm-segmenter-8af356bf145cadd3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rfm-segmenter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rfm-segmenter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5b20bda4d81684a8a68a862d00e23347cb548b14930a4dd90d84ed16f3ea298",
+      "artifactSizeBytes": 1886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T03:22:59.454Z"
+}

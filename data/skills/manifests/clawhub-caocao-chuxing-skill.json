@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56648,
+  "uuid": "skill-clawhub-caocao-chuxing-skill",
+  "skillKey": "clawhub-caocao-chuxing-skill",
+  "name": "caocao-chuxing-skill",
+  "summary": "Use this skill for all 曹操出行 ride-hailing requests after the user installs the skill and provides an API key from https://mcp.caocaokeji.cn/console. Trigger w...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caocao_chuxing_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CodeLife",
+      "features": [
+        "Use this skill for all 曹操出行 ride-hailing requests after the user installs the skill and provide.",
+        "Trigger w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/caocao-chuxing-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3665278?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "caocao-chuxing-skill",
+      "url": "https://clawhub.ai/skills/caocao-chuxing-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caocao-chuxing-skill",
+    "url": "https://clawhub.ai/skills/caocao-chuxing-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caocao-chuxing-skill-1e83b9de504978b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/caocao-chuxing-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-caocao-chuxing-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33fd3298b4ac38cf587617eeeba47f51d7634d4c9c4b4e4aa59375c807b036e5",
+      "artifactSizeBytes": 2182
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T03:36:36.879Z"
+}

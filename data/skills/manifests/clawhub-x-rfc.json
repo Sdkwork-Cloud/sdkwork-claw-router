@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20759,
+  "uuid": "skill-clawhub-x-rfc",
+  "skillKey": "clawhub-x-rfc",
+  "name": "RFC Document Assistant",
+  "summary": "RFC (Request for Comments) document query tool providing access to Internet protocol standards. Use this skill whenever the user needs to look up, search, re...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_rfc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lunrenyi",
+      "features": [
+        "RFC (Request for Comments) document query tool providing access to Internet protocol standards",
+        "Use this skill whenever the user needs to look up, search, re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-rfc@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87307989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-rfc",
+      "url": "https://clawhub.ai/skills/x-rfc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-rfc",
+    "url": "https://clawhub.ai/skills/x-rfc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-rfc-51b6e273cfceab8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-rfc@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-rfc-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1517471fb3181947d715ea013cf71c71e1919b37ce6c20abdb4a09579eff726",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T07:16:53.352Z"
+}

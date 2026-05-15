@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20197,
+  "uuid": "skill-clawhub-skill-runway-video-gen",
+  "skillKey": "clawhub-skill-runway-video-gen",
+  "name": "Skill Runway Video Gen",
+  "summary": "Generate short product videos from images using Runway Gen4 Turbo. Use for TikTok ads, UGC-style product demos, Reels, and YouTube Shorts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_runway_video_gen",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zero2Ai",
+      "features": [
+        "Generate short product videos from images using Runway Gen4 Turbo",
+        "Use for TikTok ads, UGC-style product demos, Reels, and YouTube Shorts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-runway-video-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244362887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-runway-video-gen",
+      "url": "https://clawhub.ai/skills/skill-runway-video-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-runway-video-gen",
+    "url": "https://clawhub.ai/skills/skill-runway-video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-runway-video-gen-345ddafb461736b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-runway-video-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-runway-video-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d2ebaa8667200647c575a3b76a11f6bbeb2d188f6c9dfe6d4745088498dc59b",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T01:02:50.288Z"
+}

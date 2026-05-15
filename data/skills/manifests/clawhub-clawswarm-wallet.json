@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21757,
+  "uuid": "skill-clawhub-clawswarm-wallet",
+  "skillKey": "clawhub-clawswarm-wallet",
+  "name": "ClawSwarm Agent Wallet",
+  "summary": "Manage a Hedera wallet for AI agents to receive payments, pay for services, verify identity on-chain, and hold tokens securely.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawswarm_wallet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FLY",
+      "features": [
+        "Manage a Hedera wallet for AI agents to receive payments, pay for services, verify identity on-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawswarm-wallet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258594521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawswarm-wallet",
+      "url": "https://clawhub.ai/skills/clawswarm-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawswarm-wallet",
+    "url": "https://clawhub.ai/skills/clawswarm-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawswarm-wallet-c3e2bc1a68b180ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawswarm-wallet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawswarm-wallet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f16422b9be4f83d32bb81210eb62721234f1f281399e6d28c954d2ee41822044",
+      "artifactSizeBytes": 2343
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T18:34:09.353Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62500,
+  "uuid": "skill-clawhub-stock-tracker-pro",
+  "skillKey": "clawhub-stock-tracker-pro",
+  "name": "Stock Tracker Pro",
+  "summary": "股票监控技能。使用 Yahoo Finance 获取股票数据。支持添加股票到监控列表、删除股票、查询股票信息。触发场景：(1) 添加股票如\"监控 AAPL\"，(2) 删除股票如\"删除 TSLA\"，(3) 查询股票如\"查看腾讯股票\"、\"AAPL 股价\"。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_tracker_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Frank Huang",
+      "features": [
+        "股票监控技能。使用 Yahoo Finance 获取股票数据。支持添加股票到监控列表、删除股票、查询股票信息。触发场景：(1) 添加股票如\"监控 AAPL\"，(2) 删除股票如\"删除 TSL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-tracker-pro@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32383345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-tracker-pro",
+      "url": "https://clawhub.ai/skills/stock-tracker-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-tracker-pro",
+    "url": "https://clawhub.ai/skills/stock-tracker-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-tracker-pro-0db970cacd6dfa32.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-tracker-pro@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-tracker-pro-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db677fe563aba46265ee8a4f5317e88edbdfcab50cb8c2df607914d0c6e89a88",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T00:39:38.255Z"
+}

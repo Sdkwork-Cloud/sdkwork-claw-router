@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10986,
+  "uuid": "skill-clawhub-proton-pass",
+  "skillKey": "clawhub-proton-pass",
+  "name": "Proton Pass CLI",
+  "summary": "Manage Proton Pass vaults, items (logins, SSH keys, aliases, notes), passwords, SSH agent integration, and secret injection into applications. Use when working with Proton Pass for password management, SSH key storage, secret injection (ru.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proton_pass",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KakatkarAkshay",
+      "features": [
+        "Manage Proton Pass vaults, items (logins, SSH keys, aliases, notes), passwords, SSH agent integ.",
+        "Use when working with Proton Pass for password management, SSH key storage, secret injection (r.",
+        "Supports vault/item CRUD, sharing, member management, SSH agent operations, TOTP generation, se."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proton-pass@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49910222?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proton-pass",
+      "url": "https://clawhub.ai/skills/proton-pass"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proton-pass",
+    "url": "https://clawhub.ai/skills/proton-pass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proton-pass-cc71018fed8751be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proton-pass@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proton-pass-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ba1d3ecd8580f87f286ba55ba6d7e969d2d8c0c29e68b634aadb6e0ba38cfe8",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T17:28:52.900Z"
+}

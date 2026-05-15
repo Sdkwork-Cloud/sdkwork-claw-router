@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/long-task-monitor@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_task_monitor",
+  "skill": {
+    "id": 60461,
+    "skillKey": "clawhub-long-task-monitor",
+    "name": "长任务监控方案。实现 Worker-Monitor 架构，Monitor 通过 hook-logger 日志监控 Worker 状态，每轮 10 分钟通过 Announce 汇报。采用主会话轮询机制（因子代理 sessions_send 限制）。推荐 O."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-task-monitor",
+    "url": "https://clawhub.ai/skills/long-task-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-task-monitor-abc615cc028c547f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "长任务监控方案 V2。实现 Worker-Monitor 架构，Monitor 通过 hook-logger 日志监控 Worker 状态，每轮 10 分钟通过 Announce 汇报。采用主会话轮询机制（因子代理 sessions_send 限制）。推荐 OpenClaw 2.21+。触发词：长任务、监控任务、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scotthuang",
+      "userId": "s17e3tb7b6412h2nmcsbsxkm6183z367",
+      "displayName": "scotthuang",
+      "image": "https://avatars.githubusercontent.com/u/1670837?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 937,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771756017973,
+      "changelog": "Version 1.0.3\n\n- 文档新增并强调 session key 必须包含冒号（:）用于 agent 标识，过滤函数已允许此字符\n- 在安全说明明确仅允许带冒号的 session key 作为安全字符\n- 已知限制补充：Monitor Agent 必须使用 exec 工具执行 shell 命令以写入监控日志，这是架构固有限制\n- 其他文档细节优化，实际代码未变",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:db64f093c3fead8b2462393ad34f4c4e429a7bd4001d71f45243e2d037b6f68c"
+}

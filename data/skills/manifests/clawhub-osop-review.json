@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41815,
+  "uuid": "skill-clawhub-osop-review",
+  "skillKey": "clawhub-osop-review",
+  "name": "Osop Review",
+  "summary": "Review .osop/.osoplog for security risks, permission gaps, and destructive commands",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.osop_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Archie0125",
+      "features": [
+        "Review .osop/.osoplog for security risks, permission gaps, and destructive commands"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/osop-review@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58622712?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "osop-review",
+      "url": "https://clawhub.ai/skills/osop-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "osop-review",
+    "url": "https://clawhub.ai/skills/osop-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/osop-review-49a5842ca64621c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/osop-review@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-osop-review-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32ba90a670b94d00472e0016b986545155a06380831e7e36f543691f3782ee5e",
+      "artifactSizeBytes": 1833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T11:27:27.063Z"
+}

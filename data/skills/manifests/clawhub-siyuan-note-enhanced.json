@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70682,
+  "uuid": "skill-clawhub-siyuan-note-enhanced",
+  "skillKey": "clawhub-siyuan-note-enhanced",
+  "name": "思源笔记增强版",
+  "summary": "思源笔记读写技能，提供与思源笔记（SiYuan Note）进行交互的能力，包括读取和写入笔记内容",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.siyuan_note_enhanced",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jueduilunhui",
+      "features": [
+        "思源笔记读写技能，提供与思源笔记（SiYuan Note）进行交互的能力，包括读取和写入笔记内容"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/siyuan-note-enhanced@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130271951?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "siyuan-note-enhanced",
+      "url": "https://clawhub.ai/skills/siyuan-note-enhanced"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "siyuan-note-enhanced",
+    "url": "https://clawhub.ai/skills/siyuan-note-enhanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/siyuan-note-enhanced-85b845c6144d6de2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/siyuan-note-enhanced@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-siyuan-note-enhanced-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c35e59f1b9e0ce7a126a13ba5e0070416349d33d7c56c19d988e69c18dee482",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T14:41:54.576Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecommerce-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_scraper",
+  "skill": {
+    "id": 61489,
+    "skillKey": "clawhub-ecommerce-scraper",
+    "name": "Ecommerce Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-scraper",
+    "url": "https://clawhub.ai/skills/ecommerce-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-scraper-a9e08a510908d972.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "爬取动态电商网站数据。使用Playwright处理JavaScript渲染的页面，支持Cloudflare反爬、隐躲API发现、分页抓取。适用于： (1) 爬取京东/淘宝/拼多多等中国电商， (2) 爬取Amazon/eBay等国际电商， (3) 价格监控和竞品分析， (4) 批量商品数据采集。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chefroger",
+      "userId": "s17bm52w4yn6g6r0xnp78bm4ks84gjaq",
+      "displayName": "chefroger",
+      "image": "https://avatars.githubusercontent.com/u/28817001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2308,
+      "installsAllTime": 14,
+      "installsCurrent": 14,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772091721293,
+      "changelog": "Initial release of ecommerce-scraper\n\n- Dynamic e-commerce data scraper using Playwright to handle JavaScript-rendered pages.\n- Supports Cloudflare anti-bot bypass, hidden API discovery, and pagination scraping.\n- Suitable for Chinese (JD, Taobao, Pinduoduo) and international (Amazon, eBay) e-commerce platforms.\n- Provides scripts for basic scraping, login-enabled scraping, API discovery, and Cloudflare bypass.\n- Includes practical selectors for major platforms and troubleshooting guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a19c435da990d293c4b272e7b9906db51dfbfac9206e3e23119fbc2f6e4eb963"
+}

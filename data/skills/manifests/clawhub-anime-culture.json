@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72440,
+  "uuid": "skill-clawhub-anime-culture",
+  "skillKey": "clawhub-anime-culture",
+  "name": "Anime",
+  "summary": "提供关于网红二次元的推荐清单、打卡路线与指南。用户搜索网红二次元或规划相关出行时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anime_culture",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "提供关于网红二次元的推荐清单、打卡路线与指南。用户搜索网红二次元或规划相关出行时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anime-culture@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anime-culture",
+      "url": "https://clawhub.ai/skills/anime-culture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anime-culture",
+    "url": "https://clawhub.ai/skills/anime-culture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anime-culture-168b2f6986d2a03f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anime-culture@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-anime-culture-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bfd941cd6c2baa2cec68ad5dccd6d8d22c601e5977f14b1459a83b19cbfc86a",
+      "artifactSizeBytes": 2174
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T17:29:24.900Z"
+}

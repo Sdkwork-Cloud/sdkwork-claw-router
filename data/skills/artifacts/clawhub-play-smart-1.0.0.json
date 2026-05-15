@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/play-smart@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.play_smart",
+  "skill": {
+    "id": 64827,
+    "skillKey": "clawhub-play-smart",
+    "name": "Play Smart"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "play-smart",
+    "url": "https://clawhub.ai/skills/play-smart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/play-smart-1d0bf262dbe77aee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "让 Agent 可控地\"装聪明\"——把简单问题用过度复杂、学术化、掉书袋的方式回答。支持多种聪明人格（学术大佬、硅谷导师、哲学家等）和10级聪明度调节。触发条件：用户说\"装聪明\"、\"显得聪明点\"、\"play smart\"、\"smart mode\"、\"掉书袋\"、\"学术模式\"。与 play-dumb 互为姊妹技能。安..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dox012",
+      "userId": "s176trdf8cdbg0rak67ekta2t583gjae",
+      "displayName": "dox012",
+      "image": "https://avatars.githubusercontent.com/u/109445745?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 416,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773038642184,
+      "changelog": "- 首发版本上线：play-smart 让 Agent 可控地“装聪明”，支持多风格、多等级。\n- 提供 6 种聪明人格（如学术大佬、硅谷导师、哲学家等），可自由切换。\n- 新增 10 级聪明度调节，从日常术语到多重学术理论叠加。\n- 支持多种激活与退出口令，智能检测用户困惑与应急场景自动降级，确保体验友好安全。\n- 与 play-dumb 技能形成互补，可交互组合使用。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4075c7fc06e14f3a19c1314a62c05675b635c65946f405e928045ac1ca65e9b6"
+}

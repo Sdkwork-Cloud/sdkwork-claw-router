@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31518,
+  "uuid": "skill-clawhub-spotlightr",
+  "skillKey": "clawhub-spotlightr",
+  "name": "Spotlightr",
+  "summary": "Spotlightr integration. Manage Organizations, Users, Goals, Filters. Use when the user wants to interact with Spotlightr data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spotlightr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Spotlightr integration",
+        "Manage Organizations, Users, Goals, Filters",
+        "Use when the user wants to interact with Spotlightr data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spotlightr@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spotlightr",
+      "url": "https://clawhub.ai/skills/spotlightr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spotlightr",
+    "url": "https://clawhub.ai/skills/spotlightr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spotlightr-63d090e6d1a69925.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spotlightr@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-spotlightr-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5ae1a72a57a65eb7efd928812e1f629816a0c785d007be9c8187e0bf3074538",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:02:35.822Z"
+}

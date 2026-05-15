@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21868,
+  "uuid": "skill-clawhub-interview-buddy",
+  "skillKey": "clawhub-interview-buddy",
+  "name": "Interview Buddy",
+  "summary": "AI-powered mock interview practice with real-time feedback. Use when preparing for job interviews, practicing behavioral questions, doing technical interview...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interview_buddy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "AI-powered mock interview practice with real-time feedback",
+        "Use when preparing for job interviews, practicing behavioral questions, doing technical intervi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/interview-buddy@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "interview-buddy",
+      "url": "https://clawhub.ai/skills/interview-buddy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interview-buddy",
+    "url": "https://clawhub.ai/skills/interview-buddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interview-buddy-f7daef8cae456d28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/interview-buddy@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-interview-buddy-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c5cafbdcc2da09373ad098f1d4777fa620de442c806d5fc3ea7d0bfdc6fa213",
+      "artifactSizeBytes": 2095
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T03:10:15.575Z"
+}

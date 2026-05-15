@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63952,
+  "uuid": "skill-clawhub-openclaw-guard-v2",
+  "skillKey": "clawhub-openclaw-guard-v2",
+  "name": "OpenClaw Guard",
+  "summary": "配置文件修改守护脚本 - 危险操作前自动备份，一键回滚",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_guard_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zebra679096",
+      "features": [
+        "配置文件修改守护脚本",
+        "危险操作前自动备份，一键回滚"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-guard-v2@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49462246?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-guard-v2",
+      "url": "https://clawhub.ai/skills/openclaw-guard-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-guard-v2",
+    "url": "https://clawhub.ai/skills/openclaw-guard-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-guard-v2-c9924b9d302050ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-guard-v2@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-guard-v2-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23af7750f87706cf493ccf76aae99527b383d3e6f0461a36bdab6796933cd362",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T12:28:45.229Z"
+}

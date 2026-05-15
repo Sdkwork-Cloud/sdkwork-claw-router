@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37889,
+  "uuid": "skill-clawhub-12-factor-apps-analysis",
+  "skillKey": "clawhub-12-factor-apps-analysis",
+  "name": "12 Factor Apps Analysis",
+  "summary": "perform 12-Factor App compliance analysis on a codebase",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.12_factor_apps_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "perform 12-Factor App compliance analysis on a codebase"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/12-factor-apps-analysis@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "12-factor-apps-analysis",
+      "url": "https://clawhub.ai/skills/12-factor-apps-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "12-factor-apps-analysis",
+    "url": "https://clawhub.ai/skills/12-factor-apps-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/12-factor-apps-analysis-78bfe3ceac2628ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/12-factor-apps-analysis@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-12-factor-apps-analysis-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfbc70cb26fd616475aed0910dd3d7f215e78a337a89af69c06144410c97d7e1",
+      "artifactSizeBytes": 2249
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T22:53:38.455Z"
+}

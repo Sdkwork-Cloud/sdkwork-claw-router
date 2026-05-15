@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xianyu-data-grabber@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xianyu_data_grabber",
+  "skill": {
+    "id": 69729,
+    "skillKey": "clawhub-xianyu-data-grabber",
+    "name": "闲鱼数据抓取"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xianyu-data-grabber",
+    "url": "https://clawhub.ai/skills/xianyu-data-grabber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xianyu-data-grabber-09b02cf7a8aca9b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "闲鱼数据抓取技能。使用 Playwright + OCR 技术突破反爬虫，抓取闲鱼商品数据（标题、价格、想要人数等），自动上传截图和数据到 Gitee 仓库。支持批量关键词搜索、竞品分析、市场调研。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beipian261",
+      "userId": "publishers:beipian261",
+      "displayName": "beipian261",
+      "image": "https://avatars.githubusercontent.com/u/210724771?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 576,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773981286796,
+      "changelog": "初始发布 - 60+ 关键词，增强 OCR，可视化，智能推荐，定时任务，自动更新",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:794c56b5127068c070ab961503a0bf4c6ab50bddf89b732aa4dac78a1b95607f"
+}

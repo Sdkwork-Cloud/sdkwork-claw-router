@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61490,
+  "uuid": "skill-clawhub-finebi-skill",
+  "skillKey": "clawhub-finebi-skill",
+  "name": "finebi-skill",
+  "summary": "一个用于 OpenClaw 的 FineBI 技能，支持 npx 直接运行和插件体系，提供数据分析和可视化功能",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finebi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "刘荣歆",
+      "features": [
+        "一个用于 OpenClaw 的 FineBI 技能，支持 npx 直接运行和插件体系，提供数据分析和可视化功能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finebi-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17895839?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finebi-skill",
+      "url": "https://clawhub.ai/skills/finebi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finebi-skill",
+    "url": "https://clawhub.ai/skills/finebi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finebi-skill-17d29b260e3a2155.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finebi-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-finebi-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6466a77e281a80086068bec75cc61699d5722b2df7a8f419cf614945743abdee",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T01:21:02.918Z"
+}

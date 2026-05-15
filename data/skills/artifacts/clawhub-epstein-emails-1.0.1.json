@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/epstein-emails@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.epstein_emails",
+  "skill": {
+    "id": 16059,
+    "skillKey": "clawhub-epstein-emails",
+    "name": "Epstein Emails (x402)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "epstein-emails",
+    "url": "https://clawhub.ai/skills/epstein-emails",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/epstein-emails-253bc2c13ac53dfc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and filter 383,000+ court-released Jeffrey Epstein emails with structured JSON data via a pay-per-request API using USDC on Base."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blockboy32",
+      "userId": "publishers:blockboy32",
+      "displayName": "BlockBoy32",
+      "image": "https://avatars.githubusercontent.com/u/99607108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 732,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771036205590,
+      "changelog": "epstein-emails 1.0.1\n\n- Added explicit requirement for users to provide a funded EVM wallet private key (`XCLAW02_PRIVATE_KEY`) to make API payments.\n- Emphasized user consent for any paid API action; added spending safeguards and confirmation steps.\n- Mandated use of the free `/api/preview` endpoint to estimate costs before making paid requests.\n- Clarified cost estimation, spending limits, and multi-request cost warnings.\n- Updated quick start and pagination code examples with secure private key handling and explicit cost calculation.\n- Improved instructions for safe private key management and recommended using dedicated hot wallets.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cea2c5046cd219ff8945765edeea26b0ac62e48098c08c0d36bf62e9d8e14092"
+}

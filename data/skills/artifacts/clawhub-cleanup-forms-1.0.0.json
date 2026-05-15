@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cleanup-forms@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cleanup_forms",
+  "skill": {
+    "id": 41114,
+    "skillKey": "clawhub-cleanup-forms",
+    "name": "Cleanup Forms"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cleanup-forms",
+    "url": "https://clawhub.ai/skills/cleanup-forms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cleanup-forms-2add7861cdd93d14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit and remove unused, test, or deprecated forms from HubSpot. Identifies forms with zero submissions, forms not embedded on any page, and test forms left..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tomgranot",
+      "userId": "s17cmf9jxs7s60v7thhms9w09h83m293",
+      "displayName": "TomGranot",
+      "image": "https://avatars.githubusercontent.com/u/8835035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774542447328,
+      "changelog": "Initial release of cleanup-forms.\n\n- Audits HubSpot forms to identify unused, test, or deprecated forms.\n- Flags forms with zero submissions, old/no recent activity, or \"test\" naming.\n- Provides step-by-step instructions covering inventory, identification, deletion, and documentation.\n- Includes rollback guidance and tips for safer form management.\n- Requires HubSpot API token and Python client.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8508c24b04bb20df8960f9ff1087090cefb90fd52772161580b1fcbc1c3c282e"
+}

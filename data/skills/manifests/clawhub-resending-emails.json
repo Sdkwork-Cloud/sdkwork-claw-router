@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25485,
+  "uuid": "skill-clawhub-resending-emails",
+  "skillKey": "clawhub-resending-emails",
+  "name": "Resend CLI Skill",
+  "summary": "Use this skill when the task is specifically about operating Resend from an AI agent, terminal session, or CI job via the official resend CLI: installing/aut...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resending_emails",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tristan Manchester",
+      "features": [
+        "Use this skill when the task is specifically about operating Resend from an AI agent, terminal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resending-emails@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108270628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resending-emails",
+      "url": "https://clawhub.ai/skills/resending-emails"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resending-emails",
+    "url": "https://clawhub.ai/skills/resending-emails",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resending-emails-ab3541194063e787.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resending-emails@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-resending-emails-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ea0d2b9493e03b970ca54cf0a52f1fe0f7673b7b659f1d6ec5069756d157330",
+      "artifactSizeBytes": 2737
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T20:52:24.652Z"
+}

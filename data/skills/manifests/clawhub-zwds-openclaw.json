@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64939,
+  "uuid": "skill-clawhub-zwds-openclaw",
+  "skillKey": "clawhub-zwds-openclaw",
+  "name": "紫微斗数排盘解盘",
+  "summary": "通过 zwds-cli（Node、iztro 2.5.0）生成紫微斗数结构化命盘 JSON，并仅依据该 JSON 解盘。在用户提及紫微斗数、排盘、命盘、十二宫、四化、解盘、生辰八字时辰、命宫、大限、流年时使用。含 iztro 官方 API 速查；禁止 py-iztro 与脱离 JSON 臆造星曜。真太阳时与地名规...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zwds_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luyao-inc",
+      "features": [
+        "通过 zwds-cli（Node、iztro 2.5.0）生成紫微斗数结构化命盘 JSON，并仅依据该 JSON 解盘。在用户提及紫微斗数、排盘、命盘、十二宫、四化、解盘、生辰八字时辰、命宫."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zwds-openclaw@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35760741?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zwds-openclaw",
+      "url": "https://clawhub.ai/skills/zwds-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zwds-openclaw",
+    "url": "https://clawhub.ai/skills/zwds-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zwds-openclaw-dfcb22724240858b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zwds-openclaw@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zwds-openclaw-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96c45fa001b10a26eb99fc85ae0df2fecd7dd7b5bd31c7ab4138cc8d2884923a",
+      "artifactSizeBytes": 2106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T09:33:11.435Z"
+}

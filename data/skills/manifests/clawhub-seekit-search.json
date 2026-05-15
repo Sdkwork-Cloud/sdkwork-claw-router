@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27550,
+  "uuid": "skill-clawhub-seekit-search",
+  "skillKey": "clawhub-seekit-search",
+  "name": "Seekit Search(No API Key Required)",
+  "summary": "Use this skill when an agent needs fresh web results. No API key required. Supports multiple platforms (web, video, social). It explains how to choose a prov...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seekit_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lexiforest",
+      "features": [
+        "Use this skill when an agent needs fresh web results",
+        "No API key required",
+        "Supports multiple platforms (web, video, social)",
+        "It explains how to choose a prov..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seekit-search@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45119583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seekit-search",
+      "url": "https://clawhub.ai/skills/seekit-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seekit-search",
+    "url": "https://clawhub.ai/skills/seekit-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seekit-search-9192c128c7962131.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seekit-search@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-seekit-search-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:856cf0864563eee7c2f200233463f18a2ac228e4ce7811c3b27fb77e48bbd012",
+      "artifactSizeBytes": 2218
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T14:35:50.898Z"
+}

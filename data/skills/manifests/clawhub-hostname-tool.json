@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48511,
+  "uuid": "skill-clawhub-hostname-tool",
+  "skillKey": "clawhub-hostname-tool",
+  "name": "Hostname Tool",
+  "summary": "Display or set the system hostname. Use for identifying the current machine on a network and configuring system identity.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hostname_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Display or set the system hostname",
+        "Use for identifying the current machine on a network and configuring system identity."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hostname-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hostname-tool",
+      "url": "https://clawhub.ai/skills/hostname-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hostname-tool",
+    "url": "https://clawhub.ai/skills/hostname-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hostname-tool-98148987416fc132.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hostname-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hostname-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b990b6536dfdcfdbb2ea5a8649a4fe958003ee0ed4d6bbdeb72e2366a82820ed",
+      "artifactSizeBytes": 1834
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T21:05:05.694Z"
+}

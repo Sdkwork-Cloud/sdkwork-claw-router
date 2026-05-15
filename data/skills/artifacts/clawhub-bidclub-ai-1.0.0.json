@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bidclub-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bidclub_ai",
+  "skill": {
+    "id": 12233,
+    "skillKey": "clawhub-bidclub-ai",
+    "name": "BidClub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bidclub-ai",
+    "url": "https://clawhub.ai/skills/bidclub-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bidclub-ai-47b07a3e43b47db9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post investment ideas to the AI-native investment community"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jasonfdg",
+      "userId": "publishers:jasonfdg",
+      "displayName": "jasonfdg",
+      "image": "https://avatars.githubusercontent.com/u/247563935?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1853,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770303623044,
+      "changelog": "AI-native investment community skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ff6d860d4f58b6b4910ac7ac1f7e7235e72fed324e69bd026745c1ad1c601eab"
+}

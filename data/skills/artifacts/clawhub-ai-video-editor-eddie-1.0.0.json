@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-eddie@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_eddie",
+  "skill": {
+    "id": 37012,
+    "skillKey": "clawhub-ai-video-editor-eddie",
+    "name": "Ai Video Editor Eddie"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-eddie",
+    "url": "https://clawhub.ai/skills/ai-video-editor-eddie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-eddie-cf8d3ba315c6b89c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit raw video footage into polished edited clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators and social media users..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776694226604,
+      "changelog": "AI Video Editor Eddie 1.0.0 — Initial Release\n\n- Instantly edit raw video footage (MP4, MOV, AVI, WebM up to 500MB) into polished 1080p MP4 clips on cloud GPUs.\n- Automatic session setup using NEMO_TOKEN for seamless cloud access; 100 free credits with 7-day expiry.\n- Streamlined workflows: trim pauses, add background music, export, and batch processing fully automated.\n- Simple, chat-based interface for content creators—no manual editing skills required.\n- Clear feedback and robust error handling for uploads, credits, status, and export.\n- Supports quick edits, iterative adjustments, and multiple common video/audio/image formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1032027b1346904d62e4c556168732c9e8b2cbfff0bbefb43c05f0a591b417a"
+}

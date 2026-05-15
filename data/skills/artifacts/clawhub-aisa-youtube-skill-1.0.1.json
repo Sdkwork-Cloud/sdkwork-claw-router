@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aisa-youtube-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_youtube_skill",
+  "skill": {
+    "id": 14961,
+    "skillKey": "clawhub-aisa-youtube-skill",
+    "name": "YouTube SERP Scout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-youtube-skill",
+    "url": "https://clawhub.ai/skills/aisa-youtube-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-youtube-skill-688c0aac22faecf0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bowen-dotcom",
+      "userId": "s177nk85yctc251m8vhcaczrgx83he8x",
+      "displayName": "bowen-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/258157479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1095,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773914218402,
+      "changelog": "No functional changes—documentation updated:\n\n- API reference link updated from https://aisa.mintlify.app/api-reference/introduction to https://docs.aisa.one/reference/.\n- No changes detected in code or functionality; SKILL.md documentation was updated only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:56633ff110307c1fa2da5196b8c8e0c437317d8dbd969f23516370ffd73139aa"
+}

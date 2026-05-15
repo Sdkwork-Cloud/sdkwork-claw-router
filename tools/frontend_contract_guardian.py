@@ -406,6 +406,7 @@ class FrontendContractGuardian:
             raise FileNotFoundError(f"portal App.tsx not found: {self.app_path}")
 
         routes: set[str] = set()
+        wildcard_mounts: set[str] = set()
         route_stack: list[str] = []
 
         for line in self.app_path.read_text(encoding="utf-8").splitlines():
@@ -416,7 +417,12 @@ class FrontendContractGuardian:
                     continue
 
                 path = path_match.group(1).strip()
-                if not path or path == "*" or path.endswith("/*"):
+                if not path or path == "*":
+                    continue
+                if path.endswith("/*"):
+                    parent = route_stack[-1] if route_stack else ""
+                    mount_path = self._join_route(parent, path[:-2])
+                    wildcard_mounts.add(mount_path)
                     continue
 
                 parent = route_stack[-1] if route_stack else ""
@@ -434,6 +440,7 @@ class FrontendContractGuardian:
                 if route_stack:
                     route_stack.pop()
 
+        routes.update(self._contracted_child_routes_for_wildcard_mounts(wildcard_mounts))
         return sorted(routes)
 
     def _load_manifest(self) -> dict[str, Any]:
@@ -482,6 +489,40 @@ class FrontendContractGuardian:
         if not parent:
             return f"/{path}".rstrip("/")
         return f"{parent.rstrip('/')}/{path}".rstrip("/")
+
+    def _contracted_child_routes_for_wildcard_mounts(self, mounts: set[str]) -> set[str]:
+        if not mounts:
+            return set()
+
+        declared_routes: set[str] = set()
+        contract = self._load_contract()
+        contract_routes = contract.get("routes", [])
+        if isinstance(contract_routes, list):
+            declared_routes.update(
+                item["route"]
+                for item in contract_routes
+                if isinstance(item, dict) and isinstance(item.get("route"), str)
+            )
+
+        if self.route_classification_path.exists():
+            classification = self._load_route_classification()
+            classified_routes = classification.get("routes", [])
+            if isinstance(classified_routes, list):
+                declared_routes.update(
+                    item["route"]
+                    for item in classified_routes
+                    if isinstance(item, dict) and isinstance(item.get("route"), str)
+                )
+
+        child_routes: set[str] = set()
+        for mount in mounts:
+            prefix = mount.rstrip("/") + "/"
+            child_routes.update(
+                route
+                for route in declared_routes
+                if route == mount or route.startswith(prefix)
+            )
+        return child_routes
 
     def _manifest_route_tables(self, route_entry: Any) -> set[str]:
         if not isinstance(route_entry, dict):
@@ -631,8 +672,8 @@ class FrontendContractGuardian:
         if not (
             isinstance(dev_script, str)
             and isinstance(browser_dev_script, str)
-            and dev_script.startswith("vite ")
-            and browser_dev_script.startswith("vite ")
+            and self._is_vite_native_script(dev_script)
+            and self._is_vite_native_script(browser_dev_script)
             and "--configLoader native" in dev_script
             and "--configLoader native" in browser_dev_script
         ):
@@ -677,14 +718,11 @@ class FrontendContractGuardian:
             "type ClawRouterSdkClientOptions",
             "baseUrl?:",
             "apiKey?:",
-            "accessToken?:",
             "headers?:",
             "options.baseUrl",
             "options.apiKey",
-            "options.accessToken",
             "options.headers",
             "apiKey:",
-            "accessToken:",
             "headers:",
         )
         if not all(term in source for term in required_option_terms) or any(
@@ -692,6 +730,13 @@ class FrontendContractGuardian:
         ):
             messages.append(self.GENERATED_SDK_CLIENT_OPTIONS_BOUNDARY_MESSAGE)
         return messages
+
+    def _is_vite_native_script(self, script: str) -> bool:
+        commands = [part.strip() for part in script.split("&&")]
+        if not commands:
+            return False
+        vite_command = commands[-1]
+        return vite_command.startswith("vite ") and "--configLoader native" in vite_command
 
     def _check_runtime_api_base_url_boundary(self) -> list[str]:
         env_path = self.portal_root / "packages" / "sdkwork-claw-router-commons" / "src" / "utils" / "env.ts"
@@ -1394,6 +1439,7 @@ class FrontendContractGuardian:
         }
 
         route_packages: dict[str, str] = {}
+        wildcard_mount_packages: dict[str, str] = {}
         route_stack: list[str] = []
         for line in source.splitlines():
             for match in self.ROUTE_PATTERN.finditer(line):
@@ -1403,7 +1449,16 @@ class FrontendContractGuardian:
                     continue
 
                 path = path_match.group(1).strip()
-                if not path or path == "*" or path.endswith("/*"):
+                if not path or path == "*":
+                    continue
+                if path.endswith("/*"):
+                    parent = route_stack[-1] if route_stack else ""
+                    mount_path = self._join_route(parent, path[:-2])
+                    component_match = self.ROUTE_ELEMENT_COMPONENT_PATTERN.search(attrs)
+                    if component_match is not None:
+                        package_name = component_packages.get(component_match.group(1))
+                        if package_name is not None:
+                            wildcard_mount_packages[mount_path] = package_name
                     continue
 
                 parent = route_stack[-1] if route_stack else ""
@@ -1422,6 +1477,10 @@ class FrontendContractGuardian:
             for _ in range(close_count):
                 if route_stack:
                     route_stack.pop()
+
+        for mount_path, package_name in wildcard_mount_packages.items():
+            for child_route in self._contracted_child_routes_for_wildcard_mounts({mount_path}):
+                route_packages.setdefault(child_route, package_name)
 
         return route_packages
 

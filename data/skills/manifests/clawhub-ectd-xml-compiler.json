@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44385,
+  "uuid": "skill-clawhub-ectd-xml-compiler",
+  "skillKey": "clawhub-ectd-xml-compiler",
+  "name": "eCTD XML Compiler",
+  "summary": "Automatically convert uploaded drug application documents (Word/PDF) into XML skeleton structure compliant with eCTD 4.0/3.2.2 specifications.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ectd_xml_compiler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Automatically convert uploaded drug application documents (Word/PDF) into XML skeleton structur."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ectd-xml-compiler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ectd-xml-compiler",
+      "url": "https://clawhub.ai/skills/ectd-xml-compiler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ectd-xml-compiler",
+    "url": "https://clawhub.ai/skills/ectd-xml-compiler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ectd-xml-compiler-b563d33484beb9ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ectd-xml-compiler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ectd-xml-compiler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59bdfd54cb2d0c92bc60052d0e7b8ccf530dd998df4ed3a89af68027519d9609",
+      "artifactSizeBytes": 2415
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T09:39:44.443Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25177,
+  "uuid": "skill-clawhub-find-agent-service",
+  "skillKey": "clawhub-find-agent-service",
+  "name": "Find Agent-Native Service",
+  "summary": "Given a task an AI agent needs to perform, find the right agent-native service from the awesome-agent-native-services catalog. Surfaces how to USE each servi...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_agent_service",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0x4C33",
+      "features": [
+        "Given a task an AI agent needs to perform, find the right agent-native service from the awesome.",
+        "Surfaces how to USE each servi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-agent-service@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60883781?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-agent-service",
+      "url": "https://clawhub.ai/skills/find-agent-service"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-agent-service",
+    "url": "https://clawhub.ai/skills/find-agent-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-agent-service-8fbd019a893b6c81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-agent-service@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-agent-service-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d6483ded98dff4122608cd28852d6e4c880adaa70cd7b7d963c4c2e1eb8838d",
+      "artifactSizeBytes": 2089
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:51:58.910Z"
+}

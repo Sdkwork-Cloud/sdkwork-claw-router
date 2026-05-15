@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42788,
+  "uuid": "skill-clawhub-binance-onchain-pay",
+  "skillKey": "clawhub-binance-onchain-pay",
+  "name": "Binance Onchain Pay",
+  "summary": "Binance Onchain Pay: buy crypto with fiat (EUR, USD) or send crypto to any on-chain wallet. Use when users want to buy crypto with fiat or make on-chain paym...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_onchain_pay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dexploarer",
+      "features": [
+        "Binance Onchain Pay: buy crypto with fiat (EUR, USD) or send crypto to any on-chain wallet",
+        "Use when users want to buy crypto with fiat or make on-chain paym..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance-onchain-pay@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211557447?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance-onchain-pay",
+      "url": "https://clawhub.ai/skills/binance-onchain-pay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-onchain-pay",
+    "url": "https://clawhub.ai/skills/binance-onchain-pay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-onchain-pay-aa178399944b4c69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance-onchain-pay@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-onchain-pay-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:469e7d2bd84268116a6a790ede8926223aadf1122bab2d349fd70a89e6992b16",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T14:36:27.875Z"
+}

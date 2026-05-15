@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8689,
+  "uuid": "skill-clawhub-android-adb",
+  "skillKey": "clawhub-android-adb",
+  "name": "ADB Connection",
+  "summary": "Control Android devices via ADB with support for UI layout analysis (uiautomator) and visual feedback (screencap). Use when you need to interact with Android apps, perform UI automation, take screenshots, or run complex ADB command sequenc.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.android_adb",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "StaticAI",
+      "features": [
+        "Control Android devices via ADB with support for UI layout analysis (uiautomator) and visual fe.",
+        "Use when you need to interact with Android apps, perform UI automation, take screenshots, or ru."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/android-adb@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147252816?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "android-adb",
+      "url": "https://clawhub.ai/skills/android-adb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "android-adb",
+    "url": "https://clawhub.ai/skills/android-adb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/android-adb-7dc2f638af5c3a61.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/android-adb@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-android-adb-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6e9e3242f9404da1169e823d2037f53f66f02d6ed5e81c3a40e5beb0224a0d2",
+      "artifactSizeBytes": 2441
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T22:53:48.342Z"
+}

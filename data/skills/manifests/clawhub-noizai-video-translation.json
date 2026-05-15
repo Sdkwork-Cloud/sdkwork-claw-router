@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22325,
+  "uuid": "skill-clawhub-noizai-video-translation",
+  "skillKey": "clawhub-noizai-video-translation",
+  "name": "video-translation",
+  "summary": "Translate and dub videos from one language to another, replacing the original audio with TTS while keeping the video intact.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.noizai_video_translation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kusuriuri",
+      "features": [
+        "Translate and dub videos from one language to another, replacing the original audio with TTS wh."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/noizai-video-translation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84056810?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "noizai-video-translation",
+      "url": "https://clawhub.ai/skills/noizai-video-translation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "noizai-video-translation",
+    "url": "https://clawhub.ai/skills/noizai-video-translation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/noizai-video-translation-5f0a315755c63ccb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/noizai-video-translation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-noizai-video-translation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b12e95a990bf3e087ee8afb0651042cfeedece4a2a15421ea380f31a3c4e493",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T08:20:16.532Z"
+}

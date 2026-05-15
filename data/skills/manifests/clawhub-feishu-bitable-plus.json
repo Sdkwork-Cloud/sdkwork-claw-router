@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66774,
+  "uuid": "skill-clawhub-feishu-bitable-plus",
+  "skillKey": "clawhub-feishu-bitable-plus",
+  "name": "FeishuBitable-Plus",
+  "summary": "自然语言驱动飞书多维表格操作，支持CRUD、批量导入导出、跨表同步及数据质量分析，纯本地安全部署。",
+  "version": "1.0.0-beta",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bitable_plus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zwybirth",
+      "features": [
+        "自然语言驱动飞书多维表格操作，支持CRUD、批量导入导出、跨表同步及数据质量分析，纯本地安全部署。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-bitable-plus@1.0.0-beta",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97805363?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-bitable-plus",
+      "url": "https://clawhub.ai/skills/feishu-bitable-plus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bitable-plus",
+    "url": "https://clawhub.ai/skills/feishu-bitable-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bitable-plus-0d72d0ea0a69f40c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-bitable-plus@1.0.0-beta",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-bitable-plus-1.0.0-beta.json",
+      "version": "1.0.0-beta",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b31f9e682c2bed2c81236ec8ee9ad45aec49030e3bc6d03b0eb5781bbdea538d",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T19:13:31.407Z"
+}

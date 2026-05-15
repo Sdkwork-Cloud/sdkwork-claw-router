@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-index@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_index",
+  "skill": {
+    "id": 56767,
+    "skillKey": "clawhub-skill-index",
+    "name": "技能检索"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-index",
+    "url": "https://clawhub.ai/skills/skill-index",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-index-82522f229339d26e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-platform skill ranking and discovery system with 25,000+ skills. Supports Tencent SkillHub, Xfyun SkillHub, and local skills. Use when the user asks ab..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "runze123",
+      "userId": "s17assfg7v2yrdgbqm20frjb5183gv52",
+      "displayName": "runze123",
+      "image": "https://avatars.githubusercontent.com/u/267236224?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774429413958,
+      "changelog": "- Initial release of skill-finder: a multi-platform skill ranking and discovery system supporting 25,000+ skills.\n- Integrates Tencent SkillHub, Xfyun SkillHub, and local skills with real-time data.\n- Provides commands to list, search, view details, and install skills via CLI.\n- Ranks skills using a popularity algorithm based on downloads and community stars.\n- Offers real-time installation guidance, dry-run previews, and robust error handling.\n- No external dependencies required; uses only Python standard library modules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32e6ee78b8c9cb66a819d93d94102f4aa83728fdafc44362eba190c2d0423d3d"
+}

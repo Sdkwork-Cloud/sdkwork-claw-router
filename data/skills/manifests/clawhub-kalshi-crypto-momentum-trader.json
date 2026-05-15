@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41326,
+  "uuid": "skill-clawhub-kalshi-crypto-momentum-trader",
+  "skillKey": "clawhub-kalshi-crypto-momentum-trader",
+  "name": "Kalshi Crypto Momentum Trader",
+  "summary": "Uses 7-day and 30-day price trend extrapolation to trade crypto year-end price target markets on Kalshi. Requires SIMMER_API_KEY and simmer-sdk.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_crypto_momentum_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Uses 7-day and 30-day price trend extrapolation to trade crypto year-end price target markets o.",
+        "Requires SIMMER_API_KEY and simmer-sdk."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kalshi-crypto-momentum-trader@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kalshi-crypto-momentum-trader",
+      "url": "https://clawhub.ai/skills/kalshi-crypto-momentum-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-crypto-momentum-trader",
+    "url": "https://clawhub.ai/skills/kalshi-crypto-momentum-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-crypto-momentum-trader-8270320fdc5accf1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kalshi-crypto-momentum-trader@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-kalshi-crypto-momentum-trader-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b95fb4dd6887f14d050dd44b2c22c00e39dbb2c39fdcb70e2e24ca4840c693a",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T18:43:05.511Z"
+}

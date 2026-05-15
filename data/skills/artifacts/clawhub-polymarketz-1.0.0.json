@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarketz@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarketz",
+  "skill": {
+    "id": 51205,
+    "skillKey": "clawhub-polymarketz",
+    "name": "polymarketz"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarketz",
+    "url": "https://clawhub.ai/skills/polymarketz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarketz-9103adf70014df3a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive Polymarket prediction market skill — browse trending markets, search events, check real-time odds & prices, view order books, analyze price his..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zonder",
+      "userId": "publishers:zonder",
+      "displayName": "Alex M",
+      "image": "https://avatars.githubusercontent.com/u/2242841?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773360594628,
+      "changelog": "- Initial release of the Polymarket Council skill, enabling comprehensive access to Polymarket prediction markets.\n- Browse trending markets, search events, view categories, and get market details with no setup required.\n- Check real-time odds, token prices, spreads, order books, and view price history instantly.\n- Analyze open interest, top holders, trader leaderboards, profiles, and trading activity.\n- Full trading support: preview and execute trades, manage open orders and positions (wallet setup required).\n- Supports all Polymarket categories, including politics, crypto, sports, and entertainment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a0c2c2dc24cb880833868f7888fa6dc41fd8926f80b9bf4c874309e549722a7"
+}

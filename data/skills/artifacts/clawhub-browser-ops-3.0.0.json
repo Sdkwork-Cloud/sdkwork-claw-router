@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-ops@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_ops",
+  "skill": {
+    "id": 58730,
+    "skillKey": "clawhub-browser-ops",
+    "name": "Browser Ops Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-ops",
+    "url": "https://clawhub.ai/skills/browser-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-ops-6511368176549848.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent 的网页访问路由决策指南。全 CLI 架构，零 MCP 依赖，不占常驻上下文 token。 按成本逐级升级: WebFetch($0) → opencli web read($0,带Cookie) → Firecrawl → agent-browser → browser-use。 IMPORTA..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lanyasheng",
+      "userId": "s179bk63dv96y90hw97xaay4fx83t7yr",
+      "displayName": "_silhouette",
+      "image": "https://avatars.githubusercontent.com/u/22570800?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1775730003922,
+      "changelog": "feat: prioritize opencli platform adapters (74 sites) over WebFetch/web read. Adapted platforms now route directly to opencli <platform> for structured data instead of falling through generic web read.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae9aa3305e6e41bc97ff0288178442271f395a1d55d64e1ed1eee9b51e0d3209"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/thunder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thunder",
+  "skill": {
+    "id": 60037,
+    "skillKey": "clawhub-thunder",
+    "name": "Thunder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thunder",
+    "url": "https://clawhub.ai/skills/thunder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thunder-49eff747f7b66f70.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "迅雷（重定向到 xunlei 技能）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773652885482,
+      "changelog": "- Skill name changed from \"Thunder\" to \"迅雷\"\n- Version updated from 0.1.0 to 1.0.0\n- Description and tags updated to reflect redirection purpose\n- Added a redirect to the \"xunlei\" skill; this skill is now merged with \"xunlei\"\n- Original development plans and features removed; documentation revised to explain the redirection and unification",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:058148917c2cde28a554ab9124df8aedd8f74a007b22d63feab0d19e082c9ecd"
+}

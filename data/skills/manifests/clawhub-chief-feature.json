@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18975,
+  "uuid": "skill-clawhub-chief-feature",
+  "skillKey": "clawhub-chief-feature",
+  "name": "Chief Feature Workflow",
+  "summary": "Create and implement new features in Chief-managed projects using the Chief CLI. Use when asked to create a new PRD, implement a feature with Chief, set up a...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chief_feature",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Luiz Gustavo Nogara",
+      "features": [
+        "Create and implement new features in Chief-managed projects using the Chief CLI",
+        "Use when asked to create a new PRD, implement a feature with Chief, set up a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chief-feature@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chief-feature",
+      "url": "https://clawhub.ai/skills/chief-feature"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chief-feature",
+    "url": "https://clawhub.ai/skills/chief-feature",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chief-feature-72794a3678ea1ccf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chief-feature@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-chief-feature-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7c2a08d9df5cc8d5267f06f2845d23b43da5883cc6d4e8544c45a163d021cb8",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T16:16:55.700Z"
+}

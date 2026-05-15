@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58180,
+  "uuid": "skill-clawhub-accountant-priv-assistant",
+  "skillKey": "clawhub-accountant-priv-assistant",
+  "name": "Accountant Priv Assistant",
+  "summary": "Personal finance assistant for AccountantPriv. Query SQLite databases (Hapoalim, Isracard, Max) to answer financial questions like \"מאיזה כרטיס יורד הנטפליקס...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.accountant_priv_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sharon8811",
+      "features": [
+        "Personal finance assistant for AccountantPriv",
+        "Query SQLite databases (Hapoalim, Isracard, Max) to answer financial questions like \"מאיזה כרטי."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/accountant-priv-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18531500?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "accountant-priv-assistant",
+      "url": "https://clawhub.ai/skills/accountant-priv-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "accountant-priv-assistant",
+    "url": "https://clawhub.ai/skills/accountant-priv-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/accountant-priv-assistant-39b1f2b4967c799c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/accountant-priv-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-accountant-priv-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0da3c52a6a884b765900ba0d3bbba2dd2e7ae8fa75294271d6138ac66eb621ab",
+      "artifactSizeBytes": 2495
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T12:33:05.873Z"
+}

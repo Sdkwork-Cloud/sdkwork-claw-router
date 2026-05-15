@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/academic-discussion-assistant@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_discussion_assistant",
+  "skill": {
+    "id": 70100,
+    "skillKey": "clawhub-academic-discussion-assistant",
+    "name": "研究生组会录音智能总结助手。和老师讨论/组会汇报的录音,调用skill可以有针对性的识别出学生和老师的内容,同时以老师的内容为重点进行内容总结,根据用户指令,自定义选择以文本展示或者音频展示。"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-discussion-assistant",
+    "url": "https://clawhub.ai/skills/academic-discussion-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-discussion-assistant-22cb8d473bd1af49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when: 用户要把研究生组会、与导师讨论论文修改、技术方案推敲等小规模学术讨论录音转成纪要，并提取老师意见、学生回应、待修改事项和后续动作时触发。 适用于 2 到 3 人、以老师和学生为主的学术讨论场景。Skill 会优先使用 SenseAudio ASR 的说话人分离能力，再结合 Agent 的大模型..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xinhao-96",
+      "userId": "s17est75fddx5qx0wkm9n1szdh85tezf",
+      "displayName": "Xin",
+      "image": "https://avatars.githubusercontent.com/u/151364531?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 315,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773732225253,
+      "changelog": "- No file changes detected; documentation and usage info remain the same.\n- Skill description and detailed rules for academic discussion summarization unchanged.\n- No functional updates or new features in this version.\n- All ASR/TTS integration, prompt usage, and command-line workflow instructions are as before.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83891454630a6a3971b0b92a3cdc794a4263de51c58171736778ff9abc3df0ce"
+}

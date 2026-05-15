@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50354,
+  "uuid": "skill-clawhub-tulebank",
+  "skillKey": "clawhub-tulebank",
+  "name": "Tulebank",
+  "summary": "TuleBank — check wallet balance, send ARS to any CVU/ALIAS, swap USDC/wARS, manage beneficiaries, and move funds with ARS off-ramp/on-ramp flows.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tulebank",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aromeoes",
+      "features": [
+        "TuleBank — check wallet balance, send ARS to any CVU/ALIAS, swap USDC/wARS, manage beneficiarie."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tulebank@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6902572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tulebank",
+      "url": "https://clawhub.ai/skills/tulebank"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tulebank",
+    "url": "https://clawhub.ai/skills/tulebank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tulebank-e81dccf6716a5655.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tulebank@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tulebank-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16426c34c7e6892cacdd46a5f570566f1ec95b1199edf8aac1f74e5385e45e57",
+      "artifactSizeBytes": 1858
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T16:38:51.126Z"
+}

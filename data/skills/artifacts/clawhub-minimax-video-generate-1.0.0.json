@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-video-generate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_video_generate",
+  "skill": {
+    "id": 59017,
+    "skillKey": "clawhub-minimax-video-generate",
+    "name": "minimax-video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-video-generate",
+    "url": "https://clawhub.ai/skills/minimax-video-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-video-generate-6ded795219b3aea2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MiniMax 视频生成技能 - 支持文生视频(Text-to-Video)、图生视频(Image-to-Video)、首尾帧视频(Frame-to-Frame)、主体参考视频(Subject-to-Video)。使用模型 MiniMax-Hailuo-2.3，默认生成 5 秒 720P MP4 视频，自动下载保..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "silingyuan0",
+      "userId": "s177t4ntzk8g80ej8ja2gyfesd83hff2",
+      "displayName": "silingyuan0",
+      "image": "https://avatars.githubusercontent.com/u/26161065?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 254,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774450869879,
+      "changelog": "Initial release of the MiniMax 视频生成技能 (minimax-video):\n\n- Supports text-to-video, image-to-video, frame-to-frame, and subject-to-video generation using the MiniMax-Hailuo-2.3 model.\n- Default output is a 5-second 720P MP4 video with automatic local download.\n- Provides functions for job submission, task status querying, polling/waiting, and file downloading.\n- Includes multiple usage examples for all supported modes.\n- Configuration options allow region selection and API key setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82e7de340623684bf96ffe160b7531eb1b85ea2b78b90b7065986770c757f4e1"
+}

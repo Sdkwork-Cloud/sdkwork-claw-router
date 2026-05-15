@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memclaw-maintance@0.9.31",
+  "version": "0.9.31",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memclaw_maintance",
+  "skill": {
+    "id": 55976,
+    "skillKey": "clawhub-memclaw-maintance",
+    "name": "memclaw-maintance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memclaw-maintance",
+    "url": "https://clawhub.ai/skills/memclaw-maintance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memclaw-maintance-f79bff00d239ddf1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MemClaw Maintenance Guide — Installation, configuration, and maintenance guidance. For daily usage and tool operations, use the [`memclaw` skill](https://cla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sopaco",
+      "userId": "s17a75kt8fank19t6971cm2bs583jz3w",
+      "displayName": "Sopaco",
+      "image": "https://avatars.githubusercontent.com/u/15891288?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.9.31",
+      "createdAt": 1775045537600,
+      "changelog": "- Adds a new required step instructing users to update their AGENTS.md guideline for full MemClaw compatibility.\n- Provides detailed markdown to replace the legacy \"Memory\" section in AGENTS.md, ensuring future sessions use MemClaw instead of older methods.\n- Warns that skipping this step may cause agents to ignore MemClaw and continue using legacy memory.\n- No code or file changes detected—documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39ccd4f32b32ada6500e1138c19be2a151358456e40949cf01da8b52043a9204"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51327,
+  "uuid": "skill-clawhub-jobautopilot-bundle",
+  "skillKey": "clawhub-jobautopilot-bundle",
+  "name": "Jobautopilot Bundle",
+  "summary": "Installs the full Job Autopilot pipeline — search jobs, tailor resumes, and submit applications. Convenience bundle that installs jobautopilot-search, jobaut...",
+  "version": "1.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jobautopilot_bundle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jerronl",
+      "features": [
+        "Installs the full Job Autopilot pipeline — search jobs, tailor resumes, and submit applications",
+        "Convenience bundle that installs jobautopilot-search, jobaut..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jobautopilot-bundle@1.3.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28072469?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jobautopilot-bundle",
+      "url": "https://clawhub.ai/skills/jobautopilot-bundle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jobautopilot-bundle",
+    "url": "https://clawhub.ai/skills/jobautopilot-bundle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jobautopilot-bundle-b9df2be1c708130b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jobautopilot-bundle@1.3.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-jobautopilot-bundle-1.3.2.json",
+      "version": "1.3.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fccb9802bcbb28141951695ec12ff042ce3eab2d8d272c6af40184f2e94a3b2",
+      "artifactSizeBytes": 2179
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T20:36:09.877Z"
+}

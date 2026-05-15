@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45374,
+  "uuid": "skill-clawhub-capability-match",
+  "skillKey": "clawhub-capability-match",
+  "name": "capability-match",
+  "summary": "AI-powered skill router that analyzes your request and recommends the best installed skill for the job",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.capability_match",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Viratkumar123",
+      "features": [
+        "AI-powered skill router that analyzes your request and recommends the best installed skill for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/capability-match@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190368624?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "capability-match",
+      "url": "https://clawhub.ai/skills/capability-match"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "capability-match",
+    "url": "https://clawhub.ai/skills/capability-match",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/capability-match-9a35d78e6f8c1147.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/capability-match@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-capability-match-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12206cc615d5a2e616ba5a15ae4d51d05771ebd2df63034000c0788b3df6b485",
+      "artifactSizeBytes": 3571
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T16:42:14.870Z"
+}

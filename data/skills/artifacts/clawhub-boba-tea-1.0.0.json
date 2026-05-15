@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/boba-tea@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boba_tea",
+  "skill": {
+    "id": 71681,
+    "skillKey": "clawhub-boba-tea",
+    "name": "Boba Tea"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boba-tea",
+    "url": "https://clawhub.ai/skills/boba-tea",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boba-tea-abc514e8f1f971ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供台湾发明的珍珠奶茶产业历史、商业模式及全球连锁品牌扩张情况，聚焦市场规模和文化影响。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 85,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778072770182,
+      "changelog": "Initial release with a comprehensive overview of the boba tea (珍珠奶茶) industry:\n\n- Covers the origin, rise, and global expansion of boba tea since the 1980s.\n- Details key historical milestones, business models, and major brands such as Chatime and Gong Cha.\n- Analyzes industry growth drivers, unique value (珍珠/pearls), and competitive advantages.\n- Includes up-to-date market data and fun facts about the drink’s invention origins and cultural impact.\n- Provides clear guidance on when to reference this skill, e.g., for research on global beverage chains or Asian food culture trends.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ff3d7789bc2c820d5a6f98a518b908e9ed3120ffcd005d7937bf20e022e07f5"
+}

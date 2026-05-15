@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20440,
+  "uuid": "skill-clawhub-video-proof-skill",
+  "skillKey": "clawhub-video-proof-skill",
+  "name": "Video Proof",
+  "summary": "Record video proof of implemented features after coding tasks complete. Use when a coding agent finishes work and needs to visually verify and demonstrate th...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_proof_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rikisann",
+      "features": [
+        "Record video proof of implemented features after coding tasks complete",
+        "Use when a coding agent finishes work and needs to visually verify and demonstrate th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-proof-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52165646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-proof-skill",
+      "url": "https://clawhub.ai/skills/video-proof-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-proof-skill",
+    "url": "https://clawhub.ai/skills/video-proof-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-proof-skill-5a1a4db2614190b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-proof-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-proof-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6d7cc9650f29c164737d31dd4f841addf9708b1d6cf458b72f18936778ff1d3",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T19:47:25.882Z"
+}

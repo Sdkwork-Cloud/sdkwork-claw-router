@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10636,
+  "uuid": "skill-clawhub-clips-machine",
+  "skillKey": "clawhub-clips-machine",
+  "name": "Clips Machine",
+  "summary": "Transform long videos into viral short-form clips. Auto-detect best moments, add trendy captions, export for TikTok/Reels/Shorts. Self-contained, no external modules. 100% free tools.",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clips_machine",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mayank8290",
+      "features": [
+        "Transform long videos into viral short-form clips",
+        "Auto-detect best moments, add trendy captions, export for TikTok/Reels/Shorts",
+        "Self-contained, no external modules",
+        "100% free tools."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clips-machine@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39935418?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clips-machine",
+      "url": "https://clawhub.ai/skills/clips-machine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clips-machine",
+    "url": "https://clawhub.ai/skills/clips-machine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clips-machine-c25bf16eb17e3dbc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clips-machine@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clips-machine-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e022b2902d756e9ab44e777cfda52a2ccc0f3f18ab432a6a0dd20d8e31f1d8b",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T06:35:37.821Z"
+}

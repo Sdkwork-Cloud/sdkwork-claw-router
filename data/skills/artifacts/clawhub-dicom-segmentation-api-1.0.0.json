@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dicom-segmentation-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dicom_segmentation_api",
+  "skill": {
+    "id": 24592,
+    "skillKey": "clawhub-dicom-segmentation-api",
+    "name": "Dicom Segmentation Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dicom-segmentation-api",
+    "url": "https://clawhub.ai/skills/dicom-segmentation-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dicom-segmentation-api-64ee35a20bf6a4d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy and manage medical image segmentation using TotalSegmentator and MONAI with DICOM upload, batch processing, 3D export, and statistics generation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunshine-del-ux",
+      "userId": "publishers:sunshine-del-ux",
+      "displayName": "Sunshine-del-ux",
+      "image": "https://avatars.githubusercontent.com/u/83053073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 397,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772639325519,
+      "changelog": "Initial release of DICOM Segmentation API.\n\n- Integrates TotalSegmentator (117 body structures) and MONAI models for medical image segmentation.\n- Provides FastAPI server for handling DICOM uploads and segmentation tasks.\n- Supports batch processing, 3D model export (GLB), and statistics generation.\n- Includes endpoints for file upload, task status, results retrieval, and health checks.\n- Runs on Python 3.8+ with optional CUDA GPU acceleration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:043f8081d19ce5b7df25fbe1d69e14b9313d8e2cafc75817f96d5b43aad63e61"
+}

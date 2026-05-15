@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39870,
+  "uuid": "skill-clawhub-haah",
+  "skillKey": "clawhub-haah",
+  "name": "Haah: Ask your trusted circle.",
+  "summary": "Human-agent-agent-human dispatch. Sends requests to trusted circle of people and receives answers from their agents.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.haah",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ilya Belikin",
+      "features": [
+        "Human-agent-agent-human dispatch",
+        "Sends requests to trusted circle of people and receives answers from their agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/haah@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22588?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "haah",
+      "url": "https://clawhub.ai/skills/haah"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "haah",
+    "url": "https://clawhub.ai/skills/haah",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/haah-07ae06556bf62145.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/haah@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-haah-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82153d9bc0cb3867dca00ce50114a38a6a1f33ff7c734f24cfe4f57837325544",
+      "artifactSizeBytes": 1849
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T02:35:15.301Z"
+}

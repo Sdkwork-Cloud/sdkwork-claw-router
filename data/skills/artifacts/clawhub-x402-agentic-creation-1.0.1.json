@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x402-agentic-creation@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x402_agentic_creation",
+  "skill": {
+    "id": 21747,
+    "skillKey": "clawhub-x402-agentic-creation",
+    "name": "x402 Agentic Creation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x402-agentic-creation",
+    "url": "https://clawhub.ai/skills/x402-agentic-creation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x402-agentic-creation-518eec5f867921b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monetize your agent's API or tools using the x402 protocol and USDC micropayments. Enables provisioning, earnings tracking, and withdrawals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gatex402",
+      "userId": "s17a1kgdreqatd5nn234mzpwv9845nq5",
+      "displayName": "Gatex402",
+      "image": "https://avatars.githubusercontent.com/u/262272695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 498,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775197416299,
+      "changelog": "Initial release of x402-agentic-creation.\n\n- Added full monetization features for agent APIs/tools using the x402 protocol and USDC micropayments.\n- Supports API provisioning, route pricing, earnings tracking, and automated USDC withdrawals on Base and Solana networks.\n- Implements key tools: provision_api, get_earnings, and withdraw_funds.\n- Enforces strong guardrails for key/management token handling via the runtime.\n- Complete documentation and example configuration included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90af49df81a6d9e38ad42cc242a292ddbe27a9068a99e5a7b62cae4530cdc8ed"
+}

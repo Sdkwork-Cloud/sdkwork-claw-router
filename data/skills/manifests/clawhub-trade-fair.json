@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46235,
+  "uuid": "skill-clawhub-trade-fair",
+  "skillKey": "clawhub-trade-fair",
+  "name": "trade-fair",
+  "summary": "Book flights for trade fairs and exhibition travel. Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itinerary planning,...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trade_fair",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liquanyu123",
+      "features": [
+        "Book flights for trade fairs and exhibition travel",
+        "Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itinerary."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trade-fair@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210639558?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trade-fair",
+      "url": "https://clawhub.ai/skills/trade-fair"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trade-fair",
+    "url": "https://clawhub.ai/skills/trade-fair",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trade-fair-98c5482865c16421.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trade-fair@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trade-fair-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8e62242938a6f71b8b05563e7796fd13e1eaaf23419564747fb8dd7e1e815ce",
+      "artifactSizeBytes": 2349
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T07:37:52.889Z"
+}

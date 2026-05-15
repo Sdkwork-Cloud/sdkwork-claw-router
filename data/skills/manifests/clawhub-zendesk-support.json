@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54887,
+  "uuid": "skill-clawhub-zendesk-support",
+  "skillKey": "clawhub-zendesk-support",
+  "name": "Zendesk",
+  "summary": "Search users and tickets, review macros, and manage support workflows in Zendesk — powered by ClawLink.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zendesk_support",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hithesh Jay",
+      "features": [
+        "Search users and tickets, review macros, and manage support workflows in Zendesk — powered by C."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zendesk-support@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83839061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zendesk-support",
+      "url": "https://clawhub.ai/skills/zendesk-support"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zendesk-support",
+    "url": "https://clawhub.ai/skills/zendesk-support",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zendesk-support-daaf60bec80cff8c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zendesk-support@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zendesk-support-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2b8ff2673b57bc023596bf1b11c6089e28ace3427da58f5e4f6d1c0ec149510",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T14:21:59.130Z"
+}

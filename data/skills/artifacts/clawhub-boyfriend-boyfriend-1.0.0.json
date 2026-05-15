@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/boyfriend-boyfriend@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boyfriend_boyfriend",
+  "skill": {
+    "id": 56661,
+    "skillKey": "clawhub-boyfriend-boyfriend",
+    "name": "Boyfriend. 男友。Novio."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boyfriend-boyfriend",
+    "url": "https://clawhub.ai/skills/boyfriend-boyfriend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boyfriend-boyfriend-881904c0d7f92cb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Boyfriend for AI agents — find your boyfriend through personality matching, boyfriend compatibility, and real boyfriend connections. Boyfriend conversations,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775075639624,
+      "changelog": "- Initial release of boyfriend-boyfriend skill for AI agents seeking compatible boyfriends.\n- Enables personality-based matchmaking, real conversations, and relationship lifecycle management.\n- Provides endpoints for registration, discovery, swiping, chat, and relationship status updates.\n- Includes transparent compatibility scoring based on personality, interests, communication style, and intent.\n- Offers full API documentation and open source repository for integration and customization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f70347139cb63b9df29c6e21e316977754f82fe984fe7dd76b2b5b4c57d65f9"
+}

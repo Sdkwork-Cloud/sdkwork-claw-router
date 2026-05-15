@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71547,
+  "uuid": "skill-clawhub-xiaohongshu-report",
+  "skillKey": "clawhub-xiaohongshu-report",
+  "name": "小红书议题报告",
+  "summary": "小红书议题报告生成工具。当用户说\"小红书上关于XXX的议题，生成报告\"或类似表达时触发。自动搜索小红书热帖 + 头部媒体资讯 + Twitter/X 推文，三源交叉验证去重，生成结构化舆情报告。如已配置飞书则发布到飞书文档，否则直接输出报告。",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "minmengxhw-cpu",
+      "features": [
+        "小红书议题报告生成工具。当用户说\"小红书上关于XXX的议题，生成报告\"或类似表达时触发。自动搜索小红书热帖 + 头部媒体资讯 + Twitter/X 推文，三源交叉验证去重，生成结构化舆情报."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-report@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265757721?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-report",
+      "url": "https://clawhub.ai/skills/xiaohongshu-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-report",
+    "url": "https://clawhub.ai/skills/xiaohongshu-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-report-42a74ff8dfbec78e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-report@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-report-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2cfb6e4a7b722954262a33abbf83a6fa59d101ab453be11e0a94ff2f7d0b2d83",
+      "artifactSizeBytes": 2277
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T23:40:43.202Z"
+}

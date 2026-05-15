@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53321,
+  "uuid": "skill-clawhub-revid-blog-to-avatar-video",
+  "skillKey": "clawhub-revid-blog-to-avatar-video",
+  "name": "Blog to Avatar Video",
+  "summary": "Turn a blog post URL into a talking-head avatar video — the avatar reads a summarized script of the post against a clean background. Use when the user wants...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.revid_blog_to_avatar_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "api00",
+      "features": [
+        "Turn a blog post URL into a talking-head avatar video — the avatar reads a summarized script of.",
+        "Use when the user wants..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/revid-blog-to-avatar-video@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57573621?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "revid-blog-to-avatar-video",
+      "url": "https://clawhub.ai/skills/revid-blog-to-avatar-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "revid-blog-to-avatar-video",
+    "url": "https://clawhub.ai/skills/revid-blog-to-avatar-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/revid-blog-to-avatar-video-92f923ca51beb54b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/revid-blog-to-avatar-video@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-revid-blog-to-avatar-video-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b0bd7055c373836bb94c54fb1e11ecd385b2d740df35ba525050dcf1a52da3d",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T11:09:57.357Z"
+}

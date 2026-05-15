@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-instagram@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_instagram",
+  "skill": {
+    "id": 44103,
+    "skillKey": "clawhub-editor-instagram",
+    "name": "Editor Instagram"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-instagram",
+    "url": "https://clawhub.ai/skills/editor-instagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-instagram-9d2040bb966f6158.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get Instagram-ready clips ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"cu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776505169178,
+      "changelog": "Instagram Video Editor skill initial release.\n\n- Instantly edit and export Instagram-ready videos up to 500MB (MP4, MOV, AVI, WebM)\n- AI-powered: describe your edit (“cut to 30s, add transitions, sync music”) and get a 1080p MP4 back in seconds  \n- Automatic session setup, secure anonymous tokens, and cloud GPU rendering\n- Simple workflows: upload, edit, preview, export, and download—all optimized for Instagram Reels and feed posts\n- Handles video, audio, and text overlays; smart prompt-to-action routing for common editing tasks\n- Built-in error handling for uploads, credits, and export issues with clear user feedback",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e4c6b24eae12be88fd901d63f150c3d60603043cf123ee16cacaa31717a2935"
+}

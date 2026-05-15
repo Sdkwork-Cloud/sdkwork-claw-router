@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sports-skills-football-data@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sports_skills_football_data",
+  "skill": {
+    "id": 51293,
+    "skillKey": "clawhub-sports-skills-football-data",
+    "name": "Football Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sports-skills-football-data",
+    "url": "https://clawhub.ai/skills/sports-skills-football-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sports-skills-football-data-f6cdd785521447f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Football (soccer) data across 13 leagues — standings, schedules, match stats, xG, transfers, player profiles. Zero config, no API keys. Covers Premier League..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "antonelli182",
+      "userId": "s1723h1tj3z971jmzpyq2g910d84mph4",
+      "displayName": "André Antonelli",
+      "image": "https://avatars.githubusercontent.com/u/32582969?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775935189027,
+      "changelog": "Initial release of football-data skill — access football (soccer) data for major world leagues with no API keys needed.\n\n- Supports standings, schedules, match stats (inc. xG), transfers, player profiles, and more across 13 major competitions.\n- Zero config: usable via CLI or Python SDK; Python 3.10+ required.\n- Explicit guide on safe/valid usage: which commands work for which leagues, and when to avoid specific endpoints.\n- Provides command reference, detailed usage instructions, and real-world input-to-action examples.\n- Designed for post-match data only (no real-time/live scores).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c62ef9b969484586798c22dc5a04ed2e8253fb4f7d721db3c7601c4664b4bf08"
+}

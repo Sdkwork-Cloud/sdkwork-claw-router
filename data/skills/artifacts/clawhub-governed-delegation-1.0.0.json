@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/governed-delegation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.governed_delegation",
+  "skill": {
+    "id": 33549,
+    "skillKey": "clawhub-governed-delegation",
+    "name": "Governed Delegation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "governed-delegation",
+    "url": "https://clawhub.ai/skills/governed-delegation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/governed-delegation-af9dcee5604de196.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Policy-guided governed delegation for subagent use. Use when deciding whether to delegate, which model tier is allowed, whether execution must fail closed, o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joaodriessen",
+      "userId": "s177f0p11chr0wge1x85vvkm5x83vp1n",
+      "displayName": "Joao Driessen",
+      "image": "https://avatars.githubusercontent.com/u/3994246?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774775085507,
+      "changelog": "governed-delegation v1.0.0\n\n- Introduces a governance skill for policy-guided, auditable delegation decisions.\n- Provides a structured helper to determine allowed execution envelope before delegating tasks.\n- Standardizes task classification on risk and type axes (taskClass, deterministic, criticalWrite, requiresDeepReasoning).\n- Enforces separation between task decomposition (GPT), policy (governed delegation), and execution (OpenClaw runtime).\n- Strongly discourages unsafe delegation and mandates “fail closed” for critical or high-risk operations.\n- Clarifies when to use the skill versus other configuration, inspection, or mutation workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:959761c83d157622d4816373c80e8e2422c1411a798c66eb8b18b8e8d25782c4"
+}

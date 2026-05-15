@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21724,
+  "uuid": "skill-clawhub-unraidclaw",
+  "skillKey": "clawhub-unraidclaw",
+  "name": "UnraidClaw",
+  "summary": "Manage your Unraid server through AI agents - 43 tools for Docker, VMs, array, shares, system, notifications, and more with permission control.",
+  "version": "0.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unraidclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "emaspa",
+      "features": [
+        "Manage your Unraid server through AI agents",
+        "43 tools for Docker, VMs, array, shares, system, notifications, and more with permission contro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unraidclaw@0.1.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18552276?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unraidclaw",
+      "url": "https://clawhub.ai/skills/unraidclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unraidclaw",
+    "url": "https://clawhub.ai/skills/unraidclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unraidclaw-cd3e0102320e1683.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unraidclaw@0.1.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-unraidclaw-0.1.9.json",
+      "version": "0.1.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e75741bd99114dc1237cc99f4119253f4f38ffdbe0b4f5858b5bb2aa279c1532",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:45:02.814Z"
+}

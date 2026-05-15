@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/premier-league-football@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.premier_league_football",
+  "skill": {
+    "id": 65032,
+    "skillKey": "clawhub-premier-league-football",
+    "name": "Premier League Football"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "premier-league-football",
+    "url": "https://clawhub.ai/skills/premier-league-football",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/premier-league-football-04caab9e395d3f4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供英超球队、球员、赛程、比分、积分榜及相关新闻动态的实时查询与统计服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775992115699,
+      "changelog": "- 新增“英超 - 英格兰足球超级联赛技能”，支持查询英超相关信息。\n- 支持球队、球员、赛程、比分、积分榜等多项核心功能。\n- 可获取实时比赛数据、数据统计及新闻动态。\n- 明确赛程调整和数据准确性提示。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a62d40bde6ce397a8eb42e9743331b243047b704afbd87cd48261689f22e7d3"
+}

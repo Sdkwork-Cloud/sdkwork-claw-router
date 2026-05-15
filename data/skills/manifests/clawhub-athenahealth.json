@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25675,
+  "uuid": "skill-clawhub-athenahealth",
+  "skillKey": "clawhub-athenahealth",
+  "name": "Athenahealth",
+  "summary": "Athenahealth integration. Manage Patients, Appointments, Providers, Practices, Departments, Claims. Use when the user wants to interact with Athenahealth data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.athenahealth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Athenahealth integration",
+        "Manage Patients, Appointments, Providers, Practices, Departments, Claims",
+        "Use when the user wants to interact with Athenahealth data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/athenahealth@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "athenahealth",
+      "url": "https://clawhub.ai/skills/athenahealth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "athenahealth",
+    "url": "https://clawhub.ai/skills/athenahealth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/athenahealth-309ab0f29e4427e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/athenahealth@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-athenahealth-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e52e308e1c494769bf4e0d42b4f31adaa2895e23817d1ca234386752ba3216f",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T20:47:18.315Z"
+}

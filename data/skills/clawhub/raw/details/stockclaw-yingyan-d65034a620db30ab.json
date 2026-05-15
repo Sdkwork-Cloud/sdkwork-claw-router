@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "stockclaw-yingyan",
+    "displayName": "stockClaw-yingyan 股票量化助手，可以获取个股择时量化图，个股行情分析，AI搜索特定股票，监控股买卖点变化通知。",
+    "summary": "为该股票量化项目提供 OpenClaw 接入说明，支持股票量化图生成、股票行情问答、自然语言 AI 搜股与 WebSocket 实时监控信号推送。凭证须从与本 Skill 同目录的 config.json 中 openclawCredentials 读取：user_id 与 openClaw_api_key 为必...",
+    "tags": {
+      "latest": "1.1.4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 520,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "createdAt": 1773316158132,
+    "updatedAt": 1778307472798
+  },
+  "latestVersion": {
+    "version": "1.1.4",
+    "createdAt": 1774759265242,
+    "changelog": "**摘要：本版本区分了 HTTP 与实时监控的 API Key 配置，显著优化凭证管理与用户指引。**\n\n- 新增 config.json 的 monitor_api_key 字段，用于 WebSocket 实时监控，和 openClaw_api_key (HTTP) 分离。\n- 凭证规则全面梳理：user_id、openClaw_api_key 必填用于所有 HTTP 请求；monitor_api_key 仅实时监控需配，未开启监控可留空。\n- 用户操作、配置或补全 Key 的指引、格式校验、保存规则更清晰；不同接口缺 Key 时分别给出相应提示。\n- WebSocket 监控连接过程细化强约束：严格使用 monitor_api_key，避免混用 Key，连接失败优先提示对应 Key 权限问题。\n- 其它接口与行为不变，但文档结构与凭证逻辑显著优化。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "woshixihongtu-cyber",
+    "userId": "s17ah1z7p795zzgh5ca8n1pz4s83hy9w",
+    "displayName": "woshixihongtu-cyber",
+    "image": "https://avatars.githubusercontent.com/u/244276180?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778307472798
+  }
+}

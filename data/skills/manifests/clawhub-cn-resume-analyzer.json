@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60495,
+  "uuid": "skill-clawhub-cn-resume-analyzer",
+  "skillKey": "clawhub-cn-resume-analyzer",
+  "name": "简历智能分析",
+  "summary": "Resume Analyzer skill. 自动生成，无人工审查。",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_resume_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "Resume Analyzer skill",
+        "自动生成，无人工审查。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-resume-analyzer@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-resume-analyzer",
+      "url": "https://clawhub.ai/skills/cn-resume-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-resume-analyzer",
+    "url": "https://clawhub.ai/skills/cn-resume-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-resume-analyzer-bf2136d88aa1b08d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-resume-analyzer@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-resume-analyzer-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4eff0f55e15c63b71c7ad32f305317e4edb77c56dac883743fefce832ac079b",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T04:49:22.438Z"
+}

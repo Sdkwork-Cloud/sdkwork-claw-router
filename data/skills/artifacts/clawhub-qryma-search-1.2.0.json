@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qryma-search@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qryma_search",
+  "skill": {
+    "id": 20773,
+    "skillKey": "clawhub-qryma-search",
+    "name": "Qryma Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qryma-search",
+    "url": "https://clawhub.ai/skills/qryma-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qryma-search-d200b5bd67c12a71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Qryma AI Search retrieves Web information and returns LLM-friendly data. Get started for free, just sign up."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qryma888",
+      "userId": "s17cjkf1pz0evevmsqv3e4qczn83g7e0",
+      "displayName": "qryma888",
+      "image": "https://avatars.githubusercontent.com/u/265489938?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 339,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 28
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775121790973,
+      "changelog": "Version 1.1.13\n\n- Removed documentation for the --start pagination option from SKILL.md.\n- No functional or code changes detected; update is limited to documentation cleanup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a64bd2c7591dba84067f100a759fe8cbc90a1e6aa18ef9f8fcf525d2911c2c5"
+}

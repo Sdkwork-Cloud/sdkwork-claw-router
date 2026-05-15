@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65135,
+  "uuid": "skill-clawhub-vnpy",
+  "skillKey": "clawhub-vnpy",
+  "name": "vnpy",
+  "summary": "vn.py 开源量化交易框架 - 支持CTA、价差、期权策略，20+券商接口，覆盖国内外市场。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vnpy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coderwpf",
+      "features": [
+        "vn.py 开源量化交易框架",
+        "支持CTA、价差、期权策略，20+券商接口，覆盖国内外市场。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vnpy@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134041140?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vnpy",
+      "url": "https://clawhub.ai/skills/vnpy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vnpy",
+    "url": "https://clawhub.ai/skills/vnpy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vnpy-7fbce557142c5ce0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vnpy@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-vnpy-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d21dc145879b2dced75a0a0bd189f34757f0f85752c21c5d8ef9081ac2e1518d",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T10:01:51.653Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-native-cli@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_native_cli",
+  "skill": {
+    "id": 56841,
+    "skillKey": "clawhub-agent-native-cli",
+    "name": "agent-native-cli (deprecated)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-native-cli",
+    "url": "https://clawhub.ai/skills/agent-native-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-native-cli-7410aa1dd931ba66.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DEPRECATED — this skill has been renamed. Install `agent-native-design` instead via `clawhub install agent-native-design`. Do not use this slug for new work;..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agents365-ai",
+      "userId": "s177ks88grnjrm2y5799tcjned83g880",
+      "displayName": "Agents365.ai",
+      "image": "https://avatars.githubusercontent.com/u/221161299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 263,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1777967540672,
+      "changelog": "Display name fix; content unchanged from 1.2.1 — install agent-native-design instead.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:855128b8f671c58270e9717ae7562dd0bf325569dc0e2e15929e347a54fa8696"
+}

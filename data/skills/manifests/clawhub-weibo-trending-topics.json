@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57777,
+  "uuid": "skill-clawhub-weibo-trending-topics",
+  "skillKey": "clawhub-weibo-trending-topics",
+  "name": "Weibo Trending Topics",
+  "summary": "Track Weibo hot search trends (微博热搜) in real-time. Fetches live trending topics, categories (娱乐/社会/科技/体育), and historical trend data. Zero config required. T...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weibo_trending_topics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dzxiatian-crypto",
+      "features": [
+        "Track Weibo hot search trends (微博热搜) in real-time",
+        "Fetches live trending topics, categories (娱乐/社会/科技/体育), and historical trend data",
+        "Zero config required"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weibo-trending-topics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266891090?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weibo-trending-topics",
+      "url": "https://clawhub.ai/skills/weibo-trending-topics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weibo-trending-topics",
+    "url": "https://clawhub.ai/skills/weibo-trending-topics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weibo-trending-topics-2c60355d77e0b780.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weibo-trending-topics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weibo-trending-topics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8108bbd02c4cd94ed6bbd83445c74549cf0376209179c230e048511d83e0fe9a",
+      "artifactSizeBytes": 2304
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T04:19:49.972Z"
+}

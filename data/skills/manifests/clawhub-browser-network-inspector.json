@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42507,
+  "uuid": "skill-clawhub-browser-network-inspector",
+  "skillKey": "clawhub-browser-network-inspector",
+  "name": "Browser Network Inspector",
+  "summary": "Browser-side request inspection and reporting for user-authorized web debugging. Use when you want one skill to observe page fetch/XHR/WebSocket activity, in...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_network_inspector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dougzl",
+      "features": [
+        "Browser-side request inspection and reporting for user-authorized web debugging",
+        "Use when you want one skill to observe page fetch/XHR/WebSocket activity, in..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-network-inspector@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/188727531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-network-inspector",
+      "url": "https://clawhub.ai/skills/browser-network-inspector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-network-inspector",
+    "url": "https://clawhub.ai/skills/browser-network-inspector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-network-inspector-59f85577df68ff85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-network-inspector@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-network-inspector-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92c6770f4392ea861ef90e6b5c82e55b37beb202949a1966f6ac97c4beb59491",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T04:35:45.078Z"
+}

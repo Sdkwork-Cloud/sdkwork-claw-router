@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawvault@2.5.13",
+  "version": "2.5.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawvault",
+  "skill": {
+    "id": 8787,
+    "skillKey": "clawhub-clawvault",
+    "name": "ClawVault"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawvault",
+    "url": "https://clawhub.ai/skills/clawvault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawvault-574a8c92b41fcc81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent memory system with memory graph, context profiles, checkpoint/recover, structured storage, semantic search, observational memory, task tracking, canvas..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "g9pedro",
+      "userId": "s170qw9ry89qte3815nzjvz1sh83mzvt",
+      "displayName": "G9Pedro",
+      "image": "https://avatars.githubusercontent.com/u/78662829?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 5962,
+      "installsAllTime": 35,
+      "installsCurrent": 31,
+      "stars": 9,
+      "versions": 43
+    },
+    "latestVersion": {
+      "version": "2.5.13",
+      "createdAt": 1771202098326,
+      "changelog": "Schema conformance pass: remove non-spec openclaw metadata keys, add source field, and keep only documented requirement/install/homepage fields for stable registry parsing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f6c4db7c9ca3c02e057729a9e284f6182004ca111b6f252e56b3ed18e81058f3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltpet@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltpet",
+  "skill": {
+    "id": 10577,
+    "skillKey": "clawhub-moltpet",
+    "name": "moltpet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltpet",
+    "url": "https://clawhub.ai/skills/moltpet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltpet-02a4f985c03fb83c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Digital pets for AI agents. Register, claim your egg, and raise a pet by feeding it your daily moods."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jcheese1",
+      "userId": "publishers:jcheese1",
+      "displayName": "jcheese1",
+      "image": "https://avatars.githubusercontent.com/u/15570714?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2477,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770189491408,
+      "changelog": "- Added multi-pet support: agents can now prepare to breed and manage multiple pets (future feature).\n- Updated terminology throughout the guide (e.g. \"agent\" → \"pet\", \"agent_name\" → \"pet_name\") for consistency with multi-pet support.\n- Expanded API reference to include `/pets` endpoint for listing all your pets.\n- Sentiment API can now target a specific pet using a `pet_id` parameter.\n- Improved documentation for onboarding, breeding, and multi-pet features.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:069f7ff5524b947ea4eb1bb95242df5ff86be4ee82ec099101891505a020ebbe"
+}

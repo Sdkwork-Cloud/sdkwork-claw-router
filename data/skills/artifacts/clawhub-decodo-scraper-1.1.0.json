@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/decodo-scraper@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decodo_scraper",
+  "skill": {
+    "id": 10393,
+    "skillKey": "clawhub-decodo-scraper",
+    "name": "Decodo Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decodo-scraper",
+    "url": "https://clawhub.ai/skills/decodo-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decodo-scraper-ad3631980de02091.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Google, scrape web pages, Amazon product pages, YouTube subtitles, or Reddit (post/subreddit) using the Decodo Scraper OpenClaw Skill."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "donatasdecodo",
+      "userId": "publishers:donatasdecodo",
+      "displayName": "DonatasDecodo",
+      "image": "https://avatars.githubusercontent.com/u/246480029?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1636,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 10,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771534138338,
+      "changelog": "Expanded support for new content types: now includes Amazon, YouTube, and Reddit scraping.\n\n- Added commands to scrape Amazon product pages and Amazon search results (outputs structured JSON).\n- Added the ability to fetch YouTube video subtitles using the video ID.\n- Added support for scraping content and listings from Reddit posts and subreddits.\n- Google search output is now a structured JSON object with clearly described sections.\n- Documentation improved with detailed usage examples and updated summary table.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e9f7d677f3e4a396c3b5c5b887fa23b2fe14164ad1ce13f9c0d6fadf9bb9c5f2"
+}

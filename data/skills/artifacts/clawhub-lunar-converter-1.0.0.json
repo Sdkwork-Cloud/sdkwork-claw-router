@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lunar-converter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lunar_converter",
+  "skill": {
+    "id": 65359,
+    "skillKey": "clawhub-lunar-converter",
+    "name": "lunar-converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lunar-converter",
+    "url": "https://clawhub.ai/skills/lunar-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lunar-converter-9a4089df55a773e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "阴历（农历）与阳历（公历）日期转换工具。 当用户需要： (1) 阴历转阳历（如\"阴历2月12是阳历几号\"、\"2026年阴历生日\"） (2) 阳历转阴历（如\"2026年3月26日是阴历多少\"） (3) 查询某个阴历日期对应的阳历日期 (4) 任何阴历阳历相互转换的需求"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jincan0412",
+      "userId": "s178tzk5gwc6vfjkg1ejw9e6r583ns44",
+      "displayName": "jincan0412",
+      "image": "https://avatars.githubusercontent.com/u/90490466?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774572450717,
+      "changelog": "中文：\n• 熟练掌握农历（阴历）与公历（阳历）之间的日期转换，可准确进行传统节日、节气及历史日期的对应换算。\nEnglish：\n• Proficient in converting dates between the Chinese lunar calendar (Yinli) and the Gregorian calendar (Yangli), with accurate alignment of traditional festivals, solar terms, and historical dates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2fa84fafcf48050e5e2907caad68dd6df9c91144ca7efa3e35c1b8138b7fe1b3"
+}

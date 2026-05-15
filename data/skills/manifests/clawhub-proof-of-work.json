@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38810,
+  "uuid": "skill-clawhub-proof-of-work",
+  "skillKey": "clawhub-proof-of-work",
+  "name": "Proof of Work",
+  "summary": "Automates verification that AI agents truly completed tasks by checking output files, system states, and logs for expected results and activity.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proof_of_work",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kgapol",
+      "features": [
+        "Automates verification that AI agents truly completed tasks by checking output files, system st."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proof-of-work@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1832819?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proof-of-work",
+      "url": "https://clawhub.ai/skills/proof-of-work"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proof-of-work",
+    "url": "https://clawhub.ai/skills/proof-of-work",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proof-of-work-673993a95ab92eb8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proof-of-work@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proof-of-work-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efb0854177dac995d058821361b35a5174b617b3c72f22ff64379c129ce03dfe",
+      "artifactSizeBytes": 2343
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T04:19:36.222Z"
+}

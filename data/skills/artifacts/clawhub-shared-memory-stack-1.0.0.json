@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shared-memory-stack@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shared_memory_stack",
+  "skill": {
+    "id": 46006,
+    "skillKey": "clawhub-shared-memory-stack",
+    "name": "Shared Memory Stack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shared-memory-stack",
+    "url": "https://clawhub.ai/skills/shared-memory-stack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shared-memory-stack-a1661e0472a40874.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete reference for the shared memory architecture connecting Claude Code, OpenClaw/Kimi, and LM Studio subagents through Obsidian vault + MemPalace (Chro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nerua1",
+      "userId": "s178f4bnw35dnxc3ymhvgf114983yzer",
+      "displayName": "nerua1",
+      "image": "https://avatars.githubusercontent.com/u/271220546?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776028636227,
+      "changelog": "- Initial release of shared-memory-stack skill: complete documentation of multi-agent shared memory architecture connecting Claude Code, OpenClaw/Kimi, and LM Studio via Obsidian vault and MemPalace (ChromaDB).\n- Reference covers: vault/file structure, semantic/keyword search, idea capture pipeline, mempalace setup, and inter-agent communication.\n- Details provided for key file paths, mining/searching procedures, CLI scripts, and skill publishing workflows for both Claude Code and OpenClaw.\n- Outlines required Python environment, common issues, and troubleshooting tips for memory management and agent interoperability.\n- Quick reference section for all major commands and daily usage scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:771bb6f5e6f48e55e0c92cc7a7fcb34926bc8ff2e8fde4f62586627dad1bdbb4"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27970,
+  "uuid": "skill-clawhub-restaurant-booking-opentable",
+  "skillKey": "clawhub-restaurant-booking-opentable",
+  "name": "Restaurant Booking - OpenTable",
+  "summary": "Book restaurant tables on OpenTable via the browser tool. Handles hidden time slots and terms checkboxes with JS evaluate fallbacks. Works with a logged-in s...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.restaurant_booking_opentable",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eeshita-Pande",
+      "features": [
+        "Book restaurant tables on OpenTable via the browser tool",
+        "Handles hidden time slots and terms checkboxes with JS evaluate fallbacks",
+        "Works with a logged-in s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/restaurant-booking-opentable@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33002555?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "restaurant-booking-opentable",
+      "url": "https://clawhub.ai/skills/restaurant-booking-opentable"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "restaurant-booking-opentable",
+    "url": "https://clawhub.ai/skills/restaurant-booking-opentable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/restaurant-booking-opentable-bbc3421a8b80ca76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/restaurant-booking-opentable@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-restaurant-booking-opentable-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aed4afbc39d09b6e9b4cf6b43a92e42abce5725f7fa72c5a66425ea1c43f4ba3",
+      "artifactSizeBytes": 2441
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T20:08:45.534Z"
+}

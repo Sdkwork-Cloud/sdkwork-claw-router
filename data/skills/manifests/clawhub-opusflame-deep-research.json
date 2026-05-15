@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17126,
+  "uuid": "skill-clawhub-opusflame-deep-research",
+  "skillKey": "clawhub-opusflame-deep-research",
+  "name": "OpusFlame Deep Research",
+  "summary": "Autonomous multi-model deep research with framework-driven reasoning. Spawns 4 parallel model agents (Gemini 2.5 Pro, o3, Opus, MiniMax), each applies best-p...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opusflame_deep_research",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeadingOT",
+      "features": [
+        "Autonomous multi-model deep research with framework-driven reasoning",
+        "Spawns 4 parallel model agents (Gemini 2.5 Pro, o3, Opus, MiniMax), each applies best-p..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opusflame-deep-research@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40451339?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opusflame-deep-research",
+      "url": "https://clawhub.ai/skills/opusflame-deep-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opusflame-deep-research",
+    "url": "https://clawhub.ai/skills/opusflame-deep-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opusflame-deep-research-3d6c8b82eeca0b97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opusflame-deep-research@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opusflame-deep-research-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee88f2c3a6a872e7ecf002d8120911540e001a2d35be44f1501d6aeb90700a51",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T04:34:02.570Z"
+}

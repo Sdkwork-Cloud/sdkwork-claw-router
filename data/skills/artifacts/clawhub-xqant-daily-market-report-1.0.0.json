@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xqant-daily-market-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xqant_daily_market_report",
+  "skill": {
+    "id": 64046,
+    "skillKey": "clawhub-xqant-daily-market-report",
+    "name": "xqant daily market report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xqant-daily-market-report",
+    "url": "https://clawhub.ai/skills/xqant-daily-market-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xqant-daily-market-report-ab939931a32fbd94.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日15:30生成大盘走势、行业涨跌、债券市场及固收+赛道预测的市场简报，含风险提示和成交量分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wesdaliang",
+      "userId": "s171wvhk6kszhmj6qvw55npmf583hfrs",
+      "displayName": "wesdaliang",
+      "image": "https://avatars.githubusercontent.com/u/42329123?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774366634732,
+      "changelog": "Initial release of xqant-daily-market-report.\n\n- Automatically generates daily 15:30 market reports covering index performance, industry movers, bond market updates, and 固收+赛道 predictions.\n- Supports markdown output, including risk warnings and key insights for multiple product pools.\n- Integrates with reference files for standardized product lists and market data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:462c66f6f264257d59f65544581cc45970598132427992d96a85f1c8363d7580"
+}

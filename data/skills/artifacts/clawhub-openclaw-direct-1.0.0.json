@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-direct@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_direct",
+  "skill": {
+    "id": 26860,
+    "skillKey": "clawhub-openclaw-direct",
+    "name": "OpenClaw Direct Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-direct",
+    "url": "https://clawhub.ai/skills/openclaw-direct",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-direct-3273c45249ca1ff2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "One-click OpenClaw installer with security hardening. No Docker required - runs directly on Windows, macOS, and Linux."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ningtoba",
+      "userId": "s172pfdqtvq8nh4mb3gc3vv4gd83we2v",
+      "displayName": "Ning",
+      "image": "https://avatars.githubusercontent.com/u/55053307?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772767165843,
+      "changelog": "One-click installer with security hardening, auto-installs pc-assistant and event-monitor skills",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:72664825b3cdaf3cd59e717a5752754a02c7d73a5890af49fdcfdef0a22d4f5b"
+}

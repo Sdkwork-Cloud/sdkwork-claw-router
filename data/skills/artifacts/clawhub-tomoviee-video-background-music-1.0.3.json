@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tomoviee-video-background-music@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tomoviee_video_background_music",
+  "skill": {
+    "id": 24251,
+    "skillKey": "clawhub-tomoviee-video-background-music",
+    "name": "Tomoviee Video Background Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tomoviee-video-background-music",
+    "url": "https://clawhub.ai/skills/tomoviee-video-background-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tomoviee-video-background-music-8e73c49fcef58905.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate music tailored to video content. Use when users request video_soundtrack operations or related tasks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wondershare-boop",
+      "userId": "s1707d6v06e1pv7bbn814sjdq583gtne",
+      "displayName": "wondershare-boop",
+      "image": "https://avatars.githubusercontent.com/u/208894930?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 417,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774624615426,
+      "changelog": "- Simplified setup and usage instructions for video soundtrack generation.\n- Removed dependencies on requirements.txt for installation guidance.\n- Updated to use tomoviee_video_soundtrack_client.py as the main client, replacing the previous client script.\n- Streamlined documentation and parameter descriptions for clarity.\n- References to removed compatibility layers and outdated endpoints eliminated.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:319186b94148495741f74f9cc51fb13fec4b30be27c3e14dd1a9e1f053e86fff"
+}

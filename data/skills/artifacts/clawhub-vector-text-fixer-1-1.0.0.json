@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vector-text-fixer-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vector_text_fixer_1",
+  "skill": {
+    "id": 42466,
+    "skillKey": "clawhub-vector-text-fixer-1",
+    "name": "Vector Text Fixer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vector-text-fixer-1",
+    "url": "https://clawhub.ai/skills/vector-text-fixer-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vector-text-fixer-1-20d32781cbe7fe58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fix garbled text in PDF/SVG vector graphics caused by font encoding issues, making files editable in AI tools. Supports batch processing and JSON export for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775097138947,
+      "changelog": "Initial release of vector-text-fixer.\n\n- Fixes garbled text in PDF and SVG vector graphics caused by font encoding or embedding issues.\n- Supports both single-file and batch processing modes.\n- Allows export of repair results in editable JSON format for manual correction.\n- Offers minimal, standard, and aggressive repair levels to suit varying document damage.\n- Includes robust validation and fallback error handling for unsupported or incomplete requests.\n- Provides clear output format requirements with confidence ratings and manual review recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e13daa85871dcfe175e3abf0ce493eeea5e92cf73230e0159ca55e7d3fdbf96"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49812,
+  "uuid": "skill-clawhub-skill-publisher-universal",
+  "skillKey": "clawhub-skill-publisher-universal",
+  "name": "Publish Skill Publisher",
+  "summary": "Generic publishing tool for Claude Code skills. Validates, packages, and publishes to ClawHub, Hermes Agent, and anthropics/skills with bilingual README supp...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_publisher_universal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Walle",
+      "features": [
+        "Generic publishing tool for Claude Code skills",
+        "Validates, packages, and publishes to ClawHub, Hermes Agent, and anthropics/skills with bilingu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-publisher-universal@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9403745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-publisher-universal",
+      "url": "https://clawhub.ai/skills/skill-publisher-universal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-publisher-universal",
+    "url": "https://clawhub.ai/skills/skill-publisher-universal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-publisher-universal-e2be2b5e2596cdd9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-publisher-universal@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-publisher-universal-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9850f02fbb8c615a35201da2a993f92a2a585d73ae35067e240ca343f2c7ed25",
+      "artifactSizeBytes": 2506
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T02:51:28.618Z"
+}

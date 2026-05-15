@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-search-bwm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_search_bwm",
+  "skill": {
+    "id": 44322,
+    "skillKey": "clawhub-x-search-bwm",
+    "name": "X Search Bwm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-search-bwm",
+    "url": "https://clawhub.ai/skills/x-search-bwm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-search-bwm-2385d8f30a03d448.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search X (Twitter) posts using the xAI API. Use when the user wants to find tweets, search X/Twitter, look up what people are saying on X, or find social med..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blueworldmarketing",
+      "userId": "s1740gycb9xbre1t4rrt0aw1g184yabw",
+      "displayName": "blueworldmarketing",
+      "image": "https://avatars.githubusercontent.com/u/29962533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776364574315,
+      "changelog": "x-search-bwm v1.0.0 – Initial release\n\n- Search X (Twitter) posts in real time using the xAI Grok API.\n- Supports filtering by handles, excluding handles, date range, and enabling image/video understanding.\n- Results include post content, authors, and links to original X posts.\n- Setup requires a valid XAI API key.\n- Command-line usage with various helpful flags for flexible search queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:adc7ba18616139718e062b14ef046d7a831052d8a502db8ef7877b27185eb5c6"
+}

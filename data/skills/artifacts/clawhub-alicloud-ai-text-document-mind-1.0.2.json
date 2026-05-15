@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alicloud-ai-text-document-mind@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alicloud_ai_text_document_mind",
+  "skill": {
+    "id": 13620,
+    "skillKey": "clawhub-alicloud-ai-text-document-mind",
+    "name": "Alicloud Ai Text Document Mind"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alicloud-ai-text-document-mind",
+    "url": "https://clawhub.ai/skills/alicloud-ai-text-document-mind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alicloud-ai-text-document-mind-de7763cdda28a0c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Document Mind (DocMind) via Node.js SDK to submit document parsing jobs and poll results. Designed for Claude Code/Codex document understanding workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1376,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773221902320,
+      "changelog": "batch publish from alicloud-skills on 2026-03-11",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba1693ffa2c9e0c386ea59a7959c9644187ca1fea1fdd99754b01ba4e0af24ed"
+}

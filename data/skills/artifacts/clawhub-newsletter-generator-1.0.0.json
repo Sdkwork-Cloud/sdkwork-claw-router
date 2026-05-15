@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/newsletter-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newsletter_generator",
+  "skill": {
+    "id": 11295,
+    "skillKey": "clawhub-newsletter-generator",
+    "name": "Newsletter Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newsletter-generator",
+    "url": "https://clawhub.ai/skills/newsletter-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newsletter-generator-c4c5c3dc1c8c53d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate automated email newsletters with curated content, affiliate links, and personalized recommendations. Use when creating daily/weekly newsletters, building email lists, or monetizing subscriber engagement with affiliate content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michael-laffin",
+      "userId": "s172763bq8hk878ptgz2a77cqn83j1f6",
+      "displayName": "Michael-laffin",
+      "image": "https://avatars.githubusercontent.com/u/133843289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2107,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770218094064,
+      "changelog": "Initial release: Automated email newsletter generation with curated content, affiliate links, and personalized recommendations",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:385d2561168a569b1810fa7abbfc54cf4103d4c4fb1cae3c8383faca6a71194e"
+}

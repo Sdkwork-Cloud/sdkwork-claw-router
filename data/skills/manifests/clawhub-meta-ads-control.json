@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24346,
+  "uuid": "skill-clawhub-meta-ads-control",
+  "skillKey": "clawhub-meta-ads-control",
+  "name": "Meta Ads Control",
+  "summary": "Use this skill when the user wants to inspect, report on, create, update, pause, resume, budget, target, upload assets for, or troubleshoot Meta, Facebook, o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_ads_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tristan Manchester",
+      "features": [
+        "Use this skill when the user wants to inspect, report on, create, update, pause, resume, budget."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meta-ads-control@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108270628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meta-ads-control",
+      "url": "https://clawhub.ai/skills/meta-ads-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-ads-control",
+    "url": "https://clawhub.ai/skills/meta-ads-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-ads-control-b2fe9ce51c0c0e41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meta-ads-control@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meta-ads-control-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:826be1c4fabdfcaacc36001a6e5d33994ca69b8d46141921d539bca6f185f8b9",
+      "artifactSizeBytes": 2525
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T13:13:03.327Z"
+}

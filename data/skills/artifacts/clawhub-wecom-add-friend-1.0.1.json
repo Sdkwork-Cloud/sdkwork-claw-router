@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wecom-add-friend@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wecom_add_friend",
+  "skill": {
+    "id": 63716,
+    "skillKey": "clawhub-wecom-add-friend",
+    "name": "Wecom Add Friend"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wecom-add-friend",
+    "url": "https://clawhub.ai/skills/wecom-add-friend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wecom-add-friend-3a8a7caa15556eb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业微信自动添加好友技能，支持批量手机号添加"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whailon",
+      "userId": "s17bvv78pvnytyspgmcza5fb6n83gdpr",
+      "displayName": "whailon",
+      "image": "https://avatars.githubusercontent.com/u/14119066?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 463,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773736422308,
+      "changelog": "- No user-facing changes in this release.\n- Maintenance update with no changes to documentation or features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:07b49601f9c4561f16807ce3b646dfc42a6e97d6b15b5ad2531f7ad18502c388"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x402-agent-api-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x402_agent_api_skill",
+  "skill": {
+    "id": 21853,
+    "skillKey": "clawhub-x402-agent-api-skill",
+    "name": "Agent APIs x402 Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x402-agent-api-skill",
+    "url": "https://clawhub.ai/skills/x402-agent-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x402-agent-api-skill-6fecb601d1fc7994.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI agent skill for x402 paid APIs with live image-hosting and qrcode-generate, plus planned image/video/vision APIs (colorize, super-resolution, enhance, sma..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parsonssss",
+      "userId": "s175dke9r3zvcmp4r59ytqhrq583gseh",
+      "displayName": "parsonssss",
+      "image": "https://avatars.githubusercontent.com/u/34808813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 494,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774359986402,
+      "changelog": "- Updated API endpoint and base URL references from flashcode.live to x402api.app throughout the documentation.\n- Added a new hidden.json file.\n- No changes to the set of live or planned features or APIs.\n- No code or interface changes; only documentation and configuration updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:118988d233d3f78b0554e0427092c01ac9373c65ab8c41d245148251b621e457"
+}

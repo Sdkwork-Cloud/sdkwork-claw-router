@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pinterest-scraper@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pinterest_scraper",
+  "skill": {
+    "id": 18352,
+    "skillKey": "clawhub-pinterest-scraper",
+    "name": "Pinterest Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pinterest-scraper",
+    "url": "https://clawhub.ai/skills/pinterest-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pinterest-scraper-d60e7b7f5510ca9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrapes Pinterest boards, profiles, or search results with infinite scroll, image quality options, deduplication, resume support, and Telegram album sending."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kexu9",
+      "userId": "s177fq1kmnfz4mhm2xyw0c9kt183ga2b",
+      "displayName": "KeXu9",
+      "image": "https://avatars.githubusercontent.com/u/147953862?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 688,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772622042571,
+      "changelog": "v1.1.0: Expanded documentation and improved usability guidance.\n\n- Added reasoning framework, decision trees, troubleshooting guide, and self-check checklist to SKILL.md.\n- Updated documentation to clarify setup, usage, feature set, and problem-solving steps.\n- Moved the main script from script/ to scripts/ directory.\n- Minor revision to the skill description and metadata for clarity and completeness.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ffeb2c83729e219b90f59ffb025164123d8857d7794ba6f84223935dcfdbd53c"
+}

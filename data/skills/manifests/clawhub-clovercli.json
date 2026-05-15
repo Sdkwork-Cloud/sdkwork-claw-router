@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12384,
+  "uuid": "skill-clawhub-clovercli",
+  "skillKey": "clawhub-clovercli",
+  "name": "Clovercli",
+  "summary": "Command-line interface for managing Clover POS data including inventory, orders, payments, customers, employees, discounts, taxes, tenders, and reports with...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clovercli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "G9Pedro",
+      "features": [
+        "Command-line interface for managing Clover POS data including inventory, orders, payments, cust."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clovercli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78662829?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clovercli",
+      "url": "https://clawhub.ai/skills/clovercli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clovercli",
+    "url": "https://clawhub.ai/skills/clovercli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clovercli-253669bf072f0c5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clovercli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clovercli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff1d79d7b9b5fa096348eeac9a63a3829987ee2d071cb82bde767d0b4ce3ccd7",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T03:18:11.359Z"
+}

@@ -133,9 +133,9 @@ class ConsoleRoutingRuntimeStandardTest(unittest.TestCase):
         self.assertIn("export interface RoutingStrategySnapshot", service)
         self.assertIn("static async fetchStrategy(): Promise<RoutingStrategySnapshot>", service)
         self.assertIn("static async updateStrategy(snapshot: RoutingStrategySnapshot): Promise<void>", service)
-        self.assertIn("getClawRouterAppSdkClient().router.fetchStrategy()", service)
+        self.assertIn("getClawRouterAppSdkClient().ai.routing.strategy.list()", service)
         self.assertIn("mappingRules: snapshot.mappingRules.map(toUpdateMappingRuleRequest)", service)
-        self.assertIn("getClawRouterAppSdkClient().router.updateStrategy(request)", service)
+        self.assertIn("getClawRouterAppSdkClient().ai.routing.strategy.update(request)", service)
         self.assertIn("normalizeRoutingStrategySnapshot", service)
         self.assertNotIn("router_strategy", strategy)
         self.assertNotIn("router_mapping_rules", strategy)
@@ -149,7 +149,7 @@ class ConsoleRoutingRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("operation: fetchStrategy", contract)
         self.assertIn("operation: updateStrategy", contract)
-        self.assertIn("api_path: /app/v3/api/router/routing/strategy", contract)
+        self.assertIn("api_path: /app/v3/api/ai/routing/strategy", contract)
         self.assertIn("name: RoutingStrategySnapshot", contract)
         self.assertIn("name: UpdateRoutingStrategyRequest", contract)
 
@@ -266,11 +266,11 @@ class ConsoleRoutingRuntimeStandardTest(unittest.TestCase):
             self.assertIn(method, service)
 
         for sdk_call in [
-            "router.createChannel(",
-            "router.updateChannel(",
-            "router.deleteChannel(",
-            "router.setChannelStatus(",
-            "router.testChannel(",
+            "ai.routing.channels.create(",
+            "ai.routing.channels.update(",
+            "ai.routing.channels.delete(",
+            "ai.routing.channels.status.update(",
+            "ai.routing.channels.verify(",
         ]:
             self.assertIn(sdk_call, service)
 
@@ -298,9 +298,9 @@ class ConsoleRoutingRuntimeStandardTest(unittest.TestCase):
             "operation: testChannel",
         ]:
             self.assertIn(operation, contract)
-        self.assertIn("api_path: /app/v3/api/router/routing/channels/{channelId}", contract)
-        self.assertIn("api_path: /app/v3/api/router/routing/channels/{channelId}/status", contract)
-        self.assertIn("api_path: /app/v3/api/router/routing/channels/{channelId}/test", contract)
+        self.assertIn("api_path: /app/v3/api/ai/routing/channels/{channelId}", contract)
+        self.assertIn("api_path: /app/v3/api/ai/routing/channels/{channelId}/status", contract)
+        self.assertIn("api_path: /app/v3/api/ai/routing/channels/{channelId}/verify", contract)
         self.assertIn("name: CreateRoutingChannelRequest", contract)
         self.assertIn("name: UpdateRoutingChannelRequest", contract)
         self.assertIn("name: RoutingChannelMutationResponse", contract)

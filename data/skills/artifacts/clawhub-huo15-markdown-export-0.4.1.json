@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huo15-markdown-export@0.4.1",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_markdown_export",
+  "skill": {
+    "id": 58911,
+    "skillKey": "clawhub-huo15-markdown-export",
+    "name": "Huo15 Markdown Export"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-markdown-export",
+    "url": "https://clawhub.ai/skills/huo15-markdown-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-markdown-export-5e5a28d2c0ff4ed6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "【青岛火一五】Typora 风 markdown 渲染管线 — .md 导出 PDF / Word / HTML / 长图 / 公众号 inline / changelog。**11 主题**(报纸/暗色/GitHub/学术/微信/小红书/火一五品牌 + v0.4.0 新增 Anthropic 文档风/Edito..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaobod1",
+      "userId": "s17f6q72skfgyjycm2frgdc8dn83v5mk",
+      "displayName": "Job Zhao",
+      "image": "https://avatars.githubusercontent.com/u/13188275?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.4.1",
+      "createdAt": 1778148457458,
+      "changelog": "v0.4.1 PDF 文字浅灰看不清修复 — 反 Type 3 字体。macOS Headless Chromium 把 Apple 受保护字体(-apple-system/PingFang/SF Pro)+ OpenType CFF 字体(Source Han/Noto CJK/Hiragino Sans GB)嵌入 PDF 时走 Type 3 路径渲染,WPS/Foxit 看浅灰。修法字体栈剔除禁忌优先 PT Serif/Open Sans + 中文 fallback 用 Songti SC(macOS 预装真 TTC)。typora-night 加 @media print 自动反色 1.4→17.4:1。详见 themes/DESIGN.md §7.5。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e3edbd87b17ac48965c1e1515bd2ed3e69f97928bd8bc4b35e56a118616b437"
+}

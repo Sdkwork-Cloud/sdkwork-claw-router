@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44789,
+  "uuid": "skill-clawhub-pilot-backup",
+  "skillKey": "clawhub-pilot-backup",
+  "name": "Pilot Backup",
+  "summary": "Automated backup of agent state to trusted peers with encryption and versioning. Use this skill when: 1. You need to backup agent configuration and state fil...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Automated backup of agent state to trusted peers with encryption and versioning",
+        "Use this skill when: 1",
+        "You need to backup agent configuration and state fil..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-backup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-backup",
+      "url": "https://clawhub.ai/skills/pilot-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-backup",
+    "url": "https://clawhub.ai/skills/pilot-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-backup-35ad1452bcf53f3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-backup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-backup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42c5514cc4a0104513f2936f990904f2541467a873e2cda2edff0b34176442da",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T22:13:49.144Z"
+}

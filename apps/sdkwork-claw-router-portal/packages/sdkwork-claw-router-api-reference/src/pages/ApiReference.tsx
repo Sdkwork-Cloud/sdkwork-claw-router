@@ -13,6 +13,8 @@ import {
 import type { ApiReferenceEndpoint } from '../openapiTypes';
 import {
   buildApiCategorySidebarTree,
+  getApiSystemDisplayName,
+  getDefaultApiReferenceEndpoint,
   loadApiReferenceSystems,
   type ApiCategorySidebarNode,
   type ApiSystemData,
@@ -36,8 +38,9 @@ export function ApiReference() {
 
         if (systems.length > 0) {
           setActiveSystem(systems[0].id);
-          if (systems[0].categories.length > 0 && systems[0].categories[0].endpoints.length > 0) {
-            setActiveEndpointId(systems[0].categories[0].endpoints[0].id);
+          const defaultEndpoint = getDefaultApiReferenceEndpoint(systems[0]);
+          if (defaultEndpoint) {
+            setActiveEndpointId(defaultEndpoint.id);
           }
         }
 
@@ -64,10 +67,12 @@ export function ApiReference() {
       }
     }
     // Fallback to first endpoint if not found in current system
-    if (!activeEndpoint && activeSystemData.categories.length > 0 && activeSystemData.categories[0].endpoints.length > 0) {
-      activeEndpoint = activeSystemData.categories[0].endpoints[0];
+    if (!activeEndpoint) {
+      activeEndpoint = getDefaultApiReferenceEndpoint(activeSystemData);
     }
   }
+
+  const activeSystemDisplayName = activeSystemData ? getApiSystemDisplayName(activeSystemData) : t('api.title');
 
   const handleEndpointClick = (endpointId: string) => {
     setActiveEndpointId(endpointId);
@@ -212,8 +217,9 @@ export function ApiReference() {
                 key={system.id}
                 onClick={() => {
                   setActiveSystem(system.id);
-                  if (system.categories.length > 0 && system.categories[0].endpoints.length > 0) {
-                    setActiveEndpointId(system.categories[0].endpoints[0].id);
+                  const defaultEndpoint = getDefaultApiReferenceEndpoint(system);
+                  if (defaultEndpoint) {
+                    setActiveEndpointId(defaultEndpoint.id);
                   }
                 }}
                 className={`flex items-center gap-2 py-4 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
@@ -223,7 +229,7 @@ export function ApiReference() {
                 }`}
               >
                 <Icon className="w-4 h-4" />
-                {system.name}
+                {getApiSystemDisplayName(system)}
               </button>
             );
           })}
@@ -270,9 +276,9 @@ export function ApiReference() {
         <main className="flex-1 min-w-0 p-6 md:p-10 lg:p-12 pb-24 overflow-x-hidden">
           <div className="max-w-full">
             <div className="mb-12 pb-8 border-b border-slate-200 dark:border-white/10">
-              <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">{activeSystemData?.name || t('api.title')}</h1>
+              <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">{activeSystemDisplayName}</h1>
               <p className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl leading-relaxed">
-                {t('api.description')} Explore the {activeSystemData?.name} endpoints using the sidebar.
+                {t('api.description')} Explore the {activeSystemDisplayName} endpoints using the sidebar.
               </p>
             </div>
 

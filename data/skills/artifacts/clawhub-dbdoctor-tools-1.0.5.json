@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dbdoctor-tools@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dbdoctor_tools",
+  "skill": {
+    "id": 30570,
+    "skillKey": "clawhub-dbdoctor-tools",
+    "name": "dbdoctor-tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dbdoctor-tools",
+    "url": "https://clawhub.ai/skills/dbdoctor-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dbdoctor-tools-632453d33836b1ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DBdoctor database performance diagnosis platform tools. Invoke when user needs to query database instances, slow SQL, inspection reports, performance metrics..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dbdoctor-das",
+      "userId": "s17277c0r2jfrmaecrkz21hv8183nqjr",
+      "displayName": "DBdoctor-DAS",
+      "image": "https://avatars.githubusercontent.com/u/180374277?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 280,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775650778659,
+      "changelog": "- Documentation updated to clarify authentication mode names: Password login now labeled as 企业版（免费试用）, Email verification code login as 免费版（永久免费）.\n- Login mode descriptions updated for improved clarity and to better distinguish between paid trial and free versions.\n- No functional or behavioral changes to the skill; only documentation (SKILL.md) was changed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6eaa7ca8fd1fe9d3a29999e0ec63a447328adf7ff4e9acbc4e31efc842e27c7c"
+}

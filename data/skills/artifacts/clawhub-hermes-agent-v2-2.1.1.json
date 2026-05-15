@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hermes-agent-v2@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_agent_v2",
+  "skill": {
+    "id": 10392,
+    "skillKey": "clawhub-hermes-agent-v2",
+    "name": "Hermes Agent Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-agent-v2",
+    "url": "https://clawhub.ai/skills/hermes-agent-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-agent-v2-66239abf88952f78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "NousResearch Hermes Agent CLI integration. Core capabilities: - Self-improving skill system - Persistent memory (FTS5 + LLM summaries) - Sub-agent delegation..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wihy",
+      "userId": "s17d3vb11h4b17n7dsra7epmv983hvy0",
+      "displayName": "will",
+      "image": "https://avatars.githubusercontent.com/u/5248974?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2487,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1775958598074,
+      "changelog": "- Major simplification: Documentation and scripts have been removed; only core hermes CLI integration remains.\n- All helper scripts and reference guides deleted; only essential usage and installation instructions are included.\n- Security and file access descriptions clarified: skill only calls hermes CLI and accesses ~/.hermes/.\n- LICENSE file added; documentation now focuses on basic usage and configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:375014214c0ca355aa5616d59c716711b76444f44924b61df64f5305c4192358"
+}

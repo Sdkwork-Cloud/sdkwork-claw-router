@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60844,
+  "uuid": "skill-clawhub-byted-data-deepresearch-structured2markdown",
+  "skillKey": "clawhub-byted-data-deepresearch-structured2markdown",
+  "name": "Byted Data Deepresearch Structured2markdown",
+  "summary": "专门用于将 Excel (.xlsx, .xls) 和 CSV (.csv) 文件上传至DataAgent API并转换为高度格式化的 Markdown 文档。 该工具具有内置的结构解析逻辑，能够自动识别表头、合并单元格并优化长文本换行。 当用户需要将表格数据转化为文档报告或在 Markdown 环境中展示数据时...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_data_deepresearch_structured2markdown",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "volcengine-skills",
+      "features": [
+        "专门用于将 Excel (.xlsx, .xls) 和 CSV (.csv) 文件上传至DataAgent API并转换为高度格式化的 Markdown 文档。 该工具具有内置的结构解析逻辑."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byted-data-deepresearch-structured2markdown@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260939792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byted-data-deepresearch-structured2markdown",
+      "url": "https://clawhub.ai/skills/byted-data-deepresearch-structured2markdown"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-data-deepresearch-structured2markdown",
+    "url": "https://clawhub.ai/skills/byted-data-deepresearch-structured2markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-data-deepresearch-structured2markdown-64a6c2057ba110aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byted-data-deepresearch-structured2markdown@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-byted-data-deepresearch-structured2markdown-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d53add0685c377ab63c88db3d379c9d7b93245c21f7dc3fada4a3d8d16f53a8",
+      "artifactSizeBytes": 2745
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T03:32:42.135Z"
+}

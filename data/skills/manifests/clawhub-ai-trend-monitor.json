@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60911,
+  "uuid": "skill-clawhub-ai-trend-monitor",
+  "skillKey": "clawhub-ai-trend-monitor",
+  "name": "AI Trend Monitor",
+  "summary": "监控 GitHub、Reddit、Twitter 等多渠道 AI 趋势与重大新闻，支持实时推送和每日定时汇总飞书卡片。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_trend_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuyuyang001-oss",
+      "features": [
+        "监控 GitHub、Reddit、Twitter 等多渠道 AI 趋势与重大新闻，支持实时推送和每日定时汇总飞书卡片。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-trend-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224884720?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-trend-monitor",
+      "url": "https://clawhub.ai/skills/ai-trend-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-trend-monitor",
+    "url": "https://clawhub.ai/skills/ai-trend-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-trend-monitor-acb9bc595de218f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-trend-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-trend-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e5fb105268f4f91b229764fc4769dd75ed55301aa69a9aa19b7133411c2cdb5",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T07:25:36.202Z"
+}

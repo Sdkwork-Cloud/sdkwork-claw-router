@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25376,
+  "uuid": "skill-clawhub-memesio-meme-generator",
+  "skillKey": "clawhub-memesio-meme-generator",
+  "name": "Meme Generator",
+  "summary": "Use when the user wants to create memes through the hosted Memesio MCP server, including meme template search, caption rendering, upload captioning, agent ac...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memesio_meme_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "heyalerio",
+      "features": [
+        "Use when the user wants to create memes through the hosted Memesio MCP server, including meme t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memesio-meme-generator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250747040?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memesio-meme-generator",
+      "url": "https://clawhub.ai/skills/memesio-meme-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memesio-meme-generator",
+    "url": "https://clawhub.ai/skills/memesio-meme-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memesio-meme-generator-de2e73401ade8521.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memesio-meme-generator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-memesio-meme-generator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61010b75fe2334699fb8103db44640da4322aa4e759c52a7687cfbd4afcbc40b",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T22:04:54.889Z"
+}

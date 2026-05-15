@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-higgsfield@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_higgsfield",
+  "skill": {
+    "id": 43041,
+    "skillKey": "clawhub-text-to-video-higgsfield",
+    "name": "Text To Video Higgsfield"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-higgsfield",
+    "url": "https://clawhub.ai/skills/text-to-video-higgsfield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-higgsfield-e9a913483432777e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get AI-generated clips ready to post, without touching a single slider. Upload your text prompts (TXT, PNG, JPG, MP4, up to 200MB), say something like \"gener..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776028437914,
+      "changelog": "Initial release of Text to Video Higgsfield.\n\n- Generate 1080p MP4 video clips from text prompts with AI.\n- Supports file uploads (TXT, PNG, JPG, MP4 up to 200MB).\n- Automatic connection and session management, including free anonymous onboarding.\n- Guides users through uploading prompts, generating clips, and downloading final videos.\n- Handles session state, exports, credits, and error feedback with clear user updates.\n- Designed for content creators seeking fast, camera-free video generation and editing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35e2d5725c5406191f6e8571d0bda5c3a039108be48d870d9d8d4d8acab0426e"
+}

@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "ai-interview-simulator-candaigo",
+    "displayName": "AI Interview Simulator",
+    "summary": "Access and interact with AI group interview simulations: browse jobs, create/join rooms, speak, advance interviews, upload resumes, and view history and eval...",
+    "tags": {
+      "latest": "1.0.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1617,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 3
+    },
+    "createdAt": 1771094793506,
+    "updatedAt": 1778385831166
+  },
+  "latestVersion": {
+    "version": "1.0.2",
+    "createdAt": 1771096722021,
+    "changelog": "**Summary: Interview simulation flow now requires explicit room start.**\n\n- Added a new \"启动群面房间\" (Start Group Interview Room) API endpoint: /api/v2/agent/rooms/ROOM_ID/start.\n- Room is now created in `waiting` state; must be started by creator before interview begins.\n- Only the room creator can start the interview; this triggers host opening, AI introductions, and moves the room to `active`.\n- Documentation updated to clarify step-by-step group interview sequence and new required start action.\n- No other existing API or workflow changes.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "hangeaiagent",
+    "userId": "publishers:hangeaiagent",
+    "displayName": "hangeaiagent",
+    "image": "https://avatars.githubusercontent.com/u/203139500?v=4"
+  },
+  "moderation": null
+}

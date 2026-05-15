@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23475,
+  "uuid": "skill-clawhub-docupilot",
+  "skillKey": "clawhub-docupilot",
+  "name": "Docupilot",
+  "summary": "Docupilot integration. Manage Documents, Users, Workspaces. Use when the user wants to interact with Docupilot data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docupilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Docupilot integration",
+        "Manage Documents, Users, Workspaces",
+        "Use when the user wants to interact with Docupilot data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docupilot@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docupilot",
+      "url": "https://clawhub.ai/skills/docupilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docupilot",
+    "url": "https://clawhub.ai/skills/docupilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docupilot-8be9c92a262fc934.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docupilot@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-docupilot-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf5e81374bf3a0694c31c60e87518c181e539c42aaf2038b27473ebce8a065a8",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:24:40.302Z"
+}

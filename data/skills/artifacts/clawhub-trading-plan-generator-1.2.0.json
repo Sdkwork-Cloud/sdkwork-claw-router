@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trading-plan-generator@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trading_plan_generator",
+  "skill": {
+    "id": 71132,
+    "skillKey": "clawhub-trading-plan-generator",
+    "name": "基于 Brent Penfold《交易圣经》框架，为股票交易生成完整的交易预案（Setup）和交易计划（Plan）。当用户询问「帮我制定交易计划」、「帮我做交易预案」、「XX股票怎么买」、「帮我规划一下XX股票的入场和止损」时使用此技能。触发前提：用户明."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trading-plan-generator",
+    "url": "https://clawhub.ai/skills/trading-plan-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trading-plan-generator-c6d0f0361f41a792.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 Brent Penfold《交易圣经》框架，为股票交易生成完整的交易预案（Setup）和交易计划（Plan）。当用户询问「帮我制定交易计划」、「帮我做交易预案」、「XX股票怎么买」、「帮我规划一下XX股票的入场和止损」时使用此技能。触发前提：用户明确指定了具体股票代码或名称。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thatshinji",
+      "userId": "s179gjk7335bmqk4gayjkmxghn84fk1j",
+      "displayName": "Shinji",
+      "image": "https://avatars.githubusercontent.com/u/91775458?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1776416115556,
+      "changelog": "**重大更新：加入严格系统交易总则，完善风险与账户管理规范**\n\n- 增加“交易总则”章节，明确系统定位、单笔风险、仓位上限、策略类型、持仓数量、回撤暂停机制等硬性规则\n- 所有资金管理、持仓控制、止损安排等条款升级为“硬规则”，账户单笔交易风险统一限制为2%\n- 持仓数量设上限，组合/板块集中度、回撤分级、暂停交易机制等细节要求纳入输出模板和检查清单\n- 趋势判定策略从日线均线升级为周线趋势优先，提高分析严谨性\n- 下单前检查清单从10项拓展到12项，先组合层后单票，执行流程更规范\n- 输出模板增补“板块标签”、“策略类型”等新字段，全面对齐新版总则标准",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:450598fd70573be9caeedf643b63579558442ba06204c84a9ea5db86dc5c86b8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bugpack-list-bugs@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bugpack_list_bugs",
+  "skill": {
+    "id": 33200,
+    "skillKey": "clawhub-bugpack-list-bugs",
+    "name": "BugPack List Bugs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bugpack-list-bugs",
+    "url": "https://clawhub.ai/skills/bugpack-list-bugs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bugpack-list-bugs-6ec2fc879f262d62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "List all tracked bugs from BugPack with status and project filtering. Use when: user asks about bugs, pending issues, bug lists, or wants to see what needs f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duhuazhu",
+      "userId": "publishers:duhuazhu",
+      "displayName": "duhuazhu",
+      "image": "https://avatars.githubusercontent.com/u/45280664?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773826032726,
+      "changelog": "- Improved skill instructions and usage guidance in SKILL.md.\n- Clarified when to use this skill and when to use related skills (bug viewing/fixing).\n- Added step-by-step instructions and example API request/response.\n- Ensured users are informed if no bugs are found.\n- No changes to file structure or functionality described.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c0de94aea91eb1d9d94683e69d04711c3c1baecbbf067e83a97825d341fdcc1"
+}

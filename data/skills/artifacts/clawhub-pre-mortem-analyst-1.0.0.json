@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pre-mortem-analyst@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pre_mortem_analyst",
+  "skill": {
+    "id": 9508,
+    "skillKey": "clawhub-pre-mortem-analyst",
+    "name": "Pre-Mortem Analyst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pre-mortem-analyst",
+    "url": "https://clawhub.ai/skills/pre-mortem-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pre-mortem-analyst-d002410d9c28ef65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Imagine the project already failed, then work backward to find why. More powerful than risk assessment because it assumes failure is certain. Use when user says \"pre-mortem\", \"premortem\", \"imagine this failed\", \"what could go wrong\", \"risk."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "artyomx33",
+      "userId": "publishers:artyomx33",
+      "displayName": "artyomx33",
+      "image": "https://avatars.githubusercontent.com/u/130623863?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3299,
+      "installsAllTime": 18,
+      "installsCurrent": 17,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769359804112,
+      "changelog": "Initial release - Assume failure is certain, work backward to prevent. By Artem Tolmachev, Teddy Kids, TISA & Claude.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:00992c0eaee8d3aba0bc8c9cc8d78a1535583168a6509f77fd384fe229285aa3"
+}

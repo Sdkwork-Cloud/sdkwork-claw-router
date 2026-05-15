@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-quote@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_quote",
+  "skill": {
+    "id": 21694,
+    "skillKey": "clawhub-stock-quote",
+    "name": "Stock Quote"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-quote",
+    "url": "https://clawhub.ai/skills/stock-quote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-quote-bc734dbf004ba239.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch real-time stock prices and fundamental data. Use when: (1) User asks for current stock price or quote, (2) Need to update portfolio holdings with lates..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linux2010",
+      "userId": "s1751dhnzp0ph63jb85dgvkztd83hhdp",
+      "displayName": "Andy Tien",
+      "image": "https://avatars.githubusercontent.com/u/35169750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 461,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775007040720,
+      "changelog": "Added Stooq as primary data source (free, no API key), fixed yfinance rate limit fallback",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:340a72bec6191db1a5857f97f5dac850f757c2023c0322d16d39d98b4b35f9d3"
+}

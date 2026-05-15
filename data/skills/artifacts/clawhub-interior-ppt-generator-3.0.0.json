@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/interior-ppt-generator@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interior_ppt_generator",
+  "skill": {
+    "id": 66871,
+    "skillKey": "clawhub-interior-ppt-generator",
+    "name": "Interior Design PPT Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interior-ppt-generator",
+    "url": "https://clawhub.ai/skills/interior-ppt-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interior-ppt-generator-ff2f16ea566b1399.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "设计师把效果图放到文件夹里，一键自动生成交付PPT，每页一张图，自动加标题排版，直接就能给客户汇报。适合室内设计师快速生成方案交付文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "137984917-cyber",
+      "userId": "s1790hfws72axnnhfbnfe3gkb183j1qr",
+      "displayName": "137984917-cyber",
+      "image": "https://avatars.githubusercontent.com/u/270913925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1776396995642,
+      "changelog": "interior-ppt-generator v3.0.0\n\n- 全新深色品牌设计体系：墨色+暖金配色，提升专业感和美观度\n- 自动生成丰富PPT结构：标题页、任务回顾、设计概念、全屏效果展示、材质说明、极简封底\n- 支持一键批量导入图片，按文件名排序排版\n- 输出标准16:9宽屏PPT，边距与排版优化，图片无压缩\n- 内容页与材质页注重排版美观，支持色彩比例及大号装饰数字\n- 简化命令行调用和参数说明，便于快速交付",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2c7d8a206bc60ac3d5ea6f9ecf13959361f245d1a614a21fd65506ed642ce5e"
+}

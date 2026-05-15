@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45642,
+  "uuid": "skill-clawhub-openstatus",
+  "skillKey": "clawhub-openstatus",
+  "name": "Manage your status page with openstatus",
+  "summary": "OpenStatus CLI for incident management, status reports, and maintenance windows. Use this skill when the user wants to report an incident, create or update a...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openstatus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "openstatus",
+      "features": [
+        "OpenStatus CLI for incident management, status reports, and maintenance windows",
+        "Use this skill when the user wants to report an incident, create or update a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openstatus@1.0.2",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/openstatus/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openstatus",
+      "url": "https://clawhub.ai/skills/openstatus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openstatus",
+    "url": "https://clawhub.ai/skills/openstatus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openstatus-d7fe59d13fcd2def.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openstatus@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openstatus-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c201e6eff7fdca57f9bd1ea126be4c0492d253fed4a523788dfd88083396f33",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T09:47:13.206Z"
+}

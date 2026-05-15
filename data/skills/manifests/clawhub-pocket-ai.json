@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16216,
+  "uuid": "skill-clawhub-pocket-ai",
+  "skillKey": "clawhub-pocket-ai",
+  "name": "Pocket AI Integration",
+  "summary": "Transcribe, index, and semantically search all voice recordings, extracting action items and meeting insights for comprehensive conversation intelligence.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pocket_ai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "asabovetech",
+      "features": [
+        "Transcribe, index, and semantically search all voice recordings, extracting action items and me."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pocket-ai@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259675373?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pocket-ai",
+      "url": "https://clawhub.ai/skills/pocket-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pocket-ai",
+    "url": "https://clawhub.ai/skills/pocket-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pocket-ai-07e90b46861f09a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pocket-ai@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pocket-ai-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11158924689c0356f4c1818268878c49b3a04c330fccaa21639ccec8d8e7a577",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T20:44:39.744Z"
+}

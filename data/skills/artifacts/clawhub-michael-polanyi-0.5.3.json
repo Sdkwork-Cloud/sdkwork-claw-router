@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/michael-polanyi@0.5.3",
+  "version": "0.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.michael_polanyi",
+  "skill": {
+    "id": 31258,
+    "skillKey": "clawhub-michael-polanyi",
+    "name": "Michael Polanyi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "michael-polanyi",
+    "url": "https://clawhub.ai/skills/michael-polanyi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/michael-polanyi-4a005eef2f30dbfa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Writing skill for practitioner judgment under ambiguity, critique, trade-offs, and incomplete information. Use it when the user wants advice, strategy, or de..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "august1314",
+      "userId": "s17788g3zcx89rvsgdar5ymm11854nmv",
+      "displayName": "August1314",
+      "image": "https://avatars.githubusercontent.com/u/153159571?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.5.3",
+      "createdAt": 1776583144001,
+      "changelog": "Formal v0.5.3 release with skillhub-ready packaging metadata, stable release asset URLs, and a clean installable package.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:661aa113a76431203727a449ed0958af88187cf52308dab45667097a3b2d1748"
+}

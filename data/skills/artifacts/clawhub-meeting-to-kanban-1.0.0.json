@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meeting-to-kanban@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_to_kanban",
+  "skill": {
+    "id": 28537,
+    "skillKey": "clawhub-meeting-to-kanban",
+    "name": "meeting-to-kanban"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-to-kanban",
+    "url": "https://clawhub.ai/skills/meeting-to-kanban",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-to-kanban-124f71e7c7e2c2f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert meeting notes or transcripts into a clean Kanban board with owners, due dates, blockers, and next actions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 323,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773381563329,
+      "changelog": "Version 1.1.0 summary: Adds structured meeting-to-kanban workflow, with input prompts, output formats, and operational boundaries.\n\n- Converts meeting notes or transcripts into a Kanban board, including owners, due dates, blockers, and actions.\n- Defines required and optional user inputs, workflow steps, and clear output contract (CSV, summary, unresolved list).\n- Emphasizes action orientation, preview modes, and explicit assumptions.\n- Bundles local script and resource for columns schema; defaults used if user provides none.\n- Compatible with OpenClaw agent framework; declares Python 3 as a dependency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d39b3eb8c5b69c9ce96ae659358d3598e6590a62c804b12792c64ee5a813dde2"
+}

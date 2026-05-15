@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-generator-online-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_generator_online_free",
+  "skill": {
+    "id": 49171,
+    "skillKey": "clawhub-ai-video-generator-online-free",
+    "name": "Ai Video Generator Online Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-generator-online-free",
+    "url": "https://clawhub.ai/skills/ai-video-generator-online-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-generator-online-free-93bd2f152d346da6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text or images into ready-to-share videos with this skill. Works with MP4, MOV, JPG, PNG files up to 200MB. content creators and marketers use it fo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 84,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778064641773,
+      "changelog": "AI Video Generator Online Free — initial release\n\n- Instantly generate 1080p MP4 videos from text prompts or images, no editing software needed.\n- Supports MP4, MOV, JPG, and PNG file uploads up to 200MB.\n- Simple authentication with 100 free credits for new users, valid for 7 days.\n- Automated cloud rendering with ~1–2 minute processing and direct download links.\n- Exposes core actions: upload, generate/edit, preview state, check credits, and export videos.\n- Robust error handling and clear guidance for common issues (file type, size, export, credits).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48f38083b721ca879aa4c899d624e8756789a1b6a0fe851a452a60c0d8a1ebc4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/day253-volcengine-agent-tts-to-tos@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.day253_volcengine_agent_tts_to_tos",
+  "skill": {
+    "id": 23755,
+    "skillKey": "clawhub-day253-volcengine-agent-tts-to-tos",
+    "name": "Volcengine TTS to TOS Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "day253-volcengine-agent-tts-to-tos",
+    "url": "https://clawhub.ai/skills/day253-volcengine-agent-tts-to-tos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/day253-volcengine-agent-tts-to-tos-57fa8a1b349e33c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Combined agent that synthesizes speech via Volcengine TTS, uploads the audio to TOS, and returns a presigned temporary URL. Use when users need a shareable a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "day253",
+      "userId": "s170z6k70w1gyh8xnp8k8t3g1583jz84",
+      "displayName": "day253",
+      "image": "https://avatars.githubusercontent.com/u/9634619?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 430,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772975434841,
+      "changelog": "Initial release: TTS synthesis → TOS upload → presigned URL pipeline",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e99c91776ffbadf7bb42bfb167ccf20d277aec525be7bff4d474d99af7b3b63d"
+}

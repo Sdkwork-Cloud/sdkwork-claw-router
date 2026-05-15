@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-openai-multi-account@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_openai_multi_account",
+  "skill": {
+    "id": 21435,
+    "skillKey": "clawhub-openclaw-openai-multi-account",
+    "name": "OpenClaw OpenAI Multi Account"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-openai-multi-account",
+    "url": "https://clawhub.ai/skills/openclaw-openai-multi-account",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-openai-multi-account-9b7126a520244e28.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage multiple OpenAI OAuth login accounts inside OpenClaw, including OpenAI Codex OAuth account snapshots, switching, real active-account detection, 5-hour..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tutouguai1933",
+      "userId": "publishers:tutouguai1933",
+      "displayName": "tutouguai1933",
+      "image": "https://avatars.githubusercontent.com/u/74579954?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 509,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773032499527,
+      "changelog": "Add live auth alias reconciliation, session-safe auto switching, 10-minute checks, and 5h/weekly soft+hard thresholds.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e073a391742774becd38cd7f1ba1304b7365a3a383c859d5807a5bf7da38925"
+}

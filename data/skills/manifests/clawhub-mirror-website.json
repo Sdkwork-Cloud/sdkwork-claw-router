@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68914,
+  "uuid": "skill-clawhub-mirror-website",
+  "skillKey": "clawhub-mirror-website",
+  "name": "Mirror Website",
+  "summary": "镜像网站到本地的完整工作流。当用户说镜像网站、下载网站、抓取网站、本地化网站，或者提供一个网址和保存路径时，必须使用此 skill。输入格式为：镜像网站 www.example.com 保存地址 /a/b/c。自动处理代理、递归下载、文件名清理等全流程。即使用户只是提到想把某个网站保存到本地、离线浏览、克隆站点，...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mirror_website",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wenbing3049",
+      "features": [
+        "镜像网站到本地的完整工作流。当用户说镜像网站、下载网站、抓取网站、本地化网站，或者提供一个网址和保存路径时，必须使用此 skill。输入格式为：镜像网站 www.example.com 保存."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mirror-website@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/187005504?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mirror-website",
+      "url": "https://clawhub.ai/skills/mirror-website"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mirror-website",
+    "url": "https://clawhub.ai/skills/mirror-website",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mirror-website-4eab14bceb96adc4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mirror-website@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mirror-website-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:780b53c25e3ce6820ce008f3cc694beaa0feeaa05e7df25604d2a6323bde2094",
+      "artifactSizeBytes": 2199
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:26:36.831Z"
+}

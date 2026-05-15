@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8715,
+  "uuid": "skill-clawhub-security-monitor",
+  "skillKey": "clawhub-security-monitor",
+  "name": "Security Monitor",
+  "summary": "Real-time security monitoring for Clawdbot. Detects intrusions, unusual API calls, credential usage patterns, and alerts on breaches.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chandrasekar-r",
+      "features": [
+        "Real-time security monitoring for Clawdbot",
+        "Detects intrusions, unusual API calls, credential usage patterns, and alerts on breaches."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70361171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-monitor",
+      "url": "https://clawhub.ai/skills/security-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-monitor",
+    "url": "https://clawhub.ai/skills/security-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-monitor-2bda63b0fa736633.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47975f8046db9abd4d13479c82370ad61ffe759bfaba0d771ebb5009eba7af66",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T22:43:20.470Z"
+}

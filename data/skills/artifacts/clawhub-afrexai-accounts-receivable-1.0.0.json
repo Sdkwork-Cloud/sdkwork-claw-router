@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-accounts-receivable@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_accounts_receivable",
+  "skill": {
+    "id": 18752,
+    "skillKey": "clawhub-afrexai-accounts-receivable",
+    "name": "Accounts Receivable Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-accounts-receivable",
+    "url": "https://clawhub.ai/skills/afrexai-accounts-receivable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-accounts-receivable-4608225c7d4937ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate accounts receivable: aging reports, prioritize collections, draft payment reminders, match payments, track DSO, and forecast bad debt exposure."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 664,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771157573132,
+      "changelog": "- Initial release of Accounts Receivable Manager skill.\n- Automates AR workflows: aging analysis, collection prioritization, payment reminders, cash application, bad debt forecasting, and DSO tracking.\n- Provides actionable AR reports, collection queues, risk scoring, and industry benchmarks.\n- Supports natural language requests to run reports, prioritize collections, draft reminder emails, and forecast bad debt.\n- Includes detailed escalation templates, priority formulas, and cash application rules for streamlined AR operations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:037d2f22c0f70dde29e9d1f5ab0986caffcb1a33f2b1322ecb7d7b490025b466"
+}

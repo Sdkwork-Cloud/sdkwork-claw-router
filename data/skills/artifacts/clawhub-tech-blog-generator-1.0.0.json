@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tech-blog-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_blog_generator",
+  "skill": {
+    "id": 21441,
+    "skillKey": "clawhub-tech-blog-generator",
+    "name": "Tech Blog Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-blog-generator",
+    "url": "https://clawhub.ai/skills/tech-blog-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-blog-generator-5fbbee1ffd8420a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional technical blog posts from simple outlines. Supports Markdown, includes code blocks, and is optimized for SEO."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunshine-del-ux",
+      "userId": "publishers:sunshine-del-ux",
+      "displayName": "Sunshine-del-ux",
+      "image": "https://avatars.githubusercontent.com/u/83053073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 499,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772439654869,
+      "changelog": "Tech Blog Generator 1.0.0 – Initial Release\n\n- Generate professional technical blog posts from simple outlines\n- Supports Markdown output with syntax-highlighted code blocks\n- Includes SEO optimization, table of contents generation, and tag suggestions\n- Offers multiple post templates: Tutorial, Deep Dive, Quick Tip\n- Allows customization of title, description, tags, level, and output path\n- Provides responsive images and structured blog post sections",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:515b881a52e658f09b7c59ba2621cc413fe03fc4c3bf536f0a7904db7fc7c6cb"
+}

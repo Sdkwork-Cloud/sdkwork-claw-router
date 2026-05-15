@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-palo-alto-hardening@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_palo_alto_hardening",
+  "skill": {
+    "id": 35632,
+    "skillKey": "clawhub-toolweb-palo-alto-hardening",
+    "name": "Palo Alto Hardening"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-palo-alto-hardening",
+    "url": "https://clawhub.ai/skills/toolweb-palo-alto-hardening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-palo-alto-hardening-f50909e4f5f2c4c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional PAN-OS security configuration generator for hardening Palo Alto firewalls with industry best practices."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774891591854,
+      "changelog": "Palo Alto Firewall Hardening Tool v1.0.0 – Initial release\n\n- Automates generation of hardened Palo Alto firewall (PAN-OS) configurations using best practices.\n- Supports advanced features: session tracking, user attribution, and timestamp logging for audit compliance.\n- Exposes endpoints for health checks, configuration generation, and option retrieval.\n- Provides granular hardening options across threat prevention, SSL/TLS, authentication, and logging.\n- Returns production-ready configuration snippets and step-by-step deployment instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ead7f1dfdb91f1496500306040c012b69998769fadcbe472bd11bc40602eeffe"
+}

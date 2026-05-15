@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30586,
+  "uuid": "skill-clawhub-hh-openclaw-agent",
+  "skillKey": "clawhub-hh-openclaw-agent",
+  "name": "HH OpenClaw Agent",
+  "summary": "HH OpenClaw Agent is a public ClawHub hh.ru application skill. Use it when the user says \"hh openclaw agent\", \"hh job apply automation\", \"hh.ru browser appli...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hh_openclaw_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zakhar Pashkin",
+      "features": [
+        "HH OpenClaw Agent is a public ClawHub hh.ru application skill",
+        "Use it when the user says \"hh openclaw agent\", \"hh job apply automation\", \"hh.ru browser appli.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hh-openclaw-agent@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112114097?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hh-openclaw-agent",
+      "url": "https://clawhub.ai/skills/hh-openclaw-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hh-openclaw-agent",
+    "url": "https://clawhub.ai/skills/hh-openclaw-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hh-openclaw-agent-b15fe0384ed5d1c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hh-openclaw-agent@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-hh-openclaw-agent-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d67013d1c89d8cddb89d965d1927bc7cbf7f371713c658de603534cb73e0ce3",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T02:36:30.318Z"
+}

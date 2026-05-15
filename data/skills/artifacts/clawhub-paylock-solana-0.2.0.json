@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paylock-solana@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paylock_solana",
+  "skill": {
+    "id": 41343,
+    "skillKey": "clawhub-paylock-solana",
+    "name": "Paylock"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paylock-solana",
+    "url": "https://clawhub.ai/skills/paylock-solana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paylock-solana-3fe3ef6aa27d78ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate Solana escrow contracts to enable trustless, verified payment flows for AI agent services with delivery-based fund release."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1477009639zw-blip",
+      "userId": "s17ezgebx1rdjg5v6ddseykg2183rt6j",
+      "displayName": "1477009639zw-blip",
+      "image": "https://avatars.githubusercontent.com/u/266505725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1775467950226,
+      "changelog": "Added verify + release payer-side endpoints (documented). Updated stats: 178 contracts, 25 released, 2 refunded, 0 disputes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b33f627b985a58cccdc2d63d4dec4f3abeb4b301da73e69f26aa2c3a96cd2c6e"
+}

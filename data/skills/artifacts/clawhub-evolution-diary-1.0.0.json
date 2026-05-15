@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evolution-diary@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evolution_diary",
+  "skill": {
+    "id": 70950,
+    "skillKey": "clawhub-evolution-diary",
+    "name": "Evolution档案 - 个人进化伴侣"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evolution-diary",
+    "url": "https://clawhub.ai/skills/evolution-diary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evolution-diary-ddee2fb2b62beacc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "个人进化追踪系统 — 不是冷冰冰的数据，是你的成长伴侣。记录心流、低谷、习惯、情绪，让每一次进化都有温度。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexduming",
+      "userId": "s17685n9a08fevws3cp7a6ydr983q2eg",
+      "displayName": "alexduming",
+      "image": "https://avatars.githubusercontent.com/u/106471903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777131019892,
+      "changelog": "全新个人进化追踪系统：心流时刻、低谷记录、习惯打卡、情绪曲线、每周进化信。完全人文关怀风格。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b7bdfb2099166160546679f084a0a335a816434b9d2ccd0e97c96d0d964a3c0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jarvis-codebase-mapper-01@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jarvis_codebase_mapper_01",
+  "skill": {
+    "id": 16807,
+    "skillKey": "clawhub-jarvis-codebase-mapper-01",
+    "name": "Jarvis Codebase Mapper 01"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jarvis-codebase-mapper-01",
+    "url": "https://clawhub.ai/skills/jarvis-codebase-mapper-01",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jarvis-codebase-mapper-01-aaf953201a20b7e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Map unfamiliar codebases into modules, owners, and entrypoints. Use when handling development work that needs repeatable steps, quality gates, and practical..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xammarie",
+      "userId": "publishers:xammarie",
+      "displayName": "xammarie",
+      "image": "https://avatars.githubusercontent.com/u/219314498?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 848,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771439583058,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c870d3ac8187a1b1f41f8ac1df0d9b34d78d21dd243e94ba4da14d9d7f92aa81"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17440,
+  "uuid": "skill-clawhub-xauusd-analyzer",
+  "skillKey": "clawhub-xauusd-analyzer",
+  "name": "trading skill",
+  "summary": "Menganalisis peluang BUY intraday XAUUSD di H1 dengan konfirmasi multi-indikator dan manajemen risiko ketat untuk sinyal akurat dan probabilitas tinggi.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xauusd_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bagass98",
+      "features": [
+        "Menganalisis peluang BUY intraday XAUUSD di H1 dengan konfirmasi multi-indikator dan manajemen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xauusd-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90477355?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xauusd-analyzer",
+      "url": "https://clawhub.ai/skills/xauusd-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xauusd-analyzer",
+    "url": "https://clawhub.ai/skills/xauusd-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xauusd-analyzer-c62a4f7e3c2817c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xauusd-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xauusd-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e6cbbcb9e617fd81dbf75f5d6f22646ba6a362c1818affb779a8863368e6ff1",
+      "artifactSizeBytes": 2398
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T21:30:56.891Z"
+}

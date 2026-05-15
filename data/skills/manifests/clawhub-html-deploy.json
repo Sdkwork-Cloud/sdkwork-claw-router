@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21918,
+  "uuid": "skill-clawhub-html-deploy",
+  "skillKey": "clawhub-html-deploy",
+  "name": "html-deploy",
+  "summary": "Deploy HTML content or files to the web via htmlcode.fun. Use when the user asks to \"deploy to web\", \"host this html\", \"generate a live link for this fronten...",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.html_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiao Mu",
+      "features": [
+        "Deploy HTML content or files to the web via htmlcode.fun",
+        "Use when the user asks to \"deploy to web\", \"host this html\", \"generate a live link for this fro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/html-deploy@1.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/207085896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "html-deploy",
+      "url": "https://clawhub.ai/skills/html-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "html-deploy",
+    "url": "https://clawhub.ai/skills/html-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/html-deploy-058f81fc133a2622.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/html-deploy@1.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-html-deploy-1.3.1.json",
+      "version": "1.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f5ca34134f4b9d39b9da2cf006355ea979624edc133fd13515de66918918b27",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T19:13:11.856Z"
+}

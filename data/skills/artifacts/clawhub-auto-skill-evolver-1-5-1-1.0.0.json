@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-skill-evolver-1-5-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_skill_evolver_1_5_1",
+  "skill": {
+    "id": 45455,
+    "skillKey": "clawhub-auto-skill-evolver-1-5-1",
+    "name": "Auto Skill Evolver 1.5.1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-skill-evolver-1-5-1",
+    "url": "https://clawhub.ai/skills/auto-skill-evolver-1-5-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-skill-evolver-1-5-1-be2b574488cdcad9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A meta-skill that continuously improves other skills through trace+feedback-driven evolution, with the goal of making skill training, status checking, and ap..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangyingzhuangk",
+      "userId": "s1745jre4s1dpyqce9y646s8gh84v3k6",
+      "displayName": "zhangyingzhuangk",
+      "image": "https://avatars.githubusercontent.com/u/16957705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776128335367,
+      "changelog": "auto-skill-evolver 1.5.1 – Continuous skill evolution powered by trace and feedback.\n\n- Enables self-training and in-process evolution for any skill via CLI or Python wrapper.\n- Recognizes/handles Chinese and English intents for training, evolving, status checking, and approving proposals.\n- Safely applies optimizations with interactive approval, secure token flow, and automatic versioning/rollback.\n- Strong security: prompt isolation, multi-layer scans, atomic writes, and strict file permission checks.\n- Optimized for mobile chat integration with actionable status, proposal, and approval flows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25e5cd615e756a5267183d81caf014b22641529b93a59a31044f2b96ac1b0f58"
+}

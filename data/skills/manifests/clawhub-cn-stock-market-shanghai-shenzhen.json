@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34814,
+  "uuid": "skill-clawhub-cn-stock-market-shanghai-shenzhen",
+  "skillKey": "clawhub-cn-stock-market-shanghai-shenzhen",
+  "name": "China Stock Market Shanghai Shenzhen Index",
+  "summary": "Get China A-share market data (Shanghai/SH and Shenzhen/SZ) via FinanceAgent on OneKey Gateway.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_stock_market_shanghai_shenzhen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI-Hub-Admin",
+      "features": [
+        "Get China A-share market data (Shanghai/SH and Shenzhen/SZ) via FinanceAgent on OneKey Gateway."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-stock-market-shanghai-shenzhen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184629057?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-stock-market-shanghai-shenzhen",
+      "url": "https://clawhub.ai/skills/cn-stock-market-shanghai-shenzhen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-stock-market-shanghai-shenzhen",
+    "url": "https://clawhub.ai/skills/cn-stock-market-shanghai-shenzhen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-stock-market-shanghai-shenzhen-fcf4500e23d2ee6d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-stock-market-shanghai-shenzhen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-stock-market-shanghai-shenzhen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c5fab6f485d142db1f93570abf67bbe1fadbfddf90d73baa02e0c1888eb2859",
+      "artifactSizeBytes": 2343
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T15:03:37.772Z"
+}

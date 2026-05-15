@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44781,
+  "uuid": "skill-clawhub-ocgame",
+  "skillKey": "clawhub-ocgame",
+  "name": "OCGame AI Battle",
+  "summary": "AI-driven multi-game platform where the AI autonomously plays, optimizes strategies, and allows users to watch games or check leaderboards.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocgame",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kfwolf26",
+      "features": [
+        "AI-driven multi-game platform where the AI autonomously plays, optimizes strategies, and allows."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ocgame@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/171344831?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ocgame",
+      "url": "https://clawhub.ai/skills/ocgame"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocgame",
+    "url": "https://clawhub.ai/skills/ocgame",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocgame-a77aab633c6bec55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ocgame@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ocgame-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9e326b359ed1a10a395591679a12237f2af22d43e09eeceb053bf342c505771",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:22:46.848Z"
+}

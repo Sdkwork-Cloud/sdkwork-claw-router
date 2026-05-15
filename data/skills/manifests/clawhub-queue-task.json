@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14990,
+  "uuid": "skill-clawhub-queue-task",
+  "skillKey": "clawhub-queue-task",
+  "name": "Queue Task",
+  "summary": "Durable queue-task helper for resumable, idempotent batch jobs in task-father task folders.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.queue_task",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhihao",
+      "features": [
+        "Durable queue-task helper for resumable, idempotent batch jobs in task-father task folders."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/queue-task@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19731677?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "queue-task",
+      "url": "https://clawhub.ai/skills/queue-task"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "queue-task",
+    "url": "https://clawhub.ai/skills/queue-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/queue-task-b3c48b6f06639405.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/queue-task@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-queue-task-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e1fabadbcb2647996603bd3f1c1bc34f3029b8b7d0056e577b259f121aa3ffe",
+      "artifactSizeBytes": 1780
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T13:08:17.565Z"
+}

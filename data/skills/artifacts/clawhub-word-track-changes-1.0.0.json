@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/word-track-changes@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.word_track_changes",
+  "skill": {
+    "id": 56728,
+    "skillKey": "clawhub-word-track-changes",
+    "name": "Word Track Changes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "word-track-changes",
+    "url": "https://clawhub.ai/skills/word-track-changes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/word-track-changes-10c31bdaa1c888a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enable Microsoft Word's Track Changes (修订模式) on documents using native OOXML elements. Supports cross-run text matching and precise paragraph-level replaceme..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elio-huang-15",
+      "userId": "s176p3pbtg0rayzpvt1nsw4zbh844qx4",
+      "displayName": "elio-huang-15",
+      "image": "https://avatars.githubusercontent.com/u/267540330?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775721921634,
+      "changelog": "- Initial release of word-track-changes.\n- Enables Microsoft Word's native Track Changes in DOCX files using OpenXML elements.\n- Supports text replacement and insertion with revisions that display as insertions (green) and deletions (red strikethrough) in Word's Review pane.\n- Accurately matches and replaces text across multiple split <w:t> nodes.\n- Allows batch processing and precise paragraph-level edits, preserving formatting and allowing users to accept/reject changes in Word.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1863fa6a2b2557afa7fa519581077cacb0026ecf6dda9aa2113e4ad158af6b3e"
+}

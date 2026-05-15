@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28220,
+  "uuid": "skill-clawhub-laundry",
+  "skillKey": "clawhub-laundry",
+  "name": "Laundry",
+  "summary": "Track laundry loads, view usage stats, and export reports in multiple formats. Use when logging wash cycles, reviewing patterns, exporting schedules.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.laundry",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Track laundry loads, view usage stats, and export reports in multiple formats",
+        "Use when logging wash cycles, reviewing patterns, exporting schedules."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/laundry@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "laundry",
+      "url": "https://clawhub.ai/skills/laundry"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "laundry",
+    "url": "https://clawhub.ai/skills/laundry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/laundry-ba29c6b70b275f61.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/laundry@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-laundry-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9e024770f9858fe211df296a4751d4199f0bf8b9d99caa64b6b89f17b9e5e5f",
+      "artifactSizeBytes": 1852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:46:13.794Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17426,
+  "uuid": "skill-clawhub-mnemon",
+  "skillKey": "clawhub-mnemon",
+  "name": "Mnemon Memory",
+  "summary": "Persistent memory CLI for LLM agents. Store facts, recall past knowledge, link related memories, manage lifecycle.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mnemon",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Grivn",
+      "features": [
+        "Persistent memory CLI for LLM agents",
+        "Store facts, recall past knowledge, link related memories, manage lifecycle."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mnemon@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56754250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mnemon",
+      "url": "https://clawhub.ai/skills/mnemon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mnemon",
+    "url": "https://clawhub.ai/skills/mnemon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mnemon-cc2db733ee7daffd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mnemon@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mnemon-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10aaf53530705704f128d9ad284071e5d8646cc36b2f3d0d3c7e59d393200fdc",
+      "artifactSizeBytes": 2181
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T21:15:12.878Z"
+}

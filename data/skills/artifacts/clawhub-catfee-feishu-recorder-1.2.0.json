@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/catfee-feishu-recorder@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.catfee_feishu_recorder",
+  "skill": {
+    "id": 71535,
+    "skillKey": "clawhub-catfee-feishu-recorder",
+    "name": "Catfee飞书群聊总结"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "catfee-feishu-recorder",
+    "url": "https://clawhub.ai/skills/catfee-feishu-recorder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/catfee-feishu-recorder-e58e2bb671033e30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书群聊总结技能。当用户说\"总结群聊\"、\"拉取聊天记录\"、\"看看这个群说了啥\"、\"这周说了啥\"、\"最近咋样\"、\"最近一个月\"、\"最近一周\"、\"帮我看看这几天\"等时触发。能识别时间范围（默认7天），拉取消息后生成摘要回复到群里，并创建飞书文档链接。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "glory904649854",
+      "userId": "s174mpq1kn7trpfav983k6effh844krw",
+      "displayName": "冢猫",
+      "image": "https://avatars.githubusercontent.com/u/20748423?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775533504014,
+      "changelog": "新增：完整聊天记录含ID+昵称+时间+内容；飞书文档含摘要+完整记录两部分；README样式优化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ebefee15b4f441a0be8c6482cf18cb55b7b5b7ecb3c87f4f682990179da9c6b5"
+}

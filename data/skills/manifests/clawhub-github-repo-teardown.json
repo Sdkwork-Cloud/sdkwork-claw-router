@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30632,
+  "uuid": "skill-clawhub-github-repo-teardown",
+  "skillKey": "clawhub-github-repo-teardown",
+  "name": "GitHub Repo Teardown",
+  "summary": "Deep-dive teardown of any GitHub open-source project into a beautifully designed HTML report that both product people and engineers can understand. Covers ar...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_repo_teardown",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Junjie Liu",
+      "features": [
+        "Deep-dive teardown of any GitHub open-source project into a beautifully designed HTML report th.",
+        "Covers ar..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-repo-teardown@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126896304?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-repo-teardown",
+      "url": "https://clawhub.ai/skills/github-repo-teardown"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-repo-teardown",
+    "url": "https://clawhub.ai/skills/github-repo-teardown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-repo-teardown-3e3c2a530ef9964e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-repo-teardown@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-repo-teardown-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0182209ea1330728716aa27ce94d30d9f28fd037a638476b74d44eef7760a870",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T12:17:59.530Z"
+}

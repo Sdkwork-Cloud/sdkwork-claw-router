@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vc-warm-intro-coach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vc_warm_intro_coach",
+  "skill": {
+    "id": 53943,
+    "skillKey": "clawhub-vc-warm-intro-coach",
+    "name": "Vc Warm Intro Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vc-warm-intro-coach",
+    "url": "https://clawhub.ai/skills/vc-warm-intro-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vc-warm-intro-coach-691f7bf3cedb9435.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coach a founder on engineering warm introductions to specific VCs / partners — building a target list (15-30 firms, ranked by stage / sector / partner-fit, n..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 76,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778114799825,
+      "changelog": "- Initial release of vc-warm-intro-coach skill.\n- Guides founders step-by-step on warm VC introduction strategy: target list building, introducer mapping, and high-quality forwardable emails.\n- Emphasizes partner-fit over firm brand, and prioritizes high-conviction introducers.\n- Covers etiquette, double-opt-in requests, tracking intro outcomes, and alternatives when intros don’t land.\n- Designed to trigger on common fundraising and VC outreach phrases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05592a0f18b224a43c334cceb82efab1c051abf2071e00a1eb4be6ed465177c6"
+}

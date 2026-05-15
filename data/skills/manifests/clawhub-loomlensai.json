@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39516,
+  "uuid": "skill-clawhub-loomlensai",
+  "skillKey": "clawhub-loomlensai",
+  "name": "Loomlensai",
+  "summary": "Estimate the cost of any AI prompt across 19+ models before you run it. Works with OpenAI, Anthropic, Google, DeepSeek, xAI, MiniMax, and local models.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loomlensai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AVale-SLAI",
+      "features": [
+        "Estimate the cost of any AI prompt across 19+ models before you run it",
+        "Works with OpenAI, Anthropic, Google, DeepSeek, xAI, MiniMax, and local models."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/loomlensai@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270702039?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "loomlensai",
+      "url": "https://clawhub.ai/skills/loomlensai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loomlensai",
+    "url": "https://clawhub.ai/skills/loomlensai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loomlensai-4480595bd708caa1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/loomlensai@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-loomlensai-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65b4782c4490d57856ee78fcee4e3efc59e0ec790073a98327a851e4fd7d3fbd",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T23:51:11.653Z"
+}

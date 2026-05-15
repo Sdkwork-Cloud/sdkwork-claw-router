@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10392,
+  "uuid": "skill-clawhub-hermes-agent-v2",
+  "skillKey": "clawhub-hermes-agent-v2",
+  "name": "Hermes Agent Skill",
+  "summary": "NousResearch Hermes Agent CLI integration. Core capabilities: - Self-improving skill system - Persistent memory (FTS5 + LLM summaries) - Sub-agent delegation...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_agent_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "will",
+      "features": [
+        "NousResearch Hermes Agent CLI integration",
+        "Core capabilities:",
+        "Self-improving skill system",
+        "Persistent memory (FTS5 + LLM summaries)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hermes-agent-v2@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5248974?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hermes-agent-v2",
+      "url": "https://clawhub.ai/skills/hermes-agent-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-agent-v2",
+    "url": "https://clawhub.ai/skills/hermes-agent-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-agent-v2-66239abf88952f78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hermes-agent-v2@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hermes-agent-v2-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:375014214c0ca355aa5616d59c716711b76444f44924b61df64f5305c4192358",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T01:49:58.074Z"
+}

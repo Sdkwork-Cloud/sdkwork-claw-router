@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29123,
+  "uuid": "skill-clawhub-toolweb-soc2-readiness",
+  "skillKey": "clawhub-toolweb-soc2-readiness",
+  "name": "SOC 2 Readiness Checker",
+  "summary": "Assess your organization's SOC 2 audit readiness with scores, gap analysis, audit type advice, and a prioritized remediation roadmap across all Trust Service...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_soc2_readiness",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Assess your organization's SOC 2 audit readiness with scores, gap analysis, audit type advice,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toolweb-soc2-readiness@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toolweb-soc2-readiness",
+      "url": "https://clawhub.ai/skills/toolweb-soc2-readiness"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-soc2-readiness",
+    "url": "https://clawhub.ai/skills/toolweb-soc2-readiness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-soc2-readiness-e7f701a9cc6679a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toolweb-soc2-readiness@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toolweb-soc2-readiness-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:944462048bf6e29c3088883de66e693c8325d700a510582ab0ece7ccb0bdfbb6",
+      "artifactSizeBytes": 2356
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:17:50.427Z"
+}

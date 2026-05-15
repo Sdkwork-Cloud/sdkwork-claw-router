@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37741,
+  "uuid": "skill-clawhub-mobazha-store-mcp-connect",
+  "skillKey": "clawhub-mobazha-store-mcp-connect",
+  "name": "Store Mcp Connect",
+  "summary": "Connect an AI agent to a Mobazha store via MCP (Model Context Protocol). Use when the user wants their agent to directly manage store products, orders, and s...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mobazha_store_mcp_connect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fengzie",
+      "features": [
+        "Connect an AI agent to a Mobazha store via MCP (Model Context Protocol)",
+        "Use when the user wants their agent to directly manage store products, orders, and s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mobazha-store-mcp-connect@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34826428?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mobazha-store-mcp-connect",
+      "url": "https://clawhub.ai/skills/mobazha-store-mcp-connect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mobazha-store-mcp-connect",
+    "url": "https://clawhub.ai/skills/mobazha-store-mcp-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mobazha-store-mcp-connect-859f0c4ae3edd959.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mobazha-store-mcp-connect@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mobazha-store-mcp-connect-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86c8329ab62a913b8a5096334ea4bec9685e8535b8aef7611ba56afa907e18cd",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T10:43:49.162Z"
+}

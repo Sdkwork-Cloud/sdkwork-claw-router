@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/specialized-agents@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.specialized_agents",
+  "skill": {
+    "id": 8358,
+    "skillKey": "clawhub-specialized-agents",
+    "name": "Specialized Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "specialized-agents",
+    "url": "https://clawhub.ai/skills/specialized-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/specialized-agents-b1be82946310837d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and orchestrate 25 specialized AI agents across content, development, QA, personalization, and meta tasks for parallel workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jdalbright",
+      "userId": "publishers:jdalbright",
+      "displayName": "jdalbright",
+      "image": "https://avatars.githubusercontent.com/u/219472887?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 24094,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770731056593,
+      "changelog": "31 pre-configured AI agents for research, writing, coding, analysis, and more. Complete with meta agent creation system.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9575b26feb5bf201cd30b4d8c251db550ebec4b3beb0830a0df08563b1754a43"
+}

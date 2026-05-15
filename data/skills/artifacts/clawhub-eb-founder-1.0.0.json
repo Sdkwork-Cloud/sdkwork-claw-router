@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eb-founder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eb_founder",
+  "skill": {
+    "id": 43231,
+    "skillKey": "clawhub-eb-founder",
+    "name": "Founder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eb-founder",
+    "url": "https://clawhub.ai/skills/eb-founder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eb-founder-512c7d71df2d6b84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Strategic consultant for founders and entrepreneurs. Use this skill WHENEVER the user mentions: startup, MVP, product launch, fundraising, pitch deck, produc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emersonbraun",
+      "userId": "s17et1m19hdc751hkgrqtzjf6184b55r",
+      "displayName": "Emerson Braun",
+      "image": "https://avatars.githubusercontent.com/u/25778027?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775521230470,
+      "changelog": "Founder-focused consulting skill for startups and entrepreneurs.\n\n- Provides direct, quantified, and phase-specific advice for startup founders, from ideation to fundraising and scaling.\n- Outlines actionable frameworks (e.g., Mom Test, Lean Canvas, AARRR, ICE Score) tailored to context.\n- Enforces focus on unit economics, market sizing, and viability over perfection.\n- Includes anti-patterns to avoid, ensuring honest and practical guidance.\n- Contains clear response templates and reference guides for deep dives into tools, growth, and fundraising.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae1737d109c03d0ee71a9f0c3901abd4aab56d9497f46a2d2ae2a0f06d12aef2"
+}

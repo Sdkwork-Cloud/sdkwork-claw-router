@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58966,
+  "uuid": "skill-clawhub-api-doc-gen",
+  "skillKey": "clawhub-api-doc-gen",
+  "name": "Api Doc Gen",
+  "summary": "自动从 Flask、Django、FastAPI、Express.js 代码生成统一格式的API文档，支持Markdown、OpenAPI和Postman导出。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_doc_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenghoo123-png",
+      "features": [
+        "自动从 Flask、Django、FastAPI、Express.js 代码生成统一格式的API文档，支持Markdown、OpenAPI和Postman导出。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-doc-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265226019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-doc-gen",
+      "url": "https://clawhub.ai/skills/api-doc-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-doc-gen",
+    "url": "https://clawhub.ai/skills/api-doc-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-doc-gen-d8172517230f7a2a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-doc-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-doc-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aac0a26af396e3cab99f99b699b4f161a5e2872cf32c7be07e6ec650f6a39b56",
+      "artifactSizeBytes": 2264
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T03:18:00.979Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52328,
+  "uuid": "skill-clawhub-claude-cli-proxy",
+  "skillKey": "clawhub-claude-cli-proxy",
+  "name": "Claude CLI Proxy",
+  "summary": "Set up a local HTTP proxy that routes OpenClaw model requests through Claude Code CLI using a Team/Max/Pro subscription instead of API keys, achieving $0 per...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_cli_proxy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Max",
+      "features": [
+        "Set up a local HTTP proxy that routes OpenClaw model requests through Claude Code CLI using a T."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-cli-proxy@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5273024?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-cli-proxy",
+      "url": "https://clawhub.ai/skills/claude-cli-proxy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-cli-proxy",
+    "url": "https://clawhub.ai/skills/claude-cli-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-cli-proxy-946e13849db6c54c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-cli-proxy@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-cli-proxy-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84d3abb87961c95371a43fe9ff4637903170cf63ecf65016b4a87352888a27f5",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T18:39:13.974Z"
+}

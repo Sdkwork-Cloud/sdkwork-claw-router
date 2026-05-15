@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-content-generate@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_content_generate",
+  "skill": {
+    "id": 67839,
+    "skillKey": "clawhub-xhs-content-generate",
+    "name": "XHS Content Generate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-content-generate",
+    "url": "https://clawhub.ai/skills/xhs-content-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-content-generate-51fc5e95817f6b91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书爆款笔记生成器。基于话题和参考帖子，学习写作风格并生成有深度、有争议、能引发讨论的内容。 触发场景：(1) 用户要求生成小红书笔记 (2) 用户说\"写一篇小红书\" (3) 用户要求学习某话题的爆款写法 (4) 用户说\"帮我写小红书风格的内容\"。 核心能力：话题获取 + 风格分析 + 深度观点生成 + 文风优化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lifei68801",
+      "userId": "s17aqaaq83dwh8634acxtaty8x83hxsq",
+      "displayName": "lifei68801",
+      "image": "https://avatars.githubusercontent.com/u/130719648?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 443,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773215495377,
+      "changelog": "Added metadata.permissions and metadata.behavior declarations for security scanner compliance. Declared Node runtime requirement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:809abcf28efa52a470909c379946b35ed3c9059788bd48fa0a44239ec5610194"
+}

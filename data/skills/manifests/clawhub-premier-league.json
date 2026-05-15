@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66190,
+  "uuid": "skill-clawhub-premier-league",
+  "skillKey": "clawhub-premier-league",
+  "name": "Premier League",
+  "summary": "英超联赛由20支球队组成，38轮主客场比赛，胜3分，季末前三降级，前四获欧冠资格。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.premier_league",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "英超联赛由20支球队组成，38轮主客场比赛，胜3分，季末前三降级，前四获欧冠资格。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/premier-league@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "premier-league",
+      "url": "https://clawhub.ai/skills/premier-league"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "premier-league",
+    "url": "https://clawhub.ai/skills/premier-league",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/premier-league-43a88e906eaadd7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/premier-league@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-premier-league-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7361770cf8c1cb7f72a1323a97f7e60145afbb42dc8e46d375adbefc0f7eacd8",
+      "artifactSizeBytes": 2134
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T22:58:00.592Z"
+}

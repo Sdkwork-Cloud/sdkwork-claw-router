@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prometheus-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prometheus_query",
+  "skill": {
+    "id": 28941,
+    "skillKey": "clawhub-prometheus-query",
+    "name": "prometheus-query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prometheus-query",
+    "url": "https://clawhub.ai/skills/prometheus-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prometheus-query-20a17c8e5fe775ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Prometheus metrics, alerts, and cluster status using PromQL with options for direct URL or Kubernetes port-forward access."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peintune",
+      "userId": "s17d4v1zmwqajqh15q1arvt48d83navv",
+      "displayName": "GoodAtMe",
+      "image": "https://avatars.githubusercontent.com/u/10082030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774875172645,
+      "changelog": "- Major refactor: Migrated from Node.js CLI-based implementation to a single Python script for querying Prometheus.\n- Added scripts/query_prometheus.py as the new entry point; previous Node.js-related files removed.\n- SKILL.md rewritten for new workflow: focuses on direct Prometheus URL or Kubernetes port-forward for connectivity.\n- CLI usage is now via Python, with support for querying metrics, alerts, and customizable parameters.\n- Legacy support for multi-instance, config files, and Node.js CLI commands has been removed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e447dd2a6856638e8b6bba21463474b794fb262d66e3922c9fd6119744cbe8c"
+}

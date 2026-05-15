@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50907,
+  "uuid": "skill-clawhub-auto-cleaning-disk",
+  "skillKey": "clawhub-auto-cleaning-disk",
+  "name": "Auto Cleaning Disk",
+  "summary": "Automatically clean disk space by removing temp files, browser cache, recycle bin/trash, and log files — safely, without deleting any important files. Use th...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_cleaning_disk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ahqazi-dev",
+      "features": [
+        "Automatically clean disk space by removing temp files, browser cache, recycle bin/trash, and lo.",
+        "Use th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-cleaning-disk@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197776734?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-cleaning-disk",
+      "url": "https://clawhub.ai/skills/auto-cleaning-disk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-cleaning-disk",
+    "url": "https://clawhub.ai/skills/auto-cleaning-disk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-cleaning-disk-107997c772501c0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-cleaning-disk@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-cleaning-disk-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04333714cc3174b3aa77f5b508e5ad5432014078d1c4851608aec58c25ae9058",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T18:14:45.597Z"
+}

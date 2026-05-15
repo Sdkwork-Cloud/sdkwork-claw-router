@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/outlook-email-2@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outlook_email_2",
+  "skill": {
+    "id": 59467,
+    "skillKey": "clawhub-outlook-email-2",
+    "name": "Outlook Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outlook-email-2",
+    "url": "https://clawhub.ai/skills/outlook-email-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outlook-email-2-baf72a74d9241ab8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Microsoft Outlook 邮件集成。收发邮件、搜索邮件、管理邮件文件夹。通过 MorphixAI 代理安全访问 Microsoft Graph API。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paul-leo",
+      "userId": "s1752kcbgt0ajgbfqwd4y5vb3n83kvp4",
+      "displayName": "Paul Leo",
+      "image": "https://avatars.githubusercontent.com/u/55380315?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 576,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772786370037,
+      "changelog": "- 增加了详细的前置条件说明，包括插件安装、API Key 获取与账号链接步骤\n- 指定了插件安装命令与相关管理页面链接，简化配置流程\n- 进一步明确了环境变量配置方式和密钥格式\n- 原有功能介绍与操作示例保持不变",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:05fb2746450fe3f1e1f7422b2dab989a5d8799fbb2d7032f1c3f3d8707714218"
+}

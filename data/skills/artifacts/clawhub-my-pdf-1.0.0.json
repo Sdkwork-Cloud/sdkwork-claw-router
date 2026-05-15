@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-pdf@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_pdf",
+  "skill": {
+    "id": 20327,
+    "skillKey": "clawhub-my-pdf",
+    "name": "My Pdf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-pdf",
+    "url": "https://clawhub.ai/skills/my-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-pdf-875641edab57b14c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liujiang817",
+      "userId": "s17cmgh8wy9gdmg7vkhg9eshcn83gfyz",
+      "displayName": "liujiang817",
+      "image": "https://avatars.githubusercontent.com/u/30427436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 441,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773667715800,
+      "changelog": "my-pdf v1.0.0\n\n- Initial release of a comprehensive PDF manipulation toolkit.\n- Features extraction of text and tables, PDF creation, merging/splitting, metadata retrieval, rotation, watermarking, and password protection.\n- Includes usage guides for Python libraries (pypdf, pdfplumber, reportlab) and command-line tools (pdftotext, qpdf, pdftk).\n- Covers extraction of images and OCR from scanned PDFs.\n- Provides quick reference table for common PDF tasks.\n- Additional instructions for PDF form handling are in forms.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e389d3373181b7ddc764d9438d56c2cd4556661602d35ebd5f9f7fbad42a6bd7"
+}

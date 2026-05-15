@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sota-tracker-claw@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sota_tracker_claw",
+  "skill": {
+    "id": 12351,
+    "skillKey": "clawhub-sota-tracker-claw",
+    "name": "SOTA Tracker (Claw)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sota-tracker-claw",
+    "url": "https://clawhub.ai/skills/sota-tracker-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sota-tracker-claw-32cd50af12c33a10.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides daily-updated, authoritative rankings and metadata of state-of-the-art AI models aggregated from leading sources via JSON, API, or local queries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "romancircus",
+      "userId": "publishers:romancircus",
+      "displayName": "romancircus",
+      "image": "https://avatars.githubusercontent.com/u/253068059?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1712,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770209276587,
+      "changelog": "Renamed from MCP to Claw v1.0.1 - optimized for agents.md static file workflow",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6259aa6fb8a0a8bfdff89717e532ec93ef2f59645bcf28075af66623d6556d07"
+}

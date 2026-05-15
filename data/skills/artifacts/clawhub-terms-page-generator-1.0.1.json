@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/terms-page-generator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.terms_page_generator",
+  "skill": {
+    "id": 32786,
+    "skillKey": "clawhub-terms-page-generator",
+    "name": "terms-page-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "terms-page-generator",
+    "url": "https://clawhub.ai/skills/terms-page-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/terms-page-generator-0033a87810d1eec7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to create, optimize, or structure Terms of Service page. Also use when the user mentions \"terms of service,\" \"terms and conditions,\" \"ter..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774967122973,
+      "changelog": "Batch: privacy through affiliate-program",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a725a2ac7e44651c91c84a742d4e41ca59a92c9010e6bb374518fa35fe3a347"
+}

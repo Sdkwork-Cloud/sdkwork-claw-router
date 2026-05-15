@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47422,
+  "uuid": "skill-clawhub-justoneapi-youtube-get-channel-videos",
+  "skillKey": "clawhub-justoneapi-youtube-get-channel-videos",
+  "name": "YouTube Channel Videos API",
+  "summary": "Call GET /api/youtube/get-channel-videos/v1 for YouTube Channel Videos through JustOneAPI with channelId.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_youtube_get_channel_videos",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/youtube/get-channel-videos/v1 for YouTube Channel Videos through JustOneAPI with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-youtube-get-channel-videos@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-youtube-get-channel-videos",
+      "url": "https://clawhub.ai/skills/justoneapi-youtube-get-channel-videos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-youtube-get-channel-videos",
+    "url": "https://clawhub.ai/skills/justoneapi-youtube-get-channel-videos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-youtube-get-channel-videos-84373095ce15be03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-youtube-get-channel-videos@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-youtube-get-channel-videos-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93ed99a1e7ea9eb92a8727aee9f9f58a382d14ac54b30a0b060ad559094ab6f4",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T12:01:57.859Z"
+}

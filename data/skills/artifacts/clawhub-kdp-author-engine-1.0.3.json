@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kdp-author-engine@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kdp_author_engine",
+  "skill": {
+    "id": 31180,
+    "skillKey": "clawhub-kdp-author-engine",
+    "name": "KDP Author Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kdp-author-engine",
+    "url": "https://clawhub.ai/skills/kdp-author-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kdp-author-engine-d1360ccdcb8e205f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete indie author skill: book writing, editing, KDP/IngramSpark publishing, Amazon keyword research, book marketing, and launch execution. Covers the ful..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "droteng",
+      "userId": "s17ct8brq72kj82zp5e4swh4ex84wdn9",
+      "displayName": "droteng",
+      "image": "https://avatars.githubusercontent.com/u/271400058?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776299265760,
+      "changelog": "Updated README: sales page link added (oteng.link/kdp-author-engine).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f937a71690f4d428c55163a94c5c84016692d1ffc1f13b74c0e19405a6ec0c06"
+}

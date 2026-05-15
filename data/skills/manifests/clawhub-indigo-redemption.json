@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29370,
+  "uuid": "skill-clawhub-indigo-redemption",
+  "skillKey": "clawhub-indigo-redemption",
+  "name": "Indigo Redemption",
+  "summary": "Manage redemptions and Redemption Order Book (ROB) positions on Indigo Protocol.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.indigo_redemption",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Angelos Kappos",
+      "features": [
+        "Manage redemptions and Redemption Order Book (ROB) positions on Indigo Protocol."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/indigo-redemption@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9395707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "indigo-redemption",
+      "url": "https://clawhub.ai/skills/indigo-redemption"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "indigo-redemption",
+    "url": "https://clawhub.ai/skills/indigo-redemption",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/indigo-redemption-82ac0408a86d2644.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/indigo-redemption@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-indigo-redemption-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bffdf0b292cef2890c3bf3d92eb4f1e6d41993920d03fe2f48588b145b16ba8b",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T00:01:57.862Z"
+}

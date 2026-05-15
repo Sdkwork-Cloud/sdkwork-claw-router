@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26694,
+  "uuid": "skill-clawhub-emelia",
+  "skillKey": "clawhub-emelia",
+  "name": "Emelia",
+  "summary": "Emelia integration. Manage Organizations, Users, Goals, Filters. Use when the user wants to interact with Emelia data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emelia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Emelia integration",
+        "Manage Organizations, Users, Goals, Filters",
+        "Use when the user wants to interact with Emelia data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/emelia@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "emelia",
+      "url": "https://clawhub.ai/skills/emelia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emelia",
+    "url": "https://clawhub.ai/skills/emelia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emelia-a31b999009d51dbd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/emelia@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-emelia-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9923f21c44407898201542000e6c3b0920acb0297bb16f7f130e77d2917a94be",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:43:41.888Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tigerbrokers@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tigerbrokers",
+  "skill": {
+    "id": 51462,
+    "skillKey": "clawhub-tigerbrokers",
+    "name": "Tigerbrokers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tigerbrokers",
+    "url": "https://clawhub.ai/skills/tigerbrokers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tigerbrokers-8662b79b83977641.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tiger Brokers OpenAPI Python SDK — complete skills for AI coding tools. Covers SDK setup, market data queries, stock/futures/options trading, real-time push..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hotea",
+      "userId": "s17566z605xzcfaq9vsxftgve583n25n",
+      "displayName": "Hotea",
+      "image": "https://avatars.githubusercontent.com/u/4067964?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 315,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775571607325,
+      "changelog": "- Added support for the tigeropen CLI command-line tool with dedicated reference guide (cli.md)\n- Description now includes the CLI tool and relevant activation keywords\n- Safety warning added: always use paper trading unless live trading is explicitly requested, and confirm order details with user\n- Language auto-reply rule: respond in user's language, keep technical terms untranslated\n- Expanded and updated common stock symbol lookup tables (HK/US)\n- Updated SDK and documentation links to latest versions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0aa57609079daae270e70d124caee05f6d524bf068d21779cd120ce213126571"
+}

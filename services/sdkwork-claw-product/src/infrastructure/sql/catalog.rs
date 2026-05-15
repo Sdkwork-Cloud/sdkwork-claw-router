@@ -1,12 +1,12 @@
 use crate::domain::{
     AiModel, ApiKeyGroup, ApiKeyGroupMetricSnapshot, BillingMeter, DomainResult,
     GatewayAccessPolicy, GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendorDefinition,
-    PriceSide, PricingPlan, QuotaPolicy,
+    PriceSide, PricingPlan, ProviderAccountPoolRoute, QuotaPolicy, RoutingPolicy, RoutingRule,
 };
 use crate::infrastructure::sql::rows::{
     AiModelRow, ApiKeyGroupMetricSnapshotRow, ApiKeyGroupRow, GatewayAccessPolicyRow,
     GatewayApiKeyRow, ModelPriceRow, ModelProviderRouteRow, ModelVendorRow, PricingPlanRow,
-    QuotaPolicyRow,
+    ProviderAccountPoolRouteRow, QuotaPolicyRow, RoutingPolicyRow, RoutingRuleRow,
 };
 use crate::ports::PricingCatalog;
 
@@ -15,6 +15,9 @@ pub struct PricingCatalogRows {
     pub vendors: Vec<ModelVendorRow>,
     pub models: Vec<AiModelRow>,
     pub provider_routes: Vec<ModelProviderRouteRow>,
+    pub provider_account_pool_routes: Vec<ProviderAccountPoolRouteRow>,
+    pub routing_policies: Vec<RoutingPolicyRow>,
+    pub routing_rules: Vec<RoutingRuleRow>,
     pub pricing_plans: Vec<PricingPlanRow>,
     pub api_key_groups: Vec<ApiKeyGroupRow>,
     pub api_keys: Vec<GatewayApiKeyRow>,
@@ -28,6 +31,9 @@ pub struct SqlPricingCatalogSnapshot {
     vendors: Vec<ModelVendorDefinition>,
     models: Vec<AiModel>,
     provider_routes: Vec<ModelProviderRoute>,
+    provider_account_pool_routes: Vec<ProviderAccountPoolRoute>,
+    routing_policies: Vec<RoutingPolicy>,
+    routing_rules: Vec<RoutingRule>,
     pricing_plans: Vec<PricingPlan>,
     api_key_groups: Vec<ApiKeyGroup>,
     api_keys: Vec<GatewayApiKey>,
@@ -46,6 +52,12 @@ impl SqlPricingCatalogSnapshot {
                 rows.provider_routes,
                 ModelProviderRouteRow::try_into_domain,
             )?,
+            provider_account_pool_routes: map_rows(
+                rows.provider_account_pool_routes,
+                ProviderAccountPoolRouteRow::try_into_domain,
+            )?,
+            routing_policies: map_rows(rows.routing_policies, RoutingPolicyRow::try_into_domain)?,
+            routing_rules: map_rows(rows.routing_rules, RoutingRuleRow::try_into_domain)?,
             pricing_plans: map_rows(rows.pricing_plans, PricingPlanRow::try_into_domain)?,
             api_key_groups: map_rows(rows.api_key_groups, ApiKeyGroupRow::try_into_domain)?,
             api_keys: rows
@@ -84,6 +96,22 @@ impl PricingCatalog for SqlPricingCatalogSnapshot {
         self.provider_routes
             .iter()
             .filter(|route| route.catalog_key == model)
+            .cloned()
+            .collect()
+    }
+
+    fn list_provider_account_pool_routes(&self) -> Vec<ProviderAccountPoolRoute> {
+        self.provider_account_pool_routes.clone()
+    }
+
+    fn list_routing_policies(&self) -> Vec<RoutingPolicy> {
+        self.routing_policies.clone()
+    }
+
+    fn list_routing_rules(&self, profile_id: i64) -> Vec<RoutingRule> {
+        self.routing_rules
+            .iter()
+            .filter(|rule| rule.profile_id == profile_id)
             .cloned()
             .collect()
     }

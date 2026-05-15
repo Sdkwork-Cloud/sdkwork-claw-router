@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18159,
+  "uuid": "skill-clawhub-lukso-agent-comms-firm",
+  "skillKey": "clawhub-lukso-agent-comms-firm",
+  "name": "Lukso Agent Comms",
+  "summary": "Standardized agent-to-agent communication protocol for OpenClaw agents on the LUKSO blockchain. Uses LSP1 Universal Receiver as the transport.",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lukso_agent_comms_firm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bitcargoCrew",
+      "features": [
+        "Standardized agent-to-agent communication protocol for OpenClaw agents on the LUKSO blockchain",
+        "Uses LSP1 Universal Receiver as the transport."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lukso-agent-comms-firm@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109482868?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lukso-agent-comms-firm",
+      "url": "https://clawhub.ai/skills/lukso-agent-comms-firm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lukso-agent-comms-firm",
+    "url": "https://clawhub.ai/skills/lukso-agent-comms-firm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lukso-agent-comms-firm-0a46dda80563e841.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lukso-agent-comms-firm@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-lukso-agent-comms-firm-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f05d2d477ef63bfb7b318573e756dada60344d1a2ed8bde653dc06065d6f945",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T12:38:04.922Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qa-scenario-synthesizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qa_scenario_synthesizer",
+  "skill": {
+    "id": 59428,
+    "skillKey": "clawhub-qa-scenario-synthesizer",
+    "name": "Qa Scenario Synthesizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qa-scenario-synthesizer",
+    "url": "https://clawhub.ai/skills/qa-scenario-synthesizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qa-scenario-synthesizer-4a33cdc6377af151.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "把需求拆成功能、异常、跨端、脏输入和恢复场景测试集。；use for qa, test-scenarios, edge-cases workflows；do not use for 宣称已经完成测试, 忽略关键用户路径."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773894791169,
+      "changelog": "- Initial release of qa-scenario-synthesizer skill.\n- Generates comprehensive QA test scenarios from requirements, covering main flow, exceptions, cross-platform, invalid input, and recovery situations.\n- Clearly separates suitable and unsuitable usage cases for scenario generation.\n- Provides structured output including draft for review and execution checklist.\n- Prioritizes explicit listing of missing or confirmation-needed items.\n- Ensures strict safety boundaries: no execution of high-risk commands, always readable and auditable outputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:689297eb1753d59c966e2ec5c4ef06176a9dd922346afef459fff8dd15d9845f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/accessibility@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.accessibility",
+  "skill": {
+    "id": 9855,
+    "skillKey": "clawhub-accessibility",
+    "name": "Accessibility"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "accessibility",
+    "url": "https://clawhub.ai/skills/accessibility",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/accessibility-714db89df42bdb7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build WCAG 2.1 AA compliant websites with semantic HTML, proper ARIA, focus management, and screen reader support. Includes color contrast (4.5:1 text), keyboard navigation, form labels, and live regions. Use when implementing accessible i."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3065,
+      "installsAllTime": 24,
+      "installsCurrent": 23,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769871080638,
+      "changelog": "- Initial release of the accessibility skill, designed for building WCAG 2.1 AA compliant websites.\n- Provides clear guidance on semantic HTML, ARIA usage, focus management, screen reader support, color contrast, keyboard navigation, accessible forms, and live regions.\n- Includes \"always do\" and \"never do\" checklists to prevent common accessibility mistakes.\n- Lists 12 documented accessibility issues this skill helps prevent, with references for deeper learning.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9d5032b8b903effa2b6d4dbc8b750e8ef6e59c6dbbced5138ddce78d507fb47d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/analytics-tracking-automation@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analytics_tracking_automation",
+  "skill": {
+    "id": 46061,
+    "skillKey": "clawhub-analytics-tracking-automation",
+    "name": "Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analytics-tracking-automation",
+    "url": "https://clawhub.ai/skills/analytics-tracking-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analytics-tracking-automation-e7fb10e96c6f646e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when you need end-to-end GA4 + GTM tracking delivery across discovery, schema, sync, and verification phases."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jtrackingai",
+      "userId": "s17ekf46tj9thg21ykch2jvx91843m78",
+      "displayName": "jtrackingai",
+      "image": "https://avatars.githubusercontent.com/u/255785219?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1776330611816,
+      "changelog": "**Major update: CLI dist files and runtime logic removed. Now routes all commands to public standalone CLI interface.**\n\n- Removed 41 bundled CLI files, including all runtime and agent code.\n- Updated usage instructions to require the public `event-tracking` CLI; all commands use this interface.\n- Skill now only acts as a workflow router and intake/routing layer—no longer executes analysis, schema, or sync logic directly.\n- Users must manage builds and CLI dependencies themselves; instructs to install with `npx skills add jtrackingai/analytics-tracking-automation` and run `npm run build` if needed.\n- Updated documentation to reflect the new routing-only role and changed command surfaces.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14b6d9bc9521dd5e920dbc1fd222c3f5b8acc3b3907094e265d849f171e905d9"
+}

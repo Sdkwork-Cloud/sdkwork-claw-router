@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22706,
+  "uuid": "skill-clawhub-latchkey",
+  "skillKey": "clawhub-latchkey",
+  "name": "Latchkey",
+  "summary": "Interact with arbitrary third-party or self-hosted services (AWS, Slack, Google Drive, Dropbox, GitHub, GitLab, Linear, Coolify...) using their HTTP APIs.",
+  "version": "2.3.0+5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.latchkey",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hynek Urban",
+      "features": [
+        "Interact with arbitrary third-party or self-hosted services (AWS, Slack, Google Drive, Dropbox,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/latchkey@2.3.0+5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5726606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "latchkey",
+      "url": "https://clawhub.ai/skills/latchkey"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "latchkey",
+    "url": "https://clawhub.ai/skills/latchkey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/latchkey-03e759a06bdcbf94.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/latchkey@2.3.0+5",
+      "artifactUrl": "data/skills/artifacts/clawhub-latchkey-2.3.0+5.json",
+      "version": "2.3.0+5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c2b0604132397e79647193418a95a72cc354944110ccf6842420410833089de",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T10:48:47.129Z"
+}

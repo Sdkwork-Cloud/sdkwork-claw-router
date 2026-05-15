@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39236,
+  "uuid": "skill-clawhub-review-elixir",
+  "skillKey": "clawhub-review-elixir",
+  "name": "Review Elixir",
+  "summary": "Comprehensive Elixir/Phoenix code review with optional parallel agents",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_elixir",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Comprehensive Elixir/Phoenix code review with optional parallel agents"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/review-elixir@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "review-elixir",
+      "url": "https://clawhub.ai/skills/review-elixir"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-elixir",
+    "url": "https://clawhub.ai/skills/review-elixir",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-elixir-860a6ddc13b52317.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/review-elixir@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-review-elixir-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b8342ba1562b568eb75c29b5a9b204c17036fde8c26460c66c1bcd3fd465520",
+      "artifactSizeBytes": 2536
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:11:57.148Z"
+}

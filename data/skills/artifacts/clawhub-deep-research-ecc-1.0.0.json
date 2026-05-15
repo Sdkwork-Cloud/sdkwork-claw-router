@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-research-ecc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_ecc",
+  "skill": {
+    "id": 32662,
+    "skillKey": "clawhub-deep-research-ecc",
+    "name": "Deep Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-ecc",
+    "url": "https://clawhub.ai/skills/deep-research-ecc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-ecc-3b583317ebc3887f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conduct multi-source research with synthesized reports and citations. Searches the web, reads full content from key sources, and produces structured reports...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "djc00p",
+      "userId": "s17akx17qd32yxnr1065qq0kdd83h2c3",
+      "displayName": "Deonte Cooper",
+      "image": "https://avatars.githubusercontent.com/u/45864171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775430138705,
+      "changelog": "Initial release. Multi-source research with synthesized reports and citations. Adapted from everything-claude-code by @affaan-m (MIT)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:75b204c712fd43002c1613e6c3097df16b8db6a815fd047d6492b8c9a80b6b03"
+}

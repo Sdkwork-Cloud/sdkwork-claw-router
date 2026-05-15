@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mouse-keyboard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mouse_keyboard",
+  "skill": {
+    "id": 17720,
+    "skillKey": "clawhub-mouse-keyboard",
+    "name": "mouse-keyboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mouse-keyboard",
+    "url": "https://clawhub.ai/skills/mouse-keyboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mouse-keyboard-3b7d5ef99b6522fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control mouse and keyboard on Mac using cliclick. Use when you need to automate clicking, typing, or controlling the mouse cursor."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "calvin-dean",
+      "userId": "s17d5efa4g40dv72ysapcjg20984c83e",
+      "displayName": "calvin-dean",
+      "image": "https://avatars.githubusercontent.com/u/121805072?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 743,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774184417382,
+      "changelog": "Initial release — automate Mac mouse and keyboard using cliclick.\n\n- Enables click, double-click, right-click, type, key down/up, and key press actions at specified coordinates.\n- Supports both absolute and relative positions for mouse actions.\n- Provides tools to execute custom cliclick command sequences and combine actions (e.g. click + type).\n- Includes usage instructions, common workflows, and tips for obtaining screen coordinates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6422d1f8a727a07e895ec23669bca4aeb56f210bd40532d5fbae3cb8738fd526"
+}

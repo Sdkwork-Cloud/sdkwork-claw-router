@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zaobo-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zaobo_news",
+  "skill": {
+    "id": 69356,
+    "skillKey": "clawhub-zaobo-news",
+    "name": "早播新闻"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zaobo-news",
+    "url": "https://clawhub.ai/skills/zaobo-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zaobo-news-818bb7d8cf8ee17e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成 Zao Live 分享卡片。当用户说\"我要听早播\"、\"播一段新闻\"、\"来段早播\"、\"听新闻\"等想要收听播客/新闻音频的内容时，使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emotibot5",
+      "userId": "publishers:emotibot5",
+      "displayName": "Emotibot5",
+      "image": "https://avatars.githubusercontent.com/u/71373318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 315,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773369938743,
+      "changelog": "zaobo-news v1.0.0\n\n- Initial release of the Zao Live 早播链接生成器 skill.\n- Generates instant shareable audio links for Zao Live morning news.\n- Supports triggering via common podcast/news listening requests in chat.\n- Returns clickable Markdown links with emoji for enhanced visibility.\n- API is public, parameter-free, and fast (typically <200ms response).\n- Designed for easy sharing across social/chat platforms like WeChat, Telegram, Discord, and more.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d392e7b5b46a682acd9e9ff1f46456371bdd4ed7a3f0b71f973d7b3fad1b9a9f"
+}

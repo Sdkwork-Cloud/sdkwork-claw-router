@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65063,
+  "uuid": "skill-clawhub-yandex-calendar",
+  "skillKey": "clawhub-yandex-calendar",
+  "name": "yandex-calendar",
+  "summary": "Управляйте Яндекс.Календарём через CalDAV: просматривайте, добавляйте и ищите события с синхронизацией через vdirsyncer и khal.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yandex_calendar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gbroccoli",
+      "features": [
+        "Управляйте Яндекс.Календарём через CalDAV: просматривайте, добавляйте и ищите события с синхрон."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yandex-calendar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63042276?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yandex-calendar",
+      "url": "https://clawhub.ai/skills/yandex-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yandex-calendar",
+    "url": "https://clawhub.ai/skills/yandex-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yandex-calendar-a0e6023ee070c2b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yandex-calendar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yandex-calendar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19a294401138f31e656e9000e545e242da56cef012c6053f755dff54cf95d470",
+      "artifactSizeBytes": 2323
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T15:05:52.526Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-partner-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_partner_guide",
+  "skill": {
+    "id": 37965,
+    "skillKey": "clawhub-openclaw-partner-guide",
+    "name": "OpenClaw Partner Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-partner-guide",
+    "url": "https://clawhub.ai/skills/openclaw-partner-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-partner-guide-7a8abec21c0425f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Partner-style operating guide for OpenClaw assistants. Use when an assistant should behave like a proactive, careful partner rather than a generic chatbot, w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "javvvid",
+      "userId": "s17069vj2xttt3qshnc67q6mfx83kwka",
+      "displayName": "jaVVVid",
+      "image": "https://avatars.githubusercontent.com/u/267270014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774444221953,
+      "changelog": "Initial public release: partner-style operating guide for concise communication, memory hygiene, phased execution, skill safety, and shared-chat restraint.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c0621c9488516292a4368b7993f978978a33a7c20d1bac3992f3d260144984c"
+}

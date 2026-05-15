@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/touchbridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.touchbridge",
+  "skill": {
+    "id": 52084,
+    "skillKey": "clawhub-touchbridge",
+    "name": "TouchBridge — Phone Biometric Auth for Mac"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "touchbridge",
+    "url": "https://clawhub.ai/skills/touchbridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/touchbridge-6063de1ba43c1464.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Authenticate sudo and macOS system prompts using your phone's biometric (Face ID/fingerprint) instead of typing passwords. Perfect for Mac Mini, Mac Studio,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hmakt99",
+      "userId": "s179wqyzp0g4qketwna01prd4183s0b1",
+      "displayName": "HMAKT99",
+      "image": "https://avatars.githubusercontent.com/u/222980227?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774684664167,
+      "changelog": "TouchBridge 1.0.0 – Authenticate macOS sudo and system prompts using your phone’s biometric instead of passwords.\n\n- Enables Face ID, fingerprint, or watch approval from iPhone, Android, Apple Watch, Wear OS, or any browser for Mac authentication.\n- Open source alternative to Apple’s Touch ID keyboard; no special hardware required.\n- Multiple modes: test (auto-approve), browser/device approval, terminal interactive, and production BLE pairing.\n- Secure fallback—if phone is unreachable, normal password entry is still available.\n- Easy install via .pkg, supports pairing, testing, and device management commands.\n- Never modifies pam config directly or compromises password safety.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ecd4abc98f640fb0208d58df15b2dd9165002e8974711f9e58feff272c827fb2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-codebase-deep-modules@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_codebase_deep_modules",
+  "skill": {
+    "id": 20181,
+    "skillKey": "clawhub-ai-codebase-deep-modules",
+    "name": "Deep modules for agent-native codebases"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-codebase-deep-modules",
+    "url": "https://clawhub.ai/skills/ai-codebase-deep-modules",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-codebase-deep-modules-b3c059b15cb3e655.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Designs and refactors software codebases to be AI-friendly by aligning the filesystem with domain/feature boundaries, creating deep (greybox) modules with sm..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tristanmanchester",
+      "userId": "s17c3xv8wvvzzbj84z9vcj498n83gnkp",
+      "displayName": "Tristan Manchester",
+      "image": "https://avatars.githubusercontent.com/u/108270628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 567,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772104385844,
+      "changelog": "- Initial release of ai-codebase-deep-modules.\n- Provides a step-by-step workflow to refactor software codebases into AI-friendly, deeply modular structures.\n- Includes guidance on aligning the filesystem to domain/feature boundaries, designing minimal public interfaces, and enforcing strict module boundaries.\n- Recommends strategies for establishing fast feedback loops and robust boundary tests.\n- Offers actionable deliverables at each stage, such as module maps, interface specs, move plans, and contract test skeletons.\n- Outlines enforcement and incremental refactoring best practices to sustain architectural integrity over time.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d723d241b3f16d27dd5bd76bf2e4314d07dd2e60ea59745be4019fbb2a04c67d"
+}

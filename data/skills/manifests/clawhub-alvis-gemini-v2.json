@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39355,
+  "uuid": "skill-clawhub-alvis-gemini-v2",
+  "skillKey": "clawhub-alvis-gemini-v2",
+  "name": "Gemini",
+  "summary": "LLM one-shot Q&A, summaries, and generation via SkillBoss API Hub.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvis_gemini_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlvisDunlop",
+      "features": [
+        "LLM one-shot Q&A, summaries, and generation via SkillBoss API Hub."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alvis-gemini-v2@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255881479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alvis-gemini-v2",
+      "url": "https://clawhub.ai/skills/alvis-gemini-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvis-gemini-v2",
+    "url": "https://clawhub.ai/skills/alvis-gemini-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvis-gemini-v2-f9e7c6aa73ebe66d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alvis-gemini-v2@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alvis-gemini-v2-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d93a40bd0692c0f750c7c6105eb0e401c4a02ee87a8bb87bbbc62c1c0dc50b7",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T01:58:54.305Z"
+}

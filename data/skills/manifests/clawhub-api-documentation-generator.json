@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52930,
+  "uuid": "skill-clawhub-api-documentation-generator",
+  "skillKey": "clawhub-api-documentation-generator",
+  "name": "API Documentation Generator",
+  "summary": "Generate comprehensive API documentation from code — extract endpoints, parameters, response schemas, and examples from Express, FastAPI, Django, Rails, and...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_documentation_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Generate comprehensive API documentation from code — extract endpoints, parameters, response sc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-documentation-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-documentation-generator",
+      "url": "https://clawhub.ai/skills/api-documentation-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-documentation-generator",
+    "url": "https://clawhub.ai/skills/api-documentation-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-documentation-generator-937daacc869abc41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-documentation-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-documentation-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ad89b9c49c5c189c4f277ad0e9fc4f4470b5461bf02355caaf101ffc8dc59fe",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:59:36.647Z"
+}

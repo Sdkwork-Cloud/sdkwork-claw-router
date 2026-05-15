@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/de-ai-voice@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.de_ai_voice",
+  "skill": {
+    "id": 71276,
+    "skillKey": "clawhub-de-ai-voice",
+    "name": "de-ai-voice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "de-ai-voice",
+    "url": "https://clawhub.ai/skills/de-ai-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/de-ai-voice-c97bef515cbadc58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "去除中文/英文/日文文本的“AI味”，以信息传递为核心先补齐事实/证据/取舍/边界，再按场景重写并清理模板化口癖与格式指纹；适用于文案、邮件、报告、PRD、社媒内容与学术写作的去AI味改写，以及识别并拦截假证据句式与虚构参考文献。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yamasite",
+      "userId": "s173svzz2y3tqm5hzwzbk529h185a2nq",
+      "displayName": "yamasite",
+      "image": "https://avatars.githubusercontent.com/u/10089260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776851182516,
+      "changelog": "de-ai-voice 1.0.0 — Initial Release\n\n- Provides a structured workflow to rewrite Chinese/English/Japanese texts for higher information density and reduced “AI-writing” fingerprints.\n- Gives priority to fact/evidence completion, context adaptation, and removal of template phrases and formatting markers.\n- Includes a tool (`ai_smell_scan.cjs`) to quickly identify common AI-generated style triggers.\n- Suitable for a wide range of writing scenarios, including copy, emails, reports, PRD, social media, and academic writing.\n- Features hallucination/interception checks to prevent fake citations, unverifiable facts, or fabricated references.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d416d0b9be559d3ef237b9b7976587c15d0178489368675bcfee2885d8323b9c"
+}

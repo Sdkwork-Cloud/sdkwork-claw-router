@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24131,
+  "uuid": "skill-clawhub-pdf-compressor",
+  "skillKey": "clawhub-pdf-compressor",
+  "name": "Compress pdf file",
+  "summary": "Compresses a given PDF file to reduce its size.",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_compressor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "upwell",
+      "features": [
+        "Compresses a given PDF file to reduce its size."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-compressor@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/728808?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-compressor",
+      "url": "https://clawhub.ai/skills/pdf-compressor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-compressor",
+    "url": "https://clawhub.ai/skills/pdf-compressor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-compressor-dd016f28b443d43c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-compressor@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-compressor-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bcfe08da17d2ed32708ef7a27505370edb646aafefe28e43640f573e67bc1dc6",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T14:16:57.284Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40917,
+  "uuid": "skill-clawhub-capability-scope-expansion-watcher",
+  "skillKey": "clawhub-capability-scope-expansion-watcher",
+  "name": "Capability Scope Expansion Watcher",
+  "summary": "Helps detect incremental capability scope expansion across skill versions — the pattern where a skill gradually claims broader permissions through small, ind...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.capability_scope_expansion_watcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andyxinweiminicloud",
+      "features": [
+        "Helps detect incremental capability scope expansion across skill versions — the pattern where a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/capability-scope-expansion-watcher@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201528876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "capability-scope-expansion-watcher",
+      "url": "https://clawhub.ai/skills/capability-scope-expansion-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "capability-scope-expansion-watcher",
+    "url": "https://clawhub.ai/skills/capability-scope-expansion-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/capability-scope-expansion-watcher-e828b10fbc990c8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/capability-scope-expansion-watcher@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-capability-scope-expansion-watcher-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1e2045ba9da85541c2db425065c42936534b1185a606fc815ece6eedb86e602",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T03:03:21.324Z"
+}

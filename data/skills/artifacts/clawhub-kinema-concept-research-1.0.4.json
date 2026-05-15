@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kinema-concept-research@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kinema_concept_research",
+  "skill": {
+    "id": 30453,
+    "skillKey": "clawhub-kinema-concept-research",
+    "name": "Kinema's Concept Re-Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kinema-concept-research",
+    "url": "https://clawhub.ai/skills/kinema-concept-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kinema-concept-research-629c9d0c5a665be6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research whether a concept has been implemented and its current state. Use multi-language keywords, multi-engine cross-validation, and multi-dimensional sear..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leeshunee",
+      "userId": "s1782xm9gtwjg6m1vnxsad9zc583qs9v",
+      "displayName": "Kinema.",
+      "image": "https://avatars.githubusercontent.com/u/54445332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 282,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775034995264,
+      "changelog": "Add GitHub repository link to SKILL.md and README.md",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8e47c44d8c0bc142885ecd289ebad8073d864c52c3f9099287c989f5c0d8c42"
+}

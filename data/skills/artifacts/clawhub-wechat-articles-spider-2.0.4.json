@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-articles-spider@2.0.4",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_articles_spider",
+  "skill": {
+    "id": 38721,
+    "skillKey": "clawhub-wechat-articles-spider",
+    "name": "Wechat Articles Spider"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-articles-spider",
+    "url": "https://clawhub.ai/skills/wechat-articles-spider",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-articles-spider-dd614a89402fe7dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WeChat Official Account article crawler with x402 micropayments. Requires Chrome browser and interactive WeChat QR login on first use. Harvest articles for r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kehongpeng",
+      "userId": "s17e0m376h7s4qyyt1c9rxf5w583h1mt",
+      "displayName": "kehongpeng",
+      "image": "https://avatars.githubusercontent.com/u/10668727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.4",
+      "createdAt": 1774638312574,
+      "changelog": "Version 2.0.4\n\n- Updated documentation in SKILL.md to match new version.\n- No changes to code or payment logic—documentation refreshed for accuracy and clarity.\n- SKILL.md version updated from 2.0.3 to 2.0.4.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0101fa7d4b57458accd332f66d1d57142c68bf45d1283f9ce666d8f5083b78b8"
+}

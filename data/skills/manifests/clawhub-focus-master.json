@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22386,
+  "uuid": "skill-clawhub-focus-master",
+  "skillKey": "clawhub-focus-master",
+  "name": "Focus Master",
+  "summary": "Manage tasks with configurable Pomodoro timers, track time spent, analyze time allocation, block distractions, and generate efficiency reports.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.focus_master",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Manage tasks with configurable Pomodoro timers, track time spent, analyze time allocation, bloc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/focus-master@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "focus-master",
+      "url": "https://clawhub.ai/skills/focus-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "focus-master",
+    "url": "https://clawhub.ai/skills/focus-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/focus-master-434437c7011c1589.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/focus-master@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-focus-master-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3d78a1fba60537431319366e78478fd23a9ac067f91c9627f2a921190ee0779",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T13:41:21.167Z"
+}

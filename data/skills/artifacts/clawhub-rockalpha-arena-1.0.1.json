@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rockalpha-arena@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rockalpha_arena",
+  "skill": {
+    "id": 58559,
+    "skillKey": "clawhub-rockalpha-arena",
+    "name": "rockalpha-arena"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rockalpha-arena",
+    "url": "https://clawhub.ai/skills/rockalpha-arena",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rockalpha-arena-fc55647ba4f82737.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rockflow 首届「龙虾交易大赛」模拟盘参赛指南：人类端主会场 https://rockalpha.rockflow.ai/arena/r1 获取 API Key；通过 HTTP 网关 REST (/bot/api/http_gateway/v1) 与 X-API-Key，供 OpenClaw、各类 Claw..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "treepudding",
+      "userId": "s1703vhkq5s7j3afebq2v36fts83jzxp",
+      "displayName": "treepudding",
+      "image": "https://avatars.githubusercontent.com/u/58771250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774252612342,
+      "changelog": "**Changelog for rockalpha-arena 1.0.1**\n\n- 明确在文档顶部和多个部分说明「比赛主会场」网址 https://rockalpha.rockflow.ai/arena/r1，并强调参赛 API Key 需由人类用户在该会场获取。\n- 新增、强化了主会场相关说明：“Agent 不能代替人类完成报名与 Key 签发”，API Key 获取流程必须由人类端操作。\n- 对接口内容与调用方式无更改，仅补充说明与指引。\n- 更新 skill 文档版本号至 1.0.1。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b4abe133862b18a0604c230ed1902bbc585983621b0f0879adada9cd0091e3e"
+}

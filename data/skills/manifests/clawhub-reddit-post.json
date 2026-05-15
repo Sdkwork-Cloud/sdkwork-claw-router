@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19712,
+  "uuid": "skill-clawhub-reddit-post",
+  "skillKey": "clawhub-reddit-post",
+  "name": "Reddit Post",
+  "summary": "Manages post-posting tasks by moving approved Reddit drafts to posted/, adding URLs, updating active tasks, and logging after Luka confirms posting.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_post",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lknezic",
+      "features": [
+        "Manages post-posting tasks by moving approved Reddit drafts to posted/, adding URLs, updating a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reddit-post@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104674295?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reddit-post",
+      "url": "https://clawhub.ai/skills/reddit-post"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-post",
+    "url": "https://clawhub.ai/skills/reddit-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-post-6affab58cf25d3ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reddit-post@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reddit-post-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e92fc4f2cfb8bf44ff1f335d48e8cfa6ab12119c0f3d276ff457c64261025953",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T09:12:16.974Z"
+}

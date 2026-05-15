@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63031,
+  "uuid": "skill-clawhub-postgres-skill",
+  "skillKey": "clawhub-postgres-skill",
+  "name": "PostgreSQL Skill - 高级数据库管理",
+  "summary": "PostgreSQL 数据库管理技能。通过自然语言查询、管理 PostgreSQL 数据库，支持复杂查询、性能分析、JSON 操作、全文搜索等高级功能。当用户提到 PostgreSQL、Postgres、复杂查询、性能优化时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postgres_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryanlee-gemini",
+      "features": [
+        "PostgreSQL 数据库管理技能。通过自然语言查询、管理 PostgreSQL 数据库，支持复杂查询、性能分析、JSON 操作、全文搜索等高级功能。当用户提到 PostgreSQL、Po."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/postgres-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/181323138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "postgres-skill",
+      "url": "https://clawhub.ai/skills/postgres-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postgres-skill",
+    "url": "https://clawhub.ai/skills/postgres-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postgres-skill-ab6d71e0152afafb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/postgres-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-postgres-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:562d3919d881e2053587076476723e034b6d7cc8e9a8b6d50036f0aba28f6d98",
+      "artifactSizeBytes": 2453
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T06:18:13.353Z"
+}

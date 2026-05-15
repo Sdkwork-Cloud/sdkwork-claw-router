@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57071,
+  "uuid": "skill-clawhub-air-china",
+  "skillKey": "clawhub-air-china",
+  "name": "Air China",
+  "summary": "Information assistant for 国航 Air China. Search products, news, financials, and official resources for 国航 Air China.",
+  "version": "0.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.air_china",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for 国航 Air China",
+        "Search products, news, financials, and official resources for 国航 Air China."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/air-china@0.1.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "air-china",
+      "url": "https://clawhub.ai/skills/air-china"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "air-china",
+    "url": "https://clawhub.ai/skills/air-china",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/air-china-2e607488821d5289.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/air-china@0.1.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-air-china-0.1.6.json",
+      "version": "0.1.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:375af8c4afcfdecb4c3d07b7caa3379ea33e7458b16cfa39eb29366f784afac2",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:24:33.640Z"
+}

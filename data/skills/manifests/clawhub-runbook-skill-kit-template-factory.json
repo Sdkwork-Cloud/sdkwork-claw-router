@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58285,
+  "uuid": "skill-clawhub-runbook-skill-kit-template-factory",
+  "skillKey": "clawhub-runbook-skill-kit-template-factory",
+  "name": "Runbook Skill Kit Template Factory",
+  "summary": "Generate a reusable runbook plus self-contained skill kit from a validated workflow. 从一个已验证流程批量生成可复用的 runbook 与自包含 skill 套件。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runbook_skill_kit_template_factory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "grey0758",
+      "features": [
+        "Generate a reusable runbook plus self-contained skill kit from a validated workflow",
+        "从一个已验证流程批量生成可复用的 runbook 与自包含 skill 套件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/runbook-skill-kit-template-factory@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110289906?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "runbook-skill-kit-template-factory",
+      "url": "https://clawhub.ai/skills/runbook-skill-kit-template-factory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runbook-skill-kit-template-factory",
+    "url": "https://clawhub.ai/skills/runbook-skill-kit-template-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runbook-skill-kit-template-factory-e36d0a02f1959681.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/runbook-skill-kit-template-factory@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-runbook-skill-kit-template-factory-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd643e84913fa8164b3b5e083581ce4164ac8db14deb3368d1fd6c0f99243c6e",
+      "artifactSizeBytes": 2101
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:18:54.247Z"
+}

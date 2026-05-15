@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59559,
+  "uuid": "skill-clawhub-aibutton",
+  "skillKey": "clawhub-aibutton",
+  "name": "AIButton",
+  "summary": "创建 Vision Node AI 按钮控件。根据客户描述生成AI控件的 aiui.json 和 index.html，并打包成 ZIP 压缩包。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aibutton",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wujianyu09",
+      "features": [
+        "创建 Vision Node AI 按钮控件。根据客户描述生成AI控件的 aiui.json 和 index.html，并打包成 ZIP 压缩包。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aibutton@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39687114?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aibutton",
+      "url": "https://clawhub.ai/skills/aibutton"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aibutton",
+    "url": "https://clawhub.ai/skills/aibutton",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aibutton-47c1578a1930b829.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aibutton@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aibutton-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f47738f84182b091220e0870be1d468bf63a69abefde5ad02bdb677892c98e6",
+      "artifactSizeBytes": 1845
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T03:34:18.474Z"
+}

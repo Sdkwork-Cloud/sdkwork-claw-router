@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aura-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aura_video",
+  "skill": {
+    "id": 22334,
+    "skillKey": "clawhub-aura-video",
+    "name": "Aura Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aura-video",
+    "url": "https://clawhub.ai/skills/aura-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aura-video-5364683c203bd546.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a complete Aura Creatine TikTok/Instagram video from a JSON script. Reads the script from Google Drive, generates A-roll (Kristina image-to-video vi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scotteverduim",
+      "userId": "publishers:scotteverduim",
+      "displayName": "ScottEverduim",
+      "image": "https://avatars.githubusercontent.com/u/196445480?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 466,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772638954498,
+      "changelog": "- Initial release of aura-video: generate complete 9:16 TikTok/Instagram videos from a single JSON script.\n- Loads script and media assets from Google Drive, generates scenes with AIML and Gemini Veo, merges with Remotion and FFmpeg.\n- Supports A-roll (image-to-video), B-roll (text-to-video), animation scenes, voiceover MP3, and captions.\n- Final video (~24 sec, 3 scenes) is uploaded to Google Drive and sent back to chat.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4aa508b1ae74fa93448497a9e07a8413ca1ab25d89a8242297e0921633efe0a7"
+}

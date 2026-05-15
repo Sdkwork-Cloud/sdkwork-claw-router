@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clarity-analyze@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clarity_analyze",
+  "skill": {
+    "id": 20873,
+    "skillKey": "clawhub-clarity-analyze",
+    "name": "Clarity Analyze"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clarity-analyze",
+    "url": "https://clawhub.ai/skills/clarity-analyze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clarity-analyze-a8d533ae65926074.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Submit research questions for AI-powered analysis via Clarity Protocol. Use when the user asks to analyze a protein variant, ask a research question, get AI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clarityprotocol",
+      "userId": "publishers:clarityprotocol",
+      "displayName": "clarityprotocol",
+      "image": "https://avatars.githubusercontent.com/u/255743260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 514,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772051496976,
+      "changelog": "Initial release of clarity-analyze\n\n- Submit research questions for AI-powered analysis via Clarity Protocol.\n- Answers draw from 7 data sources: AlphaFold, ClinVar, gnomAD, PubMed, Open Targets, agent findings, and agent annotations.\n- Supports focused analyses by clinical, literature, structural, or functional data.\n- Requires a CLARITY_WRITE_API_KEY for authentication.\n- Limited to 10 analysis requests per API key per day; identical queries cached for 7 days.\n- Provides clear error messages for authentication, missing variants, and off-topic questions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:809e5a99fa9b60081c27aa773aa7324e959b11044ff19942fd657c82538603be"
+}

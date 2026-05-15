@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29492,
+  "uuid": "skill-clawhub-tutorial-docs",
+  "skillKey": "clawhub-tutorial-docs",
+  "name": "Tutorial Docs",
+  "summary": "Tutorial patterns for documentation - learning-oriented guides that teach through guided doing",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tutorial_docs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Tutorial patterns for documentation",
+        "learning-oriented guides that teach through guided doing"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tutorial-docs@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tutorial-docs",
+      "url": "https://clawhub.ai/skills/tutorial-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tutorial-docs",
+    "url": "https://clawhub.ai/skills/tutorial-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tutorial-docs-04ef67a0713720e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tutorial-docs@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tutorial-docs-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f112ef48254be0ffd5c74224c70933e5d5254643724ab3f18f39db9ad9d5696e",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:11:14.359Z"
+}

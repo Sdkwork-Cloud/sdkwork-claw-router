@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/public-google-drive@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.public_google_drive",
+  "skill": {
+    "id": 25238,
+    "skillKey": "clawhub-public-google-drive",
+    "name": "Public Google Drive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "public-google-drive",
+    "url": "https://clawhub.ai/skills/public-google-drive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/public-google-drive-89cfa9d93a8b8a51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create public Google Docs or Google Sheet files without requiring OAuth. Use this skill to create and edit Google Docs and Sheets, no Google sign-in required..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "memyard",
+      "userId": "publishers:memyard",
+      "displayName": "Memyard",
+      "image": "https://avatars.githubusercontent.com/u/262194672?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773082010725,
+      "changelog": "Initial release — create and edit public Google Docs/Sheets in Memyard’s workspace, no Google account required.\n\n- Automatic agent registration and credential storage on first use; no manual setup needed.\n- Securely persists agent config in a per-user directory.\n- Supports creating, appending, and inserting content in both Docs and Sheets via a plan-then-execute workflow.\n- Documents are hosted with shareable \"anyone with link\" view permission.\n- Read-only endpoints to retrieve document metadata and list user documents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a65680d030f71e80f47798b51cea7257ce1e6f4f1c386b26ab004e8b896f8024"
+}

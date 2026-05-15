@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/komodo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.komodo",
+  "skill": {
+    "id": 10823,
+    "skillKey": "clawhub-komodo",
+    "name": "Komodo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "komodo",
+    "url": "https://clawhub.ai/skills/komodo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/komodo-56977b5ae3300aa4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Komodo infrastructure - servers, Docker deployments, stacks, builds, and procedures. Use when user asks about server status, container management, deployments, builds, or any Komodo-related infrastructure tasks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weird-aftertaste",
+      "userId": "publishers:weird-aftertaste",
+      "displayName": "weird-aftertaste",
+      "image": "https://avatars.githubusercontent.com/u/39530029?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2310,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769191109005,
+      "changelog": "Initial release: manage servers, deployments, stacks, builds, procedures via Komodo Core API",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b0a7997772083c16a30f7a99a3887f0d0781027e55ebe1d8b88e806ee73437d1"
+}

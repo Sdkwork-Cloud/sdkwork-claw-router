@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37395,
+  "uuid": "skill-clawhub-calendarific",
+  "skillKey": "clawhub-calendarific",
+  "name": "Calendarific",
+  "summary": "Calendarific integration. Manage data, records, and automate workflows. Use when the user wants to interact with Calendarific data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calendarific",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Calendarific integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Calendarific data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/calendarific@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "calendarific",
+      "url": "https://clawhub.ai/skills/calendarific"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calendarific",
+    "url": "https://clawhub.ai/skills/calendarific",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calendarific-62b00f7ed619c96d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/calendarific@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-calendarific-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7131f67ff64655f89d4de67471569fa91e27aaa795c5a515c3d7aa73731bce4d",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:16:28.366Z"
+}

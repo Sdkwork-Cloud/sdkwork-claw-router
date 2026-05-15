@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35939,
+  "uuid": "skill-clawhub-nai-status-page-gen",
+  "skillKey": "clawhub-nai-status-page-gen",
+  "name": "Status Page Gen",
+  "summary": "Generate a dark-themed static HTML status page summarizing health checks, ping, SSL certs, and uptime for self-hosted services from a JSON config.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nai_status_page_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "New Age Investments",
+      "features": [
+        "Generate a dark-themed static HTML status page summarizing health checks, ping, SSL certs, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nai-status-page-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243381911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nai-status-page-gen",
+      "url": "https://clawhub.ai/skills/nai-status-page-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nai-status-page-gen",
+    "url": "https://clawhub.ai/skills/nai-status-page-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nai-status-page-gen-8dac0f4b93df0535.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nai-status-page-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nai-status-page-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:115fe8888133b60c38d3cfeb78255aa30f757049e1ceba2fd15a8d1bb6b8bcdb",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:14:55.543Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/faster-whisper-local-service@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.faster_whisper_local_service",
+  "skill": {
+    "id": 12723,
+    "skillKey": "clawhub-faster-whisper-local-service",
+    "name": "Faster Whisper Local Service"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "faster-whisper-local-service",
+    "url": "https://clawhub.ai/skills/faster-whisper-local-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/faster-whisper-local-service-33978281880f2657.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw local speech-to-text backend using faster-whisper over HTTP on 127.0.0.1:18790. Use when you want voice transcription without external APIs, without..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neldar",
+      "userId": "publishers:neldar",
+      "displayName": "neldar",
+      "image": "https://avatars.githubusercontent.com/u/387537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1554,
+      "installsAllTime": 13,
+      "installsCurrent": 13,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1772755144615,
+      "changelog": "Security hardening: input validation (magic-byte check, configurable upload size limit), GStreamer subprocess timeout, sanitized error responses, restructured security docs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cf94af96775d3d9a2edbf832587f8a16e478de8c3a2f8b870c64f686d54b6361"
+}

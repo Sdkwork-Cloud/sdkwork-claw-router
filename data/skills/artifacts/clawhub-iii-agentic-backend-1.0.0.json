@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iii-agentic-backend@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iii_agentic_backend",
+  "skill": {
+    "id": 43540,
+    "skillKey": "clawhub-iii-agentic-backend",
+    "name": "iii-agentic-backend"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iii-agentic-backend",
+    "url": "https://clawhub.ai/skills/iii-agentic-backend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iii-agentic-backend-7a6248394eb03bfd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates and orchestrates multi-agent pipelines on the iii engine. Use when building AI agent collaboration, agent orchestration, research/review/synthesis ch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rohitg00",
+      "userId": "s1764xxjbprf3br6gghgha128x84zctc",
+      "displayName": "Rohit Ghumare",
+      "image": "https://avatars.githubusercontent.com/u/48523873?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776357343887,
+      "changelog": "Initial release of iii-agentic-backend skill:\n\n- Enables creation and orchestration of multi-agent pipelines on the iii engine.\n- Supports agent communication via named queues and shared state.\n- Introduces explicit approval gates, HTTP trigger entry points, and pubsub event broadcasting.\n- Provides patterns for agent registration, async handoff, condition checks, and logging.\n- Includes reference implementation and guidance for adapting to new workflows.\n- Defines clear pattern boundaries and usage scenarios for iii agent orchestration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62eab347486db93e625b506f035e854da3a95e201514592935e6e58107ff06a3"
+}

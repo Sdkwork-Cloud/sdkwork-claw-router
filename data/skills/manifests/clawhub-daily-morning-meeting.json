@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62179,
+  "uuid": "skill-clawhub-daily-morning-meeting",
+  "skillKey": "clawhub-daily-morning-meeting",
+  "name": "Daily Morning Meeting",
+  "summary": "每日早会自动执行技能。多Agent抓取全网热点，整理成早会简报发送给CEO。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_morning_meeting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JohnSmithfan",
+      "features": [
+        "每日早会自动执行技能。多Agent抓取全网热点，整理成早会简报发送给CEO。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-morning-meeting@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147225147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-morning-meeting",
+      "url": "https://clawhub.ai/skills/daily-morning-meeting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-morning-meeting",
+    "url": "https://clawhub.ai/skills/daily-morning-meeting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-morning-meeting-dffee1e1d58ce527.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-morning-meeting@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-morning-meeting-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e0cb3e4d4c6807686826ba17729f385bf0ea8674cf620b1bed274a8293089ef",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T17:17:54.988Z"
+}

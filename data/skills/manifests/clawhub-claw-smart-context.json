@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40627,
+  "uuid": "skill-clawhub-claw-smart-context",
+  "skillKey": "clawhub-claw-smart-context",
+  "name": "Claw Smart Context",
+  "summary": "Token-efficient agent behavior — response sizing, context pruning, tool efficiency, and delegation",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_smart_context",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joseph Sagiv",
+      "features": [
+        "Token-efficient agent behavior — response sizing, context pruning, tool efficiency, and delegat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-smart-context@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4700617?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-smart-context",
+      "url": "https://clawhub.ai/skills/claw-smart-context"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-smart-context",
+    "url": "https://clawhub.ai/skills/claw-smart-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-smart-context-b184092e6c8c8150.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-smart-context@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-smart-context-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1229c18f608e574edf3c2e7730876d347165b7853707651908509c104d95f29c",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T08:17:50.006Z"
+}

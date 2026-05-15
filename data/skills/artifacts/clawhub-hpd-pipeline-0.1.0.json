@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hpd-pipeline@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hpd_pipeline",
+  "skill": {
+    "id": 56240,
+    "skillKey": "clawhub-hpd-pipeline",
+    "name": "HPD Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hpd-pipeline",
+    "url": "https://clawhub.ai/skills/hpd-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hpd-pipeline-b9fd9401e08b9893.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the HPD lab needs a repeatable Planner -> Designer -> conditional Developer -> Tester flow for an approved idea, with Lobster-first and sequential f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "omermesebuken1",
+      "userId": "s17fbnv9nhnpad1tkqr4ch2y0983pdyq",
+      "displayName": "omermesebuken1",
+      "image": "https://avatars.githubusercontent.com/u/76281192?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774777341298,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b3208f384d39ee6af319c061a9cda81043750fa83931efb7104809a83da404d5"
+}

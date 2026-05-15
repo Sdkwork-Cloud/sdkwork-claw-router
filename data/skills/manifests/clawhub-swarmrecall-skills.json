@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35414,
+  "uuid": "skill-clawhub-swarmrecall-skills",
+  "skillKey": "clawhub-swarmrecall-skills",
+  "name": "SwarmRecall Skills",
+  "summary": "Skill registry for tracking agent capabilities and getting contextual suggestions via the SwarmRecall API. Register, list, and query installed skills with se...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swarmrecall_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wayde",
+      "features": [
+        "Skill registry for tracking agent capabilities and getting contextual suggestions via the Swarm.",
+        "Register, list, and query installed skills with se..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swarmrecall-skills@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16001190?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swarmrecall-skills",
+      "url": "https://clawhub.ai/skills/swarmrecall-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swarmrecall-skills",
+    "url": "https://clawhub.ai/skills/swarmrecall-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swarmrecall-skills-5d2ed13c4662de06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swarmrecall-skills@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-swarmrecall-skills-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4a1fe48fc614fc41f2be90d19f1df82c67356e916a841c71c6c8439c0d8c0a1",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T13:35:47.498Z"
+}

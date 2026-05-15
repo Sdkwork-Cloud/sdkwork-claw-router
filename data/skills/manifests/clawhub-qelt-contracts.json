@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21953,
+  "uuid": "skill-clawhub-qelt-contracts",
+  "skillKey": "clawhub-qelt-contracts",
+  "name": "Qelt Contracts",
+  "summary": "Verify, inspect, and retrieve verified Solidity smart contracts, ABIs, and compiler/EVM versions on the QELT blockchain using the Mainnet Indexer API.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qelt_contracts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PRQELT",
+      "features": [
+        "Verify, inspect, and retrieve verified Solidity smart contracts, ABIs, and compiler/EVM version."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qelt-contracts@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198798555?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qelt-contracts",
+      "url": "https://clawhub.ai/skills/qelt-contracts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qelt-contracts",
+    "url": "https://clawhub.ai/skills/qelt-contracts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qelt-contracts-6d6be1ae069578c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qelt-contracts@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qelt-contracts-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6861d9f73bfc035fe04dfef63c93bf0ce0257ffb517e593c7a15a77ae402368",
+      "artifactSizeBytes": 2456
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T05:59:23.311Z"
+}

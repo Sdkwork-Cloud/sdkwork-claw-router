@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-finish-notifier@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_finish_notifier",
+  "skill": {
+    "id": 21500,
+    "skillKey": "clawhub-personal-finish-notifier",
+    "name": "Personal Finish Notifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-finish-notifier",
+    "url": "https://clawhub.ai/skills/personal-finish-notifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-finish-notifier-f42b352e371ecea0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add a simple \"Claude has finished.\" alert to Claude Code or other agent workflows through an OpenClaw-configured transport."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kyoiii",
+      "userId": "publishers:kyoiii",
+      "displayName": "kyoii",
+      "image": "https://avatars.githubusercontent.com/u/183969704?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 477,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1773021089179,
+      "changelog": "Publish 0.1.4.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7c0541a5227c765c6c64c701469cfadb6a44011755b2b9c0f6458632158bdcb"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-to-video-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_to_video_ai",
+  "skill": {
+    "id": 55404,
+    "skillKey": "clawhub-youtube-to-video-ai",
+    "name": "Youtube To Video Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-to-video-ai",
+    "url": "https://clawhub.ai/skills/youtube-to-video-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-to-video-ai-033e54d4c1acbbee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — convert this YouTube video into a 60-second highlight reel with captions —..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776423319509,
+      "changelog": "Initial release of YouTube to Video AI.\n\n- Convert YouTube videos or uploaded files into short, repurposed video clips using a simple prompt.\n- Automatic cloud-based editing: highlight reels, captions, aspect ratios, and more—no manual video editing required.\n- Supports YouTube URLs and video files up to 500MB (MP4, MOV, WebM, AVI).\n- Fast processing (1-2 minutes per clip); download finished highlights as MP4 or other formats.\n- 100 free credits for new users (7-day trial); requires session setup and token-based cloud auth.\n- Built-in error handling for uploads, token/session, credits, and API usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8f1357cb5a6710ccdd2bb0d06a617e8e7ed09ad3ee2eaba824633116121dff2"
+}

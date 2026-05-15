@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pack-medici-investments@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pack_medici_investments",
+  "skill": {
+    "id": 36704,
+    "skillKey": "clawhub-pack-medici-investments",
+    "name": "Medici Investments Pack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pack-medici-investments",
+    "url": "https://clawhub.ai/skills/pack-medici-investments",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pack-medici-investments-f1fb960a464a9d91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Position management and market monitoring tools for active traders. Includes risk-based position sizing (fixed fractional, ATR, Kelly Criterion) and a quick..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawdiri-ai",
+      "userId": "s175fgn0tz50thkr5e819czrnd83fsx9",
+      "displayName": "RunByDaVinci",
+      "image": "https://avatars.githubusercontent.com/u/266047309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774630965015,
+      "changelog": "Initial release: Position sizing calculator with fixed fractional, ATR-based, and Kelly Criterion modes. Market pulse monitor for quick health checks. Essential risk management for active traders.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33a5435467f11098d4900cd52dd1189f9884e4eb863fbf82657742e2d41c316e"
+}

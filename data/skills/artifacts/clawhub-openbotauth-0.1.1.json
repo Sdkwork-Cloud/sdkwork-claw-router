@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openbotauth@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openbotauth",
+  "skill": {
+    "id": 18817,
+    "skillKey": "clawhub-openbotauth",
+    "name": "OpenBotAuth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openbotauth",
+    "url": "https://clawhub.ai/skills/openbotauth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openbotauth-cbea4cbba3674554.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get a cryptographic identity for your AI agent. Generate Ed25519 keys, sign your work, prove who you are — across any platform."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hammadtq",
+      "userId": "s177yn5m8wjerdfz1m1zp49qs183kk1b",
+      "displayName": "hammadtq",
+      "image": "https://avatars.githubusercontent.com/u/11869286?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1358,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1771102010236,
+      "changelog": "- Updated JWKS endpoint — changed from /agent-jwks/{id}.json to /jwks/{username}.json\n  - Added Token Handling Contract — documents bearer token lifecycle (registration-only, delete after)\n  - Added Compatibility Modes section — Core Mode (CLI) vs Browser Mode with security guidance\n  - Added Token Safety Rules table — do/don't guidance for token handling\n  - Added Runtime Compatibility table — support matrix for Claude Code, agent-browser, OpenClaw, CUA, skills.sh\n  - Registration script hardened:\n    - Added redirect: 'error' to prevent token leakage on redirects\n    - Writes config.json with agent_id, username, jwksUrl\n    - Deletes token after successful registration\n    - Fetches /auth/session to resolve username for JWKS URL\n  - Proxy security hardened:\n    - Changed execSync to execFileSync (prevents command injection)\n    - Added strict hostname validation regex\n    - Added hash-based cert filenames (prevents path traversal)\n    - Added port validation (1-65535)\n  - Added Official Packages section — links to @openbotauth/verifier-client, registry-signer, bot-cli, proxy\n  - Added strict verifier note — points to @openbotauth/bot-cli and openbotauth-demos/packages/signing-ts\n  - Enterprise SSO section — rewritten as roadmap spec (no runnable code, marked \"not yet implemented\")\n  - Proxy limitations — added IP hostname mitigation guidanc",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:11b67bfc5ae008f9ea74f830990764d6eb0dd1efe098e67239db9787322e2329"
+}

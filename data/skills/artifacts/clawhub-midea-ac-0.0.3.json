@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/midea-ac@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.midea_ac",
+  "skill": {
+    "id": 10214,
+    "skillKey": "clawhub-midea-ac",
+    "name": "Midea Air Conditioners"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "midea-ac",
+    "url": "https://clawhub.ai/skills/midea-ac",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/midea-ac-c7d7a254a630951e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Midea ACs. Use this skill when the user wants to control ACs. Supports turning ACs on/off, setting temperature, setting fan speed, switching modes, and more."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iamanorange",
+      "userId": "publishers:iamanorange",
+      "displayName": "Iamanorange",
+      "image": "https://avatars.githubusercontent.com/u/6018925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2567,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1770285050486,
+      "changelog": "Version 0.0.3 of midea-ac\n\n- Update the skill name\n- No file changes in this version.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b173b0834eb7a8f2315af506501fc5c5997988de0318f84c3a31037a92d06914"
+}

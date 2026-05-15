@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/invoice-forge@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_forge",
+  "skill": {
+    "id": 25591,
+    "skillKey": "clawhub-invoice-forge",
+    "name": "Invoice Forge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-forge",
+    "url": "https://clawhub.ai/skills/invoice-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-forge-9b1b9748c2fb73b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional invoice generation for freelancers and small businesses. Generate beautiful invoices in seconds. No dependencies, no subscriptions, no cloud req..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theshadowrose",
+      "userId": "s1736mx5m1zt9qzh6fvzvffnhh83hgf8",
+      "displayName": "Shadow Rose",
+      "image": "https://avatars.githubusercontent.com/u/262919821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773152037084,
+      "changelog": "- Added detailed documentation to SKILL.md for setup, usage, features, and configuration.\n- Expanded usage instructions with examples for client management, invoice creation, payment tracking, templates, and reporting.\n- Listed use cases for freelancers, digital sellers, agencies, and service providers.\n- Provided configuration reference for business profile, invoice settings, currencies, taxes, and templates.\n- Outlined file structure for easier onboarding and navigation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74d41cb0a8c49a1f31b4185c03fe75f5d9aca1ff1738aa015e2d49d570d98e6a"
+}

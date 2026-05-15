@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28264,
+  "uuid": "skill-clawhub-proposal-kit",
+  "skillKey": "clawhub-proposal-kit",
+  "name": "ProposalKit",
+  "summary": "One-click business proposal package generator. Takes a brief project/service description and generates a COMPLETE ready-to-send package: proposal (.docx), pi...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proposal_kit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EthAgent",
+      "features": [
+        "One-click business proposal package generator",
+        "Takes a brief project/service description and generates a COMPLETE ready-to-send package: propo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proposal-kit@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216467966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proposal-kit",
+      "url": "https://clawhub.ai/skills/proposal-kit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proposal-kit",
+    "url": "https://clawhub.ai/skills/proposal-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proposal-kit-ff722f71d05acab6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proposal-kit@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-proposal-kit-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6943460f7eb4a561706751f4f7d379e5eca4aec6746ec7ebba15a72d9706709b",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T04:24:23.317Z"
+}

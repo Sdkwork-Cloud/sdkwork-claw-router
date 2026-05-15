@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-generator-download@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_generator_download",
+  "skill": {
+    "id": 47630,
+    "skillKey": "clawhub-free-video-generator-download",
+    "name": "Free Video Generator Download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-generator-download",
+    "url": "https://clawhub.ai/skills/free-video-generator-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-generator-download-401f9b61eef382cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get ready-to-download MP4 ready to post, without touching a single slider. Upload your text or images (MP4, MOV, JPG, PNG, up to 200MB), say something like \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 111,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777173265159,
+      "changelog": "Initial release of Free Video Generator Download.\n\n- Generate and download 1080p MP4 videos from your text or images with a single instruction.\n- Supports uploads (MP4, MOV, JPG, PNG, up to 200MB) and batch processing in one session.\n- Instantly create and manage sessions via a backend cloud API—no software install required.\n- Export videos for free; no paid software or credit card necessary.\n- Designed for content creators and small businesses to create videos quickly and easily.\n- Includes error handling for uploads, credits, and session management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8fd367e3e6461b9982a5a14bdc5968571decc632a55bf8eecf03023e4a08eda"
+}

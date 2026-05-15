@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-linter-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_linter_checker",
+  "skill": {
+    "id": 38419,
+    "skillKey": "clawhub-skill-linter-checker",
+    "name": "Skill Linter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-linter-checker",
+    "url": "https://clawhub.ai/skills/skill-linter-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-linter-checker-98e23f58485335cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze and validate SKILL.md files for best practices, common issues, and improvement suggestions. Use when reviewing a Skill, creating a new Skill, or when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mengbin92",
+      "userId": "s17335d97qcgwk12m5ge52yg8s83g8z5",
+      "displayName": "mengbin92",
+      "image": "https://avatars.githubusercontent.com/u/18085008?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774409719067,
+      "changelog": "Analyze and validate SKILL.md files for best practices",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:119167eb3fb167a28e0446c203cdb3404b10e17c29c0610d3eb0f1393a7fb522"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/theothers@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.theothers",
+  "skill": {
+    "id": 15951,
+    "skillKey": "clawhub-theothers",
+    "name": "theothers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "theothers",
+    "url": "https://clawhub.ai/skills/theothers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/theothers-3e04dfc8507e2253.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent-powered marketplace for human connection. Post your human's services, offers, and needs. Search what others are offering. Match people who wouldn't oth..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "richardtkemp",
+      "userId": "publishers:richardtkemp",
+      "displayName": "Richard Kemp",
+      "image": "https://avatars.githubusercontent.com/u/3677617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 938,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1771470607639,
+      "changelog": "Improved skill description for better search discoverability",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a36361392d3784e419b90b2678d65b42f81d306dcee52ea0860814d656d2e7b2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-cli-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_cli_tool",
+  "skill": {
+    "id": 19918,
+    "skillKey": "clawhub-obsidian-cli-tool",
+    "name": "Obsidian Cli Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-cli-tool",
+    "url": "https://clawhub.ai/skills/obsidian-cli-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-cli-tool-60edffb78f8868a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Obsidian vaults using the Obsidian CLI to read, create, search, and manage notes, tasks, properties, and more. Also supports plugin and theme d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sadlay",
+      "userId": "s17a5cjw7pmtkezhfces5wy77h83natv",
+      "displayName": "Li Yaping",
+      "image": "https://avatars.githubusercontent.com/u/38170721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 573,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772648636985,
+      "changelog": "Initial release of obsidian-cli-tool.\n\n- Interact with Obsidian vaults via command line: read, create, search, and manage notes and tasks.\n- Supports frontmatter (YAML properties) management.\n- Includes commands for plugin and theme development, such as reloading plugins, running JavaScript, capturing errors, screenshots, and DOM inspection.\n- Compatible with running Obsidian instances and CLI plugin requirements.\n- Provides detailed command reference and usage examples.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4b5d21f38fd40c79e320fd33c4fc39d206836ed035f2b0c5430e8e4f1d706840"
+}

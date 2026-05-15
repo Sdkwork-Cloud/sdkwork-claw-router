@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-wake-say@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_wake_say",
+  "skill": {
+    "id": 8699,
+    "skillKey": "clawhub-voice-wake-say",
+    "name": "Voice Wake Say"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-wake-say",
+    "url": "https://clawhub.ai/skills/voice-wake-say",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-wake-say-8266cc0a77a486dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Speak responses aloud on macOS using the built-in `say` command when user input indicates Voice Wake/voice recognition (for example, messages starting with \"User talked via voice recognition on <device>\")."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xadenryan",
+      "userId": "publishers:xadenryan",
+      "displayName": "xadenryan",
+      "image": "https://avatars.githubusercontent.com/u/165437834?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 9108,
+      "installsAllTime": 65,
+      "installsCurrent": 60,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769336291994,
+      "changelog": "Remove device-specific trigger (make generic)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:55d6097b9db1c77e7839cd04cd0397db58015cd5771bb06a0b63e23915a9bccc"
+}

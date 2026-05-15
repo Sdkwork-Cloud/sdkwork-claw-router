@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11987,
+  "uuid": "skill-clawhub-stock-data-skill",
+  "skillKey": "clawhub-stock-data-skill",
+  "name": "stock_data",
+  "summary": "Fetch comprehensive stock data from Simplywall.st. Use when user asks about stock prices, valuation, financials, dividend, or investment analysis for any glo...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_data_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Raufi Musaddiq",
+      "features": [
+        "Fetch comprehensive stock data from Simplywall.st",
+        "Use when user asks about stock prices, valuation, financials, dividend, or investment analysis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-data-skill@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14123151?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-data-skill",
+      "url": "https://clawhub.ai/skills/stock-data-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-data-skill",
+    "url": "https://clawhub.ai/skills/stock-data-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-data-skill-53037387e4097231.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-data-skill@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-data-skill-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a995e6ca0503871fd32a23b55d2b529a40db4736ddf9eda710dac4a9bdb5659",
+      "artifactSizeBytes": 2051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T23:55:40.438Z"
+}

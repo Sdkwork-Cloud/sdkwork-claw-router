@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10011,
+  "uuid": "skill-clawhub-codex-conductor",
+  "skillKey": "clawhub-codex-conductor",
+  "name": "Codex Conductor",
+  "summary": "Methodical end-to-end software delivery orchestrator for Codex CLI with dual project modes (greenfield for new builds, brownfield for existing systems) and dual execution modes (autonomous and gated). Use when users want full lifecycle del.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_conductor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ShalomObongo",
+      "features": [
+        "Methodical end-to-end software delivery orchestrator for Codex CLI with dual project modes (gre.",
+        "Use when users want full lifecycle delivery with strict stage gates, progress tracking, per-ste."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codex-conductor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145100315?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codex-conductor",
+      "url": "https://clawhub.ai/skills/codex-conductor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-conductor",
+    "url": "https://clawhub.ai/skills/codex-conductor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-conductor-5f288d32edcb7c7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codex-conductor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-codex-conductor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75bc3308366fd69d584900537e3072b12dab1b210a908290d702d2127cc5e3ae",
+      "artifactSizeBytes": 2133
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T12:25:29.107Z"
+}

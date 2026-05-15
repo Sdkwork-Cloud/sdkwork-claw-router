@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63615,
+  "uuid": "skill-clawhub-huo15-comic-bgm",
+  "skillKey": "clawhub-huo15-comic-bgm",
+  "name": "Huo15 Comic Bgm",
+  "summary": "根据剧本整体 mood 生成一首 BGM（Suno v5），时长匹配总时长，国风优先（古筝/琵琶/笛子）。触发词：BGM 生成、背景音乐、配乐。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_comic_bgm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Job Zhao",
+      "features": [
+        "根据剧本整体 mood 生成一首 BGM（Suno v5），时长匹配总时长，国风优先（古筝/琵琶/笛子）。触发词：BGM 生成、背景音乐、配乐。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huo15-comic-bgm@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13188275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huo15-comic-bgm",
+      "url": "https://clawhub.ai/skills/huo15-comic-bgm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-comic-bgm",
+    "url": "https://clawhub.ai/skills/huo15-comic-bgm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-comic-bgm-f43147a4fc367a4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huo15-comic-bgm@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-huo15-comic-bgm-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83b9d2d44a703ae6e03fa3405ff95bd893beefdfcbf7202bcda96d8e38030ebb",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T06:07:21.287Z"
+}

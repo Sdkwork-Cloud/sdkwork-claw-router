@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-publish-dev1@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_publish_dev1",
+  "skill": {
+    "id": 61636,
+    "skillKey": "clawhub-test-publish-dev1",
+    "name": "test-publish-dev1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-publish-dev1",
+    "url": "https://clawhub.ai/skills/test-publish-dev1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-publish-dev1-7289bba55a3bbf1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动将商品从跨睿优质货盘铺货到Ozon电商平台。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "famechyu",
+      "userId": "s172erdsk1a20qqe20n8pd0m6h83gy1x",
+      "displayName": "famechyu",
+      "image": "https://avatars.githubusercontent.com/u/233062176?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775032102147,
+      "changelog": "效果联调",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa7c530e24d92e37cf9cdef88549e4da0eecb02324e11306333dabb8dc247aa9"
+}

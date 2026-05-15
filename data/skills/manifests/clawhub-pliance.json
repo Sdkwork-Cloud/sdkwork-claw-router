@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35735,
+  "uuid": "skill-clawhub-pliance",
+  "skillKey": "clawhub-pliance",
+  "name": "Pliance",
+  "summary": "Pliance integration. Manage data, records, and automate workflows. Use when the user wants to interact with Pliance data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pliance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Pliance integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Pliance data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pliance@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pliance",
+      "url": "https://clawhub.ai/skills/pliance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pliance",
+    "url": "https://clawhub.ai/skills/pliance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pliance-c9f7c914309758bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pliance@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-pliance-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb05f13542a51a56fbe045dcf5b08b4dccf34394e7ea4f4cea54e39636cbb398",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:52:27.518Z"
+}

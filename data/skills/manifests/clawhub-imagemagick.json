@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8963,
+  "uuid": "skill-clawhub-imagemagick",
+  "skillKey": "clawhub-imagemagick",
+  "name": "ImageMagick Operations",
+  "summary": "Perform image manipulation tasks like background removal, resizing, format conversion, rounding corners, watermarking, and color adjustments using ImageMagic...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imagemagick",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kesslerio",
+      "features": [
+        "Perform image manipulation tasks like background removal, resizing, format conversion, rounding."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/imagemagick@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2647990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "imagemagick",
+      "url": "https://clawhub.ai/skills/imagemagick"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imagemagick",
+    "url": "https://clawhub.ai/skills/imagemagick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imagemagick-8c29312571e4d5c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/imagemagick@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-imagemagick-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1eb63cd25ccfd4f4e898592f4ffe0ea05d25c271978d9c1823a3632362fec4a4",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T05:41:34.531Z"
+}

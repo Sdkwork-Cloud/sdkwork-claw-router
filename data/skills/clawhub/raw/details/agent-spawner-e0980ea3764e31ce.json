@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "agent-spawner",
+    "displayName": "Agent Spawner",
+    "summary": "Spawn a new OpenClaw agent through conversation. Uses official Docker setup and non-interactive onboarding, carries over API keys, tools, plugins, and skills...",
+    "tags": {
+      "latest": "0.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1177,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "createdAt": 1771482478085,
+    "updatedAt": 1778386776372
+  },
+  "latestVersion": {
+    "version": "0.1.0",
+    "createdAt": 1771482478085,
+    "changelog": "Initial release: enables conversational deployment of new OpenClaw agents with minimal user input.\n\n- Gathers current agent's provider, API keys, plugins, and workspace skills automatically.\n- Asks user only for deployment target, agent name, and optional purpose.\n- Shows detailed deployment plan and waits for user confirmation.\n- Supports both Docker (local or remote) and bare metal installations.\n- Migrates relevant configs, tool keys, plugins, and custom skills to the new agent.\n- Presents final access URL and token upon successful agent creation.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "austineral",
+    "userId": "publishers:austineral",
+    "displayName": "AustinEral",
+    "image": "https://avatars.githubusercontent.com/u/35617280?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778386776372
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pilot-announce@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_announce",
+  "skill": {
+    "id": 40173,
+    "skillKey": "clawhub-pilot-announce",
+    "name": "Pilot Announce"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-announce",
+    "url": "https://clawhub.ai/skills/pilot-announce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-announce-bd09db8048c9c97f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "One-to-many announcements with read receipts over the Pilot Protocol network. Use this skill when: 1. You need to broadcast important updates with delivery t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teoslayer",
+      "userId": "s1774mw0xjm94md84a5rvrp9rd84fear",
+      "displayName": "Calin Teodor",
+      "image": "https://avatars.githubusercontent.com/u/45018530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775680835201,
+      "changelog": "Initial release: Enables one-to-many announcements with read receipts over the Pilot Protocol network.\n\n- Broadcasts important updates to multiple recipients.\n- Tracks delivery and confirmation via read receipts.\n- Supports system announcements and policy changes.\n- Requires running pilot-protocol and pilotctl binary.\n- Not intended for casual chat or interactive discussions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0494bdd2a2374b423e1cbc3045a20e96c0829d00fd6a0ae9cf5056b73753b324"
+}

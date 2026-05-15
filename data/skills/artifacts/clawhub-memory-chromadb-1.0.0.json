@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-chromadb@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_chromadb",
+  "skill": {
+    "id": 46951,
+    "skillKey": "clawhub-memory-chromadb",
+    "name": "Memory ChromaDB"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-chromadb",
+    "url": "https://clawhub.ai/skills/memory-chromadb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-chromadb-dfedea62a720ee45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrates ChromaDB with Ollama embeddings for long-term memory and auto-recalls relevant context to enhance conversations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "broedkrummen",
+      "userId": "s176tqmpjtkpkhfdzyb4m64qts83hexw",
+      "displayName": "Broedkrummen",
+      "image": "https://avatars.githubusercontent.com/u/146327287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771928121736,
+      "changelog": "Initial release of ChromaDB Memory with Ollama embeddings.\n\n- Integrates ChromaDB vector database for long-term memory storage.\n- Supports embeddings via Ollama with configurable model.\n- Automatically recalls and injects relevant context before each turn.\n- Allows configuration of collection names and result filtering (minScore, autoRecall count).\n- All settings customizable via config options.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b6eba10181f1a74ccb9a99b52be4c50d6f8d2a9d81e4950476c86ccd40c3b9fb"
+}

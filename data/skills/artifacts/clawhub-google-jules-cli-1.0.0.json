@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-jules-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_jules_cli",
+  "skill": {
+    "id": 20877,
+    "skillKey": "clawhub-google-jules-cli",
+    "name": "Google Jules Tools CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-jules-cli",
+    "url": "https://clawhub.ai/skills/google-jules-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-jules-cli-10417ba77372ffc9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interface with Google's Jules Tools CLI to manage AI coding sessions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexdavidswift",
+      "userId": "publishers:alexdavidswift",
+      "displayName": "alexdavidswift",
+      "image": "https://avatars.githubusercontent.com/u/37465456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 533,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772126270222,
+      "changelog": "- Initial release of the Jules Tools Skill.\n- Enables interfacing with Google's Jules Tools CLI to manage AI coding sessions.\n- Supports starting new coding sessions, listing sessions and repositories, and retrieving results.\n- Provides setup guidance for installation and authentication of the Jules CLI.\n- Includes troubleshooting tips for common issues.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9e60f8992788505887d714759a749b953fa5434f4d8d929437a0e42356ba3928"
+}

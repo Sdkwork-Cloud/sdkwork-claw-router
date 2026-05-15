@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iemail-send@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iemail_send",
+  "skill": {
+    "id": 24198,
+    "skillKey": "clawhub-iemail-send",
+    "name": "Send transactional email via DmartechX/Iemail OpenAPI. Configure in OpenClaw skills env or use secret.md."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iemail-send",
+    "url": "https://clawhub.ai/skills/iemail-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iemail-send-a708271361b2d5f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send transactional email via Iemail OpenAPI. Configure via OpenClaw skill env only."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jack-atlas",
+      "userId": "s17cf4nv85d27ha338jxew6r3h843ysb",
+      "displayName": "Jack",
+      "image": "https://avatars.githubusercontent.com/u/3220935?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 417,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773365007122,
+      "changelog": "- Changed agent instructions: Now advises agents to read `~/.openclaw/openclaw.json` or workspace config files for credentials.\n- Previously, agents were instructed not to read config files; now, explicit permission is given.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88284686530eb540ccc0036f652f4d4dd858d5361e1f0310da444de9170a0e8d"
+}

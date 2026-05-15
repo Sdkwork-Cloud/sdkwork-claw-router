@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25514,
+  "uuid": "skill-clawhub-listing-gap-audit",
+  "skillKey": "clawhub-listing-gap-audit",
+  "name": "Listing Gap Audit",
+  "summary": "Audit listing competitiveness by comparing your PDP/listing against top competitors and surfacing the highest-impact copy/proof gaps. Use when the user asks...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.listing_gap_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Audit listing competitiveness by comparing your PDP/listing against top competitors and surfaci.",
+        "Use when the user asks..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/listing-gap-audit@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "listing-gap-audit",
+      "url": "https://clawhub.ai/skills/listing-gap-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "listing-gap-audit",
+    "url": "https://clawhub.ai/skills/listing-gap-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/listing-gap-audit-4bff35d07d1625bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/listing-gap-audit@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-listing-gap-audit-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f8da2f23dd6d84e880cb2da976b2580668aaeac4060c81f3994899698a97c95",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:01:28.139Z"
+}

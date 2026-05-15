@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65481,
+  "uuid": "skill-clawhub-idcardrecognition",
+  "skillKey": "clawhub-idcardrecognition",
+  "name": "ID Card Recognition OCR - 身份证识别",
+  "summary": "对身份证等证件图 OCR，返回姓名、号码等字段。当用户说：身份证照片识别一下信息、证件图转文字，或类似证件 OCR 时，使用本技能。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idcardrecognition",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "极速数据",
+      "features": [
+        "对身份证等证件图 OCR，返回姓名、号码等字段。当用户说：身份证照片识别一下信息、证件图转文字，或类似证件 OCR 时，使用本技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/idcardrecognition@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30516426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "idcardrecognition",
+      "url": "https://clawhub.ai/skills/idcardrecognition"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idcardrecognition",
+    "url": "https://clawhub.ai/skills/idcardrecognition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idcardrecognition-11ede2887a873c53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/idcardrecognition@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-idcardrecognition-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a2d191bc5216e2d0c136c1fe0cd9e048fba90310925cd8e86ad197cd54a168a",
+      "artifactSizeBytes": 2370
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T10:00:33.356Z"
+}

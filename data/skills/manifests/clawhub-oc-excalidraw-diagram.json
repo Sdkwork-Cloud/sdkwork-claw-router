@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37221,
+  "uuid": "skill-clawhub-oc-excalidraw-diagram",
+  "skillKey": "clawhub-oc-excalidraw-diagram",
+  "name": "Excalidraw Diagram Generator",
+  "summary": "Generate Excalidraw hand-drawn diagrams from natural language. Use when asked to create diagrams, flowcharts, mind maps, architecture diagrams, ER diagrams,...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_excalidraw_diagram",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mcdowelll",
+      "features": [
+        "Generate Excalidraw hand-drawn diagrams from natural language",
+        "Use when asked to create diagrams, flowcharts, mind maps, architecture diagrams, ER diagrams,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oc-excalidraw-diagram@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19951427?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oc-excalidraw-diagram",
+      "url": "https://clawhub.ai/skills/oc-excalidraw-diagram"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-excalidraw-diagram",
+    "url": "https://clawhub.ai/skills/oc-excalidraw-diagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-excalidraw-diagram-3dd96220080ec291.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oc-excalidraw-diagram@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oc-excalidraw-diagram-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94022917cecffb14237b1c77b482ed4e52b113127a2be49df45b9065c4ef6318",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:57:20.167Z"
+}

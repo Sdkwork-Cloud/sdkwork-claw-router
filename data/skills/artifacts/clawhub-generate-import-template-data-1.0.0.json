@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generate-import-template-data@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_import_template_data",
+  "skill": {
+    "id": 57524,
+    "skillKey": "clawhub-generate-import-template-data",
+    "name": "生成导入模板数据"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-import-template-data",
+    "url": "https://clawhub.ai/skills/generate-import-template-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-import-template-data-88d0151092072e98.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate import-ready data from user-provided Excel or CSV import templates based on the customer's described business scenario. Use when Codex receives an u..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huahuaweiwei",
+      "userId": "s175k6y0cwnbnsemzrn457jy9x84c6fx",
+      "displayName": "huahuaweiwei",
+      "image": "https://avatars.githubusercontent.com/u/136433144?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775638155647,
+      "changelog": "Initial release for the generate-import-template-data skill:\n\n- Supports generating import-ready data based on user-uploaded Excel or CSV templates and described business scenarios.\n- Inspects templates to identify target sheets, headers, and structure before generation.\n- Preserves exact column order, header names, and expected data formats according to the template.\n- Handles business scenario details, edge cases, and test data requirements as specified by the user.\n- Outputs data in copy-paste-friendly formats (Markdown table for small outputs, fenced CSV for larger sets).\n- Clearly states sheet choice, header detection, row count, and any necessary assumptions in the output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71756aa2599ce78cfd905bd054e8ad445eec013c6daba4a3fdbd25ed19bbca4b"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53232,
+  "uuid": "skill-clawhub-adr-generator",
+  "skillKey": "clawhub-adr-generator",
+  "name": "Adr Generator",
+  "summary": "Architecture Decision Record generator — analyze codebases and document technical decisions with context, alternatives, and consequences. Use when asked to d...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adr_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Architecture Decision Record generator — analyze codebases and document technical decisions wit.",
+        "Use when asked to d..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adr-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adr-generator",
+      "url": "https://clawhub.ai/skills/adr-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adr-generator",
+    "url": "https://clawhub.ai/skills/adr-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adr-generator-37a802be84e20ab0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adr-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-adr-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:512871f11b3f7c3dd02bd65697bc6e4b409c80ffd82817f0d44ebcecd0d1fbcd",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:59:37.948Z"
+}

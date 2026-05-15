@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-api@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_api",
+  "skill": {
+    "id": 9337,
+    "skillKey": "clawhub-youtube-api",
+    "name": "youtube-api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-api",
+    "url": "https://clawhub.ai/skills/youtube-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-api-9d4832a5dd97462a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when YouTube data is needed without Google API quotas or OAuth setup: transcripts, video metadata, channel info, search results, playlists. Triggers on p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "therohitdas",
+      "userId": "s172eaks33v7ygg504kv93sdf584gqev",
+      "displayName": "Rohit Das",
+      "image": "https://avatars.githubusercontent.com/u/43847374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4115,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 1,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1777475130295,
+      "changelog": "Replace auth.js with agent-native auth-setup.md; fix YAML frontmatter (quote descriptions); add version field; move homepage into metadata.openclaw.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cac6068923930bccdc8458dcbeac9891fcbe45d5753b32c39c7e8a84c45cbef0"
+}

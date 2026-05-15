@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40692,
+  "uuid": "skill-clawhub-gh-pr-review-loop",
+  "skillKey": "clawhub-gh-pr-review-loop",
+  "name": "PR Review Loop",
+  "summary": "Drive a GitHub pull request through an iterative review-and-fix loop. Use when Codex needs to create a PR if none exists for the current branch, inspect revi...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gh_pr_review_loop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stevetdp",
+      "features": [
+        "Drive a GitHub pull request through an iterative review-and-fix loop",
+        "Use when Codex needs to create a PR if none exists for the current branch, inspect revi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gh-pr-review-loop@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67769961?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gh-pr-review-loop",
+      "url": "https://clawhub.ai/skills/gh-pr-review-loop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gh-pr-review-loop",
+    "url": "https://clawhub.ai/skills/gh-pr-review-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gh-pr-review-loop-ef822b59c9af1cac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gh-pr-review-loop@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gh-pr-review-loop-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05869f169753f6e9ee3514b8625bfcd554e9132b480e29aac92cc97d91436d28",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:42:50.767Z"
+}

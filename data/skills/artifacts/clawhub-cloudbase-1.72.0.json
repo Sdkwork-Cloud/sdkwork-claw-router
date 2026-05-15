@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloudbase@1.72.0",
+  "version": "1.72.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudbase",
+  "skill": {
+    "id": 57789,
+    "skillKey": "clawhub-cloudbase",
+    "name": "Cloudbase"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudbase",
+    "url": "https://clawhub.ai/skills/cloudbase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudbase-15d6e65cc4964c16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever users ask to develop, design, build, deploy, debug, migrate, or troubleshoot anything on CloudBase (腾讯云开发 / 云开发 / TCB / 微信云开发) — acro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "binggg",
+      "userId": "s17cgdbxp195f7dy8f5h6p0d9183h6nq",
+      "displayName": "Booker Zhao",
+      "image": "https://avatars.githubusercontent.com/u/7686861?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1963,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 73
+    },
+    "latestVersion": {
+      "version": "1.72.0",
+      "createdAt": 1778309908934,
+      "changelog": "Recent commits / 最近提交:\n- Merge pull request #700 from TencentCloudBase/feat/auth-getSession-and-supabase-compat\n- fix(skills): address Codex review — anonymous guard, getUser path, regenerate prompts\n- fix(skills): correct Supabase vs CloudBase OTP verification difference\n- feat(skills): strengthen Supabase API compatibility notes and add missing methods\n- fix(skills): correct getSession vs getLoginState behavior with accessKey",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2759f4d7696e21d3f382f8ffcaf84e73a9dd3348cbaa8812dbf8da435bc12d7"
+}

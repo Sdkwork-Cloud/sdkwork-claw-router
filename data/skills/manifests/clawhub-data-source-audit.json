@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11441,
+  "uuid": "skill-clawhub-data-source-audit",
+  "skillKey": "clawhub-data-source-audit",
+  "name": "Data Source Audit",
+  "summary": "Comprehensive audit of all construction data sources and systems. Map data flows, identify silos, assess quality, and create integration roadmap.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_source_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "datadrivenconstruction",
+      "features": [
+        "Comprehensive audit of all construction data sources and systems",
+        "Map data flows, identify silos, assess quality, and create integration roadmap."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-source-audit@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94158709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-source-audit",
+      "url": "https://clawhub.ai/skills/data-source-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-source-audit",
+    "url": "https://clawhub.ai/skills/data-source-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-source-audit-249743d975c16dae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-source-audit@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-source-audit-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ca83ba4a50430ab05a7611ffdd55eb9ab253002fe11774e7f745d0ea0648bb7",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T15:14:54.025Z"
+}

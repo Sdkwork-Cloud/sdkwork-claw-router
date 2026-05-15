@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41529,
+  "uuid": "skill-clawhub-openclaw-optimizer",
+  "skillKey": "clawhub-openclaw-optimizer",
+  "name": "Openclaw Optimizer",
+  "summary": "Use when: you want to optimize an OpenClaw setup (v2026.2.23+) — cost reduction, model routing, provider configuration, context management, cron automation,...",
+  "version": "1.19.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jacob Ben-David",
+      "features": [
+        "Use when: you want to optimize an OpenClaw setup (v2026.2.23+) — cost reduction, model routing,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-optimizer@1.19.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47641890?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-optimizer",
+      "url": "https://clawhub.ai/skills/openclaw-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-optimizer",
+    "url": "https://clawhub.ai/skills/openclaw-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-optimizer-56edace624bc806f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-optimizer@1.19.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-optimizer-1.19.0.json",
+      "version": "1.19.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f3c4ac278d04f845af784a397a33d1f7ff9b70a0c4fae055ff2de02fe677dcb",
+      "artifactSizeBytes": 2536
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T19:29:31.509Z"
+}

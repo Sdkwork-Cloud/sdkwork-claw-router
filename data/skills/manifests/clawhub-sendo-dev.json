@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39329,
+  "uuid": "skill-clawhub-sendo-dev",
+  "skillKey": "clawhub-sendo-dev",
+  "name": "Sendo Dev",
+  "summary": "Sendo integration. Manage Recordses. Use when the user wants to interact with Sendo data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sendo_dev",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Sendo integration",
+        "Manage Recordses",
+        "Use when the user wants to interact with Sendo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sendo-dev@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sendo-dev",
+      "url": "https://clawhub.ai/skills/sendo-dev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sendo-dev",
+    "url": "https://clawhub.ai/skills/sendo-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sendo-dev-8b46ee5fae523f2a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sendo-dev@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sendo-dev-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7be67ab9033c41fe1c1b1f444085681e86cd952a6168078f37ded380eeab662c",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:39:44.300Z"
+}

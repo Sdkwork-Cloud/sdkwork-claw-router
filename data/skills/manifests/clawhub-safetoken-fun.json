@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51007,
+  "uuid": "skill-clawhub-safetoken-fun",
+  "skillKey": "clawhub-safetoken-fun",
+  "name": "SafeToken.fun",
+  "summary": "Discover and use SafeToken.fun — fair memecoin launchpad on BNB Chain. Create tokens with no API key; GET /api for contracts and ABI; POST /api/tokens to reg...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safetoken_fun",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "panagot",
+      "features": [
+        "Discover and use SafeToken.fun — fair memecoin launchpad on BNB Chain",
+        "Create tokens with no API key",
+        "GET /api for contracts and ABI",
+        "POST /api/tokens to reg..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safetoken-fun@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17499398?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safetoken-fun",
+      "url": "https://clawhub.ai/skills/safetoken-fun"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safetoken-fun",
+    "url": "https://clawhub.ai/skills/safetoken-fun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safetoken-fun-0fd74ce4cf84112b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safetoken-fun@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safetoken-fun-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff9d7eecf59cf5c8fc24a8afe331ce094a72b1d65e5e1679c5f64d9c3ada1fcc",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T17:48:38.136Z"
+}

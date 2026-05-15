@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55585,
+  "uuid": "skill-clawhub-fisi",
+  "skillKey": "clawhub-fisi",
+  "name": "Fisi",
+  "summary": "Unterstützt bei FiSi-Ausbildungsthemen wie Netzwerke, Server-Admin, Datenbanken, Scripting, Sicherheit, Virtualisierung, Prüfungsvorbereitung und Projektarbeit.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fisi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alexander Schneider",
+      "features": [
+        "Unterstützt bei FiSi-Ausbildungsthemen wie Netzwerke, Server-Admin, Datenbanken, Scripting, Sic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fisi@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212052432?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fisi",
+      "url": "https://clawhub.ai/skills/fisi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fisi",
+    "url": "https://clawhub.ai/skills/fisi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fisi-89a04c3a14f078cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fisi@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fisi-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24cb7bba45810294d2eaef04041e4609a2d1dbe84d7f986e1684da0a77ba7ab3",
+      "artifactSizeBytes": 1849
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T16:27:44.953Z"
+}

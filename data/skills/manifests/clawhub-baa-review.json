@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26837,
+  "uuid": "skill-clawhub-baa-review",
+  "skillKey": "clawhub-baa-review",
+  "name": "Baa Review",
+  "summary": "Clause-by-clause BAA analysis against 45 CFR 164.504(e)(2). Evaluates all 9 required HIPAA provisions with risk scoring and recommended contract language for...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baa_review",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dangsllc",
+      "features": [
+        "Clause-by-clause BAA analysis against 45 CFR 164.504(e)(2)",
+        "Evaluates all 9 required HIPAA provisions with risk scoring and recommended contract language f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baa-review@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226757080?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baa-review",
+      "url": "https://clawhub.ai/skills/baa-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baa-review",
+    "url": "https://clawhub.ai/skills/baa-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baa-review-eaeb8a3beaad39db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baa-review@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baa-review-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:875d4254c74ded89cce3659828f4c167f9c6d3a72f6dd872c7b9995036d4ffb3",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T01:29:39.800Z"
+}

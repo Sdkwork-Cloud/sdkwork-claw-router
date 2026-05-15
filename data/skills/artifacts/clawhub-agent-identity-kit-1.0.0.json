@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-identity-kit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_identity_kit",
+  "skill": {
+    "id": 9890,
+    "skillKey": "clawhub-agent-identity-kit",
+    "name": "Agent Identity Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-identity-kit",
+    "url": "https://clawhub.ai/skills/agent-identity-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-identity-kit-7dd57af46b54f316.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, validate, and manage agent identity cards (agent.json) following the Agent Card v1 schema with interactive setup and validation tools."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryancampbell",
+      "userId": "publishers:ryancampbell",
+      "displayName": "ryancampbell",
+      "image": "https://avatars.githubusercontent.com/u/121135?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2982,
+      "installsAllTime": 17,
+      "installsCurrent": 15,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770237862960,
+      "changelog": "- Initial release of Agent Identity Kit: a portable identity system for AI agents.\n- Create, validate, and publish standardized `agent.json` identity cards via interactive scripts.\n- Includes a JSON Schema for validation and editor/CI integration.\n- Provides example identity cards and a quickstart guide.\n- Outlines fields, recommended hosting locations, and integration with forAgents.dev.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0179498a13d7b20ec411842a986976b8c205ea025de69867aceb022220e7359c"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11050,
+  "uuid": "skill-clawhub-drawio",
+  "skillKey": "clawhub-drawio",
+  "name": "Draw.io Professional Diagrams",
+  "summary": "Generate professional draw.io diagrams (ERD/database tables, class diagrams, sequence diagrams, flowcharts, architecture diagrams) and export them as PNG. Us...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drawio",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roman Meclazcke",
+      "features": [
+        "Generate professional draw.io diagrams (ERD/database tables, class diagrams, sequence diagrams,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drawio@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/137325701?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drawio",
+      "url": "https://clawhub.ai/skills/drawio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drawio",
+    "url": "https://clawhub.ai/skills/drawio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drawio-52ee1a315816f42c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drawio@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-drawio-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87dcb851342a4d4345155a7df10384b74bf7e7bbf1ff0314fb095bce4360c802",
+      "artifactSizeBytes": 2283
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T14:21:52.868Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71919,
+  "uuid": "skill-clawhub-ant-group",
+  "skillKey": "clawhub-ant-group",
+  "name": "ant-group",
+  "summary": "蚂蚁集团信息助手。查询支付宝、余额宝、花呗、借呗、网商银行、蚂蚁链等产品，了解公司背景、上市进展、最新动态。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ant_group",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "蚂蚁集团信息助手。查询支付宝、余额宝、花呗、借呗、网商银行、蚂蚁链等产品，了解公司背景、上市进展、最新动态。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ant-group@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ant-group",
+      "url": "https://clawhub.ai/skills/ant-group"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ant-group",
+    "url": "https://clawhub.ai/skills/ant-group",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ant-group-28558532fc4a3ab0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ant-group@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ant-group-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d46e7012b92f4a799ea8b037ead0891475efe7ae4f2c6c4e3fdbbe9053e2cb7d",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T03:37:40.800Z"
+}

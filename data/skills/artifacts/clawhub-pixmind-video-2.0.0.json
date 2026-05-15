@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pixmind-video@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pixmind_video",
+  "skill": {
+    "id": 33500,
+    "skillKey": "clawhub-pixmind-video",
+    "name": "Pixmind Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pixmind-video",
+    "url": "https://clawhub.ai/skills/pixmind-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pixmind-video-df71ef5cd8f42ffe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI videos via Pixmind API (text-to-video and image-to-video)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fuyunzhishang",
+      "userId": "s17cjqv5bh3ckgqc9bvsvvxjkn840t25",
+      "displayName": "Pixmind",
+      "image": "https://avatars.githubusercontent.com/u/19215394?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1777618449967,
+      "changelog": "添加完整视频模型列表和模型介绍（Seedance 1.5、Veo 3.0、Sora 2、Pixverse 4.0、Kling 1.6 等 23 个模型）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:03f089466e8c32a008f4e154e86eea74d1c9d927d64a5be5f162e9f6adb9ec5e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/add-subtitle-to-video-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_subtitle_to_video_free",
+  "skill": {
+    "id": 45047,
+    "skillKey": "clawhub-add-subtitle-to-video-free",
+    "name": "Add Subtitle To Video Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-subtitle-to-video-free",
+    "url": "https://clawhub.ai/skills/add-subtitle-to-video-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-subtitle-to-video-free-add710a33b3e6f14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 3-minute YouTube tutorial recording into 1080p captioned video files just by typing what you need. Whether it's adding subtitles to YouTube or social..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776118596257,
+      "changelog": "Initial release — easily add AI-generated, burned-in subtitles to your videos with no manual editing.\n\n- Upload a video and describe your desired result; automatic subtitle generation and syncing.\n- Supports quick workflows: 30-60 seconds from upload to downloadable 1080p MP4.\n- No local software needed; everything runs on cloud GPUs.\n- Handles video uploads, subtitles, aspect ratio, and format exports via chat commands.\n- Free usage includes 100 credits (7 days) with anonymous sign-in—no registration needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d513b1f12e17217dfd46c2ebadbbf5cdb2f437b0a1cebd8aa275c662e43d2fec"
+}

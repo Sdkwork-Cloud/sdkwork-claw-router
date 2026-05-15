@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11996,
+  "uuid": "skill-clawhub-frankenstein",
+  "skillKey": "clawhub-frankenstein",
+  "name": "Frankenstein",
+  "summary": "Combine the best parts of multiple skills into one. Searches ClawHub, GitHub, skills.sh, skillsmp.com and other AI skill repos. Analyzes each safely, compares features, and builds a combined 'Frankenstein' skill with the best of each. Uses.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.frankenstein",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ruben Quispe",
+      "features": [
+        "Combine the best parts of multiple skills into one",
+        "Searches ClawHub, GitHub, skills.sh, skillsmp.com and other AI skill repos",
+        "Analyzes each safely, compares features, and builds a combined 'Frankenstein' skill with the be.",
+        "Uses skill-auditor for security scanning and sandwrap for safe analysis"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/frankenstein@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44844199?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "frankenstein",
+      "url": "https://clawhub.ai/skills/frankenstein"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "frankenstein",
+    "url": "https://clawhub.ai/skills/frankenstein",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/frankenstein-2fef76f13e3b4241.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/frankenstein@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-frankenstein-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ef6c9c8cc72a1a010412c9f3b8c7cc3732f07f8b570a7ef30c4f36078a64cf0",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T14:41:03.412Z"
+}

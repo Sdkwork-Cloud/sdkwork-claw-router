@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-gateway-watchdog-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_gateway_watchdog_skill",
+  "skill": {
+    "id": 17597,
+    "skillKey": "clawhub-openclaw-gateway-watchdog-skill",
+    "name": "Gateway Watchdog Discord"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-gateway-watchdog-skill",
+    "url": "https://clawhub.ai/skills/openclaw-gateway-watchdog-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-gateway-watchdog-skill-644c678612655b6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor OpenClaw gateway health with a watchdog state machine, Discord alerts, cooldown dedupe, and isolated fallback deployment on macOS. Use when users wan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jonathanjing",
+      "userId": "s17aah0h06a3741dypyhe3a2xd85pgsx",
+      "displayName": "Jonathan Jing",
+      "image": "https://avatars.githubusercontent.com/u/17068507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 763,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772586473184,
+      "changelog": "Added simplified installation instructions to SKILL.md and README.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2609df340dabca972a22d0ac165250cc832cb6ec55a1a3a5a1aa6818965e3537"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scrapling-fetcher@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scrapling_fetcher",
+  "skill": {
+    "id": 15425,
+    "skillKey": "clawhub-scrapling-fetcher",
+    "name": "Scrapling - Stealth Web Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scrapling-fetcher",
+    "url": "https://clawhub.ai/skills/scrapling-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scrapling-fetcher-72339ce18f837528.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web scraping using Scrapling — a Python framework with anti-bot bypass (Cloudflare Turnstile, fingerprint spoofing), adaptive element tracking, stealth headl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "damirikys",
+      "userId": "s170dx4nw2adr8scv090bb28dd84pbe2",
+      "displayName": "Damir Armanov",
+      "image": "https://avatars.githubusercontent.com/u/18160651?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1460,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772005672031,
+      "changelog": "Added license (MIT) and metadata.source/pypi fields to frontmatter so registry shows verified provenance instead of 'Source: unknown'.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5f1dc5afc253ee59f77371715dfad8315a66d6f5af350e514a92a962901b1c06"
+}

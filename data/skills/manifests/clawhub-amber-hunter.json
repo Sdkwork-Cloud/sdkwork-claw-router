@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19012,
+  "uuid": "skill-clawhub-amber-hunter",
+  "skillKey": "clawhub-amber-hunter",
+  "name": "Amber Hunter",
+  "summary": "Amber-Hunter is a local AI memory engine that encrypts, stores, and summarizes OpenClaw/Claude sessions and files for instant recall and optional cloud sync.",
+  "version": "1.2.41",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amber_hunter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ankechenlab-node",
+      "features": [
+        "Amber-Hunter is a local AI memory engine that encrypts, stores, and summarizes OpenClaw/Claude."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amber-hunter@1.2.41",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260451964?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amber-hunter",
+      "url": "https://clawhub.ai/skills/amber-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amber-hunter",
+    "url": "https://clawhub.ai/skills/amber-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amber-hunter-b75c726703982b38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amber-hunter@1.2.41",
+      "artifactUrl": "data/skills/artifacts/clawhub-amber-hunter-1.2.41.json",
+      "version": "1.2.41",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d336640f824ddffa51e38cbc9684981138ba679a7ee7784959856563a67b44f",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T02:34:37.877Z"
+}

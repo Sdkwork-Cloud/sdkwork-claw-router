@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-skill-20260414@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_skill_20260414",
+  "skill": {
+    "id": 46853,
+    "skillKey": "clawhub-my-skill-20260414",
+    "name": "My Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-skill-20260414",
+    "url": "https://clawhub.ai/skills/my-skill-20260414",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-skill-20260414-cb64a4938834781f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides current weather information for a specified location using a weather API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zel-forprogress",
+      "userId": "s17adaznb8djjjehhp0w8sw2n184t52c",
+      "displayName": "zel-forprogress",
+      "image": "https://avatars.githubusercontent.com/u/218565796?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776149429823,
+      "changelog": "Initial release of weather-skill.\n\n- Fetches the current weather information for a specified location using a weather API.\n- Usable in Feishu groups and private chats.\n- Responds to user messages with weather information.\n- Includes Chinese-language instructions and feature descriptions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:03b79fed3b81bc15cb3e0300954f078d283e53743ebb5af7a360a90a0b0094d8"
+}

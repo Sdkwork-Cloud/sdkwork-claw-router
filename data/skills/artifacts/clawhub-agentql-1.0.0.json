@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentql@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentql",
+  "skill": {
+    "id": 53505,
+    "skillKey": "clawhub-agentql",
+    "name": "Agentql"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentql",
+    "url": "https://clawhub.ai/skills/agentql",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentql-1697ce9ea2f3e58a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web scraping and browser automation using AgentQL — query any webpage with natural language to extract structured data, interact with elements, and automate..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dhua2020",
+      "userId": "s17cfng53jfqwdwbw5fc8z7q8h83nxzh",
+      "displayName": "dhua2020",
+      "image": "https://avatars.githubusercontent.com/u/66152331?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774498691350,
+      "changelog": "Initial release of agentql\n\n- Enables web scraping and browser automation using natural language queries.\n- Extract structured data and interact with webpage elements via AgentQL.\n- Integrates with Playwright for browser control.\n- Provides Python and CLI quick start instructions.\n- Requires a free API key from https://dev.agentql.com.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d1dcd2bdc9f77dda08cd23c23d53b51cb0e1a7a896a2131c7b38ab3c12401ff"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentic-marketing-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_marketing_auditor",
+  "skill": {
+    "id": 24747,
+    "skillKey": "clawhub-agentic-marketing-auditor",
+    "name": "Agentic Marketing Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-marketing-auditor",
+    "url": "https://clawhub.ai/skills/agentic-marketing-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-marketing-auditor-37bdcc6e71aba130.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit repositories for 2026 Marketing readiness (GEO & A2A). This skill analyzes your README and documentation to ensure your AI products are discoverable an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tmstudio667-commits",
+      "userId": "publishers:tmstudio667-commits",
+      "displayName": "System Architect Zero",
+      "image": "https://avatars.githubusercontent.com/u/261739543?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 404,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772463027147,
+      "changelog": "Initial release: Audit your repository for 2026 Marketing readiness and AI discoverability.\n\n- Analyzes README and documentation for visibility by LLMs and Generative Search Engines.\n- Checks for GEO compliance, including presence and quality of llms.txt.\n- Evaluates A2A (Agent-to-Agent) readiness with machine-readable summaries.\n- Audits engagement and structure to improve both human and agentic conversion.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6c4490eeac4472e2180b513f316b9a92dd50ca5f7b4eb6b97709609e54802c82"
+}

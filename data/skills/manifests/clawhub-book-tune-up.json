@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13570,
+  "uuid": "skill-clawhub-book-tune-up",
+  "skillKey": "clawhub-book-tune-up",
+  "name": "Book Tune Up",
+  "summary": "Book tune-up services through Lokuli MCP. Use when user needs to find and book tune-up. Triggers on requests like \"book a tune-up\", \"find tune-up near me\", or any tune-up service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_tune_up",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book tune-up services through Lokuli MCP",
+        "Use when user needs to find and book tune-up",
+        "Triggers on requests like \"book a tune-up\", \"find tune-up near me\", or any tune-up service requ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-tune-up@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-tune-up",
+      "url": "https://clawhub.ai/skills/book-tune-up"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-tune-up",
+    "url": "https://clawhub.ai/skills/book-tune-up",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-tune-up-2fef86371d507598.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-tune-up@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-tune-up-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a61595b10e5b88e88131e0ea46ee8aa86780d671f0761d4094fb606186c3c735",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:04:40.139Z"
+}

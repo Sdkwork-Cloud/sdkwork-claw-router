@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38065,
+  "uuid": "skill-clawhub-long-running-agent-harness",
+  "skillKey": "clawhub-long-running-agent-harness",
+  "name": "long-running-agent-harness",
+  "summary": "Long-running agent workflow automation. Initialize project scaffolding, manage feature lists, track progress across sessions, and orchestrate coding agents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_running_agent_harness",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wenkangwei",
+      "features": [
+        "Long-running agent workflow automation",
+        "Initialize project scaffolding, manage feature lists, track progress across sessions, and orche."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/long-running-agent-harness@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23649773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "long-running-agent-harness",
+      "url": "https://clawhub.ai/skills/long-running-agent-harness"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-running-agent-harness",
+    "url": "https://clawhub.ai/skills/long-running-agent-harness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-running-agent-harness-2f51f07511f6f4a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/long-running-agent-harness@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-long-running-agent-harness-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ddd49980018803652ddb749b64cdd1ffa2248b4ed39476cb779ae9a1e75d946",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T12:04:00.863Z"
+}

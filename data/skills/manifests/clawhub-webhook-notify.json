@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65415,
+  "uuid": "skill-clawhub-webhook-notify",
+  "skillKey": "clawhub-webhook-notify",
+  "name": "Webhook Notify",
+  "summary": "通用Webhook通知工具，支持钉钉、企业微信、飞书、Slack、Discord、Teams、Telegram、自定义HTTP等多种平台。提供统一接口、自动平台识别、配置管理、模板系统、重试机制等高级功能。适用于告警通知、自动化触发、系统监控、CI/CD通知等场景。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webhook_notify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "imzhulei",
+      "features": [
+        "通用Webhook通知工具，支持钉钉、企业微信、飞书、Slack、Discord、Teams、Telegram、自定义HTTP等多种平台。提供统一接口、自动平台识别、配置管理、模板系统、重试."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/webhook-notify@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13057815?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "webhook-notify",
+      "url": "https://clawhub.ai/skills/webhook-notify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webhook-notify",
+    "url": "https://clawhub.ai/skills/webhook-notify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webhook-notify-1efd5f5396049d87.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/webhook-notify@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-webhook-notify-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f622f536c5591ecc71fe6dd2e032787c5e256257eb23f34d45b005bf6154e2a",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T02:03:49.595Z"
+}

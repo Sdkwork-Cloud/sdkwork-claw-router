@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52225,
+  "uuid": "skill-clawhub-acong-host-cli-canary",
+  "skillKey": "clawhub-acong-host-cli-canary",
+  "name": "Acong host-cli Canary",
+  "summary": "Consumer-side smoke test skill for skill-publish-cli's M2 milestone. Proves that when another team (here, /Users/yarnb/host-cli) runs `skill-publish-cli publ...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acong_host_cli_canary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yarnb",
+      "features": [
+        "Consumer-side smoke test skill for skill-publish-cli's M2 milestone",
+        "Proves that when another team (here, /Users/yarnb/host-cli) runs `skill-publish-cli publ..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acong-host-cli-canary@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138216172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acong-host-cli-canary",
+      "url": "https://clawhub.ai/skills/acong-host-cli-canary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acong-host-cli-canary",
+    "url": "https://clawhub.ai/skills/acong-host-cli-canary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acong-host-cli-canary-8523ed8787acf530.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acong-host-cli-canary@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-acong-host-cli-canary-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3c68d16e3e8273cef062088c66b99eb11d3f43f56724754988daa07d588d3ca",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T11:29:35.241Z"
+}

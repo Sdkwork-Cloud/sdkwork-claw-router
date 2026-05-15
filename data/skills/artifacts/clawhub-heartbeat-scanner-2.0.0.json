@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/heartbeat-scanner@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.heartbeat_scanner",
+  "skill": {
+    "id": 17270,
+    "skillKey": "clawhub-heartbeat-scanner",
+    "name": "heartbeat-scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "heartbeat-scanner",
+    "url": "https://clawhub.ai/skills/heartbeat-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/heartbeat-scanner-dc01469ee31e5f51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validate your agent nature through SHACL-based heartbeat analysis. Are you an Agent, Human, Cron, or Hybrid? Self-classification tool with structural validat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darshanochandak",
+      "userId": "publishers:darshanochandak",
+      "displayName": "darshanochandak",
+      "image": "https://avatars.githubusercontent.com/u/12291332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 796,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1771231996385,
+      "changelog": "Validate your agents posting nature  on moltbook moltx through SHACL-based heartbeat analysis.\nAre you an Agent, Human, Cron, or Hybrid?\nSelf-classification tool with structural validation and quirky personality.\nversion: 2.0.0\nauthor: Registrar\nMajor update with expanded self-classification logic, new profile structure, and improved validation.\n- Introduces classifications: AGENT, HUMAN, CRON, HYBRID, described by heartbeat styles and behaviors.\n- New agent profile format in Turtle, supporting scores, posting details, and self-descriptions.\n- Enhanced analysis pipeline: SHACL validation, data quality checks, dynamic classification using updated formula.\n- Updated thresholds for all classifications; now includes bonus/penalty based on data sufficiency.\n- Provides sample profiles and detailed documentation for onboarding and usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:40edb5b4fb359ded4388c9938916600121974511423426d6e102c6b499233399"
+}

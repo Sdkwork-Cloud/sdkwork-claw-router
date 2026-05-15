@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67983,
+  "uuid": "skill-clawhub-data-mini-faq",
+  "skillKey": "clawhub-data-mini-faq",
+  "name": "魔方 Data 轻量版问题解答",
+  "summary": "解答魔方Data轻量版客户的系统实用问题。涵盖使用操作、故障排查、技术咨询。 激活场景：客户问\"faq XX\"、\"怎么使用XX功能\"、\"为什么报错XX\"、\"如何配置XX\"、\"接口怎么调用\"等。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_mini_faq",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "orionpax1997",
+      "features": [
+        "解答魔方Data轻量版客户的系统实用问题。涵盖使用操作、故障排查、技术咨询。 激活场景：客户问\"faq XX\"、\"怎么使用XX功能\"、\"为什么报错XX\"、\"如何配置XX\"、\"接口怎么调用\"等。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-mini-faq@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95059095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-mini-faq",
+      "url": "https://clawhub.ai/skills/data-mini-faq"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-mini-faq",
+    "url": "https://clawhub.ai/skills/data-mini-faq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-mini-faq-952117bc2c0c805a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-mini-faq@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-mini-faq-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce4633487a9195cde1d710d579d671638e98fdd4c14d4552b1c5ff54ac01f757",
+      "artifactSizeBytes": 2500
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T06:02:13.039Z"
+}

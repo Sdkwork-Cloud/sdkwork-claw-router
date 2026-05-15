@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/table-skill@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.table_skill",
+  "skill": {
+    "id": 65755,
+    "skillKey": "clawhub-table-skill",
+    "name": "tabular data processing and analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "table-skill",
+    "url": "https://clawhub.ai/skills/table-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/table-skill-f11abe8cb1e5d320.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "端到端表格数据引擎：提供工业级表格预处理（拆分、清洗、表头合并、描述生成），并支持在受控前提下进行深度探索性分析、可视化与报告生成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cutesxy",
+      "userId": "s17bnjv785d284dms7w69h406x83kbse",
+      "displayName": "Table Intelligence Group",
+      "image": "https://avatars.githubusercontent.com/u/153084593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 10,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774771602914,
+      "changelog": "No code or logic changes detected. Version bump for maintenance and path reference only.\n\n- Updated all example Python import paths and CLI calls to use the new version directory (from 1.0.2 to 1.0.3)\n- No functional or documentation changes beyond version number and directory references\n- Maintains backward compatibility and usage patterns",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc9f254ff735f4fd7e97cf37dffc582d6f29c46452da846a559740cdf742167f"
+}

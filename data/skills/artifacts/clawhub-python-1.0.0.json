@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/python@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.python",
+  "skill": {
+    "id": 8210,
+    "skillKey": "clawhub-python",
+    "name": "Python Coding Guidelines"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "python",
+    "url": "https://clawhub.ai/skills/python",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/python-11a4a60b518bf249.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Python coding guidelines and best practices. Use when writing, reviewing, or refactoring Python code. Enforces PEP 8 style, syntax validation via py_compile, unit test execution, modern Python versions only (no EOL), uv for dependency mana."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adarshdigievo",
+      "userId": "publishers:adarshdigievo",
+      "displayName": "Adarsh Divakaran",
+      "image": "https://avatars.githubusercontent.com/u/16331512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 10052,
+      "installsAllTime": 110,
+      "installsCurrent": 104,
+      "stars": 10,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770116732964,
+      "changelog": "Initial release providing Python coding guidelines and best practices.\n\n- Enforces PEP 8 style and modern, Pythonic patterns.\n- Requires Python 3.10+; promotes use of features from Python 3.11–3.13.\n- Includes syntax validation, unit test execution, and automatic formatting before commits.\n- Recommends `uv` for dependency management if available, with `pip` as fallback.\n- Documents clear Pythonic patterns, anti-patterns, and testing practices.\n- Provides a concise checklist for code readiness and best practices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a9abc94052c9d177b0426f3404a3fca6f1b6b2c5cc8cea8da687f88683c1d24d"
+}

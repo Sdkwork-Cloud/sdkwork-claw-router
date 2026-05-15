@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69433,
+  "uuid": "skill-clawhub-openclaw-memory-archiver",
+  "skillKey": "clawhub-openclaw-memory-archiver",
+  "name": "Memory Archiver",
+  "summary": "定期扫描并压缩超过指定天数的内存日志，提炼关键信息更新长期记忆，释放存储空间并清理过期文件。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_memory_archiver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yangkai258",
+      "features": [
+        "定期扫描并压缩超过指定天数的内存日志，提炼关键信息更新长期记忆，释放存储空间并清理过期文件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-memory-archiver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78720784?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-memory-archiver",
+      "url": "https://clawhub.ai/skills/openclaw-memory-archiver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-memory-archiver",
+    "url": "https://clawhub.ai/skills/openclaw-memory-archiver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-memory-archiver-895e405614774bac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-memory-archiver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-memory-archiver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c821e3211a2a68c132af00bd57b5b5e5939d2f93618403be9f631e204d22c350",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:24:34.593Z"
+}

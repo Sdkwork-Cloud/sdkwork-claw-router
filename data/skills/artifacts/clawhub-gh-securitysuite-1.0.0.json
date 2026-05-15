@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gh-securitysuite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gh_securitysuite",
+  "skill": {
+    "id": 44866,
+    "skillKey": "clawhub-gh-securitysuite",
+    "name": "Securitysuite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gh-securitysuite",
+    "url": "https://clawhub.ai/skills/gh-securitysuite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gh-securitysuite-fa59aed496e47ba3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive agent security platform with 7 endpoints. Scan text for injection, audit SKILL.md files for malware and scope issues, generate detailed securit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mirni",
+      "userId": "s1711srsc0t5e7tx4tkwpmygw584bfmq",
+      "displayName": "mirni",
+      "image": "https://avatars.githubusercontent.com/u/13551232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776067638747,
+      "changelog": "- Updated description for greater clarity on endpoints and features.\n- Improved metadata and installation instructions; added emoji and standardized package management.\n- Condensed usage examples and enhanced curl command syntax using jq for better readability.\n- Clarified endpoint outputs, especially for security reports and batch operations.\n- Streamlined document structure for faster onboarding and reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f4b62c1fd7dc98510a1962874237e1e39953638a1eac05e933782940281fc012"
+}

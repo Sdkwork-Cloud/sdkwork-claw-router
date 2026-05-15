@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/picoclaw-security-guardian@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.picoclaw_security_guardian",
+  "skill": {
+    "id": 46210,
+    "skillKey": "clawhub-picoclaw-security-guardian",
+    "name": "picoclaw-security-guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "picoclaw-security-guardian",
+    "url": "https://clawhub.ai/skills/picoclaw-security-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/picoclaw-security-guardian-c4f6bae13f3cfd6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Picoclaw security posture skill with advisory awareness, configuration drift detection, and supply-chain verification guidance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davida-ps",
+      "userId": "s17ewxqmthh68xc4bv5vc6f30183jsf1",
+      "displayName": "davida-ps",
+      "image": "https://avatars.githubusercontent.com/u/232346510?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1777202564183,
+      "changelog": "Release 0.0.1 via CI",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b7c8087822456a14d7c789690465bc6103d5caf0feea5f92994f15a320186a0"
+}

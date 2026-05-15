@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47512,
+  "uuid": "skill-clawhub-sv-editing-workflow",
+  "skillKey": "clawhub-sv-editing-workflow",
+  "name": "Sv Editing Workflow",
+  "summary": "Provides a structured step-by-step short video editing workflow from ingest to export, including cuts, pacing, effects, and quality checks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sv_editing_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Provides a structured step-by-step short video editing workflow from ingest to export, includin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sv-editing-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sv-editing-workflow",
+      "url": "https://clawhub.ai/skills/sv-editing-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sv-editing-workflow",
+    "url": "https://clawhub.ai/skills/sv-editing-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sv-editing-workflow-dca85ee00656a77d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sv-editing-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sv-editing-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7dc5abf336f2ee61d493962b9ec4c86bf2ea63a087dc5b4cc42bb50f451c2629",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T06:32:37.733Z"
+}

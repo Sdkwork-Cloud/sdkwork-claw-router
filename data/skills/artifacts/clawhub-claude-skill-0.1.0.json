@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_skill",
+  "skill": {
+    "id": 17869,
+    "skillKey": "clawhub-claude-skill",
+    "name": "Claude Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-skill",
+    "url": "https://clawhub.ai/skills/claude-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-skill-e90e2a4d7e7577fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user asks to leverage claude or claude code to do something (e.g. implement a feature design or review codes, etc). Provides non-interactive automat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "feiskyer",
+      "userId": "s174q6bx170bf0qb9wjqhqfv6x83vv3e",
+      "displayName": "Pengfei Ni",
+      "image": "https://avatars.githubusercontent.com/u/676637?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 597,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772248906169,
+      "changelog": "- Initial release of claude-skill.\n- Provides a managed automation layer for running Claude Code as a coding agent, including worktree setup and PR merging.\n- Supports non-interactive (\"quick mode\") and full interactive workflows, with robust logging and adaptive polling for long-running tasks.\n- Offers CLI flags to control permissions, select models, restrict tools, and customize output.\n- Includes resilience against CI/container PTY issues, output logging strategies, and polling-based timeout management to prevent premature termination of tasks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:13d5039d37e5485f017fa58f02bfa6a1bb8bd850254baf162bfeeafd33afbf4b"
+}

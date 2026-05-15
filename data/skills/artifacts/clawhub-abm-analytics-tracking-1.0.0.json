@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abm-analytics-tracking@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abm_analytics_tracking",
+  "skill": {
+    "id": 20493,
+    "skillKey": "clawhub-abm-analytics-tracking",
+    "name": "Analytics Tracking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abm-analytics-tracking",
+    "url": "https://clawhub.ai/skills/abm-analytics-tracking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abm-analytics-tracking-6c5efc97822760aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions \"set up tracking,\" \"GA4,\" \"Google Analyt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariokarras",
+      "userId": "s1714hxad423m02rtb4r6n2vmn83e4f5",
+      "displayName": "Mario Karras",
+      "image": "https://avatars.githubusercontent.com/u/199292356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 553,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773801915435,
+      "changelog": "analytics-tracking 1.0.0 Changelog\n\n- Initial release of the analytics-tracking skill.\n- Provides best practices and structured frameworks for implementing and auditing web analytics, event tracking, UTM strategy, and conversion measurement.\n- Supports guidance for GA4, Google Tag Manager, UTM parameters, and popular analytics tools (Mixpanel, Segment, etc.).\n- Includes templates for event naming conventions, tracking plans, privacy/compliance requirements, and debugging checklists.\n- Designed to help users set up actionable analytics for marketing and product decisions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13ea0979b9c907239495cafd2494415e2f670b1ca8c0d192fa6c40433b54947c"
+}

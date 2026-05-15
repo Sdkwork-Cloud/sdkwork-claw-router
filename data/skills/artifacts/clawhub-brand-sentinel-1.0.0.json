@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brand-sentinel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brand_sentinel",
+  "skill": {
+    "id": 71029,
+    "skillKey": "clawhub-brand-sentinel",
+    "name": "brand-sentinel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brand-sentinel",
+    "url": "https://clawhub.ai/skills/brand-sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brand-sentinel-add16c8addb21255.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "品牌舆情哨兵：搜索公开平台的品牌相关信息，自动去重和时效过滤，输出结构化结果供 LLM 做风险分级和预警。 触发场景：监控某品牌/产品的公开舆情、搜索负面信息并按时间筛选、定时巡查品牌口碑、竞品舆情对比。 关键词：品牌监控、舆情搜索、负面信息、口碑巡查、舆情预警、品牌声誉、sentinel、舆情哨兵。 不做的事：..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bbniao100",
+      "userId": "s179a0b4xn3dxdy4p1qjacmxbh84va6g",
+      "displayName": "bbniao100",
+      "image": "https://avatars.githubusercontent.com/u/266199779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776165393404,
+      "changelog": "首版：品牌舆情搜索+去重+时效过滤",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b1ead0c9acb2bfe5a50ddc4e3ccf0ba0822d79d21d52376683074877c16b839"
+}

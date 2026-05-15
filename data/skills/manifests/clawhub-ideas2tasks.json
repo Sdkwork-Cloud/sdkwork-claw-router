@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63223,
+  "uuid": "skill-clawhub-ideas2tasks",
+  "skillKey": "clawhub-ideas2tasks",
+  "name": "Ideas2tasks",
+  "summary": "將 /Users/claw/Ideas 中的臨時想法自動分類、拆解為敏捷專案任務。 觸發條件：用戶提到「idea轉task」「ideas2tasks」「想法拆分」「專案規劃」「task管理」， 或要求掃描 Ideas 目錄、建立專案任務、分配團隊成員。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ideas2tasks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gentoobreaking",
+      "features": [
+        "將 /Users/claw/Ideas 中的臨時想法自動分類、拆解為敏捷專案任務。 觸發條件：用戶提到「idea轉task」「ideas2tasks」「想法拆分」「專案規劃」「task管理」."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ideas2tasks@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267080323?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ideas2tasks",
+      "url": "https://clawhub.ai/skills/ideas2tasks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ideas2tasks",
+    "url": "https://clawhub.ai/skills/ideas2tasks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ideas2tasks-dcf2c3b3c52016d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ideas2tasks@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ideas2tasks-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65da4ce482840f63afa82e01713d410a51b006010ae87cb17ec2f0b66fa4f4a3",
+      "artifactSizeBytes": 2621
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T14:46:23.486Z"
+}

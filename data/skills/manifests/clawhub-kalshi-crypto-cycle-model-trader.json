@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39012,
+  "uuid": "skill-clawhub-kalshi-crypto-cycle-model-trader",
+  "skillKey": "clawhub-kalshi-crypto-cycle-model-trader",
+  "name": "Kalshi Crypto Cycle Model Trader",
+  "summary": "Trades Bitcoin year-end price markets on Kalshi using the 4-year halving cycle pattern to compute fair price probabilities. Requires SIMMER_API_KEY and simme...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_crypto_cycle_model_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades Bitcoin year-end price markets on Kalshi using the 4-year halving cycle pattern to compu.",
+        "Requires SIMMER_API_KEY and simme..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kalshi-crypto-cycle-model-trader@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kalshi-crypto-cycle-model-trader",
+      "url": "https://clawhub.ai/skills/kalshi-crypto-cycle-model-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-crypto-cycle-model-trader",
+    "url": "https://clawhub.ai/skills/kalshi-crypto-cycle-model-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-crypto-cycle-model-trader-a53f8d00f6dfb9ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kalshi-crypto-cycle-model-trader@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kalshi-crypto-cycle-model-trader-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:184caa731f3b21e1d106c1f026ba487efb6a67a5d67c9709e1451b811ecaa27b",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T18:37:27.223Z"
+}

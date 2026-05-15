@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sam-club@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sam_club",
+  "skill": {
+    "id": 48532,
+    "skillKey": "clawhub-sam-club",
+    "name": "Sam Club"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sam-club",
+    "url": "https://clawhub.ai/skills/sam-club",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sam-club-d3f09078410468f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sam's Club is a Walmart-owned membership warehouse club founded in 1983, competing with Costco in the U.S. through membership fees, low margins, and shared s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 99,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777979186021,
+      "changelog": "Sam's Club skill version 1.0.0 initial release:\n\n- 提供了Sam's Club的历史、商业模式、护城河和关键数据的详细介绍  \n- 对比分析Sam's Club与Costco的竞争情况  \n- 总结了会员制度、供应链优势及技术创新  \n- 列举了有趣小知识和门店、会员、收入等核心数据",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2d44e5c70045cb04789da534697ad35d38aad8126def67e87112f85439223f7"
+}

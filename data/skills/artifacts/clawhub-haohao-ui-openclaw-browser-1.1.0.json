@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/haohao-ui-openclaw-browser@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.haohao_ui_openclaw_browser",
+  "skill": {
+    "id": 36467,
+    "skillKey": "clawhub-haohao-ui-openclaw-browser",
+    "name": "OpenClaw Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "haohao-ui-openclaw-browser",
+    "url": "https://clawhub.ai/skills/haohao-ui-openclaw-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/haohao-ui-openclaw-browser-3430fd4a4a146ea3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the OpenClaw-managed browser for real website interaction, page operations, snapshots, clicks, typing, waits, screenshots, and tab control. Use when the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haohao-ui",
+      "userId": "s17e9wmgb93jxp7expj57560sh83h79g",
+      "displayName": "haohao-ui",
+      "image": "https://avatars.githubusercontent.com/u/183124879?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774811386985,
+      "changelog": "managed browser workflow, profile policy, snapshot and debugging guidance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dcbe0e3e00163388ce712df8cbae7513ffb627e2190f5b7b227f991f69690816"
+}

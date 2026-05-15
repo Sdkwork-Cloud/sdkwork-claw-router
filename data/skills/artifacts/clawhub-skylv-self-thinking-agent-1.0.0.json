@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-self-thinking-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_self_thinking_agent",
+  "skill": {
+    "id": 47507,
+    "skillKey": "clawhub-skylv-self-thinking-agent",
+    "name": "Skylv Self Thinking Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-self-thinking-agent",
+    "url": "https://clawhub.ai/skills/skylv-self-thinking-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-self-thinking-agent-ef696472978874bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables AI agents to reflect on their own reasoning, detect cognitive biases, and improve decision quality through structured self-examination loops."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777855924338,
+      "changelog": "Initial release of the skylv-metacognition-engine skill.\n\n- Adds structured self-reflection loops for AI agents to evaluate their own reasoning.\n- Enables detection of cognitive biases such as anthropomorphism, authority bias, hindsight bias, and confirmation bias.\n- Introduces explicit confidence quantification and guidance on acting based on uncertainty levels.\n- Suggests pre-output checks for gaps or uncertainties before responding.\n- Provides use cases for bias detection, knowledge boundaries, and decision-quality improvement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a73b319e54b60539be8fbeab25f8b1ecee064e8bb5ead9118f5a646e107a84b0"
+}

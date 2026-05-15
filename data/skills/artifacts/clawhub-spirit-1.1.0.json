@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spirit@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spirit",
+  "skill": {
+    "id": 16379,
+    "skillKey": "clawhub-spirit",
+    "name": "SPIRIT State Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spirit",
+    "url": "https://clawhub.ai/skills/spirit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spirit-a68999add325ba99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "State Preservation & Identity Resurrection Infrastructure Tool (SPIRIT). Preserves AI agent identity, memory, and projects to a private Git repository. NEW:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gopinathnelluri",
+      "userId": "publishers:gopinathnelluri",
+      "displayName": "Gopinath Nelluri",
+      "image": "https://avatars.githubusercontent.com/u/9353385?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 892,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771571711046,
+      "changelog": "Add workspace mode with SPIRIT_SOURCE_DIR, symlinked config, optional gh requirement",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c4d57707c47827e03aeacfc7831d9a8d8cf8eea3c1fb02eabce25244f1e0dd7b"
+}

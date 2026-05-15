@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62344,
+  "uuid": "skill-clawhub-apiyi-gpt-image-2-gen",
+  "skillKey": "clawhub-apiyi-gpt-image-2-gen",
+  "name": "apiyi-gpt-image-2-gen(基于API易代理站)-官转版",
+  "summary": "图片生成技能，当用户需要生成图片、视觉信息图、创建图像、编辑/修改/调整已有图片时使用此技能。基于API易平台(https://api.apiyi.com/)的ChatGPT Image 2模型（gpt-image-2）的官方正式版图片生成服务。该模型支持精确的尺寸/画质控制（含4K），按token计费。与gpt...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apiyi_gpt_image_2_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "无处不在",
+      "features": [
+        "图片生成技能，当用户需要生成图片、视觉信息图、创建图像、编辑/修改/调整已有图片时使用此技能。基于API易平台(https://api.apiyi.com/)的ChatGPT Image 2."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apiyi-gpt-image-2-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42382506?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apiyi-gpt-image-2-gen",
+      "url": "https://clawhub.ai/skills/apiyi-gpt-image-2-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apiyi-gpt-image-2-gen",
+    "url": "https://clawhub.ai/skills/apiyi-gpt-image-2-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apiyi-gpt-image-2-gen-8c99adc9d6d6af84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apiyi-gpt-image-2-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apiyi-gpt-image-2-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55b5e8e021866d5b8c78c1661d519d393f5b5588e32b051c2c94117716670a45",
+      "artifactSizeBytes": 2802
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T16:07:39.950Z"
+}

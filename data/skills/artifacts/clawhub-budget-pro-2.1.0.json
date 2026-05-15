@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/budget-pro@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.budget_pro",
+  "skill": {
+    "id": 21732,
+    "skillKey": "clawhub-budget-pro",
+    "name": "Budget"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "budget-pro",
+    "url": "https://clawhub.ai/skills/budget-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/budget-pro-a7468da04629396c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal budget management with privacy-first local storage. Use when user mentions setting a budget, tracking spending, logging expenses, checking budget st..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agistack",
+      "userId": "s178h9d2k372k0rawyb3jd1h0d84vf26",
+      "displayName": "AGIstack",
+      "image": "https://avatars.githubusercontent.com/u/258523997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 499,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1773063633078,
+      "changelog": "- Skill renamed from \"budget\" to \"budget-pro\" for clarity and distinction.\n- No changes to features, privacy model, or workflows.\n- All documentation, script usage, and data structure remain the same.\n- Existing users do not need to change how they use the skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:828a803d5321a58a4b5dd77176b52c8f5fd0cf0f605050076b5df62dbdc4e8ff"
+}

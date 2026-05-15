@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36641,
+  "uuid": "skill-clawhub-beijing-signed-price-tracker",
+  "skillKey": "clawhub-beijing-signed-price-tracker",
+  "name": "Beijing Signed Price Tracker",
+  "summary": "Track configured Beijing Housing Commission new-home projects from bjjs.zjw.beijing.gov.cn project-detail URLs, read project signed-unit counts, signed area,...",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beijing_signed_price_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "张家钊",
+      "features": [
+        "Track configured Beijing Housing Commission new-home projects from bjjs.zjw.beijing.gov.cn proj."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beijing-signed-price-tracker@1.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21955436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beijing-signed-price-tracker",
+      "url": "https://clawhub.ai/skills/beijing-signed-price-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beijing-signed-price-tracker",
+    "url": "https://clawhub.ai/skills/beijing-signed-price-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beijing-signed-price-tracker-46435caef5386fc9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beijing-signed-price-tracker@1.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-beijing-signed-price-tracker-1.6.0.json",
+      "version": "1.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea172adc190eba7e8ce333e17424c0c65b2df03c77c6daaf730d0b8ad752d421",
+      "artifactSizeBytes": 2806
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T06:50:29.356Z"
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11119,
+  "uuid": "skill-clawhub-k8s-browser",
+  "skillKey": "clawhub-k8s-browser",
+  "name": "Kubernetes Skills",
+  "summary": "Browser automation for Kubernetes dashboards and web UIs. Use when interacting with Kubernetes Dashboard, Grafana, ArgoCD UI, or other web interfaces. Requires MCP_BROWSER_ENABLED=true.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.k8s_browser",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rohit Ghumare",
+      "features": [
+        "Browser automation for Kubernetes dashboards and web UIs",
+        "Use when interacting with Kubernetes Dashboard, Grafana, ArgoCD UI, or other web interfaces",
+        "Requires MCP_BROWSER_ENABLED=true."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/k8s-browser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48523873?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "k8s-browser",
+      "url": "https://clawhub.ai/skills/k8s-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "k8s-browser",
+    "url": "https://clawhub.ai/skills/k8s-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/k8s-browser-e721d9832fc6d86a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/k8s-browser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-k8s-browser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b4a77b4c68747eed1d0c90bd04085c6f18cbfa12d67e847a74699bef05f8d82",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T13:18:53.790Z"
+}

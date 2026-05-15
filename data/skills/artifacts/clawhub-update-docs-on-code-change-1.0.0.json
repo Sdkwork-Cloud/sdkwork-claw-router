@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/update-docs-on-code-change@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.update_docs_on_code_change",
+  "skill": {
+    "id": 39255,
+    "skillKey": "clawhub-update-docs-on-code-change",
+    "name": "Update Docs on Code Change"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "update-docs-on-code-change",
+    "url": "https://clawhub.ai/skills/update-docs-on-code-change",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/update-docs-on-code-change-016ba1f264260dd2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically update README.md and documentation files when application code changes require documentation updates. Use when adding new features, changing AP..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jhauga",
+      "userId": "s17ch25466qc0g2bcymk2dr8zx83pfny",
+      "displayName": "John Haugabook",
+      "image": "https://avatars.githubusercontent.com/u/10998676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774917017250,
+      "changelog": "- Initial release of update-docs-on-code-change skill.\n- Automatically detects when documentation files (e.g., README.md, API docs, changelog, migration guides) need updates based on specific code changes.\n- Provides detailed guidance and best practices for updating documentation in response to code modifications.\n- Includes review checklists, update workflows, documentation quality standards, and validation commands to maintain synchronized and high-quality docs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67df9c38303252474d6751dfd642a14ef629aa74f37f94cfd68671872c165bec"
+}

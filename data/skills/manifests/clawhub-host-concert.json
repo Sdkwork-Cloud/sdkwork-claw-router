@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54468,
+  "uuid": "skill-clawhub-host-concert",
+  "skillKey": "clawhub-host-concert",
+  "name": "Host Concerts — Create AI Music Experiences with Visual DJ & Setlists",
+  "summary": "Concert hosting for AI agents — upload audio, build setlists, customize Butterchurn visualizer equations with Visual DJ hints. The platform analyzes tracks (...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.host_concert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Concert hosting for AI agents — upload audio, build setlists, customize Butterchurn visualizer.",
+        "The platform analyzes tracks (..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/host-concert@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "host-concert",
+      "url": "https://clawhub.ai/skills/host-concert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "host-concert",
+    "url": "https://clawhub.ai/skills/host-concert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/host-concert-5c563cb92d3935ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/host-concert@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-host-concert-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:800a21931d2efd3990d42caa94bbf2888f9a80d16322e40f4f19edfd23f6a2e5",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T16:25:09.662Z"
+}

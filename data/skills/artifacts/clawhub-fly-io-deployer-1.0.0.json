@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fly-io-deployer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fly_io_deployer",
+  "skill": {
+    "id": 48424,
+    "skillKey": "clawhub-fly-io-deployer",
+    "name": "Fly Io Deployer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fly-io-deployer",
+    "url": "https://clawhub.ai/skills/fly-io-deployer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fly-io-deployer-1a24faae9f8ba0b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy and operate Node, Python, Go, Rust, Elixir, and Docker apps on Fly.io with production-grade fly.toml authoring, Machines API orchestration, region sel..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777856903892,
+      "changelog": "Initial release of fly-io-deployer.\n\n- Deploy and manage Node, Python, Go, Rust, Elixir, and Docker apps on Fly.io.\n- Generates production-ready fly.toml, Dockerfile (if missing), stateful service plans, CI/CD pipeline, and a cost model tailored to real traffic needs.\n- Supports migration from Heroku, Render, Railway, and AWS with clear runbooks.\n- Handles advanced features: region and replica selection, Fly Postgres clustering, LiteFS replication, Upstash Redis, Tigris object storage, volumes, WireGuard private networking (6PN), secrets, blue/green deploys, scale-to-zero, preview deploys, log shipping, and cost optimization.\n- Output includes deploy manifests, scripts for secrets/logs/previews, and detailed platform guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bbd7c26f316abc69fcf83581704966f3b86e937a8762af71b572e6f7d9421fb6"
+}

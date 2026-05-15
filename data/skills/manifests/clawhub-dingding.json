@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67589,
+  "uuid": "skill-clawhub-dingding",
+  "skillKey": "clawhub-dingding",
+  "name": "Dingding",
+  "summary": "钉钉开放平台开发助手，精通机器人、审批流程、日程管理等企业 API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingding",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "钉钉开放平台开发助手，精通机器人、审批流程、日程管理等企业 API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dingding@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dingding",
+      "url": "https://clawhub.ai/skills/dingding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingding",
+    "url": "https://clawhub.ai/skills/dingding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingding-f11842d1b3f6ae73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dingding@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dingding-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f647aca6f8eb2987ee2d59498e50c2398992d280b8ba2cd777e91485b3aa60e0",
+      "artifactSizeBytes": 2256
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:17:26.606Z"
+}

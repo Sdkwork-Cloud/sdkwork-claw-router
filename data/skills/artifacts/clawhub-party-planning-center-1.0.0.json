@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/party-planning-center@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.party_planning_center",
+  "skill": {
+    "id": 49782,
+    "skillKey": "clawhub-party-planning-center",
+    "name": "Party Planning Center"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "party-planning-center",
+    "url": "https://clawhub.ai/skills/party-planning-center",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/party-planning-center-d8bfb48b1aea7266.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan memorable gatherings with theme ideas, menus, timelines, and complete checklists."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 67,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778239439768,
+      "changelog": "Party Planning Center 1.0.0 – Initial release\n\n- Plan gatherings with customizable themes, menus, timelines, and checklists.\n- Step-by-step workflow covers event definition, theme selection, menu design, task timeline, guest experience, and contingency planning.\n- Includes templates for dinner parties, birthday celebrations, holiday gatherings, and casual get-togethers.\n- Output delivers a structured event brief, theme, menu, timeline, guest touches, and backup plans.\n- Built-in safety guidance on food handling, allergies, and responsible hosting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f51a75b2a1260b07dd6005f5c22bb0083ebcae0aa601599b36c224a9cc4b7c0"
+}

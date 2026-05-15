@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12325,
+  "uuid": "skill-clawhub-sensibo",
+  "skillKey": "clawhub-sensibo",
+  "name": "Sensibo",
+  "summary": "Control Sensibo smart AC devices via their REST API. Use when the user asks to turn on/off AC, change temperature, set modes, check room temperature/humidity, or manage climate schedules. Triggers on phrases like \"turn on AC\", \"set bedroom.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sensibo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "omere2",
+      "features": [
+        "Control Sensibo smart AC devices via their REST API",
+        "Use when the user asks to turn on/off AC, change temperature, set modes, check room temperature.",
+        "Triggers on phrases like \"turn on AC\", \"set bedroom to 22\", \"how hot is it\", \"AC off\", \"cooling."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sensibo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/993096?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sensibo",
+      "url": "https://clawhub.ai/skills/sensibo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sensibo",
+    "url": "https://clawhub.ai/skills/sensibo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sensibo-ac8a8b691d829d78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sensibo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sensibo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfacfc80f5e8d3d6e7e302a9d6dfa9b388da2fff0b9ca4aee864a1c2b1bba0c0",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T18:44:50.360Z"
+}

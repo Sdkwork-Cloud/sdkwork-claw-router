@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/thymos@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thymos",
+  "skill": {
+    "id": 54321,
+    "skillKey": "clawhub-thymos",
+    "name": "Thymos — Emotional Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thymos",
+    "url": "https://clawhub.ai/skills/thymos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thymos-d04a33b4d5dc5d55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Background daemon that models an OpenClaw agent’s evolving emotional state via neuromodulators, circadian rhythm, social cues, and memory for nuanced responses."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paperbags1103-hash",
+      "userId": "publishers:paperbags1103-hash",
+      "displayName": "gorba",
+      "image": "https://avatars.githubusercontent.com/u/262022154?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 501,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773040496919,
+      "changelog": "- SKILL.md rewritten in English for broader accessibility.\n- Added installation and usage instructions in a clearer step-by-step format.\n- Explained the structure and meaning of emotional state variables.\n- Introduced a new \"Theoretical Foundations\" section outlining scientific inspirations.\n- Expanded privacy details and reset instructions.\n- Added links to external documentation and security policies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b6f172717d448e74b654ec9c76391183900ac57c68947106dc8901a237a8e92"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-image-to-video-apk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_image_to_video_apk",
+  "skill": {
+    "id": 44483,
+    "skillKey": "clawhub-ai-image-to-video-apk",
+    "name": "Ai Image To Video Apk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-image-to-video-apk",
+    "url": "https://clawhub.ai/skills/ai-image-to-video-apk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-image-to-video-apk-cb7bba979422de20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert still images into animated video clips with this skill. Works with JPG, PNG, WEBP, HEIC files up to 200MB. TikTok creators use it for converting stat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776360227706,
+      "changelog": "AI Image to Video APK — Version 1.0.0\n\n- Initial release: convert static images (JPG, PNG, WEBP, HEIC) up to 200MB into animated 1080p MP4 videos.\n- Cloud GPU-based processing, with typical exports ready in 30–60 seconds.\n- Seamless interaction: auto-connects to API, handles anonymous tokens and session management.\n- Supports user prompts for exporting videos, checking credits, uploading files, and editing timelines.\n- Exports compatible with major platforms; handles error codes and guides users through common issues.\n- Designed for TikTok creators and anyone needing fast, high-quality video from still photos.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d9edfaaa67171bba1d327e43de7dd04c090b21d6dc305924375d0a378b21e0a"
+}

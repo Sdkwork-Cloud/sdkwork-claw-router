@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32453,
+  "uuid": "skill-clawhub-weryai-video-generator",
+  "skillKey": "clawhub-weryai-video-generator",
+  "name": "Weryai Video Generator",
+  "summary": "Generate and transform WeryAI videos from text, images, storyboard frames, or first-frame and last-frame guidance. Use when the user needs text-to-video, ima...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weryai_video_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WeryAI-Developer",
+      "features": [
+        "Generate and transform WeryAI videos from text, images, storyboard frames, or first-frame and l.",
+        "Use when the user needs text-to-video, ima..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weryai-video-generator@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254698481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weryai-video-generator",
+      "url": "https://clawhub.ai/skills/weryai-video-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weryai-video-generator",
+    "url": "https://clawhub.ai/skills/weryai-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weryai-video-generator-0ce1c56c21e39be4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weryai-video-generator@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-weryai-video-generator-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f78c4c31b8c1e93f5442de29dc6b0735853cb48c7326979a8554d17fa51b4f5b",
+      "artifactSizeBytes": 2498
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T09:49:00.155Z"
+}

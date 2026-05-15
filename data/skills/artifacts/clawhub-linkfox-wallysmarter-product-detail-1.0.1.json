@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkfox-wallysmarter-product-detail@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_wallysmarter_product_detail",
+  "skill": {
+    "id": 59158,
+    "skillKey": "clawhub-linkfox-wallysmarter-product-detail",
+    "name": "WallySmarter Product Detail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-wallysmarter-product-detail",
+    "url": "https://clawhub.ai/skills/linkfox-wallysmarter-product-detail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-wallysmarter-product-detail-b7e0c0434a0a5138.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过WallySmarter查询Walmart商品详情，包含价格历史和销量趋势。当用户提到Walmart商品详情、沃尔玛产品数据、WallySmarter、沃尔玛价格走势、沃尔玛销量趋势、Walmart product detail, Walmart price history, Walmart sales tr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linkfox-ai",
+      "userId": "s171g8b6m2khwdy9ye8bxj0wx183vd4z",
+      "displayName": "linkfox-ai",
+      "image": "https://avatars.githubusercontent.com/u/267242260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776789410821,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f9f20e430a68f1f26095c8fec9be97e1dd48546ac43e624599fee9401a993e8d"
+}

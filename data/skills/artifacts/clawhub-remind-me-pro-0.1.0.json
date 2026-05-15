@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/remind-me-pro@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remind_me_pro",
+  "skill": {
+    "id": 10753,
+    "skillKey": "clawhub-remind-me-pro",
+    "name": "Remind Me"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remind-me-pro",
+    "url": "https://clawhub.ai/skills/remind-me-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remind-me-pro-9537559f04f437b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, list, and cancel reminders and cron jobs scoped to the channel they were requested from. Use when: user says 'remind me', 'set an alarm', 'schedule a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youpele52",
+      "userId": "s177cjete9gkkjq09py127x5xx83sfh8",
+      "displayName": "youpele52",
+      "image": "https://avatars.githubusercontent.com/u/43122220?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2385,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773102631107,
+      "changelog": "Initial release of Remind Me skill for creating, listing, and canceling reminders and cron jobs scoped to the current chat/channel.\n\n- Handles \"remind me\", \"set an alarm\", \"schedule a cron\", \"alert me\", \"cancel reminder\", and \"list my reminders\" commands.\n- Auto-detects channel and chat ID from session context (never asks user for these).\n- Requires clear specification of WHAT (reminder), WHEN (schedule), and WHERE (delivery target) before creating any job, with interactive clarification if any are missing or ambiguous.\n- Supports one-time (`at:`), recurring (`every:`), and cron-based (`cron:`) reminders; asks user for confirmation before executing.\n- Provides commands and formatting for creating, listing, and canceling reminders or cron jobs, always confirming intent with the user.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fdd6c859e86a656315348d011bb80114cb4ffede18237268fe8a8eec0be8dbf7"
+}

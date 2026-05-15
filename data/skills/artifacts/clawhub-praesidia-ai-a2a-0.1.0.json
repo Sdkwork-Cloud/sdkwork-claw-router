@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/praesidia-ai-a2a@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.praesidia_ai_a2a",
+  "skill": {
+    "id": 13009,
+    "skillKey": "clawhub-praesidia-ai-a2a",
+    "name": "Praesidia"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "praesidia-ai-a2a",
+    "url": "https://clawhub.ai/skills/praesidia-ai-a2a",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/praesidia-ai-a2a-8b89c93f79699ab2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verify AI agents, check trust scores (0-100), fetch A2A agent cards, discover marketplace agents, apply guardrails for security and compliance. Use when user mentions agent verification, trust scores, agent discovery, A2A protocol, agent i."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "msoica",
+      "userId": "publishers:msoica",
+      "displayName": "msoica",
+      "image": "https://avatars.githubusercontent.com/u/13220606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1496,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770362522858,
+      "changelog": "Praesidia 0.1.0 – Initial Release\n\n- Adds agent verification, including trust scores and compliance checks.\n- Enables discovery of public marketplace agents using advanced filters.\n- Introduces guardrail management: list, apply, and validate guardrails (security, content, compliance, etc.).\n- Supports fetching Agent-to-Agent (A2A) protocol cards for interoperability.\n- Offers a comprehensive quick reference for core API use cases.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:59eefd672adb69a6d3f982fb5753ad7fb00d3cfeee35e89dedd7475e24fba2aa"
+}

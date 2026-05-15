@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-knowledge-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_knowledge_builder",
+  "skill": {
+    "id": 70451,
+    "skillKey": "clawhub-wechat-knowledge-builder",
+    "name": "微信聊天记录知识卡片提取工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-knowledge-builder",
+    "url": "https://clawhub.ai/skills/wechat-knowledge-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-knowledge-builder-e5dfb8fd0030dbf8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信聊天记录知识卡片提取工具。将WeFlow导出的JSON数据转换为个人知识库、知识卡片和个人分身训练数据。触发场景：(1) 用户需要分析微信聊天记录；(2) 从微信数据中提取知识卡片；(3) 构建个人知识库；(4) 整理客户画像；(5) 生成训练数据用于AI分身。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weebrclb123-del",
+      "userId": "s175q0zgjrza022hrmf7ampx958485ef",
+      "displayName": "weebrclb123-del",
+      "image": "https://avatars.githubusercontent.com/u/267354932?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775350780047,
+      "changelog": "- Initial release of the 微信聊天记录知识卡片提取工具.\n- Converts WeFlow-exported JSON chat data into knowledge base entries, knowledge cards, and AI persona training data.\n- Supports extraction of customer profiles, common phrases, key decisions, and communication links from chat history.\n- Output structured knowledge cards and summaries, with suggested formats for Feishu Bitable integration.\n- Offers best practice guidance for organizing, categorizing, and updating extracted knowledge.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:558f7f9cdb41bfa55c4a6bed7cc5e5a467a6fa93d087e2f5ab4efbbcf58cb757"
+}

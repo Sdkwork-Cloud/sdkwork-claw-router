@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51093,
+  "uuid": "skill-clawhub-fl-crm-pipeline",
+  "skillKey": "clawhub-fl-crm-pipeline",
+  "name": "CRM Pipeline Manager",
+  "summary": "Manage your sales pipeline via natural language—add leads, update stages, log interactions, set reminders, and generate reports without complex CRM software.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fl_crm_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PhilipStark",
+      "features": [
+        "Manage your sales pipeline via natural language—add leads, update stages, log interactions, set."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fl-crm-pipeline@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/186941063?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fl-crm-pipeline",
+      "url": "https://clawhub.ai/skills/fl-crm-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fl-crm-pipeline",
+    "url": "https://clawhub.ai/skills/fl-crm-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fl-crm-pipeline-7281731cfbe0ffef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fl-crm-pipeline@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fl-crm-pipeline-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af6e2d4efc3f1e54fbae4bad500561cbfca54f4cc6e2ddd6be006d24b8350d46",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T16:28:38.759Z"
+}

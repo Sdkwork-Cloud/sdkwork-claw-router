@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66397,
+  "uuid": "skill-clawhub-wechat-gzh",
+  "skillKey": "clawhub-wechat-gzh",
+  "name": "WeChat GZH",
+  "summary": "微信公众号管理 skill。支持获取 Access Token、永久素材管理、发布能力（发布草稿、查询发布状态、获取已发布列表、删除发布文章）。触发词：微信公众号、wechat gzh、发布图文、素材管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_gzh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enihsago",
+      "features": [
+        "微信公众号管理 skill。支持获取 Access Token、永久素材管理、发布能力（发布草稿、查询发布状态、获取已发布列表、删除发布文章）。触发词：微信公众号、wechat gzh、发布."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-gzh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265008639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-gzh",
+      "url": "https://clawhub.ai/skills/wechat-gzh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-gzh",
+    "url": "https://clawhub.ai/skills/wechat-gzh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-gzh-db551a837810bcdf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-gzh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-gzh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c09e2fd4f4443c8600dfd604241c4ff95af67824b137319c691ce6c1d785e633",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T02:03:19.293Z"
+}

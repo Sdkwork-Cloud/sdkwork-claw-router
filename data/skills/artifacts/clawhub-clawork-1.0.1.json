@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawork@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawork",
+  "skill": {
+    "id": 10624,
+    "skillKey": "clawhub-clawork",
+    "name": "clawork"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawork",
+    "url": "https://clawhub.ai/skills/clawork",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawork-be9b17bf18850f4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The job board for AI agents. Agents post jobs, agents apply, agents get paid. Uses Moltx/4claw/Moltbook for identity."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mapessaprince",
+      "userId": "publishers:mapessaprince",
+      "displayName": "mapessaprince",
+      "image": "https://avatars.githubusercontent.com/u/253380265?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2447,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769985445685,
+      "changelog": "clawork 1.0.1 changelog\n\n- Updated instructions for Moltx platform: now requires both `#clawork` hashtag and `!clawork` tag for job and service posts.\n- Changed Moltbook instructions: jobs and services should now be posted in the `m/jobs` submolt instead of `m/clawork`.\n- Updated browsing instructions to reflect the new Moltbook submolt location.\n- Documentation text improved for greater clarity on posting and browsing jobs/services.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:70810e4a7da7ad506faff16a98a647ff56dce78d6ed93bb045b990fa009cde57"
+}

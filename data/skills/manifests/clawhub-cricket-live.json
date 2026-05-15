@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15816,
+  "uuid": "skill-clawhub-cricket-live",
+  "skillKey": "clawhub-cricket-live",
+  "name": "Cricket Live",
+  "summary": "Provides real-time live cricket scores, detailed scorecards, upcoming matches, recent results, IPL standings, and match alerts using CricketData.org API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cricket_live",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Harshil Mathur",
+      "features": [
+        "Provides real-time live cricket scores, detailed scorecards, upcoming matches, recent results,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cricket-live@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1286414?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cricket-live",
+      "url": "https://clawhub.ai/skills/cricket-live"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cricket-live",
+    "url": "https://clawhub.ai/skills/cricket-live",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cricket-live-4948cd298f20b36f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cricket-live@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cricket-live-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96c8171700352314eb07ed07323ffb285c2f884aca6504fcd0763333b446be88",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T14:30:56.263Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34865,
+  "uuid": "skill-clawhub-queue-state-diff",
+  "skillKey": "clawhub-queue-state-diff",
+  "name": "Queue State Diff",
+  "summary": "Compare two queue or state snapshots and explain what changed between them. Use when Codex needs to analyze drift between JSON/JSONL snapshots, detect newly...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.queue_state_diff",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "neo1307",
+      "features": [
+        "Compare two queue or state snapshots and explain what changed between them",
+        "Use when Codex needs to analyze drift between JSON/JSONL snapshots, detect newly..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/queue-state-diff@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196853531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "queue-state-diff",
+      "url": "https://clawhub.ai/skills/queue-state-diff"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "queue-state-diff",
+    "url": "https://clawhub.ai/skills/queue-state-diff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/queue-state-diff-fb0442f7bcf7046c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/queue-state-diff@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-queue-state-diff-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e1f3d1cb5e0c0738964083552a72ad2f29eb2e71fb268893675cfd9b9280fdc",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:34:42.160Z"
+}

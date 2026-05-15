@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52509,
+  "uuid": "skill-clawhub-beta-code-review",
+  "skillKey": "clawhub-beta-code-review",
+  "name": "Beta Code Review",
+  "summary": "Systematic code review patterns covering security, performance, maintainability, correctness, and testing — with severity levels, structured feedback guidanc...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beta_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1477009639zw-blip",
+      "features": [
+        "Systematic code review patterns covering security, performance, maintainability, correctness, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beta-code-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266505725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beta-code-review",
+      "url": "https://clawhub.ai/skills/beta-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beta-code-review",
+    "url": "https://clawhub.ai/skills/beta-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beta-code-review-e9a950b2c17397db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beta-code-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-beta-code-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4164946070ca2263181342636b6e4f4a9800cad03b711871b0077b159a9c6460",
+      "artifactSizeBytes": 2389
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T18:19:01.867Z"
+}

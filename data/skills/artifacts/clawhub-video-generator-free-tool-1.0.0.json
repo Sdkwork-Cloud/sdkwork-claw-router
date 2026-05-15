@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-generator-free-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generator_free_tool",
+  "skill": {
+    "id": 49209,
+    "skillKey": "clawhub-video-generator-free-tool",
+    "name": "Video Generator Free Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generator-free-tool",
+    "url": "https://clawhub.ai/skills/video-generator-free-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generator-free-tool-2db37e69d155d056.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get ready-to-share videos ready to post, without touching a single slider. Upload your images or text (MP4, MOV, JPG, PNG, up to 200MB), say something like \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 85,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777950831210,
+      "changelog": "Video Generator Free Tool v1.0.0\n\n- Initial release: generate, edit, and export videos from images or text for free.\n- Supports uploads in MP4, MOV, JPG, PNG (up to 200MB) and outputs 1080p MP4 videos.\n- Easy, slider-free workflow: describe your video in plain language; no editing skills needed.\n- Fast cloud GPU rendering—typical export completes within 30–90 seconds.\n- Built-in free credit and session management; anonymous use with token auto-generation.\n- Includes error handling, tips, and streamlined setup for first-time users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:869ca30956ced9357fd4f8429f368d61e04cc57bc27be60588e76790b0237ea8"
+}

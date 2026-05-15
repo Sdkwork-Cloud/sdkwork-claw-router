@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/broadcast-sign-transfer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.broadcast_sign_transfer",
+  "skill": {
+    "id": 60330,
+    "skillKey": "clawhub-broadcast-sign-transfer",
+    "name": "Broadcast Sign Transfer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "broadcast-sign-transfer",
+    "url": "https://clawhub.ai/skills/broadcast-sign-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/broadcast-sign-transfer-c39e95dcc8e30a61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持 EVM 多链的原生代币和 ERC20 转账，自动构造交易、本地签名并通过 OKX API 广播上链"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangchengming666",
+      "userId": "publishers:wangchengming666",
+      "displayName": "Wang Chengming",
+      "image": "https://avatars.githubusercontent.com/u/17539174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 480,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772001426513,
+      "changelog": "- 移除了 OKX 相关标签，更新对 OKX 依赖的表述\n- 文档文字优化，部分字段描述更准确\n- skill 适用/不适用场景说明更新\n- 其他小幅文档调整和表述优化",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cd3ed2260bdcb64db8c117ecd1598488ea9b2d305318450e9125be33a5cb7cad"
+}

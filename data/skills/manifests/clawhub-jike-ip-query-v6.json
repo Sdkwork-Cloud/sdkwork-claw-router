@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64364,
+  "uuid": "skill-clawhub-jike-ip-query-v6",
+  "skillKey": "clawhub-jike-ip-query-v6",
+  "name": "IPv6地址查询 - 即刻数据",
+  "summary": "IPv6地址查询。输入 IPv6 地址，实时查询国家、省份、城市、地区、运营商和 long_ip 数值。适用场景：用户说“查一下 240e:1f:1::1 是哪里的 IPv6”“这个 IPv6 属于哪个运营商”等。数据由即刻数据（jikeapi.cn）开放接口提供。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_ip_query_v6",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jikeapi",
+      "features": [
+        "IPv6地址查询。输入 IPv6 地址，实时查询国家、省份、城市、地区、运营商和 long_ip 数值。适用场景：用户说“查一下 240e:1f:1::1 是哪里的 IPv6”“这个 IPv."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jike-ip-query-v6@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26078515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jike-ip-query-v6",
+      "url": "https://clawhub.ai/skills/jike-ip-query-v6"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-ip-query-v6",
+    "url": "https://clawhub.ai/skills/jike-ip-query-v6",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-ip-query-v6-5995f1624794da14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jike-ip-query-v6@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jike-ip-query-v6-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31de6ce37fb6086739b9526fead2b9d3a896e4ae0c33d1d589f329e8415eb959",
+      "artifactSizeBytes": 2103
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T12:00:12.666Z"
+}

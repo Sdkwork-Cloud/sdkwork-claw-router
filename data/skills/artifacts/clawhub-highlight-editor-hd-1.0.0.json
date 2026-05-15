@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/highlight-editor-hd@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.highlight_editor_hd",
+  "skill": {
+    "id": 45860,
+    "skillKey": "clawhub-highlight-editor-hd",
+    "name": "Highlight Editor Hd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "highlight-editor-hd",
+    "url": "https://clawhub.ai/skills/highlight-editor-hd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/highlight-editor-hd-4cb2cdff3cc5a2ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "create raw video footage into HD highlight reels with this skill. Works with MP4, MOV, AVI, MKV files up to 500MB. sports creators, event videographers, cont..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775937268126,
+      "changelog": "Initial release of Highlight Editor HD — Extract and Export HD Highlights.\n\n- Convert raw video files (MP4, MOV, AVI, MKV up to 500MB) into HD highlight reels.\n- Supports cloud-based AI highlight extraction and export to 1080p MP4 in 1-2 minutes.\n- Simple session setup with automatic token management (no user credentials required).\n- Action routing based on user prompts for exporting, uploading, credits, and more.\n- Clear error handling and workflow guidance for uploads, edits, and exports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1fdc0fcb3e0ed23f3d25631ad690ee76d3432a7d368f6b673e0d836dd0388639"
+}

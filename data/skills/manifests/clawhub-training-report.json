@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47049,
+  "uuid": "skill-clawhub-training-report",
+  "skillKey": "clawhub-training-report",
+  "name": "Training Report",
+  "summary": "Produce a professional training/workshop report as a .docx file. Use this skill whenever the user mentions \"training report\", \"workshop report\", \"compte rend...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.training_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Samuel Berthe",
+      "features": [
+        "Produce a professional training/workshop report as a .docx file",
+        "Use this skill whenever the user mentions \"training report\", \"workshop report\", \"compte rend..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/training-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2951285?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "training-report",
+      "url": "https://clawhub.ai/skills/training-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "training-report",
+    "url": "https://clawhub.ai/skills/training-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/training-report-9aa10a3f4b3e0b78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/training-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-training-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a3abf6a41c43438aa7a9a74ed536df34b9a1fd7f03e2f7b41a22a3c304f25a7",
+      "artifactSizeBytes": 2599
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T19:18:33.570Z"
+}

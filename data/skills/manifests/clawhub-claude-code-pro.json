@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18734,
+  "uuid": "skill-clawhub-claude-code-pro",
+  "skillKey": "clawhub-claude-code-pro",
+  "name": "Claude Code Pro",
+  "summary": "Token-efficient Claude Code workflow. Other skills burn tokens polling tmux every 30s — this one uses completion callbacks and only checks when notified. Obs...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sway Liu",
+      "features": [
+        "Token-efficient Claude Code workflow",
+        "Other skills burn tokens polling tmux every 30s — this one uses completion callbacks and only c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-pro@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5630262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-pro",
+      "url": "https://clawhub.ai/skills/claude-code-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-pro",
+    "url": "https://clawhub.ai/skills/claude-code-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-pro-5df9900db02f10e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-pro@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-pro-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e17ba6004ae245852a80867d79393bf5e81fe3200310c37c4c68a4356f7d39a",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T10:30:27.723Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41824,
+  "uuid": "skill-clawhub-recruit-crm-integration",
+  "skillKey": "clawhub-recruit-crm-integration",
+  "name": "Recruit Crm",
+  "summary": "Recruit CRM integration. Manage Candidates, Jobs, Companies, Users, Notes, Files and more. Use when the user wants to interact with Recruit CRM data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recruit_crm_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Recruit CRM integration",
+        "Manage Candidates, Jobs, Companies, Users, Notes, Files and more",
+        "Use when the user wants to interact with Recruit CRM data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recruit-crm-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recruit-crm-integration",
+      "url": "https://clawhub.ai/skills/recruit-crm-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recruit-crm-integration",
+    "url": "https://clawhub.ai/skills/recruit-crm-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recruit-crm-integration-58f68567f83e2dd2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recruit-crm-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-recruit-crm-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2a8b6f59f22637ef18e7a5deb0f32a42513c44592795671eef73d68dd15bd3d",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:55:28.840Z"
+}

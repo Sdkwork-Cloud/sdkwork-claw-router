@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improving-engineering@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_engineering",
+  "skill": {
+    "id": 40888,
+    "skillKey": "clawhub-self-improving-engineering",
+    "name": "Self-Improving Engineering"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-engineering",
+    "url": "https://clawhub.ai/skills/self-improving-engineering",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-engineering-843523b4890935a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures architecture decisions, code quality issues, build/deploy failures, dependency problems, performance regressions, tech debt accumulation, and test g..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jose-compu",
+      "userId": "s17bzpdy0evfmqz6nx069npr3n84p7f2",
+      "displayName": "José I. O.",
+      "image": "https://avatars.githubusercontent.com/u/30682875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1776160924417,
+      "changelog": "**Version 1.1.0**\n- Added stackability contract for multi-skill installations.\n- Added namespaced logging guidance (`.learnings/engineering/`) for coexistence with other skills.\n- Added required `Skill: engineering` metadata field and cross-skill precedence/ownership rules.\n- Clarified hook arbitration model (single dispatcher, dedupe, rate limiting).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1c84a3ed4fc7bf01f23f4c6704c5e17d5dcdcc4c64b5ab5a718b3a79342dba0"
+}

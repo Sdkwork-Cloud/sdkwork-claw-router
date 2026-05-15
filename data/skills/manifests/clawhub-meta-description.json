@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34316,
+  "uuid": "skill-clawhub-meta-description",
+  "skillKey": "clawhub-meta-description",
+  "name": "meta-description",
+  "summary": "When the user wants to optimize the meta description or meta tag description. Also use when the user mentions \"meta description,\" \"meta desc,\" \"page descript...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_description",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to optimize the meta description or meta tag description",
+        "Also use when the user mentions \"meta description,\" \"meta desc,\" \"page descript..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meta-description@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meta-description",
+      "url": "https://clawhub.ai/skills/meta-description"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-description",
+    "url": "https://clawhub.ai/skills/meta-description",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-description-11ee3bb85451aa81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meta-description@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meta-description-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4294d5bfce4381672639cd0cf0e620b653099c8dd10d97517957650744179496",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T09:47:49.714Z"
+}

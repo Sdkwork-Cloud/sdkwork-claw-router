@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48386,
+  "uuid": "skill-clawhub-shopify-link-checkout",
+  "skillKey": "clawhub-shopify-link-checkout",
+  "name": "Shopify Link Checkout",
+  "summary": "Autonomous Shopify purchasing using Stripe Link for payment and Playwright for browser checkout. Search products across all Shopify merchants, generate one-t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_link_checkout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stephen",
+      "features": [
+        "Autonomous Shopify purchasing using Stripe Link for payment and Playwright for browser checkout",
+        "Search products across all Shopify merchants, generate one-t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shopify-link-checkout@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41870969?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shopify-link-checkout",
+      "url": "https://clawhub.ai/skills/shopify-link-checkout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-link-checkout",
+    "url": "https://clawhub.ai/skills/shopify-link-checkout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-link-checkout-5a0d590f697dabea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shopify-link-checkout@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shopify-link-checkout-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45a44982ff8a98ef789cc4f320cc13c0936e2ebea5ebcd17c04a0cdfc4c90132",
+      "artifactSizeBytes": 2499
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T19:48:55.913Z"
+}

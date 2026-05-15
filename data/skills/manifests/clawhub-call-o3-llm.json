@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15300,
+  "uuid": "skill-clawhub-call-o3-llm",
+  "skillKey": "clawhub-call-o3-llm",
+  "name": "Call O3 Llm",
+  "summary": "AI agent for call o3 llm tasks",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.call_o3_llm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alvinecarn",
+      "features": [
+        "AI agent for call o3 llm tasks"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/call-o3-llm@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255032544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "call-o3-llm",
+      "url": "https://clawhub.ai/skills/call-o3-llm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "call-o3-llm",
+    "url": "https://clawhub.ai/skills/call-o3-llm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/call-o3-llm-16075ef4d4324fff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/call-o3-llm@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-call-o3-llm-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae00de8c3c6af5a34e2559087af30c9c2412c2996cd5d4b6e5903803d53e3542",
+      "artifactSizeBytes": 2184
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T08:30:01.166Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13201,
+  "uuid": "skill-clawhub-alicloud-storage-oss-ossutil",
+  "skillKey": "clawhub-alicloud-storage-oss-ossutil",
+  "name": "Alicloud Storage Oss Ossutil",
+  "summary": "Alibaba Cloud OSS CLI (ossutil 2.0) skill. Install, configure, and operate OSS from the command line based on the official ossutil overview.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alicloud_storage_oss_ossutil",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Alibaba Cloud OSS CLI (ossutil 2.0) skill",
+        "Install, configure, and operate OSS from the command line based on the official ossutil overvie."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alicloud-storage-oss-ossutil@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alicloud-storage-oss-ossutil",
+      "url": "https://clawhub.ai/skills/alicloud-storage-oss-ossutil"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alicloud-storage-oss-ossutil",
+    "url": "https://clawhub.ai/skills/alicloud-storage-oss-ossutil",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alicloud-storage-oss-ossutil-c8478c1b290319e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alicloud-storage-oss-ossutil@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-alicloud-storage-oss-ossutil-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bcd72ad4423d962f8c662e115d4d6cf1df0bd8b9b45013dfc3fa0ce237f72158",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:41:05.063Z"
+}

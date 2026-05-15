@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40688,
+  "uuid": "skill-clawhub-finskills",
+  "skillKey": "clawhub-finskills",
+  "name": "finskills",
+  "summary": "Real-time financial data API for systematic stock analysis and quantitative investment research. Access stock quotes, historical OHLCV, batch screening, comp...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finskills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "finskills",
+      "features": [
+        "Real-time financial data API for systematic stock analysis and quantitative investment research",
+        "Access stock quotes, historical OHLCV, batch screening, comp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finskills@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32382589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finskills",
+      "url": "https://clawhub.ai/skills/finskills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finskills",
+    "url": "https://clawhub.ai/skills/finskills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finskills-2a0a9e8f0e7fe0fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finskills@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-finskills-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66d1f26e28ebb7d6eb4e2a3c144ce59cf90acc048f84b41794d30acffaa327f4",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T15:38:20.371Z"
+}

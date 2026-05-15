@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38504,
+  "uuid": "skill-clawhub-openclaw-3d-printing-skill",
+  "skillKey": "clawhub-openclaw-3d-printing-skill",
+  "name": "OpenClaw 3D Printing Skill",
+  "summary": "Create parametric 3D-printable parts and enclosures with CadQuery, export STL or 3MF files, render review previews, and iterate on fit, tolerances, and print...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_3d_printing_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Antonio Silveira",
+      "features": [
+        "Create parametric 3D-printable parts and enclosures with CadQuery, export STL or 3MF files, ren."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-3d-printing-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125191?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-3d-printing-skill",
+      "url": "https://clawhub.ai/skills/openclaw-3d-printing-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-3d-printing-skill",
+    "url": "https://clawhub.ai/skills/openclaw-3d-printing-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-3d-printing-skill-f38b5969c598698c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-3d-printing-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-3d-printing-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4bd499079266606c42355a755731e8793cc4cbbf108a3d9078a423f703645b3a",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T16:04:47.388Z"
+}

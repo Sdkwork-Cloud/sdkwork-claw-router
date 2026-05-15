@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/senseaudio-voice-broadcast@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.senseaudio_voice_broadcast",
+  "skill": {
+    "id": 28814,
+    "skillKey": "clawhub-senseaudio-voice-broadcast",
+    "name": "SenseAudio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "senseaudio-voice-broadcast",
+    "url": "https://clawhub.ai/skills/senseaudio-voice-broadcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/senseaudio-voice-broadcast-75b4f92d4cf059c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn plain text into character-style TTS scripts for narration, companion-style voice messages, emotional comfort audio, and expressive spoken responses. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jsinbupt",
+      "userId": "s17dv9ypzyvm9wa9hcgwkv0th583gc35",
+      "displayName": "JSinBUPT",
+      "image": "https://avatars.githubusercontent.com/u/118451232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 317,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774013771711,
+      "changelog": "- Updated documentation resource links to use relative paths (e.g., `references/voice-broadcast-templates.md`) instead of absolute paths.\n- No changes to code or workflow; only documentation/link corrections.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7277bdf4ad0586b89bce0809fdd2910c900df418caa51f157b04061a033d74ae"
+}

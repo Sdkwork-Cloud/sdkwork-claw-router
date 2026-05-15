@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-research-to-obsidian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_research_to_obsidian",
+  "skill": {
+    "id": 61764,
+    "skillKey": "clawhub-ai-research-to-obsidian",
+    "name": "AI研究保存到Obsidian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-research-to-obsidian",
+    "url": "https://clawhub.ai/skills/ai-research-to-obsidian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-research-to-obsidian-81933f44659e7779.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用 AI 工具（豆包/Kimi/ChatGPT）搜索问题并将结果整理保存为 Obsidian 文档。触发场景：(1) 用户要求用 AI 搜索问题 (2) 用户要求浏览器搜索并保存到 Obsidian (3) 用户说\"帮我查一下\"并提到保存到笔记/文档/Obsidian"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alphalpha7",
+      "userId": "s17b5jgd71335v2fxfeeg5gmds84tvqg",
+      "displayName": "Alphalpha7",
+      "image": "https://avatars.githubusercontent.com/u/104445732?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 569,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772873462994,
+      "changelog": "Initial release: Enables automated saving of AI-researched content to Obsidian.\n\n- Supports AI search using Doubao, Kimi, and ChatGPT based on query type and language.\n- Organizes and reformats search results into structured Obsidian Markdown documents.\n- Automates file creation with YAML frontmatter, title, tags, and formatted content.\n- Streamlines saving documents to the correct local or iCloud Obsidian vault.\n- Includes built-in guidance for workflow steps and best practices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7687391629aacacc85c9e3f9a7ce5deabcb1b963d6ca15a970d0a491eda991da"
+}

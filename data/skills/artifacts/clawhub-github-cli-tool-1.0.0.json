@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-cli-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_cli_tool",
+  "skill": {
+    "id": 57755,
+    "skillKey": "clawhub-github-cli-tool",
+    "name": "GitHub CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-cli-tool",
+    "url": "https://clawhub.ai/skills/github-cli-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-cli-tool-8a7030f7e02ec73d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhengxinjipai",
+      "userId": "s1730v5c386prna2echd6pyczn83x8km",
+      "displayName": "zhengxinjipai",
+      "image": "https://avatars.githubusercontent.com/u/130424576?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 738,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772803385181,
+      "changelog": "Initial release of the GitHub CLI integration skill.\n\n- Provides instructions for using the `gh` CLI for issues, pull requests, workflow runs, and advanced API queries.\n- Includes example commands for checking PR statuses and workflow runs.\n- Describes use of `--repo`, `--json`, and `--jq` options for more control and output customization.\n- Details installation options for the GitHub CLI via Homebrew and apt.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d2eba9330b9a573ccdd92e588dc6af6785a26eea3282426ad915b95be24ffaab"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/searxng-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searxng_backup",
+  "skill": {
+    "id": 26711,
+    "skillKey": "clawhub-searxng-backup",
+    "name": "Searxng Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searxng-backup",
+    "url": "https://clawhub.ai/skills/searxng-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searxng-backup-e5d5c799ff2544a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Privacy-respecting metasearch using your local SearXNG instance. Search the web, images, news, and more without external API dependencies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "macdesire",
+      "userId": "publishers:macdesire",
+      "displayName": "macdesire",
+      "image": "https://avatars.githubusercontent.com/u/209971671?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773436787698,
+      "changelog": "Initial release: Adds SearXNG skill for privacy-respecting metasearch.\n\n- Enables web, image, news, and video searches using a local SearXNG instance\n- Requires setting the SEARXNG_URL environment variable (defaults to http://localhost:8080)\n- Supports advanced search options (result count, language, time range, output format)\n- No external API keys or dependencies required\n- Provides multiple search triggers for ease of use",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80e61cbacaf993c9782374bed764c9446cdf2628bc03790f5e5f7169a8656331"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32752,
+  "uuid": "skill-clawhub-ihomefinder",
+  "skillKey": "clawhub-ihomefinder",
+  "name": "Ihomefinder",
+  "summary": "IHomefinder integration. Manage Leads, Users, Filters. Use when the user wants to interact with IHomefinder data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ihomefinder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "IHomefinder integration",
+        "Manage Leads, Users, Filters",
+        "Use when the user wants to interact with IHomefinder data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ihomefinder@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ihomefinder",
+      "url": "https://clawhub.ai/skills/ihomefinder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ihomefinder",
+    "url": "https://clawhub.ai/skills/ihomefinder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ihomefinder-58b3d14f6291f00e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ihomefinder@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ihomefinder-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf259bf63bceb05001531dfb5a0d16dd0954b09b62b0430685d75a30285f1e05",
+      "artifactSizeBytes": 1841
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:58:35.637Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/formula1-racing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.formula1_racing",
+  "skill": {
+    "id": 49698,
+    "skillKey": "clawhub-formula1-racing",
+    "name": "Formula1 Racing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "formula1-racing",
+    "url": "https://clawhub.ai/skills/formula1-racing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/formula1-racing-286a719e177c365a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed insights into Formula 1's history, business model, fan growth strategies, and global motorsport significance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 70,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778166375752,
+      "changelog": "- Initial release of the Formula 1 Racing skill.\n- Covers F1 history, business model, key metrics, and competitive advantages.\n- Details on Liberty Media’s transformation strategy and impact of Netflix’s Drive to Survive.\n- Provides data on sustainability, team economics, and record-breaking US fan growth.\n- Includes fun facts and market insights for motorsport researchers and enthusiasts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74f684b91fbed606b16d68274fa0c2786ba976fe632231e64920ff3a1f1bb94e"
+}

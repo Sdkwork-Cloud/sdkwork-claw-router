@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-analysis-10d@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_analysis_10d",
+  "skill": {
+    "id": 71331,
+    "skillKey": "clawhub-stock-analysis-10d",
+    "name": "stock-analysis-10d"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-analysis-10d",
+    "url": "https://clawhub.ai/skills/stock-analysis-10d",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-analysis-10d-5b86162615ec9d05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股股票十维深度分析（1000分制）。当用户输入「查询股票 <代码>」「分析股票 <代码>」「股票 <代码>」时自动触发。包含：基本信息、财务数据、技术分析、资金流向、市场情绪、风险提示、机构持仓、估值分析、股东结构、消息面，最后输出综合评分和投资建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hsyhph",
+      "userId": "s177fkfb3339cez7neb1kaj1f183g848",
+      "displayName": "hsyhph",
+      "image": "https://avatars.githubusercontent.com/u/73018559?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774839440666,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4de780d036c00ffdc5e2fdf4882857e60810c349371a9f51dc90d0607d589932"
+}

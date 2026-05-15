@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audioclaw-skills-voice-intake@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audioclaw_skills_voice_intake",
+  "skill": {
+    "id": 25982,
+    "skillKey": "clawhub-audioclaw-skills-voice-intake",
+    "name": "audioclaw-skills-voice-intake"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audioclaw-skills-voice-intake",
+    "url": "https://clawhub.ai/skills/audioclaw-skills-voice-intake",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audioclaw-skills-voice-intake-ed7c24b8d2ea9b0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when AudioClaw Skills needs to understand a user voice message with AudioClaw ASR, including speech-to-text, model routing for deepthink or pro features,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kikidouloveme79",
+      "userId": "s1799r8kj1jk2d6bjcn61ycmx583hqp7",
+      "displayName": "Wu Ruixiao",
+      "image": "https://avatars.githubusercontent.com/u/62665119?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 376,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774168505170,
+      "changelog": "- Updated branding and description to reference \"AudioClaw ASR\" instead of \"SenseAudio ASR\".\n- Clarified skill separation by consistently using the AudioClaw ASR term throughout the documentation.\n- Added a new \"API key lookup\" section explaining updated handling for SENSEAUDIO_API_KEY, supporting shared bootstrap and real credential injection from workspace state.\n- No functional or command-line changes to usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91abde1d2734eb354a421e2936721892a2ecd1063c0b13579c87df7635ffd655"
+}

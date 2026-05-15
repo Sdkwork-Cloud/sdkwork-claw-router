@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cash@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cash",
+  "skill": {
+    "id": 24784,
+    "skillKey": "clawhub-cash",
+    "name": "CashApp - Give your Claw Agent Cash"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cash",
+    "url": "https://clawhub.ai/skills/cash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cash-ab0fcec08e18a7bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Easy-to-use agentic wallets powered by Stripe. Use your existing Stripe/Link to top-up this versatile x402 wallet for any purchases or A2A payments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jononovo",
+      "userId": "s17eyjmk8pyvczxpmy73dtgn4d83frwx",
+      "displayName": "jononovo",
+      "image": "https://avatars.githubusercontent.com/u/22595409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 402,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773190805119,
+      "changelog": "- Initial release of the \"creditclaw-stripe\" skill (v2.3.3), providing Stripe-powered agentic wallets.\n- Enables easy bot/agent wallet top-up via Stripe/Link for purchases and A2A payments.\n- Supports multiple payment rails: Encrypted Card (default), Stripe Wallet (x402, USDC), and Crossmint Wallet (coming soon).\n- Emphasizes strong security: split-knowledge encryption, rate limiting, per-transaction approval, and real-time owner visibility.\n- Detailed setup instructions and API references included for registration, permissions, storefronts, and transaction management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee083a9ab8cbf83e2c61fe9ce46e5ff928067026e1591817a4e55d0dd9b63c9f"
+}

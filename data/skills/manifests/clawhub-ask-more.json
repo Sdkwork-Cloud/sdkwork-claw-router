@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38238,
+  "uuid": "skill-clawhub-ask-more",
+  "skillKey": "clawhub-ask-more",
+  "name": "Ask-More",
+  "summary": "Multi-LLM consultation for complex questions. Trigger when user sends \"/ask [question]\", \"/ask\" (no args, consult on recent conversation), \"/ask --preset NAM...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ask_more",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pongpong990909-prog",
+      "features": [
+        "Multi-LLM consultation for complex questions",
+        "Trigger when user sends \"/ask [question]\", \"/ask\" (no args, consult on recent conversation), \"/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ask-more@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266162176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ask-more",
+      "url": "https://clawhub.ai/skills/ask-more"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ask-more",
+    "url": "https://clawhub.ai/skills/ask-more",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ask-more-df769c4a43e422e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ask-more@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ask-more-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ff69fa727af1a91b62ab8cb608bd68dadb375321f4211464531392c1ea4ae30",
+      "artifactSizeBytes": 1860
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T02:52:33.152Z"
+}

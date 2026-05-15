@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41273,
+  "uuid": "skill-clawhub-call-pro",
+  "skillKey": "clawhub-call-pro",
+  "name": "call-pro",
+  "summary": "Call management system with preparation, real-time capture, and follow-up tracking. Use when user mentions phone calls, meetings, conversations, commitments...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.call_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pratilsudra",
+      "features": [
+        "Call management system with preparation, real-time capture, and follow-up tracking",
+        "Use when user mentions phone calls, meetings, conversations, commitments..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/call-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18642740?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "call-pro",
+      "url": "https://clawhub.ai/skills/call-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "call-pro",
+    "url": "https://clawhub.ai/skills/call-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/call-pro-d3855b822ad83b81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/call-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-call-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3637e34706976bbc7fd88b463245b11b26914dea8a569876c401ccb9ec23dd3a",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T12:29:06.616Z"
+}

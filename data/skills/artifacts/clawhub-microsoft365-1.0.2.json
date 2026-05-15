@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/microsoft365@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microsoft365",
+  "skill": {
+    "id": 14582,
+    "skillKey": "clawhub-microsoft365",
+    "name": "Microsoft 365"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microsoft365",
+    "url": "https://clawhub.ai/skills/microsoft365",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microsoft365-41baaba97d0dfa5d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Microsoft 365 integration for Outlook, Calendar, Contacts, and OneDrive via Microsoft Graph API. Supports reading/sending emails, managing calendar events, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robert-janssen",
+      "userId": "publishers:robert-janssen",
+      "displayName": "Robert Janssen",
+      "image": "https://avatars.githubusercontent.com/u/51152787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1151,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771541867187,
+      "changelog": "Fixed security scanner issues: updated metadata to declare env vars and removed debug logging of ClientID",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a14a5759efed7ce83031b7de4bee06e4766bade94a3420dfc7c333cc722234ca"
+}

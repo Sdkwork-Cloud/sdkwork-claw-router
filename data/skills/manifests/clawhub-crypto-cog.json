@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9770,
+  "uuid": "skill-clawhub-crypto-cog",
+  "skillKey": "clawhub-crypto-cog",
+  "name": "Crypto Cog",
+  "summary": "AI crypto research and analysis powered by CellCog. Token deep-dives, on-chain metrics, DeFi protocol breakdowns, wallet portfolio reviews, market sentiment,...",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_cog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CellCog",
+      "features": [
+        "AI crypto research and analysis powered by CellCog",
+        "Token deep-dives, on-chain metrics, DeFi protocol breakdowns, wallet portfolio reviews, market."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-cog@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14193431?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-cog",
+      "url": "https://clawhub.ai/skills/crypto-cog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-cog",
+    "url": "https://clawhub.ai/skills/crypto-cog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-cog-ad1c6c26b3aab876.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-cog@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-cog-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2e6eafcd4d8f324d66be1b144e7e523ef52de22ad68aea00d0f30e04b313382",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:18:43.242Z"
+}

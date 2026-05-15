@@ -1,0 +1,39 @@
+{
+  "skill": {
+    "slug": "willow-context-sentinel",
+    "displayName": "Willow Context Sentinel",
+    "summary": "Use when you need to check whether the current session is approaching context limits and decide whether to compact, hand off, or continue. Implements a casca...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1777090048067,
+    "updatedAt": 1777527938472
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1777090048067,
+    "changelog": "Initial release of context sentinel cascading protocol for Willow/OpenClaw on Linux:\n\n- Monitors `prompt_count` to detect session context usage.\n- Outputs one of four statuses: `STATUS_OK`, `COMPACT_NOW`, `HANDOFF_NOW`, or `POSTGRES_DOWN`.\n- Directs automatic invocation of `strategic-compact` or `handoff` workflows when limits are reached.\n- Checks Postgres availability via `session_anchor.json`.\n- Safe, read-only operation; integrates easily with session heartbeat processes.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": [
+      "linux"
+    ],
+    "systems": null
+  },
+  "owner": {
+    "handle": "rudi193-cmd",
+    "userId": "s17ekax2rasmfrwg7yp6nm3bk9852hmb",
+    "displayName": "Sean  Campbell",
+    "image": "https://avatars.githubusercontent.com/u/236912655?v=4"
+  },
+  "moderation": null
+}

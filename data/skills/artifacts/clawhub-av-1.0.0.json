@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/av@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.av",
+  "skill": {
+    "id": 44956,
+    "skillKey": "clawhub-av",
+    "name": "AV Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "av",
+    "url": "https://clawhub.ai/skills/av",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/av-27a26bca625b2239.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Toolkit for converting, editing, analyzing, and generating audio and video files, supporting common formats and effects within OpenClaw."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hgta23",
+      "userId": "s176ns9wb0zkz6m56ha2rk438x843wcn",
+      "displayName": "bittao",
+      "image": "https://avatars.githubusercontent.com/u/17961407?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775660200906,
+      "changelog": "Initial release – Audio and video processing toolkit for OpenClaw.\n\n- Convert, edit, analyze, and generate audio/video files.\n- Supports popular formats for both audio (MP3, WAV, AAC, FLAC) and video (MP4, AVI, MKV, MOV).\n- Audio tools: format conversion, extraction from video, effects, TTS generation.\n- Video tools: format conversion, trimming, merging, resolution/quality adjustment, frame extraction.\n- Media analysis: extract technical details and detect quality issues.\n- Content generation: slideshows, video from text, audio visualizations.\n- Usable with both local files and URLs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad90ac36a63a3341f88ef1806eb829d30594c6f460d40ff808346363869a9047"
+}

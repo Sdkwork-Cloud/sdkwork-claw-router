@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17391,
+  "uuid": "skill-clawhub-local-task-runner",
+  "skillKey": "clawhub-local-task-runner",
+  "name": "Local Task Runner",
+  "summary": "Executes Node.js code snippets or scripts locally with isolation, cleanup, and timeout, serving as a lightweight alternative to spawning subagents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_task_runner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "d-wwei",
+      "features": [
+        "Executes Node.js code snippets or scripts locally with isolation, cleanup, and timeout, serving."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-task-runner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10348457?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-task-runner",
+      "url": "https://clawhub.ai/skills/local-task-runner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-task-runner",
+    "url": "https://clawhub.ai/skills/local-task-runner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-task-runner-58b81538a7cae5a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-task-runner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-task-runner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d418930418913ad544ff912d73c49ceebcbaf8f8b4feb3987330d12f656c61e",
+      "artifactSizeBytes": 2324
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T14:47:04.551Z"
+}

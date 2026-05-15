@@ -1,0 +1,46 @@
+{
+  "skill": {
+    "slug": "governclaw-middleware",
+    "displayName": "GovernClaw Policy Enforcer",
+    "summary": "Governance middleware for OpenClaw agents. Wraps HTTP, shell, file, and browser actions with policy checks via GovernClaw before execution. Required tools -...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774047293518,
+    "updatedAt": 1778314116428
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774047293518,
+    "changelog": "GovernClaw Middleware 1.0.0 – initial release\n\n- Introduces governed wrappers for sensitive operations, starting with governedHttp (HTTP requests with policy checks).\n- Mediates HTTP requests through the GovernClaw policy engine, blocking or allowing each request.\n- Provides clear error signaling and standardized block reasons in responses.\n- Configuration via GOVERNCLAW_URL environment variable or openclaw.json.\n- Automatically forwards session context and agent identification with each request for governance.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "aakash2289",
+    "userId": "publishers:aakash2289",
+    "displayName": "aakash2289",
+    "image": "https://avatars.githubusercontent.com/u/152668287?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.env_credential_access, suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778314116428
+  }
+}

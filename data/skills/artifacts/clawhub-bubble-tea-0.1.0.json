@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bubble-tea@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bubble_tea",
+  "skill": {
+    "id": 73440,
+    "skillKey": "clawhub-bubble-tea",
+    "name": "网红奶茶"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bubble-tea",
+    "url": "https://clawhub.ai/skills/bubble-tea",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bubble-tea-51b3aa39ff2e4203.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供关于网红奶茶的推荐清单、打卡路线与指南。用户搜索网红奶茶或规划相关出行时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774161666027,
+      "changelog": "网红奶茶 skill 首发版。\n\n- 提供网红奶茶店推荐清单，包含筛选项如城市、预算、口味等。\n- 支持路线规划建议，优先步行/地铁，含高峰替代方案。\n- 返回丰富信息：店名、特色、评分、排队情况、预约等。\n- 每周更新，结合最新热度与反馈。\n- 明确提示高峰期注意事项与特殊规则。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bfbe41fcb765c26f0dfdad742d42431ae86ab87812574337cff38756d8ab5074"
+}

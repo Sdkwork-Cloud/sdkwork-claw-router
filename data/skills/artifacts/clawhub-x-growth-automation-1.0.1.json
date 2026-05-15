@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-growth-automation@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_growth_automation",
+  "skill": {
+    "id": 20420,
+    "skillKey": "clawhub-x-growth-automation",
+    "name": "X Growth Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-growth-automation",
+    "url": "https://clawhub.ai/skills/x-growth-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-growth-automation-38611b2090d37ab0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up a reusable X/Twitter growth automation system with OpenClaw, Bird CLI, X API, optional source branching, optional community CTA, dry-run/live rollout,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roskva000",
+      "userId": "publishers:roskva000",
+      "displayName": "roskva000",
+      "image": "https://avatars.githubusercontent.com/u/36137710?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773414743874,
+      "changelog": "**Adds anti-repetition guardrails and more precise safety/cadence controls.**\n\n- Added requirements and instructions for anti-repetition safeguards (e.g. last-48h similarity checks, source de-duplication).\n- Made reply automation opt-in only; reply lane is disabled by default unless explicitly requested.\n- Added use of idempotent slot keys to prevent reposting the same content due to draft collisions.\n- Expanded config and guidance for high-volume (10/day) posting strategies with explicit caps and slot-based distribution.\n- Updated file customization sequence to include new diversity/anti-repetition config files.\n- Clarified and expanded default safety standards, including explicit rules for all automation modes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6cee3fb7bc55bf6e4a9175ab2159c04e7f4916dcd542153d3e5afbe84f476ae1"
+}

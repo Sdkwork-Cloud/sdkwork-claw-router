@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67481,
+  "uuid": "skill-clawhub-factorhub",
+  "skillKey": "clawhub-factorhub",
+  "name": "FactorHub A股量化数据",
+  "summary": "提供 5500+ 只 A 股的量化因子数据和财经指标，支持因子分析、行情查询、资金流向、财务分析及策略回测",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.factorhub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "michaelfeng",
+      "features": [
+        "提供 5500+ 只 A 股的量化因子数据和财经指标，支持因子分析、行情查询、资金流向、财务分析及策略回测"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/factorhub@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2228296?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "factorhub",
+      "url": "https://clawhub.ai/skills/factorhub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "factorhub",
+    "url": "https://clawhub.ai/skills/factorhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/factorhub-7469d9e645df6dff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/factorhub@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-factorhub-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6a7e4ac11fe8e97e377828d753acbe4c7881d2588607e1fa90ec6a71d508c7b",
+      "artifactSizeBytes": 1852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T03:06:08.272Z"
+}

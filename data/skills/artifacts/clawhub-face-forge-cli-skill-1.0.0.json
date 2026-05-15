@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/face-forge-cli-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.face_forge_cli_skill",
+  "skill": {
+    "id": 56689,
+    "skillKey": "clawhub-face-forge-cli-skill",
+    "name": "Face Forge – AI Face Morph & Face Swap Generator Online – CLI-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "face-forge-cli-skill",
+    "url": "https://clawhub.ai/skills/face-forge-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/face-forge-cli-skill-6edd5b2990624ed5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI face morph and face swap — generate or transform portraits"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776608107198,
+      "changelog": "- Initial release of face-forge CLI skill for AI face morph and face swap.\n- Supports text prompt generation and transformation of portraits with optional reference images.\n- Integrates with weshop-cli and requires the WESHOP_API_KEY environment variable for authentication.\n- Offers two models (jimeng and nano) with various image size and aspect ratio options.\n- Outputs results with status and generated image URLs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52b34536ac7ae32466f81a32e1e1c4ac3134d56662ff60ac4b6d588709bb7dbc"
+}

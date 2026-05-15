@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cooking-recipe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cooking_recipe",
+  "skill": {
+    "id": 19234,
+    "skillKey": "clawhub-cooking-recipe",
+    "name": "Cooking Recipe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cooking-recipe",
+    "url": "https://clawhub.ai/skills/cooking-recipe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cooking-recipe-4894dd84a219cf0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Make a recipe by giving some ingredients."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "demonkit",
+      "userId": "publishers:demonkit",
+      "displayName": "demonkit",
+      "image": "https://avatars.githubusercontent.com/u/4036624?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 627,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773055614388,
+      "changelog": "- Initial release of the cooking-recipe skill for ClawdHub.\n- Add, search, view, and delete recipes using backend API.\n- Manage grocery lists linked to recipes.\n- Supports authentication via GitHub (required), Google, or Apple.\n- Built-in routing guardrails to ensure recipes/grocery features only.\n- Shared backend use is configurable and secure by default.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c93377e7427d77571b428431d743465d3fcd0fdf0accb574947a8d9766cd22ae"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mx-finance-data@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mx_finance_data",
+  "skill": {
+    "id": 60205,
+    "skillKey": "clawhub-mx-finance-data",
+    "name": "All-Market Financial Data Hub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mx-finance-data",
+    "url": "https://clawhub.ai/skills/mx-finance-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mx-finance-data-a18f1ce438e6646b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于东方财富数据库，支持自然语言查询金融数据，覆盖A港美、基金、债券等多种资产，含实时行情、公司信息、估值、财务报表等，可用于投资研究、交易复盘、市场监控、行业分析、信用研究、财报审计、资产配置等场景，适配机构与个人多元需求。返回结果包含数据说明及 xlsx 文件。Natural language query f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "financial-ai-analyst",
+      "userId": "s172qfps754dhtdynwv0gwshes83mtd4",
+      "displayName": "Financial AI Analyst",
+      "image": "https://avatars.githubusercontent.com/u/41098207?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 19734,
+      "installsAllTime": 32,
+      "installsCurrent": 29,
+      "stars": 69,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1776424752067,
+      "changelog": "Publish 1.0.11",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:deb074be18bd2b7aa3afb439345a8ca88a67e8a4f2641f8bf806cd037e05f4a4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wsl-path-converter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wsl_path_converter",
+  "skill": {
+    "id": 34027,
+    "skillKey": "clawhub-wsl-path-converter",
+    "name": "wsl-path-converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wsl-path-converter",
+    "url": "https://clawhub.ai/skills/wsl-path-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wsl-path-converter-c0ef3310721203ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert Windows paths to WSL paths for file operations in WSL environment"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weiqihan",
+      "userId": "publishers:weiqihan",
+      "displayName": "weiqihan",
+      "image": "https://avatars.githubusercontent.com/u/29797127?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773999373008,
+      "changelog": "- Initial release of wsl-path-converter.\n- Converts Windows paths (e.g., `C:\\Users\\file.txt`) to WSL-compatible paths (e.g., `/mnt/c/Users/file.txt`).\n- Automatically detects and translates path separators and drive letters.\n- Designed for file operations and resource access across Windows and WSL environments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c88153c281d32916758417cc3e5e7f095d1144d9e91fa12b967dc7fcda1941a"
+}

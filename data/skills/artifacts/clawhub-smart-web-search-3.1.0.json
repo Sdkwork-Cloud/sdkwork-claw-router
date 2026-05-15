@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-web-search@3.1.0",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_web_search",
+  "skill": {
+    "id": 21563,
+    "skillKey": "clawhub-smart-web-search",
+    "name": "Smart Web Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-web-search",
+    "url": "https://clawhub.ai/skills/smart-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-web-search-ff22cd91ea6fb28a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Smart Web Search v3.1 - Intelligent search with Baidu (China) and Google (International) as primary engines. Real-time news, ad filtering, content de-toxicat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidme6",
+      "userId": "s17aperbk8h3dswpc0vbsayk4d83hweb",
+      "displayName": "davidme6",
+      "image": "https://avatars.githubusercontent.com/u/198009354?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "3.1.0",
+      "createdAt": 1773730204736,
+      "changelog": "v3.1: Baidu (China primary) + Google (International primary). All English documentation. Advanced search syntax. Real-time news filtering.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7544ea750476f9cc954db111d1745007e76a00b234de702331b288bd962b0c5a"
+}

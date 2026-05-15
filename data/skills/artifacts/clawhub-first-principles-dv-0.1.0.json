@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/first-principles-dv@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.first_principles_dv",
+  "skill": {
+    "id": 36125,
+    "skillKey": "clawhub-first-principles-dv",
+    "name": "First Principles Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "first-principles-dv",
+    "url": "https://clawhub.ai/skills/first-principles-dv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/first-principles-dv-ed7a73a19d7d360a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep first-principles analysis of any topic, decision, strategy, or assumption. Strips inherited thinking, identifies what is provably true, and rebuilds fro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawdiri-ai",
+      "userId": "s175fgn0tz50thkr5e819czrnd83fsx9",
+      "displayName": "RunByDaVinci",
+      "image": "https://avatars.githubusercontent.com/u/266047309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774182948364,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb55c932f565a0f9e22d3667d1effade323a380ea4f72af07ce337403109b481"
+}

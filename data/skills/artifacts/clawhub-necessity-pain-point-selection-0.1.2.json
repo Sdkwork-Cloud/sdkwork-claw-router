@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/necessity-pain-point-selection@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.necessity_pain_point_selection",
+  "skill": {
+    "id": 23874,
+    "skillKey": "clawhub-necessity-pain-point-selection",
+    "name": "Necessity Pain Point Selection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "necessity-pain-point-selection",
+    "url": "https://clawhub.ai/skills/necessity-pain-point-selection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/necessity-pain-point-selection-6548c5e463b6528a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps merchants selling utility / problem-solution products (car storage, multi-use kitchen shears, storage boxes, cleaning tools, etc.) do assortment and pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rijoyai",
+      "userId": "s17968d4vetrx5cj2yx3105heh83hrb4",
+      "displayName": "RIJOY-AI",
+      "image": "https://avatars.githubusercontent.com/u/219251023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 428,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773197331984,
+      "changelog": "**Expanded review mining workflow and output structure for merchants.**\n\n- Added detailed workflow for extracting pain points from reviews, including first-step merchant questions and scope boundaries.\n- Expanded explicit output sections: summary for leadership, structured pain summary table, selection spec list, and improvement backlog.\n- Separated action layers (Product, Information, Usage) and clarified root-cause/action chains for every pain point.\n- Included review mining/validation best practices and references to newly added frameworks and data guides.\n- Clarified triggers and when not to use the skill (e.g., for marketing copy or non-utility products).\n- Added concrete pain-type definitions and labeling principles to ensure actionable, supplier-ready output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca04a8c45e805dcc351b700aad5c0a9d68142dd30a19b561bf0d7f19d96500bd"
+}

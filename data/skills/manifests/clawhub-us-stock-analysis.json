@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8359,
+  "uuid": "skill-clawhub-us-stock-analysis",
+  "skillKey": "clawhub-us-stock-analysis",
+  "name": "Us Stock Analysis",
+  "summary": "Comprehensive US stock analysis including fundamental analysis (financial metrics, business quality, valuation), technical analysis (indicators, chart patterns, support/resistance), stock comparisons, and investment report generation. Use.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.us_stock_analysis",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Veera",
+      "features": [
+        "Comprehensive US stock analysis including fundamental analysis (financial metrics, business qua.",
+        "Use when user requests analysis of US stock tickers (e.g., \"analyze AAPL\", \"compare TSLA vs NVD."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/us-stock-analysis@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/119089869?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "us-stock-analysis",
+      "url": "https://clawhub.ai/skills/us-stock-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "us-stock-analysis",
+    "url": "https://clawhub.ai/skills/us-stock-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/us-stock-analysis-d596b8321652d61b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/us-stock-analysis@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-us-stock-analysis-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0e78f14d8f72c0ffb4f294739d4c3d92f8331bd1a84a34a50fd159a257c4319",
+      "artifactSizeBytes": 2126
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T14:40:46.772Z"
+}

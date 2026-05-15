@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kay-juejin-tools@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kay_juejin_tools",
+  "skill": {
+    "id": 73449,
+    "skillKey": "clawhub-kay-juejin-tools",
+    "name": "掘金内容获取"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kay-juejin-tools",
+    "url": "https://clawhub.ai/skills/kay-juejin-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kay-juejin-tools-ed33cb6d2ba303af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供掘金平台文章写作、发布指南及账号注册登录流程，助力用户高效创作技术内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenghoo123-png",
+      "userId": "s17dv44xed17vb7n7v728mr4dd846y7m",
+      "displayName": "shenghoo123-png",
+      "image": "https://avatars.githubusercontent.com/u/265226019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775663844156,
+      "changelog": "kay-juejin-tools v0.1.0\n\n- Initial release with an extensive SKILL.md guide.\n- Provides a detailed introduction to 掘金 (Juejin) and its article publishing workflow.\n- Includes step-by-step instructions for account registration, article creation, and publishing.\n- Offers practical article title and content templates for effective writing.\n- Highlights key tips and common questions for maximizing article engagement and quality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9d0568b57807bb48014c5f6383e542c0b5004a34d385ef0a4dd8d99fe45fbcf"
+}

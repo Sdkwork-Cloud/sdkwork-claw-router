@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sentinel-mood@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sentinel_mood",
+  "skill": {
+    "id": 23651,
+    "skillKey": "clawhub-sentinel-mood",
+    "name": "Sentinel Mood"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sentinel-mood",
+    "url": "https://clawhub.ai/skills/sentinel-mood",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sentinel-mood-47d4c8f6fd2e4f66.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze the sentiment and emotional tone of text using NLTK and VADER. Use this to gauge user mood, detect urgency, or analyze content tone."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "numbpill3d",
+      "userId": "publishers:numbpill3d",
+      "displayName": "splicer scorn",
+      "image": "https://avatars.githubusercontent.com/u/146873484?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 435,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772159223422,
+      "changelog": "Sentinel Mood v1.0.0 initial release:\n\n- Introduces sentiment and emotional tone analysis using NLTK's VADER.\n- Provides positive, negative, neutral, and compound sentiment scores for any input text.\n- Tailored for conversational or social media language and short-form content.\n- Simple usage: Input text, receive sentiment scores as JSON.\n- Requires Python 3, nltk library, and vader_lexicon.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:de3dda7a53193a3f7fcce9e8df9f7f5cb2283eb7f3e9f44e62bcef3dcc3b069f"
+}

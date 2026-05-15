@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24555,
+  "uuid": "skill-clawhub-ihsg-session-summary",
+  "skillKey": "clawhub-ihsg-session-summary",
+  "name": "IHSG Session Summary",
+  "summary": "IHSG Closing Summary Agent untuk OpenClaw. Menghasilkan laporan sesi pagi dan closing dengan Top 10 Net Buy/Sell, Foreign Flow, YTD data, dan insights dalam...",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ihsg_session_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Raufi Musaddiq",
+      "features": [
+        "IHSG Closing Summary Agent untuk OpenClaw",
+        "Menghasilkan laporan sesi pagi dan closing dengan Top 10 Net Buy/Sell, Foreign Flow, YTD data,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ihsg-session-summary@4.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14123151?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ihsg-session-summary",
+      "url": "https://clawhub.ai/skills/ihsg-session-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ihsg-session-summary",
+    "url": "https://clawhub.ai/skills/ihsg-session-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ihsg-session-summary-cf36c4b4b45057ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ihsg-session-summary@4.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ihsg-session-summary-4.0.1.json",
+      "version": "4.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8fef228c8db36d60a967b2c3d6758ffb41bdd40b15bb2fd2c2d329e3d7420f0",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T15:08:50.776Z"
+}

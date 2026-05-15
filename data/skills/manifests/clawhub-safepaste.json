@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21721,
+  "uuid": "skill-clawhub-safepaste",
+  "skillKey": "clawhub-safepaste",
+  "name": "Safepaste",
+  "summary": "Check any OpenClaw prompt, config snippet, or tip against YOUR actual setup before applying it. Auto-detects pasted prompts, analyzes compatibility, shows ex...",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safepaste",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rocanome",
+      "features": [
+        "Check any OpenClaw prompt, config snippet, or tip against YOUR actual setup before applying it",
+        "Auto-detects pasted prompts, analyzes compatibility, shows ex..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safepaste@2.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259168735?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safepaste",
+      "url": "https://clawhub.ai/skills/safepaste"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safepaste",
+    "url": "https://clawhub.ai/skills/safepaste",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safepaste-b5c6e0da5dcbd714.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safepaste@2.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safepaste-2.3.0.json",
+      "version": "2.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:726ea6497d696d67a85360950253fd48a9500b3efb0b2e2c3711ffa70d9086c1",
+      "artifactSizeBytes": 2516
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T18:14:59.020Z"
+}

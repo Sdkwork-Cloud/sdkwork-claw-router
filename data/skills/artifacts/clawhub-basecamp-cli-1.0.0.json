@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/basecamp-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.basecamp_cli",
+  "skill": {
+    "id": 10441,
+    "skillKey": "clawhub-basecamp-cli",
+    "name": "Basecamp CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "basecamp-cli",
+    "url": "https://clawhub.ai/skills/basecamp-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/basecamp-cli-8a3dc6ed2dc6df7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Basecamp (via bc3 API / 37signals Launchpad) projects, to-dos, messages, and campfires via a TypeScript CLI. Use when you want to list/create/update Basecamp projects and todos from the terminal, or when integrating Basecamp automat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emredoganer",
+      "userId": "publishers:emredoganer",
+      "displayName": "emredoganer",
+      "image": "https://avatars.githubusercontent.com/u/91667884?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2379,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769288855864,
+      "changelog": "Initial publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1f7f5840a4a59b4bccfc2cb6b6d954cba532428fad41914f30fa482a6a168a27"
+}

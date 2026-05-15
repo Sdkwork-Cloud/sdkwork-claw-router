@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8232,
+  "uuid": "skill-clawhub-api-gateway",
+  "skillKey": "clawhub-api-gateway",
+  "name": "API Gateway",
+  "summary": "Connect to external services through Maton-managed API routes. Use this skill only after the user names the target app, account, and task. Start with read/li...",
+  "version": "1.0.116",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_gateway",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Connect to external services through Maton-managed API routes",
+        "Use this skill only after the user names the target app, account, and task",
+        "Start with read/li..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-gateway@1.0.116",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-gateway",
+      "url": "https://clawhub.ai/skills/api-gateway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-gateway",
+    "url": "https://clawhub.ai/skills/api-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-gateway-fae39eb1cfc73239.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-gateway@1.0.116",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-gateway-1.0.116.json",
+      "version": "1.0.116",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6eb2d8ec62865dce6d1b88afa6493525446fac2662084c3fea826f74bc8c83bd",
+      "artifactSizeBytes": 2487
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T19:19:33.675Z"
+}

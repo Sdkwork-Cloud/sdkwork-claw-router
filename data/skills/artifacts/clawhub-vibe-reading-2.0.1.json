@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vibe-reading@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibe_reading",
+  "skill": {
+    "id": 28873,
+    "skillKey": "clawhub-vibe-reading",
+    "name": "Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibe-reading",
+    "url": "https://clawhub.ai/skills/vibe-reading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibe-reading-ccbf17a1676dc921.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent book reading and analysis skill. When the user provides an EPUB or TXT book file, split it into chapters, perform deep analysis and summarization..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drbillwang",
+      "userId": "s175ptjbxyq7fy70b1n5t2zzr983s2az",
+      "displayName": "BillWang",
+      "image": "https://avatars.githubusercontent.com/u/101500952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773895507723,
+      "changelog": "Fix security scan flags: move pip deps to frontmatter install declarations, remove runtime pip install instruction, remove explicit bash tool reference",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed9e345891b6ecd9aad6fca3df5378431eb0d5ab9572fb7bb3546a98b9e61345"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37378,
+  "uuid": "skill-clawhub-accountability-buddy",
+  "skillKey": "clawhub-accountability-buddy",
+  "name": "Accountability Buddy",
+  "summary": "Provides daily check-ins, streak tracking, and motivational support to help you stay consistent and accountable to your learning goals.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.accountability_buddy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thinktankglobalbot",
+      "features": [
+        "Provides daily check-ins, streak tracking, and motivational support to help you stay consistent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/accountability-buddy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262883343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "accountability-buddy",
+      "url": "https://clawhub.ai/skills/accountability-buddy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "accountability-buddy",
+    "url": "https://clawhub.ai/skills/accountability-buddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/accountability-buddy-ec25102f43272da1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/accountability-buddy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-accountability-buddy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca716a8ea5b7f46c1780bb39330b41a2b400643ee3cd698d5f449dbe9050b20e",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T00:00:36.424Z"
+}

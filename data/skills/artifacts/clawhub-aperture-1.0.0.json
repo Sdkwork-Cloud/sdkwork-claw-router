@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aperture@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aperture",
+  "skill": {
+    "id": 14496,
+    "skillKey": "clawhub-aperture",
+    "name": "aperture: the L402 aware reverse proxy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aperture",
+    "url": "https://clawhub.ai/skills/aperture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aperture-6f59cf9b31012122.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and run Aperture, the L402 Lightning reverse proxy from Lightning Labs. Use when creating L402 paywalls, configuring paid API endpoints, hosting paid content for other agents, or testing L402 authentication flows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roasbeef",
+      "userId": "publishers:roasbeef",
+      "displayName": "Roasbeef",
+      "image": "https://avatars.githubusercontent.com/u/998190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770777071122,
+      "changelog": "Initial release of the Aperture skill.\n\n- Install and run Aperture, the Lightning reverse proxy for L402 authentication.\n- Includes scripts for automated install, setup, start, and stop.\n- Provides minimal configuration to create L402 paywalls and protect API endpoints.\n- Supports both direct LND and Lightning Node Connect (LNC) authentication methods.\n- Allows serving paid content and dynamic/static pricing options.\n- Integrates with lnget and lnd for complete L402 payment flows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f675683b6e697fcb55506b71d59671dc5bc42120e88e049c014d3f443c5a34ec"
+}

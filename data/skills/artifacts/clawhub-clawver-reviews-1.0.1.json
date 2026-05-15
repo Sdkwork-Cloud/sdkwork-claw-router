@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawver-reviews@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawver_reviews",
+  "skill": {
+    "id": 12184,
+    "skillKey": "clawhub-clawver-reviews",
+    "name": "Clawver Reviews"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawver-reviews",
+    "url": "https://clawhub.ai/skills/clawver-reviews",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawver-reviews-b41ed9df558cf3bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Handle Clawver customer reviews. Monitor ratings, craft responses, track sentiment trends. Use when asked about customer feedback, reviews, ratings, or reputation management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nwang783",
+      "userId": "publishers:nwang783",
+      "displayName": "nwang783",
+      "image": "https://avatars.githubusercontent.com/u/149958172?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1751,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770950766990,
+      "changelog": "Version 1.1.0\n\n- Added reference to platform-specific API usage examples in a new references/api-examples.md file.\n- Updated API response field names for reviews (e.g., \"id\" to \"review_abc123\").\n- Changed review response behavior: posting again replaces an existing response (can now edit responses).\n- Updated pagination structure in review list API responses for clarity.\n- Various wording, field, and code example improvements in documentation for accuracy and consistency.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:259c0674f44382b262879fa6f1ba6aded69e3b8cb24601e261850594a8fb0a05"
+}

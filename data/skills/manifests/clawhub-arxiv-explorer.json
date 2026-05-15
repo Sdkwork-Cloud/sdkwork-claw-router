@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36885,
+  "uuid": "skill-clawhub-arxiv-explorer",
+  "skillKey": "clawhub-arxiv-explorer",
+  "name": "arXiv Explorer",
+  "summary": "Search, download, and explore arXiv academic papers. Use when the user needs to find research papers, download PDFs, get recent publications in a field, or s...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_explorer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "千年虫",
+      "features": [
+        "Search, download, and explore arXiv academic papers",
+        "Use when the user needs to find research papers, download PDFs, get recent publications in a fi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-explorer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53294334?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-explorer",
+      "url": "https://clawhub.ai/skills/arxiv-explorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-explorer",
+    "url": "https://clawhub.ai/skills/arxiv-explorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-explorer-7eaf71e42d5f0e62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-explorer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-explorer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8717eff6dfec34600445661b8dbd9b4d87e5b4f97dfa710a53d754d890fc237",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T04:49:26.657Z"
+}

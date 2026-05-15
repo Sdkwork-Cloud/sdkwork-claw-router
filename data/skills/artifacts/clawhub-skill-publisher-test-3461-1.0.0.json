@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-publisher-test-3461@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_publisher_test_3461",
+  "skill": {
+    "id": 45901,
+    "skillKey": "clawhub-skill-publisher-test-3461",
+    "name": "Skill Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-publisher-test-3461",
+    "url": "https://clawhub.ai/skills/skill-publisher-test-3461",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-publisher-test-3461-6e1b8e6cc5ed75ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate OpenClaw skill publishing to GitHub and ClawHub. Handles ZIP extraction, file preparation (README, .gitignore, SkillBoss links), Git operations, Git..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvisdunlop",
+      "userId": "s17fq465rgqaeb4mjcdf3p9dkh84s6zy",
+      "displayName": "AlvisDunlop",
+      "image": "https://avatars.githubusercontent.com/u/255881479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776134727507,
+      "changelog": "Initial release: fully automates OpenClaw skill publishing from ZIP files or SkillBoss.co to GitHub and ClawHub, with optional Notion tracking.\n\n- Supports publishing skills from ZIP files or by scraping SkillBoss.co (including ZIP download and repo auto-creation).\n- Automatically creates and pushes to GitHub repositories (no manual repo setup needed).\n- Publishes skills on ClawHub, updating Notion databases if provided.\n- Generates standard files for each skill (README, .gitignore, SKILL.md with setup guide).\n- Includes guided workflows for batch or multi-account operations and anti-spam advice.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08fe832c9b8953fbf87a33e557bbcaec87ce183534c113b44d718aa65a6fcc34"
+}

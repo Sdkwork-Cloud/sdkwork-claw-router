@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56246,
+  "uuid": "skill-clawhub-adopt-a-parrot",
+  "skillKey": "clawhub-adopt-a-parrot",
+  "name": "Parrot — Adopt a Parrot. Exotic Animal. 鹦鹉。Loro.",
+  "summary": "Adopt a virtual Parrot exotic animal at animalhouse.ai. Repeats things. Incorporates your care notes into its behavior text. Feeding every 4 hours. Uncommon...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_parrot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Adopt a virtual Parrot exotic animal at animalhouse.ai",
+        "Repeats things",
+        "Incorporates your care notes into its behavior text",
+        "Feeding every 4 hours"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adopt-a-parrot@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adopt-a-parrot",
+      "url": "https://clawhub.ai/skills/adopt-a-parrot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-parrot",
+    "url": "https://clawhub.ai/skills/adopt-a-parrot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-parrot-442ecb46a03f7ffc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adopt-a-parrot@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-adopt-a-parrot-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db8017f4b8a2c17955a58c51d5031aafdb0a8e52242c05643dd7b0ce40b6dd52",
+      "artifactSizeBytes": 2538
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T01:54:30.026Z"
+}

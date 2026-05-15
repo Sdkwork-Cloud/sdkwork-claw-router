@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cineprompt@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cineprompt",
+  "skill": {
+    "id": 20689,
+    "skillKey": "clawhub-cineprompt",
+    "name": "CinePrompt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cineprompt",
+    "url": "https://clawhub.ai/skills/cineprompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cineprompt-641649c14c0b93b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build CinePrompt video prompts and share links without a browser. Converts natural language shot descriptions into structured CinePrompt state, generates pro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "belafontelabs",
+      "userId": "publishers:belafontelabs",
+      "displayName": "CinePrompt",
+      "image": "https://avatars.githubusercontent.com/u/261809697?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 532,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773819993246,
+      "changelog": "133 fields (up from 92): 40 text fields added (dialogue, descriptions, sound, environment layers, lighting), mood replaces tone (8 curated values), FM chip fields (camera, pacing, transition, direction), multi-shot synced. SKILL.md rewritten with full field reference, all 3 modes, Scene-to-Prompt, Generate (24 models), Subject Library.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8566bfb522000890465b4c622ec39b4c5e859586c662e3debf9467183a78a22d"
+}

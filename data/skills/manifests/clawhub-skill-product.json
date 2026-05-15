@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48815,
+  "uuid": "skill-clawhub-skill-product",
+  "skillKey": "clawhub-skill-product",
+  "name": "Skill Product",
+  "summary": "Use when user needs to generate differentiated product descriptions for foreign trade. Use when creating product listings for B2B platforms, e-commerce sites...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_product",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangM-A3",
+      "features": [
+        "Use when user needs to generate differentiated product descriptions for foreign trade",
+        "Use when creating product listings for B2B platforms, e-commerce sites..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-product@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274818589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-product",
+      "url": "https://clawhub.ai/skills/skill-product"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-product",
+    "url": "https://clawhub.ai/skills/skill-product",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-product-116e1158cdd1ec88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-product@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-product-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5426af86feef4a7e085444ad7d62bf96cd35b666270f417cffbc16c83bf6b148",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T07:58:15.148Z"
+}

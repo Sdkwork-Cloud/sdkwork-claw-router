@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dev-setup@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dev_setup",
+  "skill": {
+    "id": 28801,
+    "skillKey": "clawhub-dev-setup",
+    "name": "Dev Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dev-setup",
+    "url": "https://clawhub.ai/skills/dev-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dev-setup-b72cc2f078a82d54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up macOS dev environments with automated install scripts for tools. Use when provisioning Macs, installing dev tools, configuring shells."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773897573887,
+      "changelog": "publish v2.0.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3e4e245ca23147ee0f20bdf1ad0b00d797a862e7c57bf884d4f029cb97b5f30"
+}

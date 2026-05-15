@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prism@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prism",
+  "skill": {
+    "id": 50603,
+    "skillKey": "clawhub-prism",
+    "name": "Prism"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prism",
+    "url": "https://clawhub.ai/skills/prism",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prism-bb4c8eb92b6ec7b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use PRISM when: (1) reviewing an architecture decision, security-sensitive change, or major refactor (>500 lines), (2) making a decision you'll live with for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeremyknows",
+      "userId": "s17d0jemwtgnzyzdsxa0xkp4v183sy11",
+      "displayName": "Jeremy Knows",
+      "image": "https://avatars.githubusercontent.com/u/237305675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 482,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1774721035988,
+      "changelog": "PRISM v2.1.1 introduces new reference documentation and minor protocol enhancements.\n\n- Added 3 new reference files: `archive-retention-policy.md`, `evidence-rules.md`, and `orchestration.md`\n- Improved guidance and metadata in the main skill documentation (SKILL.md) for clarity and maintainability\n- No breaking changes to review flows or user commands",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0447701e26438c2839ed90b2c6e0079228551022b961c05977fc9ffd42e4919a"
+}

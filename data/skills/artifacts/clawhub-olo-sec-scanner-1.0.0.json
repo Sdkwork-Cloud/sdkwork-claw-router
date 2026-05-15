@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/olo-sec-scanner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.olo_sec_scanner",
+  "skill": {
+    "id": 50428,
+    "skillKey": "clawhub-olo-sec-scanner",
+    "name": "SEC Filing Scanner for M&A"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "olo-sec-scanner",
+    "url": "https://clawhub.ai/skills/olo-sec-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/olo-sec-scanner-d6fa3f3150562d73.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SEC EDGAR filing analysis for M&A due diligence — extract financials, detect risks, and track corporate events from 10-K, 10-Q, and 8-K filings"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aniebyl",
+      "userId": "publishers:aniebyl",
+      "displayName": "Aleksander Niebylski",
+      "image": "https://avatars.githubusercontent.com/u/3195144?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 529,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772423650545,
+      "changelog": "Initial publish — SEC EDGAR filing analysis for M&A due diligence",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5bf166218da69f18c2399f05c798b98e1b736e43a23db356d3e2507e4e889c23"
+}

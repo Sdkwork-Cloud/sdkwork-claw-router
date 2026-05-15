@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-transcribe-skill@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_transcribe_skill",
+  "skill": {
+    "id": 68009,
+    "skillKey": "clawhub-douyin-transcribe-skill",
+    "name": "抖音视频智能助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-transcribe-skill",
+    "url": "https://clawhub.ai/skills/douyin-transcribe-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-transcribe-skill-3e7da4811a3ac2a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抖音视频智能助手。用户发抖音链接或视频文件，自动转录并智能处理（总结/逐字稿/归档/讨论）。 触发词：抖音、douyin.com、转文字、转录、视频转文本、douyin、transcribe"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junweiren98-rgb",
+      "userId": "publishers:junweiren98-rgb",
+      "displayName": "junweiren98-rgb",
+      "image": "https://avatars.githubusercontent.com/u/239141115?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 616,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773136282532,
+      "changelog": "v1.1.0: 智能模式升级 - 默认AI总结+支持逐字稿/归档/讨论模式，体验更自然",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3776dbe129a881b98dbc46ab8f2ec6665dfa8d5c5dd3380af5098bc766dd19d"
+}

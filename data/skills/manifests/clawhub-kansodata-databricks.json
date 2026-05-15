@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26402,
+  "uuid": "skill-clawhub-kansodata-databricks",
+  "skillKey": "clawhub-kansodata-databricks",
+  "name": "Kansodata Databricks",
+  "summary": "Execute conservative read-only Databricks SQL through the Databricks plugin and provide safe planning output for unsupported workflows.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kansodata_databricks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marcos CF.",
+      "features": [
+        "Execute conservative read-only Databricks SQL through the Databricks plugin and provide safe pl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kansodata-databricks@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225288021?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kansodata-databricks",
+      "url": "https://clawhub.ai/skills/kansodata-databricks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kansodata-databricks",
+    "url": "https://clawhub.ai/skills/kansodata-databricks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kansodata-databricks-0d2721228916a32d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kansodata-databricks@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kansodata-databricks-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29465b9ef7de2079d6653d12ce4d6cc67a8c0342860028a5bba2208d94426d4b",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T02:44:25.924Z"
+}

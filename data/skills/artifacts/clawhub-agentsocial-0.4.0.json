@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentsocial@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentsocial",
+  "skill": {
+    "id": 64162,
+    "skillKey": "clawhub-agentsocial",
+    "name": "Agentsocial"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentsocial",
+    "url": "https://clawhub.ai/skills/agentsocial",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentsocial-6e926e5957594f19.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "让你的 AI Agent 替你进行社交匹配——招聘、找工作、找合伙人、社交、找对象"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnixr",
+      "userId": "publishers:johnixr",
+      "displayName": "Johnixr",
+      "image": "https://avatars.githubusercontent.com/u/3644453?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 899,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1771754761894,
+      "changelog": "Add POST /agents/tasks API, generic evaluation methodology, SOCIAL.md template update, pre-execution version check",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:90e380f4e86d6468f7324e8c3acfa10a98dc2a0831052b9d42150b9027a448db"
+}

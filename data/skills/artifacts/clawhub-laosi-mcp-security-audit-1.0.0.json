@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/laosi-mcp-security-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.laosi_mcp_security_audit",
+  "skill": {
+    "id": 46192,
+    "skillKey": "clawhub-laosi-mcp-security-audit",
+    "name": "Mcp Security Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "laosi-mcp-security-audit",
+    "url": "https://clawhub.ai/skills/laosi-mcp-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/laosi-mcp-security-audit-fd0bea14533a89f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs comprehensive security audits on MCP servers including vulnerability scans, malware detection, compliance checks, and detailed remediation reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "534422530",
+      "userId": "s170k9770tgh0506hw0dwtb6pd83kwyq",
+      "displayName": "534422530",
+      "image": "https://avatars.githubusercontent.com/u/82763531?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777250590346,
+      "changelog": "Initial release of laosi-mcp-security-audit:\n\n- Comprehensive vulnerability scanning for MCP servers and skills\n- Malware detection and reporting\n- Compliance checking with detailed reports\n- Remediation guidance provided for identified issues",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5babae6b13119f91c0aa3c0ecc101a5cb905a9f397eac79a1ad4c66a1626015c"
+}

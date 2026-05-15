@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lorra-ceo-briefing@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lorra_ceo_briefing",
+  "skill": {
+    "id": 61839,
+    "skillKey": "clawhub-lorra-ceo-briefing",
+    "name": "Daily CEO Briefing Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lorra-ceo-briefing",
+    "url": "https://clawhub.ai/skills/lorra-ceo-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lorra-ceo-briefing-108307599d81fda9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日简报生成 skill。自动抓取 28 个来源的实时内容，生成 CEO 风格的深度分析简报。触发条件：用户请求\"每日简报\"、\"科技新闻\"、\"AI 简报\"。核心功能：RSS 抓取 → JSON 数据 → AI 生成 CEO 简报。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yhlorra",
+      "userId": "s1722rfrg89fk95t1dwm4vqdyx83j73f",
+      "displayName": "zylorra",
+      "image": "https://avatars.githubusercontent.com/u/111432771?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774687488792,
+      "changelog": "v1.0.3: 署名从「战音Lorra」简化为「lorra」",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:752098cb20cc87e3d12b78f84c585a79c3127c6cf21965d8d80540e26f0b5bb6"
+}

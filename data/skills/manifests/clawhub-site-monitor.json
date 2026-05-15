@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20034,
+  "uuid": "skill-clawhub-site-monitor",
+  "skillKey": "clawhub-site-monitor",
+  "name": "Website Monitor",
+  "summary": "Monitor websites for changes, downtime, or specific content. Get notified when a page changes, goes down, or matches/stops matching a pattern. Lightweight —...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.site_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shihao Jiang (Zac)",
+      "features": [
+        "Monitor websites for changes, downtime, or specific content",
+        "Get notified when a page changes, goes down, or matches/stops matching a pattern",
+        "Lightweight —..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/site-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15880609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "site-monitor",
+      "url": "https://clawhub.ai/skills/site-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "site-monitor",
+    "url": "https://clawhub.ai/skills/site-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/site-monitor-3a29874de98055c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/site-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-site-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83710b7274651b930cc57fb87270a79827aadd4dac36132c68439d4484f9009a",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T07:16:43.505Z"
+}

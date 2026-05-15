@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/persona-hr-coordinator@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_hr_coordinator",
+  "skill": {
+    "id": 51540,
+    "skillKey": "clawhub-persona-hr-coordinator",
+    "name": "Persona Hr Coordinator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-hr-coordinator",
+    "url": "https://clawhub.ai/skills/persona-hr-coordinator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-hr-coordinator-b68efba97f853ab1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Handle HR workflows — onboarding, announcements, and employee comms."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "googleworkspace-bot",
+      "userId": "s17d07d7j6wvs7e49gkh2nncms83fh1m",
+      "displayName": "googleworkspace-bot",
+      "image": "https://avatars.githubusercontent.com/u/109114539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 730,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1774982124146,
+      "changelog": "- Updated version metadata from 0.22.4 to 0.22.5 in SKILL.md.\n- No functional or instructional changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:870e5f92af7161f573082eda7a4fe9012e94472e7bbf3b25d16bf654d36fd98a"
+}

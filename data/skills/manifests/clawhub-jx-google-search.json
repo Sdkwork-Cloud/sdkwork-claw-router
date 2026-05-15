@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37319,
+  "uuid": "skill-clawhub-jx-google-search",
+  "skillKey": "clawhub-jx-google-search",
+  "name": "google-search",
+  "summary": "Search the web using SkillBoss API Hub. Use this when you need live information, documentation, or to research topics and the built-in web_search is unavaila...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jx_google_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KirkRaman",
+      "features": [
+        "Search the web using SkillBoss API Hub",
+        "Use this when you need live information, documentation, or to research topics and the built-in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jx-google-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255880392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jx-google-search",
+      "url": "https://clawhub.ai/skills/jx-google-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jx-google-search",
+    "url": "https://clawhub.ai/skills/jx-google-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jx-google-search-f5156b993415898c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jx-google-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jx-google-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78ce0caccfa9b277c19ece0e7ea8f9c46674b2cc82656a54d676df1f413fb4be",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T08:07:52.590Z"
+}

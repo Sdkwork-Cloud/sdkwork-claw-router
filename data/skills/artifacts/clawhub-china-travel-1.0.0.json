@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-travel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_travel",
+  "skill": {
+    "id": 18724,
+    "skillKey": "clawhub-china-travel",
+    "name": "China Travel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-travel",
+    "url": "https://clawhub.ai/skills/china-travel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-travel-fa60a995ed77b3b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive travel planning, booking, and management skill. Use when needing to plan china trips, manage multi-destination itineraries, handle family trave..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newlux",
+      "userId": "publishers:newlux",
+      "displayName": "newlux",
+      "image": "https://avatars.githubusercontent.com/u/4240787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 646,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773107868985,
+      "changelog": "Initial release of the Ctrip skill for comprehensive China travel planning.\n\n- Supports international and multi-destination itinerary planning.\n- Manages family travel logistics, including routes and age-specific needs.\n- Optimizes travel costs and handles travel documentation.\n- Coordinates bookings across flights, hotels, and tours.\n- Provides references and checklists for smoother trip planning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c333e8363d7045c5c8bee071a46284793c4dfbb2f24c9598655e6f8971542fb9"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66335,
+  "uuid": "skill-clawhub-eth-strategy",
+  "skillKey": "clawhub-eth-strategy",
+  "name": "Eth Strategy",
+  "summary": "对 ETH/USDT 进行全方位技术分析，输出方向（多/空）、进场、止损、分批止盈点位。 使用的分析手段包括：缠论结构、MACD、EMA、MA、KDJ、BOLL、RSI、ADX、 各种 K 线形态（裸K、吞没、锤子等）、大单成交量（筹码区）以及 简易的散户情绪/做市商猎杀区判定。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eth_strategy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samary-xia",
+      "features": [
+        "对 ETH/USDT 进行全方位技术分析，输出方向（多/空）、进场、止损、分批止盈点位。 使用的分析手段包括：缠论结构、MACD、EMA、MA、KDJ、BOLL、RSI、ADX、 各种 K."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eth-strategy@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54519849?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eth-strategy",
+      "url": "https://clawhub.ai/skills/eth-strategy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eth-strategy",
+    "url": "https://clawhub.ai/skills/eth-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eth-strategy-b67431660421b4e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eth-strategy@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-eth-strategy-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a6038ed090ee818c13f8b3f28ca717e7cb02a965f303e4a63da4221446efa98",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T18:01:06.809Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trading-coagent-vic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trading_coagent_vic",
+  "skill": {
+    "id": 66319,
+    "skillKey": "clawhub-trading-coagent-vic",
+    "name": "Trading Co-Agent Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trading-coagent-vic",
+    "url": "https://clawhub.ai/skills/trading-coagent-vic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trading-coagent-vic-a8c3e5bff322351c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI協助監控並修復交易腳本缺漏，主動執行和補救加密貨幣及股票自動交易，持續優化交易效能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chungvic",
+      "userId": "s17c74402z77nc2ek4rf3ybne183pt97",
+      "displayName": "chungvic",
+      "image": "https://avatars.githubusercontent.com/u/264721513?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775293878474,
+      "changelog": "trading-coagent-vic 1.0.0 Changelog\n\n- Initial release of the trading-coagent skill.\n- Enables AI to collaborate with trading scripts by monitoring signals every 5 minutes.\n- AI supplements missed signals, repairs failed or erroneous trades, and can proactively execute trades when appropriate.\n- Continuous script analysis and optimization loop provided.\n- Features detailed decision process, rescue protocols, logging templates, and checklists for crypto/stock automation use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:171885a437293743ee103619b2d11d9a361e875e1570476fc49d8492e8c75a38"
+}

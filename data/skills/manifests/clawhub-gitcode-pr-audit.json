@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24684,
+  "uuid": "skill-clawhub-gitcode-pr-audit",
+  "skillKey": "clawhub-gitcode-pr-audit",
+  "name": "GitCode PR Audit",
+  "summary": "Quality audit for merged GitCode PRs: sample by time range or repo list, check compliance (labels, comments, tests, size, etc.), output table. Use when user...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitcode_pr_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "do_while_true",
+      "features": [
+        "Quality audit for merged GitCode PRs: sample by time range or repo list, check compliance (labe.",
+        "Use when user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gitcode-pr-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30582182?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gitcode-pr-audit",
+      "url": "https://clawhub.ai/skills/gitcode-pr-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitcode-pr-audit",
+    "url": "https://clawhub.ai/skills/gitcode-pr-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitcode-pr-audit-ddd872d50a266915.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gitcode-pr-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gitcode-pr-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8148fbfee8a6dcf0aa50a7b9a97bf35eb368ccc74779d45429dfe41f02790910",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T11:51:46.858Z"
+}

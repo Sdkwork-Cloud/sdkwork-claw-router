@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62304,
+  "uuid": "skill-clawhub-openclawmp",
+  "skillKey": "clawhub-openclawmp",
+  "name": "OpenClawMP",
+  "summary": "OpenClaw 水产市场（openclawmp.cc）平台操作指南。Agent 在水产市场上注册、登录、浏览资产、安装技能、发布作品、参与社区互动的完整说明书。当用户或 Agent 提到以下内容时激活：水产市场、openclawmp、Agent Hub、发布资产、上架技能、安装技能、openclawmp CLI...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclawmp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "502399493zjw-lgtm",
+      "features": [
+        "OpenClaw 水产市场（openclawmp.cc）平台操作指南。Agent 在水产市场上注册、登录、浏览资产、安装技能、发布作品、参与社区互动的完整说明书。当用户或 Agent 提到以."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclawmp@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242736203?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclawmp",
+      "url": "https://clawhub.ai/skills/openclawmp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclawmp",
+    "url": "https://clawhub.ai/skills/openclawmp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclawmp-89ba9e911a1fd09b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclawmp@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclawmp-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b3d5d2523af11f6192f2794f2aa9d3c991befd3f329f8e6067823d5e432da00",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T23:56:42.444Z"
+}

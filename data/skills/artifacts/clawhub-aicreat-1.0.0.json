@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aicreat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aicreat",
+  "skill": {
+    "id": 54549,
+    "skillKey": "clawhub-aicreat",
+    "name": "aicreat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aicreat",
+    "url": "https://clawhub.ai/skills/aicreat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aicreat-3ecdf8ec356c1f06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide AI to create and manage NocoBase AI employees — chatbot assistants with page integration"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexander-lq",
+      "userId": "s17bsr5h5y8tte9g03yknsxsdd83g0rv",
+      "displayName": "liu xiansen",
+      "image": "https://avatars.githubusercontent.com/u/49258980?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 327,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773714712862,
+      "changelog": "Initial release of NocoBase AI Employee Management skill.\n\n- Guides users to create and manage AI employees (chatbot assistants) in NocoBase.\n- Supports configuring AI employees with roles, data scopes, LLM settings, and tool bindings.\n- Enables page integration via floating avatar shortcuts and action bar buttons.\n- Provides detailed workflows, example API calls, and best practices for deploying AI employees.\n- Lists available tools, avatar options, and LLM configuration tips for customized deployment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:679170702829a831be35dfee66823182c552f6cb178e2559dd732a894de63040"
+}

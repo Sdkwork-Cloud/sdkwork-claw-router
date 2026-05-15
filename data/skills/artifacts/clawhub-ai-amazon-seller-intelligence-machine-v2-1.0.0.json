@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-amazon-seller-intelligence-machine-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_amazon_seller_intelligence_machine_v2",
+  "skill": {
+    "id": 41699,
+    "skillKey": "clawhub-ai-amazon-seller-intelligence-machine-v2",
+    "name": "AI Amazon Seller Intelligence Machine: Find Winning Products, Spy on Competitors and Dominate Any Niche in 30 Minutes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-amazon-seller-intelligence-machine-v2",
+    "url": "https://clawhub.ai/skills/ai-amazon-seller-intelligence-machine-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-amazon-seller-intelligence-machine-v2-e7d324978bae5c7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrapes 10 Amazon data sources to identify winning products, analyze competitors, find review gaps and keywords, and automate buyer follow-up for seller succ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774789845443,
+      "changelog": "Initial release — comprehensive Amazon seller intelligence tool.\n\n- Scrapes Amazon bestseller lists, competitor ASINs, review databases, pricing histories, keyword rankings, and seller profiles with 10 dedicated Apify scrapers.\n- Builds detailed Amazon market intelligence reports to identify high-demand, low-competition products before saturation.\n- Reverse-engineers strategies of top sellers and maps review gaps for product positioning.\n- Finds untapped keyword opportunities competitors are missing.\n- Automates buyer outreach and review generation via GetResponse.\n- Designed for Amazon FBA sellers, Shopify brands, agencies, and anyone selling on Amazon.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b24ccef4adb53d36d904a9e14786694f904635b1a3ae621a788d0c843aed40e9"
+}

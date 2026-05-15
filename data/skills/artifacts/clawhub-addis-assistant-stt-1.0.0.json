@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/addis-assistant-stt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.addis_assistant_stt",
+  "skill": {
+    "id": 10795,
+    "skillKey": "clawhub-addis-assistant-stt",
+    "name": "Addis Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "addis-assistant-stt",
+    "url": "https://clawhub.ai/skills/addis-assistant-stt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/addis-assistant-stt-c11730a0922349b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides Speech-to-Text (STT) and text Translation using the Addis Assistant API (api.addisassistant.com). Use when the user needs to convert an audio file to text (specifically Amharic), or translate text between languages (e.g., Amharic."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dagmawibabi",
+      "userId": "publishers:dagmawibabi",
+      "displayName": "dagmawibabi",
+      "image": "https://avatars.githubusercontent.com/u/44819176?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2329,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769950173849,
+      "changelog": "Initial release of addis-assistant-stt skill.\n\n- Provides Speech-to-Text (STT) for Amharic audio using Addis Assistant API.\n- Supports text translation between languages (e.g., Amharic to English).\n- Requires an `x-api-key` for authentication in all requests.\n- Includes Python scripts for both STT and Translation functions.\n- Documentation and API usage examples available in `references/`.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c8bc298888ce552660fed57837f01997d3d583a9fbb3c4ee3b2862b3e14fceb7"
+}

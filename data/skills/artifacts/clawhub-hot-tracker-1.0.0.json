@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hot-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hot_tracker",
+  "skill": {
+    "id": 72295,
+    "skillKey": "clawhub-hot-tracker",
+    "name": "hot-tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hot-tracker",
+    "url": "https://clawhub.ai/skills/hot-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hot-tracker-e121c26f11555824.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全网热点客观扫描与去噪排行技能。用于在微博、抖音、小红书、微信公众号、知乎、B站、快手等平台之间抓取当前热点，按讨论度、传播度、转发度、情绪强度、对立程度和时效性综合排序，输出默认 Top10 的去噪热点清单。适用于“最近什么最热”“帮我抓全网热点”“按当前话题度排行”“找高讨论度话题”“做热点监测”这类请求。默..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "e2e5g",
+      "userId": "s177nbcv26z7ksbd8gps9thykh83hgt3",
+      "displayName": "e2e5g",
+      "image": "https://avatars.githubusercontent.com/u/130967590?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774801089824,
+      "changelog": "hot-tracker v1.0.0 — 全网热点扫描与去噪排序技能上线\n\n- 新增支持微博、抖音、小红书、公众号、知乎、B站、快手等多平台热点抓取与聚合\n- 增强多维热度打分体系：按讨论度、传播度、转发度、情绪强度、对立程度和时效性综合排序\n- 默认自动输出 Top10 去噪后热点，不反问用户、不偏向任何立场，采用中性事件标题\n- 引入噪音判别与变权机制，自动弱化广告、水帖、情绪宣泄、重复搬运等非高价值内容\n- 新增 scripts/rank_analyzer.py 支持统一评分、降噪、聚类归并与输出\n- 新增详细输出模板，确保每条热点包含综合评分、热门原因、噪音说明和多平台代表数据",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4dc7bb0da8fb287bb7aa14a9c525f0dedb838abb391270019650f43f780aca7"
+}

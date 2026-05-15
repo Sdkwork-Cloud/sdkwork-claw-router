@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67225,
+  "uuid": "skill-clawhub-huangli-almanac",
+  "skillKey": "clawhub-huangli-almanac",
+  "name": "huangli-almanac",
+  "summary": "查询任意日期的黄历信息，包括公历、农历、干支、五行、宜忌等。使用 tiax.cn 的黄历 API 接口， 无需 API 密钥，支持指定年、月、日查询，适合查询结婚、开业、搬家、装修等吉日。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huangli_almanac",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bettersao",
+      "features": [
+        "查询任意日期的黄历信息，包括公历、农历、干支、五行、宜忌等。使用 tiax.cn 的黄历 API 接口， 无需 API 密钥，支持指定年、月、日查询，适合查询结婚、开业、搬家、装修等吉日。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huangli-almanac@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91556602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huangli-almanac",
+      "url": "https://clawhub.ai/skills/huangli-almanac"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huangli-almanac",
+    "url": "https://clawhub.ai/skills/huangli-almanac",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huangli-almanac-5d35789b9aa3027d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huangli-almanac@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-huangli-almanac-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26582fc31341bc6ad6fcdde7b59e784ca3f985f157f43999c87404a0b7333bcf",
+      "artifactSizeBytes": 2485
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T03:34:42.335Z"
+}

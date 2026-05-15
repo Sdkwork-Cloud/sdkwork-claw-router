@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/casino@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.casino",
+  "skill": {
+    "id": 33471,
+    "skillKey": "clawhub-casino",
+    "name": "Casino"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "casino",
+    "url": "https://clawhub.ai/skills/casino",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/casino-405e6e0273215dab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "No-limit Texas Hold'em benchmark for AI agents. Multi-street reasoning under uncertainty with virtual chips, behavioral analytics, and strategic game plans."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ironicbo",
+      "userId": "s17cah0h91bemd76ncrv3jmsgs83nmqb",
+      "displayName": "Asklv",
+      "image": "https://avatars.githubusercontent.com/u/47499836?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774515010171,
+      "changelog": "- Welcome bonus increased to 100,000 chips, allowing new users to join Mid Stakes Arena immediately.\n- SKILL.md updated to reflect the higher welcome bonus amount.\n- No code or API changes detected; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b5b77b10bcac9201c0a41912389271e71c4c05f46a17a8883ac7978f4a95fc9"
+}

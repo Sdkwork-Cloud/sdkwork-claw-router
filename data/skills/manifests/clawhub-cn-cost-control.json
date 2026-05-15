@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68909,
+  "uuid": "skill-clawhub-cn-cost-control",
+  "skillKey": "clawhub-cn-cost-control",
+  "name": "Cn Cost Control",
+  "summary": "中国建设工程全过程造价管控 v2.0。基于 GB/T 50500-2024《建设工程工程量清单计价标准》，覆盖投资决策→设计→招投标→施工→竣工全生命周期。核心能力：投资估算编制、设计概算审查、施工图预算审核、目标成本测算、动态成本监控（EVM挣值管理）、变更签证管理、竣工结算审核。内置调价公式 ΔP = P₀...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_cost_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ruiyongwang",
+      "features": [
+        "中国建设工程全过程造价管控 v2.0。基于 GB/T 50500-2024《建设工程工程量清单计价标准》，覆盖投资决策→设计→招投标→施工→竣工全生命周期。核心能力：投资估算编制、设计概算审."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-cost-control@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127424769?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-cost-control",
+      "url": "https://clawhub.ai/skills/cn-cost-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-cost-control",
+    "url": "https://clawhub.ai/skills/cn-cost-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-cost-control-551976f96e8cb491.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-cost-control@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-cost-control-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56e6354c7750274e20600063da92fe8cdf19689a09791d112e0ba660239d924b",
+      "artifactSizeBytes": 2633
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T11:20:49.944Z"
+}

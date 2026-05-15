@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huo15-comic-bgm@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_comic_bgm",
+  "skill": {
+    "id": 63615,
+    "skillKey": "clawhub-huo15-comic-bgm",
+    "name": "Huo15 Comic Bgm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-comic-bgm",
+    "url": "https://clawhub.ai/skills/huo15-comic-bgm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-comic-bgm-f43147a4fc367a4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据剧本整体 mood 生成一首 BGM（Suno v5），时长匹配总时长，国风优先（古筝/琵琶/笛子）。触发词：BGM 生成、背景音乐、配乐。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaobod1",
+      "userId": "s17f6q72skfgyjycm2frgdc8dn83v5mk",
+      "displayName": "Job Zhao",
+      "image": "https://avatars.githubusercontent.com/u/13188275?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 107,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777270041287,
+      "changelog": "initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83b9d2d44a703ae6e03fa3405ff95bd893beefdfcbf7202bcda96d8e38030ebb"
+}

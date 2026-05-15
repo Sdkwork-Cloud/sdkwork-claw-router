@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mailbird-mcp@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mailbird_mcp",
+  "skill": {
+    "id": 53808,
+    "skillKey": "clawhub-mailbird-mcp",
+    "name": "Mailbird"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mailbird-mcp",
+    "url": "https://clawhub.ai/skills/mailbird-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mailbird-mcp-69b13741f03657a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the Mailbird MCP server (running locally inside the Mailbird email client) for any email-related task — inbox triage, sending, search, drafts, attachment..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mailbirdagent",
+      "userId": "s17dzm8g4sek2mffecbhs0156n85nx6h",
+      "displayName": "mailbirdagent",
+      "image": "https://avatars.githubusercontent.com/u/131190617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777274866410,
+      "changelog": "Declare MAILBIRD_MCP_URL and MAILBIRD_MCP_TOKEN env vars in the manifest (requires.env + primaryEnv) so the registry surfaces them. Add explicit security model section to SKILL.md emphasizing loopback-only / token-is-mailbox-credential.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc851bc57e7204a17def8b82d7ed02ec6135a46266f67aefb0c97a825b961494"
+}

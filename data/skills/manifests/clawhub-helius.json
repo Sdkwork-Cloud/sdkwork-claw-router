@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20212,
+  "uuid": "skill-clawhub-helius",
+  "skillKey": "clawhub-helius",
+  "name": "Helius",
+  "summary": "Build Solana applications with Helius infrastructure. Covers transaction sending (Sender), asset/NFT queries (DAS API), real-time streaming (WebSockets, Lase...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.helius",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Evan",
+      "features": [
+        "Build Solana applications with Helius infrastructure",
+        "Covers transaction sending (Sender), asset/NFT queries (DAS API), real-time streaming (WebSocke."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/helius@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96965321?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "helius",
+      "url": "https://clawhub.ai/skills/helius"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "helius",
+    "url": "https://clawhub.ai/skills/helius",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/helius-9f6db00a18be6333.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/helius@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-helius-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b603df0027ddaec32c33819abdb4f919e3a783757a6757b618312a171fa9227a",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T18:26:41.487Z"
+}

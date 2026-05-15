@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lum-skill-publisher@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lum_skill_publisher",
+  "skill": {
+    "id": 21225,
+    "skillKey": "clawhub-lum-skill-publisher",
+    "name": "ClawHub Skill Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lum-skill-publisher",
+    "url": "https://clawhub.ai/skills/lum-skill-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lum-skill-publisher-47a86cc8f6ccbda0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research, structure, and publish skills to ClawHub. Analyzes top listings for content patterns, generates gap reports against your draft, patches README/SKIL..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ragesaq",
+      "userId": "s17a03cntbkgqmcgnfy82jdwyh83pade",
+      "displayName": "ragesaq",
+      "image": "https://avatars.githubusercontent.com/u/11304287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 517,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772329710854,
+      "changelog": "Add lesson: instruction-based skills need honest scope language (behavior-change vs active tool)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b14e7ba8bcf3b4656a41ad6e8faaa9fdb3c2affc8314651664ffc4512f1a41f7"
+}

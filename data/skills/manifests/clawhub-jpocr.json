@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50639,
+  "uuid": "skill-clawhub-jpocr",
+  "skillKey": "clawhub-jpocr",
+  "name": "jpocr",
+  "summary": "Japanese OCR via NDLOCR-Lite (National Diet Library). Trigger on 'OCR this image', '日文OCR', 'recognize Japanese text', or any request to extract text from Ja...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpocr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wayne",
+      "features": [
+        "Japanese OCR via NDLOCR-Lite (National Diet Library)",
+        "Trigger on 'OCR this image', '日文OCR', 'recognize Japanese text', or any request to extract text."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jpocr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31076436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jpocr",
+      "url": "https://clawhub.ai/skills/jpocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpocr",
+    "url": "https://clawhub.ai/skills/jpocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpocr-8b9445daa71b64de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jpocr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jpocr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a48fb7b63fd7194705bed118a03379950bc6447b64a7ff8564e431ecae3aa11c",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T11:16:14.201Z"
+}

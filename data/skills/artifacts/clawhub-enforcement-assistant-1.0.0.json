@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/enforcement-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enforcement_assistant",
+  "skill": {
+    "id": 59340,
+    "skillKey": "clawhub-enforcement-assistant",
+    "name": "执行申请助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enforcement-assistant",
+    "url": "https://clawhub.ai/skills/enforcement-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enforcement-assistant-d4c7e9914164940d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assist with civil enforcement application (执行申请) preparation and process guidance. Use when the user asks about 执行申请、强制执行、申请执行、执行立案、执行程序、怎么申请执行、判决执行、强制执行申请,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773821178357,
+      "changelog": "民事执行申请流程指导，含申请材料清单和时效提醒",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30721f59c4cc8549b292a1f635fed575dc9b03f25099b8803ab99c7d1b5dee88"
+}

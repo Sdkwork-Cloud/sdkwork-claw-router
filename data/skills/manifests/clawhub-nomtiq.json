@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58385,
+  "uuid": "skill-clawhub-nomtiq",
+  "skillKey": "clawhub-nomtiq",
+  "name": "Nomtiq",
+  "summary": "Nomtiq — finds restaurants worth going to. No rankings, no ads. Remembers your taste, knows your budget. 小饭票：找餐厅、推荐餐厅、吃什么、附近好吃的。",
+  "version": "0.4.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nomtiq",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OakcoderX",
+      "features": [
+        "Nomtiq — finds restaurants worth going to",
+        "No rankings, no ads",
+        "Remembers your taste, knows your budget",
+        "小饭票：找餐厅、推荐餐厅、吃什么、附近好吃的。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nomtiq@0.4.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87081278?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nomtiq",
+      "url": "https://clawhub.ai/skills/nomtiq"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nomtiq",
+    "url": "https://clawhub.ai/skills/nomtiq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nomtiq-e2e909abe4ed84ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nomtiq@0.4.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-nomtiq-0.4.6.json",
+      "version": "0.4.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2986344cab011b6f5942820cefc184512d8f06d5161e2f49bce833fb752ea00",
+      "artifactSizeBytes": 2262
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:37:47.676Z"
+}

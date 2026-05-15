@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wavespeed-watermark-remover@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wavespeed_watermark_remover",
+  "skill": {
+    "id": 19063,
+    "skillKey": "clawhub-wavespeed-watermark-remover",
+    "name": "WaveSpeedAI Watermark Remover"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wavespeed-watermark-remover",
+    "url": "https://clawhub.ai/skills/wavespeed-watermark-remover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wavespeed-watermark-remover-ba8876e349c6f3a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove watermarks, logos, captions, and text overlays from images and videos using WaveSpeed AI. Intelligently detects and removes watermarks while preservin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chengzeyi",
+      "userId": "publishers:chengzeyi",
+      "displayName": "C",
+      "image": "https://avatars.githubusercontent.com/u/23494160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 620,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772434148630,
+      "changelog": "WaveSpeedAI Watermark Remover 1.0.0 – Initial Release\n\n- Supports removing watermarks, logos, captions, and text overlays from images and videos using WaveSpeed AI.\n- Preserves original texture and background with intelligent detection.\n- Video watermark remover uses temporal-aware inpainting to prevent flickering, for videos up to 10 minutes.\n- Provides simple API usage examples for both images and videos, plus advanced client options and error handling.\n- Transparent pricing: $0.012 per image, $0.01 per video second (min $0.05).\n- Lists security best practices, including proper API key handling and media input validation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:937e136171d4b1c6cf0eadcdcac64c291a4aff9eb79875b25a759d73d369a3a7"
+}

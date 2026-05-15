@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29134,
+  "uuid": "skill-clawhub-api-device-live",
+  "skillKey": "clawhub-api-device-live",
+  "name": "Closeli Open Device Live Query",
+  "summary": "Closeli Device Live Query API. Used to obtain the Web live playback link for a specified device and supports real-time viewing of the device feed. Use when:...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_device_live",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CloseliOpenTeam",
+      "features": [
+        "Closeli Device Live Query API",
+        "Used to obtain the Web live playback link for a specified device and supports real-time viewing.",
+        "Use when:..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-device-live@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269688672?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-device-live",
+      "url": "https://clawhub.ai/skills/api-device-live"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-device-live",
+    "url": "https://clawhub.ai/skills/api-device-live",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-device-live-07f5e9bfdf5f8135.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-device-live@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-device-live-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f06328451d9c6cfa07246acb57d7a94740b61f711a25654b3b551ffd5363868",
+      "artifactSizeBytes": 2458
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T06:24:13.346Z"
+}

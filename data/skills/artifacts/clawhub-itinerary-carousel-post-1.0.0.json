@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/itinerary-carousel-post@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.itinerary_carousel_post",
+  "skill": {
+    "id": 16467,
+    "skillKey": "clawhub-itinerary-carousel-post",
+    "name": "Itinerary Carousel Post"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "itinerary-carousel-post",
+    "url": "https://clawhub.ai/skills/itinerary-carousel-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/itinerary-carousel-post-b1066b85d3878c82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and publish an Instagram carousel post from a tabiji.ai itinerary. Given an itinerary URL, finds Instagram-worthy photos for the destination + top att..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "psyduckler",
+      "userId": "publishers:psyduckler",
+      "displayName": "psyduckler",
+      "image": "https://avatars.githubusercontent.com/u/260153069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 883,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771303261896,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:96be721dc7cceac48d088f8496a7b299cc8baaed821da9c64001136f236d86d1"
+}

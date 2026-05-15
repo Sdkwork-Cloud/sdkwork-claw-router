@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/credit@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.credit",
+  "skill": {
+    "id": 24863,
+    "skillKey": "clawhub-credit",
+    "name": "Credit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "credit",
+    "url": "https://clawhub.ai/skills/credit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/credit-ecc4873a1694eb0d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A comprehensive AI agent skill for understanding and managing credit. Explains how credit scores work and what actually moves them, helps you build credit fr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duclawbot",
+      "userId": "publishers:duclawbot",
+      "displayName": "Duclawbot",
+      "image": "https://avatars.githubusercontent.com/u/216468018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773041482136,
+      "changelog": "Four-file structure: skill + heartbeat + examples + metadata",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66e7532da32b2dbd4d712e38fdaccfe6e692bca790a873bb9d4a64bdbe1940da"
+}

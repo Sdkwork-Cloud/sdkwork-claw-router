@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mowenskill-publish@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mowenskill_publish",
+  "skill": {
+    "id": 57471,
+    "skillKey": "clawhub-mowenskill-publish",
+    "name": "Mowenskill Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mowenskill-publish",
+    "url": "https://clawhub.ai/skills/mowenskill-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mowenskill-publish-1996d6f77c42524c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish, edit, or configure notes on Mowen (墨问) via Open API. Use when user mentions 墨问, mowen, 发布笔记, publish note, or wants to create social-media-style not..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jacobluo",
+      "userId": "publishers:jacobluo",
+      "displayName": "jacobluo",
+      "image": "https://avatars.githubusercontent.com/u/841868?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774147156555,
+      "changelog": "Remove README.md and CLAUDE.md from published package",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62da36af462ddd753cb57bc2a3a7de7dd794898c2aef7021ed8bc79eb254ce94"
+}

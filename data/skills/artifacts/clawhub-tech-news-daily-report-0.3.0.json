@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tech-news-daily-report@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_news_daily_report",
+  "skill": {
+    "id": 64102,
+    "skillKey": "clawhub-tech-news-daily-report",
+    "name": "科技新闻日报"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-news-daily-report",
+    "url": "https://clawhub.ai/skills/tech-news-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-news-daily-report-3d12a07852354236.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "科技新闻日报技能。每日科技新闻热榜整理与报告生成。当用户说\"科技新闻日报\"、\"整理今日科技新闻\"、\"生成科技新闻热榜\"、\"tech-news-daily\"、\"TechNews-Daily-Report\"或类似表达时触发。功能包括：(1) 使用 Tavily 搜索引擎近7天科技/AI 新闻进行搜索；(2) 按相关度..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "binhuatochina",
+      "userId": "s17978fxq3qme7k13kf74jmbmd83g86y",
+      "displayName": "binhuatochina",
+      "image": "https://avatars.githubusercontent.com/u/164600322?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1776558650588,
+      "changelog": "新增主题关联图功能，帮助快速定位知识节点；优化报告结构；更新checkpoint步骤编号",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8256da74ba0164a8aa05a499bb05313050ae77a3d49a53cd1e24f2790b35b77"
+}

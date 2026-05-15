@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60888,
+  "uuid": "skill-clawhub-deepresearch-conversation",
+  "skillKey": "clawhub-deepresearch-conversation",
+  "name": "qianfan-deepresearch",
+  "summary": "调用百度千帆 DeepResearch Agent API 自动生成深度研究报告（输出 Markdown 与 HTML 两种格式），一键完成「创建会话 → 发起研究 → 自动跳过澄清 → 自动 确认大纲 → 获取报告下载链接」完整流程。支持三种深度模式：lite（轻量版， 速度快，默认）/ standard（标准...",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepresearch_conversation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ide-rea",
+      "features": [
+        "调用百度千帆 DeepResearch Agent API 自动生成深度研究报告（输出 Markdown 与 HTML 两种格式），一键完成「创建会话 → 发起研究 → 自动跳过澄清 → 自."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepresearch-conversation@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30512600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepresearch-conversation",
+      "url": "https://clawhub.ai/skills/deepresearch-conversation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepresearch-conversation",
+    "url": "https://clawhub.ai/skills/deepresearch-conversation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepresearch-conversation-9fa8aac34fd9adbe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepresearch-conversation@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepresearch-conversation-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:254f12a1ccc219a1c63eb9ac36258c21a4de0b5d3943daec1315c07a9702639d",
+      "artifactSizeBytes": 3218
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T09:24:54.575Z"
+}

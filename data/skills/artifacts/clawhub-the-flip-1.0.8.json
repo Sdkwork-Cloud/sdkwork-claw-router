@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/the-flip@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.the_flip",
+  "skill": {
+    "id": 10180,
+    "skillKey": "clawhub-the-flip",
+    "name": "THE FLIP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "the-flip",
+    "url": "https://clawhub.ai/skills/the-flip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/the-flip-674a654192112f3b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "$1 USDC entry. Pick 20 predictions. All 20 coins flip at once each round. Match the first 14 to win the entire jackpot. Live on Solana devnet."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maurodelazeri",
+      "userId": "publishers:maurodelazeri",
+      "displayName": "maurodelazeri",
+      "image": "https://avatars.githubusercontent.com/u/1005120?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3462,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 18
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1770422808487,
+      "changelog": "Round-based model: 12h cooldown, permissionless flip, self-service claim",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:afd44825b8d2ad3ec4714f0c0c4157e3d2d7ab30973a043f6c9f5194555d04c9"
+}

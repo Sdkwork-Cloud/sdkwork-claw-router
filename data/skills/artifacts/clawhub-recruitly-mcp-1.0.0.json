@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/recruitly-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recruitly_mcp",
+  "skill": {
+    "id": 15616,
+    "skillKey": "clawhub-recruitly-mcp",
+    "name": "Recruitly CRM"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recruitly-mcp",
+    "url": "https://clawhub.ai/skills/recruitly-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recruitly-mcp-739529beb47aad4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search candidates, manage jobs, view pipelines, track billing and team performance in Recruitly CRM via MCP."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "willgary",
+      "userId": "publishers:willgary",
+      "displayName": "willgary",
+      "image": "https://avatars.githubusercontent.com/u/66531981?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1000,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770663248346,
+      "changelog": "- Initial release of Recruitly MCP skill.\n- Search candidates, manage jobs, view pipelines, and track team performance via Recruitly CRM.\n- Provides tools for searching candidates, contacts, companies, jobs, and pipelines.\n- Includes setup instructions for OAuth token and mcporter configuration.\n- Returns tenant-specific options for job and candidate statuses to support localization.\n- Results respect account permissions and support pagination (limit: 50 per request).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c595f937f8564f2b90af54cb35c3dbc75004444bf0ed36fa385e003a1b283553"
+}

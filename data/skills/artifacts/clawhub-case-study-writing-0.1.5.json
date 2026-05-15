@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/case-study-writing@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.case_study_writing",
+  "skill": {
+    "id": 15878,
+    "skillKey": "clawhub-case-study-writing",
+    "name": "Case Study Writing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "case-study-writing",
+    "url": "https://clawhub.ai/skills/case-study-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/case-study-writing-2f339740bbbf7480.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "B2B case study writing with STAR framework, data visualization, and research. Covers structure, customer quotes, metrics presentation, and distribution forma..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 916,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403093698,
+      "changelog": "- Initial release of the case-study-writing skill with comprehensive B2B case study guidance.\n- Provides a complete STAR framework (Situation, Task, Action, Result) template with word count guidelines.\n- Includes sample headline structures, snapshot box, and best practices for impactful customer quotes.\n- Offers tips for quantifying results, visualizing metrics, and leveraging industry research via CLI tools.\n- Outlines recommended distribution formats and a detailed writing checklist to ensure quality and effectiveness.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a5cd3c9b002c80f228ae37425665fa0a3b032432f7baa9a3f4ce5429d9a9559b"
+}

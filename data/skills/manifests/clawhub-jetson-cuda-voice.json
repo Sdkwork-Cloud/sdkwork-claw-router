@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56138,
+  "uuid": "skill-clawhub-jetson-cuda-voice",
+  "skillKey": "clawhub-jetson-cuda-voice",
+  "name": "Jetson CUDA Voice Pipeline",
+  "summary": "Fully offline, CUDA-accelerated local voice assistant pipeline for NVIDIA Jetson. Wake word (openWakeWord) → real-time VAD → whisper.cpp GPU STT → LLM → Pipe...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jetson_cuda_voice",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Manolis Nikiforakis",
+      "features": [
+        "Fully offline, CUDA-accelerated local voice assistant pipeline for NVIDIA Jetson",
+        "Wake word (openWakeWord) → real-time VAD → whisper.cpp GPU STT → LLM → Pipe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jetson-cuda-voice@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/925242?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jetson-cuda-voice",
+      "url": "https://clawhub.ai/skills/jetson-cuda-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jetson-cuda-voice",
+    "url": "https://clawhub.ai/skills/jetson-cuda-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jetson-cuda-voice-3198995bb3d2eeb9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jetson-cuda-voice@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jetson-cuda-voice-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07c07e4d34886b9f5af4670dd8c4029912173812109aed15db251fdad6f6f462",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T21:52:21.506Z"
+}

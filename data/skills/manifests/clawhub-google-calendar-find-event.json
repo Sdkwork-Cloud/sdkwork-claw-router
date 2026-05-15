@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35262,
+  "uuid": "skill-clawhub-google-calendar-find-event",
+  "skillKey": "clawhub-google-calendar-find-event",
+  "name": "Google Calendar Find Event",
+  "summary": "Atomic node skill to search for events in Google Calendar using the gog CLI.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_calendar_find_event",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zvirb",
+      "features": [
+        "Atomic node skill to search for events in Google Calendar using the gog CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-calendar-find-event@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130008533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-calendar-find-event",
+      "url": "https://clawhub.ai/skills/google-calendar-find-event"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-calendar-find-event",
+    "url": "https://clawhub.ai/skills/google-calendar-find-event",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-calendar-find-event-40c556755499b177.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-calendar-find-event@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-calendar-find-event-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8114381ea618f0621804ccdd0085a5bbfbc57229be7121f01445587f2e314639",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T12:06:09.116Z"
+}

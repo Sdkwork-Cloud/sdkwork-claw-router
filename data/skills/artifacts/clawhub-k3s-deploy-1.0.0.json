@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/k3s-deploy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.k3s_deploy",
+  "skill": {
+    "id": 61788,
+    "skillKey": "clawhub-k3s-deploy",
+    "name": "K3s Kubernetes Deploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "k3s-deploy",
+    "url": "https://clawhub.ai/skills/k3s-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/k3s-deploy-67c4ac82ab6813d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动化部署 K3s Kubernetes 集群到多台 Linux 服务器。支持自动镜像拉取、网络配置检测、CNI 插件安装。使用场景：(1) 从零部署 K3s 集群，(2) 修复 NotReady 节点，(3) 批量部署多节点集群。触发条件：用户提到 K3s、Kubernetes 部署、集群安装、节点加入等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuelin314-bot",
+      "userId": "s17ezvhtr8tjxbqankvkctba2983jceb",
+      "displayName": "xuelin314-bot",
+      "image": "https://avatars.githubusercontent.com/u/227390398?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 414,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773732272443,
+      "changelog": "Initial release: Automated K3s cluster deployment with domestic mirror support, automatic network interface detection, and comprehensive troubleshooting guide",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1618f5e425389f57abeba446add4e31191d599f56efad04bf2132904bad793a"
+}

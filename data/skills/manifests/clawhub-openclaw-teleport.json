@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45412,
+  "uuid": "skill-clawhub-openclaw-teleport",
+  "skillKey": "clawhub-openclaw-teleport",
+  "name": "openclaw-teleport",
+  "summary": "Migrate, backup, or restore an OpenClaw agent workspace to/from a single .soul file. Use when the user wants to move an agent to a new machine, back up their...",
+  "version": "0.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_teleport",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kagura-agent",
+      "features": [
+        "Migrate, backup, or restore an OpenClaw agent workspace to/from a single .soul file",
+        "Use when the user wants to move an agent to a new machine, back up their..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-teleport@0.3.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268167063?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-teleport",
+      "url": "https://clawhub.ai/skills/openclaw-teleport"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-teleport",
+    "url": "https://clawhub.ai/skills/openclaw-teleport",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-teleport-2cd811106705f3e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-teleport@0.3.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-teleport-0.3.2.json",
+      "version": "0.3.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:117267d8b1511a99f4c71cc90cb191442b6c921110cc0697fdc2bc8f60433504",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T05:35:34.538Z"
+}

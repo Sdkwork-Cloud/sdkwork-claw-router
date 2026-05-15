@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qc-deep-feature-forensics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qc_deep_feature_forensics",
+  "skill": {
+    "id": 51559,
+    "skillKey": "clawhub-qc-deep-feature-forensics",
+    "name": "Qc Deep Feature Forensics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qc-deep-feature-forensics",
+    "url": "https://clawhub.ai/skills/qc-deep-feature-forensics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qc-deep-feature-forensics-2e74b118c3e3fcc9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "12-dimensional technical feature attribution engine — compares winner vs loser trade entry conditions using RSI, Bollinger, MACD, volume surge, gap, and more..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tltby12341",
+      "userId": "s17b0eq3j5h16t0deanr16r2hx83qchd",
+      "displayName": "tltby12341",
+      "image": "https://avatars.githubusercontent.com/u/30487767?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773757263738,
+      "changelog": "Initial release of qc-deep-feature-forensics — a 12-dimensional technical feature attribution engine for quantitative trading.\n\n- Compares entry conditions of winning vs losing trades using 12 key market features (e.g., RSI, Bollinger, MACD, volume, gap).\n- Produces a report with winner/loser feature comparison, what-if filter analysis, and the statistical profile of ideal winning entries.\n- Supports batch order reconstruction, historical data download with per-ticker caching, and full feature matrix export.\n- Includes robust caching, diagnostic outputs, and best-practice usage notes.\n- Requires Python 3, pip3, and Python packages: pandas, numpy, yfinance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e1a938120ff130e27c49c9ec321c41f44ca810f8b0454797648b5f11ffc5227"
+}

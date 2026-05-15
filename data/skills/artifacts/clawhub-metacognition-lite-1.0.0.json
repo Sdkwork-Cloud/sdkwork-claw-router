@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/metacognition-lite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metacognition_lite",
+  "skill": {
+    "id": 50284,
+    "skillKey": "clawhub-metacognition-lite",
+    "name": "Metacognitive Protocol Lite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metacognition-lite",
+    "url": "https://clawhub.ai/skills/metacognition-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metacognition-lite-9ff38566de1b0e39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Metacognitive Protocol for AI Agents — Stop hallucinations, fake completions, and task drift. A lightweight thinking framework that makes any LLM-based agent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "q7766206",
+      "userId": "s17e0pb9djr24v7nb4s8tqsmjd84rcfy",
+      "displayName": "q7766206",
+      "image": "https://avatars.githubusercontent.com/u/253486208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 509,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772457946899,
+      "changelog": "v1.0.0: Core 5-stage metacognitive pipeline. Intent decoding, difficulty assessment, boundary declaration, execution monitoring, delivery validation. Model-agnostic. Reduces fake completions by 91%, hallucinations by 82%.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:79e543618f6ca6d9989ac1a6a85b0ab13893d2ac0e4fa44f9967a33b4738ceda"
+}

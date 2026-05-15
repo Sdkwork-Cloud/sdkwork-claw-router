@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ernie-image-gen@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ernie_image_gen",
+  "skill": {
+    "id": 58270,
+    "skillKey": "clawhub-ernie-image-gen",
+    "name": "Ernie Image Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ernie-image-gen",
+    "url": "https://clawhub.ai/skills/ernie-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ernie-image-gen-149d63d87979b46e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "百度文生图 / Baidu ERNIE-Image text-to-image generation. Generate AI images via Baidu AI Studio's ERNIE-Image and ERNIE-Image-Turbo models. 中文：支持文生图、AI绘图、图片生成、百度生..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwork4me",
+      "userId": "s17e0m6y9amt043q9p2bbb7d9x83tecb",
+      "displayName": "AIwork4me",
+      "image": "https://avatars.githubusercontent.com/u/261514469?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1777704026760,
+      "changelog": "Version 2.0.0 (ernie-image-gen)\n\n- Added a \"Safety Boundary\" section outlining appropriate use, data privacy, and responsible generation guidelines.\n- Clarified that existing files are not overwritten—numeric suffixes are now added when saving output images.\n- Updated default parameter recommendations and emphasized when they should be preferred.\n- Streamlined model descriptions, best-use cases, and parameter tables for improved clarity.\n- Adjusted instructions to highlight security (API key handling), output verification, and correct use context.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2837cac0d128c2eebf42435de6727576ea0e38fac4e89b3ba7b6ff4944a8bd11"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10988,
+  "uuid": "skill-clawhub-omnisearch",
+  "skillKey": "clawhub-omnisearch",
+  "name": "omnisearch",
+  "summary": "MANDATORY web search tool for current information, news, prices, facts, or any data not in your training. This is THE ONLY way to search the internet in this OpenClaw environment. ALWAYS use this skill when the user asks for web searches o.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omnisearch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bguidolim",
+      "features": [
+        "MANDATORY web search tool for current information, news, prices, facts, or any data not in your.",
+        "This is THE ONLY way to search the internet in this OpenClaw environment",
+        "ALWAYS use this skill when the user asks for web searches or when you need up-to-date informati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/omnisearch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/987360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "omnisearch",
+      "url": "https://clawhub.ai/skills/omnisearch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omnisearch",
+    "url": "https://clawhub.ai/skills/omnisearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omnisearch-422deb67813de617.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/omnisearch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-omnisearch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30e75bc2b85468be1de8674d7e28b50b1fc31ea244f8e7568b8fe5cb0a1c1738",
+      "artifactSizeBytes": 2671
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T18:22:08.566Z"
+}

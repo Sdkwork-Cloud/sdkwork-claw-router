@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/relationship-repair@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.relationship_repair",
+  "skill": {
+    "id": 33860,
+    "skillKey": "clawhub-relationship-repair",
+    "name": "Relationship Repair Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "relationship-repair",
+    "url": "https://clawhub.ai/skills/relationship-repair",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/relationship-repair-ac43ffc5a7197db6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Relationship Repair is an AI guide for rebuilding trust, emotional safety, and communication after hurt, distance, or repeated conflict. It helps couples and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imwyvern",
+      "userId": "s17as2pe33fqm26ag8dqnwe0gx83gd3q",
+      "displayName": "wes",
+      "image": "https://avatars.githubusercontent.com/u/1765672?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774896606604,
+      "changelog": "- Shortened and clarified the skill description for better user understanding.\n- Added a README.md file for improved skill documentation and onboarding.\n- No framework changes; core guidelines and repair plans remain unchanged.\n- Improved accessibility of purpose for users needing relationship repair, trust rebuilding, and communication help.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c4302cf842fd85219b8ee4e46b92b7894024d01e36eb98c60766e5101ace100"
+}

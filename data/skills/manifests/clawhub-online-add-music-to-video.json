@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49116,
+  "uuid": "skill-clawhub-online-add-music-to-video",
+  "skillKey": "clawhub-online-add-music-to-video",
+  "name": "Online Add Music To Video",
+  "summary": "Get music-backed videos ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"add...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.online_add_music_to_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mhogan2013-9",
+      "features": [
+        "Get music-backed videos ready to post, without touching a single slider",
+        "Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"add..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/online-add-music-to-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208827708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "online-add-music-to-video",
+      "url": "https://clawhub.ai/skills/online-add-music-to-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "online-add-music-to-video",
+    "url": "https://clawhub.ai/skills/online-add-music-to-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/online-add-music-to-video-be6cf19ad5108cf0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/online-add-music-to-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-online-add-music-to-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b87b147ab95897bd584d31fa3961164875ed318452e07f60051dd1e898b072c8",
+      "artifactSizeBytes": 2534
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T03:23:01.424Z"
+}

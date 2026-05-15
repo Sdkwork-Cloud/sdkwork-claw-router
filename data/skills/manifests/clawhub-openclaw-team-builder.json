@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22251,
+  "uuid": "skill-clawhub-openclaw-team-builder",
+  "skillKey": "clawhub-openclaw-team-builder",
+  "name": "Openclaw Team Builder",
+  "summary": "Manage OpenClaw agent teams — add agents, deploy templates, health check, auto-fix, view org tree, rollback, goal-driven team suggestion. Use when user menti...",
+  "version": "3.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_team_builder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eggyrooch-blip",
+      "features": [
+        "Manage OpenClaw agent teams — add agents, deploy templates, health check, auto-fix, view org tr.",
+        "Use when user menti..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-team-builder@3.6.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226265806?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-team-builder",
+      "url": "https://clawhub.ai/skills/openclaw-team-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-team-builder",
+    "url": "https://clawhub.ai/skills/openclaw-team-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-team-builder-c9dc0e9b283c298b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-team-builder@3.6.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-team-builder-3.6.1.json",
+      "version": "3.6.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fff8d6ebcd35e653b18767c839feffbb58a0ff2a5bfac2e4a3c99e3831258aaf",
+      "artifactSizeBytes": 2143
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T00:32:42.481Z"
+}

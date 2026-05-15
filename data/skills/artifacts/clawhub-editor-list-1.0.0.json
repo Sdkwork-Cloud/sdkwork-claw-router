@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-list@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_list",
+  "skill": {
+    "id": 44387,
+    "skillKey": "clawhub-editor-list",
+    "name": "Editor List"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-list",
+    "url": "https://clawhub.ai/skills/editor-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-list-369462ff73418f7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get editor access list ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"show..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776894520068,
+      "changelog": "editor-list 1.0.0\n\n- Initial release of a cloud-based tool for managing and viewing editor access in video projects.\n- Upload video clips (MP4, MOV, AVI, WebM up to 500MB), view and manage editor lists and their access levels, and export projects as 1080p MP4 files.\n- Automatic session and authentication handling using API tokens; requires no local installation.\n- Supports team workflows—assign/edit/remove collaborators and quickly review project editor status.\n- Key features include streamlined exports, clear error messaging, and session state management for fast project iteration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:400f1ad8904501cc0729ac89260837502dd7640e089a5fc6dbeb6acad5464c9f"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30285,
+  "uuid": "skill-clawhub-csv-parser-local",
+  "skillKey": "clawhub-csv-parser-local",
+  "name": "Csv Parser Local",
+  "summary": "Parse and generate RFC 4180 compliant CSV that works across tools.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.csv_parser_local",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "panchenbo",
+      "features": [
+        "Parse and generate RFC 4180 compliant CSV that works across tools."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/csv-parser-local@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75836904?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "csv-parser-local",
+      "url": "https://clawhub.ai/skills/csv-parser-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "csv-parser-local",
+    "url": "https://clawhub.ai/skills/csv-parser-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/csv-parser-local-51bc70ed790cf62b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/csv-parser-local@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-csv-parser-local-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f49c0c9ce0140802145434eb4df6f691989b1e0f8f8741e61df6fa5f64f7687d",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:56:53.266Z"
+}

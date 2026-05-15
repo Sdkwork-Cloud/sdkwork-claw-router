@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-voice-local@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_voice_local",
+  "skill": {
+    "id": 29122,
+    "skillKey": "clawhub-text-to-voice-local",
+    "name": "Text to Voice Local"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-voice-local",
+    "url": "https://clawhub.ai/skills/text-to-voice-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-voice-local-27491284ab96fa33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local text-to-voice generation for OpenClaw workspaces using a canonical txt-to-mp3 pipeline. Use when the user wants to turn any prepared text into voice, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "betonimig",
+      "userId": "s17e47epsqzkdfy86w3jdzahkn84ap5g",
+      "displayName": "Ildar",
+      "image": "https://avatars.githubusercontent.com/u/1042845?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1775505200768,
+      "changelog": "Add dependency checks with install hints in status and before voice generation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd98afc305c3cb70c27f2ea6313d446ab893014f3f16f79a904f6c70aa7915ab"
+}

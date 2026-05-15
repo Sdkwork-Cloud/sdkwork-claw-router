@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29959,
+  "uuid": "skill-clawhub-reflectt",
+  "skillKey": "clawhub-reflectt",
+  "name": "Reflectt",
+  "summary": "Manage Reflectt teams by pulling tasks, reading inbox, updating presence, posting chat messages, and shipping updates via reflectt-node and reflectt-cloud APIs.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reflectt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryancampbell",
+      "features": [
+        "Manage Reflectt teams by pulling tasks, reading inbox, updating presence, posting chat messages."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reflectt@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121135?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reflectt",
+      "url": "https://clawhub.ai/skills/reflectt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reflectt",
+    "url": "https://clawhub.ai/skills/reflectt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reflectt-9b862ab650223b49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reflectt@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reflectt-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ead29c473234145382ccf3c942c4a7c222a6b2e7b20f251d8402912020ad650",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T17:48:13.233Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cls-news-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cls_news_scraper",
+  "skill": {
+    "id": 11497,
+    "skillKey": "clawhub-cls-news-scraper",
+    "name": "Cls News Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cls-news-scraper",
+    "url": "https://clawhub.ai/skills/cls-news-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cls-news-scraper-d584123cb8797520.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract real-time stock-positive market news from Cailian Press filtered by time, sector, and event type for catalyst identification."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ningjingzhiyuande",
+      "userId": "publishers:ningjingzhiyuande",
+      "displayName": "ningjingzhiyuande",
+      "image": "https://avatars.githubusercontent.com/u/449526?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1916,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770637178487,
+      "changelog": "Initial release of cls-news-scraper.\n\n- Pulls real-time market news from Cailian Press (CLS).\n- Extracts and classifies stock-positive catalysts based on event and sector filters.\n- Outputs structured data: ticker, company, catalyst, source URL, timestamp, and confidence.\n- Designed for easy filtering and downstream scoring.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8c7a697b9c3918a7d6de2285fbbaa1fef216d31ad61ebf19600f1c04e79c921c"
+}

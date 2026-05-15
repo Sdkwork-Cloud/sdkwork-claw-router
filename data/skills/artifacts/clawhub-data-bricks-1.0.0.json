@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-bricks@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_bricks",
+  "skill": {
+    "id": 48715,
+    "skillKey": "clawhub-data-bricks",
+    "name": "Data Bricks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-bricks",
+    "url": "https://clawhub.ai/skills/data-bricks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-bricks-bcf5e39514abc14d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Databricks offers a unified cloud platform built on Apache Spark for big data processing, Lakehouse architecture, and ML lifecycle management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778000647533,
+      "changelog": "Databricks Skill 1.0.0 released:\n\n- 全新介绍 Databricks 的历史、商业模式与竞争格局\n- 梳理关键时间线与 Lakehouse 架构演进\n- 分析产品护城河及开源生态优势\n- 提供 2024 年最新估值与关键业务数据\n- 汇总公司与技术相关的有趣事实",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e2b39f2306e493188093754849d5d31e522abf91026cd690a482e33976a35bf"
+}

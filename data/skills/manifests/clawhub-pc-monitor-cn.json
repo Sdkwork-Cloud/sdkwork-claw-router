@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64425,
+  "uuid": "skill-clawhub-pc-monitor-cn",
+  "skillKey": "clawhub-pc-monitor-cn",
+  "name": "Pc Monitor Cn",
+  "summary": "实时监控PC系统资源状态，包括CPU、内存、磁盘和网络使用情况。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pc_monitor_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1173910773",
+      "features": [
+        "实时监控PC系统资源状态，包括CPU、内存、磁盘和网络使用情况。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pc-monitor-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265417424?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pc-monitor-cn",
+      "url": "https://clawhub.ai/skills/pc-monitor-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pc-monitor-cn",
+    "url": "https://clawhub.ai/skills/pc-monitor-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pc-monitor-cn-472b906763ad57eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pc-monitor-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pc-monitor-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4840550f7c030b9f3140cbab5e6459f592477aaae27ffe31c4c5fadac26bd65d",
+      "artifactSizeBytes": 2047
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T01:20:36.016Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35081,
+  "uuid": "skill-clawhub-skynet-score",
+  "skillKey": "clawhub-skynet-score",
+  "name": "Skynet Score",
+  "summary": "Use for searching CertiK Skynet project scores, looking up blockchain project security ratings, comparing score breakdowns, and integrating the public Skynet...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skynet_score",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CertiK",
+      "features": [
+        "Use for searching CertiK Skynet project scores, looking up blockchain project security ratings,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skynet-score@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243521631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skynet-score",
+      "url": "https://clawhub.ai/skills/skynet-score"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skynet-score",
+    "url": "https://clawhub.ai/skills/skynet-score",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skynet-score-089a4349dd62889f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skynet-score@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skynet-score-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6dd7ac8d2348a52de801bdcb34702cb2b3338bf1a48af0d5b0128a23d60410f1",
+      "artifactSizeBytes": 2324
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T07:54:37.305Z"
+}

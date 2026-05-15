@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18964,
+  "uuid": "skill-clawhub-nano-web-search",
+  "skillKey": "clawhub-nano-web-search",
+  "name": "NanoGPT Web Search",
+  "summary": "AI-powered web search via NanoGPT API with multiple providers (linkup, tavily, exa, kagi, perplexity, valyu, brave). Supports searchResults, sourcedAnswer, a...",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_web_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tim Wolf",
+      "features": [
+        "AI-powered web search via NanoGPT API with multiple providers (linkup, tavily, exa, kagi, perpl.",
+        "Supports searchResults, sourcedAnswer, a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nano-web-search@1.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177006862?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nano-web-search",
+      "url": "https://clawhub.ai/skills/nano-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-web-search",
+    "url": "https://clawhub.ai/skills/nano-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-web-search-c56985131c160366.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nano-web-search@1.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-nano-web-search-1.2.3.json",
+      "version": "1.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cef0c9d7f921cbe6db80329185d8d4c83cf51f40e840849ca73154391aca8660",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T20:41:21.619Z"
+}

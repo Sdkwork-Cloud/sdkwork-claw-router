@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25290,
+  "uuid": "skill-clawhub-wspaces-deploy",
+  "skillKey": "clawhub-wspaces-deploy",
+  "name": "W-Spaces Deploy",
+  "summary": "Deploy static websites to W-Spaces. Use when deploying HTML/CSS/JS sites, landing pages, or single-page apps to wspaces.app. Supports project creation, code...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wspaces_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tran Dac Truong",
+      "features": [
+        "Deploy static websites to W-Spaces",
+        "Use when deploying HTML/CSS/JS sites, landing pages, or single-page apps to wspaces.app",
+        "Supports project creation, code..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wspaces-deploy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79650143?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wspaces-deploy",
+      "url": "https://clawhub.ai/skills/wspaces-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wspaces-deploy",
+    "url": "https://clawhub.ai/skills/wspaces-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wspaces-deploy-70f18428237d01ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wspaces-deploy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wspaces-deploy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff0a522824d19f2d343754b96bf6159cb855517946f1aacd026ce0b7d607020c",
+      "artifactSizeBytes": 2288
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T14:56:50.579Z"
+}

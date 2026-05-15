@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27743,
+  "uuid": "skill-clawhub-fleet-embeddings",
+  "skillKey": "clawhub-fleet-embeddings",
+  "name": "Fleet Embeddings",
+  "summary": "Embeddings with nomic-embed-text, mxbai-embed, and snowflake-arctic-embed across your device fleet. Fleet-routed via Ollama for RAG, semantic search, and vec...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fleet_embeddings",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Embeddings with nomic-embed-text, mxbai-embed, and snowflake-arctic-embed across your device fl.",
+        "Fleet-routed via Ollama for RAG, semantic search, and vec..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fleet-embeddings@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fleet-embeddings",
+      "url": "https://clawhub.ai/skills/fleet-embeddings"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fleet-embeddings",
+    "url": "https://clawhub.ai/skills/fleet-embeddings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fleet-embeddings-f64327c0a5f97012.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fleet-embeddings@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fleet-embeddings-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5050a2730e7a0666c67fdc5593ed4ab9eb6d852eac8d63a2b54607cbee587c93",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T22:18:12.569Z"
+}

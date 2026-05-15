@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-company-clo-2-0-0@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_company_clo_2_0_0",
+  "skill": {
+    "id": 62821,
+    "skillKey": "clawhub-ai-company-clo-2-0-0",
+    "name": "Ai Company Clo 2.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-company-clo-2-0-0",
+    "url": "https://clawhub.ai/skills/ai-company-clo-2-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-company-clo-2-0-0-4eb4d52d0e85becf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供AI公司法律合规支持，包括合同治理、知识产权保护、算法审计、AIGC合规及GDPR/CCPA跨境数据合规。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnsmithfan",
+      "userId": "s17ar8yxm9wh64zhr7mr0xemcn84gs16",
+      "displayName": "JohnSmithfan",
+      "image": "https://avatars.githubusercontent.com/u/147225147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1776596243646,
+      "changelog": "**Major update: 新增AI伦理治理、合规分级、数据接口等核心模块**\n\n- 增加AI伦理委员会架构（成员、职责、决策机制与权限）\n- 新增合规分级目标体系，细化L1/L2/L3不同合规要求与审计流程\n- 完善数据保护双线接口，明确CHO与CLO的职责及通知流程\n- 增设Agent生成数据归属及AIGC内容标注、侵权责任划分\n- 补充AIGC内容合规审查链，覆盖法律、伦理、版权多维度审查及记录标准",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bbfedcc16e94999110dd8489c73a08ecab1a9dba4d00438340118b8a21d31f86"
+}

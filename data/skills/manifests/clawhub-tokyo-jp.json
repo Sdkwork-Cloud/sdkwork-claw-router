@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71011,
+  "uuid": "skill-clawhub-tokyo-jp",
+  "skillKey": "clawhub-tokyo-jp",
+  "name": "Tokyo Jp",
+  "summary": "提供东京旅游景点、文化、美食、住宿、交通及购物娱乐等实用信息和旅行建议。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tokyo_jp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供东京旅游景点、文化、美食、住宿、交通及购物娱乐等实用信息和旅行建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tokyo-jp@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tokyo-jp",
+      "url": "https://clawhub.ai/skills/tokyo-jp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tokyo-jp",
+    "url": "https://clawhub.ai/skills/tokyo-jp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tokyo-jp-3f64dbb82c7895a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tokyo-jp@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tokyo-jp-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5359c7206e3dc53d5108a60eb7c1fc9228316b5a07e165d319e1e26045832fbd",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:27:31.091Z"
+}

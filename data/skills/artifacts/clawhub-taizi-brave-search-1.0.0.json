@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taizi-brave-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taizi_brave_search",
+  "skill": {
+    "id": 29873,
+    "skillKey": "clawhub-taizi-brave-search",
+    "name": "Taizi Brave Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taizi-brave-search",
+    "url": "https://clawhub.ai/skills/taizi-brave-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taizi-brave-search-5da1e75817e521ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web search and content extraction via Brave Search API. Use for searching documentation, facts, or any web content. Lightweight, no browser required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fresh3",
+      "userId": "publishers:fresh3",
+      "displayName": "fresh3",
+      "image": "https://avatars.githubusercontent.com/u/23310067?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 284,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773633761467,
+      "changelog": "Initial release of taizi-brave-search.\n\n- Provides headless web search via Brave Search API (no browser required).\n- Supports extracting and returning readable content from web pages as markdown.\n- Simple CLI: search, specify number of results, fetch content for URLs.\n- Useful for searching documentation, factual info, or fetching precise page content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e1eba0a56770da3f2d982f6c6b6f61a13adf67ddc244dfdd67ad435b35ef879e"
+}

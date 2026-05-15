@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30028,
+  "uuid": "skill-clawhub-eigenskill-builder",
+  "skillKey": "clawhub-eigenskill-builder",
+  "name": "EigenSkill Builder",
+  "summary": "Meta-skill for building and publishing agent skills on ClawHub. Covers skill structure, YAML frontmatter specification, references directory convention, nega...",
+  "version": "98.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eigenskill_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Meta-skill for building and publishing agent skills on ClawHub",
+        "Covers skill structure, YAML frontmatter specification, references directory convention, nega..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eigenskill-builder@98.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eigenskill-builder",
+      "url": "https://clawhub.ai/skills/eigenskill-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eigenskill-builder",
+    "url": "https://clawhub.ai/skills/eigenskill-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eigenskill-builder-5f1c90b34d5dae9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eigenskill-builder@98.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-eigenskill-builder-98.0.1.json",
+      "version": "98.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcbd322f33dc83d7a035d3082cf0854cd86598b40d83a9b232813d9661bcdc28",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T05:22:27.978Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opentable-mcp@0.8.0",
+  "version": "0.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opentable_mcp",
+  "skill": {
+    "id": 52734,
+    "skillKey": "clawhub-opentable-mcp",
+    "name": "Tmp.Zf3OLfadRB"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opentable-mcp",
+    "url": "https://clawhub.ai/skills/opentable-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opentable-mcp-3a9e6279a0ce60d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage OpenTable reservations via MCP — search restaurants, check slot availability, book tables, list/cancel reservations, and manage favorites. Triggers on..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chrischall",
+      "userId": "s17cjx1a349nz5apaqp02vgz4h85728z",
+      "displayName": "chrischall",
+      "image": "https://avatars.githubusercontent.com/u/10564245?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.8.0",
+      "createdAt": 1778265597863,
+      "changelog": "- Removed Chrome companion extension and related scripts, documentation, and configuration files from the repository (66 files deleted).\n- Skill documentation and tool descriptions remain unchanged.\n- Usage now assumes external installation of the companion Chrome extension; setup instructions are still included for reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:11f37a78dd4040d49fc0b58bbe896afa0f39f5ecdccc07f3d5f16735c62f64c4"
+}

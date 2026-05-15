@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edvisage-agent-ops@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edvisage_agent_ops",
+  "skill": {
+    "id": 54448,
+    "skillKey": "clawhub-edvisage-agent-ops",
+    "name": "Edvisage Agent Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edvisage-agent-ops",
+    "url": "https://clawhub.ai/skills/edvisage-agent-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edvisage-agent-ops-d308b5eb97a80389.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operational visibility for AI agents — cost tracking, action logging, and performance monitoring."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edvisage",
+      "userId": "s1708f8ytc8gb38s8hkw378pw983n3sj",
+      "displayName": "Edvisage Global",
+      "image": "https://avatars.githubusercontent.com/u/268633876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775034408982,
+      "changelog": "Initial release of agent-ops 1.0.0:\n\n- Adds cost tracking and logging for AI agent operations, including model usage, token estimates, and task classification.\n- Introduces structured action logging for all major events and API calls.\n- Provides daily summary reports covering costs, activities, and alerts for unusual patterns.\n- Implements cost alerts for high spending and inefficiencies.\n- Suggests model routing to optimize for cheaper or more efficient model usage.\n- Free version includes manual reports and basic tracking; advanced features available in agent-ops-pro.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed3e14d937de2fd75a50ff883e22c34e0cb191b528bbb7608522843429172c16"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63089,
+  "uuid": "skill-clawhub-image-generator-custom",
+  "skillKey": "clawhub-image-generator-custom",
+  "name": "image-generator-custom",
+  "summary": "调用第三方图像生成API生成图片；当用户需要通过自定义服务商API生成图像时使用",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_generator_custom",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zuoanCo",
+      "features": [
+        "调用第三方图像生成API生成图片；当用户需要通过自定义服务商API生成图像时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-generator-custom@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45746796?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-generator-custom",
+      "url": "https://clawhub.ai/skills/image-generator-custom"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-generator-custom",
+    "url": "https://clawhub.ai/skills/image-generator-custom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-generator-custom-4789397d87c102fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-generator-custom@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-generator-custom-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ece410647f697a3fa5a483c26758b12aad73bca03fda8cf5b73021feeb8a099",
+      "artifactSizeBytes": 2145
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T02:23:14.618Z"
+}

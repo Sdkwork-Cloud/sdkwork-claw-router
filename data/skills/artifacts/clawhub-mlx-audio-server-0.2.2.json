@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mlx-audio-server@0.2.2",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mlx_audio_server",
+  "skill": {
+    "id": 10188,
+    "skillKey": "clawhub-mlx-audio-server",
+    "name": "MLX Audio Server"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mlx-audio-server",
+    "url": "https://clawhub.ai/skills/mlx-audio-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mlx-audio-server-1a3ca045eb2ddeed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local 24x7 OpenAI-compatible API server for STT/TTS, powered by MLX on your Mac."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guoqiao",
+      "userId": "publishers:guoqiao",
+      "displayName": "guoqiao",
+      "image": "https://avatars.githubusercontent.com/u/1306111?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2832,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.2.2",
+      "createdAt": 1770693372987,
+      "changelog": "- Updated description to highlight always-on, local API server capabilities for STT/TTS on Mac.\n- Simplified and clarified project overview in SKILL.md.\n- Removed the run_stt.py script from the project.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b1f326295d70ed834f4474797fdf3ae46392ea4e606d50af96c29fa489c4d2c3"
+}

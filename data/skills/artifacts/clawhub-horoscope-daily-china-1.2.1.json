@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/horoscope-daily-china@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.horoscope_daily_china",
+  "skill": {
+    "id": 41779,
+    "skillKey": "clawhub-horoscope-daily-china",
+    "name": "Daily Horoscope Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "horoscope-daily-china",
+    "url": "https://clawhub.ai/skills/horoscope-daily-china",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/horoscope-daily-china-89fefd79aa83dec0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create 12 constellation fortune images with TianAPI - 5-page output with large fonts for social media publishing (Xiaohongshu/Douyin/Toutiao)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangj85",
+      "userId": "s17cj8q4tdasg6fc9y9zytwnv1841wrf",
+      "displayName": "zhangj85",
+      "image": "https://avatars.githubusercontent.com/u/228467788?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1777689292524,
+      "changelog": "Security fix: Remove exposed TianAPI key from config.json; Users must create their own config from config.json.example template",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:28ee7f05844806e87d2b3c8bb947bcd18322400ade4dd36d1390ced355c3d371"
+}

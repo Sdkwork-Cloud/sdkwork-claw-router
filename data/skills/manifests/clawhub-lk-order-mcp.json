@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72454,
+  "uuid": "skill-clawhub-lk-order-mcp",
+  "skillKey": "clawhub-lk-order-mcp",
+  "name": "瑞幸点单MCP",
+  "summary": "瑞幸咖啡订单 MCP 服务。提供一键下单、门店查询、商品浏览、购物车管理、订单管理、优惠券/咖啡券管理、地址管理等功能。适用于瑞幸咖啡内部订购系统。",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lk_order_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fjmjulzl",
+      "features": [
+        "瑞幸咖啡订单 MCP 服务。提供一键下单、门店查询、商品浏览、购物车管理、订单管理、优惠券/咖啡券管理、地址管理等功能。适用于瑞幸咖啡内部订购系统。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lk-order-mcp@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7529986?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lk-order-mcp",
+      "url": "https://clawhub.ai/skills/lk-order-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lk-order-mcp",
+    "url": "https://clawhub.ai/skills/lk-order-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lk-order-mcp-cb9a736ea4d26d96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lk-order-mcp@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lk-order-mcp-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:815eed36860093749539a3ea138d3fde9ff07807fa456692aa58e07d3aed0d8d",
+      "artifactSizeBytes": 2518
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T12:32:47.796Z"
+}

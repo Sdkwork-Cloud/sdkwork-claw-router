@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43424,
+  "uuid": "skill-clawhub-php-sql-fixer",
+  "skillKey": "clawhub-php-sql-fixer",
+  "name": "Php Sql Fixer",
+  "summary": "Detect SQL injection risks in PHP/Yaf projects and generate parameterized query fix patches. Scans for string concatenation in SQL, unsafe superglobal interp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.php_sql_fixer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xavier Mary",
+      "features": [
+        "Detect SQL injection risks in PHP/Yaf projects and generate parameterized query fix patches",
+        "Scans for string concatenation in SQL, unsafe superglobal interp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/php-sql-fixer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225500647?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "php-sql-fixer",
+      "url": "https://clawhub.ai/skills/php-sql-fixer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "php-sql-fixer",
+    "url": "https://clawhub.ai/skills/php-sql-fixer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/php-sql-fixer-d0e1f458ce1d3696.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/php-sql-fixer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-php-sql-fixer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48900d27602914ca9f4830b2a9243f472dd653c298f5702a4521160ddd34ce8f",
+      "artifactSizeBytes": 2360
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T17:36:42.990Z"
+}

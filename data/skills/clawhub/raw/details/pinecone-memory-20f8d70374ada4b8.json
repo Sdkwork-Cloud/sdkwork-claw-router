@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "pinecone-memory",
+    "displayName": "pinecone-memory",
+    "summary": "将 OpenClaw 记忆系统接入 Pinecone 向量数据库，用于语义检索与记忆持久化。Use when: 用户要求同步记忆到 Pinecone、执行语义搜索、为记忆做云端备份、对大规模记忆进行高效检索。",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1775659244447,
+    "updatedAt": 1777527326078
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1775720885980,
+    "changelog": "- Major refactor: simplified and modularized Pinecone memory skill with a new command-line tool.\n- Added new tools: check, sync, query, stats, heartbeat, cleanup, backup, and restore (all in tools/pinecone-memory.mjs).\n- Integrated heartbeat for health check and automated write verification.\n- Improved, clearer SKILL.md and SETUP.md with concise usage and command examples.\n- Dropped legacy setup.md/skill.md; restructured documentation and metadata in SKILL.md.\n- Incremental sync, enhanced error reporting, and structured ID/metadata strategy now standard.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "chenni666",
+    "userId": "s17b4pad1v6k2zr3jxrvhdbapn83y7wq",
+    "displayName": "chenni666",
+    "image": "https://avatars.githubusercontent.com/u/160030950?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527326078
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hermes-multiagent-skill@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_multiagent_skill",
+  "skill": {
+    "id": 63978,
+    "skillKey": "clawhub-hermes-multiagent-skill",
+    "name": "hermes multiagent skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-multiagent-skill",
+    "url": "https://clawhub.ai/skills/hermes-multiagent-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-multiagent-skill-4481774b928eca6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "突触式多智能体通信调度，像人类神经突触一样，毫秒级分发，精准对齐，把 100 个 Agent 同时协同的通信成本降到最低"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "briefness",
+      "userId": "s17fk50xgzfn3652z9b7awhjan8503tn",
+      "displayName": "briefness",
+      "image": "https://avatars.githubusercontent.com/u/25975388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776411720437,
+      "changelog": "Version 1.0.3\n\n- Expanded documentation to clarify integration requirements for sessions_spawn and separation of data storage responsibilities.\n- Added details and code samples for using new HermesAgent base class and HermesMessage structure.\n- Updated examples and function signatures to reflect current API (e.g., new parameters, explicit argument names).\n- Introduced new API sections covering HermesAgent methods and richer HermesSessionsIntegration usage.\n- Added security section describing unsubscribe idempotency, message pool limits, input validation, and thread safety improvements.\n- Noted removal of internal database usage—this skill no longer creates or requires SQLite files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81915d275aceea026016ea3eae5ab5a88d22cdfe0bd64544ed9a6398a6f97ee1"
+}

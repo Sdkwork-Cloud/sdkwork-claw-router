@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51987,
+  "uuid": "skill-clawhub-golang-samber-hot",
+  "skillKey": "clawhub-golang-samber-hot",
+  "name": "Golang Samber Hot",
+  "summary": "In-memory caching in Golang using samber/hot — eviction algorithms (LRU, LFU, TinyLFU, W-TinyLFU, S3FIFO, ARC, TwoQueue, SIEVE, FIFO), TTL, cache loaders, sh...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.golang_samber_hot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Samuel Berthe",
+      "features": [
+        "In-memory caching in Golang using samber/hot — eviction algorithms (LRU, LFU, TinyLFU, W-TinyLF."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/golang-samber-hot@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2951285?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "golang-samber-hot",
+      "url": "https://clawhub.ai/skills/golang-samber-hot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "golang-samber-hot",
+    "url": "https://clawhub.ai/skills/golang-samber-hot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/golang-samber-hot-6fc74ff40ed7685e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/golang-samber-hot@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-golang-samber-hot-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91d97d8b12946cf30cd8de3de78a2b16a2843d0bc21a5aa2f0ca90a180c13bda",
+      "artifactSizeBytes": 2189
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T22:40:33.055Z"
+}

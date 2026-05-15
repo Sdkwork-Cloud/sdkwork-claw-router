@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36995,
+  "uuid": "skill-clawhub-wakatime-skill",
+  "skillKey": "clawhub-wakatime-skill",
+  "name": "WakaTime",
+  "summary": "Query WakaTime coding statistics including time ranges, projects, languages, categories, editors, and machines. Use when the user asks about WakaTime, coding...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wakatime_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chensoul",
+      "features": [
+        "Query WakaTime coding statistics including time ranges, projects, languages, categories, editor.",
+        "Use when the user asks about WakaTime, coding..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wakatime-skill@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/826932?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wakatime-skill",
+      "url": "https://clawhub.ai/skills/wakatime-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wakatime-skill",
+    "url": "https://clawhub.ai/skills/wakatime-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wakatime-skill-042667bb6eb79c97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wakatime-skill@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wakatime-skill-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a548b465c203e86d08dfeda1ba5def8574bd47479057a7f48c443bb2dfd9550",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T05:37:04.644Z"
+}

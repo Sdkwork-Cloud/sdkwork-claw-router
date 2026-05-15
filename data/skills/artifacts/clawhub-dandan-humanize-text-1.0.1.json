@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dandan-humanize-text@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dandan_humanize_text",
+  "skill": {
+    "id": 60485,
+    "skillKey": "clawhub-dandan-humanize-text",
+    "name": "Dandan Humanize Text"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dandan-humanize-text",
+    "url": "https://clawhub.ai/skills/dandan-humanize-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dandan-humanize-text-29ee785100f3b9a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 生成文本人性化改写工具。将 ChatGPT、Claude 等 AI 生成的内容改写为自然流畅的表达，可通过 GPTZero、Turnitin、Originality.ai 等工具检测。适用于需要人感、避免 AI 检测、或润色 AI 草稿的场景。跨平台支持（macOS/Linux/Windows）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "realorange1994",
+      "userId": "s176tdf1scs6eg0qxkpf9fkpv184bgb1",
+      "displayName": "realorange1994",
+      "image": "https://avatars.githubusercontent.com/u/222950321?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773923464657,
+      "changelog": "- 更新 SKILL.md，增加详细的使用说明、核心改写原则，以及具体改写模式示例。\n- 详细列出跨平台（macOS/Linux/Windows）用法说明与代码示例。\n- 提供AI文本“人性化”改写的决策树和输出格式标准。\n- 明确依赖环境与文件结构，提升用户上手和扩展性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a98ac1457e14eb28a2e3ab13f2b7f20c38823e9f6605d21fd71f5009370ae64"
+}

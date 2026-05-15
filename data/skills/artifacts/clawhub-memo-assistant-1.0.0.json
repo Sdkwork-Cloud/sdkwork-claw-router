@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memo-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memo_assistant",
+  "skill": {
+    "id": 51710,
+    "skillKey": "clawhub-memo-assistant",
+    "name": "Lark Openclaw Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memo-assistant",
+    "url": "https://clawhub.ai/skills/memo-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memo-assistant-8d98741dfdad60b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Classifies and appends user memos to categorized Markdown files under ~/.memo when triggered by /private-secretary or /ps commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tristanchenxm",
+      "userId": "s179mh5ydr3fwnacefx8t3fhgh83hj99",
+      "displayName": "tristanchenxm",
+      "image": "https://avatars.githubusercontent.com/u/3376557?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773797244690,
+      "changelog": "lark-openclaw-bridge2 v1.0.0 – Initial release\n\n- Introduces a personal memo assistant triggered by `/private-secretary` or `/ps` commands.\n- Automatically classifies user memos into categories (Tech, Work, Life, Inspiration, Others) and appends them to category-specific Markdown files in `~/.memo`.\n- Supports reclassification and reorganization of all memos with the \"rearrange\" command.\n- Formats each entry with timestamp, category, and original content in Markdown.\n- Uses shell commands to manage memo storage and organization securely.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64da55ab013f1471a9f10591765ff20f5868d89197ece520bff9acd96cd7085e"
+}

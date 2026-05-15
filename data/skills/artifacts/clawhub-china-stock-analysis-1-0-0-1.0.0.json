@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-stock-analysis-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_stock_analysis_1_0_0",
+  "skill": {
+    "id": 32970,
+    "skillKey": "clawhub-china-stock-analysis-1-0-0",
+    "name": "China Stock Analysis 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-stock-analysis-1-0-0",
+    "url": "https://clawhub.ai/skills/china-stock-analysis-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-stock-analysis-1-0-0-a45357285ac6eda8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Chinese stock prices (A-shares, HK stocks) and provide investment recommendations. Use when the user asks about stock analysis for Chinese companies,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cs995279497-byte",
+      "userId": "s1752x7jpsq8e6496yg8h0rps183jrna",
+      "displayName": "cs995279497-byte",
+      "image": "https://avatars.githubusercontent.com/u/254620949?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775263122522,
+      "changelog": "Initial release of China Stock Analysis skill.\n\n- Provides analysis and investment recommendations for A-shares (Shanghai, Shenzhen), Hong Kong, and US-listed stocks.\n- Uses web search to retrieve latest price data and recent news for Chinese stocks.\n- Structures analysis in a clear format including core data, technical trends, and actionable advice.\n- Outlines guidelines for buy/hold/sell recommendations based on technical and fundamental signals.\n- Includes risk disclaimer in all outputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:860d2abbe51a11816020f2ee45e6b8cf152805708f0481358fd284fc8e3555bd"
+}

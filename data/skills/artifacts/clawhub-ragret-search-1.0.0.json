@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ragret-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ragret_search",
+  "skill": {
+    "id": 44913,
+    "skillKey": "clawhub-ragret-search",
+    "name": "ragret-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ragret-search",
+    "url": "https://clawhub.ai/skills/ragret-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ragret-search-63cc52c8835ed484.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, retrieval, or knowledge-base intent when the user does not clearly mean local files only or the open web: curl a remote RAGret API for semantic retri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sugarsong404",
+      "userId": "s17c480hnc5tneks56y7hh2syn84n9bf",
+      "displayName": "SugarSong404",
+      "image": "https://avatars.githubusercontent.com/u/131441711?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775924775056,
+      "changelog": "- Initial release of the ragret-search skill for semantic retrieval using a RAGret API.\n- Guides users to clarify intended retrieval scope (RAGret knowledge base, open-web, or local files).\n- Provides detailed instructions for listing available indexes and performing searches via curl.\n- Handles missing information by prompting for the RAGret server URL or API key only when necessary.\n- Includes usage rules for showing sources and handling responses securely.\n- Instructions and example usage are documented for ease of integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:541bf24e5f9d91a40879d50740d44d16bcc0e6becfdeaafe499ff3b73af6b188"
+}

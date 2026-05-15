@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72132,
+  "uuid": "skill-clawhub-zsxq-note",
+  "skillKey": "clawhub-zsxq-note",
+  "name": "Zsxq Note",
+  "summary": "知识星球笔记管理：创建个人文字笔记、查看笔记列表。当用户需要在知识星球记录个人笔记、随手记录想法、或查看历史笔记时使用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zsxq_note",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhuguojie-unnoo",
+      "features": [
+        "知识星球笔记管理：创建个人文字笔记、查看笔记列表。当用户需要在知识星球记录个人笔记、随手记录想法、或查看历史笔记时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zsxq-note@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16533180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zsxq-note",
+      "url": "https://clawhub.ai/skills/zsxq-note"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zsxq-note",
+    "url": "https://clawhub.ai/skills/zsxq-note",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zsxq-note-1a3316bc657cb9a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zsxq-note@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zsxq-note-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbd90fb9ffdd4891cb89a176da7e37dddd041e33d1788655b9d19c7dbe100d43",
+      "artifactSizeBytes": 2256
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T14:31:02.703Z"
+}

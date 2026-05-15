@@ -45,7 +45,7 @@ export interface LogRecord {
 
 export class RecordService {
   static async fetchLogs(filters: RecordLogFilters = {}): Promise<{ logs: LogRecord[]; total: number }> {
-    const result = await getClawRouterBackendSdkClient().record.fetchLogs(toRecordLogQueryBody(filters));
+    const result = await getClawRouterBackendSdkClient().system.records.list(toRecordLogQueryBody(filters));
     ensurePlusApiSuccess(result, 'Failed to fetch backend logs');
     const data = readApiRecord(result);
     const logs = readRequiredApiItems(result, 'Failed to fetch backend logs', ['logs', 'items', 'records', 'list'])
@@ -58,11 +58,11 @@ export class RecordService {
 }
 
 function toRecordLogQueryBody(filters: RecordLogFilters = {}): Record<string, string | number> {
-  const pageNo = optionalPositiveInteger(filters.pageNo, 'pageNo');
+  const page = optionalPositiveInteger(filters.page, 'page');
   const pageSize = optionalBoundedPositiveInteger(filters.pageSize, 'pageSize', MAX_RECORD_LOG_PAGE_SIZE);
 
   return pruneUndefinedQueryParams({
-    pageNo,
+    page,
     pageSize,
     user: optionalVisibleAsciiText(filters.user, 'user'),
     token: optionalVisibleAsciiText(filters.token, 'token'),

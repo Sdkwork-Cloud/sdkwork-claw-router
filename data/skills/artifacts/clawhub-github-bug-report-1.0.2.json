@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-bug-report@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_bug_report",
+  "skill": {
+    "id": 58715,
+    "skillKey": "clawhub-github-bug-report",
+    "name": "GitHub Bug Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-bug-report",
+    "url": "https://clawhub.ai/skills/github-bug-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-bug-report-e04f7fae9212c6ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Submit bug reports to GitHub for OpenClaw issues. Use when: (1)发现了明确的bug并想提交给官方; (2)官方产品出现问题需要报障; (3)想查询现有issue状态; (4)需要跟进已提交issue的进展. Includes issue templat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "markma84",
+      "userId": "s1781mqr2e06xdvhk7gbfzd2vs83kfra",
+      "displayName": "MarkMa84",
+      "image": "https://avatars.githubusercontent.com/u/19796416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776129303351,
+      "changelog": "Simplified: removed public/ layer, skill now at .openclaw/skills/github-bug-report/",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3a1bee0adfaa5ed9fa08db972a3d17152d151fcd7c9ad244d964785e8e8c0c0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-domain-manage@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_domain_manage",
+  "skill": {
+    "id": 58363,
+    "skillKey": "clawhub-alibabacloud-domain-manage",
+    "name": "Alibabacloud Domain Manage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-domain-manage",
+    "url": "https://clawhub.ai/skills/alibabacloud-domain-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-domain-manage-d65ea3cbdf2c858b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Alibaba Cloud domain information: domain details, domain list, advanced search, and instance ID lookup. 查询阿里云域名信息：域名详情、域名列表、高级搜索、按实例ID查询。 Triggers: \"do..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1776929635932,
+      "changelog": "Initial release of Alibaba Cloud Domain Query Skill.\n\n- Enables querying Alibaba Cloud domain details by domain name, instance ID, or advanced search filters.\n- Supports listing all domains under an account with pagination and sorting options.\n- Implements a strict pre-flight checklist for CLI version, plugin, AI-mode, and credential validation before any API call.\n- Enforces read-only operations and prohibits any action that reads or prints access keys or performs write operations.\n- Provides detailed intent routing and mandatory security & compliance steps for all domain queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3cfd487b15d99b9781881d147bdd05258eefcaf809df2ee497d27fc362a7135d"
+}

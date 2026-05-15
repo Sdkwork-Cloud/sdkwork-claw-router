@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58212,
+  "uuid": "skill-clawhub-learning-notes-explorer",
+  "skillKey": "clawhub-learning-notes-explorer",
+  "name": "Learning Notes Explorer",
+  "summary": "学习笔记 - Explore, search, and synthesize personal learning notes. Use when user asks about 笔记整理、学习回顾、知识搜索、笔记查询, or wants to explore their accumulated learning...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learning_notes_explorer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Explore, search, and synthesize personal learning notes",
+        "Use when user asks about 笔记整理、学习回顾、知识搜索、笔记查询, or wants to explore their accumulated learning..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learning-notes-explorer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learning-notes-explorer",
+      "url": "https://clawhub.ai/skills/learning-notes-explorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learning-notes-explorer",
+    "url": "https://clawhub.ai/skills/learning-notes-explorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learning-notes-explorer-58b08c4c99940bc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learning-notes-explorer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-learning-notes-explorer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c9cfe372683901947913a869e210267f81fce7e9b1225c534f6b1b7e28b9d88",
+      "artifactSizeBytes": 2547
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T13:37:44.191Z"
+}

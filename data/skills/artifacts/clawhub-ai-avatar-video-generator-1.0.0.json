@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-avatar-video-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_avatar_video_generator",
+  "skill": {
+    "id": 49502,
+    "skillKey": "clawhub-ai-avatar-video-generator",
+    "name": "Ai Avatar Video Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-avatar-video-generator",
+    "url": "https://clawhub.ai/skills/ai-avatar-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-avatar-video-generator-7b0e08a202383cf7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get avatar presenter videos ready to post, without touching a single slider. Upload your text or script (TXT, DOCX, PDF, MP3, up to 200MB), say something lik..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 76,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778065262315,
+      "changelog": "AI Avatar Video Generator — Initial Release\n\n- Create avatar presenter videos from text, script, or audio uploads (TXT, DOCX, PDF, MP3; up to 200MB)\n- Simple, guided workflow: upload content, describe your video, download 1080p MP4 when ready\n- Automated backend connection flow: handles token/session setup seamlessly; informs users when ready\n- Supports quick edits, iterative workflow, and batch processing in one session\n- View credits, check render status, and monitor timeline/track state\n- Clear error handling with tips for common issues (file type, size, credits, rate limits)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:564fee846f7d06b459e9525429d081cfd25d67fa4359b1834bae022e1ab45c5c"
+}

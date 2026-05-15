@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phoenixclaw-image-gen@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phoenixclaw_image_gen",
+  "skill": {
+    "id": 60159,
+    "skillKey": "clawhub-phoenixclaw-image-gen",
+    "name": "phoenixclaw image gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phoenixclaw-image-gen",
+    "url": "https://clawhub.ai/skills/phoenixclaw-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phoenixclaw-image-gen-7333d9c135458ca7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "图像生成辅助。支持通过 OpenRouter 直接调用各种生图模型（如 Seedream），为 OpenClaw 优化，支持提示词、尺寸等参数配置。目前仅限 OpenRouter provider。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goforu",
+      "userId": "s17crgxn95snsyyfwb3dkamnsd83vn37",
+      "displayName": "betterest",
+      "image": "https://avatars.githubusercontent.com/u/5236864?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 595,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1772114838661,
+      "changelog": "- Added a new resolution and aspect ratio guide at references/resolution-guide.md.\n- Updated recommended usage: the --size parameter now only accepts \"1K\", \"2K\", or \"4K\" (not pixel values).\n- Documented the allowed --size values, the actual pixel outputs, supported aspect ratios, and model/resolution restrictions.\n- Clarified that some models do not support 4K, and 2K is the recommended daily setting.\n- Improved parameter documentation for size and aspect to align with OpenRouter API limitations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4a69974aa301f6d7a734e7711f1a35ac818b68ea31335a97998bbde1d5351029"
+}

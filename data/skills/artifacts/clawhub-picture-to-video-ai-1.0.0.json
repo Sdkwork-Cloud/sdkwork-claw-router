@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/picture-to-video-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.picture_to_video_ai",
+  "skill": {
+    "id": 47433,
+    "skillKey": "clawhub-picture-to-video-ai",
+    "name": "Picture To Video Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "picture-to-video-ai",
+    "url": "https://clawhub.ai/skills/picture-to-video-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/picture-to-video-ai-1e794bf49b1d3022.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get animated video clips ready to post, without touching a single slider. Upload your still images (JPG, PNG, WEBP, HEIC, up to 200MB), say something like \"t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777335127668,
+      "changelog": "Initial release — turn still photos into animated video clips with AI.\n\n- Upload JPG, PNG, WEBP, or HEIC images (up to 200MB) and convert them into 1080p MP4 videos with transitions, ready for social media.\n- Simple chat prompts initiate tasks like animation, adding transitions, customizing aspect ratio, overlays, or background music.\n- No manual animation or editing; fast cloud rendering in about 30–90 seconds.\n- Free anonymous access with 100 credits (valid 7 days) by generating a token during setup.\n- Built-in workflows for uploading, editing, previewing, and exporting videos.\n- Integrated error handling and guides for supported formats, credits, and troubleshooting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0834393b5f11535be350395c95725eb351ea36a9964a3cde0a046493910bd820"
+}

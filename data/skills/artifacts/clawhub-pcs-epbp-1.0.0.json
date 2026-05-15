@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pcs-epbp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pcs_epbp",
+  "skill": {
+    "id": 62654,
+    "skillKey": "clawhub-pcs-epbp",
+    "name": "pcs转储"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pcs-epbp",
+    "url": "https://clawhub.ai/skills/pcs-epbp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pcs-epbp-d973f9d07f14bb0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从pcs页面获取数据导入到epbp"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shandongwill",
+      "userId": "publishers:shandongwill",
+      "displayName": "shandongwill",
+      "image": "https://avatars.githubusercontent.com/u/9543048?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773114150727,
+      "changelog": "pcs-epbp 1.0.0 – 初始版本发布\n\n- 自动从 PCS 页面抓取表格数据，并导出为 Excel 文件\n- 支持自动将导出的数据上传导入到 EBP 系统\n- 支持以定时任务方式每天自动执行\n- 文档提供详细依赖安装和使用流程说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09391366d71f8aedccf18ff98f39b632a6c32b0e208acecfa787cd93618e2a1b"
+}

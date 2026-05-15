@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33173,
+  "uuid": "skill-clawhub-qualetics",
+  "skillKey": "clawhub-qualetics",
+  "name": "Qualetics",
+  "summary": "Qualetics integration. Manage data, records, and automate workflows. Use when the user wants to interact with Qualetics data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qualetics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Qualetics integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Qualetics data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qualetics@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qualetics",
+      "url": "https://clawhub.ai/skills/qualetics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qualetics",
+    "url": "https://clawhub.ai/skills/qualetics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qualetics-c5831eeb23ca66cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qualetics@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-qualetics-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76d88e86cd1c53e06716ba984fc1428fea7bc2c0ffd1dd272821485595a1c319",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:30:15.048Z"
+}

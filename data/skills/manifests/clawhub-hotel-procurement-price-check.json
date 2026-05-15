@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73458,
+  "uuid": "skill-clawhub-hotel-procurement-price-check",
+  "skillKey": "clawhub-hotel-procurement-price-check",
+  "name": "酒店采购价格监控",
+  "summary": "提供酒店餐饮农产品及电商全网实时价格对比，支持多数据源查询和成本参考分析。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotel_procurement_price_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chaoliuzhu",
+      "features": [
+        "提供酒店餐饮农产品及电商全网实时价格对比，支持多数据源查询和成本参考分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hotel-procurement-price-check@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/207801254?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hotel-procurement-price-check",
+      "url": "https://clawhub.ai/skills/hotel-procurement-price-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotel-procurement-price-check",
+    "url": "https://clawhub.ai/skills/hotel-procurement-price-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotel-procurement-price-check-99518b8e26404a16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hotel-procurement-price-check@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hotel-procurement-price-check-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9a0e465a1c8259475c303c2eccbe0e00f4db114e745efdca106c1443412743d",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T08:16:20.844Z"
+}

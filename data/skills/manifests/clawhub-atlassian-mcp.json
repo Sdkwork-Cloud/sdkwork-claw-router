@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8990,
+  "uuid": "skill-clawhub-atlassian-mcp",
+  "skillKey": "clawhub-atlassian-mcp",
+  "name": "Atlassian MCP (Jira, Confluence)",
+  "summary": "Run the Model Context Protocol (MCP) Atlassian server in Docker, enabling integration with Jira, Confluence, and other Atlassian products. Use when you need to query Jira issues, search Confluence, or interact with Atlassian services progr.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atlassian_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AtakanErmis",
+      "features": [
+        "Run the Model Context Protocol (MCP) Atlassian server in Docker, enabling integration with Jira.",
+        "Use when you need to query Jira issues, search Confluence, or interact with Atlassian services.",
+        "Requires Docker and valid Jira API credentials."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/atlassian-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16894959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "atlassian-mcp",
+      "url": "https://clawhub.ai/skills/atlassian-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atlassian-mcp",
+    "url": "https://clawhub.ai/skills/atlassian-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atlassian-mcp-8494f2280bfee90e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/atlassian-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-atlassian-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d282e61382aab2ba914be53b4873aa9a30e8fe29be08552a373a9c25a2af85bb",
+      "artifactSizeBytes": 2419
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T18:09:27.351Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doc-to-json@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_to_json",
+  "skill": {
+    "id": 47189,
+    "skillKey": "clawhub-doc-to-json",
+    "name": "Doc to JSON"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-to-json",
+    "url": "https://clawhub.ai/skills/doc-to-json",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-to-json-1bb7d7175f7e6c97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert documents (docx, doc, PDF, xlsx, xls) to structured JSON via MinerU. Full pipeline: file to mineru-open-api extract to Markdown then to JSON. Use whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kounlong",
+      "userId": "s17en6p20jsrf6bvjb92438mb183gddx",
+      "displayName": "梁辉盛",
+      "image": "https://avatars.githubusercontent.com/u/203522206?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776421650806,
+      "changelog": "Initial release: doc/docx/PDF/xlsx/xls to JSON via MinerU pipeline, with Markdown parser and KB preparation helpers",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c5375b73855b950c31c76b040a025c117a246b115b87d52d32a22aa8662b74bb"
+}

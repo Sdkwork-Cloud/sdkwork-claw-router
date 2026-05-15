@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65109,
+  "uuid": "skill-clawhub-openclaw-contacts",
+  "skillKey": "clawhub-openclaw-contacts",
+  "name": "Contacts",
+  "summary": "通讯录查询与维护技能。用于查找联系人信息（open_id、chat_id、account_id 等）、记录新联系人、或查询历史沟通偏好。触发时机：(1) 需要 @某人或向某渠道发消息时 (2) 认识新联系人后需要录入通讯录时 (3) 查询某人的联系方式或交流偏好时 (4) 询问\"谁知道xxx的飞书ID\"或\"怎么联...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_contacts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AxelHu",
+      "features": [
+        "通讯录查询与维护技能。用于查找联系人信息（open_id、chat_id、account_id 等）、记录新联系人、或查询历史沟通偏好。触发时机：(1) 需要 @某人或向某渠道发消息时 (2."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-contacts@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12809280?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-contacts",
+      "url": "https://clawhub.ai/skills/openclaw-contacts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-contacts",
+    "url": "https://clawhub.ai/skills/openclaw-contacts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-contacts-cb72924bd7edf461.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-contacts@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-contacts-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad41694a04d7bc6c3d5db30fe875b56f8bf70f6e7f593768a99e4e48b6c8d4cc",
+      "artifactSizeBytes": 2264
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T03:09:24.061Z"
+}

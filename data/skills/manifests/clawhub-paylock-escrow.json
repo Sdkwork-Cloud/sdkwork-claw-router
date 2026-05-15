@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40032,
+  "uuid": "skill-clawhub-paylock-escrow",
+  "skillKey": "clawhub-paylock-escrow",
+  "name": "PayLock Escrow",
+  "summary": "Non-custodial SOL escrow for AI agent deals. Create contracts, lock funds, verify delivery, release payments. Use when: (1) creating escrow contracts between...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paylock_escrow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Oleksii Kaganovsky",
+      "features": [
+        "Non-custodial SOL escrow for AI agent deals",
+        "Create contracts, lock funds, verify delivery, release payments",
+        "Use when: (1) creating escrow contracts between..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paylock-escrow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100070892?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paylock-escrow",
+      "url": "https://clawhub.ai/skills/paylock-escrow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paylock-escrow",
+    "url": "https://clawhub.ai/skills/paylock-escrow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paylock-escrow-c0b26be02fb7ca78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paylock-escrow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paylock-escrow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49e55585fe615e864ef58bb241d34bfd4eac5b015adac2b5035041f8f98c5a33",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T20:26:13.257Z"
+}

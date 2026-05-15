@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bear-notes-hardened@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bear_notes_hardened",
+  "skill": {
+    "id": 45937,
+    "skillKey": "clawhub-bear-notes-hardened",
+    "name": "Bear Notes Hardened"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bear-notes-hardened",
+    "url": "https://clawhub.ai/skills/bear-notes-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bear-notes-hardened-bd5a34ad0d2b2a23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, search, and manage Bear notes via grizzly CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snazar-faberlens",
+      "userId": "s17er0wp685j1z14w6vqrsnqrh83h5er",
+      "displayName": "Faberlens",
+      "image": "https://avatars.githubusercontent.com/u/261834257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776810334226,
+      "changelog": "Initial release: Create, search, and manage Bear notes using the grizzly CLI on macOS with built-in security guardrails.\n\n- Supports creating, reading, updating, and searching Bear notes and tags via grizzly CLI.\n- Detailed setup instructions for Bear app and API token usage.\n- Lists common command examples for note and tag operations.\n- Explains configuration options and priority.\n- Enforces strict security guardrails to protect note privacy and credential secrecy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:00f1d4f6c12e3cddd490b3d568eb4e58aa3d3444a234a75d265327baef2db92c"
+}

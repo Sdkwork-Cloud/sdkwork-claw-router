@@ -15,7 +15,7 @@ import {
 import { resolveClawRouterRuntimeBoolean } from 'sdkwork-claw-router-commons/runtime';
 import { SdkEndpointView } from '../components/SdkEndpointView';
 import type { ApiReferenceEndpoint } from 'sdkwork-claw-router-api-reference/openapiTypes';
-import type { ApiCategorySidebarNode } from 'sdkwork-claw-router-api-reference/apiReferenceSchemaTabs';
+import { getApiSystemDisplayName, type ApiCategorySidebarNode } from 'sdkwork-claw-router-api-reference/apiReferenceSchemaTabs';
 import type { OpenApiDocument } from 'sdkwork-claw-router-api-reference/openapiTypes';
 import type { SdkReferenceSystem, SdkReferenceSystemData, GeneratedSdkToolConfig } from '../sdkReferenceRuntime';
 import {
@@ -385,7 +385,7 @@ export function SdkReference() {
                 }`}
               >
                 <Icon className="w-4 h-4" />
-                {system.name}
+                {getApiSystemDisplayName(system)}
               </button>
             );
           })}
@@ -529,12 +529,12 @@ export function SdkReference() {
                       text={displayInstallCode}
                       label="Copy installation"
                       copiedLabel="Copied"
-                      className="p-2 rounded-lg bg-slate-800/50 hover:bg-slate-700 text-slate-300 transition-colors"
+                      className="p-2 rounded-lg bg-white hover:bg-slate-100 text-slate-500 hover:text-slate-900 dark:bg-slate-800/50 dark:hover:bg-slate-700 dark:text-slate-300 transition-colors"
                       disabled={loadingReadme}
                       title="Copy installation"
                     />
                   </div>
-                  <pre className={`bg-[#0d1117] text-slate-300 p-6 rounded-2xl overflow-x-auto text-sm font-mono border border-slate-800 transition-opacity duration-300 ${loadingReadme ? 'opacity-50' : 'opacity-100'}`}>
+                  <pre className={`bg-slate-50 text-slate-700 dark:bg-[#0d1117] dark:text-slate-300 p-6 rounded-2xl overflow-x-auto text-sm font-mono border border-slate-200 dark:border-slate-800 transition-opacity duration-300 ${loadingReadme ? 'opacity-50' : 'opacity-100'}`}>
                     <code>{loadingReadme ? 'Loading...' : displayInstallCode}</code>
                   </pre>
                 </div>
@@ -552,12 +552,12 @@ export function SdkReference() {
                       text={displayInitCode}
                       label="Copy initialization"
                       copiedLabel="Copied"
-                      className="p-2 rounded-lg bg-slate-800/50 hover:bg-slate-700 text-slate-300 transition-colors"
+                      className="p-2 rounded-lg bg-white hover:bg-slate-100 text-slate-500 hover:text-slate-900 dark:bg-slate-800/50 dark:hover:bg-slate-700 dark:text-slate-300 transition-colors"
                       disabled={loadingReadme}
                       title="Copy initialization"
                     />
                   </div>
-                  <pre className={`bg-[#0d1117] text-slate-300 p-6 rounded-2xl overflow-x-auto text-sm font-mono border border-slate-800 transition-opacity duration-300 ${loadingReadme ? 'opacity-50' : 'opacity-100'}`}>
+                  <pre className={`bg-slate-50 text-slate-700 dark:bg-[#0d1117] dark:text-slate-300 p-6 rounded-2xl overflow-x-auto text-sm font-mono border border-slate-200 dark:border-slate-800 transition-opacity duration-300 ${loadingReadme ? 'opacity-50' : 'opacity-100'}`}>
                     <code>
                       {loadingReadme ? 'Loading...' : displayInitCode}
                     </code>
@@ -577,12 +577,12 @@ export function SdkReference() {
                       text={displayExampleCode}
                       label="Copy example"
                       copiedLabel="Copied"
-                      className="p-2 rounded-lg bg-slate-800/50 hover:bg-slate-700 text-slate-300 transition-colors"
+                      className="p-2 rounded-lg bg-white hover:bg-slate-100 text-slate-500 hover:text-slate-900 dark:bg-slate-800/50 dark:hover:bg-slate-700 dark:text-slate-300 transition-colors"
                       disabled={loadingReadme}
                       title="Copy example"
                     />
                   </div>
-                  <pre className={`bg-[#0d1117] text-slate-300 p-6 rounded-2xl overflow-x-auto text-sm font-mono border border-slate-800 transition-opacity duration-300 ${loadingReadme ? 'opacity-50' : 'opacity-100'}`}>
+                  <pre className={`bg-slate-50 text-slate-700 dark:bg-[#0d1117] dark:text-slate-300 p-6 rounded-2xl overflow-x-auto text-sm font-mono border border-slate-200 dark:border-slate-800 transition-opacity duration-300 ${loadingReadme ? 'opacity-50' : 'opacity-100'}`}>
                     <code>{loadingReadme ? 'Loading...' : displayExampleCode}</code>
                   </pre>
                 </div>

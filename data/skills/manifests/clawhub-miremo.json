@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53285,
+  "uuid": "skill-clawhub-miremo",
+  "skillKey": "clawhub-miremo",
+  "name": "Miremo Research Skill",
+  "summary": "Access the user's personal Miremo knowledge base — search notes, look up what they know about a topic, browse their documents and tags, explore their knowled...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miremo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hansenz42",
+      "features": [
+        "Access the user's personal Miremo knowledge base — search notes, look up what they know about a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/miremo@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11825586?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "miremo",
+      "url": "https://clawhub.ai/skills/miremo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miremo",
+    "url": "https://clawhub.ai/skills/miremo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miremo-a1cab54336bda824.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/miremo@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-miremo-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:479aa292299a877ecc48602012f0d71847ed55f9340a5b3deea895e08783ab10",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T07:28:34.932Z"
+}

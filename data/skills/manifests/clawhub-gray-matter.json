@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49969,
+  "uuid": "skill-clawhub-gray-matter",
+  "skillKey": "clawhub-gray-matter",
+  "name": "Parse YAML/JSON/TOML front-matter from strings or files using the gray-matter library",
+  "summary": "Parse YAML/JSON/TOML front-matter from strings or files using the gray-matter library.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gray_matter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenLark",
+      "features": [
+        "Parse YAML/JSON/TOML front-matter from strings or files using the gray-matter library."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gray-matter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260858787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gray-matter",
+      "url": "https://clawhub.ai/skills/gray-matter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gray-matter",
+    "url": "https://clawhub.ai/skills/gray-matter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gray-matter-fb3647d72d715765.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gray-matter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gray-matter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a550b51b3906618f846614f4feac73a0c4537db8047f3eaa1e5e57615f75716",
+      "artifactSizeBytes": 2430
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T01:27:00.341Z"
+}

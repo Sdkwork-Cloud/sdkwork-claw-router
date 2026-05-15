@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28133,
+  "uuid": "skill-clawhub-hd-txt2img",
+  "skillKey": "clawhub-hd-txt2img",
+  "name": "hd-txt2img-v2L",
+  "summary": "Call Hidream txt2img async API with exposed auth and request parameters. Use when users need to generate images from text prompts, build runnable Python comm...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hd_txt2img",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhihui-chen-xx",
+      "features": [
+        "Call Hidream txt2img async API with exposed auth and request parameters",
+        "Use when users need to generate images from text prompts, build runnable Python comm..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hd-txt2img@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202243221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hd-txt2img",
+      "url": "https://clawhub.ai/skills/hd-txt2img"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hd-txt2img",
+    "url": "https://clawhub.ai/skills/hd-txt2img",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hd-txt2img-2908d8db436e9bc3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hd-txt2img@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hd-txt2img-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8add7873b2b6fc0a071f48f0ac81946ee4816bf83e5ab9b3f181707ad5d4fbda",
+      "artifactSizeBytes": 2201
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T07:17:15.667Z"
+}

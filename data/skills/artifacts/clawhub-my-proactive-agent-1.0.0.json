@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-proactive-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_proactive_agent",
+  "skill": {
+    "id": 26896,
+    "skillKey": "clawhub-my-proactive-agent",
+    "name": "My Proactive Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-proactive-agent",
+    "url": "https://clawhub.ai/skills/my-proactive-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-proactive-agent-a2254f896af7c5b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform AI agents from task-followers into proactive partners that anticipate needs and continuously improve. Now with WAL Protocol, Working Buffer, Autono..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liujiang817",
+      "userId": "s17cmgh8wy9gdmg7vkhg9eshcn83gfyz",
+      "displayName": "liujiang817",
+      "image": "https://avatars.githubusercontent.com/u/30427436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773667747051,
+      "changelog": "proactive-agent v3.1.0 introduces enhanced autonomy and reliability features for AI agents.\n\n- Added support for autonomous vs prompted crons with guidance on using `systemEvent` and `isolated agentTurn`.\n- New protocols: WAL Protocol (Write-Ahead Logging), Working Buffer, and Compaction Recovery ensure critical details survive context loss.\n- Security hardening expanded, including tool migration checklist and strengthened context management.\n- Emphasizes verifying implementation over intent to improve reliability.\n- Documentation updated with new patterns and self-improvement guardrails.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e46e0a2967ae1722c686870b8a11c18da10241c9be47fb4d39d33bf77b994bd0"
+}

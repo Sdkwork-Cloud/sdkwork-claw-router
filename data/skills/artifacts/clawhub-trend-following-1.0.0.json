@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trend-following@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trend_following",
+  "skill": {
+    "id": 39448,
+    "skillKey": "clawhub-trend-following",
+    "name": "Trend Following"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trend-following",
+    "url": "https://clawhub.ai/skills/trend-following",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trend-following-1f54c0e143d17796.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trend-following stock analysis using price + volume. Use when user asks to analyze a stock, check a ticker, get buy/sell signals, find support/resistance, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eddieguan801-oss",
+      "userId": "s17d4mpw0w2mm2kxbtvh1psmpx844w1h",
+      "displayName": "eddieguan801-oss",
+      "image": "https://avatars.githubusercontent.com/u/260124777?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776169430907,
+      "changelog": "- Initial release of trend-following stock analysis.\n- Provides analysis using price and volume, with buy/sell signals, support/resistance, and price targets.\n- Supports any Yahoo Finance ticker (e.g., AAPL, TSLA); runs via a simple command-line script.\n- Includes key indicators: RSI, MACD, MA20/50/200, Bollinger Bands, and volume average.\n- Offers clear output sections: trend status, key levels, trading signals, entry/exit targets, and risk/reward.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e067619d6ae9ece0b827b9526c718ef3b30e9787549c89573c43097600bb7c3"
+}

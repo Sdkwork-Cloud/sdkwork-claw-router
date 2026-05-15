@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64664,
+  "uuid": "skill-clawhub-sina-stock",
+  "skillKey": "clawhub-sina-stock",
+  "name": "Sina Stock",
+  "summary": "获取 A 股实时股票行情数据（上证指数、深证成指、创业板指等），使用新浪财经 API。无需 API Key。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sina_stock",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sunnyfo",
+      "features": [
+        "获取 A 股实时股票行情数据（上证指数、深证成指、创业板指等），使用新浪财经 API。无需 API Key。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sina-stock@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38121986?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sina-stock",
+      "url": "https://clawhub.ai/skills/sina-stock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sina-stock",
+    "url": "https://clawhub.ai/skills/sina-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sina-stock-37c8b2c23f07ace1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sina-stock@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sina-stock-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7162bc67c2c0ad3f99fd7c8c3124694e63adaa48d9a464af922edf0b4c58f3b4",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T13:19:54.944Z"
+}

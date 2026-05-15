@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70759,
+  "uuid": "skill-clawhub-zhongguancun-deal-closer",
+  "skillKey": "clawhub-zhongguancun-deal-closer",
+  "name": "Zhongguancun Deal Closer",
+  "summary": "产学研合作推进与落地决策引擎。当用户提交会议纪要、合作进展、对接记录，要求分析下一步、推进合作、判断成单概率、写跟进话术时触发。核心不是提醒，而是决策：基于会议内容推断对方真实需求、判断合作阶段与概率、给出最优策略动作和可直接使用的跟进话术。适用于钉钉听记/飞书妙记等会议纪要的结构化分析。配合 industry-...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhongguancun_deal_closer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangxiaopeng-zgci",
+      "features": [
+        "产学研合作推进与落地决策引擎。当用户提交会议纪要、合作进展、对接记录，要求分析下一步、推进合作、判断成单概率、写跟进话术时触发。核心不是提醒，而是决策：基于会议内容推断对方真实需求、判断合作."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhongguancun-deal-closer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225355648?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhongguancun-deal-closer",
+      "url": "https://clawhub.ai/skills/zhongguancun-deal-closer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhongguancun-deal-closer",
+    "url": "https://clawhub.ai/skills/zhongguancun-deal-closer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhongguancun-deal-closer-ca868362f6cf6870.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhongguancun-deal-closer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhongguancun-deal-closer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25ad8defe62e69e1ae74001c62fc3169ff89fdc674e6597cc55921397c0cd9ca",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T02:26:54.251Z"
+}

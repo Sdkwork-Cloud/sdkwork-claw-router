@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9844,
+  "uuid": "skill-clawhub-revenuecat",
+  "skillKey": "clawhub-revenuecat",
+  "name": "RevenueCat",
+  "summary": "RevenueCat metrics, customer data, and documentation search. Use when querying subscription analytics, MRR, churn, customers, or RevenueCat docs.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.revenuecat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jeiting",
+      "features": [
+        "RevenueCat metrics, customer data, and documentation search",
+        "Use when querying subscription analytics, MRR, churn, customers, or RevenueCat docs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/revenuecat@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138742?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "revenuecat",
+      "url": "https://clawhub.ai/skills/revenuecat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "revenuecat",
+    "url": "https://clawhub.ai/skills/revenuecat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/revenuecat-5e711eb71db00b1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/revenuecat@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-revenuecat-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24d38dce30cc83db1af4ad450b8f90a683458a08982ccbac04e47a56a481abd3",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T19:55:35.422Z"
+}

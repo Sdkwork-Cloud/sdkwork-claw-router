@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/managed-agent-growth-loop@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.managed_agent_growth_loop",
+  "skill": {
+    "id": 63687,
+    "skillKey": "clawhub-managed-agent-growth-loop",
+    "name": "Managed Agent Growth Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "managed-agent-growth-loop",
+    "url": "https://clawhub.ai/skills/managed-agent-growth-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/managed-agent-growth-loop-b8f51eea5d8187ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "고객사 상주 에이전트의 실행 품질을 성장시키는 운영 루프. 사용 내역/현장 회고에서 \"잘 쓰는 부분, 한계, 개선점, 무펭이즘 서비스 가치\"를 뽑아 상태 인수인계, 선제 행동, 팀원 온보딩, 결과 피드백, 멀티에이전트 검수 플로우로 전환할 때 사용. \"에이전트 운영 개선\", \"인사..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mupengi-bot",
+      "userId": "s17cb0n67gxg14m41wrqex0hr183j5d2",
+      "displayName": "mupengi-bot",
+      "image": "https://avatars.githubusercontent.com/u/259087580?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1777510428710,
+      "changelog": "Add Cron/Heartbeat operating recipes, scheduled watch candidates, OpenClaw cron examples, and anti-spam kill criteria.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c8699fa8cda3dfd41f0e9e8ae57361e79b09888cbe8ab866e0571c41812b8b3"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67530,
+  "uuid": "skill-clawhub-ch-math-review-generator",
+  "skillKey": "clawhub-ch-math-review-generator",
+  "name": "数学复习资料生成器",
+  "summary": "为初中数学章节生成复习指南 HTML 文件（知识点 + SVG 图形 + 选择/填空/大题 + 详解）。 当用户要求\"生成数学复习资料\"、\"出一份数学练习题\"、\"帮我复习XX章节\"、\"数学辅导\"、\"生成数学学习文档\"、 \"做一份数学错题本\"、\"生成函数/几何复习指南\" 或类似意图时，应使用此 Skill。 该 S...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ch_math_review_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangmange",
+      "features": [
+        "为初中数学章节生成复习指南 HTML 文件（知识点 + SVG 图形 + 选择/填空/大题 + 详解）。 当用户要求\"生成数学复习资料\"、\"出一份数学练习题\"、\"帮我复习XX章节\"、\"数学辅."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ch-math-review-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198840631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ch-math-review-generator",
+      "url": "https://clawhub.ai/skills/ch-math-review-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ch-math-review-generator",
+    "url": "https://clawhub.ai/skills/ch-math-review-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ch-math-review-generator-2d2c8739bf4bcc03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ch-math-review-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ch-math-review-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a9c11ca6e70cc3ac858f5c0e880ef32b07cc6eef14174ad579d5687372ebded",
+      "artifactSizeBytes": 2932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T03:34:11.698Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cookie-consent-banner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cookie_consent_banner",
+  "skill": {
+    "id": 25892,
+    "skillKey": "clawhub-cookie-consent-banner",
+    "name": "Cookie Consent Banner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cookie-consent-banner",
+    "url": "https://clawhub.ai/skills/cookie-consent-banner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cookie-consent-banner-1420a5bfd50ae14d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Implement Cookie Consent Banner using OrbCafe UI (CMessageBox). Enterprise-grade React component with built-in best practices."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenruiyang",
+      "userId": "s17e6bmx11wm3tn9bxz60qc4fh83gew1",
+      "displayName": "SHENRUIYANG",
+      "image": "https://avatars.githubusercontent.com/u/47732614?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773492577124,
+      "changelog": "- Initial release of cookie-consent-banner skill.\n- Demonstrates implementing a Cookie Consent Banner using OrbCafe UI's CMessageBox for React/Next.js.\n- Highlights enterprise-grade features: i18n, theming, accessibility, and TypeScript support.\n- Provides installation instructions, usage example, and documentation links.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01de3ef5c02f8bc2a38c229b5c3b1b31079aac54e013fae8b9491b8be1d4f147"
+}

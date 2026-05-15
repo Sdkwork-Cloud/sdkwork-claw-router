@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13876,
+  "uuid": "skill-clawhub-alicloud-backup-bdrc",
+  "skillKey": "clawhub-alicloud-backup-bdrc",
+  "name": "Alicloud Backup Bdrc",
+  "summary": "Manage Alibaba Cloud Backup and Disaster Recovery Center (BDRC) via OpenAPI/SDK. Use whenever the user needs backup/disaster-recovery resource operations, in...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alicloud_backup_bdrc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Manage Alibaba Cloud Backup and Disaster Recovery Center (BDRC) via OpenAPI/SDK",
+        "Use whenever the user needs backup/disaster-recovery resource operations, in..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alicloud-backup-bdrc@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alicloud-backup-bdrc",
+      "url": "https://clawhub.ai/skills/alicloud-backup-bdrc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alicloud-backup-bdrc",
+    "url": "https://clawhub.ai/skills/alicloud-backup-bdrc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alicloud-backup-bdrc-3a8286eb474e9dcb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alicloud-backup-bdrc@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-alicloud-backup-bdrc-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dafafeca0e165f0ed77a842d9f76f6c2ebc244612407701a3a7f3106e564a92b",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:38:38.252Z"
+}

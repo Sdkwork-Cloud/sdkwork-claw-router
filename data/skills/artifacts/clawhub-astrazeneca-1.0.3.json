@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/astrazeneca@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.astrazeneca",
+  "skill": {
+    "id": 69363,
+    "skillKey": "clawhub-astrazeneca",
+    "name": "Astrazeneca"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "astrazeneca",
+    "url": "https://clawhub.ai/skills/astrazeneca",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/astrazeneca-0ba68854765000df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供阿斯利康品牌历史、产品服务、市场地位及最新动态的详细信息与分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776232877739,
+      "changelog": "- 添加了 version 字段到 SKILL.md，现在标明为 1.0.4。\n- 其他内容保持不变，仅作元数据更新。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b978cde487849a12cef3d3a3ac5555d84f9d3e74248af3042a286ca987b587a0"
+}

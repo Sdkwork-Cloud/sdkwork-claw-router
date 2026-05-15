@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/binance-earning-assistant@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_earning_assistant",
+  "skill": {
+    "id": 59527,
+    "skillKey": "clawhub-binance-earning-assistant",
+    "name": "币安撸毛助手 By：0x_WanG"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-earning-assistant",
+    "url": "https://clawhub.ai/skills/binance-earning-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-earning-assistant-6645e697a74bb39f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "币安撸毛助手 - 展示币安最新撸毛活动信息，包括理财产品、活动奖励、空投预告等。Use when user asks for \"今日撸毛\", \"币安活动\", \"赚钱活动\", \"撸毛信息\", \"Binance earning\", \"airdrop info\", or any query about Binance..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luckylion68",
+      "userId": "s17a5375m1k56a7xswm5xa37bs83hwd0",
+      "displayName": "luckylion68",
+      "image": "https://avatars.githubusercontent.com/u/219605563?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 339,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1774334140140,
+      "changelog": "- Removed deprecated files: CHANGELOG.md and test_with_cache.py.\n- Added CLAWHUB_FIX_REPORT.md for Clawhub compliance documentation.\n- No functional changes to runtime code in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cdfe14fd85a9d05460a5d9a1e1bc318f10d37bab7ce878fddf500610ca3c3cfc"
+}

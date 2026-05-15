@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71359,
+  "uuid": "skill-clawhub-wechat-sticker-maker",
+  "skillKey": "clawhub-wechat-sticker-maker",
+  "name": "微信表情包制作工具",
+  "summary": "微信表情包制作工具。自动将六宫格、九宫格、十二宫格的原图裁剪并转换为符合微信表情包规范的格式（表情主图 240x240，聊天页图标 50x50）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_sticker_maker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guanyang",
+      "features": [
+        "微信表情包制作工具。自动将六宫格、九宫格、十二宫格的原图裁剪并转换为符合微信表情包规范的格式（表情主图 240x240，聊天页图标 50x50）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-sticker-maker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18542157?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-sticker-maker",
+      "url": "https://clawhub.ai/skills/wechat-sticker-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-sticker-maker",
+    "url": "https://clawhub.ai/skills/wechat-sticker-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-sticker-maker-5f559e2f42a085a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-sticker-maker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-sticker-maker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e560f9c629b2cd4a7fbbd16ed07584064bac3d72b107d557b88d7951713e6a1",
+      "artifactSizeBytes": 2476
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T07:31:37.108Z"
+}

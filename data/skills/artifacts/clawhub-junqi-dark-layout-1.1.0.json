@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/junqi-dark-layout@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.junqi_dark_layout",
+  "skill": {
+    "id": 69438,
+    "skillKey": "clawhub-junqi-dark-layout",
+    "name": "Junqi Dark Layout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "junqi-dark-layout",
+    "url": "https://clawhub.ai/skills/junqi-dark-layout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/junqi-dark-layout-ee8767684dc63a52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用大模型生成中国军棋双人 25 格暗棋阵型，再用 Python 做硬规则校验与图片渲染。用于用户想要军棋暗棋摆阵、想按风格生成更有策略感的布局、想输出图片卡片、或需要先生成再严格验合法性的场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imcaptor",
+      "userId": "s178hy5hbjg5ryc7pqsdnj05e984xz9f",
+      "displayName": "imcaptor",
+      "image": "https://avatars.githubusercontent.com/u/557142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776652301155,
+      "changelog": "强制大本营为军旗+排长；新增「重要棋子（含工兵）不可被封死」硬规则；validator 增加大本营棋子约束；删除旧版 Python 摆阵脚本；文档补充 ClawHub 安装说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e10cf976829268798fd18c95d7dda52c30253f4fbc448ae9c756646a547c4c5"
+}

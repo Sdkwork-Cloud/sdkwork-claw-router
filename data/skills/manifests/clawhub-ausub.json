@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67860,
+  "uuid": "skill-clawhub-ausub",
+  "skillKey": "clawhub-ausub",
+  "name": "AUSUB",
+  "summary": "基于Tushare黄金ETF日线行情和规则，动态生成带风险提示的黄金定投建议及投入金额参考。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ausub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "juryory",
+      "features": [
+        "基于Tushare黄金ETF日线行情和规则，动态生成带风险提示的黄金定投建议及投入金额参考。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ausub@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39689527?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ausub",
+      "url": "https://clawhub.ai/skills/ausub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ausub",
+    "url": "https://clawhub.ai/skills/ausub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ausub-0433473d9539af78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ausub@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ausub-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab7a343ba3c55190f76555da4a5a5e485f242c199b6724c3d3505c0886da8e2e",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T13:57:24.729Z"
+}

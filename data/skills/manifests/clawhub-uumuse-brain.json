@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49567,
+  "uuid": "skill-clawhub-uumuse-brain",
+  "skillKey": "clawhub-uumuse-brain",
+  "name": "UUMuse Brain",
+  "summary": "Access, search, manage, and retrieve information from your UUMuse uploaded documents, knowledge bases, and long-term memory across sessions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uumuse_brain",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "二锅头不上头",
+      "features": [
+        "Access, search, manage, and retrieve information from your UUMuse uploaded documents, knowledge."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uumuse-brain@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40829761?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uumuse-brain",
+      "url": "https://clawhub.ai/skills/uumuse-brain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uumuse-brain",
+    "url": "https://clawhub.ai/skills/uumuse-brain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uumuse-brain-9b8ca3f54ec708ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uumuse-brain@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uumuse-brain-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6adeea31ae303360fa88a63e0afbf71a53e839245156f5942cafe23d575052f4",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T08:18:54.817Z"
+}

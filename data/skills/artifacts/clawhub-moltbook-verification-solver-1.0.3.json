@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltbook-verification-solver@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbook_verification_solver",
+  "skill": {
+    "id": 18545,
+    "skillKey": "clawhub-moltbook-verification-solver",
+    "name": "Moltbook Verification Solver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbook-verification-solver",
+    "url": "https://clawhub.ai/skills/moltbook-verification-solver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbook-verification-solver-6a8a93c77a5980b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically solve Moltbook verification challenges (math problems) when posting. Parses obfuscated number text and calculates answers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pickmemory",
+      "userId": "publishers:pickmemory",
+      "displayName": "pickmemory",
+      "image": "https://avatars.githubusercontent.com/u/217950061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 682,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771644490800,
+      "changelog": "- Added a README.md file with documentation.\n- Updated SKILL.md to bump the version to 1.0.3.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2a79bd36c3301005500e2d13bb942c32b6834c8d3ad076e88c95a2e8c478b1cb"
+}

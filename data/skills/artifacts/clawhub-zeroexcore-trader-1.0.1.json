@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zeroexcore-trader@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeroexcore_trader",
+  "skill": {
+    "id": 22276,
+    "skillKey": "clawhub-zeroexcore-trader",
+    "name": "trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeroexcore-trader",
+    "url": "https://clawhub.ai/skills/zeroexcore-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeroexcore-trader-1edb643a3de6e2ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade Solana tokens, track portfolio, bet on prediction markets, check NFT floors via the trader CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devatzeroxcore",
+      "userId": "publishers:devatzeroxcore",
+      "displayName": "devatzeroxcore",
+      "image": "https://avatars.githubusercontent.com/u/229673044?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 469,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772897243160,
+      "changelog": "- Added documentation for running the trader CLI with `npx` as an alternative to global installation.\n- No other functional or behavioral changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dd280a23e77f2219d2037f967cdda977095521a3a1bbe4f946300527f2c50374"
+}

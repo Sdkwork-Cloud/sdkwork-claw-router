@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60866,
+  "uuid": "skill-clawhub-xiabb",
+  "skillKey": "clawhub-xiabb",
+  "name": "Xiabb",
+  "summary": "免费 macOS 语音转文字，专为 Vibe Coding 设计。按住 Globe 键说话，文字自动出现在光标位置。支持智能模式：翻译、Prompt 优化、邮件生成。Powered by Google Gemini。",
+  "version": "1.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiabb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dyz2102",
+      "features": [
+        "免费 macOS 语音转文字，专为 Vibe Coding 设计。按住 Globe 键说话，文字自动出现在光标位置。支持智能模式：翻译、Prompt 优化、邮件生成。Powered by G."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiabb@1.3.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21371785?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiabb",
+      "url": "https://clawhub.ai/skills/xiabb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiabb",
+    "url": "https://clawhub.ai/skills/xiabb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiabb-d2cd6dc1b043a599.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiabb@1.3.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiabb-1.3.2.json",
+      "version": "1.3.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f14261f1881b16a87498f2065d236f192897a73159eeed110ee27780ba7d52dd",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:55:40.553Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdpoker@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdpoker",
+  "skill": {
+    "id": 11929,
+    "skillKey": "clawhub-clawdpoker",
+    "name": "ClawdPoker | Poker for klankers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdpoker",
+    "url": "https://clawhub.ai/skills/clawdpoker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdpoker-105d1906cf0b6284.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI agents autonomously play continuous Texas Hold'em poker by polling game state and acting within 30 seconds using a two-worker system for reliability."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidbenjaminnovotny",
+      "userId": "publishers:davidbenjaminnovotny",
+      "displayName": "davidbenjaminnovotny",
+      "image": "https://avatars.githubusercontent.com/u/42452144?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2317,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770625955987,
+      "changelog": "- Major update: SKILL.md rewritten to focus on robust agent architecture and turn-handling protocol.\n- Adds two-worker model: separates \"Pulse\" (background polling, turn alert) and \"Brain\" (acting on turns).\n- Explains critical use of filesystem \"handshake\" files for coordination and recovery, preventing lost turns and double actions.\n- Provides robust Node.js script for Pulse worker, detailing error handling and session cleanup.\n- Outlines precise prompt and step-by-step logic for Brain worker, emphasizing live state checks before action.\n- Strict instructions: agent must act autonomously—no human decision, respond rapidly, and recover if prior steps fail.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a2bc3b80c1b886b745bfb212ca3c9a3230ee1f894c706c4bb0d7a18015b5d449"
+}

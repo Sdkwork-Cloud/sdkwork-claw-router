@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63638,
+  "uuid": "skill-clawhub-ezviz-open-ptz-control",
+  "skillKey": "clawhub-ezviz-open-ptz-control",
+  "name": "Ezviz Open PTZ Control",
+  "summary": "萤石开放平台云台设备控制技能。支持设备列表查询、设备状态查询、云台控制 (PTZ)、预置点管理等功能。 Use when: 需要控制萤石云台设备、调整摄像头角度、设置预置点。 ⚠️ 安全要求：必须设置 EZVIZ_APP_KEY 和 EZVIZ_APP_SECRET 环境变量，使用最小权限凭证。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ezviz_open_ptz_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EzvizOpenTeam",
+      "features": [
+        "萤石开放平台云台设备控制技能。支持设备列表查询、设备状态查询、云台控制 (PTZ)、预置点管理等功能。 Use when: 需要控制萤石云台设备、调整摄像头角度、设置预置点。 ⚠️ 安全要求."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ezviz-open-ptz-control@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16202450?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ezviz-open-ptz-control",
+      "url": "https://clawhub.ai/skills/ezviz-open-ptz-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ezviz-open-ptz-control",
+    "url": "https://clawhub.ai/skills/ezviz-open-ptz-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ezviz-open-ptz-control-8bf0153750fb0089.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ezviz-open-ptz-control@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ezviz-open-ptz-control-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e5c8cd8e9711708fcc972517b5e107b4687eeddad3e0f89c7bb9aa78f9fc02f",
+      "artifactSizeBytes": 2819
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:18:00.023Z"
+}

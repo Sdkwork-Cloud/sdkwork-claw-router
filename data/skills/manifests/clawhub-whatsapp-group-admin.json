@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17782,
+  "uuid": "skill-clawhub-whatsapp-group-admin",
+  "skillKey": "clawhub-whatsapp-group-admin",
+  "name": "WhatsApp Group Admin",
+  "summary": "Group administration utilities - info, stats, invite link parsing, and creation templates",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_group_admin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marcos Santos",
+      "features": [
+        "Group administration utilities",
+        "info, stats, invite link parsing, and creation templates"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whatsapp-group-admin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74862230?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whatsapp-group-admin",
+      "url": "https://clawhub.ai/skills/whatsapp-group-admin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-group-admin",
+    "url": "https://clawhub.ai/skills/whatsapp-group-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-group-admin-e2c64610fead7e9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whatsapp-group-admin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whatsapp-group-admin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0e9f11ebbd40e4e4820474817eeb1eb1cd35fe8c0f95538b905029609d2d969",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T16:42:08.726Z"
+}

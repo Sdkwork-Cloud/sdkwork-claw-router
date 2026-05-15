@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-elf-cli-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_elf_cli_skill",
+  "skill": {
+    "id": 56446,
+    "skillKey": "clawhub-ai-elf-cli-skill",
+    "name": "AI Elf Generator – Create Magical Elf Characters & Elf on the Shelf Images – CLI-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-elf-cli-skill",
+    "url": "https://clawhub.ai/skills/ai-elf-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-elf-cli-skill-bcbcaf272c855d12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI elf filter — transform a portrait into a fantasy elf character"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775970588855,
+      "changelog": "- Initial release of ai-elf-cli-skill.\n- Transform portrait photos into fantasy elf characters using the WeShop CLI.\n- Requires weshop-cli and a WESHOP_API_KEY environment variable.\n- Supports custom prompts for elven style and batch image processing.\n- Outputs generated images with status and direct URLs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a37527e39d8c620d31861e29f67154beabd83fe3ecc52c6e9e1a2ab7480510e4"
+}

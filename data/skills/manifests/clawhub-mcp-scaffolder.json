@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40300,
+  "uuid": "skill-clawhub-mcp-scaffolder",
+  "skillKey": "clawhub-mcp-scaffolder",
+  "name": "MCP Scaffolder",
+  "summary": "Scaffolds a complete TypeScript MCP server with folder structure, typed tools, transport config, Claude MCP snippet, and README from a simple description.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_scaffolder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joe Njenga",
+      "features": [
+        "Scaffolds a complete TypeScript MCP server with folder structure, typed tools, transport config."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-scaffolder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11137483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-scaffolder",
+      "url": "https://clawhub.ai/skills/mcp-scaffolder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-scaffolder",
+    "url": "https://clawhub.ai/skills/mcp-scaffolder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-scaffolder-952d0c5544e3cd09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-scaffolder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-scaffolder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5f8bdbc5dc4c5d716b94a15211e1112aab83ca0c5ff9454d239005e09b8fcfc",
+      "artifactSizeBytes": 2476
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T12:45:57.060Z"
+}

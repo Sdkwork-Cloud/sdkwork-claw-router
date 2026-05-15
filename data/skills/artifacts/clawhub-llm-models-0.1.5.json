@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llm-models@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_models",
+  "skill": {
+    "id": 12949,
+    "skillKey": "clawhub-llm-models",
+    "name": "Llm Models"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-models",
+    "url": "https://clawhub.ai/skills/llm-models",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-models-ee38996286948956.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access Claude, Gemini, Kimi, GLM and 100+ LLMs via inference.sh CLI using OpenRouter. Models: Claude Opus 4.5, Claude Sonnet 4.5, Claude Haiku 4.5, Gemini 3..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1552,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403246477,
+      "changelog": "llm-models 0.1.5 changelog:\n\n- Clarified supported models, now listing Claude Opus 4.5, Claude Sonnet 4.5, Claude Haiku 4.5, Gemini 3 Pro, Kimi K2, GLM-4.6, and Intellect 3.\n- Enhanced SKILL.md with detailed quick start, installation, model selection, usage examples, and use cases.\n- Added automatic model fallback and cost optimization explanation.\n- Included links to documentation for agents, agent SDK, and sample integrations.\n- Expanded related skills section for extending functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4ee87b942f520e0246eb933effa99762fdc73d046c65c0d81a6ecb99fec5446f"
+}

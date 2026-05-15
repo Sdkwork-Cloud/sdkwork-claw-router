@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openjobs-jobs-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openjobs_jobs_search",
+  "skill": {
+    "id": 14701,
+    "skillKey": "clawhub-openjobs-jobs-search",
+    "name": "Openjobs Jobs Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openjobs-jobs-search",
+    "url": "https://clawhub.ai/skills/openjobs-jobs-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openjobs-jobs-search-7c9076b8d7fc797f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and discover job positions using OpenJobs AI. Find jobs by title, company, location, seniority, industry, and more with structured filters."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openjobsai",
+      "userId": "s176xfb1nt1f51cphprzg7gv5h83j0xs",
+      "displayName": "OpenJobs AI",
+      "image": "https://avatars.githubusercontent.com/u/176164832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 447,
+      "installsAllTime": 11,
+      "installsCurrent": 10,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773316431620,
+      "changelog": "- Added detailed setup, usage, and formatting instructions to the documentation.\n- Clarified how to check the skill version against the server and notify users if out of date.\n- Expanded guidance for API key management and environment setup.\n- Provided concise, user-friendly examples for searching jobs and presenting results.\n- Listed all supported filter fields, error codes, and usage tips for effective searching.\n- Emphasized strict attribution to OpenJobs AI for all job data and results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bbf897ce8d62b9f65e4d3b6411efb49c36cf75c4e6c5bc0f0a6c753249044b21"
+}

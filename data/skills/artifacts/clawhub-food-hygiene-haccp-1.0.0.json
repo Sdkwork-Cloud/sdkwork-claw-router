@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/food-hygiene-haccp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.food_hygiene_haccp",
+  "skill": {
+    "id": 52616,
+    "skillKey": "clawhub-food-hygiene-haccp",
+    "name": "Food Hygiene & HACCP Docs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "food-hygiene-haccp",
+    "url": "https://clawhub.ai/skills/food-hygiene-haccp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/food-hygiene-haccp-31a0eea7e1753a0e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate UK food safety documentation — HACCP plans, food safety management systems, allergen matrices, cleaning schedules, and EHO inspection preparation. U..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamespatrickthom2003-star",
+      "userId": "s175sm574s69gbqvacsbvd8n3n84fq3m",
+      "displayName": "ExternalOS",
+      "image": "https://avatars.githubusercontent.com/u/270515205?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775645171894,
+      "changelog": "food-hygiene-haccp 1.0.0 — Initial Release\n\n- Generates UK food safety documentation templates, including HACCP plans, allergen matrices, cleaning schedules, and EHO inspection prep.\n- Fully tailors content to business type (restaurant, takeaway, food truck, bakery, school kitchen, etc.).\n- All HACCP plans follow Codex 7 Principles, with specific UK/EU legal references and FSA guidance.\n- Includes key legal frameworks (Food Safety Act 1990, Food Hygiene Regs, FIR/Natasha's Law, etc.).\n- Provides clear instructions, common CCPs/critical limits, and a mandatory disclaimer for professional verification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dad69b363ffc0d6aee32c92bc0f7ed782b6e3edbc7eedda8039898739efa29c1"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64196,
+  "uuid": "skill-clawhub-01-weaning-guide",
+  "skillKey": "clawhub-01-weaning-guide",
+  "name": "01 Weaning Guide",
+  "summary": "Miki辅食指导 · 输入宝宝月龄+已添加食物+过敏史，输出当前阶段判断+下一步推荐+示例食谱",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.01_weaning_guide",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nic-yuan",
+      "features": [
+        "Miki辅食指导 · 输入宝宝月龄+已添加食物+过敏史，输出当前阶段判断+下一步推荐+示例食谱"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/01-weaning-guide@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195308903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "01-weaning-guide",
+      "url": "https://clawhub.ai/skills/01-weaning-guide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "01-weaning-guide",
+    "url": "https://clawhub.ai/skills/01-weaning-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/01-weaning-guide-6de97c04d5530ebe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/01-weaning-guide@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-01-weaning-guide-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fb3ad2b8fc25982d7e6c49b9d3bf7f77e1a0afabc87de3296df07ff70b4aedc",
+      "artifactSizeBytes": 2429
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T16:43:34.190Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aicnic-jobs-admin-task-status@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aicnic_jobs_admin_task_status",
+  "skill": {
+    "id": 28364,
+    "skillKey": "clawhub-aicnic-jobs-admin-task-status",
+    "name": "task-status"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aicnic-jobs-admin-task-status",
+    "url": "https://clawhub.ai/skills/aicnic-jobs-admin-task-status",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aicnic-jobs-admin-task-status-bbce19d496657779.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query task status from the AICNIC job management system. Use this skill when the user needs to check task status, retrieve job information, or mentions a job..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bylikai",
+      "userId": "publishers:bylikai",
+      "displayName": "bylikai",
+      "image": "https://avatars.githubusercontent.com/u/7258845?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 317,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773873968499,
+      "changelog": "- Updated documentation from Chinese to English for broader accessibility.\n- Improved clarity and consistency in usage instructions and workflow.\n- No changes to code or functionality; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b96ab50dcaa43781633e2cfcba82e756e5511f4fe32f6325ba3b35366bd10301"
+}

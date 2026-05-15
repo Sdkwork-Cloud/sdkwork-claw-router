@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64143,
+  "uuid": "skill-clawhub-mapping-skill",
+  "skillKey": "clawhub-mapping-skill",
+  "name": "爬论文与人才触达工作流",
+  "summary": "AI/ML 人才搜索、论文作者发现、实验室成员爬取、GitHub 研究者挖掘与个性化招聘邮件生成 skill。只要用户提到查找 AI/ML PhD、研究员、工程师，抓取实验室成员、OpenReview/CVF 会议作者、GitHub 网络研究者，提取主页/Scholar/GitHub/邮箱/研究方向，识别华人、分...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mapping_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "16Miku",
+      "features": [
+        "AI/ML 人才搜索、论文作者发现、实验室成员爬取、GitHub 研究者挖掘与个性化招聘邮件生成 skill。只要用户提到查找 AI/ML PhD、研究员、工程师，抓取实验室成员、OpenR."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mapping-skill@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196724264?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mapping-skill",
+      "url": "https://clawhub.ai/skills/mapping-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mapping-skill",
+    "url": "https://clawhub.ai/skills/mapping-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mapping-skill-4635ebb83870a180.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mapping-skill@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mapping-skill-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56adfad929a90687672428abf1b45dc43e01cf95a49ca5d81aadd73a0d290a27",
+      "artifactSizeBytes": 2077
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T22:29:26.234Z"
+}

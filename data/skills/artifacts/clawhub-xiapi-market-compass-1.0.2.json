@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiapi-market-compass@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiapi_market_compass",
+  "skill": {
+    "id": 73310,
+    "skillKey": "clawhub-xiapi-market-compass",
+    "name": "虾皮股市罗盘"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiapi-market-compass",
+    "url": "https://clawhub.ai/skills/xiapi-market-compass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiapi-market-compass-22ff8518d1dc6bad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "市场罗盘：A股市场三维结构分析系统，整合趋势结构、估值、情绪三层指标，给出市场当前状态的综合判断与操作建议。触发词：市场罗盘、市场结构分析、趋势结构、市场综合分析、仓位判断、市场健康度。适用场景：判断当前市场是否适合持仓、识别趋势结构破坏与修复信号、综合多维度给出仓位管理建议。不适用场景：个股分析、板块分析、短线..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ksky521",
+      "userId": "s177z4s6dabs1y9tx72np0acxs83zsfm",
+      "displayName": "三水清",
+      "image": "https://avatars.githubusercontent.com/u/1073262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775985639236,
+      "changelog": "No changes detected in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d87dc863801f2a1bc8449fc3dcf0eba7d68b2bc28143b6d65d1644aadda7b591"
+}

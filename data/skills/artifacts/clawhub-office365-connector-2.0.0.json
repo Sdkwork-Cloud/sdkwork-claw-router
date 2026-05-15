@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/office365-connector@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.office365_connector",
+  "skill": {
+    "id": 10072,
+    "skillKey": "clawhub-office365-connector",
+    "name": "Office 365 Connector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "office365-connector",
+    "url": "https://clawhub.ai/skills/office365-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/office365-connector-bd40799ceeb96c63.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Office 365 / Outlook connector for email (read/send), calendar (read/write), and contacts (read/write) using resilient OAuth authentication. NOW WITH MULTI-ACCOUNT SUPPORT! Manage multiple Microsoft 365 identities from a single skill. Solv."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tirandagan",
+      "userId": "s1790acmcnk4qdxxf093dqbcd583vv25",
+      "displayName": "Tiran Dagan",
+      "image": "https://avatars.githubusercontent.com/u/1196339?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2631,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1770703158657,
+      "changelog": "v2.0.0: Multi-Account Enhancement by Matthew Gordon (matt@workandthrive.ai)\n\nMAJOR NEW FEATURES:\n• Multi-account support - Manage multiple Microsoft 365 identities (work, personal, consulting)\n• Per-account token isolation - Separate, secure token storage for each account\n• Account switching - Easy --account=name flag across all operations\n• Default account selection - Set preferred account for convenience\n• Account management CLI - Simple add/remove/list/default commands\n• Legacy import tool - Seamless migration from v1.0.0 single-account setups\n\nENHANCEMENTS:\n• Enhanced auth.js with multi-account authentication support\n• Updated email.js, calendar.js, send-email.js, cancel-event.js for multi-account\n• New accounts.js CLI for account management\n• Comprehensive MULTI-ACCOUNT.md usage guide\n• CHANGELOG.md and CREDITS.md for full attribution\n\nBACKWARD COMPATIBILITY:\n• ✅ Full backward compatibility maintained\n• ✅ Environment variable fallback preserved\n• ✅ No breaking changes for existing single-account users\n• ✅ All original functionality intact\n\nSECURITY:\n• Per-account token files with mode 0600\n• Account config stored with mode 0600\n• Directory permissions set to 0700\n\nCREDIT:\nMassive thank you to Matthew Gordon for this excellent contribution! This enhancement makes the skill significantly more useful for consultants, freelancers, and anyone managing multiple work identities.\n\nOriginal skill: office365-connector v1.0.0\nEnhanced by: Matthew Gordon (matt@workandthrive.ai)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ddb0e3e6fb10e7253d9d5d7cf11b4057fa714402a00fda18e9a92b23828bd60f"
+}

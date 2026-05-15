@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9602,
+  "uuid": "skill-clawhub-mac-use",
+  "skillKey": "clawhub-mac-use",
+  "name": "mac-use",
+  "summary": "Control macOS GUI apps visually — take screenshots, click, scroll, type. Use when the user asks to interact with any Mac desktop application's graphical interface.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mac_use",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kekejun",
+      "features": [
+        "Control macOS GUI apps visually — take screenshots, click, scroll, type",
+        "Use when the user asks to interact with any Mac desktop application's graphical interface."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mac-use@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111878737?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mac-use",
+      "url": "https://clawhub.ai/skills/mac-use"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mac-use",
+    "url": "https://clawhub.ai/skills/mac-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mac-use-223010cc09f1fc00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mac-use@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mac-use-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd196beeb939066e87ed30792e45959365e6fdfda4b55c7d975d0e3ccdf7e26f",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T09:46:56.407Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aaas-roi-calculator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aaas_roi_calculator",
+  "skill": {
+    "id": 19830,
+    "skillKey": "clawhub-aaas-roi-calculator",
+    "name": "AI-as-a-Service ROI Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aaas-roi-calculator",
+    "url": "https://clawhub.ai/skills/aaas-roi-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aaas-roi-calculator-0e399ff3f73b3d18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculate ROI for AI-as-a-Service (managed AI agents). Estimates cost savings, efficiency gains, and payback period for deploying AI agents across business o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 578,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771788298212,
+      "changelog": "Initial release: ROI calculator for managed AI agent services",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d0e71b4bc43a62fb8f08ffb0629d4350d4991bbfc42db797e5dfd4ee1f63b869"
+}

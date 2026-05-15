@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36233,
+  "uuid": "skill-clawhub-cdata-software",
+  "skillKey": "clawhub-cdata-software",
+  "name": "Cdata Software",
+  "summary": "CData Software integration. Manage data, records, and automate workflows. Use when the user wants to interact with CData Software data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cdata_software",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "CData Software integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with CData Software data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cdata-software@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cdata-software",
+      "url": "https://clawhub.ai/skills/cdata-software"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cdata-software",
+    "url": "https://clawhub.ai/skills/cdata-software",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cdata-software-ab11325fbb38bf86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cdata-software@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cdata-software-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebaed07b6924e0df71dc546cdd8fb896d06913f806515f215bc85b32fabf9959",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:28:05.507Z"
+}

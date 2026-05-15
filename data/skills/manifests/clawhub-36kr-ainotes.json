@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59218,
+  "uuid": "skill-clawhub-36kr-ainotes",
+  "skillKey": "clawhub-36kr-ainotes",
+  "name": "36氪AI测评 - 36kr AI Notes",
+  "summary": "获取36氪AI测评的每日最新测评笔记内容. Use when the user asks about 36kr AI测评, AI测评笔记, 测评笔记, ainotes, 36kr测评, 查AI测评, 最新AI测评笔记, 今日AI测评, 36kr ainotes, 看测评, 查看测评内容, 36kr AI产品测评,...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.36kr_ainotes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "36kr",
+      "features": [
+        "获取36氪AI测评的每日最新测评笔记内容",
+        "Use when the user asks about 36kr AI测评, AI测评笔记, 测评笔记, ainotes, 36kr测评, 查AI测评, 最新AI测评笔记, 今日AI测评,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/36kr-ainotes@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27681803?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "36kr-ainotes",
+      "url": "https://clawhub.ai/skills/36kr-ainotes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "36kr-ainotes",
+    "url": "https://clawhub.ai/skills/36kr-ainotes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/36kr-ainotes-dd4ad6ba2b293134.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/36kr-ainotes@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-36kr-ainotes-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ec6cfca6fdf7d3b13b93e89d182223c324bfe8b4bab3c2c75823a8f53de43c9",
+      "artifactSizeBytes": 2129
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:37:48.745Z"
+}

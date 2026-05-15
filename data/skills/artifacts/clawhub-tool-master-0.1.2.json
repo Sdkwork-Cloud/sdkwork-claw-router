@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tool-master@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tool_master",
+  "skill": {
+    "id": 64798,
+    "skillKey": "clawhub-tool-master",
+    "name": "Tool Master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tool-master",
+    "url": "https://clawhub.ai/skills/tool-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tool-master-3c47354f0427c659.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "工具使用大师 - 基于关键词映射表的实用工具查找系统"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iamwangli",
+      "userId": "s17czxycx3rnzhvv9x7degadyd83n8f1",
+      "displayName": "Iamwangli",
+      "image": "https://avatars.githubusercontent.com/u/48752449?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 789,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1777604442846,
+      "changelog": "- 移除了查找脚本，简化查找流程，推荐直接使用grep指令搜索工具映射表\n- SKILL 文档更新：删除了 quick_find.sh 和 tool_finder.sh 脚本相关内容\n- 更新了实际流程与示例，更突出直接查表与命令执行方式\n- 维护和扩展指南保持不变，文档结构更简洁明了",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:128e7783111d258ce6da92db9bb128fdabb3e7aa212c296c6a85627dc298e6ab"
+}

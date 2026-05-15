@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51817,
+  "uuid": "skill-clawhub-insurance-agent-trainer",
+  "skillKey": "clawhub-insurance-agent-trainer",
+  "name": "Insurance Agent Intelligent Trainer",
+  "summary": "AI-powered insurance agent training coach — auto-parses product docs, generates question banks, assesses agent skill levels (beginner/intermediate/advanced),...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insurance_agent_trainer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lingfeng-19",
+      "features": [
+        "AI-powered insurance agent training coach — auto-parses product docs, generates question banks,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/insurance-agent-trainer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8140166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "insurance-agent-trainer",
+      "url": "https://clawhub.ai/skills/insurance-agent-trainer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insurance-agent-trainer",
+    "url": "https://clawhub.ai/skills/insurance-agent-trainer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insurance-agent-trainer-9cc8a40690710128.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/insurance-agent-trainer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-insurance-agent-trainer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f6f98c4e57a2c22130e6faa858b2a2b23642b2c991953c315b46eddf80c664e",
+      "artifactSizeBytes": 2667
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T14:34:44.001Z"
+}

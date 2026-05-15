@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50238,
+  "uuid": "skill-clawhub-url2md",
+  "skillKey": "clawhub-url2md",
+  "name": "URL to Markdown",
+  "summary": "Convert HTML web pages from HTTP/HTTPS URLs to clean, readable Markdown files with optional batch processing and formatting features.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.url2md",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rex Wang",
+      "features": [
+        "Convert HTML web pages from HTTP/HTTPS URLs to clean, readable Markdown files with optional bat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/url2md@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4360619?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "url2md",
+      "url": "https://clawhub.ai/skills/url2md"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "url2md",
+    "url": "https://clawhub.ai/skills/url2md",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/url2md-8fd9bc6ce92f03dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/url2md@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-url2md-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d34561f6e6b02f98c037a2287ba59d3c2e4d0db0b5c9b2eca3fb8ed59286c11",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T04:05:00.087Z"
+}

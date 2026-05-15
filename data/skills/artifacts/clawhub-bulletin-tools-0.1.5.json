@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bulletin-tools@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bulletin_tools",
+  "skill": {
+    "id": 51619,
+    "skillKey": "clawhub-bulletin-tools",
+    "name": "Bulletin Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bulletin-tools",
+    "url": "https://clawhub.ai/skills/bulletin-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bulletin-tools-fd6d18a71f441543.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent bulletin board — post bulletins, subscribe agents, run structured discussion and critique rounds, and resolve decisions asynchronously across Ope..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rendrag-git",
+      "userId": "s17ee5v857pyc3gckbfdzqh4f184hyrm",
+      "displayName": "rendrag-git",
+      "image": "https://avatars.githubusercontent.com/u/253747599?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 290,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1774041615058,
+      "changelog": "Declare all credential sources — RELAY_BOT_TOKEN fallback and secrets.json",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5bd0ec0ae48391aecfafb13c40d6727233ef8b387bfe11413693143da4f0c087"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-topic-scout@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_topic_scout",
+  "skill": {
+    "id": 68391,
+    "skillKey": "clawhub-ai-topic-scout",
+    "name": "AI Topic Scout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-topic-scout",
+    "url": "https://clawhub.ai/skills/ai-topic-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-topic-scout-b7c1222cd8e452f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI短视频选题追踪系统。自动抓取指定YouTube博主视频和Twitter博主推文，分析内容，聚合跨平台热点主题，生成带热度评分和选题建议的分析报告，结果写入钉钉AI表格。适用于：定时抓取AI领域博主内容、分析短视频选题热度、跨平台话题聚合、生成选题建议。触发词：\"抓取选题\"、\"分析选题\"、\"选题scout\"、\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agegr",
+      "userId": "s17d806xvte6v6zwwdjp1wby4n83m2ym",
+      "displayName": "Alex Yang",
+      "image": "https://avatars.githubusercontent.com/u/12794925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 682,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773231520307,
+      "changelog": "首次发布：AI短视频选题追踪系统",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74ad7a8c507ae139b4145e26fb4236902041f0e7b227a0e1eb71d5661a5888b8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bank-analysis@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bank_analysis",
+  "skill": {
+    "id": 73355,
+    "skillKey": "clawhub-bank-analysis",
+    "name": "银行流水财务分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bank-analysis",
+    "url": "https://clawhub.ai/skills/bank-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bank-analysis-9f267885926b0d47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分析公司银行流水，输出集团总体、收入、支出、应收应付、重大款项及风险分析报告"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duzhilei951",
+      "userId": "s17528wr0s8te7wbngrh6y2jz183w2mt",
+      "displayName": "duzhilei951",
+      "image": "https://avatars.githubusercontent.com/u/22375450?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 648,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775189950788,
+      "changelog": "升级版 v2.0.0: 1) 支持 GBK 编码自动识别和转换 2) 添加完整财务汇报格式模板 3) 新增风险预警章节 4) 新增季度回顾功能 5) 完善数据验证要求",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7504323e1ef42bd2f0332a874e4104ca83c0c36068409ad69085903fa2027fb1"
+}

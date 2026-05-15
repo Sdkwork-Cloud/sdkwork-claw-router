@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/webmail-email-monitor-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webmail_email_monitor_skill",
+  "skill": {
+    "id": 45554,
+    "skillKey": "clawhub-webmail-email-monitor-skill",
+    "name": "myskil"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webmail-email-monitor-skill",
+    "url": "https://clawhub.ai/skills/webmail-email-monitor-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webmail-email-monitor-skill-f1594f7e7e0a7978.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor Outlook and other common webmail inboxes in a persistent Edge profile, process new messages as a detached local background task, capture complete mes..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jizhidemu52",
+      "userId": "s17aty73ftf1hxjv2z9xhjef4s841csd",
+      "displayName": "Jizhidemu52",
+      "image": "https://avatars.githubusercontent.com/u/121356503?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775013193159,
+      "changelog": "- Improved documentation in SKILL.md with clear instructions, rules, and operating procedures for running the email monitor on Windows.\n- Expanded explanations on default behaviors, Python-first boundaries, and the division of logic between scripts and prompts.\n- Explicit guidance for handling mailbox login, workflow automation, and persistent Edge profiles.\n- Listed required local output artifacts and enforced specific Excel row structure for processed emails.\n- Added detailed prerequisites and reuse requirements for cross-machine compatibility.\n- Provided standard command-line usage examples for starting, stopping, checking status, and bootstrapping the monitor.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ebee748dc2eaf806f17383a19f5a94a7e331b45ad7e8c28bd108ee732f33672b"
+}

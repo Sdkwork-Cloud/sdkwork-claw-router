@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paytrigo-openclawbot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paytrigo_openclawbot",
+  "skill": {
+    "id": 12188,
+    "skillKey": "clawhub-paytrigo-openclawbot",
+    "name": "PayTrigo (OpenClawBot, Base/USDC)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paytrigo-openclawbot",
+    "url": "https://clawhub.ai/skills/paytrigo-openclawbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paytrigo-openclawbot-7b43d87cbc383fda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when an OpenClawBot needs to create or verify PayTrigo payments on Base/USDC without webhooks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paytrigo",
+      "userId": "publishers:paytrigo",
+      "displayName": "paytrigo",
+      "image": "https://avatars.githubusercontent.com/u/251841802?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1669,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770049601169,
+      "changelog": "Initial release of paytrigo-openclawbot\n\n- Provides OpenClawBot support for PayTrigo payments on Base/USDC via polling instead of webhooks.\n- Includes CLI scripts for both human-in-the-loop and direct bot payment scenarios.\n- Requires no environment setup—platform API key is embedded for out-of-the-box usage.\n- Adds local wallet management features for recipient and payer addresses.\n- Supports full payment flow: invoice creation, intent retrieval, payment submission, and status polling.\n- Documents safe polling intervals, error handling, and common pitfalls for bot integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ec7342528bb0e0b74635f37e57f324ff879cc2dce48f94005559250fbc3eaec0"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23496,
+  "uuid": "skill-clawhub-token-saver-75plus",
+  "skillKey": "clawhub-token-saver-75plus",
+  "name": "Token Saver 75+",
+  "summary": "Automatically classifies requests to optimize cost by routing to the cheapest capable model and applies maximum output compression for 75%+ token savings.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_saver_75plus",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mariovallereyes",
+      "features": [
+        "Automatically classifies requests to optimize cost by routing to the cheapest capable model and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/token-saver-75plus@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/120954554?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "token-saver-75plus",
+      "url": "https://clawhub.ai/skills/token-saver-75plus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-saver-75plus",
+    "url": "https://clawhub.ai/skills/token-saver-75plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-saver-75plus-5a2aad679d1d4b72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/token-saver-75plus@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-token-saver-75plus-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce0fd6901a996c9418298b7e6fe651cf24f84ea23335386075f8b4674449c668",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T00:59:31.588Z"
+}

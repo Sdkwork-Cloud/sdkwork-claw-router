@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37808,
+  "uuid": "skill-clawhub-bptpv1",
+  "skillKey": "clawhub-bptpv1",
+  "name": "Beta Paper Trading Plan v1",
+  "summary": "Generates structured paper trading plans with entry, stop loss, take profit, position size, and failure conditions for SPX, indices, and US equity options.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bptpv1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1477009639zw-blip",
+      "features": [
+        "Generates structured paper trading plans with entry, stop loss, take profit, position size, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bptpv1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266505725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bptpv1",
+      "url": "https://clawhub.ai/skills/bptpv1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bptpv1",
+    "url": "https://clawhub.ai/skills/bptpv1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bptpv1-aee3d0fcd28778c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bptpv1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bptpv1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff1681cb97e886c27d82f2a3062487d4e307cafefe4375a2855a7b11037b3985",
+      "artifactSizeBytes": 1852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T06:09:39.847Z"
+}

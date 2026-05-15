@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72229,
+  "uuid": "skill-clawhub-goodsclassify",
+  "skillKey": "clawhub-goodsclassify",
+  "name": "商品归类skill",
+  "summary": "提供准确的商品编码、归类、海关编码、HS编码和税号查询服务，专注蓝牙耳机、手机壳和充电器等产品。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goodsclassify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "orangeboo",
+      "features": [
+        "提供准确的商品编码、归类、海关编码、HS编码和税号查询服务，专注蓝牙耳机、手机壳和充电器等产品。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goodsclassify@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111676331?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goodsclassify",
+      "url": "https://clawhub.ai/skills/goodsclassify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goodsclassify",
+    "url": "https://clawhub.ai/skills/goodsclassify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goodsclassify-4cb201642a28bd4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goodsclassify@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-goodsclassify-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97e471de39ea98ef4a8c239b6f17237d068bf8991e2354e2adfeb62213a0ab95",
+      "artifactSizeBytes": 2459
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T05:37:22.817Z"
+}

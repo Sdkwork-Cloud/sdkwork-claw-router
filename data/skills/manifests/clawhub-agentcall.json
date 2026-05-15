@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15419,
+  "uuid": "skill-clawhub-agentcall",
+  "skillKey": "clawhub-agentcall",
+  "name": "AgentCall",
+  "summary": "Give your agent real phone numbers for SMS, OTP verification, and voice calls via the AgentCall API.",
+  "version": "2.1.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentcall",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zen Fox",
+      "features": [
+        "Give your agent real phone numbers for SMS, OTP verification, and voice calls via the AgentCall."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentcall@2.1.14",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/179409904?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentcall",
+      "url": "https://clawhub.ai/skills/agentcall"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentcall",
+    "url": "https://clawhub.ai/skills/agentcall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentcall-b97fff0ee314a7eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentcall@2.1.14",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentcall-2.1.14.json",
+      "version": "2.1.14",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2cd8432192b714df5343be28ced20f1858524fcdc0d3921f1969202c36b637c7",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T22:49:56.101Z"
+}

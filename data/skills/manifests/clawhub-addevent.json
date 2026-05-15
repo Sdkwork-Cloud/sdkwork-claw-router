@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32332,
+  "uuid": "skill-clawhub-addevent",
+  "skillKey": "clawhub-addevent",
+  "name": "Addevent",
+  "summary": "Addevent integration. Manage data, records, and automate workflows. Use when the user wants to interact with Addevent data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.addevent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Addevent integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Addevent data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/addevent@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "addevent",
+      "url": "https://clawhub.ai/skills/addevent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "addevent",
+    "url": "https://clawhub.ai/skills/addevent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/addevent-0d6ee72a6b1b2394.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/addevent@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-addevent-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9514dbc2ed1d0579b6844976c210973bf5853fcdbe6179201438949ebc35ba6",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:15:43.229Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/buffer-social@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buffer_social",
+  "skill": {
+    "id": 22664,
+    "skillKey": "clawhub-buffer-social",
+    "name": "Buffer Social Media"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buffer-social",
+    "url": "https://clawhub.ai/skills/buffer-social",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buffer-social-f82820e1367c86b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, schedule, queue, and manage social media posts and drafts across Buffer-connected profiles using terminal commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahmadabugosh",
+      "userId": "s176an5jpzhb1ncq7qgdnaxn5583effb",
+      "displayName": "Ahmad Abugosh",
+      "image": "https://avatars.githubusercontent.com/u/4855928?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 454,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772575248803,
+      "changelog": "Initial release: Buffer social media scheduling skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fb976e6942306c80ad2b848887dca16c12c66f98da50095f67bb37a209b0edea"
+}

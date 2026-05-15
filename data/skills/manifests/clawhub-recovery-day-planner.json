@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49493,
+  "uuid": "skill-clawhub-recovery-day-planner",
+  "skillKey": "clawhub-recovery-day-planner",
+  "name": "Recovery Day Planner",
+  "summary": "Plan intentional recovery days after physical exertion, travel, or illness -- with rest, hydration, nutrition, and light movement prompts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recovery_day_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Plan intentional recovery days after physical exertion, travel, or illness -",
+        "with rest, hydration, nutrition, and light movement prompts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recovery-day-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recovery-day-planner",
+      "url": "https://clawhub.ai/skills/recovery-day-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recovery-day-planner",
+    "url": "https://clawhub.ai/skills/recovery-day-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recovery-day-planner-60e1b8aed633584b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recovery-day-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-recovery-day-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8f23b15440857d5a16809dcfda591719353b27b66c22d0c1b213403fc565a8f",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T08:18:55.324Z"
+}

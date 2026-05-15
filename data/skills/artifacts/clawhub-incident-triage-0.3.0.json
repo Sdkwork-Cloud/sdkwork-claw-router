@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/incident-triage@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.incident_triage",
+  "skill": {
+    "id": 34222,
+    "skillKey": "clawhub-incident-triage",
+    "name": "Incident Triage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "incident-triage",
+    "url": "https://clawhub.ai/skills/incident-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/incident-triage-17af5cfedd9567c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured incident triage for alerts from any monitoring source. Five-step framework: classify severity, scope blast radius, correlate with recent changes,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ggettert",
+      "userId": "s17bj3ze3bdgz5fv4m1dbjz8mn84wmhv",
+      "displayName": "Grace Gettert",
+      "image": "https://avatars.githubusercontent.com/u/9805362?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1776788846821,
+      "changelog": "Add scripts/ for deploy correlation and incident ticket creation; add TOC to alert-patterns.md and triage-framework.md; improve Works Well With section with step-level guidance; add runbook template warning; fix GNU date format bug in correlate-recent-deploys.sh",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8096ad8bd9a5357bb4e7f476b3483cc7e541d00eeb37f73b75d2f2435d15a395"
+}

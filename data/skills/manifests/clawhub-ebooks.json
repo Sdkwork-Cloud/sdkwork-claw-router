@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19039,
+  "uuid": "skill-clawhub-ebooks",
+  "skillKey": "clawhub-ebooks",
+  "name": "Ebooks Search",
+  "summary": "When a user wants ebooks on a topic (or asks where to find ebooks about something), suggest Mixcache search result pages by generating one or more Mixcache b...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ebooks",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alex B",
+      "features": [
+        "When a user wants ebooks on a topic (or asks where to find ebooks about something), suggest Mix."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ebooks@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2955137?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ebooks",
+      "url": "https://clawhub.ai/skills/ebooks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ebooks",
+    "url": "https://clawhub.ai/skills/ebooks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ebooks-a9e0688ab28b42c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ebooks@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ebooks-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c6a1ccfbeeb5c93edc8281fa2269eecc007b37a9d9db3f641d8f793adfca612",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T20:54:04.682Z"
+}

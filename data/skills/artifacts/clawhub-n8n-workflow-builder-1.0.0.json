@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/n8n-workflow-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n8n_workflow_builder",
+  "skill": {
+    "id": 27960,
+    "skillKey": "clawhub-n8n-workflow-builder",
+    "name": "N8n Workflow Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n8n-workflow-builder",
+    "url": "https://clawhub.ai/skills/n8n-workflow-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n8n-workflow-builder-0fa97b125d4ae9a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Converts plain English automation requests into complete, deployable N8N workflow JSON with triggers, actions, error handling, and setup guidance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "di5cip1e",
+      "userId": "s17ewhty0883w7qaxe537w985583mxaf",
+      "displayName": "di5cip1e",
+      "image": "https://avatars.githubusercontent.com/u/87604837?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 327,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774625132439,
+      "changelog": "n8n-workflow-builder v1.0.0 — Initial release\n\n- Translates plain English automation requests into ready-to-use N8N workflow JSON.\n- Supports common use cases: lead capture, CRM sync, invoice follow-ups, social media posting, customer support, and data routing.\n- Provides full import-ready JSON, workflow descriptions, setup instructions, and testing guidance.\n- Includes example workflows for typical automation scenarios.\n- Guides users on required credentials, error handling, and testing best practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1603e6905364556f35ddccc7e83c161f3d99e3867e8fa10f26da8f86413a33a3"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53463,
+  "uuid": "skill-clawhub-startup-agent",
+  "skillKey": "clawhub-startup-agent",
+  "name": "Startup Agent (→ raon-os)",
+  "summary": "Alias for raon-os — AI-powered startup companion for Korean founders. Install the main package for full functionality.",
+  "version": "0.7.27",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.startup_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tomas",
+      "features": [
+        "Alias for raon-os — AI-powered startup companion for Korean founders",
+        "Install the main package for full functionality."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/startup-agent@0.7.27",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67946543?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "startup-agent",
+      "url": "https://clawhub.ai/skills/startup-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "startup-agent",
+    "url": "https://clawhub.ai/skills/startup-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/startup-agent-4063fee9f62a0016.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/startup-agent@0.7.27",
+      "artifactUrl": "data/skills/artifacts/clawhub-startup-agent-0.7.27.json",
+      "version": "0.7.27",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58232140b55c10ac48ebefda7b37d99084af23847a5608e3a7d9428a4ba8deb1",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T01:28:54.173Z"
+}

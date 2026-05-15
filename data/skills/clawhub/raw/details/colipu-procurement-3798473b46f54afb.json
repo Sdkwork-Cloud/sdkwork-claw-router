@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "colipu-procurement",
+    "displayName": "科力普采购助手",
+    "summary": "科力普（Colipu）B2B 办公用品采购助手，覆盖商品搜索、下单、订单详情、订单查询、取消订单全流程。当用户说「在科力普 / Colipu 上买 / 采购 / 下单 / 订购」任何办公用品（A4 纸、文具、保温杯、电脑配件、桌椅等），或「查 / 取消科力普订单」「调用 colipu API」时触发。不适用于：售...",
+    "tags": {
+      "latest": "1.0.4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 261,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "createdAt": 1776676407992,
+    "updatedAt": 1778064111088
+  },
+  "latestVersion": {
+    "version": "1.0.4",
+    "createdAt": 1778063717090,
+    "changelog": "colipu-procurement 1.0.3\n\n- Major refactor: Simplified the skill to focus only on Colipu B2B procurement (searching, ordering, order querying, cancellation) for office supplies. Out-of-scope features (such as after-sales and billing) are removed.\n- New scripts added for core scenarios: product search (`colipu_search.py`), order placement (`colipu_order.py`, `buy_products.py`).\n- Obsolete APIs and references for billing, after-sales, logistics, and messages are removed.\n- Strict mandate: Order submission now strictly requires explicit user confirmation before placing any order.\n- Documentation overhauled for clarity, covering mandatory flows, full API call chain, and robust error handling.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "simsq",
+    "userId": "s17e00a5pf19k8cj0qt1grrxpn856sgt",
+    "displayName": "阿强哥",
+    "image": "https://avatars.githubusercontent.com/u/22512558?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778064111088
+  }
+}

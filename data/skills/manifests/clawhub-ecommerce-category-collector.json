@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62790,
+  "uuid": "skill-clawhub-ecommerce-category-collector",
+  "skillKey": "clawhub-ecommerce-category-collector",
+  "name": "Audtools Ecommerce Category Collector",
+  "summary": "自动从Audtools电商采集工具批量提交分类链接采集任务。支持从CSV文件读取collections链接，自动登录、提交采集任务，并管理多个tab页面的生命周期。当需要通过Audtools批量采集电商分类商品时使用此技能。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_category_collector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QirongZhang",
+      "features": [
+        "自动从Audtools电商采集工具批量提交分类链接采集任务。支持从CSV文件读取collections链接，自动登录、提交采集任务，并管理多个tab页面的生命周期。当需要通过Audtools."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecommerce-category-collector@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24821414?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecommerce-category-collector",
+      "url": "https://clawhub.ai/skills/ecommerce-category-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-category-collector",
+    "url": "https://clawhub.ai/skills/ecommerce-category-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-category-collector-a73f14693fcfc851.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecommerce-category-collector@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecommerce-category-collector-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72d65544befefd6fe39badafc3c4d80d4e4b9b3140db2c48e53b3bfab7db1d05",
+      "artifactSizeBytes": 2209
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T01:13:46.878Z"
+}

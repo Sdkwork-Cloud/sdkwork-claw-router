@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anniversary-flight@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anniversary_flight",
+  "skill": {
+    "id": 46277,
+    "skillKey": "clawhub-anniversary-flight",
+    "name": "anniversary-flight"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anniversary-flight",
+    "url": "https://clawhub.ai/skills/anniversary-flight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anniversary-flight-30e0e8e451915b69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book flights for anniversary celebrations and milestone occasions. Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itine..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1777011629937,
+      "changelog": "anniversary-flight 3.2.0\n\n- Added detailed CRITICAL EXECUTION RULES to enforce strict CLI usage and output validation.\n- Expanded trigger phrases for activation in both English and Chinese.\n- Documented distinct CLI playbooks for recommended, cheapest, fastest, and direct flight searches.\n- Provided comprehensive output formatting and validation standards, including mandatory booking links ([Book]({detailUrl})) and brand attribution.\n- Clarified exclusion rules for queries better handled by other skills.\n- Enhanced instructions for parameter mapping and scenario handling via references.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:171c43465d078bcb3b24bb55ed3130a76993ef6b7d42c5044284fa7ebeee82cc"
+}

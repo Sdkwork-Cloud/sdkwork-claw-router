@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawpost@1.1.8",
+  "version": "1.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawpost",
+  "skill": {
+    "id": 33131,
+    "skillKey": "clawhub-clawpost",
+    "name": "Social Posting for Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawpost",
+    "url": "https://clawhub.ai/skills/clawpost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawpost-02f237f03836be7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post to X (Twitter), LinkedIn, Facebook, and TikTok via Claw Post API. Search for Facebook groups, join them, and post to them. Use when the user wants to pu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daydreamnationtechlabs",
+      "userId": "s1720z0evmsk4p8m5p7xcbbes9849yk7",
+      "displayName": "Daydream Nation Tech Labs LLC",
+      "image": "https://avatars.githubusercontent.com/u/152904916?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 231,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.1.8",
+      "createdAt": 1775402676520,
+      "changelog": "Version 1.1.8\n\n- Expanded authentication section to clarify that the Claw Post API key is not embedded in the skill file and should be set via environment variables only.\n- Improved security explanation: clarified that no social platform credentials or OAuth tokens are used or exposed, only a Claw Post API key.\n- Rewrote and expanded extension instructions, including more guidance on safe setup and extension permissions.\n- Added reminders not to paste keys into skill files or version control.\n- General text cleanup for clarity and less risk of credential mishandling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9190d44c2ae657a2a6019e480435bd31a33afe7535d45c7a3b98340864a3224c"
+}

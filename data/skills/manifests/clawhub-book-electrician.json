@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13411,
+  "uuid": "skill-clawhub-book-electrician",
+  "skillKey": "clawhub-book-electrician",
+  "name": "Book Electrician",
+  "summary": "Book electrician services through Lokuli MCP. Use when user needs to find and book electrician. Triggers on requests like \"book a electrician\", \"find electrician near me\", or any electrician service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_electrician",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book electrician services through Lokuli MCP",
+        "Use when user needs to find and book electrician",
+        "Triggers on requests like \"book a electrician\", \"find electrician near me\", or any electrician."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-electrician@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-electrician",
+      "url": "https://clawhub.ai/skills/book-electrician"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-electrician",
+    "url": "https://clawhub.ai/skills/book-electrician",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-electrician-b297164b1fd22e93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-electrician@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-electrician-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5733611899805de92fbb4aea5ccc16a2886a6fb94b91bd20b188bb1d2529f0a0",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:05:08.150Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pure-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pure_search",
+  "skill": {
+    "id": 27115,
+    "skillKey": "clawhub-pure-search",
+    "name": "Pure Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pure-search",
+    "url": "https://clawhub.ai/skills/pure-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pure-search-bb74a70fbd60ff89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A lightweight, API-key-free web search skill based on DuckDuckGo and Trafilatura. Returns highly relevant URLs and clean markdown content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyecho-io",
+      "userId": "publishers:cyecho-io",
+      "displayName": "cyecho-io",
+      "image": "https://avatars.githubusercontent.com/u/19159859?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 335,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773114612702,
+      "changelog": "Initial release of Pure Search:\n\n- Lightweight web search tool using DuckDuckGo and Trafilatura.\n- No API keys required; zero configuration needed.\n- Returns highly relevant URLs with main content extracted as clean Markdown.\n- Outputs structured JSON with titles, URLs, and markdown bodies.\n- Simple setup and usage with a single Python script.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3162e857f33d74d2119f526024c8632c6e46f8c70fa4d21870d1e441a06e70e2"
+}

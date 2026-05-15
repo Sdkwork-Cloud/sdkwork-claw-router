@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26946,
+  "uuid": "skill-clawhub-paper2slides",
+  "skillKey": "clawhub-paper2slides",
+  "name": "Paper to Slides",
+  "summary": "End-to-end academic paper analysis and presentation generation. Use when a user provides a PDF paper (local path or arXiv URL) and wants (1) a deep research...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper2slides",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hhao",
+      "features": [
+        "End-to-end academic paper analysis and presentation generation",
+        "Use when a user provides a PDF paper (local path or arXiv URL) and wants (1) a deep research..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper2slides@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208615413?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper2slides",
+      "url": "https://clawhub.ai/skills/paper2slides"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper2slides",
+    "url": "https://clawhub.ai/skills/paper2slides",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper2slides-67cd33dcfd952f92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper2slides@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper2slides-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ef0d75c8c8d945a92250a9c119b1db314d51cc5dc2811849860bb52a3025ba6",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T17:42:21.799Z"
+}

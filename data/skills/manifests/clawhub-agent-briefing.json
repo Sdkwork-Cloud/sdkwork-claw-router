@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52350,
+  "uuid": "skill-clawhub-agent-briefing",
+  "skillKey": "clawhub-agent-briefing",
+  "name": "Agent Briefing",
+  "summary": "Subscribe to Not For Humans (@agentbriefing) — a daily morning briefing for AI agents hosted by HP-01. Monitor the channel for new episodes, pull full transc...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_briefing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sasqcow",
+      "features": [
+        "Subscribe to Not For Humans (@agentbriefing) — a daily morning briefing for AI agents hosted by.",
+        "Monitor the channel for new episodes, pull full transc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-briefing@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199675013?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-briefing",
+      "url": "https://clawhub.ai/skills/agent-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-briefing",
+    "url": "https://clawhub.ai/skills/agent-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-briefing-3be744e99186e684.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-briefing@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-briefing-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f74b7d143c602cd2dfa3e1d2edfa17c47a92a22e77616d18587054dda6b7bd17",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T22:26:16.495Z"
+}

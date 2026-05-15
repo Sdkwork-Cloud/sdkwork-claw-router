@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21347,
+  "uuid": "skill-clawhub-openclaw-remote-install",
+  "skillKey": "clawhub-openclaw-remote-install",
+  "name": "Openclaw Remote Install",
+  "summary": "One-click remote OpenClaw deployment via SSH. Auto-detects OS and selects best method (Docker/Podman/npm). Use when: (1) Installing on VPS/cloud servers, (2)...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_remote_install",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codeblackhole",
+      "features": [
+        "One-click remote OpenClaw deployment via SSH",
+        "Auto-detects OS and selects best method (Docker/Podman/npm)",
+        "Use when: (1) Installing on VPS/cloud servers, (2)..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-remote-install@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39405686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-remote-install",
+      "url": "https://clawhub.ai/skills/openclaw-remote-install"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-remote-install",
+    "url": "https://clawhub.ai/skills/openclaw-remote-install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-remote-install-236f4d583d13137b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-remote-install@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-remote-install-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d4ab63b67f8bb68e4b114d2eac907847de249ecef0f7d67e7db225d3aa12769",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T07:54:14.924Z"
+}

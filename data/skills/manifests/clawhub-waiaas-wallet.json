@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51358,
+  "uuid": "skill-clawhub-waiaas-wallet",
+  "skillKey": "clawhub-waiaas-wallet",
+  "name": "WAIaaS Wallet",
+  "summary": "Self-hosted crypto wallet daemon for AI agents. Send transactions, manage DeFi positions, enforce spending limits — without exposing private keys to agents....",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.waiaas_wallet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "유민호(Minho Yoo)",
+      "features": [
+        "Self-hosted crypto wallet daemon for AI agents",
+        "Send transactions, manage DeFi positions, enforce spending limits — without exposing private ke."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/waiaas-wallet@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20573044?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "waiaas-wallet",
+      "url": "https://clawhub.ai/skills/waiaas-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "waiaas-wallet",
+    "url": "https://clawhub.ai/skills/waiaas-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/waiaas-wallet-98eb1721dc0135fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/waiaas-wallet@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-waiaas-wallet-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1669a3b41c8abf31d29b9a8a44d5af9343558d0af728ee079eee76e7280d100",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T15:49:50.738Z"
+}

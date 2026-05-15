@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23341,
+  "uuid": "skill-clawhub-gpu-check",
+  "skillKey": "clawhub-gpu-check",
+  "name": "Gpu Check",
+  "summary": "Automatically polls and displays memory usage and online status of RTX 3090 and 4090 AI compute nodes in the local network.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gpu_check",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fainaltn",
+      "features": [
+        "Automatically polls and displays memory usage and online status of RTX 3090 and 4090 AI compute."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gpu-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69745377?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gpu-check",
+      "url": "https://clawhub.ai/skills/gpu-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gpu-check",
+    "url": "https://clawhub.ai/skills/gpu-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gpu-check-72a10ff1616deff6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gpu-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gpu-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d68dec4e4348eeaad45407e9a07378e986f016bdb98f6dbefe64fba1a669ad4",
+      "artifactSizeBytes": 2160
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T03:06:45.659Z"
+}

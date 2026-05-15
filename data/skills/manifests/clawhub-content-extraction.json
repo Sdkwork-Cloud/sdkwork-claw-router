@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30909,
+  "uuid": "skill-clawhub-content-extraction",
+  "skillKey": "clawhub-content-extraction",
+  "name": "content-extraction",
+  "summary": "OpenClaw-native executable content extraction skill for URLs, Feishu, YouTube, and web pages.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_extraction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "halfmoon82",
+      "features": [
+        "OpenClaw-native executable content extraction skill for URLs, Feishu, YouTube, and web pages."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-extraction@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261569221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-extraction",
+      "url": "https://clawhub.ai/skills/content-extraction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-extraction",
+    "url": "https://clawhub.ai/skills/content-extraction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-extraction-d79411c9d42eb38c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-extraction@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-extraction-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd571447123388b42471e815d1d7c70808d7c857d36964ea5e79013219eeceaf",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T02:46:20.868Z"
+}

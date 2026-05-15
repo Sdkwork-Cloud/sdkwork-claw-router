@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21540,
+  "uuid": "skill-clawhub-auto-sec-blogger",
+  "skillKey": "clawhub-auto-sec-blogger",
+  "name": "Auto Sec Blogger",
+  "summary": "Collects security news from multiple sources, generates expert-level blog posts with GLM-4.7, publishes drafts to Notion, and auto-deploys approved posts to...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_sec_blogger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rebugui",
+      "features": [
+        "Collects security news from multiple sources, generates expert-level blog posts with GLM-4.7, p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-sec-blogger@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51498462?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-sec-blogger",
+      "url": "https://clawhub.ai/skills/auto-sec-blogger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-sec-blogger",
+    "url": "https://clawhub.ai/skills/auto-sec-blogger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-sec-blogger-411c70cf83771e9f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-sec-blogger@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-sec-blogger-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d340527b7a6e39aa5c89bd611979b586f4c5a77d63ef97ad2781fe97b91524c",
+      "artifactSizeBytes": 2262
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T07:45:35.704Z"
+}

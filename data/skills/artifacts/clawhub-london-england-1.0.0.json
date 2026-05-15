@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/london-england@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.london_england",
+  "skill": {
+    "id": 48112,
+    "skillKey": "clawhub-london-england",
+    "name": "London England"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "london-england",
+    "url": "https://clawhub.ai/skills/london-england",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/london-england-4be0649d1c5d5ae8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "London is the UK capital and a top global financial center with 2,000 years of history, known for finance, tech, creativity, and diverse culture."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 104,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777734198116,
+      "changelog": "London skill version 1.0.0 — Initial Release\n\n- 提供伦敦作为世界金融中心和历史名城的全面介绍\n- 概述2,000年历史时间线与重大城市节点\n- 详细分析伦敦多元经济结构、护城河优势与关键数据\n- 涵盖金融服务、创意与科技产业、国际旅游等核心亮点\n- 收录有趣事实与适用场景，助于快速了解伦敦的国际地位",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e332d910397df3a83405a9ef23e2bd954bdb8df9d320b963f72be75b3fc813c0"
+}

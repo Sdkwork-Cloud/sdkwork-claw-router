@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37640,
+  "uuid": "skill-clawhub-pdf-batch-tool",
+  "skillKey": "clawhub-pdf-batch-tool",
+  "name": "Pdf Batch Tool",
+  "summary": "Batch process PDFs with merging, splitting, converting to images, extracting text, adding watermarks, and compressing while preserving quality.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_batch_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bingze00000",
+      "features": [
+        "Batch process PDFs with merging, splitting, converting to images, extracting text, adding water."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-batch-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268100670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-batch-tool",
+      "url": "https://clawhub.ai/skills/pdf-batch-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-batch-tool",
+    "url": "https://clawhub.ai/skills/pdf-batch-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-batch-tool-a16582addcd74755.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-batch-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-batch-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e63ceda278f1831763eb4a612dae65e212525e8e0f7bdd0f627651ca6105b68",
+      "artifactSizeBytes": 2197
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T09:30:36.979Z"
+}

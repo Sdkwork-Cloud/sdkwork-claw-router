@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-bitable-permission-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bitable_permission_checker",
+  "skill": {
+    "id": 71238,
+    "skillKey": "clawhub-feishu-bitable-permission-checker",
+    "name": "飞书多维表格权限检查"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bitable-permission-checker",
+    "url": "https://clawhub.ai/skills/feishu-bitable-permission-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bitable-permission-checker-580fad2588af7060.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书多维表格文档权限检查工具。当用户提供一个飞书多维表格（bitable）URL 或 app_token 时，自动提取【链接地址】列，逐一检查每个链接的飞书文档（docx/wiki）阅读权限，最终输出【有权限文档列表】和【无权限文档列表】。触发词：检查文档权限、批量检查权限、哪些文档我能看、多维表格链接权限检查。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ganguagua",
+      "userId": "s17c827aqxz5tagheksase6g4s85008s",
+      "displayName": "ganguagua",
+      "image": "https://avatars.githubusercontent.com/u/28615695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776415701165,
+      "changelog": "首发版本：批量检查多维表格中文档的阅读权限",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a08148c2eff74935f7ecc3da15ed4f0f6ecc0a00a1bd0c0648e2404b0f600bc"
+}

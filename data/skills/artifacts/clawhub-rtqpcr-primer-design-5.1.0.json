@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rtqpcr-primer-design@5.1.0",
+  "version": "5.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rtqpcr_primer_design",
+  "skill": {
+    "id": 28355,
+    "skillKey": "clawhub-rtqpcr-primer-design",
+    "name": "Bio-chat: Hardcore Primer Designer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rtqpcr-primer-design",
+    "url": "https://clawhub.ai/skills/rtqpcr-primer-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rtqpcr-primer-design-af43d72df29102cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Designs high-specificity RT-qPCR primers and probes with homology mapping, high-GC optimization, TaqMan/SYBR support, and off-target specificity checks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zjuphd",
+      "userId": "publishers:zjuphd",
+      "displayName": "zjuphD",
+      "image": "https://avatars.githubusercontent.com/u/210981987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 328,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "5.1.0",
+      "createdAt": 1773243491926,
+      "changelog": "Professional enhancement v5.1: Added TaqMan probe design, 3' off-target defense, and robust homology-based junction mapping. ZJU PhD Edition.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71e11c363e69957d1a1e3352416ed8bee9e13c6bcd6f6b26a7fb41366bcb6d27"
+}

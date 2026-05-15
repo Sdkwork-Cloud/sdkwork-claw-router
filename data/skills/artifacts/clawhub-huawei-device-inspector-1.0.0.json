@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huawei-device-inspector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huawei_device_inspector",
+  "skill": {
+    "id": 65073,
+    "skillKey": "clawhub-huawei-device-inspector",
+    "name": "Huawei Device Inspector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huawei-device-inspector",
+    "url": "https://clawhub.ai/skills/huawei-device-inspector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huawei-device-inspector-9fa6c6cfd2c5e731.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过SSH自动巡检华为交换机和路由器，执行状态检查、告警和安全风险排查，生成详细健康报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "v585",
+      "userId": "s17cxmjctchedjz1p5b77e1nc183hp4m",
+      "displayName": "聿歆",
+      "image": "https://avatars.githubusercontent.com/u/35373448?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774108596303,
+      "changelog": "Initial release: Automates inspection and reporting for Huawei switches and routers.\n\n- Connects to Huawei devices via SSH using pexpect to avoid connection drops.\n- Executes key diagnostic commands to collect status, hardware, resource usage, and alarm information.\n- Parses and highlights critical alarms, security risks, and abnormal resource usage.\n- Automatically generates detailed inspection reports in Markdown format.\n- Designed for routine checks, troubleshooting, and security audits of Huawei network devices.\n- Requires Python 3 and pexpect library.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc342b80e2b3e28dfd53cc6763b786ce994fd10d1b79671bfab76070449c8779"
+}

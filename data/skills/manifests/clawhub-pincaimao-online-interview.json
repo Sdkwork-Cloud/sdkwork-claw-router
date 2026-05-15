@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58003,
+  "uuid": "skill-clawhub-pincaimao-online-interview",
+  "skillKey": "clawhub-pincaimao-online-interview",
+  "name": "聘才猫（Pincaimao）在线面试",
+  "summary": "聘才猫 - 在线面试 Use when calling Pincaimao Online Interview API to conduct a multi-turn AI interview session. Supports text and video interview modes, custom ques...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pincaimao_online_interview",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "聘才猫（Pincaimao）",
+      "features": [
+        "在线面试 Use when calling Pincaimao Online Interview API to conduct a multi-turn AI interview sessi.",
+        "Supports text and video interview modes, custom ques..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pincaimao-online-interview@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/pincaimao-online-interview/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pincaimao-online-interview",
+      "url": "https://clawhub.ai/skills/pincaimao-online-interview"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pincaimao-online-interview",
+    "url": "https://clawhub.ai/skills/pincaimao-online-interview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pincaimao-online-interview-5e9bb45241f1fde7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pincaimao-online-interview@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pincaimao-online-interview-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ed987c864be5684e17c89ddb7cbe208a21a36f959a938345be3fb7449072347",
+      "artifactSizeBytes": 2116
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:22:27.640Z"
+}

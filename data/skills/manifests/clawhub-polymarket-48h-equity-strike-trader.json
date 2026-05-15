@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31501,
+  "uuid": "skill-clawhub-polymarket-48h-equity-strike-trader",
+  "skillKey": "clawhub-polymarket-48h-equity-strike-trader",
+  "name": "Polymarket 48h Equity Strike Trader",
+  "summary": "Trades structural mispricings in equity/stock price-threshold markets by reconstructing the implied probability curve across strike levels for the same compa...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_48h_equity_strike_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades structural mispricings in equity/stock price-threshold markets by reconstructing the imp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-48h-equity-strike-trader@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-48h-equity-strike-trader",
+      "url": "https://clawhub.ai/skills/polymarket-48h-equity-strike-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-48h-equity-strike-trader",
+    "url": "https://clawhub.ai/skills/polymarket-48h-equity-strike-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-48h-equity-strike-trader-829a4d27a489176b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-48h-equity-strike-trader@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-48h-equity-strike-trader-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c30209c6592777d0563b7859b56e69ef89a663e1a1c1cb3a20b62ee90041ad2",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:23:06.616Z"
+}

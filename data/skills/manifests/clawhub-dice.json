@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22450,
+  "uuid": "skill-clawhub-dice",
+  "skillKey": "clawhub-dice",
+  "name": "Dice",
+  "summary": "Roll dice, track scores, and manage game stats for tabletop gaming. Use when rolling dice, tracking scores, ranking players, reviewing history.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Roll dice, track scores, and manage game stats for tabletop gaming",
+        "Use when rolling dice, tracking scores, ranking players, reviewing history."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dice@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dice",
+      "url": "https://clawhub.ai/skills/dice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dice",
+    "url": "https://clawhub.ai/skills/dice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dice-e1e025805cd63af3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dice@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dice-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4217e72caa18cf4d314262bd6795bbd9b0cd17d2701873ff0b8918fc5c807a2",
+      "artifactSizeBytes": 1796
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:41:01.828Z"
+}

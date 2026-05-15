@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/powerloom-bds-univ3@0.2.2",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.powerloom_bds_univ3",
+  "skill": {
+    "id": 50965,
+    "skillKey": "clawhub-powerloom-bds-univ3",
+    "name": "🦄 Powerloom Uniswap V3 timeseries data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "powerloom-bds-univ3",
+    "url": "https://clawhub.ai/skills/powerloom-bds-univ3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/powerloom-bds-univ3-3705681cb998af42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous Uniswap V3 monitoring on consensus-backed data with onchain provenance. Every data point is finalized on-chain by Powerloom's decentralized sequen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "powerloom-bot",
+      "userId": "s176mrxdfpcbst221tw1g4jkf585fvh0",
+      "displayName": "powerloom-bot",
+      "image": "https://avatars.githubusercontent.com/u/126208417?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 322,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "0.2.2",
+      "createdAt": 1778345981551,
+      "changelog": "Version 0.2.2\n\n- Version bump from 0.2.1 to 0.2.2.\n- enhance signup-pay one-shot instructions to emphasize required inputs for Telegram alerts and clarify cron job creation steps",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a6a977171532f797cfe9fced17df7dd1c884e0303ba85d8ca9b13f34eedc78bc"
+}

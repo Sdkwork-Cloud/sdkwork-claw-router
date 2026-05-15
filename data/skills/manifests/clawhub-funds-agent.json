@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67689,
+  "uuid": "skill-clawhub-funds-agent",
+  "skillKey": "clawhub-funds-agent",
+  "name": "funds-agent",
+  "summary": "自动生成基金日报，包含持仓基金数据、估值涨跌、单位净值和财经要闻。支持定时任务（每天下午 4 点自动发送），可配置基金代码列表。输出格式：Telegram 消息 + Word 文档。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.funds_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiashuoji838-afk",
+      "features": [
+        "自动生成基金日报，包含持仓基金数据、估值涨跌、单位净值和财经要闻。支持定时任务（每天下午 4 点自动发送），可配置基金代码列表。输出格式：Telegram 消息 + Word 文档。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/funds-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245092367?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "funds-agent",
+      "url": "https://clawhub.ai/skills/funds-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "funds-agent",
+    "url": "https://clawhub.ai/skills/funds-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/funds-agent-83f4012218755420.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/funds-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-funds-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10b20749649f0d9c74e16c380efe607f1ed0dfafff169b2453bed7c3a6e90666",
+      "artifactSizeBytes": 2318
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T07:42:40.826Z"
+}

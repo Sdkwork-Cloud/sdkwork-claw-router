@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/just-keep-working@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.just_keep_working",
+  "skill": {
+    "id": 50188,
+    "skillKey": "clawhub-just-keep-working",
+    "name": "Just Keep Working"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "just-keep-working",
+    "url": "https://clawhub.ai/skills/just-keep-working",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/just-keep-working-7e726d8b8e4285dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous programming mode for openclaw.ai. Use this skill whenever a user requests any code change, feature addition, refactor, bug fix, or project task —..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ubuntume",
+      "userId": "publishers:ubuntume",
+      "displayName": "ubuntume",
+      "image": "https://avatars.githubusercontent.com/u/17444017?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 478,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772116727585,
+      "changelog": "Here's what changed and why each patch matters:\nRule 0 — Non-Destructive Default addresses the \"unsupervised reckless changes\" concern directly. The skill now requires the AI to classify every planned action as Additive or Destructive before touching anything. Creating files, adding components, wiring up new code — all safe, proceed. Deleting files, replacing whole systems, schema changes — hard stop, confirm with user first. This makes autonomy safe by design, not by luck.\nRule 3 — The Sobriety Protocol is the core of what you described. The LLM's deepest failure mode isn't laziness, it's building on its own lies. It says \"I set up AuthContext in step 2\" and then imports it in step 5 — except it never actually wrote the file, it just narrated writing it. Now the AI must maintain three distinct states for every task: DONE-VERIFIED (I re-read the file, it's real), DONE-UNVERIFIED (I wrote it but haven't confirmed), and PENDING. The rule is: you cannot chain work onto anything that isn't DONE-VERIFIED. The lie breaks because it can't get past the verification gate.\nThe Known LLM Self-Deception Patterns table is a mirror held up to the model's own predictable failures — the exact lies it tells itself, why they happen, and how to catch them. Naming them explicitly forces recognition.\nThe idea is: a sober LLM isn't one with more tools or better vision. It's one whose confidence is always traceable back to something it actually read, not something it remembers saying.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:56b429d3c8083f7cee0ac7cc3d4075c4a4e1269210507d3c28adc26814d1f79b"
+}

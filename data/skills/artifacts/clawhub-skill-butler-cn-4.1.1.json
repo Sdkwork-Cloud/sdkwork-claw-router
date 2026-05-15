@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-butler-cn@4.1.1",
+  "version": "4.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_butler_cn",
+  "skill": {
+    "id": 68711,
+    "skillKey": "clawhub-skill-butler-cn",
+    "name": "Skill Check Butler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-butler-cn",
+    "url": "https://clawhub.ai/skills/skill-butler-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-butler-cn-3c088d899a68659f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "发了3次都被拒，不知道哪里出了问题？ 进来选场景，30秒出报告：安全检查/多平台适配/依赖声明，全量一次跑完。 P0问题直接标红给修复代码，发布前最后一道安全网。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huangjihua007-rgb",
+      "userId": "s1734qhn3akb7fvmwmx5evkrfn85t1tx",
+      "displayName": "huangjihua007-rgb",
+      "image": "https://avatars.githubusercontent.com/u/267920358?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 303,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "4.1.1",
+      "createdAt": 1778332395304,
+      "changelog": "v4.1.1 脱敏修复：SOUL.md 检查规则描述词优化，通过审核引擎",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66d60fe8678d9d62a7ebd9c08eb8f45edfae24b57bc15dba535ebc47f650832d"
+}

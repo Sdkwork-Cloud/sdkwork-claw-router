@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/korean-booking@2.6.8",
+  "version": "2.6.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.korean_booking",
+  "skill": {
+    "id": 68484,
+    "skillKey": "clawhub-korean-booking",
+    "name": "Korean Booking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "korean-booking",
+    "url": "https://clawhub.ai/skills/korean-booking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/korean-booking-5d8e52d027f31dc3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "韩国/首尔美容医美预约助手，内置 1300+ 家皮肤科/整形医院数据库（BeautsGO 平台）。支持：①按医院名或项目类型（激光/注射/整形）查询预约流程；②直接调用接口提交预约（收集人数/时间/联系方式后 POST，无需浏览器）；③打开医院详情页/价格表/在线客服；④中/英/日/泰四语言。触发场景：询问韩国美..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beautsgo",
+      "userId": "s177920dt30nw8teg33g6ym30983gm5x",
+      "displayName": "BeautsGO",
+      "image": "https://avatars.githubusercontent.com/u/233687967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 489,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 34
+    },
+    "latestVersion": {
+      "version": "2.6.8",
+      "createdAt": 1777362992065,
+      "changelog": "更新技能说明：900+ → 1300+ 皮肤科医院数据库",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb3341db9d7acb52359e3c403f39e476914b040990dd67f4e6d4b5376e086720"
+}

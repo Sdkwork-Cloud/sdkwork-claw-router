@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11899,
+  "uuid": "skill-clawhub-tally",
+  "skillKey": "clawhub-tally",
+  "name": "Tally",
+  "summary": "Create and edit Tally forms via API. Use when building surveys, feedback forms, or questionnaires programmatically. Supports all question types including text inputs, multiple choice, checkboxes, ratings (via workaround), and more.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tally",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuj es yoga",
+      "features": [
+        "Create and edit Tally forms via API",
+        "Use when building surveys, feedback forms, or questionnaires programmatically",
+        "Supports all question types including text inputs, multiple choice, checkboxes, ratings (via wo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tally@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217279158?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tally",
+      "url": "https://clawhub.ai/skills/tally"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tally",
+    "url": "https://clawhub.ai/skills/tally",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tally-b01e26d3f5a5130b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tally@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tally-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d04f0882f38a40f4d7b975072c91bac4dc3951d9b650375abf2633e709bb115e",
+      "artifactSizeBytes": 2328
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T00:46:59.021Z"
+}

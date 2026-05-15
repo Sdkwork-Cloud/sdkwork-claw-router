@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40265,
+  "uuid": "skill-clawhub-dianju-ofd-tools",
+  "skillKey": "clawhub-dianju-ofd-tools",
+  "name": "dianju-ofd-tools",
+  "summary": "Convert local PDF and OFD files to each other and extract text content from OFD files with temporary download links provided.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dianju_ofd_tools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stmm",
+      "features": [
+        "Convert local PDF and OFD files to each other and extract text content from OFD files with temp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dianju-ofd-tools@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13455706?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dianju-ofd-tools",
+      "url": "https://clawhub.ai/skills/dianju-ofd-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dianju-ofd-tools",
+    "url": "https://clawhub.ai/skills/dianju-ofd-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dianju-ofd-tools-0c81b514c23a143e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dianju-ofd-tools@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dianju-ofd-tools-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac23355fc71263984f9808523b1862a79a6c1685947dbc701228aeea4bd78aa3",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T11:06:43.008Z"
+}

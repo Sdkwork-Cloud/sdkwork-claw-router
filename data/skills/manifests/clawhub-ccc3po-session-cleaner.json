@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39850,
+  "uuid": "skill-clawhub-ccc3po-session-cleaner",
+  "skillKey": "clawhub-ccc3po-session-cleaner",
+  "name": "ccc3po-session-cleaner",
+  "summary": "Safely clean OpenClaw old session files and rebuild sessions.json for Ubuntu ARM",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccc3po_session_cleaner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "c-3po",
+      "features": [
+        "Safely clean OpenClaw old session files and rebuild sessions.json for Ubuntu ARM"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ccc3po-session-cleaner@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44689813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ccc3po-session-cleaner",
+      "url": "https://clawhub.ai/skills/ccc3po-session-cleaner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccc3po-session-cleaner",
+    "url": "https://clawhub.ai/skills/ccc3po-session-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccc3po-session-cleaner-46d7751e20e23c1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ccc3po-session-cleaner@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ccc3po-session-cleaner-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04f3f153cd093b048f9643dce742cc623f0be376b19d60b9bb463a870374f0f2",
+      "artifactSizeBytes": 2261
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T19:32:22.115Z"
+}

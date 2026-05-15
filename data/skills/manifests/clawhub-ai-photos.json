@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23922,
+  "uuid": "skill-clawhub-ai-photos",
+  "skillKey": "clawhub-ai-photos",
+  "name": "AI Photos",
+  "summary": "Personal AI photo album for OpenClaw. Use when users say: - \"index my photos\" - \"set up an AI photo album\" - \"search my photo library\" - \"reconnect my photo...",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_photos",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zoubingwu",
+      "features": [
+        "Personal AI photo album for OpenClaw",
+        "Use when users say:",
+        "\"index my photos\"",
+        "\"set up an AI photo album\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-photos@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18644268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-photos",
+      "url": "https://clawhub.ai/skills/ai-photos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-photos",
+    "url": "https://clawhub.ai/skills/ai-photos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-photos-901ae43290f1320a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-photos@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-photos-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e8f0c814dce27d722ee12052afc864dcdb701a1e373bd8eaf9da38b0d920628",
+      "artifactSizeBytes": 2546
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T05:52:45.494Z"
+}

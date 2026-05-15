@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32937,
+  "uuid": "skill-clawhub-simplehash",
+  "skillKey": "clawhub-simplehash",
+  "name": "Simplehash",
+  "summary": "SimpleHash integration. Manage Deals, Persons, Organizations, Leads, Projects, Activities and more. Use when the user wants to interact with SimpleHash data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simplehash",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SimpleHash integration",
+        "Manage Deals, Persons, Organizations, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with SimpleHash data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/simplehash@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "simplehash",
+      "url": "https://clawhub.ai/skills/simplehash"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simplehash",
+    "url": "https://clawhub.ai/skills/simplehash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simplehash-4b62adb4494a57be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/simplehash@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-simplehash-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9cf2ca77e50f5f3c227c9f2116d3b05dc785f6c34dd11f09651e77b84784b36",
+      "artifactSizeBytes": 1878
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:42:14.348Z"
+}

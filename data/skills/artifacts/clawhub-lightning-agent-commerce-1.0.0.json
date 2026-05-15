@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lightning-agent-commerce@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lightning_agent_commerce",
+  "skill": {
+    "id": 14841,
+    "skillKey": "clawhub-lightning-agent-commerce",
+    "name": "Lightning Agentic Commerce"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lightning-agent-commerce",
+    "url": "https://clawhub.ai/skills/lightning-agent-commerce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lightning-agent-commerce-d172eab79d612d0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "End-to-end agentic commerce workflow using Lightning Network. Use when an agent needs to set up a full payment stack (lnd + lnget + aperture), buy or sell data via L402, or enable agent-to-agent micropayments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roasbeef",
+      "userId": "publishers:roasbeef",
+      "displayName": "Roasbeef",
+      "image": "https://avatars.githubusercontent.com/u/998190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770777144936,
+      "changelog": "- Initial release of the agentic commerce toolkit for end-to-end Lightning Network payments.\n- Provides automated workflows for setting up a Lightning node (lnd), HTTP payment fetcher (lnget), and paywall proxy (aperture).\n- Enables buying and selling of data via the L402 protocol, supporting agent-to-agent micropayments.\n- Includes detailed setup steps for wallet creation, channel funding, and endpoint configuration.\n- Offers security guidelines and controls for operational safety in agent-based commerce.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d392c6db156ffff0fd4786d2edcf72087c08baa7b11dd427c5ad4a52ebcd9124"
+}

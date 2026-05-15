@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39227,
+  "uuid": "skill-clawhub-omniaudit",
+  "skillKey": "clawhub-omniaudit",
+  "name": "OmniAudit",
+  "summary": "Security scanner for OpenClaw skills, SKILL.md files, and code. Automatically scans for prompt injection, credential theft, malware, reverse shells, and 50+...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omniaudit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "legarams",
+      "features": [
+        "Security scanner for OpenClaw skills, SKILL.md files, and code",
+        "Automatically scans for prompt injection, credential theft, malware, reverse shells, and 50+..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/omniaudit@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11367672?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "omniaudit",
+      "url": "https://clawhub.ai/skills/omniaudit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omniaudit",
+    "url": "https://clawhub.ai/skills/omniaudit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omniaudit-e6b3fd1495682ce0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/omniaudit@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-omniaudit-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f18827e71c56c5918d848e2a82a3986fd6cfb453bfddd5856761bed453bdda6",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T15:39:19.144Z"
+}

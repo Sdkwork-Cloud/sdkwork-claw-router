@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tuhucar-knowledge-assistant@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tuhucar_knowledge_assistant",
+  "skill": {
+    "id": 26871,
+    "skillKey": "clawhub-tuhucar-knowledge-assistant",
+    "name": "TuhuCar Knowledge Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tuhucar-knowledge-assistant",
+    "url": "https://clawhub.ai/skills/tuhucar-knowledge-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tuhucar-knowledge-assistant-317698ca2738e0e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when answering car maintenance, service interval, oil, brake fluid, tire pressure, or ownership questions through the TuhuCar CLI knowledge gateway."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "finiking",
+      "userId": "s17eqw1jys5bd51z3hb2c0h0p184xx17",
+      "displayName": "Fini",
+      "image": "https://avatars.githubusercontent.com/u/162498?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1776309671779,
+      "changelog": "Address ClawHub security scan findings",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53eebdb80e182accc8daa98874ed8e6e3fcbc6450655ecfc0a2962165be9e8fa"
+}

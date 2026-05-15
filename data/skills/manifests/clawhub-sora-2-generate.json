@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18406,
+  "uuid": "skill-clawhub-sora-2-generate",
+  "skillKey": "clawhub-sora-2-generate",
+  "name": "Sora 2 Generate",
+  "summary": "Generate videos with the NanoPhoto.AI Sora 2 API in text-to-video or image-to-video mode. Use when: (1) User wants to create a Sora 2 video from a prompt, (2...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sora_2_generate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NanoPhoto.AI",
+      "features": [
+        "Generate videos with the NanoPhoto.AI Sora 2 API in text-to-video or image-to-video mode",
+        "Use when: (1) User wants to create a Sora 2 video from a prompt, (2..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sora-2-generate@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260005344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sora-2-generate",
+      "url": "https://clawhub.ai/skills/sora-2-generate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sora-2-generate",
+    "url": "https://clawhub.ai/skills/sora-2-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sora-2-generate-74e62ee44bca7600.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sora-2-generate@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sora-2-generate-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32d986881769b243f3e1499eff49b467242daceeb3812d0fbe072861072d09fe",
+      "artifactSizeBytes": 2169
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T00:31:13.070Z"
+}

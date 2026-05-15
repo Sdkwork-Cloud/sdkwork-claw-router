@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20460,
+  "uuid": "skill-clawhub-model-route-guard",
+  "skillKey": "clawhub-model-route-guard",
+  "name": "Model Route Guard",
+  "summary": "Diagnose and fix model routing conflicts. Ensure primary model uses correct provider endpoint without duplicate overrides.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_route_guard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dalomeve",
+      "features": [
+        "Diagnose and fix model routing conflicts",
+        "Ensure primary model uses correct provider endpoint without duplicate overrides."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-route-guard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115125037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-route-guard",
+      "url": "https://clawhub.ai/skills/model-route-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-route-guard",
+    "url": "https://clawhub.ai/skills/model-route-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-route-guard-a9923b8f3210bde2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-route-guard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-route-guard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:783d85155a6bcc42292e530d2481f65a584798932c9a4108e65e41b27cf471b3",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T07:09:00.128Z"
+}

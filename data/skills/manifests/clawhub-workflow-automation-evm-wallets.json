@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21994,
+  "uuid": "skill-clawhub-workflow-automation-evm-wallets",
+  "skillKey": "clawhub-workflow-automation-evm-wallets",
+  "name": "Trustless Workflow Automation on EVM networks for Agents (powered by Ditto Network)",
+  "summary": "Creates, configures, and deploys on-chain automation workflows using the Ditto Network SDK. Use when the user asks to \"create a workflow\", \"automate on-chain...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workflow_automation_evm_wallets",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vladislavshad",
+      "features": [
+        "Creates, configures, and deploys on-chain automation workflows using the Ditto Network SDK",
+        "Use when the user asks to \"create a workflow\", \"automate on-chain..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workflow-automation-evm-wallets@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85482010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workflow-automation-evm-wallets",
+      "url": "https://clawhub.ai/skills/workflow-automation-evm-wallets"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workflow-automation-evm-wallets",
+    "url": "https://clawhub.ai/skills/workflow-automation-evm-wallets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workflow-automation-evm-wallets-e91d2acc332f43c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workflow-automation-evm-wallets@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-workflow-automation-evm-wallets-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7198cebc291f0d8839d72d16b1add6124660aec9ecd6e3649476e3eb21287a7",
+      "artifactSizeBytes": 2127
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T07:31:38.485Z"
+}

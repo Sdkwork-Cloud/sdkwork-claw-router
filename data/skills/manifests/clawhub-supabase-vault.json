@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24316,
+  "uuid": "skill-clawhub-supabase-vault",
+  "skillKey": "clawhub-supabase-vault",
+  "name": "Supabase Vault",
+  "summary": "Replace OpenClaw's local file vault with Supabase Vault for AES-256 encrypted-at-rest secret storage. All API keys and auth tokens stored encrypted in Postgr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supabase_vault",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maverick-software",
+      "features": [
+        "Replace OpenClaw's local file vault with Supabase Vault for AES-256 encrypted-at-rest secret st.",
+        "All API keys and auth tokens stored encrypted in Postgr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/supabase-vault@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85259593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "supabase-vault",
+      "url": "https://clawhub.ai/skills/supabase-vault"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supabase-vault",
+    "url": "https://clawhub.ai/skills/supabase-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supabase-vault-014e247b5cfd9e3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/supabase-vault@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-supabase-vault-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf47f8364cf9ed2aa31af7b0be02a4467e8ab9891b17a72ef401b62f34189121",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T17:09:35.991Z"
+}

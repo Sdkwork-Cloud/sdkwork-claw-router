@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34579,
+  "uuid": "skill-clawhub-operation-quarantine",
+  "skillKey": "clawhub-operation-quarantine",
+  "name": "Operation Quarantine",
+  "summary": "Prompt injection defense for OpenClaw agents. Scans emails and skill installations through a two-phase security pipeline (pattern matching + optional LLM ana...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.operation_quarantine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dank-varley",
+      "features": [
+        "Prompt injection defense for OpenClaw agents",
+        "Scans emails and skill installations through a two-phase security pipeline (pattern matching +."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/operation-quarantine@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203341263?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "operation-quarantine",
+      "url": "https://clawhub.ai/skills/operation-quarantine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "operation-quarantine",
+    "url": "https://clawhub.ai/skills/operation-quarantine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/operation-quarantine-f48c7cc4a4675195.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/operation-quarantine@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-operation-quarantine-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:242a574ca9ba84cee4eab82a2898f8c79ce5020bac1dc4daab4bb94871dc2109",
+      "artifactSizeBytes": 2127
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T21:57:52.277Z"
+}

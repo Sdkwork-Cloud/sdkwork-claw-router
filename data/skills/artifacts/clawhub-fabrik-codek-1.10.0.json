@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fabrik-codek@1.10.0",
+  "version": "1.10.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fabrik_codek",
+  "skill": {
+    "id": 15902,
+    "skillKey": "clawhub-fabrik-codek",
+    "name": "Fabrik Codek"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fabrik-codek",
+    "url": "https://clawhub.ai/skills/fabrik-codek",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fabrik-codek-1e867dcf63deeb5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal cognitive architecture that learns how you work. Builds a knowledge graph from your sessions, profiles your expertise, adapts retrieval per task, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ikchain",
+      "userId": "publishers:ikchain",
+      "displayName": "ikchain",
+      "image": "https://avatars.githubusercontent.com/u/214371424?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 953,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.10.0",
+      "createdAt": 1772381012832,
+      "changelog": "Add context gate and post-retrieval relevance filter to reduce noise from irrelevant RAG chunks",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f9e87ae9cde55af17e74b5e87fe5ada3e8819f61d0dad4d582a415179fa6e704"
+}

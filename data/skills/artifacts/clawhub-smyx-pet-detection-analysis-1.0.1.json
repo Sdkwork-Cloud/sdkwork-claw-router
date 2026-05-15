@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smyx-pet-detection-analysis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_pet_detection_analysis",
+  "skill": {
+    "id": 57999,
+    "skillKey": "clawhub-smyx-pet-detection-analysis",
+    "name": "宠物检测技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-pet-detection-analysis",
+    "url": "https://clawhub.ai/skills/smyx-pet-detection-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-pet-detection-analysis-34ee4a0838748525.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detects cats, dogs, and birds appearing in the target area; supports video stream and image detection, suitable for home pet monitoring scenarios. | 宠物检测技能，检..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "18072937735",
+      "userId": "s17f8q65zg3y98t86jdg1177g583whq8",
+      "displayName": "smyx-skills",
+      "image": "https://avatars.githubusercontent.com/u/272124705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778311365118,
+      "changelog": "- Added missing version field to SKILL.md metadata.\n- No functional or logic changes; documentation update only.\n- Ensured documentation and metadata consistency for standard compliance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b97b48a4b218d052612812df3098d16794df3968caae2c3f42bd3756bea5bcb"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54079,
+  "uuid": "skill-clawhub-dns-lookup",
+  "skillKey": "clawhub-dns-lookup",
+  "name": "Dns Lookup",
+  "summary": "Resolve hostnames to IP addresses using `dig` from bind-utils.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dns_lookup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xejrax",
+      "features": [
+        "Resolve hostnames to IP addresses using `dig` from bind-utils."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dns-lookup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/148405630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dns-lookup",
+      "url": "https://clawhub.ai/skills/dns-lookup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dns-lookup",
+    "url": "https://clawhub.ai/skills/dns-lookup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dns-lookup-61ac421272d3dda2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dns-lookup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dns-lookup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69d9ddd0abfc37e69524ef530d6ead9aa04fd599d106e88140b514ede88c482e",
+      "artifactSizeBytes": 1739
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T16:21:00.293Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62342,
+  "uuid": "skill-clawhub-cvr-anthem",
+  "skillKey": "clawhub-cvr-anthem",
+  "name": "Cvr Anthem",
+  "summary": "提供Elevance Health（前身Anthem）公司简介、产品服务、行业地位和最新动态等健康保险信息。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cvr_anthem",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供Elevance Health（前身Anthem）公司简介、产品服务、行业地位和最新动态等健康保险信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cvr-anthem@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cvr-anthem",
+      "url": "https://clawhub.ai/skills/cvr-anthem"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cvr-anthem",
+    "url": "https://clawhub.ai/skills/cvr-anthem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cvr-anthem-c744ecc56ebaf37a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cvr-anthem@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-cvr-anthem-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97e7fa09d3fcbae325c95c792c454cd3e65eb57c5999ab2f78d3fc52e62b6e35",
+      "artifactSizeBytes": 2186
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:34:34.047Z"
+}

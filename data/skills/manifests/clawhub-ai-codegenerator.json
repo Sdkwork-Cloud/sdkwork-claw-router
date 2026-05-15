@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22600,
+  "uuid": "skill-clawhub-ai-codegenerator",
+  "skillKey": "clawhub-ai-codegenerator",
+  "name": "Ai Codegenerator",
+  "summary": "Automatically generates code based on task descriptions, with optional context and constraints, providing plans, results, and summaries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_codegenerator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jason513597",
+      "features": [
+        "Automatically generates code based on task descriptions, with optional context and constraints,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-codegenerator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94666838?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-codegenerator",
+      "url": "https://clawhub.ai/skills/ai-codegenerator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-codegenerator",
+    "url": "https://clawhub.ai/skills/ai-codegenerator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-codegenerator-c82253b570bc6c8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-codegenerator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-codegenerator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5edd5de388eb383ef6889b53338feac55034b37e1c88a85cdfbd4593a6d2e55",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T03:35:56.124Z"
+}

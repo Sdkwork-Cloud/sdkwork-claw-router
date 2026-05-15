@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58836,
+  "uuid": "skill-clawhub-bytesagain-sleep-tracker",
+  "skillKey": "clawhub-bytesagain-sleep-tracker",
+  "name": "Sleep Tracker",
+  "summary": "睡眠改善工具。睡眠分析、改善建议、作息规划、睡眠环境优化、小睡指南、睡眠日记。Sleep tracker with analysis, improvement tips, schedule planning, environment optimization, nap guide.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bytesagain_sleep_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "loutai0307-prog",
+      "features": [
+        "睡眠改善工具。睡眠分析、改善建议、作息规划、睡眠环境优化、小睡指南、睡眠日记。Sleep tracker with analysis, improvement tips, schedule."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bytesagain-sleep-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266760463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bytesagain-sleep-tracker",
+      "url": "https://clawhub.ai/skills/bytesagain-sleep-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bytesagain-sleep-tracker",
+    "url": "https://clawhub.ai/skills/bytesagain-sleep-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bytesagain-sleep-tracker-b1c37a5e62699fda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bytesagain-sleep-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bytesagain-sleep-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e951fb84bd17304bc84ad124b66d895c5aa8443e6ee48c738aece9acfde709d5",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T06:34:19.034Z"
+}

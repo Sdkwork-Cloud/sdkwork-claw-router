@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39788,
+  "uuid": "skill-clawhub-remote-install",
+  "skillKey": "clawhub-remote-install",
+  "name": "Remote Install",
+  "summary": "Automates remote Windows software installation by detecting installers and controlling GUI to silently install .exe/.msi packages like Office, Adobe, and Chr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remote_install",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "403914291",
+      "features": [
+        "Automates remote Windows software installation by detecting installers and controlling GUI to s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/remote-install@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95468942?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "remote-install",
+      "url": "https://clawhub.ai/skills/remote-install"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remote-install",
+    "url": "https://clawhub.ai/skills/remote-install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remote-install-c6ff382a9eb7b4b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/remote-install@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-remote-install-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0bc9b1653a6bf65aab6501b63a9ce1446dfed3c3754a1d775298b0465fa8de0",
+      "artifactSizeBytes": 2477
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T05:00:34.550Z"
+}

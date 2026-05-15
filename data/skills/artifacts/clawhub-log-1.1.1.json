@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/log@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.log",
+  "skill": {
+    "id": 18422,
+    "skillKey": "clawhub-log",
+    "name": "log"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "log",
+    "url": "https://clawhub.ai/skills/log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/log-836ff184e7b41b1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A privacy-first, local-first provenance protocol for agent workflows. Emits structured audit records for important decisions, tool calls, state changes, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agistack",
+      "userId": "s178h9d2k372k0rawyb3jd1h0d84vf26",
+      "displayName": "AGIstack",
+      "image": "https://avatars.githubusercontent.com/u/258523997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 563,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1773763488476,
+      "changelog": "- skill.json and SKILL.md files added to improve structure and metadata.\n- skill.md removed; documentation now consolidated in SKILL.md.\n- No changes to skill logic or schema.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f358a68a63b04dac92e6ef15b7d35c7774efa1b8d83163893da6b40c32712dc1"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53347,
+  "uuid": "skill-clawhub-go-testing-code-review",
+  "skillKey": "clawhub-go-testing-code-review",
+  "name": "Go Testing Code Review",
+  "summary": "Reviews Go test code for proper table-driven tests, assertions, and coverage patterns. Use when reviewing *_test.go files.",
+  "version": "2.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.go_testing_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Reviews Go test code for proper table-driven tests, assertions, and coverage patterns",
+        "Use when reviewing *_test.go files."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/go-testing-code-review@2.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "go-testing-code-review",
+      "url": "https://clawhub.ai/skills/go-testing-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "go-testing-code-review",
+    "url": "https://clawhub.ai/skills/go-testing-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/go-testing-code-review-61289c2ecd113fc6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/go-testing-code-review@2.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-go-testing-code-review-2.3.1.json",
+      "version": "2.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a2e710fb98c9b760bca5703f1b34e08db7c8e362afcd908d695a20f61a8f36f",
+      "artifactSizeBytes": 2609
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:12:34.298Z"
+}

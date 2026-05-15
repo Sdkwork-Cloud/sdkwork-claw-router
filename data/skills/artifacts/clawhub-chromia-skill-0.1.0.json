@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chromia-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chromia_skill",
+  "skill": {
+    "id": 31306,
+    "skillKey": "clawhub-chromia-skill",
+    "name": "Chromia Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chromia-skill",
+    "url": "https://clawhub.ai/skills/chromia-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chromia-skill-f1573d5daa67fd83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guides AI agents through Chromia blockchain dApp development using the Rell language, Chromia CLI (chr), and Postchain nodes. Covers chromia.yml configuratio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deconsoleapp",
+      "userId": "s173b55yn0ekxj4b5ef1psq7yh84kcca",
+      "displayName": "DeconsoleApp",
+      "image": "https://avatars.githubusercontent.com/u/257691303?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775852122425,
+      "changelog": "chromia-skill 0.1.0\n\n- Initial release introducing a comprehensive guide for Chromia dApp development using the Rell language, Chromia CLI, and Postchain nodes.\n- Provides detailed documentation on chromia.yml configuration, including multi-blockchain support, library management, module arguments, and test setups.\n- Covers key integration guides: FT4 accounts/auth descriptors, ICCF/ICMF cross-chain protocols, EIF for EVM, CRC2 NFT standard, and Filehub decentralized storage.\n- Includes best-practice project structures and development workflows for both backend and full-stack Chromia applications.\n- Adds references and workflow instructions for AI agent integration, client setup in TypeScript, deployment, governance, and development pipelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ff5f213ce2a36817a3ba264966449a6b5b57052e79823d0dd5d57a8d9dfbdc7"
+}

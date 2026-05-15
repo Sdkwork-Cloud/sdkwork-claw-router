@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63368,
+  "uuid": "skill-clawhub-evernote-yinxiang",
+  "skillKey": "clawhub-evernote-yinxiang",
+  "name": "Evernote Yinxiang",
+  "summary": "印象笔记（Yinxiang/Evernote）集成技能。用于创建、读取、搜索、删除笔记，以及管理笔记本和标签。当用户提到\"印象笔记\"、\"evernote\"、\"创建笔记到印象笔记\"、\"搜索印象笔记\"、\"查看笔记\"、\"笔记同步\"、\"保存到印象笔记\"时触发。仅依赖 requests，无需安装 evernote SDK。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evernote_yinxiang",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vikingr2023",
+      "features": [
+        "印象笔记（Yinxiang/Evernote）集成技能。用于创建、读取、搜索、删除笔记，以及管理笔记本和标签。当用户提到\"印象笔记\"、\"evernote\"、\"创建笔记到印象笔记\"、\"搜索印象."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/evernote-yinxiang@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134819297?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "evernote-yinxiang",
+      "url": "https://clawhub.ai/skills/evernote-yinxiang"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evernote-yinxiang",
+    "url": "https://clawhub.ai/skills/evernote-yinxiang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evernote-yinxiang-819849e873bb09ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/evernote-yinxiang@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-evernote-yinxiang-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9fee128c181a815bc52313ffd2eb6ed6e8f3a5f8a20926932e44f224c6d4e4eb",
+      "artifactSizeBytes": 2555
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T16:48:20.161Z"
+}

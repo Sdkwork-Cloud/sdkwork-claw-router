@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20635,
+  "uuid": "skill-clawhub-agent-memory-temp",
+  "skillKey": "clawhub-agent-memory-temp",
+  "name": "Agent Memory Temp",
+  "summary": "Persistent memory system enabling AI agents to remember facts, learn from experiences, and track entities across sessions for improved context awareness.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_temp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Liguang00806",
+      "features": [
+        "Persistent memory system enabling AI agents to remember facts, learn from experiences, and trac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-memory-temp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/185917662?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-memory-temp",
+      "url": "https://clawhub.ai/skills/agent-memory-temp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-temp",
+    "url": "https://clawhub.ai/skills/agent-memory-temp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-temp-b9b876b9e7760def.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-memory-temp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-temp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61b7c999966f1a0493eb5b98f14d6a694c51334beb44b2375390f49fd477a268",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:42:19.485Z"
+}

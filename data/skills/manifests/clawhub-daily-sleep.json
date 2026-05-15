@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52481,
+  "uuid": "skill-clawhub-daily-sleep",
+  "skillKey": "clawhub-daily-sleep",
+  "name": "Daily Sleep",
+  "summary": "Sleep better tonight — personalized wind-down routine, breathing exercises, bedtime stories, and sleep hygiene tips. Daily evening push for better rest.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_sleep",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiajiaoy",
+      "features": [
+        "Sleep better tonight — personalized wind-down routine, breathing exercises, bedtime stories, an.",
+        "Daily evening push for better rest."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-sleep@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254620896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-sleep",
+      "url": "https://clawhub.ai/skills/daily-sleep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-sleep",
+    "url": "https://clawhub.ai/skills/daily-sleep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-sleep-47dd1001efe788d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-sleep@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-sleep-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c5470ef8d334fb0d8f8c89ea9166721a733903f128c43646b1d4fb9cfc41953",
+      "artifactSizeBytes": 2100
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T10:54:10.013Z"
+}

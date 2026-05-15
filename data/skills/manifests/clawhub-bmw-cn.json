@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71110,
+  "uuid": "skill-clawhub-bmw-cn",
+  "skillKey": "clawhub-bmw-cn",
+  "name": "Bmw Cn",
+  "summary": "提供宝马车型、电动车、价格、4S店信息及技术服务，支持试驾预约和赛车运动咨询。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bmw_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供宝马车型、电动车、价格、4S店信息及技术服务，支持试驾预约和赛车运动咨询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bmw-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bmw-cn",
+      "url": "https://clawhub.ai/skills/bmw-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bmw-cn",
+    "url": "https://clawhub.ai/skills/bmw-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bmw-cn-fad9bb619351f043.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bmw-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bmw-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9245913f7ec9e0528f791a6ed1a9f5e0fe248092a41a982aceb1f988e5b26c6",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T07:32:20.856Z"
+}

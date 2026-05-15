@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60011,
+  "uuid": "skill-clawhub-qianxin-hunter-api",
+  "skillKey": "clawhub-qianxin-hunter-api",
+  "name": "qianxin-hunter-api",
+  "summary": "奇安信 Hunter API 调用技能。支持查询接口和导出任务（批量查询）。需配置 QIANXIN_HUNTER_API_KEY 环境变量。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qianxin_hunter_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PiggyHurry",
+      "features": [
+        "奇安信 Hunter API 调用技能。支持查询接口和导出任务（批量查询）。需配置 QIANXIN_HUNTER_API_KEY 环境变量。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qianxin-hunter-api@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52963622?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qianxin-hunter-api",
+      "url": "https://clawhub.ai/skills/qianxin-hunter-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qianxin-hunter-api",
+    "url": "https://clawhub.ai/skills/qianxin-hunter-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qianxin-hunter-api-90e9b6274c387a37.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qianxin-hunter-api@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-qianxin-hunter-api-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:246ac2437955f37094d511f7ef58c767ac468aa67dd0d417f19330f733516c17",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T07:28:45.798Z"
+}

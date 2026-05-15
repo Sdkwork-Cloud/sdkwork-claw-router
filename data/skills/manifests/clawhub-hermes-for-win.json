@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61138,
+  "uuid": "skill-clawhub-hermes-for-win",
+  "skillKey": "clawhub-hermes-for-win",
+  "name": "Hermes For Win",
+  "summary": "一键安装、部署和管理 hermes Agent 和 hermes-webui 在 Windows 系统上，包括开机自启动、后台常驻和自动更新功能。调用时机：当 Windows 用户想要快速安装和配置 hermes 生态时。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_for_win",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI花生",
+      "features": [
+        "一键安装、部署和管理 hermes Agent 和 hermes-webui 在 Windows 系统上，包括开机自启动、后台常驻和自动更新功能。调用时机：当 Windows 用户想要快速安."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hermes-for-win@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47667850?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hermes-for-win",
+      "url": "https://clawhub.ai/skills/hermes-for-win"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-for-win",
+    "url": "https://clawhub.ai/skills/hermes-for-win",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-for-win-b0642b3d75910c86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hermes-for-win@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hermes-for-win-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c8ed63499e49133cfb7dfc032e0db0b454619ad72c10c58434a2e117e66aaf4",
+      "artifactSizeBytes": 2376
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T06:21:04.719Z"
+}

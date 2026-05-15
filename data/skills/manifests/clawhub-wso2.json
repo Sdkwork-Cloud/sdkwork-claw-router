@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29304,
+  "uuid": "skill-clawhub-wso2",
+  "skillKey": "clawhub-wso2",
+  "name": "Wso2",
+  "summary": "WSO2 integration. Manage data, records, and automate workflows. Use when the user wants to interact with WSO2 data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wso2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "WSO2 integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with WSO2 data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wso2@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wso2",
+      "url": "https://clawhub.ai/skills/wso2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wso2",
+    "url": "https://clawhub.ai/skills/wso2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wso2-d39a0a5f58f0e90f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wso2@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-wso2-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b6bda2f06b59dfd952dcc39bbff88f4d9be2b4fccd1a5023155da9aa11edc8e",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:03:27.852Z"
+}

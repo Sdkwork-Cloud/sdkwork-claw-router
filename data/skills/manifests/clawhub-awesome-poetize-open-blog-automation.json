@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59199,
+  "uuid": "skill-clawhub-awesome-poetize-open-blog-automation",
+  "skillKey": "clawhub-awesome-poetize-open-blog-automation",
+  "name": "Poetize Blog Automation",
+  "summary": "专为开源版 awesome-poetize-open 设计的 POETIZE 博客自动化技能。通过 `/api/api/*` 接口完成文章发布、更新、隐藏、分类标签维护、主题切换、数据分析和 SEO 运维。Use only when the task explicitly targets a POETIZE si...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.awesome_poetize_open_blog_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeapYa",
+      "features": [
+        "专为开源版 awesome-poetize-open 设计的 POETIZE 博客自动化技能。通过 `/api/api/*` 接口完成文章发布、更新、隐藏、分类标签维护、主题切换、数据分析和."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/awesome-poetize-open-blog-automation@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/163281108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "awesome-poetize-open-blog-automation",
+      "url": "https://clawhub.ai/skills/awesome-poetize-open-blog-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "awesome-poetize-open-blog-automation",
+    "url": "https://clawhub.ai/skills/awesome-poetize-open-blog-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/awesome-poetize-open-blog-automation-dbea7a9a48c541c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/awesome-poetize-open-blog-automation@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-awesome-poetize-open-blog-automation-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a53f0e0f9efd6d25eb87a699d13180fbade1d2a2055085992a541bb374c85d8d",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:46:15.251Z"
+}

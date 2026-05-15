@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12577,
+  "uuid": "skill-clawhub-8004-mcp",
+  "skillKey": "clawhub-8004-mcp",
+  "name": "Agent identity and reputation registration",
+  "summary": "Register and manage agent identity, reputation, and feedback on Solana and EVM chains using the multi-chain ERC-8004 Agent Registry protocol.",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.8004_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MonteCrypto",
+      "features": [
+        "Register and manage agent identity, reputation, and feedback on Solana and EVM chains using the."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/8004-mcp@0.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58423789?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "8004-mcp",
+      "url": "https://clawhub.ai/skills/8004-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "8004-mcp",
+    "url": "https://clawhub.ai/skills/8004-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/8004-mcp-35e13ffe275fc47a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/8004-mcp@0.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-8004-mcp-0.2.3.json",
+      "version": "0.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28c6b6331606dcd51030b6f2ef85dcd4f3b2a4463a155d6620b2a0745f0aa853",
+      "artifactSizeBytes": 2353
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T14:03:26.143Z"
+}

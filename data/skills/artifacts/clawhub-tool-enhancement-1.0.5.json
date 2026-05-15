@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tool-enhancement@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tool_enhancement",
+  "skill": {
+    "id": 61438,
+    "skillKey": "clawhub-tool-enhancement",
+    "name": "Tool Enhancement"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tool-enhancement",
+    "url": "https://clawhub.ai/skills/tool-enhancement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tool-enhancement-d76489aa29c29909.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🚀 55+ 增强工具集 - 为 OpenClaw 赋能。文件操作、Shell执行、Git工作流、网页请求、子Agent调度、分层记忆、终端UI，一应俱全。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ntaffffff",
+      "userId": "s178h8rgjjj5ctbk1bkky72vph8439t6",
+      "displayName": "ntaffffff",
+      "image": "https://avatars.githubusercontent.com/u/186145692?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775193092395,
+      "changelog": "- Internal update to tools/session_tools.py.\n- No user-facing features or documentation changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb89ffbb26ce3640708c0451c8530c5d79d39e877b9c452f5f06f8820438c310"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17809,
+  "uuid": "skill-clawhub-jarvis-test-gap-finder-01",
+  "skillKey": "clawhub-jarvis-test-gap-finder-01",
+  "name": "Jarvis Test Gap Finder 01",
+  "summary": "Find missing tests by failure mode and business impact. Use when handling development work that needs repeatable steps, quality gates, and practical outputs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jarvis_test_gap_finder_01",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xammarie",
+      "features": [
+        "Find missing tests by failure mode and business impact",
+        "Use when handling development work that needs repeatable steps, quality gates, and practical ou."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jarvis-test-gap-finder-01@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219314498?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jarvis-test-gap-finder-01",
+      "url": "https://clawhub.ai/skills/jarvis-test-gap-finder-01"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jarvis-test-gap-finder-01",
+    "url": "https://clawhub.ai/skills/jarvis-test-gap-finder-01",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jarvis-test-gap-finder-01-e5cf599f502471ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jarvis-test-gap-finder-01@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jarvis-test-gap-finder-01-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5ab9949b054fef777f986bcdac32c3d574b8dbd84a380c84edc1b6ac0de0974",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T18:31:12.469Z"
+}

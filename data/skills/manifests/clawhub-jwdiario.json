@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51339,
+  "uuid": "skill-clawhub-jwdiario",
+  "skillKey": "clawhub-jwdiario",
+  "name": "Jwdiario",
+  "summary": "Buscar y obtener el texto diario de la página oficial de los Testigos de Jehová para la Librería Watchtower en español (wol.jw.org/es/). Utiliza web_fetch pa...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jwdiario",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "djismgaming",
+      "features": [
+        "Buscar y obtener el texto diario de la página oficial de los Testigos de Jehová para la Librerí.",
+        "Utiliza web_fetch pa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jwdiario@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25346053?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jwdiario",
+      "url": "https://clawhub.ai/skills/jwdiario"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jwdiario",
+    "url": "https://clawhub.ai/skills/jwdiario",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jwdiario-c2d5ceb92ac448b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jwdiario@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-jwdiario-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e516d506f088b6ee750c01eb8b9a0a5ef6cea9949b159a44edd46d4958cd1f64",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T23:34:51.608Z"
+}

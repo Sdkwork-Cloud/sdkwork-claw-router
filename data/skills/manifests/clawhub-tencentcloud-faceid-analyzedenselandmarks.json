@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65078,
+  "uuid": "skill-clawhub-tencentcloud-faceid-analyzedenselandmarks",
+  "skillKey": "clawhub-tencentcloud-faceid-analyzedenselandmarks",
+  "name": "tencentcloud-faceid-analyzedenselandmarks",
+  "summary": "腾讯云稠密人脸关键点(AnalyzeDenseLandmarks)接口调用技能。当用户需要对人脸图片进行稠密关键点定位时，应使用此技能。可返回人脸框坐标，以及人脸各部位（眼睛、眉毛、嘴巴、鼻子、瞳孔、中轴线、下巴、眼袋、额头）的稠密轮廓关键点坐标。支持图片Base64和图片URL两种输入方式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_faceid_analyzedenselandmarks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaoqiangjava",
+      "features": [
+        "腾讯云稠密人脸关键点(AnalyzeDenseLandmarks)接口调用技能。当用户需要对人脸图片进行稠密关键点定位时，应使用此技能。可返回人脸框坐标，以及人脸各部位（眼睛、眉毛、嘴巴、鼻."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencentcloud-faceid-analyzedenselandmarks@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28345639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencentcloud-faceid-analyzedenselandmarks",
+      "url": "https://clawhub.ai/skills/tencentcloud-faceid-analyzedenselandmarks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-faceid-analyzedenselandmarks",
+    "url": "https://clawhub.ai/skills/tencentcloud-faceid-analyzedenselandmarks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-faceid-analyzedenselandmarks-90c539dea2eca142.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencentcloud-faceid-analyzedenselandmarks@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-faceid-analyzedenselandmarks-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffeee0b3baae3991511c371d3c8bcf2a3852f2ee702f4a1de1e7d04e76f8667e",
+      "artifactSizeBytes": 2813
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:13:16.457Z"
+}

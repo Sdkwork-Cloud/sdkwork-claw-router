@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-standup-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_standup_generator",
+  "skill": {
+    "id": 23728,
+    "skillKey": "clawhub-daily-standup-generator",
+    "name": "Daily Standup Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-standup-generator",
+    "url": "https://clawhub.ai/skills/daily-standup-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-standup-generator-23d851490d1d8d7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a concise daily standup report summarizing completed tasks, today's plan, and blockers from provided data or user input."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guaiyu11",
+      "userId": "publishers:guaiyu11",
+      "displayName": "Guaiyu11",
+      "image": "https://avatars.githubusercontent.com/u/38230797?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 422,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772628321554,
+      "changelog": "Initial release of Daily Standup Generator.\n\n- Generates structured daily standup reports from task lists, chat logs, or project management tools.\n- Supports prompts in both Chinese (\"生成每日站会报告\") and English (\"standup\").\n- Outputs reports with sections for completed tasks, today’s plans, and blockers.\n- Uses memory files and conversation history as data sources; asks user for tasks if needed.\n- Designed for brevity and clarity in team communication.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d5e1920779c8299b4604a265b06c9b55ffeddd24fe23316efd5f60243b30e77f"
+}

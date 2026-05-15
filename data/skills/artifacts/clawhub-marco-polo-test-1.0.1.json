@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/marco-polo-test@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marco_polo_test",
+  "skill": {
+    "id": 56813,
+    "skillKey": "clawhub-marco-polo-test",
+    "name": "Marco Polo Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marco-polo-test",
+    "url": "https://clawhub.ai/skills/marco-polo-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marco-polo-test-bea0e2ca7040add1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A simple zero‑dependency, environment‑agnostic, and side‑effect‑free skill that helps users test if their OpenClaw instances can load skills correctly."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adairli2504",
+      "userId": "s17bx46n6jx0kzahde8vq86b9584n0vg",
+      "displayName": "AdairLi",
+      "image": "https://avatars.githubusercontent.com/u/71171259?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776274563487,
+      "changelog": "- Updated testing instructions: clarified that the expected response should include \"polo\" (not necessarily be exactly \"polo\").\n- No code or functional changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:03f714deb9d49e3f73d369052da89c2cf8800a818a2da6a04faae1b35739285b"
+}

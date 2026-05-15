@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32616,
+  "uuid": "skill-clawhub-ocas-triage",
+  "skillKey": "clawhub-ocas-triage",
+  "name": "Ocas Triage",
+  "summary": "System scheduler and priority queue manager. Determines what gets attention next across all pending work. Use when prioritizing competing tasks, checking que...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocas_triage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Indigo Karasu",
+      "features": [
+        "System scheduler and priority queue manager",
+        "Determines what gets attention next across all pending work",
+        "Use when prioritizing competing tasks, checking que..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ocas-triage@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265148029?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ocas-triage",
+      "url": "https://clawhub.ai/skills/ocas-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocas-triage",
+    "url": "https://clawhub.ai/skills/ocas-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocas-triage-5ed7fd823894c062.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ocas-triage@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ocas-triage-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10cecf71566c555d4c45d9f9561bb7e8d00e0627a91de8d0c30fe2ef123df329",
+      "artifactSizeBytes": 2421
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T04:15:18.735Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45351,
+  "uuid": "skill-clawhub-aliyun-hbr-backup",
+  "skillKey": "clawhub-aliyun-hbr-backup",
+  "name": "Aliyun Hbr Backup",
+  "summary": "Use when managing Alibaba Cloud Cloud Backup (HBR) via OpenAPI/SDK, including the user asks for backup lifecycle operations such as resource listing, policy/...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_hbr_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Use when managing Alibaba Cloud Cloud Backup (HBR) via OpenAPI/SDK, including the user asks for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aliyun-hbr-backup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aliyun-hbr-backup",
+      "url": "https://clawhub.ai/skills/aliyun-hbr-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-hbr-backup",
+    "url": "https://clawhub.ai/skills/aliyun-hbr-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-hbr-backup-e2d982fa8e2abb13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aliyun-hbr-backup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aliyun-hbr-backup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d2cebc4aea32322d76c6115d315100bcd3344672e6895b9247fa274e0d60ae8",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T22:07:44.501Z"
+}

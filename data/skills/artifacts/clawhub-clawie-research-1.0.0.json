@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawie-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawie_research",
+  "skill": {
+    "id": 25627,
+    "skillKey": "clawhub-clawie-research",
+    "name": "Clawie Research Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawie-research",
+    "url": "https://clawhub.ai/skills/clawie-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawie-research-23e673450deafd31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep research on any topic with structured report generation. Use when: (1) user asks for research, analysis, or investigation, (2) need competitive analysis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrcalifornian",
+      "userId": "publishers:mrcalifornian",
+      "displayName": "mrcalifornian",
+      "image": "https://avatars.githubusercontent.com/u/86061845?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773309725807,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:044b97e4d8c7e94739baf223f2ea7fc7986c91fd4d17d65967c0fb8235d036e6"
+}

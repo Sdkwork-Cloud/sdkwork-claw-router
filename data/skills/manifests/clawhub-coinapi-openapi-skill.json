@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29708,
+  "uuid": "skill-clawhub-coinapi-openapi-skill",
+  "skillKey": "clawhub-coinapi-openapi-skill",
+  "name": "CoinAPI OpenAPI Skill",
+  "summary": "Operate CoinAPI market data reads through UXC with a curated OpenAPI schema, API-key auth, and read-first guardrails.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coinapi_openapi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Operate CoinAPI market data reads through UXC with a curated OpenAPI schema, API-key auth, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coinapi-openapi-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coinapi-openapi-skill",
+      "url": "https://clawhub.ai/skills/coinapi-openapi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coinapi-openapi-skill",
+    "url": "https://clawhub.ai/skills/coinapi-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coinapi-openapi-skill-e75cbf787a073525.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coinapi-openapi-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coinapi-openapi-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bcfc025bcda0c4168e492c91a26f46738bb8dc90e03735a8f5aa56e1598859e",
+      "artifactSizeBytes": 2215
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T00:33:26.810Z"
+}

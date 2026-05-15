@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hk-stock-radar@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hk_stock_radar",
+  "skill": {
+    "id": 66212,
+    "skillKey": "clawhub-hk-stock-radar",
+    "name": "Hk Stock Radar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hk-stock-radar",
+    "url": "https://clawhub.ai/skills/hk-stock-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hk-stock-radar-443a8d7821b58211.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "港股行情与舆情监控工具。当用户询问「港股怎么样」「恒生指数」「港股大盘」「港股涨跌」「HK股」「港股行情监控」「南向资金」时使用。支持东方财富港股API、新浪财经港股接口、Yahoo Finance获取实时行情，以及Google News RSS和X/Twitter舆情监控。📢微信公众号：PM熊叔（打造一人公司..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gold3bear",
+      "userId": "s17930bxaprtfmapx7v2y3p8ns85hcsh",
+      "displayName": "Bear Xiong",
+      "image": "https://avatars.githubusercontent.com/u/5952306?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777515971070,
+      "changelog": "- 增加了微信公众号「PM熊叔」介绍至说明，便于用户获取更多资讯。\n- 其余内容未变，功能和用法保持一致。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:edd8fbfae56a2a436b4026e3e5645041e473326dcfcbecb9e37f7809568b6e59"
+}

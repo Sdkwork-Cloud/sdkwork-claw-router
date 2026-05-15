@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tattoo-design-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tattoo_design_generator",
+  "skill": {
+    "id": 41840,
+    "skillKey": "clawhub-tattoo-design-generator",
+    "name": "Tattoo Design Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tattoo-design-generator",
+    "url": "https://clawhub.ai/skills/tattoo-design-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tattoo-design-generator-72118aef6da1d696.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI tattoo design generator for creating custom tattoo concept art, ink illustrations, and tattoo reference sheets. Generate flash tattoo designs, sleeve idea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "omactiengartelle",
+      "userId": "s1700se1ym0cqwmmannczhx57183gf78",
+      "displayName": "omactiengartelle",
+      "image": "https://avatars.githubusercontent.com/u/258436340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775386167763,
+      "changelog": "- Initial release of the Tattoo Design Generator skill.\n- Generate custom tattoo concept art, flash designs, sleeve ideas, minimalist and tribal styles, and tattoo reference sheets.\n- Uses Neta AI image generation API (requires free API token).\n- Support for image sizing (`portrait`, `landscape`, `square`, `tall`) and style inheritance via reference image UUID.\n- Simple CLI usage for artists, studios, or anyone planning new tattoos.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:815bae4f4b127e19a719a1ad5d0e188202a1ebd8194d35b1045c9e801d55ebc9"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69809,
+  "uuid": "skill-clawhub-testmaibao",
+  "skillKey": "clawhub-testmaibao",
+  "name": "test_maibao",
+  "summary": "查询指定城市的当前天气，包括温度、天气状况及湿度，支持摄氏度和华氏度单位。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.testmaibao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qkainan",
+      "features": [
+        "查询指定城市的当前天气，包括温度、天气状况及湿度，支持摄氏度和华氏度单位。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/testmaibao@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/120768443?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "testmaibao",
+      "url": "https://clawhub.ai/skills/testmaibao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "testmaibao",
+    "url": "https://clawhub.ai/skills/testmaibao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/testmaibao-7d0e76c50001ff11.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/testmaibao@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-testmaibao-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05d85f1c940e182c95543b0b6d5a672b31a22dc0d1ec2c9e7933bc12b0c67f18",
+      "artifactSizeBytes": 1797
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:53:49.451Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28660,
+  "uuid": "skill-clawhub-boiler",
+  "skillKey": "clawhub-boiler",
+  "name": "Boiler",
+  "summary": "Boiler efficiency and sizing tool",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boiler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Boiler efficiency and sizing tool"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/boiler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "boiler",
+      "url": "https://clawhub.ai/skills/boiler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boiler",
+    "url": "https://clawhub.ai/skills/boiler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boiler-8b4df85a07e71f5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/boiler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-boiler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7eae9c19d815921acc162652703e4f2ba155c4241168259bac2862f86137331e",
+      "artifactSizeBytes": 1708
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T12:18:42.940Z"
+}

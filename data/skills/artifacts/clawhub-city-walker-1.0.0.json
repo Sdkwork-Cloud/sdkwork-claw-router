@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/city-walker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.city_walker",
+  "skill": {
+    "id": 68117,
+    "skillKey": "clawhub-city-walker",
+    "name": "city-walker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "city-walker",
+    "url": "https://clawhub.ai/skills/city-walker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/city-walker-a57987c865491ee2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "城市漫游者，发现城市隐藏角落的半日步行路线。当用户想\"逛逛城市\"\"探索附近\"\"找个地方散步\"\"发现小众景点\"或需要城市微旅行方案时使用此 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yunhanli7",
+      "userId": "s176f16nfzqvkqd6wxrb60c375841nsr",
+      "displayName": "厉云涵",
+      "image": "https://avatars.githubusercontent.com/u/5434045?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775024094120,
+      "changelog": "city-walker v1.0.0\n\n- 首次发布，提供城市步行探索路线推荐功能，支持半日探索、本地微旅行、市内小众景点发现等多种场景。\n- 按时间、主题、心情等多维度规划个性化路线，覆盖咖啡、书店、老街、艺术、夜市、自然等主题。\n- 输出详细路线、每个点的亮点介绍、停留建议及实用贴士，并包含随机惊喜推荐。\n- 支持即兴漫游、城市拼图、季节限定路线，一人游等特色模式。\n- 适用多城市，包括上海、北京、杭州等，丰富路线库示例可供参考。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3961c9978d68c035a176b9936e60d4af88260ac78d606dfc26d31707f4b0242"
+}

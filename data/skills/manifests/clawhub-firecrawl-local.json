@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33140,
+  "uuid": "skill-clawhub-firecrawl-local",
+  "skillKey": "clawhub-firecrawl-local",
+  "name": "Firecrawl Local",
+  "summary": "Use this skill whenever you need to scrape web pages, crawl websites, or map site structure using a self-hosted Firecrawl instance. Triggers on requests to e...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firecrawl_local",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SaddamTechie",
+      "features": [
+        "Use this skill whenever you need to scrape web pages, crawl websites, or map site structure usi.",
+        "Triggers on requests to e..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/firecrawl-local@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/148180690?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "firecrawl-local",
+      "url": "https://clawhub.ai/skills/firecrawl-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firecrawl-local",
+    "url": "https://clawhub.ai/skills/firecrawl-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firecrawl-local-ba6ea1f47d9ddaa0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/firecrawl-local@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-firecrawl-local-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:096c1a072388f413989ab816f56609d1746010c94dd4020dd8270f1f411e3a34",
+      "artifactSizeBytes": 2392
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T16:11:56.138Z"
+}

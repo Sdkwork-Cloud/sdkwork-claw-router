@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23707,
+  "uuid": "skill-clawhub-leads",
+  "skillKey": "clawhub-leads",
+  "name": "Leads",
+  "summary": "Manage sales leads locally. Use when adding prospects, scoring leads, setting follow-ups, tracking conversions, or viewing funnels.",
+  "version": "3.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leads",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Manage sales leads locally",
+        "Use when adding prospects, scoring leads, setting follow-ups, tracking conversions, or viewing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/leads@3.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "leads",
+      "url": "https://clawhub.ai/skills/leads"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leads",
+    "url": "https://clawhub.ai/skills/leads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leads-aef450dc78eac12f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/leads@3.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-leads-3.4.1.json",
+      "version": "3.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7035655f5b2e1004985e01d3842fac23dc573583d618bf9d4669c4cfffea962",
+      "artifactSizeBytes": 1846
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:13:14.947Z"
+}

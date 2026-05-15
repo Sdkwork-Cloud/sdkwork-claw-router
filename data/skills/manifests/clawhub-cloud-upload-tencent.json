@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63765,
+  "uuid": "skill-clawhub-cloud-upload-tencent",
+  "skillKey": "clawhub-cloud-upload-tencent",
+  "name": "Cloud Upload Tencent",
+  "summary": "腾讯云对象存储（COS）上传工具。将本地文件上传至腾讯云 COS，生成下载链接和图片预览。适用于备份文件、生成公开分享链接、存储静态资源。跨平台支持（macOS/Linux/Windows），支持 CLI 和 Python 两种方式。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_upload_tencent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "realorange1994",
+      "features": [
+        "腾讯云对象存储（COS）上传工具。将本地文件上传至腾讯云 COS，生成下载链接和图片预览。适用于备份文件、生成公开分享链接、存储静态资源。跨平台支持（macOS/Linux/Windows）."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloud-upload-tencent@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222950321?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloud-upload-tencent",
+      "url": "https://clawhub.ai/skills/cloud-upload-tencent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-upload-tencent",
+    "url": "https://clawhub.ai/skills/cloud-upload-tencent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-upload-tencent-0bf2402643cd643d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloud-upload-tencent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloud-upload-tencent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11bf0ad85ffec927fbb5d6191cb26657089558f8e710ac43aa349f7273a884d7",
+      "artifactSizeBytes": 2665
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:15:41.937Z"
+}

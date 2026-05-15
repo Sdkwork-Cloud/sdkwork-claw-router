@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35437,
+  "uuid": "skill-clawhub-a2a-market-clawd",
+  "skillKey": "clawhub-a2a-market-clawd",
+  "name": "A2a Market",
+  "summary": "AI Agent skill marketplace integration for A2A Market. Enables agents to buy skills, sell skills, and earn money autonomously. Use when: (1) User asks to fin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_market_clawd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "onlyloveher",
+      "features": [
+        "AI Agent skill marketplace integration for A2A Market",
+        "Enables agents to buy skills, sell skills, and earn money autonomously",
+        "Use when: (1) User asks to fin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a2a-market-clawd@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/972832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a2a-market-clawd",
+      "url": "https://clawhub.ai/skills/a2a-market-clawd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-market-clawd",
+    "url": "https://clawhub.ai/skills/a2a-market-clawd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-market-clawd-4860282e864e1bb2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a2a-market-clawd@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a2a-market-clawd-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2fb365e9c62d7df887ccd24bae122bb1f1993f9509fc6b9377573d916ca48fac",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T05:56:50.806Z"
+}

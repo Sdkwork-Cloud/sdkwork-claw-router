@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14356,
+  "uuid": "skill-clawhub-agentgate",
+  "skillKey": "clawhub-agentgate",
+  "name": "Agentgate Clawhub",
+  "summary": "API gateway for personal data with human-in-the-loop write approval. Connects agents to GitHub, Bluesky, Google Calendar, Home Assistant, and more — all thro...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentgate",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Luis Montes",
+      "features": [
+        "API gateway for personal data with human-in-the-loop write approval",
+        "Connects agents to GitHub, Bluesky, Google Calendar, Home Assistant, and more — all thro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentgate@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/423800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentgate",
+      "url": "https://clawhub.ai/skills/agentgate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentgate",
+    "url": "https://clawhub.ai/skills/agentgate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentgate-f65a36938ea9327f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentgate@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentgate-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a59a260faf5203ef0d2fbb7189fb467e6c507d72d54f32511be784d829359310",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T01:19:16.958Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/autonomous-agent@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomous_agent",
+  "skill": {
+    "id": 9433,
+    "skillKey": "clawhub-autonomous-agent",
+    "name": "Autonomous Agent Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomous-agent",
+    "url": "https://clawhub.ai/skills/autonomous-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomous-agent-370f04a3b961c126.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CornerStone MCP x402 skill for agents. Tools for stock predictions, backtests, bank linking, and agent/borrower scores. Payment-protected MCP tools (run_prediction, run_backtest, link_bank_account, get_agent_reputation_score, get_borrower_."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "josephrp",
+      "userId": "publishers:josephrp",
+      "displayName": "Josephrp",
+      "image": "https://avatars.githubusercontent.com/u/18212928?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4265,
+      "installsAllTime": 21,
+      "installsCurrent": 18,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1770802691043,
+      "changelog": "- Improved and clarified documentation on wallet management, funding, and prerequisites for all tools.\n- Added detailed quick-start workflow and decision trees for common agent operations.\n- Explicit step-by-step tool reference for wallet, balance, and paid MCP actions.\n- Enhanced error handling documentation, including typical error patterns and recovery steps.\n- Now explicitly supports both Aptos and EVM chains for payment, with automatic 402-payment flow and transparent retry.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6ed7fd26f881bf1bc24faf61a8ec38a91b4a4f86e5666d271d140a254b17ff03"
+}

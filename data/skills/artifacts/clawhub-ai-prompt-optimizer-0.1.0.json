@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-prompt-optimizer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_prompt_optimizer",
+  "skill": {
+    "id": 62268,
+    "skillKey": "clawhub-ai-prompt-optimizer",
+    "name": "AI Prompt Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-prompt-optimizer",
+    "url": "https://clawhub.ai/skills/ai-prompt-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-prompt-optimizer-3bcadd3f1f71d95f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 提示词优化专家，帮助用户将创意想法转化为高质量的 Seedance 2.0（视频）、Seedream 4.0（图像）、可灵 O1（视频）提示词，输出中英双语版本。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaoxty",
+      "userId": "s17atcpm4v1byx3a4h2hqrmvyn84xrjs",
+      "displayName": "xiaoxty",
+      "image": "https://avatars.githubusercontent.com/u/30049294?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 674,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773808992759,
+      "changelog": "Initial release of AI Prompt Optimizer.\n\n- Transforms user’s creative ideas into high-quality, structured prompts for Seedance 2.0 (video), Seedream 4.0 (image), and 可灵 O1 (video).\n- Auto-detects target tool from user message or prompts for clarification if unclear.\n- Outputs optimized prompts in both Chinese and English, including specific parameter recommendations and optimization explanations.\n- Explains optimization choices to help users learn prompt writing techniques.\n- Follows concise, clean Markdown output with strict formatting for ease of use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:895b9785ba3dccdb980c7188ffbd964db388be8cc8f8ef88d9d51554dabeaff1"
+}

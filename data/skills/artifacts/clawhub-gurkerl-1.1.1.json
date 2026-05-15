@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gurkerl@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gurkerl",
+  "skill": {
+    "id": 10985,
+    "skillKey": "clawhub-gurkerl",
+    "name": "Gurkerl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gurkerl",
+    "url": "https://clawhub.ai/skills/gurkerl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gurkerl-40c4b08dff525b78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gurkerl.at grocery shopping via MCP - search products, manage cart, orders, recipes, favorites."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "florianbeer",
+      "userId": "s178qb3qnn3qkjvv09p3dn4v4583we9e",
+      "displayName": "Florian Beer",
+      "image": "https://avatars.githubusercontent.com/u/800047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2059,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1774858238395,
+      "changelog": "Fix: include bin/gurkerl CLI wrapper script (missing from 1.1.0 publish)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7848dad75b807c4a25d67c4a65d543b203b756ced319dc5aaad541fc8436dd78"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12710,
+  "uuid": "skill-clawhub-price-hunter",
+  "skillKey": "clawhub-price-hunter",
+  "name": "Price Hunter",
+  "summary": "Global price comparison tool with international platform support. Compare prices across Amazon, eBay, AliExpress, Temu (international) AND JD, Taobao, Tmall,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.price_hunter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael",
+      "features": [
+        "Global price comparison tool with international platform support",
+        "Compare prices across Amazon, eBay, AliExpress, Temu (international) AND JD, Taobao, Tmall,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/price-hunter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5253294?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "price-hunter",
+      "url": "https://clawhub.ai/skills/price-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "price-hunter",
+    "url": "https://clawhub.ai/skills/price-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/price-hunter-cc9bc822ff41065e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/price-hunter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-price-hunter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d49a2728e956b4f36ee27e468fcdd600813b14b3fb1b3067a6527a6ab6c17316",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T04:32:11.040Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maccabi-pharm-search@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maccabi_pharm_search",
+  "skill": {
+    "id": 56707,
+    "skillKey": "clawhub-maccabi-pharm-search",
+    "name": "maccabi-pharm-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maccabi-pharm-search",
+    "url": "https://clawhub.ai/skills/maccabi-pharm-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maccabi-pharm-search-9a92e1b81eff9a83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search for medications and check real-time stock availability at Maccabi pharmacies in Israel. Use when searching for drugs like \"nurofen\", \"acamol/אקמול\", \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexpolonsky",
+      "userId": "publishers:alexpolonsky",
+      "displayName": "alexpolonsky",
+      "image": "https://avatars.githubusercontent.com/u/7319921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 667,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1771625719001,
+      "changelog": "Initial ClawHub release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:75f7d78b9bc943b7706f4e68e9df166aed5e28c46dfbd3812277d0148441bfcc"
+}

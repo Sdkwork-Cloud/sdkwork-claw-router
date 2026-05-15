@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grid-trading@1.5.3",
+  "version": "1.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grid_trading",
+  "skill": {
+    "id": 23036,
+    "skillKey": "clawhub-grid-trading",
+    "name": "Grid Trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grid-trading",
+    "url": "https://clawhub.ai/skills/grid-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grid-trading-0250885f6ded049d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dynamic grid trading strategy for any token pair on EVM L2 chains via OKX DEX API. Features asymmetric grid steps (buy-dense/sell-wide in bullish, reverse in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "synththoughts",
+      "userId": "s17ck4tsqe5hd01dsn49q7dac183kd47",
+      "displayName": "SynthThoughts",
+      "image": "https://avatars.githubusercontent.com/u/261547909?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 453,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.5.3",
+      "createdAt": 1774509902758,
+      "changelog": "remove stale backtest results from skill definition",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c7a6780289195a00b9e6b20271f76ea9497e65bc367de74d1af87e188eb201a"
+}

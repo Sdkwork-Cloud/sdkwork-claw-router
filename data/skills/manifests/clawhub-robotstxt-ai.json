@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36288,
+  "uuid": "skill-clawhub-robotstxt-ai",
+  "skillKey": "clawhub-robotstxt-ai",
+  "name": "Robots Ai",
+  "summary": "Analyze and generate robots.txt files with AI crawler awareness. Detect which AI bots (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, etc.) are blocked o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.robotstxt_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sharozdawa",
+      "features": [
+        "Analyze and generate robots.txt files with AI crawler awareness",
+        "Detect which AI bots (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, etc.) are blocked o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/robotstxt-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31814833?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "robotstxt-ai",
+      "url": "https://clawhub.ai/skills/robotstxt-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "robotstxt-ai",
+    "url": "https://clawhub.ai/skills/robotstxt-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/robotstxt-ai-63b636857b90bc12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/robotstxt-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-robotstxt-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d15e1b8baaecfe67f8f974b517733cde93932d084a55281b18f8a3a83bcec0e0",
+      "artifactSizeBytes": 2379
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T19:19:29.509Z"
+}

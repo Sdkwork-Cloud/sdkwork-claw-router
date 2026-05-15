@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-combo-recommender@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_combo_recommender",
+  "skill": {
+    "id": 34431,
+    "skillKey": "clawhub-skill-combo-recommender",
+    "name": "Skill Combo Recommender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-combo-recommender",
+    "url": "https://clawhub.ai/skills/skill-combo-recommender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-combo-recommender-b54e078687b04787.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Recommend optimal skill combinations and workflows for user tasks, offering usage examples and preset workflows to optimize project execution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "utopiabenben",
+      "userId": "s17cnh4v6k2vf1742dfy2z5vj183qz0q",
+      "displayName": "utopiabenben",
+      "image": "https://avatars.githubusercontent.com/u/19267750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773875399350,
+      "changelog": "智能推荐技能组合和工作流程，支持28个技能和6个预设工作流",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea2cc100fc87ec70b02d2b700a2260e546ea0fd112a0bed9a3416dd9cf883c91"
+}

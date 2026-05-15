@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/portfolio-daily-tracker@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.portfolio_daily_tracker",
+  "skill": {
+    "id": 21527,
+    "skillKey": "clawhub-portfolio-daily-tracker",
+    "name": "Portfolio Daily Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "portfolio-daily-tracker",
+    "url": "https://clawhub.ai/skills/portfolio-daily-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/portfolio-daily-tracker-a181a275d5192b7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track and report multi-group stock portfolios with daily snapshots, live Yahoo Finance prices, P&L analytics, and push notifications (Feishu/Telegram). Suppo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stepuuu",
+      "userId": "publishers:stepuuu",
+      "displayName": "Yann_Sheng(SII)",
+      "image": "https://avatars.githubusercontent.com/u/139123556?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 486,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773150722505,
+      "changelog": "v1.2.0: market_daily_change排除资金流, 日期导航CSV并集, 快照缺失自动合成, 回撤基于利润算法, CSV升级11列, 成本增减解析, 声明env变量",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29e1619fcf0b69226a78fcb39c0f3adf1cce86a56f0dee0cf0de2dcfde6daf18"
+}

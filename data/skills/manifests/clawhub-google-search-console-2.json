@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22179,
+  "uuid": "skill-clawhub-google-search-console-2",
+  "skillKey": "clawhub-google-search-console-2",
+  "name": "Google Search Console",
+  "summary": "When the user wants to analyze Google Search Console data, use GSC API, or interpret search performance. Also use when the user mentions \"GSC,\" \"Search Conso...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_search_console_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to analyze Google Search Console data, use GSC API, or interpret search per.",
+        "Also use when the user mentions \"GSC,\" \"Search Conso..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-search-console-2@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-search-console-2",
+      "url": "https://clawhub.ai/skills/google-search-console-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-search-console-2",
+    "url": "https://clawhub.ai/skills/google-search-console-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-search-console-2-73b66c2ea69abc8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-search-console-2@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-search-console-2-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad4c98167e0b6a9844605782f30dfceba69ee6b78f4c0f8cc719210b65888d08",
+      "artifactSizeBytes": 2518
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T11:31:12.023Z"
+}

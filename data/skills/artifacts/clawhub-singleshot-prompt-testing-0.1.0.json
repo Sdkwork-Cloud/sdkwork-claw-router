@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/singleshot-prompt-testing@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.singleshot_prompt_testing",
+  "skill": {
+    "id": 11887,
+    "skillKey": "clawhub-singleshot-prompt-testing",
+    "name": "Singleshot Prompt Testing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "singleshot-prompt-testing",
+    "url": "https://clawhub.ai/skills/singleshot-prompt-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/singleshot-prompt-testing-b0a10d3a6242305b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Test and optimize prompts for cost, token use, and performance with detailed reports using single shot queries across multiple providers and models."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vincentzhangz",
+      "userId": "s1732r3tp0jv88dmkv27eawe0583h6n0",
+      "displayName": "Vincent",
+      "image": "https://avatars.githubusercontent.com/u/22006984?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1676,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770224764571,
+      "changelog": "Singleshot Prompt Testing & Optimization Skill v0.1.0\n\n- Initial release of Singleshot Prompt Testing & Optimization Skill.\n- Provides detailed guidance for prompt cost and token efficiency testing before production.\n- Includes example commands for benchmarking and comparing AI model costs, performance, and output.\n- Documents workflow for generating, optimizing, and comparing prompt reports.\n- Offers best practices, troubleshooting tips, and environment variable setup for common AI providers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4bd7431bc72c4d93da7ece52491ee48258481a6678101685c52a3e1aa4865883"
+}

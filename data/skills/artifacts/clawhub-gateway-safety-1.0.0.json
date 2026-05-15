@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gateway-safety@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gateway_safety",
+  "skill": {
+    "id": 24866,
+    "skillKey": "clawhub-gateway-safety",
+    "name": "Gateway Safety"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gateway-safety",
+    "url": "https://clawhub.ai/skills/gateway-safety",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gateway-safety-05324b95bd40826c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safely update OpenClaw gateway configuration (openclaw.json) with automatic validation, backup, and 30-second health-check rollback. Use this skill whenever..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "allthebadthings",
+      "userId": "publishers:allthebadthings",
+      "displayName": "allthebadthings",
+      "image": "https://avatars.githubusercontent.com/u/222807047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 390,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773347927045,
+      "changelog": "Initial release - prevents death loops and session loss when modifying OpenClaw gateway configs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a4338cd78986f997d2070cdfde7b7eb0e33612aa31aa580b0f3c733b09dc05a"
+}

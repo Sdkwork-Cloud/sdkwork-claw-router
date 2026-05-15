@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/specclaw@0.6.1",
+  "version": "0.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.specclaw",
+  "skill": {
+    "id": 38212,
+    "skillKey": "clawhub-specclaw",
+    "name": "SpecClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "specclaw",
+    "url": "https://clawhub.ai/skills/specclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/specclaw-7e5254587d46df7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Spec-driven development framework for OpenClaw. Propose features, generate specs, spawn coding agents, validate implementations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chanbistec",
+      "userId": "s17a83y3ah1dpfhankze78xd5583sxwj",
+      "displayName": "chanbistec",
+      "image": "https://avatars.githubusercontent.com/u/260402003?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.6.1",
+      "createdAt": 1774846349536,
+      "changelog": "Fix: gh-sync auth fallback (invalid token falls back to gh CLI). Fix: validate-change.sh enforces GitHub issue creation when github.sync is enabled.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5844ae949d9c0e9784500449caa47f5a52946e4366e25225db794f83ea0141e"
+}

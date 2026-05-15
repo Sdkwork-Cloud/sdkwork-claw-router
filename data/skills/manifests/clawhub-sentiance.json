@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35406,
+  "uuid": "skill-clawhub-sentiance",
+  "skillKey": "clawhub-sentiance",
+  "name": "Sentiance",
+  "summary": "Sentiance integration. Manage data, records, and automate workflows. Use when the user wants to interact with Sentiance data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sentiance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Sentiance integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Sentiance data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sentiance@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sentiance",
+      "url": "https://clawhub.ai/skills/sentiance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sentiance",
+    "url": "https://clawhub.ai/skills/sentiance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sentiance-c3d09c5cfbe23907.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sentiance@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sentiance-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03e410b7629eb896144e79118d24933c363f758396e33a2b07ad3c4492b2c6de",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:58:52.802Z"
+}

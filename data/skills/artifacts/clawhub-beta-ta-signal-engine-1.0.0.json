@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beta-ta-signal-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beta_ta_signal_engine",
+  "skill": {
+    "id": 33893,
+    "skillKey": "clawhub-beta-ta-signal-engine",
+    "name": "Beta TA Signal Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beta-ta-signal-engine",
+    "url": "https://clawhub.ai/skills/beta-ta-signal-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beta-ta-signal-engine-5e54c850cbb01ac3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate technical-analysis trade setups from OHLCV CSV using SMA/EMA/RSI/MACD/ATR with clear entry, stop, target, and position size."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1477009639zw-blip",
+      "userId": "s17ezgebx1rdjg5v6ddseykg2183rt6j",
+      "displayName": "1477009639zw-blip",
+      "image": "https://avatars.githubusercontent.com/u/266505725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774676776588,
+      "changelog": "Initial release — technical analysis signal generation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21dbcc3881d826854031c4e2fb94325b448b9a891a79e0a9d6250bde47760531"
+}

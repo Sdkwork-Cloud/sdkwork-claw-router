@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-knowledge-pipeline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_knowledge_pipeline",
+  "skill": {
+    "id": 60612,
+    "skillKey": "clawhub-obsidian-knowledge-pipeline",
+    "name": "Obsidian Knowledge Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-knowledge-pipeline",
+    "url": "https://clawhub.ai/skills/obsidian-knowledge-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-knowledge-pipeline-ef8ce87b3eaa01e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将URL文章自动抓取、分类、配图、编译入库Obsidian知识库的7步流水线技能，供Agent复用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tracky2009",
+      "userId": "s175z0917qd42ptq3q94sxgf4985gart",
+      "displayName": "tracky2009",
+      "image": "https://avatars.githubusercontent.com/u/258850741?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777126100202,
+      "changelog": "Initial release: 7-step URL-to-wiki pipeline",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1cf4e73f2cfe5dc46b8bc8094f3a3b8860a3cda48cd6b9d1e2366201120aa68e"
+}

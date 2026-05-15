@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subtitle-editor-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_editor_online",
+  "skill": {
+    "id": 49245,
+    "skillKey": "clawhub-subtitle-editor-online",
+    "name": "Subtitle Editor Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-editor-online",
+    "url": "https://clawhub.ai/skills/subtitle-editor-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-editor-online-a98c71f3ee7531de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get captioned video files ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"ad..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 83,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778063917856,
+      "changelog": "Subtitle Editor Online — Initial Release\n\n- Launches a cloud-based subtitle editor for easy video captioning and export.\n- Supports uploading MP4, MOV, AVI, WebM videos up to 500MB.\n- Add accurate subtitles in multiple languages (e.g., English, Spanish) with auto-synced timestamps.\n- Exports videos in 1080p MP4 format within about 30–90 seconds.\n- User-friendly: no complex software; just upload, specify instructions, and download.\n- Built-in free credits system and seamless backend connection for all users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8804329d57653b7cfe5e4f8da534f101a3962d4d15b8be0285eb37328b3237e9"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28687,
+  "uuid": "skill-clawhub-test33",
+  "skillKey": "clawhub-test33",
+  "name": "test",
+  "summary": "Interact with GitHub using the gh CLI to manage pull requests, check CI status, view workflow runs, and access advanced API queries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test33",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yequanzheng",
+      "features": [
+        "Interact with GitHub using the gh CLI to manage pull requests, check CI status, view workflow r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test33@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107382370?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test33",
+      "url": "https://clawhub.ai/skills/test33"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test33",
+    "url": "https://clawhub.ai/skills/test33",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test33-76226c5fd1ad06a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test33@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-test33-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f6ca9a42520889895b364fd402d9af4cd6e9d9010434f5501329a634e868680",
+      "artifactSizeBytes": 2177
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T11:27:28.624Z"
+}

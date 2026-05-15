@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16338,
+  "uuid": "skill-clawhub-currency-exchange",
+  "skillKey": "clawhub-currency-exchange",
+  "name": "Currency Exchange Rate",
+  "summary": "Currency exchange rate conversion using exchangerate-api.com. Use when: (1) converting between currencies, (2) checking current exchange rates, (3) viewing c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.currency_exchange",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ouyangAbel",
+      "features": [
+        "Currency exchange rate conversion using exchangerate-api.com",
+        "Use when: (1) converting between currencies, (2) checking current exchange rates, (3) viewing c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/currency-exchange@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156869006?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "currency-exchange",
+      "url": "https://clawhub.ai/skills/currency-exchange"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "currency-exchange",
+    "url": "https://clawhub.ai/skills/currency-exchange",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/currency-exchange-a7b85550690b1c16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/currency-exchange@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-currency-exchange-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db8931e5c18c70e3902d65df4441c6156158b55d3a1a9603b770093c11872f8f",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T12:33:16.807Z"
+}

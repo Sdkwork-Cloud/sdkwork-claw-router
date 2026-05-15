@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tweetnugget@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tweetnugget",
+  "skill": {
+    "id": 39449,
+    "skillKey": "clawhub-tweetnugget",
+    "name": "Tweetnugget"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tweetnugget",
+    "url": "https://clawhub.ai/skills/tweetnugget",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tweetnugget-b446634a6a0745a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A random inspirational tweet from curated collections of hand-picked wisdom by tech leaders, founders, and philosophers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "acailic",
+      "userId": "s17dbkbcx5jwrpq1rnd8yapabn842295",
+      "displayName": "acailic",
+      "image": "https://avatars.githubusercontent.com/u/12486087?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775090188066,
+      "changelog": "- Added scripts/get_quote.py to centralize quote selection logic.\n- Updated SKILL.md and README.md to use the new Python script instead of inline code blocks.\n- Introduced command-line options for \"surprise\" and tag filtering.\n- Simplified usage instructions and improved tag documentation.\n- Updated metadata and description for greater clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c3ea84e874fdb2cc11c684a6064136ff573821515097912e7e4a3921b35459c"
+}

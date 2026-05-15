@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28577,
+  "uuid": "skill-clawhub-github-actions-actor-reliability-audit",
+  "skillKey": "clawhub-github-actions-actor-reliability-audit",
+  "name": "GitHub Actions Actor Reliability Audit",
+  "summary": "Audit GitHub Actions run reliability by actor to surface high-risk contributors and flaky automation owners.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_actor_reliability_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Audit GitHub Actions run reliability by actor to surface high-risk contributors and flaky autom."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-actions-actor-reliability-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-actions-actor-reliability-audit",
+      "url": "https://clawhub.ai/skills/github-actions-actor-reliability-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-actor-reliability-audit",
+    "url": "https://clawhub.ai/skills/github-actions-actor-reliability-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-actor-reliability-audit-aafaa5772651b7b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-actions-actor-reliability-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-actor-reliability-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32e96c92bc63c89384a1fdff2b7c078adff91ac976d97f3b43aaf909b0b22734",
+      "artifactSizeBytes": 2572
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T15:06:04.161Z"
+}

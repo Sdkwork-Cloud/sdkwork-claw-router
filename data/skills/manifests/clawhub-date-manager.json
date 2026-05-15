@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70890,
+  "uuid": "skill-clawhub-date-manager",
+  "skillKey": "clawhub-date-manager",
+  "name": "纪念日管理",
+  "summary": "私人日期管家。**重要：所有日期计算（包括相差天数、下周一、月末等）必须使用 calc 命令，不要自己计算，避免出错。** 支持公历和农历计算，提供提醒和情感化文案。触发场景：(1)用户提到生日、纪念日、忌日、祭祖、清明等关键词 (2)用户说\"记录XXX的生日\"、\"记一下XXX\" (3)用户问\"今天有什么日子\"、...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.date_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chanvging",
+      "features": [
+        "私人日期管家。**重要：所有日期计算（包括相差天数、下周一、月末等）必须使用 calc 命令，不要自己计算，避免出错。** 支持公历和农历计算，提供提醒和情感化文案。触发场景：(1)用户提到."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/date-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2200703?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "date-manager",
+      "url": "https://clawhub.ai/skills/date-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "date-manager",
+    "url": "https://clawhub.ai/skills/date-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/date-manager-a5f6657435111a95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/date-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-date-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be9e475c579c0c60b292032a1747b3fdb46442b018dada2b56391291b7ab8013",
+      "artifactSizeBytes": 2584
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T15:02:36.646Z"
+}

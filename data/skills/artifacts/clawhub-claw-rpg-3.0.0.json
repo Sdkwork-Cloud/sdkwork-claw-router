@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-rpg@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_rpg",
+  "skill": {
+    "id": 18346,
+    "skillKey": "clawhub-claw-rpg",
+    "name": "Claw Rpg"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-rpg",
+    "url": "https://clawhub.ai/skills/claw-rpg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-rpg-cebbc01ef50f8d95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "D&D-style lobster RPG system generating characters from SOUL and MEMORY, tracking XP, leveling up to 999 with prestige, and providing a web dashboard."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ramboxie",
+      "userId": "s179vdtva3hjq8xcjkvgcs85e183gsbj",
+      "displayName": "RAMBOXIE",
+      "image": "https://avatars.githubusercontent.com/u/74229868?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 598,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1774530698321,
+      "changelog": "feat: event-driven RPG notification system — 8 event triggers",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74ffb8333f6ca7bdf14dd1b9f643eb890df4485cbb783fc947500b474b257bbc"
+}

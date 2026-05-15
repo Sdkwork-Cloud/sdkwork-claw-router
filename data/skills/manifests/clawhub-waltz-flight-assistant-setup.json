@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43768,
+  "uuid": "skill-clawhub-waltz-flight-assistant-setup",
+  "skillKey": "clawhub-waltz-flight-assistant-setup",
+  "name": "Waltz Flight Assistant Setup",
+  "summary": "Set up Waltz Flight Assistant to book flights end to end, in conversation. Use when the plugin needs to be installed, configured, repaired, or pointed at the...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.waltz_flight_assistant_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "christy",
+      "features": [
+        "Set up Waltz Flight Assistant to book flights end to end, in conversation",
+        "Use when the plugin needs to be installed, configured, repaired, or pointed at the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/waltz-flight-assistant-setup@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200296977?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "waltz-flight-assistant-setup",
+      "url": "https://clawhub.ai/skills/waltz-flight-assistant-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "waltz-flight-assistant-setup",
+    "url": "https://clawhub.ai/skills/waltz-flight-assistant-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/waltz-flight-assistant-setup-8d5827dde2222d77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/waltz-flight-assistant-setup@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-waltz-flight-assistant-setup-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4e22f0c25bd96e4ef5661042b8af40293a743f3dff5d42ae451bbda4a0658a7",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T18:27:26.361Z"
+}

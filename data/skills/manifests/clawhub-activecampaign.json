@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9322,
+  "uuid": "skill-clawhub-activecampaign",
+  "skillKey": "clawhub-activecampaign",
+  "name": "ActiveCampaign CRM",
+  "summary": "ActiveCampaign CRM integration for lead management, deal tracking, and email automation. Use for syncing demo leads, managing clinic sales pipeline, and triggering follow-up sequences.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.activecampaign",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kesslerio",
+      "features": [
+        "ActiveCampaign CRM integration for lead management, deal tracking, and email automation",
+        "Use for syncing demo leads, managing clinic sales pipeline, and triggering follow-up sequences."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/activecampaign@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2647990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "activecampaign",
+      "url": "https://clawhub.ai/skills/activecampaign"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "activecampaign",
+    "url": "https://clawhub.ai/skills/activecampaign",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/activecampaign-3dda2235cf265503.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/activecampaign@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-activecampaign-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4aa5f95af01d03fe5c423d7fac72d94125616bef58617f4566a32b63e849f05",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T05:41:20.847Z"
+}

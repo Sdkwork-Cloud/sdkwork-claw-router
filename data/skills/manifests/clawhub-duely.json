@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18467,
+  "uuid": "skill-clawhub-duely",
+  "skillKey": "clawhub-duely",
+  "name": "duely",
+  "summary": "Track recurring maintenance tasks from the command line. Use when scheduling, checking, and logging periodic tasks like backups, reviews, or any repeating ch...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.duely",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "halbotley",
+      "features": [
+        "Track recurring maintenance tasks from the command line",
+        "Use when scheduling, checking, and logging periodic tasks like backups, reviews, or any repeati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/duely@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258555894?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "duely",
+      "url": "https://clawhub.ai/skills/duely"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "duely",
+    "url": "https://clawhub.ai/skills/duely",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/duely-c070645fe2d02002.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/duely@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-duely-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ede415f2fac68a5c496775d106f971811752b16dc3ac8072ecdc1edb62a71fb1",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T05:53:41.110Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27256,
+  "uuid": "skill-clawhub-port-manager",
+  "skillKey": "clawhub-port-manager",
+  "name": "Port Manager",
+  "summary": "Port Manager - Track and manage system port usage. Use when: (1) Port conflict when installing software, (2) Check port usage, (3) Release occupied ports, (4...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.port_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "damienCronw",
+      "features": [
+        "Port Manager",
+        "Track and manage system port usage",
+        "Use when: (1) Port conflict when installing software, (2) Check port usage, (3) Release occupie."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/port-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128512183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "port-manager",
+      "url": "https://clawhub.ai/skills/port-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "port-manager",
+    "url": "https://clawhub.ai/skills/port-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/port-manager-d1c0ea51739bf068.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/port-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-port-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4de5457b5bebc145a711870c7651b8cc57be2b94704e06a01c8df5564211354e",
+      "artifactSizeBytes": 2279
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T19:04:53.356Z"
+}

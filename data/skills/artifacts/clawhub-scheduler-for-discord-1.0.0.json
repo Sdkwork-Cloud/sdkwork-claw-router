@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scheduler-for-discord@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scheduler_for_discord",
+  "skill": {
+    "id": 11569,
+    "skillKey": "clawhub-scheduler-for-discord",
+    "name": "scheduler for discord"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scheduler-for-discord",
+    "url": "https://clawhub.ai/skills/scheduler-for-discord",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scheduler-for-discord-b801f9f423e35769.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage scheduled reminders and posts. Use when the user asks Moltbot to send a message later or on a recurring schedule (especially to the current Discord channel) without requiring them to provide channel IDs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaronwander",
+      "userId": "publishers:aaronwander",
+      "displayName": "AaronWander",
+      "image": "https://avatars.githubusercontent.com/u/210468848?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770013509668,
+      "changelog": "Schedule (⏰) — Natural-language scheduling for Moltbot\n\nWhat it does\n\nTurns “remind me later / every day at…” requests into Moltbot cron jobs.\nWhen invoked from Discord, it captures the current channel ID at creation time and bakes it into the job, so delivery works even though cron runs have no “current channel”.\nUses isolated agent jobs to avoid main-session cron constraints and to ensure reliable background execution.\nAvoids ambiguous Discord targets (e.g. #test) by always delivering to an explicit channel:<id>.\nExamples\n\nOne-shot reminder (Discord):\n“Remind me in 2 minutes: stand up and stretch.”\nDaily plan (Discord):\n“Every day at 8pm, send tomorrow’s work plan.”\nWeekly report (Discord):\n“Every Monday at 9am, post a short weekly goals checklist.”\nResult\n\nA cron job is created and later delivers the message (or generated content) back into the same Discord channel automatically.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:88f19ae841e9471d1d266f1ab578bd82f67b721ca049d00d9934a7949d820437"
+}

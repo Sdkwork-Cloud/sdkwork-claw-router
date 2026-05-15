@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70857,
+  "uuid": "skill-clawhub-amcjt-lottery",
+  "skillKey": "clawhub-amcjt-lottery",
+  "name": "专业彩票助手",
+  "summary": "专业彩票助手 - 支持双色球开奖查询、彩票OCR识别、中奖核对、开奖提醒。触发词：彩票、双色球、开奖、中奖、lottery。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amcjt_lottery",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jbhim",
+      "features": [
+        "支持双色球开奖查询、彩票OCR识别、中奖核对、开奖提醒。触发词：彩票、双色球、开奖、中奖、lottery。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amcjt-lottery@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31913489?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amcjt-lottery",
+      "url": "https://clawhub.ai/skills/amcjt-lottery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amcjt-lottery",
+    "url": "https://clawhub.ai/skills/amcjt-lottery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amcjt-lottery-c6ce88bdaf41f262.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amcjt-lottery@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amcjt-lottery-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f4a5e0eb7e3c6f396449c9f5cf9372cab07b5a64790af5f6e720d8eaa2d015f",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T08:25:17.345Z"
+}

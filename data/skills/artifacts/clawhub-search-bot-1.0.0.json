@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/search-bot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.search_bot",
+  "skill": {
+    "id": 22812,
+    "skillKey": "clawhub-search-bot",
+    "name": "Search Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "search-bot",
+    "url": "https://clawhub.ai/skills/search-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/search-bot-d1a3b5d471502f07.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time web search. Returns current results, titles, URLs, and an AI-synthesized summary."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "unixlamadev-spec",
+      "userId": "s173nr0teechvmbjjz4j5r9nen83gjtb",
+      "displayName": "unixlamadev-spec",
+      "image": "https://avatars.githubusercontent.com/u/251052015?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773366011297,
+      "changelog": "Search-bot 1.0.0 initial release:\n\n- Real-time web search using Brave Search API.\n- Returns up-to-date web results with titles, URLs, and descriptions.\n- Provides an AI-generated summary and key findings from search results.\n- Useful for news, research, fact-checking, and topics beyond training cutoffs.\n- Requires an API spend token for usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea6d685416795d946b3545834c215ff77f74424924aeb63513c65b104e7b9c3a"
+}

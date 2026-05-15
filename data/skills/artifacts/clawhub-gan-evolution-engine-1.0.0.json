@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gan-evolution-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gan_evolution_engine",
+  "skill": {
+    "id": 39628,
+    "skillKey": "clawhub-gan-evolution-engine",
+    "name": "GAN Evolution Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gan-evolution-engine",
+    "url": "https://clawhub.ai/skills/gan-evolution-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gan-evolution-engine-6d2fb2b785023fca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generative Adversarial Evolution for AI Agent Skills. Uses GAN-like process to evolve skill capabilities: Generator creates skill variants, Discriminator eva..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sudabg",
+      "userId": "s171hmy4rpbvqpdxt8kek1282h83kf79",
+      "displayName": "sudabg",
+      "image": "https://avatars.githubusercontent.com/u/143158885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774464187132,
+      "changelog": "Initial release: GAN-based skill evolution with real benchmark, multi-key fallback, and EvoMap publishing support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5599eb2f41c2bc2c1515e4002326ef6b64327ed1873a5bed8f7cd3cf6b0bd177"
+}

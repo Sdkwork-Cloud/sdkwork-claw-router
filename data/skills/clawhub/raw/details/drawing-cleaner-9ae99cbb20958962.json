@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "drawing-cleaner",
+    "displayName": "Drawing Cleaner",
+    "summary": "对 输出的原始图纸文本进行清洗去噪与结构化分类，过滤轴线编号、图框信息、尺寸数字等无效噪声，将有效信息按\"设计总说明/构件标识/配筋信息/材料强度\"等类别归并输出。当用户说\"清洗图纸文本\"、\"去掉噪声\"、\"整理提取结果\"触发使用。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 62,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1778248906250,
+    "updatedAt": 1778249210309
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1778248906250,
+    "changelog": "drawing-cleaner 1.0.0 – Initial Release\n\n- Cleans and denoises raw drawing text, removing axis numbers, drawing frame info, dimension numbers, and other noise.\n- Structures and classifies retained information into categories: Design Notes, Component IDs, Reinforcement Info, Material Strength, etc.\n- Outputs a categorized, deduplicated Markdown summary with detailed header statistics (total, removed, retained lines, noise rate).\n- Alerts users if the cleaning rate is unusually low or high, prompting manual review or rule adjustments.\n- Easily triggered when users request drawing text cleaning, noise removal, or result extraction.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "lialia691691-alt",
+    "userId": "s173rqakx44gh9jgakd7n1gn5183vtms",
+    "displayName": "lialia691691-alt",
+    "image": "https://avatars.githubusercontent.com/u/268958935?v=4"
+  },
+  "moderation": null
+}

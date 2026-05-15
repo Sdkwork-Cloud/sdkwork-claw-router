@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65405,
+  "uuid": "skill-clawhub-niuniu-skill-extractor",
+  "skillKey": "clawhub-niuniu-skill-extractor",
+  "name": "Skill Extractor",
+  "summary": "从复杂任务中提取可复用的技能文档，参考 Hermes Agent 的 Skill Documents 设计。用于当任务完成后，识别值得保留的步骤流程，并存储为可搜索的技能文件，下次遇到类似任务时自动检索并建议使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.niuniu_skill_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LiVanGy",
+      "features": [
+        "从复杂任务中提取可复用的技能文档，参考 Hermes Agent 的 Skill Documents 设计。用于当任务完成后，识别值得保留的步骤流程，并存储为可搜索的技能文件，下次遇到类似任."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/niuniu-skill-extractor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68043465?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "niuniu-skill-extractor",
+      "url": "https://clawhub.ai/skills/niuniu-skill-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "niuniu-skill-extractor",
+    "url": "https://clawhub.ai/skills/niuniu-skill-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/niuniu-skill-extractor-b9b45810b7559288.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/niuniu-skill-extractor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-niuniu-skill-extractor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc1edd4595a378256750cd6e732d1ad37af9ee6540215266f41a47d46a5fca62",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T10:24:13.257Z"
+}

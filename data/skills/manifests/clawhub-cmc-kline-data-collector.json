@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59250,
+  "uuid": "skill-clawhub-cmc-kline-data-collector",
+  "skillKey": "clawhub-cmc-kline-data-collector",
+  "name": "CMC Kline Data Collector",
+  "summary": "从 CoinMarketCap 获取加密货币 K 线历史数据，自动计算 EMA7、EMA30、RSI14 等技术指标，支持 JSON/CSV 格式输出",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmc_kline_data_collector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HarrierDB",
+      "features": [
+        "从 CoinMarketCap 获取加密货币 K 线历史数据，自动计算 EMA7、EMA30、RSI14 等技术指标，支持 JSON/CSV 格式输出"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cmc-kline-data-collector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107302237?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cmc-kline-data-collector",
+      "url": "https://clawhub.ai/skills/cmc-kline-data-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmc-kline-data-collector",
+    "url": "https://clawhub.ai/skills/cmc-kline-data-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmc-kline-data-collector-5b3db350a7c9cfa3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cmc-kline-data-collector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cmc-kline-data-collector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0bbdecf7d394fbaf8e0ea003e55cb71da7d1e5e140e26def3ae1b5b6d71942f5",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T18:00:29.922Z"
+}

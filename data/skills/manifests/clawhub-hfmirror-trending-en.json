@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40285,
+  "uuid": "skill-clawhub-hfmirror-trending-en",
+  "skillKey": "clawhub-hfmirror-trending-en",
+  "name": "Hfmirror Trending En",
+  "summary": "Fetches real-time Hugging Face trending data via the public HF-Mirror API and generates structured Markdown reports in English. Suitable for conversational A...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hfmirror_trending_en",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shunshiwei",
+      "features": [
+        "Fetches real-time Hugging Face trending data via the public HF-Mirror API and generates structu.",
+        "Suitable for conversational A..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hfmirror-trending-en@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65761809?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hfmirror-trending-en",
+      "url": "https://clawhub.ai/skills/hfmirror-trending-en"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hfmirror-trending-en",
+    "url": "https://clawhub.ai/skills/hfmirror-trending-en",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hfmirror-trending-en-eec3e664a69e51a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hfmirror-trending-en@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hfmirror-trending-en-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aed6abde51708baaf3224ff619db9b5b26fd7a8e48f6caa4cf05cdaff7052976",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T15:33:05.967Z"
+}

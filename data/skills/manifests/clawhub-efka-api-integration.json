@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42328,
+  "uuid": "skill-clawhub-efka-api-integration",
+  "skillKey": "clawhub-efka-api-integration",
+  "name": "Efka Api Integration",
+  "summary": "Greek social security (EFKA) integration — employee records, contribution calculations, APD declarations. Human approval for submissions.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.efka_api_integration",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stems",
+      "features": [
+        "Greek social security (EFKA) integration — employee records, contribution calculations, APD dec.",
+        "Human approval for submissions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/efka-api-integration@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70470779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "efka-api-integration",
+      "url": "https://clawhub.ai/skills/efka-api-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "efka-api-integration",
+    "url": "https://clawhub.ai/skills/efka-api-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/efka-api-integration-7947bc03a1960399.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/efka-api-integration@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-efka-api-integration-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10eef0e5443cae78d44f63b5071b82156c64e890f1dbd7a6188997696ac8aa02",
+      "artifactSizeBytes": 2542
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T08:13:02.570Z"
+}

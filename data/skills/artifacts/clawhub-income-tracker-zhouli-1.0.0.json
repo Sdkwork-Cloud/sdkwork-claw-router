@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/income-tracker-zhouli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.income_tracker_zhouli",
+  "skill": {
+    "id": 67765,
+    "skillKey": "clawhub-income-tracker-zhouli",
+    "name": "Income Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "income-tracker-zhouli",
+    "url": "https://clawhub.ai/skills/income-tracker-zhouli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/income-tracker-zhouli-19e7b61ff53c6ab7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "收入追踪器 - 多平台收入记录、统计分析、趋势图表。适用于自由职业者、创作者、副业者。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onlyloveher",
+      "userId": "s174xx7xgy6h0qxxb3z22szwc183pph8",
+      "displayName": "onlyloveher",
+      "image": "https://avatars.githubusercontent.com/u/972832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774572110182,
+      "changelog": "income-tracker 1.0.0\n\n- 首次发布，支持多平台、多币种收入记录\n- 提供收入统计分析与趋势图表\n- 支持数据导出（CSV/JSON）与本地存储\n- 包含常用收入管理示例和快捷命令\n- 适合自由职业者、创作者及副业者使用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98abaecde569157b3e822e685150939095db1fd1615fa65fcc67af9e72ae0ffe"
+}

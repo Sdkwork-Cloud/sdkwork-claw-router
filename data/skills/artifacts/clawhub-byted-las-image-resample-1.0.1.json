@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/byted-las-image-resample@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_las_image_resample",
+  "skill": {
+    "id": 40508,
+    "skillKey": "clawhub-byted-las-image-resample",
+    "name": "Byted Las Image Resample"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-las-image-resample",
+    "url": "https://clawhub.ai/skills/byted-las-image-resample",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-las-image-resample-bc0872f6d0229054.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Downsamples, resizes, and compresses images using Volcengine LAS with multiple interpolation methods (lanczos, bilinear, nearest). Image resizing, image scal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "volcengine-skills",
+      "userId": "s17bcxs73bckd3eercvtn6cmsx83g5kg",
+      "displayName": "volcengine-skills",
+      "image": "https://avatars.githubusercontent.com/u/260939792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776411536939,
+      "changelog": "Version 1.0.1\n\n- Major documentation overhaul: SKILL.md and API references updated for clarity and compliance.\n- Added new helper scripts and workflow checklists for environment checks, evaluation, and result generation.\n- Included comprehensive workflow and pricing instructions, with steps for pre-checks, local validation, price estimation, execution, and result output.\n- Removed obsolete script (scripts/skill.py).\n- Enhanced compliance notes regarding authentication, TOS region consistency, and fee disclaimer.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd7aa82201f04498c9133c340e2229f0279f717e7587ada71eac638e9421ecb4"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63426,
+  "uuid": "skill-clawhub-edge-tts-free-zh",
+  "skillKey": "clawhub-edge-tts-free-zh",
+  "name": "Edge Tts",
+  "summary": "基于微软 Edge TTS 免费实现多语种文本转语音，支持多中文及英文神经声音，无需 API Key。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edge_tts_free_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roxy18",
+      "features": [
+        "基于微软 Edge TTS 免费实现多语种文本转语音，支持多中文及英文神经声音，无需 API Key。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edge-tts-free-zh@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56423790?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edge-tts-free-zh",
+      "url": "https://clawhub.ai/skills/edge-tts-free-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edge-tts-free-zh",
+    "url": "https://clawhub.ai/skills/edge-tts-free-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edge-tts-free-zh-62d26b0f471e65b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edge-tts-free-zh@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-edge-tts-free-zh-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbd7aff940e75f2b4c44d89f608481c43997de9791b1437f3ca3665c4c8c9739",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T02:40:47.741Z"
+}

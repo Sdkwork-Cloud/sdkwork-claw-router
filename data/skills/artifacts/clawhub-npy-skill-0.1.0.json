@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/npy-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.npy_skill",
+  "skill": {
+    "id": 70874,
+    "skillKey": "clawhub-npy-skill",
+    "name": "Npy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "npy-skill",
+    "url": "https://clawhub.ai/skills/npy-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/npy-skill-2a7cc8d384a11b9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "构建理想中的男/女朋友AI伴侣，让陪伴永不缺席，让爱一直存在"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wwwttlll",
+      "userId": "s1721ex4s7j9djnwfemamhh651840kxw",
+      "displayName": "wwwttlll",
+      "image": "https://avatars.githubusercontent.com/u/86905557?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775389992967,
+      "changelog": "npy-skill v0.1.0\n\n- 初始发布：帮助用户创建理想的AI伴侣Persona Skill，支持通过聊天导入、智能匹配、自主描述三种方式。\n- 实现了对微信/iMessage/文本聊天记录的解析和性格分析，自动生成高拟真数字人格。\n- 支持多维匹配（MBTI、星座、九型人格、依恋风格）推荐伴侣特质。\n- 分步引导完成伴侣设定、关系场景、语言风格及示例对话，最终生成完整独立Skill文件。\n- 提供便捷命令（如 /npy, /list-npys, /move-on {slug}）进行管理、调整、删除与版本回滚。\n- 每位伴侣支持持续特质调整、关系记忆记录、互动风格微调与真实陪伴体验。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:edf994d0f538dd7a234a6209c87e1e59e85e64a94f19e84727cf4a370fe3f028"
+}

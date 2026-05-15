@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-thinking@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_thinking",
+  "skill": {
+    "id": 9152,
+    "skillKey": "clawhub-deep-thinking",
+    "name": "Deep Thinking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-thinking",
+    "url": "https://clawhub.ai/skills/deep-thinking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-thinking-50d09d4e9771f02b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive deep reasoning framework that guides systematic, thorough thinking for complex tasks. Automatically applies for multi-step problems, ambiguous..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amankr-novo",
+      "userId": "publishers:amankr-novo",
+      "displayName": "Aman Kumar",
+      "image": "https://avatars.githubusercontent.com/u/121004475?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4151,
+      "installsAllTime": 33,
+      "installsCurrent": 28,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771399508259,
+      "changelog": "Add Deep Thinking skill\n\nThis PR adds the **Deep Thinking** community skill to the Awesome Claude Skills list. The skill provides a structured, deep reasoning framework for complex, multi-step tasks, with a clear protocol for problem decomposition, hypothesis generation, verification, and knowledge synthesis. [github](https://github.com/amankr-novo/deep-thinking)\n\nWhy is this skill valuable?  \n- Offers a reusable reasoning protocol inspired by Claude God Mode, emphasising careful analysis over superficial answers for complex scenarios such as architecture decisions, debugging, and multi-system investigations. \n- Provides a clearly documented framework via `README.md`, `SKILL.md`, and `reference.md`, making it easy for others to adopt and adapt the thinking patterns in their own workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1b79bdd83182d8fb22a8ec63f7121be00ad8f847152c8ebc32326d3b2482acc5"
+}

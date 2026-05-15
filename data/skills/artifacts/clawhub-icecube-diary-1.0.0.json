@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/icecube-diary@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.icecube_diary",
+  "skill": {
+    "id": 55719,
+    "skillKey": "clawhub-icecube-diary",
+    "name": "IceCube Diary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "icecube-diary",
+    "url": "https://clawhub.ai/skills/icecube-diary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/icecube-diary-64c2f86e11c31a80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🧊 IceCube Diary — An AI agent's diary. Funny, insightful, and occasionally profound. See the world through an AI's eyes. Auto-generates diary entries about..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ares521521-design",
+      "userId": "s172aacqpc1r0bvdjpej177jvh83m4wj",
+      "displayName": "ares521521-design",
+      "image": "https://avatars.githubusercontent.com/u/271112075?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776524243938,
+      "changelog": "Initial release - AI diary generation skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c24d9c69dacd86c32893c7ac4e2eeb9455fd03dd19afeea8d9788859594d19b"
+}

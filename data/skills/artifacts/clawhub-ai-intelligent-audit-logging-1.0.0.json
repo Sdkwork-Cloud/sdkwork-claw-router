@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-intelligent-audit-logging@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_intelligent_audit_logging",
+  "skill": {
+    "id": 59187,
+    "skillKey": "clawhub-ai-intelligent-audit-logging",
+    "name": "Ai Intelligent Audit Logging"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-intelligent-audit-logging",
+    "url": "https://clawhub.ai/skills/ai-intelligent-audit-logging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-intelligent-audit-logging-e475dba0631eee73.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "审计日志，操作记录 + 合规审计。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 446,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773865143657,
+      "changelog": "ai-intelligent-audit-logging v1.0.0\n\n- Initial release with core features: operation logging, audit queries, compliance checks, behavioral data analysis, and report generation.\n- Provided tiered pricing plans (Basic, Professional, Enterprise) for different usage volumes.\n- Supports compliance, operation, security, and data audit scenarios.\n- Built with Python and FastAPI for robust and scalable audit log management.\n- Includes installation instructions for quick setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:554f45b423943123afadece5d2796e506d8fc5b1069cce54a2e1e45eaa4c5ec7"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45518,
+  "uuid": "skill-clawhub-openspace-skill-discovery",
+  "skillKey": "clawhub-openspace-skill-discovery",
+  "name": "OpenSpace Skill Discovery",
+  "summary": "Search for reusable skills across OpenSpace's local registry and cloud community. Reusing proven skills saves tokens, improves reliability, and extends your...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openspace_skill_discovery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "X-RayLuan",
+      "features": [
+        "Search for reusable skills across OpenSpace's local registry and cloud community",
+        "Reusing proven skills saves tokens, improves reliability, and extends your..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openspace-skill-discovery@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150766707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openspace-skill-discovery",
+      "url": "https://clawhub.ai/skills/openspace-skill-discovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openspace-skill-discovery",
+    "url": "https://clawhub.ai/skills/openspace-skill-discovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openspace-skill-discovery-77064e525b3221df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openspace-skill-discovery@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openspace-skill-discovery-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ad24b01af86560a9a421acf71591fa5657e50346e7d7aad718aa2c3d15b70ad",
+      "artifactSizeBytes": 2454
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T09:23:41.584Z"
+}

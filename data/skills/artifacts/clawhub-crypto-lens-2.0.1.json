@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-lens@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_lens",
+  "skill": {
+    "id": 50574,
+    "skillKey": "clawhub-crypto-lens",
+    "name": "CryptoLens"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-lens",
+    "url": "https://clawhub.ai/skills/crypto-lens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-lens-30d569feef4510de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CryptoLens — AI-driven multi-coin crypto analysis. Compare 2-5 coins (relative performance, correlation matrix, volatility ranking), get single-coin technica..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "godofbush",
+      "userId": "publishers:godofbush",
+      "displayName": "Altair",
+      "image": "https://avatars.githubusercontent.com/u/9443621?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 395,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1772686967906,
+      "changelog": "Add explicit billing disclosure section explaining how charges work and user control",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:00c0f9eef9496472bf70959af382b5ea3dd8f690554e4f8c7091f7f997205509"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shiyi-study-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shiyi_study_tracker",
+  "skill": {
+    "id": 68954,
+    "skillKey": "clawhub-shiyi-study-tracker",
+    "name": "拾遗 · 通用备考错题追踪（shiyi-study-tracker）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shiyi-study-tracker",
+    "url": "https://clawhub.ai/skills/shiyi-study-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shiyi-study-tracker-c67eb3252a05862f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "拾遗 · 通用考试备考追踪 Skill。适用于任何考试——GRE、雅思、考研、注会、高考、期末…… 核心功能：识别错题截图 → 自由标签分类 → 词库积累复用 → 二刷提醒 → 导出 Excel。 触发关键词：做了题、错了、截图发来、导出错题、待二刷、记得、不记得、换考试。 图片消息直接触发识别。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kagurananaga",
+      "userId": "s17exm2e3t2e93q26dj6kkq47n84k84j",
+      "displayName": "KaguraNanaga",
+      "image": "https://avatars.githubusercontent.com/u/92779937?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 388,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773932561327,
+      "changelog": "shiyi-study-tracker v1.0.0\n\n- 首个版本，通用考试错题与备考追踪 Skill，适配任意考试场景。\n- 支持错题截图自动识别、自由标签分类与词库积累。\n- 提供二刷提醒、自评、错题导出（含 Excel 筛选、截图嵌入）。\n- 首次安装询问考试类型，支持随时更换，切换不影响历史错题。\n- 每日定时推送错题汇总与复习提醒。\n- 数据结构清晰，支持每日打卡与多重备份。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39fa255a8326710c3108d069e65743592e7ac2ca0a1f878cd2fb8056b628b377"
+}

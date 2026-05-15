@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-paper-pipeline@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_paper_pipeline",
+  "skill": {
+    "id": 41077,
+    "skillKey": "clawhub-ai-paper-pipeline",
+    "name": "Ai Paper Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-paper-pipeline",
+    "url": "https://clawhub.ai/skills/ai-paper-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-paper-pipeline-a955242b417ce883.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build or improve a top-tier AI conference paper workflow for NeurIPS, ICML, ICLR, and similar venues. Use when the user asks to generate a paper pipeline, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hayashishungenn",
+      "userId": "s179ns5vh450stnn8t54dcrdfh842w48",
+      "displayName": "hayashishungenn",
+      "image": "https://avatars.githubusercontent.com/u/75163665?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775592022929,
+      "changelog": "- Major refactor for clarity and maintainability: skill is now modular with SKILL.md, references, and templates.\n- SKILL.md rewritten for concise workflow instructions and file structure guidance; long-form prompts moved to references/.\n- Added new reference and template files: full-pipeline-template.md, project-scaffold.md, MEGA_PROMPT.project.md, PROGRESS.template.md, and RESTRICTS.example.yaml.\n- Clearer directions for project initialization, skill packaging, and how/when to use auxiliary files.\n- Explicit constraints for academic integrity and file organization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0df14deb0856bca1c559a675855d54309f4b01f6f9170ec9c7f40a110a6714d0"
+}

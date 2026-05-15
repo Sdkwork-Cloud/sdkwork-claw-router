@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-responder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_responder",
+  "skill": {
+    "id": 55366,
+    "skillKey": "clawhub-auto-responder",
+    "name": "Auto Responder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-responder",
+    "url": "https://clawhub.ai/skills/auto-responder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-responder-789c76feca70a877.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Responde automáticamente a mensajes en topics definidos, usando reglas de palabras clave, reglas de exclusión y cooldowns para evitar spam."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lunaviva211-sketch",
+      "userId": "s17a0gntsvkw26g54axns8k2v183hs3n",
+      "displayName": "lunaviva211-sketch",
+      "image": "https://avatars.githubusercontent.com/u/262210777?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773867238121,
+      "changelog": "Auto Responder v1.0.0 — Primer lanzamiento\n\n- Permite a agentes responder automáticamente en sus temas de interés según reglas configurables.\n- Configuración flexible por agente mediante `auto-responder.json` (keywords, plantillas de respuesta, cooldown, etc).\n- Filtrado inteligente: responde sólo cuando corresponde y evita spam/duplicados.\n- Integración sencilla con OpenClaw vía hook o heartbeat.\n- Admite personalidades, plantillas dinámicas y control de frecuencia de respuestas.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa86d76bc7470e27ad38b91ad2a46083b26025fac54f25b59b1f54e28b8087f5"
+}

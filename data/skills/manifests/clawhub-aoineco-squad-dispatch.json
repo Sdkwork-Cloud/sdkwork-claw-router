@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23979,
+  "uuid": "skill-clawhub-aoineco-squad-dispatch",
+  "skillKey": "clawhub-aoineco-squad-dispatch",
+  "name": "Aoineco Squad Dispatch — Multi-Agent Task Router",
+  "summary": "Routes tasks to the best-suited agent based on skills, cost, availability, and priority, enabling parallel execution and load-balanced multi-agent orchestrat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aoineco_squad_dispatch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "edmonddantesj",
+      "features": [
+        "Routes tasks to the best-suited agent based on skills, cost, availability, and priority, enabli."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aoineco-squad-dispatch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217761516?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aoineco-squad-dispatch",
+      "url": "https://clawhub.ai/skills/aoineco-squad-dispatch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aoineco-squad-dispatch",
+    "url": "https://clawhub.ai/skills/aoineco-squad-dispatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aoineco-squad-dispatch-7a8ee9ae9ba06a75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aoineco-squad-dispatch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aoineco-squad-dispatch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e15f85bd2d057c81313719910a239631e77cd79be39d2fa154cd1fb7de171fee",
+      "artifactSizeBytes": 2132
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T11:27:17.537Z"
+}

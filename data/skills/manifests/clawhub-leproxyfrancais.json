@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54318,
+  "uuid": "skill-clawhub-leproxyfrancais",
+  "skillKey": "clawhub-leproxyfrancais",
+  "name": "Le Proxy Français",
+  "summary": "Le Proxy Francais - 3 types de proxy francais (SOCKS5 + Navigateur Playwright). Scraping, monitoring, SEO, social.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leproxyfrancais",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lpf",
+      "features": [
+        "Le Proxy Francais",
+        "3 types de proxy francais (SOCKS5 + Navigateur Playwright)",
+        "Scraping, monitoring, SEO, social."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/leproxyfrancais@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/leproxyfrancais/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "leproxyfrancais",
+      "url": "https://clawhub.ai/skills/leproxyfrancais"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leproxyfrancais",
+    "url": "https://clawhub.ai/skills/leproxyfrancais",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leproxyfrancais-46775ace236e3abd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/leproxyfrancais@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-leproxyfrancais-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6594d7448ae942b73112e6e0288c666093d51f731596d60a6336e7a0312a02e4",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T02:05:54.360Z"
+}

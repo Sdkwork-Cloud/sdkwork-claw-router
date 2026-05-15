@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spotlight-search@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spotlight_search",
+  "skill": {
+    "id": 57159,
+    "skillKey": "clawhub-spotlight-search",
+    "name": "Spotlight Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spotlight-search",
+    "url": "https://clawhub.ai/skills/spotlight-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spotlight-search-d41ab2d6420d80e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search files, apps, and metadata on macOS using Spotlight CLI tools (`mdfind`, `mdls`, `mdutil`) with a fallback script for cases where indexing is incomplet..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mozi1924",
+      "userId": "s174c63w5njkpvrfq9a8zxbj5983hwcp",
+      "displayName": "Mozi Arasaka",
+      "image": "https://avatars.githubusercontent.com/u/70095417?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774372295140,
+      "changelog": "Add explicit macOS platform and binary dependency metadata",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:58517c966ccd89f4589200fdf9e73cc37feefc2ac1053016a6cd5c59efc7b7d5"
+}

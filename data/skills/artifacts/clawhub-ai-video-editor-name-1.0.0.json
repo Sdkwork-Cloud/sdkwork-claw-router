@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-name@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_name",
+  "skill": {
+    "id": 41405,
+    "skillKey": "clawhub-ai-video-editor-name",
+    "name": "Ai Video Editor Name"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-name",
+    "url": "https://clawhub.ai/skills/ai-video-editor-name",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-name-c33adb567f50a67a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get polished edited clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776835489385,
+      "changelog": "AI Video Editor Name v1.0.0\n\n- Initial release providing fast, professional AI-powered video editing.\n- Upload your raw footage, describe the desired edits, and receive a 1080p MP4 download with no manual editing.\n- Supports MP4, MOV, AVI, and WebM uploads up to 500MB.\n- Automated cloud-based workflow: trimming, transitions, title cards, and more for content creators and marketers.\n- No complex software or installation required—everything runs remotely with simple chat instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:edd31c825e28ce0013fea2f5f289925a8ddb6c552fd5b6e6e00e6b78dee0c9b2"
+}

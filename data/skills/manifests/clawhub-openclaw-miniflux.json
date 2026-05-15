@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21524,
+  "uuid": "skill-clawhub-openclaw-miniflux",
+  "skillKey": "clawhub-openclaw-miniflux",
+  "name": "Miniflux",
+  "summary": "Manage RSS feeds and entries on a Miniflux instance. Handles requests like \"show my unread articles\", \"list my feeds\", \"rename this category\", \"unsubscribe f...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_miniflux",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sinhong2011",
+      "features": [
+        "Manage RSS feeds and entries on a Miniflux instance",
+        "Handles requests like \"show my unread articles\", \"list my feeds\", \"rename this category\", \"unsu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-miniflux@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28216536?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-miniflux",
+      "url": "https://clawhub.ai/skills/openclaw-miniflux"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-miniflux",
+    "url": "https://clawhub.ai/skills/openclaw-miniflux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-miniflux-8825cd5cfa46e6c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-miniflux@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-miniflux-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51dfb71a589a89e39d5e1f8a01e8499145bc70a79a657f94ca798d0c830fca4e",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T06:55:49.398Z"
+}

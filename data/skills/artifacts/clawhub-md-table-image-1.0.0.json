@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/md-table-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_table_image",
+  "skill": {
+    "id": 49726,
+    "skillKey": "clawhub-md-table-image",
+    "name": "MD Table Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-table-image",
+    "url": "https://clawhub.ai/skills/md-table-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-table-image-7a9c65e2210e40e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Render markdown tables as PNG images. Use whenever you need to send a table in chat — render it as an image instead of raw markdown text."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirorab",
+      "userId": "s17fcdmpbm7mv9dc3mrmpsya5h83jrdz",
+      "displayName": "kirorab",
+      "image": "https://avatars.githubusercontent.com/u/88550600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 726,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771819600585,
+      "changelog": "Initial release: render markdown tables as styled PNG images via puppeteer-core + Chrome",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:887a8876f33039338ffa03dc11bdc54dd6359e743a3fc904ce2a0434e0ee3489"
+}

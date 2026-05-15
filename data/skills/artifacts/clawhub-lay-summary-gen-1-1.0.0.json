@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lay-summary-gen-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lay_summary_gen_1",
+  "skill": {
+    "id": 45100,
+    "skillKey": "clawhub-lay-summary-gen-1",
+    "name": "Lay Summary Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lay-summary-gen-1",
+    "url": "https://clawhub.ai/skills/lay-summary-gen-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lay-summary-gen-1-de4f3159fa169365.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Converts complex medical abstracts into plain language summaries for."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775112348756,
+      "changelog": "Initial release of Lay Summary Gen – converts complex medical research abstracts into plain-language summaries.\n\n- Provides a Python script to generate patient-friendly summaries from medical abstracts.\n- Supports reading level optimization, jargon elimination, and extraction of key takeaways.\n- Offers a reproducible workflow with clear input validation and structured output.\n- Includes EU CTR compliance support.\n- Features audit-ready commands and a documented fallback path for error handling.\n- No additional Python packages required; dependencies and security protocols clearly listed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f37a60307cc63c2d0b5801e6d2fe742fd29a2192039280678793db4df9930bcc"
+}

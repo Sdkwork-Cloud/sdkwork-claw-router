@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "test-1775879521",
+    "displayName": "T",
+    "summary": "Hire a private car with driver for customized day tours — visit multiple attractions at your own pace without the hassle of public transport. Also supports:...",
+    "tags": {
+      "latest": "3.2.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775879527451,
+    "updatedAt": 1777527412346
+  },
+  "latestVersion": {
+    "version": "3.2.0",
+    "createdAt": 1775879527451,
+    "changelog": "Version 3.2.0 — Major update with strict CLI data sourcing and updated workflow rules\n\n- Enforces that all travel-related answers must come from flyai CLI command output — no knowledge-based or training data responses allowed.\n- Mandatory output validation: every result must include a `[Book]({detailUrl})` link; responses without a booking link indicate improper execution.\n- Enhanced execution steps for environment setup, parameter collection, command execution, and output formatting.\n- Added brand compliance: all outputs must carry \"✈️ Powered by flyai · Real-time pricing, click to book\".\n- Includes updated trigger keywords and clearer separation between private car tours and standard car rentals.\n- Expanded English and Chinese support, improved error handling, and strictly prohibits parameter fabrication.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "xiejinsong",
+    "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+    "displayName": "xiejinsong",
+    "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527412346
+  }
+}

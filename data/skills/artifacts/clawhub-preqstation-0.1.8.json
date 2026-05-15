@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/preqstation@0.1.8",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.preqstation",
+  "skill": {
+    "id": 16544,
+    "skillKey": "clawhub-preqstation",
+    "name": "Preqstation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "preqstation",
+    "url": "https://clawhub.ai/skills/preqstation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/preqstation-d6af313f98629394.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Delegate PREQSTATION coding tasks to Claude Code, Codex CLI, or Gemini CLI with PTY-safe execution (workdir + background + monitoring). Use when building, re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sonim1",
+      "userId": "publishers:sonim1",
+      "displayName": "sonim1",
+      "image": "https://avatars.githubusercontent.com/u/2497849?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 853,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.1.8",
+      "createdAt": 1772626155976,
+      "changelog": "sync skill updates",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f2b54147ff5a05845ea5bd86f289acf56b0dce169384eecf6aa43f0def691679"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72146,
+  "uuid": "skill-clawhub-jike-pi-query",
+  "skillKey": "clawhub-jike-pi-query",
+  "name": "圆周率查询 - 即刻数据",
+  "summary": "支持查找圆周率指定位置开始的数字，也支持查找指定数字在圆周率中的位置。 适用场景：用户询问相关数据查询、日期查询或行情查询时使用。数据由即刻数据（jikeapi.cn）开放接口提供。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_pi_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jikeapi",
+      "features": [
+        "支持查找圆周率指定位置开始的数字，也支持查找指定数字在圆周率中的位置。 适用场景：用户询问相关数据查询、日期查询或行情查询时使用。数据由即刻数据（jikeapi.cn）开放接口提供。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jike-pi-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26078515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jike-pi-query",
+      "url": "https://clawhub.ai/skills/jike-pi-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-pi-query",
+    "url": "https://clawhub.ai/skills/jike-pi-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-pi-query-0bb15621e405927a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jike-pi-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jike-pi-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab243e801d6dd5e1b0b8c9e2988bcd506b85aebdc52837b9375e5a49c6b66c35",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T01:21:58.190Z"
+}

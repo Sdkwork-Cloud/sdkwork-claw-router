@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58254,
+  "uuid": "skill-clawhub-lazydocker",
+  "skillKey": "clawhub-lazydocker",
+  "name": "lazydocker",
+  "summary": "lazydocker - Docker 和 Docker Compose 的终端 UI 管理工具",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lazydocker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CN-big-cabbage",
+      "features": [
+        "lazydocker",
+        "Docker 和 Docker Compose 的终端 UI 管理工具"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lazydocker@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63539779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lazydocker",
+      "url": "https://clawhub.ai/skills/lazydocker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lazydocker",
+    "url": "https://clawhub.ai/skills/lazydocker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lazydocker-4886f873b166a354.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lazydocker@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lazydocker-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:462dd125c97dff47d681e099d65e32df199656d16494de4543cddd6ced8dd22e",
+      "artifactSizeBytes": 1833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T01:02:03.953Z"
+}

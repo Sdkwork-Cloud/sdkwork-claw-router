@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-tts-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_tts_cn",
+  "skill": {
+    "id": 65386,
+    "skillKey": "clawhub-minimax-tts-cn",
+    "name": "MiniMax TTS 国内版"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-tts-cn",
+    "url": "https://clawhub.ai/skills/minimax-tts-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-tts-cn-63d9235e94674a9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用MiniMax语音合成API，支持中文多音色、高质量文本转语音，提供流式和非流式音频输出。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whille",
+      "userId": "publishers:whille",
+      "displayName": "whille",
+      "image": "https://avatars.githubusercontent.com/u/1240846?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1692,
+      "installsAllTime": 13,
+      "installsCurrent": 13,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772202557353,
+      "changelog": "MiniMax TTS 1.0.0 初始发布\n\n- 支持中文文本转语音（TTS）功能，含系统和克隆音色\n- 可通过命令行选择模型、音色、语速、输出格式等参数\n- 支持获取账号下所有可用音色\n- 提供流式和非流式输出选项\n- 易于集成，需配置 MINIMAX_API_KEY 环境变量",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6c3f37908d0092c986326f6f2ebdcb79fa35fb0b1e412f77a15750661bf14bfb"
+}

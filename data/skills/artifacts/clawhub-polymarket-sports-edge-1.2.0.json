@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-sports-edge@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_sports_edge",
+  "skill": {
+    "id": 18314,
+    "skillKey": "clawhub-polymarket-sports-edge",
+    "name": "Polymarket Sports Edge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-sports-edge",
+    "url": "https://clawhub.ai/skills/polymarket-sports-edge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-sports-edge-20adbd53ca046937.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find odds divergence between sportsbook consensus and Polymarket sports markets, then trade the gap."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xjims",
+      "userId": "s17dwy1de7xn75v3ypy4tsmevd83ka29",
+      "displayName": "0xjims",
+      "image": "https://avatars.githubusercontent.com/u/145313241?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 581,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774599035205,
+      "changelog": "Spread-based exits, resolution date filter, setup guide",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f9f8d24cab87656cb091de61ead6c90894cde71e79ff6ee240681c36ac9fce3d"
+}

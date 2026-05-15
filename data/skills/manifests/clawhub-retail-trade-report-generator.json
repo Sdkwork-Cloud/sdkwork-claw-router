@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12428,
+  "uuid": "skill-clawhub-retail-trade-report-generator",
+  "skillKey": "clawhub-retail-trade-report-generator",
+  "name": "retail-trade-report-generator",
+  "summary": "Generates a consolidated weekly retail trade report by processing 12 Excel sales files, mapping stores to regions, calculating ADA metrics, WoW comparisons,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retail_trade_report_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuminmin",
+      "features": [
+        "Generates a consolidated weekly retail trade report by processing 12 Excel sales files, mapping."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/retail-trade-report-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16083471?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "retail-trade-report-generator",
+      "url": "https://clawhub.ai/skills/retail-trade-report-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retail-trade-report-generator",
+    "url": "https://clawhub.ai/skills/retail-trade-report-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retail-trade-report-generator-761476a97885e4ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/retail-trade-report-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-retail-trade-report-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78401826b862de9e58e0a5c99e1ed53afc358e36de51f437b143fd9093394fe4",
+      "artifactSizeBytes": 2515
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T03:22:52.661Z"
+}

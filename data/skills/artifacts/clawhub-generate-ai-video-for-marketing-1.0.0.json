@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generate-ai-video-for-marketing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_ai_video_for_marketing",
+  "skill": {
+    "id": 39992,
+    "skillKey": "clawhub-generate-ai-video-for-marketing",
+    "name": "Generate Ai Video For Marketing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-ai-video-for-marketing",
+    "url": "https://clawhub.ai/skills/generate-ai-video-for-marketing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-ai-video-for-marketing-addb4e09a502fda0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate images or clips into marketing video MP4 with this skill. Works with MP4, MOV, JPG, PNG files up to 500MB. marketers use it for creating promotional..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776754358256,
+      "changelog": "Generate AI Video for Marketing — Version 1.0.0\n\n- Initial launch of marketing video generator: create 1080p MP4 promotional videos from uploaded images or clips (MP4, MOV, JPG, PNG up to 500MB).\n- Seamless cloud GPU processing: 1-2 minute render time, no local install needed.\n- Automatic credential setup: anonymous token and session managed in the background.\n- Flexible workflows: supports quick edits, batch processing, iterative refinement, and simple prompt-based requests.\n- Built-in error handling and guidance for file size, credits, export restrictions, and supported formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a7aade2df28a0dd73f06f238bf02270d4d11b13436cb98c4177265c1bde95441"
+}

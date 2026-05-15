@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29526,
+  "uuid": "skill-clawhub-kommo",
+  "skillKey": "clawhub-kommo",
+  "name": "Kommo",
+  "summary": "Kommo integration. Manage data, records, and automate workflows. Use when the user wants to interact with Kommo data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kommo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Kommo integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Kommo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kommo@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kommo",
+      "url": "https://clawhub.ai/skills/kommo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kommo",
+    "url": "https://clawhub.ai/skills/kommo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kommo-1c74d1edb8c4b5ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kommo@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-kommo-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:405b5843b4f395bafa3e68c3c4a3e86957a68f1f7505d370eb693061e24a0e1d",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:04:46.007Z"
+}

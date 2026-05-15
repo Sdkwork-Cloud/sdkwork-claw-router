@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17262,
+  "uuid": "skill-clawhub-wechat-image-generator",
+  "skillKey": "clawhub-wechat-image-generator",
+  "name": "Wechat Image Generator",
+  "summary": "Generate beautiful images for WeChat articles (covers, comparisons, charts) with zero token cost. Use when user needs images for social media posts, article...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_image_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jingyu525",
+      "features": [
+        "Generate beautiful images for WeChat articles (covers, comparisons, charts) with zero token cost",
+        "Use when user needs images for social media posts, article..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-image-generator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/238664114?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-image-generator",
+      "url": "https://clawhub.ai/skills/wechat-image-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-image-generator",
+    "url": "https://clawhub.ai/skills/wechat-image-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-image-generator-b91ac0a194d2c1a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-image-generator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-image-generator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c247d0f364a3ad9e0f293795167c18631bad2c599a4ecd50cf2fa5f3b95f7248",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T06:11:49.942Z"
+}

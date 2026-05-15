@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24649,
+  "uuid": "skill-clawhub-gov-safety-recalls",
+  "skillKey": "clawhub-gov-safety-recalls",
+  "name": "US Safety Recalls",
+  "summary": "Search NHTSA vehicle recalls, FDA food/drug recalls, and CFPB consumer complaints. 3 tools for product safety monitoring.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gov_safety_recalls",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Martin",
+      "features": [
+        "Search NHTSA vehicle recalls, FDA food/drug recalls, and CFPB consumer complaints",
+        "3 tools for product safety monitoring."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gov-safety-recalls@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138740843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gov-safety-recalls",
+      "url": "https://clawhub.ai/skills/gov-safety-recalls"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gov-safety-recalls",
+    "url": "https://clawhub.ai/skills/gov-safety-recalls",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gov-safety-recalls-c3737932a53aeaf2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gov-safety-recalls@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gov-safety-recalls-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a36efb04d3437a9805e33c96c6eab01db4c534ae505f008bbfac0f3a367bfe3",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T09:16:15.447Z"
+}

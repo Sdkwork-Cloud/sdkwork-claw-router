@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19455,
+  "uuid": "skill-clawhub-vectorclaw-mcp",
+  "skillKey": "clawhub-vectorclaw-mcp",
+  "name": "VectorClaw MCP",
+  "summary": "MCP tools for Anki Vector: speech, motion, camera, sensors, and automation workflows.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vectorclaw_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "robodan",
+      "features": [
+        "MCP tools for Anki Vector: speech, motion, camera, sensors, and automation workflows."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vectorclaw-mcp@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11601571?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vectorclaw-mcp",
+      "url": "https://clawhub.ai/skills/vectorclaw-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vectorclaw-mcp",
+    "url": "https://clawhub.ai/skills/vectorclaw-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vectorclaw-mcp-237d422f16612671.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vectorclaw-mcp@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-vectorclaw-mcp-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68e1320021950bf568dfa4b0136844e9f796f857ac72f907070793dba083d350",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T18:25:18.774Z"
+}

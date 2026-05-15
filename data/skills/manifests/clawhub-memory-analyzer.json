@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16185,
+  "uuid": "skill-clawhub-memory-analyzer",
+  "skillKey": "clawhub-memory-analyzer",
+  "name": "Memory Analyzer",
+  "summary": "Analyzes conversation history, extracts user preferences and feedback, updates memory files automatically.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TevfikGulep",
+      "features": [
+        "Analyzes conversation history, extracts user preferences and feedback, updates memory files aut."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33700963?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-analyzer",
+      "url": "https://clawhub.ai/skills/memory-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-analyzer",
+    "url": "https://clawhub.ai/skills/memory-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-analyzer-ae6e7ecc87919d5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e439996c97a755625ab3fedd28c7d04d3120a1527ea16a1fb47c6f1e344458c",
+      "artifactSizeBytes": 2175
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T21:09:43.177Z"
+}

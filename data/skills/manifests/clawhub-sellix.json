@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27004,
+  "uuid": "skill-clawhub-sellix",
+  "skillKey": "clawhub-sellix",
+  "name": "Sellix",
+  "summary": "Sellix integration. Manage Deals, Persons, Organizations, Leads, Projects, Activities and more. Use when the user wants to interact with Sellix data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sellix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Sellix integration",
+        "Manage Deals, Persons, Organizations, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with Sellix data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sellix@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sellix",
+      "url": "https://clawhub.ai/skills/sellix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sellix",
+    "url": "https://clawhub.ai/skills/sellix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sellix-e7851046b98a8d5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sellix@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sellix-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16ef1c60f886fc90bac1585f9d3a7230f8bf8e2abd258d2741ee97a659fb4727",
+      "artifactSizeBytes": 1842
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:39:21.880Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-backup-rollback@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_backup_rollback",
+  "skill": {
+    "id": 67668,
+    "skillKey": "clawhub-openclaw-backup-rollback",
+    "name": "OpenClaw备份回滚系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-backup-rollback",
+    "url": "https://clawhub.ai/skills/openclaw-backup-rollback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-backup-rollback-acb11a27a728466d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动备份和回滚OpenClaw配置，每15分钟备份一次，支持手动备份、版本选择恢复，保留最近96个备份。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wuyuyang2",
+      "userId": "s177v78bgpfmrkzd1kb8kzmpzs83jvag",
+      "displayName": "acrdik",
+      "image": "https://avatars.githubusercontent.com/u/16541448?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775223061294,
+      "changelog": "- Added diff preview before rollback, allowing users to view changes between backups and current configuration.\n- Introduced option to cancel rollback operation after diff review.\n- Updated documentation to reflect new features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e66fd07301d906c09763346d26a13140f3aeeef0a90ebb82435e39c713728e2"
+}

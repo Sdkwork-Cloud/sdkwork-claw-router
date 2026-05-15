@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gitlab-cli-skills@1.13.5",
+  "version": "1.13.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitlab_cli_skills",
+  "skill": {
+    "id": 8886,
+    "skillKey": "clawhub-gitlab-cli-skills",
+    "name": "GitLab CLI Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitlab-cli-skills",
+    "url": "https://clawhub.ai/skills/gitlab-cli-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitlab-cli-skills-1a34fe39651a2fc0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive GitLab CLI (glab) command reference and workflows for all GitLab operations via terminal. Use when user mentions GitLab CLI, glab commands, Git..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vince-winkintel",
+      "userId": "s17bggfcg11h05pywkwvvq4mkh83fvrq",
+      "displayName": "Vince Lozada",
+      "image": "https://avatars.githubusercontent.com/u/54216882?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5323,
+      "installsAllTime": 23,
+      "installsCurrent": 20,
+      "stars": 7,
+      "versions": 24
+    },
+    "latestVersion": {
+      "version": "1.13.5",
+      "createdAt": 1778269258546,
+      "changelog": "Audit and update skill coverage for glab v1.94.0, including glab-orbit, glab-workitems, glab-mr note create, and glab stack sync --reviewer.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:572e19be4dad052b1bd2ddcd65fb5a346b90293a8c4e2cc4258c877586032ed5"
+}

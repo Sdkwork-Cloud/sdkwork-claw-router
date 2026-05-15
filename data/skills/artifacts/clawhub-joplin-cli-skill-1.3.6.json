@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/joplin-cli-skill@1.3.6",
+  "version": "1.3.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.joplin_cli_skill",
+  "skill": {
+    "id": 31995,
+    "skillKey": "clawhub-joplin-cli-skill",
+    "name": "Joplin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "joplin-cli-skill",
+    "url": "https://clawhub.ai/skills/joplin-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/joplin-cli-skill-843704e73377e865.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Joplin notes via CLI. Use for reading, creating, editing notes and managing todos. Supports WebDAV sync and kanban-formatted notes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davek-dev",
+      "userId": "publishers:davek-dev",
+      "displayName": "Dave K",
+      "image": "https://avatars.githubusercontent.com/u/107123174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 259,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.3.6",
+      "createdAt": 1773845773638,
+      "changelog": "- Clarified that all interactions must use the `joplin` CLI, not direct SQL or database edits.\n- Added and expanded setup instructions for WebDAV sync.\n- Provided comprehensive examples of common Joplin CLI commands for managing notes, notebooks, todos, syncing, importing/exporting, and editing.\n- Included guidance and formatting rules for notes using the YesYouKan kanban plugin, including how to maintain and move tasks in kanban notes.\n- Listed available Joplin CLI commands and explained referencing notes/notebooks by title, ID, or shortcut.\n- Detailed interactive shell mode usage and shortcuts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16e9d250f34985c8faececa4bc49c095254e6d5882bb457e6011adee27ecd919"
+}

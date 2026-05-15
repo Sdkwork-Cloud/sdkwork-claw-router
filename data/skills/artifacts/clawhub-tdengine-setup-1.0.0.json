@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tdengine-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tdengine_setup",
+  "skill": {
+    "id": 63360,
+    "skillKey": "clawhub-tdengine-setup",
+    "name": "TDengine Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tdengine-setup",
+    "url": "https://clawhub.ai/skills/tdengine-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tdengine-setup-069191f2cb5da566.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动化安装和配置 TDengine 3.3.6.0。包含从官网下载、安装、启动服务以及基础数据库验证的完整流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnnyhou327",
+      "userId": "s17a0jf8rn9nesy939wwncf3dx83pwfj",
+      "displayName": "johnnyhou327",
+      "image": "https://avatars.githubusercontent.com/u/31071594?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773371257772,
+      "changelog": "Initial version: TDengine 3.3.6.0 installation and configuration guide",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60180b83a4bebf73cf3d34c3a5ed1970df4aa63772069aaec9d60b64df700610"
+}

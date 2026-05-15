@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12153,
+  "uuid": "skill-clawhub-oura-ring-skill",
+  "skillKey": "clawhub-oura-ring-skill",
+  "name": "Oura Ring",
+  "summary": "Fetch Oura Ring readiness/sleep + 7-day readiness trends via Oura Cloud API V2, and generate a Morning Readiness Brief.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oura_ring_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sameerbajaj",
+      "features": [
+        "Fetch Oura Ring readiness/sleep + 7-day readiness trends via Oura Cloud API V2, and generate a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oura-ring-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3718043?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oura-ring-skill",
+      "url": "https://clawhub.ai/skills/oura-ring-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oura-ring-skill",
+    "url": "https://clawhub.ai/skills/oura-ring-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oura-ring-skill-0744d71637364721.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oura-ring-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oura-ring-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71bb84b280153b81286c1132557368f446a818c7939329f756c9fdce879997b1",
+      "artifactSizeBytes": 2244
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T20:49:55.121Z"
+}

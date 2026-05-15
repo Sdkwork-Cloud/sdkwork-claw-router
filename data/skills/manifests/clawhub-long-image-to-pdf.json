@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30457,
+  "uuid": "skill-clawhub-long-image-to-pdf",
+  "skillKey": "clawhub-long-image-to-pdf",
+  "name": "long-image-to-pdf",
+  "summary": "Slices long images/screenshots into overlapping segments and auto-arranges them into a paginated PDF.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_image_to_pdf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ByronLeeeee",
+      "features": [
+        "Slices long images/screenshots into overlapping segments and auto-arranges them into a paginate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/long-image-to-pdf@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41776818?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "long-image-to-pdf",
+      "url": "https://clawhub.ai/skills/long-image-to-pdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-image-to-pdf",
+    "url": "https://clawhub.ai/skills/long-image-to-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-image-to-pdf-46eee1cb6a5fb7a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/long-image-to-pdf@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-long-image-to-pdf-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31d671de50764588b602e742a79acd4fdff73b52e7504466c4a6db9de1ea3505",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T07:48:20.142Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-bom-registry@0.86.2",
+  "version": "0.86.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_bom_registry",
+  "skill": {
+    "id": 20159,
+    "skillKey": "clawhub-agent-bom-registry",
+    "name": "agent-bom registry"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-bom-registry",
+    "url": "https://clawhub.ai/skills/agent-bom-registry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-bom-registry-ff3f77fa0c9cb2f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MCP server security registry and trust assessment — look up servers in the 427+ server security metadata registry, run pre-install marketplace checks, batch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "msaad00",
+      "userId": "s173dmtq1jwv3yxcgnmcxnn45583ey2y",
+      "displayName": "Agent Bom",
+      "image": "https://avatars.githubusercontent.com/u/34316639?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1120,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 46
+    },
+    "latestVersion": {
+      "version": "0.86.2",
+      "createdAt": 1778168722281,
+      "changelog": "Release v0.86.2",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f785be87c19488b886b936f60852281c128d2d8569e1c3f88d27a132d5a11d99"
+}

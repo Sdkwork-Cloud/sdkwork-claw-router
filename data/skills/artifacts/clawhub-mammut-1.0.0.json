@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mammut@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mammut",
+  "skill": {
+    "id": 46849,
+    "skillKey": "clawhub-mammut",
+    "name": "Mammut"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mammut",
+    "url": "https://clawhub.ai/skills/mammut",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mammut-75acd79ffb903cdb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mammut is a Swiss outdoor brand with 160 years of expertise, specializing in high-end climbing ropes, safety gear, apparel, shoes, and avalanche rescue devices."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777201389594,
+      "changelog": "Mammut skill 1.0.0 — 初始发布\n\n- 提供Mammut品牌160年历史时间线与关键里程碑\n- 覆盖从绳索制造到全球户外装备扩展的品牌转型\n- 展示品牌商业模式与护城河分析\n- 总结产品类别、市场定位及有趣品牌事实\n- 强调登山安全技术和瑞士制造声誉",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9506d77ddea9a2d8d57d5bcebddfa590a107108f74c1f4fbcbbac75cc05e2e8"
+}

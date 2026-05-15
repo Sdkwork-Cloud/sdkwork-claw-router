@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spending-log@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spending_log",
+  "skill": {
+    "id": 72032,
+    "skillKey": "clawhub-spending-log",
+    "name": "spending-log"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spending-log",
+    "url": "https://clawhub.ai/skills/spending-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spending-log-ee2c3dc79b27c358.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "个人支出记账。当用户提到记账、花了、消费、支出、账单、开销、统计消费、月度报表时触发。支持自然语言记账、自动分类、月度统计、预算提醒和月度报表生成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baoxinwen",
+      "userId": "s17e5v8nh55z4tz20zx1vwjmph84xgsp",
+      "displayName": "baoxinwen",
+      "image": "https://avatars.githubusercontent.com/u/84140746?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776845971700,
+      "changelog": "spending-log v1.0.0\n\n- 初始版本发布，支持个人支出记账\n- 提供自然语言记账、自动分类、月度统计和预算提醒\n- 新增“删除/修改记录”功能，支持通过脚本操作历史数据\n- 月度报表支持分类饼图、趋势图、支出明细等丰富展示\n- 支持月初自动生成与推送报表，适配PC及手机端\n- 数据保存于本地JSON文件，便于备份和个性化设置",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c297be56ee4d2e84fd29f75d0082d3d0ee81b4a443c372889fff8b37e5f5e4b"
+}

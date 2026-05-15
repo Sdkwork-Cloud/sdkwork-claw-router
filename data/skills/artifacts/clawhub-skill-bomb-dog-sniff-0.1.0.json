@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-bomb-dog-sniff@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_bomb_dog_sniff",
+  "skill": {
+    "id": 17481,
+    "skillKey": "clawhub-skill-bomb-dog-sniff",
+    "name": "Bomb Dog Sniff"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-bomb-dog-sniff",
+    "url": "https://clawhub.ai/skills/skill-bomb-dog-sniff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-bomb-dog-sniff-a19aa424208331df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security-first skill management for OpenClaw - like a bomb-sniffing dog for skills. Sniffs out malicious payloads (crypto stealers, keyloggers, reverse shells) before installation. Quarantine → Scan → Install only the safe ones."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lvcidpsyche",
+      "userId": "publishers:lvcidpsyche",
+      "displayName": "LvcidPsyche",
+      "image": "https://avatars.githubusercontent.com/u/160208855?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1389,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770530107924,
+      "changelog": "bomb-dog-sniff v1.2.0 is a major security and detection upgrade for OpenClaw skill scanning.\n\n- Fixed command injection and added path traversal protection for safer downloads and scanning.\n- Quarantines skills in randomized, permission-locked directories before scanning.\n- Now detects and skips binary/oversized files and restricts regex processing to prevent resource attacks.\n- Smarter detection: reduced false positives, added entropy analysis for encoded threats, awareness of test files, and per-finding confidence scoring.\n- Expanded to 13 detection categories, now including supply chain attacks, prototype pollution, and new script-based threats.\n- New detection patterns target credential and SSH key theft, browser and system persistence, and more.\n- All commands (scan, safe-install, audit, batch) documented with clear examples and risk scoring explanations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9383e092987d0ae914cc694422b7c6160f8fce4475a713ffd1f3a60de10e471a"
+}

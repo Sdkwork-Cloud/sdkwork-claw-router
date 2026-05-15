@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-security-hardening@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_security_hardening",
+  "skill": {
+    "id": 10159,
+    "skillKey": "clawhub-openclaw-security-hardening",
+    "name": "OpenClaw Security Hardening"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-security-hardening",
+    "url": "https://clawhub.ai/skills/openclaw-security-hardening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-security-hardening-b14a89ce04b00e4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Protect OpenClaw installations from prompt injection, data exfiltration, malicious skills, and workspace tampering"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kylejfrost",
+      "userId": "publishers:kylejfrost",
+      "displayName": "kylejfrost",
+      "image": "https://avatars.githubusercontent.com/u/2223276?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2430,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 5,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770053908993,
+      "changelog": "Removed all workspace-specific references. Clean generic skill for any OpenClaw install.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c58814c881f2567bde48e6777ff44655a656609dc77a7e2b37118b1ecb9b4eb3"
+}

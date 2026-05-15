@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snarky-expense-butler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snarky_expense_butler",
+  "skill": {
+    "id": 68987,
+    "skillKey": "clawhub-snarky-expense-butler",
+    "name": "Snarky Expense Butler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snarky-expense-butler",
+    "url": "https://clawhub.ai/skills/snarky-expense-butler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snarky-expense-butler-044300982ddca6f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "毒舌记账管家，支持记账、查询、预算提醒、毒舌消费分析、地域统计、趋势图。当用户提到记账、消费、花销、支出、记一笔、消费分析、预算、记个账时触发。NOT for: 股票/投资分析、记账软件推荐。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ybl2020",
+      "userId": "publishers:ybl2020",
+      "displayName": "ybl2020",
+      "image": "https://avatars.githubusercontent.com/u/60306730?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 328,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773846376686,
+      "changelog": "毒舌记账管家 v1.0：记账/查询/预算/分析/地域统计/趋势图，纯本地 JSON 存储",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee276300e7e1d33fab9b82eebe1d40beb38d3cdd8030c94de0806e478009e547"
+}

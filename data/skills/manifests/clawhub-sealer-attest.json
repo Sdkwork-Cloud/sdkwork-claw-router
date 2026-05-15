@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40327,
+  "uuid": "skill-clawhub-sealer-attest",
+  "skillKey": "clawhub-sealer-attest",
+  "name": "Sealer Attest",
+  "summary": "Interact with The Sealer Protocol to preview difficulty, make onchain SMART commitments, check agent profiles, leaderboards, obtain Sealer IDs, and generate...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sealer_attest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iamdevving",
+      "features": [
+        "Interact with The Sealer Protocol to preview difficulty, make onchain SMART commitments, check."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sealer-attest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262317360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sealer-attest",
+      "url": "https://clawhub.ai/skills/sealer-attest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sealer-attest",
+    "url": "https://clawhub.ai/skills/sealer-attest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sealer-attest-fd6a22f314609056.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sealer-attest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sealer-attest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:288c2b827c2d2bc3b29ffdce6245f25c82621e891e4e8ad9f7016bc916c51374",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T22:19:31.504Z"
+}

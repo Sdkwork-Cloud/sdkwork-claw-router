@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34160,
+  "uuid": "skill-clawhub-railway-integration",
+  "skillKey": "clawhub-railway-integration",
+  "name": "Railway",
+  "summary": "Railway integration. Manage data, records, and automate workflows. Use when the user wants to interact with Railway data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.railway_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Railway integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Railway data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/railway-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "railway-integration",
+      "url": "https://clawhub.ai/skills/railway-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "railway-integration",
+    "url": "https://clawhub.ai/skills/railway-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/railway-integration-51abc9412b9d3fba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/railway-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-railway-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57a3948ddf9258e49e8a504cd1319d93ad4fec51ca498715a173b29a8497b452",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:31:00.510Z"
+}

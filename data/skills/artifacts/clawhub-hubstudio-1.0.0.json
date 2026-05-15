@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hubstudio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hubstudio",
+  "skill": {
+    "id": 19154,
+    "skillKey": "clawhub-hubstudio",
+    "name": "hubstudio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hubstudio",
+    "url": "https://clawhub.ai/skills/hubstudio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hubstudio-6fe45c66064f131b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "HubStudio OpenAPI skill for full endpoint lookup, request/response field explanation, and parameter constraint checking. Use when querying HubStudio API inte..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hubstudio-max",
+      "userId": "publishers:hubstudio-max",
+      "displayName": "hubstudio-Max",
+      "image": "https://avatars.githubusercontent.com/u/264604182?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 633,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773644128597,
+      "changelog": "Initial release of the hubstudio-openapi skill.\n\n- Provides endpoint lookup, field explanation, and parameter constraint checking for the HubStudio OpenAPI.\n- Includes installation, configuration, and usage instructions for HubStudio API and CLI integration.\n- Supports automation, safe API call patterns, and standardized request/response validation.\n- Offers examples for browser/cloud phone management, batch operations, and ADB connection.\n- Bundles comprehensive reference and troubleshooting materials for endpoint access and testing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed2201b38a1a0334902e3008e4a87f27e7446095889028ba2db20c766a1266eb"
+}

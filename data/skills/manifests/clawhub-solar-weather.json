@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10332,
+  "uuid": "skill-clawhub-solar-weather",
+  "skillKey": "clawhub-solar-weather",
+  "name": "Solar Weather Monitor",
+  "summary": "Monitor solar weather conditions including geomagnetic storms, solar flares, aurora forecasts, and solar wind data. Uses NOAA Space Weather Prediction Center real-time data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solar_weather",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "captmarbles",
+      "features": [
+        "Monitor solar weather conditions including geomagnetic storms, solar flares, aurora forecasts,.",
+        "Uses NOAA Space Weather Prediction Center real-time data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solar-weather@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5841195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solar-weather",
+      "url": "https://clawhub.ai/skills/solar-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solar-weather",
+    "url": "https://clawhub.ai/skills/solar-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solar-weather-2161baac1b502480.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solar-weather@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-solar-weather-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35a4b53751b84fc3b5b9b576b608305181d169258c160c292b353c07cede54f4",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T22:45:13.593Z"
+}

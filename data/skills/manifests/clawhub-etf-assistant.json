@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60666,
+  "uuid": "skill-clawhub-etf-assistant",
+  "skillKey": "clawhub-etf-assistant",
+  "name": "ETF投资助理",
+  "summary": "ETF投资助理 / ETF Investment Assistant - 查询行情、筛选ETF、对比分析、定投计算。支持沪深300、创业板、科创50、纳指等主流ETF。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.etf_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "franky0617",
+      "features": [
+        "ETF投资助理 / ETF Investment Assistant",
+        "查询行情、筛选ETF、对比分析、定投计算。支持沪深300、创业板、科创50、纳指等主流ETF。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/etf-assistant@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257217961?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "etf-assistant",
+      "url": "https://clawhub.ai/skills/etf-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "etf-assistant",
+    "url": "https://clawhub.ai/skills/etf-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/etf-assistant-929f7c21227cf303.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/etf-assistant@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-etf-assistant-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2b10b086919b6c20e1980e995a8186d8332af5bb7aea1fa95a1572be881e054",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-30T00:12:17.946Z"
+}

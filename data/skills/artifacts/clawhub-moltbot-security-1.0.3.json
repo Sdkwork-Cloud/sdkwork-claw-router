@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltbot-security@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbot_security",
+  "skill": {
+    "id": 9869,
+    "skillKey": "clawhub-moltbot-security",
+    "name": "Moltbot Security"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbot-security",
+    "url": "https://clawhub.ai/skills/moltbot-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbot-security-d342bf7ae1136814.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security hardening for AI agents - Moltbot, OpenClaw, Cursor, Claude. Lock down gateway, fix permissions, auth, firewalls. Essential for vibe-coding setups."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nextfrontierbuilds",
+      "userId": "s173crrwz6a8ksnw7w0q36yky18408nb",
+      "displayName": "Next Frontier AI",
+      "image": "https://avatars.githubusercontent.com/u/257253317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2927,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770799033611,
+      "changelog": "- Skill renamed to \"moltbot-security\" for clarity and improved discoverability.\n- Description and keywords updated to emphasize compatibility with Moltbot, OpenClaw, Cursor, Claude, and popular coding/AI tools.\n- Keywords expanded to improve search relevance for security, developer, and AI tool users.\n- No changes to core guides or technical instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:194a572d2c59cc6743fb2ff91934db6d3c9858b4429f2fa0b37611b7b34fb454"
+}

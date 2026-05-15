@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11819,
+  "uuid": "skill-clawhub-google-maps-search-api-skill",
+  "skillKey": "clawhub-google-maps-search-api-skill",
+  "name": "Google Maps Search Api Skill",
+  "summary": "This skill is designed to help users automatically extract business data from Google Maps search results. The Agent should proactively apply this skill when...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_maps_search_api_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Henk Nie",
+      "features": [
+        "This skill is designed to help users automatically extract business data from Google Maps searc.",
+        "The Agent should proactively apply this skill when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-maps-search-api-skill@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44972754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-maps-search-api-skill",
+      "url": "https://clawhub.ai/skills/google-maps-search-api-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-maps-search-api-skill",
+    "url": "https://clawhub.ai/skills/google-maps-search-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-maps-search-api-skill-3d1369070243d834.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-maps-search-api-skill@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-maps-search-api-skill-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93c23780494ce10d09f5d310cde50a3b49c9c257c0aec207c8e90e2062b35258",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:52:27.585Z"
+}

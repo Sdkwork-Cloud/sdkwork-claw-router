@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-humanizer-cn@5.0.0",
+  "version": "5.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_humanizer_cn",
+  "skill": {
+    "id": 60543,
+    "skillKey": "clawhub-ai-humanizer-cn",
+    "name": "AI Humanizer CN - 中文 AI 文本拟人优化"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-humanizer-cn",
+    "url": "https://clawhub.ai/skills/ai-humanizer-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-humanizer-cn-25eda966a4fd12b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文 AI 文本优化技能，支持多种 AI 模型（OpenAI/Anthropic/阿里），去除 AI 痕迹，保持专业性。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pengong101",
+      "userId": "s170qp8gq3gbgxda2rdsgmavw983gp2d",
+      "displayName": "pengong101",
+      "image": "https://avatars.githubusercontent.com/u/30196225?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 797,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "5.0.0",
+      "createdAt": 1773848795581,
+      "changelog": "ai-humanizer-cn v5.0.0\nComplete refactoring to support multiple models (OpenAI, Anthropic, Alibaba Tongyi Qianfan, MiniMax)\nAdded core features including style adjustment, batch file processing, and code comment optimization\nAdded support for configuration items and environment variables, along with parallel processing and progress bars\nUpgraded code structure to cover more file types and support multiple languages\nAdded unit tests and test coverage statistics\nFully updated documentation and descriptions, removed outdated release notes and optimized documentation content\n- 全面重构，切换为多模型支持（OpenAI、Anthropic、阿里百炼、MiniMax）\n- 新增风格调节、批量文件处理、代码注释优化等核心功能\n- 新增配置项与环境变量支持，并行处理与进度条\n- 代码结构升级，覆盖更多文件类型、多语言支持\n- 新增单元测试与覆盖率统计\n- 文档和说明全面更新，移除旧发布和优化文档",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04263200f511ae027aa44680f32207bcd9cf4224b8aad0e00e4225a35f3a100c"
+}

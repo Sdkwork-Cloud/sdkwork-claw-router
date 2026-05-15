@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rumble-autotip@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rumble_autotip",
+  "skill": {
+    "id": 31796,
+    "skillKey": "clawhub-rumble-autotip",
+    "name": "RumbleTipAI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rumble-autotip",
+    "url": "https://clawhub.ai/skills/rumble-autotip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rumble-autotip-6d32d639859c9fee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous AI agent that tips Rumble.com creators in cryptocurrency based on watch time, with smart splits, community pools, event-triggered tipping, and con..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dev-me4",
+      "userId": "publishers:dev-me4",
+      "displayName": "Dev-me",
+      "image": "https://avatars.githubusercontent.com/u/233152365?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774228005179,
+      "changelog": "**v2.1.0 is a feature and metadata update for the rumble-autotip skill.**\n\n- Added a formal skill manifest in YAML with description, version, requirements, dependencies, and metadata.\n- Declared OpenAI API key as a required environment variable for AI-powered features.\n- Explicitly listed package dependencies for the Tether Wallet Development Kit (EVM and BTC support).\n- Provided homepage and installation instructions for greater clarity and discoverability.\n- No changes to skill commands, capabilities, or logic. User-facing functionality is unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4952b0aa45b3ee7d94b1a19bbf6f06cfe4fe4eae63c704ded2b52e47da319d8"
+}

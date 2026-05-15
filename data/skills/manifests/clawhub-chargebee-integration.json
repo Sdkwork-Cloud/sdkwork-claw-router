@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24298,
+  "uuid": "skill-clawhub-chargebee-integration",
+  "skillKey": "clawhub-chargebee-integration",
+  "name": "Chargebee",
+  "summary": "Chargebee integration. Manage Customers. Use when the user wants to interact with Chargebee data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chargebee_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Chargebee integration",
+        "Manage Customers",
+        "Use when the user wants to interact with Chargebee data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chargebee-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chargebee-integration",
+      "url": "https://clawhub.ai/skills/chargebee-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chargebee-integration",
+    "url": "https://clawhub.ai/skills/chargebee-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chargebee-integration-29fa73ddb5f1e11c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chargebee-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-chargebee-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a843f54bd84222470cc39f32d2eb7fbcf937651a2a59365f8d747ca9730a5b58",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T20:41:27.636Z"
+}

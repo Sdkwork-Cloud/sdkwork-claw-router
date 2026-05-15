@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-fetch-fakeip@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_fetch_fakeip",
+  "skill": {
+    "id": 34348,
+    "skillKey": "clawhub-web-fetch-fakeip",
+    "name": "Web Fetch Fake-IP Workaround"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-fetch-fakeip",
+    "url": "https://clawhub.ai/skills/web-fetch-fakeip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-fetch-fakeip-f2c8ac26a2f0643c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Legacy workaround for web_fetch fake-ip failures on older npm-global OpenClaw installs. Use when web_fetch is blocked under Clash, Mihomo, or Surge fake-ip m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xing-xing-coder",
+      "userId": "s171jj7q9e8p5fzh36ps35vn2d83jpra",
+      "displayName": "xingxing",
+      "image": "https://avatars.githubusercontent.com/u/71656176?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775969046532,
+      "changelog": "Mark the skill as a legacy workaround for older OpenClaw versions and document the built-in openclaw.json fix available in v2026.4.10+.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49b986a9df6302209a962b9a305896988bd12fe138099fd38a6a4cf5c927ba96"
+}

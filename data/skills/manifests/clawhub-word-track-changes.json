@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56728,
+  "uuid": "skill-clawhub-word-track-changes",
+  "skillKey": "clawhub-word-track-changes",
+  "name": "Word Track Changes",
+  "summary": "Enable Microsoft Word's Track Changes (修订模式) on documents using native OOXML elements. Supports cross-run text matching and precise paragraph-level replaceme...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.word_track_changes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "elio-huang-15",
+      "features": [
+        "Enable Microsoft Word's Track Changes (修订模式) on documents using native OOXML elements",
+        "Supports cross-run text matching and precise paragraph-level replaceme..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/word-track-changes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267540330?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "word-track-changes",
+      "url": "https://clawhub.ai/skills/word-track-changes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "word-track-changes",
+    "url": "https://clawhub.ai/skills/word-track-changes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/word-track-changes-10c31bdaa1c888a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/word-track-changes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-word-track-changes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1863fa6a2b2557afa7fa519581077cacb0026ecf6dda9aa2113e4ad158af6b3e",
+      "artifactSizeBytes": 2406
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T08:05:21.634Z"
+}

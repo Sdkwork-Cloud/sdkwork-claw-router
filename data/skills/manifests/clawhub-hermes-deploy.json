@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59026,
+  "uuid": "skill-clawhub-hermes-deploy",
+  "skillKey": "clawhub-hermes-deploy",
+  "name": "Hermes Deploy",
+  "summary": "使用 OpenClaw 部署 Hermes Agent 完整指南（含开机自启）",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "使用 OpenClaw 部署 Hermes Agent 完整指南（含开机自启）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hermes-deploy@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hermes-deploy",
+      "url": "https://clawhub.ai/skills/hermes-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-deploy",
+    "url": "https://clawhub.ai/skills/hermes-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-deploy-400051faf397cdd7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hermes-deploy@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hermes-deploy-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20aa53b561dc2671812ddc29bd94f313f8cb56a6bcfcc4dfbb94a8a384280614",
+      "artifactSizeBytes": 2116
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T03:57:50.508Z"
+}

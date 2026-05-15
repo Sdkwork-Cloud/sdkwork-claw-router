@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sure-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sure_api",
+  "skill": {
+    "id": 42750,
+    "skillKey": "clawhub-sure-api",
+    "name": "Sure API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sure-api",
+    "url": "https://clawhub.ai/skills/sure-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sure-api-c734f1d0d8984f47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the we-promise/sure REST API with X-Api-Key auth. Covers accounts, transactions, categories, tags, merchants, imports, holdings, trades, valuations, chat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ashanzzz",
+      "userId": "s175ehx49gd7de4ab3sm8bakrs83nnan",
+      "displayName": "ashanzzz",
+      "image": "https://avatars.githubusercontent.com/u/19986978?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774502933704,
+      "changelog": "Initial public release with official Sure API URLs, self-update workflow, live acceptance, and ClawHub publish readiness.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:426b2169c20163f6d5f1088abb41c379a0943c62bc40e88967acd9cce921a0a5"
+}

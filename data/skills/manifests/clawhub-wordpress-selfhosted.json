@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19614,
+  "uuid": "skill-clawhub-wordpress-selfhosted",
+  "skillKey": "clawhub-wordpress-selfhosted",
+  "name": "WordPress Self-Hosted",
+  "summary": "Manage a self-hosted WordPress site via SSH+WP-CLI (primary) and WP REST API (when direct HTTPS access is available). Use when asked to write, draft, publish...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wordpress_selfhosted",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eddy",
+      "features": [
+        "Manage a self-hosted WordPress site via SSH+WP-CLI (primary) and WP REST API (when direct HTTPS.",
+        "Use when asked to write, draft, publish..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wordpress-selfhosted@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/832737?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wordpress-selfhosted",
+      "url": "https://clawhub.ai/skills/wordpress-selfhosted"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wordpress-selfhosted",
+    "url": "https://clawhub.ai/skills/wordpress-selfhosted",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wordpress-selfhosted-082baa2809e08194.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wordpress-selfhosted@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-wordpress-selfhosted-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e85ca9bddcbb24db15c00418ea0a380cce50bb66183d389049a00a70ab991136",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T00:21:06.759Z"
+}

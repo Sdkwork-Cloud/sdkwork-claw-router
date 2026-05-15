@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28967,
+  "uuid": "skill-clawhub-facebook-publisher",
+  "skillKey": "clawhub-facebook-publisher",
+  "name": "Facebook Publisher",
+  "summary": "Publish posts to Facebook Pages. Use when the user says 'post to Facebook', 'publish on FB', 'schedule Facebook post', 'manage Facebook scheduled posts', or...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.facebook_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "snoopyrain",
+      "features": [
+        "Publish posts to Facebook Pages",
+        "Use when the user says 'post to Facebook', 'publish on FB', 'schedule Facebook post', 'manage F."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/facebook-publisher@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9717776?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "facebook-publisher",
+      "url": "https://clawhub.ai/skills/facebook-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "facebook-publisher",
+    "url": "https://clawhub.ai/skills/facebook-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/facebook-publisher-42391d3acf6bf3a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/facebook-publisher@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-facebook-publisher-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:baddb04e0b409d10f020d8564841149ea85a701bc62e615ee09fcd2086a670d6",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T14:38:55.566Z"
+}

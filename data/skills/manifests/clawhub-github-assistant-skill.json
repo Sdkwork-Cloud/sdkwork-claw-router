@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60608,
+  "uuid": "skill-clawhub-github-assistant-skill",
+  "skillKey": "clawhub-github-assistant-skill",
+  "name": "GitHub-Assistant-Skill",
+  "summary": "GitHub Trending查看、项目搜索、Star/Fork/Watch操作、Issues管理、Pull Request操作、代码内容获取、评论管理等完整助手。当用户需要查看GitHub Trending排行榜、搜索GitHub项目、对仓库进行操作、管理Issues/PR、获取代码内容时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_assistant_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leonforcode",
+      "features": [
+        "GitHub Trending查看、项目搜索、Star/Fork/Watch操作、Issues管理、Pull Request操作、代码内容获取、评论管理等完整助手。当用户需要查看GitHub."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-assistant-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248583476?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-assistant-skill",
+      "url": "https://clawhub.ai/skills/github-assistant-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-assistant-skill",
+    "url": "https://clawhub.ai/skills/github-assistant-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-assistant-skill-6423d3dd9e997709.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-assistant-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-assistant-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c56a234dcfc692b44bc4ee11e0baba9eb7ea0e4897f4280b7b3ccc0d9856fb9e",
+      "artifactSizeBytes": 54083
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T08:39:48.955Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17998,
+  "uuid": "skill-clawhub-menuvision",
+  "skillKey": "clawhub-menuvision",
+  "name": "MenuVision",
+  "summary": "Build beautiful HTML photo menus from restaurant URLs, PDFs, or photos using Gemini Vision and AI image generation",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.menuvision",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ademczuk",
+      "features": [
+        "Build beautiful HTML photo menus from restaurant URLs, PDFs, or photos using Gemini Vision and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/menuvision@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5212682?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "menuvision",
+      "url": "https://clawhub.ai/skills/menuvision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "menuvision",
+    "url": "https://clawhub.ai/skills/menuvision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/menuvision-0c2732ce2488c9ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/menuvision@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-menuvision-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23f8a58299cf9a71d002bd7ce8f37e3523e0328c134bb7d521c7deb4e7a4fef0",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T12:20:15.785Z"
+}

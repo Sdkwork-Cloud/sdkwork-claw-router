@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67433,
+  "uuid": "skill-clawhub-learning-content-generator",
+  "skillKey": "clawhub-learning-content-generator",
+  "name": "基于输入知识图谱个性生成节点学习内容",
+  "summary": "基于学习路径节点生成个性化学习内容。支持层级感知（L1/L2/L3不同深度）和上下文感知（同概念差异化）。每节点生成3000~5000字学习内容+3~5道随堂自测题。详细说明见 references/README.md",
+  "version": "2.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learning_content_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zpwang@live.cn",
+      "features": [
+        "基于学习路径节点生成个性化学习内容。支持层级感知（L1/L2/L3不同深度）和上下文感知（同概念差异化）。每节点生成3000~5000字学习内容+3~5道随堂自测题。详细说明见 refere."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learning-content-generator@2.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262943821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learning-content-generator",
+      "url": "https://clawhub.ai/skills/learning-content-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learning-content-generator",
+    "url": "https://clawhub.ai/skills/learning-content-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learning-content-generator-e265e034b7328c83.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learning-content-generator@2.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-learning-content-generator-2.3.1.json",
+      "version": "2.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:101bd377560bcb24dfe3a2e358a1409668fdb471a2e3a4a139f3ffc27f9f3d7f",
+      "artifactSizeBytes": 2264
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T02:15:17.982Z"
+}

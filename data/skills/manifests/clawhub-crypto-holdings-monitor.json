@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64137,
+  "uuid": "skill-clawhub-crypto-holdings-monitor",
+  "skillKey": "clawhub-crypto-holdings-monitor",
+  "name": "Crypto Holdings Monitor",
+  "summary": "加密货币持仓监控工具。支持多钱包地址监控、实时价格查询、持仓统计。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_holdings_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SxLiuYu",
+      "features": [
+        "加密货币持仓监控工具。支持多钱包地址监控、实时价格查询、持仓统计。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-holdings-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95198625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-holdings-monitor",
+      "url": "https://clawhub.ai/skills/crypto-holdings-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-holdings-monitor",
+    "url": "https://clawhub.ai/skills/crypto-holdings-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-holdings-monitor-10c6448f14735b08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-holdings-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-holdings-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09cd9006578dfe49b9966089ae17f4ae67df498af913f93bddaec1b03b0f5966",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T07:52:50.499Z"
+}

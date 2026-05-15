@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38272,
+  "uuid": "skill-clawhub-lucky-healthcheck",
+  "skillKey": "clawhub-lucky-healthcheck",
+  "name": "Lucky Healthcheck",
+  "summary": "Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, r...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lucky_healthcheck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rmbell09-lang",
+      "features": [
+        "Host security hardening and risk-tolerance configuration for OpenClaw deployments",
+        "Use when a user asks for security audits, firewall/SSH/update hardening, r..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lucky-healthcheck@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/238621327?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lucky-healthcheck",
+      "url": "https://clawhub.ai/skills/lucky-healthcheck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lucky-healthcheck",
+    "url": "https://clawhub.ai/skills/lucky-healthcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lucky-healthcheck-70895d9c3dd65b99.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lucky-healthcheck@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lucky-healthcheck-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f63a6bd0e079e5fcab0535f8bcbab565d7445050663af5f7dccbebfbf24f7f6",
+      "artifactSizeBytes": 2074
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T06:18:47.819Z"
+}

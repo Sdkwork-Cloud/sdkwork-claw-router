@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/composio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.composio",
+  "skill": {
+    "id": 8932,
+    "skillKey": "clawhub-composio",
+    "name": "Composio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "composio",
+    "url": "https://clawhub.ai/skills/composio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/composio-64c1d2e9654377e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect your AI agent to 500+ apps for discovering tools, managing connections, and executing actions across Gmail, Slack, GitHub, Notion, Google Workspace,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wjayesh",
+      "userId": "publishers:wjayesh",
+      "displayName": "wjayesh",
+      "image": "https://avatars.githubusercontent.com/u/37150991?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 4890,
+      "installsAllTime": 47,
+      "installsCurrent": 44,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770648463542,
+      "changelog": "Composio v1.0.0 – Initial Release\n\n- Introduces a unified platform to connect AI agents with 900+ popular apps for seamless cross-app automation.\n- Provides clear guides and cURL examples for setup, authentication, and API usage.\n- Documents core endpoints: tool search (`COMPOSIO_SEARCH_TOOLS`), connection management, input schema fetching, and tool execution.\n- Explains best practices for planning, finding, connecting, and running tools, with real API payloads and tips for smooth integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d488ed1c54470be22f28f9613c91774dde1f07eb2facc04e5c9cf93b5f1e534b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/synap@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.synap",
+  "skill": {
+    "id": 54066,
+    "skillKey": "clawhub-synap",
+    "name": "Synap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "synap",
+    "url": "https://clawhub.ai/skills/synap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/synap-e534cafebb4f7101.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sovereign AI knowledge infrastructure. Typed entity graph, documents, long-term memory, messaging relay, and AI governance — all in PostgreSQL."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "antoinesrvt",
+      "userId": "s171yzezq6nwg01142x1be8r0s846dv3",
+      "displayName": "Antoine",
+      "image": "https://avatars.githubusercontent.com/u/68781066?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775846308758,
+      "changelog": "Synap 1.0.0 — Initial Release\n\n- Introduces sovereign AI knowledge infrastructure with a typed entity graph, long-term memory, messaging relay, and AI governance — all backed by PostgreSQL.\n- Provides structured memory with search and recall across entities, documents, and facts using Typesense full-text and pgvector semantic search.\n- Supports governance workflows: all writes are reviewed or auto-approved as appropriate to ensure data integrity and user oversight.\n- Integrates messaging relay for external channels (Telegram, WhatsApp, Slack), allowing messages to be brought into Synap for AI processing.\n- Fully documented data model, API endpoints, setup methods, and response formats included for easy onboarding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:160f2d8d57f93c336ba11b4b868ac2c69972eb2eca2896fedddc4cc59b7297ef"
+}

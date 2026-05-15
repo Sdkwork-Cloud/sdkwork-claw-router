@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19656,
+  "uuid": "skill-clawhub-ai-nano-banana-ima",
+  "skillKey": "clawhub-ai-nano-banana-ima",
+  "name": "IMA Nano Banana Image Generator",
+  "summary": "Nano Banana-only image generation on IMA Open API. Supports text_to_image and image_to_image with gemini-3.1-flash-image (budget) and gemini-3-pro-image (pre...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_nano_banana_ima",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "allenfancy-gan",
+      "features": [
+        "Nano Banana-only image generation on IMA Open API",
+        "Supports text_to_image and image_to_image with gemini-3.1-flash-image (budget) and gemini-3-pro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-nano-banana-ima@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224295706?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-nano-banana-ima",
+      "url": "https://clawhub.ai/skills/ai-nano-banana-ima"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-nano-banana-ima",
+    "url": "https://clawhub.ai/skills/ai-nano-banana-ima",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-nano-banana-ima-ce038488079cd844.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-nano-banana-ima@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-nano-banana-ima-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a8aa75b60e7da8c9fc1d40187f760d8d9bdc9dbad6aa1528b1f7154444edb57",
+      "artifactSizeBytes": 2071
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:40:49.212Z"
+}

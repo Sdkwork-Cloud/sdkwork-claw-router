@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto",
+  "skill": {
+    "id": 9111,
+    "skillKey": "clawhub-crypto",
+    "name": "Crypto Market"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto",
+    "url": "https://clawhub.ai/skills/crypto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-da2f073e06f78938.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cryptocurrency market data and price alert monitoring tool based on CCXT. Supports multiple exchanges, real-time price tracking, and configurable price/volat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "manifoldor",
+      "userId": "s17cmjn5h8g0recnywq5vhtkxx83gsnk",
+      "displayName": "manifold",
+      "image": "https://avatars.githubusercontent.com/u/62403180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3176,
+      "installsAllTime": 16,
+      "installsCurrent": 16,
+      "stars": 17,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1773795808760,
+      "changelog": "- English documentation rewrite: All usage instructions and examples are now in English for broader accessibility.\n- Skill name updated from \"crypto\" to \"Crypto Market\" for greater clarity.\n- No functional or feature changes; all commands, usage, and alerts remain the same as previous versions.\n- Documentation structure improved for clearer presentation, including feature lists, troubleshooting, and use cases.\n- Descriptions, command examples, and tables translated and reformatted, ensuring information is consistent and up-to-date.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36e98209d57385ab2f18b3b01c32d49893b6857679cdbc7ad5a6bc40cbd65fef"
+}

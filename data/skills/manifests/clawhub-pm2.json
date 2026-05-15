@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9716,
+  "uuid": "skill-clawhub-pm2",
+  "skillKey": "clawhub-pm2",
+  "name": "PM2 Process Manager",
+  "summary": "Manage Node.js applications with PM2 process manager. Use for deploying, monitoring, and auto-restarting Node apps in production. Covers starting apps, viewing logs, setting up auto-start on boot, and managing multiple processes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pm2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andy Steinberger",
+      "features": [
+        "Manage Node.js applications with PM2 process manager",
+        "Use for deploying, monitoring, and auto-restarting Node apps in production",
+        "Covers starting apps, viewing logs, setting up auto-start on boot, and managing multiple proces."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pm2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133219358?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pm2",
+      "url": "https://clawhub.ai/skills/pm2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pm2",
+    "url": "https://clawhub.ai/skills/pm2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pm2-5b8a6a192f8410ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pm2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pm2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6eb2c9afb6899831167472b2d8bcb5c4bc7fd7f4d049329d5a19ee327f872433",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T22:01:57.632Z"
+}

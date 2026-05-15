@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-ai-video-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_ai_video_free",
+  "skill": {
+    "id": 41118,
+    "skillKey": "clawhub-create-ai-video-free",
+    "name": "Create Ai Video Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-ai-video-free",
+    "url": "https://clawhub.ai/skills/create-ai-video-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-ai-video-free-6f69ef79a9767e58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "create images or clips into AI-generated videos with this create-ai-video-free skill. Works with MP4, MOV, JPG, PNG files up to 500MB. content creators and m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775858661681,
+      "changelog": "Initial release of Create AI Video Free — generate videos from images or clips.\n\n- Upload images or video clips (MP4, MOV, JPG, PNG up to 500MB) and generate 1080p MP4 videos on cloud GPUs.\n- Automatic setup and authentication with free credits for new users; fast cloud rendering (1–2 minutes).\n- Supports direct prompts for common actions: upload, download/export, check status, balance/credits.\n- Processes user instructions into automated AI video edits with no manual editing required.\n- Handles multiple file formats and common error scenarios; provides clear feedback and tips for best results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:226e2e7663ab53b56e1929fb6034ecf1f7882769c698b3dc7c3013c67e50c8a8"
+}

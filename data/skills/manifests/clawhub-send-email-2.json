@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16047,
+  "uuid": "skill-clawhub-send-email-2",
+  "skillKey": "clawhub-send-email-2",
+  "name": "Send Email",
+  "summary": "Send emails via SMTP with support for HTML formatting, file attachments, and email templates. Use when users ask to: (1) Send an email, (2) Email someone, (3...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.send_email_2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangyendt",
+      "features": [
+        "Send emails via SMTP with support for HTML formatting, file attachments, and email templates",
+        "Use when users ask to: (1) Send an email, (2) Email someone, (3..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/send-email-2@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18455758?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "send-email-2",
+      "url": "https://clawhub.ai/skills/send-email-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "send-email-2",
+    "url": "https://clawhub.ai/skills/send-email-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/send-email-2-d74fc24355f6a768.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/send-email-2@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-send-email-2-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56fedd68b204a19eba56e92a0229a1d958d57fb7c7ad687adb664c980566568e",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T00:37:57.467Z"
+}

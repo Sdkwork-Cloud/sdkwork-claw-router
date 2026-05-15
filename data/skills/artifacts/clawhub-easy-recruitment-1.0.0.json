@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/easy-recruitment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easy_recruitment",
+  "skill": {
+    "id": 70041,
+    "skillKey": "clawhub-easy-recruitment",
+    "name": "recruitment-assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easy-recruitment",
+    "url": "https://clawhub.ai/skills/easy-recruitment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easy-recruitment-7f1d39c257e6883e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能招聘助手。根据职位JD自动筛选和评估简历，输出候选人排序报告，并为每个候选人生成定制化面试问题清单。当用户需要筛选简历、评估候选人匹配度、准备面试问题时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "heyweekly",
+      "userId": "publishers:heyweekly",
+      "displayName": "HeyWeekly",
+      "image": "https://avatars.githubusercontent.com/u/27213503?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 466,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772708661320,
+      "changelog": "- 首次发布，智能招聘助手 1.0.0 版本。\n- 支持自动批量筛选与解析任意格式简历（PDF、Word、HTML、TXT），根据 JD.txt 自动匹配和评分。\n- 输出包含候选人排序报告、详细匹配分析与待确认风险点。\n- 按岗位 JD 和可选面试官偏好，定制化生成每位候选人专属面试问题清单。\n- 报告支持本地 HTML 或 Markdown 格式导出，便于打印与分享。\n- 所有简历与数据处理均本地完成，保证隐私安全。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:637b1f3c78955e942cc8278a52ecaf7d6d6a46234868d9bda457636a1a932081"
+}

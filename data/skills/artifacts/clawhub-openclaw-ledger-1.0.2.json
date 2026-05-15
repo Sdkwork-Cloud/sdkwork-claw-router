@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-ledger@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_ledger",
+  "skill": {
+    "id": 12664,
+    "skillKey": "clawhub-openclaw-ledger",
+    "name": "Openclaw Ledger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-ledger",
+    "url": "https://clawhub.ai/skills/openclaw-ledger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-ledger-3672168c834a39ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tamper-evident audit trail for agent sessions. Hash-chained logs of workspace changes with cryptographic verification. Know exactly what changed, when, and detect if anyone altered the record. Free alert layer — upgrade to openclaw-ledger-."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "atlaspa",
+      "userId": "publishers:atlaspa",
+      "displayName": "AtlasPA",
+      "image": "https://avatars.githubusercontent.com/u/231540010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1713,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770891981767,
+      "changelog": "- Documentation updated to remove promotion of openclaw-ledger-pro from SKILL.md and README.md.\n- References to premium audit and forensics features have been removed from the documentation.\n- Core functionality, usage instructions, and cross-platform support documentation remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ca23117511afbbb5a699fa87ff1df0d19ba58c061a6c27322fc19105a6fb72fc"
+}

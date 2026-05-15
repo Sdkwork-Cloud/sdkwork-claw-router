@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60237,
+  "uuid": "skill-clawhub-stove-maker-api",
+  "skillKey": "clawhub-stove-maker-api",
+  "name": "Stove Maker Api",
+  "summary": "使用 Stove Protocol 的 Maker API 管理机构用户的挂单、仓位与相关实时报价推送，基于 JWT 认证访问。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stove_maker_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zschen211",
+      "features": [
+        "使用 Stove Protocol 的 Maker API 管理机构用户的挂单、仓位与相关实时报价推送，基于 JWT 认证访问。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stove-maker-api@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67882777?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stove-maker-api",
+      "url": "https://clawhub.ai/skills/stove-maker-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stove-maker-api",
+    "url": "https://clawhub.ai/skills/stove-maker-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stove-maker-api-ae5eceb7f8d04602.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stove-maker-api@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stove-maker-api-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:072b6a1d9771ad1b96898b1e186e2198599bb752418e150520fb91c4a261961f",
+      "artifactSizeBytes": 2466
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T09:26:32.382Z"
+}

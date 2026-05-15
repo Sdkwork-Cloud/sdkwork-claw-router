@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-exchange-activitycenter@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_activitycenter",
+  "skill": {
+    "id": 32830,
+    "skillKey": "clawhub-gate-exchange-activitycenter",
+    "name": "gate-exchange-activitycenter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-activitycenter",
+    "url": "https://clawhub.ai/skills/gate-exchange-activitycenter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-activitycenter-d2db8b904b3e0ed6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gate platform activity and campaign hub skill. Use when the user asks about trading competitions, airdrops, or their enrolled activities. Triggers on 'recomm..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gate-exchange",
+      "userId": "s172g4d1dcv6ccs6desbb2xw1583qza9",
+      "displayName": "Gate",
+      "image": "https://avatars.githubusercontent.com/u/33109813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775557950962,
+      "changelog": "- Added OpenClaw-specific metadata to SKILL.md for improved compatibility and deployment support.\n- Updated installation check instructions to explicitly require using the local Gate MCP installation flow.\n- Changed reference to shared runtime rules from external repo link to a local file path.\n- Added references/gate-runtime-rules.md file for local rule enforcement.\n- Version and date updated accordingly.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:beedbf6bdeb7cdca44adb86ba4d0442dbf9f17d42841b7d6e3c3068c3887df28"
+}

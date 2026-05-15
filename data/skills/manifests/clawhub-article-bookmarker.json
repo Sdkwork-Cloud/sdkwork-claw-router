@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23189,
+  "uuid": "skill-clawhub-article-bookmarker",
+  "skillKey": "clawhub-article-bookmarker",
+  "name": "article-bookmarker",
+  "summary": "Save and organize web articles as bookmarks with AI summaries and auto-tagging. Use when the user wants to bookmark or collect articles.",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_bookmarker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chliny",
+      "features": [
+        "Save and organize web articles as bookmarks with AI summaries and auto-tagging",
+        "Use when the user wants to bookmark or collect articles."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/article-bookmarker@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1661707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "article-bookmarker",
+      "url": "https://clawhub.ai/skills/article-bookmarker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-bookmarker",
+    "url": "https://clawhub.ai/skills/article-bookmarker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-bookmarker-22534979977fde0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/article-bookmarker@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-article-bookmarker-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ec62017cb6266ebc9d03f3e615bd2985c24a7600eac5d0c474a842023a07114",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T15:12:48.151Z"
+}

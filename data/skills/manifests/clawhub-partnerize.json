@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30939,
+  "uuid": "skill-clawhub-partnerize",
+  "skillKey": "clawhub-partnerize",
+  "name": "Partnerize",
+  "summary": "Partnerize integration. Manage Organizations. Use when the user wants to interact with Partnerize data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.partnerize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Partnerize integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Partnerize data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/partnerize@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "partnerize",
+      "url": "https://clawhub.ai/skills/partnerize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "partnerize",
+    "url": "https://clawhub.ai/skills/partnerize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/partnerize-a88751e971fe5afe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/partnerize@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-partnerize-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:428407a0e5ebb559b8fdae612975a85b6cd2efe7de0073ea1822610a880d3e5d",
+      "artifactSizeBytes": 1824
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:22:06.475Z"
+}

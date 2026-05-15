@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecommerce-product-research@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_product_research",
+  "skill": {
+    "id": 13989,
+    "skillKey": "clawhub-ecommerce-product-research",
+    "name": "Ecommerce Product Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-product-research",
+    "url": "https://clawhub.ai/skills/ecommerce-product-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-product-research-02e747136172f6bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research ecommerce products and stores using TikTok and Facebook ads, product data, and store intelligence from PipiAds."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fanyanggod",
+      "userId": "s176gtyby3x3jz51q780av8wjn83paxt",
+      "displayName": "fanyanggod",
+      "image": "https://avatars.githubusercontent.com/u/44659216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1293,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775098909538,
+      "changelog": "- Updated setup instructions to clarify where to access the dashboard and obtain/manage API keys.\n- Added references to the official PipiAds and PipiSpy websites for real-time data and API key management.\n- No functional or API changes were made.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:547d75de5a8ebbf96d27b27c897344f8f3db2702814411ec7c7aaf110994c103"
+}

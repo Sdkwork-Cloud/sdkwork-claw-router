@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48864,
+  "uuid": "skill-clawhub-remote-browser",
+  "skillKey": "clawhub-remote-browser",
+  "name": "Remote Browser",
+  "summary": "Control a remote Chrome browser via HTTP API (Kubernetes or Docker backend). Use for web automation, form filling, navigation, and page inspection on sites t...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remote_browser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vasilii Vazhesov",
+      "features": [
+        "Control a remote Chrome browser via HTTP API (Kubernetes or Docker backend)",
+        "Use for web automation, form filling, navigation, and page inspection on sites t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/remote-browser@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/955587?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "remote-browser",
+      "url": "https://clawhub.ai/skills/remote-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remote-browser",
+    "url": "https://clawhub.ai/skills/remote-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remote-browser-743d979538be73d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/remote-browser@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-remote-browser-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dada6bbfbbdc853e683b01882eee3c103e662e7b7d3af2104cc5a6d8b075d2a2",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T22:32:52.890Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wb-troubleshooter@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wb_troubleshooter",
+  "skill": {
+    "id": 29924,
+    "skillKey": "clawhub-wb-troubleshooter",
+    "name": "Wb Troubleshooter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wb-troubleshooter",
+    "url": "https://clawhub.ai/skills/wb-troubleshooter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wb-troubleshooter-5643c48e08664966.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Western Blot troubleshooting guide with step-by-step solutions"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lyla0921",
+      "userId": "publishers:lyla0921",
+      "displayName": "Lyla0921",
+      "image": "https://avatars.githubusercontent.com/u/219433372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 293,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773395066985,
+      "changelog": "- Initial release of wb-troubleshooter: a Western Blot troubleshooting tool.\n- Provides step-by-step diagnosis and solutions for common WB issues (high background, no signal, multiple bands, smearing).\n- Accepts user input for symptom and antibody type; returns ranked causes and recommendations.\n- Designed for local execution with medium risk level; includes a detailed security checklist.\n- No additional Python packages required; outputs are restricted to the workspace for data security.\n- Known issues: None; status is Draft with plans for future updates and performance improvements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6860a325f13dd61ccb5bb5822f5fde201f5a0392ad9d0c4ad5e7606886acb88"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/classicalchinese@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.classicalchinese",
+  "skill": {
+    "id": 60585,
+    "skillKey": "clawhub-classicalchinese",
+    "name": "classical-chinese"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "classicalchinese",
+    "url": "https://clawhub.ai/skills/classicalchinese",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/classicalchinese-e5a7fed978662776.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "以文言文压缩输出、节省 token。当用户要求文言回复、节省 token、省输出时触发。支持三档：极致(/e/Extreme)、适度(/m/Medium)、轻微(/l/Light)。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "u5bf",
+      "userId": "s17bqhzcbbz6ah6m0xc8txfx8d84h4j8",
+      "displayName": "u5bf",
+      "image": "https://avatars.githubusercontent.com/u/62391483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775716285511,
+      "changelog": "classicalchinese v1.0.1\n\n- 优化文言压缩技能说明，明确支持三档压缩：极致(/e)、适度(/m)、轻微(/l)\n- 详细说明压缩规则、流程及量化验证方法\n- 增加边界处理规约，包括专有名词、歧义、多轮对话\n- 明确技术内容、代码信息原文保留原则\n- 指定在特定情境下可临时降档，并要求标注",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a7f27bf8738ac908311bcab88cef51c74bbed858cf6890b2b7d2dfccd8a9c0c"
+}

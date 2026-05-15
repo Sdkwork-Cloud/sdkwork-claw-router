@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/perp-lobster@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perp_lobster",
+  "skill": {
+    "id": 14921,
+    "skillKey": "clawhub-perp-lobster",
+    "name": "Perp Lobster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perp-lobster",
+    "url": "https://clawhub.ai/skills/perp-lobster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perp-lobster-b4141e7592469908.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade on Hyperliquid DEX with simple commands. Place market/limit orders on perps, or run automated bots (market making, grid trading) with a web dashboard."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thisnewmark",
+      "userId": "publishers:thisnewmark",
+      "displayName": "Vibetrade",
+      "image": "https://avatars.githubusercontent.com/u/70778549?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 911,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1771640300288,
+      "changelog": "perplobster 1.0.7\n\n- Initializes repo metadata and functionality as described in SKILL.md.\n- Minor metadata adjustments in SKILL.md: removed 'requires' from the 'openclaw' metadata.\n- No code or core logic changes; only a .DS_Store file was added.\n- No impact on user functionality or setup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7f04ccb98d71b6b558772f49af2f18d3fbb2cf875e5c8c8282251964c8cfab33"
+}

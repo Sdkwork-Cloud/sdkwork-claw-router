@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-detection-thinking@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_detection_thinking",
+  "skill": {
+    "id": 38826,
+    "skillKey": "clawhub-task-detection-thinking",
+    "name": "Task Detection + Proactive Thinking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-detection-thinking",
+    "url": "https://clawhub.ai/skills/task-detection-thinking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-detection-thinking-a5677d007e80414f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Incomplete task detection + proactive thinking. Automatically scans task status, identifies anomalies, generates solutions, and attempts auto-fixes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "opendolph",
+      "userId": "s170zcgka72kfpcxdav0wvf2x183h6hj",
+      "displayName": "jason-tiger",
+      "image": "https://avatars.githubusercontent.com/u/266066820?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774348591906,
+      "changelog": "- Initial release: automates task anomaly detection and proactive solution generation.\n- Scans HEARTBEAT.md and WORKING.md to identify stalled, blocked, overdue, duplicate, and other anomalous tasks.\n- Generates multi-step analysis and up to 3 solution options per anomaly, with auto-fix attempts where possible.\n- Outputs detection results and thinking logs to structured memory files; sends critical alerts via Feishu.\n- Supports multiple trigger modes: heartbeat, scheduled scan, and manual command.\n- Flexible configuration for detection frequency, thresholds, auto-fix attempts, and alerting options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b3941c95b87c7c9d8c47289ae2034b38b988e5003ccb4eff8444b936c76dd31c"
+}

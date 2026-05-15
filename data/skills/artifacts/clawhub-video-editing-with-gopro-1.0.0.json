@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-with-gopro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_with_gopro",
+  "skill": {
+    "id": 41223,
+    "skillKey": "clawhub-video-editing-with-gopro",
+    "name": "Video Editing With Gopro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-with-gopro",
+    "url": "https://clawhub.ai/skills/video-editing-with-gopro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-with-gopro-dc6b4bdd14863a60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 3-minute GoPro hiking clip in MP4 into 4K edited action clips just by typing what you need. Whether it's trimming and polishing GoPro action footage f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776766133513,
+      "changelog": "Initial release of \"Video Editing with GoPro\"\n\n- Instantly edit and export GoPro action footage up to 4K by describing your edits.\n- No need for manual timeline editing or export settings; just upload and type instructions.\n- Fast server-side processing on cloud GPU nodes — most jobs complete within minutes.\n- Supports trimming, stabilization, background music, text overlays, batching, and iterative workflows.\n- 100 free usage credits available via anonymous sign-in. \n- Supports major video and audio formats (MP4, MOV, AVI, MP3, WAV, etc).\n- Built-in error handling for upload, credits, and export issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cfcd801ac766d3cc651b7fa4c996b5a3fea5edecc69c791c0f7647735e35a798"
+}

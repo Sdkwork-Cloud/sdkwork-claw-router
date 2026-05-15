@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/interaction-pipeline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interaction_pipeline",
+  "skill": {
+    "id": 41318,
+    "skillKey": "clawhub-interaction-pipeline",
+    "name": "Interaction Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interaction-pipeline",
+    "url": "https://clawhub.ai/skills/interaction-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interaction-pipeline-793fc72a841f361a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provide consistent status updates and concise summaries after each action."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "szpili",
+      "userId": "s175zstpfke2xx66nr9w76mwwx83m787",
+      "displayName": "Szpili",
+      "image": "https://avatars.githubusercontent.com/u/87379393?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774920068319,
+      "changelog": "Initial release of the interaction-pipeline skill providing structured action updates and summaries.\n\n- Delivers consistent status updates after each tool execution using a standardized flow: STARTED → IN_PROGRESS → DONE/BLOCKED.\n- Mandates concise, 2-line summaries after every action or block, specifying what was done and next steps or retry instructions.\n- Includes clear handling of BLOCKED status with error cause and actionable fixes.\n- Ensures integration by overriding default response formats and preventing suppression by other skills.\n- Supports mid-task status queries with current step and estimated completion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3fef4bfc97e9bb21ec963eba554c7a22f1f4beeb8e12cac1818b6d0858d6cbe9"
+}

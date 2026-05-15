@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bakeries@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bakeries",
+  "skill": {
+    "id": 37021,
+    "skillKey": "clawhub-bakeries",
+    "name": "Nearby Bakeries"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bakeries",
+    "url": "https://clawhub.ai/skills/bakeries",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bakeries-9043419c06061702.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find nearby bakeries. Invoke when user asks for bakeries near me."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawkk",
+      "userId": "s170g5yz1q3ksjnn4gz6v24af983h1mh",
+      "displayName": "clawkk",
+      "image": "https://avatars.githubusercontent.com/u/265748372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774237494379,
+      "changelog": "Nearby Bakeries v0.1.0 – Initial Release\n\n- Find bakeries near a given location with options for radius, limit, and filters (e.g., open now, rating, price, keywords).\n- Consistent fields and query behavior for integration and reuse.\n- Error codes for invalid input, data source issues, and rate limiting.\n- Works only with user location permission and supports privacy measures like coordinate fuzzing and short-term caching.\n- Always returns results in the \"bakeries\" category.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4adf599fbc3f2baddeab488c619c2996914207457b487f1f2a8df1b5552a54de"
+}

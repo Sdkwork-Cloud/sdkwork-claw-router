@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-workdays@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_workdays",
+  "skill": {
+    "id": 35246,
+    "skillKey": "clawhub-chinese-workdays",
+    "name": "Chinese Workdays"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-workdays",
+    "url": "https://clawhub.ai/skills/chinese-workdays",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-workdays-f32f9b25f0e5fc60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculate legal working days in China according to official government holiday schedules. Uses State Council-published arrangements to exclude weekends, publ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "manucode2000-max",
+      "userId": "s170js7qvcst1v6r9eqecw9wn983hapr",
+      "displayName": "manucode2000-max",
+      "image": "https://avatars.githubusercontent.com/u/266287573?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774332773560,
+      "changelog": "Complete historical coverage: 21 years of official Chinese holiday data (2007-2019, 2020-2027). Added 2017 (National Day + Mid-Autumn merged). Covers complete evolution from 4-holiday system through 7-holiday revolution, all variations, to modern refinements. Extreme cases: highest 253 workdays (2008), lowest 246 (2017). Production-ready with authoritative government data. Pricing via subscription.json.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3e33edd6d516c5e1ba1eefa25f2c7e2967a4d9b791fdb762b54fb13d9184d85"
+}

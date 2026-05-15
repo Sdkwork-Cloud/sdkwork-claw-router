@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18639,
+  "uuid": "skill-clawhub-mixpanel",
+  "skillKey": "clawhub-mixpanel",
+  "name": "Mixpanel",
+  "summary": "Query Mixpanel analytics with funnels, retention, segmentation, and event tracking via REST API.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mixpanel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Query Mixpanel analytics with funnels, retention, segmentation, and event tracking via REST API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mixpanel@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mixpanel",
+      "url": "https://clawhub.ai/skills/mixpanel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mixpanel",
+    "url": "https://clawhub.ai/skills/mixpanel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mixpanel-6c51a29724410569.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mixpanel@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mixpanel-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:183964c9f2fbe3e72de2ca0c625dc9e5a69ea9fc4a3ce99646d3c39ec475fd21",
+      "artifactSizeBytes": 1809
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T22:05:19.705Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tech-article-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_article_writer",
+  "skill": {
+    "id": 39679,
+    "skillKey": "clawhub-tech-article-writer",
+    "name": "article-writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-article-writer",
+    "url": "https://clawhub.ai/skills/tech-article-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-article-writer-10167e67cd40f4dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Senior technical article editor for creating well-structured articles from research. Use when user requests to write/create a technical article with keywords..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "viodmain",
+      "userId": "s171w13m38m1xnmt7ay5nkb6ss844qz9",
+      "displayName": "viodmain",
+      "image": "https://avatars.githubusercontent.com/u/29937089?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774236931607,
+      "changelog": "Version 1.0.0 of tech-article-writer (article-writer):\n\n- Introduced a structured workflow for creating technical articles, including topic analysis, research, content organization, and output.\n- Integrates with tavily-search for research, obsidian for knowledge base storage, and wechat-toolkit for publishing to WeChat Official Account.\n- Articles are generated in Markdown with required metadata, code examples, and proper attributions.\n- Supports article publication via automated command-line script, adhering to WeChat requirements.\n- Detailed workflow guidance and usage notes now provided in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:198020d6839dc51a0c20362755633a26fc975bdf93161df03a068e4d543ad167"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35469,
+  "uuid": "skill-clawhub-factucat-cli",
+  "skillKey": "clawhub-factucat-cli",
+  "name": "FactuCat CLI",
+  "summary": "Use this skill when an agent needs to install, update, authenticate, or operate the FactuCat CLI to create Mexican CFDI 4.0 invoice drafts, assign customers...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.factucat_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Omar Cruz",
+      "features": [
+        "Use this skill when an agent needs to install, update, authenticate, or operate the FactuCat CL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/factucat-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3529184?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "factucat-cli",
+      "url": "https://clawhub.ai/skills/factucat-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "factucat-cli",
+    "url": "https://clawhub.ai/skills/factucat-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/factucat-cli-7be9c0d8c1c8a818.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/factucat-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-factucat-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ba5c510722a2f672b346dc67c298fc8b9dd89a751dba7e4cdb4a25597fccfbb",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:19:36.410Z"
+}

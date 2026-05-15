@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dreamact@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dreamact",
+  "skill": {
+    "id": 25944,
+    "skillKey": "clawhub-dreamact",
+    "name": "DreamAct"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dreamact",
+    "url": "https://clawhub.ai/skills/dreamact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dreamact-238fe10725247052.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Video-driven face animation using DreamAct API. Animate multiple input images with expressions, lip movements, and head poses from a driving video. Powered b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hy-1990",
+      "userId": "s17dg55r3mmkt8qecrt6ak4xjd83gm1b",
+      "displayName": "hy",
+      "image": "https://avatars.githubusercontent.com/u/65535435?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773062241641,
+      "changelog": "- Added a link to the Dreamface AI tools home page for more resources.\n- Clarified instructions on uploading local files to OSS (get upload policy, then upload).\n- Minor formatting and copy improvements for better readability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8da3909ea64c056dab8fca4fb4d689b5662b36f5d72058093e53a64bc0147c8c"
+}

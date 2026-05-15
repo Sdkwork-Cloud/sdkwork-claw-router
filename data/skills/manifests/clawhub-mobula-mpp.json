@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56003,
+  "uuid": "skill-clawhub-mobula-mpp",
+  "skillKey": "clawhub-mobula-mpp",
+  "name": "Mpp mobula",
+  "summary": "Pay-as-you-go Mobula API access — fetch crypto prices, wallet positions, and market data using a Tempo wallet that pays per call (~$0.0004) in USDC.e. No sub...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mobula_mpp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Flotapponnier",
+      "features": [
+        "Pay-as-you-go Mobula API access — fetch crypto prices, wallet positions, and market data using.",
+        "No sub..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mobula-mpp@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160007691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mobula-mpp",
+      "url": "https://clawhub.ai/skills/mobula-mpp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mobula-mpp",
+    "url": "https://clawhub.ai/skills/mobula-mpp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mobula-mpp-5dcee76a752be4c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mobula-mpp@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-mobula-mpp-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6713ffa6f12d2ffad65e78916746ca2ead89341612cc1a1e75b358fa8ad5908",
+      "artifactSizeBytes": 2084
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T08:56:51.504Z"
+}

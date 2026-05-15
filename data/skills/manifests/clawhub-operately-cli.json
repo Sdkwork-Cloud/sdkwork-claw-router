@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43999,
+  "uuid": "skill-clawhub-operately-cli",
+  "skillKey": "clawhub-operately-cli",
+  "name": "Operately CLI",
+  "summary": "Manage Operately from the CLI: goals, OKRs, projects, tasks, milestones, spaces, documents, discussions, check-ins, reviews, assignments, people, permissions...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.operately_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marko Anastasov",
+      "features": [
+        "Manage Operately from the CLI: goals, OKRs, projects, tasks, milestones, spaces, documents, dis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/operately-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8651?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "operately-cli",
+      "url": "https://clawhub.ai/skills/operately-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "operately-cli",
+    "url": "https://clawhub.ai/skills/operately-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/operately-cli-b4ef7b54793a883c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/operately-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-operately-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b6b6bad8b8a3e2e75ebae7f4f1f45138a1e529bb3c2d899e402bf88aff5b427",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T10:10:07.494Z"
+}

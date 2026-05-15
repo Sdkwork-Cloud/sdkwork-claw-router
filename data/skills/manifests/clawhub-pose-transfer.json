@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31126,
+  "uuid": "skill-clawhub-pose-transfer",
+  "skillKey": "clawhub-pose-transfer",
+  "name": "Pose Transfer",
+  "summary": "AI-powered fashion model pose transfer tool. Generate pose variations of a model/product image using reference pose images while keeping clothing and backgro...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pose_transfer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CAIPEIJUN",
+      "features": [
+        "AI-powered fashion model pose transfer tool",
+        "Generate pose variations of a model/product image using reference pose images while keeping clo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pose-transfer@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87758101?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pose-transfer",
+      "url": "https://clawhub.ai/skills/pose-transfer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pose-transfer",
+    "url": "https://clawhub.ai/skills/pose-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pose-transfer-c4d0b3ea5678e51c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pose-transfer@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pose-transfer-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:145ed75deef5ab1144c921b59ad59f1adf604b8304af79a6cf3ae811e97e25a7",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T11:37:08.561Z"
+}

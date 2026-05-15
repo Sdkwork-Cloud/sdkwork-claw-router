@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-briefing@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_briefing",
+  "skill": {
+    "id": 9184,
+    "skillKey": "clawhub-daily-briefing",
+    "name": "Daily Briefing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-briefing",
+    "url": "https://clawhub.ai/skills/daily-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-briefing-a67a464e56ffd7d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates a warm, compact daily briefing with weather, calendar, reminders, birthdays, and important emails for cron or chat delivery."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "antgly",
+      "userId": "publishers:antgly",
+      "displayName": "antgly",
+      "image": "https://avatars.githubusercontent.com/u/40376804?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3957,
+      "installsAllTime": 49,
+      "installsCurrent": 44,
+      "stars": 3,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1770788775942,
+      "changelog": "Version 1.0.5\n\n- Added _meta.json file for skill metadata.\n- No changes to core functionality or user-facing features.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5f8a7c51478b868ac7e6d6af7a8074f47e080108830f3a519ab10b2d9e5e0ac7"
+}

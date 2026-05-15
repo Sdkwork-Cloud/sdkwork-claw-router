@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/typescript-config-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.typescript_config_generator",
+  "skill": {
+    "id": 59723,
+    "skillKey": "clawhub-typescript-config-generator",
+    "name": "TypeScript Config Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "typescript-config-generator",
+    "url": "https://clawhub.ai/skills/typescript-config-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/typescript-config-generator-76ed72419f399066.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成专业的 TypeScript 配置，支持严格模式、React、Node.js、Webpack 等多种场景，一键生成最佳实践配置。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunshine-del-ux",
+      "userId": "publishers:sunshine-del-ux",
+      "displayName": "Sunshine-del-ux",
+      "image": "https://avatars.githubusercontent.com/u/83053073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 628,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772456938589,
+      "changelog": "Initial release of typescript-config-generator.\n\n- 支持一键生成专业的 TypeScript 配置文件\n- 内置多种预设：strict、node、react、minimal、library\n- 配置涵盖严格类型检查及完整注释\n- 命令行支持 preset、output、target 等选项\n- 提供安装与基本用法说明",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:be589e57504174572c4ab4988283aaa60e55ee8b86623eb03703949aafb391ea"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hamster-self-improving@1.2.9",
+  "version": "1.2.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hamster_self_improving",
+  "skill": {
+    "id": 10916,
+    "skillKey": "clawhub-hamster-self-improving",
+    "name": "Self-Improving Agent (With Self-Reflection)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hamster-self-improving",
+    "url": "https://clawhub.ai/skills/hamster-self-improving",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hamster-self-improving-3bc7e6380a5e591e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-reflection + Self-criticism + Self-learning + Self-organizing memory. Agent evaluates its own work, catches mistakes, and improves permanently. Use befo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theo-jobs",
+      "userId": "publishers:theo-jobs",
+      "displayName": "Theo-jobs",
+      "image": "https://avatars.githubusercontent.com/u/177595285?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2316,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.9",
+      "createdAt": 1773796458416,
+      "changelog": "Refined AGENTS.md memory-routing wording for clarity while preserving behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c07d1415028b52e6e463b6697ee0c3fce7af3d4bcbcf6f76b4d1ebdb88d8416e"
+}

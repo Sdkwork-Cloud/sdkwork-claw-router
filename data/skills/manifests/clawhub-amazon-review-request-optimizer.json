@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34279,
+  "uuid": "skill-clawhub-amazon-review-request-optimizer",
+  "skillKey": "clawhub-amazon-review-request-optimizer",
+  "name": "Amazon Review Request Optimizer",
+  "summary": "Amazon review request optimization agent. Identifies underperforming ASINs by review velocity, calculates optimal timing windows, checks Amazon ToS complianc...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_review_request_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mguozhen",
+      "features": [
+        "Amazon review request optimization agent",
+        "Identifies underperforming ASINs by review velocity, calculates optimal timing windows, checks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-review-request-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1411875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-review-request-optimizer",
+      "url": "https://clawhub.ai/skills/amazon-review-request-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-review-request-optimizer",
+    "url": "https://clawhub.ai/skills/amazon-review-request-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-review-request-optimizer-867186e82a95115f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-review-request-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-review-request-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27835d514b3acbdbfb99c9cdc3c8f6d941e5f22b23c38c799f82a688c94d7ad7",
+      "artifactSizeBytes": 2577
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T21:42:59.281Z"
+}

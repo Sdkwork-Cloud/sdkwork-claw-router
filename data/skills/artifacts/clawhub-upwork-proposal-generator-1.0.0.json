@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/upwork-proposal-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upwork_proposal_generator",
+  "skill": {
+    "id": 15897,
+    "skillKey": "clawhub-upwork-proposal-generator",
+    "name": "Upwork Proposal Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upwork-proposal-generator",
+    "url": "https://clawhub.ai/skills/upwork-proposal-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upwork-proposal-generator-cfc4612cdc9a5263.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically analyze Upwork job posts and create personalized, professional proposals including intro, past cases, pricing, and deadlines."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "katrina-jpg",
+      "userId": "publishers:katrina-jpg",
+      "displayName": "Katrina-jpg",
+      "image": "https://avatars.githubusercontent.com/u/259838385?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 925,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771509668718,
+      "changelog": "- Initial release of Upwork Proposal Generator skill.\n- Automatically analyzes Upwork job posts (link or text) to identify requirements, needed skills, budget, and deadline.\n- Generates a professional, original proposal (up to 300 words) including introduction, past work, unique fit, pricing, and timeline.\n- Outputs proposals in a friendly, professional style tailored specifically to each job, avoiding template language.\n- Supports simple installation via `npx clawhub@latest install upwork-proposal-generator`.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:58e5b6635771ca5e450d37b8ea19b4668a7955c530166115636404e8a862e475"
+}

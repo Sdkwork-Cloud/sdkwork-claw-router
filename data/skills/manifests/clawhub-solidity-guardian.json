@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16004,
+  "uuid": "skill-clawhub-solidity-guardian",
+  "skillKey": "clawhub-solidity-guardian",
+  "name": "Solidity Guardian",
+  "summary": "Smart contract security analysis skill. Detect vulnerabilities, suggest fixes, generate audit reports. Supports Hardhat/Foundry projects. Uses pattern matchi...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solidity_guardian",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aviclaw",
+      "features": [
+        "Smart contract security analysis skill",
+        "Detect vulnerabilities, suggest fixes, generate audit reports",
+        "Supports Hardhat/Foundry projects",
+        "Uses pattern matchi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solidity-guardian@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260149483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solidity-guardian",
+      "url": "https://clawhub.ai/skills/solidity-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solidity-guardian",
+    "url": "https://clawhub.ai/skills/solidity-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solidity-guardian-c8409e9cd37f9fc8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solidity-guardian@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-solidity-guardian-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d72a63d35de15ebe80d2c8aeb77dc4eb786d8e06d717c400ae621c9c11fcc3fd",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T22:18:02.828Z"
+}

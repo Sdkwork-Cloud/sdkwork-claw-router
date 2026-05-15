@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9276,
+  "uuid": "skill-clawhub-domain-dns-ops",
+  "skillKey": "clawhub-domain-dns-ops",
+  "name": "Domain Dns Ops",
+  "summary": "Domain/DNS ops across Cloudflare, DNSimple, Namecheap for Peter. Use for onboarding zones to Cloudflare, flipping nameservers, setting redirects (Page Rules/Rulesets/Workers), updating redirect-worker mappings, and verifying DNS/HTTP. Sour.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.domain_dns_ops",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peter Steinberger",
+      "features": [
+        "Domain/DNS ops across Cloudflare, DNSimple, Namecheap for Peter",
+        "Use for onboarding zones to Cloudflare, flipping nameservers, setting redirects (Page Rules/Rul.",
+        "Source of truth: ~/Projects/manager."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/domain-dns-ops@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "domain-dns-ops",
+      "url": "https://clawhub.ai/skills/domain-dns-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "domain-dns-ops",
+    "url": "https://clawhub.ai/skills/domain-dns-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/domain-dns-ops-1b4460a2206e584b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/domain-dns-ops@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-domain-dns-ops-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee30834949e028864eb14a77bc2f27f5be57728e80bb4a9c57a7f0d89f8ea61c",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-05T22:25:58.097Z"
+}

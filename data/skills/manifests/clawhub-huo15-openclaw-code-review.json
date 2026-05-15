@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59775,
+  "uuid": "skill-clawhub-huo15-openclaw-code-review",
+  "skillKey": "clawhub-huo15-openclaw-code-review",
+  "name": "Huo15 Openclaw Code Review",
+  "summary": "对 GitHub / cnb.cool PR 做综合代码评审（设计 / 实现 / 测试 / 安全 / 可维护五维），借 gh CLI 拉 diff，产出可粘贴到 PR 的评论 markdown。触发词：评审 PR、code review、审一下这个 PR、帮我 review、看看这个合并请求。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_openclaw_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Job Zhao",
+      "features": [
+        "对 GitHub / cnb.cool PR 做综合代码评审（设计 / 实现 / 测试 / 安全 / 可维护五维），借 gh CLI 拉 diff，产出可粘贴到 PR 的评论 markdow."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huo15-openclaw-code-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13188275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huo15-openclaw-code-review",
+      "url": "https://clawhub.ai/skills/huo15-openclaw-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-openclaw-code-review",
+    "url": "https://clawhub.ai/skills/huo15-openclaw-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-openclaw-code-review-61209d95dd22016b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huo15-openclaw-code-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-huo15-openclaw-code-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:772e0a11499642400b2c60e71c4c0761377b9804eb8876e790368841e683b0e9",
+      "artifactSizeBytes": 2169
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T14:34:50.573Z"
+}

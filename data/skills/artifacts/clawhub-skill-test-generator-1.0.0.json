@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-test-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_test_generator",
+  "skill": {
+    "id": 42293,
+    "skillKey": "clawhub-skill-test-generator",
+    "name": "Skill Test Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-test-generator",
+    "url": "https://clawhub.ai/skills/skill-test-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-test-generator-72582565db07d3a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically generate test documentation for existing skills that have scripts but lack testing guidance. Use when a skill has scripts/ directory but no TES..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "834948655",
+      "userId": "s173h1b07z7r3z0xnycw4b21zs84qtrg",
+      "displayName": "风风",
+      "image": "https://avatars.githubusercontent.com/u/59995606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776002123787,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16223806c745ae166170bbbdf5efd1ddbb97478133bb12f5faefc5edaf519f98"
+}

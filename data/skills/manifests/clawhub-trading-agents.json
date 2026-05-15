@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67066,
+  "uuid": "skill-clawhub-trading-agents",
+  "skillKey": "clawhub-trading-agents",
+  "name": "stock trading agents",
+  "summary": "基于 AgentScope 的多智能体股票诊断系统。一键执行完整诊断流程，自动生成技术面、基本面、舆情面分析、研究员辩论、交易员决策、风控讨论及最终投资决策报告。",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trading_agents",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ganyu21",
+      "features": [
+        "基于 AgentScope 的多智能体股票诊断系统。一键执行完整诊断流程，自动生成技术面、基本面、舆情面分析、研究员辩论、交易员决策、风控讨论及最终投资决策报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trading-agents@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25415784?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trading-agents",
+      "url": "https://clawhub.ai/skills/trading-agents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trading-agents",
+    "url": "https://clawhub.ai/skills/trading-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trading-agents-e1875a051f4c3126.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trading-agents@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-trading-agents-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f26b7ce39d275981c9042c7c26316a513fbef2c5a37afbee24065cf75cf417c",
+      "artifactSizeBytes": 2126
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T15:23:56.537Z"
+}

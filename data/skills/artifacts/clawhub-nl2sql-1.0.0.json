@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nl2sql@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nl2sql",
+  "skill": {
+    "id": 62839,
+    "skillKey": "clawhub-nl2sql",
+    "name": "自然语言转 SQL 查询助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nl2sql",
+    "url": "https://clawhub.ai/skills/nl2sql",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nl2sql-394fe8af6c057610.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自然语言转 SQL 查询助手。将用户的自然语言描述转换为 SQL 语句，自动执行并返回结果。 支持连接本地或远程 MySQL 数据库、用户自行指定数据库连接信息（host/port/user/password）、 增删改查（SELECT/INSERT/UPDATE/DELETE）、事务操作、多种输出格式（tabl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyesky",
+      "userId": "publishers:cyesky",
+      "displayName": "沧海一声笑",
+      "image": "https://avatars.githubusercontent.com/u/33210864?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 623,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773315376070,
+      "changelog": "Initial release of the nl2sql skill.\n\n- Converts natural language to SQL queries and executes them on MySQL databases.\n- Supports both local and remote MySQL database connections; users can provide host, port, user, and password.\n- Handles SELECT, INSERT, UPDATE, DELETE queries, as well as transaction operations.\n- Multiple output formats supported: table (default), CSV, and JSON.\n- Strict credential security enforced: never expose database passwords in any output or reply.\n- Includes safety checks for destructive operations (e.g., DELETE/DROP must be confirmed by user).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7ee6134b7ea57c48247f771261b77d5716d67221d5987d76bcebd70e6ec059c"
+}

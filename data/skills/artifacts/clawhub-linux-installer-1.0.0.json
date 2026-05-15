@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linux-installer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linux_installer",
+  "skill": {
+    "id": 35379,
+    "skillKey": "clawhub-linux-installer",
+    "name": "Linux installer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linux-installer",
+    "url": "https://clawhub.ai/skills/linux-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linux-installer-56c5af256c6d3317.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Installs, launches, and uninstalls Linux desktop apps by resolving the safest supported source first, then running a local helper CLI. Use when the user asks..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baladoodle",
+      "userId": "s17f265hb521mkx100bpn0ws1983na7y",
+      "displayName": "Baladoodle",
+      "image": "https://avatars.githubusercontent.com/u/209432705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774558323311,
+      "changelog": "- Initial release of the linux-installer skill.\n- Resolves and installs Linux desktop apps from the safest supported source, asking for user confirmation before any system change.\n- Supports a wide source priority (Flatpak, Snap, native package manager, etc.) with curated community workarounds and unreviewed suggestions as explicit opt-ins.\n- Provides exact install, launch, and uninstall commands, including handling of required tooling bootstraps.\n- Ensures unreviewed or community packages are clearly labeled and require additional user confirmation.\n- Never initiates any install or removal action without explicit user consent.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd9ec778d84baf46033e39aa6eba11aa7769d0154b548013692f91493205b973"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/control-usb-relay@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.control_usb_relay",
+  "skill": {
+    "id": 32228,
+    "skillKey": "clawhub-control-usb-relay",
+    "name": "Control Usb Relay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "control-usb-relay",
+    "url": "https://clawhub.ai/skills/control-usb-relay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/control-usb-relay-8a1dfcbdb4a6ff72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control USB relay modules with on/off switching, state tracking, and automation support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lj-hao",
+      "userId": "publishers:lj-hao",
+      "displayName": "jiahaoli",
+      "image": "https://avatars.githubusercontent.com/u/82585537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773728492839,
+      "changelog": "Version 1.0.2\n\n- Added a new USAGE-GUIDE.md file for improved user guidance.\n- Updated SKILL.md and _meta.json with minor changes.\n- No changes to core logic or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9c2531a4ccadc434ca4b84e9893cc17e1e1dc02a0bd8a63157e47146457533c"
+}

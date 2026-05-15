@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21648,
+  "uuid": "skill-clawhub-humanize-text",
+  "skillKey": "clawhub-humanize-text",
+  "name": "Humanize Text",
+  "summary": "Humanize AI-generated text by removing telltale AI writing patterns. Use when text needs to sound natural and human-written — removing em-dashes, AI filler p...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanize_text",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rustyorb",
+      "features": [
+        "Humanize AI-generated text by removing telltale AI writing patterns",
+        "Use when text needs to sound natural and human-written — removing em-dashes, AI filler p..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/humanize-text@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111198602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "humanize-text",
+      "url": "https://clawhub.ai/skills/humanize-text"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanize-text",
+    "url": "https://clawhub.ai/skills/humanize-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanize-text-3a0fa158ef8fb054.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/humanize-text@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-humanize-text-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bdcbd63b6e41994e1aa5cbae531c99d8dcb85ed242a5fb23f3cc297262d48333",
+      "artifactSizeBytes": 1916
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T12:35:12.565Z"
+}

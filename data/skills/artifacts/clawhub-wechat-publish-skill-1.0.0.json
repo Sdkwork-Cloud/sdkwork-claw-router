@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-publish-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_publish_skill",
+  "skill": {
+    "id": 69652,
+    "skillKey": "clawhub-wechat-publish-skill",
+    "name": "微信创作"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-publish-skill",
+    "url": "https://clawhub.ai/skills/wechat-publish-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-publish-skill-710aa3be66a3c03c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动将 Markdown 文章转为适配微信公众号格式的 HTML，并批量发布至公众号草稿箱，支持封面图生成与专题管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanbinsite",
+      "userId": "publishers:hanbinsite",
+      "displayName": "hanbinsite",
+      "image": "https://avatars.githubusercontent.com/u/32380665?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773835459916,
+      "changelog": "Initial release: Automates publishing Markdown articles to WeChat Official Account drafts.\n\n- Converts Markdown to WeChat-compatible HTML\n- Automatically generates cover images (via rule-based or AI model)\n- Supports batch publishing and multi-topic management\n- Simple setup with environment variables for WeChat and optional AI image API\n- Includes tools for publishing and cover generation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c40170f07a80bc881ffc6db76f7986f38d67814ccebc80e53ce9241c7c6741b7"
+}

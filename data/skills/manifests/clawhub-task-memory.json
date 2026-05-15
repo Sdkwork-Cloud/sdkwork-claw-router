@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65530,
+  "uuid": "skill-clawhub-task-memory",
+  "skillKey": "clawhub-task-memory",
+  "name": "Task Memory",
+  "summary": "任务遗忘防护系统 — 解决 AI Agent 任务发出但未执行的记忆漏洞问题。 当需要创建、追踪、管理长期任务时使用，特别是：提出或承诺了某项计划后、设置 cron/自动化任务时、任务状态变更后、晨间/心跳检查时。 核心功能：通过 todo.json 持久化任务状态，todo_manager.py 管理增/查/改...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huyaohuahk",
+      "features": [
+        "任务遗忘防护系统 — 解决 AI Agent 任务发出但未执行的记忆漏洞问题。 当需要创建、追踪、管理长期任务时使用，特别是：提出或承诺了某项计划后、设置 cron/自动化任务时、任务状态变."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-memory@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200384999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-memory",
+      "url": "https://clawhub.ai/skills/task-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-memory",
+    "url": "https://clawhub.ai/skills/task-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-memory-839733b784fa85d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-memory@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-memory-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b82c94e095bb629f1718659d7c517375ba4d951696c499cfcc7513a1bfdde4d1",
+      "artifactSizeBytes": 2159
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T01:11:14.806Z"
+}

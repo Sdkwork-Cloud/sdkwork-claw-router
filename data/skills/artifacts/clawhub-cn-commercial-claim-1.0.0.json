@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-commercial-claim@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_commercial_claim",
+  "skill": {
+    "id": 69751,
+    "skillKey": "clawhub-cn-commercial-claim",
+    "name": "chinacrive commercial claims ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-commercial-claim",
+    "url": "https://clawhub.ai/skills/cn-commercial-claim",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-commercial-claim-8122342b480fd135.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于中国保险行业协会《商业车险示范产品理赔实务要点（2020试行版）》，为车主提供车险理赔全流程指导。从出险报案到赔款到账，涵盖接报案、调度、查勘、定损、核价核损、人伤处理、理算、核赔等各环节操作要点、所需材料及赔款计算公式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wwbwin",
+      "userId": "s17aa1xnh98pb9632h2p71z609851tab",
+      "displayName": "wwbwin",
+      "image": "https://avatars.githubusercontent.com/u/137308189?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776421799663,
+      "changelog": "新增中国大陆机动车辆保险理赔核心功能，支持快速查询交强险、商业险（车损、三者、车上人员等）理赔流程和常见问题解答。\n- 包括多车批量理赔指导、事故责任划分建议。\n- 优化中文对话体验，专为中国大陆用户设计，支持自然语言输入（如“机动车追尾怎么理赔”）。\n- 确保数据基于公开官方渠道，强调合规与实用性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6997bde56c52e5675ccf79afc096b5446c39c1eed4c55c951295346b97d3340a"
+}

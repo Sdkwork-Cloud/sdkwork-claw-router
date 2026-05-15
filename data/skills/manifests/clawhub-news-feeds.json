@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10809,
+  "uuid": "skill-clawhub-news-feeds",
+  "skillKey": "clawhub-news-feeds",
+  "name": "Simple RSS news feed",
+  "summary": "Fetch latest news headlines from major RSS feeds (BBC, Reuters, AP, Al Jazeera, NPR, The Guardian, DW).",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_feeds",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lknik",
+      "features": [
+        "Fetch latest news headlines from major RSS feeds (BBC, Reuters, AP, Al Jazeera, NPR, The Guardi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-feeds@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13951853?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-feeds",
+      "url": "https://clawhub.ai/skills/news-feeds"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-feeds",
+    "url": "https://clawhub.ai/skills/news-feeds",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-feeds-3b180f70b240b6ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-feeds@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-feeds-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a9b64c6b48d8413fba8d254c86a45655dbbdfb20dbe7d133ae397dae4f91ec9",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T12:25:24.773Z"
+}

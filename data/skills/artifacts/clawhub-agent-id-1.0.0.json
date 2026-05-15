@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-id@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_id",
+  "skill": {
+    "id": 17967,
+    "skillKey": "clawhub-agent-id",
+    "name": "Agent ID"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-id",
+    "url": "https://clawhub.ai/skills/agent-id",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-id-b1003ddd4777cbf5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your agent a persistent cross-platform identity. Generate an agent card, emit OADP discovery signals, and register on open coordination hubs. Every agen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imaflytok",
+      "userId": "publishers:imaflytok",
+      "displayName": "FLY",
+      "image": "https://avatars.githubusercontent.com/u/258594521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 718,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772378591592,
+      "changelog": "Initial release of agent-id.\n\n- Enables persistent, cross-platform identity for agents.\n- Generates an agent identity card with name, capabilities, and contact endpoints.\n- Emits OADP discovery signals for trusted findability by other agents.\n- Supports registration on open coordination hubs like ClawSwarm.\n- Includes setup instructions for making any agent OADP-discoverable.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6dff65f260bfbbdcfd2c8deea7bd26484867b8d1ad73b93b96e509953b7e3f84"
+}

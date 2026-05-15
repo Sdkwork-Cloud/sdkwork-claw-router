@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-defense-qa-code-training@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_defense_qa_code_training",
+  "skill": {
+    "id": 45520,
+    "skillKey": "clawhub-paper-defense-qa-code-training",
+    "name": "Paper Defense Q&A + Code Audit + Visual Answer Cards"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-defense-qa-code-training",
+    "url": "https://clawhub.ai/skills/paper-defense-qa-code-training",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-defense-qa-code-training-c06e7d8c4f334f27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prepare evidence-grounded computer science paper defense Q&A, code/training audit, reviewer-style attack surfaces, mock-defense scripts, backup-slide plans,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "c-narcissus",
+      "userId": "s177jw27anm32qt3dm1c7dq0jh851mjz",
+      "displayName": "c-narcissus",
+      "image": "https://avatars.githubusercontent.com/u/168325551?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777873928861,
+      "changelog": "Version 1.1.0\n\n- Updated instructions for Codex/CLI/agent usage to prioritize invoking the imagegen skill for image generation.\n- Clarified that ChatGPT Images 2.0 / gpt-image-2 is now preferred for image tasks unless otherwise specified or a user-approved image API is provided.\n- Improved guidance on image/text separation, rendering, and image overlay workflow for defense visuals.\n- No code changes; documentation, process, and guidelines updated for integration and image generation flow.\n- Version bump to reflect significant workflow clarifications.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:18963f677dd0f07fcb21b5cce69e4c0e40fcdb6647a1aeefef99fac963fc2826"
+}

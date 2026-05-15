@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/min-validate-idea@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.min_validate_idea",
+  "skill": {
+    "id": 71295,
+    "skillKey": "clawhub-min-validate-idea",
+    "name": "Validate Idea"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "min-validate-idea",
+    "url": "https://clawhub.ai/skills/min-validate-idea",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/min-validate-idea-547c1fa28b7cda29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用极简主义创业者框架验证商业创意。 当用户有一个商业创意，想在构建任何东西之前测试它是否值得追求时使用。 核心：验证通过销售而非构建来实现。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ethan-china",
+      "userId": "s17fky7r08f4zyfpzqbwrkpesh83yx5z",
+      "displayName": "ethan-china",
+      "image": "https://avatars.githubusercontent.com/u/272385452?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776132155118,
+      "changelog": "Initial release - based on The Minimalist Entrepreneur by Sahil Lavingia",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c1e42d1f5bf9e95070ce1ddfc3979ba47c2864c56058d282dcc3a23292e2aed"
+}

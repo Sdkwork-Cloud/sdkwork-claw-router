@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vx-best-practices@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vx_best_practices",
+  "skill": {
+    "id": 37569,
+    "skillKey": "clawhub-vx-best-practices",
+    "name": "Vx Best Practices"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vx-best-practices",
+    "url": "https://clawhub.ai/skills/vx-best-practices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vx-best-practices-3fab87070f7af787.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Best practices for using vx effectively. Use when following recommended patterns for tool management, project setup, and team workflows with vx."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "loonghao",
+      "userId": "s176cy7je3jzfnkewtyz7ja0e183m3t9",
+      "displayName": "Hal",
+      "image": "https://avatars.githubusercontent.com/u/13111745?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775367375505,
+      "changelog": "Automated sync from refs/heads/main (61bb0cb06a8097333af0f26227f88b797d83bcb4)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2dfb774e1ec118ee8a3dfc140ae151f167fedab4f580f0b7ff30a3e5515acc54"
+}

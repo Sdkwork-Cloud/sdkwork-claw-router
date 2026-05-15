@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stripe-best-practices@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stripe_best_practices",
+  "skill": {
+    "id": 10813,
+    "skillKey": "clawhub-stripe-best-practices",
+    "name": "Stripe Best Practices"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stripe-best-practices",
+    "url": "https://clawhub.ai/skills/stripe-best-practices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stripe-best-practices-c3c67a2c402e59e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Best practices for building Stripe payment integrations"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ifoster01",
+      "userId": "publishers:ifoster01",
+      "displayName": "ifoster01",
+      "image": "https://avatars.githubusercontent.com/u/81444525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2258,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770416198953,
+      "changelog": "Initial release of the \"stripe-best-practices\" skill, providing guidance for Stripe payment integrations.\n\n- Lists best practices and preferences for integrating Stripe payments, subscriptions, and Connect.\n- Details clear \"always\" and \"never\" constraints for using specific Stripe APIs and features.\n- Offers integration recommendations for common scenarios (recurring billing, platforms, migrations).\n- Includes references to Stripe documentation for further guidance and decision support.\n\nPulled directly from: https://skills.sh/stripe/ai/stripe-best-practices",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:946de7b58dd6b010da4be920cf6ed3b6587cea09546e52062a5e6045f3255583"
+}

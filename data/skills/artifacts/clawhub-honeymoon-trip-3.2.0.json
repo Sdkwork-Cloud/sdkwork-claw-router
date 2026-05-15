@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/honeymoon-trip@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.honeymoon_trip",
+  "skill": {
+    "id": 52852,
+    "skillKey": "clawhub-honeymoon-trip",
+    "name": "honeymoon-trip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "honeymoon-trip",
+    "url": "https://clawhub.ai/skills/honeymoon-trip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/honeymoon-trip-93c2209f442e2d67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan a dreamy honeymoon — luxury hotels, romantic activities, couples' spa, sunset dinners, and unforgettable experiences for newlyweds. Also supports: fligh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775719425794,
+      "changelog": "Version 3.2.0 of honeymoon-trip focuses on enforcing reliable real-time data sourcing and introduces strict output validation.\n\n- Fully revised execution rules: All travel results now strictly originate from `flyai` CLI command outputs—never training data.\n- Mandatory CLI environment checks: Attempts installation if missing, requires manual installation on repeated failure.\n- Every recommended result must include a real-time `[Book]({detailUrl})` link for booking via Fliggy.\n- New output validation step: If any results lack valid booking links, re-execution is required before responding.\n- Expanded, clear workflow and explicit scenario playbooks to handle luxury, beach, and budget honeymoons.\n- Enhanced multi-lingual support and clear output formatting, including brand tag and markdown tables.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efdea6d83a700a704be798cc7968b2a036146d9ac4447ccac81e8e651f61ec4e"
+}

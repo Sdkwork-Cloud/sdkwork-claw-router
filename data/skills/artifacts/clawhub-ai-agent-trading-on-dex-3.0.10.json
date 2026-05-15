@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-agent-trading-on-dex@3.0.10",
+  "version": "3.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_agent_trading_on_dex",
+  "skill": {
+    "id": 24292,
+    "skillKey": "clawhub-ai-agent-trading-on-dex",
+    "name": "AI Agent Trading on DEX"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-agent-trading-on-dex",
+    "url": "https://clawhub.ai/skills/ai-agent-trading-on-dex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-agent-trading-on-dex-a9a7fe2354e65415.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Backtest and deploy trading strategies on Superior Trade's managed cloud."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mmmmssss8899",
+      "userId": "s179espem2gcc3qm0nhr963fpn83j6pf",
+      "displayName": "MMMMSSSS8899",
+      "image": "https://avatars.githubusercontent.com/u/259170501?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 414,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "3.0.10",
+      "createdAt": 1775123268770,
+      "changelog": "Version 3.1.0 introduces stricter invocation controls and explicit user confirmation for live trading actions.\n\n- Added explicit declaration that user confirmation is required before starting or creating any trading deployment.\n- Defined invocation mode as \"user-confirmed\" for enhanced operational safety.\n- No logic, feature, or endpoint changes; documentation and metadata updates only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a2bfd40c04252a125db4e761e9f925cbb45d3de7283fb401ca2c7aa20ac3f6a8"
+}

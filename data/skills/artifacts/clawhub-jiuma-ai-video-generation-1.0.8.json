@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jiuma-ai-video-generation@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiuma_ai_video_generation",
+  "skill": {
+    "id": 59885,
+    "skillKey": "clawhub-jiuma-ai-video-generation",
+    "name": "Jiuma AI Video Generation (Free)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiuma-ai-video-generation",
+    "url": "https://clawhub.ai/skills/jiuma-ai-video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiuma-ai-video-generation-5d3d5333216295d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "免费的ai视频生成创作平台（Video Generation Skill），支持生成视频、图片、声音、视频动作模仿、视频人物替换等等。九马AI官网：https://www.jiuma.com"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "github-gamma",
+      "userId": "s17a22w8q925xd9hnqsrjnm6gs83n8af",
+      "displayName": "github-gamma",
+      "image": "https://avatars.githubusercontent.com/u/109053081?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1775547821650,
+      "changelog": "- Updated all command-line code examples to use the correct skill folder name jiuma-ai-video-generation.\n- Added repeated reminders to adapt command-line path syntax based on the user's operating system, especially for Windows users.\n- Revised \"任务类型(task_type)\" descriptions and examples, including new naming such as \"wan2.6(ref2video)\" and \"wan2.6(text2video)\".\n- Improved clarity and accuracy in task parameter explanations and usage instructions.\n- Added and highlighted multiple \"重要\" (Important) sections to prevent path and OS-related errors for end-users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:836f134fc5ac8cb9be3836629caf42bac28d036c657655fd21527aff49d5c981"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10361,
+  "uuid": "skill-clawhub-qmd-markdown-search",
+  "skillKey": "clawhub-qmd-markdown-search",
+  "name": "QMD - Quick Markdown Search",
+  "summary": "Local hybrid search for markdown notes and docs. Use when searching notes, finding related content, or retrieving documents from indexed collections.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qmd_markdown_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "emcmillan80",
+      "features": [
+        "Local hybrid search for markdown notes and docs",
+        "Use when searching notes, finding related content, or retrieving documents from indexed collect."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qmd-markdown-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166746577?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qmd-markdown-search",
+      "url": "https://clawhub.ai/skills/qmd-markdown-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qmd-markdown-search",
+    "url": "https://clawhub.ai/skills/qmd-markdown-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qmd-markdown-search-077e095ed5b6c391.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qmd-markdown-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qmd-markdown-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:102197cd4780a0339f2ff39cf88fc0da874c1065fb75905b4901989e8a4cf2f2",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T13:53:22.515Z"
+}

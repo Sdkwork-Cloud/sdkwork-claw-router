@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71620,
+  "uuid": "skill-clawhub-king-wen-hexagrams",
+  "skillKey": "clawhub-king-wen-hexagrams",
+  "name": "king-wen-hexagrams",
+  "summary": "以文王六十四卦为根本，依用户所问定卦、排卦、解卦，并以庄重克制的口吻给出趋势判断、风险提醒与行止建议。适用于首次登记命主资料、问事起卦、已得卦象解读、卦义查询、每日运势与定时追问场景。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.king_wen_hexagrams",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wjp",
+      "features": [
+        "以文王六十四卦为根本，依用户所问定卦、排卦、解卦，并以庄重克制的口吻给出趋势判断、风险提醒与行止建议。适用于首次登记命主资料、问事起卦、已得卦象解读、卦义查询、每日运势与定时追问场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/king-wen-hexagrams@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43528116?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "king-wen-hexagrams",
+      "url": "https://clawhub.ai/skills/king-wen-hexagrams"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "king-wen-hexagrams",
+    "url": "https://clawhub.ai/skills/king-wen-hexagrams",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/king-wen-hexagrams-1190eb0330187704.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/king-wen-hexagrams@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-king-wen-hexagrams-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f183ace879c719309ec668b9a6cb71357d0575a961783b8da3e1a3dc3893bb9e",
+      "artifactSizeBytes": 2620
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T02:13:37.981Z"
+}

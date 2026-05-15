@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21734,
+  "uuid": "skill-clawhub-coinbase",
+  "skillKey": "clawhub-coinbase",
+  "name": "Coinbase",
+  "summary": "Think about digital assets like an institutional allocator, not a retail speculator. Analyze custody, risk isolation, exposure design, recordkeeping, and tax...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coinbase",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AGImodel",
+      "features": [
+        "Think about digital assets like an institutional allocator, not a retail speculator",
+        "Analyze custody, risk isolation, exposure design, recordkeeping, and tax..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coinbase@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216470445?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coinbase",
+      "url": "https://clawhub.ai/skills/coinbase"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coinbase",
+    "url": "https://clawhub.ai/skills/coinbase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coinbase-f80f21938e5248ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coinbase@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coinbase-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a3e4530962e85ef616522b202ea2ad66c60cca1235d965436a549b2d269f309",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T19:36:19.223Z"
+}

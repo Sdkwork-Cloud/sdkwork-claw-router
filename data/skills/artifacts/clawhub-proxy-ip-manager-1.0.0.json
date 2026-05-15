@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proxy-ip-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxy_ip_manager",
+  "skill": {
+    "id": 63030,
+    "skillKey": "clawhub-proxy-ip-manager",
+    "name": "kuaidaili-proxy-ip-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxy-ip-manager",
+    "url": "https://clawhub.ai/skills/proxy-ip-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxy-ip-manager-3350572cf370d1c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "快代理(Kuaidaili)智能管理技能，专为快代理用户设计。支持API配置、订单信息获取、到期提醒、IP健康检测、智能并发调度、使用统计。触发场景：(1) 用户提及\"快代理\"、\"kuaidaili\"、\"kdlapi\"、\"代理IP\"；(2) 用户需要检查快代理订单状态、IP质量、并发设置；(3) 用户使用命令 s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kuaidaili-ai",
+      "userId": "s17c032m0c61r3f5kphv04m56n84383f",
+      "displayName": "kuaidaili-ai",
+      "image": "https://avatars.githubusercontent.com/u/273062336?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776412475157,
+      "changelog": "proxy-ip-manager v1.0.0\n\n- 面向快代理(Kuaidaili)用户的智能代理IP管理工具\n- 支持 API 密钥本地安全配置与脱敏输出\n- 覆盖订单信息获取、到期提醒、IP健康检测、智能并发调度等核心功能\n- 提供 get_ip、get_order_info、check_expiry、check_ip_health、get_concurrency、stats 等便捷命令\n- 详尽输出错误码、异常处理和API返回解析文档\n- 支持多类型快代理产品，包括隧道代理、私密代理、独享代理、海外代理等",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5bd0e1a2bbe72d06bf64852f72295f27d8afa00f58e2c804117e7d0d6ff6ede"
+}

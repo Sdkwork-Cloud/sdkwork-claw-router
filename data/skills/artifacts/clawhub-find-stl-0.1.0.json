@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-stl@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_stl",
+  "skill": {
+    "id": 10309,
+    "skillKey": "clawhub-find-stl",
+    "name": "Find Stl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-stl",
+    "url": "https://clawhub.ai/skills/find-stl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-stl-11eb9e895626ae86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and download ready-to-print 3D model files (STL/3MF/ZIP) for a concept or specific part by querying Printables (first). Use when an agent needs to find an existing model, capture license/attribution, download the source files, and o."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ajmwagar",
+      "userId": "publishers:ajmwagar",
+      "displayName": "ajmwagar",
+      "image": "https://avatars.githubusercontent.com/u/25015651?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2559,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769949581767,
+      "changelog": "Initial release: Printables search + fetch + manifest.json output",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ede32f81b5a09a4b0f3458954a7f9a9aadc518d37d564bd5aa6f9d2be5ebf81b"
+}

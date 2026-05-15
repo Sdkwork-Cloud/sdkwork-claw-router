@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aegis@3.4.0",
+  "version": "3.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aegis",
+  "skill": {
+    "id": 41063,
+    "skillKey": "clawhub-aegis",
+    "name": "AEGIS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aegis",
+    "url": "https://clawhub.ai/skills/aegis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aegis-598f7a741a1e3a05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated Emergency Geopolitical Intelligence System — real-time threat monitoring and safety alerts for civilians in conflict zones. Use when: (1) setting u..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pleasechooseusername",
+      "userId": "publishers:pleasechooseusername",
+      "displayName": "PleaseChooseUsername",
+      "image": "https://avatars.githubusercontent.com/u/155990435?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 637,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "3.4.0",
+      "createdAt": 1773652174418,
+      "changelog": "Incident-level dedup: prevents channel spam. Multiple reports about the same event (e.g., 7 DXB airport updates) now collapse into 1 alert.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d6dc45fde3a3a1f1b5ebe1237e44c0e30666db9c9e54bec22bcbb0cbf1f0058"
+}

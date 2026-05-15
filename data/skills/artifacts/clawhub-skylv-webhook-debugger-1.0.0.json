@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-webhook-debugger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_webhook_debugger",
+  "skill": {
+    "id": 47441,
+    "skillKey": "clawhub-skylv-webhook-debugger",
+    "name": "Skylv Webhook Debugger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-webhook-debugger",
+    "url": "https://clawhub.ai/skills/skylv-webhook-debugger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-webhook-debugger-f21193583a406d06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tests and debugs webhooks. Inspects requests and validates responses. Triggers: test webhook, webhook debug, http webhook."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 104,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777863086972,
+      "changelog": "Initial release of the webhook testing and debugging tool.\n\n- Supports testing and debugging of webhook integrations.\n- Inspects incoming webhook requests and validates responses.\n- Provides sample test payloads and response code details.\n- Includes references to common webhook testing tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45cd52fa7160fea87a58f67c215fc5faaffa5149787d367fcb29c6c439ae2252"
+}

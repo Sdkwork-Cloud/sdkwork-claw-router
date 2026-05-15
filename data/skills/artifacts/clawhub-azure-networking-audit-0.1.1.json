@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/azure-networking-audit@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.azure_networking_audit",
+  "skill": {
+    "id": 29219,
+    "skillKey": "clawhub-azure-networking-audit",
+    "name": "Azure Networking Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "azure-networking-audit",
+    "url": "https://clawhub.ai/skills/azure-networking-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/azure-networking-audit-47d331e399685b67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Azure VNet networking audit covering address space design, NSG rule evaluation, Azure Firewall policy analysis, ExpressRoute and VPN Gateway connectivity, VN..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vahagn-madatyan",
+      "userId": "s172e0s6wm08gdxkw6pxzkwzgh841b69",
+      "displayName": "Vahagn Madatyan",
+      "image": "https://avatars.githubusercontent.com/u/74753362?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774139335476,
+      "changelog": "azure-networking-audit v0.1.1\n\n- Added new reference documents: CLI command reference and VNet architecture model.\n- Updated skill metadata to include OpenClaw-specific fields.\n- No changes to overall skill description or audit procedure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55104dabe8e2be61ea533eb9a44a99718e408f411ad1cc12070faade240ebed1"
+}

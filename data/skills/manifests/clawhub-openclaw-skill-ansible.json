@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19029,
+  "uuid": "skill-clawhub-openclaw-skill-ansible",
+  "skillKey": "clawhub-openclaw-skill-ansible",
+  "name": "Openclaw Skill Ansible",
+  "summary": "Operate and secure mesh workflows across gateways, including plugin bootstrap, invite/join auth handshake, resilient routing, capability contract lifecycle,...",
+  "version": "0.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_ansible",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "likesjx",
+      "features": [
+        "Operate and secure mesh workflows across gateways, including plugin bootstrap, invite/join auth."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-ansible@0.1.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1439931?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-ansible",
+      "url": "https://clawhub.ai/skills/openclaw-skill-ansible"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-ansible",
+    "url": "https://clawhub.ai/skills/openclaw-skill-ansible",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-ansible-82169d6ff193487e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-ansible@0.1.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-ansible-0.1.6.json",
+      "version": "0.1.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1cf4b0a6db68660469bee7e3da4cc63e586eda261e326812126e4ef8b0615738",
+      "artifactSizeBytes": 2059
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T21:46:52.474Z"
+}

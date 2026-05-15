@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rrragflow-skill@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rrragflow_skill",
+  "skill": {
+    "id": 37766,
+    "skillKey": "clawhub-rrragflow-skill",
+    "name": "rrragflow-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rrragflow-skill",
+    "url": "https://clawhub.ai/skills/rrragflow-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rrragflow-skill-fd7b17bfe554355a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use for RAGFlow dataset tasks: create, list, inspect, update, or delete datasets; upload, list, update, or delete documents; start or stop parsing; check par..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "redredrrred",
+      "userId": "s172rnsvmq56t4fj5239e8tkf183gvnm",
+      "displayName": "redredrrred",
+      "image": "https://avatars.githubusercontent.com/u/177295320?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774331449635,
+      "changelog": "- Added Openclaw metadata specifying required environment variables and binaries.\n- Updated all example commands to use python3 instead of python.\n- No logic or workflow changes; documentation and metadata clarifications only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71d0260e0b6ef89f1fb803c7caa9213b4a6f11346a69302053725b9a836a5637"
+}

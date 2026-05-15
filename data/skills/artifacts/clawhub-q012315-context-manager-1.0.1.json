@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/q012315-context-manager@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.q012315_context_manager",
+  "skill": {
+    "id": 63252,
+    "skillKey": "clawhub-q012315-context-manager",
+    "name": "context-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "q012315-context-manager",
+    "url": "https://clawhub.ai/skills/q012315-context-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/q012315-context-manager-400c123b97a23004.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能上下文管理系统 - 支持多模型自适应、分层记忆、动态注入、SQLite 数据库"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "q012315",
+      "userId": "s1740yysseypnkqzhsrek2fsmd83hzan",
+      "displayName": "zone",
+      "image": "https://avatars.githubusercontent.com/u/36264754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774095270968,
+      "changelog": "v1.0.1\n\n- No functional changes; documentation only.\n- SKILL.md updated, but with no substantive content difference from the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f4c1de7f86635f480e2bb93d5082a72aeab561ca98e7d1b9b621af0443a925e"
+}

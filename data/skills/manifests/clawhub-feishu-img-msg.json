@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66813,
+  "uuid": "skill-clawhub-feishu-img-msg",
+  "skillKey": "clawhub-feishu-img-msg",
+  "name": "飞书图片消息",
+  "summary": "飞书图片消息操作技能，当触发飞书发送图片时自动调用本技能。 支持上传图片、发送图片消息、获取图片内容。 Activate when user mentions: 飞书发图、发送图片、上传图片、获取图片、下载图片、image_key。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_img_msg",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BING",
+      "features": [
+        "飞书图片消息操作技能，当触发飞书发送图片时自动调用本技能。 支持上传图片、发送图片消息、获取图片内容。 Activate when user mentions: 飞书发图、发送图片、上传图片."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-img-msg@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6907564?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-img-msg",
+      "url": "https://clawhub.ai/skills/feishu-img-msg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-img-msg",
+    "url": "https://clawhub.ai/skills/feishu-img-msg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-img-msg-ce4a19b1f17f36b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-img-msg@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-img-msg-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c44ce4de17bc07ee0f87ec45271cd3c0a397cf3f50660a38ea267f056460f48",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T03:06:43.609Z"
+}

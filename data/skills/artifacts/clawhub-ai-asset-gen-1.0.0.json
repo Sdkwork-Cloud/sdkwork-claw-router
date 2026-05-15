@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-asset-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_asset_gen",
+  "skill": {
+    "id": 17525,
+    "skillKey": "clawhub-ai-asset-gen",
+    "name": "AI Game Asset Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-asset-gen",
+    "url": "https://clawhub.ai/skills/ai-asset-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-asset-gen-1843a130b15ab5aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered game asset generation guide covering 2D sprites, tilemaps, UI elements, audio, music, and 3D models. Use when generating game assets with AI tools..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thb32133451",
+      "userId": "publishers:thb32133451",
+      "displayName": "Mr.Tang",
+      "image": "https://avatars.githubusercontent.com/u/26052896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 670,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772611258807,
+      "changelog": "AI asset generation with Midjourney/SD",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1d65f1b6552679d3e560ddc2ff09cb784d912f7c729bec01665b44b790cef66b"
+}

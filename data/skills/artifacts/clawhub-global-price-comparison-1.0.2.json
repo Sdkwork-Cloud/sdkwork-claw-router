@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/global-price-comparison@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.global_price_comparison",
+  "skill": {
+    "id": 22060,
+    "skillKey": "clawhub-global-price-comparison",
+    "name": "Global Price Comparison"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "global-price-comparison",
+    "url": "https://clawhub.ai/skills/global-price-comparison",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/global-price-comparison-b8804dbf8efedb00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover and compare the same product across multiple countries and source types (official stores, marketplaces, retailers) using Brave and/or Tavily web sea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wsjwong",
+      "userId": "publishers:wsjwong",
+      "displayName": "Joe Wong",
+      "image": "https://avatars.githubusercontent.com/u/13167524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 467,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772659038448,
+      "changelog": "Discovery strategy update: Brave as primary, Tavily as fallback when Brave fails or returns no results.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b089f50c151564271afa4fea11798d7c99df2cabeaab8b76e807cbf15de5a2fd"
+}

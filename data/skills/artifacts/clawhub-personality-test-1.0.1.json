@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personality-test@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personality_test",
+  "skill": {
+    "id": 11168,
+    "skillKey": "clawhub-personality-test",
+    "name": "OpenClaw Personality Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personality-test",
+    "url": "https://clawhub.ai/skills/personality-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personality-test-8f204116251a395b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Myers-Briggs Type Indicator test - 70 questions to determine your 4-letter personality type"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "milbaxter",
+      "userId": "publishers:milbaxter",
+      "displayName": "Milbaxter",
+      "image": "https://avatars.githubusercontent.com/u/23051236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2150,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769915445574,
+      "changelog": "- Switched from Big Five (BFI-44) to Myers-Briggs Type Indicator (MBTI) personality test.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f6d3d714d7365191b88791fda78415a5fff8a451b299a1c3805a5c6ee402618e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x0x-api-smoketest-1777556197822@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x0x_api_smoketest_1777556197822",
+  "skill": {
+    "id": 49212,
+    "skillKey": "clawhub-x0x-api-smoketest-1777556197822",
+    "name": "x0x-api-smoketest-1777556197822"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x0x-api-smoketest-1777556197822",
+    "url": "https://clawhub.ai/skills/x0x-api-smoketest-1777556197822",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x0x-api-smoketest-1777556197822-fe48e71b7decf159.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scratch skill used to validate CI API publish flow before merge."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimcollinson",
+      "userId": "s17bh76best4jwhr027gf9fep1840yzd",
+      "displayName": "Jim Collinson",
+      "image": "https://avatars.githubusercontent.com/u/13061030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 85,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777556202631,
+      "changelog": "Scratch publish to validate direct API workflow path",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d215edeb251e83aed984fd170f46d2719a03cb0520525fa855a529e0c24aa7c3"
+}

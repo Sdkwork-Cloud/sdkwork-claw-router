@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73421,
+  "uuid": "skill-clawhub-daily-alive-check",
+  "skillKey": "clawhub-daily-alive-check",
+  "name": "还活着么监测服务",
+  "summary": "提供独居人群每日签到与自动监测，支持多渠道紧急通知，保障用户安全与健康状态。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_alive_check",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhdryanchang",
+      "features": [
+        "提供独居人群每日签到与自动监测，支持多渠道紧急通知，保障用户安全与健康状态。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-alive-check@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252296405?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-alive-check",
+      "url": "https://clawhub.ai/skills/daily-alive-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-alive-check",
+    "url": "https://clawhub.ai/skills/daily-alive-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-alive-check-b987acadd68789d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-alive-check@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-alive-check-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03aa3e8fd86cacf23b90a428583be5244bb33f612dfc89af4aee04fa106afed9",
+      "artifactSizeBytes": 2263
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T07:31:51.799Z"
+}

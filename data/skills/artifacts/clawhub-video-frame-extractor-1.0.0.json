@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-frame-extractor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_frame_extractor",
+  "skill": {
+    "id": 33518,
+    "skillKey": "clawhub-video-frame-extractor",
+    "name": "video-frame-extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-frame-extractor",
+    "url": "https://clawhub.ai/skills/video-frame-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-frame-extractor-975dd4cf8ed41142.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when extracting frames from video files, such as generating keyframe sequences from videos, creating video thumbnails at intervals,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huanghaoyu1997",
+      "userId": "s17fm0s1142r7qjhyxkbp8t1g18450n9",
+      "displayName": "Haoyu Huang",
+      "image": "https://avatars.githubusercontent.com/u/31029753?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775214683460,
+      "changelog": "- Initial release of the video-frame-extractor skill.\n- Provides step-by-step guide to extract frames from videos using FFmpeg, with OpenCV as a fallback.\n- Details workflow: FFmpeg installation check, user parameter confirmation, precise command generation, and output verification.\n- Includes commands and guidance for installation on Windows, Linux, and macOS.\n- Explains error handling, directory structure, and tips for best results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fff8f8e1f27e6c31a000746e1fb43321904cd1e4e92954fcba4c1c183073fd4"
+}

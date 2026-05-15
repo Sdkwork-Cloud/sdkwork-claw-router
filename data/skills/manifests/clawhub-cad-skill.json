@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17286,
+  "uuid": "skill-clawhub-cad-skill",
+  "skillKey": "clawhub-cad-skill",
+  "name": "cad-skill",
+  "summary": "Control local CAD applications on Windows including launching apps, opening files, checking status, closing apps, detecting active or running apps, detecting...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cad_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "solvi",
+      "features": [
+        "Control local CAD applications on Windows including launching apps, opening files, checking sta."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cad-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39986255?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cad-skill",
+      "url": "https://clawhub.ai/skills/cad-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cad-skill",
+    "url": "https://clawhub.ai/skills/cad-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cad-skill-d4a11d8575e58263.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cad-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cad-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49bfec4f58a53f74fa1ce022f819b88c6f99eb718621821383b54830664144c6",
+      "artifactSizeBytes": 2272
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T08:23:52.914Z"
+}

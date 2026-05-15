@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-leave-request@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_leave_request",
+  "skill": {
+    "id": 9282,
+    "skillKey": "clawhub-feishu-leave-request",
+    "name": "Feishu Leave Request"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-leave-request",
+    "url": "https://clawhub.ai/skills/feishu-leave-request",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-leave-request-5ab815638fdf47d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assist users in submitting leave requests via Feishu by collecting, confirming, and guiding through form completion and submission steps."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baofeidyz",
+      "userId": "publishers:baofeidyz",
+      "displayName": "baofeidyz",
+      "image": "https://avatars.githubusercontent.com/u/19633896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3907,
+      "installsAllTime": 19,
+      "installsCurrent": 19,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769705809664,
+      "changelog": "- Updated instructions to specify that only the Feishu desktop app is supported (removed web version mention).\n- Minor wording changes for improved clarity and consistency.\n- Clarified navigation steps to match the desktop app process.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1f09b9997579833d5229d4862b20db85dc92fa0ede61cb3d5b6f42e14b11c8c2"
+}

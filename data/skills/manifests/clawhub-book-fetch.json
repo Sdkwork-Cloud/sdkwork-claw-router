@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16744,
+  "uuid": "skill-clawhub-book-fetch",
+  "skillKey": "clawhub-book-fetch",
+  "name": "Book Fetch",
+  "summary": "Download ebooks (epub/pdf) from Anna's Archive and upload them to MEGA automatically. Use when the user asks to download a book, find an ebook, search for a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_fetch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zerone0x",
+      "features": [
+        "Download ebooks (epub/pdf) from Anna's Archive and upload them to MEGA automatically",
+        "Use when the user asks to download a book, find an ebook, search for a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-fetch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39543393?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-fetch",
+      "url": "https://clawhub.ai/skills/book-fetch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-fetch",
+    "url": "https://clawhub.ai/skills/book-fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-fetch-30f6999614350ad9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-fetch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-fetch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a745fc0311d38218111341d5a8508ca24dd6a885b561f94624c099b526fb7bcd",
+      "artifactSizeBytes": 1898
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T17:27:28.646Z"
+}

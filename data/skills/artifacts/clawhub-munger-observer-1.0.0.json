@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/munger-observer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.munger_observer",
+  "skill": {
+    "id": 9812,
+    "skillKey": "clawhub-munger-observer",
+    "name": "Munger Observer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "munger-observer",
+    "url": "https://clawhub.ai/skills/munger-observer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/munger-observer-702623bb78c08830.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily wisdom review applying Charlie Munger's mental models to your work and thinking. Use when asked to review decisions, analyze thinking patterns, detect biases, apply mental models, do a \"Munger review\", or run the Munger Observer. Tri."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jdrhyne",
+      "userId": "s175stkgx5wmnsr24w9hqje36d84r4br",
+      "displayName": "Jonathan Rhyne",
+      "image": "https://avatars.githubusercontent.com/u/7828464?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2960,
+      "installsAllTime": 10,
+      "installsCurrent": 7,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768839745348,
+      "changelog": "Initial release: Daily wisdom review with Charlie Munger's mental models",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8772a84bfff7c0a8f0cb00dcd444b1f21bdf6d2cc5bd305353ecb98f723256e4"
+}

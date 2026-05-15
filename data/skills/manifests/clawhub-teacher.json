@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10772,
+  "uuid": "skill-clawhub-teacher",
+  "skillKey": "clawhub-teacher",
+  "name": "Teacher",
+  "summary": "Explain concepts clearly, adapt to learner levels, and guide understanding with effective teaching patterns.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teacher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Explain concepts clearly, adapt to learner levels, and guide understanding with effective teach."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/teacher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "teacher",
+      "url": "https://clawhub.ai/skills/teacher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teacher",
+    "url": "https://clawhub.ai/skills/teacher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teacher-1057a9604e04b274.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/teacher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-teacher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d80714f17bc3653c74da3837ccf0d814fe1517135c6dd5cfc0d10bcdb631546e",
+      "artifactSizeBytes": 1784
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T21:32:35.263Z"
+}

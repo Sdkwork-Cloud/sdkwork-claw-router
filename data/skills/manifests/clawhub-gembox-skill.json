@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9444,
+  "uuid": "skill-clawhub-gembox-skill",
+  "skillKey": "clawhub-gembox-skill",
+  "name": "gembox-skill",
+  "summary": "Coding assistance for [GemBox components](https://www.gemboxsoftware.com/). Use when users ask about any GemBox component or coding task that can be performed with a GemBox component. This includes GemBox.Spreadsheet (.NET read/write Excel.",
+  "version": "0.9.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gembox_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZSvedic",
+      "features": [
+        "Coding assistance for [GemBox components](https://www.gemboxsoftware.com/)",
+        "Use when users ask about any GemBox component or coding task that can be performed with a GemBo.",
+        "This includes GemBox.Spreadsheet (.NET read/write Excel files), GemBox.Document (.NET read/writ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gembox-skill@0.9.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43754593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gembox-skill",
+      "url": "https://clawhub.ai/skills/gembox-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gembox-skill",
+    "url": "https://clawhub.ai/skills/gembox-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gembox-skill-a743e9d672c7032f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gembox-skill@0.9.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gembox-skill-0.9.0.json",
+      "version": "0.9.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2de2495d108cd4c88aba329b556f8ce3e2a93014e3fa79befbc851a1d00ad20",
+      "artifactSizeBytes": 2383
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T16:55:50.004Z"
+}

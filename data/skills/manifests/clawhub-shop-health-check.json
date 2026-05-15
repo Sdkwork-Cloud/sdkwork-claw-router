@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67127,
+  "uuid": "skill-clawhub-shop-health-check",
+  "skillKey": "clawhub-shop-health-check",
+  "name": "Shop Health Check",
+  "summary": "跨境电商店铺健康度自动巡检 Skill。支持多店铺配置，定时检查站点可用性、响应时间、SSL证书健康度、关键页面404/内容缺失，异常时自动推送到飞书。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shop_health_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zzhimin",
+      "features": [
+        "跨境电商店铺健康度自动巡检 Skill。支持多店铺配置，定时检查站点可用性、响应时间、SSL证书健康度、关键页面404/内容缺失，异常时自动推送到飞书。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shop-health-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71487698?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shop-health-check",
+      "url": "https://clawhub.ai/skills/shop-health-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shop-health-check",
+    "url": "https://clawhub.ai/skills/shop-health-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shop-health-check-d026fbe9c26b34c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shop-health-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shop-health-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15cae116675edd52fa2d9509ce9d28c14711d2726632526e2b4b350ae7fa0c49",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:36:54.308Z"
+}

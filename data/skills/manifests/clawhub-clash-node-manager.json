@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15815,
+  "uuid": "skill-clawhub-clash-node-manager",
+  "skillKey": "clawhub-clash-node-manager",
+  "name": "Clash Node Manager",
+  "summary": "Manages Clash proxy nodes by listing current node status, available nodes in groups, and switching to specified nodes by name or index.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clash_node_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yonghao Zhao",
+      "features": [
+        "Manages Clash proxy nodes by listing current node status, available nodes in groups, and switch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clash-node-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118432288?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clash-node-manager",
+      "url": "https://clawhub.ai/skills/clash-node-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clash-node-manager",
+    "url": "https://clawhub.ai/skills/clash-node-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clash-node-manager-9a1827bb45b987e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clash-node-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clash-node-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5d2b53615997ac0346265f4ef957a6d56fa2d31e274884d3602995ab25fc239",
+      "artifactSizeBytes": 2215
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T02:08:10.885Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52998,
+  "uuid": "skill-clawhub-avatar-cog",
+  "skillKey": "clawhub-avatar-cog",
+  "name": "Avatar Cog",
+  "summary": "AI avatar and digital persona creation powered by CellCog. Character.ai for agents — create characters, clone voices, generate images, build personalities. P...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avatar_cog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CellCog",
+      "features": [
+        "AI avatar and digital persona creation powered by CellCog",
+        "Character.ai for agents — create characters, clone voices, generate images, build personalities"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/avatar-cog@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14193431?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "avatar-cog",
+      "url": "https://clawhub.ai/skills/avatar-cog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avatar-cog",
+    "url": "https://clawhub.ai/skills/avatar-cog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avatar-cog-365b1e9df8c92f65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/avatar-cog@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-avatar-cog-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41fa4d3768086b074f9180918ee149b67864a48267e932ae3d2f42efe4959ce9",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:05:39.446Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/transprompt@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transprompt",
+  "skill": {
+    "id": 59596,
+    "skillKey": "clawhub-transprompt",
+    "name": "TransPrompt｜一句指令，把需求变成可直接发给 AI 的专业 Prompt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transprompt",
+    "url": "https://clawhub.ai/skills/transprompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transprompt-5350fd2eeedcc3e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一句指令，把白话需求变成可直接发给 GPT / Claude / Gemini / Cursor 的专业 Prompt。支持 `@prt` / `@prompt` 随手触发；不需要转换时自动正常回复，不打断聊天。 Turn plain-language requests into copy-ready promp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keyzzzoe",
+      "userId": "publishers:keyzzzoe",
+      "displayName": "keyzzzoe",
+      "image": "https://avatars.githubusercontent.com/u/141327012?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773337328594,
+      "changelog": "Refined product positioning and bilingual guides. Added clearer Chinese-first marketing copy that highlights instant trigger, normal-reply fallback, and tested reliability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b995c9b32235f1b6643ff0967091c70083cfb749ec4ece203727211a3cd44b48"
+}

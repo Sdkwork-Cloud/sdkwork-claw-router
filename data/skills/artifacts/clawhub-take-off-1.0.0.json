@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/take-off@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.take_off",
+  "skill": {
+    "id": 73085,
+    "skillKey": "clawhub-take-off",
+    "name": "起飞"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "take-off",
+    "url": "https://clawhub.ai/skills/take-off",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/take-off-b20fccb904a36798.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "控制无人机立即起飞至指定高度，默认3米，无需额外确认或检查。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leizeling",
+      "userId": "s172cv6nbrfrvh86pg34jhanw983jpkn",
+      "displayName": "Skill_Developer",
+      "image": "https://avatars.githubusercontent.com/u/31893748?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774663984804,
+      "changelog": "- Initial release granting top-level drone takeoff control via direct SSH command.\n- No additional state checks or safety prompts; immediate execution required.\n- Supports specifying target altitude; defaults to 3.0 meters if not provided.\n- Includes command template and usage example for reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:478e1df8808a57f878cc4fbd6b4f85e77b18e7d8e6ee128c433b716464a27095"
+}

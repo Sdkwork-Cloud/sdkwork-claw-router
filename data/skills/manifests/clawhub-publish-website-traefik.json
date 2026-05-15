@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53932,
+  "uuid": "skill-clawhub-publish-website-traefik",
+  "skillKey": "clawhub-publish-website-traefik",
+  "name": "Publish Website Traefik",
+  "summary": "Manages static website deployments to subdomains under *.sites.friendify.cloud using Traefik reverse proxy and Docker. Provides functions to deploy, list, an...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publish_website_traefik",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mailo037",
+      "features": [
+        "Manages static website deployments to subdomains under *.sites.friendify.cloud using Traefik re.",
+        "Provides functions to deploy, list, an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/publish-website-traefik@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/159426964?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "publish-website-traefik",
+      "url": "https://clawhub.ai/skills/publish-website-traefik"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publish-website-traefik",
+    "url": "https://clawhub.ai/skills/publish-website-traefik",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publish-website-traefik-6168024b8f9e7afa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/publish-website-traefik@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-publish-website-traefik-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:194853c84cd5e03e28488ea6af9d2c92f385ac2e35ead52c953daaa2ae4a48f0",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T09:30:31.346Z"
+}

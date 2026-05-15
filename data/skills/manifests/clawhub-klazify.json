@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24428,
+  "uuid": "skill-clawhub-klazify",
+  "skillKey": "clawhub-klazify",
+  "name": "Klazify",
+  "summary": "Klazify integration. Manage data, records, and automate workflows. Use when the user wants to interact with Klazify data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.klazify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Klazify integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Klazify data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/klazify@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "klazify",
+      "url": "https://clawhub.ai/skills/klazify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "klazify",
+    "url": "https://clawhub.ai/skills/klazify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/klazify-2450fb30292b50d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/klazify@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-klazify-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e58a5e0cc3a5f6f8b6446c82fd72f17357701a812160a1a00ad25ea9e387f228",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:04:17.501Z"
+}

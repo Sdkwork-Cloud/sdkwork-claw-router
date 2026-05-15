@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65620,
+  "uuid": "skill-clawhub-market-inquiry-agent",
+  "skillKey": "clawhub-market-inquiry-agent",
+  "name": "Market Inquiry Agent",
+  "summary": "3秒读懂询盘，1分钟出报价单。智能解析多渠道询盘，自动匹配商品，生成多语种专业报价单，适合外贸SOHO和B2B贸易商。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_inquiry_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangM-A3",
+      "features": [
+        "3秒读懂询盘，1分钟出报价单。智能解析多渠道询盘，自动匹配商品，生成多语种专业报价单，适合外贸SOHO和B2B贸易商。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/market-inquiry-agent@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274818589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "market-inquiry-agent",
+      "url": "https://clawhub.ai/skills/market-inquiry-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-inquiry-agent",
+    "url": "https://clawhub.ai/skills/market-inquiry-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-inquiry-agent-1b262d2e6a86a925.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/market-inquiry-agent@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-market-inquiry-agent-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b232c800297d45e2d70fdca06d511dbee99b841efc5ac3416db3fbf117dde955",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T00:33:41.634Z"
+}

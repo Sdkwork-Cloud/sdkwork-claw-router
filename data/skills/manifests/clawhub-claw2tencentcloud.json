@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52891,
+  "uuid": "skill-clawhub-claw2tencentcloud",
+  "skillKey": "clawhub-claw2tencentcloud",
+  "name": "claw2tencentcloud",
+  "summary": "This skill helps users migrate OpenClaw data to Tencent Cloud instances. It supports three scenarios — single instance migration to the current machine, batc...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw2tencentcloud",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hoikin-yiu",
+      "features": [
+        "This skill helps users migrate OpenClaw data to Tencent Cloud instances",
+        "It supports three scenarios — single instance migration to the current machine, batc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw2tencentcloud@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7302155?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw2tencentcloud",
+      "url": "https://clawhub.ai/skills/claw2tencentcloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw2tencentcloud",
+    "url": "https://clawhub.ai/skills/claw2tencentcloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw2tencentcloud-56ebf56cb56b9e4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw2tencentcloud@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw2tencentcloud-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b678a1f26496f5d28d7caedafa8f1d081b8a33be6c2bb43cc72ef802739d599",
+      "artifactSizeBytes": 2150
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T13:34:27.818Z"
+}

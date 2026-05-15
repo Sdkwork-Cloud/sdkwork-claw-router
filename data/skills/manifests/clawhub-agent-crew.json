@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32957,
+  "uuid": "skill-clawhub-agent-crew",
+  "skillKey": "clawhub-agent-crew",
+  "name": "agent-crew",
+  "summary": "Creates and manages persistent multi-agent teams with standardized configs and team structures for progressive memory and private skill sets.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_crew",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "201983290498",
+      "features": [
+        "Creates and manages persistent multi-agent teams with standardized configs and team structures."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-crew@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64311715?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-crew",
+      "url": "https://clawhub.ai/skills/agent-crew"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-crew",
+    "url": "https://clawhub.ai/skills/agent-crew",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-crew-356fe489ae762382.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-crew@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-crew-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8061360f0da695c59d42c9097a4f5434d985299c7b275809bd66ecdf80fa2931",
+      "artifactSizeBytes": 2411
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T06:31:13.987Z"
+}

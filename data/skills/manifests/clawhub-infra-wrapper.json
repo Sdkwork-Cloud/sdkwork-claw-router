@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34309,
+  "uuid": "skill-clawhub-infra-wrapper",
+  "skillKey": "clawhub-infra-wrapper",
+  "name": "Infra Wrapper",
+  "summary": "Terragrunt is a flexible orchestration tool that allows Infrastructure as Code written in OpenTofu/T terraform-wrapper, go, aws, cli, developer-tools.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.infra_wrapper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "Terragrunt is a flexible orchestration tool that allows Infrastructure as Code written in OpenT."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/infra-wrapper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "infra-wrapper",
+      "url": "https://clawhub.ai/skills/infra-wrapper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "infra-wrapper",
+    "url": "https://clawhub.ai/skills/infra-wrapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/infra-wrapper-41b73dc3452df04e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/infra-wrapper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-infra-wrapper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63096518db05dee423af9dd019fef6202a68cc89905bd168659e4dd1d9fd88f4",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T01:18:37.110Z"
+}

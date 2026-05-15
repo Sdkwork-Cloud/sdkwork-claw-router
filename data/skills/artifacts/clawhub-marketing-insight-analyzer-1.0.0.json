@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/marketing-insight-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marketing_insight_analyzer",
+  "skill": {
+    "id": 17177,
+    "skillKey": "clawhub-marketing-insight-analyzer",
+    "name": "Ads Market Insights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marketing-insight-analyzer",
+    "url": "https://clawhub.ai/skills/marketing-insight-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marketing-insight-analyzer-4f53b65637bc04e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Produce market and competitor insights for paid media decisions across Meta (Facebook/Instagram), Google Ads, TikTok Ads, YouTube Ads, Amazon Ads, and DSP/pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danyangliu-sandwichlab",
+      "userId": "publishers:danyangliu-sandwichlab",
+      "displayName": "danyangliu",
+      "image": "https://avatars.githubusercontent.com/u/184733968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 578,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772594266255,
+      "changelog": "- Initial release of the marketing-insight-analyzer skill, delivering structured market and competitor insights for paid media decisions.\n- Supports actionable plans specific to Meta, Google Ads, TikTok Ads, YouTube Ads, Amazon Ads, and DSP/programmatic channels.\n- Introduces structured input and output contracts, including strategy snapshot, budget plans, channel roles, test matrices, and stop-loss rules.\n- Workflow and decision rules tailored for advertising KPIs and channel behaviors.\n- Emphasizes channel-aware recommendations, policy compliance, and clear metrics.\n- Includes practical examples and a quality checklist for robust output validation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:24bc6a897a261cdf8392bc72ac44c072ca021a3649a7fc2b6c9147261b8dd13d"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25260,
+  "uuid": "skill-clawhub-chatfuel",
+  "skillKey": "clawhub-chatfuel",
+  "name": "Chatfuel",
+  "summary": "Chatfuel integration. Manage data, records, and automate workflows. Use when the user wants to interact with Chatfuel data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chatfuel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Chatfuel integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Chatfuel data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chatfuel@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chatfuel",
+      "url": "https://clawhub.ai/skills/chatfuel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chatfuel",
+    "url": "https://clawhub.ai/skills/chatfuel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chatfuel-3cbdaec1df219d02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chatfuel@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-chatfuel-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84abf57e704c0b2e4af7b1cc5c5c315b037d3e9976d6c221aadf1dc8033bc345",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:29:21.025Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ffmpeg-static@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ffmpeg_static",
+  "skill": {
+    "id": 35913,
+    "skillKey": "clawhub-ffmpeg-static",
+    "name": "ffmpeg-static"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ffmpeg-static",
+    "url": "https://clawhub.ai/skills/ffmpeg-static",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ffmpeg-static-594e4de279fc622c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "FFmpeg operations via the ffmpeg-static npm package (bundled binary) with automatic fallback to a native system FFmpeg installation. Use for: video/audio tra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fantox",
+      "userId": "s17951783tfh7a7znjpezgbe1s84naav",
+      "displayName": "FantoX",
+      "image": "https://avatars.githubusercontent.com/u/143634789?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776580644869,
+      "changelog": "- Replaced scripts/ffmpeg_runner.js with templates/node_patterns.txt, moving Node.js usage patterns and examples to a template file.\n- Updated SKILL.md to reference the new templates/node_patterns.txt for ready-to-copy Node.js, spawn, and fluent-ffmpeg snippets.\n- Removed in-SKILL.md Node.js script examples, consolidating them in the template for easier reuse.\n- No breaking changes to skill logic or behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6a2703325552cac796bb3951e71d0c2f84e215c94c9aa3478614113c7f84f5d3"
+}

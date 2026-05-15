@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54837,
+  "uuid": "skill-clawhub-paper-card-analyzer",
+  "skillKey": "clawhub-paper-card-analyzer",
+  "name": "Paper Card Analyzer",
+  "summary": "Analyze `paper-parse` outputs and generate a research-oriented paper card directly in natural language. Use this skill after paper parsing when you need a st...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_card_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chen-Li-17",
+      "features": [
+        "Analyze `paper-parse` outputs and generate a research-oriented paper card directly in natural l.",
+        "Use this skill after paper parsing when you need a st..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-card-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37493896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-card-analyzer",
+      "url": "https://clawhub.ai/skills/paper-card-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-card-analyzer",
+    "url": "https://clawhub.ai/skills/paper-card-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-card-analyzer-2a8bfd29312ed8ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-card-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-card-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:606bdd20b3adf6baf0fad2d9cb9ac99a36f64092ca8e16420acc2874629520d7",
+      "artifactSizeBytes": 2757
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T16:35:02.241Z"
+}

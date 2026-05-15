@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-news-pusher@2.2.2",
+  "version": "2.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news_pusher",
+  "skill": {
+    "id": 65881,
+    "skillKey": "clawhub-ai-news-pusher",
+    "name": "AI News Pusher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news-pusher",
+    "url": "https://clawhub.ai/skills/ai-news-pusher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-pusher-198adac929761dae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI新闻自动获取与推送Skill v2.2。新增智能产品价值评分、高质量信源过滤、三级分类机制和人工反馈迭代。支持Tavily、Brave、RSS多新闻源聚合，无需API Key即可使用RSS源。当用户需要获取AI行业最新动态、自动化新闻推送、多源新闻聚合或智能内容过滤时触发此Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kern1x",
+      "userId": "publishers:kern1x",
+      "displayName": "kern1x",
+      "image": "https://avatars.githubusercontent.com/u/261144609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 502,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.2.2",
+      "createdAt": 1772871948712,
+      "changelog": "- Made all environment variables optional for greater flexibility and easier setup  \n- Clarified that Feishu Webhook URL is only required for actual push functionality  \n- Updated environment variable descriptions for improved clarity and security warnings  \n- No functional logic changes; this update refines configuration and documentation only",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bc6ced39013d72f1d617ed5cdc354c983179d65d22b52d604b68840d9b981ba7"
+}

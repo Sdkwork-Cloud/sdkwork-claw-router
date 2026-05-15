@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/check-analytics@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.check_analytics",
+  "skill": {
+    "id": 9290,
+    "skillKey": "clawhub-check-analytics",
+    "name": "Check Analytics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "check-analytics",
+    "url": "https://clawhub.ai/skills/check-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/check-analytics-5ebe075ad71016a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit existing Google Analytics implementation. Checks for common issues, missing configurations, and optimization opportunities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeftekhari",
+      "userId": "publishers:jeftekhari",
+      "displayName": "jeftekhari",
+      "image": "https://avatars.githubusercontent.com/u/25212523?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4120,
+      "installsAllTime": 16,
+      "installsCurrent": 16,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770054071458,
+      "changelog": "- Initial release of check-analytics skill to audit Google Analytics implementations.\n- Detects analytics frameworks, providers, and measurement IDs, while redacting sensitive parts for security.\n- Audits for common issues such as deprecated Universal Analytics, missing tracking, hardcoded IDs, consent, and more.\n- Generates a markdown audit report with issue severity (Critical, Warning, Suggestion), event coverage table, and actionable recommendations.\n- Designed to help improve tracking accuracy, privacy compliance, and analytics maintainability.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c5deed0d034a222709096b4d8c6826e218f7bb4ddb06e6529b9e64c7b983310f"
+}

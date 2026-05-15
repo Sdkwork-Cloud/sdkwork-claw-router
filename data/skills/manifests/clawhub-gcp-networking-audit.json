@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29017,
+  "uuid": "skill-clawhub-gcp-networking-audit",
+  "skillKey": "clawhub-gcp-networking-audit",
+  "name": "Gcp Networking Audit",
+  "summary": "GCP VPC Network audit covering global VPC design, firewall rule priority evaluation with hierarchical policies, Cloud NAT egress analysis, Cloud Interconnect...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gcp_networking_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vahagn Madatyan",
+      "features": [
+        "GCP VPC Network audit covering global VPC design, firewall rule priority evaluation with hierar."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gcp-networking-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74753362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gcp-networking-audit",
+      "url": "https://clawhub.ai/skills/gcp-networking-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gcp-networking-audit",
+    "url": "https://clawhub.ai/skills/gcp-networking-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gcp-networking-audit-23da19b2f3374ac8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gcp-networking-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gcp-networking-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d10d524f55377bf76578fce1627d40ea252695b94dfdee73db1e955812c23876",
+      "artifactSizeBytes": 2675
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T08:19:15.852Z"
+}

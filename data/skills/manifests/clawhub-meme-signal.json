@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13999,
+  "uuid": "skill-clawhub-meme-signal",
+  "skillKey": "clawhub-meme-signal",
+  "name": "Meme Signal Scanner",
+  "summary": "Free meme coin signal scanner. Aggregates DEXScreener, Pump.fun, GeckoTerminal, CoinGecko trending data. Scores tokens 0-100 with risk assessment.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meme_signal",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ceelo",
+      "features": [
+        "Free meme coin signal scanner",
+        "Aggregates DEXScreener, Pump.fun, GeckoTerminal, CoinGecko trending data",
+        "Scores tokens 0-100 with risk assessment."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meme-signal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111347656?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meme-signal",
+      "url": "https://clawhub.ai/skills/meme-signal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meme-signal",
+    "url": "https://clawhub.ai/skills/meme-signal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meme-signal-af05c00d011c3e46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meme-signal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meme-signal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd7dc1c0bbea752665135c6e1c6eb9c43d91ace0904c19e1fa2e2bb2d3f01c01",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T09:42:43.788Z"
+}

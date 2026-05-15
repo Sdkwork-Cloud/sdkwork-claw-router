@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12696,
+  "uuid": "skill-clawhub-url-shorten",
+  "skillKey": "clawhub-url-shorten",
+  "name": "Url Shorten",
+  "summary": "Shorten URLs via tinyurl or bitly API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.url_shorten",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xejrax",
+      "features": [
+        "Shorten URLs via tinyurl or bitly API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/url-shorten@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/148405630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "url-shorten",
+      "url": "https://clawhub.ai/skills/url-shorten"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "url-shorten",
+    "url": "https://clawhub.ai/skills/url-shorten",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/url-shorten-69555238534beeb1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/url-shorten@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-url-shorten-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:660bc82d5e86f521c796c12bf7b5fc52aa8dbd09800478069d956214ab037447",
+      "artifactSizeBytes": 1721
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T16:21:08.849Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/super-memory@8.3.0",
+  "version": "8.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_memory",
+  "skill": {
+    "id": 60295,
+    "skillKey": "clawhub-super-memory",
+    "name": "Agent Memory System v8"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-memory",
+    "url": "https://clawhub.ai/skills/super-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-memory-0ef310960cd3fb5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent 记忆系统 — 6维坐标编码 + RRF双路检索 + sqlite-vec统一存储 + 写入时因果检测 + 多Agent共享 + 记忆蒸馏 + 时间旅行 + 情感编码 + 元认知 + 内在动机 + 叙事自我 + 数字孪生 + 角色模板"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "concisegjh",
+      "userId": "s170csdzwc049dc4ympczmb2v9844bz7",
+      "displayName": "concisegjh",
+      "image": "https://avatars.githubusercontent.com/u/127378161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 503,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "8.3.0",
+      "createdAt": 1777828958235,
+      "changelog": "**Major architectural update: migrated from plugin/flat structure to monolithic skill package.**\n\n- Unified core skill structure by moving all logic out of the `openclaw_plugin` folder into a single top-level codebase.\n- Added 33 new files, consolidating previously scattered config, services, and modules for clarity and maintainability.\n- Removed 31 legacy/plugin-specific files and redundant config artifacts.\n- Documentation and integration guides are now directly accessible in the root directory.\n- The core functionality and CLI remain unchanged; all user workflows are preserved.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e4b4f3a145361b8aa82a3373982f304c36e039e3a3bb49600f077cd400512d3"
+}

@@ -1,4 +1,4 @@
-import json
+﻿import json
 import unittest
 from pathlib import Path
 
@@ -58,14 +58,11 @@ class AdminRateLimitRuntimeStandardTest(unittest.TestCase):
             / "src"
             / "ratelimitService.ts"
         ).read_text(encoding="utf-8")
-        rate_limits_api = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "api" / "rate-limits.ts"
-        ).read_text(encoding="utf-8")
-        firewall_api = (ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "api" / "firewall.ts").read_text(
+        system_api = (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "system.ts").read_text(
             encoding="utf-8"
         )
         type_exports = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "index.ts"
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "index.ts"
         ).read_text(encoding="utf-8")
 
         for token in [
@@ -77,10 +74,10 @@ class AdminRateLimitRuntimeStandardTest(unittest.TestCase):
             "toCreateTokenLimitRequest",
             "toCreateModelLimitRequest",
             "toCreateFirewallRequest",
-            "requestHeaders('admin-ip-limit-create')",
-            "requestHeaders('admin-token-limit-create')",
-            "requestHeaders('admin-model-limit-create')",
-            "requestHeaders('admin-firewall-create')",
+            "requestParams('admin-ip-limit-create')",
+            "requestParams('admin-token-limit-create')",
+            "requestParams('admin-model-limit-create')",
+            "requestParams('admin-firewall-create')",
         ]:
             self.assertIn(token, service)
 
@@ -91,25 +88,26 @@ class AdminRateLimitRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("as unknown as Record<string, unknown>", service)
 
         self.assertIn(
-            "async addIpLimit(body: AdminIpLimitCreateRequest, headers?: Record<string, string>): Promise<AddIpLimitResult>",
-            rate_limits_api,
+            "async create(body: AdminIpLimitCreateRequest, params?: SystemRateLimitsIpCreateParams): Promise<RateLimitsIpCreateResult>",
+            system_api,
         )
         self.assertIn(
-            "async addTokenLimit(body: AdminTokenLimitCreateRequest, headers?: Record<string, string>): Promise<AddTokenLimitResult>",
-            rate_limits_api,
+            "async create(body: AdminTokenLimitCreateRequest, params?: SystemRateLimitsApiKeysCreateParams): Promise<RateLimitsApiKeysCreateResult>",
+            system_api,
         )
         self.assertIn(
-            "async addModelLimit(body: AdminModelLimitCreateRequest, headers?: Record<string, string>): Promise<AddModelLimitResult>",
-            rate_limits_api,
+            "async create(body: AdminModelLimitCreateRequest, params?: SystemRateLimitsModelsCreateParams): Promise<RateLimitsModelsCreateResult>",
+            system_api,
         )
         self.assertIn(
-            "async add(body: AdminFirewallRuleCreateRequest, headers?: Record<string, string>): Promise<AddFirewallResult>",
-            firewall_api,
+            "async create(body: AdminFirewallRuleCreateRequest, params?: SystemFirewallsRulesCreateParams): Promise<FirewallsRulesCreateResult>",
+            system_api,
         )
-        self.assertNotIn("async addIpLimit(body?: OperationRequest): Promise<PlusApiResult>", rate_limits_api)
-        self.assertNotIn("async addTokenLimit(body?: OperationRequest): Promise<PlusApiResult>", rate_limits_api)
-        self.assertNotIn("async addModelLimit(body?: OperationRequest): Promise<PlusApiResult>", rate_limits_api)
-        self.assertNotIn("async add(body?: OperationRequest): Promise<PlusApiResult>", firewall_api)
+        self.assertNotIn("async addIpLimit(body?: OperationRequest): Promise<PlusApiResult>", system_api)
+        self.assertNotIn("async addTokenLimit(body?: OperationRequest): Promise<PlusApiResult>", system_api)
+        self.assertNotIn("async addModelLimit(body?: OperationRequest): Promise<PlusApiResult>", system_api)
+        self.assertNotIn("async addFirewall(body?: OperationRequest): Promise<PlusApiResult>", system_api)
+        self.assertNotIn("headers?: Record<string, string>", system_api)
 
         for token in [
             "AdminIpLimitCreateRequest",
@@ -118,10 +116,10 @@ class AdminRateLimitRuntimeStandardTest(unittest.TestCase):
             "AdminFirewallRuleCreateRequest",
             "AdminRateLimitMutationResponse",
             "AdminFirewallMutationResponse",
-            "AddIpLimitResult",
-            "AddTokenLimitResult",
-            "AddModelLimitResult",
-            "AddFirewallResult",
+            "RateLimitsIpCreateResult",
+            "RateLimitsApiKeysCreateResult",
+            "RateLimitsModelsCreateResult",
+            "FirewallsRulesCreateResult",
         ]:
             self.assertIn(f"export type {{ {token} }}", type_exports)
 

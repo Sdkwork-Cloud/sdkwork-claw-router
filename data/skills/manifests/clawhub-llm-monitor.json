@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31485,
+  "uuid": "skill-clawhub-llm-monitor",
+  "skillKey": "clawhub-llm-monitor",
+  "name": "LLM Monitor",
+  "summary": "Monitor and report usage, costs, quotas, and rate limits for LLM providers, plus manage clawmeter setup and daemon status securely.",
+  "version": "0.7.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Thomas",
+      "features": [
+        "Monitor and report usage, costs, quotas, and rate limits for LLM providers, plus manage clawmet."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-monitor@0.7.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60994952?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-monitor",
+      "url": "https://clawhub.ai/skills/llm-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-monitor",
+    "url": "https://clawhub.ai/skills/llm-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-monitor-2c4fa26bbf29b327.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-monitor@0.7.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-monitor-0.7.5.json",
+      "version": "0.7.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d482d6e74313d42b1b1c14a80c24a9e2266e8d02bab2b426313e9ed080cd34ad",
+      "artifactSizeBytes": 2485
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T12:18:08.739Z"
+}

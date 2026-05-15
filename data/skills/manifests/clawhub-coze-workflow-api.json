@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59006,
+  "uuid": "skill-clawhub-coze-workflow-api",
+  "skillKey": "clawhub-coze-workflow-api",
+  "name": "coze-workflow-api",
+  "summary": "在 OpenClaw 中调用 Coze Workflow API (stream_run)。 **使用场景：** 1. 用户需要调用 Coze workflow 执行特定任务 2. 需要提供 workflow_id、parameters、PAT Key 3. 处理流式响应结果 **触发关键词：** coze wo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coze_workflow_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chocolatemale",
+      "features": [
+        "在 OpenClaw 中调用 Coze Workflow API (stream_run)。 **使用场景：** 1",
+        "用户需要调用 Coze workflow 执行特定任务 2",
+        "需要提供 workflow_id、parameters、PAT Key 3",
+        "处理流式响应结果 **触发关键词：** coze wo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coze-workflow-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16359270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coze-workflow-api",
+      "url": "https://clawhub.ai/skills/coze-workflow-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coze-workflow-api",
+    "url": "https://clawhub.ai/skills/coze-workflow-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coze-workflow-api-af35d369c19f0212.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coze-workflow-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coze-workflow-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8661e5e8a85e18aaacaae23784eb1186bd32a6400e88c79fac49cdca9e561d1",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:13:29.556Z"
+}

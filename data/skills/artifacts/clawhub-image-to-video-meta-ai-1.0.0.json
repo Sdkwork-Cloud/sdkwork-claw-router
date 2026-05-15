@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-meta-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_meta_ai",
+  "skill": {
+    "id": 43684,
+    "skillKey": "clawhub-image-to-video-meta-ai",
+    "name": "Image To Video Meta Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-meta-ai",
+    "url": "https://clawhub.ai/skills/image-to-video-meta-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-meta-ai-bfbba56333e05ff9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a single product photo or portrait image into 1080p animated video clips just by typing what you need. Whether it's turning static images into short ani..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776360040377,
+      "changelog": "image-to-video-meta-ai v1.0.0 — Initial Release\n\n- Instantly convert a single image or photo into 1080p animated video clips using Meta AI.\n- No timeline editing or export settings required; just upload an image, describe what you want, and get a video in 30–90 seconds.\n- Automatic backend session setup, including anonymous token generation for free trial credits.\n- Supports quick export, balance checking, timeline preview, and handling common file formats (images, video, audio).\n- Clear error handling for authentication, credits, file type/size, and export issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c771dead14682446628e5ad5251e132de438bf2319c2efbd639751777d206af"
+}

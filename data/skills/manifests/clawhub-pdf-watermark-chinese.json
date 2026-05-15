@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60570,
+  "uuid": "skill-clawhub-pdf-watermark-chinese",
+  "skillKey": "clawhub-pdf-watermark-chinese",
+  "name": "Pdf Watermark Chinese",
+  "summary": "PDF 水印添加和移除功能，支持文本和图像水印",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_watermark_chinese",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pwcy1978-boop",
+      "features": [
+        "PDF 水印添加和移除功能，支持文本和图像水印"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-watermark-chinese@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264440955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-watermark-chinese",
+      "url": "https://clawhub.ai/skills/pdf-watermark-chinese"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-watermark-chinese",
+    "url": "https://clawhub.ai/skills/pdf-watermark-chinese",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-watermark-chinese-6271702e23092bc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-watermark-chinese@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-watermark-chinese-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0185cb15f6e058bdf2c756141b3309fd33af038c765ed570cc3a3dac32848502",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T16:47:52.759Z"
+}

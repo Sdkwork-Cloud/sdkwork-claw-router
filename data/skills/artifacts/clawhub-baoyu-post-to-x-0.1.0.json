@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baoyu-post-to-x@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baoyu_post_to_x",
+  "skill": {
+    "id": 9725,
+    "skillKey": "clawhub-baoyu-post-to-x",
+    "name": "Baoyu Post To X"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baoyu-post-to-x",
+    "url": "https://clawhub.ai/skills/baoyu-post-to-x",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baoyu-post-to-x-c0b7b544202e82b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Posts content and articles to X (Twitter). Supports regular posts with images/videos and X Articles (long-form Markdown). Uses real Chrome with CDP to bypass anti-automation. Use when user asks to \"post to X\", \"tweet\", \"publish to Twitter\"."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuhedev",
+      "userId": "s173cp8wp07asz8rf17g1bph9583mpav",
+      "displayName": "liuhedev",
+      "image": "https://avatars.githubusercontent.com/u/19663285?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2692,
+      "installsAllTime": 48,
+      "installsCurrent": 48,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770263078722,
+      "changelog": "Initial release of baoyu-post-to-x – post content, images, videos, and articles to X (Twitter) using real Chrome automation.\n\n- Supports regular posts (text + up to 4 images), video uploads, quote tweets, and X Articles (Markdown long-form, for Premium users).\n- Uses Chrome CDP to bypass anti-automation measures.\n- Includes script directory layout and agent execution instructions.\n- Preferences and custom settings supported via EXTEND.md at project or user level.\n- First-time login to X is interactive and session persists for later use.\n- Reference guides provided for troubleshooting and article workflow.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:da7a3f8e880ca931242c814256c02b14ae6a1c88921c27b3d3f52606334d5844"
+}

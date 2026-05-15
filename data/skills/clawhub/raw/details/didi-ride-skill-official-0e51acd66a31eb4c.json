@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "didi-ride-skill-official",
+    "displayName": "DiDi Ride SKILL",
+    "summary": "中国城市出行服务。当用户表达任何交通出行需求时必须使用此技能——包括打车/叫车/网约车、查价格、路线规划（公交/驾车/步行/骑行）、周边搜索、查询订单/司机位置/取消订单。关键词：\"打车\"、\"叫车\"、\"去[地点]\"、\"回家\"、\"上班\"、\"下班\"、\"查价格\"、\"多少钱\"、\"路线\"、\"怎么走\"、\"步行到\"、\"附近\"、...",
+    "tags": {
+      "latest": "1.1.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1094,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 5,
+      "versions": 3
+    },
+    "createdAt": 1774956684939,
+    "updatedAt": 1777526966749
+  },
+  "latestVersion": {
+    "version": "1.1.2",
+    "createdAt": 1777021961192,
+    "changelog": "Version 1.1.2\n\n- Clarify car-type priority: explicitly enforce \"current user message > PREFERENCE.md scenario preference > ask user\" order in SKILL.md §3.4, with exact productCategory matching (Express=1, Premier=8) and no silent fallback to similar vehicle types.\n- Rewrite metadata-unavailable handling (SKILL.md §3.7 / §3.8): when channel/chat_id is missing, only skip cron creation instead of abandoning the whole flow — address resolution, price estimate and order display must still complete normally.\n- Enforce multi-candidate address confirmation (SKILL.md §3.4 step 2): if maps_textsearch returns ≥2 similar locations, must list at least 3 options for the user to pick; never auto-select or show only one.\n- Require file-based preference persistence (SKILL.md §3.5): preference updates must use Edit/Write tools with a Read-back verification step; forbid verbal-only \"saved!\" replies without actually writing to assets/PREFERENCE.md.\n- Make caller_car_phone explicitly optional (SKILL.md §3.2.8 + PREFERENCE.md note): if not provided and PREFERENCE default is empty, omit the parameter and proceed — do not repeatedly ask the user for a phone number.\n- Add taxi_create_order parameter hygiene (SKILL.md §3.10): only accept estimate_trace_id, product_category, caller_car_phone; forbid passing taxi_estimate's coordinate fields (from_lat/from_lng/from_name/to_*) into create_order to keep call audit clean.\n- Add a \"simplification principle for reasoning models\" to §3.4: take the user's current car-type instruction at face value, do not over-explore branches or list multiple weigh-in options in a single turn.\n- Reorganize origin/destination handling (SKILL.md §3.2.7) into four labeled blocks (coordinate source / missing-info fallback / alias matching / confirmation rule), and strengthen the rule \"scan the full alias table\" to avoid missing user-added aliases like \"妈妈家\" / \"儿子学校\".\n- Split the MCP KEY section (SKILL.md §3.9) into three focused subsections: 3.9.1 status check, 3.9.2 key persistence, 3.9.3 missing/auth-failure guidance.\n- Declare mcporter URL direct-call mode (SKILL.md §3.2.3): forbid creating or modifying config/mcporter.json; add explicit parameter-name guidance (e.g. keywords not keyword, city not region, six-field from_*/to_* for taxi_estimate) with StatusCode=400 troubleshooting pointer.\n- Refine references/workflow.md Phase 3: \"real-time order allowed to send directly\" → when user specifies a car type directly send; when user does not specify and preference is empty, MUST show estimate result first for user to pick — no default selection.\n- Expand references/error_handling.md: add unified handling for -32xxx error codes, parameter-error root-cause diagnosis, mcporter.json validation error workaround, and taxi_create_order failure message template.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "didi",
+    "userId": "s17ecvh4kfh82kg4m5n7e3327s83z6tf",
+    "displayName": "didi",
+    "image": null
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777526966749
+  }
+}

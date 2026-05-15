@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/learning-system-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learning_system_skill",
+  "skill": {
+    "id": 67751,
+    "skillKey": "clawhub-learning-system-skill",
+    "name": "Learning System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learning-system-skill",
+    "url": "https://clawhub.ai/skills/learning-system-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learning-system-skill-ce44859efa459c1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 领域系统学习体系。管理知识图谱、深度学习笔记、实战复盘和关联网络。触发场景：学习计划、知识图谱更新、深度研究某个 AI 主题、实战复盘总结、调研后沉淀知识、每周学习回顾。当用户说'学了什么'、'总结一下'、'沉淀知识'、'复盘'、'更新图谱'、'深入研究'、'写笔记'、'学习回顾'、'review what..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "echovic",
+      "userId": "publishers:echovic",
+      "displayName": "青雲",
+      "image": "https://avatars.githubusercontent.com/u/16428813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 559,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771937011576,
+      "changelog": "Initial release of the learning-system skill.\n\n- Introduces a structured AI learning workflow with knowledge mapping, deep-dive notes, practical recaps, and networked associations.\n- Supports multiple learning modes: deep-dive, recap, weekly review, health check, and mastery score, each with clear stepwise checklists.\n- Automates topic selection, review, and knowledge integration based on user input and recent activity.\n- Provides templates and guidelines for effective knowledge extraction, review, and tracking of progress.\n- Integrates with PARA/second brain structure and related AI/ML skills for comprehensive knowledge management.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6778adee5637c32fd5343e85ba77c84768aaf386206b9f9bf111b791be36752f"
+}

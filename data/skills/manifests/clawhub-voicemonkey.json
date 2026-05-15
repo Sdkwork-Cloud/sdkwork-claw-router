@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11545,
+  "uuid": "skill-clawhub-voicemonkey",
+  "skillKey": "clawhub-voicemonkey",
+  "name": "VoiceMonkey",
+  "summary": "Control Alexa devices via VoiceMonkey API v2 - make announcements, trigger routines, start flows, and display media.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voicemonkey",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jayakumark",
+      "features": [
+        "Control Alexa devices via VoiceMonkey API v2",
+        "make announcements, trigger routines, start flows, and display media."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voicemonkey@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/539851?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voicemonkey",
+      "url": "https://clawhub.ai/skills/voicemonkey"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voicemonkey",
+    "url": "https://clawhub.ai/skills/voicemonkey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voicemonkey-f657774b042d0bb4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voicemonkey@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-voicemonkey-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c3024600db1b8b764973563eec2b21bb97cc29fec0aa9b845141c6712016cf2",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-11T20:04:43.320Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25758,
+  "uuid": "skill-clawhub-openclaw-whoop",
+  "skillKey": "clawhub-openclaw-whoop",
+  "name": "WHOOP (Official API)",
+  "summary": "Connect to the WHOOP Developer Platform via official OAuth (authorization code flow), store and refresh tokens, and fetch WHOOP v2 data (recovery, sleep, cyc...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_whoop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gavin C.",
+      "features": [
+        "Connect to the WHOOP Developer Platform via official OAuth (authorization code flow), store and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-whoop@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201307310?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-whoop",
+      "url": "https://clawhub.ai/skills/openclaw-whoop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-whoop",
+    "url": "https://clawhub.ai/skills/openclaw-whoop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-whoop-b2f0c0602a1aa20e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-whoop@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-whoop-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59b94d1fad3c290c73c8b4b5233d1c3df586d7e97e7ebc790231af66b9a298a5",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T06:03:39.669Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stormproof@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stormproof",
+  "skill": {
+    "id": 55962,
+    "skillKey": "clawhub-stormproof",
+    "name": "StormProof — NOAA Hurricane Weather Lookup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stormproof",
+    "url": "https://clawhub.ai/skills/stormproof",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stormproof-7150dde51e8dcac5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Look up historical NOAA hurricane weather data — peak wind speed, wind gust, and storm surge — for any U.S. street address on any date. Use this skill when t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oasiseng",
+      "userId": "s17cnytngezw9fmhens6qh4ah9858mwv",
+      "displayName": "Oasis Engineering",
+      "image": "https://avatars.githubusercontent.com/u/221696722?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776776574875,
+      "changelog": "Added explicit data-flow disclosure, endpoint identification, retention policy, and consent step to address ClawHub security scan findings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2fcc62138c86d42cecdeda4f570fc8910d30f3e02b8812efa61357b27ddfa8b5"
+}

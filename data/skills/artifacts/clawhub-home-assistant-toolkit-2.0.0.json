@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/home-assistant-toolkit@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_assistant_toolkit",
+  "skill": {
+    "id": 52077,
+    "skillKey": "clawhub-home-assistant-toolkit",
+    "name": "Home Assistant Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-assistant-toolkit",
+    "url": "https://clawhub.ai/skills/home-assistant-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-assistant-toolkit-95ced4a51b482d1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Home Assistant full management skill — control devices, create automations, monitor health, manage backups, update HACS, generate dashboards, all via SSH. Us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vitaliisergin",
+      "userId": "s17f6p7dzaq71jnv2akty9hydh847dp5",
+      "displayName": "motionbeard",
+      "image": "https://avatars.githubusercontent.com/u/188769082?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775345261570,
+      "changelog": "**Major update: Complete Home Assistant management toolkit via SSH**\n\n- Provides full Home Assistant control: device management, automations, monitoring, backups, HACS updates, dashboard generation, all through SSH.\n- Enforces absolute paths for all script calls to ensure reliability regardless of working directory.\n- On startup, always validates configuration and SSH connectivity with a setup check.\n- Adds detailed connection, setup, and security instructions (key-/password-based SSH, environment variables, config examples, privacy notes).\n- Dynamically scans integrations and fetches release notes to stay always up-to-date.\n- Includes robust querying, device control, and system management commands via ha CLI and REST API.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4eb55226f3c72cc4a6e993c5463e13563eb658f5096cb3c6e9a2977be106b618"
+}

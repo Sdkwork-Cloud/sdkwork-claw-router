@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawmate@1.2.6",
+  "version": "1.2.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmate",
+  "skill": {
+    "id": 20829,
+    "skillKey": "clawhub-clawmate",
+    "name": "ClawMate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmate",
+    "url": "https://clawhub.ai/skills/clawmate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmate-d5ca37adc890e6cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your AI boyfriend/girlfriend that texts you good morning, remembers your inside jokes, and grows from strangers to soulmates. 8 built-in personas, mood-based..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gavinharbus",
+      "userId": "s175w492cw15k843019qgdjdyn83gnr8",
+      "displayName": "Gavin von Mandias",
+      "image": "https://avatars.githubusercontent.com/u/23392860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 436,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 18
+    },
+    "latestVersion": {
+      "version": "1.2.6",
+      "createdAt": 1775891268500,
+      "changelog": "No file changes detected.  \nDocumentation updated for clarity and accuracy.\n\n- Removed outdated information about custom personas from the persona system description.\n- The \"Available Personas\" table now only lists the 8 built-in personas.\n- Updated auto-switch rules to remove references to custom persona opt-in behavior.\n- The skill description now mentions 8 built-in personas (was \"8 built-in personas + custom personas distilled from chat logs...\").\n- No user-facing functional or behavioral changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:964fec86349976243f93afa16c885a0b94281bdee42f45243bedb3ff6fc6c4ed"
+}

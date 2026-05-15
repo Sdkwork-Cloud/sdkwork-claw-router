@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14277,
+  "uuid": "skill-clawhub-sprite-animator",
+  "skillKey": "clawhub-sprite-animator",
+  "name": "Sprite Animator",
+  "summary": "Generate animated pixel art sprites from any image using AI. Send a photo, get a 16-frame animated GIF.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sprite_animator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aaron Levin",
+      "features": [
+        "Generate animated pixel art sprites from any image using AI",
+        "Send a photo, get a 16-frame animated GIF."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sprite-animator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8488209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sprite-animator",
+      "url": "https://clawhub.ai/skills/sprite-animator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sprite-animator",
+    "url": "https://clawhub.ai/skills/sprite-animator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sprite-animator-e49e0c820cc9c54d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sprite-animator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sprite-animator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8748542a7b659f75bdff8a44f16b87833e40c8f03d477e5c101a0cd26fe8bb14",
+      "artifactSizeBytes": 1872
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T06:30:32.168Z"
+}

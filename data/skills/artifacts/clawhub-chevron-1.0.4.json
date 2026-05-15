@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chevron@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chevron",
+  "skill": {
+    "id": 35662,
+    "skillKey": "clawhub-chevron",
+    "name": "Chevron"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chevron",
+    "url": "https://clawhub.ai/skills/chevron",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chevron-b55ac8822fb0ce94.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed information on Chevron, a leading US energy company specializing in oil, gas, refining, lubricants, and renewable projects."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776533686526,
+      "changelog": "- Improved company overview with concise historical milestones, core features, and key figures\n- Summary updated to highlight Chevron as the US’s second-largest oil company, including founding year and Caltex brand ownership\n- Expanded \"read_when\" to cover broader Chevron and industry information in Chinese\n- Removed redundant/duplicate documentation file",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29717d357e209e69e063c946bbdd211a456a932ab25782e4f54918431157268d"
+}

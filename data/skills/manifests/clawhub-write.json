@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11847,
+  "uuid": "skill-clawhub-write",
+  "skillKey": "clawhub-write",
+  "name": "Write",
+  "summary": "Plan, draft, version, and refine written content with enforced versioning and quality audits.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.write",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Plan, draft, version, and refine written content with enforced versioning and quality audits."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/write@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "write",
+      "url": "https://clawhub.ai/skills/write"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "write",
+    "url": "https://clawhub.ai/skills/write",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/write-10fd874b68dad080.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/write@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-write-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4eb577768a18d868fbdbb218eb5276082f2b06f9bd31d353b7e375a99897cc7",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T14:00:04.073Z"
+}

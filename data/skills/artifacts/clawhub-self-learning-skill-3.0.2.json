@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-learning-skill@3.0.2",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_learning_skill",
+  "skill": {
+    "id": 11994,
+    "skillKey": "clawhub-self-learning-skill",
+    "name": "Self-Learning Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-learning-skill",
+    "url": "https://clawhub.ai/skills/self-learning-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-learning-skill-b9dc5c0a6fce7166.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Continuously identify knowledge gaps, proactively learn and apply new skills, regularly review progress, and iteratively improve technical and project abilit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidme6",
+      "userId": "s17aperbk8h3dswpc0vbsayk4d83hweb",
+      "displayName": "davidme6",
+      "image": "https://avatars.githubusercontent.com/u/198009354?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1722,
+      "installsAllTime": 13,
+      "installsCurrent": 12,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "3.0.2",
+      "createdAt": 1773510714164,
+      "changelog": "清理临时文件，只保留核心功能文档",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4499627de6e26860334974fedb3a1bb2fff8579ae803c8626c1be0e489c0c303"
+}

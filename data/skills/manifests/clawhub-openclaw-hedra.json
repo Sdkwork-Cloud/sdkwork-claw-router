@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45112,
+  "uuid": "skill-clawhub-openclaw-hedra",
+  "skillKey": "clawhub-openclaw-hedra",
+  "name": "Hedra",
+  "summary": "Generate images, videos, and lip-synced talking avatar videos from text prompts using Hedra AI models via the OpenClaw plugin.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_hedra",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matt Stvartak",
+      "features": [
+        "Generate images, videos, and lip-synced talking avatar videos from text prompts using Hedra AI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-hedra@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2431910?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-hedra",
+      "url": "https://clawhub.ai/skills/openclaw-hedra"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-hedra",
+    "url": "https://clawhub.ai/skills/openclaw-hedra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-hedra-cf1d3e6469431c7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-hedra@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-hedra-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1cc0f442014bc3f0db300762a08f4b714384f51f9fa4babf7f8aca89dc4fe217",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T01:38:32.422Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22496,
+  "uuid": "skill-clawhub-initv-data-pods",
+  "skillKey": "clawhub-initv-data-pods",
+  "name": "data-pods",
+  "summary": "Create and manage modular portable database pods (SQLite + metadata + embeddings). Includes document ingestion with embeddings for semantic search. Full auto...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.initv_data_pods",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "init-v",
+      "features": [
+        "Create and manage modular portable database pods (SQLite + metadata + embeddings)",
+        "Includes document ingestion with embeddings for semantic search",
+        "Full auto..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/initv-data-pods@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74110964?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "initv-data-pods",
+      "url": "https://clawhub.ai/skills/initv-data-pods"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "initv-data-pods",
+    "url": "https://clawhub.ai/skills/initv-data-pods",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/initv-data-pods-2ecfcb89193495d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/initv-data-pods@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-initv-data-pods-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7de075b930e1df77d018105fe7bbac98a6b7cb1b8b5764526f4a18e79c99407a",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T10:48:56.789Z"
+}

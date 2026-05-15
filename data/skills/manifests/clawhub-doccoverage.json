@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53396,
+  "uuid": "skill-clawhub-doccoverage",
+  "skillKey": "clawhub-doccoverage",
+  "name": "doccoverage",
+  "summary": "Documentation coverage & quality analyzer — detects undocumented public functions, missing JSDoc/docstrings/godoc/Javadoc, incomplete parameter descriptions,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doccoverage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suhteevah",
+      "features": [
+        "Documentation coverage & quality analyzer — detects undocumented public functions, missing JSDo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doccoverage@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2342183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doccoverage",
+      "url": "https://clawhub.ai/skills/doccoverage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doccoverage",
+    "url": "https://clawhub.ai/skills/doccoverage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doccoverage-8a7028305e37b630.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doccoverage@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-doccoverage-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38b97caaee37e0219ba12157a4afd63da7ff983c9a8b0ded7ea431f9fa06247a",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T16:22:22.890Z"
+}

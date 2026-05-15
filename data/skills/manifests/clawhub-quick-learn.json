@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20194,
+  "uuid": "skill-clawhub-quick-learn",
+  "skillKey": "clawhub-quick-learn",
+  "name": "Quick Learn",
+  "summary": "A Feynman-based learning coach for systematic multi-day learning plans and quick article/book breakdowns. Supports EN and ZH.",
+  "version": "2.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quick_learn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wjy",
+      "features": [
+        "A Feynman-based learning coach for systematic multi-day learning plans and quick article/book b.",
+        "Supports EN and ZH."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quick-learn@2.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24526635?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quick-learn",
+      "url": "https://clawhub.ai/skills/quick-learn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quick-learn",
+    "url": "https://clawhub.ai/skills/quick-learn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quick-learn-9732ed24799ed76a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quick-learn@2.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quick-learn-2.5.0.json",
+      "version": "2.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f007f932a833b4b4884845abb5f9b0c243175b726742173f6a19ecdb1dbebed",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T04:52:07.003Z"
+}

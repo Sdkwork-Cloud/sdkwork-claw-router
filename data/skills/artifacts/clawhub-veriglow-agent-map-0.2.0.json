@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/veriglow-agent-map@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veriglow_agent_map",
+  "skill": {
+    "id": 19730,
+    "skillKey": "clawhub-veriglow-agent-map",
+    "name": "VeriGlow Agent Map"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veriglow-agent-map",
+    "url": "https://clawhub.ai/skills/veriglow-agent-map",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veriglow-agent-map-12ef7c523c87a5fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Look up VeriGlow Agent Map for any website URL to discover its data functions, internal APIs, browser automation recipes, and agent reliability reports. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chizhongwang",
+      "userId": "publishers:chizhongwang",
+      "displayName": "ChizhongWang",
+      "image": "https://avatars.githubusercontent.com/u/140241581?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 495,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1772675361863,
+      "changelog": "**Expanded agent map coverage for new data sources.**\n\n- Added 54 new Shanghai Stock Exchange (SSE) data source maps, bringing the total to 55 SSE pages.\n- Included 4 international API sources for broader coverage.\n- Updated documentation to list all 59 currently indexed maps in structured tables.\n- No changes to usage, parameters, or functionality—only a significant expansion of supported URLs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b97b61a11f4500d458514fd42936c222efbe752cffd8e47d3325812b7dd5e27a"
+}

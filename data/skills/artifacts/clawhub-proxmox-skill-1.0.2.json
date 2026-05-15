@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proxmox-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxmox_skill",
+  "skill": {
+    "id": 11585,
+    "skillKey": "clawhub-proxmox-skill",
+    "name": "Proxmox Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxmox-skill",
+    "url": "https://clawhub.ai/skills/proxmox-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxmox-skill-4a06e9c346726461.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Proxmox VE nodes, VMs, and containers. Can list hardware stats, resources, control power states (start, stop, reboot, shutdown), and manage snapshots..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robnew",
+      "userId": "s179tw8ymch045yzagkqftn3m985hj3t",
+      "displayName": "robnew",
+      "image": "https://avatars.githubusercontent.com/u/39396429?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2096,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777095872233,
+      "changelog": "Added snapshot management features for VMs and containers.\n\n- Now supports creating, listing, rolling back to, and deleting snapshots.\n- Updated requirements to include proxmoxer and requests Python dependencies.\n- Skill description extended to cover new snapshot capabilities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:121e01b5f21f6f0983afad2b826a18d327461328fa8612612abcee463ae948b0"
+}

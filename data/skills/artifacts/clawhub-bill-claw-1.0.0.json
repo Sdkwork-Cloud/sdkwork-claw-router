@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bill-claw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bill_claw",
+  "skill": {
+    "id": 52254,
+    "skillKey": "clawhub-bill-claw",
+    "name": "bill claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bill-claw",
+    "url": "https://clawhub.ai/skills/bill-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bill-claw-54bc8118c5db9952.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Drives the BillClaw local bookkeeping CLI against SQLite (db/expenses.db) via scripts/main.py JSON subcommands—add/query transactions, delete and category-me..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "520mianxiangduixiang520",
+      "userId": "publishers:520mianxiangduixiang520",
+      "displayName": "JuneBao",
+      "image": "https://avatars.githubusercontent.com/u/44747536?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774032593708,
+      "changelog": "BillClaw Skill v1.0.0\n\n- Initial release providing a local bookkeeping assistant via Python CLI and SQLite.\n- Supports structured entry, querying, deletion (with preview/confirmation), category management, and CSV export.\n- Generates detailed financial reports with dark-themed multi-chart PNGs and personalized textual summaries.\n- Offers a local Flask web dashboard for interactive visualizations and filtering.\n- Enforces user confirmation for destructive or ambiguous actions to ensure data safety.\n- Documentation includes sample dialogues and user intent flows for common bookkeeping scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39ade3f3f44c917a5dab008c45e2d105821c38e08286003e3d1f71031c258692"
+}

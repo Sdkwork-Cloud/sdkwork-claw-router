@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pexoai-agent@0.3.10",
+  "version": "0.3.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pexoai_agent",
+  "skill": {
+    "id": 8448,
+    "skillKey": "clawhub-pexoai-agent",
+    "name": "Pexo AI Video Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pexoai-agent",
+    "url": "https://clawhub.ai/skills/pexoai-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pexoai-agent-ad61779ed4136a3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to produce a short video (5–120 seconds). Supports any video type: product ads, TikTok/Instagram/YouTube content, brand vi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rainer-liao",
+      "userId": "s1758wn81m498ps1j0w8hrzds183g683",
+      "displayName": "evan Liao",
+      "image": "https://avatars.githubusercontent.com/u/5227722?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 14961,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 15,
+      "versions": 19
+    },
+    "latestVersion": {
+      "version": "0.3.10",
+      "createdAt": 1775735866960,
+      "changelog": "v0.3.10: rename to Pexo AI Video Agent",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:691b807e898836495a82ff4b4b80f8de35d79c43cf2e471a1f381d3e8c5252d5"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18915,
+  "uuid": "skill-clawhub-uxc",
+  "skillKey": "clawhub-uxc",
+  "name": "Uxc",
+  "summary": "Discover and call remote schema-exposed interfaces with UXC. Use when an agent or skill needs to list operations, inspect operation schemas, and execute Open...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uxc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Discover and call remote schema-exposed interfaces with UXC",
+        "Use when an agent or skill needs to list operations, inspect operation schemas, and execute Ope."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uxc@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uxc",
+      "url": "https://clawhub.ai/skills/uxc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uxc",
+    "url": "https://clawhub.ai/skills/uxc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uxc-315a29b5c5b7873e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uxc@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-uxc-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:163fa77f07db41471f475c1ab00a4e1600f9fb51d762193621aacfcb351b0e4b",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T09:41:15.338Z"
+}

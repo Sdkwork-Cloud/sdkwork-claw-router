@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/turso@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turso",
+  "skill": {
+    "id": 25970,
+    "skillKey": "clawhub-turso",
+    "name": "Turso"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turso",
+    "url": "https://clawhub.ai/skills/turso",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turso-4170f4782823a501.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Turso SQLite databases via CLI - databases, groups, tokens, replicas. Use when user mentions 'turso', 'libsql', 'sqlite edge', or wants to manage Turs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "melvynx",
+      "userId": "s171qar4x43k9fxmt5aar5mn0x83n177",
+      "displayName": "Melvyn",
+      "image": "https://avatars.githubusercontent.com/u/56388157?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773160661561,
+      "changelog": "Initial release of the Turso skill.\n\n- Manage Turso SQLite databases via CLI: create, list, destroy, inspect, and query.\n- Supports group and organization management through dedicated commands.\n- Token management and authentication included.\n- Provides setup instructions for macOS and Linux/WSL.\n- Always use `--output json` flag for programmatic access where supported.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a173f1c332fe0ca089f970626c3f301bfec49f77afe2eb4758ca1c62d86b5b1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/design-studio@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.design_studio",
+  "skill": {
+    "id": 35794,
+    "skillKey": "clawhub-design-studio",
+    "name": "Design Studio V101"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "design-studio",
+    "url": "https://clawhub.ai/skills/design-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/design-studio-ad0c205a24862351.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional design studio for creating covers, banners, avatars, logos, mockups, portfolios and GIF animations. Use when you need to create designs for free..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mosoonpi-ai",
+      "userId": "s177hcksrx4t6jdf66nf1729yn84770k",
+      "displayName": "mosoonpi-ai",
+      "image": "https://avatars.githubusercontent.com/u/268581383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775296203190,
+      "changelog": "Added clear value propositions: speed benchmarks, auto-scoring, batch capabilities",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a7d66b1f1315025ed37ed14af25bd4a606ec2e757a2094c44b3f5bddd13a1304"
+}

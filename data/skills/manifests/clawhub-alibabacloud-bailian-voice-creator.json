@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48497,
+  "uuid": "skill-clawhub-alibabacloud-bailian-voice-creator",
+  "skillKey": "clawhub-alibabacloud-bailian-voice-creator",
+  "name": "Alibabacloud Bailian Voice Creator",
+  "summary": "AI voice creation skill supporting speech recognition (ASR) and text-to-speech (TTS). Uses qwen3-asr-flash-filetrans, qwen-tts and other models. Use this ski...",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_bailian_voice_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "AI voice creation skill supporting speech recognition (ASR) and text-to-speech (TTS)",
+        "Uses qwen3-asr-flash-filetrans, qwen-tts and other models",
+        "Use this ski..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-bailian-voice-creator@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-bailian-voice-creator",
+      "url": "https://clawhub.ai/skills/alibabacloud-bailian-voice-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-bailian-voice-creator",
+    "url": "https://clawhub.ai/skills/alibabacloud-bailian-voice-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-bailian-voice-creator-ca6a94323c14521b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-bailian-voice-creator@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-bailian-voice-creator-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ef806fbeec48b519f92f4e72b6521d2f8db245162435d0af13beedf1222e492",
+      "artifactSizeBytes": 2317
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T07:48:20.964Z"
+}

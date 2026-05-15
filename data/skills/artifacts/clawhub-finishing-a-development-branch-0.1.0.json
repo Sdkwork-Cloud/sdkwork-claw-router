@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/finishing-a-development-branch@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finishing_a_development_branch",
+  "skill": {
+    "id": 11362,
+    "skillKey": "clawhub-finishing-a-development-branch",
+    "name": "Finishing a Development Branch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finishing-a-development-branch",
+    "url": "https://clawhub.ai/skills/finishing-a-development-branch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finishing-a-development-branch-cb5f82942580cba9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when implementation is complete, all tests pass, and you need to decide how to integrate the work - guides completion of development work by presenting structured options for merge, PR, or cleanup"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zlc000190",
+      "userId": "s17eqtvxjm6jkak76k71zxaa5s85cy99",
+      "displayName": "zlc000190",
+      "image": "https://avatars.githubusercontent.com/u/8969941?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1423,
+      "installsAllTime": 76,
+      "installsCurrent": 71,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770691906652,
+      "changelog": "Initial release: 完成开发分支",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:207bd13ed3d47e71b0e14a793185e6377fe4bb76cea5175eeee3d0df23da22c6"
+}

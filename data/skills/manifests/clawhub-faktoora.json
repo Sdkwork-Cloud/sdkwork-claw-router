@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31835,
+  "uuid": "skill-clawhub-faktoora",
+  "skillKey": "clawhub-faktoora",
+  "name": "Faktoora",
+  "summary": "Faktoora integration. Manage Organizations. Use when the user wants to interact with Faktoora data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.faktoora",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Faktoora integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Faktoora data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/faktoora@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "faktoora",
+      "url": "https://clawhub.ai/skills/faktoora"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "faktoora",
+    "url": "https://clawhub.ai/skills/faktoora",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/faktoora-a01de07c6743b1b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/faktoora@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-faktoora-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4c437cbf4631bd42a924e707c6742f8f645e0fdae0082820685b9216b2092ee",
+      "artifactSizeBytes": 1814
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:26:50.565Z"
+}

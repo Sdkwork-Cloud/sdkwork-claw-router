@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaoyuan-calc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoyuan_calc",
+  "skill": {
+    "id": 26873,
+    "skillKey": "clawhub-xiaoyuan-calc",
+    "name": "xiaoyuan-calc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoyuan-calc",
+    "url": "https://clawhub.ai/skills/xiaoyuan-calc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoyuan-calc-41d4658b84ac5272.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A powerful mathematical assistant that supports all scientific calculator functions, equation solving, inequality solving, and provides detailed calculation..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liutengky",
+      "userId": "s173m9eaqfs2c9bxrq9ceat2g983x3sr",
+      "displayName": "liutengky",
+      "image": "https://avatars.githubusercontent.com/u/137999075?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773399401208,
+      "changelog": "Initial release of xiaoyuan-calc\n\n- Supports all core scientific calculator operations, including arithmetic, powers, roots, fractions, and trigonometric functions using LaTeX input.\n- Provides advanced equation and inequality solving for single-variable, quadratic, higher-order, and systems (multi-variable) without requiring special wrappers.\n- Automatically generates detailed step-by-step calculation explanations.\n- Handles both equations and inequalities, including multi-equation and multi-inequality systems.\n- Outputs results with high-precision calculations and user-friendly error messages.\n- Multi-language output support (e.g., English, Chinese).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82cc3a2e01d8a94117e4b5258607ed1f00c1a5170105ca89effe34cf68eeb4e5"
+}

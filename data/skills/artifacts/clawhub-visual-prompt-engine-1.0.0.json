@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/visual-prompt-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visual_prompt_engine",
+  "skill": {
+    "id": 18596,
+    "skillKey": "clawhub-visual-prompt-engine",
+    "name": "Visual Prompt Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visual-prompt-engine",
+    "url": "https://clawhub.ai/skills/visual-prompt-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visual-prompt-engine-40bf9a88d894523d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate diverse, non-repetitive image prompts powered by real visual references from Dribbble and design platforms. USE WHEN: user wants an image prompt, ne..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abdullah4ai",
+      "userId": "s17ejqe5vq2msxfx3fyfc7x95d83k2jg",
+      "displayName": "Abdullah AlRashoudi",
+      "image": "https://avatars.githubusercontent.com/u/92252803?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 678,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771343400969,
+      "changelog": "Initial release: Dribbble scraper, style cards, 12+ prompt patterns, visual vocabulary",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:89f7bcdf3649a37983c6a9d33fe163c43b9adb94a0a72866b327e3fa46cc62e1"
+}

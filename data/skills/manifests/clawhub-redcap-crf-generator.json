@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60744,
+  "uuid": "skill-clawhub-redcap-crf-generator",
+  "skillKey": "clawhub-redcap-crf-generator",
+  "name": "Redcap Crf Generator",
+  "summary": "开发者：邹和建、刘从建 REDCap 数据字典生成器 - 将 Word/Excel 文档（CRF/方案）转换为 CSV 格式的 REDCap 数据字典。 适用场景： - 用户上传临床试验 CRF/方案 Word/Excel 文档，要求生成数据字典 - 将问卷/调查表转换为 REDCap 可导入的 CSV 格式 功...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redcap_crf_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kenlcj",
+      "features": [
+        "开发者：邹和建、刘从建 REDCap 数据字典生成器",
+        "将 Word/Excel 文档（CRF/方案）转换为 CSV 格式的 REDCap 数据字典。 适用场景：",
+        "用户上传临床试验 CRF/方案 Word/Excel 文档，要求生成数据字典",
+        "将问卷/调查表转换为 REDCap 可导入的 CSV 格式 功..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/redcap-crf-generator@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24937860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "redcap-crf-generator",
+      "url": "https://clawhub.ai/skills/redcap-crf-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redcap-crf-generator",
+    "url": "https://clawhub.ai/skills/redcap-crf-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redcap-crf-generator-12c26f190db625bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/redcap-crf-generator@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-redcap-crf-generator-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7514bb5431eb23cd1f6c33c8ff98efa56c23ba3c9ffb52790b657739caf7cdc",
+      "artifactSizeBytes": 2176
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T08:26:05.486Z"
+}

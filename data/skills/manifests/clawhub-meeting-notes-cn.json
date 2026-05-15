@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57875,
+  "uuid": "skill-clawhub-meeting-notes-cn",
+  "skillKey": "clawhub-meeting-notes-cn",
+  "name": "会议记录整理与行动项提取",
+  "summary": "Use when you need to organize meeting notes, extract action items, and generate structured summaries. Ideal for processing raw meeting transcripts or bullet...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_notes_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hjs102468",
+      "features": [
+        "Use when you need to organize meeting notes, extract action items, and generate structured summ.",
+        "Ideal for processing raw meeting transcripts or bullet..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-notes-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31621036?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-notes-cn",
+      "url": "https://clawhub.ai/skills/meeting-notes-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-notes-cn",
+    "url": "https://clawhub.ai/skills/meeting-notes-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-notes-cn-907eace7f67a4d0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-notes-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-notes-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abb1b457a722855de19ddf9f88be00c4694fe6fb55289a317ecd3bf96cbe481c",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T02:22:33.323Z"
+}

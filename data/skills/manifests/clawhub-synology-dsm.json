@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21189,
+  "uuid": "skill-clawhub-synology-dsm",
+  "skillKey": "clawhub-synology-dsm",
+  "name": "Synology DSM",
+  "summary": "Manage Synology NAS via DSM Web API. Authenticate, browse and manage files (FileStation), manage download tasks (DownloadStation), and query system info. Use...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.synology_dsm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eric Liu",
+      "features": [
+        "Manage Synology NAS via DSM Web API",
+        "Authenticate, browse and manage files (FileStation), manage download tasks (DownloadStation), a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/synology-dsm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10938293?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "synology-dsm",
+      "url": "https://clawhub.ai/skills/synology-dsm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "synology-dsm",
+    "url": "https://clawhub.ai/skills/synology-dsm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/synology-dsm-7d945e9e93658dfe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/synology-dsm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-synology-dsm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8966c93afecfc052ff774cd9d9051924f3bc5ed0ad527da0a7a85a74f65edb3a",
+      "artifactSizeBytes": 2291
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T08:41:25.321Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37180,
+  "uuid": "skill-clawhub-ec-sample-tracker",
+  "skillKey": "clawhub-ec-sample-tracker",
+  "name": "EC Sample Tracker",
+  "summary": "Track and manage electrochemistry samples from synthesis to characterization with data linking, event logging, search, export, and dashboard visualization.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ec_sample_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xrayxiaoruiyang-pixel",
+      "features": [
+        "Track and manage electrochemistry samples from synthesis to characterization with data linking,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ec-sample-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270668994?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ec-sample-tracker",
+      "url": "https://clawhub.ai/skills/ec-sample-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ec-sample-tracker",
+    "url": "https://clawhub.ai/skills/ec-sample-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ec-sample-tracker-329fdec019061249.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ec-sample-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ec-sample-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:224bdede07aa7bf6eca93509dd845c204eec5bce142b06d25c9a098ad7e90499",
+      "artifactSizeBytes": 2447
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T18:36:52.006Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27846,
+  "uuid": "skill-clawhub-refund-reason-cluster",
+  "skillKey": "clawhub-refund-reason-cluster",
+  "name": "Refund Reason Cluster",
+  "summary": "Clusters refund and return reasons to identify root causes and prevention plans, helping reduce avoidable refunds and margin erosion post-purchase.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.refund_reason_cluster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Clusters refund and return reasons to identify root causes and prevention plans, helping reduce."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/refund-reason-cluster@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "refund-reason-cluster",
+      "url": "https://clawhub.ai/skills/refund-reason-cluster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "refund-reason-cluster",
+    "url": "https://clawhub.ai/skills/refund-reason-cluster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/refund-reason-cluster-fa1bba98e1f48d61.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/refund-reason-cluster@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-refund-reason-cluster-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11fde2dd39478b8418a23dc7b3fe76e82a7b6877098818031c3ab612b2ccaa70",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:46:35.274Z"
+}

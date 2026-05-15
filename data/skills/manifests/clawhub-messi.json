@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56135,
+  "uuid": "skill-clawhub-messi",
+  "skillKey": "clawhub-messi",
+  "name": "Messi",
+  "summary": "Information assistant for Lionel Messi 梅西. Get biography, latest news, career highlights, and social media updates.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.messi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for Lionel Messi 梅西",
+        "Get biography, latest news, career highlights, and social media updates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/messi@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "messi",
+      "url": "https://clawhub.ai/skills/messi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "messi",
+    "url": "https://clawhub.ai/skills/messi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/messi-9bcdae8ebc2a970a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/messi@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-messi-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9c5970a2295df3150143abf485489ac075be46f4f1c90de98cb58b900279bbe",
+      "artifactSizeBytes": 1783
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:12:14.418Z"
+}

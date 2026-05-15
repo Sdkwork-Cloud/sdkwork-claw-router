@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70166,
+  "uuid": "skill-clawhub-weather-report-skills",
+  "skillKey": "clawhub-weather-report-skills",
+  "name": "weather-report-skills",
+  "summary": "天气播报格式化技能。当用户询问天气、查看天气预报、或需要生成天气报告时触发。技能包含完整的天气信息格式化模板，支持今天/明天/后天三种类型，以及时间段的斜体规则。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_report_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhjx94264",
+      "features": [
+        "天气播报格式化技能。当用户询问天气、查看天气预报、或需要生成天气报告时触发。技能包含完整的天气信息格式化模板，支持今天/明天/后天三种类型，以及时间段的斜体规则。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-report-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170193103?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-report-skills",
+      "url": "https://clawhub.ai/skills/weather-report-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-report-skills",
+    "url": "https://clawhub.ai/skills/weather-report-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-report-skills-f74f1d5c431a3b09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-report-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-report-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd210a480be4ddfb7c9fbcfdd7179dd0adf2e88e25135d0f5e2bbf79295cf9ff",
+      "artifactSizeBytes": 2529
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T01:32:48.701Z"
+}

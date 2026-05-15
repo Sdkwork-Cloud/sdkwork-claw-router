@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-canvas@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_canvas",
+  "skill": {
+    "id": 19130,
+    "skillKey": "clawhub-claw-canvas",
+    "name": "Claw Canvas"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-canvas",
+    "url": "https://clawhub.ai/skills/claw-canvas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-canvas-5093a95b49045370.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A virtual canvas for OpenClaw to output content and visualize its thinking during development."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "austindixson",
+      "userId": "s17472vm40hmrgybr4rdjmet6h84bcs0",
+      "displayName": "austindixson",
+      "image": "https://avatars.githubusercontent.com/u/52183161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 625,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772111109039,
+      "changelog": "Initial release of Claw Canvas, providing a virtual, interactive surface for agent visualization:\n\n- Offers rendering of Markdown/HTML, images, charts, and tables.\n- Displays agent's thinking and progress in real-time.\n- Includes a CLI for displaying various content types on the canvas.\n- Supports capturing canvas snapshots.\n- Aims to enhance workflow transparency and output visualization during development.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f7fe2cd317684f77a5fe0bf07920d788ad30040447c588be92cdfb6972259013"
+}

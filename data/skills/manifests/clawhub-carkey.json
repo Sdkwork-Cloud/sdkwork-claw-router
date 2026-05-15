@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63201,
+  "uuid": "skill-clawhub-carkey",
+  "skillKey": "clawhub-carkey",
+  "name": "Control your vehicle from AI agent",
+  "summary": "车辆信息查询技能。查询车辆位置、车况（车锁、车门、车窗、空调、电源状态等）。触发词：查车、车辆位置、车况、我的车在哪。跨平台支持 Linux/macOS/Windows。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.carkey",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kuikui",
+      "features": [
+        "车辆信息查询技能。查询车辆位置、车况（车锁、车门、车窗、空调、电源状态等）。触发词：查车、车辆位置、车况、我的车在哪。跨平台支持 Linux/macOS/Windows。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/carkey@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2712885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "carkey",
+      "url": "https://clawhub.ai/skills/carkey"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "carkey",
+    "url": "https://clawhub.ai/skills/carkey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/carkey-1b89b8160b27cb6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/carkey@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-carkey-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:523b4a56222cf08471720ad3fd761aceb4826b807efcd6a935912e5d8f34080c",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T11:18:32.437Z"
+}

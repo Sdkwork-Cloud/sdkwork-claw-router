@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19558,
+  "uuid": "skill-clawhub-edit",
+  "skillKey": "clawhub-edit",
+  "name": "Edit",
+  "summary": "Professional editing assistant. Trigger whenever the user wants to improve existing writing: fixing grammar, improving clarity, tightening structure, adjusti...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EthAgent",
+      "features": [
+        "Professional editing assistant",
+        "Trigger whenever the user wants to improve existing writing: fixing grammar, improving clarity,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216467966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edit",
+      "url": "https://clawhub.ai/skills/edit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edit",
+    "url": "https://clawhub.ai/skills/edit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edit-262121c5372be8af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-edit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:494d302e9c71d414760758ae487e682eb09ce6a4a52f9551383623bd2613a166",
+      "artifactSizeBytes": 1800
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T15:56:01.445Z"
+}

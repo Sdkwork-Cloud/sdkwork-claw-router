@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21758,
+  "uuid": "skill-clawhub-data-breach-impact-calculator",
+  "skillKey": "clawhub-data-breach-impact-calculator",
+  "name": "Data Breach Impact Calculator",
+  "summary": "Calculate data breach costs, financial impact, regulatory fines, and remediation expenses. Use when estimating breach costs, GDPR/CCPA penalty exposure, inci...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_breach_impact_calculator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Calculate data breach costs, financial impact, regulatory fines, and remediation expenses",
+        "Use when estimating breach costs, GDPR/CCPA penalty exposure, inci..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-breach-impact-calculator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-breach-impact-calculator",
+      "url": "https://clawhub.ai/skills/data-breach-impact-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-breach-impact-calculator",
+    "url": "https://clawhub.ai/skills/data-breach-impact-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-breach-impact-calculator-d8ba5f03afe6dba7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-breach-impact-calculator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-breach-impact-calculator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ed6146325af8af91ad0086408a1e57a1c5808192ca58c321415ea190474376c",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T03:09:38.413Z"
+}

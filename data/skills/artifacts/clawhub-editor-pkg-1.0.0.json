@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-pkg@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_pkg",
+  "skill": {
+    "id": 37043,
+    "skillKey": "clawhub-editor-pkg",
+    "name": "Editor Pkg"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-pkg",
+    "url": "https://clawhub.ai/skills/editor-pkg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-pkg-64505eb05f7a44bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit raw video clips into polished edited clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for packaging raw..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776708665271,
+      "changelog": "editor-pkg 1.0.0 — Initial Release\n\n- Launches cloud-based video editing for raw clips (MP4, MOV, AVI, WebM up to 500MB).\n- Supports AI-powered editing: trim, transitions, BGM, text overlays, and more with natural prompts.\n- Exports finished edits as 1080p MP4; download results in 1–2 minutes.\n- Handles upload, session management, and export via streamlined cloud API.\n- Includes credit system with anonymous or registered tokens.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f39fffbf00c4e7454e6b14278164086340504c9a034a68dba06c0ae14b950703"
+}

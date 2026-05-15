@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72444,
+  "uuid": "skill-clawhub-zeming-xiaoshoudingdan-apidiaoyong",
+  "skillKey": "clawhub-zeming-xiaoshoudingdan-apidiaoyong",
+  "name": "泽明订单制作",
+  "summary": "通过钉钉API导入订单数据，展示20项详细信息供核对，支持确认、重新查询或退出操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeming_xiaoshoudingdan_apidiaoyong",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "duanzhen001",
+      "features": [
+        "通过钉钉API导入订单数据，展示20项详细信息供核对，支持确认、重新查询或退出操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zeming-xiaoshoudingdan-apidiaoyong@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267502214?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zeming-xiaoshoudingdan-apidiaoyong",
+      "url": "https://clawhub.ai/skills/zeming-xiaoshoudingdan-apidiaoyong"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeming-xiaoshoudingdan-apidiaoyong",
+    "url": "https://clawhub.ai/skills/zeming-xiaoshoudingdan-apidiaoyong",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeming-xiaoshoudingdan-apidiaoyong-7c1703b4bc7e0875.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zeming-xiaoshoudingdan-apidiaoyong@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zeming-xiaoshoudingdan-apidiaoyong-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffff3a34756e7cf9a8a37720ac4c8992a144edbe4fb0391ebaca39a5ac2dd86c",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T20:32:18.059Z"
+}

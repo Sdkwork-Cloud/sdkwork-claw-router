@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17026,
+  "uuid": "skill-clawhub-shopify-integration",
+  "skillKey": "clawhub-shopify-integration",
+  "name": "Shopify",
+  "summary": "Shopify integration. Manage e-commerce data, records, and workflows. Use when the user wants to interact with Shopify data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Shopify integration",
+        "Manage e-commerce data, records, and workflows",
+        "Use when the user wants to interact with Shopify data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shopify-integration@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shopify-integration",
+      "url": "https://clawhub.ai/skills/shopify-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-integration",
+    "url": "https://clawhub.ai/skills/shopify-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-integration-e5c2e2dc156aa109.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shopify-integration@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-shopify-integration-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fef0a3c732bf4f31811a588f5c06d4fc239f6d1c49fe4151ea56a0b672b9ba7",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T11:46:52.218Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18262,
+  "uuid": "skill-clawhub-hyperliquid-perps",
+  "skillKey": "clawhub-hyperliquid-perps",
+  "name": "Hyperliquid Perps",
+  "summary": "Paper and live perpetual futures trading on Hyperliquid. Smart leverage (1x/3x/5x based on signal strength), OBV divergence, auto-stop-loss. Use for Hyperliq...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hyperliquid_perps",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JamieRossouw",
+      "features": [
+        "Paper and live perpetual futures trading on Hyperliquid",
+        "Smart leverage (1x/3x/5x based on signal strength), OBV divergence, auto-stop-loss",
+        "Use for Hyperliq..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hyperliquid-perps@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219507116?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hyperliquid-perps",
+      "url": "https://clawhub.ai/skills/hyperliquid-perps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hyperliquid-perps",
+    "url": "https://clawhub.ai/skills/hyperliquid-perps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hyperliquid-perps-08645318825fab6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hyperliquid-perps@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hyperliquid-perps-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65215383c96e84ae3990a23c25f3060d8bc277dd21feddbc5c92043fabb955f0",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T18:18:55.935Z"
+}

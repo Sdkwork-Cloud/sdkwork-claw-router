@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yilian-ppt-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yilian_ppt_generator",
+  "skill": {
+    "id": 41393,
+    "skillKey": "clawhub-yilian-ppt-generator",
+    "name": "Pptx Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yilian-ppt-generator",
+    "url": "https://clawhub.ai/skills/yilian-ppt-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yilian-ppt-generator-5f744798ff95325b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate, edit, and read PowerPoint presentations. Create from scratch with PptxGenJS (cover, TOC, content, section divider, summary slides), edit existing P..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fusuvae-art",
+      "userId": "s177p4nftvzk3q6s7n3rygf6ad83p9cr",
+      "displayName": "fusuvae-art",
+      "image": "https://avatars.githubusercontent.com/u/271408524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776306837763,
+      "changelog": "- Initial release of the pptx-generator skill.\n- Supports generating, editing, and reading PowerPoint presentations.\n- Create presentations from scratch using PptxGenJS, or edit existing PPTX files via XML workflows.\n- Includes a complete design system with color palettes, font references, and style recipes.\n- Provides triggers and workflows for text extraction, template-based editing, and creating new presentations.\n- Detailed documentation and guidance included for slide types, design standards, and quality assurance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8bdb6a524ae01f4629bc78c2663aed7d299f68fa8397da2e415b302fa110eaa9"
+}

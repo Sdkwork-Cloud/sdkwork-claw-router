@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65131,
+  "uuid": "skill-clawhub-minimal-agent",
+  "skillKey": "clawhub-minimal-agent",
+  "name": "Minimal Agent",
+  "summary": "极简 AI 操作系统控制代理。通过执行协议驱动 system-controller 完成窗口管理、进程控制、硬件操作、GUI自动化、串口通信和IoT设备交互。 当用户需要操控 Windows 系统（打开/关闭应用、调整音量亮度、 截图OCR、管理进程、串口通信等）时使用此 Skill。 触发词：打开应用、关闭窗口...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimal_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "波动几何",
+      "features": [
+        "极简 AI 操作系统控制代理。通过执行协议驱动 system-controller 完成窗口管理、进程控制、硬件操作、GUI自动化、串口通信和IoT设备交互。 当用户需要操控 Windows."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimal-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25478397?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimal-agent",
+      "url": "https://clawhub.ai/skills/minimal-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimal-agent",
+    "url": "https://clawhub.ai/skills/minimal-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimal-agent-0353417811a2e9af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimal-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimal-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38aadc9da0deab652d1e6baa0d0018726e1a6e39c435462f5941715c67fe8b1b",
+      "artifactSizeBytes": 2659
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T08:40:21.050Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/housing-scout-pro@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.housing_scout_pro",
+  "skill": {
+    "id": 36214,
+    "skillKey": "clawhub-housing-scout-pro",
+    "name": "Housing Scout — Smart House(Sale or Lease) Search & Alerts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "housing-scout-pro",
+    "url": "https://clawhub.ai/skills/housing-scout-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/housing-scout-pro-74b0db3e0298a18d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find and monitor housing listings (buy/rent), apply practical filters, and manage subscription-style alerts in any supported region. Use when the user asks t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junyij",
+      "userId": "publishers:junyij",
+      "displayName": "Junyi Jiao",
+      "image": "https://avatars.githubusercontent.com/u/8421173?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 653,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772499483016,
+      "changelog": "- Update name\n- No code or documentation changes detected in this version.\n- Functionality and instructions remain consistent with previous release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:66b836473ff79fca33b7a8a4c5a4056fda3a52bd83c7017540f864d99ecb0a60"
+}

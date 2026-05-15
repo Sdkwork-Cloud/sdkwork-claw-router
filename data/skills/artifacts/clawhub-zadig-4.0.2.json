@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zadig@4.0.2",
+  "version": "4.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zadig",
+  "skill": {
+    "id": 58271,
+    "skillKey": "clawhub-zadig",
+    "name": "zadig"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zadig",
+    "url": "https://clawhub.ai/skills/zadig",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zadig-47dbad983d6c87c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "⚠️ 需要 ZADIG_API_URL + ZADIG_API_KEY | Zadig DevOps 平台 API 客户端"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lilianzhu",
+      "userId": "publishers:lilianzhu",
+      "displayName": "lilianzhu",
+      "image": "https://avatars.githubusercontent.com/u/11495272?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 740,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "4.0.2",
+      "createdAt": 1772531021450,
+      "changelog": "修复版本号一致性; 添加便捷方法: getServiceStatus, getServiceLogsSync; 修复日志 API 缺少参数问题",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7a0f277246680ec015d5d5bb94cb3d93d8bc00eefbcf8adbbef6e68c134828b5"
+}

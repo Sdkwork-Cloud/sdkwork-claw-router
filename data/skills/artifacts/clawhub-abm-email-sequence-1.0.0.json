@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abm-email-sequence@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abm_email_sequence",
+  "skill": {
+    "id": 33111,
+    "skillKey": "clawhub-abm-email-sequence",
+    "name": "Email Sequence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abm-email-sequence",
+    "url": "https://clawhub.ai/skills/abm-email-sequence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abm-email-sequence-8004f68164f55b47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email program. Also use when the user mentions..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariokarras",
+      "userId": "s1714hxad423m02rtb4r6n2vmn83e4f5",
+      "displayName": "Mario Karras",
+      "image": "https://avatars.githubusercontent.com/u/199292356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773806127314,
+      "changelog": "- Major update: New strategic guide for any multi-email automated sequences (drip, onboarding, nurture, etc.).\n- Comprehensive frameworks for defining sequence type, audience, timing, and goals.\n- Best practices added for email copy, subject lines, CTAs, and segmentation.\n- Standardized output format for sequence overviews and individual emails.\n- Includes suggested measurement metrics and tool integration references.\n- Clear boundaries for when to use this skill versus cold-email or onboarding-cro.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bdac04493aaebd2a77fcfd6b20327296bb98142434f9a8384267703ce1f43701"
+}

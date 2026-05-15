@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-subtitle-extension@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_subtitle_extension",
+  "skill": {
+    "id": 44590,
+    "skillKey": "clawhub-ai-subtitle-extension",
+    "name": "Ai Subtitle Extension"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-subtitle-extension",
+    "url": "https://clawhub.ai/skills/ai-subtitle-extension",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-subtitle-extension-ea0d4590c0b309e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add video files into captioned video files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. YouTubers and content creators use it for addin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776029094330,
+      "changelog": "ai-subtitle-extension 1.0.0 — Initial release\n\n- Generate and extend subtitles for videos (MP4, MOV, AVI, WebM up to 500MB) using cloud GPUs, with quick 1080p MP4 export.\n- Automatic token and session management for easy setup (100 free credits, 7-day expiry for new users).\n- Supports user workflows: upload, generate/edit subtitles, preview timeline, and export — all through simple prompts.\n- Provides timeline summaries and handles batch or iterative edits.\n- Detailed error handling and tips included for a smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4328b0be57edab5cac10e514f279df3308791d1e0f047e6834250233e20236ac"
+}

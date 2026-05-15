@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27230,
+  "uuid": "skill-clawhub-clear-mind-skill",
+  "skillKey": "clawhub-clear-mind-skill",
+  "name": "Clear Mind",
+  "summary": "Memory file maintenance and optimization system. Use when factual information (portfolio, projects, technical details) accumulates in MEMORY.md, or when peri...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clear_mind_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "webray1983",
+      "features": [
+        "Memory file maintenance and optimization system",
+        "Use when factual information (portfolio, projects, technical details) accumulates in MEMORY.md,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clear-mind-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201538631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clear-mind-skill",
+      "url": "https://clawhub.ai/skills/clear-mind-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clear-mind-skill",
+    "url": "https://clawhub.ai/skills/clear-mind-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clear-mind-skill-83a11c1aa331ac36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clear-mind-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clear-mind-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7caa709de16ebdc704265b872bf95be20eac3f121e2235f5e599835fab9c948",
+      "artifactSizeBytes": 2617
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T04:01:31.756Z"
+}

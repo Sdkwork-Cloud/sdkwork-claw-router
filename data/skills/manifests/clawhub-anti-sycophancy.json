@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44221,
+  "uuid": "skill-clawhub-anti-sycophancy",
+  "skillKey": "clawhub-anti-sycophancy",
+  "name": "anti-sycophancy",
+  "summary": "Three-layer sycophancy defense based on ArXiv 2602.23971. Use /anti-sycophancy install to deploy all layers, or manage individually via install-claude-code /...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anti_sycophancy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jialin",
+      "features": [
+        "Three-layer sycophancy defense based on ArXiv 2602.23971",
+        "Use /anti-sycophancy install to deploy all layers, or manage individually via install-claude-co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anti-sycophancy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38884292?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anti-sycophancy",
+      "url": "https://clawhub.ai/skills/anti-sycophancy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anti-sycophancy",
+    "url": "https://clawhub.ai/skills/anti-sycophancy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anti-sycophancy-c370ffb4bac18b0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anti-sycophancy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-anti-sycophancy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c004b15855e7836baa270cb9bb45d7e131a7ebae4803c31f604096563278fa1",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T09:03:23.684Z"
+}

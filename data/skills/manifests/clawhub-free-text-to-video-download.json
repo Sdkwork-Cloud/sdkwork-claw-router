@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46434,
+  "uuid": "skill-clawhub-free-text-to-video-download",
+  "skillKey": "clawhub-free-text-to-video-download",
+  "name": "Free Text To Video Download",
+  "summary": "Get downloadable MP4 videos ready to post, without touching a single slider. Upload your text prompt (TXT, DOCX, PDF, plain text, up to 500MB), say something...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_text_to_video_download",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "susan4731-wilfordf",
+      "features": [
+        "Get downloadable MP4 videos ready to post, without touching a single slider",
+        "Upload your text prompt (TXT, DOCX, PDF, plain text, up to 500MB), say something..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-text-to-video-download@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208907675?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-text-to-video-download",
+      "url": "https://clawhub.ai/skills/free-text-to-video-download"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-text-to-video-download",
+    "url": "https://clawhub.ai/skills/free-text-to-video-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-text-to-video-download-0ada3b70be32e9e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-text-to-video-download@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-text-to-video-download-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc0a39caaee2131e57ff7ca278d3f22e74ad82cfdecc44b22d4dc808464fbe3f",
+      "artifactSizeBytes": 2415
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T09:46:30.209Z"
+}

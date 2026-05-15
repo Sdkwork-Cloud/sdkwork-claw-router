@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37876,
+  "uuid": "skill-clawhub-turbot-pipes",
+  "skillKey": "clawhub-turbot-pipes",
+  "name": "Turbot Pipes",
+  "summary": "Turbot Pipes integration. Manage data, records, and automate workflows. Use when the user wants to interact with Turbot Pipes data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turbot_pipes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Turbot Pipes integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Turbot Pipes data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/turbot-pipes@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "turbot-pipes",
+      "url": "https://clawhub.ai/skills/turbot-pipes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turbot-pipes",
+    "url": "https://clawhub.ai/skills/turbot-pipes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turbot-pipes-2b102e1c58df6bec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/turbot-pipes@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-turbot-pipes-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb037e453b59f298da3a59a730ee278c82d2fa59d59894f1e4264ee5f8259215",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:55:48.149Z"
+}

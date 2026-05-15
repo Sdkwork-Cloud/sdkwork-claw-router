@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31807,
+  "uuid": "skill-clawhub-ultramsg",
+  "skillKey": "clawhub-ultramsg",
+  "name": "Ultramsg",
+  "summary": "UltraMsg integration. Manage Organizations, Users. Use when the user wants to interact with UltraMsg data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ultramsg",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "UltraMsg integration",
+        "Manage Organizations, Users",
+        "Use when the user wants to interact with UltraMsg data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ultramsg@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ultramsg",
+      "url": "https://clawhub.ai/skills/ultramsg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ultramsg",
+    "url": "https://clawhub.ai/skills/ultramsg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ultramsg-0ad9b1ad313a34c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ultramsg@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ultramsg-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46ed1e60ebbda00a998efa3ed79c6ba7710fb2774e1a51ad438178b49f251275",
+      "artifactSizeBytes": 1813
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:56:58.626Z"
+}

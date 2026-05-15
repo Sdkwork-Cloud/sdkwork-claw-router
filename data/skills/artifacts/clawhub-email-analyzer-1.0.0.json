@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_analyzer",
+  "skill": {
+    "id": 63355,
+    "skillKey": "clawhub-email-analyzer",
+    "name": "Email Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-analyzer",
+    "url": "https://clawhub.ai/skills/email-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-analyzer-0e3066a58c45c9e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分析并清理 biqiang@126.com 邮箱中的邮件，按固化关键词分类后生成报告，待确认后执行安全删除操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "farmerboybi-bot",
+      "userId": "publishers:farmerboybi-bot",
+      "displayName": "farmerboybi-bot",
+      "image": "https://avatars.githubusercontent.com/u/263736108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773779391658,
+      "changelog": "- Initial release of the Email Analyzer skill (固化版).\n- Provides a secure, locked-down process for analyzing and cleaning the biqiang@126.com email account.\n- All configurations (server, account, authorization code, keywords) are fixed and modification requires approval.\n- Includes step-by-step workflow: analyze, confirm, backup, delete, verify, and report.\n- Error handling and strict usage limits are documented to ensure safe and authorized operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32693be06bc6a66927ed6a344af153e111c6a24073eab13658a1316ac009bb4c"
+}

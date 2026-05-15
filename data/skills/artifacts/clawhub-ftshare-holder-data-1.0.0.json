@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ftshare-holder-data@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ftshare_holder_data",
+  "skill": {
+    "id": 62535,
+    "skillKey": "clawhub-ftshare-holder-data",
+    "name": "Skills of A-share holder data released by ft.tech."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ftshare-holder-data",
+    "url": "https://clawhub.ai/skills/ftshare-holder-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ftshare-holder-data-a9c9744c1c42bfc1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "非凸科技 A 股股东数据技能集。覆盖十大股东、十大流通股东、股东户数、股权质押总揽等接口（market.ft.tech）。用户询问 A 股某只股票的历期十大股东、股东结构变动、持股比例、股东人数变化、或全市场股权质押情况时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shawn92",
+      "userId": "s178tyza29hgx3h8nsvhcmdphs83h6af",
+      "displayName": "Shawn92",
+      "image": "https://avatars.githubusercontent.com/u/17521361?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 543,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 51,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773332683283,
+      "changelog": "FTShare-holder-data 1.0.0 — 初始版本发布。\n\n- 提供 A 股十大股东、十大流通股东、股东人数、全市场股权质押总揽、个股股权质押详情、股东增减持六大功能接口。\n- 统一路由入口，支持根据用户问题自动匹配并调用各子 skill。\n- 清晰参数说明与调用流程，适配多种股东数据查询场景。\n- 简易命令行调用：run.py <子skill名> [参数...]。\n- 涵盖典型用户问法示例，易于理解与使用。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee7e1ca0bb83af515c0c4ccc95f7bab82dcda6785589774dc2e57fec257a8601"
+}

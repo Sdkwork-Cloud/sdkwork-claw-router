@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10563,
+  "uuid": "skill-clawhub-nest-devices",
+  "skillKey": "clawhub-nest-devices",
+  "name": "Nest Devices",
+  "summary": "Control Nest smart home devices (thermostat, cameras, doorbell) via the Device Access API. Use when asked to check or adjust home temperature, view camera feeds, check who's at the door, monitor rooms, or set up temperature schedules.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nest_devices",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "amogower",
+      "features": [
+        "Control Nest smart home devices (thermostat, cameras, doorbell) via the Device Access API",
+        "Use when asked to check or adjust home temperature, view camera feeds, check who's at the door,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nest-devices@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5639658?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nest-devices",
+      "url": "https://clawhub.ai/skills/nest-devices"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nest-devices",
+    "url": "https://clawhub.ai/skills/nest-devices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nest-devices-e7d0046c8813e42c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nest-devices@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nest-devices-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0cb46823efb172669c8fc173c6b991fb23f03b8758f559b37e61e5e12a24e40a",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T08:40:56.649Z"
+}

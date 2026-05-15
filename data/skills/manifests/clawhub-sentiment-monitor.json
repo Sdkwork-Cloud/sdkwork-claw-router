@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33703,
+  "uuid": "skill-clawhub-sentiment-monitor",
+  "skillKey": "clawhub-sentiment-monitor",
+  "name": "Sentiment Monitor",
+  "summary": "Public opinion monitoring and structured report generation. Collects publicly available web information about celebrities, TV shows, or brands, performs sent...",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sentiment_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wubinghuang2019-source",
+      "features": [
+        "Public opinion monitoring and structured report generation",
+        "Collects publicly available web information about celebrities, TV shows, or brands, performs se."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sentiment-monitor@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267895047?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sentiment-monitor",
+      "url": "https://clawhub.ai/skills/sentiment-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sentiment-monitor",
+    "url": "https://clawhub.ai/skills/sentiment-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sentiment-monitor-8a3e6fa9a70bf62f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sentiment-monitor@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sentiment-monitor-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dddf5dd186904269e1903b8dffbc06e84850c4c0b7f159b7f87c588846847edb",
+      "artifactSizeBytes": 2653
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T06:27:56.368Z"
+}

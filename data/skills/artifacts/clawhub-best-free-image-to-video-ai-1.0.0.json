@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/best-free-image-to-video-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.best_free_image_to_video_ai",
+  "skill": {
+    "id": 40649,
+    "skillKey": "clawhub-best-free-image-to-video-ai",
+    "name": "Best Free Image To Video Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "best-free-image-to-video-ai",
+    "url": "https://clawhub.ai/skills/best-free-image-to-video-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/best-free-image-to-video-ai-68bb83be403baad7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "social media creators convert still images into animated video clips using this skill. Accepts JPG, PNG, WEBP, HEIC up to 200MB, renders on cloud GPUs at 108..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775856415310,
+      "changelog": "- Initial release of \"Best Free Image to Video AI\" skill.\n- Converts still images (JPG, PNG, WEBP, HEIC) up to 200MB into 1080p MP4 video clips using cloud GPUs.\n- Fast processing: returns finished videos in about 30–60 seconds.\n- Supports user registration or anonymous mode with 7-day/100-credit tokens.\n- Handles export, credit inquiries, upload, and realtime session state tracking.\n- User-friendly workflow for social media creators and similar use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:37b83b2fd66666a073fe64f4cda99e277d8ed441a70fc47e016122a2c3b34aa6"
+}

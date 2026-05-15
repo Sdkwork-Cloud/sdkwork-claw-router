@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19404,
+  "uuid": "skill-clawhub-batch-processor-1-0-0",
+  "skillKey": "clawhub-batch-processor-1-0-0",
+  "name": "Batch Processor 1.0.0",
+  "summary": "Process multiple documents in bulk with parallel execution",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.batch_processor_1_0_0",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo Wing",
+      "features": [
+        "Process multiple documents in bulk with parallel execution"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/batch-processor-1-0-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6308474?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "batch-processor-1-0-0",
+      "url": "https://clawhub.ai/skills/batch-processor-1-0-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "batch-processor-1-0-0",
+    "url": "https://clawhub.ai/skills/batch-processor-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/batch-processor-1-0-0-c0ad0826d2269016.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/batch-processor-1-0-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-batch-processor-1-0-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6cc92256f0c53a16371aacd635bb4482f40de7cb7873124dbd9922038f8de1f5",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T06:16:38.657Z"
+}

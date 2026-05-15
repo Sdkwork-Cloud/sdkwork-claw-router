@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-manager-wyblhl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_manager_wyblhl",
+  "skill": {
+    "id": 58984,
+    "skillKey": "clawhub-memory-manager-wyblhl",
+    "name": "Memory Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-manager-wyblhl",
+    "url": "https://clawhub.ai/skills/memory-manager-wyblhl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-manager-wyblhl-9da90f6d373eed4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动管理 OpenClaw 的记忆系统，包括工作记忆、短期记忆、长期记忆、记忆合并与压缩。 Triggers: memory manager, memory management, 记忆管理，memory compression, memory cleanup"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wyblhl",
+      "userId": "publishers:wyblhl",
+      "displayName": "wyblhl",
+      "image": "https://avatars.githubusercontent.com/u/262313295?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774158147647,
+      "changelog": "Added proper YAML frontmatter - unique slug",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4651637c411267e2581091861b18bc00daeed4c70b86ae34a43dbe8728f13efc"
+}

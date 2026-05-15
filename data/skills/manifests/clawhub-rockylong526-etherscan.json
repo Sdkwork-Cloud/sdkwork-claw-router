@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61799,
+  "uuid": "skill-clawhub-rockylong526-etherscan",
+  "skillKey": "clawhub-rockylong526-etherscan",
+  "name": "etherscan",
+  "summary": "当用户需要查询或分析以太坊链上数据时触发，包括：查询地址 ETH 余额、普通/内部交易记录、ERC-20/ERC-721/ERC-1155 Token 转账、智能合约 ABI 和源码、Gas 价格、区块奖励、事件日志、ETH 价格和供应量等。使用 etherscan-cli 命令行工具调用 Etherscan 免...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rockylong526_etherscan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "turn around",
+      "features": [
+        "当用户需要查询或分析以太坊链上数据时触发，包括：查询地址 ETH 余额、普通/内部交易记录、ERC-20/ERC-721/ERC-1155 Token 转账、智能合约 ABI 和源码、Gas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rockylong526-etherscan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22789035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rockylong526-etherscan",
+      "url": "https://clawhub.ai/skills/rockylong526-etherscan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rockylong526-etherscan",
+    "url": "https://clawhub.ai/skills/rockylong526-etherscan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rockylong526-etherscan-512606f161181b2e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rockylong526-etherscan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rockylong526-etherscan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ae6e945d420fbe63d5a3743f8cc7c1fd85e9bdaec9a658624f29594bc742c3e",
+      "artifactSizeBytes": 2609
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T03:49:26.561Z"
+}

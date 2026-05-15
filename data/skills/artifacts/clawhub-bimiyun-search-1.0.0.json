@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bimiyun-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bimiyun_search",
+  "skill": {
+    "id": 66134,
+    "skillKey": "clawhub-bimiyun-search",
+    "name": "Bimiyun Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bimiyun-search",
+    "url": "https://clawhub.ai/skills/bimiyun-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bimiyun-search-48e871353b9f2646.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "比米云搜索（bimiyun search）：快速检索网络信息并返回LLM友好的数据，安全搜索默认启用。使用场景包括：当用户需要搜索网页信息、查找特定主题的资料、说出'比米云搜索'、'使用比米云'、'bimiyun搜索'、'搜索'、'查找'、'搜索一下'、'搜索网络'、'需要查找'、'帮我搜'、'查一下'、'搜索内..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bimiyun888",
+      "userId": "s1784ng72g02nr97mpyt56npbx84z3ea",
+      "displayName": "bimiyun888",
+      "image": "https://avatars.githubusercontent.com/u/276459418?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 81,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778033885068,
+      "changelog": "Initial release of bimiyun-search.\n\n- Provides a fast and stable web search API optimized for LLMs and AI agents.\n- Supports both human-readable Markdown format and structured JSON output.\n- Secure search is enabled by default; can be disabled with an option.\n- Flexible API key configuration via parameter, environment variable, or .env file.\n- Supports options for language, result count, search mode, and output format.\n- Detailed documentation for quick start and usage scenarios included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c9e506794d75f962c655f877d47c0202d99f1c291e1bea94679179bb45b26fb"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69167,
+  "uuid": "skill-clawhub-ai-learn-tutor",
+  "skillKey": "clawhub-ai-learn-tutor",
+  "name": "AI Learning Tutor",
+  "summary": "AI学习私教 - 搭知识库、规划路径、出题练习、批改讲解、总结输出。学练查写闭环，从零学成高手。支持任意学科：专业、考证、编程、论文等。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_learn_tutor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SMS",
+      "features": [
+        "搭知识库、规划路径、出题练习、批改讲解、总结输出。学练查写闭环，从零学成高手。支持任意学科：专业、考证、编程、论文等。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-learn-tutor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33817483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-learn-tutor",
+      "url": "https://clawhub.ai/skills/ai-learn-tutor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-learn-tutor",
+    "url": "https://clawhub.ai/skills/ai-learn-tutor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-learn-tutor-a27bd834a8fbe982.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-learn-tutor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-learn-tutor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b56b2b28d76055b4300e2994e9659e94d16ed46bcb62c27f6d1c24ee1762a87",
+      "artifactSizeBytes": 2445
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T05:47:56.434Z"
+}

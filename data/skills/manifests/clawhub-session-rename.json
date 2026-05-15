@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55458,
+  "uuid": "skill-clawhub-session-rename",
+  "skillKey": "clawhub-session-rename",
+  "name": "Session Rename",
+  "summary": "Rename OpenClaw chat sessions by updating the session history store or calling the built-in `sessions.rename` backend path. Use when the user asks to rename,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_rename",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maverick-software",
+      "features": [
+        "Rename OpenClaw chat sessions by updating the session history store or calling the built-in `se.",
+        "Use when the user asks to rename,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-rename@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85259593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-rename",
+      "url": "https://clawhub.ai/skills/session-rename"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-rename",
+    "url": "https://clawhub.ai/skills/session-rename",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-rename-cc6b7bd6366c69e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-rename@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-rename-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5675cadd6001056142a6ce92f1148e5694dfaaeb96718b34d450f45ee3f8171",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T12:59:37.886Z"
+}

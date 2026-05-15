@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31828,
+  "uuid": "skill-clawhub-cookie-policy-page-generator",
+  "skillKey": "clawhub-cookie-policy-page-generator",
+  "name": "cookie-policy-page-generator",
+  "summary": "When the user wants to create or optimize a cookie policy page. Also use when the user mentions \"cookie policy,\" \"cookies,\" \"cookie consent,\" \"GDPR cookies,\"...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cookie_policy_page_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to create or optimize a cookie policy page",
+        "Also use when the user mentions \"cookie policy,\" \"cookies,\" \"cookie consent,\" \"GDPR cookies,\"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cookie-policy-page-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cookie-policy-page-generator",
+      "url": "https://clawhub.ai/skills/cookie-policy-page-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cookie-policy-page-generator",
+    "url": "https://clawhub.ai/skills/cookie-policy-page-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cookie-policy-page-generator-a053f2e5daee4633.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cookie-policy-page-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cookie-policy-page-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d226d926d45717a7dd95cc4811fd010f72eb5118b671d28f6f02de4a460dd103",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T12:47:25.093Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19283,
+  "uuid": "skill-clawhub-seisoai",
+  "skillKey": "clawhub-seisoai",
+  "name": "Seisoai",
+  "summary": "Unified media generation gateway for agents. Discover tools dynamically, choose API key or x402 auth, invoke image/video/audio/music/3D/training tools, and h...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seisoai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Legendarylibr",
+      "features": [
+        "Unified media generation gateway for agents",
+        "Discover tools dynamically, choose API key or x402 auth, invoke image/video/audio/music/3D/trai."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seisoai@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117605439?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seisoai",
+      "url": "https://clawhub.ai/skills/seisoai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seisoai",
+    "url": "https://clawhub.ai/skills/seisoai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seisoai-6062cd56fd0850b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seisoai@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-seisoai-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:326b8c6a3a9c9368381a185724ce34953957ca3981fa942ea3357ce63e66f98f",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T08:55:08.588Z"
+}

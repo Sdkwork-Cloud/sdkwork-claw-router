@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23478,
+  "uuid": "skill-clawhub-full-page-translate",
+  "skillKey": "clawhub-full-page-translate",
+  "name": "Full Page Translate",
+  "summary": "Translate full web articles from foreign URLs into natural, publication-quality Simplified Chinese markdown while preserving format and style.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.full_page_translate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dizhu",
+      "features": [
+        "Translate full web articles from foreign URLs into natural, publication-quality Simplified Chin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/full-page-translate@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3749687?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "full-page-translate",
+      "url": "https://clawhub.ai/skills/full-page-translate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "full-page-translate",
+    "url": "https://clawhub.ai/skills/full-page-translate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/full-page-translate-787ae007b32f01b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/full-page-translate@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-full-page-translate-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0437d33ad859111477d50cbaa4c57c57f4f12dbba44090a7fc8a54e85f9e7e40",
+      "artifactSizeBytes": 1889
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:53:16.693Z"
+}

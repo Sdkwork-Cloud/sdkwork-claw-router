@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arxiv-reader@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_reader",
+  "skill": {
+    "id": 59645,
+    "skillKey": "clawhub-arxiv-reader",
+    "name": "arxiv_deep_reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-reader",
+    "url": "https://clawhub.ai/skills/arxiv-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-reader-b35b56ac3d803876.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "利用python，指定某个arxiv_id/url， 基于 LLM Agent 对这篇arxiv论文进行分类与深度阅读，直接print打印阅读笔记"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aurora-1412",
+      "userId": "publishers:aurora-1412",
+      "displayName": "Aurora-1412",
+      "image": "https://avatars.githubusercontent.com/u/55468294?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1021,
+      "installsAllTime": 24,
+      "installsCurrent": 24,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770954519677,
+      "changelog": "- Switched from Python/conda to uv for environment creation and package installation.  \n- Updated all usage and setup instructions to use uv commands.  \n- Updated required binary from python to uv in metadata.  \np.s.: prompts are Chinese  default, you can change it to English manually.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7b772e50dc90c4f336412aa4fc777ccb0f35941d2020f85c09dda8eb1f19b3af"
+}

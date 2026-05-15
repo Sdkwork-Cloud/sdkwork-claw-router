@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66713,
+  "uuid": "skill-clawhub-openclaw-whobot-skill",
+  "skillKey": "clawhub-openclaw-whobot-skill",
+  "name": "openclaw-whobot-skill",
+  "summary": "WhoBot (呼波特) AI电话数字员工知识库。加载后可回答关于 WhoBot 的一切问题：公司信息、产品能力、核心技术（拟人化引擎 & 拟角色飞轮）、业务场景、行业案例、团队、合规等。 触发条件：用户提问涉及 WhoBot、呼波特、AI电话数字员工、AI通话、智能电话、电话机器人、语音AI、拟人化引擎、拟角色...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_whobot_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whobot-ai",
+      "features": [
+        "WhoBot (呼波特) AI电话数字员工知识库。加载后可回答关于 WhoBot 的一切问题：公司信息、产品能力、核心技术（拟人化引擎 & 拟角色飞轮）、业务场景、行业案例、团队、合规等。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-whobot-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264616519?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-whobot-skill",
+      "url": "https://clawhub.ai/skills/openclaw-whobot-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-whobot-skill",
+    "url": "https://clawhub.ai/skills/openclaw-whobot-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-whobot-skill-e976e4a864827e13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-whobot-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-whobot-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57a521a04442814d60f9e3078f84d6e883670c0c6e0e07d44b2fa719edd8fbd7",
+      "artifactSizeBytes": 2739
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T04:46:22.199Z"
+}

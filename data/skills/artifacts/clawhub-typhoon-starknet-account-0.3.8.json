@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/typhoon-starknet-account@0.3.8",
+  "version": "0.3.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.typhoon_starknet_account",
+  "skill": {
+    "id": 10461,
+    "skillKey": "clawhub-typhoon-starknet-account",
+    "name": "Typhoon Starknet Account"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "typhoon-starknet-account",
+    "url": "https://clawhub.ai/skills/typhoon-starknet-account",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/typhoon-starknet-account-87642ccb8dac9c80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create an anonymous Starknet wallet via Typhoon and interact with Starknet contracts. Privacy-focused wallet creation for agents requiring anonymity."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "esdras-sena",
+      "userId": "publishers:esdras-sena",
+      "displayName": "esdras-sena",
+      "image": "https://avatars.githubusercontent.com/u/177535782?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2580,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "0.3.8",
+      "createdAt": 1772298808577,
+      "changelog": "No significant changes detected for version 0.3.8; no file modifications since the previous release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a24fa3316711967e3f3b63936d46b4fae6a53d7e9620ebba042fc68e544e5bb6"
+}

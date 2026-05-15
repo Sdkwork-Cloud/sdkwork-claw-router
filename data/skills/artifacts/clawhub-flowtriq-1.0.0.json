@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flowtriq@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flowtriq",
+  "skill": {
+    "id": 27038,
+    "skillKey": "clawhub-flowtriq",
+    "name": "Flowtriq - anti-DDoS attack integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flowtriq",
+    "url": "https://clawhub.ai/skills/flowtriq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flowtriq-f842f9998ded0c9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor and manage Flowtriq DDoS detection in real time using the Flowtriq API. Use this skill whenever the user asks about active attacks, node status, inci..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jacob-masse",
+      "userId": "publishers:jacob-masse",
+      "displayName": "Jacob Masse",
+      "image": "https://avatars.githubusercontent.com/u/60854020?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773615009701,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:781341eabb145e161599b87a61e5da091c9b20a80a1d50bf8dd25b4c00b94fc4"
+}

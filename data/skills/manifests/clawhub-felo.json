@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49661,
+  "uuid": "skill-clawhub-felo",
+  "skillKey": "clawhub-felo",
+  "name": "Felo AI Search",
+  "summary": "AI-synthesized web search via Felo API — aggregates 15-40 sources into structured summaries. Use when: (1) researching a topic that needs multi-source synthe...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.felo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Logan",
+      "features": [
+        "AI-synthesized web search via Felo API — aggregates 15-40 sources into structured summaries",
+        "Use when: (1) researching a topic that needs multi-source synthe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/felo@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17023091?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "felo",
+      "url": "https://clawhub.ai/skills/felo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "felo",
+    "url": "https://clawhub.ai/skills/felo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/felo-64ff074573d32587.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/felo@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-felo-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c1512ed206ce71e41e49ba8084136c98bb896b943099875fc4b920793fce429",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T15:18:31.775Z"
+}

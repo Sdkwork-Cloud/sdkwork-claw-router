@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/redmine-issue@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redmine_issue",
+  "skill": {
+    "id": 17380,
+    "skillKey": "clawhub-redmine-issue",
+    "name": "Redmine Issue"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redmine-issue",
+    "url": "https://clawhub.ai/skills/redmine-issue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redmine-issue-dab1d0d4176f9a62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read Redmine issues from any Redmine server via REST API with configurable URL and credentials. Use when you need to fetch a single issue, list/filter issues..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guoway",
+      "userId": "publishers:guoway",
+      "displayName": "Ken Chen",
+      "image": "https://avatars.githubusercontent.com/u/17466299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 765,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771592241131,
+      "changelog": "Initial release of redmine-issue.\n\n- Fetch individual or multiple Redmine issues using the REST API.\n- Supports filtering, listing, and updating issues via command-line scripts.\n- Configurable for different Redmine servers through environment variables.\n- Choose between API key or username/password authentication.\n- Returns API responses as JSON for integration and automation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3bb3964a63b54ff65e05acc711a40673735e99658fbadc8236c5bfa556d6eae7"
+}

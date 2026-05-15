@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/technews@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.technews",
+  "skill": {
+    "id": 8912,
+    "skillKey": "clawhub-technews",
+    "name": "TechMeme News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "technews",
+    "url": "https://clawhub.ai/skills/technews",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/technews-11b1d1993f5a3552.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches top stories from TechMeme, summarizes linked articles, and highlights social media reactions. Use when user wants tech news or says /technews."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kesslerio",
+      "userId": "publishers:kesslerio",
+      "displayName": "kesslerio",
+      "image": "https://avatars.githubusercontent.com/u/2647990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5307,
+      "installsAllTime": 32,
+      "installsCurrent": 30,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769838145807,
+      "changelog": "Initial ClawHub release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b19ed2480fd464723b2807bc60d8ea364e3ca6feb1b9cc5a51dd8367d31ad84c"
+}

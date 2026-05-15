@@ -20,7 +20,8 @@ class ClawRouterSkillGuardian:
     REQUIRED_SKILLS: dict[str, tuple[str, ...]] = {
         "clawrouter-app-sdk-integration": (
             "@sdkwork/clawrouter-app-sdk",
-            "/app/v3/api",
+            "contract surface",
+            "URL path prefixes are not the source of truth",
             "sdkwork-sdk-generator",
             "Never hand-edit generated SDK output",
             "raw fetch",
@@ -29,7 +30,8 @@ class ClawRouterSkillGuardian:
         ),
         "clawrouter-backend-sdk-integration": (
             "@sdkwork/clawrouter-backend-sdk",
-            "/backend/v3/api",
+            "contract surface",
+            "URL path prefixes are not the source of truth",
             "sdkwork-sdk-generator",
             "Never hand-edit generated SDK output",
             "raw fetch",
@@ -39,6 +41,9 @@ class ClawRouterSkillGuardian:
         "clawrouter-sdk-generation": (
             "@sdkwork/clawrouter-app-sdk",
             "@sdkwork/clawrouter-backend-sdk",
+            "@sdkwork/clawrouter-open-sdk",
+            "exactly three",
+            "URL path prefixes are not used as the standard for SDK ownership",
             "generated/api/api-contract-manifest.json",
             "generated/openapi/clawrouter-app-openapi.json",
             "generated/openapi/clawrouter-backend-openapi.json",
@@ -118,9 +123,15 @@ class ClawRouterSkillGuardian:
         category_ids = self._id_set(categories, "category", messages)
         package_ids = self._id_set(packages, "package", messages)
         skill_ids = self._id_set(skills, "skill", messages)
+        skill_by_id = {item.get("id"): item for item in skills if isinstance(item, dict)}
         self._unique_values((item.get("skillKey") for item in skills if isinstance(item, dict)), "skillKey", messages)
         self._unique_values((item.get("uuid") for item in artifacts if isinstance(item, dict)), "artifact uuid", messages)
         self._unique_values((item.get("uuid") for item in assets if isinstance(item, dict)), "asset uuid", messages)
+
+        if not categories:
+            messages.append("skill seed categories.json must not be empty")
+        elif not isinstance(categories[0], dict) or categories[0].get("code") != "sdkwork-official":
+            messages.append("skill seed first category must be sdkwork-official")
 
         for package in packages:
             if not isinstance(package, dict):
@@ -143,8 +154,15 @@ class ClawRouterSkillGuardian:
             if target_id not in skill_ids:
                 messages.append(f"skill seed artifact {artifact.get('uuid')} references missing targetId: {target_id}")
             artifact_ref = artifact.get("artifactRef")
-            if not isinstance(artifact_ref, str) or not artifact_ref.startswith("builtin://sdkwork.skills."):
-                messages.append(f"skill seed artifact {artifact.get('uuid')} must use builtin artifactRef")
+            target_skill = skill_by_id.get(target_id)
+            if isinstance(target_skill, dict) and self._is_clawhub_community_skill(target_skill):
+                if not isinstance(artifact_ref, str) or not artifact_ref.startswith("clawhub://skills/"):
+                    messages.append(f"skill seed artifact {artifact.get('uuid')} must use clawhub artifactRef")
+                if artifact.get("runtime") != "metadata":
+                    messages.append(f"skill seed artifact {artifact.get('uuid')} must use metadata runtime for ClawHub")
+            else:
+                if not isinstance(artifact_ref, str) or not artifact_ref.startswith("builtin://sdkwork.skills."):
+                    messages.append(f"skill seed artifact {artifact.get('uuid')} must use builtin artifactRef")
             checksum_hash = artifact.get("checksumHash")
             if not isinstance(checksum_hash, str) or not self._is_sha256_hash(checksum_hash):
                 messages.append(f"skill seed artifact {artifact.get('uuid')} checksumHash must be sha256:<64 lowercase hex>")
@@ -209,8 +227,21 @@ class ClawRouterSkillGuardian:
                 or skill.get("enabled") is not True
             ):
                 messages.append(f"skill seed skill {skill_key} must be published public approved and enabled")
-            if skill.get("builtin") is not True or skill.get("isBuiltin") is not True:
-                messages.append(f"skill seed skill {skill_key} must be builtin official seed data")
+            if self._is_sdkwork_official_skill(skill):
+                if skill.get("builtin") is not True or skill.get("isBuiltin") is not True:
+                    messages.append(f"skill seed skill {skill_key} must be builtin official seed data")
+                if skill.get("runtime") != "builtin":
+                    messages.append(f"skill seed skill {skill_key} must use builtin runtime for SDKWork official data")
+            elif self._is_clawhub_community_skill(skill):
+                if skill.get("builtin") is not False or skill.get("isBuiltin") is not False:
+                    messages.append(f"skill seed skill {skill_key} must be non-builtin ClawHub community metadata")
+                if skill.get("runtime") != "metadata":
+                    messages.append(f"skill seed skill {skill_key} must use metadata runtime for ClawHub community data")
+                source = skill.get("source")
+                if not isinstance(source, dict) or source.get("vendor") != "clawhub":
+                    messages.append(f"skill seed skill {skill_key} must preserve clawhub source metadata")
+            else:
+                messages.append(f"skill seed skill {skill_key} must be SDKWork official or ClawHub community seed data")
             if skill.get("versionName") != skill.get("version"):
                 messages.append(f"skill seed skill {skill_key} versionName must match version")
             if skill_id not in artifacts_by_skill:
@@ -253,6 +284,47 @@ class ClawRouterSkillGuardian:
                         if actual_artifacts != expected_artifacts:
                             messages.append(f"skill seed manifest artifact metadata mismatch for {skill_key}")
 
+        messages.extend(self._check_clawhub_local_mirror(skills_root, skills))
+        return messages
+
+    def _check_clawhub_local_mirror(self, skills_root: Path, skills: list[Any]) -> list[str]:
+        clawhub_skills = [
+            skill
+            for skill in skills
+            if isinstance(skill, dict) and self._is_clawhub_community_skill(skill)
+        ]
+        if not clawhub_skills:
+            return []
+
+        messages: list[str] = []
+        raw_index_path = skills_root / "clawhub" / "raw" / "index.json"
+        normalized_manifest_path = skills_root / "clawhub" / "manifest.json"
+        raw_index = self._read_seed_json(raw_index_path, messages)
+        normalized_manifest = self._read_seed_json(normalized_manifest_path, messages)
+        if not isinstance(raw_index, dict) or not isinstance(normalized_manifest, dict):
+            return messages
+
+        if raw_index.get("mirrorMode") != "full-cursor-mirror":
+            messages.append("skill seed ClawHub raw mirror must be full-cursor-mirror")
+        if raw_index.get("source", {}).get("listApi") != "https://clawhub.ai/api/v1/skills":
+            messages.append("skill seed ClawHub raw mirror must use the public ClawHub list API")
+
+        items = raw_index.get("items")
+        if not isinstance(items, list) or len(items) < len(clawhub_skills):
+            messages.append("skill seed ClawHub raw mirror must include all seeded community skills")
+        mirrored_slugs = {item.get("slug") for item in items if isinstance(item, dict)}
+        seeded_manifest_slugs = {
+            item.get("slug")
+            for item in normalized_manifest.get("seededSkills", [])
+            if isinstance(item, dict)
+        }
+        for skill in clawhub_skills:
+            source = skill.get("source") if isinstance(skill.get("source"), dict) else {}
+            slug = source.get("slug")
+            if slug not in mirrored_slugs:
+                messages.append(f"skill seed ClawHub mirror is missing raw list slug for {skill.get('skillKey')}")
+            if slug not in seeded_manifest_slugs:
+                messages.append(f"skill seed ClawHub normalized manifest is missing seeded slug for {skill.get('skillKey')}")
         return messages
 
     def _read_seed_json(self, path: Path, messages: list[str]) -> Any:
@@ -290,6 +362,12 @@ class ClawRouterSkillGuardian:
 
     def _is_sha256_hash(self, value: str) -> bool:
         return len(value) == 71 and value.startswith("sha256:") and all(char in "0123456789abcdef" for char in value[7:])
+
+    def _is_sdkwork_official_skill(self, skill: dict[str, Any]) -> bool:
+        return skill.get("sourceType") == "OFFICIAL" and skill.get("provider") == "SDKWork"
+
+    def _is_clawhub_community_skill(self, skill: dict[str, Any]) -> bool:
+        return skill.get("sourceType") == "COMMUNITY" and skill.get("provider") == "ClawHub"
 
     def _artifact_payload_checksum(self, payload: dict[str, Any]) -> str:
         canonical = dict(payload)

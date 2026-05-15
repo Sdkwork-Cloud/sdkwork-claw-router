@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-pruner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_pruner",
+  "skill": {
+    "id": 24833,
+    "skillKey": "clawhub-memory-pruner",
+    "name": "Memory Pruner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-pruner",
+    "url": "https://clawhub.ai/skills/memory-pruner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-pruner-0a0864cebc7a2d16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages agent memory by auto-pruning old or low-relevance entries, compressing duplicates, and reporting storage costs with safe defaults."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiuge897",
+      "userId": "publishers:jiuge897",
+      "displayName": "jiuge897",
+      "image": "https://avatars.githubusercontent.com/u/57371395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773763650716,
+      "changelog": "Initial release of Memory Pruner—intelligent memory management for agents.\n\n- Auto-prunes old memories based on configurable thresholds.\n- Scores and retains more relevant memories, merging similar ones for efficiency.\n- Tracks memory usage costs and provides actionable analysis and recommendations.\n- CLI includes prune, analyze, compress, config, and dry-run commands.\n- Features safe deletion (confirmation and backup) and category-based organization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:663c850efe14d6279a9a492fdf32a00b14530e72334770d00b8c275afb92876a"
+}

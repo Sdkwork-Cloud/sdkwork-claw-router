@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencent-mps@1.1.9",
+  "version": "1.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_mps",
+  "skill": {
+    "id": 63265,
+    "skillKey": "clawhub-tencent-mps",
+    "name": "Tencent MPS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-mps",
+    "url": "https://clawhub.ai/skills/tencent-mps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-mps-bb46531cba351a29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "腾讯云 MPS 媒体处理服务，支持以下功能：【视频转码】转码/压缩/格式转换/H.264/H.265/AV1/MP4/编码/码率/分辨率/帧率。【画质增强】画质增强/老片修复/超分/视频超分/真人增强/漫剧增强/防抖/720P/1080P/2K/4K。【音频处理】音频分离/人声提取/伴奏提取/去人声/BGM分离。..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ollielin",
+      "userId": "s17cbv0pejjg7snw385nc4snd583gktp",
+      "displayName": "mpaas-skills",
+      "image": "https://avatars.githubusercontent.com/u/2137816?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1279,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 18
+    },
+    "latestVersion": {
+      "version": "1.1.9",
+      "createdAt": 1778384186629,
+      "changelog": "tencent-mps 1.1.9\n\n- 更新版本号至 1.1.9。\n- 修改临时签名。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e6a919f70e324e4ed5f6acb6c4920d3bfdb8c709c6664e74b7ece5be81d5cce"
+}

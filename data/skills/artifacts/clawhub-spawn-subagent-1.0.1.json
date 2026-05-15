@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spawn-subagent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spawn_subagent",
+  "skill": {
+    "id": 37659,
+    "skillKey": "clawhub-spawn-subagent",
+    "name": "Spawn Subagent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spawn-subagent",
+    "url": "https://clawhub.ai/skills/spawn-subagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spawn-subagent-101541a4f3cf3c09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Spawn isolated subagents to handle long-running, complex, or blocking tasks without stalling the main session. Use when: a task will take more than 30 second..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "netanel-abergel",
+      "userId": "s17ber573ejk857tr938jb5dqs8413hk",
+      "displayName": "Netanel Abergel",
+      "image": "https://avatars.githubusercontent.com/u/89765095?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775165799545,
+      "changelog": "reactions rule, close-the-loop, reply-to rules; skill-master analytics hook; skill-analytics added",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aef87bb3f28d6fa395a36f8663fe0c4d5c733c7d72426d707ec2361ca88a4483"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qiniu-kodo@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qiniu_kodo",
+  "skill": {
+    "id": 61500,
+    "skillKey": "clawhub-qiniu-kodo",
+    "name": "qiniu-kodo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qiniu-kodo",
+    "url": "https://clawhub.ai/skills/qiniu-kodo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qiniu-kodo-2bda3133779e83be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "七牛云 KODO 对象存储技能。支持文件上传、下载、列出、删除、获取 URL 等操作。 三层架构：MCP 工具（优先）→ Node.js SDK → qshell CLI。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aohoyo",
+      "userId": "s172yjpf05bfj3wjfrwx88v8sx83hf31",
+      "displayName": "silas",
+      "image": "https://avatars.githubusercontent.com/u/169723524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 520,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772817015394,
+      "changelog": "Version 1.0.3 of qiniu-kodo\n\n- No file changes detected in this release.\n- Documentation, features, and dependencies remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:275e7e2b1ea4209c22aaf08e76ee6534147d1a7e8babcbf807e3ab278925cf4c"
+}

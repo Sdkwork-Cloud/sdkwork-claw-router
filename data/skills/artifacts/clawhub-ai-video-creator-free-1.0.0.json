@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-creator-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_creator_free",
+  "skill": {
+    "id": 52969,
+    "skillKey": "clawhub-ai-video-creator-free",
+    "name": "Ai Video Creator Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-creator-free",
+    "url": "https://clawhub.ai/skills/ai-video-creator-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-creator-free-b0433930b326f9e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Drop a script, a handful of images, or even just a rough idea, and watch it transform into a shareable video — no editing software, no subscription wall, no..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775446060170,
+      "changelog": "AI Video Creator Free 1.0.0 — Turn Text, Images & Ideas Into Polished Videos\n\n- First release: Instantly transforms user scripts, images, or video ideas into shareable, structured video outlines and storyboards.\n- No signup required: Handles authentication with free temporary tokens and manages API sessions automatically.\n- Supports direct prompts, image uploads, and idea expansion; auto-picks best-generation pipeline for your input.\n- User-friendly: Handles backend complexity (session management, API calls, error handling) and keeps the chat simple.\n- Cloud-powered: All rendering and processing is managed via the distributed API, supporting popular video and audio formats.\n- For creators, educators, and small businesses seeking quick, quality video output — no cost, no editing software needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0645cd3e245b97b9cc51229c68a4b15530279d6f8dedf2c2de2a1a3e9ff3b53a"
+}

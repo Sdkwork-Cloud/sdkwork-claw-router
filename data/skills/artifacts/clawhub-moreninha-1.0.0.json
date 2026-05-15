@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moreninha@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moreninha",
+  "skill": {
+    "id": 57178,
+    "skillKey": "clawhub-moreninha",
+    "name": "moreninha"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moreninha",
+    "url": "https://clawhub.ai/skills/moreninha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moreninha-6f3a4364a8e1ddc3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Especialista em A Moreninha (Joaquim Manuel de Macedo). Use quando o usuário pedir resumo, análise literária, personagens, capítulos, citações, contexto hist..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daviemmanuel",
+      "userId": "s17d55fht2jbvsy24zfs3c90cd83h6sb",
+      "displayName": "Davi Emmanuel (SeedyDev)",
+      "image": "https://avatars.githubusercontent.com/u/76759000?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 320,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773498807038,
+      "changelog": "- Primeira versão do Moreninha Expert, especialista em \"A Moreninha\" de Joaquim Manuel de Macedo.\n- Responde em português com precisão textual, usando o texto integral local da obra.\n- Oferece resumos, análises, perfis de personagens, temas, citações e contexto histórico.\n- Distingue claramente fatos do enredo, interpretação crítica e opinião.\n- Indica incerteza quando não for possível confirmar detalhes no texto.\n- Inclui exemplos de formatos recomendados de resposta e limites claros de atuação.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a395fd3c965cb8ba43fc475c7d29984b5fcd67c38c3a4fcb28daba4b378176e"
+}

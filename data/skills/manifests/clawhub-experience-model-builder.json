@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66858,
+  "uuid": "skill-clawhub-experience-model-builder",
+  "skillKey": "clawhub-experience-model-builder",
+  "name": "experience-model-builder",
+  "summary": "将用户提供的经验或方法提炼为结构化、可复用的经验模型，包含角色定位、分析模块、指令约束和调用格式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.experience_model_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "96441113",
+      "features": [
+        "将用户提供的经验或方法提炼为结构化、可复用的经验模型，包含角色定位、分析模块、指令约束和调用格式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/experience-model-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134826490?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "experience-model-builder",
+      "url": "https://clawhub.ai/skills/experience-model-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "experience-model-builder",
+    "url": "https://clawhub.ai/skills/experience-model-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/experience-model-builder-722d618d29275987.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/experience-model-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-experience-model-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77cf38d8739fdb80507b3246d7795f547f21732e905464e4ab00663209849d5e",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T14:16:01.447Z"
+}

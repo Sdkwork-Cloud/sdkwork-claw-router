@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12733,
+  "uuid": "skill-clawhub-ddgs-search",
+  "skillKey": "clawhub-ddgs-search",
+  "name": "ddgs-search",
+  "summary": "Free multi-engine web search via ddgs CLI (DuckDuckGo, Google, Bing, Brave, Yandex, Yahoo, Wikipedia) + arXiv API search. No API keys required. Use when user...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ddgs_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "camopel",
+      "features": [
+        "Free multi-engine web search via ddgs CLI (DuckDuckGo, Google, Bing, Brave, Yandex, Yahoo, Wiki.",
+        "No API keys required",
+        "Use when user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ddgs-search@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18227220?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ddgs-search",
+      "url": "https://clawhub.ai/skills/ddgs-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ddgs-search",
+    "url": "https://clawhub.ai/skills/ddgs-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ddgs-search-fee262a4736be409.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ddgs-search@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ddgs-search-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0d1a2dc20e914a89679ef634062cac7b7b7b87c77807c2a1d5d8906b27adb35",
+      "artifactSizeBytes": 2062
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T21:56:30.152Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15166,
+  "uuid": "skill-clawhub-university",
+  "skillKey": "clawhub-university",
+  "name": "University",
+  "summary": "Provide AI-powered degree and career programs with adaptive learning, exam prep, progress tracking, and customized study planning for diverse user goals.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.university",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Provide AI-powered degree and career programs with adaptive learning, exam prep, progress track."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/university@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "university",
+      "url": "https://clawhub.ai/skills/university"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "university",
+    "url": "https://clawhub.ai/skills/university",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/university-adba6c0ec8a8d89e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/university@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-university-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2c1adae4bd095e0f96ed0d84e1aefc3003e57fb9152d1b753d8d8b2e6fb87ee",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T16:20:31.267Z"
+}

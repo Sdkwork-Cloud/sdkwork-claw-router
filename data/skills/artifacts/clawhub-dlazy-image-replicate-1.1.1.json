@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dlazy-image-replicate@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_image_replicate",
+  "skill": {
+    "id": 16735,
+    "skillKey": "clawhub-dlazy-image-replicate",
+    "name": "Dlazy Image Replicate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-image-replicate",
+    "url": "https://clawhub.ai/skills/dlazy-image-replicate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-image-replicate-224c1743139c2e8b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes an image's style, composition, and lighting to generate a new image in the same style using Seedream 4.5."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlazyai",
+      "userId": "s170j1ymymrxasgd00dsk7tckx84cf45",
+      "displayName": "dlazy",
+      "image": "https://avatars.githubusercontent.com/u/274158181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 844,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1778076327487,
+      "changelog": "- Updated version to 1.1.1.\n- Documentation improvements in SKILL.md and SKILL-cn.md; no functional or CLI changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d2552b3ad53877e869236a7ed82aafb134421e99273bae8e1744da61ea7f9ba"
+}

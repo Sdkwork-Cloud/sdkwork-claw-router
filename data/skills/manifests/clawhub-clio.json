@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15876,
+  "uuid": "skill-clawhub-clio",
+  "skillKey": "clawhub-clio",
+  "name": "Clio",
+  "summary": "Clio API integration with managed OAuth. This is a write-capable integration — it can read, create, update, and delete legal practice data including matters,...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Clio API integration with managed OAuth",
+        "This is a write-capable integration — it can read, create, update, and delete legal practice da."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clio@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clio",
+      "url": "https://clawhub.ai/skills/clio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clio",
+    "url": "https://clawhub.ai/skills/clio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clio-c38c694be0201b1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clio@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clio-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31afe5d856a668e0708d1aee7f27da7c9920381efd63e5fa8512a354a0f02510",
+      "artifactSizeBytes": 2274
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T09:43:53.891Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72153,
+  "uuid": "skill-clawhub-xiaohongshu-publish-auto",
+  "skillKey": "clawhub-xiaohongshu-publish-auto",
+  "name": "小红书自动发布",
+  "summary": "自动读取指定文件夹当日视频和标题，连接Chrome通过脚本将内容发布到小红书账号。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_publish_auto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weishuai34-bit",
+      "features": [
+        "自动读取指定文件夹当日视频和标题，连接Chrome通过脚本将内容发布到小红书账号。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-publish-auto@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260324733?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-publish-auto",
+      "url": "https://clawhub.ai/skills/xiaohongshu-publish-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-publish-auto",
+    "url": "https://clawhub.ai/skills/xiaohongshu-publish-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-publish-auto-a9d863dee30f79e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-publish-auto@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-publish-auto-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25c01cd39eb82d3637c2ca17778c0056de61fcc97a64ab8720486ac110250337",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T12:34:19.899Z"
+}

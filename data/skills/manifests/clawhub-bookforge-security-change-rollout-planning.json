@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36322,
+  "uuid": "skill-clawhub-bookforge-security-change-rollout-planning",
+  "skillKey": "clawhub-bookforge-security-change-rollout-planning",
+  "name": "Security Change Rollout Planning",
+  "summary": "Plan and execute a security change rollout across a service or fleet: classify the change into a time horizon (short / medium / long-term), triage affected s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_security_change_rollout_planning",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hung Quoc To",
+      "features": [
+        "Plan and execute a security change rollout across a service or fleet: classify the change into."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bookforge-security-change-rollout-planning@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88069966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bookforge-security-change-rollout-planning",
+      "url": "https://clawhub.ai/skills/bookforge-security-change-rollout-planning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-security-change-rollout-planning",
+    "url": "https://clawhub.ai/skills/bookforge-security-change-rollout-planning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-security-change-rollout-planning-8024718c13d223d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bookforge-security-change-rollout-planning@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bookforge-security-change-rollout-planning-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61310ac9cba82f2d973d987f1b0cd220efeec97a4d3631dbfb5abffa8ef5531c",
+      "artifactSizeBytes": 2676
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T08:19:35.526Z"
+}

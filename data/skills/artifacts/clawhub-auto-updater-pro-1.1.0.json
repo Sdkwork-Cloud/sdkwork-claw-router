@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-updater-pro@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_updater_pro",
+  "skill": {
+    "id": 15174,
+    "skillKey": "clawhub-auto-updater-pro",
+    "name": "Auto Updater Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-updater-pro",
+    "url": "https://clawhub.ai/skills/auto-updater-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-updater-pro-79f0cd2b6e296b84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enhanced auto-updater with detailed logging, missed run recovery, and Gateway restart protection."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newolf20000",
+      "userId": "s175gbkxc3dgsr5ctqc92txhcs84mhn7",
+      "displayName": "newolf20000",
+      "image": "https://avatars.githubusercontent.com/u/28947857?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 778,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771733181187,
+      "changelog": "Enhanced with detailed logging, missed run recovery, 30s delay after updates, email reports, and better error handling",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ee1680802d94ee9d113fd5d9fb30a093778e63b7cf7c1f667320e3e000170b11"
+}

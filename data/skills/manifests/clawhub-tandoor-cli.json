@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36406,
+  "uuid": "skill-clawhub-tandoor-cli",
+  "skillKey": "clawhub-tandoor-cli",
+  "name": "Tandoor Recipe CLI",
+  "summary": "Manage recipes, meal plans, and shopping lists on a Tandoor Recipe Manager instance via CLI.",
+  "version": "1.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tandoor_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Devin Cenatiempo",
+      "features": [
+        "Manage recipes, meal plans, and shopping lists on a Tandoor Recipe Manager instance via CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tandoor-cli@1.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29043782?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tandoor-cli",
+      "url": "https://clawhub.ai/skills/tandoor-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tandoor-cli",
+    "url": "https://clawhub.ai/skills/tandoor-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tandoor-cli-d61d360e50ce8b39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tandoor-cli@1.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-tandoor-cli-1.1.3.json",
+      "version": "1.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc73f1225fa589acc57f9a74ec98aec81d44cac1bd109e28240ffe2a531d05e7",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T00:30:59.837Z"
+}

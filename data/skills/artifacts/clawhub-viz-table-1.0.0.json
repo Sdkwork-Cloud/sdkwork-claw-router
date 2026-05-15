@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/viz-table@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.viz_table",
+  "skill": {
+    "id": 65286,
+    "skillKey": "clawhub-viz-table",
+    "name": "Viz Table"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "viz-table",
+    "url": "https://clawhub.ai/skills/viz-table",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/viz-table-cc22791922256b34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从 CSV/JSON 文件读取数据，使用 ECharts 生成可视化 HTML 图表（柱状图、折线图、饼图、环形图）并自动在浏览器中打开。用户提供文件路径时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charles-lpf",
+      "userId": "s175zqgfngy15jef91ftjhx62x83hm2w",
+      "displayName": "charles-lpf",
+      "image": "https://avatars.githubusercontent.com/u/129490707?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774510910515,
+      "changelog": "Initial release: CSV/JSON data visualization with ECharts",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0cb356e183f2f4fdf0d40884ace783dcd936e465df1a6481bd9161398c19b809"
+}

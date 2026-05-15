@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52800,
+  "uuid": "skill-clawhub-ai-coach",
+  "skillKey": "clawhub-ai-coach",
+  "name": "Ai Coach",
+  "summary": "Coach de IA personalizado. Proporciona retroalimentación, establece metas y te motiva a mejorar continuamente.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_coach",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Miguel Guerra",
+      "features": [
+        "Coach de IA personalizado",
+        "Proporciona retroalimentación, establece metas y te motiva a mejorar continuamente."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-coach@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239301714?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-coach",
+      "url": "https://clawhub.ai/skills/ai-coach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-coach",
+    "url": "https://clawhub.ai/skills/ai-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-coach-bf97bef10cc4b727.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-coach@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-coach-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0dba5cab268b769687858e00be007d42baef34a6e0bc1224769c6a532e5dae11",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T15:06:50.128Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36044,
+  "uuid": "skill-clawhub-nulab",
+  "skillKey": "clawhub-nulab",
+  "name": "Nulab",
+  "summary": "Nulab integration. Manage data, records, and automate workflows. Use when the user wants to interact with Nulab data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nulab",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Nulab integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Nulab data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nulab@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nulab",
+      "url": "https://clawhub.ai/skills/nulab"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nulab",
+    "url": "https://clawhub.ai/skills/nulab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nulab-64ce34f6bdfe0be6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nulab@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nulab-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e58c27bf6a96a95631e78fb309df9f01dd496f6e0ada1e6216d215bb7d3157b",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:47:33.057Z"
+}

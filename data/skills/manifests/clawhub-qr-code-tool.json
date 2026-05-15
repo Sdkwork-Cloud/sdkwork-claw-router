@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21611,
+  "uuid": "skill-clawhub-qr-code-tool",
+  "skillKey": "clawhub-qr-code-tool",
+  "name": "QR Code Tool",
+  "summary": "Generate QR codes for URLs, text, WiFi credentials, contact cards, and more. Use when creating scannable links for marketing materials, sharing WiFi password...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qr_code_tool",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeonardoDpanda",
+      "features": [
+        "Generate QR codes for URLs, text, WiFi credentials, contact cards, and more",
+        "Use when creating scannable links for marketing materials, sharing WiFi password..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qr-code-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51777214?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qr-code-tool",
+      "url": "https://clawhub.ai/skills/qr-code-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qr-code-tool",
+    "url": "https://clawhub.ai/skills/qr-code-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qr-code-tool-632fa422d9930e04.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qr-code-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qr-code-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f10b9086fae9bf72280d3794a571def15bb4c666a568967804fa3f46ef951e8",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T13:36:46.290Z"
+}

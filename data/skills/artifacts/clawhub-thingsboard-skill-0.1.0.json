@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/thingsboard-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thingsboard_skill",
+  "skill": {
+    "id": 10618,
+    "skillKey": "clawhub-thingsboard-skill",
+    "name": "ThingsBot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thingsboard-skill",
+    "url": "https://clawhub.ai/skills/thingsboard-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thingsboard-skill-c76b98ae9e436317.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage ThingsBoard devices, dashboards, telemetry, and users via the ThingsBoard REST API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hoangnv170752",
+      "userId": "publishers:hoangnv170752",
+      "displayName": "hoangnv170752",
+      "image": "https://avatars.githubusercontent.com/u/79237359?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1962,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769932047861,
+      "changelog": "Initial release — manage ThingsBoard devices, telemetry, dashboards, and users via REST API.\n\n- Provides setup instructions for environment variables and token authentication.\n- Covers device, telemetry, attribute, asset, and dashboard management with curl-based API examples.\n- Includes user and customer management commands.\n- Documents typical workflows, API usage tips, and real-world usage examples.\n- Supports pagination, token refresh, and all main ThingsBoard entity queries.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bdd1d5f6f610efcde3237dcafdc3f3e0770ec0c997b2c3d00ed1a74adcddbcbb"
+}

@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "kirk-image",
+    "displayName": "image",
+    "summary": "Run local ComfyUI workflows via the HTTP API. Use when the user asks to run ComfyUI, execute a workflow by file path/name, or supply raw API-format JSON; sup...",
+    "tags": {
+      "ai": "1.0.0",
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1776308384415,
+    "updatedAt": 1777527595996
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1776308384415,
+    "changelog": "- Initial release of the ComfyUI skill for running local ComfyUI workflows via the HTTP API.\n- Supports generating images by executing workflows from file paths, workflow names, or raw API-format JSON (including default workflow).\n- Allows editing workflow JSON before execution: intelligently sets prompt, style, and seed fields based on user input.\n- Handles user requests to download model weight URLs into appropriate ComfyUI model folders.\n- Automatically installs missing dependencies (e.g., ComfyUI, pget) as needed.\n- Always returns generated images directly to the user after a successful run.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "kirkraman",
+    "userId": "s171c4e2zwz2yy69j6tp9xcfc184vnxz",
+    "displayName": "KirkRaman",
+    "image": "https://avatars.githubusercontent.com/u/255880392?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527595996
+  }
+}

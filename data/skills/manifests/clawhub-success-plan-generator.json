@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59239,
+  "uuid": "skill-clawhub-success-plan-generator",
+  "skillKey": "clawhub-success-plan-generator",
+  "name": "Success Plan Generator",
+  "summary": "为 B2B 客户生成成功计划，绑定里程碑、可验证结果与复盘节奏。；use for success-plan, customer-success, b2b workflows；do not use for 承诺合同外服务, 替代正式项目计划.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.success_plan_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "为 B2B 客户生成成功计划，绑定里程碑、可验证结果与复盘节奏。；use for success-plan, customer-success, b2b workflows；do not u."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/success-plan-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "success-plan-generator",
+      "url": "https://clawhub.ai/skills/success-plan-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "success-plan-generator",
+    "url": "https://clawhub.ai/skills/success-plan-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/success-plan-generator-d23df1656192c8f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/success-plan-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-success-plan-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ad9c0b0d864facff6b14abaeeef993f21ce872276f5a8fcac8678453ba415de",
+      "artifactSizeBytes": 2492
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T08:01:49.694Z"
+}

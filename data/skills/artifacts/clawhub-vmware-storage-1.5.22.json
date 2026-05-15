@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vmware-storage@1.5.22",
+  "version": "1.5.22",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vmware_storage",
+  "skill": {
+    "id": 40084,
+    "skillKey": "clawhub-vmware-storage",
+    "name": "Vmware Storage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vmware-storage",
+    "url": "https://clawhub.ai/skills/vmware-storage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vmware-storage-a366dc10ce4990ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever the user needs to manage VMware storage — datastores, iSCSI targets, and vSAN clusters. Directly handles: browse datastores, scan for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zw008",
+      "userId": "s171xgnmqse0nqvgqvqnaq5f9183kyre",
+      "displayName": "zw008",
+      "image": "https://avatars.githubusercontent.com/u/10613299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 743,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 34
+    },
+    "latestVersion": {
+      "version": "1.5.22",
+      "createdAt": 1778282704215,
+      "changelog": "v1.5.22 family alignment for Smithery rollout",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3518b168b46eb78508768a92c2df412755c1c92da42bd68b6ced8d1710b8d5d"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45430,
+  "uuid": "skill-clawhub-uruc",
+  "skillKey": "clawhub-uruc",
+  "name": "uruc-skill",
+  "summary": "Use when an OpenClaw or Codex agent needs to work inside URUC, handle URUC-originated or [URUC_EVENT] messages first, bootstrap the bundled local daemon from...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uruc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "waibiwaibi",
+      "features": [
+        "Use when an OpenClaw or Codex agent needs to work inside URUC, handle URUC-originated or [URUC_."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uruc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/141296631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uruc",
+      "url": "https://clawhub.ai/skills/uruc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uruc",
+    "url": "https://clawhub.ai/skills/uruc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uruc-0b093e8c0de28973.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uruc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uruc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cfba91f06e61ca02d4b237b3c918f38fe24d84041e321d7a419433d02f8c54c",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:05:11.640Z"
+}

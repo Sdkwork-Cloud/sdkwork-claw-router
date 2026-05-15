@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-long-form-coach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_long_form_coach",
+  "skill": {
+    "id": 53798,
+    "skillKey": "clawhub-youtube-long-form-coach",
+    "name": "Youtube Long Form Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-long-form-coach",
+    "url": "https://clawhub.ai/skills/youtube-long-form-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-long-form-coach-697ae84a88373e62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coach a YouTube creator focused on long-form content (8-30+ min videos) — distinct from Shorts and from livestreaming. Covers the 2026 algorithm reality (CTR..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 84,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778197243818,
+      "changelog": "YouTube Long-Form Coach v1.0.0\n\n- Launches a coach focused on long-form YouTube (8–30+ min) content best practices for 2026 algorithm reality.\n- Covers all key aspects: packaging (title, thumbnail, first 30s as a unit), optimal long-form structure, retention engineering, upload cadence, and niche/monetization strategy.\n- Addresses when to pivot or persist, how to judge channel viability, and specifics on CTR, AVD, session time, subscriber metrics, and retention graph analysis.\n- Provides distinct triggers for YouTube long-form scenarios; does not engage for Shorts, livestreams, or podcast clip strategies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93d496ed7ff6221880c3947204ba64d6970045db1db3167143bd174620385ade"
+}

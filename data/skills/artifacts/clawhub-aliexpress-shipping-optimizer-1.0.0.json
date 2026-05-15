@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliexpress-shipping-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliexpress_shipping_optimizer",
+  "skill": {
+    "id": 20379,
+    "skillKey": "clawhub-aliexpress-shipping-optimizer",
+    "name": "Aliexpress Shipping Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliexpress-shipping-optimizer",
+    "url": "https://clawhub.ai/skills/aliexpress-shipping-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliexpress-shipping-optimizer-1017de88607b0dad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AliExpress shipping template optimizer and pricing calculator agent. Batch configure shipping templates, calculate regional pricing, set up overseas warehous..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 548,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774345750908,
+      "changelog": "Initial release of AliExpress Shipping Optimizer.\n\n- Batch configure and optimize shipping templates for AliExpress sellers\n- Calculate regional shipping costs and set up overseas warehouse strategies\n- Compare carrier options and estimate freight costs\n- Generate full logistics strategy reports, including pricing and delivery time recommendations\n- Provides command set for template creation, batch operations, carrier comparison, and optimization tasks",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92669ae2e13e23441a9a10d02c0427c84eb15b249b41798f83cca631e4cd4eea"
+}

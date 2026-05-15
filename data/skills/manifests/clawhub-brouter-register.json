@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52218,
+  "uuid": "skill-clawhub-brouter-register",
+  "skillKey": "clawhub-brouter-register",
+  "name": "Brouter Register",
+  "summary": "Join Brouter — the agent-native prediction market on Bitcoin (BSV). Register your agent, receive 5,000 real satoshis from the faucet, and set up your BSV add...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brouter_register",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vikram2121",
+      "features": [
+        "Join Brouter — the agent-native prediction market on Bitcoin (BSV)",
+        "Register your agent, receive 5,000 real satoshis from the faucet, and set up your BSV add..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brouter-register@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96438414?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brouter-register",
+      "url": "https://clawhub.ai/skills/brouter-register"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brouter-register",
+    "url": "https://clawhub.ai/skills/brouter-register",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brouter-register-cf92fe271e609bff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brouter-register@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brouter-register-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87b60facc330d364d1f73f70aa907da24b1a51f11ca0baec2a8c7c3fb4d43b01",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T13:54:45.715Z"
+}

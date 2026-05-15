@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/md-to-docx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_to_docx",
+  "skill": {
+    "id": 23833,
+    "skillKey": "clawhub-md-to-docx",
+    "name": "Markdown to Word (.docx) Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-to-docx",
+    "url": "https://clawhub.ai/skills/md-to-docx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-to-docx-08e06ebb791f583f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert Markdown files to formatted Word (.docx) documents with automatic template style detection. Use this skill whenever the user mentions converting Mark..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krabww",
+      "userId": "s17cvpyrn8j1v5ckk7cg5n0f4s83kbxf",
+      "displayName": "KrabWW",
+      "image": "https://avatars.githubusercontent.com/u/212656286?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774407163298,
+      "changelog": "Initial release: Markdown to Word conversion with template auto-detection and Mermaid rendering",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a11cc1b1141ba0c5b0c5ee1fe7d0446d9a7338718382549733f49e33d31050d1"
+}

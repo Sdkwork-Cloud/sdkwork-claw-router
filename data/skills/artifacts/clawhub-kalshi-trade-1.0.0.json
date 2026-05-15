@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kalshi-trade@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_trade",
+  "skill": {
+    "id": 47562,
+    "skillKey": "clawhub-kalshi-trade",
+    "name": "kalshi-trade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-trade",
+    "url": "https://clawhub.ai/skills/kalshi-trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-trade-a05be5f8577314c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read-only Kalshi OpenAPI scouting skill for market discovery, liquidity checks, and market validation. Use for scanning and ranking Kalshi opportunities. Pai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brs999",
+      "userId": "s178txbzyphw8mm8dpnnh6eyx183m9m4",
+      "displayName": "Ben",
+      "image": "https://avatars.githubusercontent.com/u/6516437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 111,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773258908247,
+      "changelog": "Kalshi trading skill v1.0.0 moves to a read-only, scouting-focused tool for market discovery and validation.\n\n- All trading, order, and portfolio scripts removed; now strictly read-only using Kalshi OpenAPI endpoints.\n- Adds a single script for market scans, orderbook inspection, and trade history.\n- CLI commands refocused on market discovery, status, and liquidity checks.\n- No order placement, amendment, or cancellation—execution now requires a separate skill.\n- Environment configuration simplified; API key and private key no longer required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1ae9f8a2a0f9e2affcf3630791fced64ff38d0cbf03a74b0fe5fb3272dcbe8a"
+}

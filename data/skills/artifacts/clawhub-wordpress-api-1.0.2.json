@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wordpress-api@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wordpress_api",
+  "skill": {
+    "id": 9137,
+    "skillKey": "clawhub-wordpress-api",
+    "name": "WordPress"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wordpress-api",
+    "url": "https://clawhub.ai/skills/wordpress-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wordpress-api-b27e187fc08bbc80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WordPress.com API integration with managed OAuth. Manage posts, pages, sites, and content. Use this skill when users want to create, read, update, or delete..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4106,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 8,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777588990869,
+      "changelog": "- Updated all API and connection management endpoints from gateway.maton.ai and ctrl.maton.ai to api.maton.ai for consistency.\n- SECURITY: Added an explicit section reminding users that all write operations require user confirmation before changes are made.\n- Documentation: Improved clarity about managing multiple connections and updated header usage instructions.\n- Removed the unused LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b5683907dab7a20994f2ad27c6cf9f5a8875331cb938dad3b9b54302e4292d6"
+}

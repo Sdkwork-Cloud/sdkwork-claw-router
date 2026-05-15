@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25905,
+  "uuid": "skill-clawhub-kraken-spot",
+  "skillKey": "clawhub-kraken-spot",
+  "name": "Kraken CLI",
+  "summary": "Use a Bash CLI to query Kraken Spot and Futures APIs, inspect account state, run guarded trading and funding actions, and work with Kraken websocket payloads...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kraken_spot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gabriel Chiappa",
+      "features": [
+        "Use a Bash CLI to query Kraken Spot and Futures APIs, inspect account state, run guarded tradin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kraken-spot@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/180442430?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kraken-spot",
+      "url": "https://clawhub.ai/skills/kraken-spot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kraken-spot",
+    "url": "https://clawhub.ai/skills/kraken-spot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kraken-spot-6dff4944415c560f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kraken-spot@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kraken-spot-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7376054a5ffb697243efb97c82b6dd45e56027d7f39d9c6f3562ece67fd71202",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T17:01:08.744Z"
+}

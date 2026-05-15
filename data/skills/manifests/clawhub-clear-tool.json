@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45834,
+  "uuid": "skill-clawhub-clear-tool",
+  "skillKey": "clawhub-clear-tool",
+  "name": "Clear Tool",
+  "summary": "Perform clear-tool operations from the command line.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clear_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Perform clear-tool operations from the command line."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clear-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clear-tool",
+      "url": "https://clawhub.ai/skills/clear-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clear-tool",
+    "url": "https://clawhub.ai/skills/clear-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clear-tool-d30e39e01c8b7353.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clear-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clear-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d887cb66890a4d4712d613c0890c433df84c2c1e98eaf8e57cfdd90896c10d51",
+      "artifactSizeBytes": 1745
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T19:52:53.086Z"
+}

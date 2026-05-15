@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62107,
+  "uuid": "skill-clawhub-coding-as-dressing",
+  "skillKey": "clawhub-coding-as-dressing",
+  "name": "coding-as-dressing",
+  "summary": "用日常穿搭比喻解释代码，帮助小白理解。当用户要求用穿搭、穿衣、衣柜、outfit 比喻解释代码，或提到 Coding as Dressing 时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coding_as_dressing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "focusailab",
+      "features": [
+        "用日常穿搭比喻解释代码，帮助小白理解。当用户要求用穿搭、穿衣、衣柜、outfit 比喻解释代码，或提到 Coding as Dressing 时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coding-as-dressing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201520547?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coding-as-dressing",
+      "url": "https://clawhub.ai/skills/coding-as-dressing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coding-as-dressing",
+    "url": "https://clawhub.ai/skills/coding-as-dressing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coding-as-dressing-b84805628aa4eff9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coding-as-dressing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coding-as-dressing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b5b5bdc0810d92159b05bd162e750f0a8f2cf8dea03dc3a61c246c27d354d0c",
+      "artifactSizeBytes": 2348
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T05:03:34.977Z"
+}

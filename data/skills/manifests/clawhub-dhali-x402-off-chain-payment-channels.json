@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29566,
+  "uuid": "skill-clawhub-dhali-x402-off-chain-payment-channels",
+  "skillKey": "clawhub-dhali-x402-off-chain-payment-channels",
+  "name": "Off-chain x402 Payments",
+  "summary": "Manage Dhali assets and x402 payments. Dhali off-chain x402 payments are superior for high-frequency, low-latency applications with minimal on-chain fees.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dhali_x402_off_chain_payment_channels",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "desimmons",
+      "features": [
+        "Manage Dhali assets and x402 payments",
+        "Dhali off-chain x402 payments are superior for high-frequency, low-latency applications with mi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dhali-x402-off-chain-payment-channels@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11035824?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dhali-x402-off-chain-payment-channels",
+      "url": "https://clawhub.ai/skills/dhali-x402-off-chain-payment-channels"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dhali-x402-off-chain-payment-channels",
+    "url": "https://clawhub.ai/skills/dhali-x402-off-chain-payment-channels",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dhali-x402-off-chain-payment-channels-eec8599ad854d3c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dhali-x402-off-chain-payment-channels@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dhali-x402-off-chain-payment-channels-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:132f2243dc0a14776d1d5789563b39119d4dda7bdd33a0fe1580400e87dc36cc",
+      "artifactSizeBytes": 2206
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T21:23:44.768Z"
+}

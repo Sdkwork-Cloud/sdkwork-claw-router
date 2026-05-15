@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reaction-processor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reaction_processor",
+  "skill": {
+    "id": 25015,
+    "skillKey": "clawhub-reaction-processor",
+    "name": "Reaction Processor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reaction-processor",
+    "url": "https://clawhub.ai/skills/reaction-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reaction-processor-7e6b984a47743af3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Record real OpenClaw events and reactions for the current closed-loop workflow. Use for logging duplicate-skipped and proposal-created outcomes in public.ope..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ecosincronia",
+      "userId": "publishers:ecosincronia",
+      "displayName": "EcosincronIA",
+      "image": "https://avatars.githubusercontent.com/u/242621438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773308119000,
+      "changelog": "Initial release of reaction-processor skill:\n\n- Logs real OpenClaw agent events and reactions for the closed-loop workflow.\n- Records duplicate-skipped and proposal-created outcomes for stale missions.\n- Updates trigger fire metadata when applicable.\n- Operates with public.openclaw_agent_events, public.openclaw_agent_reactions, and public.openclaw_trigger_rules tables.\n- Currently supports only the stale_missions_alert flow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:488d39caf1ac5252356742e747e378c606922f25d9fe2ff2905f241633fda577"
+}

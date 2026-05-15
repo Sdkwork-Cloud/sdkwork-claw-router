@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-team-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_team_creator",
+  "skill": {
+    "id": 66613,
+    "skillKey": "clawhub-agent-team-creator",
+    "name": "Claw Team Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-team-creator",
+    "url": "https://clawhub.ai/skills/agent-team-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-team-creator-c8787651a50aec77.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent团队创建和管理工具 - 用于创建多Agent协作团队，分配角色和任务，协调复杂工作流。支持创建CEO、分析师、研究员等角色，实现智能任务分发和结果整合。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryan-wuxl",
+      "userId": "publishers:ryan-wuxl",
+      "displayName": "ryan-wuxl",
+      "image": "https://avatars.githubusercontent.com/u/21093002?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774150707714,
+      "changelog": "Initial release of agent-team-creator\n\n- Create and manage multi-agent collaborative teams for complex workflows.\n- Supports role assignment (e.g., CEO, analyst, researcher) and intelligent task distribution.\n- Automates integration of results from different agents.\n- Enables workflow management (serial, parallel, conditional branching).\n- Designed for various scenarios, including investment analysis, content creation, and code review teams.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0cad534fd2f8b2cbdf33ae248271bc0cc855bf84de9cb47e2de587bcecdc4d37"
+}

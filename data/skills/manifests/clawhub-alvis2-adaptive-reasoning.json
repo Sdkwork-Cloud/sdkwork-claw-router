@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44341,
+  "uuid": "skill-clawhub-alvis2-adaptive-reasoning",
+  "skillKey": "clawhub-alvis2-adaptive-reasoning",
+  "name": "Adaptive Reasoning",
+  "summary": "Automatically assess task complexity and adjust reasoning level. Triggers on every user message to evaluate whether extended thinking (reasoning mode) would...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvis2_adaptive_reasoning",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlvisDunlop",
+      "features": [
+        "Automatically assess task complexity and adjust reasoning level",
+        "Triggers on every user message to evaluate whether extended thinking (reasoning mode) would..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alvis2-adaptive-reasoning@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255881479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alvis2-adaptive-reasoning",
+      "url": "https://clawhub.ai/skills/alvis2-adaptive-reasoning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvis2-adaptive-reasoning",
+    "url": "https://clawhub.ai/skills/alvis2-adaptive-reasoning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvis2-adaptive-reasoning-bfa211a9480ab74e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alvis2-adaptive-reasoning@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alvis2-adaptive-reasoning-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5b77e99a4fd74a58bba9dd946c4f55deba50d87e6773a86bfe5497780fbf21d",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:16:25.794Z"
+}

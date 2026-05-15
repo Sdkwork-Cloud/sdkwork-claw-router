@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51477,
+  "uuid": "skill-clawhub-clawgitsync",
+  "skillKey": "clawhub-clawgitsync",
+  "name": "clawsync",
+  "summary": "Git-first backup, migration, restore, and token-protected archive serving for OpenClaw state. Highlights: complete Git-native workflow (`git init/push/pull/m...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawgitsync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linsheng9731",
+      "features": [
+        "Git-first backup, migration, restore, and token-protected archive serving for OpenClaw state",
+        "Highlights: complete Git-native workflow (`git init/push/pull/m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawgitsync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5237574?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawgitsync",
+      "url": "https://clawhub.ai/skills/clawgitsync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawgitsync",
+    "url": "https://clawhub.ai/skills/clawgitsync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawgitsync-59ef72c1b0b06d87.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawgitsync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawgitsync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c0f094f1cde6ba4faa454e785c7dc53305b82e3a3d9215eb6a05ebc64e37c2f",
+      "artifactSizeBytes": 2519
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T01:30:17.858Z"
+}

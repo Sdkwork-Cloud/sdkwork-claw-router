@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-search-plus@3.0.3",
+  "version": "3.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_search_plus",
+  "skill": {
+    "id": 8314,
+    "skillKey": "clawhub-web-search-plus",
+    "name": "Web Search Plus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-search-plus",
+    "url": "https://clawhub.ai/skills/web-search-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-search-plus-041ddd621a3ebb9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unified multi-provider web search and URL extraction skill with intelligent auto-routing across Serper, Brave, Tavily, Querit, Linkup, Exa, Firecrawl, Perple..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robbyczgw-cla",
+      "userId": "s177f7tydbpq0gh2sctd8hqdjn83fnwv",
+      "displayName": "Robby",
+      "image": "https://avatars.githubusercontent.com/u/239660374?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 21153,
+      "installsAllTime": 159,
+      "installsCurrent": 147,
+      "stars": 98,
+      "versions": 57
+    },
+    "latestVersion": {
+      "version": "3.0.3",
+      "createdAt": 1778088985813,
+      "changelog": "web-search-plus 3.0.3\n\n- Added test-auto-routing.sh script for automatic routing verification.\n- Updated documentation (SKILL.md, CHANGELOG.md) to reflect latest changes.\n- Bumped version and metadata in package.json and SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0796f131fa6a2ca5e67f355deba96d62238ff627f89ecd3fcbcce3869d9a3f5d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/outsmart-lp-farming@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outsmart_lp_farming",
+  "skill": {
+    "id": 19583,
+    "skillKey": "clawhub-outsmart-lp-farming",
+    "name": "Outsmart LP Farming"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outsmart-lp-farming",
+    "url": "https://clawhub.ai/skills/outsmart-lp-farming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outsmart-lp-farming-65cbf634d91947c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage LP positions on Solana DEXes to earn swap fees. Use when: user asks about LP farming, providing liquidity, earning yield, compounding fees, DLMM, DAMM..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "outsmartchad",
+      "userId": "publishers:outsmartchad",
+      "displayName": "vincent so",
+      "image": "https://avatars.githubusercontent.com/u/88470511?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 603,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771845423590,
+      "changelog": "Initial release of outsmart-lp-farming skill.\n\n- Manage LP positions on Solana DEXes to earn swap fees.\n- Guided workflows for DLMM (concentrated liquidity) and DAMM v2 (new pool bootstrapping).\n- Clear usage boundaries: this skill is for on-chain liquidity farming, not lending, staking, or CEX market making.\n- Includes detailed strategy explanations, command examples, workflow, and risk management tips.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eb0891e10603c9dbf9a210b8ed0d7d9d1692839cf44ec41b7e4278e806a4601d"
+}

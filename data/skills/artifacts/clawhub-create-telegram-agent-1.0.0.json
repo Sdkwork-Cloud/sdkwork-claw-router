@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-telegram-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_telegram_agent",
+  "skill": {
+    "id": 29515,
+    "skillKey": "clawhub-create-telegram-agent",
+    "name": "CreateTelegramClawAgent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-telegram-agent",
+    "url": "https://clawhub.ai/skills/create-telegram-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-telegram-agent-50a4e7d6d5079afb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create a new Telegram agent in OpenClaw with proper configuration. Use when user wants to create a new Telegram bot agent, including setting up agent workspa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "4t-shirt",
+      "userId": "s17b9v7ek0czk16db2x8716ep583sgzd",
+      "displayName": "Woo, Hedy",
+      "image": "https://avatars.githubusercontent.com/u/1445667?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773420675066,
+      "changelog": "Initial release of create-telegram-agent skill:\n\n- Guides users through creating a new Telegram agent in OpenClaw, including workspace setup and token configuration.\n- Collects agent name, purpose, and Telegram bot token (with instructions for obtaining a token).\n- Prepares all configuration entries for user review before any changes are made.\n- Requires explicit user confirmation before modifying openclaw.json.\n- Generates agent workspace, required directories, AGENTS.md, and SOUL.md files.\n- Provides a clear summary of actions and next steps upon completion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4deeec33abd6c9265fc8041d89a627579f46141aecd42c5209f761059ff8fa8a"
+}

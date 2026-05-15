@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-downloader-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_downloader_free",
+  "skill": {
+    "id": 44189,
+    "skillKey": "clawhub-video-downloader-free",
+    "name": "Video Downloader Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-downloader-free",
+    "url": "https://clawhub.ai/skills/video-downloader-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-downloader-free-c9d916092dbf19d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a YouTube video URL at 1080p into 1080p downloaded MP4 files just by typing what you need. Whether it's saving online videos to your device for offline..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775946785601,
+      "changelog": "Initial release — easily download and save videos offline from URLs.\n\n- Converts YouTube and other online video URLs to 1080p MP4 files in 20–40 seconds.\n- Simple workflow: paste your video URL, describe your desired output, and receive a ready-to-download file.\n- Handles basic timeline edits and exports, with support for video, audio, and text overlays.\n- Anonymous usage supported with a free token; credits system in place.\n- All processing is cloud-based, so no installation required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:430d4f7b2904928d9f4782206f9101d20042222002f333409d8d5e54363da4b3"
+}

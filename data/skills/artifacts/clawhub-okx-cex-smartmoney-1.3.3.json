@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/okx-cex-smartmoney@1.3.3",
+  "version": "1.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okx_cex_smartmoney",
+  "skill": {
+    "id": 42426,
+    "skillKey": "clawhub-okx-cex-smartmoney",
+    "name": "okx-cex-smartmoney"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okx-cex-smartmoney",
+    "url": "https://clawhub.ai/skills/okx-cex-smartmoney",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okx-cex-smartmoney-293b66f0118cfc9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Smart Money analytics on OKX: leaderboard traders, position tracking, trade records, closed-position history, aggregated consensus signals, and signal histor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "numpy0001",
+      "userId": "s178zmefrdp1qc0dd9ya8n367183pmvz",
+      "displayName": "numpy0001",
+      "image": "https://avatars.githubusercontent.com/u/140434355?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.3.3",
+      "createdAt": 1778248172397,
+      "changelog": "Version 1.3.3 of okx-cex-smartmoney\n\n- Added new trader analytics commands: closed-position (realized PnL) and historical order tracking.\n- Major command expansion: 10 Smart Money commands now available (was 5).\n- Updated authentication flow—support for both API key and OAuth, with explicit mode handling and error routing.\n- Removed deprecated composite trader portrait command; users now run modular analytics commands in parallel.\n- Skill description and documentation revised for improved clarity and coverage of new features.\n- Upgraded CLI dependency to @okx_ai/okx-trade-cli@1.3.3.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a2220197f27cf5f99c51810209f7edef775fff435facc77a075b973916cf77db"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51553,
+  "uuid": "skill-clawhub-pack-list",
+  "skillKey": "clawhub-pack-list",
+  "name": "Create Packing Lists — Trip Packing Checklist, Luggage Essentials, Travel Gear & What to Pack",
+  "summary": "Get a customized packing list based on your destination, season, trip type, and activities. Never forget essentials again. Also supports: flight booking, hot...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pack_list",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dingtom336-gif",
+      "features": [
+        "Get a customized packing list based on your destination, season, trip type, and activities",
+        "Never forget essentials again",
+        "Also supports: flight booking, hot..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pack-list@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256118512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pack-list",
+      "url": "https://clawhub.ai/skills/pack-list"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pack-list",
+    "url": "https://clawhub.ai/skills/pack-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pack-list-e3e9f689201e346a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pack-list@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pack-list-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b01828beed1fc1b8afea2acdcbccf0687746cf55a3cbc26aadf14ca61fa9db9",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T12:05:28.692Z"
+}

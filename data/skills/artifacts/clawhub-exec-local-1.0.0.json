@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/exec-local@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exec_local",
+  "skill": {
+    "id": 44107,
+    "skillKey": "clawhub-exec-local",
+    "name": "Exec Local"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exec-local",
+    "url": "https://clawhub.ai/skills/exec-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exec-local-efb0400c2dadffe5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute system-level shell commands directly within the thundarr-gpu container for monitoring and remote orchestration tasks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zrslu01",
+      "userId": "s17fywpt9adxccr1q84bbqhd5d83z35q",
+      "displayName": "zrslu01",
+      "image": "https://avatars.githubusercontent.com/u/50145180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774954754985,
+      "changelog": "Initial release of exec-local skill—provides secure shell command execution within the thundarr-gpu container on Garuda.\n\n- Enables direct execution of scripts and binary tools locally in the container.\n- Supports remote orchestration of the Fedora UM250 host via SSH.\n- Allows monitoring of container health, processes, and Docker node networking.\n- Operates with container user permissions; input sanitization recommended for automation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d4668ad2a5e1da2c82fce6aed6920c9bbc2a9145638e083a5bf6b80598b5380"
+}

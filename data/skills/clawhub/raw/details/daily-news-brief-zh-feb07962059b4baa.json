@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "daily-news-brief-zh",
+    "displayName": "daily-news-brief",
+    "summary": "聚合并整理多源新闻，按科技/财经/AI/智能体分类排序，生成 Markdown 摘要并可定时执行。当用户提到\"新闻\"、\"今日新闻\"、\"整理新闻\"、\"科技新闻\"、\"财经新闻\"、\"AI 新闻\"、\"智能体新闻\"、\"聚合新闻\"或需要定时获取新闻摘要时使用。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 396,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773764598239,
+    "updatedAt": 1778311180828
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773764598239,
+    "changelog": "- 完全重写并精简项目：移除过往定制历史与大段规则说明，改为以自动聚合、智能分类和 Markdown 摘要输出为核心。\n- 新增多工作流框架（Setup, FetchNews, Configure），详细分工使用场景与入口。\n- 技术架构升级：主流程拆分为 TypeScript 工具链，重点突出 RSS+网页直连、自定义源管理和本地日志/文件输出。\n- 默认定时任务由早8点调整为晚9点，配置更灵活且流程更透明。\n- 所有新闻聚合严格标明正规免费新闻源，分类明确（科技/财经/AI/智能体）且支持自定义。\n- 优化目录与文件结构，移除旧脚本与历史模板，新增快速开始文档与分模块 TypeScript 工具。\n- 故障排查、自定义建议和通道推送说明更细致，体验全面升级。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "binbin1213",
+    "userId": "s175t2nj3jefb6dwtqr6ymcca583j74w",
+    "displayName": "彬彬哦",
+    "image": "https://avatars.githubusercontent.com/u/32067712?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.potential_exfiltration"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.potential_exfiltration",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778311180828
+  }
+}

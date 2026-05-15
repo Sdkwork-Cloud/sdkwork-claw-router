@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65058,
+  "uuid": "skill-clawhub-lsl-test-skill1",
+  "skillKey": "clawhub-lsl-test-skill1",
+  "name": "lsl-test-skill1",
+  "summary": "查询城市当前天气，并用简洁中文返回天气状况和温度。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lsl_test_skill1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lushulin-jack",
+      "features": [
+        "查询城市当前天气，并用简洁中文返回天气状况和温度。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lsl-test-skill1@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55017616?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lsl-test-skill1",
+      "url": "https://clawhub.ai/skills/lsl-test-skill1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lsl-test-skill1",
+    "url": "https://clawhub.ai/skills/lsl-test-skill1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lsl-test-skill1-1bd79a31789dd4ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lsl-test-skill1@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-lsl-test-skill1-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db29726ca2b529dfce2a1d6c440046605335731e8e43061a843859b8d0b8d0dc",
+      "artifactSizeBytes": 1846
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:50:33.534Z"
+}

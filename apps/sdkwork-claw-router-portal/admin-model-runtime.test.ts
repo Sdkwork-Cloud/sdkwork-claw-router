@@ -211,7 +211,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
   await withBackendSdkFetch(
     (url, init) => {
       const method = init?.method ?? "GET";
-      if (url === "/backend/v3/api/router/model-vendors" && method === "GET") {
+      if (url === "/backend/v3/api/ai/model_vendors" && method === "GET") {
         return {
           items: [
             {
@@ -224,7 +224,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
           ],
         };
       }
-      if (url === "/backend/v3/api/model/list" && method === "POST") {
+      if (url === "/backend/v3/api/ai/models" && method === "GET") {
         return {
           items: [
             {
@@ -248,7 +248,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
           ],
         };
       }
-      if (url === "/backend/v3/api/router/model-rankings?limit=200" && method === "GET") {
+      if (url === "/backend/v3/api/ai/model_rankings?limit=200" && method === "GET") {
         return {
           items: [
             {
@@ -260,7 +260,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
           ],
         };
       }
-      if (url === "/backend/v3/api/router/models/sync" && method === "POST") {
+      if (url === "/backend/v3/api/ai/models/refresh" && method === "POST") {
         return {
           synced: true,
           source: "sdkwork_models",
@@ -312,7 +312,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
           ],
         };
       }
-      if (url === "/backend/v3/api/router/model-vendors" && method === "POST") {
+      if (url === "/backend/v3/api/ai/model_vendors" && method === "POST") {
         return {
           item: {
             id: "vendor-3",
@@ -323,7 +323,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
           },
         };
       }
-      if (url === "/backend/v3/api/model" && method === "POST") {
+      if (url === "/backend/v3/api/ai/models" && method === "POST") {
         return {
           item: {
             id: "model-3",
@@ -345,7 +345,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
           },
         };
       }
-      if (url === "/backend/v3/api/model/model-3" && method === "PATCH") {
+      if (url === "/backend/v3/api/ai/models/model-3" && method === "PATCH") {
         return {
           item: {
             id: "model-3",
@@ -367,7 +367,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
           },
         };
       }
-      if (url === "/backend/v3/api/model/model-3" && method === "DELETE") {
+      if (url === "/backend/v3/api/ai/models/model-3" && method === "DELETE") {
         return { deleted: true };
       }
       throw new Error(`Unexpected SDK request ${method} ${url}`);
@@ -437,14 +437,14 @@ test("admin model service calls generated backend SDK paths and normalizes model
       assert.deepEqual(
         captured.map((request) => `${request.method} ${request.url}`),
         [
-          "GET /backend/v3/api/router/model-vendors",
-          "POST /backend/v3/api/model/list",
-          "GET /backend/v3/api/router/model-rankings?limit=200",
-          "POST /backend/v3/api/router/models/sync",
-          "POST /backend/v3/api/router/model-vendors",
-          "POST /backend/v3/api/model",
-          "PATCH /backend/v3/api/model/model-3",
-          "DELETE /backend/v3/api/model/model-3",
+          "GET /backend/v3/api/ai/model_vendors",
+          "GET /backend/v3/api/ai/models",
+          "GET /backend/v3/api/ai/model_rankings?limit=200",
+          "POST /backend/v3/api/ai/models/refresh",
+          "POST /backend/v3/api/ai/model_vendors",
+          "POST /backend/v3/api/ai/models",
+          "PATCH /backend/v3/api/ai/models/model-3",
+          "DELETE /backend/v3/api/ai/models/model-3",
         ],
       );
       assert.deepEqual(JSON.parse(captured[4].body), {
@@ -489,7 +489,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
 test("admin model service reads model ranking refresh status through generated backend SDK", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/model-rankings/status" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/ai/model_rankings/status" && (init?.method ?? "GET") === "GET") {
         return {
           status: "ready",
           tenantId: 10,
@@ -545,7 +545,7 @@ test("admin model service reads model ranking refresh status through generated b
       assert.equal(status.latestJob?.failureReason, "usage aggregate failed");
       assert.deepEqual(
         captured.map((request) => `${request.method} ${request.url}`),
-        ["GET /backend/v3/api/router/model-rankings/status"],
+        ["GET /backend/v3/api/ai/model_rankings/status"],
       );
     },
   );
@@ -554,7 +554,7 @@ test("admin model service reads model ranking refresh status through generated b
 test("admin model ranking refresh status rejects fractional counters", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/model-rankings/status" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/ai/model_rankings/status" && (init?.method ?? "GET") === "GET") {
         return {
           status: "ready",
           tenantId: 10,
@@ -588,7 +588,7 @@ test("admin model ranking refresh status rejects fractional counters", async () 
 test("admin model service reads model ranking refresh job history through generated backend SDK", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/model-rankings/jobs?limit=20" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/ai/model_rankings/jobs?limit=20" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -627,7 +627,7 @@ test("admin model service reads model ranking refresh job history through genera
       assert.equal(page.items[0].failureReason, "usage aggregate failed");
       assert.deepEqual(
         captured.map((request) => `${request.method} ${request.url}`),
-        ["GET /backend/v3/api/router/model-rankings/jobs?limit=20"],
+        ["GET /backend/v3/api/ai/model_rankings/jobs?limit=20"],
       );
     },
   );
@@ -636,7 +636,7 @@ test("admin model service reads model ranking refresh job history through genera
 test("admin model service triggers model ranking refresh through generated backend SDK", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/model-rankings/refresh" && init?.method === "POST") {
+      if (url === "/backend/v3/api/ai/model_rankings/refresh" && init?.method === "POST") {
         return {
           triggered: true,
           status: "succeeded",
@@ -665,7 +665,7 @@ test("admin model service triggers model ranking refresh through generated backe
       assert.equal(result.generatedCount, 7);
       assert.deepEqual(
         captured.map((request) => `${request.method} ${request.url}`),
-        ["POST /backend/v3/api/router/model-rankings/refresh"],
+        ["POST /backend/v3/api/ai/model_rankings/refresh"],
       );
       assert.deepEqual(JSON.parse(captured[0].body), {
         rankScope: "commercial-default",
@@ -765,7 +765,7 @@ test("admin model list remains usable when model ranking enhancement fails", asy
   await withBackendSdkFetch(
     (url, init) => {
       const method = init?.method ?? "GET";
-      if (url === "/backend/v3/api/model/list" && method === "POST") {
+      if (url === "/backend/v3/api/ai/models" && method === "GET") {
         return {
           items: [
             {
@@ -789,7 +789,7 @@ test("admin model list remains usable when model ranking enhancement fails", asy
           ],
         };
       }
-      if (url === "/backend/v3/api/router/model-rankings?limit=200" && method === "GET") {
+      if (url === "/backend/v3/api/ai/model_rankings?limit=200" && method === "GET") {
         throw new Error("ranking store unavailable");
       }
       throw new Error(`Unexpected SDK request ${method} ${url}`);
@@ -801,10 +801,10 @@ test("admin model list remains usable when model ranking enhancement fails", asy
       assert.equal(models.length, 1);
       assert.equal(models[0].name, "gpt-4o-mini");
       assert.equal(models[0].calls, "42");
-      assert.equal(capturedRequests[0], "POST /backend/v3/api/model/list");
+      assert.equal(capturedRequests[0], "GET /backend/v3/api/ai/models");
       assert.equal(capturedRequests.length >= 2, true);
       assert.equal(
-        capturedRequests.slice(1).every((request) => request === "GET /backend/v3/api/router/model-rankings?limit=200"),
+        capturedRequests.slice(1).every((request) => request === "GET /backend/v3/api/ai/model_rankings?limit=200"),
         true,
       );
     },
@@ -815,7 +815,7 @@ test("admin model ranking summary rejects fractional request counters", async ()
   await withBackendSdkFetch(
     (url, init) => {
       const method = init?.method ?? "GET";
-      if (url === "/backend/v3/api/router/model-rankings?limit=200" && method === "GET") {
+      if (url === "/backend/v3/api/ai/model_rankings?limit=200" && method === "GET") {
         return {
           items: [
             {
@@ -855,7 +855,7 @@ test("admin model list keeps backend calls when ranking summary is malformed", a
   await withBackendSdkFetch(
     (url, init) => {
       const method = init?.method ?? "GET";
-      if (url === "/backend/v3/api/model/list" && method === "POST") {
+      if (url === "/backend/v3/api/ai/models" && method === "GET") {
         return {
           items: [
             {
@@ -879,7 +879,7 @@ test("admin model list keeps backend calls when ranking summary is malformed", a
           ],
         };
       }
-      if (url === "/backend/v3/api/router/model-rankings?limit=200" && method === "GET") {
+      if (url === "/backend/v3/api/ai/model_rankings?limit=200" && method === "GET") {
         return {
           items: [
             {
@@ -1002,7 +1002,7 @@ test("admin model service rejects unsafe SDK path ids before calling generated b
 test("admin model vendor list fails closed when backend omits stable vendor ids", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/model-vendors" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/ai/model_vendors" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -1028,7 +1028,7 @@ test("admin model vendor list fails closed when backend omits stable vendor ids"
 test("admin model vendor list fails closed when backend returns malformed rows", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/model-vendors" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/ai/model_vendors" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -1056,7 +1056,7 @@ test("admin model vendor list fails closed when backend returns malformed rows",
 test("admin model list fails closed when backend omits stable model ids", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/model/list" && init?.method === "POST") {
+      if (url === "/backend/v3/api/ai/models" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -1086,7 +1086,7 @@ test("admin model list fails closed when backend omits stable model ids", async 
 test("admin model list fails closed when backend returns malformed rows", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/model/list" && init?.method === "POST") {
+      if (url === "/backend/v3/api/ai/models" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -1118,7 +1118,7 @@ test("admin model list fails closed when backend returns malformed rows", async 
 test("admin model list fails closed when backend returns unsupported model types", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/model/list" && init?.method === "POST") {
+      if (url === "/backend/v3/api/ai/models" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -1149,7 +1149,7 @@ test("admin model list fails closed when backend returns unsupported model types
 test("admin model catalog sync fails closed when backend returns malformed model rows", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/models/sync" && init?.method === "POST") {
+      if (url === "/backend/v3/api/ai/models/refresh" && init?.method === "POST") {
         return {
           synced: true,
           source: "sdkwork_models",
@@ -1194,7 +1194,7 @@ test("admin model catalog sync fails closed when backend returns malformed model
 test("admin model catalog sync fails closed when governance metadata is missing", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/models/sync" && init?.method === "POST") {
+      if (url === "/backend/v3/api/ai/models/refresh" && init?.method === "POST") {
         return {
           synced: true,
           source: "sdkwork_models",
@@ -1228,7 +1228,7 @@ test("admin model catalog sync fails closed when governance metadata is missing"
 test("admin model catalog sync rejects fractional fact counters", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/models/sync" && init?.method === "POST") {
+      if (url === "/backend/v3/api/ai/models/refresh" && init?.method === "POST") {
         return {
           synced: true,
           source: "sdkwork_models",

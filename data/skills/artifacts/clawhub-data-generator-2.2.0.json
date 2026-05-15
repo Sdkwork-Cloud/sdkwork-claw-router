@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-generator@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_generator",
+  "skill": {
+    "id": 67957,
+    "skillKey": "clawhub-data-generator",
+    "name": "Data Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-generator",
+    "url": "https://clawhub.ai/skills/data-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-generator-2d8ca09b0efb8f04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "训练数据生成技能。根据传入的工具名和用户指令列表，生成多轮对话格式的 JSONL 训练数据。触发场景：(1) 传入工具名和用户指令列表，生成完整训练数据；(2) 批量生成指定工具的标注数据；(3) 给定指令列表，输出 JSONL 对话样本。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huaibuer",
+      "userId": "s170v8tp8dw4ms0rm7pa0bkc618429c7",
+      "displayName": "HuaiBuer",
+      "image": "https://avatars.githubusercontent.com/u/71966998?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1774172408938,
+      "changelog": "更新scene_generator提示词：新增repeat_type=holidays时datetime不能为空的补充规则；更新GreeQA提示词",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53fec432c70de927465273e64e7ea63397bfea8d3b5724b18f8c0b3dc7930fa1"
+}

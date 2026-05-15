@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44407,
+  "uuid": "skill-clawhub-jclaw-polling-best-practices",
+  "skillKey": "clawhub-jclaw-polling-best-practices",
+  "name": "Polling Best Practices (J-Claw)",
+  "summary": "Best practices for automating long-running, asynchronous tasks via cron-style polling. Use when the user wants to monitor a background CLI command or API cal...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jclaw_polling_best_practices",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Skywalker326",
+      "features": [
+        "Best practices for automating long-running, asynchronous tasks via cron-style polling",
+        "Use when the user wants to monitor a background CLI command or API cal..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jclaw-polling-best-practices@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5773915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jclaw-polling-best-practices",
+      "url": "https://clawhub.ai/skills/jclaw-polling-best-practices"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jclaw-polling-best-practices",
+    "url": "https://clawhub.ai/skills/jclaw-polling-best-practices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jclaw-polling-best-practices-232e763cbb21239c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jclaw-polling-best-practices@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jclaw-polling-best-practices-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bede8ac9337e94a88ae28914287097dfe8fbabf0298f7d875ad6258fe2ca70ef",
+      "artifactSizeBytes": 2162
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T05:48:37.480Z"
+}

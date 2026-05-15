@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9004,
+  "uuid": "skill-clawhub-tubescribe",
+  "skillKey": "clawhub-tubescribe",
+  "name": "TubeScribe",
+  "summary": "YouTube video summarizer with speaker detection, formatted documents, and audio output. Works out of the box with macOS built-in TTS. Optional recommended tools (pandoc, ffmpeg, mlx-audio) enhance quality. Requires internet for YouTube acc.",
+  "version": "1.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tubescribe",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "matusvojtek",
+      "features": [
+        "YouTube video summarizer with speaker detection, formatted documents, and audio output",
+        "Works out of the box with macOS built-in TTS",
+        "Optional recommended tools (pandoc, ffmpeg, mlx-audio) enhance quality",
+        "Requires internet for YouTube access"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tubescribe@1.1.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/206214405?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tubescribe",
+      "url": "https://clawhub.ai/skills/tubescribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tubescribe",
+    "url": "https://clawhub.ai/skills/tubescribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tubescribe-5b4b3b2ab252596c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tubescribe@1.1.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-tubescribe-1.1.8.json",
+      "version": "1.1.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6773fc9e96d023abc55a7dbbc802f9a240a08b3886c52072c99bd076703848b3",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T19:48:12.344Z"
+}

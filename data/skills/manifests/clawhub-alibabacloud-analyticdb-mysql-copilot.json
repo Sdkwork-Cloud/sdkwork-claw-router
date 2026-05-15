@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38124,
+  "uuid": "skill-clawhub-alibabacloud-analyticdb-mysql-copilot",
+  "skillKey": "clawhub-alibabacloud-analyticdb-mysql-copilot",
+  "name": "Alibabacloud Analyticdb Mysql Copilot",
+  "summary": "Alibaba Cloud AnalyticDB for MySQL Operations & Diagnosis Assistant. Supports cluster info queries, performance monitoring, slow query diagnosis, running SQL...",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_analyticdb_mysql_copilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Alibaba Cloud AnalyticDB for MySQL Operations & Diagnosis Assistant",
+        "Supports cluster info queries, performance monitoring, slow query diagnosis, running SQL..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-analyticdb-mysql-copilot@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-analyticdb-mysql-copilot",
+      "url": "https://clawhub.ai/skills/alibabacloud-analyticdb-mysql-copilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-analyticdb-mysql-copilot",
+    "url": "https://clawhub.ai/skills/alibabacloud-analyticdb-mysql-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-analyticdb-mysql-copilot-4dc4e2a18e4dbdf0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-analyticdb-mysql-copilot@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-analyticdb-mysql-copilot-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d33581346825e4968fcc0b0f1bae7aa42205b6d3bc16fd9867dd4677223c3d7",
+      "artifactSizeBytes": 2906
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T02:08:53.295Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tushare-openclaw-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tushare_openclaw_skill",
+  "skill": {
+    "id": 64699,
+    "skillKey": "clawhub-tushare-openclaw-skill",
+    "name": "Tushare Openclaw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tushare-openclaw-skill",
+    "url": "https://clawhub.ai/skills/tushare-openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tushare-openclaw-skill-da66d392dc2ae9a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tushare Pro 金融数据 API 查询助手。用于帮助用户查询中国股票、基金、期货、债券等金融数据。当用户需要获取股票行情、财务数据、基础信息、宏观经济数据时使用此 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ulnacranium17",
+      "userId": "s176rjmfs1z9bve9rrpmq6t6rs84wvvw",
+      "displayName": "ulnacranium17",
+      "image": "https://avatars.githubusercontent.com/u/257941027?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 558,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776221315362,
+      "changelog": "tushare-openclaw-skill v1.0.0\n\n- Initial release of the Tushare Pro 金融数据 API 查询助手 skill\n- Supports querying China stocks, funds, futures, bonds, and macroeconomic data\n- Provides guidance on stock code formats and common API interfaces\n- Includes basic usage instructions for both Python SDK and HTTP API\n- Documents Tushare's point system and key usage notes",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed5ae553090735e3d292bff7fd5168ec41eae2df11276dae4ebf97fbbc012e38"
+}

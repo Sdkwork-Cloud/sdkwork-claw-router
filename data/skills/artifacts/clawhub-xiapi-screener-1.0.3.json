@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiapi-screener@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiapi_screener",
+  "skill": {
+    "id": 72639,
+    "skillKey": "clawhub-xiapi-screener",
+    "name": "虾皮A股选股器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiapi-screener",
+    "url": "https://clawhub.ai/skills/xiapi-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiapi-screener-41acb270e3f05a92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于技术形态筛选A股股票池，支持VCP、RPS强势股、创新高、高股息等多种形态，并可按涨跌幅、动量、强度等维度排序。触发词：股票筛选、选股、VCP形态、RPS强势股、创新高、技术形态、形态选股、自下而上选股、涨幅最大、跌幅最大、最强股票。适用场景：技术形态选股、趋势跟踪、动量选股、价值选股、按指定维度排序筛选、多..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ksky521",
+      "userId": "s177z4s6dabs1y9tx72np0acxs83zsfm",
+      "displayName": "三水清",
+      "image": "https://avatars.githubusercontent.com/u/1073262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775985772971,
+      "changelog": "**xiapi-screener v1.0.3 changelog**\n\n- 增强对多条件组合筛选：支持在获取主要形态数据后，结合SCTR、IBS、均线、市值等二次筛选条件进行本地岗位过滤，实现“形态+指标+量价+市值”复合选股。\n- 新增智能筛选条件识别说明：文档详细区分主要筛选条件与二次本地筛选条件，明确优先级和处理流程。\n- 技能描述补充“多条件组合筛选”能力，适用场景覆盖更丰富。\n- 完善二次筛选支持条件、筛选逻辑与示例，便于灵活应对复杂自定义选股需求。\n- 保持原有流程、报告模版、错误处理与原则无其他变动。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4fad399f208148838961dc6573a178f279eef54e0ed54d0e675f1328021b096f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38874,
+  "uuid": "skill-clawhub-claw-cctv-news-fetcher",
+  "skillKey": "clawhub-claw-cctv-news-fetcher",
+  "name": "Claw Cctv News Fetcher",
+  "summary": "Fetch and parse news highlights from CCTV News Broadcast (Xinwen Lianbo) for a given date.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_cctv_news_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Williamwang-wh",
+      "features": [
+        "Fetch and parse news highlights from CCTV News Broadcast (Xinwen Lianbo) for a given date."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-cctv-news-fetcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75006654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-cctv-news-fetcher",
+      "url": "https://clawhub.ai/skills/claw-cctv-news-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-cctv-news-fetcher",
+    "url": "https://clawhub.ai/skills/claw-cctv-news-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-cctv-news-fetcher-a2c8de428a41226c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-cctv-news-fetcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-cctv-news-fetcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:943048b5e230f5eb17f593a1ceb82113e44fb9e3540698c2740ff66eced83892",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T06:56:51.096Z"
+}

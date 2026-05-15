@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justinx@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justinx",
+  "skill": {
+    "id": 20150,
+    "skillKey": "clawhub-justinx",
+    "name": "justinX"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justinx",
+    "url": "https://clawhub.ai/skills/justinx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justinx-3225144302b3d2bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect live streaming data (MQTT, Kafka, Webhook) to your AI agent via MCP with automated alerts and anomaly detection."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rsafaya-edrv",
+      "userId": "publishers:rsafaya-edrv",
+      "displayName": "Rupul Safaya",
+      "image": "https://avatars.githubusercontent.com/u/51484640?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 459,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772040497797,
+      "changelog": "Added credential metadata (primaryEnv, requires.env) for transparent API key declaration. Improved watcher descriptions\n  and tool reference clarity",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1dab9790ae59b8b831da800e87302449b0c0392e37b99cdbcf789a2c36b66b6f"
+}

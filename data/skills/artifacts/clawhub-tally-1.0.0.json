@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tally@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tally",
+  "skill": {
+    "id": 11899,
+    "skillKey": "clawhub-tally",
+    "name": "Tally"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tally",
+    "url": "https://clawhub.ai/skills/tally",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tally-b01e26d3f5a5130b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and edit Tally forms via API. Use when building surveys, feedback forms, or questionnaires programmatically. Supports all question types including text inputs, multiple choice, checkboxes, ratings (via workaround), and more."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yujesyoga",
+      "userId": "publishers:yujesyoga",
+      "displayName": "yuj es yoga",
+      "image": "https://avatars.githubusercontent.com/u/217279158?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1872,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769647619021,
+      "changelog": "Initial release: Create and edit Tally forms via API for building surveys, feedback forms, or questionnaires.\n\n- Supports all Tally block and question types, including workarounds for ratings.\n- Includes authentication details and all major form endpoints (list, get, update, submissions).\n- Documents block structure, required groupings, and provides usage examples for each question type.\n- Lists best practices for safe updates and robust form design.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d04f0882f38a40f4d7b975072c91bac4dc3951d9b650375abf2633e709bb115e"
+}

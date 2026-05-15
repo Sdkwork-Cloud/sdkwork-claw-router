@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63839,
+  "uuid": "skill-clawhub-huimai-discord-automation",
+  "skillKey": "clawhub-huimai-discord-automation",
+  "name": "Huimai Discord Automation",
+  "summary": "自动回复、权限管理、频道清理、日志记录——Discord服务器日常运维交给它。省一个社区管理的坑位。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huimai_discord_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yezhaowang888-stack",
+      "features": [
+        "自动回复、权限管理、频道清理、日志记录——Discord服务器日常运维交给它。省一个社区管理的坑位。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huimai-discord-automation@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274244352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huimai-discord-automation",
+      "url": "https://clawhub.ai/skills/huimai-discord-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huimai-discord-automation",
+    "url": "https://clawhub.ai/skills/huimai-discord-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huimai-discord-automation-4b2bd9fd67fd35ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huimai-discord-automation@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-huimai-discord-automation-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02e14397b035826dc20af3adb293680579d7401f53edda07bb0ee136e57dcea7",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T00:20:18.460Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-scraper-xiaobai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_scraper_xiaobai",
+  "skill": {
+    "id": 64690,
+    "skillKey": "clawhub-news-scraper-xiaobai",
+    "name": "news-scraper-xiaobai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-scraper-xiaobai",
+    "url": "https://clawhub.ai/skills/news-scraper-xiaobai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-scraper-xiaobai-04da4ea93f0cc72c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从AI新闻网站爬取最新资讯，支持新闻分类和标签，用于内容聚合和舆情监控。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiahuishao",
+      "userId": "s177akgh8hpcevyntg4r2s901983g6j6",
+      "displayName": "BAI",
+      "image": "https://avatars.githubusercontent.com/u/47627365?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 267,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773742311376,
+      "changelog": "Initial release of news-scraper skill.\n\n- Enables scraping of the latest AI news from specified websites.\n- Allows both command-line and Python programmatic use for news collection.\n- Each news item includes categories and tags for filtering and organization.\n- Provides clear output guidelines for news summaries in markdown format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db3719921ec8b29b8a239ac01e7305fa2edb82d96491834c17582a7ca8ad6678"
+}

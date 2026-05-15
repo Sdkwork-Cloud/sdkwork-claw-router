@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52028,
+  "uuid": "skill-clawhub-acmg-variant-classification",
+  "skillKey": "clawhub-acmg-variant-classification",
+  "name": "ACMG Variant Classifier",
+  "summary": "Standard workflow for ACMG/AMP germline small-variant classification — collect evidence, assign criteria, detect conflicts, and produce a review-ready classi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acmg_variant_classification",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alex4Xu",
+      "features": [
+        "Standard workflow for ACMG/AMP germline small-variant classification — collect evidence, assign."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acmg-variant-classification@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53885882?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acmg-variant-classification",
+      "url": "https://clawhub.ai/skills/acmg-variant-classification"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acmg-variant-classification",
+    "url": "https://clawhub.ai/skills/acmg-variant-classification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acmg-variant-classification-2839555df296be84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acmg-variant-classification@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-acmg-variant-classification-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92d3a426ac81d4549aec324b4e7e217714a18c485a0365aa966b14a1cd10bc93",
+      "artifactSizeBytes": 2627
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T07:34:45.927Z"
+}

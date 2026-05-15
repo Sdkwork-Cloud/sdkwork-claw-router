@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40465,
+  "uuid": "skill-clawhub-video-jiggle",
+  "skillKey": "clawhub-video-jiggle",
+  "name": "Video Jiggle",
+  "summary": "stabilize video clips into stabilized video clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for removing cam...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_jiggle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "stabilize video clips into stabilized video clips with this skill",
+        "Works with MP4, MOV, AVI, WebM files up to 500MB",
+        "content creators use it for removing cam..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-jiggle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-jiggle",
+      "url": "https://clawhub.ai/skills/video-jiggle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-jiggle",
+    "url": "https://clawhub.ai/skills/video-jiggle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-jiggle-f7a7b9dfbe170cfc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-jiggle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-jiggle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c322acd2fd0c3cf8fea7462336afce7e04dcf104d3f4304363625d86133cf03f",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T18:24:13.612Z"
+}

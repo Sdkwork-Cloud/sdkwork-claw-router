@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59276,
+  "uuid": "skill-clawhub-skill-manager-all-in-one",
+  "skillKey": "clawhub-skill-manager-all-in-one",
+  "name": "Skill Manager All In One | 一站式技能管理器",
+  "summary": "Manage OpenClaw skills end-to-end. 一站式管理 OpenClaw 技能的创建、修改、发布、更新、升版与审计。",
+  "version": "4.5.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_manager_all_in_one",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Morois",
+      "features": [
+        "Manage OpenClaw skills end-to-end",
+        "一站式管理 OpenClaw 技能的创建、修改、发布、更新、升版与审计。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-manager-all-in-one@4.5.14",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98001108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-manager-all-in-one",
+      "url": "https://clawhub.ai/skills/skill-manager-all-in-one"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-manager-all-in-one",
+    "url": "https://clawhub.ai/skills/skill-manager-all-in-one",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-manager-all-in-one-db5654cd43dbd96c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-manager-all-in-one@4.5.14",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-manager-all-in-one-4.5.14.json",
+      "version": "4.5.14",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad5fb2e16384a71e34952a3c0ff8fbdb4ba2f98070074628ad4811fccda75589",
+      "artifactSizeBytes": 2884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T09:45:37.817Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/newslatest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newslatest",
+  "skill": {
+    "id": 65083,
+    "skillKey": "clawhub-newslatest",
+    "name": "newslatest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newslatest",
+    "url": "https://clawhub.ai/skills/newslatest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newslatest-d7efdaedcb8098a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取各大平台热点新闻榜单数据。通过 Rust NewsLatest 服务 API 获取新闻热点，支持多个新闻源。触发场景：(1) 用户请求\"热点新闻\"、\"热搜榜\"、\"热门话题\"；(2) 指定平台新闻如\"知乎热搜\"、\"B站热门\"、\"微博热搜\"等；(3) 获取某平台的热门内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "violetlength",
+      "userId": "s17ah3gks7vw7jng40jactgxq983g3y4",
+      "displayName": "violetlength",
+      "image": "https://avatars.githubusercontent.com/u/10161783?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774492265635,
+      "changelog": "- 首次发布，支持获取16大主流平台的实时热点新闻榜单\n- 提供单一平台和多平台（综合热搜）聚合查询能力\n- 新增综合 API，允许通过 sources 参数自定义多平台集合\n- 标准化输出格式，支持按热度值降序展示\n- 自动处理缺失描述或热度信息，智能链接选择\n- 支持结构化 JSON 响应解析，便于二次开发或自定义展示",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9c041a20ad38a6b553d5facb95764fc517b4438afe5e308572a1d070fb16c9d"
+}

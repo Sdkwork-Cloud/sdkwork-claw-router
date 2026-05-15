@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-archivist@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_archivist",
+  "skill": {
+    "id": 52796,
+    "skillKey": "clawhub-session-archivist",
+    "name": "session-archivist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-archivist",
+    "url": "https://clawhub.ai/skills/session-archivist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-archivist-d44cd43cf65d843f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when session files grow too large (>1MB), context compression fails to trigger, or you need to manage long-running session lifecycle. Auto-archives old s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangqb666",
+      "userId": "s17c0c9ng1e5br9wdbanfkj2sx83h1z0",
+      "displayName": "zhangqb666",
+      "image": "https://avatars.githubusercontent.com/u/239085194?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 77,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778144135757,
+      "changelog": "Initial release of Session Archivist – automated session file compression and archival for Hermes.\n\n- Detects oversized session files and auto-archives when they exceed 1MB.\n- Scores message importance to retain only critical content during compression.\n- Flushes key memory to archive before trimming session files, preventing data loss.\n- Generates structured summaries and supports conflict/de-duplication handling.\n- Integrates with Hindsight memory if available, falls back to local markdown storage otherwise.\n- Includes safety checks to avoid race conditions and supports automated scheduling via cron.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57a8286381f3de77f45ef3b410a3c2b2e46d5642ddba9a3577d53d05ad6d95e9"
+}

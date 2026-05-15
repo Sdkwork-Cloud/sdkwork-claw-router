@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cache-strategy-advisor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cache_strategy_advisor",
+  "skill": {
+    "id": 44230,
+    "skillKey": "clawhub-cache-strategy-advisor",
+    "name": "Cache Strategy Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cache-strategy-advisor",
+    "url": "https://clawhub.ai/skills/cache-strategy-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cache-strategy-advisor-6a3a11388958856f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design and optimize caching strategies for applications. Analyze data access patterns, recommend cache layers (browser, CDN, application, database), configur..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777593606372,
+      "changelog": "- No user-facing changes; documentation/content remains the same.\n- Version bump to 1.0.1, but no file changes detected in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01e45ca7d69de1f1e8916e89953b3b9949a9f4181293fcd51913bb163aa5be03"
+}

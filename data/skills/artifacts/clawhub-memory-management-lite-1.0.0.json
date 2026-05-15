@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-management-lite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_management_lite",
+  "skill": {
+    "id": 33926,
+    "skillKey": "clawhub-memory-management-lite",
+    "name": "memory management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-management-lite",
+    "url": "https://clawhub.ai/skills/memory-management-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-management-lite-1473fe4f9cf6d4c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A practical memory management system for OpenClaw: importance scoring, time-decay cleanup, write triggers, hybrid retrieval, and daily maintenance workflow."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuchang9337-dev",
+      "userId": "s178bcyxcb8myzhcv94x93v5m183gtn2",
+      "displayName": "xuchang9337-dev",
+      "image": "https://avatars.githubusercontent.com/u/265716492?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773970505393,
+      "changelog": "Initial release of the memory-management-lite skill for OpenClaw.\n\n- Provides a practical memory management system with importance scoring, time-decay cleanup, and daily maintenance workflow.\n- Introduces manual triggers and hybrid retrieval (vector + keyword) to balance recall precision.\n- Defines a recommended workspace and memory file layout for efficient organization.\n- Details daily maintenance procedures to migrate, archive, and clean memory logs automatically.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bef8e942e0385cb082f2d9c0d2490812bf9a6af37cc9c65badb9326c77cd91bf"
+}

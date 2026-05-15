@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15157,
+  "uuid": "skill-clawhub-openclaw-voice",
+  "skillKey": "clawhub-openclaw-voice",
+  "name": "openclaw-voice",
+  "summary": "Transcribe audio to text and generate spoken AI responses using Whisper and ElevenLabs via CLI with transcript storage and search.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_voice",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "frank-bot07",
+      "features": [
+        "Transcribe audio to text and generate spoken AI responses using Whisper and ElevenLabs via CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-voice@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259001718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-voice",
+      "url": "https://clawhub.ai/skills/openclaw-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-voice",
+    "url": "https://clawhub.ai/skills/openclaw-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-voice-5389c2e9c75ffcd1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-voice@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-voice-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6cf15e0bf98caf1d741ad98896a79925d26fd07c50e35bbe289ae0d9fc36374",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T08:36:27.954Z"
+}

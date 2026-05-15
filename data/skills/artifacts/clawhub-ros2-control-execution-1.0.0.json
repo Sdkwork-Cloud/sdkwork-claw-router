@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ros2-control-execution@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ros2_control_execution",
+  "skill": {
+    "id": 41031,
+    "skillKey": "clawhub-ros2-control-execution",
+    "name": "ROS2 Control Execution"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ros2-control-execution",
+    "url": "https://clawhub.ai/skills/ros2-control-execution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ros2-control-execution-481421c58754b73a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute ROS 2 Control state-changing commands (load, switch, unload) in a sandboxed environment. Supports parameter profiles."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bigrobinson",
+      "userId": "s170w4hnpfw4p694pb7qvf5dcd83qwyb",
+      "displayName": "Brian Robinson",
+      "image": "https://avatars.githubusercontent.com/u/42244176?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775585794904,
+      "changelog": "Initial release of ros2-control-execution.\n\n- Provides a sandboxed environment to safely execute ROS 2 Control state-changing commands.\n- Supports allowed `ros2_control` commands via a secure wrapper script (`safe_ros2_control_execution.py`).\n- Enforces command validation and uses subprocess execution to prevent command injection.\n- Adds support for parameter profiles for flexible controller configuration.\n- Includes setup instructions and usage examples for all supported commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:725b3539b242c70e91db2f845811f05db85e574a6333d1eea92681394f3a5094"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66005,
+  "uuid": "skill-clawhub-chinese-patent",
+  "skillKey": "clawhub-chinese-patent",
+  "name": "Chinese Patent Writer",
+  "summary": "从代码或技术方案出发，撰写符合 CNIPA 规范的中国专利申请文件。核心能力：① 扫描代码提取可专利特征并抽象提炼 ② 战略性权利要求布局（洋葱式防线 + 侵权规避视角）③ 生成完整专利文件（摘要、权利要求书、说明书）。支持发明专利和实用新型。融合 code-patent-scanner 代码分析方法 + CNI...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_patent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaolegao2024",
+      "features": [
+        "从代码或技术方案出发，撰写符合 CNIPA 规范的中国专利申请文件。核心能力：① 扫描代码提取可专利特征并抽象提炼 ② 战略性权利要求布局（洋葱式防线 + 侵权规避视角）③ 生成完整专利文件."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chinese-patent@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/153821179?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chinese-patent",
+      "url": "https://clawhub.ai/skills/chinese-patent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-patent",
+    "url": "https://clawhub.ai/skills/chinese-patent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-patent-c12b37be2c1dd5fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chinese-patent@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chinese-patent-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41333382b435b3cc3ddcb2012a0302169866e680076a87bc85721fd3a38c888d",
+      "artifactSizeBytes": 2199
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T15:12:20.158Z"
+}

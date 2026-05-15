@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57637,
+  "uuid": "skill-clawhub-codeberg",
+  "skillKey": "clawhub-codeberg",
+  "name": "Codeberg",
+  "summary": "Interact with Codeberg using the `tea` CLI. Use `tea issue`, `tea pr`, `tea actions`, and `tea api` for issues, PRs, Actions, and advanced queries.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codeberg",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "razzeee",
+      "features": [
+        "Interact with Codeberg using the `tea` CLI",
+        "Use `tea issue`, `tea pr`, `tea actions`, and `tea api` for issues, PRs, Actions, and advanced."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codeberg@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5943908?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codeberg",
+      "url": "https://clawhub.ai/skills/codeberg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codeberg",
+    "url": "https://clawhub.ai/skills/codeberg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codeberg-da1485ed3363abfc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codeberg@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-codeberg-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34e79e3a138c4a911a4cdcaafe2eaeebf5cac74bd53a73f65629ae2bd304dc69",
+      "artifactSizeBytes": 2188
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T01:12:00.386Z"
+}

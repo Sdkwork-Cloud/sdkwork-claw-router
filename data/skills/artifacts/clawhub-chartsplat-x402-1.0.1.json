@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chartsplat-x402@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chartsplat_x402",
+  "skill": {
+    "id": 47001,
+    "skillKey": "clawhub-chartsplat-x402",
+    "name": "Chart Splat (x402)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chartsplat-x402",
+    "url": "https://clawhub.ai/skills/chartsplat-x402",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chartsplat-x402-e9b086cb63460b4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate beautiful charts by paying per request with x402 micropayments (USDC on Base) instead of an API key. Use when the user wants a chart and has no CHAR..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bobbyg603",
+      "userId": "s17cnt0gpdzzn30tdc2mqy50vn85x25b",
+      "displayName": "Bobby Galli",
+      "image": "https://avatars.githubusercontent.com/u/2646053?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777597038654,
+      "changelog": "- The bundled script (scripts/pay-and-fetch.js) and package.json were removed; usage is now fully CLI-oriented.\n- CLI has been renamed to chartsplat-x402-cli, invoked via npx (no install needed).\n- Documentation updates: revised usage instructions, flags, and examples to reflect the CLI-based workflow.\n- Candlestick/OHLC usage clarified—now requires a JSON config passed to the CLI.\n- Error handling instructions updated to match CLI experience.\n- Metadata updated for the new CLI package and version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4fdf18fe36a2019d5db9594714a36b12cfeb51934470da39752a601451e5ea97"
+}

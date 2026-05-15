@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opencode-remote@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencode_remote",
+  "skill": {
+    "id": 61474,
+    "skillKey": "clawhub-opencode-remote",
+    "name": "OpenCode Remote"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencode-remote",
+    "url": "https://clawhub.ai/skills/opencode-remote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencode-remote-6b3a46cc1d77e8db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 HTTP API 远程操作 OpenCode 服务器。用于管理远程 OpenCode 实例的会话、监控状态和执行任务。 核心功能： 1. 管理多个\"主session\"（每个有独立的四词短名、endpoint、任务） 2. 向 session 发送消息（默认不指定agent，延续之前使用） 3. 自动监控：发..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "entropy-xcy",
+      "userId": "publishers:entropy-xcy",
+      "displayName": "Entropy-xcy",
+      "image": "https://avatars.githubusercontent.com/u/22727121?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772816692085,
+      "changelog": "Initial release: Remote OpenCode session management with monitoring and agent selection",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0f5575c57e0c614df5b8320f8a8f9522407ef772bac66002a2b99f61c9b2a0fd"
+}

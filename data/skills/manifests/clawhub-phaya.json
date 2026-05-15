@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21555,
+  "uuid": "skill-clawhub-phaya",
+  "skillKey": "clawhub-phaya",
+  "name": "Phaya Media API",
+  "summary": "Use the Phaya SaaS backend to generate images, videos, audio, music, and run LLM chat completions via simple REST API calls. Use when the user wants to gener...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phaya",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "boombignose",
+      "features": [
+        "Use the Phaya SaaS backend to generate images, videos, audio, music, and run LLM chat completio.",
+        "Use when the user wants to gener..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/phaya@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250725936?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "phaya",
+      "url": "https://clawhub.ai/skills/phaya"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phaya",
+    "url": "https://clawhub.ai/skills/phaya",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phaya-536ce2bfbe60e2ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/phaya@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-phaya-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42854b81632afada6fd93cc09741a1a39a2b4ed27c2d96b56a9ddbbfdcf0cdf9",
+      "artifactSizeBytes": 2322
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T19:35:21.831Z"
+}

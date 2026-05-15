@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sohu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sohu",
+  "skill": {
+    "id": 70232,
+    "skillKey": "clawhub-sohu",
+    "name": "Sohu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sohu",
+    "url": "https://clawhub.ai/skills/sohu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sohu-bfb0206f4d90ae10.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供sohu品牌的背景介绍、发展历程、核心产品及市场布局等详尽信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776412073098,
+      "changelog": "sohu 1.0.0 发布\n\n- 提供 sohu 品牌的核心档案信息\n- 概述品牌影响力、核心产品/服务及行业地位\n- 支持快速查找背景、发展历程、市场分布和竞争分析\n- 指引用户通过官方渠道获取最新信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9aca109ef928fa259359e9f310cb4e79f3323ae19ca8264b08a55b2ca1e6ed4b"
+}

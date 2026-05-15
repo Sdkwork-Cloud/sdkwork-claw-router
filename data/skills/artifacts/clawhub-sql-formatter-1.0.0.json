@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sql-formatter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sql_formatter",
+  "skill": {
+    "id": 32860,
+    "skillKey": "clawhub-sql-formatter",
+    "name": "Sql Formatter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sql-formatter",
+    "url": "https://clawhub.ai/skills/sql-formatter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sql-formatter-1e133dbef7368160.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Format, minify, and lint SQL queries from the command line. Formats SQL with proper indentation and keyword casing, minifies by removing whitespace and comme..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnnywang2001",
+      "userId": "s174ntk6h18bvsev091zn78ex583gr1h",
+      "displayName": "John Wang",
+      "image": "https://avatars.githubusercontent.com/u/20619402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773925652219,
+      "changelog": "Initial release of SQL Formatter:\n\n- Format, minify, and lint SQL queries directly from the command line.\n- Provides formatting with indentation and configurable keyword casing.\n- Minifies SQL by removing comments and collapsing whitespace.\n- Lints for common SQL anti-patterns (e.g., SELECT *, missing semicolons, long lines).\n- No external dependencies; implemented in pure Python.\n- Supports major SQL statement types, including SELECT, INSERT, UPDATE, DELETE, CTEs, and various JOINs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b57a474cfd96be9d875880fbc35e6a98b8f3f2368733bcb93c6b0bdc66e5e39"
+}

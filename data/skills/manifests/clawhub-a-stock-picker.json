@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72818,
+  "uuid": "skill-clawhub-a-stock-picker",
+  "skillKey": "clawhub-a-stock-picker",
+  "name": "A股三层选股模型",
+  "summary": "A股三层选股模型 — 量化筛选 → 定性分析 → 择时操作。用于主动选股、持仓诊断、机会扫描。当用户说「选股」「帮我看看有哪些好股」「扫描市场」「符合什么条件才能买」「筛选强势股」时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_picker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danpian1",
+      "features": [
+        "A股三层选股模型 — 量化筛选 → 定性分析 → 择时操作。用于主动选股、持仓诊断、机会扫描。当用户说「选股」「帮我看看有哪些好股」「扫描市场」「符合什么条件才能买」「筛选强势股」时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-stock-picker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87922625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-stock-picker",
+      "url": "https://clawhub.ai/skills/a-stock-picker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-picker",
+    "url": "https://clawhub.ai/skills/a-stock-picker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-picker-badd513d319b99af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-stock-picker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-stock-picker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93a248e92e3e6a88981c2d2eb48374e18fb61325afcaade20b97ea409eb2eed2",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T13:20:54.965Z"
+}

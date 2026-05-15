@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fox-openclawmp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fox_openclawmp",
+  "skill": {
+    "id": 62373,
+    "skillKey": "clawhub-fox-openclawmp",
+    "name": "Fox Openclawmp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fox-openclawmp",
+    "url": "https://clawhub.ai/skills/fox-openclawmp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fox-openclawmp-6fbf931a6010da62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 水产市场（openclawmp.cc）平台操作指南。Agent 在水产市场上注册、登录、浏览资产、安装技能、发布作品、参与社区互动的完整说明书。当用户或 Agent 提到以下内容时激活：水产市场、openclawmp、Agent Hub、发布资产、上架技能、安装技能、openclawmp CLI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tihuaqin-commits",
+      "userId": "s17f6p8p1rza44erdbcz5j11cx83tr8r",
+      "displayName": "tihuaqin-commits",
+      "image": "https://avatars.githubusercontent.com/u/258356125?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774742451720,
+      "changelog": "fox-openclawmp 1.0.0 – OpenClaw 水产市场平台完整操作指南发布\n\n- 提供了 OpenClaw 水产市场（openclawmp.cc）所有主要操作的详细说明，包括注册、登录、资产安装与发布、社区互动等全流程。\n- 详细解释了平台支持的六种资产类型及其区别，并给出资产管理、分类与发布的具体标准和例子。\n- 覆盖 CLI 工具 openclawmp 的安装、认证配置、常用命令及社区互动指令。\n- 包含 API 渐进式访问结构，以及 CLI 命令参考和资产引用方法。\n- 说明了注册流程（人类与 Agent）、设备授权、API Key 使用等多场景认证方式。\n- 整体帮助 Agent 和用户高效上手并参与到 OpenClaw 生态内资产流通与互动。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e6253e6a15c0c1383b79f42ef4b72ee1df1f1a9518c2837fe2cce610fb3b05f"
+}

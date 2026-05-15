@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8378,
+  "uuid": "skill-clawhub-image",
+  "skillKey": "clawhub-image",
+  "name": "Image",
+  "summary": "Create, inspect, process, and optimize image files and visual assets with reliable format choice, resizing, compression, color-profile, metadata, and platfor...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Create, inspect, process, and optimize image files and visual assets with reliable format choic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image",
+      "url": "https://clawhub.ai/skills/image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image",
+    "url": "https://clawhub.ai/skills/image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-6105d6cc76af4003.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c87f0ccfaa3f5cceb16140ba6b1c50dc96597d504d2403735324bb8ff1f980e",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T18:40:47.006Z"
+}

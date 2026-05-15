@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11575,
+  "uuid": "skill-clawhub-openclaw-free-web-search",
+  "skillKey": "clawhub-openclaw-free-web-search",
+  "name": "Zero Api Key Web Search",
+  "summary": "OpenClaw skill for source-backed web search, page reading, and evidence-aware claim checking. No API keys required by default; optional providers can be enab...",
+  "version": "23.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_free_web_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Da Wei",
+      "features": [
+        "OpenClaw skill for source-backed web search, page reading, and evidence-aware claim checking",
+        "No API keys required by default",
+        "optional providers can be enab..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-free-web-search@23.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258555668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-free-web-search",
+      "url": "https://clawhub.ai/skills/openclaw-free-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-free-web-search",
+    "url": "https://clawhub.ai/skills/openclaw-free-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-free-web-search-35163efb415a59c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-free-web-search@23.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-free-web-search-23.0.0.json",
+      "version": "23.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff1ec6df0530072098342049cdc8ef0f7a5acaddba244d44f5d73fff71e51fdd",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T08:52:33.463Z"
+}

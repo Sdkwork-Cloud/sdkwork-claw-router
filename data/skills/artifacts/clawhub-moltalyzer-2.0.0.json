@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltalyzer@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltalyzer",
+  "skill": {
+    "id": 15636,
+    "skillKey": "clawhub-moltalyzer",
+    "name": "Moltalyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltalyzer",
+    "url": "https://clawhub.ai/skills/moltalyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltalyzer-efe6c2ebaed1a0e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time environmental context API for AI agents. 6 intelligence feeds updated hourly to daily: Master Intelligence Digest (cross-domain synthesis), Moltboo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jcislo",
+      "userId": "s178krb0vz19daf36ef522234n84bjg7",
+      "displayName": "jcislo",
+      "image": "https://avatars.githubusercontent.com/u/55262056?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 985,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775508524570,
+      "changelog": "Version 2.0.0 (major update)\n\n- New simplified, authentication-free API design: all digest endpoints now free, no account required.\n- Introduces structured polling tiers (`/index`, `/brief`, `/latest`) for every feed, enabling efficient integration and change detection.\n- Six real-time intelligence feeds consolidated; added detailed update cadences and recommended polling intervals.\n- Updated setup: no private key or custom payment client required for free tier.\n- Expanded documentation, with quick-start code, usage patterns, and accessible API/OpenAPI links.\n- Error handling and rate limit headers clarified for all endpoints.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09688d33dda6e6b3d6c2581558c971117f1fcc151f5c567ab10fb6ccf10f8edc"
+}

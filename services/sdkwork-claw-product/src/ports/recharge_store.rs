@@ -37,6 +37,7 @@ pub struct RechargePackage {
     pub id: String,
     pub rmb: String,
     pub bonus: i64,
+    pub points: i64,
 }
 
 #[derive(Debug, Clone, Default, Serialize, PartialEq)]

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/searxng-local@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searxng_local",
+  "skill": {
+    "id": 9115,
+    "skillKey": "clawhub-searxng-local",
+    "name": "SearXNG Local"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searxng-local",
+    "url": "https://clawhub.ai/skills/searxng-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searxng-local-7393becd1f3fb9ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web using a self-hosted SearXNG instance. Privacy-respecting metasearch that aggregates results from multiple engines."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clockworksquirrel",
+      "userId": "publishers:clockworksquirrel",
+      "displayName": "clockworksquirrel",
+      "image": "https://avatars.githubusercontent.com/u/186874634?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 4535,
+      "installsAllTime": 29,
+      "installsCurrent": 27,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769481388520,
+      "changelog": "Initial release of the SearXNG skill.\n\n- Enables web search via your own SearXNG instance.\n- Supports configuration with the SEARXNG_URL environment variable.\n- Includes setup instructions for Docker deployment and API usage.\n- Provides usage examples for searching by category, language, and pagination.\n- Details shell integration for quick search from the terminal.\n- Includes troubleshooting and management tips.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c5f3121d6054a79d58b52eb5e13d275fb6f03577ab223f30bd94b99f09475ae2"
+}

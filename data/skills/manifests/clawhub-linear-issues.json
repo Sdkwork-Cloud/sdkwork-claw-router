@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10425,
+  "uuid": "skill-clawhub-linear-issues",
+  "skillKey": "clawhub-linear-issues",
+  "name": "Linear Issues",
+  "summary": "Interact with Linear for issue tracking. Use when creating, updating, listing, or searching issues. Supports viewing assigned issues, changing status, adding comments, and managing tasks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linear_issues",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "emrekilinc",
+      "features": [
+        "Interact with Linear for issue tracking",
+        "Use when creating, updating, listing, or searching issues",
+        "Supports viewing assigned issues, changing status, adding comments, and managing tasks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linear-issues@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237310?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linear-issues",
+      "url": "https://clawhub.ai/skills/linear-issues"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linear-issues",
+    "url": "https://clawhub.ai/skills/linear-issues",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linear-issues-f02f4f693a370b73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linear-issues@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linear-issues-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d6d96753d86ff63a74fdf945d91790ae5fb9eff29218c6747bccaf50108ad09",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T01:03:56.725Z"
+}

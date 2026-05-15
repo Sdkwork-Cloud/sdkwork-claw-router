@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-fpa-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_fpa_engine",
+  "skill": {
+    "id": 16176,
+    "skillKey": "clawhub-afrexai-fpa-engine",
+    "name": "FP&A Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-fpa-engine",
+    "url": "https://clawhub.ai/skills/afrexai-fpa-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-fpa-engine-fb7c8a46270c7580.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and analyze financial models from diverse data, produce variance reports, and create multi-scenario forecasts for strategic FP&A decisions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 889,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771349113015,
+      "changelog": "FP&A Command Center — Version 1.0.0\n\n- Initial release of the Financial Planning & Analysis Engine skill.\n- Enables structured financial data intake, with company profile and data quality assessment.\n- Supports multiple revenue models (subscription, transactional, marketplace, services) and corresponding forecasting methods.\n- Provides three-scenario forecasting, budgeting templates, and cost structure breakdowns.\n- Includes guidance for cash flow management, 13-week cash forecasting, and runway calculations.\n- Designed for use with varied data sources and company stages.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5df22477e19f986fa0a6aa9ed796350c2c5d022cf124ea3aad089ca23da77543"
+}

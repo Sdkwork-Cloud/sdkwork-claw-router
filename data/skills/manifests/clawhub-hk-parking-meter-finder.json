@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54977,
+  "uuid": "skill-clawhub-hk-parking-meter-finder",
+  "skillKey": "clawhub-hk-parking-meter-finder",
+  "name": "HK Parking Meter Finder",
+  "summary": "Find Hong Kong roadside parking meter (咪錶) locations and live vacancy using official Transport Department / DATA.GOV.HK datasets. Use when the user asks in C...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hk_parking_meter_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jimpang8",
+      "features": [
+        "Find Hong Kong roadside parking meter (咪錶) locations and live vacancy using official Transport.",
+        "Use when the user asks in C..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hk-parking-meter-finder@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27860553?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hk-parking-meter-finder",
+      "url": "https://clawhub.ai/skills/hk-parking-meter-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hk-parking-meter-finder",
+    "url": "https://clawhub.ai/skills/hk-parking-meter-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hk-parking-meter-finder-6881f3b2bebf7be5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hk-parking-meter-finder@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hk-parking-meter-finder-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa2415e77fa38a6af67510ca8d2ebc5244958a141d7da6e1df78360885a83144",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:27:48.409Z"
+}

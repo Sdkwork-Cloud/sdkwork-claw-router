@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hui-yi@1.2.9",
+  "version": "1.2.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hui_yi",
+  "skill": {
+    "id": 19625,
+    "skillKey": "clawhub-hui-yi",
+    "name": "Hui-Yi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hui-yi",
+    "url": "https://clawhub.ai/skills/hui-yi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hui-yi-1e3f8c13158b2774.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trigger for cold-memory recall and archive work under memory/cold/. Use for older low-frequency context, historical continuity, resurfacing, cooling, rebuild..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fuetsui",
+      "userId": "s176ggpedb2a9em1j7m9x4e6n9840gxa",
+      "displayName": "Fue Tsui",
+      "image": "https://avatars.githubusercontent.com/u/39769490?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 491,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 21
+    },
+    "latestVersion": {
+      "version": "1.2.9",
+      "createdAt": 1778167873043,
+      "changelog": "Scrub legacy raw session metadata for upgraded users, add a scrub_metadata helper, hash legacy signal_history on writeback, and redact raw session keys from hook/runtime output",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82bb9f5cbcc6ffd52cc4e5c0888d5c48eacf27c3ff2bf170ac653af3c5cf0237"
+}

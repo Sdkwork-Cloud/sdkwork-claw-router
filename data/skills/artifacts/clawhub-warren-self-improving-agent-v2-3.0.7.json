@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/warren-self-improving-agent-v2@3.0.7",
+  "version": "3.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.warren_self_improving_agent_v2",
+  "skill": {
+    "id": 37265,
+    "skillKey": "clawhub-warren-self-improving-agent-v2",
+    "name": "Self Improving Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "warren-self-improving-agent-v2",
+    "url": "https://clawhub.ai/skills/warren-self-improving-agent-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/warren-self-improving-agent-v2-fe423a24154be5f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chengyz3327-design",
+      "userId": "s172cfxt0r1gxjnan5smj4j2z983hyxg",
+      "displayName": "chengyz3327-design",
+      "image": "https://avatars.githubusercontent.com/u/227573499?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.0.7",
+      "createdAt": 1774377975211,
+      "changelog": "- Major documentation overhaul for v3.0.7: detailed skill usage instructions, new logging standards, and project integration guidelines.\n- Expanded \"Quick Reference\" with use-case-specific logging guidance.\n- Added comprehensive setup instructions for OpenClaw and generic agent workflows.\n- Standardized formats for logging learnings, errors, and feature requests in markdown.\n- Included procedures for promoting important learnings to long-term project memory files.\n- Clarified workspace structure and support for inter-session communication in OpenClaw.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c03b78bf2566687a3e47c533397df6460645cb90761297283227314884ff343"
+}

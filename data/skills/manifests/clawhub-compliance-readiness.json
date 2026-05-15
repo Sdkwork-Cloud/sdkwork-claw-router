@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27133,
+  "uuid": "skill-clawhub-compliance-readiness",
+  "skillKey": "clawhub-compliance-readiness",
+  "name": "AI Compliance Readiness Assessment",
+  "summary": "AI Compliance Readiness Assessment — evaluate how prepared an organization is for AI governance regulations (EU AI Act, NIST AI RMF, HHS mandates, state bar...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compliance_readiness",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1kalin",
+      "features": [
+        "AI Compliance Readiness Assessment — evaluate how prepared an organization is for AI governance."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/compliance-readiness@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15705344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "compliance-readiness",
+      "url": "https://clawhub.ai/skills/compliance-readiness"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compliance-readiness",
+    "url": "https://clawhub.ai/skills/compliance-readiness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compliance-readiness-49d312ce89abf82d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/compliance-readiness@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-compliance-readiness-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76ba5602b5c981cc061175dd41bc956b5cbda73c3b8194469ecceb32e777c14a",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T19:25:16.183Z"
+}

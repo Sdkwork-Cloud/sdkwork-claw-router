@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65780,
+  "uuid": "skill-clawhub-auto-weekly-report-system",
+  "skillKey": "clawhub-auto-weekly-report-system",
+  "name": "Auto Weekly Report System",
+  "summary": "全自动周报系统。定时收集v3.5、InStreet、价格监控等数据，生成周报并发布到企业微信文档。当需要自动化报告生成、团队数据同步、定时数据汇总时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_weekly_report_system",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rf-AI-WH",
+      "features": [
+        "全自动周报系统。定时收集v3.5、InStreet、价格监控等数据，生成周报并发布到企业微信文档。当需要自动化报告生成、团队数据同步、定时数据汇总时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-weekly-report-system@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265223072?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-weekly-report-system",
+      "url": "https://clawhub.ai/skills/auto-weekly-report-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-weekly-report-system",
+    "url": "https://clawhub.ai/skills/auto-weekly-report-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-weekly-report-system-bcf704ea856ca503.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-weekly-report-system@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-weekly-report-system-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8469b4b7af573bb1109d062dd4de709e6cf9dbf82e259ea8c6862294f810508b",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T05:22:00.791Z"
+}

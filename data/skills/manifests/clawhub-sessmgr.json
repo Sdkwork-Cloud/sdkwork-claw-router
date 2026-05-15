@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41200,
+  "uuid": "skill-clawhub-sessmgr",
+  "skillKey": "clawhub-sessmgr",
+  "name": "Sessmgr",
+  "summary": "Manage OpenClaw sessions by naming, listing, switching, creating, renaming, saving, and deleting them to persist and recover context by name.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sessmgr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joe Huss",
+      "features": [
+        "Manage OpenClaw sessions by naming, listing, switching, creating, renaming, saving, and deletin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sessmgr@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1364504?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sessmgr",
+      "url": "https://clawhub.ai/skills/sessmgr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sessmgr",
+    "url": "https://clawhub.ai/skills/sessmgr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sessmgr-fb651f05f2b0fa2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sessmgr@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sessmgr-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d66e2294a0fb2762aea585a2e8a2c79af40969cd7319c0b730d46aeecab463d",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T12:36:34.646Z"
+}

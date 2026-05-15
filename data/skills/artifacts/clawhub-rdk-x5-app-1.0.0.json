@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rdk-x5-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rdk_x5_app",
+  "skill": {
+    "id": 58971,
+    "skillKey": "clawhub-rdk-x5-app",
+    "name": "Rdk X5 App"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rdk-x5-app",
+    "url": "https://clawhub.ai/skills/rdk-x5-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rdk-x5-app-2812e774fc2f34ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "运行 RDK X5 /app 目录下的预装示例程序：12 个 Python AI 推理 demo（YOLO/分类/分割/Web展示）、40pin GPIO 示例、C++ 多媒体示例（编解码/RTSP/VIO）、查看 34 个预装 BPU 模型。Use when the user wants to run pre-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "katherineedwards2475",
+      "userId": "s171fb3mdcgkeseprx9k9hd0v583wsb1",
+      "displayName": "qiaolongli",
+      "image": "https://avatars.githubusercontent.com/u/262944264?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 386,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773211342260,
+      "changelog": "Initial release: /app demos, 34 BPU models, Python AI samples, C++ multimedia, GPIO examples",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ee135ed462cf84325d58de170509523ed9a9f5550bb15fc65ec82248bb6e462"
+}

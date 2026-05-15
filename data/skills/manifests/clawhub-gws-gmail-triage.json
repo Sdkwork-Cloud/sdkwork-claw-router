@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15818,
+  "uuid": "skill-clawhub-gws-gmail-triage",
+  "skillKey": "clawhub-gws-gmail-triage",
+  "name": "Gws Gmail Triage",
+  "summary": "Gmail: Show unread inbox summary (sender, subject, date).",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_gmail_triage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Gmail: Show unread inbox summary (sender, subject, date)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-gmail-triage@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-gmail-triage",
+      "url": "https://clawhub.ai/skills/gws-gmail-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-gmail-triage",
+    "url": "https://clawhub.ai/skills/gws-gmail-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-gmail-triage-e13761e137159c24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-gmail-triage@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-gmail-triage-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50fac97d23f48bc63009caaee83209e7f68d720d913caaa052ee0fa47251677c",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:34:12.894Z"
+}

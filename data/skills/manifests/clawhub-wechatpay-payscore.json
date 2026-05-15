@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63690,
+  "uuid": "skill-clawhub-wechatpay-payscore",
+  "skillKey": "clawhub-wechatpay-payscore",
+  "name": "微信支付支付分接入skill",
+  "summary": "微信支付分接入解决方案，覆盖创单/确认/完结/扣款/退款全链路，提供选型/示例代码/业务速查/质量评估/排障五大能力。Use when user mentions \"微信支付分\", \"支付分\", \"信用分\", \"免押租借\", \"免押金\", \"先享后付\", \"先免模式\", \"先享模式\", \"需确认订单\", \"支付分...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechatpay_payscore",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangpeng",
+      "features": [
+        "微信支付分接入解决方案，覆盖创单/确认/完结/扣款/退款全链路，提供选型/示例代码/业务速查/质量评估/排障五大能力。Use when user mentions \"微信支付分\", \"支付分."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechatpay-payscore@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70940892?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechatpay-payscore",
+      "url": "https://clawhub.ai/skills/wechatpay-payscore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechatpay-payscore",
+    "url": "https://clawhub.ai/skills/wechatpay-payscore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechatpay-payscore-f8d991d05c725801.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechatpay-payscore@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechatpay-payscore-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49601aa0c80ebc0c7a2b1b0c2659968ff0243b4fd3aae1e31964f739d4f2c771",
+      "artifactSizeBytes": 2376
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T10:35:34.126Z"
+}

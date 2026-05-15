@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cheer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cheer",
+  "skill": {
+    "id": 27623,
+    "skillKey": "clawhub-cheer",
+    "name": "Cheeeeeeeeeer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cheer",
+    "url": "https://clawhub.ai/skills/cheer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cheer-19051351bb6df8bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Emotional support and encouragement skill that detects user frustration and provides warm, personalized motivation with multiple response styles."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nemohohaloai",
+      "userId": "publishers:nemohohaloai",
+      "displayName": "Ho Loong",
+      "image": "https://avatars.githubusercontent.com/u/17694712?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 344,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772593031537,
+      "changelog": "An intelligent emotional support skill that automatically detects when users feel frustrated or overwhelmed and provides personalized encouragement. The skill analyzes user sentiment through keywords, emojis, and punctuation, then delivers warm and motivating messages tailored to their emotional state.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bd70e13390d176210c3e0b692b68bcdfbbbb45a0e1f84ad97096588ce1d9e3d2"
+}

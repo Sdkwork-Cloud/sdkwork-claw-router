@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29166,
+  "uuid": "skill-clawhub-term-sheet-analyzer",
+  "skillKey": "clawhub-term-sheet-analyzer",
+  "name": "Term Sheet Analyzer",
+  "summary": "Analyze startup financing term sheets: SAFEs, convertible notes, and priced equity rounds. Decode economic terms, flag founder-unfriendly clauses, model dilu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.term_sheet_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Analyze startup financing term sheets: SAFEs, convertible notes, and priced equity rounds",
+        "Decode economic terms, flag founder-unfriendly clauses, model dilu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/term-sheet-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "term-sheet-analyzer",
+      "url": "https://clawhub.ai/skills/term-sheet-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "term-sheet-analyzer",
+    "url": "https://clawhub.ai/skills/term-sheet-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/term-sheet-analyzer-d73c603b919efe08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/term-sheet-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-term-sheet-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fd370390f231c6d24064f8fd86cba7aa060f423a1f7938207894472e67fcaae",
+      "artifactSizeBytes": 2072
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:16:54.886Z"
+}

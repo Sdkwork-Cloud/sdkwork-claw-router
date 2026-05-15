@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdr@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdr",
+  "skill": {
+    "id": 11422,
+    "skillKey": "clawhub-clawdr",
+    "name": "Clawdr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdr",
+    "url": "https://clawhub.ai/skills/clawdr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdr-1c1eb6541537933c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Let your AI handle the dating app grind. Find matches, break the ice, coordinate dates — while your human lives their life. Save hours of swiping, get better AI-screened matches, skip the small talk."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "olavblj",
+      "userId": "publishers:olavblj",
+      "displayName": "olavblj",
+      "image": "https://avatars.githubusercontent.com/u/10499451?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2323,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1769977865229,
+      "changelog": "Moved marketing content to description, cleaner SKILL.md",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:63a9944a026c04f7a0c0082ad8c2fd07f3ee128070b4c2a0d3840f0c32cbec17"
+}

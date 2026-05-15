@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37501,
+  "uuid": "skill-clawhub-docker-compose-linter",
+  "skillKey": "clawhub-docker-compose-linter",
+  "name": "Docker Compose Linter",
+  "summary": "Lint docker-compose.yml files for security, best practices, and port conflicts.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_compose_linter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Lint docker-compose.yml files for security, best practices, and port conflicts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docker-compose-linter@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docker-compose-linter",
+      "url": "https://clawhub.ai/skills/docker-compose-linter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-compose-linter",
+    "url": "https://clawhub.ai/skills/docker-compose-linter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-compose-linter-58a73f017127d3ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docker-compose-linter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-docker-compose-linter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09562a69a72339d1420d588a06b8e782c795142cd16c64cf36a64ce1c01b9813",
+      "artifactSizeBytes": 1916
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:01:16.587Z"
+}

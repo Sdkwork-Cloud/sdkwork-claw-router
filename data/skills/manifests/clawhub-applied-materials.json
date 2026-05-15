@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66828,
+  "uuid": "skill-clawhub-applied-materials",
+  "skillKey": "clawhub-applied-materials",
+  "name": "Applied Materials",
+  "summary": "全球领先的半导体设备供应商，提供沉积、刻蚀、CMP等关键制造设备，支撑现代芯片工厂运营。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.applied_materials",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "全球领先的半导体设备供应商，提供沉积、刻蚀、CMP等关键制造设备，支撑现代芯片工厂运营。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/applied-materials@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "applied-materials",
+      "url": "https://clawhub.ai/skills/applied-materials"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "applied-materials",
+    "url": "https://clawhub.ai/skills/applied-materials",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/applied-materials-e526d936a4f2fa5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/applied-materials@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-applied-materials-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e4840c43614d2d167886a33ddcdc8cb57e3631fda0a193f095cba06254063e8",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T21:04:50.670Z"
+}

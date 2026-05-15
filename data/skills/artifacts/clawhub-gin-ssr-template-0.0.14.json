@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gin-ssr-template@0.0.14",
+  "version": "0.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gin_ssr_template",
+  "skill": {
+    "id": 61622,
+    "skillKey": "clawhub-gin-ssr-template",
+    "name": "Gin Ssr Template"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gin-ssr-template",
+    "url": "https://clawhub.ai/skills/gin-ssr-template",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gin-ssr-template-acab9c67f28ef464.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据 Figma 设计稿截图生成可直接运行的 Gin SSR 页面模板（HTML + CSS）。当用户发送“gin前端模板”或提供 Figma 页面截图时触发：生成的页面必须优先保证可运行、可预览、结构完整；禁止输出任何 {{.data}}、{{.Path}}、{{.Config}} 这类动态取值；head 中..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jasper-zzq",
+      "userId": "s17fh3q51a689bmwy0t58gg8ch8416zp",
+      "displayName": "@qqz · @qwwe · @qqdq · @qdad · @ddac",
+      "image": "https://avatars.githubusercontent.com/u/47739269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 303,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "0.0.14",
+      "createdAt": 1774019839303,
+      "changelog": "- Removed多余全局样式文件路径引用，仅保留必要的 {页面名}.css。\n- 无功能或逻辑变化，仅对 head 区域的静态样式文件引入部分做精简。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92f0949a00c40437a8ffb8ab725889263f73b9fb76da16efe2d8c7218d37e1cc"
+}

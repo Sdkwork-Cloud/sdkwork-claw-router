@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bacon@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bacon",
+  "skill": {
+    "id": 46603,
+    "skillKey": "clawhub-bacon",
+    "name": "bacon"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bacon",
+    "url": "https://clawhub.ai/skills/bacon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bacon-9cca0703342e2480.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Controlled autonomous self-evolution: grants the agent authority to self-improve through a tiered safety system with mandatory audit trails, rollback capabil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "niveroviero",
+      "userId": "s17bbnvn5mtpvwrzdc84s4nkdn84t3g0",
+      "displayName": "NiveroViero",
+      "image": "https://avatars.githubusercontent.com/u/205483069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776132054917,
+      "changelog": "Major update: Introduces a controlled, auditable self-evolution protocol.\n\n- Adds a three-tier permission/safety system for different types of self-improvement actions.\n- Enforces mandatory audit trails, automated backups, and rollback commands for every change.\n- Requires human approval for critical modifications and audit of all self-evolution steps.\n- Establishes sandboxing for testing new skills and configurations before deployment.\n- Prohibits circumventing safety, audit, or rollback mechanisms in any self-modification.\n- Provides clear notification and recovery procedures in case of failures or suspicious changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90e7ac5452d1f0b70cd54021b6e0ba0ae5ee7ea5d9658da0dbbc25b3a6b81129"
+}

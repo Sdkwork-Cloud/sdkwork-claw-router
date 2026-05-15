@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64761,
+  "uuid": "skill-clawhub-builtin-tools",
+  "skillKey": "clawhub-builtin-tools",
+  "name": "Builtin Tools",
+  "summary": "跨平台基础工具集 — 16 个独立可组合的 Python 脚本，替代 Agent 平台缺失的基础工具能力。 文件系统（浏览/搜索/读写/替换/删除）、内容搜索（正则）、网络（搜索/抓取/预览）、 运行时安装、持久化记忆、定时任务、任务管理。 纯 Python 标准库，零外部依赖，跨 Windows/macOS/L...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.builtin_tools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "波动几何",
+      "features": [
+        "跨平台基础工具集 — 16 个独立可组合的 Python 脚本，替代 Agent 平台缺失的基础工具能力。 文件系统（浏览/搜索/读写/替换/删除）、内容搜索（正则）、网络（搜索/抓取/预览."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/builtin-tools@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25478397?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "builtin-tools",
+      "url": "https://clawhub.ai/skills/builtin-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "builtin-tools",
+    "url": "https://clawhub.ai/skills/builtin-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/builtin-tools-2e141939b58c6df6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/builtin-tools@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-builtin-tools-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d29790a16f2f61ac857d000fc1405861693774dd1ab31cbcbb559ec9cf5155d",
+      "artifactSizeBytes": 2834
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T15:47:00.294Z"
+}

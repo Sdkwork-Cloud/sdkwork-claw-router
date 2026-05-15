@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/study-tour@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.study_tour",
+  "skill": {
+    "id": 53633,
+    "skillKey": "clawhub-study-tour",
+    "name": "Study Tour Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "study-tour",
+    "url": "https://clawhub.ai/skills/study-tour",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/study-tour-c52b7a3d7932a618.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan educational travel experiences — museum visits, university tours, cultural workshops, historical field trips, and hands-on learning activities. Also sup..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775879667488,
+      "changelog": "Version 3.2.0\n\n- Expanded description to clarify support for museum visits, university tours, cultural workshops, field trips, and hands-on learning, plus flight, hotel, train, and attraction bookings—all powered by Fliggy (Alibaba Group).\n- Added strict execution rules: all travel data and booking links must come from the flyai CLI, with mandatory CLI environment checks before execution.\n- Updated workflows for parameter collection, multi-command orchestration (with themed playbooks), and output formatting with real-time booking links.\n- Improved language adaptation and output validation to ensure data accuracy and user experience.\n- Provided detailed parameter tables and example usage to guide query handling and response formatting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7b0737c8524f20685a020f568fcfdfde57498c5b9a70d482bc03be28d37024c"
+}

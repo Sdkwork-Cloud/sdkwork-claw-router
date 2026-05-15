@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59810,
+  "uuid": "skill-clawhub-taobao",
+  "skillKey": "clawhub-taobao",
+  "name": "🛍️ 淘宝/京东/拼多多比价技能",
+  "summary": "商品价格全网对比技能，获取商品在淘宝(Taobao)、天猫(TMall)、京东(JD.com)、拼多多(PinDuoDuo)、抖音(Douyin)、快手(KaiShou)的最优价格、优惠券，当用户想购物或者获取优惠信息时使用。Get the best price, coupons for goods on Chi...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taobao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alone",
+      "features": [
+        "商品价格全网对比技能，获取商品在淘宝(Taobao)、天猫(TMall)、京东(JD.com)、拼多多(PinDuoDuo)、抖音(Douyin)、快手(KaiShou)的最优价格、优惠券，."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taobao@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4549099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taobao",
+      "url": "https://clawhub.ai/skills/taobao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taobao",
+    "url": "https://clawhub.ai/skills/taobao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taobao-6362a966d9f2a89d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taobao@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-taobao-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d09a12b87ff78ae0fa4a0ebe4ad515612d6bd804f4ce15085d8d48cfb0c5c2ca",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:01:53.924Z"
+}

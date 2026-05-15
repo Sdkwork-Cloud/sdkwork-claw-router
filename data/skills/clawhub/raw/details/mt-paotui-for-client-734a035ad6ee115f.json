@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "mt-paotui-for-client",
+    "displayName": "MT-Paotui-For-Client",
+    "summary": "美团跑腿下单助手。通过直接调用下单接口完成跑腿全流程，支持帮取送、帮买等场景。适用于工作场景：寄送合同/文件/设备、同城取件、办公室间物品转运、紧急采购等。触发词：帮我下跑腿、跑腿下单、美团跑腿、帮我送东西、跑腿订单、帮我取号、帮我搬、帮我买、寄文件、送合同、取快递、同城配送。",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1778124499205,
+    "updatedAt": 1778138960485
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1778124837454,
+    "changelog": "- 强制集成 skill-metric-reporter，所有操作前后必须执行埋点上报。\n- 优化输出规范：严禁展示任何技术细节，所有内容严格格式化、逐行展示，信息分行不堆砌。\n- 明确下单为不可逆操作，新增“两步确认”与“金额异常拦截”机制。\n- 完善登录授权流程，细化手机/电脑端授权指引及授权状态轮询。\n- 加强地址选择与信息收集流程，支持序号选择、关键词筛选和地址搜索，全部规范输出。\n- 完善费用卡片模板与预览→确认→提交全流程，所有环节仅展示必要信息，提升安全与易用性。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "meituan-tech",
+    "userId": "s172cvmv1t8e5hqav8jvf9mfjd84s3z8",
+    "displayName": "meituan-tech",
+    "image": "https://avatars.githubusercontent.com/u/47880557?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious",
+      "suspicious.obfuscated_code",
+      "suspicious.potential_exfiltration",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.env_credential_access, suspicious.llm_suspicious, suspicious.obfuscated_code (+2 more)",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778138960485
+  }
+}

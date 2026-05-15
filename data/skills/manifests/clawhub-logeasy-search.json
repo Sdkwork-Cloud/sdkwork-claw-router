@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69490,
+  "uuid": "skill-clawhub-logeasy-search",
+  "skillKey": "clawhub-logeasy-search",
+  "name": "LogEase Search",
+  "summary": "通过日志易平台支持安全告警、网络设备和系统日志的关键词实时搜索与聚合分析，限定相对时间范围和最多100条返回。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logeasy_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "x1nq",
+      "features": [
+        "通过日志易平台支持安全告警、网络设备和系统日志的关键词实时搜索与聚合分析，限定相对时间范围和最多100条返回。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/logeasy-search@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86921503?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "logeasy-search",
+      "url": "https://clawhub.ai/skills/logeasy-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logeasy-search",
+    "url": "https://clawhub.ai/skills/logeasy-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logeasy-search-64b0c91a223d9980.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/logeasy-search@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-logeasy-search-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c5a035a601482f503d942a54e12b13f79384571b26096a16e0a1d4795fa2616",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T03:55:44.523Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55206,
+  "uuid": "skill-clawhub-polymarket-arb-scanner-pro",
+  "skillKey": "clawhub-polymarket-arb-scanner-pro",
+  "name": "Polymarket Arb Scanner Pro",
+  "summary": "Scans top Polymarket markets for pure arbitrage where YES + NO < $0.94, enabling risk-free simultaneous Fill-or-Kill trades with liquidity and risk controls.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_arb_scanner_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mike",
+      "features": [
+        "Scans top Polymarket markets for pure arbitrage where YES + NO < $0.94, enabling risk-free simu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-arb-scanner-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5358781?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-arb-scanner-pro",
+      "url": "https://clawhub.ai/skills/polymarket-arb-scanner-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-arb-scanner-pro",
+    "url": "https://clawhub.ai/skills/polymarket-arb-scanner-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-arb-scanner-pro-6003c4a3158fc5da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-arb-scanner-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-arb-scanner-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b4de94ebf1bfde41b4053e9c6798fc8670e4a8c78a56dc5272a0b623f762fd6",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T23:21:01.607Z"
+}

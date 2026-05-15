@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/debt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.debt",
+  "skill": {
+    "id": 26195,
+    "skillKey": "clawhub-debt",
+    "name": "Debt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "debt",
+    "url": "https://clawhub.ai/skills/debt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/debt-652d75f9bafb25e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A relentless AI agent skill for destroying personal debt permanently. Maps every dollar you owe into a single battlefield view, builds a payoff strategy cali..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ethagent",
+      "userId": "publishers:ethagent",
+      "displayName": "EthAgent",
+      "image": "https://avatars.githubusercontent.com/u/216467966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772942561833,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:be0dbb91c31f5c7d6ca7ed576a0a5b7d73fe855e7355f767fc062f35b7943368"
+}

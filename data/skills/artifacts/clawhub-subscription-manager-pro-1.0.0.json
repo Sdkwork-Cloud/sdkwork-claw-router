@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subscription-manager-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subscription_manager_pro",
+  "skill": {
+    "id": 39917,
+    "skillKey": "clawhub-subscription-manager-pro",
+    "name": "Subscription Manager Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subscription-manager-pro",
+    "url": "https://clawhub.ai/skills/subscription-manager-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subscription-manager-pro-a3b3e6d175f17f42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track all your subscriptions, get alerts before renewals, identify forgotten services, and calculate total spend. Never pay for something you forgot to cance..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kilusha",
+      "userId": "s175y68h2b6n78aejw0s84ahd9846jx3",
+      "displayName": "Kilusha",
+      "image": "https://avatars.githubusercontent.com/u/127492806?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775308919991,
+      "changelog": "Initial release: Track subscriptions, get alerts before renewals, calculate total spend",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a49c90ed5081516bffdb3c4f2fb7fd9eb468e6e45789153c49da2adb1606a68e"
+}

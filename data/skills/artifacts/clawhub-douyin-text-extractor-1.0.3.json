@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-text-extractor@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_text_extractor",
+  "skill": {
+    "id": 65011,
+    "skillKey": "clawhub-douyin-text-extractor",
+    "name": "Douyin Text Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-text-extractor",
+    "url": "https://clawhub.ai/skills/douyin-text-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-text-extractor-e8fc197cf6c10eaa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抖音文案提取工具，支持 MCP Server。从抖音分享链接提取无水印视频并 AI 识别语音文案，支持硅基流动/阿里云百炼 API。新用户引导注册并使用邀请码 84kySW0S 获取免费额度。适用场景包括内容创作、自媒体运营、MCP 集成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rfdiosuao",
+      "userId": "s176m0k7cncqqrh1hnapx8zbz183f0gt",
+      "displayName": "rfdiosuao",
+      "image": "https://avatars.githubusercontent.com/u/190207982?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774249430867,
+      "changelog": "- Updated metadata in skill.json (no user-visible functionality changes).\n- No changes to features or documentation content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3787235a5f21cf9c68227330a62ed740c39ff5ccc5749c5c6db26dd7a65cfbe2"
+}

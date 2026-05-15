@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29101,
+  "uuid": "skill-clawhub-markdown-to-pdf",
+  "skillKey": "clawhub-markdown-to-pdf",
+  "name": "Markdown to PDF",
+  "summary": "Convert Markdown files to beautiful PDF documents. Supports custom styling, code highlighting, and multiple output options. Use when users need to convert MD...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_to_pdf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alone86136",
+      "features": [
+        "Convert Markdown files to beautiful PDF documents",
+        "Supports custom styling, code highlighting, and multiple output options",
+        "Use when users need to convert MD..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/markdown-to-pdf@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266516065?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "markdown-to-pdf",
+      "url": "https://clawhub.ai/skills/markdown-to-pdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-to-pdf",
+    "url": "https://clawhub.ai/skills/markdown-to-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-to-pdf-911c2039028bedb6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/markdown-to-pdf@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-markdown-to-pdf-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6cd8ec8e91c8ecc73315577d8f9b42e3965b042c33bb6d25d681c5eab66b5519",
+      "artifactSizeBytes": 2083
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T03:30:13.357Z"
+}

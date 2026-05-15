@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-optimizer-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_optimizer_tool",
+  "skill": {
+    "id": 67096,
+    "skillKey": "clawhub-image-optimizer-tool",
+    "name": "Image Optimizer Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-optimizer-tool",
+    "url": "https://clawhub.ai/skills/image-optimizer-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-optimizer-tool-8a8a6e67bd2c7533.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "图片批量压缩和格式转换工具，支持批量调整大小、压缩质量、转换格式，预览模式和撤销功能！"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "utopiabenben",
+      "userId": "s17cnh4v6k2vf1742dfy2z5vj183qz0q",
+      "displayName": "utopiabenben",
+      "image": "https://avatars.githubusercontent.com/u/19267750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 454,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773520362763,
+      "changelog": "image-optimizer-tool 1.0.0\n\n- 首次发布，支持图片批量压缩、调整大小与格式转换\n- 提供预览模式与撤销功能，原文件自动备份\n- 支持递归处理子文件夹中的图片\n- 命令行参数灵活，可定制目录、输出格式和质量\n- 支持 JPEG、PNG、WebP 等常见格式输入与输出",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bda6729190ebfd36b70606d0b17df028cd12dc2d4db75f820d203bbabbebccc6"
+}

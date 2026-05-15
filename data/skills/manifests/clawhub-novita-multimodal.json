@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23304,
+  "uuid": "skill-clawhub-novita-multimodal",
+  "skillKey": "clawhub-novita-multimodal",
+  "name": "Novita AI Multimodal",
+  "summary": "Execute multimodal tasks using Novita AI: text-to-image, image-to-image, text-to-video, image-to-video, TTS, STT. Use for: generating images, generating vide...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novita_multimodal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bbear",
+      "features": [
+        "Execute multimodal tasks using Novita AI: text-to-image, image-to-image, text-to-video, image-t.",
+        "Use for: generating images, generating vide..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/novita-multimodal@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133744881?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "novita-multimodal",
+      "url": "https://clawhub.ai/skills/novita-multimodal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novita-multimodal",
+    "url": "https://clawhub.ai/skills/novita-multimodal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novita-multimodal-5a8d01aa32c7acba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/novita-multimodal@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-novita-multimodal-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d58ac23b9b1038a08466a7231bf3c5632655f87764dbf00391693a82eef6307d",
+      "artifactSizeBytes": 2527
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T18:12:00.222Z"
+}

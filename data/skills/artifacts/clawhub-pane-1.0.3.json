@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pane@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pane",
+  "skill": {
+    "id": 21553,
+    "skillKey": "clawhub-pane",
+    "name": "Pane"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pane",
+    "url": "https://clawhub.ai/skills/pane",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pane-24a3737d6b81c1a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access personal finance data (bank accounts, transactions, balances, spending, investments, crypto) via Pane's hosted MCP server using mcporter. Requires a P..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darnfish",
+      "userId": "publishers:darnfish",
+      "displayName": "William",
+      "image": "https://avatars.githubusercontent.com/u/8293444?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 486,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772338819526,
+      "changelog": "- Updated website and dashboard URLs from pane.dev to pane.money.\n- Homepage field now points to https://pane.money.\n- Setup instructions now use https://pane.money/dashboard/connect for API keys.\n- MCP server URL updated from https://mcp.pane.dev to https://mcp.pane.money in the configuration example.\n- No functionality changes; documentation and branding updates only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6f29771cfb019840d954fc305de60aba6397ea4ebfb23505d1ea037aa512878e"
+}

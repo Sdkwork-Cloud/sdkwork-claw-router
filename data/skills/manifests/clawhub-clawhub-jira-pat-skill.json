@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14748,
+  "uuid": "skill-clawhub-clawhub-jira-pat-skill",
+  "skillKey": "clawhub-clawhub-jira-pat-skill",
+  "name": "Clawhub Jira Pat Skill",
+  "summary": "Manage Jira issues on self-hosted or enterprise Jira instances using Personal Access Tokens in SSO/SAML environments where Basic Auth fails.",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_jira_pat_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dejanb",
+      "features": [
+        "Manage Jira issues on self-hosted or enterprise Jira instances using Personal Access Tokens in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-jira-pat-skill@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/141611?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-jira-pat-skill",
+      "url": "https://clawhub.ai/skills/clawhub-jira-pat-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-jira-pat-skill",
+    "url": "https://clawhub.ai/skills/clawhub-jira-pat-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-jira-pat-skill-80bf85d6df44b0e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-jira-pat-skill@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-jira-pat-skill-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17fa82e6acdd85f68b7793e3edd2496ae017b654457c114ccaf4f724eff0f162",
+      "artifactSizeBytes": 2408
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T13:35:49.903Z"
+}

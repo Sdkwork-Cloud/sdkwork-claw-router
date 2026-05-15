@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ezbookkeeping@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ezbookkeeping",
+  "skill": {
+    "id": 10211,
+    "skillKey": "clawhub-ezbookkeeping",
+    "name": "ezBookkeeping API Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ezbookkeeping",
+    "url": "https://clawhub.ai/skills/ezbookkeeping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ezbookkeeping-98c9e85de4153bab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use ezBookkeeping API Tools script to record new transactions, query transactions, retrieve account information, retrieve categories, retrieve tags, and retr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mayswind",
+      "userId": "s1751dfek513ssvs59jxvbxkmx83z171",
+      "displayName": "mayswind",
+      "image": "https://avatars.githubusercontent.com/u/2211648?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2589,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1776789161087,
+      "changelog": "- Removed use of eval in posix scripts",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af6d0f361fa31d7c88e2d6ed90e73673ae307bfe5947e2538ee7c4313962272d"
+}

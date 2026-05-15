@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/morning-briefing-composer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morning_briefing_composer",
+  "skill": {
+    "id": 25960,
+    "skillKey": "clawhub-morning-briefing-composer",
+    "name": "morning-briefing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morning-briefing-composer",
+    "url": "https://clawhub.ai/skills/morning-briefing-composer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morning-briefing-composer-8ef30b4b180d2974.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Aggregates weather, game updates, and concert data into a daily markdown briefing. Triggered by 'morning briefing', 'daily briefing', 'run my briefing', 'wha..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "patfitzner",
+      "userId": "publishers:patfitzner",
+      "displayName": "Pat Fitzner",
+      "image": "https://avatars.githubusercontent.com/u/168721415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773222117634,
+      "changelog": "- Improved documentation with detailed setup, usage, and customization instructions in SKILL.md.\n- Clarified triggers: now responds to \"morning briefing\", \"daily briefing\", \"run my briefing\", and \"what's new today\".\n- Outlined responsibilities: strictly outputs the generated markdown file as the briefing without modification.\n- Added guidance for adding new data sources and customizing existing ones via config.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:011477d65803e6031266bfc9e139858403690907d22205e922fe52b6ca3402c3"
+}

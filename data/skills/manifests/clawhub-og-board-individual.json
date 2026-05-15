@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19882,
+  "uuid": "skill-clawhub-og-board-individual",
+  "skillKey": "clawhub-og-board-individual",
+  "name": "Og Board Individual",
+  "summary": "Use when you need to work with tasks: view tasks, list tasks, update task status, add blockers, artifacts, and worklogs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.og_board_individual",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jatin-31",
+      "features": [
+        "Use when you need to work with tasks: view tasks, list tasks, update task status, add blockers,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/og-board-individual@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84774142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "og-board-individual",
+      "url": "https://clawhub.ai/skills/og-board-individual"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "og-board-individual",
+    "url": "https://clawhub.ai/skills/og-board-individual",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/og-board-individual-411962da09d46c7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/og-board-individual@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-og-board-individual-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2001b18714cea10b6552f5b9aa5a1798657bfe01c454757ed7cb5a1847525310",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T10:54:13.184Z"
+}

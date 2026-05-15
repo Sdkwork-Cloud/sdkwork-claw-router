@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/color-palette@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.color_palette",
+  "skill": {
+    "id": 13076,
+    "skillKey": "clawhub-color-palette",
+    "name": "Color Palette Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "color-palette",
+    "url": "https://clawhub.ai/skills/color-palette",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/color-palette-1d73e006f56be536.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract a color palette from an image and return HEX/RGB values with optional swatch image."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qrost",
+      "userId": "publishers:qrost",
+      "displayName": "AddinCui",
+      "image": "https://avatars.githubusercontent.com/u/12784080?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1427,
+      "installsAllTime": 5,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1771637608347,
+      "changelog": "Patch: OpenClaw allowed media paths docs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:43dc9193883f03edb5a108e651774e6d1f1058a34e8e56422d9a8a7b59121cfe"
+}

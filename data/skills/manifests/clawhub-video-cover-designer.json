@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73558,
+  "uuid": "skill-clawhub-video-cover-designer",
+  "skillKey": "clawhub-video-cover-designer",
+  "name": "视频封面设计助手",
+  "summary": "辅助创作者提取视频文案，生成多样封面设计方案，并提供爆款元素分析及多平台尺寸风格建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_cover_designer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huajianjiu",
+      "features": [
+        "辅助创作者提取视频文案，生成多样封面设计方案，并提供爆款元素分析及多平台尺寸风格建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-cover-designer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/163974966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-cover-designer",
+      "url": "https://clawhub.ai/skills/video-cover-designer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-cover-designer",
+    "url": "https://clawhub.ai/skills/video-cover-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-cover-designer-f2271775e6010863.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-cover-designer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-cover-designer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8811aec08fc9aaa31a3990bdfb7fbf5d9e1214dbb6d0a1561e52b5b103e0d691",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T02:30:33.466Z"
+}

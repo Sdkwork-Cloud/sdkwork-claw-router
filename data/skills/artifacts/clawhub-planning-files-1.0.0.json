@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/planning-files@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.planning_files",
+  "skill": {
+    "id": 11859,
+    "skillKey": "clawhub-planning-files",
+    "name": "Planning With Files"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "planning-files",
+    "url": "https://clawhub.ai/skills/planning-files",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/planning-files-21975d52c97b795a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "File-based planning for complex tasks. Use persistent markdown files as working memory to survive context resets. Creates task_plan.md, findings.md, and progress.md. Use for any task requiring >5 tool calls, research projects, or multi-ste."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1676,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770729163309,
+      "changelog": "- Initial release of planning-with-files skill.\n- Enables robust file-based planning for complex, multi-step tasks.\n- Introduces use of three persistent markdown files—task_plan.md, findings.md, progress.md—as working memory to overcome context resets.\n- Provides clear usage guidelines, workflow, error-handling protocol, and anti-patterns.\n- Includes templates and helper scripts for easy setup and best practices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:92381f60ecba736c7b94450d285a9a8fe428091f7207bf01610a934061dcafe6"
+}

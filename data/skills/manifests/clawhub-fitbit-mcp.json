@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48641,
+  "uuid": "skill-clawhub-fitbit-mcp",
+  "skillKey": "clawhub-fitbit-mcp",
+  "name": "Fitbit MCP",
+  "summary": "Connect an MCP-compatible agent to local Fitbit activity, sleep, heart-rate, HRV, SpO2, breathing, weight, food, and water data. Use when an AI agent needs s...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fitbit_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "David Batista",
+      "features": [
+        "Connect an MCP-compatible agent to local Fitbit activity, sleep, heart-rate, HRV, SpO2, breathi.",
+        "Use when an AI agent needs s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fitbit-mcp@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/624359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fitbit-mcp",
+      "url": "https://clawhub.ai/skills/fitbit-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fitbit-mcp",
+    "url": "https://clawhub.ai/skills/fitbit-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fitbit-mcp-cf3c35e77864395a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fitbit-mcp@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fitbit-mcp-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:993a8f3b47c15c78a59ffcc50988dde1f54ad1119019b0f441517f6ad37104d6",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T10:38:30.809Z"
+}

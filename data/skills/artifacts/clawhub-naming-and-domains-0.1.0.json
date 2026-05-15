@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/naming-and-domains@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.naming_and_domains",
+  "skill": {
+    "id": 17449,
+    "skillKey": "clawhub-naming-and-domains",
+    "name": "Naming And Domains"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "naming-and-domains",
+    "url": "https://clawhub.ai/skills/naming-and-domains",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/naming-and-domains-e3f2a4846afc66eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Name a business, product, or service and secure a matching domain. Use when brainstorming names, evaluating name quality, checking domain availability, choos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jk-0001",
+      "userId": "s172spfmwsf80c1ymt8rffcz9h83gbzb",
+      "displayName": "Jatin Khatri",
+      "image": "https://avatars.githubusercontent.com/u/103896999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 759,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771395634270,
+      "changelog": "Initial release — comprehensive guide for naming businesses, products, or services and securing matching domains.\n\n- Covers full naming process: constraints, ideation techniques, scoring, filtering, and validation.\n- Includes frameworks for benefit-based, metaphorical, portmanteau, descriptive, and abstract name generation.\n- Provides clear evaluation criteria and scoring rubric for name candidates.\n- Outlines step-by-step domain and trademark checking process with registrar recommendations.\n- Final selection checklist includes real-world testing for pronunciation, spelling, search, and social handle availability.\n- Lists common naming pitfalls and anti-patterns to avoid.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dce15c07f73d3e646d671c2a3e0267a5092560a0f52d13a70437844d655bae9d"
+}

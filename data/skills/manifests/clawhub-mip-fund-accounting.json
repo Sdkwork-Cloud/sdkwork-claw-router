@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33235,
+  "uuid": "skill-clawhub-mip-fund-accounting",
+  "skillKey": "clawhub-mip-fund-accounting",
+  "name": "Mip Fund Accounting",
+  "summary": "MIP Fund Accounting integration. Manage data, records, and automate workflows. Use when the user wants to interact with MIP Fund Accounting data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mip_fund_accounting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "MIP Fund Accounting integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with MIP Fund Accounting data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mip-fund-accounting@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mip-fund-accounting",
+      "url": "https://clawhub.ai/skills/mip-fund-accounting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mip-fund-accounting",
+    "url": "https://clawhub.ai/skills/mip-fund-accounting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mip-fund-accounting-bc7464656476237b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mip-fund-accounting@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-mip-fund-accounting-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8aa239b356c9767aee09a8f5e4105dd478202c1e0c12a1a56293af1eea22d06",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:44:59.102Z"
+}

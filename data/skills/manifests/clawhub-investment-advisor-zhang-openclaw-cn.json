@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59675,
+  "uuid": "skill-clawhub-investment-advisor-zhang-openclaw-cn",
+  "skillKey": "clawhub-investment-advisor-zhang-openclaw-cn",
+  "name": "Investment Advisor Zhang Openclaw Cn",
+  "summary": "通过百度 AI 搜索 API 进行网页搜索，获取实时信息和搜索结果。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investment_advisor_zhang_openclaw_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Liu HaoRan",
+      "features": [
+        "通过百度 AI 搜索 API 进行网页搜索，获取实时信息和搜索结果。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/investment-advisor-zhang-openclaw-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86031205?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "investment-advisor-zhang-openclaw-cn",
+      "url": "https://clawhub.ai/skills/investment-advisor-zhang-openclaw-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investment-advisor-zhang-openclaw-cn",
+    "url": "https://clawhub.ai/skills/investment-advisor-zhang-openclaw-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investment-advisor-zhang-openclaw-cn-f43fc0eca68cde60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/investment-advisor-zhang-openclaw-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-investment-advisor-zhang-openclaw-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39f26271cc7b288d4eab3b30f3f59ccb92a82ab691c34256cc19ce9bdb23be8e",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T08:38:18.661Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/english-learner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.english_learner",
+  "skill": {
+    "id": 73708,
+    "skillKey": "clawhub-english-learner",
+    "name": "英语学习助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "english-learner",
+    "url": "https://clawhub.ai/skills/english-learner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/english-learner-a125ca9c7dde2a16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专为英语学习者设计的综合技能，支持词汇记忆、语法学习、听说读写训练、翻译助手、错题管理和学习进度追踪。当用户提到英语学习、背单词、学英语、练习口语、翻译、英语语法、英语阅读等话题时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liningg",
+      "userId": "s1700g11frh0dmkn3amsfwzx8s83gz5k",
+      "displayName": "lining",
+      "image": "https://avatars.githubusercontent.com/u/30205865?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774353738907,
+      "changelog": "Initial release of english-learner skill:\n\n- Comprehensive English learning assistant with features for vocabulary, grammar, reading, listening, speaking, writing, and translation.\n- Personalized study plans, progress tracking, and error management.\n- Scenario-based usage examples for effective vocabulary practice, testing, reading, listening, speaking, writing, and translation.\n- Resource directory includes scripts for key functions, reference materials, templates, and audio resources.\n- Workflow guides users through assessment, planning, learning, tracking, and adapting strategies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f15eaabd5646797c0ef55194bd99db7755daeda87c02e722af103484b3f0003"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22440,
+  "uuid": "skill-clawhub-pcs-swap-planner",
+  "skillKey": "clawhub-pcs-swap-planner",
+  "name": "Swap Planner",
+  "summary": "Plan and generate deep links for token swaps on PancakeSwap. Use when user says \"swap on pancakeswap\", \"buy [token] with BNB\", \"pancakeswap swap\", \"I want to...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pcs_swap_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pcs-bot",
+      "features": [
+        "Plan and generate deep links for token swaps on PancakeSwap",
+        "Use when user says \"swap on pancakeswap\", \"buy [token] with BNB\", \"pancakeswap swap\", \"I want t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pcs-swap-planner@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227519168?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pcs-swap-planner",
+      "url": "https://clawhub.ai/skills/pcs-swap-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pcs-swap-planner",
+    "url": "https://clawhub.ai/skills/pcs-swap-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pcs-swap-planner-15c33e45cf9481b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pcs-swap-planner@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pcs-swap-planner-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e26cb9598ed59c3873f9de54c56ab59d8cbf5a2d5194b3de13d22b3350bd9c4",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:44:30.986Z"
+}

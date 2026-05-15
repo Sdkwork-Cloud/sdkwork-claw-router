@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40483,
+  "uuid": "skill-clawhub-ali-minimax-toolkit",
+  "skillKey": "clawhub-ali-minimax-toolkit",
+  "name": "Ali Minimax Toolkit",
+  "summary": "MiniMax multimodal generation via API. Use when user wants voice, music, image, image-to-image, or video generation with MiniMax. Supports TTS, music, image...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ali_minimax_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuan-huicheng",
+      "features": [
+        "MiniMax multimodal generation via API",
+        "Use when user wants voice, music, image, image-to-image, or video generation with MiniMax",
+        "Supports TTS, music, image..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ali-minimax-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134614128?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ali-minimax-toolkit",
+      "url": "https://clawhub.ai/skills/ali-minimax-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ali-minimax-toolkit",
+    "url": "https://clawhub.ai/skills/ali-minimax-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ali-minimax-toolkit-4c3b25160a368063.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ali-minimax-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ali-minimax-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3fee3c442683aeba014327c751b41789a91fe2127f66c8935ae6a0e25dc3b0bb",
+      "artifactSizeBytes": 2428
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T10:00:28.531Z"
+}

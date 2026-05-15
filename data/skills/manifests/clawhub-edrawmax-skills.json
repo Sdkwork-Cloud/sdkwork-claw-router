@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57542,
+  "uuid": "skill-clawhub-edrawmax-skills",
+  "skillKey": "clawhub-edrawmax-skills",
+  "name": "EdrawMax Skills",
+  "summary": "Generate diagrams from natural language using EdrawMax AI APIs. Supports four diagram types: flowchart (流程图), infographic (信息图), Gantt chart (甘特图), and mind...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edrawmax_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wondershare-boop",
+      "features": [
+        "Generate diagrams from natural language using EdrawMax AI APIs",
+        "Supports four diagram types: flowchart (流程图), infographic (信息图), Gantt chart (甘特图), and mind..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edrawmax-skills@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208894930?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edrawmax-skills",
+      "url": "https://clawhub.ai/skills/edrawmax-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edrawmax-skills",
+    "url": "https://clawhub.ai/skills/edrawmax-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edrawmax-skills-f240a142d05f1ba3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edrawmax-skills@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-edrawmax-skills-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb83a4888a4bd6afc201440ffd10dd50347257d564165d88bfde6c1fc7a7f533",
+      "artifactSizeBytes": 2551
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T14:07:35.926Z"
+}

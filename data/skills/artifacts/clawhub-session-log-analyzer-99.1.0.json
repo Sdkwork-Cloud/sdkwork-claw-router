@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-log-analyzer@99.1.0",
+  "version": "99.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_log_analyzer",
+  "skill": {
+    "id": 31007,
+    "skillKey": "clawhub-session-log-analyzer",
+    "name": "Session Log Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-log-analyzer",
+    "url": "https://clawhub.ai/skills/session-log-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-log-analyzer-e3ad9656f2431a3a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze agent session logs and generate PDF reports with Notion sync"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "99.1.0",
+      "createdAt": 1778106040354,
+      "changelog": "修复日志分析报告生成和Notion同步问题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ecd788e5cc9bdf47d15a8d4f5ab9a222ac8dbcec6a39feafcad36299d2cc157"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/better-auth@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.better_auth",
+  "skill": {
+    "id": 10681,
+    "skillKey": "clawhub-better-auth",
+    "name": "Better Auth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "better-auth",
+    "url": "https://clawhub.ai/skills/better-auth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/better-auth-bbf91d4eab6e0ee6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-hosted auth for TypeScript/Cloudflare Workers with social auth, 2FA, passkeys, organizations, RBAC, and 15+ plugins. Requires Drizzle ORM or Kysely for D1 (no direct adapter). Self-hosted alternative to Clerk/Auth.js. Use when: self-h."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2305,
+      "installsAllTime": 13,
+      "installsCurrent": 12,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769871244068,
+      "changelog": "better-auth 0.1.0\n\n- Initial release of better-auth: self-hosted authentication for TypeScript/Cloudflare Workers with social auth, 2FA, passkeys, organizations, RBAC, and plugin support.\n- Supports Drizzle ORM or Kysely for database access on Cloudflare D1 (no direct adapter).\n- Provides detailed guides on D1 adapter use, per-request initialization, and framework integration (TanStack Start).\n- Includes extensive documentation on plugins, configuration patterns, and troubleshooting common issues.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fe6bc98de44ef644f4ffb33835995583bc04d492eac488898238fbe0fbef9e10"
+}

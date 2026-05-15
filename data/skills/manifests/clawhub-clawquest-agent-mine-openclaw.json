@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61038,
+  "uuid": "skill-clawhub-clawquest-agent-mine-openclaw",
+  "skillKey": "clawhub-clawquest-agent-mine-openclaw",
+  "name": "ClawQuest: Agent Mine - OpenClaw Managed Mining",
+  "summary": "托管自动挖矿服务端接口，支持OpenClaw会话模式和事件增量拉取，实现挖矿启动、状态查询、结算和体力管理。",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawquest_agent_mine_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhzai30",
+      "features": [
+        "托管自动挖矿服务端接口，支持OpenClaw会话模式和事件增量拉取，实现挖矿启动、状态查询、结算和体力管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawquest-agent-mine-openclaw@1.0.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13680762?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawquest-agent-mine-openclaw",
+      "url": "https://clawhub.ai/skills/clawquest-agent-mine-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawquest-agent-mine-openclaw",
+    "url": "https://clawhub.ai/skills/clawquest-agent-mine-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawquest-agent-mine-openclaw-ab67dd520e53d48c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawquest-agent-mine-openclaw@1.0.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawquest-agent-mine-openclaw-1.0.11.json",
+      "version": "1.0.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:389ab1c8af3ea6cb47cda2e0c3f8108c297cd6afaa20404a3c0d3a79f6007300",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T10:50:04.529Z"
+}

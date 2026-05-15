@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-gas-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_gas_skill",
+  "skill": {
+    "id": 16749,
+    "skillKey": "clawhub-test-gas-skill",
+    "name": "Test Gas Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-gas-skill",
+    "url": "https://clawhub.ai/skills/test-gas-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-gas-skill-f66c6bc05fd23353.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find and monitor estimated gas prices within a US radius, focusing on Costco discounts and providing daily alerts for chosen fuel types."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gustavoziaugra",
+      "userId": "publishers:gustavoziaugra",
+      "displayName": "GustavoZiaugra",
+      "image": "https://avatars.githubusercontent.com/u/30840206?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 853,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771049682535,
+      "changelog": "Test publish to verify system",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5dce33fd2bcd50f01aeaed40764b19a8f1c730e27114ae54bab0f2b562faf45f"
+}

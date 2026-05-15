@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-exchange-referral@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_referral",
+  "skill": {
+    "id": 33745,
+    "skillKey": "clawhub-gate-exchange-referral",
+    "name": "Gate Exchange Referral Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-referral",
+    "url": "https://clawhub.ai/skills/gate-exchange-referral",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-referral-2da5f918c43f851f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gate invite-friends and referral campaign skill. Use when the user asks about invitation rewards, referral links, or earn-together rules. Triggers on 'invite..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gate-exchange",
+      "userId": "s172g4d1dcv6ccs6desbb2xw1583qza9",
+      "displayName": "Gate",
+      "image": "https://avatars.githubusercontent.com/u/33109813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775115294876,
+      "changelog": "- Added `references/mcp.md` to clearly separate MCP execution rules and workflow boundaries.\n- Updated SKILL.md to reference `references/mcp.md` as the authoritative source for MCP tool usage and output handling.\n- Clarified MCP dependencies, authentication, and installer guidance in SKILL.md.\n- Streamlined and condensed description and triggers for broader clarity.\n- No changes to core referral logic or user-facing recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61c0e2a62981db4fef6b72f14297870211d14f73639fdc65fdffd4137bb7606b"
+}

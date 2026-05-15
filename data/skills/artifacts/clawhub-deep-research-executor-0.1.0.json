@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-research-executor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_executor",
+  "skill": {
+    "id": 29011,
+    "skillKey": "clawhub-deep-research-executor",
+    "name": "Deep Research Executor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-executor",
+    "url": "https://clawhub.ai/skills/deep-research-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-executor-915000b75c78e979.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute deep research by performing comprehensive web searches and synthesizing findings into detailed reports. This skill enforces strict search protocols t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bird-frank",
+      "userId": "s178xp167x6qef16anv6t2zqfh83gha3",
+      "displayName": "bird-frank",
+      "image": "https://avatars.githubusercontent.com/u/7122030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 312,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773911492352,
+      "changelog": "Deep Research Executor v0.1.0 – Initial Release\n\n- Automates comprehensive research tasks by enforcing a strict search-first approach for every research plan.\n- Requires dynamic, bilingual (Chinese and English) web searches for each research question.\n- Ensures thorough coverage with a minimum of 12 diverse sources analyzed per report.\n- Guides step-by-step workflow: read plan, search, analyze, synthesize findings, and build reports with proper citations.\n- Reports are progressively drafted and saved with standardized naming in the designated directory.\n- Completion checklist ensures quality, language coverage, citation accuracy, and correct report indexing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79ee97cad001f3d91e82dc0c303f1289e1a174db6de3682ae66ab3c59e0ae417"
+}

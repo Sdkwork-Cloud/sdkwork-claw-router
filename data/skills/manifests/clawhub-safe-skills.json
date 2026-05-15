@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11814,
+  "uuid": "skill-clawhub-safe-skills",
+  "skillKey": "clawhub-safe-skills",
+  "name": "Safe Skills",
+  "summary": "Securely create and manage EVM wallets; perform token transfers, check balances, and send transactions without exposing raw secret keys.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_skills",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chris Cassano",
+      "features": [
+        "Securely create and manage EVM wallets",
+        "perform token transfers, check balances, and send transactions without exposing raw secret keys."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1285652?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-skills",
+      "url": "https://clawhub.ai/skills/safe-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-skills",
+    "url": "https://clawhub.ai/skills/safe-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-skills-7243d8b6fcdfa64a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfc20cf5f7946c04a3a9a28d306a92e55110f68605bcf0fcb2874dba1b576e8e",
+      "artifactSizeBytes": 2500
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T08:29:12.330Z"
+}

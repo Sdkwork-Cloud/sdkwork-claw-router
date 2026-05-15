@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21614,
+  "uuid": "skill-clawhub-workspace-temp",
+  "skillKey": "clawhub-workspace-temp",
+  "name": "Workspace Temp",
+  "summary": "Manage temporary files in workspace temp directory. All non-essential files must go to temp/, keeping workspace root clean. Auto-detects workspace from openc...",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_temp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lichenyang",
+      "features": [
+        "Manage temporary files in workspace temp directory",
+        "All non-essential files must go to temp/, keeping workspace root clean",
+        "Auto-detects workspace from openc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workspace-temp@1.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44455058?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workspace-temp",
+      "url": "https://clawhub.ai/skills/workspace-temp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-temp",
+    "url": "https://clawhub.ai/skills/workspace-temp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-temp-961890197d59fcb8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workspace-temp@1.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-workspace-temp-1.1.5.json",
+      "version": "1.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7676a7ccf62246359870200b8f7c42fda99327cca71f9641be9614d697be1911",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:25:42.147Z"
+}

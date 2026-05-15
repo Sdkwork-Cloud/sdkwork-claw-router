@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/study-buddy-ai@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.study_buddy_ai",
+  "skill": {
+    "id": 14185,
+    "skillKey": "clawhub-study-buddy-ai",
+    "name": "Study Buddy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "study-buddy-ai",
+    "url": "https://clawhub.ai/skills/study-buddy-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/study-buddy-ai-a418f49ca1c06d75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When user asks to study, create flashcards, take a quiz, make notes, revise, set study timer, track study hours, create study plan, explain a topic, test kno..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mkpareek0315",
+      "userId": "s177xftdngf7e244bg15634m5x83yz4j",
+      "displayName": "Manish Pareek",
+      "image": "https://avatars.githubusercontent.com/u/71243646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 889,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771762093830,
+      "changelog": "v1.1.0 — Removed exec permission",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7f94a127db51f6471988a9e7f9e7f3eb1d6415572911b509e08af8efbf1665e8"
+}

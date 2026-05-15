@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22427,
+  "uuid": "skill-clawhub-consent",
+  "skillKey": "clawhub-consent",
+  "name": "Consent",
+  "summary": "Build cookie consent banners and track opt-in compliance status. Use when implementing GDPR consent, auditing cookies, generating privacy banners.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "Build cookie consent banners and track opt-in compliance status",
+        "Use when implementing GDPR consent, auditing cookies, generating privacy banners."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/consent@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "consent",
+      "url": "https://clawhub.ai/skills/consent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consent",
+    "url": "https://clawhub.ai/skills/consent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consent-12423e0482f3e81c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/consent@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-consent-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a32681aaf2f48b69f23f6df33f36473dcb95a06b9eb965b046958c2f42c49a3a",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:38:50.273Z"
+}

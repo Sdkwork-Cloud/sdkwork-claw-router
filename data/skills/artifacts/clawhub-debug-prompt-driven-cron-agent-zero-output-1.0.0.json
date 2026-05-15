@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/debug-prompt-driven-cron-agent-zero-output@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.debug_prompt_driven_cron_agent_zero_output",
+  "skill": {
+    "id": 60792,
+    "skillKey": "clawhub-debug-prompt-driven-cron-agent-zero-output",
+    "name": "Debug Prompt Driven Cron Agent Zero Output"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "debug-prompt-driven-cron-agent-zero-output",
+    "url": "https://clawhub.ai/skills/debug-prompt-driven-cron-agent-zero-output",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/debug-prompt-driven-cron-agent-zero-output-9a30665ac369ff4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用于排查“定时任务成功执行但结果全为 0 / 未检索到样本 / 明明有数据却日报为空”这类问题，尤其适合 Discord、Obsidian、cron、agentTurn、prompt 驱动任务、日整理、复盘脚本、采样漏扫、thread starter 漏计、主频道消息未纳入、Snowflake 字符串比较、时区时..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "can4hou6joeng4",
+      "userId": "s17fzhes75mvxfh1xm1q519egh83y6gc",
+      "displayName": "can4hou6joeng4",
+      "image": "https://avatars.githubusercontent.com/u/66450588?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774195473605,
+      "changelog": "debug-prompt-driven-cron-agent-zero-output 1.0.0\n\n- Initial release of a full diagnostic skill for cases where prompt-driven cron tasks succeed but produce empty (zero) results, particularly for Discord, Obsidian, agentTurn, and similar environments.\n- Provides a step-by-step framework to distinguish between “no samples found” vs. “classification zeroed out,” and localize root causes in sampling vs. filtering.\n- Emphasizes the difference between explicit implementation (scripted, with API calls) and flexible prompt-only tasks, highlighting risks when no fixed retrieval code exists.\n- Lists common high-risk data loss scenarios (missed parent channel, thread starters, improper Snowflake handling, time window issues) and maps diagnostic boundaries.\n- Offers minimal actionable fix suggestions: switch prompt tasks to explicit scripts, lock in sample source logic, enforce string comparison on IDs, and audit retrieval steps.\n- Equips users with a practical troubleshooting checklist, key false assumptions to avoid, sample config/code snippets, and relevant environment prerequisites.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:283dc1680fdbcb90aef447956a7acb28c26dad4d8e27f1b530232671a5b9f64f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quant-trading-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quant_trading_skills",
+  "skill": {
+    "id": 71184,
+    "skillKey": "clawhub-quant-trading-skills",
+    "name": "quant_trading-skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quant-trading-skills",
+    "url": "https://clawhub.ai/skills/quant-trading-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quant-trading-skills-3839074d76039f3b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取股票/基金等金融标的的量化数据，包括行情数据、财务数据、资金流向数据和舆情数据。支持单只股票查询和批量数据拉取。当用户需要查询股票行情、财务指标、资金流向或相关舆情信息时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sharkpicker",
+      "userId": "s175g2r6e21p3eebfef2z15s5h83v59g",
+      "displayName": "sharkpicker",
+      "image": "https://avatars.githubusercontent.com/u/44901372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774786728355,
+      "changelog": "Based on the requirement to describe the initial release of a quant trading skill for ClawHub, here is a professional description you can use:\nRecommended Changelog/Release Description:\nTitle/Heading:\nInitial Release: Quant Trading Skill\nFull Description:\nThis is the initial release of the Quant Trading skill for OpenClaw. This skill provides essential tools and functionalities for quantitative trading analysis, strategy development, and market data processing directly within your Claw environment.\nKey Features Included:\nFetches and processes real-time and historical market data\nProvides common technical indicators and analysis tools\nSupports backtesting for trading strategies\nEnables basic portfolio analytics and visualization\nIntegrates with data sources for algorithmic trading research\nGetting Started:\nInstall the skill via ClawHub and refer to the included SKILL.mdfile for usage examples and configuration details. This skill aims to enhance productivity for developers and researchers working in quantitative finance.\nWhy this description works:\nClearly states it's the first release (Initial Release).\nSummarizes the skill's purpose and value proposition upfront.\nLists concrete features to attract target users (quants, developers).\nIncludes practical instructions for next steps.\nMaintains a professional and informative tone suitable for a developer platform.\nYou can use this description directly in the --changelogparameter when running the clawhub publishcommand or in the description field on the ClawHub web interface.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2fedb8e24079d451d8c0441e3d8755b7590911f2b2c331638fade404ddfc7d9a"
+}

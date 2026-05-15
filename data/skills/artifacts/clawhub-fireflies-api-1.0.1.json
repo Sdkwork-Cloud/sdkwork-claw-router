@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fireflies-api@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fireflies_api",
+  "skill": {
+    "id": 10887,
+    "skillKey": "clawhub-fireflies-api",
+    "name": "Fireflies.ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fireflies-api",
+    "url": "https://clawhub.ai/skills/fireflies-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fireflies-api-bcb60932993c9342.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fireflies.ai GraphQL API integration with managed OAuth. Access meeting transcripts, summaries, users, contacts, and AI-powered meeting analysis. Use this sk..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777588924338,
+      "changelog": "- Updated all endpoint URLs from gateway.maton.ai and ctrl.maton.ai to api.maton.ai for consistency.\n- Enhanced security instructions: clarified that all write operations require explicit user approval and confirmation before execution.\n- Added a \"Security & Permissions\" section outlining data scope and permission requirements.\n- Minor editorial adjustments to endpoint usage instructions and variable naming for clarity.\n- Removed the LICENSE.txt file from the package.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2c263ac6829c7b053783f5e7293e0bfe5eaf6e20730801dd8347b164e12e215"
+}

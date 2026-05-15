@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36074,
+  "uuid": "skill-clawhub-sycm-analysis-skill",
+  "skillKey": "clawhub-sycm-analysis-skill",
+  "name": "Sycm Analysis Skill",
+  "summary": "Taobao Sycm (Business Advisor) data analysis tool. Use when the user wants to retrieve a store's weekly business report, generate business insights, or fetch...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sycm_analysis_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "simoncai519",
+      "features": [
+        "Taobao Sycm (Business Advisor) data analysis tool",
+        "Use when the user wants to retrieve a store's weekly business report, generate business insight."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sycm-analysis-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57803232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sycm-analysis-skill",
+      "url": "https://clawhub.ai/skills/sycm-analysis-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sycm-analysis-skill",
+    "url": "https://clawhub.ai/skills/sycm-analysis-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sycm-analysis-skill-faaa19b2f10a3a8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sycm-analysis-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sycm-analysis-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4be8793034a28653797567d49ca8b508db3b6b1780c3df4365a1b13764f91366",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T06:50:40.044Z"
+}

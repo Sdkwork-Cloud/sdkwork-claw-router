@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-gustowl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_gustowl",
+  "skill": {
+    "id": 43200,
+    "skillKey": "clawhub-adopt-a-gustowl",
+    "name": "Adopt A Gustowl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-gustowl",
+    "url": "https://clawhub.ai/skills/adopt-a-gustowl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-gustowl-35cacf79307b093d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Nocturnal and judgmental. Anthropic called it a Gustowl. We called it an Owl. Both judge you silently. Real-time hunger. Permanent death. 5 evolution stages...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775028837125,
+      "changelog": "- Initial release of the adopt-a-gustowl skill.\n- Adopt and care for a virtual Gustowl with real-time hunger, evolution stages, and permanent death.\n- Features REST API interaction, pixel art portraits, and detailed care mechanics.\n- Includes public graveyard for deceased Gustowls and multiple care actions.\n- Every response guides users with next steps; no need to memorize endpoints.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f852d92ee2f1b6c734985ebbd4316aa28c375125e346b64ccabc4292503c022"
+}

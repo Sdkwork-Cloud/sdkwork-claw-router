@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11601,
+  "uuid": "skill-clawhub-local-approvals",
+  "skillKey": "clawhub-local-approvals",
+  "name": "Local Approvals",
+  "summary": "Local approval system for managing agent permissions. Use CLI to approve/deny requests, view history, and manage auto-approved categories.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_approvals",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shaiss",
+      "features": [
+        "Local approval system for managing agent permissions",
+        "Use CLI to approve/deny requests, view history, and manage auto-approved categories."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-approvals@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/113060?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-approvals",
+      "url": "https://clawhub.ai/skills/local-approvals"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-approvals",
+    "url": "https://clawhub.ai/skills/local-approvals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-approvals-373986ac0e20d3fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-approvals@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-approvals-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eee20b825692e076121b2fbb53300902a3d1ef332fd0e9406c39dea26129fb91",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T13:45:38.525Z"
+}

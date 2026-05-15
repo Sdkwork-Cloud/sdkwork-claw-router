@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41652,
+  "uuid": "skill-clawhub-security-audit-assistant",
+  "skillKey": "clawhub-security-audit-assistant",
+  "name": "security-audit-assistant",
+  "summary": "Conducts lightweight security baseline audits on OpenClaw-managed servers, identifies high-risk SSH/firewall issues, and provides one-click fixes plus compli...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_audit_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HuoXinJiang",
+      "features": [
+        "Conducts lightweight security baseline audits on OpenClaw-managed servers, identifies high-risk."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-audit-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125207178?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-audit-assistant",
+      "url": "https://clawhub.ai/skills/security-audit-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-audit-assistant",
+    "url": "https://clawhub.ai/skills/security-audit-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-audit-assistant-0294ebe86f618b9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-audit-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-audit-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68e84ea51f392ab11d8b7175a078c00aa9c551f35f5f70320091292903928cc8",
+      "artifactSizeBytes": 2538
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T06:15:48.020Z"
+}

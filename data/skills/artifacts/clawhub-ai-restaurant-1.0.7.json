@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-restaurant@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_restaurant",
+  "skill": {
+    "id": 72172,
+    "skillKey": "clawhub-ai-restaurant",
+    "name": "智慧餐饮"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-restaurant",
+    "url": "https://clawhub.ai/skills/ai-restaurant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-restaurant-952addf127a5735c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智慧餐饮 - 通过自然语言交互实现餐厅查询、点餐、订桌、外卖、排队等全流程服务。支持飞书、微信、QQ 等即时通讯渠道，扫码即用，无需下载 App。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dawangda",
+      "userId": "s174ssjj6ccn15jgfmm235n6kd856q73",
+      "displayName": "dawangda",
+      "image": "https://avatars.githubusercontent.com/u/11683045?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1776675396633,
+      "changelog": "ai-restaurant 1.0.7\n\n- No file changes detected in this release.\n- Behavior and documentation remain identical to the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:219e7d88ba0cde28a149658b1578ac704f11a24fc558ea4c208aa74416a2d5d8"
+}

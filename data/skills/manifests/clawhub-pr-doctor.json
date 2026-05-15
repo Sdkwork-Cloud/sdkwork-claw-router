@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68756,
+  "uuid": "skill-clawhub-pr-doctor",
+  "skillKey": "clawhub-pr-doctor",
+  "name": "PR Doctor",
+  "summary": "PR全流程质量医生 — 自动化代码审查、测试分析、问题追踪和持续改进的完整流水线",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pr_doctor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zlszhonglongshen",
+      "features": [
+        "PR全流程质量医生 — 自动化代码审查、测试分析、问题追踪和持续改进的完整流水线"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pr-doctor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9023908?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pr-doctor",
+      "url": "https://clawhub.ai/skills/pr-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pr-doctor",
+    "url": "https://clawhub.ai/skills/pr-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pr-doctor-5e5fff62c567181d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pr-doctor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pr-doctor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13a4927da367d79fe7d2e5fd67ac826657f07576d579ef5426411f22e5f16fb5",
+      "artifactSizeBytes": 2245
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T19:42:41.264Z"
+}

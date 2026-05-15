@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72150,
+  "uuid": "skill-clawhub-stock-picker",
+  "skillKey": "clawhub-stock-picker",
+  "name": "选股专家",
+  "summary": "［何时使用］当用户需要选股时；当用户问\"这家公司值得投资吗\"时；当进行个股分析时；当需要 PEG 估值时",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_picker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lj22503",
+      "features": [
+        "［何时使用］当用户需要选股时；当用户问\"这家公司值得投资吗\"时；当进行个股分析时；当需要 PEG 估值时"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-picker@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170225356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-picker",
+      "url": "https://clawhub.ai/skills/stock-picker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-picker",
+    "url": "https://clawhub.ai/skills/stock-picker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-picker-d7a23b0d74e62a32.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-picker@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-picker-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76502919c7df755db859e4ad946cb7e8af370be1c59f7b35f989f9b3a34e87df",
+      "artifactSizeBytes": 1860
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T01:50:26.572Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66582,
+  "uuid": "skill-clawhub-skill-validator",
+  "skillKey": "clawhub-skill-validator",
+  "name": "Skill Validator",
+  "summary": "技能检验工具：基于ClawHub技能格式规范的验证工具，确保技能符合最新发布要求。自动检测格式问题，提供修复建议，与ClawHub规范同步更新。",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "渡鸦大人",
+      "features": [
+        "技能检验工具：基于ClawHub技能格式规范的验证工具，确保技能符合最新发布要求。自动检测格式问题，提供修复建议，与ClawHub规范同步更新。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-validator@1.0.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56372513?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-validator",
+      "url": "https://clawhub.ai/skills/skill-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-validator",
+    "url": "https://clawhub.ai/skills/skill-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-validator-26e99b634f6b8c50.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-validator@1.0.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-validator-1.0.11.json",
+      "version": "1.0.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d56ef1a82d5a3a62de60a4bdadd1c5c181ac2d147b7e598ea08ee3355953b0af",
+      "artifactSizeBytes": 2116
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T10:00:51.208Z"
+}

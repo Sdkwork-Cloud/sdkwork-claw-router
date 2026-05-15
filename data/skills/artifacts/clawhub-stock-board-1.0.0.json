@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-board@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_board",
+  "skill": {
+    "id": 73088,
+    "skillKey": "clawhub-stock-board",
+    "name": "股票打板筛选"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-board",
+    "url": "https://clawhub.ai/skills/stock-board",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-board-e2c0b787067d954b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "筛选A股市场中当日及昨日涨停和强势股票，并统计各板块涨停数量，支持创业板和科创板筛选。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrblackerx",
+      "userId": "publishers:mrblackerx",
+      "displayName": "MrBlackerX",
+      "image": "https://avatars.githubusercontent.com/u/46913471?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1783,
+      "installsAllTime": 12,
+      "installsCurrent": 11,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772343551520,
+      "changelog": "Initial release of stock-board skill for A股市场股票筛选:\n\n- 提供当日涨停板股票筛选（涨跌幅≥9.9%）\n- 支持筛选强势股（涨幅≥7%）\n- 可查看昨日涨停股今日表现\n- 提供各板块涨停数量统计\n- 支持创业板、科创板高涨幅筛选\n- 数据来自新浪财经实时行情接口",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fecbbc4a622e464b81a399c0166d09ce0ebd849d27a51dfe0f20d41c55c621eb"
+}

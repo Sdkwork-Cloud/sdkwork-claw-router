@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36137,
+  "uuid": "skill-clawhub-kuruma",
+  "skillKey": "clawhub-kuruma",
+  "name": "Kuruma",
+  "summary": "Provide taxi booking, trip details, fare estimates, and route planning for local Japanese rides via the Kuruma platform.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kuruma",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provide taxi booking, trip details, fare estimates, and route planning for local Japanese rides."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kuruma@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kuruma",
+      "url": "https://clawhub.ai/skills/kuruma"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kuruma",
+    "url": "https://clawhub.ai/skills/kuruma",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kuruma-5f599eccaddc8ba5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kuruma@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kuruma-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20f5eb57dcc29dbca06824cda7eb4aef2ee1dfcc51d35b6f5c055495ba394010",
+      "artifactSizeBytes": 2084
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T13:54:22.637Z"
+}

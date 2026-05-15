@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-agents-wizard@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_agents_wizard",
+  "skill": {
+    "id": 26152,
+    "skillKey": "clawhub-create-agents-wizard",
+    "name": "create-agents-wizard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-agents-wizard",
+    "url": "https://clawhub.ai/skills/create-agents-wizard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-agents-wizard-9b004adfc1170833.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guided creation of multiple OpenClaw agents and their workspace templates. Use when users ask to create agents in batch, configure new agents, or customize A..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zcxggmu",
+      "userId": "s17bmg064gdczyb9egtp7vgr4x83wk0c",
+      "displayName": "zcxGGmu",
+      "image": "https://avatars.githubusercontent.com/u/72263081?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 373,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773302248416,
+      "changelog": "- Added support for \"Fast mode\": users can choose to scaffold only core files (AGENTS.md, SOUL.md) instead of all six.\n- Clarified workflow steps and mode selection at the start; Standard mode (six files) is now default.\n- Improved file-by-file confirmation: allows partial scaffolding and lets users confirm or skip each file.\n- Enhanced conflict, error, and scope change handling with clearer user feedback and recovery steps.\n- Streamlined summary reporting with agent and file lists, plus optional CLI output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d10b3b8674262d376f04604cfe984c89ed0df765aa17fea24f0dfb384945aae"
+}

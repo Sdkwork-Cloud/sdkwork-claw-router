@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69664,
+  "uuid": "skill-clawhub-newsletter-init",
+  "skillKey": "clawhub-newsletter-init",
+  "name": "newsletter-init",
+  "summary": "个性化信息简报生成技能。支持按需生成一次性简报或定期推送，涵盖信息搜索、筛选、整理与输出全流程。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newsletter_init",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nick Wong",
+      "features": [
+        "个性化信息简报生成技能。支持按需生成一次性简报或定期推送，涵盖信息搜索、筛选、整理与输出全流程。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/newsletter-init@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55632678?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "newsletter-init",
+      "url": "https://clawhub.ai/skills/newsletter-init"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newsletter-init",
+    "url": "https://clawhub.ai/skills/newsletter-init",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newsletter-init-09757d3dc9f8ef53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/newsletter-init@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-newsletter-init-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31d18b7c035390a6c454e2fc2fa1331171b192a0187598882c1ed7c5328bed5e",
+      "artifactSizeBytes": 2521
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:49:50.978Z"
+}

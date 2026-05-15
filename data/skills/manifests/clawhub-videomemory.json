@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32946,
+  "uuid": "skill-clawhub-videomemory",
+  "skillKey": "clawhub-videomemory",
+  "name": "VideoMemory",
+  "summary": "Start VideoMemory from OpenClaw and return the local UI link.",
+  "version": "0.1.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.videomemory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Clamepending",
+      "features": [
+        "Start VideoMemory from OpenClaw and return the local UI link."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/videomemory@0.1.15",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57735073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "videomemory",
+      "url": "https://clawhub.ai/skills/videomemory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "videomemory",
+    "url": "https://clawhub.ai/skills/videomemory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/videomemory-b8757481de61feba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/videomemory@0.1.15",
+      "artifactUrl": "data/skills/artifacts/clawhub-videomemory-0.1.15.json",
+      "version": "0.1.15",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df2c261d6ae77affef954cd1d79e65d3ef41e06d35ada8f22b7f6ed80ba64b34",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:47:41.748Z"
+}

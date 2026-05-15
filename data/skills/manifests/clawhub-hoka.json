@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49735,
+  "uuid": "skill-clawhub-hoka",
+  "skillKey": "clawhub-hoka",
+  "name": "Hoka",
+  "summary": "HOKA is a running shoe brand founded in 2009 known for its maximalist thick-soled design, rapid growth under Deckers, and strong trail running roots.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hoka",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "HOKA is a running shoe brand founded in 2009 known for its maximalist thick-soled design, rapid."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hoka@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hoka",
+      "url": "https://clawhub.ai/skills/hoka"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hoka",
+    "url": "https://clawhub.ai/skills/hoka",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hoka-1762ba3054758540.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hoka@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hoka-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51664ceaf03f9964b75160ffd7cdba8daa988ef2f326bdf79c675438d4d13c7c",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T21:37:38.902Z"
+}

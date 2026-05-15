@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/excel-batch-processor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excel_batch_processor",
+  "skill": {
+    "id": 24337,
+    "skillKey": "clawhub-excel-batch-processor",
+    "name": "Excel Batch Processor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excel-batch-processor",
+    "url": "https://clawhub.ai/skills/excel-batch-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excel-batch-processor-9c77940edb56a582.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate batch Excel tasks including merging, splitting, format conversion, data cleaning, deduplication, and bulk formula filling with wildcard support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bingze00000",
+      "userId": "s171p56g2sqsp1dnezw0ar4w1183swz6",
+      "displayName": "bingze00000",
+      "image": "https://avatars.githubusercontent.com/u/268100670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774690189975,
+      "changelog": "Initial release of Excel Batch Processor.\n\n- Automates batch processing of Excel files, including merging, splitting, format conversion, data cleansing, and bulk editing.\n- Supports merging multiple files, splitting large files, converting between Excel and CSV, bulk format changes, deduplication, and batch formula filling.\n- Command-driven usage for each function.\n- Handles batch operations with wildcard support, preserves formulas and formats, optimizes for large files, and auto-skips errors.\n- Outputs in Excel (.xlsx) and CSV (.csv) formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df3dc8a88538c0c59483ce29db36d8a9fa62d7913f4624a893ad041ee6fdb83f"
+}

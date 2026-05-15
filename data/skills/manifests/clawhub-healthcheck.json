@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8297,
+  "uuid": "skill-clawhub-healthcheck",
+  "skillKey": "clawhub-healthcheck",
+  "name": "healthcheck",
+  "summary": "Track water and sleep with JSON file storage",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.healthcheck",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stellarhold170NT",
+      "features": [
+        "Track water and sleep with JSON file storage"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/healthcheck@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99376592?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "healthcheck",
+      "url": "https://clawhub.ai/skills/healthcheck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "healthcheck",
+    "url": "https://clawhub.ai/skills/healthcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/healthcheck-b1d5226fdc3d7e02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/healthcheck@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-healthcheck-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c1cc84a0ee5ce7e8d8bb810d11cb4f9dae2e818a573858475ec02744bd9e936",
+      "artifactSizeBytes": 2233
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T16:56:47.932Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-survey-corpus@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_survey_corpus",
+  "skill": {
+    "id": 56554,
+    "skillKey": "clawhub-agent-survey-corpus",
+    "name": "Agent Survey Corpus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-survey-corpus",
+    "url": "https://clawhub.ai/skills/agent-survey-corpus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-survey-corpus-089ccadf8123c464.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download a small corpus of open-access arXiv survey/review PDFs about LLM agents and extract text for style learning. **Trigger**: agent survey corpus, ref c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "willoscar",
+      "userId": "publishers:willoscar",
+      "displayName": "WILLOSCAR",
+      "image": "https://avatars.githubusercontent.com/u/63443351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 276,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773911663208,
+      "changelog": "- Initial release of agent-survey-corpus skill for downloading and extracting text from arXiv survey/review PDFs about LLM agents.\n- Provides a toolkit to build a local reference library for analyzing real survey structures and writing styles.\n- Supports customizable workspace, page limits, and safe download (arXiv-only) with guardrails to keep large files outside git.\n- Includes clear workflow and CLI script for managing PDFs and extracting text for study and style learning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f86c05d208f1c750f5aa488db197c10800f2f6c2b660d605ea8b51a4fec1b124"
+}

@@ -5,7 +5,6 @@ import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
 import { AccountService, AccountStats } from 'sdkwork-claw-router-console-account';
 import { RechargeService, RechargePackage } from './rechargeService';
 
-const EXCHANGE_RATE = 10;
 const readOnlyRechargeHistory =
   'Recharge records are available from the billing history contract; this page only creates recharge orders.';
 
@@ -83,7 +82,7 @@ export function RechargeView() {
   const currentSelectionAmount = selectedPackage?.rmb || normalizeCustomAmount(customAmount);
   const currentSelectionCents = moneyCents(currentSelectionAmount);
   const bonus = selectedPackage?.bonus || 0;
-  const creditsReceived = pointsForAmount(currentSelectionAmount) + bonus;
+  const creditsReceived = selectedPackage?.points;
   const loadError = packagesLoadError || accountLoadError;
 
   const handleCustomChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -164,8 +163,8 @@ export function RechargeView() {
                 </div>
               </div>
               <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex flex-col items-end">
-                 <p className="text-xs text-white/70 mb-1">当前充值比例</p>
-                 <div className="text-lg font-bold">1 RMB = {EXCHANGE_RATE} Credits</div>
+                 <p className="text-xs text-white/70 mb-1">充值到账规则</p>
+                 <div className="text-lg font-bold">以订单确认为准</div>
               </div>
             </div>
             )}
@@ -219,7 +218,7 @@ export function RechargeView() {
                   )}
                   <span className="text-xl font-bold text-slate-800 dark:text-white">¥{pkg.rmb}</span>
                   <span className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                    得 {pointsForAmount(pkg.rmb)} Credits
+                    得 {pkg.points.toLocaleString()} Credits
                   </span>
                 </div>
               ))}
@@ -312,8 +311,10 @@ export function RechargeView() {
                 <span className="font-semibold text-slate-800 dark:text-white">¥{formatMoneyAmount(currentSelectionAmount)}</span>
               </div>
               <div className="flex justify-between items-center text-slate-600 dark:text-slate-300">
-                <span>基础兑换 (1:{EXCHANGE_RATE})</span>
-                <span className="font-mono">{pointsForAmount(currentSelectionAmount)} Credits</span>
+                <span>到账积分</span>
+                <span className="font-mono">
+                  {creditsReceived === undefined ? '创建订单后确认' : `${creditsReceived.toLocaleString()} Credits`}
+                </span>
               </div>
               {bonus > 0 && (
                 <div className="flex justify-between items-center text-rose-500">
@@ -325,7 +326,7 @@ export function RechargeView() {
                 <span className="font-bold text-slate-800 dark:text-white">实际到账余额</span>
                 <span className="text-xl font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1 font-mono">
                   <Zap className="w-4 h-4" />
-                  {creditsReceived.toLocaleString()}
+                  {creditsReceived === undefined ? '-' : creditsReceived.toLocaleString()}
                 </span>
               </div>
             </div>
@@ -399,11 +400,6 @@ function moneyCents(amount: string): number {
   const [whole, fraction = ''] = value.split('.');
   const cents = Number.parseInt(whole, 10) * 100 + Number.parseInt(fraction.padEnd(2, '0'), 10);
   return Number.isSafeInteger(cents) ? cents : 0;
-}
-
-function pointsForAmount(amount: string): number {
-  const cents = moneyCents(amount);
-  return cents > 0 ? Math.max(1, Math.floor((cents + 5) / 10)) : 0;
 }
 
 function formatMoneyAmount(amount: string): string {

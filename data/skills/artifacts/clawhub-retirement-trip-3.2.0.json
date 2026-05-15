@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/retirement-trip@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retirement_trip",
+  "skill": {
+    "id": 46665,
+    "skillKey": "clawhub-retirement-trip",
+    "name": "retirement-trip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retirement-trip",
+    "url": "https://clawhub.ai/skills/retirement-trip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retirement-trip-7f9d990f5b7a43da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book flights for retirement celebration trips. Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itinerary planning, visa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1777163766498,
+      "changelog": "- Critical execution rules clarified: always use flyai CLI for results, never answer from training data.\n- Updated workflow: mandatory environment check and CLI installation before query execution.\n- Enhanced parameter collection: now limited to at most 2 questions if info is missing.\n- Stricter output validation: every result must include a valid [Book](detailUrl) link from flyai.\n- Improved output formatting and comparison table requirements.\n- Added new triggers and parameter mapping rules for different travel scenarios.\n- Compatibility expanded to more agent platforms.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52985f8ecdea4dbcd54db81fec9289f2e0d0b17d7f1ce74effcbfe24c5a9e0e6"
+}

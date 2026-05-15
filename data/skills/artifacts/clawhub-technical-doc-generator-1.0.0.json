@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/technical-doc-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.technical_doc_generator",
+  "skill": {
+    "id": 15885,
+    "skillKey": "clawhub-technical-doc-generator",
+    "name": "Technical Doc Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "technical-doc-generator",
+    "url": "https://clawhub.ai/skills/technical-doc-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/technical-doc-generator-e6a7f6755853c7ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional technical documentation from codebases — API docs, READMEs, architecture diagrams, changelogs, and onboarding guides. Use when writing docs, creating API documentation, or delivering documentation projects."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seanwyngaard",
+      "userId": "s17cbgx0qmxw2p9k4mvca4z40n83mae0",
+      "displayName": "Sean Wyngaard",
+      "image": "https://avatars.githubusercontent.com/u/187758643?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1312,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770986113831,
+      "changelog": "Initial release of technical-doc-generator: generate complete technical documentation from codebases.\n\n- Supports automated creation of API docs, READMEs, architecture overviews, changelogs, and onboarding guides.\n- Detects project structure, frameworks, and technologies using codebase scanning.\n- Outputs documentation files in Markdown, OpenAPI YAML, and Mermaid diagrams.\n- Organizes generated docs in an output directory for easy client delivery.\n- Offers both targeted (single doc-type) and full-package documentation generation options.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ceed92ab506555b3b000b87d807687dff43009f1f2b25368fc9a37f98f847bb2"
+}

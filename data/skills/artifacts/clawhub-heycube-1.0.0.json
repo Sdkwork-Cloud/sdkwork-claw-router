@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/heycube@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.heycube",
+  "skill": {
+    "id": 60377,
+    "skillKey": "clawhub-heycube",
+    "name": "HeyCube AI Memory Butler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "heycube",
+    "url": "https://clawhub.ai/skills/heycube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/heycube-b5685564833067e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "引导安装 HeyCube 黑方体个人档案管理服务到 OpenClaw。分步配置：设置环境变量、安装 SQLite 工具、安装口令触发 Skill。 用户主动说\"安装黑方体\"、\"配置 HeyCube\"、\"heycube setup\"时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mmmmmmtl",
+      "userId": "publishers:mmmmmmtl",
+      "displayName": "MMMMMMTL",
+      "image": "https://avatars.githubusercontent.com/u/191364583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 333,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773827341583,
+      "changelog": "HeyCube 黑方体，你的 AI 记忆管家 —— 为 AI Agent 提供无限的结构化记忆。\n• 无限记忆\n• 结构化存储\n• 本地数据掌控\n• 隐私隔离\n• 按需加载\n让 AI 结构化地理解一个完整的你。\n\nHeyCube 黑方体安装引导功能上线。\n- 新 skill heycube-setup 实现分步引导 HeyCube 黑方体个人档案管理服务安装流程\n- 包含 API Key 环境变量设置、SQLite 工具部署与初始化、相关 skill 文件复制、TOOLS.md 配置补全\n- 每步需用户确认后执行，保证按需配置，无自动跳步\n- 增加常用语音／口令触发安装支持\n- 配置完成后输出详细指引与常用操作方法",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3888e38482894c2ffac74f5c0e717644e24aef1ce0a30bbaaba2d3b572824ed"
+}

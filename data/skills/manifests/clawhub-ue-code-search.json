@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23597,
+  "uuid": "skill-clawhub-ue-code-search",
+  "skillKey": "clawhub-ue-code-search",
+  "name": "Ue Code Search",
+  "summary": "Search Unreal Engine C++ and Blueprint code. Use when: (1) Finding function definitions, (2) Searching for class names, (3) Finding UMG widget references, (4...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ue_code_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vincent",
+      "features": [
+        "Search Unreal Engine C++ and Blueprint code",
+        "Use when: (1) Finding function definitions, (2) Searching for class names, (3) Finding UMG widg."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ue-code-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8462180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ue-code-search",
+      "url": "https://clawhub.ai/skills/ue-code-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ue-code-search",
+    "url": "https://clawhub.ai/skills/ue-code-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ue-code-search-a2fd534d86cfdcc7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ue-code-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ue-code-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b94368a4b4f5bc2b194702720265e224e6ed66798d47ead629aef296902c419",
+      "artifactSizeBytes": 2422
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T07:05:54.465Z"
+}

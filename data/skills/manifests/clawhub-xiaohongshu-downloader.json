@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57718,
+  "uuid": "skill-clawhub-xiaohongshu-downloader",
+  "skillKey": "clawhub-xiaohongshu-downloader",
+  "name": "小红书视频下载器",
+  "summary": "Download and summarize Xiaohongshu (小红书/RedNote) videos. Produces a full resource pack with video, audio, subtitles, transcript, and AI summary. This skill s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_downloader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Himly",
+      "features": [
+        "Download and summarize Xiaohongshu (小红书/RedNote) videos",
+        "Produces a full resource pack with video, audio, subtitles, transcript, and AI summary",
+        "This skill s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-downloader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/80809459?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-downloader",
+      "url": "https://clawhub.ai/skills/xiaohongshu-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-downloader",
+    "url": "https://clawhub.ai/skills/xiaohongshu-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-downloader-be61948a5e032adf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-downloader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-downloader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f46cdb671476cd960a4c7b76a651a66e38bef4cc7e53123176ccceb451750b3",
+      "artifactSizeBytes": 2573
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T00:46:55.618Z"
+}

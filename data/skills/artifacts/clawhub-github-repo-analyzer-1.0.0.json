@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-repo-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_repo_analyzer",
+  "skill": {
+    "id": 22452,
+    "skillKey": "clawhub-github-repo-analyzer",
+    "name": "GitHub Repo Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-repo-analyzer",
+    "url": "https://clawhub.ai/skills/github-repo-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-repo-analyzer-697a1bb691598690.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze GitHub repositories to provide statistics, contributor activity, programming languages, and issue and PR trends."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dagangtj",
+      "userId": "publishers:dagangtj",
+      "displayName": "dagangtj",
+      "image": "https://avatars.githubusercontent.com/u/65108318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 452,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773695523194,
+      "changelog": "Initial release of GitHub Repo Analyzer Skill:\n\n- Analyze GitHub repositories for activity, contributor, and tech stack insights\n- Fetch repository statistics and track issue/PR trends\n- Detect programming languages used in repositories\n- Supports commands for repo analysis and language detection\n- Available via $2/month subscription",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5ec493ffb2450b534a4f0bb7123c5904b2547b6ef8676763e333e46949af5bc"
+}

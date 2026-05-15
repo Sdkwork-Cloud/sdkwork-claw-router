@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/link-digest@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.link_digest",
+  "skill": {
+    "id": 18434,
+    "skillKey": "clawhub-link-digest",
+    "name": "Link Digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "link-digest",
+    "url": "https://clawhub.ai/skills/link-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/link-digest-f8fc2a9981229286.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Process links and content shared in a designated 'interesting findings' Discord channel. Use when: (1) a URL or article is shared and needs analysis, (2) som..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zerone0x",
+      "userId": "publishers:zerone0x",
+      "displayName": "zerone0x",
+      "image": "https://avatars.githubusercontent.com/u/39543393?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 681,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771994171044,
+      "changelog": "Security hardening: URL allowlist, SSRF block, prompt injection guard, restrict KB writes to synthesized content only",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:483f130c0c7e25f6b143e9bded35de20ff9872e12ddf2672b7726532e222d24d"
+}

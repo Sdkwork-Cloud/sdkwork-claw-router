@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/otterline@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.otterline",
+  "skill": {
+    "id": 20544,
+    "skillKey": "clawhub-otterline",
+    "name": "Otterline Sports Predictions Professional | NBA & NHL AI Picks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "otterline",
+    "url": "https://clawhub.ai/skills/otterline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/otterline-8b2f9ce7cf6bf66b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Free Sports Betting Predictions and Picks for NBA and NHL: high win rate daily moneyline winners from Otterline's AI consensus model. Confidence-tiered (Elite -> Strong). No API key needed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chrislyonshfx",
+      "userId": "publishers:chrislyonshfx",
+      "displayName": "ChrisLyonsHFX",
+      "image": "https://avatars.githubusercontent.com/u/104029286?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1124,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1770995312177,
+      "changelog": "Add keyword anchors for Sports Betting / Predictions / Picks / NBA / NHL to improve search discovery.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1710c19be06c12e4f4cbc64e75fe16679d2e4c7ae324f20725de7067ca4c85a6"
+}

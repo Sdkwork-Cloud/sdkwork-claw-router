@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68710,
+  "uuid": "skill-clawhub-fortune-luck",
+  "skillKey": "clawhub-fortune-luck",
+  "name": "运势计算 (Fortune Luck)",
+  "summary": "根据生日和历法计算每日爱情、事业、财运、健康运势，提供幸运元素和实用建议。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fortune_luck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zafer Liu",
+      "features": [
+        "根据生日和历法计算每日爱情、事业、财运、健康运势，提供幸运元素和实用建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fortune-luck@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210259242?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fortune-luck",
+      "url": "https://clawhub.ai/skills/fortune-luck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fortune-luck",
+    "url": "https://clawhub.ai/skills/fortune-luck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fortune-luck-72685a352918e2e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fortune-luck@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fortune-luck-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:069458186d874e562cfe8b1021c47a3309cacfbe92cc57a6ce089403d6a69f1c",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T16:14:58.480Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vbrokers-trading@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vbrokers_trading",
+  "skill": {
+    "id": 57081,
+    "skillKey": "clawhub-vbrokers-trading",
+    "name": "VBrokers Trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vbrokers-trading",
+    "url": "https://clawhub.ai/skills/vbrokers-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vbrokers-trading-008c462f1ece04e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "VBrokers (华盛通 VCL HK) trading automation via OpenAPI Gateway running on localhost port 11111. Use when: setting up VBrokers or 华盛通 account access, authentica..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lcy360",
+      "userId": "s17axhc8kn3k7nxz69t2sr37bh83kf31",
+      "displayName": "lcy360",
+      "image": "https://avatars.githubusercontent.com/u/9151592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 427,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772796936819,
+      "changelog": "VBrokers (华盛通 VCL HK) OpenAPI trading automation. Real-time quotes, order management, stop-loss/take-profit, session-aware price polling for US/HK/A stocks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:404f9d8f7231111b2cd04f5cd8e2e6cc3fca6fc3c60c88ebf97b929d21e8334b"
+}

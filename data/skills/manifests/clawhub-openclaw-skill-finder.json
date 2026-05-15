@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58117,
+  "uuid": "skill-clawhub-openclaw-skill-finder",
+  "skillKey": "clawhub-openclaw-skill-finder",
+  "name": "skill finder",
+  "summary": "Search, browse, and discover OpenClaw skills from ClawHub platform with advanced filtering | 搜索、浏览、发现 ClawHub 平台上的 OpenClaw 技能",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Justin Liu",
+      "features": [
+        "Search, browse, and discover OpenClaw skills from ClawHub platform with advanced filtering | 搜索."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-finder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34432727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-finder",
+      "url": "https://clawhub.ai/skills/openclaw-skill-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-finder",
+    "url": "https://clawhub.ai/skills/openclaw-skill-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-finder-712e69b6ddafcf14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-finder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-finder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffdbeaf7f8ac82ea529a5698ab38a42ff998dd741bbd0f6d217fc76541d8261a",
+      "artifactSizeBytes": 2616
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T09:23:11.961Z"
+}

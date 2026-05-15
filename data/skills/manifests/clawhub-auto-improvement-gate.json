@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60048,
+  "uuid": "skill-clawhub-auto-improvement-gate",
+  "skillKey": "clawhub-auto-improvement-gate",
+  "name": "Improvement Gate",
+  "summary": "当执行完变更需要验证是否应保留、候选被标记 pending 需要人工审批、或想查看待审队列时使用。7 层机械门禁: Schema→Compile→Lint→Regression→Review→Doubt→HumanReview，任一 required 层失败即拒绝。不用于打分（用 improvement-disc...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_improvement_gate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "_silhouette",
+      "features": [
+        "当执行完变更需要验证是否应保留、候选被标记 pending 需要人工审批、或想查看待审队列时使用。7 层机械门禁: Schema→Compile→Lint→Regression→Review."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-improvement-gate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22570800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-improvement-gate",
+      "url": "https://clawhub.ai/skills/auto-improvement-gate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-improvement-gate",
+    "url": "https://clawhub.ai/skills/auto-improvement-gate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-improvement-gate-5dc3a28b12700be6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-improvement-gate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-improvement-gate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96a16ed4193d672b25c2bb8ad465b76249579a8e31d9cdcb2cd4bc6c585282ac",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T17:18:45.975Z"
+}

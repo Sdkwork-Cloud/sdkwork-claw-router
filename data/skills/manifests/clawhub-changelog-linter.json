@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37703,
+  "uuid": "skill-clawhub-changelog-linter",
+  "skillKey": "clawhub-changelog-linter",
+  "name": "Changelog Linter",
+  "summary": "Validate CHANGELOG.md files against the Keep a Changelog format (keepachangelog.com). Checks version ordering, date formats, section types, link references,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.changelog_linter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Validate CHANGELOG.md files against the Keep a Changelog format (keepachangelog.com)",
+        "Checks version ordering, date formats, section types, link references,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/changelog-linter@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "changelog-linter",
+      "url": "https://clawhub.ai/skills/changelog-linter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "changelog-linter",
+    "url": "https://clawhub.ai/skills/changelog-linter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/changelog-linter-4fc17f7a11ae7035.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/changelog-linter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-changelog-linter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb5a1fec073d7416d412c3ce8fc63a35996cc7e07f9bb7eb03b6c1891239f405",
+      "artifactSizeBytes": 2056
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:00:19.679Z"
+}

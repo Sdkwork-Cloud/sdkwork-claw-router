@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geo-analyzer@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_analyzer",
+  "skill": {
+    "id": 52059,
+    "skillKey": "clawhub-geo-analyzer",
+    "name": "GEO Performance Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-analyzer",
+    "url": "https://clawhub.ai/skills/geo-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-analyzer-ee271302585c3d7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes a brand’s presence and sentiment in LLM-generated industry recommendations, extracting mention context and competitor comparisons."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ljseeking",
+      "userId": "s172qdnna7e9rmecem8tckdtd1845fvv",
+      "displayName": "LJseeking",
+      "image": "https://avatars.githubusercontent.com/u/84867345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1778173200960,
+      "changelog": "- Added manifest.json for skill registration and metadata configuration.\n- No changes to core skill logic or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db6649eb48b490102a71074c4fa5a44995786829aca50e7c5cbf8d2a972b614f"
+}

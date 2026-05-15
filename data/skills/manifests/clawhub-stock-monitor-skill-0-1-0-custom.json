@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68243,
+  "uuid": "skill-clawhub-stock-monitor-skill-0-1-0-custom",
+  "skillKey": "clawhub-stock-monitor-skill-0-1-0-custom",
+  "name": "Stock Monitor Skill 0.1.0",
+  "summary": "全功能智能股票监控预警系统。支持成本百分比、均线金叉死叉、RSI超买超卖、成交量异动、跳空缺口、动态止盈等7大预警规则。符合中国投资者习惯（红涨绿跌）。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_monitor_skill_0_1_0_custom",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiden-fan",
+      "features": [
+        "全功能智能股票监控预警系统。支持成本百分比、均线金叉死叉、RSI超买超卖、成交量异动、跳空缺口、动态止盈等7大预警规则。符合中国投资者习惯（红涨绿跌）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-monitor-skill-0-1-0-custom@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54146932?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-monitor-skill-0-1-0-custom",
+      "url": "https://clawhub.ai/skills/stock-monitor-skill-0-1-0-custom"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-monitor-skill-0-1-0-custom",
+    "url": "https://clawhub.ai/skills/stock-monitor-skill-0-1-0-custom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-monitor-skill-0-1-0-custom-557a9de16fda2620.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-monitor-skill-0-1-0-custom@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-monitor-skill-0-1-0-custom-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f1601ddb52aacd6c8ea111a3eef24b64e3bf0ac715daa45f772ab93917a29ec",
+      "artifactSizeBytes": 2518
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:43:28.956Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/portfolio-risk-manager@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.portfolio_risk_manager",
+  "skill": {
+    "id": 58071,
+    "skillKey": "clawhub-portfolio-risk-manager",
+    "name": "Portfolio Risk Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "portfolio-risk-manager",
+    "url": "https://clawhub.ai/skills/portfolio-risk-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/portfolio-risk-manager-642824f9bc9ae569.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Thiết lập kỷ luật quản trị danh mục (IPS mini) + position sizing theo risk budgeting cho nhà đầu tư cổ phiếu (không margin), biến khuyến nghị thành “có điều..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ndtchan",
+      "userId": "s172d4r9d0h6bvvd3mpq517yrn861np5",
+      "displayName": "Nguyễn Đức Thành",
+      "image": "https://avatars.githubusercontent.com/u/35481632?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2072,
+      "installsAllTime": 22,
+      "installsCurrent": 19,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771982293654,
+      "changelog": "- Removed the \"user-invocable: true\" field from SKILL.md for improved configuration.\n- No user-facing functionality or behavioral changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:73ad1a2dc611e5cec1280a1802b17a127ad649249f1f4bc4b71dbf3359cdb39e"
+}

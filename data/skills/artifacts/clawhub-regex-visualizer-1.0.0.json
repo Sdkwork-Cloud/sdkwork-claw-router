@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/regex-visualizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.regex_visualizer",
+  "skill": {
+    "id": 16010,
+    "skillKey": "clawhub-regex-visualizer",
+    "name": "RegexVisualizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "regex-visualizer",
+    "url": "https://clawhub.ai/skills/regex-visualizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/regex-visualizer-0fb201b8fa4800cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Render Regulex-style railroad diagrams for a JavaScript regular expression and export the exact same SVG/PNG as the Regulex-Plus web UI (docs/index.html) \"Ex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pipedream941",
+      "userId": "publishers:pipedream941",
+      "displayName": "Zhong Siyao",
+      "image": "https://avatars.githubusercontent.com/u/50080479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 739,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772008173017,
+      "changelog": "Initial release — export Regulex-style railroad diagrams to PNG and SVG by reusing the original Regulex-Plus web UI renderer.\n\n- Generates diagrams from JavaScript regexes, supporting flags i/m/g.\n- Outputs match the Regulex-Plus web UI's \"Export Image\" feature exactly.\n- Command-line interface enables export to SVG and/or PNG.\n- Surfaces UI error messages for invalid regexes.\n- No custom rendering; all output is from the embedded Regulex-Plus UI.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4848fcd20b11165e785732559862f8c61bcca2b97277de6c75ca2e13fc8335f9"
+}

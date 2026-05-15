@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10686,
+  "uuid": "skill-clawhub-timesheet",
+  "skillKey": "clawhub-timesheet",
+  "name": "Timesheet - Time Tracking",
+  "summary": "Track time, manage projects and tasks using timesheet.io CLI",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.timesheet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Florian",
+      "features": [
+        "Track time, manage projects and tasks using timesheet.io CLI"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/timesheet@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/555789?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "timesheet",
+      "url": "https://clawhub.ai/skills/timesheet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "timesheet",
+    "url": "https://clawhub.ai/skills/timesheet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/timesheet-96dd98d8b3acd3ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/timesheet@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-timesheet-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f3e4dcffcf3b8629ea793de86f2c6bfd641c481ac03c20db8727b2ef2e832e7",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T02:07:24.554Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21712,
+  "uuid": "skill-clawhub-music-assistant",
+  "skillKey": "clawhub-music-assistant",
+  "name": "Music Assistant",
+  "summary": "Control Music Assistant (Home Assistant music server) - playback, volume, queue management, and library search. Use when user wants to play/pause music, skip...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rodrigo",
+      "features": [
+        "Control Music Assistant (Home Assistant music server)",
+        "playback, volume, queue management, and library search",
+        "Use when user wants to play/pause music, skip..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/music-assistant@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4370989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "music-assistant",
+      "url": "https://clawhub.ai/skills/music-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-assistant",
+    "url": "https://clawhub.ai/skills/music-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-assistant-b11ff727600e453b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/music-assistant@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-music-assistant-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a638113c892909ab1d064e8183a9e927ec3080a06917e931c5c875a5c377001",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T18:49:32.474Z"
+}

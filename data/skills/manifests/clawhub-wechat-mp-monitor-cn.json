@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63248,
+  "uuid": "skill-clawhub-wechat-mp-monitor-cn",
+  "skillKey": "clawhub-wechat-mp-monitor-cn",
+  "name": "Wechat Mp Monitor",
+  "summary": "微信公众号监控 - 文章阅读量追踪、分享数统计、定时日报",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_mp_monitor_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linzmin",
+      "features": [
+        "文章阅读量追踪、分享数统计、定时日报"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-mp-monitor-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14884257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-mp-monitor-cn",
+      "url": "https://clawhub.ai/skills/wechat-mp-monitor-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-mp-monitor-cn",
+    "url": "https://clawhub.ai/skills/wechat-mp-monitor-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-mp-monitor-cn-4a99ee5354816fc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-mp-monitor-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-mp-monitor-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73cf9de81c6ca20fe858edc6aa9df9ae8b1b39718d4b15eb947d1026fc0d0532",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:02:50.736Z"
+}

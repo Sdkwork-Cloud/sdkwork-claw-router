@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62656,
+  "uuid": "skill-clawhub-open-health-link",
+  "skillKey": "clawhub-open-health-link",
+  "name": "open-health-link",
+  "summary": "Open Health Link 健康数据授权与连接助手。当前接入倍轻松（breo）Scalp5 设备数据， 可查看头皮检测报告、头皮护理方案，或绑定/解绑倍轻松（breo）账号。 仅当用户明确提出“账号绑定/解绑”“报告查询”“护理方案查询” 或明确提到 Open Health Link、breo Scalp5...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_health_link",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "breo",
+      "features": [
+        "Open Health Link 健康数据授权与连接助手。当前接入倍轻松（breo）Scalp5 设备数据， 可查看头皮检测报告、头皮护理方案，或绑定/解绑倍轻松（breo）账号。 仅当用户."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-health-link@1.0.4",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/open-health-link/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-health-link",
+      "url": "https://clawhub.ai/skills/open-health-link"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-health-link",
+    "url": "https://clawhub.ai/skills/open-health-link",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-health-link-f98a1c63443d1b22.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-health-link@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-health-link-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d11e293c85ed65ac3b7ac0bb55fd0e8e57164777c13fe347b15d0d194a1ea864",
+      "artifactSizeBytes": 2664
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T08:14:25.964Z"
+}

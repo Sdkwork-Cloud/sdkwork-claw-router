@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50252,
+  "uuid": "skill-clawhub-okx-trade",
+  "skillKey": "clawhub-okx-trade",
+  "name": "OKX Trade Kit",
+  "summary": "Setup, install, and use OKX Agent Trade Kit — the official OKX toolkit for AI-powered trading. Use this skill whenever the user mentions: OKX trading, agent...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okx_trade",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chingchiu169",
+      "features": [
+        "Setup, install, and use OKX Agent Trade Kit — the official OKX toolkit for AI-powered trading",
+        "Use this skill whenever the user mentions: OKX trading, agent..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/okx-trade@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1352835?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "okx-trade",
+      "url": "https://clawhub.ai/skills/okx-trade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okx-trade",
+    "url": "https://clawhub.ai/skills/okx-trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okx-trade-7a85b1a66597a304.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/okx-trade@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-okx-trade-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f3c21a63bdfd554eef5c04a9f9004631db72c3f45388244ee5069cd5fbde74a",
+      "artifactSizeBytes": 2378
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T06:29:56.783Z"
+}

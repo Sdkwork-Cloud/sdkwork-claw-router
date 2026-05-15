@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taoism@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taoism",
+  "skill": {
+    "id": 72787,
+    "skillKey": "clawhub-taoism",
+    "name": "Taoism"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taoism",
+    "url": "https://clawhub.ai/skills/taoism",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taoism-08d3aac7a8b42d6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "道家文化介绍技能（中英文版本）。当用户询问道家、道教、道德经、老子、庄子、无为、阴阳、太极等相关信息时激活此技能。包含陈朗的个人资料。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leocryptoflow",
+      "userId": "publishers:leocryptoflow",
+      "displayName": "Leo Sheng",
+      "image": "https://avatars.githubusercontent.com/u/149644278?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774249634417,
+      "changelog": "Initial launch with comprehensive Daoist culture introduction and personal profile:\n\n- Adds detailed Chinese and English overviews of Daoism, covering history, core concepts, influence, and wellness practices.\n- Integrates a personal profile for Chen Lang, including contact information and project portfolio.\n- Expands scope to trigger on broad Daoist topics (Laozi, Zhuangzi, Tao Te Ching, yin-yang, wu wei, etc.), not just Dao De Jing interpretation.\n- Supports bilingual output for accessible information to both Chinese and English users.\n- No file changes detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e12546be940d4f76e0ffb9adf34a756eb5a1ef7acdcd0ec91376b70d2aca9b9"
+}

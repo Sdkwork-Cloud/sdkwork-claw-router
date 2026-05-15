@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9776,
+  "uuid": "skill-clawhub-memory-pipeline",
+  "skillKey": "clawhub-memory-pipeline",
+  "name": "Memory Pipeline",
+  "summary": "Complete agent memory + performance system. Extracts structured facts, builds knowledge graphs, generates briefings, and enforces execution discipline via pre-game routines, tool policies, result compression, and after-action reviews. Incl.",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joe-rlo",
+      "features": [
+        "Complete agent memory + performance system",
+        "Extracts structured facts, builds knowledge graphs, generates briefings, and enforces execution.",
+        "Includes external knowledge ingestion (ChatGPT exports, etc.) into searchable memory",
+        "Use when working on memory management, briefing generation, knowledge consolidation, external d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-pipeline@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103778941?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-pipeline",
+      "url": "https://clawhub.ai/skills/memory-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-pipeline",
+    "url": "https://clawhub.ai/skills/memory-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-pipeline-62e89ec344e2cb85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-pipeline@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-pipeline-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0489eb54f27bdb43892ddc7ad11e96722b8f22219c96dea966d92e9e809aab7",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T12:52:29.512Z"
+}

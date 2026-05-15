@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/md2mindmap@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md2mindmap",
+  "skill": {
+    "id": 60355,
+    "skillKey": "clawhub-md2mindmap",
+    "name": "Md2mindmap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md2mindmap",
+    "url": "https://clawhub.ai/skills/md2mindmap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md2mindmap-8c48d18f5acd90e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Markdown 转思维导图工具 - 一键生成可交互思维导图，支持 HTML + PDF 输出！"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sukimgit",
+      "userId": "s177cbxmzhapak8vf7dcae209d83hw3r",
+      "displayName": "sukimgit",
+      "image": "https://avatars.githubusercontent.com/u/131958832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774588197924,
+      "changelog": "**v1.1.0 brings table support to md2mindmap.**\n\n- 新增对 Markdown 表格的解析与支持\n- 表格内容可自动转换为思维导图节点\n- 支持多列表格内容的层级化展示\n- 更新文档并加入表格相关标签与说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf32268bfe7e4fb55711caa2d8e144f192f186be1eb019b2a408a76db78bc4f8"
+}

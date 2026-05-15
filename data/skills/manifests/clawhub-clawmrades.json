@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16370,
+  "uuid": "skill-clawhub-clawmrades",
+  "skillKey": "clawhub-clawmrades",
+  "name": "Clawmrades",
+  "summary": "Triage issues, analyze PRs, and create plans via the Clawmrades API",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmrades",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vishaltandale00",
+      "features": [
+        "Triage issues, analyze PRs, and create plans via the Clawmrades API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawmrades@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9222298?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawmrades",
+      "url": "https://clawhub.ai/skills/clawmrades"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmrades",
+    "url": "https://clawhub.ai/skills/clawmrades",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmrades-5a1dfb484cc8c191.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawmrades@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawmrades-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fd52bb1888fdaf9c7e3e5c43fb351bc9f8cd4a1e50b4ba008ab28d8cd785e29",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T05:58:48.425Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38242,
+  "uuid": "skill-clawhub-auto-workflow-1-0-0",
+  "skillKey": "clawhub-auto-workflow-1-0-0",
+  "name": "Auto Workflow 1.0.0",
+  "summary": "Builds automation workflows from repetitive tasks. Use when user mentions \"automate\", \"save time\", \"reduce manual work\", or has repeated tasks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_workflow_1_0_0",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangyingzhuangk",
+      "features": [
+        "Builds automation workflows from repetitive tasks",
+        "Use when user mentions \"automate\", \"save time\", \"reduce manual work\", or has repeated tasks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-workflow-1-0-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16957705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-workflow-1-0-0",
+      "url": "https://clawhub.ai/skills/auto-workflow-1-0-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-workflow-1-0-0",
+    "url": "https://clawhub.ai/skills/auto-workflow-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-workflow-1-0-0-396e6699c32b613d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-workflow-1-0-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-workflow-1-0-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e473f8599e711b2bc6e31acfaf803bd8e6975ee50dabf2a2151f1cb01d32dd3",
+      "artifactSizeBytes": 2306
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T00:58:59.145Z"
+}

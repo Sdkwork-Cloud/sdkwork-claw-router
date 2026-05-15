@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/habib-pdf-to-json@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.habib_pdf_to_json",
+  "skill": {
+    "id": 14337,
+    "skillKey": "clawhub-habib-pdf-to-json",
+    "name": "habib-pdf-to-json"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "habib-pdf-to-json",
+    "url": "https://clawhub.ai/skills/habib-pdf-to-json",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/habib-pdf-to-json-136aae57ed4a8d33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract structured data from construction PDFs. Convert specifications, BOMs, schedules, and reports from PDF to Excel/CSV/JSON. Use OCR for scanned documents and pdfplumber for native PDFs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dbmoradi60",
+      "userId": "publishers:dbmoradi60",
+      "displayName": "dbmoradi60",
+      "image": "https://avatars.githubusercontent.com/u/52333061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1222,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770821937191,
+      "changelog": "PDF To Structured v1.0.0 – Initial release\n\n- Extracts structured data (tables, text) from construction-related PDFs using pdfplumber.\n- Supports export to Excel, CSV, or JSON.\n- OCR processing available for scanned PDFs with Tesseract and pdf2image.\n- Provides usage examples for native and scanned PDF extraction.\n- Includes functions for extracting tables, text, BOMs, and schedules from construction documents.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5fc3fe0b2abcdc02af7d516a4945ed2ccd7daefa16c4a6704b8b002a98a7c559"
+}

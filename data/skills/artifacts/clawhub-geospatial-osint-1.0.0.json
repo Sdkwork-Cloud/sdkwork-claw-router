@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geospatial-osint@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geospatial_osint",
+  "skill": {
+    "id": 24302,
+    "skillKey": "clawhub-geospatial-osint",
+    "name": "Geospatial Osint"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geospatial-osint",
+    "url": "https://clawhub.ai/skills/geospatial-osint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geospatial-osint-2143491e5fbc4dc9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Open-source geospatial intelligence gathering and visualization dashboard. Use when building Worldview-style spy thriller dashboards, monitoring geopolitical..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imjohnathanblog-spec",
+      "userId": "s177gdd1btq8wgagys9dggsbfd83j8ac",
+      "displayName": "imjohnathan",
+      "image": "https://avatars.githubusercontent.com/u/246114925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 405,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772806888956,
+      "changelog": "- Initial release of geospatial-osint skill.\n- Provides a comprehensive template and guidance for building real-time geospatial intelligence dashboards.\n- Details free and paid data sources covering aviation, maritime, satellite, seismic, and CCTV data.\n- Includes example integrations for Cesium.js, multi-mode visualization effects (CRT, NVG, thermal), and multi-agent development workflows.\n- Offers performance tips, region monitoring scripts, and automated alerting examples for live OSINT analysis.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ea33a3ef7de823f2d0bdd725282b1b6f1aa14e8bdc42bd0ad103041a7621a8bc"
+}

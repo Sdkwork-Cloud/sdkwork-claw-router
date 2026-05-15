@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/todo-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todo_tracker",
+  "skill": {
+    "id": 8726,
+    "skillKey": "clawhub-todo-tracker",
+    "name": "TODO Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todo-tracker",
+    "url": "https://clawhub.ai/skills/todo-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todo-tracker-9991aa5266b86e85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent TODO scratch pad for tracking tasks across sessions. Use when user says \"add to TODO\", \"what's on the TODO\", \"mark X done\", \"show TODO list\", \"remove from TODO\", or asks about pending tasks. Also triggers on heartbeat to remind."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jdrhyne",
+      "userId": "s175stkgx5wmnsr24w9hqje36d84r4br",
+      "displayName": "Jonathan Rhyne",
+      "image": "https://avatars.githubusercontent.com/u/7828464?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7402,
+      "installsAllTime": 60,
+      "installsCurrent": 53,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768634320198,
+      "changelog": "Initial release: Persistent TODO scratch pad for Clawdbot with priority levels, completion tracking, and heartbeat integration",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8dd11f12a1acbe827365b07b9e0ab8ead8aebee99c814c919e52523e4882d2cb"
+}

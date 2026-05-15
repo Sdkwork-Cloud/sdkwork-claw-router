@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68498,
+  "uuid": "skill-clawhub-academic-paper-analyzer",
+  "skillKey": "clawhub-academic-paper-analyzer",
+  "name": "Academic Paper Analyzer",
+  "summary": "分析学术期刊论文的结构、摘要特点、框架、字数统计和参考文献数量。当用户上传PDF学术论文进行分析、生成期刊论文报告或了解期刊发文规范时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_paper_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ShaNiu001",
+      "features": [
+        "分析学术期刊论文的结构、摘要特点、框架、字数统计和参考文献数量。当用户上传PDF学术论文进行分析、生成期刊论文报告或了解期刊发文规范时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/academic-paper-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266231807?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "academic-paper-analyzer",
+      "url": "https://clawhub.ai/skills/academic-paper-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-paper-analyzer",
+    "url": "https://clawhub.ai/skills/academic-paper-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-paper-analyzer-e3fff8afd98a3a7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/academic-paper-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-academic-paper-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12dc9c26ec2e5af369ed854e6c687b4be05b161a195d1168ada3b764a5c906a2",
+      "artifactSizeBytes": 2679
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T08:42:22.457Z"
+}

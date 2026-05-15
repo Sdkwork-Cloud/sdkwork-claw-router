@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "subtitle-refiner",
+    "displayName": "subtitle-refiner",
+    "summary": "智能优化 SRT 字幕，去除语气词并修正 ASR 错误，保持时间戳不变，输出优化文件并发送飞书通知及 token 报告。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 433,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773039955825,
+    "updatedAt": 1778305809001
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773039955825,
+    "changelog": "Initial release of subtitle-refiner – a tool for optimizing SRT subtitle files.\n\n- Removes filler words (e.g., 嗯, 啊) and corrects ASR recognition errors (e.g., XGBT→ChatGPT) while preserving timestamps.\n- Sends optimized files and token usage reports via Feishu.\n- Requires Python 3 and a SILICONFLOW_API_KEY environment variable.\n- Provides clear error handling and token consumption tracking.\n- User-invocable by sending SRT files or trigger keywords (e.g., \"优化字幕\", \"fix subtitle\").",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "truetechlabs",
+    "userId": "publishers:truetechlabs",
+    "displayName": "TrueTechLabs",
+    "image": "https://avatars.githubusercontent.com/u/49872902?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778305809001
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29466,
+  "uuid": "skill-clawhub-feedto",
+  "skillKey": "clawhub-feedto",
+  "name": "FeedTo",
+  "summary": "Connect FeedTo.ai to OpenClaw so browser feeds arrive through the FeedTo skill. Use when installing or operating the FeedTo OpenClaw integration, especially...",
+  "version": "0.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feedto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "isopenclaw",
+      "features": [
+        "Connect FeedTo.ai to OpenClaw so browser feeds arrive through the FeedTo skill",
+        "Use when installing or operating the FeedTo OpenClaw integration, especially..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feedto@0.5.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264171847?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feedto",
+      "url": "https://clawhub.ai/skills/feedto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feedto",
+    "url": "https://clawhub.ai/skills/feedto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feedto-45bf457f14a4f946.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feedto@0.5.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feedto-0.5.1.json",
+      "version": "0.5.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df08949632af1ab08b6c2f63fe959c4a486942657292f83ea5408663920b8f0d",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T17:16:50.583Z"
+}

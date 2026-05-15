@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37585,
+  "uuid": "skill-clawhub-calendar-guard",
+  "skillKey": "clawhub-calendar-guard",
+  "name": "Calendar Guard",
+  "summary": "Standard Operating Procedure (SOP) that autonomously defends your schedule using TS atomic plugins.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calendar_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zvirb",
+      "features": [
+        "Standard Operating Procedure (SOP) that autonomously defends your schedule using TS atomic plug."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/calendar-guard@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130008533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "calendar-guard",
+      "url": "https://clawhub.ai/skills/calendar-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calendar-guard",
+    "url": "https://clawhub.ai/skills/calendar-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calendar-guard-d62122e8d14332c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/calendar-guard@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-calendar-guard-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3088134b9f8e834ec2168013ed88a45289fb234c03d4e693dbd574dbc3a2e15f",
+      "artifactSizeBytes": 2242
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T00:15:00.841Z"
+}

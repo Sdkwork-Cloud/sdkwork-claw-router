@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67172,
+  "uuid": "skill-clawhub-session-monitor",
+  "skillKey": "clawhub-session-monitor",
+  "name": "Session Monitor",
+  "summary": "自动监控和显示会话状态信息，包括token消耗、模型信息和功能状态。支持开关控制和自定义显示格式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DaYu",
+      "features": [
+        "自动监控和显示会话状态信息，包括token消耗、模型信息和功能状态。支持开关控制和自定义显示格式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30426257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-monitor",
+      "url": "https://clawhub.ai/skills/session-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-monitor",
+    "url": "https://clawhub.ai/skills/session-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-monitor-d8c73e1ee22b6a1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71dedab542c697d19377c62f3127e86250aeb4288ea345ebc3c5447afd410950",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T14:06:26.628Z"
+}

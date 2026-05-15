@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47861,
+  "uuid": "skill-clawhub-video-editor-app",
+  "skillKey": "clawhub-video-editor-app",
+  "name": "Video Editor App",
+  "summary": "Get edited MP4 clips ready to post, without touching a single slider. Upload your raw video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"tri...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_app",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tk8544-b",
+      "features": [
+        "Get edited MP4 clips ready to post, without touching a single slider",
+        "Upload your raw video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"tri..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-editor-app@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-editor-app",
+      "url": "https://clawhub.ai/skills/video-editor-app"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-app",
+    "url": "https://clawhub.ai/skills/video-editor-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-app-5f8524cd4f177040.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-editor-app@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-editor-app-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63badadfd56c8dbe5fdf5b8d9d4889e974f303c88f7ce85b887ca0c91d85940d",
+      "artifactSizeBytes": 2598
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T17:19:27.195Z"
+}

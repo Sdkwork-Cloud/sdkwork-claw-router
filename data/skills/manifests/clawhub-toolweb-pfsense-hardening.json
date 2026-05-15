@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41218,
+  "uuid": "skill-clawhub-toolweb-pfsense-hardening",
+  "skillKey": "clawhub-toolweb-pfsense-hardening",
+  "name": "pfSense Hardening",
+  "summary": "Generates hardened pfSense firewall configurations based on specified security options.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_pfsense_hardening",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Generates hardened pfSense firewall configurations based on specified security options."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toolweb-pfsense-hardening@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toolweb-pfsense-hardening",
+      "url": "https://clawhub.ai/skills/toolweb-pfsense-hardening"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-pfsense-hardening",
+    "url": "https://clawhub.ai/skills/toolweb-pfsense-hardening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-pfsense-hardening-8f2087fab5696b88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toolweb-pfsense-hardening@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toolweb-pfsense-hardening-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c44a103b5c5a8b4e9016e3654d69bccc1a8b46c2783b6863f4b7fb4f046106d",
+      "artifactSizeBytes": 2419
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T17:14:14.819Z"
+}

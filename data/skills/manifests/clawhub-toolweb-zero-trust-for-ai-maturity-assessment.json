@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40202,
+  "uuid": "skill-clawhub-toolweb-zero-trust-for-ai-maturity-assessment",
+  "skillKey": "clawhub-toolweb-zero-trust-for-ai-maturity-assessment",
+  "name": "Zero Trust For AI Maturity Assessment",
+  "summary": "Evaluates Zero Trust maturity across 6 principles for both Conventional (Infrastructure) and AI Era (Data & Model) dimensions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_zero_trust_for_ai_maturity_assessment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Evaluates Zero Trust maturity across 6 principles for both Conventional (Infrastructure) and AI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toolweb-zero-trust-for-ai-maturity-assessment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toolweb-zero-trust-for-ai-maturity-assessment",
+      "url": "https://clawhub.ai/skills/toolweb-zero-trust-for-ai-maturity-assessment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-zero-trust-for-ai-maturity-assessment",
+    "url": "https://clawhub.ai/skills/toolweb-zero-trust-for-ai-maturity-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-zero-trust-for-ai-maturity-assessment-d202d37336195744.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toolweb-zero-trust-for-ai-maturity-assessment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toolweb-zero-trust-for-ai-maturity-assessment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b9644daff07f0a5b363faaf591c50c823070865cb07d783c00d5b76afc20141",
+      "artifactSizeBytes": 2632
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T12:34:37.642Z"
+}

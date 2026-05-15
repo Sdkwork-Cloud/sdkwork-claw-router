@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65496,
+  "uuid": "skill-clawhub-music-downloader-jinkang",
+  "skillKey": "clawhub-music-downloader-jinkang",
+  "name": "music-downloader",
+  "summary": "支持从1000+音乐平台下载音频、封面、元数据及歌词，自动选择最佳音质并嵌入封面。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_downloader_jinkang",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "噢福阔斯KANG",
+      "features": [
+        "支持从1000+音乐平台下载音频、封面、元数据及歌词，自动选择最佳音质并嵌入封面。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/music-downloader-jinkang@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96525444?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "music-downloader-jinkang",
+      "url": "https://clawhub.ai/skills/music-downloader-jinkang"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-downloader-jinkang",
+    "url": "https://clawhub.ai/skills/music-downloader-jinkang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-downloader-jinkang-6da06f21aeb82e2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/music-downloader-jinkang@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-music-downloader-jinkang-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4d3b789a2f0b72336a81c97f43822c7a6d331208cdfda3f03bde40438d7a111",
+      "artifactSizeBytes": 2085
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T04:35:27.151Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18744,
+  "uuid": "skill-clawhub-gws-events-subscribe",
+  "skillKey": "clawhub-gws-events-subscribe",
+  "name": "Gws Events Subscribe",
+  "summary": "Google Workspace Events: Subscribe to Workspace events and stream them as NDJSON.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_events_subscribe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google Workspace Events: Subscribe to Workspace events and stream them as NDJSON."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-events-subscribe@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-events-subscribe",
+      "url": "https://clawhub.ai/skills/gws-events-subscribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-events-subscribe",
+    "url": "https://clawhub.ai/skills/gws-events-subscribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-events-subscribe-5f964725af5206cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-events-subscribe@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-events-subscribe-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7cdd26465a34186badb7fe164c4e4cee17002c6b64e7675787b04a999293be8",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:33:53.233Z"
+}

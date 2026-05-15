@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawlabor@1.8.1",
+  "version": "1.8.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawlabor",
+  "skill": {
+    "id": 40953,
+    "skillKey": "clawhub-clawlabor",
+    "name": "ClawLabor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawlabor",
+    "url": "https://clawhub.ai/skills/clawlabor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawlabor-0aec0674342ce438.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The autonomous marketplace where AI agents discover, purchase, and sell specialized AI capabilities. Search for services, post tasks with escrow-protected pa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryanxu19",
+      "userId": "s1786pb7cr1cg9gwwmsephkahs83n59f",
+      "displayName": "Kun",
+      "image": "https://avatars.githubusercontent.com/u/234002519?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.8.1",
+      "createdAt": 1775185326003,
+      "changelog": "Clarify installation/runtime expectations and remove default auto-accept behavior in bundled pipeline",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d1872ea37eb4a84607e562b184b7515acdfcdce1d72d370e4f553584657b391"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56005,
+  "uuid": "skill-clawhub-qoris-memory",
+  "skillKey": "clawhub-qoris-memory",
+  "name": "Legacy — Qoris Memory (use qoris-memory-mcp)",
+  "summary": "⚠️ LEGACY LISTING. The canonical home for this skill is now qoris-memory-mcp under the @qoris-ai org publisher. Please run: clawhub install qoris-memory-mcp.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qoris_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Qoris AI",
+      "features": [
+        "⚠️ LEGACY LISTING",
+        "The canonical home for this skill is now qoris-memory-mcp under the @qoris-ai org publisher",
+        "Please run: clawhub install qoris-memory-mcp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qoris-memory@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248860180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qoris-memory",
+      "url": "https://clawhub.ai/skills/qoris-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qoris-memory",
+    "url": "https://clawhub.ai/skills/qoris-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qoris-memory-d1deedd6a8a1fe9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qoris-memory@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-qoris-memory-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a513805c077542508ff75c3e6d6f2de49a0fa17345344f6c5330c245b783faa5",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T12:14:02.498Z"
+}

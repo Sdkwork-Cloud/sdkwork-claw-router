@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-image-to-video-discord@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_image_to_video_discord",
+  "skill": {
+    "id": 45050,
+    "skillKey": "clawhub-ai-image-to-video-discord",
+    "name": "Ai Image To Video Discord"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-image-to-video-discord",
+    "url": "https://clawhub.ai/skills/ai-image-to-video-discord",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-image-to-video-discord-043c8ec3cbbfe5e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a single character illustration or scene artwork into 1080p animated video clips just by typing what you need. Whether it's converting still images into..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776369788556,
+      "changelog": "AI Image to Video for Discord — Initial Release\n\n- Convert single images into 1080p animated video clips for Discord or social sharing, with simple text instructions.\n- Automatic setup: obtain a free API token and session on first use, guided via clear status messages.\n- Multiple workflows supported: quick edit, batch style, or iterative refinements with timeline previews.\n- Built-in intent recognition for common commands like upload, credits, status, and export.\n- Uploads up to 200MB; supports popular image and video formats for seamless processing and exporting.\n- Cloud GPU-powered rendering delivers results in 30–90 seconds, keeping session state for smooth iterative editing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a89c2aacb65370929366c2f52c0511718fc41280787de57a7ffc4caa485cd8c2"
+}

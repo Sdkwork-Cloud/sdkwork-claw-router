@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawpaw-android-control@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawpaw_android_control",
+  "skill": {
+    "id": 60418,
+    "skillKey": "clawhub-clawpaw-android-control",
+    "name": "Clawpaw Android Control Template"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawpaw-android-control",
+    "url": "https://clawhub.ai/skills/clawpaw-android-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawpaw-android-control-25652ef6a24e7569.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Android 手机自动化控制技能。支持 Node（Gateway）和 HTTP 两种连接方式，提供点击、滑动、输入、截图、布局获取、应用打开等操作。 （需 Java 11+、Android 10+ 手机，安装 ClawPaw App 并开启无障碍服务）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "klscool",
+      "userId": "s172a7yf5gxcft79zb6kv5ahjx83pcrs",
+      "displayName": "klscool",
+      "image": "https://avatars.githubusercontent.com/u/39289749?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 380,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773491212277,
+      "changelog": "clawpaw-android-control-template 1.0.0 初始版本\n\n- 首次发布，用于自动化控制 Android 10+ 手机\n- 提供 Node (Gateway) 和 HTTP 两种连接方式\n- 支持点击、滑动、输入、截图、布局获取、应用打开等常用操作\n- 提供原生 action 和 invoke 命令格式，操作指令及参数详见 INDEX.md\n- 包含权限说明及操作准备指南",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:22f0ab842ad71b8910c4c3c3e30d61b295b2491e8280d3f5083ef97dd77c4d96"
+}

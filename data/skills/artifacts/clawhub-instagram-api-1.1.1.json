@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/instagram-api@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagram_api",
+  "skill": {
+    "id": 11293,
+    "skillKey": "clawhub-instagram-api",
+    "name": "Instagram Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagram-api",
+    "url": "https://clawhub.ai/skills/instagram-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagram-api-3b48cc6d10b6eff9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post to Instagram (Feed, Story, Reels, Carousel) and Threads using the official Meta Graph API. Requires Imgur for media hosting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lifeissea",
+      "userId": "s170g3z8qxdg1sz9j7s6tkffvn83s571",
+      "displayName": "Tomas",
+      "image": "https://avatars.githubusercontent.com/u/67946543?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2146,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1771978902904,
+      "changelog": "Auto-update 2026-02-25: maintenance & improvements",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f03858c8b362d4d1d352f209943711e21148216d069b084b34c25e20ee4f30ba"
+}

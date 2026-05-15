@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27347,
+  "uuid": "skill-clawhub-musa-torch-coding",
+  "skillKey": "clawhub-musa-torch-coding",
+  "name": "musa-torch-coding",
+  "summary": "Transcribe audio via OpenAI Audio Transcriptions API (Whisper).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.musa_torch_coding",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peli",
+      "features": [
+        "Transcribe audio via OpenAI Audio Transcriptions API (Whisper)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/musa-torch-coding@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11436018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "musa-torch-coding",
+      "url": "https://clawhub.ai/skills/musa-torch-coding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "musa-torch-coding",
+    "url": "https://clawhub.ai/skills/musa-torch-coding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/musa-torch-coding-8687634c97f52260.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/musa-torch-coding@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-musa-torch-coding-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16bf763c7a6b7106f5607129a74cbee57e46c8ff4f0665e9c4f6c60ddf71491d",
+      "artifactSizeBytes": 2311
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:58:59.713Z"
+}

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13190,
+  "uuid": "skill-clawhub-zerion-api-skill-2",
+  "skillKey": "clawhub-zerion-api-skill-2",
+  "name": "Zerion Api",
+  "summary": "Query blockchain wallet data, token prices, and transaction history using the Zerion API via its MCP connector. Use this skill whenever the user asks about: crypto wallet balances, portfolio values, token holdings or positions, DeFi positi.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zerion_api_skill_2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vshamanov",
+      "features": [
+        "Query blockchain wallet data, token prices, and transaction history using the Zerion API via it.",
+        "Use this skill whenever the user asks about: crypto wallet balances, portfolio values, token ho.",
+        "Triggers on mentions of wallet addresses (0x...), ENS names, token names/symbols, \"portfolio\",.",
+        "Also use when building artifacts or dashboards that display wallet or token data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zerion-api-skill-2@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3716229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zerion-api-skill-2",
+      "url": "https://clawhub.ai/skills/zerion-api-skill-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zerion-api-skill-2",
+    "url": "https://clawhub.ai/skills/zerion-api-skill-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zerion-api-skill-2-ce2cbadc948b0abb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zerion-api-skill-2@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zerion-api-skill-2-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbbd2692949f32a2227adb53c562020971f2c0e3f7a6cbb65cbae2282d3607f7",
+      "artifactSizeBytes": 2604
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T16:57:07.032Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38074,
+  "uuid": "skill-clawhub-mobazha-standalone-setup",
+  "skillKey": "clawhub-mobazha-standalone-setup",
+  "name": "Standalone Setup",
+  "summary": "Deploy a self-hosted Mobazha store on any Linux VPS using Docker. Use when the user wants to set up a standalone store on a server.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mobazha_standalone_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fengzie",
+      "features": [
+        "Deploy a self-hosted Mobazha store on any Linux VPS using Docker",
+        "Use when the user wants to set up a standalone store on a server."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mobazha-standalone-setup@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34826428?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mobazha-standalone-setup",
+      "url": "https://clawhub.ai/skills/mobazha-standalone-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mobazha-standalone-setup",
+    "url": "https://clawhub.ai/skills/mobazha-standalone-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mobazha-standalone-setup-284e31af5eaf4e8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mobazha-standalone-setup@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mobazha-standalone-setup-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:994904521d9edb694af885c8f61d84230a17e880c642ec2e09e4436ab7ae8432",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T10:43:43.923Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/research-paper-writer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_paper_writer",
+  "skill": {
+    "id": 8501,
+    "skillKey": "clawhub-research-paper-writer",
+    "name": "Research Paper Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-paper-writer",
+    "url": "https://clawhub.ai/skills/research-paper-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-paper-writer-53596e5c50995d40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates formal academic research papers following IEEE/ACM formatting standards with proper structure, citations, and scholarly writing style. Use when the user asks to write a research paper, academic paper, or conference paper on any top."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 9155,
+      "installsAllTime": 66,
+      "installsCurrent": 63,
+      "stars": 34,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769869553189,
+      "changelog": "Initial release of Research Paper Writer: a tool for generating formal academic papers in IEEE/ACM style.\n\n- Guides users through clarifying research topics and paper scope.\n- Provides standard academic paper structure and section guidelines.\n- Enforces formal, scholarly writing style with section-specific conventions.\n- Offers detailed formatting instructions for IEEE and ACM publication standards.\n- Ensures proper citation and reference list formatting.\n- Outlines stepwise workflow for drafting, citing, and refining research papers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a90696d7b34746ffdb5ea597de672219a9a2283e91b893f829fba9f75c2e5261"
+}

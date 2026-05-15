@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/race-finder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.race_finder",
+  "skill": {
+    "id": 24531,
+    "skillKey": "clawhub-race-finder",
+    "name": "Race Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "race-finder",
+    "url": "https://clawhub.ai/skills/race-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/race-finder-6d3209c52a194fc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find upcoming races — running, trail, triathlon, cycling, swimming, and obstacle courses. Search by location, distance, sport, and date. Returns race details with registration links."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nftechie",
+      "userId": "publishers:nftechie",
+      "displayName": "nftechie",
+      "image": "https://avatars.githubusercontent.com/u/2530972?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 925,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770679017783,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7e033d14d8ecb7808ee1b4920df653230d9d570e144469bac26f3a38c4ba44b6"
+}

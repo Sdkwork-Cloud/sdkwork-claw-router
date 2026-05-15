@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-settings-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_settings_manager",
+  "skill": {
+    "id": 48411,
+    "skillKey": "clawhub-agent-settings-manager",
+    "name": "Agent Settings Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-settings-manager",
+    "url": "https://clawhub.ai/skills/agent-settings-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-settings-manager-6d968e1d23e2a652.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configuration management for AI agents. Manage, validate, version, and sync configs across environments. Triggers: config management, configuration, env vari..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777510141443,
+      "changelog": "agent-settings-manager 1.0.0\n\n- Initial release introducing configuration management for AI agents.\n- Features config validation against JSON schemas, with strict checking.\n- Environment management: create, compare, and promote configs across dev, staging, and production.\n- Secret management with rotation and leak detection.\n- Version control for configs, including history, diff, and rollback functionality.\n- Support for syncing configs from git with auto-reload on changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9211e98c674718916e530938e70be7aa3e9fa6402e55d2f09329d0c299ac66fe"
+}

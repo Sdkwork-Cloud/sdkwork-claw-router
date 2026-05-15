@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52594,
+  "uuid": "skill-clawhub-model-pilot",
+  "skillKey": "clawhub-model-pilot",
+  "name": "Model Pilot",
+  "summary": "Match task complexity to the right model. Quick heuristic check before expensive tasks — recommends cheaper models when quality won't suffer. Fetches live pr...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_pilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TommoT2",
+      "features": [
+        "Match task complexity to the right model",
+        "Quick heuristic check before expensive tasks — recommends cheaper models when quality won't suf.",
+        "Fetches live pr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-pilot@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106430507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-pilot",
+      "url": "https://clawhub.ai/skills/model-pilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-pilot",
+    "url": "https://clawhub.ai/skills/model-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-pilot-3ecede6ec606eb6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-pilot@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-pilot-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:add1120975589c4c3762b0083011c6d384c3b5f7a10228b06a58c1657a710efe",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T23:29:20.349Z"
+}

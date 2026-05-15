@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73522,
+  "uuid": "skill-clawhub-manmanbuy",
+  "skillKey": "clawhub-manmanbuy",
+  "name": "慢慢买比价助手",
+  "summary": "慢慢买历史价格查询与比价工具，提供商品全网历史价格走势图、真假促销识别和购买时机建议。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manmanbuy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangshan101-coder",
+      "features": [
+        "慢慢买历史价格查询与比价工具，提供商品全网历史价格走势图、真假促销识别和购买时机建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/manmanbuy@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267524233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "manmanbuy",
+      "url": "https://clawhub.ai/skills/manmanbuy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manmanbuy",
+    "url": "https://clawhub.ai/skills/manmanbuy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manmanbuy-99d85d1dfe7a81ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/manmanbuy@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-manmanbuy-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ac0cdef58b204861486242f234ca08d9b39f51e7fc069e4df0487330f60395b",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T06:01:59.955Z"
+}

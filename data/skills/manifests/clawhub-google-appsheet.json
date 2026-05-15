@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42974,
+  "uuid": "skill-clawhub-google-appsheet",
+  "skillKey": "clawhub-google-appsheet",
+  "name": "Google Appsheet",
+  "summary": "Google Appsheet integration. Manage Apps. Use when the user wants to interact with Google Appsheet data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_appsheet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Google Appsheet integration",
+        "Manage Apps",
+        "Use when the user wants to interact with Google Appsheet data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-appsheet@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-appsheet",
+      "url": "https://clawhub.ai/skills/google-appsheet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-appsheet",
+    "url": "https://clawhub.ai/skills/google-appsheet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-appsheet-83f6ebd5106c2900.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-appsheet@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-appsheet-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:789795e74ada1c1a29e4f2d020de576c6a2db92d7bf10ef349bc98c5ab905015",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:30:49.621Z"
+}

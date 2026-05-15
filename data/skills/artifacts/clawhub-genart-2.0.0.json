@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/genart@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.genart",
+  "skill": {
+    "id": 54386,
+    "skillKey": "clawhub-genart",
+    "name": "GenArt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "genart",
+    "url": "https://clawhub.ai/skills/genart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/genart-49a6db1d9fc75f47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate algorithmic visual art — flow fields, fractals, cellular automata, circle packing, wave patterns. SVG + PNG output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eliot-onbox",
+      "userId": "s17akx5fawje6tkcy1hn5fk35s83g4hx",
+      "displayName": "eliot-onbox",
+      "image": "https://avatars.githubusercontent.com/u/267016844?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774392176317,
+      "changelog": "Major: Public release after age gate lifted",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c826dab4accab8dcaaadbf40ee4f269b819a4a625d92fad3b4b8cff2159b9b23"
+}

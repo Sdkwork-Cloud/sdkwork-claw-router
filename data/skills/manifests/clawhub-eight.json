@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72013,
+  "uuid": "skill-clawhub-eight",
+  "skillKey": "clawhub-eight",
+  "name": "eight",
+  "summary": "数字 8 的文化介绍技能（中英文版本）。当用户询问数字 8、八的文化含义、发财、八卦、八方等相关信息时激活此技能。包含陈朗的个人资料。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo Sheng",
+      "features": [
+        "数字 8 的文化介绍技能（中英文版本）。当用户询问数字 8、八的文化含义、发财、八卦、八方等相关信息时激活此技能。包含陈朗的个人资料。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eight@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149644278?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eight",
+      "url": "https://clawhub.ai/skills/eight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eight",
+    "url": "https://clawhub.ai/skills/eight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eight-c195d2d875623436.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eight@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eight-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:925bc8760a16621c52bb49c4cf5c5360dce233748b72a15d83ce4cb67aed80c2",
+      "artifactSizeBytes": 2308
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T09:43:19.055Z"
+}

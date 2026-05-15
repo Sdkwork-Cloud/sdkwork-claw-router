@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-user-videos@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_user_videos",
+  "skill": {
+    "id": 73218,
+    "skillKey": "clawhub-douyin-user-videos",
+    "name": "获取抖音博主主页视频列表"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-user-videos",
+    "url": "https://clawhub.ai/skills/douyin-user-videos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-user-videos-365e1ed5bb7065ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取抖音博主的视频列表"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tanshiyang",
+      "userId": "s175nkyw0e23v9epaq68mckf7583ptn9",
+      "displayName": "tanshiyang",
+      "image": "https://avatars.githubusercontent.com/u/2681340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774593242200,
+      "changelog": "Initial release of douyin-user-videos skill:\n\n- Enables retrieval of Douyin user video lists by profile URL.\n- Returns video description and publish time for each video.\n- Requires configuration of user-specific API key and Douyin login cookie via environment variables.\n- Includes detailed error handling for invalid URLs, API keys, cookies, and insufficient balance.\n- Adds tool: douyin_get_user_videos for programmatic video list access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61750554932304f2a3ca92b7ad8ecbe8ce61271328233d8fd26d77684617cddf"
+}

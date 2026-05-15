@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38577,
+  "uuid": "skill-clawhub-openclaw-hardening",
+  "skillKey": "clawhub-openclaw-hardening",
+  "name": "OpenClaw Hardening",
+  "summary": "Secure an OpenClaw server with host hardening, chainwatch runtime safety, pastewatch secret redaction, and noisepan+entropia news intelligence. Use when sett...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_hardening",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ppiankov",
+      "features": [
+        "Secure an OpenClaw server with host hardening, chainwatch runtime safety, pastewatch secret red.",
+        "Use when sett..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-hardening@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103106369?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-hardening",
+      "url": "https://clawhub.ai/skills/openclaw-hardening"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-hardening",
+    "url": "https://clawhub.ai/skills/openclaw-hardening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-hardening-a783573a364800b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-hardening@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-hardening-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc50fe6dfb20a92abba100c3ae7cb4e9bc83493d67feb97b1656a8e36f861d3a",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T04:54:07.550Z"
+}

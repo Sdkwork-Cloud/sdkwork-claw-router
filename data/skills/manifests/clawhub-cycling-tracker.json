@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61853,
+  "uuid": "skill-clawhub-cycling-tracker",
+  "skillKey": "clawhub-cycling-tracker",
+  "name": "Cycling Tracker",
+  "summary": "骑行追踪 - 骑行记录、速度分析、路线规划",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cycling_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kaising-openclaw1",
+      "features": [
+        "骑行记录、速度分析、路线规划"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cycling-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266910723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cycling-tracker",
+      "url": "https://clawhub.ai/skills/cycling-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cycling-tracker",
+    "url": "https://clawhub.ai/skills/cycling-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cycling-tracker-e55d236a168f1600.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cycling-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cycling-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb4f6ff11e77b5422cc3da6be1c2f23e7d640d2022c9182ca78b9b7c077f3998",
+      "artifactSizeBytes": 2077
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T19:28:44.351Z"
+}

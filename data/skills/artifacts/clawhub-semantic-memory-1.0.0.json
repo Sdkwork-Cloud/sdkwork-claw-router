@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/semantic-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.semantic_memory",
+  "skill": {
+    "id": 60628,
+    "skillKey": "clawhub-semantic-memory",
+    "name": "Semantic Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "semantic-memory",
+    "url": "https://clawhub.ai/skills/semantic-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/semantic-memory-3906f18bd595974d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw Agent 中文长期记忆系统。jieba TF-IDF + 向量检索三轨混合，中文语义优先，支持多Agent记忆协同。触发词：向量数据库、记忆检索、长期记忆、语义搜索、vector search、memory retrieval"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackxc2026",
+      "userId": "s17bdpj85j99vrrfwdh7bdzge184q9wy",
+      "displayName": "Jackxc2026",
+      "image": "https://avatars.githubusercontent.com/u/269199722?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776009250942,
+      "changelog": "v1.0.0: 中文语义优先三轨混合检索",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7e4bf4714819d5ad73c02f180f719f51d96863b05afe8464c8fd8caa59cfc03"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48340,
+  "uuid": "skill-clawhub-car-negotiator",
+  "skillKey": "clawhub-car-negotiator",
+  "name": "Car Negotiator",
+  "summary": "Research car prices and rebates, calculate total costs, and generate negotiation scripts and emails using proven tactics to secure better buy or lease deals.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.car_negotiator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ml348126",
+      "features": [
+        "Research car prices and rebates, calculate total costs, and generate negotiation scripts and em."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/car-negotiator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/277025481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "car-negotiator",
+      "url": "https://clawhub.ai/skills/car-negotiator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "car-negotiator",
+    "url": "https://clawhub.ai/skills/car-negotiator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/car-negotiator-b9ab7e8809de3130.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/car-negotiator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-car-negotiator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f034c8776ef65a206daf4ebba162e3f826fbb41543d03bb75ff9f073d94fee4",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T02:39:56.332Z"
+}

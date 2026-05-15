@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seo-autopilot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seo_autopilot",
+  "skill": {
+    "id": 9967,
+    "skillKey": "clawhub-seo-autopilot",
+    "name": "Seo Autopilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seo-autopilot",
+    "url": "https://clawhub.ai/skills/seo-autopilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seo-autopilot-e41b0573220437b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run local SEO autopilot for boll-koll.se or hyresbyte.se and return PR link plus summary."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adamhjort",
+      "userId": "publishers:adamhjort",
+      "displayName": "adamhjort",
+      "image": "https://avatars.githubusercontent.com/u/132277547?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2872,
+      "installsAllTime": 19,
+      "installsCurrent": 17,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770422830306,
+      "changelog": "Initial release of seo-autopilot skill.\n\n- Supports automated local SEO runs for boll-koll.se and hyresbyte.se.\n- Trigger by sending \"seo\", \"seo boll-koll.se\", or \"seo hyresbyte.se\".\n- Executes a secure script and returns a pull request link and short summary.\n- Extracts and highlights top 3 findings from SEO_REPORT.md if available.\n- Restricts execution to allowlisted sites only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:414b29961ddcaef1bd0c2e0bd687d1c68a8aa29b940a8929761aa63d92562830"
+}

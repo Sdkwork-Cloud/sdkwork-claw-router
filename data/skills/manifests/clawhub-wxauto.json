@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64739,
+  "uuid": "skill-clawhub-wxauto",
+  "skillKey": "clawhub-wxauto",
+  "name": "wxauto",
+  "summary": "微信自动化操作。通过 wxautox4 RESTful API 实现发送消息、获取聊天记录、监听消息、好友管理等功能。Use when: (1) 发送微信消息给好友或群聊，(2) 读取微信聊天记录，(3) 监听新消息，(4) 获取好友列表或群聊列表，(5) 接受好友申请，(6) 切换聊天窗口等微信操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wxauto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cluic",
+      "features": [
+        "微信自动化操作。通过 wxautox4 RESTful API 实现发送消息、获取聊天记录、监听消息、好友管理等功能。Use when: (1) 发送微信消息给好友或群聊，(2) 读取微信聊."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wxauto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88969402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wxauto",
+      "url": "https://clawhub.ai/skills/wxauto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wxauto",
+    "url": "https://clawhub.ai/skills/wxauto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wxauto-7203532929f301c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wxauto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wxauto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ddcb376613b380776eabdee739d4506917f3c51cf94e167c87288b6dbbe5955",
+      "artifactSizeBytes": 2420
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T10:12:40.905Z"
+}

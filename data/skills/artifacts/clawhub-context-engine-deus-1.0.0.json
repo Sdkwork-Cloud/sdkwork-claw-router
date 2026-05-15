@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-engine-deus@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_engine_deus",
+  "skill": {
+    "id": 24680,
+    "skillKey": "clawhub-context-engine-deus",
+    "name": "Context Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-engine-deus",
+    "url": "https://clawhub.ai/skills/context-engine-deus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-engine-deus-166194431968a60e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Maintains and restores project context across sessions, tracks active projects, manages tasks, switches projects, and summarizes current progress."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deus-pandora",
+      "userId": "s17fbpc92sh6w1wv7fr57kk2f9845bs4",
+      "displayName": "deus-pandora",
+      "image": "https://avatars.githubusercontent.com/u/262764471?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 396,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772790374618,
+      "changelog": "- Initial release of Context Engine for OpenClaw sessions.\n- Automatically restores the last active project and context at session start.\n- Saves conversation state and project continuity on session end or via manual command.\n- Supports switching between projects, listing all projects, and summarizing current status.\n- Tracks project-specific tasks, notes, and session history for improved project management.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2b9b343a4c9afb646df2d28aa229366ef2e6217d1bd94cf785e1b58a7ab520d0"
+}

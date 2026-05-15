@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73111,
+  "uuid": "skill-clawhub-toutiao-ops",
+  "skillKey": "clawhub-toutiao-ops",
+  "name": "今日头条运营助手",
+  "summary": "自动化管理今日头条账号，支持热点监控、AI内容生成、封面设计及自动发布，适合自媒体和营销团队。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toutiao_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cjsmme-hash",
+      "features": [
+        "自动化管理今日头条账号，支持热点监控、AI内容生成、封面设计及自动发布，适合自媒体和营销团队。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toutiao-ops@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237153717?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toutiao-ops",
+      "url": "https://clawhub.ai/skills/toutiao-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toutiao-ops",
+    "url": "https://clawhub.ai/skills/toutiao-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toutiao-ops-a41feb84111b57f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toutiao-ops@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toutiao-ops-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:012a93a6168d326902718f19a19703b3ecccdfe62290dd8bfebb655fbf075de6",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:33:46.872Z"
+}

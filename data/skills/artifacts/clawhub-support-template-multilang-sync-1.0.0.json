@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/support-template-multilang-sync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.support_template_multilang_sync",
+  "skill": {
+    "id": 44562,
+    "skillKey": "clawhub-support-template-multilang-sync",
+    "name": "Support Template Multilang Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "support-template-multilang-sync",
+    "url": "https://clawhub.ai/skills/support-template-multilang-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/support-template-multilang-sync-6497053d539c96b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Update multilingual customer support reply templates in markdown files, then sync the updated content to Feishu Wiki, log the change in a GitHub issue, and p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775676565120,
+      "changelog": "Initial release: update multilingual support templates, sync to Feishu Wiki, log to GitHub, and package reusable workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:024907bdb1faa34133ad63e5972350b775231ccaf7ed38e870d012bb1f24e7f3"
+}

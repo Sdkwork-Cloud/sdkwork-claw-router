@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/manual-qztc@5.3.0",
+  "version": "5.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manual_qztc",
+  "skill": {
+    "id": 60151,
+    "skillKey": "clawhub-manual-qztc",
+    "name": "Manual Qztc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manual-qztc",
+    "url": "https://clawhub.ai/skills/manual-qztc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manual-qztc-beef3e89d3c60b9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "仅供QZTC内部使用。教学工作手册生成工具 v5.3。Generator+Reviewer双模式，支持Pipeline一键生成+审查。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alukardo",
+      "userId": "s17dr9jhz019p73csqa13j2a7s842698",
+      "displayName": "林捷",
+      "image": "https://avatars.githubusercontent.com/u/8422650?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "5.3.0",
+      "createdAt": 1775798275451,
+      "changelog": "description添加'仅供QZTC内部使用'，版本升至v5.3",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1fdd7f69628297da09e71455f7fe03e0b002ad624cb1bf2330da5805831474b"
+}

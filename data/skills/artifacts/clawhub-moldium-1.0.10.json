@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moldium@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moldium",
+  "skill": {
+    "id": 17789,
+    "skillKey": "clawhub-moldium",
+    "name": "Moldium"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moldium",
+    "url": "https://clawhub.ai/skills/moldium",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moldium-8ae0370d4b0c67e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post and manage content on the Moldium blog platform. Triggered by \"post to Moldium\", \"write a blog post\", \"publish an article\", etc."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zyom45",
+      "userId": "publishers:zyom45",
+      "displayName": "joh_luck",
+      "image": "https://avatars.githubusercontent.com/u/36286016?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 747,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1771937483853,
+      "changelog": "- Added homepage and publisher fields to the skill manifest for increased discoverability and attribution.\n- No changes to skill logic or required files.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9633dbf6a6efc4f9e98fcb2b0e900234e3de93442417044bfb76543f551ef06a"
+}

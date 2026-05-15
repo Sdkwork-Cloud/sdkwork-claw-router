@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_optimizer",
+  "skill": {
+    "id": 62370,
+    "skillKey": "clawhub-memory-optimizer",
+    "name": "Memory Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-optimizer",
+    "url": "https://clawhub.ai/skills/memory-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-optimizer-a87cafc679c0b342.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供基于SHA-256的重复记忆去重、后台实时更新和90天记忆自动归档的OpenClaw高效记忆管理方案。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "siriusm00n",
+      "userId": "publishers:siriusm00n",
+      "displayName": "SiriuSM00N",
+      "image": "https://avatars.githubusercontent.com/u/265539072?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 691,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773931525432,
+      "changelog": "初始版本发布 - SHA-256 去重、实时监听、季度归档",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d891ab984cf209f548bd0181592552ed6ee067d6a471b3b71ad644edede0f629"
+}

@@ -1,37 +1,31 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Bot, Image as ImageIcon, Video, Music, Plus, ArrowUp, ChevronDown, Square, RectangleHorizontal, RectangleVertical, Sparkles, Type, Activity, Package, Smile } from 'lucide-react';
 import { Modality } from '../pages/Playground';
 import { PLAYGROUND_READ_ONLY_REASON, ReadOnlyPlaygroundButton } from './ReadOnlyPlaygroundControl';
+import type { PlaygroundModelBucket, PlaygroundModelGroup } from '../playgroundTypes';
 
-export function GenerationChatInput({ modality, selectedModality, setSelectedModality }: { modality: Modality, selectedModality: Modality, setSelectedModality: (m: Modality) => void }) {
+export function GenerationChatInput({
+  selectedModality,
+  setSelectedModality,
+  modelGroups,
+  selectedModels,
+  setSelectedModel,
+}: {
+  selectedModality: Modality,
+  setSelectedModality: (m: Modality) => void,
+  modelGroups: PlaygroundModelGroup[],
+  selectedModels: Record<Modality, string>,
+  setSelectedModel: (targetModality: Modality) => (modelId: string) => void,
+}) {
   const { t } = useTranslation();
   const [isFocused, setIsFocused] = useState(false);
   const [prompt, setPrompt] = useState("");
   const [showModalityMenu, setShowModalityMenu] = useState(false);
   const [showModelMenu, setShowModelMenu] = useState(false);
   const [showRatioMenu, setShowRatioMenu] = useState(false);
+  const [activeVendorCode, setActiveVendorCode] = useState('');
   const containerRef = useRef<HTMLDivElement>(null);
-
-  const [selectedModels, setSelectedModels] = useState<Record<Modality, string>>({
-    agent: 'Agent Runtime',
-    image: 'Image 5.0 Lite',
-    video: 'Kling 1.5',
-    audio: 'ElevenLabs V1',
-    music: 'Suno V3.5',
-    sfx: 'SFX Engine V1',
-    package: 'NPM Standard'
-  });
-
-  const modelOptions: Record<Modality, string[]> = {
-    agent: [t('playground.input.type.agent'), 'GPT-4o', 'Claude 3.5 Sonnet', 'Gemini 1.5 Pro'],
-    image: ['Image 5.0', 'Image 5.0 Ultra', 'Image 2.0'],
-    video: ['Video 1.5', 'Video 1.0'],
-    audio: ['Voice Pro', 'Voice Lite'],
-    music: ['Music 4.0', 'Music 3.0'],
-    sfx: ['SFX Engine V1'],
-    package: ['Package 1.0']
-  };
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -69,6 +63,26 @@ export function GenerationChatInput({ modality, selectedModality, setSelectedMod
   };
 
   const currentPlaceholder = selectedModality === 'agent' ? t('playground.input.placeholder.agent') : t('playground.input.placeholder.generic');
+  const selectedBucket = toModelBucket(selectedModality);
+  const selectedModel = selectedBucket ? findModelById(modelGroups, selectedBucket, selectedModels[selectedModality]) || firstModel(modelGroups, selectedBucket) : null;
+  const selectedModelLabel = selectedModality === 'package'
+    ? 'Package 1.0'
+    : selectedModel?.name || t('playground.input.menu.model');
+  const availableModelGroups = useMemo(
+    () => (selectedBucket ? modelGroups.filter((group) => group[selectedBucket].length > 0) : []),
+    [modelGroups, selectedBucket],
+  );
+  const selectedModelGroup = useMemo(
+    () => selectedBucket && selectedModel
+      ? modelGroups.find((group) => group.vendor.code === selectedModel.vendorCode && group[selectedBucket].length > 0)
+      : undefined,
+    [modelGroups, selectedBucket, selectedModel?.vendorCode],
+  );
+  const activeModelGroup = availableModelGroups.find((group) => group.vendor.code === activeVendorCode) || selectedModelGroup || availableModelGroups[0];
+
+  useEffect(() => {
+    setActiveVendorCode(selectedModelGroup?.vendor.code || availableModelGroups[0]?.vendor.code || '');
+  }, [availableModelGroups, selectedModelGroup?.vendor.code]);
 
   return (
     <div ref={containerRef} className="w-full max-w-[1280px] relative">
@@ -163,24 +177,53 @@ export function GenerationChatInput({ modality, selectedModality, setSelectedMod
                      <div className="w-3.5 h-3.5 rounded-[3px] border border-current opacity-70 flex items-center justify-center p-0.5">
                         <div className="w-full h-full bg-current rounded-[1px]" />
                      </div>
-                     <span>{selectedModels[selectedModality]}</span>
+                     <span>{selectedModelLabel}</span>
                      <ChevronDown className="w-3.5 h-3.5 text-slate-400 opacity-80" />
                    </button>
 
                    {/* Model Menu Popup */}
                    {showModelMenu && selectedModality !== 'package' && (
-                     <div className="absolute bottom-[calc(100%+8px)] left-0 w-48 bg-[#252528] rounded-xl border border-white/10 shadow-2xl overflow-hidden py-1.5 animate-in fade-in zoom-in-95 origin-bottom-left z-50">
+                     <div className="absolute bottom-[calc(100%+8px)] left-0 grid max-h-[360px] w-[520px] grid-cols-[150px_minmax(0,1fr)] overflow-hidden rounded-xl border border-white/10 bg-[#252528] shadow-2xl animate-in fade-in zoom-in-95 origin-bottom-left z-50">
+                        <div className="custom-scrollbar max-h-[360px] overflow-y-auto border-r border-white/5 bg-black/10 p-1.5">
+                          <div className="px-3 py-2 text-[11px] tracking-wider text-slate-500">{t("playground.input.menu.model")}</div>
+                          {availableModelGroups.length === 0 ? (
+                            <div className="px-3 py-2 text-xs text-slate-500">No vendors</div>
+                          ) : (
+                            availableModelGroups.map((group) => (
+                              <button
+                                key={group.vendor.code}
+                                onMouseEnter={() => setActiveVendorCode(group.vendor.code)}
+                                onClick={() => setActiveVendorCode(group.vendor.code)}
+                                className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-xs font-semibold transition-colors ${
+                                  activeModelGroup?.vendor.code === group.vendor.code ? 'bg-white/10 text-white' : 'text-slate-400 hover:bg-white/5 hover:text-slate-200'
+                                }`}
+                              >
+                                <span className="truncate">{group.vendor.name}</span>
+                                <span className="ml-2 shrink-0 font-mono text-[10px] opacity-60">{selectedBucket ? group[selectedBucket].length : 0}</span>
+                              </button>
+                            ))
+                          )}
+                        </div>
+                        <div className="custom-scrollbar max-h-[360px] min-w-0 overflow-y-auto py-1.5">
                         <div className="px-3 py-2 text-[11px] text-slate-500 tracking-wider">{t("playground.input.menu.model")}</div>
-                        {modelOptions[selectedModality].map(model => (
-                          <button
-                            key={model}
-                            onClick={() => { setSelectedModels({...selectedModels, [selectedModality]: model}); setShowModelMenu(false); }}
-                            className="w-full px-3 py-2 text-left flex items-center justify-between text-sm text-slate-200 hover:bg-white/5 transition-colors"
-                          >
-                            <span>{model}</span>
-                            {selectedModels[selectedModality] === model && <div className="w-4 h-4 flex items-center justify-center shrink-0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-cyan-400"><polyline points="20 6 9 17 4 12"></polyline></svg></div>}
-                          </button>
-                        ))}
+                        {selectedBucket && activeModelGroup ? (
+                          activeModelGroup[selectedBucket].map(model => (
+                            <button
+                              key={model.id}
+                              onClick={() => { setSelectedModel(selectedModality)(model.id); setShowModelMenu(false); }}
+                              className="flex w-full items-center justify-between gap-3 px-3 py-2 text-left text-sm text-slate-200 transition-colors hover:bg-white/5"
+                            >
+                              <div className="min-w-0">
+                                <div className="truncate font-semibold">{model.name}</div>
+                                <div className="line-clamp-1 text-[11px] text-slate-500">{model.desc}</div>
+                              </div>
+                              {selectedModels[selectedModality] === model.id && <div className="w-4 h-4 flex items-center justify-center shrink-0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-cyan-400"><polyline points="20 6 9 17 4 12"></polyline></svg></div>}
+                            </button>
+                          ))
+                        ) : (
+                          <div className="px-3 py-2 text-sm text-slate-500">No models are available.</div>
+                        )}
+                        </div>
                      </div>
                    )}
                  </div>
@@ -267,4 +310,43 @@ export function GenerationChatInput({ modality, selectedModality, setSelectedMod
       </div>
     </div>
   );
+}
+
+function toModelBucket(value: Modality): PlaygroundModelBucket | null {
+  switch (value) {
+    case 'agent':
+      return 'llms';
+    case 'image':
+      return 'images';
+    case 'video':
+      return 'videos';
+    case 'music':
+      return 'music';
+    case 'audio':
+      return 'audios';
+    case 'sfx':
+      return 'sfx';
+    case 'package':
+      return null;
+  }
+}
+
+function findModelById(groups: PlaygroundModelGroup[], bucket: PlaygroundModelBucket, modelId: string) {
+  for (const group of groups) {
+    const model = group[bucket].find((item) => item.id === modelId);
+    if (model) {
+      return model;
+    }
+  }
+  return null;
+}
+
+function firstModel(groups: PlaygroundModelGroup[], bucket: PlaygroundModelBucket) {
+  for (const group of groups) {
+    const model = group[bucket][0];
+    if (model) {
+      return model;
+    }
+  }
+  return null;
 }

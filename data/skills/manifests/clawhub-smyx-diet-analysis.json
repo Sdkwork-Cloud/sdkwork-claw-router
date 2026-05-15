@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57652,
+  "uuid": "skill-clawhub-smyx-diet-analysis",
+  "skillKey": "clawhub-smyx-diet-analysis",
+  "name": "饮食行为健康分析工具",
+  "summary": "Analyzes videos to evaluate human eating behaviors, habits, and dietary patterns. It identifies tendencies towards unhealthy eating and provides structured a...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_diet_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-sunjinhui",
+      "features": [
+        "Analyzes videos to evaluate human eating behaviors, habits, and dietary patterns",
+        "It identifies tendencies towards unhealthy eating and provides structured a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-diet-analysis@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272464691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-diet-analysis",
+      "url": "https://clawhub.ai/skills/smyx-diet-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-diet-analysis",
+    "url": "https://clawhub.ai/skills/smyx-diet-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-diet-analysis-71ca260223f804e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-diet-analysis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-diet-analysis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db6afefd4c0835881223e47bd3f08ed5ee29ac82e355581fa9c9b7436fbeb089",
+      "artifactSizeBytes": 2337
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T02:20:38.961Z"
+}

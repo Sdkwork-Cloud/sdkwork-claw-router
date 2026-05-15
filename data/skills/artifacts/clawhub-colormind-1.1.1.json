@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/colormind@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.colormind",
+  "skill": {
+    "id": 15972,
+    "skillKey": "clawhub-colormind",
+    "name": "Colormind"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "colormind",
+    "url": "https://clawhub.ai/skills/colormind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/colormind-90c1a7723fa123a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate color palettes and get color suggestions via the Colormind.io API (list models, generate palettes with optional locked colors)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boilerrat",
+      "userId": "s170t4v5bamwcpbskv6pc48j25847kge",
+      "displayName": "boilerrat",
+      "image": "https://avatars.githubusercontent.com/u/34731569?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 934,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1771473533195,
+      "changelog": "Fixed metadata (added python3 to required binaries) and added prominent privacy warnings about external data sharing and unencrypted HTTP transport. Enhanced SECURITY.md with detailed considerations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:edb24c3967fc53c724868db8ef3b311dc5e458f96de715a40fe0661f14f90412"
+}

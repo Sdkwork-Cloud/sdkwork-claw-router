@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58149,
+  "uuid": "skill-clawhub-qidian-reader",
+  "skillKey": "clawhub-qidian-reader",
+  "name": "Qidian Reader",
+  "summary": "起点中文网好书推荐与榜单查询。Use when the user wants to find good novels on Qidian (起点中文网), browse rankings by genre or category, get personalized book recommendations, or...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qidian_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "起点中文网好书推荐与榜单查询。Use when the user wants to find good novels on Qidian (起点中文网), browse rankings b."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qidian-reader@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qidian-reader",
+      "url": "https://clawhub.ai/skills/qidian-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qidian-reader",
+    "url": "https://clawhub.ai/skills/qidian-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qidian-reader-26f19975f6cf3ed3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qidian-reader@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qidian-reader-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab8d4184ebc87d1db70e673cb9a0bfe8f7ac55d18495bf1975b0a62a4cbf8b43",
+      "artifactSizeBytes": 2597
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T13:07:13.973Z"
+}

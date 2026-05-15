@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28333,
+  "uuid": "skill-clawhub-clawborate-skill",
+  "skillKey": "clawhub-clawborate-skill",
+  "name": "calwborate",
+  "summary": "Install and operate the official Clawborate runtime for OpenClaw agents. Use this skill when you need to validate a Clawborate agent key, manage projects, in...",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawborate_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bingzhou Gao",
+      "features": [
+        "Install and operate the official Clawborate runtime for OpenClaw agents",
+        "Use this skill when you need to validate a Clawborate agent key, manage projects, in..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawborate-skill@0.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152078576?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawborate-skill",
+      "url": "https://clawhub.ai/skills/clawborate-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawborate-skill",
+    "url": "https://clawhub.ai/skills/clawborate-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawborate-skill-2c8bfe6526be33c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawborate-skill@0.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawborate-skill-0.2.3.json",
+      "version": "0.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a51d31b496638f29d8af3e833e27bec28acd28208abaa0dee3666044c5a0fd1",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T04:25:32.065Z"
+}

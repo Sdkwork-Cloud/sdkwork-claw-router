@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66383,
+  "uuid": "skill-clawhub-huanzhi-fa-skill-pro",
+  "skillKey": "clawhub-huanzhi-fa-skill-pro",
+  "name": "Fa.Pro - 初创企业融资顾问专业版",
+  "summary": "焕智AI-FA-skill 融资诊断、资本情商指导、进度指引的AI融资顾问。用于评估融资准备度、提升Capital EQ、跟踪进度。当用户说'我要融资''看看准备好了吗'时调用。触发：融资、诊断、资本情商、Capital EQ、进度、TS、条款。",
+  "version": "2.6.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huanzhi_fa_skill_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI-innopower",
+      "features": [
+        "焕智AI-FA-skill 融资诊断、资本情商指导、进度指引的AI融资顾问。用于评估融资准备度、提升Capital EQ、跟踪进度。当用户说'我要融资''看看准备好了吗'时调用。触发：融资、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huanzhi-fa-skill-pro@2.6.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248300332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huanzhi-fa-skill-pro",
+      "url": "https://clawhub.ai/skills/huanzhi-fa-skill-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huanzhi-fa-skill-pro",
+    "url": "https://clawhub.ai/skills/huanzhi-fa-skill-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huanzhi-fa-skill-pro-ae6fdde363e6be68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huanzhi-fa-skill-pro@2.6.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-huanzhi-fa-skill-pro-2.6.6.json",
+      "version": "2.6.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73c0ac504a690fd0e923afbd70cc9b8fc454063a4d2f852112c34425c5aae5ec",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T12:54:19.247Z"
+}

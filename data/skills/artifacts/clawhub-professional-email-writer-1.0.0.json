@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/professional-email-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.professional_email_writer",
+  "skill": {
+    "id": 39657,
+    "skillKey": "clawhub-professional-email-writer",
+    "name": "professional-email-writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "professional-email-writer",
+    "url": "https://clawhub.ai/skills/professional-email-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/professional-email-writer-2be673abd076ee22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Craft professional emails for any business situation. Generate formal, persuasive, or friendly emails with proper structure and tone. Supports follow-ups, in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huajianjiu000",
+      "userId": "s17f54gbrv7gfj1z72d0e3d24h84b2ep",
+      "displayName": "huajianjiu",
+      "image": "https://avatars.githubusercontent.com/u/163974966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776568707448,
+      "changelog": "- Initial release of the Professional Email Writer skill.\n- Generate well-structured business emails for scenarios like introductions, requests, follow-ups, apologies, thank-yous, and proposals.\n- Adjust tone (formal, semi-formal, friendly professional) and length (concise or detailed).\n- Features subject line suggestions and professional reply drafts.\n- Trigger commands include: /write-email, /compose-email, /email-draft, /business-email.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79fc7e4c1737014026c36955035b24a5a9c8c489449461c05320e2d12d054974"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30037,
+  "uuid": "skill-clawhub-map-query",
+  "skillKey": "clawhub-map-query",
+  "name": "map-query",
+  "summary": "Query nearby restaurants, shops, promotions, and POIs by address using AMap, Baidu, or Tencent Maps with geocoding and filters.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.map_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Slava Chan",
+      "features": [
+        "Query nearby restaurants, shops, promotions, and POIs by address using AMap, Baidu, or Tencent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/map-query@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49863417?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "map-query",
+      "url": "https://clawhub.ai/skills/map-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "map-query",
+    "url": "https://clawhub.ai/skills/map-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/map-query-832d6254abdbf541.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/map-query@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-map-query-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab7f0579bd093019a0c2538a2f72996e9b7936a05d57b3ba69b749f97ac06df1",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T22:18:40.652Z"
+}

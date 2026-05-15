@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acedatacloud-seedance-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acedatacloud_seedance_video",
+  "skill": {
+    "id": 33113,
+    "skillKey": "clawhub-acedatacloud-seedance-video",
+    "name": "Seedance Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acedatacloud-seedance-video",
+    "url": "https://clawhub.ai/skills/acedatacloud-seedance-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acedatacloud-seedance-video-4e7f64528920fd14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI dance and motion videos with Seedance (ByteDance) via AceDataCloud API. Use when creating videos from text prompts or animating images into motio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "germey",
+      "userId": "publishers:germey",
+      "displayName": "Germey",
+      "image": "https://avatars.githubusercontent.com/u/8678661?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774157970507,
+      "changelog": "Seedance-video skill v1.0.0 initial release:\n\n- Generate AI dance and motion videos using Seedance (ByteDance) via AceDataCloud API.\n- Supports text-to-video and image-to-video animation workflows.\n- Multiple video models available with configurable resolution, duration (2–12s), and service tiers.\n- Requires ACEDATACLOUD_API_TOKEN for authentication.\n- Task polling supported; explicit succeeded/failed status handling.\n- MCP server integration and tool-use options provided.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:18e59caf7cf956ab47ef1feb0071d3d860939a6b7cdd118be0adcf9176012d4d"
+}

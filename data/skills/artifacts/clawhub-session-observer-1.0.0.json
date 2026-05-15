@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-observer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_observer",
+  "skill": {
+    "id": 31276,
+    "skillKey": "clawhub-session-observer",
+    "name": "Session Observer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-observer",
+    "url": "https://clawhub.ai/skills/session-observer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-observer-f75c3ea0d50e0f65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Observe OpenClaw session usage, token consumption, context pressure, and model/runtime state. Use when the user asks about token usage, context size, model i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qsczseasd",
+      "userId": "s170evc9kkyq4mctpn61dq17y183h6x1",
+      "displayName": "qsczseasd",
+      "image": "https://avatars.githubusercontent.com/u/45473573?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773643847337,
+      "changelog": "Initial public release. Adds lightweight OpenClaw session monitoring for token usage, context pressure, cache behavior, and practical next-step guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:032400fc84dd13be78f1d27c930b3fa2754c5cfd8e68e481b1c479b33fa8c2af"
+}

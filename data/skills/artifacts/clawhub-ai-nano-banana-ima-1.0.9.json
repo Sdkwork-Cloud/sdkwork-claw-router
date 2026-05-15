@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-nano-banana-ima@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_nano_banana_ima",
+  "skill": {
+    "id": 19656,
+    "skillKey": "clawhub-ai-nano-banana-ima",
+    "name": "IMA Nano Banana Image Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-nano-banana-ima",
+    "url": "https://clawhub.ai/skills/ai-nano-banana-ima",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-nano-banana-ima-ce038488079cd844.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Nano Banana-only image generation on IMA Open API. Supports text_to_image and image_to_image with gemini-3.1-flash-image (budget) and gemini-3-pro-image (pre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "allenfancy-gan",
+      "userId": "s17etzvvhp65ybcxjyj408z1nx83hx8t",
+      "displayName": "allenfancy-gan",
+      "image": "https://avatars.githubusercontent.com/u/224295706?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 570,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1774597249212,
+      "changelog": "**Changelog for version 1.0.9:**\n\n- Added a detailed changelog file: `CHANGELOG_CLAWHUB.md`.\n- No other changes; functionality remains the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a8aa75b60e7da8c9fc1d40187f760d8d9bdc9dbad6aa1528b1f7154444edb57"
+}

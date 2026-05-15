@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27191,
+  "uuid": "skill-clawhub-docugenerate",
+  "skillKey": "clawhub-docugenerate",
+  "name": "Docugenerate",
+  "summary": "DocuGenerate integration. Manage Documents, Templates. Use when the user wants to interact with DocuGenerate data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docugenerate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "DocuGenerate integration",
+        "Manage Documents, Templates",
+        "Use when the user wants to interact with DocuGenerate data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docugenerate@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docugenerate",
+      "url": "https://clawhub.ai/skills/docugenerate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docugenerate",
+    "url": "https://clawhub.ai/skills/docugenerate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docugenerate-d1a28fe5395e1987.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docugenerate@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-docugenerate-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a64a456d3513c2b477e143250bfbb8cc0faf259e8ed732f4b898973e841d3258",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:24:33.656Z"
+}

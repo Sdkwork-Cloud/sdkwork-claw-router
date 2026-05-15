@@ -6,11 +6,13 @@ use sdkwork_claw_product::application::EntityUuidGenerator;
 use sdkwork_claw_product::domain::DomainResult;
 use sdkwork_claw_product::ports::{
     AdminCouponBatchItem, AdminCouponItem, AdminMarketingCommandFuture, AdminMarketingStore,
-    AdminPromoCodeItem, AdminRechargeRecordItem, AdminRedemptionRecordItem, AdminReferralStatItem,
-    CreateAdminCouponCommand, DeleteAdminCouponCommand, GenerateAdminCouponBatchCommand,
-    ListAdminCouponBatchesQuery, ListAdminCouponsQuery, ListAdminPromoCodesQuery,
-    ListAdminRechargeRecordsQuery, ListAdminRedemptionRecordsQuery, ListAdminReferralStatsQuery,
-    UpdateAdminPromoCodeStatusCommand,
+    AdminPromoCodeItem, AdminRechargePackageItem, AdminRechargeRecordItem,
+    AdminRedemptionRecordItem, AdminReferralStatItem, CreateAdminCouponCommand,
+    CreateAdminRechargePackageCommand, DeleteAdminCouponCommand, DeleteAdminRechargePackageCommand,
+    GenerateAdminCouponBatchCommand, ListAdminCouponBatchesQuery, ListAdminCouponsQuery,
+    ListAdminPromoCodesQuery, ListAdminRechargePackagesQuery, ListAdminRechargeRecordsQuery,
+    ListAdminRedemptionRecordsQuery, ListAdminReferralStatsQuery,
+    UpdateAdminPromoCodeStatusCommand, UpdateAdminRechargePackageCommand,
 };
 use serde_json::Value;
 use tower::ServiceExt;
@@ -24,7 +26,7 @@ async fn admin_marketing_route_lists_all_marketing_read_models() {
 
     let coupons = request_json(
         router.clone(),
-        signed_request("POST", "/backend/v3/api/coupon/list", "{}"),
+        signed_request("GET", "/backend/v3/api/billing/coupons", ""),
     )
     .await;
     assert_eq!("2000", coupons["code"]);
@@ -34,7 +36,7 @@ async fn admin_marketing_route_lists_all_marketing_read_models() {
 
     let batches = request_json(
         router.clone(),
-        signed_request("GET", "/backend/v3/api/router/coupon-batches", ""),
+        signed_request("GET", "/backend/v3/api/billing/coupon_batches", ""),
     )
     .await;
     assert_eq!("Welcome batch", batches["data"]["items"][0]["name"]);
@@ -44,7 +46,7 @@ async fn admin_marketing_route_lists_all_marketing_read_models() {
 
     let promo_codes = request_json(
         router.clone(),
-        signed_request("GET", "/backend/v3/api/router/coupon-codes", ""),
+        signed_request("GET", "/backend/v3/api/billing/coupon_codes", ""),
     )
     .await;
     assert_eq!("WELCOME-0001", promo_codes["data"]["items"][0]["code"]);
@@ -56,7 +58,7 @@ async fn admin_marketing_route_lists_all_marketing_read_models() {
 
     let redemptions = request_json(
         router.clone(),
-        signed_request("POST", "/backend/v3/api/user/coupon/list", "{}"),
+        signed_request("GET", "/backend/v3/api/billing/users/coupons", ""),
     )
     .await;
     assert_eq!("30", redemptions["data"]["items"][0]["userId"]);
@@ -65,12 +67,22 @@ async fn admin_marketing_route_lists_all_marketing_read_models() {
 
     let recharges = request_json(
         router.clone(),
-        signed_request("POST", "/backend/v3/api/vip/recharge/list", "{}"),
+        signed_request("GET", "/backend/v3/api/billing/recharges/records", ""),
     )
     .await;
     assert_eq!("recharge-100", recharges["data"]["items"][0]["tradeNo"]);
     assert_eq!("1000", recharges["data"]["items"][0]["usd_credited"]);
     assert_eq!("stripe", recharges["data"]["items"][0]["method"]);
+
+    let recharge_packages = request_json(
+        router.clone(),
+        signed_request("GET", "/backend/v3/api/billing/recharges/packages", ""),
+    )
+    .await;
+    assert_eq!("100", recharge_packages["data"]["items"][0]["id"]);
+    assert_eq!("10.00", recharge_packages["data"]["items"][0]["rmb"]);
+    assert_eq!(25, recharge_packages["data"]["items"][0]["bonus"]);
+    assert_eq!(125, recharge_packages["data"]["items"][0]["points"]);
 
     let referrals = request_json(
         router,
@@ -94,7 +106,7 @@ async fn admin_marketing_route_creates_deletes_generates_and_updates_codes() {
         router.clone(),
         signed_request(
             "POST",
-            "/backend/v3/api/coupon",
+            "/backend/v3/api/billing/coupons",
             r#"{"name":"Launch credit","type":"amount","value":"$8.50"}"#,
         ),
     )
@@ -107,7 +119,7 @@ async fn admin_marketing_route_creates_deletes_generates_and_updates_codes() {
         router.clone(),
         signed_request(
             "POST",
-            "/backend/v3/api/router/coupon-batches/generate",
+            "/backend/v3/api/billing/coupon_batches",
             r#"{"couponId":"99","name":"Launch batch","count":3,"prefix":"LAUNCH"}"#,
         ),
     )
@@ -120,16 +132,55 @@ async fn admin_marketing_route_creates_deletes_generates_and_updates_codes() {
         router.clone(),
         signed_request(
             "PATCH",
-            "/backend/v3/api/router/coupon-codes/501/status",
+            "/backend/v3/api/billing/coupon_codes/501/status",
             r#"{"status":"voided"}"#,
         ),
     )
     .await;
     assert_eq!(true, update_status["data"]["updated"]);
 
+    let create_package = request_json(
+        router.clone(),
+        signed_request(
+            "POST",
+            "/backend/v3/api/billing/recharges/packages",
+            r#"{"rmb":"12.00","bonus":30,"status":"active"}"#,
+        ),
+    )
+    .await;
+    assert_eq!("901", create_package["data"]["item"]["id"]);
+    assert_eq!("12.00", create_package["data"]["item"]["rmb"]);
+    assert_eq!(30, create_package["data"]["item"]["bonus"]);
+    assert_eq!(150, create_package["data"]["item"]["points"]);
+
+    let update_package = request_json(
+        router.clone(),
+        signed_request(
+            "PUT",
+            "/backend/v3/api/billing/recharges/packages/901",
+            r#"{"rmb":"20.00","bonus":50,"status":"inactive"}"#,
+        ),
+    )
+    .await;
+    assert_eq!("901", update_package["data"]["item"]["id"]);
+    assert_eq!("20.00", update_package["data"]["item"]["rmb"]);
+    assert_eq!(50, update_package["data"]["item"]["bonus"]);
+    assert_eq!(250, update_package["data"]["item"]["points"]);
+
+    let delete_package = request_json(
+        router.clone(),
+        signed_request(
+            "DELETE",
+            "/backend/v3/api/billing/recharges/packages/901",
+            "",
+        ),
+    )
+    .await;
+    assert_eq!(true, delete_package["data"]["deleted"]);
+
     let delete_coupon = request_json(
         router,
-        signed_request("DELETE", "/backend/v3/api/coupon/99", ""),
+        signed_request("DELETE", "/backend/v3/api/billing/coupons/99", ""),
     )
     .await;
     assert_eq!(true, delete_coupon["data"]["deleted"]);
@@ -139,6 +190,9 @@ async fn admin_marketing_route_creates_deletes_generates_and_updates_codes() {
             "create_coupon",
             "generate_batch",
             "update_promo_code_status",
+            "create_recharge_package",
+            "update_recharge_package",
+            "delete_recharge_package",
             "delete_coupon"
         ],
         *store.commands.lock().unwrap()
@@ -179,7 +233,7 @@ async fn admin_marketing_route_rejects_invalid_batch_count_without_calling_store
     let response = router
         .oneshot(signed_request(
             "POST",
-            "/backend/v3/api/router/coupon-batches/generate",
+            "/backend/v3/api/billing/coupon_batches",
             r#"{"couponId":"1","name":"Invalid","count":0,"prefix":"BAD"}"#,
         ))
         .await
@@ -392,6 +446,76 @@ impl AdminMarketingStore for TestAdminMarketingStore {
                 status: "success".to_owned(),
                 time: "2026-04-29 10:00:00".to_owned(),
             }])
+        })
+    }
+
+    fn list_recharge_packages<'a>(
+        &'a self,
+        query: ListAdminRechargePackagesQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<AdminRechargePackageItem>> {
+        Box::pin(async move {
+            assert_eq!(10, query.subject.tenant_id);
+            Ok(vec![AdminRechargePackageItem {
+                id: "100".to_owned(),
+                rmb: "10.00".to_owned(),
+                bonus: 25,
+                points: 125,
+            }])
+        })
+    }
+
+    fn create_recharge_package<'a>(
+        &'a self,
+        command: CreateAdminRechargePackageCommand,
+    ) -> AdminMarketingCommandFuture<'a, AdminRechargePackageItem> {
+        Box::pin(async move {
+            self.commands
+                .lock()
+                .unwrap()
+                .push("create_recharge_package");
+            assert_eq!("12.00", command.rmb);
+            assert_eq!(30, command.bonus);
+            Ok(AdminRechargePackageItem {
+                id: "901".to_owned(),
+                rmb: command.rmb,
+                bonus: command.bonus,
+                points: 150,
+            })
+        })
+    }
+
+    fn update_recharge_package<'a>(
+        &'a self,
+        command: UpdateAdminRechargePackageCommand,
+    ) -> AdminMarketingCommandFuture<'a, AdminRechargePackageItem> {
+        Box::pin(async move {
+            self.commands
+                .lock()
+                .unwrap()
+                .push("update_recharge_package");
+            assert_eq!(901, command.package_id);
+            assert_eq!("20.00", command.rmb);
+            assert_eq!(50, command.bonus);
+            Ok(AdminRechargePackageItem {
+                id: command.package_id.to_string(),
+                rmb: command.rmb,
+                bonus: command.bonus,
+                points: 250,
+            })
+        })
+    }
+
+    fn delete_recharge_package<'a>(
+        &'a self,
+        command: DeleteAdminRechargePackageCommand,
+    ) -> AdminMarketingCommandFuture<'a, bool> {
+        Box::pin(async move {
+            self.commands
+                .lock()
+                .unwrap()
+                .push("delete_recharge_package");
+            assert_eq!(901, command.package_id);
+            Ok(true)
         })
     }
 

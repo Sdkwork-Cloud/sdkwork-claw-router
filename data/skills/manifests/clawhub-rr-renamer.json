@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37445,
+  "uuid": "skill-clawhub-rr-renamer",
+  "skillKey": "clawhub-rr-renamer",
+  "name": "Rr Renamer",
+  "summary": "Use RenameRegex (RR.exe) as a generic Windows CLI bulk renamer from OpenClaw. Use when you need regex search/replace renames with preview (/p pretend), recur...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rr_renamer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Altair",
+      "features": [
+        "Use RenameRegex (RR.exe) as a generic Windows CLI bulk renamer from OpenClaw",
+        "Use when you need regex search/replace renames with preview (/p pretend), recur..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rr-renamer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1401591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rr-renamer",
+      "url": "https://clawhub.ai/skills/rr-renamer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rr-renamer",
+    "url": "https://clawhub.ai/skills/rr-renamer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rr-renamer-5588a308eac20994.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rr-renamer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rr-renamer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5dc42c873959df45b949b8f3eaeffed28b9210bf15aaf8aaa8a644db13fad221",
+      "artifactSizeBytes": 2292
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T01:08:04.458Z"
+}

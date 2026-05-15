@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45830,
+  "uuid": "skill-clawhub-cargo-flight",
+  "skillKey": "clawhub-cargo-flight",
+  "name": "cargo-flight",
+  "summary": "Book air cargo flights, freight shipping and parcel air transport with oversized luggage booking. Also supports: flight booking, hotel reservation, train tic...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cargo_flight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dingtom336-gif",
+      "features": [
+        "Book air cargo flights, freight shipping and parcel air transport with oversized luggage booking",
+        "Also supports: flight booking, hotel reservation, train tic..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cargo-flight@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256118512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cargo-flight",
+      "url": "https://clawhub.ai/skills/cargo-flight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cargo-flight",
+    "url": "https://clawhub.ai/skills/cargo-flight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cargo-flight-953631f151a5ce61.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cargo-flight@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cargo-flight-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f64fb0ea8f42da236b47eb5804bdb1a16d51ba8cdd5847e149b6e6a35fc91df2",
+      "artifactSizeBytes": 2449
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T08:03:11.136Z"
+}

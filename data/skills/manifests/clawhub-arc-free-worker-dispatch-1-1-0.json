@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24009,
+  "uuid": "skill-clawhub-arc-free-worker-dispatch-1-1-0",
+  "skillKey": "clawhub-arc-free-worker-dispatch-1-1-0",
+  "name": "Arc Free Worker Dispatch 1.1.0",
+  "summary": "Route tasks to free AI models via OpenRouter to save money. Use when the agent needs to delegate content writing, research, code generation, or other tasks t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arc_free_worker_dispatch_1_1_0",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sieyer",
+      "features": [
+        "Route tasks to free AI models via OpenRouter to save money",
+        "Use when the agent needs to delegate content writing, research, code generation, or other tasks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arc-free-worker-dispatch-1-1-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68283443?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arc-free-worker-dispatch-1-1-0",
+      "url": "https://clawhub.ai/skills/arc-free-worker-dispatch-1-1-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arc-free-worker-dispatch-1-1-0",
+    "url": "https://clawhub.ai/skills/arc-free-worker-dispatch-1-1-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arc-free-worker-dispatch-1-1-0-898d98e8d8771e9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arc-free-worker-dispatch-1-1-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arc-free-worker-dispatch-1-1-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:308c69bd16bd286cb4e0c6b3e24a8ba0e438b86bba9a38be026038fb47c400c7",
+      "artifactSizeBytes": 2435
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T12:03:56.695Z"
+}

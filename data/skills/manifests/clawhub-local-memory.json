@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62469,
+  "uuid": "skill-clawhub-local-memory",
+  "skillKey": "clawhub-local-memory",
+  "name": "Local Memory",
+  "summary": "本地向量记忆工具，替代内置 memory 工具。使用 ChromaDB + BGE-small-zh 实现完全离线的语义记忆存储和检索。使用场景：(1) 存储重要信息到长期记忆，(2) 语义搜索历史记忆，(3) 删除特定记忆。触发词：记住、记忆、recall、memory、forget。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liangmu-git2",
+      "features": [
+        "本地向量记忆工具，替代内置 memory 工具。使用 ChromaDB + BGE-small-zh 实现完全离线的语义记忆存储和检索。使用场景：(1) 存储重要信息到长期记忆，(2) 语义."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59187617?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-memory",
+      "url": "https://clawhub.ai/skills/local-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-memory",
+    "url": "https://clawhub.ai/skills/local-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-memory-0db17eccc0b1a342.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29d1b5de444acea39b371c07b92ce5482c0eafd65daed1a3f28809921b56ec61",
+      "artifactSizeBytes": 2126
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T04:08:21.628Z"
+}

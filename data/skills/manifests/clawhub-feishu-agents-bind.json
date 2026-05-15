@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59864,
+  "uuid": "skill-clawhub-feishu-agents-bind",
+  "skillKey": "clawhub-feishu-agents-bind",
+  "name": "feishu-agents",
+  "summary": "绑定飞书机器人到Agent。用户发送App ID和App Secret即可自动配置飞书账号并绑定到指定Agent。用于：(1) 用户提供App ID和App Secret (2) 创建或选择要绑定的Agent (3) 自动配置openclaw.json并重启Gateway。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_agents_bind",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenAix",
+      "features": [
+        "绑定飞书机器人到Agent。用户发送App ID和App Secret即可自动配置飞书账号并绑定到指定Agent。用于：(1) 用户提供App ID和App Secret (2) 创建或选择."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-agents-bind@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21351751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-agents-bind",
+      "url": "https://clawhub.ai/skills/feishu-agents-bind"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-agents-bind",
+    "url": "https://clawhub.ai/skills/feishu-agents-bind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-agents-bind-0631ff35b5458884.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-agents-bind@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-agents-bind-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c8253f6ae6098a99336da54b3c17206f7060dcaeafc8e174694977a70c7aa4c",
+      "artifactSizeBytes": 2750
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T07:46:28.647Z"
+}

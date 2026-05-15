@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22258,
+  "uuid": "skill-clawhub-ecommerce-skills",
+  "skillKey": "clawhub-ecommerce-skills",
+  "name": "Designkit Ecommerce Studio",
+  "summary": "Use when users need ecommerce image help such as background removal, transparent or white background output, blurry photo restoration, or listing image gener...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "designkit",
+      "features": [
+        "Use when users need ecommerce image help such as background removal, transparent or white backg."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecommerce-skills@1.0.2",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/ecommerce-skills/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecommerce-skills",
+      "url": "https://clawhub.ai/skills/ecommerce-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-skills",
+    "url": "https://clawhub.ai/skills/ecommerce-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-skills-c132b9ef5415eb44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecommerce-skills@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecommerce-skills-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6dbfc6e5f35aa3149006f9369f8e6f99b6b59bb681a50508587788cf321678c3",
+      "artifactSizeBytes": 2621
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T09:34:55.867Z"
+}

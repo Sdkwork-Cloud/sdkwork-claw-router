@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hourly-momentum-trader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hourly_momentum_trader",
+  "skill": {
+    "id": 16889,
+    "skillKey": "clawhub-hourly-momentum-trader",
+    "name": "Hourly Momentum Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hourly-momentum-trader",
+    "url": "https://clawhub.ai/skills/hourly-momentum-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hourly-momentum-trader-0647fb56483e0558.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Momentum-based trading agent for hourly crypto candles. Uses RSI, MACD, OBV, EMA, and Bollinger Band confluence to score directional momentum from -10 to +10..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamierossouw",
+      "userId": "publishers:jamierossouw",
+      "displayName": "JamieRossouw",
+      "image": "https://avatars.githubusercontent.com/u/219507116?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 719,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771707488976,
+      "changelog": "Initial release: Hourly momentum-based trading agent for crypto.\n\n- Implements composite momentum scoring system (-10 to +10) using RSI, MACD, OBV, EMA, Bollinger Bands, and volume.\n- Integrates with Polymarket hourly binary markets; calculates edge for optimal market entries.\n- Outputs position signals and confidence as JSON for use in trading bots or signal dashboards.\n- Detects high-EV counter-consensus setups for amplified potential returns.\n- Default watchlist includes major cryptocurrencies like BTC, ETH, SOL, and others.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:67cb34448fa8290708ff2b624fe6720f575b78dbcf5511f4accb89ed3e53072c"
+}

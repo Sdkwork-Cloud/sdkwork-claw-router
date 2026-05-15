@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/camino-ev-charger@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camino_ev_charger",
+  "skill": {
+    "id": 16114,
+    "skillKey": "clawhub-camino-ev-charger",
+    "name": "Ev Charger Locations"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camino-ev-charger",
+    "url": "https://clawhub.ai/skills/camino-ev-charger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camino-ev-charger-de393974615bd3d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find EV charging stations along a route or near a destination using Camino AI's location intelligence with OpenStreetMap data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "james-southendsolutions",
+      "userId": "publishers:james-southendsolutions",
+      "displayName": "James-southendsolutions",
+      "image": "https://avatars.githubusercontent.com/u/93152760?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 727,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771275136227,
+      "changelog": "Initial release of Camino EV Charger skill.\n\n- Find EV charging stations along a route or near a destination using Camino AI with OpenStreetMap data.\n- Supports flexible queries, city/coordinates search, and charger network filtering via AI-powered ranking.\n- Includes shell scripts and curl examples for quick search and custom queries.\n- Trial and API key setup instructions provided (25-call instant trial or 1,000 free calls/month with signup).\n- Detailed parameter list, response format, and usage examples for integrating EV charger search into workflows.\n- Best practices outlined for optimal charger finding and integration with other Camino skills.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fa7ab76a61fa97eaeb52b379d1db044a5f14174ab6146df22b66dc10554341aa"
+}

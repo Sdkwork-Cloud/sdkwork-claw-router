@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15311,
+  "uuid": "skill-clawhub-claw-audit",
+  "skillKey": "clawhub-claw-audit",
+  "name": "Claw Audit",
+  "summary": "Security scanner and hardening tool for OpenClaw. Use when the user asks about security, wants to scan installed skills for malware or vulnerabilities, audit...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "u45362",
+      "features": [
+        "Security scanner and hardening tool for OpenClaw",
+        "Use when the user asks about security, wants to scan installed skills for malware or vulnerabil."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-audit@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168991362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-audit",
+      "url": "https://clawhub.ai/skills/claw-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-audit",
+    "url": "https://clawhub.ai/skills/claw-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-audit-26a3415ffbb3061a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-audit@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-audit-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:277071eb0fe2543d1becb46e4393a50b1594dda1b7f06213d7921828d6bfd527",
+      "artifactSizeBytes": 1827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T15:24:38.107Z"
+}

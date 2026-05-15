@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pro-research-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pro_research_report",
+  "skill": {
+    "id": 71070,
+    "skillKey": "clawhub-pro-research-report",
+    "name": "专业行业研究报告生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pro-research-report",
+    "url": "https://clawhub.ai/skills/pro-research-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pro-research-report-27c91a8d8a74b395.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成行业深度研究报告。当用户的请求中包含行业关键词、行业名称，并且意图是了解某个行业、生成行业研究报告、行业分析时，触发此 Skill。 典型触发场景包括但不限于：用户提到\"XX行业研究\"、\"XX行业报告\"、\"帮我分析XX行业\"、\"XX产业深度研究\"、\"XX领域市场分析\"等。 即使用户没有明确说\"报告\"二字，只要..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gudai1972",
+      "userId": "s170ehjnpgg6zzdrnnw7964hjn83z5kk",
+      "displayName": "gudai1972",
+      "image": "https://avatars.githubusercontent.com/u/40489812?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774970179126,
+      "changelog": "无需API Key，支持全网数据搜索，自动生成图表和专业格式报告",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c69745ee835a6393569f2d4f7b2e74e382d3b420d8b430c83670935ec64bbfaa"
+}

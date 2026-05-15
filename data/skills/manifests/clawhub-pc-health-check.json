@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63328,
+  "uuid": "skill-clawhub-pc-health-check",
+  "skillKey": "clawhub-pc-health-check",
+  "name": "Pc Health Check",
+  "summary": "Windows PC一键健康体检工具。覆盖CPU/内存/磁盘/网络/进程/驱动/系统事件/启动项/端口/安全更新， 自动生成结构化Markdown报告，标注风险等级与处理建议。 触发词：PC体检、电脑巡检、健康检查、系统检查、PC health check。 支持两种模式： - 快速模式（--quick）：5项核...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pc_health_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coolfzb",
+      "features": [
+        "Windows PC一键健康体检工具。覆盖CPU/内存/磁盘/网络/进程/驱动/系统事件/启动项/端口/安全更新， 自动生成结构化Markdown报告，标注风险等级与处理建议。 触发词：PC.",
+        "快速模式（--quick）：5项核..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pc-health-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/277456260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pc-health-check",
+      "url": "https://clawhub.ai/skills/pc-health-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pc-health-check",
+    "url": "https://clawhub.ai/skills/pc-health-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pc-health-check-73739f01a70a9251.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pc-health-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pc-health-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa2aa21877cfe2e96e22fedb97abad863ea9f540598e4684d2ced1367d7b29db",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T03:59:52.629Z"
+}

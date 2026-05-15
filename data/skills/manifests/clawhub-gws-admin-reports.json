@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17951,
+  "uuid": "skill-clawhub-gws-admin-reports",
+  "skillKey": "clawhub-gws-admin-reports",
+  "name": "Gws Admin Reports",
+  "summary": "Google Workspace Admin SDK: Audit logs and usage reports.",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_admin_reports",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google Workspace Admin SDK: Audit logs and usage reports."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-admin-reports@1.0.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-admin-reports",
+      "url": "https://clawhub.ai/skills/gws-admin-reports"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-admin-reports",
+    "url": "https://clawhub.ai/skills/gws-admin-reports",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-admin-reports-d3d417e52e22a50a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-admin-reports@1.0.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-admin-reports-1.0.13.json",
+      "version": "1.0.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc73189dae3155a179cd0f1579e9bfedfe4bffe3ec13892599b1b7f0ac8dd6e8",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:32:59.706Z"
+}

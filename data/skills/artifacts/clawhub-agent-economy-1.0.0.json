@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-economy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_economy",
+  "skill": {
+    "id": 22822,
+    "skillKey": "clawhub-agent-economy",
+    "name": "Agent Economy Starter Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-economy",
+    "url": "https://clawhub.ai/skills/agent-economy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-economy-ad0b7a8454031498.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables your agent to earn cryptocurrency by registering skills, negotiating tasks with escrow, building reputation, and auto-matching to paid jobs globally."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imaflytok",
+      "userId": "publishers:imaflytok",
+      "displayName": "FLY",
+      "image": "https://avatars.githubusercontent.com/u/258594521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 449,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772749068294,
+      "changelog": "Launch: wallet, treasury, negotiations, skill discovery for ClawSwarm",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:54e0f9d6881b55689ecf901de15b001c0d33e77b0f5486ba2a7852a9aeb787bc"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17109,
+  "uuid": "skill-clawhub-solo-pipeline",
+  "skillKey": "clawhub-solo-pipeline",
+  "name": "Pipeline",
+  "summary": "Launch automated multi-skill pipeline that chains skills into a loop. Use when user says \"run pipeline\", \"automate research to PRD\", \"full pipeline\", \"resear...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solo_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rust",
+      "features": [
+        "Launch automated multi-skill pipeline that chains skills into a loop",
+        "Use when user says \"run pipeline\", \"automate research to PRD\", \"full pipeline\", \"resear..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solo-pipeline@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1236751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solo-pipeline",
+      "url": "https://clawhub.ai/skills/solo-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solo-pipeline",
+    "url": "https://clawhub.ai/skills/solo-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solo-pipeline-151ceae625dcdcdd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solo-pipeline@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-solo-pipeline-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e897a74b292eb46303f00148d3b07c85197eb3f342340177d5c45ae876a30166",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T21:51:57.303Z"
+}

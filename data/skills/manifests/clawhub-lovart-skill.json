@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13833,
+  "uuid": "skill-clawhub-lovart-skill",
+  "skillKey": "clawhub-lovart-skill",
+  "name": "Lovart Skill",
+  "summary": "Generate images, videos, and audio/music via Lovart AI. Also manages Lovart projects, threads (conversation history), and user settings. Trigger on: (1) any...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lovart_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lovart-admin",
+      "features": [
+        "Generate images, videos, and audio/music via Lovart AI",
+        "Also manages Lovart projects, threads (conversation history), and user settings",
+        "Trigger on: (1) any..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lovart-skill@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218042550?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lovart-skill",
+      "url": "https://clawhub.ai/skills/lovart-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lovart-skill",
+    "url": "https://clawhub.ai/skills/lovart-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lovart-skill-c0469f770e837333.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lovart-skill@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-lovart-skill-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66176c16babeda8a18252e101e64777658aec3383349b775ae95aee2e98fc66f",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:36:28.400Z"
+}

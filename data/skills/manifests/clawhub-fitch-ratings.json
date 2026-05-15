@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66567,
+  "uuid": "skill-clawhub-fitch-ratings",
+  "skillKey": "clawhub-fitch-ratings",
+  "name": "Fitch Ratings",
+  "summary": "信用评级行业寡头之一，与标普穆迪并列为全球三大评级机构，2024年纽交所上市",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fitch_ratings",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "信用评级行业寡头之一，与标普穆迪并列为全球三大评级机构，2024年纽交所上市"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fitch-ratings@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fitch-ratings",
+      "url": "https://clawhub.ai/skills/fitch-ratings"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fitch-ratings",
+    "url": "https://clawhub.ai/skills/fitch-ratings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fitch-ratings-5abe8443fcace4cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fitch-ratings@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fitch-ratings-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b737e7c9f2b013be3f9a97b1a287a415a0f47ba69aa5b29db509ab4dd265a16c",
+      "artifactSizeBytes": 2286
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T22:06:28.106Z"
+}

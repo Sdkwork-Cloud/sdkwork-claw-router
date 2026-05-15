@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29560,
+  "uuid": "skill-clawhub-clay",
+  "skillKey": "clawhub-clay",
+  "name": "Clay",
+  "summary": "Search, manage, and organize your contact network via the Clay CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Keith Harrison",
+      "features": [
+        "Search, manage, and organize your contact network via the Clay CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clay@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/908259?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clay",
+      "url": "https://clawhub.ai/skills/clay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clay",
+    "url": "https://clawhub.ai/skills/clay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clay-06363555054de198.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clay@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clay-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ce827d0f95100a6df712bd679ef1a409602624b1db1ef0bfe4888cf8cb4c37f",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T15:14:10.492Z"
+}

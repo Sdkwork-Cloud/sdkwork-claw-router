@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42913,
+  "uuid": "skill-clawhub-zoo-aquarium",
+  "skillKey": "clawhub-zoo-aquarium",
+  "name": "Zoo Aquarium",
+  "summary": "Find zoos, aquariums, safari parks, and wildlife sanctuaries. Great for families and animal lovers. Also supports: flight booking, hotel reservation, train t...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoo_aquarium",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiejinsong",
+      "features": [
+        "Find zoos, aquariums, safari parks, and wildlife sanctuaries",
+        "Great for families and animal lovers",
+        "Also supports: flight booking, hotel reservation, train t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zoo-aquarium@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1642572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zoo-aquarium",
+      "url": "https://clawhub.ai/skills/zoo-aquarium"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoo-aquarium",
+    "url": "https://clawhub.ai/skills/zoo-aquarium",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoo-aquarium-d5d559de3c207186.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zoo-aquarium@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zoo-aquarium-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8eed243b5f6de19b676a09693a27511f6f0b80d3313f68539eb037fb3012b009",
+      "artifactSizeBytes": 2416
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T07:45:01.682Z"
+}

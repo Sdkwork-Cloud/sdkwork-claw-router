@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21416,
+  "uuid": "skill-clawhub-arxiv-watcher-music",
+  "skillKey": "clawhub-arxiv-watcher-music",
+  "name": "ArXiv Watcher for Music Research",
+  "summary": "Search and summarize papers from ArXiv. Use when the user asks for the latest research, specific topics on ArXiv, or a daily summary of AI papers.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_watcher_music",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nomorecoding",
+      "features": [
+        "Search and summarize papers from ArXiv",
+        "Use when the user asks for the latest research, specific topics on ArXiv, or a daily summary of."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-watcher-music@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39555764?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-watcher-music",
+      "url": "https://clawhub.ai/skills/arxiv-watcher-music"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-watcher-music",
+    "url": "https://clawhub.ai/skills/arxiv-watcher-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-watcher-music-f84364bb99a1b4ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-watcher-music@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-watcher-music-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:590feb415e8b14dbdc45e2d477af9e01106bae424d8ca117b3fd0d5de7d791d2",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T13:32:06.590Z"
+}

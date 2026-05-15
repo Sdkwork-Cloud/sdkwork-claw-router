@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-security-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_security_review",
+  "skill": {
+    "id": 50213,
+    "skillKey": "clawhub-code-security-review",
+    "name": "Code and System Security Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-security-review",
+    "url": "https://clawhub.ai/skills/code-security-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-security-review-2a5e7e77df50f3bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Report only real risks, not manufactured panic. Covers injection, XSS, path traversal, insecure deserialization, authentication and authorization flaws, key..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 0,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778379947392,
+      "changelog": "Initial release of code-security-review skill.\n\n- Performs focused security reviews covering injection, XSS, path traversal, insecure deserialization, authentication and authorization flaws, key leaks, insecure logging, and command execution issues.\n- Reports only real, exploitable risks with appropriate severity levels; avoids exaggeration or fabricated findings.\n- Provides clear, actionable remediation guidance and, where possible, code patches.\n- Outlines a structured workflow and checklist-based approach to ensure comprehensive risk assessment.\n- Confirms absence of risks with a succinct message when no issues are present.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93a0f6e0aa90b75f41b72b876ae3dd4b3e500c767614cf363dc4b97b1fef0ffc"
+}

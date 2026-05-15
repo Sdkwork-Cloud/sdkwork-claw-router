@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69985,
+  "uuid": "skill-clawhub-fudan",
+  "skillKey": "clawhub-fudan",
+  "name": "Fudan",
+  "summary": "提供关于fudan品牌的创立背景、核心业务、市场分布及行业地位的结构化详细信息。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fudan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供关于fudan品牌的创立背景、核心业务、市场分布及行业地位的结构化详细信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fudan@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fudan",
+      "url": "https://clawhub.ai/skills/fudan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fudan",
+    "url": "https://clawhub.ai/skills/fudan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fudan-6c4f2d7084d19294.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fudan@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-fudan-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63b74032007f093843a52fd6a70fca7fb414c86d761cc2710063f0c6f8b05e79",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T17:35:19.149Z"
+}

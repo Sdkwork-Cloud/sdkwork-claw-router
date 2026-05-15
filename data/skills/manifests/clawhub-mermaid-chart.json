@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46851,
+  "uuid": "skill-clawhub-mermaid-chart",
+  "skillKey": "clawhub-mermaid-chart",
+  "name": "Mermaid Diagram Generation",
+  "summary": "Generate various diagrams using Mermaid syntax (flowcharts, sequence diagrams, Gantt charts, class diagrams, state diagrams, pie charts, ER diagrams, mind ma...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mermaid_chart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenLark",
+      "features": [
+        "Generate various diagrams using Mermaid syntax (flowcharts, sequence diagrams, Gantt charts, cl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mermaid-chart@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260858787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mermaid-chart",
+      "url": "https://clawhub.ai/skills/mermaid-chart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mermaid-chart",
+    "url": "https://clawhub.ai/skills/mermaid-chart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mermaid-chart-bf76e7e678727134.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mermaid-chart@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mermaid-chart-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75da3adbfeca7415db96e3891f16847bb99098a8bed2ec4acc5725b42b54397a",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T01:51:20.784Z"
+}

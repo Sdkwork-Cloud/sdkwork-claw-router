@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zshijie-publisher@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zshijie_publisher",
+  "skill": {
+    "id": 57538,
+    "skillKey": "clawhub-zshijie-publisher",
+    "name": "Zshijie Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zshijie-publisher",
+    "url": "https://clawhub.ai/skills/zshijie-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zshijie-publisher-6698c8979e61692e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate the Z视介 publishing API from OpenClaw. Use when Codex needs to prompt the user to log in to Z视介 by QR code, then publish or edit 图文 and 短视频 content th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jkbwfi",
+      "userId": "s171br7sn7a97rzw0kfshxdq6n83hny1",
+      "displayName": "jkbwfi",
+      "image": "https://avatars.githubusercontent.com/u/20609964?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 413,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1773941646948,
+      "changelog": "zshijie-publisher 0.1.5\n\n- Simplified QR login flow: replaced two-step \"prepare-login\" and \"wait-login\" with single \"login\" command that outputs both HTML and PNG for QR code.\n- Session file structure clarified: now explicitly supports and documents the use of `captured.sessionId` as valid.\n- Updated documentation and workflows to reflect the streamlined login procedure and reduced reference to QR internals.\n- Removed runtime/environment installation instructions and Homebrew integration guidance from user-facing docs.\n- Adjusted payload and session rules for better compatibility and simpler usage.\n- Minor command usage changes: `login` command replaces previous preparation and waiting steps for QR scan.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70e8ca16264b0fcb0f9516acb5b499ff5638446100524c5310c5128a11789b37"
+}

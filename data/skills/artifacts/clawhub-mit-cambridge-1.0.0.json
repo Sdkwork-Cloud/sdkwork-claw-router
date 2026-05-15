@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mit-cambridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mit_cambridge",
+  "skill": {
+    "id": 68140,
+    "skillKey": "clawhub-mit-cambridge",
+    "name": "Mit Cambridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mit-cambridge",
+    "url": "https://clawhub.ai/skills/mit-cambridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mit-cambridge-1088a4e2187c2d9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "介绍麻省理工学院的历史、科研创新、创业生态及其在STEM教育和产业联动中的核心地位与影响力。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 96,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778004393372,
+      "changelog": "Initial release: Overview of MIT’s history, ecosystem, entrepreneurship, and impact.\n\n- Covers MIT’s founding, key milestones, and evolution.\n- Analyzes MIT’s research model, major schools, and funding scale.\n- Highlights competitive strengths such as interdisciplinary labs and a powerful alumni network.\n- Presents essential data on endowment, rankings, and notable alumni.\n- Shares unique cultural facts and fun anecdotes about MIT.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08768a74a78faae63dba2c01a0218b5e4069f514b5c68b898be528a860f8411f"
+}

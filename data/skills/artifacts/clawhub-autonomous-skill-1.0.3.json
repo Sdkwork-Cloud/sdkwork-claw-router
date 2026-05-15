@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/autonomous-skill@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomous_skill",
+  "skill": {
+    "id": 18068,
+    "skillKey": "clawhub-autonomous-skill",
+    "name": "Autonomous Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomous-skill",
+    "url": "https://clawhub.ai/skills/autonomous-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomous-skill-2697de05b54342d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute long-running, multi-session tasks autonomously using Claude Code headless mode or in-session hook-based loops. Supports structured task decomposition..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "feiskyer",
+      "userId": "s174q6bx170bf0qb9wjqhqfv6x83vv3e",
+      "displayName": "Pengfei Ni",
+      "image": "https://avatars.githubusercontent.com/u/676637?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 610,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777115750776,
+      "changelog": "**Major update: Adds dual execution modes (headless bash and in-session hook), lightweight task support, explicit CLI, and more robust progress/completion tracking.**\n\n- Introduces both Headless (background bash loop) and Hook (in-session) execution modes\n- Supports two strategies: Structured decomposition with explicit task lists, and lightweight \"Ralph-style\" iteration\n- Adds new scripts and hooks for loop setup and stop handling\n- Enhances completion detection: supports both promise tags (e.g., `<promise>DONE</promise>`) and checkbox counting\n- Improves task isolation, progress logging, and concurrent run prevention (lock files)\n- Expands CLI options for task management, session control, and budget/model selection",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:361fe881c544bf5d4b268b69357573b6a339e4887a57a94339bee029556d6ff2"
+}

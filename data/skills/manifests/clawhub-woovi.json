@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35220,
+  "uuid": "skill-clawhub-woovi",
+  "skillKey": "clawhub-woovi",
+  "name": "Woovi",
+  "summary": "Woovi integration. Manage data, records, and automate workflows. Use when the user wants to interact with Woovi data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.woovi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Woovi integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Woovi data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/woovi@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "woovi",
+      "url": "https://clawhub.ai/skills/woovi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "woovi",
+    "url": "https://clawhub.ai/skills/woovi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/woovi-afddc6eceea7d56b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/woovi@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-woovi-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc156cef0f4768d1bbbc397f05a0b1e5d8b087c72ae2d59f0ee70345e309a689",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:02:53.848Z"
+}

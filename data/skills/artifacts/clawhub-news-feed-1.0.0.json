@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-feed@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_feed",
+  "skill": {
+    "id": 10237,
+    "skillKey": "clawhub-news-feed",
+    "name": "Simple news feed reader (RSS)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-feed",
+    "url": "https://clawhub.ai/skills/news-feed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-feed-f64616371c723f7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch latest news headlines from major RSS feeds (BBC, Reuters, AP, Al Jazeera, NPR, The Guardian, DW). No API keys required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lknik",
+      "userId": "publishers:lknik",
+      "displayName": "lknik",
+      "image": "https://avatars.githubusercontent.com/u/13951853?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2725,
+      "installsAllTime": 14,
+      "installsCurrent": 14,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770305476388,
+      "changelog": "- Initial release of the news-feeds skill.\n- Fetches current news headlines and summaries from seven major international sources (BBC, Reuters, AP, Al Jazeera, NPR, The Guardian, DW) using only Python stdlib and HTTP—no API keys or extra dependencies.\n- Supports filtering by news source, topic/keyword, number of items, and listing available sources and categories.\n- Designed for use cases like news briefings, daily digests, and topic-specific news.\n- Outputs results in markdown, grouped by source, including headlines, summaries, times, and links.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2614ba2bbf3e8b37a325d450477ef3731b00339476cc119c2fb614edcbb68955"
+}

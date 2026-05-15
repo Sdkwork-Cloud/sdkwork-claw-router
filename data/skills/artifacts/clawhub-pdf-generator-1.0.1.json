@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-generator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_generator",
+  "skill": {
+    "id": 8537,
+    "skillKey": "clawhub-pdf-generator",
+    "name": "Pdf Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-generator",
+    "url": "https://clawhub.ai/skills/pdf-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-generator-6ea233974f5378b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional PDFs from Markdown, HTML, data, or code. Reports, invoices, contracts, and documents with best practices."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 9758,
+      "installsAllTime": 108,
+      "installsCurrent": 99,
+      "stars": 15,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771465920711,
+      "changelog": "Improved security documentation and scope clarity",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f7ea633f5b7da8acfcd8f8a1ac489beb4650fcbf4a0b4455f64a9773a403ac3f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10096,
+  "uuid": "skill-clawhub-ecommerce-price-watcher",
+  "skillKey": "clawhub-ecommerce-price-watcher",
+  "name": "Ecommerce Price Watcher",
+  "summary": "Track product prices across ecommerce sites and alert on offers or target-price hits. Use when a user wants to monitor one or many product URLs or item queries, compare current vs previous prices, detect discounts, and generate alert-ready.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_price_watcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pbalajiips",
+      "features": [
+        "Track product prices across ecommerce sites and alert on offers or target-price hits",
+        "Use when a user wants to monitor one or many product URLs or item queries, compare current vs p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecommerce-price-watcher@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47658487?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecommerce-price-watcher",
+      "url": "https://clawhub.ai/skills/ecommerce-price-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-price-watcher",
+    "url": "https://clawhub.ai/skills/ecommerce-price-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-price-watcher-33ed9aa3080cffbf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecommerce-price-watcher@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecommerce-price-watcher-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fae9cbef6dac62c84d9eceea5ebba44f1380a26cad80720de710123f6679220a",
+      "artifactSizeBytes": 2135
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T19:28:45.091Z"
+}

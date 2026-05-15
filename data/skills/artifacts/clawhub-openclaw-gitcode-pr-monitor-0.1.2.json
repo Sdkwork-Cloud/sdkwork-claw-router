@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-gitcode-pr-monitor@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_gitcode_pr_monitor",
+  "skill": {
+    "id": 25914,
+    "skillKey": "clawhub-openclaw-gitcode-pr-monitor",
+    "name": "openclaw-gitcode-pr-monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-gitcode-pr-monitor",
+    "url": "https://clawhub.ai/skills/openclaw-gitcode-pr-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-gitcode-pr-monitor-ff9677581001143c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor GitCode PRs for one or more repos, auto-run AI review via OpenClaw Gateway, post PR comments, and send notifications (DingTalk + WeCom)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mingyang1996",
+      "userId": "s17c379yep3amjwdnytzanjq8x84j5a0",
+      "displayName": "mingyang1996",
+      "image": "https://avatars.githubusercontent.com/u/29513824?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 378,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773573077871,
+      "changelog": "Further sanitize package: remove hardcoded repo defaults and absolute local install paths; use env-based config and PATH discovery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fbb2d0aaa9f793b06af6a2adefb68df1ade5382b4cc23ac1e3d89bc418b77b5b"
+}

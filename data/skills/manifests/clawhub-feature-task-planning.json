@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67400,
+  "uuid": "skill-clawhub-feature-task-planning",
+  "skillKey": "clawhub-feature-task-planning",
+  "name": "Feature Task Planning",
+  "summary": "将技术方案拆解为可执行的开发任务清单，每个任务适配 TDD 流程。当用户说'拆任务'、'开始规划任务'、'技术方案定了，接下来怎么开发'、'帮我拆一下开发计划'等意图时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feature_task_planning",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "p1866",
+      "features": [
+        "将技术方案拆解为可执行的开发任务清单，每个任务适配 TDD 流程。当用户说'拆任务'、'开始规划任务'、'技术方案定了，接下来怎么开发'、'帮我拆一下开发计划'等意图时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feature-task-planning@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20664106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feature-task-planning",
+      "url": "https://clawhub.ai/skills/feature-task-planning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feature-task-planning",
+    "url": "https://clawhub.ai/skills/feature-task-planning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feature-task-planning-a1e21c85813a5627.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feature-task-planning@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feature-task-planning-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2aca2847f89fa2cc0df908877a0acd9a3fbb2c6622a45ea23aba716918f7dc20",
+      "artifactSizeBytes": 2745
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:52:41.573Z"
+}

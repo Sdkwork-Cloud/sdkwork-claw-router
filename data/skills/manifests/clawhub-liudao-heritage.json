@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56506,
+  "uuid": "skill-clawhub-liudao-heritage",
+  "skillKey": "clawhub-liudao-heritage",
+  "name": "Liudao Heritage",
+  "summary": "Search, enrich, and manage family heritage and historical relationship data from the LiùDào (六道) SQLite database. Use this skill when answering questions abo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liudao_heritage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sirius-777-llm",
+      "features": [
+        "Search, enrich, and manage family heritage and historical relationship data from the LiùDào (六道.",
+        "Use this skill when answering questions abo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/liudao-heritage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201200946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "liudao-heritage",
+      "url": "https://clawhub.ai/skills/liudao-heritage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liudao-heritage",
+    "url": "https://clawhub.ai/skills/liudao-heritage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liudao-heritage-7daa466642f01c22.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/liudao-heritage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-liudao-heritage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4abf51f5c1461a025c119a26ee5d2ee6d4dacaa54e6ab00b6e606078918cd4dc",
+      "artifactSizeBytes": 2348
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T04:04:07.687Z"
+}

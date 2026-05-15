@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26503,
+  "uuid": "skill-clawhub-ad-account-health-checker",
+  "skillKey": "clawhub-ad-account-health-checker",
+  "name": "Ads Account Health",
+  "summary": "Assess ad account readiness and risk status across Meta (Facebook/Instagram), Google Ads, TikTok Ads, YouTube Ads, Amazon Ads, and DSP/programmatic.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ad_account_health_checker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danyangliu",
+      "features": [
+        "Assess ad account readiness and risk status across Meta (Facebook/Instagram), Google Ads, TikTo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ad-account-health-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184733968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ad-account-health-checker",
+      "url": "https://clawhub.ai/skills/ad-account-health-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ad-account-health-checker",
+    "url": "https://clawhub.ai/skills/ad-account-health-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ad-account-health-checker-f0dac9fa6025148a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ad-account-health-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ad-account-health-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43d9890378ef9629e0c28f4d636ddc5524480a108e9b4eee517f7850ef67c0fa",
+      "artifactSizeBytes": 2657
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T00:45:37.909Z"
+}

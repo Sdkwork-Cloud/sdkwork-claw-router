@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/axodus-strategy-deployer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axodus_strategy_deployer",
+  "skill": {
+    "id": 45456,
+    "skillKey": "clawhub-axodus-strategy-deployer",
+    "name": "Strategy Deployer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axodus-strategy-deployer",
+    "url": "https://clawhub.ai/skills/axodus-strategy-deployer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axodus-strategy-deployer-e5c9b1b415a84e7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy trading strategies with risk gating, monitoring, and guarded live promotion."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mzfshark",
+      "userId": "s17c7t947t48hg8ymjbywz1th583y2n6",
+      "displayName": "Mauricio Z.",
+      "image": "https://avatars.githubusercontent.com/u/26634695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777042660383,
+      "changelog": "Initial release of strategy-deployer skill.\n\n- Enables safe deployment of trading strategies with risk gating and explicit lifecycle.\n- Supports paper and guarded live modes, requiring explicit approval for live deployment.\n- Enforces strict risk controls, validation, and monitoring at each stage.\n- Outputs detailed deployment status, audit events, and risk compliance.\n- Includes safety rules to prevent risky or unauthorized live trading.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45be020a510523e8acc67f85ab926099284160cf6608e6eaa0acff1df7a19868"
+}

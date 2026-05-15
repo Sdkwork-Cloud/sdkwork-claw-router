@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71254,
+  "uuid": "skill-clawhub-wechat-moment",
+  "skillKey": "clawhub-wechat-moment",
+  "name": "微信操作手册",
+  "summary": "微信朋友圈操作技能。用于打开朋友圈、浏览动态、滚动查看内容等。使用场景：(1) 打开朋友圈，(2) 滚动浏览朋友圈内容，(3) 查看好友动态，(4) 给朋友圈点赞评论",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_moment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "islandlxl",
+      "features": [
+        "微信朋友圈操作技能。用于打开朋友圈、浏览动态、滚动查看内容等。使用场景：(1) 打开朋友圈，(2) 滚动浏览朋友圈内容，(3) 查看好友动态，(4) 给朋友圈点赞评论"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-moment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43034650?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-moment",
+      "url": "https://clawhub.ai/skills/wechat-moment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-moment",
+    "url": "https://clawhub.ai/skills/wechat-moment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-moment-3aa310b2c20d6b97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-moment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-moment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33e3ad19cebfd68cb04ba5b75e8462808b36bd20cfa8efe57adc9915fa7107e2",
+      "artifactSizeBytes": 2406
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T09:30:03.460Z"
+}

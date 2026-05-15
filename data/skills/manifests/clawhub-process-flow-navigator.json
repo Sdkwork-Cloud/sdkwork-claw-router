@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65839,
+  "uuid": "skill-clawhub-process-flow-navigator",
+  "skillKey": "clawhub-process-flow-navigator",
+  "name": "Process Flow Navigator",
+  "summary": "业务流程图导航助手 - 帮助你在复杂的多分支流程中导航、规划路径、查询技能编码。支持 A→K 主流程及所有子流程分支。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.process_flow_navigator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JopYin",
+      "features": [
+        "业务流程图导航助手",
+        "帮助你在复杂的多分支流程中导航、规划路径、查询技能编码。支持 A→K 主流程及所有子流程分支。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/process-flow-navigator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13200090?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "process-flow-navigator",
+      "url": "https://clawhub.ai/skills/process-flow-navigator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "process-flow-navigator",
+    "url": "https://clawhub.ai/skills/process-flow-navigator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/process-flow-navigator-e534f223f6e86d42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/process-flow-navigator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-process-flow-navigator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f5a3fcf510e32cb6de7b898ba3eb5962f47d6516e0514f0a96b576f716d2220",
+      "artifactSizeBytes": 2188
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T08:01:08.074Z"
+}

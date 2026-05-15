@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workspace-health@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_health",
+  "skill": {
+    "id": 68054,
+    "skillKey": "clawhub-workspace-health",
+    "name": "工作目录健康检测"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-health",
+    "url": "https://clawhub.ai/skills/workspace-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-health-7289b572c95d98da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "检测并修复OpenClaw工作目录嵌套问题"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maxkandel99-arch",
+      "userId": "publishers:maxkandel99-arch",
+      "displayName": "maxkandel99-arch",
+      "image": "https://avatars.githubusercontent.com/u/260224000?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773191989045,
+      "changelog": "Initial release of workspace-health skill.\n\n- Detects and fixes OpenClaw workspace nested directory issues.\n- Scans for `.openclawworkspace` recursive nesting.\n- Validates workspace directory and configuration paths.\n- Provides scripts to detect, validate, and fix problems.\n- Supports dry-run mode for safe testing.\n- Includes clear usage instructions and precautions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d90348639b71019b6a646cf53ba0d9d341342c7309692d8191580005741f1abc"
+}

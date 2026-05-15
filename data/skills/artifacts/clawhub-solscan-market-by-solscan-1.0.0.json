@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solscan-market-by-solscan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solscan_market_by_solscan",
+  "skill": {
+    "id": 33944,
+    "skillKey": "clawhub-solscan-market-by-solscan",
+    "name": "solscan-market-by-solscan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solscan-market-by-solscan",
+    "url": "https://clawhub.ai/skills/solscan-market-by-solscan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solscan-market-by-solscan-61c24e19cbe18ddd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill to query Solana blockchain data via the Solscan Pro API. Triggers: look up wallet address, check token price, analyze NFT collection, inspect..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tiennv3",
+      "userId": "s179fyhrznd49gj20mnvnxy1h583ye29",
+      "displayName": "Solscan",
+      "image": "https://avatars.githubusercontent.com/u/11498848?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775446621080,
+      "changelog": "Major upgrade: Expanded from Solscan NFT/market focus to full Solana blockchain data coverage via Solscan Pro API.\n\n- Now supports querying accounts, tokens, NFTs, transactions, blocks, DeFi, and programs.\n- Introduces direct API CLI for structured queries and MCP natural language tools for exploration.\n- Adds detailed API endpoint documentation with example workflows and error handling.\n- Requires an API key for all requests; clear authentication instructions provided.\n- Includes expanded use cases and guidance on when to use each tool.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:acada2d08940ccb4e0836501fb3a02c48aa57cf71f0c68a5a82cbc089d966771"
+}

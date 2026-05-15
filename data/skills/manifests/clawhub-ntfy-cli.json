@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43564,
+  "uuid": "skill-clawhub-ntfy-cli",
+  "skillKey": "clawhub-ntfy-cli",
+  "name": "Ntfy Cli",
+  "summary": "Send push notifications via ntfy.sh or self-hosted ntfy server. Supports priorities, titles, tags, icons, and attachments.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntfy_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Krzysztof",
+      "features": [
+        "Send push notifications via ntfy.sh or self-hosted ntfy server",
+        "Supports priorities, titles, tags, icons, and attachments."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ntfy-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/163135182?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ntfy-cli",
+      "url": "https://clawhub.ai/skills/ntfy-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntfy-cli",
+    "url": "https://clawhub.ai/skills/ntfy-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntfy-cli-86310ccdad2ef21c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ntfy-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ntfy-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:108228ede83a134ddaed09ef832dc813d770af70a1fbca951f011fc57405fe5d",
+      "artifactSizeBytes": 2220
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T09:33:28.771Z"
+}

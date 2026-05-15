@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-text-extractor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_text_extractor",
+  "skill": {
+    "id": 8469,
+    "skillKey": "clawhub-pdf-text-extractor",
+    "name": "PDF Text Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-text-extractor",
+    "url": "https://clawhub.ai/skills/pdf-text-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-text-extractor-f5054fae762abaac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract text from PDFs with OCR support. Perfect for digitizing documents, processing invoices, or analyzing content. Zero dependencies required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michael-laffin",
+      "userId": "s172763bq8hk878ptgz2a77cqn83j1f6",
+      "displayName": "Michael-laffin",
+      "image": "https://avatars.githubusercontent.com/u/133843289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 11507,
+      "installsAllTime": 136,
+      "installsCurrent": 128,
+      "stars": 20,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770217918250,
+      "changelog": "Initial release: Extract text from PDFs with OCR support for digitizing documents",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:666b337408e15bb4f7ca73335390fee8c74800cb752dfc9422a54671de712a26"
+}

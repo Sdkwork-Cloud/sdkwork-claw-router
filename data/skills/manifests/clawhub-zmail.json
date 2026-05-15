@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52397,
+  "uuid": "skill-clawhub-zmail",
+  "skillKey": "clawhub-zmail",
+  "name": "zmail",
+  "summary": "Local-first email for agents: IMAP sync to maildir + SQLite (FTS5); CLI search, read, thread, who, attachments. Requires Node 20+, npm install (`npm install...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zmail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lew Cirne",
+      "features": [
+        "Local-first email for agents: IMAP sync to maildir + SQLite (FTS5)",
+        "CLI search, read, thread, who, attachments",
+        "Requires Node 20+, npm install (`npm install..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zmail@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30514?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zmail",
+      "url": "https://clawhub.ai/skills/zmail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zmail",
+    "url": "https://clawhub.ai/skills/zmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zmail-299a35b65a4b8ea4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zmail@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zmail-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14d49c45423a44383c64f198570dc19c551096b2285a924013c3b46c1a60992b",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T01:24:05.421Z"
+}

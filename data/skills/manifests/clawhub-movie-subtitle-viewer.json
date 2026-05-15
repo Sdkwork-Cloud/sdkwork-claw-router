@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22349,
+  "uuid": "skill-clawhub-movie-subtitle-viewer",
+  "skillKey": "clawhub-movie-subtitle-viewer",
+  "name": "Movie Subtitle Viewer",
+  "summary": "Search, download, parse, and summarize movie subtitles from OpenSubtitles in .srt or .ass formats using movie name and year.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.movie_subtitle_viewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anonymous",
+      "features": [
+        "Search, download, parse, and summarize movie subtitles from OpenSubtitles in .srt or .ass forma."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/movie-subtitle-viewer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32920883?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "movie-subtitle-viewer",
+      "url": "https://clawhub.ai/skills/movie-subtitle-viewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "movie-subtitle-viewer",
+    "url": "https://clawhub.ai/skills/movie-subtitle-viewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/movie-subtitle-viewer-86ec2075a7fbdaa4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/movie-subtitle-viewer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-movie-subtitle-viewer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa43f5d3b74bce78f201bc95b36aa5e9d8c47f6fc7bbbdcd85b1b5512baea835",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T00:49:54.270Z"
+}

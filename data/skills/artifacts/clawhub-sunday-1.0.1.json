@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sunday@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sunday",
+  "skill": {
+    "id": 22376,
+    "skillKey": "clawhub-sunday",
+    "name": "Sunday"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sunday",
+    "url": "https://clawhub.ai/skills/sunday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sunday-b6ac44e3f415a3a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent identity provider — own email address and E2E-encrypted credential vault. Use when storing or retrieving passwords for services, logging into services with stored credentials, checking email inbox, receiving OTP/verification codes vi."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raunaksingwi",
+      "userId": "s17c2wh3r2py8ztx3k1ks1v6yh84aak2",
+      "displayName": "Raunak Singwi",
+      "image": "https://avatars.githubusercontent.com/u/18749768?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 884,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770975599319,
+      "changelog": "Remove phone/SMS features. Add account setup instructions at sunday.ravi.app.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:615765d83c70efbd14d4264905b70ba81509d93254a8e706087d6e4fea45e260"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61769,
+  "uuid": "skill-clawhub-pandas-ta-indicators",
+  "skillKey": "clawhub-pandas-ta-indicators",
+  "name": "Pandas Ta Indicators",
+  "summary": "基于 pandas-ta 库计算技术分析指标（RSI、MACD、布林带、KAMA 等），支持多市场数据可视化与自定义参数调整。。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pandas_ta_indicators",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "基于 pandas-ta 库计算技术分析指标（RSI、MACD、布林带、KAMA 等），支持多市场数据可视化与自定义参数调整。。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pandas-ta-indicators@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pandas-ta-indicators",
+      "url": "https://clawhub.ai/skills/pandas-ta-indicators"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pandas-ta-indicators",
+    "url": "https://clawhub.ai/skills/pandas-ta-indicators",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pandas-ta-indicators-fae9d9b17a7ce1d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pandas-ta-indicators@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-pandas-ta-indicators-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:210a47f260be11e5264009170ac5ef9b701361c71185d5a383ea1667a819d42c",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:28:48.925Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24656,
+  "uuid": "skill-clawhub-nano-banana-pro1",
+  "skillKey": "clawhub-nano-banana-pro1",
+  "name": "Nano Banana",
+  "summary": "Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image). Use for image create/modify requests incl. edits. Supports text-to-image + image-to-image; 1K...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_banana_pro1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Keyserkazi1",
+      "features": [
+        "Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image)",
+        "Use for image create/modify requests incl",
+        "Supports text-to-image + image-to-image"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nano-banana-pro1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255859250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nano-banana-pro1",
+      "url": "https://clawhub.ai/skills/nano-banana-pro1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-banana-pro1",
+    "url": "https://clawhub.ai/skills/nano-banana-pro1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-banana-pro1-d97d7422caadc0e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nano-banana-pro1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nano-banana-pro1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c4934aac38f801fc43d710629ea99d1c6d97504aeb1e2a0b1cf827d9e7fcfc1",
+      "artifactSizeBytes": 2243
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T23:30:04.705Z"
+}

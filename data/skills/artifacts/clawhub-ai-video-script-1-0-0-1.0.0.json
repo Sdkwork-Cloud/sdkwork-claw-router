@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-script-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_script_1_0_0",
+  "skill": {
+    "id": 70210,
+    "skillKey": "clawhub-ai-video-script-1-0-0",
+    "name": "Ai Video Script 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-script-1-0-0",
+    "url": "https://clawhub.ai/skills/ai-video-script-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-script-1-0-0-931eb48b5d7cb5ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI视频脚本生成器。根据用户输入的主题/关键词，生成完整的视频脚本，包含分镜描述、画面提示词、配音文案。适用于短视频创作者、AI视频制作者、内容营销人员。触发词：视频脚本、分镜、AI视频、短视频文案、视频策划。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zou-cc",
+      "userId": "s179j29czjfpbz04vzp88m4mwx83h1j1",
+      "displayName": "zou-cc",
+      "image": "https://avatars.githubusercontent.com/u/118579140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 334,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774350993806,
+      "changelog": "AI视频脚本生成器上线，助力创作者高效生成视频脚本：\n\n- 支持输入主题/关键词，自动生成完整脚本（含分镜、画面提示词、配音文案）\n- 内置短视频与长视频多场景模板，结构清晰明了\n- 每镜头均配AI作画/视频主流工具提示词（CogVideoX、Midjourney等）\n- 可定制风格、批量生成不同脚本版本，适配不同视频平台\n- 提供详细流程和实用规范，保障脚本易用与合规",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d189d55c15617e680ebd2a25ea30169f3cf760d593e70b13255abda2ec3b2ca3"
+}

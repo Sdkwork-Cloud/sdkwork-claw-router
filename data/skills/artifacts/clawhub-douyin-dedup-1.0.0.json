@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-dedup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_dedup",
+  "skill": {
+    "id": 66448,
+    "skillKey": "clawhub-douyin-dedup",
+    "name": "Douyin Dedup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-dedup",
+    "url": "https://clawhub.ai/skills/douyin-dedup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-dedup-a3a176507d3a4121.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抖音视频下载、去水印、深度混剪去重、去除音频的全自动处理工具。当用户发送抖音链接（v.douyin.com 或 douyin.com 格式）并要求处理、去重、下载或类似意图时，自动触发此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueda",
+      "userId": "s17esmz2rjkjt1twh7adaessj583jwms",
+      "displayName": "三昧",
+      "image": "https://avatars.githubusercontent.com/u/22470505?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774436875286,
+      "changelog": "Initial release of douyin-dedup.\n\n- Supports automatic download, watermark removal, deep deduplication (remix), and audio removal for Douyin videos via URL.\n- Processes include segment shuffling, crop/scale, mirroring, brightness adjustment, noise, and speed changes.\n- Outputs deduplicated video file ready for use.\n- Simple command-line usage and troubleshooting guidance included.\n- Requires ffmpeg, yt-dlp, and Python 3.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd0c312efd54eb66ce33d9ee15efb3e33b6241408a7a7a8b1c7b605526e7fb1a"
+}

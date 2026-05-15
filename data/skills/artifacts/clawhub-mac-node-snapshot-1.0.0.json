@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mac-node-snapshot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mac_node_snapshot",
+  "skill": {
+    "id": 13315,
+    "skillKey": "clawhub-mac-node-snapshot",
+    "name": "mac-node-snapshot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mac-node-snapshot",
+    "url": "https://clawhub.ai/skills/mac-node-snapshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mac-node-snapshot-e7fe2031f81de909.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A robust, permission-friendly method to capture macOS screens via OpenClaw screen.record. Ideal for headless environments or ensuring capture reliability."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taozhe6",
+      "userId": "publishers:taozhe6",
+      "displayName": "taozhe6",
+      "image": "https://avatars.githubusercontent.com/u/120022885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1447,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770507848835,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:267d7893ccbe8f10c779dd265f925f7219c34ef75c4aaee7c40b9fe3a0796063"
+}

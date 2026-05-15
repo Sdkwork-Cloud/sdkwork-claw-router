@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/asset-allocator@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asset_allocator",
+  "skill": {
+    "id": 73158,
+    "skillKey": "clawhub-asset-allocator",
+    "name": "资产配置师"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asset-allocator",
+    "url": "https://clawhub.ai/skills/asset-allocator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asset-allocator-28dfea141736c71b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "［何时使用］当用户需要资产配置方案时；当用户问\"我应该如何配置资产\"时；当进行生命周期规划时；当需要定投计划时"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lj22503",
+      "userId": "s17dhbyrvq4rmpz7c0cg1y9yrs83nsxz",
+      "displayName": "lj22503",
+      "image": "https://avatars.githubusercontent.com/u/170225356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773922295148,
+      "changelog": "按 v2.0 标准重构",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79856a534f2ebbc08b2c8b9af3add717441829ede9ff8e96ac2f536b907b4042"
+}

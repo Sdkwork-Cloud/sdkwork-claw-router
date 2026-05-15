@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hire@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hire",
+  "skill": {
+    "id": 11336,
+    "skillKey": "clawhub-hire",
+    "name": "Hire"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hire",
+    "url": "https://clawhub.ai/skills/hire",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hire-bf90ace460be6649.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactive hiring wizard to set up a new AI team member. Guides the user through role design via conversation, generates agent identity files, and optionally sets up performance reviews. Use when the user wants to hire, add, or set up a n."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "larsderidder",
+      "userId": "publishers:larsderidder",
+      "displayName": "larsderidder",
+      "image": "https://avatars.githubusercontent.com/u/1681068?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2136,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770279160866,
+      "changelog": "Auto-update gateway config on hire",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:370a34507659472edece465bdb6b155995eda1c9cc526728b900033ec17dd2a8"
+}

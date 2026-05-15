@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/buddhism@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buddhism",
+  "skill": {
+    "id": 72638,
+    "skillKey": "clawhub-buddhism",
+    "name": "Buddhism"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buddhism",
+    "url": "https://clawhub.ai/skills/buddhism",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buddhism-6e60817585dd8e74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "佛教文化介绍技能（中英文版本）。当用户询问佛教、佛陀、释迦牟尼、禅宗、四谛、八正道、轮回、涅槃、菩萨、般若等相关信息时激活此技能。包含陈朗的个人资料。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leocryptoflow",
+      "userId": "publishers:leocryptoflow",
+      "displayName": "Leo Sheng",
+      "image": "https://avatars.githubusercontent.com/u/149644278?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774252919024,
+      "changelog": "Buddhism Skill v1.0.0 – Initial Release\n\n- Provides an introduction to Buddhist culture, history, doctrines, and key concepts in both Chinese and English.\n- Explains major topics: Buddha, Shakyamuni, the Four Noble Truths, the Eightfold Path, reincarnation, Nirvana, Bodhisattva, Prajna, Chan (Zen), and more.\n- Outlines Buddhism's origins, core teachings, main traditions, important texts, concepts, rituals, and its influence on Chinese culture.\n- Includes profiles and references to figures such as 陈朗.\n- Designed to activate upon queries relating to Buddhism and associated terminology.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:024c8e9e5d5d44024f8c53f9320f8de2471abdc7fc7c9db9bf8f23fb4655cc5c"
+}

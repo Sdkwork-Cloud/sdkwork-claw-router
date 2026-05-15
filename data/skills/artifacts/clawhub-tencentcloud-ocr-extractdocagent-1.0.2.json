@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencentcloud-ocr-extractdocagent@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_ocr_extractdocagent",
+  "skill": {
+    "id": 67533,
+    "skillKey": "clawhub-tencentcloud-ocr-extractdocagent",
+    "name": "TencentCloud ExtractDoc OCR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-ocr-extractdocagent",
+    "url": "https://clawhub.ai/skills/tencentcloud-ocr-extractdocagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-ocr-extractdocagent-fa826e7bee0e091f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "腾讯云实时文档抽取Agent(ExtractDocAgent)接口调用技能。当用户需要从图片或PDF中按自定义字段名称进行结构化信息抽取时，应使用此技能。支持自定义字段名称、字段类型（KV对或表格字段）和字段提示词，实现灵活的文档信息提取。适用于合同、发票、报告等各类文档的结构化数据抽取场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zt1314p-design",
+      "userId": "s171696cz5y91nef8xanxra4sh83gdb0",
+      "displayName": "tencent-ocr",
+      "image": "https://avatars.githubusercontent.com/u/246965649?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 469,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773110326554,
+      "changelog": "- 新增ItemNames参数说明，支持可选字段UserAgent用于请求来源标识，统一固定为 Skills。\n- 明确表述UserAgent字段不会影响现有逻辑，仅作调用追踪和溯源用途。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b708b169276f0d47afb2dbd59cf86aba9388790208b34d91d10d1d0676cf0590"
+}

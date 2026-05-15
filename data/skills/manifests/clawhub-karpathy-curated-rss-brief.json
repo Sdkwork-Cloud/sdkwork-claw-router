@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57732,
+  "uuid": "skill-clawhub-karpathy-curated-rss-brief",
+  "skillKey": "clawhub-karpathy-curated-rss-brief",
+  "name": "Karpathy Curated RSS Brief",
+  "summary": "Fetch articles from Karpathy's curated 93 RSS feeds and generate a Chinese tech daily newsletter. Triggers: RSS 日报、RSS 简报、karpathy-curated-rss-brief、每日简报、Kar...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.karpathy_curated_rss_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ME柒的旅途",
+      "features": [
+        "Fetch articles from Karpathy's curated 93 RSS feeds and generate a Chinese tech daily newsletter",
+        "Triggers: RSS 日报、RSS 简报、karpathy-curated-rss-brief、每日简报、Kar..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/karpathy-curated-rss-brief@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192056647?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "karpathy-curated-rss-brief",
+      "url": "https://clawhub.ai/skills/karpathy-curated-rss-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "karpathy-curated-rss-brief",
+    "url": "https://clawhub.ai/skills/karpathy-curated-rss-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/karpathy-curated-rss-brief-5d9cf3bce74254ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/karpathy-curated-rss-brief@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-karpathy-curated-rss-brief-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2099dab001341f6ff9fdbafc08d631ee309b2783a36be1f4b8ed65a475279675",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T10:02:13.601Z"
+}

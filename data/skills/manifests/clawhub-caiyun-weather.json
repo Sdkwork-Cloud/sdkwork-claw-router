@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59909,
+  "uuid": "skill-clawhub-caiyun-weather",
+  "skillKey": "clawhub-caiyun-weather",
+  "name": "彩云天气 / Caiyun Weather",
+  "summary": "天气查询 / Weather query. 实时查询天气、气温、空气质量（AQI/PM2.5）、逐小时预报、一周天气预报、历史天气和天气预警，支持中文城市名（北京/上海/深圳等）直接查询。Real-time weather, temperature, AQI, hourly/weekly forecast, hi...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caiyun_weather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jeff",
+      "features": [
+        "天气查询 / Weather query",
+        "实时查询天气、气温、空气质量（AQI/PM2.5）、逐小时预报、一周天气预报、历史天气和天气预警，支持中文城市名（北京/上海/深圳等）直接查询。Real-time weather, temp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/caiyun-weather@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2939233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "caiyun-weather",
+      "url": "https://clawhub.ai/skills/caiyun-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caiyun-weather",
+    "url": "https://clawhub.ai/skills/caiyun-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caiyun-weather-f9a4c5e21b9f7672.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/caiyun-weather@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-caiyun-weather-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2783ba4047d0c546c0db9624150ac2f5b89b80c30fd4c1e8db36e7c1a3d5d3a9",
+      "artifactSizeBytes": 2149
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T03:32:29.198Z"
+}

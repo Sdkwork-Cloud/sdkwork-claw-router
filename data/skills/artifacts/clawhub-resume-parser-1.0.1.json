@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-parser@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_parser",
+  "skill": {
+    "id": 68037,
+    "skillKey": "clawhub-resume-parser",
+    "name": "resume-parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-parser",
+    "url": "https://clawhub.ai/skills/resume-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-parser-b01f5d1d9144180e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能简历解析系统，支持PDF/Word/图片格式简历的结构化信息提取、岗位匹配度分析、优化建议生成。完全本地运行，无需外部API。使用场景：(1) 解析上传的简历文件提取核心信息，(2) 输入岗位JD计算简历匹配度，(3) 生成简历优化建议，(4) 导出结构化简历数据。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ayalili",
+      "userId": "publishers:ayalili",
+      "displayName": "Ayalili",
+      "image": "https://avatars.githubusercontent.com/u/52843161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 805,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773145534825,
+      "changelog": "Initial release of resume-parser skill.\n\n- 支持PDF、Word、图片格式简历的结构化信息提取\n- 简历核心信息自动提取与标准JSON格式输出\n- 可输入岗位JD，一键生成多维度简历匹配度分析\n- 针对匹配结果，自动生成具体、可落地的优化建议\n- 支持结构化简历数据导出（JSON/Markdown）\n- 完全本地运行，无需外部API",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2786ee433af86e518ca0f9092c5c7c2a985e6f765c7a4cd5e5bc49e1f50dba2"
+}

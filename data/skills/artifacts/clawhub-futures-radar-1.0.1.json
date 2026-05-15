@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/futures-radar@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.futures_radar",
+  "skill": {
+    "id": 68201,
+    "skillKey": "clawhub-futures-radar",
+    "name": "Futures Radar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "futures-radar",
+    "url": "https://clawhub.ai/skills/futures-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/futures-radar-09ca2cf2c79e10cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "期货与大宗商品行情监控工具。当用户询问「原油」「黄金」「白银」「天然气」「铜」「期货行情」「大宗商品」「WTI」「布伦特」「金银比」「油金比」时使用。使用 Yahoo Finance chart API 获取实时期货数据。📢微信公众号：PM熊叔（打造一人公司的投研团队）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gold3bear",
+      "userId": "s17930bxaprtfmapx7v2y3p8ns85hcsh",
+      "displayName": "Bear Xiong",
+      "image": "https://avatars.githubusercontent.com/u/5952306?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777515963701,
+      "changelog": "- 增加了微信公众号号外信息：“📢微信公众号：PM熊叔（打造一人公司的投研团队）”到描述中\n- 其他内容未变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc317c7e863712384dc09cc7db9a423dd149b1b8a642dd5bbfd0f7a438fbb560"
+}

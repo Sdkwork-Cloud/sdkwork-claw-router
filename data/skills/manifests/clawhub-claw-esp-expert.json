@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60070,
+  "uuid": "skill-clawhub-claw-esp-expert",
+  "skillKey": "clawhub-claw-esp-expert",
+  "name": "Claw ESP Expert",
+  "summary": "ESP-IDF 专家型技能：环境检查、examples 导航、GPIO 规则审计与构建诊断。",
+  "version": "0.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_esp_expert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MoveCall",
+      "features": [
+        "ESP-IDF 专家型技能：环境检查、examples 导航、GPIO 规则审计与构建诊断。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-esp-expert@0.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15621173?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-esp-expert",
+      "url": "https://clawhub.ai/skills/claw-esp-expert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-esp-expert",
+    "url": "https://clawhub.ai/skills/claw-esp-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-esp-expert-cea8065f5ef79867.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-esp-expert@0.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-esp-expert-0.0.4.json",
+      "version": "0.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad30b0e66ae4ab368219ab6e29a5124ae85f3a6fd22a4f8f9215b47b0100df25",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:30:19.306Z"
+}

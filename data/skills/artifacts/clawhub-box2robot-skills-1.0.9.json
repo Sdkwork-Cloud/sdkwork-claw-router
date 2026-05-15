@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/box2robot-skills@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.box2robot_skills",
+  "skill": {
+    "id": 51281,
+    "skillKey": "clawhub-box2robot-skills",
+    "name": "box2robot-skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "box2robot-skills",
+    "url": "https://clawhub.ai/skills/box2robot-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/box2robot-skills-c412bf4f2774f811.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Box2Robot robotic arms via cloud API — move servos, record trajectories with camera, download datasets, generate videos, and orchestrate AI training/..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boxjod",
+      "userId": "s171nn27976h1jed4s95as3n01852kk1",
+      "displayName": "Boxjod",
+      "image": "https://avatars.githubusercontent.com/u/21015502?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1777953708832,
+      "changelog": "- Removed the ACT Skill Store commands and related documentation from the skill description.\n- Dropped the 'stream' camera command details from the documentation.\n- Removed reference to the `CHANGELOG.md` file from the project.\n- No changes to code functionality; only documentation clarified and simplified.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ccbe62db914076071aab1963c9ee2f3a02d3de6e8d6cd130e22f59bc21df1cc8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/keyapi-youtube-channel-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keyapi_youtube_channel_analysis",
+  "skill": {
+    "id": 52912,
+    "skillKey": "clawhub-keyapi-youtube-channel-analysis",
+    "name": "Keyapi Youtube Channel Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keyapi-youtube-channel-analysis",
+    "url": "https://clawhub.ai/skills/keyapi-youtube-channel-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keyapi-youtube-channel-analysis-bc2b4a025f81b3db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover, profile, and analyze YouTube channels — retrieve channel metadata, video libraries, convert between channel IDs and URLs, search channels by keywor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lycici",
+      "userId": "s17bzc9482bw65ggtax2tfmx4583h9sz",
+      "displayName": "lycici",
+      "image": "https://avatars.githubusercontent.com/u/38585775?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775530755281,
+      "changelog": "Initial release of keyapi-youtube-channel-analysis:\n\n- Provides tools to discover, profile, and analyze YouTube channels via KeyAPI MCP.\n- Supports full channel metadata retrieval, including a two-step process for advanced details.\n- Includes utilities for channel ID/URL/@username conversion and normalization.\n- Enables enumeration of channel video libraries with pagination.\n- Offers keyword-based channel search, in-channel content search, and advanced filtered YouTube searches.\n- Allows retrieval of real-time search suggestions for keyword research and autocomplete.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e572a92608cb46135b171f8eaa98173141a80b8e1ef6652e154bdcac8440a9a0"
+}

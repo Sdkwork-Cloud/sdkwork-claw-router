@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54111,
+  "uuid": "skill-clawhub-spot-vm-strategy",
+  "skillKey": "clawhub-spot-vm-strategy",
+  "name": "Spot Vm Strategy",
+  "summary": "Design an interruption-resilient GCP Spot VM strategy for eligible workloads with 60-91% savings",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spot_vm_strategy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anmol Nagpal",
+      "features": [
+        "Design an interruption-resilient GCP Spot VM strategy for eligible workloads with 60-91% savings"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spot-vm-strategy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4303310?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spot-vm-strategy",
+      "url": "https://clawhub.ai/skills/spot-vm-strategy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spot-vm-strategy",
+    "url": "https://clawhub.ai/skills/spot-vm-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spot-vm-strategy-d3b7f3db0b7d56ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spot-vm-strategy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spot-vm-strategy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b7e51682fbace109ffe066530310576151d4b9a8d80a90c5ae7fb79f471799e",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T18:25:07.843Z"
+}

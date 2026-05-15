@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/md-to-pdf-cjk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_to_pdf_cjk",
+  "skill": {
+    "id": 12400,
+    "skillKey": "clawhub-md-to-pdf-cjk",
+    "name": "Markdown to PDF (CJK)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-to-pdf-cjk",
+    "url": "https://clawhub.ai/skills/md-to-pdf-cjk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-to-pdf-cjk-b886afaf49ee4ece.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert Markdown files to professional PDF documents with full CJK (Chinese/Japanese/Korean) support. Uses reportlab for reliable rendering without external..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zacjiang",
+      "userId": "publishers:zacjiang",
+      "displayName": "Shihao Jiang (Zac)",
+      "image": "https://avatars.githubusercontent.com/u/15880609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1595,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772694972127,
+      "changelog": "Initial release: lightweight MD to PDF with Chinese/Japanese/Korean support",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:10dd6c4394031fbb51edb7ea51304bf845840bf102aafaee4a7e3ca2380c4900"
+}

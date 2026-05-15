@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11704,
+  "uuid": "skill-clawhub-clawdgle",
+  "skillKey": "clawhub-clawdgle",
+  "name": "Clawdgle",
+  "summary": "Use Clawdgle API to search markdown content, fetch markdown by URL, request URL indexing, or access the donation link.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdgle",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RubyBrewsday",
+      "features": [
+        "Use Clawdgle API to search markdown content, fetch markdown by URL, request URL indexing, or ac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdgle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5769282?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdgle",
+      "url": "https://clawhub.ai/skills/clawdgle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdgle",
+    "url": "https://clawhub.ai/skills/clawdgle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdgle-36e31276126620a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdgle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdgle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0622c79f1a43133c41b32d55b4750df78cebe4cd73790e9ddd00bc06b2a16a7",
+      "artifactSizeBytes": 2083
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T02:42:42.288Z"
+}

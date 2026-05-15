@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trending-miner-huobiaowang@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trending_miner_huobiaowang",
+  "skill": {
+    "id": 73048,
+    "skillKey": "clawhub-trending-miner-huobiaowang",
+    "name": "热门标讯挖掘助手-火标网"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trending-miner-huobiaowang",
+    "url": "https://clawhub.ai/skills/trending-miner-huobiaowang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trending-miner-huobiaowang-a0eb19486c8aa896.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "热门标讯挖掘助手-火标网，当用户需要进行行业热度分析、统计Top采购商或聚合近期高频中标记录时调用，调用多维度聚合统计接口，呈现特定行业的市场热度与集中度趋势。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liu-jiapeng",
+      "userId": "s178hbet5kwyvdjvs8p9pvgw1x83w07t",
+      "displayName": "liu-jiapeng",
+      "image": "https://avatars.githubusercontent.com/u/37843351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1778328479023,
+      "changelog": "**2.0.0 Summary: Refactored documentation structure and added new API reference files. Significant enhancements in tool usability and search logic.**\n\n- Added three detailed API reference files: `references/api-company.md`, `references/api-market.md`, and `references/api-search.md`.\n- Updated and simplified main documentation, focusing on core concepts, common usage scenarios, and fast-reference guides.\n- Introduced new tool: `search_company` for more comprehensive company searches.\n- Improved match_modes and keyword group explanations, making advanced query logic clearer.\n- Added error code quick reference and best-practice suggestions for market/competitor analysis.\n- Streamlined API usage instructions and updated usage samples for all key capabilities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5c9be713fdcaab012f53318d457347efde9052181eb825c0f402e794bc102a2"
+}

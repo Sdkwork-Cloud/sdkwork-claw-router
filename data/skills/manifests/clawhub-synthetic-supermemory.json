@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33791,
+  "uuid": "skill-clawhub-synthetic-supermemory",
+  "skillKey": "clawhub-synthetic-supermemory",
+  "name": "Synthetic Supermemory",
+  "summary": "Full automated memory pipeline for OpenClaw agents. Scribe session transcripts into structured daily memory files, ingest them into Supermemory for semantic...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.synthetic_supermemory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kitsune",
+      "features": [
+        "Full automated memory pipeline for OpenClaw agents",
+        "Scribe session transcripts into structured daily memory files, ingest them into Supermemory for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/synthetic-supermemory@2.1.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/synthetic-supermemory/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "synthetic-supermemory",
+      "url": "https://clawhub.ai/skills/synthetic-supermemory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "synthetic-supermemory",
+    "url": "https://clawhub.ai/skills/synthetic-supermemory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/synthetic-supermemory-cdfba710d64eacbb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/synthetic-supermemory@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-synthetic-supermemory-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a11e81c2cea45383c5683fa4a019bafc90f53f73b22061afd48629772750bee",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:29:38.670Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18458,
+  "uuid": "skill-clawhub-max-auth",
+  "skillKey": "clawhub-max-auth",
+  "name": "Max Auth",
+  "summary": "Security authentication gate for OpenClaw sensitive actions. Deploys a local Node.js auth server with biometric passkeys (WebAuthn/Touch ID/Face ID) and mast...",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.max_auth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Felipe Matos",
+      "features": [
+        "Security authentication gate for OpenClaw sensitive actions",
+        "Deploys a local Node.js auth server with biometric passkeys (WebAuthn/Touch ID/Face ID) and mas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/max-auth@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/775850?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "max-auth",
+      "url": "https://clawhub.ai/skills/max-auth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "max-auth",
+    "url": "https://clawhub.ai/skills/max-auth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/max-auth-34590ac88dadd615.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/max-auth@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-max-auth-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0561665590576c351b2bc09f4de23a9e5d4faa20427ba523029f6302266e582",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T00:23:30.889Z"
+}

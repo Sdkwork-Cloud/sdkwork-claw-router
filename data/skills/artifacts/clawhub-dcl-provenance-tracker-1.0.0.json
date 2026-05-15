@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dcl-provenance-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dcl_provenance_tracker",
+  "skill": {
+    "id": 51738,
+    "skillKey": "clawhub-dcl-provenance-tracker",
+    "name": "DCL Provenance Tracker — Supply Chain & Version Drift Verifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dcl-provenance-tracker",
+    "url": "https://clawhub.ai/skills/dcl-provenance-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dcl-provenance-tracker-6270f79eb3939aaa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verify the integrity and version history of any ClawHub skill after an update. After ClawHavoc incidents where thousands of skills silently changed behavior..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daririnch",
+      "userId": "s177qzsztsa0qx35zmdc3g65s184c673",
+      "displayName": "Dari Rinch",
+      "image": "https://avatars.githubusercontent.com/u/161933416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775790270728,
+      "changelog": "Initial release of DCL Provenance Tracker — deterministic security verification for ClawHub skills.\n\n- Compares two versions of a skill side-by-side to detect supply chain attacks and behavioral drift.\n- Detects 30+ critical, major, and minor risk patterns: credential exfiltration, permission creep, prompt drift, and structural anomalies.\n- Operates instruction-only — no network calls or data exfiltration; analysis is fully local.\n- Produces a DCL provenance proof hash for each analysis, ensuring update integrity.\n- Designed for use after every skill update, in CI/CD, or on a schedule for critical skills.\n- Part of the Leibniz Layer™ security suite from Fronesis Labs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a315a0a33dd321bee7e2afeddb37e10910cacba608155b59f6538c85374f3f77"
+}

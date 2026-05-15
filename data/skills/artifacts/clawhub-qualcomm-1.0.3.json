@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qualcomm@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qualcomm",
+  "skill": {
+    "id": 29205,
+    "skillKey": "clawhub-qualcomm",
+    "name": "Qualcomm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qualcomm",
+    "url": "https://clawhub.ai/skills/qualcomm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qualcomm-f31639a23c744015.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Information assistant for Qualcomm. Search products, news, financials, and official resources for Qualcomm."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776533927965,
+      "changelog": "- 全面更新了 skill 介绍及内容，突出高通（Qualcomm）在移动通信和5G领域的地位。\n- 补充发展历程、核心特点与优势、关键数据，增加参考价值。\n- 数据内容更加详细，包含营收、研发投入等最新信息。\n- 文件结构优化，已移除冗余内容。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e9d00b68e6fe973561227a4ab145cbfc1de16a81213d63794a0aff8eecdd1e4"
+}

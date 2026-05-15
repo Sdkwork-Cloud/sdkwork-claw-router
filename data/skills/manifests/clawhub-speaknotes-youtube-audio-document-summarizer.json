@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27512,
+  "uuid": "skill-clawhub-speaknotes-youtube-audio-document-summarizer",
+  "skillKey": "clawhub-speaknotes-youtube-audio-document-summarizer",
+  "name": "SpeakNotes: YouTube, Audio & Document Summaries",
+  "summary": "Use when OpenClaw needs to call SpeakNotes API routes directly using an API key and generate transcripts/summaries from YouTube URLs, media files, or documen...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.speaknotes_youtube_audio_document_summarizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jack Lillie",
+      "features": [
+        "Use when OpenClaw needs to call SpeakNotes API routes directly using an API key and generate tr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/speaknotes-youtube-audio-document-summarizer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42320657?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "speaknotes-youtube-audio-document-summarizer",
+      "url": "https://clawhub.ai/skills/speaknotes-youtube-audio-document-summarizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "speaknotes-youtube-audio-document-summarizer",
+    "url": "https://clawhub.ai/skills/speaknotes-youtube-audio-document-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/speaknotes-youtube-audio-document-summarizer-a8a8eac55a8590d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/speaknotes-youtube-audio-document-summarizer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-speaknotes-youtube-audio-document-summarizer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5167969ad332eacc769a0c35d0318dcdb222bda1a101dcd7ebf31d92bd670bed",
+      "artifactSizeBytes": 2630
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T19:46:20.134Z"
+}

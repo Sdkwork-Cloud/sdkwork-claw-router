@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70118,
+  "uuid": "skill-clawhub-drug-delivery-llm",
+  "skillKey": "clawhub-drug-delivery-llm",
+  "name": "Dreamer",
+  "summary": "Dreamer 开发指南。Dreamer 是一个用于药物递送智能响应材料设计的量子原生AI智能体系统。代码库包括分子生成（MoE/稠密LLM）、量子/深度学习分类器、化学分析工具和情报监控。可以用于分子的从头设计、性质标注、筛选推荐，并输出可直接用于高层路演与决策的分析报告",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drug_delivery_llm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Z-Kuki",
+      "features": [
+        "Dreamer 开发指南。Dreamer 是一个用于药物递送智能响应材料设计的量子原生AI智能体系统。代码库包括分子生成（MoE/稠密LLM）、量子/深度学习分类器、化学分析工具和情报监控。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drug-delivery-llm@4.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233734855?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drug-delivery-llm",
+      "url": "https://clawhub.ai/skills/drug-delivery-llm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drug-delivery-llm",
+    "url": "https://clawhub.ai/skills/drug-delivery-llm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drug-delivery-llm-036ffa4a17b32ea0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drug-delivery-llm@4.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-drug-delivery-llm-4.0.0.json",
+      "version": "4.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:761f7c9b006d1794654f398b328052219fde4ae8ff9119dc42267303f3c22094",
+      "artifactSizeBytes": 2333
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T04:12:25.000Z"
+}

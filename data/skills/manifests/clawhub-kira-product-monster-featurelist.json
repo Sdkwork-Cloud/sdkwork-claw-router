@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64051,
+  "uuid": "skill-clawhub-kira-product-monster-featurelist",
+  "skillKey": "clawhub-kira-product-monster-featurelist",
+  "name": "Product Monster Feature List",
+  "summary": "用于在产品立项或版本规划阶段，梳理并输出标准化的 Feature List（功能清单）。严格遵循多级模块划分、用户故事表述及软硬件依赖分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kira_product_monster_featurelist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kira2red",
+      "features": [
+        "用于在产品立项或版本规划阶段，梳理并输出标准化的 Feature List（功能清单）。严格遵循多级模块划分、用户故事表述及软硬件依赖分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kira-product-monster-featurelist@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211765614?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kira-product-monster-featurelist",
+      "url": "https://clawhub.ai/skills/kira-product-monster-featurelist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kira-product-monster-featurelist",
+    "url": "https://clawhub.ai/skills/kira-product-monster-featurelist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kira-product-monster-featurelist-b8f319c98786c60f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kira-product-monster-featurelist@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kira-product-monster-featurelist-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4572e12f550116744581b34f0bc2baa7a64fdc1ebe6d819388ea7a4c7cefba9c",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:46:39.069Z"
+}

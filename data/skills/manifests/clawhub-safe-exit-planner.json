@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41032,
+  "uuid": "skill-clawhub-safe-exit-planner",
+  "skillKey": "clawhub-safe-exit-planner",
+  "name": "Safe Exit Planner",
+  "summary": "Safety planning resources and procedures for leaving dangerous living situations. Use when someone mentions domestic violence, abuse, feeling unsafe at home,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_exit_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HowToUseHumans",
+      "features": [
+        "Safety planning resources and procedures for leaving dangerous living situations",
+        "Use when someone mentions domestic violence, abuse, feeling unsafe at home,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-exit-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151727669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-exit-planner",
+      "url": "https://clawhub.ai/skills/safe-exit-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-exit-planner",
+    "url": "https://clawhub.ai/skills/safe-exit-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-exit-planner-b313a5aaded6dc85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-exit-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-exit-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b2d216480d2ec6269da91360a6e1e386266d96333583192f65c3ba2579ded0f",
+      "artifactSizeBytes": 2506
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T14:39:37.569Z"
+}

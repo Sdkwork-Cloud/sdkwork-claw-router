@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14582,
+  "uuid": "skill-clawhub-microsoft365",
+  "skillKey": "clawhub-microsoft365",
+  "name": "Microsoft 365",
+  "summary": "Microsoft 365 integration for Outlook, Calendar, Contacts, and OneDrive via Microsoft Graph API. Supports reading/sending emails, managing calendar events, a...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microsoft365",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robert Janssen",
+      "features": [
+        "Microsoft 365 integration for Outlook, Calendar, Contacts, and OneDrive via Microsoft Graph API",
+        "Supports reading/sending emails, managing calendar events, a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/microsoft365@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51152787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "microsoft365",
+      "url": "https://clawhub.ai/skills/microsoft365"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microsoft365",
+    "url": "https://clawhub.ai/skills/microsoft365",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microsoft365-41baaba97d0dfa5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/microsoft365@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-microsoft365-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a14a5759efed7ce83031b7de4bee06e4766bade94a3420dfc7c333cc722234ca",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T22:57:47.187Z"
+}

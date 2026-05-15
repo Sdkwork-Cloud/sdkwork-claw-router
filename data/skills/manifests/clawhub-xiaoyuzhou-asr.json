@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57217,
+  "uuid": "skill-clawhub-xiaoyuzhou-asr",
+  "skillKey": "clawhub-xiaoyuzhou-asr",
+  "name": "xiaoyuzhou-asr",
+  "summary": "Transcribe 小宇宙 (Xiaoyuzhou) podcast episodes to text using local Qwen3-ASR speech recognition. Combines xyz API (小宇宙FM API) to fetch episode metadata and aud...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoyuzhou_asr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "worldwonderer",
+      "features": [
+        "Transcribe 小宇宙 (Xiaoyuzhou) podcast episodes to text using local Qwen3-ASR speech recognition",
+        "Combines xyz API (小宇宙FM API) to fetch episode metadata and aud..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaoyuzhou-asr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49583093?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaoyuzhou-asr",
+      "url": "https://clawhub.ai/skills/xiaoyuzhou-asr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoyuzhou-asr",
+    "url": "https://clawhub.ai/skills/xiaoyuzhou-asr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoyuzhou-asr-310a69276a946dae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaoyuzhou-asr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaoyuzhou-asr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31b29d00cf2f9ba2bac0eb5b66cd5a8915bd7ca4fa7296cc4635cec98286bf22",
+      "artifactSizeBytes": 2561
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T16:25:16.315Z"
+}

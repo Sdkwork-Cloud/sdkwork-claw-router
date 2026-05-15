@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aws-wechat-article-images@1.0.23",
+  "version": "1.0.23",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aws_wechat_article_images",
+  "skill": {
+    "id": 71588,
+    "skillKey": "clawhub-aws-wechat-article-images",
+    "name": "公众号封面 & AI 配图"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aws-wechat-article-images",
+    "url": "https://clawhub.ai/skills/aws-wechat-article-images",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aws-wechat-article-images-2bcc483981485f63.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "公众号封面｜公众号配图｜公众号插图｜AI 生图 — 公众号 AI 封面与配图生成，按文章标题与内容自动匹配画风，一稿多方案，多风格预设可复用。面向公众号编辑、自媒体、品牌设计。触发词：「封面」「配图」「插图」「生成图片」「给文章加图」「做个封面」「文章插图」「配个图」。不写正文只发一组图请走 aws-wechat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiworkskills",
+      "userId": "s170f08a9xbhfkfp1vjv33y1ph842r9a",
+      "displayName": "marsatwechat",
+      "image": "https://avatars.githubusercontent.com/u/19565483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.23",
+      "createdAt": 1777035854886,
+      "changelog": "引入 .aws-article/products/{产品名}/ 业务资料库：涉及自家产品的写稿/配图前先查 products/；AI 生成的业务介绍引导保存到 products/{产品名}/*.md。assets 的图片入库脚本重命名 stock_image_ingest.py → product_image_ingest.py（按产品分目录）。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1596a2fbe277511cfbd175e90169dbe4ddd524d645fdfab1bbafdd7b9ab82b8"
+}

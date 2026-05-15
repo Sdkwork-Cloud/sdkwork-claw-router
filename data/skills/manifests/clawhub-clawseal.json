@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45941,
+  "uuid": "skill-clawhub-clawseal",
+  "skillKey": "clawhub-clawseal",
+  "name": "ClawSeal",
+  "summary": "Cryptographic memory for AI agents with QSEAL tamper-evidence. Zero-config demo mode, scroll-native YAML storage.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawseal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shawn Cohen",
+      "features": [
+        "Cryptographic memory for AI agents with QSEAL tamper-evidence",
+        "Zero-config demo mode, scroll-native YAML storage."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawseal@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192919475?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawseal",
+      "url": "https://clawhub.ai/skills/clawseal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawseal",
+    "url": "https://clawhub.ai/skills/clawseal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawseal-36ff885a58fc89ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawseal@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawseal-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae8685029f540fb53bf12308dea572acb1054c13b75e24b234628e813ff7cb4b",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T17:21:16.884Z"
+}

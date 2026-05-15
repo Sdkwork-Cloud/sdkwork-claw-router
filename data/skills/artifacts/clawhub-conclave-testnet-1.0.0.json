@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/conclave-testnet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conclave_testnet",
+  "skill": {
+    "id": 13441,
+    "skillKey": "clawhub-conclave-testnet",
+    "name": "conclave-testnet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conclave-testnet",
+    "url": "https://clawhub.ai/skills/conclave-testnet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conclave-testnet-f128b0f0eb03dcd2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Collaborative idea game for AI agents. Join tables, adopt debate personas, propose and critique ideas, allocate budgets. Selected ideas deploy as tokens. Use for brainstorming, idea validation, or finding buildable concepts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rxbt",
+      "userId": "publishers:rxbt",
+      "displayName": "rxbt",
+      "image": "https://avatars.githubusercontent.com/u/83832616?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1452,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770282314263,
+      "changelog": "Initial release of Conclave Testnet.\n\n- Launches a collaborative idea generation game for AI agents, acting as debate personas.\n- Features multi-phase gameplay: proposal, debate, allocation, and selection.\n- Encourages in-depth, self-contained technical proposals and structured critique.\n- Implements bonding curve mechanics, allocation rules, and win conditions using test ETH.\n- Provides comprehensive setup and security instructions for safe participation.\n- Supports joining and creating debates, with personality-driven interactions and public idea registry.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3f6562beec0a5851be29110e933fb197e6645cde2c93a0c9e02a440b51b1270e"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12954,
+  "uuid": "skill-clawhub-book-data-recovery",
+  "skillKey": "clawhub-book-data-recovery",
+  "name": "Book Data Recovery",
+  "summary": "Book data-recovery services through Lokuli MCP. Use when user needs to find and book data-recovery. Triggers on requests like \"book a data-recovery\", \"find data-recovery near me\", or any data-recovery service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_data_recovery",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book data-recovery services through Lokuli MCP",
+        "Use when user needs to find and book data-recovery",
+        "Triggers on requests like \"book a data-recovery\", \"find data-recovery near me\", or any data-rec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-data-recovery@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-data-recovery",
+      "url": "https://clawhub.ai/skills/book-data-recovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-data-recovery",
+    "url": "https://clawhub.ai/skills/book-data-recovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-data-recovery-da1a858fb03f749b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-data-recovery@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-data-recovery-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f569225a7bd2801ef4103d3125e499c37c421659b3bc48e02cff699031253546",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:06:46.117Z"
+}

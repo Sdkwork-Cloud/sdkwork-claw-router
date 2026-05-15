@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71213,
+  "uuid": "skill-clawhub-05",
+  "skillKey": "clawhub-05",
+  "name": "05 内容总结",
+  "summary": "智能内容总结和项目复盘工具",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.05",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nidhov01",
+      "features": [
+        "智能内容总结和项目复盘工具"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/05@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235751867?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "05",
+      "url": "https://clawhub.ai/skills/05"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "05",
+    "url": "https://clawhub.ai/skills/05",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/05-c97550ce8213ef5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/05@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-05-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d2383b8b4658087f060c6d2eec651d0a4a78153de7d751ee283b63df232d9a6",
+      "artifactSizeBytes": 2108
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T12:29:50.822Z"
+}

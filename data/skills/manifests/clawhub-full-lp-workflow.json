@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16453,
+  "uuid": "skill-clawhub-full-lp-workflow",
+  "skillKey": "clawhub-full-lp-workflow",
+  "name": "Uniswap Full Lp Workflow",
+  "summary": "Full LP workflow from opportunity scanning to position entry. Autonomously finds the best LP opportunity, designs a strategy, assesses risk, executes any needed swaps, enters the position, and reports portfolio impact. Use when user has ca.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.full_lp_workflow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Full LP workflow from opportunity scanning to position entry",
+        "Autonomously finds the best LP opportunity, designs a strategy, assesses risk, executes any nee.",
+        "Use when user has capital and wants end-to-end LP management",
+        "Most complex multi-agent orchestration in the system."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/full-lp-workflow@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "full-lp-workflow",
+      "url": "https://clawhub.ai/skills/full-lp-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "full-lp-workflow",
+    "url": "https://clawhub.ai/skills/full-lp-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/full-lp-workflow-0c12c12ac3e13294.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/full-lp-workflow@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-full-lp-workflow-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d076174a003c2cc87d2ac8e5c56eb2f67158f7251200f8b490bd86428fcc554",
+      "artifactSizeBytes": 2589
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T17:47:06.368Z"
+}

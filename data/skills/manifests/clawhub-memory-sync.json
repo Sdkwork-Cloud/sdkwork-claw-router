@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13366,
+  "uuid": "skill-clawhub-memory-sync",
+  "skillKey": "clawhub-memory-sync",
+  "name": "Automated daily memory backfill for OpenClaw sessions",
+  "summary": "Scrape and analyze OpenClaw JSONL session logs to reconstruct and backfill agent memory files. Use when: (1) Memory appears incomplete after model switches, (2) Verifying memory coverage, (3) Reconstructing lost memory, (4) Automated daily.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_sync",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mpesavento",
+      "features": [
+        "Scrape and analyze OpenClaw JSONL session logs to reconstruct and backfill agent memory files",
+        "Use when: (1) Memory appears incomplete after model switches, (2) Verifying memory coverage, (3.",
+        "Supports simple extraction and LLM-based narrative summaries with automatic secret sanitization."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-sync@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/154588?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-sync",
+      "url": "https://clawhub.ai/skills/memory-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-sync",
+    "url": "https://clawhub.ai/skills/memory-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-sync-69a0fb862653b644.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-sync@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-sync-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5562b2281032cc6c4855fcc6bc0ceae182ef77a85c417eebd831bc21f815e43",
+      "artifactSizeBytes": 2123
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T23:21:16.176Z"
+}

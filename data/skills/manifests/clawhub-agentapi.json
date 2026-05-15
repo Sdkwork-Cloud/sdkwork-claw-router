@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13316,
+  "uuid": "skill-clawhub-agentapi",
+  "skillKey": "clawhub-agentapi",
+  "name": "AgentAPI",
+  "summary": "Browse and search the AgentAPI directory - a curated database of APIs designed for AI agents. Find MCP-compatible APIs for search, AI, communication, databas...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentapi",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gizmolab",
+      "features": [
+        "Browse and search the AgentAPI directory",
+        "a curated database of APIs designed for AI agents",
+        "Find MCP-compatible APIs for search, AI, communication, databas..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentapi@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51985250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentapi",
+      "url": "https://clawhub.ai/skills/agentapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentapi",
+    "url": "https://clawhub.ai/skills/agentapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentapi-fc804f92ca8a1d1a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentapi@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentapi-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:782f29a7db2e0e9a048defc0eb91d7e0a3d5a86ebe892d5b36f66fa29354c315",
+      "artifactSizeBytes": 1854
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T09:08:01.585Z"
+}

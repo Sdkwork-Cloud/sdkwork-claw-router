@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18515,
+  "uuid": "skill-clawhub-hs",
+  "skillKey": "clawhub-hs",
+  "name": "HardStop",
+  "summary": "ACTIVATE THIS SKILL FOR ANY SHELL COMMAND OR FILE READ. Check curl, wget, rm, sudo, apt, dpkg, chmod, dd, format, powershell, bash, sh. Check pipe patterns l...",
+  "version": "1.4.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Francesco Marinoni Moretto",
+      "features": [
+        "ACTIVATE THIS SKILL FOR ANY SHELL COMMAND OR FILE READ",
+        "Check curl, wget, rm, sudo, apt, dpkg, chmod, dd, format, powershell, bash, sh",
+        "Check pipe patterns l..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hs@1.4.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47558125?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hs",
+      "url": "https://clawhub.ai/skills/hs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hs",
+    "url": "https://clawhub.ai/skills/hs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hs-780f86745746934c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hs@1.4.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-hs-1.4.8.json",
+      "version": "1.4.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e70416161e35385334365fa64554a64ba69433e76e71209d91f412f4b559b12d",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T12:50:11.512Z"
+}

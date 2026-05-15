@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tubescribe@1.1.8",
+  "version": "1.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tubescribe",
+  "skill": {
+    "id": 9004,
+    "skillKey": "clawhub-tubescribe",
+    "name": "TubeScribe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tubescribe",
+    "url": "https://clawhub.ai/skills/tubescribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tubescribe-5b4b3b2ab252596c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "YouTube video summarizer with speaker detection, formatted documents, and audio output. Works out of the box with macOS built-in TTS. Optional recommended tools (pandoc, ffmpeg, mlx-audio) enhance quality. Requires internet for YouTube acc."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "matusvojtek",
+      "userId": "publishers:matusvojtek",
+      "displayName": "matusvojtek",
+      "image": "https://avatars.githubusercontent.com/u/206214405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4690,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 7,
+      "versions": 18
+    },
+    "latestVersion": {
+      "version": "1.1.8",
+      "createdAt": 1770752892344,
+      "changelog": "- Description updated: works out of the box, optional tools enhance quality, internet required for YouTube\n- Added OpenClaw metadata: declares summarize as required binary\n- Added security clarifications: no data uploaded, sub-agent has strict no-install instructions\n- Expanded setup.py documentation in README\n- Fixed display name on ClawHub: TubeScribe (was Tubescribe)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6773fc9e96d023abc55a7dbbc802f9a240a08b3886c52072c99bd076703848b3"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13660,
+  "uuid": "skill-clawhub-claw",
+  "skillKey": "clawhub-claw",
+  "name": "ClawEmail",
+  "summary": "Google Workspace via ClawEmail — Gmail, Drive, Docs, Sheets, Slides, Calendar, Forms. Use PROACTIVELY when the user asks to send email, create documents, manage files, schedule events, or work with any Google service.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cto1",
+      "features": [
+        "Google Workspace via ClawEmail — Gmail, Drive, Docs, Sheets, Slides, Calendar, Forms",
+        "Use PROACTIVELY when the user asks to send email, create documents, manage files, schedule even."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7560345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw",
+      "url": "https://clawhub.ai/skills/claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw",
+    "url": "https://clawhub.ai/skills/claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-06deac5b8d4a128e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e14fa16a59d483e3bf522c8bbf9da7ff5d81fbe2ae5bb031564a22fef477f52",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T15:42:58.997Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/server-test-converter@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.server_test_converter",
+  "skill": {
+    "id": 61847,
+    "skillKey": "clawhub-server-test-converter",
+    "name": "Server Test Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "server-test-converter",
+    "url": "https://clawhub.ai/skills/server-test-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/server-test-converter-9c842388b0ffdb2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将服务器测试命令 txt 文件转换为 pytest 测试用例。每个 txt 文件对应生成一个独立的 pytest 文件，命令合并到一个函数中执行。包含通用框架 test_framework.py，适配各种测试环境。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuyun2025",
+      "userId": "s17b8ft9dn0hecf67q7jj3ak3985700m",
+      "displayName": "liuyun2025",
+      "image": "https://avatars.githubusercontent.com/u/198372617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773827923492,
+      "changelog": "- 新增通用测试框架 test_framework.py，支持自定义命令执行逻辑，适配多种测试环境\n- 生成的 pytest 文件现在依赖 test_framework.py，简化了环境集成和命令适配\n- SKILL.md 文档优化，详细说明框架用法、配置步骤和 send_a_cmd() 实现方法\n- 保持每个 txt 文件生成一个独立的 pytest 文件机制，并支持自动命令去重",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e4d85745bbeb17cf4232283a605a758b0127a9f3fd0fb88cd98e00851b622dd"
+}

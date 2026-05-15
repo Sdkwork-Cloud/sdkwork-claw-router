@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49150,
+  "uuid": "skill-clawhub-green-screen-editor",
+  "skillKey": "clawhub-green-screen-editor",
+  "name": "Green Screen Editor",
+  "summary": "Get background-swapped videos ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.green_screen_editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "francemichaell-15",
+      "features": [
+        "Get background-swapped videos ready to post, without touching a single slider",
+        "Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/green-screen-editor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208906142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "green-screen-editor",
+      "url": "https://clawhub.ai/skills/green-screen-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "green-screen-editor",
+    "url": "https://clawhub.ai/skills/green-screen-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/green-screen-editor-064cafe7b1ef6cda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/green-screen-editor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-green-screen-editor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0aa28e56eea0f80d205594ab8c47ff83fc43aea2dca2b3e04c7d6398a90d51b5",
+      "artifactSizeBytes": 2532
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T11:05:28.183Z"
+}

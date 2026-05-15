@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37521,
+  "uuid": "skill-clawhub-kelly-sizer",
+  "skillKey": "clawhub-kelly-sizer",
+  "name": "Kelly Criterion Bet Sizer",
+  "summary": "Calculate optimal bet sizes using Kelly Criterion. Supports single bets, fractional Kelly (quarter/half/three-quarter), multi-bet portfolio sizing, and max-b...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kelly_sizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rsquaredsolutions2026",
+      "features": [
+        "Calculate optimal bet sizes using Kelly Criterion",
+        "Supports single bets, fractional Kelly (quarter/half/three-quarter), multi-bet portfolio sizing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kelly-sizer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217474775?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kelly-sizer",
+      "url": "https://clawhub.ai/skills/kelly-sizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kelly-sizer",
+    "url": "https://clawhub.ai/skills/kelly-sizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kelly-sizer-96d3a32ae0ecf801.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kelly-sizer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kelly-sizer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24e53aa14801155a5b05d08dddfc6699e5a568d3045259a642bfa47343552249",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T01:22:49.667Z"
+}

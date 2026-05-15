@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ssl-certificate-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssl_certificate_checker",
+  "skill": {
+    "id": 20468,
+    "skillKey": "clawhub-ssl-certificate-checker",
+    "name": "SSL Certificate Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssl-certificate-checker",
+    "url": "https://clawhub.ai/skills/ssl-certificate-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssl-certificate-checker-9458ffb7c8ed8d70.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check SSL/TLS certificate details including expiration date, issuer, validity, cipher suites, and security warnings for any domain. Use when verifying HTTPS..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leonardodpanda",
+      "userId": "publishers:leonardodpanda",
+      "displayName": "LeonardoDpanda",
+      "image": "https://avatars.githubusercontent.com/u/51777214?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 535,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773090130826,
+      "changelog": "Initial release of SSL Certificate Checker\n\n- Enables checking SSL/TLS certificate details such as expiration date, issuer, and validity for any domain.\n- Provides insights on cipher suites and security warnings.\n- Useful for monitoring certificate expiry, verifying HTTPS security configuration, and troubleshooting SSL issues.\n- Includes usage guidance, limitations, and example commands for checking certificates via OpenSSL.\n- Not intended for penetration testing, internal certificates, or certificate installation tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e42f5bcebffa6c7ee6ff6a76876ca0b1dea8c24e74f337b914e1cb65d2b7e05"
+}

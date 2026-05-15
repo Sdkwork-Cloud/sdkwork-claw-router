@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15497,
+  "uuid": "skill-clawhub-control-plane",
+  "skillKey": "clawhub-control-plane",
+  "name": "control-plane",
+  "summary": "Operate Emperor Claw as the OpenClaw control plane and durable checkpoint layer for an AI workforce.",
+  "version": "1.14.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.control_plane",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jose Zuma",
+      "features": [
+        "Operate Emperor Claw as the OpenClaw control plane and durable checkpoint layer for an AI workf."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/control-plane@1.14.15",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216121067?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "control-plane",
+      "url": "https://clawhub.ai/skills/control-plane"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "control-plane",
+    "url": "https://clawhub.ai/skills/control-plane",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/control-plane-9682666514c07508.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/control-plane@1.14.15",
+      "artifactUrl": "data/skills/artifacts/clawhub-control-plane-1.14.15.json",
+      "version": "1.14.15",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6f14792a2744b74d9fe357c8257718044c167c4f02f9f99d4ec743147e72f9e",
+      "artifactSizeBytes": 2318
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T09:43:57.575Z"
+}

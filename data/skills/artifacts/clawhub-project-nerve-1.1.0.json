@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/project-nerve@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_nerve",
+  "skill": {
+    "id": 60676,
+    "skillKey": "clawhub-project-nerve",
+    "name": "项目中枢 / Project Nerve"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-nerve",
+    "url": "https://clawhub.ai/skills/project-nerve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-nerve-d7b937b90f9769ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "项目中枢 — 跨平台项目管理聚合器，统一管理 Trello、GitHub Issues、Linear、Notion、Obsidian 任务，支持自学习引擎和任务关系图谱"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanjing5024064",
+      "userId": "s17c9xtrdqnyqr9gcp876pa9fh83k36z",
+      "displayName": "Jun Zhang",
+      "image": "https://avatars.githubusercontent.com/u/11209115?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 289,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773928770755,
+      "changelog": "**project-nerve 1.1.0 更新摘要：**\n\n- 新增 Obsidian 作为可连接的数据源，支持本地 Vault 任务同步及解析。\n- 明确划分与细化所有核心服务流程（如数据源配置、任务聚合、冲刺分析等），并提供详细的引导步骤与命令示例。\n- 增加自学习引擎与任务关系图谱相关功能说明，并按功能完善命令用法和应用场景。\n- 强化免费/付费订阅权限矩阵及相关校验逻辑，详细列出功能及对应权益。\n- 全面规范安全与行为准则，强调环境变量凭据传递和用户友好交互。\n- 对各功能板块分别给出操作流程，补充参考文档指引。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95303b56d3616d5c5d0755994139fa616a39a01a24c0037af738d95fd39e792d"
+}

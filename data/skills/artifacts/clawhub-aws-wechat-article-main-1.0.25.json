@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aws-wechat-article-main@1.0.25",
+  "version": "1.0.25",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aws_wechat_article_main",
+  "skill": {
+    "id": 65371,
+    "skillKey": "clawhub-aws-wechat-article-main",
+    "name": "微信公众号 AI 一条龙运营（总控）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aws-wechat-article-main",
+    "url": "https://clawhub.ai/skills/aws-wechat-article-main",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aws-wechat-article-main-913c18629b9ddbc3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "公众号运营｜微信公众号｜公众号一条龙｜公众号全流程｜自媒体运营｜wechat automation｜content pipeline｜AIGC workflow — 公众号一条龙运营总控入口，选题→写稿→审稿→排版→配图→发布串联 8 个子 skill，单条指令完成整篇图文从 0 到上架。面向公众号小编、自媒体、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiworkskills",
+      "userId": "s170f08a9xbhfkfp1vjv33y1ph842r9a",
+      "displayName": "marsatwechat",
+      "image": "https://avatars.githubusercontent.com/u/19565483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.0.25",
+      "createdAt": 1777127794606,
+      "changelog": "移除 first-time-setup.md 的'快速通道'段：scanner 把'main 推荐用户从特定外部域名导入凭证'判为远程导入风险。assets skill 的 .aws 导入功能不受影响（在 assets SKILL.md 里完整文档化）。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5be40dc1af415d831dc777f68266571df25f696d4317b7a49bd4d34ab2fec072"
+}

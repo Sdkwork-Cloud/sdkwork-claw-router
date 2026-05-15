@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69712,
+  "uuid": "skill-clawhub-problem-workshop",
+  "skillKey": "clawhub-problem-workshop",
+  "name": "命题工坊",
+  "summary": "为信息学奥赛(NOI/CSP)生成高质量编程题，注重思维深度和巧妙解法",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.problem_workshop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fslong",
+      "features": [
+        "为信息学奥赛(NOI/CSP)生成高质量编程题，注重思维深度和巧妙解法"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/problem-workshop@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25819806?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "problem-workshop",
+      "url": "https://clawhub.ai/skills/problem-workshop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "problem-workshop",
+    "url": "https://clawhub.ai/skills/problem-workshop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/problem-workshop-db3c802c71578f17.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/problem-workshop@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-problem-workshop-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27914adb5cdd52cd667dacadae749cb19ee74de8820cc8a3680700583a7f1abb",
+      "artifactSizeBytes": 1854
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T05:39:27.403Z"
+}

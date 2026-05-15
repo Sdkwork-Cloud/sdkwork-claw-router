@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16907,
+  "uuid": "skill-clawhub-activity-analyzer",
+  "skillKey": "clawhub-activity-analyzer",
+  "name": "activity-analyzer",
+  "summary": "Use ActivityWatch to analyze user's computer activity",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.activity_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tim",
+      "features": [
+        "Use ActivityWatch to analyze user's computer activity"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/activity-analyzer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25722332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "activity-analyzer",
+      "url": "https://clawhub.ai/skills/activity-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "activity-analyzer",
+    "url": "https://clawhub.ai/skills/activity-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/activity-analyzer-1881d5aa322ff4b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/activity-analyzer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-activity-analyzer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13c1ad6bd64ee1730eaebb5785b24237488192835dedfdf9420c89209836d481",
+      "artifactSizeBytes": 2252
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T16:21:00.601Z"
+}

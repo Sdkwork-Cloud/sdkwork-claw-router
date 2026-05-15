@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cutie@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cutie",
+  "skill": {
+    "id": 64389,
+    "skillKey": "clawhub-cutie",
+    "name": "Cutie - Crypto KOL Platform"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cutie",
+    "url": "https://clawhub.ai/skills/cutie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cutie-4c91feb4c123a608.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cutie 加密货币 KOL 社群平台。查看交易信号、快讯、KOL 画像和策略画像、论坛帖子、聊天室消息、直播间，管理账户和关注列表。支持学习 KOL 交易策略、评估信号适合度、匹配最佳 KOL。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fansen",
+      "userId": "s170xzy04x03m4408p8q5tfefn84rk4v",
+      "displayName": "fansen",
+      "image": "https://avatars.githubusercontent.com/u/11852842?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776061890066,
+      "changelog": "Cutie 2.0.0 — 大版本升级：新增 KOL 策略学习与信号智能评估功能\n\n- 支持通过 MCP 协议学习 KOL 交易策略，获取策略画像、历史交易和技术指标明细\n- 新增信号适合度评估、策略画像对比、KOL 匹配与导师订阅等高级功能\n- API 基础地址迁移至 server.tokenbeep.com，原有 REST API 调用方式保持兼容\n- 新增风险偏好管理、交易日志查询等扩展接口\n- 完善说明文档，区分信息浏览与策略学习两大功能板块",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:665c5d49645e37600facdc0761beac80bdbaf3ce72c928a8bcaeb8030fea2fc6"
+}

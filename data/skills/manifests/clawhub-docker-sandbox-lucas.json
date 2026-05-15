@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13933,
+  "uuid": "skill-clawhub-docker-sandbox-lucas",
+  "skillKey": "clawhub-docker-sandbox-lucas",
+  "name": "Docker Sandbox Lucas",
+  "summary": "Create and manage Docker sandboxed VM environments for safe agent execution. Use when running untrusted code, exploring packages, or isolating agent workloads. Supports Claude, Codex, Copilot, Gemini, and Kiro agents with network proxy con.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_sandbox_lucas",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LucasSeeley",
+      "features": [
+        "Create and manage Docker sandboxed VM environments for safe agent execution",
+        "Use when running untrusted code, exploring packages, or isolating agent workloads",
+        "Supports Claude, Codex, Copilot, Gemini, and Kiro agents with network proxy controls."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docker-sandbox-lucas@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69803592?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docker-sandbox-lucas",
+      "url": "https://clawhub.ai/skills/docker-sandbox-lucas"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-sandbox-lucas",
+    "url": "https://clawhub.ai/skills/docker-sandbox-lucas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-sandbox-lucas-c0ac963627332e2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docker-sandbox-lucas@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-docker-sandbox-lucas-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5806aadbcde3c73d6db3942c90204ab906ef6a13d0693576b97df017f99025c",
+      "artifactSizeBytes": 2106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T23:10:02.700Z"
+}

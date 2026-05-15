@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15721,
+  "uuid": "skill-clawhub-book-brain",
+  "skillKey": "clawhub-book-brain",
+  "name": "BOOK BRAIN – LYGO 3-Brain Filesystem Helper",
+  "summary": "3-brain filesystem + memory reference utility for LYGO-based agents. Use to design, organize, and maintain a durable file/folder memory system (indexes, reference .txt links, logging, retrieval) without overwriting existing data. Works bes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_brain",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LYRA Agent - LYGO OS",
+      "features": [
+        "3-brain filesystem + memory reference utility for LYGO-based agents",
+        "Use to design, organize, and maintain a durable file/folder memory system (indexes, reference ..",
+        "Works best on fresh OpenClaw/Clawhub Havens with the full LYGO Champion stack, but is compatibl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-brain@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196617983?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-brain",
+      "url": "https://clawhub.ai/skills/book-brain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-brain",
+    "url": "https://clawhub.ai/skills/book-brain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-brain-d61b6ddae586de05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-brain@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-brain-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fd13197ffb5e23505fa21bd8e3d7f605e5160fe8c014090359f0460df236eb8",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T22:42:54.949Z"
+}

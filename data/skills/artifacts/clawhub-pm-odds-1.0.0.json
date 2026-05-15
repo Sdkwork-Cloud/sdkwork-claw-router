@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pm-odds@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pm_odds",
+  "skill": {
+    "id": 10120,
+    "skillKey": "clawhub-pm-odds",
+    "name": "Polymarket Odds"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pm-odds",
+    "url": "https://clawhub.ai/skills/pm-odds",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pm-odds-9327bfd74dcf0653.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Polymarket prediction markets. Use for questions about prediction markets, betting odds, market prices, event probabilities, or when user asks about Polymarket data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dannyshmueli",
+      "userId": "s1785jgb7evz92f88z9psd4m7583gmsv",
+      "displayName": "Danny Shmueli",
+      "image": "https://avatars.githubusercontent.com/u/4062328?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2536,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769515430171,
+      "changelog": "Query Polymarket prediction markets",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a5eadcdd78e0bb4191016b8270a6d9591c0bf2a8e1dae8508fbe8c1de888c703"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13021,
+  "uuid": "skill-clawhub-book-pilates",
+  "skillKey": "clawhub-book-pilates",
+  "name": "Book Pilates",
+  "summary": "Book pilates services through Lokuli MCP. Use when user needs to find and book pilates. Triggers on requests like \"book a pilates\", \"find pilates near me\", or any pilates service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_pilates",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book pilates services through Lokuli MCP",
+        "Use when user needs to find and book pilates",
+        "Triggers on requests like \"book a pilates\", \"find pilates near me\", or any pilates service requ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-pilates@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-pilates",
+      "url": "https://clawhub.ai/skills/book-pilates"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-pilates",
+    "url": "https://clawhub.ai/skills/book-pilates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-pilates-9ba8ee9a5d21b5d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-pilates@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-pilates-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:755f2dd9f8c233b22c5fc1beed4f18d772cde7585f337b31ece9259ab6158889",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:05:45.750Z"
+}

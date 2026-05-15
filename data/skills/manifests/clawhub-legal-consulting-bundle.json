@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69429,
+  "uuid": "skill-clawhub-legal-consulting-bundle",
+  "skillKey": "clawhub-legal-consulting-bundle",
+  "name": "Legal Consulting Bundle",
+  "summary": "中国法律咨询AI技能套装 - 基于中国法律知识库，提供合同审查、法律问答、合规检查等AI自动化服务。 覆盖民法典、劳动合同法、公司法等核心法规，帮中小企业和个人用户快速获取法律分析，降低法律咨询成本。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_consulting_bundle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daimingvip-a11y",
+      "features": [
+        "中国法律咨询AI技能套装",
+        "基于中国法律知识库，提供合同审查、法律问答、合规检查等AI自动化服务。 覆盖民法典、劳动合同法、公司法等核心法规，帮中小企业和个人用户快速获取法律分析，降低法律咨询成本。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legal-consulting-bundle@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232273827?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legal-consulting-bundle",
+      "url": "https://clawhub.ai/skills/legal-consulting-bundle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-consulting-bundle",
+    "url": "https://clawhub.ai/skills/legal-consulting-bundle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-consulting-bundle-8fd4e917ad5ff71d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legal-consulting-bundle@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-legal-consulting-bundle-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcedc99df172a4f20cbde3c8c3f106c7fabf1a5b5ddbff115c3ffebe5669fa62",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T04:50:16.288Z"
+}

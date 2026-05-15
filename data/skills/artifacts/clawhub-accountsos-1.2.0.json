@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/accountsos@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.accountsos",
+  "skill": {
+    "id": 13558,
+    "skillKey": "clawhub-accountsos",
+    "name": "Accountsos"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "accountsos",
+    "url": "https://clawhub.ai/skills/accountsos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/accountsos-950e18d70bebdbb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-native accounting for UK micro-businesses. Use when the user wants to track transactions, manage VAT, check deadlines, or do any bookkeeping for a UK limited company."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paulgosnell",
+      "userId": "publishers:paulgosnell",
+      "displayName": "paulgosnell",
+      "image": "https://avatars.githubusercontent.com/u/615605?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1401,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1770623022624,
+      "changelog": "Add agent self-signup API for zero-friction onboarding",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:693ba1cd0a0ad772ccff6acb3a377e5f0c8bafda5a21755c0f663b1c09779e90"
+}

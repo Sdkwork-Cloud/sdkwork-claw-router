@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llm-daily-digest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_daily_digest",
+  "skill": {
+    "id": 60497,
+    "skillKey": "clawhub-llm-daily-digest",
+    "name": "AI每日最新进展日报"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-daily-digest",
+    "url": "https://clawhub.ai/skills/llm-daily-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-daily-digest-4a70735188c2bc6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成一份当日 LLM / 大模型领域的中文资讯简报。采集来源包括：**8 家头部厂商官方博客**（海外：OpenAI / Anthropic / Google DeepMind / Meta AI / xAI / Mistral；国内：DeepSeek / 通义千问 Qwen —— 最高优先级一手源）、GitHu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flowbywind",
+      "userId": "s172sesr9tszawbcpxm9e8kq198520p9",
+      "displayName": "flowbywind",
+      "image": "https://avatars.githubusercontent.com/u/4114969?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776491815611,
+      "changelog": "llm-daily-digest 1.0.0\n\n- 首次发布，支持自动采集并生成当日大模型（LLM）领域的中文资讯简报。\n- 覆盖8家中外头部厂商官方博客（OpenAI、Anthropic、Google DeepMind、Meta AI、xAI、Mistral、DeepSeek、通义千问Qwen）及GitHub Trending、arXiv、Hugging Face、Papers With Code、Hacker News、X/Twitter、主流中文媒体等多个来源。\n- 汇总厂商官方发布、新开源项目、新论文和行业重大资讯事件，并自动分门别类、打分筛选。\n- 用户可通过多种自然语言指令触发日报生成，也支持定时自动执行。\n- 产出结构化 Markdown 简报，自动保存并在会话内返回文件路径、本日精选与采集统计信息。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4562d9b4f8c29440f5b3dc84d8767161a2f918265ade81c07a946c51cdc3ab23"
+}

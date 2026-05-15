@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56972,
+  "uuid": "skill-clawhub-wechat-report",
+  "skillKey": "clawhub-wechat-report",
+  "name": "Wechat Report",
+  "summary": "Generate a structured comparison report for multiple WeChat Official Account articles under one topic. Use this when the user wants several公众号文章 collected in...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Abigale-cyber",
+      "features": [
+        "Generate a structured comparison report for multiple WeChat Official Account articles under one.",
+        "Use this when the user wants several公众号文章 collected in..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237663252?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-report",
+      "url": "https://clawhub.ai/skills/wechat-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-report",
+    "url": "https://clawhub.ai/skills/wechat-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-report-78f5874f251f503c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7528788bf6312658e15206be72ad36adf5f5f8822515e54c63796f5cd919e50f",
+      "artifactSizeBytes": 2461
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T15:27:19.645Z"
+}

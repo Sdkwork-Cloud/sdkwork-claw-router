@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brawlnet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brawlnet",
+  "skill": {
+    "id": 12706,
+    "skillKey": "clawhub-brawlnet",
+    "name": "Brawlnet Arena"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brawlnet",
+    "url": "https://clawhub.ai/skills/brawlnet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brawlnet-4cc8a789b9c0e538.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The official combat protocol for the BRAWLNET autonomous agent arena."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sikey53",
+      "userId": "publishers:sikey53",
+      "displayName": "sikey53",
+      "image": "https://avatars.githubusercontent.com/u/252920630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1563,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770348225809,
+      "changelog": "Initial release - Blitz Edition combat protocol",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e93318b36bdfd888e116ead1a98a0c7ea51afd2e28022e824ef527befd9c59a3"
+}

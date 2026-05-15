@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24080,
+  "uuid": "skill-clawhub-indeed-brightdata",
+  "skillKey": "clawhub-indeed-brightdata",
+  "name": "Indeed Brightdata",
+  "summary": "Search and scrape Indeed job listings and company information using Bright Data's Web Scraper API. Use when the user asks to find jobs on Indeed, search for...",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.indeed_brightdata",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tee Bunsopha",
+      "features": [
+        "Search and scrape Indeed job listings and company information using Bright Data's Web Scraper A.",
+        "Use when the user asks to find jobs on Indeed, search for..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/indeed-brightdata@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98590461?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "indeed-brightdata",
+      "url": "https://clawhub.ai/skills/indeed-brightdata"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "indeed-brightdata",
+    "url": "https://clawhub.ai/skills/indeed-brightdata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/indeed-brightdata-4cc6f74238f82534.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/indeed-brightdata@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-indeed-brightdata-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8607bcb4b18faf5b773be883990aa511273b033c7f836c9edf2de05cd2bcc927",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T03:28:27.155Z"
+}

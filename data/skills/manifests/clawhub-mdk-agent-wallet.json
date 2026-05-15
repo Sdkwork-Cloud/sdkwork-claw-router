@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10782,
+  "uuid": "skill-clawhub-mdk-agent-wallet",
+  "skillKey": "clawhub-mdk-agent-wallet",
+  "name": "agent-wallet",
+  "summary": "Self-custodial Bitcoin Lightning wallet for AI agents. Use when the agent needs to send or receive bitcoin payments, check its balance, generate invoices, or...",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mdk_agent_wallet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Satbot",
+      "features": [
+        "Self-custodial Bitcoin Lightning wallet for AI agents",
+        "Use when the agent needs to send or receive bitcoin payments, check its balance, generate invoi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mdk-agent-wallet@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258118994?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mdk-agent-wallet",
+      "url": "https://clawhub.ai/skills/mdk-agent-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mdk-agent-wallet",
+    "url": "https://clawhub.ai/skills/mdk-agent-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mdk-agent-wallet-df0da8179eda29bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mdk-agent-wallet@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-mdk-agent-wallet-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4aef7a855b18740450a825777f53d89f5d9a0a29c6077f8840792981a6bf4e58",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T00:14:56.771Z"
+}

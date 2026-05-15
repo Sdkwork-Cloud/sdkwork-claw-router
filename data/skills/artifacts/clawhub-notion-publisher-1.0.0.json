@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notion-publisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_publisher",
+  "skill": {
+    "id": 48455,
+    "skillKey": "clawhub-notion-publisher",
+    "name": "Notion Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-publisher",
+    "url": "https://clawhub.ai/skills/notion-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-publisher-92ebe9789780ac33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish articles to Notion using cached local copies of the target database's default Notion template when available. Use this skill when the user types /not..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "miraclemin",
+      "userId": "s17c6qamesnzbheh4q6gacpk5d83zb4m",
+      "displayName": "Miraclemin",
+      "image": "https://avatars.githubusercontent.com/u/21076746?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777367447265,
+      "changelog": "Initial release with MCP and CLI runtime support for Notion publishing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b70d4d1eb72aa6fbf867c736616cbe548fefc6301e9ea4e2f4d376935dad419"
+}

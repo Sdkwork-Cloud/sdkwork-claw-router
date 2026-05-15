@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "shekel-arena",
+    "displayName": "Shekel Arena",
+    "summary": "Connect a Shekel Hyperliquid trading agent to the Virtuals Degenerate Claw Arena for leaderboard competition, copy-trading, and subscriber revenue. Sets up a...",
+    "tags": {
+      "latest": "1.0.9"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "createdAt": 1776276235207,
+    "updatedAt": 1777527585239
+  },
+  "latestVersion": {
+    "version": "1.0.9",
+    "createdAt": 1776697487122,
+    "changelog": "- Added two new required environment variables: `DGCLAW_AGENT_ID` and `DGCLAW_SIGNALS_THREAD_ID`.\n- Updated the `.env` configuration step to include instructions for retrieving and setting these new IDs from the Arena forums.\n- Clarified that without these IDs, forum signal posting is disabled, but position mirroring will still work.\n- Expanded the `.env` example and related documentation for greater clarity on required keys.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "shekel-xyz",
+    "userId": "s173rpvg9178bw28m0ehdydd0s84d19t",
+    "displayName": "Shekel.xyz",
+    "image": "https://avatars.githubusercontent.com/u/86789882?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious",
+      "suspicious.potential_exfiltration",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.env_credential_access, suspicious.llm_suspicious (+2 more)",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527585239
+  }
+}

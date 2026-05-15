@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12445,
+  "uuid": "skill-clawhub-wps-punchclock",
+  "skillKey": "clawhub-wps-punchclock",
+  "name": "dxh141130",
+  "summary": "Automate punching time in/out on WPS Time / NetTime (wpstime.com NetTime). Use for phrases like setup punchclock/configure punchclock/set up time clock, clock in/clock out, start break/end break, start lunch/end lunch, check status/status..",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wps_punchclock",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dxh141130",
+      "features": [
+        "Automate punching time in/out on WPS Time / NetTime (wpstime.com NetTime)",
+        "Use for phrases like setup punchclock/configure punchclock/set up time clock, clock in/clock ou.",
+        "Runs a Playwright flow, captures a screenshot, and replies with a brief confirmation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wps-punchclock@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21978948?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wps-punchclock",
+      "url": "https://clawhub.ai/skills/wps-punchclock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wps-punchclock",
+    "url": "https://clawhub.ai/skills/wps-punchclock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wps-punchclock-d4e228e7237b9e5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wps-punchclock@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wps-punchclock-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3d8a2f0bf32b7338f38eac113d9d4676d331bdd0ce68bc7d4eb2ef356372aa0",
+      "artifactSizeBytes": 2315
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T05:15:52.138Z"
+}

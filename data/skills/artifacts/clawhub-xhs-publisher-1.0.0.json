@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-publisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_publisher",
+  "skill": {
+    "id": 56733,
+    "skillKey": "clawhub-xhs-publisher",
+    "name": "XHS Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-publisher",
+    "url": "https://clawhub.ai/skills/xhs-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-publisher-b8309fbe4b8c58c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish notes (posts) to Xiaohongshu (小红书) via the Creator Platform using browser automation (CDP). Use when user asks to post/publish/发布 content on Xiaohong..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "waao666",
+      "userId": "publishers:waao666",
+      "displayName": "Waao666",
+      "image": "https://avatars.githubusercontent.com/u/43161158?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 704,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772769663934,
+      "changelog": "Browser CDP automation for publishing notes on Xiaohongshu (小红书) Creator Platform",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:78cbfbf1650a7a6fdc56a35c7c0af3659a1f228dd5a5559b6fcb4ebf60b28149"
+}

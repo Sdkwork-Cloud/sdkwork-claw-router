@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/animation-shader@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.animation_shader",
+  "skill": {
+    "id": 50519,
+    "skillKey": "clawhub-animation-shader",
+    "name": "Animation Shader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "animation-shader",
+    "url": "https://clawhub.ai/skills/animation-shader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/animation-shader-d6f49ba20bbe28d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "READ this skill when implementing or configuring animation-style shaders (Toon/Cel Shaders) — including outlines, rim lighting, toon shading, MatCap, emissio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuki001",
+      "userId": "publishers:yuki001",
+      "displayName": "Yuki001",
+      "image": "https://avatars.githubusercontent.com/u/13944639?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772783495856,
+      "changelog": "Initial release of the animation-shader skill.\n\n- Provides a comprehensive reference for implementing and configuring animation-style shaders, including toon/cel shading, outlines, rim lighting, MatCap, emission, dissolve, hatching, and stylized effects.\n- Includes ready-to-use preset styles and use cases for different visual goals (e.g., Basic Anime, Advanced Illustration, Cyber/VFX, Oil Painting).\n- Supplies detailed feature lists with mappings to reference files for popular Unity shaders (lilToon, Poiyomi, UTS2, RToon, SToon, ToonShadingCollection).\n- Designed to be used as a domain knowledge plugin alongside workflow skills or agents for structured shader design.\n- Provides standalone guidance for shader design if workflow skills are not present.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fc27b8e7618ad7d268c01bd6b11629080606e103555227bbc029985ed84955d2"
+}

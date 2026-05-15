@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49565,
+  "uuid": "skill-clawhub-sugarcrm-integration",
+  "skillKey": "clawhub-sugarcrm-integration",
+  "name": "Sugarcrm",
+  "summary": "SugarCRM integration. Manage crm and sales data, records, and workflows. Use when the user wants to interact with SugarCRM data.",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sugarcrm_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "SugarCRM integration",
+        "Manage crm and sales data, records, and workflows",
+        "Use when the user wants to interact with SugarCRM data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sugarcrm-integration@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sugarcrm-integration",
+      "url": "https://clawhub.ai/skills/sugarcrm-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sugarcrm-integration",
+    "url": "https://clawhub.ai/skills/sugarcrm-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sugarcrm-integration-cbfcfa17ae2f68a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sugarcrm-integration@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-sugarcrm-integration-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7203aef9a401684e86604c7670333e7102fc06baf29ffdb2b6cbda1bace54aac",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:03:51.104Z"
+}

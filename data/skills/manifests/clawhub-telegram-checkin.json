@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59930,
+  "uuid": "skill-clawhub-telegram-checkin",
+  "skillKey": "clawhub-telegram-checkin",
+  "name": "Telegram 自动签到",
+  "summary": "使用 agent-browser 对 Telegram 机器人进行自动签到。当用户提到\"签到\"、\"Telegram 机器人自动操作\"、\"OKEmbyBot\"、\"Telegram Web 自动化\"、\"Telegram 按钮点击\"时触发。使用持久化 Chrome Profile 保存 cookies，关掉再开无需重新登录。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_checkin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lanbeizizi-max",
+      "features": [
+        "使用 agent-browser 对 Telegram 机器人进行自动签到。当用户提到\"签到\"、\"Telegram 机器人自动操作\"、\"OKEmbyBot\"、\"Telegram Web 自动."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telegram-checkin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268800607?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telegram-checkin",
+      "url": "https://clawhub.ai/skills/telegram-checkin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-checkin",
+    "url": "https://clawhub.ai/skills/telegram-checkin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-checkin-07179ce9305379ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telegram-checkin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-telegram-checkin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12af4cdfe9c38d79e5b78e5c6ffd7975660a07e3b464607109748a5a06abe097",
+      "artifactSizeBytes": 2134
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T08:26:58.680Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33241,
+  "uuid": "skill-clawhub-partnering-maps",
+  "skillKey": "clawhub-partnering-maps",
+  "name": "Partnering Maps",
+  "summary": "Identify make-buy-partner relationships for key activities. Use for strategic alliances, outsourcing decisions, and supply chain optimization.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.partnering_maps",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linuszz",
+      "features": [
+        "Identify make-buy-partner relationships for key activities",
+        "Use for strategic alliances, outsourcing decisions, and supply chain optimization."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/partnering-maps@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46770204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "partnering-maps",
+      "url": "https://clawhub.ai/skills/partnering-maps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "partnering-maps",
+    "url": "https://clawhub.ai/skills/partnering-maps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/partnering-maps-a3522d77a1c7514b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/partnering-maps@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-partnering-maps-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:118c950e950ff6c8c9b7d19ceb4b3d29dbdf289e84c88dfa649ea91442c3741e",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T23:28:21.481Z"
+}

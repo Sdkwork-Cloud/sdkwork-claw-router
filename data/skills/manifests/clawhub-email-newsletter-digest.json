@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24905,
+  "uuid": "skill-clawhub-email-newsletter-digest",
+  "skillKey": "clawhub-email-newsletter-digest",
+  "name": "Email Newsletter Digest",
+  "summary": "Summarizes recent newsletter emails received in Gmail into a single newsletter digest. This skill identifies newsletter emails using configured labels or sen...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_newsletter_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Neerav Makwana",
+      "features": [
+        "Summarizes recent newsletter emails received in Gmail into a single newsletter digest",
+        "This skill identifies newsletter emails using configured labels or sen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-newsletter-digest@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261249544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-newsletter-digest",
+      "url": "https://clawhub.ai/skills/email-newsletter-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-newsletter-digest",
+    "url": "https://clawhub.ai/skills/email-newsletter-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-newsletter-digest-f101648d9291caae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-newsletter-digest@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-newsletter-digest-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c4b8240f12a9f9d0afd40f75245388ebd1f35381d8e1f8b3e7634dc1e0266ad",
+      "artifactSizeBytes": 2101
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T00:51:03.518Z"
+}

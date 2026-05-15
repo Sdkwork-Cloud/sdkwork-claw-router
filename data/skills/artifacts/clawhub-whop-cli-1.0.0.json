@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whop-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whop_cli",
+  "skill": {
+    "id": 41064,
+    "skillKey": "clawhub-whop-cli",
+    "name": "Whop Store Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whop-cli",
+    "url": "https://clawhub.ai/skills/whop-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whop-cli-65c65eb54857ebd8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Whop digital products store — create products, plans, track payments, manage memberships. Use when: selling digital products, managing Whop store. Don..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "g9pedro",
+      "userId": "s170qw9ry89qte3815nzjvz1sh83mzvt",
+      "displayName": "G9Pedro",
+      "image": "https://avatars.githubusercontent.com/u/78662829?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 714,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771538688873,
+      "changelog": "Initial release of whop-cli.\n\n- Manage Whop digital products store via API: create products and pricing plans, track payments, and manage memberships.\n- Easy setup with environment variables for API authentication.\n- Usage examples included for product and plan creation, payment tracking, and membership management.\n- Supports multiple resources: products, plans, payments, memberships, files, webhooks, and more.\n- Requires Whop SDK installation and configuration of API key and company ID.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:33cebc01e87a502843d00c55e2517634827136904b4e8ea486214d59199d5de4"
+}

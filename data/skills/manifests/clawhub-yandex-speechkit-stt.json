@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63091,
+  "uuid": "skill-clawhub-yandex-speechkit-stt",
+  "skillKey": "clawhub-yandex-speechkit-stt",
+  "name": "Yandex Speechkit STT via Telegram Gateway",
+  "summary": "Распознавание речи через Yandex SpeechKit API для голосовых сообщений в Telegram. Используй когда пользователь отправляет голосовые сообщения и хочет, чтобы...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yandex_speechkit_stt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "strydex",
+      "features": [
+        "Распознавание речи через Yandex SpeechKit API для голосовых сообщений в Telegram",
+        "Используй когда пользователь отправляет голосовые сообщения и хочет, чтобы..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yandex-speechkit-stt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143320768?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yandex-speechkit-stt",
+      "url": "https://clawhub.ai/skills/yandex-speechkit-stt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yandex-speechkit-stt",
+    "url": "https://clawhub.ai/skills/yandex-speechkit-stt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yandex-speechkit-stt-bb3681148549b2dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yandex-speechkit-stt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yandex-speechkit-stt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b345a8e7c8a4ae21838306d14517d2a3b4e6b58b88ff72665f611992787f1b2",
+      "artifactSizeBytes": 2413
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T15:58:16.306Z"
+}

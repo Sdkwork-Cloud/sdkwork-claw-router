@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/payroll-oracle@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payroll_oracle",
+  "skill": {
+    "id": 51250,
+    "skillKey": "clawhub-payroll-oracle",
+    "name": "Payroll Oracle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payroll-oracle",
+    "url": "https://clawhub.ai/skills/payroll-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payroll-oracle-99caaee71034bb91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Shadow HR Infrastructure. Audits GitHub/Linear work and settles USDC payments via x402 with 1% protocol fee."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eldan445",
+      "userId": "publishers:eldan445",
+      "displayName": "Eldan445",
+      "image": "https://avatars.githubusercontent.com/u/191492529?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 576,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772016546081,
+      "changelog": "Initial release of payroll-oracle, enabling decentralized payroll settlement linked to GitHub/Linear proof of work.\n\n- Audits work status (Merged/Done) on GitHub PRs or Linear tickets before initiating payments.\n- Settles USDC payments via x402 protocol with a 1% commission fee.\n- Supports only work proven via github.com and linear.app links.\n- Includes error handling for unverified work and Base gas failures.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c02300dcf49ef3bb94953396e25b7e798ffacc7924aa2e8fe7c3cb7f661db7ff"
+}

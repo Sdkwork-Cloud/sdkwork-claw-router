@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8753,
+  "uuid": "skill-clawhub-daily-digest",
+  "skillKey": "clawhub-daily-digest",
+  "name": "Daily Digest",
+  "summary": "Generates a daily digest from stored memory files, summarizing decisions, lessons, actions, and questions into a dated journal entry.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_digest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Patrick Maeter",
+      "features": [
+        "Generates a daily digest from stored memory files, summarizing decisions, lessons, actions, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43902331?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-digest",
+      "url": "https://clawhub.ai/skills/daily-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-digest",
+    "url": "https://clawhub.ai/skills/daily-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-digest-d6c3e87ae49c7082.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cffe662b67d07a0350426b054b14c3026f4c641645c1c540c8cc40fbc10c111",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T17:55:06.597Z"
+}

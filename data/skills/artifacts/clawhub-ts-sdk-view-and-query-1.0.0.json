@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ts-sdk-view-and-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ts_sdk_view_and_query",
+  "skill": {
+    "id": 35311,
+    "skillKey": "clawhub-ts-sdk-view-and-query",
+    "name": "Ts Sdk View And Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ts-sdk-view-and-query",
+    "url": "https://clawhub.ai/skills/ts-sdk-view-and-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ts-sdk-view-and-query-d07cf56b92c616df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "How to read on-chain data in @aptos-labs/ts-sdk: view(), getBalance(), getAccountInfo(), getAccountResources(), getAccountModules(), getResource(). Triggers..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iskysun96",
+      "userId": "publishers:iskysun96",
+      "displayName": "iskysun96",
+      "image": "https://avatars.githubusercontent.com/u/52557585?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773876993741,
+      "changelog": "Initial release providing best practices and usage examples for reading on-chain data with @aptos-labs/ts-sdk:\n\n- Documents usage of view(), getBalance(), getAccountInfo(), getAccountResources(), getAccountModules(), and getResource().\n- Explains correct type handling for Move view return values in TypeScript (e.g., bigint for u128/u256).\n- Highlights recommended and deprecated methods for balance and data queries.\n- Includes code samples for each supported function.\n- Lists common mistakes and proper approaches.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a1074a24830429c3b049b86cc4c5a06ebaf169b4b4878b1c1e07807ecc2353ec"
+}

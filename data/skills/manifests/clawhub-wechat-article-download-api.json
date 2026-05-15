@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28951,
+  "uuid": "skill-clawhub-wechat-article-download-api",
+  "skillKey": "clawhub-wechat-article-download-api",
+  "name": "WeChat Article Download API",
+  "summary": "Fetch and export WeChat public article content through down.mptext.top API. Use when testing this API, downloading a WeChat article, validating html/markdown...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_download_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lniosy",
+      "features": [
+        "Fetch and export WeChat public article content through down.mptext.top API",
+        "Use when testing this API, downloading a WeChat article, validating html/markdown..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-article-download-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91119236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-article-download-api",
+      "url": "https://clawhub.ai/skills/wechat-article-download-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-download-api",
+    "url": "https://clawhub.ai/skills/wechat-article-download-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-download-api-5817cbc9999bd55b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-article-download-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-article-download-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56bd7bef4510f6fcecc0bf4e480bd7fb2d4d8a1abdfa7eeef1e9e7daa7fd7af7",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T02:21:12.920Z"
+}

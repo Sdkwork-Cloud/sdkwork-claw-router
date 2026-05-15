@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-keyword-research@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_keyword_research",
+  "skill": {
+    "id": 20107,
+    "skillKey": "clawhub-amazon-keyword-research",
+    "name": "Amazon Keyword Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-keyword-research",
+    "url": "https://clawhub.ai/skills/amazon-keyword-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-keyword-research-aa9390e55fa4edb2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon keyword research and market opportunity analysis for sellers. Retrieve autocomplete suggestions (long-tail keywords), analyze competitor landscape, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phheng",
+      "userId": "s17cnrtda4fqzdjza3g2hx20bs83f18z",
+      "displayName": "Henk Nie",
+      "image": "https://avatars.githubusercontent.com/u/44972754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 441,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773745466991,
+      "changelog": "Initial release of Amazon Keyword Research skill:\n\n- Instantly generates 100-200 long-tail keyword suggestions using Amazon autocomplete, with expansions and deduplication.\n- Provides competitor landscape analysis: counts, price range, review distribution, and top brands.\n- Assesses seasonal demand using 12-month Google Trends data.\n- Calculates a market opportunity score (1–10) based on competition, price room, demand trend, and niche potential.\n- Supports 12 Amazon marketplaces (US, UK, DE, FR, IT, ES, JP, CA, AU, IN, MX, BR) without requiring an API key.\n- Includes structured, actionable reports and side-by-side keyword comparison.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fbe87e82897a4e3196abd4e70d123adc1c26a81ed9197ef18dd092a2ac9992f8"
+}

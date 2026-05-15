@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-reflection-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_reflection_engine",
+  "skill": {
+    "id": 42192,
+    "skillKey": "clawhub-agent-reflection-engine",
+    "name": "Agent Reflection Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-reflection-engine",
+    "url": "https://clawhub.ai/skills/agent-reflection-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-reflection-engine-157ecf53fe94566f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables AI agents to self-audit decision steps, identify reasoning bottlenecks, and generate improvement patches via chain-of-thought critique."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "albionaiinc-del",
+      "userId": "s17a02897swm2wgc0ge6g3j8ss83mx5y",
+      "displayName": "albionaiinc-del",
+      "image": "https://avatars.githubusercontent.com/u/269741383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776449087054,
+      "changelog": "- Initial release of Agent Reflection Engine.\n- Enables AI agents to self-audit decision traces and identify reasoning bottlenecks.\n- Generates improvement patches using chain-of-thought critique.\n- Designed for easy integration into agent loops via trace logging and periodic reflection.\n- Lightweight and pluggable for developer use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:328e6e0e3657b92016cd952e2ebf92f775b0d5a442b1a79cff01049ecba702de"
+}

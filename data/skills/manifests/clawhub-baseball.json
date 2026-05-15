@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15089,
+  "uuid": "skill-clawhub-baseball",
+  "skillKey": "clawhub-baseball",
+  "name": "Baseball",
+  "summary": "Fetch MLB game schedules, live game status, box scores, player search, and season statistics via the MLB Stats API. Use when the user asks about baseball gam...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baseball",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Haney",
+      "features": [
+        "Fetch MLB game schedules, live game status, box scores, player search, and season statistics vi.",
+        "Use when the user asks about baseball gam..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baseball@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13684640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baseball",
+      "url": "https://clawhub.ai/skills/baseball"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baseball",
+    "url": "https://clawhub.ai/skills/baseball",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baseball-a01edad91c00abe7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baseball@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-baseball-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27468deed232ee9f31ccc6a5558358105a8211a214aa248a1a575848d93061e2",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T17:02:15.890Z"
+}

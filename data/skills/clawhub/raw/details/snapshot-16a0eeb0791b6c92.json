@@ -1,0 +1,52 @@
+{
+  "skill": {
+    "slug": "snapshot",
+    "displayName": "OpenClaw Backup & Restore — Encrypted OpenClaw Snapshots",
+    "summary": "Backup and restore the .openclaw agent folder — encrypted snapshots pushed to a private GitHub repo. Use this skill whenever the user mentions backup, restor...",
+    "tags": {
+      "latest": "1.2.0",
+      "backup": "1.0.0",
+      "encryption": "1.0.0",
+      "github": "1.0.0",
+      "migration": "1.0.0",
+      "restore": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 281,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "createdAt": 1774199118478,
+    "updatedAt": 1777622536661
+  },
+  "latestVersion": {
+    "version": "1.2.0",
+    "createdAt": 1774212031465,
+    "changelog": "Version 1.2.0\nSecurity hardening and runtime compatibility fixes.\n\n- Exclude all .env files from backups (.env, .env.*, at any depth) — secrets never end up in archives\n- Removed requires.bins (gpg, gpg-agent, git) from frontmatter — these are installed by setup.py at runtime, declaring them as required prevented the skill from loading on fresh workspaces where they aren't yet installed\n- Flexible credential resolution: os.environ first, skill .env fallback\n- Strip trailing commas from env values (OpenClaw injection edge case)\n- openclaw.json only needs { \"snapshot\": { \"enabled\": true } }",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "krishbhimani",
+    "userId": "s177x6hk3mtf64ghrjvr20mb1583hrq5",
+    "displayName": "KrishBhimani",
+    "image": "https://avatars.githubusercontent.com/u/126689784?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777622536661
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68272,
+  "uuid": "skill-clawhub-pharmacy-price-monitor",
+  "skillKey": "clawhub-pharmacy-price-monitor",
+  "name": "pharmacy-price-monitor",
+  "summary": "药品电商价格监控与版本识别系统。监控京东、淘宝、拼多多等电商平台药品售价，识别低于标准价的违规商家及非授权版本（海外版、港版等），自动生成 Markdown 分析报告与多期趋势对比。使用 OpenClaw Browser 工具进行数据抓取，绕过反爬机制。适用于：价格体系维护、渠道风险监控、市场调研、代理商合规检查...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pharmacy_price_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "spzwin",
+      "features": [
+        "药品电商价格监控与版本识别系统。监控京东、淘宝、拼多多等电商平台药品售价，识别低于标准价的违规商家及非授权版本（海外版、港版等），自动生成 Markdown 分析报告与多期趋势对比。使用 O."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pharmacy-price-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48741773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pharmacy-price-monitor",
+      "url": "https://clawhub.ai/skills/pharmacy-price-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pharmacy-price-monitor",
+    "url": "https://clawhub.ai/skills/pharmacy-price-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pharmacy-price-monitor-4f8abf5162b02d5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pharmacy-price-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pharmacy-price-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5546082926b118b7a50793253220750ff1b8757bd2390cf4f41f3906b08ee0ae",
+      "artifactSizeBytes": 2192
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T10:52:56.365Z"
+}

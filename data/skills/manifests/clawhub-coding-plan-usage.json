@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31975,
+  "uuid": "skill-clawhub-coding-plan-usage",
+  "skillKey": "clawhub-coding-plan-usage",
+  "name": "Coding Plan Usage",
+  "summary": "Queries the remaining hours of Alibaba Cloud Coding Plan using a command-line tool. Invoke when user asks for Coding Plan usage.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coding_plan_usage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jeeaay",
+      "features": [
+        "Queries the remaining hours of Alibaba Cloud Coding Plan using a command-line tool",
+        "Invoke when user asks for Coding Plan usage."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coding-plan-usage@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19403599?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coding-plan-usage",
+      "url": "https://clawhub.ai/skills/coding-plan-usage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coding-plan-usage",
+    "url": "https://clawhub.ai/skills/coding-plan-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coding-plan-usage-9de55a74a7469c0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coding-plan-usage@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-coding-plan-usage-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6633062293f600d0554123cdb4a9b3dd9c39fb6db71add8bc64ac7653af7f353",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T05:05:52.125Z"
+}

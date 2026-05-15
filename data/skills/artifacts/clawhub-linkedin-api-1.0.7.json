@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-api@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_api",
+  "skill": {
+    "id": 8457,
+    "skillKey": "clawhub-linkedin-api",
+    "name": "LinkedIn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-api",
+    "url": "https://clawhub.ai/skills/linkedin-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-api-cf8452d5f1406f6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LinkedIn API integration with managed OAuth. Share posts, manage profile, run ads, and access LinkedIn features. Use this skill when users want to share cont..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 10636,
+      "installsAllTime": 32,
+      "installsCurrent": 31,
+      "stars": 44,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1777591121527,
+      "changelog": "- Updated all LinkedIn API base URLs from `gateway.maton.ai` and `ctrl.maton.ai` to `api.maton.ai`.\n- All code examples and connection management instructions now use the new `api.maton.ai` endpoints.\n- Removed the LICENSE.txt file from the skill package.\n- Improved and clarified instructions on specifying the correct LinkedIn connection, especially when multiple accounts are authorized.\n- Added security and permissions section, emphasizing user approval for write operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94079f4d2f5963cac4a2b44e180041e28b8293cf5b80ca3e207336b657f935c3"
+}

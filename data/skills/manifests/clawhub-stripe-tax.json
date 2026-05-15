@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30228,
+  "uuid": "skill-clawhub-stripe-tax",
+  "skillKey": "clawhub-stripe-tax",
+  "name": "Stripe Tax",
+  "summary": "Stripe Tax integration. Manage data, records, and automate workflows. Use when the user wants to interact with Stripe Tax data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stripe_tax",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Stripe Tax integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Stripe Tax data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stripe-tax@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stripe-tax",
+      "url": "https://clawhub.ai/skills/stripe-tax"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stripe-tax",
+    "url": "https://clawhub.ai/skills/stripe-tax",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stripe-tax-b85f31c211ff60cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stripe-tax@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-stripe-tax-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36f09141cef5a31c8c4885a9be830e9d69ccb9ac1a3f4c7f5a2ee822ca2924c8",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:47:51.908Z"
+}

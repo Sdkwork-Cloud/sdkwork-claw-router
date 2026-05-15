@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47286,
+  "uuid": "skill-clawhub-lista-lending",
+  "skillKey": "clawhub-lista-lending",
+  "name": "Lista Lending",
+  "summary": "View and operate Lista Lending vaults/markets. Use when user asks about LENDING-ONLY positions or wants to deposit/withdraw/borrow/repay. For report-style ov...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lista_lending",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lawson-ccy",
+      "features": [
+        "View and operate Lista Lending vaults/markets",
+        "Use when user asks about LENDING-ONLY positions or wants to deposit/withdraw/borrow/repay",
+        "For report-style ov..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lista-lending@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/164319199?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lista-lending",
+      "url": "https://clawhub.ai/skills/lista-lending"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lista-lending",
+    "url": "https://clawhub.ai/skills/lista-lending",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lista-lending-d28657777c7039c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lista-lending@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lista-lending-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86d9d84e1951a2810ee37591ea457d49395a42adb53f499e516afa0c66d2bedb",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:24:26.463Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/metamask@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metamask",
+  "skill": {
+    "id": 24204,
+    "skillKey": "clawhub-metamask",
+    "name": "MetaMask Payments -"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metamask",
+    "url": "https://clawhub.ai/skills/metamask",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metamask-349ea085e7c763ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MetaMask Wallet - Give your agent spending power. Financial management for Agents and OpenClaw bots."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codejika",
+      "userId": "s17c3jy66yb4fmg42whk0hp6wx83edge",
+      "displayName": "codejika",
+      "image": "https://avatars.githubusercontent.com/u/36914612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 417,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773336906161,
+      "changelog": "MetaMask skill now upgraded to CreditClaw with advanced financial enablement for AI agents:\n\n- Major rebranding: MetaMask skill is now CreditClaw—purpose-built for agentic financial management.\n- Adds support for secure card payments, x402 USDC payments via Stripe, and (upcoming) Crossmint rails.\n- Enhanced owner permission controls (approval modes, limits, spending categories).\n- Stronger security: API key protection, per-session decryption, server-enforced guardrails, detailed access logging.\n- Fully documented payment rails, setup flow, and webhooks for seamless bot/agent integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b13a40ec9a7079a444dc02ecd4958ee10856661a902a1923e3fe0342e1f36fac"
+}

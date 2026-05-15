@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39683,
+  "uuid": "skill-clawhub-umbrel-proxy",
+  "skillKey": "clawhub-umbrel-proxy",
+  "name": "Umbrel Proxy Manager",
+  "summary": "Efficiently manage and interact with Umbrel proxy services for Docker containers. Automatically discovers running services, maps internal Docker IPs to acces...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.umbrel_proxy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "G",
+      "features": [
+        "Efficiently manage and interact with Umbrel proxy services for Docker containers",
+        "Automatically discovers running services, maps internal Docker IPs to acces..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/umbrel-proxy@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22464426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "umbrel-proxy",
+      "url": "https://clawhub.ai/skills/umbrel-proxy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "umbrel-proxy",
+    "url": "https://clawhub.ai/skills/umbrel-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/umbrel-proxy-165a481cca83220a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/umbrel-proxy@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-umbrel-proxy-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a15e5105fb214f215819ba4f9444142f64c620c5c591317a3e5a2d4a3744a4a",
+      "artifactSizeBytes": 2091
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T23:21:40.932Z"
+}

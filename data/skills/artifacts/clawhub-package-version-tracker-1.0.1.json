@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/package-version-tracker@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.package_version_tracker",
+  "skill": {
+    "id": 61321,
+    "skillKey": "clawhub-package-version-tracker",
+    "name": "Package Version Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "package-version-tracker",
+    "url": "https://clawhub.ai/skills/package-version-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/package-version-tracker-999203f3ceaab907.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询 npm 和 PyPI 包的版本信息、历史发布及依赖，支持版本比较和批量查询，响应快速无须 API key。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sxliuyu",
+      "userId": "publishers:sxliuyu",
+      "displayName": "SxLiuYu",
+      "image": "https://avatars.githubusercontent.com/u/95198625?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773660418399,
+      "changelog": "Version 1.0.1 of Package Version Tracker\n\n- No file changes detected in this release.\n- Functionality, usage, and limitations remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7910ec8bad109498ba9d95fcc75737662be4a733d36d26e7e61960103ba30bb9"
+}

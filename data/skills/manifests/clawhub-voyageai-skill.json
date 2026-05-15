@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11924,
+  "uuid": "skill-clawhub-voyageai-skill",
+  "skillKey": "clawhub-voyageai-skill",
+  "name": "Voyage AI CLI",
+  "summary": "Voyage AI embedding and reranking CLI integrated with MongoDB Atlas Vector Search. Use for: generating text embeddings, reranking search results, storing embeddings in Atlas, performing vector similarity search, creating vector search inde.",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voyageai_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Lynn",
+      "features": [
+        "Voyage AI embedding and reranking CLI integrated with MongoDB Atlas Vector Search",
+        "Use for: generating text embeddings, reranking search results, storing embeddings in Atlas, per.",
+        "Triggers: embed text, generate embeddings, vector search, rerank documents, voyage ai, semantic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voyageai-skill@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voyageai-skill",
+      "url": "https://clawhub.ai/skills/voyageai-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voyageai-skill",
+    "url": "https://clawhub.ai/skills/voyageai-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voyageai-skill-e99e95ce88eb2405.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voyageai-skill@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-voyageai-skill-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a23db15407faccbd4dbc1482a74ffb6e8b8007ed1847af3e5bd6ffe2b113a2ac",
+      "artifactSizeBytes": 2353
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T13:15:19.386Z"
+}

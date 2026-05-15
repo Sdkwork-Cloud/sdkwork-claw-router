@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/keyapi-instagram-content-discovery@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keyapi_instagram_content_discovery",
+  "skill": {
+    "id": 52775,
+    "skillKey": "clawhub-keyapi-instagram-content-discovery",
+    "name": "Keyapi Instagram Content Discovery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keyapi-instagram-content-discovery",
+    "url": "https://clawhub.ai/skills/keyapi-instagram-content-discovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keyapi-instagram-content-discovery-457b9485f527657e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explore and discover Instagram content at scale — search posts, Reels, hashtags, music, locations, and Explore sections to surface trends, audience signals,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lycici",
+      "userId": "s17bzc9482bw65ggtax2tfmx4583h9sz",
+      "displayName": "lycici",
+      "image": "https://avatars.githubusercontent.com/u/38585775?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775115488474,
+      "changelog": "keyapi-instagram-content-discovery v1.0.0\n\n- Initial release enabling large-scale discovery of Instagram content using KeyAPI MCP.\n- Search and analyze posts, Reels, hashtags, music, locations, and Explore sections to reveal trends and audience signals.\n- Inspect posts and comments for metrics and engagement; convert between shortcodes and media IDs.\n- Perform content discovery by hashtags, music tracks, keywords, and geo-targeted locations.\n- Access Explore page categories and browse curated content sections.\n- Requires KEYAPI_TOKEN and Node.js v18+ for setup and API access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:56e47752585a35123b528ddab20b210199e8e7020d5410930680f4ed89b5bed2"
+}

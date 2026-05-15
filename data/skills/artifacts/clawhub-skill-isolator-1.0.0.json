@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-isolator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_isolator",
+  "skill": {
+    "id": 21158,
+    "skillKey": "clawhub-skill-isolator",
+    "name": "skill-isolator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-isolator",
+    "url": "https://clawhub.ai/skills/skill-isolator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-isolator-f8295d5cd32064f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Project-based skill isolation and management. Enables different projects to use different skill sets with automatic loading based on current working director..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sucriss",
+      "userId": "s17dwq70j1k7m3kj86ndkpzkvs83j6fg",
+      "displayName": "Criss_Su",
+      "image": "https://avatars.githubusercontent.com/u/37565038?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 510,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773151134682,
+      "changelog": "Initial release providing project-based skill isolation, multi-source support, and automated management.\n\n- Enables per-project skill isolation and automatic loading based on current working directory.\n- Supports multiple skill sources (clawhub, local, git, url) with priority-based resolution and version locking.\n- Provides scripts for skill synchronization, configuration validation, and interactive setup.\n- Integrates caching, conflict resolution, and auto-sync on project entry or missing skills.\n- Offers troubleshooting guidance and best practices for project and team usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c9bd706b0603d9283f7139fb4b02829c8f587aae6718fabf71bf8f0d061ec36"
+}

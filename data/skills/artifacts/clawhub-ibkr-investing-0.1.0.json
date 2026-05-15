@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ibkr-investing@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ibkr_investing",
+  "skill": {
+    "id": 49994,
+    "skillKey": "clawhub-ibkr-investing",
+    "name": "IBKR Investing with Permission Gate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ibkr-investing",
+    "url": "https://clawhub.ai/skills/ibkr-investing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ibkr-investing-a6d1b77f755c88a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Invest on Interactive Brokers (stocks/ETFs) via IB Gateway with the same human-in-the-loop confirmation gate as okx-trading. Use when the user asks to check..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vm-development",
+      "userId": "s1723g8h7pbvgkmbxfg0x4qstn862p4s",
+      "displayName": "Vadym Malakhatko",
+      "image": "https://avatars.githubusercontent.com/u/49589920?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 52,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778336365025,
+      "changelog": "v0.1.0 — Interactive Brokers stocks/ETF investing for aeon, gated by propose -> YES -> execute. Defaults to paper trading (port 4002). 15 scripts: read-only (balance/positions/quote/candles/gateway-status/snapshot), trade gate (propose/execute/list/cancel pending), drawdown-reserve trigger. Bootstrapped on amuletxheart/ibkr-openclaw connection patterns; full credits in README.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0472ed0d1aea4a3ae31c42ab012e7498d687bce6ed9aa4fcc895b893577a49b6"
+}

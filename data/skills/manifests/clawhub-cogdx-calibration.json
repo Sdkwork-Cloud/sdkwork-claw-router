@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50984,
+  "uuid": "skill-clawhub-cogdx-calibration",
+  "skillKey": "clawhub-cogdx-calibration",
+  "name": "CogDx Calibration Audit",
+  "summary": "Run a calibration audit on an AI agent's outputs via Cerebratech CogDx API ($0.05 per call, credits accepted). Use when an agent's stated confidence doesn't...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cogdx_calibration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dr Amanda Kavner",
+      "features": [
+        "Run a calibration audit on an AI agent's outputs via Cerebratech CogDx API ($0.05 per call, cre.",
+        "Use when an agent's stated confidence doesn't..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cogdx-calibration@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78941808?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cogdx-calibration",
+      "url": "https://clawhub.ai/skills/cogdx-calibration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cogdx-calibration",
+    "url": "https://clawhub.ai/skills/cogdx-calibration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cogdx-calibration-4f5f622a1d3e848f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cogdx-calibration@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cogdx-calibration-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29ba3b6b61a03db67ef4c4784da3a9af3303b23355c184fa7b94b2d946fd6e49",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T16:04:12.610Z"
+}

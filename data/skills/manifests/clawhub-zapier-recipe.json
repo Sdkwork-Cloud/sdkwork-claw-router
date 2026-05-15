@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60341,
+  "uuid": "skill-clawhub-zapier-recipe",
+  "skillKey": "clawhub-zapier-recipe",
+  "name": "Zapier Recipe",
+  "summary": "自动化流程设计。Zapier/Make流程、触发器、动作链、条件逻辑、模板、效率分析。Automation recipes for Zapier, Make. 自动化、工作流、效率。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zapier_recipe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "自动化流程设计。Zapier/Make流程、触发器、动作链、条件逻辑、模板、效率分析。Automation recipes for Zapier, Make",
+        "自动化、工作流、效率。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zapier-recipe@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zapier-recipe",
+      "url": "https://clawhub.ai/skills/zapier-recipe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zapier-recipe",
+    "url": "https://clawhub.ai/skills/zapier-recipe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zapier-recipe-8035a0c71207734b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zapier-recipe@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zapier-recipe-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c290f1008c8eb393a67db74bfffe9b26f493c9915e3b5cbeadc0792522beecfe",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:48:04.675Z"
+}

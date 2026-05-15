@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apology-letter-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apology_letter_builder",
+  "skill": {
+    "id": 50211,
+    "skillKey": "clawhub-apology-letter-builder",
+    "name": "Apology Letter Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apology-letter-builder",
+    "url": "https://clawhub.ai/skills/apology-letter-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apology-letter-builder-7ccc990058945245.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Builds sincere apology letter frameworks based on relationship context, offense severity, accountability, repair steps, and the recipient's likely needs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 0,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778380682816,
+      "changelog": "Initial release.\n\n- Provides guided frameworks for drafting sincere apology letters or messages based on relationship context and severity.\n- Intake process helps clarify necessary details: relationship, incident summary, severity, repair steps, boundaries, and preferred tone/channel.\n- Generates a recommended apology structure, sample letter, optional short version, phrases to avoid, and timing advice.\n- Includes strong boundaries to prevent misuse for manipulation, legal issues, or crisis situations.\n- Designed for clarity, accountability, and recipient respect—output is a framework, not a manipulative script.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6be9cf9caba9f070b8b3e5fb57530567b8b0953080c567e537748a7e190764f3"
+}

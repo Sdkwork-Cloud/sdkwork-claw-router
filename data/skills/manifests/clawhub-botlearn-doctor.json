@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20571,
+  "uuid": "skill-clawhub-botlearn-doctor",
+  "skillKey": "clawhub-botlearn-doctor",
+  "name": "botlearn-healthcheck",
+  "summary": "Autonomously inspects a live OpenClaw instance across 5 health domains (hardware, config, security, skills, autonomy) and delivers a quantified traffic-light...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.botlearn_doctor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "邢怀康",
+      "features": [
+        "Autonomously inspects a live OpenClaw instance across 5 health domains (hardware, config, secur."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/botlearn-doctor@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32790342?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "botlearn-doctor",
+      "url": "https://clawhub.ai/skills/botlearn-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "botlearn-doctor",
+    "url": "https://clawhub.ai/skills/botlearn-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/botlearn-doctor-2a1617d7e5a30ebd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/botlearn-doctor@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-botlearn-doctor-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b6866a15bab41aec3f34a558e03eba5814fd67c5b339d7256da67020a03bcb6",
+      "artifactSizeBytes": 2602
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T17:50:20.057Z"
+}

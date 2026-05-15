@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24123,
+  "uuid": "skill-clawhub-joox-music-player",
+  "skillKey": "clawhub-joox-music-player",
+  "name": "joox-music-player",
+  "summary": "Control JOOX music playback via web browser automation. Search songs/artists/albums/playlists, play music, control playback, browse charts, manage playlists....",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.joox_music_player",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZhuoYitao",
+      "features": [
+        "Control JOOX music playback via web browser automation",
+        "Search songs/artists/albums/playlists, play music, control playback, browse charts, manage play."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/joox-music-player@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20814187?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "joox-music-player",
+      "url": "https://clawhub.ai/skills/joox-music-player"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "joox-music-player",
+    "url": "https://clawhub.ai/skills/joox-music-player",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/joox-music-player-cbd0abbfb9d1c543.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/joox-music-player@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-joox-music-player-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3f147be4bf65993ee9c8deb768c6edfe9711d93f730ccfe29e607b6d5f3d21c",
+      "artifactSizeBytes": 2305
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T13:49:05.184Z"
+}

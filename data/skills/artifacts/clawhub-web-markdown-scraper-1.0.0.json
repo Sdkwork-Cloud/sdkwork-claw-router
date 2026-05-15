@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-markdown-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_markdown_scraper",
+  "skill": {
+    "id": 20118,
+    "skillKey": "clawhub-web-markdown-scraper",
+    "name": "Scrapling Web Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-markdown-scraper",
+    "url": "https://clawhub.ai/skills/web-markdown-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-markdown-scraper-9338ef48382d2edd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch one or more public webpages with Scrapling, extract the main content, and convert HTML into Markdown using html2text. Supports static HTTP, concurrent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yumiu8103-hue",
+      "userId": "s17eah9nvqd5tq5sra8yassszh83w016",
+      "displayName": "yumiu8103-hue",
+      "image": "https://avatars.githubusercontent.com/u/233537419?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 571,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773130794614,
+      "changelog": "Initial release.\n\n- 4 fetcher modes: http, async, stealth (Camoufox), dynamic (Playwright)\n- CSS selector-based content extraction with auto_save / auto_match\n- Proxy support with humanize, geoip, block-webrtc options\n- --disable-resources and --block-images for faster scraping\n- --retry N with exponential backoff\n- Structured JSON output with per-page title, markdown, and status",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7350941a8cb2ee6f879ce3a4eb5730e58553d32aeb9e7a507b2199a5aaf9fc5"
+}

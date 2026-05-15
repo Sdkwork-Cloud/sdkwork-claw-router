@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/juhe-date-holidays@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juhe_date_holidays",
+  "skill": {
+    "id": 71516,
+    "skillKey": "clawhub-juhe-date-holidays",
+    "name": "节假日安排查询 - 聚合数据"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juhe-date-holidays",
+    "url": "https://clawhub.ai/skills/juhe-date-holidays",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juhe-date-holidays-e9d0cdd11f94a1dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "节假日安排查询。查询指定日期的节假日信息、调休安排、农历信息等。使用场景：用户说\"查一下某天是不是节假日\"、\"某天是否调休\"、\"某天是星期几\"、\"农历日期查询\"、\"黄历宜忌查询\"等。通过聚合数据（juhe.cn）API 实时查询，免费注册每天免费调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "juhemcp",
+      "userId": "s177jncsg336bzyjhff66cjn8n83j6jg",
+      "displayName": "juhe-skills",
+      "image": "https://avatars.githubusercontent.com/u/203600343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774511995495,
+      "changelog": "Initial release of juhe-date-holidays skill:\n\n- Enables querying holiday schedules, adjustment days, lunar info, and almanac details for any date via juhe.cn API.\n- Supports use cases like: “Is this day a holiday?”, “Is there a make-up workday?”, and lunar/almanac lookups.\n- Free daily API calls with AppKey after registering at juhe.cn.\n- Includes CLI script and direct API endpoint for integration.\n- Provides clear error handling and API response field explanations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9bfb1deda5d31b489a171c1e8105b932eab9cca8267daf299ebabda8aa1ca9c1"
+}

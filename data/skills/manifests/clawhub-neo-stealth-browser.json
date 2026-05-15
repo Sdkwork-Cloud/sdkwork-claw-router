@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50055,
+  "uuid": "skill-clawhub-neo-stealth-browser",
+  "skillKey": "clawhub-neo-stealth-browser",
+  "name": "Ghost Browser",
+  "summary": "Automated Chrome browser using nodriver for AI agent web tasks. Full CLI control with LLM-optimized commands — text-based interaction, markdown output, sessi...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neo_stealth_browser",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Neo The Lobster",
+      "features": [
+        "Automated Chrome browser using nodriver for AI agent web tasks",
+        "Full CLI control with LLM-optimized commands — text-based interaction, markdown output, sessi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neo-stealth-browser@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36285650?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neo-stealth-browser",
+      "url": "https://clawhub.ai/skills/neo-stealth-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neo-stealth-browser",
+    "url": "https://clawhub.ai/skills/neo-stealth-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neo-stealth-browser-bc004024bc97b939.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neo-stealth-browser@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-neo-stealth-browser-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0936855e451bb9acf8a09be0fd106abff2acc218761dd31b57f4ba41a5925c37",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T10:22:52.566Z"
+}

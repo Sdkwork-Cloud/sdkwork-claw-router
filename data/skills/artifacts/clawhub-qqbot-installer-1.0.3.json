@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qqbot-installer@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qqbot_installer",
+  "skill": {
+    "id": 63140,
+    "skillKey": "clawhub-qqbot-installer",
+    "name": "Qqbot Installer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qqbot-installer",
+    "url": "https://clawhub.ai/skills/qqbot-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qqbot-installer-f978c84cfaef8a15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw QQ 机器人插件安装与升级助手。当用户说「安装 qqbot」「升级 qqbot 插件」「更新 openclaw-qqbot」「qqbot 插件怎么装」「帮我安装/升级 qqbot」等相关语句时激活。支持全新安装和版本升级，含文件验证、自动回滚、重启。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryanlee-gemini",
+      "userId": "s1741sts1vxbg2py4n2ccvxmgd83k71j",
+      "displayName": "ryanlee-gemini",
+      "image": "https://avatars.githubusercontent.com/u/181323138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775048727972,
+      "changelog": "更新 upgrade-plugin.sh 脚本：优化安装策略、版本验证逻辑，支持 legacy-dirs 清理",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66866cc7841a5ecdbb4ab20f2ba5e5ad341570a2f7ca63d4b02e455dd3c1d25e"
+}

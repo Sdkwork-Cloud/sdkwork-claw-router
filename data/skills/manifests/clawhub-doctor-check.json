@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60057,
+  "uuid": "skill-clawhub-doctor-check",
+  "skillKey": "clawhub-doctor-check",
+  "name": "Doctor Check",
+  "summary": "系统诊断 - 检查OpenClaw和运行环境健康状态",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doctor_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Simon Lau",
+      "features": [
+        "检查OpenClaw和运行环境健康状态"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doctor-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145274992?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doctor-check",
+      "url": "https://clawhub.ai/skills/doctor-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doctor-check",
+    "url": "https://clawhub.ai/skills/doctor-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doctor-check-5c688ad98d58adb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doctor-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doctor-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:903a0315a265235dd6cf91083130b5d4107bdffdee471c12813cb9459401c2fd",
+      "artifactSizeBytes": 1808
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T18:10:46.965Z"
+}

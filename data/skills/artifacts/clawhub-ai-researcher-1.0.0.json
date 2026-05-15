@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-researcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_researcher",
+  "skill": {
+    "id": 9166,
+    "skillKey": "clawhub-ai-researcher",
+    "name": "AI Researcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-researcher",
+    "url": "https://clawhub.ai/skills/ai-researcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-researcher-fa2d4f63edf9dbaa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep research on any topic with structured analysis, source evaluation, and synthesis. Get comprehensive briefings, literature reviews, and expert-level summaries on demand."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3777,
+      "installsAllTime": 35,
+      "installsCurrent": 32,
+      "stars": 7,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770951163189,
+      "changelog": "Initial release of AI Researcher skill.\n\n- Provides deep research on any topic using structured analysis and expert synthesis.\n- Offers multiple research modes: Deep Dive Briefing, Comparative Analysis, Literature Review, Trend Analysis, and Quick Brief.\n- Emphasizes clear structure with executive summaries, key players, data evidence, and actionable implications.\n- Includes best practices: source evaluation, confidence levels, and acknowledgment of limitations and biases.\n- Designed for scannability and practical recommendations for next steps.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:353025181d93bc15f8fa6279d78bbda21c246a30d29b396cdc0396e1d78181f0"
+}

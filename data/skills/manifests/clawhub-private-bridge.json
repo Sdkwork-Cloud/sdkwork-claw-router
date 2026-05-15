@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52179,
+  "uuid": "skill-clawhub-private-bridge",
+  "skillKey": "clawhub-private-bridge",
+  "name": "Private Bridge",
+  "summary": "Secure outbound-only relay for remote OpenClaw control — no exposed ports, no SSH, no Telegram.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.private_bridge",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jason Czarnecki",
+      "features": [
+        "Secure outbound-only relay for remote OpenClaw control — no exposed ports, no SSH, no Telegram."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/private-bridge@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118073592?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "private-bridge",
+      "url": "https://clawhub.ai/skills/private-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "private-bridge",
+    "url": "https://clawhub.ai/skills/private-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/private-bridge-062666996ddc87e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/private-bridge@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-private-bridge-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c59a851262adff7fbe2322e366b2778fddb2b613dbdaa405ad7fbc733ab0a010",
+      "artifactSizeBytes": 2417
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T22:35:17.981Z"
+}

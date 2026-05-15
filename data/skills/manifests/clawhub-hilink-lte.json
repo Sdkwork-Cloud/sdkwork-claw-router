@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23830,
+  "uuid": "skill-clawhub-hilink-lte",
+  "skillKey": "clawhub-hilink-lte",
+  "name": "HiLink LTE Modem",
+  "summary": "Control Huawei HiLink USB LTE modems (E3372, E8372, etc.) via REST API. Send/receive SMS, check signal strength, manage SIM PIN, query prepaid balance, and m...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hilink_lte",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "And0r-",
+      "features": [
+        "Control Huawei HiLink USB LTE modems (E3372, E8372, etc.) via REST API",
+        "Send/receive SMS, check signal strength, manage SIM PIN, query prepaid balance, and m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hilink-lte@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5835294?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hilink-lte",
+      "url": "https://clawhub.ai/skills/hilink-lte"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hilink-lte",
+    "url": "https://clawhub.ai/skills/hilink-lte",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hilink-lte-c81ff243d0a08fde.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hilink-lte@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hilink-lte-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de31ff19cec91095c1054f3d233ebce302e31b99aefb65d4d7470b467c969f81",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T02:23:17.721Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/india-price-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.india_price_tracker",
+  "skill": {
+    "id": 33617,
+    "skillKey": "clawhub-india-price-tracker",
+    "name": "India Price Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "india-price-tracker",
+    "url": "https://clawhub.ai/skills/india-price-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/india-price-tracker-4335acaeb414f782.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track and compare product prices across popular Indian stores (Amazon India, Flipkart, Reliance Digital, Croma, Vijay Sales, Tata CLiQ, and more), compute ef..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anugotta",
+      "userId": "s17axsx356as5m47cf210hgx2183e9km",
+      "displayName": "ASP",
+      "image": "https://avatars.githubusercontent.com/u/4218061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773923801624,
+      "changelog": "- Initial release of India Price Tracker skill.\n- Track and compare product prices across major Indian ecommerce stores.\n- Calculates effective prices including discounts, cashback, and shipping.\n- Supports pincode-aware availability, price history, and threshold alerts.\n- Detects arbitrage opportunities after fees and shipping.\n- Includes workflows for price comparison, tracking, bulk monitoring, and trend analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9824c69b6b6f2e11c8ab703accb0ec3e93ab69e96e756c5758a35de4cb4e8f4"
+}

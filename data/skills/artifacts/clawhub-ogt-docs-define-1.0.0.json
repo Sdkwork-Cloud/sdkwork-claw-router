@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ogt-docs-define@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ogt_docs_define",
+  "skill": {
+    "id": 15287,
+    "skillKey": "clawhub-ogt-docs-define",
+    "name": "OGT Docs Define"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ogt-docs-define",
+    "url": "https://clawhub.ai/skills/ogt-docs-define",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ogt-docs-define-facc0ab118fe71b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "General guide for creating definition documents. Use when you need to define WHAT something IS - concepts, entities, systems, or domains. Routes to specialized sub-skills for specific definition types (business, features, code, marketing,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eduardou24",
+      "userId": "publishers:eduardou24",
+      "displayName": "EduardoU24",
+      "image": "https://avatars.githubusercontent.com/u/1507317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1051,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770556106686,
+      "changelog": "ogt-docs-define 1.0.0\n\n- Initial release providing a general guide for creating definition documents.\n- Explains philosophy and principles of clear definitions as the basis of shared understanding.\n- Details when and how to use the skill, with guidance on folder structure and sub-skills for specific definition types.\n- Outlines the folder-as-entity pattern and naming conventions across business, feature, technical, domain, marketing, branding, and tools definitions.\n- Describes the definition lifecycle states: draft, review, approved, rejected, and deprecated, with directory signaling conventions.\n- Includes a step-by-step process and template for drafting high-quality definitions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aab9e2d5fa56519c6c3ba8bf7fe71664ae4f218685f5e6878378dc5ab9f2cd5d"
+}

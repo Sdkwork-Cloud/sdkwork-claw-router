@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clean-unused-deps@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clean_unused_deps",
+  "skill": {
+    "id": 29612,
+    "skillKey": "clawhub-clean-unused-deps",
+    "name": "Clean Unused Deps"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clean-unused-deps",
+    "url": "https://clawhub.ai/skills/clean-unused-deps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clean-unused-deps-5e2fc84c50d97477.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Clean up unused npm dependencies in a project. Use when you want to remove packages that are installed but not used in the codebase."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hgxszhj-pixel",
+      "userId": "publishers:hgxszhj-pixel",
+      "displayName": "hgxszhj-pixel",
+      "image": "https://avatars.githubusercontent.com/u/235062944?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 289,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773396817449,
+      "changelog": "- Initial release of the clean-unused-deps skill.\n- Provides instructions for identifying and removing unused npm dependencies from a project.\n- Guides users to use depcheck and npm uninstall for dependency cleanup.\n- Includes prerequisites, step-by-step workflow, and example commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac7c334011fab5c1c2d1f22f191e905bb4aec89361632542f6beb44315283b5d"
+}

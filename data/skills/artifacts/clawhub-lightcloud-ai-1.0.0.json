@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lightcloud-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lightcloud_ai",
+  "skill": {
+    "id": 58308,
+    "skillKey": "clawhub-lightcloud-ai",
+    "name": "可以通过NPL自然语言和轻云API接口进行对话，调试轻云API不再那么困惑"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lightcloud-ai",
+    "url": "https://clawhub.ai/skills/lightcloud-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lightcloud-ai-db0dc4f793297265.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate with Qingyun/Lightcloud (轻云) API to manage form documents - fetch access tokens, retrieve, create, update, and delete form data. Use this skill whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wzy2008a",
+      "userId": "publishers:wzy2008a",
+      "displayName": "wzy2008a",
+      "image": "https://avatars.githubusercontent.com/u/55826095?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773208346950,
+      "changelog": "Initial release of the lightcloud-api skill for integrating with Qingyun/Lightcloud API.\n\n- Provides commands to fetch access tokens, and create, retrieve, update, or delete Lightcloud (轻云) form documents.\n- Platform-independent: supports both curl (Bash/Linux/Mac) and PowerShell (Windows).\n- Includes detailed installation instructions for Claude Code and OpenClaw.\n- Offers sample API calls and parameter documentation for common Lightcloud form operations.\n- Responds to mentions of \"轻云\", \"yunzhijia\", \"qingyun\", \"lightcloud\", or related requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:839e118489f6fc8ea32b211d0cc7ae92eabb0acd7b751490dd2397437da6bd19"
+}

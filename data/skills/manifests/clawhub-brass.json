@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36647,
+  "uuid": "skill-clawhub-brass",
+  "skillKey": "clawhub-brass",
+  "name": "Brass",
+  "summary": "Brass integration. Manage data, records, and automate workflows. Use when the user wants to interact with Brass data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brass",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Brass integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Brass data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brass@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brass",
+      "url": "https://clawhub.ai/skills/brass"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brass",
+    "url": "https://clawhub.ai/skills/brass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brass-33a28bc4f5826ca7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brass@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-brass-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:814ca6240118ee485c0b8408726d92b02195e1f58c87feb7ecb6cbab872d78b8",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:25:24.275Z"
+}

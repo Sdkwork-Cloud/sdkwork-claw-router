@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anygen-doc-generator@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anygen_doc_generator",
+  "skill": {
+    "id": 17673,
+    "skillKey": "clawhub-anygen-doc-generator",
+    "name": "Doc Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anygen-doc-generator",
+    "url": "https://clawhub.ai/skills/anygen-doc-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anygen-doc-generator-4051470430ac1a66.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill any time the user wants to create, draft, or generate a written document or report. This includes: competitive analysis, market research repor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "logictortoise",
+      "userId": "s17dj5z1vv80h7xrg7qmd05er983j8rd",
+      "displayName": "AnyGenIO",
+      "image": "https://avatars.githubusercontent.com/u/26993581?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 726,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1774865673585,
+      "changelog": "anygen-doc-generator 3.0.0 — major update: switches from bundled Python scripts to AnyGen CLI.\n\n- Migrated from custom Python scripts to official AnyGen Node.js CLI (`@anygen/cli`).\n- Updated authentication: uses CLI `auth login`, supports browser-based and API key login.\n- Simplified workflow: now relies on the `anygen-workflow-generate` skill for document generation.\n- Previous Python helper scripts have been removed.\n- Installation guidance now references Node.js CLI integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24876b8ee07931cd0aafe91a3a9a5d1cc09f8555c2c9ea343c40310700d3ce62"
+}

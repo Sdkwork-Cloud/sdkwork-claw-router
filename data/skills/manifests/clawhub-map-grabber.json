@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15563,
+  "uuid": "skill-clawhub-map-grabber",
+  "skillKey": "clawhub-map-grabber",
+  "name": "Map Grabber",
+  "summary": "Fetch OpenStreetMap vector data (streets, buildings) for an address and export to SVG, GeoPackage, or DXF for CAD/Rhino.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.map_grabber",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AddinCui",
+      "features": [
+        "Fetch OpenStreetMap vector data (streets, buildings) for an address and export to SVG, GeoPacka."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/map-grabber@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12784080?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "map-grabber",
+      "url": "https://clawhub.ai/skills/map-grabber"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "map-grabber",
+    "url": "https://clawhub.ai/skills/map-grabber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/map-grabber-f5aa0ca4c508140b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/map-grabber@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-map-grabber-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:342552df4b01f7908665d7a2fc72eded8909cf86ef863749c55d10a283e72bdd",
+      "artifactSizeBytes": 1828
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T01:35:14.062Z"
+}

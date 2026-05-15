@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gruted-inbox-triage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gruted_inbox_triage",
+  "skill": {
+    "id": 23582,
+    "skillKey": "clawhub-gruted-inbox-triage",
+    "name": "Inbox Triage Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gruted-inbox-triage",
+    "url": "https://clawhub.ai/skills/gruted-inbox-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gruted-inbox-triage-221c885272cf16ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered email triage via IMAP (himalaya) or Google API. Fetches inbox, classifies messages by urgency, recommends actions, and generates daily markdown di..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gruted",
+      "userId": "s17bzg4rfk98bk2epgm610c0p9847765",
+      "displayName": "gruted",
+      "image": "https://avatars.githubusercontent.com/u/262255360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 436,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772840132035,
+      "changelog": "IMAP backend (himalaya), AI classification, daily digest reports, Stripe pricing",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2562ac634fb752eb8c997f984bb35b8af4d9fecd2e374956adddfc18a03662d8"
+}

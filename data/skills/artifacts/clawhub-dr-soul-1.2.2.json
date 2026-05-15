@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dr-soul@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dr_soul",
+  "skill": {
+    "id": 16405,
+    "skillKey": "clawhub-dr-soul",
+    "name": "Dr. Frankenstein"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dr-soul",
+    "url": "https://clawhub.ai/skills/dr-soul",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dr-soul-3d335500322d468f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your agents soul."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brancante",
+      "userId": "publishers:brancante",
+      "displayName": "brancante",
+      "image": "https://avatars.githubusercontent.com/u/29929072?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 879,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1771272426320,
+      "changelog": "Updated description: Give your agents soul.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bd76a767c67a0b783afaabf6f02641472fb6bac01eda4e5165f41d5f768228bb"
+}

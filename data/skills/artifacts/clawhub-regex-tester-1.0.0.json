@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/regex-tester@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.regex_tester",
+  "skill": {
+    "id": 69912,
+    "skillKey": "clawhub-regex-tester",
+    "name": "RegexTester"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "regex-tester",
+    "url": "https://clawhub.ai/skills/regex-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/regex-tester-1c7d95d2a00b6f8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "正则表达式助手，支持匹配测试、提取所有匹配、分组捕获、文本替换及常用模式生成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crossallen",
+      "userId": "s171ydj8jng67zbhd6yk8n7bdd83m1wb",
+      "displayName": "crossallen",
+      "image": "https://avatars.githubusercontent.com/u/16713236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 838,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771035578288,
+      "changelog": "Initial release of regex-tester.\n\n- 提供正则表达式匹配测试、分组捕获、替换操作等核心功能\n- 支持生成常用正则表达式模式（如email、手机号、日期等）\n- 附带用法说明和丰富的示例，方便快速上手\n- 包含正则速查、参数说明和注意事项\n- 目录结构清晰，便于维护",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b61ee10bc37a00f24cfde753fefb99367c097c8579b43f4fa71bd49af38a852d"
+}

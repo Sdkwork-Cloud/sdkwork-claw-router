@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24938,
+  "uuid": "skill-clawhub-acp-loop",
+  "skillKey": "clawhub-acp-loop",
+  "name": "Acp Loop",
+  "summary": "Schedule recurring AI agent prompts using intervals or cron expressions. Use when users need to run prompts periodically, automate agent tasks on a schedule,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acp_loop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "femto",
+      "features": [
+        "Schedule recurring AI agent prompts using intervals or cron expressions",
+        "Use when users need to run prompts periodically, automate agent tasks on a schedule,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acp-loop@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6938?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acp-loop",
+      "url": "https://clawhub.ai/skills/acp-loop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acp-loop",
+    "url": "https://clawhub.ai/skills/acp-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acp-loop-70c18d5b34b69596.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acp-loop@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-acp-loop-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a6e0bd82f9662d618ecf7f9ebb587fbe42c21a266c5577f31994a9aa199ba3b",
+      "artifactSizeBytes": 2252
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T08:53:27.046Z"
+}

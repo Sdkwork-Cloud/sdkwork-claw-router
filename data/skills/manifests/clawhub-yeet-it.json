@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25671,
+  "uuid": "skill-clawhub-yeet-it",
+  "skillKey": "clawhub-yeet-it",
+  "name": "Yeet it - Instant Web Hosting",
+  "summary": "Publish HTML as a live website instantly. POST HTML, get a shareable URL. No account needed. Always asks the user for confirmation before publishing.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yeet_it",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Snappy",
+      "features": [
+        "Publish HTML as a live website instantly",
+        "POST HTML, get a shareable URL",
+        "No account needed",
+        "Always asks the user for confirmation before publishing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yeet-it@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4248589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yeet-it",
+      "url": "https://clawhub.ai/skills/yeet-it"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yeet-it",
+    "url": "https://clawhub.ai/skills/yeet-it",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yeet-it-61dea357d1b7e91e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yeet-it@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-yeet-it-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a89ef5e0501236409000522e0f674547682394aeb01da15a44a3d5a2dd4e38c1",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T23:15:17.502Z"
+}

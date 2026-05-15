@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26678,
+  "uuid": "skill-clawhub-yuebao-self-backup",
+  "skillKey": "clawhub-yuebao-self-backup",
+  "name": "OpenClaw Self Backup & Restore",
+  "summary": "Backup and restore OpenClaw agent configuration, skills, memory, and workspace files. Use when asked to \"backup\", \"backup yourself\", \"create a restore point\"...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuebao_self_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liuyue8135",
+      "features": [
+        "Backup and restore OpenClaw agent configuration, skills, memory, and workspace files",
+        "Use when asked to \"backup\", \"backup yourself\", \"create a restore point\"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuebao-self-backup@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255660117?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuebao-self-backup",
+      "url": "https://clawhub.ai/skills/yuebao-self-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuebao-self-backup",
+    "url": "https://clawhub.ai/skills/yuebao-self-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuebao-self-backup-162d0e8aae3d4cc7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuebao-self-backup@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuebao-self-backup-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:987a3422b8891f1647403db3cb57966393ee427c3b62d44d16c4fff7da1ad3d8",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:12:00.328Z"
+}

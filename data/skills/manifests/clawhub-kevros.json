@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18230,
+  "uuid": "skill-clawhub-kevros",
+  "skillKey": "clawhub-kevros",
+  "name": "Openclaw Plugin",
+  "summary": "Precision decisioning, agentic trust, and verifiable identity for autonomous agents",
+  "version": "0.4.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kevros",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "knuckles-stack",
+      "features": [
+        "Precision decisioning, agentic trust, and verifiable identity for autonomous agents"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kevros@0.4.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243669404?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kevros",
+      "url": "https://clawhub.ai/skills/kevros"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kevros",
+    "url": "https://clawhub.ai/skills/kevros",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kevros-a365cecde5b23f15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kevros@0.4.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-kevros-0.4.6.json",
+      "version": "0.4.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff0f27bbd5163d24b6343a931fbe531cc8abd55b0821d3de7c49144e42f292f8",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T20:01:21.247Z"
+}

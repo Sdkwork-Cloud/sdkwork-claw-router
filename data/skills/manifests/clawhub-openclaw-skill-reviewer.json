@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20434,
+  "uuid": "skill-clawhub-openclaw-skill-reviewer",
+  "skillKey": "clawhub-openclaw-skill-reviewer",
+  "name": "OpenClaw Skill Reviewer",
+  "summary": "Performs a three-level audit of OpenClaw skills for format, content quality, functional correctness, and adherence to best practices.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YuKaiXu",
+      "features": [
+        "Performs a three-level audit of OpenClaw skills for format, content quality, functional correct."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30675834?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-reviewer",
+      "url": "https://clawhub.ai/skills/openclaw-skill-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-reviewer",
+    "url": "https://clawhub.ai/skills/openclaw-skill-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-reviewer-69831028f63b5328.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90a7189baa0f62f8619a9be5e38dc6e371070b19c8837b8d5189290f9416a095",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T03:01:15.441Z"
+}

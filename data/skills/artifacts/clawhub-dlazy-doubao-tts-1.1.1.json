@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dlazy-doubao-tts@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_doubao_tts",
+  "skill": {
+    "id": 14026,
+    "skillKey": "clawhub-dlazy-doubao-tts",
+    "name": "Dlazy Doubao Tts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-doubao-tts",
+    "url": "https://clawhub.ai/skills/dlazy-doubao-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-doubao-tts-2eb71e8be450d214.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Synthesize text into natural and fluent speech using Doubao TTS."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlazyai",
+      "userId": "s170j1ymymrxasgd00dsk7tckx84cf45",
+      "displayName": "dlazy",
+      "image": "https://avatars.githubusercontent.com/u/274158181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1283,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1778076201330,
+      "changelog": "dlazy-doubao-tts 1.1.1\n\n- Updated documentation in SKILL.md and SKILL-cn.md.\n- No changes to code or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:744b807ceb16d147ba82b6c523e8b7beee6807516d2fc394e9e1f064a8a5966d"
+}

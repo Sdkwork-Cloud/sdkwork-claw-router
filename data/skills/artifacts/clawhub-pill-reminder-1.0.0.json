@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pill-reminder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pill_reminder",
+  "skill": {
+    "id": 46657,
+    "skillKey": "clawhub-pill-reminder",
+    "name": "Pill Reminder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pill-reminder",
+    "url": "https://clawhub.ai/skills/pill-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pill-reminder-69fe3a653f97ac26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sends scheduled medication reminders with tracking, supports multiple users, refill alerts, and generates adherence reports; not a substitute for medical adv..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bgoodwinstudio",
+      "userId": "s17dh2a8cmkt2ge0f5ywjgakj984ywfy",
+      "displayName": "bgoodwinstudio",
+      "image": "https://avatars.githubusercontent.com/u/205076654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776514727703,
+      "changelog": "Initial release - daily medication reminders, multi-person support, refill alerts, printable adherence log for doctor visits",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aede35fd70bc0b2ba5ad02eb49ab96adccfa0104451fc2fb2806633ea117cd44"
+}

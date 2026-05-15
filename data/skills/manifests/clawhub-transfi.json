@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40910,
+  "uuid": "skill-clawhub-transfi",
+  "skillKey": "clawhub-transfi",
+  "name": "Transfi",
+  "summary": "TransFi integration. Manage Recordses. Use when the user wants to interact with TransFi data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transfi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "TransFi integration",
+        "Manage Recordses",
+        "Use when the user wants to interact with TransFi data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/transfi@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "transfi",
+      "url": "https://clawhub.ai/skills/transfi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transfi",
+    "url": "https://clawhub.ai/skills/transfi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transfi-c7736d592a19638d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/transfi@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-transfi-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64c5a2702a41500935715e1d85c964dc9a17a5e6d15f42bb0535066f90ec7e31",
+      "artifactSizeBytes": 1793
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:54:51.449Z"
+}

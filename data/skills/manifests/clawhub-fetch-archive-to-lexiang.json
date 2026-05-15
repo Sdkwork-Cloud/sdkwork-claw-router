@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63542,
+  "uuid": "skill-clawhub-fetch-archive-to-lexiang",
+  "skillKey": "clawhub-fetch-archive-to-lexiang",
+  "name": "Fetch Archive to Lexiang",
+  "summary": "通用文章抓取与归档工具。抓取任意 URL（免费/付费/登录墙）的文章全文，转换为结构化 Markdown，并可选转存到乐享知识库。支持 Substack、Medium、知识星球等付费平台的登录态管理。支持 YouTube 视频下载（yt-dlp）、播客音频下载（小宇宙FM等）、音频转录（Whisper）、翻译（中...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fetch_archive_to_lexiang",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ajaxhe",
+      "features": [
+        "通用文章抓取与归档工具。抓取任意 URL（免费/付费/登录墙）的文章全文，转换为结构化 Markdown，并可选转存到乐享知识库。支持 Substack、Medium、知识星球等付费平台的登."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fetch-archive-to-lexiang@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1539491?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fetch-archive-to-lexiang",
+      "url": "https://clawhub.ai/skills/fetch-archive-to-lexiang"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fetch-archive-to-lexiang",
+    "url": "https://clawhub.ai/skills/fetch-archive-to-lexiang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fetch-archive-to-lexiang-94b6e9f460a4b057.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fetch-archive-to-lexiang@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-fetch-archive-to-lexiang-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0850504a01a7ceabd994fbc91c994a0dae868b008275389268241a6fc5498102",
+      "artifactSizeBytes": 2847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:55:58.353Z"
+}

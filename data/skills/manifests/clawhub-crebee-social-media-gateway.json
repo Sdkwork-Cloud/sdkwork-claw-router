@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69745,
+  "uuid": "skill-clawhub-crebee-social-media-gateway",
+  "skillKey": "clawhub-crebee-social-media-gateway",
+  "name": "CreBee-新媒体多平台分发工具",
+  "summary": "CreBee 社交媒体网关。当用户需要管理社交媒体账号、发布内容（视频/图文/文章）、获取数据分析、访问粉丝画像、搜索话题/活动/音乐、或与抖音、B站、小红书、快手等 12 个平台交互时触发此技能。适用于 AI Agent 自动化管理中国社交媒体平台运营。 触发场景： - 发布内容到社交媒体平台 - 获取账号列表...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crebee_social_media_gateway",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Scarlett_AI",
+      "features": [
+        "CreBee 社交媒体网关。当用户需要管理社交媒体账号、发布内容（视频/图文/文章）、获取数据分析、访问粉丝画像、搜索话题/活动/音乐、或与抖音、B站、小红书、快手等 12 个平台交互时触发.",
+        "发布内容到社交媒体平台",
+        "获取账号列表..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crebee-social-media-gateway@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264102358?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crebee-social-media-gateway",
+      "url": "https://clawhub.ai/skills/crebee-social-media-gateway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crebee-social-media-gateway",
+    "url": "https://clawhub.ai/skills/crebee-social-media-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crebee-social-media-gateway-2c7e7cec6bb42ba0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crebee-social-media-gateway@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-crebee-social-media-gateway-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10f522cf9ae9e7791231f9f0107dca22792f8199912cdd60752ce55e7a811c65",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:01:37.414Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oura-briefing@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oura_briefing",
+  "skill": {
+    "id": 40726,
+    "skillKey": "clawhub-oura-briefing",
+    "name": "Oura Briefing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oura-briefing",
+    "url": "https://clawhub.ai/skills/oura-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oura-briefing-4ed83f0d068984aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and summarize Oura Ring v2 sleep, readiness, and activity data. Use when the user asks about their sleep score, HRV, readiness, recovery, or Oura metri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "silas-agent573",
+      "userId": "s177m1m9xm5pk02xy75aa39svh83mtca",
+      "displayName": "Silas",
+      "image": "https://avatars.githubusercontent.com/u/271308288?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775829696407,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:faeb54ecac02fa3365b26eed7c975de8ff0f689390b4e54518e07ec39f63ab00"
+}

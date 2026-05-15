@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "posterdesign",
+    "displayName": "claw_poster",
+    "summary": "自动生成设计海报/图片。当用户提出设计需求（如「帮我做个促销海报」「做一张活动通知图」「生成一张小红书封面」）时使用此技能。通过 visual-rag MCP 服务直接生成 PNG 图片，图片实时返回对话，无需管理文件或服务。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774881095662,
+    "updatedAt": 1777526910900
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774881095662,
+    "changelog": "Initial release of the posterdesign skill.\n\n- Enables automatic poster and image design via the visual-rag MCP service, returning PNG images directly in chat.\n- Provides a step-by-step standard workflow for template search, slot filling, rendering, and quality check.\n- Enforces strict rules for content sourcing, slot filling, and image inspection.\n- Includes fallback mechanisms and user prompts when required information is missing or the service is unavailable.\n- Focuses on efficient template matching and quality assurance, supporting both models with and without visual capabilities.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "zooagentpm",
+    "userId": "s17ebkbya2hwpz94mda3cbktdh83jvwv",
+    "displayName": "ZooAgentPM",
+    "image": "https://avatars.githubusercontent.com/u/250828062?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777526910900
+  }
+}

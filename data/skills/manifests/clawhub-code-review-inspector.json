@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43641,
+  "uuid": "skill-clawhub-code-review-inspector",
+  "skillKey": "clawhub-code-review-inspector",
+  "name": "Code Review Inspector",
+  "summary": "Automated code review checking for bugs, security issues, best practices, performance problems, and code style",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_review_inspector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Atamuk",
+      "features": [
+        "Automated code review checking for bugs, security issues, best practices, performance problems,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-review-inspector@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33700337?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-review-inspector",
+      "url": "https://clawhub.ai/skills/code-review-inspector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-review-inspector",
+    "url": "https://clawhub.ai/skills/code-review-inspector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-review-inspector-eab0188ff4526027.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-review-inspector@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-review-inspector-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7c884972753407101f7fe0a7f72219f6df06d63f9e93eca2c98b57af8c89e50",
+      "artifactSizeBytes": 2242
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T20:45:18.504Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_maker",
+  "skill": {
+    "id": 42906,
+    "skillKey": "clawhub-video-maker",
+    "name": "Video Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-maker",
+    "url": "https://clawhub.ai/skills/video-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-maker-72be99d86045dc2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get polished MP4 videos ready to post, without touching a single slider. Upload your video clips or images (MP4, MOV, AVI, WebM, up to 500MB), say something..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776014230212,
+      "changelog": "Video Maker 1.0.0 — Create and export finished videos easily\n\n- Launches a new skill for assembling and exporting MP4 videos from clips or images, with text, audio, and transitions.\n- Designed for content creators and marketers needing fast, polished videos without using complex editors.\n- Handles all video rendering in the cloud (supports MP4, MOV, AVI, WebM, up to 500MB uploads).\n- Simple setup: free session token generated automatically for new users.\n- Includes commands for uploading, editing, checking credits, and exporting final videos at 1080p.\n- Provides error handling for common issues (file type, size, credits, and rate limits).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5fa63bcfcadc91225fdec6953deddc9923be94a1ff52b79ee4252b646ab2e7a"
+}

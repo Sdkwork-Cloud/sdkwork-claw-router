@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/e-on@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.e_on",
+  "skill": {
+    "id": 69754,
+    "skillKey": "clawhub-e-on",
+    "name": "E On"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "e-on",
+    "url": "https://clawhub.ai/skills/e-on",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/e-on-c6463e21d9d97e23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "E.ON运营欧洲领先的电力和天然气配电网络，服务2000万客户，聚焦可再生能源与电网基础设施。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 41,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778364306396,
+      "changelog": "- 首次发布，版本1.0.0。\n- 提供E.ON公司简介、历史大事记、商业模式、护城河分析与关键数据。\n- 适用于讨论欧洲能源转型、可再生能源投资及德国能源政策等场景。\n- 包含有趣行业事实，加强对E.ON战略转型的理解。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e4a76c916684365b90ad39d7d9c79df103e1e191da2693d8a4960ebab302de5"
+}

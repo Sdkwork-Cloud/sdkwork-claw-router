@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55000,
+  "uuid": "skill-clawhub-personal-task-tracking",
+  "skillKey": "clawhub-personal-task-tracking",
+  "name": "Personal Task Tracking",
+  "summary": "Query and manage ClickUp via REST API and the local `scripts/query.sh` helper. Use when listing open or completed tasks, counting due work, looking up spaces...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_task_tracking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MMaggieZhou",
+      "features": [
+        "Query and manage ClickUp via REST API and the local `scripts/query.sh` helper",
+        "Use when listing open or completed tasks, counting due work, looking up spaces..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-task-tracking@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6497456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-task-tracking",
+      "url": "https://clawhub.ai/skills/personal-task-tracking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-task-tracking",
+    "url": "https://clawhub.ai/skills/personal-task-tracking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-task-tracking-998e425fa60bb97c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-task-tracking@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-task-tracking-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10ab7e4c3a69f1295466f2a1ceb4b6b86e89afc718e85d0514e407e26d8659f7",
+      "artifactSizeBytes": 2375
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T04:37:39.428Z"
+}

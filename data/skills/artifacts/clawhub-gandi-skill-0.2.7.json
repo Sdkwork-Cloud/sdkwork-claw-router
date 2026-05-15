@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gandi-skill@0.2.7",
+  "version": "0.2.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gandi_skill",
+  "skill": {
+    "id": 10478,
+    "skillKey": "clawhub-gandi-skill",
+    "name": "Gandi - Registrar & DNS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gandi-skill",
+    "url": "https://clawhub.ai/skills/gandi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gandi-skill-47c8774b3b6b297b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive Gandi domain registrar integration for domain and DNS management. Register and manage domains, create/update/delete DNS records (A, AAAA, CNAME..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chrisagiddings",
+      "userId": "publishers:chrisagiddings",
+      "displayName": "Giddy",
+      "image": "https://avatars.githubusercontent.com/u/3966673?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2577,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "0.2.7",
+      "createdAt": 1772319287154,
+      "changelog": "Fix metadata inconsistencies: Add GANDI_API_TOKEN to requires.env, fix disable-model-invocation conflict. Fixes #25, #26. Expected scan: BENIGN.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9538adc6d193f6a555e683e29ac4c9502ea8310907284f6bbd25c0b9faa8f9ec"
+}

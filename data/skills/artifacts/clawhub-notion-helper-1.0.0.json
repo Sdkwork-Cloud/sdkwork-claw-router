@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notion-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_helper",
+  "skill": {
+    "id": 47364,
+    "skillKey": "clawhub-notion-helper",
+    "name": "Notion Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-helper",
+    "url": "https://clawhub.ai/skills/notion-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-helper-a9d0c8d1fce41dc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work with Notion databases, pages, and APIs. Use when user needs to create, read, update, or delete Notion pages and databases; automate Notion workflows; sy..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dinghaibin",
+      "userId": "s170ed26v1mh4qzy7v9cnn7msx85mrn1",
+      "displayName": "BIN",
+      "image": "https://avatars.githubusercontent.com/u/9191597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777307075239,
+      "changelog": "Initial release: Notion API integration for pages, databases, and automation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:535486c95c2b96ffd809532dc4719a216a41df4d4ca5239a56be4fa72dd3b2ea"
+}

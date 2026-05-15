@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37605,
+  "uuid": "skill-clawhub-genstory-story-generator",
+  "skillKey": "clawhub-genstory-story-generator",
+  "name": "genstory story generator",
+  "summary": "Use when the user wants to generate a story through Genstory with an API key, submit a Genstory story task, poll task status, and return the final Genstory o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.genstory_story_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MuRyanice",
+      "features": [
+        "Use when the user wants to generate a story through Genstory with an API key, submit a Genstory."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/genstory-story-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128147191?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "genstory-story-generator",
+      "url": "https://clawhub.ai/skills/genstory-story-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "genstory-story-generator",
+    "url": "https://clawhub.ai/skills/genstory-story-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/genstory-story-generator-16eba2e9e4b125e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/genstory-story-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-genstory-story-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92045e691940c1c5b716304e87465ab1fc789d99d2473c69c5b5561190e9e17a",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T11:28:21.063Z"
+}

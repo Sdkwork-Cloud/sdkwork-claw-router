@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22739,
+  "uuid": "skill-clawhub-mux-integration",
+  "skillKey": "clawhub-mux-integration",
+  "name": "Mux",
+  "summary": "Mux integration. Manage Assets, Tracks, Metrics, Incidents. Use when the user wants to interact with Mux data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mux_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Mux integration",
+        "Manage Assets, Tracks, Metrics, Incidents",
+        "Use when the user wants to interact with Mux data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mux-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mux-integration",
+      "url": "https://clawhub.ai/skills/mux-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mux-integration",
+    "url": "https://clawhub.ai/skills/mux-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mux-integration-62cb9b26397e0986.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mux-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mux-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b29fa5954ca9c66885f4ff4cdc3419d05eff531ef44febdd2b62d013d2683bd1",
+      "artifactSizeBytes": 1854
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:16:05.289Z"
+}

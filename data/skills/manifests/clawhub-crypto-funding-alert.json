@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10852,
+  "uuid": "skill-clawhub-crypto-funding-alert",
+  "skillKey": "clawhub-crypto-funding-alert",
+  "name": "Crypto Funding Alert",
+  "summary": "Real-time crypto funding rate scanner with smart alerts. Finds negative funding rates for profitable long positions. Supports Binance futures. No API key nee...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_funding_alert",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dagangtj",
+      "features": [
+        "Real-time crypto funding rate scanner with smart alerts",
+        "Finds negative funding rates for profitable long positions",
+        "Supports Binance futures",
+        "No API key nee..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-funding-alert@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65108318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-funding-alert",
+      "url": "https://clawhub.ai/skills/crypto-funding-alert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-funding-alert",
+    "url": "https://clawhub.ai/skills/crypto-funding-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-funding-alert-b8ed2e9130928b49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-funding-alert@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-funding-alert-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f066a0f77d7585758103c001060ad3c8bb79e2f05bf62819c0707d5ff293d65b",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T22:50:32.420Z"
+}

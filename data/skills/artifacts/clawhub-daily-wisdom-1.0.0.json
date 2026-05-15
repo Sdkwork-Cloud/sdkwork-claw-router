@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-wisdom@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_wisdom",
+  "skill": {
+    "id": 16404,
+    "skillKey": "clawhub-daily-wisdom",
+    "name": "Daily Wisdom"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-wisdom",
+    "url": "https://clawhub.ai/skills/daily-wisdom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-wisdom-d6193d76008df5f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily wisdom, anecdotes & historical stories delivered via cron. Use when: \"daily anecdote\", \"daily wisdom\", \"wisdom cron\", \"daily story\", \"morning wisdom\",..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aytuncyildizli",
+      "userId": "publishers:aytuncyildizli",
+      "displayName": "AytuncYildizli",
+      "image": "https://avatars.githubusercontent.com/u/47717026?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 889,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771191899016,
+      "changelog": "v1.0 — 100+ sources across all civilizations, 4 output formats, equalized cultural representation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:28ff23ae33305ba8c3a3e802a1a2b4f8404116672741520827bb0fc219159a58"
+}

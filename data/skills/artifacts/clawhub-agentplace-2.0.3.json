@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentplace@2.0.3",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentplace",
+  "skill": {
+    "id": 14672,
+    "skillKey": "clawhub-agentplace",
+    "name": "Agentplace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentplace",
+    "url": "https://clawhub.ai/skills/agentplace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentplace-2ca0c3aa44be2bbf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent Marketplace for OpenClaw. Browse and install free & paid agents when explicitly requested by the user."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "himanshunextbase",
+      "userId": "s175sw8jdskxbmhrfzmh92pkh983g50s",
+      "displayName": ".",
+      "image": "https://avatars.githubusercontent.com/u/178129968?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 744,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 4,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.3",
+      "createdAt": 1773378207647,
+      "changelog": "Agentplace 2.0.3\n\n- Documentation file renamed from SKILL.md to skill.md for consistency.\n- No changes to functional code—affects only documentation structure and formatting.\n- Updated documentation emphasizes user-initiated actions, privacy, and transparent install workflows.\n- Security and safety guidelines clarified in the new documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b68c5e061ea0fdb4921b68bd9fb8ddc75404bf17ef68c4dc0cacd5b7e1f4df4"
+}

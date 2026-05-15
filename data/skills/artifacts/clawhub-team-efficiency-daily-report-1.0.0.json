@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/team-efficiency-daily-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_efficiency_daily_report",
+  "skill": {
+    "id": 35417,
+    "skillKey": "clawhub-team-efficiency-daily-report",
+    "name": "team-efficiency-daily-report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-efficiency-daily-report",
+    "url": "https://clawhub.ai/skills/team-efficiency-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-efficiency-daily-report-6c6bcc0e19208563.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate team efficiency daily report automatically"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bondli",
+      "userId": "s177p2wmp8es5mem55h55wyq7183h7bj",
+      "displayName": "bondli",
+      "image": "https://avatars.githubusercontent.com/u/6427929?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774356284947,
+      "changelog": "Initial release: Automatically generates daily team efficiency reports.\n\n- Opens the configured dashboard and captures API request payloads\n- Adjusts the time range to cover the current month up to today\n- Fetches and parses efficiency data from the API\n- Saves daily metric data and generates a markdown report\n- Stores reports and data locally by date for tracking and review",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:759dffbbdbe2d178655e761029b3b60fd3db16efdce06fcb1609e5eb54662218"
+}

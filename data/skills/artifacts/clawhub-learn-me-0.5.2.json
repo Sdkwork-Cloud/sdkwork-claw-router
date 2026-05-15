@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/learn-me@0.5.2",
+  "version": "0.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learn_me",
+  "skill": {
+    "id": 18214,
+    "skillKey": "clawhub-learn-me",
+    "name": "Learn me"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learn-me",
+    "url": "https://clawhub.ai/skills/learn-me",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learn-me-e806b0c5049f8db5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Learn me: Lets OpenClaw proactively learn more about you through natural conversation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yevhendiachenko0",
+      "userId": "s17a0mgy9yyfz5jw37nhgdaaz983gftc",
+      "displayName": "Yevhen Diachenko",
+      "image": "https://avatars.githubusercontent.com/u/23141571?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 569,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.5.2",
+      "createdAt": 1773253104532,
+      "changelog": "Tightened SKILL.md prose: removed redundant \"Collecting Directions\" section (covered by Quick Reference), cut filler sentences, and simplified Delivery wording.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a126c70a537e0f6d10842c911ed9a6eb93c3b9c8e36c7cff31d36338bce1ac6"
+}

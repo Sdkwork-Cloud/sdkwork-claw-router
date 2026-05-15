@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clear-mind-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clear_mind_skill",
+  "skill": {
+    "id": 27230,
+    "skillKey": "clawhub-clear-mind-skill",
+    "name": "Clear Mind"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clear-mind-skill",
+    "url": "https://clawhub.ai/skills/clear-mind-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clear-mind-skill-83a11c1aa331ac36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Memory file maintenance and optimization system. Use when factual information (portfolio, projects, technical details) accumulates in MEMORY.md, or when peri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "webray1983",
+      "userId": "publishers:webray1983",
+      "displayName": "webray1983",
+      "image": "https://avatars.githubusercontent.com/u/201538631?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773460891756,
+      "changelog": "clear-mind-skill v0.1.0 – Initial Release\n\n- Introduces a system for maintaining a clean, efficient MEMORY.md by migrating scenario-specific factual content to dedicated facts/ files.\n- Establishes strict rules for distinguishing core rules/capabilities (always kept in MEMORY.md) from scenario-specific data (migrated).\n- Adds a user confirmation step before first-run migration to tailor category retention.\n- Implements a step-by-step workflow for analysis, migration, and MEMORY.md rewriting, including Quick Index generation for easy navigation.\n- Provides rollback mechanisms for restoring migrated content or reverting to previous memory states.\n- Emphasizes safety: migration never triggered by file size, only by factual bloat.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7caa709de16ebdc704265b872bf95be20eac3f121e2235f5e599835fab9c948"
+}

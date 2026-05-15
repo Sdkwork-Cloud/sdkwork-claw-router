@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/habit-flow-skill@1.5.4",
+  "version": "1.5.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.habit_flow_skill",
+  "skill": {
+    "id": 9654,
+    "skillKey": "clawhub-habit-flow-skill",
+    "name": "Habit Flow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "habit-flow-skill",
+    "url": "https://clawhub.ai/skills/habit-flow-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/habit-flow-skill-d2483d06b387fe17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered atomic habit tracker with natural language logging, streak tracking, smart reminders, and coaching. Use for creating habits, logging completions naturally (\"I meditated today\"), viewing progress, and getting personalized coachin."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tralves",
+      "userId": "publishers:tralves",
+      "displayName": "tralves",
+      "image": "https://avatars.githubusercontent.com/u/2600867?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3000,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 6,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.5.4",
+      "createdAt": 1770640637991,
+      "changelog": "**Improved persona validation and selection for more robust user experience.**\n\n- Validates persona IDs when loading, switching, or displaying personas; falls back to \"flex\" if invalid.\n- Informs users if an invalid persona is requested, and shows the list of available personas.\n- Updated SKILL.md documentation to reflect enhanced persona validation logic.\n- Bumped version to 1.5.4.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0da04e60010d46ac39647dbbba052e919c70336e89fb489512bee27d1f03573e"
+}

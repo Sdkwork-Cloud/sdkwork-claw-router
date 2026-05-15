@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-connect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_connect",
+  "skill": {
+    "id": 69044,
+    "skillKey": "clawhub-feishu-connect",
+    "name": "Feishu Connect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-connect",
+    "url": "https://clawhub.ai/skills/feishu-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-connect-2ec46c3fb88282dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "连接飞书机器人。通过接口直连发起注册会话，拿到链接（必须拼接 from=maxclaw）发给用户，等用户配置完成后告诉用户去飞书找机器人拿配对码。适用于连接飞书、接入飞书、绑定飞书机器人、创建飞书机器人、OpenClaw 接飞书等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "easelearnai",
+      "userId": "s177183bh5nyjkncrj8pajmyxd83gzc4",
+      "displayName": "EaseLearnAI",
+      "image": "https://avatars.githubusercontent.com/u/187486653?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774095322827,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe99ffba6f1c160a6ba8650cca55e97e8927565f5127fa2b51471efca1e85f0d"
+}

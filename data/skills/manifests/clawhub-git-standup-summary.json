@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48097,
+  "uuid": "skill-clawhub-git-standup-summary",
+  "skillKey": "clawhub-git-standup-summary",
+  "name": "Git Standup Summary",
+  "summary": "Generate concise daily/weekly standup summaries from git commit history. Analyzes recent commits, groups them by type (features, fixes, refactors, chores), a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_standup_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ericlooi504",
+      "features": [
+        "Generate concise daily/weekly standup summaries from git commit history",
+        "Analyzes recent commits, groups them by type (features, fixes, refactors, chores), a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-standup-summary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/275256771?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-standup-summary",
+      "url": "https://clawhub.ai/skills/git-standup-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-standup-summary",
+    "url": "https://clawhub.ai/skills/git-standup-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-standup-summary-2d1cbd638d74eddc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-standup-summary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-standup-summary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0b2382d278fe24c01a93217ccdecab290b6ab39d1d01fbf0cf0e4c18a535d79",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T00:04:50.778Z"
+}

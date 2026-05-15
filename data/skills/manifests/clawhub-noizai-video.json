@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47994,
+  "uuid": "skill-clawhub-noizai-video",
+  "skillKey": "clawhub-noizai-video",
+  "name": "Noizai Video",
+  "summary": "Get noise-free videos ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.noizai_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "Get noise-free videos ready to post, without touching a single slider",
+        "Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/noizai-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "noizai-video",
+      "url": "https://clawhub.ai/skills/noizai-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "noizai-video",
+    "url": "https://clawhub.ai/skills/noizai-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/noizai-video-6e4241223691906a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/noizai-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-noizai-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a7dcc669b1714827d3fc008a2730cd4e1064f79b98566e946bd78baf968813b",
+      "artifactSizeBytes": 2500
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T22:48:42.386Z"
+}

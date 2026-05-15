@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jpeng-api-tester@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpeng_api_tester",
+  "skill": {
+    "id": 34064,
+    "skillKey": "clawhub-jpeng-api-tester",
+    "name": "API Tester"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpeng-api-tester",
+    "url": "https://clawhub.ai/skills/jpeng-api-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpeng-api-tester-2d6d4bb3c04ce775.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "API testing and monitoring skill. Test REST and GraphQL APIs, validate responses, and monitor uptime."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpengcheng523-netizen",
+      "userId": "s177n9nwg73ep3g6fp9z19025n83h4xr",
+      "displayName": "jpengcheng523-netizen",
+      "image": "https://avatars.githubusercontent.com/u/226868999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774359152007,
+      "changelog": "- Initial release of jpeng-api-tester.\n- Test REST (GET, POST, PUT, DELETE, PATCH) and GraphQL (queries, mutations) APIs.\n- Validate API responses with JSON Schema and assertions.\n- Monitor API uptime with interval checks and alerts.\n- Run API test suites from YAML files.\n- Command-line usage examples included for all features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8276926e5daeef889b4366932c1f66de78ee31aada7cfe1c786b645f78dca282"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13723,
+  "uuid": "skill-clawhub-gws-calendar-agenda",
+  "skillKey": "clawhub-gws-calendar-agenda",
+  "name": "Gws Calendar Agenda",
+  "summary": "Google Calendar: Show upcoming events across all calendars.",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_calendar_agenda",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google Calendar: Show upcoming events across all calendars."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-calendar-agenda@1.0.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-calendar-agenda",
+      "url": "https://clawhub.ai/skills/gws-calendar-agenda"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-calendar-agenda",
+    "url": "https://clawhub.ai/skills/gws-calendar-agenda",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-calendar-agenda-2a0e154e86b95cbd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-calendar-agenda@1.0.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-calendar-agenda-1.0.13.json",
+      "version": "1.0.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebff92ae83c5b343cc66f6f664b996fe9a00410e0c6eb5c50a6af834623317bd",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:33:17.355Z"
+}

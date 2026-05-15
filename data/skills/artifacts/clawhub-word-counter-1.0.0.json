@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/word-counter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.word_counter",
+  "skill": {
+    "id": 41390,
+    "skillKey": "clawhub-word-counter",
+    "name": "Word Counter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "word-counter",
+    "url": "https://clawhub.ai/skills/word-counter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/word-counter-213ca35e425e6055.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A comprehensive text analysis tool that counts words, characters, sentences, and paragraphs. Calculates reading time, speaking time, reading level (Flesch-Ki..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776217396476,
+      "changelog": "- Initial release of Word Counter skill.\n- Provides word, character, sentence, and paragraph counts.\n- Estimates reading and speaking time.\n- Calculates Flesch-Kincaid reading level.\n- Analyzes keyword density for SEO.\n- Includes reference formulas and usage examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a1fcb6614c5918ec426a9657ceddeed0207b5efb63fe1cc2259455fedec04ed"
+}

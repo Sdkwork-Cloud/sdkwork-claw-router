@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14927,
+  "uuid": "skill-clawhub-employee",
+  "skillKey": "clawhub-employee",
+  "name": "Employee",
+  "summary": "Create and manage virtual AI employees with persistent memory, defined roles, and graduated autonomy. Hire, train, and delegate tasks to specialized workers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.employee",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Create and manage virtual AI employees with persistent memory, defined roles, and graduated aut.",
+        "Hire, train, and delegate tasks to specialized workers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/employee@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "employee",
+      "url": "https://clawhub.ai/skills/employee"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "employee",
+    "url": "https://clawhub.ai/skills/employee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/employee-2fdc0177057d3a5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/employee@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-employee-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bcf3f3cd51ee2da87ad8a27801dcc2a387c9e03c19b70e5bc84abb3b34ca58b",
+      "artifactSizeBytes": 1837
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T21:42:00.136Z"
+}

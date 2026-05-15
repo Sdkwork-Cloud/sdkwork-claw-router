@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pitch-perfect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pitch_perfect",
+  "skill": {
+    "id": 68832,
+    "skillKey": "clawhub-pitch-perfect",
+    "name": "Pitch Perfect-创业融资路演PPT专家"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pitch-perfect",
+    "url": "https://clawhub.ai/skills/pitch-perfect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pitch-perfect-d1137e5ce59e5eb4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "帮助创业者系统规划并制作针对不同融资阶段和项目类型的专业融资路演PPT，提高投资人认可和融资成功率。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "earthwalking",
+      "userId": "s17c22xptvm4zbcs3vbdf4mwj583hzep",
+      "displayName": "Roma",
+      "image": "https://avatars.githubusercontent.com/u/105550312?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773670099387,
+      "changelog": "Pitch Perfect 1.0.0 — 系统化创业融资路演PPT制作指南上线\n\n- 提供基于一流课程与实战案例的14页路演PPT流程，覆盖AI/硬科技、消费互联网等多类型创业项目。\n- 明确区分路演类型、融资阶段和目标受众，定制内容结构与侧重点。\n- 全流程逐页内容框架与设计建议，含团队、市场、技术、模式、财务等关键板块。\n- 包含叙事节奏、视觉设计、演讲技巧与常见注意事项的实用指导。\n- 支持根据结构规划自动生成专业PPT文件（需配合pptx技能）。\n- 附权威参考文档与丰富使用示例。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0c734e965bb202f3bbe4cf0e2aff5d9e21ac2e80b426dc2a2748ae18e36ebfe"
+}

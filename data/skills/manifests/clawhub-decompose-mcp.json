@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50142,
+  "uuid": "skill-clawhub-decompose-mcp",
+  "skillKey": "clawhub-decompose-mcp",
+  "name": "Decompose Mcp",
+  "summary": "Decompose any text into classified semantic units — authority, risk, attention, entities. No LLM. Deterministic.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decompose_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "echology-io",
+      "features": [
+        "Decompose any text into classified semantic units — authority, risk, attention, entities",
+        "Deterministic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/decompose-mcp@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/247475333?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "decompose-mcp",
+      "url": "https://clawhub.ai/skills/decompose-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decompose-mcp",
+    "url": "https://clawhub.ai/skills/decompose-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decompose-mcp-87575797f96d8f4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/decompose-mcp@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-decompose-mcp-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f52e855e6fc1b98a20406403e33142ba3c12fba01f4fea8a5b6037d91751631",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T19:19:20.811Z"
+}

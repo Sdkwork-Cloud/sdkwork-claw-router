@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-mirror@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_mirror",
+  "skill": {
+    "id": 24411,
+    "skillKey": "clawhub-x-mirror",
+    "name": "Mirror Source Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-mirror",
+    "url": "https://clawhub.ai/skills/x-mirror",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-mirror-c7d3e9cc64b4adbc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "x-mirror is a comprehensive mirror source management tool for various package managers. Use this skill whenever users need to configure, switch, or query pac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lunrenyi",
+      "userId": "s177mhkgt0ks26qt090zk6221583k2h6",
+      "displayName": "lunrenyi",
+      "image": "https://avatars.githubusercontent.com/u/87307989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 313,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773386315464,
+      "changelog": "- Initial release of x-mirror: a mirror source management tool for multiple package managers.\n- Supports configuration, switching, and querying of mirrors for pip, npm, brew, apt, go, cargo, gem, and more.\n- Enables listing available mirrors, viewing current configuration, restoring defaults, and optimizing download speeds.\n- Especially suitable for developers in China or those needing faster package downloads.\n- Compatible with POSIX Shell (sh/bash/zsh/dash/ash).\n- Command examples and supported managers included in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0898c0c22ce1c7d759d167ce783fe7aebff178f935c56c806e06be449f582ce"
+}

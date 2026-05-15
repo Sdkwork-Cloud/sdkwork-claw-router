@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/logic-bridge-protocol@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logic_bridge_protocol",
+  "skill": {
+    "id": 58239,
+    "skillKey": "clawhub-logic-bridge-protocol",
+    "name": "Description: Turn vague product ideas into AI-ready specs. Bilingual requirement closure checker for non-technical builders.把模糊."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logic-bridge-protocol",
+    "url": "https://clawhub.ai/skills/logic-bridge-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logic-bridge-protocol-fe93375a928ac278.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validates vague product requirements and user stories against five closure rules (actor, scenario, goal, actionable path). Returns structured follow-up quest..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaoelaine80-boop",
+      "userId": "s1711gyyzmk4tersgz76362tnn8530b6",
+      "displayName": "zhaoelaine80-boop",
+      "image": "https://avatars.githubusercontent.com/u/226428461?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776511018705,
+      "changelog": "v1.0.0 — Initial release\n\n- Bilingual (ZH/EN): follow-up questions match the language of the input\n- 5-principle closure check: actor, scenario, goal, actionable path, substance\n- Returns structured JSON tasks for downstream agents when requirements pass\n- 12/12 tests passing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb17991f5cbae60a32349249e4b40e633651499ebae50454fa391f84ab8ba81a"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50152,
+  "uuid": "skill-clawhub-learning-roadmap-builder",
+  "skillKey": "clawhub-learning-roadmap-builder",
+  "name": "Learning Roadmap Builder",
+  "summary": "Builds a personalized skill-learning roadmap: current level, target milestones, recommended resources, practice cadence, checkpoint assessments, and plateau-...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learning_roadmap_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Builds a personalized skill-learning roadmap: current level, target milestones, recommended res."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learning-roadmap-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learning-roadmap-builder",
+      "url": "https://clawhub.ai/skills/learning-roadmap-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learning-roadmap-builder",
+    "url": "https://clawhub.ai/skills/learning-roadmap-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learning-roadmap-builder-ffbe0b39cf1a10a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learning-roadmap-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-learning-roadmap-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77d56dd254012a7fc05118df0a47991791f304a001ccd3d6920b2acb0b284030",
+      "artifactSizeBytes": 2500
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T00:53:21.999Z"
+}

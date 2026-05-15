@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68026,
+  "uuid": "skill-clawhub-parallel-dispatch",
+  "skillKey": "clawhub-parallel-dispatch",
+  "name": "Parallel Dispatch",
+  "summary": "并行调度多个独立或依赖任务，支持多线程/多进程执行、结果聚合和异常处理，提升任务执行效率。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parallel_dispatch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daxiangnaoyang",
+      "features": [
+        "并行调度多个独立或依赖任务，支持多线程/多进程执行、结果聚合和异常处理，提升任务执行效率。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/parallel-dispatch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223295173?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "parallel-dispatch",
+      "url": "https://clawhub.ai/skills/parallel-dispatch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parallel-dispatch",
+    "url": "https://clawhub.ai/skills/parallel-dispatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parallel-dispatch-6d26079b123f4a4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/parallel-dispatch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-parallel-dispatch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72501ac4bde79497fc4c4b58a358aa54c3f0c67d1909c516c4145ebab6f434c3",
+      "artifactSizeBytes": 2310
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T03:20:01.447Z"
+}

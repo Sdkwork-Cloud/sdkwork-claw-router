@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65848,
+  "uuid": "skill-clawhub-xtechhotnews",
+  "skillKey": "clawhub-xtechhotnews",
+  "name": "Tech News",
+  "summary": "获取 X-TechCon 网站的科技热点新闻。当用户输入指定的触发词时，调用 API 获取最新的科技热点新闻并格式化输出。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xtechhotnews",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "edwardtechcon",
+      "features": [
+        "获取 X-TechCon 网站的科技热点新闻。当用户输入指定的触发词时，调用 API 获取最新的科技热点新闻并格式化输出。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xtechhotnews@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208477894?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xtechhotnews",
+      "url": "https://clawhub.ai/skills/xtechhotnews"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xtechhotnews",
+    "url": "https://clawhub.ai/skills/xtechhotnews",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xtechhotnews-cf8d1ab7587f3e0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xtechhotnews@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xtechhotnews-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec732ba587debe4ce0ffacd1c9df03828ee8707aad76b5f5506a35987889a1bc",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:10:41.358Z"
+}

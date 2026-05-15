@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eb-senior-backend@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eb_senior_backend",
+  "skill": {
+    "id": 29898,
+    "skillKey": "clawhub-eb-senior-backend",
+    "name": "Senior Backend"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eb-senior-backend",
+    "url": "https://clawhub.ai/skills/eb-senior-backend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eb-senior-backend-c70417eb973a326c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Production-grade backend development. Use this skill when the user mentions: build the API, create backend, REST API, GraphQL, database modeling, authenticat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emersonbraun",
+      "userId": "s17et1m19hdc751hkgrqtzjf6184b55r",
+      "displayName": "Emerson Braun",
+      "image": "https://avatars.githubusercontent.com/u/25778027?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 293,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775533088983,
+      "changelog": "Initial release of senior-backend skill for production-grade backend development.\n\n- Provides implementation guidance for REST/GraphQL APIs, authentication, database schemas, and server-side patterns.\n- Opinionated defaults: Node.js, TypeScript (strict), Drizzle/Prisma, PostgreSQL, Zod, JWT, Hono/Express.\n- Outlines a step-by-step process: schema design, validation, service layer, API routes, error handling, and authentication.\n- Includes code examples and best practices for security, type safety, and maintainability.\n- Clarifies API conventions, response formats, and pagination standards.\n- Highlights anti-patterns and references for deeper topics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85f80c888572d619f149bba68cd6304c9b403899fc12dab875978d81fb8560ce"
+}

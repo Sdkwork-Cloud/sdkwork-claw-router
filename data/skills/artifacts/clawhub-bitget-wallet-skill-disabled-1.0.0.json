@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bitget-wallet-skill-disabled@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitget_wallet_skill_disabled",
+  "skill": {
+    "id": 41730,
+    "skillKey": "clawhub-bitget-wallet-skill-disabled",
+    "name": "Bitget Wallet Skill.Disabled"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitget-wallet-skill-disabled",
+    "url": "https://clawhub.ai/skills/bitget-wallet-skill-disabled",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitget-wallet-skill-disabled-b95b964b8a883600.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Wallet Manage, Interact with Bitget Wallet API for crypto market data, token info, swap quotes, and security audits. Use when the user asks about wallet, tok..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xunbin0908",
+      "userId": "s175y88mxcy75z6qp9dwwk0sfs83gq2m",
+      "displayName": "xunbin0908",
+      "image": "https://avatars.githubusercontent.com/u/207844150?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774330602548,
+      "changelog": "- Skill disabled in this version; all Bitget Wallet API features are unavailable.\n- No wallet, swap, market data, token info, security audits, or trading operations will be processed.\n- If you require Bitget Wallet functions, please enable or update the skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86ef102b9cc7d3b4f9fa4f7c75427e259ed4cadfd448f7e3d0f3e01621cb21c9"
+}

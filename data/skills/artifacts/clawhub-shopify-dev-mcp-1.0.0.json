@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopify-dev-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_dev_mcp",
+  "skill": {
+    "id": 42882,
+    "skillKey": "clawhub-shopify-dev-mcp",
+    "name": "Shopify Dev Mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-dev-mcp",
+    "url": "https://clawhub.ai/skills/shopify-dev-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-dev-mcp-e15cb731db40e6c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user wants to work with Shopify Admin API, Storefront API, validate Liquid code, explore GraphQL schemas, build Shopify apps, or inspect Shopify doc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "simoncai519",
+      "userId": "s173dng2k1aa2nm91ggjy3sx5984hyga",
+      "displayName": "simoncai519",
+      "image": "https://avatars.githubusercontent.com/u/57803232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776063006867,
+      "changelog": "shopify-dev-mcp 1.0.0 – Initial release\n\n- Enables streamlined workflows for working with Shopify Admin and Storefront APIs, validating Liquid code, and inspecting GraphQL schemas.\n- Provides commands for searching Shopify docs, introspecting API schemas, and validating theme and Polaris UI code.\n- Includes step-by-step workflow and best practices for using the MCP tools.\n- Offers usage examples for core tasks such as product creation, schema exploration, and code validation.\n- Reference section links to detailed API and setup guides.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad932c05062aed5c5a8cd29d7f6e99b5fc3df2db5a6310d1a2d5d36f154bc804"
+}

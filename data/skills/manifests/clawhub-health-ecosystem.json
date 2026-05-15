@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71293,
+  "uuid": "skill-clawhub-health-ecosystem",
+  "skillKey": "clawhub-health-ecosystem",
+  "name": "Health Ecosystem",
+  "summary": "基于华为运动健康的智能健康闭环系统。整合华为穿戴设备数据采集、Obsidian 知识沉淀、定时任务自动化，形成完整的个人健康管理闭环。支持每日健康日志、周度报告、目标追踪。触发词：健康闭环、健康系统、每日健康日志、周度健康报告、健康目标追踪。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_ecosystem",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ajawpwinner-del",
+      "features": [
+        "基于华为运动健康的智能健康闭环系统。整合华为穿戴设备数据采集、Obsidian 知识沉淀、定时任务自动化，形成完整的个人健康管理闭环。支持每日健康日志、周度报告、目标追踪。触发词：健康闭环、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/health-ecosystem@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270194435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "health-ecosystem",
+      "url": "https://clawhub.ai/skills/health-ecosystem"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-ecosystem",
+    "url": "https://clawhub.ai/skills/health-ecosystem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-ecosystem-29eb2d4584c1f085.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/health-ecosystem@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-health-ecosystem-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ae25d33ca4ff2d354afbaee72ec3b59b78a029eedd3830442d4bff569878dd3",
+      "artifactSizeBytes": 2641
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T16:35:14.725Z"
+}

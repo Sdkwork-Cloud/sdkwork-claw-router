@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42329,
+  "uuid": "skill-clawhub-a2h-bridge",
+  "skillKey": "clawhub-a2h-bridge",
+  "name": "Bridge",
+  "summary": "Agent-to-Human (A2H) verification and escrow platform. Request physical-world tasks, define verification criteria (GPS, photos, timestamps, signatures, multi...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2h_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mirni",
+      "features": [
+        "Agent-to-Human (A2H) verification and escrow platform",
+        "Request physical-world tasks, define verification criteria (GPS, photos, timestamps, signatures."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a2h-bridge@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13551232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a2h-bridge",
+      "url": "https://clawhub.ai/skills/a2h-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2h-bridge",
+    "url": "https://clawhub.ai/skills/a2h-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2h-bridge-077572752078b719.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a2h-bridge@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a2h-bridge-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a0680da84af7f55eaf0b022d9514128dcc6205f7462e924590a22ace18e1217",
+      "artifactSizeBytes": 2315
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T10:54:53.063Z"
+}

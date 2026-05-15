@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63856,
+  "uuid": "skill-clawhub-data-analytics-assistant",
+  "skillKey": "clawhub-data-analytics-assistant",
+  "name": "Data Analytics Assistant - 数据分析助手",
+  "summary": "数据分析助手。支持网站访问统计、用户行为分析、转化率优化建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_analytics_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cp3d1455926-svg",
+      "features": [
+        "数据分析助手。支持网站访问统计、用户行为分析、转化率优化建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-analytics-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268315927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-analytics-assistant",
+      "url": "https://clawhub.ai/skills/data-analytics-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-analytics-assistant",
+    "url": "https://clawhub.ai/skills/data-analytics-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-analytics-assistant-e2d0fb1e4672b850.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-analytics-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-analytics-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b08dd5e24d51163b6d53ddfa2b6e8494ccd0d4332d4f90e4b94ab3d4e21a2dec",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T10:37:24.729Z"
+}

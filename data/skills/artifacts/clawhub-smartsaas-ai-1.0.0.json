@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smartsaas-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smartsaas_ai",
+  "skill": {
+    "id": 27653,
+    "skillKey": "clawhub-smartsaas-ai",
+    "name": "SmartSaaS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smartsaas-ai",
+    "url": "https://clawhub.ai/skills/smartsaas-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smartsaas-ai-37760d0a4195ad5d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install via extraDirs (not clawhub). Never auto-add items: only add when user explicitly asks; user defines what to add. Scripts: create-dataset.sh, add-to-d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smartsaas",
+      "userId": "publishers:smartsaas",
+      "displayName": "Saf",
+      "image": "https://avatars.githubusercontent.com/u/73312405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 343,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773619670542,
+      "changelog": "SmartSaaS Skill v1.0.0 — initial release\n\n- Adds support for creating and managing datasets and items via shell scripts (create-dataset.sh, add-to-dataset.sh) using execute_shell only.\n- Requires explicit user instructions to add items; never auto-adds or infers items.\n- Installation is via extraDirs in openclaw.json, not clawhub.\n- Scripts use positional arguments only; do not use flags like --name or --dataset.\n- API credentials (SMARTSAAS_BASE_URL, SMARTSAAS_API_KEY) are read from the environment; users are never prompted to provide keys in chat.\n- All interactions are via provided scripts—never via curl or direct HTTP requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f34aee1fd2aecfd1c6bd5668cd43862083ede55b01dd3d5e8fc8e16d30d4270a"
+}

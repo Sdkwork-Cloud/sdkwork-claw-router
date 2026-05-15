@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16261,
+  "uuid": "skill-clawhub-openclaw-aisa-search",
+  "skillKey": "clawhub-openclaw-aisa-search",
+  "name": "Verified Research Engine (Web + Academic + Confidence Score)",
+  "summary": "Intelligent search for agents. Multi-source retrieval across web, scholar, Tavily, and Perplexity Sonar models.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aisa_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chaimengphp",
+      "features": [
+        "Intelligent search for agents",
+        "Multi-source retrieval across web, scholar, Tavily, and Perplexity Sonar models."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-aisa-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18716845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-aisa-search",
+      "url": "https://clawhub.ai/skills/openclaw-aisa-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aisa-search",
+    "url": "https://clawhub.ai/skills/openclaw-aisa-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aisa-search-59816de54e48e953.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-aisa-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-aisa-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c451d5d1c12c98ce99d64d3efd1afa74d5c0bd09bc6e7ffe55cc4db5f4f9f7a8",
+      "artifactSizeBytes": 2624
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T06:02:34.385Z"
+}

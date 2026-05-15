@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mini-trip@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mini_trip",
+  "skill": {
+    "id": 53796,
+    "skillKey": "clawhub-mini-trip",
+    "name": "Mini Trip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mini-trip",
+    "url": "https://clawhub.ai/skills/mini-trip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mini-trip-cfe6826f53a24f82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan a complete 3-day, 2-night trip — optimal pacing with morning activities, afternoon exploration, and evening dining experiences. Also supports: flight bo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775898129163,
+      "changelog": "mini-trip 3.2.0 Changelog\n\n- Expanded to fully support multi-command orchestration for flights, hotels, attractions, train tickets, visa info, insurance, and car rental, all powered by Fliggy (Alibaba Group).\n- Strict new CLI-only execution rules: never answer travel queries from training data; all outputs must come directly from the flyai CLI.\n- Enforced `[Book](...)` link requirement for every result to ensure real-time data and direct booking.\n- Detailed step-by-step workflow for robust environment checks, parameter gathering, execution, and output validation.\n- Enhanced output formatting with comparison tables, brand tagging, and strict prohibition against fabricated data or missing booking links.\n- Clarified activation triggers and separation from week-long trips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2bc959daf575d0cbb7e90123b7cde4565b6776c57530335c96dff5b73abb9cba"
+}

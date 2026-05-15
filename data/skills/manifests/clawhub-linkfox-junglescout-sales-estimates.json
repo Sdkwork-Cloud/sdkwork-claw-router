@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63231,
+  "uuid": "skill-clawhub-linkfox-junglescout-sales-estimates",
+  "skillKey": "clawhub-linkfox-junglescout-sales-estimates",
+  "name": "Junglescout Sales Estimates",
+  "summary": "Jungle Scout ASIN销售估算查询，按日维度返回指定ASIN在一段时间内的每日预估销量与最新已知价格，覆盖美国、英国、德国、日本等10个站点。当用户提到ASIN销量预估、ASIN日销量、销售估算、竞品销量监控、日均销量、销量趋势、产品销量追踪、Jungle Scout销量数据、sales estima...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_junglescout_sales_estimates",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linkfox-ai",
+      "features": [
+        "Jungle Scout ASIN销售估算查询，按日维度返回指定ASIN在一段时间内的每日预估销量与最新已知价格，覆盖美国、英国、德国、日本等10个站点。当用户提到ASIN销量预估、ASIN."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkfox-junglescout-sales-estimates@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267242260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkfox-junglescout-sales-estimates",
+      "url": "https://clawhub.ai/skills/linkfox-junglescout-sales-estimates"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-junglescout-sales-estimates",
+    "url": "https://clawhub.ai/skills/linkfox-junglescout-sales-estimates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-junglescout-sales-estimates-588a8ee7c4a94075.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkfox-junglescout-sales-estimates@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-junglescout-sales-estimates-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:436ac2f0f5fed5d1966b474214741d072c124aebf3bbfa605062b82b6227446d",
+      "artifactSizeBytes": 2244
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T16:36:47.392Z"
+}

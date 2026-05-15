@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16083,
+  "uuid": "skill-clawhub-pm-agent",
+  "skillKey": "clawhub-pm-agent",
+  "name": "PM Agent",
+  "summary": "PM skill for Claude Code, Codex, Cursor, and Windsurf. Diagnoses SaaS metrics, critiques PRDs, plans roadmaps, runs discovery, coaches PM career transitions,...",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pm_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gene Dai",
+      "features": [
+        "PM skill for Claude Code, Codex, Cursor, and Windsurf",
+        "Diagnoses SaaS metrics, critiques PRDs, plans roadmaps, runs discovery, coaches PM career trans."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pm-agent@1.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2595292?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pm-agent",
+      "url": "https://clawhub.ai/skills/pm-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pm-agent",
+    "url": "https://clawhub.ai/skills/pm-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pm-agent-af076cef2d2acd06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pm-agent@1.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pm-agent-1.3.1.json",
+      "version": "1.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e22b6e2053af3dfebb19194c9fa8ca437c0bcc76cd519f94933b13ca7418ab9",
+      "artifactSizeBytes": 1844
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:16:01.316Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11995,
+  "uuid": "skill-clawhub-walkie-talkie-mode",
+  "skillKey": "clawhub-walkie-talkie-mode",
+  "name": "Walkie-Talkie Mode",
+  "summary": "Handles voice-to-voice conversations on WhatsApp. Automatically transcribes incoming audio and responds with local TTS audio. Use when the user wants to \"talk\" instead of type.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.walkie_talkie_mode",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rubén Fernández Boullón",
+      "features": [
+        "Handles voice-to-voice conversations on WhatsApp",
+        "Automatically transcribes incoming audio and responds with local TTS audio",
+        "Use when the user wants to \"talk\" instead of type."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/walkie-talkie-mode@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98909961?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "walkie-talkie-mode",
+      "url": "https://clawhub.ai/skills/walkie-talkie-mode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "walkie-talkie-mode",
+    "url": "https://clawhub.ai/skills/walkie-talkie-mode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/walkie-talkie-mode-c22fe78b0422d09d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/walkie-talkie-mode@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-walkie-talkie-mode-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92598f73339f47db6204c40ca175d421f545e0764cfaef9289f9ba006ff6fdc4",
+      "artifactSizeBytes": 2424
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T13:17:20.713Z"
+}

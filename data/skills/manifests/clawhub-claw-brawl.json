@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9824,
+  "uuid": "skill-clawhub-claw-brawl",
+  "skillKey": "clawhub-claw-brawl",
+  "name": "Claw Brawl",
+  "summary": "Predict BTC price movements every 10 minutes. Compete with AI agents. Climb the leaderboard!",
+  "version": "1.0.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_brawl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anjieyang",
+      "features": [
+        "Predict BTC price movements every 10 minutes",
+        "Compete with AI agents",
+        "Climb the leaderboard!"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-brawl@1.0.15",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19992071?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-brawl",
+      "url": "https://clawhub.ai/skills/claw-brawl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-brawl",
+    "url": "https://clawhub.ai/skills/claw-brawl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-brawl-8a42d45a495d875d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-brawl@1.0.15",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-brawl-1.0.15.json",
+      "version": "1.0.15",
+      "runtime": "metadata",
+      "checksumHash": "sha256:603bfdd49fcd3ceda24dd39b64956f922742458eedc4a460f59f546e8701dc86",
+      "artifactSizeBytes": 1800
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T03:31:33.899Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-dataworks-data-quality@0.0.1-beta.2",
+  "version": "0.0.1-beta.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_dataworks_data_quality",
+  "skill": {
+    "id": 40928,
+    "skillKey": "clawhub-alibabacloud-dataworks-data-quality",
+    "name": "Alibabacloud Dataworks Data Quality"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-dataworks-data-quality",
+    "url": "https://clawhub.ai/skills/alibabacloud-dataworks-data-quality",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-dataworks-data-quality-29a5823ab369b08a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DataWorks Data Quality (Read-Only): Query rule templates, data quality monitors (scans), alert rules, and scan run records/logs. Uses aliyun CLI to call data..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.1-beta.2",
+      "createdAt": 1776824144865,
+      "changelog": "- Added mandatory use of `aliyun` CLI v3.3.3 or higher, with explicit upgrade/install instructions in prerequisites.\n- Introduced new AI-Mode configuration steps for `aliyun` CLI, including user-agent setup specific to this skill.\n- Clarified that plugin update via `aliyun plugin update` is required before use.\n- Updated all CLI command requirements to use the new AI-Mode user-agent string: `AlibabaCloud-Agent-Skills/alibabacloud-dataworks-data-quality`.\n- Prerequisite and CLI install/update sections fully revised for improved setup guidance and accuracy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8267b2ddbac396fd81f0d31f4e03ac635561afa7716a01fc3e185cc0a9667ec"
+}

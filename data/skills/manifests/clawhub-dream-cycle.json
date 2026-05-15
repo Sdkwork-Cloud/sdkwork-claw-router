@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20317,
+  "uuid": "skill-clawhub-dream-cycle",
+  "skillKey": "clawhub-dream-cycle",
+  "name": "Dream Cycle",
+  "summary": "Implement a nightly \"dream cycle\" for OpenClaw agents that: - Reviews and consolidates memory at night - Cleans up bloated workspace files - Prepares a morni...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dream_cycle",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "imjohnathan",
+      "features": [
+        "Implement a nightly \"dream cycle\" for OpenClaw agents that:",
+        "Reviews and consolidates memory at night",
+        "Cleans up bloated workspace files",
+        "Prepares a morni..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dream-cycle@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246114925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dream-cycle",
+      "url": "https://clawhub.ai/skills/dream-cycle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dream-cycle",
+    "url": "https://clawhub.ai/skills/dream-cycle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dream-cycle-b2f3151d8c10c24b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dream-cycle@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dream-cycle-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:580812a444c75bc2c166381be1feac18d9973173ae0570df41d8ef65a9efff6e",
+      "artifactSizeBytes": 2026
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T14:21:24.735Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_skill",
+  "skill": {
+    "id": 29002,
+    "skillKey": "clawhub-ai-video-skill",
+    "name": "AITuber AI Video Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-skill",
+    "url": "https://clawhub.ai/skills/ai-video-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-skill-0d6af06ec24dc9ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AITuber API skill for AI video creation. Generate videos with AI narration, visuals, and captions for YouTube Shorts, TikTok, Instagram Reels, and long-form..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dhivalogu",
+      "userId": "publishers:dhivalogu",
+      "displayName": "Dhiva",
+      "image": "https://avatars.githubusercontent.com/u/46838309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773903040576,
+      "changelog": "ai-video-skill v1.0.0\n\n- Initial release with full AITuber API integration for automated AI video creation.\n- Supports generating videos from scripts or ideas, with options for narration, faceless video, stock footage, skeleton/character templates, and more.\n- Allows browsing 1,300+ AI voices, picking styles, and customizing captions, visuals, aspect ratio, and templates.\n- Includes bulk workflow: choose voice, generate video, poll status, export to MP4, and download.\n- Added endpoints for video generation, voice listing, export, download, and managing subscriptions/credits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7886231d28a8c5cf0d2b7e9bc0bd5e703ca9ff85f249e2f87701eb3b6adca659"
+}

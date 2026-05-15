@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68749,
+  "uuid": "skill-clawhub-wechat-super-power",
+  "skillKey": "clawhub-wechat-super-power",
+  "name": "Wechat Super Power",
+  "summary": "内容全流程助手：topic → 相关文章列表 → 知识库 → 爆点分析 → 框架 → 写作。 适用于围绕公众号/微信文章场景，从选题出发完成资料抓取、知识沉淀、观点提炼、 框架组织与写作推进。 触发关键词：公众号、微信文章、推文、选题、知识库、爆点分析、文章框架、写作。 不应被纯 blog、邮件、PPT、短视频脚...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_super_power",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jacoobwang",
+      "features": [
+        "内容全流程助手：topic → 相关文章列表 → 知识库 → 爆点分析 → 框架 → 写作。 适用于围绕公众号/微信文章场景，从选题出发完成资料抓取、知识沉淀、观点提炼、 框架组织与写作推进."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-super-power@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11434315?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-super-power",
+      "url": "https://clawhub.ai/skills/wechat-super-power"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-super-power",
+    "url": "https://clawhub.ai/skills/wechat-super-power",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-super-power-15e978ef210dd997.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-super-power@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-super-power-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:482630af22cc238eced8d6ca17bea212e941375bdff737ceeb4fe65092d81ce6",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T06:40:28.974Z"
+}

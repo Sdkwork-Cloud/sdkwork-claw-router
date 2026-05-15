@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22145,
+  "uuid": "skill-clawhub-didit-liveness-detection",
+  "skillKey": "clawhub-didit-liveness-detection",
+  "name": "Didit Liveness Detection",
+  "summary": "Detects liveness from a single selfie image via the Didit standalone API. Use when checking if a person is physically present, detecting spoofing or presenta...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.didit_liveness_detection",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Didit",
+      "features": [
+        "Detects liveness from a single selfie image via the Didit standalone API",
+        "Use when checking if a person is physically present, detecting spoofing or presenta..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/didit-liveness-detection@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47662054?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "didit-liveness-detection",
+      "url": "https://clawhub.ai/skills/didit-liveness-detection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "didit-liveness-detection",
+    "url": "https://clawhub.ai/skills/didit-liveness-detection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/didit-liveness-detection-64f26544faa40131.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/didit-liveness-detection@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-didit-liveness-detection-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7dbb592c6b9b56cb30bd9b55a6658bb73a02fafa3557be651f2f5a15dfb750c",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T05:14:32.796Z"
+}

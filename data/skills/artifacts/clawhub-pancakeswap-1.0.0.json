@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pancakeswap@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pancakeswap",
+  "skill": {
+    "id": 27209,
+    "skillKey": "clawhub-pancakeswap",
+    "name": "PancakeSwap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pancakeswap",
+    "url": "https://clawhub.ai/skills/pancakeswap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pancakeswap-ab2ee09a4f399177.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit PancakeSwap liquidity positions before capital is deployed. Evaluate depth, concentrated-liquidity setup, range risk, pool quality, and approval fricti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duclawbot",
+      "userId": "publishers:duclawbot",
+      "displayName": "Duclawbot",
+      "image": "https://avatars.githubusercontent.com/u/216468018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 353,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773170126938,
+      "changelog": "Initial release of PancakeSwap skill.\n\n- Enables analysis of PancakeSwap pools for liquidity providers before committing capital.\n- Assesses pool depth, concentrated-liquidity setup, range risk, and pool quality.\n- Highlights main risks such as narrow ranges, shallow liquidity, and fee-tier mismatches.\n- Provides a standardized assessment format and clear recommendations.\n- Does not execute trades or interact directly with contracts; for review and decision support only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a692ee6ca3878b4ab23d6eee13d208ab42bd7e4470931f69971b2aa833bc26b"
+}

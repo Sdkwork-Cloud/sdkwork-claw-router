@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-ads-control@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_ads_control",
+  "skill": {
+    "id": 24346,
+    "skillKey": "clawhub-meta-ads-control",
+    "name": "Meta Ads Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-ads-control",
+    "url": "https://clawhub.ai/skills/meta-ads-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-ads-control-b2fe9ce51c0c0e41.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to inspect, report on, create, update, pause, resume, budget, target, upload assets for, or troubleshoot Meta, Facebook, o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tristanmanchester",
+      "userId": "s17c3xv8wvvzzbj84z9vcj498n83gnkp",
+      "displayName": "Tristan Manchester",
+      "image": "https://avatars.githubusercontent.com/u/108270628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773493983327,
+      "changelog": "meta-ads-control 1.0.0\n\n- Initial release of the Meta Ads Control skill for managing and reporting on Meta, Facebook, and Instagram ads via the Marketing API.\n- Supports inspection, reporting, creation, update, pausing, resuming, budgeting, targeting, troubleshooting, and asset uploads for ad accounts, campaigns, ad sets, creatives, and ads.\n- Features dry-run protection, retries, pagination, batch operations, async Insights reporting, and targeting search.\n- Requires Python 3, outbound API access, and configuration via environment variables.\n- Detailed usage guidance and best practices included in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:826be1c4fabdfcaacc36001a6e5d33994ca69b8d46141921d539bca6f185f8b9"
+}

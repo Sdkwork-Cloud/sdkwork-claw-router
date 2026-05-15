@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kate-spade@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kate_spade",
+  "skill": {
+    "id": 64972,
+    "skillKey": "clawhub-kate-spade",
+    "name": "Kate Spade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kate-spade",
+    "url": "https://clawhub.ai/skills/kate-spade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kate-spade-234bd5a4802079dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供kate-spade品牌的基本信息和行业地位，助您快速了解其业务和市场覆盖情况。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776261108190,
+      "changelog": "kate-spade 1.0.0 发布说明\n\n- 新增 kate-spade 知识卡片，便于用户快速了解其基本信息。\n- 提供核心维度（行业、业务、覆盖、地位）的简明汇总表。\n- 包含适用场景与延伸阅读建议，支持商业、学术等多种用途。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e080a74af018ad3bfe6bb595dc4f18408192e1abb357f4a83bdc6cd8bff8d3b"
+}

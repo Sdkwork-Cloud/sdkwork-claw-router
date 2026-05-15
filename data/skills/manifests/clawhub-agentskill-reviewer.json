@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61088,
+  "uuid": "skill-clawhub-agentskill-reviewer",
+  "skillKey": "clawhub-agentskill-reviewer",
+  "name": "Agent-Skill-Reviewer",
+  "summary": "评审 AgentSkills 质量并生成专业报告。用于检查 skill 的内容质量、结构完整性、文档清晰度、冗余问题。当用户要求\"评审 skill\"、\"检查 skill 质量\"、\"审查 SKILL.md\"、\"分析这个 skill\"时触发。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentskill_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ming-shy",
+      "features": [
+        "评审 AgentSkills 质量并生成专业报告。用于检查 skill 的内容质量、结构完整性、文档清晰度、冗余问题。当用户要求\"评审 skill\"、\"检查 skill 质量\"、\"审查 SK."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentskill-reviewer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39719617?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentskill-reviewer",
+      "url": "https://clawhub.ai/skills/agentskill-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentskill-reviewer",
+    "url": "https://clawhub.ai/skills/agentskill-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentskill-reviewer-79a6994cc6468bfe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentskill-reviewer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentskill-reviewer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:398a83fb2b4aa1a7150642d42aa44f0fd3e0d5fc81d59b280109c1e970ef4b8f",
+      "artifactSizeBytes": 2538
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T08:44:23.409Z"
+}

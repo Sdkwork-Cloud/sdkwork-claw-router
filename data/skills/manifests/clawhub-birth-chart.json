@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34458,
+  "uuid": "skill-clawhub-birth-chart",
+  "skillKey": "clawhub-birth-chart",
+  "name": "Birth Chart",
+  "summary": "Generates comprehensive astrological birth charts from personal birth data and supports multiple languages for cultural accessibility.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.birth_chart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Generates comprehensive astrological birth charts from personal birth data and supports multipl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/birth-chart@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "birth-chart",
+      "url": "https://clawhub.ai/skills/birth-chart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "birth-chart",
+    "url": "https://clawhub.ai/skills/birth-chart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/birth-chart-09bd7c1ac994fbbb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/birth-chart@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-birth-chart-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a6a01e6331577b38f3ceb5252ad5a9e3909ae08dbc6521e9115e37315e65889",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:23:32.072Z"
+}

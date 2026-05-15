@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51696,
+  "uuid": "skill-clawhub-llm-evaluation",
+  "skillKey": "clawhub-llm-evaluation",
+  "name": "Llm Evaluation",
+  "summary": "Deep LLM evaluation workflow—quality dimensions, golden sets, human vs automatic metrics, regression suites, offline/online signals, and safe rollout gates f...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_evaluation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "Deep LLM evaluation workflow—quality dimensions, golden sets, human vs automatic metrics, regre."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-evaluation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-evaluation",
+      "url": "https://clawhub.ai/skills/llm-evaluation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-evaluation",
+    "url": "https://clawhub.ai/skills/llm-evaluation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-evaluation-43150dbeba08b152.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-evaluation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-evaluation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37adaddaf27b2857f8a87dc0d62ba54a94f36bf4019e6711e522e9f1696c95e9",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T00:16:11.175Z"
+}

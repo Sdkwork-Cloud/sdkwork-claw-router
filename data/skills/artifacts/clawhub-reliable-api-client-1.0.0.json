@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reliable-api-client@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reliable_api_client",
+  "skill": {
+    "id": 59182,
+    "skillKey": "clawhub-reliable-api-client",
+    "name": "Node.js API 客户端黄金标准"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reliable-api-client",
+    "url": "https://clawhub.ai/skills/reliable-api-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reliable-api-client-c35ae8b212d16e08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Node.js API 客户端黄金标准 v3.0 - 多Endpoint + 多Key轮询 + 限流 + 熔断器"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danihe001",
+      "userId": "s178m7yvxnmse4eckjhshjra4x83kg23",
+      "displayName": "steve xia",
+      "image": "https://avatars.githubusercontent.com/u/122467183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773543795714,
+      "changelog": "v1.0.0 首发：HTTP 请求重试、超时控制、错误处理、资源清理",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a63b04d767f9489348b5fb71cfcf69b492ee1b69cdc4c8379faacb074a140d30"
+}

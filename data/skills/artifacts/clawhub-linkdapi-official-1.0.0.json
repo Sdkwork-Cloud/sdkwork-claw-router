@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkdapi-official@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkdapi_official",
+  "skill": {
+    "id": 25005,
+    "skillKey": "clawhub-linkdapi-official",
+    "name": "LinkdAPI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkdapi-official",
+    "url": "https://clawhub.ai/skills/linkdapi-official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkdapi-official-a41cf7d051833c04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete LinkdAPI integration OpenClaw skill. Includes all 50+ endpoints, Python/Node.js/Go SDKs, authentication, rate limits, and real-world examples. Use t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ethcipher",
+      "userId": "publishers:ethcipher",
+      "displayName": "LinkdAPI",
+      "image": "https://avatars.githubusercontent.com/u/193476718?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 398,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773228291962,
+      "changelog": "Initial release of complete LinkdAPI OpenClaw integration.\n\n- Full support for 50+ LinkedIn data endpoints: profiles, people searches, companies, posts, jobs, articles, comments, services, and more\n- Includes Python, Node.js, and Go SDK references\n- Detailed authentication notes—requires only X-linkdapi-apikey header (not x-api-key or Bearer)\n- Handy quick reference for all endpoints, common parameters, and core LinkedIn data concepts\n- Example workflows included for lead enrichment, company research, ICP search, and market intelligence\n- Designed to handle any LinkedIn data lookup or API workflow",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35d70d3670a31d6a988a2e849158369fb858afe8a03d67a053080d80dd6202a5"
+}

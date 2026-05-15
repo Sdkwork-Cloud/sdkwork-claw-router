@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52088,
+  "uuid": "skill-clawhub-agent-shared-context",
+  "skillKey": "clawhub-agent-shared-context",
+  "name": "Agent Shared Context",
+  "summary": "Cross-agent context sharing via shared files. Agents write trends, highlights, and signals to a shared folder. Other agents read before acting — creating coo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_shared_context",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gum97",
+      "features": [
+        "Cross-agent context sharing via shared files",
+        "Agents write trends, highlights, and signals to a shared folder",
+        "Other agents read before acting — creating coo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-shared-context@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21122797?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-shared-context",
+      "url": "https://clawhub.ai/skills/agent-shared-context"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-shared-context",
+    "url": "https://clawhub.ai/skills/agent-shared-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-shared-context-1fc2b73213de095e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-shared-context@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-shared-context-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d51939f5f3cdd17ec8e0f63874c857de6626cbd2d307d45e756953dc31d14e7e",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T02:07:28.923Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zt-web-fetcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zt_web_fetcher",
+  "skill": {
+    "id": 67115,
+    "skillKey": "clawhub-zt-web-fetcher",
+    "name": "zt-web-fetcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zt-web-fetcher",
+    "url": "https://clawhub.ai/skills/zt-web-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zt-web-fetcher-b1d974b719c56e62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当需要获取网页内容时使用（搜索结果页面、博客文章、文档等）。使用 URL 转 Markdown 服务将网页转换为可读文本。 触发场景：用户说\"帮我查一下\"、\"看看这个链接\"、\"获取 xx 的信息\"等需要上网抓信息的情况。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "larriewong27",
+      "userId": "publishers:larriewong27",
+      "displayName": "larriewong27",
+      "image": "https://avatars.githubusercontent.com/u/32719745?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773932523066,
+      "changelog": "Version 1.0.0 of zt-web-fetcher\n\n- Initial release with detailed instructions for fetching web content using URL-to-Markdown services.\n- Describes preferred services (markdown.new, r.jina.ai, defuddle.md) and fallback options.\n- Outlines step-by-step usage process and fallback to Scrapling tool if needed.\n- Includes usage scenarios and important notes for compatibility and limitations.\n- No requirement for search API configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8baa45b070d60eb3aae1b8288f48fc83f8c530c350fb6c440c90eee9fe43981e"
+}

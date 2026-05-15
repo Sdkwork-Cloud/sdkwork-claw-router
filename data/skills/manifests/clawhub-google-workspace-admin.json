@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8404,
+  "uuid": "skill-clawhub-google-workspace-admin",
+  "skillKey": "clawhub-google-workspace-admin",
+  "name": "Google Workspace Admin",
+  "summary": "Google Workspace Admin SDK integration with managed OAuth. This is a write-capable administrative integration for users, groups, organizational units, roles,...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_workspace_admin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Google Workspace Admin SDK integration with managed OAuth",
+        "This is a write-capable administrative integration for users, groups, organizational units, rol."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-workspace-admin@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-workspace-admin",
+      "url": "https://clawhub.ai/skills/google-workspace-admin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-workspace-admin",
+    "url": "https://clawhub.ai/skills/google-workspace-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-workspace-admin-f4f47b705150c640.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-workspace-admin@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-workspace-admin-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3cd2c600bc07f637af9eca87716fa33f0d2201204c177af90adb157aad4668d",
+      "artifactSizeBytes": 2607
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T21:43:30.436Z"
+}

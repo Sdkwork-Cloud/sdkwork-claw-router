@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50539,
+  "uuid": "skill-clawhub-dex-aggregator",
+  "skillKey": "clawhub-dex-aggregator",
+  "name": "Dex Aggregator",
+  "summary": "DEX aggregation reference — routing algorithms, 1inch Fusion mode, CowSwap batch auctions, sandwich attack protection, and swap API endpoints",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dex_aggregator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "DEX aggregation reference — routing algorithms, 1inch Fusion mode, CowSwap batch auctions, sand."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dex-aggregator@4.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dex-aggregator",
+      "url": "https://clawhub.ai/skills/dex-aggregator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dex-aggregator",
+    "url": "https://clawhub.ai/skills/dex-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dex-aggregator-7099c7da0b518a7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dex-aggregator@4.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dex-aggregator-4.0.0.json",
+      "version": "4.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26db6b20a4ae734c79dc06b91658456a8c7b36cd11853b89abd4a9f4e51375da",
+      "artifactSizeBytes": 1880
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T00:46:46.935Z"
+}

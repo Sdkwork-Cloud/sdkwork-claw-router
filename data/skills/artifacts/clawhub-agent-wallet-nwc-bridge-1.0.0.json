@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-wallet-nwc-bridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_wallet_nwc_bridge",
+  "skill": {
+    "id": 14869,
+    "skillKey": "clawhub-agent-wallet-nwc-bridge",
+    "name": "Nostr Wallet Connect (NWC) bridge for mdk-agent-wallet, which is self-custodial Bitcoin Lightning wallet for AI agents."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-wallet-nwc-bridge",
+    "url": "https://clawhub.ai/skills/agent-wallet-nwc-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-wallet-nwc-bridge-c570b204e383c47b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expose a local @moneydevkit/agent-wallet as a Nostr Wallet Connect (NIP-47) wallet-service (systemd user service)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kristapsk",
+      "userId": "publishers:kristapsk",
+      "displayName": "kristapsk",
+      "image": "https://avatars.githubusercontent.com/u/4500994?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1112,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770799930599,
+      "changelog": "Initial release of agent-wallet-nwc-bridge.\n\n- Exposes a local @moneydevkit/agent-wallet as a Nostr Wallet Connect (NIP-47) wallet-service.\n- Includes systemd user service unit and installation script for easy setup on Linux.\n- Supports make_invoice and pay_invoice requests from NWC clients such as Stacker.News.\n- Provides local storage for environment and state files; secrets are not committed to git.\n- Detailed configuration and usage instructions included in documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2db36516fee3656ec1eb45944605b49b54091722873cbccf0176c95fffb5fae0"
+}

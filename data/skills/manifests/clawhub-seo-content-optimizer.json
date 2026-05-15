@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68877,
+  "uuid": "skill-clawhub-seo-content-optimizer",
+  "skillKey": "clawhub-seo-content-optimizer",
+  "name": "SEO Content Optimizer",
+  "summary": "为内容创作者提供 SEO 优化建议。分析内容的关键词密度、结构、元标签，并提供具体的优化建议。帮助内容在搜索引擎中获得更好的排名，同时保持可读性和用户体验。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seo_content_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "limingdev-tech-2024",
+      "features": [
+        "为内容创作者提供 SEO 优化建议。分析内容的关键词密度、结构、元标签，并提供具体的优化建议。帮助内容在搜索引擎中获得更好的排名，同时保持可读性和用户体验。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seo-content-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259841415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seo-content-optimizer",
+      "url": "https://clawhub.ai/skills/seo-content-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seo-content-optimizer",
+    "url": "https://clawhub.ai/skills/seo-content-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seo-content-optimizer-78c7e650c64f0bd5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seo-content-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-seo-content-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32d6bfa78289155dfd400aa5b79f403cd5dea7f3ebcea967f84d8152da744c89",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T12:41:11.274Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40880,
+  "uuid": "skill-clawhub-promotion-engine",
+  "skillKey": "clawhub-promotion-engine",
+  "name": "Promotion Engine",
+  "summary": "Retail promotion calculator and discount lookup for digital employees. Computes final prices after applying discounts, bundles, thresholds, and membership ti...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.promotion_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangwei-frank",
+      "features": [
+        "Retail promotion calculator and discount lookup for digital employees",
+        "Computes final prices after applying discounts, bundles, thresholds, and membership ti..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/promotion-engine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166581472?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "promotion-engine",
+      "url": "https://clawhub.ai/skills/promotion-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "promotion-engine",
+    "url": "https://clawhub.ai/skills/promotion-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/promotion-engine-682694ea2b9a3aa4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/promotion-engine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-promotion-engine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c351af83516ea8dbd6bfd27559197b6497fa4b888801b1633b3695e2f67d87ed",
+      "artifactSizeBytes": 1908
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:50:28.845Z"
+}

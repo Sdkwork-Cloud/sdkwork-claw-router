@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/demo-precacher@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.demo_precacher",
+  "skill": {
+    "id": 50632,
+    "skillKey": "clawhub-demo-precacher",
+    "name": "Demo Precacher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "demo-precacher",
+    "url": "https://clawhub.ai/skills/demo-precacher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/demo-precacher-35c094994f07b06c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pre-generate and cache all demo content before live presentations — hit every API endpoint in advance, verify playback, report coverage gaps. Use before hack..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nissan",
+      "userId": "s17f2fw07zktjmcgagf5c29tbd83rt7v",
+      "displayName": "Nissan Dookeran",
+      "image": "https://avatars.githubusercontent.com/u/12583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 453,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773613210521,
+      "changelog": "- Added TURSO_AUTH_TOKEN to required environment variables.\n- Updated metadata formatting and structure.\n- Included a security note about base64 usage for encoding cached binary content.\n- Changed the metadata emoji from 🏃 to 🏃 (now specified as a Unicode character, not escaped).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9526f0b1833502914adb9a8a0068fb3c8face40ddd24479b2ddca424eacefd07"
+}

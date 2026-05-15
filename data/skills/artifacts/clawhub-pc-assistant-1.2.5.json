@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pc-assistant@1.2.5",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pc_assistant",
+  "skill": {
+    "id": 15923,
+    "skillKey": "clawhub-pc-assistant",
+    "name": "pc-assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pc-assistant",
+    "url": "https://clawhub.ai/skills/pc-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pc-assistant-a42ab084671fad69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PC healthcheck and diagnostics with detailed system information and actionable recommendations. Works on Windows, macOS, and Linux. Read-only system diagnost..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ningtoba",
+      "userId": "s172pfdqtvq8nh4mb3gc3vv4gd83we2v",
+      "displayName": "Ning",
+      "image": "https://avatars.githubusercontent.com/u/55053307?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 741,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.2.5",
+      "createdAt": 1773797317065,
+      "changelog": "Update to version 1.2.5",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41345296c35b70250dc5d9dc4a4a0a06ff1df890108f59c3e84de9e73dcaf9a5"
+}

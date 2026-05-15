@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fb@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fb",
+  "skill": {
+    "id": 24194,
+    "skillKey": "clawhub-fb",
+    "name": "FaceBook Go-To-Market - How to build on Facebook Groups"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fb",
+    "url": "https://clawhub.ai/skills/fb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fb-5f3731b52ad0fb2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Let your agent shop on Amazon with guardrailed wallets and owner approval."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jononovo",
+      "userId": "s17eyjmk8pyvczxpmy73dtgn4d83frwx",
+      "displayName": "jononovo",
+      "image": "https://avatars.githubusercontent.com/u/22595409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 417,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1773190104539,
+      "changelog": "Skill updated to support agent shopping on Amazon with enhanced security and approval features.\n\n- Agents can now shop on Amazon using guardrailed wallets and require owner approval for transactions.\n- Multiple payment rails supported: Encrypted Card (default), Stripe Wallet (x402), and Crossmint Wallet (Coming Soon).\n- Detailed security measures implemented, including encrypted card handling, strict API key usage, and owner-configurable spending permissions.\n- Extensive documentation provided for setup, management, and file access.\n- Owners maintain full control and oversight of agent spending with real-time logs, approval modes, and wallet freezing capabilities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a4d5e472bc33f603692cea4ed66dee800ec87d425c4e637e3bbaa54aedc026d"
+}

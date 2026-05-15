@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48464,
+  "uuid": "skill-clawhub-skill-d-create-issues",
+  "skillKey": "clawhub-skill-d-create-issues",
+  "name": "skill-d-create-issues",
+  "summary": "Validate issue draft existence and status, batch create Gitea issues with dependencies on confirmation, update meeting status, and manage related email notif...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_d_create_issues",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "myd2002",
+      "features": [
+        "Validate issue draft existence and status, batch create Gitea issues with dependencies on confi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-d-create-issues@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165788146?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-d-create-issues",
+      "url": "https://clawhub.ai/skills/skill-d-create-issues"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-d-create-issues",
+    "url": "https://clawhub.ai/skills/skill-d-create-issues",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-d-create-issues-63af311f162a6446.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-d-create-issues@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-d-create-issues-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7cd2b93814617b5cf261fe9e1c8d82fb0467610b46f3c3a52894778135529bde",
+      "artifactSizeBytes": 2531
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T08:01:30.658Z"
+}

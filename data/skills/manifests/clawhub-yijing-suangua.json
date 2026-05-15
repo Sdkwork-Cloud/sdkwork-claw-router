@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69234,
+  "uuid": "skill-clawhub-yijing-suangua",
+  "skillKey": "clawhub-yijing-suangua",
+  "name": "易经占卜-yiJingDivination",
+  "summary": "易经占卜大师——调用李小问 API 起卦、解卦，支持铜钱（默认）/大衍起卦，也支持用户自报卦象。两种渲染风格：图文（透传 Markdown）/ 艺术字（终端 ASCII 卦图+评级框）。用户涉及占卜、算卦、起卦、摇卦、解卦、易经、周易、六爻、卦象、问卦、求签、测一卦等意图时触发。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yijing_suangua",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liquanyu123",
+      "features": [
+        "易经占卜大师——调用李小问 API 起卦、解卦，支持铜钱（默认）/大衍起卦，也支持用户自报卦象。两种渲染风格：图文（透传 Markdown）/ 艺术字（终端 ASCII 卦图+评级框）。用户."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yijing-suangua@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210639558?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yijing-suangua",
+      "url": "https://clawhub.ai/skills/yijing-suangua"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yijing-suangua",
+    "url": "https://clawhub.ai/skills/yijing-suangua",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yijing-suangua-b410b87addd7bf3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yijing-suangua@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-yijing-suangua-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b757dc50511783a8e0c608410e6813b99d3246eb207d6e8cf267a4c9979093c",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T13:14:52.584Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63582,
+  "uuid": "skill-clawhub-chanlun-analysis-pro",
+  "skillKey": "clawhub-chanlun-analysis-pro",
+  "name": "Chanlun Technical Analysis Expert",
+  "summary": "基于缠中说禅理论，提供A股市场分型、笔、线段、中枢及背驰等全体系技术分析与买卖点量化判断。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chanlun_analysis_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lingfeng-19",
+      "features": [
+        "基于缠中说禅理论，提供A股市场分型、笔、线段、中枢及背驰等全体系技术分析与买卖点量化判断。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chanlun-analysis-pro@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8140166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chanlun-analysis-pro",
+      "url": "https://clawhub.ai/skills/chanlun-analysis-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chanlun-analysis-pro",
+    "url": "https://clawhub.ai/skills/chanlun-analysis-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chanlun-analysis-pro-4d8bb93ccba3c5ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chanlun-analysis-pro@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chanlun-analysis-pro-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4717f19dca05ef44e3e1bce6baff1092f43a24c7bdc417b8ab7d60540b1da77",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T15:24:37.058Z"
+}

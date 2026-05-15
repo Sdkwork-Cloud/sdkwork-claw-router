@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vendor-onboarding-workflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vendor_onboarding_workflow",
+  "skill": {
+    "id": 28276,
+    "skillKey": "clawhub-vendor-onboarding-workflow",
+    "name": "vendor-onboarding-workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vendor-onboarding-workflow",
+    "url": "https://clawhub.ai/skills/vendor-onboarding-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vendor-onboarding-workflow-47b96e97ffa6d216.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Streamlines vendor onboarding with a 5-gate workflow to collect info, verify documents, obtain approvals, configure systems, and activate vendors efficiently."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flynndavid",
+      "userId": "publishers:flynndavid",
+      "displayName": "flynndavid",
+      "image": "https://avatars.githubusercontent.com/u/11565009?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772576499650,
+      "changelog": "Initial release of the VendorGate System skill—a complete workflow for vendor onboarding.\n\n- Provides a step-by-step intake-to-activation framework with 5 sequential gates.\n- Includes detailed intake forms, document checklists, and internal approval routing matrices.\n- Features templates for communication and protocols for document follow-up.\n- Ensures compliance, thorough documentation, and clear approval ownership at every stage.\n- Designed for ops teams to standardize and streamline vendor onboarding from day one.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cd50cfd00ef49e729e63f6dbd8c9ae609faf29bd91e35c0388aac68f045a6575"
+}

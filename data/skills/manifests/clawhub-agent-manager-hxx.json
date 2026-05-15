@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60118,
+  "uuid": "skill-clawhub-agent-manager-hxx",
+  "skillKey": "clawhub-agent-manager-hxx",
+  "name": "agent-manager",
+  "summary": "管理 OpenClaw 系统中的 Agent 生命周期，包括 Agent 配置、Matrix 账号注册、账号绑定等操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_manager_hxx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "货又星",
+      "features": [
+        "管理 OpenClaw 系统中的 Agent 生命周期，包括 Agent 配置、Matrix 账号注册、账号绑定等操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-manager-hxx@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144350779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-manager-hxx",
+      "url": "https://clawhub.ai/skills/agent-manager-hxx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-manager-hxx",
+    "url": "https://clawhub.ai/skills/agent-manager-hxx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-manager-hxx-48f510fc0130976f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-manager-hxx@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-manager-hxx-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06268329fc6cb6eea2f68b66db766e599fda079c5e0671852772743cd2585e7f",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T20:10:55.056Z"
+}

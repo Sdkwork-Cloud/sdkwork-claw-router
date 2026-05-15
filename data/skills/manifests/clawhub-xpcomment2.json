@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58792,
+  "uuid": "skill-clawhub-xpcomment2",
+  "skillKey": "clawhub-xpcomment2",
+  "name": "Xpcomment2",
+  "summary": "JPEG/이미지 파일의 XPComment(Windows 사진 코멘트) 메타데이터를 exiftool로 읽고, 추가하고, 제거하는 skill. 사용자가 \"xpcomment add\", \"xpcomment remove\", \"xpcomment read\", \"코멘트 추가\", \"사진에 태그\",...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xpcomment2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "happyturbo",
+      "features": [
+        "JPEG/이미지 파일의 XPComment(Windows 사진 코멘트) 메타데이터를 exiftool로 읽고, 추가하고, 제거하는 skill",
+        "사용자가 \"xpcomment add\", \"xpcomment remove\", \"xpcomment read\", \"코멘트 추가\", \"사진에 태그\",..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xpcomment2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94766066?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xpcomment2",
+      "url": "https://clawhub.ai/skills/xpcomment2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xpcomment2",
+    "url": "https://clawhub.ai/skills/xpcomment2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xpcomment2-c466ffe323542bd8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xpcomment2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xpcomment2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1644bd1e3de1902752cfd651ed377167bab4e2b84068a59aca9ffc32dc701f39",
+      "artifactSizeBytes": 2234
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T04:53:54.647Z"
+}

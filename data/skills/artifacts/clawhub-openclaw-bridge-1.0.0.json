@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-bridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_bridge",
+  "skill": {
+    "id": 53332,
+    "skillKey": "clawhub-openclaw-bridge",
+    "name": "Openclaw Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-bridge",
+    "url": "https://clawhub.ai/skills/openclaw-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-bridge-587f12575caac3a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send messages to a local OpenClaw/Rook gateway and receive responses directly from Claude Code. Enables bidirectional agent-to-agent communication via the `o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nerua1",
+      "userId": "s178f4bnw35dnxc3ymhvgf114983yzer",
+      "displayName": "nerua1",
+      "image": "https://avatars.githubusercontent.com/u/271220546?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776028631580,
+      "changelog": "openclaw-bridge 1.0.0 – Initial release\n\n- Enables Claude Code to send messages to a local OpenClaw/Rook gateway and receive responses.\n- Supports agent-to-agent communication via simple CLI commands (ask, notify, agent listing, gateway health check).\n- Trigger phrases like \"ask openclaw\", \"tell rook\", and \"delegate to kimi\" for seamless task delegation or second opinion requests.\n- Automatically parses and returns agent responses inline; handles error reporting if the gateway is unreachable.\n- Requires the OpenClaw gateway to be running locally and the CLI available in PATH.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7bfc632ba1ee9ae103c3f7c8620c452705748bbe95f72784b87aaf8471f0278f"
+}

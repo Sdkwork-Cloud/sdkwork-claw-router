@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10287,
+  "uuid": "skill-clawhub-data-validation",
+  "skillKey": "clawhub-data-validation",
+  "name": "Data Validation",
+  "summary": "Validate data with schemas across languages and formats. Use when defining JSON Schema, using Zod (TypeScript) or Pydantic (Python), validating API request/response shapes, checking CSV/JSON data integrity, or setting up data contracts bet.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_validation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gitgoodordietrying",
+      "features": [
+        "Validate data with schemas across languages and formats",
+        "Use when defining JSON Schema, using Zod (TypeScript) or Pydantic (Python), validating API requ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-validation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116975874?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-validation",
+      "url": "https://clawhub.ai/skills/data-validation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-validation",
+    "url": "https://clawhub.ai/skills/data-validation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-validation-5c6d4c4ece388ddd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-validation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-validation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae929ef42638a524e78fac95e0233ff0d20b91d694b636b08a02020f19e351ba",
+      "artifactSizeBytes": 2114
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T22:43:08.475Z"
+}

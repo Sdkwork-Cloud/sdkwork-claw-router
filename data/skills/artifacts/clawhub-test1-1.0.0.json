@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test1",
+  "skill": {
+    "id": 13035,
+    "skillKey": "clawhub-test1",
+    "name": "test1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test1",
+    "url": "https://clawhub.ai/skills/test1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test1-1b4f0e9851971998.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Trello boards, lists, and cards via the Trello REST API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaunceyliu",
+      "userId": "publishers:chaunceyliu",
+      "displayName": "ChaunceyLiu",
+      "image": "https://avatars.githubusercontent.com/u/18446173?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1470,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770301053119,
+      "changelog": "- Initial release of the Trello skill for Clawdbot.\n- Manage Trello boards, lists, and cards using the Trello REST API.\n- Provides setup instructions for API key and token.\n- Includes command examples for listing boards, lists, cards; creating, moving, archiving cards; and adding comments.\n- Notes on rate limits and API key/token security are provided.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:86bef9d5ab6805bef3c1ffe647873cf77611dcb2806da4e83f1a42d2be5fd420"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/leproxyfrancais@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leproxyfrancais",
+  "skill": {
+    "id": 54318,
+    "skillKey": "clawhub-leproxyfrancais",
+    "name": "Le Proxy Français"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leproxyfrancais",
+    "url": "https://clawhub.ai/skills/leproxyfrancais",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leproxyfrancais-46775ace236e3abd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Le Proxy Francais - 3 types de proxy francais (SOCKS5 + Navigateur Playwright). Scraping, monitoring, SEO, social."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lpf",
+      "userId": "s173nmt4zt3cc02b7qgjq13cph83txmm",
+      "displayName": "lpf",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774836354360,
+      "changelog": "Initial release of Le Proxy Francais (lpf_proxy) skill.\n\n- Provides 3 types of French proxy endpoints: Playwright browser (default), mutualized SOCKS5, and dedicated SOCKS5.\n- API key authentication required, with clear security guidelines to never expose your key.\n- Supports usage from Python, Node.js, or cURL; includes code examples for each case.\n- Suitable for scraping, monitoring, SEO, and social media automation with French IPs.\n- Includes quick local install instructions and links to all relevant documentation and code samples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6594d7448ae942b73112e6e0288c666093d51f731596d60a6336e7a0312a02e4"
+}

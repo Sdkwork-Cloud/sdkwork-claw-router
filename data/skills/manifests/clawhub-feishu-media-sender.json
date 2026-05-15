@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59589,
+  "uuid": "skill-clawhub-feishu-media-sender",
+  "skillKey": "clawhub-feishu-media-sender",
+  "name": "Feishu Media Sender",
+  "summary": "飞书媒体发送器 — 上传图片或视频并以媒体消息发送到飞书聊天中。图片直接预览，视频支持播放。补齐飞书渠道缺失的媒体投递能力。| Feishu Media Sender — Upload & send images/videos via Feishu OpenAPI with in-chat preview/pla...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_media_sender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yinranphoto",
+      "features": [
+        "飞书媒体发送器 — 上传图片或视频并以媒体消息发送到飞书聊天中。图片直接预览，视频支持播放。补齐飞书渠道缺失的媒体投递能力。| Feishu Media Sender — Upload &."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-media-sender@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132737003?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-media-sender",
+      "url": "https://clawhub.ai/skills/feishu-media-sender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-media-sender",
+    "url": "https://clawhub.ai/skills/feishu-media-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-media-sender-b66d354b70b8b5dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-media-sender@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-media-sender-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a826ee8b130ba5cd2e5c62ec9c526b8696ae03dd89c8b04f52920d7f748873cf",
+      "artifactSizeBytes": 2123
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T18:50:42.806Z"
+}

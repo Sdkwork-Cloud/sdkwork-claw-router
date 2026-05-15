@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70257,
+  "uuid": "skill-clawhub-cat-viking-memory",
+  "skillKey": "clawhub-cat-viking-memory",
+  "name": "Viking 记忆系统",
+  "summary": "支持五级自动记忆管理和重要记忆保护，集成飞书群聊会话自动保存与向量相似度检索，提升跨 Agent 记忆共享。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cat_viking_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guyxlouspg",
+      "features": [
+        "支持五级自动记忆管理和重要记忆保护，集成飞书群聊会话自动保存与向量相似度检索，提升跨 Agent 记忆共享。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cat-viking-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258257222?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cat-viking-memory",
+      "url": "https://clawhub.ai/skills/cat-viking-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cat-viking-memory",
+    "url": "https://clawhub.ai/skills/cat-viking-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cat-viking-memory-fd3237b7b4773ad9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cat-viking-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cat-viking-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c23c40137ee8589bc709653df329488d24684a83299fdc84501d106161df0dc",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T05:54:22.081Z"
+}

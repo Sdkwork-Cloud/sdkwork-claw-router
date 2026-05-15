@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/t-cpm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.t_cpm",
+  "skill": {
+    "id": 67411,
+    "skillKey": "clawhub-t-cpm",
+    "name": "t-cpm自定义技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "t-cpm",
+    "url": "https://clawhub.ai/skills/t-cpm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/t-cpm-97e6818e9317a66a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于conding-plan-models.json配置的AI强化识图筛选工具，支持关键词三维深度分析、多模型图片识别、严格内容审核、批量图片筛选，自动删除不符合要求的图片。触发场景：(1) 本地图片批量匹配关键词筛选 (2) 图片内容审核/合规校验 (3) 自定义规则图片识别分类 (4) 对接其他图片源的二次筛..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kumamon2019s",
+      "userId": "s173tg1xa240bcd524t0ct9kn583t82b",
+      "displayName": "Venwell Chiang",
+      "image": "https://avatars.githubusercontent.com/u/42192791?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774944150039,
+      "changelog": "t-cpm 1.0.0\n\n- 首发：AI强化图像筛选工具，基于conding-plan-models.json配置\n- 支持关键词三维深度分析，多模型图片识别与内容合规审核\n- 自动读取本地或目录图片，批量筛选并严格删除不符合标准的文件\n- 输出筛选结果统计，模块化结构便于扩展自定义规则和导出\n- Python脚本一键调用，参数灵活，适配多种识图场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c2c7acda799075e6b00651503f4102549580125d15e6aee815a85da68f8bbfa"
+}

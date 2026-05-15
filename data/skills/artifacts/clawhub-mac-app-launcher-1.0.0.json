@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mac-app-launcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mac_app_launcher",
+  "skill": {
+    "id": 64285,
+    "skillKey": "clawhub-mac-app-launcher",
+    "name": "mac-app-launcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mac-app-launcher",
+    "url": "https://clawhub.ai/skills/mac-app-launcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mac-app-launcher-0272766ba388c0a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询和打开 macOS 应用程序。通过关键词搜索已安装的 App，并使用 open 命令启动。 当用户要求查找、搜索、列出、打开某个 Mac 应用程序时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlutwuwei",
+      "userId": "s1790bqjfz22tdpqtw7rac6qph83hwf8",
+      "displayName": "wei.wu",
+      "image": "https://avatars.githubusercontent.com/u/3362483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 313,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773713856214,
+      "changelog": "Initial release of mac-app-launcher.\n\n- Quickly search installed macOS applications with keywords using Spotlight (`mdfind`).\n- Browse all apps if no keyword is given by listing common application directories.\n- Open applications directly via `open` with app name or full path.\n- Presents search results as a list with full paths if multiple matches found.\n- Prioritizes accuracy by using Spotlight first, with fallbacks to directory search.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a3cad95947431623ec91ae37d93a1e573574d32e4d9bd33d73661bb5219e6c3"
+}

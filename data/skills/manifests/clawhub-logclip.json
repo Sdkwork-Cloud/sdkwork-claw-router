@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45296,
+  "uuid": "skill-clawhub-logclip",
+  "skillKey": "clawhub-logclip",
+  "name": "Logclip",
+  "summary": "Extract and reformat timestamped log entries from text within a specified date range using custom patterns and output formats.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logclip",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "albionaiinc-del",
+      "features": [
+        "Extract and reformat timestamped log entries from text within a specified date range using cust."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/logclip@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269741383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "logclip",
+      "url": "https://clawhub.ai/skills/logclip"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logclip",
+    "url": "https://clawhub.ai/skills/logclip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logclip-e29ed13f99e8458b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/logclip@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-logclip-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:613e8f9493621a4e636b5754851c52dfa57d87d2dde8c681af124bd369fad0fe",
+      "artifactSizeBytes": 2201
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T09:20:23.788Z"
+}

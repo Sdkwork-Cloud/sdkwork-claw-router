@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/olambdao-dev@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.olambdao_dev",
+  "skill": {
+    "id": 14912,
+    "skillKey": "clawhub-olambdao-dev",
+    "name": "Olambdao Dev"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "olambdao-dev",
+    "url": "https://clawhub.ai/skills/olambdao-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/olambdao-dev-2d4377f276a276f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Play on-chain odd/even games on Solana devnet via Clawland. Mint GEM from SOL or USDC, bet odd or even, win 2x. Scripts handle wallet setup, minting, and autoplay."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "olambdao",
+      "userId": "publishers:olambdao",
+      "displayName": "olambdao",
+      "image": "https://avatars.githubusercontent.com/u/760514?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770732857359,
+      "changelog": "Clawland 1.0.0 initial release\n\n- Play on-chain odd/even games using GEM tokens on Solana devnet.\n- Scripts provided for wallet setup, minting GEM from SOL or USDC, linking wallet, and automated play.\n- Easy onboarding: wallet creation, integration with Clawland profile, and funding via AgentWallet faucet.\n- Off-chain (API-only) mode available for simpler REST-based play without a Solana wallet.\n- Full script documentation, API references, and outlined security precautions included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:94b1ed3233a6259eea68b5dfbec3221567711bca8368a464e7b3fe9598a8a08a"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38082,
+  "uuid": "skill-clawhub-pilot-task-router",
+  "skillKey": "clawhub-pilot-task-router",
+  "name": "Pilot Task Router",
+  "summary": "Route tasks to the best agent by capability and reputation. Use this skill when: 1. You need to find the most qualified agent for a specific task type 2. You...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_task_router",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Route tasks to the best agent by capability and reputation",
+        "Use this skill when: 1",
+        "You need to find the most qualified agent for a specific task type 2"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-task-router@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-task-router",
+      "url": "https://clawhub.ai/skills/pilot-task-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-task-router",
+    "url": "https://clawhub.ai/skills/pilot-task-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-task-router-9e136bfad5900cea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-task-router@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-task-router-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4cfe18a0a5544141812e3ab61c00bb2abe10494da6010fae06dae4b1869c0981",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T11:33:12.925Z"
+}

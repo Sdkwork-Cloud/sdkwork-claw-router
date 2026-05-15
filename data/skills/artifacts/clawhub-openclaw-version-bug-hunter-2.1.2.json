@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-version-bug-hunter@2.1.2",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_version_bug_hunter",
+  "skill": {
+    "id": 34324,
+    "skillKey": "clawhub-openclaw-version-bug-hunter",
+    "name": "Openclaw Version Bug Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-version-bug-hunter",
+    "url": "https://clawhub.ai/skills/openclaw-version-bug-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-version-bug-hunter-17dd80b7d7fdfadd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query version-specific GitHub bug reports with quality assessment markers; agent combines output with user config for contextual upgrade evaluation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suidge",
+      "userId": "s1769yn9ptpyx07673vcrfy2yd83jjt3",
+      "displayName": "Neo Shi",
+      "image": "https://avatars.githubusercontent.com/u/34770064?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.1.2",
+      "createdAt": 1778174498299,
+      "changelog": "Add human-friendly tutorial section to SKILL.md for ClawHub display. README and SKILL.md now consistent.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ff8fa1deec58eaaef9b47b8d59d354b8f30f3f0eff6e892536efb502322a77e"
+}

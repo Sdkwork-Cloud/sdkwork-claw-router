@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/webflow-china-speed@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webflow_china_speed",
+  "skill": {
+    "id": 61954,
+    "skillKey": "clawhub-webflow-china-speed",
+    "name": "Webflow 中国加速"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webflow-china-speed",
+    "url": "https://clawhub.ai/skills/webflow-china-speed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webflow-china-speed-27ad0657fd57d2b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Webflow + Cloudflare Worker 中国大陆访问加速专项技能。当用户想要优化 Webflow 网站在中国大陆的访问速度时，必须使用此技能。 触发场景：用户提到 Webflow 网站速度慢、中国大陆无法访问、CF Worker 反向代理优化、Google 资源被屏蔽、Webflow CDN 加速..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenyeah",
+      "userId": "s17ctqg17pf9h0ckb4cdhxyhn183g2j3",
+      "displayName": "申冶 Shenye",
+      "image": "https://avatars.githubusercontent.com/u/44078613?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774420444058,
+      "changelog": "No significant changes detected in this version.\n\n- No file changes were detected.\n- Skill description and core technical guidance remain unchanged.\n- Functionality and usage instructions are consistent with the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21507e748e4b6705f344f7ad47c33c91fe9a42392d6855acb7728124adb7e768"
+}

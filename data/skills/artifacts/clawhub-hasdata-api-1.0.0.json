@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hasdata-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hasdata_api",
+  "skill": {
+    "id": 28219,
+    "skillKey": "clawhub-hasdata-api",
+    "name": "HasData"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hasdata-api",
+    "url": "https://clawhub.ai/skills/hasdata-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hasdata-api-549116c1f8671baa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch real-time web data via the hasdata CLI. Use when the user wants search results, news, fact-checks, product or seller info, current prices, reviews, rea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hasdata",
+      "userId": "s17bn1yf0c6x9p0f2pbb4h2jpn85eg4f",
+      "displayName": "HasData",
+      "image": "https://hasdata.com/assets/components/images/logo.svg"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777146628911,
+      "changelog": "Initial release of hasdata skill with real-time web data access.\n\n- Added comprehensive support for fetching data via hasdata CLI covering search, shopping, news, real-estate, jobs, flights, images, reviews, scraping, and more.\n- Included detailed references for all available API endpoints and usage patterns.\n- Provided installation, configuration, and troubleshooting guides for the `hasdata` CLI and API key setup.\n- Documented best practices for mapping user intents to the correct CLI subcommand, with examples and trigger guidelines.\n- Supports advanced options like AI-extracted structured data, geo-targeting, and fan-out enrichment workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:faaae0b18cd4a3b6e01008c2472f6973eaec91b71ce8281443e71e9396d2cb98"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26691,
+  "uuid": "skill-clawhub-clawd-automator",
+  "skillKey": "clawhub-clawd-automator",
+  "name": "Automator",
+  "summary": "Create and manage complex automation workflows using OpenClaw. Orchestrate multi-step tasks, parallel processing, conditional logic, and scheduled automation...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawd_automator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fuhaolin",
+      "features": [
+        "Create and manage complex automation workflows using OpenClaw",
+        "Orchestrate multi-step tasks, parallel processing, conditional logic, and scheduled automation.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawd-automator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107407394?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawd-automator",
+      "url": "https://clawhub.ai/skills/clawd-automator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawd-automator",
+    "url": "https://clawhub.ai/skills/clawd-automator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawd-automator-e66612298840eca4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawd-automator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawd-automator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:daf7a61fa5edd7fe7021a594cd4229d4094c8d489028c7c96d81030cf881bd84",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T05:57:22.422Z"
+}

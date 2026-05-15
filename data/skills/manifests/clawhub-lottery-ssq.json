@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70245,
+  "uuid": "skill-clawhub-lottery-ssq",
+  "skillKey": "clawhub-lottery-ssq",
+  "name": "双色球选号系统 v2",
+  "summary": "双色球选号辅助系统 v2 - 基于历史数据的概率优化选号工具，支持动态冷热周期、AC 值/极距/尾数形态筛选、蓝球细化分析、多策略输出（稳健/均衡/激进）。每期输出 2 注主推 +3 注备选。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lottery_ssq",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nasplycc",
+      "features": [
+        "双色球选号辅助系统 v2",
+        "基于历史数据的概率优化选号工具，支持动态冷热周期、AC 值/极距/尾数形态筛选、蓝球细化分析、多策略输出（稳健/均衡/激进）。每期输出 2 注主推 +3 注备选。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lottery-ssq@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257000910?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lottery-ssq",
+      "url": "https://clawhub.ai/skills/lottery-ssq"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lottery-ssq",
+    "url": "https://clawhub.ai/skills/lottery-ssq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lottery-ssq-a22c7ab014bf116d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lottery-ssq@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lottery-ssq-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a228c5348e9aac1c45c4606cb1c35d52496b1523dc06408597f1566ece344889",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:45:27.002Z"
+}

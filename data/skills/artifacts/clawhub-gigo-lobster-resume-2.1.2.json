@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gigo-lobster-resume@2.1.2",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gigo_lobster_resume",
+  "skill": {
+    "id": 58556,
+    "skillKey": "clawhub-gigo-lobster-resume",
+    "name": "Gigo Lobster Resume"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gigo-lobster-resume",
+    "url": "https://clawhub.ai/skills/gigo-lobster-resume",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gigo-lobster-resume-01014c64603ea551.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🦞 GIGO · gigo-lobster-resume: 续跑入口：v2 stable 当前会清理旧 checkpoint 并从头重跑；保留此 slug 作为旧 checkpoint 兼容入口。 Triggers: 继续试吃 / 恢复评测 / resume tasting / continue lobster..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gigolab",
+      "userId": "s17epban6811fzs3wawrk0cb5585nww2",
+      "displayName": "gigolab",
+      "image": "https://avatars.githubusercontent.com/u/279745280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 459,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 23
+    },
+    "latestVersion": {
+      "version": "2.1.2",
+      "createdAt": 1777366176596,
+      "changelog": "2.1.2: fix leaderboard wording on cert/report so total_entries consistently means ranked entries, not all evaluations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1827f6e61050e65e740f1d5e61bec4b3e5e872a07be153316b4e4ec952d8e037"
+}

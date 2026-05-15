@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38139,
+  "uuid": "skill-clawhub-clarify-integration",
+  "skillKey": "clawhub-clarify-integration",
+  "name": "Clarify",
+  "summary": "Clarify integration. Manage data, records, and automate workflows. Use when the user wants to interact with Clarify data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clarify_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Clarify integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Clarify data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clarify-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clarify-integration",
+      "url": "https://clawhub.ai/skills/clarify-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clarify-integration",
+    "url": "https://clawhub.ai/skills/clarify-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clarify-integration-21b17498d90d5cf6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clarify-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clarify-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbe8a80b5680dfcae7e3e6b317528fc1344758395f11c3615809085fba1e89a5",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:30:46.931Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71297,
+  "uuid": "skill-clawhub-zk-cloze-format",
+  "skillKey": "clawhub-zk-cloze-format",
+  "name": "中考短文填空识别与格式化",
+  "summary": "中考短文填空识别与格式化技能。当用户上传中考短文填空题目图片（和答案图片）并要求识别、格式化、输出Word或推送飞书时触发。适用场景：(1) 上传题目图片+答案图片 (2) 要求识别并格式化短文填空 (3) 要求输出Word文档（答案置于题目下方）(4) 要求存入飞书多维表格（答案置于右侧列）(5) 要求推送至飞书",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zk_cloze_format",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Abendeng",
+      "features": [
+        "中考短文填空识别与格式化技能。当用户上传中考短文填空题目图片（和答案图片）并要求识别、格式化、输出Word或推送飞书时触发。适用场景：(1) 上传题目图片+答案图片 (2) 要求识别并格式化."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zk-cloze-format@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/153340209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zk-cloze-format",
+      "url": "https://clawhub.ai/skills/zk-cloze-format"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zk-cloze-format",
+    "url": "https://clawhub.ai/skills/zk-cloze-format",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zk-cloze-format-34422652c6cda8ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zk-cloze-format@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zk-cloze-format-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82fb6ec43de4b22752776acdc939b501eb10bab5b3677bbbc4463a679f0a0f5f",
+      "artifactSizeBytes": 2624
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T14:22:35.952Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-skills-context-engineering@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_skills_context_engineering",
+  "skill": {
+    "id": 15862,
+    "skillKey": "clawhub-agent-skills-context-engineering",
+    "name": "Agent Skills Context Engineering"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-skills-context-engineering",
+    "url": "https://clawhub.ai/skills/agent-skills-context-engineering",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-skills-context-engineering-ccbcd3745e99f2cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw wrapper for Muratcan Koylan's Agent Skills for Context Engineering. 13 skills covering context optimization, multi-agent patterns, memory systems, t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "levineam",
+      "userId": "s176d9bn1j0ncqa4vm4xx8d3s183pxae",
+      "displayName": "levineam",
+      "image": "https://avatars.githubusercontent.com/u/1668898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 799,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772308634188,
+      "changelog": "- Added post-install setup instructions to ensure context engineering auto-triggers are wired into user configuration.\n- On first load, skill now checks config files for auto-trigger rules and offers to add them if missing.\n- Provided ready-to-insert config snippet for seamless auto-trigger integration.\n- No changes to core sub-skills or auto-read trigger logic.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dd099c6972a3c3750fe60aaa6a220582d5445f5b426c198ec9a9093b0ff76e1d"
+}

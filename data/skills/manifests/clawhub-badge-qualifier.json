@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57292,
+  "uuid": "skill-clawhub-badge-qualifier",
+  "skillKey": "clawhub-badge-qualifier",
+  "name": "Badge Qualifier",
+  "summary": "Qualify trade show leads from badge scans, booth notes, or voice memos into scored CRM-ready cards. \"Score my booth leads\" / \"给展会线索打分\" / \"Leads qualifizieren...",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.badge_qualifier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weilun88313",
+      "features": [
+        "Qualify trade show leads from badge scans, booth notes, or voice memos into scored CRM-ready ca.",
+        "\"Score my booth leads\" / \"给展会线索打分\" / \"Leads qualifizieren..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/badge-qualifier@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33587196?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "badge-qualifier",
+      "url": "https://clawhub.ai/skills/badge-qualifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "badge-qualifier",
+    "url": "https://clawhub.ai/skills/badge-qualifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/badge-qualifier-f6576931ba742f77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/badge-qualifier@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-badge-qualifier-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00ca3179503e6dfbbafb49646b4deb20c6c9f6fdc9242faed02f906fcfabfc2f",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T07:53:50.746Z"
+}

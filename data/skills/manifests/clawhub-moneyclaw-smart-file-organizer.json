@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60535,
+  "uuid": "skill-clawhub-moneyclaw-smart-file-organizer",
+  "skillKey": "clawhub-moneyclaw-smart-file-organizer",
+  "name": "moneyclaw-smart-file-organizer",
+  "summary": "智能文件整理助手 - 一键自动分类、重命名、清理重复文件，4500+文件/秒",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moneyclaw_smart_file_organizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Silas",
+      "features": [
+        "智能文件整理助手",
+        "一键自动分类、重命名、清理重复文件，4500+文件/秒"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moneyclaw-smart-file-organizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255670107?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moneyclaw-smart-file-organizer",
+      "url": "https://clawhub.ai/skills/moneyclaw-smart-file-organizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moneyclaw-smart-file-organizer",
+    "url": "https://clawhub.ai/skills/moneyclaw-smart-file-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moneyclaw-smart-file-organizer-3ec315ca21eb967a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moneyclaw-smart-file-organizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moneyclaw-smart-file-organizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:631b75fa4218007285f83ea3de9b044f6826aa158b542d5c8f8b253a92de2258",
+      "artifactSizeBytes": 2480
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T14:00:02.204Z"
+}

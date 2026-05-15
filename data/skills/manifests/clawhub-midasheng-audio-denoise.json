@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26990,
+  "uuid": "skill-clawhub-midasheng-audio-denoise",
+  "skillKey": "clawhub-midasheng-audio-denoise",
+  "name": "midasheng-audio-denoise",
+  "summary": "Voice enhancement and noise reduction service. Accepts a noisy audio file and returns a clean, denoised version. Use when user needs to remove background noi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.midasheng_audio_denoise",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Junbo Zhang",
+      "features": [
+        "Voice enhancement and noise reduction service",
+        "Accepts a noisy audio file and returns a clean, denoised version",
+        "Use when user needs to remove background noi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/midasheng-audio-denoise@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1777456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "midasheng-audio-denoise",
+      "url": "https://clawhub.ai/skills/midasheng-audio-denoise"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "midasheng-audio-denoise",
+    "url": "https://clawhub.ai/skills/midasheng-audio-denoise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/midasheng-audio-denoise-06b542e19174a27b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/midasheng-audio-denoise@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-midasheng-audio-denoise-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f48234305fa91a5ad5e66db3bfd76a8bd2939dea7489020d6f903fa4b456d647",
+      "artifactSizeBytes": 2315
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T14:17:30.389Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24360,
+  "uuid": "skill-clawhub-sovereign-liquidity-sniffer",
+  "skillKey": "clawhub-sovereign-liquidity-sniffer",
+  "name": "Sovereign Liquidity Sniffer",
+  "summary": "Institutional-grade L2 Orderbook Imbalance (OBI) detector. Captures market maker footprints across OKX and Binance with millisecond precision.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sovereign_liquidity_sniffer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "System Architect Zero",
+      "features": [
+        "Institutional-grade L2 Orderbook Imbalance (OBI) detector",
+        "Captures market maker footprints across OKX and Binance with millisecond precision."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sovereign-liquidity-sniffer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261739543?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sovereign-liquidity-sniffer",
+      "url": "https://clawhub.ai/skills/sovereign-liquidity-sniffer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sovereign-liquidity-sniffer",
+    "url": "https://clawhub.ai/skills/sovereign-liquidity-sniffer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sovereign-liquidity-sniffer-987b15a5b5f8689d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sovereign-liquidity-sniffer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sovereign-liquidity-sniffer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:070769dd1c518b7f4b435beff6fe9805a6d8aa7c6f8b602b0e4568a15e858bd9",
+      "artifactSizeBytes": 2358
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T06:45:34.664Z"
+}

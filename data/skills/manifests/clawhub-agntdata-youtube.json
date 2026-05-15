@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26312,
+  "uuid": "skill-clawhub-agntdata-youtube",
+  "skillKey": "clawhub-agntdata-youtube",
+  "name": "YouTube API",
+  "summary": "Use one API key to pull YouTube data (channels, videos, search, and trends) for agents, automations, and analytics. Structured JSON, credit-based pricing, no se",
+  "version": "1.0.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agntdata_youtube",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaen",
+      "features": [
+        "Use one API key to pull YouTube data (channels, videos, search, and trends) for agents, automat.",
+        "Structured JSON, credit-based pricing, no se"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agntdata-youtube@1.0.15",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53541106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agntdata-youtube",
+      "url": "https://clawhub.ai/skills/agntdata-youtube"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agntdata-youtube",
+    "url": "https://clawhub.ai/skills/agntdata-youtube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agntdata-youtube-d4b755e1255b67e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agntdata-youtube@1.0.15",
+      "artifactUrl": "data/skills/artifacts/clawhub-agntdata-youtube-1.0.15.json",
+      "version": "1.0.15",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f2dd610707fdb4d835d723dab10e312c6e894bc773871bfb096b25edb08c10d",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T23:44:35.468Z"
+}

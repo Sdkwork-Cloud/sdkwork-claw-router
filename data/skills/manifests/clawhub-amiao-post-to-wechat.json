@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57785,
+  "uuid": "skill-clawhub-amiao-post-to-wechat",
+  "skillKey": "clawhub-amiao-post-to-wechat",
+  "name": "阿淼发公众号",
+  "summary": "Editor-first WeChat Official Account publishing skill. Posts content to WeChat Official Account (微信公众号) via API or browser, while prioritizing humanized writ...",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amiao_post_to_wechat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuxi304",
+      "features": [
+        "Editor-first WeChat Official Account publishing skill",
+        "Posts content to WeChat Official Account (微信公众号) via API or browser, while prioritizing humaniz."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amiao-post-to-wechat@3.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79346762?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amiao-post-to-wechat",
+      "url": "https://clawhub.ai/skills/amiao-post-to-wechat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amiao-post-to-wechat",
+    "url": "https://clawhub.ai/skills/amiao-post-to-wechat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amiao-post-to-wechat-731d03cbb5a1efc4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amiao-post-to-wechat@3.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-amiao-post-to-wechat-3.0.1.json",
+      "version": "3.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab05571088b0057a733905cc1785db2dfc6634cb73b937c034aa8e27b80ba201",
+      "artifactSizeBytes": 2087
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T01:12:47.019Z"
+}

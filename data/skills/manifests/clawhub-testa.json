@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72237,
+  "uuid": "skill-clawhub-testa",
+  "skillKey": "clawhub-testa",
+  "name": "test",
+  "summary": "为AIME（AI交易助手）生成综合用户行为分析报告。当用户要求分析用户行为、生成用户报告、分析交互模式、调查用户流失、了解用户参与度或从用户ID或日志数据创建分析文档时，使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.testa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HanYinBingReXue",
+      "features": [
+        "为AIME（AI交易助手）生成综合用户行为分析报告。当用户要求分析用户行为、生成用户报告、分析交互模式、调查用户流失、了解用户参与度或从用户ID或日志数据创建分析文档时，使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/testa@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114445850?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "testa",
+      "url": "https://clawhub.ai/skills/testa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "testa",
+    "url": "https://clawhub.ai/skills/testa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/testa-4417a30dc8c6b53f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/testa@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-testa-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:007dea4f27901a3ccfc1213d97471c36105320084416e19f3fb44959996a2717",
+      "artifactSizeBytes": 2258
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T02:33:24.526Z"
+}

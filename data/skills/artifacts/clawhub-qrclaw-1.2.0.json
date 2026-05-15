@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qrclaw@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qrclaw",
+  "skill": {
+    "id": 32070,
+    "skillKey": "clawhub-qrclaw",
+    "name": "QR Claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qrclaw",
+    "url": "https://clawhub.ai/skills/qrclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qrclaw-e65948323271f2bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate QR codes for any string or URL using the QRClaw open source service (qrclaw.goplausible.xyz). Use this skill whenever the user asks to create a QR c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emg110",
+      "userId": "s17afg2th7mgdmnh4k7dx5p73d83h8mk",
+      "displayName": "MG",
+      "image": "https://avatars.githubusercontent.com/u/1900448?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774165664327,
+      "changelog": "qrclaw v1.2.0\n\n- Simplified and streamlined the SKILL.md to focus on core usage and key implementation details.\n- Clarified API usage instructions for agents and CLI tools, including JSON response requirements.\n- Removed redundant usage examples and consolidated guidance on displaying results in different output channels.\n- Improved wording to clearly emphasize security and rate limits, and updated branding to highlight open source status.\n- Enhanced instructions for combining QRClaw with other tools and sharing across workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:907397c91b7b7e1c7fcfd110efd71fb77e9f918196fe61df900e9aebb75b13cf"
+}

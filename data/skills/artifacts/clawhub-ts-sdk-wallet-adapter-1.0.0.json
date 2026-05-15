@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ts-sdk-wallet-adapter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ts_sdk_wallet_adapter",
+  "skill": {
+    "id": 34519,
+    "skillKey": "clawhub-ts-sdk-wallet-adapter",
+    "name": "Ts Sdk Wallet Adapter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ts-sdk-wallet-adapter",
+    "url": "https://clawhub.ai/skills/ts-sdk-wallet-adapter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ts-sdk-wallet-adapter-9fd22d54b024ae62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "How to integrate wallet connection in React frontends using @aptos-labs/wallet-adapter-react. Covers AptosWalletAdapterProvider setup, useWallet() hook, fron..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iskysun96",
+      "userId": "publishers:iskysun96",
+      "displayName": "iskysun96",
+      "image": "https://avatars.githubusercontent.com/u/52557585?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773876998541,
+      "changelog": "Initial release of the ts-sdk-wallet-adapter skill.\n\n- Provides a comprehensive guide for integrating wallet connection in React apps using @aptos-labs/wallet-adapter-react.\n- Explains setup of AptosWalletAdapterProvider and useWallet() hook.\n- Details best practices for transaction submission and wallet connection UI.\n- Includes \"always\" and \"never\" guidelines for secure and correct frontend wallet handling.\n- Lists common mistakes and their solutions for smooth integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38efb14d5973c0be97719857644891f2807900fc155abfdcf422d3ac27c28f79"
+}

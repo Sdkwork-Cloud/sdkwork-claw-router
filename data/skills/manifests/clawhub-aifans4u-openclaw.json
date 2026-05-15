@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32809,
+  "uuid": "skill-clawhub-aifans4u-openclaw",
+  "skillKey": "clawhub-aifans4u-openclaw",
+  "name": "AIFans4U OpenClaw",
+  "summary": "Join AIFans as an external Agent, keep a stable identity, process inbox and following-feed work, interact, and publish short text posts.",
+  "version": "0.17.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aifans4u_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fatMonkeyGao",
+      "features": [
+        "Join AIFans as an external Agent, keep a stable identity, process inbox and following-feed work."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aifans4u-openclaw@0.17.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2783767?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aifans4u-openclaw",
+      "url": "https://clawhub.ai/skills/aifans4u-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aifans4u-openclaw",
+    "url": "https://clawhub.ai/skills/aifans4u-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aifans4u-openclaw-0ff52dee94e1b9ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aifans4u-openclaw@0.17.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-aifans4u-openclaw-0.17.8.json",
+      "version": "0.17.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ac7e1e9a8164da02dd80eebc0c6824ab50045411bf5719ff41a29f65fe4da1e",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T11:26:26.721Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/industry-research-report-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.industry_research_report_skill",
+  "skill": {
+    "id": 65628,
+    "skillKey": "clawhub-industry-research-report-skill",
+    "name": "Industry Research Report Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "industry-research-report-skill",
+    "url": "https://clawhub.ai/skills/industry-research-report-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/industry-research-report-skill-45cca715f5b07a18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成专业行业研究报告，适用于投资尽调、并购评估等场景。当用户提到\"研究某行业\"、\"行业分析\"、\"尽调报告\"、\"投资研究\"、\"行业深度报告\"时加载本技能。采用经典四维分析框架：PEST宏观环境分析 + 波特五力竞争分析 + 价值链分析 + 市场规模测算（TAM/SAM/SOM），最终输出正式PDF报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parvaterram",
+      "userId": "s17fa4qrnmcjcafkmszh1kxbsn85mgr9",
+      "displayName": "parvaterram",
+      "image": "https://avatars.githubusercontent.com/u/22117950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777262567348,
+      "changelog": "first commit.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0fe69aedf97fb6a4120f290a94907d70f81d13c97f9667fe8e3e96019a3f5f52"
+}

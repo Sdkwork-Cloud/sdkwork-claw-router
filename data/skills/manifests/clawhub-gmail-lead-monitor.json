@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36027,
+  "uuid": "skill-clawhub-gmail-lead-monitor",
+  "skillKey": "clawhub-gmail-lead-monitor",
+  "name": "Gmail Lead Monitor",
+  "summary": "Monitor a Gmail inbox for new emails matching keywords and send real-time Telegram alerts while starring important messages in Gmail.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_lead_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mike",
+      "features": [
+        "Monitor a Gmail inbox for new emails matching keywords and send real-time Telegram alerts while."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gmail-lead-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5358781?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gmail-lead-monitor",
+      "url": "https://clawhub.ai/skills/gmail-lead-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-lead-monitor",
+    "url": "https://clawhub.ai/skills/gmail-lead-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-lead-monitor-281fdcceacf37411.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gmail-lead-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gmail-lead-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b64cad1699df7df6b8f498c9afa6766f30418921314c5716f6fc22e470218b0",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T23:21:26.266Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/monero-profit-calculator-2026@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monero_profit_calculator_2026",
+  "skill": {
+    "id": 34669,
+    "skillKey": "clawhub-monero-profit-calculator-2026",
+    "name": "Monero Profitability Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monero-profit-calculator-2026",
+    "url": "https://clawhub.ai/skills/monero-profit-calculator-2026",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monero-profit-calculator-2026-e095bb5f7eb19295.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculates Monero mining profitability with inputs for hashrate, power, electricity cost, and current market parameters."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liumaimiao",
+      "userId": "s17acegnjt6mqvmw0j76w4kz91844vgb",
+      "displayName": "liumaimiao",
+      "image": "https://avatars.githubusercontent.com/u/131150921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773886171128,
+      "changelog": "Initial release: Simple profit calculator for XMR mining",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a86cf47f376b51ab4d12e5651142649ee2cee1d18d9d7421a7f774b3d4d8200"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59578,
+  "uuid": "skill-clawhub-proposal-comparator",
+  "skillKey": "clawhub-proposal-comparator",
+  "name": "Proposal Comparator",
+  "summary": "对比多个方案文档，输出差异、隐含成本、风险与推荐结论。；use for proposal, comparison, decision workflows；do not use for 忽略用户给的约束, 伪造数据支持结论.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proposal_comparator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "对比多个方案文档，输出差异、隐含成本、风险与推荐结论。；use for proposal, comparison, decision workflows；do not use for 忽略用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proposal-comparator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proposal-comparator",
+      "url": "https://clawhub.ai/skills/proposal-comparator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proposal-comparator",
+    "url": "https://clawhub.ai/skills/proposal-comparator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proposal-comparator-f14ccdbd6aeb9ef3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proposal-comparator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proposal-comparator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c50478f04a398cd3f28057b8938c08fdb1e9aac07d5301bbd721d60dbc99bded",
+      "artifactSizeBytes": 2585
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T04:33:00.556Z"
+}

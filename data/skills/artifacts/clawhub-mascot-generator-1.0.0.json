@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mascot-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mascot_generator",
+  "skill": {
+    "id": 44271,
+    "skillKey": "clawhub-mascot-generator",
+    "name": "Mascot Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mascot-generator",
+    "url": "https://clawhub.ai/skills/mascot-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mascot-generator-4f46fed284d9a2be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate custom brand mascots and cartoon characters with AI. Perfect for small businesses, startups, sports teams, schools, gaming clans, esports crews, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blammectrappora",
+      "userId": "s17e1t07j9b4mkk29p15qwbst983hdan",
+      "displayName": "blammectrappora",
+      "image": "https://avatars.githubusercontent.com/u/258436334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776454718385,
+      "changelog": "Initial release of mascot-generator.\n\n- Generate custom mascots and cartoon character illustrations via the Neta AI image generation API.\n- Ideal for businesses, teams, schools, gaming groups, and content creators seeking unique brand mascots or logos.\n- Configurable image size and style reference options.\n- Requires a Neta API token for use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb073cfcb720829e3d49ac18f1ca32925b2a301a29fd36317b7aba92541d8427"
+}

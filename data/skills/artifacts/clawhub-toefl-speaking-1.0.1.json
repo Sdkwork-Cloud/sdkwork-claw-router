@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toefl-speaking@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toefl_speaking",
+  "skill": {
+    "id": 62777,
+    "skillKey": "clawhub-toefl-speaking",
+    "name": "TOEFL Speaking Question Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toefl-speaking",
+    "url": "https://clawhub.ai/skills/toefl-speaking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toefl-speaking-13fc8f7cfbda11a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "托福口语面试部分出题引擎。AI 自动选定主题，生成 4 道递进式面试题和参考答案。不依赖固定主题库。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "saikewei",
+      "userId": "s17fym6s9e40m4qkgy93vnrchx83wxha",
+      "displayName": "saikewei",
+      "image": "https://avatars.githubusercontent.com/u/58879129?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777748982476,
+      "changelog": "- Enhanced the user interaction section to clarify step-by-step output, answer storage, and file update workflows.\n- Updated the reference to the answer template file from prompts/prompt-template.md to prompt-template.md.\n- No code changes; documentation refinement only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee433c3ee8c13c86a1ba2fd54821457c8870505a4b23644c877dd79d95182aa7"
+}

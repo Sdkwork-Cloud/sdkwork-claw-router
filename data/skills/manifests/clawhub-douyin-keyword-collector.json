@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27738,
+  "uuid": "skill-clawhub-douyin-keyword-collector",
+  "skillKey": "clawhub-douyin-keyword-collector",
+  "name": "Douyin Keyword Collector",
+  "summary": "Accessing the Douyin homepage through browser automation, entering keywords in the search bar and collecting relevant keyword suggestions in the automated pr...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_keyword_collector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenLark",
+      "features": [
+        "Accessing the Douyin homepage through browser automation, entering keywords in the search bar a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-keyword-collector@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260858787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-keyword-collector",
+      "url": "https://clawhub.ai/skills/douyin-keyword-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-keyword-collector",
+    "url": "https://clawhub.ai/skills/douyin-keyword-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-keyword-collector-b9ac7b0928be2632.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-keyword-collector@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-keyword-collector-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e38d5f046c4a69658e3c0337561ff5d36a2a719212dd0ebcd0d5b9ed8f24d0c",
+      "artifactSizeBytes": 2280
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T01:34:59.323Z"
+}

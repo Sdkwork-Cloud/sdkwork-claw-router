@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8901,
+  "uuid": "skill-clawhub-chromadb-memory",
+  "skillKey": "clawhub-chromadb-memory",
+  "name": "Chromadb Memory Pub",
+  "summary": "Long-term memory via ChromaDB with local Ollama embeddings. Auto-recall injects relevant context every turn. No cloud APIs required — fully self-hosted.",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chromadb_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "msensintaffar",
+      "features": [
+        "Long-term memory via ChromaDB with local Ollama embeddings",
+        "Auto-recall injects relevant context every turn",
+        "No cloud APIs required — fully self-hosted."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chromadb-memory@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6967917?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chromadb-memory",
+      "url": "https://clawhub.ai/skills/chromadb-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chromadb-memory",
+    "url": "https://clawhub.ai/skills/chromadb-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chromadb-memory-32efc6726969e3d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chromadb-memory@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-chromadb-memory-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2a2a12ab6169a9aeddbedae2b9747739400e8f1dfd20132e90758b1efe2ff23",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T20:21:41.944Z"
+}

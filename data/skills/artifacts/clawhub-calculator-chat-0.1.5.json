@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/calculator-chat@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calculator_chat",
+  "skill": {
+    "id": 65542,
+    "skillKey": "clawhub-calculator-chat",
+    "name": "Calculator Chat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calculator-chat",
+    "url": "https://clawhub.ai/skills/calculator-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calculator-chat-d324e0505af5ff7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用计算器数字回应用户。当用户发送 /calc-chat 或表达情感时，在系统计算器上显示对应数字（如 520=我爱你，88=再见）。支持中文谐音翻译。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenyfzero9211",
+      "userId": "s178akf2bvrhycy2g4mnhyz9ys83h490",
+      "displayName": "Yifan Shen",
+      "image": "https://avatars.githubusercontent.com/u/27129440?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 522,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1773423169535,
+      "changelog": "- Major update: Cross-platform support and enhanced security for calculator interactions.\n- Added platform-specific modules for Linux, Windows, and macOS.\n- Now launches and controls the system calculator more reliably using gnome-calculator with pre-filled equations.\n- Improved input and process validation to enhance security and reduce false positives in code scans.\n- Clearer, updated documentation with usage examples and technical details.\n- Removed obsolete files and reorganized project structure for maintainability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7a0d31cb23986bf45a7bc550d1dd8e7b15cee4c08785203cd9cc2e5f8232f3f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51877,
+  "uuid": "skill-clawhub-sardis",
+  "skillKey": "clawhub-sardis",
+  "name": "Sardis — Payment OS for AI Agents",
+  "summary": "Payment OS for AI agents. Create MPC wallets, execute stablecoin payments with automatic policy enforcement, set spending rules in natural language, check ba...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sardis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EfeDurmaz16",
+      "features": [
+        "Payment OS for AI agents",
+        "Create MPC wallets, execute stablecoin payments with automatic policy enforcement, set spending."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sardis@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75971010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sardis",
+      "url": "https://clawhub.ai/skills/sardis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sardis",
+    "url": "https://clawhub.ai/skills/sardis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sardis-221e4764115b6a31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sardis@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sardis-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f35d5f41f421193335a3cc03252bf4b1cfc377bc701e7078be472796c4e71fd",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T16:45:58.593Z"
+}

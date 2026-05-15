@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/temporam-skill@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.temporam_skill",
+  "skill": {
+    "id": 25109,
+    "skillKey": "clawhub-temporam-skill",
+    "name": "Temporam Temp Mail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "temporam-skill",
+    "url": "https://clawhub.ai/skills/temporam-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/temporam-skill-0c777faeb75d3ebb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides temporary email receiving functionality using the Temporam API. Use for: generating temporary email addresses, listing emails for a given address, r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shulkme",
+      "userId": "s17c93sjgcn37pndyx730yyc6n83jz0d",
+      "displayName": "shulkme",
+      "image": "https://avatars.githubusercontent.com/u/22583676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 396,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776235361858,
+      "changelog": "- Added support for retrieving the latest email for an address with the new `get_latest_email` capability.\n- Updated documentation to include usage instructions and workflow examples for the new `get_latest_email` method.\n- Removed unused files: openapi.yaml, references/api_reference.md, and tool_definition.json.\n- Bumped skill version to 1.1.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf30c0b2a122f2977b00257a1b962a19a52953dd07013f07c58cfa211a8d4641"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-video-downloader@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_video_downloader",
+  "skill": {
+    "id": 61498,
+    "skillKey": "clawhub-douyin-video-downloader",
+    "name": "Douyin Video Downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-video-downloader",
+    "url": "https://clawhub.ai/skills/douyin-video-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-video-downloader-84d4a1c83b5f5bb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抖音视频下载工具 - 通过第三方解析服务实现无水印视频下载"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ansonlianson",
+      "userId": "publishers:ansonlianson",
+      "displayName": "ansonlianson",
+      "image": "https://avatars.githubusercontent.com/u/45104824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1836,
+      "installsAllTime": 14,
+      "installsCurrent": 13,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772009113911,
+      "changelog": "- Updated description and documentation language to generalize use of third-party parsing services instead of specific mention of SnapAny.\n- Simplified download steps and usage instructions.\n- Streamlined and consolidated failure reasons into a table for clarity.\n- Removed sample video URLs and troubleshooting details for brevity.\n- Improved structure for easier reading and updated example URLs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:67048ac1f33373804d2d479f5a6d6a23ba1969cd36d65adb06268efff5834f6c"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34131,
+  "uuid": "skill-clawhub-gi-error-handling",
+  "skillKey": "clawhub-gi-error-handling",
+  "name": "GI Error Handling",
+  "summary": "Handle errors and logging following project conventions. Use when implementing exception handling, adding logs, or when the user asks for error handling patt...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gi_error_handling",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "laimiaohua",
+      "features": [
+        "Handle errors and logging following project conventions",
+        "Use when implementing exception handling, adding logs, or when the user asks for error handling."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gi-error-handling@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36961979?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gi-error-handling",
+      "url": "https://clawhub.ai/skills/gi-error-handling"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gi-error-handling",
+    "url": "https://clawhub.ai/skills/gi-error-handling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gi-error-handling-f0084b9690347296.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gi-error-handling@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gi-error-handling-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5379e541843bc42b19c722874f39b528de3f815d541c48ca161a4f8fe35efa8",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T01:58:40.577Z"
+}

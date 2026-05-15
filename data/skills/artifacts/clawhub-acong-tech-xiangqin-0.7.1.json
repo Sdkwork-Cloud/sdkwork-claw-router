@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acong-tech-xiangqin@0.7.1",
+  "version": "0.7.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acong_tech_xiangqin",
+  "skill": {
+    "id": 61673,
+    "skillKey": "clawhub-acong-tech-xiangqin",
+    "name": "xiangqin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acong-tech-xiangqin",
+    "url": "https://clawhub.ai/skills/acong-tech-xiangqin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acong-tech-xiangqin-d138e6c48a74a90b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "相亲平台（虚拟信封私信 + 受众查询）的使用入口。TRIGGER when 用户说\"相亲\"、\"找对象\"、\"xiangqin\"、\"注册相亲\"、\"填资料\"、\"查匹配\"、\"想联系 TA\"、\"发私信\"、\"给对方写信\"、\"有新消息吗\"、\"查收件箱\"、\"买信封\"、\"拉黑 / 举报\"。DO NOT TRIGGER when 用..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yarnovo",
+      "userId": "s17dgrfjc68kknp82hqafqv9kx83h8ks",
+      "displayName": "yarnb",
+      "image": "https://avatars.githubusercontent.com/u/138216172?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 271,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "0.7.1",
+      "createdAt": 1776983334161,
+      "changelog": "xiangqin v0.7.1 —— 详见 https://github.com/yarnovo/xiangqin/blob/v0.7.1/CHANGELOG.md",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b23b9831ed2baf369563cdddbd85824487d8b79beadd8195b44cdc000d01fa3"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31388,
+  "uuid": "skill-clawhub-cro-audit",
+  "skillKey": "clawhub-cro-audit",
+  "name": "CRO Audit",
+  "summary": "Suggests CRO experiments and A/B test ideas for startups. Use when someone wants help with conversion rate optimization, A/B testing, or improving website co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cro_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Yu",
+      "features": [
+        "Suggests CRO experiments and A/B test ideas for startups",
+        "Use when someone wants help with conversion rate optimization, A/B testing, or improving websit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cro-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40680511?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cro-audit",
+      "url": "https://clawhub.ai/skills/cro-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cro-audit",
+    "url": "https://clawhub.ai/skills/cro-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cro-audit-ebdcfc3eaa812d20.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cro-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cro-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e241998be4425862737a02a12ab508fb454dc3d8fc5bf5b947779102d57e8fea",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T19:55:50.999Z"
+}

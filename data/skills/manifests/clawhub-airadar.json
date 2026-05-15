@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12745,
+  "uuid": "skill-clawhub-airadar",
+  "skillKey": "clawhub-airadar",
+  "name": "ai-github-radar",
+  "summary": "Tracks and analyzes AI-native tools and GitHub repos with fast growth or major updates to reveal emerging trends in AI workflows and ecosystems.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airadar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yuri",
+      "features": [
+        "Tracks and analyzes AI-native tools and GitHub repos with fast growth or major updates to revea."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/airadar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216768289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "airadar",
+      "url": "https://clawhub.ai/skills/airadar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airadar",
+    "url": "https://clawhub.ai/skills/airadar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airadar-9f4995312ca5c802.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/airadar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-airadar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdfc128f72e3869d440448c656108318eb28af0393e4c0ded410be86381a6514",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T09:02:40.312Z"
+}

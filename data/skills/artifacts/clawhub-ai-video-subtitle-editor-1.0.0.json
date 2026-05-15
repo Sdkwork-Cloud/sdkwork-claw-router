@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-subtitle-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_subtitle_editor",
+  "skill": {
+    "id": 51398,
+    "skillKey": "clawhub-ai-video-subtitle-editor",
+    "name": "Ai Video Subtitle Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-subtitle-editor",
+    "url": "https://clawhub.ai/skills/ai-video-subtitle-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-subtitle-editor-458b6a9b92dd640f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, edit, and style subtitles for any video with AI — auto-transcribe speech to text, translate subtitles to 50+ languages, style with custom fonts and c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 283,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774702056382,
+      "changelog": "- Initial release of AI Video Subtitle Editor (v1.0.0).\n- Auto-transcribe speech to text with word-level timing accuracy.\n- Translate subtitles to 50+ languages, supporting right-to-left scripts.\n- Style subtitles with custom fonts, colors, positioning, and choose from multiple presets (TikTok animated, Netflix, YouTube, karaoke).\n- Edit text, adjust timing, and review subtitles before exporting.\n- Export videos with subtitles rendered directly in the video, supporting various aspect ratios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5da7134a5b77867ccfe86f028994d285e33829d903676221ce60de9338e066d"
+}

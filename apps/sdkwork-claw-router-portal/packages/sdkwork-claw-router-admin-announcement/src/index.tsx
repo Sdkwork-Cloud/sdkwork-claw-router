@@ -21,6 +21,7 @@ const targetOptions = [
 
 export function AnnouncementAdmin() {
   const [search, setSearch] = useState('');
+  const [editorTheme, setEditorTheme] = useState('light');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
@@ -62,6 +63,17 @@ export function AnnouncementAdmin() {
 
   useEffect(() => {
     return loadAnnouncements();
+  }, []);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const syncEditorTheme = () => {
+      setEditorTheme(root.classList.contains('dark') ? 'vs-dark' : 'light');
+    };
+    syncEditorTheme();
+    const observer = new MutationObserver(syncEditorTheme);
+    observer.observe(root, { attributes: true, attributeFilter: ['class', 'data-theme'] });
+    return () => observer.disconnect();
   }, []);
 
   const filteredAnnouncements = useMemo(() => {
@@ -339,11 +351,11 @@ export function AnnouncementAdmin() {
                     <span>Content</span>
                     <span className="text-xs text-slate-400 font-mono tracking-wider">MARKDOWN</span>
                   </label>
-                  <div className="flex-1 border border-slate-200 dark:border-white/10 rounded-lg overflow-hidden shadow-sm bg-[#1e1e1e] p-1">
+                  <div className="flex-1 border border-slate-200 dark:border-white/10 rounded-lg overflow-hidden shadow-sm bg-white dark:bg-[#1e1e1e] p-1">
                     <Editor
                       height="100%"
                       defaultLanguage="markdown"
-                      theme="vs-dark"
+                      theme={editorTheme}
                       value={content}
                       onChange={(val) => setContent(val || '')}
                       options={{

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/user-acquisition@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.user_acquisition",
+  "skill": {
+    "id": 72631,
+    "skillKey": "clawhub-user-acquisition",
+    "name": "新客拉新"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "user-acquisition",
+    "url": "https://clawhub.ai/skills/user-acquisition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/user-acquisition-fa948e3350fed16b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供新客拉新的可落地指南与SOP。在开展新客拉新相关工作时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774223527045,
+      "changelog": "Initial release of 新客拉新 (user-acquisition):\n\n- 提供新客拉新（用户获取）的落地指南与标准操作流程（SOP）。\n- 明确业务目标、核心指标、应用场景与负责人。\n- 包含详细操作步骤：范围定义、资源准备、SOP制定、数据接入、小流量试点、复盘优化、标准化沉淀。\n- 指标体系完善，主指标与守护指标分明，报表节奏标准化。\n- 强调风险控制，合规要求符合中国本地法规与数据保护规范。\n- 内附可复用清单，包括模板、脚本、Checklist、报表与会议纪要结构。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d54a944f1dbd8c02b37f25c32edc0b1d026acde0abb5c22cdc894d255aa061a"
+}

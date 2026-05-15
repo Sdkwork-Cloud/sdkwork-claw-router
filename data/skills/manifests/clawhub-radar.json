@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30947,
+  "uuid": "skill-clawhub-radar",
+  "skillKey": "clawhub-radar",
+  "name": "Radar",
+  "summary": "Radar integration. Manage Organizations. Use when the user wants to interact with Radar data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Radar integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Radar data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/radar@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "radar",
+      "url": "https://clawhub.ai/skills/radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "radar",
+    "url": "https://clawhub.ai/skills/radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/radar-ff2e963ff6d0c33a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/radar@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-radar-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e305811353fdab58340990ae34fc1119523b27985f38923385d83eb534ba85aa",
+      "artifactSizeBytes": 1779
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:30:40.184Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69270,
+  "uuid": "skill-clawhub-walter-info",
+  "skillKey": "clawhub-walter-info",
+  "name": "Walter Info",
+  "summary": "获取全球五大洲主要城市天气预报与跨境电商热点资讯，并生成格式化Markdown文档和JSON数据文件。当用户需要查询天气、跨境电商资讯，或要求生成报告时触发。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.walter_info",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "beyondbright",
+      "features": [
+        "获取全球五大洲主要城市天气预报与跨境电商热点资讯，并生成格式化Markdown文档和JSON数据文件。当用户需要查询天气、跨境电商资讯，或要求生成报告时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/walter-info@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9914857?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "walter-info",
+      "url": "https://clawhub.ai/skills/walter-info"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "walter-info",
+    "url": "https://clawhub.ai/skills/walter-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/walter-info-5c5a1cf7268026db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/walter-info@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-walter-info-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:239ddfe1bca70fd560f2a323cbe88bba0236ef5eaff4f0b32bc664054b5db359",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T15:52:00.848Z"
+}

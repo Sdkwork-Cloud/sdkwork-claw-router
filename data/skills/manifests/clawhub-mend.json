@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30932,
+  "uuid": "skill-clawhub-mend",
+  "skillKey": "clawhub-mend",
+  "name": "Mend",
+  "summary": "Mend integration. Manage data, records, and automate workflows. Use when the user wants to interact with Mend data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mend",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Mend integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Mend data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mend@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mend",
+      "url": "https://clawhub.ai/skills/mend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mend",
+    "url": "https://clawhub.ai/skills/mend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mend-7f1f4f910a8324e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mend@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mend-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3afaff52af458928f91d18f016c3a8fd065ff55421cc3002191e0ebb1028c255",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:12:58.949Z"
+}

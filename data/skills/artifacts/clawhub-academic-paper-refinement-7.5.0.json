@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/academic-paper-refinement@7.5.0",
+  "version": "7.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_paper_refinement",
+  "skill": {
+    "id": 67922,
+    "skillKey": "clawhub-academic-paper-refinement",
+    "name": "Academic Paper Refinement"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-paper-refinement",
+    "url": "https://clawhub.ai/skills/academic-paper-refinement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-paper-refinement-f2baba7d9b9c23f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "综合多评审系统的学术论文精修技能。适用于学术论文从初稿到终稿的全流程修订，包括多轮评审、意见整合、结构优化和语言润色。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuyaoshen",
+      "userId": "s17aa0746ksttz4er3pf6ybs8d847s36",
+      "displayName": "Yu Yaoshen",
+      "image": "https://avatars.githubusercontent.com/u/16790075?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "7.5.0",
+      "createdAt": 1775277587295,
+      "changelog": "Step 11 PDF完整性验证大幅增强：完整编译流程、参考文献/图片/交叉引用检查、一键验证脚本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8807a0c0384b3aaa1e25b6d6141c209fb2c727e925bb09d79a722ce0e089f72a"
+}

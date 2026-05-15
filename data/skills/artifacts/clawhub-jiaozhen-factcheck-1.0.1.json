@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jiaozhen-factcheck@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiaozhen_factcheck",
+  "skill": {
+    "id": 71134,
+    "skillKey": "clawhub-jiaozhen-factcheck",
+    "name": "jiaozhen-factcheck"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiaozhen-factcheck",
+    "url": "https://clawhub.ai/skills/jiaozhen-factcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiaozhen-factcheck-48da87593b20317b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "事实查证工具，对输入内容的具体说法、资讯、事件或常识进行真实性、准确性、可靠性判断。当用户需要较真一下，查证问题或判断信息真伪、识别谣言、询问真假，是真的吗，真的假的，能否xxx，可不可以，是谣言吗...等场景时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tencentnewsteam",
+      "userId": "s175jt7z9z0j4h1tzctzf5n05983k5q9",
+      "displayName": "TencentNewsTeam",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776235379233,
+      "changelog": "- Improved the main description to clarify that fact-checking applies to specific claims, information, events, or common knowledge, with enhanced phrasing for coverage and applicability.\n- No changes to logic, commands, or files; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93f2da42f796d9f0473b02648ef4e64186b99c6370dffcbd54d0c6c4e1ba31b4"
+}

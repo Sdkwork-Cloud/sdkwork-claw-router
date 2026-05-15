@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zeelin-deep-research-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeelin_deep_research_pro",
+  "skill": {
+    "id": 69194,
+    "skillKey": "clawhub-zeelin-deep-research-pro",
+    "name": "ZeeLin Deep Research 深度研究"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeelin-deep-research-pro",
+    "url": "https://clawhub.ai/skills/zeelin-deep-research-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeelin-deep-research-pro-b1e6f71a88cfde13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ZeeLin Deep Research 深度研究是一款 AI 驱动的专业研究辅助平台，支持一句话生成与多步骤生成，提供深度、专家两大研究路径。从快速信息梳理、系统分析到超万字专家报告全流程覆盖，依托多轮推理与多源数据整合，高效完成企业分析、市场洞察、招商研究等复杂任务，一站式提升研究效率与决策质量。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhushanwei",
+      "userId": "s17bj972q7npkh2a6v4bm3kqfh83jck7",
+      "displayName": "zhushanwei",
+      "image": "https://avatars.githubusercontent.com/u/53216479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773995115661,
+      "changelog": "ZeeLin Deep Research 1.0.0 — 首发上线\n\n- 首次发布，支持“深度研究”与“专家研究”两大 AI 辅助调研流程。\n- 实现任务自动推送 PDF 下载链接、后台异步执行，无需阻塞主会话。\n- 按需选择 deep/major 不同推理模式，快速覆盖企业分析、市场洞察、招商研究等复杂场景。\n- 提供详细配置与使用说明，支持自动获取 API Key、配置文件管理。\n- 内置多轮状态监控、错误处理与任务管理，提升调研效率与决策质量。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:230d8e3de6154f449dbda51bc02f5c57c8b283f60d12a293abb42f9abc713cba"
+}

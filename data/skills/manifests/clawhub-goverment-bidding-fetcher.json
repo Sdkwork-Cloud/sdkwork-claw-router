@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68167,
+  "uuid": "skill-clawhub-goverment-bidding-fetcher",
+  "skillKey": "clawhub-goverment-bidding-fetcher",
+  "name": "goverment bidding fetcher",
+  "summary": "地方政府采购商机自动抓取工具（非军队采购）。从北京中建云智、湖南政府采购网等地方政府采购平台抓取招标公告，按关键词过滤，补全采购人、代理机构、预算、时间节点等详情，生成 Excel 报表。与 milb-fetcher（军队采购）互补，本工具专注地方政府渠道。",
+  "version": "0.1.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goverment_bidding_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangpengle",
+      "features": [
+        "地方政府采购商机自动抓取工具（非军队采购）。从北京中建云智、湖南政府采购网等地方政府采购平台抓取招标公告，按关键词过滤，补全采购人、代理机构、预算、时间节点等详情，生成 Excel 报表。与."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goverment-bidding-fetcher@0.1.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152125462?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goverment-bidding-fetcher",
+      "url": "https://clawhub.ai/skills/goverment-bidding-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goverment-bidding-fetcher",
+    "url": "https://clawhub.ai/skills/goverment-bidding-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goverment-bidding-fetcher-6b757f5661f3092f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goverment-bidding-fetcher@0.1.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-goverment-bidding-fetcher-0.1.10.json",
+      "version": "0.1.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:820164963804e3782005bb5739d12639e38be30cf353260f14456b6ad486e1a2",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T03:04:19.360Z"
+}

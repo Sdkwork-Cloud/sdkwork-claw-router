@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60349,
+  "uuid": "skill-clawhub-browser-web-search",
+  "skillKey": "clawhub-browser-web-search",
+  "name": "Browser Web Search",
+  "summary": "一行命令搜遍全网 — 55 个平台 91+ 个命令，头条、知乎、豆瓣、YouTube、GitHub、Reddit、Hacker News 等。专为 OpenClaw 设计，复用浏览器登录态，返回结构化 JSON，天然适配 AI Agent 工具调用。",
+  "version": "0.4.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_web_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PING SI",
+      "features": [
+        "一行命令搜遍全网 — 55 个平台 91+ 个命令，头条、知乎、豆瓣、YouTube、GitHub、Reddit、Hacker News 等。专为 OpenClaw 设计，复用浏览器登录态，."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-web-search@0.4.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19371897?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-web-search",
+      "url": "https://clawhub.ai/skills/browser-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-web-search",
+    "url": "https://clawhub.ai/skills/browser-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-web-search-5102c7f91425f6a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-web-search@0.4.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-web-search-0.4.10.json",
+      "version": "0.4.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b51740ae39dee30fbe49b5c87a9c8aa78edf1ec12d55909d2ff76012e5ced729",
+      "artifactSizeBytes": 2476
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T02:59:05.773Z"
+}

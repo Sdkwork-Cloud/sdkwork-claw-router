@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/picture@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.picture",
+  "skill": {
+    "id": 72371,
+    "skillKey": "clawhub-picture",
+    "name": "Picture"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "picture",
+    "url": "https://clawhub.ai/skills/picture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/picture-2cea274d0bedc39e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供图片加载、保存、尺寸调整、裁剪、格式转换，智能增强，滤镜应用，拼接，背景移除和文字添加的全能图片处理工具。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hgta23",
+      "userId": "s176ns9wb0zkz6m56ha2rk438x843wcn",
+      "displayName": "bittao",
+      "image": "https://avatars.githubusercontent.com/u/17961407?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775539997797,
+      "changelog": "picture-edit 1.0.0 初始发布\n\n- 提供强大的图片基础操作，包括尺寸调整、裁剪、格式转换、加载和保存。\n- 支持智能图片增强，包括亮度、对比度、清晰度调节及一键自动优化。\n- 集成多种滤镜特效，如黑白、复古、模糊、轮廓、反色、像素化。\n- 实现图片拼接（横向、纵向、网格）及智能对齐功能。\n- 提供简易和自定义颜色的背景移除，支持边缘平滑处理。\n- 支持丰富的图片文字添加，包括多种预设位置、字体样式、旋转及中文支持。\n- 完善的 API 文档与基础示例代码，方便开发者快速集成使用。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ded0e34944470d129e820bb803818727ad3c5dc14f999f9686b8322ff00c210"
+}

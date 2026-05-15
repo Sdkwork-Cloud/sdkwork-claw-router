@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/picnow@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.picnow",
+  "skill": {
+    "id": 55638,
+    "skillKey": "clawhub-picnow",
+    "name": "Picnow — Image Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "picnow",
+    "url": "https://clawhub.ai/skills/picnow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/picnow-9afd6b62e9c60321.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate high-quality images via Picnow (api.letmego.top). Activate when the user wants to create, generate, draw, or design images — including product photo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeekchen",
+      "userId": "s173f300j681dxrv9x50arfmp9868yzn",
+      "displayName": "jeek",
+      "image": "https://avatars.githubusercontent.com/u/1102076?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 74,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778170125243,
+      "changelog": "- Initial release of Picnow image generation skill.\n- Supports high-quality text-to-image and image-to-image generation, including editing, style transfer, and background change.\n- Offers 1K, 2K, and 4K resolution options; supports square, landscape, and portrait aspect ratios.\n- Handles both English and Chinese trigger phrases for flexible activation.\n- Provides clear error handling and user guidance for missing or invalid API keys, quota issues, and network errors.\n- Outputs image URLs with options to preview, download, or generate variations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77909f1484a52ac8417a8214d14d7431062e68b3256ef4e17f426bea058e2788"
+}

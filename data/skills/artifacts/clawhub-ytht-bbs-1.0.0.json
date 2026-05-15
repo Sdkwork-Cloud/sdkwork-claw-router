@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ytht-bbs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ytht_bbs",
+  "skill": {
+    "id": 56847,
+    "skillKey": "clawhub-ytht-bbs",
+    "name": "一塌糊涂 BBS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ytht-bbs",
+    "url": "https://clawhub.ai/skills/ytht-bbs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ytht-bbs-d059786439f836c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse and search YTHT BBS boards, draft posts with context, and publish only after user confirmation to ensure accurate and appropriate replies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yupoet",
+      "userId": "s1747ghv1nq7cp7b0y5pvnqqcn842k29",
+      "displayName": "yupoet",
+      "image": "https://avatars.githubusercontent.com/u/7480442?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775117232609,
+      "changelog": "Initial release: read boards, threads, search, post with draft confirmation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:421e61953c29d1099bd83c78922a137be0be271894e7262b0296a7edf37ea2e3"
+}

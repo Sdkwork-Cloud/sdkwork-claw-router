@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9402,
+  "uuid": "skill-clawhub-clicksend",
+  "skillKey": "clawhub-clicksend",
+  "name": "ClickSend",
+  "summary": "ClickSend API integration with managed authentication. Send SMS, MMS, and voice messages, manage contacts and lists. Use this skill when users want to send t...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clicksend",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "ClickSend API integration with managed authentication",
+        "Send SMS, MMS, and voice messages, manage contacts and lists",
+        "Use this skill when users want to send t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clicksend@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clicksend",
+      "url": "https://clawhub.ai/skills/clicksend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clicksend",
+    "url": "https://clawhub.ai/skills/clicksend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clicksend-01a3aca779571321.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clicksend@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clicksend-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85f4d561e4e2edb62696f83c2beca491e52bdc64e4d8dcb2ee714caf62bd3e94",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T22:43:26.112Z"
+}

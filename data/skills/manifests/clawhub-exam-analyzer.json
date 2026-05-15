@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73517,
+  "uuid": "skill-clawhub-exam-analyzer",
+  "skillKey": "clawhub-exam-analyzer",
+  "name": "考点分析专家",
+  "summary": "从教学大纲或考试说明中精准提取并结构化核心考点，标注重要等级及对应题型，生成严格格式的考点作战地图。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exam_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "m18608401605",
+      "features": [
+        "从教学大纲或考试说明中精准提取并结构化核心考点，标注重要等级及对应题型，生成严格格式的考点作战地图。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exam-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258649939?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exam-analyzer",
+      "url": "https://clawhub.ai/skills/exam-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exam-analyzer",
+    "url": "https://clawhub.ai/skills/exam-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exam-analyzer-34b9a458f08f35cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exam-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-exam-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b027ad5d6cb1d34e583760b98df9428e70ae04b3c84857ea11ef6938178b5278",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T17:23:19.474Z"
+}

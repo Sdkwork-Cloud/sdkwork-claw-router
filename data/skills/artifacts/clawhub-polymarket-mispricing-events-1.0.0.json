@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-mispricing-events@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_mispricing_events",
+  "skill": {
+    "id": 34864,
+    "skillKey": "clawhub-polymarket-mispricing-events",
+    "name": "Polymarket Mispricing Events"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-mispricing-events",
+    "url": "https://clawhub.ai/skills/polymarket-mispricing-events",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-mispricing-events-f99800ae9958f054.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detects mispricings on Polymarket by cross-referencing Kalshi and Manifold consensus probability, then trades the gap using Kelly criterion sizing. Enters wh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mibayy",
+      "userId": "s179d2am41rchxqf8a7jwrjp4n83gaje",
+      "displayName": "Mibayy",
+      "image": "https://avatars.githubusercontent.com/u/97958526?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774063367641,
+      "changelog": "Initial release: cross-platform consensus trading (Kalshi+Manifold), Kelly sizing, 15% gap threshold",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8862758b9768c99cdda80dd4305b9b03dd7f265a5a81924629ed2473a3d107e7"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29662,
+  "uuid": "skill-clawhub-clear-prompt",
+  "skillKey": "clawhub-clear-prompt",
+  "name": "Clear Prompt Engineering",
+  "summary": "Transforms vague prompts into clear, structured instructions by specifying goals, context, output, key info, and exclusions for precise results.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clear_prompt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "371166758-qq",
+      "features": [
+        "Transforms vague prompts into clear, structured instructions by specifying goals, context, outp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clear-prompt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267607290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clear-prompt",
+      "url": "https://clawhub.ai/skills/clear-prompt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clear-prompt",
+    "url": "https://clawhub.ai/skills/clear-prompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clear-prompt-b402fe3f459cf255.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clear-prompt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clear-prompt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24d10973496aac41cd767b049fd0f83385e17122738525d0b13d5895fa9346f8",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T05:19:20.006Z"
+}

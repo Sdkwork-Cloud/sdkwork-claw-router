@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53246,
+  "uuid": "skill-clawhub-test-impact-analyzer",
+  "skillKey": "clawhub-test-impact-analyzer",
+  "name": "Test Impact Analyzer",
+  "summary": "Determine which tests need to run for a given code change — trace file dependencies, map source-to-test relationships, identify untested changes, and priorit...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_impact_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Determine which tests need to run for a given code change — trace file dependencies, map source."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-impact-analyzer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-impact-analyzer",
+      "url": "https://clawhub.ai/skills/test-impact-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-impact-analyzer",
+    "url": "https://clawhub.ai/skills/test-impact-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-impact-analyzer-a11e063a714125a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-impact-analyzer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-impact-analyzer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfed0fb2623f1e2a31e938cbe0839c4107ad317b42f8544b62b39a01e75ed0fe",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:03:12.587Z"
+}

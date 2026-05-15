@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opencli-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencli_agent",
+  "skill": {
+    "id": 68209,
+    "skillKey": "clawhub-opencli-agent",
+    "name": "opencli-agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencli-agent",
+    "url": "https://clawhub.ai/skills/opencli-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencli-agent-fff49bb06a477840.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户希望通过命令行自动化与网站或在线服务交互时，应使用本技能。它支持在 Twitter/X 上发帖、浏览 Reddit、获取 B站热门、下载小红书内容等 70+ 个平台的操作——全部通过 opencli 工具完成。触发场景包括社交媒体操作（发帖、点赞、关注、搜索）、内容获取（热门、时间线、动态流）、下载（视频、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhengmengkaizmk",
+      "userId": "s17dyam9kwqwew1x4vba9qbafd83hn4z",
+      "displayName": "zhengmengkaiZMK",
+      "image": "https://avatars.githubusercontent.com/u/53889163?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 518,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775454749400,
+      "changelog": "**Initial version introducing documentation, references, and setup scripts for the skill.**\n\n- Added detailed skill documentation (`SKILL.md`), including structured workflow, usage instructions, and troubleshooting.\n- Introduced command reference documentation for supported platforms and actions.\n- Provided a setup check script to verify environment readiness before running opencli commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f150de29fdd6cbf6c252b3dcc3b3c8d5d673a9ca288b6afd01951edc0d703e25"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ccfrank@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccfrank",
+  "skill": {
+    "id": 64514,
+    "skillKey": "clawhub-ccfrank",
+    "name": "ccfrank"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccfrank",
+    "url": "https://clawhub.ai/skills/ccfrank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccfrank-677a13e1fd475243.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询会议/期刊的 CCF 等级。当用户提到 CCF 等级、论文评级、会议排名、期刊等级，或需要查询某个会议/期刊是 CCF-A/B/C 时使用此技能。支持通过会议简称（如 PLDI、ICSE）、全称、或 DBLP URL 查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "m2kar",
+      "userId": "s1793qqteqjzyqvdmkzrac5evx83m4vz",
+      "displayName": "m2kar",
+      "image": "https://avatars.githubusercontent.com/u/16930652?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774508597091,
+      "changelog": "安装配置改为 npx --no-install 运行已安装包",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c06e6d8db3ab6887f92516605919f55f485b30d7fde091f85f343164b6914753"
+}

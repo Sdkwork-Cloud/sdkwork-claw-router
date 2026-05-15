@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59427,
+  "uuid": "skill-clawhub-review-miner",
+  "skillKey": "clawhub-review-miner",
+  "name": "Review Miner",
+  "summary": "从评论、评价和反馈中提炼卖点、痛点、反对意见与应删除的话术。；use for reviews, voice-of-customer, marketing workflows；do not use for 造假好评, 泄露用户身份.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_miner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "从评论、评价和反馈中提炼卖点、痛点、反对意见与应删除的话术。；use for reviews, voice-of-customer, marketing workflows；do not u."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/review-miner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "review-miner",
+      "url": "https://clawhub.ai/skills/review-miner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-miner",
+    "url": "https://clawhub.ai/skills/review-miner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-miner-843ff6aadc1eab74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/review-miner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-review-miner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63b031b4271dc20b7fc5b92694860385b74126da23d8b5d5ed77e1861f1f35ce",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:22:23.555Z"
+}

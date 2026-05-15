@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-shop@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_shop",
+  "skill": {
+    "id": 73298,
+    "skillKey": "clawhub-skill-shop",
+    "name": "技能商店客户端"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-shop",
+    "url": "https://clawhub.ai/skills/skill-shop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-shop-905d1eaca5e6fb34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "技能商店客户端，支持查询在线技能、一键下载安装技能包"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pig-gua",
+      "userId": "s1766604wha3ga0jvgzqyy5rpx83jjfn",
+      "displayName": "呱仔",
+      "image": "https://avatars.githubusercontent.com/u/80743187?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773580375084,
+      "changelog": "修复发布问题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f058c176eec91edab29c8ace22496201916c7ca8b979baaf8481682f53327023"
+}

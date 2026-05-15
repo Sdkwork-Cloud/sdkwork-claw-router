@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63324,
+  "uuid": "skill-clawhub-dingtalk-log",
+  "skillKey": "clawhub-dingtalk-log",
+  "name": "dingtalk-log",
+  "summary": "通过钉钉topapi/report/list接口按时间、模板名或员工ID分页查询企业员工日志列表，含日志详情和创建信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_log",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "3rdsw",
+      "features": [
+        "通过钉钉topapi/report/list接口按时间、模板名或员工ID分页查询企业员工日志列表，含日志详情和创建信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dingtalk-log@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62412876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dingtalk-log",
+      "url": "https://clawhub.ai/skills/dingtalk-log"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-log",
+    "url": "https://clawhub.ai/skills/dingtalk-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-log-28c6f2f056a9821b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dingtalk-log@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dingtalk-log-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e2929eb88579cf945c65e76e56fab215334092323396cb413faf0eac3acad37",
+      "artifactSizeBytes": 2289
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T08:51:21.049Z"
+}

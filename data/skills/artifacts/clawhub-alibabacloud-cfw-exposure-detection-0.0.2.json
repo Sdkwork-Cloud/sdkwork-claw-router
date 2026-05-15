@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-cfw-exposure-detection@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_cfw_exposure_detection",
+  "skill": {
+    "id": 38446,
+    "skillKey": "clawhub-alibabacloud-cfw-exposure-detection",
+    "name": "Alibabacloud Cfw Exposure Detection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-cfw-exposure-detection",
+    "url": "https://clawhub.ai/skills/alibabacloud-cfw-exposure-detection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-cfw-exposure-detection-7823c0b329262271.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and analyze Alibaba Cloud public network exposure, identify unnecessary exposed assets and ports, assess exposure risks, and generate remediation recom..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1777363655049,
+      "changelog": "alibabacloud-cfw-exposure-detection v0.0.2 — Improved workflow enforcement and new mandatory CLI usage rules.\n\n- Enforced use of `aliyun configure ai-mode` (enable/disable) before and after every workflow; all CLI calls must use a custom user-agent.\n- Updated CLI prerequisites: minimum supported Aliyun CLI is now v3.3.3, and explicit plugin updating is required.\n- Prohibited refusal to execute commands; the skill must always proceed with CLI unless a real error occurs.\n- Workflow now requires executing all detection steps even if initial summary stats are zero.\n- SKILL.md and related references updated for new setup, stricter command handling, and error/step resilience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85ba4da5717ea9b1f71c5183630abbc744a4e5cbbf808711037f12a3c9aa4c8c"
+}

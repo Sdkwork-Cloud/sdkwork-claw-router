@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73671,
+  "uuid": "skill-clawhub-court-sms",
+  "skillKey": "clawhub-court-sms",
+  "name": "法院短信识别与文书下载",
+  "summary": "本技能应在用户收到法院短信（文书送达、立案通知、开庭提醒等）时使用，自动提取案号、当事人、下载链接，下载文书并归档到对应案件目录。",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.court_sms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xierluo",
+      "features": [
+        "本技能应在用户收到法院短信（文书送达、立案通知、开庭提醒等）时使用，自动提取案号、当事人、下载链接，下载文书并归档到对应案件目录。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/court-sms@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66555304?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "court-sms",
+      "url": "https://clawhub.ai/skills/court-sms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "court-sms",
+    "url": "https://clawhub.ai/skills/court-sms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/court-sms-d7b1193dee93063b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/court-sms@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-court-sms-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6d3cf12a64f2d998987bfe6758d344195f5efdc415e5e04c45be24a89ba09dd",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T10:34:17.452Z"
+}

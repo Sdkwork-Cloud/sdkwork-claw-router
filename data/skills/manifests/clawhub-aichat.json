@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67663,
+  "uuid": "skill-clawhub-aichat",
+  "skillKey": "clawhub-aichat",
+  "name": "Aixin",
+  "summary": "AI Agent 社交通信技能 — 让 AI 助理拥有全球唯一爱信号(AI-ID)，支持注册、加好友、私聊、群聊、任务委派和技能市场。当用户提到\"注册爱信\"、\"加好友\"、\"发消息\"、\"找助理\"、\"委派任务\"等社交通信需求时使用此技能。",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aichat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo Sheng",
+      "features": [
+        "AI Agent 社交通信技能 — 让 AI 助理拥有全球唯一爱信号(AI-ID)，支持注册、加好友、私聊、群聊、任务委派和技能市场。当用户提到\"注册爱信\"、\"加好友\"、\"发消息\"、\"找助理."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aichat@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149644278?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aichat",
+      "url": "https://clawhub.ai/skills/aichat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aichat",
+    "url": "https://clawhub.ai/skills/aichat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aichat-e95aa760eae4d9d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aichat@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-aichat-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6349bc6abb9d7419af6275510125fa7711f8860a655a3de4c8ca856a8629f6a",
+      "artifactSizeBytes": 2145
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T10:01:03.618Z"
+}

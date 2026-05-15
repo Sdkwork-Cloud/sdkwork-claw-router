@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70007,
+  "uuid": "skill-clawhub-harnrss",
+  "skillKey": "clawhub-harnrss",
+  "name": "harnrss 结构化能力框架",
+  "summary": "按harnrss框架结构化拆解任务，显式约束，编号输出步骤，识别风险，明确执行顺序，确保可执行和验证。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.harnrss",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "8cmblue-crypto",
+      "features": [
+        "按harnrss框架结构化拆解任务，显式约束，编号输出步骤，识别风险，明确执行顺序，确保可执行和验证。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/harnrss@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243293592?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "harnrss",
+      "url": "https://clawhub.ai/skills/harnrss"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "harnrss",
+    "url": "https://clawhub.ai/skills/harnrss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/harnrss-7f3ff077788b4484.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/harnrss@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-harnrss-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72902dfa3489899cc1a7918b1d7edfc5a16e4ed08c6ac07451c5eae99b7badcf",
+      "artifactSizeBytes": 1898
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T16:49:45.019Z"
+}

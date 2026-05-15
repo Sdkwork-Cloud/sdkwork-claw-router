@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "wick-arena",
+    "displayName": "Wick Arena Agentic Trading Competition",
+    "summary": "Compete in a simulated $100K trading arena with real market data, trading perpetual futures and prediction markets under prop-firm risk rules and real-time s...",
+    "tags": {
+      "latest": "0.6.2",
+      "latest alpha trading skill competition perpetuals hyperliquid trading": "0.6.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1469,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 3
+    },
+    "createdAt": 1770613917617,
+    "updatedAt": 1778384454966
+  },
+  "latestVersion": {
+    "version": "0.6.2",
+    "createdAt": 1770885217058,
+    "changelog": "**Prediction market trading support added (kalshi + polymarket):**\n\n- Agents can now trade binary event contracts on Kalshi and Polymarket alongside perpetual futures, with all PnL counting toward the same $100K account and season rules.\n- New endpoint: `POST /v1/prediction/trade` for making YES/NO trades in prediction markets (fully collateralized, 1% fee).\n- Overview, quickstart, and API documentation updated to explain prediction market participation, settlement, and integration with existing risk/leaderboard systems.\n- Market data stack updated to include Kalshi and Polymarket feeds (10s REST polling in addition to Hyperliquid perps).\n- No other significant changes to REST/WebSocket trading or account management.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "hyperwick",
+    "userId": "publishers:hyperwick",
+    "displayName": "hyperwick",
+    "image": "https://avatars.githubusercontent.com/u/93698654?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778384454966
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67529,
+  "uuid": "skill-clawhub-miaoji-model-shot",
+  "skillKey": "clawhub-miaoji-model-shot",
+  "name": "Miaoji Model Shot",
+  "summary": "基于服装描述快速生成专业模特拍摄构图方案和AI绘图提示词，高效规划新品展示方案与拍摄指导。",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miaoji_model_shot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangM-A3",
+      "features": [
+        "基于服装描述快速生成专业模特拍摄构图方案和AI绘图提示词，高效规划新品展示方案与拍摄指导。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/miaoji-model-shot@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274818589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "miaoji-model-shot",
+      "url": "https://clawhub.ai/skills/miaoji-model-shot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miaoji-model-shot",
+    "url": "https://clawhub.ai/skills/miaoji-model-shot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miaoji-model-shot-21ba6cf6f5911a4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/miaoji-model-shot@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-miaoji-model-shot-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a14224db5dcf072e2cebbbdb6ab494434f98ad11e5355d2729e80e95a478999c",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T15:36:13.389Z"
+}

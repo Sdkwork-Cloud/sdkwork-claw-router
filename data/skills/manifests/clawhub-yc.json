@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50377,
+  "uuid": "skill-clawhub-yc",
+  "skillKey": "clawhub-yc",
+  "name": "yc",
+  "summary": "CLI for YC Startup School, a16z Speedrun, SPC, and startup program discovery — weekly updates, dashboard, applications, accelerator deadlines",
+  "version": "0.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yc",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lucasygu",
+      "features": [
+        "CLI for YC Startup School, a16z Speedrun, SPC, and startup program discovery — weekly updates,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yc@0.3.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37234721?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yc",
+      "url": "https://clawhub.ai/skills/yc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yc",
+    "url": "https://clawhub.ai/skills/yc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yc-95474ef85f37ce52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yc@0.3.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-yc-0.3.2.json",
+      "version": "0.3.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2ea5fa4230511824e5e009d7a287907b7ef52b0ffcabdef1aa9a5aafd8c69b7",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T04:12:04.719Z"
+}

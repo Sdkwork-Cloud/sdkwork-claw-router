@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68665,
+  "uuid": "skill-clawhub-aws-wechat-article-formatting",
+  "skillKey": "clawhub-aws-wechat-article-formatting",
+  "name": "公众号排版（Markdown → 微信 HTML）",
+  "summary": "公众号排版｜Markdown 转 HTML｜排版主题｜段落样式 — 公众号一键排版工具，Markdown 文稿转微信后台可粘贴 HTML，多主题、多字号、段落样式切换，所见即所得。面向公众号编辑、独立作者、排版岗。触发词：「排版」「版式」「美化」「格式化」「字号」「段落样式」「换个排版主题」「换个版式」「转 HT...",
+  "version": "1.0.22",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aws_wechat_article_formatting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "marsatwechat",
+      "features": [
+        "公众号排版｜Markdown 转 HTML｜排版主题｜段落样式 — 公众号一键排版工具，Markdown 文稿转微信后台可粘贴 HTML，多主题、多字号、段落样式切换，所见即所得。面向公众号."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aws-wechat-article-formatting@1.0.22",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19565483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aws-wechat-article-formatting",
+      "url": "https://clawhub.ai/skills/aws-wechat-article-formatting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aws-wechat-article-formatting",
+    "url": "https://clawhub.ai/skills/aws-wechat-article-formatting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aws-wechat-article-formatting-eb4f4f721f3db2c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aws-wechat-article-formatting@1.0.22",
+      "artifactUrl": "data/skills/artifacts/clawhub-aws-wechat-article-formatting-1.0.22.json",
+      "version": "1.0.22",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d9912e891113892e20396283f78eed5a6c8379d05ded90ed23b07f4c560354d",
+      "artifactSizeBytes": 2425
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T23:24:07.323Z"
+}

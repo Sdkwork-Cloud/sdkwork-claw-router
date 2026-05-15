@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/homestruk-lease-renewal@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.homestruk_lease_renewal",
+  "skill": {
+    "id": 33982,
+    "skillKey": "clawhub-homestruk-lease-renewal",
+    "name": "Homestruk Lease Renewal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "homestruk-lease-renewal",
+    "url": "https://clawhub.ai/skills/homestruk-lease-renewal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/homestruk-lease-renewal-c8cbf63cd783b670.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track lease expirations and manage the 90-day renewal process. Use when checking upcoming lease expirations, planning rent increases, drafting renewal offers..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adamsjb",
+      "userId": "s177eabkm6n64ftj8hjjrm4gth84309a",
+      "displayName": "Adams Jean Baptiste",
+      "image": "https://avatars.githubusercontent.com/u/22421595?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774200819457,
+      "changelog": "Initial release — introduces an end-to-end system for tracking and managing lease renewals.\n\n- Proactively flags leases expiring within 90 days, supporting timely tenant outreach and decision-making.\n- Guides users through a step-by-step 90-day renewal process, including assessment, pricing, offer drafting, and follow-ups.\n- Integrates with property, tenant, and rent-roll data to automate tracking and document preparation.\n- Supports rent increase decisions with market data via the homestruk-rent-comps skill.\n- Generates renewal offer drafts, manages negotiation timelines, and prepares for possible vacancies.\n- Provides a dashboard for quick status checks of all upcoming lease expirations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48e785915593bb817a5fd4fe2785f975ca124969f758d87710d5446e44b9ead3"
+}

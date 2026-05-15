@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ft-reader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ft_reader",
+  "skill": {
+    "id": 17149,
+    "skillKey": "clawhub-ft-reader",
+    "name": "Financial Times Deep Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ft-reader",
+    "url": "https://clawhub.ai/skills/ft-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ft-reader-f3fef8ffb97d2d56.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates login to FT.com to extract and provide detailed bilingual English-Chinese summaries of top Financial Times articles with academic rigor."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhouziyue233",
+      "userId": "publishers:zhouziyue233",
+      "displayName": "zhouziyue233",
+      "image": "https://avatars.githubusercontent.com/u/129715444?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 809,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771165137410,
+      "changelog": "Financial Times Deep Reader (ft-reader) 1.0.0\n\n- Initial release enabling automated, structured analysis of Financial Times articles.\n- Supports login and navigation using secure browser profile and credentials.\n- Extracts top \"Most Read\" articles as per user preference.\n- Produces bilingual (English-Chinese) summaries with academic rigor, including key arguments, data, and quotes.\n- Delivers detailed reports in a professional, concise format, suitable for academic and professional use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:78c5d963dcc48f4e113df207828889b7a32365d221706f6e34156007025bf24f"
+}

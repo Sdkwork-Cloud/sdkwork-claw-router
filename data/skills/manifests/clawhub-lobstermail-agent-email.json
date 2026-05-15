@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21550,
+  "uuid": "skill-clawhub-lobstermail-agent-email",
+  "skillKey": "clawhub-lobstermail-agent-email",
+  "name": "lobsterMail.ai - instant email for your agent",
+  "summary": "Email for AI agents. Create inboxes, receive and send email. No API keys, no human signup.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobstermail_agent_email",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samuel_chenard",
+      "features": [
+        "Email for AI agents",
+        "Create inboxes, receive and send email",
+        "No API keys, no human signup."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobstermail-agent-email@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194324339?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobstermail-agent-email",
+      "url": "https://clawhub.ai/skills/lobstermail-agent-email"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobstermail-agent-email",
+    "url": "https://clawhub.ai/skills/lobstermail-agent-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobstermail-agent-email-583f4a1c278fe466.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobstermail-agent-email@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobstermail-agent-email-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a34b0c979555cc29fb3b3675c2ed58d37f3dc97ad4976de5717d29d954a06ac",
+      "artifactSizeBytes": 2507
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T17:02:29.419Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawcall-dev@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawcall_dev",
+  "skill": {
+    "id": 8681,
+    "skillKey": "clawhub-clawcall-dev",
+    "name": "ClawCall"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawcall-dev",
+    "url": "https://clawhub.ai/skills/clawcall-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawcall-dev-ba32efa327243e46.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Make real AI-powered phone calls. Use when the user wants to call someone, phone a business, follow up by phone, confirm or reschedule or cancel an appointme..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawcall-dev",
+      "userId": "s174henvp13rgtz5m1vec4x7zx83xsd9",
+      "displayName": "ClawCall-dev",
+      "image": null
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 8313,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 5,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775104445095,
+      "changelog": "**ClawCall 1.0.2 adds local storage for API keys, improving call setup reliability.**\n\n- Now reads from and writes the user's API key to `~/.config/clawcall/key.json` for persistent use across sessions.\n- File permissions added: allows reading and writing the key file in the user's config directory.\n- Voice options updated: defaults to \"jessica\", with new voices \"sarah\", \"chris\", and \"eric\" available.\n- No API or core logic changes to call flow or requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6753bffb6ae15f4c9aa32aea62ac5645a763e1dee9075fe5c7f361737d1aeae0"
+}

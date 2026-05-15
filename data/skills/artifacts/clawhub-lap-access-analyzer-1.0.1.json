@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lap-access-analyzer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lap_access_analyzer",
+  "skill": {
+    "id": 23680,
+    "skillKey": "clawhub-lap-access-analyzer",
+    "name": "Lap Access Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lap-access-analyzer",
+    "url": "https://clawhub.ai/skills/lap-access-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lap-access-analyzer-470b0ea0828782b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access Analyzer API skill. Use when working with Access Analyzer for archive-rule, policy, access-preview. Covers 35 endpoints."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mickmicksh",
+      "userId": "s173hdss607zbfxv4jxwj0ae0583wwjt",
+      "displayName": "mickmicksh",
+      "image": "https://avatars.githubusercontent.com/u/214470470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 423,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774255210656,
+      "changelog": "- No functional or user-facing changes in this release.\n- SKILL.md file reverted with no detected content differences.\n- Version number not updated; remains at 1.0.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ecb40beebae03bbc9e43e5ad07f758db0f57966b3cd536b148f71a8e9c225c2"
+}

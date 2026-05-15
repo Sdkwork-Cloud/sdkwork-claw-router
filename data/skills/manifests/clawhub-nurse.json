@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22007,
+  "uuid": "skill-clawhub-nurse",
+  "skillKey": "clawhub-nurse",
+  "name": "Nurse",
+  "summary": "Clinical support system for nurses and frontline healthcare workers. Trigger whenever a nurse needs help with documentation, patient communication, care plan...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nurse",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Duclawbot",
+      "features": [
+        "Clinical support system for nurses and frontline healthcare workers",
+        "Trigger whenever a nurse needs help with documentation, patient communication, care plan..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nurse@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216468018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nurse",
+      "url": "https://clawhub.ai/skills/nurse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nurse",
+    "url": "https://clawhub.ai/skills/nurse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nurse-781e5116a1e14a34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nurse@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nurse-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:daf305d034b4980b50fa620a68a06ca2a1f450fe2af5b70e88b36a001883ed16",
+      "artifactSizeBytes": 1810
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T16:18:59.871Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22335,
+  "uuid": "skill-clawhub-cannon",
+  "skillKey": "clawhub-cannon",
+  "name": "Cannon",
+  "summary": "Cannon package manager for Ethereum deployments. Use when building, testing, deploying, or inspecting Cannon packages. Covers cannonfile syntax, CLI commands...",
+  "version": "2.26.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cannon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dbeal-eth",
+      "features": [
+        "Cannon package manager for Ethereum deployments",
+        "Use when building, testing, deploying, or inspecting Cannon packages",
+        "Covers cannonfile syntax, CLI commands..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cannon@2.26.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2107457?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cannon",
+      "url": "https://clawhub.ai/skills/cannon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cannon",
+    "url": "https://clawhub.ai/skills/cannon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cannon-19e0f50bcf2f6457.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cannon@2.26.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cannon-2.26.0.json",
+      "version": "2.26.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2506f23f5cff7fb358854b4d85f5398063d9753f890ff730d456b6068d327fb7",
+      "artifactSizeBytes": 1827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T13:53:43.698Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dynamic-skill-manager@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dynamic_skill_manager",
+  "skill": {
+    "id": 26784,
+    "skillKey": "clawhub-dynamic-skill-manager",
+    "name": "Dynamic Skill Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dynamic-skill-manager",
+    "url": "https://clawhub.ai/skills/dynamic-skill-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dynamic-skill-manager-7dec09c239ecefd2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track and manage OpenClaw skills usage, find idle skills, and safely uninstall unused ones. Use when: - User wants to see what skills are installed or track..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "welkeyever",
+      "userId": "s176v5zsjt00w5g8r8ermstxh5851azt",
+      "displayName": "Wenju Gao",
+      "image": "https://avatars.githubusercontent.com/u/9826697?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772856895366,
+      "changelog": "**v0.2.0 includes important security improvements and new usage features:**\n\n- Fixed path traversal and symlink vulnerabilities in skill uninstallation\n- Added strict input validation for skill names\n- Enhanced system skill protection to prevent accidental deletion\n- Updated usage to include safe uninstall commands\n- Refined when agents should use or recommend this skill based on context and security",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:882a5d25fd199631dbad5900117373988c20428f187b431ea5da6daa925afd33"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-doc-read@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_doc_read",
+  "skill": {
+    "id": 65730,
+    "skillKey": "clawhub-feishu-doc-read",
+    "name": "飞书读取云文档"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-doc-read",
+    "url": "https://clawhub.ai/skills/feishu-doc-read",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-doc-read-0034b96a51c6e2d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取飞书云文档内容。返回文档的 Markdown 内容，支持处理文档中的图片、文件和画板（需配合 feishu_doc_media 工具）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a3152557994-ship-it",
+      "userId": "s173ar224xha1b0e8jxxvg0r2985aes9",
+      "displayName": "a3152557994-ship-it",
+      "image": "https://avatars.githubusercontent.com/u/248589521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777012568529,
+      "changelog": "Initial release: Fetch and parse Feishu (Lark) cloud document contents as Markdown.\n\n- Supports both document URLs and tokens as input (including docs and knowledge base links).\n- Returns Markdown with placeholders for images, files, and whiteboards in HTML tag format.\n- Provides clear guidance for extracting and downloading embedded media using feishu_doc_media.\n- Includes detailed handling for knowledge base (wiki) links, ensuring correct type resolution via feishu_wiki_space_node.\n- Outlines tool usage and combination strategies for varied Feishu document types.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b54ed2471defa2110e833efee970cea3ce1b64811febcce156978ca823f904e0"
+}

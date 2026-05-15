@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53793,
+  "uuid": "skill-clawhub-hatcher-skill",
+  "skillKey": "clawhub-hatcher-skill",
+  "name": "Hatcher Host AI Agents Deployment",
+  "summary": "Deploy and control AI agents on Hatcher (hatcher.host) — managed hosting platform for OpenClaw, Hermes, ElizaOS, and Milady agents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hatcher_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HatcherLabs",
+      "features": [
+        "Deploy and control AI agents on Hatcher (hatcher.host) — managed hosting platform for OpenClaw,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hatcher-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267302768?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hatcher-skill",
+      "url": "https://clawhub.ai/skills/hatcher-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hatcher-skill",
+    "url": "https://clawhub.ai/skills/hatcher-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hatcher-skill-183d03253a82daad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hatcher-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hatcher-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7e35f4b2692b5c10980aedf5bb812050d441507cf8de864ba25eca55b680f83",
+      "artifactSizeBytes": 2361
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T19:42:27.333Z"
+}

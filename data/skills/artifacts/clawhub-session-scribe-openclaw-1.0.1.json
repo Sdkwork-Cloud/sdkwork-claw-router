@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-scribe-openclaw@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_scribe_openclaw",
+  "skill": {
+    "id": 52332,
+    "skillKey": "clawhub-session-scribe-openclaw",
+    "name": "Session Scribe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-scribe-openclaw",
+    "url": "https://clawhub.ai/skills/session-scribe-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-scribe-openclaw-b2fc0799a635f74c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically summarize active OpenClaw session transcripts into daily memory files using a cheap LLM. Run as a system cron job — reads new transcript entrie..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kitsune",
+      "userId": "s174sr9d64a47wd6p6nbcqezbd83kg6t",
+      "displayName": "Kitsune",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774415084484,
+      "changelog": "- Adds a privacy notice about sending transcripts to external LLM providers (OpenAI/Anthropic), including warnings about secrets/PII and recommendations for secure API key use.\n- Updates cron setup examples to recommend storing API keys in a protected file instead of inlining secrets in environment variables.\n- Documents support for `--api-key-file` and for scribing all sessions across all agents with `--agents-dir` and `--all-sessions`.\n- No functional changes to the skill logic itself.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a30c248c886988204a6ec6565d2554d2d6547f56b730e278c242da7431f9ca56"
+}

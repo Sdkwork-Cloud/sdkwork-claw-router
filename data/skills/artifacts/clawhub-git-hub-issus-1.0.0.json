@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-hub-issus@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_hub_issus",
+  "skill": {
+    "id": 16833,
+    "skillKey": "clawhub-git-hub-issus",
+    "name": "git-hub-issus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-hub-issus",
+    "url": "https://clawhub.ai/skills/git-hub-issus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-hub-issus-bdfea3462e1cf37b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local git operations for project management. Use when: (1) creating branches for new features/issues, (2) committing and pushing code, (3) pulling latest cha..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhulaoqi",
+      "userId": "publishers:zhulaoqi",
+      "displayName": "zhulaoqi",
+      "image": "https://avatars.githubusercontent.com/u/46341379?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 835,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773157592587,
+      "changelog": "他可以将issus识别为需求并操作claudecode进行开发",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:368f53d9c361611fcdb0e80136729d3e50a20f66545e48fe1779bbcd66a9cc23"
+}

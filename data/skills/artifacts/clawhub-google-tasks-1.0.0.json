@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-tasks@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_tasks",
+  "skill": {
+    "id": 10745,
+    "skillKey": "clawhub-google-tasks",
+    "name": "Google Tasks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-tasks",
+    "url": "https://clawhub.ai/skills/google-tasks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-tasks-88e0eb356c473d26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch, display, create, and delete Google Tasks using the Google Tasks API. Use when the user asks to check, view, list, get, add, create, remove, or delete their Google Tasks, to-do lists, or task items. Handles OAuth authentication autom."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "addozhang",
+      "userId": "s17292626ewt0mmj5fmj13cegh84eqke",
+      "displayName": "Addo.Zhang",
+      "image": "https://avatars.githubusercontent.com/u/2224492?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2309,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770348659366,
+      "changelog": "Initial release: View, create, and delete Google Tasks using lightweight bash scripts with OAuth authentication. No Python dependencies required.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7b494a794559d6ab74fe116f3f07d5a5cf691e300e0280587312738549e97768"
+}

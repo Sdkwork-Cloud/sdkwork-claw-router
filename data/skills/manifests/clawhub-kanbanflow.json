@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37829,
+  "uuid": "skill-clawhub-kanbanflow",
+  "skillKey": "clawhub-kanbanflow",
+  "name": "Kanbanflow",
+  "summary": "KanbanFlow integration. Manage Boards, Users, Tags. Use when the user wants to interact with KanbanFlow data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kanbanflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "KanbanFlow integration",
+        "Manage Boards, Users, Tags",
+        "Use when the user wants to interact with KanbanFlow data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kanbanflow@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kanbanflow",
+      "url": "https://clawhub.ai/skills/kanbanflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kanbanflow",
+    "url": "https://clawhub.ai/skills/kanbanflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kanbanflow-a22f0211a0717b78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kanbanflow@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kanbanflow-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88286dca0da3b412865ed009bcc857066e8187649f9aa12d7608e85363774964",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:39:47.219Z"
+}

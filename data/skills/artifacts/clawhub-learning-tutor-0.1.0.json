@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/learning-tutor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learning_tutor",
+  "skill": {
+    "id": 33686,
+    "skillKey": "clawhub-learning-tutor",
+    "name": "Learning Tutor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learning-tutor",
+    "url": "https://clawhub.ai/skills/learning-tutor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learning-tutor-e5579ecd27f7d34d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A general-purpose learning tutor skill for any domain. Use Socratic teaching to guide the user through concepts, track their evolving knowledge map (mastered..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vaintwyt",
+      "userId": "s177t9nx6h1hkgbjd1zznbqy1d83jpqj",
+      "displayName": "vaintwyt",
+      "image": "https://avatars.githubusercontent.com/u/3339127?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774517008843,
+      "changelog": "- Initial release of the Learning Tutor skill with Socratic teaching methods across any subject.\n- Automatically tracks user's mastered topics, knowledge gaps, and learning interests to personalize guidance.\n- Proactively suggests foundational concepts and timely learning reminders based on conversation cues.\n- Retrieves and summarizes up-to-date, high-quality information and research from trusted academic and technical sources.\n- Specialized flow for paper/report walkthroughs: delivers structured summaries first, then encourages interactive, Socratic exploration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87f1dbae88b828bb898c7e8eec410db80b8b2785f3f4cf248f97179d742fa488"
+}

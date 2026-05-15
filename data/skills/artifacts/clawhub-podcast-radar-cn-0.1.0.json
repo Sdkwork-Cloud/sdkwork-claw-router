@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/podcast-radar-cn@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_radar_cn",
+  "skill": {
+    "id": 57820,
+    "skillKey": "clawhub-podcast-radar-cn",
+    "name": "中文播客雷达"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-radar-cn",
+    "url": "https://clawhub.ai/skills/podcast-radar-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-radar-cn-8c15e467763c7c14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover, compare, and curate trending Chinese podcasts or episodes from 中文播客榜. Use for hot or recent show discovery, creator benchmarking, curation lists, c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cellinlab",
+      "userId": "s174y213bsdrc75e878jghxphh841v00",
+      "displayName": "cellinlab",
+      "image": "https://avatars.githubusercontent.com/u/46317258?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775546201686,
+      "changelog": "Improve OpenClaw and ClawHub compatibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76364c828c151fc0aee3d74380947f96b1c4ba50df3b939d496c9e640a1f2152"
+}

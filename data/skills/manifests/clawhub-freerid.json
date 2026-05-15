@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34303,
+  "uuid": "skill-clawhub-freerid",
+  "skillKey": "clawhub-freerid",
+  "name": "free",
+  "summary": "Manages free AI models from OpenRouter for OpenClaw. Automatically ranks models by quality, configures fallbacks for rate-limit handling, and updates opencla...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freerid",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "goozdx-eng",
+      "features": [
+        "Manages free AI models from OpenRouter for OpenClaw",
+        "Automatically ranks models by quality, configures fallbacks for rate-limit handling, and update."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/freerid@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252256487?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "freerid",
+      "url": "https://clawhub.ai/skills/freerid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freerid",
+    "url": "https://clawhub.ai/skills/freerid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freerid-a834d6794885ac1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/freerid@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-freerid-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c987ecf92f1144b78fe54da84bacacfdb75ed9d094524ba513762a33186b003a",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T07:29:29.200Z"
+}

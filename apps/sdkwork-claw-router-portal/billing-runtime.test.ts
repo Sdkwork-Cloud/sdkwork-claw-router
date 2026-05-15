@@ -5,6 +5,7 @@ import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commo
 import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
 import { BillingService } from "./packages/sdkwork-claw-router-console-billing/src/billingService.ts";
 import { CheckoutService } from "./packages/sdkwork-claw-router-console-billing/src/checkoutService.ts";
+import { CommerceFoundationService } from "./packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts";
 
 const originalFetch = globalThis.fetch;
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
@@ -66,7 +67,7 @@ test("billing redeem code uses the generated app SDK path and returns confirmed 
         amount: "12.50",
       });
       assert.equal(captured.length, 1);
-      assert.equal(captured[0].url, "/app/v3/api/coupons/redeem");
+      assert.equal(captured[0].url, "/app/v3/api/billing/coupons/redeem");
       assert.equal(captured[0].method, "POST");
       assert.match(captured[0].body, /GIFT-2026/);
     },
@@ -425,7 +426,7 @@ test("checkout status uses the generated app SDK path and returns confirmed stat
 
       assert.deepEqual(result, checkoutStatusResponse());
       assert.equal(captured.length, 1);
-      assert.equal(captured[0].url, "/app/v3/api/payments/checkout/ORDER-20260505");
+      assert.equal(captured[0].url, "/app/v3/api/billing/payments/checkout/ORDER-20260505");
       assert.equal(captured[0].method, "GET");
     },
   );
@@ -514,6 +515,33 @@ test("checkout status fails closed when app SDK returns unsupported payment stat
       );
     },
   );
+});
+
+test("commerce foundation service calls generated app SDK account points paths", async () => {
+  await withBillingSdkResponse(
+    { code: "2000", data: { availablePoints: 125, frozenPoints: 0 } },
+    async (captured) => {
+      const result = await CommerceFoundationService.retrieveAccountPoints();
+
+      assert.deepEqual(result, { availablePoints: 125, frozenPoints: 0 });
+      assert.equal(captured.length, 1);
+      assert.equal(captured[0].url, "/app/v3/api/billing/account/points");
+      assert.equal(captured[0].method, "GET");
+    },
+  );
+});
+
+test("commerce foundation service uses generated SDK types instead of loose record wrappers", async () => {
+  const source = await import("node:fs/promises").then((fs) =>
+    fs.readFile(
+      new URL("./packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts", import.meta.url),
+      "utf8",
+    ),
+  );
+
+  assert.match(source, /CommerceWalletCommandRequest/);
+  assert.doesNotMatch(source, /type\s+Params\s*=\s*Record<string,\s*unknown>/);
+  assert.doesNotMatch(source, /type\s+Body\s*=\s*Record<string,\s*unknown>/);
 });
 
 function checkoutStatusResponse(overrides: Partial<Record<string, unknown>> = {}): Record<string, unknown> {

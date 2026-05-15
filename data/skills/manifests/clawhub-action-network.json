@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27981,
+  "uuid": "skill-clawhub-action-network",
+  "skillKey": "clawhub-action-network",
+  "name": "Action Network",
+  "summary": "Action Network integration. Manage data, records, and automate workflows. Use when the user wants to interact with Action Network data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.action_network",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Action Network integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Action Network data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/action-network@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "action-network",
+      "url": "https://clawhub.ai/skills/action-network"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "action-network",
+    "url": "https://clawhub.ai/skills/action-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/action-network-3b55faaa1ec78b0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/action-network@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-action-network-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1dc53e3d92cb9f41075c8fca2dcea798e52d2c6a7f308b55e226b130f2163035",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:13:58.743Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/creator-casting-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creator_casting_tool",
+  "skill": {
+    "id": 42665,
+    "skillKey": "clawhub-creator-casting-tool",
+    "name": "Creator Casting Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creator-casting-tool",
+    "url": "https://clawhub.ai/skills/creator-casting-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creator-casting-tool-efcb575d0c77ffe1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find the right creators for any brand campaign, activation, or ambassador program. Takes a campaign brief (brand, vibe, category, budget, audience), searches..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexa853",
+      "userId": "s173jnhbtp4zgtc0q999yn4bj9849fz3",
+      "displayName": "alexa853",
+      "image": "https://avatars.githubusercontent.com/u/257571007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775361228349,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29d38909906d0b2376e56d3fdc542821af7eb7c19495b79668f678a3ca29bde0"
+}

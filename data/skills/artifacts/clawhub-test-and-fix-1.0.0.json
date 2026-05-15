@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-and-fix@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_and_fix",
+  "skill": {
+    "id": 64163,
+    "skillKey": "clawhub-test-and-fix",
+    "name": "Test And Fix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-and-fix",
+    "url": "https://clawhub.ai/skills/test-and-fix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-and-fix-2b1a4b6c5172ce00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "执行项目校验命令（lint、type-check、test、build），分析失败原因，安全修复问题，并将总结报告保存为 Markdown 文件。当用户要求检查、验证、测试代码改动时自动激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bovinphang",
+      "userId": "s175m64gr8tsfc06cj22czzfys83mp52",
+      "displayName": "Bovin Phang",
+      "image": "https://avatars.githubusercontent.com/u/17447895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774942491422,
+      "changelog": "Version 1.1.0\n\n- 全新增加自动化测试与修复流程，自动激活于校验、验证、测试等需求场景。\n- 执行 lint、type-check、unit test、build 等命令，按顺序定位与修复常见问题。\n- 生成详细的修复报告（Markdown 格式），包含执行结果、发现的问题、风险与修复明细。\n- 修复报告自动存储于项目根目录的 reports 目录，附带时间戳，便于追踪记录。\n- 强化改动约束，防止为消除报错盲目关闭规则或降低类型安全。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c7a3088553e8bc642039b55e6a99ab99291d55bfebe1f0a4deeea7f36ab11e7"
+}

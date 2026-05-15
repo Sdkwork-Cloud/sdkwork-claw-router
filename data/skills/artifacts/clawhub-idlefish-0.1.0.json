@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/idlefish@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idlefish",
+  "skill": {
+    "id": 73338,
+    "skillKey": "clawhub-idlefish",
+    "name": "闲鱼"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idlefish",
+    "url": "https://clawhub.ai/skills/idlefish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idlefish-950dd3ef37345b35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "该技能介绍如何通过闲鱼卖货实现变现；当你计划从事或优化闲鱼卖货时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773938465643,
+      "changelog": "闲鱼卖货技能上线，帮助用户系统化实现闲鱼卖货变现目标。\n\n- 涵盖90天卖货闭环搭建流程\n- 明确人群定位及不适用场景\n- 提供完整变现模型与执行步骤\n- 收录常见坑位、合规风险与工具清单\n- 附带30日详细执行计划及检查SOP",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcba1db8e2f19e7278ae269da52bf104f04ace9cadd4c22a51a70e7e43bcce7f"
+}

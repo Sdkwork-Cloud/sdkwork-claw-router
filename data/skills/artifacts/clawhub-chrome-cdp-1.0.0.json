@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chrome-cdp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chrome_cdp",
+  "skill": {
+    "id": 65402,
+    "skillKey": "clawhub-chrome-cdp",
+    "name": "chrome-cdp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chrome-cdp",
+    "url": "https://clawhub.ai/skills/chrome-cdp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chrome-cdp-db64ababb0b9b000.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过Chrome远程调试协议访问已打开的Chrome标签页，支持读取登录状态页面及与真实页面交互操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adminlove520",
+      "userId": "s179x72c6jesddn1707vxetp1d83j11q",
+      "displayName": "Anonymous",
+      "image": "https://avatars.githubusercontent.com/u/32920883?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1038,
+      "installsAllTime": 13,
+      "installsCurrent": 12,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773548087414,
+      "changelog": "Initial release of chrome-cdp-skill.\n\n- Enables AI agents to access and interact with your open Chrome tabs using the Chrome DevTools Protocol (CDP).\n- Supports reading logged-in pages, interacting with live tabs, and accessing actual in-use page states.\n- Provides a command-line interface to list tabs, take screenshots, extract HTML, click elements, type, navigate, and evaluate JavaScript.\n- Integrates with OpenClaw via direct script execution, MCP server, or as a Skill.\n- Requires Chrome with remote debugging enabled and Node.js 22+.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd54e49ee14d36faf448d525710319ffceb5975688cf759e17a77b2b1add6641"
+}

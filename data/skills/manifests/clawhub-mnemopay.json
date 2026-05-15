@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42993,
+  "uuid": "skill-clawhub-mnemopay",
+  "skillKey": "clawhub-mnemopay",
+  "name": "MnemoPay",
+  "summary": "Give any AI agent persistent memory and a wallet. Remember facts across sessions, recall with semantic search, charge for work delivered, track reputation. 1...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mnemopay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "t49qnsx7qt-kpanks",
+      "features": [
+        "Give any AI agent persistent memory and a wallet",
+        "Remember facts across sessions, recall with semantic search, charge for work delivered, track r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mnemopay@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263812192?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mnemopay",
+      "url": "https://clawhub.ai/skills/mnemopay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mnemopay",
+    "url": "https://clawhub.ai/skills/mnemopay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mnemopay-2a7808d00aefa989.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mnemopay@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mnemopay-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:121e42ddf5fb087ca491c8167d6ddfc060902b05f34f0c4057e0fdbd98ff2c5f",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T02:52:54.906Z"
+}

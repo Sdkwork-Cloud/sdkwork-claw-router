@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wx-miniprogram-ci@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wx_miniprogram_ci",
+  "skill": {
+    "id": 64830,
+    "skillKey": "clawhub-wx-miniprogram-ci",
+    "name": "微信小程序 CI 工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wx-miniprogram-ci",
+    "url": "https://clawhub.ai/skills/wx-miniprogram-ci",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wx-miniprogram-ci-a821577514ebbca8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信小程序 CI 工具技能。支持构建、预览、云函数、云存储等全部 miniprogram-ci 能力。使用 Node.js 开发，跨平台，可配置。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "super9du",
+      "userId": "s17ccn81eyq7syt95t6aehy6bx846xsp",
+      "displayName": "Super 9°",
+      "image": "https://avatars.githubusercontent.com/u/38002762?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776012420653,
+      "changelog": "- Initial release of wx-miniprogram-ci skill, a cross-platform CLI tool for WeChat Mini Program CI automation.\n- Supports commands for environment initialization, configuration management, preview, code upload, npm build, cloud function upload, cloud storage upload, and source map retrieval.\n- Offers project multi-configuration, persistent config file, and environment variable support.\n- Provides detailed CLI usage instructions with comprehensive command and option documentation for Linux/macOS/Windows environments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a6cab2d3af9fb8d97335c859143fe7c70b15d85c29ea7f5dd159cafe8306fe6c"
+}

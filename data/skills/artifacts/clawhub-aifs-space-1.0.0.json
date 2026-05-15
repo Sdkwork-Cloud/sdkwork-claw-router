@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aifs-space@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aifs_space",
+  "skill": {
+    "id": 9736,
+    "skillKey": "clawhub-aifs-space",
+    "name": "AIFS - HTTP File system"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aifs-space",
+    "url": "https://clawhub.ai/skills/aifs-space",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aifs-space-36c0ded6ea6e0ec1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Store and retrieve files via AIFS.space cloud storage API. Use when persisting notes, documents, or data to the cloud; syncing files across sessions; or when the user mentions AIFS, aifs.space, or cloud file storage. Not to be used for any."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deploydon",
+      "userId": "publishers:deploydon",
+      "displayName": "Deploydon",
+      "image": "https://avatars.githubusercontent.com/u/96504831?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3242,
+      "installsAllTime": 2,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769844041796,
+      "changelog": "Initial release of aifs-space skill.\n\n- Store and retrieve files using the AIFS.space cloud storage API.\n- Supports listing, reading (full or partial), writing, patching, deleting, and summarizing files.\n- Requires user-provided API key with configurable permissions.\n- Includes rate limiting information and error code documentation.\n- Intended for non-sensitive content persistence and file syncing across sessions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b4ed581d69d5e9b2399a617b154fb675ccdf2df83e56b48841dccd103674de0b"
+}

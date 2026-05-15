@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14477,
+  "uuid": "skill-clawhub-jira-cloud-admin",
+  "skillKey": "clawhub-jira-cloud-admin",
+  "name": "Jira Cloud Admin",
+  "summary": "Jira Cloud admin playbook. Use for Jira Cloud administration tasks: projects (company-managed/team-managed), permissions, workflows, fields/screens, automation, JSM setup (queues/SLAs/portals), reporting/dashboards, and Confluence integrat.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jira_cloud_admin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nerdcuba",
+      "features": [
+        "Jira Cloud admin playbook",
+        "Use for Jira Cloud administration tasks: projects (company-managed/team-managed), permissions,.",
+        "Includes official Atlassian references and best-practice checklists in ES/EN."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jira-cloud-admin@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121952866?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jira-cloud-admin",
+      "url": "https://clawhub.ai/skills/jira-cloud-admin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jira-cloud-admin",
+    "url": "https://clawhub.ai/skills/jira-cloud-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jira-cloud-admin-8d962314fb6a68eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jira-cloud-admin@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jira-cloud-admin-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90257144596ffd5d2057f09419b244e6241db60bbeea98ba754caf6dcc242f27",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T23:35:01.362Z"
+}

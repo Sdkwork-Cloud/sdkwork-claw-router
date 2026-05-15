@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ghost-catalog@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghost_catalog",
+  "skill": {
+    "id": 22526,
+    "skillKey": "clawhub-ghost-catalog",
+    "name": "Ghost Catalog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghost-catalog",
+    "url": "https://clawhub.ai/skills/ghost-catalog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghost-catalog-ef28e117e61dca77.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan, tag, validate, and catalog files using the Ghost Catalog semantic file header system (SOM-XXX-NNNN-vX.X.X). Use when: discovering untagged files, onboa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "somacosf",
+      "userId": "publishers:somacosf",
+      "displayName": "SoMaCo",
+      "image": "https://avatars.githubusercontent.com/u/154762801?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 469,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1772433139564,
+      "changelog": "https://gist.github.com/SoMaCoSF/488d6a173bff53204aa65e159085942f\n\nhttps://gist.github.com/SoMaCoSF/28df4f5af37c863515f59552ee33a2eb",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fc0373c3a095cbcfca1e0e683bc9e7c951ea8aea79f9b78fdb0210032c3ad44c"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72074,
+  "uuid": "skill-clawhub-jike-tenwhy-query",
+  "skillKey": "clawhub-jike-tenwhy-query",
+  "name": "十万个为什么 - 即刻数据",
+  "summary": "十万个为什么。支持按问题关键词搜索，也支持随机返回问题和答案。 适用场景：用户要求搜索、随机推荐或解释相关中文内容时使用。数据由即刻数据（jikeapi.cn）开放接口提供。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_tenwhy_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jikeapi",
+      "features": [
+        "十万个为什么。支持按问题关键词搜索，也支持随机返回问题和答案。 适用场景：用户要求搜索、随机推荐或解释相关中文内容时使用。数据由即刻数据（jikeapi.cn）开放接口提供。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jike-tenwhy-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26078515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jike-tenwhy-query",
+      "url": "https://clawhub.ai/skills/jike-tenwhy-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-tenwhy-query",
+    "url": "https://clawhub.ai/skills/jike-tenwhy-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-tenwhy-query-125a707d48fc59e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jike-tenwhy-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jike-tenwhy-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2046253d9a49f5a2ad5119ff302951f28d2399099bac7e360fa64c922ea8602",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T01:22:23.638Z"
+}

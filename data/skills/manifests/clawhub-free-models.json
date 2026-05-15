@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48957,
+  "uuid": "skill-clawhub-free-models",
+  "skillKey": "clawhub-free-models",
+  "name": "Free Models for OpenClaw and other Agents",
+  "summary": "Discover and select free or low-cost AI models from OpenRouter optimized for agents with filtering by price, context, provider, and capabilities.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_models",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "christo",
+      "features": [
+        "Discover and select free or low-cost AI models from OpenRouter optimized for agents with filter."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-models@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1757861?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-models",
+      "url": "https://clawhub.ai/skills/free-models"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-models",
+    "url": "https://clawhub.ai/skills/free-models",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-models-f369eeaed4f24194.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-models@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-models-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4034b4a71a7e164fae86e5e23ea1d18a5e6e4b8c4faa93a1a1583eff77970fc",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T09:28:01.612Z"
+}

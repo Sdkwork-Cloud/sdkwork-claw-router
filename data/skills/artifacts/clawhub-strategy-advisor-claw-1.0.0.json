@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/strategy-advisor-claw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strategy_advisor_claw",
+  "skill": {
+    "id": 72227,
+    "skillKey": "clawhub-strategy-advisor-claw",
+    "name": "Strategy Advisor Claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strategy-advisor-claw",
+    "url": "https://clawhub.ai/skills/strategy-advisor-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strategy-advisor-claw-18b6c53049db18bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "综合多方数据，给出下一步行动建议的深度私有化战略参谋。激活场景：当用户讨论业务决策、战略方向、市场策略、资源分配、问题诊断、优先级排序、下一步该做什么、怎么办、如何应对某个局面、给个建议、帮我分析、有没有更好的方案、权衡利弊、我们该不该、要不要、接下来怎么走等需要行动建议的场景。核心价值：结合公司真实的经营现状给..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tujinsama",
+      "userId": "s177vqraepq71bz6ynj98rrtdd83j0pd",
+      "displayName": "Ricky",
+      "image": "https://avatars.githubusercontent.com/u/82147388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774504928083,
+      "changelog": "初始发布：综合战略参谋与决策建议",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c22a29274538d0b2cf657414b5b7f1f18c03786ff433ccab88dfa9379708b47"
+}

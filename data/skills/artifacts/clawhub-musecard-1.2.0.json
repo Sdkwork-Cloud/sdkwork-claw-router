@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/musecard@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.musecard",
+  "skill": {
+    "id": 41006,
+    "skillKey": "clawhub-musecard",
+    "name": "Musecard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "musecard",
+    "url": "https://clawhub.ai/skills/musecard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/musecard-428f5a0536babab4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate hand-drawn style resonant quote cards combining emotional text and illustrations in selected or AI-chosen art styles for social media sharing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fslong520",
+      "userId": "s179dxbepyx3dhgg6vsaj80yt583nxj7",
+      "displayName": "fslong",
+      "image": "https://avatars.githubusercontent.com/u/25819806?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1776080233231,
+      "changelog": "新增「星穹漫影」风格 (原神/崩铁质感)，优化二次元出图 Prompt 结构，提升精致度与细节表现。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3bfa68f56fa9dda395e824c292994ad29121bc7588f9ad977f4bda80a18d286c"
+}

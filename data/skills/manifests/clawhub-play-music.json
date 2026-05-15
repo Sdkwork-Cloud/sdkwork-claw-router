@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14212,
+  "uuid": "skill-clawhub-play-music",
+  "skillKey": "clawhub-play-music",
+  "name": "Play Local Music",
+  "summary": "Control local music playback with play, pause, resume, stop commands; supports listing and playing specified songs from a configured music directory.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.play_music",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "awspace",
+      "features": [
+        "Control local music playback with play, pause, resume, stop commands",
+        "supports listing and playing specified songs from a configured music directory."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/play-music@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131568675?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "play-music",
+      "url": "https://clawhub.ai/skills/play-music"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "play-music",
+    "url": "https://clawhub.ai/skills/play-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/play-music-2a51ab28b6e6e30a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/play-music@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-play-music-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b531a44c2c6af6078848b1214ae1877b8f3336cc7580f57bbbbe6ada747eb677",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T15:12:33.512Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-web-search-ultimate@11.0.0",
+  "version": "11.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_web_search_ultimate",
+  "skill": {
+    "id": 29050,
+    "skillKey": "clawhub-free-web-search-ultimate",
+    "name": "Free Web Search Ultimate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-web-search-ultimate",
+    "url": "https://clawhub.ai/skills/free-web-search-ultimate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-web-search-ultimate-e1e13f1630bf62ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Universal Search-First Knowledge Acquisition Plugin for LLMs. Enables real-time web search and deep page browsing via MCP or CLI. Zero-cost, privacy-first, s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wd041216-bit",
+      "userId": "s17djcs4rd60zq6rxnpn9xv3d583g4ew",
+      "displayName": "Da Wei",
+      "image": "https://avatars.githubusercontent.com/u/258555668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 311,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "11.0.0",
+      "createdAt": 1773773506470,
+      "changelog": "- Rewrote and reorganized documentation for improved clarity and accessibility.\n- Added integration instructions for OpenClaw, Claude Desktop/Cursor, LangChain, and OpenAI Function Calling.\n- Provided specific MCP server setup and configuration example.\n- Consolidated and clarified behavioral guidelines and decision tree.\n- Included a comparison table explaining the benefits of the search-first paradigm.\n- Added license information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45715eaea253bc0e9d0fbeccc5418018c749aba9c56c746c0cfe122838495fe1"
+}

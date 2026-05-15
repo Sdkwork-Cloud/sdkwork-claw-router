@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/liudao-heritage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liudao_heritage",
+  "skill": {
+    "id": 56506,
+    "skillKey": "clawhub-liudao-heritage",
+    "name": "Liudao Heritage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liudao-heritage",
+    "url": "https://clawhub.ai/skills/liudao-heritage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liudao-heritage-7daa466642f01c22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, enrich, and manage family heritage and historical relationship data from the LiùDào (六道) SQLite database. Use this skill when answering questions abo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sirius-777-llm",
+      "userId": "s17fjas63hkbw2nkh1r619bqpx84e7s5",
+      "displayName": "sirius-777-llm",
+      "image": "https://avatars.githubusercontent.com/u/201200946?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 397,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773115447687,
+      "changelog": "liudao-heritage 1.0.0 – Initial Release\n\n- Search, enrich, and manage family heritage and historical relationship data via the LiùDào (六道) SQLite database.\n- Answer questions about historical figures and resolve relationship queries (e.g., \"A的B\").\n- Add or update records with privacy controls for sensitive personal information.\n- Supports searching, relationship path resolution, and milestone management with script-based workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4abf51f5c1461a025c119a26ee5d2ee6d4dacaa54e6ab00b6e606078918cd4dc"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weclone-twin-reply@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weclone_twin_reply",
+  "skill": {
+    "id": 24930,
+    "skillKey": "clawhub-weclone-twin-reply",
+    "name": "Weclone Twin Reply"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weclone-twin-reply",
+    "url": "https://clawhub.ai/skills/weclone-twin-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weclone-twin-reply-e83c0fd44dd9169a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build a review-gated digital twin reply from persona markdown, persona examples, and live conversation context. Use when you need to imitate a specific user'..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xming521",
+      "userId": "publishers:xming521",
+      "displayName": "xming521",
+      "image": "https://avatars.githubusercontent.com/u/32786500?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 290,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773327051655,
+      "changelog": "Initial release of weclone-twin-reply.\n\n- Enables drafting review-gated digital twin replies using persona markdown files, examples, and live conversation context.\n- Enforces explicit user approval before sending any drafted message.\n- Requires a filled persona pack directory (`profile.md`, `persona_examples.md`, `guardrails.md`, optional `state.md`) to operate.\n- Provides scripts to render a full prompt package based on both persona files and runtime context (`scene.md` and `dialogue.md`).\n- Applies strict guardrails and safety checks, including privacy and ambiguity management, before drafting or sending any reply.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0bc2e43dffc84a418c4ebf1fbe561150ec2f1815ef9ee59d53ef39ec564e8bc0"
+}

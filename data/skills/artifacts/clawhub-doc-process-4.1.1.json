@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doc-process@4.1.1",
+  "version": "4.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_process",
+  "skill": {
+    "id": 17398,
+    "skillKey": "clawhub-doc-process",
+    "name": "Doc Process"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-process",
+    "url": "https://clawhub.ai/skills/doc-process",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-process-599f391902d36afa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Document intelligence: categorize, autofill forms, analyze contracts, scan receipts/invoices, analyze bank statements, parse resumes/CVs, scan IDs/passports..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "piyush-zinc",
+      "userId": "publishers:piyush-zinc",
+      "displayName": "piyush-zinc",
+      "image": "https://avatars.githubusercontent.com/u/172476424?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 643,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "4.1.1",
+      "createdAt": 1772860580502,
+      "changelog": "setup.sh: added Python 3 check (exits with clear message if missing), pip bootstrap before any pip install — tries ensurepip, then apt/yum/dnf/brew package managers, then falls back to get-pip.py from pypa.io. Upgrades pip to latest before installing packages. Works on fresh EC2 instances (Amazon Linux 2, Amazon Linux 2023, Ubuntu) with no pre-installed pip.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:576045fdc2dd88007dc84c19bf22a0a3de0f68185c3d0dba0fbdc43081219fac"
+}

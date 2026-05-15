@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coinmeta-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coinmeta_api",
+  "skill": {
+    "id": 68802,
+    "skillKey": "clawhub-coinmeta-api",
+    "name": "币界网API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coinmeta-api",
+    "url": "https://clawhub.ai/skills/coinmeta-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coinmeta-api-d17fed629e2b50c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询加密货币快讯。触发场景：查询币圈快讯、获取加密货币新闻、crypto news、币圈资讯。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "semithin",
+      "userId": "s179p62heettwszrdd5gdp8sps83pfkp",
+      "displayName": "CoinMeta",
+      "image": "https://avatars.githubusercontent.com/u/12593507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774599579926,
+      "changelog": "Initial release with core features for querying crypto news updates.\n\n- Supports fetching lists of crypto news (快讯) via CoinMeta API.\n- Enables keyword-based newsflash search.\n- Includes clear API authentication via X-Api-Key header.\n- Provides detailed parameters and response field documentation.\n- Handles common error codes and gives relevant feedback for API and network issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4bf38495c58a87f530cf371ec74aa8330a11c8763f95427950a907f41bbeb553"
+}

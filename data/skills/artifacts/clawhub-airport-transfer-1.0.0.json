@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/airport-transfer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airport_transfer",
+  "skill": {
+    "id": 59850,
+    "skillKey": "clawhub-airport-transfer",
+    "name": "接送机服务"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airport-transfer",
+    "url": "https://clawhub.ai/skills/airport-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airport-transfer-a759bc3b06357ba2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业用车服务助手，支持即时用车、预约用车、接送机、包车等多种用车场景，提供车型选择、费用预估、订单管理等功能。Invoke when user needs to book a car, schedule a ride, airport transfer, or manage car service orders."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaogao605",
+      "userId": "s17cxwwzm94v9ntkczkmq0r2x983km1s",
+      "displayName": "fenbeitong-trip",
+      "image": "https://avatars.githubusercontent.com/u/265222913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774959859572,
+      "changelog": "企业用车服务助手初始版本发布：\n\n- 支持即时用车、预约用车、接送机、包车等多场景用车服务\n- 提供车型选择、费用预估、司机及订单信息查询与管理\n- 集成订单查询、取消、发票申请、行程分享等管理功能\n- 严格对接平台API，确保车辆及价格信息真实有效\n- 支持企业专属功能（用车权限、费用中心、审批流程等）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79596d0e49fe6b99d1f836b0eb499dc6c1b1d9aab20e2841a92790bb707981c0"
+}

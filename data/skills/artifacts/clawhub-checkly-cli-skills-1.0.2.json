@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/checkly-cli-skills@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.checkly_cli_skills",
+  "skill": {
+    "id": 16896,
+    "skillKey": "clawhub-checkly-cli-skills",
+    "name": "Checkly Cli Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "checkly-cli-skills",
+    "url": "https://clawhub.ai/skills/checkly-cli-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/checkly-cli-skills-6bb7899bc43e39a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive Checkly CLI command reference and Monitoring as Code workflows. Use when user mentions Checkly CLI, monitoring as code, synthetic monitoring, A..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vince-winkintel",
+      "userId": "s17bggfcg11h05pywkwvvq4mkh83fvrq",
+      "displayName": "Vince Lozada",
+      "image": "https://avatars.githubusercontent.com/u/54216882?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 629,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777300940428,
+      "changelog": "Document checkly deploy --verbose from upstream 7.12.0 and refresh deploy troubleshooting guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:364fcacaadadadcb5bd89559a3c961415d98a4c652502e1449b0abb28d4f3933"
+}

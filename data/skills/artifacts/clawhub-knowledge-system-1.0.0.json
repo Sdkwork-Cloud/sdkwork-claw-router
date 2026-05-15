@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowledge-system@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_system",
+  "skill": {
+    "id": 60906,
+    "skillKey": "clawhub-knowledge-system",
+    "name": "龙虾知识体系管理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-system",
+    "url": "https://clawhub.ai/skills/knowledge-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-system-fade4b8a7cf7844e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 Markdown 文件的 AI Agent 知识管理体系。建立和维护：SOUL（人格）/ USER（用户）/ AGENTS（工作规范）/ TOOLS（工具配置）/ MEMORY（长期记忆）/ memory（每日记录）/ .learnings（反思改进）/ HEARTBEAT（定期任务）。包含多 Agent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wujun2081",
+      "userId": "s17axn4xcj5s6ecc0fkq4ampkd84dj95",
+      "displayName": "吴俊",
+      "image": "https://avatars.githubusercontent.com/u/18624676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774259062971,
+      "changelog": "knowledge-system 1.0.0 – Build full Markdown-based AI Agent knowledge management\n\n- Initial release with comprehensive SKILL.md documentation.\n- Teaches building an AI Agent knowledge system using Markdown files only, no external databases/services.\n- Defines modular file structure: SOUL, USER, AGENTS, TOOLS, MEMORY, daily memory, .learnings, and HEARTBEAT.\n- Supports multiple Agents, memory collaboration, context compression, and regular self-improvement workflows.\n- Provides step-by-step setup, sample file templates, workflow standards, and promotion/demotion rules for learnings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:348b3407641b5d75633c8683dbc623f867bb47cb609750a25452a9c2c226eb25"
+}

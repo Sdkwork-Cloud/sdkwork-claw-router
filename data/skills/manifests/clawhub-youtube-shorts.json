@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59829,
+  "uuid": "skill-clawhub-youtube-shorts",
+  "skillKey": "clawhub-youtube-shorts",
+  "name": "YouTube Shorts 자동 생성",
+  "summary": "AI/DevOps 유튜브 숏츠 자동 생성. 트렌드 수집 → 스크립트 → 이미지 → Veo 영상 → TTS 나레이션 → Remotion 합성 → YouTube 업로드",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_shorts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kangjjang",
+      "features": [
+        "AI/DevOps 유튜브 숏츠 자동 생성",
+        "트렌드 수집 → 스크립트 → 이미지 → Veo 영상 → TTS 나레이션 → Remotion 합성 → YouTube 업로드"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-shorts@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16265769?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-shorts",
+      "url": "https://clawhub.ai/skills/youtube-shorts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-shorts",
+    "url": "https://clawhub.ai/skills/youtube-shorts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-shorts-29db21c8cf289839.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-shorts@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-shorts-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d35db39f09d79f789ec3dd84ee5784c441c568051f7e4af96a20fc2cf81cba76",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T06:31:56.889Z"
+}

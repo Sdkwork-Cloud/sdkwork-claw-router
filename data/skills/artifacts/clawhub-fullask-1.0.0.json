@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fullask@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fullask",
+  "skill": {
+    "id": 72015,
+    "skillKey": "clawhub-fullask",
+    "name": "fullask"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fullask",
+    "url": "https://clawhub.ai/skills/fullask",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fullask-4493929dbebf57e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户查询物流指数总分时，输出物流指数数据、行业排名、数据分析、定位异常指数、输出运营建议"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a-vb",
+      "userId": "s170h7xd89h4x85pqgankzp0r183hrge",
+      "displayName": "a-vb",
+      "image": "https://avatars.githubusercontent.com/u/82512088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774433535935,
+      "changelog": "Fullask 1.0.0 Changelog\n\n- Initial release providing automated logistics index analysis and operational suggestions.\n- Supports querying logistics index score, industry average, ranking, and seven-day trend.\n- Identifies key sub-indicators impacting ranking, with fixed analysis on \"揽收及时率\".\n- Reads exception details and summarizes non-compliant categories and proportions.\n- Requires carrier name and statistical date as inputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:44a7b4050056e38e5f9e96e559d43c3ebd38b3b715d7d97cbb497f8649f652a8"
+}

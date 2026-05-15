@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36165,
+  "uuid": "skill-clawhub-pilot-watchdog",
+  "skillKey": "clawhub-pilot-watchdog",
+  "name": "Pilot Watchdog",
+  "summary": "Security monitoring for suspicious network patterns in Pilot Protocol networks. Use this skill when: 1. You need real-time detection of suspicious connection...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_watchdog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Security monitoring for suspicious network patterns in Pilot Protocol networks",
+        "Use this skill when: 1",
+        "You need real-time detection of suspicious connection..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-watchdog@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-watchdog",
+      "url": "https://clawhub.ai/skills/pilot-watchdog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-watchdog",
+    "url": "https://clawhub.ai/skills/pilot-watchdog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-watchdog-e73cbe2f311b36bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-watchdog@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-watchdog-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45e5e03eb34e58042e0b3d71fc826bcdcc27024fd3fb8c82257185eaa9e1991f",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T12:34:59.843Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20913,
+  "uuid": "skill-clawhub-agent-bom-scan",
+  "skillKey": "clawhub-agent-bom-scan",
+  "name": "agent-bom scan",
+  "summary": "Open security scanner for agentic infrastructure — agents, MCP, packages, blast radius, runtime, and trust for package CVEs (OSV, NVD, EPSS, KEV), container...",
+  "version": "0.86.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_bom_scan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Agent Bom",
+      "features": [
+        "Open security scanner for agentic infrastructure — agents, MCP, packages, blast radius, runtime."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-bom-scan@0.86.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34316639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-bom-scan",
+      "url": "https://clawhub.ai/skills/agent-bom-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-bom-scan",
+    "url": "https://clawhub.ai/skills/agent-bom-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-bom-scan-6c5e0d387743f83c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-bom-scan@0.86.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-bom-scan-0.86.2.json",
+      "version": "0.86.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d57dcb93e893dcc39626c51cfbe048c7af083ec7ec67e276bcec609d39bff2ce",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T15:45:17.496Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64749,
+  "uuid": "skill-clawhub-famou-experiment-manager",
+  "skillKey": "clawhub-famou-experiment-manager",
+  "name": "伐谋 - 实验管理",
+  "summary": "管理 famou 进化实验任务的工作流技能。当用户提到\"提交实验\"、\"查看实验状态\"、\"删除实验\"、\"获取实验结果\"、\"famou 实验\"、\"上传实验\"、\"config.yaml 实验\"或需要使用 famou-ctl 管理实验任务时，必须使用此技能。即使用户只说\"提交\"或\"跑实验\"，只要上下文涉及 famou 平...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.famou_experiment_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FaMou",
+      "features": [
+        "管理 famou 进化实验任务的工作流技能。当用户提到\"提交实验\"、\"查看实验状态\"、\"删除实验\"、\"获取实验结果\"、\"famou 实验\"、\"上传实验\"、\"config.yaml 实验\"或需."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/famou-experiment-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21209028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "famou-experiment-manager",
+      "url": "https://clawhub.ai/skills/famou-experiment-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "famou-experiment-manager",
+    "url": "https://clawhub.ai/skills/famou-experiment-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/famou-experiment-manager-caa2692ce2e785a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/famou-experiment-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-famou-experiment-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8e8d06049652bb8b5e999ff52f9a37ae0c09671b74395d4223d8708d0a41370",
+      "artifactSizeBytes": 2654
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T06:13:09.234Z"
+}

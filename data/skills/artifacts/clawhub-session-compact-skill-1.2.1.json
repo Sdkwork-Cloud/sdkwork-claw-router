@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-compact-skill@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_compact_skill",
+  "skill": {
+    "id": 39240,
+    "skillKey": "clawhub-session-compact-skill",
+    "name": "Session Compact"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-compact-skill",
+    "url": "https://clawhub.ai/skills/session-compact-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-compact-skill-5c7329df03d80e42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent session compression plugin for OpenClaw that automatically manages token consumption and supports unlimited-length conversations. Compresses hist..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdc-creator",
+      "userId": "s17ddz29qw38pf9rvtztcpm9v984b2rm",
+      "displayName": "deep-claw",
+      "image": "https://avatars.githubusercontent.com/u/270116395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1775919262754,
+      "changelog": "v1.2.1: Fixed config persistence, 163 tests, updated deps to openclaw 2026.4.9, synced with code plugin",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e49df1a557b1b614cb0950d0c7ca541ccdfc6247e6240f34f90506bd4dd2744c"
+}

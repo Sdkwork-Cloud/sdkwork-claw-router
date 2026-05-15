@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maven-central-publish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maven_central_publish",
+  "skill": {
+    "id": 16503,
+    "skillKey": "clawhub-maven-central-publish",
+    "name": "maven-central-publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maven-central-publish",
+    "url": "https://clawhub.ai/skills/maven-central-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maven-central-publish-7f888f930fb09c9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a standardized Maven workflow to publish Java artifacts to Maven Central using GPG signing and the modern Central Portal plugin."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "misakiga",
+      "userId": "publishers:misakiga",
+      "displayName": "MISAKIGA",
+      "image": "https://avatars.githubusercontent.com/u/34915635?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 867,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771038729317,
+      "changelog": "Initial release: Provides a complete, modern workflow for publishing to Maven Central via the Central Portal.\n\n- Step-by-step environment setup, including GPG loopback and Maven settings.\n- Project requirements, plugin configuration, and recommended best practices for artifact publishing.\n- Detailed deployment instructions with troubleshooting for common errors.\n- Supports Java/Kotlin libraries using Maven and GPG signing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f708b4a1b4f79587703a0127e1efe24d750b462523d3486d12727ac93ea090b0"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13474,
+  "uuid": "skill-clawhub-ms365-tenant-manager",
+  "skillKey": "clawhub-ms365-tenant-manager",
+  "name": "Ms365 Tenant Manager",
+  "summary": "Microsoft 365 tenant administration for Global Administrators. Automate M365 tenant setup, Office 365 admin tasks, Azure AD user management, Exchange Online...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ms365_tenant_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alireza Rezvani",
+      "features": [
+        "Microsoft 365 tenant administration for Global Administrators",
+        "Automate M365 tenant setup, Office 365 admin tasks, Azure AD user management, Exchange Online..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ms365-tenant-manager@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5697919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ms365-tenant-manager",
+      "url": "https://clawhub.ai/skills/ms365-tenant-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ms365-tenant-manager",
+    "url": "https://clawhub.ai/skills/ms365-tenant-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ms365-tenant-manager-936e84fdaed2bf75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ms365-tenant-manager@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ms365-tenant-manager-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c3fe628fccbd1274a9cab7f7a31844693ad2408227d9273e54a1f30b04f02da",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T15:31:15.463Z"
+}

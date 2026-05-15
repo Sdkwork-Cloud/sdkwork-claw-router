@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-bond@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_bond",
+  "skill": {
+    "id": 51529,
+    "skillKey": "clawhub-claw-bond",
+    "name": "Claw Connector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-bond",
+    "url": "https://clawhub.ai/skills/claw-bond",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-bond-4ca45f8c72fac50f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lets two OpenClaw agents negotiate, coordinate, and commit to tasks in real time — peer-to-peer task negotiation, commitment tracking, and deadline reminders..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "techtanush",
+      "userId": "s172etthns12094zg34jqh4v6n83mqq8",
+      "displayName": "techtanush",
+      "image": "https://avatars.githubusercontent.com/u/86254914?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 305,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775081459423,
+      "changelog": "Fix all documentation inconsistencies flagged by scanner: SKILL.md and IMPLEMENTATION.md now correctly state listener.py is started manually (not by the gateway hook). All four declaration files (SKILL.md, IMPLEMENTATION.md, permissions.json, clawhub.yaml) are fully consistent. No subprocess anywhere in any file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e1d3039c461de4e57d64ffc00a53b09afba30ea0ac9c79d73c1223396f71bbdb"
+}

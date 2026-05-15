@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68191,
+  "uuid": "skill-clawhub-sfe-sxk-data-viewer",
+  "skillKey": "clawhub-sfe-sxk-data-viewer",
+  "name": "Sfe Sxk Data Viewer",
+  "summary": "SFE深西康专属数据查询工具，用于快速查询深西康专属采集项目报表的数据，如新活素查房日采集反馈V2等特定项目的明细报表或汇总报表",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sfe_sxk_data_viewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "spzwin",
+      "features": [
+        "SFE深西康专属数据查询工具，用于快速查询深西康专属采集项目报表的数据，如新活素查房日采集反馈V2等特定项目的明细报表或汇总报表"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sfe-sxk-data-viewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48741773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sfe-sxk-data-viewer",
+      "url": "https://clawhub.ai/skills/sfe-sxk-data-viewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sfe-sxk-data-viewer",
+    "url": "https://clawhub.ai/skills/sfe-sxk-data-viewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sfe-sxk-data-viewer-9b851fd5ed2c1c07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sfe-sxk-data-viewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sfe-sxk-data-viewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c373562164e871d15f5efd39367a14ad2c6fb5f6d0e5eb7086f14ba9f95d9bb",
+      "artifactSizeBytes": 2425
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T02:03:40.117Z"
+}

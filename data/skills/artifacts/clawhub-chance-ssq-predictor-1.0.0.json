@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chance-ssq-predictor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chance_ssq_predictor",
+  "skill": {
+    "id": 56174,
+    "skillKey": "clawhub-chance-ssq-predictor",
+    "name": "Ssq Predictor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chance-ssq-predictor",
+    "url": "https://clawhub.ai/skills/chance-ssq-predictor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chance-ssq-predictor-5eadc9016485146c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks about China Welfare Lottery 双色球 (SSQ) lottery prediction, analysis, number selection, or data analysis. Triggers..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gechengling",
+      "userId": "s17ewqc4f2s6gpcbm88hy7fgvn85kg1g",
+      "displayName": "lingfeng-19",
+      "image": "https://avatars.githubusercontent.com/u/8140166?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777212230939,
+      "changelog": "- Initial release of chance-ssq-predictor (version 1.0.0)\n- Provides analysis and number selection for China Welfare Lottery (双色球/SSQ), including missing value, frequency, sum value, span, odd-even, and more\n- Integrates step-by-step workflow for user requests, data preparation, and number recommendation (3–5 sets with analysis)\n- Includes sample commands and usage scenarios for different analysis and selection needs\n- Offers detailed methodology and quick-start guidance; all features for entertainment use only",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45f9b7ee7b40a67eae4d0cb47a289ea67a8fb7b8417a20820ec639ca8fc992b2"
+}

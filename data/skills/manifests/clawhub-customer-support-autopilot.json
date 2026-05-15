@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28296,
+  "uuid": "skill-clawhub-customer-support-autopilot",
+  "skillKey": "clawhub-customer-support-autopilot",
+  "name": "Customer Support Autopilot",
+  "summary": "Classify customer support tickets, draft accurate responses, suggest macros, and route escalations based on risk, SLA, and business impact.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customer_support_autopilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ASP",
+      "features": [
+        "Classify customer support tickets, draft accurate responses, suggest macros, and route escalati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/customer-support-autopilot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4218061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "customer-support-autopilot",
+      "url": "https://clawhub.ai/skills/customer-support-autopilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customer-support-autopilot",
+    "url": "https://clawhub.ai/skills/customer-support-autopilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customer-support-autopilot-667b06862fa3c8ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/customer-support-autopilot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-customer-support-autopilot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2b43763b1964129b38a21ac13ef7411cb9d4a765a86376e4044bdb0aebc9763",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T14:34:40.233Z"
+}

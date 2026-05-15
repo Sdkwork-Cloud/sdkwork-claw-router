@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20262,
+  "uuid": "skill-clawhub-samvida",
+  "skillKey": "clawhub-samvida",
+  "name": "Samvida",
+  "summary": "Generate an agentic contract (llms.txt) for any business website. Crawls the site, fills gaps conversationally, and produces a structured agent-optimized llm...",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.samvida",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Naman Muley",
+      "features": [
+        "Generate an agentic contract (llms.txt) for any business website",
+        "Crawls the site, fills gaps conversationally, and produces a structured agent-optimized llm..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/samvida@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/738845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "samvida",
+      "url": "https://clawhub.ai/skills/samvida"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "samvida",
+    "url": "https://clawhub.ai/skills/samvida",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/samvida-e01a3d02b2e8fea9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/samvida@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-samvida-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27f5daf72edc25421392292ff0952a0310a7b2d015477c21819b870d76224e20",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T19:02:48.153Z"
+}

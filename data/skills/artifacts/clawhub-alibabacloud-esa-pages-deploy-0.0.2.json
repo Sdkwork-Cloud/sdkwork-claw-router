@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-esa-pages-deploy@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_esa_pages_deploy",
+  "skill": {
+    "id": 38861,
+    "skillKey": "clawhub-alibabacloud-esa-pages-deploy",
+    "name": "Alibabacloud Esa Pages Deploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-esa-pages-deploy",
+    "url": "https://clawhub.ai/skills/alibabacloud-esa-pages-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-esa-pages-deploy-faaff28f19624838.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy HTML pages, static directories, or custom edge functions to Alibaba Cloud ESA edge nodes. Manage Edge KV for distributed key-value storage. Use when d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1778309396926,
+      "changelog": "**v0.0.2 brings stricter validation, improved error handling, and clearer security guidance for ESA Functions & Pages deployments.**\n\n- Enforced RAM policy guidance: Users must grant AliyunESAFullAccess before deployment.\n- Required strict pre-deployment checks for static directories; early abort if build artifacts are missing (no auto-creation of files allowed).\n- Expanded error handling for CreateRoutine: Only proceed on success or 'RoutineNameAlreadyExists', abort flow and print error otherwise.\n- Updated best practices for checking and enabling Edge Routine service using only `GetErService`.\n- Clarified 401 access process: always obtain token via `GetRoutineAccessToken` and append to URL; no other authentication supported.\n- Removed reference to ram-policies.md; policy requirements are now integrated directly in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b92664094cab4f2bd9baf357d3261d9b63225b40b32f7890423bc88fc4186bc"
+}

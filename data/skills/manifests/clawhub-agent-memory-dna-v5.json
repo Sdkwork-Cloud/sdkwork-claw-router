@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58863,
+  "uuid": "skill-clawhub-agent-memory-dna-v5",
+  "skillKey": "clawhub-agent-memory-dna-v5",
+  "name": "Agent Memory Dna V5",
+  "summary": "Agent Memory DNA v5.1 - 确定性记忆 + 世界模型 (语义体素/影子模式/MRS审计)",
+  "version": "5.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_dna_v5",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GroAries",
+      "features": [
+        "Agent Memory DNA v5.1",
+        "确定性记忆 + 世界模型 (语义体素/影子模式/MRS审计)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-memory-dna-v5@5.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269076204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-memory-dna-v5",
+      "url": "https://clawhub.ai/skills/agent-memory-dna-v5"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-dna-v5",
+    "url": "https://clawhub.ai/skills/agent-memory-dna-v5",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-dna-v5-2ecc62bad8fcd36d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-memory-dna-v5@5.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-dna-v5-5.1.4.json",
+      "version": "5.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d727a39026e2754dd5b32e517a95f0f98031889b43fb36dbbee19bc39c6a370",
+      "artifactSizeBytes": 2163
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T08:39:17.974Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55387,
+  "uuid": "skill-clawhub-soul-undead",
+  "skillKey": "clawhub-soul-undead",
+  "name": "Soul Undead",
+  "summary": "Backup, restore, initialize, and sync core OpenClaw workspace markdown files with the fixed private GitHub repository `soul-undead`. Use when the user wants...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soul_undead",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhao95",
+      "features": [
+        "Backup, restore, initialize, and sync core OpenClaw workspace markdown files with the fixed pri.",
+        "Use when the user wants..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soul-undead@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16987821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soul-undead",
+      "url": "https://clawhub.ai/skills/soul-undead"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soul-undead",
+    "url": "https://clawhub.ai/skills/soul-undead",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soul-undead-cd9c4f6037b66dd0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soul-undead@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-soul-undead-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6908b398c584fe250a526b8c6949ec08ea29ed6e28465d1ce679e825dd0ee605",
+      "artifactSizeBytes": 2067
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T18:39:39.548Z"
+}

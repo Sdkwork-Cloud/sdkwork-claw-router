@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/network-scanner@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.network_scanner",
+  "skill": {
+    "id": 9125,
+    "skillKey": "clawhub-network-scanner",
+    "name": "Network Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "network-scanner",
+    "url": "https://clawhub.ai/skills/network-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/network-scanner-3083582d95826e49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan networks to discover devices, gather MAC addresses, vendors, and hostnames. Includes safety checks to prevent accidental scanning of public networks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "florianbeer",
+      "userId": "s178qb3qnn3qkjvv09p3dn4v4583we9e",
+      "displayName": "Florian Beer",
+      "image": "https://avatars.githubusercontent.com/u/800047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4642,
+      "installsAllTime": 35,
+      "installsCurrent": 34,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1769941347059,
+      "changelog": "Added homepage metadata, improved safety documentation, enhanced blocklist config format",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:651c1d1d759b220b11884aac41b92d7bcc5ef5248095eb3b9d8e18508706eb58"
+}

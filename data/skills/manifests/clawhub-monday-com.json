@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21688,
+  "uuid": "skill-clawhub-monday-com",
+  "skillKey": "clawhub-monday-com",
+  "name": "monday.com",
+  "summary": "Manage monday.com boards, items, columns, groups, updates, and workflows via MCP server (preferred) and GraphQL API (fallback). Use when a user asks to creat...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monday_com",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "regevguym",
+      "features": [
+        "Manage monday.com boards, items, columns, groups, updates, and workflows via MCP server (prefer.",
+        "Use when a user asks to creat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/monday-com@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85967482?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "monday-com",
+      "url": "https://clawhub.ai/skills/monday-com"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monday-com",
+    "url": "https://clawhub.ai/skills/monday-com",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monday-com-245502a59c2c558e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/monday-com@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-monday-com-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23c871c496a55539566de2680cb6c363fb21b0a1044baf392fdb914d16719399",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T21:36:02.091Z"
+}

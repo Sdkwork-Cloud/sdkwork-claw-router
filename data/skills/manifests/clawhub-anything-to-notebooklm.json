@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60727,
+  "uuid": "skill-clawhub-anything-to-notebooklm",
+  "skillKey": "clawhub-anything-to-notebooklm",
+  "name": "Anything To Notebooklm",
+  "summary": "多源内容智能处理器：支持微信公众号、网页、YouTube、PDF、Markdown等，自动上传到NotebookLM并生成播客/PPT/思维导图等多种格式",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anything_to_notebooklm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SonicBotMan",
+      "features": [
+        "多源内容智能处理器：支持微信公众号、网页、YouTube、PDF、Markdown等，自动上传到NotebookLM并生成播客/PPT/思维导图等多种格式"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anything-to-notebooklm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258392144?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anything-to-notebooklm",
+      "url": "https://clawhub.ai/skills/anything-to-notebooklm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anything-to-notebooklm",
+    "url": "https://clawhub.ai/skills/anything-to-notebooklm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anything-to-notebooklm-f80a00c11b36ab9d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anything-to-notebooklm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-anything-to-notebooklm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5dc3d62bcdbec12a0d06c2754754547fbe89db6217681004cb0548cfbe38aba",
+      "artifactSizeBytes": 2468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T16:03:07.622Z"
+}

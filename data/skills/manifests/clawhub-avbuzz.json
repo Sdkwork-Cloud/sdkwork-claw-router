@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26506,
+  "uuid": "skill-clawhub-avbuzz",
+  "skillKey": "clawhub-avbuzz",
+  "name": "Avbuzz",
+  "summary": "Query AV new releases, rankings, and actress info from FANZA GraphQL API. No authentication required. Supports direct curl queries and optional Discord/Teleg...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avbuzz",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zxcnny930",
+      "features": [
+        "Query AV new releases, rankings, and actress info from FANZA GraphQL API",
+        "No authentication required",
+        "Supports direct curl queries and optional Discord/Teleg..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/avbuzz@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19372076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "avbuzz",
+      "url": "https://clawhub.ai/skills/avbuzz"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avbuzz",
+    "url": "https://clawhub.ai/skills/avbuzz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avbuzz-984dcd3a2761cbcb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/avbuzz@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-avbuzz-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:569fbd4e666bdf05345456f9a663372794dd8345c509cb9eac3931c384bcba11",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T12:33:28.442Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54860,
+  "uuid": "skill-clawhub-docx-xlsx-creator",
+  "skillKey": "clawhub-docx-xlsx-creator",
+  "name": "Document Generator (Word & Excel)",
+  "summary": "Generates Word (.docx) reports and Excel (.xlsx) workbooks as real downloadable files. Use when the user wants a file output — not a text answer — for SMSF,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docx_xlsx_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robbie Joseph",
+      "features": [
+        "Generates Word (.docx) reports and Excel (.xlsx) workbooks as real downloadable files",
+        "Use when the user wants a file output — not a text answer — for SMSF,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docx-xlsx-creator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/173659940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docx-xlsx-creator",
+      "url": "https://clawhub.ai/skills/docx-xlsx-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docx-xlsx-creator",
+    "url": "https://clawhub.ai/skills/docx-xlsx-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docx-xlsx-creator-9a7374435eb77dec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docx-xlsx-creator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-docx-xlsx-creator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:101d793dc3f373f1180cd3a5ed92f3e2f87f3bc7bc5c5b3a733aed3e1b95d5cd",
+      "artifactSizeBytes": 2469
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T00:56:14.591Z"
+}

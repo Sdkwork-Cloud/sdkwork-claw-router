@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scenario-first-thinking@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scenario_first_thinking",
+  "skill": {
+    "id": 62066,
+    "skillKey": "clawhub-scenario-first-thinking",
+    "name": "Scenario First Thinking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scenario-first-thinking",
+    "url": "https://clawhub.ai/skills/scenario-first-thinking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scenario-first-thinking-2d184c945b6c9b01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "场景路由 + 8工具直接执行。将 TaskType → 场景 → 工具序列的映射固化到 SKILL.md 内部，无需外链文件即可执行。HEARTBEAT.md 中的路由规则已迁移至此，统一作为技能触发入口。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wukaifeng704-cell",
+      "userId": "s175ktdw3ey10a6jt97s8ka2y183kcqh",
+      "displayName": "WH laowu",
+      "image": "https://avatars.githubusercontent.com/u/247759145?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774846532570,
+      "changelog": "v2.0: All 8 tools operation steps embedded, no external file dependencies, SCQA upgraded to mandatory for Scene 3, HEARTBEAT routing rules unified",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f7b4509318e6422f35a724a63849d3b82448dba09dacaaa5de477f532cce3ba"
+}

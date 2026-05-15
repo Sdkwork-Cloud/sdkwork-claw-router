@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-headshot-skill@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_headshot_skill",
+  "skill": {
+    "id": 28564,
+    "skillKey": "clawhub-ai-headshot-skill",
+    "name": "Ai Headshot Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-headshot-skill",
+    "url": "https://clawhub.ai/skills/ai-headshot-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-headshot-skill-e5fdfd09cb438038.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate ai professional headshot generator images with AI via the Neta AI image generation API (free trial at neta.art/open)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blammectrappora",
+      "userId": "s17e1t07j9b4mkk29p15qwbst983hdan",
+      "displayName": "blammectrappora",
+      "image": "https://avatars.githubusercontent.com/u/258436334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 322,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1774584325824,
+      "changelog": "Remove clawhub.env, clean docs for security compliance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04c09d30a2278168b8f83b1bf3262cc90312395986479361f481c8086327c6e7"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pixverse-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pixverse_ai",
+  "skill": {
+    "id": 38580,
+    "skillKey": "clawhub-pixverse-ai",
+    "name": "Pixverse Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pixverse-ai",
+    "url": "https://clawhub.ai/skills/pixverse-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pixverse-ai-cbf31aa8de83e270.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tired of spending hours trying to produce cinematic video content without a film crew or budget? PixVerse AI changes that entirely. This skill connects you d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775635228011,
+      "changelog": "PixVerse AI Skill v1.0.0 — Turn text and images into cinematic videos in seconds.\n\n- Instant AI video generation from text prompts or image uploads — no video editing required.\n- Seamless connection to the PixVerse backend: handles authentication, session management, and API routing automatically.\n- Supports credits checking, export/download workflow, and session state tracking.\n- Detailed error handling for tokens, credits, file support, and rate limits, with clear user guidance.\n- Includes prompt suggestions and best practices to help users get high-quality results faster.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a52f1a27567beb493ca5629e2f962057838b1c6507de5997c3c5b6a88e10974"
+}

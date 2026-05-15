@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-knowledge-base@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_knowledge_base",
+  "skill": {
+    "id": 33233,
+    "skillKey": "clawhub-meta-knowledge-base",
+    "name": "Meta Knowledge Base"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-knowledge-base",
+    "url": "https://clawhub.ai/skills/meta-knowledge-base",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-knowledge-base-609204267b784306.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered knowledge base builder that automatically captures, organizes, and retrieves information. Learns from conversations, documents, and interactions t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jason-aka-chen",
+      "userId": "publishers:jason-aka-chen",
+      "displayName": "jason-aka-chen",
+      "image": "https://avatars.githubusercontent.com/u/251550877?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774167025189,
+      "changelog": "Initial release of meta-knowledge-base: an AI-powered, self-building knowledge management system.\n\n- Automatically captures information from conversations, documents, and the web.\n- Organizes knowledge with auto-tagging, entity extraction, and relationship mapping.\n- Supports semantic and hybrid search with vector embeddings and advanced filtering.\n- Offers intelligent Q&A via RAG pipeline, source citation, and confidence scoring.\n- Learns continuously from user feedback and interactions.\n- Provides APIs for knowledge addition, search, Q&A, and management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b54ab6a787834d96561dfc77a3d4b6754b9370aca60e674b3a1f29102f9587dd"
+}

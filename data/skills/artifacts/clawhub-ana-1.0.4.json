@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ana@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ana",
+  "skill": {
+    "id": 72837,
+    "skillKey": "clawhub-ana",
+    "name": "Ana"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ana",
+    "url": "https://clawhub.ai/skills/ana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ana-24d4b96f58da6d4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供全日空航空航班搜索、预订、值机、里程管理、升舱、贵宾室及航班状态等全方位服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776232818416,
+      "changelog": "- 新增 version: 1.0.4 字段至 SKILL.md 文件，明确标注技能版本信息。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2dcc6bcf2ae5689d042e5a211837f7b15f16d7f5319e007651985871f0f2cd79"
+}

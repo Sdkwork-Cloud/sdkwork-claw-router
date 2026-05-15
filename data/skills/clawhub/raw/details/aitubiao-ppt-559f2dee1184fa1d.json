@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "aitubiao-ppt",
+    "displayName": "爱图表PPT",
+    "summary": "AI PPT/演示文稿生成。根据用户主题或内容自动生成PPT演示文稿项目。当用户想要创建PPT、演示文稿、幻灯片时使用，触发词包括\"创建PPT\"、\"做PPT\"、\"做个演示文稿\"、\"生成幻灯片\"、\"create PPT\"、\"make slides\"、\"generate presentation\"、\"make a P...",
+    "tags": {
+      "latest": "1.1.5"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 312,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1775139954875,
+    "updatedAt": 1777527096424
+  },
+  "latestVersion": {
+    "version": "1.1.5",
+    "createdAt": 1776934139752,
+    "changelog": "Version 1.1.5 introduces CLI integration and updates the workflow for improved reliability and clarity:\n\n- Migrated all API调用和认证流程 to a new Bash CLI script (`scripts/aitubiao-cli.sh`); manual curl logic replaced by CLI calls.\n- Removed direct usage and referencing of previously documented low-level API specs (`ppt-api.md`), as invocation is now via the unified CLI tool.\n- Enhanced Windows/Git Bash instructions, including handling for proper JSON encoding and file-based CLI inputs.\n- Updated error handling rules: 401/403 now exit immediately (without retries); creation接口不再自动重试，防止重复扣费；下载任务并发限制和文件完整性核查明确规定。\n- Expanded documentation for download操作和输出字段，确保多页导出、导出文件路径和格式处理准确到位。\n- Updated compatibility and metadata fields to reflect CLI and dependency requirements.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "aitubiao",
+    "userId": "s17bfd6atd8sje15j8ehx6j4bn83zz7g",
+    "displayName": "aitubiao",
+    "image": null
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527096424
+  }
+}

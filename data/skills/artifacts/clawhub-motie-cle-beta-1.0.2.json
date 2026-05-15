@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/motie-cle-beta@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.motie_cle_beta",
+  "skill": {
+    "id": 53481,
+    "skillKey": "clawhub-motie-cle-beta",
+    "name": "Motie CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "motie-cle-beta",
+    "url": "https://clawhub.ai/skills/motie-cle-beta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/motie-cle-beta-8a04bb2b9f8e1136.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover and explore APIs on the Motie marketplace using the motie CLI. Use this skill whenever you need to find an API or service to accomplish a task — res..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "saucedocs",
+      "userId": "s17f7xex7prj27fw6b48f3btqh845pcy",
+      "displayName": "Cristian Saucedo",
+      "image": "https://avatars.githubusercontent.com/u/47328421?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776366637110,
+      "changelog": "- Added documentation for the motie call subcommand, enabling direct API invocations from the CLI.\n- Updated the workflow: Step 2 docs responses now provide an example_cli command instead of example_curl.\n- Step 3 instructions now use motie call, with clear examples for GET/POST routes, path/query/body params, and CLI options.\n- Route documentation format revised: routes now specify parameter types, and the example_cli shows actual CLI usage.\n- General workflow and examples clarified for improved usability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3557344eaac3731b781a94171db05698f67dfd147e95526ff38717741b06b22"
+}

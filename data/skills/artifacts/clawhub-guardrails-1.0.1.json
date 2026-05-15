@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/guardrails@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guardrails",
+  "skill": {
+    "id": 10914,
+    "skillKey": "clawhub-guardrails",
+    "name": "Guardrails"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guardrails",
+    "url": "https://clawhub.ai/skills/guardrails",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guardrails-5dc897f81321d2ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactively configure, review, and monitor security guardrails for your OpenClaw workspace by discovering risks, interviewing users, and generating GUARDRA..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dgriffin831",
+      "userId": "publishers:dgriffin831",
+      "displayName": "dgriffin831",
+      "image": "https://avatars.githubusercontent.com/u/16494003?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2308,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770067285062,
+      "changelog": "- Switched risk classification script from Node.js (classify-risks.js) to Python (classify-risks.py).\n- Updated workflow commands to use the new Python risk classifier.\n- Clarified that classification uses only the Python standard library.\n- Removed references to Node.js for classification step in documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3a32419fec8fd5818b3b5d29cea6320de68fd209ae3d64842c302d663832e88e"
+}

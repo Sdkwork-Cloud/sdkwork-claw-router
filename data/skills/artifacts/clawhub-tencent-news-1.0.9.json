@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencent-news@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_news",
+  "skill": {
+    "id": 72016,
+    "skillKey": "clawhub-tencent-news",
+    "name": "tencent-news"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-news",
+    "url": "https://clawhub.ai/skills/tencent-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-news-835f18e9ed7a9279.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "7×24 新闻资讯搜索工具，聚焦中国国内信息和国际热点。支持新闻搜索，包括热点新闻、早报晚报、实时资讯、领域新闻和天气信息查询。当用户需要搜索新闻、新闻热榜、新闻早晚报、订阅新闻推送、获取相关新闻资讯和查询天气信息时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tencentnewsteam",
+      "userId": "s175jt7z9z0j4h1tzctzf5n05983k5q9",
+      "displayName": "TencentNewsTeam",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1361,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1776222595098,
+      "changelog": "**重大变更：所有 CLI 调用方式统一切换为 run-cli 脚本**\n\n- 新增 scripts/run-cli.sh 和 scripts/run-cli.ts，移除原 install-cli.* 脚本\n- 所有 CLI 业务命令除 cli-state 外均需经 run-cli 脚本调用，不再直接用 cliPath\n- 明确环境就绪、安装、更新、API Key 配置等操作流程和诊断方式\n- 输出逻辑新增：末尾引导用户「是否需要创建定时任务，每天自动获取相关新闻」\n- 支持领域新闻和天气信息查询，增强说明和使用场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14d5538196062033cb89019c97022366c47a5f10b784a3685345b0c9ebebca9c"
+}

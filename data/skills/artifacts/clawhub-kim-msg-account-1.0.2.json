@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kim-msg-account@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kim_msg_account",
+  "skill": {
+    "id": 62245,
+    "skillKey": "clawhub-kim-msg-account",
+    "name": "Kim Msg Account Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kim-msg-account",
+    "url": "https://clawhub.ai/skills/kim-msg-account",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kim-msg-account-8f3d5e889710c36a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Kim 消息号配置助手 - 快手（Kuaishou/Kwai）IM 消息渠道集成工具。帮助用户安装和配置 Kim Channel 插件，实现通过 Kim（快手 IM）与 OpenClaw 进行消息交互。支持自动安装插件、交互式配置指引、以及可选的自动配置服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leegodamn",
+      "userId": "s17c66yxj3wxsacma8nz1c6q0n83hx37",
+      "displayName": "LeeGoDamn",
+      "image": "https://avatars.githubusercontent.com/u/243561453?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 506,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772459280967,
+      "changelog": "- Documentation updates only: updated README.md and SKILL.md files.\n- No changes to core functionality or behavior.\n- Existing instructions, usage flows, and troubleshooting details remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:71bba8869f37e837d1f47cbd8957bd384cf0ea59097122ea145f9efa9584edd8"
+}

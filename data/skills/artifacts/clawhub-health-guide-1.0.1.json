@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/health-guide@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_guide",
+  "skill": {
+    "id": 59113,
+    "skillKey": "clawhub-health-guide",
+    "name": "Health Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-guide",
+    "url": "https://clawhub.ai/skills/health-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-guide-8200cb68ba5e0aaa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "의료/건강 상담 스킬. 10개 인텐트 라우팅(Symptom Check~Beginner Guide), hira-hospital 병원 연계 + 국가건강정보포털 API + 식약처 의약품 API 기반 Flash+Deep-Dive 2겹 리포트. 트리거: \"증상\", \"어디 아파\", \"진료과\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sw326",
+      "userId": "publishers:sw326",
+      "displayName": "김성우",
+      "image": "https://avatars.githubusercontent.com/u/172457805?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 893,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771772186830,
+      "changelog": "Setup 가이드 추가 — data.go.kr API 발급 방법 안내",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6ef0dae7046b5ce188db9959ad4fa37cc2b24831dfc03ea1d754b611f8cef8c5"
+}

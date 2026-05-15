@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27519,
+  "uuid": "skill-clawhub-zapyeti",
+  "skillKey": "clawhub-zapyeti",
+  "name": "ZapYeti",
+  "summary": "Use the ZapYeti API to list debts, track balances, view payoff schedules, log payments, and monitor debt-free progress via api.zapyeti.com. Use when the user...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zapyeti",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dustin Davis",
+      "features": [
+        "Use the ZapYeti API to list debts, track balances, view payoff schedules, log payments, and mon.",
+        "Use when the user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zapyeti@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177353?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zapyeti",
+      "url": "https://clawhub.ai/skills/zapyeti"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zapyeti",
+    "url": "https://clawhub.ai/skills/zapyeti",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zapyeti-940daf6b50f8c738.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zapyeti@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zapyeti-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd25cce279cf489f7233b35264a10750915e86c7ba282f524d58aa43dcf61900",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T11:43:06.382Z"
+}

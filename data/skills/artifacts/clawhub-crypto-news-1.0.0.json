@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_news",
+  "skill": {
+    "id": 59499,
+    "skillKey": "clawhub-crypto-news",
+    "name": "Crypto News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-news",
+    "url": "https://clawhub.ai/skills/crypto-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-news-7661f46d6f2b7a58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取律动 BlockBeats 最新的加密货币、Web3 及 AI 行业快讯。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuzipeng",
+      "userId": "publishers:xuzipeng",
+      "displayName": "freedom",
+      "image": "https://avatars.githubusercontent.com/u/13942269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1829,
+      "installsAllTime": 15,
+      "installsCurrent": 14,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772178748580,
+      "changelog": "Initial release of blockbeats-news skill:\n\n- Fetches the latest cryptocurrency, Web3, and AI industry news from BlockBeats.\n- Allows users to filter news by type (e.g., AI, DeFi, NFT) and specify number of items and page.\n- Executes via a native Node.js script using environment variables.\n- Does not require additional dependencies; fully open-source and transparent.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cd4011a246de036f9f1f1e29e6cf37eb0ef78f98062c8a2f8e12509bf9365aa9"
+}

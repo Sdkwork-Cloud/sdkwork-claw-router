@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cad-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cad_editor",
+  "skill": {
+    "id": 69288,
+    "skillKey": "clawhub-cad-editor",
+    "name": "CAD Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cad-editor",
+    "url": "https://clawhub.ai/skills/cad-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cad-editor-d8aaafb1b8b0a86c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CAD制图编辑器 — 用自然语言生成工程图纸（建筑平面图/机械零件/电气布置/管道系统/结构详图）。 支持DXF文件创建、渲染预览、批量导出。触发词：画平面图、CAD、工程图、建筑图、机械图、电气图、 管道图、结构图、画线/圆/矩形/多边形、尺寸标注、DXF、AutoCAD、施工图、配筋图、齿轮、轴承、 阀门、弯..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangjiaocheng",
+      "userId": "s175zq13kt63ypfry5rgxh1pv18440m2",
+      "displayName": "波动几何",
+      "image": "https://avatars.githubusercontent.com/u/25478397?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776279961943,
+      "changelog": "- Initial release of the \"cad-editor\" skill.\n- Generate engineering drawings from natural language prompts, covering architecture, mechanical, electrical, piping, and structural domains.\n- Support for DXF file creation, preview rendering (PNG/SVG/PDF), and batch export.\n- Follows GB/T drafting standards; includes API for precision control and industry-specific drawing templates and components.\n- Automatic intent recognition and parameter extraction from user commands; outputs both preview image and download link for CAD file.\n- Requires installation of ezdxf, matplotlib, and numpy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7c38ef7056fe5787c83223627fa0bd7149d588d8fbff25b8fb6ac3beb5fa31e"
+}

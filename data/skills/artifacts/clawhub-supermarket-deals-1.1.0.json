@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/supermarket-deals@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supermarket_deals",
+  "skill": {
+    "id": 18882,
+    "skillKey": "clawhub-supermarket-deals",
+    "name": "Supermarket Deals (DE)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supermarket-deals",
+    "url": "https://clawhub.ai/skills/supermarket-deals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supermarket-deals-3eff005b4d47046b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search German supermarket flyers (Aldi, Lidl, REWE, EDEKA, Kaufland) for product deals via Marktguru. Results ranked by best price per litre (EUR/L). No API..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "benmillerat",
+      "userId": "s17cnye3p3301502kpmb2eh6ss840q6v",
+      "displayName": "Ben Miller",
+      "image": "https://avatars.githubusercontent.com/u/73343564?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 553,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772982869461,
+      "changelog": "Show product name in text table",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3215e970ef652aa9256aae5a77bba97735b823de7e97d93fd924d932b9e6390e"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38816,
+  "uuid": "skill-clawhub-search-api",
+  "skillKey": "clawhub-search-api",
+  "name": "Search Api",
+  "summary": "Search API integration. Manage Deals, Persons, Organizations, Leads, Projects, Pipelines and more. Use when the user wants to interact with Search API data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.search_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Search API integration",
+        "Manage Deals, Persons, Organizations, Leads, Projects, Pipelines and more",
+        "Use when the user wants to interact with Search API data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/search-api@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "search-api",
+      "url": "https://clawhub.ai/skills/search-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "search-api",
+    "url": "https://clawhub.ai/skills/search-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/search-api-dd8939c47e48287b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/search-api@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-search-api-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:793b7bdc64424c46715d8aa8bfc54b77e006b9739aa64716e24f47037f303e03",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:38:39.090Z"
+}

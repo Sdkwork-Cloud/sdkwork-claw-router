@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15710,
+  "uuid": "skill-clawhub-admet-prediction",
+  "skillKey": "clawhub-admet-prediction",
+  "name": "Admet Prediction",
+  "summary": "ADMET (Absorption, Distribution, Metabolism, Excretion, Toxicity) prediction for drug candidates. Use for assessing drug-likeness, PK properties, and safety...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.admet_prediction",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zen Huifer",
+      "features": [
+        "ADMET (Absorption, Distribution, Metabolism, Excretion, Toxicity) prediction for drug candidates",
+        "Use for assessing drug-likeness, PK properties, and safety..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/admet-prediction@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26766909?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "admet-prediction",
+      "url": "https://clawhub.ai/skills/admet-prediction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "admet-prediction",
+    "url": "https://clawhub.ai/skills/admet-prediction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/admet-prediction-ad3b244a829a47a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/admet-prediction@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-admet-prediction-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24c101b92cdca6741a60725ad535631f66050a153e5a45313900cc86b72ded2e",
+      "artifactSizeBytes": 2549
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T05:05:06.578Z"
+}

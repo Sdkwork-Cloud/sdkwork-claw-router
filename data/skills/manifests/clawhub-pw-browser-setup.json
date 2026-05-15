@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63677,
+  "uuid": "skill-clawhub-pw-browser-setup",
+  "skillKey": "clawhub-pw-browser-setup",
+  "name": "PW Browser Setup",
+  "summary": "浏览器自动化环境的一键安装、检查和验证工具。 安装 Playwright + Chromium，支持非头模式（模拟真实用户浏览器）和头模式。 包含系统兼容性检查（内存、CPU、磁盘）、依赖安装、Xvfb 虚拟显示器配置。 当用户要求：(1) 安装浏览器自动化环境 (2) 配置 Playwright (3) 检查系...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pw_browser_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JerryXn",
+      "features": [
+        "浏览器自动化环境的一键安装、检查和验证工具。 安装 Playwright + Chromium，支持非头模式（模拟真实用户浏览器）和头模式。 包含系统兼容性检查（内存、CPU、磁盘）、依赖安."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pw-browser-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37356803?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pw-browser-setup",
+      "url": "https://clawhub.ai/skills/pw-browser-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pw-browser-setup",
+    "url": "https://clawhub.ai/skills/pw-browser-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pw-browser-setup-3f12571d7babf096.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pw-browser-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pw-browser-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b873367b0d1e2d84ef027e8305349d7a1df214c343eb34a32e55324042b02ba1",
+      "artifactSizeBytes": 2186
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T00:50:54.310Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72495,
+  "uuid": "skill-clawhub-zsxq-topic",
+  "skillKey": "clawhub-zsxq-topic",
+  "name": "Zsxq Topic",
+  "summary": "知识星球主题管理：搜索主题、查看详情、发布帖子、发表评论、回答提问、删除主题、设置精华和标签。当用户需要查找内容、发帖、评论、回答问题、删除主题、或管理主题时使用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zsxq_topic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhuguojie-unnoo",
+      "features": [
+        "知识星球主题管理：搜索主题、查看详情、发布帖子、发表评论、回答提问、删除主题、设置精华和标签。当用户需要查找内容、发帖、评论、回答问题、删除主题、或管理主题时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zsxq-topic@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16533180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zsxq-topic",
+      "url": "https://clawhub.ai/skills/zsxq-topic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zsxq-topic",
+    "url": "https://clawhub.ai/skills/zsxq-topic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zsxq-topic-86e7adc95518f7d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zsxq-topic@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zsxq-topic-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebe1473036edc69c2121e618c789f95be2e0390b05635b1441ccdbf4a1f07862",
+      "artifactSizeBytes": 2538
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T14:31:27.792Z"
+}

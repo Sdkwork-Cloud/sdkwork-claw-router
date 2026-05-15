@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65781,
+  "uuid": "skill-clawhub-lightreading-daily",
+  "skillKey": "clawhub-lightreading-daily",
+  "name": "科技新闻每日推送",
+  "summary": "每天11点自动抓取LightReading和TechCrunch最新科技新闻，AI翻译摘要后推送到企业微信，保证双站点内容覆盖。",
+  "version": "5.9.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lightreading_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SophieLiiiiii",
+      "features": [
+        "每天11点自动抓取LightReading和TechCrunch最新科技新闻，AI翻译摘要后推送到企业微信，保证双站点内容覆盖。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lightreading-daily@5.9.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271128709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lightreading-daily",
+      "url": "https://clawhub.ai/skills/lightreading-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lightreading-daily",
+    "url": "https://clawhub.ai/skills/lightreading-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lightreading-daily-911399482a8b40cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lightreading-daily@5.9.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lightreading-daily-5.9.1.json",
+      "version": "5.9.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03cec2edb6ed482420e6ab590fb40b13b3144d097b6a5c21194d369ef2d87015",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T11:47:51.030Z"
+}

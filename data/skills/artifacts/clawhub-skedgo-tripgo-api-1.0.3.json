@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skedgo-tripgo-api@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skedgo_tripgo_api",
+  "skill": {
+    "id": 24771,
+    "skillKey": "clawhub-skedgo-tripgo-api",
+    "name": "SkedGo TripGo API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skedgo-tripgo-api",
+    "url": "https://clawhub.ai/skills/skedgo-tripgo-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skedgo-tripgo-api-0be7a196b4b9f10a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive interface for the SkedGo TripGo API, covering routing, public transport, trips, and location services. Use for multimodal journey planning, pub..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guanyu-zhang",
+      "userId": "publishers:guanyu-zhang",
+      "displayName": "Guanyu Zhang",
+      "image": "https://avatars.githubusercontent.com/u/63548771?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 404,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772241958350,
+      "changelog": "# skedgo-tripgo-api v1.0.3 (metadata + webhook guardrails)\n\n## ✅ Registry metadata coherence fix\nUpdated `SKILL.md` frontmatter to include machine-readable OpenClaw requirements so ClawHub can correctly display runtime requirements:\n\n- Required env var: `TRIPGO_API_KEY`\n- Required binaries: `curl`, `jq`\n- Primary credential env: `TRIPGO_API_KEY`\n\nAdded frontmatter:\n```yaml\nmetadata: {\"openclaw\":{\"requires\":{\"bins\":[\"curl\",\"jq\"],\"env\":[\"TRIPGO_API_KEY\"]},\"primaryEnv\":\"TRIPGO_API_KEY\"}}\n```\n\n## 🔒 Webhook exfiltration-risk mitigation\nHardened `scripts/trips-hooks-a-trip-to-real-time-updates.sh` with default-safe webhook policy:\n\n1. Enforce `https://` webhook URLs only.\n2. Parse and validate webhook host.\n3. Require domain allowlist by default via:\n   - `TRIPGO_WEBHOOK_ALLOWLIST=example.com,webhooks.example.org`\n4. Allow bypass only with explicit opt-in:\n   - `TRIPGO_ALLOW_UNSAFE_WEBHOOK=true`\n5. Keep JSON input validation for headers and safe JSON body construction via `jq`.\n\nThis preserves legitimate TripGo webhook functionality while reducing abuse potential from arbitrary callback destinations.\n\n## Docs updates\nUpdated `SKILL.md` to document:\n- `TRIPGO_WEBHOOK_ALLOWLIST` (recommended)\n- `TRIPGO_ALLOW_UNSAFE_WEBHOOK` (debug/trusted use only)\n- security behavior for webhook registration\n\n## Verification\n- `bash -n` passed for updated webhook script.\n- Manual behavior checks confirm:\n  - missing allowlist => blocked\n  - non-allowlisted host => blocked\n  - only allowlisted hosts (or explicit unsafe override) can proceed\n\n---\n\nSuggested release note summary:\n> Fixes ClawHub metadata mismatch and adds secure-by-default webhook controls (HTTPS + allowlist, with explicit unsafe override) to reduce potential exfiltration risk while keeping TripGo hook support intact.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:75c0f63802a8a639dd4c3a0c7928fdbc8b80e3723465e58df9d73fef13ec0c5d"
+}

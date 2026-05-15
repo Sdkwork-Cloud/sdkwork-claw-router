@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qmd-cli@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qmd_cli",
+  "skill": {
+    "id": 9143,
+    "skillKey": "clawhub-qmd-cli",
+    "name": "QMD CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qmd-cli",
+    "url": "https://clawhub.ai/skills/qmd-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qmd-cli-4c992228e014adf6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and retrieve markdown documents from local knowledge bases using qmd. Supports BM25 keyword search, vector semantic search, and hybrid search with LLM re-ranking. Use for querying indexed notes, documentation, meeting transcripts, a."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dpaluy",
+      "userId": "publishers:dpaluy",
+      "displayName": "dpaluy",
+      "image": "https://avatars.githubusercontent.com/u/92692?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4359,
+      "installsAllTime": 16,
+      "installsCurrent": 16,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1769638667448,
+      "changelog": "Add better support for updates",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c2d1fe35f7f5157cfa4837406d92dc37fe0acf070734ad8c91d5608138491e48"
+}

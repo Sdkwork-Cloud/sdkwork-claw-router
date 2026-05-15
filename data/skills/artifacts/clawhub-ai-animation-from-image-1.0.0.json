@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-animation-from-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_animation_from_image",
+  "skill": {
+    "id": 42629,
+    "skillKey": "clawhub-ai-animation-from-image",
+    "name": "Ai Animation From Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-animation-from-image",
+    "url": "https://clawhub.ai/skills/ai-animation-from-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-animation-from-image-e77eea97fd470796.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert still images into animated video clips with this skill. Works with JPG, PNG, WEBP, HEIC files up to 200MB. social media creators use it for turning s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776751865188,
+      "changelog": "AI Animation from Image — Version 1.0.0\n\n- Initial release: convert still images (JPG, PNG, WEBP, HEIC) into 1080p animated MP4 videos in 20–40 seconds.\n- Easy upload and batch processing features for social media creators.\n- Automated session handling and free 7-day token for new users.\n- Credit balance checker and error handling for exports.\n- Supports video, audio, and text overlays with simple instructions.\n- Guidance for optimal results and common workflows included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:397cea1371e40afdf859e02f725b01e965137f26405be0ae7b68d4c416f9baf4"
+}

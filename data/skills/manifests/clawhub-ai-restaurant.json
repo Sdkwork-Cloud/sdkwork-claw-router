@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72172,
+  "uuid": "skill-clawhub-ai-restaurant",
+  "skillKey": "clawhub-ai-restaurant",
+  "name": "智慧餐饮",
+  "summary": "智慧餐饮 - 通过自然语言交互实现餐厅查询、点餐、订桌、外卖、排队等全流程服务。支持飞书、微信、QQ 等即时通讯渠道，扫码即用，无需下载 App。",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_restaurant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dawangda",
+      "features": [
+        "通过自然语言交互实现餐厅查询、点餐、订桌、外卖、排队等全流程服务。支持飞书、微信、QQ 等即时通讯渠道，扫码即用，无需下载 App。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-restaurant@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11683045?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-restaurant",
+      "url": "https://clawhub.ai/skills/ai-restaurant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-restaurant",
+    "url": "https://clawhub.ai/skills/ai-restaurant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-restaurant-952addf127a5735c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-restaurant@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-restaurant-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:219e7d88ba0cde28a149658b1578ac704f11a24fc558ea4c208aa74416a2d5d8",
+      "artifactSizeBytes": 2039
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T08:56:36.633Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28251,
+  "uuid": "skill-clawhub-formora-survey",
+  "skillKey": "clawhub-formora-survey",
+  "name": "Formora Survey",
+  "summary": "Create, edit, publish, and distribute Formora AI surveys, polls, and forms. Supports organic channels (Telegram, Email, QR code, X) and live paid ads (Google...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.formora_survey",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "david l euler",
+      "features": [
+        "Create, edit, publish, and distribute Formora AI surveys, polls, and forms",
+        "Supports organic channels (Telegram, Email, QR code, X) and live paid ads (Google..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/formora-survey@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/377983?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "formora-survey",
+      "url": "https://clawhub.ai/skills/formora-survey"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "formora-survey",
+    "url": "https://clawhub.ai/skills/formora-survey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/formora-survey-0c759c6a373bbe11.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/formora-survey@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-formora-survey-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17d710f9fba78013d8a7ef9503da67e4b6e57a2b7230984acb29a77e13177a3f",
+      "artifactSizeBytes": 2047
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T06:13:47.067Z"
+}

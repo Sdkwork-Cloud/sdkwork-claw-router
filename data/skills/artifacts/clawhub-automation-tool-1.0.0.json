@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/automation-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.automation_tool",
+  "skill": {
+    "id": 61292,
+    "skillKey": "clawhub-automation-tool",
+    "name": "Automation Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "automation-tool",
+    "url": "https://clawhub.ai/skills/automation-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/automation-tool-ed116c3da2608dcc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动化内容生成工具 - 文章/报告/脚本批量生成"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "muyanshouji",
+      "userId": "publishers:muyanshouji",
+      "displayName": "muyanshouji",
+      "image": "https://avatars.githubusercontent.com/u/55934984?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1655,
+      "installsAllTime": 11,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772928428739,
+      "changelog": "- 首次发布自动化内容生成工具，支持批量生成文章、报告、脚本等多种内容类型。\n- 提供完整自动化流程：需求分析、素材收集、大纲生成、内容创作、优化迭代与多格式批量输出。\n- 内置 SEO 优化、市场报告、视频脚本生成等多样化内容模板和使用示例。\n- 集成 browser、web_search、exec、文件读写、消息发送等自动化工具。\n- 强调内容质量控制、原创合规和多平台适配，适用于多语言、批量处理和定时发布场景。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bb1c03eb1c9f9c4d98f44b085fc58e79c91ec8195fd3fc7a3958b9f3dfe1ea1d"
+}

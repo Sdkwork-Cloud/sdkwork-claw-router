@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67611,
+  "uuid": "skill-clawhub-clipboard-manager",
+  "skillKey": "clawhub-clipboard-manager",
+  "name": "Clipboard Manager",
+  "summary": "剪贴板历史管理工具。保存剪贴板历史，快速搜索和重复粘贴。适合频繁复制粘贴的用户。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clipboard_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SxLiuYu",
+      "features": [
+        "剪贴板历史管理工具。保存剪贴板历史，快速搜索和重复粘贴。适合频繁复制粘贴的用户。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clipboard-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95198625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clipboard-manager",
+      "url": "https://clawhub.ai/skills/clipboard-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clipboard-manager",
+    "url": "https://clawhub.ai/skills/clipboard-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clipboard-manager-14cbdcef3e1fa91f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clipboard-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clipboard-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffdd81a48050c67a5c8c2a0e09486afa182b03fe1c3626e4bea4d0d514be3d5a",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T08:53:29.417Z"
+}

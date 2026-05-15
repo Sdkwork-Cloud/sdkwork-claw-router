@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ziwei-doushu-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ziwei_doushu_2",
+  "skill": {
+    "id": 61828,
+    "skillKey": "clawhub-ziwei-doushu-2",
+    "name": "Ziwei Doushu Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ziwei-doushu-2",
+    "url": "https://clawhub.ai/skills/ziwei-doushu-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ziwei-doushu-2-faa7e3ef120ab442.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为大模型提供命理运势分析时需要的排盘数据"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "letswinone888",
+      "userId": "publishers:letswinone888",
+      "displayName": "Astromyst",
+      "image": "https://avatars.githubusercontent.com/u/188433814?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 419,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773195692614,
+      "changelog": "ziwei-doushu-2 v0.1.0 – Initial Release\n\n- Introduces a professional Ziwei Doushu (紫微斗数) fortune analysis tool for detailed astrological charting via API.\n- Provides guidance on API authentication, supported parameters, and usage workflow for multiple calculation tools (lunar/solar conversion, natal chart, decadal/annual/monthly/daily fortune, and decade ranges).\n- Details user input requirements and recommended interpretation style focused on clarity and positive guidance.\n- Includes comprehensive handling for quota exhaustion with clear user prompts and seamless resumption after recharge.\n- All users receive free daily call quotas following registration at the homepage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04dcdf5eeefee35da26a2a0b0c814b29e82dc5365264375885ac6daf3eb5e37d"
+}

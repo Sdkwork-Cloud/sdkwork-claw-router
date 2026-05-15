@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-direct@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_direct",
+  "skill": {
+    "id": 8691,
+    "skillKey": "clawhub-obsidian-direct",
+    "name": "Obsidian - read, search, write and edit direct to obsidian vault."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-direct",
+    "url": "https://clawhub.ai/skills/obsidian-direct",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-direct-a934864063f5accf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work with Obsidian vaults as a knowledge base. Features: fuzzy/phonetic search across all notes, auto-folder detection for new notes, create/read/edit notes with frontmatter, manage tags and wikilinks. Use when: querying knowledge base, sa."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ruslanlanket",
+      "userId": "s17f1zyxcdr10fmqwatej4jqgx83k4md",
+      "displayName": "RuslanLanket",
+      "image": "https://avatars.githubusercontent.com/u/151464535?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7218,
+      "installsAllTime": 76,
+      "installsCurrent": 74,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770331850180,
+      "changelog": "Initial release — Adds support for managing Obsidian vaults as a knowledge base.\n\n- Fuzzy/phonetic search across all notes using fast ripgrep filtering.\n- Automatic folder detection for new notes and note suggestion based on content.\n- Create, read, and edit notes with frontmatter (timestamps, tags, aliases).\n- Manage tags, incoming/outgoing wikilinks, and sections within notes.\n- Comprehensive CLI scripts for querying, saving, editing, and organizing notes and folders.\n- Designed workflows for knowledge base queries, note creation, and prompt-driven editing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6a5352edbcb3baf62c5572770922770aa2c51e629288146f787c1d32d42d6624"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feedback-controller-clarkchenkai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feedback_controller_clarkchenkai",
+  "skill": {
+    "id": 53020,
+    "skillKey": "clawhub-feedback-controller-clarkchenkai",
+    "name": "Feedback Controller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feedback-controller-clarkchenkai",
+    "url": "https://clawhub.ai/skills/feedback-controller-clarkchenkai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feedback-controller-clarkchenkai-41cc70655d605ace.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Feedback Controller — Closed-Loop Agent Skill for Correcting Execution Drift. Use it when the user needs a disciplined protocol and fixed output contract for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clarkchenkai",
+      "userId": "s17ajkxsb44wpgrcm6e0s5bbj5849c81",
+      "displayName": "Cubic AI",
+      "image": "https://avatars.githubusercontent.com/u/242906237?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775700614762,
+      "changelog": "Initial release of the feedback-controller skill:\n\n- Introduces a closed-loop protocol for correcting execution drift in multi-step tasks.\n- Defines a clear, six-part output contract for structured feedback.\n- Specifies step-by-step diagnostic and corrective procedures, including triggers and boundaries.\n- Emphasizes specific error localization and partial correction over generic or total rework.\n- Details escalation rules to prevent endless correction loops in automated workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35ece3141a31cecc400eca61f82e17b295265a43221d71361fa6251cfadeb116"
+}

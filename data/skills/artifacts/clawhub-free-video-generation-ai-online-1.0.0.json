@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-generation-ai-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_generation_ai_online",
+  "skill": {
+    "id": 39626,
+    "skillKey": "clawhub-free-video-generation-ai-online",
+    "name": "Free Video Generation Ai Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-generation-ai-online",
+    "url": "https://clawhub.ai/skills/free-video-generation-ai-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-generation-ai-online-577415bd3cdad3c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a short text description like 'a sunset over mountains with calm music' into 1080p AI generated videos just by typing what you need. Whether it's genera..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776774335266,
+      "changelog": "- Initial release of Free Video Generation AI Online skill.\n- Generate 1080p AI videos from text prompts or images entirely online—no editing experience needed.\n- Seamless backend connection, including free 7-day token acquisition and session management.\n- Supports uploading files, prompt-based generation, video editing, and high-quality MP4 export.\n- Includes credit balance queries, session state inspection, and clear error handling for a smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30ba6f4ab5b5398286ca3db9c681dc1baf9b64e1c41b568db449c006ea980f81"
+}

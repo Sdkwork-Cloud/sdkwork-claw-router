@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68682,
+  "uuid": "skill-clawhub-find-book-aaroncxxx",
+  "skillKey": "clawhub-find-book-aaroncxxx",
+  "name": "Find Book",
+  "summary": "出版书籍查找与权威来源定位。根据书名、作者、ISBN 或主题， 查找权威版本、译本、校注本及其 ISBN/出版信息。 覆盖中西方经典著作（哲学、文学、宗教等），支持多语种版本溯源。 每次搜索输出 3 个版本选项：权威版 / 推荐版 / 入门版。 使用场景：用户问\"找书\"、\"查ISBN\"、\"有哪些版本\"、\"权威译本...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_book_aaroncxxx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aaroncxxx",
+      "features": [
+        "出版书籍查找与权威来源定位。根据书名、作者、ISBN 或主题， 查找权威版本、译本、校注本及其 ISBN/出版信息。 覆盖中西方经典著作（哲学、文学、宗教等），支持多语种版本溯源。 每次搜索."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-book-aaroncxxx@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255621878?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-book-aaroncxxx",
+      "url": "https://clawhub.ai/skills/find-book-aaroncxxx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-book-aaroncxxx",
+    "url": "https://clawhub.ai/skills/find-book-aaroncxxx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-book-aaroncxxx-41dd649774d4bf39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-book-aaroncxxx@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-book-aaroncxxx-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b640ffc3d9df6d7e641e5ba816c966ac6a67f525d930be086093130130a082a6",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T03:02:57.753Z"
+}

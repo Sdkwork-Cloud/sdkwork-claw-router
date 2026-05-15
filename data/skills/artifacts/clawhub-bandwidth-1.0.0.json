@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bandwidth@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bandwidth",
+  "skill": {
+    "id": 54394,
+    "skillKey": "clawhub-bandwidth",
+    "name": "Bandwidth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bandwidth",
+    "url": "https://clawhub.ai/skills/bandwidth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bandwidth-2c7210c5b950d312.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bandwidth — messaging, voice calls, phone numbers, and 911 services."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 688,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771509860361,
+      "changelog": "Initial release of the Bandwidth skill.\n\n- Send and list SMS/MMS messages from the command line.\n- Create outbound voice calls and retrieve call details.\n- Manage phone numbers: list, search, and order.\n- List registered Bandwidth applications.\n- All commands available through a single CLI script; outputs JSON.\n- Requires only Python 3.10+ (no external dependencies).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a9bb6d187130fa8c50b1c2523d064a72c22b8ce2d786fbafc9adbfd70c421505"
+}

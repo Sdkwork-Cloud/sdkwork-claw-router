@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hk-stock-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hk_stock_monitor",
+  "skill": {
+    "id": 71510,
+    "skillKey": "clawhub-hk-stock-monitor",
+    "name": "港股+A股盯盘系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hk-stock-monitor",
+    "url": "https://clawhub.ai/skills/hk-stock-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hk-stock-monitor-d0daf75472407878.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "港股+A股实时盯盘系统，支持技术分析、涨跌幅告警、飞书推送。使用场景：(1) 查询港股/A股实时行情，(2) 监控股票涨跌幅告警，(3) 生成技术分析报告，(4) 定时推送盯盘报告。触发关键词：盯盘、股票监控、港股行情、A股行情、涨跌告警、技术分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "merlini0116",
+      "userId": "s17e3337660bs30sgpg7kwg1r5841qjd",
+      "displayName": "merlini0116",
+      "image": "https://avatars.githubusercontent.com/u/35798514?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775044938006,
+      "changelog": "首次发布",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb8fc27f2a57e96c4b1b7c49d03a688863e431c9485c4602159df7678513696e"
+}

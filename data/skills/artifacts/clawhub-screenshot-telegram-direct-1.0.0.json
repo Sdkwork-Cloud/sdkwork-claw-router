@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/screenshot-telegram-direct@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.screenshot_telegram_direct",
+  "skill": {
+    "id": 46004,
+    "skillKey": "clawhub-screenshot-telegram-direct",
+    "name": "Screenshot Telegram Direct"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "screenshot-telegram-direct",
+    "url": "https://clawhub.ai/skills/screenshot-telegram-direct",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/screenshot-telegram-direct-33cb4ed2f61241f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Capture website screenshots and send to Telegram via direct API. Works around OpenClaw's broken image delivery (issue"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "niccoreyes",
+      "userId": "s173qytv4bdr6qmd4zck8t415d84fwdg",
+      "displayName": "niccoreyes",
+      "image": "https://avatars.githubusercontent.com/u/2419987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775653402905,
+      "changelog": "Screenshot websites and send to Telegram via direct API",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:137112c9d63dedfea24fd7a7fc457c5d19850677638a5e9812accc5dd2b4a669"
+}

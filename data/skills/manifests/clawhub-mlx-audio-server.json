@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10188,
+  "uuid": "skill-clawhub-mlx-audio-server",
+  "skillKey": "clawhub-mlx-audio-server",
+  "name": "MLX Audio Server",
+  "summary": "Local 24x7 OpenAI-compatible API server for STT/TTS, powered by MLX on your Mac.",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mlx_audio_server",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guoqiao",
+      "features": [
+        "Local 24x7 OpenAI-compatible API server for STT/TTS, powered by MLX on your Mac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mlx-audio-server@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1306111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mlx-audio-server",
+      "url": "https://clawhub.ai/skills/mlx-audio-server"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mlx-audio-server",
+    "url": "https://clawhub.ai/skills/mlx-audio-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mlx-audio-server-1a3ca045eb2ddeed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mlx-audio-server@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mlx-audio-server-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1f326295d70ed834f4474797fdf3ae46392ea4e606d50af96c29fa489c4d2c3",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T03:16:12.987Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43881,
+  "uuid": "skill-clawhub-provenable",
+  "skillKey": "clawhub-provenable",
+  "name": "Verifiable-Recursive-Safety-Guardrails-Runtime",
+  "summary": "Condensed single-file skill for the full AEGX Provenable repository. Use when you need the repository's complete operating model, architecture, CLI, integrat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.provenable",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Foo Jun Wei",
+      "features": [
+        "Condensed single-file skill for the full AEGX Provenable repository",
+        "Use when you need the repository's complete operating model, architecture, CLI, integrat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/provenable@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/122217524?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "provenable",
+      "url": "https://clawhub.ai/skills/provenable"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "provenable",
+    "url": "https://clawhub.ai/skills/provenable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/provenable-bd1070789dd29ce1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/provenable@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-provenable-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70998d82e3a7205ad549e047eed00a6f718ef201b232f1b95b050d1d4b4d36cf",
+      "artifactSizeBytes": 2552
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T03:30:02.015Z"
+}

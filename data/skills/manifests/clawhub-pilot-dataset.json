@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41021,
+  "uuid": "skill-clawhub-pilot-dataset",
+  "skillKey": "clawhub-pilot-dataset",
+  "name": "Pilot Dataset",
+  "summary": "Exchange structured datasets with schema negotiation and metadata over Pilot Protocol. Use this skill when: 1. You need to share CSV, JSON, or Parquet datase...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_dataset",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Exchange structured datasets with schema negotiation and metadata over Pilot Protocol",
+        "Use this skill when: 1",
+        "You need to share CSV, JSON, or Parquet datase..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-dataset@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-dataset",
+      "url": "https://clawhub.ai/skills/pilot-dataset"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-dataset",
+    "url": "https://clawhub.ai/skills/pilot-dataset",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-dataset-8077e8a1dc67d6f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-dataset@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-dataset-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a62061d4758797bf55c3c1693d46086ff075c4d3a8966d041e30f7888dd9f4d",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T01:17:36.857Z"
+}

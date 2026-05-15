@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fofamap@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fofamap",
+  "skill": {
+    "id": 30198,
+    "skillKey": "clawhub-fofamap",
+    "name": "fofamap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fofamap",
+    "url": "https://clawhub.ai/skills/fofamap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fofamap-a40d0a2c7cab9457.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants FOFA-based asset discovery, host profiling, distribution statistics, icon_hash generation, query refinement after zero-res..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asaotomo",
+      "userId": "s177penfc4z7re7mhvkqqmvskx83m9hg",
+      "displayName": "asaotomo",
+      "image": "https://avatars.githubusercontent.com/u/67818638?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776086304597,
+      "changelog": "**New version adds comprehensive playbooks, FOFA permission awareness, recurring monitoring, and local learning capability.**\n\n- Added multiple playbooks, syntax guides, report templates, and a reusable query syntax corpus for more robust and flexible FOFA workflows.\n- Enhanced skill to detect FOFA membership tier and capability profile, improving automatic field selection and error handling.\n- Introduced recurring asset monitoring and inventory drift detection using monitor mode and snapshot comparison.\n- Added local bounded memory to support self-improvement across runs, including learning from failures, friction, and reporting patterns.\n- Expanded quick start examples to cover advanced and recurring use cases.\n- Updated workflow and reference sections to reflect new monitoring, red team, and reporting guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8d6c2e06e7a4cd7897f498a4f6c5a0d52b4e5542a1228cb9497f023f993d357"
+}

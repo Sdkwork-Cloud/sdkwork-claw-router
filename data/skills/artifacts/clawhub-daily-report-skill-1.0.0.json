@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-report-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_report_skill",
+  "skill": {
+    "id": 17289,
+    "skillKey": "clawhub-daily-report-skill",
+    "name": "Daily Report Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-report-skill",
+    "url": "https://clawhub.ai/skills/daily-report-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-report-skill-2360e18f44e6d484.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily report skill - Generate and send daily work summary. Keywords: daily report, work summary, end of day. Use when: End of day reporting, or manually trig..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rare",
+      "userId": "s177n6ehfcsryk41xwndbgxasx83qef7",
+      "displayName": "raressen",
+      "image": "https://avatars.githubusercontent.com/u/528596?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 754,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772551294197,
+      "changelog": "Configurable daily report with multi-channel delivery",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:98f861e62c15ea9c05d632227f5dc71b586ea48a06ad0f29ac21451689bea98e"
+}

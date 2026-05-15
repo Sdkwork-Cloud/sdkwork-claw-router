@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18561,
+  "uuid": "skill-clawhub-funda-gateway",
+  "skillKey": "clawhub-funda-gateway",
+  "name": "Funda Listings Gateway",
+  "summary": "Local Funda.nl HTTP gateway for listing details, search, and image previews",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.funda_gateway",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Boris",
+      "features": [
+        "Local Funda.nl HTTP gateway for listing details, search, and image previews"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/funda-gateway@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1838968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "funda-gateway",
+      "url": "https://clawhub.ai/skills/funda-gateway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "funda-gateway",
+    "url": "https://clawhub.ai/skills/funda-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/funda-gateway-f9394a36f747984a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/funda-gateway@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-funda-gateway-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb02720b1a750c2e439ef42bdaf78b21a017bca605c18b14ef8b6750f4712301",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T17:28:05.717Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39546,
+  "uuid": "skill-clawhub-rulespec",
+  "skillKey": "clawhub-rulespec",
+  "name": "Rule Spec",
+  "summary": "Define, manage, and compile business rules as structured YAML data into LLM-ready prompts and agent-loadable SKILL.md files. Use when the user wants to creat...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rulespec",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ric",
+      "features": [
+        "Define, manage, and compile business rules as structured YAML data into LLM-ready prompts and a.",
+        "Use when the user wants to creat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rulespec@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95774148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rulespec",
+      "url": "https://clawhub.ai/skills/rulespec"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rulespec",
+    "url": "https://clawhub.ai/skills/rulespec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rulespec-287056d69077f632.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rulespec@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-rulespec-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35eb06b7e7106313a5e1f6e9548a421aec7553477ddc8ac7f343562fdc28d939",
+      "artifactSizeBytes": 2163
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T21:35:48.731Z"
+}

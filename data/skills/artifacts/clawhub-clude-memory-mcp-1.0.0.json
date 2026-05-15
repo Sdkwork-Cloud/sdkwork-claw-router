@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clude-memory-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clude_memory_mcp",
+  "skill": {
+    "id": 40918,
+    "skillKey": "clawhub-clude-memory-mcp",
+    "name": "Clude Memory MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clude-memory-mcp",
+    "url": "https://clawhub.ai/skills/clude-memory-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clude-memory-mcp-01f40c97c4fbdab8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MCP server for Clude's 4-tier cognitive memory system — store, recall, search, and dream. Built on Supabase + pgvector with type-specific decay, Hebbian asso..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sebbsssss",
+      "userId": "publishers:sebbsssss",
+      "displayName": "Sebastien Sim",
+      "image": "https://avatars.githubusercontent.com/u/9026086?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 730,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771845800271,
+      "changelog": "Initial release — 4-tier cognitive memory system with recall, store, stats, mood, and ask tools",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a7badd7f4c9e8f2ef5b05a7c2faf4690808ed1ab851bad0df000af87fa85b7f4"
+}

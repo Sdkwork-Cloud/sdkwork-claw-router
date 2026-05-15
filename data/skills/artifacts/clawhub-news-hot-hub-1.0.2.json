@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-hot-hub@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_hot_hub",
+  "skill": {
+    "id": 70031,
+    "skillKey": "clawhub-news-hot-hub",
+    "name": "news-hot-hub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-hot-hub",
+    "url": "https://clawhub.ai/skills/news-hot-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-hot-hub-f826c30d45c2d8e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "新闻热点数据聚合器——整合知乎、今日头条、AIBase三大平台热搜数据。支持单独获取任一平台热榜，也支持一次性获取所有平台数据并汇总输出。当用户提到\"热搜聚合\"、\"全平台热点\"、\"各平台热门话题\"、\"热榜整合\"、\"热点数据采集\"、\"我要看全网热点\"、\"刷一下各平台热榜\"、\"一键获取热榜\"、\"知乎头条热榜\"、\"全网..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sskun",
+      "userId": "s17fk13j4b7c60dcyfemy1gmss83hx6c",
+      "displayName": "sskun",
+      "image": "https://avatars.githubusercontent.com/u/28060476?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774716916482,
+      "changelog": "news-hot-hub 1.0.2\n\n- 文档优化：CLI 示例和命令说明更加简洁直观。\n- 子命令使用规范统一，去除已废弃/未实现的复杂用法说明。\n- 移除关于知乎 cookies 环境变量的描述，简化依赖要求。\n- 更新快速参考表，仅保留实际可用的命令示例。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e711d205d5e4541c99fa23133ca7d81b28080a9daea33e47d5d4888bcc088dea"
+}

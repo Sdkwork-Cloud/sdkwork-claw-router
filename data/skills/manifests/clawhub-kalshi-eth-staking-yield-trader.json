@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51990,
+  "uuid": "skill-clawhub-kalshi-eth-staking-yield-trader",
+  "skillKey": "clawhub-kalshi-eth-staking-yield-trader",
+  "name": "Kalshi Eth Staking Yield Trader",
+  "summary": "Trades ETH price markets on Kalshi using the 4% staking yield as a fundamental price floor. When markets underprice ETH relative to the yield-implied floor,...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_eth_staking_yield_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades ETH price markets on Kalshi using the 4% staking yield as a fundamental price floor",
+        "When markets underprice ETH relative to the yield-implied floor,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kalshi-eth-staking-yield-trader@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kalshi-eth-staking-yield-trader",
+      "url": "https://clawhub.ai/skills/kalshi-eth-staking-yield-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-eth-staking-yield-trader",
+    "url": "https://clawhub.ai/skills/kalshi-eth-staking-yield-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-eth-staking-yield-trader-4eff40e99cdac371.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kalshi-eth-staking-yield-trader@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-kalshi-eth-staking-yield-trader-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:387289ff024d48c26008890cf3579e51fe343e3d025ed663d8a6e07cf1510825",
+      "artifactSizeBytes": 2010
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T19:16:26.523Z"
+}

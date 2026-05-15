@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42899,
+  "uuid": "skill-clawhub-upbank",
+  "skillKey": "clawhub-upbank",
+  "name": "Up Bank",
+  "summary": "Read-only access to Up Bank accounts, transactions, categories, and tags",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upbank",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ashley Jackson",
+      "features": [
+        "Read-only access to Up Bank accounts, transactions, categories, and tags"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upbank@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12793989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upbank",
+      "url": "https://clawhub.ai/skills/upbank"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upbank",
+    "url": "https://clawhub.ai/skills/upbank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upbank-859ebe4c2b1095aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upbank@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-upbank-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bebc02a26cbf77b067144494edc17fc925c32049dbcece2a476fe5f4cd605cb0",
+      "artifactSizeBytes": 2242
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T10:20:20.430Z"
+}

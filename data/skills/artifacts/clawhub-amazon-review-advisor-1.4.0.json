@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-review-advisor@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_review_advisor",
+  "skill": {
+    "id": 66985,
+    "skillKey": "clawhub-amazon-review-advisor",
+    "name": "Amazon Review Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-review-advisor",
+    "url": "https://clawhub.ai/skills/amazon-review-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-review-advisor-02235bae43a72fbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "帮助亚马逊卖家分类评论情绪，提供差评合规应对方案，优化好评邀请，提炼产品改进和运营策略。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangm-a3",
+      "userId": "s178tfk08y1fqgtvraxrr20g4h84g03e",
+      "displayName": "WangM-A3",
+      "image": "https://avatars.githubusercontent.com/u/274818589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1777736189412,
+      "changelog": "Added scripts/review-analyzer.py: Review sentiment analysis with theme risk classification and action recommendations",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f5ddbe41b05065c401bc0aac89fe291a9348175efd1e6aae7847ff8ded7be59"
+}

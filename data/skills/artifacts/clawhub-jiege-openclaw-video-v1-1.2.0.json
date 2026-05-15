@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jiege-openclaw-video-v1@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiege_openclaw_video_v1",
+  "skill": {
+    "id": 63198,
+    "skillKey": "clawhub-jiege-openclaw-video-v1",
+    "name": "jiege-openclaw-video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiege-openclaw-video-v1",
+    "url": "https://clawhub.ai/skills/jiege-openclaw-video-v1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiege-openclaw-video-v1-083440851861f7c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "高性能视频生成技能包，集成 Sora 和 VEO 模型接口，提供全自动的视频生成、轮询和下载管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liangshenghzj888-stack",
+      "userId": "s173trxbspmx475e35zmtnffmh84dngc",
+      "displayName": "liangshenghzj888-stack",
+      "image": "https://avatars.githubusercontent.com/u/233961624?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775640162739,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e4f89bc9032985e3c4d9d483a06622a4aad6b2a9d27990e3f9bd506ec7a239dc"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33367,
+  "uuid": "skill-clawhub-goal-clarifier",
+  "skillKey": "clawhub-goal-clarifier",
+  "name": "Goal Clarifier",
+  "summary": "Warm multi-turn goal clarification and action planning. Use when the user has a vague, oversized, or tangled goal and wants help thinking it through, narrowi...",
+  "version": "0.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goal_clarifier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terryxdguan",
+      "features": [
+        "Warm multi-turn goal clarification and action planning",
+        "Use when the user has a vague, oversized, or tangled goal and wants help thinking it through, n."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goal-clarifier@0.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129669650?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goal-clarifier",
+      "url": "https://clawhub.ai/skills/goal-clarifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goal-clarifier",
+    "url": "https://clawhub.ai/skills/goal-clarifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goal-clarifier-ae66c488e377803b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goal-clarifier@0.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-goal-clarifier-0.6.0.json",
+      "version": "0.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3aa3f2fb86ed3de7dc830affae7f3a9cdc8d32d91e9e130649c746fd98538bcc",
+      "artifactSizeBytes": 2123
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T17:51:15.588Z"
+}

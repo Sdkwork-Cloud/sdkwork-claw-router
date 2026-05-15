@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55722,
+  "uuid": "skill-clawhub-from-video-openapi",
+  "skillKey": "clawhub-from-video-openapi",
+  "name": "From Video Openapi",
+  "summary": "Skip the learning curve of professional editing software. Describe what you want — extract metadata, generate a summary, and export a trimmed clip via API —...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.from_video_openapi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linmillsd7",
+      "features": [
+        "Skip the learning curve of professional editing software",
+        "Describe what you want — extract metadata, generate a summary, and export a trimmed clip via AP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/from-video-openapi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208832666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "from-video-openapi",
+      "url": "https://clawhub.ai/skills/from-video-openapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "from-video-openapi",
+    "url": "https://clawhub.ai/skills/from-video-openapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/from-video-openapi-e8a359ea2efe10f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/from-video-openapi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-from-video-openapi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb42ff0e4b5b8e303882de6296b9c90fb1f1ed86631cdddfd190b613b28ae58d",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T18:01:19.105Z"
+}

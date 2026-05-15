@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25171,
+  "uuid": "skill-clawhub-compliance-analyzer",
+  "skillKey": "clawhub-compliance-analyzer",
+  "name": "Compliance Analyzer",
+  "summary": "Map AWS environment against CIS, SOC 2, HIPAA, or PCI-DSS controls with prioritized remediation",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compliance_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anmol Nagpal",
+      "features": [
+        "Map AWS environment against CIS, SOC 2, HIPAA, or PCI-DSS controls with prioritized remediation"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/compliance-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4303310?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "compliance-analyzer",
+      "url": "https://clawhub.ai/skills/compliance-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compliance-analyzer",
+    "url": "https://clawhub.ai/skills/compliance-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compliance-analyzer-9a2f43b4bda489df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/compliance-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-compliance-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c568fb770b703613820b80f67f5cf84efdbb16c7bc762edfea944643d0427d2",
+      "artifactSizeBytes": 2399
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T02:51:57.940Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27953,
+  "uuid": "skill-clawhub-ghostfolio",
+  "skillKey": "clawhub-ghostfolio",
+  "name": "Ghostfolio",
+  "summary": "Manage and query Ghostfolio portfolio data (performance, holdings, dividends) using API endpoints and token auth patterns.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghostfolio",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nSimon (Nicolas)",
+      "features": [
+        "Manage and query Ghostfolio portfolio data (performance, holdings, dividends) using API endpoin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ghostfolio@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13413730?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ghostfolio",
+      "url": "https://clawhub.ai/skills/ghostfolio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghostfolio",
+    "url": "https://clawhub.ai/skills/ghostfolio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghostfolio-8b76b86ba4ac83c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ghostfolio@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ghostfolio-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dab807172d7280fd45c5308fa2b3392c5d3a7428c46205069b74f963a9040112",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T15:06:43.266Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62091,
+  "uuid": "skill-clawhub-oc-cost-analyzer",
+  "skillKey": "clawhub-oc-cost-analyzer",
+  "name": "OC Cost Analyzer",
+  "summary": "分析 OpenClaw 的 token 使用和成本，识别高消耗场景（长对话、频繁 cron、大 context），给出具体优化建议（模型降级、context 压缩、cron 频率调整）。纯 Node.js，无外部依赖。输出清晰的成本报告。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_cost_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dagangtj",
+      "features": [
+        "分析 OpenClaw 的 token 使用和成本，识别高消耗场景（长对话、频繁 cron、大 context），给出具体优化建议（模型降级、context 压缩、cron 频率调整）。纯."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oc-cost-analyzer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65108318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oc-cost-analyzer",
+      "url": "https://clawhub.ai/skills/oc-cost-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-cost-analyzer",
+    "url": "https://clawhub.ai/skills/oc-cost-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-cost-analyzer-b6673f2bdae6df70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oc-cost-analyzer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-oc-cost-analyzer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ecef70daaf6c427dd932c3483c90cbcc99c622cfac734af0c67ef385d66e850",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T04:26:45.380Z"
+}

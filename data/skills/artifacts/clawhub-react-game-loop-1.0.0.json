@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/react-game-loop@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.react_game_loop",
+  "skill": {
+    "id": 46756,
+    "skillKey": "clawhub-react-game-loop",
+    "name": "React Game Loop Hooks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "react-game-loop",
+    "url": "https://clawhub.ai/skills/react-game-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/react-game-loop-a778a7aa8c7d2c01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create custom React hooks in TypeScript for game loops and animations. Use when the user asks for a React hook, requestAnimationFrame integration, game loop..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ravenquasar",
+      "userId": "s17drtcv3zq9axeqrjg3fh8e6d85pc2h",
+      "displayName": "U3UT7",
+      "image": "https://avatars.githubusercontent.com/u/28983534?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777372788495,
+      "changelog": "Initial release of react-hooks-game-loop:\n\n- Provides a production-ready `useGameLoop` React hook for animating with requestAnimationFrame and safe delta-time handling.\n- Supports start/stop controls, running state, and automatic cleanup on unmount.\n- Ensures stale-closure safety, robust error handling, and delta-time clamping.\n- Includes comprehensive documentation and example usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef1574b853b6d43f292499b8807d9cc0c2c5f2a8438bc8d6d89f3ec7a3da2eea"
+}

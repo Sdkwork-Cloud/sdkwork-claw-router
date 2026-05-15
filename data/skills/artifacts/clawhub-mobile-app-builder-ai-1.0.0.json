@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mobile-app-builder-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mobile_app_builder_ai",
+  "skill": {
+    "id": 14678,
+    "skillKey": "clawhub-mobile-app-builder-ai",
+    "name": "mobile app builder with live link, publishes to app store, create ai apps"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mobile-app-builder-ai",
+    "url": "https://clawhub.ai/skills/mobile-app-builder-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mobile-app-builder-ai-e2e9ef2a92082a1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build full-stack web and mobile apps from a text description. Creates projects, plans features, and starts Quick Start builds for background execution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "versacexcodes",
+      "userId": "s172zgwmxskdypcp11zccn3hkh84c0ay",
+      "displayName": "VersaceXcodes",
+      "image": "https://avatars.githubusercontent.com/u/95313545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 763,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771715338370,
+      "changelog": "Initial release of LaunchPulse (Web + Mobile App Generator):\n\n- Build web and Expo mobile apps from a text description, including feature planning and background builds.\n- Project/session context is provided immediately for real-time progress monitoring.\n- Full support for production operations: deployment, app store publishing, domains, database, storage, and environment setup.\n- Simple authentication with automatic device-login; support for manual token/API key input.\n- Token-based billing with free and paid tiers and add-on packs.\n- Run via standardized CLI commands for login, project creation, iteration, and production tasks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3972e9361ff32646e436c4fa9ea95baaa0fe35c115b092cd999ac631a03abed4"
+}

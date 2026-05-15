@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "alibabacloud-flink-instance-manage",
+    "displayName": "Alibabacloud Flink Instance Manage",
+    "summary": "Manage Alibaba Cloud Flink VVP instances and namespaces through create/query operations only. Use when user asks to create or query Flink instances, namespac...",
+    "tags": {
+      "latest": "0.0.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1775095132962,
+    "updatedAt": 1777527064622
+  },
+  "latestVersion": {
+    "version": "0.0.2",
+    "createdAt": 1775116282527,
+    "changelog": "**Major update: The skill is now strictly limited to create and query operations for Alibaba Cloud Flink VVP instances and namespaces, rejecting update/delete and unrelated tasks.**\n\n- Restricted all operations to run only via `scripts/instance_ops.py` with a limited set of commands: create, create_namespace, describe, describe_regions, describe_zones, describe_namespaces, and list_tags.\n- Significantly tightened scope—exclude all update/delete actions, Flink SQL/job execution, and other cloud services (ECS, Kafka, OSS, DataWorks, etc.).\n- Enforced mandatory confirmation (`--confirm`) for create commands, plus evidence requirements in outputs. No secret exposure, no parameter invention, no partial lifecycle completions allowed.\n- Introduced stricter intent detection, clear parameter validation steps, and robust output/result verification requirements.\n- Added or updated extensive reference documents for validation, typical failures, output handling, and command templates.\n- Split execution protocol into simple, auditable steps with strict retry policy, lifecycle chain locking, and clear failure guidance.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "sdk-team",
+    "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+    "displayName": "alibabacloud-skills-team",
+    "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527064622
+  }
+}

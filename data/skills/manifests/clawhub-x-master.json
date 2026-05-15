@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51030,
+  "uuid": "skill-clawhub-x-master",
+  "skillKey": "clawhub-x-master",
+  "name": "X Master",
+  "summary": "Master routing skill for all X/Twitter operations — reading, researching, posting, and engaging. Routes to the correct sub-tool based on the task. Covers rea...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_master",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jeremy Knows",
+      "features": [
+        "Master routing skill for all X/Twitter operations — reading, researching, posting, and engaging",
+        "Routes to the correct sub-tool based on the task",
+        "Covers rea..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-master@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237305675?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-master",
+      "url": "https://clawhub.ai/skills/x-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-master",
+    "url": "https://clawhub.ai/skills/x-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-master-527bcda9bbc2293b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-master@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-master-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:185532288d9dd5632014086a463d47cd9e401a8362e8c2fd2468744e62d6d95e",
+      "artifactSizeBytes": 2550
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T02:42:41.414Z"
+}

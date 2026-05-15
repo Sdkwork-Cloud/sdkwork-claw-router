@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xdotool-control@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xdotool_control",
+  "skill": {
+    "id": 15656,
+    "skillKey": "clawhub-xdotool-control",
+    "name": "Xdotool Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xdotool-control",
+    "url": "https://clawhub.ai/skills/xdotool-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xdotool-control-181f585da7d71fb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mouse and keyboard automation using xdotool. Use when clicking Chrome extension icons, typing into GUI apps, switching browser tabs, automating desktop UI, o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeremysommerfeld8910-cpu",
+      "userId": "publishers:jeremysommerfeld8910-cpu",
+      "displayName": "jeremysommerfeld8910-cpu",
+      "image": "https://avatars.githubusercontent.com/u/240074820?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 883,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771804875074,
+      "changelog": "Initial release: desktop automation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c14208f5a2483b13d7f17d043bcf9e3aa7208081a8bb55a68d27e23a90ebbdb5"
+}

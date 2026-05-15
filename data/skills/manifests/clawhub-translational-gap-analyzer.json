@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38590,
+  "uuid": "skill-clawhub-translational-gap-analyzer",
+  "skillKey": "clawhub-translational-gap-analyzer",
+  "name": "Translational Gap Analyzer",
+  "summary": "Assess translational gaps between preclinical models and human diseases.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.translational_gap_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Assess translational gaps between preclinical models and human diseases."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/translational-gap-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "translational-gap-analyzer",
+      "url": "https://clawhub.ai/skills/translational-gap-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "translational-gap-analyzer",
+    "url": "https://clawhub.ai/skills/translational-gap-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/translational-gap-analyzer-fc9a87bdf52f843a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/translational-gap-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-translational-gap-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:553c9b4f0b2568c4c08d2c41b811cd6821184316f55da74ebb74d7f813e7c75a",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T08:12:37.399Z"
+}

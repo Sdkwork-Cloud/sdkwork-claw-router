@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68085,
+  "uuid": "skill-clawhub-zhihu-ops",
+  "skillKey": "clawhub-zhihu-ops",
+  "name": "zhihu-ops",
+  "summary": "通过 openclaw browser 在知乎执行互动与创作类操作,包括赞同、收藏、评论、回复、发布文章、编辑文章、提问、进入创作中心、查看评论管理页,以及按目标 URL 在页面中定位按钮和输入框完成动作。当用户要求在知乎上\"点个赞\"\"评论一下\"\"回复这条\"\"发一篇文章\"\"改下这篇内容\"\"提一个问题\"\"打开创作后...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhihu_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gumailianxin",
+      "features": [
+        "通过 openclaw browser 在知乎执行互动与创作类操作,包括赞同、收藏、评论、回复、发布文章、编辑文章、提问、进入创作中心、查看评论管理页,以及按目标 URL 在页面中定位按钮和."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhihu-ops@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268795033?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhihu-ops",
+      "url": "https://clawhub.ai/skills/zhihu-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhihu-ops",
+    "url": "https://clawhub.ai/skills/zhihu-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhihu-ops-2b7176f96e8b3913.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhihu-ops@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhihu-ops-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:355e5ae749519c4d4f59ff5f2d9722d90aa930b67f30b6667cb3b687d6b7dc55",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T06:24:18.450Z"
+}

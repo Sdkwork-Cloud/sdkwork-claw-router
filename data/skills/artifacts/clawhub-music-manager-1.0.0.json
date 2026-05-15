@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/music-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_manager",
+  "skill": {
+    "id": 62260,
+    "skillKey": "clawhub-music-manager",
+    "name": "music-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-manager",
+    "url": "https://clawhub.ai/skills/music-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-manager-eaac8782e243c0f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用音乐下载管理器。支持从YouTube/Bilibili搜索下载音乐，自动转MP3，按分类存入本地音乐库"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2771096196",
+      "userId": "publishers:2771096196",
+      "displayName": "Thou",
+      "image": "https://avatars.githubusercontent.com/u/70137317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 484,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772955807427,
+      "changelog": "music-manager 1.0.0 初始发布。\n\n- 支持从 YouTube 和 Bilibili 搜索并下载音乐\n- 自动转换音频为 MP3 格式\n- 下载的音乐按分类存储至本地音乐库\n- 命令行工具及 AI Agent 调用方式\n- 支持自定义音乐目录和 Cookie 配置",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5a1fe57f888439ae5a2e86045037e41bd7cd3ba540c4536c37f2bb3716232737"
+}

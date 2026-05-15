@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tech-solution-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_solution_generator",
+  "skill": {
+    "id": 67480,
+    "skillKey": "clawhub-tech-solution-generator",
+    "name": "Tech Solution Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-solution-generator",
+    "url": "https://clawhub.ai/skills/tech-solution-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-solution-generator-2abb0f29a02612bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "技术方案文档自动生成器。根据需求自动生成完整的技术方案文档，包含架构设计、技术选型、风险评估、排期估算。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imgolye",
+      "userId": "publishers:imgolye",
+      "displayName": "imgolye",
+      "image": "https://avatars.githubusercontent.com/u/7943209?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 485,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772367384742,
+      "changelog": "首次发布：架构设计、技术选型、风险评估、排期估算、接口设计",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:839ffcb895da49221e0c17abe5f033f399366e87061310a3b4f53c7728b57c7c"
+}

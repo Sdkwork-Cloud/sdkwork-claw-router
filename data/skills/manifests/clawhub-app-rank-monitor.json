@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68814,
+  "uuid": "skill-clawhub-app-rank-monitor",
+  "skillKey": "clawhub-app-rank-monitor",
+  "name": "App Rank Monitor",
+  "summary": "爬取苹果官方和点点数据应用榜单，自动生成日报报告并通过钉钉发送，支持数据管理和历史清理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.app_rank_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cfans731",
+      "features": [
+        "爬取苹果官方和点点数据应用榜单，自动生成日报报告并通过钉钉发送，支持数据管理和历史清理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/app-rank-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62880059?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "app-rank-monitor",
+      "url": "https://clawhub.ai/skills/app-rank-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "app-rank-monitor",
+    "url": "https://clawhub.ai/skills/app-rank-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/app-rank-monitor-188a3e33ef273637.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/app-rank-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-app-rank-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c61d0000e8367a2f6c53e6b31844742c2523b7502937bce3165859f6106ad55b",
+      "artifactSizeBytes": 2153
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T20:05:11.323Z"
+}

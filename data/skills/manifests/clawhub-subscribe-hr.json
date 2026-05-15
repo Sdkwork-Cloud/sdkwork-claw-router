@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33095,
+  "uuid": "skill-clawhub-subscribe-hr",
+  "skillKey": "clawhub-subscribe-hr",
+  "name": "Subscribe Hr",
+  "summary": "Subscribe-HR integration. Manage data, records, and automate workflows. Use when the user wants to interact with Subscribe-HR data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subscribe_hr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Subscribe-HR integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Subscribe-HR data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subscribe-hr@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subscribe-hr",
+      "url": "https://clawhub.ai/skills/subscribe-hr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subscribe-hr",
+    "url": "https://clawhub.ai/skills/subscribe-hr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subscribe-hr-e23feed13c25f9f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subscribe-hr@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-subscribe-hr-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d338e8676059ebfc4d62fa4568dffec79b64046b6e15e5bd8c6d720b04a3e36f",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:48:05.035Z"
+}

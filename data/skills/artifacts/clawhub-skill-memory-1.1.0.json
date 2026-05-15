@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-memory@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_memory",
+  "skill": {
+    "id": 34777,
+    "skillKey": "clawhub-skill-memory",
+    "name": "Skill Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-memory",
+    "url": "https://clawhub.ai/skills/skill-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-memory-75e855418ee43fde.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Routes tasks to preferred skills with preset parameters for images, videos, screenshots, TTS, news aggregation, and trending topics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "systiger",
+      "userId": "s17ajdwb6mqagsb70yednmgn5n83gwd8",
+      "displayName": "systiger",
+      "image": "https://avatars.githubusercontent.com/u/154035099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774589016476,
+      "changelog": "Self-learning skill memory and auto-updating\n\n- Added auto-recording of new skill usages and parameter changes in a persistent memory file.\n- Introduced memory.json to store task-to-skill mappings with usage counts and timestamps.\n- New Python script (update_memory.py) for updating and listing skill memory entries.\n- SKILL.md updated: describes automatic memory check, recording, and updating workflow.\n- Existing task-to-skill preset mapping table retained for fast lookup.\n- Users can now extend skill mappings automatically with each use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2d6cbfd0ec7f15af84d25cfd0b9c6217c60f648612d11b6329ba57746f0057ba"
+}

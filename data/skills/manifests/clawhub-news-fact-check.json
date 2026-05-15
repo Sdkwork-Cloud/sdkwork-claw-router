@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72090,
+  "uuid": "skill-clawhub-news-fact-check",
+  "skillKey": "clawhub-news-fact-check",
+  "name": "新闻事实核查",
+  "summary": "新闻事实核查与真伪辨别助手。当用户需要验证新闻真实性、查证消息来源、核实事件真伪时使用。包括：(1) 给定新闻内容进行真伪判断 (2) 提供的事实核查方法和步骤 (3) 帮助用户建立批判性思维习惯",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_fact_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kris",
+      "features": [
+        "新闻事实核查与真伪辨别助手。当用户需要验证新闻真实性、查证消息来源、核实事件真伪时使用。包括：(1) 给定新闻内容进行真伪判断 (2) 提供的事实核查方法和步骤 (3) 帮助用户建立批判性思."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-fact-check@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/174239318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-fact-check",
+      "url": "https://clawhub.ai/skills/news-fact-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-fact-check",
+    "url": "https://clawhub.ai/skills/news-fact-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-fact-check-3e4fe1836ba758d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-fact-check@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-fact-check-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0bcf99d400e85d93b105711356f1238c49f7d9bdc6e8c4d6e5c26756d6c9c5b6",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T08:36:10.150Z"
+}

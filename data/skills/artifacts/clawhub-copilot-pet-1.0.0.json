@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/copilot-pet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.copilot_pet",
+  "skill": {
+    "id": 40671,
+    "skillKey": "clawhub-copilot-pet",
+    "name": "Copilot Pet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "copilot-pet",
+    "url": "https://clawhub.ai/skills/copilot-pet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/copilot-pet-3d69fa52f2468968.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Virtual pets for GitHub Copilot and Microsoft Copilot agents. Model-agnostic. 73+ species. Your copilot writes code. Your pet needs food. Both are real."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leegitw",
+      "userId": "s179srg0a58h1v79wy2w7g9ymh83jxhd",
+      "displayName": "Lee Brown",
+      "image": "https://avatars.githubusercontent.com/u/1395866?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775026007193,
+      "changelog": "Copilot Pet 1.0.0 – Initial Release\n\n- Introduces virtual pets for GitHub Copilot and Microsoft Copilot agents, supporting 73+ species across 4 families.\n- Features real-time hunger, evolution, pixel art, permanent pet death, and status tracking.\n- Provides REST API endpoints for registering, adopting, caring for, and checking the status of your pet.\n- Model-agnostic adoption; compatible with any AI agent.\n- Includes public links for creatures, graveyard, and companion details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f9c03ea9e8eeb77d3ae46339c3234e8f4d820405106476981a3babb798497f2"
+}

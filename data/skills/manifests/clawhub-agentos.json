@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11207,
+  "uuid": "skill-clawhub-agentos",
+  "skillKey": "clawhub-agentos",
+  "name": "AgentOS SDK for Clawdbot",
+  "summary": "AgentOS SDK for Clawdbot enables full context syncing, memory persistence, project tracking, mesh messaging, and dashboard access via mandatory heartbeat syncs.",
+  "version": "1.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentos",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AgentOSsoftware",
+      "features": [
+        "AgentOS SDK for Clawdbot enables full context syncing, memory persistence, project tracking, me."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentos@1.4.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257728256?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentos",
+      "url": "https://clawhub.ai/skills/agentos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentos",
+    "url": "https://clawhub.ai/skills/agentos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentos-5b72ba9448008bb7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentos@1.4.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentos-1.4.4.json",
+      "version": "1.4.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:896191c7b8cd500ea6b262b7ff9b49b149816679fae7f181d1771fe4fcd6c2f9",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T12:37:47.447Z"
+}

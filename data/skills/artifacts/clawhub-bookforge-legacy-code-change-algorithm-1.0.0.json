@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-legacy-code-change-algorithm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_legacy_code_change_algorithm",
+  "skill": {
+    "id": 47875,
+    "skillKey": "clawhub-bookforge-legacy-code-change-algorithm",
+    "name": "Legacy Code Change Algorithm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-legacy-code-change-algorithm",
+    "url": "https://clawhub.ai/skills/bookforge-legacy-code-change-algorithm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-legacy-code-change-algorithm-e33d4df9581c872f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide safe modification of legacy code (untested production code) using Feathers' 5-step Legacy Code Change Algorithm. Use this skill whenever a developer ne..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 107,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777470496592,
+      "changelog": "Legacy Code Change Algorithm skill v1.0.0 – initial public draft:\n\n- Introduces a 5-step guided process for safely modifying legacy, untested production code using Feathers' Legacy Code Change Algorithm.\n- Clearly outlines expected triggers and when to use: adding features, fixing bugs, refactoring, or optimizing legacy code without test coverage.\n- Provides detailed input requirements (change description, entry point, test/build status), along with environment setup checks.\n- Activates for prompts indicating risky changes to untested or inherited codebases.\n- Guides users through classifying the change, pinpointing modifications, identifying test points, breaking dependencies, writing characterization tests, and executing safe changes.\n- Designed for intermediate engineers, tech leads, and teams inheriting legacy systems.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:580ebab4da9d49f7b9fefd25db851ed8e9c5b55add9ba3512fb57ae4c60cf1d0"
+}

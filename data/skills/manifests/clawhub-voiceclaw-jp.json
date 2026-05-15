@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26433,
+  "uuid": "skill-clawhub-voiceclaw-jp",
+  "skillKey": "clawhub-voiceclaw-jp",
+  "name": "voiceclaw",
+  "summary": "Voice conversation interface for OpenClaw using wake word detection, streaming LLM responses, and text-to-speech. Use when a user wants to talk to their Open...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voiceclaw_jp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kentoku24",
+      "features": [
+        "Voice conversation interface for OpenClaw using wake word detection, streaming LLM responses, a.",
+        "Use when a user wants to talk to their Open..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voiceclaw-jp@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/975196?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voiceclaw-jp",
+      "url": "https://clawhub.ai/skills/voiceclaw-jp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voiceclaw-jp",
+    "url": "https://clawhub.ai/skills/voiceclaw-jp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voiceclaw-jp-cfbc3a7bc3249aa5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voiceclaw-jp@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-voiceclaw-jp-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97f2c1b6f9c08997d0ec6dfd957c90db06969ceaccd2737445b38e98c388e2fa",
+      "artifactSizeBytes": 1851
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T00:52:45.836Z"
+}

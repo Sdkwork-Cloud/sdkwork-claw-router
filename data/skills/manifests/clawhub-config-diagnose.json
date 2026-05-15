@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70696,
+  "uuid": "skill-clawhub-config-diagnose",
+  "skillKey": "clawhub-config-diagnose",
+  "name": "Config Diagnose",
+  "summary": "智能配置诊断工具，帮助排查配置问题、环境变量、服务状态、文件搜索等。触发词：为什么不能、找不到配置、排查问题、诊断一下。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.config_diagnose",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dongrebeccahhh-boop",
+      "features": [
+        "智能配置诊断工具，帮助排查配置问题、环境变量、服务状态、文件搜索等。触发词：为什么不能、找不到配置、排查问题、诊断一下。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/config-diagnose@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259530351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "config-diagnose",
+      "url": "https://clawhub.ai/skills/config-diagnose"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "config-diagnose",
+    "url": "https://clawhub.ai/skills/config-diagnose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/config-diagnose-11eaf2adb2f32fcd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/config-diagnose@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-config-diagnose-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c67b7bf5d9d19c1c60724f810a9edd3c3864fef94ba0092bbd80304e64126ed",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:22:15.754Z"
+}

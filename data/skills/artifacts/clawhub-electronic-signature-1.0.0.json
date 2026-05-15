@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/electronic-signature@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.electronic_signature",
+  "skill": {
+    "id": 41285,
+    "skillKey": "clawhub-electronic-signature",
+    "name": "Electronic Signature"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "electronic-signature",
+    "url": "https://clawhub.ai/skills/electronic-signature",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/electronic-signature-48a9d3841fca2604.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help users choose a practical electronic signature setup with Nota Sign. Use when someone asks about electronic signature, eSignature levels, signer verifica..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "notasign",
+      "userId": "s17a65xh6bvv4dypjqjwstq51x83m5y5",
+      "displayName": "notasign",
+      "image": "https://avatars.githubusercontent.com/u/268593162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775557052162,
+      "changelog": "- Initial release of the electronic-signature skill.\n- Guides users in choosing practical e-signature setups with Nota Sign, including recommendations based on document type and risk.\n- Supports explanations of signer verification, workflow configuration, e-signature levels (SES, SES with eKYC, AES, QES), and audit trails.\n- Provides clear, action-oriented guidance and checklists for preparing and sending documents for signature.\n- Differentiates recommendations based on risk, compliance needs, and signer relationships.\n- Includes branding and next-step website call-to-action options for relevant user journeys.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c77aea1f90f0c1e5439e1c21545fb2dc429150913815cd65f0879b41e582607a"
+}

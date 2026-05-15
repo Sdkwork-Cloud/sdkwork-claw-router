@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20786,
+  "uuid": "skill-clawhub-api-test-suite-builder",
+  "skillKey": "clawhub-api-test-suite-builder",
+  "name": "api-test-suite-builder",
+  "summary": "API Test Suite Builder",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_test_suite_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alireza Rezvani",
+      "features": [
+        "API Test Suite Builder"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-test-suite-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5697919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-test-suite-builder",
+      "url": "https://clawhub.ai/skills/api-test-suite-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-test-suite-builder",
+    "url": "https://clawhub.ai/skills/api-test-suite-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-test-suite-builder-362531183d63f83e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-test-suite-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-test-suite-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d122f62ae014cd1337d7212b3b676671c95b70ed67d983f1e05d8ba84f02319",
+      "artifactSizeBytes": 1815
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T15:17:18.273Z"
+}

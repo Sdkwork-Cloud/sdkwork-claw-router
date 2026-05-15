@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/research-cog@1.0.14",
+  "version": "1.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_cog",
+  "skill": {
+    "id": 8854,
+    "skillKey": "clawhub-research-cog",
+    "name": "Research Cog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-cog",
+    "url": "https://clawhub.ai/skills/research-cog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-cog-3bae2d629ef1a33d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI deep research powered by CellCog. Market research, competitive analysis, investment research, academic research, due diligence, literature reviews with ci..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nitishgargiitd",
+      "userId": "s1766yx1dct3dffeec508gjrz983fce7",
+      "displayName": "CellCog",
+      "image": "https://avatars.githubusercontent.com/u/14193431?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5486,
+      "installsAllTime": 31,
+      "installsCurrent": 30,
+      "stars": 7,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "1.0.14",
+      "createdAt": 1776925162818,
+      "changelog": "- Added explicit requirements for Python 3 and the CELLCOG_API_KEY environment variable in SKILL metadata.\n- No code or logic changes; documentation/metadata update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae25822a4affdad533d1bc53d5a05d3ba23bdea26b8a3d55c2dc61c1c0e0577d"
+}

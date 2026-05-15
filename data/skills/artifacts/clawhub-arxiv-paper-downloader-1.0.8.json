@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arxiv-paper-downloader@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_paper_downloader",
+  "skill": {
+    "id": 34366,
+    "skillKey": "clawhub-arxiv-paper-downloader",
+    "name": "Arxiv Paper Downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-paper-downloader",
+    "url": "https://clawhub.ai/skills/arxiv-paper-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-paper-downloader-82fa1dfdbe6cd90e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download 47+ essential AI/ML papers from arXiv with pre-curated collections for agent testing, autonomous agents, and large language models"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liubindashen",
+      "userId": "s17c7ktse69br1axk1rwcpbr898539aw",
+      "displayName": "geekclaw",
+      "image": "https://avatars.githubusercontent.com/u/16220721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1776613231641,
+      "changelog": "Update version metadata",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d2402f684eaace6b837c4bc86b2debb4ea9b34ad8012d65baabc68a5d05c6ad"
+}

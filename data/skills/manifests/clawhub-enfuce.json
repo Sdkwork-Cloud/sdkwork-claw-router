@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35256,
+  "uuid": "skill-clawhub-enfuce",
+  "skillKey": "clawhub-enfuce",
+  "name": "Enfuce",
+  "summary": "Enfuce integration. Manage data, records, and automate workflows. Use when the user wants to interact with Enfuce data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enfuce",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Enfuce integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Enfuce data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/enfuce@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "enfuce",
+      "url": "https://clawhub.ai/skills/enfuce"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enfuce",
+    "url": "https://clawhub.ai/skills/enfuce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enfuce-8e58b8d8b934b770.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/enfuce@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-enfuce-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7890a29ca83d956b0dc28e077be7e82990dc324e82013d92e8704aadfadf0c14",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:25:59.853Z"
+}

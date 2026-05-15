@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70615,
+  "uuid": "skill-clawhub-jy-fund-manager-viewpoint",
+  "skillKey": "clawhub-jy-fund-manager-viewpoint",
+  "name": "jy-fund-manager-viewpoint",
+  "summary": "基于 MCP 聚源金融数据库分析基金定期报告中基金经理对特定行业的观点变化，对比不同季度的共识与分歧，输出带引用标注的结构化报告。使用场景：当用户需要分析某行业基金经理的观点演变、对比季度间共识与分歧、生成基金经理观点分析报告时触发。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jy_fund_manager_viewpoint",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiayinian",
+      "features": [
+        "基于 MCP 聚源金融数据库分析基金定期报告中基金经理对特定行业的观点变化，对比不同季度的共识与分歧，输出带引用标注的结构化报告。使用场景：当用户需要分析某行业基金经理的观点演变、对比季度间."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jy-fund-manager-viewpoint@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22932351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jy-fund-manager-viewpoint",
+      "url": "https://clawhub.ai/skills/jy-fund-manager-viewpoint"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jy-fund-manager-viewpoint",
+    "url": "https://clawhub.ai/skills/jy-fund-manager-viewpoint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jy-fund-manager-viewpoint-4121815b3058fb32.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jy-fund-manager-viewpoint@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-jy-fund-manager-viewpoint-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5af21bf50c1268d7dbdbdbceb0b3cced06b384a6f10bee75e8eb50e2da6e54f",
+      "artifactSizeBytes": 2577
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T03:56:26.978Z"
+}

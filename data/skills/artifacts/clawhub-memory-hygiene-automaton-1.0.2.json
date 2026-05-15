@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-hygiene-automaton@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_hygiene_automaton",
+  "skill": {
+    "id": 27053,
+    "skillKey": "clawhub-memory-hygiene-automaton",
+    "name": "Memory Hygiene"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-hygiene-automaton",
+    "url": "https://clawhub.ai/skills/memory-hygiene-automaton",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-hygiene-automaton-32a9f9df91218bd8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit, clean, and optimize Clawdbot's vector memory (LanceDB). Use when memory is bloated with junk, token usage is high from irrelevant auto-recalls, or set..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenghaifeng08-creator",
+      "userId": "s17btvw3vz47g5n79t5249yqad83gx21",
+      "displayName": "chenghaifeng08-creator",
+      "image": "https://avatars.githubusercontent.com/u/266006783?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774355383125,
+      "changelog": "- Added a new paid services section (in Chinese) outlining consulting and maintenance offerings for memory optimization.\n- No changes to core functionality or technical usage.\n- SKILL.md now includes service descriptions, pricing, and contact information for support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fc5bb1448e594d345fdc94628cb71f9800479d95d8fa1acee1314c488040a1f2"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9463,
+  "uuid": "skill-clawhub-portainer",
+  "skillKey": "clawhub-portainer",
+  "name": "Portainer",
+  "summary": "Control Docker containers and stacks via Portainer API. List containers, start/stop/restart, view logs, and redeploy stacks from git.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.portainer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andy Steinberger",
+      "features": [
+        "Control Docker containers and stacks via Portainer API",
+        "List containers, start/stop/restart, view logs, and redeploy stacks from git."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/portainer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133219358?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "portainer",
+      "url": "https://clawhub.ai/skills/portainer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "portainer",
+    "url": "https://clawhub.ai/skills/portainer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/portainer-7f331a0764ad607c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/portainer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-portainer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e48c99a12f5d89c6761fe02da654ed87f97ff45cf98b24652bcc957e2bd4089",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T08:47:11.658Z"
+}

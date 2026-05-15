@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-everyday@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_everyday",
+  "skill": {
+    "id": 65973,
+    "skillKey": "clawhub-skill-everyday",
+    "name": "skill everyday"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-everyday",
+    "url": "https://clawhub.ai/skills/skill-everyday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-everyday-d6d0fa12caf1ed8b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每天抓取 Clawhub 热门技能，深入分析并生成报告。每次执行获取一个未分析过的热门技能，避免重复。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "autoxj",
+      "userId": "s178rh9mw9vwnrg2m6bg7jh53183hv34",
+      "displayName": "do_while_true",
+      "image": "https://avatars.githubusercontent.com/u/30582182?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774084816945,
+      "changelog": "- Initial release of skill-everyday: daily analysis and reporting on trending Clawhub skills.\n- Automatically avoids duplicates by tracking analyzed skills in data/analyzed.json.\n- No platform login or API Key required; data is scraped from public Clawhub pages using Playwright and Chromium.\n- Generates and saves structured reports for each new skill in data/reports/.\n- Simple command-line execution: node scripts/runner.mjs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:971098a81ce594564b895c2c0b2106f24c7a6f5a5bf6c05612417545ea76c1b3"
+}

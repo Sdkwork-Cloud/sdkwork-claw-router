@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caocao-chuxing-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caocao_chuxing_skill",
+  "skill": {
+    "id": 56648,
+    "skillKey": "clawhub-caocao-chuxing-skill",
+    "name": "caocao-chuxing-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caocao-chuxing-skill",
+    "url": "https://clawhub.ai/skills/caocao-chuxing-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caocao-chuxing-skill-1e83b9de504978b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill for all 曹操出行 ride-hailing requests after the user installs the skill and provides an API key from https://mcp.caocaokeji.cn/console. Trigger w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaojianchen",
+      "userId": "s178mnn9y1qdv8smvgh6wph62x842h8h",
+      "displayName": "CodeLife",
+      "image": "https://avatars.githubusercontent.com/u/3665278?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775100996879,
+      "changelog": "Refine public skill copy: position it as the skill for all 曹操出行 ride-hailing requests, simplify onboarding to 'install skill -> get API key from console -> configure', and remove internal implementation details that should not be exposed to end users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33fd3298b4ac38cf587617eeeba47f51d7634d4c9c4b4e4aa59375c807b036e5"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34911,
+  "uuid": "skill-clawhub-cache-layer",
+  "skillKey": "clawhub-cache-layer",
+  "name": "Cache Layer",
+  "summary": "Cache layers, TTLs, invalidation, and consistency. Use when speeding reads or debugging stale data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cache_layer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawkk",
+      "features": [
+        "Cache layers, TTLs, invalidation, and consistency",
+        "Use when speeding reads or debugging stale data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cache-layer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cache-layer",
+      "url": "https://clawhub.ai/skills/cache-layer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cache-layer",
+    "url": "https://clawhub.ai/skills/cache-layer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cache-layer-98a75729fed4a9d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cache-layer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cache-layer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5ed49ee6ad576802ae2a5e2fac892edba29e37dc3ccb667e659f927058c75db",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T10:19:40.790Z"
+}

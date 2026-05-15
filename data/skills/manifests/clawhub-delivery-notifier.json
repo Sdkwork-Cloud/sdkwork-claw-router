@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23512,
+  "uuid": "skill-clawhub-delivery-notifier",
+  "skillKey": "clawhub-delivery-notifier",
+  "name": "Delivery Notifier",
+  "summary": "Fetches delivery emails from Gmail, extracts tracking info from selected couriers, filters marketing messages, and sends WhatsApp alerts for personal deliver...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delivery_notifier",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "o0o-sp",
+      "features": [
+        "Fetches delivery emails from Gmail, extracts tracking info from selected couriers, filters mark."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/delivery-notifier@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149572930?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "delivery-notifier",
+      "url": "https://clawhub.ai/skills/delivery-notifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delivery-notifier",
+    "url": "https://clawhub.ai/skills/delivery-notifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delivery-notifier-be72477bddf7d674.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/delivery-notifier@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-delivery-notifier-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fec95f716ab5abb746484582b977162e2234bee223c29a60aaf65b9e3d21858",
+      "artifactSizeBytes": 2250
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T06:48:01.824Z"
+}

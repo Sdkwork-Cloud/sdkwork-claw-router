@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64772,
+  "uuid": "skill-clawhub-news-summary-voice",
+  "skillKey": "clawhub-news-summary-voice",
+  "name": "News Summary Voice",
+  "summary": "新闻汇总与语音播报工具。获取国际可信 RSS 源新闻，生成语音摘要。当用户要求新闻更新、每日简报、世界动态、AI 播报新闻时触发。支持多语言，跨平台（macOS/Linux/Windows）。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_summary_voice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "realorange1994",
+      "features": [
+        "新闻汇总与语音播报工具。获取国际可信 RSS 源新闻，生成语音摘要。当用户要求新闻更新、每日简报、世界动态、AI 播报新闻时触发。支持多语言，跨平台（macOS/Linux/Windows）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-summary-voice@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222950321?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-summary-voice",
+      "url": "https://clawhub.ai/skills/news-summary-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-summary-voice",
+    "url": "https://clawhub.ai/skills/news-summary-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-summary-voice-897d7b295493cd0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-summary-voice@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-summary-voice-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b131a8b370a342dd9e6ecae3a797ea67d3273870eda88083451fc5c461e1033",
+      "artifactSizeBytes": 2454
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:15:24.003Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/liuyao@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liuyao",
+  "skill": {
+    "id": 71633,
+    "skillKey": "clawhub-liuyao",
+    "name": "Liuyao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liuyao",
+    "url": "https://clawhub.ai/skills/liuyao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liuyao-5ad988b8fa43131f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "六爻铜钱卦占卜技能。核心理念：\"解一卦就是传一道，说一言就是传一智\"。支持真实/虚拟起卦，集成儒道哲学。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wudi488",
+      "userId": "s17adk7beyrksqxwmwvwhhe5an83gzyp",
+      "displayName": "wudi488",
+      "image": "https://avatars.githubusercontent.com/u/139491270?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 23
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1777674239692,
+      "changelog": "修复: weekly_evolution.py 硬编码路径改为相对路径; docstring 标明手动运行而非自动",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:06617e263220f32dc49715914abf43727a104ef9b77b771b720a7dcda3318f22"
+}

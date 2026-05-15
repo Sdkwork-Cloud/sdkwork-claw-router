@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "ros2-introspection",
+    "displayName": "ROS2 Introspection",
+    "summary": "Execute core ROS 2 introspection commands to query the ROS graph (topics, nodes, services, actions, parameters). STRICTLY read-only.",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1775255151869,
+    "updatedAt": 1777527145493
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1775585380883,
+    "changelog": "- Replaced the shell script wrapper with a Python script: `safe_ros2_introspection.py` (improves command validation and security).\n- Removed `safe_ros2_introspection.sh`; all commands now routed through the new Python wrapper.\n- Documentation updated to reflect the new usage and allowed command patterns.\n- Strict read-only security and command allowlisting are enforced in the Python script.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "bigrobinson",
+    "userId": "s170w4hnpfw4p694pb7qvf5dcd83qwyb",
+    "displayName": "Brian Robinson",
+    "image": "https://avatars.githubusercontent.com/u/42244176?v=4"
+  },
+  "moderation": null
+}

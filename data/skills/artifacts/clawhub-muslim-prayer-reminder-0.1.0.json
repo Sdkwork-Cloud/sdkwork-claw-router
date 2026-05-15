@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/muslim-prayer-reminder@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.muslim_prayer_reminder",
+  "skill": {
+    "id": 15327,
+    "skillKey": "clawhub-muslim-prayer-reminder",
+    "name": "Prayer Times - Automated Salat Reminders"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "muslim-prayer-reminder",
+    "url": "https://clawhub.ai/skills/muslim-prayer-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/muslim-prayer-reminder-02ef9a6cfb009a8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get accurate Islamic prayer times (Fajr, Dhuhr, Asr, Maghrib, Isha) for any location worldwide using official calculation methods. Use when users ask about prayer times, Salat schedules, next prayer, or need to set up automated prayer remi."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diepox",
+      "userId": "publishers:diepox",
+      "displayName": "diepox",
+      "image": "https://avatars.githubusercontent.com/u/41481444?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1033,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770739200788,
+      "changelog": "Initial release of prayer-times skill for worldwide Islamic prayer reminders.\n\n- Provides accurate prayer times (Fajr, Dhuhr, Asr, Maghrib, Isha) for any location using AlAdhan API.\n- Supports 20+ country-specific official calculation methods for precise timing.\n- Enables both instant querying and automated background reminders (10 minutes before, at prayer time, 5 minutes after).\n- Includes scripts for fetching prayer times, checking reminders, and cron job integration.\n- Offers clear setup guides, usage examples, and troubleshooting tips.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4aadd7268e7af78b1034263d845e9c65ef5b09017e3a88c47d61f9c6173c63c7"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-ok-computer-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_ok_computer_skill",
+  "skill": {
+    "id": 56485,
+    "skillKey": "clawhub-openclaw-ok-computer-skill",
+    "name": "Ok Computer Swarm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-ok-computer-skill",
+    "url": "https://clawhub.ai/skills/openclaw-ok-computer-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-ok-computer-skill-406a774cdc95cbb9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Spawn multiple sub‑agents to perform concurrent research on a list of topics, inspired by Kimi.com’s OK Computer and Agent Swarm features【453334500861599†L40..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "grahammiranda13",
+      "userId": "publishers:grahammiranda13",
+      "displayName": "Graham Miranda",
+      "image": "https://avatars.githubusercontent.com/u/830634?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 391,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772110872829,
+      "changelog": "- Initial release of ok-computer-swarm: concurrent research assistant inspired by Kimi.com’s OK Computer and Agent Swarm.\n- Enables spawning multiple sub-agents to perform parallel DuckDuckGo searches on a list of topics.\n- Aggregates top search results for each topic into a structured, JSON-formatted report.\n- Command-line interface for specifying multiple queries in one run.\n- Ideal for quickly gathering high-level information across many subjects.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:191ee95fca6284ba510c23ae015a163cbb50ce16cd95d68fc15eb75572fc9ba3"
+}

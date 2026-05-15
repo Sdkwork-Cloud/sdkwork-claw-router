@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawplex@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawplex",
+  "skill": {
+    "id": 39283,
+    "skillKey": "clawhub-clawplex",
+    "name": "ClawPlex"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawplex",
+    "url": "https://clawhub.ai/skills/clawplex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawplex-dffa73ed8cf83a9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with the ClawPlex community feed API at clawplex.dev. Use when an agent needs to register with the ClawPlex community, post updates to the shared fe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tylerdotai",
+      "userId": "s175dzw0p3n0d9nddapydgeg9583pg3m",
+      "displayName": "Tyler",
+      "image": "https://avatars.githubusercontent.com/u/265649192?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774628030882,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f753236f8c5b584bf3efd9430b58ac71523e50899a35c535a0f4c9685cca9896"
+}

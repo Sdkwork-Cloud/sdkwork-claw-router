@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/market-news-analyst@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_news_analyst",
+  "skill": {
+    "id": 8598,
+    "skillKey": "clawhub-market-news-analyst",
+    "name": "Market News Analyst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-news-analyst",
+    "url": "https://clawhub.ai/skills/market-news-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-news-analyst-70d1fc95a73e3a0c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when analyzing recent market-moving news events and their impact on equity markets and commodities. Use this skill when the user requests analysis of major financial news from the past 10 days, wants to understand."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7709,
+      "installsAllTime": 44,
+      "installsCurrent": 41,
+      "stars": 23,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769870302040,
+      "changelog": "Initial release: market-news-analyst skill for real-time, impact-ranked analysis of major market news events.\n\n- Provides structured market news analysis covering monetary policy, mega-cap earnings, geopolitical events, and commodity price movements from the past 10 days\n- Automatically gathers news from trusted sources using WebSearch/WebFetch tools\n- Ranks events by market impact magnitude and evaluates actual market reactions across asset classes\n- Integrates domain knowledge references for deeper impact assessment and context\n- Produces English-language summary reports prioritized by significance to equities and commodities",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3585c88b94d24685003c9ec5d4ea5741046e6aa543eeaa8268699037169371fd"
+}

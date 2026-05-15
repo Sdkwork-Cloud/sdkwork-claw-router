@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67780,
+  "uuid": "skill-clawhub-complaint",
+  "skillKey": "clawhub-complaint",
+  "name": "Complaint",
+  "summary": "提供客诉处理的可落地指南与SOP。在开展客诉处理相关工作时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.complaint",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawkk",
+      "features": [
+        "提供客诉处理的可落地指南与SOP。在开展客诉处理相关工作时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/complaint@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "complaint",
+      "url": "https://clawhub.ai/skills/complaint"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "complaint",
+    "url": "https://clawhub.ai/skills/complaint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/complaint-5d08b02d678fc068.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/complaint@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-complaint-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1145e6c4ba5039734d8114150aec5a9f9651abe37b0bf5a6dea921528133764a",
+      "artifactSizeBytes": 2183
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:07:19.356Z"
+}

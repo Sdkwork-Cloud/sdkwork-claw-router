@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caption-generator-hitler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caption_generator_hitler",
+  "skill": {
+    "id": 43940,
+    "skillKey": "clawhub-caption-generator-hitler",
+    "name": "Caption Generator Hitler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caption-generator-hitler",
+    "url": "https://clawhub.ai/skills/caption-generator-hitler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caption-generator-hitler-abe165c46e7e155f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add video clips into captioned video files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. educators, documentary creators, history conten..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776026811010,
+      "changelog": "Caption Generator — Add Captions to Historical Videos v1.0.0\n\n- Initial release: add automatic caption generation for historical video clips up to 500MB (MP4, MOV, AVI, WebM).\n- Fast cloud-based processing delivers 1080p MP4 files with captions in about 30–60 seconds.\n- Simple onboarding: supports both pre-set and free anonymous token workflows.\n- Session management keeps your edits and timeline state persistent for iterative editing.\n- Robust error handling for token, file type, credit, and subscription issues.\n- Supports multiple workflows: quick edit, batch processing, and iterative refinement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:421d5fa212dd09fdda2c5a7d3080f070365038cf980eb4915505d1fd82b34c5f"
+}

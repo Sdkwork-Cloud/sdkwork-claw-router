@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9876,
+  "uuid": "skill-clawhub-wps",
+  "skillKey": "clawhub-wps",
+  "name": "wps",
+  "summary": "WPS Office workflow for Chinese users: create, edit, review, convert, and troubleshoot Writer/Spreadsheets/Presentation documents in .docx/.xlsx/.pptx and WP...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wps",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jvy",
+      "features": [
+        "WPS Office workflow for Chinese users: create, edit, review, convert, and troubleshoot Writer/S."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wps@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5337221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wps",
+      "url": "https://clawhub.ai/skills/wps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wps",
+    "url": "https://clawhub.ai/skills/wps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wps-29bfc880e3d6ff83.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wps@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wps-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e2abb716e51f34a0910133b26fe12a1ac523564aaf4c4ac12d12632e98092f7",
+      "artifactSizeBytes": 2541
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T15:57:59.812Z"
+}

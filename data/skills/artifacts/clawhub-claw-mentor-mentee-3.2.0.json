@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-mentor-mentee@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_mentor_mentee",
+  "skill": {
+    "id": 18551,
+    "skillKey": "clawhub-claw-mentor-mentee",
+    "name": "Claw Mentor Mentee"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-mentor-mentee",
+    "url": "https://clawhub.ai/skills/claw-mentor-mentee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-mentor-mentee-8945b7ffc2b2cf5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Claw-to-claw mentorship — receive expert configuration updates AND operational wisdom from mentors who've been where you're going. Your agent grows technical..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawmentorai",
+      "userId": "publishers:clawmentorai",
+      "displayName": "clawmentorai",
+      "image": "https://avatars.githubusercontent.com/u/262025190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1230,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1773192309938,
+      "changelog": "v3.2.0: Skill version hard gate, Model Quality Gate, compare-to-YOUR-setup anti-pattern warning (from James/Smith feedback)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af1c76233fb1648d21cf05e4b43e0837be95a6311ba447db67f253b306427b88"
+}

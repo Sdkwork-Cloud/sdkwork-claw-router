@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24132,
+  "uuid": "skill-clawhub-prediction-stack-setup",
+  "skillKey": "clawhub-prediction-stack-setup",
+  "name": "Prediction Stack Setup",
+  "summary": "Interactive setup wizard for the OpenClaw Prediction Market Trading Stack. Detects installed skills, walks through API key configuration, creates cron jobs f...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prediction_stack_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kingmadellc",
+      "features": [
+        "Interactive setup wizard for the OpenClaw Prediction Market Trading Stack",
+        "Detects installed skills, walks through API key configuration, creates cron jobs f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prediction-stack-setup@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257369583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prediction-stack-setup",
+      "url": "https://clawhub.ai/skills/prediction-stack-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prediction-stack-setup",
+    "url": "https://clawhub.ai/skills/prediction-stack-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prediction-stack-setup-f9e0027353c6cdc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prediction-stack-setup@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-prediction-stack-setup-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:956946fcb4c7949079adeb85dd5775188b4d6174132e074c1ddb00214cf87dd3",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T18:17:12.050Z"
+}

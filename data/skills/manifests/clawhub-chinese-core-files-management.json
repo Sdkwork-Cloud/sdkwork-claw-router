@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60200,
+  "uuid": "skill-clawhub-chinese-core-files-management",
+  "skillKey": "clawhub-chinese-core-files-management",
+  "name": "中文 核心文件管理",
+  "summary": "OpenClaw 工作区核心文件管理。使用时机：(1) 管理或更新核心 Markdown 文件（identity.md、soul.md、agents.md、user.md、memory.md、tools.md、bootstrap.md），(2) 检查文件组织，(3) 确保核心文件之间无重复，(4) 应用语言规则，...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_core_files_management",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kofna3369",
+      "features": [
+        "OpenClaw 工作区核心文件管理。使用时机：(1) 管理或更新核心 Markdown 文件（identity.md、soul.md、agents.md、user.md、memory.md."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chinese-core-files-management@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110220070?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chinese-core-files-management",
+      "url": "https://clawhub.ai/skills/chinese-core-files-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-core-files-management",
+    "url": "https://clawhub.ai/skills/chinese-core-files-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-core-files-management-6cd5648b8ad462dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chinese-core-files-management@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chinese-core-files-management-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eae27bedad0afd526423a00484ec61281bf750d96f63a9bde98c5b22bafd62d0",
+      "artifactSizeBytes": 2115
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T01:37:33.027Z"
+}

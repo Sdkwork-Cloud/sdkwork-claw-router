@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32103,
+  "uuid": "skill-clawhub-generated-photos",
+  "skillKey": "clawhub-generated-photos",
+  "name": "Generated Photos",
+  "summary": "Generated Photos integration. Manage Persons. Use when the user wants to interact with Generated Photos data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generated_photos",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Generated Photos integration",
+        "Manage Persons",
+        "Use when the user wants to interact with Generated Photos data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/generated-photos@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "generated-photos",
+      "url": "https://clawhub.ai/skills/generated-photos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generated-photos",
+    "url": "https://clawhub.ai/skills/generated-photos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generated-photos-1ec641b8e9510981.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/generated-photos@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-generated-photos-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46bf20572b20c55c451c374e78178aabf1f1b11be8648c5386032d4c135c0bae",
+      "artifactSizeBytes": 1854
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:13:54.664Z"
+}

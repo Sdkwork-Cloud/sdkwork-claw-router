@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8661,
+  "uuid": "skill-clawhub-polymarket",
+  "skillKey": "clawhub-polymarket",
+  "name": "Polymarket",
+  "summary": "Query and trade on Polymarket prediction markets — check odds, trending markets, search events, view order books, place trades, and manage positions. Now ava...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matt Van Horn",
+      "features": [
+        "Query and trade on Polymarket prediction markets — check odds, trending markets, search events,.",
+        "Now ava..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/455140?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket",
+      "url": "https://clawhub.ai/skills/polymarket"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket",
+    "url": "https://clawhub.ai/skills/polymarket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-b0c5fbfcb887122f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d3c381efb944f3d03938d2e55bba7b7657072140b780876490bad754cf0744c",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T04:50:29.726Z"
+}

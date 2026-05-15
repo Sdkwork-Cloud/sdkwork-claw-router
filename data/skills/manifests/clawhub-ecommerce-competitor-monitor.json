@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73105,
+  "uuid": "skill-clawhub-ecommerce-competitor-monitor",
+  "skillKey": "clawhub-ecommerce-competitor-monitor",
+  "name": "电商竞品价格监控系统",
+  "summary": "电商竞品价格监控系统 — 自动监控京东/淘宝/亚马逊等平台竞品价格变动、促销活动、库存变化。 定时抓取指定商品页面，比对历史数据，价格异常时立即告警。适合电商卖家、代运营、品牌方。 零代码配置，改个产品链接就能用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_competitor_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lijinhao123-Dot",
+      "features": [
+        "电商竞品价格监控系统 — 自动监控京东/淘宝/亚马逊等平台竞品价格变动、促销活动、库存变化。 定时抓取指定商品页面，比对历史数据，价格异常时立即告警。适合电商卖家、代运营、品牌方。 零代码配."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecommerce-competitor-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263565226?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecommerce-competitor-monitor",
+      "url": "https://clawhub.ai/skills/ecommerce-competitor-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-competitor-monitor",
+    "url": "https://clawhub.ai/skills/ecommerce-competitor-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-competitor-monitor-c7187b4a4ce0b986.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecommerce-competitor-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecommerce-competitor-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c12cc8c5a23ca452c0021ce40d7e5a49774e79947024e0b01e642c4b6730f765",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T04:08:26.125Z"
+}

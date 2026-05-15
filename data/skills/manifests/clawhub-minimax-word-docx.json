@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61436,
+  "uuid": "skill-clawhub-minimax-word-docx",
+  "skillKey": "clawhub-minimax-word-docx",
+  "name": "MiniMax Word",
+  "summary": "MiniMax Word专业文档生成 - 基于.NET OpenXML SDK，完整保留页眉页脚目录、修订痕迹、复杂表格样式，输出可直接交付的.docx文档。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_word_docx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SMS",
+      "features": [
+        "MiniMax Word专业文档生成",
+        "基于.NET OpenXML SDK，完整保留页眉页脚目录、修订痕迹、复杂表格样式，输出可直接交付的.docx文档。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-word-docx@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33817483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-word-docx",
+      "url": "https://clawhub.ai/skills/minimax-word-docx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-word-docx",
+    "url": "https://clawhub.ai/skills/minimax-word-docx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-word-docx-6ae4844308096ac1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-word-docx@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-word-docx-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf487b6c9b7305bc157629c90cf9f284a568ba91dd74913dd215e6c7f092ce43",
+      "artifactSizeBytes": 2288
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T03:54:15.956Z"
+}

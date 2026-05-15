@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69430,
+  "uuid": "skill-clawhub-xiazun-memory-auto",
+  "skillKey": "clawhub-xiazun-memory-auto",
+  "name": "虾尊记忆自动管理器",
+  "summary": "记忆自动主动管理：每15分钟自动扫描对话，发现重要信息自动写入每日memory。解决\"主动感知靠自觉经常失效\"的问题。 使用场景： - 每次对话结束后自动检查是否有遗漏的重要信息 - 自动记录完成的任务、决策、教训、配置变更 - 增量扫描对话历史，不遗漏不重复 - user + assistant 消息双读，确保...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiazun_memory_auto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "a1003916989-blip",
+      "features": [
+        "记忆自动主动管理：每15分钟自动扫描对话，发现重要信息自动写入每日memory。解决\"主动感知靠自觉经常失效\"的问题。 使用场景：",
+        "每次对话结束后自动检查是否有遗漏的重要信息",
+        "自动记录完成的任务、决策、教训、配置变更",
+        "增量扫描对话历史，不遗漏不重复"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiazun-memory-auto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251089126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiazun-memory-auto",
+      "url": "https://clawhub.ai/skills/xiazun-memory-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiazun-memory-auto",
+    "url": "https://clawhub.ai/skills/xiazun-memory-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiazun-memory-auto-aa21893cb6bfe178.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiazun-memory-auto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiazun-memory-auto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e7e2bb4feff85e4d535a13e61791f40bba55791e4bc94c8cc485d7db0a98b24",
+      "artifactSizeBytes": 2652
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T09:38:44.742Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70103,
+  "uuid": "skill-clawhub-patent-value-analysis",
+  "skillKey": "clawhub-patent-value-analysis",
+  "name": "TG 专利价值分析评估",
+  "summary": "专利价值分析评价工具 (V1.0)。用于评估专利资产的多维价值，包括： (1) 用户输入专利名称后，进行专利价值评估 (2) 生成五维价值雷达图（技术、法律、市场、经济、战略） (3) 法律稳固性评分与技术成熟度评估 (4) 剩余经济寿命预测与市场价值区间测算 (5) 转化路径诊断与金融适配度匹配建议 触发条件：...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patent_value_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chase-Zhouchang",
+      "features": [
+        "专利价值分析评价工具 (V1.0)。用于评估专利资产的多维价值，包括： (1) 用户输入专利名称后，进行专利价值评估 (2) 生成五维价值雷达图（技术、法律、市场、经济、战略） (3) 法律."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/patent-value-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204638014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "patent-value-analysis",
+      "url": "https://clawhub.ai/skills/patent-value-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patent-value-analysis",
+    "url": "https://clawhub.ai/skills/patent-value-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patent-value-analysis-7b4a01650d65e0eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/patent-value-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-patent-value-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c16b105d4dbc534019f2fb65b1546ccf90d10f2562857a11c89a4655823babf",
+      "artifactSizeBytes": 2750
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T09:25:14.127Z"
+}

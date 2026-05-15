@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17151,
+  "uuid": "skill-clawhub-nas",
+  "skillKey": "clawhub-nas",
+  "name": "NAS",
+  "summary": "Configure, secure, and optimize network attached storage with proper backup strategy, remote access, and media serving.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nas",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Configure, secure, and optimize network attached storage with proper backup strategy, remote ac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nas@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nas",
+      "url": "https://clawhub.ai/skills/nas"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nas",
+    "url": "https://clawhub.ai/skills/nas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nas-047de0f543c7e359.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nas@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nas-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c770067bf93e1cefbad4c7eb1169d03e2f4c2348299a1fe3eff138091563cda",
+      "artifactSizeBytes": 1764
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T19:23:07.446Z"
+}

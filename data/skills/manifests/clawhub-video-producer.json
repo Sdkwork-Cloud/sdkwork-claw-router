@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61434,
+  "uuid": "skill-clawhub-video-producer",
+  "skillKey": "clawhub-video-producer",
+  "name": "Video Producer",
+  "summary": "短视频一键生成技能 v2.2。调用video-director进行画面规划，然后生成AI素材、TTS配音、视频渲染，输出完整MP4。",
+  "version": "2.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_producer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "a1024708231",
+      "features": [
+        "短视频一键生成技能 v2.2。调用video-director进行画面规划，然后生成AI素材、TTS配音、视频渲染，输出完整MP4。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-producer@2.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46381730?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-producer",
+      "url": "https://clawhub.ai/skills/video-producer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-producer",
+    "url": "https://clawhub.ai/skills/video-producer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-producer-28cbe9f9e59e9237.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-producer@2.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-producer-2.2.1.json",
+      "version": "2.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db12b5d64aa392dfdc86feb0fad714b11ed2961033a0b3116c93206e1f957082",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T14:47:45.862Z"
+}

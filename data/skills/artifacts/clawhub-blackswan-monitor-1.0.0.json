@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blackswan-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blackswan_monitor",
+  "skill": {
+    "id": 70910,
+    "skillKey": "clawhub-blackswan-monitor",
+    "name": "Blackswan Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blackswan-monitor",
+    "url": "https://clawhub.ai/skills/blackswan-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blackswan-monitor-3e0cfe7bfd92a994.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股黑天鹅对冲策略监控日报。每天自动抓取市场数据，基于改进版塔勒布期权策略的建仓、退出及风控规则进行计算分析，生成监控日报并通过邮件和飞书发送。监控标的包括沪深300、上证50、中证500、创业板、科创50的期权隐含波动率，以及全市场融资余额变化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "frankski818",
+      "userId": "s178n87bq7tfhhy7cgtphvnanh83gaw7",
+      "displayName": "Frankski818",
+      "image": "https://avatars.githubusercontent.com/u/269109252?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776299072012,
+      "changelog": "Black Swan Monitor skill v1.0.0 initial release:\n\n- 自动化A股黑天鹅对冲策略监控，涵盖沪深300、上证50、中证500、创业板、科创50期权IV及融资余额\n- 实现基于改进版塔勒布期权策略的建仓、退出、风控规则监控与报告生成\n- 支持监控日报通过邮件和飞书发送\n- 提供详细报告：市场数据、策略信号、预警分析、操作建议等\n- 明确依赖与配置说明，包括数据存储目录结构",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79eb5aaa34e74c6e6f07b0ae6c8f107a51480fe06fd507603d8a8b0e30ff9376"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-shrink@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_shrink",
+  "skill": {
+    "id": 54063,
+    "skillKey": "clawhub-context-shrink",
+    "name": "Context Shrink"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-shrink",
+    "url": "https://clawhub.ai/skills/context-shrink",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-shrink-8904903a6cb8ab89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-compress session memories when context usage exceeds 85%"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bg1avd",
+      "userId": "s17e1m5ac1rppw87gfc2cfare9846fyp",
+      "displayName": "Rao Lin",
+      "image": "https://avatars.githubusercontent.com/u/16436148?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 753,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773249753680,
+      "changelog": "- Increased context usage threshold for auto-compression from 60% to 85%.\n- Updated default compression model to 'ollama/qwen2.5:3b'.\n- Improved configuration documentation for clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60fb6f29c42fa38df9caaf4edcc36bb6902571ff31bdc8197043152243332ba9"
+}

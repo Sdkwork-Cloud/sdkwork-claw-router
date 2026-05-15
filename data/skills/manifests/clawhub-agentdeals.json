@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54214,
+  "uuid": "skill-clawhub-agentdeals",
+  "skillKey": "clawhub-agentdeals",
+  "name": "AgentDeals",
+  "summary": "Search and compare 1,500+ developer infrastructure deals — free tiers, startup credits, and pricing changes across 54 categories.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentdeals",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "robhunter",
+      "features": [
+        "Search and compare 1,500+ developer infrastructure deals — free tiers, startup credits, and pri."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentdeals@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/708980?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentdeals",
+      "url": "https://clawhub.ai/skills/agentdeals"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentdeals",
+    "url": "https://clawhub.ai/skills/agentdeals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentdeals-c6df3dc59db227bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentdeals@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentdeals-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46f527795371058d7130dcda482534bd64e07054c14c6a1b2015550bab2862b7",
+      "artifactSizeBytes": 1828
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T20:58:39.525Z"
+}

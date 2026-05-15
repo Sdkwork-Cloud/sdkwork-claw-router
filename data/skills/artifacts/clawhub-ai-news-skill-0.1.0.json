@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-news-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news_skill",
+  "skill": {
+    "id": 35001,
+    "skillKey": "clawhub-ai-news-skill",
+    "name": "Morning Briefing AI News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news-skill",
+    "url": "https://clawhub.ai/skills/ai-news-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-skill-187029d46c5502dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI industry news aggregation from curated RSS feeds. Catches model releases from major labs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justintieu",
+      "userId": "s172h379wnrxdz56w3d08nmnds83m8nh",
+      "displayName": "justintieu",
+      "image": "https://avatars.githubusercontent.com/u/2142115?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774241502985,
+      "changelog": "- Initial release of the AI News Skill.\n- Fetches and summarizes AI industry news from 15 curated RSS feeds, covering major model releases and developments.\n- Categorizes news into Model Releases, Research, Industry, Product, and Opinion.\n- Supports deduplication and time-based filtering (daily or weekly briefings).\n- Optional save-to-file feature for news briefings and reference links.\n- Handles feed errors gracefully and notes any coverage gaps (e.g., Chinese AI labs).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5421b775862b02000982de9919e39d49762c971d779284cc5697c612f3e0b18d"
+}

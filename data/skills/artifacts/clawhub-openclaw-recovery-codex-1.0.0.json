@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-recovery-codex@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_recovery_codex",
+  "skill": {
+    "id": 22328,
+    "skillKey": "clawhub-openclaw-recovery-codex",
+    "name": "OpenClaw Recovery (Codex)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-recovery-codex",
+    "url": "https://clawhub.ai/skills/openclaw-recovery-codex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-recovery-codex-22257e01acade4d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw Gateway recovery and infrastructure diagnostics for Codex agents. Use when Gateway is unreachable, Telegram/Discord/Signal channels are down, Schedu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shunsukehayashi",
+      "userId": "publishers:shunsukehayashi",
+      "displayName": "Shunsuke Hayashi",
+      "image": "https://avatars.githubusercontent.com/u/11504206?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 467,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772177385421,
+      "changelog": "Initial release: Gateway diagnostics, environment detection, recovery patterns for Windows/macOS/Linux. Codex-native CLI format.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4aac187387ce281fbbaf749c52a52b99c5b551cbf4d3db4de16359be65eabe78"
+}

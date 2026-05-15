@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43213,
+  "uuid": "skill-clawhub-batch-executor",
+  "skillKey": "clawhub-batch-executor",
+  "name": "Batch Executor",
+  "summary": "Full batch processor for corpus-scale task execution. Handles Google Drive dumps, ChatGPT exports, Apple Notes, or any large collection of mixed content (ide...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.batch_executor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KairoKid",
+      "features": [
+        "Full batch processor for corpus-scale task execution",
+        "Handles Google Drive dumps, ChatGPT exports, Apple Notes, or any large collection of mixed cont."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/batch-executor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235199066?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "batch-executor",
+      "url": "https://clawhub.ai/skills/batch-executor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "batch-executor",
+    "url": "https://clawhub.ai/skills/batch-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/batch-executor-8889594bf0469324.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/batch-executor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-batch-executor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c2245a0bab4d18c27a8c3ac32d97bea6121b7fd5604e78010a16a33413a4709",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T05:24:57.337Z"
+}

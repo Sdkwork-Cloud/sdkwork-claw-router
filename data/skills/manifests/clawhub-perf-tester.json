@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40585,
+  "uuid": "skill-clawhub-perf-tester",
+  "skillKey": "clawhub-perf-tester",
+  "name": "Performance Tester",
+  "summary": "Performance and load testing for APIs and web services. Design test scenarios, generate k6/locust/JMeter scripts, analyze response times, throughput, error r...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perf_tester",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhanghengyi1986-afk",
+      "features": [
+        "Performance and load testing for APIs and web services",
+        "Design test scenarios, generate k6/locust/JMeter scripts, analyze response times, throughput, e."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/perf-tester@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266693384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "perf-tester",
+      "url": "https://clawhub.ai/skills/perf-tester"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perf-tester",
+    "url": "https://clawhub.ai/skills/perf-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perf-tester-dbc544ade01f24df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/perf-tester@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-perf-tester-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b4c6f3158ac028faab501129fea243066de036aca2c52d6c790c2c7010ee11c",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T02:51:33.300Z"
+}

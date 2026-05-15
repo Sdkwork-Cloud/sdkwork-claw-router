@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/js-render-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.js_render_scraper",
+  "skill": {
+    "id": 63320,
+    "skillKey": "clawhub-js-render-scraper",
+    "name": "Js Render Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "js-render-scraper",
+    "url": "https://clawhub.ai/skills/js-render-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/js-render-scraper-45930f21fb7111f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "爬取需要 JavaScript 渲染的动态网页内容。当用户要求抓取 SPA、React/Vue 应用、无限滚动页面、需要登录的页面或任何依赖 JS 动态加载内容的网站时使用。支持使用 Playwright 进行浏览器自动化抓取。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "plover061",
+      "userId": "s17e8ha9nx4bn4kp34p9x8nqts84hty2",
+      "displayName": "plover061",
+      "image": "https://avatars.githubusercontent.com/u/98512436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775709992272,
+      "changelog": "Initial release.\n\n- Introduces a JavaScript-rendered web scraper using Playwright for dynamic page extraction.\n- Supports scraping SPA, infinite-scroll, login-required, and Shadow DOM content.\n- Offers configurable scraping parameters for scrolling, button-clicking, waits, and extraction formats.\n- Includes error handling strategies and anti-crawling countermeasures.\n- Provides template Python code for common web scraping scenarios.\n- Structured output for easy integration and post-processing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12b4446c53c01bbf0ca3480acdb17d92d84a07d3ed9144d46e5fa544b71fadba"
+}

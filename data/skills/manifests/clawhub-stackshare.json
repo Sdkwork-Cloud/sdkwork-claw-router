@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25491,
+  "uuid": "skill-clawhub-stackshare",
+  "skillKey": "clawhub-stackshare",
+  "name": "Stackshare",
+  "summary": "StackShare integration. Manage Stacks, Companies, Projects, Users. Use when the user wants to interact with StackShare data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stackshare",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "StackShare integration",
+        "Manage Stacks, Companies, Projects, Users",
+        "Use when the user wants to interact with StackShare data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stackshare@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stackshare",
+      "url": "https://clawhub.ai/skills/stackshare"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stackshare",
+    "url": "https://clawhub.ai/skills/stackshare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stackshare-21bac73fe963b3cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stackshare@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-stackshare-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1197b5f986c281105be5de14f7650a66917046c9294f31d90bddbb936ceddb65",
+      "artifactSizeBytes": 1827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:11:30.923Z"
+}

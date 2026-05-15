@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-interest-rate@3.2.1",
+  "version": "3.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_interest_rate",
+  "skill": {
+    "id": 25404,
+    "skillKey": "clawhub-chinese-interest-rate",
+    "name": "Chinese Interest Rate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-interest-rate",
+    "url": "https://clawhub.ai/skills/chinese-interest-rate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-interest-rate-a63e654b37d257a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor China bank deposit and government bond interest rates daily and receive alerts when any rate changes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryanbihai",
+      "userId": "s171em0jpp8yeqxqds2n145fyx83q5q8",
+      "displayName": "ryanbihai",
+      "image": "https://avatars.githubusercontent.com/u/89728875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 279,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "3.2.1",
+      "createdAt": 1777950557481,
+      "changelog": "- Updated version metadata to 3.2.1 in _meta.json.\n- No functional or feature changes in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:047d2eaf9d2546e034935f5f7e9a8a4a09c403adefd6074480fad2922b1425fe"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-subtitle-generator-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_subtitle_generator_free",
+  "skill": {
+    "id": 48038,
+    "skillKey": "clawhub-video-subtitle-generator-free",
+    "name": "Video Subtitle Generator Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-subtitle-generator-free",
+    "url": "https://clawhub.ai/skills/video-subtitle-generator-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-subtitle-generator-free-4b7f54874259e173.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add video files into captioned video files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. YouTubers and content creators use it for addin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777231014168,
+      "changelog": "Initial release of Video Subtitle Generator Free.\n\n- Generate and burn in AI-powered subtitles for video files (MP4, MOV, AVI, WebM, up to 500MB).\n- Quick cloud-based processing (30–60 seconds for short clips), results delivered as 1080p MP4 files.\n- Free to use with optional anonymous token (100 credits for 7 days); supports YouTubers and content creators.\n- Easy workflows: upload video, describe the edit/subtitles you want, download your captioned video.\n- Error handling and progress updates streamlined for smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f76cd2037d5b857db10e73aa529ebf2e3c56748b4e5064c5c26f09a4a607cc96"
+}

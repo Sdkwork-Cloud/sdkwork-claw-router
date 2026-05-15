@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-manager-skill@2.4.0",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_manager_skill",
+  "skill": {
+    "id": 45491,
+    "skillKey": "clawhub-git-manager-skill",
+    "name": "Git Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-manager-skill",
+    "url": "https://clawhub.ai/skills/git-manager-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-manager-skill-ec1bb1fc50ebcbe7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user needs to perform Git repository operations, including cloning, pulling, merging, rebasing, committing, staging, Git L..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zyjnicemoe",
+      "userId": "s1770edqa128ebw6h9m7wnzw9184xvxn",
+      "displayName": "zhuyijun",
+      "image": "https://avatars.githubusercontent.com/u/60834716?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.4.0",
+      "createdAt": 1776251497497,
+      "changelog": "**Major upgrade: Expanded from basic Git ops to full-featured, multi-repo management with batch and advanced workflows.**\n\n- Added multi-platform support: now handles GitHub, GitLab, Gitea, Bitbucket, Azure DevOps.\n- Introduced comprehensive command-line scripts for single-repo (`git_ops.py`), batch clone (`batch_clone.py`), batch pull (`batch_pull.py`), and advanced Git LFS management (`git_lfs.py`).\n- Significantly expanded functionality: supports clone, pull, merge, rebase, reflog recovery, bisect, stash, cherry-pick, revert, tag, grep, worktree management, semantic versioning, LFS, and batch operations.\n- Documentation overhaul: added detailed user guides, API references, usage examples, and multilingual README.\n- Configuration and invocation now optimized for Python CLI; major refactor with new scripts and removal of old interface files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f3727af63a4dcc2397f3fad44be96aa9b0a0eb0ab077792540813162b3d9e2a"
+}

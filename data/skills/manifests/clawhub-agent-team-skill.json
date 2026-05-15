@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14077,
+  "uuid": "skill-clawhub-agent-team-skill",
+  "skillKey": "clawhub-agent-team-skill",
+  "name": "Agent Team Skill",
+  "summary": "Manage AI agent team members with roles, skills, and task delegation. Use when: listing team members, adding/updating agents, setting the team leader, checki...",
+  "version": "2.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_team_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qiyan",
+      "features": [
+        "Manage AI agent team members with roles, skills, and task delegation",
+        "Use when: listing team members, adding/updating agents, setting the team leader, checki..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-team-skill@2.1.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4379546?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-team-skill",
+      "url": "https://clawhub.ai/skills/agent-team-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-team-skill",
+    "url": "https://clawhub.ai/skills/agent-team-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-team-skill-1806cea76d5a49f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-team-skill@2.1.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-team-skill-2.1.9.json",
+      "version": "2.1.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93501bd11014264aca93fc5db8887406e06891fd2cd51c5178039a527b9b3522",
+      "artifactSizeBytes": 2608
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T04:02:05.725Z"
+}

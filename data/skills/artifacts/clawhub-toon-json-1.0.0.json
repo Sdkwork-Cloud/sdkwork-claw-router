@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toon-json@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toon_json",
+  "skill": {
+    "id": 43899,
+    "skillKey": "clawhub-toon-json",
+    "name": "Shrink JSON in Prompts (TOON Encoder/Decoder)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toon-json",
+    "url": "https://clawhub.ai/skills/toon-json",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toon-json-a5d2f14b690c9b09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compress, encode, and decode large JSON payloads into a compact, reversible TOON string to reduce token usage in LLM prompts and tool payloads. Use when you..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zmkkevin",
+      "userId": "s171f77e02h2kncb226mh3aeb983k1ah",
+      "displayName": "kevin Zhang",
+      "image": "https://avatars.githubusercontent.com/u/49096554?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774427604922,
+      "changelog": "- Initial release of toon-json skill for encoding and decoding large JSON payloads into compact, reversible TOON strings.\n- Supports both standard and schema-based encoding to maximize compression, especially with repeated keys.\n- Provides command-line utilities for encoding, decoding, and schema derivation using `scripts/toon_json.py`.\n- Designed for lossless JSON round-tripping; rejects non-JSON values and invalid keys.\n- Includes operational guidance for choosing between schema and schema-less modes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:353bae33b4d2a7ec917055ccf09144deab3412f546848e3cec3c71c33408fd55"
+}

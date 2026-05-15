@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "openclaw-upgrade-assistant",
+    "displayName": "OpenClaw 升级前影响评估工具",
+    "summary": "深度分析 OpenClaw 版本更新对现有配置的影响，生成兼容性报告并精准备份受影响文件。Invoke when user asks to analyze OpenClaw updates, check upgrade compatibility, or backup configs before upgrading.",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1774324869759,
+    "updatedAt": 1777622990564
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1774421393391,
+    "changelog": "- Skill renamed from openclaw-update-checker to openclaw-upgrade-assistant.\n- Added 116 files, mainly introducing new dependencies (e.g., fs-extra and related modules).\n- Removed 5 files, including guides and markdown reports (.gitignore, CLAWHUB-PUBLISH.md, etc.).\n- No changes to user-facing features or usage—functionality and documentation remain consistent.\n- Improved skill metadata to highlight the use case and invocation triggers.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "adgai115",
+    "userId": "s174g944cwwb4qsgm2hmnajr8h83ggc0",
+    "displayName": "Adgai115",
+    "image": "https://avatars.githubusercontent.com/u/226634751?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.env_credential_access, suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777622990564
+  }
+}

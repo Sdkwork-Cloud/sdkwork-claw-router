@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-html-cover@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_html_cover",
+  "skill": {
+    "id": 65031,
+    "skillKey": "clawhub-xhs-html-cover",
+    "name": "Xhs Html Cover"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-html-cover",
+    "url": "https://clawhub.ai/skills/xhs-html-cover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-html-cover-13ae2351d6408f48.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "免费图片生成器 — 用HTML模板+Playwright渲染，输入任意主题即可生成图片。完全免费，无需API Key，支持14种风格+5种尺寸。适用于封面、配图、海报、素材、社交媒体等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luoyuhyy",
+      "userId": "s174rtj6212jbpf942w6xtx5a983hzqb",
+      "displayName": "luoyuhyy",
+      "image": "https://avatars.githubusercontent.com/u/154456149?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 358,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774376769790,
+      "changelog": "升级为通用图片生成器，新增6种风格、5种尺寸，完美适配各种平台",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ecc5314132c5a3fe550a91ee68377011c4c81c7d02be8b05a99b21ca75e954a1"
+}

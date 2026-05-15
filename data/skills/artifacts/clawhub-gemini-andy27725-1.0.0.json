@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemini-andy27725@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_andy27725",
+  "skill": {
+    "id": 37187,
+    "skillKey": "clawhub-gemini-andy27725",
+    "name": "Gemini Andy27725"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-andy27725",
+    "url": "https://clawhub.ai/skills/gemini-andy27725",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-andy27725-35d2c9983256a9d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gemini CLI for one-shot Q&A, summaries, and generation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andy27725",
+      "userId": "s1771zaa2s144y84bcq90bv6h183h8km",
+      "displayName": "Andy27725",
+      "image": "https://avatars.githubusercontent.com/u/259773669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774363144864,
+      "changelog": "Initial release of gemini CLI skill.\n\n- Provides one-shot Q&A, summarization, and text generation via Gemini CLI.\n- Supports different output formats and models.\n- Includes extension management commands.\n- Installation instructions for Homebrew provided.\n- Basic usage notes and safety warnings included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04d2e09683deccf1dcb35454aa60d337d9d89b1876bc4bbef34f6ee7991e20ce"
+}

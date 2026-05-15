@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66847,
+  "uuid": "skill-clawhub-autonomous-research-jirboy",
+  "skillKey": "clawhub-autonomous-research-jirboy",
+  "name": "Autonomous Research",
+  "summary": "自动化23阶段科研流程，实现从研究想法到完整论文的生成，支持文献检索、实验设计和结果分析。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomous_research_jirboy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JIRBOY",
+      "features": [
+        "自动化23阶段科研流程，实现从研究想法到完整论文的生成，支持文献检索、实验设计和结果分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autonomous-research-jirboy@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49422297?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autonomous-research-jirboy",
+      "url": "https://clawhub.ai/skills/autonomous-research-jirboy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomous-research-jirboy",
+    "url": "https://clawhub.ai/skills/autonomous-research-jirboy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomous-research-jirboy-6280cbb0f463ca29.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autonomous-research-jirboy@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-autonomous-research-jirboy-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1c23e8c71eec081b3cb4f103ccacab8d5d61f6d78bcce1a23aa2dec27e7e703",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T06:50:36.541Z"
+}

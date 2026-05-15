@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/haidi-revolution-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.haidi_revolution_skill",
+  "skill": {
+    "id": 65882,
+    "skillKey": "clawhub-haidi-revolution-skill",
+    "name": "haidi-revolution-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "haidi-revolution-skill",
+    "url": "https://clawhub.ai/skills/haidi-revolution-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/haidi-revolution-skill-46e6127f9bd3d6c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "研究海地革命独立费用的历史背景、支付详情及其对海地经济和国际关系的长期影响分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "waterlikeage",
+      "userId": "publishers:waterlikeage",
+      "displayName": "waterlikeage",
+      "image": "https://avatars.githubusercontent.com/u/62329313?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773124379125,
+      "changelog": "- Initial release of the 海地革命独立费用历史研究 Skill.\n- Enables research and analysis of Haiti’s independence payments to France after the Haitian Revolution.\n- Provides historical background, key event timelines, and details of the 1825 indemnity agreement.\n- Supports economic and comparative data analysis, including calculation of payment value and its effect on Haiti.\n- Includes tools for investigating international legal, political, and modern reparations perspectives.\n- Offers command-line examples for querying revolution facts, payment details, and impact analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8909187bb57b3a9579f9be41ac96358a706d188eeba3a04252644fcfb040dee"
+}

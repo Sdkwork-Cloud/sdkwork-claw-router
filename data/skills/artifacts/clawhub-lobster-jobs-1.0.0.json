@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobster-jobs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_jobs",
+  "skill": {
+    "id": 10318,
+    "skillKey": "clawhub-lobster-jobs",
+    "name": "Lobster Workflows"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-jobs",
+    "url": "https://clawhub.ai/skills/lobster-jobs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-jobs-189aab58710a9aab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform OpenClaw cron jobs into Lobster workflows. Analyze, inspect, and validate job migrations. Use when converting automations to deterministic, approval-gated workflows with resume capabilities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kesslerio",
+      "userId": "publishers:kesslerio",
+      "displayName": "kesslerio",
+      "image": "https://avatars.githubusercontent.com/u/2647990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2626,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769838190437,
+      "changelog": "Initial ClawHub release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6687da837b4e406fdc038ee235520b5dec314f5d1c007b61ac3133a28c0c8152"
+}

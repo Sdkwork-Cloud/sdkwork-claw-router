@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72377,
+  "uuid": "skill-clawhub-a-stock-orchestrator",
+  "skillKey": "clawhub-a-stock-orchestrator",
+  "name": "A 股投研指挥官",
+  "summary": "A股投研指挥官 - 编排调度多个股票分析Skill，串联成完整投研流水线。支持四种模式：板块扫描、板块分析、个股深度分析、持仓体检。最终输出结构化投资简报并自动存档飞书。",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tanming",
+      "features": [
+        "编排调度多个股票分析Skill，串联成完整投研流水线。支持四种模式：板块扫描、板块分析、个股深度分析、持仓体检。最终输出结构化投资简报并自动存档飞书。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-stock-orchestrator@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125107242?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-stock-orchestrator",
+      "url": "https://clawhub.ai/skills/a-stock-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-orchestrator",
+    "url": "https://clawhub.ai/skills/a-stock-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-orchestrator-2e2d199abac8c46f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-stock-orchestrator@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-stock-orchestrator-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09fe41a7a4c613742603fc2da93337e7517cdcd5cd1e40641efedf8db8dbec10",
+      "artifactSizeBytes": 2116
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T09:11:24.697Z"
+}

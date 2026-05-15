@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13873,
+  "uuid": "skill-clawhub-url2png",
+  "skillKey": "clawhub-url2png",
+  "name": "URL to PNG",
+  "summary": "Convert URL to PNG suitable for mobile reading.",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.url2png",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guoqiao",
+      "features": [
+        "Convert URL to PNG suitable for mobile reading."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/url2png@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1306111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "url2png",
+      "url": "https://clawhub.ai/skills/url2png"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "url2png",
+    "url": "https://clawhub.ai/skills/url2png",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/url2png-3262e250297c8fb4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/url2png@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-url2png-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fff057f3cf9bb15f0cee0e160856f40fac1536bf0513e3cd4c6c311379f6701e",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T02:26:37.612Z"
+}

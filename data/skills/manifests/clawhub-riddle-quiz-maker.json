@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32935,
+  "uuid": "skill-clawhub-riddle-quiz-maker",
+  "skillKey": "clawhub-riddle-quiz-maker",
+  "name": "Riddle Quiz Maker",
+  "summary": "Riddle Quiz Maker integration. Manage Quizs, Users, Categories. Use when the user wants to interact with Riddle Quiz Maker data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.riddle_quiz_maker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Riddle Quiz Maker integration",
+        "Manage Quizs, Users, Categories",
+        "Use when the user wants to interact with Riddle Quiz Maker data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/riddle-quiz-maker@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "riddle-quiz-maker",
+      "url": "https://clawhub.ai/skills/riddle-quiz-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "riddle-quiz-maker",
+    "url": "https://clawhub.ai/skills/riddle-quiz-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/riddle-quiz-maker-bffe0c4186892753.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/riddle-quiz-maker@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-riddle-quiz-maker-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c74d6d1660cf65af2fa3dda860f08148a4dae4d6770edad82566f52d131d8d5",
+      "artifactSizeBytes": 1898
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:34:53.580Z"
+}

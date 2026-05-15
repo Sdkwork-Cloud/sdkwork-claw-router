@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lossless-claw@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lossless_claw",
+  "skill": {
+    "id": 69287,
+    "skillKey": "clawhub-lossless-claw",
+    "name": "lossless-claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lossless-claw",
+    "url": "https://clawhub.ai/skills/lossless-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lossless-claw-20ecbcbc35eb4405.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "无损回忆技能。对对话或会话记录做本地蒸馏，提取身份信息、偏好、任务和长期知识，剔除噪声并保留可追溯日志。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lingmoon96-dev",
+      "userId": "s170394dw8f0kpn2y14g0hq36n83sw7z",
+      "displayName": "lingmoon96-dev",
+      "image": "https://avatars.githubusercontent.com/u/250243307?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4838,
+      "installsAllTime": 18,
+      "installsCurrent": 17,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774942627005,
+      "changelog": "Sync local workspace skills into ClawHub tracking from the current OpenClaw workspace.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81f1e7b7791e34d35f0495c71662c568f3859e67dc181b875af69f408cf86b0e"
+}

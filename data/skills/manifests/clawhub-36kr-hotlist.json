@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59601,
+  "uuid": "skill-clawhub-36kr-hotlist",
+  "skillKey": "clawhub-36kr-hotlist",
+  "name": "36氪热榜 - 36kr Hot List",
+  "summary": "获取36氪官方24小时热榜文章数据. Use when the user asks about 36kr hot articles, 热榜, 36kr热榜, 热门文章, 今日热榜, 最热文章, 热点资讯, 科技热榜, 创业热榜, 今天最热, 查热榜, 看热榜.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.36kr_hotlist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "36kr",
+      "features": [
+        "获取36氪官方24小时热榜文章数据",
+        "Use when the user asks about 36kr hot articles, 热榜, 36kr热榜, 热门文章, 今日热榜, 最热文章, 热点资讯, 科技热榜, 创业热榜,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/36kr-hotlist@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27681803?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "36kr-hotlist",
+      "url": "https://clawhub.ai/skills/36kr-hotlist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "36kr-hotlist",
+    "url": "https://clawhub.ai/skills/36kr-hotlist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/36kr-hotlist-8b9481b304daaa02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/36kr-hotlist@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-36kr-hotlist-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77c848f52c976c08bfafc77f91d720c8df937fd01ec096299810038ec2f75c2f",
+      "artifactSizeBytes": 2288
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:41:35.755Z"
+}

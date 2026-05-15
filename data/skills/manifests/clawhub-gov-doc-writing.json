@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71454,
+  "uuid": "skill-clawhub-gov-doc-writing",
+  "skillKey": "clawhub-gov-doc-writing",
+  "name": "国央企word文档",
+  "summary": "此技能用于创建符合中国政府及央企规范的Word文档(.docx)。当用户要求创建公文、国央企文档、规范文书、正式报告等需要特定中国公文格式的文档时使用此技能。",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gov_doc_writing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "刘洪亮Leo",
+      "features": [
+        "此技能用于创建符合中国政府及央企规范的Word文档(.docx)。当用户要求创建公文、国央企文档、规范文书、正式报告等需要特定中国公文格式的文档时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gov-doc-writing@1.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39986022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gov-doc-writing",
+      "url": "https://clawhub.ai/skills/gov-doc-writing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gov-doc-writing",
+    "url": "https://clawhub.ai/skills/gov-doc-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gov-doc-writing-95f4d3da635fe2d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gov-doc-writing@1.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gov-doc-writing-1.6.0.json",
+      "version": "1.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a423dedd76ced9dffcb940e4a4b40cd8322bfa0820676d1a64b4704f64d8802e",
+      "artifactSizeBytes": 2679
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T05:35:57.675Z"
+}

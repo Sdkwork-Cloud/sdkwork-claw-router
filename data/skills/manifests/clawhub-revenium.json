@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36533,
+  "uuid": "skill-clawhub-revenium",
+  "skillKey": "clawhub-revenium",
+  "name": "Revenium Budget Enforcement",
+  "summary": "MANDATORY budget check BEFORE EVERY OPERATION — read budget-status.json first, always, no exceptions. Enforces token spend limits, warns on threshold exceeda...",
+  "version": "0.5.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.revenium",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "revenium.ai",
+      "features": [
+        "MANDATORY budget check BEFORE EVERY OPERATION — read budget-status.json first, always, no excep.",
+        "Enforces token spend limits, warns on threshold exceeda..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/revenium@0.5.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/344677?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "revenium",
+      "url": "https://clawhub.ai/skills/revenium"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "revenium",
+    "url": "https://clawhub.ai/skills/revenium",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/revenium-61b72c61dac68804.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/revenium@0.5.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-revenium-0.5.7.json",
+      "version": "0.5.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52a26ac7b8fd8e9cf4bdba0ab7851a3cb8a7fe6770fcb9f75a3873f7083a1485",
+      "artifactSizeBytes": 2310
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T03:19:50.814Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11762,
+  "uuid": "skill-clawhub-code-runner",
+  "skillKey": "clawhub-code-runner",
+  "name": "Code Runner",
+  "summary": "Run code snippets in 30+ programming languages including JavaScript, Python, TypeScript, Java, C, C++, Go, Rust, Ruby, PHP, and more. Use when the user wants...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_runner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "formulahendry",
+      "features": [
+        "Run code snippets in 30+ programming languages including JavaScript, Python, TypeScript, Java,.",
+        "Use when the user wants..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-runner@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1050213?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-runner",
+      "url": "https://clawhub.ai/skills/code-runner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-runner",
+    "url": "https://clawhub.ai/skills/code-runner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-runner-3cf2f68ed5bd179f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-runner@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-runner-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8a456d68aa2ded63f310087754c5afe5f763f82e78c8520de3f130e978a34b2",
+      "artifactSizeBytes": 2270
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T12:51:16.654Z"
+}

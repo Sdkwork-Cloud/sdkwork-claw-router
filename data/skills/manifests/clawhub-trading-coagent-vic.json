@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66319,
+  "uuid": "skill-clawhub-trading-coagent-vic",
+  "skillKey": "clawhub-trading-coagent-vic",
+  "name": "Trading Co-Agent Pro",
+  "summary": "AI協助監控並修復交易腳本缺漏，主動執行和補救加密貨幣及股票自動交易，持續優化交易效能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trading_coagent_vic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chungvic",
+      "features": [
+        "AI協助監控並修復交易腳本缺漏，主動執行和補救加密貨幣及股票自動交易，持續優化交易效能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trading-coagent-vic@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264721513?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trading-coagent-vic",
+      "url": "https://clawhub.ai/skills/trading-coagent-vic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trading-coagent-vic",
+    "url": "https://clawhub.ai/skills/trading-coagent-vic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trading-coagent-vic-a8c3e5bff322351c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trading-coagent-vic@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trading-coagent-vic-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:171885a437293743ee103619b2d11d9a361e875e1570476fc49d8492e8c75a38",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T09:11:18.474Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ga4-data-api@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ga4_data_api",
+  "skill": {
+    "id": 21632,
+    "skillKey": "clawhub-ga4-data-api",
+    "name": "Ga4 Data Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ga4-data-api",
+    "url": "https://clawhub.ai/skills/ga4-data-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ga4-data-api-758e33d4900d6720.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Google Analytics 4 (GA4) data through the Google Analytics Data API for trends, countries, sources, pages, and conversion analysis. Use when a user wan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nanaco666",
+      "userId": "s175t7az46bh7p5ptfn1s04tks83grcv",
+      "displayName": "nanaco",
+      "image": "https://avatars.githubusercontent.com/u/105962962?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773309692722,
+      "changelog": "- Initial release of the GA4 Data API skill for OpenClaw.\n- Enables querying Google Analytics 4 data using OAuth user authorization.\n- Guides users through access verification, credential setup, and example queries.\n- Emphasizes checking account permissions before setup and clarifies common access issues.\n- Provides ready-to-use command-line examples for analyzing trends, country/source breakdowns, and conversions.\n- Recommends best practices for analysis and directs to included setup and usage references.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4eea41c22dbce905b08b3078dbc476271f6e1712c41b1720838164488180b136"
+}

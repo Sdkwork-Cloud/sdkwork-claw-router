@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { FormEvent, ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import {
   Clock,
@@ -18,11 +18,16 @@ import {
 import { useTranslation } from 'react-i18next';
 
 import {
-  FORUM_POSTS,
+  buildPortalAuthLoginRedirect,
+  hasStoredPortalSession,
+} from 'sdkwork-claw-router-commons/runtime';
+import {
   deriveForumCatalogViewModel,
   type ForumCategory,
   type ForumCategoryFilter,
   type ForumCommunityLinkView,
+  type ForumOverviewViewInput,
+  type ForumPost,
   type ForumSortKey,
 } from '../forumCatalog';
 import { forumService } from '../forumService.ts';
@@ -51,12 +56,22 @@ const composerCategories: ForumCategory[] = [
   'Announcements',
 ];
 
+const emptyForumOverview: ForumOverviewViewInput = {
+  totalPosts: 0,
+  memberCount: 0,
+  onlineMembers: 0,
+  communityLinks: [],
+};
+
 export function ForumView() {
   const { t } = useTranslation();
+  const location = useLocation();
+  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState<ForumCategoryFilter>('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [activeSort, setActiveSort] = useState<ForumSortKey>('latest');
-  const [forumPosts, setForumPosts] = useState(FORUM_POSTS);
+  const [forumPosts, setForumPosts] = useState<ForumPost[]>([]);
+  const [forumOverview, setForumOverview] = useState<ForumOverviewViewInput>(emptyForumOverview);
   const [loadingFailed, setLoadingFailed] = useState(false);
   const [isComposerOpen, setIsComposerOpen] = useState(false);
   const [newDiscussionTitle, setNewDiscussionTitle] = useState('');
@@ -68,17 +83,28 @@ export function ForumView() {
 
   useEffect(() => {
     let cancelled = false;
-    forumService.fetchForumFeeds({ size: 50 })
-      .then((posts) => {
-        if (!cancelled && posts.length > 0) {
-          setForumPosts(posts);
-          setLoadingFailed(false);
+    Promise.allSettled([
+      forumService.fetchForumFeeds({ size: 50 }),
+      forumService.fetchForumOverview(),
+    ])
+      .then(([postsResult, overviewResult]) => {
+        if (cancelled) {
+          return;
         }
-      })
-      .catch(() => {
-        if (!cancelled) {
-          setLoadingFailed(true);
+        if (postsResult.status === 'fulfilled') {
+          setForumPosts(postsResult.value);
         }
+        if (overviewResult.status === 'fulfilled') {
+          const overview = overviewResult.value;
+          setForumOverview({
+            totalPosts: overview.stats.totalPosts,
+            memberCount: overview.stats.memberCount,
+            onlineMembers: overview.stats.onlineMembers,
+            communityLinks: overview.communityLinks,
+            source: overview.source,
+          });
+        }
+        setLoadingFailed(postsResult.status === 'rejected' || overviewResult.status === 'rejected');
       });
     return () => {
       cancelled = true;
@@ -92,10 +118,29 @@ export function ForumView() {
       searchQuery,
       sort: activeSort,
     },
+    overview: forumOverview,
   });
+
+  const requirePortalLoginForAction = () => {
+    if (hasStoredPortalSession()) {
+      return true;
+    }
+    navigate(buildPortalAuthLoginRedirect(location));
+    return false;
+  };
+
+  const openComposer = () => {
+    if (!requirePortalLoginForAction()) {
+      return;
+    }
+    setIsComposerOpen((value) => !value);
+  };
 
   const submitNewDiscussion = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (!requirePortalLoginForAction()) {
+      return;
+    }
     const content = newDiscussionContent.trim();
     const title = newDiscussionTitle.trim();
     if (!title || !content) {
@@ -138,12 +183,13 @@ export function ForumView() {
               {t('forum.subtitle')}
             </p>
             <div className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-              {loadingFailed ? 'Published snapshot' : 'Live community feed'}: {view.snapshotSource.observedAt} - {view.resultCount} discussions
+              <span>{loadingFailed ? 'Live community feed unavailable' : 'Live community feed'}</span>
+              <span> - {view.resultCount} discussions</span>
             </div>
           </div>
           <button
             type="button"
-            onClick={() => setIsComposerOpen((value) => !value)}
+            onClick={openComposer}
             className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors whitespace-nowrap self-start md:self-auto"
           >
             <PenSquare className="w-5 h-5" />
@@ -277,10 +323,10 @@ export function ForumView() {
               {view.filteredPosts.length === 0 && (
                 <div className="bg-white dark:bg-[#0d1117] border border-dashed border-slate-300 dark:border-white/10 rounded-xl p-8 text-center">
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
-                    No discussions found
+                    {loadingFailed ? 'Unable to load discussions' : 'No discussions found'}
                   </h3>
                   <p className="text-sm text-slate-500 dark:text-slate-400">
-                    Try a different search or category filter.
+                    {loadingFailed ? 'Check the community service and try again.' : 'Try a different search or category filter.'}
                   </p>
                 </div>
               )}
@@ -351,6 +397,11 @@ export function ForumView() {
               </h3>
 
               <div className="grid grid-cols-2 gap-3 relative z-10">
+                {view.communityLinks.length === 0 && (
+                  <div className="col-span-2 rounded-lg border border-dashed border-slate-200 bg-white/80 px-3 py-5 text-center text-sm text-slate-500 dark:border-white/10 dark:bg-[#161b22]/80 dark:text-slate-400">
+                    Community links are not configured.
+                  </div>
+                )}
                 {view.communityLinks.map((link) => (
                   <div
                     key={link.id}

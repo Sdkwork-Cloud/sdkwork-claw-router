@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/short-drama-publisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.short_drama_publisher",
+  "skill": {
+    "id": 21438,
+    "skillKey": "clawhub-short-drama-publisher",
+    "name": "Short Drama Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "short-drama-publisher",
+    "url": "https://clawhub.ai/skills/short-drama-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/short-drama-publisher-3915b80f9d0a5860.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated short drama video publisher. Downloads drama content from MoboBoost, uses AI to identify highlight moments, clips 15-second vertical videos with te..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ye4wzp",
+      "userId": "publishers:ye4wzp",
+      "displayName": "ye4wzp",
+      "image": "https://avatars.githubusercontent.com/u/60957471?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 509,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773248985043,
+      "changelog": "Initial release: automated short drama video workflow - MoboBoost download, AI highlight detection, video clipping, Facebook publishing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de98df89932e541bda9020211cccf59e3c981034ec0250736305e605bb467e89"
+}

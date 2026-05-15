@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26013,
+  "uuid": "skill-clawhub-workflow-guardian",
+  "skillKey": "clawhub-workflow-guardian",
+  "name": "Workflow Guardian",
+  "summary": "Defines, enforces, and tracks structured workflows for any task type. Manages do/don't rules, execution sequences, hard gates, soft advisories, checkpoints,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workflow_guardian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cyber-bye",
+      "features": [
+        "Defines, enforces, and tracks structured workflows for any task type",
+        "Manages do/don't rules, execution sequences, hard gates, soft advisories, checkpoints,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workflow-guardian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42940952?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workflow-guardian",
+      "url": "https://clawhub.ai/skills/workflow-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workflow-guardian",
+    "url": "https://clawhub.ai/skills/workflow-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workflow-guardian-77510c4121c3b636.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workflow-guardian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-workflow-guardian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a7341d8df307b6794b560ec9e2c7175a14c2dd279fd8e4611a861968b317cb6",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T14:34:04.785Z"
+}

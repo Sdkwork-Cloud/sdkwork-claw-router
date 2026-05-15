@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12942,
+  "uuid": "skill-clawhub-talk",
+  "skillKey": "clawhub-talk",
+  "name": "Talk",
+  "summary": "Set up real-time voice conversations. Phone calls, voice agents, live speech.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.talk",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Set up real-time voice conversations",
+        "Phone calls, voice agents, live speech."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/talk@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "talk",
+      "url": "https://clawhub.ai/skills/talk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "talk",
+    "url": "https://clawhub.ai/skills/talk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/talk-ce7611e7481e75f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/talk@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-talk-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a471d6ee71c1a0e5a7917a115472eeeea1ebe0b51b1356fbe99118dab05a6ba6",
+      "artifactSizeBytes": 1730
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T21:45:02.474Z"
+}

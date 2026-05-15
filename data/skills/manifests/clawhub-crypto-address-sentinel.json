@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43952,
+  "uuid": "skill-clawhub-crypto-address-sentinel",
+  "skillKey": "clawhub-crypto-address-sentinel",
+  "name": "Crypto Address Sentinel",
+  "summary": "Monitor wallet balances and on-chain activity. Get alerts when balances change or when specified conditions are met. Use for tracking portfolio, detecting un...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_address_sentinel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhiuannnn",
+      "features": [
+        "Monitor wallet balances and on-chain activity",
+        "Get alerts when balances change or when specified conditions are met",
+        "Use for tracking portfolio, detecting un..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-address-sentinel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61270121?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-address-sentinel",
+      "url": "https://clawhub.ai/skills/crypto-address-sentinel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-address-sentinel",
+    "url": "https://clawhub.ai/skills/crypto-address-sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-address-sentinel-689c6c446ea63a20.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-address-sentinel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-address-sentinel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ae9c76c33d94fbb64890aee44040b6ed4af51b0123804fb72fb0c77dee598e9",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T09:48:21.571Z"
+}

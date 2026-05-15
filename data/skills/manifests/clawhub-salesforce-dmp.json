@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36720,
+  "uuid": "skill-clawhub-salesforce-dmp",
+  "skillKey": "clawhub-salesforce-dmp",
+  "name": "Salesforce Dmp",
+  "summary": "Salesforce DMP integration. Manage data, records, and automate workflows. Use when the user wants to interact with Salesforce DMP data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.salesforce_dmp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Salesforce DMP integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Salesforce DMP data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/salesforce-dmp@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "salesforce-dmp",
+      "url": "https://clawhub.ai/skills/salesforce-dmp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "salesforce-dmp",
+    "url": "https://clawhub.ai/skills/salesforce-dmp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/salesforce-dmp-d4105c3b19968d1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/salesforce-dmp@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-salesforce-dmp-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a282df26414b5e1f7ba55fdaf2f84d704cd67d830c313e910c2c644136882253",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:36:36.516Z"
+}

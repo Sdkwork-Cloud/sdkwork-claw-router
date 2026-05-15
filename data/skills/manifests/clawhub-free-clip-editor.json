@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39867,
+  "uuid": "skill-clawhub-free-clip-editor",
+  "skillKey": "clawhub-free-clip-editor",
+  "name": "Free Clip Editor",
+  "summary": "Get edited video clips ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"trim...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_clip_editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dsewell-583h0",
+      "features": [
+        "Get edited video clips ready to post, without touching a single slider",
+        "Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"trim..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-clip-editor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-clip-editor",
+      "url": "https://clawhub.ai/skills/free-clip-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-clip-editor",
+    "url": "https://clawhub.ai/skills/free-clip-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-clip-editor-10da5a4a72ad47cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-clip-editor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-clip-editor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99b9dc93de8c6d617d0b18efc8a59b1cf1c3e06315a861424a1b83695079a7a1",
+      "artifactSizeBytes": 2576
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T21:52:16.385Z"
+}

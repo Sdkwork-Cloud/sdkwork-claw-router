@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12846,
+  "uuid": "skill-clawhub-google-veo",
+  "skillKey": "clawhub-google-veo",
+  "name": "Google Veo",
+  "summary": "Generate videos with Google Veo models via inference.sh CLI. Models: Veo 3.1, Veo 3.1 Fast, Veo 3, Veo 3 Fast, Veo 2. Capabilities: text-to-video, cinematic...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_veo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ömer Karışman",
+      "features": [
+        "Generate videos with Google Veo models via inference.sh CLI",
+        "Models: Veo 3.1, Veo 3.1 Fast, Veo 3, Veo 3 Fast, Veo 2",
+        "Capabilities: text-to-video, cinematic..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-veo@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1448702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-veo",
+      "url": "https://clawhub.ai/skills/google-veo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-veo",
+    "url": "https://clawhub.ai/skills/google-veo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-veo-e677302f0004ad72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-veo@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-veo-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51d7de633e872b00f01a4f2795a434c72cb136957a552cddda32a4a460e173f0",
+      "artifactSizeBytes": 2333
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T08:26:33.472Z"
+}

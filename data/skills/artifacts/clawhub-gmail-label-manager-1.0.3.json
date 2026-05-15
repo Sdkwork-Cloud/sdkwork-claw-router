@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gmail-label-manager@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_label_manager",
+  "skill": {
+    "id": 15313,
+    "skillKey": "clawhub-gmail-label-manager",
+    "name": "Gmail Label Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-label-manager",
+    "url": "https://clawhub.ai/skills/gmail-label-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-label-manager-7c39a4bc714b7da6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically organizes unread Gmail messages by applying relevant labels, removing irrelevant ones, and archiving emails based on patterns from archived mes..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coenenp",
+      "userId": "publishers:coenenp",
+      "displayName": "Coenenp",
+      "image": "https://avatars.githubusercontent.com/u/17593262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1025,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770983746583,
+      "changelog": "- No visible changes to documentation or feature set in this version.\n- Internal update made to script.sh; user-facing behavior and instructions remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:700cb9da43b0a59fca2c813768b1c555138111bf142a3d5449d22bbc005526df"
+}

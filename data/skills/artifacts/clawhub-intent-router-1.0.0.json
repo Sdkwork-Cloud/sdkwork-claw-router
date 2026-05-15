@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intent-router@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intent_router",
+  "skill": {
+    "id": 19806,
+    "skillKey": "clawhub-intent-router",
+    "name": "intent-router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intent-router",
+    "url": "https://clawhub.ai/skills/intent-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intent-router-830698917b137eee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Classify text into custom intents with confidence scoring and entity extraction. Use when: intent classification, message routing, multi-agent orchestration,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daisuke134",
+      "userId": "publishers:daisuke134",
+      "displayName": "Daisuke Narita",
+      "image": "https://avatars.githubusercontent.com/u/140220114?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 550,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772387619520,
+      "changelog": "Initial release: intent classification for multi-agent orchestration",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:437a268683321f5a461c747722ed60cfc041c870e0d9f42500bcbb2300db2e81"
+}

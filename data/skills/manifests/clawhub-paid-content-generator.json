@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65024,
+  "uuid": "skill-clawhub-paid-content-generator",
+  "skillKey": "clawhub-paid-content-generator",
+  "name": "AI内容生成器(付费版)",
+  "summary": "AI内容生成器 - 小红书文案、视频脚本、多平台内容一键生成。接入SkillPay收费，每次调用0.001 USDT。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paid_content_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ffffff9331",
+      "features": [
+        "小红书文案、视频脚本、多平台内容一键生成。接入SkillPay收费，每次调用0.001 USDT。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paid-content-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114909388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paid-content-generator",
+      "url": "https://clawhub.ai/skills/paid-content-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paid-content-generator",
+    "url": "https://clawhub.ai/skills/paid-content-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paid-content-generator-cf8df5b3f563fb74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paid-content-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paid-content-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93507ba2396ebf836f6cb1ba429f09a9bcfa87a846fe75ee55af1e702d773be4",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T06:39:54.748Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42833,
+  "uuid": "skill-clawhub-influencer-partnership-scout",
+  "skillKey": "clawhub-influencer-partnership-scout",
+  "name": "Influencer Partnership Scout",
+  "summary": "Generates influencer shortlist tiers, analyzes creator fit by campaign goal, recommends partnership mode, and drafts outreach briefs for e-commerce brands.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.influencer_partnership_scout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Generates influencer shortlist tiers, analyzes creator fit by campaign goal, recommends partner."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/influencer-partnership-scout@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "influencer-partnership-scout",
+      "url": "https://clawhub.ai/skills/influencer-partnership-scout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "influencer-partnership-scout",
+    "url": "https://clawhub.ai/skills/influencer-partnership-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/influencer-partnership-scout-85a27110295660d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/influencer-partnership-scout@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-influencer-partnership-scout-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:261934c2b1635886898d89f6ce2b169ed2fb48bb2906ce1a1724a92870915de5",
+      "artifactSizeBytes": 2559
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T10:06:21.859Z"
+}

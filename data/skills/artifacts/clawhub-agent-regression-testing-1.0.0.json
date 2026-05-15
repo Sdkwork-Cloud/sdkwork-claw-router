@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-regression-testing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_regression_testing",
+  "skill": {
+    "id": 63104,
+    "skillKey": "clawhub-agent-regression-testing",
+    "name": "Agent Regression Testing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-regression-testing",
+    "url": "https://clawhub.ai/skills/agent-regression-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-regression-testing-52dc829a5dcd6eb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "管理回归测试计划、执行回归测试用例、验证缺陷修复。 Use when: 用户说\"开始回归测试\"、\"验证缺陷修复\"、\"执行回归验证\"。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luiciferyi",
+      "userId": "s1709mjz8g1wqx9v1j33fryyj583pcxx",
+      "displayName": "LuiciferYi",
+      "image": "https://avatars.githubusercontent.com/u/24913493?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776065495305,
+      "changelog": "- Initial release of the agent-regression-testing skill.\n- Supports end-to-end regression testing management: planning, test case execution, defect verification, and report generation.\n- Provides detailed guidelines and templates for regression test plans, execution records, defect validation, and results reporting.\n- Offers selection criteria and best practices for full, selective, and automated regression strategies.\n- Includes clear entry/exit criteria, risk assessment, and publishing decision matrix for regression testing.\n- Integrates with Feishu document tools for documentation and reporting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1bcbdbd63bb75dc1f6e03fa764a04b4ebcb1cf5079fd03248042a25df031278"
+}

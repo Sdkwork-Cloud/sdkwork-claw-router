@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawl",
+  "skill": {
+    "id": 19489,
+    "skillKey": "clawhub-clawl",
+    "name": "Clawl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawl",
+    "url": "https://clawhub.ai/skills/clawl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawl-b339ce7412994672.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register this AI agent on Clawl — the agent search engine. Generates a clawl.json discovery file and pings clawl.co.uk for indexing. Use when an agent wants to be discoverable, get ranked on the Clawl leaderboard, compete for King of the C."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wlshlad86",
+      "userId": "publishers:wlshlad86",
+      "displayName": "wlshlad86",
+      "image": "https://avatars.githubusercontent.com/u/189739136?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 878,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770714377321,
+      "changelog": "Official Clawl agent registration skill - clawl.co.uk",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a0bb07cdd3c6cc4665de02c1ec473e92ba8f13b2ec3e317e0a71b60e049d7c61"
+}

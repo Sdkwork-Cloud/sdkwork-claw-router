@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25621,
+  "uuid": "skill-clawhub-1claw",
+  "skillKey": "clawhub-1claw",
+  "name": "1claw",
+  "summary": "HSM-backed secret management for AI agents — store, retrieve, rotate, and share secrets via the 1Claw vault without exposing them in context.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin J",
+      "features": [
+        "HSM-backed secret management for AI agents — store, retrieve, rotate, and share secrets via the."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/1claw@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6829515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "1claw",
+      "url": "https://clawhub.ai/skills/1claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1claw",
+    "url": "https://clawhub.ai/skills/1claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1claw-6e5a931662144abe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/1claw@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-1claw-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61533cf7243b53acc6a9ccff25ad75e7dc00c363cf99dafb61e00dd4f434bc79",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T22:05:01.239Z"
+}

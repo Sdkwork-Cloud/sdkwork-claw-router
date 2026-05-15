@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-collab@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_collab",
+  "skill": {
+    "id": 16282,
+    "skillKey": "clawhub-ai-collab",
+    "name": "Ai Collab"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-collab",
+    "url": "https://clawhub.ai/skills/ai-collab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-collab-d2958acede7f2624.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent autonomous collaboration system for two OpenClaw agents working in parallel. Use when setting up agent-to-agent communication, running a daemon a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeremysommerfeld8910-cpu",
+      "userId": "publishers:jeremysommerfeld8910-cpu",
+      "displayName": "jeremysommerfeld8910-cpu",
+      "image": "https://avatars.githubusercontent.com/u/240074820?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 884,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772231577288,
+      "changelog": "ai-collab v2.0.0 changelog\n\n- Major version release with formatting and metadata updates.\n- SKILL.md and _meta.json modified; content and core instructions unchanged.\n- No functional or protocol changes—existing users do not need to update configuration or scripts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9726222792e130ad0ecbe33678fad13ba212aeb850ed0260106ee79fa7a4a817"
+}

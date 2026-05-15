@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17836,
+  "uuid": "skill-clawhub-weather-trader",
+  "skillKey": "clawhub-weather-trader",
+  "name": "weather-agent",
+  "summary": "Trade Polymarket US temperature markets using NOAA forecasts with dynamic confidence, quality filtering, and smart trade sizing for improved accuracy and ris...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_trader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mohamedj2020",
+      "features": [
+        "Trade Polymarket US temperature markets using NOAA forecasts with dynamic confidence, quality f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-trader@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99696869?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-trader",
+      "url": "https://clawhub.ai/skills/weather-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-trader",
+    "url": "https://clawhub.ai/skills/weather-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-trader-d347fbb5411b049b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-trader@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-trader-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13030c53c20dbeda4734f5616de8e5cfdf37e439e420fc7272f80d97c36d05a0",
+      "artifactSizeBytes": 2518
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T01:46:19.658Z"
+}

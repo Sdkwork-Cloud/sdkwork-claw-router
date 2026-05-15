@@ -96,6 +96,75 @@ class FrontendOperationAuditTest(unittest.TestCase):
 
             self.assertTrue(result.ok, result.messages)
 
+    def test_allows_appbase_iam_runtime_as_generated_sdk_boundary(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_file(
+                root,
+                "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+                """
+                import { getClawRouterIamRuntime } from 'sdkwork-claw-router-commons/runtime';
+
+                export async function login(): Promise<void> {
+                  await getClawRouterIamRuntime().service.auth.sessions.create({ grantType: 'password' });
+                }
+                """,
+            )
+            self.write_contract(
+                root,
+                """
+                routes:
+                  - route: /auth/login
+                    required_tables: [iam_user, iam_credential, iam_session, iam_security_event]
+                frontend_operations:
+                  - route: /auth/login
+                    source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+                    operation: login
+                    operation_id: sessions.create
+                    kind: create
+                    api_surface: app
+                    api_method: POST
+                    api_path: /app/v3/api/auth/sessions
+                    read_sources: [iam_user, iam_credential, iam_session]
+                    write_tables: [iam_session, iam_security_event]
+                """,
+            )
+
+            result = FrontendOperationAudit(root=root).validate()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_extracts_appbase_iam_runtime_auth_controller_factory_operations(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = self.write_file(
+                root,
+                "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+                """
+                import { createSdkworkIamRuntimeAuthController } from '@sdkwork/auth-pc-react';
+                import { getClawRouterIamRuntime } from 'sdkwork-claw-router-commons/runtime';
+
+                export const clawRouterAuthController = createSdkworkIamRuntimeAuthController({
+                  getRuntime: getClawRouterIamRuntime,
+                });
+                """,
+            )
+
+            operations = FrontendOperationAudit(root=root)._extract_operations(source)
+
+            self.assertIn("signIn", operations)
+            self.assertIn("signInWithEmailCode", operations)
+            self.assertIn("signInWithPhoneCode", operations)
+            self.assertIn("signInWithSessionBridge", operations)
+            self.assertIn("register", operations)
+            self.assertIn("refreshSession", operations)
+            self.assertIn("updateCurrentSession", operations)
+            self.assertIn("signOut", operations)
+            self.assertIn("getOAuthAuthorizationUrl", operations)
+            self.assertIn("verifyCode", operations)
+            self.assertIn("generateLoginQrCode", operations)
+            self.assertIn("checkLoginQrCodeStatus", operations)
+
     def test_reports_unregistered_service_operation(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -207,6 +276,91 @@ class FrontendOperationAuditTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertIn(
                 "frontend operation apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#updateItem kind update must declare non-empty write_tables",
+                result.messages,
+            )
+
+    def test_allows_multipart_upload_operation_with_file_targets_instead_of_database_tables(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_file(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                """
+                import { getClawRouterAppSdkClient } from 'sdkwork-claw-router-commons/runtime';
+
+                export async function uploadVideo(): Promise<void> {
+                  const formData = new FormData();
+                  await getClawRouterAppSdkClient().content.applications.videos.create(formData);
+                }
+                """,
+            )
+            self.write_contract(
+                root,
+                """
+                routes:
+                  - route: /demo
+                    required_tables: [content_course_application]
+                frontend_operations:
+                  - route: /demo
+                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    operation: uploadVideo
+                    operation_id: applications.videos.create
+                    kind: create
+                    api_surface: app
+                    api_method: POST
+                    api_path: /app/v3/api/courses/applications/videos
+                    request_content_type: multipart/form-data
+                    read_sources: []
+                    write_tables: []
+                    file_targets: [course_application_video_uploads]
+                """,
+            )
+
+            result = FrontendOperationAudit(root=root).validate()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_reports_multipart_upload_operation_without_file_targets(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_file(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                """
+                import { getClawRouterAppSdkClient } from 'sdkwork-claw-router-commons/runtime';
+
+                export async function uploadVideo(): Promise<void> {
+                  const formData = new FormData();
+                  await getClawRouterAppSdkClient().content.applications.videos.create(formData);
+                }
+                """,
+            )
+            self.write_contract(
+                root,
+                """
+                routes:
+                  - route: /demo
+                    required_tables: [content_course_application]
+                frontend_operations:
+                  - route: /demo
+                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    operation: uploadVideo
+                    operation_id: applications.videos.create
+                    kind: create
+                    api_surface: app
+                    api_method: POST
+                    api_path: /app/v3/api/courses/applications/videos
+                    request_content_type: multipart/form-data
+                    read_sources: []
+                    write_tables: []
+                """,
+            )
+
+            result = FrontendOperationAudit(root=root).validate()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "frontend operation apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#uploadVideo multipart upload must declare non-empty file_targets",
                 result.messages,
             )
 
@@ -379,6 +533,45 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 "frontend operation apps/sdkwork-claw-router-portal/packages/demo/src/adminService.ts#fetchItems route /admin/demo must use backend api_surface",
                 result.messages,
             )
+
+    def test_allows_sdk_surface_with_non_standard_url_path(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_file(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                """
+                import { getClawRouterAppSdkClient } from 'sdkwork-claw-router-commons/runtime';
+
+                export class DemoService {
+                  static async fetchItems(): Promise<string[]> {
+                    const result = await getClawRouterAppSdkClient().tenant.fetchItems();
+                    return Array.isArray(result.data) ? result.data : [];
+                  }
+                }
+                """,
+            )
+            self.write_contract(
+                root,
+                """
+                routes:
+                  - route: /demo
+                    required_tables: [demo_table]
+                frontend_operations:
+                  - route: /demo
+                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    operation: fetchItems
+                    kind: read
+                    api_surface: app
+                    api_method: GET
+                    api_path: /tenant-a/product-api/demo/items
+                    read_sources: [demo_table]
+                """,
+            )
+
+            result = FrontendOperationAudit(root=root).validate()
+
+            self.assertTrue(result.ok, result.messages)
 
     def test_reports_method_that_does_not_match_operation_kind(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

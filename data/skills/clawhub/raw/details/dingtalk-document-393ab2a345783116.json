@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "dingtalk-document",
+    "displayName": "Dingtalk Document",
+    "summary": "钉钉知识库和文档管理操作。当用户提到\"钉钉文档\"、\"知识库\"、\"新建文档\"、\"查看文档目录\"、\"读取文档内容\"、\"写入文档\"、\"更新文档\"、\"文档成员\"、\"dingtalk doc\"、\"knowledge base\"时使用此技能。支持：创建知识库、查询知识库列表、新建文档/文件夹、读取/写入文档正文内容、管理成员...",
+    "tags": {
+      "latest": "0.1.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 671,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 3
+    },
+    "createdAt": 1773293222984,
+    "updatedAt": 1778307262742
+  },
+  "latestVersion": {
+    "version": "0.1.2",
+    "createdAt": 1773673424051,
+    "changelog": "dingtalk-document 0.1.2\n\n- 引入 scripts/dt_helper.sh 辅助脚本，自动化 token、operatorId 获取及配置管理。\n- SKILL.md 重写为流程驱动的操作指南，移除具体 API 细节，指向 references/api.md 查阅。\n- 新增按任务自动校验配置和缺失项批量收集的处理流程。\n- 强化 operatorId（unionId）自动转换及缓存逻辑，所有敏感凭证输出时自动隐藏。\n- 建议所有复杂操作写入临时脚本后再执行，避免终端截断和变量丢失问题。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "breath57",
+    "userId": "s176bmya5jxbvffz65ps2yjtwd83hscq",
+    "displayName": "breath57",
+    "image": "https://avatars.githubusercontent.com/u/48155693?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778307262742
+  }
+}

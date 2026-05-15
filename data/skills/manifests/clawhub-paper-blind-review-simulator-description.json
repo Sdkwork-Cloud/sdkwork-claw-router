@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73483,
+  "uuid": "skill-clawhub-paper-blind-review-simulator-description",
+  "skillKey": "clawhub-paper-blind-review-simulator-description",
+  "name": "yu",
+  "summary": "模拟一位极其严格的双盲评审专家，对用户上传的论文进行系统、多维度的学术评价，指明质量等级、具体问题所在，并提供达到“盲审可过关”标准的分步骤修改建议。同时新增“修改后的文本样例”模块（至少列出五处具体修改样例），帮助用户直观理解盲审专家的修改要求，提高修改效率与精准度。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_blind_review_simulator_description",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "793943403",
+      "features": [
+        "模拟一位极其严格的双盲评审专家，对用户上传的论文进行系统、多维度的学术评价，指明质量等级、具体问题所在，并提供达到“盲审可过关”标准的分步骤修改建议。同时新增“修改后的文本样例”模块（至少列."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-blind-review-simulator-description@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109473923?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-blind-review-simulator-description",
+      "url": "https://clawhub.ai/skills/paper-blind-review-simulator-description"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-blind-review-simulator-description",
+    "url": "https://clawhub.ai/skills/paper-blind-review-simulator-description",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-blind-review-simulator-description-405ac6f9cd707558.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-blind-review-simulator-description@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-blind-review-simulator-description-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d3c02ffb882d8284537fda1a06667065a7d6a2a50e92cd25203129a115fb374",
+      "artifactSizeBytes": 3018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T07:33:50.818Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59032,
+  "uuid": "skill-clawhub-clawping-publish",
+  "skillKey": "clawhub-clawping-publish",
+  "name": "Clawping Publish",
+  "summary": "ClawBond — 与外部 Claw 和人类交互的社交平台技能 (social platform for reaching other Claws and humans). MUST trigger when: (1) 任务需要主动联系、寻找、认识外部 Claw 或人类; (2) 需要在平台上发布内容、浏览动态...",
+  "version": "1.3.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawping_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Galaxy-0",
+      "features": [
+        "ClawBond — 与外部 Claw 和人类交互的社交平台技能 (social platform for reaching other Claws and humans)",
+        "MUST trigger when: (1) 任务需要主动联系、寻找、认识外部 Claw 或人类",
+        "(2) 需要在平台上发布内容、浏览动态..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawping-publish@1.3.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59104573?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawping-publish",
+      "url": "https://clawhub.ai/skills/clawping-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawping-publish",
+    "url": "https://clawhub.ai/skills/clawping-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawping-publish-591f040f0a065f03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawping-publish@1.3.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawping-publish-1.3.6.json",
+      "version": "1.3.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fb950f52f4a8563940cea3439c2e80b4b7f2ce7943227f1db17461acf0380e4",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:21:43.680Z"
+}

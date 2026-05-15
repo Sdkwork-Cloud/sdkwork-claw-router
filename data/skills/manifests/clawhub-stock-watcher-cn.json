@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72871,
+  "uuid": "skill-clawhub-stock-watcher-cn",
+  "skillKey": "clawhub-stock-watcher-cn",
+  "name": "股票盯盯智能监控系统",
+  "summary": "股票盯盯 - 全功能智能股票监控预警系统。支持成本百分比、均线金叉死叉、RSI超买超卖、成交量异动、跳空缺口、动态止盈等7大预警规则。符合中国投资者习惯（红涨绿跌）。",
+  "version": "4.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_watcher_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Koradji77",
+      "features": [
+        "全功能智能股票监控预警系统。支持成本百分比、均线金叉死叉、RSI超买超卖、成交量异动、跳空缺口、动态止盈等7大预警规则。符合中国投资者习惯（红涨绿跌）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-watcher-cn@4.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262987851?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-watcher-cn",
+      "url": "https://clawhub.ai/skills/stock-watcher-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-watcher-cn",
+    "url": "https://clawhub.ai/skills/stock-watcher-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-watcher-cn-a387fe35c7d35341.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-watcher-cn@4.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-watcher-cn-4.0.2.json",
+      "version": "4.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:075b3a525ecc489f9ca4572f293b2b3067ec760715308749c2ab866f5199dbea",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:46:02.097Z"
+}

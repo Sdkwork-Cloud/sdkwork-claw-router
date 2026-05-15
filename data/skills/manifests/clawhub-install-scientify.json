@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10582,
+  "uuid": "skill-clawhub-install-scientify",
+  "skillKey": "clawhub-install-scientify",
+  "name": "Scientify - AI-powered collaborator for your scientific research works.",
+  "summary": "Use this when the user wants to install or set up the Scientify research plugin. Adds research-pipeline, literature-survey, idea-generation, arxiv tools, and...",
+  "version": "1.7.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.install_scientify",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Springleave",
+      "features": [
+        "Use this when the user wants to install or set up the Scientify research plugin",
+        "Adds research-pipeline, literature-survey, idea-generation, arxiv tools, and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/install-scientify@1.7.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134937667?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "install-scientify",
+      "url": "https://clawhub.ai/skills/install-scientify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "install-scientify",
+    "url": "https://clawhub.ai/skills/install-scientify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/install-scientify-771c1acc565c1da5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/install-scientify@1.7.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-install-scientify-1.7.3.json",
+      "version": "1.7.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35d79087ff63a21bc46472376fff6a4821185cedb2fb3d0ce6aa00cebe86f7ca",
+      "artifactSizeBytes": 2573
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T10:20:29.746Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47025,
+  "uuid": "skill-clawhub-justoneapi-imdb-title-contribution-questions",
+  "skillKey": "clawhub-justoneapi-imdb-title-contribution-questions",
+  "name": "IMDb Contribution Questions API",
+  "summary": "Call GET /api/imdb/title-contribution-questions/v1 for IMDb Contribution Questions through JustOneAPI with id.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_imdb_title_contribution_questions",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/imdb/title-contribution-questions/v1 for IMDb Contribution Questions through Just."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-imdb-title-contribution-questions@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-imdb-title-contribution-questions",
+      "url": "https://clawhub.ai/skills/justoneapi-imdb-title-contribution-questions"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-imdb-title-contribution-questions",
+    "url": "https://clawhub.ai/skills/justoneapi-imdb-title-contribution-questions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-imdb-title-contribution-questions-6960eeb7091826f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-imdb-title-contribution-questions@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-imdb-title-contribution-questions-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2cc2cd6b24cc70303fdfa9f142c9e14db4a250d95e2a452fa93c37baf3bbfa90",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T22:12:07.648Z"
+}

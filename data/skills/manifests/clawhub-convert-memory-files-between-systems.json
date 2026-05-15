@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60449,
+  "uuid": "skill-clawhub-convert-memory-files-between-systems",
+  "skillKey": "clawhub-convert-memory-files-between-systems",
+  "name": "Convert Memory Files Between Systems",
+  "summary": "如何将 memory-lancedb-pro 的记忆文件转换为原版 markdown 格式，并导入到 memos-local-openclaw-plugin 系统中。TRIGGER 当用户提到记忆文件转换、markdown 文件导入、配置文件修改、数据库导入、记忆插件更换、或任何涉及将记忆数据从一个系统迁移到另一...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.convert_memory_files_between_systems",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2070super",
+      "features": [
+        "如何将 memory-lancedb-pro 的记忆文件转换为原版 markdown 格式，并导入到 memos-local-openclaw-plugin 系统中。TRIGGER 当用户提."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/convert-memory-files-between-systems@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74180810?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "convert-memory-files-between-systems",
+      "url": "https://clawhub.ai/skills/convert-memory-files-between-systems"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "convert-memory-files-between-systems",
+    "url": "https://clawhub.ai/skills/convert-memory-files-between-systems",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/convert-memory-files-between-systems-2872387a197184e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/convert-memory-files-between-systems@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-convert-memory-files-between-systems-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b11f1c20a897ce46efc121a8505f83d68d1c222d07480f4e5b8be565d48f3362",
+      "artifactSizeBytes": 2705
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T18:01:42.570Z"
+}

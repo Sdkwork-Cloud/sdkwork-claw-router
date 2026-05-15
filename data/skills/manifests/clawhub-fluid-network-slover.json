@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36346,
+  "uuid": "skill-clawhub-fluid-network-slover",
+  "skillKey": "clawhub-fluid-network-slover",
+  "name": "Fluid Network Solver",
+  "summary": "Solve and analyze steady incompressible fluid networks from TOML definitions. Use when users ask to design a network template, validate TOML topology data, c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fluid_network_slover",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "w1965857192yf-dotcom",
+      "features": [
+        "Solve and analyze steady incompressible fluid networks from TOML definitions",
+        "Use when users ask to design a network template, validate TOML topology data, c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fluid-network-slover@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237151598?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fluid-network-slover",
+      "url": "https://clawhub.ai/skills/fluid-network-slover"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fluid-network-slover",
+    "url": "https://clawhub.ai/skills/fluid-network-slover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fluid-network-slover-9e436f533c584642.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fluid-network-slover@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fluid-network-slover-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0be200c026719afc227bcf3c912e34074c75801a8074d70c0f39024eeae8f839",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T02:41:45.519Z"
+}

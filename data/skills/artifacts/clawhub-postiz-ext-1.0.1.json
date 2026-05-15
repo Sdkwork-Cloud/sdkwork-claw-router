@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/postiz-ext@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postiz_ext",
+  "skill": {
+    "id": 12744,
+    "skillKey": "clawhub-postiz-ext",
+    "name": "Postiz Extended"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postiz-ext",
+    "url": "https://clawhub.ai/skills/postiz-ext",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postiz-ext-2de44c4d41705a15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Schedule and manage social media posts via Postiz API (self-hosted or cloud). Direct API integration — no n8n dependency. Supports X/Twitter, LinkedIn, Bluesky with platform-specific character limits. Includes deduplication, scheduling, me."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coolmanns",
+      "userId": "s17bmqpkzpf403h4fcvqftdmas83fc8m",
+      "displayName": "coolmanns",
+      "image": "https://avatars.githubusercontent.com/u/117685070?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1563,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770304498894,
+      "changelog": "Full Postiz API: multi-platform posting, thread creation, media upload, slot finder, deduplication, platform-specific limits",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3991b2e32027c95d7d0f2cf56d92380ed18b9a03f50a7f4ba283dccb8fa554e4"
+}

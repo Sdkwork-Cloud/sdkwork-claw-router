@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rn-bundle-to-github@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rn_bundle_to_github",
+  "skill": {
+    "id": 59072,
+    "skillKey": "clawhub-rn-bundle-to-github",
+    "name": "rn-bundle-to-github"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rn-bundle-to-github",
+    "url": "https://clawhub.ai/skills/rn-bundle-to-github",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rn-bundle-to-github-49ce6ab8cf00a1bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "React Native bundle 发布到 GitHub 的完整工作流。当需要为 React Native 项目打包并发布到 GitHub Release 时激活。包括：(1) 初始化 RN 项目发布配置，(2) 使用 publish.sh 自动发布 release/debug 版本，(3) 生成包含 And..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lvtong199881",
+      "userId": "s173zekfjphdbrrk7xs3s9m1dx8579qz",
+      "displayName": "lvtong199881",
+      "image": "https://avatars.githubusercontent.com/u/39051325?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776709302024,
+      "changelog": "- Initial release of rn-bundle-to-github: a complete workflow for bundling and publishing React Native projects to GitHub Releases.\n- Automates RN project release configuration, bundle generation (Android/iOS), version incrementing, and changelog creation.\n- Includes publish.sh script for streamlined release (production) and debug (prerelease) publishing.\n- GitHub Releases are used for version management, rollback, and hot update delivery.\n- Documentation covers setup, release flow, versioning rules, API integration, troubleshooting, and optimization tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d04cc9257be00ae3f2d73131d0acf92f3d958161147cc13444e7bd5ecc240c55"
+}

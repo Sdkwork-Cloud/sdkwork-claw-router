@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "steam-deck-disk",
+    "displayName": "Steam Deck Disk",
+    "summary": "Steam Deck 磁盘空间管理和优化。清理缓存、日志、移动大文件到 /home 分区、检查磁盘使用。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773475966849,
+    "updatedAt": 1778308614875
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773475966849,
+    "changelog": "Initial release of Steam Deck disk space management and optimization skill.\n\n- Provides disk usage checks and reports for /, /var, and /home partitions.\n- Includes safe cleaning tools: clears system logs, user/app caches, npm and pip caches, and temp files.\n- Supports scanning for large files and recommends moving non-system data to /home.\n- Features both manual and automatic (scheduled overnight) cleanup, triggered when partition usage exceeds thresholds.\n- Offers clear safeguards to protect important user data and development environments from deletion.\n- Presents periodic maintenance recommendations for daily, weekly, and monthly routines.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "jy00801119",
+    "userId": "publishers:jy00801119",
+    "displayName": "jy00801119",
+    "image": "https://avatars.githubusercontent.com/u/199448478?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778308614875
+  }
+}

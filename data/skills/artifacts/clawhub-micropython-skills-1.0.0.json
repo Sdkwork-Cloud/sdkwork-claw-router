@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/micropython-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.micropython_skills",
+  "skill": {
+    "id": 28137,
+    "skillKey": "clawhub-micropython-skills",
+    "name": "MicroPython Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "micropython-skills",
+    "url": "https://clawhub.ai/skills/micropython-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/micropython-skills-015533ee4350c7da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Program and interact with embedded development boards (ESP32, ESP32-S3, ESP32-C3, ESP8266, NodeMCU, Raspberry Pi Pico, RP2040, STM32) through real-time REPL...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0x1abin",
+      "userId": "s17cjgtqvhcah0dk2pajcdenmh83k40q",
+      "displayName": "0x1abin",
+      "image": "https://avatars.githubusercontent.com/u/7361897?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774433633884,
+      "changelog": "Initial release of micropython-skills v1.0.0:\n\n- Enables AI-driven MicroPython code generation and execution for a wide range of embedded boards (ESP32 series, ESP8266, RP2040, STM32, etc.).\n- Includes scripts for device probing, firmware flashing, WiFi/WebREPL setup, code deployment, and board diagnostics.\n- Structured system for safe hardware interaction: clearly defined “Safe”, “Cautious”, and “Dangerous” operation tiers with strong safety and confirmation rules.\n- Modular sub-skill routing for sensors, actuators, networking, algorithms, and diagnostics.\n- Requires Python 3, mpremote, and esptool; supports Linux, macOS, and Windows.\n- Implements a standardized tagged output protocol for reliable parsing and automation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f8a95d90f0c406cdf3f652121baa61262a3235d18f23d4bbbd725ab65a1f6721"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wecom-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wecom_setup",
+  "skill": {
+    "id": 57878,
+    "skillKey": "clawhub-wecom-setup",
+    "name": "企业微信对话配置"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wecom-setup",
+    "url": "https://clawhub.ai/skills/wecom-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wecom-setup-0a62e4ce84862986.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up WeCom (企业微信) as a chat channel for OpenClaw using the official Tencent plugin with WebSocket long-polling. Use when user wants to connect WeCom bot, c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pengtruman922-dotcom",
+      "userId": "s179rdryqkd9yqtdq99decw58h83gkxe",
+      "displayName": "pengtruman",
+      "image": "https://avatars.githubusercontent.com/u/225147389?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774261633697,
+      "changelog": "初始版本：企业微信WebSocket长连接配置指南",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f3fd2afccbad101265f86b8fadf4ba6c69114c12ce9a1891ddf0f245be4ec07"
+}

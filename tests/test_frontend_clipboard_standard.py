@@ -25,16 +25,17 @@ class FrontendClipboardStandardTest(unittest.TestCase):
         direct_clipboard_pattern = re.compile(r"navigator\.clipboard\.writeText\s*\(")
         offenders: list[str] = []
 
-        for path in FRONTEND_ROOT.rglob("*"):
-            if path.suffix not in {".ts", ".tsx"}:
-                continue
-            if path == APPROVED_CLIPBOARD_UTILITY:
-                continue
+        for src_root in sorted(FRONTEND_ROOT.glob("*/src")):
+            for path in src_root.rglob("*"):
+                if path.suffix not in {".ts", ".tsx"}:
+                    continue
+                if path == APPROVED_CLIPBOARD_UTILITY:
+                    continue
 
-            source = path.read_text(encoding="utf-8")
-            for match in direct_clipboard_pattern.finditer(source):
-                line = source.count("\n", 0, match.start()) + 1
-                offenders.append(f"{path.relative_to(ROOT)}:{line}: {match.group(0)}")
+                source = path.read_text(encoding="utf-8")
+                for match in direct_clipboard_pattern.finditer(source):
+                    line = source.count("\n", 0, match.start()) + 1
+                    offenders.append(f"{path.relative_to(ROOT)}:{line}: {match.group(0)}")
 
         self.assertEqual(
             [],

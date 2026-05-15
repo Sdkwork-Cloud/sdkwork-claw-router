@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/let-fate-decide-test@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.let_fate_decide_test",
+  "skill": {
+    "id": 48757,
+    "skillKey": "clawhub-let-fate-decide-test",
+    "name": "Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "let-fate-decide-test",
+    "url": "https://clawhub.ai/skills/let-fate-decide-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/let-fate-decide-test-b78dc731223f7a50.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Draw Tarot cards using cryptographic randomness to inject entropy into planning when prompts are vague or underspecified. Interprets a 4-card spread to guide..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kc0bfv",
+      "userId": "s17ecyb2w062dwzsz8qbzf69b985rht8",
+      "displayName": "Karl",
+      "image": "https://avatars.githubusercontent.com/u/1467813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1777475383750,
+      "changelog": "test",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70be5f5adea943f5b2834ad477084491f6aa23941f5ff7045e907804743e0455"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61642,
+  "uuid": "skill-clawhub-minimax-search-vision",
+  "skillKey": "clawhub-minimax-search-vision",
+  "name": "MiniMax Search & Vision",
+  "summary": "MiniMax 网络搜索和图片理解工具。当用户需要搜索信息或理解图片内容时使用此技能。支持通过 MiniMax Token Plan MCP 进行网络搜索和图片分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_search_vision",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaolongliu1988",
+      "features": [
+        "MiniMax 网络搜索和图片理解工具。当用户需要搜索信息或理解图片内容时使用此技能。支持通过 MiniMax Token Plan MCP 进行网络搜索和图片分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-search-vision@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18650788?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-search-vision",
+      "url": "https://clawhub.ai/skills/minimax-search-vision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-search-vision",
+    "url": "https://clawhub.ai/skills/minimax-search-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-search-vision-b116e6b75cd5616f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-search-vision@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-search-vision-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b6685309dab1e0aeb0392cc9571968ace55388c3bddfd4206142951260dd3d5",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T16:51:00.228Z"
+}

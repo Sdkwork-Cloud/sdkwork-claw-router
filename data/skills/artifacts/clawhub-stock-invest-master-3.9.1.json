@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-invest-master@3.9.1",
+  "version": "3.9.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_invest_master",
+  "skill": {
+    "id": 68518,
+    "skillKey": "clawhub-stock-invest-master",
+    "name": "stock-invest-master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-invest-master",
+    "url": "https://clawhub.ai/skills/stock-invest-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-invest-master-bf1d53f1e6a01108.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "股票投资分析技能。道法+大师+AI的三维分析框架，支持A股、港股、美股。融合投资大师视角（格雷厄姆/巴菲特/芒格/段永平/林奇/费雪/索罗斯/马克斯/达利欧/西蒙斯）、价值投资、PE/PB/ROE估值、DCF估值、PEG估值、护城河分析、安全边际、财务健康检查、盈利质量分析、现金流分析等、分析师评级等"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mickshu",
+      "userId": "s177ahchn1xggjx2v36mt0dn9983hww3",
+      "displayName": "mickshu",
+      "image": "https://avatars.githubusercontent.com/u/2525499?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 18
+    },
+    "latestVersion": {
+      "version": "3.9.1",
+      "createdAt": 1778377130908,
+      "changelog": "Version 3.9.1 of stock-invest-master\n- 更新描述部分，强调“道法+大师+AI三位分析框架”，突出AI要素。\n- 精简适用场景描述，部分功能与表述调整更简明。\n- 移除描述中原有的“融资融券、期权做空数据”与“一些细节功能”表述。\n- 其余分析框架及工作流保持一致，无分析流程和功能核心更改。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f343febc1b7f26d7a6bd4f627a4da20ca3fcc14ebc418fc6c24b9ac49b47f4b"
+}

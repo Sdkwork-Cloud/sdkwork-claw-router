@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/holdem-poker@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.holdem_poker",
+  "skill": {
+    "id": 57608,
+    "skillKey": "clawhub-holdem-poker",
+    "name": "德州扑克"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "holdem-poker",
+    "url": "https://clawhub.ai/skills/holdem-poker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/holdem-poker-cf8262a5ee3d3f1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Text-based Texas Hold'em poker game with auto AI players for OpenClaw"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dream-pig",
+      "userId": "publishers:dream-pig",
+      "displayName": "DreamPig",
+      "image": "https://avatars.githubusercontent.com/u/44577163?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774019919185,
+      "changelog": "- Documentation improved: Removed redundant and overly detailed status/FAQ sections.\n- Changelog and internal validation record sections have been trimmed for clarity.\n- Instructions, command lists, and gameplay explanations remain unchanged.\n- No code or functionality changes in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd10850fdb921ed00b00af63808e19ad9cceb323d1cd6d269f538bf6f6c4a206"
+}

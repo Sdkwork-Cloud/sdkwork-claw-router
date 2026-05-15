@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26992,
+  "uuid": "skill-clawhub-neomano-binance-assets",
+  "skillKey": "clawhub-neomano-binance-assets",
+  "name": "Neomano Binance Assets (Read-only)",
+  "summary": "Safe, read-only Binance balance viewer (Spot wallet) using Binance API keys with READ-ONLY permissions. Use when the user wants to check holdings/balances/as...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neomano_binance_assets",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "elandivar",
+      "features": [
+        "Safe, read-only Binance balance viewer (Spot wallet) using Binance API keys with READ-ONLY perm.",
+        "Use when the user wants to check holdings/balances/as..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neomano-binance-assets@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4536961?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neomano-binance-assets",
+      "url": "https://clawhub.ai/skills/neomano-binance-assets"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neomano-binance-assets",
+    "url": "https://clawhub.ai/skills/neomano-binance-assets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neomano-binance-assets-221340ea07966441.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neomano-binance-assets@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-neomano-binance-assets-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0d2d18baeb60a7d14d5223e4189b133e64c34e067d44b3e144f4ed39a4a69a7",
+      "artifactSizeBytes": 2084
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T21:40:55.032Z"
+}

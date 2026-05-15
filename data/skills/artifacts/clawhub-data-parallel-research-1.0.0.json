@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-parallel-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_parallel_research",
+  "skill": {
+    "id": 66421,
+    "skillKey": "clawhub-data-parallel-research",
+    "name": "Parallel Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-parallel-research",
+    "url": "https://clawhub.ai/skills/data-parallel-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-parallel-research-0d20403537ad4c30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "有 2 个以上独立研究子课题时使用。将独立课题分派给并行代理同时调研，加速信息收集。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mingginwan",
+      "userId": "s172qkyz62rk2d8xj8pbn4qqds83pk9a",
+      "displayName": "mingginwan",
+      "image": "https://avatars.githubusercontent.com/u/91401222?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774604058975,
+      "changelog": "Initial release of data-parallel-research:\n\n- Enables assignment of independent research topics to parallel agents to accelerate information gathering.\n- Provides detailed workflow for identifying, assigning, and integrating outputs from multiple topic-specific agents.\n- Includes clear criteria for when parallel research assignment is appropriate.\n- Offers a structured agent task template to ensure focused and self-contained research tasks.\n- Highlights common mistakes and best practices for effective agent task design and report integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f496fee2fbe82bb5b467ece9c851929cda55c34308aebe01986cdda1a8b16887"
+}

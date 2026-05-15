@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/liepin-jobs@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liepin_jobs",
+  "skill": {
+    "id": 63544,
+    "skillKey": "clawhub-liepin-jobs",
+    "name": "Liepin Jobs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liepin-jobs",
+    "url": "https://clawhub.ai/skills/liepin-jobs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liepin-jobs-19b9540b1d7993c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "猎聘求职工具 — 在猎聘上搜索职位、投递简历、查看/编辑简历。 触发词: 找工作, 搜职位, 投简历, 猎聘, liepin, 求职, 招聘, 简历"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xllinbupt",
+      "userId": "s176rwq5ab2scrd8njdwt3vxfd83jcxg",
+      "displayName": "xllinbupt",
+      "image": "https://avatars.githubusercontent.com/u/247138717?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 418,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1775346565113,
+      "changelog": "Update for the new Liepin MCP endpoint and single-token auth.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf0895a9acf0b460ce43fa31f822d006a7aee7720be3261ae5ec103665f4dc4a"
+}

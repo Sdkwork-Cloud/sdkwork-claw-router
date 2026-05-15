@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57318,
+  "uuid": "skill-clawhub-poyo-wan-2-6",
+  "skillKey": "clawhub-poyo-wan-2-6",
+  "name": "PoYo Wan 2.6 API",
+  "summary": "Wan 2.6 video generation on PoYo / poyo.ai via `https://api.poyo.ai/api/generate/submit`; use for `wan2.6-text-to-video`, `wan2.6-image-to-video`, `wan2.6-vi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poyo_wan_2_6",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coolhackboy",
+      "features": [
+        "Wan 2.6 video generation on PoYo / poyo.ai via `https://api.poyo.ai/api/generate/submit`",
+        "use for `wan2.6-text-to-video`, `wan2.6-image-to-video`, `wan2.6-vi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/poyo-wan-2-6@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13427145?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "poyo-wan-2-6",
+      "url": "https://clawhub.ai/skills/poyo-wan-2-6"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poyo-wan-2-6",
+    "url": "https://clawhub.ai/skills/poyo-wan-2-6",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poyo-wan-2-6-fe01a6dc1b3195b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/poyo-wan-2-6@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-poyo-wan-2-6-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cef8817dc949f5453bd663e7d5aef786f4c748ad360eeb97c42562cb3b87711",
+      "artifactSizeBytes": 2318
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T03:52:02.903Z"
+}

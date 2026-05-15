@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69091,
+  "uuid": "skill-clawhub-change-safeguard",
+  "skillKey": "clawhub-change-safeguard",
+  "name": "Change Safeguard",
+  "summary": "确保对工作区文件、配置和脚本的改动经过全面影响分析、逐项修改和严格复验，防止遗漏或错误修改。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.change_safeguard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wei dong",
+      "features": [
+        "确保对工作区文件、配置和脚本的改动经过全面影响分析、逐项修改和严格复验，防止遗漏或错误修改。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/change-safeguard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7512609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "change-safeguard",
+      "url": "https://clawhub.ai/skills/change-safeguard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "change-safeguard",
+    "url": "https://clawhub.ai/skills/change-safeguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/change-safeguard-aede095bb9a2a517.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/change-safeguard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-change-safeguard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:850e9003de1c5199de84e6430d5ee3d826b31b2682644731e1b02be42b2d16e7",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T01:58:25.222Z"
+}

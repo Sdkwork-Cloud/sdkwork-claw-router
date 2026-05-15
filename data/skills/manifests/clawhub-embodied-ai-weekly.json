@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68615,
+  "uuid": "skill-clawhub-embodied-ai-weekly",
+  "skillKey": "clawhub-embodied-ai-weekly",
+  "name": "Embodied Ai Weekly",
+  "summary": "具身智能周报自动化生成与发布技能。当用户需要生成具身智能领域一周动态报告时使用，覆盖完整工作流：ArXiv论文多方向检索与整理、GitHub开源项目趋势追踪、综合可视化HTML报告生成（含导读+统计图表），以及将报告推送到 GitHub Pages 仓库发布。适用于每周定期生成具身智能领域动态报告的场景。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.embodied_ai_weekly",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jessy-Huang",
+      "features": [
+        "具身智能周报自动化生成与发布技能。当用户需要生成具身智能领域一周动态报告时使用，覆盖完整工作流：ArXiv论文多方向检索与整理、GitHub开源项目趋势追踪、综合可视化HTML报告生成（含导."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/embodied-ai-weekly@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66520966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "embodied-ai-weekly",
+      "url": "https://clawhub.ai/skills/embodied-ai-weekly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "embodied-ai-weekly",
+    "url": "https://clawhub.ai/skills/embodied-ai-weekly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/embodied-ai-weekly-397c5c5da6db6bd2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/embodied-ai-weekly@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-embodied-ai-weekly-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2535c6384451bd7c070f78031f0abe454dae1a871d4ea166608bf8e9606710cf",
+      "artifactSizeBytes": 2284
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T22:45:10.343Z"
+}

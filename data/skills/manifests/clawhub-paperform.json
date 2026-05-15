@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25917,
+  "uuid": "skill-clawhub-paperform",
+  "skillKey": "clawhub-paperform",
+  "name": "Paperform",
+  "summary": "PaperForm integration. Manage Forms. Use when the user wants to interact with PaperForm data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paperform",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "PaperForm integration",
+        "Manage Forms",
+        "Use when the user wants to interact with PaperForm data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paperform@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paperform",
+      "url": "https://clawhub.ai/skills/paperform"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paperform",
+    "url": "https://clawhub.ai/skills/paperform",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paperform-82f78a5f2fc640c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paperform@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-paperform-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:748544f1c16dde763030f6194154d6c5723b4d172cd40694e71a2f4cffc809b8",
+      "artifactSizeBytes": 1807
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:21:38.373Z"
+}

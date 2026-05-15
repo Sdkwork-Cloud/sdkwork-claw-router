@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-omics-integration-strategist@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_omics_integration_strategist",
+  "skill": {
+    "id": 36591,
+    "skillKey": "clawhub-multi-omics-integration-strategist",
+    "name": "Multi-Omics Integration Strategist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-omics-integration-strategist",
+    "url": "https://clawhub.ai/skills/multi-omics-integration-strategist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-omics-integration-strategist-67278b7595a27b2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design multi-omics integration strategies for transcriptomics, proteomics, and metabolomics data analysis"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774594874167,
+      "changelog": "Skill for designing and running multi-omics integration strategies, with pathway-level cross-validation and systems biology analysis.\n\n- Initial release providing integrated joint analysis of transcriptomics, proteomics, and metabolomics data.\n- Supports mapping and cross-validation of omics data at the pathway level using KEGG, Reactome, WikiPathways, and GO.\n- Outputs include integration reports, mapping results, pathway scores, consistency matrices, and network edge lists.\n- Generates analysis-ready results for visualization with external tools (e.g., Circos plot, heatmap, network graph).\n- Includes configuration options for pathway databases and ID mapping.\n- Input validation, risk assessment, and security measures documented.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:65fb38f9965843758b2516055dc758d40fd235247c7cec94daf4425990cb6767"
+}

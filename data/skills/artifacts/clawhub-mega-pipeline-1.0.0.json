@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mega-pipeline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mega_pipeline",
+  "skill": {
+    "id": 60958,
+    "skillKey": "clawhub-mega-pipeline",
+    "name": "全闭环管道"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mega-pipeline",
+    "url": "https://clawhub.ai/skills/mega-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mega-pipeline-2e934a2c5d711f81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全闭环自动化管道 — Hunter→Skill Factory→Orchestrator→Dashboard→Profit。将Phase 1-3所有组件串联为自动运行的超级管道。核心能力：(1) 一键全流程 (2) 定时自动运行 (3) 异常自愈 (4) 利润报告"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freeman88-tch",
+      "userId": "s175vqzthvtcgmgawcp7vz2q3d85s636",
+      "displayName": "Freeman88-tch",
+      "image": "https://avatars.githubusercontent.com/u/212022282?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777708526553,
+      "changelog": "Initial release of mega-pipeline: 自动化将Phase 1-3全部模块串联为一键全流程管道。\n\n- 支持Hunter→Skill Factory→Orchestrator→Dashboard→Profit的完整闭环。\n- 提供一键执行、定时自动运行、异常自愈和利润报告核心能力。\n- 新增管道状态查询命令。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b5b754f9391b5b6be9a77902a5dd2210fb617f0c1ec7a8a69f19b72e696a68c"
+}

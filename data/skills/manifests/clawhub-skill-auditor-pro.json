@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62236,
+  "uuid": "skill-clawhub-skill-auditor-pro",
+  "skillKey": "clawhub-skill-auditor-pro",
+  "name": "Skill Auditor Pro",
+  "summary": "审查 ClawHub skills 的安全性，检测恶意代码、可疑模式和社工攻击。在安装任何第三方 skill 前使用此工具进行安全检查。",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_auditor_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sypsyp97",
+      "features": [
+        "审查 ClawHub skills 的安全性，检测恶意代码、可疑模式和社工攻击。在安装任何第三方 skill 前使用此工具进行安全检查。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-auditor-pro@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17694291?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-auditor-pro",
+      "url": "https://clawhub.ai/skills/skill-auditor-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-auditor-pro",
+    "url": "https://clawhub.ai/skills/skill-auditor-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-auditor-pro-f763fd0294f3ee59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-auditor-pro@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-auditor-pro-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:372a40de0c382112bdd47d5ad4bbe2894aa8ade569892fe958f36b8cbfe87d4c",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T23:16:44.688Z"
+}

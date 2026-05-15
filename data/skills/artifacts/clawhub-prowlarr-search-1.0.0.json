@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prowlarr-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prowlarr_search",
+  "skill": {
+    "id": 59273,
+    "skillKey": "clawhub-prowlarr-search",
+    "name": "prowlarr-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prowlarr-search",
+    "url": "https://clawhub.ai/skills/prowlarr-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prowlarr-search-aaf6930185853879.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用Prowlarr搜索影视资源，搜索torrent种子，磁力链接Magnet"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pengzhxyz",
+      "userId": "publishers:pengzhxyz",
+      "displayName": "pengzhxyz",
+      "image": "https://avatars.githubusercontent.com/u/15181343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 386,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772865861673,
+      "changelog": "通过Prowlarr API搜索影视下载资源\nInitial release with support for Prowlarr-based media resource searching.\n\n- Search for movies and TV series via Prowlarr API, including torrents and magnet links.\n- Query by keyword or specify season and episode for TV series.\n- Results returned in JSON format with details like title, size, indexer, magnet link, and publish date.\n- Requires environment variables: PROWLARR_BASE_URL and PROWLARR_API_KEY.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e485c8f0710e181b7fbf778b94e3d0fb87ae4adad48e17e1156685c2b9b2bd64"
+}

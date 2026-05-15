@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57951,
+  "uuid": "skill-clawhub-health-checkup-report",
+  "skillKey": "clawhub-health-checkup-report",
+  "name": "Health Checkup Report",
+  "summary": "Turn 体检报告、化验单、影像检查结论 into a calm plain-Chinese explanation that highlights what matters first, groups related abnormalities, separates observe/recheck/clinic...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_checkup_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Turn 体检报告、化验单、影像检查结论 into a calm plain-Chinese explanation that highlights what matters first,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/health-checkup-report@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "health-checkup-report",
+      "url": "https://clawhub.ai/skills/health-checkup-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-checkup-report",
+    "url": "https://clawhub.ai/skills/health-checkup-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-checkup-report-91b115b892ca2113.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/health-checkup-report@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-health-checkup-report-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:547a8d77c4cdd50da45f584f6be2ea226aaf0c052be08cf1a489547f5d074281",
+      "artifactSizeBytes": 2179
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T11:55:53.473Z"
+}

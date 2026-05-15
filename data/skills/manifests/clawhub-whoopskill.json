@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10649,
+  "uuid": "skill-clawhub-whoopskill",
+  "skillKey": "clawhub-whoopskill",
+  "name": "Whoop Skill",
+  "summary": "WHOOP CLI with health insights, trends analysis, and data fetching (sleep, recovery, HRV, strain).",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whoopskill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "koala73",
+      "features": [
+        "WHOOP CLI with health insights, trends analysis, and data fetching (sleep, recovery, HRV, strai."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whoopskill@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/996596?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whoopskill",
+      "url": "https://clawhub.ai/skills/whoopskill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whoopskill",
+    "url": "https://clawhub.ai/skills/whoopskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whoopskill-a93455c91e611886.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whoopskill@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whoopskill-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d77506adfcce0b5f626fff7ff915a205a6a10dcb38d610a9ea8c4d7d3405b0c",
+      "artifactSizeBytes": 2282
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T06:26:47.939Z"
+}

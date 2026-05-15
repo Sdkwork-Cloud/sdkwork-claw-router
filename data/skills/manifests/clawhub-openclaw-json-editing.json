@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16998,
+  "uuid": "skill-clawhub-openclaw-json-editing",
+  "skillKey": "clawhub-openclaw-json-editing",
+  "name": "OpenClaw JSON Editing Masterclass",
+  "summary": "Advanced editing of OpenClaw JSON5 configs with schema validation, merge patching, env var substitution, and type-safe modifications using jq.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_json_editing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "avirweb",
+      "features": [
+        "Advanced editing of OpenClaw JSON5 configs with schema validation, merge patching, env var subs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-json-editing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257412074?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-json-editing",
+      "url": "https://clawhub.ai/skills/openclaw-json-editing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-json-editing",
+    "url": "https://clawhub.ai/skills/openclaw-json-editing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-json-editing-31972dc249b0d1d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-json-editing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-json-editing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7bc2fdbeac058ad2eb170ac04ad3618fc494bef8474bd89b0e8a10ce2b174f91",
+      "artifactSizeBytes": 2155
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T15:56:05.572Z"
+}

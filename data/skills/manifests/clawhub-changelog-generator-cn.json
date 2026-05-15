@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63792,
+  "uuid": "skill-clawhub-changelog-generator-cn",
+  "skillKey": "clawhub-changelog-generator-cn",
+  "name": "Changelog Generator Cn",
+  "summary": "自动生成更新日志。分析 git 提交历史，分类变更，将技术提交转换为用户友好的发布说明。触发词：更新日志、changelog、发布说明、版本更新。翻译自 ComposioHQ。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.changelog_generator_cn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guohongbin",
+      "features": [
+        "自动生成更新日志。分析 git 提交历史，分类变更，将技术提交转换为用户友好的发布说明。触发词：更新日志、changelog、发布说明、版本更新。翻译自 ComposioHQ。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/changelog-generator-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202475309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "changelog-generator-cn",
+      "url": "https://clawhub.ai/skills/changelog-generator-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "changelog-generator-cn",
+    "url": "https://clawhub.ai/skills/changelog-generator-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/changelog-generator-cn-7ef301a07998c6a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/changelog-generator-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-changelog-generator-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d3a678db3655cbe7dd02db227eccc1de46b0d71ee0504d3fb171826150c3da6",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T23:26:26.839Z"
+}

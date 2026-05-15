@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26760,
+  "uuid": "skill-clawhub-step",
+  "skillKey": "clawhub-step",
+  "name": "Step",
+  "summary": "Log daily steps, set fitness goals, and chart walking trends. Use when logging counts, tracking progress, charting trends, setting goals.",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.step",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Log daily steps, set fitness goals, and chart walking trends",
+        "Use when logging counts, tracking progress, charting trends, setting goals."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/step@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "step",
+      "url": "https://clawhub.ai/skills/step"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "step",
+    "url": "https://clawhub.ai/skills/step",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/step-3e64cc41cf8e07b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/step@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-step-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bf90e18c498e068956ddd2c0209fda057f2c11cd979d5624a1ed5745bb38891",
+      "artifactSizeBytes": 1796
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:51:13.785Z"
+}

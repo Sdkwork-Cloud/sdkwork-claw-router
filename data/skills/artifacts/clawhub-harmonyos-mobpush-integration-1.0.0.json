@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/harmonyos-mobpush-integration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.harmonyos_mobpush_integration",
+  "skill": {
+    "id": 58048,
+    "skillKey": "clawhub-harmonyos-mobpush-integration",
+    "name": "Harmonyos Mobpush Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "harmonyos-mobpush-integration",
+    "url": "https://clawhub.ai/skills/harmonyos-mobpush-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/harmonyos-mobpush-integration-e9bfa7cdbe493f77.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactive guide for integrating MobTech MobPush into HarmonyOS NEXT projects with 6-step workflow. Use when user says \"我要在鸿蒙app中增加推送能力\", \"MobPush集成\", \"鸿蒙推送..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mobsupport",
+      "userId": "s1795q9k9a75n8jgb852pqydgd85dg1d",
+      "displayName": "MobSupport",
+      "image": "https://avatars.githubusercontent.com/u/242118548?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 57,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778322455487,
+      "changelog": "Initial release with interactive, step-by-step MobPush integration workflow for HarmonyOS NEXT projects.\n\n- Guides users through 6-step integration, confirming actions at each stage.\n- Validates project path and user-filled configuration, ensuring correct environment before proceeding.\n- Automates SDK dependency installation and config updates (permissions, metadata).\n- Explicit privacy compliance step: enforces SDK init only after user consents.\n- Offers code samples for push reception, alias/tags, and core MobPush API.\n- Generates project-level README summarizing integration steps and key file locations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:15326b5e73af7778b2fffa1313ef1c3aa728f545b688110e95b741209daea4e8"
+}

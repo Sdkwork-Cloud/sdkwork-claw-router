@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bring-shopping@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bring_shopping",
+  "skill": {
+    "id": 10101,
+    "skillKey": "clawhub-bring-shopping",
+    "name": "Bring! Shopping List App (Unofficial)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bring-shopping",
+    "url": "https://clawhub.ai/skills/bring-shopping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bring-shopping-a0ea07779cb4b0fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Bring! shopping lists via the unofficial bring-shopping Node.js library using email/password login. Use for listing lists, reading items, adding/removing items, and checking/unchecking items when API-style access is acceptable."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cutzenfriend",
+      "userId": "publishers:cutzenfriend",
+      "displayName": "cutzenfriend",
+      "image": "https://avatars.githubusercontent.com/u/1510611?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2450,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768405688116,
+      "changelog": "- Initial release of the bring-shopping skill.\n- Manage Bring! shopping lists using the unofficial bring-shopping Node.js library.\n- Supports listing shopping lists, reading, adding, removing, checking, and unchecking items via CLI.\n- Authenticates with Bring! using email and password; credentials should be stored in environment variables.\n- Defaults to the \"Willig\" list unless otherwise specified.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ff54433aaee2b7844c00a1299523c9eed82de58cb2f0ae4b9c559c28d6f68a90"
+}

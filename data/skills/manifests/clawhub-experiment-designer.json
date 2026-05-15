@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17423,
+  "uuid": "skill-clawhub-experiment-designer",
+  "skillKey": "clawhub-experiment-designer",
+  "name": "Experiment Designer",
+  "summary": "Use when planning product experiments, writing testable hypotheses, estimating sample size, prioritizing tests, or interpreting A/B outcomes with practical s...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.experiment_designer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alireza Rezvani",
+      "features": [
+        "Use when planning product experiments, writing testable hypotheses, estimating sample size, pri."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/experiment-designer@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5697919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "experiment-designer",
+      "url": "https://clawhub.ai/skills/experiment-designer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "experiment-designer",
+    "url": "https://clawhub.ai/skills/experiment-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/experiment-designer-af4e063bbe651522.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/experiment-designer@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-experiment-designer-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ea6b476ec822155ca0247e90d1aed0c0eac1d11c65a9979ad363c26d7370fea",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T14:31:37.001Z"
+}

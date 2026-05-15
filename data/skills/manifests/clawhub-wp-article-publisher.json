@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45333,
+  "uuid": "skill-clawhub-wp-article-publisher",
+  "skillKey": "clawhub-wp-article-publisher",
+  "name": "WordPress Article Publisher",
+  "summary": "Automates the creation and publishing of articles on WordPress sites from provided content, streamlining blog and news post workflows.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wp_article_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hsyhph",
+      "features": [
+        "Automates the creation and publishing of articles on WordPress sites from provided content, str."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wp-article-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73018559?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wp-article-publisher",
+      "url": "https://clawhub.ai/skills/wp-article-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wp-article-publisher",
+    "url": "https://clawhub.ai/skills/wp-article-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wp-article-publisher-a0816d1640119b82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wp-article-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wp-article-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8911331e08e6543932bca0806f5f91dad154e96989c1b829b268ca230150276",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T02:59:19.683Z"
+}

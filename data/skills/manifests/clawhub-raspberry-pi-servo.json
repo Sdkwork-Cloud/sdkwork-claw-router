@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62335,
+  "uuid": "skill-clawhub-raspberry-pi-servo",
+  "skillKey": "clawhub-raspberry-pi-servo",
+  "name": "raspberry-pi-servo",
+  "summary": "通过硬件PWM来控制树莓派上的舵机. 何时触发: 当需要精确控制舵机时.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raspberry_pi_servo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CLD1994",
+      "features": [
+        "通过硬件PWM来控制树莓派上的舵机",
+        "何时触发: 当需要精确控制舵机时."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/raspberry-pi-servo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10044266?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "raspberry-pi-servo",
+      "url": "https://clawhub.ai/skills/raspberry-pi-servo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raspberry-pi-servo",
+    "url": "https://clawhub.ai/skills/raspberry-pi-servo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raspberry-pi-servo-9c57abbfcfe8acb1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/raspberry-pi-servo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-raspberry-pi-servo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b92cf0e98f48408dbcd779e25b78b9b71995d54ca3fe7aabdf0e48a50e154dd",
+      "artifactSizeBytes": 2272
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T06:57:22.775Z"
+}

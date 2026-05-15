@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48614,
+  "uuid": "skill-clawhub-sql-dreamer",
+  "skillKey": "clawhub-sql-dreamer",
+  "name": "SQL Dreamer",
+  "summary": "Feeds OpenClaw dreamer with high-importance memories from SQL, archives dream outputs back to SQL, and prunes old dream files automatically.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sql_dreamer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Oblio",
+      "features": [
+        "Feeds OpenClaw dreamer with high-importance memories from SQL, archives dream outputs back to S."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sql-dreamer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263802398?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sql-dreamer",
+      "url": "https://clawhub.ai/skills/sql-dreamer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sql-dreamer",
+    "url": "https://clawhub.ai/skills/sql-dreamer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sql-dreamer-8b028cf6d03f923c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sql-dreamer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sql-dreamer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:925b3e6eab8fbeec652244fa16497039c92f3bb1773d74cca2ba3dbd07e5a26e",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T17:48:18.163Z"
+}

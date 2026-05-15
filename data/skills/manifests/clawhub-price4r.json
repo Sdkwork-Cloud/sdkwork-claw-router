@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69566,
+  "uuid": "skill-clawhub-price4r",
+  "skillKey": "clawhub-price4r",
+  "name": "汽车配件 - 多维 参考价查询",
+  "summary": "使用积智数据 参考价格查询 API，通过 配件编码 列表 查询 配件的 参考价格信息。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.price4r",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ju Yuan",
+      "features": [
+        "使用积智数据 参考价格查询 API，通过 配件编码 列表 查询 配件的 参考价格信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/price4r@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5111899?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "price4r",
+      "url": "https://clawhub.ai/skills/price4r"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "price4r",
+    "url": "https://clawhub.ai/skills/price4r",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/price4r-79961f004bc87919.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/price4r@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-price4r-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:430c44fd8cb86570f3eeb694c8883de7e13d3dc10794f3f4ba1325d5c378eb0a",
+      "artifactSizeBytes": 2272
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:52:36.775Z"
+}

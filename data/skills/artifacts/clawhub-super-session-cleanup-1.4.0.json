@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/super-session-cleanup@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_session_cleanup",
+  "skill": {
+    "id": 43591,
+    "skillKey": "clawhub-super-session-cleanup",
+    "name": "session-cleanup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-session-cleanup",
+    "url": "https://clawhub.ai/skills/super-session-cleanup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-session-cleanup-c98d6881a6836907.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Session cleanup skill for Claw-family agents (OpenClaw, WorkBuddy, QClaw, etc.). This skill should be used when the user wants to track and clean up temporar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaobs",
+      "userId": "s1706s3zyx390cs0cnp527s0d183yx4h",
+      "displayName": "Chaobs",
+      "image": "https://avatars.githubusercontent.com/u/11376304?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1776436798936,
+      "changelog": "super-session-cleanup 1.4.0 changelog:\n\n- Added automatic tracking of all session-generated artifacts (temp files, scripts, packages, skills, etc.), with persistent storage in session-track.json.\n- Introduced two-phase lifecycle: Phase 1 (tracking, with triggers) and Phase 2 (cleanup, with triggers).\n- Cleanup procedure now displays a categorized, Markdown-formatted checklist of tracked items, and excludes any explicitly retained items.\n- Safe-to-delete items are removed automatically; items with dependencies prompt for confirmation before uninstalling or deletion.\n- New auto-tracking rules ensure thorough capture of all relevant resources after each tool call.\n- Provides batch or individual deletion strategies, with OS-specific safe delete commands for items outside the workspace.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4713c49e799cb7ecd796126a17eac43dfdf7ecc7d1ec07a6db873efd1994a745"
+}

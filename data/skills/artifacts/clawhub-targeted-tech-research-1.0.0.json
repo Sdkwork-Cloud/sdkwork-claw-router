@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/targeted-tech-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.targeted_tech_research",
+  "skill": {
+    "id": 47372,
+    "skillKey": "clawhub-targeted-tech-research",
+    "name": "targeted-tech-research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "targeted-tech-research",
+    "url": "https://clawhub.ai/skills/targeted-tech-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/targeted-tech-research-c26653d4825904aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs in-depth, vendor-specific technical research on solutions/products with standardized, fact-verified breakdowns of hardware, software, co-design, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "outdog-hwh",
+      "userId": "s173permbcpea4e5gqqhe9zvy185a927",
+      "displayName": "outdog-hwh",
+      "image": "https://avatars.githubusercontent.com/u/168953287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777253561976,
+      "changelog": "Targeted deep technical research Skill initial release:\n\n- Provides structured, in-depth research on vendor-specific technical solutions/products, covering Hardware Breakdown, Software Breakdown, Hardware-Software Co-Design, and Technical Benchmarking.\n- Strictly distinguishes between publicly verifiable facts and technical derivations, ensuring clear source attribution in all outputs.\n- Implements an interactive onboarding questionnaire for research precision, priority, granularity, terminology explanation, and source preferences.\n- Delegates all scraping tasks to web-scraper or playwright-scraper based on page type and dynamic site rules, with robust failure and degradation handling.\n- Features a five-step workflow, starting with a reconnaissance phase and user confirmation before proceeding to deep-dive technical analysis.\n- Prohibits generalized industry knowledge and marketing language, focusing solely on objective, structured technical breakdowns.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dab433ef1a7b463cbb64b074fa11f8de4fd9332e9884f115f6ba5102d0f67905"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huadafenqi-github@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huadafenqi_github",
+  "skill": {
+    "id": 57776,
+    "skillKey": "clawhub-huadafenqi-github",
+    "name": "Huadafenqi Github"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huadafenqi-github",
+    "url": "https://clawhub.ai/skills/huadafenqi-github",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huadafenqi-github-56f4d699cb93b219.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huadafenqi",
+      "userId": "publishers:huadafenqi",
+      "displayName": "huadafenqi",
+      "image": "https://avatars.githubusercontent.com/u/264103995?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 394,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773580258589,
+      "changelog": "- Initial release of the GitHub skill using the `gh` CLI for GitHub interactions.\n- Supports managing issues, pull requests, and CI runs with `gh issue`, `gh pr`, and `gh run`.\n- Includes instructions for using advanced queries via `gh api` and JSON output filtering.\n- Provides sample commands and usage guidance for working outside of git directories.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0360849df4a9b93f7ff8d3ef88e8fad778740de30828a37b9680833f7557e6d9"
+}

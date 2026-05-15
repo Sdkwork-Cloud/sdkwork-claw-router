@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/connectors-available@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.connectors_available",
+  "skill": {
+    "id": 20851,
+    "skillKey": "clawhub-connectors-available",
+    "name": "Connectors Available"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "connectors-available",
+    "url": "https://clawhub.ai/skills/connectors-available",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/connectors-available-22dd2cfdde1adaad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check which exchanges work from your location and search for tokens with trading rules (min order size, price increment, order types)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fengtality",
+      "userId": "s17e4dmyqswjyz0b64xsrbe1r585g65b",
+      "displayName": "Michael Feng",
+      "image": "https://avatars.githubusercontent.com/u/1795030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 524,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772228772233,
+      "changelog": "Initial release of the connectors-available skill.\n\n- Tests which exchange connectors are accessible from your location.\n- Allows searching for tokens and displays detailed trading rules (min order size, price increment, order types) across available exchanges.\n- Provides scripts to test all or specific connectors.\n- Saves results in trading_rules.json for easy reference.\n- Requires running Hummingbot API and basic credentials setup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:24a875929d72928a3651179470106e22c29f1ae4c4a99190b1b22655aae72060"
+}

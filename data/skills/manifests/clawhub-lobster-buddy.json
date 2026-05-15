@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67258,
+  "uuid": "skill-clawhub-lobster-buddy",
+  "skillKey": "clawhub-lobster-buddy",
+  "name": "Lobster Buddy",
+  "summary": "麻薯的电子宠物系统。基于用户ID确定性生成的RPG风格宠物，有物种、稀有度、属性和闪光机制。当用户问\"我的宠物\"、\"看看我的buddy\"、\"抽宠物\"时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_buddy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangxiaofei860208-source",
+      "features": [
+        "麻薯的电子宠物系统。基于用户ID确定性生成的RPG风格宠物，有物种、稀有度、属性和闪光机制。当用户问\"我的宠物\"、\"看看我的buddy\"、\"抽宠物\"时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-buddy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260913269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-buddy",
+      "url": "https://clawhub.ai/skills/lobster-buddy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-buddy",
+    "url": "https://clawhub.ai/skills/lobster-buddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-buddy-4994a4d2b79e50f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-buddy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-buddy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53fe06f3fe3c740400d3ee0d7a706cda148df0a8a6600dd0e1958eb9bdb39c21",
+      "artifactSizeBytes": 2526
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T14:00:14.467Z"
+}

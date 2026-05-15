@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61916,
+  "uuid": "skill-clawhub-shucheng-summary-budget-model-and-new-script",
+  "skillKey": "clawhub-shucheng-summary-budget-model-and-new-script",
+  "name": "Summary Budget Model And New Script",
+  "summary": "用于总结和更新预算数据模型及脚本技能。当用户发出【总结对话内容】指令时，从对话历史中提取新的脚本写法、数据模型和字段信息，更新到 platform-script 和 budget-data-model 技能中。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shucheng_summary_budget_model_and_new_script",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lan2898408767",
+      "features": [
+        "用于总结和更新预算数据模型及脚本技能。当用户发出【总结对话内容】指令时，从对话历史中提取新的脚本写法、数据模型和字段信息，更新到 platform-script 和 budget-data-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shucheng-summary-budget-model-and-new-script@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134391587?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shucheng-summary-budget-model-and-new-script",
+      "url": "https://clawhub.ai/skills/shucheng-summary-budget-model-and-new-script"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shucheng-summary-budget-model-and-new-script",
+    "url": "https://clawhub.ai/skills/shucheng-summary-budget-model-and-new-script",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shucheng-summary-budget-model-and-new-script-0d027d58ce067334.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shucheng-summary-budget-model-and-new-script@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shucheng-summary-budget-model-and-new-script-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69e883415d766fdf7779121d74b441d3fd8ba53b30c88b1bed3621976f7baaed",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T02:51:17.218Z"
+}

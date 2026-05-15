@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27172,
+  "uuid": "skill-clawhub-trongrid-contract-analysis",
+  "skillKey": "clawhub-trongrid-contract-analysis",
+  "name": "trongrid-contract-analysis",
+  "summary": "Analyze TRON smart contracts including deployment info, ABI methods, transaction patterns, top callers, energy costs, and safety assessment. Use when a user...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trongrid_contract_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "greason",
+      "features": [
+        "Analyze TRON smart contracts including deployment info, ABI methods, transaction patterns, top.",
+        "Use when a user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trongrid-contract-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12513158?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trongrid-contract-analysis",
+      "url": "https://clawhub.ai/skills/trongrid-contract-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trongrid-contract-analysis",
+    "url": "https://clawhub.ai/skills/trongrid-contract-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trongrid-contract-analysis-36013efc910c5516.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trongrid-contract-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-trongrid-contract-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fcf9e3d2ee363bef15aff8739cebce300eaf41d1c7a455bcf6d41ec249477c4",
+      "artifactSizeBytes": 2070
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:48:35.444Z"
+}

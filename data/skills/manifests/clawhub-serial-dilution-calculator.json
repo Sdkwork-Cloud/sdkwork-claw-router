@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42880,
+  "uuid": "skill-clawhub-serial-dilution-calculator",
+  "skillKey": "clawhub-serial-dilution-calculator",
+  "name": "Serial Dilution Calculator",
+  "summary": "Generate qPCR/ELISA dilution protocols with precise pipetting steps",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serial_dilution_calculator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Generate qPCR/ELISA dilution protocols with precise pipetting steps"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/serial-dilution-calculator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "serial-dilution-calculator",
+      "url": "https://clawhub.ai/skills/serial-dilution-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serial-dilution-calculator",
+    "url": "https://clawhub.ai/skills/serial-dilution-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serial-dilution-calculator-4419127871592801.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/serial-dilution-calculator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-serial-dilution-calculator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:547832ba5c287ce024a66ea5f32fb83c3c50a8293d38e3a046486428b490b4b1",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T02:15:44.199Z"
+}

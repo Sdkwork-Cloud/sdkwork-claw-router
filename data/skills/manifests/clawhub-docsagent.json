@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19935,
+  "uuid": "skill-clawhub-docsagent",
+  "skillKey": "clawhub-docsagent",
+  "name": "DocsAgent",
+  "summary": "Search and manage private, local document collections (PDF, PPTX, DOCX) offline. Use when you need to find information within your private files, not for web...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docsagent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "docsagent",
+      "features": [
+        "Search and manage private, local document collections (PDF, PPTX, DOCX) offline",
+        "Use when you need to find information within your private files, not for web..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docsagent@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/189074130?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docsagent",
+      "url": "https://clawhub.ai/skills/docsagent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docsagent",
+    "url": "https://clawhub.ai/skills/docsagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docsagent-3f8b771e06034bbf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docsagent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-docsagent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52890ce8de0981a69697409ec341fc58f4bba3218e7e39be9ce00e1190e9578d",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T01:06:58.070Z"
+}

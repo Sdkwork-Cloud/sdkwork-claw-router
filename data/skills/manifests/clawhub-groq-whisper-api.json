@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50458,
+  "uuid": "skill-clawhub-groq-whisper-api",
+  "skillKey": "clawhub-groq-whisper-api",
+  "name": "Transcribe audio via Groq API (~10x cheaper than OpenAI API)",
+  "summary": "Transcribe audio via Groq Automatic Speech Recognition (ASR) Models (Whisper).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.groq_whisper_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maxceem",
+      "features": [
+        "Transcribe audio via Groq Automatic Speech Recognition (ASR) Models (Whisper)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/groq-whisper-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146016?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "groq-whisper-api",
+      "url": "https://clawhub.ai/skills/groq-whisper-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "groq-whisper-api",
+    "url": "https://clawhub.ai/skills/groq-whisper-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/groq-whisper-api-51ffb3bb21654811.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/groq-whisper-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-groq-whisper-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b5058d75c53383bdfff8eab57d2ca5f340e9cd4326061eb068542358affd7b9",
+      "artifactSizeBytes": 2258
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T10:41:48.737Z"
+}

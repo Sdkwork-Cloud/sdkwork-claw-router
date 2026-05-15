@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/poyo-flux-2-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poyo_flux_2_api",
+  "skill": {
+    "id": 54948,
+    "skillKey": "clawhub-poyo-flux-2-api",
+    "name": "Flux 2 API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poyo-flux-2-api",
+    "url": "https://clawhub.ai/skills/poyo-flux-2-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poyo-flux-2-api-1d8bd00f84522348.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use PoYo AI Flux 2 through the `https://api.poyo.ai/api/generate/submit` endpoint. Use when a user wants to generate or edit media with this model family, pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coolhackboy",
+      "userId": "s177pant1v4gn5k13ffg1fp5b183nb02",
+      "displayName": "coolhackboy",
+      "image": "https://avatars.githubusercontent.com/u/13427145?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773143351219,
+      "changelog": "Initial release of poyo-flux-2 skill.\n\n- Enables submitting and tracking jobs for the PoYo Flux 2 model family via `https://api.poyo.ai/api/generate/submit`.\n- Supports model selection: `flux-2-pro`, `flux-2-pro-edit`, `flux-2-flex`, `flux-2-flex-edit`.\n- Provides request guidelines for prompt construction, image references, size, and resolution options.\n- Requires Bearer token authentication with `POYO_API_KEY`.\n- Includes instructions for building payloads, submitting jobs, and polling task status.\n- Reference to official docs and example scripts for ease of integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:019f189b5832e19c4dc00d0c643bc7d5d67a07ed17ac2fd31d14a11754d14d21"
+}

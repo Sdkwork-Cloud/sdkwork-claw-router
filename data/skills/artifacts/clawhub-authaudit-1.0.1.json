@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/authaudit@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.authaudit",
+  "skill": {
+    "id": 53456,
+    "skillKey": "clawhub-authaudit",
+    "name": "authaudit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "authaudit",
+    "url": "https://clawhub.ai/skills/authaudit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/authaudit-c6ba46380db63873.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Authentication & authorization pattern analyzer — finds missing auth checks, insecure sessions, broken access control, CSRF gaps, and token handling vulnerab..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suhteevah",
+      "userId": "s17b8q91y0grcxtcbcmvck351n84tdze",
+      "displayName": "suhteevah",
+      "image": "https://avatars.githubusercontent.com/u/2342183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776179064112,
+      "changelog": "Fix: declare all deps, JWT signature verification, configPaths",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd9f49495be77e55eb7ed70a5d87f602bbd5f9c8f9e5a539092a2a0d87031c4d"
+}

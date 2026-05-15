@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35619,
+  "uuid": "skill-clawhub-rugpull",
+  "skillKey": "clawhub-rugpull",
+  "name": "Rugpull",
+  "summary": "Analyze rugpull operations. Use when you need to understand rugpull mechanisms, evaluate protocol security, or reference on-chain concepts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rugpull",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Analyze rugpull operations",
+        "Use when you need to understand rugpull mechanisms, evaluate protocol security, or reference on."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rugpull@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rugpull",
+      "url": "https://clawhub.ai/skills/rugpull"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rugpull",
+    "url": "https://clawhub.ai/skills/rugpull",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rugpull-f9f52d569830c814.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rugpull@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rugpull-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87ad242c2e8db46ba0e51d9f21481770dbb0f28248e8a893fc7cc3f7a9ee7ff1",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T20:19:32.354Z"
+}

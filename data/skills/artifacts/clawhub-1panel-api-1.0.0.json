@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/1panel-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1panel_api",
+  "skill": {
+    "id": 61378,
+    "skillKey": "clawhub-1panel-api",
+    "name": "1Panel API Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1panel-api",
+    "url": "https://clawhub.ai/skills/1panel-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1panel-api-fdfbfefe2a5ff383.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "1Panel 开源面板 API Skill。提供网站管理、容器管理、数据库管理、文件管理等 23+ 个模块的完整 API 接口文档。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "breadbot86",
+      "userId": "s17dy9shaxtdj4z2aa4jfz0gf983xz5m",
+      "displayName": "breadbot86",
+      "image": "https://avatars.githubusercontent.com/u/264739088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774838829691,
+      "changelog": "Initial release with 23+ API modules",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c22edfe6faa9163b69bf557f47a15f56473143148cd1dcb4bbb4724aa67459db"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37043,
+  "uuid": "skill-clawhub-editor-pkg",
+  "skillKey": "clawhub-editor-pkg",
+  "name": "Editor Pkg",
+  "summary": "edit raw video clips into polished edited clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for packaging raw...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_pkg",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vynbosserman65",
+      "features": [
+        "edit raw video clips into polished edited clips with this skill",
+        "Works with MP4, MOV, AVI, WebM files up to 500MB",
+        "content creators use it for packaging raw..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/editor-pkg@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208823770?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "editor-pkg",
+      "url": "https://clawhub.ai/skills/editor-pkg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-pkg",
+    "url": "https://clawhub.ai/skills/editor-pkg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-pkg-64505eb05f7a44bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/editor-pkg@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-editor-pkg-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f39fffbf00c4e7454e6b14278164086340504c9a034a68dba06c0ae14b950703",
+      "artifactSizeBytes": 2296
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T18:11:05.271Z"
+}

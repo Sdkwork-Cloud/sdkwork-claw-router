@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53260,
+  "uuid": "skill-clawhub-bambuddy",
+  "skillKey": "clawhub-bambuddy",
+  "name": "bambuddy",
+  "summary": "Full integration with a self-hosted Bambuddy instance — the print archive and management system for Bambu Lab 3D printers. Covers printers, real-time status,...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bambuddy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZDStudios",
+      "features": [
+        "Full integration with a self-hosted Bambuddy instance — the print archive and management system.",
+        "Covers printers, real-time status,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bambuddy@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121779558?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bambuddy",
+      "url": "https://clawhub.ai/skills/bambuddy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bambuddy",
+    "url": "https://clawhub.ai/skills/bambuddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bambuddy-dc0d36390f8a44d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bambuddy@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-bambuddy-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c83b0edbef0b56661475aab4339000f96d1e1ff58798654fb60c058d655129cb",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T00:33:34.644Z"
+}

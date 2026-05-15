@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-ads-cli@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_ads_cli",
+  "skill": {
+    "id": 55049,
+    "skillKey": "clawhub-meta-ads-cli",
+    "name": "Meta Ads CLI - control your ad campaigns"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-ads-cli",
+    "url": "https://clawhub.ai/skills/meta-ads-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-ads-cli-baa963e9d66e1540.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Meta/Facebook/Instagram ads through Meta's official `meta ads ...` CLI. Use for read-only audits, reporting, safe planning, and approved one-step mut..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tristanmanchester",
+      "userId": "s17c3xv8wvvzzbj84z9vcj498n83gnkp",
+      "displayName": "Tristan Manchester",
+      "image": "https://avatars.githubusercontent.com/u/108270628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1777579855984,
+      "changelog": "**Skill meta-ads-cli version 2.1.0**\n\n- Major simplification: trimmed documentation, focused on key workflows, and removed 23 reference and prompt files for a leaner, safer, and more agent-agnostic design.\n- Added clear install and credential instructions, now using requirements-meta-ads-cli.txt and specifying required/optional environment variables.\n- Updated operating rules to emphasize safe, auditable command execution with explicit approval gates for all mutations and spend-affecting changes.\n- Streamlined agent workflow and risk gating for reads vs. mutations, clarifying approval flows for write, budget, activation, and destructive actions.\n- Embedded provenance and template files for reproducibility and planning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:198abad360bd35470fc5b6c92896734f7cfed5a5b8c86a5e4a2aa4578ffc5d6a"
+}

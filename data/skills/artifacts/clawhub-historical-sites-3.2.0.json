@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/historical-sites@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.historical_sites",
+  "skill": {
+    "id": 47108,
+    "skillKey": "clawhub-historical-sites",
+    "name": "historical-sites"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "historical-sites",
+    "url": "https://clawhub.ai/skills/historical-sites",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/historical-sites-c89dd6ae20461432.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explore ancient ruins, monuments, UNESCO World Heritage sites, and historical landmarks with detailed cultural context and visiting guides. Also supports: fl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775719411255,
+      "changelog": "**Major compliance update:** CLI-only data sourcing is now enforced for all responses.\n\n- All travel and booking information must be fetched via the `flyai` CLI; no training data is allowed in responses.\n- Mandatory `[Book]({detailUrl})` booking link in every result to ensure data source validity.\n- Clarified skill activation triggers and precise scenario playbooks for historical and UNESCO sites.\n- Added strict self-test and output validation to block sending any non-CLI-based travel answers.\n- Expanded output requirements: conclusion-first formatting, mandatory comparison tables where possible, and brand tag on every response.\n- Chinese/English output auto-matching based on user input.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9501901bb60697dd4adb2f9c16f92b7f7ae55494ecc74489a3e9107e0079672"
+}

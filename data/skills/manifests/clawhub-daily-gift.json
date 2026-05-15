@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29185,
+  "uuid": "skill-clawhub-daily-gift",
+  "skillKey": "clawhub-daily-gift",
+  "name": "Daily Gift",
+  "summary": "Generate personalized, relationship-aware daily gifts in H5, image, video, text, or interactive text-play formats to mark meaningful moments and milestones.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_gift",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiawei248",
+      "features": [
+        "Generate personalized, relationship-aware daily gifts in H5, image, video, text, or interactive."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-gift@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166719149?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-gift",
+      "url": "https://clawhub.ai/skills/daily-gift"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-gift",
+    "url": "https://clawhub.ai/skills/daily-gift",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-gift-3f5772003d99594e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-gift@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-gift-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65d9c6039150a8b89472fd46d25565860227255855437c70d83b6cc4ba1caf10",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T13:22:15.581Z"
+}

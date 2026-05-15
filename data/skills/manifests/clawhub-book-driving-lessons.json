@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13129,
+  "uuid": "skill-clawhub-book-driving-lessons",
+  "skillKey": "clawhub-book-driving-lessons",
+  "name": "Book Driving Lessons",
+  "summary": "Book driving-lessons services through Lokuli MCP. Use when user needs to find and book driving-lessons. Triggers on requests like \"book a driving-lessons\", \"find driving-lessons near me\", or any driving-lessons service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_driving_lessons",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book driving-lessons services through Lokuli MCP",
+        "Use when user needs to find and book driving-lessons",
+        "Triggers on requests like \"book a driving-lessons\", \"find driving-lessons near me\", or any driv."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-driving-lessons@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-driving-lessons",
+      "url": "https://clawhub.ai/skills/book-driving-lessons"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-driving-lessons",
+    "url": "https://clawhub.ai/skills/book-driving-lessons",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-driving-lessons-5fecd9c1d86a460f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-driving-lessons@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-driving-lessons-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:564f5c9391cbcd52b5bd8f7a4716e356523d9e576fae46c6e5159cd30bef7ad3",
+      "artifactSizeBytes": 2019
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:06:28.523Z"
+}

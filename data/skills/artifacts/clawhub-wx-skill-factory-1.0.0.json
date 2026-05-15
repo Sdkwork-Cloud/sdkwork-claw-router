@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wx-skill-factory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wx_skill_factory",
+  "skill": {
+    "id": 66920,
+    "skillKey": "clawhub-wx-skill-factory",
+    "name": "Skill Factory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wx-skill-factory",
+    "url": "https://clawhub.ai/skills/wx-skill-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wx-skill-factory-688580a0811c2abe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill工厂，AI作为规划层循环迭代生产新Skill（需求对齐→选档→设计→生成→测试→对比→迭代→交付），支持手动/半自动/全自动三档模式"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mwangxiang",
+      "userId": "publishers:mwangxiang",
+      "displayName": "mwangxiang",
+      "image": "https://avatars.githubusercontent.com/u/127031609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 666,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772630283879,
+      "changelog": "- Initial public release of skill-factory (v1.0.0)\n- Enables AI-driven iterative creation, improvement, and modularization of new Skills, supporting manual, semi-automatic, and fully-automatic production modes\n- Includes a detailed, multi-step factory process (需求对齐→选档→设计→生成→测试→对比→迭代→交付) with role division between user, planning AI, and optional plug-in execution AIs\n- Introduces scoring, quality gate, and iterative delivery mechanisms for output assessment and refinement\n- Provides guidelines for template/benchmark selection, sub-skill generation, and fallback AI handling for robust execution\n- Comprehensive documentation and process transparency, including reference documents for configuration and integration",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b20f21125b9f93cfe01b67837c66c6294def956500a37306d1eae649c5ba4f1e"
+}

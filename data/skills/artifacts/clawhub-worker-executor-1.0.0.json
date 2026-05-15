@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/worker-executor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.worker_executor",
+  "skill": {
+    "id": 24004,
+    "skillKey": "clawhub-worker-executor",
+    "name": "Worker Executor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "worker-executor",
+    "url": "https://clawhub.ai/skills/worker-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/worker-executor-0daeea8c82da5051.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs specific tasks like research, writing, coding, or analysis with concrete, fast execution while staying strictly within assigned scope."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kiril-shturman",
+      "userId": "s177d64yqktwnj4mw7w7fzz17984n7cn",
+      "displayName": "Kiril-Shturman",
+      "image": "https://avatars.githubusercontent.com/u/69124328?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 424,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773203273319,
+      "changelog": "worker-executor 1.0.0 – Initial release\n\n- Introduces a focused execution role for AI teams, ideal for tasks requiring hands-on work rather than orchestration.\n- Defines clear job boundaries and prohibited behaviors to ensure efficient and concrete task fulfillment.\n- Establishes a simple response protocol with standardized headings: ACK, STATUS, RESULT, BLOCKER.\n- Outlines specific execution modes (e.g., research, writing, build) to fit various task types.\n- Emphasizes direct, result-oriented outputs and avoiding management-level summaries or decision-making.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2bb0309f684ddab0f46c3cc2c57e4b57d90eada4688e9a692f938a60271f06a5"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23697,
+  "uuid": "skill-clawhub-chromedev",
+  "skillKey": "clawhub-chromedev",
+  "name": "Chrome MCP Tools",
+  "summary": "Use this skill when you need to access or control a live Chrome browser through the local Chrome DevTools MCP middleware at http://127.0.0.1:8787/mcp, especi...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chromedev",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mallocfeng",
+      "features": [
+        "Use this skill when you need to access or control a live Chrome browser through the local Chrom."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chromedev@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4647455?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chromedev",
+      "url": "https://clawhub.ai/skills/chromedev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chromedev",
+    "url": "https://clawhub.ai/skills/chromedev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chromedev-bec67e3f300f2625.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chromedev@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-chromedev-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37d105a7b0e321efe3f731f25e2597b756d4a0c05be13b20240da25c990616bc",
+      "artifactSizeBytes": 2315
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T15:50:38.836Z"
+}

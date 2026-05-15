@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nudge-coach@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nudge_coach",
+  "skill": {
+    "id": 52939,
+    "skillKey": "clawhub-nudge-coach",
+    "name": "Nudge Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nudge-coach",
+    "url": "https://clawhub.ai/skills/nudge-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nudge-coach-4db72ff184290bfd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Accountability coaching behavior for nudge — psychology, messaging, verification, and strictness. Use this skill whenever composing messages for task creatio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neilsanghrajka",
+      "userId": "s17e414qm2pbs29zhtgw49ww1x83scjg",
+      "displayName": "neilsanghrajka",
+      "image": "https://avatars.githubusercontent.com/u/61964667?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774696838912,
+      "changelog": "Added verification proof guidance for completion/failure messages",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84702864f975e7f5ea7c97118b21fe62b6e47b32a6bfc5c0ea6b9c4aa841c8eb"
+}

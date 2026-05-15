@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "portable-deployment-audit",
+    "displayName": "portable-deployment-audit",
+    "summary": "Read-only security auditing for OpenClaw deployments, repositories, and local project directories. Scan an explicit target directory for exposed credentials,...",
+    "tags": {
+      "latest": "1.0.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "createdAt": 1774176740458,
+    "updatedAt": 1777622424956
+  },
+  "latestVersion": {
+    "version": "1.0.2",
+    "createdAt": 1774181123972,
+    "changelog": "- Now performs security audits using file inspection only; no external binaries or shell commands are executed.\n- Audits explicit port exposure hints from config and compose files instead of actively inspecting listening ports.\n- Adjusted `--allow-port` to suppress expected configured/published ports.\n- Git exposure check now flags directory exposure and missing `.gitignore`, without using git commands.\n- Documentation updated to clarify scope and file-inspection-only nature of all checks.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "otweihan",
+    "userId": "s17a8ggj4c58kym3w767mysxhs83gdhe",
+    "displayName": "WeiHan",
+    "image": "https://avatars.githubusercontent.com/u/94216907?v=4"
+  },
+  "moderation": null
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uncle-matt@3.420.70",
+  "version": "3.420.70",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uncle_matt",
+  "skill": {
+    "id": 11481,
+    "skillKey": "clawhub-uncle-matt",
+    "name": "Uncle Matt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uncle-matt",
+    "url": "https://clawhub.ai/skills/uncle-matt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uncle-matt-01e8116af20208aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Uncle Matt is your favorite internet uncle who stops you from doing really stupid shit while keeping secrets safe."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "uncmatteth",
+      "userId": "s171n9awyq567qrpdvwdxdf92h83khz5",
+      "displayName": "uncmatteth",
+      "image": "https://avatars.githubusercontent.com/u/131263695?v=4"
+    },
+    "stats": {
+      "comments": 4,
+      "downloads": 1833,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "3.420.70",
+      "createdAt": 1776110915967,
+      "changelog": "3.420.70: visible page update for ClawHub — put the release story directly into SKILL.md so people see the upgrade in the Files tab, kept the plugin-local skill layout clean for current OpenClaw builds, and doubled down on the no-secrets, no-random-URL, no-open-proxy attitude.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5cb510a00dfe78f2f164677e6f11c8c858830ec18803fe98324b3c782e160c2"
+}

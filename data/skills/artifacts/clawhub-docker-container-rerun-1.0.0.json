@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docker-container-rerun@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_container_rerun",
+  "skill": {
+    "id": 30678,
+    "skillKey": "clawhub-docker-container-rerun",
+    "name": "Docker Container Rerun"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-container-rerun",
+    "url": "https://clawhub.ai/skills/docker-container-rerun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-container-rerun-87e3da640cef6ef3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safely check whether a Docker container's image has changed and, only when needed, recreate that docker run container with a user-provided original docker ru..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ugvfpdcuwfnh",
+      "userId": "s17f1avpvveb0afnxcb94ckb6n83k7cg",
+      "displayName": "HongWei Jiang",
+      "image": "https://avatars.githubusercontent.com/u/11488705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774455129314,
+      "changelog": "Initial release: safely compare docker image Ids and recreate docker run containers only when needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d7aea470711f275a87c35155c0ed7f2251446a0198a214d8f945b79fc830e6d"
+}

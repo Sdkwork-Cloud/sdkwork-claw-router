@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aldi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aldi",
+  "skill": {
+    "id": 67766,
+    "skillKey": "clawhub-aldi",
+    "name": "Aldi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aldi",
+    "url": "https://clawhub.ai/skills/aldi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aldi-7b8d4d167456dae8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "德国折扣零售巨头，全球超12,000家门店，年营收1300亿欧元，主打精简SKU和高效自有品牌硬折扣模式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776565136276,
+      "changelog": "- 首发上线：提供阿尔迪（Aldi Group）详细公司简介、历史和核心数据\n- 系统梳理 Aldi Nord 与 Aldi Sud 的运营结构、全球扩张和关键市场\n- 深入解析硬折扣商业模式、自有品牌护城河和行业地位\n- 支持投研、竞品对比、公司调研等典型场景查询\n- 收录门店数量、营收、SKU、员工数等关键信息与趣味小知识",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cef4d6347c22869acab1cfcd77f98f1eb3ca707326afb1ce20b60ee0c5080fa4"
+}

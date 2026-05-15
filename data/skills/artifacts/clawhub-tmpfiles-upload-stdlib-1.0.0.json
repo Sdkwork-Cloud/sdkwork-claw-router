@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tmpfiles-upload-stdlib@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmpfiles_upload_stdlib",
+  "skill": {
+    "id": 37459,
+    "skillKey": "clawhub-tmpfiles-upload-stdlib",
+    "name": "Tmpfiles Upload (Stdlib)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmpfiles-upload-stdlib",
+    "url": "https://clawhub.ai/skills/tmpfiles-upload-stdlib",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmpfiles-upload-stdlib-7e6e4ee9139bef98.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload a local file to tmpfiles.org using Python standard library only, then return a direct download link in strict JSON."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "donigwapo",
+      "userId": "s1740ryknxnr4e74t6af6kj0vx83k4m8",
+      "displayName": "Donigwapo",
+      "image": "https://avatars.githubusercontent.com/u/145357656?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774495368065,
+      "changelog": "Initial release: Upload local files to tmpfiles.org using only Python standard library.\n\n- Uploads a user-specified local file and returns a temporary public URL in strict JSON.\n- Validates file existence and warns against uploading sensitive files.\n- Uses only python3 and standard libraries (no external dependencies).\n- Returns clear JSON output for both success and failure cases.\n- Designed for use in automated workflows needing a direct download link.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a7371b5adfb940d3b4c94d2db7268b45dd326e9501dd2a7f98d32312c1257ee5"
+}

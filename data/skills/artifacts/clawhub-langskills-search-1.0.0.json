@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/langskills-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.langskills_search",
+  "skill": {
+    "id": 32999,
+    "skillKey": "clawhub-langskills-search",
+    "name": "LangSkills Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "langskills-search",
+    "url": "https://clawhub.ai/skills/langskills-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/langskills-search-c3f748636fb76084.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search 119K evidence-backed skills from 95K+ papers & 24K+ tech sources"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shatianming5",
+      "userId": "publishers:shatianming5",
+      "displayName": "shatianming5",
+      "image": "https://avatars.githubusercontent.com/u/200757839?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773687157968,
+      "changelog": "Initial release of langskills-search skill.\n\n- Search 119,608 evidence-backed skills from 95K+ research papers and 24K+ tech sources, all offline using FTS5 SQLite.\n- Provides command-line tool langskills-rai skill-search with filtering by domain, quality score, and output format.\n- Supports easy setup and selective domain installation with bundle-install.\n- Returns results with title, domain, quality score, source URL, and optional full skill body.\n- Suitable for finding best practices and how-tos with cited academic or real-world sources.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60bb5ae9dbb616b1e5c123d5462c632273922360acab5c620a111003cac9d09d"
+}

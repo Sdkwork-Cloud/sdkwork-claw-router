@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-article-parser-local@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_parser_local",
+  "skill": {
+    "id": 66372,
+    "skillKey": "clawhub-wechat-article-parser-local",
+    "name": "Wechat Article Parser Local"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-parser-local",
+    "url": "https://clawhub.ai/skills/wechat-article-parser-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-parser-local-cebcb5096cbe7f4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "解析微信公众号文章，提取标题、作者、正文内容、图片等信息。当用户发送微信公众号链接（mp.weixin.qq.com）并希望获取文章内容、摘要或保存时触发。支持自动提取内容并可选保存到飞书表格。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "reknottycat",
+      "userId": "s176qejv2vrya1dtrcjcaw4r098452fn",
+      "displayName": "reknottycat",
+      "image": "https://avatars.githubusercontent.com/u/53971979?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775332967628,
+      "changelog": "微信文章解析器初始发布。\n\n- 支持自动提取微信公众号文章的标题、作者、发布时间、正文内容和图片链接\n- 提供字数、图片数统计功能\n- 可将解析内容保存为 JSON/TXT 文件\n- 支持将文章数据保存到飞书表格（需配置 Feishu 参数）\n- 支持通过 CLI 脚本或在 OpenClaw 对话中自动解析微信公众号文章链接\n- 依赖 requests、beautifulsoup4、python-dotenv",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b5819f644cddd2c91cd15317072d195504d6c5f9b4cd59d2357f32aed178bf5"
+}

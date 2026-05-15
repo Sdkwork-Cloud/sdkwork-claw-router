@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-ecs-install-extension@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_ecs_install_extension",
+  "skill": {
+    "id": 32276,
+    "skillKey": "clawhub-alibabacloud-ecs-install-extension",
+    "name": "Alibabacloud Ecs Install Extension"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-ecs-install-extension",
+    "url": "https://clawhub.ai/skills/alibabacloud-ecs-install-extension",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-ecs-install-extension-e82776f744994ab9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Alibaba Cloud ECS extension installation skill. Supports querying available extension lists, checking if a specific extension is available, and one-click ins..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1778133725639,
+      "changelog": "alibabacloud-ecs-install-extension 0.0.2 changelog:\n\n- Updated documentation in SKILL.md for improved input validation instructions.\n- Clarified valid format/example for ECS InstanceId in validation rules.\n- No functional or code changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77d4af08baff25762ea6fc337e693cc638f661f39800ae5f47a8490e9d65fb80"
+}

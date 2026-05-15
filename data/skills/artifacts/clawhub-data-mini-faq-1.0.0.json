@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-mini-faq@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_mini_faq",
+  "skill": {
+    "id": 67983,
+    "skillKey": "clawhub-data-mini-faq",
+    "name": "魔方 Data 轻量版问题解答"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-mini-faq",
+    "url": "https://clawhub.ai/skills/data-mini-faq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-mini-faq-952117bc2c0c805a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "解答魔方Data轻量版客户的系统实用问题。涵盖使用操作、故障排查、技术咨询。 激活场景：客户问\"faq XX\"、\"怎么使用XX功能\"、\"为什么报错XX\"、\"如何配置XX\"、\"接口怎么调用\"等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "orionpax1997",
+      "userId": "s177t263e3670x9rav1363p4z583mnrn",
+      "displayName": "orionpax1997",
+      "image": "https://avatars.githubusercontent.com/u/95059095?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774504933039,
+      "changelog": "data-mini-faq v1.0.0\n\n- 首次发布：为魔方Data轻量版用户提供常见问题解答与实用操作指导。\n- 覆盖系统使用、故障排查、技术咨询等高频场景，支持接口调用、配置方法等问题。\n- 明确回答流程：倾听理解、收集关键信息、知识库匹配、具体解决步骤。\n- 内置详尽知识库，包括报错处理、常用操作指引、复杂流程脚本案例等。\n- 针对高级场景与LiteFlow脚本开发，附常见需求配置说明与示例代码。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce4633487a9195cde1d710d579d671638e98fdd4c14d4552b1c5ff54ac01f757"
+}

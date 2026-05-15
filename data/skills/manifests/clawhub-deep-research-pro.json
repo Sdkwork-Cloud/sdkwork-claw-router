@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8289,
+  "uuid": "skill-clawhub-deep-research-pro",
+  "skillKey": "clawhub-deep-research-pro",
+  "name": "Deep Research Pro",
+  "summary": "Multi-source deep research agent. Searches the web, synthesizes findings, and delivers cited reports. No API keys required.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "parags",
+      "features": [
+        "Multi-source deep research agent",
+        "Searches the web, synthesizes findings, and delivers cited reports",
+        "No API keys required."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deep-research-pro@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48784?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deep-research-pro",
+      "url": "https://clawhub.ai/skills/deep-research-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-pro",
+    "url": "https://clawhub.ai/skills/deep-research-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-pro-6d12bc6fc1b6a133.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deep-research-pro@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-deep-research-pro-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1269dd6f4236e9d03b83d94338a34357075c8d96244e163248778c4218ade6a1",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T14:55:32.827Z"
+}

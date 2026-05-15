@@ -53,7 +53,7 @@ fn app_checkout_router_with_state(
 ) -> Router {
     Router::new()
         .route(
-            "/app/v3/api/payments/checkout/{order_no}",
+            "/app/v3/api/billing/payments/checkout/{order_no}",
             get(fetch_checkout_status),
         )
         .with_state(AppCheckoutState {

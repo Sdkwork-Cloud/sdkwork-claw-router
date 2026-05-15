@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65473,
+  "uuid": "skill-clawhub-code-optimizer",
+  "skillKey": "clawhub-code-optimizer",
+  "name": "Code Optimizer",
+  "summary": "代码质量自动评估与优化系统 — 基于ML的代码评分、策略选择、自动优化",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Clement Gu",
+      "features": [
+        "代码质量自动评估与优化系统 — 基于ML的代码评分、策略选择、自动优化"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16643417?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-optimizer",
+      "url": "https://clawhub.ai/skills/code-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-optimizer",
+    "url": "https://clawhub.ai/skills/code-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-optimizer-f8585218ab8b8a63.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:caf658b68ce6d5790d9d5151fa5eee7c3021000e1dde31911f817214cdc411d4",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T12:25:08.976Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mandate@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mandate",
+  "skill": {
+    "id": 28937,
+    "skillKey": "clawhub-mandate",
+    "name": "Mandate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mandate",
+    "url": "https://clawhub.ai/skills/mandate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mandate-d959b638663f9a7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when enforcing spend limits on AI agent wallets, validating transactions before signing, configuring allowlists or approval workflows, detecting prompt i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "swiftadviser",
+      "userId": "s17843hzyx58twtxnacc3edd3h83k4fk",
+      "displayName": "Roman",
+      "image": "https://avatars.githubusercontent.com/u/5148967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1776341838838,
+      "changelog": "SKILL.md v1.3.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32a41a03d47c1956b4046118873ddfa8fdcd5910397e2a6f5dba47259e0f8d00"
+}

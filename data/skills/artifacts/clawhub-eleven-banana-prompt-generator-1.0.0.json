@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eleven-banana-prompt-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eleven_banana_prompt_generator",
+  "skill": {
+    "id": 63750,
+    "skillKey": "clawhub-eleven-banana-prompt-generator",
+    "name": "Banana Prompt Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eleven-banana-prompt-generator",
+    "url": "https://clawhub.ai/skills/eleven-banana-prompt-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eleven-banana-prompt-generator-3babe6cf72738d39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Banana（Imagen系列）AI文生图提示词生成技能。用于生成高质量角色图、场景图、分镜素材图、概念图的英文Prompt，同时提供中文说明、负面提示词和参数建议。触发词：Banana提示词、Banana作图、Google图片提示词、分镜素材图提示词。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elevenzhou",
+      "userId": "s17ea6dfy31b25eg9g4543skx983rteh",
+      "displayName": "EVspace",
+      "image": "https://avatars.githubusercontent.com/u/7399278?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 304,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774715046866,
+      "changelog": "- Initial release of \"banana-prompt-generator\" skill for Google Banana (Imagen series) AI image generation.\n- Generates high-quality English prompts for roles, scenes, storyboards, and concept art, with Chinese explanations.\n- Provides negative prompts and parameter suggestions for optimal results.\n- Activates with keywords such as \"Banana提示词\", \"Banana作图\", and related phrases.\n- Includes guidance on prompt structure and best practices tailored for Banana's strengths.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:997858247777cbd77a20766cab730d95ce59d35bf535c1f91ba1b4c2bbcb4102"
+}

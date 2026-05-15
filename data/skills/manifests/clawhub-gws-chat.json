@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16597,
+  "uuid": "skill-clawhub-gws-chat",
+  "skillKey": "clawhub-gws-chat",
+  "name": "Gws Chat",
+  "summary": "Google Chat: Manage Chat spaces and messages.",
+  "version": "1.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_chat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google Chat: Manage Chat spaces and messages."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-chat@1.0.14",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-chat",
+      "url": "https://clawhub.ai/skills/gws-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-chat",
+    "url": "https://clawhub.ai/skills/gws-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-chat-09095b7aa0e644c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-chat@1.0.14",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-chat-1.0.14.json",
+      "version": "1.0.14",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8c38aec5e3c196b588f9827a2572dc17b005cb482a84507a956a289ed3f92bb",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:33:22.882Z"
+}

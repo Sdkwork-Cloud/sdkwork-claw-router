@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61330,
+  "uuid": "skill-clawhub-china-stock-profitgrowth",
+  "skillKey": "clawhub-china-stock-profitgrowth",
+  "name": "China Stock Profitgrowth",
+  "summary": "净利增长选股（纯 OpenClaw 公开源版）：基于东财公开行情做成长近似筛选。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_stock_profitgrowth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luyao-inc",
+      "features": [
+        "净利增长选股（纯 OpenClaw 公开源版）：基于东财公开行情做成长近似筛选。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-stock-profitgrowth@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35760741?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-stock-profitgrowth",
+      "url": "https://clawhub.ai/skills/china-stock-profitgrowth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-stock-profitgrowth",
+    "url": "https://clawhub.ai/skills/china-stock-profitgrowth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-stock-profitgrowth-659cd07768a22864.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-stock-profitgrowth@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-stock-profitgrowth-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b839b253f5d4337b269e59a0523fe33c3c8bc7b6bb8faa72ad42f104b6a51d37",
+      "artifactSizeBytes": 2319
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T07:35:54.017Z"
+}

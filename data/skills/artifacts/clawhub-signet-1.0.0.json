@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/signet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signet",
+  "skill": {
+    "id": 14183,
+    "skillKey": "clawhub-signet",
+    "name": "Signet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signet",
+    "url": "https://clawhub.ai/skills/signet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signet-c7ee82e5fcc46223.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Signet onchain advertising on Hunt Town. Use when the user wants to check spotlight ad prices, list current ads/signatures, or post a URL to the Signet spotlight. Supports x402 payment protocol for programmatic ad placement b."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sebayaki",
+      "userId": "publishers:sebayaki",
+      "displayName": "sebayaki",
+      "image": "https://avatars.githubusercontent.com/u/1332279?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770624760886,
+      "changelog": "Initial release: AI agent spotlight ad posting via x402 on Base mainnet",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6334fa8b6187815fc29029b3068eb13c4f53ae7023e28cd9f5ae4c5da2e48008"
+}

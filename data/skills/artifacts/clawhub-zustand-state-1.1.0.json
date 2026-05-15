@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zustand-state@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zustand_state",
+  "skill": {
+    "id": 32217,
+    "skillKey": "clawhub-zustand-state",
+    "name": "Zustand State"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zustand-state",
+    "url": "https://clawhub.ai/skills/zustand-state",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zustand-state-512d19e1a38626fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Zustand state management for React and vanilla JavaScript. Use when creating stores, using selectors, persisting state to localStorage, integrating devtools,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774632770038,
+      "changelog": "- Expanded documentation with usage examples, reference patterns, and performance tips.\n- Added sections for state updates, selectors, shallow comparison, and access outside React.\n- Included quick reference code for both React and vanilla JavaScript usage.\n- Linked to additional documentation for middleware, patterns, and TypeScript.\n- Updated description to summarize triggers and use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cadc78bc6a43bc307b0ae9d75d583599c97398b82509f27e1185d28bdb28d0c4"
+}

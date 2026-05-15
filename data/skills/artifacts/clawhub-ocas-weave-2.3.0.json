@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocas-weave@2.3.0",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocas_weave",
+  "skill": {
+    "id": 25860,
+    "skillKey": "clawhub-ocas-weave",
+    "name": "Weave"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocas-weave",
+    "url": "https://clawhub.ai/skills/ocas-weave",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocas-weave-142c5e99af03d319.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Private provenance-backed social graph. Maintains queryable records of people, relationships, preferences, and shared experiences for recall, gifting, hostin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "indigokarasu",
+      "userId": "s17bp0q5q5x87yfrmb4876eywh83rcts",
+      "displayName": "Indigo Karasu",
+      "image": "https://avatars.githubusercontent.com/u/265148029?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.3.0",
+      "createdAt": 1774683362993,
+      "changelog": "**ocas-weave 2.3.0 changelog**\n\n- Added README.md for general documentation.\n- Introduced references/init_pattern.md for database initialization pattern guidance.\n- Updated SKILL.md:\n  - Simplified and clarified skill description and trigger phrases.\n  - Provided clearer config.json example with updated version.\n  - Linked to new references and improved documentation structure.\n  - Added explicit instructions for skill updating via `weave.update`.\n  - Detailed run completion and journaling requirements.\n- Improved modularity of documentation by splitting out database initialization and import/export instructions.\n- Minor clarifications and error fixes throughout documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e60f9510518c72a5771e8391d9d965af2fc6351806b3bfb08f96b20714969c89"
+}

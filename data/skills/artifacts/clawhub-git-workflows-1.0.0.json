@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-workflows@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_workflows",
+  "skill": {
+    "id": 8490,
+    "skillKey": "clawhub-git-workflows",
+    "name": "Git Workflows"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-workflows",
+    "url": "https://clawhub.ai/skills/git-workflows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-workflows-7015e34bea541195.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced git operations beyond add/commit/push. Use when rebasing, bisecting bugs, using worktrees for parallel development, recovering with reflog, managing subtrees/submodules, resolving merge conflicts, cherry-picking across branches, o."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gitgoodordietrying",
+      "userId": "publishers:gitgoodordietrying",
+      "displayName": "gitgoodordietrying",
+      "image": "https://avatars.githubusercontent.com/u/116975874?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 11921,
+      "installsAllTime": 115,
+      "installsCurrent": 106,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770158556308,
+      "changelog": "Initial release: Interactive rebase, bisect, worktree, reflog recovery, cherry-pick, subtree/submodule, sparse checkout, conflict resolution, stash patterns, blame archaeology",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0e359ec654d42c2faf6275fb160bb6f8818cfbd52a137a1b1457b663257674e6"
+}

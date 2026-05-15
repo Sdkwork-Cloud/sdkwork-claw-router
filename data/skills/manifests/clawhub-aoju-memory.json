@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34630,
+  "uuid": "skill-clawhub-aoju-memory",
+  "skillKey": "clawhub-aoju-memory",
+  "name": "Aoju Memory",
+  "summary": "Long-term memory, learning, and self-evolution for the agent. Activates on session start (SOUL.md/USER.md context), after significant decisions, on feedback,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aoju_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chaibaoqing",
+      "features": [
+        "Long-term memory, learning, and self-evolution for the agent",
+        "Activates on session start (SOUL.md/USER.md context), after significant decisions, on feedback,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aoju-memory@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217264083?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aoju-memory",
+      "url": "https://clawhub.ai/skills/aoju-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aoju-memory",
+    "url": "https://clawhub.ai/skills/aoju-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aoju-memory-55ff903990cdd8ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aoju-memory@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aoju-memory-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f23490464cd398cfd7f775146154a7d2141220c9b6c4b9c3610d68de14b4c5a",
+      "artifactSizeBytes": 2107
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T08:59:07.924Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25855,
+  "uuid": "skill-clawhub-memory-harness",
+  "skillKey": "clawhub-memory-harness",
+  "name": "Memory Harness",
+  "summary": "Runtime-enforced memory harness for OpenClaw. Implements 3-stage recall (session preflight, triggered recall, pre-execution gate) with intent classification,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_harness",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "taka3693",
+      "features": [
+        "Runtime-enforced memory harness for OpenClaw",
+        "Implements 3-stage recall (session preflight, triggered recall, pre-execution gate) with intent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-harness@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216532816?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-harness",
+      "url": "https://clawhub.ai/skills/memory-harness"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-harness",
+    "url": "https://clawhub.ai/skills/memory-harness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-harness-3ef62c39d8c2ed35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-harness@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-harness-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87c4b708116da422ae30e9cdf31e41f5eee2723b39ab4925b7a7063c87f81fc2",
+      "artifactSizeBytes": 2553
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T12:01:58.132Z"
+}

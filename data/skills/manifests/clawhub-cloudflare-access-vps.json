@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27731,
+  "uuid": "skill-clawhub-cloudflare-access-vps",
+  "skillKey": "clawhub-cloudflare-access-vps",
+  "name": "Cloudflare Access VPS",
+  "summary": "Add Cloudflare Zero Trust Access authentication to a VPS-hosted OpenClaw agent. Puts a login screen (email OTP, Google SSO, GitHub, or TOTP MFA) in front of...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_access_vps",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maverick-software",
+      "features": [
+        "Add Cloudflare Zero Trust Access authentication to a VPS-hosted OpenClaw agent",
+        "Puts a login screen (email OTP, Google SSO, GitHub, or TOTP MFA) in front of..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloudflare-access-vps@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85259593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloudflare-access-vps",
+      "url": "https://clawhub.ai/skills/cloudflare-access-vps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-access-vps",
+    "url": "https://clawhub.ai/skills/cloudflare-access-vps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-access-vps-f62c5f3ba5f95a61.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloudflare-access-vps@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloudflare-access-vps-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ee0970591d565d66b5d687828f1f20aaf73650b445b85d668f2d3a475f40fe9",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T19:40:56.820Z"
+}

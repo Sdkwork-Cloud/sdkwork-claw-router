@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9006,
+  "uuid": "skill-clawhub-agent-chronicle",
+  "skillKey": "clawhub-agent-chronicle",
+  "name": "Agent Chronicle",
+  "summary": "AI-powered diary generation for agents - creates rich, reflective journal entries (400-600 words) with Quote Hall of Fame, Curiosity Backlog, Decision Archae...",
+  "version": "0.7.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_chronicle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robby",
+      "features": [
+        "AI-powered diary generation for agents",
+        "creates rich, reflective journal entries (400-600 words) with Quote Hall of Fame, Curiosity Bac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-chronicle@0.7.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239660374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-chronicle",
+      "url": "https://clawhub.ai/skills/agent-chronicle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-chronicle",
+    "url": "https://clawhub.ai/skills/agent-chronicle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-chronicle-f29ce392a44c4b0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-chronicle@0.7.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-chronicle-0.7.2.json",
+      "version": "0.7.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b347549c021ff1c7da4f2616466cefa190dd866322d240286abb3109fa09e5aa",
+      "artifactSizeBytes": 2192
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T19:48:36.383Z"
+}

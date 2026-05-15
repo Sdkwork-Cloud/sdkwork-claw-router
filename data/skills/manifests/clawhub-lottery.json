@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25593,
+  "uuid": "skill-clawhub-lottery",
+  "skillKey": "clawhub-lottery",
+  "name": "Lottery",
+  "summary": "Generate lottery numbers and check results. Use when picking numbers for draws.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lottery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Generate lottery numbers and check results",
+        "Use when picking numbers for draws."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lottery@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lottery",
+      "url": "https://clawhub.ai/skills/lottery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lottery",
+    "url": "https://clawhub.ai/skills/lottery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lottery-be7f94bb10c4be7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lottery@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lottery-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:343685f35d78eef50c78c6ddc4ea5c6d943c6404811759503960b67f08a0a8b0",
+      "artifactSizeBytes": 1778
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:10:34.365Z"
+}

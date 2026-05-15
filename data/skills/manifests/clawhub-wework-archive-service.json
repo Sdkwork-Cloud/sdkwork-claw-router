@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72587,
+  "uuid": "skill-clawhub-wework-archive-service",
+  "skillKey": "clawhub-wework-archive-service",
+  "name": "企业微信存档服务",
+  "summary": "企业微信整合服务技能 - 包含普通回调和会话内容存档功能",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wework_archive_service",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cyl2835",
+      "features": [
+        "企业微信整合服务技能",
+        "包含普通回调和会话内容存档功能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wework-archive-service@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32183498?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wework-archive-service",
+      "url": "https://clawhub.ai/skills/wework-archive-service"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wework-archive-service",
+    "url": "https://clawhub.ai/skills/wework-archive-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wework-archive-service-d46f40cc254d52dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wework-archive-service@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wework-archive-service-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52647e03b376f46dc95c8ab1ac1410a5a6438732dfdc8b007bb8d3845bea0f35",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T04:10:15.156Z"
+}

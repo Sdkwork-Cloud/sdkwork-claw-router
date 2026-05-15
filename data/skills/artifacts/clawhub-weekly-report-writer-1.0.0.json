@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weekly-report-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_report_writer",
+  "skill": {
+    "id": 68183,
+    "skillKey": "clawhub-weekly-report-writer",
+    "name": "weekly-report-writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-report-writer",
+    "url": "https://clawhub.ai/skills/weekly-report-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-report-writer-3cb013e935420242.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用于撰写结构清晰的中文周报。只要用户提到“周报、weekly report、本周总结、工作复盘、下周计划、给老板汇报”，即使没有明确说“写周报”，也应主动使用此技能来生成可直接发送的周报内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "epsilon-rhk",
+      "userId": "s179eymcg4wdxrdhhj8ffh3m9583hy57",
+      "displayName": "epsilon-rhk",
+      "image": "https://avatars.githubusercontent.com/u/80936572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 871,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773737730577,
+      "changelog": "- Initial release of the weekly-report-writer skill.\n- Enables automatic generation of clear, structured Chinese weekly reports when triggered by keywords related to work summaries or progress reporting.\n- Follows a consistent template focusing on completed work, quantifiable results, risks/issues, and next week’s plans.\n- Prioritizes concise, result-oriented statements using “action + result + impact” format.\n- Clearly marks incomplete information with placeholders for further input.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b137f08a5cc209df27aa612a40a2e58813a58c1ff2e197ddaceb1988b1c419a0"
+}

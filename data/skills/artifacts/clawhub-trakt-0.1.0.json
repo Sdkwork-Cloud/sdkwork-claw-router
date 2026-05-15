@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trakt@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trakt",
+  "skill": {
+    "id": 11205,
+    "skillKey": "clawhub-trakt",
+    "name": "Trakt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trakt",
+    "url": "https://clawhub.ai/skills/trakt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trakt-89248a488962a0eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track and view your watched movies and TV shows via trakt.tv. Use when user asks about their watch history, what they've been watching, or wants to search for movies/shows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mjrussell",
+      "userId": "publishers:mjrussell",
+      "displayName": "Matt Russell",
+      "image": "https://avatars.githubusercontent.com/u/1641895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2192,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1767853147869,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:69e1667f8589372000b26e3f769cd4655e4214e0e0dd80d9e835f10b8a9757f2"
+}

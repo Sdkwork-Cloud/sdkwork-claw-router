@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23034,
+  "uuid": "skill-clawhub-food-safety-sentiment-monitor",
+  "skillKey": "clawhub-food-safety-sentiment-monitor",
+  "name": "Food Safety Sentiment Monitor (Kevin)",
+  "summary": "Monitors food safety sentiment on Chinese social platforms, detects negative events, grades risks, and generates PR plans and reports automatically.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.food_safety_sentiment_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stylemonster",
+      "features": [
+        "Monitors food safety sentiment on Chinese social platforms, detects negative events, grades ris."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/food-safety-sentiment-monitor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183914781?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "food-safety-sentiment-monitor",
+      "url": "https://clawhub.ai/skills/food-safety-sentiment-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "food-safety-sentiment-monitor",
+    "url": "https://clawhub.ai/skills/food-safety-sentiment-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/food-safety-sentiment-monitor-6ca69cf4817f42e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/food-safety-sentiment-monitor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-food-safety-sentiment-monitor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:189083f382f9625e736523d220dcb267aa367a4c5855241c5a772c82a01b3054",
+      "artifactSizeBytes": 2091
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T15:47:47.677Z"
+}

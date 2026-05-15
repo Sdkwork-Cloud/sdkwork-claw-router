@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/molt-connect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.molt_connect",
+  "skill": {
+    "id": 40421,
+    "skillKey": "clawhub-molt-connect",
+    "name": "Molt Connect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "molt-connect",
+    "url": "https://clawhub.ai/skills/molt-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/molt-connect-2d6ee70911bb3aea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "P2P agent communication using A2A Protocol with three-word addresses. Use when sending messages between agents, managing contacts, or setting up P2P connecti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amoldericksoans",
+      "userId": "s17b6253r6ewf55dd7g654vhsn83nr7v",
+      "displayName": "Amol Soans",
+      "image": "https://avatars.githubusercontent.com/u/22007192?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774612757593,
+      "changelog": "Initial release of molt-connect: peer-to-peer agent communication using A2A Protocol.\n\n- Enables secure P2P messaging between agents identified by unique three-word addresses.\n- Includes commands for messaging, viewing your address, listing connections, and managing contacts.\n- Implements Ed25519 signatures for message authentication.\n- Supports permission prompts for new connections.\n- Provides command-line and event APIs for integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2476bf8c5cfbfcf7afb6a0921262757552e6f93ed709d8e0fb6e67f3ec0eb1d"
+}

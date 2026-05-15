@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/corespeed-excalidraw-rendering@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.corespeed_excalidraw_rendering",
+  "skill": {
+    "id": 40672,
+    "skillKey": "clawhub-corespeed-excalidraw-rendering",
+    "name": "Corespeed Excalidraw Rendering"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "corespeed-excalidraw-rendering",
+    "url": "https://clawhub.ai/skills/corespeed-excalidraw-rendering",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/corespeed-excalidraw-rendering-8f4ccacea69e6235.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Render Excalidraw (.excalidraw) files to PNG images and take screenshots of web pages using headless Chrome via the brow CLI. Use when a user asks to render..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zypher-agent",
+      "userId": "s17db0yzvk3x0rrrjkc7rx55mn83mtx4",
+      "displayName": "Zypher Agent",
+      "image": "https://avatars.githubusercontent.com/u/254776469?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774551322569,
+      "changelog": "Initial release of corespeed-excalidraw-rendering.\n\n- Supports rendering Excalidraw (.excalidraw) files to PNG images.\n- Enables capturing website screenshots using headless Chrome via the brow CLI.\n- Includes setup instructions for installing and using the brow CLI and managed browser.\n- Provides example commands for rendering diagrams and screenshots.\n- Offers official support channels for assistance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ccc965eb302abc698259828856058460b7f68986327e79a8d09b4803929dce9"
+}

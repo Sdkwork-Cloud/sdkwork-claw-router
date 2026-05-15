@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fastloop@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fastloop",
+  "skill": {
+    "id": 17920,
+    "skillKey": "clawhub-fastloop",
+    "name": "Polymarket Fast Loop Improved"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fastloop",
+    "url": "https://clawhub.ai/skills/fastloop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fastloop-eaecceadab9e1696.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade Polymarket BTC/ETH/SOL 5-minute and 15-minute fast markets using multi-signal CEX momentum. Adds funding rate confirmation, order book imbalance, time-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oryselias",
+      "userId": "publishers:oryselias",
+      "displayName": "oryselias",
+      "image": "https://avatars.githubusercontent.com/u/76832317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 723,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771961675872,
+      "changelog": "Polymarket FastLoop Trader (Improved) — v1.0.0\n\n- Adds multi-signal edge filtering: momentum, funding rate, and order book imbalance confirmations.\n- Implements exact, fee-accurate EV math and volatility-adjusted position sizing.\n- Introduces real-time win-rate tracking, calibration stats, and a comprehensive P&L log.\n- Skips trades during low-liquidity UTC hours and supports time-sweet-spot market selection.\n- Fully configurable via command-line settings; defaults to safe paper mode.\n- Extensive documentation and usage instructions provided in SKILL.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3550a10538df116fd5833dec03a5a18aec48f3cec51f6286fc9eba4eba532bf7"
+}

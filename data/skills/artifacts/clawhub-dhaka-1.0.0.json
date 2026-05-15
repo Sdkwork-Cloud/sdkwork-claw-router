@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dhaka@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dhaka",
+  "skill": {
+    "id": 54140,
+    "skillKey": "clawhub-dhaka",
+    "name": "Dhaka"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dhaka",
+    "url": "https://clawhub.ai/skills/dhaka",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dhaka-de90643718108ec9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed historical, economic, and demographic insights on Dhaka, Bangladesh’s capital and a global garment industry hub with rapid urban growth."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778015197546,
+      "changelog": "Initial release introducing the \"dhaka\" skill:\n\n- Offers a historical timeline of Dhaka from the 7th century to the present\n- Details Dhaka’s key economic sectors, including the global garment industry\n- Provides strategic analysis of Dhaka’s economic strengths and advantages\n- Presents quick facts about population, export figures, and urban density\n- Highlights unique facts about Dhaka’s culture and history, such as its famous muslin and rickshaw population",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb99ba4fea5322cb74bdc5e2d9e764644b5dbedd84cec7e852bba68a0eec13be"
+}

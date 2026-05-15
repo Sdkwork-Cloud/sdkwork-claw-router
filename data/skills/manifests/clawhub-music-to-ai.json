@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48809,
+  "uuid": "skill-clawhub-music-to-ai",
+  "skillKey": "clawhub-music-to-ai",
+  "name": "Music To Ai",
+  "summary": "Get AI-generated music video ready to post, without touching a single slider. Upload your audio files (MP3, WAV, AAC, FLAC, up to 200MB), say something like...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_to_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mhogan2013-9",
+      "features": [
+        "Get AI-generated music video ready to post, without touching a single slider",
+        "Upload your audio files (MP3, WAV, AAC, FLAC, up to 200MB), say something like..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/music-to-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208827708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "music-to-ai",
+      "url": "https://clawhub.ai/skills/music-to-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-to-ai",
+    "url": "https://clawhub.ai/skills/music-to-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-to-ai-6b7d9f7c84ad4f30.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/music-to-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-music-to-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5c4c8f83a16b85ec923dd513d677caedecc57d28e3f0907e985cd7f754fd2c4",
+      "artifactSizeBytes": 2428
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T22:43:56.973Z"
+}

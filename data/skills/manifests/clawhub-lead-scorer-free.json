@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16941,
+  "uuid": "skill-clawhub-lead-scorer-free",
+  "skillKey": "clawhub-lead-scorer-free",
+  "name": "Lead Scorer",
+  "summary": "Score leads 0-100 by analyzing a domain's website, DNS, sitemap, and social presence. Uses customizable JSON scoring profiles so users can define what signal...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lead_scorer_free",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "psyduckler",
+      "features": [
+        "Score leads 0-100 by analyzing a domain's website, DNS, sitemap, and social presence",
+        "Uses customizable JSON scoring profiles so users can define what signal..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lead-scorer-free@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260153069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lead-scorer-free",
+      "url": "https://clawhub.ai/skills/lead-scorer-free"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lead-scorer-free",
+    "url": "https://clawhub.ai/skills/lead-scorer-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lead-scorer-free-4671e792c82b4239.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lead-scorer-free@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lead-scorer-free-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c2021cf6d7f3f927fc96f710fa2ce65d2bdfa01b134bcab51dd0296478e9c6c",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T16:02:03.880Z"
+}

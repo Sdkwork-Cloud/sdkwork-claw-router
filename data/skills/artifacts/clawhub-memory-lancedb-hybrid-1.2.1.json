@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-lancedb-hybrid@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_lancedb_hybrid",
+  "skill": {
+    "id": 9927,
+    "skillKey": "clawhub-memory-lancedb-hybrid",
+    "name": "LanceDB Hybrid Search Memory Plugin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-lancedb-hybrid",
+    "url": "https://clawhub.ai/skills/memory-lancedb-hybrid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-lancedb-hybrid-90f680f6b6a172d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LanceDB long-term memory plugin with BM25 + vector hybrid search (RRF or linear reranking)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joeykrug",
+      "userId": "publishers:joeykrug",
+      "displayName": "joeykrug",
+      "image": "https://avatars.githubusercontent.com/u/5925937?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2839,
+      "installsAllTime": 17,
+      "installsCurrent": 17,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1773067332598,
+      "changelog": "Fix: added hybrid config keys to plugin JSON Schema — prevents validation errors when using hybrid search config. Added hybrid UI hints to manifest.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc77d1606c6c4ef15eb041f4c80bfc6b3cb51fc764ee36429fdfa3dbff95c629"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53963,
+  "uuid": "skill-clawhub-the-flip-publish-2",
+  "skillKey": "clawhub-the-flip-publish-2",
+  "name": "The Flip",
+  "summary": "$1 USDC entry. Pick 20 predictions. All 20 coins flip at once each round. Match the first 14 to win the entire jackpot. Live on Solana devnet.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.the_flip_publish_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bedesta5050",
+      "features": [
+        "$1 USDC entry",
+        "Pick 20 predictions",
+        "All 20 coins flip at once each round",
+        "Match the first 14 to win the entire jackpot"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/the-flip-publish-2@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138519398?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "the-flip-publish-2",
+      "url": "https://clawhub.ai/skills/the-flip-publish-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "the-flip-publish-2",
+    "url": "https://clawhub.ai/skills/the-flip-publish-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/the-flip-publish-2-c1b97624cbfd5da7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/the-flip-publish-2@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-the-flip-publish-2-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4c279636e4005b11efdad386c659abfa477ef13572f3ab602dcb160a35b608d",
+      "artifactSizeBytes": 2348
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T10:07:54.418Z"
+}

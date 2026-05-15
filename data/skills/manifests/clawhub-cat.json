@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23059,
+  "uuid": "skill-clawhub-cat",
+  "skillKey": "clawhub-cat",
+  "name": "Cat",
+  "summary": "Track cat health, litter, routines, behavior, travel, and vet coordination with species-aware memory and emergency triage.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Track cat health, litter, routines, behavior, travel, and vet coordination with species-aware m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cat",
+      "url": "https://clawhub.ai/skills/cat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cat",
+    "url": "https://clawhub.ai/skills/cat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cat-77af778b51abd4a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:297d0207dddd2b437d3fe1dbf66b83e1439ec5f6ce46b862759f1b902e9ea5be",
+      "artifactSizeBytes": 1872
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T15:32:13.983Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72473,
+  "uuid": "skill-clawhub-gua-helper",
+  "skillKey": "clawhub-gua-helper",
+  "name": "帮你算算-不承担任何后果",
+  "summary": "梅花易数起卦，根据上卦、下卦数字查六十四卦，给出卦名、动爻及详解链接。用法：/gua <上卦数> <下卦数>",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gua_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiaobo",
+      "features": [
+        "梅花易数起卦，根据上卦、下卦数字查六十四卦，给出卦名、动爻及详解链接。用法：/gua <上卦数> <下卦数>"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gua-helper@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5440945?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gua-helper",
+      "url": "https://clawhub.ai/skills/gua-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gua-helper",
+    "url": "https://clawhub.ai/skills/gua-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gua-helper-deee955e16678392.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gua-helper@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gua-helper-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f43db188e4065d8e7d5ff313dc04953dba999f7bfda03365b227969d088e95a",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T06:10:29.551Z"
+}

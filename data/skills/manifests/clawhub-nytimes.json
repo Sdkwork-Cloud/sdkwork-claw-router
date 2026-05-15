@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71804,
+  "uuid": "skill-clawhub-nytimes",
+  "skillKey": "clawhub-nytimes",
+  "name": "Nytimes",
+  "summary": "分析纽约时报数字订阅成功及多元变现，探讨传统媒体转型与应对科技巨头流量挑战的策略。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nytimes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "分析纽约时报数字订阅成功及多元变现，探讨传统媒体转型与应对科技巨头流量挑战的策略。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nytimes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nytimes",
+      "url": "https://clawhub.ai/skills/nytimes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nytimes",
+    "url": "https://clawhub.ai/skills/nytimes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nytimes-314658ac079605bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nytimes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nytimes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcbf7bdb08da3560606fd2931502252b9f3747d4d2cef3e9ea149bab346de9e8",
+      "artifactSizeBytes": 2159
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T23:03:35.917Z"
+}

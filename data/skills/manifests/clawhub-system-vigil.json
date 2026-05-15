@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21275,
+  "uuid": "skill-clawhub-system-vigil",
+  "skillKey": "clawhub-system-vigil",
+  "name": "System Vigil",
+  "summary": "Monitor host system health (Disk, RAM, CPU). Returns structured JSON status for predictive maintenance.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.system_vigil",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "splicer scorn",
+      "features": [
+        "Monitor host system health (Disk, RAM, CPU)",
+        "Returns structured JSON status for predictive maintenance."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/system-vigil@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146873484?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "system-vigil",
+      "url": "https://clawhub.ai/skills/system-vigil"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "system-vigil",
+    "url": "https://clawhub.ai/skills/system-vigil",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/system-vigil-44035071d48e1712.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/system-vigil@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-system-vigil-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02007ea443338eb2048108128ae8eca4051e7f961d7069a923fabf4a270f923d",
+      "artifactSizeBytes": 2121
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T03:26:36.621Z"
+}

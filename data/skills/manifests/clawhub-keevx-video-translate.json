@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15671,
+  "uuid": "skill-clawhub-keevx-video-translate",
+  "skillKey": "clawhub-keevx-video-translate",
+  "name": "keevx-video-translate",
+  "summary": "Translate videos into a specified target language using the Keevx API. Supports audio-only translation, subtitle generation, and dynamic duration adjustment....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keevx_video_translate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baidu-xiling",
+      "features": [
+        "Translate videos into a specified target language using the Keevx API",
+        "Supports audio-only translation, subtitle generation, and dynamic duration adjustment...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/keevx-video-translate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218880360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "keevx-video-translate",
+      "url": "https://clawhub.ai/skills/keevx-video-translate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keevx-video-translate",
+    "url": "https://clawhub.ai/skills/keevx-video-translate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keevx-video-translate-270f54eff1572318.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/keevx-video-translate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-keevx-video-translate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0c432c87b4ae97116bcbcf8c2def53358b3ea074ad975ccc1d5b89586763e9d",
+      "artifactSizeBytes": 2475
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T11:25:18.669Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67315,
+  "uuid": "skill-clawhub-gold-analyst",
+  "skillKey": "clawhub-gold-analyst",
+  "name": "liyan de skill",
+  "summary": "黄金投资分析 Agent。当用户询问任何与黄金投资相关的问题时，务必使用此 skill——包括但不限于\"今天黄金能买吗\"、\"现在金价高不高\"、\"黄金趋势怎么样\"、\"要不要买黄金\"、\"金价多少\"、\"黄金值得投资吗\"、\"黄金ETF哪个好\"、\"买黄金基金\"等。此 skill 会自动搜索实时国内外金价、历史价格走势、分析...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gold_analyst",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SakuraLeanne",
+      "features": [
+        "黄金投资分析 Agent。当用户询问任何与黄金投资相关的问题时，务必使用此 skill——包括但不限于\"今天黄金能买吗\"、\"现在金价高不高\"、\"黄金趋势怎么样\"、\"要不要买黄金\"、\"金价多少."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gold-analyst@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37390452?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gold-analyst",
+      "url": "https://clawhub.ai/skills/gold-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gold-analyst",
+    "url": "https://clawhub.ai/skills/gold-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gold-analyst-fbf9c65587e83703.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gold-analyst@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gold-analyst-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07320aa2d695a168d5afbfa7070591c870be95a1e27b4a43510e654b2d77c772",
+      "artifactSizeBytes": 2590
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T08:50:48.712Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38877,
+  "uuid": "skill-clawhub-code-quality-reviewer",
+  "skillKey": "clawhub-code-quality-reviewer",
+  "name": "Code Quality Reviewer",
+  "summary": "Analyzes code for bugs, security risks, complexity, and style, providing detailed issues and actionable improvement suggestions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_quality_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Analyzes code for bugs, security risks, complexity, and style, providing detailed issues and ac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-quality-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-quality-reviewer",
+      "url": "https://clawhub.ai/skills/code-quality-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-quality-reviewer",
+    "url": "https://clawhub.ai/skills/code-quality-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-quality-reviewer-f7b36597fe15ac21.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-quality-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-quality-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c295b2b73b60ae2cb40623784ae3a6f23cad51eaea8a060e7dd0399e96089cb",
+      "artifactSizeBytes": 2281
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T05:08:15.874Z"
+}

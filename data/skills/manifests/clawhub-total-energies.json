@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63490,
+  "uuid": "skill-clawhub-total-energies",
+  "skillKey": "clawhub-total-energies",
+  "name": "Total Energies",
+  "summary": "提供 TotalEnergies 公司信息，涵盖其能源转型、全球油气及可再生能源业务及法国能源市场分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.total_energies",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供 TotalEnergies 公司信息，涵盖其能源转型、全球油气及可再生能源业务及法国能源市场分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/total-energies@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "total-energies",
+      "url": "https://clawhub.ai/skills/total-energies"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "total-energies",
+    "url": "https://clawhub.ai/skills/total-energies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/total-energies-499663cca97c619e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/total-energies@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-total-energies-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ade5d40255ff0fbef09e722f2bf9acb4d5800da6fe6ea8317c2003f02461eff4",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T10:00:16.689Z"
+}

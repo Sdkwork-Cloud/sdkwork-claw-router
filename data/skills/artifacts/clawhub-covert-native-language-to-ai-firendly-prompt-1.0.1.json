@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/covert-native-language-to-ai-firendly-prompt@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.covert_native_language_to_ai_firendly_prompt",
+  "skill": {
+    "id": 22995,
+    "skillKey": "clawhub-covert-native-language-to-ai-firendly-prompt",
+    "name": "Prompt Refiner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "covert-native-language-to-ai-firendly-prompt",
+    "url": "https://clawhub.ai/skills/covert-native-language-to-ai-firendly-prompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/covert-native-language-to-ai-firendly-prompt-504eed7bfd5e7a99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transforms casual or voice-transcribed user requests into precise, AI-optimized prompts. Handles mixed languages, vague input, and ambiguity. Reduces task ex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamesxu81",
+      "userId": "s177b9d96rbw9z94vmdz55dj8s83m349",
+      "displayName": "jamesxu81",
+      "image": "https://avatars.githubusercontent.com/u/25913477?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774831341993,
+      "changelog": "**Expanded prompt engineering and best practices integrated.**\n\n- Added prompt engineering best practices, including persona assignment, few-shot examples, chain of thought, and prompt chaining.\n- Introduced the Google TCREI framework for structured prompt design.\n- Now explicitly assigns AI personas relevant to each task type.\n- Includes a quick checklist to ensure prompt clarity, context, requirements, and output format.\n- Added references/examples.md and references/techniques.md for in-depth techniques and sample prompts.\n- Expanded guidance for handling advanced and multi-step tasks, including anti-patterns to avoid.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ff3d428656b6884c76aef85ff31c1429c252323311c97933a3b14054b58a01f"
+}

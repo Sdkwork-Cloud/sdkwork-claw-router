@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16801,
+  "uuid": "skill-clawhub-telcall-twilio",
+  "skillKey": "clawhub-telcall-twilio",
+  "name": "TelCall Twilio",
+  "summary": "Make emergency phone calls via Twilio. Use when you need to call someone and play a voice message programmatically (e.g., server down alerts, security notifi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telcall_twilio",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "laosun",
+      "features": [
+        "Make emergency phone calls via Twilio",
+        "Use when you need to call someone and play a voice message programmatically (e.g., server down."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telcall-twilio@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14806343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telcall-twilio",
+      "url": "https://clawhub.ai/skills/telcall-twilio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telcall-twilio",
+    "url": "https://clawhub.ai/skills/telcall-twilio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telcall-twilio-f5910d4f03b51ece.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telcall-twilio@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-telcall-twilio-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:829fe84ed1944850a6626a74a07f41adc26e31cb4f336d42cf33db9ccc1424a0",
+      "artifactSizeBytes": 1908
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T11:08:14.091Z"
+}

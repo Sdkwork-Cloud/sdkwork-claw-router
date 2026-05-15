@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17104,
+  "uuid": "skill-clawhub-granola-mcp",
+  "skillKey": "clawhub-granola-mcp",
+  "name": "Granola Meeting Notes (MCP)",
+  "summary": "Access Granola AI meeting notes via MCP (mcporter). Query meetings, list by date range, get full details, and pull verbatim transcripts. Use when the user as...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.granola_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bholagabbar",
+      "features": [
+        "Access Granola AI meeting notes via MCP (mcporter)",
+        "Query meetings, list by date range, get full details, and pull verbatim transcripts",
+        "Use when the user as..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/granola-mcp@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11693595?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "granola-mcp",
+      "url": "https://clawhub.ai/skills/granola-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "granola-mcp",
+    "url": "https://clawhub.ai/skills/granola-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/granola-mcp-df4d5ae8db88ce36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/granola-mcp@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-granola-mcp-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9808d8206574e33b8a0f5147cda68cd3ea7e2ac0c156e89962e35c0bc310d4b",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T15:11:26.039Z"
+}

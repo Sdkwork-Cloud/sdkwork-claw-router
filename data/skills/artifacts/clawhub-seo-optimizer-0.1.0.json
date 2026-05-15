@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seo-optimizer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seo_optimizer",
+  "skill": {
+    "id": 8592,
+    "skillKey": "clawhub-seo-optimizer",
+    "name": "Seo Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seo-optimizer",
+    "url": "https://clawhub.ai/skills/seo-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seo-optimizer-f34b3307e08bae99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when analyzing HTML/CSS websites for SEO optimization, fixing SEO issues, generating SEO reports, or implementing SEO best practices. Use when the user requests SEO audits, optimization, meta tag improvements, sch."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 8409,
+      "installsAllTime": 56,
+      "installsCurrent": 48,
+      "stars": 16,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769869520674,
+      "changelog": "Initial release of the SEO Optimizer skill.\n\n- Analyze HTML/CSS websites for critical and technical SEO issues.\n- Generate detailed, prioritized SEO audit reports (human-readable and JSON output).\n- Suggest and guide fixes for meta tags, headings, alt attributes, markup, and more.\n- Automate sitemap generation, including priority/changefreq estimates.\n- Provide robots.txt management templates and instructions.\n- Guide schema markup implementation with common use cases and testing resources.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:beb33d2968ba544a669d9816ddf697a6d86d9deda2500341c8dfed47b9576442"
+}

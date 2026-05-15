@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/computer-use-linux@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.computer_use_linux",
+  "skill": {
+    "id": 26192,
+    "skillKey": "clawhub-computer-use-linux",
+    "name": "Computer Use Linux"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "computer-use-linux",
+    "url": "https://clawhub.ai/skills/computer-use-linux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/computer-use-linux-5422b14a0a92dcd5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Top-level Linux computer-use skill with a bundled standalone runtime that bootstraps itself without any local Claude installation, private native modules, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wimi321",
+      "userId": "s177xf3genmsr92b653psf6fas83zzd8",
+      "displayName": "wimi321",
+      "image": "https://avatars.githubusercontent.com/u/34830250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775042556038,
+      "changelog": "Fix Linux shared platform typing and system-key blocklist logic, sync bundled skill payload, and upgrade multilingual README plus validation notes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:191055104bba7dc6099d19599aa2a665d2b814ebbf311a44ceefaa59f587016a"
+}

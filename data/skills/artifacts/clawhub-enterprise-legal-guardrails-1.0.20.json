@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/enterprise-legal-guardrails@1.0.20",
+  "version": "1.0.20",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enterprise_legal_guardrails",
+  "skill": {
+    "id": 13417,
+    "skillKey": "clawhub-enterprise-legal-guardrails",
+    "name": "Enterprise Legal Guardrails Public"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enterprise-legal-guardrails",
+    "url": "https://clawhub.ai/skills/enterprise-legal-guardrails",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enterprise-legal-guardrails-c8d2c79e6c522430.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Legal/compliance guardrails for outbound OpenClaw actions (anti-spam, defamation, privacy, financial claims)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lawyered0",
+      "userId": "publishers:lawyered0",
+      "displayName": "Lawyered",
+      "image": "https://avatars.githubusercontent.com/u/4802498?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1231,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "1.0.20",
+      "createdAt": 1771474980142,
+      "changelog": "**Added explicit --execute flag requirement for guard_and_run.py wrapper commands**\n\n- The guard_and_run.py script now requires the explicit --execute flag to actually run outbound commands; without it, runs are validation-only.\n- Documentation and usage examples in SKILL.md updated to include the new --execute requirement.\n- Clarified help text and usage guidance to reduce the risk of accidental command execution.\n- Tests updated to cover --execute flag enforcement.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:21778772a14be014bd5c7a64279184afe598b389056f87238bb83898e4e65267"
+}

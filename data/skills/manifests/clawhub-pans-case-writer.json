@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62520,
+  "uuid": "skill-clawhub-pans-case-writer",
+  "skillKey": "clawhub-pans-case-writer",
+  "name": "Pans Case Writer",
+  "summary": "自动将客户成功案例包装为 Case Study（案例研究）。支持背景 / 挑战 / 方案 / 成果四段式结构化模板，支持 Markdown / PDF / HTML 多种格式导出， 提供交互式创建模式逐步引导输入关键信息。 触发词：案例研究, case study, 客户案例, 成功案例, 案例包装, 客户故事,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pans_case_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dashiming",
+      "features": [
+        "自动将客户成功案例包装为 Case Study（案例研究）。支持背景 / 挑战 / 方案 / 成果四段式结构化模板，支持 Markdown / PDF / HTML 多种格式导出， 提供交互."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pans-case-writer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28342384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pans-case-writer",
+      "url": "https://clawhub.ai/skills/pans-case-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pans-case-writer",
+    "url": "https://clawhub.ai/skills/pans-case-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pans-case-writer-6b1fd6994ddf17cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pans-case-writer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pans-case-writer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6bbe966fef95a965ea863b874c90f9f609ddd25f27b13458c34fc6ddd42aee1",
+      "artifactSizeBytes": 2392
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T05:40:54.484Z"
+}

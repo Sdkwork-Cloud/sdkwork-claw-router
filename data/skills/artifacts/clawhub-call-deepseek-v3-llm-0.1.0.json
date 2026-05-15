@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/call-deepseek-v3-llm@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.call_deepseek_v3_llm",
+  "skill": {
+    "id": 13810,
+    "skillKey": "clawhub-call-deepseek-v3-llm",
+    "name": "Call Deepseek V3 Llm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "call-deepseek-v3-llm",
+    "url": "https://clawhub.ai/skills/call-deepseek-v3-llm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/call-deepseek-v3-llm-b75e4ae95659ee2e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI agent for call deepseek v3 llm tasks"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "urrrich",
+      "userId": "publishers:urrrich",
+      "displayName": "urrrich",
+      "image": "https://avatars.githubusercontent.com/u/1535955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1299,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771142714313,
+      "changelog": "call-deepseek-v3-llm 0.1.0\n\n- Initial release of the skill for interfacing with Deepseek V3 LLM.\n- Enforces strict language-matching rules based on user prompts.\n- Defines clear team participation, role identity, and context usage.\n- Requires all responses to be based strictly on meeting minutes and CCO’s current request.\n- Creative, professional output for use in collaborative team brainstorming sessions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:99f73b581ef6a0b5ab7c8300adb50479e7f54fbf434e527175db4a26bc8942f6"
+}

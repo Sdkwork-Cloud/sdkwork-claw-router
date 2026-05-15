@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50536,
+  "uuid": "skill-clawhub-virtual-desktop-pro",
+  "skillKey": "clawhub-virtual-desktop-pro",
+  "name": "Virtual Desktop Pro v4 -- Universal Browser Execution",
+  "summary": "Persistent authenticated browser for OpenClaw via kasmweb/chrome Docker sidecar. Principal logs in once via noVNC — sessions saved permanently in Docker volu...",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtual_desktop_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wesley Armando",
+      "features": [
+        "Persistent authenticated browser for OpenClaw via kasmweb/chrome Docker sidecar",
+        "Principal logs in once via noVNC — sessions saved permanently in Docker volu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/virtual-desktop-pro@4.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130360599?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "virtual-desktop-pro",
+      "url": "https://clawhub.ai/skills/virtual-desktop-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtual-desktop-pro",
+    "url": "https://clawhub.ai/skills/virtual-desktop-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtual-desktop-pro-e152eae30326569e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/virtual-desktop-pro@4.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-virtual-desktop-pro-4.0.1.json",
+      "version": "4.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c3c433fe4e3dc109a483b977bf16071b60b291f309524811d6c545a8e4d4259",
+      "artifactSizeBytes": 2083
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T23:47:39.135Z"
+}

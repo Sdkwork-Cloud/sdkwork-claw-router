@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-kapwing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_kapwing",
+  "skill": {
+    "id": 47796,
+    "skillKey": "clawhub-text-to-video-kapwing",
+    "name": "Text To Video Kapwing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-kapwing",
+    "url": "https://clawhub.ai/skills/text-to-video-kapwing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-kapwing-b9776783507012b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get text-based videos ready to post, without touching a single slider. Upload your text prompts (TXT, DOCX, MP4, MOV, up to 500MB), say something like \"turn..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777228541084,
+      "changelog": "Initial release of Text to Video Kapwing — convert text and files into shareable videos, fast.\n\n- Upload text (TXT, DOCX) or video files (MP4, MOV, up to 500MB), and generate videos with AI-driven visuals and captions.\n- Supports instant video creation for blog posts, product descriptions, or scripts; returns 1080p MP4 downloads in ~1-2 minutes.\n- No local setup required; all processing is cloud-based with easy API connection (auto handles authentication and session).\n- Simple prompts convert your written content into ready-to-share videos optimized for creators and marketers.\n- Includes workflow for uploads, editing, credits tracking, export, status, and common troubleshooting messages.\n- All major video, audio, and image formats supported for input and export.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd20522b29be575a958f984312d31fc6c2d8c33e38ea422124d7f1013c4e3eed"
+}

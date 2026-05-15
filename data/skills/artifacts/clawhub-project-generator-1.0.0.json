@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/project-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_generator",
+  "skill": {
+    "id": 56558,
+    "skillKey": "clawhub-project-generator",
+    "name": "java&vue代码生成"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-generator",
+    "url": "https://clawhub.ai/skills/project-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-generator-6da1389cb79bc905.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate full-stack Java Spring Boot and Vue projects from requirements with mandatory, guided tech stack selection including database, API, auth, and UI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smallest-ming",
+      "userId": "s174zjetyn55qm28v3gvejejxs83hez3",
+      "displayName": "小明",
+      "image": "https://avatars.githubusercontent.com/u/264091070?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 443,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773394448616,
+      "changelog": "输入“项目创建”使用技能，可以直接文字描述需求或指定需求文档路径，之后会出现技术栈搭配选择，选择自己合适的技术栈完成项目创建。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3855e3d42fc22b6e3e40e849e90063100ccb5b027afe784d31deb8b3836d624f"
+}

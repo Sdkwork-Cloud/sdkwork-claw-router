@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57956,
+  "uuid": "skill-clawhub-stock-summary",
+  "skillKey": "clawhub-stock-summary",
+  "name": "Stock Summary",
+  "summary": "Query stock quotes and technical analysis. Triggers on phrases like 查股价, 看股票, 帮我分析XX股票, XX走势. Input: stock code (A-share like 600519, HK like 00700, US like...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dongdong-Bryant",
+      "features": [
+        "Query stock quotes and technical analysis",
+        "Triggers on phrases like 查股价, 看股票, 帮我分析XX股票, XX走势",
+        "Input: stock code (A-share like 600519, HK like 00700, US like..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-summary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114673067?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-summary",
+      "url": "https://clawhub.ai/skills/stock-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-summary",
+    "url": "https://clawhub.ai/skills/stock-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-summary-e6835e4ec010bcc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-summary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-summary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5df49ece7c5f3e2d9e9e69c8db7a952aae2ca0c9967629ca4e7388da73ea6be",
+      "artifactSizeBytes": 2453
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T13:14:41.655Z"
+}

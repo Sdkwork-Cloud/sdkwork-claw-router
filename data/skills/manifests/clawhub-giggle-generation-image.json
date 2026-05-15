@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21634,
+  "uuid": "skill-clawhub-giggle-generation-image",
+  "skillKey": "clawhub-giggle-generation-image",
+  "name": "Giggle Generation Image",
+  "summary": "Supports text-to-image and image-to-image. Use when the user needs to create or generate images. Use cases: (1) Generate from text description, (2) Use refer...",
+  "version": "0.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.giggle_generation_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Parker",
+      "features": [
+        "Supports text-to-image and image-to-image",
+        "Use when the user needs to create or generate images",
+        "Use cases: (1) Generate from text description, (2) Use refer..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/giggle-generation-image@0.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169116739?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "giggle-generation-image",
+      "url": "https://clawhub.ai/skills/giggle-generation-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "giggle-generation-image",
+    "url": "https://clawhub.ai/skills/giggle-generation-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/giggle-generation-image-30887116c9090aaf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/giggle-generation-image@0.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-giggle-generation-image-0.0.10.json",
+      "version": "0.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a984e93cf5955536d784656285963a830782ab7e1af578dc65fb3947cdf095a",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T02:34:16.631Z"
+}

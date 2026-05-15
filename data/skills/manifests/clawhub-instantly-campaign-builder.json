@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30451,
+  "uuid": "skill-clawhub-instantly-campaign-builder",
+  "skillKey": "clawhub-instantly-campaign-builder",
+  "name": "get-some-leads",
+  "summary": "Create and manage Instantly.ai email campaigns via API. Use when the user wants to create a cold email campaign, add leads to Instantly, configure email sequ...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instantly_campaign_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Polzer1999",
+      "features": [
+        "Create and manage Instantly.ai email campaigns via API",
+        "Use when the user wants to create a cold email campaign, add leads to Instantly, configure emai."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/instantly-campaign-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194905541?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "instantly-campaign-builder",
+      "url": "https://clawhub.ai/skills/instantly-campaign-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instantly-campaign-builder",
+    "url": "https://clawhub.ai/skills/instantly-campaign-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instantly-campaign-builder-177406eb838b3bd5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/instantly-campaign-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-instantly-campaign-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cff169a003fba2d7cf9593a60d79eb8f3711f67a441e83393f1a70d3231e48c8",
+      "artifactSizeBytes": 2283
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:39:59.967Z"
+}

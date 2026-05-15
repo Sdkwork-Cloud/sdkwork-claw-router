@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ctrip@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctrip",
+  "skill": {
+    "id": 14529,
+    "skillKey": "clawhub-ctrip",
+    "name": "Ctrip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctrip",
+    "url": "https://clawhub.ai/skills/ctrip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctrip-5ba71283f7176ab9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive travel planning, booking, and management skill. Use when needing to plan china trips, manage multi-destination itineraries, handle family trave..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newlux",
+      "userId": "publishers:newlux",
+      "displayName": "newlux",
+      "image": "https://avatars.githubusercontent.com/u/4240787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 825,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773107473601,
+      "changelog": "- Renamed skill from \"tripseek\" to \"ctrip\" for clarity.\n- Updated description to emphasize planning trips to China.\n- No functional changes; core capabilities and usage examples remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57ec869a2f53bddab7449a477166ae835ec7d0b1c5c51587d5d3b4ceaaadd656"
+}

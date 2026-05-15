@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55056,
+  "uuid": "skill-clawhub-use-hln-api",
+  "skillKey": "clawhub-use-hln-api",
+  "name": "Use HL Names API",
+  "summary": "Consult & operate against the Hyperliquid Names API. Use when your agent needs to resolve `.hl` names, reverse-resolve addresses, fetch HLN profiles or recor...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.use_hln_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HL Names",
+      "features": [
+        "Consult & operate against the Hyperliquid Names API",
+        "Use when your agent needs to resolve `.hl` names, reverse-resolve addresses, fetch HLN profiles."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/use-hln-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184987177?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "use-hln-api",
+      "url": "https://clawhub.ai/skills/use-hln-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "use-hln-api",
+    "url": "https://clawhub.ai/skills/use-hln-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/use-hln-api-0079a72bce569e8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/use-hln-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-use-hln-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f34ba102bc37d641bd25b70c34def2ac13171a59ef9c4828b7ee5dd22f46c85a",
+      "artifactSizeBytes": 2460
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T05:35:40.009Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23437,
+  "uuid": "skill-clawhub-porteden-drive",
+  "skillKey": "clawhub-porteden-drive",
+  "name": "Secure Google Drive Access for OpenClaw by PortEden",
+  "summary": "Secure Google Drive Mnagement - list, search, upload, create folders, rename, move, share, and permissions (porteden secure alternative).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.porteden_drive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PortEden",
+      "features": [
+        "Secure Google Drive Mnagement",
+        "list, search, upload, create folders, rename, move, share, and permissions (porteden secure alt."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/porteden-drive@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258120807?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "porteden-drive",
+      "url": "https://clawhub.ai/skills/porteden-drive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "porteden-drive",
+    "url": "https://clawhub.ai/skills/porteden-drive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/porteden-drive-a91814f8a8c5a763.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/porteden-drive@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-porteden-drive-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0cf72d132fe05778b943a00c304088aba86f28b9e104f293eb95c1630dd06313",
+      "artifactSizeBytes": 2574
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:09:22.772Z"
+}

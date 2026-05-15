@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hybrid-smart-fill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hybrid_smart_fill",
+  "skill": {
+    "id": 28667,
+    "skillKey": "clawhub-hybrid-smart-fill",
+    "name": "hybrid-smart-fill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hybrid-smart-fill",
+    "url": "https://clawhub.ai/skills/hybrid-smart-fill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hybrid-smart-fill-842da22b9f6a1485.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill provides hybrid retrieval (BM25 semantic search + TF-IDF vector similarity) for intelligent template auto-filling. Use when users need to batch fi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deweienweide",
+      "userId": "publishers:deweienweide",
+      "displayName": "maodou13",
+      "image": "https://avatars.githubusercontent.com/u/22877372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773844355592,
+      "changelog": "`hybrid-smart-fill` 是一个基于混合检索模式（BM25语义检索 + TF-IDF向量检索）的智能模板自动填充技能。它可以高精度地从知识库中匹配字段并自动填充Word文档和Excel表格。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:daa582769c816c6fc33d49bcba376c9068749ec69a2d8017ca8d85e9a3a7a803"
+}

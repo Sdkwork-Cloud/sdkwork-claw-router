@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dating-prep@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dating_prep",
+  "skill": {
+    "id": 56985,
+    "skillKey": "clawhub-dating-prep",
+    "name": "Dating 约会助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dating-prep",
+    "url": "https://clawhub.ai/skills/dating-prep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dating-prep-19828eb990bb23a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pre-date research assistant — scan someone's public social media profiles to understand their interests, personality, lifestyle and values before meeting the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sophie-xin9",
+      "userId": "s173ct06qcsk0pk1rah6ysms3983m2cc",
+      "displayName": "Sophieyou",
+      "image": "https://avatars.githubusercontent.com/u/243932536?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775806051123,
+      "changelog": "Pre-date research assistant: scan public profiles, understand interests/personality, prepare topics and restaurant picks",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a6cc58fdec87c9e4ee7600e3ace2831da619b654b785b644e2301a0f9b76bcbb"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30078,
+  "uuid": "skill-clawhub-chat-search",
+  "skillKey": "clawhub-chat-search",
+  "name": "Chat Search",
+  "summary": "Search and find relevant chat messages from Feishu or Telegram using semantic search with similarity scores and message source labels.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chat_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fhqoopp",
+      "features": [
+        "Search and find relevant chat messages from Feishu or Telegram using semantic search with simil."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chat-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40485213?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chat-search",
+      "url": "https://clawhub.ai/skills/chat-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chat-search",
+    "url": "https://clawhub.ai/skills/chat-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chat-search-ccdb3d935ebcb2d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chat-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-chat-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a2e4989684fa756f31f13b08d539dc9eea49ccdf2664c79f6b4287d1e3fc7aa",
+      "artifactSizeBytes": 2160
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T15:09:56.887Z"
+}

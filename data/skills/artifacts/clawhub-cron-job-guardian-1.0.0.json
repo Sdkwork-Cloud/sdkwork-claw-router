@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cron-job-guardian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_job_guardian",
+  "skill": {
+    "id": 59380,
+    "skillKey": "clawhub-cron-job-guardian",
+    "name": "Cron Job Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-job-guardian",
+    "url": "https://clawhub.ai/skills/cron-job-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-job-guardian-76ae814eaa21bc67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "检查 cron 或 timer 配置中的频率、幂等、重试、日志与并发风险。；use for cron, timer, ops workflows；do not use for 直接启停生产任务, 替代真正监控."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773648357023,
+      "changelog": "Initial release of cron-job-guardian.\n\n- Audits cron or timer configurations for risks including frequency, idempotency, retries, logging, and concurrency.\n- Recommends verification steps and highlights missing information as “to confirm”.\n- Outputs structured findings with suggested revisions and safety notes.\n- Operates in read-only, dry-run, and auditable mode, never triggering live jobs.\n- Includes local resource support for templates, specs, and test cases.\n- Clear boundaries: not for production job control or real-time monitoring.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b267b1ecc957cd65b747d45da39af937d71adb22aa5d6efdc6635bf589673912"
+}

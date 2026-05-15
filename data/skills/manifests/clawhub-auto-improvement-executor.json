@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60084,
+  "uuid": "skill-clawhub-auto-improvement-executor",
+  "skillKey": "clawhub-auto-improvement-executor",
+  "name": "Improvement Executor",
+  "summary": "当需要把已批准的改进候选应用到目标文件、回滚之前的变更、或预览变更效果时使用。支持 4 种 action（append/replace/insert_before/update_yaml），每次变更前自动备份。不用于打分（用 improvement-discriminator）或门禁验证（用 improvemen...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_improvement_executor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "_silhouette",
+      "features": [
+        "当需要把已批准的改进候选应用到目标文件、回滚之前的变更、或预览变更效果时使用。支持 4 种 action（append/replace/insert_before/update_yaml），."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-improvement-executor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22570800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-improvement-executor",
+      "url": "https://clawhub.ai/skills/auto-improvement-executor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-improvement-executor",
+    "url": "https://clawhub.ai/skills/auto-improvement-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-improvement-executor-78eee1f7145b8b1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-improvement-executor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-improvement-executor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27c180e7db02e5c6352fae475447b1f2c93b2e5d9c9f3513595d3dd419673134",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T17:18:40.975Z"
+}

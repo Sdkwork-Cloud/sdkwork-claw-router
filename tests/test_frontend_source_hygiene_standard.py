@@ -1,4 +1,5 @@
-import json
+﻿import json
+import os
 import re
 import unittest
 from pathlib import Path
@@ -206,14 +207,17 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         record_service = record_service_path.read_text(encoding="utf-8", errors="ignore")
 
         self.assertIn("toUsageLogQueryParams", usage_service)
-        self.assertIn(".router.fetchLogs(toUsageLogQueryParams(params))", usage_service)
-        self.assertNotIn(".router.fetchLogs(params)", usage_service)
+        self.assertIn("const query = toUsageLogQueryParams(params)", usage_service)
+        self.assertIn(".ai.usage.logs.list(query)", usage_service)
+        self.assertNotIn(".ai.usage.logs.list(params)", usage_service)
+        self.assertNotIn(".router.fetchLogs", usage_service)
         self.assertIn("MAX_USAGE_LOG_PAGE_SIZE", usage_service)
         self.assertIn("MAX_USAGE_LOG_QUERY_TEXT_LENGTH", usage_service)
 
         self.assertIn("toRecordLogQueryBody", record_service)
-        self.assertIn(".record.fetchLogs(toRecordLogQueryBody(filters))", record_service)
+        self.assertIn(".system.records.list(toRecordLogQueryBody(filters))", record_service)
         self.assertNotIn(".record.fetchLogs(filters)", record_service)
+        self.assertNotIn(".record.fetchLogs", record_service)
         self.assertIn("MAX_RECORD_LOG_PAGE_SIZE", record_service)
         self.assertIn("MAX_RECORD_LOG_FILTER_LENGTH", record_service)
 
@@ -227,8 +231,10 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         service = settlement_service_path.read_text(encoding="utf-8", errors="ignore")
 
         self.assertIn("toSettlementDashboardQueryParams", service)
-        self.assertIn(".router.fetchDashboardData(toSettlementDashboardQueryParams(params))", service)
-        self.assertNotIn(".router.fetchDashboardData(params)", service)
+        self.assertIn(".billing.settlements.dashboard.list(", service)
+        self.assertIn("toSettlementDashboardQueryParams(params)", service)
+        self.assertNotIn(".billing.settlements.dashboard.list(params)", service)
+        self.assertNotIn(".router.fetchDashboardData", service)
         self.assertIn("MIN_SETTLEMENT_DASHBOARD_YEAR", service)
         self.assertIn("MAX_SETTLEMENT_DASHBOARD_YEAR", service)
 
@@ -251,15 +257,31 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         skill_service = skill_service_path.read_text(encoding="utf-8", errors="ignore")
 
         self.assertIn("toAppCatalogQueryParams", app_service)
-        self.assertIn(".app.getApps(toAppCatalogQueryParams(filters))", app_service)
-        self.assertNotIn(".app.getApps(filters", app_service)
+        self.assertTrue(
+            ".platform.apps.store.list(toAppCatalogQueryParams(filters))" in app_service
+            or (
+                "const query = toAppCatalogQueryParams(filters)" in app_service
+                and ".platform.apps.store.list(query)" in app_service
+            ),
+            "app catalog service must pass normalized query params into the generated SDK",
+        )
+        self.assertNotIn(".platform.apps.store.list(filters", app_service)
+        self.assertNotIn(".app.getApps", app_service)
         self.assertNotIn("filters as Record<string, unknown>", app_service)
         self.assertIn("MAX_APP_CATALOG_PAGE_SIZE", app_service)
         self.assertIn("MAX_APP_CATALOG_QUERY_TEXT_LENGTH", app_service)
 
         self.assertIn("toSkillCatalogQueryParams", skill_service)
-        self.assertIn(".skill.getSkills(toSkillCatalogQueryParams(filters))", skill_service)
-        self.assertNotIn(".skill.getSkills(filters", skill_service)
+        self.assertTrue(
+            ".ecosystem.skills.list(toSkillCatalogQueryParams(filters))" in skill_service
+            or (
+                "const query = toSkillCatalogQueryParams(filters)" in skill_service
+                and ".ecosystem.skills.list(query)" in skill_service
+            ),
+            "skills catalog service must pass normalized query params into the generated SDK",
+        )
+        self.assertNotIn(".ecosystem.skills.list(filters", skill_service)
+        self.assertNotIn(".skill.getSkills", skill_service)
         self.assertNotIn(".skills.getSkills", skill_service)
         self.assertNotIn("filters as Record<string, unknown>", skill_service)
         self.assertIn("MAX_SKILL_CATALOG_PAGE_SIZE", skill_service)
@@ -342,15 +364,17 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         skill_service = skill_service_path.read_text(encoding="utf-8", errors="ignore")
 
         self.assertIn("requiredSafePathSegment(id, 'appId')", app_service)
-        self.assertIn(".app.getAppById(requiredSafePathSegment(id, 'appId'))", app_service)
+        self.assertIn(".platform.apps.store.retrieve(requiredSafePathSegment(id, 'appId'))", app_service)
         self.assertIn("readRequiredApiItem(result, 'App detail response is missing data')", app_service)
         self.assertNotIn(".app.getAppById(id)", app_service)
+        self.assertNotIn(".app.getAppById", app_service)
         self.assertNotIn("readApiItems(result).find", app_service)
 
         self.assertIn("requiredSafePathSegment(id, 'skillId')", skill_service)
-        self.assertIn(".skill.getSkillById(requiredSafePathSegment(id, 'skillId'))", skill_service)
+        self.assertIn(".ecosystem.skills.retrieve(requiredSafePathSegment(id, 'skillId'))", skill_service)
         self.assertIn("readRequiredApiItem(result, 'Skill detail response is missing data')", skill_service)
         self.assertNotIn(".skill.getSkillById(id)", skill_service)
+        self.assertNotIn(".skill.getSkillById", skill_service)
         self.assertNotIn(".skills.getSkillById", skill_service)
         self.assertNotIn("readApiItems(result).find", skill_service)
 
@@ -383,7 +407,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         guarded_services = {
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-model" / "src" / "modelService.ts": [
                 "return readRequiredApiItems(result, 'Failed to fetch vendors')\n      .map(normalizeVendor)",
-                "return readRequiredApiItems(result, 'Failed to fetch models')\n      .map(normalizeModel)",
+                "const models = readRequiredApiItems(modelsResult, 'Failed to fetch models')\n      .map(normalizeModel)",
                 "models: readRequiredApiItems(data, 'Failed to sync vendors and models', ['models'])\n        .map(normalizeModel)",
                 "readRequiredRecord(value, 'Vendor record is required')",
                 "readRequiredRecord(value, 'Model record is required')",
@@ -493,7 +517,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-console-billing" / "src" / "checkoutService.ts": [
                 "const normalizedOrderNo = requiredSafePathSegment(orderNo, 'orderNo')",
-                ".payment.fetchCheckoutStatus(normalizedOrderNo)",
+                ".billing.payments.checkout.retrieve(normalizedOrderNo)",
                 "orderNo: readRequiredString(item, 'orderNo', 'Checkout order number is required')",
                 "amount: readRequiredMoneyString(item, 'amount', 'Checkout amount is required', 'Checkout amount must be a money string')",
                 "points: readRequiredNonNegativeNumber(item, 'points', 'Checkout points are required')",
@@ -582,10 +606,10 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "readRequiredBoolean(data, 'isVerified', 'Account verification status is required')",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-console-user" / "src" / "userService.ts": [
-                "name: readRequiredString(data, 'name', 'User profile name is required')",
+                "name: readRequiredString(data, 'displayName', 'User profile display name is required')",
                 "phone: readRequiredStringAllowEmpty(data, 'phone', 'User profile phone is required')",
                 "language: readRequiredString(data, 'language', 'User profile language is required')",
-                "avatar: readRequiredString(data, 'avatar', 'User profile avatar is required')",
+                "avatar: readRequiredStringAllowEmpty(data, 'avatarUrl', 'User profile avatar URL is required')",
                 "isVerified: readRequiredBoolean(data, 'isVerified', 'User profile verification status is required')",
                 "twoFactorEnabled: readRequiredBoolean(data, 'twoFactorEnabled', 'User profile two-factor status is required')",
                 "thirdPartyBound: readRequiredStringAllowEmpty(data, 'thirdPartyBound', 'User profile third-party binding summary is required')",
@@ -698,6 +722,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             PORTAL_PACKAGES / "sdkwork-claw-router-console-billing" / "src" / "checkoutService.ts": [
                 "fetchCheckoutStatus(orderNo);",
                 ".payment.fetchCheckoutStatus(orderNo)",
+                ".payment.fetchCheckoutStatus",
                 ".payments.fetchCheckoutStatus",
                 "orderNo: readString(item, 'orderNo')",
                 "amount: readMoneyString(item, 'amount')",
@@ -833,7 +858,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-marketing" / "src" / "marketingService.ts": [
                 "requiredSafePathSegment(id, 'couponId')",
-                "requiredSafePathSegment(id, 'promoCodeId')",
+                "requiredSafePathSegment(id, 'codeId')",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-user" / "src" / "userService.ts": [
                 "requiredSafePathSegment(keyId, 'apiKeyId')",
@@ -929,6 +954,87 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             ):
                 self.assertNotIn(forbidden, source, f"{relative} must import shared SDK request boundary primitive instead of reimplementing {forbidden}")
 
+    def test_portal_and_generated_sdk_do_not_reintroduce_legacy_operation_signatures(self) -> None:
+        removed_portal_tokens = [
+            "AdminChannelListRequest",
+            "TestChannelRequest",
+            "FetchChannelsRequest",
+            "FetchUsersRequest",
+            "FetchApiKeysMapRequest",
+            "FetchCouponsRequest",
+            "FetchRedemptionRecordsRequest",
+            "FetchRechargeRecordsRequest",
+            "FetchModelsRequest",
+            "EnableSkillPackageRequest",
+            "DisableSkillPackageRequest",
+            "EnableSkillRequest",
+            "DisableSkillRequest",
+            "PublishSkillRequest",
+            "OfflineSkillRequest",
+            "emptyTestChannelRequest",
+            "emptyEnableSkillPackageRequest",
+            "emptyDisableSkillPackageRequest",
+            "emptyEnableSkillRequest",
+            "emptyDisableSkillRequest",
+            "emptyPublishSkillRequest",
+            "emptyOfflineSkillRequest",
+        ]
+        portal_violations: list[str] = []
+
+        for source in self._portal_sources():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for token in removed_portal_tokens:
+                if token in content:
+                    portal_violations.append(f"{relative}: contains removed SDK surface {token}")
+
+        self.assertEqual(
+            [],
+            portal_violations,
+            "Portal production source must use the latest generated SDK signatures and must not carry removed empty request DTO helpers.",
+        )
+
+        stale_api_files = [
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "access-groups.ts",
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "announcements.ts",
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "coupon-batches.ts",
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "coupon-codes.ts",
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "firewall.ts",
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "rate-limits.ts",
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "users.ts",
+        ]
+        existing_stale_api_files = [path.relative_to(ROOT).as_posix() for path in stale_api_files if path.exists()]
+        self.assertEqual(
+            [],
+            existing_stale_api_files,
+            "Generated backend SDK must keep the current operation grouping instead of stale split API files.",
+        )
+
+        sdk_api_violations: list[str] = []
+        legacy_header_signature = re.compile(
+            r"\basync\s+[A-Za-z0-9_]+\([^)]*headers\?:\s*Record<string,\s*string>",
+            re.DOTALL,
+        )
+        legacy_number_path_id = re.compile(r"\basync\s+[A-Za-z0-9_]+\([^)]*:\s*string\s*\|\s*number", re.DOTALL)
+
+        for sdk_name in ["clawrouter-app-sdk", "clawrouter-backend-sdk"]:
+            api_dir = ROOT / "sdks" / sdk_name / "src" / "api"
+            for source in sorted(api_dir.glob("*.ts")):
+                if source.name in {"base.ts", "index.ts", "paths.ts"}:
+                    continue
+                relative = source.relative_to(ROOT).as_posix()
+                content = source.read_text(encoding="utf-8", errors="ignore")
+                if legacy_header_signature.search(content):
+                    sdk_api_violations.append(f"{relative}: public operation method accepts raw headers")
+                if legacy_number_path_id.search(content):
+                    sdk_api_violations.append(f"{relative}: public operation method accepts string | number path id")
+
+        self.assertEqual(
+            [],
+            sdk_api_violations,
+            "Generated SDK operation APIs must expose named request-id/idempotency parameters and string path ids, not old raw headers or string|number path ids.",
+        )
+
     def test_portal_root_does_not_ship_ai_studio_starter_or_one_off_rewrite_scripts(self) -> None:
         forbidden_files = [
             PORTAL_ROOT / "fix_inputs.mjs",
@@ -986,17 +1092,21 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             "react-i18next",
             "lucide-react",
             "motion",
+        }
+        boundary_runtime_dependencies = {
             "@sdkwork/clawrouter-app-sdk",
             "@sdkwork/clawrouter-backend-sdk",
         }
+        root_managed_runtime_dependencies = singleton_runtime_dependencies | boundary_runtime_dependencies
+        sdk_boundary_package = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/package.json"
         root_package = json.loads((PORTAL_ROOT / "package.json").read_text(encoding="utf-8"))
         root_dependencies = root_package.get("dependencies", {})
 
-        for dependency_name in singleton_runtime_dependencies:
+        for dependency_name in root_managed_runtime_dependencies:
             self.assertIn(
                 dependency_name,
                 root_dependencies,
-                f"Portal root package.json must own singleton runtime dependency {dependency_name}.",
+                f"Portal root package.json must own runtime dependency {dependency_name}.",
             )
 
         violations: list[str] = []
@@ -1007,11 +1117,21 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 dependencies = package.get(section_name, {})
                 for dependency_name in sorted(singleton_runtime_dependencies & set(dependencies)):
                     violations.append(f"{relative}: {section_name}.{dependency_name}")
+                if relative == sdk_boundary_package and section_name == "dependencies":
+                    for dependency_name in boundary_runtime_dependencies:
+                        self.assertIn(
+                            dependency_name,
+                            dependencies,
+                            f"Portal commons runtime boundary must depend on {dependency_name}.",
+                        )
+                    continue
+                for dependency_name in sorted(boundary_runtime_dependencies & set(dependencies)):
+                    violations.append(f"{relative}: {section_name}.{dependency_name}")
 
         self.assertEqual(
             [],
             violations,
-            "Portal workspace packages must not declare singleton runtime dependencies; keep them centralized in the portal root to avoid duplicate React runtimes.",
+            "Portal workspace packages must not declare singleton runtime dependencies; only the commons runtime boundary may own generated SDK package dependencies.",
         )
 
     def test_portal_index_html_uses_single_vite_entry_without_runtime_dependency_scripts(self) -> None:
@@ -1062,11 +1182,18 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             self.assertNotIn(legacy, css, f"Portal scrollbar styling must use theme colors, not {legacy}.")
 
     def _portal_sources(self) -> list[Path]:
-        return [
-            source
-            for source in sorted(PORTAL_PACKAGES.rglob("*"))
-            if source.suffix in {".ts", ".tsx"} and "node_modules" not in source.parts
-        ]
+        sources: list[Path] = []
+        for directory, dirnames, filenames in os.walk(PORTAL_PACKAGES):
+            dirnames[:] = [
+                dirname
+                for dirname in dirnames
+                if dirname not in {"node_modules", "dist", ".turbo"}
+            ]
+            for filename in filenames:
+                source = Path(directory) / filename
+                if source.suffix in {".ts", ".tsx"}:
+                    sources.append(source)
+        return sorted(sources)
 
 
 if __name__ == "__main__":

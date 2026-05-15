@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/steam-lowest-price-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.steam_lowest_price_skill",
+  "skill": {
+    "id": 28551,
+    "skillKey": "clawhub-steam-lowest-price-skill",
+    "name": "Steam Lowest Price Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "steam-lowest-price-skill",
+    "url": "https://clawhub.ai/skills/steam-lowest-price-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/steam-lowest-price-skill-477b70aa452ad04a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor Steam game prices and alert when a game hits historical low or a user target price. Use when users ask to track Steam discounts, watch specific games..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "g-zoe",
+      "userId": "s17bnbrrvnbk960jb1yvkm82qh83rmhr",
+      "displayName": "G-zoe",
+      "image": "https://avatars.githubusercontent.com/u/110187375?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 313,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773916203177,
+      "changelog": "- Initial release of Steam Lowest Price Skill.\n- Track Steam game prices and receive alerts when a game reaches its historical low or user-defined target price.\n- Supports adding, listing, checking, and removing watch entries via command-line scripts.\n- Alerts include game name, current and historical lowest prices, price difference, and store link.\n- Uses CheapShark public API for price data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a7df18cda9e59af1d43167371d2929f7723997ee86f8bd9b3e3baeb5bf40fe0"
+}

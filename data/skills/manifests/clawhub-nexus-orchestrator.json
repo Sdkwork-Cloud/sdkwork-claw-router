@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25010,
+  "uuid": "skill-clawhub-nexus-orchestrator",
+  "skillKey": "clawhub-nexus-orchestrator",
+  "name": "NEXUS Orchestrator",
+  "summary": "Chain multiple AI services into automated workflows - describe a goal and the orchestrator plans, executes, and summarizes",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexus_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CyberForexBlockchain",
+      "features": [
+        "Chain multiple AI services into automated workflows",
+        "describe a goal and the orchestrator plans, executes, and summarizes"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nexus-orchestrator@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37193064?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nexus-orchestrator",
+      "url": "https://clawhub.ai/skills/nexus-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexus-orchestrator",
+    "url": "https://clawhub.ai/skills/nexus-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexus-orchestrator-50adc5d3f4aaca18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nexus-orchestrator@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nexus-orchestrator-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:424ed17f1fecbd6e837e3d3d60694bec822af8880ae4f2cb7cf07601ad1d170a",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T17:13:41.977Z"
+}

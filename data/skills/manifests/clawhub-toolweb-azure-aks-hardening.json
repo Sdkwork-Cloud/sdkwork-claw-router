@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41667,
+  "uuid": "skill-clawhub-toolweb-azure-aks-hardening",
+  "skillKey": "clawhub-toolweb-azure-aks-hardening",
+  "name": "Azure AKS Hardening",
+  "summary": "Generates CIS v1.8.0 compliant Azure Kubernetes Service (AKS) configurations for security hardening.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_azure_aks_hardening",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Generates CIS v1.8.0 compliant Azure Kubernetes Service (AKS) configurations for security harde."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toolweb-azure-aks-hardening@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toolweb-azure-aks-hardening",
+      "url": "https://clawhub.ai/skills/toolweb-azure-aks-hardening"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-azure-aks-hardening",
+    "url": "https://clawhub.ai/skills/toolweb-azure-aks-hardening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-azure-aks-hardening-41582fe292cae983.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toolweb-azure-aks-hardening@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toolweb-azure-aks-hardening-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3a49e5560d08a9fb584d748bd68da8a9fda502945c97e7804455d74596e729a",
+      "artifactSizeBytes": 2408
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T20:46:04.114Z"
+}

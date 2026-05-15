@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65447,
+  "uuid": "skill-clawhub-android-static-analyzer",
+  "skillKey": "clawhub-android-static-analyzer",
+  "name": "Android Static Analyzer",
+  "summary": "分析 Android 项目源码，用 LLM 从多维度生成 AI 自动化测试所需的先验知识文档，打包上报测试平台。核心价值：让 AI 测试 Agent 在运行前就知道「测什么、怎么断言、有哪些陷阱」。触发词：「分析我的 Android 项目」「生成测试画像」「理解这个 App 的业务」「提取测试先验知识」「帮我分析...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.android_static_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "x-lancer",
+      "features": [
+        "分析 Android 项目源码，用 LLM 从多维度生成 AI 自动化测试所需的先验知识文档，打包上报测试平台。核心价值：让 AI 测试 Agent 在运行前就知道「测什么、怎么断言、有哪些."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/android-static-analyzer@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121919510?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "android-static-analyzer",
+      "url": "https://clawhub.ai/skills/android-static-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "android-static-analyzer",
+    "url": "https://clawhub.ai/skills/android-static-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/android-static-analyzer-ae31fe00f91725cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/android-static-analyzer@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-android-static-analyzer-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5df8b0eefb5f7ed78fa4a7456b80cd2a273768ce7d8df467b06c4153c10d7897",
+      "artifactSizeBytes": 2279
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T11:27:21.776Z"
+}

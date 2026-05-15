@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49054,
+  "uuid": "skill-clawhub-defi-stop-loss",
+  "skillKey": "clawhub-defi-stop-loss",
+  "name": "Decentralized stop-loss orders for DeFi",
+  "summary": "Decentralized stop-loss orders for DeFi. Gasless, oracle-protected, 8 EVM chains supported.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.defi_stop_loss",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eranp-orbs",
+      "features": [
+        "Decentralized stop-loss orders for DeFi",
+        "Gasless, oracle-protected, 8 EVM chains supported."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/defi-stop-loss@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76778405?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "defi-stop-loss",
+      "url": "https://clawhub.ai/skills/defi-stop-loss"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "defi-stop-loss",
+    "url": "https://clawhub.ai/skills/defi-stop-loss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/defi-stop-loss-aeaa19543900158d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/defi-stop-loss@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-defi-stop-loss-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a2846ffe479c6627a06a7f7d3028e6873827ac3314aa42ef12db5b72d4c9942",
+      "artifactSizeBytes": 2480
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T18:19:12.932Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cta-generator@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cta_generator",
+  "skill": {
+    "id": 29755,
+    "skillKey": "clawhub-cta-generator",
+    "name": "cta-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cta-generator",
+    "url": "https://clawhub.ai/skills/cta-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cta-generator-2ab52ff59851e5c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to design, optimize, or audit call-to-action (CTA) buttons. Also use when the user mentions \"CTA,\" \"call to action,\" \"button design,\" \"co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 296,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1774777046326,
+      "changelog": "Batch: tab-accordion through popup-generator",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:819458062b87d3189aadae41c7c007d5c0aa35c43a3b46bfb8db58d0ec0bbaa9"
+}

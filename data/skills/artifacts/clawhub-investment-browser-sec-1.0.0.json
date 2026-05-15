@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/investment-browser-sec@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investment_browser_sec",
+  "skill": {
+    "id": 38903,
+    "skillKey": "clawhub-investment-browser-sec",
+    "name": "Investment Browser SEC Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investment-browser-sec",
+    "url": "https://clawhub.ai/skills/investment-browser-sec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investment-browser-sec-12938d8ee70d4f9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional SEC EDGAR 10-Q/10-K parser for institutional investors. Extracts 47 financial metrics from HTML tables including Revenue, Net Income, EPS, Free..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lettywyse",
+      "userId": "publishers:lettywyse",
+      "displayName": "lettywyse",
+      "image": "https://avatars.githubusercontent.com/u/83311813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774171869510,
+      "changelog": "Initial release of Investment Browser SEC Scraper:\n\n- Parses 10-Q/10-K SEC EDGAR filings for 47 key financial metrics.\n- Extracts Revenue, Net Income, Free Cash Flow, Balance Sheet, and MD&A risk factors.\n- Automatically calculates YoY growth, margins, current ratios, and debt-to-equity.\n- Exports data to CSV, HTML, PDF, and Markdown formats.\n- Designed for professional and institutional investors tracking SEC filings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf2507140c0de4f336ffc0016a8c4bc57bbe215706562b8ba7f961102baae8f4"
+}

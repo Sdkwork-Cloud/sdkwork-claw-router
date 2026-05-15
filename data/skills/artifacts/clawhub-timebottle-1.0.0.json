@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/timebottle@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.timebottle",
+  "skill": {
+    "id": 55230,
+    "skillKey": "clawhub-timebottle",
+    "name": "Time Capsule 🔮"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "timebottle",
+    "url": "https://clawhub.ai/skills/timebottle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/timebottle-9dac33ff8bf066bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, manage, and open time capsules — seal a thought, feeling, decision, or wish and have it delivered back to your future self with AI reflection on what..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wyatt88",
+      "userId": "s17c3pm92f70prevmbj4j7xr1d83h6wx",
+      "displayName": "Wen",
+      "image": "https://avatars.githubusercontent.com/u/10276681?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774007228046,
+      "changelog": "Initial release: seal thoughts for your future self with AI-powered 'then vs now' reflections. Features: natural language sealing, cron-based auto-delivery, 3-round memory search for context, mood-adaptive opening voice, sensitive content handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88e67e46ab39ff74b885373e5a1959814e4066e80dfc72ce25b70628e110b0c4"
+}

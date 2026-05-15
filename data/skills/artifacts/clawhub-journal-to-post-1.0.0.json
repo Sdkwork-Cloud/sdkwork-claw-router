@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/journal-to-post@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.journal_to_post",
+  "skill": {
+    "id": 10846,
+    "skillKey": "clawhub-journal-to-post",
+    "name": "Journal to Post"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "journal-to-post",
+    "url": "https://clawhub.ai/skills/journal-to-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/journal-to-post-d442214f7b45ef94.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert personal journal entries into shareable social media posts"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "itsflow",
+      "userId": "publishers:itsflow",
+      "displayName": "ItsFlow",
+      "image": "https://avatars.githubusercontent.com/u/10375649?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2320,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769256791308,
+      "changelog": "Initial release – Convert personal journal reflections into impactful, shareable social media posts.\n\n- Accepts journal text or file input and outputs 1–3 polished posts.\n- Focuses on extracting universal insights, patterns, and counterintuitive observations from personal experiences.\n- Applies clear voice guidelines to ensure posts are confident, direct, and specific—with no over-sharing or generic self-help phrasing.\n- Provides transformation examples, platform variations, and tips for optimal journal writing.\n- Includes a detailed explanation of how journal content is transformed for sharing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:07238f220af5bec6f48022653fb261deccbcb5c54df3c3c4248568174eba11aa"
+}

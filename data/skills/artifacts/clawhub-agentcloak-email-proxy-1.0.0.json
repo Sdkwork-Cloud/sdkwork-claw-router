@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentcloak-email-proxy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentcloak_email_proxy",
+  "skill": {
+    "id": 17875,
+    "skillKey": "clawhub-agentcloak-email-proxy",
+    "name": "AgentCloak - Email Proxy that filters PII, 2FA, and password resets"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentcloak-email-proxy",
+    "url": "https://clawhub.ai/skills/agentcloak-email-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentcloak-email-proxy-efbb35d6f43c6674.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure email proxy for AI agents. Search, read, and draft emails via MCP with server-side credential isolation, PII redaction, prompt injection detection, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryanfren",
+      "userId": "publishers:ryanfren",
+      "displayName": "ryanfren",
+      "image": "https://avatars.githubusercontent.com/u/193449877?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 717,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771541743466,
+      "changelog": "Initial release. Secure email proxy with PII redaction, prompt injection detection, and content filtering.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:91f418775c0345353a41434357ae1a807a42b491f3df9a98035c8b35dbc52c55"
+}

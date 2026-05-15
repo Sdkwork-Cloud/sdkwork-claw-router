@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/home-maintenance-calendar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_maintenance_calendar",
+  "skill": {
+    "id": 49188,
+    "skillKey": "clawhub-home-maintenance-calendar",
+    "name": "Home Maintenance Calendar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-maintenance-calendar",
+    "url": "https://clawhub.ai/skills/home-maintenance-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-maintenance-calendar-04f6c0b386adb646.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build a seasonal + interval-based home maintenance calendar to prevent costly surprises. Track what needs attention before it breaks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 84,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778198041119,
+      "changelog": "Initial release of Home Maintenance Calendar — build a personalized, seasonal, and interval-based home maintenance checklist.\n\n- Guides users through creating a custom home inventory, prioritizing tasks by safety and cost-prevention.\n- Organizes maintenance tasks by season and frequency, with clear priority tiers (critical safety, preventive, nice-to-have).\n- Covers both major home systems (HVAC, roof, plumbing, etc.) and seasonal equipment (sprinklers, chimneys, etc.).\n- Includes specific guidance for both homeowners and renters.\n- Emphasizes safety: professional repairs and dangerous work are clearly excluded.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91b0a21320914feda85f32d25e901d1e727e9b197be80f07b627c26e4a8c5132"
+}

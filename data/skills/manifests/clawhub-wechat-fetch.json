@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60991,
+  "uuid": "skill-clawhub-wechat-fetch",
+  "skillKey": "clawhub-wechat-fetch",
+  "name": "Wechat Fetch Publish",
+  "summary": "微信公众号文章抓取工具 v3.0 - Lite轻量版 + Playwright版，支持免登录、批量抓取、图片下载、多格式输出",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_fetch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JackyFan",
+      "features": [
+        "微信公众号文章抓取工具 v3.0",
+        "Lite轻量版 + Playwright版，支持免登录、批量抓取、图片下载、多格式输出"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-fetch@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227755718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-fetch",
+      "url": "https://clawhub.ai/skills/wechat-fetch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-fetch",
+    "url": "https://clawhub.ai/skills/wechat-fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-fetch-4fd3a3278b00dfc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-fetch@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-fetch-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da2bbba08b78f29337bf20101dab367b5fa056069cc88145e5e7bfeb1b002aca",
+      "artifactSizeBytes": 2263
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:46:41.364Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65033,
+  "uuid": "skill-clawhub-mayiv-feishu-voice",
+  "skillKey": "clawhub-mayiv-feishu-voice",
+  "name": "Feishu Voice Skill",
+  "summary": "通过 Edge TTS 把文字转语音，发送到飞书。支持纯语音发送和文字+语音同时发送。环境变量配置，无硬编码凭证，完全免费无需 API Key。触发词：飞书语音、发语音、feishu voice、语音发送、文字转语音",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mayiv_feishu_voice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mayiv-Ai",
+      "features": [
+        "通过 Edge TTS 把文字转语音，发送到飞书。支持纯语音发送和文字+语音同时发送。环境变量配置，无硬编码凭证，完全免费无需 API Key。触发词：飞书语音、发语音、feishu voi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mayiv-feishu-voice@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243581178?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mayiv-feishu-voice",
+      "url": "https://clawhub.ai/skills/mayiv-feishu-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mayiv-feishu-voice",
+    "url": "https://clawhub.ai/skills/mayiv-feishu-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mayiv-feishu-voice-f4f49f5780dd5f36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mayiv-feishu-voice@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mayiv-feishu-voice-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb14b47ee76e59541992fa482b5534f3309a386b379ac091b1d8b5bedf4eb935",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T02:04:49.723Z"
+}

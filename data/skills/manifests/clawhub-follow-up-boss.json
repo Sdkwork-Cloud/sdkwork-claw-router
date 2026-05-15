@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15869,
+  "uuid": "skill-clawhub-follow-up-boss",
+  "skillKey": "clawhub-follow-up-boss",
+  "name": "Follow Up Boss",
+  "summary": "Command-line tool to manage contacts, tasks, notes, deals, events, and communications via the Follow Up Boss API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.follow_up_boss",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danielfoch",
+      "features": [
+        "Command-line tool to manage contacts, tasks, notes, deals, events, and communications via the F."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/follow-up-boss@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152220262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "follow-up-boss",
+      "url": "https://clawhub.ai/skills/follow-up-boss"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "follow-up-boss",
+    "url": "https://clawhub.ai/skills/follow-up-boss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/follow-up-boss-ffec15912cdf9879.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/follow-up-boss@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-follow-up-boss-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f2d20637b6da0754bd12fe4e3d257dcaaa1f706805a14d81b357f60832a3e8e",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T17:42:00.115Z"
+}

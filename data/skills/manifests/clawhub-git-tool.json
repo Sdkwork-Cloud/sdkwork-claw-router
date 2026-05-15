@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47200,
+  "uuid": "skill-clawhub-git-tool",
+  "skillKey": "clawhub-git-tool",
+  "name": "Git Tool",
+  "summary": "Useful Git commands for repository management. Use when user needs to manage git repositories, create branches, view history, stash changes, or automate git...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Useful Git commands for repository management",
+        "Use when user needs to manage git repositories, create branches, view history, stash changes, o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-tool",
+      "url": "https://clawhub.ai/skills/git-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-tool",
+    "url": "https://clawhub.ai/skills/git-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-tool-b3db388f3f765f2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a33ca1a40c5cbf7231c09d2444db59218b0702bb21450bd837b79e0c1553952",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T18:15:06.718Z"
+}

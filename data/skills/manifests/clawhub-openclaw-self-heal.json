@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41484,
+  "uuid": "skill-clawhub-openclaw-self-heal",
+  "skillKey": "clawhub-openclaw-self-heal",
+  "name": "Openclaw Self Heal",
+  "summary": "Autonomously diagnose and fix OpenClaw system errors affecting UI, channels, gateway, memory, or pairing, escalating only if needed.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_self_heal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jbauman-26",
+      "features": [
+        "Autonomously diagnose and fix OpenClaw system errors affecting UI, channels, gateway, memory, o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-self-heal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254146237?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-self-heal",
+      "url": "https://clawhub.ai/skills/openclaw-self-heal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-self-heal",
+    "url": "https://clawhub.ai/skills/openclaw-self-heal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-self-heal-6b416faf65a5dd82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-self-heal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-self-heal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14300866775cd81b63ea7b52acae98e9fd270878f5196df9e730683f64c3d0b8",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T01:11:39.508Z"
+}

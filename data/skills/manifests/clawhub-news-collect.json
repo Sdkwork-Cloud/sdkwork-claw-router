@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55541,
+  "uuid": "skill-clawhub-news-collect",
+  "skillKey": "clawhub-news-collect",
+  "name": "News Collect",
+  "summary": "Run a repo-local scan through `skills/news-aggregator-skill`, then normalize the result into a local report contract for the collect layer. Use when Codex ne...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_collect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Abigale-cyber",
+      "features": [
+        "Run a repo-local scan through `skills/news-aggregator-skill`, then normalize the result into a.",
+        "Use when Codex ne..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-collect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237663252?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-collect",
+      "url": "https://clawhub.ai/skills/news-collect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-collect",
+    "url": "https://clawhub.ai/skills/news-collect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-collect-fd5ede4d74153322.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-collect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-collect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8f10bf6bfad57e60cfe805e0867d76160b56fc8439fcf8cd501a4a1e9a4efb1",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T15:18:52.503Z"
+}

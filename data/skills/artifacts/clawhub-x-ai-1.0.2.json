@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-ai@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_ai",
+  "skill": {
+    "id": 8532,
+    "skillKey": "clawhub-x-ai",
+    "name": "xAI / Grok"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-ai",
+    "url": "https://clawhub.ai/skills/x-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-ai-45637a5f032c9df2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chat with Grok models via xAI API. Supports Grok-3, Grok-3-mini, vision, and more."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blueberrywoodsym",
+      "userId": "s170d5vw6h65z8n14e9a17f7a9848472",
+      "displayName": "blueberrywoodsym",
+      "image": "https://avatars.githubusercontent.com/u/256029437?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 10859,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 15,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771690964816,
+      "changelog": "- Added a prominent link to external installation and use instructions at the top of the setup section.\n- No changes to functionality or commands; documentation update only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0971a8ecb48bf71960475a48169a647fc5ae9c1075e49f9c67b14f5c4678b262"
+}

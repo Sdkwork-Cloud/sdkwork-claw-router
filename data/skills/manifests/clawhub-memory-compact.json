@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62633,
+  "uuid": "skill-clawhub-memory-compact",
+  "skillKey": "clawhub-memory-compact",
+  "name": "memory-compact",
+  "summary": "每日记忆自动压缩备份和关键点提取，每天早上 6:30 运行",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_compact",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GarryFan-AI",
+      "features": [
+        "每日记忆自动压缩备份和关键点提取，每天早上 6:30 运行"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-compact@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194744048?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-compact",
+      "url": "https://clawhub.ai/skills/memory-compact"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-compact",
+    "url": "https://clawhub.ai/skills/memory-compact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-compact-4e7e633e7812f24c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-compact@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-compact-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1ffd543931ab48bca17868e826ab6a4e24268ddddbdf873800989faac1b00e5",
+      "artifactSizeBytes": 2144
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T23:26:09.437Z"
+}

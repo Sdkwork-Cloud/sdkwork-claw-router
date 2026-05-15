@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stockbuddy@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stockbuddy",
+  "skill": {
+    "id": 26358,
+    "skillKey": "clawhub-stockbuddy",
+    "name": "StockBuddy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stockbuddy",
+    "url": "https://clawhub.ai/skills/stockbuddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stockbuddy-32fa525ee29276cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-market stock analysis and portfolio execution assistant for CN, HK, and US equities. Provides technical + basic valuation analysis, portfolio review, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tacitlab",
+      "userId": "s17by8hsrn84z694jzk64cfxqs83h97q",
+      "displayName": "Tacit Lab",
+      "image": "https://avatars.githubusercontent.com/u/263604746?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1775440597986,
+      "changelog": "Improve execution-aware guidance, position intake follow-ups, and cash-aware buy suggestions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcd115cd65ffed4d995477830d9e1a3a263b7a23711eb5f32e3fa738ba4dd6f3"
+}

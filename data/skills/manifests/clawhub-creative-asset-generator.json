@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21065,
+  "uuid": "skill-clawhub-creative-asset-generator",
+  "skillKey": "clawhub-creative-asset-generator",
+  "name": "Ads Asset Generator",
+  "summary": "Generate production-ready ad asset specs for Meta (Facebook/Instagram), TikTok Ads, YouTube Ads, Google Ads, Amazon Ads, and Shopify Ads placements.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creative_asset_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danyangliu",
+      "features": [
+        "Generate production-ready ad asset specs for Meta (Facebook/Instagram), TikTok Ads, YouTube Ads."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/creative-asset-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184733968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "creative-asset-generator",
+      "url": "https://clawhub.ai/skills/creative-asset-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creative-asset-generator",
+    "url": "https://clawhub.ai/skills/creative-asset-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creative-asset-generator-38b0679073f4a3f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/creative-asset-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-creative-asset-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17d3ad2f04591920a5fc28abee7d7b9e07f0bb89dfde1f70ad4f4a5edd7aa0da",
+      "artifactSizeBytes": 2561
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T02:17:24.050Z"
+}

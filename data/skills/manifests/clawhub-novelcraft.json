@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51840,
+  "uuid": "skill-clawhub-novelcraft",
+  "skillKey": "clawhub-novelcraft",
+  "name": "Novelcraft",
+  "summary": "Fully autonomous book author. Creates complete novels from idea to finished PDF/EPUB. Modular workflow with standardized config schema v3.2: Concept → Option...",
+  "version": "3.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novelcraft",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kesuek",
+      "features": [
+        "Fully autonomous book author",
+        "Creates complete novels from idea to finished PDF/EPUB",
+        "Modular workflow with standardized config schema v3.2: Concept → Option..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/novelcraft@3.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/120419048?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "novelcraft",
+      "url": "https://clawhub.ai/skills/novelcraft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novelcraft",
+    "url": "https://clawhub.ai/skills/novelcraft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novelcraft-7c6ce2767f8443da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/novelcraft@3.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-novelcraft-3.2.3.json",
+      "version": "3.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ae3f3881dbecdfdedaa31563cfbc6c57d1d64818d4bb386cbd808209a7d5fb5",
+      "artifactSizeBytes": 1880
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T19:09:08.297Z"
+}

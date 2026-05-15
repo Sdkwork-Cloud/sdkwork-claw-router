@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15837,
+  "uuid": "skill-clawhub-claude-code-legacy",
+  "skillKey": "clawhub-claude-code-legacy",
+  "name": "claude-code (Deprecated alias)",
+  "summary": "Trigger Claude Code development tasks in observable tmux sessions with stable startup, progress visibility, and completion callback to OpenClaw. Use when use...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_legacy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yaxuan42",
+      "features": [
+        "Trigger Claude Code development tasks in observable tmux sessions with stable startup, progress.",
+        "Use when use..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-legacy@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184813557?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-legacy",
+      "url": "https://clawhub.ai/skills/claude-code-legacy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-legacy",
+    "url": "https://clawhub.ai/skills/claude-code-legacy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-legacy-154e6790ad4cb42b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-legacy@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-legacy-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f12f8566ce9350699a9d84a2e7e3044fcea5a5f45a1d55b51f532e28e5609de5",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T08:08:38.722Z"
+}

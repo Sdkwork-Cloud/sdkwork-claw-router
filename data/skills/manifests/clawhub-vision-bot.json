@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12903,
+  "uuid": "skill-clawhub-vision-bot",
+  "skillKey": "clawhub-vision-bot",
+  "name": "Vision Bot",
+  "summary": "Describe images, detect objects, extract text, and analyze webpages. Pass any image URL directly in your task. Responds in your language.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vision_bot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "unixlamadev-spec",
+      "features": [
+        "Describe images, detect objects, extract text, and analyze webpages",
+        "Pass any image URL directly in your task",
+        "Responds in your language."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vision-bot@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251052015?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vision-bot",
+      "url": "https://clawhub.ai/skills/vision-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vision-bot",
+    "url": "https://clawhub.ai/skills/vision-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vision-bot-82dea17500a9ae50.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vision-bot@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vision-bot-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77e1e02dba78bd1d9bf555fbd348d5fe818776617b23282cd5077095861c75d0",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T04:59:36.823Z"
+}

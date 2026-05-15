@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "wechat-md-publisher-skill",
+    "displayName": "Wechat Md Publisher Skill",
+    "summary": "发布 Markdown 文章到微信公众号，支持草稿管理、多主题、智能图片处理、自动封面图。推荐与 news-to-markdown-skill 配合使用实现一键转载（支持本地图片）。",
+    "tags": {
+      "latest": "1.0.10"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1034,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 76
+    },
+    "createdAt": 1773910677071,
+    "updatedAt": 1778312701948
+  },
+  "latestVersion": {
+    "version": "1.0.10",
+    "createdAt": 1777450630116,
+    "changelog": "- 安全模型重大升级：Skill 执行方式由每次 npx 拉取切换为全局 npm 安装+in-process 动态 import，彻底消除运行时供应链风险。\n- 现在必须提前手动全局安装 wechat-md-publisher（npm install -g），Skill 仅调用本机已安装版本、不再联网拉包。\n- 安装方式、风险提示、审计建议和推荐用法等文档全面更新，强调账号凭证加密的上游依赖与最佳实践。\n- install 字段 riskLevel 降为 low，riskReason 描述同步更新。\n- 所有示例命令统一改为 wechat-pub（不再推荐用 npx）。\n- 其余行为与功能无变化。",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "sipingme",
+    "userId": "s17867zbqf69d0mb2yqzym6nmh83hrxm",
+    "displayName": "PING SI",
+    "image": "https://avatars.githubusercontent.com/u/19371897?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778312701948
+  }
+}

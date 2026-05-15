@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/android-agent@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.android_agent",
+  "skill": {
+    "id": 13214,
+    "skillKey": "clawhub-android-agent",
+    "name": "android-agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "android-agent",
+    "url": "https://clawhub.ai/skills/android-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/android-agent-8c932008ea68e60f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control a real Android phone via USB or network using GPT-4o vision to run tasks like opening apps, typing, tapping, and automation scripts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harshilmathur",
+      "userId": "publishers:harshilmathur",
+      "displayName": "Harshil Mathur",
+      "image": "https://avatars.githubusercontent.com/u/1286414?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1119,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 4,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1771225187864,
+      "changelog": "Fix metadata: ANDROID_PIN moved to optionalEnv (was incorrectly required), source/homepage URLs corrected to clawhub.ai",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e8e6c3d4197087738b680f4237ff6493706a34cf2d9cd1fe670466806b3c0aba"
+}

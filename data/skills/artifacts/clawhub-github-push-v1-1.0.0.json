@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-push-v1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_push_v1",
+  "skill": {
+    "id": 41769,
+    "skillKey": "clawhub-github-push-v1",
+    "name": "Github Push"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-push-v1",
+    "url": "https://clawhub.ai/skills/github-push-v1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-push-v1-610eb6ccc1eef074.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure GitHub push automation with auto SSH and remote config. Use when git push, automated push, or conflict handling needed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onlyloveher",
+      "userId": "s174xx7xgy6h0qxxb3z22szwc183pph8",
+      "displayName": "onlyloveher",
+      "image": "https://avatars.githubusercontent.com/u/972832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774587950440,
+      "changelog": "Initial release—automated, secure GitHub push tool with smart configuration and safety features.\n\n- Auto-configures SSH and git remotes for easy, secure setup.\n- Handles conflicts with automatic pull, rebase, and force-push.\n- Built-in rate limiting, batching, and validation to prevent bans and accidental misuse.\n- Highly configurable via YAML for safety thresholds and operation modes.\n- No external dependencies; uses the standard Git CLI.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42b39109966ddd9db90d92bd2ca550d1c8ab8898b533c80de557adc58582962e"
+}

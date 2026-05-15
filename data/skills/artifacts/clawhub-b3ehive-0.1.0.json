@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/b3ehive@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.b3ehive",
+  "skill": {
+    "id": 13769,
+    "skillKey": "clawhub-b3ehive",
+    "name": "B3ehive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "b3ehive",
+    "url": "https://clawhub.ai/skills/b3ehive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/b3ehive-be83e835ff843fbc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs three AI agents in parallel to implement, cross-evaluate, score, and select the best code solution for a given coding task objectively."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weiyangzen",
+      "userId": "publishers:weiyangzen",
+      "displayName": "weiyangzen",
+      "image": "https://avatars.githubusercontent.com/u/208240451?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1142,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770573528230,
+      "changelog": "Initial release of b3ehive: a multi-agent, PCTF-compliant code competition framework.\n\n- Spawns three isolated AI agents (simplicity, speed, robustness) to solve the same coding task in parallel.\n- Implements cross-evaluation, numeric scoring, and data-driven winner selection with clear decision logic.\n- Standardizes workspace structure and markdown reporting for traceability and audit.\n- Includes phase-based pre-commit linting and runtime assertions to ensure completeness and correctness.\n- Fully documented prompt and evaluation templates, scoring weights, and configuration guidelines.\n- Output includes the winning implementation, full comparison report, and transparent rationale for selection.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:76b4841ef73ce90372950005ecad6535cdd0eeb9009e01907a440a11819af5ad"
+}

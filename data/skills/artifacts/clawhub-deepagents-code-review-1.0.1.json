@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deepagents-code-review@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepagents_code_review",
+  "skill": {
+    "id": 27384,
+    "skillKey": "clawhub-deepagents-code-review",
+    "name": "Deepagents Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepagents-code-review",
+    "url": "https://clawhub.ai/skills/deepagents-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepagents-code-review-98b8b3bc3fa2cfd7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews Deep Agents code for bugs, anti-patterns, and improvements. Use when reviewing code that uses create_deep_agent, backends, subagents, middleware, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 338,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776830949906,
+      "changelog": "- Added explicit \"review gates\" with step-by-step evidence requirements for code review (Locate, Anchor, Classify, Runtime claims).\n- Each finding now must be tied to a specific code quote and file location rather than imports or names alone.\n- Findings about runtime errors or failures require in-code API evidence, removing speculative reasoning.\n- SKILL.md restructured to emphasize stepwise, evidence-bound review for repeatable and defensible output.\n- No changes to the core issue categories, but review process and documentation clarity significantly improved.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b517295874e47eeb7d4ea5a287ff0614de04cfeb1fa40f84b58d9298dc61cd54"
+}

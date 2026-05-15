@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawchest-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawchest_setup",
+  "skill": {
+    "id": 11683,
+    "skillKey": "clawhub-clawchest-setup",
+    "name": "Clawchest Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawchest-setup",
+    "url": "https://clawhub.ai/skills/clawchest-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawchest-setup-b0e5056165006d3e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your secure banking system for file and data storage. Deposit money, files, JSON data, and secrets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pkyanam",
+      "userId": "publishers:pkyanam",
+      "displayName": "pkyanam",
+      "image": "https://avatars.githubusercontent.com/u/37784174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1758,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770077721564,
+      "changelog": "Initial release of clawchest skill.\n\n- Secure banking system for money, file, JSON data, and secret storage.\n- Detailed setup instructions, including registration and agent API key management.\n- Comprehensive API usage guide for deposits, withdrawals, file uploads, JSON data storage, and secret management.\n- Best practices and critical security warnings to prevent key leakage.\n- Heartbeat integration instructions to ensure regular data backup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:399ca84809ed4ee3c5a376a3a2c9c8c30d2a283ad58df9bbf715b7b5fed39cb2"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68799,
+  "uuid": "skill-clawhub-convertible-bond-4cnmarket",
+  "skillKey": "clawhub-convertible-bond-4cnmarket",
+  "name": "convertible-bond-cn",
+  "summary": "A 股可转债分析框架，覆盖转股价值、纯债价值与期权价值三维估值，以及下修、强赎、回售博弈、双低策略与转债轮动选债思路。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.convertible_bond_4cnmarket",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BondClaw.AI",
+      "features": [
+        "A 股可转债分析框架，覆盖转股价值、纯债价值与期权价值三维估值，以及下修、强赎、回售博弈、双低策略与转债轮动选债思路。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/convertible-bond-4cnmarket@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/206630801?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "convertible-bond-4cnmarket",
+      "url": "https://clawhub.ai/skills/convertible-bond-4cnmarket"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "convertible-bond-4cnmarket",
+    "url": "https://clawhub.ai/skills/convertible-bond-4cnmarket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/convertible-bond-4cnmarket-2e096017f35ac1a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/convertible-bond-4cnmarket@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-convertible-bond-4cnmarket-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6aaaed13992c6d275755aff3f25cd2c887abf4e2ed769221de9879a15314fc5",
+      "artifactSizeBytes": 2392
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T14:09:00.686Z"
+}

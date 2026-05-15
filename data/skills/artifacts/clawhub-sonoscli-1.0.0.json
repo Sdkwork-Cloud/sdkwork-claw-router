@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sonoscli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sonoscli",
+  "skill": {
+    "id": 8234,
+    "skillKey": "clawhub-sonoscli",
+    "name": "Sonoscli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sonoscli",
+    "url": "https://clawhub.ai/skills/sonoscli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sonoscli-ee97806b58bcd240.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Sonos speakers (discover/status/play/volume/group)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "steipete",
+      "userId": "s179zksw999xz8ms4cy7pb2fr183m5jq",
+      "displayName": "Peter Steinberger",
+      "image": "https://avatars.githubusercontent.com/u/58493?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 81126,
+      "installsAllTime": 2750,
+      "installsCurrent": 2626,
+      "stars": 52,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767545381030,
+      "changelog": "",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9bc6960b2d7938b64d96a1f90b615abdc17a3c6669d047be8f9f850ad2d0e090"
+}

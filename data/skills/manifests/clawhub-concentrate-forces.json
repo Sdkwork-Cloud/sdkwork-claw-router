@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60542,
+  "uuid": "skill-clawhub-concentrate-forces",
+  "skillKey": "clawhub-concentrate-forces",
+  "name": "Concentrate Forces",
+  "summary": "触发：当多个任务同时争夺时间、注意力、算力或预算，必须确定主攻方向并停止分散用力时调用；常见信号包括优先级过多、资源紧张、推进分散、需要决定先做什么。 English: Trigger when limited resources are being split across too many tasks and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.concentrate_forces",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "arg0",
+      "features": [
+        "触发：当多个任务同时争夺时间、注意力、算力或预算，必须确定主攻方向并停止分散用力时调用；常见信号包括优先级过多、资源紧张、推进分散、需要决定先做什么。 English: Trigger wh."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/concentrate-forces@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/589461?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "concentrate-forces",
+      "url": "https://clawhub.ai/skills/concentrate-forces"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "concentrate-forces",
+    "url": "https://clawhub.ai/skills/concentrate-forces",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/concentrate-forces-ff493bf4ce4043a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/concentrate-forces@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-concentrate-forces-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5566aa1f09f1765c0c71a4194cf0199040328b873ca065135392053c9afea7c1",
+      "artifactSizeBytes": 2660
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T14:30:32.678Z"
+}

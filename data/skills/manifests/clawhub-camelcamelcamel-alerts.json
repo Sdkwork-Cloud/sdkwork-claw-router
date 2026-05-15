@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10139,
+  "uuid": "skill-clawhub-camelcamelcamel-alerts",
+  "skillKey": "clawhub-camelcamelcamel-alerts",
+  "name": "CamelCamelCamel Alerts",
+  "summary": "Monitor CamelCamelCamel price drop alerts via RSS and send Telegram notifications when items go on sale. Use when setting up automatic price tracking for Amazon products with CamelCamelCamel price alerts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camelcamelcamel_alerts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jgramajo4",
+      "features": [
+        "Monitor CamelCamelCamel price drop alerts via RSS and send Telegram notifications when items go.",
+        "Use when setting up automatic price tracking for Amazon products with CamelCamelCamel price ale."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/camelcamelcamel-alerts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22783249?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "camelcamelcamel-alerts",
+      "url": "https://clawhub.ai/skills/camelcamelcamel-alerts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camelcamelcamel-alerts",
+    "url": "https://clawhub.ai/skills/camelcamelcamel-alerts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camelcamelcamel-alerts-231dab8b53de86a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/camelcamelcamel-alerts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-camelcamelcamel-alerts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25e5fde3a127fb5c549386090efd33e5cf584dd69026ab9bb552014437d7ee29",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-23T03:51:46.264Z"
+}

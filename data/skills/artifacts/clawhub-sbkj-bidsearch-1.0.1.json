@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sbkj-bidsearch@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sbkj_bidsearch",
+  "skill": {
+    "id": 72825,
+    "skillKey": "clawhub-sbkj-bidsearch",
+    "name": "全国招中标信息、政府采购项目查询-保标招标"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sbkj-bidsearch",
+    "url": "https://clawhub.ai/skills/sbkj-bidsearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sbkj-bidsearch-9a18820e51d6f821.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全国招标中标采购信息搜索 - 保标招标 - 支持多条件筛选的招投标数据搜索，返回项目金额、甲方、乙方、代理机构、采集源网址等核心字段。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brade888",
+      "userId": "s173mytzfeez64zrpxswk134sh8592yp",
+      "displayName": "brade888",
+      "image": "https://avatars.githubusercontent.com/u/57820917?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776826130744,
+      "changelog": "Version 1.0.1 changelog:\n\n- 增加 version、author、license、homepage、api_endpoint、tags 等元数据字段，适配 Hermes 平台新规范\n- 明确列出凭证（API Key、服务器地址）的用途及安全说明\n- 添加安全提示与最佳实践，强化凭证保护与数据隐私告知\n- 更新许可证为 MIT-0，新增官网、API 端点等官方信息\n- 优化“安装/配置/用法”说明，结构更清晰、代码示例更规范\n- 增加 changelog（更新日志）与详尽隐私策略描述",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2fa83a494dccef7b026b50d9fdffcba818be754e6ee6b206d7d9b5152422f585"
+}

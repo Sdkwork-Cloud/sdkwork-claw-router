@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73674,
+  "uuid": "skill-clawhub-legal-system-mapper-mctmilk",
+  "skillKey": "clawhub-legal-system-mapper-mctmilk",
+  "name": "法条体系定位",
+  "summary": "以某个法条为核心节点，构建其上下游法条关联网络，包括上位规范、并列条款、下位细化、程序衔接、竞合分析。当用户想了解某个法条在法律体系中的位置时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_system_mapper_mctmilk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MctMilk",
+      "features": [
+        "以某个法条为核心节点，构建其上下游法条关联网络，包括上位规范、并列条款、下位细化、程序衔接、竞合分析。当用户想了解某个法条在法律体系中的位置时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legal-system-mapper-mctmilk@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51847435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legal-system-mapper-mctmilk",
+      "url": "https://clawhub.ai/skills/legal-system-mapper-mctmilk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-system-mapper-mctmilk",
+    "url": "https://clawhub.ai/skills/legal-system-mapper-mctmilk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-system-mapper-mctmilk-d129ad57b4ff468d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legal-system-mapper-mctmilk@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-legal-system-mapper-mctmilk-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1df81f6d1f9dc28749ee9104c13f94ecd4016ba9adb94e58bb13b6715bc9568c",
+      "artifactSizeBytes": 2733
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:06:46.616Z"
+}

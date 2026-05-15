@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26368,
+  "uuid": "skill-clawhub-agent-core-extractor",
+  "skillKey": "clawhub-agent-core-extractor",
+  "name": "Agent Core Extractor",
+  "summary": "Export the agent core from supported framework repositories into a small source-only zip for AI migration or cross-framework analysis. Use when the user want...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_core_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Moshiii",
+      "features": [
+        "Export the agent core from supported framework repositories into a small source-only zip for AI.",
+        "Use when the user want..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-core-extractor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7553188?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-core-extractor",
+      "url": "https://clawhub.ai/skills/agent-core-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-core-extractor",
+    "url": "https://clawhub.ai/skills/agent-core-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-core-extractor-113d20e4c6c2a6ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-core-extractor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-core-extractor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de464bbd74fc6791a8241d0d1e6068bfef63483dde70ee4efaa369a6e36412ef",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T11:38:40.680Z"
+}

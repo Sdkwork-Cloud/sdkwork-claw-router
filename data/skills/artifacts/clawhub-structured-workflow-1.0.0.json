@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/structured-workflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.structured_workflow",
+  "skill": {
+    "id": 64394,
+    "skillKey": "clawhub-structured-workflow",
+    "name": "Structured Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "structured-workflow",
+    "url": "https://clawhub.ai/skills/structured-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/structured-workflow-d108d86042ec840b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "默认启用：中文输出、结构化流程、简洁优先。适用于所有任务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cikichen",
+      "userId": "s17f61egd0taytbbh1rczw4e8n84267n",
+      "displayName": "Simon",
+      "image": "https://avatars.githubusercontent.com/u/1478821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 799,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773417974768,
+      "changelog": "- 首发版本，提供结构化工作流（轻量版）规范。\n- 默认中文输出，强调结论先行与简洁表达。\n- 明确工作流程：构思、审核、分解、调研、澄清。\n- 强调简单、可维护、事实为准与及时纠错。\n- 输出统一为简体中文，并支持查阅架构、实施与质量相关文档。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0aa86c8a204bb80feb96df478c41c1a4ace9e9522fda39d43fcf634a497ffce1"
+}

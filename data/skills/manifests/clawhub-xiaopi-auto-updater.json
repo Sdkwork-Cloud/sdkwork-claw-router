@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39816,
+  "uuid": "skill-clawhub-xiaopi-auto-updater",
+  "skillKey": "clawhub-xiaopi-auto-updater",
+  "name": "Xiaopi Auto Updater",
+  "summary": "Automatically update Clawdbot and all installed skills once daily. Runs via cron, checks for updates, applies them, and messages the user with a summary of w...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaopi_auto_updater",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adin",
+      "features": [
+        "Automatically update Clawdbot and all installed skills once daily",
+        "Runs via cron, checks for updates, applies them, and messages the user with a summary of w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaopi-auto-updater@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22701008?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaopi-auto-updater",
+      "url": "https://clawhub.ai/skills/xiaopi-auto-updater"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaopi-auto-updater",
+    "url": "https://clawhub.ai/skills/xiaopi-auto-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaopi-auto-updater-4c85c67a3d96dbb3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaopi-auto-updater@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaopi-auto-updater-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a20b3ebd7d0ffddc715dac36877f464e1d52cc2cc107372e475a3a0b9a224abf",
+      "artifactSizeBytes": 2362
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T19:06:23.598Z"
+}

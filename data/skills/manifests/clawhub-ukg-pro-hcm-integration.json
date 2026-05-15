@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38717,
+  "uuid": "skill-clawhub-ukg-pro-hcm-integration",
+  "skillKey": "clawhub-ukg-pro-hcm-integration",
+  "name": "Ukg Pro Hcm",
+  "summary": "Ukg Pro HCM integration. Manage Persons, Organizations, Jobs, Benefits, Payrolls, TimeOffs and more. Use when the user wants to interact with Ukg Pro HCM data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ukg_pro_hcm_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Ukg Pro HCM integration",
+        "Manage Persons, Organizations, Jobs, Benefits, Payrolls, TimeOffs and more",
+        "Use when the user wants to interact with Ukg Pro HCM data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ukg-pro-hcm-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ukg-pro-hcm-integration",
+      "url": "https://clawhub.ai/skills/ukg-pro-hcm-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ukg-pro-hcm-integration",
+    "url": "https://clawhub.ai/skills/ukg-pro-hcm-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ukg-pro-hcm-integration-f035b4f68238a094.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ukg-pro-hcm-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ukg-pro-hcm-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8012547d3b555e89d5445b6a7b2c616ffec1b438e2d7a786afdd4e63aa5e7db5",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:56:47.968Z"
+}

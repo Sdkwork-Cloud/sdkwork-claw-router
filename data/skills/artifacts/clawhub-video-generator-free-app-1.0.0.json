@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-generator-free-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generator_free_app",
+  "skill": {
+    "id": 45922,
+    "skillKey": "clawhub-video-generator-free-app",
+    "name": "Video Generator Free App"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generator-free-app",
+    "url": "https://clawhub.ai/skills/video-generator-free-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generator-free-app-8914e494616a0048.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get ready-to-share videos ready to post, without touching a single slider. Upload your images or clips (MP4, MOV, JPG, PNG, up to 200MB), say something like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776115018424,
+      "changelog": "Video Generator Free App — Initial Release\n\n- Instantly create and export 1080p promo videos by uploading images or clips (MP4, MOV, JPG, PNG, up to 200MB) and describing your desired output.\n- Designed for TikTok creators who want ready-to-post videos without paid editing tools or manual adjustments.\n- Free 7-day credit system with anonymous access; supports rapid file uploads and session-based work.\n- Automatic AI video generation, music/text overlay, and cloud rendering; typical turnaround is 30-90 seconds.\n- Handles uploads, edits, and exports through a streamlined chat-driven workflow.\n- Clear error handling, real-time status updates, and simple export/download process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac3afb5e1ae92e9090a69227e68e874a0c5e74e994b863b358e507d7f356d964"
+}

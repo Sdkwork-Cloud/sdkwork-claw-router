@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-posting-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_posting_skill",
+  "skill": {
+    "id": 51423,
+    "skillKey": "clawhub-x-posting-skill",
+    "name": "X Posting — Automated Twitter/X Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-posting-skill",
+    "url": "https://clawhub.ai/skills/x-posting-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-posting-skill-5efba7edba3e95e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate posting, replying, searching, and timeline reading on X (Twitter) using the bird CLI with configured Chrome profile and content strategy."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tenlifejosh",
+      "userId": "publishers:tenlifejosh",
+      "displayName": "tenlifejosh",
+      "image": "https://avatars.githubusercontent.com/u/205712596?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 291,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774038611179,
+      "changelog": "Complete X/Twitter posting skill. Bird CLI integration, Chrome profile auth, queue management, daily posting automation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a5976780b195583f3e1adc74f3763204c1c8a875eb2bb3b857fa4eb0e89a12e"
+}

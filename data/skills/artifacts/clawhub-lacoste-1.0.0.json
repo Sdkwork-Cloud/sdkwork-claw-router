@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lacoste@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lacoste",
+  "skill": {
+    "id": 66192,
+    "skillKey": "clawhub-lacoste",
+    "name": "Lacoste"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lacoste",
+    "url": "https://clawhub.ai/skills/lacoste",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lacoste-f955f62dab66faee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供lacoste品牌背景、发展历程、产品特色及市场竞争的详细信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776261280425,
+      "changelog": "Lacoste 品牌档案技能首次发布。\n\n- 提供 Lacoste 品牌的快速简介与核心信息。\n- 涵盖品牌发展历程、主要产品与服务、市场分布和行业地位。\n- 指导用户获取 Lacoste 官方渠道的最新资讯。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51d7551d7bc6956ce7e70705cd3d71fb8d2ac990abaa1e9ac7a89d425a5fd529"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70671,
+  "uuid": "skill-clawhub-sbti-personality",
+  "skillKey": "clawhub-sbti-personality",
+  "name": "SBTI 恶搞人格测试",
+  "summary": "SBTI 恶搞人格测试。给用户出一组抽象搞笑的测试题，根据回答生成一个离谱的人格类型和解读。触发词：SBTI、人格测试、性格测试、测一测、做个测试。当用户提到 SBTI、想做人格测试、或有人分享了 SBTI 结果时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sbti_personality",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enihsago",
+      "features": [
+        "SBTI 恶搞人格测试。给用户出一组抽象搞笑的测试题，根据回答生成一个离谱的人格类型和解读。触发词：SBTI、人格测试、性格测试、测一测、做个测试。当用户提到 SBTI、想做人格测试、或有人."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sbti-personality@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265008639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sbti-personality",
+      "url": "https://clawhub.ai/skills/sbti-personality"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sbti-personality",
+    "url": "https://clawhub.ai/skills/sbti-personality",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sbti-personality-0a6386333cf45619.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sbti-personality@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sbti-personality-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3de15a7d7725ab75f26c35827962e922f547202458bc96d6b47ca87e629a7b32",
+      "artifactSizeBytes": 2104
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T15:20:30.527Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35874,
+  "uuid": "skill-clawhub-witai-integration",
+  "skillKey": "clawhub-witai-integration",
+  "name": "Witai",
+  "summary": "Wit.ai integration. Manage data, records, and automate workflows. Use when the user wants to interact with Wit.ai data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.witai_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Wit.ai integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Wit.ai data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/witai-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "witai-integration",
+      "url": "https://clawhub.ai/skills/witai-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "witai-integration",
+    "url": "https://clawhub.ai/skills/witai-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/witai-integration-0afbe2646c84727a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/witai-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-witai-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43517ebb31bd215002c36317ae649abfc9841845a0cbf23a258528dc5270c36a",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:02:32.073Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ssti-test@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssti_test",
+  "skill": {
+    "id": 71700,
+    "skillKey": "clawhub-ssti-test",
+    "name": "SSTI色色人格测试"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssti-test",
+    "url": "https://clawhub.ai/skills/ssti-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssti-test-b450e944803a8a80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供20题午夜床品人格测试，揭示18岁以上成人隐藏个性，结果可保存分享，仅供娱乐使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hongjiahao371-pixel",
+      "userId": "s172drmjfggz6kkkd9qxtb9bwn83mzpn",
+      "displayName": "hongjiahao371-pixel",
+      "image": "https://avatars.githubusercontent.com/u/249543018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776676269469,
+      "changelog": "Initial release of ssti-test skill.\n\n- Provides access to the SSTI 午夜床品人格测试 personality quiz\n- Includes direct link to the test site and related articles\n- Details test info: 20 questions, ~4 minutes, adult entertainment only\n- Simple usage instructions for taking and sharing the test\n- Notes and disclaimers included for responsible use",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cdb96693424c31acdebe0100f098be268507113801e91f0388ca5f9b12fba910"
+}

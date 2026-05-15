@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48284,
+  "uuid": "skill-clawhub-openai-whisper-api-hardened",
+  "skillKey": "clawhub-openai-whisper-api-hardened",
+  "name": "Openai Whisper Api Hardened",
+  "summary": "Transcribe audio via OpenAI Audio Transcriptions API (Whisper).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openai_whisper_api_hardened",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Faberlens",
+      "features": [
+        "Transcribe audio via OpenAI Audio Transcriptions API (Whisper)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openai-whisper-api-hardened@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261834257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openai-whisper-api-hardened",
+      "url": "https://clawhub.ai/skills/openai-whisper-api-hardened"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openai-whisper-api-hardened",
+    "url": "https://clawhub.ai/skills/openai-whisper-api-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openai-whisper-api-hardened-5ed454fbceadc312.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openai-whisper-api-hardened@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openai-whisper-api-hardened-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa3fd0bae56bc0ce33cdc46493dc04eeca9324516326c33283b7c4ef39c350e2",
+      "artifactSizeBytes": 2389
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T08:00:37.061Z"
+}

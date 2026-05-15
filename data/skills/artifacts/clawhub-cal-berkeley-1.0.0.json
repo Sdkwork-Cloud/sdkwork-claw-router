@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cal-berkeley@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cal_berkeley",
+  "skill": {
+    "id": 70009,
+    "skillKey": "clawhub-cal-berkeley",
+    "name": "Cal Berkeley"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cal-berkeley",
+    "url": "https://clawhub.ai/skills/cal-berkeley",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cal-berkeley-bea7c3850869c0e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "加州大学伯克利分校是一所世界顶尖公立研究型大学，拥有110多位诺贝尔奖得主，计算机科学和物理学领域全球领先。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777035827575,
+      "changelog": "- 首个版本发布，介绍加州大学伯克利分校（UC Berkeley）的历史、学术成就和影响力\n- 涵盖学校重要历史节点及世界顶尖公立大学地位\n- 分析商业模式、师资力量、学术传统及与硅谷联系\n- 提供关键数据，如学生数、研究经费、录取率和捐赠基金\n- 列举伯克利的有趣事实，包括诺奖数量、元素发现与历史性校园运动",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f49a3ac00c34cfec9ceb12bfe1d96fd51f6224cd1807969f02244738c35027f9"
+}

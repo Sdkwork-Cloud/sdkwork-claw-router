@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54452,
+  "uuid": "skill-clawhub-hetu-lyrics-blessing",
+  "skillKey": "clawhub-hetu-lyrics-blessing",
+  "name": "Hetu Lyrics Blessing",
+  "summary": "A daily lyrics blessing skill that sends a random Hetu (河图) song lyric to a designated recipient every day at 23:00. Lyrics are fetched from Baidu Baike usin...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hetu_lyrics_blessing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yuqiao Tan",
+      "features": [
+        "A daily lyrics blessing skill that sends a random Hetu (河图) song lyric to a designated recipien.",
+        "Lyrics are fetched from Baidu Baike usin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hetu-lyrics-blessing@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90178138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hetu-lyrics-blessing",
+      "url": "https://clawhub.ai/skills/hetu-lyrics-blessing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hetu-lyrics-blessing",
+    "url": "https://clawhub.ai/skills/hetu-lyrics-blessing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hetu-lyrics-blessing-13b6506c8353fe7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hetu-lyrics-blessing@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hetu-lyrics-blessing-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:076a6cb6fcb10137af6d517109b4e8adf9f231d265f7101ae792ba064f8bc742",
+      "artifactSizeBytes": 2286
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T17:36:11.618Z"
+}

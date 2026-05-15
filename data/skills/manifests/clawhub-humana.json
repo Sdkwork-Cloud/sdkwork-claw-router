@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69556,
+  "uuid": "skill-clawhub-humana",
+  "skillKey": "clawhub-humana",
+  "name": "Humana",
+  "summary": "提供Humana的基础信息、业务范围、市场表现及最新动态，助力快速了解该品牌的整体概况。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humana",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供Humana的基础信息、业务范围、市场表现及最新动态，助力快速了解该品牌的整体概况。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/humana@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "humana",
+      "url": "https://clawhub.ai/skills/humana"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humana",
+    "url": "https://clawhub.ai/skills/humana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humana-93babfec2f0c9778.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/humana@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-humana-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:477925e2a530f892771b76ada0f226274721f17fc75844a734eb2b106ba98318",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T11:01:46.603Z"
+}

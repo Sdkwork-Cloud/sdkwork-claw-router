@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nested-pdf-merger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nested_pdf_merger",
+  "skill": {
+    "id": 51640,
+    "skillKey": "clawhub-nested-pdf-merger",
+    "name": "Nested PDF Merger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nested-pdf-merger",
+    "url": "https://clawhub.ai/skills/nested-pdf-merger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nested-pdf-merger-75d24af4daccc78d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the task is to merge PDFs from a nested directory tree into a single PDF with hierarchical bookmarks by invoking the external `nestedpdfm..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lyutenant",
+      "userId": "s17dpqp04cqt8hdamgwbhyzjxx849y7v",
+      "displayName": "Briant",
+      "image": "https://avatars.githubusercontent.com/u/11176022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 279,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773516274394,
+      "changelog": "Initial release of nested-pdf-merger skill.\n\n- Wraps the external nestedpdfmerger CLI for merging PDFs from nested directories into a single PDF with hierarchical bookmarks.\n- Requires the nestedpdfmerger binary to be installed and available on PATH.\n- Supports CLI features such as previewing merge order, excluding directories, sorting, disabling bookmarks, and more.\n- Provides guidance on installation and usage; errors if the required binary is missing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e16a10f862dd4901006b87e5d396641208e5077da6b3c6583dd895ee87f4b57a"
+}

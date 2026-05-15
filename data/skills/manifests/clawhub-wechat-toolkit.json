@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72139,
+  "uuid": "skill-clawhub-wechat-toolkit",
+  "skillKey": "clawhub-wechat-toolkit",
+  "name": "微信公众号工具包",
+  "summary": "微信公众号一站式工具包 — 集成文章搜索、文章下载、AI洗稿改写、公众号发布四大功能。当用户需要搜索/下载/改写/发布微信公众号文章时使用。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MrQ",
+      "features": [
+        "微信公众号一站式工具包 — 集成文章搜索、文章下载、AI洗稿改写、公众号发布四大功能。当用户需要搜索/下载/改写/发布微信公众号文章时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-toolkit@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183293891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-toolkit",
+      "url": "https://clawhub.ai/skills/wechat-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-toolkit",
+    "url": "https://clawhub.ai/skills/wechat-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-toolkit-f10af9fecf7f543f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-toolkit@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-toolkit-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b35a927d73cb6a3e0232779b469f6cfe4317eda6d35b2760dc8b6743bc657d3d",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T07:31:21.690Z"
+}

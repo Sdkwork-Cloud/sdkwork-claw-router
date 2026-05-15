@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64589,
+  "uuid": "skill-clawhub-vrain",
+  "skillKey": "clawhub-vrain",
+  "name": "vRain 古籍电子书制作",
+  "summary": "调用本地安装的 vRain 工具，将 Markdown 或纯文本中文古籍转换为古籍刻本风格的直排 PDF 电子书。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vrain",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shanleiguang",
+      "features": [
+        "调用本地安装的 vRain 工具，将 Markdown 或纯文本中文古籍转换为古籍刻本风格的直排 PDF 电子书。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vrain@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38583316?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vrain",
+      "url": "https://clawhub.ai/skills/vrain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vrain",
+    "url": "https://clawhub.ai/skills/vrain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vrain-333c295b7449f1d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vrain@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vrain-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9732b9334a0cc4f07e2cc4c22bd23918f0ad8239def2bb90d3c647afa7965d5",
+      "artifactSizeBytes": 1889
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T22:57:34.197Z"
+}

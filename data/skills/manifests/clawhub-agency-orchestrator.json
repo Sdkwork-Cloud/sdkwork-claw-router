@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60432,
+  "uuid": "skill-clawhub-agency-orchestrator",
+  "skillKey": "clawhub-agency-orchestrator",
+  "name": "Agency Orchestrator",
+  "summary": "多 Agent 协作调度系统 - 自动分析任务、选择最佳 Agent、协调多 Agent 协作完成复杂任务",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agency_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gonghaiquan",
+      "features": [
+        "多 Agent 协作调度系统",
+        "自动分析任务、选择最佳 Agent、协调多 Agent 协作完成复杂任务"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agency-orchestrator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48919419?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agency-orchestrator",
+      "url": "https://clawhub.ai/skills/agency-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agency-orchestrator",
+    "url": "https://clawhub.ai/skills/agency-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agency-orchestrator-a17bb655ef63ec1a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agency-orchestrator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agency-orchestrator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77f9203873970477ec5cfcdde98fad5d32ad03e906e507dffb6ef6d774b800e2",
+      "artifactSizeBytes": 2399
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T14:11:39.928Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dagre-react-flow@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dagre_react_flow",
+  "skill": {
+    "id": 33902,
+    "skillKey": "clawhub-dagre-react-flow",
+    "name": "Dagre React Flow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dagre-react-flow",
+    "url": "https://clawhub.ai/skills/dagre-react-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dagre-react-flow-1197d8621dd46bae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatic graph layout using dagre with React Flow (@xyflow/react). Use when implementing auto-layout, hierarchical layouts, tree structures, or arranging no..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776831289978,
+      "changelog": "- Added a \"Hard gates\" section listing four explicit, ordered criteria for validating layouts, including dimension consistency, coordinate conversion, state updates, and `fitView` timing.\n- Documentation now emphasizes pass/fail conditions for common layout mistakes to improve reliability when integrating Dagre with React Flow.\n- No changes to code; update is limited to clarifying and reinforcing best practices in the SKILL.md documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c18d67d7d4f59165c9b52ddc40c571dc0d60a9ff9c40d4dbc07d5b82bbc3ee8d"
+}

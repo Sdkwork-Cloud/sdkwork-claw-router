@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reporting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reporting",
+  "skill": {
+    "id": 17192,
+    "skillKey": "clawhub-reporting",
+    "name": "Reporting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reporting",
+    "url": "https://clawhub.ai/skills/reporting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reporting-637d7becb9983937.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Standardized templates for periodic reports, system audits, revenue tracking, and progress logs. All output goes to workspace/artifacts/ directory. Use when: generating periodic reports, system audits, performance reviews, revenue tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "staybased",
+      "userId": "publishers:staybased",
+      "displayName": "staybased",
+      "image": "https://avatars.githubusercontent.com/u/216957304?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1492,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770927810984,
+      "changelog": "Initial release — periodic reports, system audits, revenue tracking templates",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f3f4ccfee57598b82949338311c29f7d2972bb48ed005b94be01751c58173243"
+}

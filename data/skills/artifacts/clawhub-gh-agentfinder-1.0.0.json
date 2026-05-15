@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gh-agentfinder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gh_agentfinder",
+  "skill": {
+    "id": 53565,
+    "skillKey": "clawhub-gh-agentfinder",
+    "name": "Agentfinder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gh-agentfinder",
+    "url": "https://clawhub.ai/skills/gh-agentfinder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gh-agentfinder-4fd065ee53e3f0be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Kayak for agents — search across ClawHub, SkillsMP, LobeHub, and more to find the right skill for your task. Compare results across registries, get recommend..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mirni",
+      "userId": "s1711srsc0t5e7tx4tkwpmygw584bfmq",
+      "displayName": "mirni",
+      "image": "https://avatars.githubusercontent.com/u/13551232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776164590075,
+      "changelog": "Initial release of gh-agentfinder:  \n- Search and compare agent skills across ClawHub, SkillsMP, LobeHub, and more registries.\n- Get tailored agent recommendations for your task or problem.\n- Filter search results by specific registries with customizable result limits.\n- List all available registries for agent discovery.\n- Simple REST API with endpoints for search, comparison, recommendations, and registry listing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8fed9d8c31010368934e8e5326e1d710b4c7efac924eb5fe0794483ec4cd03a3"
+}

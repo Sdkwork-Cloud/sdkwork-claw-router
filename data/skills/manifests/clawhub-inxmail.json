@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30863,
+  "uuid": "skill-clawhub-inxmail",
+  "skillKey": "clawhub-inxmail",
+  "name": "Inxmail",
+  "summary": "Inxmail integration. Manage data, records, and automate workflows. Use when the user wants to interact with Inxmail data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inxmail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Inxmail integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Inxmail data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inxmail@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inxmail",
+      "url": "https://clawhub.ai/skills/inxmail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inxmail",
+    "url": "https://clawhub.ai/skills/inxmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inxmail-0764a26dbf0a4d0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inxmail@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-inxmail-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da4547cf37aa4c37c09add3a2942afe826ea6fc028055d70bd565e6ca4682dfe",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:01:31.838Z"
+}

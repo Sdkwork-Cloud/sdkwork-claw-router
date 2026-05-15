@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tianchenwei3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianchenwei3",
+  "skill": {
+    "id": 44690,
+    "skillKey": "clawhub-tianchenwei3",
+    "name": "test2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianchenwei3",
+    "url": "https://clawhub.ai/skills/tianchenwei3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianchenwei3-eab0441edc73e293.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever the user wants to set up, configure, or refactor TypeORM within a NestJS TypeScript project, including data sources, entities, migrat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theanswerss",
+      "userId": "s179jd4y0x8c1qgpxb4vwtbb1x83tvah",
+      "displayName": "THEANSWERSS",
+      "image": "https://avatars.githubusercontent.com/u/139423601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776999663672,
+      "changelog": "Initial release of the NestJS + TypeORM Integration skill.\n\n- Provides detailed guidance for setting up, configuring, and refactoring TypeORM within NestJS projects.\n- Covers best practices for environment-driven configuration, entities, relations, migrations, and repository wiring.\n- Specifies recommended directory structure and coding patterns.\n- Explains when to apply this skill, with clear inclusion and exclusion criteria.\n- Emphasizes security (proper use of `.env`), scalability, and production-ready defaults.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:508f00added6be8c5848d00440744c033dd4c8fc465b2df8c984ea5526f59849"
+}

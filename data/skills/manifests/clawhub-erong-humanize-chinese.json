@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69452,
+  "uuid": "skill-clawhub-erong-humanize-chinese",
+  "skillKey": "clawhub-erong-humanize-chinese",
+  "name": "Humanize Chinese",
+  "summary": "检测并去除中文文本中的AI写作痕迹。当用户说\"去AI味\"、\"改得自然一点\"、\"太机器了\"、\"帮我润色\"、\"去掉AI感\"时使用。支持文件输入或直接粘贴文本，输出改写后文本和对比报告。适用于论文、文案、公众号、社交媒体等场景。",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.erong_humanize_chinese",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yirong",
+      "features": [
+        "检测并去除中文文本中的AI写作痕迹。当用户说\"去AI味\"、\"改得自然一点\"、\"太机器了\"、\"帮我润色\"、\"去掉AI感\"时使用。支持文件输入或直接粘贴文本，输出改写后文本和对比报告。适用于论文."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/erong-humanize-chinese@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32793967?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "erong-humanize-chinese",
+      "url": "https://clawhub.ai/skills/erong-humanize-chinese"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "erong-humanize-chinese",
+    "url": "https://clawhub.ai/skills/erong-humanize-chinese",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/erong-humanize-chinese-82365072803b8b0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/erong-humanize-chinese@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-erong-humanize-chinese-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2775e2d3dcbe50a920c213bb02f0b5076e9a5e23fee5dbab400dbcf1776c856",
+      "artifactSizeBytes": 2422
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T03:32:40.030Z"
+}

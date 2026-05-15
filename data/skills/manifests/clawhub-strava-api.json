@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36073,
+  "uuid": "skill-clawhub-strava-api",
+  "skillKey": "clawhub-strava-api",
+  "name": "Strava Api",
+  "summary": "Official Strava OAuth integration for OpenClaw. Use to connect/authorize Strava, store+refresh tokens, and fetch workout/activity data (runs/rides/etc.) for...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strava_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Steve Wang",
+      "features": [
+        "Official Strava OAuth integration for OpenClaw",
+        "Use to connect/authorize Strava, store+refresh tokens, and fetch workout/activity data (runs/ri."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/strava-api@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19756696?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "strava-api",
+      "url": "https://clawhub.ai/skills/strava-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strava-api",
+    "url": "https://clawhub.ai/skills/strava-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strava-api-212ce56e6294fa61.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/strava-api@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-strava-api-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:686ff7509bd7e2203e49f16f054b71eaa7657582e7e35607e1b35268fb2a3c1c",
+      "artifactSizeBytes": 2147
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T06:44:19.425Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54345,
+  "uuid": "skill-clawhub-civic-google",
+  "skillKey": "clawhub-civic-google",
+  "name": "Civic Google",
+  "summary": "Use gog (Google CLI) without manual OAuth setup — Civic handles token management automatically",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.civic_google",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "civictechuser",
+      "features": [
+        "Use gog (Google CLI) without manual OAuth setup — Civic handles token management automatically"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/civic-google@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18300632?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "civic-google",
+      "url": "https://clawhub.ai/skills/civic-google"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "civic-google",
+    "url": "https://clawhub.ai/skills/civic-google",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/civic-google-a81ce46d22150399.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/civic-google@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-civic-google-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:669f6604d7964a34bec97e7fcfe714bd110f8abe1e7479d47444cec8215073fe",
+      "artifactSizeBytes": 2162
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T15:48:54.755Z"
+}

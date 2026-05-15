@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nobodybuilt@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nobodybuilt",
+  "skill": {
+    "id": 36815,
+    "skillKey": "clawhub-nobodybuilt",
+    "name": "nobodybuilt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nobodybuilt",
+    "url": "https://clawhub.ai/skills/nobodybuilt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nobodybuilt-2e6f7a3efef17a8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to find unexplored tool, app, or project ideas that nobody has built yet. Triggers: 'nobodybuilt', 'find me an idea', 'wha..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kewang0622",
+      "userId": "s1778kyayy99sdjad1wxsr97j983f9hx",
+      "displayName": "Ke Wang",
+      "image": "https://avatars.githubusercontent.com/u/30745273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774567010368,
+      "changelog": "Add multimodal support: accept screenshots, photos, Reddit posts as input",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:323375378df1ed57bb80d84d684e1ce94fa313f7287923af089692a3ab3d9f4f"
+}

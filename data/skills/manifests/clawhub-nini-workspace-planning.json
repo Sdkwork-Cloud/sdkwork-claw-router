@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50364,
+  "uuid": "skill-clawhub-nini-workspace-planning",
+  "skillKey": "clawhub-nini-workspace-planning",
+  "name": "Workspace Planning",
+  "summary": "Use this skill for project schedule management — tracking modules, milestones, and delivery phases stored in YAML. Invoke whenever the user asks about: proje...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nini_workspace_planning",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Niracler",
+      "features": [
+        "Use this skill for project schedule management — tracking modules, milestones, and delivery pha.",
+        "Invoke whenever the user asks about: proje..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nini-workspace-planning@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24842631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nini-workspace-planning",
+      "url": "https://clawhub.ai/skills/nini-workspace-planning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nini-workspace-planning",
+    "url": "https://clawhub.ai/skills/nini-workspace-planning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nini-workspace-planning-bc8df95cc12524eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nini-workspace-planning@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nini-workspace-planning-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f73fd8ac2728f7d217c7ab00caae087f331cc6390af4b65db8d66453c2ac1a57",
+      "artifactSizeBytes": 2006
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T01:33:18.917Z"
+}

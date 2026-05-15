@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibaba-wan@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibaba_wan",
+  "skill": {
+    "id": 51232,
+    "skillKey": "clawhub-alibaba-wan",
+    "name": "Wan 2.6 & 2.5 — AI Video & Image Generation by Alibaba"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibaba-wan",
+    "url": "https://clawhub.ai/skills/alibaba-wan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibaba-wan-cf3b0e6143e03bea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI videos and images using Alibaba's Wan 2.6 and Wan 2.5 — featuring text-to-video, image-to-video, video-to-video, text-to-image, and image editing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xixihhhh",
+      "userId": "s178tcr2rphfrfg0hgzrtz7bs183h25f",
+      "displayName": "MikeWang",
+      "image": "https://avatars.githubusercontent.com/u/60566571?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 666,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773808681571,
+      "changelog": "- Added Python scripts for direct image and video generation: `scripts/generate_image.py` and `scripts/generate_video.py`\n- Provided command-line usage instructions for generating videos, images, uploading files, and listing available models\n- No external dependencies required for the new utility scripts\n- Updated documentation with script examples and help commands for users",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c1e5bea970397d9e007481090d1fe222546cc430e825e63530e155d4d259d33"
+}

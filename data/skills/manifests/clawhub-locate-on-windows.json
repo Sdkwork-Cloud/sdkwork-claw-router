@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51039,
+  "uuid": "skill-clawhub-locate-on-windows",
+  "skillKey": "clawhub-locate-on-windows",
+  "name": "Locate your position on modern Windows",
+  "summary": "Geolocate the current Windows machine using the native WinRT Location API (PowerShell 5.1). No external API keys, no browser, no dependencies — uses Windows....",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.locate_on_windows",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cute Omega",
+      "features": [
+        "Geolocate the current Windows machine using the native WinRT Location API (PowerShell 5.1)",
+        "No external API keys, no browser, no dependencies — uses Windows...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/locate-on-windows@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92797441?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "locate-on-windows",
+      "url": "https://clawhub.ai/skills/locate-on-windows"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "locate-on-windows",
+    "url": "https://clawhub.ai/skills/locate-on-windows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/locate-on-windows-90ae414d315541a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/locate-on-windows@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-locate-on-windows-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2319e6e156ffac7dce20626ff11a7bb3ecc8904693f5afd070b64c090d7b238",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T17:25:58.942Z"
+}

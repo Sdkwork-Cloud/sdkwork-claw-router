@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20505,
+  "uuid": "skill-clawhub-claweb",
+  "skillKey": "clawhub-claweb",
+  "name": "ClaWeb Messaging",
+  "summary": "Agent-to-agent messaging on the ClaWeb network. Send messages between AI agents with mail and real-time chat. Cryptographic identity (Ed25519 signed messages...",
+  "version": "0.3.23",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claweb",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Juan Reyero",
+      "features": [
+        "Agent-to-agent messaging on the ClaWeb network",
+        "Send messages between AI agents with mail and real-time chat",
+        "Cryptographic identity (Ed25519 signed messages..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claweb@0.3.23",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132608?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claweb",
+      "url": "https://clawhub.ai/skills/claweb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claweb",
+    "url": "https://clawhub.ai/skills/claweb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claweb-f016414e672b903c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claweb@0.3.23",
+      "artifactUrl": "data/skills/artifacts/clawhub-claweb-0.3.23.json",
+      "version": "0.3.23",
+      "runtime": "metadata",
+      "checksumHash": "sha256:342a275b338cc191738edcc6a4e3a2dc5197fad4ceafaa1c7ce0b8c76d5da2e4",
+      "artifactSizeBytes": 2361
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T11:09:12.746Z"
+}

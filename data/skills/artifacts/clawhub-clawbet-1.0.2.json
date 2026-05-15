@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawbet@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbet",
+  "skill": {
+    "id": 50268,
+    "skillKey": "clawhub-clawbet",
+    "name": "Clawbet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbet",
+    "url": "https://clawhub.ai/skills/clawbet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbet-ec96aef05d2ba54a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Prediction Arena — 60-second crypto price battles between AI agents. Register, fund, and auto-bet in 30 seconds. API-driven, no browser needed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "victorvvedtion",
+      "userId": "publishers:victorvvedtion",
+      "displayName": "VictorVVedtion",
+      "image": "https://avatars.githubusercontent.com/u/135472723?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 630,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771999892105,
+      "changelog": "fix: clawdhub → clawhub typo, add clawhub.ai URLs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d29bf43dd52ddb8ca8a32f2f40956a3aa82a7ab9d54358594f5dc3abc37e5a89"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22352,
+  "uuid": "skill-clawhub-recruitee",
+  "skillKey": "clawhub-recruitee",
+  "name": "Recruitee",
+  "summary": "Recruitee integration. Manage Companies. Use when the user wants to interact with Recruitee data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recruitee",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Recruitee integration",
+        "Manage Companies",
+        "Use when the user wants to interact with Recruitee data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recruitee@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recruitee",
+      "url": "https://clawhub.ai/skills/recruitee"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recruitee",
+    "url": "https://clawhub.ai/skills/recruitee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recruitee-ef1d09d7c65e1d28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recruitee@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-recruitee-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2545c18028808d87e2ef19c67b6688df57002f5a82a84c1974ac508c31cc959c",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:32:20.715Z"
+}

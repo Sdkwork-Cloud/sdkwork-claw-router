@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-generation-api-key@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_generation_api_key",
+  "skill": {
+    "id": 43965,
+    "skillKey": "clawhub-free-video-generation-api-key",
+    "name": "Free Video Generation Api Key"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-generation-api-key",
+    "url": "https://clawhub.ai/skills/free-video-generation-api-key",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-generation-api-key-de50f177c996788d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text prompts into AI generated videos with this skill. Works with MP4, MOV, WebM, GIF files up to 500MB. developers and indie hackers use it for gen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776113573300,
+      "changelog": "- Initial release of the \"Free Video Generation API Key\" skill.\n- Generate AI-powered videos from text prompts via cloud API with no paid key required.\n- Supports MP4, MOV, WebM, and GIF formats up to 500MB, delivered in 1080p resolution.\n- Automatic anonymous token generation provides 100 free credits (valid for 7 days).\n- Simple workflows for uploading, editing, and exporting videos or querying credits and state.\n- Clear error handling and actionable tips for fast, quality AI video generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f25d441577ff245e07fb7709ac341b4beacbd6b8a161c2868eb31bc7ae1c9eb"
+}

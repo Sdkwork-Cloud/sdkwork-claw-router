@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dingtalk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk",
+  "skill": {
+    "id": 19778,
+    "skillKey": "clawhub-dingtalk",
+    "name": "Dingtalk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk",
+    "url": "https://clawhub.ai/skills/dingtalk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-67ace226d55bf20b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DingTalk channel plugin for OpenClaw - send and receive messages via DingTalk (钉钉)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chayjan",
+      "userId": "s17f470hgh6d5xdp61vh0q7v3d83pdhq",
+      "displayName": "chan",
+      "image": "https://avatars.githubusercontent.com/u/14889392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2309,
+      "installsAllTime": 28,
+      "installsCurrent": 25,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772731337291,
+      "changelog": "DingTalk channel plugin for OpenClaw – initial release.\n\n- Enables sending and receiving messages via DingTalk (钉钉)\n- Supports both internal apps and webhook robots\n- Allows configuration for DM/group chat policies and user allowlists\n- Provides setup via environment variables, config file, or webhook\n- Includes troubleshooting and credential setup instructions",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f91add2249285522426f7c8f685c72c0d52c807856d34ce28c3e11912a3c6f6c"
+}

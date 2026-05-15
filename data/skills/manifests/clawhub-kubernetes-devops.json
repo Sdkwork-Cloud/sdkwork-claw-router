@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9904,
+  "uuid": "skill-clawhub-kubernetes-devops",
+  "skillKey": "clawhub-kubernetes-devops",
+  "name": "Kubernetes",
+  "summary": "WHAT: Kubernetes manifest generation - Deployments, StatefulSets, CronJobs, Services, Ingresses, ConfigMaps, Secrets, and PVCs with production-grade security and health checks. WHEN: User needs to create K8s manifests, deploy containers, c.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kubernetes_devops",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "WHAT: Kubernetes manifest generation",
+        "Deployments, StatefulSets, CronJobs, Services, Ingresses, ConfigMaps, Secrets, and PVCs with pr.",
+        "WHEN: User needs to create K8s manifests, deploy containers, configure Services/Ingress, manage.",
+        "KEYWORDS: kubernetes, k8s, manifest, deployment, statefulset, cronjob, service, ingress, config."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kubernetes-devops@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kubernetes-devops",
+      "url": "https://clawhub.ai/skills/kubernetes-devops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kubernetes-devops",
+    "url": "https://clawhub.ai/skills/kubernetes-devops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kubernetes-devops-24474de287672205.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kubernetes-devops@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kubernetes-devops-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e66e22194ac2b6b6dd75c5c3bbb83ddbcdae1414e9917d2a42609fce2426f962",
+      "artifactSizeBytes": 2587
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T12:43:40.945Z"
+}

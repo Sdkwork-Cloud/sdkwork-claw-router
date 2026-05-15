@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beauty-image@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beauty_image",
+  "skill": {
+    "id": 59757,
+    "skillKey": "clawhub-beauty-image",
+    "name": "Beauty Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beauty-image",
+    "url": "https://clawhub.ai/skills/beauty-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beauty-image-7bd6853eb385a790.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "商业化AI图片生成助手。40+场景模板, 30+风格词典, 智能意图识别, 结构化Prompt, 三引擎智能路由 (Wanx/Seedream4/Seedream5)。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yh22e",
+      "userId": "publishers:yh22e",
+      "displayName": "圆规",
+      "image": "https://avatars.githubusercontent.com/u/13883859?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1774099797615,
+      "changelog": "v3.2.0: 扩展wanx支持15种宽高比, 中文别名, --list-sizes, 自动像素缩放",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b3174b08283db0620fc2a4cc524ed754cf717240d3b5c48dc5f496931a6e982"
+}

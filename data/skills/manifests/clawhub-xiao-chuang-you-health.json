@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71489,
+  "uuid": "skill-clawhub-xiao-chuang-you-health",
+  "skillKey": "clawhub-xiao-chuang-you-health",
+  "name": "Xiao Chuang You Health",
+  "summary": "小窗幽健康子技能。当用户询问饮食、食谱、食疗、茶饮、作息、睡眠、熬夜、养生动作、敲胆经、穴位、调理等话题时激活。涵盖节气食疗、日常食谱、茶饮、作息管理、时辰养生、导引术、穴位调理、情志调摄等全方位健康养生知识。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiao_chuang_you_health",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "张城瑞",
+      "features": [
+        "小窗幽健康子技能。当用户询问饮食、食谱、食疗、茶饮、作息、睡眠、熬夜、养生动作、敲胆经、穴位、调理等话题时激活。涵盖节气食疗、日常食谱、茶饮、作息管理、时辰养生、导引术、穴位调理、情志调摄等."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiao-chuang-you-health@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48597146?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiao-chuang-you-health",
+      "url": "https://clawhub.ai/skills/xiao-chuang-you-health"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiao-chuang-you-health",
+    "url": "https://clawhub.ai/skills/xiao-chuang-you-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiao-chuang-you-health-7665c0dedb77350a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiao-chuang-you-health@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiao-chuang-you-health-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d508d6baa90b55a03954ab4d7fa4c40e7d9edbd6ce6a2aed21b08b731177a77",
+      "artifactSizeBytes": 2499
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T10:03:09.328Z"
+}

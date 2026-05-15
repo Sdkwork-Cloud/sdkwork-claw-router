@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11200,
+  "uuid": "skill-clawhub-maestro-skill",
+  "skillKey": "clawhub-maestro-skill",
+  "name": "Maestro Api",
+  "summary": "Query Maestro APIs over HTTP using the SIWX + JWT + x402 credit purchase flow. Resolve the exact endpoint from docs.gomaestro.org before requesting or paying.",
+  "version": "0.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maestro_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Varderes",
+      "features": [
+        "Query Maestro APIs over HTTP using the SIWX + JWT + x402 credit purchase flow",
+        "Resolve the exact endpoint from docs.gomaestro.org before requesting or paying."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maestro-skill@0.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16459846?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maestro-skill",
+      "url": "https://clawhub.ai/skills/maestro-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maestro-skill",
+    "url": "https://clawhub.ai/skills/maestro-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maestro-skill-55b4088ce91b916d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maestro-skill@0.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-maestro-skill-0.2.4.json",
+      "version": "0.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98b11183a12d783158c13194d542c9c84a8923d2b471a54400e0f6d9aa762922",
+      "artifactSizeBytes": 2500
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T16:39:18.877Z"
+}

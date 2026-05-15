@@ -1,4 +1,4 @@
-import json
+﻿import json
 import unittest
 from pathlib import Path
 
@@ -8,8 +8,8 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 CONTRACT_PATH = ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
 BACKEND_OPENAPI_PATH = ROOT / "generated" / "openapi" / "clawrouter-backend-openapi.json"
-BACKEND_SKILL_API_PATH = ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "api" / "skill.ts"
-BACKEND_SDK_PATH = ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "sdk.ts"
+BACKEND_SKILL_API_PATH = ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "ecosystem.ts"
+BACKEND_SDK_PATH = ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "sdk.ts"
 PORTAL_PACKAGE_ROOT = (
     ROOT
     / "apps"
@@ -30,36 +30,36 @@ class AdminSkillRuntimeStandardTest(unittest.TestCase):
         }
 
         expected = {
-            "fetchSkillCategories": ("GET", "/backend/v3/api/skill/categories"),
-            "createSkillCategory": ("POST", "/backend/v3/api/skill/categories"),
-            "fetchSkillPackages": ("POST", "/backend/v3/api/skill/package/list"),
-            "getSkillPackage": ("GET", "/backend/v3/api/skill/package/{package_id}"),
-            "createSkillPackage": ("POST", "/backend/v3/api/skill/package"),
-            "updateSkillPackage": ("PUT", "/backend/v3/api/skill/package/{package_id}"),
-            "deleteSkillPackage": ("DELETE", "/backend/v3/api/skill/package/{package_id}"),
-            "enableSkillPackage": ("POST", "/backend/v3/api/skill/package/{package_id}/enable"),
-            "disableSkillPackage": ("POST", "/backend/v3/api/skill/package/{package_id}/disable"),
-            "fetchSkills": ("POST", "/backend/v3/api/skill/list"),
-            "getSkill": ("GET", "/backend/v3/api/skill/{skill_id}"),
-            "createSkill": ("POST", "/backend/v3/api/skill"),
-            "updateSkill": ("PUT", "/backend/v3/api/skill/{skill_id}"),
-            "deleteSkill": ("DELETE", "/backend/v3/api/skill/{skill_id}"),
-            "enableSkill": ("POST", "/backend/v3/api/skill/{skill_id}/enable"),
-            "disableSkill": ("POST", "/backend/v3/api/skill/{skill_id}/disable"),
-            "publishSkill": ("POST", "/backend/v3/api/skill/{skill_id}/publish"),
-            "offlineSkill": ("POST", "/backend/v3/api/skill/{skill_id}/offline"),
-            "approveSkill": ("POST", "/backend/v3/api/skill/{skill_id}/review/approve"),
-            "rejectSkill": ("POST", "/backend/v3/api/skill/{skill_id}/review/reject"),
-            "fetchSkillAssets": ("GET", "/backend/v3/api/skill/{skill_id}/assets"),
-            "getSkillAsset": ("GET", "/backend/v3/api/skill/{skill_id}/assets/{asset_id}"),
-            "createSkillAsset": ("POST", "/backend/v3/api/skill/{skill_id}/assets"),
-            "updateSkillAsset": ("PUT", "/backend/v3/api/skill/{skill_id}/assets/{asset_id}"),
-            "deleteSkillAsset": ("DELETE", "/backend/v3/api/skill/{skill_id}/assets/{asset_id}"),
-            "fetchSkillArtifacts": ("GET", "/backend/v3/api/skill/{skill_id}/artifacts"),
-            "getSkillArtifact": ("GET", "/backend/v3/api/skill/{skill_id}/artifacts/{artifact_id}"),
-            "createSkillArtifact": ("POST", "/backend/v3/api/skill/{skill_id}/artifacts"),
-            "updateSkillArtifact": ("PUT", "/backend/v3/api/skill/{skill_id}/artifacts/{artifact_id}"),
-            "deleteSkillArtifact": ("DELETE", "/backend/v3/api/skill/{skill_id}/artifacts/{artifact_id}"),
+            "fetchSkillCategories": ("GET", "/backend/v3/api/ecosystem/skills/categories"),
+            "createSkillCategory": ("POST", "/backend/v3/api/ecosystem/skills/categories"),
+            "fetchSkillPackages": ("GET", "/backend/v3/api/ecosystem/skills/package"),
+            "getSkillPackage": ("GET", "/backend/v3/api/ecosystem/skills/package/{packageId}"),
+            "createSkillPackage": ("POST", "/backend/v3/api/ecosystem/skills/package"),
+            "updateSkillPackage": ("PUT", "/backend/v3/api/ecosystem/skills/package/{packageId}"),
+            "deleteSkillPackage": ("DELETE", "/backend/v3/api/ecosystem/skills/package/{packageId}"),
+            "enableSkillPackage": ("POST", "/backend/v3/api/ecosystem/skills/package/{packageId}/enable"),
+            "disableSkillPackage": ("POST", "/backend/v3/api/ecosystem/skills/package/{packageId}/disable"),
+            "fetchSkills": ("GET", "/backend/v3/api/ecosystem/skills"),
+            "getSkill": ("GET", "/backend/v3/api/ecosystem/skills/{skillId}"),
+            "createSkill": ("POST", "/backend/v3/api/ecosystem/skills"),
+            "updateSkill": ("PUT", "/backend/v3/api/ecosystem/skills/{skillId}"),
+            "deleteSkill": ("DELETE", "/backend/v3/api/ecosystem/skills/{skillId}"),
+            "enableSkill": ("POST", "/backend/v3/api/ecosystem/skills/{skillId}/enable"),
+            "disableSkill": ("POST", "/backend/v3/api/ecosystem/skills/{skillId}/disable"),
+            "publishSkill": ("POST", "/backend/v3/api/ecosystem/skills/{skillId}/publish"),
+            "offlineSkill": ("POST", "/backend/v3/api/ecosystem/skills/{skillId}/unpublish"),
+            "approveSkill": ("POST", "/backend/v3/api/ecosystem/skills/{skillId}/review/approve"),
+            "rejectSkill": ("POST", "/backend/v3/api/ecosystem/skills/{skillId}/review/reject"),
+            "fetchSkillAssets": ("GET", "/backend/v3/api/ecosystem/skills/{skillId}/assets"),
+            "getSkillAsset": ("GET", "/backend/v3/api/ecosystem/skills/{skillId}/assets/{assetId}"),
+            "createSkillAsset": ("POST", "/backend/v3/api/ecosystem/skills/{skillId}/assets"),
+            "updateSkillAsset": ("PUT", "/backend/v3/api/ecosystem/skills/{skillId}/assets/{assetId}"),
+            "deleteSkillAsset": ("DELETE", "/backend/v3/api/ecosystem/skills/{skillId}/assets/{assetId}"),
+            "fetchSkillArtifacts": ("GET", "/backend/v3/api/ecosystem/skills/{skillId}/artifacts"),
+            "getSkillArtifact": ("GET", "/backend/v3/api/ecosystem/skills/{skillId}/artifacts/{artifactId}"),
+            "createSkillArtifact": ("POST", "/backend/v3/api/ecosystem/skills/{skillId}/artifacts"),
+            "updateSkillArtifact": ("PUT", "/backend/v3/api/ecosystem/skills/{skillId}/artifacts/{artifactId}"),
+            "deleteSkillArtifact": ("DELETE", "/backend/v3/api/ecosystem/skills/{skillId}/artifacts/{artifactId}"),
         }
 
         self.assertEqual(set(expected), set(operations))
@@ -80,12 +80,20 @@ class AdminSkillRuntimeStandardTest(unittest.TestCase):
 
         self.assertEqual("AdminSkillCategoryListResponse", operations["fetchSkillCategories"]["response_schema"]["name"])
         self.assertEqual("AdminSkillCategoryCreateRequest", operations["createSkillCategory"]["request_schema"]["name"])
-        self.assertEqual("AdminSkillPackageListRequest", operations["fetchSkillPackages"]["request_schema"]["name"])
+        self.assertNotIn("request_schema", operations["fetchSkillPackages"])
+        self.assertEqual(
+            ["q", "enabled", "category_id", "page", "page_size"],
+            [parameter["name"] for parameter in operations["fetchSkillPackages"]["query_parameters"]],
+        )
         self.assertEqual("AdminSkillPackageListResponse", operations["fetchSkillPackages"]["response_schema"]["name"])
         self.assertEqual("AdminSkillPackageCreateRequest", operations["createSkillPackage"]["request_schema"]["name"])
         self.assertEqual("AdminSkillPackageUpdateRequest", operations["updateSkillPackage"]["request_schema"]["name"])
         self.assertEqual("AdminSkillPackageDeleteResponse", operations["deleteSkillPackage"]["response_schema"]["name"])
-        self.assertEqual("AdminSkillListRequest", operations["fetchSkills"]["request_schema"]["name"])
+        self.assertNotIn("request_schema", operations["fetchSkills"])
+        self.assertEqual(
+            ["q", "market_status", "review_status", "visibility", "enabled", "category_id", "page", "page_size"],
+            [parameter["name"] for parameter in operations["fetchSkills"]["query_parameters"]],
+        )
         self.assertEqual("AdminSkillListResponse", operations["fetchSkills"]["response_schema"]["name"])
         self.assertEqual("AdminSkillCreateRequest", operations["createSkill"]["request_schema"]["name"])
         self.assertEqual("AdminSkillUpdateRequest", operations["updateSkill"]["request_schema"]["name"])
@@ -148,51 +156,50 @@ class AdminSkillRuntimeStandardTest(unittest.TestCase):
         openapi = json.loads(BACKEND_OPENAPI_PATH.read_text(encoding="utf-8"))
 
         for path, method, operation_id in [
-            ("/backend/v3/api/skill/categories", "get", "fetchSkillCategories"),
-            ("/backend/v3/api/skill/categories", "post", "createSkillCategory"),
-            ("/backend/v3/api/skill/package/list", "post", "fetchSkillPackages"),
-            ("/backend/v3/api/skill/package/{package_id}", "get", "getSkillPackage"),
-            ("/backend/v3/api/skill/package", "post", "createSkillPackage"),
-            ("/backend/v3/api/skill/package/{package_id}", "put", "updateSkillPackage"),
-            ("/backend/v3/api/skill/package/{package_id}", "delete", "deleteSkillPackage"),
-            ("/backend/v3/api/skill/package/{package_id}/enable", "post", "enableSkillPackage"),
-            ("/backend/v3/api/skill/package/{package_id}/disable", "post", "disableSkillPackage"),
-            ("/backend/v3/api/skill/list", "post", "fetchSkills"),
-            ("/backend/v3/api/skill/{skill_id}", "get", "getSkill"),
-            ("/backend/v3/api/skill/{skill_id}", "put", "updateSkill"),
-            ("/backend/v3/api/skill/{skill_id}", "delete", "deleteSkill"),
-            ("/backend/v3/api/skill/{skill_id}/enable", "post", "enableSkill"),
-            ("/backend/v3/api/skill/{skill_id}/disable", "post", "disableSkill"),
-            ("/backend/v3/api/skill/{skill_id}/publish", "post", "publishSkill"),
-            ("/backend/v3/api/skill/{skill_id}/offline", "post", "offlineSkill"),
-            ("/backend/v3/api/skill/{skill_id}/review/approve", "post", "approveSkill"),
-            ("/backend/v3/api/skill/{skill_id}/review/reject", "post", "rejectSkill"),
-            ("/backend/v3/api/skill/{skill_id}/assets", "get", "fetchSkillAssets"),
-            ("/backend/v3/api/skill/{skill_id}/assets/{asset_id}", "get", "getSkillAsset"),
-            ("/backend/v3/api/skill/{skill_id}/assets", "post", "createSkillAsset"),
-            ("/backend/v3/api/skill/{skill_id}/assets/{asset_id}", "put", "updateSkillAsset"),
-            ("/backend/v3/api/skill/{skill_id}/assets/{asset_id}", "delete", "deleteSkillAsset"),
-            ("/backend/v3/api/skill/{skill_id}/artifacts", "get", "fetchSkillArtifacts"),
-            ("/backend/v3/api/skill/{skill_id}/artifacts/{artifact_id}", "get", "getSkillArtifact"),
-            ("/backend/v3/api/skill/{skill_id}/artifacts", "post", "createSkillArtifact"),
-            ("/backend/v3/api/skill/{skill_id}/artifacts/{artifact_id}", "put", "updateSkillArtifact"),
-            ("/backend/v3/api/skill/{skill_id}/artifacts/{artifact_id}", "delete", "deleteSkillArtifact"),
+            ("/backend/v3/api/ecosystem/skills/categories", "get", "skills.categories.list"),
+            ("/backend/v3/api/ecosystem/skills/categories", "post", "skills.categories.create"),
+            ("/backend/v3/api/ecosystem/skills/package", "get", "skills.package.list"),
+            ("/backend/v3/api/ecosystem/skills/package/{packageId}", "get", "skills.package.retrieve"),
+            ("/backend/v3/api/ecosystem/skills/package", "post", "skills.package.create"),
+            ("/backend/v3/api/ecosystem/skills/package/{packageId}", "put", "skills.package.update"),
+            ("/backend/v3/api/ecosystem/skills/package/{packageId}", "delete", "skills.package.delete"),
+            ("/backend/v3/api/ecosystem/skills/package/{packageId}/enable", "post", "skills.package.enable"),
+            ("/backend/v3/api/ecosystem/skills/package/{packageId}/disable", "post", "skills.package.disable"),
+            ("/backend/v3/api/ecosystem/skills", "get", "skills.list"),
+            ("/backend/v3/api/ecosystem/skills/{skillId}", "get", "skills.retrieve"),
+            ("/backend/v3/api/ecosystem/skills", "post", "skills.create"),
+            ("/backend/v3/api/ecosystem/skills/{skillId}", "put", "skills.update"),
+            ("/backend/v3/api/ecosystem/skills/{skillId}", "delete", "skills.delete"),
+            ("/backend/v3/api/ecosystem/skills/{skillId}/enable", "post", "skills.enable"),
+            ("/backend/v3/api/ecosystem/skills/{skillId}/disable", "post", "skills.disable"),
+            ("/backend/v3/api/ecosystem/skills/{skillId}/publish", "post", "skills.publish"),
+            ("/backend/v3/api/ecosystem/skills/{skillId}/unpublish", "post", "skills.unpublish"),
+            ("/backend/v3/api/ecosystem/skills/{skillId}/review/approve", "post", "skills.review.approve"),
+            ("/backend/v3/api/ecosystem/skills/{skillId}/review/reject", "post", "skills.review.reject"),
+            ("/backend/v3/api/ecosystem/skills/{skillId}/assets", "get", "skills.assets.list"),
+            ("/backend/v3/api/ecosystem/skills/{skillId}/assets/{assetId}", "get", "skills.assets.retrieve"),
+            ("/backend/v3/api/ecosystem/skills/{skillId}/assets", "post", "skills.assets.create"),
+            ("/backend/v3/api/ecosystem/skills/{skillId}/assets/{assetId}", "put", "skills.assets.update"),
+            ("/backend/v3/api/ecosystem/skills/{skillId}/assets/{assetId}", "delete", "skills.assets.delete"),
+            ("/backend/v3/api/ecosystem/skills/{skillId}/artifacts", "get", "skills.artifacts.list"),
+            ("/backend/v3/api/ecosystem/skills/{skillId}/artifacts/{artifactId}", "get", "skills.artifacts.retrieve"),
+            ("/backend/v3/api/ecosystem/skills/{skillId}/artifacts", "post", "skills.artifacts.create"),
+            ("/backend/v3/api/ecosystem/skills/{skillId}/artifacts/{artifactId}", "put", "skills.artifacts.update"),
+            ("/backend/v3/api/ecosystem/skills/{skillId}/artifacts/{artifactId}", "delete", "skills.artifacts.delete"),
         ]:
             with self.subTest(path=path, method=method):
                 operation = openapi["paths"][path][method]
                 self.assertEqual(operation_id, operation["operationId"])
-                self.assertEqual(["skill"], operation["tags"])
+                self.assertEqual(["ecosystem"], operation["tags"])
 
         for schema_name in [
             "AdminSkillItem",
             "AdminSkillCategoryItem",
             "AdminSkillPackageItem",
-            "AdminSkillPackageListRequest",
             "AdminSkillPackageCreateRequest",
             "AdminSkillPackageUpdateRequest",
             "AdminSkillPackageMutationResponse",
             "AdminSkillPackageDeleteResponse",
-            "AdminSkillListRequest",
             "AdminSkillCreateRequest",
             "AdminSkillUpdateRequest",
             "AdminSkillReviewRequest",
@@ -215,58 +222,78 @@ class AdminSkillRuntimeStandardTest(unittest.TestCase):
 
         skill_api = BACKEND_SKILL_API_PATH.read_text(encoding="utf-8")
         sdk = BACKEND_SDK_PATH.read_text(encoding="utf-8")
-        item_type = (ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "admin-skill-item.ts").read_text(
+        item_type = (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "admin-skill-item.ts").read_text(
             encoding="utf-8"
         )
         create_type = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "admin-skill-create-request.ts"
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "admin-skill-create-request.ts"
         ).read_text(encoding="utf-8")
         package_type = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "admin-skill-package-item.ts"
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "admin-skill-package-item.ts"
         ).read_text(encoding="utf-8")
         asset_type = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "admin-skill-asset-item.ts"
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "admin-skill-asset-item.ts"
         ).read_text(encoding="utf-8")
         artifact_type = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "admin-skill-artifact-item.ts"
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "admin-skill-artifact-item.ts"
         ).read_text(encoding="utf-8")
 
         for method in [
-            "fetchSkillCategories",
-            "createSkillCategory",
-            "fetchSkillPackages",
-            "getSkillPackage",
-            "createSkillPackage",
-            "updateSkillPackage",
-            "deleteSkillPackage",
-            "enableSkillPackage",
-            "disableSkillPackage",
-            "fetchSkills",
-            "getSkill",
-            "createSkill",
-            "updateSkill",
-            "deleteSkill",
-            "enableSkill",
-            "disableSkill",
-            "publishSkill",
-            "offlineSkill",
-            "approveSkill",
-            "rejectSkill",
-            "fetchSkillAssets",
-            "getSkillAsset",
-            "createSkillAsset",
-            "updateSkillAsset",
-            "deleteSkillAsset",
-            "fetchSkillArtifacts",
-            "getSkillArtifact",
-            "createSkillArtifact",
-            "updateSkillArtifact",
-            "deleteSkillArtifact",
+            "list()",
+            "create(body: AdminSkillCategoryCreateRequest",
+            "list(params?: EcosystemSkillsPackageListParams",
+            "retrieve(packageId: string)",
+            "create(body: AdminSkillPackageCreateRequest",
+            "update(packageId: string, body: AdminSkillPackageUpdateRequest",
+            "delete(packageId: string)",
+            "enable(packageId: string, params?: EcosystemSkillsPackageEnableParams)",
+            "disable(packageId: string, params?: EcosystemSkillsPackageDisableParams)",
+            "list(params?: EcosystemSkillsListParams",
+            "retrieve(skillId: string)",
+            "create(body: AdminSkillCreateRequest",
+            "update(skillId: string, body: AdminSkillUpdateRequest",
+            "delete(skillId: string)",
+            "enable(skillId: string, params?: EcosystemSkillsEnableParams)",
+            "disable(skillId: string, params?: EcosystemSkillsDisableParams)",
+            "publish(skillId: string, params?: EcosystemSkillsPublishParams)",
+            "unpublish(skillId: string, params?: EcosystemSkillsUnpublishParams)",
+            "approve(skillId: string, body: AdminSkillReviewRequest",
+            "reject(skillId: string, body: AdminSkillReviewRequest",
+            "list(skillId: string)",
+            "retrieve(skillId: string, assetId: string)",
+            "create(skillId: string, body: AdminSkillAssetCreateRequest",
+            "update(skillId: string, assetId: string, body: AdminSkillAssetUpdateRequest",
+            "delete(skillId: string, assetId: string",
+            "retrieve(skillId: string, artifactId: string)",
+            "create(skillId: string, body: AdminSkillArtifactCreateRequest",
+            "update(skillId: string, artifactId: string, body: AdminSkillArtifactUpdateRequest",
+            "delete(skillId: string, artifactId: string",
         ]:
-            self.assertIn(f"async {method}(", skill_api)
+            self.assertIn(f"async {method}", skill_api)
 
-        self.assertIn("public readonly skill: SkillApi;", sdk)
-        self.assertIn("this.skill = createSkillApi(this.httpClient);", sdk)
+        for resource in [
+            "public readonly categories: EcosystemSkillsCategoriesApi;",
+            "public readonly package: EcosystemSkillsPackageApi;",
+            "public readonly assets: EcosystemSkillsAssetsApi;",
+            "public readonly artifacts: EcosystemSkillsArtifactsApi;",
+            "public readonly review: EcosystemSkillsReviewApi;",
+        ]:
+            self.assertIn(resource, skill_api)
+
+        for legacy_method in [
+            "async fetchSkillAssets(",
+            "async getSkillAsset(",
+            "async updateSkillAsset(",
+            "async deleteSkillAsset(",
+            "async fetchSkillArtifacts(",
+            "async getSkillArtifact(",
+            "async updateSkillArtifact(",
+            "async deleteSkillArtifact(",
+        ]:
+            self.assertNotIn(legacy_method, skill_api)
+
+        self.assertIn("public readonly ecosystem: EcosystemApi;", sdk)
+        self.assertIn("this.ecosystem = createEcosystemApi(this.httpClient);", sdk)
         self.assertIn("AdminSkillCreateRequest", skill_api)
         self.assertIn("AdminSkillUpdateRequest", skill_api)
         self.assertIn("AdminSkillPackageCreateRequest", skill_api)
@@ -302,33 +329,36 @@ class AdminSkillRuntimeStandardTest(unittest.TestCase):
         runtime_test = runtime_test_path.read_text(encoding="utf-8")
         browser_smoke = browser_smoke_path.read_text(encoding="utf-8")
 
-        self.assertIn("getClawRouterBackendSdkClient().skill.fetchSkills", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.fetchSkillCategories", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.fetchSkillPackages", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.getSkillPackage", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.createSkillPackage", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.updateSkillPackage", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.deleteSkillPackage", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.enableSkillPackage", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.disableSkillPackage", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.createSkill", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.updateSkill", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.approveSkill", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.rejectSkill", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.publishSkill", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.offlineSkill", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.enableSkill", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.disableSkill", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.fetchSkillAssets", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.getSkillAsset", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.createSkillAsset", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.updateSkillAsset", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.deleteSkillAsset", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.fetchSkillArtifacts", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.getSkillArtifact", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.createSkillArtifact", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.updateSkillArtifact", service)
-        self.assertIn("getClawRouterBackendSdkClient().skill.deleteSkillArtifact", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.list", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.categories.list", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.categories.create", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.package.list", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.package.retrieve", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.package.create", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.package.update", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.package.delete", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.package.enable", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.package.disable", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.create", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.retrieve", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.update", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.delete", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.review.approve", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.review.reject", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.publish", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.unpublish", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.enable", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.disable", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.assets.list", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.assets.retrieve", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.assets.create", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.assets.update", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.assets.delete", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.artifacts.list", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.artifacts.retrieve", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.artifacts.create", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.artifacts.update", service)
+        self.assertIn("getClawRouterBackendSdkClient().ecosystem.skills.artifacts.delete", service)
         self.assertIn("sourceType: \"COMMUNITY\"", runtime_test)
         self.assertIn("sourceType: \"OFFICIAL\"", runtime_test)
         self.assertIn("value=\"COMMUNITY\"", page)
@@ -350,12 +380,12 @@ class AdminSkillRuntimeStandardTest(unittest.TestCase):
         self.assertIn('path="skill"', app)
         self.assertIn("/admin/skill", admin_layout)
         self.assertIn("admin skill service calls generated backend SDK paths", runtime_test)
-        self.assertIn("/backend/v3/api/skill/package/list", runtime_test)
-        self.assertIn("/backend/v3/api/skill/8101/assets", runtime_test)
-        self.assertIn("/backend/v3/api/skill/8101/artifacts", runtime_test)
+        self.assertIn("/backend/v3/api/ecosystem/skills/package?q=agent&enabled=true", runtime_test)
+        self.assertIn("/backend/v3/api/ecosystem/skills/8101/assets", runtime_test)
+        self.assertIn("/backend/v3/api/ecosystem/skills/8101/artifacts", runtime_test)
         self.assertIn("createSkillPackageInputFromForm", runtime_test)
         self.assertIn("BROWSER_SMOKE_ADMIN_SKILL_PACKAGE", browser_smoke)
-        self.assertIn("POST /backend/v3/api/skill/package/list", browser_smoke)
+        self.assertIn("GET /backend/v3/api/ecosystem/skills/package", browser_smoke)
 
     def test_agent_skill_source_enums_are_java_standard_across_runtime_surfaces(self) -> None:
         skill_surface_paths = [
@@ -376,23 +406,51 @@ class AdminSkillRuntimeStandardTest(unittest.TestCase):
             with self.subTest(path=str(path.relative_to(ROOT))):
                 self.assertTrue(path.exists(), str(path))
                 source = path.read_text(encoding="utf-8")
-                self.assertNotIn("MARKET", source)
-                self.assertNotIn("BUILTIN", source)
+                self.assertNotIn('"sourceType": "MARKET"', source)
+                self.assertNotIn('"sourceType": "BUILTIN"', source)
+                self.assertNotIn("sourceType: 'MARKET'", source)
+                self.assertNotIn('sourceType: "MARKET"', source)
+                self.assertNotIn("sourceType: 'BUILTIN'", source)
+                self.assertNotIn('sourceType: "BUILTIN"', source)
 
         seed_skills = json.loads((ROOT / "data" / "skills" / "skills.json").read_text(encoding="utf-8"))
+        seed_categories = json.loads((ROOT / "data" / "skills" / "categories.json").read_text(encoding="utf-8"))
+        category_by_id = {category["id"]: category for category in seed_categories}
+        self.assertEqual("sdkwork-official", seed_categories[0]["code"])
+        self.assertEqual("SDKWork Official", seed_categories[0]["name"])
+        self.assertTrue(seed_categories[0]["visible"])
+        self.assertEqual(1, seed_categories[0]["status"])
         self.assertGreaterEqual(len(seed_skills), 3)
+        official_count = 0
+        clawhub_count = 0
         for skill in seed_skills:
             with self.subTest(skill=skill["skillKey"]):
-                self.assertEqual("OFFICIAL", skill["sourceType"])
                 self.assertEqual("PUBLISHED", skill["marketStatus"])
                 self.assertEqual("PUBLIC", skill["visibility"])
                 self.assertEqual("APPROVED", skill["reviewStatus"])
                 self.assertTrue(skill["enabled"])
-                self.assertTrue(skill["builtin"])
-                self.assertTrue(skill["isBuiltin"])
                 self.assertGreater(skill["installCount"], 0)
                 self.assertGreater(skill["ratingCount"], 0)
-                self.assertIn("official", skill["tags"])
+                category = category_by_id[skill["categoryId"]]
+                self.assertTrue(category["visible"])
+                self.assertEqual(1, category["status"])
+                if skill["sourceType"] == "OFFICIAL":
+                    official_count += 1
+                    self.assertEqual("SDKWork", skill["provider"])
+                    self.assertEqual(seed_categories[0]["id"], skill["categoryId"])
+                    self.assertTrue(skill["builtin"])
+                    self.assertTrue(skill["isBuiltin"])
+                    self.assertIn("official", skill["tags"])
+                elif skill["sourceType"] == "COMMUNITY":
+                    clawhub_count += 1
+                    self.assertEqual("ClawHub", skill["provider"])
+                    self.assertFalse(skill["builtin"])
+                    self.assertFalse(skill["isBuiltin"])
+                    self.assertEqual("clawhub", skill["source"]["vendor"])
+                else:
+                    self.fail(f"unsupported bundled skill sourceType: {skill['sourceType']}")
+        self.assertGreaterEqual(official_count, 3)
+        self.assertGreaterEqual(clawhub_count, 3)
 
 
 if __name__ == "__main__":

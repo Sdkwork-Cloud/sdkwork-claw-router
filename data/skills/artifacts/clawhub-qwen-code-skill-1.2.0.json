@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qwen-code-skill@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen_code_skill",
+  "skill": {
+    "id": 18024,
+    "skillKey": "clawhub-qwen-code-skill",
+    "name": "Qwen Code"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen-code-skill",
+    "url": "https://clawhub.ai/skills/qwen-code-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen-code-skill-29a5623ed3a06b87.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run Alibaba Cloud Qwen Code CLI via background process for task execution, code review, and automation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "userb1ank",
+      "userId": "publishers:userb1ank",
+      "displayName": "UserB1ank",
+      "image": "https://avatars.githubusercontent.com/u/105202277?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 724,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772205456444,
+      "changelog": "**Qwen Code Skill 1.2.0**\n\n- Revised documentation: Simplified and refocused SKILL.md with background process usage, modern workflow patterns, and clearer security guidance.\n- Added English-only docs; removed README.zh-CN.md for streamlined maintenance.\n- Updated command and integration examples for latest Qwen Code CLI.\n- Improved troubleshooting section and clarified prerequisites.\n- Enhanced compatibility notes and detailed use cases for automation and CI/CD.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eedd3c7dc4bc93d95b83b85b4e1a6daa3b53a917a14e8ac924d8b739f682ef58"
+}

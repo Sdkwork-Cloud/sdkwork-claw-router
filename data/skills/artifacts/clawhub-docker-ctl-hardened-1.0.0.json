@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docker-ctl-hardened@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_ctl_hardened",
+  "skill": {
+    "id": 47406,
+    "skillKey": "clawhub-docker-ctl-hardened",
+    "name": "Docker Ctl Hardened"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-ctl-hardened",
+    "url": "https://clawhub.ai/skills/docker-ctl-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-ctl-hardened-98f0b8b9ebd788ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Inspect containers, logs, and images via podman"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snazar-faberlens",
+      "userId": "s17er0wp685j1z14w6vqrsnqrh83h5er",
+      "displayName": "Faberlens",
+      "image": "https://avatars.githubusercontent.com/u/261834257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776885489467,
+      "changelog": "Initial release of docker-ctl-hardened.\n\n- Enables inspection of containers, logs, and images using podman.\n- Designed for Bazzite/Fedora with podman as the default, pre-installed container runtime.\n- No installation required.\n- Includes default security guardrails: quoting container names/IDs, displaying data in-terminal only, and blocking transmission of sensitive data over networks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ffaa29809474a7a22d0d9e895243c50a6dd40c93ebc24093f89f2013bcd2279c"
+}

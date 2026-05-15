@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tender-similarity-analyzer@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tender_similarity_analyzer",
+  "skill": {
+    "id": 64584,
+    "skillKey": "clawhub-tender-similarity-analyzer",
+    "name": "tender-similarity-analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tender-similarity-analyzer",
+    "url": "https://clawhub.ai/skills/tender-similarity-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tender-similarity-analyzer-40373593a13eac40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供本地多文档投标文件交叉查重，精确到段落，支持标题过滤、短段合并，输出可视化HTML相似度报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wuliwenjing",
+      "userId": "s176ss2knwgexxtxm4qt0xsm4n83h4q7",
+      "displayName": "wuliwenjing",
+      "image": "https://avatars.githubusercontent.com/u/23123229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1775032569160,
+      "changelog": "移除飞书告警模块，改为手动安装依赖",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca9dfd9f6f57674cc5219726b648425006ea6b30038f22e11dd2f55cbb69214b"
+}

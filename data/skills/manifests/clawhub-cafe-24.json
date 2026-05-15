@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32466,
+  "uuid": "skill-clawhub-cafe-24",
+  "skillKey": "clawhub-cafe-24",
+  "name": "Cafe 24",
+  "summary": "Cafe 24 integration. Manage data, records, and automate workflows. Use when the user wants to interact with Cafe 24 data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cafe_24",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Cafe 24 integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Cafe 24 data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cafe-24@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cafe-24",
+      "url": "https://clawhub.ai/skills/cafe-24"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cafe-24",
+    "url": "https://clawhub.ai/skills/cafe-24",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cafe-24-ef8941c3f4da4832.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cafe-24@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-cafe-24-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1068bce590275371a1e10d6e3b3433d5181cadf91fe61c3c2adcf1854f2715ff",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:26:58.397Z"
+}

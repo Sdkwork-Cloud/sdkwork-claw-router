@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/powpow-financing-plan-openclaw@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.powpow_financing_plan_openclaw",
+  "skill": {
+    "id": 61939,
+    "skillKey": "clawhub-powpow-financing-plan-openclaw",
+    "name": "powpow-financing-plan-openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "powpow-financing-plan-openclaw",
+    "url": "https://clawhub.ai/skills/powpow-financing-plan-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/powpow-financing-plan-openclaw-e5b8743acc50b8af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 PowPow 的融资计划转化为结构化对话技能，支持项目概述、亮点及联系方式的查询和展示。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "durenzidu",
+      "userId": "s17dzq04k30f6dsx2j1nhwn4qd83eptn",
+      "displayName": "度人自度",
+      "image": "https://avatars.githubusercontent.com/u/38130340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 404,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774750502590,
+      "changelog": "**PowPow 融资计划 - 投资人挑战版 v1.1.0**\n\n- 项目“1人+8个AI员工”模式升级为“1自然人+8个Agent”，详细列出各Agent分工及所用AI模型。\n- 项目定位调整为“基于地理位置的 Agent 社交”，并更新官网信息。\n- 项目介绍和互动问答内容同步增补细节，更突出Agent团队结构和AI驱动力。\n- 其他说明、联系方式和示例答案更新为最新表述。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74a9b6283e20f1a9251123a11a922f19b3a4b32f6b603a011b70d3273aae9884"
+}

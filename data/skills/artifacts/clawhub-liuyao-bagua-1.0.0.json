@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/liuyao-bagua@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liuyao_bagua",
+  "skill": {
+    "id": 70709,
+    "skillKey": "clawhub-liuyao-bagua",
+    "name": "Liuyao Bagua"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liuyao-bagua",
+    "url": "https://clawhub.ai/skills/liuyao-bagua",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liuyao-bagua-210cffc6c7175109.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "六爻八卦算命技能。当用户请求算命、排盘、八字分析、看卦、看相、命运预测、或提供出生年月日时激活。执行Python脚本进行四柱八字、五行分析、今年卦象解读。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ray1012",
+      "userId": "s179fz4mvq1rt2n2c2jmvvy1b183nyqe",
+      "displayName": "Ray1012",
+      "image": "https://avatars.githubusercontent.com/u/26787843?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773644362045,
+      "changelog": "- Initial release of the liuyao-bagua skill for 六爻八卦算命\n- Supports 四柱八字、五行分析、今年卦象解读 through a Python script when users request fortune-telling or provide birth details\n- Activates on keywords like \"算命\", \"排盘\", \"八字分析\", or date of birth inquiries\n- Provides detailed fortune analysis including basic info, 八字 pillars, 卦象 with explanations, 五行 scores, and practical fortune advice\n- Handles incomplete inputs gracefully and reminds users to provide full birth details for accurate readings",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d62db55890baf6be36aaec7ac84ae5e4d36b8e524f9e11835559060436e78932"
+}

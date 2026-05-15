@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-team-kit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_team_kit",
+  "skill": {
+    "id": 10061,
+    "skillKey": "clawhub-agent-team-kit",
+    "name": "Agent Team Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-team-kit",
+    "url": "https://clawhub.ai/skills/agent-team-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-team-kit-600958bddfe33562.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Framework enabling AI agent teams to self-manage work queues, clear roles, continuous discovery, and proactive operation via a heartbeat process."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryancampbell",
+      "userId": "publishers:ryancampbell",
+      "displayName": "ryancampbell",
+      "image": "https://avatars.githubusercontent.com/u/121135?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 2466,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770237845906,
+      "changelog": "- Initial release of Agent Team Kit, a full process framework for self-sustaining AI agent teams.\n- Provides ready-to-use templates for roles, work queues, and process documentation.\n- Introduces a 5-phase intake loop and clear core/execution roles.\n- Includes recommended heartbeat integration for proactive team monitoring.\n- Emphasizes self-service, clear ownership, and continuous improvement principles.\n- Customizable to fit different team structures and domains.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:91ebd14878c21689d7da5918d182295b2994dafde8ba2c8c0fba5f9e2c6429f0"
+}

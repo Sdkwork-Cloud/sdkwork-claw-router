@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/atlas-tracker@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atlas_tracker",
+  "skill": {
+    "id": 50167,
+    "skillKey": "clawhub-atlas-tracker",
+    "name": "Atlas Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atlas-tracker",
+    "url": "https://clawhub.ai/skills/atlas-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atlas-tracker-48e6f7033a4d6ca8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work with Atlas Tracker (RedForester) mindmaps via MCP tools. Use when reading, creating, or updating nodes and branches in Atlas Tracker maps — including na..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "didro",
+      "userId": "publishers:didro",
+      "displayName": "Alexandr Petrov",
+      "image": "https://avatars.githubusercontent.com/u/520756?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 595,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1772522616761,
+      "changelog": "Sync SKILL.md: document at_upload_file + 4 comment tools (at_get_comments, at_add_comment, at_update_comment, at_delete_comment)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3292162aadace4aa7735b82b121807978d5e14d35b3e52b76f4338f732d65d4a"
+}

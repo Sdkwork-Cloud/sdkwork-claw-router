@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71362,
+  "uuid": "skill-clawhub-pptv",
+  "skillKey": "clawhub-pptv",
+  "name": "PPTV",
+  "summary": "提供PPTV短剧频道及剧集的公开目录、更新状态、主演和评论摘要，支持榜单和题材统计分析。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pptv",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "提供PPTV短剧频道及剧集的公开目录、更新状态、主演和评论摘要，支持榜单和题材统计分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pptv@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pptv",
+      "url": "https://clawhub.ai/skills/pptv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pptv",
+    "url": "https://clawhub.ai/skills/pptv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pptv-ebbbb558a823e878.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pptv@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pptv-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4eb1fda0a044b38987cf133d8e1a10df46403eca73e244c28226d78da9451af4",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T17:26:49.270Z"
+}

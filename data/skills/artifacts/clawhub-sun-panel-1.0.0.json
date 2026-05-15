@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sun-panel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sun_panel",
+  "skill": {
+    "id": 42748,
+    "skillKey": "clawhub-sun-panel",
+    "name": "Sun-Panel Navigation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sun-panel",
+    "url": "https://clawhub.ai/skills/sun-panel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sun-panel-1eaf2b27cf2b0f15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Sun-Panel navigation by adding websites, creating and editing shortcut groups, and getting icon recommendations for bookmarks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meichuanyi",
+      "userId": "s17fs80z5n1s94me082qqqyg9985a58e",
+      "displayName": "meichuanyi",
+      "image": "https://avatars.githubusercontent.com/u/35057768?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776876746439,
+      "changelog": "首次发布：支持添加网站、管理分组、智能图标推荐、自动获取Favicon",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4acc608c3f02bf5260095683881dd7fa91001442b5dffeaaa177b347a3766a4b"
+}

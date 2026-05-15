@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50454,
+  "uuid": "skill-clawhub-linux-system-health",
+  "skillKey": "clawhub-linux-system-health",
+  "name": "linux-system-health",
+  "summary": "Diagnose Linux OS-level issues — slow server, OOM kills, disk full, high CPU/load, DNS failures, connection timeouts, port exhaustion, too many open files, z...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linux_system_health",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zjxylc",
+      "features": [
+        "Diagnose Linux OS-level issues — slow server, OOM kills, disk full, high CPU/load, DNS failures."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linux-system-health@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3221085?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linux-system-health",
+      "url": "https://clawhub.ai/skills/linux-system-health"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linux-system-health",
+    "url": "https://clawhub.ai/skills/linux-system-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linux-system-health-746a722b2bfb6839.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linux-system-health@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-linux-system-health-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec6c31c1111478384b8eabd93e7d55acacd17f369911809a9064951c6c589a3b",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T08:28:22.352Z"
+}

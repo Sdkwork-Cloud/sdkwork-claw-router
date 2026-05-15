@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33907,
+  "uuid": "skill-clawhub-entrust-datacard",
+  "skillKey": "clawhub-entrust-datacard",
+  "name": "Entrust Datacard",
+  "summary": "Entrust Datacard integration. Manage data, records, and automate workflows. Use when the user wants to interact with Entrust Datacard data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.entrust_datacard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Entrust Datacard integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Entrust Datacard data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/entrust-datacard@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "entrust-datacard",
+      "url": "https://clawhub.ai/skills/entrust-datacard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "entrust-datacard",
+    "url": "https://clawhub.ai/skills/entrust-datacard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/entrust-datacard-0f5bf3092d99117f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/entrust-datacard@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-entrust-datacard-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11a21ab075035dc1aacf141a0e4a588489200b74a7ee4e1fb42e8ab02fb78d49",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:44:15.731Z"
+}

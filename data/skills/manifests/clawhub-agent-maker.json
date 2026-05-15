@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61635,
+  "uuid": "skill-clawhub-agent-maker",
+  "skillKey": "clawhub-agent-maker",
+  "name": "Agent Maker",
+  "summary": "辅助创建 OpenClaw Agent 的技能。通过对话引导用户描述需求，自动生成新的 Agent 配置文件。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_maker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "squallfire",
+      "features": [
+        "辅助创建 OpenClaw Agent 的技能。通过对话引导用户描述需求，自动生成新的 Agent 配置文件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-maker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8508797?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-maker",
+      "url": "https://clawhub.ai/skills/agent-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-maker",
+    "url": "https://clawhub.ai/skills/agent-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-maker-7b886b4aed010d4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-maker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-maker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbcf6c67adbd731d5ffe03354a638350382f3e287a1e01f032cdc20c320f4f4c",
+      "artifactSizeBytes": 1854
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:53:03.578Z"
+}

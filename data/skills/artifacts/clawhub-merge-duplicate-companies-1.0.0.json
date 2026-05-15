@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/merge-duplicate-companies@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.merge_duplicate_companies",
+  "skill": {
+    "id": 40568,
+    "skillKey": "clawhub-merge-duplicate-companies",
+    "name": "Merge Duplicate Companies"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "merge-duplicate-companies",
+    "url": "https://clawhub.ai/skills/merge-duplicate-companies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/merge-duplicate-companies-f8b6e2aa5adead6b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Identify duplicate company records by domain and name, export audit CSVs for review, and guide merging. API for discovery, third-party tools or manual UI for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tomgranot",
+      "userId": "s17cmf9jxs7s60v7thhms9w09h83m293",
+      "displayName": "TomGranot",
+      "image": "https://avatars.githubusercontent.com/u/8835035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774554500381,
+      "changelog": "- Initial release of the \"merge-duplicate-companies\" skill.\n- Identifies duplicate company records in HubSpot by both domain and name.\n- Exports prioritized audit CSVs for thorough review before merging.\n- Provides a staged workflow: planning, duplicate discovery, audit export, and manual merging guidance.\n- Clarifies HubSpot’s lack of a bulk merge API, requiring third-party tools or manual UI for merges.\n- Includes detailed guidance and Python sample code for audit and discovery stages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b3ed12972b63ffc5e8af1e9032f552e6447aed85ca9de3d50ddbd00a685b2bc5"
+}

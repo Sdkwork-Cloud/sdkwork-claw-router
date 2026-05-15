@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66212,
+  "uuid": "skill-clawhub-hk-stock-radar",
+  "skillKey": "clawhub-hk-stock-radar",
+  "name": "Hk Stock Radar",
+  "summary": "港股行情与舆情监控工具。当用户询问「港股怎么样」「恒生指数」「港股大盘」「港股涨跌」「HK股」「港股行情监控」「南向资金」时使用。支持东方财富港股API、新浪财经港股接口、Yahoo Finance获取实时行情，以及Google News RSS和X/Twitter舆情监控。📢微信公众号：PM熊叔（打造一人公司...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hk_stock_radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bear Xiong",
+      "features": [
+        "港股行情与舆情监控工具。当用户询问「港股怎么样」「恒生指数」「港股大盘」「港股涨跌」「HK股」「港股行情监控」「南向资金」时使用。支持东方财富港股API、新浪财经港股接口、Yahoo Fin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hk-stock-radar@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5952306?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hk-stock-radar",
+      "url": "https://clawhub.ai/skills/hk-stock-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hk-stock-radar",
+    "url": "https://clawhub.ai/skills/hk-stock-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hk-stock-radar-443a8d7821b58211.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hk-stock-radar@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hk-stock-radar-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edd8fbfae56a2a436b4026e3e5645041e473326dcfcbecb9e37f7809568b6e59",
+      "artifactSizeBytes": 2242
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T02:26:11.070Z"
+}

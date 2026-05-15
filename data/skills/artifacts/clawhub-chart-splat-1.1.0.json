@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chart-splat@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chart_splat",
+  "skill": {
+    "id": 16958,
+    "skillKey": "clawhub-chart-splat",
+    "name": "Chart Splat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chart-splat",
+    "url": "https://clawhub.ai/skills/chart-splat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chart-splat-f649319511edadfa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate beautiful charts via the Chart Splat API. Use when the user asks to create, generate, or visualize data as charts, graphs, or plots. Supports line,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bobbyg603",
+      "userId": "s17cnt0gpdzzn30tdc2mqy50vn85x25b",
+      "displayName": "Bobby Galli",
+      "image": "https://avatars.githubusercontent.com/u/2646053?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 772,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772676735440,
+      "changelog": "Add candlestick/OHLC chart support",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:acd23871b18454a9f572ae9027f0ece8e69ad9f980849e0d5d1291b09a57bc1d"
+}

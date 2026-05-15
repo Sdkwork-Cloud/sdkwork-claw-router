@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32874,
+  "uuid": "skill-clawhub-aana-guardrail",
+  "skillKey": "clawhub-aana-guardrail",
+  "name": "AANA Guardrail Skill",
+  "summary": "Monitors agent actions for safety and compliance, preventing violations, private data leaks, or irreversible steps by enforcing predefined decision rules.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aana_guardrail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mindbomber",
+      "features": [
+        "Monitors agent actions for safety and compliance, preventing violations, private data leaks, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aana-guardrail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42798111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aana-guardrail",
+      "url": "https://clawhub.ai/skills/aana-guardrail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aana-guardrail",
+    "url": "https://clawhub.ai/skills/aana-guardrail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aana-guardrail-5161f4ddc61ac149.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aana-guardrail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aana-guardrail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c03664ead93f726420f685a4f3ef6bb6a2693b330b42e87fff69c02f5e4bf7a5",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T14:22:04.288Z"
+}

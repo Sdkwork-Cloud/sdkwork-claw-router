@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48918,
+  "uuid": "skill-clawhub-olares-settings",
+  "skillKey": "clawhub-olares-settings",
+  "name": "Olares Settings (olares-cli settings)",
+  "summary": "olares-cli settings command tree: profile-based reads of every section the SPA's Settings page exposes (https://docs.olares.com/manual/olares/settings/) plus...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.olares_settings",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peng Peng",
+      "features": [
+        "olares-cli settings command tree: profile-based reads of every section the SPA's Settings page."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/olares-settings@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/921131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "olares-settings",
+      "url": "https://clawhub.ai/skills/olares-settings"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "olares-settings",
+    "url": "https://clawhub.ai/skills/olares-settings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/olares-settings-e31ed40ea201cbab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/olares-settings@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-olares-settings-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c5f406790bfd2a95aaf9612b03ca2c42c4a07287b358bf6a31fc73d57b85782",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T13:23:25.880Z"
+}

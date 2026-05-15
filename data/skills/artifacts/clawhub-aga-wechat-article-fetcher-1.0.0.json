@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aga-wechat-article-fetcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aga_wechat_article_fetcher",
+  "skill": {
+    "id": 66435,
+    "skillKey": "clawhub-aga-wechat-article-fetcher",
+    "name": "wechat-article-fetcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aga-wechat-article-fetcher",
+    "url": "https://clawhub.ai/skills/aga-wechat-article-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aga-wechat-article-fetcher-784a722093e1668c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信公众号文章抓取工具。当用户发送微信文章链接、需要保存公众号文章、 想要离线阅读微信文章、提取微信文章内容、下载微信文章图片时自动触发。 支持 mp.weixin.qq.com 域名的所有文章链接。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aga-j",
+      "userId": "s1729ykfpmmpbdzfp4sy88z7an844hd8",
+      "displayName": "aga-j",
+      "image": "https://avatars.githubusercontent.com/u/1044959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774152663563,
+      "changelog": "wechat-article-fetcher v1.0.0\n\n- 初始版本发布\n- 支持自动抓取微信公众号文章内容\n- 下载并本地保存文章内图片和视频封面\n- 文件自动命名为日期+英文关键词\n- 支持自动替换图片链接及视频封面本地化\n- 包含常见问题排查和使用说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb63d8ee513fa2cbf4f5172a1496316381685e1f9fb6a3a1e5a3863b75e2a9f3"
+}

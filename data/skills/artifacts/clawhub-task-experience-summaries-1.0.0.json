@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-experience-summaries@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_experience_summaries",
+  "skill": {
+    "id": 16680,
+    "skillKey": "clawhub-task-experience-summaries",
+    "name": "OpenClaw Task Experience Summaries"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-experience-summaries",
+    "url": "https://clawhub.ai/skills/task-experience-summaries",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-experience-summaries-45e45b3876c882f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Experience summaries for OpenClaw tasks, including common installation problems, troubleshooting steps, and best practices for packages, configurations, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dawai2005",
+      "userId": "s1708cf0bwctsx90y322e3yhg183g9tz",
+      "displayName": "dawai2005",
+      "image": "https://avatars.githubusercontent.com/u/156862786?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 840,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771213455752,
+      "changelog": "Comprehensive experience summaries for OpenClaw tasks including installation problems, troubleshooting, and best practices. Documents common errors and solutions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:26774ee08b5b075fbed8f5357a42eb5da6129711b45c3a91a088ee56b2dfe103"
+}

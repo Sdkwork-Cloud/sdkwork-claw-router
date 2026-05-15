@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56770,
+  "uuid": "skill-clawhub-api-expert",
+  "skillKey": "clawhub-api-expert",
+  "name": "FastAPI开发专家",
+  "summary": "FastAPI development best practices and conventions. Use when building, reviewing, or debugging FastAPI applications, REST APIs, or Pydantic models.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_expert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dapan0902",
+      "features": [
+        "FastAPI development best practices and conventions",
+        "Use when building, reviewing, or debugging FastAPI applications, REST APIs, or Pydantic models."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-expert@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219090163?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-expert",
+      "url": "https://clawhub.ai/skills/api-expert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-expert",
+    "url": "https://clawhub.ai/skills/api-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-expert-726efefc630c6c5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-expert@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-expert-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44cb0d38381a0e5b00774f1a4ab2641c53058e1d3c5486a06dbf4a05ad9ef634",
+      "artifactSizeBytes": 2121
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T06:14:28.062Z"
+}

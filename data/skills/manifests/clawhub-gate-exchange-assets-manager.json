@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36922,
+  "uuid": "skill-clawhub-gate-exchange-assets-manager",
+  "skillKey": "clawhub-gate-exchange-assets-manager",
+  "name": "Gate Exchange Account and Asset Manager",
+  "summary": "Gate multi-account asset manager L2 skill. Use when the user asks to check total assets combined with margin/liquidation risk or earnings snapshots. Triggers...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_assets_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gate",
+      "features": [
+        "Gate multi-account asset manager L2 skill",
+        "Use when the user asks to check total assets combined with margin/liquidation risk or earnings.",
+        "Triggers..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-exchange-assets-manager@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33109813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-exchange-assets-manager",
+      "url": "https://clawhub.ai/skills/gate-exchange-assets-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-assets-manager",
+    "url": "https://clawhub.ai/skills/gate-exchange-assets-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-assets-manager-292cd63443f2d168.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-exchange-assets-manager@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-exchange-assets-manager-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8b76beef4fc1fc852e340cbd895398cd8a40a8f59e1657a89b52196f7b1dcdf",
+      "artifactSizeBytes": 2441
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:32:13.720Z"
+}

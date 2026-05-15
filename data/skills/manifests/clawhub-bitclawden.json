@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20893,
+  "uuid": "skill-clawhub-bitclawden",
+  "skillKey": "clawhub-bitclawden",
+  "name": "bitclawden",
+  "summary": "Look up, create, and edit credentials in Bitwarden vault via the bw CLI. Use when asked to store, retrieve, find, or manage passwords, secrets, or credentials.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitclawden",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adam Malone",
+      "features": [
+        "Look up, create, and edit credentials in Bitwarden vault via the bw CLI",
+        "Use when asked to store, retrieve, find, or manage passwords, secrets, or credentials."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bitclawden@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3642111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bitclawden",
+      "url": "https://clawhub.ai/skills/bitclawden"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitclawden",
+    "url": "https://clawhub.ai/skills/bitclawden",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitclawden-34de2b5b396e08a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bitclawden@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bitclawden-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58a88074a877d9f9f9d43db8ddf95b40ba1c5bb1c7fcba919ff3ac79961ab02c",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T22:55:35.970Z"
+}

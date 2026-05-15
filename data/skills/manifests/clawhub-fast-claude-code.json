@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59378,
+  "uuid": "skill-clawhub-fast-claude-code",
+  "skillKey": "clawhub-fast-claude-code",
+  "name": "fast-claude-code",
+  "summary": "Claude Code 任务完成回调 Runtime。支持 Single / Interactive / Team 三种模式， ⚠️ 任务在后台 tmux 会话中运行，完成后通过 System Event 自动通知，无需轮询。 Use when: 需要运行 Claude Code 任务并在完成时获得通知。 NOT...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fast_claude_code",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DeadLining",
+      "features": [
+        "Claude Code 任务完成回调 Runtime。支持 Single / Interactive / Team 三种模式， ⚠️ 任务在后台 tmux 会话中运行，完成后通过 Syste."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fast-claude-code@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45746693?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fast-claude-code",
+      "url": "https://clawhub.ai/skills/fast-claude-code"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fast-claude-code",
+    "url": "https://clawhub.ai/skills/fast-claude-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fast-claude-code-8b7a72c8079e4969.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fast-claude-code@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-fast-claude-code-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e02a32ee5132a66cafbcd8471d80d230b5eb43d789aeedfa509e0b014698f654",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T08:53:59.413Z"
+}

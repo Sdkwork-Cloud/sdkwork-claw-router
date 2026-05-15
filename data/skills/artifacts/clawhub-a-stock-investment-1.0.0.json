@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-stock-investment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_investment",
+  "skill": {
+    "id": 69108,
+    "skillKey": "clawhub-a-stock-investment",
+    "name": "a-stock-investment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-investment",
+    "url": "https://clawhub.ai/skills/a-stock-investment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-investment-9f8d909434679547.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股每日行情分析工具，提供大盘走势、板块轮动、资金流向、热点板块分析功能。当用户询问A股行情、A股走势、A股分析、股市行情、今日A股、大盘分析、板块轮动等相关问题时触发此 Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fmouseboy",
+      "userId": "s172cbtek476cw42nfxa6hxczx83pzaf",
+      "displayName": "FMouse",
+      "image": "https://avatars.githubusercontent.com/u/36061597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 73,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773230818404,
+      "changelog": "- Initial release of A股每日行情分析工具\n- 支持大盘走势、板块轮动、资金流向、热点板块等多维度分析\n- 需配置 Tavily API 密钥以获取实时数据\n- 自动输出分析报告，包含大盘概览、板块表现、资金流向和风险提示\n- 支持通过关键词自动触发，如“A股行情”、“今日A股”等",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6519d4f4f7db4d5dc3bf8eabe8cce37eef93548ee30d4bcaecc93a2001ecd61a"
+}

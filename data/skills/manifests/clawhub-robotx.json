@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19981,
+  "uuid": "skill-clawhub-robotx",
+  "skillKey": "clawhub-robotx",
+  "name": "RobotX Deploy CLI",
+  "summary": "Use the robotx CLI to deploy, manage versions, and check status for RobotX applications.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.robotx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haibingtown",
+      "features": [
+        "Use the robotx CLI to deploy, manage versions, and check status for RobotX applications."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/robotx@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7615949?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "robotx",
+      "url": "https://clawhub.ai/skills/robotx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "robotx",
+    "url": "https://clawhub.ai/skills/robotx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/robotx-e8a36ca2033e6ac3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/robotx@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-robotx-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07d60eace99508a80b9c8a0b74150cf27940aa2d1ba3ac665aabeb4e889d133f",
+      "artifactSizeBytes": 2213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T11:53:55.166Z"
+}

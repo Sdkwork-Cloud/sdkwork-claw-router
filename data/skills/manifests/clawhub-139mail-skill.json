@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60502,
+  "uuid": "skill-clawhub-139mail-skill",
+  "skillKey": "clawhub-139mail-skill",
+  "name": "139mail",
+  "summary": "139邮箱邮件收发 Skill - 支持 IMAP/SMTP 协议，兼容139/QQ/163/Gmail等主流邮箱 功能： 1. 发送邮件（SMTP） 2. 接收邮件（IMAP） 3. 查看收件箱列表 4. 查看未读邮件 当用户提到 \"发邮件\"、\"收邮件\"、\"查看邮件\"、\"邮箱\" 或 \"email\" 时激活此 s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.139mail_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhang Dong",
+      "features": [
+        "139邮箱邮件收发 Skill",
+        "支持 IMAP/SMTP 协议，兼容139/QQ/163/Gmail等主流邮箱 功能： 1",
+        "发送邮件（SMTP） 2",
+        "接收邮件（IMAP） 3"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/139mail-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61592184?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "139mail-skill",
+      "url": "https://clawhub.ai/skills/139mail-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "139mail-skill",
+    "url": "https://clawhub.ai/skills/139mail-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/139mail-skill-eab78f3926606996.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/139mail-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-139mail-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d5c5351a64e0f2353ee40332a9ec0e9bb23ef5b09f88eb9c8bc220eb06eb4d5",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T03:50:09.411Z"
+}

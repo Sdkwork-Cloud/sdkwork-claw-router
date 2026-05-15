@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-relay@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_relay",
+  "skill": {
+    "id": 34472,
+    "skillKey": "clawhub-context-relay",
+    "name": "Context Relay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-relay",
+    "url": "https://clawhub.ai/skills/context-relay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-relay-3109d0c13a4961f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Solves the memory fragmentation problem for Agents during session restarts, sub-agent boundaries, and cron/heartbeat isolation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776825212836,
+      "changelog": "- Initial release of context-relay, solving agent memory fragmentation during session restarts, sub-agent boundaries, and task isolation.\n- Introduces a three-layer context architecture: PROJECT.md (identity), state.json (current state), decisions.md (decision records), and todos.json (cross-session task management).\n- Files serve as the single source of truth; agents read all context from files at startup, ensuring persistent continuity across sessions.\n- Provides clear workflows for cold start initialization and end-of-session state synchronization.\n- Adds sub-agent communication protocol via state files and includes script to initialize file structure.\n- Comprehensive documentation and file templates included for immediate adoption.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57b9fb8817a61559fafff819d8f1ac46a465c8943d24ebeea2c8c7bdc361fe80"
+}

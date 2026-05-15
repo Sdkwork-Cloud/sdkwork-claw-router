@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-copywriter-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_copywriter_video",
+  "skill": {
+    "id": 41402,
+    "skillKey": "clawhub-ai-copywriter-video",
+    "name": "Ai Copywriter Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-copywriter-video",
+    "url": "https://clawhub.ai/skills/ai-copywriter-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-copywriter-video-7724497deedff532.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get script-overlaid videos ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775956304861,
+      "changelog": "Initial release of AI Copywriter Video — generate persuasive scripts and captions automatically for your video uploads.\n\n- Upload raw video footage (up to 500MB); receive script-overlaid, ready-to-post 1080p MP4s within about a minute.\n- No manual editing required: simply describe your goal (e.g., \"write and overlay a sales script as captions for my product video\") and let the system handle copywriting and captioning.\n- Integrated backend authentication, session management, and robust error handling.\n- Supports major video/audio/image formats (MP4, MOV, AVI, WebM, MP3, PNG, and more).\n- Automatic free credit system for unregistered users; upgrade/register for higher export tiers.\n- Built for marketers seeking fast, persuasive AI-generated copy without extra hiring or editing tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68a8676426cb1a500cd09f1bf22478827013ec3d3d656b332d781a30c4308829"
+}

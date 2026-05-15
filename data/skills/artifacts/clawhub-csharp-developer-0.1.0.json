@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/csharp-developer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.csharp_developer",
+  "skill": {
+    "id": 17161,
+    "skillKey": "clawhub-csharp-developer",
+    "name": "Csharp Developer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "csharp-developer",
+    "url": "https://clawhub.ai/skills/csharp-developer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/csharp-developer-b2f7cf281c393a29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when building C# applications with .NET 8+, ASP.NET Core APIs, or Blazor web apps. Invoke for Entity Framework Core, minimal APIs, async patterns, CQRS w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lhwa8685",
+      "userId": "publishers:lhwa8685",
+      "displayName": "lhwa8685",
+      "image": "https://avatars.githubusercontent.com/u/195074450?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 759,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772893077525,
+      "changelog": "Initial release of the C# Developer skill.\n\n- Provides expertise in .NET 8+, ASP.NET Core APIs, Entity Framework Core, and Blazor.\n- Outlines clear workflow: analyze, design, implement, optimize, and test C# applications.\n- Includes prescriptive requirements and best practices for modern C# development (e.g., nullable reference types, async patterns, DI).\n- Reference guide links to detailed guidance for modern C#, ASP.NET Core, EF Core, Blazor, and performance topics.\n- Output templates ensure consistent code structure and explanations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b1323c603006ef801ae162472766ab82e8faf5cd0e3d8e3d520cd26b2880488c"
+}

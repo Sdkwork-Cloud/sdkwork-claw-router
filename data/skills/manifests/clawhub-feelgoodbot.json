@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12594,
+  "uuid": "skill-clawhub-feelgoodbot",
+  "skillKey": "clawhub-feelgoodbot",
+  "name": "Feelgoodbot",
+  "summary": "Set up feelgoodbot file integrity monitoring and TOTP step-up authentication for macOS. Use when the user wants to detect malware, monitor for system tampering, set up security alerts, or require OTP verification for sensitive agent action.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feelgoodbot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kris-hansen",
+      "features": [
+        "Set up feelgoodbot file integrity monitoring and TOTP step-up authentication for macOS",
+        "Use when the user wants to detect malware, monitor for system tampering, set up security alerts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feelgoodbot@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8484582?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feelgoodbot",
+      "url": "https://clawhub.ai/skills/feelgoodbot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feelgoodbot",
+    "url": "https://clawhub.ai/skills/feelgoodbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feelgoodbot-49e8a38eb63f1fe6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feelgoodbot@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feelgoodbot-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d20b33aee279d0d1540f67c293a2b50dd25cbda133cfb5d24aa6a6443e779dc4",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T22:01:43.818Z"
+}

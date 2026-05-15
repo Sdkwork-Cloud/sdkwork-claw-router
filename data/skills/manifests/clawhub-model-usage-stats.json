@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72285,
+  "uuid": "skill-clawhub-model-usage-stats",
+  "skillKey": "clawhub-model-usage-stats",
+  "name": "模型消耗统计",
+  "summary": "模型消耗统计技能，用于统计和展示不同会话、不同模型的 token 使用量、成本统计和消耗报告，通过飞书消息卡片进行可视化展示。当用户请求查看模型消耗、token 统计、成本分析或消耗报告时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_usage_stats",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luxiang79",
+      "features": [
+        "模型消耗统计技能，用于统计和展示不同会话、不同模型的 token 使用量、成本统计和消耗报告，通过飞书消息卡片进行可视化展示。当用户请求查看模型消耗、token 统计、成本分析或消耗报告时使."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-usage-stats@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/101491949?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-usage-stats",
+      "url": "https://clawhub.ai/skills/model-usage-stats"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-usage-stats",
+    "url": "https://clawhub.ai/skills/model-usage-stats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-usage-stats-ac2d7e00fa7a0214.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-usage-stats@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-usage-stats-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b8bd2116d8281d86176644297ed637bf05265ee471a07f55ccd6e6037dde3d0",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T03:02:42.042Z"
+}

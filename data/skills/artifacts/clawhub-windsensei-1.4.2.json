@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/windsensei@1.4.2",
+  "version": "1.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windsensei",
+  "skill": {
+    "id": 17019,
+    "skillKey": "clawhub-windsensei",
+    "name": "Windsensei"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windsensei",
+    "url": "https://clawhub.ai/skills/windsensei",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windsensei-9a3b781a595bd5a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check wind and weather conditions for wind sports (kitesurfing, wingfoiling, surfing). Get forecasts, find spots nearby, view session history, and request ne..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jumptrnr",
+      "userId": "publishers:jumptrnr",
+      "displayName": "jumptrnr",
+      "image": "https://avatars.githubusercontent.com/u/1178088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 827,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.4.2",
+      "createdAt": 1771765630977,
+      "changelog": "Tighten AI instructions to prevent editorializing - only report what API data says, never make up or guess condition quality",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8eeb9b1ae34864111fb855d659aa9be76e98c3854c4b32b0226c9c2a662998a8"
+}

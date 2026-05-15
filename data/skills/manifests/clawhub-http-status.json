@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51986,
+  "uuid": "skill-clawhub-http-status",
+  "skillKey": "clawhub-http-status",
+  "name": "Http Status",
+  "summary": "HTTP status code reference — instant lookup of any status code with meaning, common causes, and fix suggestions. Use when the user asks about an HTTP status...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.http_status",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "HTTP status code reference — instant lookup of any status code with meaning, common causes, and.",
+        "Use when the user asks about an HTTP status..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/http-status@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "http-status",
+      "url": "https://clawhub.ai/skills/http-status"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "http-status",
+    "url": "https://clawhub.ai/skills/http-status",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/http-status-6d0b801fff605cdf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/http-status@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-http-status-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6318f8f7976072602bb87e92b09e288e03f358de51b3df56349fbaf046d2b1fc",
+      "artifactSizeBytes": 2280
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:29:40.611Z"
+}

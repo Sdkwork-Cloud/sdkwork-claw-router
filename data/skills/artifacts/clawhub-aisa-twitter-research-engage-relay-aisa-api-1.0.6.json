@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aisa-twitter-research-engage-relay-aisa-api@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_twitter_research_engage_relay_aisa_api",
+  "skill": {
+    "id": 49711,
+    "skillKey": "clawhub-aisa-twitter-research-engage-relay-aisa-api",
+    "name": "AIsa Twitter Research Engage Relay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-twitter-research-engage-relay-aisa-api",
+    "url": "https://clawhub.ai/skills/aisa-twitter-research-engage-relay-aisa-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-twitter-research-engage-relay-aisa-api-cda328adfa24807e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run Twitter/X likes, follows, replies, and OAuth-gated posting through AIsa. Use when: the user already knows which account, tweet, or campaign to act on and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bibaofeng",
+      "userId": "s1740zrgcnwxsxgzt9bfj5a1jn842mag",
+      "displayName": "bibaofeng",
+      "image": "https://avatars.githubusercontent.com/u/86095131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 69,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1778243258927,
+      "changelog": "- Added detailed SKILL.md with clear usage guidance, guardrails, setup, and example workflows.\n- Describes explicit engagement actions (like, follow, reply, approved posting) through AIsa for Twitter/X.\n- Outlines requirements for API key and command-line usage via shipped scripts.\n- Emphasizes security best practices and necessary user approval for all engagement actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:371c777b743be541d2573678c7e2e079dc7f06c9ce43b641b27a1620513676d7"
+}

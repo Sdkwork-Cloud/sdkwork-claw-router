@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-web-search@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_web_search",
+  "skill": {
+    "id": 9224,
+    "skillKey": "clawhub-google-web-search",
+    "name": "Google Web Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-web-search",
+    "url": "https://clawhub.ai/skills/google-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-web-search-7b42ef5692c70e7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables grounded question answering by automatically executing the Google Search tool within Gemini models. Use when the required information is recent (post knowledge cutoff) or requires verifiable citation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theoseo",
+      "userId": "publishers:theoseo",
+      "displayName": "theoseo",
+      "image": "https://avatars.githubusercontent.com/u/25238852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3880,
+      "installsAllTime": 10,
+      "installsCurrent": 8,
+      "stars": 6,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770790715799,
+      "changelog": "Simplify install to standard pip, add clear documentation for uv and credentials",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f3856c39d374efed9bd400628163c29b98f84de6813990ee9c27a217a626976e"
+}

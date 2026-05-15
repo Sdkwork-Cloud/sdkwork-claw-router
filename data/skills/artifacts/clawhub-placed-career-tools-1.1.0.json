@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/placed-career-tools@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.placed_career_tools",
+  "skill": {
+    "id": 25235,
+    "skillKey": "clawhub-placed-career-tools",
+    "name": "Placed Career Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "placed-career-tools",
+    "url": "https://clawhub.ai/skills/placed-career-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/placed-career-tools-d06710387b71fdf2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user wants to \"match resume to job\", \"generate cover letter\", \"optimize resume for job\", \"get interview questions for comp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ajitsingh25",
+      "userId": "s17f3x4tze40mv0zt71rgpkbtn8541ee",
+      "displayName": "Ajit Singh",
+      "image": "https://avatars.githubusercontent.com/u/34647819?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 393,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774130474372,
+      "changelog": "Added rich search tags for better discoverability",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a275db3c2bd38871170f754355c93d0a1184eecebcd0838e90d017985496f1d6"
+}

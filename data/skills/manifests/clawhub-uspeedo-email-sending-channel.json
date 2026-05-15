@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22510,
+  "uuid": "skill-clawhub-uspeedo-email-sending-channel",
+  "skillKey": "clawhub-uspeedo-email-sending-channel",
+  "name": "uspeedo-email-sending-channel",
+  "summary": "Sends user-authorized transactional email via uSpeedo API with ACCESSKEY credentials (env preferred). Before SendEmail, calls GetSenderList to resolve SendEm...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uspeedo_email_sending_channel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "code-by-ai",
+      "features": [
+        "Sends user-authorized transactional email via uSpeedo API with ACCESSKEY credentials (env prefe.",
+        "Before SendEmail, calls GetSenderList to resolve SendEm..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uspeedo-email-sending-channel@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216642925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uspeedo-email-sending-channel",
+      "url": "https://clawhub.ai/skills/uspeedo-email-sending-channel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uspeedo-email-sending-channel",
+    "url": "https://clawhub.ai/skills/uspeedo-email-sending-channel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uspeedo-email-sending-channel-63814492a3876c0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uspeedo-email-sending-channel@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-uspeedo-email-sending-channel-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d586275537b122897b83328a7c1a2c9d2487bcd7605c3e26fae9d13301e57e9",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T07:58:09.700Z"
+}

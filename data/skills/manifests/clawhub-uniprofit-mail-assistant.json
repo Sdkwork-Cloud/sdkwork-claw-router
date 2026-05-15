@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55038,
+  "uuid": "skill-clawhub-uniprofit-mail-assistant",
+  "skillKey": "clawhub-uniprofit-mail-assistant",
+  "name": "UniProfit Mail Assistant",
+  "summary": "Send emails through the UniProfit OpenClaw-compatible API with a user-created `mail_send` API key. Use when Codex or OpenClaw needs to deliver an already-app...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uniprofit_mail_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xieziqing",
+      "features": [
+        "Send emails through the UniProfit OpenClaw-compatible API with a user-created `mail_send` API k.",
+        "Use when Codex or OpenClaw needs to deliver an already-app..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uniprofit-mail-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85009797?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uniprofit-mail-assistant",
+      "url": "https://clawhub.ai/skills/uniprofit-mail-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uniprofit-mail-assistant",
+    "url": "https://clawhub.ai/skills/uniprofit-mail-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uniprofit-mail-assistant-79d9f480edc196b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uniprofit-mail-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uniprofit-mail-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c972b3e0213965ef333b31cf1244b25d2228cc2dacb430b66739a0a27980f1e",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T03:23:16.447Z"
+}

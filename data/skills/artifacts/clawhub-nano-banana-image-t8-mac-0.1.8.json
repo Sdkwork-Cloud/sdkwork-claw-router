@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nano-banana-image-t8-mac@0.1.8",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_banana_image_t8_mac",
+  "skill": {
+    "id": 61691,
+    "skillKey": "clawhub-nano-banana-image-t8-mac",
+    "name": "Nano Banana Image T8"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-banana-image-t8-mac",
+    "url": "https://clawhub.ai/skills/nano-banana-image-t8-mac",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-banana-image-t8-mac-6be31d1a4a431a9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供 Nano Banana API Key 和提示词，支持文生图与图生图（至少一张图片），可选尺寸比例，默认模型为香蕉2。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flywhale-666",
+      "userId": "publishers:flywhale-666",
+      "displayName": "flywhale",
+      "image": "https://avatars.githubusercontent.com/u/136772759?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 443,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.8",
+      "createdAt": 1773504891740,
+      "changelog": "- 增加中/英文触发词：支持“香蕉生成”、“banana生成”、“香蕉画图”等新别名\n- 触发词覆盖面更广，优化自然语言激活体验\n- 其他功能与参数未变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46c4949c99b4f442991461e4b4fe14908c133fa66db54703261a6a55d3b336af"
+}

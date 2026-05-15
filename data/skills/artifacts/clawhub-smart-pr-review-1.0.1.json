@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-pr-review@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_pr_review",
+  "skill": {
+    "id": 52583,
+    "skillKey": "clawhub-smart-pr-review",
+    "name": "Smart PR Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-pr-review",
+    "url": "https://clawhub.ai/skills/smart-pr-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-pr-review-d9bb23f00b25784b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Opinionated AI code reviewer — not a yes-machine. 6-layer deep review (logic, edge cases, performance, security, maintainability, architecture) with Devil's..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fullstackcrew-alpha",
+      "userId": "s17djqk7zj0fdfym4x8znsttz583hv9k",
+      "displayName": "fullstackcrew-alpha",
+      "image": "https://avatars.githubusercontent.com/u/249457019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774085328120,
+      "changelog": "Bilingual description (EN primary, CN secondary)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee622271c1484d61b6fb2ae2bfef2b50c24c4260d04a3b211bfab233fd9b5616"
+}

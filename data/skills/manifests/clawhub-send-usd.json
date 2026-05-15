@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14040,
+  "uuid": "skill-clawhub-send-usd",
+  "skillKey": "clawhub-send-usd",
+  "name": "Send USD Skill",
+  "summary": "Send USD from one agent to another.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.send_usd",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "afeef23",
+      "features": [
+        "Send USD from one agent to another."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/send-usd@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133650513?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "send-usd",
+      "url": "https://clawhub.ai/skills/send-usd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "send-usd",
+    "url": "https://clawhub.ai/skills/send-usd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/send-usd-fb93369521fb4f65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/send-usd@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-send-usd-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e67a2b135e005c2cbf32845cd72d9c3d68b6d10540fa72b18bc379a919b11beb",
+      "artifactSizeBytes": 1707
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T18:52:44.087Z"
+}

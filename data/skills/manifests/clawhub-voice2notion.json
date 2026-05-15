@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61647,
+  "uuid": "skill-clawhub-voice2notion",
+  "skillKey": "clawhub-voice2notion",
+  "name": "Voice2notion",
+  "summary": "语音录音转录并保存到 Notion 数据库。使用 faster-whisper 转录，自动提取关键信息并写入数据库。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice2notion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JiabaoChen1",
+      "features": [
+        "语音录音转录并保存到 Notion 数据库。使用 faster-whisper 转录，自动提取关键信息并写入数据库。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voice2notion@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84171545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voice2notion",
+      "url": "https://clawhub.ai/skills/voice2notion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice2notion",
+    "url": "https://clawhub.ai/skills/voice2notion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice2notion-3581f24a17a671c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voice2notion@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-voice2notion-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac35d463388ddbf82702fc5328ab212503ead2ba0de9059790ad72fedf980120",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T13:27:24.172Z"
+}

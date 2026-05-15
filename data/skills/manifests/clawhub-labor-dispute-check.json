@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58400,
+  "uuid": "skill-clawhub-labor-dispute-check",
+  "skillKey": "clawhub-labor-dispute-check",
+  "name": "labor dispute check",
+  "summary": "Check common labor law issues and calculate employee rights for disputes. Use when the user asks about 劳动纠纷、被辞退赔偿、加班费计算、试用期规定、劳动合同、经济补偿, or wants to understa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.labor_dispute_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Check common labor law issues and calculate employee rights for disputes",
+        "Use when the user asks about 劳动纠纷、被辞退赔偿、加班费计算、试用期规定、劳动合同、经济补偿, or wants to understa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/labor-dispute-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "labor-dispute-check",
+      "url": "https://clawhub.ai/skills/labor-dispute-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "labor-dispute-check",
+    "url": "https://clawhub.ai/skills/labor-dispute-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/labor-dispute-check-fbffc03e18f23e5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/labor-dispute-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-labor-dispute-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c7f1862083a52d8ef09c41edbfdd75578db28c0896a043ed69e3808a1799814",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T11:18:49.469Z"
+}

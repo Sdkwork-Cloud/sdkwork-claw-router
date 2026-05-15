@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36509,
+  "uuid": "skill-clawhub-supah-portfolio-guardian",
+  "skillKey": "clawhub-supah-portfolio-guardian",
+  "name": "SUPAH Portfolio Guardian",
+  "summary": "Automated wallet monitoring with real-time alerts. Track portfolio value, detect suspicious transactions, monitor approvals, and get risk warnings across Bas...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supah_portfolio_guardian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "supah-based",
+      "features": [
+        "Automated wallet monitoring with real-time alerts",
+        "Track portfolio value, detect suspicious transactions, monitor approvals, and get risk warnings."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/supah-portfolio-guardian@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266382973?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "supah-portfolio-guardian",
+      "url": "https://clawhub.ai/skills/supah-portfolio-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supah-portfolio-guardian",
+    "url": "https://clawhub.ai/skills/supah-portfolio-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supah-portfolio-guardian-93eb2371c08153c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/supah-portfolio-guardian@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-supah-portfolio-guardian-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebc64bd38a85724603e54fb40844db30195ee0323598732fffc6f2ef00b0f204",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:01:19.412Z"
+}

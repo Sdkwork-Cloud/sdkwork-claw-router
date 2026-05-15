@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gen-video@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gen_video",
+  "skill": {
+    "id": 35688,
+    "skillKey": "clawhub-gen-video",
+    "name": "Gen Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gen-video",
+    "url": "https://clawhub.ai/skills/gen-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gen-video-cd2df359f814960a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and execute skills.video video generation REST requests from OpenAPI specs. Use when user needs to create, debug, or document video generation calls on..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skills-video",
+      "userId": "s1794jxnsph7h4dfc4rt0wtmbn83hba0",
+      "displayName": "skills-video",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774407952189,
+      "changelog": "- Skill renamed from \"video-generation\" to \"ai-video\"\n- Added explicit license information (MIT) and metadata including author, supported OS, required environment variables, and setup help\n- Expanded setup and prerequisites instructions for configuring `SKILLS_VIDEO_API_KEY` via OpenClaw or environment variables\n- Clarified API key setup in the first-run check section and linked to the expanded prerequisites\n- Provided OpenClaw-specific configuration examples and instructions for adding environment variables",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:07fbde26eb8ee5a480d73088e6bb96f485070fa10399264e87c365f9dd919612"
+}

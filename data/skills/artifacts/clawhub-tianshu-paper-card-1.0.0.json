@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tianshu-paper-card@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianshu_paper_card",
+  "skill": {
+    "id": 68744,
+    "skillKey": "clawhub-tianshu-paper-card",
+    "name": "Tianshu Paper Card"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianshu-paper-card",
+    "url": "https://clawhub.ai/skills/tianshu-paper-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianshu-paper-card-f8aaa9634499ef43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "把论文摘要或简介整理成「速读卡片」：题目占位、研究问题、方法要点、主要结论、局限、可引用句草稿。 Use when: 学生读文献、写综述、组会前速览；用户说「文献卡片」「摘要整理」「论文笔记模板」。 NOT for: 代替精读全文或学术不端式代写。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangshengli0421",
+      "userId": "s173hn02a3sr3war78x7qzxnhn83nttz",
+      "displayName": "tianshu",
+      "image": "https://avatars.githubusercontent.com/u/100948785?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774014617129,
+      "changelog": "Initial student skill: 文献速读卡片",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf2f8bedc10a4bee71b8c7fc19b92db580e4419f6a62f7ce058244f80ecbb506"
+}

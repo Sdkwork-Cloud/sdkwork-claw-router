@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unit-price-database-manager@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unit_price_database_manager",
+  "skill": {
+    "id": 13113,
+    "skillKey": "clawhub-unit-price-database-manager",
+    "name": "Unit Price Database Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unit-price-database-manager",
+    "url": "https://clawhub.ai/skills/unit-price-database-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unit-price-database-manager-8693cc7f269862b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage construction unit price databases: update prices, track vendors, apply location factors, maintain historical records. Essential for accurate estimating."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datadrivenconstruction",
+      "userId": "publishers:datadrivenconstruction",
+      "displayName": "datadrivenconstruction",
+      "image": "https://avatars.githubusercontent.com/u/94158709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1544,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1770998197274,
+      "changelog": "Version 2.0.0\n\n- Major update with new technical documentation, skill description, and business case sections.\n- Details unit price management: updates, vendor quotes, location factors, price history, and escalation.\n- Outlines key benefits for estimating, bidding, cost control, and trend analysis.\n- Provides clear docstring and class/method structure for construction unit price database management.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a2779e55cb9606006c4678dbdf94fac3da7becd91ec36e39742307160fbe1843"
+}

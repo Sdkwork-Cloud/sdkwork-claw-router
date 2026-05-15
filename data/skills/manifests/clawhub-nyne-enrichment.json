@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18898,
+  "uuid": "skill-clawhub-nyne-enrichment",
+  "skillKey": "clawhub-nyne-enrichment",
+  "name": "Nyne Enrichment",
+  "summary": "Enrich any person by email, phone, LinkedIn URL, or name using the Nyne Enrichment API. Returns contact info, social profiles, work history, education, and o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nyne_enrichment",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Fanous",
+      "features": [
+        "Enrich any person by email, phone, LinkedIn URL, or name using the Nyne Enrichment API",
+        "Returns contact info, social profiles, work history, education, and o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nyne-enrichment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28770294?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nyne-enrichment",
+      "url": "https://clawhub.ai/skills/nyne-enrichment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nyne-enrichment",
+    "url": "https://clawhub.ai/skills/nyne-enrichment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nyne-enrichment-5a44793480bd1b3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nyne-enrichment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nyne-enrichment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5f4c53d94d74f17095c611601edc6f7fce25029f926b6a83c4ea4afda2c5bd0",
+      "artifactSizeBytes": 2409
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T08:08:43.900Z"
+}

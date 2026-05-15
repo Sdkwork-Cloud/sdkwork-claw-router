@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15907,
+  "uuid": "skill-clawhub-stock-picker-orchestrator",
+  "skillKey": "clawhub-stock-picker-orchestrator",
+  "name": "Stock Picker Orchestrator",
+  "summary": "Acts as a meta-orchestrator that routes stock-analysis requests across data, macro/news, and valuation skills under explicit budget controls; used when users...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_picker_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nguyễn Đức Thành",
+      "features": [
+        "Acts as a meta-orchestrator that routes stock-analysis requests across data, macro/news, and va.",
+        "used when users..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-picker-orchestrator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35481632?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-picker-orchestrator",
+      "url": "https://clawhub.ai/skills/stock-picker-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-picker-orchestrator",
+    "url": "https://clawhub.ai/skills/stock-picker-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-picker-orchestrator-c1e1c4bb128a7aad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-picker-orchestrator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-picker-orchestrator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:922f1251546a74954bd86bd0d24bac981b5d68c5172f24f8b0d497101b325565",
+      "artifactSizeBytes": 2502
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T15:58:21.311Z"
+}

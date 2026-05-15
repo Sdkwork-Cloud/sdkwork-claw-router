@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13589,
+  "uuid": "skill-clawhub-multi-agent-orchestration",
+  "skillKey": "clawhub-multi-agent-orchestration",
+  "name": "Colony",
+  "summary": "Orchestrates multi-agent task delegation and workflows with audit logging, checkpoint approvals, and agent learning for coordinated project execution.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_agent_orchestration",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dabruhce",
+      "features": [
+        "Orchestrates multi-agent task delegation and workflows with audit logging, checkpoint approvals."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-agent-orchestration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4344301?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-agent-orchestration",
+      "url": "https://clawhub.ai/skills/multi-agent-orchestration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-agent-orchestration",
+    "url": "https://clawhub.ai/skills/multi-agent-orchestration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-agent-orchestration-b096dfe37c5a21d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-agent-orchestration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-agent-orchestration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23a66c43ba82f5f39160b1aa9959f56a703b3a698e7dd512b8a263653b3be494",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T17:46:09.635Z"
+}

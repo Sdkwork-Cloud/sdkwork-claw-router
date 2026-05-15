@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24801,
+  "uuid": "skill-clawhub-paperbox",
+  "skillKey": "clawhub-paperbox",
+  "name": "Publish & Share HTML games",
+  "summary": "Upload AI-generated HTML games, apps, or generative art to PaperBox (paperbox-beta.vercel.app) and return a shareable link. Use when the agent has created an...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paperbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "felixdaga",
+      "features": [
+        "Upload AI-generated HTML games, apps, or generative art to PaperBox (paperbox-beta.vercel.app).",
+        "Use when the agent has created an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paperbox@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204590573?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paperbox",
+      "url": "https://clawhub.ai/skills/paperbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paperbox",
+    "url": "https://clawhub.ai/skills/paperbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paperbox-48a8c31aa5e8be44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paperbox@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-paperbox-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f12eea1c2cf5bc2a0858b01805545bff8c04e52799ced4d6781eb18f9583d033",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T07:46:21.256Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56536,
+  "uuid": "skill-clawhub-market-radar",
+  "skillKey": "clawhub-market-radar",
+  "name": "Market Radar",
+  "summary": "Industry hotspot and competitor monitoring across 5 dimensions. Use when user (in Chinese) asks to monitor an industry (监测...行业) and provides competitor URLs...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "double",
+      "features": [
+        "Industry hotspot and competitor monitoring across 5 dimensions",
+        "Use when user (in Chinese) asks to monitor an industry (监测...行业) and provides competitor URLs..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/market-radar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16850142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "market-radar",
+      "url": "https://clawhub.ai/skills/market-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-radar",
+    "url": "https://clawhub.ai/skills/market-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-radar-02496397ebe7fede.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/market-radar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-market-radar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c686e33de814ad27507c98bf620139bd1f4a1eccb32b334511c17e72ba7ee3a",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T13:50:03.811Z"
+}

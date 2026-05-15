@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49370,
+  "uuid": "skill-clawhub-fing",
+  "skillKey": "clawhub-fing",
+  "name": "Fing Local API",
+  "summary": "Query and troubleshoot Fing Local API monitoring agents for local network device inventory, presence, online/offline state, people/presence where supported,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yngvarr_75",
+      "features": [
+        "Query and troubleshoot Fing Local API monitoring agents for local network device inventory, pre."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34965103?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fing",
+      "url": "https://clawhub.ai/skills/fing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fing",
+    "url": "https://clawhub.ai/skills/fing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fing-647e9df8ed131631.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba1b89a72687db9a979cfc39e9b8c00a94104dc035777f1238fc760a02ac15f2",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T06:22:52.765Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11640,
+  "uuid": "skill-clawhub-bibigpt-skill",
+  "skillKey": "clawhub-bibigpt-skill",
+  "name": "BibiGPT Skill",
+  "summary": "BibiGPT CLI for summarizing videos, audio, and podcasts directly in the terminal. Use when the user wants to summarize a URL (YouTube, Bilibili, podcast, etc...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bibigpt_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JimmyLv_吕立青",
+      "features": [
+        "BibiGPT CLI for summarizing videos, audio, and podcasts directly in the terminal",
+        "Use when the user wants to summarize a URL (YouTube, Bilibili, podcast, etc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bibigpt-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4997466?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bibigpt-skill",
+      "url": "https://clawhub.ai/skills/bibigpt-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bibigpt-skill",
+    "url": "https://clawhub.ai/skills/bibigpt-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bibigpt-skill-b9b84ebba7bc0197.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bibigpt-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bibigpt-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8c5e3087a2415ccdcd821ba8ef9ca36e027847db8d525bb6f0567f09d249b66",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T07:27:26.656Z"
+}

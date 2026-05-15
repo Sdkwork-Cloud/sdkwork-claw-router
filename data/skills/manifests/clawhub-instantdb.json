@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12554,
+  "uuid": "skill-clawhub-instantdb",
+  "skillKey": "clawhub-instantdb",
+  "name": "Instant DB",
+  "summary": "Real-time database integration with InstantDB. Use this skill when working with InstantDB apps to perform admin operations (create/update/delete entities, link/unlink relationships, query data) and subscribe to real-time data changes. Trig.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instantdb",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ubyjerome",
+      "features": [
+        "Real-time database integration with InstantDB",
+        "Use this skill when working with InstantDB apps to perform admin operations (create/update/dele.",
+        "Triggers include mentions of InstantDB, real-time updates, database sync, entity operations, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/instantdb@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87214555?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "instantdb",
+      "url": "https://clawhub.ai/skills/instantdb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instantdb",
+    "url": "https://clawhub.ai/skills/instantdb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instantdb-f0d2d59fed630214.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/instantdb@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-instantdb-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5f99ba0fe9188469fa4b720255347ae2543e99a7014e00639c74dfa73ab2bcc",
+      "artifactSizeBytes": 2452
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T04:50:33.419Z"
+}

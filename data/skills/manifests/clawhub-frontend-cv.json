@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29801,
+  "uuid": "skill-clawhub-frontend-cv",
+  "skillKey": "clawhub-frontend-cv",
+  "name": "Frontend Cv",
+  "summary": "Create professional HTML/PDF resumes from any input format (md/pdf/word/txt). Extracts resume data, converts to structured YAML, generates styled HTML with m...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.frontend_cv",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vint",
+      "features": [
+        "Create professional HTML/PDF resumes from any input format (md/pdf/word/txt)",
+        "Extracts resume data, converts to structured YAML, generates styled HTML with m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/frontend-cv@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26142850?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "frontend-cv",
+      "url": "https://clawhub.ai/skills/frontend-cv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "frontend-cv",
+    "url": "https://clawhub.ai/skills/frontend-cv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/frontend-cv-f407ae30efb51b7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/frontend-cv@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-frontend-cv-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be8aa332f400c50100b82af50a7a3133c4cb3dbdb27567b779e6d9a188dbca33",
+      "artifactSizeBytes": 1862
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:56:22.835Z"
+}

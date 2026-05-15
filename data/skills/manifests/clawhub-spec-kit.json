@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34797,
+  "uuid": "skill-clawhub-spec-kit",
+  "skillKey": "clawhub-spec-kit",
+  "name": "Spec Kit",
+  "summary": "Use GitHub Spec Kit for Spec-Driven Development. Initialize projects, create specifications, and build software using the /speckit.* slash commands. Supports...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spec_kit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aung Myo Kyaw",
+      "features": [
+        "Use GitHub Spec Kit for Spec-Driven Development",
+        "Initialize projects, create specifications, and build software using the /speckit.* slash comma.",
+        "Supports..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spec-kit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9404824?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spec-kit",
+      "url": "https://clawhub.ai/skills/spec-kit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spec-kit",
+    "url": "https://clawhub.ai/skills/spec-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spec-kit-41efd0fc6ddabbec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spec-kit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spec-kit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87c61ba910ac467dd1feebb3f4eb1dfeb987783a6352c41d95018e0713831187",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T12:06:08.737Z"
+}

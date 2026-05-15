@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deepgram@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepgram",
+  "skill": {
+    "id": 11737,
+    "skillKey": "clawhub-deepgram",
+    "name": "DeepGram Speech platform"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepgram",
+    "url": "https://clawhub.ai/skills/deepgram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepgram-f8849d864257947c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Command-line tool for fast, accurate speech-to-text transcription from local files, URLs, or live audio using Deepgram’s API with customizable options."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nerkn",
+      "userId": "publishers:nerkn",
+      "displayName": "nerkn",
+      "image": "https://avatars.githubusercontent.com/u/725631?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2468,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770068477391,
+      "changelog": "- Migrated documentation from JavaScript SDK usage to new Deepgram CLI tool.\n- Updated installation and authentication instructions for CLI workflow.\n- Provided new command examples for transcribing local files, URLs, microphone input, and STDIN.\n- Added guidance on output handling, transcript formats, and common CLI flags.\n- Revised workflow and skill summary to emphasize command-line usage and scripting capabilities.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c128d21d06492fddff4e0948e47ae6cf76954d136f3e465e1c03148a6ea4a85a"
+}

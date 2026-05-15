@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36713,
+  "uuid": "skill-clawhub-private-search",
+  "skillKey": "clawhub-private-search",
+  "name": "Private Search",
+  "summary": "Route OpenClaw web searches through privacy-respecting engines (Brave Search, Kagi, SearXNG) instead of Google or Bing. Eliminates ad-network tracking from y...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.private_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "u4ma-kev",
+      "features": [
+        "Route OpenClaw web searches through privacy-respecting engines (Brave Search, Kagi, SearXNG) in.",
+        "Eliminates ad-network tracking from y..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/private-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45077960?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "private-search",
+      "url": "https://clawhub.ai/skills/private-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "private-search",
+    "url": "https://clawhub.ai/skills/private-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/private-search-e8965ea1658a228e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/private-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-private-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d09672143b81579018dce623ca0724e93b51395e05930c180ca32b021298a46c",
+      "artifactSizeBytes": 2308
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T01:17:21.449Z"
+}

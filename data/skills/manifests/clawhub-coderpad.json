@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25120,
+  "uuid": "skill-clawhub-coderpad",
+  "skillKey": "clawhub-coderpad",
+  "name": "Coderpad",
+  "summary": "CoderPad integration. Manage Pads. Use when the user wants to interact with CoderPad data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coderpad",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "CoderPad integration",
+        "Manage Pads",
+        "Use when the user wants to interact with CoderPad data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coderpad@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coderpad",
+      "url": "https://clawhub.ai/skills/coderpad"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coderpad",
+    "url": "https://clawhub.ai/skills/coderpad",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coderpad-84413a96e15f48a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coderpad@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-coderpad-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17753ba0e3dc69444e27d653ee02f7972285a82560359ee7eff96e24526b9a6b",
+      "artifactSizeBytes": 1797
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:33:18.127Z"
+}

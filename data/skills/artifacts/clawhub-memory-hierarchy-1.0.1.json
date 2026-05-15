@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-hierarchy@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_hierarchy",
+  "skill": {
+    "id": 61178,
+    "skillKey": "clawhub-memory-hierarchy",
+    "name": "Memory Hierarchy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-hierarchy",
+    "url": "https://clawhub.ai/skills/memory-hierarchy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-hierarchy-d27a0f22700e8b7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 Claude Code memdir 的三层记忆系统。让 AI 记住用户偏好、反馈、项目上下文、外部系统索引。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sinnzen",
+      "userId": "s177s7vheczz1x1a7w33rn1qgh8410gg",
+      "displayName": "Sinnzen",
+      "image": "https://avatars.githubusercontent.com/u/130019564?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775026684057,
+      "changelog": "安全修复：使用环境变量替代硬编码路径，增加路径遍历防护和白名单校验",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e73cae83ff32f58826697c89d994c2336823965cb1e682902e54cc6d66ed55d"
+}

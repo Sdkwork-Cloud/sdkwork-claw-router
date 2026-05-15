@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27559,
+  "uuid": "skill-clawhub-ai-project-learner",
+  "skillKey": "clawhub-ai-project-learner",
+  "name": "AI Project Learner",
+  "summary": "Generate a concept dependency graph for AI projects. Identifies what you need to learn, in what order, adapted to project complexity.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_project_learner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wms2537",
+      "features": [
+        "Generate a concept dependency graph for AI projects",
+        "Identifies what you need to learn, in what order, adapted to project complexity."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-project-learner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51080539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-project-learner",
+      "url": "https://clawhub.ai/skills/ai-project-learner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-project-learner",
+    "url": "https://clawhub.ai/skills/ai-project-learner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-project-learner-61337c791d8c1451.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-project-learner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-project-learner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d25616cc4feaf661f72cffce63c40232f7c6af28626bf1462f71a336fdef2605",
+      "artifactSizeBytes": 2255
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T04:37:12.155Z"
+}

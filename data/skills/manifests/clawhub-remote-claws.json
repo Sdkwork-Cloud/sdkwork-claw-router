@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29381,
+  "uuid": "skill-clawhub-remote-claws",
+  "skillKey": "clawhub-remote-claws",
+  "name": "Allow your claws to do things remotely on a Desktop machine via MCP",
+  "summary": "Full remote desktop control of a machine via Remote Claws MCP. Use when asked to: take a screenshot of the remote desktop; click, type, or drag with the mous...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remote_claws",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wentbackward",
+      "features": [
+        "Full remote desktop control of a machine via Remote Claws MCP",
+        "Use when asked to: take a screenshot of the remote desktop",
+        "click, type, or drag with the mous..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/remote-claws@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1219178?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "remote-claws",
+      "url": "https://clawhub.ai/skills/remote-claws"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remote-claws",
+    "url": "https://clawhub.ai/skills/remote-claws",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remote-claws-221784bc181565c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/remote-claws@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-remote-claws-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36ed7873f9b27f282498f6df355f87cbe22bba6b3f4d3bd3f991fab68cd5e1dd",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T21:33:18.381Z"
+}

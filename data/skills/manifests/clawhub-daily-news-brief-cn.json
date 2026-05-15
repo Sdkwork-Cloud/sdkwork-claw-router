@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65358,
+  "uuid": "skill-clawhub-daily-news-brief-cn",
+  "skillKey": "clawhub-daily-news-brief-cn",
+  "name": "Daily News Brief",
+  "summary": "每日新闻简报，自动抓取热点新闻并 AI 提炼重点。支持财经/科技/国际新闻，定时推送。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_news_brief_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zt6558609-cpu",
+      "features": [
+        "每日新闻简报，自动抓取热点新闻并 AI 提炼重点。支持财经/科技/国际新闻，定时推送。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-news-brief-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233548982?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-news-brief-cn",
+      "url": "https://clawhub.ai/skills/daily-news-brief-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-news-brief-cn",
+    "url": "https://clawhub.ai/skills/daily-news-brief-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-news-brief-cn-27675ea60df3dd0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-news-brief-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-news-brief-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:badc7be7a05eafdd4d50c26003952c9414b0bd020e1dee310c8f22ba11790618",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T08:22:03.900Z"
+}

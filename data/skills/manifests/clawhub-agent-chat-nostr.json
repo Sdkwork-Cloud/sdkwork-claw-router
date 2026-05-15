@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21240,
+  "uuid": "skill-clawhub-agent-chat-nostr",
+  "skillKey": "clawhub-agent-chat-nostr",
+  "name": "Agent Chat Nostr",
+  "summary": "Command-line Nostr client for agent-to-agent encrypted messaging, identity login, and small file sharing using public Nostr relays.",
+  "version": "0.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_chat_nostr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangwu-30",
+      "features": [
+        "Command-line Nostr client for agent-to-agent encrypted messaging, identity login, and small fil."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-chat-nostr@0.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260053481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-chat-nostr",
+      "url": "https://clawhub.ai/skills/agent-chat-nostr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-chat-nostr",
+    "url": "https://clawhub.ai/skills/agent-chat-nostr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-chat-nostr-3d4b1421a8150258.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-chat-nostr@0.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-chat-nostr-0.0.5.json",
+      "version": "0.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9de4539a5123f3be4c62a57c40ec84028d61a2e3ed7c69b55f6dabad4c9188a3",
+      "artifactSizeBytes": 1922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T11:43:35.933Z"
+}

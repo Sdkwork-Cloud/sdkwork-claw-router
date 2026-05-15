@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25355,
+  "uuid": "skill-clawhub-17track",
+  "skillKey": "clawhub-17track",
+  "name": "17TRACK",
+  "summary": "Track parcels and shipments via the 17TRACK API. Manage a local SQLite database of tracked packages with automatic status polling, webhook ingestion, and dai...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.17track",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Federico Liva",
+      "features": [
+        "Track parcels and shipments via the 17TRACK API",
+        "Manage a local SQLite database of tracked packages with automatic status polling, webhook inges."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/17track@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/346224?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "17track",
+      "url": "https://clawhub.ai/skills/17track"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "17track",
+    "url": "https://clawhub.ai/skills/17track",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/17track-f3e35aaeaf646ade.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/17track@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-17track-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:281df3c5a7f8a2e329f16e8a8e9a62d982156695e7020c24751450e721627ccf",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T13:30:10.470Z"
+}

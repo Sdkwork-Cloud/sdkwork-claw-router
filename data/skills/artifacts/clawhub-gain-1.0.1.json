@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gain@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gain",
+  "skill": {
+    "id": 40278,
+    "skillKey": "clawhub-gain",
+    "name": "GAIN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gain",
+    "url": "https://clawhub.ai/skills/gain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gain-66dd231befc8120d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Predict rice agronomic traits (yield, plant height, heading date, grain size, etc.) from genotype and environmental data using pre-trained MMoE deep learning..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qianlvdouhua",
+      "userId": "s174gxc3mxp9k6d82zgyt090ax83wbmr",
+      "displayName": "Qianlvdouhua",
+      "image": "https://avatars.githubusercontent.com/u/132967247?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774838599693,
+      "changelog": "Add README.md with full usage guide in Chinese and English",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0cbfbe799907dce4683c95d43ad6abd03aabddc900561359aaa79cf4b6c534c5"
+}

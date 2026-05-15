@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-api-optimizer-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_api_optimizer_skill",
+  "skill": {
+    "id": 54117,
+    "skillKey": "clawhub-claude-code-api-optimizer-skill",
+    "name": "Claude Code API Optimizer Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-api-optimizer-skill",
+    "url": "https://clawhub.ai/skills/claude-code-api-optimizer-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-api-optimizer-skill-fe0883fcd8a7e82c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reduce LLM API token consumption by 20-35% through pre-send estimation, memory extraction, and context compression."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "playdadev",
+      "userId": "s1762zavtq6bmvra9d858tdvfs83ygvw",
+      "displayName": "Playda",
+      "image": "https://avatars.githubusercontent.com/u/186032871?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774956307813,
+      "changelog": "Initial release — intelligently reduce LLM API token consumption for significant cost savings.\n\n- Introduces 3 mechanisms: pre-send token estimation, memory extraction, and context compression.\n- Model-agnostic, no dependencies required.\n- Provides detailed rules, prompts, and examples for each mechanism.\n- Achieves estimated 20–35% token cost reduction in typical agent workflows.\n- Includes quick start instructions for immediate application.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e6a52bfe1977d93cde9ec35ba484e602e8e8517b222e48725e47702f27bf3f8"
+}

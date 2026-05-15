@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38969,
+  "uuid": "skill-clawhub-agent-oversight",
+  "skillKey": "clawhub-agent-oversight",
+  "name": "Agent Oversight",
+  "summary": "Comprehensive AI agent oversight and management skill. Monitors sub-agents, manages file edit coordination, logs failures, kills hung sessions, and maintains...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_oversight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1477009639zw-blip",
+      "features": [
+        "Comprehensive AI agent oversight and management skill",
+        "Monitors sub-agents, manages file edit coordination, logs failures, kills hung sessions, and ma."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-oversight@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266505725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-oversight",
+      "url": "https://clawhub.ai/skills/agent-oversight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-oversight",
+    "url": "https://clawhub.ai/skills/agent-oversight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-oversight-997661a4cb7ade8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-oversight@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-oversight-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2f0b24a46b5349beeae41a66c64965fa3e57ad6bb1db26de048f530ac2299fd",
+      "artifactSizeBytes": 2389
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T19:32:52.749Z"
+}

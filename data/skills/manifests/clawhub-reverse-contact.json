@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27213,
+  "uuid": "skill-clawhub-reverse-contact",
+  "skillKey": "clawhub-reverse-contact",
+  "name": "Reverse Contact",
+  "summary": "Reverse Contact integration. Manage Persons, Organizations, Users, Goals, Filters. Use when the user wants to interact with Reverse Contact data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reverse_contact",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Reverse Contact integration",
+        "Manage Persons, Organizations, Users, Goals, Filters",
+        "Use when the user wants to interact with Reverse Contact data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reverse-contact@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reverse-contact",
+      "url": "https://clawhub.ai/skills/reverse-contact"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reverse-contact",
+    "url": "https://clawhub.ai/skills/reverse-contact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reverse-contact-780ef675ae2503cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reverse-contact@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-reverse-contact-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffbb50cc94076ef6981d529609107617651bf349e588c9f96b8a20677e1f0bfd",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:34:33.586Z"
+}

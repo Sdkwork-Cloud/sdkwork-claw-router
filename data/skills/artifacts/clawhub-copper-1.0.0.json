@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/copper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.copper",
+  "skill": {
+    "id": 50627,
+    "skillKey": "clawhub-copper",
+    "name": "Copper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "copper",
+    "url": "https://clawhub.ai/skills/copper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/copper-d16f06fe255d801e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Copper CRM integration — manage people, companies, opportunities, projects, tasks, and activities via the Copper REST API. Google Workspace native CRM with r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 492,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772571353413,
+      "changelog": "Copper CRM integration initial release.\n\n- Manage people, companies, opportunities, projects, tasks, and activities using the Copper REST API.\n- Python stdlib only (no dependencies); suitable for AI agents.\n- Includes CLI scripts for common CRM operations (CRUD, search, reporting).\n- Outputs JSON by default, with a human-readable option.\n- Requires COPPER_API_KEY and COPPER_EMAIL environment variables for authentication.\n- No local data storage; all operations run directly against the Copper CRM API.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6fcbe8256623112a2a8ab47e8060b3b268b00df4e270afd23af59d0f0c9755db"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geizhals-at@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geizhals_at",
+  "skill": {
+    "id": 18743,
+    "skillKey": "clawhub-geizhals-at",
+    "name": "Geizhals.at"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geizhals-at",
+    "url": "https://clawhub.ai/skills/geizhals-at",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geizhals-at-f41de6ff6f7763bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Geizhals.at (Austria) with HTTP-only autocomplete + detail-page parsing (no browser automation). Use when users want quick price checks from Geizhals...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rolandkakonyi",
+      "userId": "s1730b386gfc8sbrma8yqavyqn84mtrx",
+      "displayName": "Roland Kákonyi",
+      "image": "https://avatars.githubusercontent.com/u/2691371?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 655,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1771361563543,
+      "changelog": "Switch to uv-first usage, remove absolute paths to avoid username/home leakage, add pyproject.toml",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:23ca89b8457e3270ee97bc2a68a8947e588bf574cd45dc5ac1bd65a503174e0c"
+}

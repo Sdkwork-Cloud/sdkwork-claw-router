@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kingston@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kingston",
+  "skill": {
+    "id": 70169,
+    "skillKey": "clawhub-kingston",
+    "name": "Kingston"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kingston",
+    "url": "https://clawhub.ai/skills/kingston",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kingston-7b8ad5d2420b1c7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供金士顿内存条、固态硬盘、U盘等产品信息、价格查询及电脑升级建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776261132453,
+      "changelog": "- Updated skill documentation with a new structure and broader informational scope.\n- Expanded from specific product queries to include brand story, business lines, global presence, and industry insights.\n- Revised usage scenarios for clarity and broader application.\n- Simplified summary and read_when triggers for easier discovery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3d514931578b911ee589c145e1333eafd457c2ea3a9727290f404c436d9e2f7"
+}

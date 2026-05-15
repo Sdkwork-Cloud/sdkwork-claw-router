@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19468,
+  "uuid": "skill-clawhub-http-request-builder",
+  "skillKey": "clawhub-http-request-builder",
+  "name": "HTTP Request Builder",
+  "summary": "Build, test, and save HTTP requests from the CLI with custom headers, auth, body, cookies, templates, interactive mode, and request history tracking.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.http_request_builder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Derick",
+      "features": [
+        "Build, test, and save HTTP requests from the CLI with custom headers, auth, body, cookies, temp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/http-request-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114499711?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "http-request-builder",
+      "url": "https://clawhub.ai/skills/http-request-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "http-request-builder",
+    "url": "https://clawhub.ai/skills/http-request-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/http-request-builder-efa62a43cb12142a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/http-request-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-http-request-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:036217791f1558ecfca5a84e9629f269ed573d1235729b58bfdea78835711b47",
+      "artifactSizeBytes": 2504
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T14:01:24.851Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stop-loss-optimization@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stop_loss_optimization",
+  "skill": {
+    "id": 62679,
+    "skillKey": "clawhub-stop-loss-optimization",
+    "name": "a-stock-stop-loss"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stop-loss-optimization",
+    "url": "https://clawhub.ai/skills/stop-loss-optimization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stop-loss-optimization-d6dba6a7a5fef7b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用动态止损锁定利润，避免\"小盈大亏\"。用于A股风控。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haohanyang92",
+      "userId": "s176etfsvd0m1zsmf70wyypkyx83ggvw",
+      "displayName": "haohanyang92",
+      "image": "https://avatars.githubusercontent.com/u/61062925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 393,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773630864939,
+      "changelog": "Initial release of stop-loss-optimization skill:\n\n- Implements dynamic stop-loss strategies to lock in profits and avoid large losses in A-share trading.\n- Sets clear initial and trailing stop-loss rules based on price movement (5%, 10%, 15% profit levels).\n- Provides special guidelines for extreme market situations.\n- Emphasizes principles to never let a profit turn into a loss and to always cap losses at 5%.\n- Includes practical examples and typical trigger scenarios for using the skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f8436b2ae0b15c25f6960b15ba17eeb6442fb2b37bfb370e31a3f1bf41c518e9"
+}

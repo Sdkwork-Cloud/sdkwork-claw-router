@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67110,
+  "uuid": "skill-clawhub-category-link-collector",
+  "skillKey": "clawhub-category-link-collector",
+  "name": "Category Link Collector",
+  "summary": "采集电商网站分类链接信息，提取分类层级数据并保存为CSV文件。当需要从电商网站分类链接中提取结构化数据时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.category_link_collector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QirongZhang",
+      "features": [
+        "采集电商网站分类链接信息，提取分类层级数据并保存为CSV文件。当需要从电商网站分类链接中提取结构化数据时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/category-link-collector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24821414?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "category-link-collector",
+      "url": "https://clawhub.ai/skills/category-link-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "category-link-collector",
+    "url": "https://clawhub.ai/skills/category-link-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/category-link-collector-5b3c4ee952f16679.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/category-link-collector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-category-link-collector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b6a80e8424aaaf093fc0f27bb9f5f67724f7d1eb8e7d50e3e038cd6dcfe21a0",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T01:06:41.939Z"
+}

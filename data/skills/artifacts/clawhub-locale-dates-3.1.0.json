@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/locale-dates@3.1.0",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.locale_dates",
+  "skill": {
+    "id": 50852,
+    "skillKey": "clawhub-locale-dates",
+    "name": "Locale Dates"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "locale-dates",
+    "url": "https://clawhub.ai/skills/locale-dates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/locale-dates-6d47badb761a6bee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Format and convert dates, times, and durations. Compute timezones, relative time, and weekday/month names in local language. Instruction-based — no exec or d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tommot2",
+      "userId": "s17fzh9kw6g9v8fg9kppsbmwt183p1kd",
+      "displayName": "TommoT2",
+      "image": "https://avatars.githubusercontent.com/u/106430507?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 321,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "3.1.0",
+      "createdAt": 1776955342313,
+      "changelog": "Added UTC vs local time rule for log/session timestamp conversion",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e652b73543f20371d2b24e54436b7f139f3dd701f4a720d5e0330fbc3e62940"
+}

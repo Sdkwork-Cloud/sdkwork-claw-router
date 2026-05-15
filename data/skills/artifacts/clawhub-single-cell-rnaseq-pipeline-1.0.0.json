@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/single-cell-rnaseq-pipeline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.single_cell_rnaseq_pipeline",
+  "skill": {
+    "id": 31354,
+    "skillKey": "clawhub-single-cell-rnaseq-pipeline",
+    "name": "Single-cell Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "single-cell-rnaseq-pipeline",
+    "url": "https://clawhub.ai/skills/single-cell-rnaseq-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/single-cell-rnaseq-pipeline-b778beb4515dc9ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate single-cell RNA-seq analysis code templates for Seurat and Scanpy, supporting QC, clustering, visualization, and downstream analysis. Trigger when u..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775023466985,
+      "changelog": "Initial release of the single-cell-rnaseq-pipeline skill.\n\n- Generates single-cell RNA-seq analysis code templates for Seurat (R) and Scanpy (Python).\n- Supports preprocessing, quality control, normalization, clustering, visualization, marker identification, batch correction, and advanced analyses.\n- Provides command-line interface with configurable options for tool, species, batch correction, trajectory, and more.\n- Output includes organized script templates and a README for easy workflow setup.\n- Offers comprehensive documentation and error handling with clear user guidance.\nThe Python version can run normally. If you need the R sample file, please get it from our GitHub repository.https://github.com/aipoch/medical-research-skills",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6da1c831a76d051c34418d47d5d0e5e4b83e4cbb22cf39e6a3197fb6b98b4c06"
+}

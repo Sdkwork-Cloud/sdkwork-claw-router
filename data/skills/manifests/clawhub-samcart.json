@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25280,
+  "uuid": "skill-clawhub-samcart",
+  "skillKey": "clawhub-samcart",
+  "name": "Samcart",
+  "summary": "SamCart integration. Manage Products, Orders, Customers, Funnels, Upsells. Use when the user wants to interact with SamCart data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.samcart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SamCart integration",
+        "Manage Products, Orders, Customers, Funnels, Upsells",
+        "Use when the user wants to interact with SamCart data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/samcart@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "samcart",
+      "url": "https://clawhub.ai/skills/samcart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "samcart",
+    "url": "https://clawhub.ai/skills/samcart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/samcart-302b2f2fbdbb6995.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/samcart@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-samcart-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:834536161e414dae5d502f1a52ec3af9f13bbd25662b6fe90c285c9bbe64b727",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:37:03.465Z"
+}

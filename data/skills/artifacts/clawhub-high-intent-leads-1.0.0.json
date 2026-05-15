@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/high-intent-leads@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.high_intent_leads",
+  "skill": {
+    "id": 45193,
+    "skillKey": "clawhub-high-intent-leads",
+    "name": "High Intent Leads"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "high-intent-leads",
+    "url": "https://clawhub.ai/skills/high-intent-leads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/high-intent-leads-5c1676b1f7eb9c86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect companies showing real-time buying signals like funding, hiring, tech changes, or competitor pain, then generate hyper-personalized outreach at peak i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775046064390,
+      "changelog": "High-Intent Lead Sniper 1.0.0 – Initial Release\n\n- Instantly finds B2B leads showing real buying intent via recent funding, hiring, tech stack changes, competitor frustrations, and LinkedIn trigger events.\n- Integrates signals from Apify (LinkedIn, Crunchbase, Twitter, Google News, Wappalyzer), InVideo AI, and Claude AI for workflow automation.\n- Scores leads based on real-time intent, providing ranked lists and hyper-personalized outreach templates for each prospect.\n- Designed for any B2B sales, SaaS, or agency team seeking more replies and faster conversions by contacting leads at the exact buying moment.\n- Offers sophisticated lead gen signals comparable to $30k–$100k/year solutions for a fraction of the price.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45ab7bd151398ee3fe030caf17bbab9c19f5b137114c2c3a419c4a29832d3c28"
+}

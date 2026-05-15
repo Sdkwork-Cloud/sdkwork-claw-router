@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19816,
+  "uuid": "skill-clawhub-zoho-support-claw",
+  "skillKey": "clawhub-zoho-support-claw",
+  "name": "zoho-support-claw",
+  "summary": "Integrates Zoho Desk with OpenClaw to ingest tickets, generate local embeddings, analyze open tickets, and propose draft replies using OpenAI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoho_support_claw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pretid",
+      "features": [
+        "Integrates Zoho Desk with OpenClaw to ingest tickets, generate local embeddings, analyze open t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zoho-support-claw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124077?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zoho-support-claw",
+      "url": "https://clawhub.ai/skills/zoho-support-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoho-support-claw",
+    "url": "https://clawhub.ai/skills/zoho-support-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoho-support-claw-2521817ae0e1fc75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zoho-support-claw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zoho-support-claw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5facbcf7d0070ae0f14b5e0171d3cd3f41daaeb6180278f421f4e84bcddcc242",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T18:52:50.977Z"
+}

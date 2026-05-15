@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "oo",
+    "displayName": "oo",
+    "summary": "Use when user mentions a ConnectOnion agent address (0x...), asks to connect/delegate to a remote agent, or uses /oo command. Also triggers when user wants t...",
+    "tags": {
+      "latest": "0.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774595018807,
+    "updatedAt": 1777624135271
+  },
+  "latestVersion": {
+    "version": "0.1.0",
+    "createdAt": 1774595018807,
+    "changelog": "Version 0.1.0 of oo skill:\n\n- Initial release: enables connecting to remote ConnectOnion agents and delegating tasks using agent addresses.\n- Automatically handles environment setup checks for ConnectOnion installation and agent identity.\n- Extracts agent address and task description from user message or /oo command.\n- Implements resilient, smart connection logic: tries direct WebSocket first, falls back to relay if needed.\n- Parses output using clear markers (CO_METHOD, CO_RESPONSE, etc.) for robust response handling.\n- Supports both one-shot and multi-turn delegated agent tasks.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "openonion",
+    "userId": "s17fhpz8ptde8vqs1pv88gbrf583pw3q",
+    "displayName": "openonion",
+    "image": null
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777624135271
+  }
+}

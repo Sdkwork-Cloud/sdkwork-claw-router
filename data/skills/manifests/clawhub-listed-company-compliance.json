@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66351,
+  "uuid": "skill-clawhub-listed-company-compliance",
+  "skillKey": "clawhub-listed-company-compliance",
+  "name": "Listed Company Compliance",
+  "summary": "基于最新监管规则，提供中国上市公司独立董事、信息披露、重大资产重组等核心合规领域的专业管理助手。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.listed_company_compliance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xzhenxing666",
+      "features": [
+        "基于最新监管规则，提供中国上市公司独立董事、信息披露、重大资产重组等核心合规领域的专业管理助手。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/listed-company-compliance@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89236638?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "listed-company-compliance",
+      "url": "https://clawhub.ai/skills/listed-company-compliance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "listed-company-compliance",
+    "url": "https://clawhub.ai/skills/listed-company-compliance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/listed-company-compliance-0e6e4f8caebb121f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/listed-company-compliance@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-listed-company-compliance-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db4285dc75c3c4f437582eacb8b9063f6ec7dcf9647cafa5f7f3576a57049a0a",
+      "artifactSizeBytes": 2361
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T06:01:52.979Z"
+}

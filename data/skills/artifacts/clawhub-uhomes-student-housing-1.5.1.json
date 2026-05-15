@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uhomes-student-housing@1.5.1",
+  "version": "1.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uhomes_student_housing",
+  "skill": {
+    "id": 58101,
+    "skillKey": "clawhub-uhomes-student-housing",
+    "name": "Uhomes Student Housing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uhomes-student-housing",
+    "url": "https://clawhub.ai/skills/uhomes-student-housing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uhomes-student-housing-f06929be9d7a4e9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find and compare student accommodation worldwide on uhomes.com. Use for any student housing, 学生公寓, 留学租房, 留学生寮, 学生マンション, or study-abroad accommodation query."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yalding8",
+      "userId": "publishers:yalding8",
+      "displayName": "neilding",
+      "image": "https://avatars.githubusercontent.com/u/51530852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 407,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.5.1",
+      "createdAt": 1773639162056,
+      "changelog": "v1.5.1: Fix 4 issues from live output evaluation — strict slot dedup (no same property in 2 slots), Must-Stay badge stacking on non-Must-Stay slots, correct city_id in Must-Stay link, accurate property count.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dee5f5564be64a025a46b3032edc0f32f550da3fce679057b5487461a57b550d"
+}

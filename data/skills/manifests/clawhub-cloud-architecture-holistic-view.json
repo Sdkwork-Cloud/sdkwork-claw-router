@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41565,
+  "uuid": "skill-clawhub-cloud-architecture-holistic-view",
+  "skillKey": "clawhub-cloud-architecture-holistic-view",
+  "name": "Cloud Architecture Holistic View",
+  "summary": "Holistic view of your entire cloud architecture. See all architecture diagrams, directories, and risk assessments across your account.",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_architecture_holistic_view",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stinggit",
+      "features": [
+        "Holistic view of your entire cloud architecture",
+        "See all architecture diagrams, directories, and risk assessments across your account."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloud-architecture-holistic-view@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11748515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloud-architecture-holistic-view",
+      "url": "https://clawhub.ai/skills/cloud-architecture-holistic-view"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-architecture-holistic-view",
+    "url": "https://clawhub.ai/skills/cloud-architecture-holistic-view",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-architecture-holistic-view-9df0c35a97a88dd5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloud-architecture-holistic-view@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloud-architecture-holistic-view-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:471b90b8dbfdc130345d977a1080e0b48d07f6ea9c7b1d5db76e843e36f84932",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T03:49:21.837Z"
+}

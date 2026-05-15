@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73065,
+  "uuid": "skill-clawhub-shorts-builder-cn",
+  "skillKey": "clawhub-shorts-builder-cn",
+  "name": "连续短剧剧情构建",
+  "summary": "剧情生成管道流技能。支持多剧集连续生成、图谱管理、AI质检+人工确认的双控机制。自动管理人物、场景、钩子的关联关系。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shorts_builder_cn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hexidyg",
+      "features": [
+        "剧情生成管道流技能。支持多剧集连续生成、图谱管理、AI质检+人工确认的双控机制。自动管理人物、场景、钩子的关联关系。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shorts-builder-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254915923?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shorts-builder-cn",
+      "url": "https://clawhub.ai/skills/shorts-builder-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shorts-builder-cn",
+    "url": "https://clawhub.ai/skills/shorts-builder-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shorts-builder-cn-744cafc01f27c7f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shorts-builder-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shorts-builder-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08e33065be0d792fa346df7aecd61bcec22a4be6b936e592ddebf0d3618c1a01",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T07:34:25.150Z"
+}

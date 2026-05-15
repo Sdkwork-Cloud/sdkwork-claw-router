@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-py@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_py",
+  "skill": {
+    "id": 19504,
+    "skillKey": "clawhub-weather-py",
+    "name": "Polymarket Weather Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-py",
+    "url": "https://clawhub.ai/skills/weather-py",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-py-bfc4937d8b076244.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade Polymarket weather markets using NOAA forecasts via Simmer API. Inspired by gopfan2's $2M+ strategy. Use when user wants to trade temperature markets,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnjerry8749",
+      "userId": "publishers:johnjerry8749",
+      "displayName": "johnjerry8749",
+      "image": "https://avatars.githubusercontent.com/u/75138076?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 839,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771245714955,
+      "changelog": "Polymarket Weather Trader v1.7.2\n\n- Trade Polymarket temperature markets automatically using NOAA forecasts via Simmer API.\n- Inspired by gopfan2’s $2M+ weather trading strategy.\n- New: Limit trades per cycle with SIMMER_WEATHER_MAX_TRADES (default: 5).\n- Smart position sizing and trade safeguards to manage risk.\n- Detailed configuration for thresholds, locations, and portfolio-based sizing.\n- Status utility for quick balance and position checks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8673b196072cde7c5204d27bcf0a1b737b0a04348051dcf9edea0346cc25f9c2"
+}

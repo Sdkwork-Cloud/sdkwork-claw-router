@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-actions-branch-drift-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_branch_drift_audit",
+  "skill": {
+    "id": 28845,
+    "skillKey": "clawhub-github-actions-branch-drift-audit",
+    "name": "GitHub Actions Branch Drift Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-branch-drift-audit",
+    "url": "https://clawhub.ai/skills/github-actions-branch-drift-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-branch-drift-audit-75dfdc7513d819d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect branch-level GitHub Actions reliability drift by comparing failure and runtime deltas against a mainline baseline."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daniellummis",
+      "userId": "publishers:daniellummis",
+      "displayName": "Daniel Lummis",
+      "image": "https://avatars.githubusercontent.com/u/65238171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772849212858,
+      "changelog": "Initial release of github-actions-branch-drift-audit.\n\n- Detects branch-level CI reliability drift by comparing failure rates and runtime metrics against a mainline baseline.\n- Supports flexible configuration for branch selection, workflow/repo filtering, and drift thresholds.\n- Emits both text and JSON reports for pipeline integration and dashboard triage.\n- Provides fail gate capability to enforce quality, exiting nonzero on critical drift if enabled.\n- Easy integration: analyze GitHub Actions run exports with simple Bash or Python dependencies.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6a86b412b7356d3c8a596ec8c3f4f2e82be1aa39b8cdd89dd355ea87e5c3853e"
+}

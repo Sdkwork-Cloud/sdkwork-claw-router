@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15838,
+  "uuid": "skill-clawhub-dep-audit",
+  "skillKey": "clawhub-dep-audit",
+  "name": "dep-audit",
+  "summary": "Audit project dependencies for known vulnerabilities (CVEs). Supports npm, pip, Cargo, and Go. Zero API keys required. Safe-by-default: report-only mode, fix...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dep_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Todd Kuehnl",
+      "features": [
+        "Audit project dependencies for known vulnerabilities (CVEs)",
+        "Supports npm, pip, Cargo, and Go",
+        "Zero API keys required",
+        "Safe-by-default: report-only mode, fix..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dep-audit@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25701510?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dep-audit",
+      "url": "https://clawhub.ai/skills/dep-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dep-audit",
+    "url": "https://clawhub.ai/skills/dep-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dep-audit-55a0d43fd7b53347.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dep-audit@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dep-audit-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e1fd836602d7f74430ed1426ad82cda49b1a6a4ae05f768e70bae460f150510",
+      "artifactSizeBytes": 1916
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T23:39:54.509Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69982,
+  "uuid": "skill-clawhub-readpaper",
+  "skillKey": "clawhub-readpaper",
+  "name": "论文阅读助手",
+  "summary": "论文阅读报告生成器，从PDF提取结构化内容并生成全中文阅读报告。触发关键词：/readpaper、论文阅读、论文分析、PDF分析",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readpaper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChenBHXMU",
+      "features": [
+        "论文阅读报告生成器，从PDF提取结构化内容并生成全中文阅读报告。触发关键词：/readpaper、论文阅读、论文分析、PDF分析"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/readpaper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108165710?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "readpaper",
+      "url": "https://clawhub.ai/skills/readpaper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readpaper",
+    "url": "https://clawhub.ai/skills/readpaper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readpaper-1df0c91c1c58f469.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/readpaper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-readpaper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6a4cf820e747c8c887872cdd4a79488f07abf51c9f116838b79651f154cccf1",
+      "artifactSizeBytes": 2437
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T02:57:40.593Z"
+}

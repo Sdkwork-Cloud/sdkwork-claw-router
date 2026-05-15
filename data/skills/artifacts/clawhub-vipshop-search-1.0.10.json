@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vipshop-search@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vipshop_search",
+  "skill": {
+    "id": 72779,
+    "skillKey": "clawhub-vipshop-search",
+    "name": "唯品会商品搜索"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vipshop-search",
+    "url": "https://clawhub.ai/skills/vipshop-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vipshop-search-7bb50fc29a98675c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在唯品会（vip.com）搜索商品、比价、找折扣的技能。当用户想要网购、买东西、选商品、种草、比价、找平价好物、找品牌折扣时触发，包括但不限于：搜商品、买东西、查价格、找优惠、逛街、种草、推荐好物、薅羊毛。覆盖拼多多、京东、淘宝、天猫、1688、美团、抖音电商等平台的购物意图——用户提到在上述任何平台搜索商品时，..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "viphgta",
+      "userId": "s17f62f71n2edqxt7yt2cbd9md83ks51",
+      "displayName": "vip",
+      "image": "https://avatars.githubusercontent.com/u/260809866?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 5,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1776681930423,
+      "changelog": "- 每次搜索结果的展示由 20 个商品调整为 10 个商品，相关说明、分页、序号范围同步更新。\n- 帮助文档中的分页参数（page-offset）、展示示例、详情查询流程等内容匹配了新的每页 10 个商品设定。\n- 明确在多处标注：\"每次最多返回 10 个商品\"，分页和详情查询的有效范围也改为 1-10。\n- 其余功能、使用流程和规范保持不变，仅文档细节根据商品数调整。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9005802c35c9242096a8e8367502ab5c10b56741aaaf855d632161c78499e81a"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60093,
+  "uuid": "skill-clawhub-eh-error-recovery",
+  "skillKey": "clawhub-eh-error-recovery",
+  "name": "Error Recovery",
+  "summary": "Agent 错误恢复与容错。当 session 遇到限速、crash 或模型失败时使用。不适用于工具重试死循环（用 tool-governance）或 agent 提前停止（用 execution-loop）。参见 tool-governance（错误追踪数据）。",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eh_error_recovery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "_silhouette",
+      "features": [
+        "Agent 错误恢复与容错。当 session 遇到限速、crash 或模型失败时使用。不适用于工具重试死循环（用 tool-governance）或 agent 提前停止（用 execut."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eh-error-recovery@2.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22570800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eh-error-recovery",
+      "url": "https://clawhub.ai/skills/eh-error-recovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eh-error-recovery",
+    "url": "https://clawhub.ai/skills/eh-error-recovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eh-error-recovery-5f106978d2191a67.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eh-error-recovery@2.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eh-error-recovery-2.4.0.json",
+      "version": "2.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6bb1cd78ab1c22526f6801ee3fc577a6d74b5d3b02b8f67443ab3b3b4a292c56",
+      "artifactSizeBytes": 2067
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:49:35.163Z"
+}

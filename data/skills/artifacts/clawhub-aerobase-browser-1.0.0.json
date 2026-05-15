@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aerobase-browser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aerobase_browser",
+  "skill": {
+    "id": 23323,
+    "skillKey": "clawhub-aerobase-browser",
+    "name": "Aerobase Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aerobase-browser",
+    "url": "https://clawhub.ai/skills/aerobase-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aerobase-browser-3d4f9e0c5e45b568.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser-based flight search and airline check-in automation"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kurosh87",
+      "userId": "s172tbyj9m7964rvsde9cacb2s83yxjr",
+      "displayName": "Aerobase",
+      "image": "https://avatars.githubusercontent.com/u/95127236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772935230305,
+      "changelog": "Aerobase Browser Skill v1.0.0\n\n- Introduces browser-based flight search and airline check-in automation, integrating Google Flights, Kayak, and Skyscanner using Playwright and ARIA snapshots.\n- Implements daily rate limits (10 browser searches/user), blocks for 24 hours on site lockouts, and persistent search tracking via workspace file.\n- Provides fallback to the Scrapling anti-bot service for scraping and interaction with bot-protected or JS-heavy sites.\n- Details structured JSON search APIs for major aggregator and deal sites, plus step-driven browser automation for check-in/registration.\n- Outlines best practices for when to use browser automation, Scrapling, proxies, or API-only methods to ensure reliability and compliance.\n- Browser results are always presented as comparison data, recommending bookings through official APIs whenever possible.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:064f1b428b26efce620dd434fc4a288cde4f9407835def10b00c81071dfc37e2"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39700,
+  "uuid": "skill-clawhub-agent-card",
+  "skillKey": "clawhub-agent-card",
+  "name": "Agent Card",
+  "summary": "Manage prepaid virtual Visa cards for AI agents with AgentCard. Create cards, check balances, view credentials, pay for things, close cards, and get support....",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_card",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Felipe Abello",
+      "features": [
+        "Manage prepaid virtual Visa cards for AI agents with AgentCard",
+        "Create cards, check balances, view credentials, pay for things, close cards, and get support...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-card@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100321034?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-card",
+      "url": "https://clawhub.ai/skills/agent-card"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-card",
+    "url": "https://clawhub.ai/skills/agent-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-card-a1087ef3dd0e5c2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-card@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-card-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cb1f4de6a74420ee3d5aab01d795340994735c0170ac2836c3cfcc8ee304821",
+      "artifactSizeBytes": 2026
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T22:16:16.117Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-quality-auditor@9.9.5",
+  "version": "9.9.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_quality_auditor",
+  "skill": {
+    "id": 53387,
+    "skillKey": "clawhub-content-quality-auditor",
+    "name": "Content Quality Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-quality-auditor",
+    "url": "https://clawhub.ai/skills/content-quality-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-quality-auditor-9f68cd038f9630c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when auditing content quality, E-E-A-T, publish readiness, or 内容质量/EEAT评分. Runs 80-item CORE-EEAT scoring with veto checks and fix plan."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaron-he-zhu",
+      "userId": "s17e1tg8pjra8dn1dvtq21sahx83hrxj",
+      "displayName": "Aaron Zhu",
+      "image": "https://avatars.githubusercontent.com/u/139607425?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2972,
+      "installsAllTime": 16,
+      "installsCurrent": 15,
+      "stars": 1,
+      "versions": 23
+    },
+    "latestVersion": {
+      "version": "9.9.5",
+      "createdAt": 1777349151129,
+      "changelog": "Published from main @ 7ecc77b",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d542c9d8d58123a2e8f1e17fe4f2f518083d33ca77d5e7a59dc262c3f68a65be"
+}

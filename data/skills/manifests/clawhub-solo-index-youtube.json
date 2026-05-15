@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17803,
+  "uuid": "skill-clawhub-solo-index-youtube",
+  "skillKey": "clawhub-solo-index-youtube",
+  "name": "Index Youtube",
+  "summary": "Index YouTube channel videos and transcripts for semantic search. Use when user says \"index YouTube\", \"add YouTube channel\", \"update video index\", or \"index...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solo_index_youtube",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rust",
+      "features": [
+        "Index YouTube channel videos and transcripts for semantic search",
+        "Use when user says \"index YouTube\", \"add YouTube channel\", \"update video index\", or \"index..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solo-index-youtube@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1236751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solo-index-youtube",
+      "url": "https://clawhub.ai/skills/solo-index-youtube"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solo-index-youtube",
+    "url": "https://clawhub.ai/skills/solo-index-youtube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solo-index-youtube-5f53d169c2129c86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solo-index-youtube@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-solo-index-youtube-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74e53fa10799bebf3ec74ca408b57dc96e7ee14e0cb202d4edb2c8486adc1569",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T18:32:48.559Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-chat-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_chat_skill",
+  "skill": {
+    "id": 64411,
+    "skillKey": "clawhub-voice-chat-skill",
+    "name": "Voice Chat Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-chat-skill",
+    "url": "https://clawhub.ai/skills/voice-chat-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-chat-skill-04fc5e17dfaff7c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "语音对话集成技能，支持双向语音交流。使用TTS和STT实现完整的语音对话功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fangkelvin",
+      "userId": "publishers:fangkelvin",
+      "displayName": "fangkelvin",
+      "image": "https://avatars.githubusercontent.com/u/261776090?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 469,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772382953571,
+      "changelog": "voice-chat-skill v1.0.0\n\n- Initial release of voice-chat skill, enabling bi-directional voice conversation.\n- Supports speech-to-text (STT) using speech_recognition (Google, Whisper, etc.).\n- Supports text-to-speech (TTS) through OpenClaw built-in tools and optional ElevenLabs API.\n- Maintains conversation context and includes voice activity detection.\n- Includes robust setup instructions, advanced configuration options, troubleshooting, and security guidelines.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3251943656deed87377ca62733dea5af6071d54473c461579f70f164cb1586ff"
+}

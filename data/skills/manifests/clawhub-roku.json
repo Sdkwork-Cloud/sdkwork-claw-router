@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11104,
+  "uuid": "skill-clawhub-roku",
+  "skillKey": "clawhub-roku",
+  "name": "roku",
+  "summary": "Control Roku devices via CLI. Discovery, remote control, app launching, search, and HTTP bridge mode for real-time control.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.roku",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gustavo Madeira Santana",
+      "features": [
+        "Control Roku devices via CLI",
+        "Discovery, remote control, app launching, search, and HTTP bridge mode for real-time control."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/roku@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5599352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "roku",
+      "url": "https://clawhub.ai/skills/roku"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "roku",
+    "url": "https://clawhub.ai/skills/roku",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/roku-db041e4c61cffeab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/roku@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-roku-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8887c54eb7f79a68f048e13fa4011ce9702e47ba8634119d709ebec3702ef18e",
+      "artifactSizeBytes": 1831
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T20:02:26.095Z"
+}

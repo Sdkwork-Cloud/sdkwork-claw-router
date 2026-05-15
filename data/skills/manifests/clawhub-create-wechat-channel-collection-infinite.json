@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73320,
+  "uuid": "skill-clawhub-create-wechat-channel-collection-infinite",
+  "skillKey": "clawhub-create-wechat-channel-collection-infinite",
+  "name": "创建微信视频号合集_无限",
+  "summary": "在微信视频号后台创建视频合集。触发场景：创建视频号合集、新建视频号合集、在视频号后台创建合集、创建视频合集。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_wechat_channel_collection_infinite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "未来X无限",
+      "features": [
+        "在微信视频号后台创建视频合集。触发场景：创建视频号合集、新建视频号合集、在视频号后台创建合集、创建视频合集。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/create-wechat-channel-collection-infinite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36912555?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "create-wechat-channel-collection-infinite",
+      "url": "https://clawhub.ai/skills/create-wechat-channel-collection-infinite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-wechat-channel-collection-infinite",
+    "url": "https://clawhub.ai/skills/create-wechat-channel-collection-infinite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-wechat-channel-collection-infinite-4af6263741f22e71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/create-wechat-channel-collection-infinite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-create-wechat-channel-collection-infinite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e7f885675b648ca065458ebfd224d594ae1b95864e3a3887ba921cce1adf45f",
+      "artifactSizeBytes": 2496
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T21:47:46.162Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32766,
+  "uuid": "skill-clawhub-openclaw-gitbak",
+  "skillKey": "clawhub-openclaw-gitbak",
+  "name": "openclaw-gitbak",
+  "summary": "Backup/restore OpenClaw config and workspace via git.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_gitbak",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "burnlife",
+      "features": [
+        "Backup/restore OpenClaw config and workspace via git."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-gitbak@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13991180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-gitbak",
+      "url": "https://clawhub.ai/skills/openclaw-gitbak"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-gitbak",
+    "url": "https://clawhub.ai/skills/openclaw-gitbak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-gitbak-a4059915f0fb524e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-gitbak@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-gitbak-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f279aebb8c17ff6e9e73380b19f8db2e5c2e61a6d7616b4103cd2e43b6b92d45",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T13:47:57.943Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40163,
+  "uuid": "skill-clawhub-nova-canvas",
+  "skillKey": "clawhub-nova-canvas",
+  "name": "Nova Canvas",
+  "summary": "Generate images using Amazon Nova Canvas via AWS Bedrock. Supports multiple AWS auth methods: environment variables, credentials file, named profiles, IAM in...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nova_canvas",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Garming",
+      "features": [
+        "Generate images using Amazon Nova Canvas via AWS Bedrock",
+        "Supports multiple AWS auth methods: environment variables, credentials file, named profiles, IA."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nova-canvas@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7887545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nova-canvas",
+      "url": "https://clawhub.ai/skills/nova-canvas"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nova-canvas",
+    "url": "https://clawhub.ai/skills/nova-canvas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nova-canvas-7799c39b59d4bd63.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nova-canvas@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nova-canvas-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f49ac87818dffd6a0a9f3acebbe6e49a256331c0f8078ac3b823bf8a03c8d97",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T11:23:39.974Z"
+}

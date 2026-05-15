@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fsxmemory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fsxmemory",
+  "skill": {
+    "id": 11883,
+    "skillKey": "clawhub-fsxmemory",
+    "name": "ForesigxtMemory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fsxmemory",
+    "url": "https://clawhub.ai/skills/fsxmemory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fsxmemory-b6c970283c35bc69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured memory system for AI agents. Context death resilience (checkpoint/recover), structured storage, Obsidian-compatible markdown, and local semantic search."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "azrijamil",
+      "userId": "publishers:azrijamil",
+      "displayName": "azrijamil",
+      "image": "https://avatars.githubusercontent.com/u/38235944?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1886,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770115374979,
+      "changelog": "- Initial release of fsxmemory: a structured memory system for AI agents.\n- Features context death resilience (checkpoint/recover), structured storage, and Obsidian-compatible markdown.\n- Supports local semantic and keyword search (via qmd integration).\n- Enables easy vault initialization, memory storage by type, quick capture, and migration from OpenClaw/Obsidian vaults with backup/rollback.\n- Includes auto-linking, structured templates, and best-practice workflows for context continuity and knowledge organization.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eb5ba2f4d041d85c6769bf8e6f0b686888c0e0f377dc42d61c90bfaa5a8cf359"
+}

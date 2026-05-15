@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/v2ex@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.v2ex",
+  "skill": {
+    "id": 17295,
+    "skillKey": "clawhub-v2ex",
+    "name": "v2ex"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "v2ex",
+    "url": "https://clawhub.ai/skills/v2ex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/v2ex-acdea4effdbb420d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "V2EX API 2.0 integration for accessing V2EX forum data, notifications, topics, nodes, and member profiles"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "timqian",
+      "userId": "publishers:timqian",
+      "displayName": "Tim Qian",
+      "image": "https://avatars.githubusercontent.com/u/5512552?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 785,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771305019143,
+      "changelog": "Initial release with V2EX API 2.0 integration.\n\n- Access V2EX forum data including notifications, topics, nodes, and member profiles.\n- Supports authentication via Personal Access Token.\n- Provides usage examples and best practices for API integration.\n- Includes classic (no authentication) and v2 endpoints for topics.\n- Documents available endpoints, error handling, rate limits, and workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9666325811089c5e8fa20c7c02a8f8727924c93705e8fae42275f295eb4de4aa"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11651,
+  "uuid": "skill-clawhub-devialet",
+  "skillKey": "clawhub-devialet",
+  "name": "Devialet Speaker Control",
+  "summary": "Control Devialet Phantom speakers via HTTP API. Use for: play/pause, volume control, mute/unmute, source selection, and speaker status. Requires DOS 2.14+ firmware. Works with Phantom I, Phantom II, Phantom Reactor, and Dialog.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.devialet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JGM2025",
+      "features": [
+        "Control Devialet Phantom speakers via HTTP API",
+        "Use for: play/pause, volume control, mute/unmute, source selection, and speaker status",
+        "Requires DOS 2.14+ firmware",
+        "Works with Phantom I, Phantom II, Phantom Reactor, and Dialog."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/devialet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213201384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "devialet",
+      "url": "https://clawhub.ai/skills/devialet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "devialet",
+    "url": "https://clawhub.ai/skills/devialet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/devialet-2e0b44415ab5f7bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/devialet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-devialet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5da8e5889baa2ae8b66b05dc351ef90ea3675909eb479c905cdae2da5a661e8a",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T12:13:46.780Z"
+}

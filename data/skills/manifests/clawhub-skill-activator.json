@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60512,
+  "uuid": "skill-clawhub-skill-activator",
+  "skillKey": "clawhub-skill-activator",
+  "name": "Skill 激活器",
+  "summary": "Skill 激活器——帮助用户发现自动化需求、匹配已有 Skill、融合生成新 Skill。 解决\"装了 OpenClaw 不知道用来做什么\"的核心问题。 Use when: (1) User says \"帮我看看能自动化什么\", \"我能用 OpenClaw 做什么\", \"帮我体检\", \"激活\", \"scan m...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_activator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Love5209",
+      "features": [
+        "Skill 激活器——帮助用户发现自动化需求、匹配已有 Skill、融合生成新 Skill。 解决\"装了 OpenClaw 不知道用来做什么\"的核心问题。 Use when: (1) Use."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-activator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5616433?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-activator",
+      "url": "https://clawhub.ai/skills/skill-activator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-activator",
+    "url": "https://clawhub.ai/skills/skill-activator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-activator-07c14ec28d10495e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-activator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-activator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:475a2e703abd35dfd8996349572cbbd441e8de2bddd5e87a0ffe8302222df06d",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T02:40:33.756Z"
+}

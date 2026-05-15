@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/security-audit-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_audit_assistant",
+  "skill": {
+    "id": 41652,
+    "skillKey": "clawhub-security-audit-assistant",
+    "name": "security-audit-assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-audit-assistant",
+    "url": "https://clawhub.ai/skills/security-audit-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-audit-assistant-0294ebe86f618b9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conducts lightweight security baseline audits on OpenClaw-managed servers, identifies high-risk SSH/firewall issues, and provides one-click fixes plus compli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huoxinjiang",
+      "userId": "s17bqjdmw3vjz8hdnxevncpvg183jzrd",
+      "displayName": "HuoXinJiang",
+      "image": "https://avatars.githubusercontent.com/u/125207178?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774505748020,
+      "changelog": "**Initial release of Security Audit Assistant.**\n\n- Launches a lightweight, zero-install security baseline audit for OpenClaw-managed nodes.\n- Checks SSH, firewall, updates, passwords, unnecessary services, logging, and file permissions (~20 checks/node).\n- Generates human-readable reports with risk grading and one-click remediation commands.\n- Supports scheduled audits, multiple export formats (Markdown, JSON, plain text), and integration with OpenClaw cron.\n- Designed for small teams and solopreneurs needing fast, actionable server security checks and compliance-style reports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68e84ea51f392ab11d8b7175a078c00aa9c551f35f5f70320091292903928cc8"
+}

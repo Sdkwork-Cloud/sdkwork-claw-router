@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49244,
+  "uuid": "skill-clawhub-speech-recognition-forqq",
+  "skillKey": "clawhub-speech-recognition-forqq",
+  "name": "Speech Recognition",
+  "summary": "Convert QQ voice messages in AMR/SILK format to text using pysilk decoding and faster-whisper transcription.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.speech_recognition_forqq",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yvanboyang",
+      "features": [
+        "Convert QQ voice messages in AMR/SILK format to text using pysilk decoding and faster-whisper t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/speech-recognition-forqq@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32995360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "speech-recognition-forqq",
+      "url": "https://clawhub.ai/skills/speech-recognition-forqq"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "speech-recognition-forqq",
+    "url": "https://clawhub.ai/skills/speech-recognition-forqq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/speech-recognition-forqq-93b3c100de4e666b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/speech-recognition-forqq@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-speech-recognition-forqq-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79adc6448a996f248d023fe177326da7c012043430d11cb618e6d299ddcda3e0",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T10:26:54.452Z"
+}

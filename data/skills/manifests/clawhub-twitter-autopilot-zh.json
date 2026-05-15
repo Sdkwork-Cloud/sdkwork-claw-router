@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64788,
+  "uuid": "skill-clawhub-twitter-autopilot-zh",
+  "skillKey": "clawhub-twitter-autopilot-zh",
+  "name": "twitter-autopilot-zh",
+  "summary": "搜索 X Twitter 数据、监控账号动态、追踪热点，并通过 AISA 中继完成发帖与互动。触发条件：当用户需要 Twitter 搜索、社媒监听、博主监控、发帖、回复、点赞或关注流程时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_autopilot_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIsa",
+      "features": [
+        "搜索 X Twitter 数据、监控账号动态、追踪热点，并通过 AISA 中继完成发帖与互动。触发条件：当用户需要 Twitter 搜索、社媒监听、博主监控、发帖、回复、点赞或关注流程时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twitter-autopilot-zh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245991925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twitter-autopilot-zh",
+      "url": "https://clawhub.ai/skills/twitter-autopilot-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-autopilot-zh",
+    "url": "https://clawhub.ai/skills/twitter-autopilot-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-autopilot-zh-1332c3ddf5061fbb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twitter-autopilot-zh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-twitter-autopilot-zh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5faade9923c2bf25b052a556e3965e159f1585dbd4a3e73f54afb38f9667e497",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T09:12:36.605Z"
+}

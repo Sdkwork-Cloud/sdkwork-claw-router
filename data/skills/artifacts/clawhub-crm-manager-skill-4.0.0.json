@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crm-manager-skill@4.0.0",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crm_manager_skill",
+  "skill": {
+    "id": 68119,
+    "skillKey": "clawhub-crm-manager-skill",
+    "name": "Crm Manager Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crm-manager-skill",
+    "url": "https://clawhub.ai/skills/crm-manager-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crm-manager-skill-3445cb7df1aac91f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一个基于对话的客户关系管理技能。管理员通过自然语言录入客户信息， 系统自动将客户资料存储为 YAML 文件，并支持查询、更新、跟踪等功能。 用于： - 新增客户并保存为 YAML 文件 - 更新客户信息 - 添加跟进记录 - 添加销售行为记录（支持销售漏斗分析） - 查询客户资料 - 条件搜索客户 - 销售漏斗分析报表"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luis1232023",
+      "userId": "s17a3v02cm416w18vpcxxck3xd8458tc",
+      "displayName": "joinliu",
+      "image": "https://avatars.githubusercontent.com/u/129353879?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "4.0.0",
+      "createdAt": 1775208632067,
+      "changelog": "crm-manager-skill 4.0.0 introduces service record management and analytics:\n\n- Added structured service record functionality, including support for progress tracking, types, attendance, and outcome.\n- Extended data model: customer YAML now supports `email`, `wechat_id`, and nested `service_records`.\n- Introduced sales and service analytics, including sales funnel/statistics reporting (`analyze_sales_funnel.py`).\n- New scripts: add sales activity, add service record, auto-tagger, industry fields, NLP support.\n- Expanded search: now supports search by email and WeChat ID.\n- Updated documentation to reflect all new and extended features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f25b69f6cd70c6dbff36d2ef6044f15a220329bef9fe5fa663c025e0acf35511"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/topmediai-ai-music@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.topmediai_ai_music",
+  "skill": {
+    "id": 45675,
+    "skillKey": "clawhub-topmediai-ai-music",
+    "name": "Topmediai Ai Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "topmediai-ai-music",
+    "url": "https://clawhub.ai/skills/topmediai-ai-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/topmediai-ai-music-3c78122cec04e3ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 60-second product demo video into 1080p music-backed videos just by typing what you need. Whether it's adding AI-generated background music to videos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776488222147,
+      "changelog": "TopMediai AI Music skill initial release.\n\n- Instantly generate 60-second, 1080p music-backed videos with AI by uploading video or describing the result you want.\n- No need for manual timeline editing or export setup — 20-40 seconds from upload to download.\n- Supports user session management, automatic token acquisition, and credit checks.\n- Handle video, audio, and text track edits via categorized user intents.\n- Efficient cloud GPU rendering pipeline, supporting a wide range of formats (mp4, mov, avi, mp3, etc).\n- Comprehensive error feedback, including quota, file type, and export restrictions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71d74c0a6322695d22e52ee3cba08e348299b70d889a4ed0f987bbb365e1444e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopify-library@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_library",
+  "skill": {
+    "id": 42883,
+    "skillKey": "clawhub-shopify-library",
+    "name": "shopify library & shopify spy tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-library",
+    "url": "https://clawhub.ai/skills/shopify-library",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-library-9cf3b76b02f03e64.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Shopify stores and products with PPSPY. Use this skill as a general Shopify library and Shopify spy tool for store, product, theme, and category resea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fanyanggod",
+      "userId": "s176gtyby3x3jz51q780av8wjn83paxt",
+      "displayName": "fanyanggod",
+      "image": "https://avatars.githubusercontent.com/u/44659216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775099031698,
+      "changelog": "- Updated setup instructions to clarify the difference between the main PPSPY website and the API site.\n- Added guidance on where to view dashboard data and manage billing/API keys.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8ef66c1081d737c7e3ec5d7281a6a8e698474197b2c796f54d52b476ade4cf0"
+}

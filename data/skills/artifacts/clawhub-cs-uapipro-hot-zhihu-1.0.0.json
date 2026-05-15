@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cs-uapipro-hot-zhihu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cs_uapipro_hot_zhihu",
+  "skill": {
+    "id": 60656,
+    "skillKey": "clawhub-cs-uapipro-hot-zhihu",
+    "name": "知乎热榜 - UAPIPRO"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cs-uapipro-hot-zhihu",
+    "url": "https://clawhub.ai/skills/cs-uapipro-hot-zhihu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cs-uapipro-hot-zhihu-eb5b1381bf0007a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抓取知乎热榜，使用 UAPIPRO API（https://uapis.cn）。当用户询问\"知乎热榜\"、\"知乎热搜\"、\"知乎热门\"时触发。 需要环境变量 UAPIPRO_API_KEY。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "savior1987",
+      "userId": "s17815a07n8gezzf4dkncw8wv983pg03",
+      "displayName": "Chenfeng",
+      "image": "https://avatars.githubusercontent.com/u/8756456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775494829207,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a3768d99cc9944e3479086a518cc08fb16071586b4fb757a40cfa324fdf8cec"
+}

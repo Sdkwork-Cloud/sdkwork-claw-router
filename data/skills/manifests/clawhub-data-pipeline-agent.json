@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50819,
+  "uuid": "skill-clawhub-data-pipeline-agent",
+  "skillKey": "clawhub-data-pipeline-agent",
+  "name": "Data Pipeline Agent",
+  "summary": "ETL pipeline builder for business data — API extraction, data cleaning, transformation, and warehouse loading. Use when you need to move data between systems...",
+  "version": "98.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_pipeline_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "ETL pipeline builder for business data — API extraction, data cleaning, transformation, and war.",
+        "Use when you need to move data between systems..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-pipeline-agent@98.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-pipeline-agent",
+      "url": "https://clawhub.ai/skills/data-pipeline-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-pipeline-agent",
+    "url": "https://clawhub.ai/skills/data-pipeline-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-pipeline-agent-385bd8f665d2e690.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-pipeline-agent@98.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-pipeline-agent-98.0.1.json",
+      "version": "98.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9708a10dba176594940cc45adadf7f3db8f1f8eea46bb8b15fbb6353c500b55e",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T05:22:21.578Z"
+}

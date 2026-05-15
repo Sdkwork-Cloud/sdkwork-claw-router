@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62153,
+  "uuid": "skill-clawhub-wanxiang-scroll-personality",
+  "skillKey": "clawhub-wanxiang-scroll-personality",
+  "name": "Wanxiang Scroll Personality",
+  "summary": "万象绘卷人格系统分卷 - 包含人格系统、输出规则、质量控制、创作工具",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wanxiang_scroll_personality",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "天天的鸟蛋蛋",
+      "features": [
+        "万象绘卷人格系统分卷",
+        "包含人格系统、输出规则、质量控制、创作工具"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wanxiang-scroll-personality@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100036451?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wanxiang-scroll-personality",
+      "url": "https://clawhub.ai/skills/wanxiang-scroll-personality"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wanxiang-scroll-personality",
+    "url": "https://clawhub.ai/skills/wanxiang-scroll-personality",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wanxiang-scroll-personality-7292fcefe98cd5c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wanxiang-scroll-personality@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wanxiang-scroll-personality-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ca43183f8e5a2f02f98da29f4b1b75734829086ac4d8d517497b567afab7984",
+      "artifactSizeBytes": 2189
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T10:16:42.310Z"
+}

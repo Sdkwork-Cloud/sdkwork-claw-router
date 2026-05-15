@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-test-reporter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_test_reporter",
+  "skill": {
+    "id": 42782,
+    "skillKey": "clawhub-api-test-reporter",
+    "name": "api-test-reporter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-test-reporter",
+    "url": "https://clawhub.ai/skills/api-test-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-test-reporter-7fb1855cccc539dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates API testing from interface docs by generating detailed HTML reports with test cases, parameters, responses, and validation results for JSON POST/GE..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "squidtestgary",
+      "userId": "s17cjmyyfack6zcps93zddaxj184da0y",
+      "displayName": "squidtestgary",
+      "image": "https://avatars.githubusercontent.com/u/107522600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775537619479,
+      "changelog": "api-test-reporter 1.0.0\n\n- Initial release of the skill for automated API interface testing based on interface documentation.\n- Supports HTTP POST/GET APIs with JSON parameters; parses docs, generates test cases (required fields, pagination, enums, date ranges, numeric, status, combined scenarios, boundary/exception cases), executes them, and creates a structured HTML report.\n- Includes database integration for using real data, detailed validation options, and test configuration via JSON.\n- Provides separate flows for ISP API signature requirements and general HTTP API use.\n- Reports are strongly visualized, with test details, parameters, responses, and validation breakdowns.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4969768366831cef176b72265bcce8fb3ce9e86a1f3a5789949e1394ae2626c1"
+}

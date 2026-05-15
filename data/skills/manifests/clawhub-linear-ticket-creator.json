@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38174,
+  "uuid": "skill-clawhub-linear-ticket-creator",
+  "skillKey": "clawhub-linear-ticket-creator",
+  "name": "Linear Ticket Creator",
+  "summary": "Generate well-structured Linear tickets from bugs, features, and improvements. Explores the codebase to auto-populate technical notes, acceptance criteria, a...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linear_ticket_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paolo Antonio Rossi",
+      "features": [
+        "Generate well-structured Linear tickets from bugs, features, and improvements",
+        "Explores the codebase to auto-populate technical notes, acceptance criteria, a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linear-ticket-creator@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1569913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linear-ticket-creator",
+      "url": "https://clawhub.ai/skills/linear-ticket-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linear-ticket-creator",
+    "url": "https://clawhub.ai/skills/linear-ticket-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linear-ticket-creator-f11f225d64238ee7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linear-ticket-creator@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linear-ticket-creator-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf78890b91fb55e688733d90c80aa8230842b1fe868f4ed6570ccd92d02463de",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T14:42:54.500Z"
+}

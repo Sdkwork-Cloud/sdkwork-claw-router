@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bitbucket-automation@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitbucket_automation",
+  "skill": {
+    "id": 11381,
+    "skillKey": "clawhub-bitbucket-automation",
+    "name": "Bitbucket Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitbucket-automation",
+    "url": "https://clawhub.ai/skills/bitbucket-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitbucket-automation-36d594c17a2da65b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Bitbucket repositories, pull requests, branches, issues, and workspace management via Rube MCP (Composio). Always search tools first for current schemas."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sohamganatra",
+      "userId": "publishers:sohamganatra",
+      "displayName": "sohamganatra",
+      "image": "https://avatars.githubusercontent.com/u/7982102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2053,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770367369634,
+      "changelog": "Initial release of Bitbucket automation skill for Rube MCP\n\n- Automates Bitbucket repository, pull request, branch, issue, and workspace management.\n- Provides detailed workflow guides for core Bitbucket operations using Composio’s toolkit.\n- Lists required and optional tool sequences, key parameters, and common pitfalls for each operation.\n- Includes setup instructions and prerequisites for connecting Rube MCP and Bitbucket.\n- Emphasizes always searching for current tool schemas before operation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fe111fb064ccaa08a59532902251ede4c66e85d3aaeb4ca0636692dd2f945a9c"
+}

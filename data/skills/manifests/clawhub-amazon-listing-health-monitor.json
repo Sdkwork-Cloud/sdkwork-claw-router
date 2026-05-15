@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31221,
+  "uuid": "skill-clawhub-amazon-listing-health-monitor",
+  "skillKey": "clawhub-amazon-listing-health-monitor",
+  "name": "Amazon Listing Health Monitor",
+  "summary": "Amazon listing health audit agent. Checks title and bullet completeness, keyword coverage, image count, BSR trends, Buy Box eligibility, suppression risk, an...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_listing_health_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mguozhen",
+      "features": [
+        "Amazon listing health audit agent",
+        "Checks title and bullet completeness, keyword coverage, image count, BSR trends, Buy Box eligib."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-listing-health-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1411875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-listing-health-monitor",
+      "url": "https://clawhub.ai/skills/amazon-listing-health-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-listing-health-monitor",
+    "url": "https://clawhub.ai/skills/amazon-listing-health-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-listing-health-monitor-87da3eb31f2d8085.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-listing-health-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-listing-health-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06cd286722e81fee1e17f80c4a7aa61e888148441fab93982e5cd476cbfa2a73",
+      "artifactSizeBytes": 2556
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:01:01.500Z"
+}

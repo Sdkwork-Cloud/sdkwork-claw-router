@@ -33,6 +33,150 @@ CREATE TABLE IF NOT EXISTS system_schema_migration (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_system_schema_migration_key ON system_schema_migration (migration_key);
 CREATE INDEX IF NOT EXISTS idx_system_schema_migration_status_started ON system_schema_migration (status, started_at, id);
 
+CREATE TABLE IF NOT EXISTS iam_tenant (
+    id VARCHAR(128) PRIMARY KEY,
+    code VARCHAR(128) NOT NULL,
+    name VARCHAR(256) NOT NULL,
+    status VARCHAR(32) NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL,
+    updated_at TIMESTAMPTZ NOT NULL
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_tenant_code ON iam_tenant (code);
+CREATE INDEX IF NOT EXISTS idx_iam_tenant_status_created_at ON iam_tenant (status, created_at);
+
+CREATE TABLE IF NOT EXISTS iam_organization (
+    id VARCHAR(128) PRIMARY KEY,
+    tenant_id VARCHAR(128) NOT NULL,
+    parent_id VARCHAR(128),
+    code VARCHAR(128) NOT NULL,
+    name VARCHAR(256) NOT NULL,
+    path VARCHAR(1024) NOT NULL,
+    status VARCHAR(32) NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL,
+    updated_at TIMESTAMPTZ NOT NULL
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_organization_tenant_code ON iam_organization (tenant_id, code);
+CREATE INDEX IF NOT EXISTS idx_iam_organization_tenant_parent ON iam_organization (tenant_id, parent_id, status);
+CREATE INDEX IF NOT EXISTS idx_iam_organization_tenant_path ON iam_organization (tenant_id, path, status);
+
+CREATE TABLE IF NOT EXISTS iam_organization_member (
+    id VARCHAR(128) PRIMARY KEY,
+    tenant_id VARCHAR(128) NOT NULL,
+    organization_id VARCHAR(128) NOT NULL,
+    user_id VARCHAR(128) NOT NULL,
+    role_code VARCHAR(128),
+    status VARCHAR(32) NOT NULL,
+    joined_at TIMESTAMPTZ NOT NULL
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_organization_member_tenant_org_user ON iam_organization_member (tenant_id, organization_id, user_id);
+CREATE INDEX IF NOT EXISTS idx_iam_organization_member_tenant_user ON iam_organization_member (tenant_id, user_id, status);
+CREATE INDEX IF NOT EXISTS idx_iam_organization_member_tenant_org ON iam_organization_member (tenant_id, organization_id, status);
+
+CREATE TABLE IF NOT EXISTS iam_user (
+    id VARCHAR(128) PRIMARY KEY,
+    tenant_id VARCHAR(128) NOT NULL,
+    username VARCHAR(128) NOT NULL,
+    display_name VARCHAR(128) NOT NULL,
+    email VARCHAR(256),
+    phone VARCHAR(32),
+    avatar_url VARCHAR(2048),
+    status VARCHAR(32) NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL,
+    updated_at TIMESTAMPTZ NOT NULL
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_user_tenant_username ON iam_user (tenant_id, username);
+CREATE INDEX IF NOT EXISTS idx_iam_user_tenant_status ON iam_user (tenant_id, status, created_at);
+
+CREATE TABLE IF NOT EXISTS iam_user_identity (
+    id VARCHAR(128) PRIMARY KEY,
+    tenant_id VARCHAR(128) NOT NULL,
+    user_id VARCHAR(128) NOT NULL,
+    provider VARCHAR(64) NOT NULL,
+    subject VARCHAR(256) NOT NULL,
+    email VARCHAR(256),
+    created_at TIMESTAMPTZ NOT NULL
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_user_identity_tenant_provider_subject ON iam_user_identity (tenant_id, provider, subject);
+CREATE INDEX IF NOT EXISTS idx_iam_user_identity_tenant_user ON iam_user_identity (tenant_id, user_id, provider);
+
+CREATE TABLE IF NOT EXISTS iam_credential (
+    id VARCHAR(128) PRIMARY KEY,
+    tenant_id VARCHAR(128) NOT NULL,
+    user_id VARCHAR(128) NOT NULL,
+    credential_type VARCHAR(32) NOT NULL,
+    credential_hash VARCHAR(512) NOT NULL,
+    status VARCHAR(32) NOT NULL,
+    expires_at TIMESTAMPTZ,
+    created_at TIMESTAMPTZ NOT NULL,
+    updated_at TIMESTAMPTZ NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_iam_credential_tenant_user_type ON iam_credential (tenant_id, user_id, credential_type, status);
+
+CREATE TABLE IF NOT EXISTS iam_session (
+    id VARCHAR(128) PRIMARY KEY,
+    tenant_id VARCHAR(128) NOT NULL,
+    organization_id VARCHAR(128),
+    user_id VARCHAR(128) NOT NULL,
+    app_id VARCHAR(128) NOT NULL,
+    environment VARCHAR(32) NOT NULL,
+    deployment_mode VARCHAR(32) NOT NULL,
+    auth_level VARCHAR(32) NOT NULL,
+    auth_token_hash VARCHAR(128) NOT NULL,
+    access_token_hash VARCHAR(128) NOT NULL,
+    refresh_token_hash VARCHAR(128),
+    sharding_key VARCHAR(256) NOT NULL,
+    sharding_strategy VARCHAR(64) NOT NULL,
+    data_scope_json JSONB NOT NULL,
+    permission_scope_json JSONB NOT NULL,
+    expires_at TIMESTAMPTZ NOT NULL,
+    revoked_at TIMESTAMPTZ,
+    created_at TIMESTAMPTZ NOT NULL,
+    updated_at TIMESTAMPTZ NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_iam_session_tenant_user ON iam_session (tenant_id, user_id, app_id, revoked_at, expires_at);
+CREATE INDEX IF NOT EXISTS idx_iam_session_auth_token_hash ON iam_session (auth_token_hash);
+CREATE INDEX IF NOT EXISTS idx_iam_session_access_token_hash ON iam_session (access_token_hash);
+CREATE INDEX IF NOT EXISTS idx_iam_session_refresh_token_hash ON iam_session (refresh_token_hash);
+
+CREATE TABLE IF NOT EXISTS iam_security_event (
+    id VARCHAR(128) PRIMARY KEY,
+    tenant_id VARCHAR(128) NOT NULL,
+    user_id VARCHAR(128),
+    session_id VARCHAR(128),
+    event_type VARCHAR(64) NOT NULL,
+    severity VARCHAR(32) NOT NULL,
+    detail_json JSONB NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_iam_security_event_tenant_created_at ON iam_security_event (tenant_id, created_at, severity);
+
+CREATE TABLE IF NOT EXISTS iam_audit_event (
+    id VARCHAR(128) PRIMARY KEY,
+    tenant_id VARCHAR(128) NOT NULL,
+    organization_id VARCHAR(128),
+    actor_user_id VARCHAR(128),
+    action VARCHAR(128) NOT NULL,
+    resource_type VARCHAR(128) NOT NULL,
+    resource_id VARCHAR(128),
+    request_id VARCHAR(128),
+    app_id VARCHAR(128),
+    environment VARCHAR(32),
+    sharding_key VARCHAR(256),
+    detail_json JSONB NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_iam_audit_event_tenant_created_at ON iam_audit_event (tenant_id, created_at, action);
+CREATE INDEX IF NOT EXISTS idx_iam_audit_event_request_id ON iam_audit_event (request_id);
+
 CREATE TABLE IF NOT EXISTS plus_app (
     id BIGINT PRIMARY KEY,
     uuid VARCHAR(255) NOT NULL UNIQUE,
@@ -2593,6 +2737,39 @@ CREATE TABLE IF NOT EXISTS content_course_relation (
 );
 
 CREATE UNIQUE INDEX IF NOT EXISTS uk_content_course_relation ON content_course_relation (course_id, related_course_id, relation_type);
+
+CREATE TABLE IF NOT EXISTS content_course_application (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT NOT NULL,
+    owner_type INTEGER,
+    owner_id BIGINT,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    title VARCHAR(200) NOT NULL,
+    category VARCHAR(64) NOT NULL,
+    description TEXT NOT NULL,
+    source_provider VARCHAR(64) NOT NULL,
+    external_bvid VARCHAR(64),
+    video_url VARCHAR(1024),
+    contact_name VARCHAR(128),
+    contact_email VARCHAR(254),
+    submitted_at TIMESTAMPTZ,
+    reviewed_by BIGINT,
+    reviewed_at TIMESTAMPTZ,
+    review_comment VARCHAR(1000)
+);
+
+CREATE INDEX IF NOT EXISTS idx_content_course_application_status ON content_course_application (tenant_id, organization_id, status, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_content_course_application_user ON content_course_application (tenant_id, organization_id, user_id, created_at, id);
 
 CREATE TABLE IF NOT EXISTS ops_gateway_instance (
     id BIGSERIAL PRIMARY KEY,

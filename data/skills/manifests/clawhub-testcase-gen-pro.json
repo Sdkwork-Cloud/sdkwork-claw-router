@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73300,
+  "uuid": "skill-clawhub-testcase-gen-pro",
+  "skillKey": "clawhub-testcase-gen-pro",
+  "name": "测试用例生成专家",
+  "summary": "测试用例生成专家技能。当用户提供产品需求文档、API链接、页面链接，或要求生成测试用例时触发。功能：多维度需求分析、系统化测试用例设计（等价类划分、边界值分析、决策表、状态转换、场景法、错误推测法）、高覆盖率保障。输出语言统一使用中文，严格按照标准测试用例格式输出。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.testcase_gen_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuhuqifei11111",
+      "features": [
+        "测试用例生成专家技能。当用户提供产品需求文档、API链接、页面链接，或要求生成测试用例时触发。功能：多维度需求分析、系统化测试用例设计（等价类划分、边界值分析、决策表、状态转换、场景法、错误."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/testcase-gen-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156394386?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "testcase-gen-pro",
+      "url": "https://clawhub.ai/skills/testcase-gen-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "testcase-gen-pro",
+    "url": "https://clawhub.ai/skills/testcase-gen-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/testcase-gen-pro-2e5f64c75dced74a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/testcase-gen-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-testcase-gen-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95250a9b53140696874f029dc7c4ab89bffe296a4dcb2068b67e12bf44dcc079",
+      "artifactSizeBytes": 2156
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T01:31:09.864Z"
+}

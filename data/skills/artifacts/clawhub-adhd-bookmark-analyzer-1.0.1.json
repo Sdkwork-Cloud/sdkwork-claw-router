@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adhd-bookmark-analyzer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adhd_bookmark_analyzer",
+  "skill": {
+    "id": 19669,
+    "skillKey": "clawhub-adhd-bookmark-analyzer",
+    "name": "ADHD X Bookmark Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adhd-bookmark-analyzer",
+    "url": "https://clawhub.ai/skills/adhd-bookmark-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adhd-bookmark-analyzer-5a6007daed76916b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically scrapes, categorizes, and summarizes your X bookmarks into actionable insights delivered to your preferred messaging channel for easy review."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adambrainai",
+      "userId": "publishers:adambrainai",
+      "displayName": "adambrainai",
+      "image": "https://avatars.githubusercontent.com/u/260548252?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 488,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772162753670,
+      "changelog": "Security fixes: clarified credential handling, removed references to non-existent script, added env var guidance for webhooks",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d130c3abbf26bb533cdc98fb710bfe20f55488f9c4b45807b08ace94d81844e8"
+}

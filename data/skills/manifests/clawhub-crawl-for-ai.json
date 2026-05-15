@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9611,
+  "uuid": "skill-clawhub-crawl-for-ai",
+  "skillKey": "clawhub-crawl-for-ai",
+  "name": "Crawl4AI Web Scraper",
+  "summary": "Full web page scraping with JavaScript rendering via local Crawl4AI instance, delivering clean markdown or detailed JSON including links and media.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crawl_for_ai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "angusthefuzz",
+      "features": [
+        "Full web page scraping with JavaScript rendering via local Crawl4AI instance, delivering clean."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crawl-for-ai@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226103412?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crawl-for-ai",
+      "url": "https://clawhub.ai/skills/crawl-for-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crawl-for-ai",
+    "url": "https://clawhub.ai/skills/crawl-for-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crawl-for-ai-5125d8e35bbe28a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crawl-for-ai@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-crawl-for-ai-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7bf3a4b3ffcf646444234b523b4de7f91f25d10ef8e7e55a82bd8c12f0a7e7b",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T19:48:11.812Z"
+}

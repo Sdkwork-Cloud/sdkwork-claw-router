@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/readwise-reader@0.2.3",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readwise_reader",
+  "skill": {
+    "id": 29483,
+    "skillKey": "clawhub-readwise-reader",
+    "name": "Readwise Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readwise-reader",
+    "url": "https://clawhub.ai/skills/readwise-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readwise-reader-41255eea3526ee80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Readwise Reader library to list, create, update, and delete documents. Use when the user wants to manage their saved articles, reading lists, o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xinthink",
+      "userId": "s171gxhfw4sjvvakpwcngw4r5d83gdw7",
+      "displayName": "Yingxin Wu",
+      "image": "https://avatars.githubusercontent.com/u/390805?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.3",
+      "createdAt": 1774510446413,
+      "changelog": "- Added homepage and metadata fields to the skill manifest for improved integration and discoverability.\n- Metadata now describes required binaries, environment variables, and a primary environment variable for authentication.\n- No changes to usage, command-line options, or main workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:907228fd8ff4174d26a16239f4a051a1cdb31c76d8e7900121eae1f60f6f2352"
+}

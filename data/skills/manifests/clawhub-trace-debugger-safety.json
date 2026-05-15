@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44045,
+  "uuid": "skill-clawhub-trace-debugger-safety",
+  "skillKey": "clawhub-trace-debugger-safety",
+  "name": "Trace Debugger Safety",
+  "summary": "Safer end-to-end trace debugging from trace_id using Jaeger and Elasticsearch with guarded Codex analysis. Use when a user wants a trace report similar to tr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trace_debugger_safety",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gakkiismywife",
+      "features": [
+        "Safer end-to-end trace debugging from trace_id using Jaeger and Elasticsearch with guarded Code.",
+        "Use when a user wants a trace report similar to tr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trace-debugger-safety@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40749544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trace-debugger-safety",
+      "url": "https://clawhub.ai/skills/trace-debugger-safety"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trace-debugger-safety",
+    "url": "https://clawhub.ai/skills/trace-debugger-safety",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trace-debugger-safety-47626b9ad1727deb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trace-debugger-safety@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trace-debugger-safety-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a9cec4b329dbeb343c1ae5fdcb582a01a510c6ca9c9bb3d67a8b41b6817b55e",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T04:11:28.735Z"
+}

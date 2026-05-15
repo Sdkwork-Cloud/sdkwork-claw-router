@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29556,
+  "uuid": "skill-clawhub-alipay-hot-trend",
+  "skillKey": "clawhub-alipay-hot-trend",
+  "name": "Alipay",
+  "summary": "Summarizes public Alipay product features, announcements, and city service updates without login or payment actions.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alipay_hot_trend",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "Summarizes public Alipay product features, announcements, and city service updates without logi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alipay-hot-trend@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alipay-hot-trend",
+      "url": "https://clawhub.ai/skills/alipay-hot-trend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alipay-hot-trend",
+    "url": "https://clawhub.ai/skills/alipay-hot-trend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alipay-hot-trend-e9ddfae15a35b751.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alipay-hot-trend@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alipay-hot-trend-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44e0d8735696e83df16feaa1c3821667cde1989a0840dbf84d290ee45e897f7a",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:05:15.748Z"
+}

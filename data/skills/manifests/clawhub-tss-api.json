@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72081,
+  "uuid": "skill-clawhub-tss-api",
+  "skillKey": "clawhub-tss-api",
+  "name": "tss-api",
+  "summary": "提供跨链交易查询服务，包括获取交易高度、交易列表、订单和交易哈希对应的详细跨链交易记录与状态。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tss_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "map",
+      "features": [
+        "提供跨链交易查询服务，包括获取交易高度、交易列表、订单和交易哈希对应的详细跨链交易记录与状态。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tss-api@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30146448?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tss-api",
+      "url": "https://clawhub.ai/skills/tss-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tss-api",
+    "url": "https://clawhub.ai/skills/tss-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tss-api-305b7a9998c14b46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tss-api@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-tss-api-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d366af3cd814b2bae5dab40e6527fe361d8726725f722d4b2c130d2df4e7ba40",
+      "artifactSizeBytes": 2305
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:04:09.765Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-analyst-my@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_analyst_my",
+  "skill": {
+    "id": 35967,
+    "skillKey": "clawhub-stock-analyst-my",
+    "name": "stock-analyst-my"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-analyst-my",
+    "url": "https://clawhub.ai/skills/stock-analyst-my",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-analyst-my-4dedffea4b847473.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform detailed technical and fundamental analysis of US, Malaysia, and Hong Kong stocks with real-time data, news, and actionable trading levels."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jacurtwong",
+      "userId": "s17ergsqqdtj8pjvy1zezfx2w184be3z",
+      "displayName": "jacurtwong",
+      "image": "https://avatars.githubusercontent.com/u/20987474?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775496140860,
+      "changelog": "Initial release of Stock Analyst skill with deep technical and fundamental analysis for US, Malaysia, and Hong Kong markets:\n\n- Supports automatic market/ticker detection with strict parsing rules (STIP).\n- Integrates multi-source data: financial metrics, technical indicators, news, insider trades.\n- Implements anti-hallucination checks: price/time validation, multi-source cross-checks, abnormal value alerts.\n- Custom Telegram output with clear formatting and actionable trade levels.\n- Mandates up-to-date, real-time data reporting with precise timestamps and source links.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45e41fdff43e813934b914fc63bc8bfc1852dff51cdc5a67835dd61a2f08b42c"
+}

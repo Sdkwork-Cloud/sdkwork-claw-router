@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/turbopush@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turbopush",
+  "skill": {
+    "id": 65871,
+    "skillKey": "clawhub-turbopush",
+    "name": "TurboPush"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turbopush",
+    "url": "https://clawhub.ai/skills/turbopush",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turbopush-7056998af3dbf739.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多平台内容发布助手，支持 20+ 平台一键发布文章、图文、视频"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueyc1f",
+      "userId": "s17ewwgqsf07ka0gwzx07efnp983w6sn",
+      "displayName": "xueyc1f",
+      "image": "https://avatars.githubusercontent.com/u/30597213?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774836483343,
+      "changelog": "添加安装说明、环境变量声明和安全说明，解决 ClawHub 安全警告",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b73308dc4bce10e0a973332bd2f56e172c445137a4610477251f09c062a43cd"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61414,
+  "uuid": "skill-clawhub-doorstep-screen-control",
+  "skillKey": "clawhub-doorstep-screen-control",
+  "name": "Doorstep Screen Control - 屏幕操控",
+  "summary": "屏幕控制技能 - 通过OpenClaw Node + pyautogui实现电脑屏幕识别和鼠标键盘操控。功能：(1) 截图获取屏幕画面，(2) OCR文字识别定位，(3) 图片匹配定位，(4) 鼠标移动/点击/拖拽，(5) 键盘输入/快捷键，(6) 基于视觉信息的自动化操作。Use when: (1) 需要远程操...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doorstep_screen_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ncsimok",
+      "features": [
+        "通过OpenClaw Node + pyautogui实现电脑屏幕识别和鼠标键盘操控。功能：(1) 截图获取屏幕画面，(2) OCR文字识别定位，(3) 图片匹配定位，(4) 鼠标移动/点击."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doorstep-screen-control@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128122169?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doorstep-screen-control",
+      "url": "https://clawhub.ai/skills/doorstep-screen-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doorstep-screen-control",
+    "url": "https://clawhub.ai/skills/doorstep-screen-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doorstep-screen-control-eb7d0365e3ad09a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doorstep-screen-control@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doorstep-screen-control-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a6e4169bfc33d807fe72ed6420913e0098936d6fb33d6e867e65f52dc683339",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T02:37:31.778Z"
+}

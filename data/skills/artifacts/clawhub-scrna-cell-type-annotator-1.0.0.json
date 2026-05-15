@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scrna-cell-type-annotator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scrna_cell_type_annotator",
+  "skill": {
+    "id": 38304,
+    "skillKey": "clawhub-scrna-cell-type-annotator",
+    "name": "Sc-RNA Cell Type Annotator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scrna-cell-type-annotator",
+    "url": "https://clawhub.ai/skills/scrna-cell-type-annotator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scrna-cell-type-annotator-5769cc90500ad27d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-annotate cell clusters from single-cell RNA data using marker genes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774947775258,
+      "changelog": "Initial release of scrna-cell-type-annotator.\n\n- Supports automatic annotation of cell clusters from single-cell RNA data using marker genes.\n- Provides a scope-focused, reproducible workflow with structured output and documented error handling.\n- Primary script entry point: scripts/main.py, with example commands and audit-ready usage.\n- Includes input validation, risk assessment, and security checklist.\n- Returns cell type predictions, marker gene support, confidence levels, and alternative suggestions.\n- Handles fallback paths for incomplete inputs or script failures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d275e074e2e334a809c7215349738d5f07fb9055e29d1051586e2229d86051b"
+}

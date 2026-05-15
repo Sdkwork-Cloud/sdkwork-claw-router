@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23509,
+  "uuid": "skill-clawhub-coze-voice-gen",
+  "skillKey": "clawhub-coze-voice-gen",
+  "name": "coze-voice-gen",
+  "summary": "Text-to-Speech (TTS) and Speech-to-Text (ASR) using coze-coding-dev-sdk. Returns results directly to stdout.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coze_voice_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Text-to-Speech (TTS) and Speech-to-Text (ASR) using coze-coding-dev-sdk",
+        "Returns results directly to stdout."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coze-voice-gen@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coze-voice-gen",
+      "url": "https://clawhub.ai/skills/coze-voice-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coze-voice-gen",
+    "url": "https://clawhub.ai/skills/coze-voice-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coze-voice-gen-8c9f536d314c227a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coze-voice-gen@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coze-voice-gen-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e88bdfc297d5c42b6a7da36d9811c4d08da95480f02266169913247b9d4fe70",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T12:09:26.193Z"
+}

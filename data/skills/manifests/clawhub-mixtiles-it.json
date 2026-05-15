@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17976,
+  "uuid": "skill-clawhub-mixtiles-it",
+  "skillKey": "clawhub-mixtiles-it",
+  "name": "Mixtiles It",
+  "summary": "Send a photo to Mixtiles for ordering wall tiles. Use when a user forwards/sends a photo and wants to order it as a Mixtile, add it to their Mixtiles cart, o...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mixtiles_it",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SaharCarmel",
+      "features": [
+        "Send a photo to Mixtiles for ordering wall tiles",
+        "Use when a user forwards/sends a photo and wants to order it as a Mixtile, add it to their Mixt."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mixtiles-it@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20318027?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mixtiles-it",
+      "url": "https://clawhub.ai/skills/mixtiles-it"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mixtiles-it",
+    "url": "https://clawhub.ai/skills/mixtiles-it",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mixtiles-it-e631b2ce321b877d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mixtiles-it@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mixtiles-it-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1b5323267c15492efa65d775eda334cfbcbe181fd64b2a28ae5d39be97f85f4",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T20:51:31.762Z"
+}

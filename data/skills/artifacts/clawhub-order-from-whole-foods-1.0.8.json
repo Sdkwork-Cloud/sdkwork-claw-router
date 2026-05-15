@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/order-from-whole-foods@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.order_from_whole_foods",
+  "skill": {
+    "id": 33698,
+    "skillKey": "clawhub-order-from-whole-foods",
+    "name": "Order From Whole Foods"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "order-from-whole-foods",
+    "url": "https://clawhub.ai/skills/order-from-whole-foods",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/order-from-whole-foods-08086285d42d7203.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Order groceries from Whole Foods using browser automation and a saved purchase policy"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chadnewbry",
+      "userId": "s171nzyesftqzzcabvmaaxa8nd83f7bp",
+      "displayName": "Chad Newbry",
+      "image": "https://avatars.githubusercontent.com/u/5430767?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1774583512027,
+      "changelog": "Version 1.0.8\n\n- Internal metadata updated in _meta.json.\n- No changes to skill logic or user-facing behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c13fe18a8763f251f7b72ee8cf65fa6c30c118fd8543927f02149bd997e17dc8"
+}

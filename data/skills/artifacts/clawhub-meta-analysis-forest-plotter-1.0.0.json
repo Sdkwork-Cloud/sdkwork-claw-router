@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-analysis-forest-plotter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_analysis_forest_plotter",
+  "skill": {
+    "id": 41168,
+    "skillKey": "clawhub-meta-analysis-forest-plotter",
+    "name": "Meta-Analysis Forest Plotter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-analysis-forest-plotter",
+    "url": "https://clawhub.ai/skills/meta-analysis-forest-plotter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-analysis-forest-plotter-72ff01ce017cecd2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when creating forest plots for meta-analyses, visualizing effect sizes across studies, or generating publication-ready meta-analysis figures. Produces hi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774588591333,
+      "changelog": "Initial release of meta-analysis-forest-plotter.\n\n- Create publication-ready forest plots for meta-analyses, supporting effect sizes, confidence intervals, heterogeneity metrics, and subgroup analyses.\n- Provides customizable styling, including journal-specific presets and export to multiple formats (PDF, PNG, SVG, TIFF).\n- Supports both Python API and command-line interface for flexible plot generation.\n- Includes examples and references for journal formatting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19f6f96acaf980e4f25490b8c400075ad58c05265b76ca0c35cd2e18a5684fe9"
+}

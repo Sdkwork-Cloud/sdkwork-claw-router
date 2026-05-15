@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35618,
+  "uuid": "skill-clawhub-ro-innovation",
+  "skillKey": "clawhub-ro-innovation",
+  "name": "Ro Innovation",
+  "summary": "Ro Innovation integration. Manage data, records, and automate workflows. Use when the user wants to interact with Ro Innovation data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ro_innovation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Ro Innovation integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Ro Innovation data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ro-innovation@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ro-innovation",
+      "url": "https://clawhub.ai/skills/ro-innovation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ro-innovation",
+    "url": "https://clawhub.ai/skills/ro-innovation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ro-innovation-d6db250aac046299.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ro-innovation@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ro-innovation-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0575cc2e1b9e298aed6463c0d579209345ed1440143f70fb7100ee5e51bd40e",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:35:23.474Z"
+}

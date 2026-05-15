@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/review-my-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_my_agent",
+  "skill": {
+    "id": 55731,
+    "skillKey": "clawhub-review-my-agent",
+    "name": "Review my skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-my-agent",
+    "url": "https://clawhub.ai/skills/review-my-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-my-agent-080c3dc1f3360891.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Paste your SOUL.md or SKILL.md and get a structured expert review — clarity, gaps, conflicts, guardrails, token efficiency — with specific rewrites and expla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "victorosondu",
+      "userId": "s171c7er2k8zstv0ywwhss4jrd85ey9y",
+      "displayName": "Victor Osondu",
+      "image": "https://avatars.githubusercontent.com/u/274301375?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777283835743,
+      "changelog": "Initial release.\n\n- Provides expert review of AI agent instruction files (SOUL.md, SKILL.md, system prompts).\n- Scores files across 7 dimensions: clarity, completeness, conflict detection, voice, guardrails, token efficiency, and structure.\n- Supports multiple user modes: paste review, design questions, version comparison, and first draft generation.\n- Offers specific, actionable feedback with concrete rewrites and teaching behind each suggestion.\n- Includes stress testing with simulated prompts to assess instruction robustness.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d811b0743c0e575cf4af97a1ca1df82c62f37dd93a195213217326fdfc9d6c92"
+}

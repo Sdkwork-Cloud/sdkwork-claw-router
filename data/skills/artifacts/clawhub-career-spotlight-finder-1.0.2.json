@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/career-spotlight-finder@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.career_spotlight_finder",
+  "skill": {
+    "id": 51065,
+    "skillKey": "clawhub-career-spotlight-finder",
+    "name": "Career Spotlight Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "career-spotlight-finder",
+    "url": "https://clawhub.ai/skills/career-spotlight-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/career-spotlight-finder-2f6d11a81b9c333d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when wanting to discover hidden strengths, industry buzzwords, and career narratives from past projects, articles, or code — for resumes, self-introducti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "realzst",
+      "userId": "s17erkjwx4kyh3qxs1ecaw9a5x83jttf",
+      "displayName": "RealZST",
+      "image": "https://avatars.githubusercontent.com/u/53246001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774518674939,
+      "changelog": "- Added detailed user and implementation guide: guides/input-collection-guide.md.\n- All steps for input collection and analysis now reference this new guide for consistent procedures.\n- Changelog focuses on improved onboarding and source validation through structured documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d5a42e44a89a4bafeb8b9f28677c39bf60aa9dec051b0686a8186eb3ae8e9c0"
+}

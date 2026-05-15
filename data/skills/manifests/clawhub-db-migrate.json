@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52232,
+  "uuid": "skill-clawhub-db-migrate",
+  "skillKey": "clawhub-db-migrate",
+  "name": "Db Migrate",
+  "summary": "Deep database migration workflow—expand/contract, backward-compatible deploys, backfills, locking risks, and verification. Use when changing production schem...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.db_migrate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "Deep database migration workflow—expand/contract, backward-compatible deploys, backfills, locki.",
+        "Use when changing production schem..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/db-migrate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "db-migrate",
+      "url": "https://clawhub.ai/skills/db-migrate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "db-migrate",
+    "url": "https://clawhub.ai/skills/db-migrate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/db-migrate-d671bafe6f8bae54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/db-migrate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-db-migrate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:288749da2d4d41cf89b8a2b55b49a4872535ef0474a000fda3ec4e1969e83fe4",
+      "artifactSizeBytes": 2335
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:43:47.190Z"
+}

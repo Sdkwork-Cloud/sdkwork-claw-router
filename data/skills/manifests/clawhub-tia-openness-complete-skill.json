@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59894,
+  "uuid": "skill-clawhub-tia-openness-complete-skill",
+  "skillKey": "clawhub-tia-openness-complete-skill",
+  "name": "TIA-OPENNESS-COMPLETE-SKILL",
+  "summary": "基于TIA Openness API的完整PLC自动化技能，支持项目创建、硬件配置、SCL编程、编译下载",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tia_openness_complete_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiansiting",
+      "features": [
+        "基于TIA Openness API的完整PLC自动化技能，支持项目创建、硬件配置、SCL编程、编译下载"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tia-openness-complete-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28823754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tia-openness-complete-skill",
+      "url": "https://clawhub.ai/skills/tia-openness-complete-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tia-openness-complete-skill",
+    "url": "https://clawhub.ai/skills/tia-openness-complete-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tia-openness-complete-skill-7c4e575a0e29fc2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tia-openness-complete-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tia-openness-complete-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d514b4ecb7c0e338de93a2b67fba3bc7cd76c1033334e30ba079817bc4c567f",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T03:55:30.080Z"
+}

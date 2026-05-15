@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/carls-jr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.carls_jr",
+  "skill": {
+    "id": 49669,
+    "skillKey": "clawhub-carls-jr",
+    "name": "Carls Jr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "carls-jr",
+    "url": "https://clawhub.ai/skills/carls-jr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/carls-jr-c7abd1f2b2a66881.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Carl's Jr. is a West Coast fast-food chain known for the Western Bacon Cheeseburger, dual branding with Hardee's, and provocative marketing campaigns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 71,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778260722551,
+      "changelog": "Initial release of the carls-jr skill:\n\n- Provides a detailed historical timeline of Carl's Jr. from its origins in 1941 to the present.\n- Covers brand positioning, marketing strategies, and the dual-brand approach with Hardee's.\n- Includes business model insights, moat analysis, and key data on expansion and revenue.\n- Highlights the Western Bacon Cheeseburger and other cultural aspects of the brand.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52603884ebf8e9253d2532891bb37696399c2974691ea8313b1267556f925eab"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crossdata@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crossdata",
+  "skill": {
+    "id": 73623,
+    "skillKey": "clawhub-crossdata",
+    "name": "多平台数据聚合"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crossdata",
+    "url": "https://clawhub.ai/skills/crossdata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crossdata-5aad553b47922b8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "整合多个电商及社交平台公开数据，提供标准化竞品价格、销量和市场分析，支持多市场多平台的实时查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yayale-deng",
+      "userId": "s17d48jpa0ygm00egys52ncry983kxww",
+      "displayName": "yayale-Deng",
+      "image": "https://avatars.githubusercontent.com/u/269347419?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 97,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777364411270,
+      "changelog": "Initial release: AliExpress + 1688 + TikTok data aggregation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3bf2ad6bf5110aa22f14e7b2427a2e43fe622375c90ba94160bb74f7213d80a3"
+}

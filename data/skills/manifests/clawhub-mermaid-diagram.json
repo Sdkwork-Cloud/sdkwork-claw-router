@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12643,
+  "uuid": "skill-clawhub-mermaid-diagram",
+  "skillKey": "clawhub-mermaid-diagram",
+  "name": "Mermaid Diagram",
+  "summary": "Generate valid Mermaid diagrams like flowcharts, sequence diagrams, mind maps, ER diagrams, or user journeys from text or product descriptions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mermaid_diagram",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pupujanet-eng",
+      "features": [
+        "Generate valid Mermaid diagrams like flowcharts, sequence diagrams, mind maps, ER diagrams, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mermaid-diagram@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235016310?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mermaid-diagram",
+      "url": "https://clawhub.ai/skills/mermaid-diagram"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mermaid-diagram",
+    "url": "https://clawhub.ai/skills/mermaid-diagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mermaid-diagram-be91056f6174486a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mermaid-diagram@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mermaid-diagram-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5372a020faa99a52d91a3f7ffbf358f8142fdc02381f19c10d27fc787b160ca0",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T17:00:28.113Z"
+}

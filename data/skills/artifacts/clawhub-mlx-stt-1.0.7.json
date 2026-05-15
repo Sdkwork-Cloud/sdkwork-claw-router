@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mlx-stt@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mlx_stt",
+  "skill": {
+    "id": 9472,
+    "skillKey": "clawhub-mlx-stt",
+    "name": "MLX STT"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mlx-stt",
+    "url": "https://clawhub.ai/skills/mlx-stt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mlx-stt-3e5eee883c6d18ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Speech-To-Text with MLX (Apple Silicon) and opensource models (default GLM-ASR-Nano-2512) locally."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guoqiao",
+      "userId": "publishers:guoqiao",
+      "displayName": "guoqiao",
+      "image": "https://avatars.githubusercontent.com/u/1306111?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 3676,
+      "installsAllTime": 17,
+      "installsCurrent": 17,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1770686109778,
+      "changelog": "- Added main script mlx-stt.sh for audio transcription; removed previous Python script mlx-stt.py.\n- Updated usage instructions to use the new shell script instead of a Python command.\n- Expanded triggers in SKILL.md for easier activation.\n- Added version and author information to metadata.\n- The skill still performs local speech-to-text on Apple Silicon with MLX and open-source models.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fb3822ea98eab873f286ea7b4ef5b66a1d13aa24100c6ce9cf323bf2f0196023"
+}

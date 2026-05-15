@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/123@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.123",
+  "skill": {
+    "id": 25566,
+    "skillKey": "clawhub-123",
+    "name": "1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "123",
+    "url": "https://clawhub.ai/skills/123",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/123-a665a45920422f9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates Minecraft Java Edition by analyzing screenshots and issuing keyboard and mouse commands to control the player and interact with the game."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skyhahalife-11",
+      "userId": "publishers:skyhahalife-11",
+      "displayName": "skyhahalife-11",
+      "image": "https://avatars.githubusercontent.com/u/213897359?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773899271880,
+      "changelog": "- 初始版本，新增 Minecraft Java Edition 游戏助手技能  \n- 支持通过截图和键鼠指令控制游戏角色  \n- 提供详细的指令用法和常用按键说明  \n- 明确行动流程：每步操作前后需截图观察  \n- 规定需在角色死亡、未知状况、操作失效时暂停并通知用户",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3cfa67a95ff3829bcd4773a368ea8594cc91d9694f9e036c72d908971872ba38"
+}

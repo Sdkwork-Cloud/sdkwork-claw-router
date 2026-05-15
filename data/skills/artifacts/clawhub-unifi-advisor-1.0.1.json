@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unifi-advisor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unifi_advisor",
+  "skill": {
+    "id": 49596,
+    "skillKey": "clawhub-unifi-advisor",
+    "name": "UniFi Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unifi-advisor",
+    "url": "https://clawhub.ai/skills/unifi-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unifi-advisor-72208e8d64f770b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read-only UniFi network advisor covering the Site Manager cloud API and the Network Integration API. Query devices, clients, networks, firewall zones and pol..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arseni-mik",
+      "userId": "s172mg1aabwe4y035d4cj7pk2186agtj",
+      "displayName": "arseni-mik",
+      "image": "https://avatars.githubusercontent.com/u/77124149?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 74,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778240308791,
+      "changelog": "added refernce to github source",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0996a186d00ac93b3eb52aa00f2a9d7caea60057b002c801be8f21be438a41d"
+}

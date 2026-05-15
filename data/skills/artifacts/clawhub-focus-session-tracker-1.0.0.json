@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/focus-session-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.focus_session_tracker",
+  "skill": {
+    "id": 54228,
+    "skillKey": "clawhub-focus-session-tracker",
+    "name": "Focus Session Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "focus-session-tracker",
+    "url": "https://clawhub.ai/skills/focus-session-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/focus-session-tracker-94704af417383ef6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structure deep-work focus sessions with time-boxing, session goals, progress notes, distraction logs, and end-of-session review — no app dependency."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 42,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778370746593,
+      "changelog": "Initial release of Focus Session Tracker — a lightweight framework for structured deep-work sessions without app or timer requirements.\n\n- Provides templates for time-boxed focus sessions (e.g., Pomodoro, Long Flow).\n- Includes protocols for logging distractions and reviewing session outcomes.\n- Emphasizes self-awareness, goal clarity, and post-session reflection.\n- Guidance on preparing environment, managing breaks, and addressing common pitfalls.\n- Safety boundaries: not for diagnosis or treatment of attention/mental health conditions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20c4dff7baddb2560db675a79651e19cc21a0bf16e667fe971a26ee8788bebd3"
+}

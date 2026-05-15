@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/open-data-integrator@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_data_integrator",
+  "skill": {
+    "id": 14283,
+    "skillKey": "clawhub-open-data-integrator",
+    "name": "Open Data Integrator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-data-integrator",
+    "url": "https://clawhub.ai/skills/open-data-integrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-data-integrator-3f48f3d44ed05d10.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate open construction datasets. Combine open data sources for enhanced analysis"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datadrivenconstruction",
+      "userId": "publishers:datadrivenconstruction",
+      "displayName": "datadrivenconstruction",
+      "image": "https://avatars.githubusercontent.com/u/94158709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1771171402060,
+      "changelog": "open-data-integrator 2.1.0\n\n- Added support for integrating multiple open construction datasets, including government, industry, weather, geospatial, material prices, and labor rates.\n- Introduced modular data connector classes for weather, material price, and labor rate data sources.\n- Standardized data source definitions and metadata via dataclasses and enums.\n- Enhanced framework to allow enrichment and integration of input data with open datasets.\n- Improved documentation with quick start code examples and detailed connector descriptions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:afb8b0c1987d159ffb207054a802f1ef41306aa23683a3db2bccbec1d7c360ea"
+}

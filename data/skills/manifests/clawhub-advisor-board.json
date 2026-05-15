@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66519,
+  "uuid": "skill-clawhub-advisor-board",
+  "skillKey": "clawhub-advisor-board",
+  "name": "Advisor Board",
+  "summary": "🎩 36 位顶级思维顾问帮你做决策。输入问题→自动全网检索→顾问多角度分析→输出行动建议。含毛泽东/德鲁克/Jobs/巴菲特等。免费基础版（15 位顾问），Pro 版解锁完整 36 位 + 报告导出 + 团队会诊。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.advisor_board",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mambaMentatily24",
+      "features": [
+        "🎩 36 位顶级思维顾问帮你做决策。输入问题→自动全网检索→顾问多角度分析→输出行动建议。含毛泽东/德鲁克/Jobs/巴菲特等。免费基础版（15 位顾问），Pro 版解锁完整 36 位 +."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/advisor-board@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272693007?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "advisor-board",
+      "url": "https://clawhub.ai/skills/advisor-board"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "advisor-board",
+    "url": "https://clawhub.ai/skills/advisor-board",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/advisor-board-9ade55e39a3647fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/advisor-board@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-advisor-board-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c961efdfa75962cf026528939f3cb5722efdc45034434d9a69521e3101446b59",
+      "artifactSizeBytes": 2392
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T04:32:10.757Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62241,
+  "uuid": "skill-clawhub-code-review-assistant",
+  "skillKey": "clawhub-code-review-assistant",
+  "name": "Code Review Assistant",
+  "summary": "自动化代码审查助手，支持 PR 审查、代码质量分析、潜在 bug 检测、安全漏洞扫描。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_review_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sunshine-del-ux",
+      "features": [
+        "自动化代码审查助手，支持 PR 审查、代码质量分析、潜在 bug 检测、安全漏洞扫描。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-review-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83053073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-review-assistant",
+      "url": "https://clawhub.ai/skills/code-review-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-review-assistant",
+    "url": "https://clawhub.ai/skills/code-review-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-review-assistant-1783c0220e3f958c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-review-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-review-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67f66f61b5b99ff1a463f901de5f4e80904d8b005f8bc3abf9aa93884ff178f1",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T08:33:59.865Z"
+}

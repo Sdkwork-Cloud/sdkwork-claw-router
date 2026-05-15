@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apple-reminders-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_reminders_1",
+  "skill": {
+    "id": 55536,
+    "skillKey": "clawhub-apple-reminders-1",
+    "name": "Apple Reminders 1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-reminders-1",
+    "url": "https://clawhub.ai/skills/apple-reminders-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-reminders-1-90116dd161411ca2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Apple Reminders via the `remindctl` CLI on macOS (list, add, edit, complete, delete). Supports lists, date filters, and JSON/plain output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tigertamvip",
+      "userId": "s171vwmtm81hafva67c196sr5n83hhtb",
+      "displayName": "tigertamvip",
+      "image": "https://avatars.githubusercontent.com/u/61303958?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774148783703,
+      "changelog": "Initial release of Apple Reminders CLI skill.\n\n- Manage Apple Reminders via the `remindctl` CLI on macOS.\n- Supports viewing, adding, editing, completing, and deleting reminders.\n- Includes list management: create, rename, delete, and view lists.\n- Flexible date filters for viewing reminders by date, week, overdue, and more.\n- Output options: JSON, plain, or quiet (counts only).\n- Easy installation via Homebrew; macOS-only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ffaa203e776471f198f4666965e32079a9a104e998c3cef9438f126b0a80d996"
+}

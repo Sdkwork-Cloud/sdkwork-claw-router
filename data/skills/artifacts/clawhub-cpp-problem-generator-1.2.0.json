@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cpp-problem-generator@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cpp_problem_generator",
+  "skill": {
+    "id": 71181,
+    "skillKey": "clawhub-cpp-problem-generator",
+    "name": "C++ 算法竞赛自动化测试数据生成与校验框架"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cpp-problem-generator",
+    "url": "https://clawhub.ai/skills/cpp-problem-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cpp-problem-generator-f1e28f0386dfadac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于原题生成新题面、验证器及完整测试数据，自动套用 testlib 标准模板。 当用户要求生成测试数据时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sirwym",
+      "userId": "s17ftphp3r19a7t9ank70cnfmd83vz52",
+      "displayName": "sirwym",
+      "image": "https://avatars.githubusercontent.com/u/35523495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774853348550,
+      "changelog": "# Version 1.2.0 Changelog\n\n- 引入 Step 0 环境自检流程：生成前强制检查 Docker Desktop 是否运行，及 cpp-sandbox 镜像是否已正确加载。若未通过则中断流程并输出友好提示。\n- 新增【背景盲盒铁律】：若用户未指定题目背景，自动读取并随机抽取 `references/backgrounds.md` 进行世界观重构。\n- 更新 Step 4：改为强制使用 `docker run` 挂载当前目录，由容器内执行生成脚本，杜绝在宿主机直接调用 Python。\n- 明确区分 Windows 与 Linux/Mac 路径与命令行规范，对不同平台给出专属 Docker 挂载命令。\n- 增强样例与格式校验机制，细化遇到样例数据或格式错误时的处理闭环与修正联动流程。\n- 移除 testlib.h 直接引用，统一从标准模板/镜像环境",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b617f3737ff7014b4251344071a33af92646f795b4d8d2532b1a1f87f2e8af92"
+}

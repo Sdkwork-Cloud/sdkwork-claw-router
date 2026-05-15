@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lap-account-v1-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lap_account_v1_api",
+  "skill": {
+    "id": 36138,
+    "skillKey": "clawhub-lap-account-v1-api",
+    "name": "Lap Account V1 Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lap-account-v1-api",
+    "url": "https://clawhub.ai/skills/lap-account-v1-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lap-account-v1-api-0b31f5647da4cfc3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Account v1 API skill. Use when working with Account v1 for custom_policy, fulfillment_policy, payment_policy. Covers 37 endpoints."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mickmicksh",
+      "userId": "s173hdss607zbfxv4jxwj0ae0583wwjt",
+      "displayName": "mickmicksh",
+      "image": "https://avatars.githubusercontent.com/u/214470470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774255223463,
+      "changelog": "Initial release of the lap-account-v1-api skill.\n\n- Provides access to eBay Account v1.9.3 API with 37 endpoints across 13 groups.\n- Supports operations for custom policies, fulfillment policies, and payment policies.\n- Includes endpoints for seller programs, privileges, and payments program status.\n- OAuth2 authentication and API key required for setup.\n- Designed for managing account policies and seller program participation via eBay’s API.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb043b05960ca9337cf12a07f390ec07008263799a33ecc1d4a40b9dd3109582"
+}

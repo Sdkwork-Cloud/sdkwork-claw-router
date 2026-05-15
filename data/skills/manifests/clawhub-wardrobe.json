@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13134,
+  "uuid": "skill-clawhub-wardrobe",
+  "skillKey": "clawhub-wardrobe",
+  "name": "Wardrobe",
+  "summary": "Build a personal wardrobe system for cataloging clothes, planning outfits, and mindful shopping.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wardrobe",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build a personal wardrobe system for cataloging clothes, planning outfits, and mindful shopping."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wardrobe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wardrobe",
+      "url": "https://clawhub.ai/skills/wardrobe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wardrobe",
+    "url": "https://clawhub.ai/skills/wardrobe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wardrobe-7d4b47cf84bb52b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wardrobe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wardrobe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ea294f59d3c0314c55df4eff814bea3bea3ac5bd2be93f7252cc426774bc3d9",
+      "artifactSizeBytes": 1777
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T00:30:28.010Z"
+}

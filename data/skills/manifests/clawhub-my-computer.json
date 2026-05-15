@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22413,
+  "uuid": "skill-clawhub-my-computer",
+  "skillKey": "clawhub-my-computer",
+  "name": "my-computer",
+  "summary": "Desktop automation agent that uses CLI commands, application automation, and scripting to work directly with the user's local machine. Use this skill wheneve...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_computer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike wang",
+      "features": [
+        "Desktop automation agent that uses CLI commands, application automation, and scripting to work.",
+        "Use this skill wheneve..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-computer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223770224?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-computer",
+      "url": "https://clawhub.ai/skills/my-computer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-computer",
+    "url": "https://clawhub.ai/skills/my-computer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-computer-0140090ff45909b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-computer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-computer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5fe51045284d9f419e371f5ece40c4ec6d7e05e69b044a43033948a750c71f0",
+      "artifactSizeBytes": 2575
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T16:02:30.031Z"
+}

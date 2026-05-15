@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fa-advisor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fa_advisor",
+  "skill": {
+    "id": 26390,
+    "skillKey": "clawhub-fa-advisor",
+    "name": "FA Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fa-advisor",
+    "url": "https://clawhub.ai/skills/fa-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fa-advisor-4cc32a3501732738.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional Financial Advisor (FA) skill for primary market financing - replaces traditional investment advisory services with AI-powered project assessment..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhenstaff",
+      "userId": "s173q0k18pjbw86jqbmsmgkz7h83h3vm",
+      "displayName": "Justin Liu",
+      "image": "https://avatars.githubusercontent.com/u/34432727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772730201612,
+      "changelog": "Initial release of FA Advisor: AI-powered investment advisory for startups and investors.\n\n- Provides project assessment, pitch deck generation, valuation analysis, and investor matching for primary market fundraising.\n- Tailors workflows based on user type (founder/investor) and desired service (full package, assessment, pitch deck, etc.).\n- Conversationally gathers required project, market, team, and financial details.\n- Outputs comprehensive documents: assessment summary, slide deck structure, valuation report, investor lists, and business plan.\n- Offers actionable recommendations and next steps for fundraising or investment analysis.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cce22acf65430c61b375602e73268af7f4b811d76e2fe4f6c5248bcea2574289"
+}

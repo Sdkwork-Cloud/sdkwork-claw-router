@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-mock-generator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_mock_generator",
+  "skill": {
+    "id": 34803,
+    "skillKey": "clawhub-api-mock-generator",
+    "name": "API Mock Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-mock-generator",
+    "url": "https://clawhub.ai/skills/api-mock-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-mock-generator-0c80eebb27f51830.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate mock API servers from OpenAPI 3.x and Swagger 2.0 specs. Use when creating mock/stub APIs for frontend development, testing, demos, or CI. Generates..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777593588107,
+      "changelog": "- No changes in this version; all functionality and documentation remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1cb6d5a2f4a464fd48e3126a17d8a8f6273ad1745cb1fabf698e423f8cacf33"
+}

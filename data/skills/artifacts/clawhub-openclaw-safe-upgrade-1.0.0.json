@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-safe-upgrade@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_safe_upgrade",
+  "skill": {
+    "id": 22269,
+    "skillKey": "clawhub-openclaw-safe-upgrade",
+    "name": "OpenClaw Safe Upgrade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-safe-upgrade",
+    "url": "https://clawhub.ai/skills/openclaw-safe-upgrade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-safe-upgrade-85277f8314938e23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safe OpenClaw upgrade with instant rollback. Use when user says \"upgrade openclaw\", \"update openclaw\", \"check for updates\", or any request to upgrade/update..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aliahmadaziz",
+      "userId": "publishers:aliahmadaziz",
+      "displayName": "Ali Aziz",
+      "image": "https://avatars.githubusercontent.com/u/5584771?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 479,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772977641699,
+      "changelog": "Initial release — atomic OpenClaw upgrade with auto-rollback, cgroup escape for systemd survival, acpx preservation, breaking change detection",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a591bbeaa4815cfb8620c0fe5e8c247d7a4f053b35ca4b7b7110a1c59368a5c1"
+}

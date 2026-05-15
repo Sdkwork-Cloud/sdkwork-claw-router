@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59564,
+  "uuid": "skill-clawhub-weixin-wechat-channel",
+  "skillKey": "clawhub-weixin-wechat-channel",
+  "name": "Weixin WeChat Channel",
+  "summary": "微信公众号自动发文一站式技能。组合 内容策划 + 人性化润色 + 自动创建草稿，一条龙生成公众号文章保存到草稿箱。Use when user needs to write 公众号文章、微信公众号、create wechat public account article, auto save to draft。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weixin_wechat_channel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GaoBai",
+      "features": [
+        "微信公众号自动发文一站式技能。组合 内容策划 + 人性化润色 + 自动创建草稿，一条龙生成公众号文章保存到草稿箱。Use when user needs to write 公众号文章、微信公."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weixin-wechat-channel@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88292533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weixin-wechat-channel",
+      "url": "https://clawhub.ai/skills/weixin-wechat-channel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weixin-wechat-channel",
+    "url": "https://clawhub.ai/skills/weixin-wechat-channel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weixin-wechat-channel-b43a0ab74847542d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weixin-wechat-channel@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-weixin-wechat-channel-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b42acd2552311beed26c19082f4491316746d46042dc2c242b51d5784c178a3",
+      "artifactSizeBytes": 2076
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T12:09:23.258Z"
+}

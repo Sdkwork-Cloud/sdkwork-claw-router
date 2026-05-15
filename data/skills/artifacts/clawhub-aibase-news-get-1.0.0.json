@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aibase-news-get@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aibase_news_get",
+  "skill": {
+    "id": 66968,
+    "skillKey": "clawhub-aibase-news-get",
+    "name": "AIBase-News-Get"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aibase-news-get",
+    "url": "https://clawhub.ai/skills/aibase-news-get",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aibase-news-get-e72f054a25ad651c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从AI新闻网站爬取最新资讯，支持自动生成新闻总结。用于AI新闻采集、内容聚合、舆情监控。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiahuishao",
+      "userId": "s177akgh8hpcevyntg4r2s901983g6j6",
+      "displayName": "BAI",
+      "image": "https://avatars.githubusercontent.com/u/47627365?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773715945435,
+      "changelog": "自用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:544725228c62054475d29b2e9fe5be65fcec5c86086d5f05966a2c42c7613079"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-memory-curator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_memory_curator",
+  "skill": {
+    "id": 37851,
+    "skillKey": "clawhub-openclaw-memory-curator",
+    "name": "OpenClaw Memory Curator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-memory-curator",
+    "url": "https://clawhub.ai/skills/openclaw-memory-curator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-memory-curator-8407797139a9e39b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Organize, deduplicate, summarize, and compress OpenClaw or Clawd memory files. Use when the user asks to organize memory, reduce duplication, convert raw dai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1217047020",
+      "userId": "s175xvt17yq1jvmevmdeb17hnn83ycwz",
+      "displayName": "zeruel",
+      "image": "https://avatars.githubusercontent.com/u/78832692?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774929039149,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ffba5e8874fa624bc7b40bad669d901263db09cc222bb3fc3fe7f238f5989171"
+}

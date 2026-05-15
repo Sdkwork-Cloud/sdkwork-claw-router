@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/markdown-anything@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_anything",
+  "skill": {
+    "id": 23345,
+    "skillKey": "clawhub-markdown-anything",
+    "name": "Markdown Anything"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-anything",
+    "url": "https://clawhub.ai/skills/markdown-anything",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-anything-770ae5ce5d368669.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert PDF, DOCX, XLSX, PPTX, images, audio, and 25+ file formats to clean Markdown using the Markdown Anything API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adiologydev",
+      "userId": "publishers:adiologydev",
+      "displayName": "Aditya Tripathi",
+      "image": "https://avatars.githubusercontent.com/u/9266227?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 445,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771457768496,
+      "changelog": "- Initial release of the markdown-anything skill.\n- Convert 25+ file formats—including PDF, DOCX, XLSX, PPTX, images, and audio—to clean Markdown using the Markdown Anything API.\n- Provides two tools: `mda-convert` for file conversion and `mda-credits` to check credit balance.\n- Requires `MDA_API_TOKEN` for authentication.\n- Optional environment variables for advanced conversion options (Enhanced AI, metadata, token optimization).\n- Includes setup instructions and privacy/security details.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e2e2d11d8de2329ff7f3f20ca504968335bf1c4556cb4f08d033ffcdc0fc437c"
+}

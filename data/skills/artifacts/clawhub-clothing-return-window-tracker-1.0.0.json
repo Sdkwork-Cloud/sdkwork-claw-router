@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clothing-return-window-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clothing_return_window_tracker",
+  "skill": {
+    "id": 50004,
+    "skillKey": "clawhub-clothing-return-window-tracker",
+    "name": "Clothing Return Window Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clothing-return-window-tracker",
+    "url": "https://clawhub.ai/skills/clothing-return-window-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clothing-return-window-tracker-f1e268d6f6b23365.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track online clothing purchases with a log of return deadlines, conditions, shipping, and refund status, plus customizable deadline alerts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 51,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778342303615,
+      "changelog": "Clothing Return Window Tracker v1.0.0\n\n- Initial release to help users track online clothing purchases and return deadlines.\n- Includes a purchase log template (retailer, item, order date, return deadline).\n- Features a condition checklist, shipping label reminders, and refund status tracker.\n- Supports customizable alert rules for upcoming return deadlines.\n- Offers clear usage instructions and example prompts for easy setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:26e9d044a644b5eb003cce28b863763ecad4985a269d6835dbc0f11ca0b052c8"
+}

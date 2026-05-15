@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27306,
+  "uuid": "skill-clawhub-snowsand-confluence",
+  "skillKey": "clawhub-snowsand-confluence",
+  "name": "Snowsand Confluence",
+  "summary": "Interact with Confluence Cloud via REST API. Use for space management, page operations (list, view, create, update, delete), content search (CQL queries), pa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snowsand_confluence",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "snowsand-enterprises",
+      "features": [
+        "Interact with Confluence Cloud via REST API",
+        "Use for space management, page operations (list, view, create, update, delete), content search."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/snowsand-confluence@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74375198?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "snowsand-confluence",
+      "url": "https://clawhub.ai/skills/snowsand-confluence"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snowsand-confluence",
+    "url": "https://clawhub.ai/skills/snowsand-confluence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snowsand-confluence-62ca412023a6b977.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/snowsand-confluence@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-snowsand-confluence-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcbba1dc4351f4ab99a9e88039834e19644233dda10ace40607fff37ffa47719",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T22:33:24.738Z"
+}

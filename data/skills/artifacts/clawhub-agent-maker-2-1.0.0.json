@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-maker-2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_maker_2",
+  "skill": {
+    "id": 52013,
+    "skillKey": "clawhub-agent-maker-2",
+    "name": "Agent Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-maker-2",
+    "url": "https://clawhub.ai/skills/agent-maker-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-maker-2-62527d90a68e667e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create autonomous AI agents for OpenClaw with guided discovery — clarifies purpose, personality, skills, channels, automation, and security before generating..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anhnt224",
+      "userId": "s171ayq959dymt9vmz8rwxnv4n83k1pr",
+      "displayName": "AnhNT",
+      "image": "https://avatars.githubusercontent.com/u/50037368?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774412537482,
+      "changelog": "Major update: Agent creation guidance has been improved with a fully structured, multi-phase discovery flow and more flexible agent generation process.\n\n- Introduces a step-by-step “Discovery Flow” to guide users through agent purpose, identity, workflow, tools, communication, automation, and security requirements via conversational prompts.\n- Expands customization: users can define agent personality, communication style, boundaries, specific tools and skills access, memory behavior, channels, and automation preferences.\n- Provides clear model recommendations, security/sandboxing options, and automation scheduling (heartbeat/cron) guidance.\n- Replaces older documentation and scripts with a new workspace directory structure and a unified agent creation shell script.\n- Simplifies the onboarding process by consolidating removed files and presenting more actionable, interactive instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf527df56d6e9e38f880a542c0ea9038bdecac4d9bc1c9ec1f2adf11f122900d"
+}

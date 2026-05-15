@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38872,
+  "uuid": "skill-clawhub-citadel-id",
+  "skillKey": "clawhub-citadel-id",
+  "name": "Citadel Id",
+  "summary": "Citadel ID integration. Manage data, records, and automate workflows. Use when the user wants to interact with Citadel ID data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.citadel_id",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Citadel ID integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Citadel ID data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/citadel-id@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "citadel-id",
+      "url": "https://clawhub.ai/skills/citadel-id"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "citadel-id",
+    "url": "https://clawhub.ai/skills/citadel-id",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/citadel-id-b043049677f03622.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/citadel-id@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-citadel-id-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c7919e23dc8596e1da9ee4e431bb5c6e388e24d9bbbe1c690974b0207bed1b2",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:30:24.996Z"
+}

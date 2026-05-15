@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jisu-qrcode@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jisu_qrcode",
+  "skill": {
+    "id": 65053,
+    "skillKey": "clawhub-jisu-qrcode",
+    "name": "QR Code Generation And Recognition - 二维码生成识别"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jisu-qrcode",
+    "url": "https://clawhub.ai/skills/jisu-qrcode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jisu-qrcode-f3bf7a7cd08b5fda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "按文本生成带模板样式的二维码（base64），或识别二维码内容及模板列表。当用户说：把这段链接生成二维码、识别图里二维码内容，或类似二维码 API 问题时，使用本技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jisuapi",
+      "userId": "s174fh1b14sn7vkvbqwsdn0xtd83gz5h",
+      "displayName": "极速数据",
+      "image": "https://avatars.githubusercontent.com/u/30516426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 482,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 10,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775209867312,
+      "changelog": "No code or file changes detected in this version.\n\n- Updated skill description and documentation to enhance clarity and add information about JisuAPI and its usage.\n- Clarified API key application and environment variable configuration steps.\n- Expanded \"关于极速数据\" section to detail more available APIs and usage scenarios.\n- No changes to code behavior or interface.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d18ea6fba533d6c8777f7b591da18b075fc3af009c49e04f20956c7ecafde0b0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pw-browser-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pw_browser_setup",
+  "skill": {
+    "id": 63677,
+    "skillKey": "clawhub-pw-browser-setup",
+    "name": "PW Browser Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pw-browser-setup",
+    "url": "https://clawhub.ai/skills/pw-browser-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pw-browser-setup-3f12571d7babf096.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "浏览器自动化环境的一键安装、检查和验证工具。 安装 Playwright + Chromium，支持非头模式（模拟真实用户浏览器）和头模式。 包含系统兼容性检查（内存、CPU、磁盘）、依赖安装、Xvfb 虚拟显示器配置。 当用户要求：(1) 安装浏览器自动化环境 (2) 配置 Playwright (3) 检查系..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jerryxn",
+      "userId": "s1787btb8bncxwcve2adq75g3583hsbf",
+      "displayName": "JerryXn",
+      "image": "https://avatars.githubusercontent.com/u/37356803?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774572654310,
+      "changelog": "Initial release: system compat check, Playwright+Chromium install with Xvfb, Baidu verification screenshot",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b873367b0d1e2d84ef027e8305349d7a1df214c343eb34a32e55324042b02ba1"
+}

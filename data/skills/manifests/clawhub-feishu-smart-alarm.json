@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71595,
+  "uuid": "skill-clawhub-feishu-smart-alarm",
+  "skillKey": "clawhub-feishu-smart-alarm",
+  "name": "feishu-smart-alarm",
+  "summary": "读取飞书/Lark 消息文本，识别是否包含需要提醒的待办和截止时间，并在由系统根据消息语义和时间跨度自动判断，更偏宽松一点的预留时间发出一次提醒。适用于飞书机器人在私聊或群聊中处理诸如“今天 5 点前给我”“明天下午三点提醒我”“周五前记得提交”这类消息；默认提醒给原消息发送者，并将提醒发回原飞书会话。识别成功后...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_smart_alarm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HeiMaoM",
+      "features": [
+        "读取飞书/Lark 消息文本，识别是否包含需要提醒的待办和截止时间，并在由系统根据消息语义和时间跨度自动判断，更偏宽松一点的预留时间发出一次提醒。适用于飞书机器人在私聊或群聊中处理诸如“今天."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-smart-alarm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145641200?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-smart-alarm",
+      "url": "https://clawhub.ai/skills/feishu-smart-alarm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-smart-alarm",
+    "url": "https://clawhub.ai/skills/feishu-smart-alarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-smart-alarm-627b239be4894f5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-smart-alarm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-smart-alarm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4af027f6090bdc605535f5192e8fc903f9f1e668727c640e0c908bc84c260c86",
+      "artifactSizeBytes": 2692
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:38:20.021Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vue-latest-changelog@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vue_latest_changelog",
+  "skill": {
+    "id": 64405,
+    "skillKey": "clawhub-vue-latest-changelog",
+    "name": "vue-latest-changelog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vue-latest-changelog",
+    "url": "https://clawhub.ai/skills/vue-latest-changelog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vue-latest-changelog-eaee0930f80fe93d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户要求查看和整理最新的Vue版本更新信息时，请遵循此规范获取相关内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aliangtech",
+      "userId": "s172y18appq0b1d9x5s7nzerfx83q7n3",
+      "displayName": "ALiangTech",
+      "image": "https://avatars.githubusercontent.com/u/40046221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774851017605,
+      "changelog": "Initial release of vue-latest-changelog.\n\n- Provides instructions for retrieving and organizing the latest Vue version changelog.\n- Details usage of a dedicated script (changelog.js) to fetch and save update information from Vue's GitHub repository.\n- Outlines steps for running the script and accessing the resulting changelog file.\n- Includes example workflow and environment requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7851103472f1959b1b04ac8c7bfaed719562e320ae6630faf7ad984dd0101632"
+}

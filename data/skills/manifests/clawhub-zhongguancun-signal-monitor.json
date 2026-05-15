@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66953,
+  "uuid": "skill-clawhub-zhongguancun-signal-monitor",
+  "skillKey": "clawhub-zhongguancun-signal-monitor",
+  "name": "Zhongguancun Signal Monitor",
+  "summary": "产学研合作主动扫描与信号监控。当用户要求扫描合作机会、监控企业动态、发现潜在合作方、查看本周有哪些值得接触的企业时触发。基于行业/公司列表，扫描融资、招标、产品发布、学术发表等信号，推断需求，输出Top N推荐。适用于周度/日度合作线索发现。配合 industry-research skill 使用：监控发现线索...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhongguancun_signal_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangxiaopeng-zgci",
+      "features": [
+        "产学研合作主动扫描与信号监控。当用户要求扫描合作机会、监控企业动态、发现潜在合作方、查看本周有哪些值得接触的企业时触发。基于行业/公司列表，扫描融资、招标、产品发布、学术发表等信号，推断需求."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhongguancun-signal-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225355648?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhongguancun-signal-monitor",
+      "url": "https://clawhub.ai/skills/zhongguancun-signal-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhongguancun-signal-monitor",
+    "url": "https://clawhub.ai/skills/zhongguancun-signal-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhongguancun-signal-monitor-88f2c0ad0dd507cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhongguancun-signal-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhongguancun-signal-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42e6f5dbf0ce40d2a2643bcf0b16a5813b35d78f63bf264a75a0289ae5122ff6",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T02:25:49.258Z"
+}

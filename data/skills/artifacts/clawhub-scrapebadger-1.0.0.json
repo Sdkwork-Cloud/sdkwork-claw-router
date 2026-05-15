@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scrapebadger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scrapebadger",
+  "skill": {
+    "id": 54909,
+    "skillKey": "clawhub-scrapebadger",
+    "name": "ScrapeBadger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scrapebadger",
+    "url": "https://clawhub.ai/skills/scrapebadger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scrapebadger-511135590ebc65e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web scraping platform — Twitter/X data, Vinted marketplace, and general web scraping API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xghostcasper",
+      "userId": "s1768mx70e751026phskqnyw0d84bj7a",
+      "displayName": "0xGhostCasper",
+      "image": "https://avatars.githubusercontent.com/u/125361508?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775488925190,
+      "changelog": "Initial release — Twitter/X, Vinted, and Web Scraping API skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab164660508528ee826aa4e989e71b3c65a4ef77bbf6d3f9fce7a79c85df9b74"
+}

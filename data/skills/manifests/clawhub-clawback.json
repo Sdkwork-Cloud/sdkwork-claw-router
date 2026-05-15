@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9520,
+  "uuid": "skill-clawhub-clawback",
+  "skillKey": "clawhub-clawback",
+  "name": "Clawback",
+  "summary": "Mirror congressional stock trades with automated broker execution and risk management. Use when you want to track and automatically trade based on congressio...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawback",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mainfraame",
+      "features": [
+        "Mirror congressional stock trades with automated broker execution and risk management",
+        "Use when you want to track and automatically trade based on congressio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawback@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5190439?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawback",
+      "url": "https://clawhub.ai/skills/clawback"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawback",
+    "url": "https://clawhub.ai/skills/clawback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawback-21f45644c605a7d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawback@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawback-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0fed27656a3674aa52bb0bb4d02886dfafe0096e569a6d1835c369adfee14ecb",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T21:06:59.811Z"
+}

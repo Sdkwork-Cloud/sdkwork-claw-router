@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gh-bridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gh_bridge",
+  "skill": {
+    "id": 43536,
+    "skillKey": "clawhub-gh-bridge",
+    "name": "Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gh-bridge",
+    "url": "https://clawhub.ai/skills/gh-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gh-bridge-ba51722cb2dcfad5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent-to-Human (A2H) verification and escrow platform. Agents request physical-world tasks from humans, define verification criteria (GPS, photos, timestamps..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mirni",
+      "userId": "s1711srsc0t5e7tx4tkwpmygw584bfmq",
+      "displayName": "mirni",
+      "image": "https://avatars.githubusercontent.com/u/13551232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776131999737,
+      "changelog": "Initial release of gh-bridge: an agent-to-human verification and escrow platform.\n\n- Agents can request physical-world tasks with defined verification criteria (GPS, photos, timestamps, signatures).\n- Automated escrow: funds locked at task creation, released only when all proofs pass.\n- Built-in dispute mechanism: freezes escrow and verification if challenged.\n- REST API endpoints to create tasks, submit proofs, dispute, and query platform stats.\n- Supports multiple verification types for proof: gps, photo, timestamp, and signature.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3995267559ba2e439e633ee85dd6d07df99eddfd070584f1f38a8d545718a173"
+}

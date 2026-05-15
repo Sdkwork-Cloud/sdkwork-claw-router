@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skin-color-changer-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skin_color_changer_openapi_skill",
+  "skill": {
+    "id": 56452,
+    "skillKey": "clawhub-skin-color-changer-openapi-skill",
+    "name": "AI Skin Color Changer – Change Skin Tone Online for Free – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skin-color-changer-openapi-skill",
+    "url": "https://clawhub.ai/skills/skin-color-changer-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skin-color-changer-openapi-skill-c1d4d2452752f22e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI skin color changer — change a person's skin tone while preserving face details"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776832625581,
+      "changelog": "- Initial release of the skin-color-changer-openapi-skill.\n- Enables changing a person’s skin tone in portrait images while preserving face details.\n- Requires HTTPS access to openapi.weshop.ai and a WESHOP_API_KEY environment variable.\n- Provides endpoints to start runs, poll status, and upload images.\n- Includes clear API key security guidance and usage instructions.\n- Supports custom skin tone instructions and batch processing of images.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25d1f50abad68e6e5970c9abda0268da832b6e7dc6fe30e318c52dfbb87485db"
+}

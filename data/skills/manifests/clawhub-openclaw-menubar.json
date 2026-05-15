@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52252,
+  "uuid": "skill-clawhub-openclaw-menubar",
+  "skillKey": "clawhub-openclaw-menubar",
+  "name": "openclaw menubar",
+  "summary": "Enable OpenClaw as a native macOS menu bar app with quick access popup. **macOS ONLY** - not compatible with Windows or Linux. Use when user asks to \"enable menubar\", \"add menu bar\", \"run in menu bar\", \"make it accessible from menu bar\", o.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_menubar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "prab002",
+      "features": [
+        "Enable OpenClaw as a native macOS menu bar app with quick access popup",
+        "**macOS ONLY**",
+        "not compatible with Windows or Linux",
+        "Use when user asks to \"enable menubar\", \"add menu bar\", \"run in menu bar\", \"make it accessible."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-menubar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90155386?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-menubar",
+      "url": "https://clawhub.ai/skills/openclaw-menubar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-menubar",
+    "url": "https://clawhub.ai/skills/openclaw-menubar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-menubar-11f48dba6b163daa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-menubar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-menubar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:388fc8b92ab0244071b9af2571f3490aaa656ed30c9cbf2f7308558c529e3bef",
+      "artifactSizeBytes": 2452
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T10:10:28.691Z"
+}

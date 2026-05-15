@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/liberfi-market@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liberfi_market",
+  "skill": {
+    "id": 35821,
+    "skillKey": "clawhub-liberfi-market",
+    "name": "Liberfi Market"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liberfi-market",
+    "url": "https://clawhub.ai/skills/liberfi-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liberfi-market-f6acb3c5fd33a080.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover trending tokens and newly listed tokens across supported blockchains: view trending token rankings by chain and time window, find newly launched tok..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bombmod",
+      "userId": "s1734k5ar8v7bcr162fx2j8xgn842ywy",
+      "displayName": "bombmod",
+      "image": "https://avatars.githubusercontent.com/u/212038798?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777095630696,
+      "changelog": "Add liberfi-perpetuals skill (Hyperliquid MVP) and route perp queries away from liberfi-market",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb56e99aa6d3d8f0025e14d6714778a6399108899d8c8192657ea8a28f517564"
+}

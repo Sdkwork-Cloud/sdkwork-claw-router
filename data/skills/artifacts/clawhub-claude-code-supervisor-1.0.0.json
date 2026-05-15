@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-supervisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_supervisor",
+  "skill": {
+    "id": 9650,
+    "skillKey": "clawhub-claude-code-supervisor",
+    "name": "Claude Code Supervisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-supervisor",
+    "url": "https://clawhub.ai/skills/claude-code-supervisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-supervisor-02229f36718c20fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Supervise Claude Code sessions running in tmux. Uses Claude Code hooks with bash pre-filtering (Option D) and fast LLM triage to detect errors, stuck agents, and task completion. Harness-agnostic — works with OpenClaw, webhooks, ntfy, or a."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johba37",
+      "userId": "s17779emay927trgx4fhj7zb5n83ntwj",
+      "displayName": "johba37",
+      "image": "https://avatars.githubusercontent.com/u/659301?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 3281,
+      "installsAllTime": 20,
+      "installsCurrent": 19,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770279279977,
+      "changelog": "Initial release: hooks, bash pre-filter, LLM triage, watchdog, idle detection, env hints, notify script",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c2c762162d874e9b796bc136a6bd4a4555adb46c4b5e7df8a40721d2e5525809"
+}

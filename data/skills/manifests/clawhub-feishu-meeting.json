@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49569,
+  "uuid": "skill-clawhub-feishu-meeting",
+  "skillKey": "clawhub-feishu-meeting",
+  "name": "Feishu Meeting",
+  "summary": "Create Feishu (Lark) video meetings via Calendar API — instant, scheduled, or recurring. Supports multiple invitees (resolved from mobile/email), automatic F...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_meeting",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "magicaldd",
+      "features": [
+        "Create Feishu (Lark) video meetings via Calendar API — instant, scheduled, or recurring",
+        "Supports multiple invitees (resolved from mobile/email), automatic F..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-meeting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/137902365?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-meeting",
+      "url": "https://clawhub.ai/skills/feishu-meeting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-meeting",
+    "url": "https://clawhub.ai/skills/feishu-meeting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-meeting-8170bbec9d64f22c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-meeting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-meeting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54b24b4509e1c59e059faa64a0b641b5b87abf13e77c1380a12870b56a1c3382",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T09:22:00.477Z"
+}

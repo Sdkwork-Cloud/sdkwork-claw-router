@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57622,
+  "uuid": "skill-clawhub-yuqing-label-skill",
+  "skillKey": "clawhub-yuqing-label-skill",
+  "name": "小爱舆情AI标注（OpenAI兼容）",
+  "summary": "Incrementally AI-labels unmarked records in Feishu bitable, adding fields like type, sentiment, competitor mention, platform, brand safety, and content safety.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuqing_label_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FrankieWay",
+      "features": [
+        "Incrementally AI-labels unmarked records in Feishu bitable, adding fields like type, sentiment,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuqing-label-skill@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25837859?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuqing-label-skill",
+      "url": "https://clawhub.ai/skills/yuqing-label-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuqing-label-skill",
+    "url": "https://clawhub.ai/skills/yuqing-label-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuqing-label-skill-f0acc79a60f89504.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuqing-label-skill@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuqing-label-skill-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:106b32ee1f6e58629d4ee950aae362dff6771657393900cc6ef92efc0a687470",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T06:37:08.665Z"
+}

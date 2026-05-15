@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-with-effects-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_with_effects_free",
+  "skill": {
+    "id": 40463,
+    "skillKey": "clawhub-video-editing-with-effects-free",
+    "name": "Video Editing With Effects Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-with-effects-free",
+    "url": "https://clawhub.ai/skills/video-editing-with-effects-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-with-effects-free-8f6db0abab68ecab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit video clips into effects-enhanced clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for adding visual eff..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776758646801,
+      "changelog": "Initial release of Video Editing With Effects Free.\n\n- Edit and enhance video clips with visual effects and transitions, processed on cloud GPUs.\n- Supports MP4, MOV, AVI, WebM (up to 500MB), with outputs in 1080p MP4.\n- Automated setup: free token generation, session management, and status feedback.\n- Integrated cloud pipeline for fast rendering (1-2 minutes per clip).\n- User-friendly workflows for quick edits, batch processing, and iterative refinements.\n- Handles uploads, credits, state, and exports via clear API endpoints and error reporting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:936421e70e0c49bb982ba208d5205d368ed036b4f488ae8e6b939becb9656981"
+}

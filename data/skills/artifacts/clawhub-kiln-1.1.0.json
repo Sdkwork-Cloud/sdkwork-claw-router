@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kiln@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kiln",
+  "skill": {
+    "id": 29395,
+    "skillKey": "clawhub-kiln",
+    "name": "Kiln"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kiln",
+    "url": "https://clawhub.ai/skills/kiln",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kiln-cdfe9ad58b46226d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control 3D printers with AI agents — 430 MCP tools, 114 CLI commands, text/sketch-to-3D generation, model marketplace search, multi-printer fleet support, sa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codeofaxel",
+      "userId": "s17de1pt53xf355jpwsez0086s85crg1",
+      "displayName": "codeofaxel",
+      "image": "https://avatars.githubusercontent.com/u/254173508?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 909,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778060683637,
+      "changelog": "v1.1.0 — see https://github.com/codeofaxel/Kiln/releases/tag/v1.1.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61738e813a464b92d1e0610614dca1e5c16d193240f12177b0de3463e1e87128"
+}

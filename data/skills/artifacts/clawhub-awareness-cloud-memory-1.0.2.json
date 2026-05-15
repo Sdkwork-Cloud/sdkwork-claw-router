@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/awareness-cloud-memory@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.awareness_cloud_memory",
+  "skill": {
+    "id": 37695,
+    "skillKey": "clawhub-awareness-cloud-memory",
+    "name": "Awareness Cloud Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "awareness-cloud-memory",
+    "url": "https://clawhub.ai/skills/awareness-cloud-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/awareness-cloud-memory-698ad6733d8a8cda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent cloud memory across sessions. Automatically recalls past decisions, code, and tasks before each request, and saves summaries after each session. A..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "everest-an",
+      "userId": "publishers:everest-an",
+      "displayName": "Everest An",
+      "image": "https://avatars.githubusercontent.com/u/118294469?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774207796098,
+      "changelog": "Initial release — persistent cloud memory with semantic + keyword hybrid search, auto-recall hooks, and auto-capture.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3bb0e56689dd29bdaa6d37ca31ccaffb8e50428a6095807e6d6aaffcd41939ff"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60935,
+  "uuid": "skill-clawhub-cn-api-router",
+  "skillKey": "clawhub-cn-api-router",
+  "name": "Cn Api Router",
+  "summary": "国内 AI 模型 API 配置向导。帮助 OpenClaw 用户快速配置 DeepSeek、通义千问、智谱GLM、 Moonshot（月之暗面）、百川、零一万物等国内大模型 API。 自动生成 OpenClaw 配置并通过 config.patch 安全写入，支持模型切换和多模型并存。 Use when: 用户说...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_api_router",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ironmanc2014",
+      "features": [
+        "国内 AI 模型 API 配置向导。帮助 OpenClaw 用户快速配置 DeepSeek、通义千问、智谱GLM、 Moonshot（月之暗面）、百川、零一万物等国内大模型 API。 自动生."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-api-router@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77605535?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-api-router",
+      "url": "https://clawhub.ai/skills/cn-api-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-api-router",
+    "url": "https://clawhub.ai/skills/cn-api-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-api-router-0ea769af0c2a172d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-api-router@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-api-router-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5a29adb65bde4ad02dc5dfdca337b012a9c40567adebd7401c065a74c37cb5e",
+      "artifactSizeBytes": 2485
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T09:37:15.892Z"
+}

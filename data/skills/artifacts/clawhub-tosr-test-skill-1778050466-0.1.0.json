@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tosr-test-skill-1778050466@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tosr_test_skill_1778050466",
+  "skill": {
+    "id": 55997,
+    "skillKey": "clawhub-tosr-test-skill-1778050466",
+    "name": "TOSR Test Skill For Delete"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tosr-test-skill-1778050466",
+    "url": "https://clawhub.ai/skills/tosr-test-skill-1778050466",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tosr-test-skill-1778050466-b8c37f4130018691.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated test skill that verifies skill lifecycle operations—publish, inspect, update, and delete—via the Clawhub REST API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinwuzhe",
+      "userId": "s17bebxc1t0w5frqp4rnmt85nx83hc1n",
+      "displayName": "yuangui",
+      "image": "https://avatars.githubusercontent.com/u/5061317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 74,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778050471932,
+      "changelog": "- Initial release of the TOSR Test Skill For Delete (version 0.1.0).\n- Provides an automated integration test for the clawhub REST API skill lifecycle: creation, inspection, updating, and deletion.\n- Designed as an ephemeral skill to verify end-to-end REST API operations.\n- Will be automatically deleted after testing is complete.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:556d621e919cebd4c33b75c25f00a393c8f62602b87f0dcf16f099dce02a4ed6"
+}

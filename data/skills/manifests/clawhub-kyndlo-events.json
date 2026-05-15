@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31482,
+  "uuid": "skill-clawhub-kyndlo-events",
+  "skillKey": "clawhub-kyndlo-events",
+  "name": "Kyndlo Events",
+  "summary": "WORKFLOW-DRIVEN event creation and validation from Kyndlo campaign tasks. When invoked, the agent MUST follow the mandatory step-by-step onboarding flow belo...",
+  "version": "3.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kyndlo_events",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Carlos Martin",
+      "features": [
+        "WORKFLOW-DRIVEN event creation and validation from Kyndlo campaign tasks",
+        "When invoked, the agent MUST follow the mandatory step-by-step onboarding flow belo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kyndlo-events@3.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2256796?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kyndlo-events",
+      "url": "https://clawhub.ai/skills/kyndlo-events"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kyndlo-events",
+    "url": "https://clawhub.ai/skills/kyndlo-events",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kyndlo-events-d67490d8d91828aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kyndlo-events@3.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kyndlo-events-3.5.0.json",
+      "version": "3.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba36b69cc5cd917e33a216db3a340276a7c6a0d672fea1f8b803de0041a4444e",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T05:15:14.350Z"
+}

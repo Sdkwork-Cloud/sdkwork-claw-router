@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/compound-eng-md-docs@4.0.1",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compound_eng_md_docs",
+  "skill": {
+    "id": 23609,
+    "skillKey": "clawhub-compound-eng-md-docs",
+    "name": "ia-md-docs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compound-eng-md-docs",
+    "url": "https://clawhub.ai/skills/compound-eng-md-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compound-eng-md-docs-db59dc49f9b71cae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages project documentation: CLAUDE.md, AGENTS.md, README.md, CONTRIBUTING.md. Use when asked to update, create, or init these context files. Not for gener..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iliaal",
+      "userId": "s17bcar8wq0xhegs0ny6f57ypd8484bw",
+      "displayName": "Ilia Alshanetsky",
+      "image": "https://avatars.githubusercontent.com/u/158724?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 435,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "4.0.1",
+      "createdAt": 1778195799038,
+      "changelog": "v4.0.1",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49adf7a7ae76348f2f52fe761318c445381973009e59c6824fed339431262f72"
+}

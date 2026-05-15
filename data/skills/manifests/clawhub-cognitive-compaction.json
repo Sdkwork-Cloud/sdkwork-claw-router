@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26323,
+  "uuid": "skill-clawhub-cognitive-compaction",
+  "skillKey": "clawhub-cognitive-compaction",
+  "name": "Cognitive Compaction State Manager",
+  "summary": "Actively monitors token utilization and executes memory compaction routines before context bloat causes failures.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cognitive_compaction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "The Mooorish",
+      "features": [
+        "Actively monitors token utilization and executes memory compaction routines before context bloa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cognitive-compaction@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213910000?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cognitive-compaction",
+      "url": "https://clawhub.ai/skills/cognitive-compaction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cognitive-compaction",
+    "url": "https://clawhub.ai/skills/cognitive-compaction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cognitive-compaction-10ee3516fb028984.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cognitive-compaction@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cognitive-compaction-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d65e7ef642e26f966d302eb73d5f3c80403bf156b798b43502062b51a512e762",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T23:46:43.768Z"
+}

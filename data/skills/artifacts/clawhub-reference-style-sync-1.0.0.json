@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reference-style-sync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reference_style_sync",
+  "skill": {
+    "id": 39785,
+    "skillKey": "clawhub-reference-style-sync",
+    "name": "Reference Style Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reference-style-sync",
+    "url": "https://clawhub.ai/skills/reference-style-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reference-style-sync-8345eb0371715fd9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "One-click synchronization and standardization of reference formats in literature management tools, intelligently fixing metadata errors."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774933895060,
+      "changelog": "Initial release.\n\n- Provides one-click synchronization and standardization of reference formats in literature management tools.\n- Intelligently repairs common metadata errors, including author names, journal names, DOI, page numbers, and dates.\n- Supports multiple literature management tools (Zotero, EndNote) and universal formats (BibTeX, RIS, CSV, JSON).\n- Enables batch processing, style conversion (APA, MLA, AMA, Vancouver, etc.), deduplication, and quality checks.\n- Offers both command-line interface and Python API for flexible usage.\n- Includes clear usage instructions, parameter documentation, repair rules, and example outputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4034bf33e6ce00215ba0d8245a335d8aeabde49274923a4eccd5e8fdb6b8f917"
+}

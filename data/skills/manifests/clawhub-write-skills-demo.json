@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21477,
+  "uuid": "skill-clawhub-write-skills-demo",
+  "skillKey": "clawhub-write-skills-demo",
+  "name": "write-skills-demo",
+  "summary": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.write_skills_demo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freshman94",
+      "features": [
+        "Use when creating new skills, editing existing skills, or verifying skills work before deployme."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/write-skills-demo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24609973?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "write-skills-demo",
+      "url": "https://clawhub.ai/skills/write-skills-demo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "write-skills-demo",
+    "url": "https://clawhub.ai/skills/write-skills-demo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/write-skills-demo-ac260d0acc92bfe7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/write-skills-demo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-write-skills-demo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7fe28e44e9671795bc79b4dd7e09fc8056a43fe7bd636096dc2ef0ea23d3668c",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T06:33:13.276Z"
+}

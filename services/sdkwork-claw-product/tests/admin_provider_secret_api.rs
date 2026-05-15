@@ -25,7 +25,7 @@ async fn admin_provider_secret_route_creates_lists_updates_and_soft_deletes_meta
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/provider-secrets")
+                .uri("/backend/v3/api/provider_secrets")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -57,7 +57,7 @@ async fn admin_provider_secret_route_creates_lists_updates_and_soft_deletes_meta
         .oneshot(
             Request::builder()
                 .method("PUT")
-                .uri("/backend/v3/api/provider-secrets")
+                .uri("/backend/v3/api/provider_secrets")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -88,7 +88,7 @@ async fn admin_provider_secret_route_creates_lists_updates_and_soft_deletes_meta
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/provider-secrets/list")
+                .uri("/backend/v3/api/provider_secrets/list")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -109,7 +109,7 @@ async fn admin_provider_secret_route_creates_lists_updates_and_soft_deletes_meta
         .oneshot(
             Request::builder()
                 .method("DELETE")
-                .uri("/backend/v3/api/provider-secrets/1")
+                .uri("/backend/v3/api/provider_secrets/1")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -127,7 +127,7 @@ async fn admin_provider_secret_route_creates_lists_updates_and_soft_deletes_meta
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/provider-secrets/list")
+                .uri("/backend/v3/api/provider_secrets/list")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -155,7 +155,7 @@ async fn admin_provider_secret_route_rejects_missing_trusted_subject() {
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/provider-secrets/list")
+                .uri("/backend/v3/api/provider_secrets/list")
                 .body(Body::from("{}"))
                 .unwrap(),
         )
@@ -179,7 +179,7 @@ async fn admin_provider_secret_route_rejects_plaintext_secret_without_calling_st
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/provider-secrets")
+                .uri("/backend/v3/api/provider_secrets")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -214,7 +214,7 @@ async fn admin_provider_secret_route_rejects_invalid_secret_ref_without_calling_
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/provider-secrets")
+                .uri("/backend/v3/api/provider_secrets")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -251,7 +251,7 @@ async fn admin_provider_secret_route_rejects_plaintext_alias_and_empty_locator_w
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/provider-secrets")
+                .uri("/backend/v3/api/provider_secrets")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -276,7 +276,7 @@ async fn admin_provider_secret_route_rejects_plaintext_alias_and_empty_locator_w
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/provider-secrets")
+                .uri("/backend/v3/api/provider_secrets")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")

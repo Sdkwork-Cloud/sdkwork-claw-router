@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/so-me-studio@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.so_me_studio",
+  "skill": {
+    "id": 41837,
+    "skillKey": "clawhub-so-me-studio",
+    "name": "Bundle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "so-me-studio",
+    "url": "https://clawhub.ai/skills/so-me-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/so-me-studio-aab13415399e1603.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "so-me.studio is a multi-platform social-media scheduler. Schedule posts, manage drafts, reply to inbox messages and post comments, generate AI captions/image..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yasin047",
+      "userId": "s173bgrt78j08d13n5q448kcj985g0jp",
+      "displayName": "Yasin047",
+      "image": "https://avatars.githubusercontent.com/u/95363870?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1777154687762,
+      "changelog": "Revert bins to [] — fixes OpenClaw npm-install loop.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef114aadc33ad8fe9047f292c9083a9a3222a2beb8d69166f8327de7333a3fc7"
+}

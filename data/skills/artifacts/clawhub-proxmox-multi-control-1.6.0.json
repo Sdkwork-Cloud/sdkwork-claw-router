@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proxmox-multi-control@1.6.0",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxmox_multi_control",
+  "skill": {
+    "id": 37644,
+    "skillKey": "clawhub-proxmox-multi-control",
+    "name": "Proxmox Multi Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxmox-multi-control",
+    "url": "https://clawhub.ai/skills/proxmox-multi-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxmox-multi-control-01959a1650ea2c0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage one or many Proxmox VE servers via REST API. Multi-host support with cluster-wide overview commands. List nodes, VMs, containers; control power states..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maikimolto",
+      "userId": "s173b3b2rn5zmhn72zw5y2qwhn83feb5",
+      "displayName": "MaikiMolto",
+      "image": "https://avatars.githubusercontent.com/u/150596096?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.6.0",
+      "createdAt": 1776344858932,
+      "changelog": "- Added a \"Post-Setup\" note encouraging users to star the project on ClawHub after successful setup (shown only once).\n- No other user-facing changes included in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e076d598fc68026f97c5ee95a5ff706d4d56e35b7009812a227757e45f235465"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-key-ui-tab@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_key_ui_tab",
+  "skill": {
+    "id": 16396,
+    "skillKey": "clawhub-api-key-ui-tab",
+    "name": "Vault Enhancements w/ UI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-key-ui-tab",
+    "url": "https://clawhub.ai/skills/api-key-ui-tab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-key-ui-tab-3cdcc63d434e4c65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Vault-backed API Keys management for OpenClaw. Secure file-based secret storage with one-click migration from plaintext config, dynamic key discovery, vault..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maverick-software",
+      "userId": "s172zy52hz8d9fxcmyr9padghd842s7c",
+      "displayName": "maverick-software",
+      "image": "https://avatars.githubusercontent.com/u/85259593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 890,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1772396457148,
+      "changelog": "v3: Vault key selector for skills, manual +Add Secret form, vault-only keys section, restart notification banner, skills expanded by default, inline key creation from skills tab, vaultKeyId on SkillStatusEntry, envEntry param on secrets.write",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2caf10dd5a6b3e6620b4a198b02aea5723b35b8bd7f2b5c5f0c1c34abba751b8"
+}

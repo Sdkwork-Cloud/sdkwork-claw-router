@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13618,
+  "uuid": "skill-clawhub-ohio-state-api",
+  "skillKey": "clawhub-ohio-state-api",
+  "name": "Ohio State API",
+  "summary": "Access public Ohio State University campus data from services like bus, dining, events, buildings, parking, and more via osu content APIs in JSON format.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ohio_state_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sichengchen",
+      "features": [
+        "Access public Ohio State University campus data from services like bus, dining, events, buildin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ohio-state-api@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20486755?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ohio-state-api",
+      "url": "https://clawhub.ai/skills/ohio-state-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ohio-state-api",
+    "url": "https://clawhub.ai/skills/ohio-state-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ohio-state-api-9a02a864625e53c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ohio-state-api@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ohio-state-api-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12605d330241f639a9c65083065997863b63121e736ca183a25203f33f2788ac",
+      "artifactSizeBytes": 2411
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T21:12:25.905Z"
+}

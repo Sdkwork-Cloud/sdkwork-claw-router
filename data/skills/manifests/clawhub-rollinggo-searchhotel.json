@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40326,
+  "uuid": "skill-clawhub-rollinggo-searchhotel",
+  "skillKey": "clawhub-rollinggo-searchhotel",
+  "name": "rollinggo-searchhotel",
+  "summary": "Hotel search and pricing via the RollingGo CLI. Use when the user wants to search hotels by destination, filter by date/star/budget/tags/distance, inspect ho...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rollinggo_searchhotel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dreamtzlong",
+      "features": [
+        "Hotel search and pricing via the RollingGo CLI",
+        "Use when the user wants to search hotels by destination, filter by date/star/budget/tags/distan."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rollinggo-searchhotel@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232517634?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rollinggo-searchhotel",
+      "url": "https://clawhub.ai/skills/rollinggo-searchhotel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rollinggo-searchhotel",
+    "url": "https://clawhub.ai/skills/rollinggo-searchhotel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rollinggo-searchhotel-cbf53c72688e66e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rollinggo-searchhotel@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-rollinggo-searchhotel-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef8138163b3f76d492bb151b4468299b774bb5fa3a869c5ca34144eb2f53e169",
+      "artifactSizeBytes": 2236
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:27:15.089Z"
+}

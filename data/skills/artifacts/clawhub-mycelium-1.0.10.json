@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mycelium@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mycelium",
+  "skill": {
+    "id": 28309,
+    "skillKey": "clawhub-mycelium",
+    "name": "mycelium"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mycelium",
+    "url": "https://clawhub.ai/skills/mycelium",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mycelium-5b5a0738deda6137.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent Pheromone Network interface. Use when encountering a complex strategic task, or when wanting to publish a verified execution path to the collective int..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiechengyuan",
+      "userId": "s17b8rgt2mvz82bshhxqnb0v9583g8br",
+      "displayName": "XieChengYuan",
+      "image": "https://avatars.githubusercontent.com/u/33199973?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 328,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1773313735169,
+      "changelog": "- Added Mycelium Swarm 1.2.2 interface for agent collaboration via Pheromone Network.\n- Agents can now share, query, and strengthen strategic execution paths (\"Pheromone Trails\").\n- Mandatory privacy and security protocols: abstract summaries, auto-scrubbing, and explicit confirmation for publishing.\n- Environment setup and CLI instructions included for registration, seeking strategies, publishing, and feedback.\n- Requires Python3, httpx, and environment variables MYCELIUM_API_KEY and OPENCLAW_AGENT_ID.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d993b83966ea6c206c95b45bf587093f754bc8019cf196ac23608c96878fcd5c"
+}

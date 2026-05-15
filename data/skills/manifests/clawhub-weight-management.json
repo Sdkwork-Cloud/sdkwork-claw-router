@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69019,
+  "uuid": "skill-clawhub-weight-management",
+  "skillKey": "clawhub-weight-management",
+  "name": "Weight Management 体重管理",
+  "summary": "减肥项目管理与数据分析（升级版 v2.0）。支持通用用户名格式 U{用户 ID}-{用户名}-YYYY-MM.md，修复口头归档问题，增加数据完整性自动检查，热量识别与估算，趋势分析与建议。触发词：减肥、体重、饮食记录、步数、睡眠、今天吃了、早餐、午餐、晚餐、运动、减肥进度、检查数据。",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weight_management",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hadais",
+      "features": [
+        "减肥项目管理与数据分析（升级版 v2.0）。支持通用用户名格式 U{用户 ID}-{用户名}-YYYY-MM.md，修复口头归档问题，增加数据完整性自动检查，热量识别与估算，趋势分析与建议。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weight-management@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69962039?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weight-management",
+      "url": "https://clawhub.ai/skills/weight-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weight-management",
+    "url": "https://clawhub.ai/skills/weight-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weight-management-23ffda4f1164813c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weight-management@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-weight-management-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e31b03724431b7ba6cc314fb55d8c3d40d0cc4b2cc4004e4a5bd2fc1ada0cb74",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T16:52:27.911Z"
+}

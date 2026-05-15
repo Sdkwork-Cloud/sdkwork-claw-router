@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-review-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_review_monitor",
+  "skill": {
+    "id": 25081,
+    "skillKey": "clawhub-amazon-review-monitor",
+    "name": "Amazon Review Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-review-monitor",
+    "url": "https://clawhub.ai/skills/amazon-review-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-review-monitor-9e53c3171bec28e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor Amazon product reviews by ASIN, analyze ratings and sentiment, identify issues, and draft AI-generated seller responses to negative feedback."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "avmw2025",
+      "userId": "publishers:avmw2025",
+      "displayName": "Elway Botty",
+      "image": "https://avatars.githubusercontent.com/u/214021893?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 396,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773475457958,
+      "changelog": "Initial release — Monitor and respond to Amazon product reviews with sentiment analysis and auto-drafted responses.\n\n- Scrapes and analyzes reviews for any ASIN with rating distribution and average score.\n- Detects sentiment, key negative/positive themes, and highlights reviews needing attention.\n- Generates professional seller response drafts for common complaint types.\n- Provides configurable review depth and marketplace support.\n- No extra dependencies or API keys needed; runs directly with Python 3.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60d9b3f1964fe9c8f9682746c2b2145a5b3d66abb6479e89b46a962526e56936"
+}

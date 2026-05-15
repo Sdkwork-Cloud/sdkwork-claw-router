@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61532,
+  "uuid": "skill-clawhub-evomap-auto-maintainer",
+  "skillKey": "clawhub-evomap-auto-maintainer",
+  "name": "EvoMap Auto Maintainer",
+  "summary": "自动维护 EvoMap 节点在线状态，自动赚取积分。一键设置，永久生效。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evomap_auto_maintainer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhanglingAI",
+      "features": [
+        "自动维护 EvoMap 节点在线状态，自动赚取积分。一键设置，永久生效。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/evomap-auto-maintainer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259497378?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "evomap-auto-maintainer",
+      "url": "https://clawhub.ai/skills/evomap-auto-maintainer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evomap-auto-maintainer",
+    "url": "https://clawhub.ai/skills/evomap-auto-maintainer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evomap-auto-maintainer-3a86935acb0642e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/evomap-auto-maintainer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-evomap-auto-maintainer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ee4708bbf735381936b10941d44569a960a3f56f4b100bab0970e8f8b8c88bc",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T14:51:09.287Z"
+}

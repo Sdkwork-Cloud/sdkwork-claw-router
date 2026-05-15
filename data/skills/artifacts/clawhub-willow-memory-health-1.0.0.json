@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/willow-memory-health@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.willow_memory_health",
+  "skill": {
+    "id": 45923,
+    "skillKey": "clawhub-willow-memory-health",
+    "name": "Willow Memory Health"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "willow-memory-health",
+    "url": "https://clawhub.ai/skills/willow-memory-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/willow-memory-health-e4d6998a9f739832.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit an OpenClaw agent's memory for staleness, redundancy, dark records, and contradictions. Use when a user asks to check memory health, clean up old memor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rudi193-cmd",
+      "userId": "s17ekax2rasmfrwg7yp6nm3bk9852hmb",
+      "displayName": "Sean  Campbell",
+      "image": "https://avatars.githubusercontent.com/u/236912655?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777088635865,
+      "changelog": "Initial release of willow-memory-health: audit and maintain OpenClaw agent memory quality.\n\n- Identifies STALE, DEAD, REDUNDANT, DARK, and CONTRADICTION issues in memory files with clear definitions.\n- Provides actionable recommendations and cleanup options for each memory health issue.\n- Guides users through running diagnostics, interpreting reports, and making informed cleanup decisions.\n- Offers integration with qmd for DARK record detection and supports memory archiving, deduplication, and contradiction review.\n- Ensures all actions require user confirmation before modifying or moving files.\n- Optionally appends audit summaries to memory logs without overwriting previous entries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6c6093e49b0b3c192e4742190d0fc08dfef91c9cc837db6f057489a85bc8f31"
+}

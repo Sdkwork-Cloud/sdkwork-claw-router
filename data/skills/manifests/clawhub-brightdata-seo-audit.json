@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49471,
+  "uuid": "skill-clawhub-brightdata-seo-audit",
+  "skillKey": "clawhub-brightdata-seo-audit",
+  "name": "Seo Audit",
+  "summary": "When the user wants to audit, review, or diagnose SEO issues on their site. Uses live web data via the Bright Data CLI for accurate detection of JS-injected...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brightdata_seo_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Meir Kadosh",
+      "features": [
+        "When the user wants to audit, review, or diagnose SEO issues on their site",
+        "Uses live web data via the Bright Data CLI for accurate detection of JS-injected..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brightdata-seo-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/182499612?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brightdata-seo-audit",
+      "url": "https://clawhub.ai/skills/brightdata-seo-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brightdata-seo-audit",
+    "url": "https://clawhub.ai/skills/brightdata-seo-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brightdata-seo-audit-102880f20dfaf756.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brightdata-seo-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brightdata-seo-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e8fa3064a53e6a3b4a67c2f410cf72a27eb202113f071272c416f61f51d4694",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:33:34.884Z"
+}

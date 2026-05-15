@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-changelog@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_changelog",
+  "skill": {
+    "id": 14664,
+    "skillKey": "clawhub-git-changelog",
+    "name": "Git Changelog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-changelog",
+    "url": "https://clawhub.ai/skills/git-changelog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-changelog-4ad5ed43d90c726f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-generate beautiful changelogs from git history, grouped by conventional commit types"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fratua",
+      "userId": "publishers:fratua",
+      "displayName": "Fratua",
+      "image": "https://avatars.githubusercontent.com/u/130244023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1136,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771181314093,
+      "changelog": "- Initial release of git-changelog.\n- Generates categorized, markdown changelogs from git history following conventional commits.\n- Supports flexible range selection (by tag, date, or number of commits).\n- Groups commit messages by type (features, fixes, docs, etc.), auto-detects breaking changes.\n- Handles edge cases like missing tags, custom paths (monorepos), or non-conventional commits.\n- Outputs to chat or can write/prepend to CHANGELOG.md on request.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2c466a9d8034442b0bc83d62b68582fc749f43ebf0472493b96025119e52912f"
+}

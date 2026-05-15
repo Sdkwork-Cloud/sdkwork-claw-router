@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/windows-rpa@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_rpa",
+  "skill": {
+    "id": 60430,
+    "skillKey": "clawhub-windows-rpa",
+    "name": "Windows RPA"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-rpa",
+    "url": "https://clawhub.ai/skills/windows-rpa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-rpa-e41539e88478eaac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Windows 桌面 RPA 自动化控制。使用场景： (1) 操作桌面应用程序（非 Web 应用） (2) 模拟鼠标键盘操作 (3) 截图和图像识别 (4) 窗口管理和应用启动 (5) 剪贴板操作 (6) Shell 命令执行 NOT for: Web 应用操作（请使用 browser 工具）、Linux/Mac 系统"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qgyz9613",
+      "userId": "publishers:qgyz9613",
+      "displayName": "qgyz9613",
+      "image": "https://avatars.githubusercontent.com/u/79489415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1384,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773132814467,
+      "changelog": "添加 os, security, implementation 元数据；扩展安全注意事项版本升级到 1.1.0；添加 security, implementation 字段；标...添加 shell, get_state, window_activate, find_window, `run_ap...新增安全策略文档 \n 主要改进解决安全扫描问题：\n\n   1. ✅ 操作系统限制 - 在 YAML frontmatter 和 skill.json 中明确声明 os: [\"win32\"]\n   2. ✅ 安装规范 - install 字段和 implementation 字段完整\n   3. ✅ 实现代码 - 明确指向 scripts/rpa.py\n   4. ✅ 敏感操作标记 - security.sensitive_operations 列出高风险操作\n   5. ✅ 用户批准机制 - security.user_approval: recommended\n   6. ✅ 沙箱支持 - security.sandbox: supported",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f81e9c9b871748f057b444f5af07dc3200bd6175b56198d2668ac0f06bf52898"
+}

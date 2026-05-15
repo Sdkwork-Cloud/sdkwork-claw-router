@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23572,
+  "uuid": "skill-clawhub-clawhub-skill-forge",
+  "skillKey": "clawhub-clawhub-skill-forge",
+  "name": "clawhub-skill-forge",
+  "summary": "Create ClawhHub-ready OpenClaw skills with correct structure, scanner criteria, security rules & publish checklist. No credentials or binaries required.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skill_forge",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "seph",
+      "features": [
+        "Create ClawhHub-ready OpenClaw skills with correct structure, scanner criteria, security rules.",
+        "No credentials or binaries required."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-skill-forge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65636039?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-skill-forge",
+      "url": "https://clawhub.ai/skills/clawhub-skill-forge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skill-forge",
+    "url": "https://clawhub.ai/skills/clawhub-skill-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skill-forge-d9abbabdd825f42d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-skill-forge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-skill-forge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a53c7462d58c703c11cd27e28a21363d84ef97c0dbf2eb43fc5489ee46fcceb4",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T02:22:00.890Z"
+}

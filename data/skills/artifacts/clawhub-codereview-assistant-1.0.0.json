@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codereview-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codereview_assistant",
+  "skill": {
+    "id": 35668,
+    "skillKey": "clawhub-codereview-assistant",
+    "name": "Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codereview-assistant",
+    "url": "https://clawhub.ai/skills/codereview-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codereview-assistant-7da17ca57a17b854.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Code review best practices and workflow skill. Use when: reviewing pull requests, performing peer code review, setting up code review standards, or improving..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sydpz",
+      "userId": "s176qewq6nbak0493h164nm4qh83qwds",
+      "displayName": "BingWang",
+      "image": "https://avatars.githubusercontent.com/u/4160015?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774601983810,
+      "changelog": "- Initial public release of the Code Review Skill.\n- Provides structured code review workflow, including focus areas, severity classification, and decision criteria.\n- Includes checklists for PR descriptions and review comments.\n- Offers language-specific review guidelines for Go, TypeScript/Node.js, Python, and Java/Kotlin.\n- Supplies reusable templates for review comments and approvals.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:017840789820cce856180f2b878a9843e2d68ca8488e8576182e2500d885ff8e"
+}

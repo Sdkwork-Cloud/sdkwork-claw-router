@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61405,
+  "uuid": "skill-clawhub-ai-skills-browser",
+  "skillKey": "clawhub-ai-skills-browser",
+  "name": "Skills Browser",
+  "summary": "Skills浏览器 - 使用HTML和Python3实现的本地技能浏览工具，支持技能列表过滤和详情查看",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_skills_browser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "quntion",
+      "features": [
+        "Skills浏览器",
+        "使用HTML和Python3实现的本地技能浏览工具，支持技能列表过滤和详情查看"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-skills-browser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15528553?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-skills-browser",
+      "url": "https://clawhub.ai/skills/ai-skills-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-skills-browser",
+    "url": "https://clawhub.ai/skills/ai-skills-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-skills-browser-56c0fbe761e987c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-skills-browser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-skills-browser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4233843ecec908faeb3e30209961a56bc6601d04def1ef8b8eeee02a7310ba4",
+      "artifactSizeBytes": 2093
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T16:17:05.790Z"
+}

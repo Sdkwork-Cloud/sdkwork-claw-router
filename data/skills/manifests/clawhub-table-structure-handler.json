@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60307,
+  "uuid": "skill-clawhub-table-structure-handler",
+  "skillKey": "clawhub-table-structure-handler",
+  "name": "table-structure-handler",
+  "summary": "表结构Excel处理技能。当用户说\"表结构处理\"时触发。",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.table_structure_handler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cztzb",
+      "features": [
+        "表结构Excel处理技能。当用户说\"表结构处理\"时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/table-structure-handler@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62781659?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "table-structure-handler",
+      "url": "https://clawhub.ai/skills/table-structure-handler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "table-structure-handler",
+    "url": "https://clawhub.ai/skills/table-structure-handler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/table-structure-handler-c91f6ac5fa66affc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/table-structure-handler@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-table-structure-handler-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35896e0ed97fbda8da4852f25a935f24839d2f803b0ef809dba747650158c1c2",
+      "artifactSizeBytes": 1889
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T00:39:31.514Z"
+}

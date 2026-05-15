@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mopidy@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mopidy",
+  "skill": {
+    "id": 30935,
+    "skillKey": "clawhub-mopidy",
+    "name": "Mopidy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mopidy",
+    "url": "https://clawhub.ai/skills/mopidy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mopidy-3e5c4a14f2bdfaf6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control a Mopidy music system via Mopidy JSON-RPC for everyday listening, queue management, and playback control. Use when the user wants to search for music..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "grantmacnamara",
+      "userId": "s1775np9yjq302jcb852r3wxvh843y74",
+      "displayName": "grantmacnamara",
+      "image": "https://avatars.githubusercontent.com/u/6692175?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775144678051,
+      "changelog": "- Improved Bash safety in scripts/mopidy.sh by enabling `set -euo pipefail`.\n- This change ensures the script exits on unset variables, errors, or failed pipes, reducing risk of unexpected behavior and errors.\n- No user-facing functional changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52b0f45298393465503841cb72b38ba592c25d7c073269bb1aba9822d88ca6e3"
+}

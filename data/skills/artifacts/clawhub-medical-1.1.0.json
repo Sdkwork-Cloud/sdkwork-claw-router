@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/medical@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical",
+  "skill": {
+    "id": 21568,
+    "skillKey": "clawhub-medical",
+    "name": "Medical"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical",
+    "url": "https://clawhub.ai/skills/medical",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-948dbde67a8ef961.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local-first health record management with strict privacy boundaries. Organize what happened, what you take, what changed, and what to bring to your doctor —..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agistack",
+      "userId": "s178h9d2k372k0rawyb3jd1h0d84vf26",
+      "displayName": "AGIstack",
+      "image": "https://avatars.githubusercontent.com/u/258523997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 964,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773762358708,
+      "changelog": "Medical@1.1.0: tightened privacy and safety boundaries, aligned product claims with shipped local-first features, improved health-record consistency, and removed unsupported reference workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34af02209127496805fafab6e39093ea1ae49842ba52120dc33b4ae04d67337a"
+}

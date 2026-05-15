@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blind-review-sanitizer-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blind_review_sanitizer_1",
+  "skill": {
+    "id": 45826,
+    "skillKey": "clawhub-blind-review-sanitizer-1",
+    "name": "Blind Review Sanitizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blind-review-sanitizer-1",
+    "url": "https://clawhub.ai/skills/blind-review-sanitizer-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blind-review-sanitizer-1-ec7725a8ce19737c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use blind-review-sanitizer for academic writing workflows that need structured anonymization, explicit assumptions, and clear output boundaries for double-bl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775108051156,
+      "changelog": "Initial release of blind-review-sanitizer for structured, double-blind manuscript anonymization.\n\n- Provides a Python-based workflow for anonymizing manuscripts in preparation for double-blind peer review.\n- Supports `.docx`, `.md`, `.txt` file formats and offers command-line control over author detection and output options.\n- Includes clear input validation, explicit fallback procedures, and sample usage guidance.\n- Outputs sanitized manuscripts, with summary of removed identifiers and callouts for manual review where necessary.\n- Offers audit-ready commands, risk assessment, security checklist, and detailed workflow documentation for reproducibility and transparency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66e90504a77535e7578bdae05211ef2fa2b67e7fec23134d68113c01f7a63d48"
+}

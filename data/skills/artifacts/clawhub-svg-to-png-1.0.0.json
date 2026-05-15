@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/svg-to-png@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.svg_to_png",
+  "skill": {
+    "id": 63418,
+    "skillKey": "clawhub-svg-to-png",
+    "name": "svg-to-png"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "svg-to-png",
+    "url": "https://clawhub.ai/skills/svg-to-png",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/svg-to-png-80852f880817acd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 SVG 矢量图片转换为 PNG 格式，支持指定尺寸。使用场景：(1) 将 SVG 图标转换为 PNG，(2) 调整图片尺寸，(3) 前端资源格式转换。使用前需在当前目录安装 sharp 依赖。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "try520",
+      "userId": "publishers:try520",
+      "displayName": "tianling",
+      "image": "https://avatars.githubusercontent.com/u/5467109?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773945988725,
+      "changelog": "svg to image with png",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7fd64b75ba0e06d4554a04f4e7360b7fd7aa54331b264e5701a12dca6a31aee1"
+}

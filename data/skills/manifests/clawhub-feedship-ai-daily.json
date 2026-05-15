@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32668,
+  "uuid": "skill-clawhub-feedship-ai-daily",
+  "skillKey": "clawhub-feedship-ai-daily",
+  "name": "Ai Daily",
+  "summary": "Generate daily AI news digest from feedship subscriptions. Use when user wants today's news summary, daily briefing, periodic news recap, AI daily digest, AI...",
+  "version": "1.21.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feedship_ai_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yan Zer0",
+      "features": [
+        "Generate daily AI news digest from feedship subscriptions",
+        "Use when user wants today's news summary, daily briefing, periodic news recap, AI daily digest,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feedship-ai-daily@1.21.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4964976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feedship-ai-daily",
+      "url": "https://clawhub.ai/skills/feedship-ai-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feedship-ai-daily",
+    "url": "https://clawhub.ai/skills/feedship-ai-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feedship-ai-daily-c1a401eae59c6858.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feedship-ai-daily@1.21.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feedship-ai-daily-1.21.0.json",
+      "version": "1.21.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d37cc47942219d969789209406a45fa528b7f8daecfdf6079856fda07a2eb3d",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T12:01:56.849Z"
+}

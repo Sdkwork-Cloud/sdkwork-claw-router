@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dashscope-web-search-feishu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dashscope_web_search_feishu",
+  "skill": {
+    "id": 22210,
+    "skillKey": "clawhub-dashscope-web-search-feishu",
+    "name": "DashScope Web Search (Feishu)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dashscope-web-search-feishu",
+    "url": "https://clawhub.ai/skills/dashscope-web-search-feishu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dashscope-web-search-feishu-4fe5545f187041f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web for real-time information using DashScope Qwen, optimized for Feishu. Use this skill whenever: (1) the user asks about current events, news, w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oreo992",
+      "userId": "publishers:oreo992",
+      "displayName": "Jeffrey",
+      "image": "https://avatars.githubusercontent.com/u/130750436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 481,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772551248153,
+      "changelog": "Initial release of web-search-feishu skill:\n\n- Enables real-time web search via DashScope Qwen, optimized for Feishu.\n- Supports both text-only (default) and image search modes based on user request.\n- Offers flexible search options: turbo, deep, agent, think, fresh, and site-specific queries.\n- Provides clear decision rules and usage examples for handling different types of user queries.\n- Automatic image sending for visual requests; citation and reasoning support for text responses.\n- Includes troubleshooting steps and strict guidelines to protect credentials.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4ea02183d62d1262ed6c77051b67796603151a68d99d8de80712d825cdc25869"
+}

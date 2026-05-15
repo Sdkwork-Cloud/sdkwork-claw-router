@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-usage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_usage",
+  "skill": {
+    "id": 32473,
+    "skillKey": "clawhub-context-usage",
+    "name": "openclaw context usage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-usage",
+    "url": "https://clawhub.ai/skills/context-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-usage-3fdb5732d7762e1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check current session's context window usage. Shows model name, estimated token usage, and context window utilization percentage. Use when user asks about co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goog",
+      "userId": "s17em2bafnnpytnkgk2apn7p6h83fqsf",
+      "displayName": "Jay",
+      "image": "https://avatars.githubusercontent.com/u/1488374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 251,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774509595650,
+      "changelog": "- Initial release of the \"Context Window Usage\" skill.\n- Lets users check the current session's context window usage, model name, token usage, and utilization percentage.\n- Displays a clear summary with usage status: Comfortable, Getting Full, Consider Compact, or Near Limit.\n- Advises users to compact context when nearing the limit and offers guidance on next steps.\n- Responds to queries about context window, token usage, or how much of the model’s context is in use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:75d34579693bc76aac1fe8ed4a1f98f06ec3884e0481b012b3fd4ddf59f1e69d"
+}

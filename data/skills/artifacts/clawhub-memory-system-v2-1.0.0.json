@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-system-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_system_v2",
+  "skill": {
+    "id": 8891,
+    "skillKey": "clawhub-memory-system-v2",
+    "name": "Memory System V2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-system-v2",
+    "url": "https://clawhub.ai/skills/memory-system-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-system-v2-2beffb3152259f36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fast semantic memory system with JSON indexing, auto-consolidation, and <20ms search. Capture learnings, decisions, insights, events. Use when you need persistent memory across sessions or want to recall prior work/decisions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kellyclaudeai",
+      "userId": "publishers:kellyclaudeai",
+      "displayName": "kellyclaudeai",
+      "image": "https://avatars.githubusercontent.com/u/258509868?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5048,
+      "installsAllTime": 33,
+      "installsCurrent": 30,
+      "stars": 12,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769957654359,
+      "changelog": "- Initial release of memory-system-v2, a fast semantic memory system for AI agents.\n- Provides sub-20ms semantic search, JSON indexing, and auto-consolidation of daily memories into weekly summaries.\n- Supports capturing learnings, decisions, insights, events, and interactions with context, tagging, and importance scoring.\n- Built in pure bash + jq; no database required.\n- Includes stats, analytics, and a CLI for capturing, searching, consolidating, and reviewing memories.\n- Designed for persistent memory across sessions; integrates with Clawdbot.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f51b8ab214e2ecfdde27fb4423d33b2ffda4b747908a82b07354a82a0489a03c"
+}

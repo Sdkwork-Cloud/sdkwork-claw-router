@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abm-marketing-ideas@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abm_marketing_ideas",
+  "skill": {
+    "id": 30838,
+    "skillKey": "clawhub-abm-marketing-ideas",
+    "name": "Marketing Ideas"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abm-marketing-ideas",
+    "url": "https://clawhub.ai/skills/abm-marketing-ideas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abm-marketing-ideas-851de7c4de49430a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user needs marketing ideas, inspiration, or strategies for their SaaS or software product. Also use when the user asks for 'marketing ideas,' 'growt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariokarras",
+      "userId": "s1714hxad423m02rtb4r6n2vmn83e4f5",
+      "displayName": "Mario Karras",
+      "image": "https://avatars.githubusercontent.com/u/199292356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773903612105,
+      "changelog": "- Added detailed guidance for delivering tailored marketing ideas for SaaS and software products.\n- Included a categorized reference table with 139 proven marketing strategies by theme and use case.\n- Outlined workflow: gather product context, suggest best-fit tactics, and provide actionable steps based on stage, budget, and resources.\n- Defined clear output structure for recommendations (name, fit, steps, outcome, resources).\n- Listed additional skills for specialized execution (SEO, email sequences, referral programs, free tool development).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3dae42ff5b2fb48837dd3a3869fe823f7eb2197541c8da16de312d0adc97475e"
+}

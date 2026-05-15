@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-rumors-aisa@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_rumors_aisa",
+  "skill": {
+    "id": 45669,
+    "skillKey": "clawhub-stock-rumors-aisa",
+    "name": "stock-rumors-aisa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-rumors-aisa",
+    "url": "https://clawhub.ai/skills/stock-rumors-aisa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-rumors-aisa-f31f51caac0466db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan M&A, insider, analyst, social, and regulatory rumor signals through AISA. Use when: the user asks about early market signals, rumors, insider activity,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisadocs",
+      "userId": "s172yz541n4361fw0sapygg0r583eghk",
+      "displayName": "AIsa",
+      "image": "https://avatars.githubusercontent.com/u/245991925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776517052039,
+      "changelog": "- Initial release of stock-rumors skill, version 1.0.0.\n- Scan and rank M&A, insider, analyst, social, and regulatory rumor signals.\n- Requires AISA_API_KEY for operation.\n- Designed for early market signal detection and analysis of potential market-moving rumors.\n- Includes clear usage guidelines and example queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b076311021ff65c929f7c38b0304cd01b50096d87b1828a4f6ee4b00650e3b68"
+}

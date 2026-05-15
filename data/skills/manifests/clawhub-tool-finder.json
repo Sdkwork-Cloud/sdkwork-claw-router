@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62405,
+  "uuid": "skill-clawhub-tool-finder",
+  "skillKey": "clawhub-tool-finder",
+  "name": "Tool Finder",
+  "summary": "统一搜索 ClawHub skills 和 Smithery MCP servers 的工具发现引擎。支持评分排序、推荐规则、来源标识。优先原词搜索，扩展补充。**自动触发：看到\"找 skill\"、\"搜索工具\"、\"安装 skill\"等关键词自动使用本技能**。",
+  "version": "1.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tool_finder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lironghai",
+      "features": [
+        "统一搜索 ClawHub skills 和 Smithery MCP servers 的工具发现引擎。支持评分排序、推荐规则、来源标识。优先原词搜索，扩展补充。**自动触发：看到\"找 ski."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tool-finder@1.7.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34302941?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tool-finder",
+      "url": "https://clawhub.ai/skills/tool-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tool-finder",
+    "url": "https://clawhub.ai/skills/tool-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tool-finder-f2f54ec14761ea09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tool-finder@1.7.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tool-finder-1.7.0.json",
+      "version": "1.7.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b6c445b8bda87616c064e6d2f39629fa6b9b4e0361372233cd826615d6d98d2",
+      "artifactSizeBytes": 2101
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T05:13:50.161Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-vetter-jarvis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_vetter_jarvis",
+  "skill": {
+    "id": 40895,
+    "skillKey": "clawhub-skill-vetter-jarvis",
+    "name": "Skill Vetter Jarvis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-vetter-jarvis",
+    "url": "https://clawhub.ai/skills/skill-vetter-jarvis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-vetter-jarvis-13b0a09a265303a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security-first skill vetting for AI agents. Use before installing any skill from ClawdHub, GitHub, or other sources. Checks for red flags, permission scope,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bingze00000",
+      "userId": "s171p56g2sqsp1dnezw0ar4w1183swz6",
+      "displayName": "bingze00000",
+      "image": "https://avatars.githubusercontent.com/u/268100670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775174405612,
+      "changelog": "Initial release of skill-vetter-jarvis.\n\n- Provides a security-first vetting protocol for AI agent skills before installation.\n- Includes detailed checklists for source verification, code review, permission scope, and risk classification.\n- Defines red flags to immediately reject, permission evaluation steps, and risk levels from LOW to EXTREME.\n- Supplies a clear output format for vetting reports.\n- Offers quick vetting commands and a trust hierarchy to guide review rigor.\n- Emphasizes documenting and cautious installation, prioritizing security.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05054968205f70d69854f04eeb892bf5cf704cbc6226b3e4376988b680118516"
+}

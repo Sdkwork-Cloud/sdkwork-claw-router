@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/avito@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avito",
+  "skill": {
+    "id": 11264,
+    "skillKey": "clawhub-avito",
+    "name": "Avito.ru publish and chat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avito",
+    "url": "https://clawhub.ai/skills/avito",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avito-cc64477675542434.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Avito.ru account, items, and messenger via API. Use for listing items, checking balance, reading chats, and getting account info."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ruslanlanket",
+      "userId": "s17f1zyxcdr10fmqwatej4jqgx83k4md",
+      "displayName": "RuslanLanket",
+      "image": "https://avatars.githubusercontent.com/u/151464535?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769960855673,
+      "changelog": "Initial release of the Avito skill, enabling management of your Avito.ru account via API.\n\n- Authenticate with Avito and obtain an access token using your client credentials.\n- View basic account information and your user ID.\n- Check your account balance.\n- List your active advertisements.\n- View messenger chats linked to your account.\n- Included detailed usage instructions for each feature.\n- Outlined planned features such as item creation, editing, and advanced messenger support.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:daa282bf12e08fda92aabc19ab2223b9e9916061522f3694bbc5bb7322f18103"
+}

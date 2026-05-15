@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/liuzln-openclaw-skills-wechat-article-fetcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liuzln_openclaw_skills_wechat_article_fetcher",
+  "skill": {
+    "id": 39220,
+    "skillKey": "clawhub-liuzln-openclaw-skills-wechat-article-fetcher",
+    "name": "Liuzln Openclaw Skills Wechat Article Fetcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liuzln-openclaw-skills-wechat-article-fetcher",
+    "url": "https://clawhub.ai/skills/liuzln-openclaw-skills-wechat-article-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liuzln-openclaw-skills-wechat-article-fetcher-daef16cc26880cc8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and save WeChat Official Account articles with full content and images. Supports any WeChat article URL, automatic image download, JSON export, and ful..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robertstarry-gif",
+      "userId": "s17a8f4am5nrjy4rg8qzv4ydhh83ghw0",
+      "displayName": "robertstarry-gif",
+      "image": "https://avatars.githubusercontent.com/u/269227689?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776188370269,
+      "changelog": "WeChat Article Fetcher Skill v1.0.0\n\n- Initial release.\n- Fetch any WeChat Official Account article by URL.\n- Automatically download article images.\n- Export article data as JSON.\n- Save full-page screenshots of articles.\n- Support for virtual environments and headless mode.\n- Command-line and batch processing tools included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:99e6e7d59db89a8911363f4bab936efaea93ab4f7f3a31a10c2bcb11f4864eab"
+}

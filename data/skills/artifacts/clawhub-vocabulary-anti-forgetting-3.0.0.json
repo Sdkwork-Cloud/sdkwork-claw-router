@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vocabulary-anti-forgetting@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vocabulary_anti_forgetting",
+  "skill": {
+    "id": 28485,
+    "skillKey": "clawhub-vocabulary-anti-forgetting",
+    "name": "Vocabulary Anti Forgetting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vocabulary-anti-forgetting",
+    "url": "https://clawhub.ai/skills/vocabulary-anti-forgetting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vocabulary-anti-forgetting-33cda0e362de4c19.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Anti-forgetting vocabulary review using spaced repetition. Selects 10 words from asset/vocabulary_bank.md and presents each with English, Chinese translation..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hushenglang",
+      "userId": "s17e7f2t8g780yd4mmt4939h3d83jzak",
+      "displayName": "Joe Hu",
+      "image": "https://avatars.githubusercontent.com/u/6365707?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 315,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1776001946015,
+      "changelog": "**Major update: Spaced repetition rework, CLI, and file handling changes**\n\n- Replaced previous session flow with a robust spaced repetition algorithm (levels 0–7, Ebbinghaus intervals) for scheduling reviews.\n- Introduced `review.py` CLI script to handle review sessions and stats—sessions now run as a single command, outputting and updating all results at once.\n- Changed review history tracking: now uses a unified `review_log.md` in the workspace `memory/` directory, with a new markdown table format including review level and dates.\n- Added support for reviewing any custom number of words; stats requests supported via CLI.\n- Improved file structure, separating vocabulary bank from user/session memory to ensure persistence and easier upgrading.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7a2c4d083b390e6cd32acbbf6bec850f8bf1bb742b2b731316a0ecbe83517ff"
+}

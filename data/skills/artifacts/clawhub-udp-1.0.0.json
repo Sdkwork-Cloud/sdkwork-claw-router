@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/udp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.udp",
+  "skill": {
+    "id": 25022,
+    "skillKey": "clawhub-udp",
+    "name": "udp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "udp",
+    "url": "https://clawhub.ai/skills/udp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/udp-571e437548ffbac2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps with UDP sockets, datagram send/receive, and network debugging. Use when the user needs to send or receive UDP packets, write UDP client/server code, t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlang-cn",
+      "userId": "s17dqxdtqm3n7dpc7r06vmnqfd83gw7r",
+      "displayName": "openlang",
+      "image": "https://avatars.githubusercontent.com/u/45782174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 388,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773366520833,
+      "changelog": "- Initial release providing UDP socket support for sending/receiving datagrams and network debugging.\n- Includes command-line testing guides for various OS (netcat, PowerShell).\n- Offers concise language-specific UDP code samples (Python, Node.js, Go, C#).\n- Covers common troubleshooting tips for UDP connectivity, packet loss, and firewall issues.\n- Briefly explains UDP broadcast and multicast basics.\n- Highlights key differences between UDP and TCP.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ed6e4f020cb0b202404ea742adf4d67085d2466238ee5fe309ecbd801ef54b3"
+}

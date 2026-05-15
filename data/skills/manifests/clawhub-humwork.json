@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44254,
+  "uuid": "skill-clawhub-humwork",
+  "skillKey": "clawhub-humwork",
+  "name": "Humwork",
+  "summary": "Use Humwork when you need real-time guidance from a verified human domain expert (engineering, design, law, finance, medical, product). Trigger when stuck af...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humwork",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Humwork",
+      "features": [
+        "Use Humwork when you need real-time guidance from a verified human domain expert (engineering,.",
+        "Trigger when stuck af..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/humwork@1.0.2",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/humwork/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "humwork",
+      "url": "https://clawhub.ai/skills/humwork"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humwork",
+    "url": "https://clawhub.ai/skills/humwork",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humwork-20df982d4ba10f81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/humwork@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-humwork-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e742cb822dcd7b23ea5ee4114dda60ce57684a4a138480caf552ba938188f729",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T19:17:55.616Z"
+}

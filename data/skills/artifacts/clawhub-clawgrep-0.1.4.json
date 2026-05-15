@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawgrep@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawgrep",
+  "skill": {
+    "id": 34288,
+    "skillKey": "clawhub-clawgrep",
+    "name": "clawgrep"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawgrep",
+    "url": "https://clawhub.ai/skills/clawgrep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawgrep-54593d2935696311.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Grep-like CLI with hybrid semantic and keyword search. Combines semantic embedding search with keyword matching for high-quality code and document retrieval...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "schonhoffer",
+      "userId": "s17fjghd0nea6yyjweve576w4983jvfx",
+      "displayName": "Andrew Schonhoffer",
+      "image": "https://avatars.githubusercontent.com/u/835577?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1774722443855,
+      "changelog": "- Added details on first-run model download (~30 MB ONNX from Hugging Face), and clarified that subsequent runs are fully offline.\n- Updated compatibility notes, explicitly stating no API keys are needed and clarifying installation options.\n- Added author, repository, and homepage metadata.\n- Linked to the open-source repository for installation instructions.\n- Clarified and streamlined the description of model caching behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad0235f3c2df1a07e4232463cfb896e8fa670466f00ad9f9c05358be17746caa"
+}

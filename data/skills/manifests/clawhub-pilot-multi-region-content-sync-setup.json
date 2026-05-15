@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45309,
+  "uuid": "skill-clawhub-pilot-multi-region-content-sync-setup",
+  "skillKey": "clawhub-pilot-multi-region-content-sync-setup",
+  "name": "Pilot Multi Region Content Sync Setup",
+  "summary": "Deploy a multi-region content distribution system with 4 agents. Use this skill when: 1. User wants to sync content across geographic regions 2. User is conf...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_multi_region_content_sync_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Deploy a multi-region content distribution system with 4 agents",
+        "Use this skill when: 1",
+        "User wants to sync content across geographic regions 2",
+        "User is conf..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-multi-region-content-sync-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-multi-region-content-sync-setup",
+      "url": "https://clawhub.ai/skills/pilot-multi-region-content-sync-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-multi-region-content-sync-setup",
+    "url": "https://clawhub.ai/skills/pilot-multi-region-content-sync-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-multi-region-content-sync-setup-c5f3d7b624398ae4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-multi-region-content-sync-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-multi-region-content-sync-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed95641f48ae985ea179a30414b33fe553ab8e8676933e3d3757109a19ca017b",
+      "artifactSizeBytes": 2051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T03:40:17.190Z"
+}

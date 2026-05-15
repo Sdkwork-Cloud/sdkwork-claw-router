@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-memory-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_memory_optimizer",
+  "skill": {
+    "id": 61817,
+    "skillKey": "clawhub-openclaw-memory-optimizer",
+    "name": "OpenClaw: memory optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-memory-optimizer",
+    "url": "https://clawhub.ai/skills/openclaw-memory-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-memory-optimizer-d492a5bf7c68471d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动优化 OpenClaw 4.2 记忆搜索参数。当用户提到记忆不准确、搜索结果太少、MMR 关闭、时间衰减未启用、session 同步阈值过高，或者要求优化 OpenClaw 记忆系统时触发。也用于定期检查和调整 memory-search 配置。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicshliu",
+      "userId": "s173t6q8ee1nn6rzmz7t7vaq1x846qg2",
+      "displayName": "NICSHLIU",
+      "image": "https://avatars.githubusercontent.com/u/264651867?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 262,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775269857329,
+      "changelog": "Initial release: optimize OpenClaw 4.2 memory search + compact + freshness + trust validation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79f7c30fad3f94d3a6927c019e32f4c8558743a4d933a8f68120a23d04eb1b6d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rag-pipeline-starter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rag_pipeline_starter",
+  "skill": {
+    "id": 44912,
+    "skillKey": "clawhub-rag-pipeline-starter",
+    "name": "RAG Pipeline Starter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rag-pipeline-starter",
+    "url": "https://clawhub.ai/skills/rag-pipeline-starter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rag-pipeline-starter-54374ff12d5028e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up and optimize RAG pipelines for large datasets (50K-500K rows) with document chunking, embedding benchmarking, vector indexing, and retrieval tuning."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abhinas90",
+      "userId": "s174azs5nksq9sp64tzargsaph84203h",
+      "displayName": "abhinas90",
+      "image": "https://avatars.githubusercontent.com/u/45303724?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776520947797,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8c5f061bec0a2efb9a40d06c6ddb817c6b8393bb7b50dc6b3647a02bf6f6eaa"
+}

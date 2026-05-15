@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-voice-over-capcut@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_voice_over_capcut",
+  "skill": {
+    "id": 44071,
+    "skillKey": "clawhub-ai-voice-over-capcut",
+    "name": "Ai Voice Over Capcut"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-voice-over-capcut",
+    "url": "https://clawhub.ai/skills/ai-voice-over-capcut",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-voice-over-capcut-a13105e7e1312e97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add video clips into narrated MP4 videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. TikTok creators use it for adding AI-generated vo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777054733993,
+      "changelog": "Initial release — add AI-generated voiceovers to videos using cloud processing.\n\n- Upload MP4, MOV, AVI, or WebM video files up to 500MB.\n- Automatically generate natural-sounding AI voiceovers for your clips.\n- Export finished videos in 1080p MP4 format, ready for download and social sharing.\n- Fast cloud-based rendering (30–60 seconds for typical clips); no local installation needed.\n- Includes automatic session, token, and job management for seamless user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9adc2ab552a6f3e8f708c68baa52a8b82905390a3ebbfffa74987f67f5b1d40"
+}

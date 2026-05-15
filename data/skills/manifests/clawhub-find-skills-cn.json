@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34740,
+  "uuid": "skill-clawhub-find-skills-cn",
+  "skillKey": "clawhub-find-skills-cn",
+  "name": "Find Skills Cn",
+  "summary": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_skills_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "聿歆",
+      "features": [
+        "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"fi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-skills-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35373448?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-skills-cn",
+      "url": "https://clawhub.ai/skills/find-skills-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-skills-cn",
+    "url": "https://clawhub.ai/skills/find-skills-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-skills-cn-b8bfb41ccabcc98c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-skills-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-skills-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4647517f9e5c0f8efa4e5559b70b06d1848ae2cdec6bc92e818748c693a498e1",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T15:56:32.280Z"
+}

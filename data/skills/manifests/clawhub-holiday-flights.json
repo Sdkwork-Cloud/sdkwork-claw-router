@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53569,
+  "uuid": "skill-clawhub-holiday-flights",
+  "skillKey": "clawhub-holiday-flights",
+  "name": "holiday-flights",
+  "summary": "Find flights during Chinese peak travel seasons — Spring Festival, Golden Week, Labor Day, Dragon Boat. Warns about high demand and suggests optimal booking...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.holiday_flights",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiejinsong",
+      "features": [
+        "Find flights during Chinese peak travel seasons — Spring Festival, Golden Week, Labor Day, Drag.",
+        "Warns about high demand and suggests optimal booking..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/holiday-flights@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1642572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "holiday-flights",
+      "url": "https://clawhub.ai/skills/holiday-flights"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "holiday-flights",
+    "url": "https://clawhub.ai/skills/holiday-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/holiday-flights-5307b20fbc3a7745.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/holiday-flights@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-holiday-flights-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8cd03a99af73a56877b005136243ca3978cf54fa677cdde38815fecb1e3234e",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T08:11:35.928Z"
+}

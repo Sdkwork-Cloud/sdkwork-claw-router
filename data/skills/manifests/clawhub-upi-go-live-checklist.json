@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33951,
+  "uuid": "skill-clawhub-upi-go-live-checklist",
+  "skillKey": "clawhub-upi-go-live-checklist",
+  "name": "UPI Go Live Checklist",
+  "summary": "Guide UPI payments launch from setup through sandbox testing to go-live readiness with detailed checklists, test matrix, gates, and rollback planning.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upi_go_live_checklist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ASP",
+      "features": [
+        "Guide UPI payments launch from setup through sandbox testing to go-live readiness with detailed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upi-go-live-checklist@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4218061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upi-go-live-checklist",
+      "url": "https://clawhub.ai/skills/upi-go-live-checklist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upi-go-live-checklist",
+    "url": "https://clawhub.ai/skills/upi-go-live-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upi-go-live-checklist-e57b356b2d019351.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upi-go-live-checklist@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-upi-go-live-checklist-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:631955d539c1b7c1c60428e795f002f2a11871bbab5294d9dd3540c4cdee6089",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:21:24.820Z"
+}

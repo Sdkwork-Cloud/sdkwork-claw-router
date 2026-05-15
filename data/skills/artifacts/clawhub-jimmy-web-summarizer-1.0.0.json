@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jimmy-web-summarizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jimmy_web_summarizer",
+  "skill": {
+    "id": 42112,
+    "skillKey": "clawhub-jimmy-web-summarizer",
+    "name": "Web Summarizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jimmy-web-summarizer",
+    "url": "https://clawhub.ai/skills/jimmy-web-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jimmy-web-summarizer-89993b73727fba6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and summarize web pages for AI agents. Extract key information from URLs and return structured markdown summaries. No API key required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimmyclanker",
+      "userId": "s17ejhqtp0r87e37esqxmc3af983w8qd",
+      "displayName": "JimmyClanker",
+      "image": "https://avatars.githubusercontent.com/u/258324489?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775006248676,
+      "changelog": "Initial release: Fetch and summarize web pages for AI agents.\n\n- Extracts title, main content, and key points from any URL\n- Returns summaries in structured markdown format\n- Requires no API key\n- Handles errors and respects robots.txt\n- Useful for research, agent memory, and fact checking",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:758e45b85dd749faf4a174a7a329b1aad52ec1a71483a9c6d2ee820e5e67f14b"
+}

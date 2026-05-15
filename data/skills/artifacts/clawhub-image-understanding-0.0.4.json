@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-understanding@0.0.4",
+  "version": "0.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_understanding",
+  "skill": {
+    "id": 64097,
+    "skillKey": "clawhub-image-understanding",
+    "name": "image-understanding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-understanding",
+    "url": "https://clawhub.ai/skills/image-understanding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-understanding-b885ad4d38dc6ffc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智谱 GLM-4.6V 多模态视觉模型集成插件。支持 128K 长上下文、文档解析、视频理解与原生工具调用。具备工业级安全审计指引。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "isabellazhangym",
+      "userId": "publishers:isabellazhangym",
+      "displayName": "IsabellaZhangYM",
+      "image": "https://avatars.githubusercontent.com/u/170412788?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 735,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.0.4",
+      "createdAt": 1772456773428,
+      "changelog": "- Added essential metadata including environment variables, dependencies, and install instructions for Registry compatibility.\n- Updated and clarified the plugin description and key usage scenarios.\n- Improved security guidance, emphasizing environment variable requirements for API keys.\n- Provided updated quick-start instructions and sample code.\n- Enhanced documentation layout with clearer sections on security, features, and developer resources.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:66806d344a9259fca5f89bb99d5b7b9a587cce0c34e1e4b2f77652b9556cce79"
+}

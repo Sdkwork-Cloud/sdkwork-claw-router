@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whereamiburningtokens@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whereamiburningtokens",
+  "skill": {
+    "id": 50717,
+    "skillKey": "clawhub-whereamiburningtokens",
+    "name": "Where Am I Burning Tokens?"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whereamiburningtokens",
+    "url": "https://clawhub.ai/skills/whereamiburningtokens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whereamiburningtokens-c1d5f0d629128aa4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reads only ~/.openclaw/agents/main/sessions/sessions.json to show exactly where OpenClaw tokens and estimated cost are going by session type. Read-only diagn..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whooshinglander",
+      "userId": "s17ctz29xn8nnpvxrvxnt46q3h83gg89",
+      "displayName": "WhooshingLander",
+      "image": "https://avatars.githubusercontent.com/u/187096906?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775474324018,
+      "changelog": "Tightened the skill to be explicitly read-only and scanner-friendly. It now clearly declares that it reads only ~/.openclaw/agents/main/sessions/sessions.json by default, does not modify or delete anything, does not execute commands, and does not exfiltrate local data. Optional log-file access is explicitly gated behind a user request.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2d0b9e2cf05180e4687f328a60bd021ab416a6183254ba20a72b83f224fb7059"
+}

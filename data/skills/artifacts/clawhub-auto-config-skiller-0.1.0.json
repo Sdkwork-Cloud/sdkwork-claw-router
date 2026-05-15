@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-config-skiller@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_config_skiller",
+  "skill": {
+    "id": 24585,
+    "skillKey": "clawhub-auto-config-skiller",
+    "name": "Auto Config Skiller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-config-skiller",
+    "url": "https://clawhub.ai/skills/auto-config-skiller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-config-skiller-10b4de0cccdbaabb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides one-click environment initialization, core skill installation, and configuration for OpenClaw users to streamline setup and dependencies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wuhongchen",
+      "userId": "publishers:wuhongchen",
+      "displayName": "wuhongchen",
+      "image": "https://avatars.githubusercontent.com/u/7197517?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 407,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773424937132,
+      "changelog": "Auto Config Skiller 0.1.0 – Initial Release\n\n- Provides one-click environment initialization, core skill installation, and configuration for OpenClaw users.\n- Automatically installs essential tools grouped by communication, basic utilities, optimization, and security.\n- Includes full workflow automation: environment diagnosis, research, and step-by-step setup via a guided script.\n- Supports interactive `.env` configuration and multi-source accelerated package downloads.\n- Integrates out-of-the-box agents and detailed usage documentation.\n- Prioritizes security by requiring vetting tools before installing other skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d908a621e8a92a49374e3a6732afb7c14142beded882d2509a31e426c6061f8"
+}

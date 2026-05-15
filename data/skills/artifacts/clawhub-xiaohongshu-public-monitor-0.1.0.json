@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-public-monitor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_public_monitor",
+  "skill": {
+    "id": 66071,
+    "skillKey": "clawhub-xiaohongshu-public-monitor",
+    "name": "Xiaohongshu Public Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-public-monitor",
+    "url": "https://clawhub.ai/skills/xiaohongshu-public-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-public-monitor-7d0a2282d4c280d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书舆论监控 - 自动搜索小红书帖子、筛选需要舆论引导的内容、生成多人设评论话术、输出到飞书多维表格。适用于任何品牌/产品的小红书舆情监控。Use when: (1) 需要监控小红书上的品牌/产品讨论, (2) 需要生成多角色评论话术, (3) 需要将监控结果输出到飞书表格, (4) 用户提到舆论监控、舆情分析..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lisayinyy",
+      "userId": "s1754j468qxe493w94xksk14bh83q3k5",
+      "displayName": "Lisayinyy",
+      "image": "https://avatars.githubusercontent.com/u/90295445?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773986879162,
+      "changelog": "Initial release of xiaohongshu-public-monitor\n\n- Automates monitoring of Xiaohongshu posts, including content search, filtering, and comment generation.\n- Outputs results to Feishu Bitable with multi-role comment scripts for each post.\n- Configurable for any brand/product and industry via `config.yaml`.\n- Uses Playwright for persistent, headless Xiaohongshu login and scraping.\n- Provides a clear workflow for post selection, duplicate removal, urgency assignment, and comment writing.\n- Detailed guidance for defining personas, comment logic, filtering criteria, and urgency levels.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac39b2ef611a2d23f2e5eb3e86cf88cdfea9fc0a511d2d5e0a145f4cf33a3460"
+}

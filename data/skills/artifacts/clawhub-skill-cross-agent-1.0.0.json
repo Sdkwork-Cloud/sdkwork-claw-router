@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-cross-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_cross_agent",
+  "skill": {
+    "id": 59631,
+    "skillKey": "clawhub-skill-cross-agent",
+    "name": "skill-cross-agent-v1.0.0.tar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-cross-agent",
+    "url": "https://clawhub.ai/skills/skill-cross-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-cross-agent-9ccd743cd43e1383.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "跨机器Agent协作 - 通过SSH连接局域网内其他OpenClaw实例，实现多机任务分发"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuleleyo",
+      "userId": "publishers:yuleleyo",
+      "displayName": "YuleleYO",
+      "image": "https://avatars.githubusercontent.com/u/247374032?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 468,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772647676357,
+      "changelog": "Initial release of cross-agent for OpenClaw, enabling cross-machine task collaboration via SSH.\n\n- Scan and discover online devices in the local network.\n- Test SSH connectivity and manage sessions on target machines.\n- Send tasks, execute commands, and transfer files (get/put) between agents.\n- Supports interactive setup and configuration of default connection parameters.\n- Requires sshpass, ssh, scp, ping, and nc on Linux.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a30f92b1a167bae77db6e36d2940a31af07f9128335aee939f85b36af4386611"
+}

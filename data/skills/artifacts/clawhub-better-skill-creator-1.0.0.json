@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/better-skill-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.better_skill_creator",
+  "skill": {
+    "id": 29843,
+    "skillKey": "clawhub-better-skill-creator",
+    "name": "better-skill-creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "better-skill-creator",
+    "url": "https://clawhub.ai/skills/better-skill-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/better-skill-creator-cf700e830f6c82d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced skill creation and management tool with automated version control, intelligent diff, risk assessment, rollback, semantic versioning, and test automa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zzzanezhou0829",
+      "userId": "s176b8e927ekwcm13wsyy7txwd83qvz5",
+      "displayName": "zane iris zhou",
+      "image": "https://avatars.githubusercontent.com/u/265173160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776662123443,
+      "changelog": "- Initial release of better-skill-creator: an enhanced tool for skill creation, editing, and version management.\n- Adds built-in end-to-end version control with automatic backups, intelligent diff comparison, risk assessment, and semantic versioning.\n- Supports interactive rollback to previous versions with difference previews.\n- Automates requirement plan confirmation, change reporting, and includes built-in test verification.\n- Fully compatible with native skill-creator, retaining all original functions and usage.\n- Provides migration support for existing installations and historical data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:788a3a5a4913eaa3dc4d5651a18e9001c71a396bd77d128ffecd58dbbae26fd1"
+}

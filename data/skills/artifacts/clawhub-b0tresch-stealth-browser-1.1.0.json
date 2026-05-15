@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/b0tresch-stealth-browser@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.b0tresch_stealth_browser",
+  "skill": {
+    "id": 12873,
+    "skillKey": "clawhub-b0tresch-stealth-browser",
+    "name": "B0tresch Stealth Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "b0tresch-stealth-browser",
+    "url": "https://clawhub.ai/skills/b0tresch-stealth-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/b0tresch-stealth-browser-3f7e368b9c28c34c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Anti-detection web browsing that bypasses bot detection, CAPTCHAs, and IP blocks using puppeteer-extra with stealth plugin and optional residential proxy sup..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "b0tresch",
+      "userId": "publishers:b0tresch",
+      "displayName": "b0tresch",
+      "image": "https://avatars.githubusercontent.com/u/258892038?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1602,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772062025541,
+      "changelog": "## b0tresch-stealth-browser 1.1.0\n\n- Updated dependencies in package.json.\n- No user-facing or functional changes in this release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7ee1e7f52ac6f4d4a86b54351b01cb53cef7d514ff5b8b09be89f700dd45e79e"
+}

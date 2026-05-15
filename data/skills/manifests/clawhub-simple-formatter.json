@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16516,
+  "uuid": "skill-clawhub-simple-formatter",
+  "skillKey": "clawhub-simple-formatter",
+  "name": "Simple Formatter",
+  "summary": "Formats text according to specified style guidelines. A clean example skill with no security issues.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simple_formatter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tjaden Hess",
+      "features": [
+        "Formats text according to specified style guidelines",
+        "A clean example skill with no security issues."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/simple-formatter@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3936648?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "simple-formatter",
+      "url": "https://clawhub.ai/skills/simple-formatter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simple-formatter",
+    "url": "https://clawhub.ai/skills/simple-formatter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simple-formatter-e4d61e8dfa387968.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/simple-formatter@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-simple-formatter-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c43ea3704e81e4a40da050c4e465750ff3c3c7816a98ebcb9bc27cc460d1c311",
+      "artifactSizeBytes": 2107
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T23:35:27.710Z"
+}

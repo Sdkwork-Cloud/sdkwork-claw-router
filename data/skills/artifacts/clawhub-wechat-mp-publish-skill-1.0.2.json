@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-mp-publish-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_mp_publish_skill",
+  "skill": {
+    "id": 71440,
+    "skillKey": "clawhub-wechat-mp-publish-skill",
+    "name": "微信公众号发布工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-mp-publish-skill",
+    "url": "https://clawhub.ai/skills/wechat-mp-publish-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-mp-publish-skill-213c6d7150022c6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信公众号文章发布工具 v1.0。基于官方 API，支持智能配图、模板渲染、草稿/发布双模式。当用户说\"发公众号\"、\"发布微信公众号\"时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brucesongs",
+      "userId": "publishers:brucesongs",
+      "displayName": "brucesongs",
+      "image": "https://avatars.githubusercontent.com/u/96672106?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773318828383,
+      "changelog": "v1.0.2: 安全加固+多图片大模型支持",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a76da3b2cd5fdaaf5a243c64343cf363425b3ca81e7a2f8ffd2c7ef244c35a57"
+}

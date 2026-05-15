@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24652,
+  "uuid": "skill-clawhub-ihrflow-hr",
+  "skillKey": "clawhub-ihrflow-hr",
+  "name": "iHRFlow HR Assistant",
+  "summary": "iHRFlow HR assistant for recruiting. Use when searching candidates, managing positions, scheduling interviews, advancing pipeline, or viewing recruitment stats.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ihrflow_hr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MikeLing",
+      "features": [
+        "iHRFlow HR assistant for recruiting",
+        "Use when searching candidates, managing positions, scheduling interviews, advancing pipeline, o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ihrflow-hr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2166227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ihrflow-hr",
+      "url": "https://clawhub.ai/skills/ihrflow-hr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ihrflow-hr",
+    "url": "https://clawhub.ai/skills/ihrflow-hr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ihrflow-hr-77d251e207bc6a6d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ihrflow-hr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ihrflow-hr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b6ff65d7e003a5d1a9ddff30658923daada2d38d289fccbfff04ba57b8c76e1",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T07:17:37.667Z"
+}

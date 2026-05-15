@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hamibot@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hamibot",
+  "skill": {
+    "id": 51150,
+    "skillKey": "clawhub-hamibot",
+    "name": "Hamibot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hamibot",
+    "url": "https://clawhub.ai/skills/hamibot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hamibot-f57c9b4546fc9ae2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when working on the Hamibot CLI project — an open-source Node.js command-line tool for authorized remote Android automation. Device..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hamibot",
+      "userId": "s1781eyescrxtb37e055xvckxd83rpkc",
+      "displayName": "Hamibot",
+      "image": "https://avatars.githubusercontent.com/u/52420549?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 283,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774699051643,
+      "changelog": "- Clarified security and authorization in the description and documentation.\n- Added a new \"Security Model\" section detailing device pairing, authentication, user/device scoping, openness, and intended usage.\n- Emphasized that all device access requires explicit user authorization and only applies to the user's own account and paired devices.\n- No changes to commands, options, or usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5aa3a0f99d30958fa1d41bfc6e38f1f3015b5ebcc72fc75ed6cef22586861ef1"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40247,
+  "uuid": "skill-clawhub-brunch-spots",
+  "skillKey": "clawhub-brunch-spots",
+  "name": "Nearby Brunch Spots",
+  "summary": "Find nearby brunch spots. Invoke when user asks for brunch near me.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brunch_spots",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawkk",
+      "features": [
+        "Find nearby brunch spots",
+        "Invoke when user asks for brunch near me."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brunch-spots@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brunch-spots",
+      "url": "https://clawhub.ai/skills/brunch-spots"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brunch-spots",
+    "url": "https://clawhub.ai/skills/brunch-spots",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brunch-spots-2d7010202976655d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brunch-spots@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brunch-spots-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d473f08d32e60645e091be54e6e77e42f1156cfb97b052f8a7c16e0d75554e6",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:47:18.691Z"
+}

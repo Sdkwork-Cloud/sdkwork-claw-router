@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46981,
+  "uuid": "skill-clawhub-weather-alert-skill",
+  "skillKey": "clawhub-weather-alert-skill",
+  "name": "Weather Alert Skill",
+  "summary": "Sends summarized weather alerts for a configured region. Supports severity filtering and returns structured alert counts.",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_alert_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chi Li",
+      "features": [
+        "Sends summarized weather alerts for a configured region",
+        "Supports severity filtering and returns structured alert counts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-alert-skill@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10106088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-alert-skill",
+      "url": "https://clawhub.ai/skills/weather-alert-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-alert-skill",
+    "url": "https://clawhub.ai/skills/weather-alert-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-alert-skill-ea9a744f4260945c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-alert-skill@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-alert-skill-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26d80527d8a97f2207dbc4352eda31d1c5de88d8cc27320341d338384a433139",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T16:32:58.229Z"
+}

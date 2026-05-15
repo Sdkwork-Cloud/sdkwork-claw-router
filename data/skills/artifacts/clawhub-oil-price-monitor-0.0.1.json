@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oil-price-monitor@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oil_price_monitor",
+  "skill": {
+    "id": 68223,
+    "skillKey": "clawhub-oil-price-monitor",
+    "name": "Oil Price Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oil-price-monitor",
+    "url": "https://clawhub.ai/skills/oil-price-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oil-price-monitor-439dff6c50fc78f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "监测国内成品油价格调整窗口，提供调价提醒及当前油价查询，助用户合理安排加油时间和预算。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tengjunqing",
+      "userId": "publishers:tengjunqing",
+      "displayName": "Jeffrey Teng",
+      "image": "https://avatars.githubusercontent.com/u/22231692?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1774251874815,
+      "changelog": "oil-price-monitor 0.0.1 初始版本发布\n\n- 实现国内成品油价格自动/手动监控，支持调价前提醒功能\n- 提供定时任务建议，每 2 天自动检测，调价窗口前自动提醒\n- 集成Tavily搜索，获取油价及调价时间最新数据\n- 支持自然语句查询油价与调价信息\n- 内含 2026 年完整调价窗口时间表\n- 提供标准化消息模板和使用说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d28fcded9654c07c8905744af4fff8247a847b9c915ecd0039751e90babf70a"
+}

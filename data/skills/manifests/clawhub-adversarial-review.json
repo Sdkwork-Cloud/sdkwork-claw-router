@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33807,
+  "uuid": "skill-clawhub-adversarial-review",
+  "skillKey": "clawhub-adversarial-review",
+  "name": "Adversarial Review",
+  "summary": "Run a structured adversarial multi-agent review loop on any significant document. Spawns parallel Opus reviewers with different critical lenses, collects str...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adversarial_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Scott Jensen",
+      "features": [
+        "Run a structured adversarial multi-agent review loop on any significant document",
+        "Spawns parallel Opus reviewers with different critical lenses, collects str..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adversarial-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39978007?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adversarial-review",
+      "url": "https://clawhub.ai/skills/adversarial-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adversarial-review",
+    "url": "https://clawhub.ai/skills/adversarial-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adversarial-review-86c43a9a02fd9789.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adversarial-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-adversarial-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:227bbed086a47a53e19211b0faa0ea008a8a916ecccaf80d3f33a6544801759d",
+      "artifactSizeBytes": 2409
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T18:06:49.420Z"
+}

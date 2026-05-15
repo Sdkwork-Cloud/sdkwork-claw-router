@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-lcm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_lcm",
+  "skill": {
+    "id": 45298,
+    "skillKey": "clawhub-memory-lcm",
+    "name": "Memory Lcm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-lcm",
+    "url": "https://clawhub.ai/skills/memory-lcm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-lcm-46949dc05c2ed089.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stores and manages complete conversation history with searchable SQLite storage, chunked and daily summaries, and auto-syncs key decisions to MEMORY.md."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "louch84",
+      "userId": "s175b3977s1r0vtg1vdvm7s8z983pkng",
+      "displayName": "luke",
+      "image": "https://avatars.githubusercontent.com/u/260316058?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775792977776,
+      "changelog": "- Initial release of memory-lcm, a lossless context manager for OpenClaw agents\n- Stores every conversation message in a local SQLite database with zero truncation\n- Provides CLI commands for searching, recalling, compacting, summarizing, and syncing conversation history\n- Automatically syncs key decisions to MEMORY.md for easy reference\n- Supports full-text search and daily/chunk summaries while maintaining session isolation\n- No native dependencies; uses sql.js (WebAssembly), making it cross-platform",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:939a56881847aa7f2d1d0c118249ea2d98e88d5b8905fa06054740a2724881a1"
+}

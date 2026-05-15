@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22891,
+  "uuid": "skill-clawhub-geo-human-editor",
+  "skillKey": "clawhub-geo-human-editor",
+  "name": "Human Voice Content Editor",
+  "summary": "Audit and rewrite content to remove AI-generated feel by stripping markdown artifacts, eliminating AI vocabulary patterns, flagging hallucination risks, and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_human_editor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GEOLY AI",
+      "features": [
+        "Audit and rewrite content to remove AI-generated feel by stripping markdown artifacts, eliminat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/geo-human-editor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70360114?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "geo-human-editor",
+      "url": "https://clawhub.ai/skills/geo-human-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-human-editor",
+    "url": "https://clawhub.ai/skills/geo-human-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-human-editor-a80ba9bdee09d2db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/geo-human-editor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-geo-human-editor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61145e30c832a655ca1cb5997f1b25ea24a90c40a49db87e8023ab388e9da362",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T12:14:34.288Z"
+}

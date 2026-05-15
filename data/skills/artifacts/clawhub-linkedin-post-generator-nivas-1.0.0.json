@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-post-generator-nivas@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_post_generator_nivas",
+  "skill": {
+    "id": 32606,
+    "skillKey": "clawhub-linkedin-post-generator-nivas",
+    "name": "LinkedIn Post Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-post-generator-nivas",
+    "url": "https://clawhub.ai/skills/linkedin-post-generator-nivas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-post-generator-nivas-6584017cf1fbdee0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate high-quality LinkedIn posts locally from a short prompt, topic, or outline. Use when the user asks to draft, rewrite, or improve a LinkedIn post, he..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ksrinivas2304",
+      "userId": "s177dcyfsykkj4yt86e87eq7wn84a9ef",
+      "displayName": "Ksrinivas2304",
+      "image": "https://avatars.githubusercontent.com/u/144244218?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776332545854,
+      "changelog": "Initial release of a LinkedIn post generation skill with tone, length, hook, CTA, and Specific defaults.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3fbbc965d4ab02732eb0d9e00ae7607ce4904c1c3070abe5484b7d771292eca7"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/car-wash@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.car_wash",
+  "skill": {
+    "id": 69666,
+    "skillKey": "clawhub-car-wash",
+    "name": "Car Wash"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "car-wash",
+    "url": "https://clawhub.ai/skills/car-wash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/car-wash-43a7cf2ab76fa7b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供周边洗车房查找、打蜡镀晶、内饰精洗及优惠套餐指引。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773851490896,
+      "changelog": "Initial release of the Car Wash skill.\n\n- 支持根据地理距离、社交热度和消费档次筛选周边洗车房。\n- 提供打蜡镀晶、内饰精洗、优惠套餐等服务指引。\n- 返回实时排队、预约、导航、停车等信息及社区真实点评。\n- 示例请求和更新频率说明，节假日使用提示。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8dca545d0fd6cdc1953b6375bb66320fd6cbddf9b08d651ff39d7f7db495c941"
+}

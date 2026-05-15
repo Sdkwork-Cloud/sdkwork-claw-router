@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swap-tokens@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swap_tokens",
+  "skill": {
+    "id": 26428,
+    "skillKey": "clawhub-swap-tokens",
+    "name": "Swap Tokens"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swap-tokens",
+    "url": "https://clawhub.ai/skills/swap-tokens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swap-tokens-67a35c893c985649.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Swap or trade tokens via decentralized exchanges on any supported chain. Use when you or the user want to trade, swap, exchange, buy, sell, or convert betwee..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rachidjarray-hk-qa-fdt",
+      "userId": "publishers:rachidjarray-hk-qa-fdt",
+      "displayName": "Rachid Jarray",
+      "image": "https://avatars.githubusercontent.com/u/111736103?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773036338685,
+      "changelog": "- Initial release of the swap-tokens skill.\n- Enables swapping or trading tokens via decentralized exchanges on supported chains.\n- Supports actions like \"buy\", \"sell\", \"swap\", and \"convert\" between tokens (e.g., USDC, ETH, SOL).\n- Users can specify swap parameters, slippage, and use token symbols or contract addresses.\n- Includes wallet authentication and balance checks, with clear error handling guidance.\n- Provides example command usage and flow for secure token exchanges.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6872820480cd70c0105ab93df3b3255fb2a4f477e2241acdd73e81490905b16d"
+}

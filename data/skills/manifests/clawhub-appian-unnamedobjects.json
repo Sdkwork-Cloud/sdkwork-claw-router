@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39840,
+  "uuid": "skill-clawhub-appian-unnamedobjects",
+  "skillKey": "clawhub-appian-unnamedobjects",
+  "name": "Appian Unnamedobjects",
+  "summary": "Find Appian application objects that are missing a description. Exports the application, scans all object XML files, and reports name and UUID for each objec...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appian_unnamedobjects",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "solarspiker",
+      "features": [
+        "Find Appian application objects that are missing a description",
+        "Exports the application, scans all object XML files, and reports name and UUID for each objec..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/appian-unnamedobjects@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235690575?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "appian-unnamedobjects",
+      "url": "https://clawhub.ai/skills/appian-unnamedobjects"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appian-unnamedobjects",
+    "url": "https://clawhub.ai/skills/appian-unnamedobjects",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appian-unnamedobjects-a5e1d7eaee27c7aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/appian-unnamedobjects@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-appian-unnamedobjects-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4049d8b87a1eb135abb61036c7ca74558f7753c92c4ba7e6a2c7c10e6872dfd8",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T12:30:24.408Z"
+}

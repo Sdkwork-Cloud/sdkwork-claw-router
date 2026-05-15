@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16299,
+  "uuid": "skill-clawhub-clawmarket",
+  "skillKey": "clawhub-clawmarket",
+  "name": "Clawmarket",
+  "summary": "Browse, install, buy, sell, publish, update, and review AI agent skills on ClawMarket, and manage your marketplace profile and wallet.",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmarket",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sharbel",
+      "features": [
+        "Browse, install, buy, sell, publish, update, and review AI agent skills on ClawMarket, and mana."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawmarket@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79539257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawmarket",
+      "url": "https://clawhub.ai/skills/clawmarket"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmarket",
+    "url": "https://clawhub.ai/skills/clawmarket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmarket-105bd0b52dbc207c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawmarket@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawmarket-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:578a401490cd6530af22167bbc960e43c0351fe95234a88b0a3d60d6e4922f65",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T19:39:21.154Z"
+}

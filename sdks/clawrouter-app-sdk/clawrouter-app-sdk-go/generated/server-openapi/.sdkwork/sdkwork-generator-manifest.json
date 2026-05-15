@@ -1,0 +1,2035 @@
+{
+  "schemaVersion": 1,
+  "generator": "@sdkwork/sdk-generator",
+  "sdk": {
+    "name": "clawrouter-app-sdk",
+    "version": "0.1.0",
+    "language": "go",
+    "sdkType": "app",
+    "packageName": "github.com/sdkwork/clawrouter-app-sdk"
+  },
+  "generatedFiles": [
+    {
+      "path": "api/ai.go",
+      "sha256": "9759de206d20930191acc2a954fb3d53afe0d63bdde8e6d15155803306f6b3a5"
+    },
+    {
+      "path": "api/auth.go",
+      "sha256": "f9b5c711bc9d584cd45b61b218e7806344311bf15562ae774e1379f1a6c4c6d6"
+    },
+    {
+      "path": "api/base.go",
+      "sha256": "1f5f1447891bf21355c2314998d97a3176978a9f410ad40e9f1e415e7b0852f5"
+    },
+    {
+      "path": "api/billing.go",
+      "sha256": "561d11cbadc9ba63035bb7bd952257d95fd956a718c179af966232e0320b1f74"
+    },
+    {
+      "path": "api/communication.go",
+      "sha256": "69441ccb1986dcdd28b0ee651cc5d7a34ee0f8e5a2cf4b791143e284ef6d4cd9"
+    },
+    {
+      "path": "api/content.go",
+      "sha256": "2760634a9cc405ba7fc09cb2488e37fd2d3df99702c5f078b2d9285b30dac13b"
+    },
+    {
+      "path": "api/doc.go",
+      "sha256": "8cc9e307974419ace8688c54209eb6b537affa6cce3b0b9e6dda42fa14496928"
+    },
+    {
+      "path": "api/ecosystem.go",
+      "sha256": "1e6710061b29943e631b0ec70e20d466c4323c16d97e63dfbaf5a0b06ef758cb"
+    },
+    {
+      "path": "api/iam.go",
+      "sha256": "22e081400ab99413580877c644166803b9038c552f5cf31d26dd17bcde9eab82"
+    },
+    {
+      "path": "api/paths.go",
+      "sha256": "28a40834c366f1d794724493eef66c4fd0516b565a4274f1862438244d137b0b"
+    },
+    {
+      "path": "api/platform.go",
+      "sha256": "45b2440ad90f5760e75372ad4494ddf6453525f1345f00e4ef98730a4d7d948e"
+    },
+    {
+      "path": "bin/publish-core.mjs",
+      "sha256": "6f2419187ee61e34210de8949ec968f5ab9d8bd0c0543e7caba6883198c36185"
+    },
+    {
+      "path": "bin/publish.ps1",
+      "sha256": "b86912c73f0f0e62915246690fbb006213bcaf7e612729a59403d5893903e003"
+    },
+    {
+      "path": "bin/publish.sh",
+      "sha256": "bb05183d134a4057090fcc04e51d2e06d191d43a3e5e133f9451bd7552a961d7"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "fb941a0806986a54fc192f98a98f6d9c282b8d350b2b19a3e71dda404e92d545"
+    },
+    {
+      "path": "doc.go",
+      "sha256": "143acb388fc3eae643792b0ac76d0f9fff8bdd84d0f2602e4d2326abe30b0b55"
+    },
+    {
+      "path": "go.mod",
+      "sha256": "d0f6f60fcba015407b1c1e22a2e83c075a31c9375a2a154b2ffe169c9d499e9d"
+    },
+    {
+      "path": "http/client.go",
+      "sha256": "82df91baa16aeec526dacd93637ae19b0361e2a19037f07a08c8fe4c6e9f70bd"
+    },
+    {
+      "path": "http/doc.go",
+      "sha256": "7e20faa13e2ab5c570db5034f49bba4ea67bda9d89d74a033c267dcc055ac14e"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "7840cc7d2b36ff364ac16c2fc5ec15b861bfe96854eecf81fb59b00edb8b1447"
+    },
+    {
+      "path": "README.md",
+      "sha256": "39daa33ecfaa0dcd2b816ddd6d68bc3611609a1f563dbce03e1051257c3d7ad7"
+    },
+    {
+      "path": "sdk.go",
+      "sha256": "abdc304faeeb24cb28ed5ea7147645d181573b3fbf769e4ad090c64f21292b3e"
+    },
+    {
+      "path": "sdkwork-sdk.json",
+      "sha256": "a15ccdcc205fa2d9e21e67f840d2047101c95c9b3eed7c2031fba2551eb4465d"
+    },
+    {
+      "path": "types/account_consumption_item.go",
+      "sha256": "d9f7fb059197af4ae8108d169093635f3f62e6f9730268683fd4e9f207af9942"
+    },
+    {
+      "path": "types/account_invoice_settings.go",
+      "sha256": "f5612caf93d01eea53fe88de4bfa734ec121cf64c9ac9ba23c03951fa1f775de"
+    },
+    {
+      "path": "types/account_login_log.go",
+      "sha256": "58c0b701e3a06255f7b24cffd29cca363293867766f09ee5c9117bc82493fc1e"
+    },
+    {
+      "path": "types/account_points_exchange_rate_retrieve_result.go",
+      "sha256": "784ade287344e42b249284e926c363dffd94d412f6301d01f8c2184e151813f2"
+    },
+    {
+      "path": "types/account_points_exchanges_create_result.go",
+      "sha256": "793cd97fcb25cecf1a4920b5e7dfb829a81ef9e961dd57929b153dc9380f8aa7"
+    },
+    {
+      "path": "types/account_points_exchanges_retrieve_result.go",
+      "sha256": "e65523a1780de9d878fb8caccfdc6f576d8a6c5d4c05ed88ccfc4767791372ac"
+    },
+    {
+      "path": "types/account_points_exchanges_rules_list_result.go",
+      "sha256": "ad7a345d590a74bf3c19ca6427c8e8f888d31471ef4e65425d5181bf11daf684"
+    },
+    {
+      "path": "types/account_points_history_list_result.go",
+      "sha256": "38a4c933d70772eef0f6bf5b041add7251ad94f38b473298400ee3bfb5b1b84c"
+    },
+    {
+      "path": "types/account_points_recharges_create_result.go",
+      "sha256": "441cd32b0f6d84d444c02b84df265314c29afbaa0af0e7c4de9f677d107a4f58"
+    },
+    {
+      "path": "types/account_points_recharges_orders_cancel_result.go",
+      "sha256": "8214ec06361c8e1c2270aa1db3bb252ddb28a0f58afbb866678e2b421161045c"
+    },
+    {
+      "path": "types/account_points_recharges_orders_retrieve_result.go",
+      "sha256": "b242e60a57a98a7d2adcfd554fb78665dc07217cbe4c4632eef640f35b554fd4"
+    },
+    {
+      "path": "types/account_points_recharges_packages_list_result.go",
+      "sha256": "7f12f6fb12b2b4d7cff4c1ee1a42fedc2577d40874bca895a383fc480bec40e1"
+    },
+    {
+      "path": "types/account_points_recharges_records_list_result.go",
+      "sha256": "08d22653e8c83d71c8250a40701884c90ff3820cb464351f98910f6436931873"
+    },
+    {
+      "path": "types/account_points_retrieve_result.go",
+      "sha256": "7d08a4d654ef0d72bf7111811b81870036f55d3591e9c88309a47ba5aecbb80e"
+    },
+    {
+      "path": "types/account_points_transfers_create_result.go",
+      "sha256": "0e07bfe049b8c63563fb5e07d96d57e0872e97ea41427f5d72fb88f82b3931d3"
+    },
+    {
+      "path": "types/account_security_summary.go",
+      "sha256": "1da8ada3759f3e0ef97fc97fae512c5e2bf0879bbe40f51b9cca2432b6477451"
+    },
+    {
+      "path": "types/account_summary_response.go",
+      "sha256": "3e75e7f9334e9e9de305f0622e3408319c0fa2ada5553b42412ad89b875738fe"
+    },
+    {
+      "path": "types/account_summary_retrieve_result.go",
+      "sha256": "0fd3aeafdbb74c26fdf543ddf911020b295c03813822801a027306bdee98b8a4"
+    },
+    {
+      "path": "types/account_tokens_deductions_create_result.go",
+      "sha256": "8bbb59d2cc18a1e1dd2805efa186ed0a1aab73f37b5fafed8b22cec2f2021109"
+    },
+    {
+      "path": "types/account_tokens_retrieve_result.go",
+      "sha256": "9f17a19f3f1a822cde6cb7563b3fa1e5c289c64989871fd8ee01a3e66c09d3a5"
+    },
+    {
+      "path": "types/ai_billing_meter_record.go",
+      "sha256": "98c7a6b00bae4aa9c7a6a9b5cf94a8ba032d01737590358ff1468a1dccb52012"
+    },
+    {
+      "path": "types/ai_generation_asset_action_record.go",
+      "sha256": "5167f0406394af5e054c809c88c90abdc0c4938c80c37a089eff6da9028ecc1c"
+    },
+    {
+      "path": "types/ai_generation_asset_record.go",
+      "sha256": "b3776d594b1e85e47ed4e69dfdb4aa10c3db7415e0d26a7729ed4a6a0c3781be"
+    },
+    {
+      "path": "types/ai_generation_job_record.go",
+      "sha256": "12a34a4408d3feed3b300f7ff5f4c7c78db33d2704783c6c9191b8dcba6c8f07"
+    },
+    {
+      "path": "types/ai_generation_session_record.go",
+      "sha256": "b97238788ba952b36d7830fbf8afa795251ca9f32a82ff196b63430fd4ff4192"
+    },
+    {
+      "path": "types/ai_model_capability_record.go",
+      "sha256": "d83187937b23697a36fb55127e39558255e17caa99db0f0fc22fd903a4348877"
+    },
+    {
+      "path": "types/ai_model_catalog_source_record.go",
+      "sha256": "53f8a1bffaa4cd9f299f4d26f9e5968eed42b910e2560fd31807dd9373e760e9"
+    },
+    {
+      "path": "types/ai_model_catalog_sync_run_record.go",
+      "sha256": "ba32db549ed272e3d7c6e3a63fe23f33121761bfa1b30a6b03531bb1e3149a40"
+    },
+    {
+      "path": "types/ai_model_family_record.go",
+      "sha256": "d8d57bf3738aba6921b80f3cd1341396ee002adaa0d04c666b58808c6231a5a2"
+    },
+    {
+      "path": "types/ai_model_pricing_record.go",
+      "sha256": "0e39602e1ef7b68c17d20d417f6d1197945040f3e163b982f4a2a989c0132d75"
+    },
+    {
+      "path": "types/ai_model_rank_snapshot_record.go",
+      "sha256": "fccf76e1d1ce643a5f7d9b1ac5262ee3d73088cf3e07f6f658185336689cf9dc"
+    },
+    {
+      "path": "types/ai_model_record.go",
+      "sha256": "1628418c355fb6703cdde59c4bfdcf4f88cc6fa56f5fb290d2507016a441acbc"
+    },
+    {
+      "path": "types/ai_model_vendor_record.go",
+      "sha256": "f7fc08f9864bcd0672a447d302ad1bbc335b13d6265802b8f31362511dd0d34e"
+    },
+    {
+      "path": "types/ai_model_vendor_region_record.go",
+      "sha256": "4ae8dcac1bb69726b41c2b98892eca22425007bcc91b86b447638d0514048bc8"
+    },
+    {
+      "path": "types/ai_pricing_import_snapshot_record.go",
+      "sha256": "d40f83576b71997882cafdb05a63df7bbb609de0498699fcb453b512416c4bd5"
+    },
+    {
+      "path": "types/ai_pricing_plan_binding_record.go",
+      "sha256": "fa277b4d0503fc68f15d8a64ff349345f00559e9ad6b8ab2ce62b56290c46881"
+    },
+    {
+      "path": "types/ai_pricing_plan_record.go",
+      "sha256": "05400f979dc0cf274eace4234f1bc1793ab0fcad46781f166cfabb6596158be3"
+    },
+    {
+      "path": "types/ai_pricing_rule_record.go",
+      "sha256": "4f35b88c4c0b41b64f38f18d05b41f48a56f7179f6e582f70c94430146a4df00"
+    },
+    {
+      "path": "types/ai_pricing_tier_record.go",
+      "sha256": "724716f7918151a3a3361316014fff740adddb85b91f6ae1cb17b7485b326845"
+    },
+    {
+      "path": "types/ai_quota_policy_record.go",
+      "sha256": "6bf42ae5c756a5501ece76d2594a3208bf1a5270db38ed194dfe03f07e950380"
+    },
+    {
+      "path": "types/ai_rate_limit_bucket_record.go",
+      "sha256": "4846ca804b78df3fb20cf7e45874f279a8b27f5e3ee6f1d4b71177f97eb9650d"
+    },
+    {
+      "path": "types/ai_request_trace_record.go",
+      "sha256": "fcbc42aee90b7cf21c3636ac820dae58984f8f54a6f30536c0911f1d4d41a5a1"
+    },
+    {
+      "path": "types/ai_routing_decision_log_record.go",
+      "sha256": "93b61ec8ba13255ebab56903050a6c39aad1e7ed4be874485ddcc83b131fa738"
+    },
+    {
+      "path": "types/ai_routing_policy_record.go",
+      "sha256": "c6bd262d2443ed484fac61398407e6465b6ab59969b44adc36b4b5b183ed693d"
+    },
+    {
+      "path": "types/ai_routing_profile_record.go",
+      "sha256": "a17012f06b018e8fa549f3705cd748e933354ae070af0447c5fcfa7edb331a28"
+    },
+    {
+      "path": "types/ai_routing_rule_record.go",
+      "sha256": "cf6ecfca31a3a08f723068404570b1b7c5c94ecaa35a17eb438f2b9640ad6d25"
+    },
+    {
+      "path": "types/ai_usage_fact_record.go",
+      "sha256": "cb120e36599cfd0fbdddf5ce627784d46248889b0ebf0a15db16a3d0f486c3d9"
+    },
+    {
+      "path": "types/api_keys_create_result.go",
+      "sha256": "ca2b5573c784ba5a1583453322ba728bfa021807689ed481d81837d71942b5e7"
+    },
+    {
+      "path": "types/api_keys_list_result.go",
+      "sha256": "49a860d9f0a9d62da101011cbec6f82588a8ea4b999a531729188f175bd99721"
+    },
+    {
+      "path": "types/app_api_key_group.go",
+      "sha256": "239957ebc95493d58d05c1a6b24ef7770614b76fbc19d95ed679931371d46193"
+    },
+    {
+      "path": "types/app_api_key_item.go",
+      "sha256": "333554413d2b8358a8afc9eb9a2e0ca1981ec4ad0d2301b0275e12bd2d7fb789"
+    },
+    {
+      "path": "types/app_api_key_list_response.go",
+      "sha256": "02f458fa61f8821ce620800346b1063b97538e2a56ac8074f49f24a69647e09d"
+    },
+    {
+      "path": "types/app_catalog_item.go",
+      "sha256": "61e14549c87edd9a117b5f6a4cd3fdf2d96999d5560574bddefef14acf941dd1"
+    },
+    {
+      "path": "types/app_catalog_response.go",
+      "sha256": "c215de9ce129bb8601436898955c30beb3a999f853b585ec5adf5e7e052c3df2"
+    },
+    {
+      "path": "types/app_categories_response.go",
+      "sha256": "0f05f073fe6f8f5028c6875c95d9c448a00675372a29f53b865cdf855d972f22"
+    },
+    {
+      "path": "types/app_detail_response.go",
+      "sha256": "e470c003d2ea34bec65cdb85c0bdb2fe57e7ec7281236555e8648d6d8f75e2a6"
+    },
+    {
+      "path": "types/app_installed_skill_item.go",
+      "sha256": "308b3bbc4b4033ae4e0abfbc9daf7c0ff17b813d5207a0b5224a8feeb827df13"
+    },
+    {
+      "path": "types/app_installed_skill_response.go",
+      "sha256": "25211273d9e946dbe0332e18aab22b911b94fd833af7867fc23d2a1e15574a80"
+    },
+    {
+      "path": "types/app_installed_skills_response.go",
+      "sha256": "4d2f9754c1ed2aaeb9edf6f21a57e19623dfdb732933cf4c6d58f54ad741800b"
+    },
+    {
+      "path": "types/app_model_catalog_item.go",
+      "sha256": "ec107aff97a5721d880308058878ee179e07ab2babdefc743519e5a7075c555b"
+    },
+    {
+      "path": "types/app_model_catalog_price_availability.go",
+      "sha256": "345be8a7e51f73a879d16d5a8649f50d0fad05b98f4f93d9c5cab449fce94084"
+    },
+    {
+      "path": "types/app_model_catalog_reference_price.go",
+      "sha256": "145401cd9ad69099e480e201b94bfa61bb0e5f116baf9f29a1f2cb4ebe6d4453"
+    },
+    {
+      "path": "types/app_model_catalog_response.go",
+      "sha256": "826f50eaf723c3d66097751ca243b275609e280aa6610cd4342c24ab4a3bb7a7"
+    },
+    {
+      "path": "types/app_release_item.go",
+      "sha256": "af5afb66ea7ac201d6d24f98ffdba172e23f04129915efac73f0f6a00bdccca5"
+    },
+    {
+      "path": "types/app_skill_config_request.go",
+      "sha256": "c21476de7414ce8c261d79ca05b8ee3aca8f1d6ea75806f0eed52599f3f3b5d8"
+    },
+    {
+      "path": "types/applications_create_result.go",
+      "sha256": "f881cec9bb72833403749ed1b96d1be3ee34a7b48de16f0e3af9b4ee081a10e2"
+    },
+    {
+      "path": "types/applications_videos_create_result.go",
+      "sha256": "ccb454644e6818801ecea33c44a62bdf87026f254e4ac9ed4d59404f732ecf38"
+    },
+    {
+      "path": "types/apps_store_categories_list_result.go",
+      "sha256": "ff73d1fdacd7cbcad891c5749f8293c236a1294defb7212f8463706babcf2657"
+    },
+    {
+      "path": "types/apps_store_list_result.go",
+      "sha256": "328433488227c5bb2c8209ca3ca3b8aeee8c1d2b72e26e7f383d6dcf887f9e3e"
+    },
+    {
+      "path": "types/apps_store_retrieve_result.go",
+      "sha256": "4d23e86f0ed9a3b5730ba38f01fb40d882a97aa4536228df6d1ac435b96926eb"
+    },
+    {
+      "path": "types/billing_recharge_history_item.go",
+      "sha256": "6a8c18291b24bdc0b852c77ac1e90f4fe5f8698d56ba53543c57e4f8c52bbc2d"
+    },
+    {
+      "path": "types/billing_recharge_history_response.go",
+      "sha256": "a402723be6ec022a8d80580469e45fafeb47cfad27624600e05b5997284c11e3"
+    },
+    {
+      "path": "types/billing_redeem_history_item.go",
+      "sha256": "fb1f06b97da3d7e3474a2ac0fceddfc48799141af43a87d2a5fcc85278642557"
+    },
+    {
+      "path": "types/billing_redeem_history_response.go",
+      "sha256": "8effab9809d101982bab11c36389706718dc0da3230237f2b9c28ec6a3c5564e"
+    },
+    {
+      "path": "types/checkout_status_response.go",
+      "sha256": "1bb47f2e28200b49913615deb0da0ff399ca2b61d276d89f51a5a4f2e8f32dea"
+    },
+    {
+      "path": "types/comments_create_result.go",
+      "sha256": "7dd96ee130c7b1b3c7f1b130854bb5d6b030fadacfa8033a5e71ebcaec9ed0c6"
+    },
+    {
+      "path": "types/comments_delete_result.go",
+      "sha256": "bccb22e1973cb9d695fd7dc597b234a33fd47a860f2a0c5327067c53c0ec34e7"
+    },
+    {
+      "path": "types/comments_likes_create_result.go",
+      "sha256": "0e15c9b2c7d6e98858f6c39071d819f7a0442ca65b6466d6eb06b4aed9184191"
+    },
+    {
+      "path": "types/comments_likes_current_delete_result.go",
+      "sha256": "82d4e930a08149311e4f75ff55a924b5f360205a33c3f8f28d9e3d9ea7e8c43e"
+    },
+    {
+      "path": "types/comments_list_result.go",
+      "sha256": "0dd291bc6504a162338f9432348f514053e78b2675bfad5ca92d5ff03b822e74"
+    },
+    {
+      "path": "types/comments_pins_create_result.go",
+      "sha256": "0bd379fe4e28ebea3198f088adf67dba5153ac8ae9d11d2f9e2a566bb7b6e5ac"
+    },
+    {
+      "path": "types/comments_pins_current_delete_result.go",
+      "sha256": "e8552685cb80e3785e0394637c3b9fd9dfff0078746c3aeb5c070108a0ef11da"
+    },
+    {
+      "path": "types/comments_replies_list_result.go",
+      "sha256": "22c14f1c5d8dc459c953ae96bdecd63b05fc475b2c8d576ac7da80c6eacec9ad"
+    },
+    {
+      "path": "types/comments_reply_create_result.go",
+      "sha256": "d0be2ad8175620c5aa9e23ed8ac1f17ad1ca12b92179b4ec558c441692b454d5"
+    },
+    {
+      "path": "types/comments_retrieve_result.go",
+      "sha256": "dfa495873c62dff15f40b10477f151896c91f3ef668df06ce636822d3a0009ca"
+    },
+    {
+      "path": "types/comments_statistics_list_result.go",
+      "sha256": "28095ba8ce6e170cdb694b0bc366c35ac9bbb78b74a30f8a4da6bb59602ca552"
+    },
+    {
+      "path": "types/commerce_billing_export_record.go",
+      "sha256": "2aba143df28d344e3235daef4082387fe2e9a57d005377f3132479324dbba513"
+    },
+    {
+      "path": "types/commerce_coupon_catalog_item.go",
+      "sha256": "d370d70f82f0e2968ba20c849ccf1200590a0522f112af04b315b54ac787051f"
+    },
+    {
+      "path": "types/commerce_coupon_catalog_response.go",
+      "sha256": "2af61c63a01f7b699d01cec917e4efb9f18d473b5e761aff198132ef8deb1737"
+    },
+    {
+      "path": "types/commerce_coupon_claim_request.go",
+      "sha256": "1729590ec8f5b3cb4ec88fef8df1d97d5ee90a64a1ff319496d548afabdf1e86"
+    },
+    {
+      "path": "types/commerce_coupon_usage_request.go",
+      "sha256": "a0230c61981a79014291507bfe9c27f3a1aca6328c72b108fd03b844023afe1e"
+    },
+    {
+      "path": "types/commerce_coupon_usage_rollback_request.go",
+      "sha256": "fccead52569bd4fe6a0dc6afefa4b66102d496a54447676e9f2446e1517cced9"
+    },
+    {
+      "path": "types/commerce_empty_command_request.go",
+      "sha256": "3c850c0aa910d99e881c4730a6893e06e47ef55beab84a851dd6447c259f469a"
+    },
+    {
+      "path": "types/commerce_exchange_rule_item.go",
+      "sha256": "969e8d7844666bff485277d2660aa7adb9efe7c07d37a5b6b27e008d44b1e4d3"
+    },
+    {
+      "path": "types/commerce_exchange_rules_response.go",
+      "sha256": "9a48379240b264b0e96cce2fddffbf78ee9173459ae6182eabd60e384211d3dc"
+    },
+    {
+      "path": "types/commerce_operation_response.go",
+      "sha256": "987ce0b2708ef07085146d2c4bef557f249eeaff00952cfe6cb431423892f67a"
+    },
+    {
+      "path": "types/commerce_points_balance_response.go",
+      "sha256": "6b9a96bb229305bc5b32eb8cac8a05b9a68ccadec90d8f5a0aaf8ba11d68939c"
+    },
+    {
+      "path": "types/commerce_points_exchange_rate_response.go",
+      "sha256": "f38a587d29ea54c134ad42e4b2f4f5b6fa869371bdd0fe5ee7a4fa7ae6a2b210"
+    },
+    {
+      "path": "types/commerce_points_history_item.go",
+      "sha256": "fb9ea71269edd7c2e68e5154f6bd40437b6a631006d7c14da4169fc3e72bccc8"
+    },
+    {
+      "path": "types/commerce_points_history_response.go",
+      "sha256": "bec16cbb9424f18892abbb444ae4f5eb330170b2bef4906e77b71f6b80a71e54"
+    },
+    {
+      "path": "types/commerce_preflight_request.go",
+      "sha256": "c6588b94c7b2a28097b38cc06bfc1546bdcc5aa388f74715c80b12a710618ae8"
+    },
+    {
+      "path": "types/commerce_recharge_order_cancel_request.go",
+      "sha256": "cc4bb126e3629c8871ab2eb83a8ed804f670ab3db0fdac2f249034c1162deaf6"
+    },
+    {
+      "path": "types/commerce_recharge_packages_response.go",
+      "sha256": "c0c67ecd3b6ccf504bb9209c37e4e724e42f3e90c027e3da1a589a769666910d"
+    },
+    {
+      "path": "types/commerce_recharge_records_response.go",
+      "sha256": "932de1e96d7321fb5f234c8c8728e2558cd47efec21a2f3d02e847a88cc53107"
+    },
+    {
+      "path": "types/commerce_token_balance_response.go",
+      "sha256": "b2354685e53acd49e5868550f5077fb79336bcbe4a84a2f564d7f93d68f2bc06"
+    },
+    {
+      "path": "types/commerce_usage_pricing_plan_record.go",
+      "sha256": "b4fc8aed8a7ac33471a57ab7b0b95ffc3dcdda4b2add32f25784a772be5843a4"
+    },
+    {
+      "path": "types/commerce_usage_settlement_record.go",
+      "sha256": "bbd949925713b5b889f8dccf1378b9bea74e90c3e3406d01534b11b5a0a7659a"
+    },
+    {
+      "path": "types/commerce_usage_statement_item_record.go",
+      "sha256": "100f339bcb8b36d9fba8edf3d89c0c3db562fb105b5042892045875320c4ff50"
+    },
+    {
+      "path": "types/commerce_usage_statement_record.go",
+      "sha256": "de63fc28110adbe23d4fd3239507984b41bc8fd10d89ccebbf1797f22250de05"
+    },
+    {
+      "path": "types/commerce_vip_benefit_item.go",
+      "sha256": "6020e69bf6b4206495d1489ead1e89da4770557d8f3cdf91c8641f4369287e13"
+    },
+    {
+      "path": "types/commerce_vip_benefits_response.go",
+      "sha256": "9e4f93f93586f66a66eed38614141a799c7708d935283028dc330397b646e0c1"
+    },
+    {
+      "path": "types/commerce_vip_daily_reward_status_response.go",
+      "sha256": "9e6237eba58ab2e9253c6d0a70a1155a3301660b3e872193ef49ab0d833cd2cb"
+    },
+    {
+      "path": "types/commerce_vip_info_response.go",
+      "sha256": "52863232b65649a948d5631292ebb47ec72f1d4dde872333086b7b86e9665460"
+    },
+    {
+      "path": "types/commerce_vip_level_item.go",
+      "sha256": "6be39782904d9b6b3dc1d2c2476b51c778de5505e1a20034ede000ff6a609050"
+    },
+    {
+      "path": "types/commerce_vip_levels_response.go",
+      "sha256": "9e08a2e0e433a112732a0e0721874727b70e671dc7adb21338434d4872132af6"
+    },
+    {
+      "path": "types/commerce_vip_pack_group_item.go",
+      "sha256": "ff4611b1515e7d47a08767b5568f0d629b3dd39d87185b5c0dbdb88c077205ef"
+    },
+    {
+      "path": "types/commerce_vip_pack_group_packs_response.go",
+      "sha256": "208b9fc447c50cec75ad5d2bc72af0bfbfc314cbb2e8740f83203aa11ea33f4c"
+    },
+    {
+      "path": "types/commerce_vip_pack_groups_response.go",
+      "sha256": "afed90fed4bc1728bc133c976f4b95f5291bb56e899f525bee4118890bba9ea7"
+    },
+    {
+      "path": "types/commerce_vip_pack_item.go",
+      "sha256": "ce5952c6880898994ecec9eae68b538bf620f71a5ea9de136ed485063abfb8ea"
+    },
+    {
+      "path": "types/commerce_vip_points_history_response.go",
+      "sha256": "cb7cc213e06cb41282ffd136ab2265f1fe995bff3abc6599b7641418baf2fadc"
+    },
+    {
+      "path": "types/commerce_vip_privilege_speed_up_request.go",
+      "sha256": "6a01348827106062079578c2d3e5d8022ab70716e605975f6a6a8cf713e61558"
+    },
+    {
+      "path": "types/commerce_vip_privilege_usage_item.go",
+      "sha256": "14da14fe7b4ac90d90560ee898c9c9c41af1148ca73b49b83c0182a84620de02"
+    },
+    {
+      "path": "types/commerce_vip_privilege_usage_response.go",
+      "sha256": "6e34d0878fa544e95aabf282e35b89ccd0b78dea056720027692a3dd5d890299"
+    },
+    {
+      "path": "types/commerce_vip_purchase_request.go",
+      "sha256": "fc969196b6b6d6b52a5b3c30e5fac0ab0a1e5cbf0a84cea6c26d7275255ea257"
+    },
+    {
+      "path": "types/commerce_wallet_account_item.go",
+      "sha256": "751fe1412b78d73bff11e8d20f461c3130b4e82c197b39c08f2db4c46eb224fc"
+    },
+    {
+      "path": "types/commerce_wallet_accounts_response.go",
+      "sha256": "d5ba29e1c563b3ac3a6df5dea8d83e7db6ea7f57541bc9866442c260e91256c0"
+    },
+    {
+      "path": "types/commerce_wallet_command_request.go",
+      "sha256": "5c84b8300e768961d279bb296cf4655bddf88d918ddafbcdf84731d9d5964425"
+    },
+    {
+      "path": "types/commerce_wallet_overview_response.go",
+      "sha256": "2dbc34280ecee16b570c0aa322504c7ce64cd8761fccd71500796978e01621f2"
+    },
+    {
+      "path": "types/commerce_wallet_transaction_item.go",
+      "sha256": "8f49b3ea66ad460ffc845223c3ce8e1f63416c972cdf83825aa43aff74a3ff23"
+    },
+    {
+      "path": "types/commerce_wallet_transactions_response.go",
+      "sha256": "e60b13fa3cc39a9903a08943e24a46a7ba63742386bc9decdfa6fe4a5dffb960"
+    },
+    {
+      "path": "types/common.go",
+      "sha256": "6e7e501a9c98d11b736cae0ee81c729da6273ebdb0fb0f2c15a0b13d6bce47c0"
+    },
+    {
+      "path": "types/content_announcement_record.go",
+      "sha256": "0d006525cd2734dae5431d4b6327721053298779a189e6c7fb1c3976ce2e37c0"
+    },
+    {
+      "path": "types/content_course_application_record.go",
+      "sha256": "81474d9a2a17d3a4eb78689c9db3e9c5af044160552e81fe5d568c5b8b602add"
+    },
+    {
+      "path": "types/content_course_lesson_record.go",
+      "sha256": "d9c4cb2e1a1a77dd67c53a4718190f5a325a6733f6f44f978d02bb57d5047012"
+    },
+    {
+      "path": "types/content_course_record.go",
+      "sha256": "c75a656347789699653b0de49a77a0aa6bc2d38795d19e66977941a1410ec191"
+    },
+    {
+      "path": "types/content_course_relation_record.go",
+      "sha256": "4285dd537ed7a73c4e446f58a5b76e9f5b0b42a260c7a6ae45652d1816946c82"
+    },
+    {
+      "path": "types/content_course_section_record.go",
+      "sha256": "945e077dd8a2969afc6bb9d54b6192eb75c2eb6eb50983ead7807e347ff87111"
+    },
+    {
+      "path": "types/content_doc_page_record.go",
+      "sha256": "35e6ee5467545f4bd758ca8030ccfdeffc5216faa41c8e9accc1e88a4df501db"
+    },
+    {
+      "path": "types/content_forum_comment_record.go",
+      "sha256": "487afc0bc9d925109fa1253a9fc075595b65aa26b95c2007a5ed0e7c7d730c6b"
+    },
+    {
+      "path": "types/content_forum_post_record.go",
+      "sha256": "29f661b99d50da3e9db661553974d095a3d090654823786749a4c2a9c1b1f442"
+    },
+    {
+      "path": "types/content_openapi_snapshot_record.go",
+      "sha256": "68e9903ae0ea7f44e89c458bcf1f3ce2881676357cd9a24c555a48f4fae9b078"
+    },
+    {
+      "path": "types/content_reaction_record.go",
+      "sha256": "5c8e8629fc530c2a0574564b0482cc76d2da9331b88714b1c15bead4072cbc1e"
+    },
+    {
+      "path": "types/content_sdk_release_record.go",
+      "sha256": "ea27466a929a1d02e89ee467daa185439556f1bda90a9e2e6e92fcb5ea28e532"
+    },
+    {
+      "path": "types/coupons_catalog_list_result.go",
+      "sha256": "94b474d0a7ea1f98cc33e2e935a266faf778289f9125742a6e0a0d6e356329a2"
+    },
+    {
+      "path": "types/coupons_catalog_retrieve_result.go",
+      "sha256": "7328f8c844d4b12ce8f1ab93cdc167cb51bf23bbaef5ce937eb69bfbe6fc0a20"
+    },
+    {
+      "path": "types/coupons_claims_create_result.go",
+      "sha256": "f93f187715852f774be6a19eb178c856e7bbe472b9ed3a296d28134ffed9fe9b"
+    },
+    {
+      "path": "types/coupons_redeem_create_result.go",
+      "sha256": "ff35816eee3603bde9bd3b2c590839d4dad97a68f2e692f71b0073019c80e034"
+    },
+    {
+      "path": "types/coupons_usage_create_result.go",
+      "sha256": "0b416ab6a4f361902095d1c727531aa6978748e9ddcae44bbf1ea849cae26f4b"
+    },
+    {
+      "path": "types/coupons_usage_reversals_create_result.go",
+      "sha256": "2cd38ae4fd1501e9c81504978bb6537570e61a7b27d054842f7cf1495f50717a"
+    },
+    {
+      "path": "types/course_application_create_request.go",
+      "sha256": "ccf2173d60b1ef478a746e77e2527bcac155d0e580508d79249cc63f6b11ef70"
+    },
+    {
+      "path": "types/course_application_create_response.go",
+      "sha256": "aa0468431ed48168a516756a58d3805e07a5a3f6001d062b56a09c88b3ba08a6"
+    },
+    {
+      "path": "types/course_application_video_upload_request.go",
+      "sha256": "676eb34b9f107fe4f7e9203f6bf606c35d28f054eb557b7229002fed47b7b627"
+    },
+    {
+      "path": "types/course_application_video_upload_response.go",
+      "sha256": "c8fc43c3065b8b2d25ac8f022d563fed31c76af436ebdf30873376d9316b87f6"
+    },
+    {
+      "path": "types/course_category_item.go",
+      "sha256": "9a66f37b998e7208829c3d7e5a2652d0914e0d8f513abbb12852fa56d0b2d37a"
+    },
+    {
+      "path": "types/course_category_list.go",
+      "sha256": "0abacafbddb2fecdb543412913b0e2dec743e13adb0e135e03dbc0acd1fc35ce"
+    },
+    {
+      "path": "types/course_detail.go",
+      "sha256": "1a4084111c2aabc02698276af76641942901d8b79b2f816c19b7c8e2186f3b79"
+    },
+    {
+      "path": "types/course_engagement.go",
+      "sha256": "87fbf04c3b4b97aba64abb8d31cdfd378091a9e05b955e791c49b78f53f2e0d1"
+    },
+    {
+      "path": "types/course_instructor.go",
+      "sha256": "e71196279bc103e71484d3860a68e341f8c45ee9447fc863dc76a42cd355805b"
+    },
+    {
+      "path": "types/course_item.go",
+      "sha256": "f08b438c00ead30b9ff4c2526e3b17e307ed2264c90aae5258c8cd886dc40341"
+    },
+    {
+      "path": "types/course_lesson_item.go",
+      "sha256": "1d63a188cb01219d78638956b6205b8e4409d50b26619a975178c4919f5987ee"
+    },
+    {
+      "path": "types/course_list_response.go",
+      "sha256": "7a555781a428b4bfc1c7798b014dd6b2b80d4b9bc44c327a454c3fe58dc0993d"
+    },
+    {
+      "path": "types/course_overview_source.go",
+      "sha256": "d4e4434a904d1a619f89890b7e9c6c4374c23256aeb3e21807fb99182a64dbe0"
+    },
+    {
+      "path": "types/course_overview_stats.go",
+      "sha256": "13b34f1dafecab95a90dbfc1e8a8ae3af5283fde8f914aac1f02c33f3594fe4e"
+    },
+    {
+      "path": "types/course_overview.go",
+      "sha256": "8a90afb23269122294a70f74b9e193ac4ba9ba94210d535d35552c38df97c9eb"
+    },
+    {
+      "path": "types/course_section_item.go",
+      "sha256": "ddec2d9bd2033e95c96a941e318ea52569c5f4ea862a800103792e7c00d13c3a"
+    },
+    {
+      "path": "types/courses_categories_list_result.go",
+      "sha256": "311b8772705dab5d35a5ef337a25ef3ea9456ea6f1a6f6b59f2474f5ecc1314d"
+    },
+    {
+      "path": "types/courses_list_result.go",
+      "sha256": "284ab38fa64b77b660f73c7218108189b63520f89c7785062db7b6d3c4408bf6"
+    },
+    {
+      "path": "types/courses_overview_retrieve_result.go",
+      "sha256": "0dc020229ff5a672f796270974c9083d7dae02ba94b063a1ae87de3478a17261"
+    },
+    {
+      "path": "types/courses_retrieve_result.go",
+      "sha256": "4041dfbf3eb2d085b7a517c8f92c48ffe37d7d797060a66da90504827e8bd011"
+    },
+    {
+      "path": "types/create_api_key_request.go",
+      "sha256": "ab205310c6e78814347bdb4ee676d2e7dd146f6f27b8b1ab45af4b4d618e0100"
+    },
+    {
+      "path": "types/create_api_key_response.go",
+      "sha256": "83da990aba5c8d168ae77a040929bbb891b2b32d6d9ef46c1e7908b8ff55fc68"
+    },
+    {
+      "path": "types/create_routing_channel_request.go",
+      "sha256": "b20b17661d1adee68429350605033ddde05886bbd83622d975bcb9591f9147c9"
+    },
+    {
+      "path": "types/dashboard_announcement.go",
+      "sha256": "bc15a493a8fc38e0f4a114ce5a63bee3e0d5a4ab098c69da46704eaf4fde8f42"
+    },
+    {
+      "path": "types/dashboard_chart_point.go",
+      "sha256": "6127b4a75be4dac9d2a5218c323f8d71bdf6e5061c659c45ef597db272154951"
+    },
+    {
+      "path": "types/dashboard_overview_response.go",
+      "sha256": "ade234cc0cb69d56ea82a0a62f794459a28ae5607b424e7285400d1fbf53dca3"
+    },
+    {
+      "path": "types/dashboard_overview_retrieve_result.go",
+      "sha256": "daf2fbdc8a4fb39b32dd8ffd142d63dacb03fefd20231b5b6c9cea7a68eea0d8"
+    },
+    {
+      "path": "types/dashboard_overview_summary.go",
+      "sha256": "2665a1aaaee3c3a0177fe07287eeacd63f25274964b3a0519414a163a9250178"
+    },
+    {
+      "path": "types/dashboard_sparkline_point.go",
+      "sha256": "adda9ff2a1e3989e2e82bc411b6be1250b566b84cb4d074e326d4477d61afd4d"
+    },
+    {
+      "path": "types/dashboard_top_model.go",
+      "sha256": "100e415d7d3b94b25665b11d0b0dac248578c8ba333240737b9d925c899a43e4"
+    },
+    {
+      "path": "types/doc.go",
+      "sha256": "91d0fe18f56bff5e8a26d58ace037dc20bdc1ab25fc474e08918631f895625a4"
+    },
+    {
+      "path": "types/feeds_category_retrieve_result.go",
+      "sha256": "b6a7ac3870bd97647bc639abd602ec12445c372134ea8f23579456f901c3d388"
+    },
+    {
+      "path": "types/feeds_collections_create_result.go",
+      "sha256": "5189a19248713d2159d90e22aa0eb863e8c1bab0279da1ea2d3f5ea0418de4b9"
+    },
+    {
+      "path": "types/feeds_collections_current_delete_result.go",
+      "sha256": "415668e0ef20c21887d5c143674fba6ccd4d33140b72d0175f8de6b0339f587d"
+    },
+    {
+      "path": "types/feeds_collections_current_retrieve_result.go",
+      "sha256": "ade187ea5ca50d37618ab2df9613240606275e88a140231336c6036c737fb361"
+    },
+    {
+      "path": "types/feeds_create_result.go",
+      "sha256": "f18cf7948215de547235d2c4bc79cac0d0986dbf0fb3014d6f769a12b2bd45e7"
+    },
+    {
+      "path": "types/feeds_delete_result.go",
+      "sha256": "0448eec5f387008ae54ed627d00ce86354c1eed55a2a8c0ce6171d266a17db99"
+    },
+    {
+      "path": "types/feeds_hot_list_result.go",
+      "sha256": "c385884ec5798deb7a355cc211a967bf26c75bcd295182fcc2541d1607f8a553"
+    },
+    {
+      "path": "types/feeds_likes_create_result.go",
+      "sha256": "2c19c2477a830ef7ae28ac3507ce98cd84663630b519f01f6d11a38ccb31d192"
+    },
+    {
+      "path": "types/feeds_likes_current_delete_result.go",
+      "sha256": "9433afdb319661e6b658e545e54da376a04be832096f1280ebc2e0dd4a5594a9"
+    },
+    {
+      "path": "types/feeds_list_result.go",
+      "sha256": "a7536442a9a4e57481aeaa65096d07a73b6261c95d073321b7e319d5c9723260"
+    },
+    {
+      "path": "types/feeds_most_liked_list_result.go",
+      "sha256": "36a154073420c2352bb73161c827161b8176a0783c461cc02ffd55fb6fc89904"
+    },
+    {
+      "path": "types/feeds_most_viewed_list_result.go",
+      "sha256": "b5b9a82a95ca44bd0529884459baeee1a493867231924224b44a25a9ed8237d4"
+    },
+    {
+      "path": "types/feeds_overview_retrieve_result.go",
+      "sha256": "17bdeefbb95cce2700b35bb311dc55c4761f30103f8c19c0acef33a76dbac6bb"
+    },
+    {
+      "path": "types/feeds_recommend_list_result.go",
+      "sha256": "f9298dfa91b52e891976105422a310dc0ed3615db248fc199fa6ecaad5324ead"
+    },
+    {
+      "path": "types/feeds_retrieve_result.go",
+      "sha256": "ebf27072a9dc60bd22b86d4b7496d4c2407f27f8a048c3dce9832a856535716c"
+    },
+    {
+      "path": "types/feeds_shares_create_result.go",
+      "sha256": "6a0c436cb2d503f1b8efd6fb003f5fd0c1b124c638c6ed7e2b0edb82527f1c44"
+    },
+    {
+      "path": "types/feeds_top_list_result.go",
+      "sha256": "16f98a92977c48095c6738e16d477f63e7a331d97860f81c4057bd37758f9451"
+    },
+    {
+      "path": "types/field_error.go",
+      "sha256": "ba2026ec8517b38ff8e1c71cb6b6ee494fb6cf9bef34605812f6b5b998242b59"
+    },
+    {
+      "path": "types/forum_author.go",
+      "sha256": "cfca7dfcb44ca2985bd224ff30bb1c89399c6262bf8ba51ed53817a7ee171713"
+    },
+    {
+      "path": "types/forum_boolean_response.go",
+      "sha256": "04783a2f0bfa0aaa6333b699a0a955684a67d2c4025f9b26518052bbfad58972"
+    },
+    {
+      "path": "types/forum_comment_detail.go",
+      "sha256": "ffdbde0e3b3c7a45fd2f3c63f338ba667423cb3f3a252a632abb8b067d96ca53"
+    },
+    {
+      "path": "types/forum_comment_item.go",
+      "sha256": "e99882f5debe4af6b6b33a986d859e17f4476b7774e78e05b6870ee008084ca9"
+    },
+    {
+      "path": "types/forum_comment_page.go",
+      "sha256": "561a56ac18ef01b60f698d7c4b1042130d71b20fbb39c5633abc581d196d01c6"
+    },
+    {
+      "path": "types/forum_comment_statistics.go",
+      "sha256": "bb3c2f34c750af82e51b8fde92f78ba12c147d519ec121b88c200c8e3f4c4ff3"
+    },
+    {
+      "path": "types/forum_community_link.go",
+      "sha256": "e8ef8b45c8c0c9ce4b50f870a758427a953d3d6c34a7124aaea436fd228100b7"
+    },
+    {
+      "path": "types/forum_create_comment_request.go",
+      "sha256": "7deb99915eb596276fe7b2c02ca42af8ac193c5e86c1013c99c9274ac561ed9f"
+    },
+    {
+      "path": "types/forum_create_feed_request.go",
+      "sha256": "ab4c7b8125ffe2b48b032ce7b7fa7462e8930103090f1cb6b709d46d050bed1e"
+    },
+    {
+      "path": "types/forum_feed_item_list.go",
+      "sha256": "3fb5c42f695171f3a4025a8d754bd64fc470fc8c64c4598b3858fa761f9efd0b"
+    },
+    {
+      "path": "types/forum_feed_item.go",
+      "sha256": "84b4949cd613a30ded49c0de48a96b9b44c2208c5124777d2c3e613731845181"
+    },
+    {
+      "path": "types/forum_overview_response.go",
+      "sha256": "5d44e19c11ff181aaffd052cdb3b4b0e5ac826aa8aa96211f8f3d7677e52cc9c"
+    },
+    {
+      "path": "types/forum_overview_source.go",
+      "sha256": "063225576e8db20615748562318d2ed14069b5a03d4e4bb4a7a309258d7a6b40"
+    },
+    {
+      "path": "types/forum_overview_stats.go",
+      "sha256": "d74b6a12670a509b6778ebf257e34d6668b9d87baeba58bc8fa1573cf663b9df"
+    },
+    {
+      "path": "types/forum_reply_comment_request.go",
+      "sha256": "f795eff3ce1b93df402384a7acf8fc79975aff26e7a1b245124ff8239bf2e562"
+    },
+    {
+      "path": "types/gateway_trace.go",
+      "sha256": "30bff2a6abddf7c9efb099744c3767153ed0a9d665442327f938330d852615e8"
+    },
+    {
+      "path": "types/gateway_traces_list_result.go",
+      "sha256": "65a4f8fb33e8d268586f0f247717235b8a47209321faa327d2ae350fe8532bef"
+    },
+    {
+      "path": "types/gateway_traces_response.go",
+      "sha256": "6bcc156ea204ffc69247bbfef95a7cfef3cebe7c162f34f9137e44275e8b08b8"
+    },
+    {
+      "path": "types/generation_history_item.go",
+      "sha256": "fa3d774ad746152a782ef99901732ebfc266b02150127bff2c7d87d1b5ec744f"
+    },
+    {
+      "path": "types/generation_history_media_item.go",
+      "sha256": "e66098dfaaf6fdba5fcb29ecb7e518b92ad2bd3c0eddf78a43bf1cc43a3e7a9c"
+    },
+    {
+      "path": "types/generation_history_response.go",
+      "sha256": "fca0a82a479f7bfd721a44aa50a843221e03db04932833f3eb316c05c3c6d957"
+    },
+    {
+      "path": "types/generations_list_result.go",
+      "sha256": "1e42f09f274c3a2efde5017a759526a63094f1d3731f4f68cf26bc25b1af0076"
+    },
+    {
+      "path": "types/iam_app_context.go",
+      "sha256": "2b12d63f82c0a09d210dbf86fbf7f289a1fdc6e79c3e131c7b50b616f3a7da80"
+    },
+    {
+      "path": "types/iam_audit_event_record.go",
+      "sha256": "072987e1e7697721ac4ae5d6bed2ca1b555c34a73da82b09e7a5e6c2705d2234"
+    },
+    {
+      "path": "types/iam_credential_record.go",
+      "sha256": "66052b43547ae8ed65f1e8222b97a180561f5020333b56a7ef0444605d4667fa"
+    },
+    {
+      "path": "types/iam_current_session_update_request.go",
+      "sha256": "744e27c74e054b027bfac12e2b628ea1bf2a4e7e4c4c8d8c4e6b65c3e06c5447"
+    },
+    {
+      "path": "types/iam_gateway_access_policy_record.go",
+      "sha256": "3a3df8ccf4a60f745956771fb534123b2500d0a63ac0f076ba4b0729a8433ae1"
+    },
+    {
+      "path": "types/iam_gateway_api_key_group_metric_snapshot_record.go",
+      "sha256": "7278af5e9bf3601fe597f47664ca9d61953a22e3127fd690cf3ebbe3f4779fd8"
+    },
+    {
+      "path": "types/iam_gateway_api_key_group_record.go",
+      "sha256": "66ee5390c9928761f6661a4512c1d47401906b921bb2a39376b5bf8ab5d307f1"
+    },
+    {
+      "path": "types/iam_gateway_api_key_record.go",
+      "sha256": "c8a4394168a5452d2b551b3175333aff3db3ae3e260bc310d7a8302eae708427"
+    },
+    {
+      "path": "types/iam_gateway_risk_rule_record.go",
+      "sha256": "a384b7c036cb858407941e44bb818897600a145a6771ad4c094d91a2d0f48e1a"
+    },
+    {
+      "path": "types/iam_login_qr_code_response.go",
+      "sha256": "8833e428ea0d7a40226eccff5a18936b4fb6534812971c3405a76212c08ade21"
+    },
+    {
+      "path": "types/iam_login_qr_code_status_response.go",
+      "sha256": "f5da41c1cd7a9bbd80d7fc452589e3fec76de27db175e3e4565dd5631836eaf1"
+    },
+    {
+      "path": "types/iam_oauth_authorization_url_response.go",
+      "sha256": "d0fb29b591eb459b270cd61d71082d617da011a4d72ffdd48b21ff4e810c7a94"
+    },
+    {
+      "path": "types/iam_oauth_session_create_request.go",
+      "sha256": "28e4faf1107a8d4429a29f1bce959a5c101d4daf8fca2670d71285baf0c3216c"
+    },
+    {
+      "path": "types/iam_organization_member_record.go",
+      "sha256": "2371928873468c849956dc18c9d02ef5374ae1e49d3e3d53ce590549d15b8e77"
+    },
+    {
+      "path": "types/iam_organization_record.go",
+      "sha256": "4c00a7cd9d2fec4524ba3906e7901cad4c52dd78cccad5ec8055ce748a687247"
+    },
+    {
+      "path": "types/iam_password_reset_create_request.go",
+      "sha256": "f447943c74c50a194375ce129c7cef581f33413d1702842c2cb6a0db18cb2d64"
+    },
+    {
+      "path": "types/iam_password_reset_request_create_request.go",
+      "sha256": "aa6901fb86d137f38c83e950b610103aaedfa0b4f045ea5032c87bcb99fa7212"
+    },
+    {
+      "path": "types/iam_password_reset_request_response.go",
+      "sha256": "1f2a3175368b5a8b272737ec8806bf2fccd004c6dc742352411b447d30a66119"
+    },
+    {
+      "path": "types/iam_registration_create_request.go",
+      "sha256": "320172ccf7368bede24f2001183e914eea8394f2a52394a183600797cdf12fc5"
+    },
+    {
+      "path": "types/iam_security_event_record.go",
+      "sha256": "c895d9d51ff40a3346399255030c8791430886f89ca10e8deadb54792f33d4f9"
+    },
+    {
+      "path": "types/iam_session_create_request.go",
+      "sha256": "064e670e3bb9fd6907bb73789e43b6683f5b6b30745b6ca26b722c9b3189aaed"
+    },
+    {
+      "path": "types/iam_session_record.go",
+      "sha256": "8415f6116d235ce1d89f46ecc6805179eeb1746731589d4d5da223d755e5d4f9"
+    },
+    {
+      "path": "types/iam_session_refresh_request.go",
+      "sha256": "ab3d8dd7a4c046cf49cfd47286907cef7b3272f9dc43414db11cd81610df21ed"
+    },
+    {
+      "path": "types/iam_session_response.go",
+      "sha256": "19a5ccc704776ba7d7e0a422d1e595eca4e088d47ea82ba8942f11825e8b0f4b"
+    },
+    {
+      "path": "types/iam_tenant_record.go",
+      "sha256": "02f030bc217f76d6045b284b63a57533ad17e0b5288ab6433c939c180d1f85cc"
+    },
+    {
+      "path": "types/iam_user_identity_record.go",
+      "sha256": "75eb7bb87ae207b06dd6553d4f97e98840bf28eccd0b00e5f208b45830be8bac"
+    },
+    {
+      "path": "types/iam_user_login_event_record.go",
+      "sha256": "6ef10e5bb14aec2f3c926a533aa81f901cee5b3620ba1ba0b49958a4e25b58fd"
+    },
+    {
+      "path": "types/iam_user_preference_record.go",
+      "sha256": "47a6d462b726f058aedf1db1189cb580c6ce1417ec7eb2a7fca0691dbd1b29b3"
+    },
+    {
+      "path": "types/iam_user_record.go",
+      "sha256": "ada1eaea3f0cad5b96b37a553bff7b4022cea082ae495f813bdf9feeafa62b7e"
+    },
+    {
+      "path": "types/iam_user_response.go",
+      "sha256": "a3c9cb8644596e22d93e58ff861205b35beb0fb14baa141fb689b043a41b1dc7"
+    },
+    {
+      "path": "types/iam_user_security_setting_record.go",
+      "sha256": "8e65f1dd58832229241ba24a3b6d216d1d85dd5590a3b0685ee64ffa7f7d0455"
+    },
+    {
+      "path": "types/iam_verification_code_create_request.go",
+      "sha256": "0552ce20e2fac2c1f0b8d99662a7c7ab7037fb61df2264aba4a2828ed6f4a8b2"
+    },
+    {
+      "path": "types/iam_verification_code_response.go",
+      "sha256": "0f43593715ba95c041d64e648a8da943764e4f6c2962377414e3fca3294626ce"
+    },
+    {
+      "path": "types/iam_verification_code_verify_request.go",
+      "sha256": "c25f21279a042fcd3b1d66516ce64e67a40504f46d3457679024230c7be150f0"
+    },
+    {
+      "path": "types/iam_verification_code_verify_response.go",
+      "sha256": "31b38d4bc99c6a3e462093637694e936eaa1d5b83888f70da9d89c19d074b279"
+    },
+    {
+      "path": "types/integration_channel_model_record.go",
+      "sha256": "52f3ec19c60f3bb5722e059f5a7a60c27c8fdcfe46367feb429d542c86a518ac"
+    },
+    {
+      "path": "types/integration_channel_record.go",
+      "sha256": "6187a2ee91bc123c38353ab1579a0140dc9ddbede1eb655a65aade9f12f8dc38"
+    },
+    {
+      "path": "types/integration_provider_account_record.go",
+      "sha256": "356a02e8d2bc7301677350e8a14378f3d6a749dc93fb189a3db9a81b3e37338f"
+    },
+    {
+      "path": "types/integration_provider_health_snapshot_record.go",
+      "sha256": "17579a35c5e3f9e772d9c351a7220a7d5e30666ef5379e8851751ecc8d3efc22"
+    },
+    {
+      "path": "types/integration_provider_record.go",
+      "sha256": "878268b07c06438488a304f60d078949f00c4c151000419c01e8e1e36b0441ff"
+    },
+    {
+      "path": "types/integration_proxy_record.go",
+      "sha256": "64b62805026439e1318ecd513e90e824889e94c8ac375c0ddec29da30f4b1dd3"
+    },
+    {
+      "path": "types/integration_webhook_endpoint_record.go",
+      "sha256": "5e503b02f24fb4edf3e599a8fca5cf621f4d0254567158efcfb914c969f8915e"
+    },
+    {
+      "path": "types/json_null.go",
+      "sha256": "449de52866d73ffdd6ddc62508ac5c3255b8fd068dfa5304fda17dbf67e58520"
+    },
+    {
+      "path": "types/json_object.go",
+      "sha256": "6db1839f16491388efc067e47dc4c7d22c22dbddc4943047cab1a4b270115a3a"
+    },
+    {
+      "path": "types/json_value.go",
+      "sha256": "dd74bac91085f57b1068e5ca1b1e8f338a0bad2990bec09aae2ab2135f5827a6"
+    },
+    {
+      "path": "types/login_qr_codes_create_result.go",
+      "sha256": "e1a1de8dcb393bd62f87bf873399b27020a12bf0e1b56228ff14442d4f4cbdbe"
+    },
+    {
+      "path": "types/login_qr_codes_retrieve_result.go",
+      "sha256": "5c9111d8ccc18724a5f58ab7ae4c7861bf67604880adf954b9bf44b29f19f323"
+    },
+    {
+      "path": "types/message.go",
+      "sha256": "7149195414732ec30c07ef5926b46c6a95e315df6a76fdf736b6c1e6e4d904e2"
+    },
+    {
+      "path": "types/messages_response.go",
+      "sha256": "f2eda536a4f2b90eed53c7285bfddbc3539fca60ead76368ea8047ace51d26fb"
+    },
+    {
+      "path": "types/model_ranking_history_entry.go",
+      "sha256": "2649abf7a838120d0ef59eb9b9c86e43a80dafe53ae344069862fbf5ea5b1554"
+    },
+    {
+      "path": "types/model_ranking_history_point.go",
+      "sha256": "7dcf406adaadac92c04701e3357b6896cbad3a9935387a31ed7299a6289198b6"
+    },
+    {
+      "path": "types/model_ranking_item.go",
+      "sha256": "1789cf25ae6ca112c7875c63621b896cece02652b2d048100ff5d4b651f6d699"
+    },
+    {
+      "path": "types/model_rankings_list_result.go",
+      "sha256": "1347f4beeedfca9e43c57143238097bbe767a1d04129e191bd305b7b76b55f4e"
+    },
+    {
+      "path": "types/model_rankings_snapshot.go",
+      "sha256": "d3a06e9f9a6eddb35db40952d870feeb50d4a07e797075612a47465fc8f52f0c"
+    },
+    {
+      "path": "types/model_rankings_source.go",
+      "sha256": "e65083337bf618a39eda5e2e8dc1d4d5086eb85051ebf685487b80edc0334422"
+    },
+    {
+      "path": "types/model_vendors_list_result.go",
+      "sha256": "fb33ecb3d4d402a9c1341070bd1e0f51d65f6d033f757d4468c42840a2eefd22"
+    },
+    {
+      "path": "types/models_list_result.go",
+      "sha256": "af3c9ec271bf4351c09a43efa82def188ba608757dba76611235383c35655ed0"
+    },
+    {
+      "path": "types/no_data.go",
+      "sha256": "617e00ef996c0847dc403a38ae9b906c7c30b2b2627c47184486cd6598251d36"
+    },
+    {
+      "path": "types/notifications_list_result.go",
+      "sha256": "c11be74c58c30a29dda8e4c95c4c738bec82b2b431dde7f00b0aaa702d4d8f71"
+    },
+    {
+      "path": "types/oauth_authorization_urls_retrieve_result.go",
+      "sha256": "d2057061a58aa0b328f3603263352413614ab395c9438668f9953fb334fb7112"
+    },
+    {
+      "path": "types/oauth_sessions_create_result.go",
+      "sha256": "ef55324cc7b1184cbc9b10b12789f70b76fefcd6ef2226593824f88c7f153198"
+    },
+    {
+      "path": "types/ops_alert_event_record.go",
+      "sha256": "b8892d57eef6e52830c4a281d0167f53289462ff3dcf4e5e8dcd985e3879295c"
+    },
+    {
+      "path": "types/ops_audit_log_record.go",
+      "sha256": "5dc2c25cf16c58c077a36e843c6037524f242a3ae76bcd6bcd5c490795fb7357"
+    },
+    {
+      "path": "types/ops_config_snapshot_record.go",
+      "sha256": "d94b7854eaedca8949dc3b22d57f6215ab9ef47bd0e2f244421ff1a3fd8d00c8"
+    },
+    {
+      "path": "types/ops_coupon_issue_batch_record.go",
+      "sha256": "7a9307fda18b9277d7afc0876e230d8b388457be76ff9ba4ae52d59dbd1aeb18"
+    },
+    {
+      "path": "types/ops_gateway_heartbeat_record.go",
+      "sha256": "d9d87f8ee28a5053885c9b8375fa7ca27566b7eb3c1560dfbf8154d6edf8b28f"
+    },
+    {
+      "path": "types/ops_gateway_instance_record.go",
+      "sha256": "d7fd1b250f6b62eee8098583629983438464e48bda065d17e7183f90183a533a"
+    },
+    {
+      "path": "types/ops_inbox_event_record.go",
+      "sha256": "6626b3e01dda550149c80766e40f0806cc83f246c1964b8cf37be1b0f0d3bbd2"
+    },
+    {
+      "path": "types/ops_job_execution_record.go",
+      "sha256": "c1b210230ee470f12dc78466ef7166a5768877dfb64addfcea01046434206609"
+    },
+    {
+      "path": "types/ops_metric_snapshot_record.go",
+      "sha256": "e56b01b2ed0b14c7f22c1ff145caa54d0bf20f36ebee84d752191e08677bb8b1"
+    },
+    {
+      "path": "types/ops_notification_delivery_record.go",
+      "sha256": "73923189ed6cb28061b053f0ac8d2e5b801a291cfd9f21cf9b3a5c4786ba0681"
+    },
+    {
+      "path": "types/ops_notification_message_record.go",
+      "sha256": "9cc5ba93c48465f8fde26184030cd799a4014ae2ea99ba99eb54ae676fed8feb"
+    },
+    {
+      "path": "types/ops_outbox_event_record.go",
+      "sha256": "4a959aa75fa642001fa91ffd080088ebd62dd93b3cf9acbc324838251331a82e"
+    },
+    {
+      "path": "types/ops_referral_stat_snapshot_record.go",
+      "sha256": "c67c75abfe6e1b884da81d6f4ba9514363235091b65b4fbcbf1187157abd111a"
+    },
+    {
+      "path": "types/password_reset_requests_create_result.go",
+      "sha256": "0404634d345c06ab542bb230e489296874976d35d9cb1aff2c7a0bedb232942f"
+    },
+    {
+      "path": "types/password_resets_create_result.go",
+      "sha256": "f0a29a6a6e85a6df2b70f817c7eb01c49171c2eda30377bcde0aeb2de0596392"
+    },
+    {
+      "path": "types/payments_checkout_retrieve_result.go",
+      "sha256": "18e79ca6d4a55aea533603635f8c2abd9f1e69a49d68a3d8412d3ee33c3e7196"
+    },
+    {
+      "path": "types/payments_records_list_result.go",
+      "sha256": "5f94ce552534855f4fc6477dcb0b965cd738e41e698f4d8cb5aebc8441edfa9f"
+    },
+    {
+      "path": "types/payments_records_retrieve_result.go",
+      "sha256": "a7f4482861ba6d66f8fea266ae25616d090c8a23923da07d27a47c72c64b2104"
+    },
+    {
+      "path": "types/plus_account_exchange_config_record.go",
+      "sha256": "59687674f4998092f524fb874d476282b4fd9132447e4c5c03cdaff788995ea8"
+    },
+    {
+      "path": "types/plus_account_history_record.go",
+      "sha256": "1331e1dfd5457437d4f8f8da5367983c63c82eae4959f60d8a1a3434e4c0ff60"
+    },
+    {
+      "path": "types/plus_account_record.go",
+      "sha256": "f3a4f49a8031c44397449f5f2cc4a3116c886971ae2b2b80f64b37f62963405e"
+    },
+    {
+      "path": "types/plus_agent_skill_package_record.go",
+      "sha256": "bb5d2a4e7e4955ae569c432c03b1f5681b6b271572158b0787d846b15142e760"
+    },
+    {
+      "path": "types/plus_agent_skill_record.go",
+      "sha256": "50b7fa3e508b6e9562515258e00c8e90edab62886de2af7d3e9e496dbe3474dc"
+    },
+    {
+      "path": "types/plus_api_key_record.go",
+      "sha256": "416c9e627f15f7ad060f56a6b6729c9056b04467f7075b641c0029414bb9a3f7"
+    },
+    {
+      "path": "types/plus_api_result.go",
+      "sha256": "dc1ea6c143392263a32eb13cefa9bb1b8df77ef805b8b74b720aa06da42302d6"
+    },
+    {
+      "path": "types/plus_app_record.go",
+      "sha256": "0ffd53665ed4da39bc447e79f12082ce51c07cb241cc0414414e23811bc7add1"
+    },
+    {
+      "path": "types/plus_card_record.go",
+      "sha256": "7f1f98939f0da0c01d152e668af22dc4438fa0cc6b6e13ea27f545e818f45f3a"
+    },
+    {
+      "path": "types/plus_card_template_record.go",
+      "sha256": "1bb0c14d744a03374e33e6b7394a6b0b66d196e3383da2efabb6133fb4824ac4"
+    },
+    {
+      "path": "types/plus_category_record.go",
+      "sha256": "91dbceb07bd9200880253d9388dd2069467df456d9310fc00f57bb0ae41d972a"
+    },
+    {
+      "path": "types/plus_channel_account_record.go",
+      "sha256": "a84a71d40f88787d04d4ec7b75778e4432a27997213acdc5b8b72d9e844ae4f1"
+    },
+    {
+      "path": "types/plus_channel_proxy_record.go",
+      "sha256": "35d6d8a7d9fd803a2c0eceec24c95ad71df64cbc28918b7f75ab1cb02371f2a4"
+    },
+    {
+      "path": "types/plus_channel_record.go",
+      "sha256": "ca4621f4c5d785d0fa6b47768d8aa176b1228dbdbd428f601a772f21e86d03c4"
+    },
+    {
+      "path": "types/plus_comments_record.go",
+      "sha256": "ea663b656463698cfbe92062c92ff35d97343075b5e65eb780f9412d0e124ba1"
+    },
+    {
+      "path": "types/plus_content_vote_record.go",
+      "sha256": "2510c35ebddfe21ed78e9ab01561f033b0ed9e3679fa0faf13cdb339d8badae3"
+    },
+    {
+      "path": "types/plus_coupon_record.go",
+      "sha256": "87996bd81e5dd16e1b71bb734fad3634dfd1565d33fc18e12f5707392215c49c"
+    },
+    {
+      "path": "types/plus_coupon_template_record.go",
+      "sha256": "ba8172852e97f71e8fe14a10617df6932f7a17cf282e851b678ae4299362b6f3"
+    },
+    {
+      "path": "types/plus_currency_record.go",
+      "sha256": "e4f083ad5ef25b9c4a00e7dec77bbddf069fffd85a931e3cd66806a803b080dc"
+    },
+    {
+      "path": "types/plus_department_record.go",
+      "sha256": "4c61490c1bcf902b34c40104ad2a1577a2776b3b69c70330d87ecfe074a62fc0"
+    },
+    {
+      "path": "types/plus_exchange_rate_record.go",
+      "sha256": "ac0a7a74f55d7b65497e0deafdd4a7ac564cac0a246affc4d33c54d2f27ffd26"
+    },
+    {
+      "path": "types/plus_favorite_record.go",
+      "sha256": "ef8bd0f95d372a9d7c4688f992a93816c65f8b6313faf6a7a3c0a73eb626c35a"
+    },
+    {
+      "path": "types/plus_feeds_record.go",
+      "sha256": "6ea86126ce8c7dd0b125799072ccaffc50f9809cfe8d13a822638ae406258bd4"
+    },
+    {
+      "path": "types/plus_invitation_code_record.go",
+      "sha256": "8bfd0d656b65663ab8c86317dcdbd270e1d578f043b46a0c48e47563b51b112b"
+    },
+    {
+      "path": "types/plus_invitation_relation_record.go",
+      "sha256": "ca4d32bb745b8333fbc4d7a1e0dbac54b02af4b595d1d0a59cfd5fe7f50ae60d"
+    },
+    {
+      "path": "types/plus_invoice_item_record.go",
+      "sha256": "402d51d101b76173cf538856ef7f4de18da394ff87a01551009edc90dac83fb0"
+    },
+    {
+      "path": "types/plus_invoice_record_record.go",
+      "sha256": "c014842b70078779aec9ecfa9326f008ac9e522bce7d2bf1f6b45cd8a6e480ef"
+    },
+    {
+      "path": "types/plus_invoice_record.go",
+      "sha256": "b8e1f8278a42a668f0be06d1a425d31f0e6bfc9955b9031969cb52db13935398"
+    },
+    {
+      "path": "types/plus_ledger_bridge_record.go",
+      "sha256": "ad27e298eacb5a240c817b40c52877ff2780bcb62603f4ac66a202b4066b0e9c"
+    },
+    {
+      "path": "types/plus_member_card_record.go",
+      "sha256": "c7a3b6b5e8ffe4cfbc836e492a3038dcba728507991f83f184ed4f7ceddae988"
+    },
+    {
+      "path": "types/plus_member_level_record.go",
+      "sha256": "1ec8c09f848912547394101daf18580dc77a35c2c9f3981f260675324ac082bd"
+    },
+    {
+      "path": "types/plus_oauth_account_record.go",
+      "sha256": "fd04ce09e8c24232b9b161c73a456f8edf12a0a0b408ebc5d1cc6ba2f3ff4c4c"
+    },
+    {
+      "path": "types/plus_order_dispatch_rule_record.go",
+      "sha256": "255a85cf70fe7ca8fe334a3f076975376c54e261197aa71deaf731f1c9c989b2"
+    },
+    {
+      "path": "types/plus_order_item_record.go",
+      "sha256": "d69396ea912fc009c09030930cd81a045684995b3a8cd6ea0dece00633e41783"
+    },
+    {
+      "path": "types/plus_order_record.go",
+      "sha256": "59b3bf93bfd9b5db4de0c2f257e8f2b5245cfb7fdc23a3f3efc6df5776cf58a5"
+    },
+    {
+      "path": "types/plus_order_worker_dispatch_profile_record.go",
+      "sha256": "5e901e4bc11a96fc290c67326f2576ae72cf53c7e1fe4c82f52bc175056fb938"
+    },
+    {
+      "path": "types/plus_organization_member_record.go",
+      "sha256": "e77cb1d5053b301d52841880812ce43d036995caaca0a8812c81c39c9bfd0258"
+    },
+    {
+      "path": "types/plus_organization_record.go",
+      "sha256": "e6a7091b8790350816ebe59766c9209dc2b981a06eb5081f16b1b8e2fc00669d"
+    },
+    {
+      "path": "types/plus_partner_record.go",
+      "sha256": "3e342bb04df667b737ac6dc9a864de393f7e637431c44c7f589a0250326bf6df"
+    },
+    {
+      "path": "types/plus_payment_record.go",
+      "sha256": "e6ac770d8264585fc8790f07b58f3602b83307233c9c7493fc9e927813ed2de8"
+    },
+    {
+      "path": "types/plus_payment_webhook_event_record.go",
+      "sha256": "8fc8ebed6d718e6e2217b0ad6cbf4b199e051681cafd558c173f307721586785"
+    },
+    {
+      "path": "types/plus_permission_record.go",
+      "sha256": "c3677b050750a99895b1bcb7c0a55b7ec78dff79f4c9fff3957adf72c374558e"
+    },
+    {
+      "path": "types/plus_position_record.go",
+      "sha256": "bd8a1c53b9b4aed60832d6444248467a59684c898055ef3ee1b200b29becdbe3"
+    },
+    {
+      "path": "types/plus_product_record.go",
+      "sha256": "36a345d0cb7565bd97e69a1711ad00528a69efc0b5b59beb0e7fd3cc37681a30"
+    },
+    {
+      "path": "types/plus_refund_record.go",
+      "sha256": "4e6afeceb88cd38c683ae3708ec93fdd0e92b7ae0824f3c84666cd50cd24045a"
+    },
+    {
+      "path": "types/plus_role_permission_record.go",
+      "sha256": "5f27b8bcf70b5ef0f9b950e1250985f3d2a77b79369b356a50bf1585ef116d0a"
+    },
+    {
+      "path": "types/plus_role_record.go",
+      "sha256": "c5a537d26ac4c88429e54e85f3603d224b701c0d3470f95204ce2a9490e1bf08"
+    },
+    {
+      "path": "types/plus_shop_record.go",
+      "sha256": "4fece21e3e5cf24e88a3952d5f6bd491c59509916cd385a020112e02db90ac15"
+    },
+    {
+      "path": "types/plus_shopping_cart_item_record.go",
+      "sha256": "e9a8fc27e2b5cfb80cc475ea813e9a71efc5c1fcf3baf9c9095abd8f35401cb5"
+    },
+    {
+      "path": "types/plus_shopping_cart_record.go",
+      "sha256": "e83d8b954954d48cb850cb0491dc4b9467497754eaac3430f49821255fea530f"
+    },
+    {
+      "path": "types/plus_sku_record.go",
+      "sha256": "a36a7d28876e41606041d59c2bddbfe2abd15b878b607b814878fbabba384798"
+    },
+    {
+      "path": "types/plus_tenant_record.go",
+      "sha256": "f9f2408a83a125148c84e72c02c6a5384480a4deebdc6be67f56413d2b594a84"
+    },
+    {
+      "path": "types/plus_usage_record_record.go",
+      "sha256": "f3c50f6f32f45483242671b4247aa279397cb35fb1cda84b085e49ce5c74cf6b"
+    },
+    {
+      "path": "types/plus_user_address_record.go",
+      "sha256": "e851cf80b57d37c6bae0accc438a35220dcc2242090dfe50595a2b64d1d394ed"
+    },
+    {
+      "path": "types/plus_user_agent_skill_record.go",
+      "sha256": "bc36f28cbc15fc502a7949e2545c03537d993d9ca25650965a2aabcc120935b4"
+    },
+    {
+      "path": "types/plus_user_card_record.go",
+      "sha256": "52b14513e151692f75ea67e7d03e8caf6373f9010ae9cf45cbd599c1b91d2522"
+    },
+    {
+      "path": "types/plus_user_coupon_record.go",
+      "sha256": "54759c2ee8f4fc840b1d4da3ad706e7b1f050ea9750964cd0278adfff24c1462"
+    },
+    {
+      "path": "types/plus_user_record.go",
+      "sha256": "f49613f1d6c36b1447a8c02ec8590ec79631db4ba37af24b7e4ff80e0c73a650"
+    },
+    {
+      "path": "types/plus_user_role_record.go",
+      "sha256": "4c96278d2bb8926b2a2d7f88ef7dec1e086b9b1881f4b52c0c6f34370c762f44"
+    },
+    {
+      "path": "types/plus_vip_benefit_record.go",
+      "sha256": "26e60eb50a527407724a331801a55b5f821869110fca9ff6c277a61aad85e9a5"
+    },
+    {
+      "path": "types/plus_vip_benefit_usage_record.go",
+      "sha256": "35d0106feaf5b3438d4d491c3abd0c888989766799a45ed464292bd1a0d190fc"
+    },
+    {
+      "path": "types/plus_vip_level_benefit_record.go",
+      "sha256": "3c450b0ae28759ec976547ccb2365701f2580a08d0e27aeb7d48d3218956a3cb"
+    },
+    {
+      "path": "types/plus_vip_level_record.go",
+      "sha256": "10525129de24c25cfc726c9e55abc74619fbdc900ff6e46e1e99cbde52c7f524"
+    },
+    {
+      "path": "types/plus_vip_pack_group_record.go",
+      "sha256": "7ff67b36a3edb4c877e992b95ef335310c8ba01649b7048d8df841414945ca54"
+    },
+    {
+      "path": "types/plus_vip_pack_record.go",
+      "sha256": "4556f2c96af82d191cd95c6d05bc2e3054fe3d6b56d2ed8373931c43968ffa55"
+    },
+    {
+      "path": "types/plus_vip_point_change_record.go",
+      "sha256": "94c356bd84f03817dcc8aaa24a7148b570c1894b7e866afc915343e7e1a43649"
+    },
+    {
+      "path": "types/plus_vip_recharge_method_record.go",
+      "sha256": "2c2a59576f8fc7ab184a9ebd80d6f72314071469df13d87beb7a83c4e6fa4019"
+    },
+    {
+      "path": "types/plus_vip_recharge_pack_record.go",
+      "sha256": "a63c0c53f8c37c9f596ab35ec1b5e38882fda93c4325e5004b8e966d225bfa7e"
+    },
+    {
+      "path": "types/plus_vip_recharge_record.go",
+      "sha256": "33ef0620ed0a0c3b1eee6bc8f86b1e24a6ca79b6d14b95b6a5b916ba02255ddc"
+    },
+    {
+      "path": "types/plus_vip_user_record.go",
+      "sha256": "bc3faaa97cb623de4f16ee11b824fbb6e59a4897b38b94da5e2b898a38fc643c"
+    },
+    {
+      "path": "types/preflight_estimates_create_result.go",
+      "sha256": "ae99c3330ea75348bd6b1b7ed5ab4669566e322b9aa4eec5d3ce7f8e6ef91971"
+    },
+    {
+      "path": "types/preflight_prechecks_create_result.go",
+      "sha256": "443f914362c1ca80c94580de808d915f46106997d5c1c51b83380c15a378296d"
+    },
+    {
+      "path": "types/preflight_preholds_create_result.go",
+      "sha256": "0580afb169af5e936c1b06d015785e11a0f5a1d17481141c0a32dcbe5bf6ed08"
+    },
+    {
+      "path": "types/preflight_releases_create_result.go",
+      "sha256": "8cb150317634cdc8806e3f739c55d16410fd0fafb3871049b74bb7b4a458c960"
+    },
+    {
+      "path": "types/preflight_settlements_create_result.go",
+      "sha256": "404925e7b1f17053b1ccd88affb2ae988634d50b095ab72a2d14f3f5637b1cc1"
+    },
+    {
+      "path": "types/problem_detail.go",
+      "sha256": "359817516a7a548e77b0435715af9e130b51007ac0b2b338f8dbfe680350087c"
+    },
+    {
+      "path": "types/provider_config.go",
+      "sha256": "ef5783ca032ee24ed1085958c6832fe671182905788635a408a98f72e7c803c9"
+    },
+    {
+      "path": "types/providers_list_result.go",
+      "sha256": "6d9409fb9d540e77c67db8b3cd19c26a1c900a674b9ee95fa02fe3a78493e22d"
+    },
+    {
+      "path": "types/providers_response.go",
+      "sha256": "b534321c1459c11d35be85b1c9497416bff70622a522e15a06b151016d5c24ff"
+    },
+    {
+      "path": "types/ranking_vendor_option.go",
+      "sha256": "33f31ff421c8a21582ebbe1448f9b515a10effff29f1715b2ccb5d6e0d89683e"
+    },
+    {
+      "path": "types/ranking_vendor_options_response.go",
+      "sha256": "22a74f36cd7abcabdb3651755965d048efe587622451a103b9ce4be6a2ae8bc5"
+    },
+    {
+      "path": "types/recharge_package.go",
+      "sha256": "29ad6ed61c2eb35b9c1a9ac9e3a333c50ac1eb0a45d2bcfafb8a10ec5661e6fa"
+    },
+    {
+      "path": "types/recharge_packages_response.go",
+      "sha256": "240f2d8b5004f26ed6e7ac80980fc97cbfa4aadd45ce01bd29dff2fafaf95ece"
+    },
+    {
+      "path": "types/redeem_code_request.go",
+      "sha256": "3559ac3643c2e8a9a184958ca284152605c742f04107bec7391360400adb59d8"
+    },
+    {
+      "path": "types/redeem_code_response.go",
+      "sha256": "14573c657d5ccb9175b4e7feaa238d3e39e917a87a670544f8274a6db752aec2"
+    },
+    {
+      "path": "types/registrations_create_result.go",
+      "sha256": "3487fbfccee0b1e91d47fe8882329fe49aaccf26ef92d79152a25a1f785c1e6d"
+    },
+    {
+      "path": "types/routing_api_keys_list_result.go",
+      "sha256": "2911e65cb0c7673b20ef1aa0715139b889bcd44d2577f8d81ebbf6bea2808db0"
+    },
+    {
+      "path": "types/routing_api_keys_response.go",
+      "sha256": "86aa04de8e9b438bbfddc64a535a99520b9da1706400879ffc1a1342e65a2dc4"
+    },
+    {
+      "path": "types/routing_channel_delete_response.go",
+      "sha256": "a66c5537fd32cf810e110d9aa51f04c6d35555c7870379d834593ca9f3f364aa"
+    },
+    {
+      "path": "types/routing_channel_item.go",
+      "sha256": "3800ee0eaeba69a68a647e1c0490743666139f69932575024c0e5aa1b5db7fc2"
+    },
+    {
+      "path": "types/routing_channel_mutation_response.go",
+      "sha256": "52fa44dc52ab24efc03ba79d11da3f6c11fdc27d16e252049b3281858d35545e"
+    },
+    {
+      "path": "types/routing_channel_test_response.go",
+      "sha256": "ce66284f332eb4c7bf5b3fea4ea4a6b8b1edf91dfec3d88d75bcb4533d9ebfcd"
+    },
+    {
+      "path": "types/routing_channels_create_result.go",
+      "sha256": "ca28d3f29cf9e87d87a7d480f1d2edb0421e7172c5d140eb12194c7d4243da55"
+    },
+    {
+      "path": "types/routing_channels_delete_result.go",
+      "sha256": "7230eba88bfed0bd8b431bc9be9a75784a36e3a1ad3f00c75b900508894215f5"
+    },
+    {
+      "path": "types/routing_channels_list_result.go",
+      "sha256": "e4ece3276a92d5e6ddc844f1162b8339e318eba9e97f5eb8d28352b8a8e63f7f"
+    },
+    {
+      "path": "types/routing_channels_response.go",
+      "sha256": "78a92ed46c02d12e7b13e48f42d98ef6ff9d8b0978f331dc50e6ee59b532568d"
+    },
+    {
+      "path": "types/routing_channels_status_update_result.go",
+      "sha256": "9b290cb4b4ae609c1abc4143f8ad11214f7c67a0c3060bce2ae7571fa932e44d"
+    },
+    {
+      "path": "types/routing_channels_update_result.go",
+      "sha256": "16063fa011448c71476651c4916884991e0dbe39e456dba4b42e9c80fc568e71"
+    },
+    {
+      "path": "types/routing_channels_verify_result.go",
+      "sha256": "e84182759763af3e41fb9b9c3887bcf3ffaef8bbc5e3f44a8d57466664bb37e5"
+    },
+    {
+      "path": "types/routing_request_traces_list_result.go",
+      "sha256": "647ad061d5d9cea9b7ad5ed293a86e6f8127ae48923d8042cd56004cc160d5fc"
+    },
+    {
+      "path": "types/routing_request_traces_response.go",
+      "sha256": "cd223662b7ade0b3fae78b46218fe404634133a58a4131fca46149c577741cd1"
+    },
+    {
+      "path": "types/routing_strategy_list_result.go",
+      "sha256": "3cc8c581a19c25761087a22ee47a5cf312d92a4e1db7e42a8be9854ab8a5af3f"
+    },
+    {
+      "path": "types/routing_strategy_snapshot.go",
+      "sha256": "1429598f2e5a3044cbd9a9fe0452e2615ecd76d6ec9cd127e59a809dfd1be3e5"
+    },
+    {
+      "path": "types/routing_strategy_update_result.go",
+      "sha256": "e7f3b06204d63a398880c7cbcbff5780eafe3aa500d06a1b4903d575f55b7501"
+    },
+    {
+      "path": "types/routing_usage_list_result.go",
+      "sha256": "6f5a0df74d17e91db9d31049e7b25cc4a6ab757186d8a9143330e5382598dfd7"
+    },
+    {
+      "path": "types/routing_usage_snapshot.go",
+      "sha256": "6c7e7b663b3f5aebe710d7ea06e77ce12989096b192248bb55b91c299c29c998"
+    },
+    {
+      "path": "types/sessions_create_result.go",
+      "sha256": "375d813127fe60343e68e8d16ab00d9426ccf1fae3387a13e902c119bde58c91"
+    },
+    {
+      "path": "types/sessions_current_delete_result.go",
+      "sha256": "a76ba116e7acd3590ceddd8fea78f5c416fc47f915de8ee2ac1d9fd03934f466"
+    },
+    {
+      "path": "types/sessions_current_retrieve_result.go",
+      "sha256": "66369d745c5d535bebf04249172b0f4d1c09c0c88d8d202a3a377f5f6e2c971d"
+    },
+    {
+      "path": "types/sessions_current_update_result.go",
+      "sha256": "5eb46a02d281837795ea9c9d7f1a97235feec3c54c3e8cc11a2693d9e509b391"
+    },
+    {
+      "path": "types/sessions_refresh_result.go",
+      "sha256": "6ab1de884e836f3c319cfd8fa33f4667bf00fff8ebf9cb03ec3ddb21f9f5b458"
+    },
+    {
+      "path": "types/set_routing_channel_status_request.go",
+      "sha256": "7bcdf2f581741b9666c8f72153d8e54a58c6060347f984489f5da48a64a622cb"
+    },
+    {
+      "path": "types/settings_data_response.go",
+      "sha256": "0a63266fce59880853b7714b61201441d898a5b127d1f879cf84ecd5108ed384"
+    },
+    {
+      "path": "types/settings_notifications.go",
+      "sha256": "609a44896d6e2a4ee2a6e505a75cfa243ba844d2b4f4fad512f361f68cd7da62"
+    },
+    {
+      "path": "types/settlement_bill_breakdown_item.go",
+      "sha256": "395082a65541016dff4db56dd4c3cd995a53e1575cf5e7536a0fe5a59434dae5"
+    },
+    {
+      "path": "types/settlement_bill_breakdown.go",
+      "sha256": "943567d83866fb37fc64fb0789e93ab00aa8bc669ba3f5cfe396fecfe8cbfb03"
+    },
+    {
+      "path": "types/settlement_bill.go",
+      "sha256": "bc0241e9daf10617a58c4ab3f43bd1e76ec65ae5b9cca7fd3181e9f5f27c1291"
+    },
+    {
+      "path": "types/settlement_chart_point.go",
+      "sha256": "bf35d923a1d4ba8c829956eac213863e6b71e47db712463fbd41a2894945066a"
+    },
+    {
+      "path": "types/settlement_dashboard_response.go",
+      "sha256": "2998c8175714389f7c9125cafe5029db6c85fbc4d82d4b6df537a6e665fa4d98"
+    },
+    {
+      "path": "types/settlements_dashboard_list_result.go",
+      "sha256": "986c68425217379764c55af8865f6fa956fb52c13935578e0f36d3bfaf37dce1"
+    },
+    {
+      "path": "types/skill_catalog_item.go",
+      "sha256": "749e6febd5044f3c85569704f340526dfa1db9ac553077f337a89bd0bc54227e"
+    },
+    {
+      "path": "types/skill_categories_response.go",
+      "sha256": "f7e82dabb04186a1c964add52ebb3394579c145c63e11ca33fc84526c7dc8245"
+    },
+    {
+      "path": "types/skill_detail_response.go",
+      "sha256": "eca8f9c26d8170ead306c0b99601a81ba5bd8a7aad30c6b1e4d38a447e6ac126"
+    },
+    {
+      "path": "types/skill_package_item.go",
+      "sha256": "78e9ae7afa0a1d5ffe83a61d51975dcc762f21d999016737a3c4f42c178e66de"
+    },
+    {
+      "path": "types/skills_catalog_response.go",
+      "sha256": "f5737771425dc678672025f95a3d7337c64094dc2edbb854846b34b175e69cc4"
+    },
+    {
+      "path": "types/skills_categories_list_result.go",
+      "sha256": "d10d763888e56b6d5ad3c74c1a5a3da9faf692871373c0e008516496e4faebbb"
+    },
+    {
+      "path": "types/skills_config_update_result.go",
+      "sha256": "cb950d69f867640b78b96f7b49c5dc86452dc01a02c74a21c50330901c2f0b2d"
+    },
+    {
+      "path": "types/skills_disable_result.go",
+      "sha256": "537efc7aadae28d700cfc97c04977307489e3513e36713a6c194d787206bcdde"
+    },
+    {
+      "path": "types/skills_enable_result.go",
+      "sha256": "d31ad902230a308e69cf930e3a82e3b08273ddda97c20235135783157d3bd31d"
+    },
+    {
+      "path": "types/skills_list_result.go",
+      "sha256": "4664c52b4543d8ef6ee6ee18fcbbab8905ba36cee252aa7e4d72e5e97697a304"
+    },
+    {
+      "path": "types/skills_retrieve_result.go",
+      "sha256": "7649569dc0182e8b55833eed702e8bd4a8033c93c37e312bbe94c6c500704e78"
+    },
+    {
+      "path": "types/studio_catalog_action_record.go",
+      "sha256": "85105c23eac6dd81ed37d6cbe7ba5b47110c9c36409d98271bed6befcc41a26d"
+    },
+    {
+      "path": "types/studio_catalog_artifact_record.go",
+      "sha256": "7c463ee6ca3a07609353a7081cdea85790ae82263cd01f5c9d39768af15293fe"
+    },
+    {
+      "path": "types/studio_catalog_asset_record.go",
+      "sha256": "727c46a531b6169d86e60c58c668e3799d98307570abbb2f81d94915cf2488a4"
+    },
+    {
+      "path": "types/submit_recharge_request.go",
+      "sha256": "3cc466237e2cdf5629f8f19eb58f53d257bdc3dd23e6b9c6c470869732ffa5fa"
+    },
+    {
+      "path": "types/submit_recharge_response.go",
+      "sha256": "4493c905678e63cd7de6af2ab71f3b472bc0753298fd08b17d53baa91ab29f67"
+    },
+    {
+      "path": "types/system_installation_state_record.go",
+      "sha256": "f83b31a31067006fb83de800444c8021b5d0a49417cd50880e6d7a3dce22ca6b"
+    },
+    {
+      "path": "types/system_schema_migration_record.go",
+      "sha256": "ddab9160b478c3bd52f8a5788dfb4134aa6bd005e3ef97ee54e203b53a04f562"
+    },
+    {
+      "path": "types/update_routing_channel_request.go",
+      "sha256": "180ade34b106e02abf3f72f2276f430dfa77c984993e564665d23043a7b241ae"
+    },
+    {
+      "path": "types/update_routing_strategy_request.go",
+      "sha256": "a686a01e5736a8571cfb731669f6a564acf755896a12eaf552e2d433ca7c949d"
+    },
+    {
+      "path": "types/update_routing_strategy_response.go",
+      "sha256": "b14b07f58c79cb4495efd8adb3abe580ba644380d87ac20c64e40f85fb2e7ff1"
+    },
+    {
+      "path": "types/update_settings_request.go",
+      "sha256": "19a0c5201a3734591602495ed333ab7cbf2f3ebf8574442a7022fcc3b9f6358f"
+    },
+    {
+      "path": "types/update_settings_response.go",
+      "sha256": "1d949f6350162741773e4d97d2399f51a638f98b95d4c151b43d95e08a8f91a7"
+    },
+    {
+      "path": "types/usage_log_item.go",
+      "sha256": "ef0ea5ccc6cd279f5af03841edc2296386ea8f8beae5c5e28d45bafb77295fac"
+    },
+    {
+      "path": "types/usage_logs_list_result.go",
+      "sha256": "8ee0eebdff73cbe355beebb920def6d2db809e5af2f5b3e89e4f11c883c4c9e3"
+    },
+    {
+      "path": "types/usage_logs_response.go",
+      "sha256": "302ba52575fb74c94ecfd8947edd9ae926d9c896a0e04097b8861d8f6b689780"
+    },
+    {
+      "path": "types/users_current_comments_list_result.go",
+      "sha256": "191e98903bc1458b5962cf919cd804abebb067f311556f9c5d25a4dd2b2ecafe"
+    },
+    {
+      "path": "types/users_current_coupons_list_result.go",
+      "sha256": "98ba85c01248460718ab80a31d37cf284ea5d5239382a648ada98d49652dca19"
+    },
+    {
+      "path": "types/users_current_coupons_retrieve_result.go",
+      "sha256": "ff969b470729bcebf0dfb6d6a72969f7c24908e5ba713614cb0df640a4961efe"
+    },
+    {
+      "path": "types/users_current_retrieve_result.go",
+      "sha256": "ba1c51d9cb55acb88ed1c2f90e3ccc4231a9cacee166d8a53b6c079736856726"
+    },
+    {
+      "path": "types/users_current_skills_list_result.go",
+      "sha256": "86015c57aaaaaff67a0bc0d8ade731cdec98bb7a0b37ba5b976add61bf199302"
+    },
+    {
+      "path": "types/users_settings_retrieve_result.go",
+      "sha256": "a80d27fbcf27913800cb04350cfd6e5d048ceb86897c560d26afd701152d9fc5"
+    },
+    {
+      "path": "types/users_settings_update_result.go",
+      "sha256": "9e3637be70e5d6ea78bd6966ddc8d0774f568b066ede6c993be4a5b06d64d08c"
+    },
+    {
+      "path": "types/verification_codes_create_result.go",
+      "sha256": "fefcc8982a866b26943f7ab342c1c551ebfd820c62be022becf11567bb90d50e"
+    },
+    {
+      "path": "types/verification_codes_verify_result.go",
+      "sha256": "ae257462e17e0417c40fe8aeb4e31906810fe2812e2962b81881d1952aaebc56"
+    },
+    {
+      "path": "types/vip_benefits_list_result.go",
+      "sha256": "6ef72ea570fd9b6884d98afdb94775ae423eef1876b0123cf7c652679be7f5e0"
+    },
+    {
+      "path": "types/vip_info_retrieve_result.go",
+      "sha256": "58b3c292d8c6ca896d4711224594f5f7cb92c1197b7d147ce0c62f82da522ac3"
+    },
+    {
+      "path": "types/vip_levels_list_result.go",
+      "sha256": "312ae989d760c8a590cbefa55a01ceb1d7ed94a8d6b274e89a364a52b3818218"
+    },
+    {
+      "path": "types/vip_pack_groups_list_result.go",
+      "sha256": "3386f00082da77630aabf147948bc7262d9e4de1f6e0ecd903d0880a1e3d73e1"
+    },
+    {
+      "path": "types/vip_pack_groups_packs_list_result.go",
+      "sha256": "220eb0454d08842d54b8daded99ad89710b1890a69499af1abe83555838d093f"
+    },
+    {
+      "path": "types/vip_pack_groups_retrieve_result.go",
+      "sha256": "5ae413e5b78dfaed1da72f4229982a1bd1c6d36378a46ddddf47ce905ee891bd"
+    },
+    {
+      "path": "types/vip_packs_list_result.go",
+      "sha256": "a78cd0fcd8fadb26b68bf90485b7a3fe7f6077eda8808a54282d9b1fc2a0aa37"
+    },
+    {
+      "path": "types/vip_packs_retrieve_result.go",
+      "sha256": "e209fbc9561aa587f16f3c4e832d8803456a535d24f3c019a06f7cd021f945e7"
+    },
+    {
+      "path": "types/vip_points_balance_retrieve_result.go",
+      "sha256": "f55a6add6feb3f66e84ddeaaa0c995f9efee642cf9c9258897c1cb2ae9e13561"
+    },
+    {
+      "path": "types/vip_points_daily_rewards_create_result.go",
+      "sha256": "b0e94c2b1703227e8d4f35a5a9db1868ac223d96876f95dc00308af89c2a2c8d"
+    },
+    {
+      "path": "types/vip_points_daily_rewards_status_retrieve_result.go",
+      "sha256": "ed2f96af333e36143f1f4dc77335f29829f8da4bd731bc1555b5ce1c16ec49d7"
+    },
+    {
+      "path": "types/vip_points_history_list_result.go",
+      "sha256": "0dd70b15df0f695dd9291c7e564378c3c1b2d150497d3d064ce369c886950b69"
+    },
+    {
+      "path": "types/vip_privileges_speed_ups_create_result.go",
+      "sha256": "27fe77dbda8d98dbf177365821c0814199a1b007206c8b6ebe2388e19bd3e157"
+    },
+    {
+      "path": "types/vip_privileges_usage_retrieve_result.go",
+      "sha256": "6e0bd8fe8be6f45b990ed0b0c9a8a59ebc92ff0f33b1c792fb05629cfd3f8e93"
+    },
+    {
+      "path": "types/vip_purchase_create_result.go",
+      "sha256": "b0dab6a387586dd659f2d412795995df1ec355b1ad24c1df42327edbd85710e9"
+    },
+    {
+      "path": "types/vip_purchase_renew_result.go",
+      "sha256": "f0505710fc511561e4ad212b5de73b1f44c132f3806cfc6e6e0cf432810ca44f"
+    },
+    {
+      "path": "types/vip_purchase_upgrade_result.go",
+      "sha256": "1968db7bf1c804c2fa5055df63caddc79d6c83ffb08b7b2c52214838a4c7a841"
+    },
+    {
+      "path": "types/vip_status_retrieve_result.go",
+      "sha256": "99ba10adda99ec40c26d1acb0a8f93ec5b94337ea9210076f249794f4d4ec4be"
+    },
+    {
+      "path": "types/wallet_accounts_list_result.go",
+      "sha256": "ac5a511283858694989c324e087b081e589b4b34f50da89d9fd791d0ccafb888"
+    },
+    {
+      "path": "types/wallet_exchanges_create_result.go",
+      "sha256": "00fb29fdf7d2d58b19f5bda822fa19dda6e432d079847fb4dd54a724d59a8cd0"
+    },
+    {
+      "path": "types/wallet_operations_retrieve_result.go",
+      "sha256": "d8abba08714733e08b1f6fa86bac29afa3dc6247be8e99a2475139489e1146e2"
+    },
+    {
+      "path": "types/wallet_overview_retrieve_result.go",
+      "sha256": "47cdcb640d88fa6e4e04f5653ceae2ddec56e5f4357174b32b1adbd553e16f3e"
+    },
+    {
+      "path": "types/wallet_topups_create_result.go",
+      "sha256": "5884c81610f10bd04d10a4dafd1867a3c7401612f3dd28652802e6801926d6e5"
+    },
+    {
+      "path": "types/wallet_transactions_list_result.go",
+      "sha256": "51ba5910247c4becc7f2040e0e572b09f2c237c60bd4a8e9a2e708cf9e0db76b"
+    },
+    {
+      "path": "types/wallet_transactions_retrieve_result.go",
+      "sha256": "658590e1080cfedffee2c32f8566ac25fe9d645131407e00f92f431a02edabba"
+    },
+    {
+      "path": "types/wallet_transfers_create_result.go",
+      "sha256": "7c761b4344b2a105b3b2d853ffe4b9c2aa3e6523dcd43c2413b9ed6a1063f8d2"
+    },
+    {
+      "path": "types/wallet_withdrawals_create_result.go",
+      "sha256": "78b7edacff3d258f937d0b0673805900cc7b0e61dfc3fb564aa794b73247cb08"
+    }
+  ],
+  "scaffoldFiles": [
+    "custom/README.md"
+  ],
+  "customRoots": [
+    "custom/"
+  ]
+}

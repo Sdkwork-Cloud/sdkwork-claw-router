@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44470,
+  "uuid": "skill-clawhub-weclaw-installer",
+  "skillKey": "clawhub-weclaw-installer",
+  "name": "Weclaw Installer",
+  "summary": "Automate installing and configuring the WeClaw WeChat bot environment on macOS. Use when the user asks to download/install WeClaw, set up a local Python envi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weclaw_installer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hang Yin",
+      "features": [
+        "Automate installing and configuring the WeClaw WeChat bot environment on macOS",
+        "Use when the user asks to download/install WeClaw, set up a local Python envi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weclaw-installer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/123021480?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weclaw-installer",
+      "url": "https://clawhub.ai/skills/weclaw-installer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weclaw-installer",
+    "url": "https://clawhub.ai/skills/weclaw-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weclaw-installer-e2ad3838407ade3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weclaw-installer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weclaw-installer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b0c33139f6167573367db78b59101efee9e7f9a32df4fe33ca893f178f1708a",
+      "artifactSizeBytes": 2386
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T23:19:24.781Z"
+}

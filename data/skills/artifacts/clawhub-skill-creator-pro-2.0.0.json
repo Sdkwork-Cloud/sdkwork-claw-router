@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-creator-pro@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_creator_pro",
+  "skill": {
+    "id": 15260,
+    "skillKey": "clawhub-skill-creator-pro",
+    "name": "Skill Creator Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-creator-pro",
+    "url": "https://clawhub.ai/skills/skill-creator-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-creator-pro-afc83aaa5f026712.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create new skills, modify and improve existing skills, and measure skill performance with eval-driven iteration. Use when users want to create a skill from s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zihaofeng2001",
+      "userId": "s1776j3p94cvqzn31g3f7pxeqd841qqq",
+      "displayName": "Zihao Feng",
+      "image": "https://avatars.githubusercontent.com/u/140311132?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 976,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773681860174,
+      "changelog": "Complete rewrite: now based on Anthropic official skill-creator (github.com/anthropics/skills). Adds eval-driven iteration loop, browser-based viewer, grading system, blind A/B comparison, description optimization, benchmark aggregation. Adapted for OpenClaw with sessions_spawn, headless --static viewer, and claude -p compatibility notes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd78dcee2bb14144499bbf69bd5c6c74469c116228640a68f43bca1d84e7929c"
+}

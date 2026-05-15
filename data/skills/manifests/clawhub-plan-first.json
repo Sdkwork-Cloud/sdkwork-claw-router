@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40729,
+  "uuid": "skill-clawhub-plan-first",
+  "skillKey": "clawhub-plan-first",
+  "name": "Plan First",
+  "summary": "Solve complex multi-step tasks by generating a detailed plan before execution. Based on the Plan-and-Solve prompting research, this skill breaks tasks into c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plan_first",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Simon",
+      "features": [
+        "Solve complex multi-step tasks by generating a detailed plan before execution",
+        "Based on the Plan-and-Solve prompting research, this skill breaks tasks into c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plan-first@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268817640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plan-first",
+      "url": "https://clawhub.ai/skills/plan-first"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plan-first",
+    "url": "https://clawhub.ai/skills/plan-first",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plan-first-d517ec612cdb8d54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plan-first@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-plan-first-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d01bb23f9d64561bd706d85c39a2ba9cbb59e7522a6329e06400ad2b2735a8e",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T01:41:36.493Z"
+}

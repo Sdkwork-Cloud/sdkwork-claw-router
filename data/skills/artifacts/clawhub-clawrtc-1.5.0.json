@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawrtc@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawrtc",
+  "skill": {
+    "id": 12392,
+    "skillKey": "clawhub-clawrtc",
+    "name": "ClawRTC"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawrtc",
+    "url": "https://clawhub.ai/skills/clawrtc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawrtc-61f1ebdc765c13fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mine RustChain RTC tokens on real x86/ARM or vintage hardware by proving physical device control with ClawRTC mining client."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scottcjn",
+      "userId": "s17482w7yjab0gy0pwwjq5nzcx83n209",
+      "displayName": "AutoJanitor",
+      "image": "https://avatars.githubusercontent.com/u/121303252?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 886,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 9,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1771523374477,
+      "changelog": "Added Coinbase Agentic Wallet integration (create, show, link, swap-info), x402 payment protocol support, Base chain wRTC token awareness",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2b3631f5287d65d3fbb14328e6301a0d39e606b3028b14ad8a6bdba67e393223"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57607,
+  "uuid": "skill-clawhub-avatr",
+  "skillKey": "clawhub-avatr",
+  "name": "avatr",
+  "summary": "Information assistant for 阿维塔 Avatr. Search products, news, financials, and official resources for 阿维塔 Avatr.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avatr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for 阿维塔 Avatr",
+        "Search products, news, financials, and official resources for 阿维塔 Avatr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/avatr@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "avatr",
+      "url": "https://clawhub.ai/skills/avatr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avatr",
+    "url": "https://clawhub.ai/skills/avatr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avatr-94e464eefbf2b810.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/avatr@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-avatr-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d10a6ffafe88fa8785573e01a0733c5bbc2fd37795fa7ec38a749cf9fd2adb4e",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T14:19:06.005Z"
+}

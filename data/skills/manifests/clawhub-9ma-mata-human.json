@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73220,
+  "uuid": "skill-clawhub-9ma-mata-human",
+  "skillKey": "clawhub-9ma-mata-human",
+  "name": "九马免费对口型数字人",
+  "summary": "这是一个免费生成对口型数字人对口型的工具, 工具安装需要下载二进制文件到电脑上，只需根据文本和性别生成数字人视频并返回一个下载链接",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.9ma_mata_human",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kalos-chen",
+      "features": [
+        "这是一个免费生成对口型数字人对口型的工具, 工具安装需要下载二进制文件到电脑上，只需根据文本和性别生成数字人视频并返回一个下载链接"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/9ma-mata-human@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51595132?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "9ma-mata-human",
+      "url": "https://clawhub.ai/skills/9ma-mata-human"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "9ma-mata-human",
+    "url": "https://clawhub.ai/skills/9ma-mata-human",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/9ma-mata-human-3a7825e00fce82e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/9ma-mata-human@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-9ma-mata-human-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61db0ea0672dfcda6ef5699767b2f6e726d63c9903959d1b7ab360ffc9edbdb6",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T03:35:54.766Z"
+}

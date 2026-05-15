@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/academic-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_search",
+  "skill": {
+    "id": 11396,
+    "skillKey": "clawhub-academic-search",
+    "name": "Academic Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-search",
+    "url": "https://clawhub.ai/skills/academic-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-search-59ed16c847ec6e6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conducts systematic searches across arXiv, Google Scholar, and Semantic Scholar to find, analyze, and summarize the top 5 relevant academic papers with full..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arthurnie",
+      "userId": "publishers:arthurnie",
+      "displayName": "ArthurNie",
+      "image": "https://avatars.githubusercontent.com/u/264332276?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2046,
+      "installsAllTime": 12,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773473898703,
+      "changelog": "Initial release of the academic-search skill.\n\n- Systematically searches academic databases (arXiv, Google Scholar, Semantic Scholar) to find the Top 5 most relevant papers on any topic.\n- Screens abstracts for relevance and analyzes citation networks to surface seminal and current research.\n- Synthesizes findings into structured literature summaries with thematic grouping and methodology comparison.\n- Clearly indicates publication status (preprint, accepted, published), open-access availability, and provides full bibliographic metadata.\n- Rigorously excludes non-scholarly content and avoids ranking by citation count alone, ensuring high-quality, relevant academic results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7af1f41526e3a78b7a9b10832f389dfca1a35809c4a203b71064cd7aeec89bab"
+}

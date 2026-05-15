@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58708,
+  "uuid": "skill-clawhub-todo-tracker-cn",
+  "skillKey": "clawhub-todo-tracker-cn",
+  "name": "Todo Tracker (CN)",
+  "summary": "生成、跟踪和验证待办列表的执行状态。提供 generate-todo-list, mark-completed, show-progress, verify-completion 四个核心动作。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todo_tracker_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ElderYang",
+      "features": [
+        "生成、跟踪和验证待办列表的执行状态。提供 generate-todo-list, mark-completed, show-progress, verify-completion 四个核心动."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/todo-tracker-cn@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201730320?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "todo-tracker-cn",
+      "url": "https://clawhub.ai/skills/todo-tracker-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todo-tracker-cn",
+    "url": "https://clawhub.ai/skills/todo-tracker-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todo-tracker-cn-a4c462a8e3b4f788.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/todo-tracker-cn@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-todo-tracker-cn-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ed594e627a69f3ffdbe92d1640fb6bc8de7e842484e24d3952453a36a47cc95",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T06:40:38.362Z"
+}

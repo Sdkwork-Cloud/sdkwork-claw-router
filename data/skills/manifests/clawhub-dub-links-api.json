@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16861,
+  "uuid": "skill-clawhub-dub-links-api",
+  "skillKey": "clawhub-dub-links-api",
+  "name": "Dub.co Links API",
+  "summary": "Integrates Dub Links API endpoints to create, update, delete, retrieve, list, count, and run bulk operations on short links. Use when the user asks for \"dub...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dub_links_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fermin Rodriguez Penelas",
+      "features": [
+        "Integrates Dub Links API endpoints to create, update, delete, retrieve, list, count, and run bu.",
+        "Use when the user asks for \"dub..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dub-links-api@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21282919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dub-links-api",
+      "url": "https://clawhub.ai/skills/dub-links-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dub-links-api",
+    "url": "https://clawhub.ai/skills/dub-links-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dub-links-api-1f36a78db8fa06ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dub-links-api@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dub-links-api-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c06789c91616c510cceebf5c79104d8f6fce4629d41819b395eda717e810bd3",
+      "artifactSizeBytes": 2203
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T20:45:27.940Z"
+}

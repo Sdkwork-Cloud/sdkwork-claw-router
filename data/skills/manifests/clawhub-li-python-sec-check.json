@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60287,
+  "uuid": "skill-clawhub-li-python-sec-check",
+  "skillKey": "clawhub-li-python-sec-check",
+  "name": "Li Python Sec Check",
+  "summary": "Python 安全规范检查工具 - 基于 CloudBase 规范 + 腾讯安全指南 + LLM 智能分析（LLM 功能默认禁用，本地执行优先）",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.li_python_sec_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Terry S Fisher",
+      "features": [
+        "Python 安全规范检查工具",
+        "基于 CloudBase 规范 + 腾讯安全指南 + LLM 智能分析（LLM 功能默认禁用，本地执行优先）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/li-python-sec-check@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42956557?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "li-python-sec-check",
+      "url": "https://clawhub.ai/skills/li-python-sec-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "li-python-sec-check",
+    "url": "https://clawhub.ai/skills/li-python-sec-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/li-python-sec-check-3a3b905f0b15c5b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/li-python-sec-check@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-li-python-sec-check-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3df987283465173f1839c350a48ded45711f5747561c9854747e49c22276a4a",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T11:19:24.828Z"
+}

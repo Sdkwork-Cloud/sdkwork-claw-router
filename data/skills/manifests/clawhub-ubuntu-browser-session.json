@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23146,
+  "uuid": "skill-clawhub-ubuntu-browser-session",
+  "skillKey": "clawhub-ubuntu-browser-session",
+  "name": "Ubuntu Browser Session",
+  "summary": "Use when a request needs a real Ubuntu Server browser session with durable site login reuse, bounded manual login recovery, or host-side page inspection for...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ubuntu_browser_session",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GoGoLin",
+      "features": [
+        "Use when a request needs a real Ubuntu Server browser session with durable site login reuse, bo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ubuntu-browser-session@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47466606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ubuntu-browser-session",
+      "url": "https://clawhub.ai/skills/ubuntu-browser-session"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ubuntu-browser-session",
+    "url": "https://clawhub.ai/skills/ubuntu-browser-session",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ubuntu-browser-session-ea19f7a8aed57213.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ubuntu-browser-session@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ubuntu-browser-session-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:094125a18f3f2c6b0b125e143e2defabccf3c50768b6dd17aee5e194e5c1c6f0",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:11:29.509Z"
+}

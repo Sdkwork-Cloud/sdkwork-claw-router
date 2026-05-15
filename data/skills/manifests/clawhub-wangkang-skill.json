@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25972,
+  "uuid": "skill-clawhub-wangkang-skill",
+  "skillKey": "clawhub-wangkang-skill",
+  "name": "wangkang-skill",
+  "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wangkang_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangkang5",
+      "features": [
+        "Captures learnings, errors, and corrections to enable continuous improvement",
+        "Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wangkang-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10346955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wangkang-skill",
+      "url": "https://clawhub.ai/skills/wangkang-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wangkang-skill",
+    "url": "https://clawhub.ai/skills/wangkang-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wangkang-skill-9696d82af1c66e7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wangkang-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wangkang-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c336993e1fb1d167615ea0ca384cc3a02dffa74c94f401803409ccf3905c0a0",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T16:23:54.303Z"
+}

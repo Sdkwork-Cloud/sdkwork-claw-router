@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18483,
+  "uuid": "skill-clawhub-mm-easy-voice",
+  "skillKey": "clawhub-mm-easy-voice",
+  "name": "mmEasyVoice",
+  "summary": "Simple text-to-speech skill using MiniMax Voice API. Converts text to audio with customizable voice selection. Use for generating speech audio from text.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mm_easy_voice",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Haolan He",
+      "features": [
+        "Simple text-to-speech skill using MiniMax Voice API",
+        "Converts text to audio with customizable voice selection",
+        "Use for generating speech audio from text."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mm-easy-voice@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61172629?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mm-easy-voice",
+      "url": "https://clawhub.ai/skills/mm-easy-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mm-easy-voice",
+    "url": "https://clawhub.ai/skills/mm-easy-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mm-easy-voice-1aaae17936522e01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mm-easy-voice@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mm-easy-voice-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdf2fae7d35ba52cde9e7ceae39f641f2beabcd4d4643968d4f7b6c49cd6efd7",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T12:01:33.241Z"
+}

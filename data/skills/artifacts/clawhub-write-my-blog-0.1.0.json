@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/write-my-blog@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.write_my_blog",
+  "skill": {
+    "id": 15443,
+    "skillKey": "clawhub-write-my-blog",
+    "name": "Write My Blog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "write-my-blog",
+    "url": "https://clawhub.ai/skills/write-my-blog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/write-my-blog-6588249515586ffd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables the agent to create, manage, and publish a full-featured blog autonomously. The agent can write posts, upload media, switch between 10 premium design..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harshraj001",
+      "userId": "publishers:harshraj001",
+      "displayName": "Harsh Raj",
+      "image": "https://avatars.githubusercontent.com/u/55756393?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 805,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771314152240,
+      "changelog": "- Initial release of the Write My Blog skill: autonomously create, manage, and publish a professional blog.\n- Supports writing posts, media uploads, theme management (10 premium themes), and deployment to Cloudflare or Vercel.\n- Compatible with PostgreSQL, SQLite, MongoDB, Turso, and Supabase databases; includes caching options (Redis, KV, in-memory).\n- Provides REST API for all operations, with API key authentication and rate limiting.\n- Strong content guidelines and security best practices are included to ensure proper attribution, SEO, and safe publishing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9f1561549faff363bf6fe0130f717ecedddcbec117766fa9c1132179449a60ae"
+}

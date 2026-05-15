@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60818,
+  "uuid": "skill-clawhub-file-super-assistant",
+  "skillKey": "clawhub-file-super-assistant",
+  "name": "File Super Assistant - 文件超级助手",
+  "summary": "文件创建与 AI 降味助手。支持 docx/xlsx/pptx/pdf 文件创建和编辑，提供 AI 内容改写为人类风格功能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_super_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cp3d1455926-svg",
+      "features": [
+        "文件创建与 AI 降味助手。支持 docx/xlsx/pptx/pdf 文件创建和编辑，提供 AI 内容改写为人类风格功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-super-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268315927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-super-assistant",
+      "url": "https://clawhub.ai/skills/file-super-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-super-assistant",
+    "url": "https://clawhub.ai/skills/file-super-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-super-assistant-e5e3fa430603ef91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-super-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-super-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d440a5d1b2025af077c45460f930cdb3073153ffdbb3f35bacf3fcd0e047f782",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T09:25:52.242Z"
+}

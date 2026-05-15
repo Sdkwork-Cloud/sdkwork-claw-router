@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mineru-pdf-parser@3.0.3",
+  "version": "3.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mineru_pdf_parser",
+  "skill": {
+    "id": 60112,
+    "skillKey": "clawhub-mineru-pdf-parser",
+    "name": "Mineru Pdf Parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mineru-pdf-parser",
+    "url": "https://clawhub.ai/skills/mineru-pdf-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mineru-pdf-parser-89ecee0a27689930.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 MinerU API 将 PDF 解析为 Markdown，支持公式、表格、OCR。提供本地文件和在线 URL 两种解析方式。触发条件：(1) 用户说\"解析 PDF [路径]\"，(2) 用户说\"将 PDF 转为 Markdown\"，(3) 在 paper-workflow 中自动调用。使用场景：学术论文解析..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alex-zxyz",
+      "userId": "s173j7cc484yg93vs1eh319vh583kchc",
+      "displayName": "ZxYz",
+      "image": "https://avatars.githubusercontent.com/u/80997892?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 467,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "3.0.3",
+      "createdAt": 1773744171582,
+      "changelog": "- 简化并拓展了描述，明确支持本地文件和在线 URL 两种解析方式\n- 新增技能触发条件说明，包括用户命令触发和 paper-workflow 自动调用\n- 新增典型使用场景说明（学术论文解析、文档提取、知识库构建）\n- 其他内容与上版一致，未涉及核心功能代码调整",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:54319f8fc8ebbac8c6f4619f7a73fa4d45473512096ef07350b2ba1c9994840e"
+}

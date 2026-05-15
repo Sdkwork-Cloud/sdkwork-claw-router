@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65610,
+  "uuid": "skill-clawhub-alipay-aipay-product-intro",
+  "skillKey": "clawhub-alipay-aipay-product-intro",
+  "name": "alipay-aipay-product-intro",
+  "summary": "当用户想要获取支付宝智能体钱包/AI支付相关产品介绍时，你应该调用此技能。买家通过本 Skill 向卖家服务端发起请求，完成支付后获取相关结果。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alipay_aipay_product_intro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alipay",
+      "features": [
+        "当用户想要获取支付宝智能体钱包/AI支付相关产品介绍时，你应该调用此技能。买家通过本 Skill 向卖家服务端发起请求，完成支付后获取相关结果。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alipay-aipay-product-intro@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/alipay-aipay-product-intro/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alipay-aipay-product-intro",
+      "url": "https://clawhub.ai/skills/alipay-aipay-product-intro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alipay-aipay-product-intro",
+    "url": "https://clawhub.ai/skills/alipay-aipay-product-intro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alipay-aipay-product-intro-2050c3c8f7dae86f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alipay-aipay-product-intro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alipay-aipay-product-intro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40dbfc44ca4ac68f250ab2b5b1837ab65021c4b81744aa66ed0faa55e5211e39",
+      "artifactSizeBytes": 2343
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T12:45:20.396Z"
+}

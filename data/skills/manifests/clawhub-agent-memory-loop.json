@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21912,
+  "uuid": "skill-clawhub-agent-memory-loop",
+  "skillKey": "clawhub-agent-memory-loop",
+  "name": "Agent Memory Loop",
+  "summary": "Lightweight self-improvement loop for AI agents. Capture errors, corrections, and discoveries in a fast one-line format, dedup them, queue recurring or criti...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_loop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Don Zurbrick",
+      "features": [
+        "Lightweight self-improvement loop for AI agents",
+        "Capture errors, corrections, and discoveries in a fast one-line format, dedup them, queue recur."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-memory-loop@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24554955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-memory-loop",
+      "url": "https://clawhub.ai/skills/agent-memory-loop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-loop",
+    "url": "https://clawhub.ai/skills/agent-memory-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-loop-d8473436d093f317.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-memory-loop@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-loop-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51bf64a0d065199cf550ba4939ad81f969084ac33f91400dd7b6992f88ce2b5f",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T00:35:12.815Z"
+}

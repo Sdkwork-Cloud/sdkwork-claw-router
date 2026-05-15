@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54589,
+  "uuid": "skill-clawhub-pipeworx-carbon",
+  "skillKey": "clawhub-pipeworx-carbon",
+  "name": "Pipeworx carbon",
+  "summary": "UK national carbon intensity data — real-time, historical, and generation mix from the Carbon Intensity API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_carbon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "UK national carbon intensity data — real-time, historical, and generation mix from the Carbon I."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-carbon@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-carbon",
+      "url": "https://clawhub.ai/skills/pipeworx-carbon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-carbon",
+    "url": "https://clawhub.ai/skills/pipeworx-carbon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-carbon-5fad08b30c298ac0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-carbon@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-carbon-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6c08ec14303846d750e321cbaef5fcfec559314183df49f6d828ca50748e20a",
+      "artifactSizeBytes": 1849
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T17:14:27.413Z"
+}

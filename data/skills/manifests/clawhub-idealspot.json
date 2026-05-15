@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27396,
+  "uuid": "skill-clawhub-idealspot",
+  "skillKey": "clawhub-idealspot",
+  "name": "Idealspot",
+  "summary": "IdealSpot integration. Manage Organizations. Use when the user wants to interact with IdealSpot data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idealspot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "IdealSpot integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with IdealSpot data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/idealspot@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "idealspot",
+      "url": "https://clawhub.ai/skills/idealspot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idealspot",
+    "url": "https://clawhub.ai/skills/idealspot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idealspot-4d90788313112063.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/idealspot@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-idealspot-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17940ce649acc45469114f5ae47e722b0d79c9a463776a07109712475179201f",
+      "artifactSizeBytes": 1815
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:58:19.300Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68116,
+  "uuid": "skill-clawhub-agent-guardian",
+  "skillKey": "clawhub-agent-guardian",
+  "name": "Agent Guardian",
+  "summary": "Agent体验守护系统。解决AI助手常见体验问题：长时间无响应、任务卡死、中英文混用、状态不透明。包含看门狗监控、智能状态汇报、即时状态查询、语言一致性过滤、消息队列追踪。适用于所有渠道（QQ/微信/Telegram/飞书/Discord等）。当用户抱怨\"等太久没回复\"、\"回复中英文混着\"、\"不知道在干什么\"时使...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_guardian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fanxinyun1991",
+      "features": [
+        "Agent体验守护系统。解决AI助手常见体验问题：长时间无响应、任务卡死、中英文混用、状态不透明。包含看门狗监控、智能状态汇报、即时状态查询、语言一致性过滤、消息队列追踪。适用于所有渠道（Q."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-guardian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98153939?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-guardian",
+      "url": "https://clawhub.ai/skills/agent-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-guardian",
+    "url": "https://clawhub.ai/skills/agent-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-guardian-121d48014140220b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-guardian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-guardian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00e4261893d0f20b10e3944ddef65e4dea78b37914fcf4d9ebdbb1ca85fc16b3",
+      "artifactSizeBytes": 2221
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T13:16:12.262Z"
+}

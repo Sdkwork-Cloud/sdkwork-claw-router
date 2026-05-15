@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dealpilot@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dealpilot",
+  "skill": {
+    "id": 58174,
+    "skillKey": "clawhub-dealpilot",
+    "name": "Dealpilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dealpilot",
+    "url": "https://clawhub.ai/skills/dealpilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dealpilot-affdddfec508639b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cross-Platform Shopping Decision Agent / 全网购物决策官. Compares prices, quality, and risk across 淘宝/拼多多/京东/一号店/唯品会 and recommends the best platform for a given pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775377828682,
+      "changelog": "DealPilot v0.1.0 初始发布（MVP骨架版本）\n\n- 定义了跨平台购物决策输入/输出 schema\n- 实现决策引擎流程及平台适配器接口（均为stub，返回mock数据）\n- 支持淘宝、拼多多、京东、一号店、唯品会平台适配结构\n- 提供自测脚本和本地测试方法\n- 明确开发目录结构与后续开发方向\n- 尚未接入真实平台数据，实际比价和风险评估功能待开发",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8800c25ee63b0482c828fb5b1855ff78dfdf9b5d162f293a616a6a2d8162d6dd"
+}

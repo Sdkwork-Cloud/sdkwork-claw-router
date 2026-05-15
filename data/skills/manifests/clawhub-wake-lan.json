@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47804,
+  "uuid": "skill-clawhub-wake-lan",
+  "skillKey": "clawhub-wake-lan",
+  "name": "Wake-on-LAN",
+  "summary": "Send Wake-on-LAN magic packets to wake sleeping devices on your LAN using saved aliases or direct MAC/IP via CLI or Python on Linux, macOS, and Android.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wake_lan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kingofqin2026",
+      "features": [
+        "Send Wake-on-LAN magic packets to wake sleeping devices on your LAN using saved aliases or dire."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wake-lan@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261905121?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wake-lan",
+      "url": "https://clawhub.ai/skills/wake-lan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wake-lan",
+    "url": "https://clawhub.ai/skills/wake-lan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wake-lan-86977e903c761fd1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wake-lan@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wake-lan-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:406f9e29f8b123f8fdbc80e4d8ca72b6919b9764191cf4c04b5d25be222ac534",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T00:17:36.823Z"
+}

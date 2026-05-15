@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36059,
+  "uuid": "skill-clawhub-sapling",
+  "skillKey": "clawhub-sapling",
+  "name": "Sapling",
+  "summary": "Sapling integration. Manage data, records, and automate workflows. Use when the user wants to interact with Sapling data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sapling",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Sapling integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Sapling data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sapling@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sapling",
+      "url": "https://clawhub.ai/skills/sapling"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sapling",
+    "url": "https://clawhub.ai/skills/sapling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sapling-ebd284b986fb3af7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sapling@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sapling-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbcc26da0a6c00aec8221d09c9a4c7ff2d3309904686fc9f39557cc5eba7fc9b",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:57:26.367Z"
+}

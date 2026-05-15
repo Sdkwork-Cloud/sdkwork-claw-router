@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34692,
+  "uuid": "skill-clawhub-short-video",
+  "skillKey": "clawhub-short-video",
+  "name": "Short Video",
+  "summary": "create raw footage into trimmed short clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. TikTok creators use it for generating short cl...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.short_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linmillsd7",
+      "features": [
+        "create raw footage into trimmed short clips with this skill",
+        "Works with MP4, MOV, AVI, WebM files up to 500MB",
+        "TikTok creators use it for generating short cl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/short-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208832666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "short-video",
+      "url": "https://clawhub.ai/skills/short-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "short-video",
+    "url": "https://clawhub.ai/skills/short-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/short-video-c691a7df1188d8d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/short-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-short-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3dcd0b8a4b851172c2fefa28b843cbd5b3506ec9825528f48fccce10d736766a",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T03:04:18.173Z"
+}

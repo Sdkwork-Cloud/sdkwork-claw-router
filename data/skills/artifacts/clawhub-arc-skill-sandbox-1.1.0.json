@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arc-skill-sandbox@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arc_skill_sandbox",
+  "skill": {
+    "id": 14936,
+    "skillKey": "clawhub-arc-skill-sandbox",
+    "name": "Skill Sandbox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arc-skill-sandbox",
+    "url": "https://clawhub.ai/skills/arc-skill-sandbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arc-skill-sandbox-cae1f0f88450aedc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Test untrusted skills in an isolated environment before installing. Monitors network access, filesystem writes, environment variable reads, and subprocess ca..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trypto1019",
+      "userId": "publishers:trypto1019",
+      "displayName": "ArcSelf",
+      "image": "https://avatars.githubusercontent.com/u/91297640?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1008,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771290083261,
+      "changelog": "arc-skill-sandbox 1.1.0\n\n- Updated scripts/sandbox.py (details not included).\n- No user-facing documentation changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f6a9a3e2e3417147d1907c19d32f8cf31d0d6c1bb8e3987da57bba5944436f43"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59720,
+  "uuid": "skill-clawhub-openclaw-code-review-skill",
+  "skillKey": "clawhub-openclaw-code-review-skill",
+  "name": "openclaw-code-review-skill",
+  "summary": "对 Pull Request 或代码 Diff 进行结构化审查，使用多 Agent 并行审查 + 置信度评分过滤误报。触发：/code-review、审查 PR、代码审查",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_code_review_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cdaaa",
+      "features": [
+        "对 Pull Request 或代码 Diff 进行结构化审查，使用多 Agent 并行审查 + 置信度评分过滤误报。触发：/code-review、审查 PR、代码审查"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-code-review-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44298363?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-code-review-skill",
+      "url": "https://clawhub.ai/skills/openclaw-code-review-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-code-review-skill",
+    "url": "https://clawhub.ai/skills/openclaw-code-review-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-code-review-skill-6ca7728d609799ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-code-review-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-code-review-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c48148cc807dc5ba63162a306e3d9a9eb8519afc0ea2d07b573dc1c7ccf737e",
+      "artifactSizeBytes": 2088
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T03:04:07.081Z"
+}

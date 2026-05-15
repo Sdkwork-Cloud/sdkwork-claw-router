@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19463,
+  "uuid": "skill-clawhub-bool-cli",
+  "skillKey": "clawhub-bool-cli",
+  "name": "bool-cli",
+  "summary": "Deploy sites to Bool.com via the bool CLI. Use when creating, deploying, updating, or managing Bool projects.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bool_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jeremy Keeshin",
+      "features": [
+        "Deploy sites to Bool.com via the bool CLI",
+        "Use when creating, deploying, updating, or managing Bool projects."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bool-cli@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225945?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bool-cli",
+      "url": "https://clawhub.ai/skills/bool-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bool-cli",
+    "url": "https://clawhub.ai/skills/bool-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bool-cli-7f61bfbb098f979c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bool-cli@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bool-cli-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd2fd0fc5e8bffbe282d162b183433c35d31b905e92994ed392dc4a28349c397",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T00:31:46.356Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50931,
+  "uuid": "skill-clawhub-topview",
+  "skillKey": "clawhub-topview",
+  "name": "Topview",
+  "summary": "Official Topview AI client. Generate videos, images, avatars, and TTS audio via the Topview API. All network calls go to *.topview.ai only.",
+  "version": "0.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.topview",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "topview.ai",
+      "features": [
+        "Official Topview AI client",
+        "Generate videos, images, avatars, and TTS audio via the Topview API",
+        "All network calls go to *.topview.ai only."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/topview@0.1.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165014870?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "topview",
+      "url": "https://clawhub.ai/skills/topview"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "topview",
+    "url": "https://clawhub.ai/skills/topview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/topview-03c0ffbcfd1360df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/topview@0.1.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-topview-0.1.6.json",
+      "version": "0.1.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bd11df218a1490133446de3edcd86a7a5e69bff411c36d494dcd75d70b5d4eb",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T03:30:56.056Z"
+}

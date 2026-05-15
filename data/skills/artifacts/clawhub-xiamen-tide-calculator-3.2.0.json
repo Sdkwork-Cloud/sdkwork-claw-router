@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiamen-tide-calculator@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiamen_tide_calculator",
+  "skill": {
+    "id": 70430,
+    "skillKey": "clawhub-xiamen-tide-calculator",
+    "name": "Xiamen Tide Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiamen-tide-calculator",
+    "url": "https://clawhub.ai/skills/xiamen-tide-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiamen-tide-calculator-9da924b7c473fac2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "厦门潮汐计算器v3.2，用于计算厦门海域潮汐时间和赶海建议。支持公历自动转农历、当前日期自动识别、闰月处理。根据日期计算高潮低潮时间、判断潮汐大小、提供赶海评分、地点推荐、装备建议和安全提醒。新功能：多窗口期分析、优缺点描述、推荐指数、整合窗口功能。触发场景：(1) \"厦门今天潮汐\"等潮汐查询，(2) \"今天适合..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kingwingshome",
+      "userId": "s173y2rz8yp9g85s5zjcexey3d845feb",
+      "displayName": "kingwingshome",
+      "image": "https://avatars.githubusercontent.com/u/10000675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775187752299,
+      "changelog": "xiamen-tide-calculator v3.2.0\n\n- Initial release of the Xiamen Tide Calculator skill.\n- Provides basic tide calculation functions for Xiamen sea area.\n- Supports queries for specific dates, including lunar and solar dates.\n- Outputs high tide and low tide times.\n- Suitable for standard tide inquiries (e.g., \"厦门今天潮汐\") and basic use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3ee8005bb624e439bb8b55da3f815a5e580f4b7302618938800e5825a7b9eec"
+}

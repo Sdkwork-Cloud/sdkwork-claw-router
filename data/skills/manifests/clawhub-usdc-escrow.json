@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15507,
+  "uuid": "skill-clawhub-usdc-escrow",
+  "skillKey": "clawhub-usdc-escrow",
+  "name": "USDC Escrow",
+  "summary": "Trustless USDC escrow for agent-to-agent payments on Base. Create, release, dispute escrows via simple commands.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usdc_escrow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zeroaddresss",
+      "features": [
+        "Trustless USDC escrow for agent-to-agent payments on Base",
+        "Create, release, dispute escrows via simple commands."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/usdc-escrow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97956131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "usdc-escrow",
+      "url": "https://clawhub.ai/skills/usdc-escrow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usdc-escrow",
+    "url": "https://clawhub.ai/skills/usdc-escrow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usdc-escrow-782f579d5f672ce4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/usdc-escrow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-usdc-escrow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a249eb33aa57e43bb3c895c375fe91029f8f2f95cf49b9993064b1d07b46f71",
+      "artifactSizeBytes": 1869
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T18:34:33.973Z"
+}

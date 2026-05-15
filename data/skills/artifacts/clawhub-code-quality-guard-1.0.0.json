@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-quality-guard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_quality_guard",
+  "skill": {
+    "id": 17275,
+    "skillKey": "clawhub-code-quality-guard",
+    "name": "Code Quality Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-quality-guard",
+    "url": "https://clawhub.ai/skills/code-quality-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-quality-guard-d7babb0d0293da8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional pre-deployment code review and quality enforcement. Ensures imports are valid, tags are closed, and logic follows best practices before announci..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "balkanblbn",
+      "userId": "publishers:balkanblbn",
+      "displayName": "balkanblbn",
+      "image": "https://avatars.githubusercontent.com/u/224807213?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 765,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772333777147,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fb386bc60e0a2ab4e5d11cafc519c839caa728217c55d2783d3610f900022b0b"
+}

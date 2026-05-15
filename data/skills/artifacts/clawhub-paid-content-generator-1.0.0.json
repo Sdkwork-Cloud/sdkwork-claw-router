@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paid-content-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paid_content_generator",
+  "skill": {
+    "id": 65024,
+    "skillKey": "clawhub-paid-content-generator",
+    "name": "AI内容生成器(付费版)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paid-content-generator",
+    "url": "https://clawhub.ai/skills/paid-content-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paid-content-generator-cf8df5b3f563fb74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI内容生成器 - 小红书文案、视频脚本、多平台内容一键生成。接入SkillPay收费，每次调用0.001 USDT。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ffffff9331",
+      "userId": "s17b1f783zyddcccd2a1heanch843bsq",
+      "displayName": "ffffff9331",
+      "image": "https://avatars.githubusercontent.com/u/114909388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 659,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772692794748,
+      "changelog": "首个版本 - 小红书文案+视频脚本生成",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:93507ba2396ebf836f6cb1ba429f09a9bcfa87a846fe75ee55af1e702d773be4"
+}

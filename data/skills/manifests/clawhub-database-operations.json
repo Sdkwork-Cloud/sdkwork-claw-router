@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8524,
+  "uuid": "skill-clawhub-database-operations",
+  "skillKey": "clawhub-database-operations",
+  "name": "Database Operations",
+  "summary": "Use when designing database schemas, writing migrations, optimizing SQL queries, fixing N+1 problems, creating indexes, setting up PostgreSQL, configuring EF Core, implementing caching, partitioning tables, or any database performance ques.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.database_operations",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jgarrison929",
+      "features": [
+        "Use when designing database schemas, writing migrations, optimizing SQL queries, fixing N+1 pro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/database-operations@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21370704?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "database-operations",
+      "url": "https://clawhub.ai/skills/database-operations"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "database-operations",
+    "url": "https://clawhub.ai/skills/database-operations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/database-operations-e355246ea7800cd6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/database-operations@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-database-operations-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:986555ea65e031ba533ab568b59fe96719bbf2131864739b7ee4d127d8cc7330",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T04:56:31.804Z"
+}

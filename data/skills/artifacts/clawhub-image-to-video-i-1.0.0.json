@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-i@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_i",
+  "skill": {
+    "id": 39872,
+    "skillKey": "clawhub-image-to-video-i",
+    "name": "Image To Video I"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-i",
+    "url": "https://clawhub.ai/skills/image-to-video-i",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-i-ced082099db376af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get animated video clips ready to post, without touching a single slider. Upload your still images (JPG, PNG, WEBP, HEIC, up to 200MB), say something like \"t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776769144070,
+      "changelog": "Initial release of Image to Video — Convert Images Into Video Clips:\n\n- Instantly turn your still images (JPG, PNG, WEBP, HEIC, up to 200MB) into 1080p animated video clips ready to download as MP4.\n- No manual animation required — just upload and describe the video you want; ideal for marketers and social media creators.\n- Handles session setup, authentication, file uploads, video editing prompts, and cloud rendering automatically.\n- Supports common workflow commands for export, balance, status, and uploads.\n- Returns high-quality video using a cloud GPU pipeline, typically within 1 minute.\n- Provides robust error handling and user feedback for unsupported files, missing tokens, or credit issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29fc7a11958a97f605da43b44a9a01137069f9120a8351da284df1565d7bd595"
+}

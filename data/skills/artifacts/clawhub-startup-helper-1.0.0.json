@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/startup-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.startup_helper",
+  "skill": {
+    "id": 72940,
+    "skillKey": "clawhub-startup-helper",
+    "name": "创业启动助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "startup-helper",
+    "url": "https://clawhub.ai/skills/startup-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/startup-helper-3a276ef3a9309996.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "创业启动助手 - 一站式公司注册、ICP备案、商标注册、银行开户等全流程服务。当用户询问：如何注册公司、ICP备案流程、商标怎么注册、公司开户、创业流程、营业执照办理、社保开户、税务登记、阿里云备案、腾讯云备案等涉及公司创建和运营起步相关问题时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "earthwalking",
+      "userId": "s17c22xptvm4zbcs3vbdf4mwj583hzep",
+      "displayName": "Roma",
+      "image": "https://avatars.githubusercontent.com/u/105550312?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774338357797,
+      "changelog": "初始版本：包含公司注册、ICP备案、商标注册、银行开户、税务社保等全流程指导，支持阿里云/腾讯云第三方服务对接",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:885874f11d345e33d862b9632017369fc35d02830ed040e1e9fe12979e3e9a44"
+}

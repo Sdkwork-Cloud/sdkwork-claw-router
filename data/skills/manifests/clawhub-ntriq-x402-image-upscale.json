@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54282,
+  "uuid": "skill-clawhub-ntriq-x402-image-upscale",
+  "skillKey": "clawhub-ntriq-x402-image-upscale",
+  "name": "Ntriq X402 Image Upscale",
+  "summary": "AI image upscaling using Real-ESRGAN. 2x/3x/4x super-resolution for photos and general images. $0.10 USDC via x402.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_x402_image_upscale",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ntriq",
+      "features": [
+        "AI image upscaling using Real-ESRGAN",
+        "2x/3x/4x super-resolution for photos and general images",
+        "$0.10 USDC via x402."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ntriq-x402-image-upscale@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215101248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ntriq-x402-image-upscale",
+      "url": "https://clawhub.ai/skills/ntriq-x402-image-upscale"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-x402-image-upscale",
+    "url": "https://clawhub.ai/skills/ntriq-x402-image-upscale",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-x402-image-upscale-3054e2d745e34594.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ntriq-x402-image-upscale@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ntriq-x402-image-upscale-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:747dea4cac1cadd2984fb9dc0203e2d7e207d26c67589603371306ca87c43196",
+      "artifactSizeBytes": 2197
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T00:00:26.994Z"
+}

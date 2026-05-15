@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flaresolverr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flaresolverr",
+  "skill": {
+    "id": 26365,
+    "skillKey": "clawhub-flaresolverr",
+    "name": "FlareSolverr — Cloudflare Bypass"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flaresolverr",
+    "url": "https://clawhub.ai/skills/flaresolverr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flaresolverr-4ea376a0b87a8e4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bypass Cloudflare protection by routing requests through FlareSolverr’s browser API, handling challenges and returning page content, cookies, and headers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dolverin",
+      "userId": "publishers:dolverin",
+      "displayName": "Dolverin",
+      "image": "https://avatars.githubusercontent.com/u/5910064?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1178,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771019473227,
+      "changelog": "Initial release: Cloudflare bypass via FlareSolverr proxy. ENV-based config, session management, GET/POST, proxy support, error handling.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a113e0b0069272cfdbfd2c7e82c1f736230a1d4daa324cf7ea009d8f41350b3d"
+}

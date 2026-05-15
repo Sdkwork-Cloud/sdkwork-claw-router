@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-model-designer@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_model_designer",
+  "skill": {
+    "id": 9034,
+    "skillKey": "clawhub-data-model-designer",
+    "name": "Data Model Designer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-model-designer",
+    "url": "https://clawhub.ai/skills/data-model-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-model-designer-ccd2d9b90c6ae58b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design data models for construction projects. Create entity-relationship diagrams, define schemas, and generate database structures."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datadrivenconstruction",
+      "userId": "publishers:datadrivenconstruction",
+      "displayName": "datadrivenconstruction",
+      "image": "https://avatars.githubusercontent.com/u/94158709?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 4877,
+      "installsAllTime": 42,
+      "installsCurrent": 37,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1771174173087,
+      "changelog": "- Added detailed business case and technical documentation to SKILL.md.\n- Included Python class definitions, enums, and methods for systematic data model design, schema generation, ER diagrams, and validation.\n- Expanded skill description and metadata for clarity and compatibility.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:29322cda442c11913dac1a60a2a1a637e168c0e479dfbb69a184965f1e31502d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fast-claude-code@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fast_claude_code",
+  "skill": {
+    "id": 59378,
+    "skillKey": "clawhub-fast-claude-code",
+    "name": "fast-claude-code"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fast-claude-code",
+    "url": "https://clawhub.ai/skills/fast-claude-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fast-claude-code-8b7a72c8079e4969.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Claude Code 任务完成回调 Runtime。支持 Single / Interactive / Team 三种模式， ⚠️ 任务在后台 tmux 会话中运行，完成后通过 System Event 自动通知，无需轮询。 Use when: 需要运行 Claude Code 任务并在完成时获得通知。 NOT..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deadlining",
+      "userId": "s175ctyxd79z9wwke7hx4srfah83krrm",
+      "displayName": "DeadLining",
+      "image": "https://avatars.githubusercontent.com/u/45746693?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 472,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775292839413,
+      "changelog": "- No changes detected in this version; documentation and functionality remain the same as previous release.\n- All usage instructions, parameters, and mode guidelines are unchanged.\n- There are no updates to features or requirements in v1.0.5.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e02a32ee5132a66cafbcd8471d80d230b5eb43d789aeedfa509e0b014698f654"
+}

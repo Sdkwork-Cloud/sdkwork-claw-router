@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-claude-api-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_claude_api_builder",
+  "skill": {
+    "id": 32971,
+    "skillKey": "clawhub-claude-code-claude-api-builder",
+    "name": "Claude API Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-claude-api-builder",
+    "url": "https://clawhub.ai/skills/claude-code-claude-api-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-claude-api-builder-4942d871d3e348c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when code imports Anthropic SDKs or the user asks to build with the Claude API, Agent SDK, tool use, streaming, files, or batches."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wimi321",
+      "userId": "s177xf3genmsr92b653psf6fas83zzd8",
+      "displayName": "wimi321",
+      "image": "https://avatars.githubusercontent.com/u/34830250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775060258417,
+      "changelog": "Initial extraction from local Claude Code source",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57fc910b2bd08df00b45c1daf9d78e60d3bb48db2f103d7811e8415f54a64ab6"
+}

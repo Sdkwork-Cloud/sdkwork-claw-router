@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/silas-wechat-article-search@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.silas_wechat_article_search",
+  "skill": {
+    "id": 61648,
+    "skillKey": "clawhub-silas-wechat-article-search",
+    "name": "Silas WeChat Article Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "silas-wechat-article-search",
+    "url": "https://clawhub.ai/skills/silas-wechat-article-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/silas-wechat-article-search-87064efd3a31b1b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信公众号文章搜索与解析。搜狗微信+新榜双源搜索，Python脚本解析全文（零Node依赖），Serper转载兜底。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aohoyo",
+      "userId": "s172yjpf05bfj3wjfrwx88v8sx83hf31",
+      "displayName": "silas",
+      "image": "https://avatars.githubusercontent.com/u/169723524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776521987091,
+      "changelog": "v2.0: 合并parser+search双技能，Python解析全文(iPhone UA绕验证)，段落去重，零Node依赖，Serper转载兜底",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2e2063cff5bb6ba082de10baae7a99db299f28f2206f1d601193f3f8453dd18"
+}

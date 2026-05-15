@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/1215656-clawdbot-filesystem-1-0-2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1215656_clawdbot_filesystem_1_0_2",
+  "skill": {
+    "id": 33585,
+    "skillKey": "clawhub-1215656-clawdbot-filesystem-1-0-2",
+    "name": "1215656 Clawdbot Filesystem@1.0.2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1215656-clawdbot-filesystem-1-0-2",
+    "url": "https://clawhub.ai/skills/1215656-clawdbot-filesystem-1-0-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1215656-clawdbot-filesystem-1-0-2-8dc406cfeeedafdb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced filesystem operations - listing, searching, batch processing, and directory analysis for Clawdbot"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1215656",
+      "userId": "s17c1ken71c0q0ry08ba12sa7h83kspt",
+      "displayName": "1215656",
+      "image": "https://avatars.githubusercontent.com/u/255043115?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774431674415,
+      "changelog": "- Initial release of the filesystem skill for Clawdbot.\n- Provides advanced file and directory operations: smart listing, searching, batch copying, and directory analysis.\n- Supports powerful filtering, pattern matching, full-text search, and tree visualization.\n- Includes robust safety features: path validation, permission checks, and dry-run previews.\n- Integrates smoothly with other Clawdbot tools and offers broad customization options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed086e465a46f713d3083073dbcf91e9afda8b747a8443d6dff37bbd587dea88"
+}

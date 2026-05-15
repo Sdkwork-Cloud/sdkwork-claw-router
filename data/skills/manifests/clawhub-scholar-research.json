@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20134,
+  "uuid": "skill-clawhub-scholar-research",
+  "skillKey": "clawhub-scholar-research",
+  "name": "Scholar Research",
+  "summary": "Search, analyze, and summarize peer-reviewed academic papers from open access sources. Provides credibility scoring, visualization, timeline generation, and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scholar_research",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jingxiang Cheng",
+      "features": [
+        "Search, analyze, and summarize peer-reviewed academic papers from open access sources",
+        "Provides credibility scoring, visualization, timeline generation, and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scholar-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97768929?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scholar-research",
+      "url": "https://clawhub.ai/skills/scholar-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scholar-research",
+    "url": "https://clawhub.ai/skills/scholar-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scholar-research-f0b564e3b88cecd7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scholar-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scholar-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:985270fd442c4d3ab15038dc204706d3ad815ea77d7da0a065ec38ebcaf89c56",
+      "artifactSizeBytes": 2475
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T07:06:05.539Z"
+}

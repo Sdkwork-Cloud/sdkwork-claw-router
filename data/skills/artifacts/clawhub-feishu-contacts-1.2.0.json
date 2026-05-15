@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-contacts@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_contacts",
+  "skill": {
+    "id": 21456,
+    "skillKey": "clawhub-feishu-contacts",
+    "name": "Feishu Contacts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-contacts",
+    "url": "https://clawhub.ai/skills/feishu-contacts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-contacts-903339dd7a4e9d52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Feishu contacts by name/pinyin/department. Use when you need to find a person's open_id, email, or department info before sending messages or emails."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guyun94",
+      "userId": "s17drtw9ms8jkd228ea3khx48n83gh5c",
+      "displayName": "guyun94",
+      "image": "https://avatars.githubusercontent.com/u/32215857?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 448,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772704516278,
+      "changelog": "- Added detailed usage instructions for searching Feishu contacts and departments using local cache.\n- Described setup steps, required permissions, and the mandatory sync process.\n- Provided explicit command examples for person/department searches, listing department members, and fetching user details.\n- Introduced strict rules and workflows for identifying and locating users before any messaging or emailing actions.\n- Highlighted cache behaviors and best practices for maintaining up-to-date contact information.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f93a3504a27c252f3b47d862326dcdbc0ce90c4e9b0addae8beda1da798a7653"
+}

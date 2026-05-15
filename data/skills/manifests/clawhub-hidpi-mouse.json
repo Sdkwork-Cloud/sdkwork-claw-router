@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12305,
+  "uuid": "skill-clawhub-hidpi-mouse",
+  "skillKey": "clawhub-hidpi-mouse",
+  "name": "HiDPI Mouse",
+  "summary": "Universal HiDPI mouse click handling for Linux desktop automation. Auto-detects scale factor or allows calibration for any screen resolution/DPI. Converts Claude display coordinates to xdotool screen coordinates.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hidpi_mouse",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zeyuyuyu",
+      "features": [
+        "Universal HiDPI mouse click handling for Linux desktop automation",
+        "Auto-detects scale factor or allows calibration for any screen resolution/DPI",
+        "Converts Claude display coordinates to xdotool screen coordinates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hidpi-mouse@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41896859?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hidpi-mouse",
+      "url": "https://clawhub.ai/skills/hidpi-mouse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hidpi-mouse",
+    "url": "https://clawhub.ai/skills/hidpi-mouse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hidpi-mouse-42b75c83c8169af1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hidpi-mouse@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hidpi-mouse-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:faf1872c6b1aa8ea0a029e242feef72ef3e0d565c2231b194ebd1d81248d2545",
+      "artifactSizeBytes": 2562
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T04:14:20.846Z"
+}

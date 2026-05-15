@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alpha-finder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alpha_finder",
+  "skill": {
+    "id": 10836,
+    "skillKey": "clawhub-alpha-finder",
+    "name": "Alpha Finder (x402)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alpha-finder",
+    "url": "https://clawhub.ai/skills/alpha-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alpha-finder-4c4034ddc49c561e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Market Oracle for prediction market intelligence - Polymarket and Kalshi research, probability assessments, market sentiment analysis, and arbitrage opportunity identification. Use when users want to research prediction markets, analyze be."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tzannetosgiannis",
+      "userId": "publishers:tzannetosgiannis",
+      "displayName": "TzannetosGiannis",
+      "image": "https://avatars.githubusercontent.com/u/32258946?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2616,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769695712149,
+      "changelog": "Alpha Finder 1.0.0 – Initial release\n\n- Provides market intelligence on Polymarket, Kalshi, and traditional sources.\n- Supports research, probability assessments, market sentiment, and arbitrage opportunity detection.\n- Charges $0.03 USDC per request via x402 protocol on Base network.\n- Integrates web, GitHub, Reddit, and X/Twitter for comprehensive analysis.\n- Features AI-powered insights, error handling, and multi-method private key configuration.\n- Use cases include trading, research, due diligence, portfolio tracking, and news impact analysis.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2fa2da2964b74a51d546a9f0a0a0b32e90a14a1b9a4fc483620e6071ba27e7df"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29320,
+  "uuid": "skill-clawhub-defillama-openapi-skill",
+  "skillKey": "clawhub-defillama-openapi-skill",
+  "name": "DefiLlama OpenAPI Skill",
+  "summary": "Operate DefiLlama public analytics APIs through UXC with a curated OpenAPI schema and read-first guardrails.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.defillama_openapi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Operate DefiLlama public analytics APIs through UXC with a curated OpenAPI schema and read-firs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/defillama-openapi-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "defillama-openapi-skill",
+      "url": "https://clawhub.ai/skills/defillama-openapi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "defillama-openapi-skill",
+    "url": "https://clawhub.ai/skills/defillama-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/defillama-openapi-skill-e1dffeb28aaaf6a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/defillama-openapi-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-defillama-openapi-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20f1d89733f69bf5b1b7492ee83ac655cb18b39854498849a1653b64a340fbb7",
+      "artifactSizeBytes": 2281
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T02:02:48.439Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/accessibility-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.accessibility_review",
+  "skill": {
+    "id": 36535,
+    "skillKey": "clawhub-accessibility-review",
+    "name": "Accessibility Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "accessibility-review",
+    "url": "https://clawhub.ai/skills/accessibility-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/accessibility-review-4d484a222acec107.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a WCAG 2.1 AA accessibility audit on a design or page. Trigger with \"audit accessibility\", \"check a11y\", \"is this accessible?\", or when reviewing a desig..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rolandpg",
+      "userId": "s17bpx0kc35xq4tav10df5km25849pa8",
+      "displayName": "Patrick Roland",
+      "image": "https://avatars.githubusercontent.com/u/48327651?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775687137482,
+      "changelog": "- Initial release of the accessibility-review skill.\n- Run a WCAG 2.1 AA audit on a design or page via command triggers or manual invocation.\n- Provides a structured markdown audit template covering perceivable, operable, understandable, and robust criteria.\n- Includes quick reference for WCAG 2.1 AA, common accessibility issues, and a suggested testing approach.\n- Offers integration hints for design tools and project trackers (when connected).\n- Gives practical tips for prioritizing and testing accessibility issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38dc32773a5d69911f16a84a7ae5bf1016b50288138db4d9e1a56f519e528d95"
+}

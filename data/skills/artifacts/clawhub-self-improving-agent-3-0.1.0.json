@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improving-agent-3@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_agent_3",
+  "skill": {
+    "id": 21157,
+    "skillKey": "clawhub-self-improving-agent-3",
+    "name": "Self Improvement"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-agent-3",
+    "url": "https://clawhub.ai/skills/self-improving-agent-3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-agent-3-91dbad36cf6ef5a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "buradly",
+      "userId": "publishers:buradly",
+      "displayName": "Buradly",
+      "image": "https://avatars.githubusercontent.com/u/142363915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 400,
+      "installsAllTime": 12,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773640805510,
+      "changelog": "Initial release of the self-improving-agent-3 skill for OpenClaw and generic coding agents.\n\n- Captures learnings, errors, and feature requests in structured markdown logs for continuous self-improvement.\n- Provides clear guidelines for when and how to log corrections, failures, knowledge gaps, and best practices.\n- Includes workflow for promoting important insights to project-wide memory files (e.g., AGENTS.md, SOUL.md, TOOLS.md).\n- Supports both OpenClaw workspace integration and generic agent/project setups.\n- Defines standardized formats for logging learnings, errors, and feature requests, including metadata and ID generation.\n- Explains workflow for resolving and promoting logged entries to enhance agent and project effectiveness over time.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38f3c7c5772b03f1108f5b7d906883d6b700310161ae528c0311b8dcba5a5bc9"
+}

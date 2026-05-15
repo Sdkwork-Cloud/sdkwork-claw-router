@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39985,
+  "uuid": "skill-clawhub-find-topk-similiar-chemicals-rdkit",
+  "skillKey": "clawhub-find-topk-similiar-chemicals-rdkit",
+  "name": "rdkit",
+  "summary": "Cheminformatics toolkit for fine-grained molecular control. SMILES/SDF parsing, descriptors (MW, LogP, TPSA), fingerprints, substructure search, 2D/3D genera...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_topk_similiar_chemicals_rdkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wu-uk",
+      "features": [
+        "Cheminformatics toolkit for fine-grained molecular control",
+        "SMILES/SDF parsing, descriptors (MW, LogP, TPSA), fingerprints, substructure search, 2D/3D gene."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-topk-similiar-chemicals-rdkit@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199610473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-topk-similiar-chemicals-rdkit",
+      "url": "https://clawhub.ai/skills/find-topk-similiar-chemicals-rdkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-topk-similiar-chemicals-rdkit",
+    "url": "https://clawhub.ai/skills/find-topk-similiar-chemicals-rdkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-topk-similiar-chemicals-rdkit-91e90523e404587f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-topk-similiar-chemicals-rdkit@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-topk-similiar-chemicals-rdkit-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ed3d5ca9e62b7a0535edd7292cf14fc23fe1080219f96f033933c8abbb193a4",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:11:11.314Z"
+}

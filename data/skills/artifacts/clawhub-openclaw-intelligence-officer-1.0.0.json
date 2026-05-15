@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-intelligence-officer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_intelligence_officer",
+  "skill": {
+    "id": 60135,
+    "skillKey": "clawhub-openclaw-intelligence-officer",
+    "name": "OpenClaw行业情报官"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-intelligence-officer",
+    "url": "https://clawhub.ai/skills/openclaw-intelligence-officer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-intelligence-officer-cd80fd35b9114bc5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "行业情报官 - 定时采集 GitHub Trending、X(Twitter)、知乎、36kr、掘金等平台热点，AI 摘要后推送到指定渠道。集成 fxtwitter API 和 RSSHub。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "muisenice",
+      "userId": "s175s7nyd7x818zbjqkdk5n8md83hz19",
+      "displayName": "muisenice",
+      "image": "https://avatars.githubusercontent.com/u/170805867?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774331278504,
+      "changelog": "OpenClaw Intelligence Officer v1.0.0 — 首发上线\n\n- 定时采集 GitHub Trending、X (Twitter)、知乎、36kr、掘金等平台行业热点\n- 集成 fxtwitter API 和 RSSHub，支持主流信息源\n- 自动生成 AI 摘要，提取关键信息与标签\n- 支持飞书、钉钉、Telegram、邮件多渠道推送\n- 灵活配置定时频率、采集源、推送方式与内容去重\n- 所有历史情报本地保存，支持预览与追溯",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:469c897b31ab9e1a511ab5bb83b9812d3612caa8745187234f5376183900ef72"
+}

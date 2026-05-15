@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/last30days-skill-cn@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.last30days_skill_cn",
+  "skill": {
+    "id": 67348,
+    "skillKey": "clawhub-last30days-skill-cn",
+    "name": "Last30Days CN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "last30days-skill-cn",
+    "url": "https://clawhub.ai/skills/last30days-skill-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/last30days-skill-cn-33253c1476235c97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中国平台深度研究引擎 - 覆盖微博、小红书、B站、知乎、抖音、微信公众号、百度搜索、今日头条等8大平台。v2.1 修复百度/小红书反爬问题，XHR 拦截替代 DOM 解析，Bing 兜底搜索，AI综合分析生成有据可查的研究报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jesseovo",
+      "userId": "s17ac23ngcx8m1v8rfzddmvc718433gx",
+      "displayName": "Jesse",
+      "image": "https://avatars.githubusercontent.com/u/153301783?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776827368160,
+      "changelog": "last30days-skill-cn v2.1.0 highlights major updates for data stability and anti-crawling:\n\n- 修复百度、小红书等平台反爬问题，新增 XHR 拦截替代 DOM 解析方案。\n- 移除 ScrapeCreators，小红书爬虫支持直接 XHR 响应抓取。\n- 百度公开搜索被验证拦截时，自动降级为 Bing 国内版搜索兜底。\n- 提供 Playwright 爬虫模式，无需 API Key 可拉取微博、小红书、抖音、B站、知乎等多平台数据。\n- 新增测试用例和爬虫桥库，增强多源兼容性及代码可靠性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c7125bb94e3f39580fbf49154f8fbe8dbe3346bf94b787325061dd6470841c7"
+}

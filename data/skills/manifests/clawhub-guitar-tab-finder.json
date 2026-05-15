@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26986,
+  "uuid": "skill-clawhub-guitar-tab-finder",
+  "skillKey": "clawhub-guitar-tab-finder",
+  "name": "Guitar Tab Finder",
+  "summary": "Find guitar tabs/sheet sources for a song from a title or link (especially YouTube), rank the best matches, and produce a clean practice note. Use when a use...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guitar_tab_finder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "robin",
+      "features": [
+        "Find guitar tabs/sheet sources for a song from a title or link (especially YouTube), rank the b.",
+        "Use when a use..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guitar-tab-finder@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12162433?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guitar-tab-finder",
+      "url": "https://clawhub.ai/skills/guitar-tab-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guitar-tab-finder",
+    "url": "https://clawhub.ai/skills/guitar-tab-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guitar-tab-finder-17aa811cc73d264d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guitar-tab-finder@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-guitar-tab-finder-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d92975eac62cffa4b0a24e3951d03d56fae2357d2f8a207f367a8a7f6d76928a",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T00:13:26.346Z"
+}

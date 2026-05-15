@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-wacli-playbook@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_wacli_playbook",
+  "skill": {
+    "id": 33167,
+    "skillKey": "clawhub-openclaw-wacli-playbook",
+    "name": "OpenClaw wacli Playbook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-wacli-playbook",
+    "url": "https://clawhub.ai/skills/openclaw-wacli-playbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-wacli-playbook-9446442053f38188.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send WhatsApp messages to other people or search/sync WhatsApp history via the wacli CLI (not for normal user chats)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielsinewe",
+      "userId": "s176jv075hrkmn3rxtgbyd914583nrry",
+      "displayName": "Daniel Sinewe",
+      "image": "https://avatars.githubusercontent.com/u/128365422?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776063893921,
+      "changelog": "Initial release: WhatsApp CLI messaging/search/sync workflow with explicit safety and non-chat usage guardrails.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29455ee6b131edada24d0c818e4067dd74a648995329e3fced23209ebc10d719"
+}

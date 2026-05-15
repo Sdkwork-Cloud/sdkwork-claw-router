@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47728,
+  "uuid": "skill-clawhub-top-tool",
+  "skillKey": "clawhub-top-tool",
+  "name": "Top Tool",
+  "summary": "Display real-time view of running processes. Use for system monitoring, performance debugging, and resource management.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.top_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Display real-time view of running processes",
+        "Use for system monitoring, performance debugging, and resource management."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/top-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "top-tool",
+      "url": "https://clawhub.ai/skills/top-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "top-tool",
+    "url": "https://clawhub.ai/skills/top-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/top-tool-bd1ffcd93d844c74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/top-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-top-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d988d3900559b4892312b59453eeb236088b42328c27e8360675bee0516231ac",
+      "artifactSizeBytes": 1798
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T18:58:26.353Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28825,
+  "uuid": "skill-clawhub-aiotnetwork",
+  "skillKey": "clawhub-aiotnetwork",
+  "name": "AIOT Network",
+  "summary": "Meta-skill that indexes all AIOT platform skills and routes agent requests to the correct sub-skill.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiotnetwork",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "D9m1n1c",
+      "features": [
+        "Meta-skill that indexes all AIOT platform skills and routes agent requests to the correct sub-s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aiotnetwork@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109327351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aiotnetwork",
+      "url": "https://clawhub.ai/skills/aiotnetwork"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiotnetwork",
+    "url": "https://clawhub.ai/skills/aiotnetwork",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiotnetwork-066ab1ab1e910b7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aiotnetwork@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aiotnetwork-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:830df906e3cc81c89a42d7b1581a10b0a2b21841d09f0422d5d1cf8504f5f51a",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T08:08:47.772Z"
+}

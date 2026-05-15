@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15476,
+  "uuid": "skill-clawhub-trending-now",
+  "skillKey": "clawhub-trending-now",
+  "name": "Trending Now",
+  "summary": "Monitor internet and social media trends with heartbeat topic watchlists, freshness scoring, and concise alerts on what changed and why it matters.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trending_now",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Monitor internet and social media trends with heartbeat topic watchlists, freshness scoring, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trending-now@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trending-now",
+      "url": "https://clawhub.ai/skills/trending-now"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trending-now",
+    "url": "https://clawhub.ai/skills/trending-now",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trending-now-1087a89b89beb44c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trending-now@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trending-now-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54dd3aed40d6a3cf99346d746f1a408b144072a70c9e4d986688d116633f9d62",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T21:23:06.307Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-doctor-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_doctor_v2",
+  "skill": {
+    "id": 60419,
+    "skillKey": "clawhub-openclaw-doctor-v2",
+    "name": "OpenClaw Doctor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-doctor-v2",
+    "url": "https://clawhub.ai/skills/openclaw-doctor-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-doctor-v2-acbc398c6a27bc85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一键检查 OpenClaw 系统健康状态（配置、模型、cron、记忆）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "l6366616-lang",
+      "userId": "s171gfb2skgajpppmpvwqazts9844yj0",
+      "displayName": "l6366616-lang",
+      "image": "https://avatars.githubusercontent.com/u/249216672?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 297,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774236622935,
+      "changelog": "openclaw-doctor-v2 1.0.0 changelog:\n\n- Initial release of the openclaw-doctor skill.\n- Provides a comprehensive, one-command health check for OpenClaw, reviewing configuration, models, cron jobs, and memory files.\n- Gives clear status and repair suggestions, along with a health score (0–100).\n- Formats output as a clear, structured report.\n- Ensures no configuration changes are made and sensitive data is masked.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df9d26b972119ba6236bf32abd68d25209a5beba5f00cbb2dca15d5bfd38de11"
+}

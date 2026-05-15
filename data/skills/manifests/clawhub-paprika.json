@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10755,
+  "uuid": "skill-clawhub-paprika",
+  "skillKey": "clawhub-paprika",
+  "name": "Paprika",
+  "summary": "Access recipes, meal plans, and grocery lists from Paprika Recipe Manager. Use when user asks about recipes, meal planning, or cooking.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paprika",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matt Russell",
+      "features": [
+        "Access recipes, meal plans, and grocery lists from Paprika Recipe Manager",
+        "Use when user asks about recipes, meal planning, or cooking."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paprika@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1641895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paprika",
+      "url": "https://clawhub.ai/skills/paprika"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paprika",
+    "url": "https://clawhub.ai/skills/paprika",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paprika-67aa6b6c143c6683.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paprika@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paprika-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81bd7c60b6ff0cab068d26ad258118fb782da6be26d8582bb683d5e821eb2f1b",
+      "artifactSizeBytes": 1801
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-08T06:06:59.667Z"
+}

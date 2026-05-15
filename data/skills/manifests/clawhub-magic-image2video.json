@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21180,
+  "uuid": "skill-clawhub-magic-image2video",
+  "skillKey": "clawhub-magic-image2video",
+  "name": "magic-image2video",
+  "summary": "Generate a video task based on user-provided text and images (supports image URLs and local file paths), and submit it to a remote video service using an API...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.magic_image2video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangyuangao",
+      "features": [
+        "Generate a video task based on user-provided text and images (supports image URLs and local fil."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/magic-image2video@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259281994?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "magic-image2video",
+      "url": "https://clawhub.ai/skills/magic-image2video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "magic-image2video",
+    "url": "https://clawhub.ai/skills/magic-image2video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/magic-image2video-37d4030eaadd03d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/magic-image2video@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-magic-image2video-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ada00c14a4d1a25582eb8f1011b80f4f8695df77da40cb065690a1cb5ea34c6a",
+      "artifactSizeBytes": 2227
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T02:51:02.785Z"
+}

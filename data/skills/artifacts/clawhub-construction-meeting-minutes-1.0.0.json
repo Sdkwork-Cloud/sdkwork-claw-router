@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/construction-meeting-minutes@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.construction_meeting_minutes",
+  "skill": {
+    "id": 29665,
+    "skillKey": "clawhub-construction-meeting-minutes",
+    "name": "Construction Meeting Minutes Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "construction-meeting-minutes",
+    "url": "https://clawhub.ai/skills/construction-meeting-minutes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/construction-meeting-minutes-73ece9eadc5da9db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate structured construction meeting minutes from rough notes or voice transcription, with separated action items, decision tracking, and contractual fla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nitevity",
+      "userId": "publishers:nitevity",
+      "displayName": "nitevity",
+      "image": "https://avatars.githubusercontent.com/u/206263748?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 288,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774208959608,
+      "changelog": "Initial release of the Construction Meeting Minutes Generator skill.\n\n- Converts rough notes or voice transcriptions into structured, professional construction meeting minutes.\n- Automatically extracts and separates action items, decisions, and flags items with contractual/commercial implications.\n- Prompts for any missing essential meeting information (such as title, date, attendees).\n- Provides a standardized format with sections for agenda, actions, decisions log, and contractual flags.\n- Ensures all actions have a responsible person and deadline, and decisions are clearly attributed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ee66c4e05dade32abd09386d30496f10fd5bfac7756c0d5bcb1b7a99b9b7c37"
+}

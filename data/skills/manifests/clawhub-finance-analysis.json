@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60677,
+  "uuid": "skill-clawhub-finance-analysis",
+  "skillKey": "clawhub-finance-analysis",
+  "name": "Finance Analysis",
+  "summary": "财务分析 CLI 技能 - 财报分析、股票估值、风险评估",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finance_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alsoforever",
+      "features": [
+        "财务分析 CLI 技能",
+        "财报分析、股票估值、风险评估"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finance-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265420698?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finance-analysis",
+      "url": "https://clawhub.ai/skills/finance-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finance-analysis",
+    "url": "https://clawhub.ai/skills/finance-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finance-analysis-e922f16534d7b32a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finance-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-finance-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36851a6882d21cbbe2bc51c35b88acf94c74ec835ccd6a733c698c54c251d4ea",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T13:17:15.161Z"
+}

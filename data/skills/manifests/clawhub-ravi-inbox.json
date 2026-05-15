@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49384,
+  "uuid": "skill-clawhub-ravi-inbox",
+  "skillKey": "clawhub-ravi-inbox",
+  "name": "Ravi inbox",
+  "summary": "Read incoming SMS or email messages — OTPs, verification codes, verification links, incoming mail. Do NOT use for sending email (use ravi-email-send) or mana...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ravi_inbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Raunak Singwi",
+      "features": [
+        "Read incoming SMS or email messages — OTPs, verification codes, verification links, incoming ma.",
+        "Do NOT use for sending email (use ravi-email-send) or mana..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ravi-inbox@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18749768?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ravi-inbox",
+      "url": "https://clawhub.ai/skills/ravi-inbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ravi-inbox",
+    "url": "https://clawhub.ai/skills/ravi-inbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ravi-inbox-1f71aeaae691899f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ravi-inbox@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ravi-inbox-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65dba4f2474e78310400096d99f9794e82f6876b3a13183be06317437be073c1",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T05:46:23.750Z"
+}

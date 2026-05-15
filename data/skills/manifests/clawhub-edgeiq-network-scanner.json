@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36340,
+  "uuid": "skill-clawhub-edgeiq-network-scanner",
+  "skillKey": "clawhub-edgeiq-network-scanner",
+  "name": "Network Scanner",
+  "summary": "Performs authorized TCP port scanning, service banner grabbing, OS fingerprinting, and host discovery using pure Python without nmap on Windows/WSL/Linux.",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edgeiq_network_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EdgeIQLabs",
+      "features": [
+        "Performs authorized TCP port scanning, service banner grabbing, OS fingerprinting, and host dis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edgeiq-network-scanner@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16479432?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edgeiq-network-scanner",
+      "url": "https://clawhub.ai/skills/edgeiq-network-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edgeiq-network-scanner",
+    "url": "https://clawhub.ai/skills/edgeiq-network-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edgeiq-network-scanner-514ef964bd65652b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edgeiq-network-scanner@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-edgeiq-network-scanner-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3a34c4c91fe198f8d11afbba77e8f76a8ffb89377bfe7cfe642028b77d34c61",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T17:08:19.484Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72982,
+  "uuid": "skill-clawhub-kanxiang",
+  "skillKey": "clawhub-kanxiang",
+  "name": "看相skill",
+  "summary": "看相分析技能。通过用户上传的人体部位图片，识别图片类型（面相/手相/体相/骨相），调用相应的相术规则知识库，结合图片内容进行专业分析。支持面相（五官、三庭、十二宫）、手相（掌线、指形、掌丘）、骨相（头骨、体骨、九骨）、体相（体型、体态、气质）的综合分析。基于《麻衣神相》《柳庄相法》《神相全编》《水镜神相》《冰鉴》...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kanxiang",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "timerzz",
+      "features": [
+        "看相分析技能。通过用户上传的人体部位图片，识别图片类型（面相/手相/体相/骨相），调用相应的相术规则知识库，结合图片内容进行专业分析。支持面相（五官、三庭、十二宫）、手相（掌线、指形、掌丘）."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kanxiang@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27340968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kanxiang",
+      "url": "https://clawhub.ai/skills/kanxiang"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kanxiang",
+    "url": "https://clawhub.ai/skills/kanxiang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kanxiang-082389ddacc0f54f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kanxiang@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kanxiang-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dabde98d6a8d2057912d7fd1de791a25df9138c06fe7d467616a093616679f8d",
+      "artifactSizeBytes": 2545
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T08:55:41.157Z"
+}

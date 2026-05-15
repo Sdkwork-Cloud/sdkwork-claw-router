@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42698,
+  "uuid": "skill-clawhub-llm-provider-forensics",
+  "skillKey": "clawhub-llm-provider-forensics",
+  "name": "LLM Provider Forensics",
+  "summary": "Forensically verify what model family or routing layer may actually sit behind a claimed LLM endpoint or model ID. Use when an agent must investigate whether...",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_provider_forensics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andy Ren",
+      "features": [
+        "Forensically verify what model family or routing layer may actually sit behind a claimed LLM en.",
+        "Use when an agent must investigate whether..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-provider-forensics@1.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/230916456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-provider-forensics",
+      "url": "https://clawhub.ai/skills/llm-provider-forensics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-provider-forensics",
+    "url": "https://clawhub.ai/skills/llm-provider-forensics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-provider-forensics-dded0a7fe74678be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-provider-forensics@1.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-provider-forensics-1.3.1.json",
+      "version": "1.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:723c123c37152ffcc5cb62bf60189b5cd18f8c96f09458049fcfa6e20594e30a",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T13:02:20.639Z"
+}

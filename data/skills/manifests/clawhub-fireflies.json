@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10337,
+  "uuid": "skill-clawhub-fireflies",
+  "skillKey": "clawhub-fireflies",
+  "name": "Fireflies",
+  "summary": "Access Fireflies.ai meeting transcripts, summaries, action items, and analytics via GraphQL API",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fireflies",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daniil-ctrl",
+      "features": [
+        "Access Fireflies.ai meeting transcripts, summaries, action items, and analytics via GraphQL API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fireflies@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199391022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fireflies",
+      "url": "https://clawhub.ai/skills/fireflies"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fireflies",
+    "url": "https://clawhub.ai/skills/fireflies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fireflies-161c26cc674bc61b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fireflies@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fireflies-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:389b5b4df43fe31141c3c6cbc35f7147a18a4292e69d5a84307fa22b75ff60de",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T01:03:57.188Z"
+}

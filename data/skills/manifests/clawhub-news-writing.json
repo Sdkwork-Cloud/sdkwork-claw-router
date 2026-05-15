@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72214,
+  "uuid": "skill-clawhub-news-writing",
+  "skillKey": "clawhub-news-writing",
+  "name": "news-writing",
+  "summary": "新闻素材收集、整理、写作、排版与校对的完整工作流。用于用户需要生成新闻稿、快讯、深度稿、企业新闻、活动报道，或需要对现有新闻内容进行事实核实、结构优化、标题导语改写、版式统一与发布前审校时。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_writing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RichardCao06",
+      "features": [
+        "新闻素材收集、整理、写作、排版与校对的完整工作流。用于用户需要生成新闻稿、快讯、深度稿、企业新闻、活动报道，或需要对现有新闻内容进行事实核实、结构优化、标题导语改写、版式统一与发布前审校时。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-writing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50325142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-writing",
+      "url": "https://clawhub.ai/skills/news-writing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-writing",
+    "url": "https://clawhub.ai/skills/news-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-writing-0a9adda9e8446b36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-writing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-writing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c2d30c440bab1d7a749e86b62e1b652cdf1e1667d880e279751e22fc75d4793",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T07:44:29.123Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-cdn-manage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_cdn_manage",
+  "skill": {
+    "id": 43787,
+    "skillKey": "clawhub-aliyun-cdn-manage",
+    "name": "Aliyun Cdn Manage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-cdn-manage",
+    "url": "https://clawhub.ai/skills/aliyun-cdn-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-cdn-manage-82633c373b3ba4ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when managing Alibaba Cloud CDN via OpenAPI/SDK, including CDN domain onboarding and lifecycle operations, cache refresh/preload, HTTPS certificate updat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775092591613,
+      "changelog": "Initial release of aliyun-cdn-manage skill.\n\n- Provides lifecycle management for Alibaba Cloud CDN domains using OpenAPI/SDK\n- Supports cache refresh and preload, HTTPS certificate updates, and log/monitoring data queries\n- Credentials are sourced from environment variables or shared file, with clear priority\n- All operations and output evidence are organized under `output/aliyun-cdn-manage/`\n- Includes quickstart scripts and validation workflow for easy onboarding",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b631ad93968b6a5ae424b46db4a288d96286159bb9ddaedae0a99f74a93111da"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-address-sentinel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_address_sentinel",
+  "skill": {
+    "id": 43952,
+    "skillKey": "clawhub-crypto-address-sentinel",
+    "name": "Crypto Address Sentinel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-address-sentinel",
+    "url": "https://clawhub.ai/skills/crypto-address-sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-address-sentinel-689c6c446ea63a20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor wallet balances and on-chain activity. Get alerts when balances change or when specified conditions are met. Use for tracking portfolio, detecting un..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhiuannnn",
+      "userId": "s17cs5j2z9sd4deayy6xyf01t584g07r",
+      "displayName": "Zhiuannnn",
+      "image": "https://avatars.githubusercontent.com/u/61270121?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775728101571,
+      "changelog": "Initial release of crypto-address-sentinel.\n\n- Monitor wallet balances and on-chain activity across multiple blockchains.\n- Receive alerts for balance changes or when specified conditions are met.\n- Track portfolios, detect unusual activity, or monitor airdrop eligibility.\n- Supports Ethereum, Arbitrum, Optimism, Base, Polygon, BNB Chain, and Solana.\n- Customizable via environment variables and simple CLI commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ae9c76c33d94fbb64890aee44040b6ed4af51b0123804fb72fb0c77dee598e9"
+}

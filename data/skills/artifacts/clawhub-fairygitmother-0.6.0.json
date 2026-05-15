@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fairygitmother@0.6.0",
+  "version": "0.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fairygitmother",
+  "skill": {
+    "id": 26460,
+    "skillKey": "clawhub-fairygitmother",
+    "name": "FairygitMother"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fairygitmother",
+    "url": "https://clawhub.ai/skills/fairygitmother",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fairygitmother-97ac49bea502d105.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "[Experimental] Donate idle compute to fix open source issues. Connects to the FairygitMother grid, claims bounties, fixes GitHub issues, and submits diffs fo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alaindor",
+      "userId": "publishers:alaindor",
+      "displayName": "AlainDor",
+      "image": "https://avatars.githubusercontent.com/u/7132064?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.6.0",
+      "createdAt": 1773795829693,
+      "changelog": "Reinforcement feedback via heartbeat outcomes, file context enrichment, structured rejections, experimental phase",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ab3694c047d0474fda141af93b7f9ed3d410d0f231bdc68b190590ed32da967"
+}

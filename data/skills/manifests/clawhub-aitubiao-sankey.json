@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63829,
+  "uuid": "skill-clawhub-aitubiao-sankey",
+  "skillKey": "clawhub-aitubiao-sankey",
+  "name": "爱图表桑基图（流向图）",
+  "summary": "AI桑基图（流向图）生成。根据用户数据自动整理并创建桑基图可视化项目。当用户想要创建桑基图、流向图、展示数据流向关系时使用，触发词包括\"桑基图\"、\"流向图\"、\"sankey\"、\"sankey chart\"、\"flow diagram\"、\"data flow\"、\"create sankey\"等。",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aitubiao_sankey",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aitubiao",
+      "features": [
+        "AI桑基图（流向图）生成。根据用户数据自动整理并创建桑基图可视化项目。当用户想要创建桑基图、流向图、展示数据流向关系时使用，触发词包括\"桑基图\"、\"流向图\"、\"sankey\"、\"sankey."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aitubiao-sankey@1.1.5",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/aitubiao-sankey/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aitubiao-sankey",
+      "url": "https://clawhub.ai/skills/aitubiao-sankey"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aitubiao-sankey",
+    "url": "https://clawhub.ai/skills/aitubiao-sankey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aitubiao-sankey-28e1f68033525693.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aitubiao-sankey@1.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-aitubiao-sankey-1.1.5.json",
+      "version": "1.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa61fcc7d9b813967c8746581f192cb1489a107aa0bc74d7852a6857a4726630",
+      "artifactSizeBytes": 2675
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T08:52:57.568Z"
+}

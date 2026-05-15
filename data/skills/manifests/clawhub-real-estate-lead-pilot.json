@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49341,
+  "uuid": "skill-clawhub-real-estate-lead-pilot",
+  "skillKey": "clawhub-real-estate-lead-pilot",
+  "name": "Real Estate Lead Pilot",
+  "summary": "A high-trust lead qualification and appointment booking agent for realtors. Prevents MLS hallucinations via ThumbGate grounding.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.real_estate_lead_pilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "IgorGanapolsky",
+      "features": [
+        "A high-trust lead qualification and appointment booking agent for realtors",
+        "Prevents MLS hallucinations via ThumbGate grounding."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/real-estate-lead-pilot@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "real-estate-lead-pilot",
+      "url": "https://clawhub.ai/skills/real-estate-lead-pilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "real-estate-lead-pilot",
+    "url": "https://clawhub.ai/skills/real-estate-lead-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/real-estate-lead-pilot-d0694e3684836fb6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/real-estate-lead-pilot@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-real-estate-lead-pilot-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df592112da63a555dd03be91a64cf5d58d2321052e8fdd679e4e789ed9b12907",
+      "artifactSizeBytes": 2123
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T18:30:57.162Z"
+}

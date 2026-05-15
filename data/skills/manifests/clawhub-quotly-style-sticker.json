@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19015,
+  "uuid": "skill-clawhub-quotly-style-sticker",
+  "skillKey": "clawhub-quotly-style-sticker",
+  "name": "Quotly Style Sticker",
+  "summary": "Generate QuotLy-style stickers from forwarded messages and return one MEDIA path for auto-send. Use when users ask to create quote stickers from selected for...",
+  "version": "1.4.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quotly_style_sticker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sakullla",
+      "features": [
+        "Generate QuotLy-style stickers from forwarded messages and return one MEDIA path for auto-send",
+        "Use when users ask to create quote stickers from selected for..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quotly-style-sticker@1.4.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39609236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quotly-style-sticker",
+      "url": "https://clawhub.ai/skills/quotly-style-sticker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quotly-style-sticker",
+    "url": "https://clawhub.ai/skills/quotly-style-sticker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quotly-style-sticker-d0818827a3289bf2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quotly-style-sticker@1.4.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-quotly-style-sticker-1.4.3.json",
+      "version": "1.4.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1619986d0546d39a52ad590b70f26af224b543b52c3450bdc17cc941d65f410",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T05:33:51.467Z"
+}

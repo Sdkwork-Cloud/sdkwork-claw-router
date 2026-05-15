@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plane@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plane",
+  "skill": {
+    "id": 14177,
+    "skillKey": "clawhub-plane",
+    "name": "Plane.so"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plane",
+    "url": "https://clawhub.ai/skills/plane",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plane-fad900280ce54a04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Plane.so projects and work items using the `plane` CLI. List projects, create/update/search issues, manage cycles and modules, add comments, and assign members."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vaguilera-jinko",
+      "userId": "publishers:vaguilera-jinko",
+      "displayName": "vaguilera-jinko",
+      "image": "https://avatars.githubusercontent.com/u/257178512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769654436741,
+      "changelog": "Initial release: Plane.so CLI for managing projects, work items, cycles, modules, and comments.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5bee570b01128e3adb88fcce4a1f51d3f623880f9ff386c33b7b8493c7a0f311"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10793,
+  "uuid": "skill-clawhub-inworld-tts",
+  "skillKey": "clawhub-inworld-tts",
+  "name": "Inworld TTS",
+  "summary": "Text-to-speech via Inworld.ai API. Use when generating voice audio from text, creating spoken responses, or converting text to MP3/audio files. Supports multiple voices, speaking rates, and streaming for long text.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inworld_tts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gugic",
+      "features": [
+        "Text-to-speech via Inworld.ai API",
+        "Use when generating voice audio from text, creating spoken responses, or converting text to MP3.",
+        "Supports multiple voices, speaking rates, and streaming for long text."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inworld-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5916431?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inworld-tts",
+      "url": "https://clawhub.ai/skills/inworld-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inworld-tts",
+    "url": "https://clawhub.ai/skills/inworld-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inworld-tts-71b746443defef9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inworld-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inworld-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:332d7ed0021c9a534f592f65762b4d48a9dc720cf2b02cc22173107aaf2e187e",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T03:55:06.102Z"
+}

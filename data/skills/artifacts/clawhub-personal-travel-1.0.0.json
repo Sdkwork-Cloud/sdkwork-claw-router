@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-travel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_travel",
+  "skill": {
+    "id": 14621,
+    "skillKey": "clawhub-personal-travel",
+    "name": "Personal Travel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-travel",
+    "url": "https://clawhub.ai/skills/personal-travel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-travel-42aab495b85216e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Acts as the user's travel planning assistant in the Travel topic. Plans trips, tracks visited places, wishlists, budgets, documents. Use when in Personal cha..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gekacross",
+      "userId": "s17cym2ktv2gg2z1x3v5zg6xn983yakp",
+      "displayName": "GekaCross",
+      "image": "https://avatars.githubusercontent.com/u/57638140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1146,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771406206933,
+      "changelog": "Initial release. Travel assistant with wishlist, documents, and trip planning.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3a5e39e3f64ec0f5ddc617addbff307ae99cf29ce17dcbcf828fe7582eb419a8"
+}

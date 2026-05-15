@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weekly-report-hy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_report_hy",
+  "skill": {
+    "id": 72733,
+    "skillKey": "clawhub-weekly-report-hy",
+    "name": "根据用户提供的本周工作内容,生成格式标准、内容饱满丰富、语言专业的中文周报。当用户提到\"周报\"、\"周总结\"、\"工作汇报\"、\"本周工作\"、\"整理成周报\"等关键词,或者把本周做的事情罗列出来希望整理成正式格式时,务必使用此技能。该技能会智能识别并将工作内容按."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-report-hy",
+    "url": "https://clawhub.ai/skills/weekly-report-hy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-report-hy-06923b438478a4d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据用户提供的本周工作内容,生成格式标准、内容饱满丰富、语言专业的中文周报。当用户提到\"周报\"、\"周总结\"、\"工作汇报\"、\"本周工作\"、\"整理成周报\"等关键词,或者把本周做的事情罗列出来希望整理成正式格式时,务必使用此技能。该技能会智能识别并将工作内容按项目或主题分类,使用【】格式作为大标题,大标题下用阿拉伯数字..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cryptocxf",
+      "userId": "s17fe4ak55df89ybk0gtesn8n18574y3",
+      "displayName": "Cryptocxf",
+      "image": "https://avatars.githubusercontent.com/u/35908338?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777363116595,
+      "changelog": "- Initial release of the \"weekly-report-hy\" skill.\n- Generates well-structured, professional Chinese weekly reports from user-provided work notes.\n- Automatically categorizes work items by project or topic and outputs in a strict, standardized format.\n- Refines and expands user input with professional language, ensuring clarity and completeness without inventing details.\n- Supports keywords such as \"周报\"、\"周总结\"、\"工作汇报\" for automatic skill activation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:399f05a4cb6903068f9455611b7c55f74341fd8fbc2bb15bdabd3d34f3cda05e"
+}

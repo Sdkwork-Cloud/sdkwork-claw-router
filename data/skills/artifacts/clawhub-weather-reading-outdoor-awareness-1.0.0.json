@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-reading-outdoor-awareness@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_reading_outdoor_awareness",
+  "skill": {
+    "id": 40469,
+    "skillKey": "clawhub-weather-reading-outdoor-awareness",
+    "name": "Weather Reading Outdoor Awareness"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-reading-outdoor-awareness",
+    "url": "https://clawhub.ai/skills/weather-reading-outdoor-awareness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-reading-outdoor-awareness-8917ce73289c4625.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Practical weather observation and environmental awareness skills. Use when someone works outdoors, needs to make weather-dependent decisions without phone ac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "howtousehumans",
+      "userId": "s17ftae1txxqa39a87v3p6ta1583js3w",
+      "displayName": "HowToUseHumans",
+      "image": "https://avatars.githubusercontent.com/u/151727669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774852990758,
+      "changelog": "Initial release — practical guidance for reading weather and staying safe outdoors without digital tools.\n\n- Learn to identify 5 key cloud types and what they signal for upcoming weather.\n- Use wind direction and speed to predict approaching changes.\n- Recognize environmental signs of rising or falling barometric pressure.\n- Designed for anyone working or spending time outdoors, especially where phone/weather apps are unavailable.\n- Localization guidance for regional units and weather patterns included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8abc46688faf2552561d6d224ba1a5e48da04ac7e784ce63dc4895393dd097db"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72579,
+  "uuid": "skill-clawhub-rss-personalized-digest",
+  "skillKey": "clawhub-rss-personalized-digest",
+  "name": "RSS个性化追踪摘要",
+  "summary": "每天自动抓取多源RSS，根据关键词权重筛选并生成带点击追踪跳转的个性化摘要，用户点击自动加权优化推送。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rss_personalized_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pasaidon",
+      "features": [
+        "每天自动抓取多源RSS，根据关键词权重筛选并生成带点击追踪跳转的个性化摘要，用户点击自动加权优化推送。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rss-personalized-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46835765?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rss-personalized-digest",
+      "url": "https://clawhub.ai/skills/rss-personalized-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rss-personalized-digest",
+    "url": "https://clawhub.ai/skills/rss-personalized-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rss-personalized-digest-2a49af05babb8064.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rss-personalized-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rss-personalized-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b0de393aecde483c9dd561b79727da60adc839e7c04c61ece39c6dc94166e54",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T05:53:26.901Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21267,
+  "uuid": "skill-clawhub-productai-skill",
+  "skillKey": "clawhub-productai-skill",
+  "name": "Generate product photos for ecommerce",
+  "summary": "Generate professional AI product photos using ProductAI.photo service. Use when users need to create, enhance, or transform product images for e-commerce, ma...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.productai_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marko Balažic",
+      "features": [
+        "Generate professional AI product photos using ProductAI.photo service",
+        "Use when users need to create, enhance, or transform product images for e-commerce, ma..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/productai-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3310173?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "productai-skill",
+      "url": "https://clawhub.ai/skills/productai-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "productai-skill",
+    "url": "https://clawhub.ai/skills/productai-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/productai-skill-034607611513173c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/productai-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-productai-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f62d298923fafa9ea9b370083f2c1bdbdd17d5b07e6300d78656e7b602e7d435",
+      "artifactSizeBytes": 2207
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T13:03:31.529Z"
+}

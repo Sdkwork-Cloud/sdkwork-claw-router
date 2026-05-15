@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24612,
+  "uuid": "skill-clawhub-rivian-ls",
+  "skillKey": "clawhub-rivian-ls",
+  "name": "Rivian Ls",
+  "summary": "Access Rivian vehicle telemetry (battery, range, charge state, locks, doors, tires, cabin temp, location) using the rivian-ls CLI tool. Use when the user ask...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rivian_ls",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Frederiksen",
+      "features": [
+        "Access Rivian vehicle telemetry (battery, range, charge state, locks, doors, tires, cabin temp,.",
+        "Use when the user ask..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rivian-ls@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/908172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rivian-ls",
+      "url": "https://clawhub.ai/skills/rivian-ls"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rivian-ls",
+    "url": "https://clawhub.ai/skills/rivian-ls",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rivian-ls-84dbb20ef0b6733e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rivian-ls@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rivian-ls-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24f346e73e3022102e9da2168463898aa4bf1018a5bde02973ef165013f4a117",
+      "artifactSizeBytes": 1898
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T20:07:14.994Z"
+}

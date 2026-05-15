@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12906,
+  "uuid": "skill-clawhub-arxiv-osiris",
+  "skillKey": "clawhub-arxiv-osiris",
+  "name": "Arxiv Osiris",
+  "summary": "Search and download research papers from arXiv.org - Research version for OpenClaw agents",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_osiris",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ivan Cetta",
+      "features": [
+        "Search and download research papers from arXiv.org",
+        "Research version for OpenClaw agents"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-osiris@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2672456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-osiris",
+      "url": "https://clawhub.ai/skills/arxiv-osiris"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-osiris",
+    "url": "https://clawhub.ai/skills/arxiv-osiris",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-osiris-0febe2550d51bde5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-osiris@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-osiris-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:092e8931680469ddcfa2d79abeff74673972f3244f9f10959ae8fd984560af87",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T01:56:09.029Z"
+}

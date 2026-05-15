@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-pm-intel-brief@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_pm_intel_brief",
+  "skill": {
+    "id": 21140,
+    "skillKey": "clawhub-ai-pm-intel-brief",
+    "name": "AI PM Intel Brief"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-pm-intel-brief",
+    "url": "https://clawhub.ai/skills/ai-pm-intel-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-pm-intel-brief-3fe434e11acc7944.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a concise daily AI product management intelligence brief by filtering and synthesizing high-signal recent social media posts into key insights and p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qrg-cloud",
+      "userId": "publishers:qrg-cloud",
+      "displayName": "QRG-cloud",
+      "image": "https://avatars.githubusercontent.com/u/246659302?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 411,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773218438722,
+      "changelog": "Initial publish with structured AI PM brief workflow, output template, and default watchlist.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d975344d38d4ae914f28f7178eb49f1116e01e2a04490c356fda3f312cea4953"
+}

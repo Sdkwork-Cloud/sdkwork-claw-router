@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-architecture-quantum-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_architecture_quantum_analyzer",
+  "skill": {
+    "id": 52239,
+    "skillKey": "clawhub-bookforge-architecture-quantum-analyzer",
+    "name": "Architecture Quantum Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-architecture-quantum-analyzer",
+    "url": "https://clawhub.ai/skills/bookforge-architecture-quantum-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-architecture-quantum-analyzer-2ecaf3dc0a8478d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze a system's architecture quanta — independently deployable units with distinct quality attribute needs. Use this skill whenever the user needs to dete..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775996611875,
+      "changelog": "Initial release of the Architecture Quantum Analyzer skill.\n\n- Analyzes system architecture quanta to guide decisions between monolith and distributed designs.\n- Helps identify independent deployment boundaries based on component coupling, deployment, and quality attribute needs.\n- Supports both codebase-driven and greenfield/system description analyses.\n- Guides users through component identification, communication mapping, and grouping into quanta.\n- Designed as a prerequisite for architectural style selection and monolith decomposition.\n- Requires prior identification of system architecture characteristics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e3ee0f2a4287a54c13f10cf582b44640876b98b54be8c7071ee9a82a16fa8a5"
+}

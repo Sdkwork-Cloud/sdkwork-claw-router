@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/datadog-monitor-designer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datadog_monitor_designer",
+  "skill": {
+    "id": 48251,
+    "skillKey": "clawhub-datadog-monitor-designer",
+    "name": "Datadog Monitor Designer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datadog-monitor-designer",
+    "url": "https://clawhub.ai/skills/datadog-monitor-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datadog-monitor-designer-e6a5f0dd1b26ce01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design Datadog monitors that catch real production issues without paging on noise. Covers SLO-based monitoring with multi-window multi-burn-rate alerts, the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777856848604,
+      "changelog": "Initial release — provides expert-guided Datadog monitor design with SLO and tier template support.\n\n- Designs monitors to reduce false positives and alert fatigue, using SLO-based multi-window burn-rate alerts.\n- Recommends optimal Datadog monitor types: threshold, anomaly, forecast, outlier, composite, etc., based on use case.\n- Integrates tag-driven routing, downtime scheduling, and notification message engineering with runbook linking.\n- Outputs ready-to-import Datadog monitor JSON and structured notification/message templates.\n- Includes workflows for pruning noisy monitors, mapping SLOs to alerts, and establishing per-tier monitor packs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:153fbfe90000b7a16140e5ce21dd0fc70e6eca113219bd1c606c70c835674176"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deso-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deso_research",
+  "skill": {
+    "id": 14015,
+    "skillKey": "clawhub-deso-research",
+    "name": "deso-research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deso-research",
+    "url": "https://clawhub.ai/skills/deso-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deso-research-6cb06649bcf65299.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research and analyze content across decentralized social networks (Farcaster, Lens, Nostr, Bluesky) using the deso-ag CLI tool. Use this skill when users want to research topics on decentralized social platforms, analyze trending content,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mtple",
+      "userId": "s17dyqnhseeq5a68sjby4cywnh85vyy4",
+      "displayName": "Matt Lee",
+      "image": "https://avatars.githubusercontent.com/u/73853716?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1095,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770761298565,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c7b08afe52152e68e626507c57661bf67100c9445634bc7384b47d0524d26891"
+}

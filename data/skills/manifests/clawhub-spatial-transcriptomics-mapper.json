@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29387,
+  "uuid": "skill-clawhub-spatial-transcriptomics-mapper",
+  "skillKey": "clawhub-spatial-transcriptomics-mapper",
+  "name": "Spatial Transcriptomics Mapper",
+  "summary": "Map spatial transcriptomics data from 10x Genomics Visium/Xenium onto.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spatial_transcriptomics_mapper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Map spatial transcriptomics data from 10x Genomics Visium/Xenium onto."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spatial-transcriptomics-mapper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spatial-transcriptomics-mapper",
+      "url": "https://clawhub.ai/skills/spatial-transcriptomics-mapper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spatial-transcriptomics-mapper",
+    "url": "https://clawhub.ai/skills/spatial-transcriptomics-mapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spatial-transcriptomics-mapper-4d091283157e6c3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spatial-transcriptomics-mapper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spatial-transcriptomics-mapper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4419d4c63e95b8bbcea129948f338a5b3a1ba04d046c5672614cc5a913d23cbe",
+      "artifactSizeBytes": 2456
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:17:20.602Z"
+}

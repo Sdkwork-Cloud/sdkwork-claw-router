@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-stock-market@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_stock_market",
+  "skill": {
+    "id": 67673,
+    "skillKey": "clawhub-china-stock-market",
+    "name": "China Stock Market Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-stock-market",
+    "url": "https://clawhub.ai/skills/china-stock-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-stock-market-795a68dbecf475d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中国股票市场完全指南 - A股、主板、科创板、创业板、北交所交易规则、术语解释、投资风格、风险提示。应用于投资理财、量化交易、宏观分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smseow001",
+      "userId": "s17a72fh5mgpvvs3dm2ax0yq8984pnqc",
+      "displayName": "SMS",
+      "image": "https://avatars.githubusercontent.com/u/33817483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 288,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776405421764,
+      "changelog": "China Stock Market Skill 1.0.0\n\n- Initial release providing a comprehensive guide to the Chinese stock market.\n- Covers A-shares, Main Board, STAR Market, ChiNext, and Beijing Stock Exchange trading rules.\n- Explains key terminology, investment styles, and risk warnings.\n- Includes core indices, trading hours, and practical FAQs for investors.\n- Suitable for investment, quantitative trading, and macro analysis contexts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dafdc6d41e2b48e0747614bc1229ea33d25f2e82990bffd04ce3f8761628cc4e"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19336,
+  "uuid": "skill-clawhub-log-tail-sr",
+  "skillKey": "clawhub-log-tail-sr",
+  "name": "LogTail Smart Log Monitor & Analyzer",
+  "summary": "Monitor log files in real-time. Filter noise, surface errors, summarize patterns, alert on anomalies. Makes logs readable.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.log_tail_sr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Monitor log files in real-time",
+        "Filter noise, surface errors, summarize patterns, alert on anomalies",
+        "Makes logs readable."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/log-tail-sr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "log-tail-sr",
+      "url": "https://clawhub.ai/skills/log-tail-sr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "log-tail-sr",
+    "url": "https://clawhub.ai/skills/log-tail-sr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/log-tail-sr-e6795f1e10433ab1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/log-tail-sr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-log-tail-sr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ddd36fe619c3fffab50d71108a2831ed9a4fbe9e203277924e1dcf464baa3efc",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T01:00:16.343Z"
+}

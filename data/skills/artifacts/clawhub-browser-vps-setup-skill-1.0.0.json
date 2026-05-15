@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-vps-setup-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_vps_setup_skill",
+  "skill": {
+    "id": 18430,
+    "skillKey": "clawhub-browser-vps-setup-skill",
+    "name": "Browser Vps Setup Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-vps-setup-skill",
+    "url": "https://clawhub.ai/skills/browser-vps-setup-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-vps-setup-skill-8b3c23fd2566048e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up a remote-controlled Chrome browser on a Linux VPS with noVNC visual access (via SSH tunnel) and optional authenticated HTTP proxy. Use when the user w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "osipov-anton",
+      "userId": "publishers:osipov-anton",
+      "displayName": "osipov-anton",
+      "image": "https://avatars.githubusercontent.com/u/170366728?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 691,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771513895341,
+      "changelog": "Initial release: Easily set up a remotely controllable Chrome browser on a Linux VPS with noVNC visual access and optional authenticated proxy.\n\n- Provides detailed steps to install, run, and access Chrome via noVNC on Ubuntu/Debian VPS.\n- Enables simultaneous control by both agent (automation) and user (visual/interactive via browser).\n- Includes config for integration with OpenClaw agents.\n- Offers an optional local Python proxy bridge for authenticated HTTP proxies.\n- Security note: visual access and control ports are localhost-only; includes recommended firewall settings.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cc12af1b6c96ab9ce11a3dab5c45c0376bf3d0b67250e09a9820ac01fa7733c2"
+}

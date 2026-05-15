@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-code@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_code",
+  "skill": {
+    "id": 35566,
+    "skillKey": "clawhub-claw-code",
+    "name": "claw-code"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-code",
+    "url": "https://clawhub.ai/skills/claw-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-code-959f9d892274c980.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "TypeScript runtime port of Claude Code's AI agent harness for running commands, routing prompts, managing sessions, and auditing tool/command registries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dae-xiaoe",
+      "userId": "s175hhj8af00w7bdrt5d5cpbqx84c6xv",
+      "displayName": "dae-xiaoe",
+      "image": "https://avatars.githubusercontent.com/u/270592628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775617545599,
+      "changelog": "Initial release: AI Agent Harness Runtime, TypeScript port of Claude Code's harness system",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f279ad8d83d1ec12b38b22b1f9485b234c85fb0303b3b7a4d9a09a843907063c"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28921,
+  "uuid": "skill-clawhub-clawskillguard",
+  "skillKey": "clawhub-clawskillguard",
+  "name": "ClawSkillGuard",
+  "summary": "Security scanner for OpenClaw skills. Scans SKILL.md files and scripts for prompt injection, data exfiltration, malicious patterns, and unauthorized network...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawskillguard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xeonai44",
+      "features": [
+        "Security scanner for OpenClaw skills",
+        "Scans SKILL.md files and scripts for prompt injection, data exfiltration, malicious patterns, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawskillguard@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261166030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawskillguard",
+      "url": "https://clawhub.ai/skills/clawskillguard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawskillguard",
+    "url": "https://clawhub.ai/skills/clawskillguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawskillguard-5de4ce60374f5168.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawskillguard@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawskillguard-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ebebeaf71c60a5484e71f9c9431bcad2f5713e25a5e600ab1ca781607985bc6",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:07:00.400Z"
+}

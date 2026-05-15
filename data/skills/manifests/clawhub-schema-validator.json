@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47301,
+  "uuid": "skill-clawhub-schema-validator",
+  "skillKey": "clawhub-schema-validator",
+  "name": "Schema Validator",
+  "summary": "Validate JSON, CSV, and Excel data against schemas using 17 built-in rules including type, pattern, email, URL, and UUID checks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.schema_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Validate JSON, CSV, and Excel data against schemas using 17 built-in rules including type, patt."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/schema-validator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "schema-validator",
+      "url": "https://clawhub.ai/skills/schema-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "schema-validator",
+    "url": "https://clawhub.ai/skills/schema-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/schema-validator-d45a34de9f3a78d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/schema-validator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-schema-validator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53b1fcddcf57e35a059fbbccd7b9636e1b991b72d29c90db6f7222bcf49e8c42",
+      "artifactSizeBytes": 2230
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T23:47:50.313Z"
+}

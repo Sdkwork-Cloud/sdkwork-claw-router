@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25044,
+  "uuid": "skill-clawhub-easy-project",
+  "skillKey": "clawhub-easy-project",
+  "name": "Easy Project",
+  "summary": "Easy Project integration. Manage Projects. Use when the user wants to interact with Easy Project data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easy_project",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Easy Project integration",
+        "Manage Projects",
+        "Use when the user wants to interact with Easy Project data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/easy-project@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "easy-project",
+      "url": "https://clawhub.ai/skills/easy-project"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easy-project",
+    "url": "https://clawhub.ai/skills/easy-project",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easy-project-9eadb44f97ac6b41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/easy-project@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-easy-project-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf8d1f4cb1e59dc2ba80bb77cc049a1f40f6ed4b917d5e4eaaa9a874bb161e4b",
+      "artifactSizeBytes": 1837
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:42:07.854Z"
+}

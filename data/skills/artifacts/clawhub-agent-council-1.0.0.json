@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-council@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_council",
+  "skill": {
+    "id": 8646,
+    "skillKey": "clawhub-agent-council",
+    "name": "Agent Council"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-council",
+    "url": "https://clawhub.ai/skills/agent-council",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-council-25d3470bff764e78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete toolkit for creating autonomous AI agents and managing Discord channels for OpenClaw. Use when setting up multi-agent systems, creating new agents, or managing Discord channel organization."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "itsahedge",
+      "userId": "publishers:itsahedge",
+      "displayName": "itsahedge",
+      "image": "https://avatars.githubusercontent.com/u/51177340?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 7788,
+      "installsAllTime": 79,
+      "installsCurrent": 69,
+      "stars": 10,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770246446216,
+      "changelog": "Initial release: Complete toolkit for creating autonomous AI agents with Discord integration",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3b690eca016c2d65c354d25cc6333ad4a4dbcae98651357fe07fe5dff62372f2"
+}

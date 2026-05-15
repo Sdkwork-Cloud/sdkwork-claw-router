@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40833,
+  "uuid": "skill-clawhub-fetch-agents",
+  "skillKey": "clawhub-fetch-agents",
+  "name": "Fetch Agents",
+  "summary": "Call Fetch.ai Agentverse agents by address. Search the Agentverse marketplace, browse a curated catalog of top agents (Tavily Search, ASI1-Mini, DALL-E 3, Te...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fetch_agents",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Steve-Dusty",
+      "features": [
+        "Call Fetch.ai Agentverse agents by address",
+        "Search the Agentverse marketplace, browse a curated catalog of top agents (Tavily Search, ASI1-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fetch-agents@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66390533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fetch-agents",
+      "url": "https://clawhub.ai/skills/fetch-agents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fetch-agents",
+    "url": "https://clawhub.ai/skills/fetch-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fetch-agents-b3102958c05e0bb8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fetch-agents@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fetch-agents-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4177ccf85bb80298577a04d18a31b36b42fdb23166f594fbbcd4282366788d50",
+      "artifactSizeBytes": 1942
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T05:32:12.960Z"
+}

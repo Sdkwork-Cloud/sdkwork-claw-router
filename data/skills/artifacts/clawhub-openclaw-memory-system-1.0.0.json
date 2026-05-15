@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-memory-system@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_memory_system",
+  "skill": {
+    "id": 71596,
+    "skillKey": "clawhub-openclaw-memory-system",
+    "name": "OpenClaw 记忆系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-memory-system",
+    "url": "https://clawhub.ai/skills/openclaw-memory-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-memory-system-c5a75fbaf49f3c43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持多模态图片和工具调用记忆，细粒度项目和用户隔离，及基于自然语言的记忆修正与版本控制。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nick-liu1989",
+      "userId": "s178c6avc33tzxrtgq8k15d8ex83he8x",
+      "displayName": "Nick-Liu1989",
+      "image": "https://avatars.githubusercontent.com/u/170501677?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773754203445,
+      "changelog": "openclaw-memory-system v1.0.0\n\n- Introduces a multimodal memory system supporting image/tool memory, project/agent/user isolation, and natural language correction.\n- Provides granular memory isolation, including namespaces for projects, agents, and users with permission controls.\n- Enables feedback-driven memory correction with version control and Feishu card support.\n- Includes installation instructions, configuration templates, and testing guidelines.\n- Implements security features: path validation, permission control, atomic writes, versioning, and sensitive information filtering.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c68a3d024168ece122abbec1308e7a0545781c1ded14fe7699acb27a319648fd"
+}

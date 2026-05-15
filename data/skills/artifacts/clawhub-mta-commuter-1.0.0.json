@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mta-commuter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mta_commuter",
+  "skill": {
+    "id": 33693,
+    "skillKey": "clawhub-mta-commuter",
+    "name": "MTA Commuter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mta-commuter",
+    "url": "https://clawhub.ai/skills/mta-commuter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mta-commuter-0e44a88dde7dac5d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "NYC commuter transit: LIRR, Metro-North, and Subway schedules, trip planning, and service alerts. Use when the user asks about train departures, arrivals, co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ottomanelli",
+      "userId": "s178xws25yrss0vn5yc21gb2r98516dr",
+      "displayName": "Frankie Ottomanelli",
+      "image": "https://avatars.githubusercontent.com/u/9010740?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776388559692,
+      "changelog": "- Initial release providing schedules, trip planning, and service alerts for LIRR, Metro-North, and NYC Subway.\n- Supports direct schedule lookup, multi-leg trip planning, and finding nearby stations across all covered systems.\n- Live train delay and service alert integration using MTA GTFS static and real-time feeds.\n- Includes track watch functionality for LIRR and Metro-North departure platforms (via optional cron jobs).\n- Allows user location management for personalized trip planning.\n- Provides setup guidance and usage examples for all major features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f9a1cb8b519e98f5c233111ab4da0950e9577ad581b97bff37a1521deb15413"
+}

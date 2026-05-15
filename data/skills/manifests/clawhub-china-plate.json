@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58314,
+  "uuid": "skill-clawhub-china-plate",
+  "skillKey": "clawhub-china-plate",
+  "name": "China Plate",
+  "summary": "中国机动车车牌号码解析与识别。Use when the user provides a Chinese license plate number and wants to identify the province, city, plate type (普通/新能源/军牌/警牌/学牌), or validate...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_plate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "中国机动车车牌号码解析与识别。Use when the user provides a Chinese license plate number and wants to identify."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-plate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-plate",
+      "url": "https://clawhub.ai/skills/china-plate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-plate",
+    "url": "https://clawhub.ai/skills/china-plate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-plate-f6d71bd8020fed34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-plate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-plate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:773959d7169f0e92eb723c7fdc6508ba12e02504403edc60c7d2136a4482d6ec",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T12:59:31.709Z"
+}

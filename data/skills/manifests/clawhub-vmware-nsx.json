@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46899,
+  "uuid": "skill-clawhub-vmware-nsx",
+  "skillKey": "clawhub-vmware-nsx",
+  "name": "Vmware Nsx",
+  "summary": "Use this skill whenever the user needs to manage VMware NSX networking — segments, gateways, NAT, routing, and IP pools. Directly handles: create/manage netw...",
+  "version": "1.5.22",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vmware_nsx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zw008",
+      "features": [
+        "Use this skill whenever the user needs to manage VMware NSX networking — segments, gateways, NA.",
+        "Directly handles: create/manage netw..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vmware-nsx@1.5.22",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10613299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vmware-nsx",
+      "url": "https://clawhub.ai/skills/vmware-nsx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vmware-nsx",
+    "url": "https://clawhub.ai/skills/vmware-nsx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vmware-nsx-9884933ae4af39e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vmware-nsx@1.5.22",
+      "artifactUrl": "data/skills/artifacts/clawhub-vmware-nsx-1.5.22.json",
+      "version": "1.5.22",
+      "runtime": "metadata",
+      "checksumHash": "sha256:108b8768a2cc9fc6bef5e6b2f34c3589fc8d33e6549eee24be54b1d50db977af",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T23:25:11.400Z"
+}

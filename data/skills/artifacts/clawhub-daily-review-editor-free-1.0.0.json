@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-review-editor-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_review_editor_free",
+  "skill": {
+    "id": 52351,
+    "skillKey": "clawhub-daily-review-editor-free",
+    "name": "Daily Review Editor Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-review-editor-free",
+    "url": "https://clawhub.ai/skills/daily-review-editor-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-review-editor-free-97b47dac7f873254.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim pauses, add intro title, and sync background music to my daily review..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776599190804,
+      "changelog": "Daily Review Editor Free v1.0.0 — Initial Release\n\n- Instantly edit and export short review videos with easy prompts—no editing skills required.\n- Supports uploads of MP4, MOV, AVI, and WebM videos up to 500MB.\n- Features AI-powered tools: trim pauses, add titles, sync background music, and more in minutes.\n- Handles authentication via environment token or anonymous free credits system.\n- Includes simple commands for exporting videos, checking credits, uploading files, and tracking edit status.\n- Cloud GPU processing with 1080p export; optimized for review and daily vlog creators.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71232a31c527b195727ae88efa03773d9027a9af33cd1c3bd0b717c0cc36e320"
+}

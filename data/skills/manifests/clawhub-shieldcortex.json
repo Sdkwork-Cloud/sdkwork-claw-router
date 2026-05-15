@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12168,
+  "uuid": "skill-clawhub-shieldcortex",
+  "skillKey": "clawhub-shieldcortex",
+  "name": "ShieldCortex",
+  "summary": "Persistent memory and security system for AI agents. Stores memories with semantic search, knowledge graphs, and decay. Scans agent inputs/outputs for prompt...",
+  "version": "4.14.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shieldcortex",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jarvis-drakon",
+      "features": [
+        "Persistent memory and security system for AI agents",
+        "Stores memories with semantic search, knowledge graphs, and decay",
+        "Scans agent inputs/outputs for prompt..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shieldcortex@4.14.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257379654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shieldcortex",
+      "url": "https://clawhub.ai/skills/shieldcortex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shieldcortex",
+    "url": "https://clawhub.ai/skills/shieldcortex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shieldcortex-9bdf556641d7c6d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shieldcortex@4.14.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-shieldcortex-4.14.11.json",
+      "version": "4.14.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75deba10cee6e9a3544edd0b3e09cde61a661a603b3e02b253ac284b49723b46",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T14:28:38.655Z"
+}

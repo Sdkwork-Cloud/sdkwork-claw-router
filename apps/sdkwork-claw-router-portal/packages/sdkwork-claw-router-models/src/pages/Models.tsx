@@ -109,8 +109,10 @@ export function Models() {
           setCatalogModels(models);
         }
       })
-      .catch((error) => {
-        console.error('Failed to fetch runtime model catalog from app SDK', error);
+      .catch(() => {
+        if (!cancelled) {
+          setCatalogModels([]);
+        }
       });
 
     return () => {

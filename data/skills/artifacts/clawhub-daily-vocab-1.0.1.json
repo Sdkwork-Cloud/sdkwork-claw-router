@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-vocab@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_vocab",
+  "skill": {
+    "id": 51244,
+    "skillKey": "clawhub-daily-vocab",
+    "name": "Daily Vocab"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-vocab",
+    "url": "https://clawhub.ai/skills/daily-vocab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-vocab-a6c9e270f0ddb015.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "One advanced English word every day — IPA pronunciation, etymology, 3 example sentences, and quiz mode. GRE / SAT / IELTS / C2 vocabulary level."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiajiaoy",
+      "userId": "s17cev4f59prejmqpq8qft2ffn83g42e",
+      "displayName": "jiajiaoy",
+      "image": "https://avatars.githubusercontent.com/u/254620896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777286852584,
+      "changelog": "- Clarified and shortened the skill description for better readability.\n- No core logic changes; documentation updated for clarity and conciseness.\n- Added a new README.md to improve user guidance.\n- No workflow or visual feature changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46f9aa0db16daa535d4b3de665b9512909a5a8ddda1d07020dc5e6a6f1dc2873"
+}

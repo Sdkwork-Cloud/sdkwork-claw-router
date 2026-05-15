@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22783,
+  "uuid": "skill-clawhub-tmux-temp",
+  "skillKey": "clawhub-tmux-temp",
+  "name": "Tmux Temp",
+  "summary": "Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmux_temp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhouyaya100",
+      "features": [
+        "Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane outpu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tmux-temp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200876861?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tmux-temp",
+      "url": "https://clawhub.ai/skills/tmux-temp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmux-temp",
+    "url": "https://clawhub.ai/skills/tmux-temp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmux-temp-f8e0611aab09895d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tmux-temp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tmux-temp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e8708c4f5514340ca7720f7139da3f1a6227c6d130a3bc1a52c3446fd2b4746",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T12:50:19.398Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-migrate-flagos@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_migrate_flagos",
+  "skill": {
+    "id": 39644,
+    "skillKey": "clawhub-model-migrate-flagos",
+    "name": "Model Migrate FlagOS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-migrate-flagos",
+    "url": "https://clawhub.ai/skills/model-migrate-flagos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-migrate-flagos-b60f4b0878d6c96e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Migrate a model from the latest vLLM upstream repository into the vllm-plugin-FL project (pinned at vLLM v0.13.0). Use this skill whenever someone wants to a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wbavon",
+      "userId": "s179mcxns07mhashdtzg4tbf6584wt8v",
+      "displayName": "Flagos",
+      "image": "https://avatars.githubusercontent.com/u/263577448?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774240383589,
+      "changelog": "Initial release of the model-migrate-flagos skill for FL Plugin model migration.\n\n- Enables automated migration of models from latest vLLM upstream into the vllm-plugin-FL project (vLLM 0.13.0).\n- Parses intent and arguments from user commands (supports model_name and optional folder overrides).\n- Orchestrates a step-by-step migration: argument validation, reference loading, placeholder resolution, procedural execution, patch application, validation, benchmarking, and end-to-end testing.\n- Integrates multiple scripts for validation, serving, benchmarking, and E2E evaluation.\n- Designed for easy troubleshooting with a detailed error/solution table and strict protocol adherence.\n- Triggered via phrases like \"migrate X model\" or \"/model-migrate-flagos model_name\".",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b83d6ad0103d35f80e689e6bec4b6eb10de970f74268691fff7e14c6edba1389"
+}

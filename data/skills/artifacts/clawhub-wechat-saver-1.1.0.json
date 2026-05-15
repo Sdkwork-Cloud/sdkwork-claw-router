@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-saver@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_saver",
+  "skill": {
+    "id": 64339,
+    "skillKey": "clawhub-wechat-saver",
+    "name": "Wechat Saver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-saver",
+    "url": "https://clawhub.ai/skills/wechat-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-saver-45df3820c96ef3b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信公众号文章抓取工具。将微信文章转换为 Obsidian 兼容的 Markdown 格式，支持图片下载、智能格式识别（代码块/列表/引用）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kuiilabs",
+      "userId": "s17d83nwkjy2a5h94rrcw8qenx847spy",
+      "displayName": "Kuiil",
+      "image": "https://avatars.githubusercontent.com/u/65759645?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775372339577,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:28641048035746b4b79665f418f50b8fc196880f0fd55264bd148256ebee9560"
+}

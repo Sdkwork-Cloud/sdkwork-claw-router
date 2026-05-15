@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/readwise-official@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readwise_official",
+  "skill": {
+    "id": 16792,
+    "skillKey": "clawhub-readwise-official",
+    "name": "Readwise Official"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readwise-official",
+    "url": "https://clawhub.ai/skills/readwise-official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readwise-official-ebe2688ba6b5b0f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access your Readwise highlights and Reader documents from the command line. Search, read, organize, and manage your entire reading library."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tristanh",
+      "userId": "s17d87sqa4x680hvgmm623e5jd83mt87",
+      "displayName": "Tristan",
+      "image": "https://avatars.githubusercontent.com/u/1284332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 729,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773771787142,
+      "changelog": "- Expanded and restructured documentation for improved clarity and usability.\n- Added detailed examples for searching, saving, organizing, and exporting both Reader documents and Readwise highlights.\n- Clarified command syntax, parameters, and available options throughout.\n- Included common workflows and step-by-step usage scenarios.\n- Provided additional guidance on Reader locations, metadata, and best practices for bulk editing.\n- Improved tips for efficient filtering and exporting data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a3a87ecf4a469daf4b8e7ab14263eb001a727a5b498febeb494ad43868661d5"
+}

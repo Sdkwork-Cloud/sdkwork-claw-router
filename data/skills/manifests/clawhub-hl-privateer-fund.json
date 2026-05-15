@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17540,
+  "uuid": "skill-clawhub-hl-privateer-fund",
+  "skillKey": "clawhub-hl-privateer-fund",
+  "name": "HL Privateer",
+  "summary": "Access HL Privateer, an open agentic Hyperliquid discretionary trading desk. Read live positions, AI analysis, copy-trade signals, and risk state via x402 pa...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hl_privateer_fund",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andrew Wilkinson",
+      "features": [
+        "Access HL Privateer, an open agentic Hyperliquid discretionary trading desk",
+        "Read live positions, AI analysis, copy-trade signals, and risk state via x402 pa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hl-privateer-fund@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29403976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hl-privateer-fund",
+      "url": "https://clawhub.ai/skills/hl-privateer-fund"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hl-privateer-fund",
+    "url": "https://clawhub.ai/skills/hl-privateer-fund",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hl-privateer-fund-277dda86de23fefd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hl-privateer-fund@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hl-privateer-fund-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b1ee7d418f9284f099acc36ec3e782a93e93da6e8d4f6e01b618731b97ed43e",
+      "artifactSizeBytes": 2788
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T11:12:30.399Z"
+}

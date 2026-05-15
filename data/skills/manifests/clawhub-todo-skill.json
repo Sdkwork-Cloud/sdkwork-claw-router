@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10348,
+  "uuid": "skill-clawhub-todo-skill",
+  "skillKey": "clawhub-todo-skill",
+  "name": "Todo Skill",
+  "summary": "A skill to break large tasks into smaller actionable steps, optimize execution for each step, and dynamically adapt based on progress.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todo_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scccmsd",
+      "features": [
+        "A skill to break large tasks into smaller actionable steps, optimize execution for each step, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/todo-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243490427?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "todo-skill",
+      "url": "https://clawhub.ai/skills/todo-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todo-skill",
+    "url": "https://clawhub.ai/skills/todo-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todo-skill-855006f102e17636.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/todo-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-todo-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a51f3cd9aff76e019ef3693880423b94113d76e17b240364a0cfb8c186339bd",
+      "artifactSizeBytes": 2123
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T18:19:23.343Z"
+}

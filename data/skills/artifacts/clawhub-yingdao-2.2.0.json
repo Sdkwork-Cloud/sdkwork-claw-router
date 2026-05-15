@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yingdao@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yingdao",
+  "skill": {
+    "id": 59574,
+    "skillKey": "clawhub-yingdao",
+    "name": "影刀"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yingdao",
+    "url": "https://clawhub.ai/skills/yingdao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yingdao-ebdcd0edd55673f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "影刀 RPA API 封装，支持鉴权/任务查询/执行/结果获取。需配置环境变量 YINGDAO_ACCESS_KEY_ID、YINGDAO_ACCESS_KEY_SECRET 作为 API 凭证。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yflmq001",
+      "userId": "s1772m99pfzvgfdpvb25cypmhn83hdb7",
+      "displayName": "从0到1",
+      "image": "https://avatars.githubusercontent.com/u/248804584?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 452,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1773368933627,
+      "changelog": "- Added requirements.txt to explicitly specify Python dependencies.\n- Updated documentation to include installation and usage instructions for required Python library `requests`.\n- Clarified dependency management steps for smoother setup and usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf68a5ee5c19a7301298d18e0418192439f365ee639a767e329b35d424407d8e"
+}

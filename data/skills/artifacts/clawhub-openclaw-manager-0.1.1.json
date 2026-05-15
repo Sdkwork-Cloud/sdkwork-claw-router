@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-manager@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_manager",
+  "skill": {
+    "id": 21183,
+    "skillKey": "clawhub-openclaw-manager",
+    "name": "Openclaw Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-manager",
+    "url": "https://clawhub.ai/skills/openclaw-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-manager-17c7ed600383a668.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy, harden, and operate OpenClaw across local and hosted environments (Fly.io, Render, Railway, Hetzner, GCP) with secure defaults, channel setup guidanc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hollaugo",
+      "userId": "s1728xs7g2etz3etes4rb6aw8x83y6gm",
+      "displayName": "Prompt Circle",
+      "image": "https://avatars.githubusercontent.com/u/16457419?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 499,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772174636860,
+      "changelog": "openclaw-manager v0.1.1\n\n- Added required environment variable (`OPENCLAW_GATEWAY_TOKEN`) to runtime metadata.\n- Changed default ops ledger path to `./openclaw-manager-operations-ledger.md` (was an absolute path).\n- Updated sample commands and docs to use relative paths for better portability and clarity.\n- No changes to core workflows or automation script references.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e365027529b6cfef46c2095878a6c065154bd89cdfd08b13604f5cc5443a435c"
+}

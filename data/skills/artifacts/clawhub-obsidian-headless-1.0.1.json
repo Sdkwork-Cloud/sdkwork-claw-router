@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-headless@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_headless",
+  "skill": {
+    "id": 64984,
+    "skillKey": "clawhub-obsidian-headless",
+    "name": "Obsidian Headless"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-headless",
+    "url": "https://clawhub.ai/skills/obsidian-headless",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-headless-9e7a028d21cadeb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在无显示器/无 GUI 环境下通过自然语言指令管理 Obsidian 笔记仓库。支持创建笔记、删除笔记（带确认）、搜索标题、搜索内容、模糊搜索、创建日记等功能。当用户需要在无头服务器、SSH 环境、或没有安装 Obsidian 桌面应用的情况下管理 Obsidian 笔记时使用此技能。触发词包括\"obsidian..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imakid",
+      "userId": "publishers:imakid",
+      "displayName": "imakid",
+      "image": "https://avatars.githubusercontent.com/u/5093542?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 390,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773466246848,
+      "changelog": "Fix: 优化文档，添加 config.json",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b2d209f3126578f249bcbd7ef413e9a59e9f8e787c1162343085f7256f741b4a"
+}

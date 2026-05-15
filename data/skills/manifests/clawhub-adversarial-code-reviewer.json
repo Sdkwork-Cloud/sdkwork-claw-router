@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28491,
+  "uuid": "skill-clawhub-adversarial-code-reviewer",
+  "skillKey": "clawhub-adversarial-code-reviewer",
+  "name": "Code Reviewer",
+  "summary": "Conduct rigorous, adversarial code reviews with zero tolerance for mediocrity. Default behavior is a single-model adversarial review that identifies security...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adversarial_code_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Corbin Breton",
+      "features": [
+        "Conduct rigorous, adversarial code reviews with zero tolerance for mediocrity",
+        "Default behavior is a single-model adversarial review that identifies security..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adversarial-code-reviewer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4294018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adversarial-code-reviewer",
+      "url": "https://clawhub.ai/skills/adversarial-code-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adversarial-code-reviewer",
+    "url": "https://clawhub.ai/skills/adversarial-code-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adversarial-code-reviewer-e783ba8322acca75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adversarial-code-reviewer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-adversarial-code-reviewer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77684388581b0d666b153caa8818e50195c478c1ea7d2466cdf473e5b0052977",
+      "artifactSizeBytes": 2100
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T01:22:44.393Z"
+}

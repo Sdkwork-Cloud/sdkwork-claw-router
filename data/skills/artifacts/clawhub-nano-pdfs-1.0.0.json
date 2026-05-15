@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nano-pdfs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_pdfs",
+  "skill": {
+    "id": 26944,
+    "skillKey": "clawhub-nano-pdfs",
+    "name": "Pub Nanopdf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-pdfs",
+    "url": "https://clawhub.ai/skills/nano-pdfs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-pdfs-f51867f8d70b9bd2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Edit PDFs with natural-language instructions using the nano-pdf CLI. And also 50+ models for image generation, video generation, text-to-speech, speech-to-te..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobeyrebecca",
+      "userId": "s17a4w4rxr2w5b31z6gnpnqg2184msz0",
+      "displayName": "TobeyRebecca",
+      "image": "https://avatars.githubusercontent.com/u/260428668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773295702802,
+      "changelog": "nano-pdf v1.0.0 initial release:\n\n- Introduces natural-language PDF editing via the nano-pdf CLI.\n- Access to over 50 AI models for image/video generation, TTS, STT, music, chat, web search, and more.\n- Unified API with smart model routing and direct model access across providers.\n- Bash and Read tool support; requires SKILLBOSS_API_KEY.\n- Includes detailed usage examples for key features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e43d81105684a217a4877a57a64b8e4d8c26ce57e52ad3507041b581c3eb5d1d"
+}

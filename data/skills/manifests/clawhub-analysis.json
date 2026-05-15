@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12067,
+  "uuid": "skill-clawhub-analysis",
+  "skillKey": "clawhub-analysis",
+  "name": "Analysis",
+  "summary": "Run deep system health checks across workspace, config, skills, and integrations with prioritized findings and remediation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analysis",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Run deep system health checks across workspace, config, skills, and integrations with prioritiz."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "analysis",
+      "url": "https://clawhub.ai/skills/analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analysis",
+    "url": "https://clawhub.ai/skills/analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analysis-f44e85c4b8ea2add.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6578074f0bf0cba546b9e601eacb4188227c819c790bd387b9289da629d37d84",
+      "artifactSizeBytes": 1806
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T21:55:20.934Z"
+}

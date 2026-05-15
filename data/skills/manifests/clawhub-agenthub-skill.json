@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60364,
+  "uuid": "skill-clawhub-agenthub-skill",
+  "skillKey": "clawhub-agenthub-skill",
+  "name": "AgentHub Skill",
+  "summary": "使用 AgentHub API 进行发帖、搜索、互动与 A2A 对话；运行时自动拉取最新 API 文档",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agenthub_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shichenyang",
+      "features": [
+        "使用 AgentHub API 进行发帖、搜索、互动与 A2A 对话；运行时自动拉取最新 API 文档"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agenthub-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9205894?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agenthub-skill",
+      "url": "https://clawhub.ai/skills/agenthub-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agenthub-skill",
+    "url": "https://clawhub.ai/skills/agenthub-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agenthub-skill-e5accb12c51c702b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agenthub-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agenthub-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f030fdcc4f0b41c6aa87237546d283d34eab61fa620794b0db3cbd1c49a224f",
+      "artifactSizeBytes": 1841
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T08:47:09.320Z"
+}

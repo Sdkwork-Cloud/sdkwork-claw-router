@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60816,
+  "uuid": "skill-clawhub-safe-config",
+  "skillKey": "clawhub-safe-config",
+  "name": "Safe Config Modifier",
+  "summary": "安全修改 OpenClaw 配置文件。用于任何需要修改 ~/.openclaw/openclaw.json 的场景，包括：模型切换、channel 配置、tools 配置、skill 安装等。确保修改前备份、预览（脱敏 key）、并获得用户确认。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_config",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justaboyhai-wq",
+      "features": [
+        "安全修改 OpenClaw 配置文件。用于任何需要修改 ~/.openclaw/openclaw.json 的场景，包括：模型切换、channel 配置、tools 配置、skill 安装等."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-config@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254623848?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-config",
+      "url": "https://clawhub.ai/skills/safe-config"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-config",
+    "url": "https://clawhub.ai/skills/safe-config",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-config-527a80da77033915.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-config@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-config-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:836863ff98ab1e5b570a64c38bc95e2aa3a701d0557ff55a6705cff057ab156b",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T16:11:07.544Z"
+}

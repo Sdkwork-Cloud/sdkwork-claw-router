@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/files-memory-system@1.16.1",
+  "version": "1.16.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.files_memory_system",
+  "skill": {
+    "id": 24828,
+    "skillKey": "clawhub-files-memory-system",
+    "name": "files-memory-system"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "files-memory-system",
+    "url": "https://clawhub.ai/skills/files-memory-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/files-memory-system-276ca1deb326da9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-context memory management system for OpenClaw agents with group-isolated storage, global shared memory, workspace organization, and group-specific skil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wxwzl",
+      "userId": "s177q5e46ckfbv6r9d6f793ch183f9c8",
+      "displayName": "wxwzl",
+      "image": "https://avatars.githubusercontent.com/u/23026803?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 292,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 24
+    },
+    "latestVersion": {
+      "version": "1.16.1",
+      "createdAt": 1774669928939,
+      "changelog": "CRITICAL FIX: Added mandatory manual memory loading check for group chats. Use --group parameter for git clone in group contexts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f986ab51a50e0cdb7dacbc94ec5ef9106b3bb53c2ddb07aae9e614c3b1abe1b9"
+}

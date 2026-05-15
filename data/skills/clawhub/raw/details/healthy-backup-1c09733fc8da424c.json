@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "healthy-backup",
+    "displayName": "Healthy Backup",
+    "summary": "Health-gated backup for OpenClaw rigs. Audits first — only backs up if healthy. Three tiers, 5-backup retention, optional rclone sync. Sensitive config value...",
+    "tags": {
+      "latest": "1.2.5"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 429,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "createdAt": 1772893177006,
+    "updatedAt": 1777617573823
+  },
+  "latestVersion": {
+    "version": "1.2.5",
+    "createdAt": 1773051815691,
+    "changelog": "**Major update: Adds interactive setup wizard and reorganizes onboarding.**\n\n- New `setup.sh` script introduces a guided setup wizard for configuring tier, retention, destination, encryption, and optional collectors.\n- The setup wizard writes config, creates encryption keys if needed, runs a dry-run, and can install a cron job—all interactively.\n- `verify-backup.sh` removed.\n- Setup section in docs now recommends running `setup.sh` as the first step.\n- All previous manual onboarding steps now streamlined and clarified.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "littlejakub",
+    "userId": "publishers:littlejakub",
+    "displayName": "LittleJakub",
+    "image": "https://avatars.githubusercontent.com/u/35995921?v=4"
+  },
+  "moderation": null
+}

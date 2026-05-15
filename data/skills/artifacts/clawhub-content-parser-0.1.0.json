@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-parser@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_parser",
+  "skill": {
+    "id": 26382,
+    "skillKey": "clawhub-content-parser",
+    "name": "Content Parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-parser",
+    "url": "https://clawhub.ai/skills/content-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-parser-84e53d6d5b1b8e81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract and parse content from URLs. Triggers on: user provides a URL to extract content from, another skill needs to parse source material, \"parse this URL\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xfango",
+      "userId": "publishers:0xfango",
+      "displayName": "0xFango",
+      "image": "https://avatars.githubusercontent.com/u/42994114?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773500512389,
+      "changelog": "content-parser v0.1.0\n\n- Initial release.\n- Extracts and parses content from URLs, supporting both user and skill-triggered flows.\n- Interactive setup with configurable auto-download and extraction options (summarize, maxLength, Twitter count).\n- Polling and background job handling for extraction tasks.\n- Saves results (`.md` and `.json`) to the current directory if autoDownload is enabled.\n- Presents extraction previews and offers next-step actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5af013cc3b6ccd298e36d1a091a4133b36e42e423f0d4e6511680a573fb72611"
+}

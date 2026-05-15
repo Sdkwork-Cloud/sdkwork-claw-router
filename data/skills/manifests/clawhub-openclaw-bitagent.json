@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11962,
+  "uuid": "skill-clawhub-openclaw-bitagent",
+  "skillKey": "clawhub-openclaw-bitagent",
+  "name": "Bitagent Skill",
+  "summary": "Launch, buy, and sell tokens on BitAgent bonding curves via CLI. Use when the user wants to create a new agent token, or trade existing agent tokens on BitAgent (BSC Testnet/Mainnet).",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_bitagent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "parasyte-x",
+      "features": [
+        "Launch, buy, and sell tokens on BitAgent bonding curves via CLI",
+        "Use when the user wants to create a new agent token, or trade existing agent tokens on BitAgent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-bitagent@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16874777?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-bitagent",
+      "url": "https://clawhub.ai/skills/openclaw-bitagent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-bitagent",
+    "url": "https://clawhub.ai/skills/openclaw-bitagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-bitagent-b4b1c12a2b24ff05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-bitagent@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-bitagent-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:015275556efa579bfa212e892e955f86ef78b9a970a2c95109171a494a465053",
+      "artifactSizeBytes": 2230
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T06:55:37.311Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67887,
+  "uuid": "skill-clawhub-sdd-global-init",
+  "skillKey": "clawhub-sdd-global-init",
+  "name": "SDD Global Init",
+  "summary": "初始化 SDD 工作区，选择工作目录，扫描代码库生成项目概述、架构全景、技术约束、已有功能清单等全局文档。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sdd_global_init",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mahingbun-dev",
+      "features": [
+        "初始化 SDD 工作区，选择工作目录，扫描代码库生成项目概述、架构全景、技术约束、已有功能清单等全局文档。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sdd-global-init@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/174362089?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sdd-global-init",
+      "url": "https://clawhub.ai/skills/sdd-global-init"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sdd-global-init",
+    "url": "https://clawhub.ai/skills/sdd-global-init",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sdd-global-init-9cf0b59a1374639b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sdd-global-init@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sdd-global-init-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8e8af8d5f9c427030953a6c5d71a66341c8e8f173874251150d1a42cfff02d4",
+      "artifactSizeBytes": 1889
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T01:06:58.778Z"
+}

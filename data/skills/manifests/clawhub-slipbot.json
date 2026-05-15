@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12097,
+  "uuid": "skill-clawhub-slipbot",
+  "skillKey": "clawhub-slipbot",
+  "name": "SlipBot",
+  "summary": "Used to capture and organize notes, ideas, quotes, and journal entries with automatic tagging, linking, and knowledge graph maintenance.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slipbot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaron Swab",
+      "features": [
+        "Used to capture and organize notes, ideas, quotes, and journal entries with automatic tagging,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slipbot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1689426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slipbot",
+      "url": "https://clawhub.ai/skills/slipbot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slipbot",
+    "url": "https://clawhub.ai/skills/slipbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slipbot-b31c4b0c1108678a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slipbot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slipbot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38c7022ef4a4344d8366101f65c5a9508f8bbe92fdb439816e6796338792d7c4",
+      "artifactSizeBytes": 2323
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T15:36:27.459Z"
+}

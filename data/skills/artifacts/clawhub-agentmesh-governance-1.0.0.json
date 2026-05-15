@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentmesh-governance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentmesh_governance",
+  "skill": {
+    "id": 15784,
+    "skillKey": "clawhub-agentmesh-governance",
+    "name": "AgentMesh Governance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentmesh-governance",
+    "url": "https://clawhub.ai/skills/agentmesh-governance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentmesh-governance-3d390d10d234e212.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI agent governance, trust scoring, and policy enforcement powered by AgentMesh. Activate when: (1) user wants to enforce token limits, tool restrictions, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imran-siddique",
+      "userId": "publishers:imran-siddique",
+      "displayName": "imran-siddique",
+      "image": "https://avatars.githubusercontent.com/u/45405841?v=4"
+    },
+    "stats": {
+      "comments": 4,
+      "downloads": 930,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771365144667,
+      "changelog": "- Initial release of agentmesh-governance for OpenClaw agents.\n- Provides command-line scripts to enforce policies, check trust scores, verify identities (Ed25519 DIDs), and maintain tamper-evident Merkle chain audit logs.\n- Supports policy enforcement for token limits, tool allow/blocklists, content patterns, trust thresholds, and optional human approval.\n- Enables agent trust scoring across five dimensions and automated blocking of low-trust agents.\n- CLI tools for generating agent identities, updating trust after collaboration, and verifying audit log integrity.\n- Designed for seamless integration with AgentMesh, supporting enterprise compliance and governance needs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:595c24c5e279783e311ccf83f3cde5b0b6cb49159a6aac9f02ff76f9683869d5"
+}

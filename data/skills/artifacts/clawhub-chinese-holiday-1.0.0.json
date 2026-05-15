@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-holiday@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_holiday",
+  "skill": {
+    "id": 73624,
+    "skillKey": "clawhub-chinese-holiday",
+    "name": "中国节假日查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-holiday",
+    "url": "https://clawhub.ai/skills/chinese-holiday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-holiday-51ecb27e48ccde51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询中国法定节假日、周末及调休安排，判断某日是否节假日或工作日，获取节假日日期及放假安排信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weidongkl",
+      "userId": "s170sqmtx96w7vj0g1ee234b5583hhtw",
+      "displayName": "wei dong",
+      "image": "https://avatars.githubusercontent.com/u/7512609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 63,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778293711936,
+      "changelog": "Initial release: 从网络 API 查询中国法定节假日，支持多源降级",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a6c5cf9f201fbe19a361a0be669c4b809abf8c37027dd181a6b04eac811e955f"
+}

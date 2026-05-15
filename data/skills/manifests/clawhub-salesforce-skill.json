@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10716,
+  "uuid": "skill-clawhub-salesforce-skill",
+  "skillKey": "clawhub-salesforce-skill",
+  "name": "Salesforce Skill",
+  "summary": "Manage Salesforce CRM records via CLI or REST API, including querying, creating, updating, deleting contacts, accounts, opportunities, leads, and cases.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.salesforce_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lucas-riverbi",
+      "features": [
+        "Manage Salesforce CRM records via CLI or REST API, including querying, creating, updating, dele."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/salesforce-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109533627?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "salesforce-skill",
+      "url": "https://clawhub.ai/skills/salesforce-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "salesforce-skill",
+    "url": "https://clawhub.ai/skills/salesforce-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/salesforce-skill-dbc6497a4d9606ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/salesforce-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-salesforce-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b07c61c357e8d3d635873e053e10dfd79df3a9019cc375d0d0f2079b8d9d540",
+      "artifactSizeBytes": 2362
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T20:57:39.338Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38019,
+  "uuid": "skill-clawhub-boss-report",
+  "skillKey": "clawhub-boss-report",
+  "name": "Boss Report",
+  "summary": "Generates detailed daily, weekly, or monthly work summaries for managers, saving to memory and exporting as HTML or PDF reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boss_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andy Tien",
+      "features": [
+        "Generates detailed daily, weekly, or monthly work summaries for managers, saving to memory and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/boss-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35169750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "boss-report",
+      "url": "https://clawhub.ai/skills/boss-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boss-report",
+    "url": "https://clawhub.ai/skills/boss-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boss-report-c4da420c7a978fab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/boss-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-boss-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67cb7520995bad870ff97e57c72de8e1f7cdd2f3ccaec030ea5b82d977b9332d",
+      "artifactSizeBytes": 1834
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T15:22:01.604Z"
+}

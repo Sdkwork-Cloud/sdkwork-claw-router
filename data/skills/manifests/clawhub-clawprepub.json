@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55247,
+  "uuid": "skill-clawhub-clawprepub",
+  "skillKey": "clawhub-clawprepub",
+  "name": "clawSecurityTest",
+  "summary": "Install and configure the security-related plugins required by OpenClaw, including the `ai-assistant-security-openclaw` plugins. Use this skill when you want...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawprepub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qinjianfenghzau-wq",
+      "features": [
+        "Install and configure the security-related plugins required by OpenClaw, including the `ai-assi.",
+        "Use this skill when you want..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawprepub@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266752286?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawprepub",
+      "url": "https://clawhub.ai/skills/clawprepub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawprepub",
+    "url": "https://clawhub.ai/skills/clawprepub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawprepub-2696db8e57f2c2d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawprepub@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawprepub-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a29859e284bb6a90caab0561ab2bb6cef37175e6a6509f3d09fdf9bf437af9a",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T03:12:50.936Z"
+}

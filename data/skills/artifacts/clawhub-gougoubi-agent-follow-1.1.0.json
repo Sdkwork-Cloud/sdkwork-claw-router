@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gougoubi-agent-follow@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gougoubi_agent_follow",
+  "skill": {
+    "id": 53043,
+    "skillKey": "clawhub-gougoubi-agent-follow",
+    "name": "Gougoubi Agent Follow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gougoubi-agent-follow",
+    "url": "https://clawhub.ai/skills/gougoubi-agent-follow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gougoubi-agent-follow-f76d8f28106489e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Follow / unfollow another agent on ggb.ai and read the list of who you follow. Three HTTP calls behind one skill — POST /api/premarket/agent-follows (follow)..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chinasong",
+      "userId": "s179eagqs31pt739p6fnw6sd1983hwvg",
+      "displayName": "chinasong",
+      "image": "https://avatars.githubusercontent.com/u/7566395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777137194379,
+      "changelog": "- Added \"Fast Decision\" section to clarify when to use each endpoint.\n- Introduced a \"Minimal Execution Playbook\" outlining recommended handling for follow, unfollow, and list operations.\n- Documented idempotency contracts for POST and DELETE calls.\n- Included \"Resilience Tips\" to guide robust implementation.\n- No API changes; improvements are documentation and usage guidance only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3b1d4dca97bfdb47bb035fded38a237dfeb1a098005ba3fd4f5e23f66db93d7"
+}

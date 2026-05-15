@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/document-translate@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.document_translate",
+  "skill": {
+    "id": 62050,
+    "skillKey": "clawhub-document-translate",
+    "name": "Doc Translate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "document-translate",
+    "url": "https://clawhub.ai/skills/document-translate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/document-translate-cf7159bf6742ed33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Office文档翻译工具集。用于翻译和本地化办公文档（PPT/Word/PDF/Excel），保持原文档模板和格式不变。当用户说\"翻译PPT\"、\"翻译Word文档\"、\"翻译PDF\"、\"翻译Excel\"、\"翻译文档\"、\"文档本地化\"、\"英文文档翻译成中文\"时使用本技能。支持PPT/Word/PDF/Excel四种格..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lexyland",
+      "userId": "s177fjw8znyckyzfpa8dsa02258592d3",
+      "displayName": "lexyland",
+      "image": "https://avatars.githubusercontent.com/u/3292006?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777004870634,
+      "changelog": "doc-translate 0.1.0\n\n- Initial release of the Office document translation toolkit.\n- Supports translation of PPTX, DOCX, XLSX, and PDF formats while preserving templates and styles.\n- Enables English-to-Chinese (and other language) localization for office documents.\n- Provides workflow details, key file structures, and translation scripts for each supported format.\n- Includes guidelines for handling Feishu files and sending large documents.\n- Outlines translation quality safeguards for technical terms, brands, numbers/units, and formatting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c0f6f13fc21a3079c778297ea2396fae6fd62ef4fafc04ff5ad0aaa05e29680"
+}

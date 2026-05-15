@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52353,
+  "uuid": "skill-clawhub-octen-search-skill",
+  "skillKey": "clawhub-octen-search-skill",
+  "name": "octen web search",
+  "summary": "Real-time web search for AI agents powered by Octen. Fast, fresh, and relevant — search the web, filter by date, and get LLM-ready results in under 80ms. Ide...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.octen_search_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Octen",
+      "features": [
+        "Real-time web search for AI agents powered by Octen",
+        "Fast, fresh, and relevant — search the web, filter by date, and get LLM-ready results in under."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/octen-search-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268096643?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "octen-search-skill",
+      "url": "https://clawhub.ai/skills/octen-search-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "octen-search-skill",
+    "url": "https://clawhub.ai/skills/octen-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/octen-search-skill-2736951fbe704c0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/octen-search-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-octen-search-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ccb376e02076f4b73ab1016288f90b77083877056a844004aacdcd222414c748",
+      "artifactSizeBytes": 2252
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T02:21:19.200Z"
+}

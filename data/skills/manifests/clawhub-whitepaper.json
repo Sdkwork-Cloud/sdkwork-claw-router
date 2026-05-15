@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35639,
+  "uuid": "skill-clawhub-whitepaper",
+  "skillKey": "clawhub-whitepaper",
+  "name": "Whitepaper",
+  "summary": "Whitepaper reference tool. Use when working with whitepaper in blockchain contexts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whitepaper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "Whitepaper reference tool",
+        "Use when working with whitepaper in blockchain contexts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whitepaper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whitepaper",
+      "url": "https://clawhub.ai/skills/whitepaper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whitepaper",
+    "url": "https://clawhub.ai/skills/whitepaper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whitepaper-6d08df45a2a4e7c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whitepaper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whitepaper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3a17f5b93f6e6bafe4cdc1ee42acb95be05e4f0c85d261cfb8698adf0c99303",
+      "artifactSizeBytes": 1786
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T20:17:24.196Z"
+}

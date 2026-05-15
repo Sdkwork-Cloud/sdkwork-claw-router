@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hr-ai-assistant@2.5.9",
+  "version": "2.5.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hr_ai_assistant",
+  "skill": {
+    "id": 26648,
+    "skillKey": "clawhub-hr-ai-assistant",
+    "name": "HR AI Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hr-ai-assistant",
+    "url": "https://clawhub.ai/skills/hr-ai-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hr-ai-assistant-c7aa4abc7faa48a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when users ask HR-related questions, request HR policy generation, form creation, or need HR consultation services. It provides dir..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aijuntao",
+      "userId": "publishers:aijuntao",
+      "displayName": "aijuntao",
+      "image": "https://avatars.githubusercontent.com/u/11253104?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.5.9",
+      "createdAt": 1774006151501,
+      "changelog": "Version: 2.5.9\nChangelog: Security scan optimization - removed mandatory language,\nmade script execution optional for platform flexibility",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:070030b7347db68e4002ab7d514b9606f175bdadea202a9f5bb8805b428756fc"
+}

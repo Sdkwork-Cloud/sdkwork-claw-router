@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10245,
+  "uuid": "skill-clawhub-native-app-performance",
+  "skillKey": "clawhub-native-app-performance",
+  "name": "Native App Performance",
+  "summary": "Native macOS/iOS app performance profiling via xctrace/Time Profiler and CLI-only analysis of Instruments traces. Use when asked to profile, attach, record, or analyze Instruments .trace files, find hotspots, or optimize native app perform.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.native_app_performance",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peter Steinberger",
+      "features": [
+        "Native macOS/iOS app performance profiling via xctrace/Time Profiler and CLI-only analysis of I.",
+        "Use when asked to profile, attach, record, or analyze Instruments .trace files, find hotspots,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/native-app-performance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "native-app-performance",
+      "url": "https://clawhub.ai/skills/native-app-performance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "native-app-performance",
+    "url": "https://clawhub.ai/skills/native-app-performance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/native-app-performance-32556bdbeb988cc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/native-app-performance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-native-app-performance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07b6c312764e04659088c87f68fbe21aa2672369a33d27c74e5ea388524c16ae",
+      "artifactSizeBytes": 2010
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-05T22:26:31.861Z"
+}

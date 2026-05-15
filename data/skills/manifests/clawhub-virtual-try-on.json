@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34266,
+  "uuid": "skill-clawhub-virtual-try-on",
+  "skillKey": "clawhub-virtual-try-on",
+  "name": "Virtual Try On",
+  "summary": "Convert clothing images into professional e-commerce photos by virtually dressing AI models with up to four garment images for online retail use.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtual_try_on",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangyang-youloft",
+      "features": [
+        "Convert clothing images into professional e-commerce photos by virtually dressing AI models wit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/virtual-try-on@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227930394?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "virtual-try-on",
+      "url": "https://clawhub.ai/skills/virtual-try-on"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtual-try-on",
+    "url": "https://clawhub.ai/skills/virtual-try-on",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtual-try-on-22c709f6f01dd934.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/virtual-try-on@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-virtual-try-on-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b21aa0fda944e7755b6891e9ea1b01c96017f0e57d7889680e00f7b6575e490c",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T10:20:26.296Z"
+}

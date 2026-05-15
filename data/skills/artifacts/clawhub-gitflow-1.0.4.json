@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gitflow@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitflow",
+  "skill": {
+    "id": 9386,
+    "skillKey": "clawhub-gitflow",
+    "name": "GitFlow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitflow",
+    "url": "https://clawhub.ai/skills/gitflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitflow-9e63965c73e02bfa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically monitor CI/CD pipeline status of new push across GitHub and GitLab in one place. Auto DevOps this is the way 🦞!"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okoddcat",
+      "userId": "publishers:okoddcat",
+      "displayName": "okoddcat",
+      "image": "https://avatars.githubusercontent.com/u/12825424?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4373,
+      "installsAllTime": 22,
+      "installsCurrent": 21,
+      "stars": 3,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1770041932168,
+      "changelog": "- Documentation updated: the wrapper script for post-push CI/CD monitoring was removed, and instructions now focus solely on the git alias method.\n- No changes to the skill's functionality or code.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:181d6f01a864c04dc61a5c169dc39c2bc62885e687f07575424ad21b949efcea"
+}

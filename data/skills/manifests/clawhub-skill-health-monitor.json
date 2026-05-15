@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67173,
+  "uuid": "skill-clawhub-skill-health-monitor",
+  "skillKey": "clawhub-skill-health-monitor",
+  "name": "Skill Health Monitor",
+  "summary": "实时监控技能健康，六维度评分，三级预警，支持单技能及组合分析并生成优化建议和历史追踪。",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_health_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pagoda111king",
+      "features": [
+        "实时监控技能健康，六维度评分，三级预警，支持单技能及组合分析并生成优化建议和历史追踪。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-health-monitor@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177529007?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-health-monitor",
+      "url": "https://clawhub.ai/skills/skill-health-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-health-monitor",
+    "url": "https://clawhub.ai/skills/skill-health-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-health-monitor-73d89e48d8accb39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-health-monitor@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-health-monitor-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4a51385f066b59049b73aed4bf3fd110b71358fafe0f4cd71452afea182a682",
+      "artifactSizeBytes": 2542
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T23:46:57.517Z"
+}

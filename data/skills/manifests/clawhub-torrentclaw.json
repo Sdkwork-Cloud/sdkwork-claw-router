@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15148,
+  "uuid": "skill-clawhub-torrentclaw",
+  "skillKey": "clawhub-torrentclaw",
+  "name": "TorrentClaw",
+  "summary": "Search and download torrents via TorrentClaw. Use when the user asks to find, search, or download movies, TV shows, or torrents. Detects local torrent client...",
+  "version": "0.1.17",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.torrentclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "buryni",
+      "features": [
+        "Search and download torrents via TorrentClaw",
+        "Use when the user asks to find, search, or download movies, TV shows, or torrents",
+        "Detects local torrent client..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/torrentclaw@0.1.17",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/172052?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "torrentclaw",
+      "url": "https://clawhub.ai/skills/torrentclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "torrentclaw",
+    "url": "https://clawhub.ai/skills/torrentclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/torrentclaw-f56b8c4c31a0437a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/torrentclaw@0.1.17",
+      "artifactUrl": "data/skills/artifacts/clawhub-torrentclaw-0.1.17.json",
+      "version": "0.1.17",
+      "runtime": "metadata",
+      "checksumHash": "sha256:463bd397cc4cedb6d00a8dc2a1cfb894b059616a83edb5d49e8fc01c28c9ba0f",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T10:57:17.288Z"
+}

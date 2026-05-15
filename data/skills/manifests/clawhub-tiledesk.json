@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37986,
+  "uuid": "skill-clawhub-tiledesk",
+  "skillKey": "clawhub-tiledesk",
+  "name": "Tiledesk",
+  "summary": "Tiledesk integration. Manage data, records, and automate workflows. Use when the user wants to interact with Tiledesk data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiledesk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Tiledesk integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Tiledesk data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiledesk@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiledesk",
+      "url": "https://clawhub.ai/skills/tiledesk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiledesk",
+    "url": "https://clawhub.ai/skills/tiledesk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiledesk-11e3de3feb74ecac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiledesk@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiledesk-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:256b66a52cf628eac88cb95675b67890a0056c0d29268009ca946fa3980e4044",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:05:38.994Z"
+}

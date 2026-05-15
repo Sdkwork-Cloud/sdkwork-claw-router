@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10357,
+  "uuid": "skill-clawhub-airtable-automation",
+  "skillKey": "clawhub-airtable-automation",
+  "name": "Airtable Automation",
+  "summary": "Automate Airtable tasks via Rube MCP (Composio): records, bases, tables, fields, views. Always search tools first for current schemas.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airtable_automation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sohamganatra",
+      "features": [
+        "Automate Airtable tasks via Rube MCP (Composio): records, bases, tables, fields, views",
+        "Always search tools first for current schemas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/airtable-automation@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7982102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "airtable-automation",
+      "url": "https://clawhub.ai/skills/airtable-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airtable-automation",
+    "url": "https://clawhub.ai/skills/airtable-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airtable-automation-dbacd90e952f03ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/airtable-automation@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-airtable-automation-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15a456a7f6544ccd051c4011322e546afa42098498f5fa0841340c6f968a6661",
+      "artifactSizeBytes": 2283
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T05:33:49.819Z"
+}

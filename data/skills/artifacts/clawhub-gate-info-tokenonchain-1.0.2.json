@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-info-tokenonchain@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_info_tokenonchain",
+  "skill": {
+    "id": 35580,
+    "skillKey": "clawhub-gate-info-tokenonchain",
+    "name": "gate-info-tokenonchain"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-info-tokenonchain",
+    "url": "https://clawhub.ai/skills/gate-info-tokenonchain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-info-tokenonchain-76a8f8e41bc6e158.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Token on-chain analysis via Gate-Info MCP: holder distribution, on-chain activity, and large or unusual transfers (scopes holders / activity / transfers). Sm..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gate-exchange",
+      "userId": "s172g4d1dcv6ccs6desbb2xw1583qza9",
+      "displayName": "Gate",
+      "image": "https://avatars.githubusercontent.com/u/33109813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775558095238,
+      "changelog": "**Version 1.0.2 Changelog**\n\n- Updated runtime rule links to use new local references for gate-runtime-rules.md and info-news-runtime-rules.md.\n- Removed maintenance and updater script references from the skill documentation.\n- Deleted unnecessary files: CHANGELOG.md, README.md, references/scenarios.md, and scripts/update-skill.sh.\n- Clarified installation and runtime instruction flow.\n- No changes to functionality or supported scopes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05a2f53e6baf57b4a1df3408f7ae623c01f2176070f771c1db63089a1e11fdb5"
+}

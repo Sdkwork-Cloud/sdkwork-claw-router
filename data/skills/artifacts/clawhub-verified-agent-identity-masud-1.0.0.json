@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/verified-agent-identity-masud@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.verified_agent_identity_masud",
+  "skill": {
+    "id": 46775,
+    "skillKey": "clawhub-verified-agent-identity-masud",
+    "name": "Verified Agent Identity Masud"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "verified-agent-identity-masud",
+    "url": "https://clawhub.ai/skills/verified-agent-identity-masud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/verified-agent-identity-masud-69efce394d50f3d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Billions decentralized identity for agents. Link agents to human identities using Billions ERC-8004 and Attestation Registries. Verify and generate authentic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "masudijkp003-star",
+      "userId": "s172310eedjr4jmw1ef8j5fh0x85sx3n",
+      "displayName": "masudijkp003-star",
+      "image": "https://avatars.githubusercontent.com/u/224467031?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777471689522,
+      "changelog": "verified-agent-identity-masud v1.0.0\n\n- Initial release supporting decentralized identity management for agents on the Billions Network.\n- Enables agents to create, manage, and link their digital identity (DID) to a human owner using the iden3 protocol.\n- Provides scripts for creating identities, signing and verifying authentication challenges, and managing attestations.\n- Stores all identity data securely in `$HOME/.openclaw/billions`, supporting both plaintext and encrypted private key storage.\n- Includes critical guardrails to ensure secure identity handling and prohibit manual cryptographic operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23f90b06274f6aaf0f1313c4b5eb8063d0b6af6f4365fc9da01b849481dcc051"
+}

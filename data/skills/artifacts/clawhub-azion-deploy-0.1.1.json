@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/azion-deploy@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.azion_deploy",
+  "skill": {
+    "id": 21858,
+    "skillKey": "clawhub-azion-deploy",
+    "name": "Azion Deploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "azion-deploy",
+    "url": "https://clawhub.ai/skills/azion-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/azion-deploy-bdf90d49d7920ed1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy applications, static sites, and edge functions to Azion using Azion CLI. Use when the user asks to deploy/publish to Azion, configure link/build/deplo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "askrauthein",
+      "userId": "publishers:askrauthein",
+      "displayName": "Adriano Krauthein",
+      "image": "https://avatars.githubusercontent.com/u/13016684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 474,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772077869348,
+      "changelog": "Improve preflight version detection for azion CLI output noise",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2caf1ae32e9373976dbdb983442781073a754f9c75b8d347f4cc606d83818b11"
+}

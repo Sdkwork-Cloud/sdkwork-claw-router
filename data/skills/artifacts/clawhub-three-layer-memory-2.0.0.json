@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/three-layer-memory@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.three_layer_memory",
+  "skill": {
+    "id": 60347,
+    "skillKey": "clawhub-three-layer-memory",
+    "name": "Three Layer Memory + LanceDB Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "three-layer-memory",
+    "url": "https://clawhub.ai/skills/three-layer-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/three-layer-memory-2fe11d8ab36b146c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "三层记忆系统 + LanceDB Pro 整合版。热/暖/冷记忆自动管理，结合向量数据库实时提取与结构化排程维护。Micro Sync（每天5次扫session记决策+审核autoCapture）、Daily Wrap Up（每天凌晨结构化摘要）、Weekly Compound（每周记忆减脂+蒸馏+向量清理）。含..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kylin19860916",
+      "userId": "publishers:kylin19860916",
+      "displayName": "kylin19860916",
+      "image": "https://avatars.githubusercontent.com/u/229595532?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 935,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773539302618,
+      "changelog": "v2.0: Integrated with LanceDB Pro - autoCapture/autoRecall + structured memory management + scope isolation + dedup detection",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea8c1979ecd02e0986b3224862ab18282b1ec31d1f03378dd61fefca34ca4868"
+}

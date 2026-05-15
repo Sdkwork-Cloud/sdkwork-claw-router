@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59734,
+  "uuid": "skill-clawhub-faq-distiller",
+  "skillKey": "clawhub-faq-distiller",
+  "name": "Faq Distiller",
+  "summary": "从客服对话、评论、工单或聊天记录中提炼 FAQ，并按用户阶段分类。；use for faq, support, knowledge workflows；do not use for 暴露用户隐私, 替代工单系统.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.faq_distiller",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "从客服对话、评论、工单或聊天记录中提炼 FAQ，并按用户阶段分类。；use for faq, support, knowledge workflows；do not use for 暴露用户."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/faq-distiller@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "faq-distiller",
+      "url": "https://clawhub.ai/skills/faq-distiller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "faq-distiller",
+    "url": "https://clawhub.ai/skills/faq-distiller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/faq-distiller-a0ea15d4a220d3f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/faq-distiller@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-faq-distiller-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5466b8e0e7361f45b81df2f383942261e10fd3e2d8b193a10a20b60ce5c10d3b",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T06:37:13.969Z"
+}

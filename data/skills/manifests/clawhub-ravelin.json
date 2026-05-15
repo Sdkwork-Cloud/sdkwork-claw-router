@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31348,
+  "uuid": "skill-clawhub-ravelin",
+  "skillKey": "clawhub-ravelin",
+  "name": "Ravelin",
+  "summary": "Ravelin integration. Manage data, records, and automate workflows. Use when the user wants to interact with Ravelin data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ravelin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Ravelin integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Ravelin data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ravelin@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ravelin",
+      "url": "https://clawhub.ai/skills/ravelin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ravelin",
+    "url": "https://clawhub.ai/skills/ravelin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ravelin-b8d287a41f5b3293.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ravelin@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ravelin-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4c5356ffa9bf43538866cb7e6842e4d3b11e1cfccc6f00e8d23bc4b517da695",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:55:01.999Z"
+}

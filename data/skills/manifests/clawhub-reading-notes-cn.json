@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57921,
+  "uuid": "skill-clawhub-reading-notes-cn",
+  "skillKey": "clawhub-reading-notes-cn",
+  "name": "读书笔记整理与知识图谱构建",
+  "summary": "Use when organizing reading notes from books, articles, or papers into structured summaries and knowledge maps. Helps extract key insights, connect ideas acr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reading_notes_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hjs102468",
+      "features": [
+        "Use when organizing reading notes from books, articles, or papers into structured summaries and.",
+        "Helps extract key insights, connect ideas acr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reading-notes-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31621036?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reading-notes-cn",
+      "url": "https://clawhub.ai/skills/reading-notes-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reading-notes-cn",
+    "url": "https://clawhub.ai/skills/reading-notes-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reading-notes-cn-e189a4ac2fb5bb8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reading-notes-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reading-notes-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e070a907dfce81b28ef3998bf83088da54f9b0c67ca53eeec17d95f31937b29e",
+      "artifactSizeBytes": 1922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T02:22:53.988Z"
+}

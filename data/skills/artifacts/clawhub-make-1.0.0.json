@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/make@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.make",
+  "skill": {
+    "id": 48231,
+    "skillKey": "clawhub-make",
+    "name": "Make"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "make",
+    "url": "https://clawhub.ai/skills/make",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/make-d05aa2a15fb3c40e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Make (formerly Integromat) automation platform — manage scenarios, trigger runs, monitor executions, manage connections, and handle data stores via the Make..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 651,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772686354015,
+      "changelog": "Initial release of the Make (Integromat) skill for workflow automation and API management.\n\n- CLI to manage scenarios, trigger runs, monitor executions, connections, webhooks, and data stores via Make API\n- Supports scenario activation/deactivation and on-demand execution\n- Includes organization, team user, and usage stats management\n- Zero dependencies; compatible with Python 3.10+ stdlib only\n- Outputs JSON or human-readable format; never stores data locally",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:990e407983e937ef566ee4d8bc5c96dd5f08aed454f82ce5cdb778532cd6db8e"
+}

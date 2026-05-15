@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-hot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_hot",
+  "skill": {
+    "id": 45698,
+    "skillKey": "clawhub-ai-video-editor-hot",
+    "name": "Ai Video Editor Hot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-hot",
+    "url": "https://clawhub.ai/skills/ai-video-editor-hot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-hot-0b87dbc758a8d4d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get polished edited clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776281778026,
+      "changelog": "AI Video Editor — Initial Release (v1.0.0)\n\n- Launches an AI-powered, cloud-based video editing skill for fast, professional edits.\n- Supports uploading raw footage (MP4, MOV, AVI, WebM; up to 500MB) and generating polished 1080p MP4 exports.\n- Accepts natural language instructions for editing (e.g., trimming, adding background music, text overlays, and export).\n- Includes credit-based usage system with easy anonymous token registration (100 free credits for 7 days).\n- Streamlined backend API integration for uploading, editing, session management, and exporting videos.\n- Built for content creators and social media marketers seeking quick, no-hassle video production.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c7ac5726109ad5b22d3a9178c49319eeb0578e06a5518b036113db8557186dc"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wine-info-search@1.6.1",
+  "version": "1.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wine_info_search",
+  "skill": {
+    "id": 45804,
+    "skillKey": "clawhub-wine-info-search",
+    "name": "Wine Info Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wine-info-search",
+    "url": "https://clawhub.ai/skills/wine-info-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wine-info-search-fa8c37d692811c7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "READ-ONLY wine and alcohol information lookup skill. Searches for wine details, ratings, and price comparisons across platforms. Does NOT make purchases, pro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amurtiger01",
+      "userId": "s175x3pfx5fnahtt36c088xke984q9v6",
+      "displayName": "Amurtiger",
+      "image": "https://avatars.githubusercontent.com/u/158826430?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.6.1",
+      "createdAt": 1777614546553,
+      "changelog": "wine-info-search v1.6.1\n\n- Updated SKILL.md: clarified description, added 'capabilities', and improved API key guidance for security and accuracy.\n- Reworded documentation to emphasize search-only scope and no need for OAuth tokens or sensitive credentials.\n- No functional or core behavior changes to the skill logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f33c6a2ddff2db775e9af70239c5b1f58f9f40f38bb0768f51172a713911be9"
+}

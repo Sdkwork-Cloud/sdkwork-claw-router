@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36317,
+  "uuid": "skill-clawhub-arh-pr-workflow",
+  "skillKey": "clawhub-arh-pr-workflow",
+  "name": "Arh Pr Workflow",
+  "summary": "Expert guidance for managing Pull Requests and feature branches using Uber's arh CLI tool. Use when creating features, publishing PRs, managing stacked PRs,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arh_pr_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ajit Singh",
+      "features": [
+        "Expert guidance for managing Pull Requests and feature branches using Uber's arh CLI tool",
+        "Use when creating features, publishing PRs, managing stacked PRs,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arh-pr-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34647819?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arh-pr-workflow",
+      "url": "https://clawhub.ai/skills/arh-pr-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arh-pr-workflow",
+    "url": "https://clawhub.ai/skills/arh-pr-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arh-pr-workflow-db97cb697cc4936e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arh-pr-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arh-pr-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70e82bc3097c6a90679a7eddc78ad9fa76e46cf20c79fe1edb6956628b64b076",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T21:57:08.186Z"
+}

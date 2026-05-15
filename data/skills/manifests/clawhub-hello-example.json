@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53167,
+  "uuid": "skill-clawhub-hello-example",
+  "skillKey": "clawhub-hello-example",
+  "name": "hello-example",
+  "summary": "A minimal example skill demonstrating .clawhubignore — the secret.md file should NOT appear in the published version.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hello_example",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shiwen Han",
+      "features": [
+        "A minimal example skill demonstrating .clawhubignore — the secret.md file should NOT appear in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hello-example@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46259514?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hello-example",
+      "url": "https://clawhub.ai/skills/hello-example"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hello-example",
+    "url": "https://clawhub.ai/skills/hello-example",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hello-example-2da4f822c4d4e0b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hello-example@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hello-example-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e060e291f16cb251d8ffa1705ff4bf1da37b24f14118f47bc3ac9d335f19d190",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T11:41:05.621Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawnet@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawnet",
+  "skill": {
+    "id": 16078,
+    "skillKey": "clawhub-clawnet",
+    "name": "ClawNet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawnet",
+    "url": "https://clawhub.ai/skills/clawnet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawnet-570ab1ec795fca71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables OpenClaw bots to discover peers, announce presence, and communicate directly using a QUIC-based P2P network with NAT traversal."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dendisuhubdy",
+      "userId": "publishers:dendisuhubdy",
+      "displayName": "dendisuhubdy",
+      "image": "https://avatars.githubusercontent.com/u/4477337?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 830,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771082370603,
+      "changelog": "ClawNet 1.0.0 — Initial Release\n\n- Introduces P2P bot discovery for OpenClaw agents using iroh (QUIC-based protocol with NAT traversal).\n- Supports bot presence announcement, direct QUIC connections, messaging, and interactive chat.\n- Provides commands for identity management, scanning/discovery, peer management, and status checks.\n- Allows machine-readable `--json` output for most commands.\n- Includes file-based configuration and data storage for identities, peers, and friends.\n- Offers daemon mode for continuous discovery and OpenClaw tool integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:94ed82ddcb19b2a0bdf64e3b320bfbe35bf16f320e543b27172b8e0ec01e3871"
+}

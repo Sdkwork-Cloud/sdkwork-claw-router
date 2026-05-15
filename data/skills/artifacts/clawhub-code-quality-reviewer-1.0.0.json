@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-quality-reviewer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_quality_reviewer",
+  "skill": {
+    "id": 38877,
+    "skillKey": "clawhub-code-quality-reviewer",
+    "name": "Code Quality Reviewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-quality-reviewer",
+    "url": "https://clawhub.ai/skills/code-quality-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-quality-reviewer-f7b36597fe15ac21.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes code for bugs, security risks, complexity, and style, providing detailed issues and actionable improvement suggestions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776920895874,
+      "changelog": "Initial release of Code Reviewer skill.\n\n- Provides automated code quality analysis, bug detection, and security audit.\n- Detects code smells, complexity issues, and common security vulnerabilities.\n- Suggests performance improvements and best practice adherence.\n- Offers actionable fix recommendations with sample outputs.\n- Supports flexible configuration of review rules and focus areas.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c295b2b73b60ae2cb40623784ae3a6f23cad51eaea8a060e7dd0399e96089cb"
+}

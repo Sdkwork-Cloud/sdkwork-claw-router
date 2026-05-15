@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25270,
+  "uuid": "skill-clawhub-haodf",
+  "skillKey": "clawhub-haodf",
+  "name": "Haodf",
+  "summary": "Help patients find suitable doctors based on symptoms, specialty, location, and doctor ratings. Use when the user wants to find a doctor, get medical recomme...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.haodf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Help patients find suitable doctors based on symptoms, specialty, location, and doctor ratings",
+        "Use when the user wants to find a doctor, get medical recomme..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/haodf@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "haodf",
+      "url": "https://clawhub.ai/skills/haodf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "haodf",
+    "url": "https://clawhub.ai/skills/haodf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/haodf-575c16b736ed7472.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/haodf@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-haodf-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9358423eccd1c3108e4cd13fb19b6072d8ea8806e74bdbcc1f490794b9d5bb19",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T05:29:32.809Z"
+}

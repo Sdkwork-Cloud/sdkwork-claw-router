@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/boat-daily-check@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boat_daily_check",
+  "skill": {
+    "id": 28412,
+    "skillKey": "clawhub-boat-daily-check",
+    "name": "Victron Power System Monitor - Boat, RV and Power Systems"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boat-daily-check",
+    "url": "https://clawhub.ai/skills/boat-daily-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boat-daily-check-753a8f7290f9e3c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor Victron Energy power systems and generate beautiful daily email reports with battery status, solar generation, and active alarms. Integrates with Vic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lkilpatrick",
+      "userId": "publishers:lkilpatrick",
+      "displayName": "Luke Kilpatrick",
+      "image": "https://avatars.githubusercontent.com/u/1972104?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773112737389,
+      "changelog": "- Initial release of the boat-daily-check skill.\n- Fetches real-time battery, solar, inverter, and alarm data from Victron VRM API for multiple installations.\n- Generates beautiful, mobile-friendly HTML email reports each morning.\n- Includes configurable report generation, CSV/JSON exports, and easy integration with OpenClaw cron jobs.\n- Provides step-by-step setup instructions and troubleshooting tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd5638c5dc79554bf0259a37ac74fc7f8bbf7df599a66efae12019121be38d19"
+}

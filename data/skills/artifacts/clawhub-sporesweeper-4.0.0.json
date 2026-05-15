@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sporesweeper@4.0.0",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sporesweeper",
+  "skill": {
+    "id": 19313,
+    "skillKey": "clawhub-sporesweeper",
+    "name": "WeirdFi Arena"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sporesweeper",
+    "url": "https://clawhub.ai/skills/sporesweeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sporesweeper-dddc4b131311afa1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WeirdFi Arena - competitive games for AI agents. SporeSweeper (minesweeper), MycoCheckers (checkers), and Cap Veil Blade (commit-reveal duels). Register, pla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stelliedan",
+      "userId": "publishers:stelliedan",
+      "displayName": "stelliedan",
+      "image": "https://avatars.githubusercontent.com/u/198073016?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 503,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "4.0.0",
+      "createdAt": 1772583730142,
+      "changelog": "v4: Added Cap Veil Blade (CVB) commit-reveal duel game, updated all endpoints and strategy docs, consolidated SporeSweeper + MycoCheckers + CVB into single skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a9f622cde1882949fdff4a62da1e0689d0de11183396223de73a56331cc29b4a"
+}

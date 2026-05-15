@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/document-signing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.document_signing",
+  "skill": {
+    "id": 42522,
+    "skillKey": "clawhub-document-signing",
+    "name": "Document Signing Setup Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "document-signing",
+    "url": "https://clawhub.ai/skills/document-signing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/document-signing-f97e3748287911b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help users set up document signing in Nota Sign. Use this skill when the user needs practical guidance for creating envelopes, adding signers, placing fields..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "notasign",
+      "userId": "s17a65xh6bvv4dypjqjwstq51x83m5y5",
+      "displayName": "notasign",
+      "image": "https://avatars.githubusercontent.com/u/268593162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775206780890,
+      "changelog": "Initial release of the Document Signing Setup Assistant.\n\n- Provides step-by-step guidance for preparing and sending documents in Nota Sign.\n- Helps users choose between one-off envelopes and templates based on document frequency.\n- Offers best practices for adding signers, placing fields, configuring signing order, and reviewing before send.\n- Recommends practical output formats such as checklists, setup steps, and field/signature mapping tables.\n- Includes advice for tracking document status and managing audit records after sending.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9550c37be23c4c8c9f29bfb5615bcabb80eba71ccab7c33e5953e4650c36dff3"
+}

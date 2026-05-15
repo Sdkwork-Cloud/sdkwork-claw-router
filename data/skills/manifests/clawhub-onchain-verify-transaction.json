@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33165,
+  "uuid": "skill-clawhub-onchain-verify-transaction",
+  "skillKey": "clawhub-onchain-verify-transaction",
+  "name": "Onchain Verify Transaction",
+  "summary": "Verify an EVM transaction's calldata via Tenderly before signing. Confirms which tokens move, in what amounts, and to which addresses. Designed to be called...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onchain_verify_transaction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dougalcantara",
+      "features": [
+        "Verify an EVM transaction's calldata via Tenderly before signing",
+        "Confirms which tokens move, in what amounts, and to which addresses",
+        "Designed to be called..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/onchain-verify-transaction@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15350998?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "onchain-verify-transaction",
+      "url": "https://clawhub.ai/skills/onchain-verify-transaction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onchain-verify-transaction",
+    "url": "https://clawhub.ai/skills/onchain-verify-transaction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onchain-verify-transaction-f6d01633200270ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/onchain-verify-transaction@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-onchain-verify-transaction-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:baea0d7999b4a7dc4725ec578ae5ec341ddddf10e1211ad5512ac06135307053",
+      "artifactSizeBytes": 2308
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T04:20:52.986Z"
+}

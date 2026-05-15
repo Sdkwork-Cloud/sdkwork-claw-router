@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65769,
+  "uuid": "skill-clawhub-double-check-it",
+  "skillKey": "clawhub-double-check-it",
+  "name": "Double-Check-It Skill (再想想技能1.0)",
+  "summary": "自动记录交互信息，交付前复核任务与需求一致性，闲时回顾总结经验，确保长期记忆准确完整。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.double_check_it",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "webray1983",
+      "features": [
+        "自动记录交互信息，交付前复核任务与需求一致性，闲时回顾总结经验，确保长期记忆准确完整。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/double-check-it@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201538631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "double-check-it",
+      "url": "https://clawhub.ai/skills/double-check-it"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "double-check-it",
+    "url": "https://clawhub.ai/skills/double-check-it",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/double-check-it-09eef749dd14851a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/double-check-it@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-double-check-it-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b70af36cd4b76ef61f28192b83e1de9009908bea46d9236c4a0e7e48ccc95b7b",
+      "artifactSizeBytes": 2998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T01:18:14.796Z"
+}

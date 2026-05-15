@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skillsign@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillsign",
+  "skill": {
+    "id": 14232,
+    "skillKey": "clawhub-skillsign",
+    "name": "Skillsign — ed25519 Skill Signing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillsign",
+    "url": "https://clawhub.ai/skills/skillsign",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillsign-dd02b213b84705d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sign and verify agent skill folders with ed25519 keys. Detect tampering, manage trusted authors, and track provenance chains (isnād)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "felmonon",
+      "userId": "publishers:felmonon",
+      "displayName": "FELMONON",
+      "image": "https://avatars.githubusercontent.com/u/125313419?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2116,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1769833814240,
+      "changelog": "Added key revocation system. New commands: revoke, revoked.\n  Timestamp-aware verification.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:585d1fda238365d6c182d02a77202cbdc2e8745c7b003207c8acb465e52ffb48"
+}

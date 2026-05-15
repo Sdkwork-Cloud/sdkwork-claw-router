@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/station-transfer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.station_transfer",
+  "skill": {
+    "id": 59852,
+    "skillKey": "clawhub-station-transfer",
+    "name": "接送站助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "station-transfer",
+    "url": "https://clawhub.ai/skills/station-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/station-transfer-1e28de5a49b5b5da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业用车服务助手，支持即时用车、预约用车、接送机、包车等多种用车场景，提供车型选择、费用预估、订单管理等功能。Invoke when user needs to book a car, schedule a ride, airport transfer, or manage car service orders."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaogao605",
+      "userId": "s17cxwwzm94v9ntkczkmq0r2x983km1s",
+      "displayName": "fenbeitong-trip",
+      "image": "https://avatars.githubusercontent.com/u/265222913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774959914691,
+      "changelog": "fb-car-service-skill v1.0.0 – 企业用车服务助手首次上线\n\n- 提供即时用车、预约、接送机、包车等多种用车服务场景\n- 支持车型选择、实时费用预估、订单管理、电子发票等功能\n- 覆盖企业日常通勤、差旅、商务接待等多样化需求\n- 严格依赖真实用车平台API获取车辆与价格信息\n- 明确订单状态、取消规则和企业用车管理功能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb53038def13d71b69055fa867fd5f1e48da19f430f1da540852082cd9915968"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chain-ops-mgo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chain_ops_mgo",
+  "skill": {
+    "id": 39968,
+    "skillKey": "clawhub-chain-ops-mgo",
+    "name": "chain-ops MGO"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chain-ops-mgo",
+    "url": "https://clawhub.ai/skills/chain-ops-mgo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chain-ops-mgo-c2bcdbc5abcdd7c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find and compare gas prices across multiple EVM chains to identify the cheapest option for transactions and contract deployments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlrjsdl200-byte",
+      "userId": "s174as1nfkv5yr2w4z1m4e87jn84j6sf",
+      "displayName": "leegun",
+      "image": "https://avatars.githubusercontent.com/u/232286864?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774109137478,
+      "changelog": "Initial release of chain-ops-mgo skill:\n\n- Enables finding the cheapest EVM chain for transactions and comparing gas prices.\n- Provides three endpoints: free demo (4 chains), paid basic (4 chains with recommendation), and paid premium (9 chains).\n- Payment uses x402 protocol on Base network (USDC), no API key required.\n- Features clear documentation for use cases, pricing, and endpoint details.\n- Links to dashboard, integration info, and GitHub provided.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4633d1cfae2eefc183bd44e33d547dde87a64dbbe06189f5b5e6ebe64206113"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fidelity-funds@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fidelity_funds",
+  "skill": {
+    "id": 49581,
+    "skillKey": "clawhub-fidelity-funds",
+    "name": "Fidelity Funds"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fidelity-funds",
+    "url": "https://clawhub.ai/skills/fidelity-funds",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fidelity-funds-b029c48ff3ef8ea9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed insights on Fidelity Investments, covering its history, business model, fund management, zero-commission trading, and key financial data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 74,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778166331290,
+      "changelog": "Initial release of the Fidelity Investments skill:\n\n- Provides a concise overview of Fidelity’s history, business model, and key milestones.\n- Highlights unique industry innovations such as no-load mutual funds and zero-commission trading.\n- Includes moat analysis, major products, and essential company data.\n- Offers insights relevant for mutual fund industry analysis and investment platform comparisons.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff8d857a883a79cf86d01060404d4fc0216b953981317cdcb9f470f45101e467"
+}

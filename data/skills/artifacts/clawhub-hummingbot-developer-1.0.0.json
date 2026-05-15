@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hummingbot-developer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hummingbot_developer",
+  "skill": {
+    "id": 21292,
+    "skillKey": "clawhub-hummingbot-developer",
+    "name": "Hummingbot Developer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hummingbot-developer",
+    "url": "https://clawhub.ai/skills/hummingbot-developer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hummingbot-developer-220cb7cb3df7285f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Developer skill for running Hummingbot and Gateway from source, building wheel and Docker images, and testing against Hummingbot API running from source. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fengtality",
+      "userId": "s17e4dmyqswjyz0b64xsrbe1r585g65b",
+      "displayName": "Michael Feng",
+      "image": "https://avatars.githubusercontent.com/u/1795030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 504,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772229029822,
+      "changelog": "Initial release of the hummingbot-developer skill for local development of the Hummingbot stack.\n\n- Provides commands to install dependencies, select repo branches, build, verify, and run Hummingbot, Gateway, and API from source.\n- Supports full-stack development workflow with commands for setup, CI builds, status checks, and smoke integration testing.\n- Includes options for selective installation, build customization, and flexible environment/repo directory overrides.\n- Each step is script-driven for reproducible setup and easy onboarding of new developers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ebd537f70950bc9f4b400b2e4478f00277fb34409e43c4d565084a40177b5a1c"
+}

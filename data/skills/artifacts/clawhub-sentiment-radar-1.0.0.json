@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sentiment-radar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sentiment_radar",
+  "skill": {
+    "id": 55931,
+    "skillKey": "clawhub-sentiment-radar",
+    "name": "Sentiment Radar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sentiment-radar",
+    "url": "https://clawhub.ai/skills/sentiment-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sentiment-radar-22bf0c035cd7e33d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-platform sentiment monitoring and analysis for products/brands/topics. Collect public opinions from Chinese platforms (小红书/XHS via MediaCrawler) and En..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielwangyy",
+      "userId": "s17624f0khah153ayzkz77b04x83nsj2",
+      "displayName": "Danielwangyy",
+      "image": "https://avatars.githubusercontent.com/u/32700482?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 551,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772028554710,
+      "changelog": "Initial release: XHS crawler + multi-platform sentiment analysis",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8dfcfca9ad3c35f4ce902c2c26265b0e23ca58ad0025bd344fa2505955825ab6"
+}

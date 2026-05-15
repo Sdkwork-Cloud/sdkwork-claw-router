@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68519,
+  "uuid": "skill-clawhub-saudi-aramco",
+  "skillKey": "clawhub-saudi-aramco",
+  "name": "Saudi Aramco",
+  "summary": "提供沙特阿美公司信息，涵盖其石油生产、全球市场、能源战略及2030愿景的详细分析与数据解读。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.saudi_aramco",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供沙特阿美公司信息，涵盖其石油生产、全球市场、能源战略及2030愿景的详细分析与数据解读。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/saudi-aramco@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "saudi-aramco",
+      "url": "https://clawhub.ai/skills/saudi-aramco"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "saudi-aramco",
+    "url": "https://clawhub.ai/skills/saudi-aramco",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/saudi-aramco-bb1ce4880e631d74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/saudi-aramco@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-saudi-aramco-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b86617c108314dd6220bbcb51d44e4e401d9bcdbddb8094dade74ca92a1f3be3",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T03:25:26.627Z"
+}

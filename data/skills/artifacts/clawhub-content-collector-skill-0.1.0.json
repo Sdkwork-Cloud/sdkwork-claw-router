@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-collector-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_collector_skill",
+  "skill": {
+    "id": 16764,
+    "skillKey": "clawhub-content-collector-skill",
+    "name": "Content Collector Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-collector-skill",
+    "url": "https://clawhub.ai/skills/content-collector-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-collector-skill-a5bd4abc6ab8a29d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically collect content from shared links upon keywords or in group chats, create Feishu docs under a knowledge base, and update the archive table."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wuhongchen",
+      "userId": "publishers:wuhongchen",
+      "displayName": "wuhongchen",
+      "image": "https://avatars.githubusercontent.com/u/7197517?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 771,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773042083338,
+      "changelog": "Content Collector Skill v0.1.0\n\n- Initial release: automate collection and archiving of shared links from group chats into a structured Feishu knowledge base.\n- Supports active (关键词) and silent (自动检测) triggers for link collection.\n- Fetches content from WeChat articles, Feishu docs/Wiki, and general web pages with content categorization and template-based documentation.\n- Integrates image processing: downloads images, uploads to Feishu, and updates links within archived documents.\n- Automatically updates both the multi-dimensional table (Bitable) and the knowledge index after each collection.\n- Global availability for all users and all group chats, including permission and configuration checks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8118371616e25e9db3bf07fb8cc308973b6b17557fb4e2ec74d111063726eab"
+}

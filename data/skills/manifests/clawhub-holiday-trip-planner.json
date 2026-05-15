@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73706,
+  "uuid": "skill-clawhub-holiday-trip-planner",
+  "skillKey": "clawhub-holiday-trip-planner",
+  "name": "中国旅游规划大师",
+  "summary": "智能规划中国用户的假期旅行行程，支持法定节假日和自定义假期长度；提供目的地风土人情、景点介绍、历史故事和网红打卡地推荐；当用户需要规划旅行、了解目的地或安排假期行程时使用",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.holiday_trip_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ludiansheng",
+      "features": [
+        "智能规划中国用户的假期旅行行程，支持法定节假日和自定义假期长度；提供目的地风土人情、景点介绍、历史故事和网红打卡地推荐；当用户需要规划旅行、了解目的地或安排假期行程时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/holiday-trip-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269368209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "holiday-trip-planner",
+      "url": "https://clawhub.ai/skills/holiday-trip-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "holiday-trip-planner",
+    "url": "https://clawhub.ai/skills/holiday-trip-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/holiday-trip-planner-da88d35fc49a8329.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/holiday-trip-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-holiday-trip-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29ec3ff3ffb509e9581ac663ccd4ba44a45122b537470e3672bb4b89f05d248e",
+      "artifactSizeBytes": 2840
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T09:54:58.657Z"
+}

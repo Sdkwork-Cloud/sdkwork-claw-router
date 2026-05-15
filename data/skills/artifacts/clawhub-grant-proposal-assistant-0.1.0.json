@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grant-proposal-assistant@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grant_proposal_assistant",
+  "skill": {
+    "id": 34216,
+    "skillKey": "clawhub-grant-proposal-assistant",
+    "name": "Grant Proposal Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grant-proposal-assistant",
+    "url": "https://clawhub.ai/skills/grant-proposal-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grant-proposal-assistant-34b24f0a87e34813.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Grant proposal writing assistant for NIH (R01/R21), NSF and other mainstream funding applications. Triggers when user needs help writing specific aims, resea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774236566920,
+      "changelog": "Initial release of Grant Proposal Assistant for NIH and NSF grants.\n\n- Provides templates and section generators for NIH (R01/R21), NSF, and other major grant proposals.\n- Includes tools for writing Specific Aims, research strategy, budget justifications, and other sections.\n- Offers best practice guidance, review checklists, and proposal critique features.\n- Supports command-line usage and Python integration.\n- No external dependencies or network access required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ebce05623c0d82e1fa6213a7187b708a9b2181289e74ec8a3e004107f8edd8da"
+}

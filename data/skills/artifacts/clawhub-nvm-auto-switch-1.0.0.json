@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nvm-auto-switch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nvm_auto_switch",
+  "skill": {
+    "id": 61530,
+    "skillKey": "clawhub-nvm-auto-switch",
+    "name": "用于自动切换项目中适合的node 版本"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nvm-auto-switch",
+    "url": "https://clawhub.ai/skills/nvm-auto-switch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nvm-auto-switch-d9d82ab9db47b8c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据 package.json 中的 engines 字段自动检测 Node.js 版本要求，如未安装 nvm 则自动安装，并切换到正确的 Node 版本。支持 Windows、macOS 和 Linux。在开发 Node.js 项目、切换 Node 版本或设置开发环境时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "piaolingwuyu",
+      "userId": "s17e8g46zy55rsz0gq68zzck9n84cfzq",
+      "displayName": "piaolingwuyu",
+      "image": "https://avatars.githubusercontent.com/u/19199496?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775541488659,
+      "changelog": "nvm-auto-switch 1.0.0\n\n- Initial release.\n- Automatically detects Node.js version requirements from package.json and switches Node versions accordingly.\n- Installs nvm automatically if not present.\n- Supports Windows (PowerShell) and macOS/Linux (Bash).\n- Can be run with or without specifying a project path; defaults to current directory.\n- Handles Node version matching based on engines.node, including common version prefixes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:289e187ccab0f41cc4d54ba1a31c9b79f3d56ade10ca3e123559bc7dae270622"
+}

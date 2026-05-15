@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39196,
+  "uuid": "skill-clawhub-bounty-hunter-agent",
+  "skillKey": "clawhub-bounty-hunter-agent",
+  "name": "Bounty Hunter Agent",
+  "summary": "Autonomously scans GitHub, Algora, and Opire for bounty issues, scores by payout and competition, ranks opportunities, and can auto-submit PRs.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bounty_hunter_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lanxevo3",
+      "features": [
+        "Autonomously scans GitHub, Algora, and Opire for bounty issues, scores by payout and competitio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bounty-hunter-agent@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77862787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bounty-hunter-agent",
+      "url": "https://clawhub.ai/skills/bounty-hunter-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bounty-hunter-agent",
+    "url": "https://clawhub.ai/skills/bounty-hunter-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bounty-hunter-agent-7fe4c2621e2ccc3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bounty-hunter-agent@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bounty-hunter-agent-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:753b3146fb568546e2fd7ebfa8b4ab94c858863980b07b17ddffc8721b4d886a",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T20:41:25.708Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/total-energies@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.total_energies",
+  "skill": {
+    "id": 63490,
+    "skillKey": "clawhub-total-energies",
+    "name": "Total Energies"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "total-energies",
+    "url": "https://clawhub.ai/skills/total-energies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/total-energies-499663cca97c619e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供 TotalEnergies 公司信息，涵盖其能源转型、全球油气及可再生能源业务及法国能源市场分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776420016689,
+      "changelog": "- 首发版本，介绍 TotalEnergies 的历史、业务架构与能源转型战略。\n- 涵盖公司更名历程及品牌重塑重点。\n- 详细梳理五大业务板块和主要全球资产分布。\n- 提供可再生能源目标及与同行（BP、Shell）转型路径对比。\n- 包含最新财务数据与领导层信息。\n- 适用于能源产业、转型策略及品牌重塑等多场景查询。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ade5d40255ff0fbef09e722f2bf9acb4d5800da6fe6ea8317c2003f02461eff4"
+}

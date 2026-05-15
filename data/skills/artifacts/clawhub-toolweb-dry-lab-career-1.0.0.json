@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-dry-lab-career@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_dry_lab_career",
+  "skill": {
+    "id": 40066,
+    "skillKey": "clawhub-toolweb-dry-lab-career",
+    "name": "Dry Lab Career"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-dry-lab-career",
+    "url": "https://clawhub.ai/skills/toolweb-dry-lab-career",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-dry-lab-career-e903628c5d42d47a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates personalized bioinformatics and computational biology career roadmaps based on individual skills, education, and professional goals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774991462801,
+      "changelog": "Dry Lab Career Roadmap Generator 1.0.0\n\n- Initial release providing personalized career roadmaps for bioinformatics and computational biology.\n- Generates tailored recommendations based on user skills, education, experience, and goals.\n- Integrates current job market data, hiring trends, and salary insights for dry lab roles.\n- Offers targeted course suggestions and identifies skill gaps.\n- Endpoints available for roadmap generation, company lists, and job market information.\n- Tiered pricing plans available including Free, Developer, Professional, and Enterprise.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:972bd5c9c8ba8504bfeab82268d1d36dfa816b4fb6692c70da37ed393c1853d2"
+}

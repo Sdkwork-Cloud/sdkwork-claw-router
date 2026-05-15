@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16105,
+  "uuid": "skill-clawhub-hitem3d",
+  "skillKey": "clawhub-hitem3d",
+  "name": "Hitem3D",
+  "summary": "Generate production-grade 3D models from images with the Hitem3D API. Use when the user wants to turn product shots, concept art, character images, portraits...",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hitem3d",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huihui",
+      "features": [
+        "Generate production-grade 3D models from images with the Hitem3D API",
+        "Use when the user wants to turn product shots, concept art, character images, portraits..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hitem3d@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16127291?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hitem3d",
+      "url": "https://clawhub.ai/skills/hitem3d"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hitem3d",
+    "url": "https://clawhub.ai/skills/hitem3d",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hitem3d-ab512219dfea98ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hitem3d@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hitem3d-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66a85dce93babb4e9ea949a15f6328a86f46da6d7ba9a492650e2b46fb6a5017",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T12:28:26.698Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/1688-source-suppliers@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1688_source_suppliers",
+  "skill": {
+    "id": 65679,
+    "skillKey": "clawhub-1688-source-suppliers",
+    "name": "1688 Source Suppliers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1688-source-suppliers",
+    "url": "https://clawhub.ai/skills/1688-source-suppliers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1688-source-suppliers-9a5066d8827d97ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "1688找供应商 —— 结合用户需求与关键字查询对应的供应商及工厂信息 核心工具能力：1688供应商查询能力。用于查询1688平台上的供应商及工厂信息。 触发词：找供应商、查供应商、1688供应商、供应商信息、工厂信息、产业带查询。 不触发场景：找商品/选品 → 1688-product-find；比价/换供 →..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1688aiinfra",
+      "userId": "s177df9srv6z2y0gd1kw90rern83hzxb",
+      "displayName": "1688AiInfra",
+      "image": "https://avatars.githubusercontent.com/u/266033968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778134454023,
+      "changelog": "1688-source-suppliers v1.0.0\n\n- Initial release with supplier search capability for 1688 platform.\n- Supports querying suppliers and factories by user-provided keywords.\n- Enforces strict output completeness: supplier name, cooperation type, and services required.\n- Includes detailed error handling and user guidance for missing or invalid parameters.\n- Provides clear instructions for tool usage, output sequence, and safe execution.\n- Ensures no supplier info is fabricated and query intent is not altered without user consent.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94cbede976cdc9e984c4cd502d8a40a326736e8e975d70d79cfc226276172377"
+}

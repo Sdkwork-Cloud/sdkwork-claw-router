@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-flag-generator-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_flag_generator_openapi_skill",
+  "skill": {
+    "id": 56412,
+    "skillKey": "clawhub-ai-flag-generator-openapi-skill",
+    "name": "Flag Maker Free – Design and Create Your Own Custom Flag for Free – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-flag-generator-openapi-skill",
+    "url": "https://clawhub.ai/skills/ai-flag-generator-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-flag-generator-openapi-skill-a4c4ce15d6903159.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI flag generator — create a custom flag design from text or a reference image"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776044119383,
+      "changelog": "ai-flag-generator-openapi-skill 1.0.0 — initial release\n\n- Generate custom flag designs from text or a reference image using WeShop OpenAPI.\n- Includes secure API key handling instructions and endpoint usage guidelines.\n- Provides input options for image reference, text description, and batch generation.\n- Detailed documentation on endpoints, agent parameters, polling, and result retrieval.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac8355b3f011339f5322d9125702f3c88ebeadb55ddd3d9ecef4116f469bf72a"
+}

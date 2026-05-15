@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44347,
+  "uuid": "skill-clawhub-axodus-security-checks",
+  "skillKey": "clawhub-axodus-security-checks",
+  "name": "Code Security Checks",
+  "summary": "Perform security reviews of code to detect secrets exposure, auth issues, injection risks, unsafe dependencies, and improper execution paths.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axodus_security_checks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mauricio Z.",
+      "features": [
+        "Perform security reviews of code to detect secrets exposure, auth issues, injection risks, unsa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/axodus-security-checks@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26634695?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "axodus-security-checks",
+      "url": "https://clawhub.ai/skills/axodus-security-checks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axodus-security-checks",
+    "url": "https://clawhub.ai/skills/axodus-security-checks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axodus-security-checks-d62d2bdc6f3a2ab6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/axodus-security-checks@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-axodus-security-checks-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b7a3433e382b679938ea6ca267ca33abf1a37eab8a776a03d98c8bc6bd456b6",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T14:53:57.000Z"
+}

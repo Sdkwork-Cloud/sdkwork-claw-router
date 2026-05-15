@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30140,
+  "uuid": "skill-clawhub-ctf-forensics",
+  "skillKey": "clawhub-ctf-forensics",
+  "name": "Ctf Forensics",
+  "summary": "Provides digital forensics and signal analysis techniques for CTF challenges. Use when analyzing disk images, memory dumps, event logs, network captures, cry...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctf_forensics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gandli",
+      "features": [
+        "Provides digital forensics and signal analysis techniques for CTF challenges",
+        "Use when analyzing disk images, memory dumps, event logs, network captures, cry..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ctf-forensics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85359251?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ctf-forensics",
+      "url": "https://clawhub.ai/skills/ctf-forensics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctf-forensics",
+    "url": "https://clawhub.ai/skills/ctf-forensics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctf-forensics-76665d0bbe55fa6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ctf-forensics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ctf-forensics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f5d96a94ffd14d4fced899d235fe602d597d0bfd5fe57ec7c5f87ce15d5b3ab",
+      "artifactSizeBytes": 2458
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T04:39:07.994Z"
+}

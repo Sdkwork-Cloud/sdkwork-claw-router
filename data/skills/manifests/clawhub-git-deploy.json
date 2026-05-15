@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23035,
+  "uuid": "skill-clawhub-git-deploy",
+  "skillKey": "clawhub-git-deploy",
+  "name": "Git Deploy",
+  "summary": "Simple deployment skill for local git operations. Use when you need to add, commit, and push changes to the Git repository. Designed for quick local deployme...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vitali Sakalouski",
+      "features": [
+        "Simple deployment skill for local git operations",
+        "Use when you need to add, commit, and push changes to the Git repository",
+        "Designed for quick local deployme..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-deploy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28955403?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-deploy",
+      "url": "https://clawhub.ai/skills/git-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-deploy",
+    "url": "https://clawhub.ai/skills/git-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-deploy-14716dd9e8aea11b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-deploy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-deploy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c720eb21091d7f449a93205d053b5655bd87385016e85b3c788b4094b716a99f",
+      "artifactSizeBytes": 2127
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T12:57:36.046Z"
+}

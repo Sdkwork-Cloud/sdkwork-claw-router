@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dnd@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dnd",
+  "skill": {
+    "id": 10556,
+    "skillKey": "clawhub-dnd",
+    "name": "D&D 5e Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dnd",
+    "url": "https://clawhub.ai/skills/dnd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dnd-8b38db591eb98eb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "D&D 5e toolkit for players and DMs. Roll dice, look up spells and monsters, generate characters, create encounters, and spawn NPCs. Uses the official D&D 5e SRD API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "capt-marbles",
+      "userId": "publishers:capt-marbles",
+      "displayName": "captmarbles",
+      "image": "https://avatars.githubusercontent.com/u/5841195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2251,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769538624209,
+      "changelog": "Initial release: dice rolling, spell/monster lookup, character/encounter/NPC generators",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ea37ceb07238040d29d6ef89918143eae8df4678e0f5e1e791f15ebe180ede73"
+}

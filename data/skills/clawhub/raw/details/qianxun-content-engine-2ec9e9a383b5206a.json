@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "qianxun-content-engine",
+    "displayName": "内容引擎",
+    "summary": "内容引擎（小红书）。两种 mode：①拆解（v1）— 输入 XHS 爆款链接，输出 18 维结构化拆解卡；②生成（v2）— 在拆解卡基础上结合品牌信息，用 Ofox（LLM + Nano Banana）生成我方版本的脚本/文案/素材图/封面/标签全套产出。视频生成（Seedance 2.0）规划在 v2.1。同时...",
+    "tags": {
+      "latest": "0.3.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "createdAt": 1777219603811,
+    "updatedAt": 1777527994673
+  },
+  "latestVersion": {
+    "version": "0.3.1",
+    "createdAt": 1777244925872,
+    "changelog": "v0.3.1: review 修缺。.env.example 增加 ARK_API_KEY 配置示例（带控制台链接 + IAM ≠ ARK 警告 + 模型开通指引）；preflight 增加 ARK_API_KEY 检查（--check 现在会显示 9 项检查，video 真生需求清晰可见）。代码功能未变，132 测试无新增。同时本版含 v0.3.0 端到端 5-shot 真实生成验证（5/5 succeeded，ffmpeg concat 26.1MB final-video.mp4 OK）。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "dizhu",
+    "userId": "s177gp8b3q1v25nzahp7d5adzh83sy4z",
+    "displayName": "dizhu",
+    "image": "https://avatars.githubusercontent.com/u/3749687?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527994673
+  }
+}

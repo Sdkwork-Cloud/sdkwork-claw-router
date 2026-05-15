@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13619,
+  "uuid": "skill-clawhub-claw-guru",
+  "skillKey": "clawhub-claw-guru",
+  "name": "Openclaw Guru - Documentation and Support expert",
+  "summary": "OpenClaw expert — use for ANY OpenClaw question or problem including: config errors, gateway crashes, gateway not starting, slash commands, channel routing,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_guru",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "isriam",
+      "features": [
+        "OpenClaw expert — use for ANY OpenClaw question or problem including: config errors, gateway cr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-guru@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9697950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-guru",
+      "url": "https://clawhub.ai/skills/claw-guru"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-guru",
+    "url": "https://clawhub.ai/skills/claw-guru",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-guru-fc1b8b6d3fad3a69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-guru@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-guru-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf96586bbd6b6018b4110e570cf8e98a5ae8ab0764b284208af93892b84701e0",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T17:08:55.560Z"
+}

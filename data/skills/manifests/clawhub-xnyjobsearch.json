@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69532,
+  "uuid": "skill-clawhub-xnyjobsearch",
+  "skillKey": "clawhub-xnyjobsearch",
+  "name": "xnyjobsearch",
+  "summary": "搜索碳索人才网上的职位，支持按关键词、地点和行业过滤。新能源垂直行业招聘平台",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xnyjobsearch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gengzhw",
+      "features": [
+        "搜索碳索人才网上的职位，支持按关键词、地点和行业过滤。新能源垂直行业招聘平台"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xnyjobsearch@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7860287?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xnyjobsearch",
+      "url": "https://clawhub.ai/skills/xnyjobsearch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xnyjobsearch",
+    "url": "https://clawhub.ai/skills/xnyjobsearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xnyjobsearch-1aa6a51dd8fbcd3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xnyjobsearch@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xnyjobsearch-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5339e5fd09157e790fb1f643174f40acff5bf88e05ae711f9e4e78382d19163f",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:14:57.477Z"
+}

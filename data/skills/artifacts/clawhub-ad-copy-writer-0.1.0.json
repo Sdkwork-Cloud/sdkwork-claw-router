@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ad-copy-writer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ad_copy_writer",
+  "skill": {
+    "id": 34107,
+    "skillKey": "clawhub-ad-copy-writer",
+    "name": "Ad Copy Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ad-copy-writer",
+    "url": "https://clawhub.ai/skills/ad-copy-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ad-copy-writer-c8009b1be1cbd292.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, generate, convert, and polish ad copy, marketing copy, product copy, landing page copy, headline variants, CTA variants, and promotional messaging th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fwwdn",
+      "userId": "s170ex8ttg10hrew681fwjwejh83gvm4",
+      "displayName": "Weiwei Fan",
+      "image": "https://avatars.githubusercontent.com/u/3015434?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774108155365,
+      "changelog": "- Initial release of the Ad Copy Writer skill.\n- Generate, rewrite, and polish ad copy, marketing copy, product messaging, landing page text, headlines, CTAs, and promotional messaging via the WeryAI chat completion API.\n- Supports optional controls for brand, product, audience, tone, format, CTA, keywords, and more.\n- Includes dry-run mode for safe payload inspection without API calls.\n- Requires WERYAI_API_KEY and Node.js 18+.\n- Delivers concise, channel-aware, persuasive copy suitable for direct use in campaigns.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9fc3ef70a8b675ab878aca96aba5f6b108dd4e8bb060b3f9c423c331d0ede418"
+}

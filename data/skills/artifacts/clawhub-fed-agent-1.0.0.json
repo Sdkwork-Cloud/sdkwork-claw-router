@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fed-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fed_agent",
+  "skill": {
+    "id": 25124,
+    "skillKey": "clawhub-fed-agent",
+    "name": "Fed Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fed-agent",
+    "url": "https://clawhub.ai/skills/fed-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fed-agent-fa234250d243a122.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides timely, factual summaries of Federal Reserve policy decisions, interest rates, inflation data, and Fed Chair speeches in clean markdown tables."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dimaschand29",
+      "userId": "publishers:dimaschand29",
+      "displayName": "Dimas Chandra",
+      "image": "https://avatars.githubusercontent.com/u/34400000?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773600828444,
+      "changelog": "Fed Agent Skill v1.0.0 – Initial Release\n\n- Provides factual, up-to-date summaries of Federal Reserve policy, interest rates, inflation data, and Fed Chair speeches.\n- Outputs clean markdown tables directly in chat or saves to file, with options for JSON and extended economic indicators.\n- Supports polling public Fed, BLS, and FOMC data, with configurable output and data inclusion switches.\n- Includes PowerShell command examples for quick start and advanced options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43d9b6a1c38be472a138cfa78e03e8248028260c7e4c023dcbd6859ea2bcc56c"
+}

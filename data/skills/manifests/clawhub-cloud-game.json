@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72809,
+  "uuid": "skill-clawhub-cloud-game",
+  "skillKey": "clawhub-cloud-game",
+  "name": "cloud-game",
+  "summary": "天翼云游戏平台的搜索、推荐与启动技能。当用户明确表达游戏相关意图时使用，包括：想玩游戏、打开游戏、搜索游戏、推荐游戏、找某类游戏、询问某个游戏或游戏类型。即使用户没有提到天翼云游戏平台，只要意图明确与游戏有关，也应触发此技能。不要在纯泛意图下触发，例如用户只说\"无聊了\"\"有什么好玩的\"且未提到游戏。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_game",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "slazy",
+      "features": [
+        "天翼云游戏平台的搜索、推荐与启动技能。当用户明确表达游戏相关意图时使用，包括：想玩游戏、打开游戏、搜索游戏、推荐游戏、找某类游戏、询问某个游戏或游戏类型。即使用户没有提到天翼云游戏平台，只要."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloud-game@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51648919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloud-game",
+      "url": "https://clawhub.ai/skills/cloud-game"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-game",
+    "url": "https://clawhub.ai/skills/cloud-game",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-game-fefaf5520d5f70fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloud-game@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloud-game-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b05ebed8ea15691693ec0d4b93176594ba760199325c468a2b05d64c35470e3f",
+      "artifactSizeBytes": 3145
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T04:56:24.691Z"
+}

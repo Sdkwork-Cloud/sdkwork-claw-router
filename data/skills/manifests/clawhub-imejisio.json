@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25751,
+  "uuid": "skill-clawhub-imejisio",
+  "skillKey": "clawhub-imejisio",
+  "name": "Imejisio",
+  "summary": "Imejis.io integration. Manage Images, Users, Projects. Use when the user wants to interact with Imejis.io data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imejisio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Imejis.io integration",
+        "Manage Images, Users, Projects",
+        "Use when the user wants to interact with Imejis.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/imejisio@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "imejisio",
+      "url": "https://clawhub.ai/skills/imejisio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imejisio",
+    "url": "https://clawhub.ai/skills/imejisio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imejisio-cf70243336e86949.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/imejisio@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-imejisio-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23ae120630b4fa27c770b67968653a32c6a01d00ea3d869e5baba6b78599dcc1",
+      "artifactSizeBytes": 1826
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:34:51.181Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24849,
+  "uuid": "skill-clawhub-tribunal-usage",
+  "skillKey": "clawhub-tribunal-usage",
+  "name": "Tribunal Usage",
+  "summary": "Use Tribunal commands for TDD enforcement, quality gates, secret scanning, Agent Teams hooks, CI integration, and plugin packs. Use when running quality chec...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tribunal_usage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "koshaji",
+      "features": [
+        "Use Tribunal commands for TDD enforcement, quality gates, secret scanning, Agent Teams hooks, C.",
+        "Use when running quality chec..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tribunal-usage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243474115?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tribunal-usage",
+      "url": "https://clawhub.ai/skills/tribunal-usage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tribunal-usage",
+    "url": "https://clawhub.ai/skills/tribunal-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tribunal-usage-034a23bb3792da1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tribunal-usage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tribunal-usage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e4c09ac211c965b82929dca73fb9d9ff13fd845b419c49e8eef89c8a336a25e",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T15:32:10.264Z"
+}

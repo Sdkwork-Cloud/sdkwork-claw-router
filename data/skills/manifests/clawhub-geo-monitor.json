@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44519,
+  "uuid": "skill-clawhub-geo-monitor",
+  "skillKey": "clawhub-geo-monitor",
+  "name": "Geo Monitor",
+  "summary": "Re-audit a website and compare scores against a previous GEO audit baseline to track improvement over time. Use when the user asks to re-audit, check progres...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eugene Liu",
+      "features": [
+        "Re-audit a website and compare scores against a previous GEO audit baseline to track improvemen.",
+        "Use when the user asks to re-audit, check progres..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/geo-monitor@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11206822?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "geo-monitor",
+      "url": "https://clawhub.ai/skills/geo-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-monitor",
+    "url": "https://clawhub.ai/skills/geo-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-monitor-20ff3cd3abdd575a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/geo-monitor@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-geo-monitor-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:947d0d1f2fc5f415d18527f7881981e070d0e4a0127085230d1d7b9e60410aab",
+      "artifactSizeBytes": 2600
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T17:50:17.594Z"
+}

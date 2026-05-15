@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "openclaw-rescue-gateway-skill",
+    "displayName": "OpenClaw Rescue Gateway Skill.md",
+    "summary": "为 OpenClaw 配置稳定可维护的 Rescue Gateway。适用于主 Gateway 已存在、需要第二个 Discord Rescue Bot、需要独立端口和独立 launchd label、需要避免主 gateway stop 误伤 rescue gateway、需要默认 full exec 权限且不...",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 464,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1772705024413,
+    "updatedAt": 1778304384021
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1772816814504,
+    "changelog": "26.3.2的版本出现权限问题，解决需要主gateway里通过权限审批才能操作terminal。\n把 rescue 配置收口到官方 profile 路径 ~/.openclaw-rescue/openclaw.json\n把“默认 full 权限且不审核”的执行链写完整\n明确写出为什么不能直接用官方默认 ai.openclaw.rescue service，而要改成独立 label ai.openclaw.gateway.rescue\n\n你要的 changelog 和旧版缺陷也已经写进 skill 本体里了，没有额外散文件。\n其中 1.0.0 的缺陷我明确列了这些核心点：\n\n没有处理 rescue agent 的独立 auth，导致 auth-profiles.json 缺失\n没有把 exec 审批链写完整，实际还会弹审核\n配置路径和 workspace 路径不统一，不符合 profile 化维护\n没有说明官方 profile service 在实机上可能与主 gateway stop 串扰",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "cchaojiejes",
+    "userId": "publishers:cchaojiejes",
+    "displayName": "Chaojie Chen",
+    "image": "https://avatars.githubusercontent.com/u/52069876?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778304384021
+  }
+}

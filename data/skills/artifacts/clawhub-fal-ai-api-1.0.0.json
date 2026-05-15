@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fal-ai-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fal_ai_api",
+  "skill": {
+    "id": 23168,
+    "skillKey": "clawhub-fal-ai-api",
+    "name": "fal.ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fal-ai-api",
+    "url": "https://clawhub.ai/skills/fal-ai-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fal-ai-api-125db78e3404952c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "fal.ai API integration with managed API key authentication. Run AI models for image generation, video generation, audio processing, and more. Use this skill..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 430,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773398925371,
+      "changelog": "Initial release of fal-ai skill: integrate fal.ai queue API with managed authentication.\n\n- Enables image generation (Flux, SDXL), video creation, image upscaling, and audio processing using fal.ai models.\n- Uses managed Maton API key authentication for secure access.\n- Provides example Python scripts for connecting, submitting jobs, managing connections, and polling results.\n- Includes instructions for connection management through the Maton control portal.\n- Supports over 1,000 model endpoints accessible via Maton gateway proxy.\n- Designed for easy integration with clear authentication and usage documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1e0c86206602761aecfdec9f8ce4fea79280eb3ec677bfea39b7ab3216daa7b"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47511,
+  "uuid": "skill-clawhub-stripe-api-actions",
+  "skillKey": "clawhub-stripe-api-actions",
+  "name": "Stripe API Actions",
+  "summary": "Use Stripe's live REST API for authenticated write actions. Use when you need to create or update Stripe customers, products, prices, payment links, refunds,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stripe_api_actions",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stanislav Stankovic",
+      "features": [
+        "Use Stripe's live REST API for authenticated write actions",
+        "Use when you need to create or update Stripe customers, products, prices, payment links, refund."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stripe-api-actions@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1871432?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stripe-api-actions",
+      "url": "https://clawhub.ai/skills/stripe-api-actions"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stripe-api-actions",
+    "url": "https://clawhub.ai/skills/stripe-api-actions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stripe-api-actions-949c8c5722576750.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stripe-api-actions@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stripe-api-actions-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0333365c482bb0eabddf3c1284a6ae130b926bd48c09503e21e941e4fcbfed3e",
+      "artifactSizeBytes": 2072
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T06:42:43.056Z"
+}

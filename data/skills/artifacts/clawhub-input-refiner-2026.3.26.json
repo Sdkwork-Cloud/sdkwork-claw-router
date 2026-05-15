@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/input-refiner@2026.3.26",
+  "version": "2026.3.26",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.input_refiner",
+  "skill": {
+    "id": 35590,
+    "skillKey": "clawhub-input-refiner",
+    "name": "Input Refiner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "input-refiner",
+    "url": "https://clawhub.ai/skills/input-refiner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/input-refiner-a5ecbb011b357f93.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rewrite vague or unstructured user input into a clear, organized, and execution-ready form based on context, preserving the original intent."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stephensu66",
+      "userId": "s176hf39hrx3v04rsjk8k9as2183mmsc",
+      "displayName": "stephensu66",
+      "image": "https://avatars.githubusercontent.com/u/143712578?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2026.3.26",
+      "createdAt": 1774529560680,
+      "changelog": "- Initial public release of the input-refiner skill.\n- Transforms vague, rough, or lengthy user input into clear, structured, execution-friendly forms based on context.\n- Organizes multi-point or long inputs into prioritized, ordered bullet points.\n- Preserves original intent and meaning without adding new requirements or over-expanding scope.\n- Returns both a primary refined version and alternative versions, along with a summary of improvements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4590ee9609578dbe93864d8f6f3fa35611568f1e46e0289a7d5e493033af0676"
+}

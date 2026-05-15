@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-to-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_to_generator",
+  "skill": {
+    "id": 47761,
+    "skillKey": "clawhub-free-to-generator",
+    "name": "Free To Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-to-generator",
+    "url": "https://clawhub.ai/skills/free-to-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-to-generator-811be6ac2c9f47b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text or images into generated MP4 videos with this skill. Works with MP4, MOV, JPG, PNG files up to 200MB. content creators, marketers, students use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777162490461,
+      "changelog": "Free-to-generator 1.0.0 — Initial Release\n\n- Generate 1080p MP4 videos from text prompts or uploaded images, free of charge\n- Supports common formats (MP4, MOV, JPG, PNG) up to 200MB per file\n- Automatic setup with instant free credits—no registration needed\n- Cloud-based video processing completes most exports in 1–2 minutes\n- Easy workflows for exporting, previewing, checking credits, or uploading media\n- User-friendly instructions and error handling throughout the process",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2172d3e1cc11cb1661b9962a7209dea96e339d258034ad8212103fe0c8dc90ec"
+}

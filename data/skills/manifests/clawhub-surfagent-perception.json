@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53248,
+  "uuid": "skill-clawhub-surfagent-perception",
+  "skillKey": "clawhub-surfagent-perception",
+  "name": "Surfagent Perception",
+  "summary": "Agent vision for web pages — scene summaries, attention-ranked elements, annotated screenshots, and state diffing via SurfAgent's perception engine.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.surfagent_perception",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AgentOSsoftware",
+      "features": [
+        "Agent vision for web pages — scene summaries, attention-ranked elements, annotated screenshots,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/surfagent-perception@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257728256?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "surfagent-perception",
+      "url": "https://clawhub.ai/skills/surfagent-perception"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "surfagent-perception",
+    "url": "https://clawhub.ai/skills/surfagent-perception",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/surfagent-perception-44890ec78bb0b603.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/surfagent-perception@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-surfagent-perception-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:260aeba2521c8d1b82d7885f28165cce289baa91cf5677fcb853987289affe59",
+      "artifactSizeBytes": 2540
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T01:39:25.708Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/diet-log@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diet_log",
+  "skill": {
+    "id": 69380,
+    "skillKey": "clawhub-diet-log",
+    "name": "饮食记录"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diet-log",
+    "url": "https://clawhub.ai/skills/diet-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diet-log-c2d96440abba9e86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "饮食记录与营养分析助手。当用户提到\"饮食记录\"、\"记下我吃了\"、\"营养分析\"、\"统计饮食\"、\"最近X天吃了什么\"等关键词时触发。功能包括：(1) 解析用户输入的饮食内容并查询营养数据；(2) 计算并记录全部营养素（热量、宏量营养素、脂肪酸、矿物质、维生素）；(3) 将饮食记录存入 meal_log.json；(4..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sj13818161942",
+      "userId": "s17f0mq2xaeynnfmgt914cnxfs84d8c2",
+      "displayName": "sj13818161942",
+      "image": "https://avatars.githubusercontent.com/u/161562587?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776145638928,
+      "changelog": "初始版本：接入1643条食物营养数据，支持30+种营养素分析，三级匹配策略，阶段性统计报告",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b975e90896f7388522a650205954ff933ec28a0fa79a64b1a59d60f054da61d"
+}

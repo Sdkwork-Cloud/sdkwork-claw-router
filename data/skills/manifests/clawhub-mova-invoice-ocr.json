@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54869,
+  "uuid": "skill-clawhub-mova-invoice-ocr",
+  "skillKey": "clawhub-mova-invoice-ocr",
+  "name": "Mova Invoice Ocr",
+  "summary": "Process any financial document — invoice, bill, receipt, or purchase order — via MOVA OCR and human-in-the-loop approval. Trigger when the user shares a docu...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mova_invoice_ocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergii Miasoiedov",
+      "features": [
+        "Process any financial document — invoice, bill, receipt, or purchase order — via MOVA OCR and h.",
+        "Trigger when the user shares a docu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mova-invoice-ocr@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258828376?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mova-invoice-ocr",
+      "url": "https://clawhub.ai/skills/mova-invoice-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mova-invoice-ocr",
+    "url": "https://clawhub.ai/skills/mova-invoice-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mova-invoice-ocr-acef11e110b8401e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mova-invoice-ocr@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mova-invoice-ocr-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8cf26a758a57468a5350e15e4e107afa769a54dcc78b1ff8d5f5bf41c428a5d3",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T14:50:41.102Z"
+}

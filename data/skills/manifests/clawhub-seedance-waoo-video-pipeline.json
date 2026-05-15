@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59849,
+  "uuid": "skill-clawhub-seedance-waoo-video-pipeline",
+  "skillKey": "clawhub-seedance-waoo-video-pipeline",
+  "name": "Seedance + Waoo 短视频流水线",
+  "summary": "自动化短视频工作流（story-to-video pipeline）：从剧本/分镜到生成、字幕 ASR、TTS、合并交付，支持 Seedance / Vidu / MiniMax 多厂商路由。",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_waoo_video_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wusyu",
+      "features": [
+        "自动化短视频工作流（story-to-video pipeline）：从剧本/分镜到生成、字幕 ASR、TTS、合并交付，支持 Seedance / Vidu / MiniMax 多厂商路由。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seedance-waoo-video-pipeline@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170169388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seedance-waoo-video-pipeline",
+      "url": "https://clawhub.ai/skills/seedance-waoo-video-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-waoo-video-pipeline",
+    "url": "https://clawhub.ai/skills/seedance-waoo-video-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-waoo-video-pipeline-405ff2acda646034.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seedance-waoo-video-pipeline@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-seedance-waoo-video-pipeline-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57d3076ee1d91f242a984cd56935e0132ee0f02423fe1e37dbf8fe98cb33594f",
+      "artifactSizeBytes": 2623
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T01:58:11.220Z"
+}

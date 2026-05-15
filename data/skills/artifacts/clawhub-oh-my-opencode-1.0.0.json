@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oh-my-opencode@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oh_my_opencode",
+  "skill": {
+    "id": 9926,
+    "skillKey": "clawhub-oh-my-opencode",
+    "name": "Oh My OpenCode"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oh-my-opencode",
+    "url": "https://clawhub.ai/skills/oh-my-opencode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oh-my-opencode-fec04c210a0e8c6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent orchestration plugin for OpenCode. Use when the user wants to install, configure, or operate oh-my-opencode — including agent delegation, ultrawork mode, Prometheus planning, background tasks, category-based task routing, model."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mcoso",
+      "userId": "publishers:mcoso",
+      "displayName": "McOso",
+      "image": "https://avatars.githubusercontent.com/u/81343914?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 2986,
+      "installsAllTime": 22,
+      "installsCurrent": 21,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770138419499,
+      "changelog": "oh-my-opencode 1.0.0\n\n- Initial release of the oh-my-opencode plugin for OpenCode.\n- Provides multi-agent orchestration, autonomous work modes (Ultrawork, Prometheus), and advanced agent delegation.\n- Supports installation, configuration, all built-in agents (Sisyphus, Oracle, Librarian, Explore, Atlas, Prometheus, Metis, Momus), categories, slash commands, hooks, and skills.\n- Enables category-based task routing, advanced model/provider fallback chains, and tmux integration.\n- Includes detailed troubleshooting, workflow guidance, and usage examples for all features.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a6db15b708d3e21769bfe01f5f70fd7aeb227759d6db4176084f44b11e66f9e2"
+}

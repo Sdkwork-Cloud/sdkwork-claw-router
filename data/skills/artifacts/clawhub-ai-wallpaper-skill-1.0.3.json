@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-wallpaper-skill@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_wallpaper_skill",
+  "skill": {
+    "id": 66579,
+    "skillKey": "clawhub-ai-wallpaper-skill",
+    "name": "ai-wallpaper-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-wallpaper-skill",
+    "url": "https://clawhub.ai/skills/ai-wallpaper-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-wallpaper-skill-1a0418c34b6cc8b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一个能够根据用户提示词生成 AI 图片并自动将其设置为桌面壁纸的能力模块。当用户提到“换壁纸”、“生成桌面”、“设置背景”等需求时触发。当前实现支持 Windows 和 macOS。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liyulingyue",
+      "userId": "s17981fq81hfz1f6bp5n6hx6y1850tp2",
+      "displayName": "张春乔",
+      "image": "https://avatars.githubusercontent.com/u/83450930?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776485614929,
+      "changelog": "- Now supports both Windows and macOS platforms for AI-generated wallpaper setting.\n- Updated instructions and metadata to reflect macOS compatibility.\n- Linux platform is not yet supported.\n- No code changes detected; improvements are in documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:019bd5a1bb4f1514c18bca41c1c4298a2fafbb98f9f7ab006ce8db09f2d91b18"
+}

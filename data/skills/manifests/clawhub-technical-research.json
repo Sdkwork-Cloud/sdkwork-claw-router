@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67049,
+  "uuid": "skill-clawhub-technical-research",
+  "skillKey": "clawhub-technical-research",
+  "name": "technical-research",
+  "summary": "技术领域深度调研。对任意技术领域进行系统化调研，产出包含概念剖析、行业情报、方案对比、精华整合四个维度的完整报告，并最终整合为一份完整 md 文件。GitHub 数据通过 WebSearch/WebFetch 实时获取。适用于技术选型、领域入门、竞品分析等场景。当用户提到\"调研\"、\"研究\"、\"了解\"某技术领域，或...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.technical_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tbxsx",
+      "features": [
+        "技术领域深度调研。对任意技术领域进行系统化调研，产出包含概念剖析、行业情报、方案对比、精华整合四个维度的完整报告，并最终整合为一份完整 md 文件。GitHub 数据通过 WebSearch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/technical-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19223302?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "technical-research",
+      "url": "https://clawhub.ai/skills/technical-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "technical-research",
+    "url": "https://clawhub.ai/skills/technical-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/technical-research-26de8b6fa90c4f79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/technical-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-technical-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8be882ae37893be717ff22bbf57a9b39d2f876561a19d880611839f2853cf82e",
+      "artifactSizeBytes": 2841
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T18:10:18.369Z"
+}

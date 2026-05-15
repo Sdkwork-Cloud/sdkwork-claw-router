@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-announcement@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_announcement",
+  "skill": {
+    "id": 33575,
+    "skillKey": "clawhub-stock-announcement",
+    "name": "Stock Announcement"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-announcement",
+    "url": "https://clawhub.ai/skills/stock-announcement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-announcement-4ab045f0085e5058.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily stock portfolio analysis with Gmail report delivery and Sonos TTS announcement"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1778096949348,
+      "changelog": "Fix Gmail token path/refresh/retry; Fix Sonos announcement (replace non-existent say with gTTS+play); Add logging and exit code for cron monitoring",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:651c5435b6b736ebb3aaf1d2167d2fbcfaa5bfa450e45f2df4ba51fa29b52ed8"
+}

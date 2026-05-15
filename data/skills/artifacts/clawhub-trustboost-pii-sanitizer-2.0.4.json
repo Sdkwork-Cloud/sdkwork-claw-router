@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trustboost-pii-sanitizer@2.0.4",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trustboost_pii_sanitizer",
+  "skill": {
+    "id": 34612,
+    "skillKey": "clawhub-trustboost-pii-sanitizer",
+    "name": "TrustBoost PII Sanitizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trustboost-pii-sanitizer",
+    "url": "https://clawhub.ai/skills/trustboost-pii-sanitizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trustboost-pii-sanitizer-892b0f04f72be742.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sanitizes PII from text before sending to LLMs. Use when handling user-generated text that may contain sensitive data, when privacy compliance is required (G..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teodorofodocrispin-cmyk",
+      "userId": "s174f8wsyybamj8bhwkwa7y5fh85h9zs",
+      "displayName": "teodorofodocrispin-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/271404169?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.0.4",
+      "createdAt": 1777546584678,
+      "changelog": "- Updated version to 2.0.4.\n- Updated metadata to clarify that no environment variables are required.\n- Added a new wallet_security section to explicitly state that TrustBoost never requires or handles wallet private keys or signing credentials—only public wallet addresses are used for quota tracking.\n- No code or functional changes; documentation and metadata improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad9d0454c295f824451416db543991dd47e684600a1d830541d069ae354e6c9c"
+}

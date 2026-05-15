@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58741,
+  "uuid": "skill-clawhub-fangtian-amap",
+  "skillKey": "clawhub-fangtian-amap",
+  "name": "高德地图 (Fangtian)",
+  "summary": "高德地图 API 调用工具，返回原始 JSON 数据。Use when users ask about 天气、地址、坐标、周边、路线、导航、打车、行程 in China. Commands: weather, geo, regeo, search, around, detail, route, distance,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fangtian_amap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fangtianwd",
+      "features": [
+        "高德地图 API 调用工具，返回原始 JSON 数据。Use when users ask about 天气、地址、坐标、周边、路线、导航、打车、行程 in China",
+        "Commands: weather, geo, regeo, search, around, detail, route, distance,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fangtian-amap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42469250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fangtian-amap",
+      "url": "https://clawhub.ai/skills/fangtian-amap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fangtian-amap",
+    "url": "https://clawhub.ai/skills/fangtian-amap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fangtian-amap-6a497fc27999f12b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fangtian-amap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fangtian-amap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b94505a93bac0000e29f511338dd6fe1abbde9bd877c85b31080c95399fec2c0",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T01:52:22.206Z"
+}

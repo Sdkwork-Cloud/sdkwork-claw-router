@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tender-analysis-system@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tender_analysis_system",
+  "skill": {
+    "id": 65937,
+    "skillKey": "clawhub-tender-analysis-system",
+    "name": "Tender Analysis System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tender-analysis-system",
+    "url": "https://clawhub.ai/skills/tender-analysis-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tender-analysis-system-21ab6333268f969e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动化抓取并智能分析各行业招标信息，生成多维度结构化标书风险与付款方式分析报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ylbwjf",
+      "userId": "s178vmyja356gekmrwgpp7rkf984428q",
+      "displayName": "ylbwjf",
+      "image": "https://avatars.githubusercontent.com/u/269066461?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775196371134,
+      "changelog": "Tender Analysis Assistant v1.0.0\n\n- Initial release of the 标书分析助手 (Tender Analysis Assistant).\n- Automates collection of tender data across government, finance, telecom, transportation, and major SOE sectors.\n- Intelligent parsing and structured analysis of tender documents by multiple dimensions: contract, technical, payment, evaluation, and more.\n- Generates standardized analysis reports and provides real-time and scheduled briefings for key projects.\n- Includes configurable data sources, deduplication, and risk warnings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04aa3cac115130c14391dd631cbdb1809d098da491d0a68e2db63042fe64ecc3"
+}

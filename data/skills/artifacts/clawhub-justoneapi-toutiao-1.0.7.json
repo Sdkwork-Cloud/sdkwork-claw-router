@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justoneapi-toutiao@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_toutiao",
+  "skill": {
+    "id": 31480,
+    "skillKey": "clawhub-justoneapi-toutiao",
+    "name": "Toutiao API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-toutiao",
+    "url": "https://clawhub.ai/skills/justoneapi-toutiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-toutiao-7bd9ae51a6a358fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Toutiao workflows with JustOneAPI, including article Details, user Profile, and app Keyword Search across 4 operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justoneapi",
+      "userId": "s17ayjxfh4atw7gc7dgat7n40x845p6b",
+      "displayName": "justoneapi",
+      "image": "https://avatars.githubusercontent.com/u/139095138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1776924494962,
+      "changelog": "- Updated operation IDs to include \"Toutiao\" prefix for improved clarity (e.g., getToutiaoArticleDetailV1).\n- Adjusted documentation and examples to use the new operation IDs.\n- No changes to API behavior or endpoints—naming only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05433d3640316722157ceeef4044839b63ddcd197e3b3263dd17ad081efda0b4"
+}

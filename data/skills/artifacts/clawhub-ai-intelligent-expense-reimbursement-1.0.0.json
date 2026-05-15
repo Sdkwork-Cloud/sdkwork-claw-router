@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-intelligent-expense-reimbursement@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_intelligent_expense_reimbursement",
+  "skill": {
+    "id": 59135,
+    "skillKey": "clawhub-ai-intelligent-expense-reimbursement",
+    "name": "Ai Intelligent Expense Reimbursement"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-intelligent-expense-reimbursement",
+    "url": "https://clawhub.ai/skills/ai-intelligent-expense-reimbursement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-intelligent-expense-reimbursement-92916789d0f96549.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动化报销流程，票据识别 + 审批加速。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 435,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773894268150,
+      "changelog": "Initial release of AI 智能报销管理系统.\n\n- Automated expense reimbursement workflow with invoice OCR and accelerated approvals.\n- Features include intelligent approval, expense analysis, compliance checks, and financial integration.\n- Pricing plans for different business needs.\n- Supports use cases like corporate reimbursements, travel expenses, office procurement, and staff benefits.\n- Built with Python, FastAPI, OCR, and financial APIs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6456dfa736aedb794afeddea1e1f6dd289428aada4f985e258fb1319eb74eef5"
+}

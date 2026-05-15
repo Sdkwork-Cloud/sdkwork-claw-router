@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44083,
+  "uuid": "skill-clawhub-base-stable-arb-radar",
+  "skillKey": "clawhub-base-stable-arb-radar",
+  "name": "Base Stable Arb Radar",
+  "summary": "Read-only Base stablecoin arbitrage radar for Uniswap V3 and Aerodrome with gas-aware filtering, slippage haircuts, webhook alerts, state persistence, and vo...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.base_stable_arb_radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "prettybusysolutions-eng",
+      "features": [
+        "Read-only Base stablecoin arbitrage radar for Uniswap V3 and Aerodrome with gas-aware filtering."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/base-stable-arb-radar@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262936889?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "base-stable-arb-radar",
+      "url": "https://clawhub.ai/skills/base-stable-arb-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "base-stable-arb-radar",
+    "url": "https://clawhub.ai/skills/base-stable-arb-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/base-stable-arb-radar-82613c42afb6994f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/base-stable-arb-radar@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-base-stable-arb-radar-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9cfe1fd26abbbbe15117e74a198618d49753d94f8fd5f7290888aecb6efbbbf",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T23:05:32.341Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yandex-speechkit-stt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yandex_speechkit_stt",
+  "skill": {
+    "id": 63091,
+    "skillKey": "clawhub-yandex-speechkit-stt",
+    "name": "Yandex Speechkit STT via Telegram Gateway"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yandex-speechkit-stt",
+    "url": "https://clawhub.ai/skills/yandex-speechkit-stt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yandex-speechkit-stt-bb3681148549b2dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Распознавание речи через Yandex SpeechKit API для голосовых сообщений в Telegram. Используй когда пользователь отправляет голосовые сообщения и хочет, чтобы..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "strydex",
+      "userId": "publishers:strydex",
+      "displayName": "strydex",
+      "image": "https://avatars.githubusercontent.com/u/143320768?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 518,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772294296306,
+      "changelog": "Initial release of Yandex SpeechKit STT skill:\n\n- Enables speech recognition for Telegram voice messages via Yandex SpeechKit API.\n- Supports OggOpus, WAV, and MP3 audio formats.\n- Automatically trims audio to 28 seconds to comply with Yandex limits.\n- Handles IAM token generation and refresh using service account credentials.\n- Usable both from command line and as a Python module.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0b345a8e7c8a4ae21838306d14517d2a3b4e6b58b88ff72665f611992787f1b2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/retail-clerk-structure-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retail_clerk_structure_analysis",
+  "skill": {
+    "id": 70611,
+    "skillKey": "clawhub-retail-clerk-structure-analysis",
+    "name": "导购结构分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retail-clerk-structure-analysis",
+    "url": "https://clawhub.ai/skills/retail-clerk-structure-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retail-clerk-structure-analysis-a7b3ab28506fe1d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "导购结构分析工具。分析门店导购的表现结构，识别导购波动对门店业绩波动的贡献度。 核心能力： 1. 导购表现结构分析（人效分布、帕累托分析） 2. TOP/腰部/尾部导购识别 3. 业绩集中度评估 4. 导购波动归因（各导购对门店业绩变化的贡献度） 5. 增长型vs下滑型导购分类 6. 基于累计贡献度的关键人识别..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gwyang7",
+      "userId": "s174smknxqd6qs6q88gjradc7x83ngrp",
+      "displayName": "Xtechmerge.AI",
+      "image": "https://avatars.githubusercontent.com/u/176652150?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774526362160,
+      "changelog": "Initial release: 支持导购表现结构、波动归因、关键人识别",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:693659bafcece0838696b13541fb8208c8ee10e78b419de7c1769dde696e1e49"
+}

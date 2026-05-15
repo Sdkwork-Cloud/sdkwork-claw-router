@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16599,
+  "uuid": "skill-clawhub-markdown-to-pdf-styled",
+  "skillKey": "clawhub-markdown-to-pdf-styled",
+  "name": "Markdown to PDF (Styled)",
+  "summary": "Convert Markdown files to styled PDFs using pandoc and wkhtmltopdf with built-in or custom CSS style options.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_to_pdf_styled",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mengwuzhi",
+      "features": [
+        "Convert Markdown files to styled PDFs using pandoc and wkhtmltopdf with built-in or custom CSS."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/markdown-to-pdf-styled@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16465718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "markdown-to-pdf-styled",
+      "url": "https://clawhub.ai/skills/markdown-to-pdf-styled"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-to-pdf-styled",
+    "url": "https://clawhub.ai/skills/markdown-to-pdf-styled",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-to-pdf-styled-11efeeed5dab5019.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/markdown-to-pdf-styled@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-markdown-to-pdf-styled-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1252c0b65e14665a80e355b62ddb578d6b7909c2bf5f52148c86de83b24a5b5e",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T11:10:08.870Z"
+}

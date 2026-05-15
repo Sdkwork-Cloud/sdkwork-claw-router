@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/patent-writer@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patent_writer",
+  "skill": {
+    "id": 71552,
+    "skillKey": "clawhub-patent-writer",
+    "name": "Patent Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patent-writer",
+    "url": "https://clawhub.ai/skills/patent-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patent-writer-0ac5ab65c51f8920.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文专利交底书撰写助手。支持两种模式：(1) 方向模式：用户给出技术方向，自动搜索并推荐创新点供选择；(2) 明确想法模式：用户已有明确发明构思，直接进入撰写流程。触发词：写专利、专利撰写、专利交底书、发明点推荐、帮我写个专利。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sherww",
+      "userId": "s17d0f1r1amcfh0t21p5y8r4md83kqw2",
+      "displayName": "xwZhang",
+      "image": "https://avatars.githubusercontent.com/u/26615991?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 454,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774089009763,
+      "changelog": "**This is a major version update introducing new writing standards, steps, templates, and output features.**\n\n- Expanded流程: 增加了专利概要描述、自动生成 Word(docx)文稿的完整流程，细化撰写步骤与关键节点。\n- 新增参考资源: 增加架构图绘制指南、概要描述模板与示例、md2docx 脚本等辅助文件。\n- 撰写规范升级: 明确自然段/技术文档风格、关键技术点举例、字数要求及不可口语化表达。\n- 分节写作优化: 增强各章节连贯性与写作深度，明确架构图生成时机。\n- 输出自动化: 一键导出 Markdown 和 Word 格式交底书/概要描述，统一文档结构与文件命名。\n- 文档模板和流程说明同步更新，方便快速查找写作与交付规范。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2a5f2fd3efb2fba19b10442b9189d7e925befe94e174f4c26387b2e64a58c5b"
+}

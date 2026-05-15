@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mia-ppt-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mia_ppt_generator",
+  "skill": {
+    "id": 65256,
+    "skillKey": "clawhub-mia-ppt-generator",
+    "name": "PPT Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mia-ppt-generator",
+    "url": "https://clawhub.ai/skills/mia-ppt-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mia-ppt-generator-2a528e334238e4e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成HTML格式的PPT演示文稿。使用场景：(1) 用户需要创建可分享的网页版PPT；(2) 用户需要离线可用的演示文稿；(3) 用户提到\"HTML PPT\"、\"网页PPT\"、\"在线PPT\"等关键词。接收用户输入：PPT主题内容、风格参考资料（支持图片/文件上传）、目标受众，然后生成可下载的HTML文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flyyue5",
+      "userId": "publishers:flyyue5",
+      "displayName": "flyyue5",
+      "image": "https://avatars.githubusercontent.com/u/20693903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773824041649,
+      "changelog": "- 首个版本发布，提供基于Reveal.js的HTML格式PPT自动生成能力。  \n- 支持收集用户主题、视觉风格（支持图片上传）、目标受众信息。  \n- 自动生成含封面、目录、内容、总结、结束页的单文件HTML PPT。  \n- 每页自动插入相关图标/图片，使用Font Awesome等公开资源丰富视觉效果。  \n- 生成的PPT支持本地保存及一键下载，内容和风格贴合用户需求。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf0361aa7b715140f763d0ad9beccc355c51089dd65291c09027121441e1b299"
+}

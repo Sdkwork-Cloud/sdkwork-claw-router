@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62587,
+  "uuid": "skill-clawhub-sunsetbot-watch",
+  "skillKey": "clawhub-sunsetbot-watch",
+  "name": "sunsetbot-watch",
+  "summary": "全自动 sunsetbot 晚霞查询，使用 agent-browser 访问 sunsetbot.top 网站，自动解析页面，输出指定城市当天晚霞的鲜艳度和气溶胶质量。触发场景：用户需要查询某个城市今天/明天晚霞概率，查询 sunsetbot 晚霞预报。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sunsetbot_watch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weiwei106",
+      "features": [
+        "全自动 sunsetbot 晚霞查询，使用 agent-browser 访问 sunsetbot.top 网站，自动解析页面，输出指定城市当天晚霞的鲜艳度和气溶胶质量。触发场景：用户需要查询."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sunsetbot-watch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20461396?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sunsetbot-watch",
+      "url": "https://clawhub.ai/skills/sunsetbot-watch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sunsetbot-watch",
+    "url": "https://clawhub.ai/skills/sunsetbot-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sunsetbot-watch-b5a2b594220fe328.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sunsetbot-watch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sunsetbot-watch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2464283aea1c355aa1bc8ebae645821b68f3838a69a15b3648d876a1a8072e11",
+      "artifactSizeBytes": 2469
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T11:03:08.889Z"
+}

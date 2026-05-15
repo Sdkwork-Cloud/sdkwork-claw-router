@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/08-video-merge@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.08_video_merge",
+  "skill": {
+    "id": 31147,
+    "skillKey": "clawhub-08-video-merge",
+    "name": "08 Video Merge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "08-video-merge",
+    "url": "https://clawhub.ai/skills/08-video-merge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/08-video-merge-cd0a53c044ae56b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Locally merges video clips, dubbing audio, SRT subtitles, and background music into a 9:16 vertical short video ready for publishing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ghwyever",
+      "userId": "s17e2s4tkevm4442ztsph1bhtd84d4rj",
+      "displayName": "GHwyever",
+      "image": "https://avatars.githubusercontent.com/u/177743476?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 260,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775813093096,
+      "changelog": "- Updated skill name and descriptions for clarity and conciseness.\n- Simplified input parameters: now uses video_url, audio_url, and optional subtitle_url.\n- Streamlined usage scenarios and technical details for easier understanding.\n- Removed the obsolete _meta.json file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:203ca60e340057fb352f004d3b1e15d4c7d2a2ff137e08ede4c32d5779a6031c"
+}

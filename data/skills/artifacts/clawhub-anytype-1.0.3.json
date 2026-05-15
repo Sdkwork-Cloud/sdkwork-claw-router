@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anytype@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anytype",
+  "skill": {
+    "id": 16803,
+    "skillKey": "clawhub-anytype",
+    "name": "Anytype"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anytype",
+    "url": "https://clawhub.ai/skills/anytype",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anytype-752ae8b3c213e675.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Anytype via anytype-cli and its HTTP API. Use when reading, creating, updating, or searching objects/pages in Anytype spaces; managing spaces;..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tadas-subonis",
+      "userId": "s1715mczen6aemg3ecg9vymc0d83k5v6",
+      "displayName": "Tadas Šubonis",
+      "image": "https://avatars.githubusercontent.com/u/247218?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 627,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772709693607,
+      "changelog": "Anytype Skill 1.0.0\n\n- Initial release of the Anytype skill.\n- Provides instructions for setup (service, account, API key, space join) and core usage via CLI and HTTP API.\n- Documents object creation, update (patch), and key API constraints.\n- Explains critical content update limitation (PATCH does not update content; must DELETE and recreate).\n- Introduces best practices for knowledge graph structure, object types, linking, and collections.\n- Adds a SETUP.md for instance-specific configuration (IDs, sharing links, etc.).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c091dc891b11e6baa4cf95f54edd06112ff3b5324d53db22b18dc01337152fb7"
+}

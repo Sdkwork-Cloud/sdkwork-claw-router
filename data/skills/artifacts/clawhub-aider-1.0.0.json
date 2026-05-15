@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aider@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aider",
+  "skill": {
+    "id": 62901,
+    "skillKey": "clawhub-aider",
+    "name": "Aider"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aider",
+    "url": "https://clawhub.ai/skills/aider",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aider-ebde709e306badca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Aider AI 编程助手，精通终端内 AI 编程、Git 集成、多模型支持、代码重构"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774159009125,
+      "changelog": "Aider 1.0.0 - 首个版本发布！\n\n- 支持终端内 AI 结对编程，原生集成 Git，自动生成语义化 commit\n- 覆盖多模型（Claude, GPT-4o, DeepSeek, Ollama 本地等）一键切换\n- 提供文件精细管理、跨文件批量修改、自动 lint/修复、测试驱动开发\n- 独有 Architect 模式，支持“先规划再编码”两阶段重构流程\n- 简明命令体系，适配个人和团队高效开发",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f61275cdf764f9650a2328c9fe0ff4c4f3632085643221879697aec20a6787d"
+}

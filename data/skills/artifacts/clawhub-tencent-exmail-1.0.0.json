@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencent-exmail@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_exmail",
+  "skill": {
+    "id": 66009,
+    "skillKey": "clawhub-tencent-exmail",
+    "name": "tencent-exmail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-exmail",
+    "url": "https://clawhub.ai/skills/tencent-exmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-exmail-cddfb0252438b94c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "腾讯企业邮箱（exmail.qq.com）收发邮件技能。当用户想要发送邮件、查看收件箱、搜索邮件、下载附件、实时监听新邮件、或对腾讯企业邮箱进行任何邮件操作时触发。支持 IMAP/SMTP 协议，SSL 加密，附件上传/下载，邮件搜索，IMAP IDLE 实时推送通知。关键词：企业邮箱、exmail、腾讯邮件、发..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nopassword2000",
+      "userId": "s17crckp3cs4nfe3d8wzm4gakh83v0vg",
+      "displayName": "nopassword2000",
+      "image": "https://avatars.githubusercontent.com/u/17892472?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 341,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773738686036,
+      "changelog": "this is base version",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:caf579ac0ba3e76a3e3db017ab95d1cf56422d63945e3b8dc848b3c322ed022f"
+}

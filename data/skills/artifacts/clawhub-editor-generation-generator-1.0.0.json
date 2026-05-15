@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-generation-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_generation_generator",
+  "skill": {
+    "id": 48347,
+    "skillKey": "clawhub-editor-generation-generator",
+    "name": "Editor Generation Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-generation-generator",
+    "url": "https://clawhub.ai/skills/editor-generation-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-generation-generator-56e4de5ea68a813a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate raw video footage into auto-edited videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for automatical..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777307354220,
+      "changelog": "Initial release of editor-generation-generator — automate AI-powered video editing from raw footage:\n\n- Turn raw MP4, MOV, AVI, or WebM files (up to 500MB) into fully edited 1080p MP4 videos automatically.\n- Instantly connect to the cloud GPU editing backend using a NEMO_TOKEN or free starter token.\n- Supports smart instructions (e.g., \"add titles,\" \"cut to music\") and keyword-based action routing.\n- Offers upload, edit, export, credits, and project state workflows; handles all backend and error responses for you.\n- Delivers cloud-rendered results in 1–2 minutes; ideal for creators seeking fast, automated editing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76a53fc486a1b9200d39acee0e199269c519d84feed3e31cf7ce8ac9c17a0ca5"
+}

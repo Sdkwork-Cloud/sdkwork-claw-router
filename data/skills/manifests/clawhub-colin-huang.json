@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56129,
+  "uuid": "skill-clawhub-colin-huang",
+  "skillKey": "clawhub-colin-huang",
+  "name": "colin-huang",
+  "summary": "Information assistant for Colin Huang 黄峥. Get biography, latest news, career highlights, and social media updates.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.colin_huang",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for Colin Huang 黄峥",
+        "Get biography, latest news, career highlights, and social media updates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/colin-huang@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "colin-huang",
+      "url": "https://clawhub.ai/skills/colin-huang"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "colin-huang",
+    "url": "https://clawhub.ai/skills/colin-huang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/colin-huang-846ac1a4d548324c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/colin-huang@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-colin-huang-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:308f421a667ef862d0f500581f8ea2efcbcad1b07679710168a07968731c12f9",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T12:09:00.796Z"
+}

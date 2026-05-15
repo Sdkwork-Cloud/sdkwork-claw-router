@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20206,
+  "uuid": "skill-clawhub-audio-analyzer",
+  "skillKey": "clawhub-audio-analyzer",
+  "name": "Smart Audio Analyzer",
+  "summary": "All-in-one audio analysis: transcribe, identify speakers by voiceprint, auto-detect scene (meeting/interview/training/talk), generate structured notes. The O...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JoJowillwater",
+      "features": [
+        "All-in-one audio analysis: transcribe, identify speakers by voiceprint, auto-detect scene (meet.",
+        "The O..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audio-analyzer@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221942252?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audio-analyzer",
+      "url": "https://clawhub.ai/skills/audio-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-analyzer",
+    "url": "https://clawhub.ai/skills/audio-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-analyzer-ab9406704da5e247.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audio-analyzer@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-audio-analyzer-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72278f9c4f68e0add0a9d3dc69becdd891c02a75ca339ec6e9fe9fbddef18008",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T20:29:50.826Z"
+}

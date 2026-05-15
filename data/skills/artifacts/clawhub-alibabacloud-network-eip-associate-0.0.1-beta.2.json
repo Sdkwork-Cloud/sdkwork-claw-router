@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-network-eip-associate@0.0.1-beta.2",
+  "version": "0.0.1-beta.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_network_eip_associate",
+  "skill": {
+    "id": 40929,
+    "skillKey": "clawhub-alibabacloud-network-eip-associate",
+    "name": "Alibabacloud Network Eip Associate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-network-eip-associate",
+    "url": "https://clawhub.ai/skills/alibabacloud-network-eip-associate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-network-eip-associate-8b8108408aa875f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Allocate Elastic IP Address (EIP) and bind to existing Alibaba Cloud resources. Supports ECS instances, ENI, CLB, NAT Gateway, HAVIP, and IP addresses. Focus..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.1-beta.2",
+      "createdAt": 1777432587491,
+      "changelog": "- Require Aliyun CLI version 3.3.3 or higher; updated installation and version check instructions.\n- Added mandatory step to update Aliyun CLI plugins before use (`aliyun plugin update`).\n- Updated all AlibabaCloud CLI commands to include the full skill user-agent string: `--user-agent AlibabaCloud-Agent-Skills/alibabacloud-network-eip-associate`.\n- Improved and clarified pre-check and setup steps in documentation.\n- Minor fixes and clarifications in step descriptions and workflow text.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b5725d195e242ecb7223c08acb6bdd4c939cc724806984b263a3068ab7db9a4"
+}

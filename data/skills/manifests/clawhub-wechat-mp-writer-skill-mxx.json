@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67708,
+  "uuid": "skill-clawhub-wechat-mp-writer-skill-mxx",
+  "skillKey": "clawhub-wechat-mp-writer-skill-mxx",
+  "name": "wechat-mp-writer-skill-mxx",
+  "summary": "微信公众号文章全流程写作助手。支持热点选题、文章撰写、AI去味润色（去除机器感）、配图建议、一键发布到公众号草稿箱。适用于技术博主、自媒体创作者、企业公众号运营等场景。当用户需要写公众号文章、润色内容、寻找配图或发布到微信时使用此skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_mp_writer_skill_mxx",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hahacatlsq",
+      "features": [
+        "微信公众号文章全流程写作助手。支持热点选题、文章撰写、AI去味润色（去除机器感）、配图建议、一键发布到公众号草稿箱。适用于技术博主、自媒体创作者、企业公众号运营等场景。当用户需要写公众号文章."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-mp-writer-skill-mxx@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131435882?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-mp-writer-skill-mxx",
+      "url": "https://clawhub.ai/skills/wechat-mp-writer-skill-mxx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-mp-writer-skill-mxx",
+    "url": "https://clawhub.ai/skills/wechat-mp-writer-skill-mxx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-mp-writer-skill-mxx-de2fe940daf9acea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-mp-writer-skill-mxx@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-mp-writer-skill-mxx-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3598840cd0ab64c8f431b68131bd18ccbb647add560e0bf543d0ef236e8e7c44",
+      "artifactSizeBytes": 2501
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T12:53:22.331Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cognitive-bullwhip@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cognitive_bullwhip",
+  "skill": {
+    "id": 16115,
+    "skillKey": "clawhub-cognitive-bullwhip",
+    "name": "cognitive-bullwhip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cognitive-bullwhip",
+    "url": "https://clawhub.ai/skills/cognitive-bullwhip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cognitive-bullwhip-0fb59e6189b4ba61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnoses whether a Cognitive Bullwhip Effect is already active in your agent system. Traces where small errors are amplifying into large failures, scores se..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jkc3080",
+      "userId": "publishers:jkc3080",
+      "displayName": "Axiom",
+      "image": "https://avatars.githubusercontent.com/u/17403254?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 727,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771563745277,
+      "changelog": "Update: re-run after edits; refreshed diagnostic output and report formatting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cc27aed3498a8c0e17e1bc6495a83a63f6a05c13050f1594c22fa6a4a7cfd6ed"
+}

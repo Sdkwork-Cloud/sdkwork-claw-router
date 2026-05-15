@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64367,
+  "uuid": "skill-clawhub-ninebot",
+  "skillKey": "clawhub-ninebot",
+  "name": "Ninebot",
+  "summary": "九号电动车/平衡车集成技能 - 用于与 Ninebot 设备交互、诊断、配置和故障排除",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ninebot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aNinebot",
+      "features": [
+        "九号电动车/平衡车集成技能",
+        "用于与 Ninebot 设备交互、诊断、配置和故障排除"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ninebot@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244633197?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ninebot",
+      "url": "https://clawhub.ai/skills/ninebot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ninebot",
+    "url": "https://clawhub.ai/skills/ninebot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ninebot-2c930b24415a76ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ninebot@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ninebot-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17ab62ac10ce582db9487ac58e80a2973d6160965f4b1b8175d8aa9c00967e0a",
+      "artifactSizeBytes": 2168
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T04:39:29.489Z"
+}

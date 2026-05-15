@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/upkuajing-trade-company-search@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upkuajing_trade_company_search",
+  "skill": {
+    "id": 56476,
+    "skillKey": "clawhub-upkuajing-trade-company-search",
+    "name": "UpKuaJing Customs Trade Company Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upkuajing-trade-company-search",
+    "url": "https://clawhub.ai/skills/upkuajing-trade-company-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upkuajing-trade-company-search-c2085e8716ab42e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Official skill for upkuajing (跨境魔方). Find companies (找公司) and global buyers using customs trade data. Get trade order details, business contact info, and lea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "warmc",
+      "userId": "s177bfh3d8jvx2rsfjyxtnv4v583n48j",
+      "displayName": "warmc",
+      "image": "https://avatars.githubusercontent.com/u/2004113?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 386,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 13,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1776426384654,
+      "changelog": "- Added a new script: scripts/version_check.py.\n- Documented a best practice in SKILL.md: always use direct script invocation (e.g. python scripts/xxx.py), and do not use compound commands like cd scripts && python xxx.py.\n- Updated skill version to 1.0.6.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:761c84d8d73ca160a85d87ba0c84c0f3e4e294545d0e2aae1e97eb1d15f0f46f"
+}

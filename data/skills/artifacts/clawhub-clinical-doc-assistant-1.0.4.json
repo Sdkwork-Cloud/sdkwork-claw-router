@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clinical-doc-assistant@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clinical_doc_assistant",
+  "skill": {
+    "id": 51638,
+    "skillKey": "clawhub-clinical-doc-assistant",
+    "name": "Clinical Doc Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clinical-doc-assistant",
+    "url": "https://clawhub.ai/skills/clinical-doc-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clinical-doc-assistant-3f99f1700e92aa1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when a clinician, practice manager, or healthcare developer needs to draft, structure, or retrieve clinical documentation — including SOAP not..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "optimusprime19",
+      "userId": "s1701rtpn3c1z5nppqjqt8tkm583vx8j",
+      "displayName": "optimusprime19",
+      "image": "https://avatars.githubusercontent.com/u/11436472?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 254,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774828020371,
+      "changelog": "Fixed misleading ANTHROPIC_API_KEY comment; clarified PHI forwarding to Anthropic when backend is used; added CORS production warning",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9af1cc47f9c1ca1217a3af230386a5749027304e0edc3097aa651c828b6f1d6"
+}

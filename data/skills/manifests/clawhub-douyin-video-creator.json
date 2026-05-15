@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70228,
+  "uuid": "skill-clawhub-douyin-video-creator",
+  "skillKey": "clawhub-douyin-video-creator",
+  "name": "douyinVideoCreator",
+  "summary": "抖音爆款视频分析与创作引导工具。(1) 用户输入抖音视频链接时，生成爆款分析报告；(2) 用户输入主题并上传图片/视频素材时，生成多个爆款标题供选择，最终输出完整的15秒短视频分镜脚本。触发词：抖音分析、爆款分析、短视频分析、douyin、抖音爆款、爆款创作、视频脚本、短视频创作、15秒视频。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_video_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zengrb111",
+      "features": [
+        "抖音爆款视频分析与创作引导工具。(1) 用户输入抖音视频链接时，生成爆款分析报告；(2) 用户输入主题并上传图片/视频素材时，生成多个爆款标题供选择，最终输出完整的15秒短视频分镜脚本。触发."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-video-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210959595?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-video-creator",
+      "url": "https://clawhub.ai/skills/douyin-video-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-video-creator",
+    "url": "https://clawhub.ai/skills/douyin-video-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-video-creator-da7042d224d0d3d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-video-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-video-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aab95fd5c797be44a62782690c0fbdd0207c1edf79c63329cc54f168f645bc9b",
+      "artifactSizeBytes": 2162
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T10:07:59.777Z"
+}

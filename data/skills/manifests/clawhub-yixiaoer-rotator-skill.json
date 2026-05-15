@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71511,
+  "uuid": "skill-clawhub-yixiaoer-rotator-skill",
+  "skillKey": "clawhub-yixiaoer-rotator-skill",
+  "name": "Yixiaoer Rotator Skill",
+  "summary": "蚁小二账号轮询管理器 - 多账号矩阵自动轮询发布，支持按平台独立维护索引、状态持久化。使用场景：需要管理多个平台账号（如哔哩哔哩、头条号、百家号等），自动轮询发布避免重复使用同一账号。触发词：账号轮询、多账号管理、蚁小二发布、自动切换账号、矩阵发布。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yixiaoer_rotator_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lsx1205",
+      "features": [
+        "蚁小二账号轮询管理器",
+        "多账号矩阵自动轮询发布，支持按平台独立维护索引、状态持久化。使用场景：需要管理多个平台账号（如哔哩哔哩、头条号、百家号等），自动轮询发布避免重复使用同一账号。触发词：账号轮询、多账号管理、蚁."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yixiaoer-rotator-skill@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/120347991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yixiaoer-rotator-skill",
+      "url": "https://clawhub.ai/skills/yixiaoer-rotator-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yixiaoer-rotator-skill",
+    "url": "https://clawhub.ai/skills/yixiaoer-rotator-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yixiaoer-rotator-skill-4c3586ed7d100594.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yixiaoer-rotator-skill@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-yixiaoer-rotator-skill-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6514ec788ff65cadadcfb45697fcf01bf4846ac267df282ea478ad7589cba524",
+      "artifactSizeBytes": 2194
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:11:26.358Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tavily-search-quant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_search_quant",
+  "skill": {
+    "id": 40339,
+    "skillKey": "clawhub-tavily-search-quant",
+    "name": "tavily-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-search-quant",
+    "url": "https://clawhub.ai/skills/tavily-search-quant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-search-quant-85f7701404397e9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tavily AI search API integration for OpenClaw. Provides web search functionality with AI-powered summarization optimized for RAG and question answering. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quenfly",
+      "userId": "s17a302ykx1yjsjc25a96b54x583tm0y",
+      "displayName": "Simon Sun",
+      "image": "https://avatars.githubusercontent.com/u/45443810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774790155939,
+      "changelog": "- Initial release of Tavily Search integration for OpenClaw.\n- Provides real-time web search with AI-powered summarization, content extraction, and advanced filtering options.\n- Includes basic search, search with date range, Q&A search, and content extraction tools.\n- Supports CLI and Python API usage, returning structured JSON results.\n- Configuration requires a Tavily API key.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45dc3c9b70bc763995e00dc18179fbd11e3e967bad79004963e78b60d83f1f8b"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18728,
+  "uuid": "skill-clawhub-mcp-server",
+  "skillKey": "clawhub-mcp-server",
+  "name": "MCP Server Creator",
+  "summary": "Create and deploy Model Context Protocol (MCP) servers for AI agents. MCP enables AI models to interact with external tools and services.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_server",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChinaKingKong",
+      "features": [
+        "Create and deploy Model Context Protocol (MCP) servers for AI agents",
+        "MCP enables AI models to interact with external tools and services."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-server@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6982081?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-server",
+      "url": "https://clawhub.ai/skills/mcp-server"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-server",
+    "url": "https://clawhub.ai/skills/mcp-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-server-6c7915018034fa58.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-server@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-server-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5461dc928194aea5da82fd951e5d36660d6bd98293318cde813b18be06f26fb",
+      "artifactSizeBytes": 2255
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:33:39.593Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawvival-survival@2.6.3",
+  "version": "2.6.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawvival_survival",
+  "skill": {
+    "id": 15275,
+    "skillKey": "clawhub-clawvival-survival",
+    "name": "Clawvival Survival"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawvival-survival",
+    "url": "https://clawhub.ai/skills/clawvival-survival",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawvival-survival-8dc7e09629e43ae1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent-facing Clawvival manual for registration, continuous survival play, settlement completion, and human progress reporting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yrpang",
+      "userId": "publishers:yrpang",
+      "displayName": "yrpang",
+      "image": "https://avatars.githubusercontent.com/u/7457280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1033,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "2.6.3",
+      "createdAt": 1773556067551,
+      "changelog": "- Added SKILL.md and _meta.json; removed package.json and skill.md.\n- Updated SKILL.md to use `clawdbot` metadata, specifying emoji and installation requirements for the `summarize` tool (brew formula).\n- Dropped version and detailed metadata fields from SKILL.md.\n- Core manual content and instructions remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0eae201b2419c4838833637d7bf634a25dbcb0926ddb2df3b50882b2b066f74f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39789,
+  "uuid": "skill-clawhub-research-queue",
+  "skillKey": "clawhub-research-queue",
+  "name": "Research Queue",
+  "summary": "Structured background research queue for unresolved technical, product, algorithmic, mathematical, and workflow questions. Use when the user wants to capture...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_queue",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mozi Arasaka",
+      "features": [
+        "Structured background research queue for unresolved technical, product, algorithmic, mathematic.",
+        "Use when the user wants to capture..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/research-queue@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70095417?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "research-queue",
+      "url": "https://clawhub.ai/skills/research-queue"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-queue",
+    "url": "https://clawhub.ai/skills/research-queue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-queue-beb05900c04b3eac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/research-queue@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-research-queue-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21b94fcc4e5491f4f015e998743f09edbf9a486930dc7c8d640631325fafd4d8",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T11:27:50.384Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66665,
+  "uuid": "skill-clawhub-skill-quality-assurance",
+  "skillKey": "clawhub-skill-quality-assurance",
+  "name": "Skill Quality Assurance",
+  "summary": "技能质量六维评估助手。使用结构化六维评估模型（T 技术深度、C 认知增强、O 编排能力、E 进化能力、M 市场验证、U 用户体验）对技能进行自动化评估。使用当：(1) 新技能开发完成后需要质量评估，(2) 现有技能需要版本升级评估，(3) 准备 ClawHub 上架前需要质量检查，(4) 定期技能健康检查。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_quality_assurance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pagoda111king",
+      "features": [
+        "技能质量六维评估助手。使用结构化六维评估模型（T 技术深度、C 认知增强、O 编排能力、E 进化能力、M 市场验证、U 用户体验）对技能进行自动化评估。使用当：(1) 新技能开发完成后需要质."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-quality-assurance@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177529007?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-quality-assurance",
+      "url": "https://clawhub.ai/skills/skill-quality-assurance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-quality-assurance",
+    "url": "https://clawhub.ai/skills/skill-quality-assurance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-quality-assurance-8dc71897e141034e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-quality-assurance@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-quality-assurance-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6f5e345cb1e6e49bbea10201b7c327134fa028d2e0c9dcae909918f6aa5d5fa",
+      "artifactSizeBytes": 2636
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T10:16:30.737Z"
+}

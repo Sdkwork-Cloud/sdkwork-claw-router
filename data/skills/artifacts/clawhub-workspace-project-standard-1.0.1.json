@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workspace-project-standard@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_project_standard",
+  "skill": {
+    "id": 19634,
+    "skillKey": "clawhub-workspace-project-standard",
+    "name": "Workspace Project Standard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-project-standard",
+    "url": "https://clawhub.ai/skills/workspace-project-standard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-project-standard-6f7d2d5c865218a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Project workspace setup and documentation standard for OpenClaw agents. Enforces a three-layer documentation system and self-contained project structure. Tri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lnshyo",
+      "userId": "publishers:lnshyo",
+      "displayName": "lnshyo",
+      "image": "https://avatars.githubusercontent.com/u/211641729?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 591,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772163018512,
+      "changelog": "Fix skill.json metadata",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7730d201c1b4a8da2fc1856565e1ecb6156209253f6f0d1e0dd7e22ee95cbb09"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anime@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anime",
+  "skill": {
+    "id": 10969,
+    "skillKey": "clawhub-anime",
+    "name": "Anime"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anime",
+    "url": "https://clawhub.ai/skills/anime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anime-242ab4ac31522e28.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI for AI agents to search and lookup anime info for their humans. Uses Jikan (unofficial MyAnimeList API). No auth required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeffaf",
+      "userId": "s170beydycbvfehr2pz7rj84p183gak4",
+      "displayName": "jeffaf",
+      "image": "https://avatars.githubusercontent.com/u/102811047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2193,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770257637279,
+      "changelog": "- Clarified the skill's audience as AI agents assisting humans.\n- Improved description for better context in automations and agent use cases.\n- No changes to commands or output. All functionality remains the same.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d3df47a00d796a1754826d53206a6c428cd299c1b2f2465ae2a7dc3d933a82bd"
+}

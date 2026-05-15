@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70295,
+  "uuid": "skill-clawhub-disk-space-analyzer",
+  "skillKey": "clawhub-disk-space-analyzer",
+  "name": "Disk Space Analyzer",
+  "summary": "磁盘空间分析与优化建议工具。自动扫描所有磁盘驱动器，生成包含目录占用排名、 爆满元凶锁定、可清理缓存识别和优化建议的完整报告。 触发词: 磁盘空间分析、C盘满了、硬盘空间不足、磁盘爆满、磁盘占用、磁盘分析、 磁盘清理、C盘空间、磁盘空间报告、扫描磁盘、disk space、磁盘满了、磁盘空间不够、 帮我看看磁盘、...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.disk_space_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "raingingkleec",
+      "features": [
+        "磁盘空间分析与优化建议工具。自动扫描所有磁盘驱动器，生成包含目录占用排名、 爆满元凶锁定、可清理缓存识别和优化建议的完整报告。 触发词: 磁盘空间分析、C盘满了、硬盘空间不足、磁盘爆满、磁盘."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/disk-space-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130803090?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "disk-space-analyzer",
+      "url": "https://clawhub.ai/skills/disk-space-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "disk-space-analyzer",
+    "url": "https://clawhub.ai/skills/disk-space-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/disk-space-analyzer-cdb46a03383aa261.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/disk-space-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-disk-space-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53c0cabc524705c85616b596d61176aa295846a6b1406832d46f5ac8fae9b900",
+      "artifactSizeBytes": 2745
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T02:35:53.874Z"
+}

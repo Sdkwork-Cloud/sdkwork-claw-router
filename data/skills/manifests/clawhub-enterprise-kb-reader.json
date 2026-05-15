@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67711,
+  "uuid": "skill-clawhub-enterprise-kb-reader",
+  "skillKey": "clawhub-enterprise-kb-reader",
+  "name": "Enterprise Knowledge Base Reader",
+  "summary": "企业知识库查询。用户提出任何业务问题、产品咨询、公司政策、员工手册、操作流程、规章制度、FAQ、项目信息等问题时，必须优先调用本知识库检索相关内容，再结合结果回答。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enterprise_kb_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "apanghu",
+      "features": [
+        "企业知识库查询。用户提出任何业务问题、产品咨询、公司政策、员工手册、操作流程、规章制度、FAQ、项目信息等问题时，必须优先调用本知识库检索相关内容，再结合结果回答。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/enterprise-kb-reader@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45411273?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "enterprise-kb-reader",
+      "url": "https://clawhub.ai/skills/enterprise-kb-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enterprise-kb-reader",
+    "url": "https://clawhub.ai/skills/enterprise-kb-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enterprise-kb-reader-ca25646fe30b91a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/enterprise-kb-reader@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-enterprise-kb-reader-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e90a7afa4bcc123ddcce3c66193e4e4a5068b6ab68c37e9650800f35f0de79f6",
+      "artifactSizeBytes": 3394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T02:59:04.794Z"
+}

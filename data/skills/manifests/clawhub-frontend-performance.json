@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12255,
+  "uuid": "skill-clawhub-frontend-performance",
+  "skillKey": "clawhub-frontend-performance",
+  "name": "Frontend Performance",
+  "summary": "Analyzes frontend performance issues (LCP, FCP, CLS, bundle size) and suggests prioritized, practical optimizations for loading and runtime efficiency.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.frontend_performance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangzhiming",
+      "features": [
+        "Analyzes frontend performance issues (LCP, FCP, CLS, bundle size) and suggests prioritized, pra."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/frontend-performance@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48944224?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "frontend-performance",
+      "url": "https://clawhub.ai/skills/frontend-performance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "frontend-performance",
+    "url": "https://clawhub.ai/skills/frontend-performance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/frontend-performance-edd1d708fcc9bfe4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/frontend-performance@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-frontend-performance-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:356efe3ac47ae1e006f1f91d562db996cc136c1949f904e3c97ceebc81cb0e75",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T06:56:41.660Z"
+}

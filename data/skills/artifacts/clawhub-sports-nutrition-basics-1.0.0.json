@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sports-nutrition-basics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sports_nutrition_basics",
+  "skill": {
+    "id": 49413,
+    "skillKey": "clawhub-sports-nutrition-basics",
+    "name": "Sports Nutrition Basics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sports-nutrition-basics",
+    "url": "https://clawhub.ai/skills/sports-nutrition-basics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sports-nutrition-basics-b792388943db05a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides general guidance on fueling, hydration, and nutrient timing tailored to your sport, training load, dietary preferences, and performance goals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 79,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778156162769,
+      "changelog": "- Initial release of Sports Nutrition Basics skill.\n- Provides general macronutrient frameworks tailored to sport/activity type, training load, and dietary preferences.\n- Offers practical pre-, during-, and post-activity meal and hydration suggestions.\n- Addresses hydration guidelines, electrolyte needs, and signs of dehydration.\n- Educates on supplement use with a food-first, neutral, and conservative approach.\n- Includes clear safety and boundary guidance emphasizing educational intent, not individualized medical or meal plans.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ada317dd9bc8d7adcf64b8387ad7226b691db759a77bc29bae3dfd6b1303e3e"
+}

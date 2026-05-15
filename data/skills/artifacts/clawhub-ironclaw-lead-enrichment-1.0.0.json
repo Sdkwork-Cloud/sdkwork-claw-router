@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ironclaw-lead-enrichment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ironclaw_lead_enrichment",
+  "skill": {
+    "id": 17854,
+    "skillKey": "clawhub-ironclaw-lead-enrichment",
+    "name": "Ironclaw Lead Enrichment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ironclaw-lead-enrichment",
+    "url": "https://clawhub.ai/skills/ironclaw-lead-enrichment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ironclaw-lead-enrichment-2c96fad35e7a3fc3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enrich contact and lead records with LinkedIn profiles, email addresses, company data, and education info. Use when asked to \"enrich contacts\", \"fill in miss..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aspenas",
+      "userId": "publishers:aspenas",
+      "displayName": "Patrick Smith",
+      "image": "https://avatars.githubusercontent.com/u/25066580?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 729,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771340011319,
+      "changelog": "Initial release: Comprehensive LinkedIn, email, and company data enrichment for CRM leads.\n\n- Enriches missing contact details using LinkedIn, web search, company websites, and email pattern discovery.\n- Supports both single-record and bulk enrichment modes with batch processing and progress reporting.\n- Applies confidence scoring to each enriched field; flags conflicting or duplicate data entries.\n- Does not overwrite existing data unless requested; checks for deduplication of LinkedIn profiles.\n- Designed for seamless integration with DuckDB-based CRM records.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6d659a11879a02230005d06d78dcdabd2882334ad4b200f6d6cf274d750367ca"
+}

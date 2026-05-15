@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10200,
+  "uuid": "skill-clawhub-prompt-assemble",
+  "skillKey": "clawhub-prompt-assemble",
+  "name": "Prompt Safe",
+  "summary": "Token-safe prompt assembly with memory orchestration. Use for any agent that needs to construct LLM prompts with memory retrieval. Guarantees no API failure due to token overflow. Implements two-phase context construction, memory safety va.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_assemble",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alexunitario-sketch",
+      "features": [
+        "Token-safe prompt assembly with memory orchestration",
+        "Use for any agent that needs to construct LLM prompts with memory retrieval",
+        "Guarantees no API failure due to token overflow",
+        "Implements two-phase context construction, memory safety valve, and hard limits on memory injec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-assemble@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256296354?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-assemble",
+      "url": "https://clawhub.ai/skills/prompt-assemble"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-assemble",
+    "url": "https://clawhub.ai/skills/prompt-assemble",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-assemble-d1268c0ce379839d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-assemble@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-assemble-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9abc5e22f9de9266ed7a7dfeec22f797c06bb2ce3e5de64ce4a8e0c7fea39deb",
+      "artifactSizeBytes": 2085
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T15:34:30.438Z"
+}

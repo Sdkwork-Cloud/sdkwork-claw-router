@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32942,
+  "uuid": "skill-clawhub-teamsupport",
+  "skillKey": "clawhub-teamsupport",
+  "name": "Teamsupport",
+  "summary": "TeamSupport integration. Manage data, records, and automate workflows. Use when the user wants to interact with TeamSupport data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teamsupport",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "TeamSupport integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with TeamSupport data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/teamsupport@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "teamsupport",
+      "url": "https://clawhub.ai/skills/teamsupport"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teamsupport",
+    "url": "https://clawhub.ai/skills/teamsupport",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teamsupport-00a47cd44c4f6e4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/teamsupport@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-teamsupport-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2df36b24995a983836ed9681e8624276501ac9d3b81eadc2ca9b07d3fb00b4bd",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:50:56.845Z"
+}

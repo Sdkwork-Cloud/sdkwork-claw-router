@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-data-access-anti-pattern-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_data_access_anti_pattern_auditor",
+  "skill": {
+    "id": 40503,
+    "skillKey": "clawhub-bookforge-data-access-anti-pattern-auditor",
+    "name": "Data Access Anti Pattern Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-data-access-anti-pattern-auditor",
+    "url": "https://clawhub.ai/skills/bookforge-data-access-anti-pattern-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-data-access-anti-pattern-auditor-93501260dbf724d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit a persistence layer and schema for data access anti-patterns: N+1 query (SELECT N+1), ripple loading, lazy loading anti-pattern, ghost/proxy identity t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776754569852,
+      "changelog": "Data Access Anti-Pattern Auditor v1.0.0 — initial release.\n\n- Audits ORM-backed persistence layers and schema for common data access anti-patterns including N+1 queries, ghost/proxy identity traps, Active Record/Data Mapper mismatch, and more.\n- Produces a prioritized inventory with code location, evidence snippet, consequence, and tailored remediation advice cross-referenced to selector skills.\n- Designed for use during performance tuning, code review, pre-migration baselining, and legacy risk assessment.\n- Requires codebase access (models, repositories, schema); works offline.\n- Targets experienced engineers and architects performing in-depth persistence reviews.\n- Not intended for concurrency, web, or distributed system anti-patterns (those are handled by other skills).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91114615e08accac554329b82a50e6da5967da92795bf439fe2d073674337cb9"
+}

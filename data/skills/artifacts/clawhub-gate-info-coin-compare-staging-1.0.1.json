@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-info-coin-compare-staging@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_info_coin_compare_staging",
+  "skill": {
+    "id": 42828,
+    "skillKey": "clawhub-gate-info-coin-compare-staging",
+    "name": "gate-info-coincompare"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-info-coin-compare-staging",
+    "url": "https://clawhub.ai/skills/gate-info-coin-compare-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-info-coin-compare-staging-6535e23842ed3448.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coin comparison. Use this skill whenever the user asks to compare two or more coins. Trigger phrases include: compare, versus, vs, which is better, differenc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaixianggeng",
+      "userId": "s17edzcx6za5g00fwmgwmkhrgd83yw5a",
+      "displayName": "gaixg",
+      "image": "https://avatars.githubusercontent.com/u/12163126?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775486464497,
+      "changelog": "- Updated runtime rules paths: now reference local `./references/` folder for `gate-runtime-rules.md` and `info-news-runtime-rules.md`.\n- Removed all local maintenance workflow content for simplicity.\n- SYNOPSIS and all technical descriptions are unchanged.\n- Removed obsolete scenario references and legacy documentation files.\n- Documentation now matches new rules structure and eliminates unnecessary internal maintenance text.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14a974c7923013f8309811de618193d0af013bfc21cbd044aa74b58b4b749b05"
+}

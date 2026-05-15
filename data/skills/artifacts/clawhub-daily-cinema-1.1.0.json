@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-cinema@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_cinema",
+  "skill": {
+    "id": 44967,
+    "skillKey": "clawhub-daily-cinema",
+    "name": "Daily Cinema Content Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-cinema",
+    "url": "https://clawhub.ai/skills/daily-cinema",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-cinema-153cde224f364237.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate daily cinema and film industry content and TikTok scripts using free entertainment news sources. Use when user wants to create content about movie r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahmed181283",
+      "userId": "s177nd0qk7heppjfethwwsmk6x85ea2c",
+      "displayName": "ahmed181283",
+      "image": "https://avatars.githubusercontent.com/u/26248550?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777204249122,
+      "changelog": "- Added new configuration file: clawhub.json\n- No changes to existing features or usage instructions\n- Maintains compatibility with previous configuration and templates",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:472f105c15ca89df71133da4ed2cda6ba5b527431f8d6a59d0ca607a7aebb81b"
+}

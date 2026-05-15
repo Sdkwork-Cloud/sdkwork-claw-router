@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16512,
+  "uuid": "skill-clawhub-hyperliquid-analyzer",
+  "skillKey": "clawhub-hyperliquid-analyzer",
+  "name": "Hyperliquid Analyzer",
+  "summary": "Analyze Hyperliquid market data and provide trading insights. Real-time price monitoring, trend analysis, and risk assessment.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hyperliquid_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "B0on",
+      "features": [
+        "Analyze Hyperliquid market data and provide trading insights",
+        "Real-time price monitoring, trend analysis, and risk assessment."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hyperliquid-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5462721?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hyperliquid-analyzer",
+      "url": "https://clawhub.ai/skills/hyperliquid-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hyperliquid-analyzer",
+    "url": "https://clawhub.ai/skills/hyperliquid-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hyperliquid-analyzer-acb71169b9d8a7ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hyperliquid-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hyperliquid-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4571efc2ebe2ef55bcfee40e086347105575b13d31141f96762018fafd71b450",
+      "artifactSizeBytes": 2325
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T17:49:30.422Z"
+}

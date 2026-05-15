@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21364,
+  "uuid": "skill-clawhub-autoresearch-pro",
+  "skillKey": "clawhub-autoresearch-pro",
+  "name": "Autoresearch",
+  "summary": "Automatically improve OpenClaw skills, prompts, or articles through iterative mutation-testing loops. Inspired by Karpathy's autoresearch. Use when user says...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autoresearch_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jialin",
+      "features": [
+        "Automatically improve OpenClaw skills, prompts, or articles through iterative mutation-testing.",
+        "Inspired by Karpathy's autoresearch",
+        "Use when user says..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autoresearch-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38884292?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autoresearch-pro",
+      "url": "https://clawhub.ai/skills/autoresearch-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autoresearch-pro",
+    "url": "https://clawhub.ai/skills/autoresearch-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autoresearch-pro-fd8477ab747bcf9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autoresearch-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-autoresearch-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2ce4cee79d8ab42af60670e9b2896d2e6fcddeb02092a38431b083c4f0edd49",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T17:29:56.224Z"
+}

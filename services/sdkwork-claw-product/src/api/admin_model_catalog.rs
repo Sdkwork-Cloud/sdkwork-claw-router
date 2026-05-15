@@ -1,10 +1,9 @@
 use std::sync::Arc;
 
-use axum::body::Bytes;
 use axum::extract::State;
 use axum::http::{HeaderMap, StatusCode, Uri};
 use axum::response::{IntoResponse, Response};
-use axum::routing::post;
+use axum::routing::get;
 use axum::{Json, Router};
 use sdkwork_claw_http::ApiKeyIdentity;
 use serde::{Deserialize, Serialize};
@@ -96,7 +95,7 @@ where
     C: PricingCatalog + Send + Sync + 'static,
 {
     Router::new()
-        .route("/backend/v3/api/model/list", post(fetch_models::<C>))
+        .route("/backend/v3/api/ai/models", get(fetch_models::<C>))
         .with_state(AdminModelCatalogState {
             catalog,
             api_key_hasher,
@@ -107,12 +106,11 @@ async fn fetch_models<C>(
     State(state): State<AdminModelCatalogState<C>>,
     headers: HeaderMap,
     uri: Uri,
-    body: Bytes,
 ) -> Response
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    let request = match parse_request(&body) {
+    let request = match parse_query(uri.query()) {
         Ok(request) => request,
         Err(message) => {
             return (
@@ -170,11 +168,37 @@ where
     }
 }
 
-fn parse_request(body: &[u8]) -> Result<AdminModelListRequest, String> {
-    if body.iter().all(u8::is_ascii_whitespace) {
+fn parse_query(query: Option<&str>) -> Result<AdminModelListRequest, String> {
+    let Some(query) = query else {
         return Ok(AdminModelListRequest::default());
+    };
+    let mut request = AdminModelListRequest::default();
+    for pair in query.split('&').filter(|pair| !pair.is_empty()) {
+        let (name, value) = pair
+            .split_once('=')
+            .map(|(name, value)| (name.trim(), value.trim()))
+            .unwrap_or_else(|| (pair.trim(), ""));
+        match name {
+            "api_key_id" if !value.is_empty() => {
+                let api_key_id = value
+                    .parse::<i64>()
+                    .map_err(|_| "api_key_id must be a positive integer".to_owned())?;
+                if api_key_id <= 0 {
+                    return Err("api_key_id must be a positive integer".to_owned());
+                }
+                request.api_key_id = Some(api_key_id);
+            }
+            "billing_meter" if !value.is_empty() => {
+                request.billing_meter = Some(value.to_owned());
+            }
+            "vendor_code" if !value.is_empty() => {
+                request.vendor_code = Some(value.to_owned());
+            }
+            "" => {}
+            _ => {}
+        }
     }
-    serde_json::from_slice(body).map_err(|error| format!("invalid request body: {error}"))
+    Ok(request)
 }
 
 fn resolve_api_key_id<C>(

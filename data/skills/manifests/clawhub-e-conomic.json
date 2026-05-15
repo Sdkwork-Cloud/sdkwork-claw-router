@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24593,
+  "uuid": "skill-clawhub-e-conomic",
+  "skillKey": "clawhub-e-conomic",
+  "name": "E Conomic",
+  "summary": "E-conomic integration. Manage Organizations, Users. Use when the user wants to interact with E-conomic data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.e_conomic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "E-conomic integration",
+        "Manage Organizations, Users",
+        "Use when the user wants to interact with E-conomic data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/e-conomic@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "e-conomic",
+      "url": "https://clawhub.ai/skills/e-conomic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "e-conomic",
+    "url": "https://clawhub.ai/skills/e-conomic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/e-conomic-3f187868844ecdd9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/e-conomic@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-e-conomic-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04c564211fa4009dfab2a3452671b9426a8d441a968dcf41d6a75601681a49e2",
+      "artifactSizeBytes": 1822
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:42:00.864Z"
+}

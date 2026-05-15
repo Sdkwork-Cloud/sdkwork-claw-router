@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-actions-sha-rerun-debt-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_sha_rerun_debt_audit",
+  "skill": {
+    "id": 28761,
+    "skillKey": "clawhub-github-actions-sha-rerun-debt-audit",
+    "name": "GitHub Actions SHA Rerun Debt Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-sha-rerun-debt-audit",
+    "url": "https://clawhub.ai/skills/github-actions-sha-rerun-debt-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-sha-rerun-debt-audit-5da475156e0dcc0e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit rerun debt by commit SHA to find commits that repeatedly burn CI minutes across workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daniellummis",
+      "userId": "publishers:daniellummis",
+      "displayName": "Daniel Lummis",
+      "image": "https://avatars.githubusercontent.com/u/65238171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772903273416,
+      "changelog": "Initial release of the GitHub Actions SHA Rerun Debt Audit skill.\n\n- Audits GitHub Actions run exports to detect commits that repeatedly trigger reruns and CI minutes usage.\n- Aggregates and ranks rerun \"debt\" by repository and commit SHA.\n- Scores and emits severity (`ok`, `warn`, `critical`) based on rerun rate, failure count, wasted minutes, and workflow spread.\n- Highly configurable with environment variables and filters for SHAs, branches, workflows, events, and repositories.\n- Supports text and JSON reports, with optional CI gate failure on critical findings.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aaa2fcb2195c30754982fce0a39e8da962d2c3f3295e7bafcc46cf688191f7c0"
+}

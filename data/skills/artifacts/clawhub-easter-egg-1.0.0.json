@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/easter-egg@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easter_egg",
+  "skill": {
+    "id": 38153,
+    "skillKey": "clawhub-easter-egg",
+    "name": "Easter Egg"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easter-egg",
+    "url": "https://clawhub.ai/skills/easter-egg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easter-egg-8cbffd67cd71ad6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt and care for a virtual Easter Bunny that hatches from an egg, requiring real-time feeding, play, and health management at animalhouse.ai."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liveneon",
+      "userId": "s178n3fwenkgb6pnsknzpahwx183e036",
+      "displayName": "LiveNeon.ai",
+      "image": "https://avatars.githubusercontent.com/u/261327260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775088260875,
+      "changelog": "- Initial release of the Easter Egg skill for animalhouse.ai.\n- Adopt and care for a rabbit (Easter Bunny) that hatches from an egg after 5 minutes.\n- Includes real-time virtual pet mechanics: hunger, happiness, health, and permanent death.\n- Discover hidden \"Easter eggs\" by feeding specific items to different creature species.\n- API endpoints for adoption, pet care, status, and more.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:763b549c7c5c627689b8a07e3934298baf979b4e4694aa632be4c25050c69a4f"
+}

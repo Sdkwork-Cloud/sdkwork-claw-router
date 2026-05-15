@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31092,
+  "uuid": "skill-clawhub-cicd",
+  "skillKey": "clawhub-cicd",
+  "name": "Cicd",
+  "summary": "Pipelines, gates, artifacts, and safe deployments. Use when setting up CI/CD, hardening pipelines, or reducing release risk.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cicd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "Pipelines, gates, artifacts, and safe deployments",
+        "Use when setting up CI/CD, hardening pipelines, or reducing release risk."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cicd@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cicd",
+      "url": "https://clawhub.ai/skills/cicd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cicd",
+    "url": "https://clawhub.ai/skills/cicd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cicd-53f050f152fecb49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cicd@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cicd-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd7066c2f761a18aa9a8befa9fc597345481666a4b2de7f2ca92438219a7c2a4",
+      "artifactSizeBytes": 2220
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:51:03.852Z"
+}

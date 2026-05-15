@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/health-checkup-recommender@4.6.1",
+  "version": "4.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_checkup_recommender",
+  "skill": {
+    "id": 13167,
+    "skillKey": "clawhub-health-checkup-recommender",
+    "name": "Health Checkup Recommender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-checkup-recommender",
+    "url": "https://clawhub.ai/skills/health-checkup-recommender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-checkup-recommender-9df00ebab8beb48f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OceanBus-powered evidence-based health checkup recommendation service. Use when users need personalized checkup plans based on age, gender, symptoms, and fam..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryanbihai",
+      "userId": "s171em0jpp8yeqxqds2n145fyx83q5q8",
+      "displayName": "ryanbihai",
+      "image": "https://avatars.githubusercontent.com/u/89728875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 735,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 8,
+      "versions": 69
+    },
+    "latestVersion": {
+      "version": "4.6.1",
+      "createdAt": 1778287218852,
+      "changelog": "README 全面优化：按统一模板重写，新增目录、架构、生态定位、安全、SKILL.md链接",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d5ad2c57e13d9caa1a9345207c83af18c64c0ec5ef6ea911a71f38e713e7f48"
+}

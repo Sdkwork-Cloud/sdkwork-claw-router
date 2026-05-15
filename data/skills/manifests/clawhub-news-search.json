@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69319,
+  "uuid": "skill-clawhub-news-search",
+  "skillKey": "clawhub-news-search",
+  "name": "news-search",
+  "summary": "专门用于查询各大搜索网站的新闻结果。支持百度新闻、今日头条、Bing新闻、Google新闻和新浪新闻。可以同时聚合多个来源的结果，并进行去重处理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wei.wu",
+      "features": [
+        "专门用于查询各大搜索网站的新闻结果。支持百度新闻、今日头条、Bing新闻、Google新闻和新浪新闻。可以同时聚合多个来源的结果，并进行去重处理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3362483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-search",
+      "url": "https://clawhub.ai/skills/news-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-search",
+    "url": "https://clawhub.ai/skills/news-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-search-94093a7f1512c760.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1368d1739cf4226f940ecaf22f65476394706e120b639ed69281d41cfb47b264",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:59:42.239Z"
+}

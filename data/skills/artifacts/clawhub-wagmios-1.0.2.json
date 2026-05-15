@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wagmios@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wagmios",
+  "skill": {
+    "id": 32449,
+    "skillKey": "clawhub-wagmios",
+    "name": "wagmios"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wagmios",
+    "url": "https://clawhub.ai/skills/wagmios",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wagmios-4b13a11e03c148a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your OpenClaw agent a homelab. Use when managing Docker containers, installing marketplace apps, or any Docker-related tasks on behalf of the user. Scop..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mentholmike",
+      "userId": "s178gq6bv91f0h726dnp4vh32183g86v",
+      "displayName": "MentholMike",
+      "image": "https://avatars.githubusercontent.com/u/68653554?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774213091997,
+      "changelog": "WAGMIOS 1.0.2 — Multi-machine support and improved setup guidance\n\n- Added support for managing multiple WAGMIOS instances (multi-machine management) from a single agent, each with a separate scoped API key and URL.\n- Updated the startup workflow: clarified the need to check both Docker availability and backend reachability before performing any operation.\n- Expanded authentication documentation to include remote host support.\n- Added a new \"Multi-Machine Management\" section with usage examples and principles.\n- Linked to new workflow documentation under “Workflows.”",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01efd71faf1a59deb4788cff03cdb14ede843cfeac41f2e9d9046c1207f721b1"
+}

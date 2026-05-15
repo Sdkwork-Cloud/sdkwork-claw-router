@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8254,
+  "uuid": "skill-clawhub-model-usage",
+  "skillKey": "clawhub-model-usage",
+  "name": "Model Usage",
+  "summary": "Use CodexBar CLI local cost usage to summarize per-model usage for Codex or Claude, including the current (most recent) model or a full model breakdown. Trigger when asked for model-level usage/cost data from codexbar, or when you need a s.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_usage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peter Steinberger",
+      "features": [
+        "Use CodexBar CLI local cost usage to summarize per-model usage for Codex or Claude, including t.",
+        "Trigger when asked for model-level usage/cost data from codexbar, or when you need a scriptable."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-usage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-usage",
+      "url": "https://clawhub.ai/skills/model-usage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-usage",
+    "url": "https://clawhub.ai/skills/model-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-usage-7fd6c7019f0296f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-usage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-usage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de2be0c76fcea14370f65c36d23a87746ebb074a9dad5e62373fe5ef1567c4c2",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-06T02:47:19.455Z"
+}

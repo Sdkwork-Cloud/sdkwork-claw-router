@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42533,
+  "uuid": "skill-clawhub-finskills-macro-regime-detector",
+  "skillKey": "clawhub-finskills-macro-regime-detector",
+  "name": "macro-regime-detector",
+  "summary": "Classify the current macroeconomic regime across six states using GDP, CPI, Fed Funds rate, yield curve, and credit spread data from the Finskills API.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finskills_macro_regime_detector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "finskills",
+      "features": [
+        "Classify the current macroeconomic regime across six states using GDP, CPI, Fed Funds rate, yie."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finskills-macro-regime-detector@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32382589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finskills-macro-regime-detector",
+      "url": "https://clawhub.ai/skills/finskills-macro-regime-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finskills-macro-regime-detector",
+    "url": "https://clawhub.ai/skills/finskills-macro-regime-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finskills-macro-regime-detector-1b25acb031328e68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finskills-macro-regime-detector@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-finskills-macro-regime-detector-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87a8aa986280e26b4a173cd5d83fceba9d7b95e0350033311bec7ba4285e4d1d",
+      "artifactSizeBytes": 2229
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T15:42:13.223Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15024,
+  "uuid": "skill-clawhub-unsearch",
+  "skillKey": "clawhub-unsearch",
+  "name": "UnSearch",
+  "summary": "Search the web, scrape content, and conduct deep research using the UnSearch API. Use when the user needs real-time web search results, content extraction from URLs, fact verification, or multi-source research for AI agents, RAG pipelines,.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unsearch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rakesh1002",
+      "features": [
+        "Search the web, scrape content, and conduct deep research using the UnSearch API",
+        "Use when the user needs real-time web search results, content extraction from URLs, fact verifi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unsearch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15137233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unsearch",
+      "url": "https://clawhub.ai/skills/unsearch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unsearch",
+    "url": "https://clawhub.ai/skills/unsearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unsearch-8a13491afa5f966a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unsearch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unsearch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b02f448dda71f7a9664578940f033d7968d6811b9e16b26d7ea1e40464713b9",
+      "artifactSizeBytes": 2026
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T21:49:08.785Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68018,
+  "uuid": "skill-clawhub-feishu-group-memory-system",
+  "skillKey": "clawhub-feishu-group-memory-system",
+  "name": "feishu-group-memory-system-飞书群聊记忆管理",
+  "summary": "飞书群聊上下文持久化技能。当用户在群聊中说\"保存上下文\"时保存当前群聊对话；在私聊中会根据用户意图分流到手动群聊存档或其他操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_group_memory_system",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zzlqxbms",
+      "features": [
+        "飞书群聊上下文持久化技能。当用户在群聊中说\"保存上下文\"时保存当前群聊对话；在私聊中会根据用户意图分流到手动群聊存档或其他操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-group-memory-system@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29598421?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-group-memory-system",
+      "url": "https://clawhub.ai/skills/feishu-group-memory-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-group-memory-system",
+    "url": "https://clawhub.ai/skills/feishu-group-memory-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-group-memory-system-dfcf1aee7420ff82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-group-memory-system@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-group-memory-system-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35e1090636c7f01eb176be865a180395f0f84eef9d048c84e0bc671d8ae36cf4",
+      "artifactSizeBytes": 2677
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:09:57.396Z"
+}

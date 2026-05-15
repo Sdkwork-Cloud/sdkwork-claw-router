@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45618,
+  "uuid": "skill-clawhub-google-maps-revenue",
+  "skillKey": "clawhub-google-maps-revenue",
+  "name": "Google Maps Revenue",
+  "summary": "Estimate monthly revenue for local businesses from Google Maps data, rank by revenue and growth, and generate personalized outreach plus a local market video.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_maps_revenue",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nicemaths123",
+      "features": [
+        "Estimate monthly revenue for local businesses from Google Maps data, rank by revenue and growth."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-maps-revenue@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244252350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-maps-revenue",
+      "url": "https://clawhub.ai/skills/google-maps-revenue"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-maps-revenue",
+    "url": "https://clawhub.ai/skills/google-maps-revenue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-maps-revenue-6048372afb1f3302.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-maps-revenue@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-maps-revenue-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc440699c2a2ee0aef4360b8a55626c478aed912b988cf7252645acb38312f6b",
+      "artifactSizeBytes": 2515
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T11:15:56.629Z"
+}

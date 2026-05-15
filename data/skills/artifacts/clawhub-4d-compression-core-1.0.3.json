@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/4d-compression-core@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.4d_compression_core",
+  "skill": {
+    "id": 60337,
+    "skillKey": "clawhub-4d-compression-core",
+    "name": "4d Compression Core"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "4d-compression-core",
+    "url": "https://clawhub.ai/skills/4d-compression-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/4d-compression-core-50b4008e651c1259.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "把长内容压缩成结构化 4D 向量——节省约 60-80% Token，保留核心信息"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "largetool",
+      "userId": "s174h1rvndzxpg052914dvpjjs83xj3a",
+      "displayName": "largetool",
+      "image": "https://avatars.githubusercontent.com/u/128457415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 621,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774866342916,
+      "changelog": "4d-compression-core v1.0.3\n\n- 更新文档说明，突出全部本地运行、无隐私收集、支持零额外消耗、不再支持 EPUB/PDF 直接处理\n- 核心功能新增“结构化 4D 向量”、智能路由、多压缩版本选择与本地规则匹配\n- 明确压缩率范围和适用类型，新增对对话类、知识类文本压缩率说明\n- 简化和更新触发词与安装/卸载说明\n- 增加可验证证据入口和测试报告链接",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da0ba88184631d61c612413836f9af9956ac23773bb9f07e1627cc23db7f08af"
+}

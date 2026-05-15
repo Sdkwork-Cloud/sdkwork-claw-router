@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gmail-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_cli",
+  "skill": {
+    "id": 36026,
+    "skillKey": "clawhub-gmail-cli",
+    "name": "Secure Gmail integration (gws & gogcli gmail with firewall alternative)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-cli",
+    "url": "https://clawhub.ai/skills/gmail-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-cli-c68bdd8ce46365bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure Gmail API CLI. Use when the user wants to read, search, or triage Gmail; sending, replying, forwarding, deleting, or modifying require explicit user c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "porteden",
+      "userId": "s17bsdgb41z4bpwzdr5zqz5pah83xy13",
+      "displayName": "PortEden",
+      "image": "https://avatars.githubusercontent.com/u/258120807?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777661260517,
+      "changelog": "Initial release of gmail-porteden: a secure Gmail CLI with strong user confirmation and privacy safeguards.\n\n- Read, search, and triage Gmail using `porteden email` with easy-to-use filters and date ranges.\n- Mutating actions (send, reply, forward, delete, modify) require explicit user confirmation before execution.\n- Supports secure login with browser-based or token auth; credentials stored safely in the system keyring.\n- Enforces minimal permissions per account (`--profile` or `PE_PROFILE`) and encourages regular logout and token revocation.\n- Default output is AI-optimized and privacy-preserving; full email bodies only included with explicit request.\n- Easy installation via Homebrew or Go; CLI fully operates via `porteden` binary.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b5a798a6702df949fe69a8a389c8994978b3ae265ba3eab79da12fa0f9adafd3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maverick-pandadoc-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maverick_pandadoc_mcp",
+  "skill": {
+    "id": 48371,
+    "skillKey": "clawhub-maverick-pandadoc-mcp",
+    "name": "Pandadoc mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maverick-pandadoc-mcp",
+    "url": "https://clawhub.ai/skills/maverick-pandadoc-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maverick-pandadoc-mcp-1903e4d9e4f2ceb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use PandaDoc integration context for documents, templates, recipients, proposals, and document status. Use after Maverick connects PandaDoc and provisions ru..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maverick",
+      "userId": "s17b4scyfsybdcep8c0034pgs186087n",
+      "displayName": "Maverick",
+      "image": "https://avatars.githubusercontent.com/u/261420589"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778006844027,
+      "changelog": "- Initial release of the maverick-pandadoc-mcp skill.\n- Provides a context for working with PandaDoc documents, templates, recipients, proposals, and status using Maverick-provisioned OAuth credentials.\n- No provider-owned PandaDoc MCP manifest is registered yet; runtime tools must be inspected and used with care.\n- Includes guidance on authentication, safety, data flow, and required dependencies (mcporter, jq, flock, shasum).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc87d138c3323b8cd66689724f764f523a18fa1426b56c1580c6c7037f9074c1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-research-assistant@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_research_assistant",
+  "skill": {
+    "id": 10035,
+    "skillKey": "clawhub-web-research-assistant",
+    "name": "Web Research Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-research-assistant",
+    "url": "https://clawhub.ai/skills/web-research-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-research-assistant-f7d0dd123c8b09dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered web research assistant that leverages BrowserAct API to supplement restricted web access by searching the internet for additional information. Designed for OpenClaw and Claude Code."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phheng",
+      "userId": "s17cnrtda4fqzdjza3g2hx20bs83f18z",
+      "displayName": "Henk Nie",
+      "image": "https://avatars.githubusercontent.com/u/44972754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2686,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770512767483,
+      "changelog": "Initial release of web-research-assistant.\n\n- Enables web research via the BrowserAct API when direct web access is blocked or restricted.\n- Optimized for OpenClaw and Claude Code, with support for OpenCode and Cursor.\n- Automatically bypasses IP/geoblocking, paywalls, and CAPTCHA challenges.\n- Extracts structured research data with titles, URLs, relevance scores, and source citations.\n- Provides configurable search parameters (engine, results count, content type, time range).\n- Includes error handling for API issues, search failures, and partial results.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:501795e76efda6258ed4f028c8e67c4d2e753dc3aa6c2163cebd69c8b0d8ea4c"
+}

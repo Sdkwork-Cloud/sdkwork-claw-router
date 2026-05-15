@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62610,
+  "uuid": "skill-clawhub-nimble",
+  "skillKey": "clawhub-nimble",
+  "name": "Nimble",
+  "summary": "Nimble 电动滑板车集成技能 - 用于与 Nimble 设备交互、诊断、配置和故障排除",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nimble",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aNinebot",
+      "features": [
+        "Nimble 电动滑板车集成技能",
+        "用于与 Nimble 设备交互、诊断、配置和故障排除"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nimble@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244633197?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nimble",
+      "url": "https://clawhub.ai/skills/nimble"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nimble",
+    "url": "https://clawhub.ai/skills/nimble",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nimble-66c57271cf76f716.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nimble@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nimble-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3695f8a88340c3e6f71039939c91d50cd4e7f5c344c3a22be3588c94afea0165",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T05:02:13.684Z"
+}

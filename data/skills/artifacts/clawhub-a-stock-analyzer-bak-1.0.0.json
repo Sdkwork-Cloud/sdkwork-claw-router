@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-stock-analyzer-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_analyzer_bak",
+  "skill": {
+    "id": 69153,
+    "skillKey": "clawhub-a-stock-analyzer-bak",
+    "name": "A Stock Analyzer.Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-analyzer-bak",
+    "url": "https://clawhub.ai/skills/a-stock-analyzer-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-analyzer-bak-516cfc30ce6a3690.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股智能分析交易助手（专业版）。基于马克·米勒维尼趋势模板和7大严格财务条件筛选优质个股，适用于追求高基本面标准的价值趋势投资者。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nowly-echo",
+      "userId": "s17fy6fyz3j36t3hsf96tgf47h83r2rm",
+      "displayName": "nowly",
+      "image": "https://avatars.githubusercontent.com/u/37770890?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774733150663,
+      "changelog": "a-stock-analyzer-bak v1.0.0\n\n- Initial release with basic A股 stock selection functionality.\n- Provides foundational tools for analyzing and screening stocks based on predefined conditions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69e5825ab39ee48f10443fda32efc205ce2f389e64262e899af73153f58696ab"
+}

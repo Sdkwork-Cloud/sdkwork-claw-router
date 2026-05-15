@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23576,
+  "uuid": "skill-clawhub-document-management",
+  "skillKey": "clawhub-document-management",
+  "name": "document-management",
+  "summary": "Analyze, classify, organize, summarize, and report on PDFs within a given local folder, including batch processing and auto-sorting by topic.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.document_management",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wyj0124",
+      "features": [
+        "Analyze, classify, organize, summarize, and report on PDFs within a given local folder, includi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/document-management@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139620631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "document-management",
+      "url": "https://clawhub.ai/skills/document-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "document-management",
+    "url": "https://clawhub.ai/skills/document-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/document-management-d6875591f9091ce8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/document-management@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-document-management-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f402664f14fe8e2e295ccf43cc61b85451a8d5a431affad52123f36f5b83da59",
+      "artifactSizeBytes": 2514
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:19:52.086Z"
+}

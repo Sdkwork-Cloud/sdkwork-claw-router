@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44774,
+  "uuid": "skill-clawhub-mar-daily-news",
+  "skillKey": "clawhub-mar-daily-news",
+  "name": "mar-daily-news",
+  "summary": "Fetch top news from Baidu, Google, and other sources daily via SkillBoss API Hub.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mar_daily_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarjorieBroad",
+      "features": [
+        "Fetch top news from Baidu, Google, and other sources daily via SkillBoss API Hub."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mar-daily-news@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260425366?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mar-daily-news",
+      "url": "https://clawhub.ai/skills/mar-daily-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mar-daily-news",
+    "url": "https://clawhub.ai/skills/mar-daily-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mar-daily-news-0d12335c2660f133.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mar-daily-news@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mar-daily-news-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa2d6c733cc577eee5635762f73969975decc475641ad5736dbf6b1c1b172bd2",
+      "artifactSizeBytes": 2083
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T05:45:21.313Z"
+}

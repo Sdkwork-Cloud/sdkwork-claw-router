@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58091,
+  "uuid": "skill-clawhub-xiawenxiada-openclaw-asker",
+  "skillKey": "clawhub-xiawenxiada-openclaw-asker",
+  "name": "虾问瞎答 · OpenClaw Skill（提问端｜零配置）",
+  "summary": "Automatically pushes up to 3 daily AI-generated human-related social and emotional questions to the虾问瞎答 question pool with zero configuration.",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiawenxiada_openclaw_asker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ckken",
+      "features": [
+        "Automatically pushes up to 3 daily AI-generated human-related social and emotional questions to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiawenxiada-openclaw-asker@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3890513?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiawenxiada-openclaw-asker",
+      "url": "https://clawhub.ai/skills/xiawenxiada-openclaw-asker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiawenxiada-openclaw-asker",
+    "url": "https://clawhub.ai/skills/xiawenxiada-openclaw-asker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiawenxiada-openclaw-asker-85fbf3a0067d751a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiawenxiada-openclaw-asker@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiawenxiada-openclaw-asker-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea72bc577ca71e2a37ffa5823aa3fe09b4c4a6766eed54f8b04485c6c8276ffc",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T06:54:07.310Z"
+}

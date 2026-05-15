@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/volcano-plot-script-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcano_plot_script_1",
+  "skill": {
+    "id": 32326,
+    "skillKey": "clawhub-volcano-plot-script-1",
+    "name": "Volcano Plot Script"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcano-plot-script-1",
+    "url": "https://clawhub.ai/skills/volcano-plot-script-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcano-plot-script-1-06cdd1ea1f24f6ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate R/Python code for volcano plots from DEG (Differentially Expressed Genes) analysis results. Triggered when user needs visualization of gene expressi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 254,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775097524060,
+      "changelog": "Initial release: Generates publication-ready R/Python code for volcano plots from differential gene expression results.\n\n- Creates customizable scripts for volcano plots (p-value vs. fold-change) in Python (matplotlib/seaborn) or R (ggplot2).\n- Supports input parameterization for column names, significance thresholds, gene labeling, and color schemes.\n- Includes reusable reference material and example assets for bioinformatics workflows.\n- Outputs high-quality figure files (PNG/PDF/SVG) and optional lists of significant genes.\n- Provides validation steps and fallback handling for incomplete or malformed data.\nplease go to our github for R example",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41ea9b9205c099bec4337530b109e43de34b9c9b770143fcf04979aaa3ca84d1"
+}

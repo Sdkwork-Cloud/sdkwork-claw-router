@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24757,
+  "uuid": "skill-clawhub-gate-exchange-tradfi",
+  "skillKey": "clawhub-gate-exchange-tradfi",
+  "name": "Gate Exchange TradFi Query Skill",
+  "summary": "Gate TradFi (traditional finance) skill. Use when the user asks to query or trade traditional finance assets like forex or commodities on Gate. Triggers on '...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_tradfi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gate",
+      "features": [
+        "Gate TradFi (traditional finance) skill",
+        "Use when the user asks to query or trade traditional finance assets like forex or commodities o.",
+        "Triggers on '..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-exchange-tradfi@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33109813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-exchange-tradfi",
+      "url": "https://clawhub.ai/skills/gate-exchange-tradfi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-tradfi",
+    "url": "https://clawhub.ai/skills/gate-exchange-tradfi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-tradfi-c2134e3a196daf28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-exchange-tradfi@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-exchange-tradfi-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f97b62b4ee2bbefdcab8604d204fcc7c8b35b10148065beff571a9aa7fc29c85",
+      "artifactSizeBytes": 2428
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:36:13.882Z"
+}

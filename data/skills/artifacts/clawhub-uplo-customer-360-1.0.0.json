@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uplo-customer-360@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uplo_customer_360",
+  "skill": {
+    "id": 29073,
+    "skillKey": "clawhub-uplo-customer-360",
+    "name": "Uplo Customer 360"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uplo-customer-360",
+    "url": "https://clawhub.ai/skills/uplo-customer-360",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uplo-customer-360-4c5f127578b4bad7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered customer lifecycle intelligence spanning sales, customer success, and retail. Unified search across pipeline data, account health, and customer an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roojenkins",
+      "userId": "publishers:roojenkins",
+      "displayName": "RooJenkins",
+      "image": "https://avatars.githubusercontent.com/u/47111622?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 310,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773810010486,
+      "changelog": "- Initial release of uplo-customer-360: unified AI-powered customer lifecycle intelligence across sales, customer success, and retail.\n- Supports natural language search over pipeline data, account health, support history, product usage, and retail analytics.\n- Provides specialized tools: search_with_context, search_knowledge, get_directives, export_org_context, report_knowledge_gap, and flag_outdated.\n- Includes workflow examples for account reviews, churn investigations, and QBR preparation.\n- Offers best practices and tips for maximizing value from unified customer data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ef2d9ea1fd0edadb0962ab110df5d18b9b6a176074aa2c381e9f52205179564"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65301,
+  "uuid": "skill-clawhub-avengers-assemble-cn",
+  "skillKey": "clawhub-avengers-assemble-cn",
+  "name": "Avengers Assemble CN",
+  "summary": "复仇者联盟主题多Agent协作系统（中文版）。尼克·弗瑞调度6位超级英雄通过sessions_spawn委派任务。融入中国漫威粉丝梗文化，轮询调度、先回复再派遣、sessionKey复用。适合需要多元专业能力的复杂任务协作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avengers_assemble_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChenXinBest",
+      "features": [
+        "复仇者联盟主题多Agent协作系统（中文版）。尼克·弗瑞调度6位超级英雄通过sessions_spawn委派任务。融入中国漫威粉丝梗文化，轮询调度、先回复再派遣、sessionKey复用。适."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/avengers-assemble-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62179299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "avengers-assemble-cn",
+      "url": "https://clawhub.ai/skills/avengers-assemble-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avengers-assemble-cn",
+    "url": "https://clawhub.ai/skills/avengers-assemble-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avengers-assemble-cn-f33ea678cfa75b56.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/avengers-assemble-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-avengers-assemble-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb12adc143412739b84f3041b9ed57873ce68e458b53bddd8179ec5270f51191",
+      "artifactSizeBytes": 2554
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:33:55.970Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ctf-solver-claude@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctf_solver_claude",
+  "skill": {
+    "id": 66424,
+    "skillKey": "clawhub-ctf-solver-claude",
+    "name": "CTF-SOLVER"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctf-solver-claude",
+    "url": "https://clawhub.ai/skills/ctf-solver-claude",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctf-solver-claude-13bce59234490762.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "仅在用户明确使用 /ctf-solver 指令或显式说\"调用CTF技能/skill\"时才触发，不自动响应任何CTF相关关键词。 本技能以夺取flag为唯一目标，调用大量工具、深度分析题目，给出完整的解题过程和可执行的攻击链。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hermes186",
+      "userId": "s17axvcztmm32qf2c0pqq3gkzx85y51y",
+      "displayName": "Nagisa.",
+      "image": "https://avatars.githubusercontent.com/u/214199851?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777708219816,
+      "changelog": "No changes detected in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e2a896424028f1192114d5c69bc8797cecc7b7b0d8f04b6584e8e2273b1c946"
+}

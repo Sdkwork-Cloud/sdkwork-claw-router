@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-funding-harvester@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_funding_harvester",
+  "skill": {
+    "id": 33428,
+    "skillKey": "clawhub-crypto-funding-harvester",
+    "name": "Crypto Funding Harvester"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-funding-harvester",
+    "url": "https://clawhub.ai/skills/crypto-funding-harvester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-funding-harvester-201bf985e52d5fe9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scans perpetual futures funding rates across Hyperliquid, Binance, and Bybit to identify delta-neutral carry trade opportunities. A delta-neutral carry trade..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mibayy",
+      "userId": "s179d2am41rchxqf8a7jwrjp4n83gaje",
+      "displayName": "Mibayy",
+      "image": "https://avatars.githubusercontent.com/u/97958526?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774064448061,
+      "changelog": "Initial release: Hyperliquid+Binance+Bybit funding rates, delta-neutral carry opportunities",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4af901d626926ce0f1e6b275471ae34069c2419a4d5aa8f5f7adc5ad598cb73"
+}

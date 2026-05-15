@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23230,
+  "uuid": "skill-clawhub-goplaces-togo",
+  "skillKey": "clawhub-goplaces-togo",
+  "name": "goplaces-togo",
+  "summary": "Ask the user for their Google saved places list, look up each place with goplaces, and recommend the single best one to visit today based on their preference...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goplaces_togo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wsq704252212",
+      "features": [
+        "Ask the user for their Google saved places list, look up each place with goplaces, and recommen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goplaces-togo@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44139466?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goplaces-togo",
+      "url": "https://clawhub.ai/skills/goplaces-togo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goplaces-togo",
+    "url": "https://clawhub.ai/skills/goplaces-togo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goplaces-togo-9972c8faf27b2173.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goplaces-togo@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-goplaces-togo-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b635e5f0c3312002262e93778ae433f36231535584467f51f6e7b76256fa2daa",
+      "artifactSizeBytes": 2469
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T08:25:25.604Z"
+}

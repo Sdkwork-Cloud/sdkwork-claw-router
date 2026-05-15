@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tweet-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tweet_writer",
+  "skill": {
+    "id": 8883,
+    "skillKey": "clawhub-tweet-writer",
+    "name": "Tweet Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tweet-writer",
+    "url": "https://clawhub.ai/skills/tweet-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tweet-writer-62deeb7d8d406b86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write viral, persuasive, engaging tweets and threads. Uses web research to find viral examples in your niche, then models writing based on proven formulas and X algorithm optimization. Use when creating tweets, threads, or X content strate."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sanky369",
+      "userId": "publishers:sanky369",
+      "displayName": "sanky369",
+      "image": "https://avatars.githubusercontent.com/u/11252952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4581,
+      "installsAllTime": 28,
+      "installsCurrent": 26,
+      "stars": 14,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769280634234,
+      "changelog": "- Initial release of Tweet Writer Skill.\n- Enables users to write viral, persuasive tweets and threads optimized for X's algorithm.\n- Uses real-time web research to find and model content after top-performing tweets in any niche.\n- Provides proven hook formulas, thread templates, and copywriting frameworks for engagement.\n- Includes guidance tailored to X's latest algorithm ranking signals and best practices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6cdab67873b8d1936bd98ad9bc0747946eccc87cb3f0221a54f52940a0728dcf"
+}

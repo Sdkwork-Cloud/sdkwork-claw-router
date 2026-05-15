@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/win-bridge-control@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.win_bridge_control",
+  "skill": {
+    "id": 32947,
+    "skillKey": "clawhub-win-bridge-control",
+    "name": "Windows Host UI Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "win-bridge-control",
+    "url": "https://clawhub.ai/skills/win-bridge-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/win-bridge-control-c875cc29a0a59c71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bridge: Cross-OS UI automation for Windows Host"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2059247714",
+      "userId": "s172pd7n2y5tanxc77n2acgytx83qbkp",
+      "displayName": "Minhao Wang",
+      "image": "https://avatars.githubusercontent.com/u/36786667?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774604110953,
+      "changelog": "- Removed main.py, indicating the removal of core executable code.\n- Documentation updated: SKILL.md rewritten with new instructions, improved security protocols, and detailed parameter handling in both English and Chinese.\n- Now clearly outlines required dependencies, safe execution practices, and error troubleshooting steps for bridging automation from WSL2 to the Windows host.\n- Updated example scenarios and instructions for safe, compliant, and robust Windows UI automation via command and Node.js tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c58f448e2a9576b9988423ea30d76a99809cb38beb9c5a82001cc9895d9f90f"
+}

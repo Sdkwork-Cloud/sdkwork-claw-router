@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67150,
+  "uuid": "skill-clawhub-cn-url-parser",
+  "skillKey": "clawhub-cn-url-parser",
+  "name": "URL解析工具",
+  "summary": "URL解析工具。分解URL各部分（协议、域名、路径、查询参数），支持参数提取、URL构建、批量解析。纯Python标准库，无需API Key。",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_url_parser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "URL解析工具。分解URL各部分（协议、域名、路径、查询参数），支持参数提取、URL构建、批量解析。纯Python标准库，无需API Key。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-url-parser@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-url-parser",
+      "url": "https://clawhub.ai/skills/cn-url-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-url-parser",
+    "url": "https://clawhub.ai/skills/cn-url-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-url-parser-07a63e3086192f4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-url-parser@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-url-parser-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f66db8c9967267975429f757cd682967db9f358201f0f6830afa0ed70c957cb5",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T04:43:47.705Z"
+}

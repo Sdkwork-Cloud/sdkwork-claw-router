@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38282,
+  "uuid": "skill-clawhub-network-log-analysis",
+  "skillKey": "clawhub-network-log-analysis",
+  "name": "Network Log Analysis",
+  "summary": "Device-level network log analysis using raw syslog data without SIEM platforms. Guides forensic timeline construction from rsyslog/syslog-ng collectors, devi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.network_log_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vahagn Madatyan",
+      "features": [
+        "Device-level network log analysis using raw syslog data without SIEM platforms",
+        "Guides forensic timeline construction from rsyslog/syslog-ng collectors, devi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/network-log-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74753362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "network-log-analysis",
+      "url": "https://clawhub.ai/skills/network-log-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "network-log-analysis",
+    "url": "https://clawhub.ai/skills/network-log-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/network-log-analysis-d6270a8272af273a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/network-log-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-network-log-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92cf4bba98f9eb69b6010ba702318c839d3341dcec65ccb4a5697606d7ec9ded",
+      "artifactSizeBytes": 2707
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T03:03:05.317Z"
+}

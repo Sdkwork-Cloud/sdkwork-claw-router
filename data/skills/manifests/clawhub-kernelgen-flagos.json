@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35923,
+  "uuid": "skill-clawhub-kernelgen-flagos",
+  "skillKey": "clawhub-kernelgen-flagos",
+  "name": "KernelGen FlagOS",
+  "summary": "Unified GPU kernel operator generation skill. Automatically detects the target repository type (FlagGems, vLLM, or general Python/Triton) and dispatches to t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kernelgen_flagos",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Flagos",
+      "features": [
+        "Unified GPU kernel operator generation skill",
+        "Automatically detects the target repository type (FlagGems, vLLM, or general Python/Triton) and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kernelgen-flagos@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263577448?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kernelgen-flagos",
+      "url": "https://clawhub.ai/skills/kernelgen-flagos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kernelgen-flagos",
+    "url": "https://clawhub.ai/skills/kernelgen-flagos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kernelgen-flagos-a86aa1ccb2888146.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kernelgen-flagos@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kernelgen-flagos-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:144d63d35bc8f04b7d85c80e9402a8b1c8bcc521bae908f172405ec4cb67e5ef",
+      "artifactSizeBytes": 2553
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T04:33:20.901Z"
+}

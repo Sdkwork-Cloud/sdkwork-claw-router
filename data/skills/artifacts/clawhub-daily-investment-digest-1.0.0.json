@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-investment-digest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_investment_digest",
+  "skill": {
+    "id": 18909,
+    "skillKey": "clawhub-daily-investment-digest",
+    "name": "daily-investment-digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-investment-digest",
+    "url": "https://clawhub.ai/skills/daily-investment-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-investment-digest-6388f572ef232ff1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch financing event lists from the iYiou skill API and generate a daily financing report in Markdown to stdout. Use when the task asks to pull investment/f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ai-byte",
+      "userId": "s1744ghz9kh4r662gcd6anre0n83g896",
+      "displayName": "iyiou",
+      "image": "https://avatars.githubusercontent.com/u/66202593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 451,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773275212829,
+      "changelog": "Daily Investment Digest 1.0.0\n\n- Initial release of the daily-investment-digest skill.\n- Fetches investment/financing event lists from the iYiou API, paginated and deduplicated.\n- Generates a daily Markdown financing report printed to stdout, following strict output order and data mapping.\n- Defaults to yesterday’s events unless explicitly requested otherwise.\n- Robust error handling: retries, backoff, and page-level error reporting.\n- Does not write any files; all outputs are to stdout only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e253dc6c3b88c29f2462d48582ada546ab382e3ea33e2a07e9435a74d5e82311"
+}

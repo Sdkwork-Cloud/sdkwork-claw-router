@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71799,
+  "uuid": "skill-clawhub-paper-originality-studio",
+  "skillKey": "clawhub-paper-originality-studio",
+  "name": "paper-originality-studio",
+  "summary": "当用户需要对中文或中英混排论文、开题、综述、摘要、引言、讨论、结论、专利交底书草稿等进行原创性优化、学术化改写、重复表达清洗、AI腔弱化、引用衔接修补、术语统一、段落重构、版本对比或生成逐段改写提示时使用本技能。重点是保留原意与证据边界、降低机械复述和模板化表达、输出可审计修改说明；不得用于伪造文献、篡改数据、代...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_originality_studio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "当用户需要对中文或中英混排论文、开题、综述、摘要、引言、讨论、结论、专利交底书草稿等进行原创性优化、学术化改写、重复表达清洗、AI腔弱化、引用衔接修补、术语统一、段落重构、版本对比或生成逐段."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-originality-studio@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-originality-studio",
+      "url": "https://clawhub.ai/skills/paper-originality-studio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-originality-studio",
+    "url": "https://clawhub.ai/skills/paper-originality-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-originality-studio-712e033f35a4bfcb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-originality-studio@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-originality-studio-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0feda3a604c64a6d13e9fe488117d05286a7542ee60d10edd4325991228e8fa1",
+      "artifactSizeBytes": 3192
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T06:16:17.439Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23394,
+  "uuid": "skill-clawhub-cashflow",
+  "skillKey": "clawhub-cashflow",
+  "name": "Cashflow",
+  "summary": "Track personal cash flow with simple terminal commands and local storage. Use when logging daily expenses, reviewing balance, or exporting records.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cashflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Track personal cash flow with simple terminal commands and local storage",
+        "Use when logging daily expenses, reviewing balance, or exporting records."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cashflow@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cashflow",
+      "url": "https://clawhub.ai/skills/cashflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cashflow",
+    "url": "https://clawhub.ai/skills/cashflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cashflow-7863a379f7190c02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cashflow@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cashflow-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b40b6ae7f2ea4a05595555680d9e2f1f8580aaf1c4ea0c751e95a8b367915dfa",
+      "artifactSizeBytes": 1822
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:37:04.555Z"
+}

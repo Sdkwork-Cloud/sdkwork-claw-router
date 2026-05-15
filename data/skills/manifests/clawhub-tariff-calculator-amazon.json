@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56564,
+  "uuid": "skill-clawhub-tariff-calculator-amazon",
+  "skillKey": "clawhub-tariff-calculator-amazon",
+  "name": "Tariff Calculator Amazon",
+  "summary": "Universal tariff calculator for Amazon sellers. Calculate import duties, landed costs, and VAT/GST for any trade route. Supports CN→US, CN→EU, US→EU, EU→US,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tariff_calculator_amazon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Henk Nie",
+      "features": [
+        "Universal tariff calculator for Amazon sellers",
+        "Calculate import duties, landed costs, and VAT/GST for any trade route",
+        "Supports CN→US, CN→EU, US→EU, EU→US,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tariff-calculator-amazon@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44972754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tariff-calculator-amazon",
+      "url": "https://clawhub.ai/skills/tariff-calculator-amazon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tariff-calculator-amazon",
+    "url": "https://clawhub.ai/skills/tariff-calculator-amazon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tariff-calculator-amazon-6051a0ba4e1e59a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tariff-calculator-amazon@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tariff-calculator-amazon-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f57f217bc16c0c89feca8b1f864756ea8060f33ace26d9583c17819be9dea1a",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T09:37:00.180Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26130,
+  "uuid": "skill-clawhub-quantil",
+  "skillKey": "clawhub-quantil",
+  "name": "Quantil",
+  "summary": "QUANTIL integration. Manage data, records, and automate workflows. Use when the user wants to interact with QUANTIL data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quantil",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "QUANTIL integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with QUANTIL data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quantil@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quantil",
+      "url": "https://clawhub.ai/skills/quantil"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quantil",
+    "url": "https://clawhub.ai/skills/quantil",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quantil-5673c22a4be5b7ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quantil@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-quantil-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:767c4577b0159fce27cf2d008a05e80b4d76e977abb4d2294c0e976f2a4cef75",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:30:26.193Z"
+}

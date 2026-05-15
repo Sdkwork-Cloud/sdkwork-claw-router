@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54338,
+  "uuid": "skill-clawhub-harbor",
+  "skillKey": "clawhub-harbor",
+  "name": "Harbor — Curated and shared Memory for AI Agents",
+  "summary": "Persistent cross-session memory, credential isolation, and schema learning for your OpenClaw agent. Stores data locally at ~/.harbor/ (memory, encrypted keyc...",
+  "version": "0.4.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.harbor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jiaxi",
+      "features": [
+        "Persistent cross-session memory, credential isolation, and schema learning for your OpenClaw ag.",
+        "Stores data locally at ~/.harbor/ (memory, encrypted keyc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/harbor@0.4.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57628462?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "harbor",
+      "url": "https://clawhub.ai/skills/harbor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "harbor",
+    "url": "https://clawhub.ai/skills/harbor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/harbor-c1d64b2d4cb30f1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/harbor@0.4.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-harbor-0.4.11.json",
+      "version": "0.4.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80f1d727d110bc010fd18b045685468d8f3bb61cb11e3b169b108a45012634a3",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:44:02.321Z"
+}

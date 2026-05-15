@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18094,
+  "uuid": "skill-clawhub-kagi-enrich",
+  "skillKey": "clawhub-kagi-enrich",
+  "name": "Kagi Enrich",
+  "summary": "Search Kagi's unique non-commercial web (Teclis) and non-mainstream news (TinyGem) indexes for independent, ad-free content you won't find in regular search...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kagi_enrich",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jozsef Lazar",
+      "features": [
+        "Search Kagi's unique non-commercial web (Teclis) and non-mainstream news (TinyGem) indexes for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kagi-enrich@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16268238?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kagi-enrich",
+      "url": "https://clawhub.ai/skills/kagi-enrich"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kagi-enrich",
+    "url": "https://clawhub.ai/skills/kagi-enrich",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kagi-enrich-4a9bbb7ece8ba676.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kagi-enrich@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kagi-enrich-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:188ab0da2b984d836180964bb5cdbed4160a0f1f69fe1cb3738143116e946405",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T15:04:14.460Z"
+}

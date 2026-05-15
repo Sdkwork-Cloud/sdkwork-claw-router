@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-vault@1.0.18",
+  "version": "1.0.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_vault",
+  "skill": {
+    "id": 52188,
+    "skillKey": "clawhub-data-vault",
+    "name": "Data Vault"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-vault",
+    "url": "https://clawhub.ai/skills/data-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-vault-1c427dd2297fecd1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persist and retrieve structured data using the Lance columnar format. Use when you need to store, query, or analyze data across sessions — such as saving ski..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vitorhugoze",
+      "userId": "s172e5te5qhzv1ryjwf3qpxeen83hjmd",
+      "displayName": "vitorhugoze",
+      "image": "https://avatars.githubusercontent.com/u/110555841?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.18",
+      "createdAt": 1774562333851,
+      "changelog": "- added 1 file(s).\n- Updated SKILL.md and bundle contents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f92fed0ce02cc5e61da5e88c6981e179514ad9fef4bcfc0909821b72ebabe080"
+}

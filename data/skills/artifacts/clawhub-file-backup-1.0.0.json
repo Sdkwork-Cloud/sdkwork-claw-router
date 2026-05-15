@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_backup",
+  "skill": {
+    "id": 70773,
+    "skillKey": "clawhub-file-backup",
+    "name": "File Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-backup",
+    "url": "https://clawhub.ai/skills/file-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-backup-d2a3ebf55a9b2869.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "修改文件前的自动备份工具。 当需要修改重要文件时，先备份再修改，改完后让用户检查，确认无误后删除备份。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiaqi-guo-0114",
+      "userId": "s17c515m8gydacs79w1wd4b3cn83xfjs",
+      "displayName": "Jiaqi-Guo-0114",
+      "image": "https://avatars.githubusercontent.com/u/264645355?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 495,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773707372942,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16940d606eaff2edc4275addd70c3d2b6b1f4e202dc003fe044aa322a81f3b9c"
+}

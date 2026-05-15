@@ -20,7 +20,9 @@ use crate::api::openai_runtime::{authenticate_api_key, first_priced_provider_rou
 use crate::application::{
     ApiKeySecretHasher, AuthenticatedApiKeyContext, PricingResolver, ResolveModelPriceQuery,
 };
-use crate::domain::{BillingMeter, DecimalValue, DomainError, DomainResult, ModelProviderRoute};
+use crate::domain::{
+    BillingMeter, DecimalValue, DomainError, DomainResult, ModelProviderRoute, RoutingCapability,
+};
 use crate::ports::GatewayUsageRecordFuture;
 use crate::ports::{
     ChatCompletionRelay, ChatCompletionRelayRequest, ChatCompletionStreamRelay,
@@ -219,6 +221,7 @@ where
         state.catalog.as_ref(),
         &context,
         &request.model,
+        RoutingCapability::Chat,
         BillingMeter::LlmInputToken,
     ) {
         Ok(route) => route,
@@ -280,6 +283,14 @@ where
 fn parse_request(body: &[u8]) -> Result<ParsedOpenAiChatCompletionRequest, String> {
     let request_body: Value =
         serde_json::from_slice(body).map_err(|error| format!("invalid request body: {error}"))?;
+    if request_body
+        .get("model")
+        .and_then(Value::as_str)
+        .map(str::trim)
+        .is_none_or(str::is_empty)
+    {
+        return Err("model is required".to_owned());
+    }
     let request: OpenAiChatCompletionRequest = serde_json::from_value(request_body.clone())
         .map_err(|error| format!("invalid request body: {error}"))?;
     if request.model.trim().is_empty() {
@@ -669,12 +680,14 @@ where
         model: route.catalog_key.clone(),
         billing_meter: BillingMeter::LlmInputToken,
         provider_code: Some(route.provider_code.clone()),
+        channel_id: Some(route.channel_id),
     })?;
     let output_price = PricingResolver::new(catalog).resolve(ResolveModelPriceQuery {
         api_key_id: context.api_key_id,
         model: route.catalog_key.clone(),
         billing_meter: BillingMeter::LlmOutputToken,
         provider_code: Some(route.provider_code.clone()),
+        channel_id: Some(route.channel_id),
     })?;
     let upstream_input_unit_price = input_price
         .upstream_cost

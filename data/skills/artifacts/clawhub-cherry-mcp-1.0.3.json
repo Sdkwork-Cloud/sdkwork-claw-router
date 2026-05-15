@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cherry-mcp@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cherry_mcp",
+  "skill": {
+    "id": 12937,
+    "skillKey": "clawhub-cherry-mcp",
+    "name": "Cherry Mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cherry-mcp",
+    "url": "https://clawhub.ai/skills/cherry-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cherry-mcp-f91817abec6f20f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "HTTP bridge that keeps MCP servers alive and exposes them via REST. Built for OpenClaw agents that need MCP tools without native MCP support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bitbrujo",
+      "userId": "s1732ej7n9qhhqfdmwt1jjhzmh83gv6q",
+      "displayName": "EULOxGOS",
+      "image": "https://avatars.githubusercontent.com/u/106397029?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1614,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770619273543,
+      "changelog": "- Added frontmatter with name, description, and tags to SKILL.md for improved metadata.\n- No changes to functionality or instructions—documentation only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b58e50e577c8be589125233d18226ca671dc01d36e9465756dfec02fed1db17e"
+}

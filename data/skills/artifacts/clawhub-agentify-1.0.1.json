@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentify@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentify",
+  "skill": {
+    "id": 26246,
+    "skillKey": "clawhub-agentify",
+    "name": "Agentify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentify",
+    "url": "https://clawhub.ai/skills/agentify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentify-742d7dfedc39e0ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze, rewrite, and generate design specs to make web pages and websites more easily usable by AI agents, web scrapers, and automation tools. Use when (1)..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chartgen-ai",
+      "userId": "s1760v3fs4sg6tdv3k9gq9792h83h5yy",
+      "displayName": "ChartGen AI",
+      "image": "https://avatars.githubusercontent.com/u/128801127?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774406443933,
+      "changelog": "- Added multilingual documentation: README files now available in Japanese (README.ja.md) and Chinese (README.zh.md), alongside English.\n- No functional or workflow changes to core capabilities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8167fdc2fd2c5470af56d70b3da0967ea32ff7834142ac5dbd87a72f6f151438"
+}

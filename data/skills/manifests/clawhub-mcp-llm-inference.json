@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52352,
+  "uuid": "skill-clawhub-mcp-llm-inference",
+  "skillKey": "clawhub-mcp-llm-inference",
+  "name": "mcp-llm-inference",
+  "summary": "Anonymous LLM inference via L402 micropayments — chat completions, text generation, and model discovery. No API key, no signup, no KYC. Pay per request in sa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_llm_inference",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HaveBlue997",
+      "features": [
+        "Anonymous LLM inference via L402 micropayments — chat completions, text generation, and model d.",
+        "No API key, no signup, no KYC",
+        "Pay per request in sa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-llm-inference@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23174278?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-llm-inference",
+      "url": "https://clawhub.ai/skills/mcp-llm-inference"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-llm-inference",
+    "url": "https://clawhub.ai/skills/mcp-llm-inference",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-llm-inference-557ac1a7d24537c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-llm-inference@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-llm-inference-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f22c26e53037d83cad65a6df2c24eed669794122bc0fe422758c5d6eabb6585",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T15:11:32.320Z"
+}

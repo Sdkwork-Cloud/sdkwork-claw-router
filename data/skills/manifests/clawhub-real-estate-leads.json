@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38813,
+  "uuid": "skill-clawhub-real-estate-leads",
+  "skillKey": "clawhub-real-estate-leads",
+  "name": "Real Estate Leads",
+  "summary": "Scrape fresh property listings by location, identify motivated sellers with contact info, score opportunities, and generate personalized buyer outreach messa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.real_estate_leads",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nicemaths123",
+      "features": [
+        "Scrape fresh property listings by location, identify motivated sellers with contact info, score."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/real-estate-leads@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244252350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "real-estate-leads",
+      "url": "https://clawhub.ai/skills/real-estate-leads"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "real-estate-leads",
+    "url": "https://clawhub.ai/skills/real-estate-leads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/real-estate-leads-975d49755b06f546.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/real-estate-leads@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-real-estate-leads-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d9b20d83d2473bc0ff06fca364b2ebae27e45f761aab2c15efd3ffa54b56b22",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T20:46:26.143Z"
+}

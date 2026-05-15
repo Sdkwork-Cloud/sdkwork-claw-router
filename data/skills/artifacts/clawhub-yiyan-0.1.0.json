@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yiyan@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yiyan",
+  "skill": {
+    "id": 71947,
+    "skillKey": "clawhub-yiyan",
+    "name": "Yiyan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yiyan",
+    "url": "https://clawhub.ai/skills/yiyan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yiyan-100531a2604aa98c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供百度文心一言公开页面的模型能力、定价和文档信息检索与摘要服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 264,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773741057753,
+      "changelog": "Initial release of the \"yiyan-hot-trend\" skill for Baidu Wenxin Yiyan public information summarization.\n\n- Supports retrieval and summarization of information from Baidu Wenxin Yiyan product and documentation pages.\n- Extracts key data such as model capabilities, pricing, quotas, and documentation links from publicly available sources.\n- Focuses on lightweight, public content organization only—does not perform account operations or API calls.\n- Handles dynamic page loading and respects platform access limits.\n- Includes clearly defined data fields and sample usage flows for typical summarization tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf637ed27e22c99bfca89f2566a2f44e9100ccca939401e587ffaffd64ea4bc4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-create-pip@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_create_pip",
+  "skill": {
+    "id": 41657,
+    "skillKey": "clawhub-skill-create-pip",
+    "name": "skill-create-pip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-create-pip",
+    "url": "https://clawhub.ai/skills/skill-create-pip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-create-pip-de9295986fa876cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Ecovacs/DEEBOT robot vacuums via the Ecovacs IoT API. Use when the user wants to control a robot vacuum, check battery, start/stop/pause cleaning, re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1209823208",
+      "userId": "s17dwhm6wmb3rxrwze7n9sd9ms83g90b",
+      "displayName": "1209823208",
+      "image": "https://avatars.githubusercontent.com/u/29597482?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774402634304,
+      "changelog": "- Initial release of the skill.\n- Provides control for Ecovacs/DEEBOT robot vacuums via the Ecovacs IoT API.\n- Supports commands for cleaning, docking, battery/status checks, suction/water level, scheduling, consumables, and auto-empty station.\n- Includes protocol references, command samples, and error handling guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59bca4c29a1b5c8768b9255e2307f381fde1e4a2919fed1b53e32219d8fc5a52"
+}

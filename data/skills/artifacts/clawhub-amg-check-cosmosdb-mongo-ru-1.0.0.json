@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amg-check-cosmosdb-mongo-ru@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amg_check_cosmosdb_mongo_ru",
+  "skill": {
+    "id": 52612,
+    "skillKey": "clawhub-amg-check-cosmosdb-mongo-ru",
+    "name": "AMG Cosmos DB for MongoDB (RU) Health Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amg-check-cosmosdb-mongo-ru",
+    "url": "https://clawhub.ai/skills/amg-check-cosmosdb-mongo-ru",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amg-check-cosmosdb-mongo-ru-9626c09a62c13d9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run only when the user explicitly asks for a fleet-wide Cosmos DB for MongoDB (RU) health check — scans NormalizedRU consumption, service availability, serve..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1w2w3y",
+      "userId": "s17bx29aep342rsazs4qcwcch9850d3k",
+      "displayName": "1w2w3y",
+      "image": "https://avatars.githubusercontent.com/u/3365932?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776405992238,
+      "changelog": "amg-check-cosmosdb-mongo-ru 1.0.0\n\n- Initial release: Comprehensive health check for Cosmos DB for MongoDB (RU) accounts across entire Azure fleet.\n- Scans account NormalizedRU consumption, service availability, server-side latency, throttling (429 errors), and replication metrics.\n- Automatically deep-dives into abnormal accounts with resource logs and correlation analysis.\n- Tracks and cross-references known issues via a persistent report across sessions.\n- Uses an AMG-MCP pulse check for Tier 1 triage, then batched Azure Monitor queries for detailed Tier 2 investigation.\n- On first use, auto-discovers datasource UID and prompts for subscription ID setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16e29815635d0653533df46e073ec4e36ee20dee95cd5962f7e616ed21ef2561"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/thesis-literature-review-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thesis_literature_review_writer",
+  "skill": {
+    "id": 47148,
+    "skillKey": "clawhub-thesis-literature-review-writer",
+    "name": "thesis-literature-review-writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thesis-literature-review-writer",
+    "url": "https://clawhub.ai/skills/thesis-literature-review-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thesis-literature-review-writer-53e802a1f28cc2f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write detailed, academically rigorous Chinese literature review chapters or literature review sections for theses, dissertations, and undergraduate papers fr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junwugit",
+      "userId": "s171bkct515qe194zt2r7s6fs1851hns",
+      "displayName": "John Do",
+      "image": "https://avatars.githubusercontent.com/u/44743340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777442032840,
+      "changelog": "- Initial release of \"Thesis Literature Review Writer\" skill.\n- Generates detailed and academically rigorous Chinese literature review chapters or sections based on user inputs.\n- Extracts thesis topic, research problem, variables, theory, method, and reference requirements from user prompts.\n- Follows advanced synthesis workflow: organizes by variables, themes, mechanisms, or debates as appropriate to the research type.\n- Drafts reviews using citation placeholders if references are not supplied, and recommends search terms.\n- Ensures organization, critical evaluation, clear links to research questions, and adherence to formal Chinese academic writing standards.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c93499e1f9a002fdb50105d2d689620d6b973b8bb29065743c5ff13f25e8b97"
+}

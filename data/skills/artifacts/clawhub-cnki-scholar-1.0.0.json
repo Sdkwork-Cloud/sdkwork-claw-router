@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cnki-scholar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cnki_scholar",
+  "skill": {
+    "id": 65612,
+    "skillKey": "clawhub-cnki-scholar",
+    "name": "CNKI Scholar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cnki-scholar",
+    "url": "https://clawhub.ai/skills/cnki-scholar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cnki-scholar-197945a1a3589e9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文学术论文搜索工具。搜索中英文论文，覆盖知网、万方、维普等中文数据库的论文。Use when: 用户说「搜论文」「查文献」「知网」「CNKI」「搜索中文学术论文」「找中文文献」，或需要搜索、下载、引用中英文论文。支持OpenAlex API（免费，2亿+论文）和Crossref API（DOI覆盖）。Also..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaopanguo",
+      "userId": "s1778hhgkhb4zd5s23ayrb535n83w2e2",
+      "displayName": "Chopin",
+      "image": "https://avatars.githubusercontent.com/u/81441834?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 904,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775061656908,
+      "changelog": "Initial release - 中文学术论文搜索工具（基于OpenAlex API）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1e73d8db6d09ea545cca1fbf2a7edde449511fb6689ca392c427dbd07c4e2fc"
+}

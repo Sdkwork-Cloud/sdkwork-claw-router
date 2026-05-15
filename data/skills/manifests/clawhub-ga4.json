@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9308,
+  "uuid": "skill-clawhub-ga4",
+  "skillKey": "clawhub-ga4",
+  "name": "GA4 Analytics",
+  "summary": "Query Google Analytics 4 (GA4) data via the Analytics Data API. Use when you need to pull website analytics like top pages, traffic sources, user counts, ses...",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ga4",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jonathan Rhyne",
+      "features": [
+        "Query Google Analytics 4 (GA4) data via the Analytics Data API",
+        "Use when you need to pull website analytics like top pages, traffic sources, user counts, ses..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ga4@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7828464?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ga4",
+      "url": "https://clawhub.ai/skills/ga4"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ga4",
+    "url": "https://clawhub.ai/skills/ga4",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ga4-f23a8d868335ad3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ga4@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ga4-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ceffad3a8ab0caac51554756787f4eb43f2630ff1fd2be6afbe7bc3ea72234c",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T06:01:19.418Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-maintenance@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_maintenance",
+  "skill": {
+    "id": 65814,
+    "skillKey": "clawhub-openclaw-maintenance",
+    "name": "OpenClaw 维护脚本"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-maintenance",
+    "url": "https://clawhub.ai/skills/openclaw-maintenance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-maintenance-8f5a9b843c4184eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供本地脚本监控和维护 OpenClaw Gateway，支持健康检测、代理切换、安全重启与日志清理，保障服务稳定运行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jesson1222-ship-it",
+      "userId": "publishers:jesson1222-ship-it",
+      "displayName": "jesson1222-ship-it",
+      "image": "https://avatars.githubusercontent.com/u/250683018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 517,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772640035554,
+      "changelog": "OpenClaw 维护脚本合集 0.1.0\n\n- 初始发布，收录所有基础维护脚本\n- 支持 Gateway 健康监控与自动重启\n- 提供代理网络健康检查和 VPN 节点切换\n- 增加安全重启和日志自动清理功能\n- 跨平台支持 macOS、Linux、NAS\n- 提供详细安装、配置和使用说明",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f7815c01a3b05f1977e41b9f339476759c8aab8448ae6a523eca926816dd1e3c"
+}

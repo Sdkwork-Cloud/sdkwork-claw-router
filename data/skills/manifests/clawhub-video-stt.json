@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22305,
+  "uuid": "skill-clawhub-video-stt",
+  "skillKey": "clawhub-video-stt",
+  "name": "video-stt",
+  "summary": "Extract audio from video URLs and transcribe using STT (Speech-to-Text). Supports local Whisper or cloud APIs. Use when: user provides a video URL and wants...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_stt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "damienCronw",
+      "features": [
+        "Extract audio from video URLs and transcribe using STT (Speech-to-Text)",
+        "Supports local Whisper or cloud APIs",
+        "Use when: user provides a video URL and wants..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-stt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128512183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-stt",
+      "url": "https://clawhub.ai/skills/video-stt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-stt",
+    "url": "https://clawhub.ai/skills/video-stt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-stt-ef5d606815b2de46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-stt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-stt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:784af7e858d41817ad7186b2b6b976b68822512101c6b88fd6c0ad02a2fdde7e",
+      "artifactSizeBytes": 2179
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T02:53:21.656Z"
+}

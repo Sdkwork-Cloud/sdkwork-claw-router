@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-cleaner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_cleaner",
+  "skill": {
+    "id": 21612,
+    "skillKey": "clawhub-session-cleaner",
+    "name": "Session Cleaner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-cleaner",
+    "url": "https://clawhub.ai/skills/session-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-cleaner-a3e59535d6350ca7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Clean up stale OpenClaw session files. Keep the current main session and all group chat sessions; move everything else to a backup directory. Use when perfor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guoqunabc",
+      "userId": "s1751bafvdydz5m2jxahw6dyrs83hqr3",
+      "displayName": "Madoka",
+      "image": "https://avatars.githubusercontent.com/u/9532020?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 464,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773185950329,
+      "changelog": "Initial release: clean up stale OpenClaw session files",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84fb30ad124d17ecf731cd7e33cc993421d556f5ea4a2d7f4044abd5202c0e12"
+}

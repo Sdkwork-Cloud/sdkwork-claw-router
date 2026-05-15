@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25124,
+  "uuid": "skill-clawhub-fed-agent",
+  "skillKey": "clawhub-fed-agent",
+  "name": "Fed Agent",
+  "summary": "Provides timely, factual summaries of Federal Reserve policy decisions, interest rates, inflation data, and Fed Chair speeches in clean markdown tables.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fed_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dimas Chandra",
+      "features": [
+        "Provides timely, factual summaries of Federal Reserve policy decisions, interest rates, inflati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fed-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34400000?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fed-agent",
+      "url": "https://clawhub.ai/skills/fed-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fed-agent",
+    "url": "https://clawhub.ai/skills/fed-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fed-agent-fa234250d243a122.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fed-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fed-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43d9b6a1c38be472a138cfa78e03e8248028260c7e4c023dcbd6859ea2bcc56c",
+      "artifactSizeBytes": 2304
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T18:53:48.444Z"
+}

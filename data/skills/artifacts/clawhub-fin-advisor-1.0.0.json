@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fin-advisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fin_advisor",
+  "skill": {
+    "id": 66643,
+    "skillKey": "clawhub-fin-advisor",
+    "name": "Fin Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fin-advisor",
+    "url": "https://clawhub.ai/skills/fin-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fin-advisor-b1c49347a3689a92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基金投顾助手 — 专业的基金分析、对比、推荐和交易决策支持"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lovelcp",
+      "userId": "s170p1ew938vd1hzra53nz0se983jb5b",
+      "displayName": "kissrain",
+      "image": "https://avatars.githubusercontent.com/u/4645149?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773758014676,
+      "changelog": "fin-advisor 1.0.0 — 专业基金投顾助手上线\n\n- 首发：为个人投资者提供基金分析、对比、推荐和交易决策支持\n- 严格限定能力边界，仅回答基金相关问题，拒绝个股分析\n- 首创三档风格模式（专业/轻松/极简），支持随时切换\n- 所有金融数据均来源于指定数据工具，杜绝自算和推导\n- 输出严格遵循数据四要素合规要求及风险提示规范",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55b6469eecab6914c51847109b2fdb2a2b5275f81b5376f4929956fe952d6525"
+}

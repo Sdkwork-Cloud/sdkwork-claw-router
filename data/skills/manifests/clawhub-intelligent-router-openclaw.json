@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41783,
+  "uuid": "skill-clawhub-intelligent-router-openclaw",
+  "skillKey": "clawhub-intelligent-router-openclaw",
+  "name": "Intelligent Router Openclaw",
+  "summary": "Intelligent model routing for sub-agent task delegation. Choose the optimal model based on task complexity, cost, and capability requirements. Reduces costs...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intelligent_router_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rene Cabrera",
+      "features": [
+        "Intelligent model routing for sub-agent task delegation",
+        "Choose the optimal model based on task complexity, cost, and capability requirements",
+        "Reduces costs..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intelligent-router-openclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/179614942?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intelligent-router-openclaw",
+      "url": "https://clawhub.ai/skills/intelligent-router-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intelligent-router-openclaw",
+    "url": "https://clawhub.ai/skills/intelligent-router-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intelligent-router-openclaw-d6dbbca39797b47b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intelligent-router-openclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-intelligent-router-openclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd7594980e04e9dab50bb6333341513e13749d812b594dc4b06ff15085df1332",
+      "artifactSizeBytes": 2832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T07:05:03.501Z"
+}

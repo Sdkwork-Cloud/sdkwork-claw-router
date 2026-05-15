@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/private-traffic-sop@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.private_traffic_sop",
+  "skill": {
+    "id": 70353,
+    "skillKey": "clawhub-private-traffic-sop",
+    "name": "私域流量运营SOP生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "private-traffic-sop",
+    "url": "https://clawhub.ai/skills/private-traffic-sop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/private-traffic-sop-1d893062fb69b654.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据产品类型/用户画像，自动生成完整的私域运营 SOP（引流-培育-转化-复购）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amaxclaw",
+      "userId": "s172p7d4fz0vh9vgc9wdvrav4x84xj9g",
+      "displayName": "Amaxclaw",
+      "image": "https://avatars.githubusercontent.com/u/269517300?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776254312688,
+      "changelog": "付费技能首发 - 私域SOP",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1303dfd593ca4628654235d6764feb9e73d456d7cdb1985658a1edf16d289ef"
+}

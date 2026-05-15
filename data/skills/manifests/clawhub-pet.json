@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11677,
+  "uuid": "skill-clawhub-pet",
+  "skillKey": "clawhub-pet",
+  "name": "pet",
+  "summary": "Simple command-line snippet manager. Use it to save and reuse complex commands.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gustavo Madeira Santana",
+      "features": [
+        "Simple command-line snippet manager",
+        "Use it to save and reuse complex commands."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5599352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pet",
+      "url": "https://clawhub.ai/skills/pet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pet",
+    "url": "https://clawhub.ai/skills/pet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pet-bbba57318f719113.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d210035f56f1c78386ccc64daf6e0ba63e93da47db44c051380645802d557827",
+      "artifactSizeBytes": 1741
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-20T18:55:06.673Z"
+}

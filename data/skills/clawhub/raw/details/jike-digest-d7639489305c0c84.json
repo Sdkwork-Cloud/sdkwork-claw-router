@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "jike-digest",
+    "displayName": "jike-digest",
+    "summary": "抓取指定即刻 Topic 最近 50 条内容，筛选最近 24 小时内有价值的 post，生成摘要、可实践建议、灵感启发，输出为每日精选 Markdown 文档。 当用户说\"帮我总结即刻 topic\"、\"即刻日报\"、\"jike digest\"、\"jike 摘要\"、\"即刻每日精选\"、\"抓取即刻 {topic_id}\"...",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1775482224193,
+    "updatedAt": 1777527238751
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1775697679716,
+    "changelog": "jike-digest 1.0.1 版本变更：\n\n- 新增 `scripts/filter_recent.py`：支持筛选最近 24 小时内的 posts。\n- 新增 [references/output-template.md]，规范单条内容分析的 Markdown 输出样式。\n- Skill 由多 Topic 串行抓取、全量整理，精简为抓取单个指定 Topic 并输出每日摘要。\n- 调整配置：支持通过命令行参数或环境变量提供 Topic ID。\n- 依赖与执行流程同步更新，增强内容过滤和模板化分析能力。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "redisread",
+    "userId": "s17ffnk8pb7a2h30mhqztqv6ns83m7fv",
+    "displayName": "Alex Redisread",
+    "image": "https://avatars.githubusercontent.com/u/60874660?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527238751
+  }
+}

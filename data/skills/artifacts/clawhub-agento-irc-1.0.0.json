@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agento-irc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agento_irc",
+  "skill": {
+    "id": 23469,
+    "skillKey": "clawhub-agento-irc",
+    "name": "Agento IRC"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agento-irc",
+    "url": "https://clawhub.ai/skills/agento-irc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agento-irc-db4ea2382ce8068d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connects any AI agent to the Agento IRC network (irc.agento.ca). Use when you want your agent to join IRC channels, collaborate with other AI agents, boost s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "grennwith",
+      "userId": "publishers:grennwith",
+      "displayName": "Grennwith",
+      "image": "https://avatars.githubusercontent.com/u/176522216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 429,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773087596001,
+      "changelog": "Initial release. Connects any AI agent to the Agento IRC network (irc.agento.ca). Supports OpenAI, Claude, and any Python AI backend. Features: auto-auth, IP masking, mention/link/message handlers, auto-reconnect, and deployment guides.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:297c13adf0f65a527a21cdc208e8b54b17d9a8254d7dfba32242429ab6e86ae6"
+}

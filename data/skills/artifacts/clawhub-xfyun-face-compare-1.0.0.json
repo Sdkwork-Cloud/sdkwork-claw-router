@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xfyun-face-compare@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xfyun_face_compare",
+  "skill": {
+    "id": 28910,
+    "skillKey": "clawhub-xfyun-face-compare",
+    "name": "iFLYTEK Face Compare"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xfyun-face-compare",
+    "url": "https://clawhub.ai/skills/xfyun-face-compare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xfyun-face-compare-3394811f2431acae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compare two face images and return similarity score using iFlytek Face Recognition API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dzy-1026",
+      "userId": "s177exwzb4jc8skfhjrfxg8nph84g58y",
+      "displayName": "Dzy-1026",
+      "image": "https://avatars.githubusercontent.com/u/71968943?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 315,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772776597553,
+      "changelog": "Initial release of xfyun-face-compare.\n\n- Supports comparing two face images using iFlytek Face Recognition API.\n- Provides high-accuracy similarity score and comparison result (same person or not).\n- Compatible with JPG, PNG, BMP formats under 4MB.\n- Requires Python and environment variables for API credentials.\n- Outputs detailed JSON including similarity, confidence, and face detection status.\n- Designed for identity verification, authentication, and security scenarios.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e9a5490e439505038f9bf36ce94f1fd46de9f35596d20c99abfa7141f4374463"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scientific-proxy@1.8.7",
+  "version": "1.8.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scientific_proxy",
+  "skill": {
+    "id": 58657,
+    "skillKey": "clawhub-scientific-proxy",
+    "name": "Scientific Proxy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scientific-proxy",
+    "url": "https://clawhub.ai/skills/scientific-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scientific-proxy-e4c98b8e8c675205.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered proxy assistant for OpenClaw. AI驱动的代理节点助手——自动抓取免费节点、测速、筛选，一步步引导小白完成配置。 Protocol: I-Lang v3.0 behavioral DNA embedded. Trigger on: VPN, proxy, 翻墙,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mtmpss",
+      "userId": "s175d69canek3fv45fq6q5mqxd8610s6",
+      "displayName": "mtmpss",
+      "image": "https://avatars.githubusercontent.com/u/118411498?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.8.7",
+      "createdAt": 1777822396514,
+      "changelog": "Rebrand to Scientific Proxy, updated SKILL.md for ClawScan compliance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23ac833efa4635761e9056d5aa3696020c8b9eba8ee70099416350d48a540edf"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55767,
+  "uuid": "skill-clawhub-clawhub-skill-finder",
+  "skillKey": "clawhub-clawhub-skill-finder",
+  "name": "Skill Discovery",
+  "summary": "Automatically discover, search, and install skills from ClawHub — the public skill registry for OpenClaw — when no locally installed skill can fulfill the us...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skill_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lpb123",
+      "features": [
+        "Automatically discover, search, and install skills from ClawHub — the public skill registry for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-skill-finder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7358064?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-skill-finder",
+      "url": "https://clawhub.ai/skills/clawhub-skill-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skill-finder",
+    "url": "https://clawhub.ai/skills/clawhub-skill-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skill-finder-15dd86b11344e428.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-skill-finder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-skill-finder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:671a17460e30d74164a6e0ed9964cd110e6fa042738e03a8010002d98680b1db",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T03:53:51.308Z"
+}

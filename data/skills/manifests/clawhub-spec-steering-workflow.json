@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25201,
+  "uuid": "skill-clawhub-spec-steering-workflow",
+  "skillKey": "clawhub-spec-steering-workflow",
+  "name": "spec steering workflow",
+  "summary": "Use a lightweight spec + steering workflow for long, interruptible, multi-phase tasks that need checkpointed progress, recoverable state, and multi-session c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spec_steering_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whisper1952717",
+      "features": [
+        "Use a lightweight spec + steering workflow for long, interruptible, multi-phase tasks that need."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spec-steering-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248128888?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spec-steering-workflow",
+      "url": "https://clawhub.ai/skills/spec-steering-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spec-steering-workflow",
+    "url": "https://clawhub.ai/skills/spec-steering-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spec-steering-workflow-0654689fdc4d7c5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spec-steering-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spec-steering-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32abc4ea1bbae1e8b8173a2d97ec6dab5f80014eb305c80267295a403b803ef0",
+      "artifactSizeBytes": 2552
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T20:48:11.926Z"
+}

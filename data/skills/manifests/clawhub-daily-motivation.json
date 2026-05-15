@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10579,
+  "uuid": "skill-clawhub-daily-motivation",
+  "skillKey": "clawhub-daily-motivation",
+  "name": "Daily Motivation",
+  "summary": "Get daily motivation with personalized encouragement, goal reminders, and momentum tracking",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_motivation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jhillin8",
+      "features": [
+        "Get daily motivation with personalized encouragement, goal reminders, and momentum tracking"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-motivation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79551560?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-motivation",
+      "url": "https://clawhub.ai/skills/daily-motivation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-motivation",
+    "url": "https://clawhub.ai/skills/daily-motivation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-motivation-d7b54bdab1386913.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-motivation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-motivation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9da4c2e84e15b0f8964102d158f5178d81071b53b816571483e53be24ef5fc1f",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T07:33:30.782Z"
+}

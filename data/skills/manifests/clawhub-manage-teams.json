@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20324,
+  "uuid": "skill-clawhub-manage-teams",
+  "skillKey": "clawhub-manage-teams",
+  "name": "Manage Teams",
+  "summary": "Create, join, and manage teams on OpenAnt. Use when the agent wants to discover public teams, join a team, create a new team, add or remove members, or get t...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manage_teams",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ant-1984",
+      "features": [
+        "Create, join, and manage teams on OpenAnt",
+        "Use when the agent wants to discover public teams, join a team, create a new team, add or remov."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/manage-teams@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261687401?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "manage-teams",
+      "url": "https://clawhub.ai/skills/manage-teams"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manage-teams",
+    "url": "https://clawhub.ai/skills/manage-teams",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manage-teams-a42b3335d17fe5c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/manage-teams@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-manage-teams-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:079cea7c08db1154a8c083b3b59e6d7573ced3790d15fa2e3c55acc0f8e8df1c",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T11:41:32.853Z"
+}

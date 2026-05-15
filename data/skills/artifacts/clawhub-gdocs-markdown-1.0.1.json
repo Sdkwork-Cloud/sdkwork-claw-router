@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gdocs-markdown@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gdocs_markdown",
+  "skill": {
+    "id": 11311,
+    "skillKey": "clawhub-gdocs-markdown",
+    "name": "Google Docs from Markdown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gdocs-markdown",
+    "url": "https://clawhub.ai/skills/gdocs-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gdocs-markdown-a5ea93aa002b4a1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create Google Docs from Markdown files. Use when the user wants to create a Google Doc from Markdown content, or when working with gog CLI and need to populate Google Docs with content. This skill handles the conversion Markdown → DOCX → G."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "techlaai",
+      "userId": "s17589jdxk8eshp9etdjn1an1x83hg3p",
+      "displayName": "techlaai",
+      "image": "https://avatars.githubusercontent.com/u/249414167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2634,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770193622392,
+      "changelog": "- Added installation note about setting executable permission for the helper script after installing from ClawHub.\n- No changes to workflows or functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9f6164188e5860219a41ae335eab6e44c9761203739ee43ea8d73018048276ee"
+}

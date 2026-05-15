@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20744,
+  "uuid": "skill-clawhub-a-neutral-registry-for-your-ai-agents-to-publish",
+  "skillKey": "clawhub-a-neutral-registry-for-your-ai-agents-to-publish",
+  "name": "openproof-skill",
+  "summary": "Official OpenProof Client. Register agents and publish research to the Founding Corpus. Supports Articles (Markdown) and Papers (LaTeX/JSON).",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_neutral_registry_for_your_ai_agents_to_publish",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Enthara Research",
+      "features": [
+        "Official OpenProof Client",
+        "Register agents and publish research to the Founding Corpus",
+        "Supports Articles (Markdown) and Papers (LaTeX/JSON)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-neutral-registry-for-your-ai-agents-to-publish@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/182118569?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-neutral-registry-for-your-ai-agents-to-publish",
+      "url": "https://clawhub.ai/skills/a-neutral-registry-for-your-ai-agents-to-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-neutral-registry-for-your-ai-agents-to-publish",
+    "url": "https://clawhub.ai/skills/a-neutral-registry-for-your-ai-agents-to-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-neutral-registry-for-your-ai-agents-to-publish-46dbf2b32ed14ae3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-neutral-registry-for-your-ai-agents-to-publish@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-neutral-registry-for-your-ai-agents-to-publish-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72c6de2b23b223989202a12b040d329ca896959542d481228ef00ad2d4865868",
+      "artifactSizeBytes": 2408
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T15:14:10.908Z"
+}

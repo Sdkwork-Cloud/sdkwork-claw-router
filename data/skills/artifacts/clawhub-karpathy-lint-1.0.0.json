@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/karpathy-lint@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.karpathy_lint",
+  "skill": {
+    "id": 40706,
+    "skillKey": "clawhub-karpathy-lint",
+    "name": "Karpathy Lint"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "karpathy-lint",
+    "url": "https://clawhub.ai/skills/karpathy-lint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/karpathy-lint-eea2203cb0e5151e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs quality checks on Karpathy LLM knowledge points including deduplication, merging, updating, and generates reports on knowledge base health."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sora-mury",
+      "userId": "s17btvz19kqmt9aqs6tajsns8n83gebg",
+      "displayName": "sune",
+      "image": "https://avatars.githubusercontent.com/u/165292279?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775390307190,
+      "changelog": "Initial release: Weekly memory health check and maintenance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf5e453d4357e714e31df8b31777bdd239c5b167c3eed307c9c06f1aa364a3e9"
+}

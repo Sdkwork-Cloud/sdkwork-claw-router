@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65723,
+  "uuid": "skill-clawhub-openclaw-feishu-task",
+  "skillKey": "clawhub-openclaw-feishu-task",
+  "name": "OpenClaw飞书任务管理",
+  "summary": "飞书任务管理工具,用于创建、查询、更新任务和清单。 **当以下情况时使用此 Skill**: (1) 需要创建、查询、更新、删除任务 (2) 需要创建、管理任务清单 (3) 需要查看任务列表或清单内的任务 (4) 用户提到\"任务\"、\"待办\"、\"to-do\"、\"清单\"、\"task\" (5) 需要设置任务负责人、关注...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_feishu_task",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenfa188",
+      "features": [
+        "飞书任务管理工具,用于创建、查询、更新任务和清单。 **当以下情况时使用此 Skill**: (1) 需要创建、查询、更新、删除任务 (2) 需要创建、管理任务清单 (3) 需要查看任务列表."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-feishu-task@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57471043?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-feishu-task",
+      "url": "https://clawhub.ai/skills/openclaw-feishu-task"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-feishu-task",
+    "url": "https://clawhub.ai/skills/openclaw-feishu-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-feishu-task-8063a73f8831f199.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-feishu-task@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-feishu-task-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4626d4fd7804cd1a2117271a6443e77a929ea62fbcb86bc04e4a104ce3988cd1",
+      "artifactSizeBytes": 2145
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T05:10:10.733Z"
+}

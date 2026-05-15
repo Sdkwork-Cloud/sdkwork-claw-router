@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58828,
+  "uuid": "skill-clawhub-china-stocks-daily-review",
+  "skillKey": "clawhub-china-stocks-daily-review",
+  "name": "A股股市盘前盘中盘后分析/china-stocks-daily-review",
+  "summary": "A股市场行情分析 Skill，支持生成三类报告：盘前市场综述、盘中市场简评、盘后复盘报告。 China A-Share Market Daily Review Skill — generates 3 report types: Pre-Market Briefing, Intraday Snapshot, Pos...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_stocks_daily_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kooui",
+      "features": [
+        "A股市场行情分析 Skill，支持生成三类报告：盘前市场综述、盘中市场简评、盘后复盘报告。 China A-Share Market Daily Review Skill — generat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-stocks-daily-review@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35019576?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-stocks-daily-review",
+      "url": "https://clawhub.ai/skills/china-stocks-daily-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-stocks-daily-review",
+    "url": "https://clawhub.ai/skills/china-stocks-daily-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-stocks-daily-review-c0d539ef2c0d3257.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-stocks-daily-review@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-stocks-daily-review-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d924d3d88e53f5519ebb45e3a9f3dcd6ce90279daf55b4681a27f3c0ff9742e",
+      "artifactSizeBytes": 2492
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T13:10:10.589Z"
+}

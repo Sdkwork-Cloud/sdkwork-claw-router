@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68592,
+  "uuid": "skill-clawhub-news-brief-skill",
+  "skillKey": "clawhub-news-brief-skill",
+  "name": "News Brief Skill",
+  "summary": "根据用户设定的兴趣方向，每天定时获取对应领域的新闻内容，生成摘要简报并推送至用户指定渠道，支持用户反馈与Skill优化。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_brief_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thiswin",
+      "features": [
+        "根据用户设定的兴趣方向，每天定时获取对应领域的新闻内容，生成摘要简报并推送至用户指定渠道，支持用户反馈与Skill优化。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-brief-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62000536?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-brief-skill",
+      "url": "https://clawhub.ai/skills/news-brief-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-brief-skill",
+    "url": "https://clawhub.ai/skills/news-brief-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-brief-skill-aace5c511bc40964.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-brief-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-brief-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:392860981f768526fdc3ff0d2f62e79148a60867c8f93066c0e75aaa98c99604",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T16:51:20.160Z"
+}

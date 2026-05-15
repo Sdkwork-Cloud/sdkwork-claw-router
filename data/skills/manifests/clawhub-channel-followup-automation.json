@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63085,
+  "uuid": "skill-clawhub-channel-followup-automation",
+  "skillKey": "clawhub-channel-followup-automation",
+  "name": "Channel Follow-up Automation",
+  "summary": "自动每日09:00检查渠道，按ROI、响应速度和成交概率评分排序，分级提醒跟进，降低遗漏率和成交周期。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.channel_followup_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gdp6539",
+      "features": [
+        "自动每日09:00检查渠道，按ROI、响应速度和成交概率评分排序，分级提醒跟进，降低遗漏率和成交周期。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/channel-followup-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198542148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "channel-followup-automation",
+      "url": "https://clawhub.ai/skills/channel-followup-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "channel-followup-automation",
+    "url": "https://clawhub.ai/skills/channel-followup-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/channel-followup-automation-7bf2a27813d99506.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/channel-followup-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-channel-followup-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1abf02a31e9a6f0952ac824b6eccdf1913139f19b6b25ceeb5d0063d56c424f",
+      "artifactSizeBytes": 2689
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T21:49:43.031Z"
+}

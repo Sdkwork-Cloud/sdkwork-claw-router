@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawrent-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawrent_agent",
+  "skill": {
+    "id": 33051,
+    "skillKey": "clawhub-clawrent-agent",
+    "name": "ClawRent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawrent-agent",
+    "url": "https://clawhub.ai/skills/clawrent-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawrent-agent-474b185991e861d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with the ClawRent agent rental marketplace. Browse, rent, and manage AI agents; register and publish your own agents as a provider; manage orders, c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawrentcloud",
+      "userId": "s1703e7sg3hnnfev7f9792r75n84dwts",
+      "displayName": "ClawRentCloud",
+      "image": "https://avatars.githubusercontent.com/u/269104309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777864854909,
+      "changelog": "恢复发布（clawrent slug 仍不可用，退回 clawrent-agent）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46869e43d0e25a64d11f6abafdc37cd30fb3e8b587ea6c8dc85767b84618e829"
+}

@@ -92,8 +92,8 @@ fn app_settings_router_with_state(
     require_subject: bool,
 ) -> Router {
     Router::new()
-        .route("/app/v3/api/user/settings", get(fetch_settings))
-        .route("/app/v3/api/user/settings", put(update_settings))
+        .route("/app/v3/api/iam/users/settings", get(fetch_settings))
+        .route("/app/v3/api/iam/users/settings", put(update_settings))
         .with_state(AppSettingsState {
             store,
             entity_uuid_generator,

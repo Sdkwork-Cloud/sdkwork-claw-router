@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/163email-skill@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.163email_skill",
+  "skill": {
+    "id": 33525,
+    "skillKey": "clawhub-163email-skill",
+    "name": "163 Email Skill - SMTP Sender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "163email-skill",
+    "url": "https://clawhub.ai/skills/163email-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/163email-skill-f49f48c51bc644e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "163email skill - Send emails via 163 SMTP service with custom recipient, subject, content. Support CLI and Python import"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liubindashen",
+      "userId": "s17c7ktse69br1axk1rwcpbr898539aw",
+      "displayName": "geekclaw",
+      "image": "https://avatars.githubusercontent.com/u/16220721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1776615070213,
+      "changelog": "Update display name for better search visibility",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38c43506414527b2a41f5cdd5e953ec4ebcea84a52abc5e168594309e885aea7"
+}

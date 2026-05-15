@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45532,
+  "uuid": "skill-clawhub-seedance-2-0-video-generation",
+  "skillKey": "clawhub-seedance-2-0-video-generation",
+  "name": "For long videos, automatically split the video task, using the last frame of the previous video as the first frame of the curre.",
+  "summary": "Generate AI videos using ByteDance Seedance 2.0. Use when the user wants to: (1) generate videos from text prompts, (2) generate videos from images (first fr...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_2_0_video_generation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liusaikang",
+      "features": [
+        "Generate AI videos using ByteDance Seedance 2.0",
+        "Use when the user wants to: (1) generate videos from text prompts, (2) generate videos from ima."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seedance-2-0-video-generation@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/175816566?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seedance-2-0-video-generation",
+      "url": "https://clawhub.ai/skills/seedance-2-0-video-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-2-0-video-generation",
+    "url": "https://clawhub.ai/skills/seedance-2-0-video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-2-0-video-generation-b6db89de54175e75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seedance-2-0-video-generation@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-seedance-2-0-video-generation-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bcf981ec34511007bab1108a3ec9c43805e082bdee40cd581818e61fbeedc3ec",
+      "artifactSizeBytes": 2229
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T10:05:07.780Z"
+}

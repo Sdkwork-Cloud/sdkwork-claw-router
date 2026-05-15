@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8512,
+  "uuid": "skill-clawhub-qveris",
+  "skillKey": "clawhub-qveris",
+  "name": "Qveris",
+  "summary": "Search and execute dynamic tools via QVeris API. Use when needing to find and call external APIs/tools dynamically (weather, search, data retrieval, stock trading analysis, etc.). Requires QVERIS_API_KEY environment variable.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qveris",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kai Wang",
+      "features": [
+        "Search and execute dynamic tools via QVeris API",
+        "Use when needing to find and call external APIs/tools dynamically (weather, search, data retrie.",
+        "Requires QVERIS_API_KEY environment variable."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qveris@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/185824?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qveris",
+      "url": "https://clawhub.ai/skills/qveris"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qveris",
+    "url": "https://clawhub.ai/skills/qveris",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qveris-aba17b93ed78a792.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qveris@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qveris-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67acaea8c561f82dc6f2b50decce3110404d229f66a481c01f53e38c5647f75c",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T11:15:51.112Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27009,
+  "uuid": "skill-clawhub-whatpulse-ai-agent-skill",
+  "skillKey": "clawhub-whatpulse-ai-agent-skill",
+  "name": "WhatPulse AI Agent Skill",
+  "summary": "Query WhatPulse computer usage statistics using natural language. Keystrokes, mouse activity, application screen time, network bandwidth, website tracking, u...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatpulse_ai_agent_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smitmartijn",
+      "features": [
+        "Query WhatPulse computer usage statistics using natural language",
+        "Keystrokes, mouse activity, application screen time, network bandwidth, website tracking, u..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whatpulse-ai-agent-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6500836?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whatpulse-ai-agent-skill",
+      "url": "https://clawhub.ai/skills/whatpulse-ai-agent-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatpulse-ai-agent-skill",
+    "url": "https://clawhub.ai/skills/whatpulse-ai-agent-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatpulse-ai-agent-skill-1254078f64d3bd9f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whatpulse-ai-agent-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whatpulse-ai-agent-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16b753cebcc8b52a719431720d1d0565a934b8e66ae86ce6dc29889b4f4c59a5",
+      "artifactSizeBytes": 2738
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T10:56:00.506Z"
+}

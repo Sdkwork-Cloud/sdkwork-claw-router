@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wan-video-gen@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wan_video_gen",
+  "skill": {
+    "id": 68567,
+    "skillKey": "clawhub-wan-video-gen",
+    "name": "wan-video-gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wan-video-gen",
+    "url": "https://clawhub.ai/skills/wan-video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wan-video-gen-40023daa32f4d283.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于阿里云百炼 Wan 文生视频模型的视频生成 skill。支持提交视频生成任务、轮询任务状态、下载生成视频到本地。 当用户需要根据提示词生成视频、继续查询已有视频生成任务，或用 Wan 系列模型生成带声/无声视频时，使用此 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhouweico",
+      "userId": "s17ap9f1exnb5yh0k65q8gft0x83kntw",
+      "displayName": "Wei Zhou",
+      "image": "https://avatars.githubusercontent.com/u/4317360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774422237187,
+      "changelog": "Initial release of wan-video-gen skill\n\n- Provides a CLI to generate videos using Alibaba Cloud Wan text-to-video APIs, supporting async job submission, polling, and download.\n- Flexible configuration via environment variables or config.json; supports API key setup and custom model/tier mappings.\n- Supports various video generation parameters: prompt, negative prompt, custom audio, goal, tier, model, resolution, ratio, duration, advanced options like shot type and seed.\n- Cost estimation and preflight checks built-in, warning users about expected pricing based on official China mainland rates.\n- Offers complete documentation for CLI usage, default models, resolution/duration mapping, override priorities, and troubleshooting steps for failures.\n- Requires Node.js ≥ 18.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13a6cc332480539a7a9e34b01040d1ceb3ebb171a03a31f1e40c678b698ea218"
+}

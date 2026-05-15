@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-delegator@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_delegator",
+  "skill": {
+    "id": 65948,
+    "skillKey": "clawhub-task-delegator",
+    "name": "task-delegator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-delegator",
+    "url": "https://clawhub.ai/skills/task-delegator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-delegator-c059c5e893760909.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "任务委派模式 - 自动将所有需要使用工具的任务委派给子 agent 处理。始终用于：搜索、浏览、读写文件、代码执行、API 调用、数据分析。绝不用于：闲聊、无需工具的简单问答、确认事项。触发短语：委托这个 OR 当任何工具操作需要时隐式触发。核心行为：使用 sessions_spawn() 配合 cleanup:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ekkolearnai",
+      "userId": "publishers:ekkolearnai",
+      "displayName": "ekko",
+      "image": "https://avatars.githubusercontent.com/u/152005280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 609,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773318284094,
+      "changelog": "- 强化规则：所有对 soul.md 的写入操作必须通过子 agent 委派，严禁主会话直接写入。\n- 文档多处补充了“写入 soul.md 必须委派”的注意事项及操作示例。\n- 决策流程图、配置说明等内容同步突出 soul.md 写入需委派要求。\n- 其余工作流与核心行为保持一致，无其他主要变更。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba357b84b098db63d480d8f9b00f550ab951683976e0292a0159b1a988eea4d3"
+}

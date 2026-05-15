@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26966,
+  "uuid": "skill-clawhub-trongrid-block-info",
+  "skillKey": "clawhub-trongrid-block-info",
+  "name": "trongrid-block-info",
+  "summary": "Query and analyze TRON blocks including producer info, transaction breakdown, rewards, burns, and network load. Use when a user asks about a specific block,...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trongrid_block_info",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "greason",
+      "features": [
+        "Query and analyze TRON blocks including producer info, transaction breakdown, rewards, burns, a.",
+        "Use when a user asks about a specific block,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trongrid-block-info@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12513158?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trongrid-block-info",
+      "url": "https://clawhub.ai/skills/trongrid-block-info"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trongrid-block-info",
+    "url": "https://clawhub.ai/skills/trongrid-block-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trongrid-block-info-f8deb4b23239850f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trongrid-block-info@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-trongrid-block-info-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31e3efff9234f08c053dc55d6e71afe81eee4901ad382f6619be62a8273305e5",
+      "artifactSizeBytes": 2085
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T07:56:18.586Z"
+}

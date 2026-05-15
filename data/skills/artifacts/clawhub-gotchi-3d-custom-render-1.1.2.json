@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gotchi-3d-custom-render@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gotchi_3d_custom_render",
+  "skill": {
+    "id": 32987,
+    "skillKey": "clawhub-gotchi-3d-custom-render",
+    "name": "Publish 3d Flag"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gotchi-3d-custom-render",
+    "url": "https://clawhub.ai/skills/gotchi-3d-custom-render",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gotchi-3d-custom-render-c073b5257486a494.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Render custom Aavegotchi 3D images from arbitrary trait and wearable combinations. Use when the user describes a synthetic or hypothetical gotchi look in pla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaigotchi",
+      "userId": "s17274ydba008dctsvmwydrqk183rfhq",
+      "displayName": "aaigotchi",
+      "image": "https://avatars.githubusercontent.com/u/258886199?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1776280857355,
+      "changelog": "Reduce false-positive scan noise without changing 3D render behavior: pure-JS background compositing, split request loading from the hosted client, and a tighter published bundle.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48b42ee9f1f1273eef4d33a655d4b38e27e3fa15caa9d9c4ffa1e6c6f6912cb7"
+}

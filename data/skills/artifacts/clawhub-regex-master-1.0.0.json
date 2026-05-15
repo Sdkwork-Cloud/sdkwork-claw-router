@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/regex-master@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.regex_master",
+  "skill": {
+    "id": 46224,
+    "skillKey": "clawhub-regex-master",
+    "name": "Regex Master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "regex-master",
+    "url": "https://clawhub.ai/skills/regex-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/regex-master-907c719b3ff243a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate, explain, test, and extract using regular expressions, plus convert natural language descriptions into regex patterns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaiyuelv",
+      "userId": "s171c2g5qpr0rdyra8xbm4srbh84mjjm",
+      "displayName": "Lv Lancer",
+      "image": "https://avatars.githubusercontent.com/u/29176686?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777274462146,
+      "changelog": "- Initial release of regex-master.\n- Provides tools for generating, testing, explaining, and visualizing regular expressions.\n- Supports converting natural language descriptions into regex patterns.\n- Includes usage examples and unit tests.\n- Core features: pattern construction, meaning explanation, pattern matching, and data extraction from text.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fa023cf052ea19d84ef30275098a8c119b893ce280e0364d53eb7d5753d3e1d"
+}

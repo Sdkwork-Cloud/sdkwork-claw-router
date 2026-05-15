@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70610,
+  "uuid": "skill-clawhub-photo-organizer",
+  "skillKey": "clawhub-photo-organizer",
+  "name": "Photo Organizer",
+  "summary": "照片批量整理工具，支持按时间、地点自动分类和打标签。适用于手机照片整理、相册归档等场景，帮助用户快速整理成千上万张照片！",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photo_organizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "utopiabenben",
+      "features": [
+        "照片批量整理工具，支持按时间、地点自动分类和打标签。适用于手机照片整理、相册归档等场景，帮助用户快速整理成千上万张照片！"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/photo-organizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19267750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "photo-organizer",
+      "url": "https://clawhub.ai/skills/photo-organizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photo-organizer",
+    "url": "https://clawhub.ai/skills/photo-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photo-organizer-ba2c9004e950abc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/photo-organizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-photo-organizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b84e1eb79530970908107e41e4a0d00e6e594a8c485456915b8b98c3537d8a4",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T23:45:46.442Z"
+}

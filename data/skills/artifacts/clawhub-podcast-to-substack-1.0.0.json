@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/podcast-to-substack@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_to_substack",
+  "skill": {
+    "id": 16024,
+    "skillKey": "clawhub-podcast-to-substack",
+    "name": "Podcast to Substack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-to-substack",
+    "url": "https://clawhub.ai/skills/podcast-to-substack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-to-substack-cc376102de885002.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish podcast episodes from RSS and Notion to Substack with Apple Podcasts embeds and images, then generate LinkedIn-ready companion posts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielfoch",
+      "userId": "publishers:danielfoch",
+      "displayName": "danielfoch",
+      "image": "https://avatars.githubusercontent.com/u/152220262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 917,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771089245861,
+      "changelog": "Initial OpenClaw release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f1dffa0d9c4aa8392a58aa7bbfa93f79920a80895724c992fb092c9f96a83f38"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40556,
+  "uuid": "skill-clawhub-journal-impact-factor-trend",
+  "skillKey": "clawhub-journal-impact-factor-trend",
+  "name": "Journal Impact Factor Trend",
+  "summary": "Show journal impact factor and quartile trends over 5 years.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.journal_impact_factor_trend",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Show journal impact factor and quartile trends over 5 years."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/journal-impact-factor-trend@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "journal-impact-factor-trend",
+      "url": "https://clawhub.ai/skills/journal-impact-factor-trend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "journal-impact-factor-trend",
+    "url": "https://clawhub.ai/skills/journal-impact-factor-trend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/journal-impact-factor-trend-7589ef42a3a7958b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/journal-impact-factor-trend@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-journal-impact-factor-trend-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec27997853ac7c404ca47e8e13645cbd84b663b42cc3724ef0a41d73afde1f29",
+      "artifactSizeBytes": 2267
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:36:18.834Z"
+}

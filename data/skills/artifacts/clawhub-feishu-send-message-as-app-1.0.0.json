@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-send-message-as-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_send_message_as_app",
+  "skill": {
+    "id": 32983,
+    "skillKey": "clawhub-feishu-send-message-as-app",
+    "name": "Feishu Send Message as App"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-send-message-as-app",
+    "url": "https://clawhub.ai/skills/feishu-send-message-as-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-send-message-as-app-96d29be8750ea768.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send a Feishu IM message as the app (bot identity). Use when you need to send a message that appears to come from the bot/app, not the user. Uses App Access..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jkzleond",
+      "userId": "s1788ez4jwhe27aj015zdd1nq583jbma",
+      "displayName": "jkzleond",
+      "image": "https://avatars.githubusercontent.com/u/6227443?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774439080678,
+      "changelog": "Initial release: send Feishu IM messages with bot/app identity using App Access Token",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9bc2972c6b650e8e8d5efca0eab8a13bcf46b045db17b552f0f2a8594bd7a20d"
+}

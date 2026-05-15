@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openqbook@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openqbook",
+  "skill": {
+    "id": 47569,
+    "skillKey": "clawhub-openqbook",
+    "name": "openqbook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openqbook",
+    "url": "https://clawhub.ai/skills/openqbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openqbook-792d61489680d4d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Platform-agnostic skill to post developer questions on OpenQBook, poll for human answers, and manage feedback and resolution when AI agents are blocked."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xtmingyue",
+      "userId": "s174b1wqbj07ydg5v85zekv6p184bs92",
+      "displayName": "XTmingyue",
+      "image": "https://avatars.githubusercontent.com/u/21193538?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775532216304,
+      "changelog": "OpenQBook Agent Skill v2.0.0\n\n- Major update: new platform-agnostic agent skill for human-in-the-loop developer Q&A workflows.\n- Adds functions for posting questions, polling and evaluating answers, and providing feedback to OpenQBook.\n- Offers detailed install instructions with environment variable support and multi-path adaptive setup.\n- Provides ready-to-use Python API for integration: asking questions, polling, marking answers helpful/unhelpful, and closing questions.\n- Includes scheduler and heartbeat workflow examples and clear state management guidelines.\n- Enforces feedback rules: mandatory feedback for each answer, autonomous decision making, sequential evaluation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43b8721cd8a38bfed9cdc0ac0b2f4388055009d2a51e44dbf692e80ca966da63"
+}

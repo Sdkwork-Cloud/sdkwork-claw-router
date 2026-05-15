@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dreaming-guard-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dreaming_guard_pro",
+  "skill": {
+    "id": 41442,
+    "skillKey": "clawhub-dreaming-guard-pro",
+    "name": "Dreaming Guard Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dreaming-guard-pro",
+    "url": "https://clawhub.ai/skills/dreaming-guard-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dreaming-guard-pro-d0fb04a60c853e13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Smart prevention and auto-recovery for OpenClaw dreaming context overflow. Monitors growth trends, archives intelligently, compresses context, protects proce..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kuangzhanzhiwang",
+      "userId": "s17fgtf3g3ep2e2ydfn217m6kx84n027",
+      "displayName": "kuangzhanzhiwang",
+      "image": "https://avatars.githubusercontent.com/u/246948152?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776602985384,
+      "changelog": "Dreaming Guard Pro 1.0.0 – Initial release.\n\n- Provides smart, zero-dependency protection against OpenClaw dreaming context overflow and memory issues.\n- Features real-time growth monitoring, three-tiered archiving/compression, process memory protection, and automated crash self-recovery.\n- Generates periodic health reports in multiple formats (text, json, markdown).\n- Highly configurable with environment variable overrides and modular API design.\n- Usable as a ClawHub Skill, a Node.js module, or as standalone components.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9314cbbefde5811763687119193ab7286f0cd282980bde2874c98c9623824b1"
+}

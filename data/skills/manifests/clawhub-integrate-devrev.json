@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39384,
+  "uuid": "skill-clawhub-integrate-devrev",
+  "skillKey": "clawhub-integrate-devrev",
+  "name": "Devrev",
+  "summary": "DevRev integration. Manage Organizations, Pipelines, Users, Goals, Filters. Use when the user wants to interact with DevRev data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integrate_devrev",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "DevRev integration",
+        "Manage Organizations, Pipelines, Users, Goals, Filters",
+        "Use when the user wants to interact with DevRev data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integrate-devrev@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integrate-devrev",
+      "url": "https://clawhub.ai/skills/integrate-devrev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integrate-devrev",
+    "url": "https://clawhub.ai/skills/integrate-devrev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integrate-devrev-6d6018c564f37965.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integrate-devrev@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-integrate-devrev-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04e7182efb96058cfb7a0caac762d25f648f3cec2e29beb0760e33492934fd14",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:00:06.648Z"
+}

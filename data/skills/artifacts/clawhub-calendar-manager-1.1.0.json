@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/calendar-manager@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calendar_manager",
+  "skill": {
+    "id": 62636,
+    "skillKey": "clawhub-calendar-manager",
+    "name": "Calendar Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calendar-manager",
+    "url": "https://clawhub.ai/skills/calendar-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calendar-manager-6bc8b7430ab9d1c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "日历管理技能 - 让 AI 能够读取日程、创建事件、设置提醒。当用户要求查看日程、添加日历事件、提醒 upcoming events 时触发此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackeven02",
+      "userId": "s17bfcp43p7ed5gq5h70w7ekg183j0me",
+      "displayName": "Jackeven02",
+      "image": "https://avatars.githubusercontent.com/u/199219042?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2934,
+      "installsAllTime": 27,
+      "installsCurrent": 27,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771938999348,
+      "changelog": "No changes detected in this version.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1031c0569058bbb897c01ee10a528447dc20f8f1fa43052a3620f6cd8bd46b3c"
+}

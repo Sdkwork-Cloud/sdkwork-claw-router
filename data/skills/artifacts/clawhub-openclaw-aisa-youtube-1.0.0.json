@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-aisa-youtube@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aisa_youtube",
+  "skill": {
+    "id": 40083,
+    "skillKey": "clawhub-openclaw-aisa-youtube",
+    "name": "Search YouTube videos, channels, and playlists"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aisa-youtube",
+    "url": "https://clawhub.ai/skills/openclaw-aisa-youtube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aisa-youtube-393967e01a04b31e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "YouTube Search API via AIsa unified endpoint. Search YouTube videos, channels, and playlists with a single AIsa API key — no Google API key or OAuth required..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xjordansg-yolo",
+      "userId": "s17eqxzhby6aqcv44tccm6dqh583fznj",
+      "displayName": "0xjordansg-yolo",
+      "image": "https://avatars.githubusercontent.com/u/249538244?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 636,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771258169983,
+      "changelog": "YouTube Search via AIsa now available with no Google API key or OAuth needed.\n\n- Initial public release of YouTube Search API skill (v1.0.1).\n- Search YouTube videos, channels, and playlists using your AIsa API key.\n- Simple HTTP GET endpoint; no OAuth or Google developer setup required.\n- Supports country and language parameters, as well as advanced YouTube filter tokens.\n- Includes sample code in Python and JavaScript; supports pagination and both major YouTube API response structures.\n- Comprehensive documentation and quick start guide included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:be350449b24f88ddefc2164b999cb0c13f9f07e8d3e4cede98ea5c214bce8ee0"
+}

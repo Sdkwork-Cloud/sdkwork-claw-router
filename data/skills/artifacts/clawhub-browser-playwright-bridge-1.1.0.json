@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-playwright-bridge@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_playwright_bridge",
+  "skill": {
+    "id": 17806,
+    "skillKey": "clawhub-browser-playwright-bridge",
+    "name": "Browser Playwright Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-playwright-bridge",
+    "url": "https://clawhub.ai/skills/browser-playwright-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-playwright-bridge-bd94addb996f8a51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run Playwright scripts that reuse OpenClaw browser's login state via CDP with automatic lock-based conflict prevention."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "swaylq",
+      "userId": "s176q2rckepz8d5m8v7dafb17s83n2x7",
+      "displayName": "Sway Liu",
+      "image": "https://avatars.githubusercontent.com/u/5630262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 723,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772012990052,
+      "changelog": "Lock PID fix, timeout watchdog, headless support, README",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:715ad7479a7ead64ea130a85e071b73cc628c53c24cccd4ba18fe486d5d141e3"
+}

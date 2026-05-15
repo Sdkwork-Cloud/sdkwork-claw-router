@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/partnering-maps@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.partnering_maps",
+  "skill": {
+    "id": 33241,
+    "skillKey": "clawhub-partnering-maps",
+    "name": "Partnering Maps"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "partnering-maps",
+    "url": "https://clawhub.ai/skills/partnering-maps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/partnering-maps-a3522d77a1c7514b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Identify make-buy-partner relationships for key activities. Use for strategic alliances, outsourcing decisions, and supply chain optimization."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linuszz",
+      "userId": "s17e0e5q8g0sjf5mpwdq1sy65183gmj7",
+      "displayName": "linuszz",
+      "image": "https://avatars.githubusercontent.com/u/46770204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774049301481,
+      "changelog": "partnering-maps v1.0.0\n\n- Initial release providing a comprehensive framework for mapping make-buy-partner relationships.\n- Includes guidance and templates for strategic alliances, outsourcing decisions, and supply chain optimization.\n- Offers decision frameworks, relationship matrix, gap analysis, risk assessment, and value capture tools.\n- Provides output formats, governance structure, and monitoring templates for ongoing partnership management.\n- Designed to support strategic decision-making and performance tracking in partner relationship management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:118c950e950ff6c8c9b7d19ceb4b3d29dbdf289e84c88dfa649ea91442c3741e"
+}

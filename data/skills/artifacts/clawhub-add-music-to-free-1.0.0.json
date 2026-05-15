@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/add-music-to-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_music_to_free",
+  "skill": {
+    "id": 41693,
+    "skillKey": "clawhub-add-music-to-free",
+    "name": "Add Music To Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-music-to-free",
+    "url": "https://clawhub.ai/skills/add-music-to-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-music-to-free-b00f98a4399ebf13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add video files into music-backed videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for adding free backgroun..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775937096845,
+      "changelog": "Initial release of Add Music to Video Free — Add Music and Export Videos:\n\n- Upload videos (MP4, MOV, AVI, WebM up to 500MB) and add free background music via cloud processing.\n- Fast online processing: most edits and 1080p MP4 exports complete in 30-90 seconds.\n- No install required — all rendering happens server-side with easy upload and download.\n- Supports checking credits, project status, and exporting results through simple commands.\n- Automatic session management, anonymous token support, and smart error handling for reliability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ca74dd1d12857448544457689a96b5653c9c4b40d8482081f3fd62d2c98c577"
+}

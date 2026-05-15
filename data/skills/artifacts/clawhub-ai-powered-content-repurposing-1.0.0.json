@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-powered-content-repurposing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_powered_content_repurposing",
+  "skill": {
+    "id": 52475,
+    "skillKey": "clawhub-ai-powered-content-repurposing",
+    "name": "Ai Powered Content Repurposing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-powered-content-repurposing",
+    "url": "https://clawhub.ai/skills/ai-powered-content-repurposing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-powered-content-repurposing-f94b710da6395bfb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform blog posts, articles, and long-form content into multiple formats—videos, podcasts, social media posts, and summaries. Use when the user needs cont..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ncreighton",
+      "userId": "s1796aws4dkha8d1m3anczz2dn83hvxz",
+      "displayName": "ncreighton",
+      "image": "https://avatars.githubusercontent.com/u/15095223?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774558386771,
+      "changelog": "Initial release — automate content repurposing across multiple formats with AI and Google Drive integration.\n\n- Instantly transform long-form content (blogs, articles) into video scripts, podcast transcripts, social media posts, summaries, and more.\n- Adapts tone and output for platforms: LinkedIn, Twitter, Instagram, TikTok, newsletters, and podcasts.\n- Batch process content from WordPress, Google Drive, and more; export and schedule across channels.\n- Maintains consistent brand voice and optimizes generated content for SEO and engagement.\n- Supports integration with WordPress, Google Drive, Slack, HubSpot, and other popular platforms.\n- Provides example prompts and configuration instructions for quick setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:37520710dace1423daca8acac65f4f08ecd2e90b141ef6705b52fd157eee7323"
+}

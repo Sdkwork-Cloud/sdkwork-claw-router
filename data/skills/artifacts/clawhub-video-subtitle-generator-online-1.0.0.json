@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-subtitle-generator-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_subtitle_generator_online",
+  "skill": {
+    "id": 40347,
+    "skillKey": "clawhub-video-subtitle-generator-online",
+    "name": "Video Subtitle Generator Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-subtitle-generator-online",
+    "url": "https://clawhub.ai/skills/video-subtitle-generator-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-subtitle-generator-online-f6f1e40bddc66a3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 3-minute YouTube tutorial recording into 1080p captioned video files just by typing what you need. Whether it's adding subtitles to videos without edi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775954165059,
+      "changelog": "Video Subtitle Generator Online — Initial Release\n\n- Instantly generate and burn subtitles into your video files via a cloud-based API—no video editing software needed.\n- Supports automatic subtitle translation (e.g., English, Spanish) and quick export to multiple formats (MP4, MOV, AVI, webm, etc.), with rendering handled on remote GPU servers.\n- Simple session management, anonymous free token system (100 credits, 7-day expiry), and multi-language workflow support.\n- Intuitive chat-style interface: describe your outcome, upload a video, and get a processed, captioned result within 30-90 seconds.\n- Smart error handling, credit management, and clear status updates included for a smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4453785695468047fbc0abc95efbbc5a7b51ee4868f4cef311b4b50cb561ffb"
+}

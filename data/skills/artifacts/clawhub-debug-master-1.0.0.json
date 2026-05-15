@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/debug-master@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.debug_master",
+  "skill": {
+    "id": 65717,
+    "skillKey": "clawhub-debug-master",
+    "name": "Debug Master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "debug-master",
+    "url": "https://clawhub.ai/skills/debug-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/debug-master-f777362c3190620a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI调试大师，集成7步调试法+根因分析+自动化测试+错误模式识别。触发词：'报错'、'出错了'、'debug'、'帮我看看'、'代码有问题'、'程序崩溃'、'修复bug'。相比原版debug-pro，新增AI根因分析、自动测试生成、错误模式库、跨语言调试。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "windy-001-crypto",
+      "userId": "s1736ky0sjf4n07k892nb8555n83gn8g",
+      "displayName": "windy-001-crypto",
+      "image": "https://avatars.githubusercontent.com/u/258460660?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 488,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774517519439,
+      "changelog": "Initial release of debug-master, an enhanced debugging assistant.\n\n- Introduces AI根因分析 (AI root cause analysis) and automatic test case generation.\n- Expands错误模式库 (error pattern library) for smarter error recognition and solutions.\n- Supports跨语言调试 (cross-language debugging) for 15+ popular programming languages.\n- Provides context-aware修复建议 (smart fix suggestions) and代码质量扫描预警 (quality scanning & early warnings).\n- Offers a comprehensive 7-step debugging methodology with detailed guides and templates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e1efceb4805e0cf1d102c36d75ad9e60ab431cffa503854a4a51494050e82dbf"
+}

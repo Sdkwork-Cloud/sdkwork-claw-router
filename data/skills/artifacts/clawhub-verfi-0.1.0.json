@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/verfi@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.verfi",
+  "skill": {
+    "id": 26500,
+    "skillKey": "clawhub-verfi",
+    "name": "Verfi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "verfi",
+    "url": "https://clawhub.ai/skills/verfi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/verfi-b14b2a03215f4214.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "TCPA consent verification for lead generation. Use when adding consent capture to web forms, verifying lead consent before contact, claiming/managing consent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "poncho-punch",
+      "userId": "publishers:poncho-punch",
+      "displayName": "Verfi",
+      "image": "https://avatars.githubusercontent.com/u/48300601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772749234805,
+      "changelog": "Initial release — TCPA consent verification skill with API reference, SDK docs, proof schema, and common workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bef35e4135fae03ebda04b792ae9bd6226cf96ca7f66960f1284870d85c74da1"
+}

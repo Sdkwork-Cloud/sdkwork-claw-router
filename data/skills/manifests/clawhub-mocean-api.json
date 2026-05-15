@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24052,
+  "uuid": "skill-clawhub-mocean-api",
+  "skillKey": "clawhub-mocean-api",
+  "name": "Mocean Api",
+  "summary": "Mocean API integration. Manage Organizations, Users, Filters. Use when the user wants to interact with Mocean API data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mocean_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Mocean API integration",
+        "Manage Organizations, Users, Filters",
+        "Use when the user wants to interact with Mocean API data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mocean-api@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mocean-api",
+      "url": "https://clawhub.ai/skills/mocean-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mocean-api",
+    "url": "https://clawhub.ai/skills/mocean-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mocean-api-f236fee96ec3b8cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mocean-api@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mocean-api-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:330336fc9f30cc93c40342587d56f5e141f7dacd9dfcd724ee8307eb2fb64ae3",
+      "artifactSizeBytes": 1840
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:14:51.756Z"
+}

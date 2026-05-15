@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wjx-mcp-use@0.3.2",
+  "version": "0.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wjx_mcp_use",
+  "skill": {
+    "id": 58198,
+    "skillKey": "clawhub-wjx-mcp-use",
+    "name": "wjx-mcp-use"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wjx-mcp-use",
+    "url": "https://clawhub.ai/skills/wjx-mcp-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wjx-mcp-use-7f93bc99bc716f92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide for using wjx-mcp-server MCP tools to interact with the Wenjuanxing (问卷星) platform. Use when the user mentions: 问卷, 调查, 收集, 表单, 投票, 考试, 测评, 满意度, NPS, 问..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "orzwq",
+      "userId": "s179r4v6tnneb7g20yr2njras184a0qd",
+      "displayName": "orzwq",
+      "image": "https://avatars.githubusercontent.com/u/85607760?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.3.2",
+      "createdAt": 1777356230354,
+      "changelog": "Version 0.3.2\n\n- Improved handling and user guidance for API Key errors (“API Key is required”, “Invalid API Key”, etc.): now requires stopping further tool calls and giving clear, natural-language instructions to obtain or update `WJX_API_KEY`.\n- Enhanced instructions for mapping `submitdata` field in survey submissions: clarified q_index usage, and added detailed examples for complex question types (matrix, ranking, etc).\n- Updated rules: configuration checks are only required on first use, user request, or when actual API Key errors are returned, reducing unnecessary validation.\n- Updated error handling section: now includes exact error messages and required user reminders for missing or invalid API Key situations.\n- No changes to core tools, prompts, or resources coverage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4e46cee2f15ca2e7727a6b1d7f9d0f2b352dddf79c95f34ed1309d35c799a45"
+}

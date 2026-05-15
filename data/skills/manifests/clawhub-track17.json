@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10437,
+  "uuid": "skill-clawhub-track17",
+  "skillKey": "clawhub-track17",
+  "name": "17track package tracking",
+  "summary": "Track parcels via the 17TRACK API (local SQLite DB, polling + optional webhook ingestion)",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.track17",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tristan Manchester",
+      "features": [
+        "Track parcels via the 17TRACK API (local SQLite DB, polling + optional webhook ingestion)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/track17@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108270628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "track17",
+      "url": "https://clawhub.ai/skills/track17"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "track17",
+    "url": "https://clawhub.ai/skills/track17",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/track17-e83cd79035e0c9fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/track17@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-track17-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e7ac19385dbb27f3f30e5363d85c4b1812b2b99a818528b278e00c1615f98f0",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-17T13:05:13.826Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codeflicker@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codeflicker",
+  "skill": {
+    "id": 61075,
+    "skillKey": "clawhub-codeflicker",
+    "name": "Codeflicker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codeflicker",
+    "url": "https://clawhub.ai/skills/codeflicker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codeflicker-8505c4f121067c3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CodeFlicker CLI 编程助手 - 快手员工专用的 AI 代码开发工具，支持更多模型和免费用量"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leegodamn",
+      "userId": "s17c66yxj3wxsacma8nz1c6q0n83hx37",
+      "displayName": "LeeGoDamn",
+      "image": "https://avatars.githubusercontent.com/u/243561453?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 585,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1772361779919,
+      "changelog": "修正 workspace 路径为 ~/work",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e2254c3694eb70c3226e3d783f2c13f7455a2a4942988acc4b122c0817d0e343"
+}

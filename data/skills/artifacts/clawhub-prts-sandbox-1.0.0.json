@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prts-sandbox@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prts_sandbox",
+  "skill": {
+    "id": 26221,
+    "skillKey": "clawhub-prts-sandbox",
+    "name": "Prts Sandbox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prts-sandbox",
+    "url": "https://clawhub.ai/skills/prts-sandbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prts-sandbox-9672864439f86d14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Isolated Kali Linux sandbox for running pentest tools and risky commands safely."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "c0ffeeoverdose",
+      "userId": "publishers:c0ffeeoverdose",
+      "displayName": "c0ffeeOverdose",
+      "image": "https://avatars.githubusercontent.com/u/145345598?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 361,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772889005521,
+      "changelog": "- Initial release of prts-sandbox skill.\n- Provides an isolated Kali Linux 2025.4 container to safely run pentest tools and risky commands.\n- Includes CLI script (~/.openclaw/skills/prts-sandbox/scripts/sandbox-cmd.sh) for managing the sandbox: status, start, stop, reset, and exec.\n- Details when to use the sandbox vs host, troubleshooting steps, and available pentest tools (nmap, hydra, sqlmap, etc.).\n- Adds quick reference and critical rules for safe usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6a51ed4fd12f775bf816b921dde23a077dd84269a3796804f552aa77c5c336ec"
+}

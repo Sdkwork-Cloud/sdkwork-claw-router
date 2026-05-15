@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20309,
+  "uuid": "skill-clawhub-simulated-roadtrip",
+  "skillKey": "clawhub-simulated-roadtrip",
+  "name": "Simulated Roadtrip",
+  "summary": "Generate a narrated road trip with GPS-verified stops and themed descriptions using real Google Maps data, posted in timed updates or chat.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simulated_roadtrip",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JPaulGrayson",
+      "features": [
+        "Generate a narrated road trip with GPS-verified stops and themed descriptions using real Google."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/simulated-roadtrip@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212611253?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "simulated-roadtrip",
+      "url": "https://clawhub.ai/skills/simulated-roadtrip"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simulated-roadtrip",
+    "url": "https://clawhub.ai/skills/simulated-roadtrip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simulated-roadtrip-02270c8951314223.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/simulated-roadtrip@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-simulated-roadtrip-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1535685e892c7e4977772a4a440f5a5d87044a65c8ef8436ecaf27fc2539e64e",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T22:00:27.502Z"
+}

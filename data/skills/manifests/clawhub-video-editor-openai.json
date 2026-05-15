@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40759,
+  "uuid": "skill-clawhub-video-editor-openai",
+  "skillKey": "clawhub-video-editor-openai",
+  "name": "Video Editor Openai",
+  "summary": "Get edited MP4 clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_openai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whitejohnk-26",
+      "features": [
+        "Get edited MP4 clips ready to post, without touching a single slider",
+        "Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-editor-openai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-editor-openai",
+      "url": "https://clawhub.ai/skills/video-editor-openai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-openai",
+    "url": "https://clawhub.ai/skills/video-editor-openai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-openai-439f8391cb0adb4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-editor-openai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-editor-openai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30b4d58225ff6f9d625b2e5452160a84d155ed6119ac63d04191336db5730bac",
+      "artifactSizeBytes": 2500
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T18:22:14.902Z"
+}

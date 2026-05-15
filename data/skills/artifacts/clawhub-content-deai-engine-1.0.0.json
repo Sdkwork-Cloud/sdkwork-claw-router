@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-deai-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_deai_engine",
+  "skill": {
+    "id": 72093,
+    "skillKey": "clawhub-content-deai-engine",
+    "name": "去 AI 味内容引擎"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-deai-engine",
+    "url": "https://clawhub.ai/skills/content-deai-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-deai-engine-f0217a706072268b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为小红书、X、知乎等平台生成“去 AI 味”的内容重写与新稿产出技能。用于用户要求内容更像真人表达、减少模板腔、提升口语感和观点力度的场景；也用于把已有草稿改写为平台适配版本。触发词包括“去 AI 味”“重写成更像人写的”“太像 AI 了”“口语化”“按平台改写”“小红书/X/知乎 优化”。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lanyasheng",
+      "userId": "s179bk63dv96y90hw97xaay4fx83t7yr",
+      "displayName": "_silhouette",
+      "image": "https://avatars.githubusercontent.com/u/22570800?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 652,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772852077643,
+      "changelog": "Initial release: AI 味诊断 + 四步重写 + 平台模板 + 发布前门禁",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e48f196ad03179f280efb48cda1453ef56bed12e6aa9715bb46e4ebb60eba4e9"
+}

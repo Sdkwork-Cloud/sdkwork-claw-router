@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/foxcode-openclaw@1.2.4",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.foxcode_openclaw",
+  "skill": {
+    "id": 20711,
+    "skillKey": "clawhub-foxcode-openclaw",
+    "name": "Foxcode OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "foxcode-openclaw",
+    "url": "https://clawhub.ai/skills/foxcode-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/foxcode-openclaw-fcf1df5a0793326d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure and manage Foxcode AI models in OpenClaw. Guides users through API setup, endpoint selection, primary/fallback model configuration, and status moni..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clarezoe",
+      "userId": "s178sk484g47vwcbvvfcjpftfx8461fz",
+      "displayName": "clarezoe",
+      "image": "https://avatars.githubusercontent.com/u/460084?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 541,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.4",
+      "createdAt": 1772320890904,
+      "changelog": "Add disclaimer for advanced OpenClaw settings use; add rollback instructions for recovery; clarify author non-responsibility for setup damage",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6137dba3c45d3f2652d0541ba43272f8de66966e3a96cdbb3c6bee75e222131d"
+}

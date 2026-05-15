@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65147,
+  "uuid": "skill-clawhub-ai-intelligence-report",
+  "skillKey": "clawhub-ai-intelligence-report",
+  "name": "ai-intelligence-report",
+  "summary": "AI情报助手技能包，覆盖模版检索与报告任务场景（创建、查询、章节编辑、版本查询）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_intelligence_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "spzwin",
+      "features": [
+        "AI情报助手技能包，覆盖模版检索与报告任务场景（创建、查询、章节编辑、版本查询）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-intelligence-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48741773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-intelligence-report",
+      "url": "https://clawhub.ai/skills/ai-intelligence-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-intelligence-report",
+    "url": "https://clawhub.ai/skills/ai-intelligence-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-intelligence-report-99f039e48ba53a79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-intelligence-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-intelligence-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f3479ca1c7d479f4f7896a3305aecb5e2116c8e8e5812772facf8705d8955be",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T08:40:52.910Z"
+}

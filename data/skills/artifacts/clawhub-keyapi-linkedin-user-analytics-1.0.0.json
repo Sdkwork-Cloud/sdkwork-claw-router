@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/keyapi-linkedin-user-analytics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keyapi_linkedin_user_analytics",
+  "skill": {
+    "id": 52849,
+    "skillKey": "clawhub-keyapi-linkedin-user-analytics",
+    "name": "Keyapi Linkedin User Analytics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keyapi-linkedin-user-analytics",
+    "url": "https://clawhub.ai/skills/keyapi-linkedin-user-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keyapi-linkedin-user-analytics-197edd49b3e89693.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover, profile, and deeply analyze LinkedIn users — explore professional profiles, contact information, work experience, education, skills, publications,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lycici",
+      "userId": "s17bzc9482bw65ggtax2tfmx4583h9sz",
+      "displayName": "lycici",
+      "image": "https://avatars.githubusercontent.com/u/38585775?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775124041584,
+      "changelog": "Initial release of keyapi-linkedin-user-analytics.\n\n- Enables discovery, profiling, and deep analysis of LinkedIn users and professionals.\n- Supports retrieval of comprehensive information: profiles, contact info, posts, experience, education, skills, certifications, publications, honors, recommendations, interests, and content activity.\n- Provides clear usage documentation, prerequisites, and how to call each endpoint.\n- Introduces a unified, cache-first workflow for efficient LinkedIn user analytics.\n- Built to use the KeyAPI MCP service and requires a KEYAPI_TOKEN and Node.js v18+.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a92bbc1778cd751f4fd6f07ada6957f207add81b720bb5266a4a619d57c5bdd2"
+}

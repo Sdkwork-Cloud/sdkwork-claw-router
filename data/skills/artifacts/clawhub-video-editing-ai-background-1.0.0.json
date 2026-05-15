@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-ai-background@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_ai_background",
+  "skill": {
+    "id": 41679,
+    "skillKey": "clawhub-video-editing-ai-background",
+    "name": "Video Editing Ai Background"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-ai-background",
+    "url": "https://clawhub.ai/skills/video-editing-ai-background",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-ai-background-cf19f39ee19d56e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "replace raw video footage into background-swapped videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. remote workers, content creators,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776077228831,
+      "changelog": "Initial release — provides AI-powered video background replacement in the cloud.\n\n- Upload MP4, MOV, AVI, or WebM files up to 500MB and replace backgrounds using AI, with automatic 1080p output.\n- Fast, cloud-based processing: results typically ready in 30–60 seconds.\n- Easy setup: automatic API connection with free token for new users.\n- Supports workflows like background removal, text overlays, audio tracks, and rendering exports.\n- Clear feedback, extensive error handling, and session management included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33c266ee19cbb4a79bd7cdcabe04bca83607f705a1ec522e0fb3a8d25b3b29e4"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33935,
+  "uuid": "skill-clawhub-prerenderio",
+  "skillKey": "clawhub-prerenderio",
+  "name": "Prerenderio",
+  "summary": "Prerender.io integration. Manage data, records, and automate workflows. Use when the user wants to interact with Prerender.io data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prerenderio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Prerender.io integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Prerender.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prerenderio@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prerenderio",
+      "url": "https://clawhub.ai/skills/prerenderio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prerenderio",
+    "url": "https://clawhub.ai/skills/prerenderio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prerenderio-94829900313946c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prerenderio@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-prerenderio-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:449dadf4bd0e515895474690b0fd2becaa6bcd5fc9c9687e4e19285ee4ebf243",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:27:20.868Z"
+}

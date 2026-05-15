@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10191,
+  "uuid": "skill-clawhub-skill-test",
+  "skillKey": "clawhub-skill-test",
+  "name": "Skill Test",
+  "summary": "Test skills before using or publishing. Trial, compare, evaluate in isolation without affecting your environment.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_test",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Test skills before using or publishing",
+        "Trial, compare, evaluate in isolation without affecting your environment."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-test@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-test",
+      "url": "https://clawhub.ai/skills/skill-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-test",
+    "url": "https://clawhub.ai/skills/skill-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-test-bdf3d2bd2ecff630.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-test@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-test-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:028647a8b88930abea42597cc47689e947796c489466bfdbcca6f2dc1ed09030",
+      "artifactSizeBytes": 1810
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T17:00:17.136Z"
+}

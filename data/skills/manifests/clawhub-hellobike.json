@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31847,
+  "uuid": "skill-clawhub-hellobike",
+  "skillKey": "clawhub-hellobike",
+  "name": "Hellobike",
+  "summary": "Summarizes public service details, announcements, and city-specific info from Hellobike's official pages without accessing user accounts or orders.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hellobike",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "Summarizes public service details, announcements, and city-specific info from Hellobike's offic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hellobike@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hellobike",
+      "url": "https://clawhub.ai/skills/hellobike"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hellobike",
+    "url": "https://clawhub.ai/skills/hellobike",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hellobike-d6cbd48cc00fa39e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hellobike@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hellobike-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82c696b71544973d3a7a385dbe0a66a20f237e051b906b00335e62a11636843c",
+      "artifactSizeBytes": 2324
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T17:03:05.409Z"
+}

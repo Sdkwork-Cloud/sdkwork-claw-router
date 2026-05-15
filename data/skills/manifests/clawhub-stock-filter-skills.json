@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62213,
+  "uuid": "skill-clawhub-stock-filter-skills",
+  "skillKey": "clawhub-stock-filter-skills",
+  "name": "Stock Filter Skills",
+  "summary": "股票多条件筛选、热门因子管理、Jiuyan 数据查询和抖音热点分析。提供 17 个 CLI 工具覆盖四大模块。",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_filter_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "afengzi",
+      "features": [
+        "股票多条件筛选、热门因子管理、Jiuyan 数据查询和抖音热点分析。提供 17 个 CLI 工具覆盖四大模块。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-filter-skills@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93957679?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-filter-skills",
+      "url": "https://clawhub.ai/skills/stock-filter-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-filter-skills",
+    "url": "https://clawhub.ai/skills/stock-filter-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-filter-skills-f46a1a43f1fc3bad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-filter-skills@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-filter-skills-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7044ce2db72877ad3be10c7913cd64ebb39df741b3bd84704f8a777cda7f3a4",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T03:53:06.664Z"
+}

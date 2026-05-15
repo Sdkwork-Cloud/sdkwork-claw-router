@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23111,
+  "uuid": "skill-clawhub-agentbox-twitter",
+  "skillKey": "clawhub-agentbox-twitter",
+  "name": "AgentBox Twitter",
+  "summary": "Twitter/X research via paid API: search tweets with 50+ operators, fetch tweets with threads/replies/quotes, get user profiles with tweets/followers/followin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentbox_twitter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Misha Kolesnik",
+      "features": [
+        "Twitter/X research via paid API: search tweets with 50+ operators, fetch tweets with threads/re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentbox-twitter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22403766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentbox-twitter",
+      "url": "https://clawhub.ai/skills/agentbox-twitter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentbox-twitter",
+    "url": "https://clawhub.ai/skills/agentbox-twitter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentbox-twitter-973940ee4027207d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentbox-twitter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentbox-twitter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a53802f932445b7219f6084e05c7d97b277c6325fd344a9df08e5aaab5c148c6",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T14:53:52.528Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16095,
+  "uuid": "skill-clawhub-client-retention",
+  "skillKey": "clawhub-client-retention",
+  "name": "Client Retention",
+  "summary": "Design and implement strategies to reduce client churn, increase recurring revenue, and maximize lifetime value through onboarding, value delivery, check-ins...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.client_retention",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "staybased",
+      "features": [
+        "Design and implement strategies to reduce client churn, increase recurring revenue, and maximiz."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/client-retention@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216957304?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "client-retention",
+      "url": "https://clawhub.ai/skills/client-retention"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "client-retention",
+    "url": "https://clawhub.ai/skills/client-retention",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/client-retention-ecffa6d38b4a6173.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/client-retention@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-client-retention-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b329e3904e9ea512c55f58408f0e8e99bdbf0d1f63f03d4fd883ac9765888975",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T20:23:58.974Z"
+}

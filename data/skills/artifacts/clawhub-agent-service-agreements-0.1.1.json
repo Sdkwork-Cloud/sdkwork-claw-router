@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-service-agreements@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_service_agreements",
+  "skill": {
+    "id": 33811,
+    "skillKey": "clawhub-agent-service-agreements",
+    "name": "Agent Service Agreements"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-service-agreements",
+    "url": "https://clawhub.ai/skills/agent-service-agreements",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-service-agreements-a1eafd2e87d90410.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Machine-readable service contracts for autonomous AI agent commerce. Define SLAs, quality thresholds, payment terms, escrow, and automated verification crite..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexfleetcommander",
+      "userId": "s1705d4v83fxq7nnryzyg3gged83wgd8",
+      "displayName": "alexfleetcommander",
+      "image": "https://avatars.githubusercontent.com/u/269201541?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775353795688,
+      "changelog": "SEO: fixed name format, added tags, enhanced description, added author metadata",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ed8fd137d1584f757af58c2bd145aa9f98a7dc65f2484ebde4dfb2f9b58f3dd"
+}

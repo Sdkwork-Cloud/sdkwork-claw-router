@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtip-weather@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtip_weather",
+  "skill": {
+    "id": 71653,
+    "skillKey": "clawhub-clawtip-weather",
+    "name": "clawtip-weather"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtip-weather",
+    "url": "https://clawhub.ai/skills/clawtip-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtip-weather-fd1ce22f91fc50b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一位精通天气领域的专家，能够根据用户所在位置提供准确的每日天气报告。这是一项付费服务，执行前需完成支付验证。请注意，你应该用中文和用户交互（包含你的思考过程）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawtip",
+      "userId": "s172czxfznvnj1vs0zp8gw347183xk4a",
+      "displayName": "ClawTip",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 431,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1776929992131,
+      "changelog": "clawtip-weather 1.0.9\n\n- 新增脚本文件：scripts/config.py\n- SKILL.md 微调：优化订单创建失败消息的描述，使错误提示更准确易懂。\n- 支付接口调用参数 \"order_no\" 改为驼峰风格 \"orderNo\"，并保持其他 JSON key 一致。\n- 支付阶段说明文本同步更新，细化调用流程。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30155d506cc22ab3b178b10289ad549b66d2d561871fc36d75139a8f09945c7c"
+}

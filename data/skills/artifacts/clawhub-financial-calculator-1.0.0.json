@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/financial-calculator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_calculator",
+  "skill": {
+    "id": 8656,
+    "skillKey": "clawhub-financial-calculator",
+    "name": "Financial Calculator Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-calculator",
+    "url": "https://clawhub.ai/skills/financial-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-calculator-9f7f065ff5253bd5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced financial calculator with future value tables, present value, discount calculations, markup pricing, and compound interest. Use when calculating investment growth, pricing strategies, loan values, discounts, or comparing financial."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tarigha",
+      "userId": "publishers:tarigha",
+      "displayName": "Tarigha",
+      "image": "https://avatars.githubusercontent.com/u/173033734?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7571,
+      "installsAllTime": 80,
+      "installsCurrent": 78,
+      "stars": 10,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770314147256,
+      "changelog": "Initial release: Future Value, Present Value, Discount, Markup, Compound Interest calculators with interactive charts, tables, and year+month support. Includes CLI and beautiful web UI.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b9770527b00fc5dda21c51d75f954ca9386178cf3c6f0d972a38f6359f02d758"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31185,
+  "uuid": "skill-clawhub-network-device-monitor",
+  "skillKey": "clawhub-network-device-monitor",
+  "name": "Network Device Monitor",
+  "summary": "Monitor network devices, detect unknown clients, and alert on new connections. Works with any router that serves a web UI. Tracks device state changes over t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.network_device_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HostileSpider",
+      "features": [
+        "Monitor network devices, detect unknown clients, and alert on new connections",
+        "Works with any router that serves a web UI",
+        "Tracks device state changes over t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/network-device-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47485616?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "network-device-monitor",
+      "url": "https://clawhub.ai/skills/network-device-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "network-device-monitor",
+    "url": "https://clawhub.ai/skills/network-device-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/network-device-monitor-065c429d4fac76cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/network-device-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-network-device-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c720c33364daa17d708183386f3a895414f1ab2375cf54baf0aaf9bc0ab4da8d",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T19:12:47.032Z"
+}

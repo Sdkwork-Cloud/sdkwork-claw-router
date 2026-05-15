@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-daily-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_daily_news",
+  "skill": {
+    "id": 63972,
+    "skillKey": "clawhub-openclaw-daily-news",
+    "name": "OpenClaw每日资讯汇总"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-daily-news",
+    "url": "https://clawhub.ai/skills/openclaw-daily-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-daily-news-cfbafee23a67fa4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全面收集、整理和分析OpenClaw开源AI智能体相关的每日资讯动态。支持自动搜索、分类整理、风险评估和报告生成。使用场景包括：(1) 生成OpenClaw当日资讯汇总报告；(2) 分析OpenClaw安全风险趋势；(3) 跟踪OpenClaw产业生态发展；(4) 监控OpenClaw技术社区进展；(5) 提供O..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fashionzzz",
+      "userId": "s17bq22v9jm7pbxpjvvfcmcpxs8580zt",
+      "displayName": "Fashion",
+      "image": "https://avatars.githubusercontent.com/u/42791429?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773315820404,
+      "changelog": "OpenClaw每日资讯汇总技能首发，提供结构化AI开源资讯自动收集、分类与分析。\n\n- 支持自动化搜索、智能关键词匹配和多来源数据采集。\n- 提供六维资讯分类、风险评估、优先级排序及监控提示。\n- 一键生成标准化Markdown格式资讯汇总报告，直接在对话中输出。\n- 包含脚本资源与配置模板，支持自动化报告结构生成及自定义搜索。\n- 附带使用示例、分类标准、风险评估及最佳实践文档，便于上手与企业集成。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:122ec155332ed6066a21aa3087e6253157dce20812c54e346c62afb30c2448ab"
+}

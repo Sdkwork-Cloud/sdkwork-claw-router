@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41787,
+  "uuid": "skill-clawhub-ir35-assessment",
+  "skillKey": "clawhub-ir35-assessment",
+  "name": "IR35 Status Assessment",
+  "summary": "Assess IR35 employment status for UK contractors using HMRC criteria and case law factors. Generates risk ratings, recommended contract amendments, and Statu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ir35_assessment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ExternalOS",
+      "features": [
+        "Assess IR35 employment status for UK contractors using HMRC criteria and case law factors",
+        "Generates risk ratings, recommended contract amendments, and Statu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ir35-assessment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270515205?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ir35-assessment",
+      "url": "https://clawhub.ai/skills/ir35-assessment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ir35-assessment",
+    "url": "https://clawhub.ai/skills/ir35-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ir35-assessment-b9c4527a7b46789f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ir35-assessment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ir35-assessment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eabc4e5cf2c466717095a8bdd6e29c20781bdb319b6772f6a1a3ae1e9eed799a",
+      "artifactSizeBytes": 2587
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T10:45:59.092Z"
+}

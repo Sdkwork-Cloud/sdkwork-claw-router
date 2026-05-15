@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/library-book-monitor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.library_book_monitor",
+  "skill": {
+    "id": 25273,
+    "skillKey": "clawhub-library-book-monitor",
+    "name": "Skill Openclaw Library Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "library-book-monitor",
+    "url": "https://clawhub.ai/skills/library-book-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/library-book-monitor-d1a12f67a9a2e0ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor library book availability and get notified when books become available for borrowing. Supports Shenzhen Library and extensible for other libraries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yszheda",
+      "userId": "s17c19kc0srj58g09ays13rh3x83p136",
+      "displayName": "Shuai YUAN",
+      "image": "https://avatars.githubusercontent.com/u/1416342?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772773249183,
+      "changelog": "- Added core modules: book manager, scheduler, scraper, and notification support.\n- Introduced config file for flexible library, scheduling, and notification settings.\n- Implemented main script for command-line operations: add, list, check, remove, toggle, and monitor books.\n- Skill now supports scheduled background monitoring and notification when book availability changes.\n- Dependency management and initial project structure established.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1e2ee9a709fc548cad5a4bb2ab1ef3151ea9c5be3fe975dbdbd284c72ddb3a3b"
+}

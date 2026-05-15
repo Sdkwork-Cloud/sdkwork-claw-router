@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "ai-c-plan",
+    "displayName": "Ai C Plan",
+    "summary": "AI-C plan klasöründeki MD/CSV planı okuyup dependency sırasına göre tamamen otomatik ilerler; geliştirir, test eder, raporlar.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 483,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1772287852826,
+    "updatedAt": 1778302698287
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1772287852826,
+    "changelog": "Initial release – fully automated project plan execution based on MD/CSV with dependency management and environment config policies.\n\n- Reads and executes plan files step-by-step, auto-generates required folders/files, and applies changes according to dependency order.\n- Ensures compliance with referenced architecture and technology stack by reading AI_CONSULTANT_SYSTEM_PROMPT.md before each step.\n- Handles .env configuration for all services, auto-creating .env.example files and using placeholders for secrets.\n- Runs in autopilot mode, committing after every step, and reports or blocks only when required by missing info, destructive action, or plan file absence.\n- Logs all progress to a single progress.json, updating step status automatically.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "sercanmetalore",
+    "userId": "s17ewwnek7ycm6h49tz9pe1k3d83wz1j",
+    "displayName": "Sercan Boyraz",
+    "image": "https://avatars.githubusercontent.com/u/179240415?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778302698287
+  }
+}

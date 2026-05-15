@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58581,
+  "uuid": "skill-clawhub-web-search-minimax",
+  "skillKey": "clawhub-web-search-minimax",
+  "name": "web-search-minimax",
+  "summary": "网络搜索技能，使用 Minimax Coding Plan Search API 进行网络搜索",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_search_minimax",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "深柒",
+      "features": [
+        "网络搜索技能，使用 Minimax Coding Plan Search API 进行网络搜索"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-search-minimax@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60167852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-search-minimax",
+      "url": "https://clawhub.ai/skills/web-search-minimax"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-search-minimax",
+    "url": "https://clawhub.ai/skills/web-search-minimax",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-search-minimax-fafdec67b155552c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-search-minimax@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-search-minimax-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5cea7f40142f52dfe124e740aae93778693a29e5335adf0efcb143624488c37",
+      "artifactSizeBytes": 2143
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T23:48:44.169Z"
+}

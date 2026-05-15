@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/write-skills-demo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.write_skills_demo",
+  "skill": {
+    "id": 21477,
+    "skillKey": "clawhub-write-skills-demo",
+    "name": "write-skills-demo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "write-skills-demo",
+    "url": "https://clawhub.ai/skills/write-skills-demo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/write-skills-demo-ac260d0acc92bfe7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when creating new skills, editing existing skills, or verifying skills work before deployment"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freshman94",
+      "userId": "publishers:freshman94",
+      "displayName": "freshman94",
+      "image": "https://avatars.githubusercontent.com/u/24609973?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 498,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772433193276,
+      "changelog": "- Initial release of the writing-skills skill.\n- Adapts Test-Driven Development (TDD) principles specifically to the creation of process documentation and skill authoring.\n- Defines clear criteria for when to create a skill, skill types, and directory structure guidelines.\n- Provides a standardized SKILL.md template and strict frontmatter requirements for optimal Claude skill discovery.\n- Emphasizes the importance of trigger-based descriptions and search optimization to ensure future discoverability and correct agent behavior.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7fe28e44e9671795bc79b4dd7e09fc8056a43fe7bd636096dc2ef0ea23d3668c"
+}

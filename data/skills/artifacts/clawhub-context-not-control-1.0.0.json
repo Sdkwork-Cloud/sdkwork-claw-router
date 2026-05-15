@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-not-control@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_not_control",
+  "skill": {
+    "id": 20708,
+    "skillKey": "clawhub-context-not-control",
+    "name": "context-not-control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-not-control",
+    "url": "https://clawhub.ai/skills/context-not-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-not-control-9688fd88ce8b300a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enable \"Context, not Control\" workflow - clarify requirements through multi-turn dialogue, reduce rework, and execute with appropriate permission levels. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "843645440",
+      "userId": "publishers:843645440",
+      "displayName": "843645440",
+      "image": "https://avatars.githubusercontent.com/u/87112450?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 441,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772697326528,
+      "changelog": "Context-not-control 1.0.0 – initial release:\n\n- Introduces the \"Context, not Control\" workflow for clearer AI collaboration, emphasizing autonomy and reduced micromanagement.\n- Supports three permission levels (Master, Collaborative, Assistant) to match user trust and risk tolerance.\n- Provides structured requirement clarification via multi-turn dialogue, with all context saved for future use.\n- Includes automatic permission checks and context management, configurable via YAML.\n- Offers quick-start guides, troubleshooting, customization options, and script references for easy adoption.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:28c446b6a36c933a2ee441490b556d43e7fce14a189d9b9fcecefeb921a140a1"
+}

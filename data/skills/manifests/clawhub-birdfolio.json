@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17221,
+  "uuid": "skill-clawhub-birdfolio",
+  "skillKey": "clawhub-birdfolio",
+  "name": "Birdfolio",
+  "summary": "Bird identification, life list tracking, and trading card generation. Use this skill when the user: sends a bird photo to identify, says \"set up my Birdfolio...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.birdfolio",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tonbi",
+      "features": [
+        "Bird identification, life list tracking, and trading card generation",
+        "Use this skill when the user: sends a bird photo to identify, says \"set up my Birdfolio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/birdfolio@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/193647965?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "birdfolio",
+      "url": "https://clawhub.ai/skills/birdfolio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "birdfolio",
+    "url": "https://clawhub.ai/skills/birdfolio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/birdfolio-e6b2bbb38cdb859a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/birdfolio@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-birdfolio-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f33802b794cff287b09869ceee32e4268cd1c8dfaf491de36ae4e41d25fc235",
+      "artifactSizeBytes": 1922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T01:02:42.922Z"
+}

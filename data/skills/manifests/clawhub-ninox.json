@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32310,
+  "uuid": "skill-clawhub-ninox",
+  "skillKey": "clawhub-ninox",
+  "name": "Ninox",
+  "summary": "Ninox integration. Manage Organizations, Persons, Deals, Projects, Activities, Notes and more. Use when the user wants to interact with Ninox data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ninox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Ninox integration",
+        "Manage Organizations, Persons, Deals, Projects, Activities, Notes and more",
+        "Use when the user wants to interact with Ninox data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ninox@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ninox",
+      "url": "https://clawhub.ai/skills/ninox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ninox",
+    "url": "https://clawhub.ai/skills/ninox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ninox-9a050b2156294fd2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ninox@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ninox-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28a8318b70b43329ff9e001927f37a2691efa02f82c8059b384766d2c427eb59",
+      "artifactSizeBytes": 1841
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:47:04.376Z"
+}

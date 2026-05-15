@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bug-fixing@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bug_fixing",
+  "skill": {
+    "id": 57257,
+    "skillKey": "clawhub-bug-fixing",
+    "name": "bug-fixing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bug-fixing",
+    "url": "https://clawhub.ai/skills/bug-fixing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bug-fixing-e9d798ca5a1cccc7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Zero-regression bug fix workflow: triage → reproduce → root cause → impact analysis → fix → verify → knowledge deposit → self-reflect. Use when: - Feature br..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tinkcarlos",
+      "userId": "s17fspkf4kq6ms2fnqnwcdaxd1844x0z",
+      "displayName": "TinkCarlos",
+      "image": "https://avatars.githubusercontent.com/u/151288587?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 612,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772779607135,
+      "changelog": "Version 1.0.3 Changelog\n\nNo file changes detected—maintenance release only.\n\n- No modifications to code or documentation; files unchanged.  \n- Version bump for administrative or metadata alignment.  \n- Existing zero-regression bug fix workflow and rules remain as before.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d2f33a3814c97d213f3acb081e810f71fcad736624543cc862bda513ad0334bd"
+}

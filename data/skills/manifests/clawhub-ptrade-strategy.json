@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64416,
+  "uuid": "skill-clawhub-ptrade-strategy",
+  "skillKey": "clawhub-ptrade-strategy",
+  "name": "PTRADE量化策略生成器",
+  "summary": "国金 PTRADE 量化平台策略生成技能。根据用户需求， 生成可在 PTRADE 平台运行 ?Python 量化交易策略代码 ? 触发关键词：PTRADE、ptrade、量化策略、量化交易、生成策略、写策略代码 ?",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ptrade_strategy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weistiger",
+      "features": [
+        "国金 PTRADE 量化平台策略生成技能。根据用户需求， 生成可在 PTRADE 平台运行 ?Python 量化交易策略代码 ? 触发关键词：PTRADE、ptrade、量化策略、量化交易、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ptrade-strategy@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13916939?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ptrade-strategy",
+      "url": "https://clawhub.ai/skills/ptrade-strategy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ptrade-strategy",
+    "url": "https://clawhub.ai/skills/ptrade-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ptrade-strategy-52ce9b6c8cafcc85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ptrade-strategy@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ptrade-strategy-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f252b4e9a958429ad6c802e71a24f033608ede811b2195f8c055ae5f7bc65e0",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:14:29.630Z"
+}

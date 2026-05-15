@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dingtalk-api@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_api",
+  "skill": {
+    "id": 60066,
+    "skillKey": "clawhub-dingtalk-api",
+    "name": "DingTalk API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-api",
+    "url": "https://clawhub.ai/skills/dingtalk-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-api-91aa66e7aebdb3f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用钉钉开放平台API，支持用户搜索/详情/查询、部门管理（搜索/详情/子部门/用户列表/父部门）、机器人单聊消息发送、群聊消息发送、群内机器人列表查询、离职记录查询。Use when needing to search DingTalk users or departments, get user/depart..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ogenes",
+      "userId": "s17bx79g2h0kzp2kmazmdwh7fx83g9x9",
+      "displayName": "ogenes",
+      "image": "https://avatars.githubusercontent.com/u/76425503?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3814,
+      "installsAllTime": 35,
+      "installsCurrent": 32,
+      "stars": 8,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1771838004442,
+      "changelog": "新增 OA 审批 API 功能，支持查询审批记录、发起/撤销审批、执行任务、转交任务、添加评论等操作",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0076ee17ec8385124fcf3c8bc689209b8e5cf44bb495bff59a13af42911d095c"
+}

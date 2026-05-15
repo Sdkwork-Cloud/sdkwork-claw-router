@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33394,
+  "uuid": "skill-clawhub-redox",
+  "skillKey": "clawhub-redox",
+  "name": "Redox",
+  "summary": "Redox integration. Manage data, records, and automate workflows. Use when the user wants to interact with Redox data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Redox integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Redox data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/redox@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "redox",
+      "url": "https://clawhub.ai/skills/redox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redox",
+    "url": "https://clawhub.ai/skills/redox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redox-09aa1708724f0407.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/redox@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-redox-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e56a8f2b72993a6a75f1009c1c1a5c13740b1e306fef0158adb044328e43aedc",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:32:40.955Z"
+}

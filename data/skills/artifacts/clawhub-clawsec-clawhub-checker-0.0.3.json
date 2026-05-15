@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawsec-clawhub-checker@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawsec_clawhub_checker",
+  "skill": {
+    "id": 20707,
+    "skillKey": "clawhub-clawsec-clawhub-checker",
+    "name": "clawsec-clawhub-checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawsec-clawhub-checker",
+    "url": "https://clawhub.ai/skills/clawsec-clawhub-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawsec-clawhub-checker-58c28578a798578f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ClawHub reputation checker for clawsec-suite. Adds a standalone reputation gate before guarded skill installation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davida-ps",
+      "userId": "s17ewxqmthh68xc4bv5vc6f30183jsf1",
+      "displayName": "davida-ps",
+      "image": "https://avatars.githubusercontent.com/u/232346510?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 472,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1776384211414,
+      "changelog": "Release 0.0.3 via CI",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe846cd48285cb29829ab0e42d293266e69eebafb340aa87ec890f792fdf5625"
+}

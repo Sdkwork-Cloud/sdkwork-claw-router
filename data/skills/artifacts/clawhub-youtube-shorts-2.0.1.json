@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-shorts@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_shorts",
+  "skill": {
+    "id": 59829,
+    "skillKey": "clawhub-youtube-shorts",
+    "name": "YouTube Shorts 자동 생성"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-shorts",
+    "url": "https://clawhub.ai/skills/youtube-shorts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-shorts-29db21c8cf289839.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI/DevOps 유튜브 숏츠 자동 생성. 트렌드 수집 → 스크립트 → 이미지 → Veo 영상 → TTS 나레이션 → Remotion 합성 → YouTube 업로드"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kangjjang",
+      "userId": "publishers:kangjjang",
+      "displayName": "kangjjang",
+      "image": "https://avatars.githubusercontent.com/u/16265769?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 999,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1771482716889,
+      "changelog": "Add GitHub clone instructions for full source code",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d35db39f09d79f789ec3dd84ee5784c441c568051f7e4af96a20fc2cf81cba76"
+}

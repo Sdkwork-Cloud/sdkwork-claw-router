@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/megaethss-developer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.megaethss_developer",
+  "skill": {
+    "id": 45877,
+    "skillKey": "clawhub-megaethss-developer",
+    "name": "megaethss-developer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "megaethss-developer",
+    "url": "https://clawhub.ai/skills/megaethss-developer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/megaethss-developer-a2e4e5ab28abd1c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "End-to-end MegaETH development playbook (Feb 2026). Covers Foundry project setup with MegaETH-specific config, wallet operations, token swaps (Kyber Network)..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "szkkhh",
+      "userId": "s1791v17xh2r26g7my85setj1s843jw4",
+      "displayName": "Szkkhh",
+      "image": "https://avatars.githubusercontent.com/u/112854893?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775129739113,
+      "changelog": "- Initial release of the MegaETH end-to-end developer skill.\n- Covers project setup with Foundry, contract deployment, wallet management, and transaction workflows tailored to MegaETH.\n- Includes advanced patterns: instant receipt transactions (EIP-7966), JSON-RPC batching, mega-evme debugging, and gas/storage optimization.\n- Guidance for integrating Privy for headless signing, Meridian x402 payments, MetaMask Smart Accounts, and ERC-7710/7715 delegation.\n- Support for dApp frontend best practices, MegaNames naming service, on-chain website hosting (Warren Protocol), and bridging from Ethereum.\n- Provides direct references to detailed how-tos, configuration, and optimization docs for each development area.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30fb337a0e0d0ea127ac0afe04f332fd276c278f9949daf9dee5d93a1a96ecca"
+}

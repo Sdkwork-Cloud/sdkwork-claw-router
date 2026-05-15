@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37979,
+  "uuid": "skill-clawhub-subtitle-translator-mcbai",
+  "skillKey": "clawhub-subtitle-translator-mcbai",
+  "name": "Subtitle Translator - MCB AI",
+  "summary": "Translate SRT subtitle files into any target language using AI. Processes subtitles in batches to handle large files efficiently, preserves exact SRT format...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_translator_mcbai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MCB AI",
+      "features": [
+        "Translate SRT subtitle files into any target language using AI",
+        "Processes subtitles in batches to handle large files efficiently, preserves exact SRT format..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subtitle-translator-mcbai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132585065?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subtitle-translator-mcbai",
+      "url": "https://clawhub.ai/skills/subtitle-translator-mcbai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-translator-mcbai",
+    "url": "https://clawhub.ai/skills/subtitle-translator-mcbai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-translator-mcbai-f05d93015f5db2d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subtitle-translator-mcbai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-subtitle-translator-mcbai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99a1cd6f1935d212a0a846762be576a1ff2e4d7acd124338fe547a3b7ffb31f3",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T08:26:25.016Z"
+}

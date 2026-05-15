@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawddocs-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawddocs_bak",
+  "skill": {
+    "id": 43223,
+    "skillKey": "clawhub-clawddocs-bak",
+    "name": "Clawddocs.Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawddocs-bak",
+    "url": "https://clawhub.ai/skills/clawddocs-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawddocs-bak-9df01f1cef5aeb76.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Clawdbot documentation expert with decision tree navigation, search scripts, doc fetching, version tracking, and config snippets for all Clawdbot features"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kendrick-lu",
+      "userId": "s175dte1t6z9vcv24dvkkcfe1h83gqaz",
+      "displayName": "Kendrick Lu",
+      "image": "https://avatars.githubusercontent.com/u/30254092?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776075587657,
+      "changelog": "Initial release of Clawdbot documentation expert skill.\n\n- Provides decision tree navigation for common Clawdbot support scenarios.\n- Includes quick access to documentation search, fetching, and version tracking scripts.\n- Offers config snippets for all key Clawdbot features and providers.\n- Details workflows, categories, and best practices for answering user questions.\n- Guides users to the correct documentation with direct links and actionable steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc75add9e9388ba7d259154e34b0df75fe712a687a619aa4614350d333ebf9e4"
+}

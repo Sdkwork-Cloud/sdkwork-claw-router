@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/game-scout@0.3.1",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.game_scout",
+  "skill": {
+    "id": 34480,
+    "skillKey": "clawhub-game-scout",
+    "name": "Game Scout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "game-scout",
+    "url": "https://clawhub.ai/skills/game-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/game-scout-43ac8db33a2ab7a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Video game strategy specialist. Amalgamates tactics, builds, guides, and meta knowledge from Reddit, YouTube creators, wikis, Twitter/X, and game databases t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rclark4958",
+      "userId": "s1715xy5hfsh80m6s5d5wf49s983f59d",
+      "displayName": "Rick Clark",
+      "image": "https://avatars.githubusercontent.com/u/41970768?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.3.1",
+      "createdAt": 1774306086276,
+      "changelog": "Streamlined README",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bbe21203feb5bb96ce1417bda7a2e55020ce8af5f115af41f3e175fe476fa8a8"
+}

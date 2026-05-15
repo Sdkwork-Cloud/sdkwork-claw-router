@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22265,
+  "uuid": "skill-clawhub-messages",
+  "skillKey": "clawhub-messages",
+  "name": "Messages",
+  "summary": "A comprehensive AI agent skill for managing the full spectrum of incoming messages across email, chat, and other communication channels. Triages by urgency a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.messages",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EthAgent",
+      "features": [
+        "A comprehensive AI agent skill for managing the full spectrum of incoming messages across email.",
+        "Triages by urgency a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/messages@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216467966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "messages",
+      "url": "https://clawhub.ai/skills/messages"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "messages",
+    "url": "https://clawhub.ai/skills/messages",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/messages-f5cccfb737512bed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/messages@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-messages-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b60aeb729b0ed80c2845b47bf2799dd188796d36957f31bcbbae80f5aa7c995",
+      "artifactSizeBytes": 1828
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T12:20:35.917Z"
+}

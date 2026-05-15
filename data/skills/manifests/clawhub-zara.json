@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28736,
+  "uuid": "skill-clawhub-zara",
+  "skillKey": "clawhub-zara",
+  "name": "Zara",
+  "summary": "Information assistant for Zara. Search products, news, financials, and official resources for Zara.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zara",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for Zara",
+        "Search products, news, financials, and official resources for Zara."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zara@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zara",
+      "url": "https://clawhub.ai/skills/zara"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zara",
+    "url": "https://clawhub.ai/skills/zara",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zara-1a637788c9e469bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zara@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zara-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffdfd4c10ca989d09c7074ede26992129417ca2c69a4735653c3af189b4c2015",
+      "artifactSizeBytes": 2120
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:29:24.718Z"
+}

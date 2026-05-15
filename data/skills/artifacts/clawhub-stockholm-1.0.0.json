@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stockholm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stockholm",
+  "skill": {
+    "id": 69983,
+    "skillKey": "clawhub-stockholm",
+    "name": "斯德哥尔摩 · Stockholm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stockholm",
+    "url": "https://clawhub.ai/skills/stockholm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stockholm-54d9e023f0100012.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "瑞典首都斯德哥尔摩是北欧经济科技中心，拥有约240万人口和超过20家独角兽公司总部，注重创新与可持续发展。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776848928217,
+      "changelog": "瑞典首都及最大城市，北欧经济科技中心，大都会区人口约240万，全球人均独角兽数量最高的城市之一，Spotify、Klarna等总部所在地",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92fdfb57c9dab153374464ec7b5c050d05bd27271c0fe42b339cc74abd8c05d7"
+}

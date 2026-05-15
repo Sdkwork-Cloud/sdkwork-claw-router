@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aidraw-batch-img2img@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aidraw_batch_img2img",
+  "skill": {
+    "id": 67812,
+    "skillKey": "clawhub-aidraw-batch-img2img",
+    "name": "AIDraw批量图生图"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aidraw-batch-img2img",
+    "url": "https://clawhub.ai/skills/aidraw-batch-img2img",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aidraw-batch-img2img-a7a981589f1f5f71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AIDraw批量图生图自动化工具。用于腾讯混元AI(timiai.woa.com)的批量参考生图任务。当用户需要批量上传参考图片、自动生成AI图片并下载时使用此skill。支持自定义关键词、每张图片多次生成、自动命名保存。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chottomattekimkim-droid",
+      "userId": "s178ttr1qhnmh7zcjjservbdj184gffy",
+      "displayName": "chottomattekimkim-droid",
+      "image": "https://avatars.githubusercontent.com/u/251566984?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775705978163,
+      "changelog": "AIDraw-batch-img2img 1.0.0 — Initial Release\n\n- Automates batch img2img generation with Tencent Hunyuan AI (timiai.woa.com) using reference images.\n- Supports batch upload, custom keywords, generating multiple variants per image, and automatic file naming/saving.\n- Automatically downloads and organizes generated images to a specified folder.\n- Includes configurable parameters for source/destination paths, keywords, and number of generations.\n- Provides error handling with auto-retry, timeout detection, and file validation.\n- Command-line script; requires Python 3.8+, playwright, and requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:259dc6dbbbf58b84af60506454c5d2ec4ca7b334b530aba0c4935843ce1cc6d3"
+}

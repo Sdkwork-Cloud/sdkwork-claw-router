@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/desk-ergonomic-checklist@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.desk_ergonomic_checklist",
+  "skill": {
+    "id": 50159,
+    "skillKey": "clawhub-desk-ergonomic-checklist",
+    "name": "Desk Ergonomic Checklist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "desk-ergonomic-checklist",
+    "url": "https://clawhub.ai/skills/desk-ergonomic-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/desk-ergonomic-checklist-1b518a6ca76e6b9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assesses desk setup for ergonomic risks: chair height, monitor position, keyboard/mouse placement, lighting, movement breaks, upgrade prioritization."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 23,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778374393263,
+      "changelog": "Initial release: Provides a structured checklist to assess and improve desk ergonomics and prioritize upgrades.\n\n- Covers six key areas: chair/seat, monitor, keyboard/mouse, lighting, movement, and workspace environment.\n- Includes actionable quick fixes and upgrade prioritization for each checkpoint.\n- Emphasizes regular movement and breaks as essential for health.\n- Contains a scoring guide to self-assess ergonomic risk level.\n- Clearly states when to seek professional help for pain or symptoms.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e9cb42840d58fae340384bd375e5be4f33e346820d1f5abf4d924d0380c5fad"
+}

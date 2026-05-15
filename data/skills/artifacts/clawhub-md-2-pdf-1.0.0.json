@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/md-2-pdf@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_2_pdf",
+  "skill": {
+    "id": 11460,
+    "skillKey": "clawhub-md-2-pdf",
+    "name": "md-2-pdf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-2-pdf",
+    "url": "https://clawhub.ai/skills/md-2-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-2-pdf-48889564ba312e92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert markdown files to clean, formatted PDFs using reportlab"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "araa47",
+      "userId": "publishers:araa47",
+      "displayName": "araa47",
+      "image": "https://avatars.githubusercontent.com/u/22760261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770042723076,
+      "changelog": "Initial release of md-to-pdf:\n\n- Convert markdown files to clean, professional PDFs using reportlab.\n- Supports headers, bold/italic text, code (inline and blocks), tables, lists (bullet, numbered, task), hyperlinks, and horizontal rules.\n- Skips YAML frontmatter automatically.\n- Handles special characters and emojis.\n- Adds page numbers and uses professional styling.\n- Command-line options for output file naming and verbose mode.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e05f00115a332a1d264d4cf72f0a428390b138241afe4f09914c29975aff1d6d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ashan-skill-creator@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ashan_skill_creator",
+  "skill": {
+    "id": 61054,
+    "skillKey": "clawhub-ashan-skill-creator",
+    "name": "Skill Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ashan-skill-creator",
+    "url": "https://clawhub.ai/skills/ashan-skill-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ashan-skill-creator-1a6ac8950d4e1dd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "创建、编辑、改进或审核 OpenClaw AgentSkill。触发场景：用户要求\"创建一个 skill\"、\"写一个技能\"、\"帮我新建技能\"、\"改进这个 skill\"、\"审核 skill\"、\"整理 skill\"、\"完善技能说明\"。同时用于：skill 目录结构调整、文件迁移（移动到 references/ 或 s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ashanzzz",
+      "userId": "s175ehx49gd7de4ab3sm8bakrs83nnan",
+      "displayName": "ashanzzz",
+      "image": "https://avatars.githubusercontent.com/u/19986978?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775488441693,
+      "changelog": "Allow homepage/slug/changelog/read_when/name with spaces; validate all 33 skills; add Install to all",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d87645af2cef26b28424bb9f2846559629056588dc3ff423ebe9e39d204e05a"
+}

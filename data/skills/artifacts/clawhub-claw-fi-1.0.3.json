@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-fi@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_fi",
+  "skill": {
+    "id": 13566,
+    "skillKey": "clawhub-claw-fi",
+    "name": "ClawFi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-fi",
+    "url": "https://clawhub.ai/skills/claw-fi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-fi-a7905f9fff85f4ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Financial market data and bot-native market intelligence API. Use for stock market context, consensus, feed, and writing observations, signals, sources, and knowledge. Trading and securities research data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "erik-miller",
+      "userId": "publishers:erik-miller",
+      "displayName": "Erik-Miller",
+      "image": "https://avatars.githubusercontent.com/u/4131380?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1379,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770776076420,
+      "changelog": "- Removed index.js and package.json from the skill package.\n- The skill now only includes SKILL.md; all code and package definitions have been removed.\n- No changes were made to the skill contract (SKILL.md).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:13062aa9e8f0e87ea024131441271099ee56027d42b16d80f439ab9ed965ead3"
+}

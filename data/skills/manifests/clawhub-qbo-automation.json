@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24092,
+  "uuid": "skill-clawhub-qbo-automation",
+  "skillKey": "clawhub-qbo-automation",
+  "name": "QBO Automation",
+  "summary": "QuickBooks Online automation: chart of accounts setup, bank rule configuration, recurring transaction templates, reconciliation workflows, and journal entry...",
+  "version": "98.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qbo_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "QuickBooks Online automation: chart of accounts setup, bank rule configuration, recurring trans."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qbo-automation@98.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qbo-automation",
+      "url": "https://clawhub.ai/skills/qbo-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qbo-automation",
+    "url": "https://clawhub.ai/skills/qbo-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qbo-automation-fa928f5b73ad7e44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qbo-automation@98.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-qbo-automation-98.0.1.json",
+      "version": "98.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4af7ccee10f490b86c9d5cb8c4cf99b09bad3d61015185caf7855c26a997bafa",
+      "artifactSizeBytes": 1915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T05:22:50.048Z"
+}

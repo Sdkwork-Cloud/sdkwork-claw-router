@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15470,
+  "uuid": "skill-clawhub-context-aware-delegation",
+  "skillKey": "clawhub-context-aware-delegation",
+  "name": "Context-Aware Delegation (SmartBeat)",
+  "summary": "Give isolated sessions (cron jobs, sub-agents, event handlers) full conversation context from your main session using sessions_history. Run cheap background...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_aware_delegation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RGBA-Research",
+      "features": [
+        "Give isolated sessions (cron jobs, sub-agents, event handlers) full conversation context from y.",
+        "Run cheap background..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-aware-delegation@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124471301?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-aware-delegation",
+      "url": "https://clawhub.ai/skills/context-aware-delegation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-aware-delegation",
+    "url": "https://clawhub.ai/skills/context-aware-delegation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-aware-delegation-897d1f9bf0905142.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-aware-delegation@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-aware-delegation-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6392aee14db90fce246a96da1dd43d74000ad563337fa598a0443c02da50a201",
+      "artifactSizeBytes": 2085
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T17:17:09.172Z"
+}

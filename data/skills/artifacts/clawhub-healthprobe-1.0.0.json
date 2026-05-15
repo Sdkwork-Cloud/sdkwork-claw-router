@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/healthprobe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.healthprobe",
+  "skill": {
+    "id": 43387,
+    "skillKey": "clawhub-healthprobe",
+    "name": "Healthprobe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "healthprobe",
+    "url": "https://clawhub.ai/skills/healthprobe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/healthprobe-3062fabb9c994673.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Probe any URL and check if it's up. Returns the HTTP status code, response latency in milliseconds, and a healthy/not-healthy verdict. Configurable timeout...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mirni",
+      "userId": "s1711srsc0t5e7tx4tkwpmygw584bfmq",
+      "displayName": "mirni",
+      "image": "https://avatars.githubusercontent.com/u/13551232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776067633518,
+      "changelog": "- Improved and clarified the skill description for easier understanding.\n- Enhanced usage instructions with simplified curl examples and output details.\n- Explicitly documented the supported timeout range (100ms–30,000ms).\n- Added an emoji and reorganized metadata for better at-a-glance identification.\n- Streamlined documentation structure for quicker onboarding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2939ea30e77323e7c19d4383ba83681f2eba3b030118b6919028a4544897b07e"
+}

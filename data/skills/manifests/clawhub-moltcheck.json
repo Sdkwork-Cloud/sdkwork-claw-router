@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10703,
+  "uuid": "skill-clawhub-moltcheck",
+  "skillKey": "clawhub-moltcheck",
+  "name": "Moltcheck Skill",
+  "summary": "Security scanner for Moltbot skills. Scan GitHub repositories for vulnerabilities before installation.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltcheck",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "moltcheck",
+      "features": [
+        "Security scanner for Moltbot skills",
+        "Scan GitHub repositories for vulnerabilities before installation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltcheck@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258410270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltcheck",
+      "url": "https://clawhub.ai/skills/moltcheck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltcheck",
+    "url": "https://clawhub.ai/skills/moltcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltcheck-f24fedc8316d3b6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltcheck@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltcheck-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce6e0e0d7fa02365f8ee197b8310bdbd4db5fc6375cd21bab2d02d389564aee0",
+      "artifactSizeBytes": 1906
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T19:07:37.225Z"
+}

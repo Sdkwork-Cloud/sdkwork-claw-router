@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73117,
+  "uuid": "skill-clawhub-mediainsight-ad-traffic-universal",
+  "skillKey": "clawhub-mediainsight-ad-traffic-universal",
+  "name": "媒体广告流量市场分析",
+  "summary": "查询广告投放流量分布与趋势的数据分析技能。支持按行业、地域、媒体（OTT/移动端）、目标受众等多维度分析广告曝光数据，适用于媒体策略评估、竞品投放监测、行业广告趋势研究等场景。",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mediainsight_ad_traffic_universal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nonorongrong-design",
+      "features": [
+        "查询广告投放流量分布与趋势的数据分析技能。支持按行业、地域、媒体（OTT/移动端）、目标受众等多维度分析广告曝光数据，适用于媒体策略评估、竞品投放监测、行业广告趋势研究等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mediainsight-ad-traffic-universal@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251123843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mediainsight-ad-traffic-universal",
+      "url": "https://clawhub.ai/skills/mediainsight-ad-traffic-universal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mediainsight-ad-traffic-universal",
+    "url": "https://clawhub.ai/skills/mediainsight-ad-traffic-universal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mediainsight-ad-traffic-universal-5fc64bfc1b90eacb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mediainsight-ad-traffic-universal@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mediainsight-ad-traffic-universal-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4beeaf08b4eaec670c34de9e13616bff0f46b5893dd28b9d1d8f99198295144f",
+      "artifactSizeBytes": 2239
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T04:35:28.465Z"
+}

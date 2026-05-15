@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51156,
+  "uuid": "skill-clawhub-claudecode-websearch",
+  "skillKey": "clawhub-claudecode-websearch",
+  "name": "Claude Code WebSearch",
+  "summary": "Free web search using Claude Code CLI or Codex CLI's built-in WebSearch tool — no Tavily, Brave, or Exa API key required. Activate when the user says \"websea...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claudecode_websearch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jinghan23",
+      "features": [
+        "Free web search using Claude Code CLI or Codex CLI's built-in WebSearch tool — no Tavily, Brave.",
+        "Activate when the user says \"websea..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claudecode-websearch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60429420?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claudecode-websearch",
+      "url": "https://clawhub.ai/skills/claudecode-websearch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claudecode-websearch",
+    "url": "https://clawhub.ai/skills/claudecode-websearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claudecode-websearch-19200867145ed202.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claudecode-websearch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claudecode-websearch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11b98c2b0b152032c59d9703eccbc954f1f729100679a21e850834bb5ee14871",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T11:42:41.034Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecommerce-review-analyzer@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_review_analyzer",
+  "skill": {
+    "id": 69043,
+    "skillKey": "clawhub-ecommerce-review-analyzer",
+    "name": "Ecommerce Review Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-review-analyzer",
+    "url": "https://clawhub.ai/skills/ecommerce-review-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-review-analyzer-824a8ca3e6e73dc9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "淘宝京东拼多多评论分析工具。自动抓取商品评论，分析好评差评，生成专业分析报告。支持多店铺多商品对比，差评详情分析，改进建议。电商运营必备工具。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobewin",
+      "userId": "s174rz3f0862tcfw7pzfh5w8kn83hv2z",
+      "displayName": "ToBeWin",
+      "image": "https://avatars.githubusercontent.com/u/145168989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1774836190940,
+      "changelog": "优化描述：面向中国电商运营，纯中文描述，突出淘宝/京东/拼多多支持",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:751a0196623193dcab979bad9bd7a968a57c28f3843c76ed51aef25932055b7f"
+}

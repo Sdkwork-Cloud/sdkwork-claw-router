@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24034,
+  "uuid": "skill-clawhub-assignment-check",
+  "skillKey": "clawhub-assignment-check",
+  "name": "Assignment Check",
+  "summary": "Check use's assignment folder and extracts and read uses assignment question files and tell user the deadline and how long approximately to finish them.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.assignment_check",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "B1llySh1",
+      "features": [
+        "Check use's assignment folder and extracts and read uses assignment question files and tell use."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/assignment-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104889099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "assignment-check",
+      "url": "https://clawhub.ai/skills/assignment-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "assignment-check",
+    "url": "https://clawhub.ai/skills/assignment-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/assignment-check-4698bf2d2b84c9a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/assignment-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-assignment-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96766e8f5968f4fa849ecabf3260cd1fa9d935f4f539051e16c9190c7c807b09",
+      "artifactSizeBytes": 2188
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T17:38:31.362Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/excel-parser-skill@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excel_parser_skill",
+  "skill": {
+    "id": 64691,
+    "skillKey": "clawhub-excel-parser-skill",
+    "name": "excel-parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excel-parser-skill",
+    "url": "https://clawhub.ai/skills/excel-parser-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excel-parser-skill-0be0e0ed57870f9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持多种Excel格式的内容提取技能，使用calamine库处理.xls、.xlsx、.xlsm等格式。当用户需要解析Excel文件、提取表格数据、将Excel转换为文本格式、分析Excel内容或批量处理Excel文件时，务必使用此技能。适用于数据提取、报表分析、内容审核等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yejinlei",
+      "userId": "s1764y37qa3bnbheme5ejcvb2x83h026",
+      "displayName": "yejinlei",
+      "image": "https://avatars.githubusercontent.com/u/1418455?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1191,
+      "installsAllTime": 11,
+      "installsCurrent": 10,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773109400919,
+      "changelog": "excel-parser-skill v2.0.0\n\n- 新增对多种Excel格式的提取与解析支持，采用calamine库处理.xls、.xlsx、.xlsm等文件。\n- 提供类ExcelParser与便捷处理函数，支持结构化数据和文本格式输出。\n- 支持通过环境变量配置最大行数和空行处理，提升灵活性。\n- 明确给出返回结构示例，便于二次开发和集成。\n- 适用场景拓展至数据提取、报表分析、内容审核等多领域。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6d5e2f9d465e16b330352c171c2a219757b68560ef369a5dd2327056528fb0f"
+}

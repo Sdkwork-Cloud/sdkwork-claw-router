@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58942,
+  "uuid": "skill-clawhub-hermes-deployer",
+  "skillKey": "clawhub-hermes-deployer",
+  "name": "Hermes Deployer",
+  "summary": "在 Linux 服务器上安装、配置、部署和运维 Hermes Agent（Nous Research 出品的自我改进 AI Agent）。触发词：hermes、hermes agent、部署 hermes、安装 hermes、hermes gateway、hermes 运维、hermes 排障、hermes 配置...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_deployer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dengjiawei1226",
+      "features": [
+        "在 Linux 服务器上安装、配置、部署和运维 Hermes Agent（Nous Research 出品的自我改进 AI Agent）。触发词：hermes、hermes agent、部署."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hermes-deployer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61135759?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hermes-deployer",
+      "url": "https://clawhub.ai/skills/hermes-deployer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-deployer",
+    "url": "https://clawhub.ai/skills/hermes-deployer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-deployer-2d043ae3c4a34a8c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hermes-deployer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hermes-deployer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f76a64399f790b163d83bb53f8ec400ab2e988ceb8392da0370ffa27cb2822a2",
+      "artifactSizeBytes": 2124
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T06:34:20.136Z"
+}

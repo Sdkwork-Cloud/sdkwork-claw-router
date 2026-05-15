@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24421,
+  "uuid": "skill-clawhub-dream-talking-image",
+  "skillKey": "clawhub-dream-talking-image",
+  "name": "Dream Talking Image",
+  "summary": "Generate talking videos from images using Talking Image API. Create talking videos from audio and images, supporting non-human faces like pets or animated ch...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dream_talking_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hy",
+      "features": [
+        "Generate talking videos from images using Talking Image API",
+        "Create talking videos from audio and images, supporting non-human faces like pets or animated c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dream-talking-image@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65535435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dream-talking-image",
+      "url": "https://clawhub.ai/skills/dream-talking-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dream-talking-image",
+    "url": "https://clawhub.ai/skills/dream-talking-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dream-talking-image-0ccfc165bc72af26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dream-talking-image@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dream-talking-image-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a6db60d8d9a983e2effef96667f5200028e8e85a6a271a93f6dbf2e13ca947c",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T13:33:00.233Z"
+}

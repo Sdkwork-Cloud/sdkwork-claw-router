@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/html-to-one-pptx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.html_to_one_pptx",
+  "skill": {
+    "id": 55672,
+    "skillKey": "clawhub-html-to-one-pptx",
+    "name": "About `html-to-one-pptx` is a Claude Code Skill that automates the entire pipeline from an HTML design file to a `.pptx` slide."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "html-to-one-pptx",
+    "url": "https://clawhub.ai/skills/html-to-one-pptx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/html-to-one-pptx-98204ad9f636b337.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert any HTML file or design into a pixel-faithful PowerPoint (.pptx) slide. Trigger when the user uploads HTML file(s) and asks to \"convert to PPT\", \"mak..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "panhongwei",
+      "userId": "s17813shxdrvf8n0pqsp6z3zf583hcn3",
+      "displayName": "panhongwei",
+      "image": "https://avatars.githubusercontent.com/u/12032293?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773412761910,
+      "changelog": "html-to-one-pptx 1.0.0\n\n- Initial release of the skill for pixel-faithful HTML to PowerPoint (.pptx) conversion.\n- Supports both single and multiple HTML files (each as one slide, merged if multiple).\n- Fully documented, stepwise workflow—never batch, always write/run each gen.js one at a time.\n- Enforces thorough HTML parsing, chart detection, color auditing, and structured gen.js generation.\n- Uses detailed markdown templates to ensure every visual/text/chart element is explicitly specified before PowerPoint output.\n- Strict anti-improvisation rule: always follow the defined workflow and file structure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:65da12d2cf5b1bb5a6de0baff0b3dd59a9c7b1c23322d1b2686df38b4c83e7b7"
+}

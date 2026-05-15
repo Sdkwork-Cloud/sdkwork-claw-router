@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hkipo-calendar-monitor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hkipo_calendar_monitor",
+  "skill": {
+    "id": 43839,
+    "skillKey": "clawhub-hkipo-calendar-monitor",
+    "name": "HK IPO Calendar Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hkipo-calendar-monitor",
+    "url": "https://clawhub.ai/skills/hkipo-calendar-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hkipo-calendar-monitor-29fccf9cc53da62a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor Hong Kong IPO deadline and listing windows and return structured discovery results for near-term IPO scanning. Use when the user asks what is current..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hackstoic",
+      "userId": "s174p3fcpwd6b29m4n8bb5pvw183pmrc",
+      "displayName": "hackstoic",
+      "image": "https://avatars.githubusercontent.com/u/7455951?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776355906790,
+      "changelog": "Initial ClawHub release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7851a838ee1fe4d26ae981866a2f8547fe1f183166ed7cd606e845344dc9bb4"
+}

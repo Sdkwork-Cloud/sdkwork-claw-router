@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42217,
+  "uuid": "skill-clawhub-clawfeedradar",
+  "skillKey": "clawhub-clawfeedradar",
+  "name": "Claw RSS Feed Radar",
+  "summary": "Personal \"news radar\" skill built on top of a clawsqlite knowledge base and its interest clusters.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawfeedradar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ernestyu",
+      "features": [
+        "Personal \"news radar\" skill built on top of a clawsqlite knowledge base and its interest cluste."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawfeedradar@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7390096?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawfeedradar",
+      "url": "https://clawhub.ai/skills/clawfeedradar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawfeedradar",
+    "url": "https://clawhub.ai/skills/clawfeedradar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawfeedradar-6b5133e363008cec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawfeedradar@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawfeedradar-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c1f38c16eb58b0ace2dbc82b028ba434b212f23972d096780f409cc8b85c946",
+      "artifactSizeBytes": 2476
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T09:07:42.626Z"
+}

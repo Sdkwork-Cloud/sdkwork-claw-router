@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ifly-voiceclone-tts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ifly_voiceclone_tts",
+  "skill": {
+    "id": 56863,
+    "skillKey": "clawhub-ifly-voiceclone-tts",
+    "name": "ifly-voiceclone-tts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ifly-voiceclone-tts",
+    "url": "https://clawhub.ai/skills/ifly-voiceclone-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ifly-voiceclone-tts-ac7f7a9c4988d899.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "iFlytek Voice Clone tts(声音复刻) — train a custom voice model from audio samples and synthesize speech with the cloned voice. Supports the full workflow: get tr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qingzhe2020",
+      "userId": "s17e3thgyg00vp9728mfseza8d83neqj",
+      "displayName": "Iflytek AIcloud",
+      "image": "https://avatars.githubusercontent.com/u/162573515?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 339,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773847227681,
+      "changelog": "ifly-voiceclone-tts v1.0.0\n\n- Initial release of the iFlytek Voice Clone TTS skill.\n- Supports end-to-end workflow: get training text, create task, upload audio, submit for training, poll results, and synthesize speech with the cloned voice.\n- Command-line interface for both training and synthesis phases, with detailed subcommands and options.\n- Uses only the Python standard library; no external dependencies required.\n- Includes detailed documentation and troubleshooting guidance, including error code reference tables.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e6771c850740e2260c47f26b2fb739076dce52bc7658d69f7eb6d3dbad8bf25"
+}

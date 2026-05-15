@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71300,
+  "uuid": "skill-clawhub-logitech",
+  "skillKey": "clawhub-logitech",
+  "name": "Logitech",
+  "summary": "提供罗技电脑外设产品信息、选购建议及技术支持，涵盖鼠标、键盘、耳机和摄像头等。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logitech",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供罗技电脑外设产品信息、选购建议及技术支持，涵盖鼠标、键盘、耳机和摄像头等。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/logitech@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "logitech",
+      "url": "https://clawhub.ai/skills/logitech"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logitech",
+    "url": "https://clawhub.ai/skills/logitech",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logitech-1db0046b8b195ee7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/logitech@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-logitech-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be953537633ac4e1d57e4b8dea57c4d31249632ce8459ae3d9c98607ef6503be",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:23:26.545Z"
+}

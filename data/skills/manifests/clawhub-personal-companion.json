@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70274,
+  "uuid": "skill-clawhub-personal-companion",
+  "skillKey": "clawhub-personal-companion",
+  "name": "personal companion",
+  "summary": "智能伴侣技能 — 通过多轮对话为用户创建个性化虚拟伴侣角色，并以该角色身份进行情感陪伴对话。 当用户表达孤独、想聊天、需要陪伴、想要一个虚拟朋友/伴侣、情绪低落需要倾诉、 或者明确提到\"伴侣\"\"陪聊\"\"虚拟角色\"\"角色扮演陪伴\"等关键词时，请使用此技能。 即使用户只是说\"我想找个人聊聊\"\"能陪我说说话吗\"\"我今天...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_companion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GentleYo",
+      "features": [
+        "智能伴侣技能 — 通过多轮对话为用户创建个性化虚拟伴侣角色，并以该角色身份进行情感陪伴对话。 当用户表达孤独、想聊天、需要陪伴、想要一个虚拟朋友/伴侣、情绪低落需要倾诉、 或者明确提到\"伴侣."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-companion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131584446?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-companion",
+      "url": "https://clawhub.ai/skills/personal-companion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-companion",
+    "url": "https://clawhub.ai/skills/personal-companion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-companion-e1db168d377a8450.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-companion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-companion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5a4d05640642bef941d788250065a9868913c84e558b2c6e57161b2eb479340",
+      "artifactSizeBytes": 2827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T03:32:27.684Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73311,
+  "uuid": "skill-clawhub-tiantian-grader",
+  "skillKey": "clawhub-tiantian-grader",
+  "name": "天天老师助手",
+  "summary": "作业批改专家，支持多份作业连续批改，自动生成班级成绩统计表",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiantian_grader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pengdagang1975",
+      "features": [
+        "作业批改专家，支持多份作业连续批改，自动生成班级成绩统计表"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiantian-grader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222111130?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiantian-grader",
+      "url": "https://clawhub.ai/skills/tiantian-grader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiantian-grader",
+    "url": "https://clawhub.ai/skills/tiantian-grader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiantian-grader-daab802ec8af7567.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiantian-grader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiantian-grader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41a096a40f1aae75f0a8f9c3cb91ac67b92d3e0df794df8dc02336f0247b2ce0",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T07:11:21.837Z"
+}

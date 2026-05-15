@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rocom@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rocom",
+  "skill": {
+    "id": 22978,
+    "skillKey": "clawhub-rocom",
+    "name": "Rocom"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rocom",
+    "url": "https://clawhub.ai/skills/rocom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rocom-954bfb05801b1640.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Roco Kingdom World offline data tool. Local JSON queries for pets, skills, and items."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imnotriv3r",
+      "userId": "s17eynmk6t0hqg6e315r439xa9840qyq",
+      "displayName": "Riv3r",
+      "image": "https://avatars.githubusercontent.com/u/144381190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1775415251205,
+      "changelog": "- Major update: Expanded data coverage, improved documentation, and enhanced offline features.\n- Added detailed feature list for pets, skills, items, dungeons, and regional data.\n- Usage instructions now include command table with examples.\n- Documented data source (Bilibili WIKI) and licensing.\n- Clarified local-only, privacy-first operation with performance and technical notes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:911f7cbc7275ab6e0ffad464d032bba3f2919cecccddc560531c2034e8afed59"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39346,
+  "uuid": "skill-clawhub-wordpress-blog-publisher",
+  "skillKey": "clawhub-wordpress-blog-publisher",
+  "name": "WordPress Blog Publisher",
+  "summary": "Use this skill whenever the user wants to publish, update, or batch-upload blog content to a WordPress site via the REST API. Triggers include any mention of...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wordpress_blog_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Use this skill whenever the user wants to publish, update, or batch-upload blog content to a Wo.",
+        "Triggers include any mention of..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wordpress-blog-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wordpress-blog-publisher",
+      "url": "https://clawhub.ai/skills/wordpress-blog-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wordpress-blog-publisher",
+    "url": "https://clawhub.ai/skills/wordpress-blog-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wordpress-blog-publisher-3384c8b9e867d02e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wordpress-blog-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wordpress-blog-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79901e5638eabc7e0f780f03bc2f0e74b1e4e7e661d1619dbd36969f85512891",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T04:21:08.143Z"
+}

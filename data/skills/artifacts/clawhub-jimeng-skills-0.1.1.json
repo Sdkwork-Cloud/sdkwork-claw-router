@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jimeng-skills@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jimeng_skills",
+  "skill": {
+    "id": 67470,
+    "skillKey": "clawhub-jimeng-skills",
+    "name": "Jimeng Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jimeng-skills",
+    "url": "https://clawhub.ai/skills/jimeng-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jimeng-skills-e89de12c121a6a2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于火山引擎即梦 AI 生成图片和视频，并将结果整理为适合 OpenClaw 在飞书、企微、钉钉中发送和查看的纯文本结果、远程直链和可公开分享链接。用于“生成图片”“生成视频”“让飞书/企微/钉钉可查看”“输出适合企业 IM 的分享结果”“调用 jimeng-skills”等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "klaus1534",
+      "userId": "s170k3h3w10geq81pnq8r05vex83hfw9",
+      "displayName": "klaus1534",
+      "image": "https://avatars.githubusercontent.com/u/40418770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 837,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773373325430,
+      "changelog": "Version 0.1.1 of jimeng-skills\n\n- No file changes detected in this release.\n- No updates to features, documentation, or behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d061b8b755f5b6e2e34fbc4548bd00aae02c5b65d07ebbf19fd01c634558fae"
+}

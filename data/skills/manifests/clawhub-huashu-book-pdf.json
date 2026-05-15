@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66306,
+  "uuid": "skill-clawhub-huashu-book-pdf",
+  "skillKey": "clawhub-huashu-book-pdf",
+  "name": "Book-PDF: 书籍级PDF手册全流程",
+  "summary": "深度调研一个主题，生成100页+书籍级PDF手册。模块化HTML片段架构 + 语义化版本管理 + 多Agent并行写作 + Playwright渲染PDF。 当用户需要制作完整的PDF手册、电子书、橙皮书、参考指南时触发。即使用户只是说「做一本书」「做个PDF手册」「做个完整指南」「做一本XX的手册」也应触发。...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huashu_book_pdf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ShiXiangYu2",
+      "features": [
+        "深度调研一个主题，生成100页+书籍级PDF手册。模块化HTML片段架构 + 语义化版本管理 + 多Agent并行写作 + Playwright渲染PDF。 当用户需要制作完整的PDF手册、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huashu-book-pdf@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215228006?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huashu-book-pdf",
+      "url": "https://clawhub.ai/skills/huashu-book-pdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huashu-book-pdf",
+    "url": "https://clawhub.ai/skills/huashu-book-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huashu-book-pdf-9ca33436d13c31e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huashu-book-pdf@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-huashu-book-pdf-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbbd187a49c39696aff3d42f19fa5c88c2bdd39460ef82138abba9ed0b21e259",
+      "artifactSizeBytes": 2317
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T02:47:55.839Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aftership-tracking-and-returns@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aftership_tracking_and_returns",
+  "skill": {
+    "id": 44202,
+    "skillKey": "clawhub-aftership-tracking-and-returns",
+    "name": "AfterShip Tracking & Returns"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aftership-tracking-and-returns",
+    "url": "https://clawhub.ai/skills/aftership-tracking-and-returns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aftership-tracking-and-returns-114a672fa7e4eef8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides real-time tracking for 1,300+ carriers and merchant returns center demos with no API key required, using AfterShip's MCP server. Powered by AfterShip."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aftership",
+      "userId": "s17ahwsrkfvs4xwkjbkhbmb7xx850v32",
+      "displayName": "AfterShip",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776417748137,
+      "changelog": "- Update description.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a72780eb3a9383e9beba43b6d06c88af7af60f19b78500e280212e20990eef8"
+}

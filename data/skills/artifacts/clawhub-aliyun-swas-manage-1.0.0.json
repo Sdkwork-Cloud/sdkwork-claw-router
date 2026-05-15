@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-swas-manage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_swas_manage",
+  "skill": {
+    "id": 44953,
+    "skillKey": "clawhub-aliyun-swas-manage",
+    "name": "Aliyun Swas Manage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-swas-manage",
+    "url": "https://clawhub.ai/skills/aliyun-swas-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-swas-manage-2c94093862c735fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when managing Alibaba Cloud Simple Application Server (SWAS OpenAPI 2020-06-01) resources end-to-end, including querying instances, starting/stopping/reb..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775081293765,
+      "changelog": "Initial release with full Alibaba Cloud Simple Application Server (SWAS OpenAPI 2020-06-01) resource management:\n\n- Manage instances, disks, snapshots, images, firewall rules/templates, key pairs, tags, monitoring, and lightweight database operations.\n- Enables command execution via cloud assistant (supporting install, run, monitor).\n- Prefer Python SDK for operations; includes example scripts and workflow guidance.\n- Includes best practices for credential handling, region selection, and evidence output.\n- Provides validation steps, troubleshooting, and user clarification questions for safe operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5be48b1921946460d8d048e32aa0258b8a7cb7ed502951bbf70c547d312be943"
+}

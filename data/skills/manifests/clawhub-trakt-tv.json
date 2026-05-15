@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10989,
+  "uuid": "skill-clawhub-trakt-tv",
+  "skillKey": "clawhub-trakt-tv",
+  "name": "Trakt.tv",
+  "summary": "Interact with the Trakt API to manage your watchlist, collection, ratings, and discover content",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trakt_tv",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "d-meagher",
+      "features": [
+        "Interact with the Trakt API to manage your watchlist, collection, ratings, and discover content"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trakt-tv@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/120137404?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trakt-tv",
+      "url": "https://clawhub.ai/skills/trakt-tv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trakt-tv",
+    "url": "https://clawhub.ai/skills/trakt-tv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trakt-tv-e2552c4de83967b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trakt-tv@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trakt-tv-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9c264fdc624ec2b9fea85f153b3bcc35ddd003e2ae5845c26991538c0d09290",
+      "artifactSizeBytes": 2317
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T20:45:38.328Z"
+}

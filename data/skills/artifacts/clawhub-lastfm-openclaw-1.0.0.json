@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lastfm-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lastfm_openclaw",
+  "skill": {
+    "id": 21793,
+    "skillKey": "clawhub-lastfm-openclaw",
+    "name": "Last.fm (OpenClaw)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lastfm-openclaw",
+    "url": "https://clawhub.ai/skills/lastfm-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lastfm-openclaw-f7893222bd0fd46f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access Last.fm user profile, now playing, top tracks/artists/albums by period, loved tracks, and optionally love/unlove tracks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dennisooki",
+      "userId": "publishers:dennisooki",
+      "displayName": "Magolo Dennis Ooki",
+      "image": "https://avatars.githubusercontent.com/u/104509082?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 397,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772088157435,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:001846e78d7fdb85235199e2df22839fd87b4aa75b0a30f383cd9f802342b688"
+}

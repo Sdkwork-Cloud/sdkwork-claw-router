@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ms-voice-tts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ms_voice_tts",
+  "skill": {
+    "id": 67406,
+    "skillKey": "clawhub-ms-voice-tts",
+    "name": "Voice TTS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ms-voice-tts",
+    "url": "https://clawhub.ai/skills/ms-voice-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ms-voice-tts-228a4658ae615324.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 edge-tts 生成高质量中文语音消息并发送。当用户要求发语音、语音回复、TTS、文字转语音、语音播报、语音消息时使用。支持多种中文声音（男声/女声/方言），可调节语速音调，适用于飞书/Telegram/Discord 等渠道的语音消息发送。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "binbin1213",
+      "userId": "s175t2nj3jefb6dwtqr6ymcca583j74w",
+      "displayName": "彬彬哦",
+      "image": "https://avatars.githubusercontent.com/u/32067712?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 353,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773599423496,
+      "changelog": "voice-tts 1.0.0\n\n- 重构为纯 TTS 方案，仅保留 edge-tts 语音合成功能\n- 只需一个脚本（tts.sh），所有其它 ASR/Whisper/自动检查相关文件移除\n- 新版专注于中文语音合成及发送，支持多平台（飞书/Telegram/Discord）\n- 支持多种 edge-tts 声音风格、语速、音调参数\n- 安装与使用流程更简洁，文档针对跨平台发送优化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d356a627c02d6fb722d5cef939b90c1791ac275a5eb9e75760591d429fffd3eb"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17784,
+  "uuid": "skill-clawhub-bunpro-sync",
+  "skillKey": "clawhub-bunpro-sync",
+  "name": "Bunpro",
+  "summary": "Sync Bunpro Japanese grammar learning progress from the API to local storage for analysis and insights. Use when the user wants to backup their Bunpro progre...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bunpro_sync",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mart1:n",
+      "features": [
+        "Sync Bunpro Japanese grammar learning progress from the API to local storage for analysis and i.",
+        "Use when the user wants to backup their Bunpro progre..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bunpro-sync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20109376?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bunpro-sync",
+      "url": "https://clawhub.ai/skills/bunpro-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bunpro-sync",
+    "url": "https://clawhub.ai/skills/bunpro-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bunpro-sync-30561b0a47c38468.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bunpro-sync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bunpro-sync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16d7c1fb2d4bdda6c011c86659ec89000080da6c0a3528d754c6055d75456394",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T14:38:18.489Z"
+}

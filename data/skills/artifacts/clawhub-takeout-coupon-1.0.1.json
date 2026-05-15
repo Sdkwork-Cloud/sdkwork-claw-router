@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/takeout-coupon@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.takeout_coupon",
+  "skill": {
+    "id": 70805,
+    "skillKey": "clawhub-takeout-coupon",
+    "name": "Takeout Coupon 外卖优惠券隐藏券大额券，美团、京东、闪购/饿了么"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "takeout-coupon",
+    "url": "https://clawhub.ai/skills/takeout-coupon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/takeout-coupon-c21910d76abea779.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用外卖优惠券API获取各平台（美团、淘宝闪购/饿了么、京东）的隐藏外卖券列表及聚合领券页面。返回优惠券代码和领取说明，用户可复制优惠码到对应APP领取。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moooai",
+      "userId": "s17701kzrq4p1vszmt5456019d83t2q0",
+      "displayName": "moooai",
+      "image": "https://avatars.githubusercontent.com/u/132045079?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773652633291,
+      "changelog": "- Added initial repository files and version control setup.\n- Introduced skill metadata and documentation for takeout-coupon.\n- Documented API usage to fetch Meituan, Taobao Flash/Ele.me, and JD.com hidden takeout coupons.\n- Provided clear instructions and examples for usage, error handling, and edge case management.\n- Emphasized strict rules for displaying coupon codes without modification.\n- Added an English description to the skill metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e45f851dd4775fd92c7656f663be42c2a4babc4631188b2683f3f37a01b63807"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39544,
+  "uuid": "skill-clawhub-read-only-workspace-audit",
+  "skillKey": "clawhub-read-only-workspace-audit",
+  "name": "Read Only Workspace Audit",
+  "summary": "Audit whether one imported workspace snapshot is rich enough for export, cited AI, or MCP consumption.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.read_only_workspace_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yifeng[Terry] Yu",
+      "features": [
+        "Audit whether one imported workspace snapshot is rich enough for export, cited AI, or MCP consu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/read-only-workspace-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125581657?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "read-only-workspace-audit",
+      "url": "https://clawhub.ai/skills/read-only-workspace-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "read-only-workspace-audit",
+    "url": "https://clawhub.ai/skills/read-only-workspace-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/read-only-workspace-audit-1b57849e8f35678e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/read-only-workspace-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-read-only-workspace-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:699962f3c948f0f86377e1746da58286ce702cb9d5095b60160b419e20fde77e",
+      "artifactSizeBytes": 2403
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T10:29:34.802Z"
+}

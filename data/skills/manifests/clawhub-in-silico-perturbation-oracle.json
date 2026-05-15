@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25952,
+  "uuid": "skill-clawhub-in-silico-perturbation-oracle",
+  "skillKey": "clawhub-in-silico-perturbation-oracle",
+  "name": "In Silico Perturbation Oracle",
+  "summary": "Virtual gene knockout simulation using foundation models to predict transcriptional changes",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.in_silico_perturbation_oracle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ewankeynes",
+      "features": [
+        "Virtual gene knockout simulation using foundation models to predict transcriptional changes"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/in-silico-perturbation-oracle@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68137408?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "in-silico-perturbation-oracle",
+      "url": "https://clawhub.ai/skills/in-silico-perturbation-oracle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "in-silico-perturbation-oracle",
+    "url": "https://clawhub.ai/skills/in-silico-perturbation-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/in-silico-perturbation-oracle-1f985e3028258a1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/in-silico-perturbation-oracle@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-in-silico-perturbation-oracle-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0914f8338980a21c178b508e05c5f467a7babdc1d8a4ae4a0348e4b033bc38e",
+      "artifactSizeBytes": 2620
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:43:08.061Z"
+}

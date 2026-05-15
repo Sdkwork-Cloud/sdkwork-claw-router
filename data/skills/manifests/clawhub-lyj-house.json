@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72774,
+  "uuid": "skill-clawhub-lyj-house",
+  "skillKey": "clawhub-lyj-house",
+  "name": "乐有家找房",
+  "summary": "乐有家找房与小区查询：自然语言查11城二手房/租房、新房楼盘、学校及小区信息",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lyj_house",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lyj-tan",
+      "features": [
+        "乐有家找房与小区查询：自然语言查11城二手房/租房、新房楼盘、学校及小区信息"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lyj-house@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22535127?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lyj-house",
+      "url": "https://clawhub.ai/skills/lyj-house"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lyj-house",
+    "url": "https://clawhub.ai/skills/lyj-house",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lyj-house-8a097ce16ee7931c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lyj-house@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-lyj-house-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:353a6dc1562a26159365f601b1caf9a381aacc457fab03ddfee137a595c69e13",
+      "artifactSizeBytes": 2608
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T00:57:06.639Z"
+}

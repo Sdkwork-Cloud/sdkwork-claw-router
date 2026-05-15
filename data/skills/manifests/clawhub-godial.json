@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25848,
+  "uuid": "skill-clawhub-godial",
+  "skillKey": "clawhub-godial",
+  "name": "Godial",
+  "summary": "GoDial integration. Manage Leads, Users, Roles, Goals, Filters. Use when the user wants to interact with GoDial data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.godial",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "GoDial integration",
+        "Manage Leads, Users, Roles, Goals, Filters",
+        "Use when the user wants to interact with GoDial data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/godial@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "godial",
+      "url": "https://clawhub.ai/skills/godial"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "godial",
+    "url": "https://clawhub.ai/skills/godial",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/godial-a5504e3133c242df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/godial@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-godial-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cf1b189079b78a558517b8491af723b618633f97080f60f0f5053e6ec05f896",
+      "artifactSizeBytes": 1810
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:52:40.120Z"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56124,
+  "uuid": "skill-clawhub-pawr-link",
+  "skillKey": "clawhub-pawr-link",
+  "name": "pawr-link",
+  "summary": "Create or update a pawr.link profile. $9 USDC self-service (instant) or $10 curated (AI-built, ~1 min). Free profile discovery API. All payments via x402 on...",
+  "version": "4.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pawr_link",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baseddesigner",
+      "features": [
+        "Create or update a pawr.link profile",
+        "$9 USDC self-service (instant) or $10 curated (AI-built, ~1 min)",
+        "Free profile discovery API",
+        "All payments via x402 on..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pawr-link@4.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/155690417?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pawr-link",
+      "url": "https://clawhub.ai/skills/pawr-link"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pawr-link",
+    "url": "https://clawhub.ai/skills/pawr-link",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pawr-link-0fb389c664e42fb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pawr-link@4.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pawr-link-4.2.0.json",
+      "version": "4.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d429120e82c2d05f14b6c2fa9feb48fa08c6822f8714a55fc29a66ac110ac34f",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T22:34:43.653Z"
+}

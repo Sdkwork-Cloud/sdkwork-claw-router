@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10627,
+  "uuid": "skill-clawhub-bearblog",
+  "skillKey": "clawhub-bearblog",
+  "name": "Bearblog",
+  "summary": "Create and manage blog posts on Bear Blog (bearblog.dev). Supports extended Markdown, custom attributes, and browser-based publishing.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bearblog",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Azade 🐐",
+      "features": [
+        "Create and manage blog posts on Bear Blog (bearblog.dev)",
+        "Supports extended Markdown, custom attributes, and browser-based publishing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bearblog@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252790079?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bearblog",
+      "url": "https://clawhub.ai/skills/bearblog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bearblog",
+    "url": "https://clawhub.ai/skills/bearblog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bearblog-e24fa307b25685bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bearblog@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bearblog-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b42c8fcc540cb0dbb7879bf52212879ad7258db74ff188e1d84a6cfcb49a18d7",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T13:56:52.215Z"
+}

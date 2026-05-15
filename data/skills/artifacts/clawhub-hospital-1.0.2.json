@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hospital@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hospital",
+  "skill": {
+    "id": 27540,
+    "skillKey": "clawhub-hospital",
+    "name": "Hospital"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hospital",
+    "url": "https://clawhub.ai/skills/hospital",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hospital-8afe3c83decffdf6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help patients find suitable hospitals based on medical needs, location, hospital level, and specialties. Use when the user wants to find a hospital, compare..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 336,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774072538475,
+      "changelog": "English main doc for hospital search guidance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad49adf0504b8965a4b776e9206f23afe7947bb1edaa6516fc4769a5f28080b2"
+}

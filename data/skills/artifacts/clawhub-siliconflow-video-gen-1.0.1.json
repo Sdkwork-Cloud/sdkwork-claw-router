@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/siliconflow-video-gen@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.siliconflow_video_gen",
+  "skill": {
+    "id": 16937,
+    "skillKey": "clawhub-siliconflow-video-gen",
+    "name": "SiliconFlow Video Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "siliconflow-video-gen",
+    "url": "https://clawhub.ai/skills/siliconflow-video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/siliconflow-video-gen-5ad7fe1c0accf791.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate videos using SiliconFlow API with Wan2.2 model. Supports both Text-to-Video and Image-to-Video."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lilei0311",
+      "userId": "publishers:lilei0311",
+      "displayName": "MaxStormSpace",
+      "image": "https://avatars.githubusercontent.com/u/67162380?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 786,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771156156894,
+      "changelog": "- Added documentation for required environment variable (SILICONFLOW_API_KEY) and config file location (~/.openclaw/openclaw.json)\n- Expanded configuration section with example OpenClaw JSON format\n- Added a \"Requirements\" section detailing API key and config detection\n- Introduced a \"Security Notes\" section describing API key usage and data practices",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:70456754049620fcbe674468db86e447db1f52f302083a0999d5b2907f14a37f"
+}

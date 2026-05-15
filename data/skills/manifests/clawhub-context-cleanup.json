@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58223,
+  "uuid": "skill-clawhub-context-cleanup",
+  "skillKey": "clawhub-context-cleanup",
+  "name": "Context Cleanup",
+  "summary": "Analyze and archive low-value memory notes in OpenClaw workspace to reduce context bloat and improve responsiveness. 适用于上下文冗余、维护整理场景；默认流程为 analyze → plan → c...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_cleanup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "irideas",
+      "features": [
+        "Analyze and archive low-value memory notes in OpenClaw workspace to reduce context bloat and im.",
+        "适用于上下文冗余、维护整理场景；默认流程为 analyze → plan → c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-cleanup@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192851?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-cleanup",
+      "url": "https://clawhub.ai/skills/context-cleanup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-cleanup",
+    "url": "https://clawhub.ai/skills/context-cleanup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-cleanup-d0e0bbabdc87a96e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-cleanup@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-cleanup-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5891bacf006d94605a31ed8b4bf183fd0959db00fc90358afaa035047df9db65",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T12:48:36.007Z"
+}

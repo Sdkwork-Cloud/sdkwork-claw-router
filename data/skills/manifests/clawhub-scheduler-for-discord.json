@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11569,
+  "uuid": "skill-clawhub-scheduler-for-discord",
+  "skillKey": "clawhub-scheduler-for-discord",
+  "name": "scheduler for discord",
+  "summary": "Create and manage scheduled reminders and posts. Use when the user asks Moltbot to send a message later or on a recurring schedule (especially to the current Discord channel) without requiring them to provide channel IDs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scheduler_for_discord",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AaronWander",
+      "features": [
+        "Create and manage scheduled reminders and posts",
+        "Use when the user asks Moltbot to send a message later or on a recurring schedule (especially t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scheduler-for-discord@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210468848?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scheduler-for-discord",
+      "url": "https://clawhub.ai/skills/scheduler-for-discord"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scheduler-for-discord",
+    "url": "https://clawhub.ai/skills/scheduler-for-discord",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scheduler-for-discord-b801f9f423e35769.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scheduler-for-discord@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scheduler-for-discord-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88f19ae841e9471d1d266f1ab578bd82f67b721ca049d00d9934a7949d820437",
+      "artifactSizeBytes": 2916
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T06:25:09.668Z"
+}

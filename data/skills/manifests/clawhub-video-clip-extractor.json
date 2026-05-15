@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15935,
+  "uuid": "skill-clawhub-video-clip-extractor",
+  "skillKey": "clawhub-video-clip-extractor",
+  "name": "Video Frames",
+  "summary": "Extract frames or short clips from videos using ffmpeg.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_clip_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "utromaya-code",
+      "features": [
+        "Extract frames or short clips from videos using ffmpeg."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-clip-extractor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254962629?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-clip-extractor",
+      "url": "https://clawhub.ai/skills/video-clip-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-clip-extractor",
+    "url": "https://clawhub.ai/skills/video-clip-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-clip-extractor-a102fea4357525d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-clip-extractor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-clip-extractor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89a302dad8ef773bc85ea491ee9e0f7e56ceb73e7236660ebb22f04eaaf3e49f",
+      "artifactSizeBytes": 2169
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T20:14:01.692Z"
+}

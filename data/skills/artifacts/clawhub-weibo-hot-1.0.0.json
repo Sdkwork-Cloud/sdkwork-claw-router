@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weibo-hot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weibo_hot",
+  "skill": {
+    "id": 58479,
+    "skillKey": "clawhub-weibo-hot",
+    "name": "微博热搜"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weibo-hot",
+    "url": "https://clawhub.ai/skills/weibo-hot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weibo-hot-50db5c5570882af2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取微博热搜榜单，按热度排序。无需 API Key。Use when: user asks about trending topics, hot news, social media trends in China."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenzihao0731",
+      "userId": "s17aaabva24m5f3fsnr3gw73c183mnxy",
+      "displayName": "chenzihao",
+      "image": "https://avatars.githubusercontent.com/u/57579348?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 474,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773822932063,
+      "changelog": "- Initial release of the weibo-hot skill.\n- Fetches real-time trending topics from Weibo, sorted by popularity.\n- No API key required; uses open public API.\n- Outputs each topic as \"热度 | 标题\" per line.\n- Requires curl and jq to run.\n- Intended for easy integration or command-line use to check China's current social media trends.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f621ca0740553582894f36f659e535c263c0436b6879198cc31eebed91c4fdd9"
+}

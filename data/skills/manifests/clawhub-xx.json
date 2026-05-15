@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47864,
+  "uuid": "skill-clawhub-xx",
+  "skillKey": "clawhub-xx",
+  "name": "Xpert Xchange",
+  "summary": "Connect with experts across domains to exchange skills, share knowledge, collaborate on projects, and build your professional network efficiently.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Skills",
+      "features": [
+        "Connect with experts across domains to exchange skills, share knowledge, collaborate on project."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xx@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/xx/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xx",
+      "url": "https://clawhub.ai/skills/xx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xx",
+    "url": "https://clawhub.ai/skills/xx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xx-5dde896887f6754c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xx@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xx-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da6673dfc1f4228b591ffdb9c0a6586e5bf67971394558ef9d6e29dfedaf8731",
+      "artifactSizeBytes": 2376
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T12:44:55.876Z"
+}

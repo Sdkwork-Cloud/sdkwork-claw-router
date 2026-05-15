@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pls-agent-tools@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pls_agent_tools",
+  "skill": {
+    "id": 10500,
+    "skillKey": "clawhub-pls-agent-tools",
+    "name": "PLS Agent Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pls-agent-tools",
+    "url": "https://clawhub.ai/skills/pls-agent-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pls-agent-tools-79fab9a43dcc404e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides utilities for safe file handling, JSON/YAML editing, regex text processing, system commands, encoding, date/time, and validation tasks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mattvalenta",
+      "userId": "publishers:mattvalenta",
+      "displayName": "Matt Valenta",
+      "image": "https://avatars.githubusercontent.com/u/153394211?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2406,
+      "installsAllTime": 25,
+      "installsCurrent": 24,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771801995030,
+      "changelog": "Initial release of agent-tools, a versatile utility toolkit for agents:\n\n- Provides safe and bulk file operations (rename, move, copy, delete with recovery).\n- Includes JSON/YAML/TOML config handling using jq and yq.\n- Offers system command execution for process, network, and resource management.\n- Supports robust text processing (regex, search/replace, deduplication, extraction).\n- Adds encoding/decoding utilities (base64, URL, JSON).\n- Supplies date/time commands, file validation helpers, and a quick reference table.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0ac9f8d3f1f883612ba00e8602d30b761375cd172673514bfd9ff0952668518b"
+}

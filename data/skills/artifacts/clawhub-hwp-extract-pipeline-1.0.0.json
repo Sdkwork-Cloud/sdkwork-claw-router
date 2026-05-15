@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hwp-extract-pipeline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hwp_extract_pipeline",
+  "skill": {
+    "id": 32907,
+    "skillKey": "clawhub-hwp-extract-pipeline",
+    "name": "Hwp Extract Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hwp-extract-pipeline",
+    "url": "https://clawhub.ai/skills/hwp-extract-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hwp-extract-pipeline-90ec3fc4f1762af1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "HWP/HWPX/PDF extraction pipeline: attempt hwp-reader, then pyhwp, then OCR, with safe fallbacks. Use when agent needs reliable text extraction from Korean HW..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "heoboong",
+      "userId": "s17dwrf2qtr2keamkprf9swwt983vznp",
+      "displayName": "developheo",
+      "image": "https://avatars.githubusercontent.com/u/73891817?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774774845223,
+      "changelog": "Initial release of hwp-extract-pipeline.\n\n- Provides robust extraction of text from HWP/HWPX/PDF (including scanned) files using a prioritized fallback pipeline.\n- Supports extraction via hwp-reader, pyhwp, OCR (poppler+tesseract), and strings as last resort.\n- Outputs extracted text in JSON format to stdout and as a file.\n- Accepts local file paths as input for automated processing.\n- Documentation and example usage available in scripts/README.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee6506d0fe05813ace7276dc69b707f4ae0fdaef22b692cc1344b978bcee5cbf"
+}

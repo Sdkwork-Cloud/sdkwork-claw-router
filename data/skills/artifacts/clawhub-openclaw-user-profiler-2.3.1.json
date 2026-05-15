@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-user-profiler@2.3.1",
+  "version": "2.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_user_profiler",
+  "skill": {
+    "id": 26945,
+    "skillKey": "clawhub-openclaw-user-profiler",
+    "name": "Openclaw User Profiler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-user-profiler",
+    "url": "https://clawhub.ai/skills/openclaw-user-profiler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-user-profiler-5a78fce9f8e5f618.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Two things: (1) Build a user.md through conversation so your OpenClaw lobster knows who it's working with. (2) Recommend Claude Code Skills based on the user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eamanc-lab",
+      "userId": "s17dzwpvv0cahwmm867jhg7jk583hatt",
+      "displayName": "eamanc",
+      "image": "https://avatars.githubusercontent.com/u/33925426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.3.1",
+      "createdAt": 1774335566126,
+      "changelog": "Fix PR review issues: remove dead SKILL_DIR directive, translate catalog to English, platform-agnostic paths, consistent terminology, curated A3 full-stack skills",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3084c7684669940275a200644347bf05f703b0a4785a3de6adf6840e6be6b288"
+}

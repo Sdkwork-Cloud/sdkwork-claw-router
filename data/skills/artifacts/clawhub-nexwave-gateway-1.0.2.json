@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nexwave-gateway@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexwave_gateway",
+  "skill": {
+    "id": 19075,
+    "skillKey": "clawhub-nexwave-gateway",
+    "name": "Nexwave Gateway"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexwave-gateway",
+    "url": "https://clawhub.ai/skills/nexwave-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexwave-gateway-bfaf6597d044da9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unified crosschain USDC balance via Circle Gateway + Circle Programmable Wallets. Deposit USDC on any supported chain, check your unified balance, and instantly mint USDC on any destination chain in <500ms — no bridging, no raw private key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "botmechanic",
+      "userId": "publishers:botmechanic",
+      "displayName": "botmechanic",
+      "image": "https://avatars.githubusercontent.com/u/162460549?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1417,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770557834986,
+      "changelog": "**Circle Programmable Wallets integration and safer agent usage**\n\n- Added integration with Circle Programmable Wallets (no raw private keys required).\n- Added dependency on the `circle-wallet` skill (`eltontay/circle-wallet`).\n- Updated environment variables: now requires `CIRCLE_API_KEY`, `CIRCLE_ENTITY_SECRET`, and `CIRCLE_WALLET_SET_ID`.\n- Introduced a new `circle-wallet-client.js` file for wallet interactions.\n- Documentation updated to reflect Circle MPC wallet use, removing the need for direct private keys and improving security for agent operations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0086ad56158639a4f34fc9c0e17c7a8433681f02168093ec106eb4775ff38975"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-linkedin-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_linkedin_writer",
+  "skill": {
+    "id": 48495,
+    "skillKey": "clawhub-ai-linkedin-writer",
+    "name": "AI Linkedin Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-linkedin-writer",
+    "url": "https://clawhub.ai/skills/ai-linkedin-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-linkedin-writer-ff134d64310bee16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrapes top viral LinkedIn posts in your niche, analyzes trends, and generates a personalized 30-day content calendar with post variations and schedule."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 99,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777380641051,
+      "changelog": "AI LinkedIn Ghostwriter & 30-Day Content Engine — v1.0.0\n\n- Launches the initial version of a skill that scrapes top viral LinkedIn posts in any niche and reverse-engineers what makes them popular.\n- Analyzes hooks, formats, post structures, and emotional triggers that drive engagement.\n- Identifies the five highest-performing post formats for your niche and builds user-specific content pillars.\n- Generates a full, 30-day LinkedIn content calendar with posts written in the user’s personal voice, including hook variations and a posting schedule.\n- Integrates with Apify Actors for scraping LinkedIn, Google, and Reddit to inform content strategy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71bd7f240923633552ccd69738ffcc46825b83b3cd466c6dc333b1dfc6d9f230"
+}

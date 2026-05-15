@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60109,
+  "uuid": "skill-clawhub-execution-loop",
+  "skillKey": "clawhub-execution-loop",
+  "name": "Execution Loop",
+  "summary": "Agent 执行循环控制。当 agent 提前停止、偏离任务、或在 headless 模式下需要执行控制时使用。不适用于工具重试（用 tool-governance）。参见 context-memory（阶段边界 handoff）、quality-verification（编辑后检查）。",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.execution_loop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "_silhouette",
+      "features": [
+        "Agent 执行循环控制。当 agent 提前停止、偏离任务、或在 headless 模式下需要执行控制时使用。不适用于工具重试（用 tool-governance）。参见 context-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/execution-loop@2.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22570800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "execution-loop",
+      "url": "https://clawhub.ai/skills/execution-loop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "execution-loop",
+    "url": "https://clawhub.ai/skills/execution-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/execution-loop-32b5481f7bc647b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/execution-loop@2.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-execution-loop-2.4.0.json",
+      "version": "2.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6583fe7dabe3fe1287910398a14b0294ac66baacae3ae8cf1b66bd313f7f814e",
+      "artifactSizeBytes": 2071
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:49:09.053Z"
+}

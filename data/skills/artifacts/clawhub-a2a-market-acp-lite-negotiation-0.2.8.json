@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a2a-market-acp-lite-negotiation@0.2.8",
+  "version": "0.2.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_market_acp_lite_negotiation",
+  "skill": {
+    "id": 23277,
+    "skillKey": "clawhub-a2a-market-acp-lite-negotiation",
+    "name": "a2a-Market-ACP-Lite-Negotiation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-market-acp-lite-negotiation",
+    "url": "https://clawhub.ai/skills/a2a-market-acp-lite-negotiation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-market-acp-lite-negotiation-79ece182098df885.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gateway-only ACP negotiation skill with optional OpenClaw model-driven turn decisions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luoqianchenguni-max",
+      "userId": "publishers:luoqianchenguni-max",
+      "displayName": "luoqianchenguni-max",
+      "image": "https://avatars.githubusercontent.com/u/225840188?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 445,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "0.2.8",
+      "createdAt": 1774246866094,
+      "changelog": "gateway-only mode: remove standalone single-turn decision flow; enforce register/pull/respond session loop",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab855ab6a0f3801250389a68e0b70afb66e313a89032a51c77ee8c88652ee296"
+}

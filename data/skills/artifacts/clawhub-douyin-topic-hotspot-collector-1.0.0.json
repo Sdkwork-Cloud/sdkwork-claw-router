@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-topic-hotspot-collector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_topic_hotspot_collector",
+  "skill": {
+    "id": 46530,
+    "skillKey": "clawhub-douyin-topic-hotspot-collector",
+    "name": "Douyin Topic Hotspot Collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-topic-hotspot-collector",
+    "url": "https://clawhub.ai/skills/douyin-topic-hotspot-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-topic-hotspot-collector-d0a6950eb145ff31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Douyin for a user-specified topic and time range, then return the top hotspot videos ranked by visible engagement signals with strict no-fabrication r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eanpeng0-debug",
+      "userId": "s17apzgex19hvmx91q27qesepx83x6sp",
+      "displayName": "eanpeng0-debug",
+      "image": "https://avatars.githubusercontent.com/u/264064111?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776135931427,
+      "changelog": "douyin-topic-hotspot-collector v1.0.0 initial release\n\n- Enables searching Douyin for user-specified topics within a given time range.\n- Returns a structured top-10 list of hotspot videos ranked by visible engagement data (likes, comments, collections).\n- Strictly outputs only publicly available and verifiable data; no fabrication or supplementation of missing fields.\n- Includes robust error handling and outputs results in a Markdown table, with clear criteria for success and failure.\n- Supports optional export of the results to a file.\n- Designed for trend analysis, content research, and selection based solely on factual Douyin data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b22e77a58b94bf6451d8ec9cbdb83a84cf47a41f9a1241f2941ef9f0e7bf27a"
+}

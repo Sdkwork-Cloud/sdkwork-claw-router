@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/balance-sheet-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.balance_sheet_cn",
+  "skill": {
+    "id": 72364,
+    "skillKey": "clawhub-balance-sheet-cn",
+    "name": "资产负债表生成"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "balance-sheet-cn",
+    "url": "https://clawhub.ai/skills/balance-sheet-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/balance-sheet-cn-40741f47a994436a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据财务报表Excel文件自动生成规范资产负债表，应用11条规则保留格式和公式，支持银行账户和利润合计计算。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "courage-zen",
+      "userId": "s173jr81bx6yefkd7kydgq6st98415m2",
+      "displayName": "zen",
+      "image": "https://avatars.githubusercontent.com/u/5386698?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775011868592,
+      "changelog": "从交易记录生成标准化资产负债表 Excel",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1719b1ad3bc7a2d60464a9d0e83b6fa2ecc577fda74b0a7e3f64d0b2946804db"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35072,
+  "uuid": "skill-clawhub-schoology",
+  "skillKey": "clawhub-schoology",
+  "name": "Schoology",
+  "summary": "Schoology integration. Manage data, records, and automate workflows. Use when the user wants to interact with Schoology data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.schoology",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Schoology integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Schoology data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/schoology@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "schoology",
+      "url": "https://clawhub.ai/skills/schoology"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "schoology",
+    "url": "https://clawhub.ai/skills/schoology",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/schoology-d1b0f29b7f0e325d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/schoology@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-schoology-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a6c8e4d6cf2ad0bb08a3a284341a01ddbbbc1d3eee2ec92e20363cfce84939f",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:57:35.601Z"
+}

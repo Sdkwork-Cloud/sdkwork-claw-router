@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/08-proactive-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.08_proactive_agent",
+  "skill": {
+    "id": 41066,
+    "skillKey": "clawhub-08-proactive-agent",
+    "name": "08 Proactive Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "08-proactive-agent",
+    "url": "https://clawhub.ai/skills/08-proactive-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/08-proactive-agent-4a9aad10d84ed86c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform AI agents from task-followers into proactive partners that anticipate needs and continuously improve. Now with WAL Protocol, Working Buffer, Autono..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2720480371",
+      "userId": "s175vcqr1v9gn1h76sqn9qt9qh8408qk",
+      "displayName": "2720480371",
+      "image": "https://avatars.githubusercontent.com/u/32962721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775053948262,
+      "changelog": "proactive-agent v3.1.0 introduces expanded guidance and new protocols for robust, proactive agent behavior.\n\n- Adds protocols for distinguishing Autonomous vs Prompted Crons.\n- Emphasizes verifying implementation mechanisms rather than just intent.\n- Introduces a Tool Migration Checklist for safely deprecating and updating tools.\n- Expands on Write-Ahead Logging (WAL), Working Buffer, and Compaction Recovery for persistent, reliable memory.\n- Strengthens resourcefulness, self-improvement guardrails, and security hardening across agent operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39d8459ffe469ccfdfc06a3b160f6a1466eaa317269406f00c6f3c3529b24d63"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/synology-calendar@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.synology_calendar",
+  "skill": {
+    "id": 23915,
+    "skillKey": "clawhub-synology-calendar",
+    "name": "synology-calendar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "synology-calendar",
+    "url": "https://clawhub.ai/skills/synology-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/synology-calendar-bde368e46ad15eeb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Synology Calendar events and todos via API. Supports calendars, events, todos, and contacts. Based on official Calendar API Guide (v5)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fpengziyang",
+      "userId": "publishers:fpengziyang",
+      "displayName": "Abner",
+      "image": "https://avatars.githubusercontent.com/u/61679032?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 426,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772517801233,
+      "changelog": "- No code changes in this release.\n- Documentation and SKILL.md updated; no functional differences.\n- All behavior and functionality remain the same as version 1.0.0.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ad656014ae5c4778b71a058e0e1a03dca51e1b8547671e2d7d39cbe013fe638e"
+}

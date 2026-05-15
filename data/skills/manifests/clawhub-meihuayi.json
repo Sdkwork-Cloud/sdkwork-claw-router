@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70541,
+  "uuid": "skill-clawhub-meihuayi",
+  "skillKey": "clawhub-meihuayi",
+  "name": "MeiHuaYi",
+  "summary": "梅花易数卜卦系统。 支持时间起卦、数字起卦。 自动排盘并进行分析，梅花易理进行推断。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meihuayi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "玄安",
+      "features": [
+        "梅花易数卜卦系统。 支持时间起卦、数字起卦。 自动排盘并进行分析，梅花易理进行推断。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meihuayi@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76156352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meihuayi",
+      "url": "https://clawhub.ai/skills/meihuayi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meihuayi",
+    "url": "https://clawhub.ai/skills/meihuayi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meihuayi-1224e5c6b945709f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meihuayi@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-meihuayi-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85380bf1eee3b46dca9ecc86dcf2ffe0d8ccca036afae838b5c50df2f686a0d1",
+      "artifactSizeBytes": 2552
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T01:12:22.918Z"
+}

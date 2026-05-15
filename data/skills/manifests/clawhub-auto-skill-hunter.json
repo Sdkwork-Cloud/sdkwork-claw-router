@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12411,
+  "uuid": "skill-clawhub-auto-skill-hunter",
+  "skillKey": "clawhub-auto-skill-hunter",
+  "name": "Auto Skill Hunter",
+  "summary": "Automatically discovers and installs high-value skills from ClawHub based on unresolved issues, user profile, and skill compatibility.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_skill_hunter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WANGJUNJIE",
+      "features": [
+        "Automatically discovers and installs high-value skills from ClawHub based on unresolved issues,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-skill-hunter@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32323900?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-skill-hunter",
+      "url": "https://clawhub.ai/skills/auto-skill-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-skill-hunter",
+    "url": "https://clawhub.ai/skills/auto-skill-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-skill-hunter-f9ff18dd85e2d7b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-skill-hunter@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-skill-hunter-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:530ade18a52771d730120fbd871a4710326a34f1a3c8749a8631e2ba0bd0f0e9",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T11:09:02.185Z"
+}

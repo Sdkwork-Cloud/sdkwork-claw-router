@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17707,
+  "uuid": "skill-clawhub-goldenclaw",
+  "skillKey": "clawhub-goldenclaw",
+  "name": "Golden Claw",
+  "summary": "Manage GoldenClaw (GCLAW) on Solana. Create wallet, claim from faucet, check balance, send tokens, view history. For OpenClaw AI agents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goldenclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GoldenClawOrg",
+      "features": [
+        "Manage GoldenClaw (GCLAW) on Solana",
+        "Create wallet, claim from faucet, check balance, send tokens, view history",
+        "For OpenClaw AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goldenclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260117374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goldenclaw",
+      "url": "https://clawhub.ai/skills/goldenclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goldenclaw",
+    "url": "https://clawhub.ai/skills/goldenclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goldenclaw-13dbb2fff5a8fdd0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goldenclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-goldenclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60bf760a34c4172a17ffd9af63ec7417ebf755691945c8aeca805b313c3d3b50",
+      "artifactSizeBytes": 2349
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T15:10:34.307Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21537,
+  "uuid": "skill-clawhub-agent-runtime-security",
+  "skillKey": "clawhub-agent-runtime-security",
+  "name": "Agent Runtime Security",
+  "summary": "Complete OpenClaw Agent Security Hardening - Protects against data leaks (storage security) and prompt injection (runtime security). Use for initial setup, s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_runtime_security",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qingquanagi",
+      "features": [
+        "Complete OpenClaw Agent Security Hardening",
+        "Protects against data leaks (storage security) and prompt injection (runtime security)",
+        "Use for initial setup, s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-runtime-security@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13479952?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-runtime-security",
+      "url": "https://clawhub.ai/skills/agent-runtime-security"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-runtime-security",
+    "url": "https://clawhub.ai/skills/agent-runtime-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-runtime-security-ecf9eb38da050270.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-runtime-security@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-runtime-security-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b41cff640c74d344485fe843e4e11237c66a3e00468fae8462159dbbf4a7903",
+      "artifactSizeBytes": 2664
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:48:37.171Z"
+}

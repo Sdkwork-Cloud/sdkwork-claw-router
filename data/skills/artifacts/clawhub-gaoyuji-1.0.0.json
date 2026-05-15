@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gaoyuji@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gaoyuji",
+  "skill": {
+    "id": 53788,
+    "skillKey": "clawhub-gaoyuji",
+    "name": "publish test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gaoyuji",
+    "url": "https://clawhub.ai/skills/gaoyuji",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gaoyuji-1837f8c8f8a3c096.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search products across 8 Chinese e-commerce platforms: Taobao, Tmall, JD, PDD, 1688, AliExpress, Douyin, XHS. Zero-config — no API keys needed. Powered by Sh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaoyuji12138",
+      "userId": "s1772j8ad7n605nf7mc2twgj61840611",
+      "displayName": "gaoyuji12138",
+      "image": "https://avatars.githubusercontent.com/u/231046781?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776241510045,
+      "changelog": "- Initial release of cn-ecommerce-search skill.\n- Search products across 8 major Chinese e-commerce platforms in one query—no API keys or setup required.\n- Retrieve product details by keyword, direct URL, or product ID.\n- Tools included: search_products, get_product_detail, and parse_product_link for streamlined queries.\n- Supports virtually all common product link formats and returns unified price data.\n- Designed for product search, price comparison, supplier lookup, and product detail extraction across Taobao, Tmall, JD, PDD, 1688, AliExpress, Douyin, and XHS.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0bc54687c6a61c6950ae31fdd8303798808d1ae8e84e659c920a644d50b282d3"
+}

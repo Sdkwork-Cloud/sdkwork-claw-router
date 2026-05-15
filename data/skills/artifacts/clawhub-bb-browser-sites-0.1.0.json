@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bb-browser-sites@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bb_browser_sites",
+  "skill": {
+    "id": 17322,
+    "skillKey": "clawhub-bb-browser-sites",
+    "name": "Bb Browser Sites"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bb-browser-sites",
+    "url": "https://clawhub.ai/skills/bb-browser-sites",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bb-browser-sites-4beb406b7e556550.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn any website into a CLI command. 36 platforms, 103 commands — Twitter, Reddit, GitHub, YouTube, Zhihu, Bilibili, Weibo, and more. Uses OpenClaw's browser..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yan5xu",
+      "userId": "publishers:yan5xu",
+      "displayName": "yan5xu",
+      "image": "https://avatars.githubusercontent.com/u/5762066?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1305,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773553350638,
+      "changelog": "Initial release: Instantly turn 36 websites into CLI commands via OpenClaw, no Chrome extension needed.\n\n- 103 prebuilt commands covering social media, developer, news, finance, video, and more.\n- Uses OpenClaw’s browser for authentication and automation; works with your login state.\n- Filter and format output using --jq for structured data on the command line.\n- Includes commands for listing, recommending, and searching adapters.\n- Detailed guide for creating new adapters.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04947ca971703d0c2619e2011215be155a29e8118ec7b4b0e1c39a50967fa059"
+}

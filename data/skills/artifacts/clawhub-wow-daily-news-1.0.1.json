@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wow-daily-news@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wow_daily_news",
+  "skill": {
+    "id": 66219,
+    "skillKey": "clawhub-wow-daily-news",
+    "name": "Wow Daily News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wow-daily-news",
+    "url": "https://clawhub.ai/skills/wow-daily-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wow-daily-news-4c788d3764d37c67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日日报自动生成。每天 18:00 自动生成包含魔兽世界新闻、NGA 热帖、今日美图的飞书文档，并推送到飞书和微信。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lorexxar",
+      "userId": "s1799ry2h412c0rxz4qjqhcq5583s16r",
+      "displayName": "LoRexxar",
+      "image": "https://avatars.githubusercontent.com/u/12526901?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774928150215,
+      "changelog": "- 增加每个执行步骤的时间日志（echo start/end），便于排查超时和卡点\n- 美图获取失败时不再中断日报，改为降级显示“美图暂时不可用”提示\n- 超时时间由10分钟提升至20分钟\n- 移除手动启动 Xvfb 的逻辑，改为 systemd 常驻服务\n- 推送渠道由 LightClaw 更换为微信（openclaw-weixin），仍保留飞书渠道",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4373027900d0a141a236eb5d1495ef44279211c5cae3b23c5d61e19db0bed46c"
+}

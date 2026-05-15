@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14993,
+  "uuid": "skill-clawhub-openqq",
+  "skillKey": "clawhub-openqq",
+  "name": "Openqq",
+  "summary": "QQ bot integration for OpenClaw with session isolation, logging, and AI auto-reply. Supports private chat and group @messages.",
+  "version": "0.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openqq",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zao_hon",
+      "features": [
+        "QQ bot integration for OpenClaw with session isolation, logging, and AI auto-reply",
+        "Supports private chat and group @messages."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openqq@0.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17217613?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openqq",
+      "url": "https://clawhub.ai/skills/openqq"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openqq",
+    "url": "https://clawhub.ai/skills/openqq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openqq-751f4e9e75b5db54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openqq@0.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-openqq-0.0.5.json",
+      "version": "0.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32c339738b6ccfbe4534915088b23e7b5c991fdb61035557b809a83085ecc4c6",
+      "artifactSizeBytes": 2089
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T07:16:57.841Z"
+}

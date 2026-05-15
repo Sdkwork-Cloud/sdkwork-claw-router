@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16628,
+  "uuid": "skill-clawhub-cin7-inventory",
+  "skillKey": "clawhub-cin7-inventory",
+  "name": "Cin7 Inventory",
+  "summary": "Cin7 Core inventory management -- products, stock, orders, purchases, customers, and suppliers via bash scripts.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cin7_inventory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yashthesiya1",
+      "features": [
+        "Cin7 Core inventory management -",
+        "products, stock, orders, purchases, customers, and suppliers via bash scripts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cin7-inventory@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143111848?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cin7-inventory",
+      "url": "https://clawhub.ai/skills/cin7-inventory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cin7-inventory",
+    "url": "https://clawhub.ai/skills/cin7-inventory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cin7-inventory-f31f8d157cdbb069.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cin7-inventory@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cin7-inventory-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:221f01afb4edcef946f96ba2153e7cb7fdae479bf6ef26a427fb9d6f5e9a6d1f",
+      "artifactSizeBytes": 2376
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T09:20:22.569Z"
+}

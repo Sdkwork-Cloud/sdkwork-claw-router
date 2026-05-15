@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/microsoft-markitdown@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microsoft_markitdown",
+  "skill": {
+    "id": 36264,
+    "skillKey": "clawhub-microsoft-markitdown",
+    "name": "Microsoft MarkItDown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microsoft-markitdown",
+    "url": "https://clawhub.ai/skills/microsoft-markitdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microsoft-markitdown-d52db6675f80dad9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use MarkItDown to convert various files (PDF, Word, Excel, PPT, images, audio, HTML, CSV, JSON, etc.) to Markdown format for LLM processing and text analysis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775958214496,
+      "changelog": "Initial release of Microsoft MarkItDown.\n\n- Convert multiple file types (PDF, Word, Excel, PowerPoint, images, audio, HTML, CSV, JSON, ZIP, YouTube videos, EPUB, Outlook) to Markdown format.\n- Supports both command-line and Python API usage.\n- Optional plugin system for extended functionality, including OCR and Azure Document Intelligence.\n- Includes dependency tags for selective installation based on file formats.\n- Provides example commands and code snippets to guide usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d47124be804116117f0d6b96739beb40437a5b852de0ebf2dbf16cfb83da5055"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29573,
+  "uuid": "skill-clawhub-gpu-cluster-manager",
+  "skillKey": "clawhub-gpu-cluster-manager",
+  "name": "Gpu Cluster Manager",
+  "summary": "Turn your spare GPUs into one inference endpoint. Auto-discovers machines on your network, routes requests to the best available device, learns when your mac...",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gpu_cluster_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Turn your spare GPUs into one inference endpoint",
+        "Auto-discovers machines on your network, routes requests to the best available device, learns w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gpu-cluster-manager@1.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gpu-cluster-manager",
+      "url": "https://clawhub.ai/skills/gpu-cluster-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gpu-cluster-manager",
+    "url": "https://clawhub.ai/skills/gpu-cluster-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gpu-cluster-manager-36fb90d998965301.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gpu-cluster-manager@1.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gpu-cluster-manager-1.4.1.json",
+      "version": "1.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a516946f18d9b1990e7018cfb50088a8411695509df0e994a64043d2b968d2e2",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T22:18:15.591Z"
+}

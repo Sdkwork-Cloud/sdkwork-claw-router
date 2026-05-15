@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-crypto-trading@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_crypto_trading",
+  "skill": {
+    "id": 54304,
+    "skillKey": "clawhub-agent-crypto-trading",
+    "name": "AI agent crypto trading — gasless limit, DCA, stop-loss & take-profit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-crypto-trading",
+    "url": "https://clawhub.ai/skills/agent-crypto-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-crypto-trading-ce23702c58a81adc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI agent crypto trading. Gasless limit, DCA, stop-loss & take-profit across 8 EVM chains."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eranp-orbs",
+      "userId": "s1789z9gme6hjt89mbfd852wy183ng7a",
+      "displayName": "Eranp-orbs",
+      "image": "https://avatars.githubusercontent.com/u/76778405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 62,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778138885240,
+      "changelog": "- Initial release of agent-crypto-trading skill.\n- Enables autonomous gasless limit, DCA, stop-loss, and take-profit orders on 8 EVM chains.\n- Provides complete workflow and relay endpoints for instruction-only crypto trading.\n- Includes clear mapping from user intent to spot order payloads, with param normalization, signing, and submission guidance.\n- Supports relay querying, order cancellation, and authoritative per-chain and adapter definitions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e91140e3eb4487ec3f81a1cbcaed2384bfdd4774c4348f6d24953e7be2246444"
+}

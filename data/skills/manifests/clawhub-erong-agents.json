@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60195,
+  "uuid": "skill-clawhub-erong-agents",
+  "skillKey": "clawhub-erong-agents",
+  "name": "Agency Agents",
+  "summary": "AI Agent 团队 - 49个专业Agent，8大部门，完整的AI代理机构。支持单Agent使用和多Agent协作编排。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.erong_agents",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yirong",
+      "features": [
+        "AI Agent 团队",
+        "49个专业Agent，8大部门，完整的AI代理机构。支持单Agent使用和多Agent协作编排。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/erong-agents@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32793967?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "erong-agents",
+      "url": "https://clawhub.ai/skills/erong-agents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "erong-agents",
+    "url": "https://clawhub.ai/skills/erong-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/erong-agents-10ae2029f9180e5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/erong-agents@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-erong-agents-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:114b3da0c177bc316732420a8b157f04bf284d8d8ce5b964bf2af86f0804a640",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T05:55:54.860Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/six-agent-orchestrator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.six_agent_orchestrator",
+  "skill": {
+    "id": 62929,
+    "skillKey": "clawhub-six-agent-orchestrator",
+    "name": "six-agent-orchestrator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "six-agent-orchestrator",
+    "url": "https://clawhub.ai/skills/six-agent-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/six-agent-orchestrator-be93cb1653db8c50.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "六Agent协作编排器 - 开箱即用的多Agent团队模板。包含CEO（架构师）、PM（项目经理）、牢A（执行）、牢B（审计）、牢C（推理）、牢D（监控），6阶段Pipeline强制执行，Token配额自动管理，红线禁区自动检查。触发词：六Agent、多Agent协作、agent团队、协作编排、six agent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xb19960921",
+      "userId": "s172f3jjxf40vh438bf24d3cj983g86d",
+      "displayName": "xb19960921",
+      "image": "https://avatars.githubusercontent.com/u/83778953?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776490335980,
+      "changelog": "Initial release of six-agent-orchestrator – a ready-to-use multi-agent collaboration framework.\n\n- Implements 6 clearly defined agent roles: CEO (Architect), PM, Executor, Auditor, Specialist Reasoner, and Monitor.\n- Enforces a strict 6-stage pipeline (PLAN → PRD → EXEC → VERIFY → FIX → SUMMARY) with no step-skipping.\n- Automatic token quota management and multi-tier token allocation with real-time usage monitoring and overuse alerts.\n- Built-in red line (forbidden action) checks for all agents, with automatic interception of unauthorized behavior.\n- Example use cases and one-click orchestration instructions included.\n- Differentiators: quota control, forbidden action rules, pipeline enforcement, support for free models, and robust comparison with similar products.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4eff3123c44282d3187a06411ed6ab095fa7178efdcbe2c31ae97a3df6126848"
+}

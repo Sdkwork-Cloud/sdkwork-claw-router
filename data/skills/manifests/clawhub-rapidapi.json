@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23137,
+  "uuid": "skill-clawhub-rapidapi",
+  "skillKey": "clawhub-rapidapi",
+  "name": "rapidapi",
+  "summary": "Template-driven RapidAPI client with auto-registered actions and a universal call entrypoint",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rapidapi",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "web3aivc",
+      "features": [
+        "Template-driven RapidAPI client with auto-registered actions and a universal call entrypoint"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rapidapi@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/122167631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rapidapi",
+      "url": "https://clawhub.ai/skills/rapidapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rapidapi",
+    "url": "https://clawhub.ai/skills/rapidapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rapidapi-a29842c746ccee6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rapidapi@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rapidapi-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2fce342a9fa4bc719fc8abae424a67b51df54c56e69a55ed14026c06a09bb97e",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T01:56:33.468Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69526,
+  "uuid": "skill-clawhub-renovation-inspector",
+  "skillKey": "clawhub-renovation-inspector",
+  "name": "Renovation Inspector",
+  "summary": "装修避坑与监理助手。当用户上传装修报价单/合同进行审核、需要施工节点验收标准、闭水试验指导、瓷砖铺贴诊断、谈判话术反击或生成补充协议时触发本 Skill。覆盖全装修周期：报价审计 → 施工验收 → 谈判博弈。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.renovation_inspector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DreamMer2408",
+      "features": [
+        "装修避坑与监理助手。当用户上传装修报价单/合同进行审核、需要施工节点验收标准、闭水试验指导、瓷砖铺贴诊断、谈判话术反击或生成补充协议时触发本 Skill。覆盖全装修周期：报价审计 → 施工验."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/renovation-inspector@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24226928?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "renovation-inspector",
+      "url": "https://clawhub.ai/skills/renovation-inspector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "renovation-inspector",
+    "url": "https://clawhub.ai/skills/renovation-inspector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/renovation-inspector-74b5331eb16e7ce5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/renovation-inspector@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-renovation-inspector-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12763ecdaf3efd094c0147cbe770564527f9b0fea1efe69bf262d1c9c7792d0c",
+      "artifactSizeBytes": 2653
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T08:37:32.737Z"
+}

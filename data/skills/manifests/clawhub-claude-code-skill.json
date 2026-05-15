@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9946,
+  "uuid": "skill-clawhub-claude-code-skill",
+  "skillKey": "clawhub-claude-code-skill",
+  "name": "Claude Code Agent",
+  "summary": "Integrates MCP tool servers for orchestration, state persistence with IndexedDB/localStorage, and session sync across devices in OpenClaw/Clawdbot.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Enderfga",
+      "features": [
+        "Integrates MCP tool servers for orchestration, state persistence with IndexedDB/localStorage, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-skill@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74981769?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-skill",
+      "url": "https://clawhub.ai/skills/claude-code-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-skill",
+    "url": "https://clawhub.ai/skills/claude-code-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-skill-76473eca4684ed1a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-skill@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-skill-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:974401b873ce36020035afcddd70d1fee86c51b62f6f5da665a5116d3b06914b",
+      "artifactSizeBytes": 2203
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T14:53:37.386Z"
+}

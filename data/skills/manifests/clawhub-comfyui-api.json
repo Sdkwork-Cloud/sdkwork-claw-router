@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10578,
+  "uuid": "skill-clawhub-comfyui-api",
+  "skillKey": "clawhub-comfyui-api",
+  "name": "Comfyui-Api",
+  "summary": "Connects to a ComfyUI server to generate images from prompts, auto-detects URLs, translates Chinese prompts, and supports REST and WebSocket APIs.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfyui_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qqliaoxin",
+      "features": [
+        "Connects to a ComfyUI server to generate images from prompts, auto-detects URLs, translates Chi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comfyui-api@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9499467?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comfyui-api",
+      "url": "https://clawhub.ai/skills/comfyui-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfyui-api",
+    "url": "https://clawhub.ai/skills/comfyui-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfyui-api-53aec9321b0cc17e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comfyui-api@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-comfyui-api-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b33b6a10f88900fe624fe9ac3353ddf7898d2124c3394772d86ac4289d4dab15",
+      "artifactSizeBytes": 2065
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T05:14:08.612Z"
+}

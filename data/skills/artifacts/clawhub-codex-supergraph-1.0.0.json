@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codex-supergraph@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_supergraph",
+  "skill": {
+    "id": 30673,
+    "skillKey": "clawhub-codex-supergraph",
+    "name": "codex-supergraph"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-supergraph",
+    "url": "https://clawhub.ai/skills/codex-supergraph",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-supergraph-1487867f6efc02e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user asks about token prices, charts, holders, trending tokens, pair data, prediction markets, or any on-chain analytics from Codex. Also use wh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nealo",
+      "userId": "publishers:nealo",
+      "displayName": "Neal O'Grady",
+      "image": "https://avatars.githubusercontent.com/u/3241395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773938687728,
+      "changelog": "Initial release of codex-supergraph.\n\n- Enables access to Codex on-chain analytics and prediction market data.\n- Supports token prices, charts, holders, trending tokens, pair data, and more via Codex GraphQL API.\n- Details required authentication flow with API key and payment handling guidance.\n- Provides guidance for operation selection and discovery path.\n- Includes references for troubleshooting and advanced queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f2346090d8d1b2d63fc66d51608989b58d6b105ee8278c556213c1df662eb5a"
+}

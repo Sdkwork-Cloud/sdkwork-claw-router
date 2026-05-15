@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/movie-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.movie_maker",
+  "skill": {
+    "id": 47430,
+    "skillKey": "clawhub-movie-maker",
+    "name": "Movie Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "movie-maker",
+    "url": "https://clawhub.ai/skills/movie-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/movie-maker-d116afe5c7ee3964.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "create video clips into finished movie files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for assembling raw cl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777311700927,
+      "changelog": "Movie Maker 1.0.0 — initial release\n\n- Create finished 1080p MP4 videos by combining and editing video clips in the cloud.\n- Supports MP4, MOV, AVI, and WebM files up to 500MB.\n- Handles export, clip combination, background music, and text overlays via natural language prompts.\n- No installation required; operations are processed on cloud GPU nodes with fast turnaround.\n- Session and authentication workflow is integrated, including free credits for new users.\n- Detailed error handling and status updates for a seamless editing experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f664bd2987666cd3c4a99f613bcfb8ff9a59b23ec8c8869979c7e79521452473"
+}

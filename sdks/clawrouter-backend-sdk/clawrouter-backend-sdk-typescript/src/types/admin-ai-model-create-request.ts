@@ -1,0 +1,51 @@
+/** Admin ai model create request schema exposed by Claw Router. */
+export interface AdminAiModelCreateRequest {
+  /** Api format field on admin ai model create request. */
+  apiFormat?: string | null;
+  /** Capability intro field on admin ai model create request. */
+  capabilityIntro?: string | null;
+  /** Positive token window, accepting plain integers or K/M suffixes. */
+  contextTokens: string;
+  /** Description field on admin ai model create request. */
+  description?: string | null;
+  /** Input modalities field on admin ai model create request. */
+  inputModalities?: string[];
+  /** Limitations field on admin ai model create request. */
+  limitations?: string[];
+  /** Max output tokens field on admin ai model create request. */
+  maxOutputTokens?: number | null;
+  /** Modalities field on admin ai model create request. */
+  modalities?: string[];
+  /** AI model identifier. */
+  name: string;
+  /** Output modalities field on admin ai model create request. */
+  outputModalities?: string[];
+  /** Official reference input unit price in USD. */
+  priceIn: string;
+  /** Official reference output unit price in USD. */
+  priceOut: string;
+  /** Release stage field on admin ai model create request. */
+  releaseStage?: number | null;
+  /** Replacement model field on admin ai model create request. */
+  replacementModel?: string | null;
+  /** Routing state field on admin ai model create request. */
+  routingState?: number | null;
+  /** Shelf state field on admin ai model create request. */
+  shelfState?: number | null;
+  /** Supported languages field on admin ai model create request. */
+  supportedLanguages?: string[];
+  /** Supports json schema field on admin ai model create request. */
+  supportsJsonSchema?: boolean;
+  /** Supports streaming field on admin ai model create request. */
+  supportsStreaming?: boolean;
+  /** Supports tools field on admin ai model create request. */
+  supportsTools?: boolean;
+  /** Training data cutoff field on admin ai model create request. */
+  trainingDataCutoff?: string | null;
+  /** Primary model modality shown in the admin console. */
+  type: 'Chat' | 'Image' | 'Audio' | 'Embedding' | 'Music' | 'SoundEffect' | 'Video';
+  /** Use cases field on admin ai model create request. */
+  useCases?: string[];
+  /** Vendor row id or vendor code selected in the admin console. */
+  vendorId: string;
+}

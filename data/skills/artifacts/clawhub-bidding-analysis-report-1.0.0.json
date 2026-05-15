@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bidding-analysis-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bidding_analysis_report",
+  "skill": {
+    "id": 65862,
+    "skillKey": "clawhub-bidding-analysis-report",
+    "name": "Bidding Analysis Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bidding-analysis-report",
+    "url": "https://clawhub.ai/skills/bidding-analysis-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bidding-analysis-report-7d1bd90437d86742.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "招标数据分析报告生成技能 - 支持AI项目占比分析、年度趋势分析、TOP机构排名，自动生成Word/PDF报告，嵌入高质量图表。适用于高校招标、政府采购、企业采购等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "austin0208",
+      "userId": "s1760cznph354rmbh66e6wmg4n8472c4",
+      "displayName": "Austin0208",
+      "image": "https://avatars.githubusercontent.com/u/89759734?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776760711155,
+      "changelog": "Initial release of bidding-analysis-report.\n\n- Generates bidding data analysis reports (AI project proportion, annual trends, TOP institution rankings)\n- Supports both Word and PDF output with embedded high-quality charts\n- Provides automated donut and bar chart creation with a modern tech style\n- Customizable for university, government, and enterprise procurement scenarios\n- Input via Excel file, with flexible AI keyword recognition\n- Includes ranking and trend analysis features for institutions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4d37c7f73393c52c6280d108e0672d6305c1eafb67e1b96076b4e485ebde441"
+}

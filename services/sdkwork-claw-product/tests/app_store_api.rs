@@ -21,7 +21,7 @@ async fn app_store_catalog_route_returns_sdk_contract_items() {
     let response = router
         .oneshot(
             Request::builder()
-                .uri("/app/v3/api/app/store?keyword=router&pageNo=1&pageSize=20")
+                .uri("/app/v3/api/platform/apps/store?search_query=router&page=1&page_size=20")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -77,7 +77,7 @@ async fn app_store_detail_route_returns_direct_item_data() {
     let response = router
         .oneshot(
             Request::builder()
-                .uri("/app/v3/api/app/store/claw-router")
+                .uri("/app/v3/api/platform/apps/store/claw-router")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -106,7 +106,7 @@ async fn app_store_categories_route_returns_string_items() {
     let response = router
         .oneshot(
             Request::builder()
-                .uri("/app/v3/api/app/store/categories")
+                .uri("/app/v3/api/platform/apps/store/categories")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -131,7 +131,7 @@ async fn app_store_detail_route_reports_missing_app_as_not_found() {
     let response = router
         .oneshot(
             Request::builder()
-                .uri("/app/v3/api/app/store/missing-app")
+                .uri("/app/v3/api/platform/apps/store/missing-app")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -163,7 +163,7 @@ async fn app_store_catalog_route_rejects_unsupported_status_values() {
             .clone()
             .oneshot(
                 Request::builder()
-                    .uri(format!("/app/v3/api/app/store?status={status}"))
+                    .uri(format!("/app/v3/api/platform/apps/store?status={status}"))
                     .header("x-sdkwork-tenant-id", "10")
                     .header("x-sdkwork-organization-id", "20")
                     .header("x-sdkwork-user-id", "30")
@@ -190,7 +190,7 @@ async fn app_store_catalog_route_rejects_invalid_time_window_values() {
     let response = router
         .oneshot(
             Request::builder()
-                .uri("/app/v3/api/app/store?startTime=2026-99-02T09:30:00Z")
+                .uri("/app/v3/api/platform/apps/store?start_time=2026-99-02T09:30:00Z")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -206,7 +206,7 @@ async fn app_store_catalog_route_rejects_invalid_time_window_values() {
     assert!(payload["message"]
         .as_str()
         .unwrap_or_default()
-        .contains("startTime must be an ISO-8601 date-time"));
+        .contains("start_time must be an ISO-8601 date-time"));
 }
 
 #[tokio::test]
@@ -216,7 +216,7 @@ async fn app_store_catalog_route_rejects_non_ascii_time_window_without_panic() {
     let response = router
         .oneshot(
             Request::builder()
-                .uri("/app/v3/api/app/store?startTime=202%C3%A9-05-0")
+                .uri("/app/v3/api/platform/apps/store?start_time=202%C3%A9-05-0")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -232,7 +232,7 @@ async fn app_store_catalog_route_rejects_non_ascii_time_window_without_panic() {
     assert!(payload["message"]
         .as_str()
         .unwrap_or_default()
-        .contains("startTime must be an ISO-8601 date-time"));
+        .contains("start_time must be an ISO-8601 date-time"));
 }
 
 #[tokio::test]
@@ -242,7 +242,7 @@ async fn app_store_catalog_route_rejects_ambiguous_time_zone_offsets() {
     let response = router
         .oneshot(
             Request::builder()
-                .uri("/app/v3/api/app/store?startTime=2026-05-02T09:30:00%2B08:00")
+                .uri("/app/v3/api/platform/apps/store?start_time=2026-05-02T09:30:00%2B08:00")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -258,7 +258,7 @@ async fn app_store_catalog_route_rejects_ambiguous_time_zone_offsets() {
     assert!(payload["message"]
         .as_str()
         .unwrap_or_default()
-        .contains("startTime must use UTC Z or no timezone offset"));
+        .contains("start_time must use UTC Z or no timezone offset"));
 }
 
 #[tokio::test]
@@ -268,7 +268,7 @@ async fn app_store_catalog_route_rejects_inverted_time_windows() {
     let response = router
         .oneshot(
             Request::builder()
-                .uri("/app/v3/api/app/store?startTime=2026-05-04&endTime=2026-05-03")
+                .uri("/app/v3/api/platform/apps/store?start_time=2026-05-04&end_time=2026-05-03")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -284,7 +284,7 @@ async fn app_store_catalog_route_rejects_inverted_time_windows() {
     assert!(payload["message"]
         .as_str()
         .unwrap_or_default()
-        .contains("startTime must be earlier than or equal to endTime"));
+        .contains("start_time must be earlier than or equal to end_time"));
 }
 
 #[tokio::test]
@@ -295,7 +295,7 @@ async fn app_store_catalog_route_accepts_standard_status_and_normalizes_time_win
     let response = router
         .oneshot(
             Request::builder()
-                .uri("/app/v3/api/app/store?status=ACTIVE&startTime=2026-05-02T09:30:45Z&endTime=2026-05-03")
+                .uri("/app/v3/api/platform/apps/store?status=ACTIVE&start_time=2026-05-02T09:30:45Z&end_time=2026-05-03")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")

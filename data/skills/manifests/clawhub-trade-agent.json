@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13104,
+  "uuid": "skill-clawhub-trade-agent",
+  "skillKey": "clawhub-trade-agent",
+  "name": "trade-agent",
+  "summary": "Manage AIUSD trading and accounts by querying balances, executing trades, staking, withdrawing, topping up gas, and viewing transaction history via MCP backend.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trade_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChaunceyLiu",
+      "features": [
+        "Manage AIUSD trading and accounts by querying balances, executing trades, staking, withdrawing,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trade-agent@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18446173?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trade-agent",
+      "url": "https://clawhub.ai/skills/trade-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trade-agent",
+    "url": "https://clawhub.ai/skills/trade-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trade-agent-76741060d479feb7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trade-agent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-trade-agent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50010c8338e0ed72298af86158854527633b7856eb71778eed26f75676d92a56",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T01:06:26.727Z"
+}

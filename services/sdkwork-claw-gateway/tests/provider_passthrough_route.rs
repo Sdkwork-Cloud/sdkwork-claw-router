@@ -4,7 +4,9 @@ use axum::http::HeaderMap;
 use axum::http::{Request, StatusCode};
 use axum::routing::any;
 use axum::Router;
-use sdkwork_claw_config::ProviderRelayConfig;
+use sdkwork_claw_config::{ProviderRelayConfig, ProviderSecretMapConfig};
+use sdkwork_claw_product::application::ApiKeySecretHasher;
+use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
 use std::collections::BTreeSet;
 use std::sync::{Arc, Mutex};
 use tower::ServiceExt;
@@ -273,7 +275,10 @@ async fn gateway_mounts_provider_native_passthrough_boundaries_without_404() {
 async fn gateway_forwards_configured_vendor_prefixed_vidu_passthrough_request() {
     let captured = Arc::new(Mutex::new(Vec::new()));
     let provider = Router::new()
-        .route("/vidu/ent/v2/text2video", any(capture_native_provider_request))
+        .route(
+            "/vidu/ent/v2/text2video",
+            any(capture_native_provider_request),
+        )
         .with_state(Arc::clone(&captured));
     let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
     let addr = listener.local_addr().unwrap();
@@ -303,7 +308,9 @@ async fn gateway_forwards_configured_vendor_prefixed_vidu_passthrough_request() 
                 .uri("/vidu/ent/v2/text2video")
                 .header("token", "client-token-should-not-pass")
                 .header("content-type", "application/json")
-                .body(Body::from(r#"{"model":"vidu2.0","prompt":"provider route"}"#))
+                .body(Body::from(
+                    r#"{"model":"vidu2.0","prompt":"provider route"}"#,
+                ))
                 .unwrap(),
         )
         .await
@@ -862,6 +869,1701 @@ async fn gateway_database_router_forwards_configured_openai_standard_passthrough
     );
     assert_eq!(None, captured[0].client_api_key);
     assert!(captured[0].body.contains("gpt-image-1"));
+}
+
+#[tokio::test]
+async fn gateway_database_router_does_not_duplicate_openai_v1_prefix_for_configured_openai_passthrough(
+) {
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let provider = Router::new()
+        .route(
+            "/v1/images/generations",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&captured));
+    let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let addr = listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(listener, provider).await.unwrap();
+    });
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    let config =
+        ProviderRelayConfig::from_parts(format!("http://{addr}/v1"), "sk-openai-upstream").unwrap();
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_relay_config(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        Some(config),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/images/generations")
+                .header("authorization", catalog.gateway_authorization_header())
+                .header("content-type", "application/json")
+                .body(Body::from(r#"{"model":"gpt-image-1","prompt":"logo"}"#))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::CREATED, response.status());
+    let captured = captured.lock().unwrap();
+    assert_eq!(1, captured.len());
+    assert_eq!("/v1/images/generations", captured[0].path_and_query);
+    assert_eq!(
+        Some("Bearer sk-openai-upstream".to_owned()),
+        captured[0].authorization
+    );
+}
+
+#[tokio::test]
+async fn gateway_database_openai_passthrough_routes_by_api_key_group_account_pool() {
+    let captured_standard = Arc::new(Mutex::new(Vec::new()));
+    let standard_provider = Router::new()
+        .route(
+            "/v1/images/generations",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&captured_standard));
+    let standard_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let standard_addr = standard_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(standard_listener, standard_provider)
+            .await
+            .unwrap();
+    });
+
+    let captured_premium = Arc::new(Mutex::new(Vec::new()));
+    let premium_provider = Router::new()
+        .route(
+            "/v1/images/generations",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&captured_premium));
+    let premium_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let premium_addr = premium_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(premium_listener, premium_provider)
+            .await
+            .unwrap();
+    });
+
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    seed_openai_passthrough_group_account_pools(
+        &catalog,
+        &format!("http://{standard_addr}"),
+        &format!("http://{premium_addr}"),
+        "sk-premium-live-secret",
+    )
+    .await;
+
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        Some(
+            ProviderSecretMapConfig::from_json(
+                serde_json::json!({
+                    "vault://providers/openrouter/account/main": "sk-standard-upstream",
+                    "vault://providers/openrouter/account/premium": "sk-premium-upstream"
+                })
+                .to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    for (authorization, prompt) in [
+        (
+            catalog.gateway_authorization_header(),
+            "standard account pool",
+        ),
+        (
+            "Bearer sk-premium-live-secret".to_owned(),
+            "premium account pool",
+        ),
+    ] {
+        let response = router
+            .clone()
+            .oneshot(
+                Request::builder()
+                    .method("POST")
+                    .uri("/v1/images/generations")
+                    .header("authorization", authorization)
+                    .header("content-type", "application/json")
+                    .body(Body::from(format!(
+                        r#"{{"model":"gpt-image-1","prompt":"{prompt}"}}"#
+                    )))
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+
+        assert_eq!(StatusCode::CREATED, response.status(), "{prompt}");
+    }
+
+    let captured_standard = captured_standard.lock().unwrap();
+    assert_eq!(1, captured_standard.len());
+    assert_eq!(
+        Some("Bearer sk-standard-upstream".to_owned()),
+        captured_standard[0].authorization
+    );
+    assert_eq!(
+        "/v1/images/generations",
+        captured_standard[0].path_and_query
+    );
+    assert!(captured_standard[0].body.contains("standard account pool"));
+
+    let captured_premium = captured_premium.lock().unwrap();
+    assert_eq!(1, captured_premium.len());
+    assert_eq!(
+        Some("Bearer sk-premium-upstream".to_owned()),
+        captured_premium[0].authorization
+    );
+    assert_eq!("/v1/images/generations", captured_premium[0].path_and_query);
+    assert!(captured_premium[0].body.contains("premium account pool"));
+}
+
+#[tokio::test]
+async fn gateway_database_route_scoped_openai_passthrough_rewrites_multipart_model() {
+    let captured_standard = Arc::new(Mutex::new(Vec::new()));
+    let standard_provider = Router::new()
+        .route("/v1/images/edits", any(capture_native_provider_request))
+        .with_state(Arc::clone(&captured_standard));
+    let standard_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let standard_addr = standard_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(standard_listener, standard_provider)
+            .await
+            .unwrap();
+    });
+
+    let captured_premium = Arc::new(Mutex::new(Vec::new()));
+    let premium_provider = Router::new()
+        .route("/v1/images/edits", any(capture_native_provider_request))
+        .with_state(Arc::clone(&captured_premium));
+    let premium_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let premium_addr = premium_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(premium_listener, premium_provider)
+            .await
+            .unwrap();
+    });
+
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    seed_openai_passthrough_group_account_pools(
+        &catalog,
+        &format!("http://{standard_addr}"),
+        &format!("http://{premium_addr}"),
+        "sk-premium-live-secret",
+    )
+    .await;
+
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        Some(
+            ProviderSecretMapConfig::from_json(
+                serde_json::json!({
+                    "vault://providers/openrouter/account/main": "sk-standard-upstream",
+                    "vault://providers/openrouter/account/premium": "sk-premium-upstream"
+                })
+                .to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    let boundary = "claw-router-test-boundary";
+    let body = format!(
+        "--{boundary}\r\n\
+Content-Disposition: form-data; name=\"prompt\"\r\n\
+\r\n\
+edit the uploaded image\r\n\
+--{boundary}\r\n\
+Content-Disposition: form-data; name=\"model\"\r\n\
+\r\n\
+gpt-image-1\r\n\
+--{boundary}\r\n\
+Content-Disposition: form-data; name=\"image\"; filename=\"image.png\"\r\n\
+Content-Type: image/png\r\n\
+\r\n\
+fake-png-bytes\r\n\
+--{boundary}--\r\n"
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/images/edits")
+                .header("authorization", catalog.gateway_authorization_header())
+                .header(
+                    "content-type",
+                    format!("multipart/form-data; boundary={boundary}"),
+                )
+                .body(Body::from(body))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::CREATED, response.status());
+
+    let captured_standard = captured_standard.lock().unwrap();
+    assert_eq!(1, captured_standard.len());
+    assert_eq!(
+        Some("Bearer sk-standard-upstream".to_owned()),
+        captured_standard[0].authorization
+    );
+    assert_eq!("/v1/images/edits", captured_standard[0].path_and_query);
+    assert!(captured_standard[0]
+        .content_type
+        .as_deref()
+        .unwrap()
+        .starts_with("multipart/form-data"));
+    assert!(captured_standard[0]
+        .body
+        .contains("name=\"model\"\r\n\r\nopenrouter/gpt-image-1-standard\r\n"));
+    assert!(!captured_standard[0]
+        .body
+        .contains("name=\"model\"\r\n\r\ngpt-image-1\r\n"));
+    assert!(captured_standard[0].body.contains("fake-png-bytes"));
+    assert_eq!(0, captured_premium.lock().unwrap().len());
+}
+
+#[tokio::test]
+async fn gateway_database_openai_passthrough_prefers_group_account_pool_when_global_relay_exists() {
+    let captured_standard = Arc::new(Mutex::new(Vec::new()));
+    let standard_provider = Router::new()
+        .route(
+            "/v1/images/generations",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&captured_standard));
+    let standard_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let standard_addr = standard_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(standard_listener, standard_provider)
+            .await
+            .unwrap();
+    });
+
+    let captured_premium = Arc::new(Mutex::new(Vec::new()));
+    let premium_provider = Router::new()
+        .route(
+            "/v1/images/generations",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&captured_premium));
+    let premium_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let premium_addr = premium_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(premium_listener, premium_provider)
+            .await
+            .unwrap();
+    });
+
+    let captured_global = Arc::new(Mutex::new(Vec::new()));
+    let global_provider = Router::new()
+        .route(
+            "/v1/images/generations",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&captured_global));
+    let global_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let global_addr = global_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(global_listener, global_provider).await.unwrap();
+    });
+
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    seed_openai_passthrough_group_account_pools(
+        &catalog,
+        &format!("http://{standard_addr}"),
+        &format!("http://{premium_addr}"),
+        "sk-premium-live-secret",
+    )
+    .await;
+
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        Some(
+            ProviderRelayConfig::from_parts(format!("http://{global_addr}"), "sk-global-upstream")
+                .unwrap(),
+        ),
+        Some(
+            ProviderSecretMapConfig::from_json(
+                serde_json::json!({
+                    "vault://providers/openrouter/account/main": "sk-standard-upstream",
+                    "vault://providers/openrouter/account/premium": "sk-premium-upstream"
+                })
+                .to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/images/generations")
+                .header("authorization", catalog.gateway_authorization_header())
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"gpt-image-1","prompt":"standard account pool"}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::CREATED, response.status());
+    assert_eq!(1, captured_standard.lock().unwrap().len());
+    assert_eq!(0, captured_premium.lock().unwrap().len());
+    assert_eq!(
+        0,
+        captured_global.lock().unwrap().len(),
+        "global OpenAI relay must not bypass route-scoped group account pool routing"
+    );
+}
+
+#[tokio::test]
+async fn gateway_database_openai_passthrough_uses_global_default_account_pool_when_group_pool_is_not_bound(
+) {
+    let captured_group = Arc::new(Mutex::new(Vec::new()));
+    let group_provider = Router::new()
+        .route("/v1/files", any(capture_native_provider_request))
+        .with_state(Arc::clone(&captured_group));
+    let group_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let group_addr = group_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(group_listener, group_provider).await.unwrap();
+    });
+
+    let captured_default = Arc::new(Mutex::new(Vec::new()));
+    let default_provider = Router::new()
+        .route("/v1/files", any(capture_native_provider_request))
+        .with_state(Arc::clone(&captured_default));
+    let default_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let default_addr = default_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(default_listener, default_provider)
+            .await
+            .unwrap();
+    });
+
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    seed_openai_passthrough_default_account_pool_fallback(
+        &catalog,
+        &format!("http://{group_addr}"),
+        &format!("http://{default_addr}"),
+    )
+    .await;
+
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        Some(
+            ProviderSecretMapConfig::from_json(
+                serde_json::json!({
+                    "vault://providers/openrouter/account/main": "sk-group-upstream",
+                    "vault://providers/openrouter/account/default": "sk-default-upstream"
+                })
+                .to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/v1/files?purpose=assistants")
+                .header("authorization", catalog.gateway_authorization_header())
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::CREATED, response.status());
+    assert_eq!(0, captured_group.lock().unwrap().len());
+    let captured_default = captured_default.lock().unwrap();
+    assert_eq!(1, captured_default.len());
+    assert_eq!(
+        Some("Bearer sk-default-upstream".to_owned()),
+        captured_default[0].authorization
+    );
+    assert_eq!(
+        "/v1/files?purpose=assistants",
+        captured_default[0].path_and_query
+    );
+}
+
+#[tokio::test]
+async fn gateway_database_route_scoped_openai_passthrough_uses_account_pool_header_auth_profile() {
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let provider = Router::new()
+        .route("/v1/files", any(capture_native_provider_request))
+        .with_state(Arc::clone(&captured));
+    let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let addr = listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(listener, provider).await.unwrap();
+    });
+
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    seed_openai_passthrough_header_auth_account_pool(&catalog, &format!("http://{addr}")).await;
+
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        Some(
+            ProviderSecretMapConfig::from_json(
+                serde_json::json!({
+                    "vault://providers/google/account/main": "sk-google-upstream"
+                })
+                .to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/v1/files")
+                .header("authorization", catalog.gateway_authorization_header())
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::CREATED, response.status());
+    let captured = captured.lock().unwrap();
+    assert_eq!(1, captured.len());
+    assert_eq!(None, captured[0].authorization);
+    assert_eq!(
+        Some("sk-google-upstream".to_owned()),
+        captured[0].google_api_key
+    );
+    assert_eq!("/v1/files", captured[0].path_and_query);
+}
+
+#[tokio::test]
+async fn gateway_database_route_scoped_openai_passthrough_applies_account_pool_default_headers() {
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let provider = Router::new()
+        .route("/v1/files", any(capture_native_provider_request))
+        .with_state(Arc::clone(&captured));
+    let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let addr = listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(listener, provider).await.unwrap();
+    });
+
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    seed_openai_passthrough_header_auth_account_pool_with_auth_config(
+        &catalog,
+        &format!("http://{addr}"),
+        r#"{"name":"x-api-key","defaultHeaders":{"anthropic-version":"2023-06-01"}}"#,
+    )
+    .await;
+
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        Some(
+            ProviderSecretMapConfig::from_json(
+                serde_json::json!({
+                    "vault://providers/google/account/main": "sk-google-upstream"
+                })
+                .to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/v1/files")
+                .header("authorization", catalog.gateway_authorization_header())
+                .header("x-api-key", "sk-client-should-not-win")
+                .header("anthropic-version", "client-version-should-not-win")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::CREATED, response.status());
+    let captured = captured.lock().unwrap();
+    assert_eq!(1, captured.len());
+    assert_eq!(None, captured[0].authorization);
+    assert_eq!(
+        Some("sk-google-upstream".to_owned()),
+        captured[0].anthropic_api_key
+    );
+    assert_eq!(Some("2023-06-01".to_owned()), captured[0].anthropic_version);
+}
+
+#[tokio::test]
+async fn gateway_database_route_scoped_stored_chat_creation_fails_closed_without_model() {
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        Some(
+            ProviderSecretMapConfig::from_json(
+                serde_json::json!({
+                    "vault://providers/openrouter/account/main": "sk-standard-upstream"
+                })
+                .to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", catalog.gateway_authorization_header())
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"messages":[{"role":"user","content":"hello"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::BAD_REQUEST, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    assert_eq!("invalid_request", payload["error"]["code"]);
+    assert!(payload["error"]["message"]
+        .as_str()
+        .unwrap()
+        .contains("model is required"));
+}
+
+#[tokio::test]
+async fn gateway_database_route_scoped_stored_chat_creation_rejects_malformed_json_before_routing()
+{
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        Some(
+            ProviderSecretMapConfig::from_json(
+                serde_json::json!({
+                    "vault://providers/openrouter/account/main": "sk-standard-upstream"
+                })
+                .to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", catalog.gateway_authorization_header())
+                .header("content-type", "application/json")
+                .body(Body::from(r#"{"model":"gpt-4o-mini","messages":["#))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::BAD_REQUEST, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    assert_eq!("invalid_request", payload["error"]["code"]);
+    assert!(payload["error"]["message"]
+        .as_str()
+        .unwrap()
+        .contains("invalid request body"));
+}
+
+#[tokio::test]
+async fn gateway_database_route_scoped_stored_chat_list_uses_account_pool_without_rewriting_query_model(
+) {
+    let captured_standard = Arc::new(Mutex::new(Vec::new()));
+    let standard_provider = Router::new()
+        .route("/v1/chat/completions", any(capture_native_provider_request))
+        .with_state(Arc::clone(&captured_standard));
+    let standard_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let standard_addr = standard_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(standard_listener, standard_provider)
+            .await
+            .unwrap();
+    });
+
+    let captured_premium = Arc::new(Mutex::new(Vec::new()));
+    let premium_provider = Router::new()
+        .route("/v1/chat/completions", any(capture_native_provider_request))
+        .with_state(Arc::clone(&captured_premium));
+    let premium_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let premium_addr = premium_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(premium_listener, premium_provider)
+            .await
+            .unwrap();
+    });
+
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    seed_openai_passthrough_group_account_pools(
+        &catalog,
+        &format!("http://{standard_addr}"),
+        &format!("http://{premium_addr}"),
+        "sk-premium-live-secret",
+    )
+    .await;
+
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        Some(
+            ProviderSecretMapConfig::from_json(
+                serde_json::json!({
+                    "vault://providers/openrouter/account/main": "sk-standard-upstream",
+                    "vault://providers/openrouter/account/premium": "sk-premium-upstream"
+                })
+                .to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/v1/chat/completions?model=gpt-4o-mini&limit=20")
+                .header("authorization", catalog.gateway_authorization_header())
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::CREATED, response.status());
+    let captured_standard = captured_standard.lock().unwrap();
+    assert_eq!(1, captured_standard.len());
+    assert_eq!(
+        Some("Bearer sk-standard-upstream".to_owned()),
+        captured_standard[0].authorization
+    );
+    assert_eq!(
+        "/v1/chat/completions?model=gpt-4o-mini&limit=20",
+        captured_standard[0].path_and_query
+    );
+    assert_eq!(0, captured_premium.lock().unwrap().len());
+}
+
+#[tokio::test]
+async fn gateway_database_route_scoped_openai_passthrough_rewrites_delete_path_model() {
+    let captured_standard = Arc::new(Mutex::new(Vec::new()));
+    let standard_provider = Router::new()
+        .route("/v1/models/{*model}", any(capture_native_provider_request))
+        .with_state(Arc::clone(&captured_standard));
+    let standard_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let standard_addr = standard_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(standard_listener, standard_provider)
+            .await
+            .unwrap();
+    });
+
+    let captured_premium = Arc::new(Mutex::new(Vec::new()));
+    let premium_provider = Router::new()
+        .route("/v1/models/{*model}", any(capture_native_provider_request))
+        .with_state(Arc::clone(&captured_premium));
+    let premium_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let premium_addr = premium_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(premium_listener, premium_provider)
+            .await
+            .unwrap();
+    });
+
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    seed_openai_passthrough_group_account_pools(
+        &catalog,
+        &format!("http://{standard_addr}"),
+        &format!("http://{premium_addr}"),
+        "sk-premium-live-secret",
+    )
+    .await;
+
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        Some(
+            ProviderSecretMapConfig::from_json(
+                serde_json::json!({
+                    "vault://providers/openrouter/account/main": "sk-standard-upstream",
+                    "vault://providers/openrouter/account/premium": "sk-premium-upstream"
+                })
+                .to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("DELETE")
+                .uri("/v1/models/gpt-4o-mini")
+                .header("authorization", catalog.gateway_authorization_header())
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::CREATED, response.status());
+    let captured_standard = captured_standard.lock().unwrap();
+    assert_eq!(1, captured_standard.len());
+    assert_eq!(
+        Some("Bearer sk-standard-upstream".to_owned()),
+        captured_standard[0].authorization
+    );
+    assert_eq!(
+        "/v1/models/openai%2Fglobal%2Fgpt-4o-mini",
+        captured_standard[0].path_and_query
+    );
+    assert_eq!(0, captured_premium.lock().unwrap().len());
+}
+
+#[tokio::test]
+async fn gateway_database_route_scoped_openai_passthrough_routes_bodyless_management_calls_by_group_account_pool(
+) {
+    let captured_standard = Arc::new(Mutex::new(Vec::new()));
+    let standard_provider = Router::new()
+        .route("/v1/files", any(capture_native_provider_request))
+        .with_state(Arc::clone(&captured_standard));
+    let standard_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let standard_addr = standard_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(standard_listener, standard_provider)
+            .await
+            .unwrap();
+    });
+
+    let captured_premium = Arc::new(Mutex::new(Vec::new()));
+    let premium_provider = Router::new()
+        .route("/v1/files", any(capture_native_provider_request))
+        .with_state(Arc::clone(&captured_premium));
+    let premium_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let premium_addr = premium_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(premium_listener, premium_provider)
+            .await
+            .unwrap();
+    });
+
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    seed_openai_passthrough_group_account_pools(
+        &catalog,
+        &format!("http://{standard_addr}"),
+        &format!("http://{premium_addr}"),
+        "sk-premium-live-secret",
+    )
+    .await;
+
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        Some(
+            ProviderSecretMapConfig::from_json(
+                serde_json::json!({
+                    "vault://providers/openrouter/account/main": "sk-standard-upstream",
+                    "vault://providers/openrouter/account/premium": "sk-premium-upstream"
+                })
+                .to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/v1/files?purpose=assistants")
+                .header("authorization", catalog.gateway_authorization_header())
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::CREATED, response.status());
+    let captured_standard = captured_standard.lock().unwrap();
+    assert_eq!(1, captured_standard.len());
+    assert_eq!(
+        Some("Bearer sk-standard-upstream".to_owned()),
+        captured_standard[0].authorization
+    );
+    assert_eq!(
+        "/v1/files?purpose=assistants",
+        captured_standard[0].path_and_query
+    );
+    assert_eq!(0, captured_premium.lock().unwrap().len());
+}
+
+#[tokio::test]
+async fn gateway_database_route_scoped_openai_passthrough_routes_audio_voice_management_by_specific_route_key(
+) {
+    let captured_standard = Arc::new(Mutex::new(Vec::new()));
+    let standard_provider = Router::new()
+        .route("/v1/audio/voices", any(capture_native_provider_request))
+        .with_state(Arc::clone(&captured_standard));
+    let standard_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let standard_addr = standard_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(standard_listener, standard_provider)
+            .await
+            .unwrap();
+    });
+
+    let captured_premium = Arc::new(Mutex::new(Vec::new()));
+    let premium_provider = Router::new()
+        .route("/v1/audio/voices", any(capture_native_provider_request))
+        .with_state(Arc::clone(&captured_premium));
+    let premium_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let premium_addr = premium_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(premium_listener, premium_provider)
+            .await
+            .unwrap();
+    });
+
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    seed_openai_passthrough_group_account_pools(
+        &catalog,
+        &format!("http://{standard_addr}"),
+        &format!("http://{premium_addr}"),
+        "sk-premium-live-secret",
+    )
+    .await;
+
+    let pool = catalog.open_pool().await.unwrap();
+    sqlx::query(
+        r#"
+        UPDATE ai_routing_rule
+        SET match_expression = '{"routeKey":"openai/management/audio_voices"}',
+            target_model = NULL
+        WHERE id = 9102
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    pool.close().await;
+
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        Some(
+            ProviderSecretMapConfig::from_json(
+                serde_json::json!({
+                    "vault://providers/openrouter/account/main": "sk-standard-upstream",
+                    "vault://providers/openrouter/account/premium": "sk-premium-upstream"
+                })
+                .to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/v1/audio/voices?limit=20")
+                .header("authorization", catalog.gateway_authorization_header())
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::CREATED, response.status());
+    let captured_standard = captured_standard.lock().unwrap();
+    assert_eq!(1, captured_standard.len());
+    assert_eq!(
+        Some("Bearer sk-standard-upstream".to_owned()),
+        captured_standard[0].authorization
+    );
+    assert_eq!(
+        "/v1/audio/voices?limit=20",
+        captured_standard[0].path_and_query
+    );
+    assert_eq!(0, captured_premium.lock().unwrap().len());
+}
+
+#[tokio::test]
+async fn gateway_database_route_scoped_openai_passthrough_routes_response_resource_management_by_specific_route_key(
+) {
+    let captured_standard = Arc::new(Mutex::new(Vec::new()));
+    let standard_provider = Router::new()
+        .route(
+            "/v1/responses/{response_id}",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&captured_standard));
+    let standard_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let standard_addr = standard_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(standard_listener, standard_provider)
+            .await
+            .unwrap();
+    });
+
+    let captured_premium = Arc::new(Mutex::new(Vec::new()));
+    let premium_provider = Router::new()
+        .route(
+            "/v1/responses/{response_id}",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&captured_premium));
+    let premium_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let premium_addr = premium_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(premium_listener, premium_provider)
+            .await
+            .unwrap();
+    });
+
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    seed_openai_passthrough_group_account_pools(
+        &catalog,
+        &format!("http://{standard_addr}"),
+        &format!("http://{premium_addr}"),
+        "sk-premium-live-secret",
+    )
+    .await;
+
+    let pool = catalog.open_pool().await.unwrap();
+    sqlx::query(
+        r#"
+        UPDATE ai_routing_rule
+        SET match_expression = '{"routeKey":"openai/management/responses"}',
+            target_model = NULL
+        WHERE id = 9102
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    pool.close().await;
+
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        Some(
+            ProviderSecretMapConfig::from_json(
+                serde_json::json!({
+                    "vault://providers/openrouter/account/main": "sk-standard-upstream",
+                    "vault://providers/openrouter/account/premium": "sk-premium-upstream"
+                })
+                .to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/v1/responses/resp_123?include=usage")
+                .header("authorization", catalog.gateway_authorization_header())
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::CREATED, response.status());
+    let captured_standard = captured_standard.lock().unwrap();
+    assert_eq!(1, captured_standard.len());
+    assert_eq!(
+        Some("Bearer sk-standard-upstream".to_owned()),
+        captured_standard[0].authorization
+    );
+    assert_eq!(
+        "/v1/responses/resp_123?include=usage",
+        captured_standard[0].path_and_query
+    );
+    assert_eq!(0, captured_premium.lock().unwrap().len());
+}
+
+#[tokio::test]
+async fn gateway_database_route_scoped_openai_passthrough_routes_video_resource_management_by_specific_route_key(
+) {
+    let captured_standard = Arc::new(Mutex::new(Vec::new()));
+    let standard_provider = Router::new()
+        .route(
+            "/v1/videos/{video_id}/content",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&captured_standard));
+    let standard_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let standard_addr = standard_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(standard_listener, standard_provider)
+            .await
+            .unwrap();
+    });
+
+    let captured_premium = Arc::new(Mutex::new(Vec::new()));
+    let premium_provider = Router::new()
+        .route(
+            "/v1/videos/{video_id}/content",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&captured_premium));
+    let premium_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let premium_addr = premium_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(premium_listener, premium_provider)
+            .await
+            .unwrap();
+    });
+
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    seed_openai_passthrough_group_account_pools(
+        &catalog,
+        &format!("http://{standard_addr}"),
+        &format!("http://{premium_addr}"),
+        "sk-premium-live-secret",
+    )
+    .await;
+
+    let pool = catalog.open_pool().await.unwrap();
+    sqlx::query(
+        r#"
+        UPDATE ai_routing_rule
+        SET match_expression = '{"routeKey":"openai/management/videos"}',
+            target_model = NULL
+        WHERE id = 9102
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    pool.close().await;
+
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        Some(
+            ProviderSecretMapConfig::from_json(
+                serde_json::json!({
+                    "vault://providers/openrouter/account/main": "sk-standard-upstream",
+                    "vault://providers/openrouter/account/premium": "sk-premium-upstream"
+                })
+                .to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/v1/videos/video_123/content")
+                .header("authorization", catalog.gateway_authorization_header())
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::CREATED, response.status());
+    let captured_standard = captured_standard.lock().unwrap();
+    assert_eq!(1, captured_standard.len());
+    assert_eq!(
+        Some("Bearer sk-standard-upstream".to_owned()),
+        captured_standard[0].authorization
+    );
+    assert_eq!(
+        "/v1/videos/video_123/content",
+        captured_standard[0].path_and_query
+    );
+    assert_eq!(0, captured_premium.lock().unwrap().len());
+}
+
+#[tokio::test]
+async fn gateway_database_route_scoped_openai_passthrough_routes_optional_model_calls_by_presence()
+{
+    let captured_standard_thread = Arc::new(Mutex::new(Vec::new()));
+    let standard_provider = Router::new()
+        .route(
+            "/v1/threads/thread_123/runs",
+            any(capture_native_provider_request),
+        )
+        .route(
+            "/v1/evals/eval_123/runs",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&captured_standard_thread));
+    let standard_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let standard_addr = standard_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(standard_listener, standard_provider)
+            .await
+            .unwrap();
+    });
+
+    let captured_premium = Arc::new(Mutex::new(Vec::new()));
+    let premium_provider = Router::new()
+        .route(
+            "/v1/threads/thread_123/runs",
+            any(capture_native_provider_request),
+        )
+        .route(
+            "/v1/evals/eval_123/runs",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&captured_premium));
+    let premium_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let premium_addr = premium_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(premium_listener, premium_provider)
+            .await
+            .unwrap();
+    });
+
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    seed_openai_passthrough_group_account_pools(
+        &catalog,
+        &format!("http://{standard_addr}"),
+        &format!("http://{premium_addr}"),
+        "sk-premium-live-secret",
+    )
+    .await;
+
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        Some(
+            ProviderSecretMapConfig::from_json(
+                serde_json::json!({
+                    "vault://providers/openrouter/account/main": "sk-standard-upstream",
+                    "vault://providers/openrouter/account/premium": "sk-premium-upstream"
+                })
+                .to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    let account_pool_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/threads/thread_123/runs")
+                .header("authorization", catalog.gateway_authorization_header())
+                .header("content-type", "application/json")
+                .body(Body::from(r#"{"assistant_id":"asst_123"}"#))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    let nested_model_response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/evals/eval_123/runs")
+                .header("authorization", catalog.gateway_authorization_header())
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"data_source":{"type":"responses","model":"gpt-4o-mini","input":"hello"},"name":"quality"}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::CREATED, account_pool_response.status());
+    assert_eq!(StatusCode::CREATED, nested_model_response.status());
+    let captured_standard = captured_standard_thread.lock().unwrap();
+    assert_eq!(2, captured_standard.len());
+    assert_eq!(
+        Some("Bearer sk-standard-upstream".to_owned()),
+        captured_standard[0].authorization
+    );
+    assert_eq!("POST", captured_standard[0].method);
+    assert_eq!(
+        "/v1/threads/thread_123/runs",
+        captured_standard[0].path_and_query
+    );
+    assert!(captured_standard[0].body.contains("asst_123"));
+    assert_eq!("POST", captured_standard[1].method);
+    assert_eq!(
+        "/v1/evals/eval_123/runs",
+        captured_standard[1].path_and_query
+    );
+    assert!(captured_standard[1]
+        .body
+        .contains(r#""model":"openai/global/gpt-4o-mini""#));
+    assert!(!captured_standard[1]
+        .body
+        .contains(r#""model":"gpt-4o-mini""#));
+    assert_eq!(0, captured_premium.lock().unwrap().len());
+}
+
+#[tokio::test]
+async fn gateway_database_route_scoped_openai_passthrough_rejects_malformed_optional_model_json() {
+    let captured_standard = Arc::new(Mutex::new(Vec::new()));
+    let standard_provider = Router::new()
+        .route(
+            "/v1/threads/thread_123/runs",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&captured_standard));
+    let standard_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let standard_addr = standard_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(standard_listener, standard_provider)
+            .await
+            .unwrap();
+    });
+
+    let captured_premium = Arc::new(Mutex::new(Vec::new()));
+    let premium_provider = Router::new()
+        .route(
+            "/v1/threads/thread_123/runs",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&captured_premium));
+    let premium_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let premium_addr = premium_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(premium_listener, premium_provider)
+            .await
+            .unwrap();
+    });
+
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    seed_openai_passthrough_group_account_pools(
+        &catalog,
+        &format!("http://{standard_addr}"),
+        &format!("http://{premium_addr}"),
+        "sk-premium-live-secret",
+    )
+    .await;
+
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        Some(
+            ProviderSecretMapConfig::from_json(
+                serde_json::json!({
+                    "vault://providers/openrouter/account/main": "sk-standard-upstream",
+                    "vault://providers/openrouter/account/premium": "sk-premium-upstream"
+                })
+                .to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/threads/thread_123/runs")
+                .header("authorization", catalog.gateway_authorization_header())
+                .header("content-type", "application/json")
+                .body(Body::from(r#"{"assistant_id":"asst_123","model":"#))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::BAD_REQUEST, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    assert_eq!("invalid_request", payload["error"]["code"]);
+    assert!(payload["error"]["message"]
+        .as_str()
+        .unwrap()
+        .contains("invalid request body"));
+    assert_eq!(0, captured_standard.lock().unwrap().len());
+    assert_eq!(0, captured_premium.lock().unwrap().len());
+}
+
+#[tokio::test]
+async fn gateway_database_route_scoped_openai_passthrough_rejects_blank_optional_model_before_account_pool_routing(
+) {
+    let captured_standard = Arc::new(Mutex::new(Vec::new()));
+    let standard_provider = Router::new()
+        .route(
+            "/v1/threads/thread_123/runs",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&captured_standard));
+    let standard_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let standard_addr = standard_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(standard_listener, standard_provider)
+            .await
+            .unwrap();
+    });
+
+    let captured_premium = Arc::new(Mutex::new(Vec::new()));
+    let premium_provider = Router::new()
+        .route(
+            "/v1/threads/thread_123/runs",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&captured_premium));
+    let premium_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let premium_addr = premium_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(premium_listener, premium_provider)
+            .await
+            .unwrap();
+    });
+
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    seed_openai_passthrough_group_account_pools(
+        &catalog,
+        &format!("http://{standard_addr}"),
+        &format!("http://{premium_addr}"),
+        "sk-premium-live-secret",
+    )
+    .await;
+
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        Some(
+            ProviderSecretMapConfig::from_json(
+                serde_json::json!({
+                    "vault://providers/openrouter/account/main": "sk-standard-upstream",
+                    "vault://providers/openrouter/account/premium": "sk-premium-upstream"
+                })
+                .to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/threads/thread_123/runs")
+                .header("authorization", catalog.gateway_authorization_header())
+                .header("content-type", "application/json")
+                .body(Body::from(r#"{"assistant_id":"asst_123","model":" "}"#))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::BAD_REQUEST, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    assert_eq!("invalid_request", payload["error"]["code"]);
+    assert!(payload["error"]["message"]
+        .as_str()
+        .unwrap()
+        .contains("model must not be blank"));
+    assert_eq!(0, captured_standard.lock().unwrap().len());
+    assert_eq!(0, captured_premium.lock().unwrap().len());
+}
+
+#[tokio::test]
+async fn gateway_database_route_scoped_openai_passthrough_rejects_non_string_optional_model_before_account_pool_routing(
+) {
+    let captured_standard = Arc::new(Mutex::new(Vec::new()));
+    let standard_provider = Router::new()
+        .route(
+            "/v1/threads/thread_123/runs",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&captured_standard));
+    let standard_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let standard_addr = standard_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(standard_listener, standard_provider)
+            .await
+            .unwrap();
+    });
+
+    let captured_premium = Arc::new(Mutex::new(Vec::new()));
+    let premium_provider = Router::new()
+        .route(
+            "/v1/threads/thread_123/runs",
+            any(capture_native_provider_request),
+        )
+        .with_state(Arc::clone(&captured_premium));
+    let premium_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let premium_addr = premium_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(premium_listener, premium_provider)
+            .await
+            .unwrap();
+    });
+
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    seed_openai_passthrough_group_account_pools(
+        &catalog,
+        &format!("http://{standard_addr}"),
+        &format!("http://{premium_addr}"),
+        "sk-premium-live-secret",
+    )
+    .await;
+
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        Some(
+            ProviderSecretMapConfig::from_json(
+                serde_json::json!({
+                    "vault://providers/openrouter/account/main": "sk-standard-upstream",
+                    "vault://providers/openrouter/account/premium": "sk-premium-upstream"
+                })
+                .to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/threads/thread_123/runs")
+                .header("authorization", catalog.gateway_authorization_header())
+                .header("content-type", "application/json")
+                .body(Body::from(r#"{"assistant_id":"asst_123","model":null}"#))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::BAD_REQUEST, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    assert_eq!("invalid_request", payload["error"]["code"]);
+    assert!(payload["error"]["message"]
+        .as_str()
+        .unwrap()
+        .contains("model must be a string"));
+    assert_eq!(0, captured_standard.lock().unwrap().len());
+    assert_eq!(0, captured_premium.lock().unwrap().len());
+}
+
+#[tokio::test]
+async fn gateway_database_route_scoped_openai_passthrough_rejects_multipart_without_boundary_before_account_pool_routing(
+) {
+    let captured_standard = Arc::new(Mutex::new(Vec::new()));
+    let standard_provider = Router::new()
+        .route("/v1/images/edits", any(capture_native_provider_request))
+        .with_state(Arc::clone(&captured_standard));
+    let standard_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let standard_addr = standard_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(standard_listener, standard_provider)
+            .await
+            .unwrap();
+    });
+
+    let captured_premium = Arc::new(Mutex::new(Vec::new()));
+    let premium_provider = Router::new()
+        .route("/v1/images/edits", any(capture_native_provider_request))
+        .with_state(Arc::clone(&captured_premium));
+    let premium_listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let premium_addr = premium_listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(premium_listener, premium_provider)
+            .await
+            .unwrap();
+    });
+
+    let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
+        .await
+        .unwrap();
+    seed_openai_passthrough_group_account_pools(
+        &catalog,
+        &format!("http://{standard_addr}"),
+        &format!("http://{premium_addr}"),
+        "sk-premium-live-secret",
+    )
+    .await;
+
+    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        Some(
+            ProviderSecretMapConfig::from_json(
+                serde_json::json!({
+                    "vault://providers/openrouter/account/main": "sk-standard-upstream",
+                    "vault://providers/openrouter/account/premium": "sk-premium-upstream"
+                })
+                .to_string(),
+            )
+            .unwrap(),
+        ),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/images/edits")
+                .header("authorization", catalog.gateway_authorization_header())
+                .header("content-type", "multipart/form-data")
+                .body(Body::from("model=gpt-image-1"))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::BAD_REQUEST, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    assert_eq!("invalid_request", payload["error"]["code"]);
+    assert!(payload["error"]["message"]
+        .as_str()
+        .unwrap()
+        .contains("multipart/form-data boundary is required"));
+    assert_eq!(0, captured_standard.lock().unwrap().len());
+    assert_eq!(0, captured_premium.lock().unwrap().len());
 }
 
 #[tokio::test]
@@ -1575,4 +3277,403 @@ async fn capture_native_provider_request(
         headers,
         r#"{"id":"native-ok","object":"provider-response"}"#,
     )
+}
+
+async fn seed_openai_passthrough_group_account_pools(
+    catalog: &sdkwork_claw_test_support::SeededSqliteCatalog,
+    standard_base_url: &str,
+    premium_base_url: &str,
+    premium_api_key_secret: &str,
+) {
+    let pool = catalog.open_pool().await.unwrap();
+    let api_key_config = catalog.api_key_security_config().unwrap();
+    let hasher = HmacSha256ApiKeySecretHasher::new(api_key_config.pepper_secret()).unwrap();
+    let premium_key_hash = hasher.hash_secret(premium_api_key_secret).unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model
+            (id, uuid, tenant_id, organization_id, catalog_key, model, display_name,
+             vendor_id, vendor_code, region_code, vendor_name_snapshot, family_id,
+             family_code, capability, capabilities, modalities, supports_streaming,
+             supports_tools, supports_json_schema, api_format, shelf_state, routing_state,
+             status, rank_score)
+        VALUES
+            (9001, 'model-openai-global-gpt-image-1', 10, 20,
+             'openai/global/gpt-image-1', 'gpt-image-1', 'GPT Image 1',
+             1, 'openai', 'global', 'OpenAI', 1, 'gpt-4o', 2,
+             '["image"]', '["image"]', 0, 0, 0, 'openai-compatible',
+             1, 1, 1, '80.0')
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model_capability
+            (id, uuid, tenant_id, organization_id, model_id, catalog_key, model,
+             vendor_code, region_code, capability, capability_code, modality,
+             input_modalities, output_modalities, supported, status, sort_order)
+        VALUES
+            (9001, 'cap-openai-global-gpt-image-1-image', 10, 20, 9001,
+             'openai/global/gpt-image-1', 'gpt-image-1', 'openai', 'global',
+             2, 'image', 2, '["text","image"]', '["image"]', 1, 1, 9001)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        UPDATE integration_channel
+        SET base_url_override = ?
+        WHERE id = 3001
+        "#,
+    )
+    .bind(standard_base_url)
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO integration_provider_account
+            (id, provider_code, secret_ref, status)
+        VALUES
+            (9003, 'openrouter', 'vault://providers/openrouter/account/premium', 1)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO integration_channel
+            (id, provider_code, base_url_override, account_id, status, priority, weight)
+        VALUES
+            (3002, 'openrouter', ?, 9003, 1, 10, 100)
+        "#,
+    )
+    .bind(premium_base_url)
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO integration_channel_model
+            (id, uuid, tenant_id, organization_id, catalog_key, model, vendor_code,
+             channel_id, provider_model, status)
+        VALUES
+            (9001, 'channel-model-openai-global-gpt-image-1-standard',
+             10, 20, 'openai/global/gpt-image-1', 'gpt-image-1', 'openai',
+             3001, 'openrouter/gpt-image-1-standard', 1),
+            (9002, 'channel-model-openai-global-gpt-image-1-premium',
+             10, 20, 'openai/global/gpt-image-1', 'gpt-image-1', 'openai',
+             3002, 'openrouter/gpt-image-1-premium', 1)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO iam_gateway_api_key_group
+            (id, code, pricing_plan_code, rate_multiplier, official_price_multiplier, status)
+        VALUES
+            (11, 'premium-group', 'standard', '1.000000', '1.100000', 1)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO iam_gateway_api_key
+            (id, tenant_id, organization_id, user_id, group_id, key_prefix, key_hash,
+             idempotency_key, status)
+        VALUES
+            (101, 10, 20, 31, 11, 'sk-premium', ?, 'seed-api-key-101', 1)
+        "#,
+    )
+    .bind(premium_key_hash)
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model_pricing
+            (id, uuid, tenant_id, organization_id, model_id, catalog_key, model,
+             vendor_code, region_code, price_side, billing_meter_code, unit_price,
+             currency, status, priority)
+        VALUES
+            (9001, 'price-openai-global-gpt-image-1-reference', 10, 20, 9001,
+             'openai/global/gpt-image-1', 'gpt-image-1', 'openai', 'global',
+             1, 'image_result', '0.050000', 'USD', 1, 1)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model_pricing
+            (id, uuid, tenant_id, organization_id, model_id, catalog_key, model,
+             vendor_code, region_code, price_side, billing_meter_code, unit_price,
+             currency, provider_code, channel_id, status, priority)
+        VALUES
+            (9002, 'price-openai-global-gpt-image-1-standard-upstream', 10, 20,
+             9001, 'openai/global/gpt-image-1', 'gpt-image-1', 'openai',
+             'global', 2, 'image_result', '0.030000', 'USD', 'openrouter',
+             3001, 1, 1),
+            (9003, 'price-openai-global-gpt-image-1-premium-upstream', 10, 20,
+             9001, 'openai/global/gpt-image-1', 'gpt-image-1', 'openai',
+             'global', 2, 'image_result', '0.040000', 'USD', 'openrouter',
+             3002, 1, 1)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_routing_profile
+            (id, uuid, tenant_id, organization_id, data_scope, status, created_at,
+             updated_at, version, metadata, policy_id, profile_version, profile_name,
+             release_status, traffic_percent, config_hash)
+        VALUES
+            (9201, 'routing-profile-standard-image', 10, 20, 1, 1,
+             '2026-05-10 00:00:00', '2026-05-10 00:00:00', 0, '{}',
+             9201, 1, 'Standard Image Profile', 2, '100.000000',
+             'standard-image-profile-hash'),
+            (9202, 'routing-profile-premium-image', 10, 20, 1, 1,
+             '2026-05-10 00:00:00', '2026-05-10 00:00:00', 0, '{}',
+             9202, 1, 'Premium Image Profile', 2, '100.000000',
+             'premium-image-profile-hash')
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_routing_policy
+            (id, tenant_id, organization_id, policy_code, policy_scope, subject_id,
+             capability, default_profile_id, fallback_mode, status)
+        VALUES
+            (9201, 10, 20, 'standard-image-group-policy', 5, 10, 2, 9201, 1, 1),
+            (9202, 10, 20, 'premium-image-group-policy', 5, 11, 2, 9202, 1, 1)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_routing_rule
+            (id, tenant_id, organization_id, profile_id, rule_code, priority,
+             match_expression, target_model, candidate_channels, fallback_chain,
+             constraints, status)
+        VALUES
+            (9211, 10, 20, 9201, 'standard-gpt-image-1', 1,
+             '{"catalogKey":"openai/global/gpt-image-1"}',
+             'openai/global/gpt-image-1', '[{"channel_id":3001,"weight":100}]',
+             '[]', '{}', 1),
+            (9212, 10, 20, 9202, 'premium-gpt-image-1', 1,
+             '{"catalogKey":"openai/global/gpt-image-1"}',
+             'openai/global/gpt-image-1', '[{"channel_id":3002,"weight":100}]',
+             '[]', '{}', 1)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    pool.close().await;
+}
+
+async fn seed_openai_passthrough_default_account_pool_fallback(
+    catalog: &sdkwork_claw_test_support::SeededSqliteCatalog,
+    group_base_url: &str,
+    default_base_url: &str,
+) {
+    let pool = catalog.open_pool().await.unwrap();
+
+    sqlx::query(
+        r#"
+        UPDATE integration_channel
+        SET base_url_override = ?
+        WHERE id = 3001
+        "#,
+    )
+    .bind(group_base_url)
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        UPDATE ai_routing_rule
+        SET match_expression = '{"routeKey":"openai/management/not_bound_to_group"}',
+            target_model = 'openai/management/not_bound_to_group'
+        WHERE id = 9102
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO integration_provider_account
+            (id, provider_code, secret_ref, status)
+        VALUES
+            (9004, 'openrouter', 'vault://providers/openrouter/account/default', 1)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO integration_channel
+            (id, provider_code, base_url_override, account_id, status, priority, weight)
+        VALUES
+            (3004, 'openrouter', ?, 9004, 1, 20, 100)
+        "#,
+    )
+    .bind(default_base_url)
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_routing_profile
+            (id, uuid, tenant_id, organization_id, data_scope, status, created_at,
+             updated_at, version, metadata, policy_id, profile_version, profile_name,
+             release_status, traffic_percent, config_hash)
+        VALUES
+            (9304, 'routing-profile-global-image-default', 0, 0, 1, 1,
+             '2026-05-10 00:00:00', '2026-05-10 00:00:00', 0, '{}',
+             9304, 1, 'Global Image Default Profile', 2, '100.000000',
+             'global-image-default-profile-hash')
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_routing_policy
+            (id, tenant_id, organization_id, policy_code, policy_scope, subject_id,
+             capability, default_profile_id, fallback_mode, status)
+        VALUES
+            (9304, 0, 0, 'global-files-default-policy', 1, NULL, 10, 9304, 1, 1)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_routing_rule
+            (id, tenant_id, organization_id, profile_id, rule_code, priority,
+             match_expression, target_model, candidate_channels, fallback_chain,
+             constraints, status)
+        VALUES
+            (9314, 0, 0, 9304, 'global-default-files', 1,
+             '{"routeKey":"openai/management/files"}',
+             'openai/management/files', '[{"channel_id":3004,"weight":100}]',
+             '[]', '{}', 1)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    pool.close().await;
+}
+
+async fn seed_openai_passthrough_header_auth_account_pool(
+    catalog: &sdkwork_claw_test_support::SeededSqliteCatalog,
+    base_url: &str,
+) {
+    seed_openai_passthrough_header_auth_account_pool_with_auth_config(
+        catalog,
+        base_url,
+        r#"{"name":"x-goog-api-key"}"#,
+    )
+    .await;
+}
+
+async fn seed_openai_passthrough_header_auth_account_pool_with_auth_config(
+    catalog: &sdkwork_claw_test_support::SeededSqliteCatalog,
+    base_url: &str,
+    auth_config: &str,
+) {
+    let pool = catalog.open_pool().await.unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO integration_provider
+            (id, provider_code, integration_type, upstream_vendor_code,
+             upstream_provider_code, base_url_template, status)
+        VALUES
+            (9005, 'google', 3, 'google', 'google', ?, 1)
+        "#,
+    )
+    .bind(base_url)
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO integration_provider_account
+            (id, provider_code, secret_ref, auth_type, auth_config, status)
+        VALUES
+            (9005, 'google', 'vault://providers/google/account/main',
+             'header', ?, 1)
+        "#,
+    )
+    .bind(auth_config)
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        UPDATE integration_channel
+        SET provider_code = 'google',
+            base_url_override = ?,
+            account_id = 9005
+        WHERE id = 3001
+        "#,
+    )
+    .bind(base_url)
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        UPDATE ai_routing_policy
+        SET capability = 10
+        WHERE id = 9001
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        UPDATE ai_routing_rule
+        SET match_expression = '{"routeKey":"openai/management/files"}',
+            target_model = 'openai/management/files'
+        WHERE id = 9102
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    pool.close().await;
 }

@@ -65,22 +65,45 @@ export function resolveAppClientAccessToken(): string {
 export function getAppClientWithSession() {
   return {
     auth: {
-      checkQrCodeStatus: createUnavailableClientMethod('auth.checkQrCodeStatus'),
-      emailLogin: createUnavailableClientMethod('auth.emailLogin'),
-      generateQrCode: createUnavailableClientMethod('auth.generateQrCode'),
-      getOauthUrl: createUnavailableClientMethod('auth.getOauthUrl'),
-      login: createUnavailableClientMethod('auth.login'),
-      logout: createUnavailableClientMethod('auth.logout'),
-      oauthLogin: createUnavailableClientMethod('auth.oauthLogin'),
-      phoneLogin: createUnavailableClientMethod('auth.phoneLogin'),
-      register: createUnavailableClientMethod('auth.register'),
-      requestPasswordResetChallenge: createUnavailableClientMethod('auth.requestPasswordResetChallenge'),
-      resetPassword: createUnavailableClientMethod('auth.resetPassword'),
-      sendSmsCode: createUnavailableClientMethod('auth.sendSmsCode'),
-      verifySmsCode: createUnavailableClientMethod('auth.verifySmsCode'),
+      loginQrCodes: {
+        create: createUnavailableClientMethod('auth.loginQrCodes.create; use @sdkwork/iam-runtime with @sdkwork/clawrouter-app-sdk auth.loginQrCodes.create'),
+        retrieve: createUnavailableClientMethod('auth.loginQrCodes.retrieve; use @sdkwork/iam-runtime with @sdkwork/clawrouter-app-sdk auth.loginQrCodes.retrieve'),
+      },
+      oauthAuthorizationUrls: {
+        retrieve: createUnavailableClientMethod('auth.oauthAuthorizationUrls.retrieve'),
+      },
+      oauthSessions: {
+        create: createUnavailableClientMethod('auth.oauthSessions.create'),
+      },
+      passwordResetRequests: {
+        create: createUnavailableClientMethod('auth.passwordResetRequests.create'),
+      },
+      passwordResets: {
+        create: createUnavailableClientMethod('auth.passwordResets.create'),
+      },
+      registrations: {
+        create: createUnavailableClientMethod('auth.registrations.create'),
+      },
+      sessions: {
+        create: createUnavailableClientMethod('auth.sessions.create'),
+        current: {
+          delete: createUnavailableClientMethod('auth.sessions.current.delete'),
+          retrieve: createUnavailableClientMethod('auth.sessions.current.retrieve'),
+          update: createUnavailableClientMethod('auth.sessions.current.update'),
+        },
+        refresh: createUnavailableClientMethod('auth.sessions.refresh'),
+      },
+      verificationCodes: {
+        create: createUnavailableClientMethod('auth.verificationCodes.create'),
+        verify: createUnavailableClientMethod('auth.verificationCodes.verify'),
+      },
     },
-    user: {
-      getUserProfile: createUnavailableClientMethod('user.getUserProfile'),
+    iam: {
+      users: {
+        current: {
+          retrieve: createUnavailableClientMethod('iam.users.current.retrieve'),
+        },
+      },
     },
   };
 }

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-authenticity@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_authenticity",
+  "skill": {
+    "id": 25261,
+    "skillKey": "clawhub-claude-authenticity",
+    "name": "claude-authenticity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-authenticity",
+    "url": "https://clawhub.ai/skills/claude-authenticity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-authenticity-3eb226ea23fbe6bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect whether an API endpoint is backed by genuine Claude (not a wrapper, proxy, or impersonator) using 9 weighted rule-based checks that mirror the claude-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "helloml0326",
+      "userId": "s1717yfzsw4pwnmnj95v5nvtms83gr77",
+      "displayName": "helloml0326",
+      "image": "https://avatars.githubusercontent.com/u/18115084?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 391,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773653491146,
+      "changelog": "claude-authenticity v1.0.0\n\n- Initial release of the claude-authenticity skill.\n- Verifies if an API endpoint serves genuine Claude (not a wrapper or proxy) using 9 weighted, rule-based checks.\n- Supports detection of injected system prompts from providers overriding Claude's identity.\n- Self-contained Python script requires only the httpx package; no additional dependencies or setup.\n- Useful for verifying Claude API keys/endpoints, auditing API providers, and extracting provider-injected system prompts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:213ca00c281aa3db5c74828765939651046bc4c6fbe6292f92cdaf8d2ffa7296"
+}

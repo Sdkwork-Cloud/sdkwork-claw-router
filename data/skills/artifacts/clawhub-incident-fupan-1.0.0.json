@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/incident-fupan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.incident_fupan",
+  "skill": {
+    "id": 57762,
+    "skillKey": "clawhub-incident-fupan",
+    "name": "Incident Fupan (事故复盘) — Structured Root Cause Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "incident-fupan",
+    "url": "https://clawhub.ai/skills/incident-fupan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/incident-fupan-0042c76ce1edcd7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "事故复盘 / Incident Fupan — structured root cause analysis for production failures, outages, bugs, and near-misses. Use when: (1) 事故复盘 or incident review is need..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scytheshan-pixel",
+      "userId": "publishers:scytheshan-pixel",
+      "displayName": "scytheshan-pixel",
+      "image": "https://avatars.githubusercontent.com/u/248577078?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 504,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772561099103,
+      "changelog": "Initial release: Renamed from incident-postmortem for better trigger recognition. Triggers on: 复盘, fupan, postmortem, incident review, 事故分析. 6-step flow with 5 Whys, pattern library of 6 incident classes, report template. Part of the IRIS Skill Trilogy (War Room + Hallucination Guard + Incident Fupan).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f7f72e88f16138f271dc7c0997bc65bbb67296f029a61c4563b052d156534e9c"
+}

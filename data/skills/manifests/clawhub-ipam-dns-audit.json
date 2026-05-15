@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39508,
+  "uuid": "skill-clawhub-ipam-dns-audit",
+  "skillKey": "clawhub-ipam-dns-audit",
+  "name": "Ipam Dns Audit",
+  "summary": "IP Address Management and DNS record reconciliation audit covering subnet utilization analysis, DNS forward/reverse consistency, IP conflict detection, and D...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ipam_dns_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vahagn Madatyan",
+      "features": [
+        "IP Address Management and DNS record reconciliation audit covering subnet utilization analysis,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ipam-dns-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74753362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ipam-dns-audit",
+      "url": "https://clawhub.ai/skills/ipam-dns-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ipam-dns-audit",
+    "url": "https://clawhub.ai/skills/ipam-dns-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ipam-dns-audit-cddd7b191659b313.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ipam-dns-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ipam-dns-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5d5ff33a0724848e868f65669fc4f13458ee11827590f6ef60d728842da393b",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T08:19:34.178Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12302,
+  "uuid": "skill-clawhub-qlik-cloud-skill",
+  "skillKey": "clawhub-qlik-cloud-skill",
+  "name": "Qlik Cloud",
+  "summary": "Complete Qlik Cloud analytics platform integration with 37 tools. Health checks, search, app management, reloads, natural language queries (Insight Advisor), automations, AutoML, Qlik Answers AI, data alerts, spaces, users, licenses, data.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qlik_cloud_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "undsoul",
+      "features": [
+        "Complete Qlik Cloud analytics platform integration with 37 tools",
+        "Health checks, search, app management, reloads, natural language queries (Insight Advisor), aut.",
+        "Use when user asks about Qlik, Qlik Cloud, Qlik Sense apps, analytics dashboards, data reloads,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qlik-cloud-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9967744?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qlik-cloud-skill",
+      "url": "https://clawhub.ai/skills/qlik-cloud-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qlik-cloud-skill",
+    "url": "https://clawhub.ai/skills/qlik-cloud-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qlik-cloud-skill-7eec6d1c0ebc7708.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qlik-cloud-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qlik-cloud-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61abadb5f8a32df9b6e7d098533fcf651b91fb3fe5ef0803ee549ea6b4f2295a",
+      "artifactSizeBytes": 2562
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T21:09:06.275Z"
+}

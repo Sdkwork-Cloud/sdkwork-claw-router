@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/check@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.check",
+  "skill": {
+    "id": 67407,
+    "skillKey": "clawhub-check",
+    "name": "CHECK"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "check",
+    "url": "https://clawhub.ai/skills/check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/check-20f65c28671b4093.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "检查系统和Python环境，验证AI/ML及RAG开发所需工具、包、目录结构和配置是否完整，支持自动安装缺失依赖。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tilannlou",
+      "userId": "publishers:tilannlou",
+      "displayName": "tilannlou",
+      "image": "https://avatars.githubusercontent.com/u/181840601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 515,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772779004594,
+      "changelog": "Initial release of the Environment Checker Skill\n\n- 检查常见系统工具（Python、pip、Git、Docker、Node.js等）安装与状态\n- 验证AI/ML、RAG相关和常用Python包的安装情况，支持自动安装缺失包\n- 检查工作区目录结构合理性（如model、utils、scripts等目录）\n- 检查RAG环境配置（如API密钥）\n- 输出详细JSON格式的环境检查报告\n- 提供一键依赖安装和特定包安装命令",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d027b5a80f033d08e39e91197b2a6bc00a3e200819390c493191731cb27c4bfc"
+}

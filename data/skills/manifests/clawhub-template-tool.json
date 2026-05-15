@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48538,
+  "uuid": "skill-clawhub-template-tool",
+  "skillKey": "clawhub-template-tool",
+  "name": "Template Tool",
+  "summary": "Process text templates with variable substitution. Use for generating dynamic content from template files.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.template_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Process text templates with variable substitution",
+        "Use for generating dynamic content from template files."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/template-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "template-tool",
+      "url": "https://clawhub.ai/skills/template-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "template-tool",
+    "url": "https://clawhub.ai/skills/template-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/template-tool-4e8edf892b24ed26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/template-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-template-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7cc74aba6ae8859133a72d7bd243570395b2bd2bd2c2df33fb303b7a29e4958",
+      "artifactSizeBytes": 1819
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T16:52:50.839Z"
+}

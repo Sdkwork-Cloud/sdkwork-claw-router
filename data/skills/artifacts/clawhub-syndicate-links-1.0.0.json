@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/syndicate-links@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.syndicate_links",
+  "skill": {
+    "id": 41839,
+    "skillKey": "clawhub-syndicate-links",
+    "name": "Syndicate Links"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "syndicate-links",
+    "url": "https://clawhub.ai/skills/syndicate-links",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/syndicate-links-8576af131b393845.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn your agent into an affiliate earner. Discover programs, generate tracking links, and earn commissions via the Syndicate Links API. Supports Stripe + Bit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cmcgrabby-hue",
+      "userId": "s17621f54jteadgvn84bkjb6e583j0yr",
+      "displayName": "cmcgrabby-hue",
+      "image": "https://avatars.githubusercontent.com/u/267390149?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774458284726,
+      "changelog": "Initial release — affiliate earning skill for AI agents. Register, discover programs, generate tracking links, earn commissions via Syndicate Links API.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5799eb24dd0837649fd0ff0e3efd7a4a031649fc7b9aec5cc9e67543bb8907a8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-memory-zero-dep@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_memory_zero_dep",
+  "skill": {
+    "id": 38522,
+    "skillKey": "clawhub-smart-memory-zero-dep",
+    "name": "Smart Memory (Zero Dep)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-memory-zero-dep",
+    "url": "https://clawhub.ai/skills/smart-memory-zero-dep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-memory-zero-dep-eca8bcdcec07a7a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enhanced memory system for agentic workflows. Automatic memory extraction from conversations, memory type classification (preference/project/technical/lesson..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zgjq",
+      "userId": "s17954zf78sdmdzg3n9ex84ra183y2tm",
+      "displayName": "zgjq",
+      "image": "https://avatars.githubusercontent.com/u/32673211?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1774978848008,
+      "changelog": "UX: wal shortcut alias (--help: 20 chars vs 70), classify --summary for stats-only output, decay --promote-only for quick LESSON promotion, health now shows actionable suggestions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:601828b79a5412d8f344261a97b7e28ee69aeb4a10bf62e736a18f854bcdc45c"
+}

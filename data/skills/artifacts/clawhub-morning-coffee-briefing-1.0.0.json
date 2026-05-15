@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/morning-coffee-briefing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morning_coffee_briefing",
+  "skill": {
+    "id": 21151,
+    "skillKey": "clawhub-morning-coffee-briefing",
+    "name": "Morning Coffee Briefing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morning-coffee-briefing",
+    "url": "https://clawhub.ai/skills/morning-coffee-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morning-coffee-briefing-0e6b49face49132f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily morning briefing skill. Reads your TASKS.md and memory files, synthesizes a prioritized day plan, and sends it to you via Telegram so you start the day..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevdogg102396-afk",
+      "userId": "publishers:kevdogg102396-afk",
+      "displayName": "kevdogg102396-afk",
+      "image": "https://avatars.githubusercontent.com/u/257070288?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 520,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772564915471,
+      "changelog": "- Initial release of Morning Coffee Briefing skill.\n- Reads your TASKS.md and memory files to synthesize a prioritized daily plan.\n- Highlights top 3 priorities, a quick win, blockers, and pipeline status.\n- Sends your customized morning briefing via Telegram for a focused start to the day.\n- Environment variables required: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, TASKS_FILE_PATH.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:07627f228ef758539033cf27a8aef246805afeb760f2bc85cfdc73c2720c738f"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8728,
+  "uuid": "skill-clawhub-clawdex",
+  "skillKey": "clawhub-clawdex",
+  "name": "Clawdex by Koi",
+  "summary": "Security check for ClawHub skills powered by Koi. Query the Clawdex API before installing any skill to verify it's safe.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdex",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wearekoi",
+      "features": [
+        "Security check for ClawHub skills powered by Koi",
+        "Query the Clawdex API before installing any skill to verify it's safe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdex@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245664760?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdex",
+      "url": "https://clawhub.ai/skills/clawdex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdex",
+    "url": "https://clawhub.ai/skills/clawdex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdex-db5856badde75c31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdex@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdex-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5f35ffdcb4fa09da1eb32176fe368e6c8317edf9f2b58aaf61214f7fea18477",
+      "artifactSizeBytes": 2111
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T17:19:43.139Z"
+}

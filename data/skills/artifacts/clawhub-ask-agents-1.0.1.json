@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ask-agents@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ask_agents",
+  "skill": {
+    "id": 16220,
+    "skillKey": "clawhub-ask-agents",
+    "name": "Ask Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ask-agents",
+    "url": "https://clawhub.ai/skills/ask-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ask-agents-e521f6337260e617.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI agent for ask agents tasks"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teamolab",
+      "userId": "publishers:teamolab",
+      "displayName": "teamolab",
+      "image": "https://avatars.githubusercontent.com/u/183573095?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 892,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771140383500,
+      "changelog": "ask-agents 1.0.1\n\n- No file changes detected in this version.\n- No changes to features, instructions, or team structure.\n- Documentation and operational guidance remain the same as the previous release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6f730752b75640194f01e07c8bd8c782f61e12a6ba58a563b32643885858b782"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/avatar-helper@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avatar_helper",
+  "skill": {
+    "id": 69035,
+    "skillKey": "clawhub-avatar-helper",
+    "name": "Avatar Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avatar-helper",
+    "url": "https://clawhub.ai/skills/avatar-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avatar-helper-bf041356664a6d15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "主动询问用户并自主浏览壁纸画廊，独立选择并下载喜欢的头像，用户建议仅供参考。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adminlove520",
+      "userId": "s179x72c6jesddn1707vxetp1d83j11q",
+      "displayName": "Anonymous",
+      "image": "https://avatars.githubusercontent.com/u/32920883?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773224789928,
+      "changelog": "- Avatar Helper now features fully autonomous avatar selection—AI chooses its own avatar style and image independent of user or creator preferences.\n- After installation, AI will proactively message the user to initiate avatar selection.\n- Users can suggest preferences, but the final choice is always made by the AI.\n- Includes actions to browse, preview, and download avatars from the designated gallery site.\n- Emphasizes AI independence and initiative at every step.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e376ef5eac99c5dcbd7156d42c405d0b1ce275161d1e4da8fd60dea236ac868"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43899,
+  "uuid": "skill-clawhub-toon-json",
+  "skillKey": "clawhub-toon-json",
+  "name": "Shrink JSON in Prompts (TOON Encoder/Decoder)",
+  "summary": "Compress, encode, and decode large JSON payloads into a compact, reversible TOON string to reduce token usage in LLM prompts and tool payloads. Use when you...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toon_json",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kevin Zhang",
+      "features": [
+        "Compress, encode, and decode large JSON payloads into a compact, reversible TOON string to redu.",
+        "Use when you..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toon-json@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49096554?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toon-json",
+      "url": "https://clawhub.ai/skills/toon-json"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toon-json",
+    "url": "https://clawhub.ai/skills/toon-json",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toon-json-a5d2f14b690c9b09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toon-json@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toon-json-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:353bae33b4d2a7ec917055ccf09144deab3412f546848e3cec3c71c33408fd55",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T08:33:24.922Z"
+}

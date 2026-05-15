@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12831,
+  "uuid": "skill-clawhub-garmin-connect-cli",
+  "skillKey": "clawhub-garmin-connect-cli",
+  "name": "Garmin Connect CLI",
+  "summary": "Garmin Connect CLI for activities, health, body composition, workouts, devices, gear, goals, and more.",
+  "version": "1.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.garmin_connect_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Burkhard Pauli",
+      "features": [
+        "Garmin Connect CLI for activities, health, body composition, workouts, devices, gear, goals, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/garmin-connect-cli@1.8.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/689884?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "garmin-connect-cli",
+      "url": "https://clawhub.ai/skills/garmin-connect-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "garmin-connect-cli",
+    "url": "https://clawhub.ai/skills/garmin-connect-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/garmin-connect-cli-6490fa79a94682d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/garmin-connect-cli@1.8.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-garmin-connect-cli-1.8.0.json",
+      "version": "1.8.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c07492994221012e26b2de8eba17497bd17f86ab6348cbd4dc343a610fcf53c9",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T08:23:17.783Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48968,
+  "uuid": "skill-clawhub-monorepo-dependency-checker",
+  "skillKey": "clawhub-monorepo-dependency-checker",
+  "name": "Monorepo Dependency Checker",
+  "summary": "Analyze monorepo dependency graphs for version conflicts, circular imports, unnecessary coupling, and optimal package boundaries using Nx, Turborepo, Lerna,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monorepo_dependency_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Analyze monorepo dependency graphs for version conflicts, circular imports, unnecessary couplin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/monorepo-dependency-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "monorepo-dependency-checker",
+      "url": "https://clawhub.ai/skills/monorepo-dependency-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monorepo-dependency-checker",
+    "url": "https://clawhub.ai/skills/monorepo-dependency-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monorepo-dependency-checker-f428e00b9c0b24fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/monorepo-dependency-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-monorepo-dependency-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00f46d95f962d59117d311b363210cee9985c7005a073ba15a18d2d47fafc7fb",
+      "artifactSizeBytes": 2540
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T08:43:08.348Z"
+}

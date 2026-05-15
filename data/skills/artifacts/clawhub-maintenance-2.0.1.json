@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maintenance@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maintenance",
+  "skill": {
+    "id": 23615,
+    "skillKey": "clawhub-maintenance",
+    "name": "Maintenance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maintenance",
+    "url": "https://clawhub.ai/skills/maintenance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maintenance-8589c63b0943a62b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Log home maintenance tasks, set reminders, and track repair history with checklists. Use when scheduling repairs, tracking appliance upkeep, inventorying."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueyetianya",
+      "userId": "s1716dgb4pf37kmebjdxfdexmh83ehwx",
+      "displayName": "bytesagain4",
+      "image": "https://avatars.githubusercontent.com/u/218210530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 396,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773798418598,
+      "changelog": "v2.5 retry: desc+homepage+source+security",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f523a97165a1182180314e8e65d6d6c056481abbfcb67d7d515500865db7c8c"
+}

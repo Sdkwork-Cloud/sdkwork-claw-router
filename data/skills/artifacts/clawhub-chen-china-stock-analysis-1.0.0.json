@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chen-china-stock-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chen_china_stock_analysis",
+  "skill": {
+    "id": 25531,
+    "skillKey": "clawhub-chen-china-stock-analysis",
+    "name": "Chen China Stock Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chen-china-stock-analysis",
+    "url": "https://clawhub.ai/skills/chen-china-stock-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chen-china-stock-analysis-fcff906c673cd6d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Chinese stock prices (A-shares, HK stocks) and provide investment recommendations. Use when the user asks about stock analysis for Chinese companies,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cs995279497-byte",
+      "userId": "s1752x7jpsq8e6496yg8h0rps183jrna",
+      "displayName": "cs995279497-byte",
+      "image": "https://avatars.githubusercontent.com/u/254620949?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 336,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774193629263,
+      "changelog": "Initial release of Chinese stock analysis skill.\n\n- Analyze A-shares (Shanghai & Shenzhen), Hong Kong, and US-listed stocks using live data and market context.\n- Provides structured price analysis, technical trends, and investment recommendations.\n- Covers buy, hold, and sell signals with clear guidelines.\n- Always includes a standard risk disclaimer for all analyses.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9078ca1959687dc593b93ee939ead587c843595b989180a7d5d1512ab76383af"
+}

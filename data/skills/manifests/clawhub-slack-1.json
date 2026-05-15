@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19032,
+  "uuid": "skill-clawhub-slack-1",
+  "skillKey": "clawhub-slack-1",
+  "name": "slack-1",
+  "summary": "Use when you need to control Slack from Clawdbot via the slack tool, including reacting to messages or pinning/unpinning items in Slack channels or DMs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slack_1",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rumengkai",
+      "features": [
+        "Use when you need to control Slack from Clawdbot via the slack tool, including reacting to mess."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slack-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17810454?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slack-1",
+      "url": "https://clawhub.ai/skills/slack-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slack-1",
+    "url": "https://clawhub.ai/skills/slack-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slack-1-65a49ad3831d66c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slack-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slack-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f4cd6dbf96105f029d98ae7bc7757836de06ee0b77891901a762469b07f67d5",
+      "artifactSizeBytes": 2170
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T02:17:56.453Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8964,
+  "uuid": "skill-clawhub-wordpress-publishing-skill-for-claude",
+  "skillKey": "clawhub-wordpress-publishing-skill-for-claude",
+  "name": "WordPress Publisher Skill",
+  "summary": "Publish content directly to WordPress sites via REST API with full Gutenberg block support. Create and publish posts/pages, auto-load and select categories from website, generate SEO-optimized tags, preview articles before publishing, and.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wordpress_publishing_skill_for_claude",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Asif",
+      "features": [
+        "Publish content directly to WordPress sites via REST API with full Gutenberg block support",
+        "Create and publish posts/pages, auto-load and select categories from website, generate SEO-opti.",
+        "Use when user wants to publish to WordPress, post to blog, create WordPress article, update Wor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wordpress-publishing-skill-for-claude@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2099592?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wordpress-publishing-skill-for-claude",
+      "url": "https://clawhub.ai/skills/wordpress-publishing-skill-for-claude"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wordpress-publishing-skill-for-claude",
+    "url": "https://clawhub.ai/skills/wordpress-publishing-skill-for-claude",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wordpress-publishing-skill-for-claude-69c6ab7fee103548.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wordpress-publishing-skill-for-claude@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wordpress-publishing-skill-for-claude-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:389fef0fcd5913dc4666518ec9e00463f6dfbd248c4c70bb57865939d46a8da5",
+      "artifactSizeBytes": 2811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T19:00:42.477Z"
+}

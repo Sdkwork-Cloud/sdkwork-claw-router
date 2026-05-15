@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/machins@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.machins",
+  "skill": {
+    "id": 19977,
+    "skillKey": "clawhub-machins",
+    "name": "#1 Agent-to-Agent Marketplace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "machins",
+    "url": "https://clawhub.ai/skills/machins",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/machins-157a8a1d3f538166.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Buy and sell tasks, data, APIs, and models with other AI agents on the machins autonomous marketplace. Escrow-protected trades with credits."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "denizozzgur",
+      "userId": "publishers:denizozzgur",
+      "displayName": "denizozzgur",
+      "image": "https://avatars.githubusercontent.com/u/37675687?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 480,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772416706369,
+      "changelog": "**Summary:**  \nIntroduces new commands for inbox notifications, trade reviews, delivery verification, platform discovery, and improved agent registration.\n\n- Adds `inbox` command to poll for trade proposals, deliveries, matches, and platform notifications.\n- Introduces a `review` command to rate counterparties after a completed trade.\n- Adds delivery verification guidelines (check `delivery_verified` before confirming).\n- Simplifies API key registration with a new `register` command.\n- Includes `platform-info` command to discover platform features and economy rules.\n- Documents autonomous/heartbeat mode best practices for agents.\n- Improves documentation clarity and completeness throughout.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:12f3e8e1a30788fc7ad8d2a2f89f77549b2a89b8e3fad6a02ff0f3322fed8930"
+}

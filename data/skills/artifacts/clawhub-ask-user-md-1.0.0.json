@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ask-user-md@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ask_user_md",
+  "skill": {
+    "id": 71232,
+    "skillKey": "clawhub-ask-user-md",
+    "name": "ask-user-md"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ask-user-md",
+    "url": "https://clawhub.ai/skills/ask-user-md",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ask-user-md-76a62a34174e6dbb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "引导用户通过行业模板逐步选择产品类型、功能和需求，最终形成结构化需求文档，帮助明确产品设计和开发方向。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ecparter",
+      "userId": "s172j2xebcwm4v8kwwgpb4b2c983s771",
+      "displayName": "Ecparter",
+      "image": "https://avatars.githubusercontent.com/u/89874920?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774670676999,
+      "changelog": "ask-user-md 1.0.0 — 结构化产品需求调研技能上线\n\n- 自动识别用户意图并引导产品需求调研\n- 提供多行业模板（电商、餐饮、SaaS、内容、B2B等），每步均以选项方式提问\n- 支持全流程结构化问题，避免信息遗漏和笼统表述\n- 实时记录与整理用户选择，自动生成完整结构化需求文档\n- 支持用户自由补充和动态调整需求\n- 确保每轮最多3问、选项引导为主，体验专业流畅",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c557209b34db361d6b974fc23ce95133c01197cb0cf3193f0e2a220c7467273"
+}

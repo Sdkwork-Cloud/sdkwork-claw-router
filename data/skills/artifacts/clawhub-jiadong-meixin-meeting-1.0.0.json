@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jiadong-meixin-meeting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiadong_meixin_meeting",
+  "skill": {
+    "id": 63611,
+    "skillKey": "clawhub-jiadong-meixin-meeting",
+    "name": "Meixin Meeting Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiadong-meixin-meeting",
+    "url": "https://clawhub.ai/skills/jiadong-meixin-meeting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiadong-meixin-meeting-18d8162b4bdfe6d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "镁信健康内部会议纪要生成技能。接收会议录音 → Fun-ASR全量转录 → 结合镁信/健康险行业术语 → 输出结构化会议纪要。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiadong0723",
+      "userId": "s171evqrw320fst1p7x7dqf9hs84gww5",
+      "displayName": "jiadong0723",
+      "image": "https://avatars.githubusercontent.com/u/267246555?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775750172733,
+      "changelog": "Initial release of meixin-meeting-assistant:\n\n- Automatically transcribes meeting audio using Fun-ASR, supporting large files (100MB+/5hr).\n- Converts colloquial business terms to standard healthcare/insurance industry terminology.\n- Attributes meeting remarks to specific speakers based on background and voice features.\n- Outputs structured meeting minutes in compliance with industry standards (non-tabular).\n- Integrates with knowledge base: links to previous meetings, related documents, and tracks action items.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09c9ad8e6f4814e3b76c0966d12cbe08114a7fed84c66d0f6bf3577582747b54"
+}

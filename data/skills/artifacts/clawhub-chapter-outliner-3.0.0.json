@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chapter-outliner@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chapter_outliner",
+  "skill": {
+    "id": 68974,
+    "skillKey": "clawhub-chapter-outliner",
+    "name": "Chapter Outliner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chapter-outliner",
+    "url": "https://clawhub.ai/skills/chapter-outliner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chapter-outliner-abf6091b6ead2c6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "章节大纲生成器 - 基于 15 节拍系统生成小说章节大纲。当需要根据故事大纲和章节号创建详细写作大纲时使用，支持字数分配、角色参考、风格注入。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuzhihui886",
+      "userId": "s171q47tfc9tb8mpczgympghws83jcja",
+      "displayName": "yuzhihui886",
+      "image": "https://avatars.githubusercontent.com/u/213567314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1776160815420,
+      "changelog": "v3.0 重做：正确实现为待写章节生成 15 节拍写作大纲，输入 outline.md+style.yml+characters+index.yml，输出给 novel-writer 用的写作指南",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:595d8e4d6f18c802d6137fdca12eea54eb5745fe1b6398fa42c69d6c7a25be4d"
+}

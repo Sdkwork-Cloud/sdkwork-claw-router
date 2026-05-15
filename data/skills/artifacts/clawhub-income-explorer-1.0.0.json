@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/income-explorer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.income_explorer",
+  "skill": {
+    "id": 63142,
+    "skillKey": "clawhub-income-explorer",
+    "name": "Income Explorer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "income-explorer",
+    "url": "https://clawhub.ai/skills/income-explorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/income-explorer-2b86a8786282e8b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 变现路径探索助手 - 分析变现机会、生成报告、提供行动建议"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "muyanshouji",
+      "userId": "publishers:muyanshouji",
+      "displayName": "muyanshouji",
+      "image": "https://avatars.githubusercontent.com/u/55934984?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772928396099,
+      "changelog": "- Initial release of income-explorer.\n- Helps users explore AI monetization paths, analyze market opportunities, and generate actionable plans.\n- Core functions: market research, opportunity analysis, report generation, and action recommendations.\n- Integrates tools for web browsing, market searching, script execution, and report management.\n- Designed to respond to common questions about making money with AI, market analysis, and planning.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:01f08f4d84289cca2e9cd3d763896309d105f1af8eb90f9e98e8315f543d2633"
+}

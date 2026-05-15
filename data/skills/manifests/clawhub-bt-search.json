@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68598,
+  "uuid": "skill-clawhub-bt-search",
+  "skillKey": "clawhub-bt-search",
+  "name": "bt-search",
+  "summary": "BT磁力链接搜索引擎。通过关键词搜索磁力链接，返回种子名称、大小、做种数、文件列表和磁力链接。 Use when: 用户需要搜索磁力链接、找种子、搜索BT/PT资源、下载电影/软件/游戏等资源。 NOT for: 直接下载文件、在线播放视频、非BT相关的搜索（用搜索引擎）。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bt_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "men459",
+      "features": [
+        "BT磁力链接搜索引擎。通过关键词搜索磁力链接，返回种子名称、大小、做种数、文件列表和磁力链接。 Use when: 用户需要搜索磁力链接、找种子、搜索BT/PT资源、下载电影/软件/游戏等资."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bt-search@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78955316?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bt-search",
+      "url": "https://clawhub.ai/skills/bt-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bt-search",
+    "url": "https://clawhub.ai/skills/bt-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bt-search-bc0e73b5be8bb4b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bt-search@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bt-search-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73bafcb2b7047e775e5403b35bd767737c283ff96b34c920d774deef8bcd1422",
+      "artifactSizeBytes": 2179
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T10:05:26.422Z"
+}

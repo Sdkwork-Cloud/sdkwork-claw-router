@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61152,
+  "uuid": "skill-clawhub-vwu-vidu",
+  "skillKey": "clawhub-vwu-vidu",
+  "name": "Vidu",
+  "summary": "调用vwu.ai平台上的vidu系列模型，支持7种型号，兼容OpenAI API格式，需配置vwu.ai API密钥使用。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vwu_vidu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "a3273283",
+      "features": [
+        "调用vwu.ai平台上的vidu系列模型，支持7种型号，兼容OpenAI API格式，需配置vwu.ai API密钥使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vwu-vidu@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92772341?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vwu-vidu",
+      "url": "https://clawhub.ai/skills/vwu-vidu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vwu-vidu",
+    "url": "https://clawhub.ai/skills/vwu-vidu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vwu-vidu-25145df611899f70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vwu-vidu@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vwu-vidu-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70b7b6ea38bb5e15eeb737b8e344199207e1edd712753e62a62828b9c9c8e642",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T08:43:18.121Z"
+}

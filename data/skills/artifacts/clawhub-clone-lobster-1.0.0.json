@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clone-lobster@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clone_lobster",
+  "skill": {
+    "id": 65044,
+    "skillKey": "clawhub-clone-lobster",
+    "name": "克隆龙虾"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clone-lobster",
+    "url": "https://clawhub.ai/skills/clone-lobster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clone-lobster-05086903a4b1fd4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw/CatPaw 配置与上下文自动备份恢复工具。在使用 OpenClaw 过程中自动保留配置变更、工作区文件、对话上下文、已安装 Skills 和系统改动到 Git 仓库。 触发场景：(1) 用户要求备份/保存当前配置 (2) 用户要求恢复之前的配置 (3) 对话中产生了重要的配置变更、skill..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lipingjiang",
+      "userId": "publishers:lipingjiang",
+      "displayName": "LiPingjiang",
+      "image": "https://avatars.githubusercontent.com/u/11030498?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 477,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772765060724,
+      "changelog": "Initial release of clone-lobster skill for OpenClaw/CatPaw automated configuration backup and recovery.\n\n- Automatically backs up configuration, workspace files, installed Skills, and system changes to a Git repository on key events (changes, installs, direct user requests).\n- Allows full or partial restore (workspace, config, or Skills) via simple scripts.\n- Supports event-driven triggers for backup (e.g., file changes, system modifications, user keywords).\n- Requires configuring an SSH-accessible Git repository and setting a backup repository URL.\n- Excludes unnecessary files and advises on security for sensitive data.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ef3ea4a91dc8a4aaeefd56fb85108f44878aaf95efd1c0303642b19121eabd73"
+}

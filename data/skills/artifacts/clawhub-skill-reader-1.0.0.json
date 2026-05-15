@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-reader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_reader",
+  "skill": {
+    "id": 60795,
+    "skillKey": "clawhub-skill-reader",
+    "name": "Skill Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-reader",
+    "url": "https://clawhub.ai/skills/skill-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-reader-82f61a59c8693fb3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "深入解读任意 Skill 的使用方法。输入 Skill 名称、安装地址或 SKILL.md 文档，输出结构化的使用说明：主要功能、使用场景、核心命令、安装依赖、API Key 需求、版本号、注意事项等。Triggers: skill reader, 读skill, 解读skill, skill怎么用, skill..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kenwang-dev",
+      "userId": "s176wvqjt3ebsgwx6rkjcfnbtn83rye5",
+      "displayName": "Ken Wang",
+      "image": "https://avatars.githubusercontent.com/u/166790577?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775434537864,
+      "changelog": "v1.0.0: 用户友好的 Skill 使用说明书生成器。速览卡+完整说明书两层结构，对话式用法，费用量化，推荐决策表。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af92b5f62488cfcecdb4df32aba34d32818a1d76868b2ab12bf54883e41ca615"
+}

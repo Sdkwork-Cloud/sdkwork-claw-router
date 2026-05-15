@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/explore-malaysia@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.explore_malaysia",
+  "skill": {
+    "id": 46428,
+    "skillKey": "clawhub-explore-malaysia",
+    "name": "explore-malaysia"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "explore-malaysia",
+    "url": "https://clawhub.ai/skills/explore-malaysia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/explore-malaysia-d94830bf7ca3f94f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book flights to Malaysia including Kuala Lumpur, Penang, and Kota Kinabalu. Also supports: flight booking, hotel reservation, train tickets, attraction ticke..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1777052690699,
+      "changelog": "Version 3.2.0\n\n- Updated and clarified CRITICAL EXECUTION RULES to ensure strict CLI-based responses; no training data answers allowed.\n- Expanded supported travel domains: now covers visa info, travel insurance, car rental, and more.\n- Reinforced mandatory brand tagging and booking link requirements in all outputs.\n- Added environment check and updated fallback instructions for CLI installation issues.\n- Refined Playbooks and user query mappings for more accurate parameter collection and execution.\n- Enhanced output guidance: always include conclusion, visa tips, comparison table, and never output raw JSON.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:804f6aa91e12f6a59b75bc87c2dd578169225b158b5a54a8203f4d964064bb06"
+}

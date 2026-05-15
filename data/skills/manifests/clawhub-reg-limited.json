@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19541,
+  "uuid": "skill-clawhub-reg-limited",
+  "skillKey": "clawhub-reg-limited",
+  "name": "Reg Limited",
+  "summary": "Vehicle restriction query and reminder tool for Chinese cities. Query daily restrictions and set scheduled reminders.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reg_limited",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chandler0714",
+      "features": [
+        "Vehicle restriction query and reminder tool for Chinese cities",
+        "Query daily restrictions and set scheduled reminders."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reg-limited@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33366056?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reg-limited",
+      "url": "https://clawhub.ai/skills/reg-limited"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reg-limited",
+    "url": "https://clawhub.ai/skills/reg-limited",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reg-limited-a9761b4e473afe51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reg-limited@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-reg-limited-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7347fc939e34ae855865113f4d51d2cb7abf69968bd746b5a60cdd4863ae945",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T03:18:22.145Z"
+}

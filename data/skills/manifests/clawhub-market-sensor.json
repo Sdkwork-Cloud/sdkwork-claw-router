@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67923,
+  "uuid": "skill-clawhub-market-sensor",
+  "skillKey": "clawhub-market-sensor",
+  "name": "MarketSensor",
+  "summary": "AI 驱动的股票多因子分析——查自选、看报告、触发分析、查额度。支持美股、加密货币、A 股。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_sensor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xmhu",
+      "features": [
+        "AI 驱动的股票多因子分析——查自选、看报告、触发分析、查额度。支持美股、加密货币、A 股。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/market-sensor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5001200?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "market-sensor",
+      "url": "https://clawhub.ai/skills/market-sensor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-sensor",
+    "url": "https://clawhub.ai/skills/market-sensor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-sensor-8fe64cac8296da43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/market-sensor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-market-sensor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24e131be82b4d68a7cb611825e7154db19b1d837f0af8c725d62e0830b823fd4",
+      "artifactSizeBytes": 2165
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T12:16:42.306Z"
+}

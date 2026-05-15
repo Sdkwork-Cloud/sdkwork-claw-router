@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tellers@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tellers",
+  "skill": {
+    "id": 51641,
+    "skillKey": "clawhub-tellers",
+    "name": "Tellers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tellers",
+    "url": "https://clawhub.ai/skills/tellers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tellers-8dee4167a7f56d04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, edit, and share AI-generated videos using tellers.ai — an AI video platform that aggregates leading generation models (Kling, Veo, LTX, ElevenLabs, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yxdunc",
+      "userId": "s1777exsefckgg785wgcj53rs183n7rr",
+      "displayName": "Robin Guignard-Perret",
+      "image": "https://avatars.githubusercontent.com/u/6277937?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775559010386,
+      "changelog": "Update skill to use new brew package instead of having to compile the cli from source",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eee9409430cc03adbfe1e3627d31720a62ebed1c73608a5bb45037c77a42657d"
+}

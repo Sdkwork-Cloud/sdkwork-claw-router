@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20382,
+  "uuid": "skill-clawhub-cloudflare-wrangler",
+  "skillKey": "clawhub-cloudflare-wrangler",
+  "name": "Cloudflare Wrangler & Pages",
+  "summary": "Manage Cloudflare Workers, KV, D1, R2, and secrets using the Wrangler CLI. Use when deploying workers, managing databases, storing objects, or configuring Cl...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_wrangler",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Itamar C",
+      "features": [
+        "Manage Cloudflare Workers, KV, D1, R2, and secrets using the Wrangler CLI",
+        "Use when deploying workers, managing databases, storing objects, or configuring Cl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloudflare-wrangler@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26421901?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloudflare-wrangler",
+      "url": "https://clawhub.ai/skills/cloudflare-wrangler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-wrangler",
+    "url": "https://clawhub.ai/skills/cloudflare-wrangler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-wrangler-dd6b68a92a5f402f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloudflare-wrangler@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloudflare-wrangler-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce0f502aafb117a6281a5e0bb2bf9732d5b2185963a3b86552e7626d85d229f6",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T13:25:30.522Z"
+}

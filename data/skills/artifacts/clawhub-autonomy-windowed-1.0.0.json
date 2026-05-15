@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/autonomy-windowed@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomy_windowed",
+  "skill": {
+    "id": 16627,
+    "skillKey": "clawhub-autonomy-windowed",
+    "name": "Windowed Autonomy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomy-windowed",
+    "url": "https://clawhub.ai/skills/autonomy-windowed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomy-windowed-a77d2d7f658e2629.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Time-windowed autonomous task queue. Autonomy works only during specific time windows (e.g., 8 AM - 8 PM UTC), while cron jobs run overnight. Separates conce..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luciusrockwing",
+      "userId": "publishers:luciusrockwing",
+      "displayName": "luciusrockwing",
+      "image": "https://avatars.githubusercontent.com/u/2353385?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 834,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771207064302,
+      "changelog": "Initial release - time-windowed autonomous task queue system. Works only during defined windows (e.g., 8 AM - 8 PM UTC). Day = autonomy, night = cron maintenance. Predictable schedule with controlled token budget.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6b2bd021b957e10bc545601b319cf8363e4cf64448869efbb7eb909912f60798"
+}

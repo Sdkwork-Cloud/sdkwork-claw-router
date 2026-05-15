@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nail-b3g1-promo@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nail_b3g1_promo",
+  "skill": {
+    "id": 28310,
+    "skillKey": "clawhub-nail-b3g1-promo",
+    "name": "Nail B3g1 Promo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nail-b3g1-promo",
+    "url": "https://clawhub.ai/skills/nail-b3g1-promo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nail-b3g1-promo-b6481b88255622a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Designs and automates \"buy 3 get 1 free\" (B3G1) promotions for DTC nail polish and press-on nail stores selling cat-eye, matte, gel-effect, and similar lines..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rijoyai",
+      "userId": "s17968d4vetrx5cj2yx3105heh83hrb4",
+      "displayName": "RIJOY-AI",
+      "image": "https://avatars.githubusercontent.com/u/219251023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773139489337,
+      "changelog": "Version 0.1.1\n\n- Initial release supporting \"buy 3 get 1 free\" (B3G1) promo automation for DTC nail and press-on nail brands.\n- Added evaluation and reference documentation (assets/README.md, evals/README.md, references/README.md).\n- Introduced evaluation configuration files to support testing (evals/evals.json, evals/files/README.md).\n- Provided scripting documentation (scripts/README.md) for further automation.\n- No breaking changes to existing skill logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09f4fabc3417f7c1b7dc08f924128de8ed81e8f33f7eb1e672a4c813a17ab195"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57544,
+  "uuid": "skill-clawhub-daily-report-assistant",
+  "skillKey": "clawhub-daily-report-assistant",
+  "name": "龙虾教研日报助手",
+  "summary": "Daily work report skill: log work via conversation, auto-write to Tencent Docs, generate monthly summaries with one command. Requires Node/npm and a Tencent...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_report_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nmww",
+      "features": [
+        "Daily work report skill: log work via conversation, auto-write to Tencent Docs, generate monthl.",
+        "Requires Node/npm and a Tencent..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-report-assistant@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6917516?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-report-assistant",
+      "url": "https://clawhub.ai/skills/daily-report-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-report-assistant",
+    "url": "https://clawhub.ai/skills/daily-report-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-report-assistant-946e97a4e03a0f2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-report-assistant@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-report-assistant-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33240df232936012e2e461c29f996de38a1c009a725ab123ef4028fd0a8aeffb",
+      "artifactSizeBytes": 2006
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T02:33:29.695Z"
+}

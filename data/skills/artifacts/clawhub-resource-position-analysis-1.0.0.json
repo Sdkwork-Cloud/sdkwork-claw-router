@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resource-position-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resource_position_analysis",
+  "skill": {
+    "id": 37552,
+    "skillKey": "clawhub-resource-position-analysis",
+    "name": "Resource Position Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resource-position-analysis",
+    "url": "https://clawhub.ai/skills/resource-position-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resource-position-analysis-43ab1893e82c470d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze conversion funnel data for frontend resource positions (banners, cards, popups) from exposure, click, and business conversion dimensions. Decompose d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wuyi-ding",
+      "userId": "s17f1phzm33mjwrzezg4x9y8ss83hjzk",
+      "displayName": "wuyi-ding",
+      "image": "https://avatars.githubusercontent.com/u/47908996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774507749191,
+      "changelog": "Initial release: funnel decomposition, multi-period comparison, multi-position cross-analysis",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5316e75542996023eefd7f2c1497edcb226a3872482dce0458ad8be5bb42c37b"
+}

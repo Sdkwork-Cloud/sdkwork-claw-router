@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clip@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clip",
+  "skill": {
+    "id": 14787,
+    "skillKey": "clawhub-clip",
+    "name": "Clip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clip",
+    "url": "https://clawhub.ai/skills/clip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clip-67905ad3cc2dd52b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Downloads given video from YouTube, clips from given start and end time, saves to folder on your Desktop"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bestisblessed",
+      "userId": "s179qhkgs0350567tyc17d8kg5858kzd",
+      "displayName": "bestisblessed",
+      "image": "https://avatars.githubusercontent.com/u/59031057?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 958,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1778177470514,
+      "changelog": "- No user-facing changes.\n- Internal update: Modified clip.sh only; documentation remains unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dcad9b40e527c9d7d79653d0216eee89d0c1e9d8707ee7d6c6509ae015ebd154"
+}

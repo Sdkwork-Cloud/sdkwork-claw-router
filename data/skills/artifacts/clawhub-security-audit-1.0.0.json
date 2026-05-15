@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/security-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_audit",
+  "skill": {
+    "id": 8559,
+    "skillKey": "clawhub-security-audit",
+    "name": "Security Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-audit",
+    "url": "https://clawhub.ai/skills/security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-audit-8f9b6a749f81877f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive security auditing for Clawdbot deployments. Scans for exposed credentials, open ports, weak configs, and vulnerabilities. Auto-fix mode included."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chandrasekar-r",
+      "userId": "publishers:chandrasekar-r",
+      "displayName": "chandrasekar-r",
+      "image": "https://avatars.githubusercontent.com/u/70361171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 9522,
+      "installsAllTime": 128,
+      "installsCurrent": 123,
+      "stars": 7,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769467312547,
+      "changelog": "Initial release: credential scanning, port detection, config validation, file permissions, Docker security checks, auto-fix mode",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3b1b6919c3b15c5da2b22b645b8185eff60ff41d7e26d75d81338c1e338ed18e"
+}

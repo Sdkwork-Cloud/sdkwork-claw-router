@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73068,
+  "uuid": "skill-clawhub-tech-brief",
+  "skillKey": "clawhub-tech-brief",
+  "name": "科技资讯简报",
+  "summary": "提供内存、AI、算力领域的最新新闻、政策、活动与热点话题，每日生成结构化科技简报。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thiswin",
+      "features": [
+        "提供内存、AI、算力领域的最新新闻、政策、活动与热点话题，每日生成结构化科技简报。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tech-brief@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62000536?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tech-brief",
+      "url": "https://clawhub.ai/skills/tech-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-brief",
+    "url": "https://clawhub.ai/skills/tech-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-brief-74cba3925c22877a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tech-brief@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tech-brief-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3544a535f50b724b6f822bd0ab0c9ddf0ac2c8ab43cc42e095e4430747daa370",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T11:11:27.152Z"
+}

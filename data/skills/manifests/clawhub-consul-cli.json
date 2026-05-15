@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38031,
+  "uuid": "skill-clawhub-consul-cli",
+  "skillKey": "clawhub-consul-cli",
+  "name": "Consul CLI",
+  "summary": "Consul CLI command reference for service discovery, key-value store, health checks, cluster management, and service mesh operations. Use when executing Consu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consul_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JonasGao",
+      "features": [
+        "Consul CLI command reference for service discovery, key-value store, health checks, cluster man.",
+        "Use when executing Consu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/consul-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4549584?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "consul-cli",
+      "url": "https://clawhub.ai/skills/consul-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consul-cli",
+    "url": "https://clawhub.ai/skills/consul-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consul-cli-b31b69468d1628be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/consul-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-consul-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c8a8bb534cb3fca478602cbc2f742ac93c89c367ccdae774cb4da46dc96d4b1",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:34:23.453Z"
+}

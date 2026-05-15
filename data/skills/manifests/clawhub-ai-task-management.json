@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69551,
+  "uuid": "skill-clawhub-ai-task-management",
+  "skillKey": "clawhub-ai-task-management",
+  "name": "Task Management",
+  "summary": "零依赖、高性能的任务管理技能。当用户需要创建、查询、更新、删除任务或获取任务统计时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_task_management",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xinye",
+      "features": [
+        "零依赖、高性能的任务管理技能。当用户需要创建、查询、更新、删除任务或获取任务统计时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-task-management@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23453985?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-task-management",
+      "url": "https://clawhub.ai/skills/ai-task-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-task-management",
+    "url": "https://clawhub.ai/skills/ai-task-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-task-management-aad27c8597f6a53d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-task-management@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-task-management-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b51eda1813fda40606daa94d8327575232bfc755b41d5b471da958d7ae191f4",
+      "artifactSizeBytes": 2445
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T07:45:40.600Z"
+}

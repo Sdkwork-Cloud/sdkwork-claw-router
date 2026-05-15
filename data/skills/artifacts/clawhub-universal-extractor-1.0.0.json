@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/universal-extractor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.universal_extractor",
+  "skill": {
+    "id": 43172,
+    "skillKey": "clawhub-universal-extractor",
+    "name": "Universal Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "universal-extractor",
+    "url": "https://clawhub.ai/skills/universal-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/universal-extractor-99e65c3576061d95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract clean text from URLs, articles, documents, and files. Four extraction micro-services. Use when you need to pull content from web pages, PDFs, or any..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "renoblabs",
+      "userId": "s171c0pbnstpzzy52rsh3jvfp584eazr",
+      "displayName": "renoblabs",
+      "image": "https://avatars.githubusercontent.com/u/211252113?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775889732675,
+      "changelog": "- Initial release of universal-extractor.\n- Extract clean text from URLs, articles, and a wide range of files.\n- Four services: clean URL text, article extraction with summary, document to text, and universal file extraction.\n- Easy API endpoints; payments handled via x402 protocol using USDC.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a65c7147460d13efc1f0041e5cf149cdeab0b9d6806ad9906c26adebbe52b6c6"
+}

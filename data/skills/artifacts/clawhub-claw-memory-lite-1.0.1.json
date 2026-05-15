@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-memory-lite@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_memory_lite",
+  "skill": {
+    "id": 17738,
+    "skillKey": "clawhub-claw-memory-lite",
+    "name": "Claw Memory Lite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-memory-lite",
+    "url": "https://clawhub.ai/skills/claw-memory-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-memory-lite-951b898ddea07269.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and query your agent's distilled long-term memory with lightweight, fast SQLite-powered tools and automated daily extraction."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "timothysong0w0",
+      "userId": "publishers:timothysong0w0",
+      "displayName": "TimothySong",
+      "image": "https://avatars.githubusercontent.com/u/85380700?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 740,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773234538293,
+      "changelog": "- Added new scripts: friction_detector.py, nightly_meta_extract.py, regressions_guardrail.py, and trust_scorer.py.\n- Included a LICENSE file.\n- Removed CREDITS.md file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e4f4ff604a0807b963edc1987111cc5a7d3ecfa2f170db62df139a75b6e600a"
+}

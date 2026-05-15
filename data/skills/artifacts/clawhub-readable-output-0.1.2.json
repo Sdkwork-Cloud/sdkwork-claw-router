@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/readable-output@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readable_output",
+  "skill": {
+    "id": 57711,
+    "skillKey": "clawhub-readable-output",
+    "name": "看得清 Readable Output · Readability Layout / 多语言排版"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readable-output",
+    "url": "https://clawhub.ai/skills/readable-output",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readable-output-38e80425c76bf86f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Official 看得清 Readable Output skill. Turns dense AI replies into a clearer reading layer with overview, key points, warnings, next steps, and folded raw text."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sheygoodbai",
+      "userId": "s17f0jxkymmhg7fyyxgc6d57ex83gjd9",
+      "displayName": "Sheygoodbai",
+      "image": "https://avatars.githubusercontent.com/u/143479205?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1775699700141,
+      "changelog": "- Fix the canonical ClawHub plugin link used across the skill listing.\n- Refresh launch copy with clearer CTA, screenshot plan, and real-review prompts.\n- Keep GitHub, demo, and marketplace routes aligned to one plugin page.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f0d0a09831d169cfd6990f65bca6729465aa1feb1005dae98407382457d11ac"
+}

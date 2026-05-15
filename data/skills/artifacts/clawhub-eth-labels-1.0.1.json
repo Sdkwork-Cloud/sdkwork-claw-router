@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eth-labels@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eth_labels",
+  "skill": {
+    "id": 31031,
+    "skillKey": "clawhub-eth-labels",
+    "name": "Eth Labels"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eth-labels",
+    "url": "https://clawhub.ai/skills/eth-labels",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eth-labels-d5a257726fac495d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Look up labeled crypto addresses, token metadata, and balances across major EVM chains including Ethereum, Base, Arbitrum, Optimism, and BSC."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dawsbot",
+      "userId": "publishers:dawsbot",
+      "displayName": "dawsbot",
+      "image": "https://avatars.githubusercontent.com/u/3408480?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773642447146,
+      "changelog": "Fixed installation instructions to use GitHub instead of npm (package not yet published to npm)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a34fbfd9fcc8e82d4c95a0c4fe8edf83b3aa8b0194686ce170fcbb82f7e64d21"
+}

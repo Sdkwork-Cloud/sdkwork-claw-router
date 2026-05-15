@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18261,
+  "uuid": "skill-clawhub-git-federation-searcher",
+  "skillKey": "clawhub-git-federation-searcher",
+  "name": "Git Federation Searcher",
+  "summary": "Search across multiple self-hosted Git instances including Gitea, Forgejo, GitLab, and Codeberg. Aggregates search results from Codeberg.org, Gitea.com, Open...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_federation_searcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DJ_Swiss",
+      "features": [
+        "Search across multiple self-hosted Git instances including Gitea, Forgejo, GitLab, and Codeberg",
+        "Aggregates search results from Codeberg.org, Gitea.com, Open..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-federation-searcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29781829?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-federation-searcher",
+      "url": "https://clawhub.ai/skills/git-federation-searcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-federation-searcher",
+    "url": "https://clawhub.ai/skills/git-federation-searcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-federation-searcher-152e7a6d7c9290d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-federation-searcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-federation-searcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d58b0344ec4685542facd26d8d46e9bbe00ccc6f0c9581a2640c067b97ef5cf3",
+      "artifactSizeBytes": 2357
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T13:44:53.187Z"
+}

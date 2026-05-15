@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12644,
+  "uuid": "skill-clawhub-pls-office-docs",
+  "skillKey": "clawhub-pls-office-docs",
+  "name": "PLS Office Docs",
+  "summary": "Create, read, edit, and extract content from PDF, DOCX, XLSX, and PPTX documents for professional reports, presentations, and data exports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pls_office_docs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matt Valenta",
+      "features": [
+        "Create, read, edit, and extract content from PDF, DOCX, XLSX, and PPTX documents for profession."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pls-office-docs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/153394211?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pls-office-docs",
+      "url": "https://clawhub.ai/skills/pls-office-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pls-office-docs",
+    "url": "https://clawhub.ai/skills/pls-office-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pls-office-docs-e0ccfbdb7cd3a931.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pls-office-docs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pls-office-docs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25cb6fbc21bf0755be7ac598215eb32b87184f25946f41cdf5806e52206d408d",
+      "artifactSizeBytes": 2424
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T23:13:20.069Z"
+}

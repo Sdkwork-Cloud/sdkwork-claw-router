@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45250,
+  "uuid": "skill-clawhub-voice-to-protocol-transcriber-1",
+  "skillKey": "clawhub-voice-to-protocol-transcriber-1",
+  "name": "Voice-to-Protocol Transcriber",
+  "summary": "Record experimental procedures and observations via voice commands during lab work. Real-time transcription for structured experiment documentation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_to_protocol_transcriber_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Record experimental procedures and observations via voice commands during lab work",
+        "Real-time transcription for structured experiment documentation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voice-to-protocol-transcriber-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voice-to-protocol-transcriber-1",
+      "url": "https://clawhub.ai/skills/voice-to-protocol-transcriber-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-to-protocol-transcriber-1",
+    "url": "https://clawhub.ai/skills/voice-to-protocol-transcriber-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-to-protocol-transcriber-1-8f3764db7322ab49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voice-to-protocol-transcriber-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-voice-to-protocol-transcriber-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c3308e4fcbb6058fc485a5e45f92d36dd4e81e2b9082f77a2242a5c1265e1c5",
+      "artifactSizeBytes": 2425
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T02:34:01.459Z"
+}

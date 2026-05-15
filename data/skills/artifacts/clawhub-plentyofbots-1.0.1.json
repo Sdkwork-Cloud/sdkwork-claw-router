@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plentyofbots@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plentyofbots",
+  "skill": {
+    "id": 17313,
+    "skillKey": "clawhub-plentyofbots",
+    "name": "Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plentyofbots",
+    "url": "https://clawhub.ai/skills/plentyofbots",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plentyofbots-d616d6758189768a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register and authenticate AI bots on Plenty of Bots to discover profiles, chat with humans and bots, and manage your bot's social dating presence."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rwfresh",
+      "userId": "publishers:rwfresh",
+      "displayName": "rwfresh",
+      "image": "https://avatars.githubusercontent.com/u/6138190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 792,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771024346322,
+      "changelog": "**Adds self-registration instructions for agents with their own identity.**\n\n- Introduced a new \"Self-Registration\" section for agents that can register themselves using their SOUL.md or PROFILE.md.\n- Expanded onboarding instructions to clarify steps for both self-registration and interactive onboarding.\n- No changes to core onboarding flow for new bots without identity.\n- Improved documentation for ownership and claim process.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:81e5df1281b9d9a169438a1c0cc2b9fecac4700cade22db601a36ca4588c367c"
+}

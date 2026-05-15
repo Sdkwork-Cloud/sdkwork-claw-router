@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61854,
+  "uuid": "skill-clawhub-powpow-simple",
+  "skillKey": "clawhub-powpow-simple",
+  "name": "POWPOW 简化版 - 在 OpenClaw 中轻松创建和管理 POWPOW 数字人",
+  "summary": "POWPOW 简化版 - 在 OpenClaw 中轻松创建和管理 POWPOW 数字人。支持用户注册、数字人创建、位置选择和徽章管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.powpow_simple",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "度人自度",
+      "features": [
+        "POWPOW 简化版",
+        "在 OpenClaw 中轻松创建和管理 POWPOW 数字人。支持用户注册、数字人创建、位置选择和徽章管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/powpow-simple@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38130340?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "powpow-simple",
+      "url": "https://clawhub.ai/skills/powpow-simple"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "powpow-simple",
+    "url": "https://clawhub.ai/skills/powpow-simple",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/powpow-simple-c8f0dccb85837f3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/powpow-simple@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-powpow-simple-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0534841ea00879afaa6a1e4cd88e8ce020b9f32f026a3a338294108eec393cca",
+      "artifactSizeBytes": 2311
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T12:31:27.814Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26981,
+  "uuid": "skill-clawhub-craigslist-monitor",
+  "skillKey": "clawhub-craigslist-monitor",
+  "name": "Craigslist Monitor",
+  "summary": "Scrapes Craigslist NY service ads to find small owner-operated Staten Island, Brooklyn, and Bronx businesses needing more calls, ideal for lead generation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.craigslist_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JayJJimenez",
+      "features": [
+        "Scrapes Craigslist NY service ads to find small owner-operated Staten Island, Brooklyn, and Bro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/craigslist-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79680021?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "craigslist-monitor",
+      "url": "https://clawhub.ai/skills/craigslist-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "craigslist-monitor",
+    "url": "https://clawhub.ai/skills/craigslist-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/craigslist-monitor-aa2d2b09e45c4121.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/craigslist-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-craigslist-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c88091552c250347c56d8a8300f0a4db59919c77b09b407c659fdb6dbc5f0bd7",
+      "artifactSizeBytes": 2407
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T20:57:29.659Z"
+}

@@ -174,13 +174,82 @@ fn catalog() -> InMemoryPricingCatalog {
 }
 
 #[tokio::test]
+async fn app_model_catalog_route_returns_standard_items_for_playground_grouping() {
+    let mut catalog = catalog();
+    catalog.add_model(
+        AiModel::new("image-gen-pro", "Image Gen Pro", "openai", vec!["image"])
+            .with_catalog_key("openai/global/image-gen-pro")
+            .with_public_metadata(sdkwork_claw_product::domain::AiModelPublicMetadata {
+                description: Some("High quality image generation model.".to_owned()),
+                modalities: vec!["image".to_owned()],
+                input_modalities: vec!["text".to_owned()],
+                output_modalities: vec!["image".to_owned()],
+                api_format: Some("openai_images".to_owned()),
+                supports_streaming: false,
+                release_stage: Some(1),
+                shelf_state: Some(1),
+                routing_state: Some(1),
+                ..Default::default()
+            }),
+    );
+
+    let router = sdkwork_claw_product::api::app_model_catalog_router(Arc::new(catalog));
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/ai/models")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let body_text = String::from_utf8(body.to_vec()).unwrap();
+    let payload: serde_json::Value = serde_json::from_str(&body_text).unwrap();
+
+    assert_eq!("2000", payload["code"]);
+    let items = payload["data"]["items"].as_array().unwrap();
+    let gpt = items
+        .iter()
+        .find(|item| item["catalogKey"] == "openai/global/gpt-4o-mini")
+        .unwrap();
+    let image = items
+        .iter()
+        .find(|item| item["catalogKey"] == "openai/global/image-gen-pro")
+        .unwrap();
+    let video = items
+        .iter()
+        .find(|item| item["catalogKey"] == "kuaishou/cn/kling-v2")
+        .unwrap();
+
+    assert_eq!("GPT-4o mini", gpt["displayName"]);
+    assert_eq!(serde_json::json!(["text", "image"]), gpt["modalities"]);
+    assert_eq!(serde_json::json!(["text"]), gpt["outputModalities"]);
+    assert_eq!("Image Gen Pro", image["displayName"]);
+    assert_eq!(serde_json::json!(["image"]), image["outputModalities"]);
+    assert_eq!("Kling v2", video["displayName"]);
+    assert_eq!(serde_json::json!(["video"]), video["outputModalities"]);
+    assert!(payload["data"].get("models").is_none());
+    assert!(body_text.contains("\"items\""));
+    assert!(!body_text.contains("\"agents\""));
+    assert!(!body_text.contains("lowestUpstreamCostUnitPrice"));
+    assert!(!body_text.contains("customerUnitPrice"));
+    assert!(!body_text.contains("hash:sk-live-secret"));
+}
+
+#[tokio::test]
 async fn app_model_vendor_route_returns_catalog_vendors_with_model_counts() {
     let router = sdkwork_claw_product::api::app_model_catalog_router(Arc::new(catalog()));
     let response = router
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/router/model-vendors")
+                .uri("/app/v3/api/ai/model_vendors")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -211,7 +280,7 @@ async fn app_model_catalog_route_returns_public_plus_result_without_secret_mater
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/router/models?vendorCode=openai&billingMeter=llm_input_token")
+                .uri("/app/v3/api/ai/models?vendor_code=openai&billing_meter=llm_input_token")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -340,7 +409,7 @@ async fn app_model_catalog_route_returns_complete_public_reference_prices_in_one
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/router/models?vendorCode=openai")
+                .uri("/app/v3/api/ai/models?vendor_code=openai")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -375,7 +444,7 @@ async fn app_model_catalog_route_marks_non_default_meter_reference_prices_availa
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/router/models?vendorCode=kuaishou")
+                .uri("/app/v3/api/ai/models?vendor_code=kuaishou")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -406,7 +475,7 @@ async fn app_model_catalog_route_keeps_unpriced_models_explicitly_unavailable() 
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/router/models")
+                .uri("/app/v3/api/ai/models")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -448,7 +517,7 @@ async fn app_model_catalog_route_returns_public_taxonomy_and_filters_server_side
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/router/models?vendorCodes=openai,anthropic&modalities=text&capabilities=tools&categories=Recommended,Proprietary&groups=enterprise&searchQuery=gpt&limit=10")
+                .uri("/app/v3/api/ai/models?vendor_codes=openai,anthropic&modalities=text&capabilities=tools&categories=Recommended,Proprietary&groups=enterprise&q=gpt&limit=10")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -470,6 +539,69 @@ async fn app_model_catalog_route_returns_public_taxonomy_and_filters_server_side
         serde_json::json!(["Recommended", "Proprietary"]),
         item["categories"]
     );
+}
+
+#[tokio::test]
+async fn app_model_catalog_router_exposes_only_standard_ai_catalog_paths() {
+    let router = sdkwork_claw_product::api::app_model_catalog_router(Arc::new(catalog()));
+    let response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/router/models")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::NOT_FOUND, response.status());
+
+    let response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/router/model_vendors")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::NOT_FOUND, response.status());
+
+    let removed_playground_models_path = format!("{}{}", "/app/v3/api/ai/playground", "/models");
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri(removed_playground_models_path.as_str())
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::NOT_FOUND, response.status());
+}
+
+#[tokio::test]
+async fn app_model_catalog_route_rejects_non_standard_query_parameters() {
+    let router = sdkwork_claw_product::api::app_model_catalog_router(Arc::new(catalog()));
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/ai/models?vendorCode=openai&billingMeter=llm_input_token&searchQuery=gpt")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::BAD_REQUEST, response.status());
 }
 
 fn assert_model_catalog_price(

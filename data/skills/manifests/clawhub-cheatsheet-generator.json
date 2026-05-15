@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61521,
+  "uuid": "skill-clawhub-cheatsheet-generator",
+  "skillKey": "clawhub-cheatsheet-generator",
+  "name": "Cheatsheet Generator",
+  "summary": "速查表生成器。当用户说\"生成 XXX 速查表\"、\"XXX 速查\"、\"XXX 快速参考\"、\"XXX 命令大全\"时触发，生成结构化的 Markdown 速查表，支持导出保存。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cheatsheet_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wanwan2qq",
+      "features": [
+        "速查表生成器。当用户说\"生成 XXX 速查表\"、\"XXX 速查\"、\"XXX 快速参考\"、\"XXX 命令大全\"时触发，生成结构化的 Markdown 速查表，支持导出保存。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cheatsheet-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10196216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cheatsheet-generator",
+      "url": "https://clawhub.ai/skills/cheatsheet-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cheatsheet-generator",
+    "url": "https://clawhub.ai/skills/cheatsheet-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cheatsheet-generator-16d653153b7c7cfb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cheatsheet-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cheatsheet-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc7002607dedf629df42e44f62d4002cf5c53b835b02a5aa1e1fa670eb441339",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T04:48:48.845Z"
+}

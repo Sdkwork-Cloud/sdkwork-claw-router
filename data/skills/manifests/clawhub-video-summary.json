@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10765,
+  "uuid": "skill-clawhub-video-summary",
+  "skillKey": "clawhub-video-summary",
+  "name": "Video Summary",
+  "summary": "Video summarization for Bilibili, Xiaohongshu, Douyin, and YouTube. Extract insights from video content through transcription and summarization.",
+  "version": "1.6.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lifei68801",
+      "features": [
+        "Video summarization for Bilibili, Xiaohongshu, Douyin, and YouTube",
+        "Extract insights from video content through transcription and summarization."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-summary@1.6.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130719648?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-summary",
+      "url": "https://clawhub.ai/skills/video-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-summary",
+    "url": "https://clawhub.ai/skills/video-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-summary-1076f9720ff77ae7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-summary@1.6.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-summary-1.6.4.json",
+      "version": "1.6.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f92b6b4f9ea0643caf1c9ca9f81e8a05e5d851a5931504664089026cfd2e88c7",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T03:34:14.741Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-listing-health-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_listing_health_monitor",
+  "skill": {
+    "id": 31221,
+    "skillKey": "clawhub-amazon-listing-health-monitor",
+    "name": "Amazon Listing Health Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-listing-health-monitor",
+    "url": "https://clawhub.ai/skills/amazon-listing-health-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-listing-health-monitor-87da3eb31f2d8085.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon listing health audit agent. Checks title and bullet completeness, keyword coverage, image count, BSR trends, Buy Box eligibility, suppression risk, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 259,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773982861500,
+      "changelog": "Amazon Listing Health Monitor 1.0.0 — initial release\n\n- Launches core Amazon listing audit & scoring capabilities: content check, keyword analysis, image review, BSR tracking, Buy Box review, suppression and hijacker detection.\n- Returns a prioritized health report for any ASIN, bulk export, or manual listing input.\n- Supports workspace for audit history, reports, BSR trend logs, and saved ASIN snapshots.\n- Includes detailed audit criteria and weighted health scoring system.\n- No API keys or external tools required; works from pasted details, exports, or screenshots.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:06cd286722e81fee1e17f80c4a7aa61e888148441fab93982e5cd476cbfa2a73"
+}

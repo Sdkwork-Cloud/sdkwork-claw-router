@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ifind-repilot-news-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ifind_repilot_news_search",
+  "skill": {
+    "id": 72311,
+    "skillKey": "clawhub-ifind-repilot-news-search",
+    "name": "iFinD投研-金融资讯搜索"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ifind-repilot-news-search",
+    "url": "https://clawhub.ai/skills/ifind-repilot-news-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ifind-repilot-news-search-268fbd36d8fc5f21.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过问句语义化搜索全市场金融资讯（新闻、舆情、市场动态等），返回与问句相关的新闻片段信息。当需要检索金融新闻、市场资讯、行业动态、公司舆情等信息时，使用此 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wenzisay",
+      "userId": "s17e3n25efm3nsbyswwyy0v17583g96c",
+      "displayName": "wenzi",
+      "image": "https://avatars.githubusercontent.com/u/43460226?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 289,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774517047085,
+      "changelog": "- No file changes detected in this version.\n- Documentation (SKILL.md) was unchanged between versions 1.0.0 and 1.0.1.\n- update py script",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ccf33ea647f037523015fbece161d2fead8b7e382b5c97f639050981fb1d2a9d"
+}

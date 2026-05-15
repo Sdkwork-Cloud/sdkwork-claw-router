@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23490,
+  "uuid": "skill-clawhub-raven-transfer",
+  "skillKey": "clawhub-raven-transfer",
+  "name": "Raven Transfer",
+  "summary": "Wallet-aware Raven Atlas transfer operations for NGN payouts. Use when an agent must check wallet balance, resolve Nigerian bank accounts, enforce explicit c...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raven_transfer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fmac",
+      "features": [
+        "Wallet-aware Raven Atlas transfer operations for NGN payouts",
+        "Use when an agent must check wallet balance, resolve Nigerian bank accounts, enforce explicit c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/raven-transfer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16941393?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "raven-transfer",
+      "url": "https://clawhub.ai/skills/raven-transfer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raven-transfer",
+    "url": "https://clawhub.ai/skills/raven-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raven-transfer-221645f88303e508.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/raven-transfer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-raven-transfer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:246f98bd4da8c056270d443c9c43d778e5c1109bf2c6b8c9923dc4dfe60c719e",
+      "artifactSizeBytes": 2265
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T17:06:40.902Z"
+}

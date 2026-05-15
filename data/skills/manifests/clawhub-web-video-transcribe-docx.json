@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44468,
+  "uuid": "skill-clawhub-web-video-transcribe-docx",
+  "skillKey": "clawhub-web-video-transcribe-docx",
+  "name": "Web Video Transcribe DOCX",
+  "summary": "Offline-first workflow for turning Chinese web page video or audio into text and Word deliverables. Use when Codex needs to (1) extract playable media stream...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_video_transcribe_docx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "c-narcissus",
+      "features": [
+        "Offline-first workflow for turning Chinese web page video or audio into text and Word deliverab.",
+        "Use when Codex needs to (1) extract playable media stream..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-video-transcribe-docx@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168325551?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-video-transcribe-docx",
+      "url": "https://clawhub.ai/skills/web-video-transcribe-docx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-video-transcribe-docx",
+    "url": "https://clawhub.ai/skills/web-video-transcribe-docx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-video-transcribe-docx-74e4266613977ca1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-video-transcribe-docx@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-video-transcribe-docx-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:875f1c6395966513b0b82b0acba09871304b72dc60d344dbd4f24ae0694b696a",
+      "artifactSizeBytes": 2660
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T15:25:18.058Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24396,
+  "uuid": "skill-clawhub-remove-background",
+  "skillKey": "clawhub-remove-background",
+  "name": "remove-bg",
+  "summary": "Remove single-color light backgrounds from images and output transparent PNGs using a luminance threshold.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remove_background",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jwh",
+      "features": [
+        "Remove single-color light backgrounds from images and output transparent PNGs using a luminance."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/remove-background@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44798246?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "remove-background",
+      "url": "https://clawhub.ai/skills/remove-background"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remove-background",
+    "url": "https://clawhub.ai/skills/remove-background",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remove-background-03afe9fa59f301b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/remove-background@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-remove-background-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd3e1e2a126479a01e400de7fdef059ad10fe8a6d87097fcc5184ddf670ff9b0",
+      "artifactSizeBytes": 1858
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T03:58:51.769Z"
+}

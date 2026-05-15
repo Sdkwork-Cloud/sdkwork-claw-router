@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65426,
+  "uuid": "skill-clawhub-qq",
+  "skillKey": "clawhub-qq",
+  "name": "Qq",
+  "summary": "QQ 开发助手，精通 QQ 机器人、频道开发、小程序、开放平台 API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qq",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "QQ 开发助手，精通 QQ 机器人、频道开发、小程序、开放平台 API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qq@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qq",
+      "url": "https://clawhub.ai/skills/qq"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qq",
+    "url": "https://clawhub.ai/skills/qq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qq-d5ce2b19fbda14a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qq@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qq-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:401e613953d1c96e85ad09a70ca366ee2ea0d93b49d596d0a4a9a2bd83716cde",
+      "artifactSizeBytes": 2297
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:18:20.376Z"
+}

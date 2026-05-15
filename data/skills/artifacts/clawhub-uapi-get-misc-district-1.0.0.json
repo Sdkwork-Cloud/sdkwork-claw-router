@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uapi-get-misc-district@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uapi_get_misc_district",
+  "skill": {
+    "id": 58952,
+    "skillKey": "clawhub-uapi-get-misc-district",
+    "name": "UAPI Adcode 国内外行政区域查询 接口"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uapi-get-misc-district",
+    "url": "https://clawhub.ai/skills/uapi-get-misc-district",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uapi-get-misc-district-a2f7e94761d93d68.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 UAPI 的“Adcode 国内外行政区域查询”单接口 skill，处理 Adcode 国内外行政区域查询、行政区查询 等请求。 Use when the user wants get misc district, misc district, district, district lookup, or w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shuakami",
+      "userId": "publishers:shuakami",
+      "displayName": "速冻饺子",
+      "image": "https://avatars.githubusercontent.com/u/149454909?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773084699809,
+      "changelog": "Initial publish.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fdb1b86abbf1b8cad73d13db51720b844e19d69158bbcadd56494c9df9dcf7e7"
+}

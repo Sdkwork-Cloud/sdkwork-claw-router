@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weryai-video-generator@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weryai_video_generator",
+  "skill": {
+    "id": 32453,
+    "skillKey": "clawhub-weryai-video-generator",
+    "name": "Weryai Video Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weryai-video-generator",
+    "url": "https://clawhub.ai/skills/weryai-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weryai-video-generator-0ce1c56c21e39be4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and transform WeryAI videos from text, images, storyboard frames, or first-frame and last-frame guidance. Use when the user needs text-to-video, ima..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weryai-developer",
+      "userId": "s17csvx4ax7kyjt70t862cpp4d83h5hh",
+      "displayName": "WeryAI-Developer",
+      "image": "https://avatars.githubusercontent.com/u/254698481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774345740155,
+      "changelog": "**Major refactor to improve agent usability and remove vendored dependencies.**\n\n- All 25 vendored core and video utility scripts have been removed for a cleaner codebase.\n- Documentation clarified to emphasize result-first, bounded-wait workflows (auto-polling with timeouts).\n- Usage guidance now stresses example prompts and natural language instructions (not raw shell commands).\n- Default behaviors and safety confirmations are unchanged for end users.\n- Security, authentication, and parameter selection guidance remain, with improved clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f78c4c31b8c1e93f5442de29dc6b0735853cb48c7326979a8554d17fa51b4f5b"
+}

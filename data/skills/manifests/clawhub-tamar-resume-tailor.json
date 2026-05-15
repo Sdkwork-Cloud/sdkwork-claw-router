@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26666,
+  "uuid": "skill-clawhub-tamar-resume-tailor",
+  "skillKey": "clawhub-tamar-resume-tailor",
+  "name": "Tamar Resume Tailor",
+  "summary": "Tailor resumes for specific job applications using the Tamar AI API",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tamar_resume_tailor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Evgeny Shneyderman",
+      "features": [
+        "Tailor resumes for specific job applications using the Tamar AI API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tamar-resume-tailor@1.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34822838?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tamar-resume-tailor",
+      "url": "https://clawhub.ai/skills/tamar-resume-tailor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tamar-resume-tailor",
+    "url": "https://clawhub.ai/skills/tamar-resume-tailor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tamar-resume-tailor-623be96b23ee7293.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tamar-resume-tailor@1.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tamar-resume-tailor-1.4.1.json",
+      "version": "1.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69fb75f990622408f215c531305db2debc0446d84761b4c672bc4fc404cd0064",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T07:43:29.597Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70032,
+  "uuid": "skill-clawhub-bocha-search",
+  "skillKey": "clawhub-bocha-search",
+  "name": "博查搜索",
+  "summary": "博查搜索 API 插件，从全网搜索网页信息，结果准确、摘要完整，适合 AI 使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bocha_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sunjingji",
+      "features": [
+        "博查搜索 API 插件，从全网搜索网页信息，结果准确、摘要完整，适合 AI 使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bocha-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7960633?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bocha-search",
+      "url": "https://clawhub.ai/skills/bocha-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bocha-search",
+    "url": "https://clawhub.ai/skills/bocha-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bocha-search-640f6085fe7f699a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bocha-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bocha-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6ec45ac815cba666f27cc2f1a8814aa4e0cba65fbe1754e52156ff65c40c3a5",
+      "artifactSizeBytes": 2294
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T07:59:11.898Z"
+}

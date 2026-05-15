@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/outlook-365@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outlook_365",
+  "skill": {
+    "id": 21499,
+    "skillKey": "clawhub-outlook-365",
+    "name": "Outlook for Work/School 365"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outlook-365",
+    "url": "https://clawhub.ai/skills/outlook-365",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outlook-365-baa27a16bbe6d4b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read, search, and manage Outlook emails and calendar via Microsoft Graph API. Use when the user asks about emails, inbox, Outlook, Microsoft mail, calendar e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mts-blake-lucas",
+      "userId": "s175wkjafs8rf25s8qcvg04edh83qzja",
+      "displayName": "Blake Lucas",
+      "image": "https://avatars.githubusercontent.com/u/176344851?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 507,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772738483545,
+      "changelog": "Outlook 365 Skill v1.3.0\n\n- Added full calendar support: view, create, update, and delete events; list calendars; check availability.\n- New scripts for calendar management (`outlook-calendar.sh`).\n- Expanded email features: advanced searching, focused inbox, categories, bulk operations, folder management, and stats.\n- Improved setup automation via `outlook-setup.sh`; simplified credential handling.\n- Enhanced troubleshooting and detailed usage examples in documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:66659cc0287d6235044cb4900723cc1a125b164e10c406a551d6269105dbcfaa"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18648,
+  "uuid": "skill-clawhub-notebooklm-integration",
+  "skillKey": "clawhub-notebooklm-integration",
+  "name": "Notebooklm Integration",
+  "summary": "Integrate Google NotebookLM capabilities into your workflow via the unofficial notebooklm-py library. Use when you need to: create/manage notebooks, import s...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notebooklm_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "om yarewara",
+      "features": [
+        "Integrate Google NotebookLM capabilities into your workflow via the unofficial notebooklm-py li.",
+        "Use when you need to: create/manage notebooks, import s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notebooklm-integration@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/186946154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notebooklm-integration",
+      "url": "https://clawhub.ai/skills/notebooklm-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notebooklm-integration",
+    "url": "https://clawhub.ai/skills/notebooklm-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notebooklm-integration-385acd884c81ef08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notebooklm-integration@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-notebooklm-integration-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16765110f40d9e97f2acc2949bf6d36afdd0c56a2c3d38bddb7e9d13ad8c613e",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T16:07:35.364Z"
+}

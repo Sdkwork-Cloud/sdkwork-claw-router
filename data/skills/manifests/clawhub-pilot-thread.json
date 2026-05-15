@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36493,
+  "uuid": "skill-clawhub-pilot-thread",
+  "skillKey": "clawhub-pilot-thread",
+  "name": "Pilot Thread",
+  "summary": "Threaded conversations with context tracking over the Pilot Protocol network. Use this skill when: 1. You need to maintain conversation context across multip...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_thread",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Threaded conversations with context tracking over the Pilot Protocol network",
+        "Use this skill when: 1",
+        "You need to maintain conversation context across multip..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-thread@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-thread",
+      "url": "https://clawhub.ai/skills/pilot-thread"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-thread",
+    "url": "https://clawhub.ai/skills/pilot-thread",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-thread-037c53ac002c79b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-thread@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-thread-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e5b10ac10a19b23ab7d3e5957961cfd5581491f3a1870441230f39b77b2d0bd",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T11:33:23.173Z"
+}

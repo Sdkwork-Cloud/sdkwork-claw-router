@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67449,
+  "uuid": "skill-clawhub-xhs-browser-ops",
+  "skillKey": "clawhub-xhs-browser-ops",
+  "name": "xhs Agent",
+  "summary": "xhs 全流程助手，覆盖小红书内容策划、文案与标题生成、封面制作、笔记发布及日常运营管理。适用于写笔记、生成标题/封面、发布或保存草稿、站内搜索、评论互动（点赞/收藏/回复）等小红书相关任务。支持从内容创作到发布执行的一站式流程；封面 AI 生图可选配置 GEMINI_API_KEY、IMG_API_KEY 或...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_browser_ops",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lucas",
+      "features": [
+        "xhs 全流程助手，覆盖小红书内容策划、文案与标题生成、封面制作、笔记发布及日常运营管理。适用于写笔记、生成标题/封面、发布或保存草稿、站内搜索、评论互动（点赞/收藏/回复）等小红书相关任务."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-browser-ops@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32409911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-browser-ops",
+      "url": "https://clawhub.ai/skills/xhs-browser-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-browser-ops",
+    "url": "https://clawhub.ai/skills/xhs-browser-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-browser-ops-a7dbe910818ef039.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-browser-ops@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-browser-ops-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b835cdc19a89c86365f290534e7b08e0ec561378b8ea068ba99e4358adf67480",
+      "artifactSizeBytes": 2159
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T02:56:07.732Z"
+}

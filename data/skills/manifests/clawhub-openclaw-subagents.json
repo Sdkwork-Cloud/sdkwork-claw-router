@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17912,
+  "uuid": "skill-clawhub-openclaw-subagents",
+  "skillKey": "clawhub-openclaw-subagents",
+  "name": "OpenClaw SubAgents Creator",
+  "summary": "This skill should be used when the user wants to configure, spawn, or manage OpenClaw (formerly Clawdbot) subagents. It covers the full setup workflow: editi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_subagents",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vishnu",
+      "features": [
+        "This skill should be used when the user wants to configure, spawn, or manage OpenClaw (formerly.",
+        "It covers the full setup workflow: editi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-subagents@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/857006?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-subagents",
+      "url": "https://clawhub.ai/skills/openclaw-subagents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-subagents",
+    "url": "https://clawhub.ai/skills/openclaw-subagents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-subagents-88d44b1632868f20.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-subagents@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-subagents-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89cd4da871be7d4d50c10f70d295b49a43f7dd96dfcdcd6dce3671ac91487eb0",
+      "artifactSizeBytes": 2526
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T04:43:45.346Z"
+}

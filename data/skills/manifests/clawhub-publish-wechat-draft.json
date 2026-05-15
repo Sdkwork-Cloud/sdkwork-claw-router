@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62552,
+  "uuid": "skill-clawhub-publish-wechat-draft",
+  "skillKey": "clawhub-publish-wechat-draft",
+  "name": "Publish Wechat Draft",
+  "summary": "发布文章到微信公众号草稿箱。当用户要求发布公众号文章、保存微信草稿、publish wechat draft、或提到\"发公众号\"/\"发微信\"时调用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publish_wechat_draft",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lixinran",
+      "features": [
+        "发布文章到微信公众号草稿箱。当用户要求发布公众号文章、保存微信草稿、publish wechat draft、或提到\"发公众号\"/\"发微信\"时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/publish-wechat-draft@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18626165?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "publish-wechat-draft",
+      "url": "https://clawhub.ai/skills/publish-wechat-draft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publish-wechat-draft",
+    "url": "https://clawhub.ai/skills/publish-wechat-draft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publish-wechat-draft-11a3af0232060b4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/publish-wechat-draft@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-publish-wechat-draft-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d7c5e54e208ebc8f538ca20bb2b99d72090c41649e6d89379f256b5e26a755d",
+      "artifactSizeBytes": 2586
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T03:52:29.631Z"
+}

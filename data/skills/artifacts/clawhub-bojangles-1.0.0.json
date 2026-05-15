@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bojangles@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bojangles",
+  "skill": {
+    "id": 49691,
+    "skillKey": "clawhub-bojangles",
+    "name": "Bojangles"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bojangles",
+    "url": "https://clawhub.ai/skills/bojangles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bojangles-2517d490e51af1be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bojangles is a Southern US fast-food chain known for its Cajun chicken and made-from-scratch buttermilk biscuits, deeply rooted in North Carolina culture."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 70,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778260721481,
+      "changelog": "- Initial release of the Bojangles skill, providing an overview of the iconic Southern US fast-food chain.\n- Includes a historical timeline from its founding in 1977 to recent private equity ownership and modernization efforts.\n- Details the business model, highlighting its focus on fried chicken, biscuits, and regional brand loyalty.\n- Offers a moat analysis describing key competitive advantages and cultural significance.\n- Presents essential data such as location count, revenue estimates, and ownership history.\n- Shares interesting facts about menu practices and the origin of the Bojangles' name.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f199ca310982cce09de3f07431cd31c23c9ac3cf16a670a9f6c940a2116a0677"
+}

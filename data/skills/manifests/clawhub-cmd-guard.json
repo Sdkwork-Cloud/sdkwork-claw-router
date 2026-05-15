@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61230,
+  "uuid": "skill-clawhub-cmd-guard",
+  "skillKey": "clawhub-cmd-guard",
+  "name": "Exec Guard",
+  "summary": "命令安全守卫。在执行 shell 命令前进行语义分类（READ/WRITE/NETWORK/DESTRUCTIVE），自动放行安全操作，拦截危险操作。灵感来自 Claude Code 的命令语义分类器。触发词：exec guard、命令安全、安全执行、safe exec。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmd_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wavmson",
+      "features": [
+        "命令安全守卫。在执行 shell 命令前进行语义分类（READ/WRITE/NETWORK/DESTRUCTIVE），自动放行安全操作，拦截危险操作。灵感来自 Claude Code 的命令."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cmd-guard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127436552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cmd-guard",
+      "url": "https://clawhub.ai/skills/cmd-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmd-guard",
+    "url": "https://clawhub.ai/skills/cmd-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmd-guard-1b2e5db8e2b7d2df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cmd-guard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cmd-guard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f9bc7c885798c9f194c325b4172088d1b3895300af50e139edc46f1a9443ae7",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T11:59:24.360Z"
+}

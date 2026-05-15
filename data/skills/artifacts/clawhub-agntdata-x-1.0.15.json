@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agntdata-x@1.0.15",
+  "version": "1.0.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agntdata_x",
+  "skill": {
+    "id": 30971,
+    "skillKey": "clawhub-agntdata-x",
+    "name": "X (Twitter) API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agntdata-x",
+    "url": "https://clawhub.ai/skills/agntdata-x",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agntdata-x-9a46edf49e7bed78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use one API key to pull X data (posts, profiles, and social graph data) for agents, automations, and analytics. Structured JSON, credit-based pricing, no separa"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaencarrodine",
+      "userId": "s17d5p6q94jb97qnamxbnpkvq984rfwm",
+      "displayName": "Jaen",
+      "image": "https://avatars.githubusercontent.com/u/53541106?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.15",
+      "createdAt": 1778370282892,
+      "changelog": "agntdata-x v1.0.15\n\n- Version bumped to 1.0.15.\n- Documentation formatting updated with no major content changes.\n- No new endpoints or tools added.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c46fd07b9e3a3b4c262d80a3005604392efbbeb49209882201c686df2151ce95"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23272,
+  "uuid": "skill-clawhub-trongrid-transaction-info",
+  "skillKey": "clawhub-trongrid-transaction-info",
+  "name": "trongrid-transaction-info",
+  "summary": "Query and decode TRON transactions including status, confirmation, sender/receiver, resource costs, internal transactions, event logs, and failure analysis....",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trongrid_transaction_info",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "greason",
+      "features": [
+        "Query and decode TRON transactions including status, confirmation, sender/receiver, resource co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trongrid-transaction-info@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12513158?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trongrid-transaction-info",
+      "url": "https://clawhub.ai/skills/trongrid-transaction-info"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trongrid-transaction-info",
+    "url": "https://clawhub.ai/skills/trongrid-transaction-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trongrid-transaction-info-945c4c79f80ff6f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trongrid-transaction-info@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-trongrid-transaction-info-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ed38af6078284e86b4af56c8b9437dc6cd405c372558d6fe3d4c61875d56e43",
+      "artifactSizeBytes": 2152
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:47:13.433Z"
+}

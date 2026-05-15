@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31137,
+  "uuid": "skill-clawhub-survey2connect",
+  "skillKey": "clawhub-survey2connect",
+  "name": "Survey2Connect",
+  "summary": "Survey2Connect integration. Manage Users, Surveys, Respondents, Responses, Reports, Integrations. Use when the user wants to interact with Survey2Connect data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.survey2connect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Survey2Connect integration",
+        "Manage Users, Surveys, Respondents, Responses, Reports, Integrations",
+        "Use when the user wants to interact with Survey2Connect data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/survey2connect@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "survey2connect",
+      "url": "https://clawhub.ai/skills/survey2connect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "survey2connect",
+    "url": "https://clawhub.ai/skills/survey2connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/survey2connect-04f457c9eb4df0f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/survey2connect@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-survey2connect-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf3de6f5265b723f724f45e4cfc2bba2c072d81b369d4955ef81bea2fc97186d",
+      "artifactSizeBytes": 1908
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:48:51.930Z"
+}

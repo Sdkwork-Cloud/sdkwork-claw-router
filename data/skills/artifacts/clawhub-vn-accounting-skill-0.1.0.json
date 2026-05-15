@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vn-accounting-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vn_accounting_skill",
+  "skill": {
+    "id": 56595,
+    "skillKey": "clawhub-vn-accounting-skill",
+    "name": "Accounting Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vn-accounting-skill",
+    "url": "https://clawhub.ai/skills/vn-accounting-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vn-accounting-skill-fc6b3a05dd655b60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Process accounting documents — invoices (hóa đơn GTGT), purchase orders, and bank statements. Extract structured data from PDF (digital and scanned), JPG, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dvnghiem",
+      "userId": "s176swzbjx3ec06d1w9ky2839d83pcwb",
+      "displayName": "DVNghiem",
+      "image": "https://avatars.githubusercontent.com/u/70430093?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 286,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773935975658,
+      "changelog": "**Initial release of the accounting-skill:**\n\n- Extracts structured data from invoices, purchase orders, and bank statements in PDF (digital/scanned), JPG, and PNG formats using OCR.\n- Classifies unknown accounting documents and automatically routes them to the correct extractor.\n- Supports Vietnamese and international document formats.\n- Outputs Excel tracking sheets and JSON backup files for extracted data.\n- Includes batch processing workflow and validation rules for invoices, statements, and POs.\n- Provides installation instructions and reference documentation for field formats and OCR setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b7d234e32583e1418de3307b1b79ce20f5548adbcd815577d7124e950f6de4fa"
+}

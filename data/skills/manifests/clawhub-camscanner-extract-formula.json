@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47754,
+  "uuid": "skill-clawhub-camscanner-extract-formula",
+  "skillKey": "clawhub-camscanner-extract-formula",
+  "name": "CamScanner Extract Formula",
+  "summary": "Use CamScanner to extract formulas from images. Powered by OCR recognition engine that detects formula regions in images, crops them, and stitches into a sin...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camscanner_extract_formula",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CamScanner-AI",
+      "features": [
+        "Use CamScanner to extract formulas from images",
+        "Powered by OCR recognition engine that detects formula regions in images, crops them, and stitc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/camscanner-extract-formula@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269073986?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "camscanner-extract-formula",
+      "url": "https://clawhub.ai/skills/camscanner-extract-formula"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camscanner-extract-formula",
+    "url": "https://clawhub.ai/skills/camscanner-extract-formula",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camscanner-extract-formula-9f7fa8884e6d69cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/camscanner-extract-formula@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-camscanner-extract-formula-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:527e3f54fc9ef07de9b1182e12b8443f1d223e6d9ab9cce6b2599b716b7ce1a0",
+      "artifactSizeBytes": 2462
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T09:42:16.660Z"
+}

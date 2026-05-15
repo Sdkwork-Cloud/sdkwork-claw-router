@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70508,
+  "uuid": "skill-clawhub-visual-content-generator-claw",
+  "skillKey": "clawhub-visual-content-generator-claw",
+  "name": "视觉素材美工虾",
+  "summary": "AI驱动的视觉素材快速生成专家。用于生成海报、社交媒体配图、视频封面、数字人背景等视觉内容。 触发场景：用户说\"生成图片\"、\"做海报\"、\"配图\"、\"封面\"、\"数字人\"、\"视觉素材\"、\"设计\"、\"出图\"、\"AI绘画\"、\"背景图\"时使用。 支持自然语言输入（\"帮我做一张科技感海报\"）和结构化JSON输入。 核心能力：...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visual_content_generator_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ricky",
+      "features": [
+        "AI驱动的视觉素材快速生成专家。用于生成海报、社交媒体配图、视频封面、数字人背景等视觉内容。 触发场景：用户说\"生成图片\"、\"做海报\"、\"配图\"、\"封面\"、\"数字人\"、\"视觉素材\"、\"设计\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/visual-content-generator-claw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82147388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "visual-content-generator-claw",
+      "url": "https://clawhub.ai/skills/visual-content-generator-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visual-content-generator-claw",
+    "url": "https://clawhub.ai/skills/visual-content-generator-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visual-content-generator-claw-923ef67517f640c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/visual-content-generator-claw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-visual-content-generator-claw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e7756e73e4cebd33eff6c4f07b0fbf1ec22a23d3fbbc1645412a5e08152bb71",
+      "artifactSizeBytes": 2377
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T07:47:40.593Z"
+}

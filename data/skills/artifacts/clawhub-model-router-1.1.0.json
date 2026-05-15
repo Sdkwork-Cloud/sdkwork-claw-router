@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-router@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_router",
+  "skill": {
+    "id": 9081,
+    "skillKey": "clawhub-model-router",
+    "name": "Model Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-router",
+    "url": "https://clawhub.ai/skills/model-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-router-22187bd641b0cd62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A comprehensive AI model routing system that automatically selects the optimal model for any task. Set up multiple AI providers (Anthropic, OpenAI, Gemini, Moonshot, Z.ai, GLM) with secure API key storage, then route tasks to the best mode."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "digitaladaption",
+      "userId": "publishers:digitaladaption",
+      "displayName": "digitaladaption",
+      "image": "https://avatars.githubusercontent.com/u/203365024?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 4122,
+      "installsAllTime": 50,
+      "installsCurrent": 47,
+      "stars": 5,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1768980640396,
+      "changelog": "Major update v1.1: Added interactive setup wizard for secure API key configuration, multi-provider support (Anthropic, OpenAI, Gemini, Moonshot, Z.ai, GLM), task-to-model mapping customization, cost optimization levels (aggressive/balanced/quality), enhanced security with file permissions (600), comprehensive documentation with provider comparison tables, troubleshooting guide, and usage examples.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:52aa2a2b7ff2b9eb8972537004c4b1416c7a4d8d7af9abec5be5aef1e41fd665"
+}

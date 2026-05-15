@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/us-value-investing-framework@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.us_value_investing_framework",
+  "skill": {
+    "id": 56821,
+    "skillKey": "clawhub-us-value-investing-framework",
+    "name": "US Stock Valuation Model - Value Investing Framework / 美股估值模型-价值投资框架"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "us-value-investing-framework",
+    "url": "https://clawhub.ai/skills/us-value-investing-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/us-value-investing-framework-425447528b5de65c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured bilingual framework to evaluate US stocks by quality, moat, management, valuation, and risk for buy/watch/avoid decisions and monitoring."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spyfree",
+      "userId": "s175y9e87xpst713zv7cffhc4983g4ca",
+      "displayName": "Li Xin",
+      "image": "https://avatars.githubusercontent.com/u/2403860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2704,
+      "installsAllTime": 34,
+      "installsCurrent": 33,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771749306708,
+      "changelog": "Align with strict user-defined rules: ROE>15% for 3+ years, debt ratio<50%, FCF>80% NI, moat evaluation. Output rating A/B/C/D with reasons (EN+中文).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d6b0b482ff0a05fccd3dc2883baf58a09e439f93e0e517255296c8cdb152f189"
+}

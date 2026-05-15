@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloudflare-tunnel-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_tunnel_manager",
+  "skill": {
+    "id": 27870,
+    "skillKey": "clawhub-cloudflare-tunnel-manager",
+    "name": "Cloudflare Tunnel Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-tunnel-manager",
+    "url": "https://clawhub.ai/skills/cloudflare-tunnel-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-tunnel-manager-a13637747ba92bbf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage secure Cloudflare Tunnels using cloudflared. Expose local services to the internet safely, configure DNS routing, set up zero-trust access..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qoohsuan",
+      "userId": "s17716vf8bh77s3vpavep1kzfn83msft",
+      "displayName": "Qoohsuan",
+      "image": "https://avatars.githubusercontent.com/u/81729903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 339,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774495526019,
+      "changelog": "Initial release: Cloudflare Tunnel setup and management",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:265b010fa99d124e46584d26bf125eb4f1570e63f30fe016af825c4c6f1c1e91"
+}

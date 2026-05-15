@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-engineering-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_engineering_2",
+  "skill": {
+    "id": 18840,
+    "skillKey": "clawhub-prompt-engineering-2",
+    "name": "Prompt Engineering"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-engineering-2",
+    "url": "https://clawhub.ai/skills/prompt-engineering-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-engineering-2-18e73253fcc8975c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive prompt engineering framework for designing, optimizing, and iterating LLM prompts. This skill should be used when users request prompt creation..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kongyo2",
+      "userId": "s175n9q6hjkfya06rmzh66q4vd84br56",
+      "displayName": "kongyo2",
+      "image": "https://avatars.githubusercontent.com/u/81297811?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 617,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772341446252,
+      "changelog": "Initial release of the prompt-engineering skill, providing a comprehensive workflow and framework for effective LLM prompt creation and optimization.\n\n- Introduces a structured, four-phase process: exploration, analysis, implementation, and validation.\n- Includes a decision tree for handling different prompt-related user requests.\n- Provides detailed guidance for both prompt creation from scratch and simple optimization of existing prompts.\n- Documents core prompt engineering techniques, examples, and advanced strategies.\n- Emphasizes collaborative, iterative, and educational interaction with users.\n- Supplies references for further techniques, patterns, and antipatterns.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:efc12aba0e573848b5de4a1301ac0838825b8698a341675e15d18ca0b9b6bccd"
+}

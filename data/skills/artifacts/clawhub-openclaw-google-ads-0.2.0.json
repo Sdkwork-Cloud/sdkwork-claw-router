@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-google-ads@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_google_ads",
+  "skill": {
+    "id": 16676,
+    "skillKey": "clawhub-openclaw-google-ads",
+    "name": "Openclaw Google Ads"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-google-ads",
+    "url": "https://clawhub.ai/skills/openclaw-google-ads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-google-ads-ac36c33761df2811.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Shared Google Ads API skill for OpenClaw agents. Query account, campaign, ad group, keyword, search term, and performance data with local scripts and GAQL ex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sebclawops",
+      "userId": "s17ag4byms181tn4krsyt175tn83ghvh",
+      "displayName": "Sebastian The Claw",
+      "image": "https://avatars.githubusercontent.com/u/262026950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 751,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1773518578931,
+      "changelog": "Rebuilt as a shared production-safe Google Ads skill with clearer setup, audit workflows, optimization references, and updated script guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ac5bfe82c46f43a613507ee8f7ea2a201646a20b184990f0d9cb6b0fa440ed9"
+}

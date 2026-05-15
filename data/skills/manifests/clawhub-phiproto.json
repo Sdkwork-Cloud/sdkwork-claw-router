@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43422,
+  "uuid": "skill-clawhub-phiproto",
+  "skillKey": "clawhub-phiproto",
+  "name": "PhiProto CLI",
+  "summary": "Use when working with .phiproto files, PhiProto messages, or converting between .phiproto and CSV with the bundled phicli binary. Trigger on requests to insp...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phiproto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chengongpp",
+      "features": [
+        "Use when working with .phiproto files, PhiProto messages, or converting between .phiproto and C.",
+        "Trigger on requests to insp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/phiproto@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22640882?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "phiproto",
+      "url": "https://clawhub.ai/skills/phiproto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phiproto",
+    "url": "https://clawhub.ai/skills/phiproto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phiproto-270964753182f9e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/phiproto@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-phiproto-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c04c29d04ba9f5cd00286c18b32ab9dcd6d77262b744ff71a977d86397e982d",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T07:16:15.509Z"
+}

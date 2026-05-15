@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38432,
+  "uuid": "skill-clawhub-whatsable",
+  "skillKey": "clawhub-whatsable",
+  "name": "Whatsable",
+  "summary": "WhatsAble integration. Manage data, records, and automate workflows. Use when the user wants to interact with WhatsAble data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsable",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "WhatsAble integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with WhatsAble data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whatsable@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whatsable",
+      "url": "https://clawhub.ai/skills/whatsable"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsable",
+    "url": "https://clawhub.ai/skills/whatsable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsable-1c089d372a8f2c1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whatsable@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-whatsable-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b27d06790cd4eddb5a410c3bba53874f4a7cf0e26f2a2b87098ef161a38cb5c0",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:11:05.411Z"
+}

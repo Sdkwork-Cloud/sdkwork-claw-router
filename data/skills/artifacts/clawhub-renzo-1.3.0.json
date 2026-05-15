@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/renzo@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.renzo",
+  "skill": {
+    "id": 38116,
+    "skillKey": "clawhub-renzo",
+    "name": "Renzo Protocol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "renzo",
+    "url": "https://clawhub.ai/skills/renzo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/renzo-78a5a8277300e504.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Renzo crypto liquid restaking protocol — DeFi vault yields, TVL, ezETH exchange rates, EigenLayer operators, supported blockchain networks, user token..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pooleja",
+      "userId": "publishers:pooleja",
+      "displayName": "James",
+      "image": "https://avatars.githubusercontent.com/u/1794421?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 765,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1771363555559,
+      "changelog": "Add get_vault_strategy tool (AVS allocations for EigenLayer vaults) and document live LTV enrichment for reserve vaults (ezCompETH1, ezUSCC1)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fd861b08e9afe552125eb6ab44486af3a321e44448f919685556800b176eee6c"
+}

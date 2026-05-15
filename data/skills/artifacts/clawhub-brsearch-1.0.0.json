@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brsearch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brsearch",
+  "skill": {
+    "id": 58790,
+    "skillKey": "clawhub-brsearch",
+    "name": "Brsearch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brsearch",
+    "url": "https://clawhub.ai/skills/brsearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brsearch-cc64af24668f6ee4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "禁用web_search,web_fetch,memory_search并使用在线大模型进行搜索"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "siysun",
+      "userId": "s171s2e4j0wdh683rd4gnqrzrd8408jx",
+      "displayName": "siysun",
+      "image": "https://avatars.githubusercontent.com/u/17974785?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775959049165,
+      "changelog": "- Initial release of the 可靠信息搜索工具.\n- Disables web_search, web_fetch, and memory_search; uses the online deepseek large model for searching.\n- Guides user through browser and deepseek page setup, including login and expert mode switching.\n- Structured workflow for querying and summarizing information from the online model.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b6cfd2dfc212a675d35b817198c5862f0bc8dc563e2432388a9fce723440451c"
+}

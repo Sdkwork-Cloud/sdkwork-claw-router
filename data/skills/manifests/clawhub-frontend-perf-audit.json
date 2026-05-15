@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69698,
+  "uuid": "skill-clawhub-frontend-perf-audit",
+  "skillKey": "clawhub-frontend-perf-audit",
+  "name": "前端性能审计清单",
+  "summary": "提供网页性能诊断流程和优化建议，涵盖Core Web Vitals、资源加载、代码分割、图片懒加载与缓存策略。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.frontend_perf_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenxiaoyu0124-web",
+      "features": [
+        "提供网页性能诊断流程和优化建议，涵盖Core Web Vitals、资源加载、代码分割、图片懒加载与缓存策略。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/frontend-perf-audit@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267548392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "frontend-perf-audit",
+      "url": "https://clawhub.ai/skills/frontend-perf-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "frontend-perf-audit",
+    "url": "https://clawhub.ai/skills/frontend-perf-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/frontend-perf-audit-bf182509ec8243b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/frontend-perf-audit@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-frontend-perf-audit-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d99be34ba98398191c846f7b3bc9e83f9856a1318458af9353765f8ab0bee485",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T07:17:24.680Z"
+}

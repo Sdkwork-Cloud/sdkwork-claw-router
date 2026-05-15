@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/passive-income-claw@0.7.0",
+  "version": "0.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.passive_income_claw",
+  "skill": {
+    "id": 23103,
+    "skillKey": "clawhub-passive-income-claw",
+    "name": "Passive Income Claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "passive-income-claw",
+    "url": "https://clawhub.ai/skills/passive-income-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/passive-income-claw-bcda3c309232a235.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Binance passive income AI assistant. Automatically scans Binance earn opportunities, pushes matching opportunities based on user preferences, and executes su..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pipi6688",
+      "userId": "publishers:pipi6688",
+      "displayName": "pipi6688",
+      "image": "https://avatars.githubusercontent.com/u/205384959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 451,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.7.0",
+      "createdAt": 1773644199244,
+      "changelog": "Version 0.7.0 summary: Streamlined routing, clarified tool docs, and revised scan workflows.\n\n- Updated scan and routing logic to simplify user interaction triggers and outputs.\n- Clarified distinctions between official Binance skills and local scripts, and restricted Spot usage to price queries only.\n- Updated tool documentation for accuracy and removed outdated details on script usage and error handling.\n- Revised user setup and scan.md to consolidate all scan logic, including borrow-to-earn and scoring/sorting of opportunities.\n- Adjusted instructions and paths for user setup, scanning, and profile management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:596bc0dae0c044daac04c01cb517667ef2fad9a94325fac914cbb6d7e6c20bb3"
+}

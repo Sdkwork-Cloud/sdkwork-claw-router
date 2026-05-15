@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72282,
+  "uuid": "skill-clawhub-ai-news-publisher",
+  "skillKey": "clawhub-ai-news-publisher",
+  "name": "整理当天AI行业新闻发布到公众号",
+  "summary": "AI新闻一键发布技能。从36氪/虎嗅获取AI新闻，改写成爆款文章，发布到微信公众号。触发词：发布AI新闻、公众号发文章、科技新闻发布、爆款文章。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anydebug",
+      "features": [
+        "AI新闻一键发布技能。从36氪/虎嗅获取AI新闻，改写成爆款文章，发布到微信公众号。触发词：发布AI新闻、公众号发文章、科技新闻发布、爆款文章。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-news-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261734264?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-news-publisher",
+      "url": "https://clawhub.ai/skills/ai-news-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news-publisher",
+    "url": "https://clawhub.ai/skills/ai-news-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-publisher-6411f632d353bbbb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-news-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-news-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25717d9e3283a37f01e466ae8bd216bfea969ba893f114ee30e10a17a9466203",
+      "artifactSizeBytes": 2415
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T07:37:33.990Z"
+}

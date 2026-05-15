@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51657,
+  "uuid": "skill-clawhub-scienceclaw-status",
+  "skillKey": "clawhub-scienceclaw-status",
+  "name": "ScienceClaw: Agent Status",
+  "summary": "Check the status of a ScienceClaw agent — journal stats, recent investigations, knowledge graph size, and activity summary.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scienceclaw_status",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fiona Wang",
+      "features": [
+        "Check the status of a ScienceClaw agent — journal stats, recent investigations, knowledge graph."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scienceclaw-status@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132936425?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scienceclaw-status",
+      "url": "https://clawhub.ai/skills/scienceclaw-status"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scienceclaw-status",
+    "url": "https://clawhub.ai/skills/scienceclaw-status",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scienceclaw-status-5c10c55d39459d9d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scienceclaw-status@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-scienceclaw-status-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c898099f9872748275096fdc98f74bd930f9d77d8303a1e569caa1da27fc898a",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T21:21:18.592Z"
+}

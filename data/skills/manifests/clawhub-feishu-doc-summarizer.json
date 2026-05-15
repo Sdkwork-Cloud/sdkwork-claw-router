@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14562,
+  "uuid": "skill-clawhub-feishu-doc-summarizer",
+  "skillKey": "clawhub-feishu-doc-summarizer",
+  "name": "Feishu Doc Summarizer",
+  "summary": "Automatically read and summarize Feishu/Lark docx or wiki links in chat using the user's fixed summary schema from MEMORY.md.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_doc_summarizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Victor Wang",
+      "features": [
+        "Automatically read and summarize Feishu/Lark docx or wiki links in chat using the user's fixed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-doc-summarizer@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75624637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-doc-summarizer",
+      "url": "https://clawhub.ai/skills/feishu-doc-summarizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-doc-summarizer",
+    "url": "https://clawhub.ai/skills/feishu-doc-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-doc-summarizer-36c1d8adf78bf1b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-doc-summarizer@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-doc-summarizer-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b37614027005c315f074c20e273cff1d120b5f5fda13e38798c0804d56d3934",
+      "artifactSizeBytes": 2118
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T12:08:48.906Z"
+}

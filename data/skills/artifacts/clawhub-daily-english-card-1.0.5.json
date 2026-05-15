@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-english-card@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_english_card",
+  "skill": {
+    "id": 68713,
+    "skillKey": "clawhub-daily-english-card",
+    "name": "Daily English Card"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-english-card",
+    "url": "https://clawhub.ai/skills/daily-english-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-english-card-70f78a1865226282.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日英语口语学习卡片推送。每天早上8:30自动生成英语场景对话卡片图片并推送到微信。 支持440个日常场景、11种卡片风格、遗忘曲线复习，自动上传到IMA知识库存档。 触发词：英语卡片、英语学习、英语口语、口语练习、每日英语、英语推送、English card、口语、学英语、背单词"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jerryaction",
+      "userId": "s17ch8d1k8f9yvavtk62edjjj985kjd2",
+      "displayName": "JerryAction",
+      "image": "https://avatars.githubusercontent.com/u/44667395?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1777348534141,
+      "changelog": "删除 README 效果图，SKILL.md 末尾保留效果图展示",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8de633285dd1d4e579a898b60ccfa73a18a8d045a67301b30c9e5dfd1281746b"
+}

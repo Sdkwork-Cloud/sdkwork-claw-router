@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29297,
+  "uuid": "skill-clawhub-tapo-camera",
+  "skillKey": "clawhub-tapo-camera",
+  "name": "Tapo Camera",
+  "summary": "Connect to Tapo cameras, verify local access, capture snapshots, and inspect frames with local-first RTSP workflows and safe fallbacks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tapo_camera",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Connect to Tapo cameras, verify local access, capture snapshots, and inspect frames with local-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tapo-camera@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tapo-camera",
+      "url": "https://clawhub.ai/skills/tapo-camera"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tapo-camera",
+    "url": "https://clawhub.ai/skills/tapo-camera",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tapo-camera-b0925a65a4810c54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tapo-camera@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tapo-camera-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23335d6e308dafdfada29a00353f8a1b7e5a231cf9137ee709a342e31a7746ca",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T22:49:25.618Z"
+}

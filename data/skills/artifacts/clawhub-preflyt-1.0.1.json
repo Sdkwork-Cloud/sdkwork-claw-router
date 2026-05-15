@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/preflyt@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.preflyt",
+  "skill": {
+    "id": 24480,
+    "skillKey": "clawhub-preflyt",
+    "name": "Preflyt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "preflyt",
+    "url": "https://clawhub.ai/skills/preflyt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/preflyt-49f8c79fc29ad6df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan deployed web apps for security misconfigurations after every deploy. Checks for exposed .env files, databases, source code, open ports, missing security..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "doureios39",
+      "userId": "s17ec9nzw3ahjves6nz4h8955d83jtks",
+      "displayName": "doureios39",
+      "image": "https://avatars.githubusercontent.com/u/260724661?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 410,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772641327225,
+      "changelog": "Added privacy section clarifying data handling (no local files transmitted, --share behavior documented). Added verified homepage and source links to metadata. Clarified that the skill does not read or transmit local environment variables, files, or code.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b79029141a7799227dfba27fc7171e84c4daa43181cebeae9de3e549d23c5af0"
+}

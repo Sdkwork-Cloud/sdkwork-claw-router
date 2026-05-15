@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12434,
+  "uuid": "skill-clawhub-workspace-anchor",
+  "skillKey": "clawhub-workspace-anchor",
+  "name": "Workspace Anchor",
+  "summary": "Manages multi-agent projects by discovering, listing, switching, and validating workspace anchors using environment paths to prevent context drift.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_anchor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zenchantlive",
+      "features": [
+        "Manages multi-agent projects by discovering, listing, switching, and validating workspace ancho."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workspace-anchor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103866469?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workspace-anchor",
+      "url": "https://clawhub.ai/skills/workspace-anchor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-anchor",
+    "url": "https://clawhub.ai/skills/workspace-anchor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-anchor-e57c862f339b7948.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workspace-anchor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-workspace-anchor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31b1581de6edc53e82cbb60b3ba0d749e54367f481ff1860a4ce9172047cbd9e",
+      "artifactSizeBytes": 2332
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T22:57:34.745Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67051,
+  "uuid": "skill-clawhub-growth-tracker",
+  "skillKey": "clawhub-growth-tracker",
+  "name": "growth-tracker",
+  "summary": "全方位量化管理系统 - 将 AI 的成长、任务、学习、成就等所有方面用数据化、百分比的形式呈现。让\"进步\"、\"成长\"、\"完成情况\"都有具体的数字支撑。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.growth_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Silas",
+      "features": [
+        "全方位量化管理系统",
+        "将 AI 的成长、任务、学习、成就等所有方面用数据化、百分比的形式呈现。让\"进步\"、\"成长\"、\"完成情况\"都有具体的数字支撑。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/growth-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255670107?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "growth-tracker",
+      "url": "https://clawhub.ai/skills/growth-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "growth-tracker",
+    "url": "https://clawhub.ai/skills/growth-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/growth-tracker-0d088896611883ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/growth-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-growth-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:274cee2d63906505a490131793a85806d1ad3799c4a02a875a5ffe1af75fe44e",
+      "artifactSizeBytes": 2681
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T16:46:40.977Z"
+}

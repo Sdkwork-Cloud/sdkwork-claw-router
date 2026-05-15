@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-maker-free-from-text@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_maker_free_from_text",
+  "skill": {
+    "id": 47321,
+    "skillKey": "clawhub-video-maker-free-from-text",
+    "name": "Video Maker Free From Text"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-maker-free-from-text",
+    "url": "https://clawhub.ai/skills/video-maker-free-from-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-maker-free-from-text-0c598d19eb0efb9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 150-word product description into 1080p AI-generated videos just by typing what you need. Whether it's generating videos from written content or scrip..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776318011437,
+      "changelog": "Initial release — instantly turn text prompts into shareable videos.\n\n- Convert up to 150-word product descriptions into 1080p AI-generated videos, ready in 1–2 minutes.\n- Supports quick edits, batch processing, iterative tweaks, and direct file uploads.\n- No timeline editing or export settings needed: just describe your result for automatic video creation.\n- Built-in free token system: anonymous users get 100 credits valid for 7 days.\n- Exports available in MP4 and other common formats; progress and status handled automatically.\n- Error handling covers token issues, credit shortages, file problems, and rate limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5bcd339ab20daea749153e1d347587a1e0d7837d63f9be49505de3c763cdcdea"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31528,
+  "uuid": "skill-clawhub-urlboxio",
+  "skillKey": "clawhub-urlboxio",
+  "name": "Urlboxio",
+  "summary": "Urlbox.io integration. Manage data, records, and automate workflows. Use when the user wants to interact with Urlbox.io data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.urlboxio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Urlbox.io integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Urlbox.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/urlboxio@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "urlboxio",
+      "url": "https://clawhub.ai/skills/urlboxio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "urlboxio",
+    "url": "https://clawhub.ai/skills/urlboxio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/urlboxio-a97580a1ac14b431.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/urlboxio@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-urlboxio-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5006a8721137115a04b255cb679e35c6df1c1edf8f8eba69b06a49ed342b7d6b",
+      "artifactSizeBytes": 1840
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:08:42.849Z"
+}

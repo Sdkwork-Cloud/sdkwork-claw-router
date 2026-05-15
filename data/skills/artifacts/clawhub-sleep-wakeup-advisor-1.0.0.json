@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sleep-wakeup-advisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sleep_wakeup_advisor",
+  "skill": {
+    "id": 21136,
+    "skillKey": "clawhub-sleep-wakeup-advisor",
+    "name": "sleep-wakeup advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sleep-wakeup-advisor",
+    "url": "https://clawhub.ai/skills/sleep-wakeup-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sleep-wakeup-advisor-9752bb42f1ad2ad1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculate and recommend optimal wake-up times aligned with sleep cycles based on bedtime, workday or holiday constraints, prioritizing 5-cycle options."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nathanshan",
+      "userId": "s17dz8eyc10ywvm2yymjewjq9n83gp2v",
+      "displayName": "nathanshan",
+      "image": "https://avatars.githubusercontent.com/u/5919807?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 522,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772103143040,
+      "changelog": "- Initial release of the Sleep Wake-up Advisor skill.\n- Calculates optimal wake-up times aligned to sleep cycles when prompted with \"goodnight\" or similar requests.\n- Recommends several wake-up options, prioritizing times before 09:00 on workdays and before 11:00 on weekends or public holidays.\n- Uses a 90-minute cycle model with a 15-minute sleep-onset buffer and clear ranking of suggestions.\n- Provides concise, practical responses following the specified output format.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:32771d1009f6a7d2e7fed26f77719b2c24248c6bf390fc3957b220e61941e3a9"
+}

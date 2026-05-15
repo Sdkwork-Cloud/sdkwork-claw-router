@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-management@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_management",
+  "skill": {
+    "id": 40080,
+    "skillKey": "clawhub-x-management",
+    "name": "X Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-management",
+    "url": "https://clawhub.ai/skills/x-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-management-79dd0ac654f75b93.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Draft-first X/Twitter account management workflow for OpenClaw. Use when the user wants to read their X account context, draft tweets, replies, quote tweets,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "princebansal",
+      "userId": "s175m4a9b83z7rx9agz3ds151d8509ng",
+      "displayName": "Prince Bansal",
+      "image": "https://avatars.githubusercontent.com/u/11005121?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776797767762,
+      "changelog": "Update skill guidance for media upload and approved thread publishing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:faf3e7d18f284b93a3f900a59d1518230b86a6a4257d6b9f543dd5c369019e04"
+}

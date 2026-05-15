@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/research-orchestrator@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_orchestrator",
+  "skill": {
+    "id": 58392,
+    "skillKey": "clawhub-research-orchestrator",
+    "name": "深度研究 Deep Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-orchestrator",
+    "url": "https://clawhub.ai/skills/research-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-orchestrator-527507ee2f8a16aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "深度研究工作流，支持多源搜索、事实验证、专业报告生成。Use when user needs comprehensive research, market analysis, competitive analysis, or professional research reports. Supports web..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobewin",
+      "userId": "s174rz3f0862tcfw7pzfh5w8kn83hv2z",
+      "displayName": "ToBeWin",
+      "image": "https://avatars.githubusercontent.com/u/145168989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1776313106673,
+      "changelog": "v2.0.1: 安全修复 - 移除自动安装 npm 包行为，更新依赖声明，提供真实搜索端点配置说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09ddedb7ecff5738624f73e02c213444b813e10b9244539c6cc8d4131d68d3d9"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40099,
+  "uuid": "skill-clawhub-alert-triage",
+  "skillKey": "clawhub-alert-triage",
+  "name": "Alert Triage",
+  "summary": "Normalize and classify alerts by urgency, trust, and audience to decide send-now, batch-later, ignore, suppress-as-duplicate, or escalate actions.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alert_triage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peter Zsak",
+      "features": [
+        "Normalize and classify alerts by urgency, trust, and audience to decide send-now, batch-later,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alert-triage@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2845028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alert-triage",
+      "url": "https://clawhub.ai/skills/alert-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alert-triage",
+    "url": "https://clawhub.ai/skills/alert-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alert-triage-67413150e1c2e26c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alert-triage@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alert-triage-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:365cb4fddfee6e929f18ea9522b6e72861eb2654cf698e353ffeaa6ed8cff623",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T18:30:59.432Z"
+}

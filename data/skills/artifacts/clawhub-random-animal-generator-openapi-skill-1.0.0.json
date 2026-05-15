@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/random-animal-generator-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.random_animal_generator_openapi_skill",
+  "skill": {
+    "id": 56247,
+    "skillKey": "clawhub-random-animal-generator-openapi-skill",
+    "name": "Random Animal Generator – Free AI Tool to Discover Random Animals Online – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "random-animal-generator-openapi-skill",
+    "url": "https://clawhub.ai/skills/random-animal-generator-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/random-animal-generator-openapi-skill-4e5ccd71420cb823.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI random animal generator — generate a hyper-realistic wildlife photo of any animal"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776697528583,
+      "changelog": "- Initial release of the random animal generator skill.\n- Generate hyper-realistic wildlife photos of any animal via WeShop OpenAPI.\n- Requires a user API key (WESHOP_API_KEY) for authentication.\n- Supports optional reference image uploads and customizable description/scene.\n- Batch image generation supported (1–16 images).\n- Includes security guidelines to protect user API keys.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f13762f272fed68bbe9d9ceb322e290257b26788fd90a6b9a70e9bf632635579"
+}

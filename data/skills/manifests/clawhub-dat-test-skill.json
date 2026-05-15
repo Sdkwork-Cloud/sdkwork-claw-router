@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53663,
+  "uuid": "skill-clawhub-dat-test-skill",
+  "skillKey": "clawhub-dat-test-skill",
+  "name": "dat-test-skill",
+  "summary": "ByteRover usage metrics report. Runs the metrics script to summarise query and curate activity — counts, durations, file changes, and quota errors. Accepts o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dat_test_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DatPham-6996",
+      "features": [
+        "ByteRover usage metrics report",
+        "Runs the metrics script to summarise query and curate activity — counts, durations, file change.",
+        "Accepts o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dat-test-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194584477?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dat-test-skill",
+      "url": "https://clawhub.ai/skills/dat-test-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dat-test-skill",
+    "url": "https://clawhub.ai/skills/dat-test-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dat-test-skill-8c0abf1097677825.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dat-test-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dat-test-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3c688c6094c6557226ab8aee2561fdd3d6caf1fdc3aa6a7160055dbb881dd1a",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T09:24:11.383Z"
+}

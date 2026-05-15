@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26049,
+  "uuid": "skill-clawhub-crawler",
+  "skillKey": "clawhub-crawler",
+  "name": "Crawler",
+  "summary": "Web crawling and scraping reference — robots.txt protocol, Scrapy framework, anti-bot detection, headless browsers, and legal considerations",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crawler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Web crawling and scraping reference — robots.txt protocol, Scrapy framework, anti-bot detection."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crawler@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crawler",
+      "url": "https://clawhub.ai/skills/crawler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crawler",
+    "url": "https://clawhub.ai/skills/crawler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crawler-71c6f2f5e422a76a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crawler@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crawler-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d4bcead77f28c515243864c017d6509829e4a13bc17a5b91a709abf0bf31ebc",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T00:46:26.274Z"
+}

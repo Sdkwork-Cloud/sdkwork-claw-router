@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/photo-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photo_video",
+  "skill": {
+    "id": 55655,
+    "skillKey": "clawhub-photo-video",
+    "name": "Photo Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photo-video",
+    "url": "https://clawhub.ai/skills/photo-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photo-video-c9ef511b7e8e1cab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — turn these photos into a slideshow video with music and transitions — and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775944308534,
+      "changelog": "Initial release of Photo Video — Turn Photos Into Shareable Videos.\n\n- Upload photos (JPG, PNG, HEIC, WEBP up to 200MB) and generate slideshow videos with music and transitions.\n- Simple prompt-based workflow: describe your video and receive a 1080p MP4 in 30–90 seconds.\n- Credits-based usage supported; session and token management are handled automatically.\n- Download completed videos; view current timeline and manage drafts within a persistent session.\n- Automatic error handling for file size, format, authentication, and export plan status.\n- Ideal for users who want fast video creation from images without learning complex editing tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e50493629a0013135af4aaa77c631b834ffc684a090f66a77cbfce09a9e90b2"
+}

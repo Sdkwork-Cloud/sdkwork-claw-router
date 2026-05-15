@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57795,
+  "uuid": "skill-clawhub-smyx-outdoor-monitoring-analysis",
+  "skillKey": "clawhub-smyx-outdoor-monitoring-analysis",
+  "name": "户外看护智能监测分析工具",
+  "summary": "Detects targets such as people, vehicles, non-motorized vehicles, and pets within target areas; supports batch image analysis, suitable for outdoor surveilla...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_outdoor_monitoring_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-skills",
+      "features": [
+        "Detects targets such as people, vehicles, non-motorized vehicles, and pets within target areas",
+        "supports batch image analysis, suitable for outdoor surveilla..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-outdoor-monitoring-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272124705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-outdoor-monitoring-analysis",
+      "url": "https://clawhub.ai/skills/smyx-outdoor-monitoring-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-outdoor-monitoring-analysis",
+    "url": "https://clawhub.ai/skills/smyx-outdoor-monitoring-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-outdoor-monitoring-analysis-8fe78d40544a0fe7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-outdoor-monitoring-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-outdoor-monitoring-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07eac5707319933013b9897ecfe2a56a2035fc7629db2f2ffb09aab63f98c33b",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T02:15:40.085Z"
+}

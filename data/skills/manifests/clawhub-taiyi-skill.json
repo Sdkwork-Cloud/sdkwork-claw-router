@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73657,
+  "uuid": "skill-clawhub-taiyi-skill",
+  "skillKey": "clawhub-taiyi-skill",
+  "name": "太乙神数技能",
+  "summary": "太乙神数排盘技能。支持太乙积年、起局、排十六神将、计算主客算、断局分析。用于国运预测、天灾预警、经济大势、战争胜负等宏观预测。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taiyi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dglijin-oss",
+      "features": [
+        "太乙神数排盘技能。支持太乙积年、起局、排十六神将、计算主客算、断局分析。用于国运预测、天灾预警、经济大势、战争胜负等宏观预测。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taiyi-skill@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251980243?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taiyi-skill",
+      "url": "https://clawhub.ai/skills/taiyi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taiyi-skill",
+    "url": "https://clawhub.ai/skills/taiyi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taiyi-skill-6148b43d4577851a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taiyi-skill@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-taiyi-skill-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed56aed96aa95153963de4e10c636218700bd11f1fbd24d3eb711e47756221e2",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T15:10:22.005Z"
+}

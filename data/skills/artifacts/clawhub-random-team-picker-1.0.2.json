@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/random-team-picker@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.random_team_picker",
+  "skill": {
+    "id": 32934,
+    "skillKey": "clawhub-random-team-picker",
+    "name": "Random Team Picker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "random-team-picker",
+    "url": "https://clawhub.ai/skills/random-team-picker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/random-team-picker-61969c9930cac67b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Randomly select or split team members with options for weighted choice, exclusions, and fair distribution over multiple rounds."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darbling",
+      "userId": "s1735cfbwbr6ybnmzw58m9bhkx85my84",
+      "displayName": "darbling",
+      "image": "https://avatars.githubusercontent.com/u/105998927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777288815379,
+      "changelog": "- Added a disclaimer section outlining usage limitations and advising users to verify information from official sources.\n- Provided the disclaimer in both English and Chinese.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f423a4d62cc3c4f74c3c81a62c75140207a54d77bb3771af45debbc9e38d26ec"
+}

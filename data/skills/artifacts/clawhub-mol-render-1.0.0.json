@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mol-render@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mol_render",
+  "skill": {
+    "id": 22095,
+    "skillKey": "clawhub-mol-render",
+    "name": "Molecular 3D Renderer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mol-render",
+    "url": "https://clawhub.ai/skills/mol-render",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mol-render-19f83ee27b6df572.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate high-quality 3D ball-and-stick molecular renderings from SMILES strings or PDB structures using POV-Ray ray tracing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhao-zehua",
+      "userId": "publishers:zhao-zehua",
+      "displayName": "Zehua Zhao",
+      "image": "https://avatars.githubusercontent.com/u/105957159?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 476,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772090292498,
+      "changelog": "Initial release: SMILES + PDB → POV-Ray ball-and-stick 3D rendering. Features: aromatic bonds (solid+dashed), Kekulé mode, double bonds, PCA best-angle, PDB auto-download from RCSB, chain/residue filtering, metal ion support.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fd427ad8551b73d7f1356f72499915a4f1291524e01b36e5de6d1de3b69cc2b4"
+}

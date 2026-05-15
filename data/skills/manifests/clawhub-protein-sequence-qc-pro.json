@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49687,
+  "uuid": "skill-clawhub-protein-sequence-qc-pro",
+  "skillKey": "clawhub-protein-sequence-qc-pro",
+  "name": "Protein Sequence Qc Pro",
+  "summary": "Professional protein sequence quality control and visualization workflow. Includes complete QC pipeline (length filter, CD-HIT, complexity check, motif verif...",
+  "version": "5.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.protein_sequence_qc_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Billwanttobetop",
+      "features": [
+        "Professional protein sequence quality control and visualization workflow",
+        "Includes complete QC pipeline (length filter, CD-HIT, complexity check, motif verif..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/protein-sequence-qc-pro@5.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103113834?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "protein-sequence-qc-pro",
+      "url": "https://clawhub.ai/skills/protein-sequence-qc-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "protein-sequence-qc-pro",
+    "url": "https://clawhub.ai/skills/protein-sequence-qc-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/protein-sequence-qc-pro-bdb4ab2d22d94363.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/protein-sequence-qc-pro@5.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-protein-sequence-qc-pro-5.0.0.json",
+      "version": "5.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5719966daa3b6f5823c041956f693cce8d73a5e7083c8c0b1f6196f3a6805ba5",
+      "artifactSizeBytes": 2242
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T16:58:37.275Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/marketplace-description-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marketplace_description_writer",
+  "skill": {
+    "id": 46949,
+    "skillKey": "clawhub-marketplace-description-writer",
+    "name": "Marketplace Description Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marketplace-description-writer",
+    "url": "https://clawhub.ai/skills/marketplace-description-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marketplace-description-writer-9a95f08327eff930.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates structured, buyer-focused product descriptions for marketplaces like Amazon, Shopify, and Etsy, combining benefit-driven narratives with detailed spe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777340332103,
+      "changelog": "Initial release: English-first document-only content marketing prompt-flow skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e774cb0d7958f3c9beccf1fc365934f36c889fe724ff7d49f94c9bf2cff3a359"
+}

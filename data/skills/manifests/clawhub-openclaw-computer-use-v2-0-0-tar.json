@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24729,
+  "uuid": "skill-clawhub-openclaw-computer-use-v2-0-0-tar",
+  "skillKey": "clawhub-openclaw-computer-use-v2-0-0-tar",
+  "name": "openclaw-computer",
+  "summary": "Enable OpenClaw to control and use the computer like a human. Use when: (1) User asks to open applications or files, (2) User needs to automate desktop tasks...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_computer_use_v2_0_0_tar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ache",
+      "features": [
+        "Enable OpenClaw to control and use the computer like a human",
+        "Use when: (1) User asks to open applications or files, (2) User needs to automate desktop tasks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-computer-use-v2-0-0-tar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127603560?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-computer-use-v2-0-0-tar",
+      "url": "https://clawhub.ai/skills/openclaw-computer-use-v2-0-0-tar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-computer-use-v2-0-0-tar",
+    "url": "https://clawhub.ai/skills/openclaw-computer-use-v2-0-0-tar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-computer-use-v2-0-0-tar-808bfd000e8369f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-computer-use-v2-0-0-tar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-computer-use-v2-0-0-tar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61a42ee5239217df5d52587ef0fe06e2c6f78a2e62889371b2401a9e88cbf46b",
+      "artifactSizeBytes": 2567
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T07:08:07.873Z"
+}

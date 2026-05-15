@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66414,
+  "uuid": "skill-clawhub-hivulse-generate-tech-docs",
+  "skillKey": "clawhub-hivulse-generate-tech-docs",
+  "name": "Hivulse蜂巢AI-Gen-Tech Docs 自动生成技术文档",
+  "summary": "hivulse蜂巢 AI 是一款面向软件开发的自动化技术文档生成工具，通过指定目录代码一键生成多种规范化技术文档。目前已支持的文档类型包括：用户需求说明书、需求规格说明书、系统概要设计说明、系统详细设计说明等10几种报告。申请API Key请访问 www.hivulse.com",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hivulse_generate_tech_docs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bo Cao",
+      "features": [
+        "hivulse蜂巢 AI 是一款面向软件开发的自动化技术文档生成工具，通过指定目录代码一键生成多种规范化技术文档。目前已支持的文档类型包括：用户需求说明书、需求规格说明书、系统概要设计说明、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hivulse-generate-tech-docs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15248746?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hivulse-generate-tech-docs",
+      "url": "https://clawhub.ai/skills/hivulse-generate-tech-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hivulse-generate-tech-docs",
+    "url": "https://clawhub.ai/skills/hivulse-generate-tech-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hivulse-generate-tech-docs-ef7bcb37f331bbf3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hivulse-generate-tech-docs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hivulse-generate-tech-docs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5a93f660c8952ff0879965d0825afc51e21c46c180a0cbe4cdb3b384450e7f5",
+      "artifactSizeBytes": 2543
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T05:09:55.742Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-merged-msg@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_merged_msg",
+  "skill": {
+    "id": 57033,
+    "skillKey": "clawhub-feishu-merged-msg",
+    "name": "Feishu Merged Msg"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-merged-msg",
+    "url": "https://clawhub.ai/skills/feishu-merged-msg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-merged-msg-06a688bc5a71c67d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and parse Feishu merged/forwarded messages (合并转发消息). Activate when a Feishu message shows \"Merged and Forwarded Message\" with no readable content, or w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deadblue22",
+      "userId": "publishers:deadblue22",
+      "displayName": "deadblue",
+      "image": "https://avatars.githubusercontent.com/u/448649?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 503,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772605583248,
+      "changelog": "- Initial release of the Feishu Merged Message Fetcher skill.\n- Retrieves and parses Feishu \"Merged and Forwarded\" (merge_forward) messages, exposing sub-messages and content not readable in the default bot API.\n- Provides CLI scripts and instructions to fetch sub-messages via the Feishu REST API.\n- Supports retrieval of sender info, message mentions, and content summarization of forwarded message threads.\n- Clarifies handling for message images and chat context in merged messages.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:efa424583fe9a4ea38ebaf9cfba22a35529c4914d397f8c166701563fbaf87a3"
+}

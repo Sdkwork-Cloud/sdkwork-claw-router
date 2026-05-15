@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68162,
+  "uuid": "skill-clawhub-new-stock-analyzer",
+  "skillKey": "clawhub-new-stock-analyzer",
+  "name": "new-stock-analyzer",
+  "summary": "免费、实时、全面的A股新股分析工具。支持双数据源（东方财富+中财网），提供今日新股查询、基本面分析、风险评估、申购建议，直接在OpenClaw会话中发送通知。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.new_stock_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "future2017",
+      "features": [
+        "免费、实时、全面的A股新股分析工具。支持双数据源（东方财富+中财网），提供今日新股查询、基本面分析、风险评估、申购建议，直接在OpenClaw会话中发送通知。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/new-stock-analyzer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25047557?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "new-stock-analyzer",
+      "url": "https://clawhub.ai/skills/new-stock-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "new-stock-analyzer",
+    "url": "https://clawhub.ai/skills/new-stock-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/new-stock-analyzer-f9701d4db6f67618.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/new-stock-analyzer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-new-stock-analyzer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc0ff7a0837710e8d248f1b78dcff606383091dd8fbc45f4c6918af21c5278f3",
+      "artifactSizeBytes": 3478
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T12:31:39.620Z"
+}

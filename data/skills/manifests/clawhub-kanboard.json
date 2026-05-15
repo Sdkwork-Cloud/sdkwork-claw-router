@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24510,
+  "uuid": "skill-clawhub-kanboard",
+  "skillKey": "clawhub-kanboard",
+  "name": "Kanboard",
+  "summary": "Interact with Kanboard project management via JSON-RPC API. Use when working with Kanboard tasks, projects, boards, columns, swimlanes, comments, subtasks, a...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kanboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liyang-bsy",
+      "features": [
+        "Interact with Kanboard project management via JSON-RPC API",
+        "Use when working with Kanboard tasks, projects, boards, columns, swimlanes, comments, subtasks,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kanboard@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7655177?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kanboard",
+      "url": "https://clawhub.ai/skills/kanboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kanboard",
+    "url": "https://clawhub.ai/skills/kanboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kanboard-615dcf411e567417.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kanboard@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-kanboard-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a206a7b3daf59e96ae22dda44250b52e8415f1fffb327c188f7dd12e49fe4fce",
+      "artifactSizeBytes": 1840
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T17:40:56.544Z"
+}

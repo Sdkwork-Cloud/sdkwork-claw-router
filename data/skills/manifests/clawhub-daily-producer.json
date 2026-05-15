@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66664,
+  "uuid": "skill-clawhub-daily-producer",
+  "skillKey": "clawhub-daily-producer",
+  "name": "Daily Producer",
+  "summary": "每日一报生产引擎。从用户画像出发，自动采集多平台资讯，筛选去噪，AI 生成结构化日报，渲染为 HTML。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_producer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ailab2026",
+      "features": [
+        "每日一报生产引擎。从用户画像出发，自动采集多平台资讯，筛选去噪，AI 生成结构化日报，渲染为 HTML。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-producer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270828542?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-producer",
+      "url": "https://clawhub.ai/skills/daily-producer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-producer",
+    "url": "https://clawhub.ai/skills/daily-producer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-producer-03b28d150a349089.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-producer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-producer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc970e3cfa5abf92847bc30b5c0f1ecfa4610289068ebfe5d07c5a725c9aa224",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T03:00:41.893Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhipin-phone-extractor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhipin_phone_extractor",
+  "skill": {
+    "id": 71026,
+    "skillKey": "clawhub-zhipin-phone-extractor",
+    "name": "BOSS直聘手机号提取器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhipin-phone-extractor",
+    "url": "https://clawhub.ai/skills/zhipin-phone-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhipin-phone-extractor-cdf7197f6bd1484b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动从BOSS直聘聊天消息中提取手机号，批量收集HR联系方式并支持导出保存到本地文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "libaoming",
+      "userId": "s176wyhd82y1d7pemppfmyrwv585c2hp",
+      "displayName": "libaoming",
+      "image": "https://avatars.githubusercontent.com/u/20967916?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 501,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773220211453,
+      "changelog": "Initial release of zhipin-phone-extractor:\n\n- Automatically extracts phone numbers from BOSS直聘 (zhipin.com) chat messages using Playwright.\n- Supports batch extraction, deduplication, and saves results to a local file.\n- Flexible command-line options for output location, headless mode, and message limits.\n- Detects unread messages and exports contacts with timestamps.\n- Includes troubleshooting guide and integration suggestions for automated checks and multi-platform support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:663fbceaa326ac172e5fa645fedf538966bad782b86d8f3b8bf58e1e3e699389"
+}

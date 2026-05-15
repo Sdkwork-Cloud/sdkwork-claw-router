@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/an2b-warden-governance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.an2b_warden_governance",
+  "skill": {
+    "id": 24629,
+    "skillKey": "clawhub-an2b-warden-governance",
+    "name": "War/Den Governance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "an2b-warden-governance",
+    "url": "https://clawhub.ai/skills/an2b-warden-governance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/an2b-warden-governance-48dc5654a732adc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluates and governs all OpenClaw bot actions using YAML policies with tamper-evident audit logs to allow, deny, or require review before execution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jcools1977",
+      "userId": "publishers:jcools1977",
+      "displayName": "John DeVere Cooley",
+      "image": "https://avatars.githubusercontent.com/u/75928463?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 406,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772306640075,
+      "changelog": "Initial release. 177 tests. 200/200 Meta inbox blocks. Govern your OpenClaw bot in 5 minutes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:23d07fef2ef7ee68177d3fb7a9a61a4571047963bb5665e34fdcbae7b686c2c7"
+}

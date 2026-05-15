@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33357,
+  "uuid": "skill-clawhub-clash-verge-skill",
+  "skillKey": "clawhub-clash-verge-skill",
+  "name": "Clash Verge Skill",
+  "summary": "Control Clash Verge Rev via mihomo API. Query proxy status, switch nodes, test delays, manage connections, DNS, and more. Use when user mentions Clash, proxy...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clash_verge_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brianping7",
+      "features": [
+        "Control Clash Verge Rev via mihomo API",
+        "Query proxy status, switch nodes, test delays, manage connections, DNS, and more",
+        "Use when user mentions Clash, proxy..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clash-verge-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18287956?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clash-verge-skill",
+      "url": "https://clawhub.ai/skills/clash-verge-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clash-verge-skill",
+    "url": "https://clawhub.ai/skills/clash-verge-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clash-verge-skill-6aef68b94c120e1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clash-verge-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clash-verge-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:456a5ec66fb7819557efa34bc6ec78f37944a63d7d2bbbbd97b03cd4c730f5f1",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T01:34:29.301Z"
+}

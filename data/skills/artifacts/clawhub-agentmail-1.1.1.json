@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentmail@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentmail",
+  "skill": {
+    "id": 8291,
+    "skillKey": "clawhub-agentmail",
+    "name": "AgentMail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentmail",
+    "url": "https://clawhub.ai/skills/agentmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentmail-befc92b3a019d04c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "API-first email platform designed for AI agents. Create and manage dedicated email inboxes, send and receive emails programmatically, and handle email-based workflows with webhooks and real-time events. Use when you need to set up agent em."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adboio",
+      "userId": "publishers:adboio",
+      "displayName": "adboio",
+      "image": "https://avatars.githubusercontent.com/u/23323033?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 31320,
+      "installsAllTime": 337,
+      "installsCurrent": 314,
+      "stars": 59,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1769407333271,
+      "changelog": "🔒 Security: Webhook allowlist to prevent prompt injection",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d766a90de6312fcf7ee94a60d6d50f9139aca4e06aae5e00175c4ab2441fc5b3"
+}

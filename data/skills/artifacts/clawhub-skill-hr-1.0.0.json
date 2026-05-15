@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-hr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_hr",
+  "skill": {
+    "id": 47302,
+    "skillKey": "clawhub-skill-hr",
+    "name": "skill-hr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-hr",
+    "url": "https://clawhub.ai/skills/skill-hr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-hr-799ae9e058683f1a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user starts a new multi-step task, asks to pick/install/manage skills, tune skill performance, or fire/remove a skill after failure. Acts as HR..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thinkitpossible",
+      "userId": "s17ddqhn6kd35wmeztt5m7j5r98470y5",
+      "displayName": "luzhoucheng",
+      "image": "https://avatars.githubusercontent.com/u/141552610?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775330067568,
+      "changelog": "Initial public release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae1592039cf3e8f02e6e376d0121705d861798ee1593f53537acd6f634b6e4a0"
+}

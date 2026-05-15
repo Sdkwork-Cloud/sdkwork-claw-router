@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-productivity@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_productivity",
+  "skill": {
+    "id": 67655,
+    "skillKey": "clawhub-personal-productivity",
+    "name": "Personal Productivity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-productivity",
+    "url": "https://clawhub.ai/skills/personal-productivity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-productivity-ea9485ebd0768f76.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "个人效率与时间管理顾问。帮助用户更好地管理时间、任务和能量，提升工作效率。当用户询问如何提高效率、时间管理、任务规划、专注力、拖延症等问题时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bo-aibot",
+      "userId": "publishers:bo-aibot",
+      "displayName": "bo-Aibot",
+      "image": "https://avatars.githubusercontent.com/u/177507727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7666,
+      "installsAllTime": 51,
+      "installsCurrent": 50,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773848181763,
+      "changelog": "Personal Productivity v1.0.0\n\n- 首发版本，作为个人效率与时间管理顾问上线\n- 提供时间管理、任务规划、能量管理等核心方法论\n- 覆盖拖延症、专注力、任务管理混乱等场景\n- 包含针对常见效率误区的提醒和实用建议\n- 内置详细对话引导，支持精准个性化提问",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d18e4681a01eacb448880090b46560a5a1407394269699ad725c84fd72e690b"
+}

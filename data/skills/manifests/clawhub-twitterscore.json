@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20015,
+  "uuid": "skill-clawhub-twitterscore",
+  "skillKey": "clawhub-twitterscore",
+  "name": "TwitterScore",
+  "summary": "Research, analyze, and track Twitter influence with TwitterScore.io API. Get scores, analyze followers, track growth, and compare accounts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitterscore",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nikoxyz",
+      "features": [
+        "Research, analyze, and track Twitter influence with TwitterScore.io API",
+        "Get scores, analyze followers, track growth, and compare accounts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twitterscore@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100773227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twitterscore",
+      "url": "https://clawhub.ai/skills/twitterscore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitterscore",
+    "url": "https://clawhub.ai/skills/twitterscore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitterscore-7732ebe31e394b37.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twitterscore@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-twitterscore-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a95ed0a7d000a664bd2673fe798ab2fe2c18ca7dad553cc52797aad1e7ccbec",
+      "artifactSizeBytes": 2283
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T19:33:47.571Z"
+}

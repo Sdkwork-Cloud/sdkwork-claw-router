@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41196,
+  "uuid": "skill-clawhub-revsec-shield",
+  "skillKey": "clawhub-revsec-shield",
+  "name": "RevSec Shield",
+  "summary": "24/7 security monitoring for your OpenClaw agent. Detects prompt injection attacks, malicious skills, and data exfiltration attempts. Delivers plain-English...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.revsec_shield",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nipun",
+      "features": [
+        "24/7 security monitoring for your OpenClaw agent",
+        "Detects prompt injection attacks, malicious skills, and data exfiltration attempts",
+        "Delivers plain-English..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/revsec-shield@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147726720?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "revsec-shield",
+      "url": "https://clawhub.ai/skills/revsec-shield"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "revsec-shield",
+    "url": "https://clawhub.ai/skills/revsec-shield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/revsec-shield-8d87e2c9b095cf6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/revsec-shield@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-revsec-shield-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73d84aeac53052990776e89fef9dc5ec2278a90a34e4a83b4b7b9ddf953903b0",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T02:45:17.067Z"
+}

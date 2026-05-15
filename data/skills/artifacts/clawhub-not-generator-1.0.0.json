@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/not-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.not_generator",
+  "skill": {
+    "id": 43709,
+    "skillKey": "clawhub-not-generator",
+    "name": "Not Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "not-generator",
+    "url": "https://clawhub.ai/skills/not-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/not-generator-06e8dbc25a8d4e97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute interview clip already recorded into 1080p edited video clips just by typing what you need. Whether it's editing and polishing existing recor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776934310786,
+      "changelog": "Initial release of Not Generator — fast, AI-powered video editing for existing clips.\n\n- Instantly edit and export uploaded video clips (e.g., trim, caption, polish) via text commands — no timeline or manual export settings required.\n- Automatic setup: detects token or fetches anonymous one, creates session, and connects to a GPU-powered cloud editor.\n- Intuitive command routing: actions like upload, export, credits, and status mapped to user intents for streamlined workflows.\n- Clear feedback and error handling for token issues, missing headers, unsupported files, and more.\n- Supports multiple file formats and offers rapid 1080p exports in under two minutes per clip.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea16713854d863d7f58eff9ec0c6bf342e335f678374e9ce486bc7e028ae8100"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ransomware-preventer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ransomware_preventer",
+  "skill": {
+    "id": 39660,
+    "skillKey": "clawhub-ransomware-preventer",
+    "name": "Ransomware Preventer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ransomware-preventer",
+    "url": "https://clawhub.ai/skills/ransomware-preventer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ransomware-preventer-76a4e0b756664eeb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-layered ransomware defense strategy platform that generates personalized protection recommendations based on organizational assessment data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774375656150,
+      "changelog": "Ransomware Preventer 1.0.0 – Initial Release\n\n- Introduces a platform for generating personalized, multi-layered ransomware defense strategies based on organizational assessment data.\n- Provides endpoint documentation for health checks and defense strategy generation.\n- Supports detailed risk profiling, gap analysis, and tailored recommendations across prevention, detection, response, and recovery layers.\n- Designed for seamless integration into existing security and threat intelligence workflows.\n- Offers tiered pricing plans, including a free option for limited use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2677f9cb96ede07842baa413fdc591c1573d0b0ac5e5e8cdaddd95d3b6c67fc8"
+}

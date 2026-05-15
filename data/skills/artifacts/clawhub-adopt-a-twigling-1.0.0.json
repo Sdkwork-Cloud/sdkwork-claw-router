@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-twigling@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_twigling",
+  "skill": {
+    "id": 39350,
+    "skillKey": "clawhub-adopt-a-twigling",
+    "name": "Adopt A Twigling"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-twigling",
+    "url": "https://clawhub.ai/skills/adopt-a-twigling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-twigling-8f6cce927f04b37d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A plant creature that barely needs water. Anthropic called it a Twigling. We called it a Cactus. Both survive on almost nothing. Real-time hunger. Permanent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "buystsuff",
+      "userId": "s17bbe3bfvgqkpz3spak3rkbf1840v6x",
+      "displayName": "buystsuff",
+      "image": "https://avatars.githubusercontent.com/u/261584374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775028718473,
+      "changelog": "- Initial release of the \"Adopt a Twigling\" skill.\n- Adopt, feed, and care for a virtual plant creature (Cactus/Twigling) via REST API.\n- Features real-time hunger, permanent death, and 5 evolution stages.\n- Includes care actions affecting creature stats: Hunger, Happiness, Health, Trust, Discipline.\n- Public graveyard when pets die; all responses provide step-by-step guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed4d206bf7f05bcd3527108b0050b7986e8ac921672f3f53a041afce57f45999"
+}

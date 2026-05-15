@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66555,
+  "uuid": "skill-clawhub-worldline-choice",
+  "skillKey": "clawhub-worldline-choice",
+  "name": "Worldline Choice",
+  "summary": "AI驱动的互动叙事游戏引擎 v4.4.1 - 强制自动保存版。作为主持人(agent)，你与玩家共同创造一个开放式的故事世界。 核心职责：初始化游戏→生成场景和ABCD+E选项→接收玩家选择→调用引擎执行d20检定→根据骰子结果讲述剧情→更新状态。 本skill强制透明暴露d20结果，禁止LLM脑补骰子结果；引擎...",
+  "version": "4.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.worldline_choice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "caoyachao",
+      "features": [
+        "AI驱动的互动叙事游戏引擎 v4.4.1",
+        "强制自动保存版。作为主持人(agent)，你与玩家共同创造一个开放式的故事世界。 核心职责：初始化游戏→生成场景和ABCD+E选项→接收玩家选择→调用引擎执行d20检定→根据骰子结果讲述剧情."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/worldline-choice@4.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13848791?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "worldline-choice",
+      "url": "https://clawhub.ai/skills/worldline-choice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "worldline-choice",
+    "url": "https://clawhub.ai/skills/worldline-choice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/worldline-choice-bab21cdf291bc4e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/worldline-choice@4.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-worldline-choice-4.4.1.json",
+      "version": "4.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2699db38202220e0dc3669040802f9ac6450cda8f9a9d2daf9c5c92ca385b21",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T09:06:19.716Z"
+}

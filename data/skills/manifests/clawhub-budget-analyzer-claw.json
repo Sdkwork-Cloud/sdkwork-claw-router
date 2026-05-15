@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65589,
+  "uuid": "skill-clawhub-budget-analyzer-claw",
+  "skillKey": "clawhub-budget-analyzer-claw",
+  "name": "budget-analyzer-claw",
+  "summary": "预算分析虾 — OpenClaw 数字员工体系的财务守门员。实时监控所有 AI 资源支出，智能控制开销，防止产生意外的巨额费用。 当以下情况时使用此 Skill： (1) 用户询问今日/本周/本月花了多少钱 (2) 用户询问哪个数字员工最费钱、成本占比 (3) 用户要求分析成本趋势、优化建议 (4) 用户要求设置...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.budget_analyzer_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ricky",
+      "features": [
+        "预算分析虾 — OpenClaw 数字员工体系的财务守门员。实时监控所有 AI 资源支出，智能控制开销，防止产生意外的巨额费用。 当以下情况时使用此 Skill： (1) 用户询问今日/本周."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/budget-analyzer-claw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82147388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "budget-analyzer-claw",
+      "url": "https://clawhub.ai/skills/budget-analyzer-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "budget-analyzer-claw",
+    "url": "https://clawhub.ai/skills/budget-analyzer-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/budget-analyzer-claw-132b5a3522f2c6ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/budget-analyzer-claw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-budget-analyzer-claw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:214cb8b081018ac4121fc34801ce4252c26293f433234a35793fcdcff8571c35",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T13:05:59.369Z"
+}

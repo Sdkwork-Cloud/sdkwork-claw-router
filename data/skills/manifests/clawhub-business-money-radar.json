@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46611,
+  "uuid": "skill-clawhub-business-money-radar",
+  "skillKey": "clawhub-business-money-radar",
+  "name": "Business Money Radar",
+  "summary": "Scrapes local businesses by category and location, analyzes their health and gaps, ranks by revenue opportunity, and generates targeted outreach and market o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_money_radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nicemaths123",
+      "features": [
+        "Scrapes local businesses by category and location, analyzes their health and gaps, ranks by rev."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/business-money-radar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244252350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "business-money-radar",
+      "url": "https://clawhub.ai/skills/business-money-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-money-radar",
+    "url": "https://clawhub.ai/skills/business-money-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-money-radar-626ca896d68a06e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/business-money-radar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-business-money-radar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3cdfe1f1edc9ebbd836fdd790ee501ce3f9f1c32b8e97bd37db458c84aa99bd",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T19:33:24.355Z"
+}

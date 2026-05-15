@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46530,
+  "uuid": "skill-clawhub-douyin-topic-hotspot-collector",
+  "skillKey": "clawhub-douyin-topic-hotspot-collector",
+  "name": "Douyin Topic Hotspot Collector",
+  "summary": "Search Douyin for a user-specified topic and time range, then return the top hotspot videos ranked by visible engagement signals with strict no-fabrication r...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_topic_hotspot_collector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eanpeng0-debug",
+      "features": [
+        "Search Douyin for a user-specified topic and time range, then return the top hotspot videos ran."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-topic-hotspot-collector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264064111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-topic-hotspot-collector",
+      "url": "https://clawhub.ai/skills/douyin-topic-hotspot-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-topic-hotspot-collector",
+    "url": "https://clawhub.ai/skills/douyin-topic-hotspot-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-topic-hotspot-collector-d0a6950eb145ff31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-topic-hotspot-collector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-topic-hotspot-collector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b22e77a58b94bf6451d8ec9cbdb83a84cf47a41f9a1241f2941ef9f0e7bf27a",
+      "artifactSizeBytes": 2644
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T03:05:31.427Z"
+}

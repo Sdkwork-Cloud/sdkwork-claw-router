@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34304,
+  "uuid": "skill-clawhub-furnace",
+  "skillKey": "clawhub-furnace",
+  "name": "Furnace",
+  "summary": "Furnace temperature and control manager",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.furnace",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Furnace temperature and control manager"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/furnace@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "furnace",
+      "url": "https://clawhub.ai/skills/furnace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "furnace",
+    "url": "https://clawhub.ai/skills/furnace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/furnace-5a5770fe3a5dec2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/furnace@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-furnace-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36a4dc2e673e575786761e9f2369ec8f0cb3fa012e35db81940d6fbb5c524bf4",
+      "artifactSizeBytes": 1715
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T12:18:48.394Z"
+}

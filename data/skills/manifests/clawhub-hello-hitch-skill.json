@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72433,
+  "uuid": "skill-clawhub-hello-hitch-skill",
+  "skillKey": "clawhub-hello-hitch-skill",
+  "name": "哈啰顺风车出行技能",
+  "summary": "哈啰顺风车乘客助手——覆盖询价比价、下单、邀请车主、行程追踪、确认上车/到达的完整拼车流程。识别\"顺风车\"\"拼座\"\"独享\"\"帮我叫车\"\"查订单\"\"取消\"\"司机在哪\"等指令，也能从\"明天去机场\"\"下班回家\"等日常表达中推断出行意图并主动响应。仅处理真实出行场景，不介入应用开发、导航软件操作或非出行类咨询。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hello_hitch_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhujianjie-kevin",
+      "features": [
+        "哈啰顺风车乘客助手——覆盖询价比价、下单、邀请车主、行程追踪、确认上车/到达的完整拼车流程。识别\"顺风车\"\"拼座\"\"独享\"\"帮我叫车\"\"查订单\"\"取消\"\"司机在哪\"等指令，也能从\"明天去机场."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hello-hitch-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254492502?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hello-hitch-skill",
+      "url": "https://clawhub.ai/skills/hello-hitch-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hello-hitch-skill",
+    "url": "https://clawhub.ai/skills/hello-hitch-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hello-hitch-skill-f2c07954183f8bab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hello-hitch-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-hello-hitch-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95ead122b2014de7d299bb99f4450b081f74f9f8afd0d953c06349d08e8d4302",
+      "artifactSizeBytes": 2760
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T11:48:26.881Z"
+}

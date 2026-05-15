@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geo-audit@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_audit",
+  "skill": {
+    "id": 50515,
+    "skillKey": "clawhub-geo-audit",
+    "name": "Geo Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-audit",
+    "url": "https://clawhub.ai/skills/geo-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-audit-750c2deb003cba06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive GEO audit diagnosing why AI systems cannot discover, cite, or recommend a website — scores technical, content, schema, and brand dimensions wit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "enzyme2013",
+      "userId": "s1769p76b5b6v79bsajk42ash9840ed9",
+      "displayName": "Eugene Liu",
+      "image": "https://avatars.githubusercontent.com/u/11206822?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775411247338,
+      "changelog": "geo-audit 1.2.0\n\n- Updated documentation in SKILL.md with clarifications and minor edits.\n- No changes to logic, features, subagents, or scoring model.\n- Existing instructions and workflow remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:979e55541fc82dbe5a8be89684b65f91351d357b9c8d28eccfbb66fcc2b067bb"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/devtool-answer-monitor@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.devtool_answer_monitor",
+  "skill": {
+    "id": 15292,
+    "skillKey": "clawhub-devtool-answer-monitor",
+    "name": "DevTool Answer Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "devtool-answer-monitor",
+    "url": "https://clawhub.ai/skills/devtool-answer-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/devtool-answer-monitor-f9fd2758f773e7df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants to monitor how ChatGPT, Claude, Gemini, and other LLMs describe a developer tool, API, SDK, or open-source project. DevTool Answer Mo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeicwgy",
+      "userId": "s17b190tf85c34fs78qx3mh12n83g7at",
+      "displayName": "veeicwgy",
+      "image": "https://avatars.githubusercontent.com/u/108802128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1050,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1776929806206,
+      "changelog": "Rename the project to DevTool Answer Monitor, add a zero-install demo viewer, and publish public benchmark stories.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63fe8d95861a53a539f28b8d9e6af4617f970f0a90fe007823a4642dcdf710c9"
+}

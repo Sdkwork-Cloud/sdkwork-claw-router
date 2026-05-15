@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bluecolumn-memory@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bluecolumn_memory",
+  "skill": {
+    "id": 44353,
+    "skillKey": "clawhub-bluecolumn-memory",
+    "name": "BlueColumn Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bluecolumn-memory",
+    "url": "https://clawhub.ai/skills/bluecolumn-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bluecolumn-memory-86bcb19e320d0fda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give AI agents persistent semantic memory using the BlueColumn API (bluecolumn.ai). Use when asked to remember, store, recall, or search memory using BlueCol..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bluecolumnconsulting-lgtm",
+      "userId": "s17bvy8gx9dwzphyvevmeh94nh84v4wz",
+      "displayName": "bluecolumnconsulting-lgtm",
+      "image": "https://avatars.githubusercontent.com/u/243032714?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776363757910,
+      "changelog": "- Clarified that BlueColumn runs on official Supabase Edge Functions infrastructure.\n- Updated API base URL context and added reference to BlueColumn's verified backend and website.\n- Provided additional instructions on API key handling: prefer platform secret store, never expose keys, and ensure user consent before sending content.\n- Explicitly warned against sending sensitive PII or full conversation history without user permission.\n- Minor language and formatting improvements for clarity and accuracy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:343d0825158f58fcf4dc79fc1484b68c80ae8c6282b66e1c95a54372b8cc036d"
+}

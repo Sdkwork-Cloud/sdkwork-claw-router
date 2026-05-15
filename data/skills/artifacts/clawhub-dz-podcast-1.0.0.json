@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dz-podcast@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dz_podcast",
+  "skill": {
+    "id": 20876,
+    "skillKey": "clawhub-dz-podcast",
+    "name": "Dual-Host Daily Podcast Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dz-podcast",
+    "url": "https://clawhub.ai/skills/dz-podcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dz-podcast-73c919ab513070fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and publish a dual-host daily podcast. Fetches news, generates a conversational script between two hosts, synthesizes audio via Fish Audio or Edge T..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dz1922",
+      "userId": "publishers:dz1922",
+      "displayName": "Dachao",
+      "image": "https://avatars.githubusercontent.com/u/171011290?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 523,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772533134992,
+      "changelog": "dz-podcast 1.0.0 — Initial Release\n\n- Fully automated, dual-host daily podcast generator.\n- Fetches news, generates conversational scripts, creates dual-voice audio (Fish Audio or Edge TTS), and publishes episodes to S3 with a valid RSS feed.\n- Full support for Apple Podcasts, Spotify, and other major platforms.\n- Highly configurable topics, sources, and delivery channels.\n- Built-in cron automation for daily episode creation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:400422def428242a7a9978bb36a176a381a3f17b8a564197055d6ad39a2b84f1"
+}

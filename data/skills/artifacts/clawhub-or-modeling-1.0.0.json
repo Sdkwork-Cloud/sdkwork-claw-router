@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/or-modeling@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.or_modeling",
+  "skill": {
+    "id": 68908,
+    "skillKey": "clawhub-or-modeling",
+    "name": "Operations Research Modeling"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "or-modeling",
+    "url": "https://clawhub.ai/skills/or-modeling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/or-modeling-f5ef7b16cfe1690f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "运筹优化数学建模辅助工具。当用户需要将实际问题转化为数学优化模型时使用，包括：(1) 输入运筹优化问题并要求建立数学模型；(2) 需要将文字描述转化为目标函数和约束条件；(3) 要求对问题进行数学公式化表述；(4) 需要验证或完善优化问题的数学模型；(5) 搜索相关学术论文了解研究现状。支持的场景：线性规划、整数..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "go-own-way",
+      "userId": "s170n76av9qb02jw19jxegsy0183gcxm",
+      "displayName": "Go-own-way",
+      "image": "https://avatars.githubusercontent.com/u/105290386?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774169712987,
+      "changelog": "- Initial release of or-modeling, an assistant tool for translating real-world operations research problems into mathematical optimization models.\n- Supports model building for scenarios such as linear/integer/mixed programming, non-linear programming, dynamic programming, combinatorial optimization (TSP/VRP), network flows, site location, queuing theory, inventory and supply chain optimization, stochastic programming, scheduling, game theory, mechanism design, and more.\n- Provides a step-by-step workflow: problem understanding (6-dimension analysis), literature review, assumption validation, model formulation, self-check, and LaTeX output with separate explanations.\n- Features quick confirmation mode for users with clear problem descriptions.\n- Includes guidance for literature search, complexity estimation, recommended constraints by problem type, and common constraints module reference.\n- Output templates for professional reporting, including self-diagnosis checklist and LaTeX-formatted models for easy academic or practical use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cfb3f0fc3140872ee18f0a2eb83484c487c205b76aeedf74641976d19ef4a7eb"
+}

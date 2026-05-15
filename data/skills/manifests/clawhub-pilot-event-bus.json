@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43013,
+  "uuid": "skill-clawhub-pilot-event-bus",
+  "skillKey": "clawhub-pilot-event-bus",
+  "name": "Pilot Event Bus",
+  "summary": "Multi-agent event aggregation on shared topics for coordinated workflows. Use this skill when: 1. You need to aggregate events from multiple agents on a shar...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_event_bus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Multi-agent event aggregation on shared topics for coordinated workflows",
+        "Use this skill when: 1",
+        "You need to aggregate events from multiple agents on a shar..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-event-bus@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-event-bus",
+      "url": "https://clawhub.ai/skills/pilot-event-bus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-event-bus",
+    "url": "https://clawhub.ai/skills/pilot-event-bus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-event-bus-396395254f2df299.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-event-bus@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-event-bus-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24f6b6d0d2a4e2edb7fb4889d80e554d6963055874bbd50dd74002e7085e3828",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T02:19:09.194Z"
+}

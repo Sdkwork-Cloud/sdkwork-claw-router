@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-healing@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_healing",
+  "skill": {
+    "id": 45981,
+    "skillKey": "clawhub-meta-healing",
+    "name": "Meta Healing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-healing",
+    "url": "https://clawhub.ai/skills/meta-healing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-healing-b030ae78c902f34b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose, harden, repair, and improve local OpenClaw/agent runtime health without destructive resets. Use when asked to self-heal, recover capabilities, audi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "prettybusysolutions-eng",
+      "userId": "s17a930r0ass2ng6ad9jmdkzsd83zqvg",
+      "displayName": "prettybusysolutions-eng",
+      "image": "https://avatars.githubusercontent.com/u/262936889?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1778045014015,
+      "changelog": "Wire Meta-Healing Pro upsell bridge, add free triage entrypoint, and document paid remediation escalation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e56fd39f681e9439ecf7f28faab355427bea5ddb5a7da1da6098583cf2da1d4b"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37748,
+  "uuid": "skill-clawhub-news-sentiment-scanner",
+  "skillKey": "clawhub-news-sentiment-scanner",
+  "name": "News Sentiment Scanner",
+  "summary": "Scan news sources and RSS feeds for events that could move prediction market prices. Score headlines for market impact, flag urgent stories, and cross-refere...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_sentiment_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rsquaredsolutions2026",
+      "features": [
+        "Scan news sources and RSS feeds for events that could move prediction market prices",
+        "Score headlines for market impact, flag urgent stories, and cross-refere..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-sentiment-scanner@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217474775?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-sentiment-scanner",
+      "url": "https://clawhub.ai/skills/news-sentiment-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-sentiment-scanner",
+    "url": "https://clawhub.ai/skills/news-sentiment-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-sentiment-scanner-52c324bffbae8d70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-sentiment-scanner@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-sentiment-scanner-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d922061bc3b000193c8f0000480c15c4f9f0ae896af3523be5a0874a3403fd49",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T01:22:52.041Z"
+}

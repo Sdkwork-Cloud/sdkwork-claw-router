@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yujunyanyanya-feishu-file-send@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yujunyanyanya_feishu_file_send",
+  "skill": {
+    "id": 58532,
+    "skillKey": "clawhub-yujunyanyanya-feishu-file-send",
+    "name": "Feishu File Send"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yujunyanyanya-feishu-file-send",
+    "url": "https://clawhub.ai/skills/yujunyanyanya-feishu-file-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yujunyanyanya-feishu-file-send-39ac470faa84e96f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书文件发送标准流程 | Reliable Feishu file sending workflow. 解决附件发送失败、用户收不到文件、mediaLocalRoots 路径限制等问题。 Fixes missing attachments, mediaLocalRoots path issues, and com..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yujunyanyanya",
+      "userId": "s174stcda2rrqm7b4n32qy9nhx8504kn",
+      "displayName": "Yujunyanyanya",
+      "image": "https://avatars.githubusercontent.com/u/208439037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776401684226,
+      "changelog": "Initial release: bilingual (CN/EN) reliable Feishu file sending workflow with mediaLocalRoots support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25299ae16787c5632f1d9d722feb43026d73cfec4e638c52d74553262464cfd0"
+}

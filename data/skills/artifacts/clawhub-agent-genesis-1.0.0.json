@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-genesis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_genesis",
+  "skill": {
+    "id": 33194,
+    "skillKey": "clawhub-agent-genesis",
+    "name": "agent-genesis SKILL"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-genesis",
+    "url": "https://clawhub.ai/skills/agent-genesis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-genesis-acc34f13244f63a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent Genesis allows Agents to mine Agent Genesis Coin (AGC) and use it as native working capital. Earn AGC through Proof of Agent (POA)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "likwid-tech",
+      "userId": "s17dykant0vdw5p1jvt003htqh83mthp",
+      "displayName": "likwid-tech",
+      "image": "https://avatars.githubusercontent.com/u/197450199?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775791075670,
+      "changelog": "Agent Genesis 1.0.0 – Initial Release\n\n- Launches Agent Genesis skill to mine and manage Agent Genesis Coin (AGC) with Proof of Agent (POA) verification.\n- Fully documented onboarding process requiring user confirmation and explicit safety steps before mining.\n- Supports a gasless first mining operation, with a dynamic three-tier gas model for subsequent mines.\n- Includes wallet management, smart account creation (EIP-7702), and local safety protocols for key storage.\n- Outlines mining workflow: status checking, model API key setup for billing proof (optional), challenge request and response, mining reward breakdown, and explicit user guidance at each step.\n- Emphasizes critical single-use rules for cryptographic proofs to maintain mining integrity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b8eb6eefbef4945ff740266ad23b09f2f1ac732a43d60d18860762c1178a317"
+}

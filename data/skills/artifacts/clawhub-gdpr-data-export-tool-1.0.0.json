@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gdpr-data-export-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gdpr_data_export_tool",
+  "skill": {
+    "id": 47346,
+    "skillKey": "clawhub-gdpr-data-export-tool",
+    "name": "Gdpr Data Export Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gdpr-data-export-tool",
+    "url": "https://clawhub.ai/skills/gdpr-data-export-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gdpr-data-export-tool-ca048bed78539223.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build, audit, and operate Article 15 (right of access) and Article 20 (data portability) data export pipelines for GDPR, plus the equivalent CCPA/CPRA \"right..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777860660124,
+      "changelog": "Initial release of GDPR Data Export Tool — a comprehensive framework for compliant DSAR processing.\n\n- Supports Article 15 (right of access), Article 20 (data portability), CCPA/CPRA right-to-know, and UK DPA SARs.\n- Guides on subject identification/authentication, data inventory (covering SQL/NoSQL/SaaS stores), pipeline design, export packaging, and secure delivery.\n- Includes workflow for audit logging, SLA tracking, shared-data handling, and vendor coordination.\n- Provides comparison matrix for Article 15 vs 20 requirements and a detailed data inventory worksheet template.\n- Useful for designing, auditing, or operating privacy-compliant data export pipelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f12a2fadc1f439f372671adec2929697524e72a9fa0393bef66dd85d606262bf"
+}

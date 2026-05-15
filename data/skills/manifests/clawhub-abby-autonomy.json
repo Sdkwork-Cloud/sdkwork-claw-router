@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67070,
+  "uuid": "skill-clawhub-abby-autonomy",
+  "skillKey": "clawhub-abby-autonomy",
+  "name": "Abby Autonomy",
+  "summary": "使 Abby 能主动从任务队列获取并执行任务，自主管理任务状态，持续推进工作至完成或资源限制。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abby_autonomy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "earnabitmore365",
+      "features": [
+        "使 Abby 能主动从任务队列获取并执行任务，自主管理任务状态，持续推进工作至完成或资源限制。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abby-autonomy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258793012?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abby-autonomy",
+      "url": "https://clawhub.ai/skills/abby-autonomy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abby-autonomy",
+    "url": "https://clawhub.ai/skills/abby-autonomy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abby-autonomy-ba06dd3f76497edf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abby-autonomy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-abby-autonomy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ba028f11810aac999e5464bee9cbb2f87139fda922179ed164d405a4cf42399",
+      "artifactSizeBytes": 2381
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T09:39:02.684Z"
+}

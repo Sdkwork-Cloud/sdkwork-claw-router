@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/documents-ai@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.documents_ai",
+  "skill": {
+    "id": 10438,
+    "skillKey": "clawhub-documents-ai",
+    "name": "Veryfi Documents AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "documents-ai",
+    "url": "https://clawhub.ai/skills/documents-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/documents-ai-9881e0448eb6a018.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time OCR and data extraction API by Veryfi (https://veryfi.com). Extract structured data from receipts, invoices, bank statements, W-9s, purchase orders..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dbirulia",
+      "userId": "s17e2cbhzd9snah9ng0538qmzd83gtnt",
+      "displayName": "Dmitry Birulia",
+      "image": "https://avatars.githubusercontent.com/u/2263661?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1081,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 16,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772038616624,
+      "changelog": "- Added support and documentation for extracting data from documents using base64 content and file URLs, in addition to file upload.\n- Updated description and examples to mention raw OCR text output (\"ocr_text\") in API responses.\n- Clarified when to use the generic \"any-documents\" endpoint for W-2 and W-8 forms.\n- Improved documentation structure, quick start, and included a direct link to Veryfi’s website for more information.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5a59c80fad3546c988977cbc3c0e6485385a36d40d2dc065c21173eed07dab72"
+}

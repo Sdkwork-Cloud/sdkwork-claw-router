@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cheat-code@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cheat_code",
+  "skill": {
+    "id": 11870,
+    "skillKey": "clawhub-cheat-code",
+    "name": "Cheat Code"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cheat-code",
+    "url": "https://clawhub.ai/skills/cheat-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cheat-code-ac98c402b0a01ca0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Makes your agent's talents limitless. Tell your agent what you want. Watch it deliver."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kenoodl-synthesis",
+      "userId": "s171wax8g1rhq85j11632msvwn83nsyr",
+      "displayName": "Kevin Hoff",
+      "image": "https://avatars.githubusercontent.com/u/261656398?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1709,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 2,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1772350303340,
+      "changelog": "Worked example: real synthesis call and response showing kenoodl breaking a corporate data strategy problem",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c2192a45886871144aefb7d66be23b179d4792f944d2779c96598ef8c7ef2c4c"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28695,
+  "uuid": "skill-clawhub-grok-research",
+  "skillKey": "clawhub-grok-research",
+  "name": "Grok Research",
+  "summary": "Crypto research via Grok model's real-time X/Twitter knowledge. Forwards the user's query as-is to Grok API — no prompt injection, no context bloat. Use when...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grok_research",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pollo",
+      "features": [
+        "Crypto research via Grok model's real-time X/Twitter knowledge",
+        "Forwards the user's query as-is to Grok API — no prompt injection, no context bloat",
+        "Use when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grok-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131782671?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grok-research",
+      "url": "https://clawhub.ai/skills/grok-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grok-research",
+    "url": "https://clawhub.ai/skills/grok-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grok-research-239b5d8607cf6b2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grok-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grok-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2db21d753b15e0facd203d5449b09605d8957867bc7f1a0d14ba158d9e3eeabc",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T10:26:12.406Z"
+}

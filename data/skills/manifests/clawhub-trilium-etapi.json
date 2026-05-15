@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38428,
+  "uuid": "skill-clawhub-trilium-etapi",
+  "skillKey": "clawhub-trilium-etapi",
+  "name": "Trilium",
+  "summary": "Use when interacting with a Trilium Notes server via the ETAPI REST API - creating, reading, updating, searching, or deleting notes, branches, attributes, at...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trilium_etapi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yanickxia",
+      "features": [
+        "Use when interacting with a Trilium Notes server via the ETAPI REST API",
+        "creating, reading, updating, searching, or deleting notes, branches, attributes, at..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trilium-etapi@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6848593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trilium-etapi",
+      "url": "https://clawhub.ai/skills/trilium-etapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trilium-etapi",
+    "url": "https://clawhub.ai/skills/trilium-etapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trilium-etapi-dc6f345df3fb87c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trilium-etapi@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-trilium-etapi-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14a448985b0a010e09c7ee7f28b8e7ec7e66d913639a41eca58eb97ea674ab77",
+      "artifactSizeBytes": 2389
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T09:54:21.913Z"
+}

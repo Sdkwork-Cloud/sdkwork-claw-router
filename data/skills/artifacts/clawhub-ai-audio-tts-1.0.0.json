@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-audio-tts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_audio_tts",
+  "skill": {
+    "id": 42486,
+    "skillKey": "clawhub-ai-audio-tts",
+    "name": "Ai Audio Tts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-audio-tts",
+    "url": "https://clawhub.ai/skills/ai-audio-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-audio-tts-342dd9cd2a796104.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert text or script into voiced video output with this skill. Works with MP4, MOV, TXT, DOCX files up to 200MB. content creators, marketers use it for add..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776916763914,
+      "changelog": "Initial release of AI Audio TTS — Convert Text to Video Voiceover.\n\n- Converts text/scripts into AI voiceover synced to video, supporting MP4, MOV, TXT, and DOCX files up to 200MB.\n- Cloud GPU processing delivers 1080p MP4 outputs in 20–45 seconds.\n- Automatic setup with free token and session management—no installation needed.\n- Supports content creators and marketers with easy voiceover workflows and batch processing.\n- Handles user prompts for exporting, credits check, status, and uploads; clear error handling and detailed usage tips included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e6812b55a87f3918a64b57a2cc8c1f41a78c89748c21096fb3e6e6e3e44c801"
+}

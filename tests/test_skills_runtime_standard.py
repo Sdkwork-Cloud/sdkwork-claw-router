@@ -1,4 +1,4 @@
-import json
+﻿import json
 import unittest
 from pathlib import Path
 
@@ -52,10 +52,10 @@ class SkillsRuntimeStandardTest(unittest.TestCase):
         self.assertIn("installed: installation.installed", runtime_source)
         self.assertIn("enabled: installation.enabled", runtime_source)
 
-        self.assertIn("getClawRouterAppSdkClient().skill.getSkills", service_source)
-        self.assertIn("getClawRouterAppSdkClient().skill.getSkillById", service_source)
-        self.assertIn("getClawRouterAppSdkClient().skill.skillsGetCategories", service_source)
-        self.assertNotIn("getClawRouterAppSdkClient().skills.", service_source)
+        self.assertIn("getClawRouterAppSdkClient().ecosystem.skills.list", service_source)
+        self.assertIn("getClawRouterAppSdkClient().ecosystem.skills.retrieve", service_source)
+        self.assertIn("getClawRouterAppSdkClient().ecosystem.skills.categories.list", service_source)
+        self.assertNotIn("getClawRouterAppSdkClient().skill.", service_source)
         self.assertIn("normalizeSkillApiRecord", service_source)
         self.assertIn("filterSkillsForCatalog", service_source)
 
@@ -95,11 +95,11 @@ class SkillsRuntimeStandardTest(unittest.TestCase):
             encoding="utf-8"
         )
         openapi_payload = json.loads(openapi)
-        skills_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "skill.ts").read_text(
+        skills_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "ecosystem.ts").read_text(
             encoding="utf-8"
         )
         skill_config_request_type = (
-            ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "app-skill-config-request.ts"
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "app-skill-config-request.ts"
         ).read_text(encoding="utf-8")
         skill_service = (
             ROOT
@@ -128,9 +128,9 @@ class SkillsRuntimeStandardTest(unittest.TestCase):
         self.assertIn("packages?: SkillPackage[]", runtime_source)
 
         for result_name in [
-            "GetSkillsResult",
-            "GetSkillByIdResult",
-            "SkillsGetCategoriesResult",
+            "SkillsListResult",
+            "SkillsRetrieveResult",
+            "SkillsCategoriesListResult",
         ]:
             self.assertIn(f'"{result_name}"', openapi)
 
@@ -138,31 +138,33 @@ class SkillsRuntimeStandardTest(unittest.TestCase):
         self.assertIn('"$ref": "#/components/schemas/SkillDetailResponse"', openapi)
         self.assertIn('"$ref": "#/components/schemas/SkillCategoriesResponse"', openapi)
 
-        self.assertIn("async getSkills(pageNo?: number, pageSize?: number, keyword?: string, status?: string, startTime?: string, endTime?: string): Promise<GetSkillsResult>", skills_api)
-        self.assertIn("get<GetSkillsResult>", skills_api)
-        self.assertIn("async getSkillById(skillId: string | number, pageNo?: number, pageSize?: number, keyword?: string, status?: string, startTime?: string, endTime?: string): Promise<GetSkillByIdResult>", skills_api)
-        self.assertIn("get<GetSkillByIdResult>", skills_api)
-        self.assertIn("async skillsGetCategories(pageNo?: number, pageSize?: number, keyword?: string, status?: string, startTime?: string, endTime?: string): Promise<SkillsGetCategoriesResult>", skills_api)
-        self.assertIn("get<SkillsGetCategoriesResult>", skills_api)
-        self.assertIn("async getMySkills(pageNo?: number, pageSize?: number, keyword?: string, status?: string, startTime?: string, endTime?: string): Promise<GetMySkillsResult>", skills_api)
-        self.assertIn("async enableSkill(skillId: string | number, body: AppSkillConfigRequest, xRequestId?: string): Promise<EnableSkillResult>", skills_api)
-        self.assertIn("async disableSkill(skillId: string | number, body?: OperationRequest, xRequestId?: string): Promise<DisableSkillResult>", skills_api)
-        self.assertIn("async updateSkillConfig(skillId: string | number, body: AppSkillConfigRequest, xRequestId?: string): Promise<UpdateSkillConfigResult>", skills_api)
+        self.assertIn("q?: string;", skills_api)
+        self.assertIn("get<SkillsListResult>", skills_api)
+        self.assertIn("async retrieve(skillId: string): Promise<SkillsRetrieveResult>", skills_api)
+        self.assertIn("get<SkillsRetrieveResult>", skills_api)
+        self.assertIn("async list(): Promise<SkillsCategoriesListResult>", skills_api)
+        self.assertIn("get<SkillsCategoriesListResult>", skills_api)
+        self.assertIn("async list(): Promise<UsersCurrentSkillsListResult>", skills_api)
+        self.assertIn("async enable(skillId: string, body: AppSkillConfigRequest, params?: EcosystemSkillsEnableParams): Promise<SkillsEnableResult>", skills_api)
+        self.assertIn("async disable(skillId: string, params?: EcosystemSkillsDisableParams): Promise<SkillsDisableResult>", skills_api)
+        self.assertIn("async update(skillId: string, body: AppSkillConfigRequest, params?: EcosystemSkillsConfigUpdateParams): Promise<SkillsConfigUpdateResult>", skills_api)
         self.assertIn("buildQueryString", skills_api)
-        self.assertIn("appendQueryString(appApiPath(`/skills`), query)", skills_api)
-        self.assertIn("appendQueryString(appApiPath(`/skills/${skillId}`), query)", skills_api)
-        self.assertIn("appendQueryString(appApiPath(`/skills/categories`), query)", skills_api)
-        self.assertIn("appendQueryString(appApiPath(`/skills/my`), query)", skills_api)
+        self.assertIn("appendQueryString(appApiPath(`/ecosystem/skills`), query)", skills_api)
+        self.assertIn("appApiPath(`/ecosystem/skills/${serializePathParameter(skillId", skills_api)
+        self.assertIn("appApiPath(`/ecosystem/skills/categories`)", skills_api)
+        self.assertIn("appApiPath(`/ecosystem/users/current/skills`)", skills_api)
+        self.assertIn("{ name: 'q', value: params?.q", skills_api)
+        self.assertNotIn("searchQuery?: string;", skills_api)
         self.assertNotIn("getSkills(params?: QueryParams): Promise<PlusApiResult>", skills_api)
-        self.assertNotIn("getSkillById(skillId: string | number, params?: QueryParams): Promise<PlusApiResult>", skills_api)
+        self.assertNotIn("getSkillById(skillId: string, params?: QueryParams): Promise<PlusApiResult>", skills_api)
 
         result_checks = {
-            "get-skills-result.ts": "data?: SkillsCatalogResponse;",
-            "get-skill-by-id-result.ts": "data?: SkillDetailResponse;",
-            "skills-get-categories-result.ts": "data?: SkillCategoriesResponse;",
+            "skills-list-result.ts": "data?: SkillsCatalogResponse;",
+            "skills-retrieve-result.ts": "data?: SkillDetailResponse;",
+            "skills-categories-list-result.ts": "data?: SkillCategoriesResponse;",
         }
         for file_name, expected in result_checks.items():
-            result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / file_name
+            result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / file_name
             self.assertTrue(result_path.exists(), file_name)
             self.assertIn(expected, result_path.read_text(encoding="utf-8"))
 
@@ -176,10 +178,14 @@ class SkillsRuntimeStandardTest(unittest.TestCase):
         self.assertIn("const item: SdkSkillDetailResponse", skill_service)
         self.assertIn("const items: SdkSkillCategoriesResponse['items']", skill_service)
         self.assertIn("const items: SdkAppInstalledSkillsResponse['items']", skill_service)
-        self.assertIn("getClawRouterAppSdkClient().skill.enableSkill", skill_service)
-        self.assertIn("getClawRouterAppSdkClient().skill.disableSkill", skill_service)
-        self.assertIn("getClawRouterAppSdkClient().skill.updateSkillConfig", skill_service)
-        self.assertIn("standardListQueryArguments", skill_service)
+        self.assertIn("getClawRouterAppSdkClient().ecosystem.skills.enable", skill_service)
+        self.assertIn("getClawRouterAppSdkClient().ecosystem.skills.disable", skill_service)
+        self.assertIn("getClawRouterAppSdkClient().ecosystem.skills.config.update", skill_service)
+        self.assertIn("const query = toSkillCatalogQueryParams(filters)", skill_service)
+        self.assertIn(".ecosystem.skills.list(query)", skill_service)
+        self.assertIn("page: optionalPositiveInteger(filters.page, 'page')", skill_service)
+        self.assertIn("pageSize: optionalBoundedPositiveInteger(filters.pageSize, 'pageSize'", skill_service)
+        self.assertIn("searchQuery,", skill_service)
         self.assertIn("config.portal is reserved portal metadata", contract)
         request_schema = openapi_payload["components"]["schemas"]["AppSkillConfigRequest"]
         self.assertEqual(["portal"], request_schema["not"]["required"])
@@ -308,8 +314,8 @@ class SkillsRuntimeStandardTest(unittest.TestCase):
         self.assertIn(f"source: {expected_source}", contracts)
         self.assertNotIn(f"source: {old_source}", contracts)
         self.assertIn('"source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/skillRuntime.ts"', field_audit)
-        self.assertIn("/app/v3/api/skills", operation_audit)
-        self.assertIn("/app/v3/api/skills/{skillId}", operation_audit)
+        self.assertIn("/app/v3/api/ecosystem/skills", operation_audit)
+        self.assertIn("/app/v3/api/ecosystem/skills/{skillId}", operation_audit)
         self.assertIn("delivery_kind: sdk_backed_business_runtime", route_classification)
         self.assertIn("/skills-hub/:id", route_classification)
 
@@ -355,8 +361,8 @@ class SkillsRuntimeStandardTest(unittest.TestCase):
         self.assertIn("APP_SDK_FAILURE_FIXTURE_MODE", smoke_source)
         self.assertIn("BROWSER_SMOKE_SKILL_RECORD", smoke_source)
         self.assertIn("BROWSER_SMOKE_INSTALLED_SKILL_RECORD", smoke_source)
-        self.assertIn("/app/v3/api/skills", smoke_source)
-        self.assertIn("/app/v3/api/skills/my", smoke_source)
+        self.assertIn("/app/v3/api/ecosystem/skills", smoke_source)
+        self.assertIn("/app/v3/api/ecosystem/users/current/skills", smoke_source)
         self.assertIn("Browser Smoke Skill", smoke_source)
         self.assertIn("npx clawhub@latest install clawhub.io/sdkwork/browser-smoke-skill:v1.0.0", smoke_source)
         self.assertNotIn("npx clawhub@latest install browser-smoke-skill", smoke_source)
@@ -367,10 +373,10 @@ class SkillsRuntimeStandardTest(unittest.TestCase):
         self.assertIn("Skill details could not be loaded", smoke_source)
         self.assertNotIn("server responded with a status of 502 (Bad Gateway)", smoke_source)
 
-        self.assertIn("getClawRouterAppSdkClient().skill.getSkills", service_source)
-        self.assertIn("getClawRouterAppSdkClient().skill.getSkillById", service_source)
-        self.assertIn("getClawRouterAppSdkClient().skill.skillsGetCategories", service_source)
-        self.assertNotIn("getClawRouterAppSdkClient().skills.", service_source)
+        self.assertIn("getClawRouterAppSdkClient().ecosystem.skills.list", service_source)
+        self.assertIn("getClawRouterAppSdkClient().ecosystem.skills.retrieve", service_source)
+        self.assertIn("getClawRouterAppSdkClient().ecosystem.skills.categories.list", service_source)
+        self.assertNotIn("getClawRouterAppSdkClient().skill.", service_source)
         self.assertIn("normalizeSkillApiRecord", runtime_source)
         self.assertIn("deriveSkillCatalogViewModel", runtime_source)
         self.assertIn("deriveSkillDetailView", runtime_source)

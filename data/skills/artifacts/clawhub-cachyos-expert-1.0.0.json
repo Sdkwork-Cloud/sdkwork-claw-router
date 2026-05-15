@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cachyos-expert@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cachyos_expert",
+  "skill": {
+    "id": 52534,
+    "skillKey": "clawhub-cachyos-expert",
+    "name": "Cachyos Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cachyos-expert",
+    "url": "https://clawhub.ai/skills/cachyos-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cachyos-expert-73b14af2c96c60cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Senior Systems Engineer für CachyOS und Arch Linux. Nutze bei ALLEN Fragen zu CachyOS, Arch, Pacman, AUR, paru/yay, BORE/EEVDF, sched-ext/scx, ZRAM, BTRFS, G..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arn0ld87",
+      "userId": "s17ejhfr1m1zcg2dmjrqdsd9a983g0n3",
+      "displayName": "Alexander Schneider",
+      "image": "https://avatars.githubusercontent.com/u/212052432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775721543719,
+      "changelog": "CachyOS Expert Skill – initial release:\n\n- Stellt einen fachlich orientierten Expertenmodus für fortgeschrittene Admins von CachyOS und Arch Linux bereit.\n- Strikte Sicherheitsregeln (Backups, Erklärung, minimale Invasivität, Warnungen, kein blindes Löschen).\n- Einheitliches Antwort-Schema mit Zieldefinition, Voraussetzungen, Schritt-für-Schritt-Anleitung, Überprüfung, Kurz-Erklärung und nächsten Schritten.\n- Detaillierte Referenzstruktur zu CPU/FS, Gaming, Paketverwaltung, Boot/Encryption, Netzwerk, Audio/Desktop, Backup und Virtualisierung.\n- Integriert Troubleshooting-Checkliste sowie CachyOS-spezifische Tools, Kernel-Varianten und Optimierungen.\n- Beantwortet technisch fundiert, präzise und immer auf Deutsch.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:deab67e79c713871c634dea5ca412d38076fe3b3ed19029640f2737c38b53b2f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/discover-artblocks-projects@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discover_artblocks_projects",
+  "skill": {
+    "id": 36118,
+    "skillKey": "clawhub-discover-artblocks-projects",
+    "name": "Discover Artblocks Projects"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discover-artblocks-projects",
+    "url": "https://clawhub.ai/skills/discover-artblocks-projects",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discover-artblocks-projects-9e4b689c92992108.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse, search, and explore Art Blocks projects, collections, and collector portfolios using artblocks-mcp. Use when a user wants to find, filter, browse, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryley-o",
+      "userId": "publishers:ryley-o",
+      "displayName": "ryley-o",
+      "image": "https://avatars.githubusercontent.com/u/30364988?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773936838684,
+      "changelog": "- Initial release of discover-artblocks-projects skill.\n- Browse, search, and filter Art Blocks projects by name, artist, vertical, chain, tag, floor price, and mintability.\n- View live mints, upcoming drops, project details, artist portfolios, and collector wallet summaries.\n- Includes tools to list available tags and get platform context.\n- Supports both Art Blocks Flagship and Engine projects across multiple chains (Ethereum, Arbitrum, Base).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89d4124807530c89ffff8953c42106e97526db9e2458e076f9eea7bd0c2d0002"
+}

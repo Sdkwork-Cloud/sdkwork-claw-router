@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-market-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_market_analyzer",
+  "skill": {
+    "id": 39916,
+    "skillKey": "clawhub-stock-market-analyzer",
+    "name": "Stock Market Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-market-analyzer",
+    "url": "https://clawhub.ai/skills/stock-market-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-market-analyzer-ab027df3f57a7dba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A-share stock market analysis tool with real-time price data, technical indicators, trend analysis, and portfolio tracking. Supports querying opening/closing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaiyuelv",
+      "userId": "s171c2g5qpr0rdyra8xbm4srbh84mjjm",
+      "displayName": "Lv Lancer",
+      "image": "https://avatars.githubusercontent.com/u/29176686?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776583207289,
+      "changelog": "- Initial release of Stock Market Analyzer for A-share markets.\n- Provides real-time price data, opening/closing summaries, and technical indicators (RSI, MACD, KDJ, BOLL, MA, etc.).\n- Supports portfolio tracking and performance analysis.\n- Allows querying for both Shanghai (SH) and Shenzhen (SZ) stock exchanges.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e0926eabde5a1c6f3c1647cdb9e0c09f8cc852785f32fa10b21d9f43048dd76"
+}

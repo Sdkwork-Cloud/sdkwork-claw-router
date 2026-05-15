@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10764,
+  "uuid": "skill-clawhub-printer",
+  "skillKey": "clawhub-printer",
+  "name": "Printer skill",
+  "summary": "Manage printers via CUPS on macOS (discover, add, print, queue, status, wake).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.printer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DhvanilPatel",
+      "features": [
+        "Manage printers via CUPS on macOS (discover, add, print, queue, status, wake)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/printer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7059496?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "printer",
+      "url": "https://clawhub.ai/skills/printer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "printer",
+    "url": "https://clawhub.ai/skills/printer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/printer-ba70e1dacc17e1a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/printer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-printer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd6fd8df1d9c8c1093a15087103edf3050f60cdb902f4f1479428531101d8f87",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-07T10:22:15.084Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/truetime-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.truetime_cn",
+  "skill": {
+    "id": 70380,
+    "skillKey": "clawhub-truetime-cn",
+    "name": "truetime-cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "truetime-cn",
+    "url": "https://clawhub.ai/skills/truetime-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/truetime-cn-475ab61bcc2dede7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文优先的精确时间处理：当前时间、相对/绝对偏移、跨时区、夏令时、农历干支、中国法定节假日（含调休补班）、24 节气。长会话规划必备——任何涉及\"现在\"\"明天\"\"X 天后\"\"截止日\"\"会议时间\"\"农历某节\"的请求都应该用这个 skill，因为系统注入的日期没有时分秒、不会随对话推进而更新、不知道中国节假日和调休、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sereinnyaa",
+      "userId": "s17420kbk8txjvq4ycqfrpeq9h86c3fw",
+      "displayName": "Yu-mt",
+      "image": "https://avatars.githubusercontent.com/u/72130712?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 50,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778296835903,
+      "changelog": "truetime-cn 1.0.0 — 中文优先、精确处理中国本地和跨时区时间的工具，支持节假日、农历、24节气等多种复杂场景。\n\n- 精确处理“现在”、“X天后”、“农历某节”等自然时间表达，兼容中文和公历\n- 支持中国法定节假日（含调休补班）、农历干支、节气，内置2026年假日数据\n- 可靠处理跨时区、夏令时（DST）、日历月运算，优先输出 UTC，明示假设及异常\n- 标准输出 JSON，详细区分当前/目标时间、时区、假日来源、误差说明\n- 纯 Python 实现，零外部依赖，本地即可运行\n- 严格触发规则和降级策略，避免误判、保证时间敏感任务决策准确",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ade68f5ae3574e526578b27bcf881065c68c87bb9ae735e25595ca4a844c7e5b"
+}

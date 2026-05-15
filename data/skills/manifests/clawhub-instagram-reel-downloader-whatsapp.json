@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15717,
+  "uuid": "skill-clawhub-instagram-reel-downloader-whatsapp",
+  "skillKey": "clawhub-instagram-reel-downloader-whatsapp",
+  "name": "Instagram Reel Downloader (WhatsApp)",
+  "summary": "Download an Instagram Reel via sssinstagram.com and return it as a WhatsApp-ready video file. Use when a reel URL is provided and yt-dlp is blocked or not pr...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagram_reel_downloader_whatsapp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Saif",
+      "features": [
+        "Download an Instagram Reel via sssinstagram.com and return it as a WhatsApp-ready video file",
+        "Use when a reel URL is provided and yt-dlp is blocked or not pr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/instagram-reel-downloader-whatsapp@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22230219?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "instagram-reel-downloader-whatsapp",
+      "url": "https://clawhub.ai/skills/instagram-reel-downloader-whatsapp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagram-reel-downloader-whatsapp",
+    "url": "https://clawhub.ai/skills/instagram-reel-downloader-whatsapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagram-reel-downloader-whatsapp-3b827ded785259a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/instagram-reel-downloader-whatsapp@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-instagram-reel-downloader-whatsapp-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95f7020d5b3e9982028f59762807fcbbaf80c598489c7875c78273a31cb991d4",
+      "artifactSizeBytes": 2095
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T06:14:00.864Z"
+}

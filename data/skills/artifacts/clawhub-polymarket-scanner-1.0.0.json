@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-scanner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_scanner",
+  "skill": {
+    "id": 23997,
+    "skillKey": "clawhub-polymarket-scanner",
+    "name": "Polymarket Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-scanner",
+    "url": "https://clawhub.ai/skills/polymarket-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-scanner-3dd89b86a42fc8eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated Polymarket prediction market scanner and trader via Simmer API. Use when analyzing prediction markets, scanning for trading opportunities, executin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wyzmf",
+      "userId": "publishers:wyzmf",
+      "displayName": "wyzmf",
+      "image": "https://avatars.githubusercontent.com/u/52613328?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 413,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772475167466,
+      "changelog": "Initial release: auto-scan prediction markets via Simmer API, configurable trading rules, position management, JSONL logging",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1109782dc420f7c8342beda7d6ccc1fc052261fff046ba189e92dec491a98a34"
+}

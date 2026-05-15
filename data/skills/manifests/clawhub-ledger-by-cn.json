@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71525,
+  "uuid": "skill-clawhub-ledger-by-cn",
+  "skillKey": "clawhub-ledger-by-cn",
+  "name": "ledger cn",
+  "summary": "个人记账与账本管理工具。支持多账本、自然语言/批量记账、期初结余初始化、跨月余额趋势图、分类统计、多账本对比图、CSV导出、飞书云盘同步等。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ledger_by_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "victor233k",
+      "features": [
+        "个人记账与账本管理工具。支持多账本、自然语言/批量记账、期初结余初始化、跨月余额趋势图、分类统计、多账本对比图、CSV导出、飞书云盘同步等。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ledger-by-cn@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160450845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ledger-by-cn",
+      "url": "https://clawhub.ai/skills/ledger-by-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ledger-by-cn",
+    "url": "https://clawhub.ai/skills/ledger-by-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ledger-by-cn-bf8c0fe1d6328125.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ledger-by-cn@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ledger-by-cn-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c88d80577f952d2b1e504a9a8d0c354e6afc64eb2a704a555b89319e37f347f6",
+      "artifactSizeBytes": 2396
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T06:58:54.325Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30280,
+  "uuid": "skill-clawhub-book-deep-reader",
+  "skillKey": "clawhub-book-deep-reader",
+  "name": "Book Deep Reader",
+  "summary": "Deep-read a book and produce teaching-quality notes with critical evaluation and action guidance. Use when: (1) user wants to quickly learn and understand a...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_deep_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kingluu",
+      "features": [
+        "Deep-read a book and produce teaching-quality notes with critical evaluation and action guidance",
+        "Use when: (1) user wants to quickly learn and understand a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-deep-reader@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49439091?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-deep-reader",
+      "url": "https://clawhub.ai/skills/book-deep-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-deep-reader",
+    "url": "https://clawhub.ai/skills/book-deep-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-deep-reader-190a18037e423902.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-deep-reader@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-deep-reader-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d9288f0b25d2006ec8fa9fc596ab5e0f98db2fe680c7f2d35f37d729938f53f",
+      "artifactSizeBytes": 3002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T01:44:22.001Z"
+}

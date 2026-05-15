@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72069,
+  "uuid": "skill-clawhub-huimai-homework-grading",
+  "skillKey": "clawhub-huimai-homework-grading",
+  "name": "作业批改与学生学业综合评估Skill",
+  "summary": "中国中小学作业批改与学生学业综合评估。教师拍照扫描批改作业、生成单生/全班单科及综合学科知识掌握评估图并给出指导建议。触发场景：(1)教师上传/拍照学生作业进行批改 (2)查询单个学生或全班的知识掌握情况 (3)生成单科或综合学科评估报告 (4)按角色（班主任/单科老师/校级管理层）分级查看学习数据。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huimai_homework_grading",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yezhaowang888-stack",
+      "features": [
+        "中国中小学作业批改与学生学业综合评估。教师拍照扫描批改作业、生成单生/全班单科及综合学科知识掌握评估图并给出指导建议。触发场景：(1)教师上传/拍照学生作业进行批改 (2)查询单个学生或全班."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huimai-homework-grading@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274244352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huimai-homework-grading",
+      "url": "https://clawhub.ai/skills/huimai-homework-grading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huimai-homework-grading",
+    "url": "https://clawhub.ai/skills/huimai-homework-grading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huimai-homework-grading-6b7dfd2839391f69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huimai-homework-grading@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-huimai-homework-grading-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7777c404ad09f487f387c81a3e3313e003c86bbd7c8cf8b9cba94a26d1177cd",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T06:15:17.107Z"
+}

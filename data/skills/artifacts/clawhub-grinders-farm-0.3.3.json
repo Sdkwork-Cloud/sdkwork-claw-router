@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grinders-farm@0.3.3",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grinders_farm",
+  "skill": {
+    "id": 57618,
+    "skillKey": "clawhub-grinders-farm",
+    "name": "Grinders Farm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grinders-farm",
+    "url": "https://clawhub.ai/skills/grinders-farm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grinders-farm-eaba1abac8df30d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Requires grinders-farm CLI + openclaw-plugin-grinders-farm before use. Maps intents to grinders_farm. 使用前需先安装 grinders-farm 与 openclaw-plugin-grinders-farm。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "visawang",
+      "userId": "s178cgen31dka1ntpgx3a8cxwd83gsna",
+      "displayName": "visaWang",
+      "image": "https://avatars.githubusercontent.com/u/19553693?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.3.3",
+      "createdAt": 1775280969346,
+      "changelog": "Bilingual onboarding/docs, demo farm image, and clearer prerequisites for first-time users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51440eba362d59500dfd65dbc4d2986cd66a2bcaa60d096730a60245f2cc64ac"
+}

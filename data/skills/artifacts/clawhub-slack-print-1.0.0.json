@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slack-print@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slack_print",
+  "skill": {
+    "id": 22871,
+    "skillKey": "clawhub-slack-print",
+    "name": "Slack Print"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slack-print",
+    "url": "https://clawhub.ai/skills/slack-print",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slack-print-ceb3a44e9247bf2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Print files uploaded to a Slack channel. Supports smart matching: multiple files, filename prefix/keyword filter, file type (pdf/image), and time range (\"jus..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caigang78",
+      "userId": "publishers:caigang78",
+      "displayName": "caigang78",
+      "image": "https://avatars.githubusercontent.com/u/7031130?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 448,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772950418355,
+      "changelog": "- Initial release of slack-print.\n- Enables printing of files uploaded to Slack channels with smart matching.\n- Supports filters by file count, filename, file type (pdf/image), and recent upload time.\n- Users can also print text content directly.\n- Includes basic printer and print queue management commands.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:62f420bc852534641697b40793d873a88016142ae8b569446be6a730e0dc719b"
+}

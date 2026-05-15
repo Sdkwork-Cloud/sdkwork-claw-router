@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50697,
+  "uuid": "skill-clawhub-grafana-api",
+  "skillKey": "clawhub-grafana-api",
+  "name": "Grafana",
+  "summary": "Grafana API integration with managed authentication. This is a write-capable integration — it can read, create, update, and delete dashboards, data sources,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grafana_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Grafana API integration with managed authentication",
+        "This is a write-capable integration — it can read, create, update, and delete dashboards, data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grafana-api@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grafana-api",
+      "url": "https://clawhub.ai/skills/grafana-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grafana-api",
+    "url": "https://clawhub.ai/skills/grafana-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grafana-api-ba780955a0636117.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grafana-api@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-grafana-api-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89d1e9c09b067fa642a0b453a2773ba507366248ff7c7300ecd17e0a5463ce07",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T10:25:04.000Z"
+}

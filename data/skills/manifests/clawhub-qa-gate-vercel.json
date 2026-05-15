@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50348,
+  "uuid": "skill-clawhub-qa-gate-vercel",
+  "skillKey": "clawhub-qa-gate-vercel",
+  "name": "Qa Gate Vercel",
+  "summary": "Pre-production validation gate for Vercel/Supabase/Firebase stack — generates test plans, executes test suites, validates APIs, UI, toasts, LLM output qualit...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qa_gate_vercel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guilherme Favaron",
+      "features": [
+        "Pre-production validation gate for Vercel/Supabase/Firebase stack — generates test plans, execu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qa-gate-vercel@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109181842?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qa-gate-vercel",
+      "url": "https://clawhub.ai/skills/qa-gate-vercel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qa-gate-vercel",
+    "url": "https://clawhub.ai/skills/qa-gate-vercel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qa-gate-vercel-1c569035fb581d9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qa-gate-vercel@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-qa-gate-vercel-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b43ab93c661d4e45a8805de10420a37dbac70fa30771eda597365fc86ad75f25",
+      "artifactSizeBytes": 2071
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T01:16:05.095Z"
+}

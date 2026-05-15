@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71852,
+  "uuid": "skill-clawhub-feishu-task-agent-alpha",
+  "skillKey": "clawhub-feishu-task-agent-alpha",
+  "name": "飞书任务智能体",
+  "summary": "飞书任务总入口技能。用于统一处理四类请求：一是把行动项、交付物、跟进项、拆解请求和周期性请求编排为飞书任务；二是处理未开始任务的轮询筛选与执行；三是处理“飞书任务智能体”明确注册或初始化请求；四是把当前应用内最新日报提炼成 `daily.json`。 当以下情况时使用本 Skill： (1) 用户明确要求创建任务...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_task_agent_alpha",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terry",
+      "features": [
+        "飞书任务总入口技能。用于统一处理四类请求：一是把行动项、交付物、跟进项、拆解请求和周期性请求编排为飞书任务；二是处理未开始任务的轮询筛选与执行；三是处理“飞书任务智能体”明确注册或初始化请求."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-task-agent-alpha@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18088900?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-task-agent-alpha",
+      "url": "https://clawhub.ai/skills/feishu-task-agent-alpha"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-task-agent-alpha",
+    "url": "https://clawhub.ai/skills/feishu-task-agent-alpha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-task-agent-alpha-f081e27d672a87a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-task-agent-alpha@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-task-agent-alpha-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e880ed4468e92c670df291d1431ed3d15ef47141fd13d280ad34c6ce48f3ab0",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T06:08:40.061Z"
+}

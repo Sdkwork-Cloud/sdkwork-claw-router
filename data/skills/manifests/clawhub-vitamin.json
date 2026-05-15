@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28400,
+  "uuid": "skill-clawhub-vitamin",
+  "skillKey": "clawhub-vitamin",
+  "name": "Vitamin",
+  "summary": "Track vitamin and supplement intake with goals and reminders. Use when logging supplements, setting nutrition goals, reviewing history, or scheduling doses.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vitamin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Track vitamin and supplement intake with goals and reminders",
+        "Use when logging supplements, setting nutrition goals, reviewing history, or scheduling doses."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vitamin@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vitamin",
+      "url": "https://clawhub.ai/skills/vitamin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vitamin",
+    "url": "https://clawhub.ai/skills/vitamin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vitamin-ed31e03af5ae5ef0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vitamin@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vitamin-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0837f6e4b3f5aee742f8cf34c0638cfefee21e524f4c2f0de68b1bc799ec277a",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:45:01.531Z"
+}

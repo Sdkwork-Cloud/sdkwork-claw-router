@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63935,
+  "uuid": "skill-clawhub-multi-search-aggregator",
+  "skillKey": "clawhub-multi-search-aggregator",
+  "name": "多搜索聚合器",
+  "summary": "多搜索聚合器 - 一次搜索调用多个引擎（Tavily、Brave、Perplexity），结果统一返回",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_search_aggregator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lirun26",
+      "features": [
+        "一次搜索调用多个引擎（Tavily、Brave、Perplexity），结果统一返回"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-search-aggregator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267486537?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-search-aggregator",
+      "url": "https://clawhub.ai/skills/multi-search-aggregator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-search-aggregator",
+    "url": "https://clawhub.ai/skills/multi-search-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-search-aggregator-16cf4b423f7ef8e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-search-aggregator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-search-aggregator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c78a506cab9a4e81f2fb69e7596bfe01a4799b0ebad65104b4a680b612fa9a5",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T01:48:46.509Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vouch-cli@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vouch_cli",
+  "skill": {
+    "id": 19343,
+    "skillKey": "clawhub-vouch-cli",
+    "name": "Vouch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vouch-cli",
+    "url": "https://clawhub.ai/skills/vouch-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vouch-cli-5a9c0f1a33871b73.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Signs, verifies, and manages cryptographic identity for AI agents using the Vouch CLI on Base. Use when an agent needs to: set up identity and register an ac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackpmorgan",
+      "userId": "publishers:jackpmorgan",
+      "displayName": "Jack Morgan",
+      "image": "https://avatars.githubusercontent.com/u/66273764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 620,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772487967414,
+      "changelog": "v1.0.1 — Onboarding and identity linking flow updated; improved clarity and requirements\n\n- Onboarding flow clarified: new accounts are created via X or GitHub OAuth (no email registration).\n- DNS can now only be linked as an additional identity, not for primary account creation.\n- Under-the-hood, message verification now occurs against VouchHub over direct RPC, not subgraph.\n- Documentation updated to accurately describe the new onboarding and account creation process.\n- Minor improvements and clarifications throughout the skill documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:972e3f7e4f487a15b68fed30433105aabba68d6fdb4ee435a2df83886dbeff80"
+}

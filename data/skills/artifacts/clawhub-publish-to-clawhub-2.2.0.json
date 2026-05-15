@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/publish-to-clawhub@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publish_to_clawhub",
+  "skill": {
+    "id": 31063,
+    "skillKey": "clawhub-publish-to-clawhub",
+    "name": "Publish To ClawHub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publish-to-clawhub",
+    "url": "https://clawhub.ai/skills/publish-to-clawhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publish-to-clawhub-467358eda74fa3e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prepare and publish a local skill to ClawHub and GitHub using a workflow that keeps the local publish directory clean. Use this skill when the user wants to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zackz2025",
+      "userId": "s170j68xt01c8f6tms54d7c56h83e533",
+      "displayName": "Zack",
+      "image": "https://avatars.githubusercontent.com/u/224656189?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1775154983307,
+      "changelog": "Documented the validated clean-local workflow: improve skill, publish to ClawHub first, then add a temporary README for GitHub and remove it locally after sync.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2848650c05091c9c4473fc6bb36a6ade21b44f6770a4d5b034c3aea3b59dde02"
+}

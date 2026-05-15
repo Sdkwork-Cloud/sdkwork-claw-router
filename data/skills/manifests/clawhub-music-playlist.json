@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60002,
+  "uuid": "skill-clawhub-music-playlist",
+  "skillKey": "clawhub-music-playlist",
+  "name": "Music Playlist",
+  "summary": "歌单推荐/乐评。场景歌单、心情推荐、音乐分析、歌词解读、播放列表、年度总结。Music playlist curator with mood, scene recommendations. 歌单、音乐、推荐。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_playlist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "歌单推荐/乐评。场景歌单、心情推荐、音乐分析、歌词解读、播放列表、年度总结。Music playlist curator with mood, scene recommendations",
+        "歌单、音乐、推荐。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/music-playlist@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "music-playlist",
+      "url": "https://clawhub.ai/skills/music-playlist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-playlist",
+    "url": "https://clawhub.ai/skills/music-playlist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-playlist-8277a48dca1330ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/music-playlist@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-music-playlist-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ed665073feb9af0cc3e021943ec035100a4e645aadeea6e87350aeef53b7139",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:57:52.460Z"
+}

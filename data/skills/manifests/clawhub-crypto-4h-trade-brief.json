@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64491,
+  "uuid": "skill-clawhub-crypto-4h-trade-brief",
+  "skillKey": "clawhub-crypto-4h-trade-brief",
+  "name": "Crypto 4h Trade Brief",
+  "summary": "每4小时输出一次 BTC/ETH 行情复盘与可执行建议。基于 crypto-market-analyzer 的最新4h+1d数据，给出欧易（OKX）合约与现货网格的手填参数（区间、触发条件、止损止盈、仓位建议）。当用户要求“每4小时分析”“给欧易手填参数”“合约+网格参数建议”时使用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_4h_trade_brief",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hmzo",
+      "features": [
+        "每4小时输出一次 BTC/ETH 行情复盘与可执行建议。基于 crypto-market-analyzer 的最新4h+1d数据，给出欧易（OKX）合约与现货网格的手填参数（区间、触发条件、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-4h-trade-brief@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26140960?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-4h-trade-brief",
+      "url": "https://clawhub.ai/skills/crypto-4h-trade-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-4h-trade-brief",
+    "url": "https://clawhub.ai/skills/crypto-4h-trade-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-4h-trade-brief-0a6122fd155690ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-4h-trade-brief@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-4h-trade-brief-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4de55029ed2bd46a87d5dc99c7337f23198c167cacce8b576a48890f3c99031e",
+      "artifactSizeBytes": 2084
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T10:13:57.453Z"
+}

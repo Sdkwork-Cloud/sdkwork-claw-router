@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50881,
+  "uuid": "skill-clawhub-version-drift",
+  "skillKey": "clawhub-version-drift",
+  "name": "Version Drift Publish",
+  "summary": "One command to check if your entire stack is up to date. SSHes into servers, queries APIs, and compares installed versions against latest — across every serv...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.version_drift",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rtaylorgraham",
+      "features": [
+        "One command to check if your entire stack is up to date",
+        "SSHes into servers, queries APIs, and compares installed versions against latest — across every."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/version-drift@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58042830?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "version-drift",
+      "url": "https://clawhub.ai/skills/version-drift"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "version-drift",
+    "url": "https://clawhub.ai/skills/version-drift",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/version-drift-1cb16d5cf4fb56f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/version-drift@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-version-drift-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:196c00a5d334b8022f2b719eaf5fb0562347f2612d86bdfff0cd7277355fbf2c",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T10:00:44.279Z"
+}

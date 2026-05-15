@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10081,
+  "uuid": "skill-clawhub-calctl",
+  "skillKey": "clawhub-calctl",
+  "name": "Calctl",
+  "summary": "Manage Apple Calendar events via icalBuddy + AppleScript CLI",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calctl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rainbat",
+      "features": [
+        "Manage Apple Calendar events via icalBuddy + AppleScript CLI"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/calctl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2169148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "calctl",
+      "url": "https://clawhub.ai/skills/calctl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calctl",
+    "url": "https://clawhub.ai/skills/calctl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calctl-698f04115a2c583a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/calctl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-calctl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35fe3cf0242b52e7aff357757beae21aada138b73a056824b8ed9e5fc25eaa22",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-21T21:49:21.705Z"
+}

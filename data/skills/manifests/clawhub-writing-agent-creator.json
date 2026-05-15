@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56631,
+  "uuid": "skill-clawhub-writing-agent-creator",
+  "skillKey": "clawhub-writing-agent-creator",
+  "name": "自定义多agent",
+  "summary": "Generate writing agent configurations for OpenClaw. Use when the user wants to: (1) Create specialized writing agents (tech, marketing, academic, business, c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.writing_agent_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "balingsisi",
+      "features": [
+        "Generate writing agent configurations for OpenClaw",
+        "Use when the user wants to: (1) Create specialized writing agents (tech, marketing, academic, b."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/writing-agent-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17464823?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "writing-agent-creator",
+      "url": "https://clawhub.ai/skills/writing-agent-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "writing-agent-creator",
+    "url": "https://clawhub.ai/skills/writing-agent-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/writing-agent-creator-2ccf26fff975e194.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/writing-agent-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-writing-agent-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:983b10e3d1466bc65c4eb5289d425498f36aff720c156d70f50e194540d8377e",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:49:24.844Z"
+}

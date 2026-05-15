@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35415,
+  "uuid": "skill-clawhub-syniverse",
+  "skillKey": "clawhub-syniverse",
+  "name": "Syniverse",
+  "summary": "Syniverse integration. Manage data, records, and automate workflows. Use when the user wants to interact with Syniverse data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.syniverse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Syniverse integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Syniverse data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/syniverse@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "syniverse",
+      "url": "https://clawhub.ai/skills/syniverse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "syniverse",
+    "url": "https://clawhub.ai/skills/syniverse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/syniverse-e9e8a907e0602196.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/syniverse@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-syniverse-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44a255ed7faae712d43d96a0d778672a479ecef14c1ef047cdc3836b66eca0bb",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:04:13.178Z"
+}

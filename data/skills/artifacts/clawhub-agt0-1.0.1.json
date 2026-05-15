@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agt0@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agt0",
+  "skill": {
+    "id": 53250,
+    "skillKey": "clawhub-agt0",
+    "name": "agt0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agt0",
+    "url": "https://clawhub.ai/skills/agt0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agt0-6398919ec5c95337.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local-first agent storage — SQLite database, virtual filesystem, and memory in one .db file. Use when persisting agent state, querying CSV/JSONL/logs with SQ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuhao6741",
+      "userId": "s171snd2tbeeygm3yptvarnn7x83tkfm",
+      "displayName": "liuhao6741",
+      "image": "https://avatars.githubusercontent.com/u/157583880?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774084153655,
+      "changelog": "Publish from repository root skill.md (full reference, frontmatter).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e89de3ea8d426d7630f5df1bbc3c53043a676942e80eb01f5a2ab36e8c4184e"
+}

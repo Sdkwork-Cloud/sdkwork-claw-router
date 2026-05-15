@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-24h-nba-game-structure-trader@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_24h_nba_game_structure_trader",
+  "skill": {
+    "id": 30941,
+    "skillKey": "clawhub-polymarket-24h-nba-game-structure-trader",
+    "name": "Polymarket 24h Nba Game Structure Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-24h-nba-game-structure-trader",
+    "url": "https://clawhub.ai/skills/polymarket-24h-nba-game-structure-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-24h-nba-game-structure-trader-737d43e747933b3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trades structural inconsistencies across correlated NBA game markets on Polymarket by grouping moneyline, spread, O/U (full-game and 1H), and 1H moneyline ma..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diagnostikon",
+      "userId": "s17bf2qvfsqakddyh674vczxqs83fcwb",
+      "displayName": "diagnostikon",
+      "image": "https://avatars.githubusercontent.com/u/17246180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1777386291525,
+      "changelog": "SDK resilience: try/except runt apply_skill_config",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da5769e5f06789d98a73c1e6c83c1e430e827ea514ad7d93ef39e15b75df2469"
+}

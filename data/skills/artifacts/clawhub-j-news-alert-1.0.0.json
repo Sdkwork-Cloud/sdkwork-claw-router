@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/j-news-alert@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.j_news_alert",
+  "skill": {
+    "id": 67241,
+    "skillKey": "clawhub-j-news-alert",
+    "name": "News Alert | 新闻监控"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "j-news-alert",
+    "url": "https://clawhub.ai/skills/j-news-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/j-news-alert-12c9b9e83cf25882.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "监控持仓公司的最新新闻，发现重要信息立即提醒"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jearrylee",
+      "userId": "s1729ry0c8ted40cspbv47xt8h83sd43",
+      "displayName": "jearrylee",
+      "image": "https://avatars.githubusercontent.com/u/198688240?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774714054354,
+      "changelog": "初始版本：实时监控持仓公司新闻",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5aedb70cc7ba38cb521ea0c6fb770059ce29693d857fa810664030c313d6257a"
+}

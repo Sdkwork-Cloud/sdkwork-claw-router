@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20359,
+  "uuid": "skill-clawhub-shipping-page-generator",
+  "skillKey": "clawhub-shipping-page-generator",
+  "name": "shipping-page-generator",
+  "summary": "When the user wants to create or optimize a shipping or delivery information page. Also use when the user mentions \"shipping,\" \"delivery,\" \"shipping policy,\"...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shipping_page_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to create or optimize a shipping or delivery information page",
+        "Also use when the user mentions \"shipping,\" \"delivery,\" \"shipping policy,\"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shipping-page-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shipping-page-generator",
+      "url": "https://clawhub.ai/skills/shipping-page-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shipping-page-generator",
+    "url": "https://clawhub.ai/skills/shipping-page-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shipping-page-generator-da355ce232ac29dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shipping-page-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-shipping-page-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4464ef96d2dc7794f3d17a1ea55e5b334a1052b43012bb19ab990d936d877af0",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T14:25:20.501Z"
+}

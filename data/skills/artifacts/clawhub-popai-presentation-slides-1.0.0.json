@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/popai-presentation-slides@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.popai_presentation_slides",
+  "skill": {
+    "id": 54004,
+    "skillKey": "clawhub-popai-presentation-slides",
+    "name": "PopAI Presentation Slides"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "popai-presentation-slides",
+    "url": "https://clawhub.ai/skills/popai-presentation-slides",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/popai-presentation-slides-822c58b0cf790aad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create presentations (PPT) using PopAI API. Use when asked to create slides, presentations, decks, or PPT content. Has built-in research capabilities — just..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "popaiofficial",
+      "userId": "s17esxqxh3x3bzrdfc4mhgbqgn83njv1",
+      "displayName": "PopAi",
+      "image": "https://avatars.githubusercontent.com/u/269385660?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 50,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778319246847,
+      "changelog": "popai-presentation-slides 1.0.0\n\n- Initial release of the PopAI PowerPoint skill.\n- Generate presentations (PPT) using the PopAI API with built-in research and information gathering capabilities.\n- Accepts topic prompts, reference files (pptx/pdf/docx/images), PPT templates, and URLs for content sources.\n- Supports multi-round PPT modification via channel ID; template remains fixed after creation.\n- Outputs include downloadable PPTX link, web editing link, and slide preview images.\n- Real-time progress and status updates are provided during generation and revisions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3084600dbd2ab28c22dce19d9f06884a19bbe005a5fe9905c8e8ceac65f50ddd"
+}

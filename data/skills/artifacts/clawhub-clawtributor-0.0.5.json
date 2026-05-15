@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtributor@0.0.5",
+  "version": "0.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtributor",
+  "skill": {
+    "id": 11405,
+    "skillKey": "clawhub-clawtributor",
+    "name": "clawtributor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtributor",
+    "url": "https://clawhub.ai/skills/clawtributor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtributor-72b2148bdbd0ea20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Community incident reporting for AI agents. Contribute to collective security by reporting threats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davida-ps",
+      "userId": "s17ewxqmthh68xc4bv5vc6f30183jsf1",
+      "displayName": "davida-ps",
+      "image": "https://avatars.githubusercontent.com/u/232346510?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1984,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.0.5",
+      "createdAt": 1776384399530,
+      "changelog": "Release 0.0.5 via CI",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e29950eb8dfd8788f6fea40d2f2ecc9b19b90ed3176af97333ff32ac9fb02763"
+}

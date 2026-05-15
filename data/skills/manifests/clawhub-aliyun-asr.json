@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10418,
+  "uuid": "skill-clawhub-aliyun-asr",
+  "skillKey": "clawhub-aliyun-asr",
+  "name": "Aliyun Asr",
+  "summary": "Pure Aliyun ASR skill for voice message transcription, supports multiple channels including Feishu",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_asr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jixson",
+      "features": [
+        "Pure Aliyun ASR skill for voice message transcription, supports multiple channels including Fei."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aliyun-asr@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20365468?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aliyun-asr",
+      "url": "https://clawhub.ai/skills/aliyun-asr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-asr",
+    "url": "https://clawhub.ai/skills/aliyun-asr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-asr-6f0cfea1c0e271d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aliyun-asr@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-aliyun-asr-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e76e495971a92e7669298d799ee7782da69977e1dc9e14ebe6e7191c6dd346b8",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T12:05:39.716Z"
+}

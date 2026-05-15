@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/idea-storm@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idea_storm",
+  "skill": {
+    "id": 66896,
+    "skillKey": "clawhub-idea-storm",
+    "name": "Idea Storm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idea-storm",
+    "url": "https://clawhub.ai/skills/idea-storm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idea-storm-d75835caa07f094b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "工程问题的自动化迭代实验室。给定一个 idea 或工程问题，自动调研方案、设计实现、验证效果、迭代优化，结果存入 Notion。触发词：\"idea-lab\"、\"实验一下\"、\"帮我验证\"、\"迭代优化\"、\"idea 验证\"。当用户提出一个工程问题并希望自动化地调研→设计→验证→迭代时使用此 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "c4chuan",
+      "userId": "s177adg8zb81wrh2bqnvwza1x18510eg",
+      "displayName": "c4chuan",
+      "image": "https://avatars.githubusercontent.com/u/91056616?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 880,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771065476084,
+      "changelog": "- Skill renamed from \"idea-lab\" to \"idea-storm\" throughout documentation and usage.\n- Updated trigger words to reflect the new skill name (\"idea-storm\" etc.).\n- Documentation and process instructions updated to consistently use \"idea-storm\" instead of \"idea-lab\".\n- Added preferred use of Claude Code running in a Docker sandbox for implementation tasks (Phase 4).\n- Appended a detailed section describing Claude Code integration, Docker sandbox architecture, and how to invoke coding tasks securely.\n- Added helper script `scripts/run-sandbox.sh` for managing the Claude Code development environment.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f48a637cf8cc1ce6724c7a24df7fe00afadcc3874c0a5600d8a748a9c66d8eb2"
+}

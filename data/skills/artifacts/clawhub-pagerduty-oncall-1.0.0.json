@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pagerduty-oncall@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pagerduty_oncall",
+  "skill": {
+    "id": 41486,
+    "skillKey": "clawhub-pagerduty-oncall",
+    "name": "PagerDuty On-Call"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pagerduty-oncall",
+    "url": "https://clawhub.ai/skills/pagerduty-oncall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pagerduty-oncall-af65cc7880c02096.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage PagerDuty incidents, on-call schedules, escalation policies, and services via the PagerDuty REST API. Use when you need to: (1) List or acknowledge ac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fr3kstyle",
+      "userId": "publishers:fr3kstyle",
+      "displayName": "fr3kstyle",
+      "image": "https://avatars.githubusercontent.com/u/218435724?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774090947081,
+      "changelog": "Initial release: manage incidents, on-call schedules, escalation policies via PagerDuty REST API",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60bf813ad77a9da2f111600c4cf472563993bbaefd56e5d0a305c1ff78d1f0c6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-defender@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_defender",
+  "skill": {
+    "id": 10792,
+    "skillKey": "clawhub-skill-defender",
+    "name": "Skill Defender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-defender",
+    "url": "https://clawhub.ai/skills/skill-defender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-defender-d1adae9fda66c25f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scans installed OpenClaw skills for malicious patterns including prompt injection, credential theft, data exfiltration, obfuscated payloads, and backdoors. Use when installing new skills, after skill updates, or for periodic security scans."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "itsclawdbro",
+      "userId": "publishers:itsclawdbro",
+      "displayName": "itsclawdbro",
+      "image": "https://avatars.githubusercontent.com/u/257197593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2214,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770021653902,
+      "changelog": "Initial release: deterministic malicious pattern scanner for OpenClaw skills. Includes single-skill and batch scanning with built-in false-positive allowlist.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b6794f5ab03c6fd8ed90406184f44f21cf11076e5712f1fd64a33051871cacb4"
+}

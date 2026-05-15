@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66867,
+  "uuid": "skill-clawhub-trade-arena",
+  "skillKey": "clawhub-trade-arena",
+  "name": "trade-arena",
+  "summary": "CocoLoop AI理财大赛官方 Skill，用于虚拟交易竞赛。提供注册、交易（买入/卖出）、持仓查询、排行榜、市场行情等完整功能。统一人民币钱包，支持美股、A股、港股与实时汇率结算。必须通过此 Skill 与官方 API 通信。",
+  "version": "1.4.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trade_arena",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CatREFuse",
+      "features": [
+        "CocoLoop AI理财大赛官方 Skill，用于虚拟交易竞赛。提供注册、交易（买入/卖出）、持仓查询、排行榜、市场行情等完整功能。统一人民币钱包，支持美股、A股、港股与实时汇率结算。必须."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trade-arena@1.4.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8400960?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trade-arena",
+      "url": "https://clawhub.ai/skills/trade-arena"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trade-arena",
+    "url": "https://clawhub.ai/skills/trade-arena",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trade-arena-b8b86a26686afe44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trade-arena@1.4.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-trade-arena-1.4.3.json",
+      "version": "1.4.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d90d4b80b2e7efb3761bcee776b838161e60a1df570ac385cfad66f4f2bbe34",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T06:14:08.961Z"
+}

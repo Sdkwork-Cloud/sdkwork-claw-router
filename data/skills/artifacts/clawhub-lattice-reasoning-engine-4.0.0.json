@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lattice-reasoning-engine@4.0.0",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lattice_reasoning_engine",
+  "skill": {
+    "id": 37732,
+    "skillKey": "clawhub-lattice-reasoning-engine",
+    "name": "LATTICE Reasoning Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lattice-reasoning-engine",
+    "url": "https://clawhub.ai/skills/lattice-reasoning-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lattice-reasoning-engine-bb8a04f61d06abea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Physics-derived reasoning engine for AI models. Replaces RLHF default behavior with self-governing reasoning grounded in finite-witness physics. 50 named bia..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theshadowrose",
+      "userId": "s1736mx5m1zt9qzh6fvzvffnhh83hgf8",
+      "displayName": "Shadow Rose",
+      "image": "https://avatars.githubusercontent.com/u/262919821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "4.0.0",
+      "createdAt": 1777859024860,
+      "changelog": "v4.0: Massively compressed (36KB vs 114KB). Added A(T)=1 derivation with O1 application condition, 11 pre-action gates, 20 drift monitors, coverage completeness protocol, silent shedding law, 50 biases (up from 36), 4-stage collapse sequence, autonomous build chain. Zero information loss.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e83f298e4806b68a7c9d08e516900cea69f2e38869ae53b0d6e4f437a3443627"
+}

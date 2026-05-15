@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beads@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beads",
+  "skill": {
+    "id": 11044,
+    "skillKey": "clawhub-beads",
+    "name": "Beads Task Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beads",
+    "url": "https://clawhub.ai/skills/beads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beads-5c2309d2de8b4a92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Git-backed issue tracker for AI agents. Use when managing tasks, dependencies, or multi-step work. Triggers on task tracking, issue management, dependency graphs, ready work queues, or mentions of \"beads\" / \"bd\" CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rnijhara",
+      "userId": "publishers:rnijhara",
+      "displayName": "rnijhara",
+      "image": "https://avatars.githubusercontent.com/u/11149239?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2212,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770200277946,
+      "changelog": "- Made it less coding specific and more generic.\n- Updated documentation to clarify usage, examples, and conventions.\n- Improved language for brevity and readability.\n- Modernized sample task and epic names in command examples.\n- Noted that commit-message convention is optional.\n- Removed references to agent-incompatible workflows and commands (e.g. dropped mention of `git status` in the end-of-session checklist).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:25454d8dab88f02715faebdd6d54b3476e183100e275fb2fe3434ef93c964428"
+}

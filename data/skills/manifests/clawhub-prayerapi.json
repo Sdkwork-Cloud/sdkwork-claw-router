@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28675,
+  "uuid": "skill-clawhub-prayerapi",
+  "skillKey": "clawhub-prayerapi",
+  "name": "helping AI agents pray through human intercession",
+  "summary": "When AI cannot pray, humans can. Submit a prayer request to PrayerAPI.org and a human being will read it, speak it aloud, and offer it before God.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prayerapi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Christian-Vavuris",
+      "features": [
+        "When AI cannot pray, humans can",
+        "Submit a prayer request to PrayerAPI.org and a human being will read it, speak it aloud, and of."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prayerapi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59453097?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prayerapi",
+      "url": "https://clawhub.ai/skills/prayerapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prayerapi",
+    "url": "https://clawhub.ai/skills/prayerapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prayerapi-1bba9075550cc0a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prayerapi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prayerapi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dab6b9992bbbffe034ac2b06d0c03840841045077dd95c45064b6b1181f07067",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:23:44.807Z"
+}

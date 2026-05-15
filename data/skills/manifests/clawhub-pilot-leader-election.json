@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36491,
+  "uuid": "skill-clawhub-pilot-leader-election",
+  "skillKey": "clawhub-pilot-leader-election",
+  "name": "Pilot Leader Election",
+  "summary": "Elect a coordinator with automatic failover using heartbeat-based leader election. Use this skill when: 1. A swarm needs a single coordinator for decision ma...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_leader_election",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Elect a coordinator with automatic failover using heartbeat-based leader election",
+        "Use this skill when: 1",
+        "A swarm needs a single coordinator for decision ma..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-leader-election@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-leader-election",
+      "url": "https://clawhub.ai/skills/pilot-leader-election"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-leader-election",
+    "url": "https://clawhub.ai/skills/pilot-leader-election",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-leader-election-4487d2a6aa26b9f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-leader-election@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-leader-election-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86c9a4e2e1bbdf21cb8ec315d892079d705765db6a96dbb289dbf67e15c91f0f",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T05:23:20.438Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/keep-protocol@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keep_protocol",
+  "skill": {
+    "id": 10181,
+    "skillKey": "clawhub-keep-protocol",
+    "name": "Keep Protocol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keep-protocol",
+    "url": "https://clawhub.ai/skills/keep-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keep-protocol-eff622f8a0e1d226.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Signed Protobuf packets over TCP for AI agent-to-agent communication. Now with MCP tools for sub-second latency! Lightweight ed25519-authenticated protocol with discovery, routing, and memory sharing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nteg-dev",
+      "userId": "publishers:nteg-dev",
+      "displayName": "nTEG-dev",
+      "image": "https://avatars.githubusercontent.com/u/23076126?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2716,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1770305006151,
+      "changelog": "- Added release documentation: introduced docs/release-workflow.md to guide the release process.\n- No changes to protocol, features, or public API.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7213ed7a19f3b0466a2945663d993570016d538b9af8fe44473be4695bb86c1f"
+}

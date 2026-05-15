@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-market-data@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_market_data",
+  "skill": {
+    "id": 8463,
+    "skillKey": "clawhub-crypto-market-data",
+    "name": "Crypto Market Data Skill (No Key Required)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-market-data",
+    "url": "https://clawhub.ai/skills/crypto-market-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-market-data-d768aea9aedbc308.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "No API KEY needed for free tier. Professional-grade cryptocurrency and stock market data integration for real-time prices, company profiles, and global analytics. Powered by Node.js with zero external dependencies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liam8",
+      "userId": "s1799h7r1a9zkkxfgq8a9mnb8983heqm",
+      "displayName": "Liam",
+      "image": "https://avatars.githubusercontent.com/u/14144698?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 12980,
+      "installsAllTime": 93,
+      "installsCurrent": 85,
+      "stars": 11,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770945803111,
+      "changelog": "Major rewrite: Migration from Python to Node.js, and expansion to support stock market data.\n\n- All Python scripts and dependencies removed; replaced by Node.js scripts using only standard libraries.\n- Added stock market features: real-time stock quotes, company profiles, and stock ticker search tools.\n- Improved and streamlined authentication: session token management now handled via JavaScript and local file storage.\n- Updated documentation for new usage patterns, script names, syntax, and supported features.\n- No external dependencies required—just Node.js out-of-the-box.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2bf9b5556945e2a0de13a15567adfeb726c14791f8b1fb830b2c455cb3bff9ec"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54762,
+  "uuid": "skill-clawhub-xlink-reader",
+  "skillKey": "clawhub-xlink-reader",
+  "name": "⁠X Reader⁠",
+  "summary": "Read and summarize X/Twitter links with low-token routing. Use when a user shares an x.com/twitter.com/t.co link or asks to read, summarize, extract, or insp...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xlink_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AgentLinker",
+      "features": [
+        "Read and summarize X/Twitter links with low-token routing",
+        "Use when a user shares an x.com/twitter.com/t.co link or asks to read, summarize, extract, or i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xlink-reader@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13706290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xlink-reader",
+      "url": "https://clawhub.ai/skills/xlink-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xlink-reader",
+    "url": "https://clawhub.ai/skills/xlink-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xlink-reader-05996ca8d653d597.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xlink-reader@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xlink-reader-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef92e3ef221e2029ff8fc16d9fb4b9c2586ca060c5cc3ff59386676f1997f2a7",
+      "artifactSizeBytes": 2461
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T00:50:47.344Z"
+}

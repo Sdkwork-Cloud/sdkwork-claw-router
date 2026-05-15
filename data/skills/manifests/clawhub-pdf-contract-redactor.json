@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22588,
+  "uuid": "skill-clawhub-pdf-contract-redactor",
+  "skillKey": "clawhub-pdf-contract-redactor",
+  "name": "Pdf Contract Redactor",
+  "summary": "PDF contract redaction tool. Use when the user needs to redact sensitive information from scanned PDF contracts. The tool performs OCR to extract text, ident...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_contract_redactor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chan",
+      "features": [
+        "PDF contract redaction tool",
+        "Use when the user needs to redact sensitive information from scanned PDF contracts",
+        "The tool performs OCR to extract text, ident..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-contract-redactor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14889392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-contract-redactor",
+      "url": "https://clawhub.ai/skills/pdf-contract-redactor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-contract-redactor",
+    "url": "https://clawhub.ai/skills/pdf-contract-redactor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-contract-redactor-0ddf6af74036cde1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-contract-redactor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-contract-redactor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b08356974e2d55ae6efa5e1c88f2170890028679a1b640cc833dcab85391a714",
+      "artifactSizeBytes": 2387
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T17:22:36.902Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26289,
+  "uuid": "skill-clawhub-meeting-to-text",
+  "skillKey": "clawhub-meeting-to-text",
+  "name": "meeting-to-text",
+  "summary": "Create a fully local speaker-separated .txt transcript from a meeting recording, meeting screen recording, speech audio, or local video/audio file. Use this...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_to_text",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "henrCh1",
+      "features": [
+        "Create a fully local speaker-separated .txt transcript from a meeting recording, meeting screen.",
+        "Use this..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-to-text@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117563878?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-to-text",
+      "url": "https://clawhub.ai/skills/meeting-to-text"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-to-text",
+    "url": "https://clawhub.ai/skills/meeting-to-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-to-text-40ab6d8819d6efae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-to-text@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-to-text-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca0848634c3b6b80b377fa4651ba6c21dae0241494c06dec6225425aa3e2e7be",
+      "artifactSizeBytes": 2356
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T16:01:46.931Z"
+}

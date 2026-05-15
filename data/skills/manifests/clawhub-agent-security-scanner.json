@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58609,
+  "uuid": "skill-clawhub-agent-security-scanner",
+  "skillKey": "clawhub-agent-security-scanner",
+  "name": "Agent Security Skill Scanner Gitee",
+  "summary": "AI Agent 安全扫描器 - 多语言检测 + AST 分析 + 意图识别 + LLM 验证",
+  "version": "4.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_security_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "caidongyun",
+      "features": [
+        "AI Agent 安全扫描器",
+        "多语言检测 + AST 分析 + 意图识别 + LLM 验证"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-security-scanner@4.1.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1638934?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-security-scanner",
+      "url": "https://clawhub.ai/skills/agent-security-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-security-scanner",
+    "url": "https://clawhub.ai/skills/agent-security-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-security-scanner-f9663e217b3fac00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-security-scanner@4.1.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-security-scanner-4.1.6.json",
+      "version": "4.1.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b07939fef018620ae39d80d5c468023604073c5ae7567e0d2f3ffbb6beaa72f4",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T07:41:29.799Z"
+}

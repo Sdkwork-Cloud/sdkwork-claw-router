@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slipbot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slipbot",
+  "skill": {
+    "id": 12097,
+    "skillKey": "clawhub-slipbot",
+    "name": "SlipBot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slipbot",
+    "url": "https://clawhub.ai/skills/slipbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slipbot-b31c4b0c1108678a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Used to capture and organize notes, ideas, quotes, and journal entries with automatic tagging, linking, and knowledge graph maintenance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jrswab",
+      "userId": "publishers:jrswab",
+      "displayName": "Jaron Swab",
+      "image": "https://avatars.githubusercontent.com/u/1689426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1617,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770305787459,
+      "changelog": "Initial public release of Slipbot — a note, idea, and knowledge graph management assistant.\n\n- Capture and organize notes, ideas, quotes, and journal entries with automatic tagging and metadata.\n- Supports source linking, smart tag extraction, and filename generation based on content.\n- Maintains a JSON knowledge graph index, with bidirectional linking between related notes.\n- Automated validation of note structure and removal of broken links.\n- Provides concise responses and can answer natural language queries about stored notes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:38c7022ef4a4344d8366101f65c5a9508f8bbe92fdb439816e6796338792d7c4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flyclaw-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyclaw_bak",
+  "skill": {
+    "id": 57957,
+    "skillKey": "clawhub-flyclaw-bak",
+    "name": "Flyclaw Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyclaw-bak",
+    "url": "https://clawhub.ai/skills/flyclaw-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyclaw-bak-8d3ed6292bd70f80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-source flight aggregation — tickets, nonstop, round-trip, cabin. 航班机票/零登录/零API, zero login, zero account, zero API key. Pure Python, no browser. 机票价格/航..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qizha",
+      "userId": "s177dfw60a5pnhzyq1h7c8te3x83rean",
+      "displayName": "qizha",
+      "image": "https://avatars.githubusercontent.com/u/6111637?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775774468088,
+      "changelog": "Initial public release of flyclaw-bak:\n\n- Multi-source flight search and aggregation (5 major sources included).\n- No login, account, or API key required; all core features work out-of-the-box.\n- Supports search by flight number, route, city (Chinese/English/IATA), round-trip, cabin class, and direct/connecting flights.\n- Outputs results in JSON by default; table format available.\n- No personal data collected or stored; open source under Apache-2.0.\n- Fully documented CLI usage, parameters, and installation instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e43cc53ab1917ef6e7f0a9ce4933d63b37151c402e1d4840938adb79fd25531"
+}

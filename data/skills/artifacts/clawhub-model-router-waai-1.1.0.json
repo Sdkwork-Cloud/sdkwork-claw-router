@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-router-waai@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_router_waai",
+  "skill": {
+    "id": 25708,
+    "skillKey": "clawhub-model-router-waai",
+    "name": "Model Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-router-waai",
+    "url": "https://clawhub.ai/skills/model-router-waai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-router-waai-3f35ab3a0b955313.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Model Router - Parallel multi-LLM invocation with result merging. Use when: need better answers, compare model outputs, or get best result from multiple LLMs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huaibuer",
+      "userId": "s170v8tp8dw4ms0rm7pa0bkc618429c7",
+      "displayName": "HuaiBuer",
+      "image": "https://avatars.githubusercontent.com/u/71966998?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773656183447,
+      "changelog": "- Added detailed \"When to Use\" section outlining practical scenarios for model routing.\n- Expanded and clarified feature and supported model tables, including Gemini (Google).\n- Added response structure example to show result format.\n- Included installation instructions for easier onboarding.\n- Improved overall documentation layout and bilingual clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b1781ff1dcf7ca2b4df871d4da20e37d373afff0d141af9b2082d52362788e2"
+}

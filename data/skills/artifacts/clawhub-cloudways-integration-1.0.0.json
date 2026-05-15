@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloudways-integration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudways_integration",
+  "skill": {
+    "id": 44367,
+    "skillKey": "clawhub-cloudways-integration",
+    "name": "Cloudways Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudways-integration",
+    "url": "https://clawhub.ai/skills/cloudways-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudways-integration-55da1c90dfc543a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw Cloudways integration reference and workflow guide. Use when creating, editing, reviewing, debugging, or extending the built-in Cloudways feature; w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maverick-software",
+      "userId": "s172zy52hz8d9fxcmyr9padghd842s7c",
+      "displayName": "maverick-software",
+      "image": "https://avatars.githubusercontent.com/u/85259593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775141856204,
+      "changelog": "Initial release: bundle OpenClaw Cloudways integration workflow, gateway/UI references, API notes, and scrubbed example payloads without local secrets.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55c2b9adb2e9dfe6187ae461f5c540810a614de4af19929dbc1e637788d838a3"
+}

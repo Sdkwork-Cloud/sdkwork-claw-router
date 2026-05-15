@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9351,
+  "uuid": "skill-clawhub-parallel-ai-research",
+  "skillKey": "clawhub-parallel-ai-research",
+  "name": "Research",
+  "summary": "Conduct open-ended research on a topic, building a living markdown document. Supports interactive and deep research modes.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parallel_ai_research",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BrennerSpear",
+      "features": [
+        "Conduct open-ended research on a topic, building a living markdown document",
+        "Supports interactive and deep research modes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/parallel-ai-research@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12127609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "parallel-ai-research",
+      "url": "https://clawhub.ai/skills/parallel-ai-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parallel-ai-research",
+    "url": "https://clawhub.ai/skills/parallel-ai-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parallel-ai-research-73a31de344cb5a39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/parallel-ai-research@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-parallel-ai-research-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7659b2b0d651232d669a282fb7155fbad471bed608fdc147a2ac7db412d6e876",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T00:11:23.881Z"
+}

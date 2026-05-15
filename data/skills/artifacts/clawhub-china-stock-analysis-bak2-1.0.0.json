@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-stock-analysis-bak2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_stock_analysis_bak2",
+  "skill": {
+    "id": 28797,
+    "skillKey": "clawhub-china-stock-analysis-bak2",
+    "name": "China Stock Analysis.Bak2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-stock-analysis-bak2",
+    "url": "https://clawhub.ai/skills/china-stock-analysis-bak2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-stock-analysis-bak2-0eab785afad02888.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Chinese stock prices (A-shares, HK stocks) and provide investment recommendations. Use when the user asks about stock analysis for Chinese companies,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "make453",
+      "userId": "s171bnm4ey1a62whjsxt9brj4d83qreq",
+      "displayName": "make453",
+      "image": "https://avatars.githubusercontent.com/u/200362598?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 307,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774109233010,
+      "changelog": "- Initial release of china-stock-analysis skill.\n- Supports stock analysis and investment recommendations for Chinese A-shares (Shanghai, Shenzhen), Hong Kong stocks, and US stocks.\n- Provides a structured workflow for analysis: fetch price data, gather context, and deliver formatted investment recommendations.\n- Includes clear buy/hold/sell signal guidelines and a mandatory risk disclaimer.\n- References a list of common Chinese stock codes for convenience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d01fa29b31cda4f7930f1f7ce5d2c0458d071e2391cf8070b1d25b878084158"
+}

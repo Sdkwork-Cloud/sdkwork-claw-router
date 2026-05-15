@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63944,
+  "uuid": "skill-clawhub-qclaw-token-monitor",
+  "skillKey": "clawhub-qclaw-token-monitor",
+  "name": "Token消耗监控优化",
+  "summary": "AI Token消耗监控优化工具。读取会话日志，统计Token消耗，检测异常模式（短时激增、重复失败等），提供优化建议，生成消耗趋势报告。 中文优先，面向QClaw/OpenClaw用户。 当用户说\"Token消耗\"、\"费用多少\"、\"Token统计\"、\"超支\"、\"优化建议\"时触发。 Keywords: Token...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qclaw_token_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "AI Token消耗监控优化工具。读取会话日志，统计Token消耗，检测异常模式（短时激增、重复失败等），提供优化建议，生成消耗趋势报告。 中文优先，面向QClaw/OpenClaw用户。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qclaw-token-monitor@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qclaw-token-monitor",
+      "url": "https://clawhub.ai/skills/qclaw-token-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qclaw-token-monitor",
+    "url": "https://clawhub.ai/skills/qclaw-token-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qclaw-token-monitor-089d7f4fbe1a3a6d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qclaw-token-monitor@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qclaw-token-monitor-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d594a4bc93fb9762537d2bbc3a2c267c8a82c50c8af9ad3d6405b22714f2ff6a",
+      "artifactSizeBytes": 2524
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T23:32:32.267Z"
+}

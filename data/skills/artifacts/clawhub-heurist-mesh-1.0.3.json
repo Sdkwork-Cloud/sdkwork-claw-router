@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/heurist-mesh@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.heurist_mesh",
+  "skill": {
+    "id": 9560,
+    "skillKey": "clawhub-heurist-mesh",
+    "name": "Heurist Mesh Crypto Analysis Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "heurist-mesh",
+    "url": "https://clawhub.ai/skills/heurist-mesh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/heurist-mesh-e46d4269229f85c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time crypto token data, DeFi analytics, blockchain data, Twitter/X social intelligence, enhanced web search, crypto project search all in one Skill. For..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wjw12",
+      "userId": "publishers:wjw12",
+      "displayName": "JW",
+      "image": "https://avatars.githubusercontent.com/u/8369203?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 2756,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 10,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771966073918,
+      "changelog": "Version 1.0.3\n\n- Overhauled setup instructions to include three payment options: Heurist API key, x402 on-chain (USDC), and Inflow (USDC agentic payment platform).\n- Added concise quickstart instructions and tool descriptions for all major agents.\n- Added references for payment setup: `heurist-api-key.md`, `x402-payment.md`, and `inflow-payment.md`.\n- Updated tool and agent documentation to highlight recommended and new capabilities.\n- Improved guidance for tool discovery, pricing, and schema inspection.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f9e29828ac8004e43743b8f6c3237ae4fa98dfff487e6ce0bd47e1ba4ca47d47"
+}

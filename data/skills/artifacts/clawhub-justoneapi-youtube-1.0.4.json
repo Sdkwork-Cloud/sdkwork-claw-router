@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justoneapi-youtube@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_youtube",
+  "skill": {
+    "id": 32996,
+    "skillKey": "clawhub-justoneapi-youtube",
+    "name": "YouTube API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-youtube",
+    "url": "https://clawhub.ai/skills/justoneapi-youtube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-youtube-ac0b24d3857dfb8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze YouTube workflows with JustOneAPI, including video Details and channel Videos."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justoneapi",
+      "userId": "s17ayjxfh4atw7gc7dgat7n40x845p6b",
+      "displayName": "justoneapi",
+      "image": "https://avatars.githubusercontent.com/u/139095138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776924530562,
+      "changelog": "- The operation name for YouTube video details was updated from getVideoDetailV1 to getYoutubeVideoDetailV1 across documentation and operation metadata.\n- All usage instructions, representative operations, and endpoint references now consistently use the new operation name.\n- No behavioral or parameter changes; this update aligns documentation and endpoint identifiers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5fe124bdbc3a7d5d501ee19101efdb824ffa1da178f8d28406069c5e09473cfb"
+}

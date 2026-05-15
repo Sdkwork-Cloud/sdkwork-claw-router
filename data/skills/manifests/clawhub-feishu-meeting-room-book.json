@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68337,
+  "uuid": "skill-clawhub-feishu-meeting-room-book",
+  "skillKey": "clawhub-feishu-meeting-room-book",
+  "name": "Feishu Meeting Room Book",
+  "summary": "飞书会议室偏好初始化与预定。适用于：初始化/刷新个人会议室列表、创建会议并预定会议室、 给已有会议补订会议室。使用本地状态文件保存首选会议室列表；第一版只维护一个 base 地（默认城市，内部字段为 default_city） 的会议室列表，跨城市时只创建会议不自动订房。",
+  "version": "0.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_meeting_room_book",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flyinghanger",
+      "features": [
+        "飞书会议室偏好初始化与预定。适用于：初始化/刷新个人会议室列表、创建会议并预定会议室、 给已有会议补订会议室。使用本地状态文件保存首选会议室列表；第一版只维护一个 base 地（默认城市，内."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-meeting-room-book@0.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251348879?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-meeting-room-book",
+      "url": "https://clawhub.ai/skills/feishu-meeting-room-book"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-meeting-room-book",
+    "url": "https://clawhub.ai/skills/feishu-meeting-room-book",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-meeting-room-book-512b667a97da1718.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-meeting-room-book@0.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-meeting-room-book-0.0.4.json",
+      "version": "0.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a76fb9e8b7d29fb48271cff110a1a54cc606495734f207e9103e600f3dd73ce",
+      "artifactSizeBytes": 2318
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T04:19:17.646Z"
+}

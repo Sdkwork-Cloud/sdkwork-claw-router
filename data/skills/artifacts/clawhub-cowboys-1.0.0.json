@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cowboys@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cowboys",
+  "skill": {
+    "id": 54038,
+    "skillKey": "clawhub-cowboys",
+    "name": "Cowboys"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cowboys",
+    "url": "https://clawhub.ai/skills/cowboys",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cowboys-f86aa868c3b4d5a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed insights into the Dallas Cowboys' $11B valuation, AT&T Stadium revenue model, Jerry Jones' ownership, and franchise business operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 111,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777313020261,
+      "changelog": "- Initial release of the Cowboys skill.\n- Provides a comprehensive overview of the Dallas Cowboys franchise, including historical timeline, business model, and financial data.\n- Highlights the team's $11B valuation, unique stadium revenue streams, and Jerry Jones' influential ownership.\n- Includes key statistics, moat analysis, and interesting facts about the Cowboys' brand and operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3819a6087d296807d7c42835f36a9dfd5535df8386f02561cdc3fc9c641a207"
+}

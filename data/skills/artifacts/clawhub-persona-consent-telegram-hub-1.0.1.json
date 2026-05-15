@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/persona-consent-telegram-hub@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_consent_telegram_hub",
+  "skill": {
+    "id": 26127,
+    "skillKey": "clawhub-persona-consent-telegram-hub",
+    "name": "Persona Consent Telegram (Hub)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-consent-telegram-hub",
+    "url": "https://clawhub.ai/skills/persona-consent-telegram-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-consent-telegram-hub-0e40e8af6f0876d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gates persona sharing behind explicit Telegram owner approval and connects to persona-service for external chatbots. Use when a user asks for persona, profil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kanishkarandunu",
+      "userId": "publishers:kanishkarandunu",
+      "displayName": "Kanishka Randunu",
+      "image": "https://avatars.githubusercontent.com/u/29160859?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 373,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772663670893,
+      "changelog": "Fix persona_client.sh KeyError when submitting result; add E2E test and troubleshooting docs (no personal endpoints)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:636937cbb8528cc06f5eaa22820bd05ed3f19bf1d2767742c9aba2b323a9a215"
+}

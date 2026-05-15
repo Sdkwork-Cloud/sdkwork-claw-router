@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41231,
+  "uuid": "skill-clawhub-xiaopi-skill-vetter",
+  "skillKey": "clawhub-xiaopi-skill-vetter",
+  "name": "Xiaopi Skill Vetter",
+  "summary": "Security-first skill vetting for AI agents. Use before installing any skill from ClawdHub, GitHub, or other sources. Checks for red flags, permission scope,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaopi_skill_vetter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adin",
+      "features": [
+        "Security-first skill vetting for AI agents",
+        "Use before installing any skill from ClawdHub, GitHub, or other sources",
+        "Checks for red flags, permission scope,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaopi-skill-vetter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22701008?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaopi-skill-vetter",
+      "url": "https://clawhub.ai/skills/xiaopi-skill-vetter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaopi-skill-vetter",
+    "url": "https://clawhub.ai/skills/xiaopi-skill-vetter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaopi-skill-vetter-d39393411196e0bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaopi-skill-vetter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaopi-skill-vetter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e62df433ef6dbcf9246b86d516c0c79a91d21e45087beb479f48391077e7daba",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T19:06:51.205Z"
+}

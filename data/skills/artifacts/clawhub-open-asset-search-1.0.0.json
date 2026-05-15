@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/open-asset-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_asset_search",
+  "skill": {
+    "id": 26806,
+    "skillKey": "clawhub-open-asset-search",
+    "name": "OpenAssetSearch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-asset-search",
+    "url": "https://clawhub.ai/skills/open-asset-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-asset-search-b99d933d0d96fcb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and directly download free images, audio, music, sound effects, videos, and 3D models from WebSim's large, auth-free digital asset library."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "upintheairsheep",
+      "userId": "s179a4nhxggd8mtgx9w74t49ax86bgka",
+      "displayName": "upintheairsheep",
+      "image": "https://avatars.githubusercontent.com/u/43690204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772684924943,
+      "changelog": "Initial release: Search and download real-world digital assets from WebSim’s large, open community library.\n\n- Search images, audio, music, sound effects, videos, and 3D models by filename or description.\n- No API key, signup, or authentication required.\n- Returns direct, public download URLs for each asset.\n- Supports filtering by media type, result count, and pagination.\n- Ideal for games, presentations, creative projects, and prototypes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5ba64981690721a12af1e27a3a167b8bd011c86ad3e3d48f00b1be4e02b391e9"
+}

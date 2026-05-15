@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-mindful@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_mindful",
+  "skill": {
+    "id": 55216,
+    "skillKey": "clawhub-daily-mindful",
+    "name": "Daily Mindful"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-mindful",
+    "url": "https://clawhub.ai/skills/daily-mindful",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-mindful-964857578bbec182.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily mindfulness in 3–5 minutes — morning breathing exercise, guided meditation, and evening reflection prompt. Practical calm and stress relief for busy pe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiajiaoy",
+      "userId": "s17cev4f59prejmqpq8qft2ffn83g42e",
+      "displayName": "jiajiaoy",
+      "image": "https://avatars.githubusercontent.com/u/254620896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777286827985,
+      "changelog": "- Updated the skill description for improved clarity and focus on daily 3–5 minute mindfulness practices.\n- Added a new README.md file to the project.\n- No changes to workflow or feature set; documentation and presentation improved for broader accessibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ddbcfadd440eddab9c2a56eca0680f3012f4d8eb3e5e16973dffbc34197d371"
+}

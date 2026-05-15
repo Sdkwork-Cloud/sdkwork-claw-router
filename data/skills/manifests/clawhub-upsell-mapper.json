@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43047,
+  "uuid": "skill-clawhub-upsell-mapper",
+  "skillKey": "clawhub-upsell-mapper",
+  "name": "Upsell Mapper",
+  "summary": "Map product relationships and purchase sequence patterns to identify the best cross-sell triggers at checkout, post-purchase, and in creator content.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upsell_mapper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Map product relationships and purchase sequence patterns to identify the best cross-sell trigge."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upsell-mapper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upsell-mapper",
+      "url": "https://clawhub.ai/skills/upsell-mapper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upsell-mapper",
+    "url": "https://clawhub.ai/skills/upsell-mapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upsell-mapper-054776c8e5f45fad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upsell-mapper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-upsell-mapper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2416a8ad24df39d5e6aede39d9f54bd5d10f97f4e5c81686bf024962fc5b86a9",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T05:53:15.559Z"
+}

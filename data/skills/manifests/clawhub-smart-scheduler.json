@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21562,
+  "uuid": "skill-clawhub-smart-scheduler",
+  "skillKey": "clawhub-smart-scheduler",
+  "name": "Smart Scheduler",
+  "summary": "Coordinate meeting requests, proposed time slots, confirmations, and ICS exports from a local scheduling ledger.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_scheduler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mehul Bhojraj Upase",
+      "features": [
+        "Coordinate meeting requests, proposed time slots, confirmations, and ICS exports from a local s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-scheduler@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59685273?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-scheduler",
+      "url": "https://clawhub.ai/skills/smart-scheduler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-scheduler",
+    "url": "https://clawhub.ai/skills/smart-scheduler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-scheduler-a319a0c923791173.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-scheduler@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-scheduler-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5b6d1a0ff49b8bd3b3b3700b745fecab69ac369eff8ec4df32f60b3c8accc97",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T21:20:29.951Z"
+}

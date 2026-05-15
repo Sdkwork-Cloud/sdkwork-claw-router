@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/compound-mind@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compound_mind",
+  "skill": {
+    "id": 20383,
+    "skillKey": "clawhub-compound-mind",
+    "name": "CompoundMind"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compound-mind",
+    "url": "https://clawhub.ai/skills/compound-mind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compound-mind-2490a7cc4a064949.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Experience distillation engine that turns raw daily memory logs into compounding intelligence. Extracts patterns, generates briefings, tracks growth metrics,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cassh100k",
+      "userId": "publishers:cassh100k",
+      "displayName": "Cassh",
+      "image": "https://avatars.githubusercontent.com/u/128089099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 547,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772043200420,
+      "changelog": "v0.1.0: Experience distillation - turns daily logs into compounding intelligence. Briefings, growth, patterns.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:599db5539398c4335f587d37aaf1c7f752367f7d14710fe242aa434d4916d2c5"
+}

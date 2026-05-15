@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55416,
+  "uuid": "skill-clawhub-shp",
+  "skillKey": "clawhub-shp",
+  "name": "shapefile",
+  "summary": "Inspect, explain, validate, and convert ESRI Shapefile datasets, including `.shp/.shx/.dbf/.prj` sidecar requirements, CRS detection, field-name/type limits,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jvy",
+      "features": [
+        "Inspect, explain, validate, and convert ESRI Shapefile datasets, including `.shp/.shx/.dbf/.prj."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5337221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shp",
+      "url": "https://clawhub.ai/skills/shp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shp",
+    "url": "https://clawhub.ai/skills/shp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shp-ffae9b9adbe4a1b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:feedf063b414a3eda71632448556b1023491049c035f08d3cf9a6cecddc02b8d",
+      "artifactSizeBytes": 2306
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T01:29:48.845Z"
+}

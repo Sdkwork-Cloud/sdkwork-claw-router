@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context7-mcp-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context7_mcp_skill",
+  "skill": {
+    "id": 20979,
+    "skillKey": "clawhub-context7-mcp-skill",
+    "name": "Context7 MCP Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context7-mcp-skill",
+    "url": "https://clawhub.ai/skills/context7-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context7-mcp-skill-b59e9657599e665d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query up-to-date library documentation and code examples using Context7 MCP. Use when you need current, version-specific documentation for npm packages, Pyth..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jolestar",
+      "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+      "displayName": "jolestar",
+      "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 499,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772551541059,
+      "changelog": "- Initial release of context7-mcp-skill.\n- Enables querying up-to-date, version-specific documentation and code examples for libraries via Context7 MCP.\n- Supports npm packages, Python libraries, and others.\n- Requires the uxc skill and network access to mcp.context7.com.\n- Provides CLI tools to resolve library names and query documentation.\n- Includes usage instructions and example commands for quick reference.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:793e7bbadbdb56ab9515ceb0f4203e0464bd3f67d429174257e94317e7fe466d"
+}

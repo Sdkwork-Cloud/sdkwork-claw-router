@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70283,
+  "uuid": "skill-clawhub-story-bozo",
+  "skillKey": "clawhub-story-bozo",
+  "name": "story-bozo",
+  "summary": "网文章节分镜转化技能。将小说章节内容或分镜内容转化为富有画面感、节奏感和悬念感的立体分镜。 使用场景： - 用户说\"帮我优化这章的分镜\"、\"把这个章节改成分镜脚本\" - 用户说\"这个情节太平淡了，帮我增加爽感\" - 用户说\"根据这些分镜内容写成立体分镜\" - 用户提供小说章节，要求增强画面感和节奏感 - 用户说\"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.story_bozo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bozoyan",
+      "features": [
+        "网文章节分镜转化技能。将小说章节内容或分镜内容转化为富有画面感、节奏感和悬念感的立体分镜。 使用场景：",
+        "用户说\"帮我优化这章的分镜\"、\"把这个章节改成分镜脚本\"",
+        "用户说\"这个情节太平淡了，帮我增加爽感\"",
+        "用户说\"根据这些分镜内容写成立体分镜\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/story-bozo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4261158?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "story-bozo",
+      "url": "https://clawhub.ai/skills/story-bozo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "story-bozo",
+    "url": "https://clawhub.ai/skills/story-bozo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/story-bozo-60f9ee923f660029.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/story-bozo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-story-bozo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73df22c7ac434dd107af8273f298f66b1e199fb80bf21c3e3e71b264fdc6a4d1",
+      "artifactSizeBytes": 2773
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T12:03:19.543Z"
+}

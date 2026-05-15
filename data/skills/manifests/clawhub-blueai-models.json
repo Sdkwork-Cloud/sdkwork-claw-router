@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38625,
+  "uuid": "skill-clawhub-blueai-models",
+  "skillKey": "clawhub-blueai-models",
+  "name": "Blueai Models",
+  "summary": "Configure and manage AI models from BlueAI unified proxy service for OpenClaw. Use when: (1) adding new models to openclaw.json, (2) choosing the right model...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blueai_models",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dr-xiaoming",
+      "features": [
+        "Configure and manage AI models from BlueAI unified proxy service for OpenClaw",
+        "Use when: (1) adding new models to openclaw.json, (2) choosing the right model..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blueai-models@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88608717?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blueai-models",
+      "url": "https://clawhub.ai/skills/blueai-models"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blueai-models",
+    "url": "https://clawhub.ai/skills/blueai-models",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blueai-models-fee502fd072f96f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blueai-models@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blueai-models-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b80be52badf1731c46dbf05550b2b7dd40bc5c943b90b8dfc17bd082315bf1e",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T08:49:59.965Z"
+}

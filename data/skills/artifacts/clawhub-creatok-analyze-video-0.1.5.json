@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/creatok-analyze-video@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creatok_analyze_video",
+  "skill": {
+    "id": 20959,
+    "skillKey": "clawhub-creatok-analyze-video",
+    "name": "CreatOK Analyze Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creatok-analyze-video",
+    "url": "https://clawhub.ai/skills/creatok-analyze-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creatok-analyze-video-059d429d5afdcfea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when analyzing a TikTok video or breaking down its script and structure."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newt0n",
+      "userId": "s174fngkz37jkjd8hvyyck8t4983gafs",
+      "displayName": "Newton",
+      "image": "https://avatars.githubusercontent.com/u/1225198?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 529,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1775380386622,
+      "changelog": "Patch release: bump from 0.1.4 to 0.1.5 only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:754038113ba9b8dbada3c9b08c33c4d81514ca904abba5d97715641897f452d8"
+}

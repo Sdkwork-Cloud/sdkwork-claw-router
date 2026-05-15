@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65907,
+  "uuid": "skill-clawhub-metric-attribution",
+  "skillKey": "clawhub-metric-attribution",
+  "name": "Aloudata CAN SKILLS - metric-attribution",
+  "summary": "对指标波动进行综合归因诊断，定位导致指标变化的关键因子、维度和外部事件。当用户需要分析指标波动原因、定位指标变化的根因、做因子拆解归因（如 GMV = UV × 转化率 × 客单价）、或理解指标为什么涨跌时，必须使用此 Skill。 触发场景包括但不限于：用户提到\"归因\"\"归因分析\"\"波动分析\"\"波动归因\"\"根因...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metric_attribution",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jackyujun",
+      "features": [
+        "对指标波动进行综合归因诊断，定位导致指标变化的关键因子、维度和外部事件。当用户需要分析指标波动原因、定位指标变化的根因、做因子拆解归因（如 GMV = UV × 转化率 × 客单价）、或理解."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/metric-attribution@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4506268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "metric-attribution",
+      "url": "https://clawhub.ai/skills/metric-attribution"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metric-attribution",
+    "url": "https://clawhub.ai/skills/metric-attribution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metric-attribution-2cbc5a75cbed23b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/metric-attribution@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-metric-attribution-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2eca49ad30781da93a5667c86d501b880ef8877b155f7b7b77ffc0b193c83bc",
+      "artifactSizeBytes": 2451
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T14:38:24.671Z"
+}

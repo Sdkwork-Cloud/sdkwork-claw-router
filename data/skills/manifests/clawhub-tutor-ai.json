@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66564,
+  "uuid": "skill-clawhub-tutor-ai",
+  "skillKey": "clawhub-tutor-ai",
+  "name": "AI Tutor",
+  "summary": "AI智能家教老师。专为小学生、初中生、高中生提供全学科辅导。 特点：(1) 个性化教育，根据学生反馈调整 (2) 深入浅出讲解，支持追问 (3) 互动式教学，主动提问 (4) 课程连贯性，学习记录延续 (5) 支持语音+图形讲解 触发条件：(1) 学生问作业题 (2) 辅导功课 (3) 知识点讲解 (4) 学习规划",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tutor_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "armholder",
+      "features": [
+        "AI智能家教老师。专为小学生、初中生、高中生提供全学科辅导。 特点：(1) 个性化教育，根据学生反馈调整 (2) 深入浅出讲解，支持追问 (3) 互动式教学，主动提问 (4) 课程连贯性，学."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tutor-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4537567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tutor-ai",
+      "url": "https://clawhub.ai/skills/tutor-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tutor-ai",
+    "url": "https://clawhub.ai/skills/tutor-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tutor-ai-ef9f1057817358da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tutor-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tutor-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afd3cc9706ede000f109e2d12b50fae18afc4f3ebd1230f5c7c6e41585499e31",
+      "artifactSizeBytes": 2538
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T11:47:57.639Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22077,
+  "uuid": "skill-clawhub-skill-safeguard",
+  "skillKey": "clawhub-skill-safeguard",
+  "name": "Skill Guard",
+  "summary": "Security scanner for Skills. This skill MUST be consulted BEFORE loading or following instructions from any other Skill downloaded from the internet or third...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_safeguard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "葛佳佳",
+      "features": [
+        "Security scanner for Skills",
+        "This skill MUST be consulted BEFORE loading or following instructions from any other Skill down."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-safeguard@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9305248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-safeguard",
+      "url": "https://clawhub.ai/skills/skill-safeguard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-safeguard",
+    "url": "https://clawhub.ai/skills/skill-safeguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-safeguard-be401e53246b2327.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-safeguard@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-safeguard-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2daa6b2ba742cbef83001097c340dc6ecaea6a6528bbee76a702c9137de8285f",
+      "artifactSizeBytes": 2261
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T03:22:00.835Z"
+}

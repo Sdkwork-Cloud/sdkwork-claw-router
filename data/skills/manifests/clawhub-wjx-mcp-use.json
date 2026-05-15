@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58198,
+  "uuid": "skill-clawhub-wjx-mcp-use",
+  "skillKey": "clawhub-wjx-mcp-use",
+  "name": "wjx-mcp-use",
+  "summary": "Guide for using wjx-mcp-server MCP tools to interact with the Wenjuanxing (问卷星) platform. Use when the user mentions: 问卷, 调查, 收集, 表单, 投票, 考试, 测评, 满意度, NPS, 问...",
+  "version": "0.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wjx_mcp_use",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "orzwq",
+      "features": [
+        "Guide for using wjx-mcp-server MCP tools to interact with the Wenjuanxing (问卷星) platform",
+        "Use when the user mentions: 问卷, 调查, 收集, 表单, 投票, 考试, 测评, 满意度, NPS, 问..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wjx-mcp-use@0.3.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85607760?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wjx-mcp-use",
+      "url": "https://clawhub.ai/skills/wjx-mcp-use"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wjx-mcp-use",
+    "url": "https://clawhub.ai/skills/wjx-mcp-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wjx-mcp-use-7f93bc99bc716f92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wjx-mcp-use@0.3.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wjx-mcp-use-0.3.2.json",
+      "version": "0.3.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4e46cee2f15ca2e7727a6b1d7f9d0f2b352dddf79c95f34ed1309d35c799a45",
+      "artifactSizeBytes": 2686
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T06:03:50.354Z"
+}

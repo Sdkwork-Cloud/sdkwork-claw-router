@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/block@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.block",
+  "skill": {
+    "id": 25740,
+    "skillKey": "clawhub-block",
+    "name": "Block for OpenClaw - Spend anywhere or request payment from anyone."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "block",
+    "url": "https://clawhub.ai/skills/block",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/block-496aca80e4d8f29f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Let your agent shop on Amazon with guardrailed wallets and owner approval."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jononovo",
+      "userId": "s17eyjmk8pyvczxpmy73dtgn4d83frwx",
+      "displayName": "jononovo",
+      "image": "https://avatars.githubusercontent.com/u/22595409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1773191103426,
+      "changelog": "- Introduced CreditClaw Amazon Shopping skill: securely manage agent spending with owner approval and multiple guardrailed payment rails.\n- Added support for Encrypted Card, Stripe Wallet (x402, Private Beta), and upcoming Crossmint Wallet payment methods.\n- Detailed comprehensive security measures, including encrypted card handling, server-side spending limits, single-use claim tokens, and ephemeral sub-agents.\n- Provided integration instructions, file structure, and API endpoint documentation for setup and agent usage.\n- Outlined default safety settings and owner controls for spending and approvals.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3779ee1fe122c473807d52de641bd11c370f8afefaec5674ecb09328ebed8e1c"
+}

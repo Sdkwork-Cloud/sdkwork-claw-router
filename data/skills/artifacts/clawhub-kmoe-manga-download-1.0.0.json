@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kmoe-manga-download@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kmoe_manga_download",
+  "skill": {
+    "id": 21296,
+    "skillKey": "clawhub-kmoe-manga-download",
+    "name": "Kmoe Manga Download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kmoe-manga-download",
+    "url": "https://clawhub.ai/skills/kmoe-manga-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kmoe-manga-download-93f1a341f0b5afe0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download manga from Kmoe (kxx.moe / mox.moe) with concurrent downloads, credential management, and automation callbacks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "inphinitiz",
+      "userId": "s176zp7k7d49qaptz59wn8448h84g213",
+      "displayName": "InphinitiZ",
+      "image": "https://avatars.githubusercontent.com/u/9105620?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 514,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772348696629,
+      "changelog": "Initial release with Kmoe manga download support:\n\n- Download manga from Kmoe (kxx.moe / mox.moe) in EPUB or MOBI formats using the `kmdr` CLI.\n- Supports batch and concurrent downloads, account authentication, and credential pool management.\n- Automate post-download actions with callback scripts.\n- Includes configuration options for download location, proxy, and mirror switching.\n- Detailed help with error handling and tips for efficient manga downloading.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:889c84f1b1f9ed0db60c55a2fbe75b507f4a3c40b8305b7cb04c031cd435d357"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47649,
+  "uuid": "skill-clawhub-release-notes-humanizer",
+  "skillKey": "clawhub-release-notes-humanizer",
+  "name": "Release Notes Humanizer",
+  "summary": "Turn a raw git log, PR title list, or changelog dump into customer-facing release notes that read like a human wrote them. Detects categories (new feature /...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.release_notes_humanizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Turn a raw git log, PR title list, or changelog dump into customer-facing release notes that re.",
+        "Detects categories (new feature /..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/release-notes-humanizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "release-notes-humanizer",
+      "url": "https://clawhub.ai/skills/release-notes-humanizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "release-notes-humanizer",
+    "url": "https://clawhub.ai/skills/release-notes-humanizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/release-notes-humanizer-c68beef41e517301.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/release-notes-humanizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-release-notes-humanizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6545d55d349d5d42c5a35edec9536ee9937237f8d49bec520d3c7554995bfe90",
+      "artifactSizeBytes": 2565
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T23:36:26.621Z"
+}

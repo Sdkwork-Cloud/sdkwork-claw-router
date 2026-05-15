@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63396,
+  "uuid": "skill-clawhub-kmdr",
+  "skillKey": "clawhub-kmdr",
+  "name": "kmdr - Kmoe Manga Downloader",
+  "summary": "Kmoe 漫画下载器。支持搜索漫画、下载漫画、管理凭证池等。当用户想要从 Kmoe 网站下载漫画、搜索漫画、管理下载账号配额时触发此 skill。",
+  "version": "1.0.0-a0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kmdr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chrisis58",
+      "features": [
+        "Kmoe 漫画下载器。支持搜索漫画、下载漫画、管理凭证池等。当用户想要从 Kmoe 网站下载漫画、搜索漫画、管理下载账号配额时触发此 skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kmdr@1.0.0-a0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88528574?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kmdr",
+      "url": "https://clawhub.ai/skills/kmdr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kmdr",
+    "url": "https://clawhub.ai/skills/kmdr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kmdr-8eb1b8c928ea29cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kmdr@1.0.0-a0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kmdr-1.0.0-a0.json",
+      "version": "1.0.0-a0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:effb00875f10189c6a6c1ae117f64762b7ab1b12355667bcb102e5a23e5049e5",
+      "artifactSizeBytes": 2356
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T11:19:06.841Z"
+}

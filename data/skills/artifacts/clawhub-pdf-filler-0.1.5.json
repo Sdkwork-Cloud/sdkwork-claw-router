@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-filler@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_filler",
+  "skill": {
+    "id": 46860,
+    "skillKey": "clawhub-pdf-filler",
+    "name": "Pdf Filler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-filler",
+    "url": "https://clawhub.ai/skills/pdf-filler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-filler-aa7e74a0ccde9d09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract and fill PDF AcroForm fields with a multi-backend fallback chain. Reads field schemas (text inputs, checkboxes, radio buttons, dropdowns, multi-line..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qubit999",
+      "userId": "s176g8zvpqvnvp5cyxzh7mzz2h84tddc",
+      "displayName": "qubit999",
+      "image": "https://avatars.githubusercontent.com/u/64468515?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1778064323445,
+      "changelog": "pdf-filler 0.1.5\n\n- Updated version metadata and documentation to 0.1.5 in SKILL.md.\n- Documentation improvements: clarified handling for unset checkboxes and radios in values JSON, including new summary fields and CLI options.\n- Added references to new CLI options: --default-unset-radios (pick default radio selections) in addition to --default-unset-checkboxes.\n- No functional code changes; doc/metadata update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac412b1c3aab5a785c323ecb6c93f4e884a7cb98f7efc1e004dd2c496c906e94"
+}

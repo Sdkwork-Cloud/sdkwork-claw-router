@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23084,
+  "uuid": "skill-clawhub-bitquery-graphql-skill",
+  "skillKey": "clawhub-bitquery-graphql-skill",
+  "name": "Bitquery GraphQL Skill",
+  "summary": "Use Bitquery GraphQL through UXC for onchain trades, transfers, token holder analysis, balances, and market structure queries across supported networks, with...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitquery_graphql_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Use Bitquery GraphQL through UXC for onchain trades, transfers, token holder analysis, balances."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bitquery-graphql-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bitquery-graphql-skill",
+      "url": "https://clawhub.ai/skills/bitquery-graphql-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitquery-graphql-skill",
+    "url": "https://clawhub.ai/skills/bitquery-graphql-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitquery-graphql-skill-a76800b6ae5e51ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bitquery-graphql-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bitquery-graphql-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ec95270d03ef8f87786727e07081b01dc9b7406195fd79db03eb917f39e582a",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T15:11:25.065Z"
+}

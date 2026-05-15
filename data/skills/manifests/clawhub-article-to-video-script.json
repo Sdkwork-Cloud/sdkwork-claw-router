@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21121,
+  "uuid": "skill-clawhub-article-to-video-script",
+  "skillKey": "clawhub-article-to-video-script",
+  "name": "ARTICLE_TO_VIDEO_SCRIPT",
+  "summary": "Convert pasted articles, research reports, blog posts, and long-form content into a structured commentary video script with sections for HOOK, BODY, and LIGH...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_to_video_script",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danielfoch",
+      "features": [
+        "Convert pasted articles, research reports, blog posts, and long-form content into a structured."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/article-to-video-script@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152220262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "article-to-video-script",
+      "url": "https://clawhub.ai/skills/article-to-video-script"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-to-video-script",
+    "url": "https://clawhub.ai/skills/article-to-video-script",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-to-video-script-d37ac68f1c40e681.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/article-to-video-script@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-article-to-video-script-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10e97761cebe02f90dc6fb9c36c5a39f194d706e0da8658b6f425c2aa64e807a",
+      "artifactSizeBytes": 2481
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T22:11:05.570Z"
+}

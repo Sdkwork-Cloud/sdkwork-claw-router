@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31350,
+  "uuid": "skill-clawhub-saleslens",
+  "skillKey": "clawhub-saleslens",
+  "name": "Saleslens",
+  "summary": "SalesLens integration. Manage Organizations, Users. Use when the user wants to interact with SalesLens data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.saleslens",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SalesLens integration",
+        "Manage Organizations, Users",
+        "Use when the user wants to interact with SalesLens data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/saleslens@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "saleslens",
+      "url": "https://clawhub.ai/skills/saleslens"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "saleslens",
+    "url": "https://clawhub.ai/skills/saleslens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/saleslens-f733605dd11c3fe9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/saleslens@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-saleslens-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ce7f9c27492ebe06d4b788e64114480d18a4029cdf7795490dc282d58d458f5",
+      "artifactSizeBytes": 1822
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:36:43.106Z"
+}

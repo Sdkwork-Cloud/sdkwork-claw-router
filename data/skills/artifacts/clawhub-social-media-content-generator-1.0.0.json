@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-media-content-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_media_content_generator",
+  "skill": {
+    "id": 43307,
+    "skillKey": "clawhub-social-media-content-generator",
+    "name": "Social Media Content Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-media-content-generator",
+    "url": "https://clawhub.ai/skills/social-media-content-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-media-content-generator-e8748376d7a72569.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate tailored social media posts from any content for Twitter/X threads, LinkedIn articles, Instagram captions, and Facebook posts in one workflow."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "noahcraft-open",
+      "userId": "s17b98ep12pn9e895pdbc1311s84v6ex",
+      "displayName": "noahcraft-open",
+      "image": "https://avatars.githubusercontent.com/u/274974039?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777503123372,
+      "changelog": "Social Media Content Generator 1.0.0\n\n- Initial release.\n- Instantly converts blog posts, URLs, or topics into ready-to-use social media content for Twitter/X, LinkedIn, Instagram, and Facebook.\n- Follows detailed platform-specific guidelines for post length, structure, tone, and hashtags.\n- Supports content repurposing, product promotion, and weekly content planning across multiple channels.\n- Includes an easy step-by-step workflow and clear output templates for each platform.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1af6f1794fb9be52493d20a1b65f36db667b6f65eee4a4c7293709cae0983cd6"
+}

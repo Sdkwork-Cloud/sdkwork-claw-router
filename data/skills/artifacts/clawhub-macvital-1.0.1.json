@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/macvital@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macvital",
+  "skill": {
+    "id": 33923,
+    "skillKey": "clawhub-macvital",
+    "name": "Macvital"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macvital",
+    "url": "https://clawhub.ai/skills/macvital",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macvital-a9662b46cef130df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check macOS hardware health: CPU usage, RAM pressure, disk space, temperatures, and top processes. Returns a quick status summary or full breakdown. USE WHEN..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wrentheai",
+      "userId": "publishers:wrentheai",
+      "displayName": "wrentheai",
+      "image": "https://avatars.githubusercontent.com/u/257617545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773878383384,
+      "changelog": "macvital 1.0.1\n\n- Internal update: scripts/macvital.py modified.\n- No user-facing changes documented.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:021776a9040d8b3869967710546bd30a4cff7216d82304ca3ffeb609de498c10"
+}

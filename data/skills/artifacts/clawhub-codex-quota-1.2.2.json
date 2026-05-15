@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codex-quota@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_quota",
+  "skill": {
+    "id": 8928,
+    "skillKey": "clawhub-codex-quota",
+    "name": "Codex Quota"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-quota",
+    "url": "https://clawhub.ai/skills/codex-quota",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-quota-5a8025b99dba445f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check OpenAI Codex CLI rate limit status (daily/weekly quotas) using local session logs. Portable Python script. Reads ~/.codex/sessions/ for quota data. Whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "odrobnik",
+      "userId": "s175mv7e1vzhser8sz79yq23fd83h54z",
+      "displayName": "Oliver Drobnik",
+      "image": "https://avatars.githubusercontent.com/u/333270?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6091,
+      "installsAllTime": 17,
+      "installsCurrent": 16,
+      "stars": 3,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1772570400235,
+      "changelog": "fix: use /Users/oliver/clawd for workspace root to preserve symlink paths",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6f35a9a7d96e13d532cdf62f0e56f292226af72068a2bf50979df8a4b3b85dee"
+}

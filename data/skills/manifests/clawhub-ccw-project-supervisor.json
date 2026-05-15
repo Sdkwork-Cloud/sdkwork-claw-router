@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27561,
+  "uuid": "skill-clawhub-ccw-project-supervisor",
+  "skillKey": "clawhub-ccw-project-supervisor",
+  "name": "CCW Project Supervisor",
+  "summary": "supervise software project execution with openclaude and claude code workflow. use when the user wants an ai supervisor to drive workflow-plan, /issue/plan,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccw_project_supervisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Majmunu",
+      "features": [
+        "supervise software project execution with openclaude and claude code workflow",
+        "use when the user wants an ai supervisor to drive workflow-plan, /issue/plan,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ccw-project-supervisor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85326299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ccw-project-supervisor",
+      "url": "https://clawhub.ai/skills/ccw-project-supervisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccw-project-supervisor",
+    "url": "https://clawhub.ai/skills/ccw-project-supervisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccw-project-supervisor-abb3aa1472618b71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ccw-project-supervisor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ccw-project-supervisor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb86f4073b5afb8aefaf9553dbce83257c735e426fb891a413fe859b52dce354",
+      "artifactSizeBytes": 2279
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T09:49:36.583Z"
+}

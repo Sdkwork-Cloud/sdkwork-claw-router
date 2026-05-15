@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deterministic-calc-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deterministic_calc_skill",
+  "skill": {
+    "id": 31684,
+    "skillKey": "clawhub-deterministic-calc-skill",
+    "name": "deterministic-calc-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deterministic-calc-skill",
+    "url": "https://clawhub.ai/skills/deterministic-calc-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deterministic-calc-skill-86987f7f9c55e004.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides secure, sandboxed execution of mathematical expressions and code to deliver exact computation results without model guesswork."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hardtothinkausername",
+      "userId": "s174xc42z1vz1m335fb6dxg35183ge31",
+      "displayName": "HardToThinkAUsername",
+      "image": "https://avatars.githubusercontent.com/u/42826599?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774340320426,
+      "changelog": "Initial release of deterministic-calc-skill:\n\n- Introduces functions for deterministic mathematical and code execution tasks, avoiding model-generated calculation errors.\n- Provides safe, sandboxed calculation functions: calculate(expression) and safe_eval(expression).\n- Adds ability to execute arbitrary Python code (run_python) and shell commands (run_shell), with safety caveats.\n- Includes clear API documentation, usage examples, and installation instructions.\n- Highlights security recommendations for safe operation in production environments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9278910809b0bb8f91dcfb7807fcd3b84ff159e070f359a17f85f8dc13f9d919"
+}

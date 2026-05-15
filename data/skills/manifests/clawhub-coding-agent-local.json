@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39486,
+  "uuid": "skill-clawhub-coding-agent-local",
+  "skillKey": "clawhub-coding-agent-local",
+  "name": "Coding Agent Local",
+  "summary": "Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (sp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coding_agent_local",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andy27725",
+      "features": [
+        "Delegate coding tasks to Codex, Claude Code, or Pi agents via background process",
+        "Use when: (1) building/creating new features or apps, (2) reviewing PRs (sp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coding-agent-local@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259773669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coding-agent-local",
+      "url": "https://clawhub.ai/skills/coding-agent-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coding-agent-local",
+    "url": "https://clawhub.ai/skills/coding-agent-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coding-agent-local-6358e828f47907f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coding-agent-local@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coding-agent-local-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f33b79a74f8ebcb4f4966aaa9f7af67f4ab21458c2e7ac2c20734ee5b4f934e3",
+      "artifactSizeBytes": 2553
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T14:38:27.059Z"
+}

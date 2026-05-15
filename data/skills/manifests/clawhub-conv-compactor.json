@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70588,
+  "uuid": "skill-clawhub-conv-compactor",
+  "skillKey": "clawhub-conv-compactor",
+  "name": "Conv Compactor",
+  "summary": "多级对话压缩系统。监控上下文长度，在达到阈值时自动或手动触发压缩，将对话历史浓缩为结构化摘要，保留关键信息。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conv_compactor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sinnzen",
+      "features": [
+        "多级对话压缩系统。监控上下文长度，在达到阈值时自动或手动触发压缩，将对话历史浓缩为结构化摘要，保留关键信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/conv-compactor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130019564?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "conv-compactor",
+      "url": "https://clawhub.ai/skills/conv-compactor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conv-compactor",
+    "url": "https://clawhub.ai/skills/conv-compactor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conv-compactor-820ab30183adab65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/conv-compactor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-conv-compactor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca7dcb33efa1fd9ce7638dcaf94f6804f9c86ffc15957764d593aefe5f16e619",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T09:47:35.596Z"
+}

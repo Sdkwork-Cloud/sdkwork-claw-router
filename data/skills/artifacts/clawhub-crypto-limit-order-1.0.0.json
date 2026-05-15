@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-limit-order@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_limit_order",
+  "skill": {
+    "id": 54767,
+    "skillKey": "clawhub-crypto-limit-order",
+    "name": "Crypto limit orders — gasless, non-custodial"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-limit-order",
+    "url": "https://clawhub.ai/skills/crypto-limit-order",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-limit-order-687caae9d9a0141e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crypto limit orders. Gasless, oracle-protected execution across 8 EVM chains."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eranp-orbs",
+      "userId": "s1789z9gme6hjt89mbfd852wy183ng7a",
+      "displayName": "Eranp-orbs",
+      "image": "https://avatars.githubusercontent.com/u/76778405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 69,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778138478311,
+      "changelog": "Initial release of crypto-limit-order: decentralized, gasless, oracle-protected crypto limit orders across 8 EVM chains.\n\n- Enables non-custodial spot limit order creation, signing, and submission on 8 EVM-compatible chains\n- Provides authoritative relay endpoints and per-chain adapter addresses\n- Includes full parameter normalization, typed-data payload generation, approval/signature instructions, and lifecycle management guidance\n- Relies on local, instruction-based workflow; no automatic code execution or external calls\n- Features detailed references and guardrails for agent behavior and order execution",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6064d0ed6a37a93edac5c040d8d8be5f885d94903d9dbeab26929ebdcf68d33c"
+}

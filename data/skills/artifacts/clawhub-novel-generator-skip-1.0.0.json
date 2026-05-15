@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/novel-generator-skip@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novel_generator_skip",
+  "skill": {
+    "id": 68525,
+    "skillKey": "clawhub-novel-generator-skip",
+    "name": "Novel Generator Skip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novel-generator-skip",
+    "url": "https://clawhub.ai/skills/novel-generator-skip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novel-generator-skip-7f19a8d512e2f752.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据用户提供的内容方向自动生成提示词并创作爽文小说。适用场景：(1) 用户提供小说方向/题材/关键词，(2) 需要生成章节连贯的长篇爽文，(3) 需要维护角色、地点、情节的连续性，(4) 需要为关键情节生成图解，(5) 需要记录生成失败场景以优化后续创作。支持都市、修仙、玄幻、重生、系统流等多种题材。Use wh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejianjun000",
+      "userId": "s17fatepfe4j7vn2ds57jwgy4x83jwpz",
+      "displayName": "Junge",
+      "image": "https://avatars.githubusercontent.com/u/235723176?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775495202100,
+      "changelog": "- Initial release of the 爽文小说生成器 skill.\n- Supports automated prompt generation and chaptered fiction writing based on user direction or keywords.\n- Maintains story continuity with a `.learnings/` memory system, including roles, locations, and plot points.\n- Generates key scene diagrams using Mermaid or image tools.\n- Records failed or poor-quality generations for self-improvement.\n- Supports multiple popular Chinese fiction genres such as 都市, 修仙, 玄幻, 重生, and 系统流.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba942ae5d9c216c84ef34dd77bd95975a59abac19c7e8e3a5fcb6753dbd71ec2"
+}

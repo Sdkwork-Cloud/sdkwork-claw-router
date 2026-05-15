@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29302,
+  "uuid": "skill-clawhub-verified-humanizer",
+  "skillKey": "clawhub-verified-humanizer",
+  "name": "Verified Humanizer",
+  "summary": "Transform AI-generated content into natural, human-sounding writing, measure the improvement, and optionally verify the result.",
+  "version": "0.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.verified_humanizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nutstrut",
+      "features": [
+        "Transform AI-generated content into natural, human-sounding writing, measure the improvement, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/verified-humanizer@0.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204641859?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "verified-humanizer",
+      "url": "https://clawhub.ai/skills/verified-humanizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "verified-humanizer",
+    "url": "https://clawhub.ai/skills/verified-humanizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/verified-humanizer-2e141caf5663124d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/verified-humanizer@0.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-verified-humanizer-0.0.7.json",
+      "version": "0.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2747b92c8a38f323d3a272cbb956fa3549f6afd39f9d9d197c76f373e9347f1",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T21:00:32.267Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/morning-flights@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morning_flights",
+  "skill": {
+    "id": 54582,
+    "skillKey": "clawhub-morning-flights",
+    "name": "Search Morning Flights — Early Departures, Dawn Flights, First Flight Out, AM Flight Deals"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morning-flights",
+    "url": "https://clawhub.ai/skills/morning-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morning-flights-2f82dad1bf28d99b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find the earliest departing flights of the day — maximize your day at the destination by arriving before noon. Sorted by departure time. Also supports: fligh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1776080853034,
+      "changelog": "Renamed and optimized per naming methodology v3",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bee60f87f3f3490b20a0976a6c615cc3382714d7cea353c2caa8571f91c81877"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toutiao-trending@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toutiao_trending",
+  "skill": {
+    "id": 72026,
+    "skillKey": "clawhub-toutiao-trending",
+    "name": "Toutiao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toutiao-trending",
+    "url": "https://clawhub.ai/skills/toutiao-trending",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toutiao-trending-e808f52735855154.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "检索并摘要今日头条公开文章、视频和话题，提供标题、作者、发布时间及互动数据的轻量分析和提醒。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 402,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773736056745,
+      "changelog": "Version 0.1.0 of toutiao-hot-trend skill\n\n- Initial release with support for retrieving and summarizing trending content from 今日头条 (Toutiao).\n- Enables keyword-based article/video search and summarization, with fields like title, author, publish time, interaction stats, and tags.\n- Supports generating summaries of channel distribution and topical statistics.\n- Automatically extracts public video metadata (title, description, interactions) without downloading content.\n- Designed for lightweight analysis and notifications of public content only, with compliance guidelines for responsible use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae0b3a44a42bd7ee73b71d323321bc32b029a25b778ac9b8168db6bd9a6c44f5"
+}

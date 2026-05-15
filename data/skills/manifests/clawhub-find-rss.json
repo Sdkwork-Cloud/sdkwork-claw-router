@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19939,
+  "uuid": "skill-clawhub-find-rss",
+  "skillKey": "clawhub-find-rss",
+  "name": "Find RSS",
+  "summary": "Discover RSS and Atom feeds for any website. Use when the user wants to find RSS feeds, subscribe to website updates, or locate syndication feeds for news ag...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_rss",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhe (Phil) Yang",
+      "features": [
+        "Discover RSS and Atom feeds for any website",
+        "Use when the user wants to find RSS feeds, subscribe to website updates, or locate syndication."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-rss@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/860739?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-rss",
+      "url": "https://clawhub.ai/skills/find-rss"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-rss",
+    "url": "https://clawhub.ai/skills/find-rss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-rss-11d8032186e4ba54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-rss@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-rss-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d218d419de7fb82c332cd40150d493d64d73d56065cbafce935cecc16833a6a",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T11:27:26.787Z"
+}

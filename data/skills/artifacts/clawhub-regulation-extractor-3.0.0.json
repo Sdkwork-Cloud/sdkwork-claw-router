@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/regulation-extractor@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.regulation_extractor",
+  "skill": {
+    "id": 65087,
+    "skillKey": "clawhub-regulation-extractor",
+    "name": "Regulation Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "regulation-extractor",
+    "url": "https://clawhub.ai/skills/regulation-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/regulation-extractor-3d30b6fb387d9e9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从建筑工程规范PDF中结构化提取条文并同步到飞书多维表格。支持PDF双文字层（原文+OCR）去重、纯图片PDF的RapidOCR识别、条文编号切分（含带空格编号如6. 1. 2. 3）、带圈数字转换（如6.4.④→6.4.4）、OCR错误检测、质量标记、文本清洗（去换行/页眉/符号表/中英文粘连/过长切分）。输出..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youfeijun123",
+      "userId": "s170zdb3yncd66hadb2gm7z7y583rq98",
+      "displayName": "youfeijun123",
+      "image": "https://avatars.githubusercontent.com/u/264719731?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1774703103857,
+      "changelog": "从建筑工程规范PDF中结构化提取条文。支持文字层+OCR双模式、5步清洗Pipeline、过长切分、符号表过滤、飞书同步。实测21个PDF、5865条条文、96.8%干净率。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6112be107889a47b5f0988d7762e6f31aba7a5015702643e3ef2baa7572942b8"
+}

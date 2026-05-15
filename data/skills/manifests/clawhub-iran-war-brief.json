@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57177,
+  "uuid": "skill-clawhub-iran-war-brief",
+  "skillKey": "clawhub-iran-war-brief",
+  "name": "中东冲突报道",
+  "summary": "Track the latest Iran war situation with concise 5-8 headline summaries, prioritize breaking and major events, include source links, and append a three-colum...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iran_war_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linxkon",
+      "features": [
+        "Track the latest Iran war situation with concise 5-8 headline summaries, prioritize breaking an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iran-war-brief@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41234134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iran-war-brief",
+      "url": "https://clawhub.ai/skills/iran-war-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iran-war-brief",
+    "url": "https://clawhub.ai/skills/iran-war-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iran-war-brief-4fd06b14c51d344c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iran-war-brief@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-iran-war-brief-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c536462b8c86e40e132618e9602d84fca2fd70efe2021bd3a8f0261097669bc",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T04:58:33.942Z"
+}

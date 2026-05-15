@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mail-imap-sync@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mail_imap_sync",
+  "skill": {
+    "id": 65093,
+    "skillKey": "clawhub-mail-imap-sync",
+    "name": "mail-imap-sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mail-imap-sync",
+    "url": "https://clawhub.ai/skills/mail-imap-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mail-imap-sync-2db807740986c193.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "高性能IMAP邮件同步工具，支持多账号增量同步，按时间结构本地存储Markdown邮件，适合AI分析和邮件知识库构建。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bettersao",
+      "userId": "s176j8jwfn0qx0d2sjbjt1esph84c53d",
+      "displayName": "bettersao",
+      "image": "https://avatars.githubusercontent.com/u/91556602?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776075453395,
+      "changelog": "mail-imap-sync 1.0.3\n\n- 邮件本地时间区统一由 Asia/Taipei 修改为 Asia/ShangHai\n- 相关描述与示例已同步更新时区信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b93e943de38bf991aca3c02f3244a69bee6f9070cc4c13847e5099c85c70480"
+}

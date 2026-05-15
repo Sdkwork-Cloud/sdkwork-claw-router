@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73724,
+  "uuid": "skill-clawhub-zhongkao-exam-search",
+  "skillKey": "clawhub-zhongkao-exam-search",
+  "name": "中考真题检索",
+  "summary": "搜索并下载全国各地中考真题试卷。触发词：中考真题、中考试卷、中考英语、中考数学、中考语文、中考物理、中考化学、真题下载、历年中考、中考备考、中考复习、湖南中考、长沙中考、北京中考、上海中考、各省中考真题下载",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhongkao_exam_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ABill6688",
+      "features": [
+        "搜索并下载全国各地中考真题试卷。触发词：中考真题、中考试卷、中考英语、中考数学、中考语文、中考物理、中考化学、真题下载、历年中考、中考备考、中考复习、湖南中考、长沙中考、北京中考、上海中考、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhongkao-exam-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/275390810?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhongkao-exam-search",
+      "url": "https://clawhub.ai/skills/zhongkao-exam-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhongkao-exam-search",
+    "url": "https://clawhub.ai/skills/zhongkao-exam-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhongkao-exam-search-2ccb881be32501e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhongkao-exam-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhongkao-exam-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90a8d1aceb83bdfcc5c129941de74c85bcfd153b016562db9ab075bb18464097",
+      "artifactSizeBytes": 2167
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T02:42:15.656Z"
+}

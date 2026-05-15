@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-vettr@2.0.3",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_vettr",
+  "skill": {
+    "id": 15206,
+    "skillKey": "clawhub-skill-vettr",
+    "name": "Skill Vettr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-vettr",
+    "url": "https://clawhub.ai/skills/skill-vettr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-vettr-eb07370971f81854.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Static analysis security scanner for third-party OpenClaw skills. Detects eval/spawn risks, malicious dependencies, typosquatting, and prompt injection patte..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "britrik",
+      "userId": "s172xesqq5b1rv6mev9dafba8n83tdtk",
+      "displayName": "Britrik",
+      "image": "https://avatars.githubusercontent.com/u/214915099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1035,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.3",
+      "createdAt": 1771158561137,
+      "changelog": "v2.0.3 introduces .vettrignore file support, customizable vetting roots, and safer filesystem defaults.\n\n- Added support for .vettrignore files to exclude files/directories from scans using glob patterns.\n- Introduced allowCwd config option: by default, only os.tmpdir(), ~/.openclaw, and ~/Downloads are accepted as vetting roots; set allowCwd: true to scan under the current working directory.\n- Added startup verification for required .wasm artifacts with descriptive error messages when files are missing after install.\n- Added formal install spec to registry metadata declaring npm install command, required .wasm artifacts, and lifecycle script safety notes.\n- Updated documentation to explain filesystem scope, configuration, and .vettrignore format and usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e1102f2b74549b463b3d07dd8ac080389db7ab6990d63991bb52eec90bfc7924"
+}

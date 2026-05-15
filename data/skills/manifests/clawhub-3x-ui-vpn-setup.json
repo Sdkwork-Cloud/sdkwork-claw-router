@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19200,
+  "uuid": "skill-clawhub-3x-ui-vpn-setup",
+  "skillKey": "clawhub-3x-ui-vpn-setup",
+  "name": "3x-ui VPN Server Setup",
+  "summary": "Complete VPN server setup from scratch. Takes a fresh VPS (IP + root + password from hosting provider) through full server hardening and 3x-ui (Xray proxy pa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.3x_ui_vpn_setup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mikhail",
+      "features": [
+        "Complete VPN server setup from scratch",
+        "Takes a fresh VPS (IP + root + password from hosting provider) through full server hardening an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/3x-ui-vpn-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3938593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "3x-ui-vpn-setup",
+      "url": "https://clawhub.ai/skills/3x-ui-vpn-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "3x-ui-vpn-setup",
+    "url": "https://clawhub.ai/skills/3x-ui-vpn-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/3x-ui-vpn-setup-d5d9673f6c3aad51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/3x-ui-vpn-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-3x-ui-vpn-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5180b7f9e2def58fdc9122f99ee01610010ccfec9e852b277daccf1bb2430e3",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T15:58:20.696Z"
+}

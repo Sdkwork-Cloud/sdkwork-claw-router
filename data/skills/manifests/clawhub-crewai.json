@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64158,
+  "uuid": "skill-clawhub-crewai",
+  "skillKey": "clawhub-crewai",
+  "name": "Crewai",
+  "summary": "CrewAI 多智能体框架助手，精通 Agent 编排、任务分配、工具集成、工作流设计",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crewai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "CrewAI 多智能体框架助手，精通 Agent 编排、任务分配、工具集成、工作流设计"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crewai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crewai",
+      "url": "https://clawhub.ai/skills/crewai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crewai",
+    "url": "https://clawhub.ai/skills/crewai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crewai-57090017a8df3027.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crewai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crewai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afc334fa3a34e48d04f56188012e096a0207604058ee8e2695fdc46ceabb986c",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T05:56:34.492Z"
+}

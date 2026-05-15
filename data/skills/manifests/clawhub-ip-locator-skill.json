@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64486,
+  "uuid": "skill-clawhub-ip-locator-skill",
+  "skillKey": "clawhub-ip-locator-skill",
+  "name": "ip-locator",
+  "summary": "自动获取 IP 地址的归属地信息。支持查询任意 IP 或当前公网 IP。使用 ip-api.com 免费服务，无需 API 密钥。当用户需要查询 IP 位置、网络信息、归属地时触发此技能。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ip_locator_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeeKunwang",
+      "features": [
+        "自动获取 IP 地址的归属地信息。支持查询任意 IP 或当前公网 IP。使用 ip-api.com 免费服务，无需 API 密钥。当用户需要查询 IP 位置、网络信息、归属地时触发此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ip-locator-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13446759?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ip-locator-skill",
+      "url": "https://clawhub.ai/skills/ip-locator-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ip-locator-skill",
+    "url": "https://clawhub.ai/skills/ip-locator-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ip-locator-skill-ea5b7bb19d9949d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ip-locator-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ip-locator-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a12150c6f58df1eafc7ea351be32d2736afb1b2e37f7e84d791c141d5738c82",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T11:15:59.658Z"
+}

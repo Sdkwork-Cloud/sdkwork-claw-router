@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dolph-news-events@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dolph_news_events",
+  "skill": {
+    "id": 44378,
+    "skillKey": "clawhub-dolph-news-events",
+    "name": "Polymarket News Events"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dolph-news-events",
+    "url": "https://clawhub.ai/skills/dolph-news-events",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dolph-news-events-5e65ce6efc5cb02e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors 20+ premium RSS feeds for breaking news and matches stories to Polymarket markets via keyword analysis. Trades when breaking news creates an estimat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "richducat",
+      "userId": "s172pm13k2nd0gwew35ac7tnf9846t3e",
+      "displayName": "richducat",
+      "image": "https://avatars.githubusercontent.com/u/15804981?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775345575038,
+      "changelog": "- Initial release: Monitors 20+ premium news RSS feeds and matches breaking stories to Polymarket markets.\n- Uses fast pre-filtering to reject noise and prioritize high-signal breaking news.\n- Analyzes story impact and generates trade signals when estimated price impact exceeds 12%.\n- Supports dry-run mode by default; enable real trading with --live flag.\n- Includes configurable news sources, impact scoring system, and remixable template for customization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12e1297ca6cd7386834676041f3268e432c4962bbe6fad483e994abb77a74560"
+}

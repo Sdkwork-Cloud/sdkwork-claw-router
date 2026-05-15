@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26274,
+  "uuid": "skill-clawhub-goto-webinar",
+  "skillKey": "clawhub-goto-webinar",
+  "name": "Goto Webinar",
+  "summary": "GoTo Webinar integration. Manage Webinars, Organizers. Use when the user wants to interact with GoTo Webinar data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goto_webinar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "GoTo Webinar integration",
+        "Manage Webinars, Organizers",
+        "Use when the user wants to interact with GoTo Webinar data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goto-webinar@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goto-webinar",
+      "url": "https://clawhub.ai/skills/goto-webinar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goto-webinar",
+    "url": "https://clawhub.ai/skills/goto-webinar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goto-webinar-bfde56e9a7b3b69f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goto-webinar@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-goto-webinar-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25f815514655e5c08fdba70f674ab4b020e1ae11e72f8b8f4690af1e3f7da247",
+      "artifactSizeBytes": 1831
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T20:52:23.152Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cache-layer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cache_layer",
+  "skill": {
+    "id": 34911,
+    "skillKey": "clawhub-cache-layer",
+    "name": "Cache Layer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cache-layer",
+    "url": "https://clawhub.ai/skills/cache-layer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cache-layer-98a75729fed4a9d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cache layers, TTLs, invalidation, and consistency. Use when speeding reads or debugging stale data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawkk",
+      "userId": "s170g5yz1q3ksjnn4gz6v24af983h1mh",
+      "displayName": "clawkk",
+      "image": "https://avatars.githubusercontent.com/u/265748372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774606780790,
+      "changelog": "Initial release providing a structured, stage-based workflow for cache layer guidance.\n\n- Introduces a four-stage workflow: clarify context, plan approach, implement & validate, operate & iterate.\n- Includes trigger conditions to identify when to offer structured cache advice.\n- Provides a completion checklist to ensure thoroughness and explicitness.\n- Offers guidance on adapting the workflow to user preferences (structured vs freeform).\n- Emphasizes actionable, stage-by-stage recommendations with concrete examples and trade-off discussions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5ed49ee6ad576802ae2a5e2fac892edba29e37dc3ccb667e659f927058c75db"
+}

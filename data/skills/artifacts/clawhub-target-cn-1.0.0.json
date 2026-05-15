@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/target-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.target_cn",
+  "skill": {
+    "id": 66489,
+    "skillKey": "clawhub-target-cn",
+    "name": "Target Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "target-cn",
+    "url": "https://clawhub.ai/skills/target-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/target-cn-34ce9a85bac430dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供Target产品、优惠、门店及会员信息，支持购物建议和配送服务查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775974310636,
+      "changelog": "Target 塔吉特技能首次发布，为用户提供 Target 零售信息和服务查询。\n\n- 支持查询 Target 产品种类、门店与营业时间\n- 提供最新优惠、Weekly Ad、优惠券信息\n- 支持查找配送、Drive Up、自有品牌等服务\n- 提供购物与会员信息，适合需要美国家居及零售资讯的用户",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:738325f09758ba95cfe48fa449a205e477dc6a6ed415287de463eb93f0e4329f"
+}

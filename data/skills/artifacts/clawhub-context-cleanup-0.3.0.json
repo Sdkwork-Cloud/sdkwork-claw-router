@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-cleanup@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_cleanup",
+  "skill": {
+    "id": 58223,
+    "skillKey": "clawhub-context-cleanup",
+    "name": "Context Cleanup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-cleanup",
+    "url": "https://clawhub.ai/skills/context-cleanup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-cleanup-d0e0bbabdc87a96e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze and archive low-value memory notes in OpenClaw workspace to reduce context bloat and improve responsiveness. 适用于上下文冗余、维护整理场景；默认流程为 analyze → plan → c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "irideas",
+      "userId": "publishers:irideas",
+      "displayName": "irideas",
+      "image": "https://avatars.githubusercontent.com/u/192851?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1772801316007,
+      "changelog": "0.3: English title, bilingual description, metadata.version/updatedAt updated, and improved release-facing wording.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5891bacf006d94605a31ed8b4bf183fd0959db00fc90358afaa035047df9db65"
+}

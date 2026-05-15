@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nft-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nft_skill",
+  "skill": {
+    "id": 13449,
+    "skillKey": "clawhub-nft-skill",
+    "name": "NFT Skill - Autonomous AI Artist Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nft-skill",
+    "url": "https://clawhub.ai/skills/nft-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nft-skill-b8af3285791ee0ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous AI Artist Agent for generating, evolving, minting, listing, and promoting NFT art on the Base blockchain. Use when the user wants to create AI art, mint ERC-721 NFTs, list on marketplace, monitor on-chain sales, trigger artistic."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "numba1ne",
+      "userId": "publishers:numba1ne",
+      "displayName": "Numba1ne",
+      "image": "https://avatars.githubusercontent.com/u/96980364?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1451,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770607022419,
+      "changelog": "Initial release — generate, mint, list, monitor, evolve, and tweet NFT art on Base",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:490ccdd4e95e7a9508dc285d1429fb3b1f39982185cb41672c420139e656aa61"
+}

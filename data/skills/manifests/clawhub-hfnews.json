@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16352,
+  "uuid": "skill-clawhub-hfnews",
+  "skillKey": "clawhub-hfnews",
+  "name": "hfnews",
+  "summary": "Fetch and filter IT and Cybersecurity news from multiple sources, excluding politics, sports, and other unwanted topics based on a configurable blacklist.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hfnews",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huberteff",
+      "features": [
+        "Fetch and filter IT and Cybersecurity news from multiple sources, excluding politics, sports, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hfnews@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224900?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hfnews",
+      "url": "https://clawhub.ai/skills/hfnews"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hfnews",
+    "url": "https://clawhub.ai/skills/hfnews",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hfnews-23327211efb68b59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hfnews@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hfnews-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc13f6c06ddae1815746154de90df5e7569842e88175deb6d757001f4dd8a575",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T09:41:25.963Z"
+}

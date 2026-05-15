@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/failures-md@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.failures_md",
+  "skill": {
+    "id": 31033,
+    "skillKey": "clawhub-failures-md",
+    "name": "failures-md"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "failures-md",
+    "url": "https://clawhub.ai/skills/failures-md",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/failures-md-e619df321fc8c841.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A framework for AI agents to systematically record, index, and review detailed failure events to improve memory accuracy and avoid survivor bias."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sly27",
+      "userId": "publishers:sly27",
+      "displayName": "Sly27",
+      "image": "https://avatars.githubusercontent.com/u/89368497?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773559578198,
+      "changelog": "- Initial release of FAILURES.md — a best-practice framework for recording AI Agent failures.\n- Introduces a structured template for logging failures with actionable insights.\n- Highlights risks of memory compression, survivor bias, and narrative fallacy in AI documentation.\n- Recommends systematic indexing and weekly review of failure records.\n- Provides references for deeper context and tags for organization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d7ae1f7eafad4b2cfaded8ac055480a8d1d616603fd923bcfde4fb773de4c5b8"
+}

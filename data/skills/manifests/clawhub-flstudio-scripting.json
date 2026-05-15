@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12868,
+  "uuid": "skill-clawhub-flstudio-scripting",
+  "skillKey": "clawhub-flstudio-scripting",
+  "name": "FL Studio Scripting",
+  "summary": "FL Studio Python scripting for MIDI controller development, piano roll manipulation, Edison audio editing, workflow automation, and FLP file parsing with PyFLP. Use for programmatic configuration, device customization, MIDI transport, macr.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flstudio_scripting",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "delorenj",
+      "features": [
+        "FL Studio Python scripting for MIDI controller development, piano roll manipulation, Edison aud.",
+        "Use for programmatic configuration, device customization, MIDI transport, macros, and save file.",
+        "Covers all 427+ API functions across 14 MIDI scripting modules plus piano roll, Edison, and PyF."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flstudio-scripting@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242611?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flstudio-scripting",
+      "url": "https://clawhub.ai/skills/flstudio-scripting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flstudio-scripting",
+    "url": "https://clawhub.ai/skills/flstudio-scripting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flstudio-scripting-add6ee8118a0ca7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flstudio-scripting@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flstudio-scripting-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a494b23c49a8f022a95ca93a6149c50a9783186792e4a1f2c8cd37ba56b6b39",
+      "artifactSizeBytes": 2474
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T16:10:22.915Z"
+}

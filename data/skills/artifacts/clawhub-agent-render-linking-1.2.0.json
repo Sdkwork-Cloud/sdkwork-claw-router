@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-render-linking@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_render_linking",
+  "skill": {
+    "id": 24413,
+    "skillKey": "clawhub-agent-render-linking",
+    "name": "Agent Render Linking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-render-linking",
+    "url": "https://clawhub.ai/skills/agent-render-linking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-render-linking-dcabfa78f59894a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create zero-retention agent-render.com links for markdown, code, diffs, CSV, or JSON artifacts. Use when an agent needs to share a nicely rendered artifact i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baanish",
+      "userId": "s17eb791g1b5jezjemtd6ghd5985qn9q",
+      "displayName": "Aanish Bhirud",
+      "image": "https://avatars.githubusercontent.com/u/47579874?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 402,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773431722154,
+      "changelog": "Add deflate codec with verified roundtrip; document arx baseBMP/base1k/base76 tiers; Discord practical budget notes; fflate encoding requirement",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:200883ca7d103995e960f2f71351faf617db25ff3997c7d7d382404783ab54c5"
+}

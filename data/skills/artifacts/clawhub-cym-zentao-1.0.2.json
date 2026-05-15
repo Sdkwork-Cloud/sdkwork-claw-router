@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cym-zentao@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cym_zentao",
+  "skill": {
+    "id": 63055,
+    "skillKey": "clawhub-cym-zentao",
+    "name": "Cym Zentao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cym-zentao",
+    "url": "https://clawhub.ai/skills/cym-zentao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cym-zentao-b2dc2edcd843afa8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "禅道项目管理 CLI 工具 - 支持任务创建、执行查询等功能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "15334615152",
+      "userId": "s17b861whvwm1xvep7kzrysfb183gt0r",
+      "displayName": "15334615152",
+      "image": "https://avatars.githubusercontent.com/u/33169920?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774517277023,
+      "changelog": "- Added batch task creation command (create-tasks-batch) supporting JSON file input.\n- Enhanced task creation commands to accept execution name (supports fuzzy matching) in addition to execution ID.\n- Updated documentation with new examples and natural language usage tips.\n- Included example-tasks.json file for batch operations.\n- Improved overall usability and flexibility of task-related commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05567cfd0e318e061a01a0a4407e01fe9cd4f96ab524515a49acb5e43fcea9c9"
+}

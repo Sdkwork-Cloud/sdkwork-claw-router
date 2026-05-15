@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mugua-legal-assistant@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mugua_legal_assistant",
+  "skill": {
+    "id": 73467,
+    "skillKey": "clawhub-mugua-legal-assistant",
+    "name": "木瓜法律助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mugua-legal-assistant",
+    "url": "https://clawhub.ai/skills/mugua-legal-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mugua-legal-assistant-a6668de9435cef44.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供专业法律咨询，自动提取案件要素，并生成完整案件分析报告，助力法律问题解决和案件管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yzw23333",
+      "userId": "s17bva4kz7ynnrtmm5z8536s0d83ybdf",
+      "displayName": "muguafabao",
+      "image": "https://avatars.githubusercontent.com/u/55568519?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773995730477,
+      "changelog": "Version 1.0.4\n\n- Clarified `base_url` 配置说明：详细列出运行环境读取优先级，并强调与 `metadata.json` 一致。\n- 明确 `api_key` 配置读取字段（`context.credentials.api_key`）。\n- 在配置说明中补充仅需声明第三方依赖（`requests`），标准库如 `typing` 无需写入 `requirements.txt`。\n- 无功能或接口变更，文档细化配置说明，提升易用性与准确性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95e3903afbc3b1a806de1b2f1e3efe5c30775a41aab12a17d62c490d8050c444"
+}

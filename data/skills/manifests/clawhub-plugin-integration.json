@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41981,
+  "uuid": "skill-clawhub-plugin-integration",
+  "skillKey": "clawhub-plugin-integration",
+  "name": "Plugin Integration Development",
+  "summary": "Guide users to create, validate, and integrate custom plugins, tools, and commands into OpenClaw using templates, scripts, and examples.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plugin_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarcusY2k",
+      "features": [
+        "Guide users to create, validate, and integrate custom plugins, tools, and commands into OpenCla."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plugin-integration@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108665541?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plugin-integration",
+      "url": "https://clawhub.ai/skills/plugin-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plugin-integration",
+    "url": "https://clawhub.ai/skills/plugin-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plugin-integration-ac6953645cd43d71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plugin-integration@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-plugin-integration-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c886651c06b67396effe1ead31959ba3c1d8ff5ae8a2f0d326ec5728d7d7a8fb",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T21:00:27.213Z"
+}

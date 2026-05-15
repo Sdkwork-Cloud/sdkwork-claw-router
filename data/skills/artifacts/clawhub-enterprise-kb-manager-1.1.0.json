@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/enterprise-kb-manager@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enterprise_kb_manager",
+  "skill": {
+    "id": 69052,
+    "skillKey": "clawhub-enterprise-kb-manager",
+    "name": "Enterprise Knowledge Base Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enterprise-kb-manager",
+    "url": "https://clawhub.ai/skills/enterprise-kb-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enterprise-kb-manager-f0b65deb4022f3ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业知识库管理。用户需要上传文档、添加知识、更新资料、删除文档、管理知识库、初始化系统时调用。同时支持业务问答：当用户提出业务问题、公司政策、流程规范等问题时，优先检索知识库后回答。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "apanghu",
+      "userId": "s176x9xhy66hr127pqkkqwjykd86ae5c",
+      "displayName": "apanghu",
+      "image": "https://avatars.githubusercontent.com/u/45411273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 64,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778209052369,
+      "changelog": "# Enterprise Knowledge Base Manager\n\nEnterprise-grade knowledge base management system that provides powerful document management and intelligent Q&A capabilities for AI Agents.\n\n## 🚀 Core Features\n\n- **Multi-format Document Support**: PDF, DOCX, TXT, Markdown\n- **Intelligent Document Chunking**: Configurable chunk size and overlap strategies\n- **Semantic Search**: High-precision search based on vector similarity\n- **RAG Q&A**: Intelligent Q&A combining retrieval and generation\n- **Local Storage**: ChromaDB local vector database, no cloud services required\n- **Multi-API Support**: DashScope, OpenAI and other embedding models\n\n## 💡 Use Cases\n\n- Enterprise internal document management\n- Customer service knowledge base construction\n- Technical documentation retrieval\n- Training material management\n- AI Agent knowledge enhancement\n\n## 🔧 Quick Start\n\n1. Set API key: `export DASHSCOPE_API_KEY='your-key'`\n2. Initialize system: `python main.py setup`\n3. Upload documents: `python main.py upload document.pdf`\n4. Intelligent Q&A: `python main.py query \"your question\"`\n\n## 🏗️ Technical Features\n\n- Local ChromaDB storage for secure and controllable data\n- System-level directory management supporting multi-application sharing\n- High-performance vector search with <500ms response time\n- Supports 100k+ document chunks scale\n- Cross-platform compatibility (Windows, Linux, macOS)\n- Environment variable based secure API key management",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef47d65b2fea19e9190171c585d0d0bbee40fc243dc443b4d0394f2ad996602f"
+}

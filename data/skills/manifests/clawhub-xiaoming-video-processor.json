@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62177,
+  "uuid": "skill-clawhub-xiaoming-video-processor",
+  "skillKey": "clawhub-xiaoming-video-processor",
+  "name": "Video Processor",
+  "summary": "视频处理工具 - 格式转换、压缩、剪辑、字幕",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoming_video_processor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kaising-openclaw1",
+      "features": [
+        "格式转换、压缩、剪辑、字幕"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaoming-video-processor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266910723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaoming-video-processor",
+      "url": "https://clawhub.ai/skills/xiaoming-video-processor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoming-video-processor",
+    "url": "https://clawhub.ai/skills/xiaoming-video-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoming-video-processor-acf8ef68c18d6de8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaoming-video-processor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaoming-video-processor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55bb2bd3d4910c6cd91281a0bdb939618c60d5336ba17d843c5e335017c5b33b",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T07:30:35.479Z"
+}

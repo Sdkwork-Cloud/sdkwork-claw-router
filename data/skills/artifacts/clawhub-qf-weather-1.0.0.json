@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qf-weather@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qf_weather",
+  "skill": {
+    "id": 36283,
+    "skillKey": "clawhub-qf-weather",
+    "name": "Weather Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qf-weather",
+    "url": "https://clawhub.ai/skills/qf-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qf-weather-896d7eb691ce8c23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides real-time weather, hourly and 7-day forecasts by city name, coordinates, or IP without needing an API key using wttr.in and Open-Meteo services."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "371166758-qq",
+      "userId": "s17ar5a7nns9zvtefny1zx0jrs83q234",
+      "displayName": "371166758-qq",
+      "image": "https://avatars.githubusercontent.com/u/267607290?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774588461425,
+      "changelog": "Weather and forecast via wttr.in and Open-Meteo",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ca7ce0fd049c6d5b2a62d8914b7bd42b564fa4ba7c7193d32ad39ff2e135aac"
+}

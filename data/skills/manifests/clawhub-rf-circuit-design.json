@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73047,
+  "uuid": "skill-clawhub-rf-circuit-design",
+  "skillKey": "clawhub-rf-circuit-design",
+  "name": "射频电路设计与调试",
+  "summary": "提供射频电路设计与调试的专业指导。当用户询问射频电路原理图设计、PCB布局、阻抗匹配、调试技巧等问题时调用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rf_circuit_design",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mssnzxm",
+      "features": [
+        "提供射频电路设计与调试的专业指导。当用户询问射频电路原理图设计、PCB布局、阻抗匹配、调试技巧等问题时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rf-circuit-design@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3816752?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rf-circuit-design",
+      "url": "https://clawhub.ai/skills/rf-circuit-design"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rf-circuit-design",
+    "url": "https://clawhub.ai/skills/rf-circuit-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rf-circuit-design-5c7d03b057b2483d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rf-circuit-design@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-rf-circuit-design-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6cd21552a4b54119f9297f63c262093718b274bbe03b7ed4e46a7102e7886f7a",
+      "artifactSizeBytes": 2506
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:30:18.083Z"
+}

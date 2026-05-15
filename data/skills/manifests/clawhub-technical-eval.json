@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71536,
+  "uuid": "skill-clawhub-technical-eval",
+  "skillKey": "clawhub-technical-eval",
+  "name": "Technical Eval",
+  "summary": "在市场全貌清楚之后，把需要对比的技术方案并排分析，输出结构化对比和推荐结论。工作流包含：技术问题定义、全景扫描、趋势雷达、深度评估、PoC验证、风险控制、选型决策、报告生成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.technical_eval",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vincentlau2046-sudo",
+      "features": [
+        "在市场全貌清楚之后，把需要对比的技术方案并排分析，输出结构化对比和推荐结论。工作流包含：技术问题定义、全景扫描、趋势雷达、深度评估、PoC验证、风险控制、选型决策、报告生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/technical-eval@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259013171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "technical-eval",
+      "url": "https://clawhub.ai/skills/technical-eval"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "technical-eval",
+    "url": "https://clawhub.ai/skills/technical-eval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/technical-eval-ae0c341d836990ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/technical-eval@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-technical-eval-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3fa5ac7eca9981ed19cc04a4a5a6493ae339f652049c157642a656da1e415b25",
+      "artifactSizeBytes": 2898
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T05:13:21.971Z"
+}

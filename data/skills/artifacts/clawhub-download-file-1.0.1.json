@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/download-file@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.download_file",
+  "skill": {
+    "id": 21219,
+    "skillKey": "clawhub-download-file",
+    "name": "Download File"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "download-file",
+    "url": "https://clawhub.ai/skills/download-file",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/download-file-a83ca7528f452eff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download large files from HTTP/HTTPS URLs with resume support, progress monitoring, and timeout handling"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moony320",
+      "userId": "s17dbrka1nhhe68y8adw852z0n83h5mp",
+      "displayName": "moony320",
+      "image": "https://avatars.githubusercontent.com/u/1617503?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 518,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774374272569,
+      "changelog": "- SKILL.md fully updated with English documentation; original Chinese instructions replaced and scenario descriptions are now in English.\n- Examples, best practices, and error handling rewritten for clarity and international audience.\n- File download command explanations and usage flows clarified; trigger keywords listed in both English and Chinese.\n- Security section, troubleshooting steps, and recommended timeouts all revised and reworded.\n- Recommended to always use `background=true` for large files emphasized for reliability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1681c1c61956c8c2d8409d580a6096aaf3c78cd13c09cf51ab87d23b13fe1f5f"
+}

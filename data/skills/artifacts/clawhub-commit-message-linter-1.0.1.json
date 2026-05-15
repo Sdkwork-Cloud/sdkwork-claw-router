@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/commit-message-linter@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.commit_message_linter",
+  "skill": {
+    "id": 39288,
+    "skillKey": "clawhub-commit-message-linter",
+    "name": "Commit Message Linter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "commit-message-linter",
+    "url": "https://clawhub.ai/skills/commit-message-linter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/commit-message-linter-d3ff7c9d379c4d17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validate git commit messages against Conventional Commits spec and configurable rules. Use when linting commit messages, enforcing commit conventions, checki..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777593639832,
+      "changelog": "Version 1.0.1 of commit-message-linter\n\n- No file changes detected in this release.\n- Functionality and documentation remain as in the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd1a98c218addfd3f5d066980f232ef4a37010ca45a093162048630394cb415c"
+}

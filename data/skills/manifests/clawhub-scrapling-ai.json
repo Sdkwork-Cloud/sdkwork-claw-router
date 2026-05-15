@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26087,
+  "uuid": "skill-clawhub-scrapling-ai",
+  "skillKey": "clawhub-scrapling-ai",
+  "name": "Scrapling AI",
+  "summary": "Use Scrapling to scrape websites with adaptive parsing, Cloudflare bypass, and MCP support. Handles dynamic content, anti-bot detection, and provides clean H...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scrapling_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nanpaidashi",
+      "features": [
+        "Use Scrapling to scrape websites with adaptive parsing, Cloudflare bypass, and MCP support",
+        "Handles dynamic content, anti-bot detection, and provides clean H..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scrapling-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/158261059?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scrapling-ai",
+      "url": "https://clawhub.ai/skills/scrapling-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scrapling-ai",
+    "url": "https://clawhub.ai/skills/scrapling-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scrapling-ai-318ea8e1603d1b47.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scrapling-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scrapling-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:712ada4b76791ed30462dd14be13ea2b4a30c183f535cd9b721209a7ea49d196",
+      "artifactSizeBytes": 1922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T21:08:53.161Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35548,
+  "uuid": "skill-clawhub-aana-decision-log",
+  "skillKey": "clawhub-aana-decision-log",
+  "name": "AANA Decision Log Skill",
+  "summary": "Creates a compact, privacy-aware audit record for important agent decisions, checks, changes, evidence, and residual risks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aana_decision_log",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mindbomber",
+      "features": [
+        "Creates a compact, privacy-aware audit record for important agent decisions, checks, changes, e."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aana-decision-log@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42798111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aana-decision-log",
+      "url": "https://clawhub.ai/skills/aana-decision-log"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aana-decision-log",
+    "url": "https://clawhub.ai/skills/aana-decision-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aana-decision-log-64a897d33e0bf9a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aana-decision-log@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aana-decision-log-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10c7f0103d7689557851f84dd245a5e8c11d528dead6fed1c7105500e59e97b1",
+      "artifactSizeBytes": 2514
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T23:08:49.167Z"
+}

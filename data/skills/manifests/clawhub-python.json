@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8210,
+  "uuid": "skill-clawhub-python",
+  "skillKey": "clawhub-python",
+  "name": "Python Coding Guidelines",
+  "summary": "Python coding guidelines and best practices. Use when writing, reviewing, or refactoring Python code. Enforces PEP 8 style, syntax validation via py_compile, unit test execution, modern Python versions only (no EOL), uv for dependency mana.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.python",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adarsh Divakaran",
+      "features": [
+        "Python coding guidelines and best practices",
+        "Use when writing, reviewing, or refactoring Python code",
+        "Enforces PEP 8 style, syntax validation via py_compile, unit test execution, modern Python vers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/python@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16331512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "python",
+      "url": "https://clawhub.ai/skills/python"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "python",
+    "url": "https://clawhub.ai/skills/python",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/python-11a4a60b518bf249.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/python@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-python-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9abc94052c9d177b0426f3404a3fca6f1b6b2c5cc8cea8da687f88683c1d24d",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T11:05:32.964Z"
+}

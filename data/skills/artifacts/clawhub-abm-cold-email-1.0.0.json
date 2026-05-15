@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abm-cold-email@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abm_cold_email",
+  "skill": {
+    "id": 29553,
+    "skillKey": "clawhub-abm-cold-email",
+    "name": "Cold Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abm-cold-email",
+    "url": "https://clawhub.ai/skills/abm-cold-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abm-cold-email-9496af49207bab51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write B2B cold emails and follow-up sequences that get replies. Use when the user wants to write cold outreach emails, prospecting emails, cold email campaig..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariokarras",
+      "userId": "s1714hxad423m02rtb4r6n2vmn83e4f5",
+      "displayName": "Mario Karras",
+      "image": "https://avatars.githubusercontent.com/u/199292356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 299,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773801875456,
+      "changelog": "Initial release of the cold email writing skill, focused on high-reply B2B outreach.\n\n- Provides detailed frameworks for cold email and follow-up sequence writing, including subject lines, CTAs, personalization, and proof points.\n- Includes research guidance via prospect signals and Exa queries to maximize relevance.\n- Emphasizes concise, highly personalized, and peer-level communication.\n- Offers quality checks, best-practice guidelines, and extensive reference materials for benchmarks and frameworks.\n- Differentiates scope from lifecycle emails and other sales collateral.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b70b4d59dc9b8692ad60c58e0ac4089b11650d9697c5ddb7f5c12b54ca49f7b2"
+}

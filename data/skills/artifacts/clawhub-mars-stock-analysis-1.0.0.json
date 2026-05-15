@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mars-stock-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mars_stock_analysis",
+  "skill": {
+    "id": 43555,
+    "skillKey": "clawhub-mars-stock-analysis",
+    "name": "Mars Stock Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mars-stock-analysis",
+    "url": "https://clawhub.ai/skills/mars-stock-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mars-stock-analysis-60babbb9c1022a03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fundamental equity analysis and peer ranking using a structured scoring playbook (quality, balance-sheet safety, cash flow, valuation, sector adjustments, co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mars82311111",
+      "userId": "s17ft7r4x02ndyd3z98hhdv6zn83w86s",
+      "displayName": "mars82311111",
+      "image": "https://avatars.githubusercontent.com/u/265482749?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774963075788,
+      "changelog": "Initial release of fundamental equity analysis and peer ranking skill.\n\n- Performs structured analysis using a step-by-step playbook (input parsing, screening, scoring, rating, output).\n- Analyzes single or multiple stock tickers, ranks peers, and identifies the top pick with clear invalidation criteria.\n- Always states confidence level and flags stale or conflicting data.\n- User-facing output is strictly informative; no investment advice and no machine-readable JSON blocks.\n- Strictly scoped web retrieval to financial data and news; no credential handling or unrelated file/command access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:54df8c72c1e85cd1a445addd17da20c7b3b64a9c301fe8251f75174dcc3e0160"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60654,
+  "uuid": "skill-clawhub-china-stock-sector-strategy",
+  "skillKey": "clawhub-china-stock-sector-strategy",
+  "name": "China Stock Sector Strategy",
+  "summary": "板块策略分析（纯 OpenClaw 公开源版）：基于东财公开行业/概念板块快照。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_stock_sector_strategy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luyao-inc",
+      "features": [
+        "板块策略分析（纯 OpenClaw 公开源版）：基于东财公开行业/概念板块快照。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-stock-sector-strategy@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35760741?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-stock-sector-strategy",
+      "url": "https://clawhub.ai/skills/china-stock-sector-strategy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-stock-sector-strategy",
+    "url": "https://clawhub.ai/skills/china-stock-sector-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-stock-sector-strategy-f8818d69af97ae7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-stock-sector-strategy@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-stock-sector-strategy-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d4b8448892d11e1d47382cf627bd2a3d19528b02e6dea6eb13d7c952c80057f",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T07:35:39.917Z"
+}

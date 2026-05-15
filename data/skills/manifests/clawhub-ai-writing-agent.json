@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12031,
+  "uuid": "skill-clawhub-ai-writing-agent",
+  "skillKey": "clawhub-ai-writing-agent",
+  "name": "AI Writing Agent",
+  "summary": "AI writing assistant that generates structured articles, blog posts, and marketing content",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_writing_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nguyet601",
+      "features": [
+        "AI writing assistant that generates structured articles, blog posts, and marketing content"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-writing-agent@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152331554?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-writing-agent",
+      "url": "https://clawhub.ai/skills/ai-writing-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-writing-agent",
+    "url": "https://clawhub.ai/skills/ai-writing-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-writing-agent-5804af257fcfda04.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-writing-agent@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-writing-agent-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91e3021d31e50c0e530c0f6c7a7a4d3ababfd36a902980bb5a8d14edcf96890f",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:52:29.549Z"
+}

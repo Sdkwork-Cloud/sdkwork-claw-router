@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/windows-wsl2-install@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_wsl2_install",
+  "skill": {
+    "id": 22658,
+    "skillKey": "clawhub-windows-wsl2-install",
+    "name": "OpenClaw Windows WSL2 Install Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-wsl2-install",
+    "url": "https://clawhub.ai/skills/windows-wsl2-install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-wsl2-install-c2d5116f60f5b282.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete step-by-step installation guide for OpenClaw on Windows 10/11 with WSL2, includes common pitfalls and solutions from real installation experience."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aslancootl",
+      "userId": "publishers:aslancootl",
+      "displayName": "aslancootl",
+      "image": "https://avatars.githubusercontent.com/u/125963122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773649408621,
+      "changelog": "No file changes detected for this version.  \nChangelog for version 1.1.0:\n\n- Updated skill slug from `openclaw-install-workbuddy` to `openclaw-install-wsl-windows`.\n- Added English/Chinese comments, author, contributor, and license details at the top of the guide.\n- Rewrote and clarified many section headings and instructions with bilingual (English/Chinese) explanations throughout the guide.\n- Improved formatting and step-by-step instructions for better readability.\n- Updated download instructions for the WSL installer to indicate using the latest release from GitHub rather than a fixed version.\n- No core procedural steps or troubleshooting content changed; guide content remains functionally the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4697e86ab090e46ef509e5ca121545ded8315d4c07711ead4c2eba3f865359cf"
+}

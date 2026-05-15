@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61005,
+  "uuid": "skill-clawhub-imessage",
+  "skillKey": "clawhub-imessage",
+  "name": "Imessage Skill",
+  "summary": "通过 macOS Messages 应用发送和接收 iMessage 消息，支持文本和图片，管理最近聊天记录与联系人列表。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imessage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MaxStormSpace",
+      "features": [
+        "通过 macOS Messages 应用发送和接收 iMessage 消息，支持文本和图片，管理最近聊天记录与联系人列表。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/imessage@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67162380?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "imessage",
+      "url": "https://clawhub.ai/skills/imessage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imessage",
+    "url": "https://clawhub.ai/skills/imessage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imessage-2c38fed6649ab2bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/imessage@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-imessage-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:522cc5058a18623203652ba2c3fa6548ae848c31860c12ca4fb06d16cca916d2",
+      "artifactSizeBytes": 2205
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T03:11:16.011Z"
+}

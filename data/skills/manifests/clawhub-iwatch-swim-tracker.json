@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70040,
+  "uuid": "skill-clawhub-iwatch-swim-tracker",
+  "skillKey": "clawhub-iwatch-swim-tracker",
+  "name": "iwatch-swim-tracker",
+  "summary": "当用户发送的图片为 Apple Watch 健身的泳池游泳记录，或用户消息包含「游泳」关键词并附带图片时触发。识别游泳训练截图，提取距离、配速、心率等结构化数据，保存训练记录并生成趋势分析报告。适用于游泳训练数据追踪、历史对比和个性化建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iwatch_swim_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zygzzp",
+      "features": [
+        "当用户发送的图片为 Apple Watch 健身的泳池游泳记录，或用户消息包含「游泳」关键词并附带图片时触发。识别游泳训练截图，提取距离、配速、心率等结构化数据，保存训练记录并生成趋势分析报."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iwatch-swim-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37734620?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iwatch-swim-tracker",
+      "url": "https://clawhub.ai/skills/iwatch-swim-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iwatch-swim-tracker",
+    "url": "https://clawhub.ai/skills/iwatch-swim-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iwatch-swim-tracker-5e403ef11bddd4a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iwatch-swim-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-iwatch-swim-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3b245ccb4f6ee5af2a4ac698bb6014eaa42915dafdb9164638c653ae20d6edd",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T08:38:03.028Z"
+}

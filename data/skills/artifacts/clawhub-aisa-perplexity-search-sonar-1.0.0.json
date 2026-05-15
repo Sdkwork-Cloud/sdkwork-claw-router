@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aisa-perplexity-search-sonar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_perplexity_search_sonar",
+  "skill": {
+    "id": 46059,
+    "skillKey": "clawhub-aisa-perplexity-search-sonar",
+    "name": "AIsa Perplexity Search Sonar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-perplexity-search-sonar",
+    "url": "https://clawhub.ai/skills/aisa-perplexity-search-sonar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-perplexity-search-sonar-d323bbc2b13747ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run web, multi-source, or last-30-days research through AIsa. Use when: the user needs search, synthesis, competitor scans, or trend discovery. Supports rese..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baofeng-tech",
+      "userId": "s1709d2takksyrxgx2kpxs3rj18433sv",
+      "displayName": "baofeng-tech",
+      "image": "https://avatars.githubusercontent.com/u/273012742?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777049501146,
+      "changelog": "Initial release of aisa-perplexity-search-sonar.\n\n- Enables web, multi-source, and last-30-days research via AIsa.\n- Supports search, synthesis, competitor analysis, and trend discovery.\n- Provides structured, research-ready outputs suitable for briefs.\n- Requires AISA_API_KEY for API access.\n- Compatible with OpenClaw, Claude-Code, and Hermes environments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e99a65d0d5bf14c1ad6e41cfea9ab63680a3665946564ae6f2e93af91c172bf1"
+}

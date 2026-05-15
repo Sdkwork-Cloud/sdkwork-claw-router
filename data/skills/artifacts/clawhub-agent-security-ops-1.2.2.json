@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-security-ops@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_security_ops",
+  "skill": {
+    "id": 14543,
+    "skillKey": "clawhub-agent-security-ops",
+    "name": "Agent Security Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-security-ops",
+    "url": "https://clawhub.ai/skills/agent-security-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-security-ops-24a5fb2467c2849d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stop leaking secrets. Pre-commit hooks + 10-point scans + cron monitoring. Agent-ops security in one command. By The Agent Wire (theagentwire.ai)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theagentwire",
+      "userId": "s1701wshjm2c36fppx02ev6ktn85bygk",
+      "displayName": "The Agent Wire",
+      "image": "https://avatars.githubusercontent.com/u/260305314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 961,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1772905542072,
+      "changelog": "Updated newsletter CTAs with UTM tracking and skill-specific messaging",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:52e00ac48245a8c86002bbf51d027a588876a92dcd781030fec9f5fa79964f60"
+}

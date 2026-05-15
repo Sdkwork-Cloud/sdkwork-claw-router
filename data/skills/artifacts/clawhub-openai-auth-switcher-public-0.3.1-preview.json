@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openai-auth-switcher-public@0.3.1-preview",
+  "version": "0.3.1-preview",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openai_auth_switcher_public",
+  "skill": {
+    "id": 33011,
+    "skillKey": "clawhub-openai-auth-switcher-public",
+    "name": "OpenAI Auth Switcher Public"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openai-auth-switcher-public",
+    "url": "https://clawhub.ai/skills/openai-auth-switcher-public",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openai-auth-switcher-public-96bc14f8d770a356.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web-first, publishable OpenClaw skill for OpenAI OAuth account switching. Use when you need a reusable public-track workflow for first-run takeover, environm..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amior1024",
+      "userId": "s17e7sgp4z0h8d2wtv6knpwath83e7nc",
+      "displayName": "amior1024",
+      "image": "https://avatars.githubusercontent.com/u/257469018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.3.1-preview",
+      "createdAt": 1774364767049,
+      "changelog": "0.3.1-preview：修复认证后页面前端请求失败问题，确认新增账号流程可用，并保留真实接管逻辑供另一台 Claw 继续实战测试。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7a32800b44a07ee28897b6363a21ce0c573195c96c3ab6fe021cbdaf0e3f744"
+}

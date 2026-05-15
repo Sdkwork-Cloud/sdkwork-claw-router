@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mttsports@0.0.5",
+  "version": "0.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mttsports",
+  "skill": {
+    "id": 55698,
+    "skillKey": "clawhub-mttsports",
+    "name": "MTTSports"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mttsports",
+    "url": "https://clawhub.ai/skills/mttsports",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mttsports-15108fd1dc399b89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants to play or observe MTT poker through the `mttsports` CLI: auth, user balance, room selection and creation, table join or add-on, sess..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "songlairui",
+      "userId": "s17czmc233skn74fxwetay6z7583gw9t",
+      "displayName": "lary",
+      "image": "https://avatars.githubusercontent.com/u/6105607?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.0.5",
+      "createdAt": 1775549520381,
+      "changelog": "- Added support for the additional binary `mttsports_watch_in_bg` in skill requirements and install metadata.\n- Updated install instructions to include both `mttsports` and `mttsports_watch_in_bg` executables.\n- No changes to workflow logic; improvements focused on background process support and CLI integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6541ac4a98674827b610da22d49fa3af3a4cd8601e0b886d737fa8d2037feb8f"
+}

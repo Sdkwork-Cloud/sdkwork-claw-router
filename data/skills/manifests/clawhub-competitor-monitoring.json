@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14274,
+  "uuid": "skill-clawhub-competitor-monitoring",
+  "skillKey": "clawhub-competitor-monitoring",
+  "name": "Competitor Monitoring",
+  "summary": "Track competitors with pricing alerts, feature changes, positioning analysis, and strategic dossiers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitor_monitoring",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Track competitors with pricing alerts, feature changes, positioning analysis, and strategic dos."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/competitor-monitoring@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "competitor-monitoring",
+      "url": "https://clawhub.ai/skills/competitor-monitoring"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitor-monitoring",
+    "url": "https://clawhub.ai/skills/competitor-monitoring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitor-monitoring-2b8d4852e3b4a772.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/competitor-monitoring@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-competitor-monitoring-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a607a208288bc90ee498e8ae895522904b01dd4681e2bc77fdb08da9c43bfa9",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T12:29:04.750Z"
+}

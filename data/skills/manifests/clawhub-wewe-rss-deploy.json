@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62152,
+  "uuid": "skill-clawhub-wewe-rss-deploy",
+  "skillKey": "clawhub-wewe-rss-deploy",
+  "name": "wewe-rss-deploy",
+  "summary": "部署 WeWe RSS 服务，从微信公众号获取文章并生成 RSS，支持 SQLite 配置、微信读书登录和后台运行管理。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wewe_rss_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kai",
+      "features": [
+        "部署 WeWe RSS 服务，从微信公众号获取文章并生成 RSS，支持 SQLite 配置、微信读书登录和后台运行管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wewe-rss-deploy@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14113685?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wewe-rss-deploy",
+      "url": "https://clawhub.ai/skills/wewe-rss-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wewe-rss-deploy",
+    "url": "https://clawhub.ai/skills/wewe-rss-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wewe-rss-deploy-c0a7bc1190bf5100.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wewe-rss-deploy@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wewe-rss-deploy-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92f7be873a1aa662990b29e22e3be6af2cf9697ec085b400e21c937dbc5321ff",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T16:35:38.864Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huimai-translate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huimai_translate",
+  "skill": {
+    "id": 72651,
+    "skillKey": "clawhub-huimai-translate",
+    "name": "🌐 多语言翻译"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huimai-translate",
+    "url": "https://clawhub.ai/skills/huimai-translate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huimai-translate-20c129d3c67f021f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中英日韩多语言互译，保留原格式，支持整段/全文/文档翻译。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yezhaowang888-stack",
+      "userId": "s17ffxprqs0jtaf8w6n5gtnprd84cx12",
+      "displayName": "yezhaowang888-stack",
+      "image": "https://avatars.githubusercontent.com/u/274244352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 48,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778220500822,
+      "changelog": "初版发布: 中英日韩互译+格式保留+术语统一",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12db5c8f5c3709065d19a24fcc6ecc23448f2a38c3f5f80ec6fda03b0ea2def6"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67939,
+  "uuid": "skill-clawhub-anduoduo-openclaw-skill",
+  "skillKey": "clawhub-anduoduo-openclaw-skill",
+  "name": "anduoduo-openclaw-skill",
+  "summary": "面向安多多平台 OpenClaw API 的数据分析与查数技能。只要用户提到安多多、OpenClaw、云资产风险、风险聚合、风险资产盘点、整体风险情况、高风险分布、规则下钻、合规摘要、合规报告、生成查数报告、或希望基于该平台接口做数据分析与 HTML 报告，就应优先使用本技能。尤其当任务属于概览性风险查询（例如\"...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anduoduo_openclaw_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anduoduo",
+      "features": [
+        "面向安多多平台 OpenClaw API 的数据分析与查数技能。只要用户提到安多多、OpenClaw、云资产风险、风险聚合、风险资产盘点、整体风险情况、高风险分布、规则下钻、合规摘要、合规报."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anduoduo-openclaw-skill@1.1.2",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/anduoduo-openclaw-skill/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anduoduo-openclaw-skill",
+      "url": "https://clawhub.ai/skills/anduoduo-openclaw-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anduoduo-openclaw-skill",
+    "url": "https://clawhub.ai/skills/anduoduo-openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anduoduo-openclaw-skill-661a3b68a7523c8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anduoduo-openclaw-skill@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-anduoduo-openclaw-skill-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcf5a19754183a8f18e881c2f674a93f49ac8d757a8b6414c58014904240c55e",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T15:09:03.645Z"
+}

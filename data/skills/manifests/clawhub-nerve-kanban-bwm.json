@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45513,
+  "uuid": "skill-clawhub-nerve-kanban-bwm",
+  "skillKey": "clawhub-nerve-kanban-bwm",
+  "name": "Nerve Kanban Bwm",
+  "summary": "Interact with the Nerve Kanban board API. CRUD tasks, manage workflow (execute, approve, reject, abort), handle proposals, configure the board. All endpoints...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nerve_kanban_bwm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "blueworldmarketing",
+      "features": [
+        "Interact with the Nerve Kanban board API",
+        "CRUD tasks, manage workflow (execute, approve, reject, abort), handle proposals, configure the.",
+        "All endpoints..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nerve-kanban-bwm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29962533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nerve-kanban-bwm",
+      "url": "https://clawhub.ai/skills/nerve-kanban-bwm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nerve-kanban-bwm",
+    "url": "https://clawhub.ai/skills/nerve-kanban-bwm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nerve-kanban-bwm-ac1f78fc120ee100.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nerve-kanban-bwm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nerve-kanban-bwm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2db3a25f11dc912b9beed4985457608c6450d5e379f0af9ad1b17561eceea109",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T18:36:00.685Z"
+}

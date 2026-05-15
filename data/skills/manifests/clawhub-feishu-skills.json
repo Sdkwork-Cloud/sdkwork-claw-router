@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53406,
+  "uuid": "skill-clawhub-feishu-skills",
+  "skillKey": "clawhub-feishu-skills",
+  "name": "feishu-skills",
+  "summary": "Feishu (Lark) skill pack installer. Downloads and installs all Feishu integration skills for OpenClaw / EnClaws — including bot setup, docs, calendar, tasks,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HashSTACS-HK",
+      "features": [
+        "Feishu (Lark) skill pack installer",
+        "Downloads and installs all Feishu integration skills for OpenClaw / EnClaws — including bot set."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269660284?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-skills",
+      "url": "https://clawhub.ai/skills/feishu-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-skills",
+    "url": "https://clawhub.ai/skills/feishu-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-skills-dbcab0e7dbdbc215.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79dcf77dd32a243cc98a04c9b99a95abd39dba6d8f911314b9f5ab4f1941b9fb",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T02:41:48.816Z"
+}

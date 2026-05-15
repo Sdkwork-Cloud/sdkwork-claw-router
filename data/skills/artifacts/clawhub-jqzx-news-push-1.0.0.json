@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jqzx-news-push@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jqzx_news_push",
+  "skill": {
+    "id": 64338,
+    "skillKey": "clawhub-jqzx-news-push",
+    "name": "jqzx-news-push"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jqzx-news-push",
+    "url": "https://clawhub.ai/skills/jqzx-news-push",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jqzx-news-push-c4834868a1c42f62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日科技新闻自动推送服务。 **当用户想要「每日科技新闻」「自动推送新闻」「设置新闻定时任务」时使用此技能。** 功能： - 获取机器之心最新科技热榜 - 定时发送到飞书 - 自动保存到 Get笔记 使用此技能前需要配置： - 机器之心 MCP Token - Get笔记 API Key 和 Client ID..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bqcldz",
+      "userId": "publishers:bqcldz",
+      "displayName": "bqcldz",
+      "image": "https://avatars.githubusercontent.com/u/42643627?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 425,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773144024807,
+      "changelog": "每日科技新闻推送 Skill v1.0.0\n\n- 初始发布版本。\n- 支持获取机器之心最新科技热榜。\n- 可定时自动推送新闻到飞书，并同步保存到 Get笔记。\n- 提供详细的凭证配置说明和故障排查指南。\n- 支持用户通过自然语言设置、取消或查询新闻推送与定时任务。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77cfe839ed0a26e489349b95f1a17303ea10877ecc4802cbea76ed1c42b8585d"
+}

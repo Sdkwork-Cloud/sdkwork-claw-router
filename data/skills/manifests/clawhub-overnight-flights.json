@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55562,
+  "uuid": "skill-clawhub-overnight-flights",
+  "skillKey": "clawhub-overnight-flights",
+  "name": "Overnight Flights",
+  "summary": "Find overnight and late-night departure flights — often 20-40% cheaper than daytime. Save a hotel night by flying while you sleep. Also supports: flight book...",
+  "version": "3.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.overnight_flights",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiejinsong",
+      "features": [
+        "Find overnight and late-night departure flights — often 20-40% cheaper than daytime",
+        "Save a hotel night by flying while you sleep",
+        "Also supports: flight book..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/overnight-flights@3.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1642572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "overnight-flights",
+      "url": "https://clawhub.ai/skills/overnight-flights"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "overnight-flights",
+    "url": "https://clawhub.ai/skills/overnight-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/overnight-flights-7f24cc3e3279605a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/overnight-flights@3.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-overnight-flights-3.2.1.json",
+      "version": "3.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78431a7bcc2fd389778ef5de35e78a215068f473a04e0f9b6f4f36747708839d",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T01:38:49.191Z"
+}

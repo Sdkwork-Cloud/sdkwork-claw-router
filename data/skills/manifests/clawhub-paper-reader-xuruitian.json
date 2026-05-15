@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65677,
+  "uuid": "skill-clawhub-paper-reader-xuruitian",
+  "skillKey": "clawhub-paper-reader-xuruitian",
+  "name": "paper-reader (XuRuitian version)",
+  "summary": "精读学术文献的专家级 Skill。当用户上传 PDF、Word、Excel、PPT 或 TXT 格式的学术论文，并希望进行深度学术分析时使用本 Skill。支持中英双语文献， 可自动识别文件类型、提取全文内容，并按六大维度（研究目标、新方法、实验验证、 未来方向、批判分析、实用建议）输出结构化分析报告。触发词包括...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_reader_xuruitian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XuRuitian",
+      "features": [
+        "精读学术文献的专家级 Skill。当用户上传 PDF、Word、Excel、PPT 或 TXT 格式的学术论文，并希望进行深度学术分析时使用本 Skill。支持中英双语文献， 可自动识别文件."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-reader-xuruitian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64727136?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-reader-xuruitian",
+      "url": "https://clawhub.ai/skills/paper-reader-xuruitian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-reader-xuruitian",
+    "url": "https://clawhub.ai/skills/paper-reader-xuruitian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-reader-xuruitian-eb342c5cc1fe577d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-reader-xuruitian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-reader-xuruitian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9893c9770b3cba4b83e7711d3a5d22b91b8afdee6be82c7458164d8922368d60",
+      "artifactSizeBytes": 2745
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T03:17:45.900Z"
+}

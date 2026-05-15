@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39583,
+  "uuid": "skill-clawhub-4k-with-session",
+  "skillKey": "clawhub-4k-with-session",
+  "name": "4k With Session",
+  "summary": "Get 4K edited videos ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"e...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.4k_with_session",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "Get 4K edited videos ready to post, without touching a single slider",
+        "Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"e..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/4k-with-session@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "4k-with-session",
+      "url": "https://clawhub.ai/skills/4k-with-session"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "4k-with-session",
+    "url": "https://clawhub.ai/skills/4k-with-session",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/4k-with-session-bc642118728db1ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/4k-with-session@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-4k-with-session-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce260012c82d387d73e7ef031f1a8b3fb142d660b9b229b9e75dcb6c335749d7",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T10:29:17.233Z"
+}

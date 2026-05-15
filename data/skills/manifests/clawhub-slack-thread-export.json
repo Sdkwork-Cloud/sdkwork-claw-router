@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24211,
+  "uuid": "skill-clawhub-slack-thread-export",
+  "skillKey": "clawhub-slack-thread-export",
+  "name": "Slack Thread Export",
+  "summary": "Export Slack thread messages from a logged-in Slack web tab into CSV using an attached Chrome Browser Relay tab. Use when the user wants to collect Slack con...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slack_thread_export",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DongHun Ha",
+      "features": [
+        "Export Slack thread messages from a logged-in Slack web tab into CSV using an attached Chrome B.",
+        "Use when the user wants to collect Slack con..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slack-thread-export@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46529663?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slack-thread-export",
+      "url": "https://clawhub.ai/skills/slack-thread-export"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slack-thread-export",
+    "url": "https://clawhub.ai/skills/slack-thread-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slack-thread-export-7b6d8974bee294fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slack-thread-export@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slack-thread-export-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15d9c105a3d2814c9a04481b317330820ead834fc99ec844952d8f28a0096582",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T17:40:50.683Z"
+}

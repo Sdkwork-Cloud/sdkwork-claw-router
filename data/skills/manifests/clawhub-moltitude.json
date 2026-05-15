@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10481,
+  "uuid": "skill-clawhub-moltitude",
+  "skillKey": "clawhub-moltitude",
+  "name": "Moltitude",
+  "summary": "Create verifiable proof-of-work receipts for AI agents",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltitude",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "moltitude.com",
+      "features": [
+        "Create verifiable proof-of-work receipts for AI agents"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltitude@2.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258155425?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltitude",
+      "url": "https://clawhub.ai/skills/moltitude"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltitude",
+    "url": "https://clawhub.ai/skills/moltitude",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltitude-4607def3c76ed474.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltitude@2.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltitude-2.4.0.json",
+      "version": "2.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88eef05143ea9d1599c20ff1c73185dbadf5512a4d5ba70cd5f3180ddde10f34",
+      "artifactSizeBytes": 2097
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T07:39:28.498Z"
+}

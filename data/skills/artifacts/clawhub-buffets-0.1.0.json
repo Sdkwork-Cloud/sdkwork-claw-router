@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/buffets@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buffets",
+  "skill": {
+    "id": 73488,
+    "skillKey": "clawhub-buffets",
+    "name": "网红自助餐"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buffets",
+    "url": "https://clawhub.ai/skills/buffets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buffets-53ee07df261fe414.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供关于网红自助餐的推荐清单、打卡路线与指南。用户搜索网红自助餐或规划相关出行时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774161526439,
+      "changelog": "- 首次发布“网红自助餐”技能，提供热门自助餐推荐、打卡路线和个性化指南。\n- 支持多维度筛选（如位置、预算、菜系、预约等），满足多种偏好。\n- 返回餐厅详细信息，包括亮点、实时热度、避坑提示、最佳到访时段等。\n- 提供串联路线建议，优化打卡体验（包含亲子/情侣、高峰替代等）。\n- 明确每周更新频率，以保证清单新鲜和口碑实时。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd023691afd3a8414a1719f018af9684c79923aa9c481a0a1e619a091fe5df2f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedance-prompt-wizard@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_prompt_wizard",
+  "skill": {
+    "id": 62802,
+    "skillKey": "clawhub-seedance-prompt-wizard",
+    "name": "Seedance Prompt Wizard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-prompt-wizard",
+    "url": "https://clawhub.ai/skills/seedance-prompt-wizard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-prompt-wizard-c2dc42edb004deff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Seedance 2.0 提示词生成向导。通过引导式对话， 逐步收敛用户需求，生成精准的 Seedance 2.0 Prompt。 不做任何 API 调用，不涉及认证。 触发词：帮我写提示词、生成视频提示词、Seedance提示词、视频生成提示词，制作提示词"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xk103295870-alt",
+      "userId": "s17a35a5k5s7cw51pvrd6xet2n8454gb",
+      "displayName": "xiaoke321",
+      "image": "https://avatars.githubusercontent.com/u/249103362?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775321062252,
+      "changelog": "Refresh: pure prompt generation only",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0af15ee6f5a0fa7723bdce4b7eb0a351219c123f557f7ac5e05d9877c26b7fe3"
+}

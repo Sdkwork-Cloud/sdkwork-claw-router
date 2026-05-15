@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-packager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_packager",
+  "skill": {
+    "id": 28861,
+    "skillKey": "clawhub-skill-packager",
+    "name": "skill-packager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-packager",
+    "url": "https://clawhub.ai/skills/skill-packager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-packager-bb8acd8f71ed1ed8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill-packager automates bundling related files and metadata into a single package for deployment, distribution, or archival tasks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "binyuli",
+      "userId": "s17fatbbsyqydf5gs8ansxg3fh83hsz1",
+      "displayName": "binyuli",
+      "image": "https://avatars.githubusercontent.com/u/20180924?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 296,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773674746587,
+      "changelog": "- Initial release of skill-packager (version 1.0.0).\n- Introduced SKILL.md template with detailed guidance for documenting and structuring skills.\n- Included examples and instructions to help contributors organize workflows, tasks, and resources.\n- Provided sections for scripts, references, and assets to support modular skill development.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7aed23504acbc5710eb57cfc4e68515397fbc1de4ae4e1cad18f8b431784e888"
+}

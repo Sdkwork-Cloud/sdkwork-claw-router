@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36212,
+  "uuid": "skill-clawhub-zt4ai-self-audit",
+  "skillKey": "clawhub-zt4ai-self-audit",
+  "name": "ZT4AI Self-Audit",
+  "summary": "Zero Trust security audit for AI agent workspaces, skills, and configurations. Based on Microsoft's Zero Trust for AI (ZT4AI) framework and the \"Caging the A...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zt4ai_self_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tanarchytan",
+      "features": [
+        "Zero Trust security audit for AI agent workspaces, skills, and configurations",
+        "Based on Microsoft's Zero Trust for AI (ZT4AI) framework and the \"Caging the A..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zt4ai-self-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2339027?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zt4ai-self-audit",
+      "url": "https://clawhub.ai/skills/zt4ai-self-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zt4ai-self-audit",
+    "url": "https://clawhub.ai/skills/zt4ai-self-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zt4ai-self-audit-f7c6f9cb8e96e6a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zt4ai-self-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zt4ai-self-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd8eef4ce6ce36014f453eb9c90ba15f543456678a02ed92a9dee315eb22bafb",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T21:09:49.228Z"
+}

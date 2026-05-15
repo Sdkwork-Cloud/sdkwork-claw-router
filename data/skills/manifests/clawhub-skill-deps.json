@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11779,
+  "uuid": "skill-clawhub-skill-deps",
+  "skillKey": "clawhub-skill-deps",
+  "name": "Skill Dependencies",
+  "summary": "Track and manage dependencies between OpenClaw skills. Scan skills for dependencies, visualize skill trees, detect circular dependencies, and manage skill versioning. Use when analyzing skill relationships, checking which skills depend on.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_deps",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "myrodar",
+      "features": [
+        "Track and manage dependencies between OpenClaw skills",
+        "Scan skills for dependencies, visualize skill trees, detect circular dependencies, and manage s.",
+        "Use when analyzing skill relationships, checking which skills depend on others, or managing ski."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-deps@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108596859?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-deps",
+      "url": "https://clawhub.ai/skills/skill-deps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-deps",
+    "url": "https://clawhub.ai/skills/skill-deps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-deps-e14a246e5e6795e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-deps@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-deps-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c4094d3a71f1c855981cdc5e6d508995491028b973311d61e828d182fd5111f",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T20:43:27.961Z"
+}

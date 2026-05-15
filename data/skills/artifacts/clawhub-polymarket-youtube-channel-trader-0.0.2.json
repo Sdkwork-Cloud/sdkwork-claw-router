@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-youtube-channel-trader@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_youtube_channel_trader",
+  "skill": {
+    "id": 32259,
+    "skillKey": "clawhub-polymarket-youtube-channel-trader",
+    "name": "Polymarket Youtube Channel Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-youtube-channel-trader",
+    "url": "https://clawhub.ai/skills/polymarket-youtube-channel-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-youtube-channel-trader-8920a1c3ad67d1b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trades Polymarket YouTube channel markets (subscriber milestones, view-count races). Requires SIMMER_API_KEY for trade execution via simmer-sdk. Paper tradin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diagnostikon",
+      "userId": "s17bf2qvfsqakddyh674vczxqs83fcwb",
+      "displayName": "diagnostikon",
+      "image": "https://avatars.githubusercontent.com/u/17246180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1776513630810,
+      "changelog": "fix: add _client.live=True so --live actually routes to polymarket-venue for real USDC trades",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e1f49891567f8312746c629e64bc999c86de035cc16fc293a66ec546fa92a901"
+}

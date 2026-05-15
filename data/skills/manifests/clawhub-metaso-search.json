@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68040,
+  "uuid": "skill-clawhub-metaso-search",
+  "skillKey": "clawhub-metaso-search",
+  "name": "Metaso Search",
+  "summary": "中文AI搜索引擎，深度理解搜索意图，精准提供结构化无广告的中文信息查询与回答服务。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metaso_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qiuxinyuan321",
+      "features": [
+        "中文AI搜索引擎，深度理解搜索意图，精准提供结构化无广告的中文信息查询与回答服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/metaso-search@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205333793?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "metaso-search",
+      "url": "https://clawhub.ai/skills/metaso-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metaso-search",
+    "url": "https://clawhub.ai/skills/metaso-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metaso-search-73d73f5c9a1f1567.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/metaso-search@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-metaso-search-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:259739f38de00f879c6f68c1dde375f37d11bba44907835dfa1515eb7dc4fca5",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T16:06:02.885Z"
+}

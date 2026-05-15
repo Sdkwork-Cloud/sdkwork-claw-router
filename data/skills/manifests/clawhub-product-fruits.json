@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30165,
+  "uuid": "skill-clawhub-product-fruits",
+  "skillKey": "clawhub-product-fruits",
+  "name": "Product Fruits",
+  "summary": "Product Fruits integration. Manage ProductFruitsApps. Use when the user wants to interact with Product Fruits data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_fruits",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Product Fruits integration",
+        "Manage ProductFruitsApps",
+        "Use when the user wants to interact with Product Fruits data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-fruits@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-fruits",
+      "url": "https://clawhub.ai/skills/product-fruits"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-fruits",
+    "url": "https://clawhub.ai/skills/product-fruits",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-fruits-21cd82d1af6a456b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-fruits@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-fruits-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff11f05950e1685bd181162c962c94f5594643367ef74a3e52c1cb4bfbe6ab86",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:28:09.950Z"
+}

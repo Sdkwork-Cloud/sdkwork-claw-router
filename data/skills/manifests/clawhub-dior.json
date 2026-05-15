@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71605,
+  "uuid": "skill-clawhub-dior",
+  "skillKey": "clawhub-dior",
+  "name": "Dior",
+  "summary": "提供Dior产品信息、门店位置、时尚资讯及品牌历史，支持手袋、美妆、香水等查询和时尚搭配建议。",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dior",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供Dior产品信息、门店位置、时尚资讯及品牌历史，支持手袋、美妆、香水等查询和时尚搭配建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dior@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dior",
+      "url": "https://clawhub.ai/skills/dior"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dior",
+    "url": "https://clawhub.ai/skills/dior",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dior-8eacdfd26662076c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dior@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-dior-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ca33b32dc2badd988fde23058ae85e0156705edfc5d1684ca2180011b9b61a5",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:35:22.189Z"
+}

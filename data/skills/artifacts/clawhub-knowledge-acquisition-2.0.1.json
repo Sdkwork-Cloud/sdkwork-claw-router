@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowledge-acquisition@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_acquisition",
+  "skill": {
+    "id": 70264,
+    "skillKey": "clawhub-knowledge-acquisition",
+    "name": "知识获取"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-acquisition",
+    "url": "https://clawhub.ai/skills/knowledge-acquisition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-acquisition-5c5171ed5c132c5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "知识获取：多平台内容解析（小红书/微信/网站等）、8类分类、Markdown 笔记生成、可选飞书云盘归档"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yz6214589-hash",
+      "userId": "s17996fk24wt0zdqhvatzxareh857jje",
+      "displayName": "yz6214589-hash",
+      "image": "https://avatars.githubusercontent.com/u/250099844?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1776649739132,
+      "changelog": "No changes were detected in this version; functionality remains the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3dce0659d962a1d44e83cdc8501350d178c83c9cfed92a58738d9241f851d13d"
+}

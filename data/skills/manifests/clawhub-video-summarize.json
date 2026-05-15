@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27854,
+  "uuid": "skill-clawhub-video-summarize",
+  "skillKey": "clawhub-video-summarize",
+  "name": "video-summarize",
+  "summary": "Video summarization. Trigger: 1.User provides a video link (Bilibili/YouTube/Douyin/Twitter/TikTok etc.), 2.Summarize this video",
+  "version": "1.0.2026050302",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_summarize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yilsonyan",
+      "features": [
+        "Video summarization",
+        "Trigger: 1.User provides a video link (Bilibili/YouTube/Douyin/Twitter/TikTok etc.), 2.Summariz."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-summarize@1.0.2026050302",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46336803?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-summarize",
+      "url": "https://clawhub.ai/skills/video-summarize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-summarize",
+    "url": "https://clawhub.ai/skills/video-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-summarize-9f4aa7f1f90ba097.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-summarize@1.0.2026050302",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-summarize-1.0.2026050302.json",
+      "version": "1.0.2026050302",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b18383f26ce8d2005847900c4b5eeb450eafd84992e020ec312fe34532517c3a",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T15:39:33.266Z"
+}

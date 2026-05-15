@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dr-memory-foundation@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dr_memory_foundation",
+  "skill": {
+    "id": 24420,
+    "skillKey": "clawhub-dr-memory-foundation",
+    "name": "dr-memory-foundation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dr-memory-foundation",
+    "url": "https://clawhub.ai/skills/dr-memory-foundation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dr-memory-foundation-11699ef37e973096.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Opinionated, file-based memory layout for OpenClaw-style agents: dashboards (now/open-loops/automation), topic files, glossary, and an always-on policy+topic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daniel-refahi-ikara",
+      "userId": "s177xe2n6zt5z29v51zpxrnx9183wyda",
+      "displayName": "Daniel Refahi",
+      "image": "https://avatars.githubusercontent.com/u/201202982?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1775430025896,
+      "changelog": "Installer now creates an initial daily log so watchdogs pass on fresh workspaces",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1d20afa33b30951c40830304eba45683549d14488f44fb30cf224edcfd85af64"
+}

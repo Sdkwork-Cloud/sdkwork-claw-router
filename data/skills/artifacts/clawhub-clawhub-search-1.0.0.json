@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_search",
+  "skill": {
+    "id": 60769,
+    "skillKey": "clawhub-clawhub-search",
+    "name": "Clawhub Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-search",
+    "url": "https://clawhub.ai/skills/clawhub-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-search-f52f1216084333e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "搜索 ClawHub Skills 技能市场。使用此技能查找和发现 OpenClaw 社区贡献的各种技能。 激活条件：用户提到搜索技能、查找 skill、找某个功能的 skill、ClawHub、clawhub。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mahongting",
+      "userId": "publishers:mahongting",
+      "displayName": "mahongting",
+      "image": "https://avatars.githubusercontent.com/u/61448287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 669,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773663931022,
+      "changelog": "Initial release of clawhub-search\n\n- Enables searching for skills in the ClawHub Skills marketplace.\n- Supports keyword search, sorting by downloads, stars, or newest.\n- Requires a ClawHub API Token (set via environment variable).\n- Provides example usage for searching and formatting results with curl and Python.\n- Includes common search scenarios and best practices for discovering skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7567bdc54a2f9392baa724cfe2cd567dccd0de3a00ce17d59b9fa50e2710ff99"
+}

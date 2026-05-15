@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48768,
+  "uuid": "skill-clawhub-sha256-tool",
+  "skillKey": "clawhub-sha256-tool",
+  "name": "Sha256 Tool",
+  "summary": "Compute SHA-256 cryptographic hash values for files and text. Use for secure data verification and integrity checks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sha256_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Compute SHA-256 cryptographic hash values for files and text",
+        "Use for secure data verification and integrity checks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sha256-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sha256-tool",
+      "url": "https://clawhub.ai/skills/sha256-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sha256-tool",
+    "url": "https://clawhub.ai/skills/sha256-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sha256-tool-0618cece19bd95bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sha256-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sha256-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:872f49e88c7f867a65abdbb47c1ff01aac381b08010163d7a7128224215d9780",
+      "artifactSizeBytes": 1815
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T16:30:10.429Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-workflow-engine@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_workflow_engine",
+  "skill": {
+    "id": 25535,
+    "skillKey": "clawhub-content-workflow-engine",
+    "name": "Content Workflow Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-workflow-engine",
+    "url": "https://clawhub.ai/skills/content-workflow-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-workflow-engine-482e013571fb9c2e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate content creation, management, and distribution workflows. Use when: (1) Creating content pipelines for blogs, social media, or newsletters, (2) Sche..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jacealllc",
+      "userId": "publishers:jacealllc",
+      "displayName": "JacealLLC",
+      "image": "https://avatars.githubusercontent.com/u/264764618?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773958302381,
+      "changelog": "Added visual assets (thumbnail, feature graphic, hero image). Enhanced documentation. Improved workflow templates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c5bc400afdc37c4fd12865daf444e92d08e2aed0a03aa93e8a71ad8be7a030e"
+}

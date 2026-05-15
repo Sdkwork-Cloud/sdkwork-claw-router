@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47795,
+  "uuid": "skill-clawhub-sys-monitor-dhb",
+  "skillKey": "clawhub-sys-monitor-dhb",
+  "name": "System Monitor",
+  "summary": "Monitor system metrics like CPU, memory, disk, and network. Use when user needs to track server performance, set up alerts for high resource usage, monitor u...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sys_monitor_dhb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Monitor system metrics like CPU, memory, disk, and network",
+        "Use when user needs to track server performance, set up alerts for high resource usage, monitor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sys-monitor-dhb@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sys-monitor-dhb",
+      "url": "https://clawhub.ai/skills/sys-monitor-dhb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sys-monitor-dhb",
+    "url": "https://clawhub.ai/skills/sys-monitor-dhb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sys-monitor-dhb-af22efe2f6847397.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sys-monitor-dhb@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sys-monitor-dhb-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3f2cd228da685681ca2a8197d4d0f7907dd7f103c23326abbcc77aadf0e8a4e",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T21:52:23.517Z"
+}

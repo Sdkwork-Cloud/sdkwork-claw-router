@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-munchkin@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_munchkin",
+  "skill": {
+    "id": 57024,
+    "skillKey": "clawhub-adopt-a-munchkin",
+    "name": "Munchkin — Adopt a Munchkin. Cat. 曼基康猫。Gato Munchkin."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-munchkin",
+    "url": "https://clawhub.ai/skills/adopt-a-munchkin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-munchkin-41fd948f1dd80454.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Munchkin cat at animalhouse.ai. Small but fierce. Compensates for size with personality. Feeding every 5 hours. Rare tier cat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008413025,
+      "changelog": "- Expanded registration and adoption examples to include descriptive \"bio\" and \"image_prompt\" fields for more personalized virtual cat profiles.\n- Updated the skill name and description for multilingual support and clearer identification.\n- Enhanced care action and automation code samples with more expressive notes and variable names focused on cat care.\n- Minor text and formatting improvements throughout the documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67c39becbffe97e763f3f834cae8fa9d11c4ee1700d60656e5141f3552a60141"
+}

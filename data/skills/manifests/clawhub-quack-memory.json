@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18993,
+  "uuid": "skill-clawhub-quack-memory",
+  "skillKey": "clawhub-quack-memory",
+  "name": "Quack Memory",
+  "summary": "Store and recall persistent memories via FlightBox (Quack Network). Use when storing agent memories, recalling past context, searching agent memory, or persi...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quack_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JPaulGrayson",
+      "features": [
+        "Store and recall persistent memories via FlightBox (Quack Network)",
+        "Use when storing agent memories, recalling past context, searching agent memory, or persi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quack-memory@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212611253?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quack-memory",
+      "url": "https://clawhub.ai/skills/quack-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quack-memory",
+    "url": "https://clawhub.ai/skills/quack-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quack-memory-64d7dcc63418719e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quack-memory@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-quack-memory-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:379713f7acca71e533ff1890bf3f6fab34d17d14776087023cce30b5376e72e4",
+      "artifactSizeBytes": 1870
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T23:10:34.982Z"
+}

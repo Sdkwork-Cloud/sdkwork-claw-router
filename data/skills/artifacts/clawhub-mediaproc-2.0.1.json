@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mediaproc@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mediaproc",
+  "skill": {
+    "id": 13607,
+    "skillKey": "clawhub-mediaproc",
+    "name": "mediaproc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mediaproc",
+    "url": "https://clawhub.ai/skills/mediaproc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mediaproc-8c867143eeb68a8b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Process media files (video, audio, images) via a locked-down SSH container with ffmpeg, sox, and imagemagick. Use when the user wants to transcode video, pro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "psyb0t",
+      "userId": "s17fq93tmpky791n7516jcn08n83sfn2",
+      "displayName": "Ciprian Mandache",
+      "image": "https://avatars.githubusercontent.com/u/12934156?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1409,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774871569971,
+      "changelog": "No user-visible changes in this version.  \n- Version bump only; no changes detected in skill documentation or files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6aefa0f83c206c35bbb22e1f0cc12ab4b7a44ebdf56cea302fb33684ef3680b3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/humanizer-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanizer_2",
+  "skill": {
+    "id": 13857,
+    "skillKey": "clawhub-humanizer-2",
+    "name": "Humanizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanizer-2",
+    "url": "https://clawhub.ai/skills/humanizer-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanizer-2-65bca99f3940396d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Humanize AI-generated text by detecting and removing patterns typical of LLM output. Rewrites text to sound natural, specific, and human. Uses 28 pattern det..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "actualcwhitlock",
+      "userId": "publishers:actualcwhitlock",
+      "displayName": "ActualCWhitlock",
+      "image": "https://avatars.githubusercontent.com/u/236500437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1309,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771240934215,
+      "changelog": "**Major update: humanizer version 2.2.0 introduces comprehensive AI-pattern detection and humanization guidance.**\n\n- Detects and removes 28 specific signs of AI-generated writing, spanning content, style, language, filler, and communication patterns.\n- Uses over 560 AI-indicative vocabulary terms, categorized into three tiers for nuanced detection.\n- Includes statistical analysis of burstiness, vocabulary diversity, sentence variation, and phrase repetition to identify AI traits.\n- Provides detailed editing rules and examples to help rewrite text with natural, specific, and human-like style.\n- Offers command-line usage for analyzing, scoring, and auto-humanizing text.\n- Adds \"Always-on mode\" tips for integrating humanization principles into all outputs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:be915ba8594ec8f8840702b1b20da6663c9e410ed7d77233ff645773bdfbcb25"
+}

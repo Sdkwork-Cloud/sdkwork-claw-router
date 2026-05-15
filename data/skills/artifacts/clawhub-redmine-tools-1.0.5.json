@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/redmine-tools@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redmine_tools",
+  "skill": {
+    "id": 28987,
+    "skillKey": "clawhub-redmine-tools",
+    "name": "redmine-tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redmine-tools",
+    "url": "https://clawhub.ai/skills/redmine-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redmine-tools-3a3e87010391da5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch, update, and summarize Redmine issue attachments from CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinxianwei",
+      "userId": "s1706ftd0hzg1nwdvertxczqps83kbzh",
+      "displayName": "yinxianwei",
+      "image": "https://avatars.githubusercontent.com/u/7708576?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1777537985875,
+      "changelog": "Version 1.0.5 of redmine-tools — No code or documentation changes detected.\n\n- No updates in functionality, documentation, or configuration compared to the previous version.\n- Version bump only; behavior remains unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:622046cc2ba9e67f827f5862656129e774bfbec21bcaf6a943b56f53a043b5b9"
+}

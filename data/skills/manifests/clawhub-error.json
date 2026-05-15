@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52349,
+  "uuid": "skill-clawhub-error",
+  "skillKey": "clawhub-error",
+  "name": "Error",
+  "summary": "Error handling reference — error types, exception patterns, HTTP status codes, retry strategies, and observability. Use when designing error handling, debugg...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.error",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Error handling reference — error types, exception patterns, HTTP status codes, retry strategies.",
+        "Use when designing error handling, debugg..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/error@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "error",
+      "url": "https://clawhub.ai/skills/error"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "error",
+    "url": "https://clawhub.ai/skills/error",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/error-ca00fccfb408989e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/error@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-error-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd385666b26dad844c960d902361762a418fff3a3bb80ddf38b675cdfe709faf",
+      "artifactSizeBytes": 1824
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T13:18:40.061Z"
+}

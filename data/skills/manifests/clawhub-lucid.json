@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30155,
+  "uuid": "skill-clawhub-lucid",
+  "skillKey": "clawhub-lucid",
+  "name": "Lucid",
+  "summary": "Lucid integration. Manage Organizations. Use when the user wants to interact with Lucid data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lucid",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Lucid integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Lucid data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lucid@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lucid",
+      "url": "https://clawhub.ai/skills/lucid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lucid",
+    "url": "https://clawhub.ai/skills/lucid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lucid-948278737ada1997.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lucid@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-lucid-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:887fc1284d9a6ef590008be90080e334c02017dd7fd9e4add180ba6c0241c81a",
+      "artifactSizeBytes": 1779
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:09:37.928Z"
+}

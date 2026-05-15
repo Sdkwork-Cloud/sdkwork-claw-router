@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jianying-video-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jianying_video_gen",
+  "skill": {
+    "id": 62419,
+    "skillKey": "clawhub-jianying-video-gen",
+    "name": "Jianying Video Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jianying-video-gen",
+    "url": "https://clawhub.ai/skills/jianying-video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jianying-video-gen-da5b5daac191b63a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用剪映(Jianying/小云雀)的 Seedance 2.0 模型自动生成AI视频。支持文生视频(T2V)、图生视频(I2V)和参考视频生成(V2V)三种模式。当用户需要生成AI视频、使用Seedance模型创作短片、或基于参考图像/视频进行风格转换时使用此技能。需要预先配置 cookies.json 登录凭证。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deemo-soul",
+      "userId": "publishers:deemo-soul",
+      "displayName": "Deemo-Soul",
+      "image": "https://avatars.githubusercontent.com/u/264043131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 774,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773900075758,
+      "changelog": "Initial release of jianying-video-gen.\n\n- Supports AI video generation using Jianying's Seedance 2.0 model.\n- Allows text-to-video (T2V), image-to-video (I2V), and reference video-to-video (V2V) workflows.\n- Automated with Playwright; requires Python 3.9+, Chromium, and a Jianying cookies.json file.\n- Flexible parameters including prompt, duration, ratio, model, reference image/video, and dry-run mode.\n- Provides usage examples, parameter guide, model points cost table, and troubleshooting FAQ.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e3cd897d2a74fac0baedb5aaf162557deee4fe62e9fe2630f080ee5877ea0a22"
+}

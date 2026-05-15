@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63249,
+  "uuid": "skill-clawhub-web-test-reporter",
+  "skillKey": "clawhub-web-test-reporter",
+  "name": "web-test-reporter",
+  "summary": "Web功能测试自动化执行与报告生成。使用 agent-browser CLI 对 Web 系统进行完备的功能测试，并生成标准 Word (.docx) 测试报告。激活时机：(1) 用户要求测试某个页面或模块的功能，(2) 用户要求生成功能测试报告，(3) 用户要求对 Web 系统做走查/验证/自动化测试。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_test_reporter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "superchao9",
+      "features": [
+        "Web功能测试自动化执行与报告生成。使用 agent-browser CLI 对 Web 系统进行完备的功能测试，并生成标准 Word (.docx) 测试报告。激活时机：(1) 用户要求测."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-test-reporter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121180915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-test-reporter",
+      "url": "https://clawhub.ai/skills/web-test-reporter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-test-reporter",
+    "url": "https://clawhub.ai/skills/web-test-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-test-reporter-77c55c65cae7c224.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-test-reporter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-test-reporter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0acc94c0419b346e0df28bbd5eb3280a61a72bc052cc0dcd548719d2959d99b5",
+      "artifactSizeBytes": 2599
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:42:19.813Z"
+}

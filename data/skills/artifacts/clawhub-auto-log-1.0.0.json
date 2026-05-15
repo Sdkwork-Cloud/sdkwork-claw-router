@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-log@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_log",
+  "skill": {
+    "id": 33424,
+    "skillKey": "clawhub-auto-log",
+    "name": "Auto Log"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-log",
+    "url": "https://clawhub.ai/skills/auto-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-log-1271ad4ac73e735e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically creates daily log files to record AI agent events, tasks, todos, and provides summaries of daily activity."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "socneo",
+      "userId": "s17f4nwgeaxenw0ab8a20sf06h8476dn",
+      "displayName": "socneo",
+      "image": "https://avatars.githubusercontent.com/u/128616637?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773721971894,
+      "changelog": "Initial release: automatic daily activity logging skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:44192822ac3bdfdcefbcf75dfb5680921d01e7131d3596fba246dbda91eeff2c"
+}

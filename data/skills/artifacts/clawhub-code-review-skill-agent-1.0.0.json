@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-review-skill-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_review_skill_agent",
+  "skill": {
+    "id": 41916,
+    "skillKey": "clawhub-code-review-skill-agent",
+    "name": "code-review-skill-agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-review-skill-agent",
+    "url": "https://clawhub.ai/skills/code-review-skill-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-review-skill-agent-f81540ddc17a033d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Review backend code changes for correctness, security, architecture compliance, and test coverage per the applicable skill and checklist from AGENTS.md."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rahulsaini202",
+      "userId": "s176aaev3q74wpnh56v1cnghx984d7w3",
+      "displayName": "rahulsaini",
+      "image": "https://avatars.githubusercontent.com/u/13575723?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775566575840,
+      "changelog": "- Initial release of the code-review-skill.\n- Provides a structured code review guide for backend code changes.\n- Defines clear review objectives and mandatory rules based on repository skill definitions.\n- Introduces a step-by-step workflow for reviewing changes, including file referencing and severity ordering.\n- Lists architectural, correctness, security, and testing checks for reviewers.\n- Specifies a standardized output format for review findings.\n- Clearly states rejection conditions for backend pull requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e4191da2df6a49202a73a5fa2dd538b975d568c9589f570c883a4b38391d086d"
+}

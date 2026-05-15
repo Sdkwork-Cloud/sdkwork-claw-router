@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mysteelmeeting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysteelmeeting",
+  "skill": {
+    "id": 65026,
+    "skillKey": "clawhub-mysteelmeeting",
+    "name": "mysteelmeeting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysteelmeeting",
+    "url": "https://clawhub.ai/skills/mysteelmeeting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysteelmeeting-b20ecd83fc510c96.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询我的钢铁网会展频道（huizhan.mysteel.com/zhuanti）行业会议信息，支持行业筛选（钢材/铁矿石/废钢/煤焦/铁合金/不锈钢/有色金属/建筑材料/新能源/农产品）、地区筛选（东北/华北/华东/华南/华中/西北/西南/港澳台/全球）、省份筛选（吉林/辽宁/黑龙江/北京/上海/广东/浙江/江苏..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wyb92",
+      "userId": "s17d21gfp0r1h8zzn0syb7f90583gsct",
+      "displayName": "mysteel",
+      "image": "https://avatars.githubusercontent.com/u/49762508?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776933668972,
+      "changelog": "mysteelmeeting 1.0.0\n\n- 首次发布，支持查询我的钢铁网会展频道行业会议。\n- 可根据行业、地区、省份、会议状态、收费类型、活动类型等条件筛选会议。\n- 支持模糊匹配行业/地区/省份名称，自动ID匹配。\n- 动态实时获取行业和地区数据，内置24小时缓存机制。\n- 提供会议报名状态、免费/收费、分页等查询选项。\n- 支持命令行方式和关键词触发。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:096624558aade7b0a146f81257c1982ab9fdffbce14ade254abce287224cf055"
+}

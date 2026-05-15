@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pomoclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pomoclaw",
+  "skill": {
+    "id": 19756,
+    "skillKey": "clawhub-pomoclaw",
+    "name": "PomoClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pomoclaw",
+    "url": "https://clawhub.ai/skills/pomoclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pomoclaw-a049beee24ed93d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control the PomoClaw pomodoro timer on the Mac. Use when the user asks to start, stop, pause a pomodoro/pomoclaw/focus timer, check timer status, or when a p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vkozlovskyi",
+      "userId": "publishers:vkozlovskyi",
+      "displayName": "Vladimir Kozlovskyi",
+      "image": "https://avatars.githubusercontent.com/u/1349630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 593,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772128402844,
+      "changelog": "PomoClaw skill version 1.0.0 initial release:\n\n- Adds support for controlling the PomoClaw pomodoro timer on Mac via URL scheme commands.\n- Handles start, stop, pause, resume, status check, and break for both work and break timers.\n- Provides a unified configuration command for customizing work/break durations, sounds, and launch options.\n- Supports checking timer status from a JSON file.\n- Responds to \"Pomodoro finished\" system events/webhooks.\n- Designed for easy integration with OpenClaw and scripted automation on macOS.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fdc572df456078f10b46a470ec566432e2676689670dc9a30129204930e09476"
+}

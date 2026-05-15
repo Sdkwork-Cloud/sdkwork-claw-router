@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swaps-intel@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swaps_intel",
+  "skill": {
+    "id": 20681,
+    "skillKey": "clawhub-swaps-intel",
+    "name": "Swaps Intel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swaps-intel",
+    "url": "https://clawhub.ai/skills/swaps-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swaps-intel-047ec62ddc11d119.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assess cryptocurrency addresses for risk signals, labels, and reputation across blockchains using Swaps Intelligence API data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "w3arecom",
+      "userId": "publishers:w3arecom",
+      "displayName": "supabank",
+      "image": "https://avatars.githubusercontent.com/u/213186112?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 544,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772687323361,
+      "changelog": "v1.2.0: Added API key acquisition flow (api@swaps.app), fixed required.credentials metadata to remove Suspicious flag, updated example response to match real API output, fixed smoke key scopes",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d08da570943d0282c79f10aad894cafb1f8ece61f4aa513af9dbe48192ac787d"
+}

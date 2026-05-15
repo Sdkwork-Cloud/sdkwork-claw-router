@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15546,
+  "uuid": "skill-clawhub-task-router-skill",
+  "skillKey": "clawhub-task-router-skill",
+  "name": "Task Router Skill",
+  "summary": "Distributed task queue for OpenClaw multi-agent systems that routes tasks by capability, tracks lifecycle, coordinates async handoffs, rebalances load, and m...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_router_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "captmarbles",
+      "features": [
+        "Distributed task queue for OpenClaw multi-agent systems that routes tasks by capability, tracks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-router-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5841195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-router-skill",
+      "url": "https://clawhub.ai/skills/task-router-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-router-skill",
+    "url": "https://clawhub.ai/skills/task-router-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-router-skill-e8644e2dc8cab6f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-router-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-router-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77d18f34a15703fba525de58748eba5938cee321f1533d102cbb2b582bf7b6a4",
+      "artifactSizeBytes": 2428
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T21:28:23.860Z"
+}

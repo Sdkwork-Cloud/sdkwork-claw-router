@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15634,
+  "uuid": "skill-clawhub-finishing-branch",
+  "skillKey": "clawhub-finishing-branch",
+  "name": "Finishing Branch",
+  "summary": "Complete development work by presenting structured options for merge, PR, or cleanup. Use when implementation is complete, all tests pass, and you need to decide how to integrate work. Triggers on finish branch, complete branch, merge bran.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finishing_branch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Complete development work by presenting structured options for merge, PR, or cleanup",
+        "Use when implementation is complete, all tests pass, and you need to decide how to integrate wo.",
+        "Triggers on finish branch, complete branch, merge branch, create PR, done with feature, impleme."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finishing-branch@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finishing-branch",
+      "url": "https://clawhub.ai/skills/finishing-branch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finishing-branch",
+    "url": "https://clawhub.ai/skills/finishing-branch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finishing-branch-c11a1ceb15cbe984.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finishing-branch@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-finishing-branch-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b0e8c786c645c934677e7ae08f04f378ba51b6137b6a06464d3269c169274d4",
+      "artifactSizeBytes": 2432
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T13:27:48.695Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopify-ab-testing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_ab_testing",
+  "skill": {
+    "id": 38307,
+    "skillKey": "clawhub-shopify-ab-testing",
+    "name": "Shopify Ab Testing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-ab-testing",
+    "url": "https://clawhub.ai/skills/shopify-ab-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-ab-testing-da4fe47338aa9f36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build a systematic A/B testing framework for Shopify stores to improve conversion rates through data-driven experiments. Triggers: ab testing, split testing,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774552645143,
+      "changelog": "Initial release of the Shopify A/B Testing skill:\n\n- Provides a systematic framework for running A/B tests on Shopify stores.\n- Includes test prioritization, hypothesis templates, and detailed testing roadmaps.\n- Offers guidance on sample size, duration, and tool selection.\n- Features a results analysis framework and a 12-week iterative testing calendar.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:025064c74d43a563a3941a3d90efa33f9b8223c3d5df80e95ef93eae6d14ce45"
+}

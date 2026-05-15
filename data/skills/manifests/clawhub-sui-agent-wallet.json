@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15531,
+  "uuid": "skill-clawhub-sui-agent-wallet",
+  "skillKey": "clawhub-sui-agent-wallet",
+  "name": "Sui Agent Wallet",
+  "summary": "Provide an AI agent with a secure Sui wallet to manage accounts, sign transactions, switch networks, and interact with Sui DApps via a Chrome extension and l...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sui_agent_wallet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eason Chen",
+      "features": [
+        "Provide an AI agent with a secure Sui wallet to manage accounts, sign transactions, switch netw."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sui-agent-wallet@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43432631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sui-agent-wallet",
+      "url": "https://clawhub.ai/skills/sui-agent-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sui-agent-wallet",
+    "url": "https://clawhub.ai/skills/sui-agent-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sui-agent-wallet-6a48efca4a59f0fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sui-agent-wallet@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-sui-agent-wallet-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f100f9376f1093117bb161e8999933c61d2f7ffed32714e4e43ca484c75b4ba1",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T00:20:18.684Z"
+}

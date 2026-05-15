@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18846,
+  "uuid": "skill-clawhub-grid-aware-energy-load-shifter",
+  "skillKey": "clawhub-grid-aware-energy-load-shifter",
+  "name": "Grid-Aware Energy Load Shifter",
+  "summary": "Grid-aware energy load shifter for Home Assistant. Reads real-time electricity prices (TOU, time-of-use, dynamic pricing), solar production forecasts, batter...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grid_aware_energy_load_shifter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Omer Bese",
+      "features": [
+        "Grid-aware energy load shifter for Home Assistant",
+        "Reads real-time electricity prices (TOU, time-of-use, dynamic pricing), solar production foreca."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grid-aware-energy-load-shifter@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100455309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grid-aware-energy-load-shifter",
+      "url": "https://clawhub.ai/skills/grid-aware-energy-load-shifter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grid-aware-energy-load-shifter",
+    "url": "https://clawhub.ai/skills/grid-aware-energy-load-shifter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grid-aware-energy-load-shifter-9242543544d1996f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grid-aware-energy-load-shifter@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-grid-aware-energy-load-shifter-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae9c7d56f05f712e1f7761cb2a436f3c991b831363858587427221d9abe49425",
+      "artifactSizeBytes": 3036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T02:23:20.387Z"
+}

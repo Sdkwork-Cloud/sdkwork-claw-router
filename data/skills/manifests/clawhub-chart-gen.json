@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30560,
+  "uuid": "skill-clawhub-chart-gen",
+  "skillKey": "clawhub-chart-gen",
+  "name": "Chart Generator",
+  "summary": "Use this skill when the user wants to create visualizations (charts, dashboards, diagrams, Gantt, PPT), analyze data (Excel/CSV upload, cross-file analysis,...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chart_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChartGen AI",
+      "features": [
+        "Use this skill when the user wants to create visualizations (charts, dashboards, diagrams, Gant."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chart-gen@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128801127?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chart-gen",
+      "url": "https://clawhub.ai/skills/chart-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chart-gen",
+    "url": "https://clawhub.ai/skills/chart-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chart-gen-232217d592a46def.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chart-gen@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-chart-gen-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f801b963cea0ab9c6164125140297abe0e9a42d5905239e504d0be3ce6d0f35",
+      "artifactSizeBytes": 2386
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T13:03:44.907Z"
+}

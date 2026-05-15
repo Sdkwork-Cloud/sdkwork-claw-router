@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/windows-printing@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_printing",
+  "skill": {
+    "id": 69890,
+    "skillKey": "clawhub-windows-printing",
+    "name": "Windows Printing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-printing",
+    "url": "https://clawhub.ai/skills/windows-printing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-printing-ad3c9a6a7c00c7ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在 Windows 上列出可用打印机并执行本地文件打印，支持让用户从可用打印机中选择，并配置黑白/彩色、份数、单面/双面、沿长边翻转、沿短边翻转、纸张大小。用户提到“打印”“打印机”“单面/双面”“长边翻转”“短边翻转”“A4”“黑白/彩色”“打印 PDF/文档/图片”时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fuetsui",
+      "userId": "s176ggpedb2a9em1j7m9x4e6n9840gxa",
+      "displayName": "Fue Tsui",
+      "image": "https://avatars.githubusercontent.com/u/39769490?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775041982944,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8637048d2a061dad2f5fc4a72f391999b1bf25f564b70d916882499c6f84bb8"
+}

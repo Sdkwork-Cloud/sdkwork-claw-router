@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46494,
+  "uuid": "skill-clawhub-weixin-video",
+  "skillKey": "clawhub-weixin-video",
+  "name": "Weixin Video",
+  "summary": "Get WeChat-ready videos ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 200MB), say something like \"form...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weixin_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "francemichaell-15",
+      "features": [
+        "Get WeChat-ready videos ready to post, without touching a single slider",
+        "Upload your video clips (MP4, MOV, AVI, WebM, up to 200MB), say something like \"form..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weixin-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208906142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weixin-video",
+      "url": "https://clawhub.ai/skills/weixin-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weixin-video",
+    "url": "https://clawhub.ai/skills/weixin-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weixin-video-e7d00ce4c13be068.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weixin-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weixin-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af7693020c5ab64693293bb8b8194d93381b5292c2c7ef2214ba417111c9ec3f",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T16:11:48.120Z"
+}

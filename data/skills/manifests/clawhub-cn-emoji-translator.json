@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69991,
+  "uuid": "skill-clawhub-cn-emoji-translator",
+  "skillKey": "clawhub-cn-emoji-translator",
+  "name": "Emoji表情翻译器",
+  "summary": "支持中文和英文文本与Emoji表情的相互转换，纯本地处理无需网络依赖。",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_emoji_translator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "支持中文和英文文本与Emoji表情的相互转换，纯本地处理无需网络依赖。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-emoji-translator@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-emoji-translator",
+      "url": "https://clawhub.ai/skills/cn-emoji-translator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-emoji-translator",
+    "url": "https://clawhub.ai/skills/cn-emoji-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-emoji-translator-cbcec64c2355b2c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-emoji-translator@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-emoji-translator-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b10106a30b6479a364f3f2eb8573b07cb73373e8c291e1af9ba55a6ceb61aa9",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T04:43:42.547Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62455,
+  "uuid": "skill-clawhub-smart-recruitment-cn",
+  "skillKey": "clawhub-smart-recruitment-cn",
+  "name": "Smart Recruitment Cn",
+  "summary": "智能招聘筛选系统 - AI简历筛选、智能匹配、面试安排、候选人管理",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_recruitment_cn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huyong2023",
+      "features": [
+        "智能招聘筛选系统",
+        "AI简历筛选、智能匹配、面试安排、候选人管理"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-recruitment-cn@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138767654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-recruitment-cn",
+      "url": "https://clawhub.ai/skills/smart-recruitment-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-recruitment-cn",
+    "url": "https://clawhub.ai/skills/smart-recruitment-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-recruitment-cn-6f6b4311f8447608.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-recruitment-cn@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-recruitment-cn-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8e95331ddf6e1e42b49ed62398cb3c201f5485836e9d9191893e4b133c6d8aa",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T06:22:17.094Z"
+}

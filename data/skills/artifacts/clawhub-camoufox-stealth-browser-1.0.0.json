@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/camoufox-stealth-browser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camoufox_stealth_browser",
+  "skill": {
+    "id": 10660,
+    "skillKey": "clawhub-camoufox-stealth-browser",
+    "name": "Camoufox Stealth Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camoufox-stealth-browser",
+    "url": "https://clawhub.ai/skills/camoufox-stealth-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camoufox-stealth-browser-613ae610ff8e338e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "C++ level anti-bot browser automation using Camoufox (patched Firefox) in isolated containers. Bypasses Cloudflare Turnstile, Datadome, Airbnb, Yelp. Superior to Chrome-based solutions (undetected-chromedriver, puppeteer-stealth) which onl."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kesslerio",
+      "userId": "publishers:kesslerio",
+      "displayName": "kesslerio",
+      "image": "https://avatars.githubusercontent.com/u/2647990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2379,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770019183685,
+      "changelog": "Initial release: C++ level anti-bot evasion with Camoufox + curl_cffi",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:322c775d6350068d857cf50426417e36e7d7caa322b7e2f25fc629be72dbe3fb"
+}

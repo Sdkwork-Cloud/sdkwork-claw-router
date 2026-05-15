@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_search",
+  "skill": {
+    "id": 39530,
+    "skillKey": "clawhub-openclaw-search",
+    "name": "Openclaw Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-search",
+    "url": "https://clawhub.ai/skills/openclaw-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-search-5ca6d9a52ef5a4fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run web, multi-source, or last-30-days research through AIsa. Use when: the user needs search, synthesis, competitor scans, or trend discovery. Supports rese..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baofeng-tech",
+      "userId": "s1709d2takksyrxgx2kpxs3rj18433sv",
+      "displayName": "baofeng-tech",
+      "image": "https://avatars.githubusercontent.com/u/273012742?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776877715845,
+      "changelog": "- Initial release of openclaw-search.\n- Enables web, multi-source, and last-30-days research via AIsa.\n- Supports research tasks such as competitor scans, trend discovery, synthesis, and structured retrieval.\n- Offers research-ready outputs and multi-source research briefs.\n- Requires AISA_API_KEY and Python 3 to operate.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:daea8f44db52025bd3b4cf5f282f3eff14f7fed6b1c62164b14ee82b764fef35"
+}

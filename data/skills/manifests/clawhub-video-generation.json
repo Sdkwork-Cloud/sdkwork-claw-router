@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8914,
+  "uuid": "skill-clawhub-video-generation",
+  "skillKey": "clawhub-video-generation",
+  "name": "AI Video Generation",
+  "summary": "Create AI videos with Sora 2, Veo 3, Seedance, Runway, and modern APIs using reliable prompt and rendering workflows.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Create AI videos with Sora 2, Veo 3, Seedance, Runway, and modern APIs using reliable prompt an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-generation@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-generation",
+      "url": "https://clawhub.ai/skills/video-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generation",
+    "url": "https://clawhub.ai/skills/video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generation-34e964298298c6ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-generation@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-generation-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e9abc99bc5824421e345d640f58f3805bc6fc2f35a50a9b68aa229b5e164f6f",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T23:46:27.865Z"
+}

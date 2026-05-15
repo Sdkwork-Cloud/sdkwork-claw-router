@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62528,
+  "uuid": "skill-clawhub-chance-dlt-predictor",
+  "skillKey": "clawhub-chance-dlt-predictor",
+  "name": "Lottery Data Analysis & Number Generator (DLT)",
+  "summary": "基于历史数据和多维统计，运用频率、遗漏、走势、奇偶、大小、跨度等方法，科学分析并智能推荐大乐透号码。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chance_dlt_predictor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lingfeng-19",
+      "features": [
+        "基于历史数据和多维统计，运用频率、遗漏、走势、奇偶、大小、跨度等方法，科学分析并智能推荐大乐透号码。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chance-dlt-predictor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8140166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chance-dlt-predictor",
+      "url": "https://clawhub.ai/skills/chance-dlt-predictor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chance-dlt-predictor",
+    "url": "https://clawhub.ai/skills/chance-dlt-predictor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chance-dlt-predictor-58921096d4cca15f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chance-dlt-predictor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chance-dlt-predictor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f226f90d7438463bb2db294bcc55dca89b0c0932efddcd737f8cd922d4d9c53c",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T15:23:27.303Z"
+}

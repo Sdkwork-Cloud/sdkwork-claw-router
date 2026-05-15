@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ezviz-open-multimodal-analysis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ezviz_open_multimodal_analysis",
+  "skill": {
+    "id": 62908,
+    "skillKey": "clawhub-ezviz-open-multimodal-analysis",
+    "name": "Ezviz Open Multimodal Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ezviz-open-multimodal-analysis",
+    "url": "https://clawhub.ai/skills/ezviz-open-multimodal-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ezviz-open-multimodal-analysis-b28d15297142138d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "萤石多模态理解技能。通过设备抓图 + 智能体分析接口，实现对摄像头画面的 AI 理解分析。 Use when: 需要对监控画面进行智能分析、场景识别、行为理解、物体检测等多模态 AI 分析任务。 ⚠️ 安全要求：必须设置 EZVIZ_APP_KEY 和 EZVIZ_APP_SECRET 环境变量，使用最小权限凭证。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ezviz-open",
+      "userId": "s174s8a00r18xwt2q5p7j85f5183gavv",
+      "displayName": "EzvizOpenTeam",
+      "image": "https://avatars.githubusercontent.com/u/16202450?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 514,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773839994256,
+      "changelog": "**Summary: This update introduces token caching and enhanced credential/fallback handling for improved security and efficiency.**\n\n- Added `lib/token_manager.py` for centralized token management.\n- Implements secure access token caching on disk (`/tmp/ezviz_global_token_cache/global_token_cache.json`), configurable via `EZVIZ_TOKEN_CACHE`.\n- The skill now supports credential fallback: uses environment variables first, then OpenClaw config files as fallback.\n- SKILL.md updated: clarifies token cache, channel config, security recommendations, credential sourcing, and file permissions.\n- No breaking changes; prior environment variable usage remains compatible.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21d34865bea03b8a7d5f8e66b9f57bcf8912d6a7374583257862a055283b792d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/umeng-analytics-integration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.umeng_analytics_integration",
+  "skill": {
+    "id": 60389,
+    "skillKey": "clawhub-umeng-analytics-integration",
+    "name": "umeng-analytics-integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "umeng-analytics-integration",
+    "url": "https://clawhub.ai/skills/umeng-analytics-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/umeng-analytics-integration-06facc0a0d1ba6ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动将友盟Android统计SDK集成到现有Android项目中,包括环境检查、项目验证、SDK集成、编译验证和logcat验证。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "squall0925",
+      "userId": "s178qv5gja5sbh0bq8t6wbhq8x83rmg5",
+      "displayName": "Umeng+",
+      "image": "https://avatars.githubusercontent.com/u/195273084?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776340402831,
+      "changelog": "umeng-analytics-integration v1.0.0\n\n- 首次发布\n- 实现友盟Android统计SDK自动集成基础框架\n- 支持环境检测(JAVA、Android SDK等)\n- 验证目标Android项目基础可编译性\n- 提供appkey/channel参数交互引导",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc96f433be4df2a5361432afff90228dcd37f381ec8df24d6fe3f0abfa37cf44"
+}

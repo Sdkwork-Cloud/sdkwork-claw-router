@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14943,
+  "uuid": "skill-clawhub-baml-codegen",
+  "skillKey": "clawhub-baml-codegen",
+  "name": "baml-codegen",
+  "summary": "Use when generating BAML code for type-safe LLM extraction, classification, RAG, or agent workflows - creates complete .baml files with types, functions, clients, tests, and framework integrations from natural language requirements. Querie.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baml_codegen",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vaskin Kissoyan",
+      "features": [
+        "Use when generating BAML code for type-safe LLM extraction, classification, RAG, or agent workf.",
+        "creates complete .baml files with types, functions, clients, tests, and framework integrations.",
+        "Queries official BoundaryML repositories via MCP for real-time patterns",
+        "Supports multimodal inputs (images, audio), Python/TypeScript/Ruby/Go, 10+ frameworks, 50-70% t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baml-codegen@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31700?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baml-codegen",
+      "url": "https://clawhub.ai/skills/baml-codegen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baml-codegen",
+    "url": "https://clawhub.ai/skills/baml-codegen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baml-codegen-b4cd00ad21c289ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baml-codegen@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baml-codegen-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10b10c6b592f01ccd995fd175f311c6b6647e6bef394f7c158876679adaea7b8",
+      "artifactSizeBytes": 2033
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T03:47:06.846Z"
+}

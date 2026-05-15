@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67114,
+  "uuid": "skill-clawhub-net-vuln-scan",
+  "skillKey": "clawhub-net-vuln-scan",
+  "name": "net-vuln-scan",
+  "summary": "网络安全漏洞检测工具。用于检测本地网络和主机的常见安全漏洞，包括： (1) 开放端口检测与风险评估 (2) 弱密码和默认凭证检测 (3) SSL/TLS 证书问题 (4) 常见服务漏洞检测 (5) 网络配置安全检查 (6) 敏感端口暴露检测。 适用于：安全审计、渗透测试前自查、系统加固、服务器上线检查。 注意：仅...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.net_vuln_scan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aritz-China",
+      "features": [
+        "网络安全漏洞检测工具。用于检测本地网络和主机的常见安全漏洞，包括： (1) 开放端口检测与风险评估 (2) 弱密码和默认凭证检测 (3) SSL/TLS 证书问题 (4) 常见服务漏洞检测."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/net-vuln-scan@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152139616?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "net-vuln-scan",
+      "url": "https://clawhub.ai/skills/net-vuln-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "net-vuln-scan",
+    "url": "https://clawhub.ai/skills/net-vuln-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/net-vuln-scan-22856159a1d2efa8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/net-vuln-scan@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-net-vuln-scan-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f79308757bcfc83d7ec2703871afbce5eb5d2978dc6b7735bc9b2c0e68d52ba0",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T07:20:42.485Z"
+}

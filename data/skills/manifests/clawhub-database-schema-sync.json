@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40521,
+  "uuid": "skill-clawhub-database-schema-sync",
+  "skillKey": "clawhub-database-schema-sync",
+  "name": "Database Schema Sync",
+  "summary": "Database schema management using idempotent sync script instead of Alembic migrations. Use when (1) Adding new database tables, (2) Adding new columns to exi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.database_schema_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Toby Morning",
+      "features": [
+        "Database schema management using idempotent sync script instead of Alembic migrations",
+        "Use when (1) Adding new database tables, (2) Adding new columns to exi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/database-schema-sync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2746731?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "database-schema-sync",
+      "url": "https://clawhub.ai/skills/database-schema-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "database-schema-sync",
+    "url": "https://clawhub.ai/skills/database-schema-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/database-schema-sync-60920bd7fcd08d7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/database-schema-sync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-database-schema-sync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:106253f929d2766a786029c0a4934d6238bdf530cda2a7a64c0dfa333221d026",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T04:35:39.405Z"
+}

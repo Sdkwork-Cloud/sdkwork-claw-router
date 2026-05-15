@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/secondmind@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.secondmind",
+  "skill": {
+    "id": 13978,
+    "skillKey": "clawhub-secondmind",
+    "name": "SecondMind"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "secondmind",
+    "url": "https://clawhub.ai/skills/secondmind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/secondmind-4f8fdbd279f36e47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous three-tier memory with proactive initiative, project tracking, and social intelligence. Ingests OpenClaw conversations, extracts knowledge + emoti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emphaiser",
+      "userId": "publishers:emphaiser",
+      "displayName": "Emphaiser",
+      "image": "https://avatars.githubusercontent.com/u/187911931?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1295,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1771186812709,
+      "changelog": "## SecondMind v1.4.0 – \"Project Tracker\"\n\n### New Features\n- **Project Tracking**: `/accept` automatically creates tracked projects\n- `/projects` command to view active/completed projects\n- `/complete` marks projects as done – permanently excluded from future suggestions\n- Initiative engine checks project state before suggesting (no duplicates)\n- Project count in `/status` output\n\n### Fixes\n- **Initiative dedup overhaul**: Blacklist now covers ALL rejected/dead/completed proposals (was 7 days)\n- **Hard blacklist safety net**: Fuzzy keyword matching blocks reformulated duplicates even when LLM ignores instructions\n- **Explicit blacklist section in LLM prompt** with examples and strict rules\n- `/drop` now archives related knowledge entries to longterm (source dries up, not just the proposal)\n\n### Breaking Changes\n- None. Migration runs automatically on first start.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:84d03888b1a3f837b98803e11db2dbadda4c3e717d63e663b4f3dfc29ab90ade"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50087,
+  "uuid": "skill-clawhub-wof-predict",
+  "skillKey": "clawhub-wof-predict",
+  "name": "WatchOrFight - Predict",
+  "summary": "Trade prediction markets on WatchOrFight — on-chain oracle-settled markets with USDC stakes on Base L2 (Ethereum)",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wof_predict",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wof-developers",
+      "features": [
+        "Trade prediction markets on WatchOrFight — on-chain oracle-settled markets with USDC stakes on."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wof-predict@1.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261234722?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wof-predict",
+      "url": "https://clawhub.ai/skills/wof-predict"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wof-predict",
+    "url": "https://clawhub.ai/skills/wof-predict",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wof-predict-6f22f3d1df25206a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wof-predict@1.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-wof-predict-1.2.4.json",
+      "version": "1.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3da6a077b3b9a16f7614411c3cf7d703a7927c1ae7f7a1caaecc2369213f36a4",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T17:27:15.707Z"
+}

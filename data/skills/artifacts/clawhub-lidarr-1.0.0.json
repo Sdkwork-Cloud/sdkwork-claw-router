@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lidarr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lidarr",
+  "skill": {
+    "id": 12113,
+    "skillKey": "clawhub-lidarr",
+    "name": "Lidarr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lidarr",
+    "url": "https://clawhub.ai/skills/lidarr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lidarr-f539492a3140f072.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and add music to Lidarr. Supports artists, albums, and quality profiles (FLAC preferred)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rappo",
+      "userId": "publishers:rappo",
+      "displayName": "rappo",
+      "image": "https://avatars.githubusercontent.com/u/2245234?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1630,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770256940585,
+      "changelog": "Initial release: Add and manage artists/albums in Lidarr with flexible quality and metadata profile support.\n\n- Search for artists and view MusicBrainz links.\n- Add artists (albums only or full discography) with quality profile preference (FLAC recommended).\n- List and monitor albums, with options to search or just add to monitoring.\n- Supports removing artists, refreshing metadata, and viewing library/configuration.\n- Requires simple config file with Lidarr URL, API key, and profile IDs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7a67f70556977075eb4cbaabd2892379507010958bd4a344a815d5534d4efe7f"
+}

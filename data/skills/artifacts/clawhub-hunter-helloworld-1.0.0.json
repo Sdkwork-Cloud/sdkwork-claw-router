@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hunter-helloworld@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hunter_helloworld",
+  "skill": {
+    "id": 55806,
+    "skillKey": "clawhub-hunter-helloworld",
+    "name": "Hello World Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hunter-helloworld",
+    "url": "https://clawhub.ai/skills/hunter-helloworld",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hunter-helloworld-49109ec19ca72a5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A friendly greeting skill that responds to hello/你好 in multiple languages, tells the current time, and introduces the OpenClaw assistant"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ernest8976",
+      "userId": "publishers:ernest8976",
+      "displayName": "ernest8976",
+      "image": "https://avatars.githubusercontent.com/u/154732173?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773724188424,
+      "changelog": "Initial release of the \"helloworld\" skill for OpenClaw.\n\n- Responds to greetings in multiple languages with a matching-language reply.\n- Briefly introduces itself as the OpenClaw assistant powered by AI.\n- Optionally includes the current time of day in greetings.\n- Offers assistance and invites users to state their needs.\n- Triggers on greetings or identity questions in any supported language.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82d54f11b876f1698cf981df6ce1fd6dfdc16b40c79a83a99e974167ad980aa3"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17808,
+  "uuid": "skill-clawhub-gws-people",
+  "skillKey": "clawhub-gws-people",
+  "name": "Gws People",
+  "summary": "Google People: Manage contacts and profiles.",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_people",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google People: Manage contacts and profiles."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-people@1.0.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-people",
+      "url": "https://clawhub.ai/skills/gws-people"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-people",
+    "url": "https://clawhub.ai/skills/gws-people",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-people-8c996134fd7e0df1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-people@1.0.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-people-1.0.13.json",
+      "version": "1.0.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a4a1476415ab799be835dbf4f5fcabaeec07be04b22f6183c39e5bf8349f580",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:34:35.894Z"
+}

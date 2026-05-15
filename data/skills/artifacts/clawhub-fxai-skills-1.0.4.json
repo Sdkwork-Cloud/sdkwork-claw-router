@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fxai-skills@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fxai_skills",
+  "skill": {
+    "id": 60111,
+    "skillKey": "clawhub-fxai-skills",
+    "name": "FXAI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fxai-skills",
+    "url": "https://clawhub.ai/skills/fxai-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fxai-skills-f9d5c28f8639c1e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "创建 V5 代币（USDT/BNB 池子可选，0税或税收四档）；支持 USDT/BNB 买入，按数量或按比例卖出到 USDT/BNB。说「FXAI」触发。依赖 BNB Chain MCP，且 MCP env 中必须配置 PRIVATE_KEY。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nathanthoreaurl",
+      "userId": "publishers:nathanthoreaurl",
+      "displayName": "FlapxAgent",
+      "image": "https://avatars.githubusercontent.com/u/184037876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 414,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773430350082,
+      "changelog": "- Updated FlapSkill 合约地址为 `0x8f059fEb5f34031EfFA024e9EB8C9968BfFE516a`\n- 所有关联的 USDT 授权与合约调用示例中的目标地址均已更新为新合约地址\n- 版本号从 1.0.2 升级为 1.0.3（SKILL.md 顶部）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0158481fd5452dd6281fc74b3ec7e76defd88de65bf3489cbb31b3ca8d0e21db"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27388,
+  "uuid": "skill-clawhub-experience-layer",
+  "skillKey": "clawhub-experience-layer",
+  "name": "Skill Experience Layer",
+  "summary": "Skill Experience Layer - A failure-driven learning mechanism for OpenClaw agents that automatically accumulates lessons and best practices to avoid repeating...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.experience_layer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jilanfang",
+      "features": [
+        "Skill Experience Layer",
+        "A failure-driven learning mechanism for OpenClaw agents that automatically accumulates lessons."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/experience-layer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214955619?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "experience-layer",
+      "url": "https://clawhub.ai/skills/experience-layer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "experience-layer",
+    "url": "https://clawhub.ai/skills/experience-layer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/experience-layer-09f6bdbf47aa2d91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/experience-layer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-experience-layer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff119bc1c7cd246028b6a1af40234750670ac604618ff8710287f701fb3e18de",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T14:29:22.065Z"
+}

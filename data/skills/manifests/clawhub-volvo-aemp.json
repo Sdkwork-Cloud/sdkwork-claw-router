@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26237,
+  "uuid": "skill-clawhub-volvo-aemp",
+  "skillKey": "clawhub-volvo-aemp",
+  "name": "Volvo Aemp",
+  "summary": "Volvo AEMP integration. Manage Organizations. Use when the user wants to interact with Volvo AEMP data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volvo_aemp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Volvo AEMP integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Volvo AEMP data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volvo-aemp@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volvo-aemp",
+      "url": "https://clawhub.ai/skills/volvo-aemp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volvo-aemp",
+    "url": "https://clawhub.ai/skills/volvo-aemp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volvo-aemp-843c6a8d348139c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volvo-aemp@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-volvo-aemp-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f90ed99de183d3755e67cf2319972ffbf7c01a0de9ccdb50c9a8845a4f68724b",
+      "artifactSizeBytes": 1824
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:59:36.825Z"
+}

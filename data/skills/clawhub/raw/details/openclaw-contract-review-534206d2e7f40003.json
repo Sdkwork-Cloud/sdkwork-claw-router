@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "openclaw-contract-review",
+    "displayName": "OpenClaw Contract Review",
+    "summary": "公开发布的合同审核 Skill，通过统一工具入口触发 OpenClaw Contract Review Plugin。",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 282,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1774505177298,
+    "updatedAt": 1777623786066
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1776145026679,
+    "changelog": "- Added strict information pre-check (“submit 信息预检”) at the end of stage 1 for contract submissions: now requires all four fields (contract file, review position, review mode, review requirements) to be confirmed in the current user input before proceeding.\n- If any required field is missing, only outputs a follow-up question and immediately stops processing—does not call any tool or enter login.\n- Incorporated “review mode” (standard/deep) as a mandatory element in review submissions.\n- Strengthened global rule: pre-check must pass before any tool invocation or login step.\n- Updated documentation and summaries to clarify the new pre-check process and enforce separation between follow-up queries and tool actions.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "renzhiping",
+    "userId": "s17c4qy62v076mpc7wkjd83dwd83mtkp",
+    "displayName": "renzhiping",
+    "image": "https://avatars.githubusercontent.com/u/4640832?v=4"
+  },
+  "moderation": null
+}

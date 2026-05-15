@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10173,
+  "uuid": "skill-clawhub-maxxit-lazy-trading",
+  "skillKey": "clawhub-maxxit-lazy-trading",
+  "name": "Maxxit Lazy Trader",
+  "summary": "Execute perpetual trades on Ostium, Aster, and Avantis via Maxxit's Lazy Trading API, and trade Indian stocks through Zerodha Kite. Includes programmatic end...",
+  "version": "1.2.20",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maxxit_lazy_trading",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "abhi152003",
+      "features": [
+        "Execute perpetual trades on Ostium, Aster, and Avantis via Maxxit's Lazy Trading API, and trade.",
+        "Includes programmatic end..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maxxit-lazy-trading@1.2.20",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83402382?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maxxit-lazy-trading",
+      "url": "https://clawhub.ai/skills/maxxit-lazy-trading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maxxit-lazy-trading",
+    "url": "https://clawhub.ai/skills/maxxit-lazy-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maxxit-lazy-trading-a149eae395968f2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maxxit-lazy-trading@1.2.20",
+      "artifactUrl": "data/skills/artifacts/clawhub-maxxit-lazy-trading-1.2.20.json",
+      "version": "1.2.20",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b696d268ada7dc2b6a7d761d1acb94835379cebb0cc32e2b78b370907a076691",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T05:59:09.639Z"
+}

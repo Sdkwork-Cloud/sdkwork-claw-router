@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-product-photography@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_product_photography",
+  "skill": {
+    "id": 29841,
+    "skillKey": "clawhub-amazon-product-photography",
+    "name": "Amazon Product Photography"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-product-photography",
+    "url": "https://clawhub.ai/skills/amazon-product-photography",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-product-photography-ab4708908873f0ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon product photography planning and briefing agent. Plan main images, lifestyle shots, infographics, and size comparison photos. Generate photographer br..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 284,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774076530031,
+      "changelog": "- Initial release of Amazon product photography skill.\n- Generate detailed plans for main images, lifestyle photos, infographics, and size comparison shots.\n- Output photographer briefs, shot lists, and image optimization guidelines.\n- Includes Amazon technical requirements, 7-image strategy framework, and infographic design guidance.\n- Supports auditing existing images and offers mobile thumbnail optimization tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30217b99a5bfc7ef4becf0f7d89866a32cdb57645f7543ec95fe6ebbf00a82db"
+}

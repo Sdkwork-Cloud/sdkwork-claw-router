@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/houston-transtar-watch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.houston_transtar_watch",
+  "skill": {
+    "id": 22317,
+    "skillKey": "clawhub-houston-transtar-watch",
+    "name": "Houston Transtar Watch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "houston-transtar-watch",
+    "url": "https://clawhub.ai/skills/houston-transtar-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/houston-transtar-watch-6ab8533d641453d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Poll Houston TranStar incidents RSS every 10 minutes and WhatsApp me when there are changes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vijay-murugan",
+      "userId": "publishers:vijay-murugan",
+      "displayName": "vijay-murugan",
+      "image": "https://avatars.githubusercontent.com/u/56683057?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 467,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772513667278,
+      "changelog": "- Initial release of houston-transtar-watch skill.\n- Polls Houston TranStar incidents RSS feed every 10 minutes.\n- Detects and reports new accidents, stalls, and road closures.\n- Notifies user via WhatsApp with a summary of incidents when changes occur.\n- Designed for automated traffic monitoring and alerting in the Greater Houston area.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9c51eadd8474b1484347c147f8411d4e221f66e587010c7140c8a43f7630247a"
+}

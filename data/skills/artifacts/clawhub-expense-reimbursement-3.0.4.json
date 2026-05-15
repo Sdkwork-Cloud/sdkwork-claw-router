@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/expense-reimbursement@3.0.4",
+  "version": "3.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expense_reimbursement",
+  "skill": {
+    "id": 62825,
+    "skillKey": "clawhub-expense-reimbursement",
+    "name": "Expense Reimbursement"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expense-reimbursement",
+    "url": "https://clawhub.ai/skills/expense-reimbursement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expense-reimbursement-24503ab218d61542.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "差旅报销票据整理 / Travel Expense Reimbursement：支持高德/Didi/滴滴/Uber打车、12306火车票、机票、酒店住宿；递归扫描含ZIP内部；OCR识别行程单；判断出差/公出类型；按行程自动归档；填写研发经费使用单；生成打印材料包PDF（粘贴单永远首页）；自动化PDF合并（图片+..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lorwaleroy",
+      "userId": "s179ng7jqqrq992gacekeypxjn83q5mg",
+      "displayName": "LorwaLeroy",
+      "image": "https://avatars.githubusercontent.com/u/198293349?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "3.0.4",
+      "createdAt": 1775209561159,
+      "changelog": "v3.0.4: 表单PDF改用python-docx+reportlab Table重建(STHeiti字体)；票据PDF直接合并(不强制A4)；完整测试通过10页合并",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d3090342834ae11a209d340cb621e9ad16c5180306723c6f0ac8db40de9266c"
+}

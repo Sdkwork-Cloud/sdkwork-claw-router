@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-team-collaboration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_team_collaboration",
+  "skill": {
+    "id": 40694,
+    "skillKey": "clawhub-github-team-collaboration",
+    "name": "GitHub Team Collaboration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-team-collaboration",
+    "url": "https://clawhub.ai/skills/github-team-collaboration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-team-collaboration-78336aafd602c875.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GitHub team collaboration toolkit for managing team workflows, code reviews, issue tracking, sprint planning, and team metrics. Supports PR automation, issue..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaiyuelv",
+      "userId": "s171c2g5qpr0rdyra8xbm4srbh84mjjm",
+      "displayName": "Lv Lancer",
+      "image": "https://avatars.githubusercontent.com/u/29176686?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776583223880,
+      "changelog": "Initial release of github-team-collaboration – a toolkit for streamlined GitHub team workflows.\n\n- Automates pull request reviews, merging, and status checks.\n- Enables efficient issue triage, labeling, and tracking.\n- Supports sprint planning with milestone management and progress tracking.\n- Provides analytics on team productivity and collaboration metrics.\n- Includes utilities for branch protection, release management, and webhook setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1987e79e0533495e5f6e836f1886fdf69fe57602db10fcbf4292d5dcd1468003"
+}

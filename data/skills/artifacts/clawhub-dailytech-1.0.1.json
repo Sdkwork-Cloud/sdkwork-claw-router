@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dailytech@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dailytech",
+  "skill": {
+    "id": 51724,
+    "skillKey": "clawhub-dailytech",
+    "name": "Dailytech"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dailytech",
+    "url": "https://clawhub.ai/skills/dailytech",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dailytech-4d8e8f89126b4e4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily AI & tech news in 60 seconds — LLM updates, product launches, startup funding, developer tools. Bilingual EN/CN visual card. Morning & evening push."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiajiaoy",
+      "userId": "s17cev4f59prejmqpq8qft2ffn83g42e",
+      "displayName": "jiajiaoy",
+      "image": "https://avatars.githubusercontent.com/u/254620896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777287013679,
+      "changelog": "- Changed skill name from \"daily-tech\" to \"dailytech\".\n- Updated description to highlight concise \"60-second\" bilingual AI & tech news, now including LLM updates, product launches, startup funding, and developer tools.\n- Added mention of morning & evening push in the description.\n- No changes to logic, design, or workflow.\n- Added README.md file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:788884853c4c2b394ff027806bdea3974d6406510513c05533861b76fdd2387c"
+}

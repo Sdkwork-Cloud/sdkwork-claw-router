@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/delonix-competitor-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delonix_competitor_analysis",
+  "skill": {
+    "id": 57519,
+    "skillKey": "clawhub-delonix-competitor-analysis",
+    "name": "德胧竞品分析报告"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delonix-competitor-analysis",
+    "url": "https://clawhub.ai/skills/delonix-competitor-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delonix-competitor-analysis-20cca45546823718.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate structured competitive analysis reports with feature comparisons, pricing analysis, SWOT, and strategic recommendations. Use when analyzing competit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaoliuzhu",
+      "userId": "s17e38390rnhxjtv52ft6b44cx84s4n1",
+      "displayName": "Chaoliuzhu",
+      "image": "https://avatars.githubusercontent.com/u/207801254?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776673009535,
+      "changelog": "首发版本：结构化竞品分析，SWOT+定价分析",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb9218ed501d8ddf2a7662c7616450e5ac3aa384589d19973210e4d8951c0169"
+}

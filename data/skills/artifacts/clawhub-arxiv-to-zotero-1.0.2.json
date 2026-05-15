@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arxiv-to-zotero@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_to_zotero",
+  "skill": {
+    "id": 20142,
+    "skillKey": "clawhub-arxiv-to-zotero",
+    "name": "arXiv to Zotero"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-to-zotero",
+    "url": "https://clawhub.ai/skills/arxiv-to-zotero",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-to-zotero-9fa17a7b3ebc6275.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find recent arXiv papers, skip what is already in Zotero, and save new imports with parent-item tagging and PDF attachments into a dedicated collection."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cnicpyx",
+      "userId": "s171ym8qhgkk7qpmpjhtb4200n84h7ha",
+      "displayName": "清弦.",
+      "image": "https://avatars.githubusercontent.com/u/110468513?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 470,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776410996089,
+      "changelog": "Summary: Adds dedicated collection organization to arxiv-to-zotero imports.\n\n- New imports are now saved into a dedicated \"arxiv-to-zotero\" collection; the script creates this collection if it doesn't exist.\n- Clarified and updated documentation to highlight parent-item tagging and collection use.\n- Maintains deduplication, PDF attachment, and fallback to linked_url if file uploads are too large.\n- No changes to required environment variables or main flow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8bdf2dd3d0b71294bb7df2eff197fd85915cc11ec9297a44b7816d2f9a2a24f6"
+}

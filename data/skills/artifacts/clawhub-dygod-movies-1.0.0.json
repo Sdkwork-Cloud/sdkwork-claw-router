@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dygod-movies@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dygod_movies",
+  "skill": {
+    "id": 68885,
+    "skillKey": "clawhub-dygod-movies",
+    "name": "Dygod Movies"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dygod-movies",
+    "url": "https://clawhub.ai/skills/dygod-movies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dygod-movies-b5de14854aae562d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "爬取电影天堂(dygod.net)最新电影和电视剧信息，支持查询最近更新、高分电影， 并可一键下载到群晖NAS。当用户询问最近更新的电影/电视剧、高分电影、或想下载影视资源时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anlinxi",
+      "userId": "s17bqjbzyc7xzd0mc18qdhxes583hbyc",
+      "displayName": "anlinxi",
+      "image": "https://avatars.githubusercontent.com/u/40064822?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 430,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773791733482,
+      "changelog": "Initial release - Scrape movies from dygod.net",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a18efe5b241873f631262467b6f8ab49a7a0e3d6462a05e5c4c11faa1e1bc42"
+}

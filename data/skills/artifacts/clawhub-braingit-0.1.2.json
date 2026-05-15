@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/braingit@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.braingit",
+  "skill": {
+    "id": 23417,
+    "skillKey": "clawhub-braingit",
+    "name": "Braingit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "braingit",
+    "url": "https://clawhub.ai/skills/braingit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/braingit-1f07c86e5946235e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate committing Markdown-only changes in a git repo with safe staging, ideal for note snapshots without affecting code or binaries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gleb-urvanov",
+      "userId": "publishers:gleb-urvanov",
+      "displayName": "gleb-urvanov",
+      "image": "https://avatars.githubusercontent.com/u/22291958?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 441,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1772659575581,
+      "changelog": "Expose braingit article link more prominently.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bec7e36c14bf37513a6f0be2d079c3bb6a3cfbdadd4c1c9893e76d6837889fef"
+}

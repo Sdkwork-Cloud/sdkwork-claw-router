@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62874,
+  "uuid": "skill-clawhub-image-to-3d-pipeline",
+  "skillKey": "clawhub-image-to-3d-pipeline",
+  "name": "Image To 3d Pipeline",
+  "summary": "一键将商品图片转换为高质量3D模型的自动化流水线（图片预处理 → AI增强 → 3D生成）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_3d_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "m15010495895-sudo",
+      "features": [
+        "一键将商品图片转换为高质量3D模型的自动化流水线（图片预处理 → AI增强 → 3D生成）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-to-3d-pipeline@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258025369?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-to-3d-pipeline",
+      "url": "https://clawhub.ai/skills/image-to-3d-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-3d-pipeline",
+    "url": "https://clawhub.ai/skills/image-to-3d-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-3d-pipeline-75972c431adc2f88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-to-3d-pipeline@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-to-3d-pipeline-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93c1946f8f66d29db1b5c07c256bbb40b28b8ba7dfc39024cee36ab28c59117d",
+      "artifactSizeBytes": 2375
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:23:18.096Z"
+}

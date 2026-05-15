@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40199,
+  "uuid": "skill-clawhub-ticktick-enhanced",
+  "skillKey": "clawhub-ticktick-enhanced",
+  "name": "Ticktick",
+  "summary": "Manage TickTick tasks and projects",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ticktick_enhanced",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "halr9000",
+      "features": [
+        "Manage TickTick tasks and projects"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ticktick-enhanced@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18482?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ticktick-enhanced",
+      "url": "https://clawhub.ai/skills/ticktick-enhanced"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ticktick-enhanced",
+    "url": "https://clawhub.ai/skills/ticktick-enhanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ticktick-enhanced-e399b50cfb629ca7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ticktick-enhanced@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ticktick-enhanced-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8eb207106803cd588f3753485a5d8fdfbd40d21c162241e098bda866077e3a8",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T16:21:49.977Z"
+}

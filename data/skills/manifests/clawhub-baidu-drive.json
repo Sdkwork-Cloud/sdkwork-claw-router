@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60379,
+  "uuid": "skill-clawhub-baidu-drive",
+  "skillKey": "clawhub-baidu-drive",
+  "name": "百度网盘官方 skill",
+  "summary": "百度网盘(Baidu Drive)文件管理 — 上传、下载、转存、分享、搜索、移动、复制、重命名、创建文件夹。 同时支持 Agent 记忆备份/恢复（kimiclaw/maxclaw/qclaw/openclaw）。 TRIGGER: 用户提及\"百度网盘/bdpan/网盘/云盘/baidu drive/Baidu...",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_drive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BaiduNetdiskAIBot",
+      "features": [
+        "百度网盘(Baidu Drive)文件管理 — 上传、下载、转存、分享、搜索、移动、复制、重命名、创建文件夹。 同时支持 Agent 记忆备份/恢复（kimiclaw/maxclaw/qcl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-drive@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267909384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-drive",
+      "url": "https://clawhub.ai/skills/baidu-drive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-drive",
+    "url": "https://clawhub.ai/skills/baidu-drive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-drive-3f610359904653c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-drive@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-drive-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d0098a36e00a826a8772494623a7740cd5b6a5e94c10fd402851fd3e2e55c47",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T07:44:22.835Z"
+}

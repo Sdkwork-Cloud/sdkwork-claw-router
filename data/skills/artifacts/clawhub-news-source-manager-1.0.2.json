@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-source-manager@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_source_manager",
+  "skill": {
+    "id": 57066,
+    "skillKey": "clawhub-news-source-manager",
+    "name": "News Source Manager (信息源管理器)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-source-manager",
+    "url": "https://clawhub.ai/skills/news-source-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-source-manager-a3fe3fe26263a4d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages user's news category preferences and information sources. Stores in news-sources.json, supports add/remove/list operations. Use when (1) user wants t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kedoupi",
+      "userId": "s179gkrsgxgfzehrjabbrqk9rx83ht02",
+      "displayName": "KeDouPi(珂抖屁)",
+      "image": "https://avatars.githubusercontent.com/u/11420318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774663265656,
+      "changelog": "## v1.0.2 — Source Quality Optimization                                                                                                                         \n                                               \n  ### Fixed                                                                                                                                                       \n  - Removed duplicate: GTM (same URL as Greentech Media)                                                                                                          \n  - Removed duplicate: UX Design (same URL as UX Collective)                                                                                                      \n  - Removed defunct: Protocol (shut down in 2022)                                                                                                                 \n   \n  ### Added 9 new sources (all verified via WebSearch)                                                                                                            \n  - **AI/Tech**: a16z AI (P1) — VC industry analysis\n  - **Business Strategy**: Benedict Evans (P1), Stratechery (P1) — macro trends + tech business strategy                                                          \n  - **Finance/Crypto**: Morningstar (P1), Seeking Alpha (P2) — investment research + market analysis\n  - **Energy/Climate**: Bloomberg NEF (P1) — energy transition data & forecasts                                                                                   \n  - **Policy/Regulation**: CSET Georgetown (P1), AI Now Institute (P2) — AI national security + governance\n  - **Product Design**: Lenny's Newsletter (P1) — PM strategy & product thinking                                                                                  \n                                               \n  ### Source counts by category                                                                                                                                   \n  AI/Tech 8 | Business Strategy 10 | Finance/Crypto 12 | Health/Bio 10 | Energy/Climate 8 | Policy/Regulation 10 | Product Design 9",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ca9ae1d66a32f51f348ad252c33e34bab3bc7c7903e2ba4a8be5e461e7a8b0e"
+}

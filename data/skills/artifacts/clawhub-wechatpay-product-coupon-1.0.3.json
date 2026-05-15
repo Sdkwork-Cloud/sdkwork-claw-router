@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechatpay-product-coupon@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechatpay_product_coupon",
+  "skill": {
+    "id": 63153,
+    "skillKey": "clawhub-wechatpay-product-coupon",
+    "name": "微信支付商品券接入skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechatpay-product-coupon",
+    "url": "https://clawhub.ai/skills/wechatpay-product-coupon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechatpay-product-coupon-48632b566f01db46.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信支付商品券接入解决方案，覆盖券类型选型、发券/核销/查询/退券/回调全链路，提供选型/示例代码/业务速查/质量评估/排障五大能力。Use when user mentions \"商品券\", \"发券\", \"核销\", \"创建商品券\", \"商品券代码\", \"商品券回调\", \"商品券退券\", or asks to \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangpeng319",
+      "userId": "s173xcppepryqfkc9dvt7gm0rs83g31d",
+      "displayName": "zhangpeng",
+      "image": "https://avatars.githubusercontent.com/u/70940892?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 341,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1778063822165,
+      "changelog": "- 优化 skill 描述，突出覆盖发券/核销/查询/退券/回调全链路与五大能力。\n- 补充详尽的 Java/Go 官方示例须知、非官方语言跨代码输出的分步流程与免责提示。\n- 明确非 Java/Go 时禁止直接生成代码，需征得用户同意，按官方示例翻译，并始终带免责块。\n- 增强排障能力对非官方语言的支持，补充排障时参考修复代码的输出规范。\n- 精简和聚焦触发关键词与能力说明，使表达更易懂明晰。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af118b76e7200e221c3afaf188dc724bc0adfb1304c8327a585b589e12c1af25"
+}

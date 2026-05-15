@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/birdeye-mcp-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.birdeye_mcp_skill",
+  "skill": {
+    "id": 28962,
+    "skillKey": "clawhub-birdeye-mcp-skill",
+    "name": "Birdeye MCP Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "birdeye-mcp-skill",
+    "url": "https://clawhub.ai/skills/birdeye-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/birdeye-mcp-skill-1a81e975305be0a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Birdeye MCP through UXC for token market data, trending and discovery workflows, price monitoring, and DEX-related reads with help-first live tool discov..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jolestar",
+      "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+      "displayName": "jolestar",
+      "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 303,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773707607779,
+      "changelog": "birdeye-mcp-skill 1.0.0\n\n- Initial public release of the Birdeye MCP skill.\n- Enables use of Birdeye MCP through `uxc` for token market data, trending/discovery workflows, price monitoring, and DEX-related reads.\n- Implements help-first probing, API-key authentication, and credential binding setup.\n- Focused on read-heavy workflows and live tool discovery with safety guardrails for beta instability.\n- Provides detailed usage patterns, troubleshooting steps, and recommended automation strategies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c320cf42a6deef900ce2c099b68b5d364e8ecc378d5eb455da496e6ea52e124"
+}

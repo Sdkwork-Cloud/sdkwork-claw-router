@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71383,
+  "uuid": "skill-clawhub-uchicago",
+  "skillKey": "clawhub-uchicago",
+  "name": "Uchicago",
+  "summary": "提供芝加哥大学的历史、学院设置、招生、学费及奖学金信息，助力留学申请与学术了解。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uchicago",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供芝加哥大学的历史、学院设置、招生、学费及奖学金信息，助力留学申请与学术了解。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uchicago@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uchicago",
+      "url": "https://clawhub.ai/skills/uchicago"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uchicago",
+    "url": "https://clawhub.ai/skills/uchicago",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uchicago-edcabab21aa93882.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uchicago@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-uchicago-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c594e95080f348ff123b41375cbbf458e5c59a58548972c4e7193a2e389cc72",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:27:48.403Z"
+}

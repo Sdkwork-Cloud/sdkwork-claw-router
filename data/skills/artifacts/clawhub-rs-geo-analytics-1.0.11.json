@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rs-geo-analytics@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rs_geo_analytics",
+  "skill": {
+    "id": 22621,
+    "skillKey": "clawhub-rs-geo-analytics",
+    "name": "Rankscale Geo Analytics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rs-geo-analytics",
+    "url": "https://clawhub.ai/skills/rs-geo-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rs-geo-analytics-5b5e43834180d4f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and interpret Rankscale GEO (Generative Engine Optimization) analytics. Pulls brand visibility score, citation rate, sentiment, and top AI search terms."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mathias-rs",
+      "userId": "publishers:mathias-rs",
+      "displayName": "Rankscale AI",
+      "image": "https://avatars.githubusercontent.com/u/188867334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 457,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1772235410497,
+      "changelog": "Version 1.0.11 of rs-geo-analytics\n\n- No code or documentation changes detected in this release.\n- Version updated for administrative or metadata reasons only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1f6195c84896fc8ccd3a77ccd0fb64cf79f6c98a9de6de9124010a434bde3f5a"
+}

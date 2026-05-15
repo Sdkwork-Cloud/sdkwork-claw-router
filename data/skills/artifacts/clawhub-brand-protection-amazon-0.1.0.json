@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brand-protection-amazon@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brand_protection_amazon",
+  "skill": {
+    "id": 32528,
+    "skillKey": "clawhub-brand-protection-amazon",
+    "name": "Brand Protection Amazon"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brand-protection-amazon",
+    "url": "https://clawhub.ai/skills/brand-protection-amazon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brand-protection-amazon-bbc55b47b229c0eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon brand protection toolkit. Detect hijackers, counterfeits, and unauthorized sellers. Includes MAP violation monitoring, trademark abuse detection, comp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phheng",
+      "userId": "s17cnrtda4fqzdjza3g2hx20bs83f18z",
+      "displayName": "Henk Nie",
+      "image": "https://avatars.githubusercontent.com/u/44972754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773996656360,
+      "changelog": "Initial release: Amazon brand protection toolkit with detection, monitoring, and actionable templates.\n\n- Detects hijackers, MAP violations, counterfeits, and trademark abuse.\n- Provides complaint and cease & desist templates for Brand Registry actions.\n- Includes a risk-based system and guides for evidence collection.\n- No API key required; works via scripts and manual configuration.\n- Output includes actionable reports and recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d0c2a03c3804a675a2ce97a2d8b77bfaf4c5b55513018e82bfd6d6065226c6e"
+}

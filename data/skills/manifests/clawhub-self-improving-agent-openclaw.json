@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36606,
+  "uuid": "skill-clawhub-self-improving-agent-openclaw",
+  "skillKey": "clawhub-self-improving-agent-openclaw",
+  "name": "OpenClaw Learning Loop",
+  "summary": "Capture errors, corrections, and feature requests so your OpenClaw agent improves over time instead of repeating the same mistakes. Use when commands fail, u...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_agent_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sam-k-migz",
+      "features": [
+        "Capture errors, corrections, and feature requests so your OpenClaw agent improves over time ins.",
+        "Use when commands fail, u..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-improving-agent-openclaw@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108572026?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-improving-agent-openclaw",
+      "url": "https://clawhub.ai/skills/self-improving-agent-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-agent-openclaw",
+    "url": "https://clawhub.ai/skills/self-improving-agent-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-agent-openclaw-12a5d7f522fb98d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-improving-agent-openclaw@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-improving-agent-openclaw-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1d3e3056b5259e76451e3b3d90a31fd93b7bbe4a3460381e140bedac89c7588",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T12:29:12.284Z"
+}

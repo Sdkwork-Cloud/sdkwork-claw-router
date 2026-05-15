@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42508,
+  "uuid": "skill-clawhub-bytesagain-medical-scribe",
+  "skillKey": "clawhub-bytesagain-medical-scribe",
+  "name": "Bytesagain Medical Scribe",
+  "summary": "Generate medical documents from clinical notes. Input: patient info, symptoms, diagnosis. Output: SOAP notes, discharge summaries, referral letters, prescrip...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bytesagain_medical_scribe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "loutai0307-prog",
+      "features": [
+        "Generate medical documents from clinical notes",
+        "Input: patient info, symptoms, diagnosis",
+        "Output: SOAP notes, discharge summaries, referral letters, prescrip..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bytesagain-medical-scribe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266760463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bytesagain-medical-scribe",
+      "url": "https://clawhub.ai/skills/bytesagain-medical-scribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bytesagain-medical-scribe",
+    "url": "https://clawhub.ai/skills/bytesagain-medical-scribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bytesagain-medical-scribe-eb5e02e7179b83cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bytesagain-medical-scribe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bytesagain-medical-scribe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56be1b6d1884f328a3e44c1476659c7efbcb9cf2c3f15269754acf7da7d4fa0a",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T23:58:42.891Z"
+}

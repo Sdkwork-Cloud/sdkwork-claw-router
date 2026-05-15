@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/document-reader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.document_reader",
+  "skill": {
+    "id": 59700,
+    "skillKey": "clawhub-document-reader",
+    "name": "document-reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "document-reader",
+    "url": "https://clawhub.ai/skills/document-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/document-reader-7a010203f6f6b98f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用文档读取工具，支持 PDF/DOCX/XLSX/PPTX/RTF/ODT 等多种文档格式，也支持 ZIP/TAR.GZ/RAR/7Z 等主流压缩包内文档直接读取"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaoyaliu00",
+      "userId": "s176v3w9m19hha3zy3k0nga2t184e5sa",
+      "displayName": "xiaoya",
+      "image": "https://avatars.githubusercontent.com/u/124729009?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 446,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775637768169,
+      "changelog": "Initial release: support PDF/DOCX/XLSX/PPTX/RTF/ODT documents and ZIP/TAR/RAR/7Z compressed files",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76a33578af6e13d66988a9afb4fce27a8095f098199f450c0afb1a29b18e4039"
+}

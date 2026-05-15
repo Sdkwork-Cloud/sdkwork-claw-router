@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/himalaya@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.himalaya",
+  "skill": {
+    "id": 8252,
+    "skillKey": "clawhub-himalaya",
+    "name": "Himalaya"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "himalaya",
+    "url": "https://clawhub.ai/skills/himalaya",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/himalaya-efb4c2bcdf2ad82a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI to manage emails via IMAP/SMTP. Use `himalaya` to list, read, write, reply, forward, search, and organize emails from the terminal. Supports multiple accounts and message composition with MML (MIME Meta Language)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lamelas",
+      "userId": "publishers:lamelas",
+      "displayName": "André Lamelas",
+      "image": "https://avatars.githubusercontent.com/u/210068?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 41662,
+      "installsAllTime": 1503,
+      "installsCurrent": 1463,
+      "stars": 65,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767954271328,
+      "changelog": "Initial release of Himalaya CLI email client skill.\n\n- Provides terminal-based email management via IMAP/SMTP.\n- Supports listing, reading, composing, replying, forwarding, searching, and organizing emails.\n- Includes multi-account support and message composition with MML.\n- Detailed setup and configuration instructions included.\n- Enables handling attachments, output customization, and debugging via logging.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:82d41fe2d6d200335d16bea38b2ba12ec1b2443b3cd658a465dd2d3f83e44094"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skytale@0.5.2",
+  "version": "0.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skytale",
+  "skill": {
+    "id": 50787,
+    "skillKey": "clawhub-skytale",
+    "name": "Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skytale",
+    "url": "https://clawhub.ai/skills/skytale",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skytale-17060ebe81f90e51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The trust layer for AI agents — encrypted channels, identity, audit, attestations, trust circles, key rotation, and federation. MLS protocol (RFC 9420)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicholasraimbault",
+      "userId": "publishers:nicholasraimbault",
+      "displayName": "nicholasraimbault",
+      "image": "https://avatars.githubusercontent.com/u/11843674?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 469,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.5.2",
+      "createdAt": 1773276720801,
+      "changelog": "- Updated the skill description to: \"The trust layer for AI agents — encrypted channels, identity, audit, attestations, trust circles, key rotation, and federation. MLS protocol (RFC 9420).\"\n- No functional changes; documentation and description update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34b332fe04017f654f0f42354375a5dce920dd6f8e9912056168c0ca18138dae"
+}

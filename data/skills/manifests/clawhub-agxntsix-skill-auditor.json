@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17179,
+  "uuid": "skill-clawhub-agxntsix-skill-auditor",
+  "skillKey": "clawhub-agxntsix-skill-auditor",
+  "name": "Skill Auditor",
+  "summary": "Security audit and quarantine system for third-party OpenClaw skills. Use when evaluating, reviewing, or installing any skill from ClawHub or external source...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agxntsix_skill_auditor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Security audit and quarantine system for third-party OpenClaw skills",
+        "Use when evaluating, reviewing, or installing any skill from ClawHub or external source..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agxntsix-skill-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agxntsix-skill-auditor",
+      "url": "https://clawhub.ai/skills/agxntsix-skill-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agxntsix-skill-auditor",
+    "url": "https://clawhub.ai/skills/agxntsix-skill-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agxntsix-skill-auditor-8a1e33598d7a7fcf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agxntsix-skill-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agxntsix-skill-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db91bb0471a71bdbc8ba845f9c787513f594a044fa3e31bb78671ca800b66c6e",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T06:11:47.812Z"
+}

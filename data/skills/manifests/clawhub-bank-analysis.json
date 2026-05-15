@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73355,
+  "uuid": "skill-clawhub-bank-analysis",
+  "skillKey": "clawhub-bank-analysis",
+  "name": "银行流水财务分析",
+  "summary": "分析公司银行流水，输出集团总体、收入、支出、应收应付、重大款项及风险分析报告",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bank_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "duzhilei951",
+      "features": [
+        "分析公司银行流水，输出集团总体、收入、支出、应收应付、重大款项及风险分析报告"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bank-analysis@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22375450?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bank-analysis",
+      "url": "https://clawhub.ai/skills/bank-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bank-analysis",
+    "url": "https://clawhub.ai/skills/bank-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bank-analysis-9f267885926b0d47.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bank-analysis@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bank-analysis-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7504323e1ef42bd2f0332a874e4104ca83c0c36068409ad69085903fa2027fb1",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T04:19:10.788Z"
+}

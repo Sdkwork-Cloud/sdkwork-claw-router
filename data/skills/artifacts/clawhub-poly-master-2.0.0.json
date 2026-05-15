@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/poly-master@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poly_master",
+  "skill": {
+    "id": 43017,
+    "skillKey": "clawhub-poly-master",
+    "name": "Poly Master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poly-master",
+    "url": "https://clawhub.ai/skills/poly-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poly-master-78d2e5017ab56bf9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Polymarket prediction market skill by Antalpha AI. Discover trending markets, browse event predictions, invest in outcomes, copy-trade top traders, track por..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deanpeng-dotcom",
+      "userId": "s17be4djsk51cp2zg7bk77n18n84n734",
+      "displayName": "deanpeng-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/271209600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776440652365,
+      "changelog": "Poly Master v2 introduces LLM-powered hedging/arbitrage strategies and Polymarket Builder Program integration.\n\n- Added: Poly Master hedge strategy scans for logical implication arbitrage opportunities, ranked by tier (T1–T3).\n- Integrated: All CLOB trades now routed via Polymarket Builder Program for improved execution and gasless trading.\n- New tools: `poly-master-strategy-scan`, `poly-master-strategy-execute`, and dashboard/metrics endpoints.\n- Enhanced: Required output formats for hedge signals and dual-leg execution, including QR codes.\n- Updated: Agent instructions, tool parameters, and triggers to support strategy workflows.\n- Legacy trading, copy trading, and portfolio features retained; strategy is an added logical layer.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d76e81757afe5171fea0b99e79e8dfcdc3f98c86585b347c9a07fcad83adb117"
+}

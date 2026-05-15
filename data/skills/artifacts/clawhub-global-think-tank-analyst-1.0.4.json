@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/global-think-tank-analyst@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.global_think_tank_analyst",
+  "skill": {
+    "id": 16160,
+    "skillKey": "clawhub-global-think-tank-analyst",
+    "name": "Policy Risk Memo Architect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "global-think-tank-analyst",
+    "url": "https://clawhub.ai/skills/global-think-tank-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/global-think-tank-analyst-98864ca856abed51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Produce decision-ready memos on geopolitics, sanctions, trade, regulation, and strategic risk questions with explicit uncertainty, competing interpretations,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vassiliylakhonin",
+      "userId": "s173a4t4h1zt93y2cezhrwtpf184hdck",
+      "displayName": "Vasiliy",
+      "image": "https://avatars.githubusercontent.com/u/260414237?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 812,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 21
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776870246024,
+      "changelog": "- Skill metadata and instructions streamlined for greater focus on decision usefulness and evidence discipline.\n- Intake, workflow, and output structure refocused to require explicit questions, decision context, and audience from the outset.\n- Evidence handling and confidence labeling rules made more explicit; “EVIDENCE ACCESS LIMITED” statement standardized.\n- Output templates and section definitions compressed, removing redundant or overly academic language.\n- Recommendation and scenario guidance updated to enforce actionable, context-appropriate analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c090e4a17e5334899db9540f0a7c0ff625c2d667beffcc3cc8bf4f5a9df0668d"
+}

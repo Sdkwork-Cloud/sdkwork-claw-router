@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41970,
+  "uuid": "skill-clawhub-night-shift",
+  "skillKey": "clawhub-night-shift",
+  "name": "Night Shift",
+  "summary": "Queue coding plans during the day, approve them, execute later in isolated worktrees, and inspect reports. Background agentic execution requires an explicitl...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.night_shift",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vardhineediganesh877-ui",
+      "features": [
+        "Queue coding plans during the day, approve them, execute later in isolated worktrees, and inspe.",
+        "Background agentic execution requires an explicitl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/night-shift@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274308381?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "night-shift",
+      "url": "https://clawhub.ai/skills/night-shift"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "night-shift",
+    "url": "https://clawhub.ai/skills/night-shift",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/night-shift-4f4fa824fc9c532b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/night-shift@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-night-shift-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21398304e9a158ef9ebd198e2f695d9484c3e68c893bf39f008b2bd01a13af48",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T23:02:23.913Z"
+}

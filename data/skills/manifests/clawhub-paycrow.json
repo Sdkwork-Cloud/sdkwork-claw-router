@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51946,
+  "uuid": "skill-clawhub-paycrow",
+  "skillKey": "clawhub-paycrow",
+  "name": "PayCrow",
+  "summary": "Escrow + trust scoring on Base mainnet. Checks 24K+ agents BEFORE you pay. Real dispute resolution. Works with any x402 API — vendor doesn't need it installed.",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paycrow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Miguel Castellano",
+      "features": [
+        "Escrow + trust scoring on Base mainnet",
+        "Checks 24K+ agents BEFORE you pay",
+        "Real dispute resolution",
+        "Works with any x402 API — vendor doesn't need it installed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paycrow@1.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48452313?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paycrow",
+      "url": "https://clawhub.ai/skills/paycrow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paycrow",
+    "url": "https://clawhub.ai/skills/paycrow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paycrow-73a2b58604fd6546.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paycrow@1.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-paycrow-1.2.4.json",
+      "version": "1.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0050a8f1d8ada2e849ce062f814da5c7f92f5d25a4190f0fb54e089cfd7cb12d",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T22:29:04.820Z"
+}

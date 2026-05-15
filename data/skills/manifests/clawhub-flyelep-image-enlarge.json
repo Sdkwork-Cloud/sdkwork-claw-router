@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68192,
+  "uuid": "skill-clawhub-flyelep-image-enlarge",
+  "skillKey": "clawhub-flyelep-image-enlarge",
+  "name": "image-enlarge",
+  "summary": "通过 Flyelep AI 工具接口对图片进行无损放大，支持单张或批量处理。 当用户要求提升清晰度、放大图片尺寸、做超清增强、批量增强商品图时使用此技能。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyelep_image_enlarge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flyelep",
+      "features": [
+        "通过 Flyelep AI 工具接口对图片进行无损放大，支持单张或批量处理。 当用户要求提升清晰度、放大图片尺寸、做超清增强、批量增强商品图时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flyelep-image-enlarge@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272408277?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flyelep-image-enlarge",
+      "url": "https://clawhub.ai/skills/flyelep-image-enlarge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyelep-image-enlarge",
+    "url": "https://clawhub.ai/skills/flyelep-image-enlarge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyelep-image-enlarge-11e7bf9368e4ad6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flyelep-image-enlarge@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-flyelep-image-enlarge-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ce10ff0b36c352d30d6609a7d9d7a947c46e37dec3b258fa40d4a3b103a58d0",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T03:56:43.388Z"
+}

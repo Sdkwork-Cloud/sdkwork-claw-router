@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73005,
+  "uuid": "skill-clawhub-feishu-enhanced",
+  "skillKey": "clawhub-feishu-enhanced",
+  "name": "飞书增强套件",
+  "summary": "飞书增强套件 - 深度集成飞书文档、多维表格、消息和日历的自动化操作。适用于需要高效办公自动化的中文用户。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_enhanced",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LiJie298",
+      "features": [
+        "深度集成飞书文档、多维表格、消息和日历的自动化操作。适用于需要高效办公自动化的中文用户。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-enhanced@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20693566?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-enhanced",
+      "url": "https://clawhub.ai/skills/feishu-enhanced"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-enhanced",
+    "url": "https://clawhub.ai/skills/feishu-enhanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-enhanced-b449f3f739ebe6a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-enhanced@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-enhanced-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d95ac7fec26eb970b504e2d52eeb37416e3d6673ecba63d0cbfe274d7a25ddba",
+      "artifactSizeBytes": 1915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T07:18:06.345Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anti-regression@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anti_regression",
+  "skill": {
+    "id": 16042,
+    "skillKey": "clawhub-anti-regression",
+    "name": "Anti Regression"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anti-regression",
+    "url": "https://clawhub.ai/skills/anti-regression",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anti-regression-9b5839f340d8b9ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stop drifting back to chatbot behavior. Patterns for maintaining autonomous agent effectiveness across sessions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zoroposkai",
+      "userId": "publishers:zoroposkai",
+      "displayName": "ZoroPoskai",
+      "image": "https://avatars.githubusercontent.com/u/259956054?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 934,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771179462126,
+      "changelog": "anti-regression 1.0.1\n\n- Added CHANGELOG.md and README.md for documentation and version tracking.\n- Included a new example integration guide: examples/SOUL-integration.md.\n- Updated package.json to reflect version and metadata changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3fa83275b540fa0d0b17154c3c456fea79827b11df3264c767877dbebd2513a0"
+}

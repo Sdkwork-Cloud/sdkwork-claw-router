@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63389,
+  "uuid": "skill-clawhub-finance-accounting",
+  "skillKey": "clawhub-finance-accounting",
+  "name": "Finance Accounting",
+  "summary": "财务会计文书处理综合技能包 - 包含记账、对账、税务、报表等核心功能",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finance_accounting",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangkelvin",
+      "features": [
+        "财务会计文书处理综合技能包",
+        "包含记账、对账、税务、报表等核心功能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finance-accounting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261776090?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finance-accounting",
+      "url": "https://clawhub.ai/skills/finance-accounting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finance-accounting",
+    "url": "https://clawhub.ai/skills/finance-accounting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finance-accounting-a9801fb71300dec8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finance-accounting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-finance-accounting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b826a3a3292f65b80dcb59f94471bb2353f662ae0f64b9b1984b7f969c3850f",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T16:35:59.538Z"
+}

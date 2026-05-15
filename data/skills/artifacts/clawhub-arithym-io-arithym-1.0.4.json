@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arithym-io-arithym@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arithym_io_arithym",
+  "skill": {
+    "id": 50929,
+    "skillKey": "clawhub-arithym-io-arithym",
+    "name": "Arithym"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arithym-io-arithym",
+    "url": "https://clawhub.ai/skills/arithym-io-arithym",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arithym-io-arithym-c9d559071d6fff43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Exact arithmetic for AI agents — zero hallucination math via 62 tools covering integer arithmetic, fractions, units, calculus, and financial calculations. Us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lrningslo",
+      "userId": "s17fhvc15sqajqbc1ayap52sxx83kr62",
+      "displayName": "Geometric Data Systems",
+      "image": "https://avatars.githubusercontent.com/u/77250565?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 411,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773667916890,
+      "changelog": "- Added a detailed version and metadata section, including Openclaw integration and emoji for visual identification.\n- Expanded and clarified the skill description; now emphasizes 62 tools and specific use cases for zero-hallucination math.\n- Improved tool organization, adding a Discovery section (list_refs, read_ref, guide_list) and highlighting best practices.\n- Updated formatting for easier reading, including bullet points and short, actionable advice.\n- No functional code changes detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db2cfe52be4c569e761ea793be28c5f4e86107760e3570c25a893cd50dd987ef"
+}

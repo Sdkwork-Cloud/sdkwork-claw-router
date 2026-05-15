@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41936,
+  "uuid": "skill-clawhub-fix-lifecycle-stages",
+  "skillKey": "clawhub-fix-lifecycle-stages",
+  "name": "Fix Lifecycle Stages",
+  "summary": "Ensure all contacts and companies have appropriate lifecycle stages. Backfills missing stages via API, fixes records stuck at disallowed stages, and creates...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fix_lifecycle_stages",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TomGranot",
+      "features": [
+        "Ensure all contacts and companies have appropriate lifecycle stages",
+        "Backfills missing stages via API, fixes records stuck at disallowed stages, and creates..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fix-lifecycle-stages@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8835035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fix-lifecycle-stages",
+      "url": "https://clawhub.ai/skills/fix-lifecycle-stages"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fix-lifecycle-stages",
+    "url": "https://clawhub.ai/skills/fix-lifecycle-stages",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fix-lifecycle-stages-40f022e54101de89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fix-lifecycle-stages@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fix-lifecycle-stages-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c97e2ae5e62af0495ecc183ce59229cbbf0f842aaecca16d7ca2beeff8c17eea",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T18:42:28.182Z"
+}

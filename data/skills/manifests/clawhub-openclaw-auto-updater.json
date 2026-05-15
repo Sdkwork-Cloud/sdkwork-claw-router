@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8466,
+  "uuid": "skill-clawhub-openclaw-auto-updater",
+  "skillKey": "clawhub-openclaw-auto-updater",
+  "name": "OpenClaw Auto‑Updater (Safe + Scheduled + Summary)",
+  "summary": "Schedule automatic OpenClaw and skill updates with reliable cron templates, timezone-safe scheduling, and clear summary outputs. Use for hands-off maintenance, scheduled upgrades, and concise update reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_auto_updater",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CodingPenguin44",
+      "features": [
+        "Schedule automatic OpenClaw and skill updates with reliable cron templates, timezone-safe sched.",
+        "Use for hands-off maintenance, scheduled upgrades, and concise update reports."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-auto-updater@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151219570?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-auto-updater",
+      "url": "https://clawhub.ai/skills/openclaw-auto-updater"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-auto-updater",
+    "url": "https://clawhub.ai/skills/openclaw-auto-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-auto-updater-e73c3de114544728.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-auto-updater@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-auto-updater-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75470ca6877e325406665eb772629b1be1f662a2af70bff5f911651ce5b97d35",
+      "artifactSizeBytes": 2181
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T17:07:30.070Z"
+}

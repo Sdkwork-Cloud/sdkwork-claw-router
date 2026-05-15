@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66636,
+  "uuid": "skill-clawhub-video-downloader-skill",
+  "skillKey": "clawhub-video-downloader-skill",
+  "name": "支持从 YouTube、Bilibili、抖音及所有 yt-dlp 兼容平台下载视频，可自动选择最佳分辨率、合并音视频并清理文件名",
+  "summary": "通用视频下载工具，支持 YouTube、B站、抖音等主流平台。使用 yt-dlp 下载视频，自动选择分辨率、合并音视频、清理文件名。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_downloader_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jingrongx",
+      "features": [
+        "通用视频下载工具，支持 YouTube、B站、抖音等主流平台。使用 yt-dlp 下载视频，自动选择分辨率、合并音视频、清理文件名。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-downloader-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44083720?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-downloader-skill",
+      "url": "https://clawhub.ai/skills/video-downloader-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-downloader-skill",
+    "url": "https://clawhub.ai/skills/video-downloader-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-downloader-skill-bccf1ba9d7f1189c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-downloader-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-downloader-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62e22fdef64145a953fcfe5dafcd1169c0fdbc14401b1dc15badaf863269dc2c",
+      "artifactSizeBytes": 2243
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T06:13:13.191Z"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12338,
+  "uuid": "skill-clawhub-morfeo-nano-banana-pro",
+  "skillKey": "clawhub-morfeo-nano-banana-pro",
+  "name": "Nano Banana Pro (Morfeo)",
+  "summary": "Generate and edit images using Google's Nano Banana Pro (Gemini 3 Pro Image) API. Use when the user asks to generate, create, edit, modify, change, alter, or update images. Also use when user references an existing image file and asks to m.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morfeo_nano_banana_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul de Lavallaz",
+      "features": [
+        "Generate and edit images using Google's Nano Banana Pro (Gemini 3 Pro Image) API",
+        "Use when the user asks to generate, create, edit, modify, change, alter, or update images",
+        "Also use when user references an existing image file and asks to modify it in any way (e.g., \"m.",
+        "Supports both text-to-image generation and image-to-image editing with configurable resolution."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/morfeo-nano-banana-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51497690?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "morfeo-nano-banana-pro",
+      "url": "https://clawhub.ai/skills/morfeo-nano-banana-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morfeo-nano-banana-pro",
+    "url": "https://clawhub.ai/skills/morfeo-nano-banana-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morfeo-nano-banana-pro-f8ccb28830862bf4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/morfeo-nano-banana-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-morfeo-nano-banana-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6381e366866af4bdcbcbd472dd45a818ce7434b7ca6fca2754d33ef8cfbae72c",
+      "artifactSizeBytes": 2141
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T07:30:34.126Z"
+}

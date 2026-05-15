@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22215,
+  "uuid": "skill-clawhub-myaider-skill-importer",
+  "skillKey": "clawhub-myaider-skill-importer",
+  "name": "MyAider Skill Importer",
+  "summary": "Import, create, and upgrade skills from MyAider MCP. Use this skill whenever the user wants to import their MyAider MCP skills into agent skills, or upgrade/...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.myaider_skill_importer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hurungang",
+      "features": [
+        "Import, create, and upgrade skills from MyAider MCP",
+        "Use this skill whenever the user wants to import their MyAider MCP skills into agent skills, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/myaider-skill-importer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18710602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "myaider-skill-importer",
+      "url": "https://clawhub.ai/skills/myaider-skill-importer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "myaider-skill-importer",
+    "url": "https://clawhub.ai/skills/myaider-skill-importer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/myaider-skill-importer-1e6ae1b4973e0e58.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/myaider-skill-importer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-myaider-skill-importer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a1235beffc197c721c3aad39623b4ce179483b63299ea1918b7710f08e2c1d6",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T00:25:23.827Z"
+}

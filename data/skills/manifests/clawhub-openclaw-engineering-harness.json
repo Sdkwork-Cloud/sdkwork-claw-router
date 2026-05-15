@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42271,
+  "uuid": "skill-clawhub-openclaw-engineering-harness",
+  "skillKey": "clawhub-openclaw-engineering-harness",
+  "name": "openclaw-engineering-harness",
+  "summary": "Manages the full engineering workflow by clarifying requests, discovering code, making minimal changes, validating, and preparing publish-ready artifacts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_engineering_harness",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "h4444433333",
+      "features": [
+        "Manages the full engineering workflow by clarifying requests, discovering code, making minimal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-engineering-harness@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20276845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-engineering-harness",
+      "url": "https://clawhub.ai/skills/openclaw-engineering-harness"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-engineering-harness",
+    "url": "https://clawhub.ai/skills/openclaw-engineering-harness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-engineering-harness-ed7669bbabc5c442.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-engineering-harness@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-engineering-harness-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f426c68c1c5bfee343993a22db5e7bd217fc523adeaf3acaa4b54cb6e543c807",
+      "artifactSizeBytes": 2809
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T06:19:50.039Z"
+}

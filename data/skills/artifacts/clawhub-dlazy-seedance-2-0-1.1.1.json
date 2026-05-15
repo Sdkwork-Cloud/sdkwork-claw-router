@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dlazy-seedance-2-0@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_seedance_2_0",
+  "skill": {
+    "id": 14214,
+    "skillKey": "clawhub-dlazy-seedance-2-0",
+    "name": "Dlazy Seedance 2.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-seedance-2-0",
+    "url": "https://clawhub.ai/skills/dlazy-seedance-2-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-seedance-2-0-840038de71afd1a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ByteDance's latest video generation model. Supports multi-modal reference (images, video, audio) to generate videos, as well as first/last frame and text-to-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlazyai",
+      "userId": "s170j1ymymrxasgd00dsk7tckx84cf45",
+      "displayName": "dlazy",
+      "image": "https://avatars.githubusercontent.com/u/274158181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1241,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1778076605690,
+      "changelog": "- Minor update to version 1.1.1.\n- Clarified the description for the --generation_mode option in the usage section.  \n- No functional or command changes—documentation change only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:273ae29f5169514d1242b9841b725ddd8620ba95ecf4fd321a6b84e6e8739e4d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/n0nu-security-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n0nu_security_audit",
+  "skill": {
+    "id": 27580,
+    "skillKey": "clawhub-n0nu-security-audit",
+    "name": "Security Audit for OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n0nu-security-audit",
+    "url": "https://clawhub.ai/skills/n0nu-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n0nu-security-audit-1e3714919ea4c4b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Logs risky OpenClaw agent actions, conducts activity audits, and reviews OpenClaw configs for security risks without blocking operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "n0nu",
+      "userId": "publishers:n0nu",
+      "displayName": "n0nu",
+      "image": "https://avatars.githubusercontent.com/u/89383216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773644006000,
+      "changelog": "Initial release: behavior logging, audit reports, and config audit via openclaw security audit",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5abf39c3de2e19de5558a04070d73350fd0a6f982c5f798c8bd7d45db616b3e"
+}

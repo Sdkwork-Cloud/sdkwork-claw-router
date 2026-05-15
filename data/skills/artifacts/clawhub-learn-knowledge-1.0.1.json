@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/learn-knowledge@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learn_knowledge",
+  "skill": {
+    "id": 71277,
+    "skillKey": "clawhub-learn-knowledge",
+    "name": "knowledge-internalizer-pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learn-knowledge",
+    "url": "https://clawhub.ai/skills/learn-knowledge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learn-knowledge-a0b36c37104e236c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "系统化知识内化与能力自评引擎。当需要深入学习新领域、建立专家级知识库、并明确知道自己的掌握程度时使用。核心功能包括系统性知识内化引擎和基于知识图谱的能力评级器。触发词：深入学习并评估掌握水平、建立专家级知识库、系统研究并告诉我能做什么。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nonlinearhuman",
+      "userId": "publishers:nonlinearhuman",
+      "displayName": "nonlinearHuman",
+      "image": "https://avatars.githubusercontent.com/u/97647446?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773676458042,
+      "changelog": "🧠 Knowledge Internalizer Pro\nSystematic Knowledge Internalization & Capability Self-Assessment Engine\nNot just learning—it tells you exactly \"how much you know\" and \"what you can do.\"\n\nCore Features\n🔍 Exploratory Learning\n\nMulti-dimensional search across 5 angles: definition, principles, comparison,前沿, applications\nPrioritized sources: academic papers → official docs →权威 surveys → tutorials\n📦 Deep Structuring\n\nConcept-Relation Knowledge Graph\n5-layer Hierarchical Knowledge Framework\nPre-generated Q&A pairs\n📊 Self Capability Rating ⭐ (Key Feature)\n\n4 dimensions: Breadth, Depth, Credibility, Structuring\n4-tier system: Concept → Understanding → Proficiency → Expert\nClear boundaries: what you can/cannot do\n💾 Persistent Storage\n\nAuto-archive to knowledge base\nAuto-load on future queries\nTriggers\n\"Deep study {subject} and assess your mastery level\"\n\"Build an expert-level knowledge base on {topic}\"\n\"Systematically learn {domain} and tell me what you can do\"\nWhy It Matters\n✅ Systematic learning process (not scattered info gathering)\n✅ Structured knowledge storage (reusable)\n✅ Rigorous capability rating (know your limits)\n\nPerfect for: Exploring new domains, building expertise, understanding your capability boundaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94e386cbbcf88f8aea9a90984bf2602d61c2012f3bb057b203bafc397b426de8"
+}

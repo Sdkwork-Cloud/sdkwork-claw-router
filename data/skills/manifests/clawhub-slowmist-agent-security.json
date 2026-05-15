@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11150,
+  "uuid": "skill-clawhub-slowmist-agent-security",
+  "skillKey": "clawhub-slowmist-agent-security",
+  "name": "SlowMist Agent Security",
+  "summary": "Comprehensive security review framework for AI agents. Covers skill/MCP installation, GitHub repos, URLs/documents, on-chain addresses, products/services, an...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slowmist_agent_security",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SlowMist",
+      "features": [
+        "Comprehensive security review framework for AI agents",
+        "Covers skill/MCP installation, GitHub repos, URLs/documents, on-chain addresses, products/servi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slowmist-agent-security@0.1.2",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/slowmist-agent-security/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slowmist-agent-security",
+      "url": "https://clawhub.ai/skills/slowmist-agent-security"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slowmist-agent-security",
+    "url": "https://clawhub.ai/skills/slowmist-agent-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slowmist-agent-security-cf113835aa83b94d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slowmist-agent-security@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-slowmist-agent-security-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d141d9e3bb8c2025ea3f705955d94b554cf50b4f760aabac67c47274b0cd9962",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T02:18:19.558Z"
+}

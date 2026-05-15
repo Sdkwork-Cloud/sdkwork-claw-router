@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/perplexica-search-local@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perplexica_search_local",
+  "skill": {
+    "id": 24519,
+    "skillKey": "clawhub-perplexica-search-local",
+    "name": "Perplexica Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perplexica-search-local",
+    "url": "https://clawhub.ai/skills/perplexica-search-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perplexica-search-local-49b7872c61491bfc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered search using your local Perplexica instance. Runs deep research (quality mode) with web search and LLM reasoning; returns answers with cited sourc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eplt",
+      "userId": "s17az0tzqqw8wwzjqje5v23vqx83mm2x",
+      "displayName": "Edward Tsang",
+      "image": "https://avatars.githubusercontent.com/u/206939?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 400,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773035578719,
+      "changelog": "- Removed the file CHANGELOG.md.\n- No changes to functionality or usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e3aa89b3721b714ed2d2abc6ae006ee12936830ef8ff72b989a7970ba9b1adfd"
+}

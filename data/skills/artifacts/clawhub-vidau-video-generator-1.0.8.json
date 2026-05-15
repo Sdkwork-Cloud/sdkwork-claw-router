@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vidau-video-generator@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vidau_video_generator",
+  "skill": {
+    "id": 23848,
+    "skillKey": "clawhub-vidau-video-generator",
+    "name": "VidAU Video Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vidau-video-generator",
+    "url": "https://clawhub.ai/skills/vidau-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vidau-video-generator-8277980667b42329.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Vidau Open API to generate short videos with Veo3, Sora2, and other models, or query account credits. Register at superaiglobal.com and configure API Key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bigjoehuang",
+      "userId": "s17cbrsg40eewcnxcwhvnkk1d183gtk1",
+      "displayName": "bigjoehuang",
+      "image": "https://avatars.githubusercontent.com/u/13230121?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 428,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1773720533357,
+      "changelog": "- Bumped version to 1.0.8.\n- No functional changes; documentation update only (SKILL.md updated).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84effb3a079a37c8eab03985ec529b682e6e1112cc8fcc019a5163ceab4396a1"
+}

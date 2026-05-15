@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21772,
+  "uuid": "skill-clawhub-servicenow-integration",
+  "skillKey": "clawhub-servicenow-integration",
+  "name": "Servicenow",
+  "summary": "Service Now integration. Manage Incidents, Problems, Tasks, Users, Groups. Use when the user wants to interact with Service Now data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.servicenow_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Service Now integration",
+        "Manage Incidents, Problems, Tasks, Users, Groups",
+        "Use when the user wants to interact with Service Now data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/servicenow-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "servicenow-integration",
+      "url": "https://clawhub.ai/skills/servicenow-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "servicenow-integration",
+    "url": "https://clawhub.ai/skills/servicenow-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/servicenow-integration-148abb6080c03c60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/servicenow-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-servicenow-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5fc9b0f43ba49c8896011a237a494906f47d097b6ac9749b85e847b19bbc191",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:59:05.548Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68924,
+  "uuid": "skill-clawhub-global-customer-agent",
+  "skillKey": "clawhub-global-customer-agent",
+  "name": "Global Customer Agent",
+  "summary": "7×24小时36语种客户接待。自动理解多语种需求，智能推荐商品，生成多语种报价，让全球客户都能获得专业服务体验，适合有多语种客户的外贸企业和独立站运营。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.global_customer_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangM-A3",
+      "features": [
+        "7×24小时36语种客户接待。自动理解多语种需求，智能推荐商品，生成多语种报价，让全球客户都能获得专业服务体验，适合有多语种客户的外贸企业和独立站运营。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/global-customer-agent@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274818589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "global-customer-agent",
+      "url": "https://clawhub.ai/skills/global-customer-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "global-customer-agent",
+    "url": "https://clawhub.ai/skills/global-customer-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/global-customer-agent-6fe90450250e3a51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/global-customer-agent@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-global-customer-agent-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1533b49fe05f7f035f40c34b03849c5d3f9cc4e029d48b9ac2555da8ed4ceb3b",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T00:34:48.530Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38211,
+  "uuid": "skill-clawhub-small-engine-repair",
+  "skillKey": "clawhub-small-engine-repair",
+  "name": "Small Engine Repair",
+  "summary": "Diagnosis and repair of common small engine problems. Use when a lawnmower won't start, a generator is sputtering, a chainsaw won't idle, or any small gas en...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.small_engine_repair",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HowToUseHumans",
+      "features": [
+        "Diagnosis and repair of common small engine problems",
+        "Use when a lawnmower won't start, a generator is sputtering, a chainsaw won't idle, or any smal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/small-engine-repair@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151727669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "small-engine-repair",
+      "url": "https://clawhub.ai/skills/small-engine-repair"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "small-engine-repair",
+    "url": "https://clawhub.ai/skills/small-engine-repair",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/small-engine-repair-a1d69f47c4a773e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/small-engine-repair@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-small-engine-repair-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ee6575aca4d05336be84ab3048e5fe8535da3af570907ee6c9ea8ae0b9cab79",
+      "artifactSizeBytes": 2421
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T14:40:30.731Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13028,
+  "uuid": "skill-clawhub-modelready",
+  "skillKey": "clawhub-modelready",
+  "name": "ModelReady",
+  "summary": "Start using a local or Hugging Face model instantly, directly from chat.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modelready",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Carol-gutianle",
+      "features": [
+        "Start using a local or Hugging Face model instantly, directly from chat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/modelready@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68144157?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "modelready",
+      "url": "https://clawhub.ai/skills/modelready"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modelready",
+    "url": "https://clawhub.ai/skills/modelready",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modelready-10bba2c7b54cfa28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/modelready@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-modelready-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1cb8a137660a15790e0db7d50c1a12d3e3bdcdb02f2e6946fb9b2a31b89ddfa",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T09:13:38.581Z"
+}

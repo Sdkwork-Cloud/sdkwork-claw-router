@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/360guard-skillvetter-upgrade-version@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.360guard_skillvetter_upgrade_version",
+  "skill": {
+    "id": 24184,
+    "skillKey": "clawhub-360guard-skillvetter-upgrade-version",
+    "name": "360Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "360guard-skillvetter-upgrade-version",
+    "url": "https://clawhub.ai/skills/360guard-skillvetter-upgrade-version",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/360guard-skillvetter-upgrade-version-5be7348b8bf5cf56.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "360-degree comprehensive security review Skill. Use before installing any Skill from ClawHub, GitHub, or other sources. Performs full security scans includin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robinc913",
+      "userId": "s172a2rmnzb34hm2hb02pqh2b584dfcb",
+      "displayName": "robinc913",
+      "image": "https://avatars.githubusercontent.com/u/142384845?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 417,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773392600753,
+      "changelog": "360Guard v1.0.0 — Initial release of the comprehensive Skill security scanning tool.\n\n- Introduces \"360Guard\", a 360-degree Skill security review and risk classification system.\n- Adds detailed red flag checklists for static analysis, persistence, monitoring, privacy, network, execution, file system, supply chain, and social engineering.\n- Provides automatic risk-level classification and trust hierarchy guidance.\n- Includes two automated scripts: `quick-scan.sh` for fast checks and `full-scan.sh` for deep analysis and reporting.\n- Replaces prior knowledge management scripts with a security-focused scanner.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e716261e41f56b7e8bcca9ad339c59482e4f049715d576e5fa22523678bfcc3a"
+}

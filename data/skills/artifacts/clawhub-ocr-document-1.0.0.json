@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocr-document@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocr_document",
+  "skill": {
+    "id": 21465,
+    "skillKey": "clawhub-ocr-document",
+    "name": "Ocr Document"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocr-document",
+    "url": "https://clawhub.ai/skills/ocr-document",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocr-document-fb0c7c36580b61d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OCR document extraction - extract text from scanned documents, photos, and images using OCR. Use when reading scanned PDFs, photographed pages, handwritten n..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tanis90",
+      "userId": "s17c6n53ezjj2w372fjv34m7zx83gva1",
+      "displayName": "tanis90",
+      "image": "https://avatars.githubusercontent.com/u/22654397?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 509,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774360386179,
+      "changelog": "- Initial release of ocr_document skill for OCR text extraction from scanned documents, images, and handwritten notes.\n- Supports PDF, PNG, JPG, WebP, BMP, and TIFF formats from local files or URLs.\n- No API key, signup, or authentication required.\n- Language selection available for improved accuracy; replies always match the user's language.\n- Maximum file size is 10MB or 20 pages per document.\n- Powered by the MinerU Open API CLI; installation guides provided for npm, uv, go, and direct download.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95ea66c038feaabcac2bdd81647a68b586e723ce791dc912a31a253b6f1af24d"
+}

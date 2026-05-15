@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uc@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uc",
+  "skill": {
+    "id": 69026,
+    "skillKey": "clawhub-uc",
+    "name": "UC Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uc",
+    "url": "https://clawhub.ai/skills/uc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uc-dbdbc8ce6333f81b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "整理UC浏览器官方网站公开的下载入口、功能说明、平台支持、权限及帮助信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774174748718,
+      "changelog": "Initial release of the UC 浏览器 skill.\n\n- Registers the “UC 浏览器” skill for organizing tool product pages, feature descriptions, download links, and help information.\n- Covers public homepage, download pages, help center, feature lists, and official announcements.\n- Outlines boundaries: no device control, bypassing, private packages, or system cracking.\n- Details key entry points, common tasks, and supported data fields for extraction.\n- Emphasizes compliance with platform rules and handling only public information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b6214ea75eba4fb60bea2fa811c43b66a506423b42fc824bd57b3f96a76b67d"
+}

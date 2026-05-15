@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43012,
+  "uuid": "skill-clawhub-pilot-dns",
+  "skillKey": "clawhub-pilot-dns",
+  "name": "Pilot Dns",
+  "summary": "Human-friendly naming with aliases and namespaces. Use this skill when: 1. Setting or changing an agent's hostname 2. Resolving human-readable names to node...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_dns",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Human-friendly naming with aliases and namespaces",
+        "Use this skill when: 1",
+        "Setting or changing an agent's hostname 2",
+        "Resolving human-readable names to node..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-dns@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-dns",
+      "url": "https://clawhub.ai/skills/pilot-dns"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-dns",
+    "url": "https://clawhub.ai/skills/pilot-dns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-dns-df50a4b975029af4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-dns@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-dns-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5544103070e74cfd75698abf3eeaa76d47c46aaa8666975905ffae77867c1da3",
+      "artifactSizeBytes": 1854
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T01:17:52.644Z"
+}

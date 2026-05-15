@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/muscle-gain@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.muscle_gain",
+  "skill": {
+    "id": 11157,
+    "skillKey": "clawhub-muscle-gain",
+    "name": "Muscle Gain"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "muscle-gain",
+    "url": "https://clawhub.ai/skills/muscle-gain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/muscle-gain-35fd0d806c58bbc5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track muscle building with weight progression, protein tracking, and strength milestones"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jhillin8",
+      "userId": "publishers:jhillin8",
+      "displayName": "jhillin8",
+      "image": "https://avatars.githubusercontent.com/u/79551560?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2157,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769326497611,
+      "changelog": "muscle-gain 1.0.0\n\n- Initial release of the muscle-gain skill.\n- Track bodyweight, key body measurements, and progress photos.\n- Log protein intake with personalized targets and meal tracking.\n- Record strength progression for major lifts with trend analysis.\n- Set and monitor custom bulking and strength targets with reminders.\n- All data is stored locally and encrypted for complete privacy.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:12bb1af7b53d3560ee09f0dad4c9dc61c132a7f1c1e181d614c492f1c7cb496b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xqueue@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xqueue",
+  "skill": {
+    "id": 49427,
+    "skillKey": "clawhub-xqueue",
+    "name": "xqueue"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xqueue",
+    "url": "https://clawhub.ai/skills/xqueue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xqueue-b02434e2cefc30c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "File-based X/Twitter post scheduler. Drop tweets into day/time folders, they post automatically. No frontend, no app — your file system is the UI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meimakes",
+      "userId": "s176b3312npmthbt2chf2mccw183grfh",
+      "displayName": "Mei Park",
+      "image": "https://avatars.githubusercontent.com/u/223051250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 722,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774627231523,
+      "changelog": "Cross-list sync from workspace",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:28c7e5fe162afcfec4f9dd8a81d6bac1299291d7543588518ca1754f2ab4aaed"
+}

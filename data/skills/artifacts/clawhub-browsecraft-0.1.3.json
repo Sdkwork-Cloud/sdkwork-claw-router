@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browsecraft@0.1.3",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browsecraft",
+  "skill": {
+    "id": 26102,
+    "skillKey": "clawhub-browsecraft",
+    "name": "Browsecraft"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browsecraft",
+    "url": "https://clawhub.ai/skills/browsecraft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browsecraft-934ffbb8bec2b925.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Memory-oriented browser automation skill for repeatable web workflows (login, extraction, bulk actions, form filling, screenshots, checks) across RoxyBrowser..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whjstc",
+      "userId": "s1720d9vx3kz9dztr658rty5n183jmnd",
+      "displayName": "RoyWu",
+      "image": "https://avatars.githubusercontent.com/u/1953915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 373,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.3",
+      "createdAt": 1773162810267,
+      "changelog": "- Added Openclaw metadata to SKILL.md for improved package management and installation instructions.\n- Clarified RoxyBrowser installation by changing environment variable setup to general configuration in local environment or config file.\n- Revised description of credential policy to refer to \"Roxy credentials\" instead of specific environment variables.\n- General cleanup and improvements to installation and backend strategy instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:888aa52cc6314765c1ea027812057db12696b02d6d07200d02e5137fb753a695"
+}

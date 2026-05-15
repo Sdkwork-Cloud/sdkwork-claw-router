@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35248,
+  "uuid": "skill-clawhub-clawdit",
+  "skillKey": "clawhub-clawdit",
+  "name": "Clawdit",
+  "summary": "Belief systems auditor for OpenClaw agents. Systematically evaluates an agent's loaded context files (SOUL.md, AGENTS.md, USER.md, skills) against the user's...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "M. Christopher Roebuck",
+      "features": [
+        "Belief systems auditor for OpenClaw agents",
+        "Systematically evaluates an agent's loaded context files (SOUL.md, AGENTS.md, USER.md, skills)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdit@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61991332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdit",
+      "url": "https://clawhub.ai/skills/clawdit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdit",
+    "url": "https://clawhub.ai/skills/clawdit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdit-435153db6252a60e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdit@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdit-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:619f3a036af8988a61ca417c6b11ecf9c381509f5ddbcf514876ac6014b2f434",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T02:34:50.431Z"
+}

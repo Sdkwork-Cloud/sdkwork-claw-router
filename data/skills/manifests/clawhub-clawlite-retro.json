@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65737,
+  "uuid": "skill-clawhub-clawlite-retro",
+  "skillKey": "clawhub-clawlite-retro",
+  "name": "clawlite-retro",
+  "summary": "中文：每周/周期工程回顾技能，基于 git 历史与代码质量指标生成交付复盘。支持 24h、7d、14d、30d 周期，附带贡献者分析与成长建议。 日本語：Git履歴と品質指標を使って週次レビューを自動化。/retro 24h/7d/14d/30d に対応し、貢献者ごとの振り返りと成長機会を提示。 한국어：주간/주...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawlite_retro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "X-RayLuan",
+      "features": [
+        "中文：每周/周期工程回顾技能，基于 git 历史与代码质量指标生成交付复盘。支持 24h、7d、14d、30d 周期，附带贡献者分析与成长建议。 日本語：Git履歴と品質指標を使って週次レビ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawlite-retro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150766707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawlite-retro",
+      "url": "https://clawhub.ai/skills/clawlite-retro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawlite-retro",
+    "url": "https://clawhub.ai/skills/clawlite-retro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawlite-retro-460e3ab9d4c747c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawlite-retro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawlite-retro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c2813fe7791c52ee0269db3871b8e644ccd8004f6b1fbea068784d9e68af328",
+      "artifactSizeBytes": 2169
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T16:14:33.873Z"
+}

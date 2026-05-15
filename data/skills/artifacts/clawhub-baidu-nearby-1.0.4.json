@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-nearby@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_nearby",
+  "skill": {
+    "id": 62412,
+    "skillKey": "clawhub-baidu-nearby",
+    "name": "Baidu Nearby / 百度能力集合"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-nearby",
+    "url": "https://clawhub.ai/skills/baidu-nearby",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-nearby-7523893f58814bef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "百度能力集合 - 提供百度搜索和百度地图路线规划功能。 包含：百度网页搜索(baidu_search)、路线规划(baidu_direction)、附近场所推荐(baidu_nearby)。 Use when: 需要搜索网页、规划出行路线、查找附近餐饮/景点/酒店等位置服务时。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "longjf25",
+      "userId": "s171gz7gmrefdayrd3gs39znf583tmf4",
+      "displayName": "juanfenglong",
+      "image": "https://avatars.githubusercontent.com/u/38432924?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 632,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774795498909,
+      "changelog": "v1.0.4: i18n SKILL.md (EN/ZH bilingual frontmatter and content), bilingual display name",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:426870ae9be055dce10939d8c4021ad724f8d9e187f40d216f1016c2b094a623"
+}

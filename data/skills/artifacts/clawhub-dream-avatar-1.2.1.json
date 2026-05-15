@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dream-avatar@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dream_avatar",
+  "skill": {
+    "id": 16283,
+    "skillKey": "clawhub-dream-avatar",
+    "name": "Dream Avatar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dream-avatar",
+    "url": "https://clawhub.ai/skills/dream-avatar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dream-avatar-2f161ef0bd7a7345.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate digital human talking avatar videos from images and audio using DreamAvatar 3.0 Fast API. Powered by Dreamface - AI tools for everyone. Visit https:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hy-1990",
+      "userId": "s17dg55r3mmkt8qecrt6ak4xjd83gm1b",
+      "displayName": "hy",
+      "image": "https://avatars.githubusercontent.com/u/65535435?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 585,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1773122126946,
+      "changelog": "- Added .clawhub/origin.json to the repository.\n- SKILL.md updated to include an additional resource link to Dreamface AI tools.\n- Minor text edits for clarity in the quick start and API sections.\n- No changes to skill functionality or interface.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e6cbdd13f1cfc0ada4c06d0a8fd8397bafc4f2aea4c29a103e89e1ab9508788"
+}

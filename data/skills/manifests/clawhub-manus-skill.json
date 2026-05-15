@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33621,
+  "uuid": "skill-clawhub-manus-skill",
+  "skillKey": "clawhub-manus-skill",
+  "name": "Manus Skill - Operate Manus through Openclaw",
+  "summary": "Interact with the Manus AI agent platform via its REST API. Use this skill whenever the user mentions Manus, manus.ai, Manus API, Manus tasks, Manus projects...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manus_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KrishBhimani",
+      "features": [
+        "Interact with the Manus AI agent platform via its REST API",
+        "Use this skill whenever the user mentions Manus, manus.ai, Manus API, Manus tasks, Manus projec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/manus-skill@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126689784?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "manus-skill",
+      "url": "https://clawhub.ai/skills/manus-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manus-skill",
+    "url": "https://clawhub.ai/skills/manus-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manus-skill-beda66259c827384.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/manus-skill@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-manus-skill-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a2118ceaa0a73266d64a04093b3609d0cc3af8a04dd4c2f16e44c4173e144f9",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T12:40:41.222Z"
+}

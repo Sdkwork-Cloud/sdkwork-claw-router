@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40794,
+  "uuid": "skill-clawhub-auto-glossary",
+  "skillKey": "clawhub-auto-glossary",
+  "name": "Auto Glossary",
+  "summary": "Automatically add technical jargon to the user's tech glossary GitHub repository when encountered during coding sessions. Use when technical terms, coding co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_glossary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EmanxChan",
+      "features": [
+        "Automatically add technical jargon to the user's tech glossary GitHub repository when encounter.",
+        "Use when technical terms, coding co..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-glossary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233683271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-glossary",
+      "url": "https://clawhub.ai/skills/auto-glossary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-glossary",
+    "url": "https://clawhub.ai/skills/auto-glossary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-glossary-582ef3cec62f55f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-glossary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-glossary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9625cce87de78f3f85c424504697e884276f86dfdafa44440876d4d5492e79f1",
+      "artifactSizeBytes": 2310
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T15:08:40.315Z"
+}

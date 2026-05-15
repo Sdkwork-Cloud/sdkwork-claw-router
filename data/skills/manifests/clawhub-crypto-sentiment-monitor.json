@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29139,
+  "uuid": "skill-clawhub-crypto-sentiment-monitor",
+  "skillKey": "clawhub-crypto-sentiment-monitor",
+  "name": "Crypto Sentiment Monitor",
+  "summary": "Real-time crypto market sentiment analysis. Aggregates Twitter/X, Reddit, Google Trends, and exchange data. Detects FOMO/FUD cycles and whale movements. Trig...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_sentiment_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dzxiatian-crypto",
+      "features": [
+        "Real-time crypto market sentiment analysis",
+        "Aggregates Twitter/X, Reddit, Google Trends, and exchange data",
+        "Detects FOMO/FUD cycles and whale movements"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-sentiment-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266891090?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-sentiment-monitor",
+      "url": "https://clawhub.ai/skills/crypto-sentiment-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-sentiment-monitor",
+    "url": "https://clawhub.ai/skills/crypto-sentiment-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-sentiment-monitor-2c84187c7501e438.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-sentiment-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-sentiment-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6298c7998e9bca5726ded0434de16c95fd2fa8ea68355504301b980713a13af",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T04:18:37.592Z"
+}

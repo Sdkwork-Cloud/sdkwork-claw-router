@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-stabilizer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_stabilizer",
+  "skill": {
+    "id": 52446,
+    "skillKey": "clawhub-ai-video-stabilizer",
+    "name": "Ai Video Stabilizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-stabilizer",
+    "url": "https://clawhub.ai/skills/ai-video-stabilizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-stabilizer-993f1f279c0949f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stabilize shaky video and smooth camera motion with AI — fix handheld shake, walking bounce, vehicle vibration, wind wobble, and accidental camera movement...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774746568193,
+      "changelog": "- Added `homepage` and `repository` fields to the skill metadata for better discoverability.\n- Updated version number to 1.0.1.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:754e7a5fcce29c5a419346aec9433694d302ad371ebb6738ef894f27e84e272a"
+}

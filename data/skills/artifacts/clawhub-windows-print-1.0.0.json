@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/windows-print@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_print",
+  "skill": {
+    "id": 23383,
+    "skillKey": "clawhub-windows-print",
+    "name": "Windows Print"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-print",
+    "url": "https://clawhub.ai/skills/windows-print",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-print-230365b938b53a5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Print files (often inbound attachments from chat apps like Feishu/Lark, or any local file path) on Windows. Use ONLY when the user explicitly asks to print (..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sqfcyily",
+      "userId": "s17ekd9hpkjbxh6jz05rwzkx6n83p7b4",
+      "displayName": "sqfcyily",
+      "image": "https://avatars.githubusercontent.com/u/38500955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 344,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773579988403,
+      "changelog": "- Initial release of windows-print skill.\n- Allows printing of files on Windows only upon clear, explicit user instruction (e.g. \"print\", \"打印\").\n- Supports selection of printer, multiple copies, and optional wait for print job.\n- Files are printed via bundled PowerShell scripts, accepting inbound attachments or local file paths.\n- Enforces strict safety: never prints files automatically or based on inferred intent; always confirms with user before printing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59dd8b41948517354c5f1bbfafd22c7666d26f5cede29b2d1714e86105186c11"
+}

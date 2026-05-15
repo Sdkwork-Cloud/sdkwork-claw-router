@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcdonalds-mcp-order-lite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcdonalds_mcp_order_lite",
+  "skill": {
+    "id": 24239,
+    "skillKey": "clawhub-mcdonalds-mcp-order-lite",
+    "name": "mcdonalds-mcp-order-lite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcdonalds-mcp-order-lite",
+    "url": "https://clawhub.ai/skills/mcdonalds-mcp-order-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcdonalds-mcp-order-lite-62a2af9e739238a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Place McDonald's China delivery orders through the official MCP server at https://mcp.mcd.cn using a Bearer MCP token over Streamable HTTP / JSON-RPC. Use wh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielliao",
+      "userId": "s17fqgd9mggmvz3b6cwgn97jth83jqfs",
+      "displayName": "danielliao",
+      "image": "https://avatars.githubusercontent.com/u/3085195?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 406,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773056183041,
+      "changelog": "- Initial release of mcdonalds-mcp-order-lite for McDonald’s China delivery ordering via the official MCP server.\n- Supports browsing deliverable addresses, store menus, meal details, coupons, price calculation, and order creation/status.\n- Uses secure Bearer MCP token authentication; no embedded tokens included.\n- Designed for easy client integration with clear workflow documentation.\n- Lite package with only core reusable files and minimal dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3bca3f3febb239ee0e6eb795440c2482c28d4556e065a46e69a6ec94c66add1b"
+}

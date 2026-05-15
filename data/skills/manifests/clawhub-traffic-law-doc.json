@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30834,
+  "uuid": "skill-clawhub-traffic-law-doc",
+  "skillKey": "clawhub-traffic-law-doc",
+  "name": "traffic-law",
+  "summary": "parse traffic accident legal documents and generate exam answers. use when user needs to extract text from word documents in e jiaotong directory, parse traf...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.traffic_law_doc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhanghaibo7612",
+      "features": [
+        "parse traffic accident legal documents and generate exam answers",
+        "use when user needs to extract text from word documents in e jiaotong directory, parse traf..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/traffic-law-doc@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265465678?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "traffic-law-doc",
+      "url": "https://clawhub.ai/skills/traffic-law-doc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "traffic-law-doc",
+    "url": "https://clawhub.ai/skills/traffic-law-doc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/traffic-law-doc-0b6c3fffe0697458.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/traffic-law-doc@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-traffic-law-doc-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61a6c3738c497de6c65eda6c955bae8aab1d02904857adc77695aa10e13650db",
+      "artifactSizeBytes": 3371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T07:51:39.560Z"
+}

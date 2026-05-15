@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-maker-happy-birthday@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_maker_happy_birthday",
+  "skill": {
+    "id": 43182,
+    "skillKey": "clawhub-video-maker-happy-birthday",
+    "name": "Video Maker Happy Birthday"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-maker-happy-birthday",
+    "url": "https://clawhub.ai/skills/video-maker-happy-birthday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-maker-happy-birthday-b4630a9796bf7c53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "create photos or clips into birthday celebration video with this skill. Works with JPG, PNG, MP4, MOV files up to 200MB. friends and family celebrators use i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776031577733,
+      "changelog": "Initial public release — create and share personalized happy birthday videos from your photos or clips.\n\n- Combine photos or video clips (JPG, PNG, MP4, MOV up to 200MB) into a 1080p birthday video, processed via cloud GPU in 30–60 seconds.\n- Automated setup with cloud video backend, including anonymous token and session management.\n- Supports uploading, editing, previewing, and exporting to MP4; add names, messages, and background music for a personal touch.\n- Clear error handling and helpful feedback on upload/credit/session issues.\n- Simple commands for export, upload, credit balance, and workflow status.\n- No installation required; all rendering and editing happen remotely.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33781f7b3d6ee44fee6beccd73883aa3d5eaf50efb2c4558cec4a48169de318e"
+}

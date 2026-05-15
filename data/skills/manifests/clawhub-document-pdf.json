@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33546,
+  "uuid": "skill-clawhub-document-pdf",
+  "skillKey": "clawhub-document-pdf",
+  "name": "Pdf",
+  "summary": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.document_pdf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kidaiangel",
+      "features": [
+        "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, mergi.",
+        "When Claude needs..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/document-pdf@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26027335?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "document-pdf",
+      "url": "https://clawhub.ai/skills/document-pdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "document-pdf",
+    "url": "https://clawhub.ai/skills/document-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/document-pdf-2177749b4b1b8055.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/document-pdf@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-document-pdf-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98923e1549d6423b9aa4703c0224a6c5022c7c61a3e648710a1eca5c182c678a",
+      "artifactSizeBytes": 2267
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:57:47.103Z"
+}

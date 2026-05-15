@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52285,
+  "uuid": "skill-clawhub-coppa",
+  "skillKey": "clawhub-coppa",
+  "name": "Coppa",
+  "summary": "COPPA compliance reference — children's online privacy, parental consent, data collection rules, FTC enforcement. Use when building apps for children under 1...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coppa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "COPPA compliance reference — children's online privacy, parental consent, data collection rules.",
+        "Use when building apps for children under 1..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coppa@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coppa",
+      "url": "https://clawhub.ai/skills/coppa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coppa",
+    "url": "https://clawhub.ai/skills/coppa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coppa-3e69f3fbc394c4fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coppa@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coppa-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f3803aa730387b9a2562682cd1a612ac7ca9962a9d54cfa407e8c08a4600d58",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T14:18:03.343Z"
+}

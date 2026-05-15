@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawmart-openclaw-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmart_openclaw_setup",
+  "skill": {
+    "id": 63669,
+    "skillKey": "clawhub-clawmart-openclaw-setup",
+    "name": "OpenClaw 安装服务"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmart-openclaw-setup",
+    "url": "https://clawhub.ai/skills/clawmart-openclaw-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmart-openclaw-setup-fd8bd7a41fc066d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供 OpenClaw 一键安装、Channel 配置、心跳任务设置及故障排查的远程安装与配置服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 518,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773215712244,
+      "changelog": "首次发布 - 专业 OpenClaw 安装配置服务",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6408c9a070eec626e4b92d249ef56d6e3364678617758edc97375e6a1d83fd61"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73360,
+  "uuid": "skill-clawhub-qushuiyin",
+  "skillKey": "clawhub-qushuiyin",
+  "name": "短视频去水印下载。检测到抖音、快手、小红书、B站、微博、西瓜视频等平台链接时，自动解析并下载无水印视频，直接发送文件给用户。",
+  "summary": "短视频去水印下载。检测到抖音、快手、小红书、B站、微博、西瓜视频等平台链接时，自动解析并下载无水印视频，直接发送文件给用户。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qushuiyin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "douzi",
+      "features": [
+        "短视频去水印下载。检测到抖音、快手、小红书、B站、微博、西瓜视频等平台链接时，自动解析并下载无水印视频，直接发送文件给用户。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qushuiyin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199685423?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qushuiyin",
+      "url": "https://clawhub.ai/skills/qushuiyin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qushuiyin",
+    "url": "https://clawhub.ai/skills/qushuiyin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qushuiyin-1e43f784165c0bd0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qushuiyin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qushuiyin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1db8bead575bc4d4946d8cc76deff865764fd5336b4f33327b7712f3e8dbd95e",
+      "artifactSizeBytes": 2666
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T02:07:56.221Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58857,
+  "uuid": "skill-clawhub-newspaper-download-skill",
+  "skillKey": "clawhub-newspaper-download-skill",
+  "name": "newspaper-download-skill",
+  "summary": "报刊 PDF 下载工具。通过 CLI 命令查询已收录的报刊更新、定位指定期次、获取 PDF 下载链接。查询不鉴权，下载需要 Import Token。Newspaper/magazine PDF download tool. Use CLI commands to query collected issues,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newspaper_download_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1787812757",
+      "features": [
+        "报刊 PDF 下载工具。通过 CLI 命令查询已收录的报刊更新、定位指定期次、获取 PDF 下载链接。查询不鉴权，下载需要 Import Token。Newspaper/magazine P.",
+        "Use CLI commands to query collected issues,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/newspaper-download-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87628441?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "newspaper-download-skill",
+      "url": "https://clawhub.ai/skills/newspaper-download-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newspaper-download-skill",
+    "url": "https://clawhub.ai/skills/newspaper-download-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newspaper-download-skill-19e80abbb4215193.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/newspaper-download-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-newspaper-download-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39ff4edf2ce40c5b4d6bb19cac044408c01747ceb43a8871d2e6a83953475b74",
+      "artifactSizeBytes": 2657
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T08:23:26.171Z"
+}

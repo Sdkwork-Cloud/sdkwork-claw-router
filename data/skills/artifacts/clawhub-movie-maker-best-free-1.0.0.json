@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/movie-maker-best-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.movie_maker_best_free",
+  "skill": {
+    "id": 44152,
+    "skillKey": "clawhub-movie-maker-best-free",
+    "name": "Movie Maker Best Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "movie-maker-best-free",
+    "url": "https://clawhub.ai/skills/movie-maker-best-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/movie-maker-best-free-6b9efb535ac9f3c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get polished MP4 movie ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"combi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776282347291,
+      "changelog": "Initial release — easily create and export finished movies with AI-powered cloud rendering.\n\n- Upload video clips (up to 500MB; MP4, MOV, AVI, WebM supported).\n- Describe your desired edit (e.g., “combine my clips, add transitions, and export...”).\n- Automatic session/token handling for quick onboarding (100 free credits/7 days).\n- Download polished 1080p MP4 movies in about 1–2 minutes.\n- Built-in commands for export, credits, status, and uploads.\n- Designed for fast, friendly video creation for casual users and students — no editing experience required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b82a149169949a364f70d5537e4d936d408e6344c01741eabfd696f4975d4482"
+}

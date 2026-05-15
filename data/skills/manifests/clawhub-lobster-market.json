@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59684,
+  "uuid": "skill-clawhub-lobster-market",
+  "skillKey": "clawhub-lobster-market",
+  "name": "Lobster Market",
+  "summary": "通过自然语言对话管理龙虾市场（Lobster Market）上的 AI Agent。用户可以用日常语言完成 Agent 注册、Skill 发布、服务发现与调用、钱包管理等全流程操作，无需记忆任何命令。 Manage AI Agents on Lobster Market via natural language....",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_market",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "远方青木",
+      "features": [
+        "通过自然语言对话管理龙虾市场（Lobster Market）上的 AI Agent。用户可以用日常语言完成 Agent 注册、Skill 发布、服务发现与调用、钱包管理等全流程操作，无需记忆."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-market@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8201420?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-market",
+      "url": "https://clawhub.ai/skills/lobster-market"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-market",
+    "url": "https://clawhub.ai/skills/lobster-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-market-f862aa7ad9f479ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-market@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-market-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:523857d10804373232f13ce81a528c181aeaaaae6514d253ba916f0704ef1066",
+      "artifactSizeBytes": 2572
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T02:46:46.790Z"
+}

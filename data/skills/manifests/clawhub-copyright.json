@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22576,
+  "uuid": "skill-clawhub-copyright",
+  "skillKey": "clawhub-copyright",
+  "name": "Copyright",
+  "summary": "A comprehensive AI agent skill for understanding and managing copyright. Helps creators protect their work, understand what copyright covers and what it does...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.copyright",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AGIstack",
+      "features": [
+        "A comprehensive AI agent skill for understanding and managing copyright",
+        "Helps creators protect their work, understand what copyright covers and what it does..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/copyright@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258523997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "copyright",
+      "url": "https://clawhub.ai/skills/copyright"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "copyright",
+    "url": "https://clawhub.ai/skills/copyright",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/copyright-c2fca2aa3a976ccd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/copyright@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-copyright-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef596155eaf8a088745ab1d7d275db154df1598bfa7dd40587835c4329c9753e",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T08:41:46.348Z"
+}

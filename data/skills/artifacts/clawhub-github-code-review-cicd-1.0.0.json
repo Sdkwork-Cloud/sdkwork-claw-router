@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-code-review-cicd@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_code_review_cicd",
+  "skill": {
+    "id": 61385,
+    "skillKey": "clawhub-github-code-review-cicd",
+    "name": "GitHub 智能代码审查与 CI/CD 自动化"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-code-review-cicd",
+    "url": "https://clawhub.ai/skills/github-code-review-cicd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-code-review-cicd-f571623299c272fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GitHub 智能代码审查与 CI/CD 自动化完整工作流。 场景：收到 PR 或提交代码时，自动完成 AI 代码审查（bug/安全/逻辑问题）， 并根据审查结果智能生成或推荐 GitHub Actions CI/CD 工作流。 触发词：代码审查、review PR、生成 CI/CD、GitHub Actions..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zlszhonglongshen",
+      "userId": "s178jr2zywr30fqk79fnqadhks83gpp0",
+      "displayName": "zlszhonglongshen",
+      "image": "https://avatars.githubusercontent.com/u/9023908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776124747593,
+      "changelog": "- Initial release of github-code-review-cicd skill.\n- Provides an automated workflow for GitHub code review and CI/CD pipeline generation.\n- Integrates repository data reading, AI code review for bugs/security/logic, and smart GitHub Actions workflow generation.\n- Supports scenarios such as PR/code review, commit analysis, CI/CD setup, and security compliance.\n- Utilizes `gh` CLI, `quack-code-review`, and `github-actions-generator` as core tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9422c176871f2b05d0899101b6d0caebba1e0a1627ec116836741e921965ffa2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uniqlo@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uniqlo",
+  "skill": {
+    "id": 31808,
+    "skillKey": "clawhub-uniqlo",
+    "name": "Uniqlo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uniqlo",
+    "url": "https://clawhub.ai/skills/uniqlo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uniqlo-0681c0b3731722d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Information assistant for Uniqlo. Search products, news, financials, and official resources for Uniqlo."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776295685402,
+      "changelog": "- SKILL.md updated with a concise Chinese summary and structural info index for uniqlo.\n- Usage scenarios and main content now focus on quick fact lookup, brand profile, and news highlights.\n- Instructions simplified, emphasizing reference to official data.\n- Previous detailed feature descriptions in English replaced with a streamlined overview in Chinese.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:550ffaf4a5981be7a959b9b794cbea6dc124796eadc5bba51834a8f32f7e7cba"
+}

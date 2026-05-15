@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-insight-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_insight_generator",
+  "skill": {
+    "id": 62003,
+    "skillKey": "clawhub-data-insight-generator",
+    "name": "data-insight-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-insight-generator",
+    "url": "https://clawhub.ai/skills/data-insight-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-insight-generator-6b1dfd6190b5e9b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "零代码BI分析器，支持CSV/JSON数据自动清洗、指标计算、图表推荐与业务洞察输出"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boboy-j",
+      "userId": "s17ckg9br2p4k5kx6cr8fc4jz5852pah",
+      "displayName": "boboy-j",
+      "image": "https://avatars.githubusercontent.com/u/257822985?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776527267725,
+      "changelog": "Initial release of data-insight-generator — a no-code BI analysis tool.\n\n- Supports automatic data cleaning, metric calculation, chart recommendation, and business insight generation for CSV/JSON data.\n- Requires inputs for data content and business context; analysis goal is optional.\n- Outputs standardized analysis reports in Markdown, including data quality summary, key metrics, chart suggestions, and actionable insights.\n- Compatible with OpenClaw, Dify, Coze, and SkillHub platforms.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:349f9412608fdba805f98b745a0c7603d2fe5562d4bcf2dce9e8de879ab1b137"
+}

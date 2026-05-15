@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/focusavatar@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.focusavatar",
+  "skill": {
+    "id": 61347,
+    "skillKey": "clawhub-focusavatar",
+    "name": "focusavatar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "focusavatar",
+    "url": "https://clawhub.ai/skills/focusavatar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/focusavatar-6a84a59c5ba5587f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "数字人生成 CLI 工具，凭 accessKeyId/accessKeySecret 调用后端 API，支持提交任务（MP3/MP4/文字→视频）与查询任务结果（orderNo）；不存储用户数据，凭证仅通过请求头发送。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lintqiu",
+      "userId": "s174myt0xj0pzg9avrs802w1yd83gycy",
+      "displayName": "lintqiu",
+      "image": "https://avatars.githubusercontent.com/u/18586721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774011331443,
+      "changelog": "focusavatar 0.1.0 初始版本发布：\n\n- 提供命令行数字人生成工具，凭 accessKeyId/accessKeySecret 调用后端 API，支持 MP3/MP4/文字一键合成数字人视频。\n- 支持按 orderNo 查询数字人任务生成结果和状态。\n- 分步交互式输入与确认，参数可重新填写，流程错误可追溯。\n- 所有用户数据和凭据仅通过请求头传递，不在本地存储或上传至第三方。\n- 安装使用说明详尽，支持多平台凭证配置与依赖环境说明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81424ed783334455366a0a5d0005f3388fff592c822013c29c5afa9e73cbe8c0"
+}

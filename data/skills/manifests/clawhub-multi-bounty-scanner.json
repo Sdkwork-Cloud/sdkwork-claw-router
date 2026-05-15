@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22350,
+  "uuid": "skill-clawhub-multi-bounty-scanner",
+  "skillKey": "clawhub-multi-bounty-scanner",
+  "name": "Multi-Platform Bounty Scanner",
+  "summary": "Automatically scan and filter new bug and OSS bounty opportunities across 50+ platforms by tech stack, reward, and difficulty with daily automation support.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_bounty_scanner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dagangtj",
+      "features": [
+        "Automatically scan and filter new bug and OSS bounty opportunities across 50+ platforms by tech."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-bounty-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65108318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-bounty-scanner",
+      "url": "https://clawhub.ai/skills/multi-bounty-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-bounty-scanner",
+    "url": "https://clawhub.ai/skills/multi-bounty-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-bounty-scanner-8afba801e6267ce8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-bounty-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-bounty-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e06a38c614ecad169862cdb6eee057f4677dab4475ad8f90b6f60960951d1b99",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T21:46:19.469Z"
+}

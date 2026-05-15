@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hkipo-review-optimizer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hkipo_review_optimizer",
+  "skill": {
+    "id": 43679,
+    "skillKey": "clawhub-hkipo-review-optimizer",
+    "name": "HK IPO Review Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hkipo-review-optimizer",
+    "url": "https://clawhub.ai/skills/hkipo-review-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hkipo-review-optimizer-ccca3d9e83a94e7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Review past Hong Kong IPO decisions, update actual outcomes, export review datasets, and accept or reject tuning suggestions. Use when the user wants to lear..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hackstoic",
+      "userId": "s174p3fcpwd6b29m4n8bb5pvw183pmrc",
+      "displayName": "hackstoic",
+      "image": "https://avatars.githubusercontent.com/u/7455951?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776382293825,
+      "changelog": "Initial ClawHub release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a40792cec75035768268aeeb69769dba4bfd3293c6d7251c796b65190868f70"
+}

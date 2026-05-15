@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17072,
+  "uuid": "skill-clawhub-daily-oracle",
+  "skillKey": "clawhub-daily-oracle",
+  "name": "Sentiet ORB",
+  "summary": "A background agent that generates a daily life prediction by analyzing local data and social signals.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_oracle",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Darlington Umeugo",
+      "features": [
+        "A background agent that generates a daily life prediction by analyzing local data and social si."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-oracle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64360058?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-oracle",
+      "url": "https://clawhub.ai/skills/daily-oracle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-oracle",
+    "url": "https://clawhub.ai/skills/daily-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-oracle-500544324cad251b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-oracle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-oracle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fd1f8ecf0a71751013a7b0fd753ace27d4a20e19ccf73c6c01990c58762992e",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T00:59:51.232Z"
+}

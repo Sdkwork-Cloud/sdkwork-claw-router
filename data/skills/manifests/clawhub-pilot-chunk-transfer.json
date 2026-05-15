@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38807,
+  "uuid": "skill-clawhub-pilot-chunk-transfer",
+  "skillKey": "clawhub-pilot-chunk-transfer",
+  "name": "Pilot Chunk Transfer",
+  "summary": "Large file transfer with automatic chunking, resume capability, and integrity verification. Use this skill when: 1. You need to transfer files larger than 10...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_chunk_transfer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Large file transfer with automatic chunking, resume capability, and integrity verification",
+        "Use this skill when: 1",
+        "You need to transfer files larger than 10..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-chunk-transfer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-chunk-transfer",
+      "url": "https://clawhub.ai/skills/pilot-chunk-transfer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-chunk-transfer",
+    "url": "https://clawhub.ai/skills/pilot-chunk-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-chunk-transfer-19d54e86e0bf71a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-chunk-transfer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-chunk-transfer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d017a39856084477fed76ac5c710269604e79e50c10f0307e65024952b7bcc03",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T23:15:12.063Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45887,
+  "uuid": "skill-clawhub-paccar",
+  "skillKey": "clawhub-paccar",
+  "name": "Paccar",
+  "summary": "PACCAR is a leading American truck maker known for premium brands Kenworth, Peterbilt, and DAF, with strong profitability and a broad dealer network.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paccar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "PACCAR is a leading American truck maker known for premium brands Kenworth, Peterbilt, and DAF,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paccar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paccar",
+      "url": "https://clawhub.ai/skills/paccar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paccar",
+    "url": "https://clawhub.ai/skills/paccar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paccar-9ea7571156bae20b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paccar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paccar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbee6a006c2787c518e7f71bdf3ea92c96650eb59ced3076db451854ecf59d2d",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T18:05:45.563Z"
+}

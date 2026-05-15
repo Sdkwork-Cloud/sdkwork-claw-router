@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63436,
+  "uuid": "skill-clawhub-xiaomi-mimo-voice",
+  "skillKey": "clawhub-xiaomi-mimo-voice",
+  "name": "Xiaomi MiMo Voice",
+  "summary": "小米 MiMo V2 TTS 语音合成。支持中文、英文及多种风格（情感、角色扮演、方言、语速控制等）。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaomi_mimo_voice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Luhui WANG",
+      "features": [
+        "小米 MiMo V2 TTS 语音合成。支持中文、英文及多种风格（情感、角色扮演、方言、语速控制等）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaomi-mimo-voice@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44135132?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaomi-mimo-voice",
+      "url": "https://clawhub.ai/skills/xiaomi-mimo-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaomi-mimo-voice",
+    "url": "https://clawhub.ai/skills/xiaomi-mimo-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaomi-mimo-voice-098f8a55ac65e7d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaomi-mimo-voice@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaomi-mimo-voice-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90c0d68cc43e573d2741b6a2f388a5bcc43a242472a53060ca255da39432c6f9",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T07:36:17.542Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-director@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_director",
+  "skill": {
+    "id": 25211,
+    "skillKey": "clawhub-ai-director",
+    "name": "Ai Director"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-director",
+    "url": "https://clawhub.ai/skills/ai-director",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-director-4b4fbac2c65c43d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI short drama generation - account management, script writing, video production. Integrated X2C billing for commercial deployment."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "patches429",
+      "userId": "publishers:patches429",
+      "displayName": "Parker",
+      "image": "https://avatars.githubusercontent.com/u/169116739?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773391418300,
+      "changelog": "- Removed the version field and version number from SKILL.md for simplified documentation.\n- No changes to features or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43ccf0a99c38faf2aa00270c83fa36a5f61db766c3eecd9f7d8db2515d815af1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uniswap-v4@2.0.4",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uniswap_v4",
+  "skill": {
+    "id": 12422,
+    "skillKey": "clawhub-uniswap-v4",
+    "name": "Uniswap V4"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uniswap-v4",
+    "url": "https://clawhub.ai/skills/uniswap-v4",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uniswap-v4-83ceb7fcc90e2c3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Swap tokens and read pool state on Uniswap V4 (Base, Ethereum). Use when the agent needs to: (1) swap ERC20 tokens or ETH via Uniswap V4, (2) get pool info (price, tick, liquidity, fees), (3) find the best pool for a token pair, (4) quote."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openclaw-consensus-bot",
+      "userId": "publishers:openclaw-consensus-bot",
+      "displayName": "openclaw-consensus-bot",
+      "image": "https://avatars.githubusercontent.com/u/258721376?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1657,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.4",
+      "createdAt": 1770701898567,
+      "changelog": "Security: add CI regression test ensuring PRIVATE_KEY never printed; docs: treat stdout/stderr as public logs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f51b4d9709cc56b66a9e5a9bdf28fa7fba55912ef8bdea510e6c5edf4901210f"
+}

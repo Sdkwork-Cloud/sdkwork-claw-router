@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65423,
+  "uuid": "skill-clawhub-socialpost-auto",
+  "skillKey": "clawhub-socialpost-auto",
+  "name": "SocialPost Auto",
+  "summary": "社交媒体自动化运营助手。自动生成并发布小红书、微博、Twitter 内容，定时发送、互动回复。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.socialpost_auto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anson125chen",
+      "features": [
+        "社交媒体自动化运营助手。自动生成并发布小红书、微博、Twitter 内容，定时发送、互动回复。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/socialpost-auto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269657022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "socialpost-auto",
+      "url": "https://clawhub.ai/skills/socialpost-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "socialpost-auto",
+    "url": "https://clawhub.ai/skills/socialpost-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/socialpost-auto-6c091507ea9e8e79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/socialpost-auto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-socialpost-auto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bdfafb94da7dcff4f6392a943bd0ad8585a8b496f677b589ca96f23d01a672c",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T14:25:40.139Z"
+}

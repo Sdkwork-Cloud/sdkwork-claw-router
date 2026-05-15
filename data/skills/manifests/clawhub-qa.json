@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57931,
+  "uuid": "skill-clawhub-qa",
+  "skillKey": "clawhub-qa",
+  "name": "QA测试主管 测试策略治理",
+  "summary": "QA lead skill for test strategy, coverage planning, risk-based validation design, and cross-role quality governance.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aiweline",
+      "features": [
+        "QA lead skill for test strategy, coverage planning, risk-based validation design, and cross-rol."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qa@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32635766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qa",
+      "url": "https://clawhub.ai/skills/qa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qa",
+    "url": "https://clawhub.ai/skills/qa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qa-3f3ef786b34d6dd7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qa@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qa-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c10e8fea1bfcaef0952b9038a4445ba1495058fcd4cea95e78156dcf35b8cb0e",
+      "artifactSizeBytes": 1816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T03:24:15.295Z"
+}

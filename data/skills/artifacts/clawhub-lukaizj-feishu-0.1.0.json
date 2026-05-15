@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lukaizj-feishu@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lukaizj_feishu",
+  "skill": {
+    "id": 56353,
+    "skillKey": "clawhub-lukaizj-feishu",
+    "name": "Feishu Integration (Lukaizj)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lukaizj-feishu",
+    "url": "https://clawhub.ai/skills/lukaizj-feishu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lukaizj-feishu-d393e4333c59a10a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Feishu (飞书) integration - Send messages, manage groups, and automate workflows"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lukaizj",
+      "userId": "s17fherr0tdzbm0p81gn7k2vgd83k135",
+      "displayName": "lukaizj",
+      "image": "https://avatars.githubusercontent.com/u/92360203?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776669681569,
+      "changelog": "Initial release of Feishu Integration skill.\n\n- Send text and interactive card messages to Feishu chats.\n- Create and manage chat groups.\n- List chat members and recent messages.\n- Schedule messages and set up webhook notifications.\n- Requires Feishu App ID and Secret for setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb3fc510c8125e8de334ed161a6785260c39588afbe58e3c6c1ca0bf82281086"
+}

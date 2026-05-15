@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nginxwebui-manager@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nginxwebui_manager",
+  "skill": {
+    "id": 49744,
+    "skillKey": "clawhub-nginxwebui-manager",
+    "name": "NginxWebUI Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nginxwebui-manager",
+    "url": "https://clawhub.ai/skills/nginxwebui-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nginxwebui-manager-974071c28cba1df5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage NginxWebUI reverse proxy rules via its REST API. List/create/delete servers and locations, reload nginx, manage upstreams. All calls through docker ex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zaixi",
+      "userId": "s17eb18cvrb09f7dvaz6hh42xx83nv0x",
+      "displayName": "liyj",
+      "image": "https://avatars.githubusercontent.com/u/19380087?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 68,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1778225183546,
+      "changelog": "Auto-retry login on token expiry (401); unified auth check in main(); pretty-print for get-server; use urllib.parse consistently; remove redundant ensure_token() per function",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eee8bfb9eee5834906520b74b18593d3d6a345a50d72a1fa06e1dad148116b99"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66498,
+  "uuid": "skill-clawhub-daily-news-report",
+  "skillKey": "clawhub-daily-news-report",
+  "name": "Dailynewsreport",
+  "summary": "定时抓取并整合多源新闻，智能去重分类，改写成行业研报级一句话新闻，输出结构化日报并支持Telegram推送。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_news_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FrankLe1117",
+      "features": [
+        "定时抓取并整合多源新闻，智能去重分类，改写成行业研报级一句话新闻，输出结构化日报并支持Telegram推送。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-news-report@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156928058?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-news-report",
+      "url": "https://clawhub.ai/skills/daily-news-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-news-report",
+    "url": "https://clawhub.ai/skills/daily-news-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-news-report-a90c1a08625613e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-news-report@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-news-report-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c24d3688baf65884514701a2907cedac4ca2b88690409a6aea4da6e96322a7c",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T09:28:06.687Z"
+}

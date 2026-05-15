@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/only-baby-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.only_baby_skill",
+  "skill": {
+    "id": 14758,
+    "skillKey": "clawhub-only-baby-skill",
+    "name": "OnlyBaby"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "only-baby-skill",
+    "url": "https://clawhub.ai/skills/only-baby-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/only-baby-skill-d7c1924b1a0680f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze contraction JSON and baby log JSON to assess mum's labour/contraction situation and baby's feeding and diaper status. Use when the user provides (or references) contractions_*.json and babyLogs_*.json files and wants to know if mum."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jacklandrin",
+      "userId": "publishers:jacklandrin",
+      "displayName": "Bo Liu",
+      "image": "https://avatars.githubusercontent.com/u/3782279?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1617,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770380039166,
+      "changelog": "Initial release of only-baby-skill.\n\n- Analyzes contraction and baby log JSON files to assess mum's labour safety and baby's feeding/diaper health.\n- Summarizes contraction count, durations, intervals, and applies safety rules (e.g. 5-1-1).\n- Reports on baby's age, feeding (bottle & breastfeeding), and diaper changes vs. age-appropriate thresholds.\n- Produces clear \"Mum safe?\" and \"Baby healthy?\" verdicts with supporting stats and recommendations.\n- Includes a mandatory caveat: not medical advice; consult professionals if unsure.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4fe90958a49165667b3d407434077ed1f8bb94dab723c5267040401ce71570e7"
+}

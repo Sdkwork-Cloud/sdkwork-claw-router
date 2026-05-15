@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bimdown-cli@1.4.1",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bimdown_cli",
+  "skill": {
+    "id": 35448,
+    "skillKey": "clawhub-bimdown-cli",
+    "name": "BimDown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bimdown-cli",
+    "url": "https://clawhub.ai/skills/bimdown-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bimdown-cli-20249937ece39fc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A bridge between AI and building data. Read & create BIM exactly like writing code. Execute architectural design, or just model your own house!"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "novashang",
+      "userId": "s174x1n65xdrpvc97p72r83ehd84ag3f",
+      "displayName": "NovaShang",
+      "image": "https://avatars.githubusercontent.com/u/16094842?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.4.1",
+      "createdAt": 1775765189537,
+      "changelog": "Address reviewer feedback: declare required bin (bimdown) via openclaw metadata, document publish destination (bim-claw.com), consent contract, zero-auth uploads, and BIMCLAW_API override. New 'Publishing & Data Upload' section.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa578ba573dccd205abccbeecb378ee8c9da5351498e93bfb8b24c5cfec67b04"
+}

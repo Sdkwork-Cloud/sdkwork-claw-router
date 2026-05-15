@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20550,
+  "uuid": "skill-clawhub-claw-soul-backup",
+  "skillKey": "clawhub-claw-soul-backup",
+  "name": "Claw Soul Backup",
+  "summary": "Store encrypted OpenClaw workspace backups and restore them via token-secured API using claw-vault.com with local encryption and credential management.",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_soul_backup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel",
+      "features": [
+        "Store encrypted OpenClaw workspace backups and restore them via token-secured API using claw-va."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-soul-backup@0.1.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1489309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-soul-backup",
+      "url": "https://clawhub.ai/skills/claw-soul-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-soul-backup",
+    "url": "https://clawhub.ai/skills/claw-soul-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-soul-backup-0cd1771df9c24974.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-soul-backup@0.1.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-soul-backup-0.1.8.json",
+      "version": "0.1.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edad4afca902efea5622aefcd264c54d8acda63aaff269bf9e7f25bd40f44886",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T10:51:29.648Z"
+}

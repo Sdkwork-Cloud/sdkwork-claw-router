@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-pay@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_pay",
+  "skill": {
+    "id": 46954,
+    "skillKey": "clawhub-my-pay",
+    "name": "my-pay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-pay",
+    "url": "https://clawhub.ai/skills/my-pay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-pay-eb86cb5fb88cb1f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A payment skill powered by mypay-bot CLI. Use this skill whenever the user wants to pay, make a payment, purchase something, buy items, checkout, transfer mo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xhc1111",
+      "userId": "s1796azc8gfvrd80eajajjstw184znys",
+      "displayName": "xhc1111",
+      "image": "https://avatars.githubusercontent.com/u/72559262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776531954042,
+      "changelog": "my-pay 1.0.1 adds explicit system requirements and credential checks to improve reliability and transparency.\n\n- Added system requirements section specifying python3, node, npm, and mypay-bot CLI.\n- Introduced mandatory environment credentials (MYPAY_API_KEY, MYPAY_WALLET_SECRET) with usage instructions.\n- The prerequisite script now only checks for installation/version and never modifies the system.\n- Installation and updates for mypay-bot must be performed manually by the user; automatic npm install was removed.\n- Compatibility and credential requirements are now documented using structured metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf6db87cef0a898225c59ea9caa0f2414f7c49ef5363d6344b1058d89b05a6d7"
+}

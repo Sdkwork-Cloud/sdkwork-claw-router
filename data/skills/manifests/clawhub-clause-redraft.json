@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58355,
+  "uuid": "skill-clawhub-clause-redraft",
+  "skillKey": "clawhub-clause-redraft",
+  "name": "clause redraft",
+  "summary": "Redraft unclear or risky contract clauses into clearer, more balanced language. Use when the user asks about 条款改写、改合同、条款优化、合同措辞、改写这句话、条款润色, or wants to impro...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clause_redraft",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Redraft unclear or risky contract clauses into clearer, more balanced language",
+        "Use when the user asks about 条款改写、改合同、条款优化、合同措辞、改写这句话、条款润色, or wants to impro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clause-redraft@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clause-redraft",
+      "url": "https://clawhub.ai/skills/clause-redraft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clause-redraft",
+    "url": "https://clawhub.ai/skills/clause-redraft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clause-redraft-35f2fa20166dc127.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clause-redraft@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clause-redraft-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18aa5b5127c48cb2ab1836fd5a9c5bf914dac89b3a1e8518be250f6a7171807a",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T11:18:32.151Z"
+}

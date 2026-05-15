@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/system-time@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.system_time",
+  "skill": {
+    "id": 13204,
+    "skillKey": "clawhub-system-time",
+    "name": "system-time"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "system-time",
+    "url": "https://clawhub.ai/skills/system-time",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/system-time-8c9b1bc88006d0ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides current system time, detailed time info, time differences, supports multiple formats and global timezones."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qzy05231",
+      "userId": "publishers:qzy05231",
+      "displayName": "Qzy05231",
+      "image": "https://avatars.githubusercontent.com/u/65888507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1304,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770950179020,
+      "changelog": "Show system time",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ae038876c04f6e931f1c2f85a155e710807c4f9818e099e8ea5827ba21273ea5"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-journal-paper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_journal_paper",
+  "skill": {
+    "id": 71205,
+    "skillKey": "clawhub-chinese-journal-paper",
+    "name": "Chinese Journal Paper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-journal-paper",
+    "url": "https://clawhub.ai/skills/chinese-journal-paper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-journal-paper-76960dd477b4a4c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从项目代码仓库出发，自动扫描代码提取创新点，撰写符合中文核心/普刊规范的学术论文。核心能力：① 代码仓库扫描与技术创新点提炼 ② 参考文献格式占位（用户手动填充） ③ 生成完整论文（标题、摘要、关键词、引言、相关工作、方法、实验、结论）。触发词：论文、写论文、期刊论文、学术论文、核心期刊、普刊、中文论文、jour..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaolegao2024",
+      "userId": "s17096qr6yfs9qrty6rqd4ccdd84tk55",
+      "displayName": "gaolegao2024",
+      "image": "https://avatars.githubusercontent.com/u/153821179?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776205587260,
+      "changelog": "Initial release: academic paper writer for Chinese journals",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe3be93c32cd2101b21535e28a056e75569c9959810347c91fb75b8bdd2b7f72"
+}

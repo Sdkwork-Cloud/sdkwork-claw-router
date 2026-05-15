@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/macos-wechat-send@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macos_wechat_send",
+  "skill": {
+    "id": 23637,
+    "skillKey": "clawhub-macos-wechat-send",
+    "name": "macos-wechat-send"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macos-wechat-send",
+    "url": "https://clawhub.ai/skills/macos-wechat-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macos-wechat-send-fac42d1f821c59c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates sending messages on WeChat Mac by controlling the app via AppleScript and clipboard to reliably deliver text to specified contacts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sincerememe",
+      "userId": "s17bcy6aj5g032h21xnd90bran84kr6k",
+      "displayName": "三分天下",
+      "image": "https://avatars.githubusercontent.com/u/7463985?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773751945998,
+      "changelog": "- 支持自动发送微信文件（不限于文本消息，可顺序发送文件和多条消息）。\n- 支持多条消息与文件混合批量发送，参数顺序即发送顺序。\n- 自动区分文本内容与文件路径，发送流程更加智能。\n- 连续发送同一联系人时自动优化，避免重复切换联系人和窗口。\n- 提供多参数、stdin 方式、发送多种类型内容的用法示例和详细说明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7db52b7932154a56f8a9a9365d52342c0341e541ca26a0d462466b5b077b6df6"
+}

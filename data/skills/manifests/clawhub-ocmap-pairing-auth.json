@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32006,
+  "uuid": "skill-clawhub-ocmap-pairing-auth",
+  "skillKey": "clawhub-ocmap-pairing-auth",
+  "name": "OCMAP Pairing Auth",
+  "summary": "Implement one-time pairing-code authentication between an OpenClaw gateway and a desktop or remote client such as OCMAP. Use when adding or updating pairing....",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocmap_pairing_auth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maverick-software",
+      "features": [
+        "Implement one-time pairing-code authentication between an OpenClaw gateway and a desktop or rem.",
+        "Use when adding or updating pairing...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ocmap-pairing-auth@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85259593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ocmap-pairing-auth",
+      "url": "https://clawhub.ai/skills/ocmap-pairing-auth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocmap-pairing-auth",
+    "url": "https://clawhub.ai/skills/ocmap-pairing-auth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocmap-pairing-auth-77191c5b1e8824dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ocmap-pairing-auth@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ocmap-pairing-auth-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a9e057865df7e8296e38e62f6e610c8a5162b70eb3fe4a90bb10858db354b28",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T23:45:47.764Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18676,
+  "uuid": "skill-clawhub-lead-enrichment-pipeline",
+  "skillKey": "clawhub-lead-enrichment-pipeline",
+  "name": "Lead Enrichment Pipeline",
+  "summary": "Automated lead capture, deduplication, tracking, and notification pipeline. Captures leads from web forms via webhooks, deduplicates by email in Google Sheet...",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lead_enrichment_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Muhammad H.M. Alvi",
+      "features": [
+        "Automated lead capture, deduplication, tracking, and notification pipeline",
+        "Captures leads from web forms via webhooks, deduplicates by email in Google Sheet..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lead-enrichment-pipeline@1.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74125579?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lead-enrichment-pipeline",
+      "url": "https://clawhub.ai/skills/lead-enrichment-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lead-enrichment-pipeline",
+    "url": "https://clawhub.ai/skills/lead-enrichment-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lead-enrichment-pipeline-0143f868618aa461.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lead-enrichment-pipeline@1.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-lead-enrichment-pipeline-1.2.3.json",
+      "version": "1.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c21e445002fb00ec0fca20263491dff975c7cbbbf49f245cc0e3218be2d957b6",
+      "artifactSizeBytes": 2095
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T18:44:14.306Z"
+}

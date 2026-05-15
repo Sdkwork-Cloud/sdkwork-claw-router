@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58556,
+  "uuid": "skill-clawhub-gigo-lobster-resume",
+  "skillKey": "clawhub-gigo-lobster-resume",
+  "name": "Gigo Lobster Resume",
+  "summary": "🦞 GIGO · gigo-lobster-resume: 续跑入口：v2 stable 当前会清理旧 checkpoint 并从头重跑；保留此 slug 作为旧 checkpoint 兼容入口。 Triggers: 继续试吃 / 恢复评测 / resume tasting / continue lobster...",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gigo_lobster_resume",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gigolab",
+      "features": [
+        "🦞 GIGO · gigo-lobster-resume: 续跑入口：v2 stable 当前会清理旧 checkpoint 并从头重跑；保留此 slug 作为旧 checkpoint 兼."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gigo-lobster-resume@2.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/279745280?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gigo-lobster-resume",
+      "url": "https://clawhub.ai/skills/gigo-lobster-resume"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gigo-lobster-resume",
+    "url": "https://clawhub.ai/skills/gigo-lobster-resume",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gigo-lobster-resume-01014c64603ea551.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gigo-lobster-resume@2.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gigo-lobster-resume-2.1.2.json",
+      "version": "2.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1827f6e61050e65e740f1d5e61bec4b3e5e872a07be153316b4e4ec952d8e037",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T08:49:36.596Z"
+}

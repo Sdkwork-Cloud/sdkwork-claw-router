@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30349,
+  "uuid": "skill-clawhub-openclaw-whisper-voice",
+  "skillKey": "clawhub-openclaw-whisper-voice",
+  "name": "openclaw-whisper-voice",
+  "summary": "Local Whisper speech-to-text for audio files and inbound voice notes on the OpenClaw Gateway host. Use when setting up local transcription for WhatsApp, Tele...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_whisper_voice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sabyaghosh",
+      "features": [
+        "Local Whisper speech-to-text for audio files and inbound voice notes on the OpenClaw Gateway ho.",
+        "Use when setting up local transcription for WhatsApp, Tele..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-whisper-voice@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34610540?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-whisper-voice",
+      "url": "https://clawhub.ai/skills/openclaw-whisper-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-whisper-voice",
+    "url": "https://clawhub.ai/skills/openclaw-whisper-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-whisper-voice-cd8b31cc1a4b8040.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-whisper-voice@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-whisper-voice-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e891e05176cb261b7867205719133bb916eca3c54a2425a793cab267d68e3b41",
+      "artifactSizeBytes": 2534
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T00:59:32.761Z"
+}

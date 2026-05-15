@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/design-framework-confirm@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.design_framework_confirm",
+  "skill": {
+    "id": 72727,
+    "skillKey": "clawhub-design-framework-confirm",
+    "name": "设计框架套件 - 确认处理器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "design-framework-confirm",
+    "url": "https://clawhub.ai/skills/design-framework-confirm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/design-framework-confirm-bf77e96d3833be8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "设计框架自动生成套件（确认处理器）：处理用户对设计框架预览的回复，支持确认/取消/重新生成"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "807209066",
+      "userId": "s17ev069wj6x7pf8cqcnjhkf4583jhzj",
+      "displayName": "807209066",
+      "image": "https://avatars.githubusercontent.com/u/86033938?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776841947258,
+      "changelog": "v2.0 拆分重构：单一职责，处理确认/取消/重新生成，含10分钟超时机制",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aedb43728038eec81db225ad5c71dc6651050de3b49a6d283f394115fe4f7e31"
+}

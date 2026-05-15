@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55103,
+  "uuid": "skill-clawhub-nansen-agent-guide",
+  "skillKey": "clawhub-nansen-agent-guide",
+  "name": "Nansen Agent Guide",
+  "summary": "Routing guide -- when to use `nansen agent` (AI research) vs direct CLI data commands. Use when deciding how to answer a user's research question with Nansen...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_agent_guide",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nansen AI",
+      "features": [
+        "Routing guide -",
+        "when to use `nansen agent` (AI research) vs direct CLI data commands",
+        "Use when deciding how to answer a user's research question with Nansen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nansen-agent-guide@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93130718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nansen-agent-guide",
+      "url": "https://clawhub.ai/skills/nansen-agent-guide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-agent-guide",
+    "url": "https://clawhub.ai/skills/nansen-agent-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-agent-guide-151d523af81f7e88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nansen-agent-guide@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nansen-agent-guide-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b1ec7dd3603d9116c8e4a4e42f6383988beb038ecd89e31449f42cc2660edd8",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T14:05:21.458Z"
+}

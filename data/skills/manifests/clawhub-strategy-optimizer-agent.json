@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65273,
+  "uuid": "skill-clawhub-strategy-optimizer-agent",
+  "skillKey": "clawhub-strategy-optimizer-agent",
+  "name": "Strategy Optimizer Agent",
+  "summary": "策略优化智能体。当需要优化创作策略、调整发布节奏、分析ROI、沉淀方法论时触发本技能。用于：(1) 评估当前策略有效性 (2) 提出选题/发布/文风优化建议 (3) 计算投入产出比 (4) 沉淀方法论到知识库 (5) 预测市场趋势",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strategy_optimizer_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ouyang198000",
+      "features": [
+        "策略优化智能体。当需要优化创作策略、调整发布节奏、分析ROI、沉淀方法论时触发本技能。用于：(1) 评估当前策略有效性 (2) 提出选题/发布/文风优化建议 (3) 计算投入产出比 (4)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/strategy-optimizer-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/136032898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "strategy-optimizer-agent",
+      "url": "https://clawhub.ai/skills/strategy-optimizer-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strategy-optimizer-agent",
+    "url": "https://clawhub.ai/skills/strategy-optimizer-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strategy-optimizer-agent-63f24505ff5da175.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/strategy-optimizer-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-strategy-optimizer-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b9d4bddb63a8950bcf3568c9bfe43f5825f03c9a2c27753876bdb45d3247f8b",
+      "artifactSizeBytes": 2812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T12:33:14.908Z"
+}

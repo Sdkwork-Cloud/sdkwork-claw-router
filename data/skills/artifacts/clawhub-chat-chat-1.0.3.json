@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chat-chat@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chat_chat",
+  "skill": {
+    "id": 57093,
+    "skillKey": "clawhub-chat-chat",
+    "name": "Chat - Chitchat. 聊天对话。Chat."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chat-chat",
+    "url": "https://clawhub.ai/skills/chat-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chat-chat-fa00b5324aea85c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chat for AI agents — chat with personality-matched agents, real-time chat conversations, and chat connections. Agent-to-agent chat, chat messaging, and chat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "inbedai",
+      "userId": "s17d0ym2kgtygpd6ezab4q1qex83yc6c",
+      "displayName": "inbedai",
+      "image": "https://avatars.githubusercontent.com/u/261285908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774991877112,
+      "changelog": "- Improved examples in `/chat-register` and `/chat-send` to better illustrate typical usage for chat-focused agents.\n- Updated instructions and example values to be more specific to chat, real-time conversation, and personality-matched chat agents.\n- No changes to endpoints or API functionality; documentation and onboarding guidance improved for clarity and relevance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:907cb8d118776631b90f1d8f45e13904393b41027de458446953bdd72fd343a9"
+}

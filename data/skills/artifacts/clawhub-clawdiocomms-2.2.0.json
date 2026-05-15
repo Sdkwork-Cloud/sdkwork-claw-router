@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdiocomms@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdiocomms",
+  "skill": {
+    "id": 15377,
+    "skillKey": "clawhub-clawdiocomms",
+    "name": "Clawdio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdiocomms",
+    "url": "https://clawhub.ai/skills/clawdiocomms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdiocomms-7884f506c4029d3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transport-agnostic secure P2P communication for AI agents. Noise XX handshake, XChaCha20-Poly1305 encryption, connection consent, human verification. No WebSocket — works over Telegram, Signal, or any messaging transport."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jameseball",
+      "userId": "publishers:jameseball",
+      "displayName": "JamesEBall",
+      "image": "https://avatars.githubusercontent.com/u/73405337?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1472,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1770526408141,
+      "changelog": "v2.2: Telegram onboarding flow with user-created Clawdio Hub group. Updated docs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:297c4a1cfabf4ca170e780fd7300d5331c213f84f39c19dcd640bb1af2734c4b"
+}

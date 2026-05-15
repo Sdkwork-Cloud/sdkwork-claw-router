@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-compress@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_compress",
+  "skill": {
+    "id": 64968,
+    "skillKey": "clawhub-image-compress",
+    "name": "skill-image-compress"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-compress",
+    "url": "https://clawhub.ai/skills/image-compress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-compress-6f6a5f854ed41f3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "跨平台图片压缩工具，基于 sharp 实现高效压缩（节省 60-80% 体积）。支持单图/批量压缩、格式转换 (JPG/PNG/WebP/AVIF/HEIC)、画质调节、尺寸缩放。当用户需要压缩图片体积、转换格式、缩小尺寸、批量处理图片、优化图片用于微信/邮件/网页上传时使用此技能。触发词：\"压缩\"、\"缩小\"、\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justzerox",
+      "userId": "s17bntcbdbhj4j4hzncfqbtbxn83pkqf",
+      "displayName": "ZeroX",
+      "image": "https://avatars.githubusercontent.com/u/7137280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 533,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773240145800,
+      "changelog": "- 首次发布：跨平台图片压缩与格式转换工具，基于 sharp 实现高效压缩。\n- 支持单图与批量压缩、JPG/PNG/WebP/AVIF/HEIC 格式转换、画质调节、尺寸缩放。\n- 针对微信、邮件、网页等场景，预设多种压缩参数，平均节省 60-80% 体积。\n- 保证安全输出，原图不被覆盖，批量处理支持进度显示及大文件警告。\n- 不支持图片编辑（如旋转、裁剪、添加水印）、内容读取及文件管理操作。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97d306786355f0dc5982a3e3a8f55ef100c40d33f7e6e1d02b0a85ea5aecd11e"
+}

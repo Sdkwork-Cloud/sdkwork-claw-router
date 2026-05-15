@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50510,
+  "uuid": "skill-clawhub-stellar-agentic-wallet",
+  "skillKey": "clawhub-stellar-agentic-wallet",
+  "name": "Stellar Agentic Wallet",
+  "summary": "A Stellar USDC wallet skill for AI agents. Pay for 402-gated APIs via MPP Router or x402 facilitators, check balances, manage USDC trustlines, swap XLM→USDC...",
+  "version": "1.7.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stellar_agentic_wallet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shawn Muggle",
+      "features": [
+        "A Stellar USDC wallet skill for AI agents",
+        "Pay for 402-gated APIs via MPP Router or x402 facilitators, check balances, manage USDC trustli."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stellar-agentic-wallet@1.7.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1627446?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stellar-agentic-wallet",
+      "url": "https://clawhub.ai/skills/stellar-agentic-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stellar-agentic-wallet",
+    "url": "https://clawhub.ai/skills/stellar-agentic-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stellar-agentic-wallet-a18c496d27a6c286.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stellar-agentic-wallet@1.7.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-stellar-agentic-wallet-1.7.6.json",
+      "version": "1.7.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fca3a91e4e7a46e44f626240ee06a2593fe2dd18c7d5cf71c855000e8757954c",
+      "artifactSizeBytes": 2111
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T05:15:03.949Z"
+}

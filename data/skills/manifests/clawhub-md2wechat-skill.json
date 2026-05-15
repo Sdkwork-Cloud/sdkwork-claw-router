@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63827,
+  "uuid": "skill-clawhub-md2wechat-skill",
+  "skillKey": "clawhub-md2wechat-skill",
+  "name": "md2WeChat-python",
+  "summary": "将 Markdown 文件转换为微信公众号兼容的内联样式 HTML，并一键发送到微信草稿箱。支持 Front Matter 元数据、表格、代码块、列表、图片自动上传等完整排版能力。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md2wechat_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "koraiHub",
+      "features": [
+        "将 Markdown 文件转换为微信公众号兼容的内联样式 HTML，并一键发送到微信草稿箱。支持 Front Matter 元数据、表格、代码块、列表、图片自动上传等完整排版能力。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/md2wechat-skill@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32049957?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "md2wechat-skill",
+      "url": "https://clawhub.ai/skills/md2wechat-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md2wechat-skill",
+    "url": "https://clawhub.ai/skills/md2wechat-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md2wechat-skill-92e4b0c94dfe786e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/md2wechat-skill@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-md2wechat-skill-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bfb2648dd265544c0e7c64d3a8d9bbdc4f6ca1a3a772add38e50bea96173e131",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T05:06:04.440Z"
+}

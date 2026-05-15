@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/npdouyin-hot-trend@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.npdouyin_hot_trend",
+  "skill": {
+    "id": 72261,
+    "skillKey": "clawhub-npdouyin-hot-trend",
+    "name": "myskill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "npdouyin-hot-trend",
+    "url": "https://clawhub.ai/skills/npdouyin-hot-trend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/npdouyin-hot-trend-8e2d89a5b20808de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取抖音热榜/热搜榜数据，包含热门视频、挑战赛、音乐等多领域热门内容，并输出标题、热度值、跳转链接及封面图（如有）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yezi1985201",
+      "userId": "s17b6jfh4wwtycgxfr7ymt0tz1845s0q",
+      "displayName": "yezi1985201",
+      "image": "https://avatars.githubusercontent.com/u/50349419?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775192623766,
+      "changelog": "- Initial release with basic Douyin trending list retrieval\n- Provides ranking, title, popularity value, detail link, tags, and content type\n- Output is in plain text format with easy-to-use URLs\n- Data sourced from Douyin web public interface",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8eccfc7c9369c4efdf3c17ddcc7559eaca7d053d57b85525d7a0031c3c4509f5"
+}

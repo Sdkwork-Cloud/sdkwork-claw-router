@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web3-agent-screener@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web3_agent_screener",
+  "skill": {
+    "id": 69503,
+    "skillKey": "clawhub-web3-agent-screener",
+    "name": "Web3 AI Agent项目专业筛选器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web3-agent-screener",
+    "url": "https://clawhub.ai/skills/web3-agent-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web3-agent-screener-8748ab5dd2e86ec1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web3 AI Agent 项目专业筛选评估工具。输入项目名称或描述，通过11维度专业框架进行深度评估，输出可投资级别评级、核心逻辑、风险提示及综合建议。适用于三年以上价值投资视角的项目筛选。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wgx2010",
+      "userId": "s179bx0njypd9s1qvhs8tyxmbh84br9a",
+      "displayName": "wgx2010",
+      "image": "https://avatars.githubusercontent.com/u/31372401?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775534252104,
+      "changelog": "Initial release: 基于11维度评估框架的专业Web3 AI Agent项目筛选工具",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31d1a40adcf5a537118a19e61ef7c026e6aea095df0e486580a086a65a4c5a90"
+}

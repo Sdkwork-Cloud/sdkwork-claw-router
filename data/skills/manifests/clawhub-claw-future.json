@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68869,
+  "uuid": "skill-clawhub-claw-future",
+  "skillKey": "clawhub-claw-future",
+  "name": "Claw Future",
+  "summary": "期货交易助理。用于中国期货市场（CTP接口）的盯盘、下单、预埋条件单、定时任务和收盘日报。当用户说\"买入/卖出/平仓/开仓\"某合约、查询\"持仓/资金/行情/价格\"、设置\"价格预警/条件单/定时委托/定时登录\"、或要求\"今日成交/收盘报告/日报\"时，调用本 skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_future",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yoborlon-alpha",
+      "features": [
+        "期货交易助理。用于中国期货市场（CTP接口）的盯盘、下单、预埋条件单、定时任务和收盘日报。当用户说\"买入/卖出/平仓/开仓\"某合约、查询\"持仓/资金/行情/价格\"、设置\"价格预警/条件单/定."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-future@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235118954?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-future",
+      "url": "https://clawhub.ai/skills/claw-future"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-future",
+    "url": "https://clawhub.ai/skills/claw-future",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-future-a9b14fddb2f34501.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-future@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-future-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:338e4b00753e61c4ed8a24eec0f3a761ba5bff75108567cf3ace4ccfb84b0941",
+      "artifactSizeBytes": 3789
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T02:57:37.193Z"
+}

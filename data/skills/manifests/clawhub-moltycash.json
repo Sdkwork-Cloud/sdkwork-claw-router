@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15105,
+  "uuid": "skill-clawhub-moltycash",
+  "skillKey": "clawhub-moltycash",
+  "name": "moltycash",
+  "summary": "Send USDC to molty users via A2A protocol. Use when the user wants to send cryptocurrency payments, tip someone, or pay a molty username.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltycash",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xsnackbaker",
+      "features": [
+        "Send USDC to molty users via A2A protocol",
+        "Use when the user wants to send cryptocurrency payments, tip someone, or pay a molty username."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltycash@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242259318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltycash",
+      "url": "https://clawhub.ai/skills/moltycash"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltycash",
+    "url": "https://clawhub.ai/skills/moltycash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltycash-43495ccf499b8a89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltycash@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltycash-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b001c02791be8cf33e4e4946a0ee1e8ce5b1428fbee14a9b5dc64f9fba9c48b6",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T19:07:10.845Z"
+}

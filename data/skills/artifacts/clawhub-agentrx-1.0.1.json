@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentrx@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentrx",
+  "skill": {
+    "id": 46685,
+    "skillKey": "clawhub-agentrx",
+    "name": "AgentRx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentrx",
+    "url": "https://clawhub.ai/skills/agentrx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentrx-982e0dd092b649d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AgentRx recovery layer for AI agent tool failures. Use this skill whenever any external tool call fails, returns an error, times out, or behaves unexpectedly..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chainassetslab",
+      "userId": "s1787txfdzqj491ez7apdeje4985r3tk",
+      "displayName": "Chain Assets",
+      "image": "https://avatars.githubusercontent.com/u/273494511?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777450148904,
+      "changelog": "- Clarified that AgentRx provides advisory suggestions for recovery, not authoritative commands.\n- Updated security and privacy guidance for handling sensitive data and API keys.\n- Enhanced instructions for agent evaluation of suggestions before acting, including confidence score thresholds and escalation requirements.\n- Updated integration verification and API key usage documentation.\n- Emphasized the trust model: agents must assess all recovery suggestions and protect against out-of-scope or risky actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e1a7c1d237acc34fa043d4faadd0c4b66b8a56d59d5066262f3394c7693100a"
+}

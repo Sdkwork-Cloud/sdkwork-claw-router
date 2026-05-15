@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71473,
+  "uuid": "skill-clawhub-shenzhen",
+  "skillKey": "clawhub-shenzhen",
+  "name": "Shenzhen",
+  "summary": "深圳全面介绍。提供深圳的历史沿革、经济发展、科技产业、地理环境、城市建设、文化旅游、知名企业等内容的查询。适用于：1) 了解深圳的发展历程；2) 熟悉深圳的科技产业；3) 了解深圳的创业环境；4) 掌握深圳的生活信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shenzhen",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo Sheng",
+      "features": [
+        "深圳全面介绍。提供深圳的历史沿革、经济发展、科技产业、地理环境、城市建设、文化旅游、知名企业等内容的查询。适用于：1) 了解深圳的发展历程；2) 熟悉深圳的科技产业；3) 了解深圳的创业环境."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shenzhen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149644278?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shenzhen",
+      "url": "https://clawhub.ai/skills/shenzhen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shenzhen",
+    "url": "https://clawhub.ai/skills/shenzhen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shenzhen-847a5edbfe3b9272.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shenzhen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shenzhen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:450ced246f5f2865417ce88319282f5f5a67d691357871b1e51cd7786e01936c",
+      "artifactSizeBytes": 2671
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T18:19:44.977Z"
+}

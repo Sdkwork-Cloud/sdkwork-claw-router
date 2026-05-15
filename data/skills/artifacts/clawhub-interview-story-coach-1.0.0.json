@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/interview-story-coach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interview_story_coach",
+  "skill": {
+    "id": 48580,
+    "skillKey": "clawhub-interview-story-coach",
+    "name": "Interview Story Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interview-story-coach",
+    "url": "https://clawhub.ai/skills/interview-story-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interview-story-coach-edf90711bce679c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps structure authentic behavioral interview stories using STAR/CAR with clear, concise answers, follow-up questions, and rehearsal tips."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 97,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778030058781,
+      "changelog": "Interview Story Coach skill version 1.0.0 – initial release:\n\n- Guides users to craft authentic behavioral interview stories using STAR/CAR frameworks.\n- Requires key inputs: interview question, target role, user’s real experience, outcome or lesson, and time constraint.\n- Provides outputs including a structured story, polished answer, follow-up questions, and rehearsal tips.\n- Prioritizes authenticity; explicitly prohibits inventing experiences or scripting deceptive answers.\n- Includes built-in safety boundaries and clarifies what the skill cannot do.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d678b05d7ca32c97dc550572d27418a8961d553b87e592b66cba7e710a82886"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21178,
+  "uuid": "skill-clawhub-google-finance",
+  "skillKey": "clawhub-google-finance",
+  "name": "Google Finance Stock Tracker",
+  "summary": "Track stock prices and company news from Google Finance on a schedule. Use when user wants to monitor stocks, get buy/sell recommendations, check price chang...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_finance",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mli-cj",
+      "features": [
+        "Track stock prices and company news from Google Finance on a schedule",
+        "Use when user wants to monitor stocks, get buy/sell recommendations, check price chang..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-finance@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255225491?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-finance",
+      "url": "https://clawhub.ai/skills/google-finance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-finance",
+    "url": "https://clawhub.ai/skills/google-finance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-finance-00b87eb0298fb8af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-finance@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-finance-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:469be8c606ebc381deca46e3f52b9be40227a90b87668314e4130e6151e33203",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T08:52:33.850Z"
+}

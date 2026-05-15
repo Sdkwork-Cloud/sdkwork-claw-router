@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18410,
+  "uuid": "skill-clawhub-agent-slack",
+  "skillKey": "clawhub-agent-slack",
+  "name": "Agent Slack",
+  "summary": "Interact with Slack workspaces - send messages, read channels, manage reactions",
+  "version": "1.10.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_slack",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jeon Suyeol",
+      "features": [
+        "Interact with Slack workspaces",
+        "send messages, read channels, manage reactions"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-slack@1.10.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/931655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-slack",
+      "url": "https://clawhub.ai/skills/agent-slack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-slack",
+    "url": "https://clawhub.ai/skills/agent-slack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-slack-55c46e8ab196690c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-slack@1.10.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-slack-1.10.5.json",
+      "version": "1.10.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f703a0e53be52331e16cb338c65885eb1c4c1b6bdc40c66402c911b4ff7515b8",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T15:40:15.686Z"
+}

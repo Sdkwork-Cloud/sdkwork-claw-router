@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/payclaw-badge@0.5.1",
+  "version": "0.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payclaw_badge",
+  "skill": {
+    "id": 21075,
+    "skillKey": "clawhub-payclaw-badge",
+    "name": "Payclaw Badge Pub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payclaw-badge",
+    "url": "https://clawhub.ai/skills/payclaw-badge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payclaw-badge-9c3a9410253432d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agents are not bots. Prove it. UCP Credential Provider: declare your agent as an authorized actor before shopping at any UCP-compliant merchant. Requires PAY..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "payclawinc",
+      "userId": "publishers:payclawinc",
+      "displayName": "PayClaw, Inc.",
+      "image": "https://avatars.githubusercontent.com/u/254987600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 524,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.5.1",
+      "createdAt": 1772685229918,
+      "changelog": "**payclaw-badge 0.5.1**\n\n- Updated to require PAYCLAW_API_KEY for usage; device-based auth no longer default.\n- Setup instructions and README clarified to reflect API key requirement and where to obtain it.\n- Added notes on minimum Node.js version (20+ required).\n- Expanded Security & Privacy section with clear credential and data practices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:21e3f123e4a8613da41e72f25dbb9bfbcf283a4ef38251f3ed31fdd3c545e3b9"
+}

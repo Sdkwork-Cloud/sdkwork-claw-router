@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rili@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rili",
+  "skill": {
+    "id": 29538,
+    "skillKey": "clawhub-rili",
+    "name": "rili"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rili",
+    "url": "https://clawhub.ai/skills/rili",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rili-bf4e95a39114703f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calendar and Chinese lunar date lookups via a bundled local Node script. Use when the user asks about dates, weekdays, month views, lunar calendar dates, tra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jvy",
+      "userId": "s17drhqvqmrfz94tm5320kfgj983kf7m",
+      "displayName": "jvy",
+      "image": "https://avatars.githubusercontent.com/u/5337221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773493687694,
+      "changelog": "Initial release of the rili skill: a local Chinese calendar and lunar date lookup tool.\n\n- Supports Gregorian and lunar date lookups, weekday queries, month views, and major traditional Chinese festivals.\n- Provides both Gregorian and lunar information for dates, including zodiac and holidays.\n- Covers lunar-to-Gregorian conversion and vice versa, with leap month handling.\n- Includes local commands for date, month, festival query, and lunar conversion.\n- Not intended for calendar event management or integration tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f08f89272ae04522a4ecda8f992c4a81647934442bbf071d6760e211ce97d84"
+}

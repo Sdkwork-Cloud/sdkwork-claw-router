@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-budget-guard@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_budget_guard",
+  "skill": {
+    "id": 37988,
+    "skillKey": "clawhub-token-budget-guard",
+    "name": "Token Budget Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-budget-guard",
+    "url": "https://clawhub.ai/skills/token-budget-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-budget-guard-224314dd295e7a94.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically manages and compresses context to optimize token usage by summarizing, selectively loading, and budgeting for tool schemas, history, and tasks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aptratcn",
+      "userId": "s17cpfvkz8jmsw8vpgqypg10vh857dxa",
+      "displayName": "Erwin",
+      "image": "https://avatars.githubusercontent.com/u/268770574?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776999546553,
+      "changelog": "v2: Real impact numbers, progressive disclosure diagram, vs monitoring tools comparison",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:daefd3f7534da09dbdc3fcb26fabbfee2ea224a626f29c54221c7be495cafe80"
+}

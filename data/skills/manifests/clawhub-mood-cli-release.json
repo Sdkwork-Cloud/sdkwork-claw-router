@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67786,
+  "uuid": "skill-clawhub-mood-cli-release",
+  "skillKey": "clawhub-mood-cli-release",
+  "name": "用天气可视化你的心情！基于 AI 情绪分析，将文字转化为天气图标 + 治愈文案。",
+  "summary": "情绪分析 CLI 技能。当用户说\"mood\"、\"心情\"、\"情绪\"、\"分析情绪\"等关键词时触发，调用 mood CLI 工具分析文本情绪，返回天气图标 + 治愈文案。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mood_cli_release",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wanwan2qq",
+      "features": [
+        "情绪分析 CLI 技能。当用户说\"mood\"、\"心情\"、\"情绪\"、\"分析情绪\"等关键词时触发，调用 mood CLI 工具分析文本情绪，返回天气图标 + 治愈文案。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mood-cli-release@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10196216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mood-cli-release",
+      "url": "https://clawhub.ai/skills/mood-cli-release"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mood-cli-release",
+    "url": "https://clawhub.ai/skills/mood-cli-release",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mood-cli-release-413b085e8aa15233.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mood-cli-release@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mood-cli-release-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84361b731fa096dd14a389ce50fcd2e279c472c13ba981586ea9a122e460c48c",
+      "artifactSizeBytes": 2524
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:57:41.079Z"
+}

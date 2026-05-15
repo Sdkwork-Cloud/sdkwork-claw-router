@@ -23,7 +23,7 @@ export function UserView() {
     setLoading(true);
     setLoadError(null);
     try {
-      const data = await UserService.fetchUserProfile();
+      const data = await UserService.fetchCurrentUser();
       if (isActive()) {
         setProfile(data);
       }

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45775,
+  "uuid": "skill-clawhub-pilot-load-balancer",
+  "skillKey": "clawhub-pilot-load-balancer",
+  "name": "Pilot Load Balancer",
+  "summary": "Distribute tasks across worker pools with health-aware load balancing. Use this skill when: 1. You need to distribute tasks across multiple worker agents 2....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_load_balancer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Distribute tasks across worker pools with health-aware load balancing",
+        "Use this skill when: 1",
+        "You need to distribute tasks across multiple worker agents 2...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-load-balancer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-load-balancer",
+      "url": "https://clawhub.ai/skills/pilot-load-balancer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-load-balancer",
+    "url": "https://clawhub.ai/skills/pilot-load-balancer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-load-balancer-5ff38bc7e5f3a4a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-load-balancer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-load-balancer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a4962bb0fc6a68c48746d18597058f9de133c9486d17fe38d2219b8622c943f",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T05:23:25.415Z"
+}

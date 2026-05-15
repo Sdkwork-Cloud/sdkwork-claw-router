@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60588,
+  "uuid": "skill-clawhub-test-my-skill",
+  "skillKey": "clawhub-test-my-skill",
+  "name": "Test my skill",
+  "summary": "没有任何实际意义的skill，用于测试",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_my_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wayne-HuangYj",
+      "features": [
+        "没有任何实际意义的skill，用于测试"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-my-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32304531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-my-skill",
+      "url": "https://clawhub.ai/skills/test-my-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-my-skill",
+    "url": "https://clawhub.ai/skills/test-my-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-my-skill-2a4da6ae7fa03915.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-my-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-my-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4147e424b5c5fe5a414b0a3e770281c4bc18a24df30db3a791b24cd933db62b0",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:48:39.219Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rauto-usage@0.2.3",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rauto_usage",
+  "skill": {
+    "id": 25064,
+    "skillKey": "clawhub-rauto-usage",
+    "name": "rauto-usage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rauto-usage",
+    "url": "https://clawhub.ai/skills/rauto-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rauto-usage-cd0bf73be5edc736.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute rauto directly for the user: run device commands, template execution, tx block, tx workflow, multi-device orchestration, replay, backup/restore, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "demohiiiii",
+      "userId": "publishers:demohiiiii",
+      "displayName": "demohiiiii",
+      "image": "https://avatars.githubusercontent.com/u/69758517?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 396,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.3",
+      "createdAt": 1773225744793,
+      "changelog": "- Refined execution and safety rules, focusing on direct operation and rollback-aware planning.\n- Removed install/upgrade implementation and instructions from core logic and references.\n- Added orchestration risk review reference (references/orchestration-risk-check.md); removed install reference.\n- Unified missing input prompts and clarified command execution order and confirmation policies.\n- Improved criteria for destructive actions and introduced pre-flight review step for orchestration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b4c9c4c2f8944e11f06e166255263b9c56151ab3cf4a7ea61ab8ae3106147c4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-osv@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_osv",
+  "skill": {
+    "id": 56578,
+    "skillKey": "clawhub-x-osv",
+    "name": "x-osv"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-osv",
+    "url": "https://clawhub.ai/skills/x-osv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-osv-b2439c480c0fc300.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI for Google OSV database. Query vulnerabilities for packages, scan local projects for vulnerable dependencies. **Dependency**: This is an x-cmd module. In..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edwinjhlee",
+      "userId": "s172788nc0txsvg12nzarvtzf183gq1h",
+      "displayName": "Edwin.JH.Lee",
+      "image": "https://avatars.githubusercontent.com/u/4426319?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773186750719,
+      "changelog": "x-osv 1.0.1\n\n- Clarified that osv-scanner must be installed separately for project scanning functionality.\n- Updated documentation to highlight prerequisites and improve installation instructions.\n- Streamlined features list and removed references to experimental or unsupported features.\n- Simplified examples and command descriptions for clarity.\n- Removed AI search and cloud storage commands from the documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:75f2d3a3d4af942faebe19b9589ae4c8c190f98cfada3a752bb6836753ebbae4"
+}

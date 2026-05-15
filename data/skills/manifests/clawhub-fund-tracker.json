@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47096,
+  "uuid": "skill-clawhub-fund-tracker",
+  "skillKey": "clawhub-fund-tracker",
+  "name": "fund-tracker",
+  "summary": "USE WHEN user types /fund-tracker or wants to check fund purchase availability, daily purchase quota, fee, and changes versus the previous run. Uses local AK...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fund_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alon",
+      "features": [
+        "USE WHEN user types /fund-tracker or wants to check fund purchase availability, daily purchase.",
+        "Uses local AK..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fund-tracker@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19970878?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fund-tracker",
+      "url": "https://clawhub.ai/skills/fund-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fund-tracker",
+    "url": "https://clawhub.ai/skills/fund-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fund-tracker-7f179df745abe53d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fund-tracker@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fund-tracker-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a29c48563b0e9c06af91425546ee4b339d9d7b3246ebe7dacb9b86b5dfc8b28",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T09:33:07.704Z"
+}

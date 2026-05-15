@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meeting-minutes-organizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_minutes_organizer",
+  "skill": {
+    "id": 73164,
+    "skillKey": "clawhub-meeting-minutes-organizer",
+    "name": "会议纪要自动整理工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-minutes-organizer",
+    "url": "https://clawhub.ai/skills/meeting-minutes-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-minutes-organizer-6f15fe451cd9a3f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "会议纪要自动整理工具 | 将原始会议记录智能整理为结构化会议纪要（议题、决议、待办、责任人和截止日期）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yongjie666888",
+      "userId": "s17drc5xysxp2mbjvg182tkj5183gqyv",
+      "displayName": "yongjie666888",
+      "image": "https://avatars.githubusercontent.com/u/177016990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774363970378,
+      "changelog": "首次发布：智能整理会议记录为结构化纪要",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f4c4befe5253706198114e1ea6c1b55a330069c3af89cac282a3dc972fff582"
+}

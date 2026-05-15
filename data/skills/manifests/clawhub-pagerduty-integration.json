@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23178,
+  "uuid": "skill-clawhub-pagerduty-integration",
+  "skillKey": "clawhub-pagerduty-integration",
+  "name": "Pagerduty",
+  "summary": "PagerDuty integration. Manage Users, Teams, Services, Events. Use when the user wants to interact with PagerDuty data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pagerduty_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "PagerDuty integration",
+        "Manage Users, Teams, Services, Events",
+        "Use when the user wants to interact with PagerDuty data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pagerduty-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pagerduty-integration",
+      "url": "https://clawhub.ai/skills/pagerduty-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pagerduty-integration",
+    "url": "https://clawhub.ai/skills/pagerduty-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pagerduty-integration-29dd012633581826.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pagerduty-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-pagerduty-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:faf424e8deaf9b500593fa9484e37e51515f0fa07e2ee788ccb67a218e544c88",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:49:51.096Z"
+}

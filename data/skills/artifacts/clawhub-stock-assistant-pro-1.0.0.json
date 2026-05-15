@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-assistant-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_assistant_pro",
+  "skill": {
+    "id": 66691,
+    "skillKey": "clawhub-stock-assistant-pro",
+    "name": "Stock Assistant Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-assistant-pro",
+    "url": "https://clawhub.ai/skills/stock-assistant-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-assistant-pro-a0f92d9f8de160c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业股票分析助手，基于五日线+MACD+基本面三维选股策略。提供实时行情分析、买卖点提示、财报健康度检查、做 T 策略建议。适合 A 股投资者使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vip8607",
+      "userId": "publishers:vip8607",
+      "displayName": "vip8607",
+      "image": "https://avatars.githubusercontent.com/u/190703025?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773721696093,
+      "changelog": "Stock Assistant Pro v1.0.0 — 首次发布\n\n- 提供基于五日线、MACD、基本面三维策略的选股方法\n- 支持实时行情分析、买卖点提示、财报健康度检查、做 T 策略建议\n- 包含命令：/analyze、/watchlist、/signal、/report、/strategy\n- 面向 A 股投资者，适用于日常选股与仓位管理",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:823f39f888593f48582d7e7f75f99f980be4793f6063f741213a38d413200b89"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54611,
+  "uuid": "skill-clawhub-ntriq-x402-invoice-extract-batch",
+  "skillKey": "clawhub-ntriq-x402-invoice-extract-batch",
+  "name": "Ntriq X402 Invoice Extract Batch",
+  "summary": "Batch extract structured data from up to 500 invoices/receipts. Flat $9.00 USDC via x402.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_x402_invoice_extract_batch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ntriq",
+      "features": [
+        "Batch extract structured data from up to 500 invoices/receipts",
+        "Flat $9.00 USDC via x402."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ntriq-x402-invoice-extract-batch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215101248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ntriq-x402-invoice-extract-batch",
+      "url": "https://clawhub.ai/skills/ntriq-x402-invoice-extract-batch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-x402-invoice-extract-batch",
+    "url": "https://clawhub.ai/skills/ntriq-x402-invoice-extract-batch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-x402-invoice-extract-batch-2a6ca4c24e090751.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ntriq-x402-invoice-extract-batch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ntriq-x402-invoice-extract-batch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b335ba54f5bb0c99b054e2b3188e9b9b3c893ce017cc968bfb8bff7280e72e4c",
+      "artifactSizeBytes": 2361
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T18:59:31.667Z"
+}

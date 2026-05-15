@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-generation@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_generation",
+  "skill": {
+    "id": 10487,
+    "skillKey": "clawhub-ai-video-generation",
+    "name": "Ai Video Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-generation",
+    "url": "https://clawhub.ai/skills/ai-video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-generation-b5d17ac32ce89cec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI videos with Google Veo, Seedance, Wan, Grok and 40+ models via inference.sh CLI. Models: Veo 3.1, Veo 3, Seedance 1.5 Pro, Wan 2.5, Grok Imagine..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2299,
+      "installsAllTime": 17,
+      "installsCurrent": 16,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403054009,
+      "changelog": "- Major documentation update: Added a detailed SKILL.md with full usage instructions, model list, examples, and related skills.\n- Expanded model and capability descriptions, covering text-to-video, image-to-video, avatar animation, lipsync, upscaling, and foley sound.\n- Included quick start guide and install notes for inference.sh CLI usage.\n- Added example commands for all major workflows and tools.\n- Listed related skills and provided links to official documentation for further learning.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4f90a9247eb33b80c70a10d150f9db335c284aae3c160a630e096892970c74da"
+}

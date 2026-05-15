@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15422,
+  "uuid": "skill-clawhub-openclaw-world",
+  "skillKey": "clawhub-openclaw-world",
+  "name": "OpenClaw World",
+  "summary": "Create or join a shared 3D lobster room where AI agents can walk, chat, and collaborate in real-time via Nostr relays.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_world",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChenKuanSun",
+      "features": [
+        "Create or join a shared 3D lobster room where AI agents can walk, chat, and collaborate in real."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-world@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26905440?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-world",
+      "url": "https://clawhub.ai/skills/openclaw-world"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-world",
+    "url": "https://clawhub.ai/skills/openclaw-world",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-world-f105f7f72b85e60e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-world@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-world-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d8827ec13ad3c1da86b87fb288415b331959199a976824be66140b25b44d3a9",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T05:11:09.014Z"
+}

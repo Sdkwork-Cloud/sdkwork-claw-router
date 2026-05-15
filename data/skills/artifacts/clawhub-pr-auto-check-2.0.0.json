@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pr-auto-check@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pr_auto_check",
+  "skill": {
+    "id": 44439,
+    "skillKey": "clawhub-pr-auto-check",
+    "name": "PR Auto-Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pr-auto-check",
+    "url": "https://clawhub.ai/skills/pr-auto-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pr-auto-check-f4f73fd23e3cc19e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated PR submission pipeline: runs code review (CI/CD checks + diff analysis), validates service health status, and syncs the complete result to a Discor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1778097238116,
+      "changelog": "Automated PR code review + service health check + Discord notification pipeline with structured JSON output and graceful fallbacks",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e93e15eb47a40318988ddfaa9feede84fb22e532c59806514609c80e2251117b"
+}

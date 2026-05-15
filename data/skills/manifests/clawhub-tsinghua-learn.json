@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69750,
+  "uuid": "skill-clawhub-tsinghua-learn",
+  "skillKey": "clawhub-tsinghua-learn",
+  "name": "清华网络学堂",
+  "summary": "清华网络学堂（learn.tsinghua.edu.cn）自动化。要求用户提供网络学堂登录密码（本地 DPAPI 加密存储），自动登录、查看待办、下载课件、提交作业、批量标记已读。当需要操作网络学堂完成日常学习任务时使用。",
+  "version": "1.0.17",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tsinghua_learn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TOMUIV",
+      "features": [
+        "清华网络学堂（learn.tsinghua.edu.cn）自动化。要求用户提供网络学堂登录密码（本地 DPAPI 加密存储），自动登录、查看待办、下载课件、提交作业、批量标记已读。当需要操作."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tsinghua-learn@1.0.17",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232025981?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tsinghua-learn",
+      "url": "https://clawhub.ai/skills/tsinghua-learn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tsinghua-learn",
+    "url": "https://clawhub.ai/skills/tsinghua-learn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tsinghua-learn-525c0f071c6cf385.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tsinghua-learn@1.0.17",
+      "artifactUrl": "data/skills/artifacts/clawhub-tsinghua-learn-1.0.17.json",
+      "version": "1.0.17",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1cc247552c8ace07ca787d2b2242031d3ef8d4efc3460957914e25465ac136bb",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T12:36:25.094Z"
+}

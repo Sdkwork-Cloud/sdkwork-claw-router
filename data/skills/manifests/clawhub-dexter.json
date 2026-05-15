@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10029,
+  "uuid": "skill-clawhub-dexter",
+  "skillKey": "clawhub-dexter",
+  "name": "dexter",
+  "summary": "Autonomous financial research agent for stock analysis, financial statements, metrics, prices, SEC filings, and crypto data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dexter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "igorhvr",
+      "features": [
+        "Autonomous financial research agent for stock analysis, financial statements, metrics, prices,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dexter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59321?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dexter",
+      "url": "https://clawhub.ai/skills/dexter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dexter",
+    "url": "https://clawhub.ai/skills/dexter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dexter-8c3bc97b36d17f13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dexter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dexter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:465f702f300e269594aacdcee3a937bc5517e97d29e8177c6eff8c45df251039",
+      "artifactSizeBytes": 2492
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-11T14:26:14.420Z"
+}

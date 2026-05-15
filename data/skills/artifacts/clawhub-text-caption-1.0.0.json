@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-caption@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_caption",
+  "skill": {
+    "id": 55773,
+    "skillKey": "clawhub-text-caption",
+    "name": "Text Caption"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-caption",
+    "url": "https://clawhub.ai/skills/text-caption",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-caption-99a84e7ca849d287.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — add text captions to my video with accurate timing — and get captioned vid..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777108424147,
+      "changelog": "Initial release of text-caption — Add Captions to Your Videos.\n\n- Instantly add AI-generated text captions to MP4, MOV, AVI, or WebM videos up to 500MB.\n- Automatic cloud setup and secure session management; just upload and describe your request.\n- Supports quick exports (1080p MP4 by default) with turnaround in 30–90 seconds.\n- Clear feedback and robust error handling for uploads, exports, and credits.\n- Effortless iterative editing: upload, caption, preview, refine, and export — all in chat.\n- Ideal for creators who want fast, accurate captions without complex editing tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b78bc10c6293b488ae8b06fc8354d4fcaa49f1344e3052a2ff83ca7ddb3f5a0"
+}

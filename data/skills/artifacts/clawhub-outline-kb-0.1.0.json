@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/outline-kb@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outline_kb",
+  "skill": {
+    "id": 65130,
+    "skillKey": "clawhub-outline-kb",
+    "name": "Outline Kb"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outline-kb",
+    "url": "https://clawhub.ai/skills/outline-kb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outline-kb-75420214c3a88124.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Outline 知识库 API 交互。搜索文档、创建/编辑文档、管理 Collections、列出用户等。当用户需要与 Outline 知识库交互时使用，包括搜索内容、创建文档、查看文档结构、导出文档、管理权限等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1944876825",
+      "userId": "s170bd02c4kv3n5xsnewyv668s83s61e",
+      "displayName": "BY易仝",
+      "image": "https://avatars.githubusercontent.com/u/55941738?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774227890633,
+      "changelog": "Initial release of outline-kb skill – Outline 知识库 API 集成:\n\n- Provides API interaction for Outline, including document search, creation, editing, collections management, user listing, and permission management.\n- Supports all major endpoints for documents, collections, users, comments, stars, shares, groups, and templates.\n- Configured via environment variables for Outline instance and API key.\n- Includes error handling, rate limiting, and response format details.\n- Offers quick reference for common actions with required parameters.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ba793de9d8d3effb667b00cc0137485f348464bc1b5c0c5c4c9635ada5cfdd3"
+}

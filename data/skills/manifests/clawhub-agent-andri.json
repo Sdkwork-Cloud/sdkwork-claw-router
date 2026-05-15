@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29554,
+  "uuid": "skill-clawhub-agent-andri",
+  "skillKey": "clawhub-agent-andri",
+  "name": "Agent Andri",
+  "summary": "Agent Andri periodically sends its status report to the meeting-room by appending a message to a designated file.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_andri",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloudservice19-collab",
+      "features": [
+        "Agent Andri periodically sends its status report to the meeting-room by appending a message to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-andri@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246847821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-andri",
+      "url": "https://clawhub.ai/skills/agent-andri"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-andri",
+    "url": "https://clawhub.ai/skills/agent-andri",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-andri-3f613321f01f9218.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-andri@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-andri-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a39cf7ad682d691054b9ab62b6801e86cbd6f5126b9069dfb5c94a49aa78d7c9",
+      "artifactSizeBytes": 2233
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T14:53:07.986Z"
+}

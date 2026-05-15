@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19046,
+  "uuid": "skill-clawhub-spotplay",
+  "skillKey": "clawhub-spotplay",
+  "name": "Spotplay",
+  "summary": "Search and play Spotify tracks via Spotify.app using AppleScript on macOS, ensuring playback on the active device with detailed status updates.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spotplay",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "uxbryan",
+      "features": [
+        "Search and play Spotify tracks via Spotify.app using AppleScript on macOS, ensuring playback on."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spotplay@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5593084?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spotplay",
+      "url": "https://clawhub.ai/skills/spotplay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spotplay",
+    "url": "https://clawhub.ai/skills/spotplay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spotplay-bbea62ecad3bd799.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spotplay@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spotplay-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64d5a2d7d98af030a4b564ce80328ce295d4bbe269536eea6dda512b4a85cdad",
+      "artifactSizeBytes": 2189
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T08:53:26.477Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68422,
+  "uuid": "skill-clawhub-yunxiao",
+  "skillKey": "clawhub-yunxiao",
+  "name": "云效工作项管理",
+  "summary": "云效项目协作操作助手。支持工作项（任务/需求/缺陷）的查询、创建、更新等操作。当用户提到\"云效\"、\"工作项\"、\"任务管理\"、\"项目管理\"或需要操作 devops.aliyun.com 时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yunxiao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Buzz Zhang",
+      "features": [
+        "云效项目协作操作助手。支持工作项（任务/需求/缺陷）的查询、创建、更新等操作。当用户提到\"云效\"、\"工作项\"、\"任务管理\"、\"项目管理\"或需要操作 devops.aliyun.com 时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yunxiao@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2883744?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yunxiao",
+      "url": "https://clawhub.ai/skills/yunxiao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yunxiao",
+    "url": "https://clawhub.ai/skills/yunxiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yunxiao-d9e675deef70e446.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yunxiao@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yunxiao-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e8a671aa660a33f5ea52a51f8ddc104423dd65389d8008b6ccbcf26d0cbf9ccc",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T05:45:40.011Z"
+}

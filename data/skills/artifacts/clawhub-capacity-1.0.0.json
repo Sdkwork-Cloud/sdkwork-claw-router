@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/capacity@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.capacity",
+  "skill": {
+    "id": 36899,
+    "skillKey": "clawhub-capacity",
+    "name": "Capacity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "capacity",
+    "url": "https://clawhub.ai/skills/capacity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/capacity-ec21b3b973a3a0e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Forecasting load, headroom, and scaling plans. Use before big launches or cost reviews."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikeclaw007",
+      "userId": "s173n2mnssqbs3ebpdz3b52ssh83gshx",
+      "displayName": "mikeclaw007",
+      "image": "https://avatars.githubusercontent.com/u/265502950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774606333586,
+      "changelog": "- Introduces the \"capacity\" skill for structured guidance in load, headroom, and scaling forecasts.\n- Provides a four-stage workflow: clarify context & goals, design approach, implement & validate, operate & iterate.\n- Includes clear trigger conditions for when to offer the workflow and guidance on handling user preferences.\n- Offers detailed checklists and actionable, procedural tips for thorough capacity planning.\n- Emphasizes explicit goals, risk trade-offs, and operational follow-through.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e79c94b416da64b6ca599f489915e4342d2eb78dc38aa89cede1a388d2c3a58"
+}

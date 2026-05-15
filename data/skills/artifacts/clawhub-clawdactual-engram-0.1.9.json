@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdactual-engram@0.1.9",
+  "version": "0.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdactual_engram",
+  "skill": {
+    "id": 51826,
+    "skillKey": "clawhub-clawdactual-engram",
+    "name": "Engram — Knowledge Graphs for AI Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdactual-engram",
+    "url": "https://clawhub.ai/skills/clawdactual-engram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdactual-engram-61c289dde2bdc54c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build, query, and maintain structured knowledge graphs. Use when you need to remember relationships between code components, services, people, or any concept..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "morpheis",
+      "userId": "s17etpzv05kvssrjch82p9prps83h494",
+      "displayName": "Morpheis",
+      "image": "https://avatars.githubusercontent.com/u/6878926?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.1.9",
+      "createdAt": 1775624613359,
+      "changelog": "Harden model-scoped node resolution, search ranking, and git command safety",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9546dec903f5a98b2885b7069f1bc8a2706fcb30a59e894759c4f932b74e1a77"
+}

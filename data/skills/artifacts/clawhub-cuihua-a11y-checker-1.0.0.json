@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cuihua-a11y-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cuihua_a11y_checker",
+  "skill": {
+    "id": 51419,
+    "skillKey": "clawhub-cuihua-a11y-checker",
+    "name": "Cuihua A11y Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cuihua-a11y-checker",
+    "url": "https://clawhub.ai/skills/cuihua-a11y-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cuihua-a11y-checker-536bd3c9f9e6c921.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "♿ AI-powered accessibility (a11y) checker. Automatically detect WCAG violations, generate ARIA labels, test keyboard navigation, and ensure your app is acces..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "supermario11",
+      "userId": "s17ay2qc1x4m5jdydxcsdwe7j983g303",
+      "displayName": "supermario11",
+      "image": "https://avatars.githubusercontent.com/u/7620217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 305,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774339761813,
+      "changelog": "♿ WCAG 2.1 accessibility checker with auto-fix suggestions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a096735ea1e77d6b103959e1e1a33b42945c7c7eaf7ee506cf06d7398ab912b0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/internal-narrative@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.internal_narrative",
+  "skill": {
+    "id": 50388,
+    "skillKey": "clawhub-internal-narrative",
+    "name": "Internal Narrative"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "internal-narrative",
+    "url": "https://clawhub.ai/skills/internal-narrative",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/internal-narrative-3da9be3d7a54ec00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and maintain one coherent company story across all audiences — employees, investors, customers, candidates, and partners. Detects narrative contradicti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alirezarezvani",
+      "userId": "s178ertrv5d3etjg5j50zhm85n83jhdq",
+      "displayName": "Alireza Rezvani",
+      "image": "https://avatars.githubusercontent.com/u/5697919?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 469,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1773189334512,
+      "changelog": "v2.1.1: optimization, reference splits",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb5d52f848bd2128efb9a61592e4e3c6f663764d29eaf7485174f2219c326125"
+}

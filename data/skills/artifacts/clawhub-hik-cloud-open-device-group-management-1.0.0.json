@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hik-cloud-open-device-group-management@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hik_cloud_open_device_group_management",
+  "skill": {
+    "id": 69275,
+    "skillKey": "clawhub-hik-cloud-open-device-group-management",
+    "name": "海康云眸设备分组管理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hik-cloud-open-device-group-management",
+    "url": "https://clawhub.ai/skills/hik-cloud-open-device-group-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hik-cloud-open-device-group-management-ee9ec98b5065f152.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用海康云眸开放平台设备分组管理接口，包括新增组、删除组、更新组、查询组织详情、查询所有组织、查询下级组和设备转移分组。用户提到设备组织、设备分组、groupNo、groupId、parentNo、设备转组等场景时使用。本技能自动处理 access_token 获取与刷新，不向用户暴露 token 调用流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hik-cloud-open",
+      "userId": "s176q7t00k9tdn5af695hb4fq183ged9",
+      "displayName": "hik-cloud",
+      "image": "https://avatars.githubusercontent.com/u/269703506?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 64,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778140758069,
+      "changelog": "Initial release: 设备分组创建、管理、查询",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dcd450dea1dc87959bbad8c0cdcb1e4b0183022760a6571333f8ad9fecf89a58"
+}

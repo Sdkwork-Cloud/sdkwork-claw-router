@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/technews-daily-report@0.3.1",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.technews_daily_report",
+  "skill": {
+    "id": 64084,
+    "skillKey": "clawhub-technews-daily-report",
+    "name": "科技新闻日报"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "technews-daily-report",
+    "url": "https://clawhub.ai/skills/technews-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/technews-daily-report-103f6eac0f4712a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "科技新闻日报技能。每日科技新闻热榜整理与报告生成。当用户说\"科技新闻日报\"、\"整理今日科技新闻\"、\"生成科技新闻热榜\"、\"tech-news-daily\"、\"TechNews-Daily-Report\"或类似表达时触发。功能包括：(1) 使用 Tavily 搜索引擎近7天科技/AI 新闻进行搜索；(2) 按相关度..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "binhuatochina",
+      "userId": "s17978fxq3qme7k13kf74jmbmd83g86y",
+      "displayName": "binhuatochina",
+      "image": "https://avatars.githubusercontent.com/u/164600322?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.3.1",
+      "createdAt": 1776560440656,
+      "changelog": "修正发布错误：移除误添加的主题关联图，恢复 v0.2.4 原始功能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c398708edfa452ac58fbe7eb622d59ace68f5ac5bdaf02cdfdcfbac529b4a6f5"
+}

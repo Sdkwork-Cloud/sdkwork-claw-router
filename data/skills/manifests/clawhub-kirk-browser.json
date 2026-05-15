@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38791,
+  "uuid": "skill-clawhub-kirk-browser",
+  "skillKey": "clawhub-kirk-browser",
+  "name": "Browser Automation",
+  "summary": "Browser automation using SkillBoss API Hub's web scraping capability to render web pages and extract clean, readable content.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kirk_browser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KirkRaman",
+      "features": [
+        "Browser automation using SkillBoss API Hub's web scraping capability to render web pages and ex."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kirk-browser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255880392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kirk-browser",
+      "url": "https://clawhub.ai/skills/kirk-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kirk-browser",
+    "url": "https://clawhub.ai/skills/kirk-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kirk-browser-caba7b88e95102ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kirk-browser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kirk-browser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65354637d1f89106a2d6b5b90f07ed74f54dd6bbecd6dacf7eb6151590e13566",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T10:22:42.848Z"
+}

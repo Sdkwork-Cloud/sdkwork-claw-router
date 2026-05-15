@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mergeiq@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mergeiq",
+  "skill": {
+    "id": 56056,
+    "skillKey": "clawhub-mergeiq",
+    "name": "MergeIQ: Automatically Score & Prioritise PR Complexity for GitLab and GitHub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mergeiq",
+    "url": "https://clawhub.ai/skills/mergeiq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mergeiq-1bf4ca1fe779dff9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Score the complexity of any GitLab MR or GitHub PR using a 4-dimension framework: Size (20%), Cognitive Load (30%), Review Effort (30%), and Risk/Impact (20%..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "larryfang",
+      "userId": "publishers:larryfang",
+      "displayName": "larryfang",
+      "image": "https://avatars.githubusercontent.com/u/672772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 344,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773035899806,
+      "changelog": "Improved skill title and description for discoverability",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9ca4ef1bc3da604e067425dd652fae7e02545f3e9c4be68cfee5c5ed142327e"
+}

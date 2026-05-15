@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26906,
+  "uuid": "skill-clawhub-stremio-unwatched",
+  "skillKey": "clawhub-stremio-unwatched",
+  "name": "Stremio Unwatched",
+  "summary": "Check Stremio library for unwatched TV episodes, view upcoming release calendar, and download new episodes. Use when you need to: (1) find unwatched episodes...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stremio_unwatched",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pat Fitzner",
+      "features": [
+        "Check Stremio library for unwatched TV episodes, view upcoming release calendar, and download n.",
+        "Use when you need to: (1) find unwatched episodes..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stremio-unwatched@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168721415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stremio-unwatched",
+      "url": "https://clawhub.ai/skills/stremio-unwatched"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stremio-unwatched",
+    "url": "https://clawhub.ai/skills/stremio-unwatched",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stremio-unwatched-0ab8297c0c8deb34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stremio-unwatched@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stremio-unwatched-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b536dd262f4864a58d14ea10ac6ad33e1071280c741180545e4e034588a65da5",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T23:54:14.364Z"
+}

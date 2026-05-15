@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kfc@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kfc",
+  "skill": {
+    "id": 69679,
+    "skillKey": "clawhub-kfc",
+    "name": "Kfc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kfc",
+    "url": "https://clawhub.ai/skills/kfc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kfc-eefa3980fdf345e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "肯德基品牌介绍和购物指南"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776261117191,
+      "changelog": "- 更新技能名称与描述，更突出“kfc 使用指南”定位\n- 丰富内容结构，新增品牌故事、产品矩阵、全球足迹、行业观察等板块\n- 优化使用场景及典型查询示例，明确适用范围\n- 移除具体产品、优惠、门店等细节，改为整体概览及引导深入阅读",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b27aec035c879e1f89afd325b53d62feae9ad217010ee49e60353bc5164241d"
+}

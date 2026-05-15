@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22581,
+  "uuid": "skill-clawhub-gov-financial-intel",
+  "skillKey": "clawhub-gov-financial-intel",
+  "name": "Gov Financial Intel",
+  "summary": "SEC EDGAR filings, BLS employment stats, and USDA crop prices. 3 tools for federal financial intelligence.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gov_financial_intel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Martin",
+      "features": [
+        "SEC EDGAR filings, BLS employment stats, and USDA crop prices",
+        "3 tools for federal financial intelligence."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gov-financial-intel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138740843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gov-financial-intel",
+      "url": "https://clawhub.ai/skills/gov-financial-intel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gov-financial-intel",
+    "url": "https://clawhub.ai/skills/gov-financial-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gov-financial-intel-c8bc93059b0ae765.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gov-financial-intel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gov-financial-intel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee553d5a4fcff4a42bb818005fa610a75052e108cde98c87a4f85b7e3bd56f1c",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T16:49:31.637Z"
+}

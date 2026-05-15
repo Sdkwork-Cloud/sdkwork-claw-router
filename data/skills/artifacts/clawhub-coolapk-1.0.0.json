@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coolapk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coolapk",
+  "skill": {
+    "id": 64958,
+    "skillKey": "clawhub-coolapk",
+    "name": "酷安社区搜索"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coolapk",
+    "url": "https://clawhub.ai/skills/coolapk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coolapk-d30bf419c24ac882.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "酷安社区搜索工具 — 搜索帖子、用户、应用、话题信息（CLI 直调，比 MCP Server 更省 token）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lniosy",
+      "userId": "s17dhq8t8tm2ar82qernh0hgc583ker3",
+      "displayName": "Lniosy",
+      "image": "https://avatars.githubusercontent.com/u/91119236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777451053515,
+      "changelog": "首次发布：酷安社区搜索 skill，支持搜索/浏览/交互/通知",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0876b31b6adbdb4ce91f9ebe868ca1402d9b1d3c754eac301b4b0255e8a9aad7"
+}

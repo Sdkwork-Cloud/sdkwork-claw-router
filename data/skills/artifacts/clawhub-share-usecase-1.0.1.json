@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/share-usecase@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.share_usecase",
+  "skill": {
+    "id": 12063,
+    "skillKey": "clawhub-share-usecase",
+    "name": "Share use case"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "share-usecase",
+    "url": "https://clawhub.ai/skills/share-usecase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/share-usecase-ee574cc248527fb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Share your OpenClaw use case to clawusecase.com. Analyzes your recent work and creates a submission for the community."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "josephl37",
+      "userId": "publishers:josephl37",
+      "displayName": "josephl37",
+      "image": "https://avatars.githubusercontent.com/u/113223689?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1919,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770140290271,
+      "changelog": "share-usecase 1.0.1\n\n- Clarified and strengthened polling requirements for OAuth attribution: Now explicitly requires synchronous, real-time monitoring and immediate notification to users upon successful connection.\n- Provided detailed implementation guidance to prevent background polling; emphasized that polling results must be checked directly and responded to instantly.\n- Added more precise bash code samples for credential polling and real-time user feedback.\n- Highlighted critical implementation notes to eliminate delays in user notifications for OAuth connections.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d9949599cd264edab129fc908388c55689caadaf03b6186d04772bba64c55b53"
+}

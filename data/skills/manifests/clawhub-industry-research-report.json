@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65550,
+  "uuid": "skill-clawhub-industry-research-report",
+  "skillKey": "clawhub-industry-research-report",
+  "name": "Industry Research Agent",
+  "summary": "依托东方财富数据库，为指定行业生成深度研究报告。 当用户问题中出现可识别的行业/产业/领域主体，且意图属于行业认知、产业剖析或撰写研究报告时，应触发本 Skill。 常见表述如「XX 行业研究」「XX 行业报告」「帮我分析 XX 行业」「XX 产业深度研究」「XX 领域市场分析」等。 即使用户未明说「报告」，只要...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.industry_research_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Financial AI Analyst",
+      "features": [
+        "依托东方财富数据库，为指定行业生成深度研究报告。 当用户问题中出现可识别的行业/产业/领域主体，且意图属于行业认知、产业剖析或撰写研究报告时，应触发本 Skill。 常见表述如「XX 行业研."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/industry-research-report@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41098207?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "industry-research-report",
+      "url": "https://clawhub.ai/skills/industry-research-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "industry-research-report",
+    "url": "https://clawhub.ai/skills/industry-research-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/industry-research-report-2b74e3a97d64c808.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/industry-research-report@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-industry-research-report-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c62809600bac126f41d5b321fc670521c9d4531b96f6ca824c8569ad1dd0642",
+      "artifactSizeBytes": 2239
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T11:18:31.133Z"
+}

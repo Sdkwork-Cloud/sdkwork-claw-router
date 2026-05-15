@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39308,
+  "uuid": "skill-clawhub-karpathy-autoresearch",
+  "skillKey": "clawhub-karpathy-autoresearch",
+  "name": "Karpathy Autoresearch",
+  "summary": "Autonomously optimize any OpenClaw skill by running it repeatedly, scoring outputs against binary evals, mutating the prompt, and keeping improvements. Based...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.karpathy_autoresearch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alannjaf",
+      "features": [
+        "Autonomously optimize any OpenClaw skill by running it repeatedly, scoring outputs against bina.",
+        "Based..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/karpathy-autoresearch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117263878?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "karpathy-autoresearch",
+      "url": "https://clawhub.ai/skills/karpathy-autoresearch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "karpathy-autoresearch",
+    "url": "https://clawhub.ai/skills/karpathy-autoresearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/karpathy-autoresearch-8e20affdeb7ec178.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/karpathy-autoresearch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-karpathy-autoresearch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f842bf902c055ba67b0b15c0d941a9008ad34c91e62961f9a426564a572d1f1a",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T01:29:52.181Z"
+}

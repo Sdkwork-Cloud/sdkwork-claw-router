@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/photo-alchemy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photo_alchemy",
+  "skill": {
+    "id": 45014,
+    "skillKey": "clawhub-photo-alchemy",
+    "name": "photo-alchemy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photo-alchemy",
+    "url": "https://clawhub.ai/skills/photo-alchemy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photo-alchemy-3e5d2684e89c0c60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform any photo into surrealist AI art. Uses Claude to write a story about your photo, then Gemini generates a reimagined version in one of 35+ visual st..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hbmartin",
+      "userId": "s172ar0db04dj5gbzsymb7h79x844t68",
+      "displayName": "Harold Martin",
+      "image": "https://avatars.githubusercontent.com/u/745166?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775258787765,
+      "changelog": "- Initial release of photo-alchemy.\n- Instantly transform photos into surrealist AI art using an automated Claude + Gemini pipeline.\n- Deep integration with Apple Photos: select photos from albums, save AI art back, manage character mappings, and schedule auto-generation for Apple TV screensavers.\n- 35+ built-in artistic visual styles, with interactive management and blending.\n- Flexible configuration, API key setup, detailed run history, and scripting features.\n- Core functionality supported on all platforms; Apple Photos features require macOS.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:06c4d77fb8fc0f12e5d154ab073c50d2654a6c72232d27caa3f1fd8584304fef"
+}

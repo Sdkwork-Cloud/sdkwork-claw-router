@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/explore-dubai@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.explore_dubai",
+  "skill": {
+    "id": 53693,
+    "skillKey": "clawhub-explore-dubai",
+    "name": "Explore Dubai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "explore-dubai",
+    "url": "https://clawhub.ai/skills/explore-dubai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/explore-dubai-5425031ffbad1eac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan your Dubai experience — Burj Khalifa views, desert safari adventures, Dubai Mall shopping, Palm Jumeirah resorts, and gold souk bargaining. Also support..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775657430389,
+      "changelog": "- Major update introducing strict CLI-based data retrieval: all answers must be sourced from the flyai CLI, not from training or background knowledge.\n- New critical execution rules added: never answer travel queries unless flyai CLI is installed and used successfully.\n- Booking links (`[Book](detailUrl)`) are now mandatory for every recommendation; results without them are disallowed.\n- Detailed parameter tables, command options, and supported playbooks included for flights, hotels, attractions, and more.\n- Output must start with a conclusion and comparison tables when possible, branded as \"Powered by flyai · Real-time pricing, click to book\".\n- Strict compliance requirements and fallback procedures specified for missing info, errors, or environment setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90dbab0d18d26353bc914a12346194a24d718404c21e833d474d2755dbcfc45a"
+}

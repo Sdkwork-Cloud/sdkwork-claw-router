@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-sentinel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_sentinel",
+  "skill": {
+    "id": 12069,
+    "skillKey": "clawhub-context-sentinel",
+    "name": "Context Sentinel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-sentinel",
+    "url": "https://clawhub.ai/skills/context-sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-sentinel-81adcec4135d0841.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors session context and automatically manages model switching based on a cascading protocol. Use as part of a heartbeat or cron job to maintain session health and optimize token usage."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nietzsche247",
+      "userId": "publishers:nietzsche247",
+      "displayName": "Nietzsche247",
+      "image": "https://avatars.githubusercontent.com/u/231786691?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1457,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770827245484,
+      "changelog": "- Initial release of context-sentinel (v1.0.0).\n- Automates model switching based on the Cascading Model Protocol to optimize session health and token usage.\n- Provides a PowerShell script (`check_context.ps1`) to monitor session context and recommend switching, handoff, or no action.\n- Designed for use in agent heartbeats or scheduled cron jobs.\n- Simplifies workflow and cleans up manual steps in agent maintenance routines.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0ee9ed37d6124cfa50e4b892e9b923d7e66f5e69fbf150e363640eda548ee44f"
+}

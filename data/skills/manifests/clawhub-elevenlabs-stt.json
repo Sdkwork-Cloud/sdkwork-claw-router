@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9116,
+  "uuid": "skill-clawhub-elevenlabs-stt",
+  "skillKey": "clawhub-elevenlabs-stt",
+  "name": "ElevenLabs Speech-to-Text",
+  "summary": "Transcribe audio files using ElevenLabs Speech-to-Text (Scribe v2).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elevenlabs_stt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawdbotborges",
+      "features": [
+        "Transcribe audio files using ElevenLabs Speech-to-Text (Scribe v2)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/elevenlabs-stt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257134713?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "elevenlabs-stt",
+      "url": "https://clawhub.ai/skills/elevenlabs-stt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elevenlabs-stt",
+    "url": "https://clawhub.ai/skills/elevenlabs-stt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elevenlabs-stt-bcd96c4a75795ecb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/elevenlabs-stt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-elevenlabs-stt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7814c78190248b758e797f28d4952d073a1c2e91631276c3f81ec0ec33378e72",
+      "artifactSizeBytes": 2129
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T14:04:01.130Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55608,
+  "uuid": "skill-clawhub-weibo-ops",
+  "skillKey": "clawhub-weibo-ops",
+  "name": "Weibo Operations",
+  "summary": "Weibo (微博) write operations via DrissionPage + Chrome CDP. Post, delete, repost, comment, and like on weibo.com. Activate when user asks to publish/delete/re...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weibo_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sunwz1115",
+      "features": [
+        "Weibo (微博) write operations via DrissionPage + Chrome CDP",
+        "Post, delete, repost, comment, and like on weibo.com",
+        "Activate when user asks to publish/delete/re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weibo-ops@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192549904?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weibo-ops",
+      "url": "https://clawhub.ai/skills/weibo-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weibo-ops",
+    "url": "https://clawhub.ai/skills/weibo-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weibo-ops-73071311890d0171.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weibo-ops@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weibo-ops-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0249f605ea4d82cb69876611c228313bacf462a79513122c142faf6a40196571",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T09:24:01.947Z"
+}

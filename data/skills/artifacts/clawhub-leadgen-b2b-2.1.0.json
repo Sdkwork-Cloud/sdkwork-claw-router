@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/leadgen-b2b@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leadgen_b2b",
+  "skill": {
+    "id": 56909,
+    "skillKey": "clawhub-leadgen-b2b",
+    "name": "LeadGenerator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leadgen-b2b",
+    "url": "https://clawhub.ai/skills/leadgen-b2b",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leadgen-b2b-a0fe402a10a66a4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Wyszukuj i generuj listy firm B2B w Polsce według branży, lokalizacji i filtrów, eksportując dane kontaktowe w formatach CSV, JSON, TXT."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tomasz-pedzierski-infinity",
+      "userId": "s17a72yet87n1qy3j93paz2f0s85q7ya",
+      "displayName": "Tomasz-Pedzierski-Infinity",
+      "image": "https://avatars.githubusercontent.com/u/267662562?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1777846335399,
+      "changelog": "- Updated SKILL.md to use consistent English section headers (e.g., \"Description\", \"Features\", \"Usage\").\n- Improved formatting for better readability and clarity.\n- No functional changes to the skill itself.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e3e5b49feeec7bd17ddf29a58693ce09a3c3ab4652a8defc3bc50448358e135"
+}

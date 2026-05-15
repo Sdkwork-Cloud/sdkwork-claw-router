@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47837,
+  "uuid": "skill-clawhub-hunt",
+  "skillKey": "clawhub-hunt",
+  "name": "Hunt",
+  "summary": "Digital bounty hunter skill for finding, tracking, and managing online hackathon opportunities. Trigger when the user says \"hunt\", \"find hackathons\", \"show m...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hunt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lloyd",
+      "features": [
+        "Digital bounty hunter skill for finding, tracking, and managing online hackathon opportunities",
+        "Trigger when the user says \"hunt\", \"find hackathons\", \"show m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hunt@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110528100?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hunt",
+      "url": "https://clawhub.ai/skills/hunt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hunt",
+    "url": "https://clawhub.ai/skills/hunt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hunt-18c3bc28bde14691.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hunt@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hunt-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98cd066d8cc168417e57fba48f89570d8a0a0bfcb347936bd4acc4de151f72f9",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T06:36:25.500Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/industry-compare@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.industry_compare",
+  "skill": {
+    "id": 63032,
+    "skillKey": "clawhub-industry-compare",
+    "name": "Industry Compare"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "industry-compare",
+    "url": "https://clawhub.ai/skills/industry-compare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/industry-compare-9adf39371a56fb19.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "行业对比技能 - 同行业多公司对比分析、行业地位评估"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alsoforever",
+      "userId": "s17f0evzccwehgwj730qqdx2r983kc17",
+      "displayName": "alsoforever",
+      "image": "https://avatars.githubusercontent.com/u/265420698?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774703865287,
+      "changelog": "Industry-compare 1.0.0 – Initial Release\n\n- Introduces tools for multi-company financial data comparison within the same industry.\n- Provides industry position evaluation with clear ranking standards.\n- Offers competitive advantage analysis among selected companies.\n- Delivers industry trend insights and investment suggestions.\n- Simple Python API with example usage for comparing metrics and generating reports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d540f4642660c5cffe70c2e1a1f1122c4cc831640e532678ddc490f4ff532604"
+}

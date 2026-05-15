@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qrcoin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qrcoin",
+  "skill": {
+    "id": 17055,
+    "skillKey": "clawhub-qrcoin",
+    "name": "Qrcoin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qrcoin",
+    "url": "https://clawhub.ai/skills/qrcoin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qrcoin-b81a28bb4b6d67fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with QR Coin auctions on Base. Use when the user wants to participate in qrcoin.fun QR code auctions — check auction status, view current bids, create new bids, or contribute to existing bids. QR Coin lets you bid to display URLs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ktaesthetix",
+      "userId": "publishers:ktaesthetix",
+      "displayName": "ktaesthetix",
+      "image": "https://avatars.githubusercontent.com/u/233234813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1087,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770838995960,
+      "changelog": "- Initial release of the qrcoin skill for interacting with QR Coin auctions on Base.\n- Enables users to check auction status, view bids, create new bids, and contribute to existing ones.\n- Includes detailed command-line instructions for querying auction status and reserve prices.\n- Provides step-by-step guidance for USDC approval and submitting transactions via Bankr.\n- Documents contract addresses, function selectors, typical workflows, error messages, and helpful tips.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:683f652edb9f9cba250e0e15bfc5ab2f0ca026b86fc538bb75f13c633444caa8"
+}

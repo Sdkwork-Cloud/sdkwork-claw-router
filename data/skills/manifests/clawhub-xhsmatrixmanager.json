@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65457,
+  "uuid": "skill-clawhub-xhsmatrixmanager",
+  "skillKey": "clawhub-xhsmatrixmanager",
+  "name": "xiaohongshu-matrix-manager",
+  "summary": "小红书矩阵系统 API 调用工具，集成红薯矩阵平台（hongshujuzhen.com）。支持：搜索小红书笔记、获取笔记详情、发布图文笔记、查询账号列表、查询 API 使用统计、批量管理小红书账号。触发词：小红书、xhs、笔记搜索、发布小红书、API 调用、红薯矩阵。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhsmatrixmanager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Admin6016",
+      "features": [
+        "小红书矩阵系统 API 调用工具，集成红薯矩阵平台（hongshujuzhen.com）。支持：搜索小红书笔记、获取笔记详情、发布图文笔记、查询账号列表、查询 API 使用统计、批量管理小红."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhsmatrixmanager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60909948?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhsmatrixmanager",
+      "url": "https://clawhub.ai/skills/xhsmatrixmanager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhsmatrixmanager",
+    "url": "https://clawhub.ai/skills/xhsmatrixmanager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhsmatrixmanager-69a9c9ead80fa4de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhsmatrixmanager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhsmatrixmanager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b11bdf89c29070150800a1871c3f1cac86c3c9501356aa46b596d7298faff5c",
+      "artifactSizeBytes": 2366
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T16:30:06.139Z"
+}

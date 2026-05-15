@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42843,
+  "uuid": "skill-clawhub-mem-orchestrator",
+  "skillKey": "clawhub-mem-orchestrator",
+  "name": "memory-orchestrator",
+  "summary": "Layered memory orchestration for OpenClaw conversations. Use when implementing or maintaining a memory system that must classify user input by domain, captur...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mem_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jil",
+      "features": [
+        "Layered memory orchestration for OpenClaw conversations",
+        "Use when implementing or maintaining a memory system that must classify user input by domain, c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mem-orchestrator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10116013?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mem-orchestrator",
+      "url": "https://clawhub.ai/skills/mem-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mem-orchestrator",
+    "url": "https://clawhub.ai/skills/mem-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mem-orchestrator-b38c2866f6ccbd42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mem-orchestrator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mem-orchestrator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae2e82c5ed5a65f0537186b595d01e7add3127a4adf2e66d40eb5d3394ada915",
+      "artifactSizeBytes": 2678
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T19:15:41.827Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30977,
+  "uuid": "skill-clawhub-chatbotkit",
+  "skillKey": "clawhub-chatbotkit",
+  "name": "Chatbotkit",
+  "summary": "ChatBotKit integration. Manage data, records, and automate workflows. Use when the user wants to interact with ChatBotKit data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chatbotkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "ChatBotKit integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ChatBotKit data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chatbotkit@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chatbotkit",
+      "url": "https://clawhub.ai/skills/chatbotkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chatbotkit",
+    "url": "https://clawhub.ai/skills/chatbotkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chatbotkit-5d59341e8ab42439.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chatbotkit@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-chatbotkit-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26dfa957f8bf0abf9dd74ab395689e8a84afae8f3de0dbb5c82f2abbd638f780",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:29:17.669Z"
+}

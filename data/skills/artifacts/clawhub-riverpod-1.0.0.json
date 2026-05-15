@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/riverpod@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.riverpod",
+  "skill": {
+    "id": 27072,
+    "skillKey": "clawhub-riverpod",
+    "name": "Riverpod"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "riverpod",
+    "url": "https://clawhub.ai/skills/riverpod",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/riverpod-1bc70c0831dbe9f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Flutter state management with Riverpod - declarative, type-safe, and code-generated providers. Use when building Flutter apps that need reactive state manage..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobiasbentin",
+      "userId": "publishers:tobiasbentin",
+      "displayName": "tobiasbentin",
+      "image": "https://avatars.githubusercontent.com/u/45172447?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772617306217,
+      "changelog": "Riverpod 1.0.0 – Initial Release\n\n- Introduces comprehensive documentation for Riverpod state management in Flutter.\n- Covers provider types (ProviderNotifier, AsyncNotifier, StreamProvider, Family) and code generation via @riverpod.\n- Includes code patterns for API calls, dependency injection, provider combination, and pattern matching with AsyncValue.\n- Provides workflow for code generation and essential commands.\n- Details best practices and testing strategies for scalable Flutter app development.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dea5746edf47ba5b74a6ac05521da6433df5fcc83df2bd1644a18068fe2c22cb"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40011,
+  "uuid": "skill-clawhub-led-ctrl",
+  "skillKey": "clawhub-led-ctrl",
+  "name": "led controler",
+  "summary": "Control Raspberry Pi GPIO pins remotely by setting specified pins HIGH or LOW through RPC calls.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.led_ctrl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YEVladimir",
+      "features": [
+        "Control Raspberry Pi GPIO pins remotely by setting specified pins HIGH or LOW through RPC calls."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/led-ctrl@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/113079676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "led-ctrl",
+      "url": "https://clawhub.ai/skills/led-ctrl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "led-ctrl",
+    "url": "https://clawhub.ai/skills/led-ctrl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/led-ctrl-8c6350bfe6f95792.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/led-ctrl@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-led-ctrl-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1cba6dad433ef13180b1caa567886358d813a15da93192601ea9800fa8831ea5",
+      "artifactSizeBytes": 1813
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T06:07:22.576Z"
+}

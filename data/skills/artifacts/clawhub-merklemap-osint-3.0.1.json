@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/merklemap-osint@3.0.1",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.merklemap_osint",
+  "skill": {
+    "id": 39395,
+    "skillKey": "clawhub-merklemap-osint",
+    "name": "MerkleMap OSINT"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "merklemap-osint",
+    "url": "https://clawhub.ai/skills/merklemap-osint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/merklemap-osint-cf301ee4369a290b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full-featured OSINT reconnaissance using the MerkleMap API: subdomain enumeration, SSL/TLS certificate inspection, certificate deep-dive, real-time CT log mo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laikhtman",
+      "userId": "s173qgc65ev19zwyw40x03vcz9847s33",
+      "displayName": "[DL]",
+      "image": "https://avatars.githubusercontent.com/u/19473058?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.0.1",
+      "createdAt": 1775340638089,
+      "changelog": "Fix: declare MERKLEMAP_API_KEY in metadata (requires.env + primaryEnv) to resolve security scan mismatch.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:577e8dcba39f4711a210b4daa2dd7d108959fd0abe2b61d7d5d8f9d51c889c71"
+}

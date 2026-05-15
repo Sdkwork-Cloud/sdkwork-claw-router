@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-holiday-checker@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_holiday_checker",
+  "skill": {
+    "id": 21623,
+    "skillKey": "clawhub-cn-holiday-checker",
+    "name": "Chinese Holiday Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-holiday-checker",
+    "url": "https://clawhub.ai/skills/cn-holiday-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-holiday-checker-a40cbbc342e06d34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Queries Chinese holidays, work-shift arrangements, and determines if a date is a workday based on synced iCloud data and weekly rules."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "claudecaicai",
+      "userId": "s17dtxsdd9mqqnt4fwmqaac7yd83gj2d",
+      "displayName": "claudecaicai",
+      "image": "https://avatars.githubusercontent.com/u/150562028?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 393,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774865897877,
+      "changelog": "- Added support for reading and merging multiple `.ics` holiday calendar files from the `data/` directory.\n- Implemented cross-day event handling: correctly processes events spanning multiple days using `DTSTART` and `DTEND`.\n- Updated documentation to reflect multi-source and continuous event support.\n- Added a sample holiday calendar file (`data/cn_zh.ics`).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcda33ea9f509ef2d72b0a7697472a8010d53ec76f8ea904f0955379afa61207"
+}

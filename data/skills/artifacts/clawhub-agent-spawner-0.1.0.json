@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-spawner@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_spawner",
+  "skill": {
+    "id": 13962,
+    "skillKey": "clawhub-agent-spawner",
+    "name": "Agent Spawner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-spawner",
+    "url": "https://clawhub.ai/skills/agent-spawner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-spawner-e0980ea3764e31ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Spawn a new OpenClaw agent through conversation. Uses official Docker setup and non-interactive onboarding, carries over API keys, tools, plugins, and skills..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "austineral",
+      "userId": "publishers:austineral",
+      "displayName": "AustinEral",
+      "image": "https://avatars.githubusercontent.com/u/35617280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1177,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771482478085,
+      "changelog": "Initial release: enables conversational deployment of new OpenClaw agents with minimal user input.\n\n- Gathers current agent's provider, API keys, plugins, and workspace skills automatically.\n- Asks user only for deployment target, agent name, and optional purpose.\n- Shows detailed deployment plan and waits for user confirmation.\n- Supports both Docker (local or remote) and bare metal installations.\n- Migrates relevant configs, tool keys, plugins, and custom skills to the new agent.\n- Presents final access URL and token upon successful agent creation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f5789ab819a9f878a5fe7310dacb3ec5228cabc3ad034ee66742ad15c5c7b7c0"
+}

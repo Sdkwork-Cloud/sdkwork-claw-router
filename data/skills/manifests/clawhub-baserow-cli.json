@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51555,
+  "uuid": "skill-clawhub-baserow-cli",
+  "skillKey": "clawhub-baserow-cli",
+  "name": "Baserow",
+  "summary": "Baserow: Create, read, update, and delete rows, list tables and fields. Use when the user wants to interact with Baserow — querying data, creating or updatin...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baserow_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jamil Zakirov",
+      "features": [
+        "Baserow: Create, read, update, and delete rows, list tables and fields",
+        "Use when the user wants to interact with Baserow — querying data, creating or updatin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baserow-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15848838?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baserow-cli",
+      "url": "https://clawhub.ai/skills/baserow-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baserow-cli",
+    "url": "https://clawhub.ai/skills/baserow-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baserow-cli-6c99bd0a47c454b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baserow-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baserow-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eda70795f112eacbaa17c66de91a355861ae2c9a1edf2aed060e3b41fecbf8fd",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T22:46:14.471Z"
+}

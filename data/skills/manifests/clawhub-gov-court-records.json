@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20193,
+  "uuid": "skill-clawhub-gov-court-records",
+  "skillKey": "clawhub-gov-court-records",
+  "name": "Gov Court Records",
+  "summary": "Search US court opinions, dockets, and judges. 3 tools for federal court records research.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gov_court_records",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Martin",
+      "features": [
+        "Search US court opinions, dockets, and judges",
+        "3 tools for federal court records research."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gov-court-records@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138740843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gov-court-records",
+      "url": "https://clawhub.ai/skills/gov-court-records"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gov-court-records",
+    "url": "https://clawhub.ai/skills/gov-court-records",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gov-court-records-9f9b584c5872237d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gov-court-records@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gov-court-records-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58aa00c57ba5f670f5ba96930052a19b0a6b8b3e300adc388f7adc842261bc87",
+      "artifactSizeBytes": 2196
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T16:55:14.729Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/imperial@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imperial",
+  "skill": {
+    "id": 67233,
+    "skillKey": "clawhub-imperial",
+    "name": "Imperial"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imperial",
+    "url": "https://clawhub.ai/skills/imperial",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imperial-3a5b8990e60ffa74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供imperial的历史沿革、业务范围、全球布局和最新动态，支持商业调查和行业分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776250966866,
+      "changelog": "Initial release of the \"imperial\" information skill.\n\n- Provides comprehensive modules on imperial’s history, business scope, global presence, and latest updates.\n- Supports use cases such as business research, product inquiry, industry analysis, and academic reference.\n- Activated by searching or inquiring about imperial.\n- Includes guidance for accessing additional details via the official website.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ea52ee6daea86df4bd8f88b788a5d2703b649164177e3e96f5b8d0cb59bcba4"
+}

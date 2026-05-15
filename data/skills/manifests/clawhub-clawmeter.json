@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17204,
+  "uuid": "skill-clawhub-clawmeter",
+  "skillKey": "clawhub-clawmeter",
+  "name": "Clawmeter",
+  "summary": "Tracks OpenClaw API usage and spending in real-time with customizable budget alerts and detailed cost breakdowns by model and session.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmeter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Someone0070",
+      "features": [
+        "Tracks OpenClaw API usage and spending in real-time with customizable budget alerts and detaile."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawmeter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85187730?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawmeter",
+      "url": "https://clawhub.ai/skills/clawmeter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmeter",
+    "url": "https://clawhub.ai/skills/clawmeter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmeter-bd1e02cdbd23a621.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawmeter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawmeter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7de9f7148bd8f068b1cec55a3b91d194e4ea0b25d2019de07cc1e8048ef2d1c1",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T20:59:54.010Z"
+}

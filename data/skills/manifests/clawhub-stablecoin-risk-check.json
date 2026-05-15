@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43308,
+  "uuid": "skill-clawhub-stablecoin-risk-check",
+  "skillKey": "clawhub-stablecoin-risk-check",
+  "name": "Stablecoin Risk Check",
+  "summary": "Assess stablecoin safety and risk profile across 500+ protocols. Covers depeg history, reserve composition, audit status, regulatory exposure, and market cap...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stablecoin_risk_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zuoyeweb3",
+      "features": [
+        "Assess stablecoin safety and risk profile across 500+ protocols",
+        "Covers depeg history, reserve composition, audit status, regulatory exposure, and market cap..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stablecoin-risk-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166980078?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stablecoin-risk-check",
+      "url": "https://clawhub.ai/skills/stablecoin-risk-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stablecoin-risk-check",
+    "url": "https://clawhub.ai/skills/stablecoin-risk-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stablecoin-risk-check-ed469d6d4bc9b733.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stablecoin-risk-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stablecoin-risk-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:932c079b1d73b52c5ec5815b8b0f6829f59cffccf4ea3a6b8ddd4a7d90316d8c",
+      "artifactSizeBytes": 2529
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T19:23:34.333Z"
+}

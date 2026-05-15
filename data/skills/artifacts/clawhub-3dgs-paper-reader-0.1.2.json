@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/3dgs-paper-reader@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.3dgs_paper_reader",
+  "skill": {
+    "id": 30374,
+    "skillKey": "clawhub-3dgs-paper-reader",
+    "name": "3dgs Paper Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "3dgs-paper-reader",
+    "url": "https://clawhub.ai/skills/3dgs-paper-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/3dgs-paper-reader-71b1bf4ea3519d5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read and summarize 3D Gaussian Splatting research papers. Extracts method architecture, core innovations, experimental results, and key findings from arXiv p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaccen",
+      "userId": "s172m233k07zcmx035knhdv0nh85v0ts",
+      "displayName": "jaccen",
+      "image": "https://avatars.githubusercontent.com/u/11365494?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1778029720313,
+      "changelog": "- Added a quick-reference table of notable 2025–2026 3DGS and Gaussian Splatting papers, including method names, arXiv IDs, venues, and key ideas.\n- No changes to workflow, capabilities, format, or baseline knowledge.\n- Facilitates faster comparative analysis and up-to-date context for new research in the field.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cfbaba34b9eefb2ad5d8f0ff8f9c1991e816a45f095be0e230ab258b2c86b5e9"
+}

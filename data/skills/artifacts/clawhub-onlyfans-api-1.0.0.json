@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/onlyfans-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onlyfans_api",
+  "skill": {
+    "id": 11608,
+    "skillKey": "clawhub-onlyfans-api",
+    "name": "OnlyFans API Access"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onlyfans-api",
+    "url": "https://clawhub.ai/skills/onlyfans-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onlyfans-api-73932c20035f25b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query OnlyFans data and analytics via the OnlyFansAPI.com platform. Get revenue summaries across all models, identify top-performing models, analyze Free Trial and Tracking Link conversion rates, compare link earnings, and much more! Use w."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "martingalovic",
+      "userId": "publishers:martingalovic",
+      "displayName": "martingalovic",
+      "image": "https://avatars.githubusercontent.com/u/6873980?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1887,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769948500751,
+      "changelog": "- Initial release of the OnlyFans API Skill for querying OnlyFans agency analytics via OnlyFansAPI.com.\n- Supports revenue summaries, model performance ranking, Free Trial and Tracking Link conversion analytics, and earnings comparisons.\n- Multi-account workflows: aggregate and present results across all agency models.\n- Clear output formatting with markdown tables, percentage and currency display, and total summaries.\n- Includes error handling for API key, failed requests, rate limits, and account authentication.\n- Simple prerequisites: requires curl, jq, network access, and configuration of ONLYFANSAPI_API_KEY.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3e54e4fa2ad66185fc776672f6129f122000d5e5202fa309779d7a51181ac293"
+}

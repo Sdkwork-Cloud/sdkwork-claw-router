@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/piv@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.piv",
+  "skill": {
+    "id": 9940,
+    "skillKey": "clawhub-piv",
+    "name": "PIV - Plan Implement Validate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "piv",
+    "url": "https://clawhub.ai/skills/piv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/piv-aa7168f4bd21e39f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PIV workflow orchestrator - Plan, Implement, Validate loop for systematic multi-phase software development. Use when building features phase-by-phase with PRPs, automated validation loops, or multi-agent orchestration. Supports PRD creatio."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smokealot420",
+      "userId": "publishers:smokealot420",
+      "displayName": "SmokeAlot420",
+      "image": "https://avatars.githubusercontent.com/u/194188786?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 2894,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770536233589,
+      "changelog": "Model-agnostic improvements: discovery questions, environment awareness, generic tool language, sub-agent retry guidance, FTW branding",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4d075a02f534c2eb2ea5d3407a107d87323cd01fffb4dbedeb92411436b2952a"
+}

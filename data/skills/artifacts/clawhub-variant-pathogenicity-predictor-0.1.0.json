@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/variant-pathogenicity-predictor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.variant_pathogenicity_predictor",
+  "skill": {
+    "id": 26178,
+    "skillKey": "clawhub-variant-pathogenicity-predictor",
+    "name": "Variant Pathogenicity Predictor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "variant-pathogenicity-predictor",
+    "url": "https://clawhub.ai/skills/variant-pathogenicity-predictor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/variant-pathogenicity-predictor-cf377fe49bcdbb09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate REVEL, CADD, PolyPhen scores to predict variant pathogenicity"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ec-cyber258",
+      "userId": "publishers:ec-cyber258",
+      "displayName": "EC-cyber258",
+      "image": "https://avatars.githubusercontent.com/u/229709544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773394527526,
+      "changelog": "Initial release: Variant Pathogenicity Predictor\n\n- Integrates REVEL, CADD, PolyPhen-2, SIFT, and MutationTaster scores to assess genetic variant pathogenicity.\n- Supports single variant and VCF file input; outputs pathogenicity classification, ACMG interpretation, score breakdown, and confidence assessment.\n- Local script execution with no external API calls; reads input files and writes output reports.\n- Includes explicit risk assessment and security checklist.\n- No extra dependencies required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93be8c01b547fde0ed809ad5ac27d8c5bff8b93986736ce944d4d861304b4ed9"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maxclaw-helper-1-1-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maxclaw_helper_1_1_0",
+  "skill": {
+    "id": 52143,
+    "skillKey": "clawhub-maxclaw-helper-1-1-0",
+    "name": "Maxclaw Helper 1.1.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maxclaw-helper-1-1-0",
+    "url": "https://clawhub.ai/skills/maxclaw-helper-1-1-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maxclaw-helper-1-1-0-c947100ba59d901a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Usage guidance and runtime diagnostics for MaxClaw / OpenClaw. Activate when: (1) User asks how to use a feature — e.g. 'how to enable Feishu long polling',..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wt865143010",
+      "userId": "s1710asscgs5msn43yftz5qb2x83y60m",
+      "displayName": "wt865143010",
+      "image": "https://avatars.githubusercontent.com/u/64113380?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776493253547,
+      "changelog": "Initial release of maxclaw-helper skill, providing MaxClaw and OpenClaw guidance and diagnostics.\n\n- Introduces usage guidance based on scenario-driven triggers and trigger words.\n- Covers both usage questions (“how to”, feature support, onboarding) and runtime troubleshooting (failures, retries, unknown root causes, safety risks).\n- Implements clear, step-by-step flows (Flow A for usage, Flow B for runtime issues) to reference trusted documentation and determine next actions.\n- Integrates with MiniMax Feishu Wiki for MaxClaw-specific issues and official docs for OpenClaw platform/config topics.\n- Outlines strict safety and operational limits regarding config changes, retries, and data sending.\n- Supports queries in both English and Chinese; responses match user language.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:548ccd077c06833e985471a39b2bec99260c0f6132f67b4f4d1f0914deab8559"
+}

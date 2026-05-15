@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vt-hash-intel@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vt_hash_intel",
+  "skill": {
+    "id": 23318,
+    "skillKey": "clawhub-vt-hash-intel",
+    "name": "VirusTotal Hash Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vt-hash-intel",
+    "url": "https://clawhub.ai/skills/vt-hash-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vt-hash-intel-c7b36c4d6fbd5c76.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Instantly check if a file, URL, domain, or IP is malicious using VirusTotal. Paste any MD5/SHA1/SHA256 hash, URL, domain name, or IP address into the chat an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bryan-project",
+      "userId": "s1729yt98ykt3bb5j1x4fb05v984539t",
+      "displayName": "Bryan-Project",
+      "image": "https://avatars.githubusercontent.com/u/79469762?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 446,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772259942185,
+      "changelog": "Version 2.0.0 is a major update with improved analysis and reporting for all IOC types.\n\n- Always provides full contextual intel for every IOC, regardless of threat level or VT verdict.\n- Domain and IP reports now always include registrar/creation info, DNS records, popularity, ASN, and ownership to support advanced threat hunting.\n- Adds enhanced contextual analysis and recommendations — e.g., flags newly-registered domains, suspicious hosters, or unranked sites even if undetected as malicious.\n- Clearly states that \"clean\" on VirusTotal does not guarantee safety; suggests additional checks for better security confidence.\n- Improves reporting for batch lookups: summary table first, then deep-dive on each flagged IOC.\n- Error and help messages unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1f54bfab52d666382e67617ac85703f981bd067184086092e22ecb4c7de6bc5b"
+}

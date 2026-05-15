@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltbook-firewall@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbook_firewall",
+  "skill": {
+    "id": 12072,
+    "skillKey": "clawhub-moltbook-firewall",
+    "name": "Moltbook Firewall"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbook-firewall",
+    "url": "https://clawhub.ai/skills/moltbook-firewall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbook-firewall-408ebf7df34cf212.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security layer protecting agents from prompt injection, social engineering, and malicious content on Moltbook and similar platforms. Scan content before processing, detect threats, block attacks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "machinesbefree",
+      "userId": "publishers:machinesbefree",
+      "displayName": "machinesbefree",
+      "image": "https://avatars.githubusercontent.com/u/220911967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1806,
+      "installsAllTime": 2,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770076373257,
+      "changelog": "Initial release: prompt injection, code execution, social engineering, data exfiltration detection. 40+ patterns, customizable whitelist, audit logging.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:82340a04c489cf35ee462ef0e8b1c92f2b3b08c5d4ff13f72fc687078180b8a0"
+}

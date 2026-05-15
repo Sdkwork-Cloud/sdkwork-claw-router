@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54591,
+  "uuid": "skill-clawhub-tly",
+  "skillKey": "clawhub-tly",
+  "name": "T.LY URL Shortener",
+  "summary": "Create T.LY short links through the T.LY API. Use when an agent needs to shorten a URL, generate a shareable T.LY link, return a `short_url`, or call T.LY pr...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tly",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tim",
+      "features": [
+        "Create T.LY short links through the T.LY API",
+        "Use when an agent needs to shorten a URL, generate a shareable T.LY link, return a `short_url`,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tly@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1711910?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tly",
+      "url": "https://clawhub.ai/skills/tly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tly",
+    "url": "https://clawhub.ai/skills/tly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tly-e5b0a8aa20f9e0a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tly@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tly-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2f11e8656c6b97ae8df59f5cf98a63a73788157a93ba9a10aedfcd47708dddd",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T18:35:38.337Z"
+}

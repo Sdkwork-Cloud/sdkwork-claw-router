@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/use-my-browser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.use_my_browser",
+  "skill": {
+    "id": 15589,
+    "skillKey": "clawhub-use-my-browser",
+    "name": "Use My Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "use-my-browser",
+    "url": "https://clawhub.ai/skills/use-my-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/use-my-browser-3abc2dea1db8f427.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control the user's REAL Chrome browser via Tampermonkey injection. Trigger when user says \"use my browser\", \"open in my browser\", \"check this page for me\", o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flyinghanger",
+      "userId": "publishers:flyinghanger",
+      "displayName": "flyinghanger",
+      "image": "https://avatars.githubusercontent.com/u/251348879?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 903,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773064337679,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35685ad1547ed45997fd9b5d2b439a72b24ad2f175969a889e1be395fe3940bc"
+}

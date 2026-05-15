@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-sheets-soha@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_sheets_soha",
+  "skill": {
+    "id": 43384,
+    "skillKey": "clawhub-google-sheets-soha",
+    "name": "google-sheets-soha"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-sheets-soha",
+    "url": "https://clawhub.ai/skills/google-sheets-soha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-sheets-soha-682eea8408b23b43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read and analyze data from Google Sheets. Trigger when the user mentions \"Google Sheet\", \"spreadsheet\", \"sheet\", sends a docs.google.com/spreadsheets link, o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fuco99",
+      "userId": "s17e0y4rt9ny01gxcb944ena9x84300q",
+      "displayName": "Nguyễn Tiến Phan",
+      "image": "https://avatars.githubusercontent.com/u/76276418?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775118307533,
+      "changelog": "- Added detailed metadata: environment variable descriptions, repository link, license, and explicit API host permissions.\n- Security section clarifies the read-only data access, purpose of external requests, and local execution of scripts.\n- Environment variables for both public (GOOGLE_API_KEY) and private (GOOGLE_SERVICE_ACCOUNT_JSON) sheet access are now documented and optional.\n- No code or logic changes—documentation and metadata improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b7f5779719cce692f16aee61b2db2b8f76edea1c213d8091f7b439875957ab3"
+}

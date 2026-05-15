@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/medical-record-translator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_record_translator",
+  "skill": {
+    "id": 32916,
+    "skillKey": "clawhub-medical-record-translator",
+    "name": "Medical Record Translator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-record-translator",
+    "url": "https://clawhub.ai/skills/medical-record-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-record-translator-2adb78e1e12bbf8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when users need structure-preserving translation of medical records, lab reports, discharge summaries, prescriptions, pathology/radiology reports, or sim..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "helenalhq",
+      "userId": "s17dzq3nm6d77cs658c55rwfns83j2mm",
+      "displayName": "helenalhq",
+      "image": "https://avatars.githubusercontent.com/u/258706524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775276945154,
+      "changelog": "- Initial release of Medical Record Translator skill.\n- Provides structure-preserving translation for medical records, reports, and prescriptions.\n- Supports both text-based and scanned PDFs with correct workflow for each type.\n- Maintains strict 1:1 block mapping and document structure (tables, key-values, free text).\n- Outputs Chinese-first, doctor-readable Markdown with original text for each section.\n- Includes privacy notice and references to external output and quality standards.\n- If you want more language support, drop me a note or send email to info@chinamed.cc.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1a0fc1d8d596dc291d592641a3f627955673c9246d46a9db01c9cd6f018735d"
+}

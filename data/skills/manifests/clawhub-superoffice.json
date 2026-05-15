@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23412,
+  "uuid": "skill-clawhub-superoffice",
+  "skillKey": "clawhub-superoffice",
+  "name": "Superoffice",
+  "summary": "SuperOffice integration. Manage Persons, Organizations, Deals, Leads, Projects, Activities and more. Use when the user wants to interact with SuperOffice data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.superoffice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SuperOffice integration",
+        "Manage Persons, Organizations, Deals, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with SuperOffice data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/superoffice@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "superoffice",
+      "url": "https://clawhub.ai/skills/superoffice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "superoffice",
+    "url": "https://clawhub.ai/skills/superoffice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/superoffice-5d9eeba271043358.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/superoffice@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-superoffice-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bcdeca854e85c81014fe68f1e575dd7b3a5f90f6beabc784ef17a2f44522bb4b",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T12:04:42.416Z"
+}

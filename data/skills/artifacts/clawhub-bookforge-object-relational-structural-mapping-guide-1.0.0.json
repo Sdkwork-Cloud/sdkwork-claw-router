@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-object-relational-structural-mapping-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_object_relational_structural_mapping_guide",
+  "skill": {
+    "id": 51681,
+    "skillKey": "clawhub-bookforge-object-relational-structural-mapping-guide",
+    "name": "Object Relational Structural Mapping Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-object-relational-structural-mapping-guide",
+    "url": "https://clawhub.ai/skills/bookforge-object-relational-structural-mapping-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-object-relational-structural-mapping-guide-aa1fee83b74e63ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Object-relational mapping structural patterns guide. Use when designing or auditing how domain objects map to relational tables — identity fields, foreign ke..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776758316204,
+      "changelog": "Initial release of the Object-Relational Structural Mapping Guide skill.\n\n- Provides guidance on mapping domain model relationships to relational database schemas using six key PEAA structural patterns.\n- Helps classify relationships (identity, 1:1, 1:N, N:M, dependent, embedded, graph) and routes each to the appropriate mapping pattern.\n- Generates schema sketches and idiomatic ORM configuration for popular frameworks (Hibernate, SQLAlchemy, EF Core, ActiveRecord, Django ORM).\n- Flags common anti-patterns, such as meaningful keys, misuse of serialized LOBs, and improper many-to-many mappings.\n- Designed for architects and engineers designing new persistence layers or auditing existing ORM setups.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7d75360d85369ec0d850cdcd263cd42d109fe09530697eb6b9ca9e2d8099477"
+}

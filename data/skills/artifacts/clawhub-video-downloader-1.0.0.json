@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-downloader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_downloader",
+  "skill": {
+    "id": 12215,
+    "skillKey": "clawhub-video-downloader",
+    "name": "Video Downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-downloader",
+    "url": "https://clawhub.ai/skills/video-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-downloader-7bf90629ebe999c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download online videos with quality and format controls using yt-dlp for reliable local saves."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1632,
+      "installsAllTime": 24,
+      "installsCurrent": 23,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772228852398,
+      "changelog": "Initial release with local yt-dlp wrapper, quality controls, and explicit security boundaries.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:052d29e9d0232d3f153cdc29153fa1dc7791ea4ac5e1114cb4640e7c25da9ae3"
+}

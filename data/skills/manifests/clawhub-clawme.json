@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50895,
+  "uuid": "skill-clawhub-clawme",
+  "skillKey": "clawhub-clawme",
+  "name": "ClawMe",
+  "summary": "Send instructions to user's real browser via ClawMe Chrome extension. Fill forms, tweet, email, click, extract — user sees and confirms each action in the si...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawme",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dongsheng123132",
+      "features": [
+        "Send instructions to user's real browser via ClawMe Chrome extension",
+        "Fill forms, tweet, email, click, extract — user sees and confirms each action in the si..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawme@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90887123?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawme",
+      "url": "https://clawhub.ai/skills/clawme"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawme",
+    "url": "https://clawhub.ai/skills/clawme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawme-b6a79e9f2ec6edb8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawme@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawme-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7adbd496e848055b9d0f7966c1a47ea2b44d3b8e11742ea2d984d366e1be035",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T05:57:48.969Z"
+}

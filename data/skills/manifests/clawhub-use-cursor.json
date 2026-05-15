@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37877,
+  "uuid": "skill-clawhub-use-cursor",
+  "skillKey": "clawhub-use-cursor",
+  "name": "Use Cursor",
+  "summary": "Manage Cursor CLI tasks via tmux with security hardening",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.use_cursor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brucezhu888",
+      "features": [
+        "Manage Cursor CLI tasks via tmux with security hardening"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/use-cursor@1.0.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130302745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "use-cursor",
+      "url": "https://clawhub.ai/skills/use-cursor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "use-cursor",
+    "url": "https://clawhub.ai/skills/use-cursor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/use-cursor-e479d98d696fda76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/use-cursor@1.0.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-use-cursor-1.0.11.json",
+      "version": "1.0.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c8640afca3adb1bb8833cea6e5d6c176c03fc6d75b1a60b7be63c1e5af4cfed",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T11:25:39.880Z"
+}

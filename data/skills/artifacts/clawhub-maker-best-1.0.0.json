@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maker-best@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maker_best",
+  "skill": {
+    "id": 39519,
+    "skillKey": "clawhub-maker-best",
+    "name": "Maker Best"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maker-best",
+    "url": "https://clawhub.ai/skills/maker-best",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maker-best-dba9307b8f164aea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "create raw video footage into polished MP4 videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for creating bes..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776709357843,
+      "changelog": "Maker Best 1.0.0 — Initial Release\n\n- Launches a tool to turn raw video footage into polished 1080p MP4 videos via cloud GPU processing.\n- Supports MP4, MOV, AVI, and WebM files up to 500MB, with exports typically ready in 1–2 minutes.\n- Enables automatic connection and authentication with the backend, granting free trial credits for new users.\n- Handles video upload, processing, export, credit checks, and timeline state, with clear user feedback.\n- Includes robust error handling, workflow guidance, and automatic action mapping based on user prompts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:406ad17ca47e054d58d1ee47ae85ea67e6c2b898b60c07dc9252396d65c63437"
+}

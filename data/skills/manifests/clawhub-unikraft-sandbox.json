@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52721,
+  "uuid": "skill-clawhub-unikraft-sandbox",
+  "skillKey": "clawhub-unikraft-sandbox",
+  "name": "Unikraft Cloud Sandbox",
+  "summary": "Run agent tasks inside an isolated Unikraft Cloud (UKC) sandbox VM. Use when the agent needs a clean, isolated execution environment — e.g. running untrusted...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unikraft_sandbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "procub3r",
+      "features": [
+        "Run agent tasks inside an isolated Unikraft Cloud (UKC) sandbox VM",
+        "Use when the agent needs a clean, isolated execution environment — e.g",
+        "running untrusted..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unikraft-sandbox@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54534811?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unikraft-sandbox",
+      "url": "https://clawhub.ai/skills/unikraft-sandbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unikraft-sandbox",
+    "url": "https://clawhub.ai/skills/unikraft-sandbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unikraft-sandbox-7c0ea7f426c95301.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unikraft-sandbox@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unikraft-sandbox-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a416eb85172605209e90ffc3b75d729db0ff8cfefa7e399cbf74f2613a16bae9",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T11:45:20.410Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-code-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_code_generator",
+  "skill": {
+    "id": 34906,
+    "skillKey": "clawhub-ai-code-generator",
+    "name": "Ai Code Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-code-generator",
+    "url": "https://clawhub.ai/skills/ai-code-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-code-generator-e0f973506032d920.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI code generator using Plan-and-Solve + ReAct for generating complete, runnable code from requirements and specifications."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "banxian87",
+      "userId": "s1725nf8jgsbz5gj0nmfh3vkk5843csb",
+      "displayName": "banxian87",
+      "image": "https://avatars.githubusercontent.com/u/264314218?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775099711414,
+      "changelog": "AI code generator with Plan-and-Solve + ReAct for full-stack code generation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efd66bf0e1a56e33971058f190085464f6c91b3621eee1278fe066b9dfd7017b"
+}

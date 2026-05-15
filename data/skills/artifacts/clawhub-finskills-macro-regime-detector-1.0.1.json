@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/finskills-macro-regime-detector@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finskills_macro_regime_detector",
+  "skill": {
+    "id": 42533,
+    "skillKey": "clawhub-finskills-macro-regime-detector",
+    "name": "macro-regime-detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finskills-macro-regime-detector",
+    "url": "https://clawhub.ai/skills/finskills-macro-regime-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finskills-macro-regime-detector-1b25acb031328e68.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Classify the current macroeconomic regime across six states using GDP, CPI, Fed Funds rate, yield curve, and credit spread data from the Finskills API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "finskills",
+      "userId": "s179tgs48y0pmgcemse7r2m5w18476rn",
+      "displayName": "finskills",
+      "image": "https://avatars.githubusercontent.com/u/32382589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776526933223,
+      "changelog": "- Minor update: Added standardized YAML frontmatter for skill metadata (name, version, description, author, homepage, OpenClaw environment requirements).\n- No changes to logic, features, analysis steps, or API usage.\n- No functional changes for end users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87a8aa986280e26b4a173cd5d83fceba9d7b95e0350033311bec7ba4285e4d1d"
+}

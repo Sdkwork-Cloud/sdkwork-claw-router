@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61827,
+  "uuid": "skill-clawhub-nuwa-video-gen",
+  "skillKey": "clawhub-nuwa-video-gen",
+  "name": "Nuwa Video Gen - MiniMax女娲视频",
+  "summary": "视频生成技能，使用 MiniMax 女娲视频生成 API 创建视频（文生视频/图生视频/首尾帧/主体参考）",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nuwa_video_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "superluanxu",
+      "features": [
+        "视频生成技能，使用 MiniMax 女娲视频生成 API 创建视频（文生视频/图生视频/首尾帧/主体参考）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nuwa-video-gen@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267406592?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nuwa-video-gen",
+      "url": "https://clawhub.ai/skills/nuwa-video-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nuwa-video-gen",
+    "url": "https://clawhub.ai/skills/nuwa-video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nuwa-video-gen-411e3af5fa6a36b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nuwa-video-gen@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nuwa-video-gen-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90985bfc162dc02e8fb9e9e11c198134cb2c8cc378530a49707c6576882bd463",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T03:01:33.794Z"
+}

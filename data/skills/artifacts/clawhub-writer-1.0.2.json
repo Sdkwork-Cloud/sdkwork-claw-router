@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/writer@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.writer",
+  "skill": {
+    "id": 9025,
+    "skillKey": "clawhub-writer",
+    "name": "Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "writer",
+    "url": "https://clawhub.ai/skills/writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/writer-b93006774cbdd4b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fix AI writing patterns that create repetitive and robotic content"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4193,
+      "installsAllTime": 45,
+      "installsCurrent": 43,
+      "stars": 7,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770664525321,
+      "changelog": "Fix display name",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:faeecd64c74f21a12e729837f61b65009e3bc2df9ff9ee70582da4c60f66340f"
+}

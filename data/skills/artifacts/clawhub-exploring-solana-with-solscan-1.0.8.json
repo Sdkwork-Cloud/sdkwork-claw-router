@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/exploring-solana-with-solscan@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exploring_solana_with_solscan",
+  "skill": {
+    "id": 21220,
+    "skillKey": "clawhub-exploring-solana-with-solscan",
+    "name": "exploring-solana-with-solscan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exploring-solana-with-solscan",
+    "url": "https://clawhub.ai/skills/exploring-solana-with-solscan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exploring-solana-with-solscan-b0f99aa9441319e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill to query Solana blockchain data via the Solscan Pro API. Triggers: look up wallet address, check token price, analyze NFT collection, inspect..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tiennv3",
+      "userId": "s179fyhrznd49gj20mnvnxy1h583ye29",
+      "displayName": "Solscan",
+      "image": "https://avatars.githubusercontent.com/u/11498848?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 418,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1774943244534,
+      "changelog": "- Skill renamed from \"exploring-solana-with-solscan\" to \"solscan-data\" for clarity and scope.\n- Updated and expanded API reference: added new query/filter parameters, more action options, and detailed usage notes for each account-related endpoint.\n- Improved tool documentation to clarify when to use CLI/API tools and natural language utilities.\n- Example workflows and detailed usage instructions removed from the SKILL.md; new structure is more concise and focused on capabilities.\n- Authentication/prerequisites and configuration simplified for easier onboarding.\n- File structure changed: new component docs added (Market Report/SKILL.md, Portfolio Tracker/SKILL.md), legacy files removed (README.md, references/solscan.md).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d827ef93f1491d4be0eed398a4f97f49a0a826bf84b9a680394d703c9f358ba"
+}

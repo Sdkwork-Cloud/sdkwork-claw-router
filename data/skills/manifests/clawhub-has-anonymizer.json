@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10671,
+  "uuid": "skill-clawhub-has-anonymizer",
+  "skillKey": "clawhub-has-anonymizer",
+  "name": "Has Anonymizer",
+  "summary": "HaS (Hide and Seek) on-device text and image anonymization. Text: 8 languages (zh/en/fr/de/es/pt/ja/ko), open-set entity types. Image: 21 privacy categories...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.has_anonymizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Huiming Liu",
+      "features": [
+        "HaS (Hide and Seek) on-device text and image anonymization",
+        "Text: 8 languages (zh/en/fr/de/es/pt/ja/ko), open-set entity types",
+        "Image: 21 privacy categories..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/has-anonymizer@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2439409?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "has-anonymizer",
+      "url": "https://clawhub.ai/skills/has-anonymizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "has-anonymizer",
+    "url": "https://clawhub.ai/skills/has-anonymizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/has-anonymizer-b196dc35bf4abad4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/has-anonymizer@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-has-anonymizer-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:467355b82e55a02f4517bca7de671ec910e2fe799428c38502fab683c52d2d18",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:51:21.641Z"
+}

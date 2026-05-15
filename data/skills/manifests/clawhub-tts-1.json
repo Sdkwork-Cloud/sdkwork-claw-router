@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31741,
+  "uuid": "skill-clawhub-tts-1",
+  "skillKey": "clawhub-tts-1",
+  "name": "tts",
+  "summary": "Text-to-speech conversion using node-edge-tts npm package for generating audio from text. Supports multiple voices, languages, speed adjustment, pitch contro...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tts_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "17854566382",
+      "features": [
+        "Text-to-speech conversion using node-edge-tts npm package for generating audio from text",
+        "Supports multiple voices, languages, speed adjustment, pitch contro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tts-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98637939?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tts-1",
+      "url": "https://clawhub.ai/skills/tts-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tts-1",
+    "url": "https://clawhub.ai/skills/tts-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tts-1-d1c63ad43abac21d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tts-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tts-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b55b9e1f6ede06bb6b419bc212166e5751fa6c8bfeaa2a60ef96fcc5c8b9b64a",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T01:44:26.255Z"
+}

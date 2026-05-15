@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bt-search@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bt_search",
+  "skill": {
+    "id": 68598,
+    "skillKey": "clawhub-bt-search",
+    "name": "bt-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bt-search",
+    "url": "https://clawhub.ai/skills/bt-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bt-search-bc0e73b5be8bb4b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BT磁力链接搜索引擎。通过关键词搜索磁力链接，返回种子名称、大小、做种数、文件列表和磁力链接。 Use when: 用户需要搜索磁力链接、找种子、搜索BT/PT资源、下载电影/软件/游戏等资源。 NOT for: 直接下载文件、在线播放视频、非BT相关的搜索（用搜索引擎）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "men459",
+      "userId": "s17eg8492d11atrpb3qdj3y2q5855qee",
+      "displayName": "men459",
+      "image": "https://avatars.githubusercontent.com/u/78955316?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777975526422,
+      "changelog": "- 增加了“大狗磁力 - BT磁力链接搜索引擎”首页网址介绍，方便用户直接访问网页版。\n- 其余说明和使用方法保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73bafcb2b7047e775e5403b35bd767737c283ff96b34c920d774deef8bcd1422"
+}

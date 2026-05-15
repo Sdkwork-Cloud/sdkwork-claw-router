@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rembg@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rembg",
+  "skill": {
+    "id": 59573,
+    "skillKey": "clawhub-rembg",
+    "name": "rembg: remove-image-background"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rembg",
+    "url": "https://clawhub.ai/skills/rembg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rembg-8acbdfc9bb564fec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 rembg AI 模型去除图片背景，生成透明背景的 PNG 图片。首次使用需运行 setup/install.py 初始化环境。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justzerox",
+      "userId": "s17bntcbdbhj4j4hzncfqbtbxn83pkqf",
+      "displayName": "ZeroX",
+      "image": "https://avatars.githubusercontent.com/u/7137280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 590,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1773037742687,
+      "changelog": "- 首个版本发布，支持使用 rembg AI 模型去除图片背景，生成透明 PNG。/ First version released, supporting background removal from images using the rembg AI model to generate transparent PNGs.\n- 提供了环境初始化脚本与依赖自动安装（首次需运行 setup/install.py）。/ Includes an environment initialization script and automatic dependency installation (first-time setup requires running setup/install.py).\n- 支持单张图片和批量图片去背景处理脚本。/ Supports background removal for both single images and batch processing via dedicated scripts.\n- 所有操作自动创建和使用独立虚拟环境与模型目录。/ All operations automatically create and use an independent virtual environment and model directory.\n- 内含详细用法说明和环境检查工具。/ Comes with detailed usage instructions and an environment verification tool.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81770d3664eee80eb6f023d1dbf5aa97eb83720a21acb1297085316ed46ac251"
+}

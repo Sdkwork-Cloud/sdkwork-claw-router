@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-use@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_use",
+  "skill": {
+    "id": 50746,
+    "skillKey": "clawhub-claw-use",
+    "name": "Claw Use — Device Control for AI Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-use",
+    "url": "https://clawhub.ai/skills/claw-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-use-19dacc23a52c5e4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control physical devices over HTTP with unified commands for screen reading, input actions, app launch, navigation, and audio output using the Claw Use proto..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "4ier",
+      "userId": "s1764h4cgqpc90zs9r68tavz35842d1f",
+      "displayName": "傅洋",
+      "image": "https://avatars.githubusercontent.com/u/5648066?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773642624245,
+      "changelog": "Initial release: cu CLI + skill for controlling Android phones (and future devices) via HTTP API. 25 endpoints covering screen reading, screenshots, tap/click/type/swipe, TTS, intents, notifications, and device management. Multi-device support with named aliases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4f5b9a300858c2aabd307a9822a6521feb7d176fc677bdc4ef589bec9c928cc"
+}

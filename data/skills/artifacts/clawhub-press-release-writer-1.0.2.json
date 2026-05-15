@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/press-release-writer@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.press_release_writer",
+  "skill": {
+    "id": 51328,
+    "skillKey": "clawhub-press-release-writer",
+    "name": "Press Release Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "press-release-writer",
+    "url": "https://clawhub.ai/skills/press-release-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/press-release-writer-b470112154dae09a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write professional press releases for any occasion, media type, and country. Use when the user wants to write, draft, or improve a press release, communiqué..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samber",
+      "userId": "s173arkhs3131fq5jf769qq75583hdgt",
+      "displayName": "Samuel Berthe",
+      "image": "https://avatars.githubusercontent.com/u/2951285?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 308,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775850762259,
+      "changelog": "- Version updated to 1.0.2 in SKILL.md metadata.\n- No workflow or functional changes; documentation version number now matches the release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cdc3aaf370ed0e3c5433bda0954ed924560a9a6fa865e572e46b7188376f364d"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9370,
+  "uuid": "skill-clawhub-cron-backup",
+  "skillKey": "clawhub-cron-backup",
+  "name": "Cron Backup",
+  "summary": "Set up scheduled automated backups with version tracking and cleanup. Use when users need to (1) Schedule periodic backups of directories or files, (2) Monit...",
+  "version": "0.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_backup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zfanmy",
+      "features": [
+        "Set up scheduled automated backups with version tracking and cleanup",
+        "Use when users need to (1) Schedule periodic backups of directories or files, (2) Monit..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cron-backup@0.3.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33675069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cron-backup",
+      "url": "https://clawhub.ai/skills/cron-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-backup",
+    "url": "https://clawhub.ai/skills/cron-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-backup-9a8b3b0ed3bf3b6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cron-backup@0.3.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cron-backup-0.3.2.json",
+      "version": "0.3.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4ced7a28bf11ce9a29b91a5e587149aa4efdea346089f2a8b6bf664f9dc9f60",
+      "artifactSizeBytes": 2012
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T15:36:07.657Z"
+}

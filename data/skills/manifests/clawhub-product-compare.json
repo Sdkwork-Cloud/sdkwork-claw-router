@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71575,
+  "uuid": "skill-clawhub-product-compare",
+  "skillKey": "clawhub-product-compare",
+  "name": "product-compare",
+  "summary": "产品深度对比分析技能。用于对比多个产品的功能、价格、销量、口碑等信息，生成详细的对比报告并推荐购买。适用于：用户需要购买决策建议、产品对比测评、竞品分析等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_compare",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Josephyb97",
+      "features": [
+        "产品深度对比分析技能。用于对比多个产品的功能、价格、销量、口碑等信息，生成详细的对比报告并推荐购买。适用于：用户需要购买决策建议、产品对比测评、竞品分析等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-compare@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59716535?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-compare",
+      "url": "https://clawhub.ai/skills/product-compare"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-compare",
+    "url": "https://clawhub.ai/skills/product-compare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-compare-e54dd0bfef6de8ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-compare@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-compare-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0908231eab47e8270df638d5408f8d879d1dc8a56749e59d4fc3230b4c91e444",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T09:13:32.438Z"
+}

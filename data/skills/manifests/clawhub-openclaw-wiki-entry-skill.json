@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43283,
+  "uuid": "skill-clawhub-openclaw-wiki-entry-skill",
+  "skillKey": "clawhub-openclaw-wiki-entry-skill",
+  "name": "Wiki Entry Skill",
+  "summary": "Use when the operator asks to merge configured transit notes into domain wiki pages with source metadata, index updates, status transitions, and audit checks...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_wiki_entry_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "arroncn993-sys",
+      "features": [
+        "Use when the operator asks to merge configured transit notes into domain wiki pages with source."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-wiki-entry-skill@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268228561?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-wiki-entry-skill",
+      "url": "https://clawhub.ai/skills/openclaw-wiki-entry-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-wiki-entry-skill",
+    "url": "https://clawhub.ai/skills/openclaw-wiki-entry-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-wiki-entry-skill-d5744755e77e6b82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-wiki-entry-skill@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-wiki-entry-skill-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c7900b2b12077aa1ee2c03ea0b562c621ca15b4735f3612c070f9819ab24b39",
+      "artifactSizeBytes": 2145
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T18:20:48.231Z"
+}

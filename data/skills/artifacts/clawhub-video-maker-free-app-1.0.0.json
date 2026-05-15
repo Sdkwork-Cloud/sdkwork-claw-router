@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-maker-free-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_maker_free_app",
+  "skill": {
+    "id": 43456,
+    "skillKey": "clawhub-video-maker-free-app",
+    "name": "Video Maker Free App"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-maker-free-app",
+    "url": "https://clawhub.ai/skills/video-maker-free-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-maker-free-app-113cf537f2488b98.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "create video clips or images into polished MP4 videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. casual creators and social media use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776078430990,
+      "changelog": "Initial release of Video Maker Free App.\n\n- Create and export 1080p MP4 videos by combining clips, images, music, and transitions.\n- Supports MP4, MOV, AVI, WebM files up to 500MB; export and editing workflows run on cloud GPUs (1–2 minute processing time).\n- Seamless user onboarding: automatic anonymous token handling and session setup.\n- Interactive chat for uploading files, editing videos, checking credits, and tracking render status.\n- Simple commands for export, balance, and status; automatic matching of user requests to actions.\n- Clearly documented API workflow, error handling, and common use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd44324b9723c15dcc7b89c9d3f93d07b013541f317251b1d0b4e9aa992e5631"
+}

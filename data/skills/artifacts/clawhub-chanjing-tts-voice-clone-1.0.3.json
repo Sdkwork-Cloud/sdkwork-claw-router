@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chanjing-tts-voice-clone@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chanjing_tts_voice_clone",
+  "skill": {
+    "id": 29178,
+    "skillKey": "clawhub-chanjing-tts-voice-clone",
+    "name": "Chanjing Tts Voice Clone"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chanjing-tts-voice-clone",
+    "url": "https://clawhub.ai/skills/chanjing-tts-voice-clone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chanjing-tts-voice-clone-f89ebbf04b57511d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Chanjing TTS API to synthesize speech from text, using user-provided voice. Primary credential: credentials.json (app_id/secret_key; access_token and exp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iamzn1018",
+      "userId": "s174j65y6gke3t6ev7f9w23nax83qpk9",
+      "displayName": "IAMZn",
+      "image": "https://avatars.githubusercontent.com/u/24623176?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 288,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774599909058,
+      "changelog": "- Added explicit credential model details (`metadata.openclaw.credentialModel`), including sensitive fields and default path, for improved registry compatibility.\n- Clarified that `access_token` and `expire_in` are written to disk and overwritten on refresh; users should not commit the credentials file to version control.\n- Declared sibling skill dependency on `chanjing-credentials-guard`.\n- Updated security and credential documentation to emphasize file-based persistence and agent policy, in line with OpenClaw conventions.\n- No code or API interface changes; documentation and manifest only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:240f41ee744720d75aa99e0c7b1d2952f491fa51dce1d36fc371358ade5b2f61"
+}

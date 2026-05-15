@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caption-generator-for-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caption_generator_for_video",
+  "skill": {
+    "id": 44729,
+    "skillKey": "clawhub-caption-generator-for-video",
+    "name": "Caption Generator For Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caption-generator-for-video",
+    "url": "https://clawhub.ai/skills/caption-generator-for-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caption-generator-for-video-578962725233bb82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add video files into captioned video files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators and marketers use it for addin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776014251612,
+      "changelog": "Initial release of Caption Generator for Video — Auto-Generate Captions for Videos.\n\n- Upload video files (MP4, MOV, AVI, WebM up to 500MB) and auto-generate captions using cloud-based AI.\n- Supports instructions such as adding subtitles in multiple languages, choosing text styles, and exporting in 1080p MP4 format.\n- Fast processing (30–60 seconds per video) with automatic cloud session creation and status updates.\n- Provides full workflow: upload, edit, preview, export, and download captioned videos.\n- Built-in handling for credits, upload limits, and error codes for a smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac6c2c6386c7947b8627b67884eac760bcb9b90de138573f108a4434ef50a873"
+}

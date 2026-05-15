@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-aisa-web-search-tavily@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aisa_web_search_tavily",
+  "skill": {
+    "id": 8885,
+    "skillKey": "clawhub-openclaw-aisa-web-search-tavily",
+    "name": "Web Search by Tavily"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aisa-web-search-tavily",
+    "url": "https://clawhub.ai/skills/openclaw-aisa-web-search-tavily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aisa-web-search-tavily-6f108632119ca2d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-optimized web search via Tavily API proxy, providing concise and relevant results with options for deep or news-focused queries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisadocs",
+      "userId": "s172yz541n4361fw0sapygg0r583eghk",
+      "displayName": "AIsa",
+      "image": "https://avatars.githubusercontent.com/u/245991925?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 5046,
+      "installsAllTime": 21,
+      "installsCurrent": 20,
+      "stars": 10,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771075128711,
+      "changelog": "Initial release of AIsa Tavily Search skill:\n\n- Provides AI-optimized web search via Tavily API through AIsa's unified gateway.\n- Offers command-line scripts for standard, deep, and topic-based searches.\n- Allows easy extraction of relevant content from web URLs.\n- Supports search result count, advanced/deep mode, topic filtering, and date-range limiting for news.\n- Requires an AISA_API_KEY for operation.\n- Designed for use by AI agents needing concise, relevant information.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5f3f48fdf92516c728c50977ce1b95b9ef0bb07662689375dc52397e25a8a69f"
+}

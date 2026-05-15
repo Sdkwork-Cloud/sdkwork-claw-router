@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11128,
+  "uuid": "skill-clawhub-npkill",
+  "skillKey": "clawhub-npkill",
+  "name": "NPkill",
+  "summary": "Clean up node_modules and .next folders to free up disk space using npkill. Specifically designed to help JavaScript and Next.js developers remove accumulated build artifacts that consume significant storage. Provides both interactive and.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.npkill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AshirbadGudu",
+      "features": [
+        "Clean up node_modules and .next folders to free up disk space using npkill",
+        "Specifically designed to help JavaScript and Next.js developers remove accumulated build artifa.",
+        "Provides both interactive and automated cleanup options with safety checks to protect important."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/npkill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49669234?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "npkill",
+      "url": "https://clawhub.ai/skills/npkill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "npkill",
+    "url": "https://clawhub.ai/skills/npkill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/npkill-77fad10e16223cf9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/npkill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-npkill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd7fae73bc56817292616dee972be76e9fe4258e407deb7153a1da503e7b26dd",
+      "artifactSizeBytes": 2085
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T15:29:20.067Z"
+}

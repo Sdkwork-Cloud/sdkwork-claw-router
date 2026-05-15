@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mov-to-mp4-converter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mov_to_mp4_converter",
+  "skill": {
+    "id": 40717,
+    "skillKey": "clawhub-mov-to-mp4-converter",
+    "name": "Mov To Mp4 Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mov-to-mp4-converter",
+    "url": "https://clawhub.ai/skills/mov-to-mp4-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mov-to-mp4-converter-5b79d4055ef13fff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tired of MOV files refusing to play on Android devices, Windows Media Player, or social media platforms? The mov-to-mp4-converter skill handles the entire co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775039368101,
+      "changelog": "Initial release of MOV to MP4 Converter.\n\n- Instantly converts MOV files to universally compatible MP4 format via a fast, cloud-powered backend.\n- Supports batch conversion, custom resolution, and preservation of video/audio quality.\n- No software installation or codec knowledge required—just upload your file(s) and get a compatible MP4.\n- Handles Apple QuickTime MOV files that fail on Windows, Android, or social media platforms.\n- Integrated credit system with free anonymous access (100 credits, 7-day expiry).\n- Clear error handling and user guidance for large files, unsupported formats, and export restrictions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5678ecbe8873239d54b0212cbcd5c0673c42c456181258370d3b384cbb4cc07e"
+}

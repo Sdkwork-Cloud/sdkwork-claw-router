@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60822,
+  "uuid": "skill-clawhub-amazon-sorftime-research-keywords-skill",
+  "skillKey": "clawhub-amazon-sorftime-research-keywords-skill",
+  "name": "amazon-sorftime-research-keywords-skill",
+  "summary": "亚马逊关键词深度调研与智能分类分析。基于 Sorftime MCP 数据采集 2000+ 关键词，通过 LLM Agent 按 8 维度智能分类（否定词、品牌词、材质词、场景词、属性词、功能词、核心词、其他），生成 Markdown 报告、CSV 词库和 HTML 仪表板。触发方式：/keyword-resear...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_sorftime_research_keywords_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liangdabiao",
+      "features": [
+        "亚马逊关键词深度调研与智能分类分析。基于 Sorftime MCP 数据采集 2000+ 关键词，通过 LLM Agent 按 8 维度智能分类（否定词、品牌词、材质词、场景词、属性词、功能."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-sorftime-research-keywords-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1232260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-sorftime-research-keywords-skill",
+      "url": "https://clawhub.ai/skills/amazon-sorftime-research-keywords-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-sorftime-research-keywords-skill",
+    "url": "https://clawhub.ai/skills/amazon-sorftime-research-keywords-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-sorftime-research-keywords-skill-3f4d0655f8f8c540.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-sorftime-research-keywords-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-sorftime-research-keywords-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9ec9e5b58bb49d0d46a1b8d31b52f238d251c9a5496693086877d1ed491df05",
+      "artifactSizeBytes": 2868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T07:34:31.513Z"
+}

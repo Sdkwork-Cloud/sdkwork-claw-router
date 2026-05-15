@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-guardian@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_guardian",
+  "skill": {
+    "id": 28079,
+    "skillKey": "clawhub-self-guardian",
+    "name": "Self-Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-guardian",
+    "url": "https://clawhub.ai/skills/self-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-guardian-a95c52d0195e1f37.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight self-monitoring and self-constraining rules to prevent accidental file deletions, dangerous commands, and risky operations. Activates automatical..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vaderyang",
+      "userId": "publishers:vaderyang",
+      "displayName": "vaderyang",
+      "image": "https://avatars.githubusercontent.com/u/486843?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773129755536,
+      "changelog": "Initial release: Pre-Action Checklist, file protection tiers, destructive command blocklist, batch operation throttle, model-awareness heuristic, recovery breadcrumbs",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d880df17aa7221659c51cb037622eddb1ed1a48fcef8e81121aa941df017baaa"
+}

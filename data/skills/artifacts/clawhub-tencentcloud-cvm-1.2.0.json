@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencentcloud-cvm@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_cvm",
+  "skill": {
+    "id": 65868,
+    "skillKey": "clawhub-tencentcloud-cvm",
+    "name": "TencentCloud CVM"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-cvm",
+    "url": "https://clawhub.ai/skills/tencentcloud-cvm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-cvm-4d99b33e64c6afb9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "创建、管理腾讯云 CVM 云服务器实例，支持实例操作、促销查询、成本控制及安全组配置。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ugpoor",
+      "userId": "s177qqrp481qedfn5w9m5nmte183ge14",
+      "displayName": "superStupidBear",
+      "image": "https://avatars.githubusercontent.com/u/6762468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774797210831,
+      "changelog": "恢复中文内容，仅技能名称使用英文",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c22ca8bbe49027e9e706f903bff48890effd954f12f5d95d73b5fb3623d323f2"
+}

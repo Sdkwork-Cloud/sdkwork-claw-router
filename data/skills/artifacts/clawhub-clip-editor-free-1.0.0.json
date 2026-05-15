@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clip-editor-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clip_editor_free",
+  "skill": {
+    "id": 45468,
+    "skillKey": "clawhub-clip-editor-free",
+    "name": "Clip Editor Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clip-editor-free",
+    "url": "https://clawhub.ai/skills/clip-editor-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clip-editor-free-ff2734fc7d5f6652.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute raw video clip from a phone into 1080p edited video clips just by typing what you need. Whether it's quickly trimming and editing short video..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775959158314,
+      "changelog": "Initial release of Clip Editor Free — fast, no-cost AI video editing.\n\n- Instantly edit and export short video clips (up to 2 minutes, 1080p) with text instructions.\n- Drag and drop raw video or audio files; describe desired edits for automatic processing.\n- No need for paid software, timeline dragging, or manual export settings.\n- 100 free credits available with automatic anonymous sign-up.\n- Supports trim, silence removal, transitions, overlays, and aspect ratio changes via simple prompts.\n- Export in MP4 and other major formats within 30–90 seconds.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b8ca50dffd7d202b23ed99e1ff39912c9bf3edb5bc73c8dbbedc2799ebeabd4"
+}

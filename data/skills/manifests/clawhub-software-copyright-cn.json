@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66283,
+  "uuid": "skill-clawhub-software-copyright-cn",
+  "skillKey": "clawhub-software-copyright-cn",
+  "name": "Software Copyright Cn",
+  "summary": "中国计算机软件著作权登记申请材料生成器。用于生成软著申请所需的全部材料，包括软件基本信息表单填写、程序鉴别材料PDF（源代码语法高亮）、文档鉴别材料PDF（用户手册）。当用户提到\"软著\"、\"软件著作权\"、\"著作权登记\"、\"版权登记\"、\"软著申请\"、\"copyright registration\"时使用此技能。",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.software_copyright_cn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Beta",
+      "features": [
+        "中国计算机软件著作权登记申请材料生成器。用于生成软著申请所需的全部材料，包括软件基本信息表单填写、程序鉴别材料PDF（源代码语法高亮）、文档鉴别材料PDF（用户手册）。当用户提到\"软著\"、\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/software-copyright-cn@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/276284?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "software-copyright-cn",
+      "url": "https://clawhub.ai/skills/software-copyright-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "software-copyright-cn",
+    "url": "https://clawhub.ai/skills/software-copyright-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/software-copyright-cn-3d0e8f36aba6dab4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/software-copyright-cn@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-software-copyright-cn-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a4226b409a50477d54948e6bad6a6ec5dbfa2ecc3a6b24cb67abea07ac37e40",
+      "artifactSizeBytes": 2480
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T02:42:33.607Z"
+}

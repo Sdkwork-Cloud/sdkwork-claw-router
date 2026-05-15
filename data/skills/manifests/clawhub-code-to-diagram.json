@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63174,
+  "uuid": "skill-clawhub-code-to-diagram",
+  "skillKey": "clawhub-code-to-diagram",
+  "name": "code-to-diagram",
+  "summary": "分析源代码逻辑，生成包含 Mermaid 流程图（.mmd）的 markdown 文件并渲染为 PNG 图片。支持流程图、状态机、时序图、架构图等多种图表类型。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_to_diagram",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhou Chang",
+      "features": [
+        "分析源代码逻辑，生成包含 Mermaid 流程图（.mmd）的 markdown 文件并渲染为 PNG 图片。支持流程图、状态机、时序图、架构图等多种图表类型。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-to-diagram@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1515205?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-to-diagram",
+      "url": "https://clawhub.ai/skills/code-to-diagram"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-to-diagram",
+    "url": "https://clawhub.ai/skills/code-to-diagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-to-diagram-8c3e828c7de09429.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-to-diagram@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-to-diagram-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f060dda18536a0e1b09904bf5d3c23c23410ee4082231509db97a7d698d93c5",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T05:25:08.500Z"
+}

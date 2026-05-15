@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-swimsuit-model-cli-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_swimsuit_model_cli_skill",
+  "skill": {
+    "id": 56459,
+    "skillKey": "clawhub-ai-swimsuit-model-cli-skill",
+    "name": "AI Swimsuit Model – Virtual AI Bikini & Swimwear Fashion Showcase – CLI-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-swimsuit-model-cli-skill",
+    "url": "https://clawhub.ai/skills/ai-swimsuit-model-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-swimsuit-model-cli-skill-d3379b3c2433f0eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI swimsuit model — transform a person photo into a swimsuit model image"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776579129437,
+      "changelog": "ai-swimsuit-model-cli-skill 1.0.0\n\n- Initial release.\n- Transform a person photo into a swimsuit model image using the WeShop CLI.\n- Requires installation of weshop-cli and a WESHOP_API_KEY environment variable.\n- Supports prompts and batch processing for image generation.\n- API key is handled securely via environment variable only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68ac84870aa2c9d141e01dd3d753bf01805cf630029a5b30e00c305d5d8baced"
+}

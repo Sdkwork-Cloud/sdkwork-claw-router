@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-web-publisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_web_publisher",
+  "skill": {
+    "id": 21756,
+    "skillKey": "clawhub-clawhub-web-publisher",
+    "name": "ClawHub Web Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-web-publisher",
+    "url": "https://clawhub.ai/skills/clawhub-web-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-web-publisher-76160e6b86866543.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish OpenClaw skills to ClawHub using the web dashboard only (no CLI login). Use when an agent must reliably upload a local skill folder, avoid auth-loop..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dalomeve",
+      "userId": "s170jb8y518cbtqkxpgjgcz0yn843mr1",
+      "displayName": "Dalomeve",
+      "image": "https://avatars.githubusercontent.com/u/115125037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 487,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772305950055,
+      "changelog": "ClawHub Web Publisher 1.0.0 — initial release\n\n- Enables secure, browser-only publishing of OpenClaw skills to ClawHub without CLI or token-based logins.\n- Enforces strict privacy rules: never publishes secrets or private identifiers.\n- Automated preflight checks for required metadata and secret leakage patterns.\n- Step-by-step instructions for using the ClawHub web dashboard with evidence capture.\n- Robust failure recovery guidance for common web publishing issues.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8eceb91999c6cf5fa3755f4a950c86ec8565275a30507066d74342120e09bb1d"
+}

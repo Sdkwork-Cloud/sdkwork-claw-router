@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58895,
+  "uuid": "skill-clawhub-macos-suite-readonly",
+  "skillKey": "clawhub-macos-suite-readonly",
+  "name": "macos-suite-readonly",
+  "summary": "macOS 只读查询：Mail 未读、Calendar 日程、Notes 搜索、Stocks 行情（输出 JSON）。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macos_suite_readonly",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MaxStormSpace",
+      "features": [
+        "macOS 只读查询：Mail 未读、Calendar 日程、Notes 搜索、Stocks 行情（输出 JSON）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/macos-suite-readonly@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67162380?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "macos-suite-readonly",
+      "url": "https://clawhub.ai/skills/macos-suite-readonly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macos-suite-readonly",
+    "url": "https://clawhub.ai/skills/macos-suite-readonly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macos-suite-readonly-e3da1aebb8d21615.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/macos-suite-readonly@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-macos-suite-readonly-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b27cc0c8103815338428df7438ff59be608c1f7720341cc02424779739a04eac",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T10:13:27.779Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50042,
+  "uuid": "skill-clawhub-validator-correlated-judgment",
+  "skillKey": "clawhub-validator-correlated-judgment",
+  "name": "Validator Correlated Judgment",
+  "summary": "Helps identify when multiple attestation validators share training data, model architecture, or organizational upstream — causing correlated blind spots that...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.validator_correlated_judgment",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andyxinweiminicloud",
+      "features": [
+        "Helps identify when multiple attestation validators share training data, model architecture, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/validator-correlated-judgment@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201528876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "validator-correlated-judgment",
+      "url": "https://clawhub.ai/skills/validator-correlated-judgment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "validator-correlated-judgment",
+    "url": "https://clawhub.ai/skills/validator-correlated-judgment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/validator-correlated-judgment-8239de8818530262.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/validator-correlated-judgment@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-validator-correlated-judgment-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a421d3dc6684fbe732080db8b02fd55902ec91256f7e838d30eaf8df96e650d2",
+      "artifactSizeBytes": 2759
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T03:01:03.712Z"
+}

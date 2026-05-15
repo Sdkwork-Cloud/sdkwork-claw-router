@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhihe-legal-research@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhihe_legal_research",
+  "skill": {
+    "id": 73100,
+    "skillKey": "clawhub-zhihe-legal-research",
+    "name": "智合法律研究"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhihe-legal-research",
+    "url": "https://clawhub.ai/skills/zhihe-legal-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhihe-legal-research-b0c5510946a3a61d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "连接智合AI法律大模型平台进行法律研究。本技能应在用户需要进行法律问题研究、查找法律法规、检索类似案例、或获取法律研究报告时使用。需要智合AI平台会员账号。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cat-xierluo",
+      "userId": "s179ghx665dhgcsrdzyss2am0x83g7nf",
+      "displayName": "xierluo",
+      "image": "https://avatars.githubusercontent.com/u/66555304?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1776254309972,
+      "changelog": "连接智合AI法律大模型平台进行法律研究，支持异步任务提交与结果查询",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f464e3e3f9fedf2fbbbeb382ee988c707cff0b1ae5c05ad79095a43bb490ac7a"
+}

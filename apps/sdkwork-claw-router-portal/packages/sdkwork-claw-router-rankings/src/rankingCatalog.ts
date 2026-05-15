@@ -480,18 +480,21 @@ export function deriveRankingViewModel({
   filters,
   activeWeekIndex,
   vendors,
+  vendorOptions,
 }: {
   catalog: readonly RankingModel[];
   history: readonly RankingHistoryWeek[];
   filters: RankingFilters;
   activeWeekIndex: number;
   vendors?: readonly RankingVendorOption[];
+  vendorOptions?: RankingVendorOptions;
 }): RankingViewModel {
   const boundedActiveWeekIndex = resolveActiveRankingWeekIndex({
     hoveredWeekIndex: activeWeekIndex,
     selectedWeekIndex: null,
     historyLength: history.length,
   });
+  const resolvedVendorOptions = vendorOptions ?? deriveVendorOptionsForRankings(catalog, vendors);
   const filteredRankings = filterRankingsForCatalog(catalog, filters);
   const displayRankings = deriveRankingDisplayRows(filteredRankings, history, boundedActiveWeekIndex);
   const chartData = deriveRankingChartData(history, filteredRankings);
@@ -510,7 +513,7 @@ export function deriveRankingViewModel({
       history,
       displayRankings,
     }),
-    vendorOptions: deriveVendorOptionsForRankings(catalog, vendors),
+    vendorOptions: resolvedVendorOptions,
     modalityCounts: deriveRankingModalityCounts(catalog),
   };
 }

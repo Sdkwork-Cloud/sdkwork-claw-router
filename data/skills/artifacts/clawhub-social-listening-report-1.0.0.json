@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-listening-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_listening_report",
+  "skill": {
+    "id": 49564,
+    "skillKey": "clawhub-social-listening-report",
+    "name": "Social Listening Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-listening-report",
+    "url": "https://clawhub.ai/skills/social-listening-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-listening-report-452768206f34cd01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert system for creating social listening reports, benchmarks, competitive analyses, and brand health reports from digital and social media data. Use this..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "renehdzgtz",
+      "userId": "s1750d42e333zzeg0xdk55y1js84rz6b",
+      "displayName": "René Hdz",
+      "image": "https://avatars.githubusercontent.com/u/128107262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 76,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777524965935,
+      "changelog": "Initial release: Structured expert system for building actionable social listening and benchmarking reports.\n\n- Supports creation of brand listening, competitive benchmark, campaign performance, periodic, trend/insights, and training reports from social and digital media data.\n- Modular workflow with step-by-step data intake and detailed report templates for each use case.\n- Adapts to available data formats (platform exports, CSV, screenshots, or manual data).\n- Integrates with data from platforms like Talkwalker, Brandwatch, Sprout Social, Google Analytics, Google Trends, and SimilarWeb.\n- Emphasizes actionable insights, required context, and “so what?” recommendations in every report.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5f4b7312c48504fab97635bad4bb3e177e09cdde9f8701beae6de6ac3c3eb426"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12707,
+  "uuid": "skill-clawhub-openclaw-workspace-governance-installer",
+  "skillKey": "clawhub-openclaw-workspace-governance-installer",
+  "name": "Openclaw Workspace Governance Installer",
+  "summary": "Install OpenClaw WORKSPACE_GOVERNANCE in minutes. Get guided setup, upgrade checks, migration, and audit for long-running workspaces.",
+  "version": "0.2.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_workspace_governance_installer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adamchanadam",
+      "features": [
+        "Install OpenClaw WORKSPACE_GOVERNANCE in minutes",
+        "Get guided setup, upgrade checks, migration, and audit for long-running workspaces."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-workspace-governance-installer@0.2.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/136042056?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-workspace-governance-installer",
+      "url": "https://clawhub.ai/skills/openclaw-workspace-governance-installer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-workspace-governance-installer",
+    "url": "https://clawhub.ai/skills/openclaw-workspace-governance-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-workspace-governance-installer-56a1717d0feb01cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-workspace-governance-installer@0.2.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-workspace-governance-installer-0.2.9.json",
+      "version": "0.2.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0227b5b7c8b5b2112e5d26d87e1f669d9891e3ad1021e2f0a6cc42bdd29e29b",
+      "artifactSizeBytes": 2222
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T07:03:58.581Z"
+}

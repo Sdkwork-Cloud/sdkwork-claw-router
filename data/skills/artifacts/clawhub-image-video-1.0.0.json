@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_video",
+  "skill": {
+    "id": 43685,
+    "skillKey": "clawhub-image-video",
+    "name": "Image Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-video",
+    "url": "https://clawhub.ai/skills/image-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-video-4d938a2ceea4a37e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert images into compiled video file with this skill. Works with JPG, PNG, WEBP, HEIC files up to 200MB. marketers use it for turning a set of photos into..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775955406210,
+      "changelog": "Image Video skill initial release — convert your images into 1080p MP4 videos using cloud processing.\n\n- Accepts JPG, PNG, WEBP, HEIC images up to 200MB for video creation.\n- Cloud-based conversion with automated setup, including easy token retrieval (100 free credits, 7-day expiry).\n- Handles uploads, video editing requests, credits queries, and export actions via simple prompts.\n- Exports high-quality 1080p MP4 files within 30–90 seconds.\n- Full support for export, credits, status, and session state.\n- Includes robust error handling for authentication, credits, and file issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9473480414b54337d3f0c9026b35e3ce9972e0d53702b4ee112b19bcbd5c4cd2"
+}

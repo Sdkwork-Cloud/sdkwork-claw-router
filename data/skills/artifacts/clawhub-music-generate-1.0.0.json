@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/music-generate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_generate",
+  "skill": {
+    "id": 43136,
+    "skillKey": "clawhub-music-generate",
+    "name": "music generate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-generate",
+    "url": "https://clawhub.ai/skills/music-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-generate-f74319cb7900477a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Music composition assistant. Accepts natural language input, guides the user through multi-turn interaction to define genre, mood, theme, tempo, and other mu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gentleyo",
+      "userId": "s177r9medgqfs6n194fkycgan983gb5m",
+      "displayName": "GentleYo",
+      "image": "https://avatars.githubusercontent.com/u/131584446?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775878223149,
+      "changelog": "Initial release of the music composition assistant skill:\n\n- Guides users through a conversational process to define genre, mood, theme, tempo, and key musical elements\n- Generates detailed, structured prompts tailored for Suno or Udio music models\n- Offers step-by-step setup instructions for both web and local API generation workflows\n- Presents multiple prompt/style variants for user selection\n- Saves completed audio files to a user-specified folder and confirms output details\n- Provides fallback instructions if API setup is not available",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c165ea603cf0dce6a37014958a6ba0bd89bbe31da5840867fd7edd27b96e0c43"
+}

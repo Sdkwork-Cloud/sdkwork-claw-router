@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27997,
+  "uuid": "skill-clawhub-doubaoimages",
+  "skillKey": "clawhub-doubaoimages",
+  "name": "doubaoimg",
+  "summary": "Generate images with Doubao web chat, extract the final generated image URL from the page, save the image locally, and return the saved local path. Use when...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubaoimages",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Likely7",
+      "features": [
+        "Generate images with Doubao web chat, extract the final generated image URL from the page, save.",
+        "Use when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doubaoimages@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243683505?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doubaoimages",
+      "url": "https://clawhub.ai/skills/doubaoimages"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubaoimages",
+    "url": "https://clawhub.ai/skills/doubaoimages",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubaoimages-42a7521f62109a42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doubaoimages@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doubaoimages-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a77d8578153317575ba36e686a2eacb603de8dd446f29e9a191ac30593ff4de",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T05:31:01.756Z"
+}

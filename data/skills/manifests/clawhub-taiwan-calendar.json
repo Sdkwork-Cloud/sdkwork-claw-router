@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14832,
+  "uuid": "skill-clawhub-taiwan-calendar",
+  "skillKey": "clawhub-taiwan-calendar",
+  "name": "Taiwan Calendar Plugin",
+  "summary": "Taiwan calendar query for accurate working day/holiday information. Use when user asks about Taiwan dates, working days, holidays, make-up workdays, or needs date calculations. Solves Claude's knowledge cutoff issues with Taiwan's administ.",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taiwan_calendar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pigfoot",
+      "features": [
+        "Taiwan calendar query for accurate working day/holiday information",
+        "Use when user asks about Taiwan dates, working days, holidays, make-up workdays, or needs date.",
+        "Solves Claude's knowledge cutoff issues with Taiwan's administrative calendar."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taiwan-calendar@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69261?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taiwan-calendar",
+      "url": "https://clawhub.ai/skills/taiwan-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taiwan-calendar",
+    "url": "https://clawhub.ai/skills/taiwan-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taiwan-calendar-13f81567c1daf613.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taiwan-calendar@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-taiwan-calendar-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e91eadb61859cd34e37d35eb2eff0e99367fda2cc88c21d62d816e53dab4fbb",
+      "artifactSizeBytes": 2757
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T10:04:22.506Z"
+}

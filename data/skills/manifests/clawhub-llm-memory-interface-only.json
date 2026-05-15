@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58778,
+  "uuid": "skill-clawhub-llm-memory-interface-only",
+  "skillKey": "clawhub-llm-memory-interface-only",
+  "name": "Llm Memory Interface Only",
+  "summary": "LLM Memory Integration - 纯接口包。提供 Memory、Search、Vector 接口定义，实现由私有包提供。",
+  "version": "9.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_memory_interface_only",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xkzs2007",
+      "features": [
+        "LLM Memory Integration",
+        "纯接口包。提供 Memory、Search、Vector 接口定义，实现由私有包提供。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-memory-interface-only@9.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129643655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-memory-interface-only",
+      "url": "https://clawhub.ai/skills/llm-memory-interface-only"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-memory-interface-only",
+    "url": "https://clawhub.ai/skills/llm-memory-interface-only",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-memory-interface-only-9c6c69eb2c9e4607.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-memory-interface-only@9.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-memory-interface-only-9.0.0.json",
+      "version": "9.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6579cb72ac4a8cf07c9e8ec9d3dd151a849c31b19eaa1987d8ee09b76d32ceb7",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T03:12:41.850Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/conflict-service-health-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conflict_service_health_checker",
+  "skill": {
+    "id": 48954,
+    "skillKey": "clawhub-conflict-service-health-checker",
+    "name": "Conflict Service Health Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conflict-service-health-checker",
+    "url": "https://clawhub.ai/skills/conflict-service-health-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conflict-service-health-checker-2e03be31eba66283.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Checks API health and uptime. Monitors endpoints and validates responses. Triggers: check api status, api health, monitor uptime."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777589381055,
+      "changelog": "- Initial release of the API status checker skill.\n- Monitors API health and uptime by testing endpoints and validating responses.\n- Supports triggers such as “check api status”, “api health”, and “monitor uptime”.\n- Provides health status based on response code and response time.\n- Includes configurable alert thresholds for slow, degraded, or failing APIs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:17ac1c4303bce68a1c07999af86d06765161553c5810fc27aa7a442c70b9a439"
+}

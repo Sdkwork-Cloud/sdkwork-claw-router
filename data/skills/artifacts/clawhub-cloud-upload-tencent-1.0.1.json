@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloud-upload-tencent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_upload_tencent",
+  "skill": {
+    "id": 63765,
+    "skillKey": "clawhub-cloud-upload-tencent",
+    "name": "Cloud Upload Tencent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-upload-tencent",
+    "url": "https://clawhub.ai/skills/cloud-upload-tencent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-upload-tencent-0bf2402643cd643d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "腾讯云对象存储（COS）上传工具。将本地文件上传至腾讯云 COS，生成下载链接和图片预览。适用于备份文件、生成公开分享链接、存储静态资源。跨平台支持（macOS/Linux/Windows），支持 CLI 和 Python 两种方式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "realorange1994",
+      "userId": "s176tdf1scs6eg0qxkpf9fkpv184bgb1",
+      "displayName": "realorange1994",
+      "image": "https://avatars.githubusercontent.com/u/222950321?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 446,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773922541937,
+      "changelog": "- Added \"SKILL.md\" introducing cloud-upload-tencent, a cross-platform tool for uploading files to Tencent Cloud Object Storage (COS).\n- Provides setup instructions and usage examples for macOS, Linux, and Windows, supporting both CLI and Python methods.\n- Explains requirements for Tencent COS configuration, including necessary environment variables.\n- Includes a decision tree to guide users through upload scenarios and choices.\n- Details output format showing upload results and how to generate download/share links.\n- Lists best practices, security tips, and alternative options for users without a Tencent account.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:11bf0ad85ffec927fbb5d6191cb26657089558f8e710ac43aa349f7273a884d7"
+}

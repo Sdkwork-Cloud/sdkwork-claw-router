@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61836,
+  "uuid": "skill-clawhub-self-evolving-skills",
+  "skillKey": "clawhub-self-evolving-skills",
+  "name": "self-evolving-skills",
+  "summary": "Agent 自我进化机制 - 将成功的复杂任务沉淀为可复用的 Skill，实现持续学习和知识积累。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_evolving_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tunsuy",
+      "features": [
+        "Agent 自我进化机制",
+        "将成功的复杂任务沉淀为可复用的 Skill，实现持续学习和知识积累。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-evolving-skills@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9447297?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-evolving-skills",
+      "url": "https://clawhub.ai/skills/self-evolving-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-evolving-skills",
+    "url": "https://clawhub.ai/skills/self-evolving-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-evolving-skills-057015be740818d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-evolving-skills@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-evolving-skills-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d86dd1621bb70f4490c8519a1df3ccf3024c4cd0ed72d4f8b2d6d7402aafbfe",
+      "artifactSizeBytes": 2019
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T11:13:07.661Z"
+}

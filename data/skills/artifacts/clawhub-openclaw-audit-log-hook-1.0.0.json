@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-audit-log-hook@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_audit_log_hook",
+  "skill": {
+    "id": 43138,
+    "skillKey": "clawhub-openclaw-audit-log-hook",
+    "name": "OpenClaw Audit Log Hook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-audit-log-hook",
+    "url": "https://clawhub.ai/skills/openclaw-audit-log-hook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-audit-log-hook-c5816a45f7a0fb40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Records and logs all tool calls before and after execution for auditing, debugging, usage stats, and error tracking with sensitive data redaction."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxiao-bot",
+      "userId": "s177wn48nxdm9a73g3sj4awv1583gddz",
+      "displayName": "hanxiao-bot",
+      "image": "https://avatars.githubusercontent.com/u/262316041?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775059599286,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:701f06660bff78b4d88ed1e3be5f59a456eca2bc60374257208ee8d25456e2a0"
+}

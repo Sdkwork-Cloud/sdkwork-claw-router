@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/delonix-travel-planner@9.9.9",
+  "version": "9.9.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delonix_travel_planner",
+  "skill": {
+    "id": 67842,
+    "skillKey": "clawhub-delonix-travel-planner",
+    "name": "德胧通用商旅出行规划助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delonix-travel-planner",
+    "url": "https://clawhub.ai/skills/delonix-travel-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delonix-travel-planner-fbd7dc82a4255737.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用商旅出行规划技能 v1.0 · 面向所有商务出差人士。 一站式AI出行规划 + 全平台酒店比价 + HTML报告生成。 集成12306 MCP（火车票实时查询）+ 高德地图（路径规划/POI/天气）+ Web搜索（航班/酒店价格）。 支持**实时HTML报告生成**，所有预订链接真实可一键跳转。 触发条件：..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaoliuzhu",
+      "userId": "s17e38390rnhxjtv52ft6b44cx84s4n1",
+      "displayName": "Chaoliuzhu",
+      "image": "https://avatars.githubusercontent.com/u/207801254?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "9.9.9",
+      "createdAt": 1776728387627,
+      "changelog": "首发版本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cdf86d87e7fa8d9fa0ee847e3f202f8e72535f4f0ec3100b3f33ca65b1ebe04e"
+}

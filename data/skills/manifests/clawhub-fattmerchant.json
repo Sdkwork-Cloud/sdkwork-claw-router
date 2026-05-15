@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36123,
+  "uuid": "skill-clawhub-fattmerchant",
+  "skillKey": "clawhub-fattmerchant",
+  "name": "Fattmerchant",
+  "summary": "Fattmerchant integration. Manage data, records, and automate workflows. Use when the user wants to interact with Fattmerchant data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fattmerchant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Fattmerchant integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Fattmerchant data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fattmerchant@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fattmerchant",
+      "url": "https://clawhub.ai/skills/fattmerchant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fattmerchant",
+    "url": "https://clawhub.ai/skills/fattmerchant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fattmerchant-465bb5d04439cec2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fattmerchant@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-fattmerchant-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8985b7db5ca0bcc038a3e961502da4a424f1596c87be8aabed6420f44d71eca3",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:27:04.031Z"
+}

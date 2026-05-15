@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11062,
+  "uuid": "skill-clawhub-competitor-analysis",
+  "skillKey": "clawhub-competitor-analysis",
+  "name": "Competitor Analysis",
+  "summary": "Analyze competitor SEO/GEO: keywords, content, backlinks, AI citations, traffic share gaps. 竞品分析/竞争对手",
+  "version": "9.9.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitor_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aaron Zhu",
+      "features": [
+        "Analyze competitor SEO/GEO: keywords, content, backlinks, AI citations, traffic share gaps",
+        "竞品分析/竞争对手"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/competitor-analysis@9.9.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139607425?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "competitor-analysis",
+      "url": "https://clawhub.ai/skills/competitor-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitor-analysis",
+    "url": "https://clawhub.ai/skills/competitor-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitor-analysis-a3a3dcf3e25c7c0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/competitor-analysis@9.9.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-competitor-analysis-9.9.5.json",
+      "version": "9.9.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2032904ae02281a4e201ecd0e821e030f8123de5abb9fafd3683f20f7b35d8c6",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T04:05:26.601Z"
+}

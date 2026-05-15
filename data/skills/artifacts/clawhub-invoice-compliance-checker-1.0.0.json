@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/invoice-compliance-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_compliance_checker",
+  "skill": {
+    "id": 38905,
+    "skillKey": "clawhub-invoice-compliance-checker",
+    "name": "Invoice Compliance Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-compliance-checker",
+    "url": "https://clawhub.ai/skills/invoice-compliance-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-compliance-checker-24a6f73dbcc9a03a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides structured analysis, templates, and recommendations to assess invoice compliance with regulations and internal policies without executing transactions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776570345324,
+      "changelog": "Initial release of Invoice Compliance Checker skill.\n\n- Provides structured guidance, templates, and frameworks for invoice compliance.\n- Delivers heuristic, non-executable analysis—no real financial transactions or API access.\n- Returns structured outputs including reports, recommendations, and checklists.\n- Designed to help users assess compliance and improve financial documentation and planning.\n- Intended for informational purposes only; prompts users to consult professionals for actual decisions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7fbe4b5f14917abd98eb05b10a2f8c57e4c9289e8efe4823f43c69a0043f0c73"
+}

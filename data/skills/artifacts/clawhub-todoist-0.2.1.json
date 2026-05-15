@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/todoist@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todoist",
+  "skill": {
+    "id": 8342,
+    "skillKey": "clawhub-todoist",
+    "name": "Todoist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todoist",
+    "url": "https://clawhub.ai/skills/todoist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todoist-282a6dc5066d4725.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage tasks and projects in Todoist. Use when user asks about tasks, to-dos, reminders, or productivity."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mjrussell",
+      "userId": "publishers:mjrussell",
+      "displayName": "Matt Russell",
+      "image": "https://avatars.githubusercontent.com/u/1641895?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 19130,
+      "installsAllTime": 218,
+      "installsCurrent": 209,
+      "stars": 51,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1769577779661,
+      "changelog": "Tweak ordering instructions",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:99a3284f4c7c9fd78b91d1ade622ccccfe89058e6a58ecb7f8884ad2d2b30c01"
+}

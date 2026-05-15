@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10064,
+  "uuid": "skill-clawhub-perry-workspaces",
+  "skillKey": "clawhub-perry-workspaces",
+  "name": "Perry Workspaces",
+  "summary": "Create and manage isolated Docker workspaces on your tailnet with Claude Code and OpenCode pre-installed. Use when working with Perry workspaces, connecting to coding agents, or managing remote development environments.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perry_workspaces",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gricha",
+      "features": [
+        "Create and manage isolated Docker workspaces on your tailnet with Claude Code and OpenCode pre-.",
+        "Use when working with Perry workspaces, connecting to coding agents, or managing remote develop."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/perry-workspaces@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/875316?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "perry-workspaces",
+      "url": "https://clawhub.ai/skills/perry-workspaces"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perry-workspaces",
+    "url": "https://clawhub.ai/skills/perry-workspaces",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perry-workspaces-fef8a3860a3f3eeb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/perry-workspaces@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-perry-workspaces-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:599ed5277ea81db359ba6c2cfec174125ee41012a14f0b44abc3b9506e3a65ca",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-24T00:44:59.748Z"
+}

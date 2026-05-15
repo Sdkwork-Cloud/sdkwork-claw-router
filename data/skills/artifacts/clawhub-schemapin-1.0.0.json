@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/schemapin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.schemapin",
+  "skill": {
+    "id": 18267,
+    "skillKey": "clawhub-schemapin",
+    "name": "SchemaPin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "schemapin",
+    "url": "https://clawhub.ai/skills/schemapin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/schemapin-a99d2f61d8166a2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SchemaPin enables cryptographic signing and verification of tool schemas to prevent tampering using ECDSA P-256, SHA-256, TOFU pinning, and .well-known key d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaschadub",
+      "userId": "publishers:jaschadub",
+      "displayName": "Jascha",
+      "image": "https://avatars.githubusercontent.com/u/768841?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 706,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771137797912,
+      "changelog": "SchemaPin 1.0.0 initial release\n\n- Introduces cross-language libraries (Python, JavaScript, Go, Rust) for cryptographically signing and verifying tool schemas.\n- Prevents schema tampering and \"MCP Rug Pull\" attacks using ECDSA P-256 + SHA-256 signatures and Trust-On-First-Use (TOFU) key pinning.\n- Implements deterministic schema canonicalization and RFC 8615 `.well-known` endpoints for public key discovery.\n- Provides code samples and integration guides for each supported language.\n- Features include revocation documents, trust bundles for offline use, pluggable discovery resolvers, and file-based skill folder signing with manifest support.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0dc55b3689a6809ab793b69d88634f3f865b33e0a70a8e371b58114d3030fd10"
+}

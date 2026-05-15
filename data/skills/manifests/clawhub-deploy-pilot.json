@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27664,
+  "uuid": "skill-clawhub-deploy-pilot",
+  "skillKey": "clawhub-deploy-pilot",
+  "name": "Deploy Pilot",
+  "summary": "Manages the full deploy cycle — build validation, GitHub push, Vercel deployment, and health checks",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deploy_pilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guilherme Favaron",
+      "features": [
+        "Manages the full deploy cycle — build validation, GitHub push, Vercel deployment, and health ch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deploy-pilot@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109181842?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deploy-pilot",
+      "url": "https://clawhub.ai/skills/deploy-pilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deploy-pilot",
+    "url": "https://clawhub.ai/skills/deploy-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deploy-pilot-b7bac127b093bc0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deploy-pilot@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-deploy-pilot-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a1d9a720887e884925979f8dce609a1c0d89d0c541a58a0b3da3cdfdb7d1329",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T01:13:43.289Z"
+}

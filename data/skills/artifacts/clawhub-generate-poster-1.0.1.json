@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generate-poster@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_poster",
+  "skill": {
+    "id": 63961,
+    "skillKey": "clawhub-generate-poster",
+    "name": "Generate Poster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-poster",
+    "url": "https://clawhub.ai/skills/generate-poster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-poster-9d0a3437bd15c15d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 Flyelep API 生成电商产品主图和详情图海报。 当用户要求生成产品图、电商海报、Amazon 商品图、详情页图片时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cnwanj",
+      "userId": "s17993tzs3ppzjat867vqb6nm183w6ez",
+      "displayName": "flyelep",
+      "image": "https://avatars.githubusercontent.com/u/57939552?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775618782940,
+      "changelog": "- 增加了关于 API 密钥安全性和存储的详细安全说明，明确要求密钥仅由用户动态提供，不应硬编码在示例或技能代码中。\n- 补充了 Flyelep 平台地址（https://www.flyelep.cn）及获取密钥的说明。\n- 说明 API 不支持 header 认证，必须在 JSON body 传递 secretKey。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:333d0ab780fbf40ad1ba480116e40b9dab57e967f6db3ac1a0486f4d13f24f7e"
+}

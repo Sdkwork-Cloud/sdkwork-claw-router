@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12512,
+  "uuid": "skill-clawhub-legal-cog",
+  "skillKey": "clawhub-legal-cog",
+  "name": "Legal Cog",
+  "summary": "AI legal document generation powered by CellCog. Contracts, NDAs, terms of service, privacy policies, freelance agreements, employment contracts, compliance...",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_cog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CellCog",
+      "features": [
+        "AI legal document generation powered by CellCog",
+        "Contracts, NDAs, terms of service, privacy policies, freelance agreements, employment contracts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legal-cog@1.0.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14193431?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legal-cog",
+      "url": "https://clawhub.ai/skills/legal-cog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-cog",
+    "url": "https://clawhub.ai/skills/legal-cog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-cog-1f3082d7f82e520f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legal-cog@1.0.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-legal-cog-1.0.11.json",
+      "version": "1.0.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8e61930a5de9068cc9c05f444195ea9f7097ee0075658d0b2fca25e4d6ae33f",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:19:05.991Z"
+}

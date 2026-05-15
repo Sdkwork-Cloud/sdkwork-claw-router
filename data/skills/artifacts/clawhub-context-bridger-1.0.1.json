@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-bridger@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_bridger",
+  "skill": {
+    "id": 38033,
+    "skillKey": "clawhub-context-bridger",
+    "name": "Context Bridge - No more re-explaining things on model change."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-bridger",
+    "url": "https://clawhub.ai/skills/context-bridger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-bridger-92753299983629a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Maintains and transfers context across sessions, models, and time to avoid repeating information on every new interaction or model switch."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "loudmouthedmedia",
+      "userId": "s172jr24nfv7s1fp5w8nc84qtn84acpw",
+      "displayName": "Loud Mouthed Media",
+      "image": "https://avatars.githubusercontent.com/u/7967217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775510750565,
+      "changelog": "- Added .gitignore file to manage untracked files in the repository.\n- Added LICENSE file to clarify project licensing.\n- No changes to functionality or documentation content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:113f4b30f42c8d0be2cf49e9c54ec402f06ba1baeaa7d7d1a61b14ed23f3967b"
+}

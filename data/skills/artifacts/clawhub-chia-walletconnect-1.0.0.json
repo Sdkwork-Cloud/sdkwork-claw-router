@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chia-walletconnect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chia_walletconnect",
+  "skill": {
+    "id": 12386,
+    "skillKey": "clawhub-chia-walletconnect",
+    "name": "Chia WalletConnect - Telegram Verification"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chia-walletconnect",
+    "url": "https://clawhub.ai/skills/chia-walletconnect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chia-walletconnect-410fb4978c1fd719.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Telegram Web App for Chia wallet verification via WalletConnect and Sage. Enables cryptographic proof of wallet ownership through signature verification using MintGarden API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "koba42corp",
+      "userId": "publishers:koba42corp",
+      "displayName": "Koba42Corp",
+      "image": "https://avatars.githubusercontent.com/u/76798369?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1708,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769730633425,
+      "changelog": "Initial release: Telegram Web App for Chia wallet verification via WalletConnect, Sage wallet integration, MintGarden signature verification, CHIP-0002 support, mobile-optimized UI",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:307c3c392e29922b5caad227f7294a2f362a3e2c476c05137df2e1b8b8ff797f"
+}

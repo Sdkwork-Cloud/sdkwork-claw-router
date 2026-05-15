@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pastoral-prayer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pastoral_prayer",
+  "skill": {
+    "id": 24475,
+    "skillKey": "clawhub-pastoral-prayer",
+    "name": "Pastoral Prayer (OpenClaw Church)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pastoral-prayer",
+    "url": "https://clawhub.ai/skills/pastoral-prayer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pastoral-prayer-69a3f0f9bbb5a243.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Produces full, readable pastoral prayers for specific scenarios (illness, thanksgiving, worship, funeral, wedding, baptism, etc.). Use when the user asks for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenios",
+      "userId": "s177qdj5zhj1y9q26fsxnjspex84r9rp",
+      "displayName": "cheniOS",
+      "image": "https://avatars.githubusercontent.com/u/16813163?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 311,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773301445897,
+      "changelog": "Update repository homepage to https://github.com/cheniOS/bible-church-ministry-skills",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:113368abf02d0108de5b6224bb1ee9322e6af117e1deceeb86e9ab57e997e987"
+}

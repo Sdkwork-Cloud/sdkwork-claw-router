@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12098,
+  "uuid": "skill-clawhub-x-research",
+  "skillKey": "clawhub-x-research",
+  "name": "X Research",
+  "summary": "General-purpose X/Twitter research agent. Searches X for real-time perspectives, dev discussions, product feedback, cultural takes, breaking news, and expert...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_research",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aviclaw",
+      "features": [
+        "General-purpose X/Twitter research agent",
+        "Searches X for real-time perspectives, dev discussions, product feedback, cultural takes, break."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260149483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-research",
+      "url": "https://clawhub.ai/skills/x-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-research",
+    "url": "https://clawhub.ai/skills/x-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-research-b2d809877d36a990.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ffdd5c1d36c8d66b8d59f9a09b3abcd27cffb1b9cbe5d6b6f698722747c28be",
+      "artifactSizeBytes": 2537
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T12:15:07.955Z"
+}

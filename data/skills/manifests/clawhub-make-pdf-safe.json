@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30015,
+  "uuid": "skill-clawhub-make-pdf-safe",
+  "skillKey": "clawhub-make-pdf-safe",
+  "name": "Make PDF safe",
+  "summary": "Flatten a PDF into a non-interactive “safe” version by uploading it to the Solutions API, polling until completion, then returning a download URL for the flattened PDF.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.make_pdf_safe",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CrossServiceSolutions",
+      "features": [
+        "Flatten a PDF into a non-interactive “safe” version by uploading it to the Solutions API, polli."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/make-pdf-safe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201191521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "make-pdf-safe",
+      "url": "https://clawhub.ai/skills/make-pdf-safe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "make-pdf-safe",
+    "url": "https://clawhub.ai/skills/make-pdf-safe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/make-pdf-safe-463c4b5a3a5c3d55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/make-pdf-safe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-make-pdf-safe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:008c438295381653b22ccf1b4371653498f6a5cb0218e29266992c586de6ba21",
+      "artifactSizeBytes": 2249
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T02:26:10.341Z"
+}

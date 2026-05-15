@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flyai@1.0.15",
+  "version": "1.0.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyai",
+  "skill": {
+    "id": 9160,
+    "skillKey": "clawhub-flyai",
+    "name": "FlyAI — Travel, Flight & Hotel Search and Booking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyai",
+    "url": "https://clawhub.ai/skills/flyai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyai-dbdfb81732d82223.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search flights, hotels, attractions, concerts, and travel deals with natural language. FlyAI connects to Fliggy MCP for real-time search and booking across h..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yealexchen",
+      "userId": "s176zgp4cryjv5n5n1ycchqdsn83h23z",
+      "displayName": "yealexchen",
+      "image": "https://avatars.githubusercontent.com/u/10083823?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2967,
+      "installsAllTime": 25,
+      "installsCurrent": 25,
+      "stars": 21,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.0.15",
+      "createdAt": 1776770260836,
+      "changelog": "- Bumped version to 1.0.15.\n- Updated display requirements: now mandates that, if `systemMessage` exists in the data, a \"platform hint\" (the value of `systemMessage`) must be shown at the end of the output.\n- Added instruction to always display the platform hint at the end of responses.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af168c546e174c705b403e120944cd62bb58453a76073e009a3f7db13cfa06ef"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jal@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jal",
+  "skill": {
+    "id": 71928,
+    "skillKey": "clawhub-jal",
+    "name": "Jal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jal",
+    "url": "https://clawhub.ai/skills/jal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jal-3b21bb93057d47c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供日本航空（JAL）航班查询、预订、值机、里程管理、升舱和贵宾室服务的全面支持。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776256947491,
+      "changelog": "- 精简并重构了技能说明文档，优化为信息概览格式\n- 增加 summary 字段与 read_when 触发条件，方便检索与调用\n- 以「信息模块」分类聚合重要内容，涵盖历史、业务、全球布局和动态\n- 明确了适用场景，便于用户快速定位用途\n- 删除具体操作与互动调用示例，聚焦品牌资料与背景简介",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5dacefc9ecbdcce7d6f042598ea8433a06427b297bf99a2adf66516edd2b59b0"
+}

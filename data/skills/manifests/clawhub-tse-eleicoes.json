@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57391,
+  "uuid": "skill-clawhub-tse-eleicoes",
+  "skillKey": "clawhub-tse-eleicoes",
+  "name": "TSE Eleições",
+  "summary": "Cliente Python assíncrono para as APIs do TSE (Tribunal Superior Eleitoral). Integra DivulgaCandContas REST (candidatos, eleições, prestação de contas em tem...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tse_eleicoes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Marques",
+      "features": [
+        "Cliente Python assíncrono para as APIs do TSE (Tribunal Superior Eleitoral)",
+        "Integra DivulgaCandContas REST (candidatos, eleições, prestação de contas em tem..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tse-eleicoes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20705440?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tse-eleicoes",
+      "url": "https://clawhub.ai/skills/tse-eleicoes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tse-eleicoes",
+    "url": "https://clawhub.ai/skills/tse-eleicoes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tse-eleicoes-e25f89be0752415b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tse-eleicoes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tse-eleicoes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59c5d74a9be9e5dda504601bfc8e6e235e0560c99a4b3b9deb9816f57616e0c4",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T16:46:57.603Z"
+}

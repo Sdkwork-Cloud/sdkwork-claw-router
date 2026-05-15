@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/algernon-interview@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.algernon_interview",
+  "skill": {
+    "id": 54784,
+    "skillKey": "clawhub-algernon-interview",
+    "name": "Algernon Interview"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "algernon-interview",
+    "url": "https://clawhub.ai/skills/algernon-interview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/algernon-interview-3e9ca96faa782806.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mock technical interview mode for OpenAlgernon. Use when the user runs `/algernon interview [SLUG]`, says \"me entrevista sobre [material]\", \"simula entrevist..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "antoniovfranco",
+      "userId": "publishers:antoniovfranco",
+      "displayName": "Antonio V. Franco",
+      "image": "https://avatars.githubusercontent.com/u/174359210?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773688256368,
+      "changelog": "- Initial release of algernon-interview skill.\n- Enables mock technical interview mode for OpenAlgernon.\n- Simulates a senior AI engineering interviewer with adaptive difficulty, natural follow-up probes, and a scored report at the end.\n- Covers concepts, application, trade-offs, and production questions using material cards from the database.\n- Provides specific, actionable feedback and study recommendations in the final interview report.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4abc0d8719dba2f9d5128ec6ed26b94454b58ba25eb7625101265c831e8fca2b"
+}

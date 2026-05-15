@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/article-tts@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_tts",
+  "skill": {
+    "id": 59232,
+    "skillKey": "clawhub-article-tts",
+    "name": "article-tts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-tts",
+    "url": "https://clawhub.ai/skills/article-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-tts-a9c764fb9828ce93.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "拍照或文字转音频：文章照片 OCR 提取文字，或直接接收文字，生成 Microsoft Edge TTS 语音，支持中英文、自动转写、语速调节、逐句拆分。| Capture article photos (OCR) or plain text, generate natural audio via Edge TT..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "54meteor",
+      "userId": "s17dn8k1gngwjkeqwn38f8t1kd83gzt3",
+      "displayName": "退役前写代码的",
+      "image": "https://avatars.githubusercontent.com/u/3349388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1775458912507,
+      "changelog": "更新飞书语音消息发送说明：推荐使用 feishu-voice-api skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31f1a1ad6d801548d5145e9b953b37ab6524ee099689122964cd2592abfc26f6"
+}

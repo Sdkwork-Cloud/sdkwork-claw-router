@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chaoduanxian-stock@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chaoduanxian_stock",
+  "skill": {
+    "id": 72022,
+    "skillKey": "clawhub-chaoduanxian-stock",
+    "name": "Chaoduanxian Stock"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chaoduanxian-stock",
+    "url": "https://clawhub.ai/skills/chaoduanxian-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chaoduanxian-stock-89b378e3ad2e00a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "超短线炒股策略与知识问答。适用于超短线选股策略讲解、龙头股识别、打板技巧、技术指标分析、情绪周期判断、仓位管理、止盈止损策略等。当用户询问超短线股票交易、短线选股、龙头战法、打板技巧、技术指标、新手入门等问题时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "star-zwc",
+      "userId": "s171q922a92qr3fpdcnjv30zv183hysk",
+      "displayName": "star-zwc",
+      "image": "https://avatars.githubusercontent.com/u/45162316?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774340665081,
+      "changelog": "超短线炒股 v1.0.0\n\n- 首次发布，提供超短线炒股策略与知识问答\n- 涵盖术语解释、技术指标、主流实战选股方法\n- 包含情绪周期判断、仓位管理、止盈止损规则\n- 特设新手避坑指南与实用看盘要点\n- 推荐学习路径，适合新手到进阶用户",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a51f6c350137b88194e5a1a34d4806577ea789cd55acee0fc40bc9402fcb582"
+}

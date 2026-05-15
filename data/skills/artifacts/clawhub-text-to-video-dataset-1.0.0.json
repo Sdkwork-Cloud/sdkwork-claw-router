@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-dataset@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_dataset",
+  "skill": {
+    "id": 43040,
+    "skillKey": "clawhub-text-to-video-dataset",
+    "name": "Text To Video Dataset"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-dataset",
+    "url": "https://clawhub.ai/skills/text-to-video-dataset",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-dataset-aaad13302ecf271b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a CSV file with 500 text prompt and video description pairs into 720p labeled video dataset just by typing what you need. Whether it's creating paired t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776027948461,
+      "changelog": "Initial release of text-to-video-dataset 1.0.0:\n\n- Generate labeled video datasets from CSV prompts and descriptions, supporting 720p output by default.\n- Seamless workflow: upload text/video description pairs, generate, and export MP4 datasets in 2–5 minutes.\n- Automatic backend connection and session management, including free starter credits for new users.\n- Keyword/intent-based action routing for common dataset and export actions.\n- Detailed error handling and format support for common video, audio, and image export types.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a99b75334d8a14270257d42df217643fdbb41dbd15404c553b3eedaf3e7916bc"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-token-saver@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_token_saver",
+  "skill": {
+    "id": 64362,
+    "skillKey": "clawhub-ai-token-saver",
+    "name": "AI 토큰세이버"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-token-saver",
+    "url": "https://clawhub.ai/skills/ai-token-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-token-saver-e4ca6389e70c8b21.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "한국어 특화 Context DB로 AI 토큰 사용량을 최대 96% 절감하며 프롬프트를 최적화하고 메모리 검색을 지원합니다."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dorongss",
+      "userId": "s17585vadf2yee7jh1xrdphs1x83gqys",
+      "displayName": "dorongss",
+      "image": "https://avatars.githubusercontent.com/u/157365330?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774368732405,
+      "changelog": "한국어 형태소 분석 추가 (konlpy)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96d48da195250bbf3944119294dd72756dfec222f95db835de340d83236678e1"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13775,
+  "uuid": "skill-clawhub-exa-full",
+  "skillKey": "clawhub-exa-full",
+  "name": "Exa",
+  "summary": "AI-powered web and code search, content extraction, URL crawling, and asynchronous research with customizable schema and filters using EXA_API_KEY.",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exa_full",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XieShaocong33Ethan",
+      "features": [
+        "AI-powered web and code search, content extraction, URL crawling, and asynchronous research wit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exa-full@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94103263?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exa-full",
+      "url": "https://clawhub.ai/skills/exa-full"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exa-full",
+    "url": "https://clawhub.ai/skills/exa-full",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exa-full-dafdcf2311f3b05f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exa-full@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-exa-full-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:733d86f9ff82e8c21bd671771b7cea000b00f3419f1ca328303ae153b83b5793",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T13:34:45.013Z"
+}

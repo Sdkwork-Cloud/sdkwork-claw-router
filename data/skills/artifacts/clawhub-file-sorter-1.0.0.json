@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-sorter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_sorter",
+  "skill": {
+    "id": 72019,
+    "skillKey": "clawhub-file-sorter",
+    "name": "File Sorter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-sorter",
+    "url": "https://clawhub.ai/skills/file-sorter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-sorter-19f0f9b49a594268.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用文件智能分类工具，支持多种分类规则：类型、大小、日期、关键词等。适用于需要批量整理文件的场景，如下载文件夹整理、照片归档、文档分类等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "utopiabenben",
+      "userId": "s17cnh4v6k2vf1742dfy2z5vj183qz0q",
+      "displayName": "utopiabenben",
+      "image": "https://avatars.githubusercontent.com/u/19267750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 436,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772847193375,
+      "changelog": "File Sorter 1.0.0 – Initial Release\n\n- Supports file sorting by type, size, date, and keywords\n- Offers flexible actions: move, copy, or create symlinks\n- Includes preview mode before execution and undo functionality\n- Allows custom and preset classification rules\n- Provides robust safety features such as auto-backup and operation logs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d467f4534b31ea7009d601d99516766ceaa742d2db2bdb95a92f7864b7440783"
+}

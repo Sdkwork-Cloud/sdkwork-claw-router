@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-panel-figure-assembler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_panel_figure_assembler",
+  "skill": {
+    "id": 53889,
+    "skillKey": "clawhub-multi-panel-figure-assembler",
+    "name": "Multi-panel Figure Assembler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-panel-figure-assembler",
+    "url": "https://clawhub.ai/skills/multi-panel-figure-assembler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-panel-figure-assembler-f5578f718540e74b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assemble 6 sub-figures (A–F) into a high-resolution composite figure with consistent labels, padding, and publication-ready DPI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774835776272,
+      "changelog": "Initial public release: assemble exactly 6 sub-figures (A–F) into a publication-ready composite figure.\n\n- Validates that exactly 6 image panels and an output path are provided; strictly refuses out-of-scope tasks.\n- Supports 2×3 or 3×2 grid layouts, high-DPI output, label font customization, and consistent padding/borders.\n- Wide format compatibility: input PNG/JPEG/TIFF/BMP/GIF, output PNG/JPEG/TIFF.\n- Robust error handling with explicit fallback template and input safety checks.\n- Output is standardized with consistent labels, panel resizing, and publication-ready settings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51401ee9cf2fcb13fcd6df39b01b81ac3e68f9ae0583b6c1f29ab797afcaddb9"
+}

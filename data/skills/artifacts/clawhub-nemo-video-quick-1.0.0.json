@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nemo-video-quick@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nemo_video_quick",
+  "skill": {
+    "id": 55647,
+    "skillKey": "clawhub-nemo-video-quick",
+    "name": "Nemo Video Quick"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nemo-video-quick",
+    "url": "https://clawhub.ai/skills/nemo-video-quick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nemo-video-quick-539b466c620efbe7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim silences, add transitions, and export in under a minute — and get edi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776241372554,
+      "changelog": "- Initial release of Nemo Video Quick for lightning-fast AI video editing.\n- Upload MP4, MOV, AVI, or WebM files up to 500MB and describe your desired edits.\n- Features automatic trimming, transitions, and exports—edited clips delivered in 30–60 seconds.\n- Simple onboarding: connect to backend, get a session, and start editing with 100 free credits (7 days).\n- Flexible commands: handle uploads, exports, credits, and timeline previews with natural prompts.\n- Clear error handling for common issues like file size, format, or token expiration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62b9a9406ba6042402c72669fb8335d0ae5b9b488dc30624c7c8d9bc3daeff1d"
+}

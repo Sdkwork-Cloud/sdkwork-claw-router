@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22906,
+  "uuid": "skill-clawhub-tiktok-video-downloader",
+  "skillKey": "clawhub-tiktok-video-downloader",
+  "name": "TikTok Video Downloader",
+  "summary": "Download TikTok videos without watermark in HD quality. Use when user provides a TikTok video URL and wants to download it, or asks to save/download TikTok c...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_video_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "frankchen622",
+      "features": [
+        "Download TikTok videos without watermark in HD quality",
+        "Use when user provides a TikTok video URL and wants to download it, or asks to save/download Ti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiktok-video-downloader@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/181944805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiktok-video-downloader",
+      "url": "https://clawhub.ai/skills/tiktok-video-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-video-downloader",
+    "url": "https://clawhub.ai/skills/tiktok-video-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-video-downloader-181386d8bddf59a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiktok-video-downloader@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiktok-video-downloader-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49f0c362c8700cf7779546daa8f641a2e3d75fbff5f0077a33d8f290300dfdfc",
+      "artifactSizeBytes": 2095
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T03:10:00.254Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-ssh-manager@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_ssh_manager",
+  "skill": {
+    "id": 11584,
+    "skillKey": "clawhub-mcp-ssh-manager",
+    "name": "MCP SSH Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-ssh-manager",
+    "url": "https://clawhub.ai/skills/mcp-ssh-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-ssh-manager-eb133691cc9c9f9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks to \"run ssh command\", \"execute on server\", \"ssh session\", \"upload file\", \"download file\", \"ssh tunnel\", \"check server status\", \"monitor server\", \"deploy files\", \"backup server\", or needs remote."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imaxtomas",
+      "userId": "s17dhabwhm37e5na8n79h1wh25843gn6",
+      "displayName": "iMaxTomas",
+      "image": "https://avatars.githubusercontent.com/u/47150902?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1955,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1770463776741,
+      "changelog": "- Added attribution at the top of SKILL.md linking to the original mcp-ssh-manager repository and author.\n- Clarified that the skill provides documentation, workflows, and best practices for MCP ssh-manager usage.\n- No changes to functionality or commands; content and usage examples remain the same.\n- Version unchanged in SKILL.md and metadata.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:66251448a1da40f405b2525e386a011776916638860cb609286b268e6421ca1b"
+}

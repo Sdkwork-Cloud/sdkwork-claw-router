@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31660,
+  "uuid": "skill-clawhub-tomba-contact-intelligence",
+  "skillKey": "clawhub-tomba-contact-intelligence",
+  "name": "Tomba Contact Intelligence",
+  "summary": "Use Tomba MCP tools for contact discovery, verification, enrichment, and company research.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tomba_contact_intelligence",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mohamed Benr",
+      "features": [
+        "Use Tomba MCP tools for contact discovery, verification, enrichment, and company research."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tomba-contact-intelligence@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49129795?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tomba-contact-intelligence",
+      "url": "https://clawhub.ai/skills/tomba-contact-intelligence"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tomba-contact-intelligence",
+    "url": "https://clawhub.ai/skills/tomba-contact-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tomba-contact-intelligence-aff7995be5db7d55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tomba-contact-intelligence@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tomba-contact-intelligence-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50f4c946640e4a3637ec098aa56b53c82ed544bd6f307ed2048889145b0f7d39",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T14:30:13.160Z"
+}

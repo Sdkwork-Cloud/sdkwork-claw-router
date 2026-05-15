@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mario@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mario",
+  "skill": {
+    "id": 71523,
+    "skillKey": "clawhub-mario",
+    "name": "Mario"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mario",
+    "url": "https://clawhub.ai/skills/mario",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mario-59195c6c541c8307.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "解析马里奥游戏历史、品牌策略、市场影响及其作为任天堂核心IP的创新与商业模式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 97,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777666117607,
+      "changelog": "Mario skill 1.0.0 – Initial Release\n\n- Provides an in-depth overview of Nintendo’s Mario franchise history and milestones (1981–2024).\n- Explains business model: hardware-software bundling, merchandise, movies, and theme parks.\n- Details Mario’s brand moat: exclusivity, recognition, design philosophy, and cross-media strength.\n- Includes key sales, revenue, IP valuation, and cultural impact data.\n- Shares fun trivia about Mario’s character design and name origin.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:faa3e8077081f82f43982f9457d6e2d936c210619646a260b8ec4adbd1cc560a"
+}

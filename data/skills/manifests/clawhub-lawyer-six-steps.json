@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71978,
+  "uuid": "skill-clawhub-lawyer-six-steps",
+  "skillKey": "clawhub-lawyer-six-steps",
+  "name": "律师办案六步法",
+  "summary": "中国律师办案六步法（事实梳理→法律分析→法理研究→案例检索→裁判规则→结果预判），生成完整案件分析报告。 适用于律师对民商事案件做诉讼分析、要件审查、证据排查、抗辩预判、胜诉率评估。 分简易模式（简单案件）与深度模式（复杂案件）。 触发方式：正式命令 /lawyer-six-steps；自然语言触发词包括「六步法...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lawyer_six_steps",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jack Yang",
+      "features": [
+        "中国律师办案六步法（事实梳理→法律分析→法理研究→案例检索→裁判规则→结果预判），生成完整案件分析报告。 适用于律师对民商事案件做诉讼分析、要件审查、证据排查、抗辩预判、胜诉率评估。 分简易."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lawyer-six-steps@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22113044?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lawyer-six-steps",
+      "url": "https://clawhub.ai/skills/lawyer-six-steps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lawyer-six-steps",
+    "url": "https://clawhub.ai/skills/lawyer-six-steps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lawyer-six-steps-c0e543cb96a93253.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lawyer-six-steps@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-lawyer-six-steps-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8899b135b207a0650f73e425165e18c69e0efcf0ece44053401c5db752d035bd",
+      "artifactSizeBytes": 2219
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T01:50:35.739Z"
+}

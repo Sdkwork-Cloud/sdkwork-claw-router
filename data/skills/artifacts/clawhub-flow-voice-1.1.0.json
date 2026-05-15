@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flow-voice@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flow_voice",
+  "skill": {
+    "id": 50109,
+    "skillKey": "clawhub-flow-voice",
+    "name": "FlowVoice — Clone Any Voice From a Short Audio Sample"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flow-voice",
+    "url": "https://clawhub.ai/skills/flow-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flow-voice-015ff7f0295c7d2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Clone any voice from a short audio sample and generate speech with it. Powered by LuxTTS (150x realtime, local, free, no API key). Use when asked to clone a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "windseeker1111",
+      "userId": "s178gtgtg906gcf61xc9dgxnwx83ghr6",
+      "displayName": "windseeker1111",
+      "image": "https://avatars.githubusercontent.com/u/127914008?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 506,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774249175855,
+      "changelog": "Clone any voice from a short audio sample and generate speech. Powered by LuxTTS (150x realtime, local, free, no API key). Supports wav/mp3 input, 48kHz output. Works on CPU and Apple Silicon MPS.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd6de7dcaf6c38898b99232d8c4527947e58f264b31712925cc901a61ff74ff5"
+}

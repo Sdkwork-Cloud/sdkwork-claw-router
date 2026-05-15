@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70551,
+  "uuid": "skill-clawhub-follow-nowcoder",
+  "skillKey": "clawhub-follow-nowcoder",
+  "name": "follow-nowcoder",
+  "summary": "牛客面经报告生成。搜索牛客网上的面试经验帖，生成结构化面经报告。在用户请求查看面经、准备面试、搜索面试经验时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.follow_nowcoder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "champagne315",
+      "features": [
+        "牛客面经报告生成。搜索牛客网上的面试经验帖，生成结构化面经报告。在用户请求查看面经、准备面试、搜索面试经验时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/follow-nowcoder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201896687?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "follow-nowcoder",
+      "url": "https://clawhub.ai/skills/follow-nowcoder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "follow-nowcoder",
+    "url": "https://clawhub.ai/skills/follow-nowcoder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/follow-nowcoder-9cb17a0216942d88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/follow-nowcoder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-follow-nowcoder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4bb465eb23347511674a97b5f064ce9ae451b853cbee1a5ca5fac870addc903b",
+      "artifactSizeBytes": 2420
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T03:28:41.238Z"
+}

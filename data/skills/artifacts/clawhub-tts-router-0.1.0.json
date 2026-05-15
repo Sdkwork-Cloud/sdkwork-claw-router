@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tts-router@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tts_router",
+  "skill": {
+    "id": 51014,
+    "skillKey": "clawhub-tts-router",
+    "name": "Tts Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tts-router",
+    "url": "https://clawhub.ai/skills/tts-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tts-router-bab7bd2c00a413f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local TTS router for Apple Silicon — pull models, serve OpenAI-compatible API, synthesize speech, clone voices. Use when the user asks to \"generate speech\",..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hrhrng",
+      "userId": "publishers:hrhrng",
+      "displayName": "hrhrng",
+      "image": "https://avatars.githubusercontent.com/u/56460657?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773147833199,
+      "changelog": "- Initial public release of tts-router for Apple Silicon.\n- Provides a CLI to manage, download, and serve multiple local TTS models supporting OpenAI-compatible APIs.\n- Supports text-to-speech synthesis, voice cloning, and serves APIs for integration.\n- Includes commands to list models, pull models from HuggingFace, run a TTS server, and generate speech from the CLI.\n- Offers multiple ready-to-use TTS models with features like multi-language, emotion control, and voice cloning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c7e45584459d823b4447bf723e786ab322dcc47610d5e383b58acf09fdb3587"
+}

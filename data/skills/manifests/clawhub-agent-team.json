@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66739,
+  "uuid": "skill-clawhub-agent-team",
+  "skillKey": "clawhub-agent-team",
+  "name": "Agent Team",
+  "summary": "管理和调用具备不同身份和专用模型的多子 Agent 团队，支持任务执行和交互式对话两种模式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_team",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "johnson",
+      "features": [
+        "管理和调用具备不同身份和专用模型的多子 Agent 团队，支持任务执行和交互式对话两种模式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-team@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2647732?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-team",
+      "url": "https://clawhub.ai/skills/agent-team"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-team",
+    "url": "https://clawhub.ai/skills/agent-team",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-team-42db677f1a7f95fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-team@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-team-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb04ffb33db316d4b79b28cab7988fb49efdba10ee97452251d2c3cd6bce7362",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T07:02:54.923Z"
+}

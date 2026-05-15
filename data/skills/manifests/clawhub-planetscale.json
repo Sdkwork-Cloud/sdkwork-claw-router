@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36051,
+  "uuid": "skill-clawhub-planetscale",
+  "skillKey": "clawhub-planetscale",
+  "name": "Planetscale",
+  "summary": "PlanetScale integration. Manage data, records, and automate workflows. Use when the user wants to interact with PlanetScale data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.planetscale",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "PlanetScale integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with PlanetScale data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/planetscale@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "planetscale",
+      "url": "https://clawhub.ai/skills/planetscale"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "planetscale",
+    "url": "https://clawhub.ai/skills/planetscale",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/planetscale-8c6dd2663599bee2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/planetscale@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-planetscale-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a9f02b6bb3b37a3e0944164e5e641c7af66af856e6977b9ffd10db8321c283f",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:24:54.530Z"
+}

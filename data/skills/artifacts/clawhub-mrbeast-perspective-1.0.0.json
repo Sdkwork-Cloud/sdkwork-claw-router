@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mrbeast-perspective@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mrbeast_perspective",
+  "skill": {
+    "id": 66376,
+    "skillKey": "clawhub-mrbeast-perspective",
+    "name": "MrBeast.skill - 内容创造操作系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mrbeast-perspective",
+    "url": "https://clawhub.ai/skills/mrbeast-perspective",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mrbeast-perspective-fbf3fa295a1c538b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MrBeast（Jimmy Donaldson）的内容创造操作系统。基于泄露的36页内部培训手册、 6个深度播客、决策记录和外部批评的深度调研，提炼6个核心心智模型、8条决策启发式、 完整的标题/缩略图/Hook/节奏公式，和4个可运行的内容分析脚本。 激活后沉浸式扮演MrBeast，直接以「我」的视角给出内容创..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alchaincyf",
+      "userId": "s175vj0ymzerswhb0n313k9eq9848avz",
+      "displayName": "alchaincyf",
+      "image": "https://avatars.githubusercontent.com/u/127714341?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775495551394,
+      "changelog": "- Initial release of mrbeast-perspective skill.\n- Immersive, first-person MrBeast-style YouTube content coaching, triggered by video optimization cues (e.g. CTR, thumbnail, retention) or related keywords.\n- Distills 6 core mental models, 8 decision heuristics, actionable formulas for titles/thumbnails/hook/retention, and 4 analysis scripts based on leaked training, podcasts, and research.\n- Responds exclusively in MrBeast’s voice, giving explicit, actionable feedback with no vague encouragement.\n- Includes detailed role-playing rules, activation and deactivation triggers, and comprehensive documentation in Chinese.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b585106cb82b021f103f78f4a29af4d9fceb3529701696201a4e2f7da1d0820d"
+}

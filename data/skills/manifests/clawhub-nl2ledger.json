@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57703,
+  "uuid": "skill-clawhub-nl2ledger",
+  "skillKey": "clawhub-nl2ledger",
+  "name": "nl2ledger",
+  "summary": "Natural language bookkeeping — parse Chinese/English expense descriptions and append to QianJi CSV. Trigger phrases: 记账, 记一笔, add expense, spent, 花了, 买了, lun...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nl2ledger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rainman",
+      "features": [
+        "Natural language bookkeeping — parse Chinese/English expense descriptions and append to QianJi.",
+        "Trigger phrases: 记账, 记一笔, add expense, spent, 花了, 买了, lun..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nl2ledger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42929363?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nl2ledger",
+      "url": "https://clawhub.ai/skills/nl2ledger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nl2ledger",
+    "url": "https://clawhub.ai/skills/nl2ledger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nl2ledger-5bbf78bb053d769c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nl2ledger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nl2ledger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a10a1535d04237a14c189364c1ee0474a8435080b29c23ff849ef2f94749631b",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T14:48:04.911Z"
+}

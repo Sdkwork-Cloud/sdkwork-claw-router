@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73501,
+  "uuid": "skill-clawhub-requirement-interpreter",
+  "skillKey": "clawhub-requirement-interpreter",
+  "name": "智能需求解读器",
+  "summary": "智能需求解读技能，通过多级分类和案例匹配帮助用户准确表达需求，并提供标准化交付物清单",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.requirement_interpreter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samwang-001",
+      "features": [
+        "智能需求解读技能，通过多级分类和案例匹配帮助用户准确表达需求，并提供标准化交付物清单"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/requirement-interpreter@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74401854?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "requirement-interpreter",
+      "url": "https://clawhub.ai/skills/requirement-interpreter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "requirement-interpreter",
+    "url": "https://clawhub.ai/skills/requirement-interpreter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/requirement-interpreter-fc820155a8958033.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/requirement-interpreter@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-requirement-interpreter-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc475e5458243264cbb58a1d5f89c66638d6af63cf851add2bd4fa8801835840",
+      "artifactSizeBytes": 2047
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T02:55:51.844Z"
+}

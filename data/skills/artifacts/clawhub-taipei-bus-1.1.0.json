@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taipei-bus@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taipei_bus",
+  "skill": {
+    "id": 65043,
+    "skillKey": "clawhub-taipei-bus",
+    "name": "Taipei Bus & Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taipei-bus",
+    "url": "https://clawhub.ai/skills/taipei-bus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taipei-bus-1a350b0fa54165ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查詢台北市、新北市公車及公路客運動態資訊、路線圖及預估到站時間。當用戶詢問公車動態、特定公車路線、或提供台北市公車動態網址（pda5284.gov.taipei）或公路客運網址（taiwanbus.tw）時使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dabendan2",
+      "userId": "s1789t7e7ajagbxak0gx4bha01848hp9",
+      "displayName": "dabendan",
+      "image": "https://avatars.githubusercontent.com/u/9552477?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 313,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775391596662,
+      "changelog": "Add 1962/taiwanbus.tw support and enforce data precision",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:407ee974097fa8ca3f5b1ef9171a9aac7eac7386aad64e21f768b1b43848a423"
+}

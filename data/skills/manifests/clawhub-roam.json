@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24804,
+  "uuid": "skill-clawhub-roam",
+  "skillKey": "clawhub-roam",
+  "name": "Roam HQ",
+  "summary": "Interact with Roam HQ via REST API. Search meetings, get transcripts, prompt transcripts with AI, send messages, and manage groups. Use when the user asks ab...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.roam",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rob Figueiredo",
+      "features": [
+        "Interact with Roam HQ via REST API",
+        "Search meetings, get transcripts, prompt transcripts with AI, send messages, and manage groups",
+        "Use when the user asks ab..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/roam@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/536325?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "roam",
+      "url": "https://clawhub.ai/skills/roam"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "roam",
+    "url": "https://clawhub.ai/skills/roam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/roam-01ff033d051e5a40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/roam@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-roam-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:402c158596796e0988349406e4f20fe5dd07adeebda5bdaa0e47c8d27f3936ba",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T00:25:54.990Z"
+}

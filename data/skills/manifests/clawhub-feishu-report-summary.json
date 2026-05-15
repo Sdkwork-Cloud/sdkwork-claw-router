@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51055,
+  "uuid": "skill-clawhub-feishu-report-summary",
+  "skillKey": "clawhub-feishu-report-summary",
+  "name": "Feishu Report Summary",
+  "summary": "Read Feishu work-report data through the Report v1 API and turn it into daily or weekly summaries. Use when Codex needs to work with `oa.feishu.cn/report/......",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_report_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "taype",
+      "features": [
+        "Read Feishu work-report data through the Report v1 API and turn it into daily or weekly summari.",
+        "Use when Codex needs to work with `oa.feishu.cn/report/......"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-report-summary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117689950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-report-summary",
+      "url": "https://clawhub.ai/skills/feishu-report-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-report-summary",
+    "url": "https://clawhub.ai/skills/feishu-report-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-report-summary-341a8599fdbebf55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-report-summary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-report-summary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b1f56511235201dfeb40732af6cc984509d0af32a5f132b35a289fb24da11da",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T13:14:30.043Z"
+}

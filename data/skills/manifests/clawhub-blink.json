@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45437,
+  "uuid": "skill-clawhub-blink",
+  "skillKey": "clawhub-blink",
+  "name": "Blink",
+  "summary": "Bitcoin Lightning wallet for agents — balances, invoices, payments, BTC/USD swaps, QR codes, price conversion, transaction history, and L402 auto-pay client...",
+  "version": "1.7.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blink",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pretyflaco",
+      "features": [
+        "Bitcoin Lightning wallet for agents — balances, invoices, payments, BTC/USD swaps, QR codes, pr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blink@1.7.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32958103?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blink",
+      "url": "https://clawhub.ai/skills/blink"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blink",
+    "url": "https://clawhub.ai/skills/blink",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blink-e14a51fded1fb9b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blink@1.7.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-blink-1.7.2.json",
+      "version": "1.7.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a2721aca0cef59e8738cbebf80404af0c759566f01aa74ad02002919b71141a",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T16:33:25.560Z"
+}

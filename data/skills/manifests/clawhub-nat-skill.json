@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53801,
+  "uuid": "skill-clawhub-nat-skill",
+  "skillKey": "clawhub-nat-skill",
+  "name": "NAT",
+  "summary": "NVIDIA NeMo Agent Toolkit (NAT) — install, create workflows, add tools, run agents, evaluate performance, and publish as A2A/MCP servers. Use when: (1) insta...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nat_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Saurav",
+      "features": [
+        "NVIDIA NeMo Agent Toolkit (NAT) — install, create workflows, add tools, run agents, evaluate pe.",
+        "Use when: (1) insta..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nat-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/339485?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nat-skill",
+      "url": "https://clawhub.ai/skills/nat-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nat-skill",
+    "url": "https://clawhub.ai/skills/nat-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nat-skill-b5320fe66c64812d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nat-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nat-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19b15eda3bb82eb7b95116f04efd479ad039f3e78d0a4e733c00e469783d2b58",
+      "artifactSizeBytes": 2379
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T06:53:44.586Z"
+}

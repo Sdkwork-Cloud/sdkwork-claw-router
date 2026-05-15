@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glmv-web-replication@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glmv_web_replication",
+  "skill": {
+    "id": 50452,
+    "skillKey": "clawhub-glmv-web-replication",
+    "name": "web-replication"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glmv-web-replication",
+    "url": "https://clawhub.ai/skills/glmv-web-replication",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glmv-web-replication-7660b12419d011c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Frontend visual replication skill. Explores a target website’s publicly visible pages via Playwright MCP or agent-browser, captures screenshots and layout in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zai-org",
+      "userId": "s173sh1fb6z7xwvxgf5n3z6sdd83sddy",
+      "displayName": "zai-org",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 492,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774843073951,
+      "changelog": "**Major clarification and tightening of scope, focusing on lawful frontend visual replication only.**\n\n- Added a mandatory authorization check: user must confirm ownership or explicit permission to replicate the target website, or the skill will not proceed.\n- Clarified that the skill only replicates the frontend visual presentation (layout, styling, navigation, public assets); backend logic, authentication, and non-public content are explicitly out of scope.\n- Introduced strict data handling guidelines: never scrape behind login, never collect credentials, and always respect copyright and robots.txt.\n- Updated documentation and workflow to emphasize static/mockup frontend outputs intended for lawful and reference use only.\n- Detailed included vs. excluded features for user clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cfa43eb913db49d32e8a33da78b8d1ad58c07bdccf66b32613296c8cd8c03504"
+}

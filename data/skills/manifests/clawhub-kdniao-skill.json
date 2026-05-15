@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72916,
+  "uuid": "skill-clawhub-kdniao-skill",
+  "skillKey": "clawhub-kdniao-skill",
+  "name": "批量快递查询-快递鸟",
+  "summary": "支持通过快递鸟API实时查询运单轨迹信息；当用户需要查询快递物流状态、追踪运单进度或获取包裹配送详情时使用",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kdniao_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kdnaio",
+      "features": [
+        "支持通过快递鸟API实时查询运单轨迹信息；当用户需要查询快递物流状态、追踪运单进度或获取包裹配送详情时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kdniao-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73518996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kdniao-skill",
+      "url": "https://clawhub.ai/skills/kdniao-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kdniao-skill",
+    "url": "https://clawhub.ai/skills/kdniao-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kdniao-skill-b25eca0d3cc80526.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kdniao-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kdniao-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66e157f28cf7eb87ca7bcdb927d9b6bffd5c54021011e34a9fe7456161f48c53",
+      "artifactSizeBytes": 2443
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T08:02:35.966Z"
+}

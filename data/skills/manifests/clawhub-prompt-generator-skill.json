@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71433,
+  "uuid": "skill-clawhub-prompt-generator-skill",
+  "skillKey": "clawhub-prompt-generator-skill",
+  "name": "提示词生成器",
+  "summary": "基于100+验证模板生成高质量AI提示词。当用户想要创建、优化或改进ChatGPT、Claude等AI工具的提示词时使用此技能。自动选择最佳模板类别，填充占位符，提供可直接使用的提示词。支持写作、绘图、编程、学习、办公等多种场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_generator_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "newtry",
+      "features": [
+        "基于100+验证模板生成高质量AI提示词。当用户想要创建、优化或改进ChatGPT、Claude等AI工具的提示词时使用此技能。自动选择最佳模板类别，填充占位符，提供可直接使用的提示词。支持."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-generator-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4672340?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-generator-skill",
+      "url": "https://clawhub.ai/skills/prompt-generator-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-generator-skill",
+    "url": "https://clawhub.ai/skills/prompt-generator-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-generator-skill-94365c88a4189f9d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-generator-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-generator-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3cecc4f50ac31070abbc5785ab8ac220da293c0cc8e4c88edb523cea1d7e63a",
+      "artifactSizeBytes": 2664
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T13:55:48.303Z"
+}

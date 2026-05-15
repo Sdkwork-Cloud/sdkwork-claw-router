@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44756,
+  "uuid": "skill-clawhub-git-factory",
+  "skillKey": "clawhub-git-factory",
+  "name": "Git Factory",
+  "summary": "Provision and manage isolated git worktrees for individual coding tasks, enabling parallel branches and clean PR workflows without merge conflicts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_factory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Spaztazim",
+      "features": [
+        "Provision and manage isolated git worktrees for individual coding tasks, enabling parallel bran."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-factory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4032085?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-factory",
+      "url": "https://clawhub.ai/skills/git-factory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-factory",
+    "url": "https://clawhub.ai/skills/git-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-factory-18e057aba72d6205.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-factory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-factory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3cc368ab0a3548c44c6fca001d32b146d6e236f1da7f02a5f2f59b801234a1d",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T20:41:43.338Z"
+}

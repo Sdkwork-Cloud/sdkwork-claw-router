@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slack-hub-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slack_hub_skill",
+  "skill": {
+    "id": 12239,
+    "skillKey": "clawhub-slack-hub-skill",
+    "name": "Slack Hub Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slack-hub-skill",
+    "url": "https://clawhub.ai/skills/slack-hub-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slack-hub-skill-4826d64ce60f8f20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send messages, reply in threads, search workspace content, and list public channels using Slack Bot integration with rate-limit handling."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "icyfrosty",
+      "userId": "publishers:icyfrosty",
+      "displayName": "IcyFrosty",
+      "image": "https://avatars.githubusercontent.com/u/1076320?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1762,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769906671579,
+      "changelog": "Initial release of Slack Hub Skill for OpenClaw:\n\n- Professional Slack integration with messaging, threading, and workspace-wide search.\n- Send messages to channels or users, including threaded replies.\n- Search messages or files across the workspace.\n- List all public channels in the workspace.\n- Handles Slack API rate limiting for high-volume environments.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:47bedda753668384f2b1a91353b1c5433862600f71b6a3a0d971bd105ca45e06"
+}

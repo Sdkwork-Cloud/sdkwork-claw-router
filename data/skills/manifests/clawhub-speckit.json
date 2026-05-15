@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45537,
+  "uuid": "skill-clawhub-speckit",
+  "skillKey": "clawhub-speckit",
+  "name": "Spec-Kit SDD",
+  "summary": "GitHub Spec-Kit integration for Spec-Driven Development (SDD). Use when: (1) initializing a new Spec-Kit project, (2) creating/updating project constitution,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.speckit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "James W",
+      "features": [
+        "GitHub Spec-Kit integration for Spec-Driven Development (SDD)",
+        "Use when: (1) initializing a new Spec-Kit project, (2) creating/updating project constitution,.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/speckit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4754970?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "speckit",
+      "url": "https://clawhub.ai/skills/speckit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "speckit",
+    "url": "https://clawhub.ai/skills/speckit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/speckit-4e5d7900362d067f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/speckit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-speckit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df516e9c5dca4aaceab66cee744cb73ec168cb5f16a4f81034dd210d6279d0d7",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T22:34:15.377Z"
+}

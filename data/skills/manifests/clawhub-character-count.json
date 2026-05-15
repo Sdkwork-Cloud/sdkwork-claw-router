@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25530,
+  "uuid": "skill-clawhub-character-count",
+  "skillKey": "clawhub-character-count",
+  "name": "Character Count",
+  "summary": "Count string length deterministically for text with hard limits. Use this skill when a post, reply, caption, commit message, or other text must stay within a...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.character_count",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Evan",
+      "features": [
+        "Count string length deterministically for text with hard limits",
+        "Use this skill when a post, reply, caption, commit message, or other text must stay within a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/character-count@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262609517?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "character-count",
+      "url": "https://clawhub.ai/skills/character-count"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "character-count",
+    "url": "https://clawhub.ai/skills/character-count",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/character-count-186b34e5b34287bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/character-count@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-character-count-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4ef110943ca27eaf406a930233d6c9b94b622e9ce774b612e5c62e440f9168a",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T14:26:52.529Z"
+}

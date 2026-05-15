@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61384,
+  "uuid": "skill-clawhub-xiaodu-senior-night-assist-official",
+  "skillKey": "clawhub-xiaodu-senior-night-assist-official",
+  "name": "xiaodu-senior-night-assist-official",
+  "summary": "基于已安装的 xiaodu-control-official 编排老人夜间短时起身的安全辅助场景。当用户说“夜里起夜”“我要去卫生间”“帮我开一下夜灯”“夜间辅助模式”这类请求时使用。这个 skill 会复用 xiaodu-control-official 的现有脚本，对小度智能屏和小度 IoT 设备执行 sce...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaodu_senior_night_assist_official",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dueros-mcp",
+      "features": [
+        "基于已安装的 xiaodu-control-official 编排老人夜间短时起身的安全辅助场景。当用户说“夜里起夜”“我要去卫生间”“帮我开一下夜灯”“夜间辅助模式”这类请求时使用。这个."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaodu-senior-night-assist-official@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218767264?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaodu-senior-night-assist-official",
+      "url": "https://clawhub.ai/skills/xiaodu-senior-night-assist-official"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaodu-senior-night-assist-official",
+    "url": "https://clawhub.ai/skills/xiaodu-senior-night-assist-official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaodu-senior-night-assist-official-0b0a5c3091fe0d34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaodu-senior-night-assist-official@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaodu-senior-night-assist-official-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be653d971700cd68f9914e5f87c88049878475c296f485bdce4656c436be2c5f",
+      "artifactSizeBytes": 2219
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T08:42:33.594Z"
+}

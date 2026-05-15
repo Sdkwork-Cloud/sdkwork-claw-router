@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33172,
+  "uuid": "skill-clawhub-product-recommender",
+  "skillKey": "clawhub-product-recommender",
+  "name": "Product Recommender",
+  "summary": "Intelligent product recommendation engine for retail digital employees. Recommends products based on customer needs, budget, recipient, occasion, preferences...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_recommender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangwei-frank",
+      "features": [
+        "Intelligent product recommendation engine for retail digital employees",
+        "Recommends products based on customer needs, budget, recipient, occasion, preferences..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-recommender@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166581472?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-recommender",
+      "url": "https://clawhub.ai/skills/product-recommender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-recommender",
+    "url": "https://clawhub.ai/skills/product-recommender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-recommender-c34bb6a4b02e09a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-recommender@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-recommender-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5424ac2252d320cf12550b57dede8871f158306c3766c61522ad481bc49c0001",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:50:25.719Z"
+}

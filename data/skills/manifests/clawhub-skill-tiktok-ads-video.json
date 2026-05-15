@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22371,
+  "uuid": "skill-clawhub-skill-tiktok-ads-video",
+  "skillKey": "clawhub-skill-tiktok-ads-video",
+  "name": "Skill Tiktok Ads Video",
+  "summary": "Generate TikTok-style short-form ad videos with animated pill captions. Takes a base MP4 (Veo/Runway/Kling), overlays animated captions with fade in/out, mix...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_tiktok_ads_video",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zero2Ai",
+      "features": [
+        "Generate TikTok-style short-form ad videos with animated pill captions",
+        "Takes a base MP4 (Veo/Runway/Kling), overlays animated captions with fade in/out, mix..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-tiktok-ads-video@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244362887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-tiktok-ads-video",
+      "url": "https://clawhub.ai/skills/skill-tiktok-ads-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-tiktok-ads-video",
+    "url": "https://clawhub.ai/skills/skill-tiktok-ads-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-tiktok-ads-video-33d8b90af300a61e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-tiktok-ads-video@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-tiktok-ads-video-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ced9382a4086631f84a390f1f5907833426be426f1d05592477d9279afff1ec",
+      "artifactSizeBytes": 2206
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T01:48:45.423Z"
+}

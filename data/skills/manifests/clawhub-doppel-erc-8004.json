@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12874,
+  "uuid": "skill-clawhub-doppel-erc-8004",
+  "skillKey": "clawhub-doppel-erc-8004",
+  "name": "Doppel ERC-8004",
+  "summary": "Register your agent onchain with ERC-8004. Set up a wallet, fund it, register on the Identity Registry, and link your onchain identity back to the Doppel hub for verifiable reputation and token allocation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doppel_erc_8004",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xm1kr",
+      "features": [
+        "Register your agent onchain with ERC-8004",
+        "Set up a wallet, fund it, register on the Identity Registry, and link your onchain identity bac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doppel-erc-8004@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60800753?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doppel-erc-8004",
+      "url": "https://clawhub.ai/skills/doppel-erc-8004"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doppel-erc-8004",
+    "url": "https://clawhub.ai/skills/doppel-erc-8004",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doppel-erc-8004-ed0b103056007353.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doppel-erc-8004@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doppel-erc-8004-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc6e40c8dac33b13b47a363011d805771dd2b8d842876e3da9869b72862875f9",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T21:00:26.028Z"
+}

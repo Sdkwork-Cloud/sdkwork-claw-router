@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fishaudio-tts@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fishaudio_tts",
+  "skill": {
+    "id": 25265,
+    "skillKey": "clawhub-fishaudio-tts",
+    "name": "fishaudio-tts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fishaudio-tts",
+    "url": "https://clawhub.ai/skills/fishaudio-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fishaudio-tts-329bfe88ac12d609.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Text-to-Speech using FishAudio (fish.audio), generates natural human-like voice with great emotional expression."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "izorro",
+      "userId": "s17dr4z1ye9gwwz9amq3pfvbxn83kd60",
+      "displayName": "zorro",
+      "image": "https://avatars.githubusercontent.com/u/31155186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773223453092,
+      "changelog": "Initial release of fishaudio-tts.\n\n- Provides high-quality text-to-speech conversion using FishAudio API.\n- Generates natural, emotionally expressive human-like voices.\n- Supports multiple voice options (female, male, neutral).\n- Outputs directly to MP3 format.\n- Easy setup with API key and Python requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ac0befe0c9f974da9e9bda20bc13c89c52c8768827ea98b407a7cebd187eadd"
+}

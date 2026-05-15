@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cold-email-prospecting-agent@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cold_email_prospecting_agent",
+  "skill": {
+    "id": 16226,
+    "skillKey": "clawhub-cold-email-prospecting-agent",
+    "name": "Cold Email Prospecting Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cold-email-prospecting-agent",
+    "url": "https://clawhub.ai/skills/cold-email-prospecting-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cold-email-prospecting-agent-1402931fd5fde593.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find work or personal emails, mobile phone numbers, and verify email validity using LinkedIn URLs or names with company domains for sales outreach."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dotcomcj2",
+      "userId": "publishers:dotcomcj2",
+      "displayName": "revoscale",
+      "image": "https://avatars.githubusercontent.com/u/124210001?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 691,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1771867387930,
+      "changelog": "- Updated ClawHub installation command to use the repository slug: `clawhub install dotcomcj2/cold-email-prospecting-agent`\n- No other functional, behavioral, or documentation changes detected",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:25ae8e388b3b16ea92ba6a80fcbf7d5b10b656f624a1b49af3c8bafc33c8a194"
+}

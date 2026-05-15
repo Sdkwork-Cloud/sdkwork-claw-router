@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29053,
+  "uuid": "skill-clawhub-justoneapi-douyin",
+  "skillKey": "clawhub-justoneapi-douyin",
+  "name": "Douyin (TikTok China) API",
+  "summary": "Analyze Douyin (TikTok China) workflows with JustOneAPI, including user Profile, user Published Videos, and video Details across 8 operations.",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_douyin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Analyze Douyin (TikTok China) workflows with JustOneAPI, including user Profile, user Published."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-douyin@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-douyin",
+      "url": "https://clawhub.ai/skills/justoneapi-douyin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-douyin",
+    "url": "https://clawhub.ai/skills/justoneapi-douyin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-douyin-513ba8801e5182d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-douyin@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-douyin-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9456479a98608a5a6f89fb175d4c7b09c3d55940fdc9e550790c2aa11c85cd3",
+      "artifactSizeBytes": 2304
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:07:11.018Z"
+}

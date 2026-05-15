@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17649,
+  "uuid": "skill-clawhub-felo-web-fetch",
+  "skillKey": "clawhub-felo-web-fetch",
+  "name": "Felo Web Fetch",
+  "summary": "Fetch web page content from a URL using Felo Web Extract API. Use when users ask to scrape/capture/fetch webpage content, get article text from URL, convert...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.felo_web_fetch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangzhiming",
+      "features": [
+        "Fetch web page content from a URL using Felo Web Extract API",
+        "Use when users ask to scrape/capture/fetch webpage content, get article text from URL, convert.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/felo-web-fetch@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48944224?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "felo-web-fetch",
+      "url": "https://clawhub.ai/skills/felo-web-fetch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "felo-web-fetch",
+    "url": "https://clawhub.ai/skills/felo-web-fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/felo-web-fetch-b6c38bcc9a0c3a11.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/felo-web-fetch@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-felo-web-fetch-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc8e2bfed8ce33279aba3cf4977c5ef8727e9664b9aec1ae3fbaf9ea87b6fc76",
+      "artifactSizeBytes": 1886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T13:45:07.498Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ml-training@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ml_training",
+  "skill": {
+    "id": 36371,
+    "skillKey": "clawhub-ml-training",
+    "name": "ML Training"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ml-training",
+    "url": "https://clawhub.ai/skills/ml-training",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ml-training-3939283794785d5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Train, evaluate, tune, and deploy supervised, unsupervised, and transfer learning models using PyTorch, TensorFlow, and scikit-learn on Nautilus."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chunxiaoxx",
+      "userId": "s174kj0y83kanfteqq7p3v1sbx8408r8",
+      "displayName": "chunxiaoxx",
+      "image": "https://avatars.githubusercontent.com/u/253869585?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775059836845,
+      "changelog": "Initial release: machine learning model training, evaluation, and deployment for Nautilus agents",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:704fea5ba984f50e0c5ecc27cdd08d408dc8cca3acc318fc47f8f3e6f59ff3d5"
+}

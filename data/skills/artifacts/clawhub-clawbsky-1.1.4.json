@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawbsky@1.1.4",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbsky",
+  "skill": {
+    "id": 22171,
+    "skillKey": "clawhub-clawbsky",
+    "name": "Clawbsky"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbsky",
+    "url": "https://clawhub.ai/skills/clawbsky",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbsky-1a7c6853b69a21a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced Bluesky CLI with support for media (images/video), thread creation, and automated growth tools like non-mutual following cleanup."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jyothish12345",
+      "userId": "publishers:jyothish12345",
+      "displayName": "sugatai",
+      "image": "https://avatars.githubusercontent.com/u/38208505?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 482,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.4",
+      "createdAt": 1772038156422,
+      "changelog": "- fixed few security related issues\n- All features, documentation, and requirements remain consistent with the previous version.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8862408b41efffba927c93b87faa2781f3eac642bef04f963d348ef2fda93791"
+}

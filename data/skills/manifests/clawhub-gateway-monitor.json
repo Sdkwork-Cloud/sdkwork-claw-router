@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23480,
+  "uuid": "skill-clawhub-gateway-monitor",
+  "skillKey": "clawhub-gateway-monitor",
+  "name": "Gateway Monitor",
+  "summary": "Provides real-time monitoring, log search, service status, alerts, and one-click config restore for OpenClaw Gateway and related services.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gateway_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yes999zc",
+      "features": [
+        "Provides real-time monitoring, log search, service status, alerts, and one-click config restore."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gateway-monitor@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127926029?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gateway-monitor",
+      "url": "https://clawhub.ai/skills/gateway-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gateway-monitor",
+    "url": "https://clawhub.ai/skills/gateway-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gateway-monitor-468b0f772c53624b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gateway-monitor@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-gateway-monitor-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f2bf713acc3f2cd92a5ca6be4af6e038ceefa28fc26443133c3c4956214ede0",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T09:03:50.286Z"
+}

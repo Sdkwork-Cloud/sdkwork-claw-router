@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-automation-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_automation_skill",
+  "skill": {
+    "id": 42941,
+    "skillKey": "clawhub-browser-automation-skill",
+    "name": "Browser Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-automation-skill",
+    "url": "https://clawhub.ai/skills/browser-automation-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-automation-skill-5fef02e80ae10dc7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Browser Relay when the user wants to control a real signed-in Chrome or Chromium browser through the published browser-relay-cli package and unpacked Bro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jasoncodespace",
+      "userId": "s17bkj506r10zrrgqpv69nv5ns84skh6",
+      "displayName": "Jason",
+      "image": "https://avatars.githubusercontent.com/u/47563854?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776161652315,
+      "changelog": "- Major rewrite: Skill rebranded from generic \"browser\" automation to \"browser-relay\" focused on local, real Chrome control via Browser Relay CLI and extension.\n- Updated usage guidance to require the user to run browser-relay-cli and load the unpacked extension.\n- Clarified intended use cases: controlling a signed-in local browser, screenshot-guided actions, tab reuse, and working around unreliable DOM selectors.\n- Explicitly cautioned against using the skill for stealth automation, CAPTCHA bypass, or anti-bot circumvention.\n- Deprecated old setup and command references; added commands summary in references/commands.md.\n- Removed sample, setup, and legacy reference/example documentation to match new workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0861ae3951c1c6ae6960fe7839b52b9886cf5004ba08bfc46061c5ce23e6a8d"
+}

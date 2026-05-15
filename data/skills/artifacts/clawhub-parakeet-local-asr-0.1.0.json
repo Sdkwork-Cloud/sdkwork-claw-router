@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/parakeet-local-asr@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parakeet_local_asr",
+  "skill": {
+    "id": 17145,
+    "skillKey": "clawhub-parakeet-local-asr",
+    "name": "Parakeet Local Asr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parakeet-local-asr",
+    "url": "https://clawhub.ai/skills/parakeet-local-asr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parakeet-local-asr-110fbb798546e3fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and operate local NVIDIA Parakeet ASR for OpenClaw with an OpenAI-compatible transcription API on Ubuntu/Linux and macOS (Intel/Apple Silicon). Use w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hantok",
+      "userId": "publishers:hantok",
+      "displayName": "Roman Slysh",
+      "image": "https://avatars.githubusercontent.com/u/1752322?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 810,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771611250718,
+      "changelog": "Initial release of local NVIDIA Parakeet ASR skill for OpenClaw.\n\n- Enables deterministic installation and operation of Parakeet ASR on Ubuntu/Linux and macOS (Intel/Apple Silicon).\n- Provides OpenAI-compatible API endpoint for local/private speech-to-text.\n- Includes guided scripts for install, start, healthcheck, and smoke testing.\n- Allows override of install path via environment variable.\n- Documents OpenClaw voice stack integration and fallback options.\n- Defines safety rules for installation and process management.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fa877c4e4a653879712e5892f633edc727df2318ec2add09609fe06e4d865c2f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/traktor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.traktor",
+  "skill": {
+    "id": 17873,
+    "skillKey": "clawhub-traktor",
+    "name": "Traktor Web Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "traktor",
+    "url": "https://clawhub.ai/skills/traktor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/traktor-3d40bc828710762c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract all assets and content from websites including images, SVGs, fonts, videos, and page structure. Parallel agents with thorough scraping coverage. Trig..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dorukardahan",
+      "userId": "s17ec9h02rq9dyxk1p8ndsz7ps84kpzp",
+      "displayName": "dorukardahan",
+      "image": "https://avatars.githubusercontent.com/u/35905596?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 737,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771471208671,
+      "changelog": "Initial publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:23c052ed0d436278130b1b33bbad6adb4245f1a4fc3da69b9ffc8f8322ded28f"
+}

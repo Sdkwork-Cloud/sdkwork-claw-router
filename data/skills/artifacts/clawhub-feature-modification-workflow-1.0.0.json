@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feature-modification-workflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feature_modification_workflow",
+  "skill": {
+    "id": 34928,
+    "skillKey": "clawhub-feature-modification-workflow",
+    "name": "feature-modification-workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feature-modification-workflow",
+    "url": "https://clawhub.ai/skills/feature-modification-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feature-modification-workflow-da7d7adebc1e3576.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured workflow to analyze, plan, and execute feature modifications by scenario complexity, ensuring controlled, incremental, and risk-aware changes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liancheng-zcy",
+      "userId": "s170srnwkay3aswk1jxvmpz9ms83wfnj",
+      "displayName": "liancheng",
+      "image": "https://avatars.githubusercontent.com/u/53899938?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774836276012,
+      "changelog": "feature-modification-workflow v1.0.0\n\n- Introduces a standardized workflow for modifying existing features, tailored to request complexity.\n- Provides distinct paths: quick direct changes for simple issues, and a full 5-step process for complex needs or refactoring.\n- Emphasizes analyzing and understanding the code before making changes.\n- Requires user confirmation before executing complex modifications.\n- Clarifies when to check project documentation.\n- Designed to minimize risk by protecting core logic and reducing unnecessary overhead.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e33209b7e3cdc01d85fe925b4f3b01eaaa535ad38ea0d3d01b559c1aa3417360"
+}

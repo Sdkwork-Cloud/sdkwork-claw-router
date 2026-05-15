@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14414,
+  "uuid": "skill-clawhub-dlazy-suno-music",
+  "skillKey": "clawhub-dlazy-suno-music",
+  "name": "Dlazy Suno Music",
+  "summary": "Suno music generation model. Supports inspiration mode (auto lyrics) and custom mode (manual lyrics), generating music with or without vocals.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_suno_music",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dlazy",
+      "features": [
+        "Suno music generation model",
+        "Supports inspiration mode (auto lyrics) and custom mode (manual lyrics), generating music with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dlazy-suno-music@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274158181?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dlazy-suno-music",
+      "url": "https://clawhub.ai/skills/dlazy-suno-music"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-suno-music",
+    "url": "https://clawhub.ai/skills/dlazy-suno-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-suno-music-5109d9a54cc5d4ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dlazy-suno-music@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dlazy-suno-music-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:697f5e869e102fbd649370b3d03f822dc8ed34a58d27f5b1460a7143e7415e70",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T14:10:46.394Z"
+}

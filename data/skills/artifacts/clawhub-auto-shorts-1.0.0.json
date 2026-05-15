@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-shorts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_shorts",
+  "skill": {
+    "id": 48945,
+    "skillKey": "clawhub-auto-shorts",
+    "name": "Auto Shorts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-shorts",
+    "url": "https://clawhub.ai/skills/auto-shorts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-shorts-d611823f728ced5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert long-form video into vertical short clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. TikTok creators use it for generating sh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777590418193,
+      "changelog": "Auto Shorts v1.0.0 — Initial Release\n\n- Convert long-form videos (MP4, MOV, AVI, WebM up to 500MB) into vertical short clips for platforms like TikTok and Reels.\n- Automatic cloud-based setup and processing; no manual authentication needed for first-time users.\n- Supports uploading files or providing video URLs, with results in 1–2 minutes as 1080p MP4s.\n- Handles credits, export, and session state with clear user guidance and error messaging.\n- User prompts intelligently routed to upload, generation, export, credits, or status actions.\n- Includes tips for best results and troubleshooting common issues (file size/format, missing credits).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c08a4921ab2b9a5a57860e819b6b8e30c27a9e83c689e5f4138513725812f65"
+}

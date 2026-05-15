@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proof-of-quality@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proof_of_quality",
+  "skill": {
+    "id": 15567,
+    "skillKey": "clawhub-proof-of-quality",
+    "name": "Proof-of-Quality - BTC PoW Verifiable Excellence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proof-of-quality",
+    "url": "https://clawhub.ai/skills/proof-of-quality",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proof-of-quality-0824e8e316beb2a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BTC PoW grind nonce till skill/output benchmark score > threshold. Verifiable excellence for antifragile meritocracy—no hype, pure quality proof. Use for skill evaluation, fork scoring, collab verification."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kunoiiv",
+      "userId": "s179mnahw0zp5rc74x834bghys84xez8",
+      "displayName": "Daniel",
+      "image": "https://avatars.githubusercontent.com/u/124630343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1780,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770078631286,
+      "changelog": "- Initial release of proof-of-quality (PoQ) skill.\n- Implements Bitcoin-like PoW for skill benchmarking and verifiable quality proof.\n- Users benchmark skills, grind nonce until benchmark score (speed/accuracy/security) > threshold and hash meets difficulty.\n- Outputs a PoQ JSON ({score, hash, nonce}) for sharing and independent verification.\n- Designed to prevent low-quality submissions and enable antifragile merit-based evaluation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:99827c30dcf251f62e3e2a147c417036893e16535c996aed3e83d1a0cd18d598"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/showcase-page-generator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.showcase_page_generator",
+  "skill": {
+    "id": 33253,
+    "skillKey": "clawhub-showcase-page-generator",
+    "name": "showcase-page-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "showcase-page-generator",
+    "url": "https://clawhub.ai/skills/showcase-page-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/showcase-page-generator-241064207a8f0393.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to create, optimize, or audit a showcase or gallery page for user-generated content. Also use when the user mentions \"showcase,\" \"gallery..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774974614452,
+      "changelog": "Batch: pricing through feedback",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d7364a1716ac70b385a7d4f47b319089082ee59ccea3fd0fb13490f10d2a8d0"
+}

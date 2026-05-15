@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multishot-ugc@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multishot_ugc",
+  "skill": {
+    "id": 25351,
+    "skillKey": "clawhub-multishot-ugc",
+    "name": "Multishot UGC"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multishot-ugc",
+    "url": "https://clawhub.ai/skills/multishot-ugc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multishot-ugc-c77c65cbe9bf0aef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate 10 perspective/angle variations from a single image for multi-shot UGC videos. ✅ USE WHEN: - Have a hero image and need camera angle variations - Creating multi-scene UGC videos (need different shots) - Want close-ups, wide shots,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pauldelavallaz",
+      "userId": "publishers:pauldelavallaz",
+      "displayName": "Paul de Lavallaz",
+      "image": "https://avatars.githubusercontent.com/u/51497690?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1191,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 5,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770859141265,
+      "changelog": "Improved routing: added negative examples and pipeline info",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f354eab23e674ac3db8e6d4d51e47ecaf0437dbc6554fd4f6d4e6462baf0ef80"
+}

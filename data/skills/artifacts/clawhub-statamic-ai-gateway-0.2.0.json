@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/statamic-ai-gateway@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.statamic_ai_gateway",
+  "skill": {
+    "id": 27513,
+    "skillKey": "clawhub-statamic-ai-gateway",
+    "name": "Statamic AI Gateway"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "statamic-ai-gateway",
+    "url": "https://clawhub.ai/skills/statamic-ai-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/statamic-ai-gateway-45e966fa0234a256.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Statamic content through a tool execution gateway (composer require stokoe/ai-gateway)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michael-stokoe",
+      "userId": "s1789rpasc12jh5kswdmbdr80184vfjr",
+      "displayName": "Michael Stokoe",
+      "image": "https://avatars.githubusercontent.com/u/2981213?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1777237399244,
+      "changelog": "statamic-ai-gateway v0.2.0\n\n- No changes were detected in this release.\n- All documentation, configuration, and implementation remain the same as in the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f4d502d7e45ff4f2af9ba2d1cbcde65a2a8e0c5d07022887a955a68e89acf8e5"
+}

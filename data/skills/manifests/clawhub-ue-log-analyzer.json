@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19857,
+  "uuid": "skill-clawhub-ue-log-analyzer",
+  "skillKey": "clawhub-ue-log-analyzer",
+  "name": "Ue Log Analyzer",
+  "summary": "Analyze Unreal Engine log files for errors, warnings, crashes, and performance issues. Use when: (1) User provides UE log file, (2) Analyzing crash dumps, (3...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ue_log_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vincent",
+      "features": [
+        "Analyze Unreal Engine log files for errors, warnings, crashes, and performance issues",
+        "Use when: (1) User provides UE log file, (2) Analyzing crash dumps, (3..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ue-log-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8462180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ue-log-analyzer",
+      "url": "https://clawhub.ai/skills/ue-log-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ue-log-analyzer",
+    "url": "https://clawhub.ai/skills/ue-log-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ue-log-analyzer-f6e2096e6880787b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ue-log-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ue-log-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77b820de46209b0c2e1efcbe22ff1b01f97717aed99b441046741945c6df64cf",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T07:06:01.310Z"
+}

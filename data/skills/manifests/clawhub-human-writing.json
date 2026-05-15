@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9119,
+  "uuid": "skill-clawhub-human-writing",
+  "skillKey": "clawhub-human-writing",
+  "name": "Human Writing",
+  "summary": "Write content that reads as naturally human — no AI tells, no corporate fluff. Use when drafting, editing, or reviewing any content meant for publication or...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.human_writing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tyler Hill",
+      "features": [
+        "Write content that reads as naturally human — no AI tells, no corporate fluff",
+        "Use when drafting, editing, or reviewing any content meant for publication or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/human-writing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5706227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "human-writing",
+      "url": "https://clawhub.ai/skills/human-writing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "human-writing",
+    "url": "https://clawhub.ai/skills/human-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/human-writing-4e1c14b87ae6b1df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/human-writing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-human-writing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a6021775a2f4f53725a1822a7a9f6c8d45c515939b7f4a0271fd85b66d973ee",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T05:09:55.201Z"
+}

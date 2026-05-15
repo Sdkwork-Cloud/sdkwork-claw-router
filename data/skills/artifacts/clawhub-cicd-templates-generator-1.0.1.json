@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cicd-templates-generator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cicd_templates_generator",
+  "skill": {
+    "id": 38138,
+    "skillKey": "clawhub-cicd-templates-generator",
+    "name": "Cicd Templates Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cicd-templates-generator",
+    "url": "https://clawhub.ai/skills/cicd-templates-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cicd-templates-generator-32dfeb553cae5ca4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate production-ready CI/CD workflow files for GitHub Actions, GitLab CI, or Jenkins tailored to chosen language, framework, tests, deploy, and release o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenghoo123-png",
+      "userId": "s17dv44xed17vb7n7v728mr4dd846y7m",
+      "displayName": "shenghoo123-png",
+      "image": "https://avatars.githubusercontent.com/u/265226019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775536804611,
+      "changelog": "Updated with 25 passing unit tests covering GitHub Actions, GitLab CI, Jenkins generators; all tests validated",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4113d8047c134d8df5126623a0efea6ee0a4bed454593e239fe448edb1ffec89"
+}

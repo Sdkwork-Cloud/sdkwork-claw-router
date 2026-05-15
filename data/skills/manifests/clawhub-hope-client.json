@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58823,
+  "uuid": "skill-clawhub-hope-client",
+  "skillKey": "clawhub-hope-client",
+  "name": "Hope Client",
+  "summary": "Hope Server Max API 客户端技能。用于发起对 Hope Server Max 服务端的 API 请求。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hope_client",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andy Tien",
+      "features": [
+        "Hope Server Max API 客户端技能。用于发起对 Hope Server Max 服务端的 API 请求。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hope-client@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35169750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hope-client",
+      "url": "https://clawhub.ai/skills/hope-client"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hope-client",
+    "url": "https://clawhub.ai/skills/hope-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hope-client-8142e6b10b77459f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hope-client@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hope-client-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c24afef80f24f85f46754cf07b47ede53c75c8c157821be01c88df8a6365d4e2",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T14:24:28.497Z"
+}

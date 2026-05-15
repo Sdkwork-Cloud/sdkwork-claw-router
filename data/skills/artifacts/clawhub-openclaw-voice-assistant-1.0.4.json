@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-voice-assistant@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_voice_assistant",
+  "skill": {
+    "id": 16033,
+    "skillKey": "clawhub-openclaw-voice-assistant",
+    "name": "Voice Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-voice-assistant",
+    "url": "https://clawhub.ai/skills/openclaw-voice-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-voice-assistant-53ca6e4e1e27acbe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Windows voice companion for OpenClaw. Custom wake word via Porcupine, local STT via faster-whisper, streamed responses over the gateway WebSocket, and ElevenLabs TTS with natural chime/thinking sounds. Supports multi-turn conversation with."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kurtivy",
+      "userId": "publishers:kurtivy",
+      "displayName": "kurtivy",
+      "image": "https://avatars.githubusercontent.com/u/20177012?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 925,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1770928178315,
+      "changelog": "Reduce gateway scope from operator.admin to operator.write (least privilege)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f6d1b593957980bac3590c7363e7ef1fe281db18c42cb5a426e50399d050cd84"
+}

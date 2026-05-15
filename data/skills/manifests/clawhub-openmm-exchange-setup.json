@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20588,
+  "uuid": "skill-clawhub-openmm-exchange-setup",
+  "skillKey": "clawhub-openmm-exchange-setup",
+  "name": "OpenMM Exchange Setup",
+  "summary": "Step-by-step guide to configure exchange API credentials for OpenMM.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openmm_exchange_setup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Angelos Kappos",
+      "features": [
+        "Step-by-step guide to configure exchange API credentials for OpenMM."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openmm-exchange-setup@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9395707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openmm-exchange-setup",
+      "url": "https://clawhub.ai/skills/openmm-exchange-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openmm-exchange-setup",
+    "url": "https://clawhub.ai/skills/openmm-exchange-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openmm-exchange-setup-99781a67011676fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openmm-exchange-setup@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openmm-exchange-setup-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36c2e8e224841dc7ace36fc893ee14906ab4caee693c67e0b558a469318816e5",
+      "artifactSizeBytes": 2323
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T16:38:41.360Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-search-onekey-gateway@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_search_onekey_gateway",
+  "skill": {
+    "id": 40142,
+    "skillKey": "clawhub-google-search-onekey-gateway",
+    "name": "Google Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-search-onekey-gateway",
+    "url": "https://clawhub.ai/skills/google-search-onekey-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-search-onekey-gateway-2979d0191adf8053.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-generated skill for google-search tools via OneKey Gateway."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ai-hub-admin",
+      "userId": "s17d1vfn6f6qk27s9f66nbe8ed83hcrr",
+      "displayName": "AI-Hub-Admin",
+      "image": "https://avatars.githubusercontent.com/u/184629057?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774194099680,
+      "changelog": "Initial release of google-search-onekey-gateway skill.\n\n- Provides a unified interface to Google Search API via OneKey Gateway, requiring only a single access key.\n- Supports both CLI and Python script usage for automated search queries.\n- Returns customizable numbers of search results with pagination options.\n- Demo API key fallback included for trial use.\n- Easy installation instructions provided for both Node.js and Python environments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59a79fb78014c2f120f9d60cb78c8369688516a186cef721abadbfcf84984f84"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31953,
+  "uuid": "skill-clawhub-unraid-claw",
+  "skillKey": "clawhub-unraid-claw",
+  "name": "Unraid Monitor Skill for OpenClaw",
+  "summary": "Query an Unraid server via GraphQL for system, array, and Docker status in read-only mode.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unraid_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yoshiofthewire",
+      "features": [
+        "Query an Unraid server via GraphQL for system, array, and Docker status in read-only mode."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unraid-claw@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7701793?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unraid-claw",
+      "url": "https://clawhub.ai/skills/unraid-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unraid-claw",
+    "url": "https://clawhub.ai/skills/unraid-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unraid-claw-60cc79127d4a498d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unraid-claw@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-unraid-claw-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fcf4e847119d66d350c27aed97b0dc8a8922c898d545916cd065c064861f289",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T21:53:06.436Z"
+}

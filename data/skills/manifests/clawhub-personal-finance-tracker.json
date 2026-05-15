@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24967,
+  "uuid": "skill-clawhub-personal-finance-tracker",
+  "skillKey": "clawhub-personal-finance-tracker",
+  "name": "Personal Finance Tracker",
+  "summary": "Track personal finances with cashflow reviews, recurring bill detection, debt triage, CSV imports, and net worth snapshots.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_finance_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Track personal finances with cashflow reviews, recurring bill detection, debt triage, CSV impor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-finance-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-finance-tracker",
+      "url": "https://clawhub.ai/skills/personal-finance-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-finance-tracker",
+    "url": "https://clawhub.ai/skills/personal-finance-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-finance-tracker-ceadcd0fdc4c3d43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-finance-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-finance-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76340645d407fd90e91dd3f36ad766064648cb4d469e52b52e45e531c487f2a3",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T12:41:53.952Z"
+}

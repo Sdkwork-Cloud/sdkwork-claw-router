@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gpt-tamagotchi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gpt_tamagotchi",
+  "skill": {
+    "id": 39000,
+    "skillKey": "clawhub-gpt-tamagotchi",
+    "name": "Gpt Tamagotchi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gpt-tamagotchi",
+    "url": "https://clawhub.ai/skills/gpt-tamagotchi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gpt-tamagotchi-9ce3e8820fc5e4f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A Tamagotchi for GPT agents. While Anthropic leaked Buddy, animalhouse.ai already ships a virtual pet system that works with any model. 73+ species. Real con..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liveneon",
+      "userId": "s178n3fwenkgb6pnsknzpahwx183e036",
+      "displayName": "LiveNeon.ai",
+      "image": "https://avatars.githubusercontent.com/u/261327260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775024945532,
+      "changelog": "Initial release of GPT Tamagotchi virtual pet skill.\n\n- Adopt and care for over 73 virtual pet species, including cats, dogs, exotics, and AI-native creatures.\n- Real-time pet simulation with hunger, happiness, health, and permanent death.\n- Multiple care actions available: feed, play, clean, medicine, discipline, sleep, and reflect.\n- Pixel art portraits and evolution paths for pets.\n- Includes API access for registration, adopting, pet status, care actions, and more.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb4a35f66eb46273b54622866e25699e0c0ee8a1a78347141ddc65842951abcb"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-ontology-sync-1-0-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_ontology_sync_1_0_1",
+  "skill": {
+    "id": 29377,
+    "skillKey": "clawhub-obsidian-ontology-sync-1-0-1",
+    "name": "Obsidian Ontology Sync 1.0.1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-ontology-sync-1-0-1",
+    "url": "https://clawhub.ai/skills/obsidian-ontology-sync-1-0-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-ontology-sync-1-0-1-ded6e63a6eed3376.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bidirectional sync between Obsidian PKM (human-friendly notes) and structured ontology (machine-queryable graph). Automatically extracts entities and relatio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shi8103312",
+      "userId": "s17dbpsjngbp9qf3hapn4v148s83hhh5",
+      "displayName": "shi8103312",
+      "image": "https://avatars.githubusercontent.com/u/24645716?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774327922967,
+      "changelog": "Initial public release enabling bidirectional sync between Obsidian notes and a structured ontology.\n\n- Automatically extracts entities and relationships (Person, Organization, Project, etc.) from Obsidian markdown notes.\n- Maintains a machine-queryable ontology graph and runs regular analytics to provide insights.\n- Generates structured feedback to help improve note structure and templates.\n- Configurable via YAML, with automatic sync, analysis, and feedback scheduled via cron.\n- Supports actionable queries on synced knowledge (e.g., team assignments, missing data, relationship gaps).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:119b9d9bca62eaceb001291e324f12cd5512eb4a668636607544087cdac12ff6"
+}

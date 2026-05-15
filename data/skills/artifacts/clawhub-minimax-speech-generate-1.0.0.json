@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-speech-generate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_speech_generate",
+  "skill": {
+    "id": 60014,
+    "skillKey": "clawhub-minimax-speech-generate",
+    "name": "minimax-speech"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-speech-generate",
+    "url": "https://clawhub.ai/skills/minimax-speech-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-speech-generate-c4e079463f34f163.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MiniMax 语音合成技能 - 支持同步/异步文本转语音(T2S)、音色克隆(Voice Clone)、音色设计(Voice Design)、音色查询与删除。使用模型 speech-2.8-hd，输出 mp3/wav/pcm 格式音频文件到本地。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "silingyuan0",
+      "userId": "s177t4ntzk8g80ej8ja2gyfesd83hff2",
+      "displayName": "silingyuan0",
+      "image": "https://avatars.githubusercontent.com/u/26161065?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774450824441,
+      "changelog": "- Initial release of the MiniMax speech synthesis skill.\n- Supports synchronous and asynchronous text-to-speech (TTS) using the speech-2.8-hd model.\n- Includes features for voice cloning, voice design, voice listing, querying, and deletion.\n- Outputs audio files in mp3, wav, or pcm formats.\n- Provides a command-line interface for all supported features.\n- Requires MiniMax API key and region configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0321605a1fe7a157461f6fd4d9567d47e1d0ac420cbdf2fab25a7eaf2c53031"
+}

@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "trade-history",
+    "displayName": "Trade History",
+    "summary": "Read and display recent trade history from local JSONL log file. Use when asked about past trades, trade recap, performance review, or to list recorded signals.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 559,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1771785064790,
+    "updatedAt": 1778387514393
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1771785064790,
+    "changelog": "Initial release: Read and display recent trade history from a local JSONL log file.\n\n- Reads trade events from a local trades.jsonl file and displays them in reverse chronological order.\n- Supports filtering trades by symbol and limiting the number of results (default 20).\n- Presents each trade with details: symbol, side, entry, stop loss, take profit, note, and timestamp.\n- Returns concise, structured JSON output including total trade count and items list.\n- Handles missing log files gracefully by returning an empty result without errors.\n- Read-only access; never modifies or deletes the log file.",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "newbienodes",
+    "userId": "publishers:newbienodes",
+    "displayName": "Indra Riswana",
+    "image": "https://avatars.githubusercontent.com/u/187021776?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778387514393
+  }
+}

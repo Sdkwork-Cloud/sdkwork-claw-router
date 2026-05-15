@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ios-dev@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ios_dev",
+  "skill": {
+    "id": 60780,
+    "skillKey": "clawhub-ios-dev",
+    "name": "ios-dev"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ios-dev",
+    "url": "https://clawhub.ai/skills/ios-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ios-dev-5332e33f69196cf4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用 iOS App 开发、构建、签名、测试与 App Store 上架流程（中国区）指南。用于当用户询问 iOS 开发/上架/审核/签名/TestFlight/App Store Connect/隐私合规/订阅配置，或输入触发词 iosdev 时。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kuangre123",
+      "userId": "publishers:kuangre123",
+      "displayName": "狂热AI",
+      "image": "https://avatars.githubusercontent.com/u/87214967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 474,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772703837399,
+      "changelog": "Initial release of the iOS开发 (中国区) skill with concise workflow guidance.\n\n- Covers the complete process: 开发 → 构建 → 签名 → 上传 → 审核 → 发布\n- Offers quick usage tips for different app scenarios (个人/企业、订阅、UGC 等)\n- Breaks down recommended workflow into 6 key stages from需求确认 to发布\n- Provides reference mapping for构建、签名、上架、IAP、隐私合规\n- Output constraints set for universal applicability and privacy compliance",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ea6b211ddfc7e97e6152e010df2e0d26740ab2d60692076ac7170306fab79b98"
+}

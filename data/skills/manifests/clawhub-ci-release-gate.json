@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57940,
+  "uuid": "skill-clawhub-ci-release-gate",
+  "skillKey": "clawhub-ci-release-gate",
+  "name": "CI发布工程师 CI与发布门禁",
+  "summary": "CI release engineer skill for validation gating, release-readiness checks, and automation-safe delivery criteria.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ci_release_gate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aiweline",
+      "features": [
+        "CI release engineer skill for validation gating, release-readiness checks, and automation-safe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ci-release-gate@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32635766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ci-release-gate",
+      "url": "https://clawhub.ai/skills/ci-release-gate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ci-release-gate",
+    "url": "https://clawhub.ai/skills/ci-release-gate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ci-release-gate-074ede1254db4440.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ci-release-gate@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ci-release-gate-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77067e61e1f4194314c1617639892995cfc93689adc0edbc2938667685cf8feb",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T03:20:26.553Z"
+}

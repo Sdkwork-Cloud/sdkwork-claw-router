@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72265,
+  "uuid": "skill-clawhub-ctrip-hot-trend",
+  "skillKey": "clawhub-ctrip-hot-trend",
+  "name": "Ctrip",
+  "summary": "检索并摘要携程公开页的酒店与航班信息，提供价格、评分、行程组合等轻量分析服务。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctrip_hot_trend",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "检索并摘要携程公开页的酒店与航班信息，提供价格、评分、行程组合等轻量分析服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ctrip-hot-trend@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ctrip-hot-trend",
+      "url": "https://clawhub.ai/skills/ctrip-hot-trend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctrip-hot-trend",
+    "url": "https://clawhub.ai/skills/ctrip-hot-trend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctrip-hot-trend-669d95148c885e90.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ctrip-hot-trend@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ctrip-hot-trend-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83d3b5fab2740e04f8e540f8d32d112193ef649a68ff8dca5bf33059768345b6",
+      "artifactSizeBytes": 2313
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:51:13.478Z"
+}

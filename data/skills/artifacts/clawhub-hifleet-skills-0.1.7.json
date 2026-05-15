@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hifleet-skills@0.1.7",
+  "version": "0.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hifleet_skills",
+  "skill": {
+    "id": 59837,
+    "skillKey": "clawhub-hifleet-skills",
+    "name": "Ship Position"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hifleet-skills",
+    "url": "https://clawhub.ai/skills/hifleet-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hifleet-skills-fb446f7514cc670b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "船位、档案、区域船舶、红海波斯湾海峡通航、港口、性能、航程、航线、租船、航运、气象海况、船队、AIS。Use when user asks for vessel position (船位), ship info, area traffic (区域船舶 范围内船舶), strait traffic (红海 波斯湾..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charleiwang",
+      "userId": "s17ea91fpqz4xz3ebzmcet2r7983gjad",
+      "displayName": "charleiWang",
+      "image": "https://avatars.githubusercontent.com/u/20695841?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.1.7",
+      "createdAt": 1773759871803,
+      "changelog": "- Area Traffic (区域船舶) 支持按区域名称（areaId）、WKT 多边形（polygon）、或矩形 bbox 查询；不仅限于原有的矩形区域参数\n- 新增区域清单接口文档（references/areas_api.md）和脚本（scripts/get_areas.py），用于区域名称到 areaId 的转换\n- get_area_traffic.py 脚本现支持传入 areaId 与 polygon 查询\n- 文档全面更新，细化了区域船舶功能用法、调用流程，以及 API 参数与说明\n- 维护性更新：完善安全说明与接口文档指引",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c81deb956641872466f149592a607662119cf6fadb8f718b66571b262e6781d"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38734,
+  "uuid": "skill-clawhub-aidex",
+  "skillKey": "clawhub-aidex",
+  "name": "Aidex",
+  "summary": "Swap tokens on Ethereum via the AIDEX aggregator. Search tokens, check exchange rates, view balances, and execute swaps. Client-side transaction signing keep...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aidex",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andrey Almiashev",
+      "features": [
+        "Swap tokens on Ethereum via the AIDEX aggregator",
+        "Search tokens, check exchange rates, view balances, and execute swaps",
+        "Client-side transaction signing keep..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aidex@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251360652?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aidex",
+      "url": "https://clawhub.ai/skills/aidex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aidex",
+    "url": "https://clawhub.ai/skills/aidex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aidex-e4963ea68c1a3427.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aidex@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-aidex-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb5390ce5d4a58b1c26372a30c6b7525ba4501c12773f216bfcd7f71d2af8f62",
+      "artifactSizeBytes": 1851
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T19:45:49.588Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63867,
+  "uuid": "skill-clawhub-prd-to-prototype-yinin",
+  "skillKey": "clawhub-prd-to-prototype-yinin",
+  "name": "PRD to Prototype",
+  "summary": "从产品需求到可交互原型的完整工作流。当用户表达产品想法（如'我想做一个...'、'帮我设计...'）时触发。支持：1) 零提问直出PRD 2) 平台选择确认 3) 生成Awwwards级别的高保真HTML/Tailwind原型（移动端/PC端）。端到端产品设计流程。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prd_to_prototype_yinin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yinin2005",
+      "features": [
+        "从产品需求到可交互原型的完整工作流。当用户表达产品想法（如'我想做一个...'、'帮我设计...'）时触发。支持：1) 零提问直出PRD 2) 平台选择确认 3) 生成Awwwards级别的."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prd-to-prototype-yinin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26345670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prd-to-prototype-yinin",
+      "url": "https://clawhub.ai/skills/prd-to-prototype-yinin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prd-to-prototype-yinin",
+    "url": "https://clawhub.ai/skills/prd-to-prototype-yinin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prd-to-prototype-yinin-c38ba56301ea9d7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prd-to-prototype-yinin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prd-to-prototype-yinin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9bb57223861be810c5a2f2e5d0b384254c761ab9395004cb4e6891cda917ce9a",
+      "artifactSizeBytes": 2737
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T07:37:53.140Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24884,
+  "uuid": "skill-clawhub-self-healing-agent",
+  "skillKey": "clawhub-self-healing-agent",
+  "name": "Self-Healing Agent",
+  "summary": "Self-recovery and auto-repair system for OpenClaw agents. Monitors agent health, detects failures (crashed cron jobs, broken skills, config corruption, memor...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_healing_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stevojarvisai-star",
+      "features": [
+        "Self-recovery and auto-repair system for OpenClaw agents",
+        "Monitors agent health, detects failures (crashed cron jobs, broken skills, config corruption, m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-healing-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266156236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-healing-agent",
+      "url": "https://clawhub.ai/skills/self-healing-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-healing-agent",
+    "url": "https://clawhub.ai/skills/self-healing-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-healing-agent-c5c21978bda3551d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-healing-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-healing-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcda3460207c2074ff65597245ec4f68bc18e7461d8afd4cdc134b7c1b595823",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T09:39:16.836Z"
+}

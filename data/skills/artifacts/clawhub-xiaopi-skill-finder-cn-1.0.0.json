@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaopi-skill-finder-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaopi_skill_finder_cn",
+  "skill": {
+    "id": 58349,
+    "skillKey": "clawhub-xiaopi-skill-finder-cn",
+    "name": "Xiaopi Skill Finder Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaopi-skill-finder-cn",
+    "url": "https://clawhub.ai/skills/xiaopi-skill-finder-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaopi-skill-finder-cn-ea7fbffb597f2d1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill 查找器 | Skill Finder. 帮助发现和安装 ClawHub Skills | Discover and install ClawHub Skills. 回答'有什么技能可以X'、'找一个技能' | Answers 'what skill can X', 'find a skill'. 触发..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a-din",
+      "userId": "s17c7djh1gag2b7k7dst2mkr6983sy0v",
+      "displayName": "Adin",
+      "image": "https://avatars.githubusercontent.com/u/22701008?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 315,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774811207552,
+      "changelog": "- Initial release of xiaopi-skill-finder-cn (skill-finder-cn)\n- Enables users to discover and install ClawHub Skills by searching and recommending based on user requests\n- Supports queries like \"找一个能做X的skill\" or \"有什么skill可以…\"\n- Provides example commands for searching, inspecting, and installing skills via ClawHub\n- Guides users through a workflow: understanding needs, keyword extraction, searching, listing skills, and installation suggestions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:404d3b939ba38247fdac44a56d5a1f754b50388bebfb0df21a13665b15a66dd3"
+}

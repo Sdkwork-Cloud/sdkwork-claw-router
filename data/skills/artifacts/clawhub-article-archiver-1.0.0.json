@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/article-archiver@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_archiver",
+  "skill": {
+    "id": 26628,
+    "skillKey": "clawhub-article-archiver",
+    "name": "Article Archiver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-archiver",
+    "url": "https://clawhub.ai/skills/article-archiver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-archiver-f6066de7ef5d1163.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically archive web articles and Twitter Articles to Feishu documents. ALWAYS trigger when user shares URLs from x.com (Twitter), mp.weixin.qq.com (WeC..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yemoo",
+      "userId": "s17d1aedfb4x20wdpfwb6crkwh83j4b9",
+      "displayName": "yemoo",
+      "image": "https://avatars.githubusercontent.com/u/1298185?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773559401910,
+      "changelog": "- Initial release of article-archiver.\n- Automatically archives shared web and Twitter (X) articles to Feishu documents, triggered by links or specific user phrases.\n- Supports long articles (600+ lines), multiple images (20+), and preserves formatting (bold, code blocks, lists).\n- Ensures precise image placement and complete metadata with stylish citation block.\n- Includes robust duplicate detection by article title, and notifies user on success.\n- Fully automatic: archives as soon as a supported URL is detected—no extra confirmation needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd525f1c6def496ebbc9fb3cb99eda0e86cd84e05f73a7dd360b05eac13a5f69"
+}

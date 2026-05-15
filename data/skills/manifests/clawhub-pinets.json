@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14204,
+  "uuid": "skill-clawhub-pinets",
+  "skillKey": "clawhub-pinets",
+  "name": "PineTS - PineScript executor",
+  "summary": "Run Pine Script indicators from the command line using pinets-cli. Use when asked to execute, test, or analyze Pine Script indicators, calculate technical an...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pinets",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alaa-eddine K.",
+      "features": [
+        "Run Pine Script indicators from the command line using pinets-cli",
+        "Use when asked to execute, test, or analyze Pine Script indicators, calculate technical an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pinets@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1016513?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pinets",
+      "url": "https://clawhub.ai/skills/pinets"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pinets",
+    "url": "https://clawhub.ai/skills/pinets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pinets-9efd55dc5d917f3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pinets@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pinets-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7eb104de60c5ebb95355ca61ae077f4eaea3493e810bb019860271b5d0307c97",
+      "artifactSizeBytes": 2478
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T17:25:21.074Z"
+}

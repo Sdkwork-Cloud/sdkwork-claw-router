@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14769,
+  "uuid": "skill-clawhub-exo-installer",
+  "skillKey": "clawhub-exo-installer",
+  "name": "E.x.O. Installer",
+  "summary": "Install, update, and monitor E.x.O. tools like jasper-recall and hopeIDS, manage OpenClaw plugins, and perform health checks with a single command.",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exo_installer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "emberDesire",
+      "features": [
+        "Install, update, and monitor E.x.O",
+        "tools like jasper-recall and hopeIDS, manage OpenClaw plugins, and perform health checks with a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exo-installer@0.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/167948905?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exo-installer",
+      "url": "https://clawhub.ai/skills/exo-installer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exo-installer",
+    "url": "https://clawhub.ai/skills/exo-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exo-installer-305b57b71ad2c4c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exo-installer@0.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-exo-installer-0.4.1.json",
+      "version": "0.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9aa8bbd431e2037c3ddf43610249871c15def96407fab5d7accaf293e6cd2bd5",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T11:28:36.339Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-error-logger-new@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_error_logger_new",
+  "skill": {
+    "id": 64687,
+    "skillKey": "clawhub-agent-error-logger-new",
+    "name": "agent-error-logger-new"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-error-logger-new",
+    "url": "https://clawhub.ai/skills/agent-error-logger-new",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-error-logger-new-2b6e27c5958b3b33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent 错误日志工具。记录、检索和分析 Agent 犯过的错误，避免重复踩坑。 支持自动记录任务失败、手动查询错误模式、生成修正建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "koonchaoso",
+      "userId": "s17330xcxpy96esx0cxtck21vd85a6wz",
+      "displayName": "KoonChaoSo",
+      "image": "https://avatars.githubusercontent.com/u/6228912?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 405,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773215053208,
+      "changelog": "- Initial release of agent-error-logger.\n- Automates recording of agent errors, including details, causes, fixes, and tags.\n- Supports manual error search, pattern recognition, and monthly/error-type analytics.\n- Provides proactive error reminders before new tasks based on error logs.\n- Includes scripts for error recording, querying, and report generation.\n- Offers best practices, extensibility suggestions, and related research references.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6f7a2229ff45bd828c9bc3ba3df2e3bfaac957c6809c55b0a5b41270785bd2e2"
+}

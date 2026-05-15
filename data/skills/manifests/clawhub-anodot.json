@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38016,
+  "uuid": "skill-clawhub-anodot",
+  "skillKey": "clawhub-anodot",
+  "name": "Anodot",
+  "summary": "Anodot integration. Manage data, records, and automate workflows. Use when the user wants to interact with Anodot data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anodot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Anodot integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Anodot data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anodot@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anodot",
+      "url": "https://clawhub.ai/skills/anodot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anodot",
+    "url": "https://clawhub.ai/skills/anodot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anodot-db91a73af8c54dfc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anodot@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-anodot-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d4ab4ead44c9df36059a0d2e577fa6fa1459973d781b8adc016e882ce3c15a1",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:10:24.725Z"
+}

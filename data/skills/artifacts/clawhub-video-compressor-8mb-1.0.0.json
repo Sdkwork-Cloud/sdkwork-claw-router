@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-compressor-8mb@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_compressor_8mb",
+  "skill": {
+    "id": 50093,
+    "skillKey": "clawhub-video-compressor-8mb",
+    "name": "Video Compressor 8mb"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-compressor-8mb",
+    "url": "https://clawhub.ai/skills/video-compressor-8mb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-compressor-8mb-e588664dfcde8529.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get compressed MP4 files ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"com..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 41,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778351634247,
+      "changelog": "Initial release of Video Compressor 8MB.\n\n- Compresses video files (MP4, MOV, AVI, WebM, up to 500MB) to fit within 8MB target size, optimized for quality.\n- No manual sliders; just upload and request compression by file size.\n- Handles session management and cloud GPU rendering automatically; notifies when setup is ready.\n- Accepts plain user prompts for compression, export, and common workflows.\n- Supports batch operations, state management, credits checking, and export/download actions.\n- Provides clear error codes and tips for a smoother experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9012da727494d638599500d9d4385ed9e9ade99055c1aa266d6aea6e94a434cc"
+}

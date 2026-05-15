@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13050,
+  "uuid": "skill-clawhub-aave-liquidation-monitor",
+  "skillKey": "clawhub-aave-liquidation-monitor",
+  "name": "Aave Liquidation Monitor",
+  "summary": "Proactive monitoring of Aave V3 borrow positions with liquidation alerts. Queries user collateral, debt, and health factor across chains (Ethereum, Polygon, Arbitrum, etc.). Sends urgent alerts to Telegram/Discord/Slack when health factor.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aave_liquidation_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jgramajo4",
+      "features": [
+        "Proactive monitoring of Aave V3 borrow positions with liquidation alerts",
+        "Queries user collateral, debt, and health factor across chains (Ethereum, Polygon, Arbitrum, et.",
+        "Sends urgent alerts to Telegram/Discord/Slack when health factor drops below configurable thres.",
+        "Use when you need continuous monitoring of Aave positions, want alerts before liquidation risk."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aave-liquidation-monitor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22783249?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aave-liquidation-monitor",
+      "url": "https://clawhub.ai/skills/aave-liquidation-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aave-liquidation-monitor",
+    "url": "https://clawhub.ai/skills/aave-liquidation-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aave-liquidation-monitor-eb88557051e812d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aave-liquidation-monitor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aave-liquidation-monitor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6cfb20f2c900dac13eb91726f804b0fdbe16a71357379ed33d5be4fee6166053",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T05:53:08.759Z"
+}

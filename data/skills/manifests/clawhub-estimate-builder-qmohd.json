@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17862,
+  "uuid": "skill-clawhub-estimate-builder-qmohd",
+  "skillKey": "clawhub-estimate-builder-qmohd",
+  "name": "Estimate Builder",
+  "summary": "Build construction project estimates. Generate detailed cost breakdowns with labor, materials, equipment, and overhead.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.estimate_builder_qmohd",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qmohd",
+      "features": [
+        "Build construction project estimates",
+        "Generate detailed cost breakdowns with labor, materials, equipment, and overhead."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/estimate-builder-qmohd@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116758765?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "estimate-builder-qmohd",
+      "url": "https://clawhub.ai/skills/estimate-builder-qmohd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "estimate-builder-qmohd",
+    "url": "https://clawhub.ai/skills/estimate-builder-qmohd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/estimate-builder-qmohd-5ac7d0984b406ca0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/estimate-builder-qmohd@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-estimate-builder-qmohd-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb003ce716396417bcc507cf55074d654420a18d6a6d728a02ba221f6e11916e",
+      "artifactSizeBytes": 2282
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T01:25:41.763Z"
+}

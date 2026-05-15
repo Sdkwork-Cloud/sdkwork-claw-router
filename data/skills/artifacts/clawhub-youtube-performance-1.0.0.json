@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-performance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_performance",
+  "skill": {
+    "id": 33581,
+    "skillKey": "clawhub-youtube-performance",
+    "name": "Youtube Performance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-performance",
+    "url": "https://clawhub.ai/skills/youtube-performance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-performance-5f5e93b77678a7a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track YouTube channel performance and analytics. Use when the user says 'YouTube analytics', 'YouTube metrics', 'how is my YouTube doing', 'video views', 'wa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snoopyrain",
+      "userId": "s17caa3d3hyz4mwjdj866q0we983qd7s",
+      "displayName": "snoopyrain",
+      "image": "https://avatars.githubusercontent.com/u/9717776?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774682314162,
+      "changelog": "- Initial release of youtube-performance skill.\n- Track YouTube channel analytics including views, watch time, subscriber growth, and engagement metrics.\n- Supports real-time and historical performance data via Boring integration.\n- Requires an MCP Connector link for secure, read-only analytics access.\n- No local API keys needed; all authentication is handled via the embedded MCP link.\n- Comprehensive instructions and error handling guidance included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9be91c56cd8e8cccf29135969c807b6475feb9ed2351b517cc3efd976cff0abe"
+}

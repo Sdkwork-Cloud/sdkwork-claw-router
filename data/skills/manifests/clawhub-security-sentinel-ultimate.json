@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33507,
+  "uuid": "skill-clawhub-security-sentinel-ultimate",
+  "skillKey": "clawhub-security-sentinel-ultimate",
+  "name": "Security Sentinel Ultimate",
+  "summary": "Scans a skill directory for security issues and best practices",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_sentinel_ultimate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peter Lum",
+      "features": [
+        "Scans a skill directory for security issues and best practices"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-sentinel-ultimate@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-sentinel-ultimate",
+      "url": "https://clawhub.ai/skills/security-sentinel-ultimate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-sentinel-ultimate",
+    "url": "https://clawhub.ai/skills/security-sentinel-ultimate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-sentinel-ultimate-6f7f0c74c0c136b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-sentinel-ultimate@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-sentinel-ultimate-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:087f7998c6f25f9d23af5b79cf282c18a0e6c7885e6d31a8b4a1d9549f3ba23c",
+      "artifactSizeBytes": 2452
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T03:57:47.536Z"
+}

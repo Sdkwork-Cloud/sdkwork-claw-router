@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59778,
+  "uuid": "skill-clawhub-daily-report-joig",
+  "skillKey": "clawhub-daily-report-joig",
+  "name": "Daily Report Joig",
+  "summary": "生成简洁的中文日报（highlights/blockers/next），并可落盘为 Markdown 文件，适合个人复盘与同步。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_report_joig",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JoiFG",
+      "features": [
+        "生成简洁的中文日报（highlights/blockers/next），并可落盘为 Markdown 文件，适合个人复盘与同步。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-report-joig@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132867951?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-report-joig",
+      "url": "https://clawhub.ai/skills/daily-report-joig"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-report-joig",
+    "url": "https://clawhub.ai/skills/daily-report-joig",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-report-joig-b3640526e7c1304d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-report-joig@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-report-joig-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82a58ee62c53053d4771def8aa31e69a6a348c6b7ca40c3c49e390a4ad7fb6db",
+      "artifactSizeBytes": 2249
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T13:18:29.534Z"
+}

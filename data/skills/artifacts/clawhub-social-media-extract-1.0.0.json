@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-media-extract@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_media_extract",
+  "skill": {
+    "id": 44806,
+    "skillKey": "clawhub-social-media-extract",
+    "name": "Social Media Extract"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-media-extract",
+    "url": "https://clawhub.ai/skills/social-media-extract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-media-extract-52060fe064753fc0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract and analyze public social media data from Instagram, TikTok, Reddit, YouTube, and Twitter to identify trends, top creators, and engagement insights."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774910531360,
+      "changelog": "Major update: Social Media Data Extractor 2.0.0 introduces unified, multi-platform extraction, analysis, and actionable reporting for five major social networks.\n\n- Now extracts and normalizes public data from Instagram, TikTok, YouTube, Reddit, and Twitter/X in parallel.\n- Adds advanced analytics: engagement rates, trending topic detection, creator identification, virality scoring, and competitor benchmarking.\n- Outputs unified, structured JSON ready for dashboards and workflow tools.\n- Generates concise AI-written trend reports to guide next steps.\n- Easy setup via Apify integration and simple npm install for dependencies.\n- Extensive documentation and real-world code examples included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94457395e2bfab2cc22e2f6ca025e285792bc29c60c328db8849603656e9198a"
+}

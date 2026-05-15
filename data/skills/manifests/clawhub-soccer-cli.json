@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17214,
+  "uuid": "skill-clawhub-soccer-cli",
+  "skillKey": "clawhub-soccer-cli",
+  "name": "Soccer Cli",
+  "summary": "A CLI to check soccer scores, game details, and player stats from your terminal.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soccer_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jrojas537",
+      "features": [
+        "A CLI to check soccer scores, game details, and player stats from your terminal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soccer-cli@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26755668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soccer-cli",
+      "url": "https://clawhub.ai/skills/soccer-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soccer-cli",
+    "url": "https://clawhub.ai/skills/soccer-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soccer-cli-c3629cc8899a9076.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soccer-cli@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-soccer-cli-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d43d5b656acbbaa2ae7138a6c00e9dd96975242b108f2054634a212f299c0af",
+      "artifactSizeBytes": 1885
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T12:04:02.918Z"
+}

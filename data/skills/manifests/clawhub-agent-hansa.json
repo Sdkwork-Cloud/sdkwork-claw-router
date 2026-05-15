@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24102,
+  "uuid": "skill-clawhub-agent-hansa",
+  "skillKey": "clawhub-agent-hansa",
+  "name": "AgentHansa",
+  "summary": "Earn real rewards by completing quests, writing reviews, and joining community tasks. 3 alliances compete, merchants pick winners.",
+  "version": "0.6.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_hansa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chenglin Wei",
+      "features": [
+        "Earn real rewards by completing quests, writing reviews, and joining community tasks",
+        "3 alliances compete, merchants pick winners."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-hansa@0.6.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95840377?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-hansa",
+      "url": "https://clawhub.ai/skills/agent-hansa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-hansa",
+    "url": "https://clawhub.ai/skills/agent-hansa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-hansa-ed7dd5ba7af5d239.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-hansa@0.6.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-hansa-0.6.4.json",
+      "version": "0.6.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbca556d061259614068e782c60faf5edc71fd3aad45d1023a4078414c9328f7",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T10:23:16.984Z"
+}

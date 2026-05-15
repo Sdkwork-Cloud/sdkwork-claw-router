@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aiheal-cli-operator@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiheal_cli_operator",
+  "skill": {
+    "id": 55383,
+    "skillKey": "clawhub-aiheal-cli-operator",
+    "name": "aiheal cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiheal-cli-operator",
+    "url": "https://clawhub.ai/skills/aiheal-cli-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiheal-cli-operator-1d6a6b55048ddbf5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate and troubleshoot the AIHealingMe CLI through the npm package (`aihealingmecli`). Use when tasks involve auth/user/audio/plan/chat/emotion/subscriptio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bebetterest",
+      "userId": "s178m28r1q0t2mbedkds2dbqxd83vtx3",
+      "displayName": "yujian li",
+      "image": "https://avatars.githubusercontent.com/u/105866222?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775058903156,
+      "changelog": "aiheal-cli-operator 1.0.2\n\n- Improved error handling and troubleshooting guidance for CLI local validation failures (`VALIDATION_ERROR`), with specific advice for fixing payloads using `error.issues[]`.\n- Clarified usage and auto-generation of `requestId` in `single-job create` and `plan-stage-job create` commands.\n- Updated workflow and troubleshooting sections in SKILL.md for better usability and coverage.\n- References and instructions in command-map.md and error-playbook.md were aligned with new validation behaviors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b05c11a01a7480bf737d7802a8224315d2350fdcdfc1fe67fc13f888ad80bd9"
+}

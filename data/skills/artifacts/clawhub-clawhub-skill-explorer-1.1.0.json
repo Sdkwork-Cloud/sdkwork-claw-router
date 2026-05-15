@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-skill-explorer@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skill_explorer",
+  "skill": {
+    "id": 69067,
+    "skillKey": "clawhub-clawhub-skill-explorer",
+    "name": "ClawHub技能探索工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skill-explorer",
+    "url": "https://clawhub.ai/skills/clawhub-skill-explorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skill-explorer-684d60c3dbbf5612.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ClawHub技能探索和导航工具。帮助用户快速找到所需的技能，支持关键词搜索和分类浏览。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "playgod2023",
+      "userId": "publishers:playgod2023",
+      "displayName": "playgod2023",
+      "image": "https://avatars.githubusercontent.com/u/130921775?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1227,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771569056569,
+      "changelog": "优化API调用策略，提升技能搜索效率和稳定性，改善API限制问题",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:73b6b83abdb0e28b9ff210b9f0a647b3f15a312c0662233a7cf387e497b63001"
+}

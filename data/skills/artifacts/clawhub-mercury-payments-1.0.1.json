@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mercury-payments@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mercury_payments",
+  "skill": {
+    "id": 16650,
+    "skillKey": "clawhub-mercury-payments",
+    "name": "Mercury Payments"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mercury-payments",
+    "url": "https://clawhub.ai/skills/mercury-payments",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mercury-payments-daf4720afe76d8d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pay invoices via Mercury Bank API. Use when sending ACH or wire payments through Mercury, creating recipients, querying transactions, or managing payment wor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nathan-deepmm",
+      "userId": "publishers:nathan-deepmm",
+      "displayName": "nathan-deepmm",
+      "image": "https://avatars.githubusercontent.com/u/90851944?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 863,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772434909267,
+      "changelog": "Generalized docs for safe sharing; removed org-specific account/recipient IDs and personal contacts; added dynamic account discovery guidance; kept internal transfer and payment workflow improvements.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e31c908c41fd1895c95f6bbf0a47e30cda12d6548b3761eed8e461a308c8acc8"
+}

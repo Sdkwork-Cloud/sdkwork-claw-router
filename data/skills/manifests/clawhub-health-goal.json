@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25322,
+  "uuid": "skill-clawhub-health-goal",
+  "skillKey": "clawhub-health-goal",
+  "name": "Health Goal",
+  "summary": "Set, track, and review personal health goals including weight loss, fitness targets, dietary changes, and wellness habits. Use when users want to establish h...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_goal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wenbing Ji",
+      "features": [
+        "Set, track, and review personal health goals including weight loss, fitness targets, dietary ch.",
+        "Use when users want to establish h..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/health-goal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8498518?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "health-goal",
+      "url": "https://clawhub.ai/skills/health-goal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-goal",
+    "url": "https://clawhub.ai/skills/health-goal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-goal-47a5aecd5f0806de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/health-goal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-health-goal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbeac92bda9411386a39fc983860aa55bf5d6d9a6b1fa6528d806c309082436e",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T05:31:39.960Z"
+}

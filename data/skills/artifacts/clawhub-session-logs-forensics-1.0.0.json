@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-logs-forensics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_logs_forensics",
+  "skill": {
+    "id": 36064,
+    "skillKey": "clawhub-session-logs-forensics",
+    "name": "Session Logs Forensics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-logs-forensics",
+    "url": "https://clawhub.ai/skills/session-logs-forensics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-logs-forensics-600dd03c9aed3d46.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze OpenClaw session JSONL history for cost spikes, tool-call anomalies, and behavior regressions with jq + rg."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielsinewe",
+      "userId": "s176jv075hrkmn3rxtgbyd914583nrry",
+      "displayName": "Daniel Sinewe",
+      "image": "https://avatars.githubusercontent.com/u/128365422?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775804565570,
+      "changelog": "Initial release: forensic session-log analysis playbook for cost spikes, tool-call anomalies, and behavior regressions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0bb21476d65376d79a5f924b3c6746dfb33b7b9f8f152dee6215dd80f22bab9"
+}

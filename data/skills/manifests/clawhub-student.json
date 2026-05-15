@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21530,
+  "uuid": "skill-clawhub-student",
+  "skillKey": "clawhub-student",
+  "name": "Student",
+  "summary": "Help with coursework. Use when taking notes, summarizing readings, formatting citations, outlining essays, or calculating GPA.",
+  "version": "3.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.student",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Help with coursework",
+        "Use when taking notes, summarizing readings, formatting citations, outlining essays, or calcula."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/student@3.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "student",
+      "url": "https://clawhub.ai/skills/student"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "student",
+    "url": "https://clawhub.ai/skills/student",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/student-264c8c381bf16c98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/student@3.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-student-3.4.1.json",
+      "version": "3.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aab6c797dc46e66ccc24684c87a41736c5ffa7b1b607b8bd654f1f9a905aff42",
+      "artifactSizeBytes": 1849
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:13:11.047Z"
+}

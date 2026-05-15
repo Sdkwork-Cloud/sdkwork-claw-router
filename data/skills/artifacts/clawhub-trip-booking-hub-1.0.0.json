@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trip-booking-hub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trip_booking_hub",
+  "skill": {
+    "id": 58697,
+    "skillKey": "clawhub-trip-booking-hub",
+    "name": "行程预订中心"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trip-booking-hub",
+    "url": "https://clawhub.ai/skills/trip-booking-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trip-booking-hub-9ed973097d2faeac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Booking.com国际酒店预订助手，支持全球酒店搜索、房型查询、价格对比、预订管理。Invoke when user wants to search international hotels, book hotels on Booking.com, or manage Booking.com reservat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryan-zry",
+      "userId": "s178x3nj3nkwm83bzzt6tyj5gx83nva1",
+      "displayName": "赵瑞宇",
+      "image": "https://avatars.githubusercontent.com/u/266894511?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774864548295,
+      "changelog": "Booking.com国际酒店预订助手首次发布：\n\n- 支持全球酒店搜索、房型查询、价格对比与预订管理\n- 提供多语言、多币种支持，适用于国际出行场景\n- 严格通过Booking.com官方API获取所有酒店与价格信息\n- 支持订单创建、查询、取消等全流程预订管理\n- 明确数据展示规则及格式，保障信息准确可靠",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a6490e96130e16b467109dcdb9e7c4572e3cbdc0980f188432909d8a841d9708"
+}

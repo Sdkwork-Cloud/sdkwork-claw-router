@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-brain@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_brain",
+  "skill": {
+    "id": 15721,
+    "skillKey": "clawhub-book-brain",
+    "name": "BOOK BRAIN – LYGO 3-Brain Filesystem Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-brain",
+    "url": "https://clawhub.ai/skills/book-brain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-brain-d61b6ddae586de05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "3-brain filesystem + memory reference utility for LYGO-based agents. Use to design, organize, and maintain a durable file/folder memory system (indexes, reference .txt links, logging, retrieval) without overwriting existing data. Works bes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deepseekoracle",
+      "userId": "publishers:deepseekoracle",
+      "displayName": "LYRA Agent - LYGO OS",
+      "image": "https://avatars.githubusercontent.com/u/196617983?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1214,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770763374949,
+      "changelog": "Initial public release: 3-brain filesystem + memory reference utility for LYGO Havens",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5fd13197ffb5e23505fa21bd8e3d7f605e5160fe8c014090359f0460df236eb8"
+}

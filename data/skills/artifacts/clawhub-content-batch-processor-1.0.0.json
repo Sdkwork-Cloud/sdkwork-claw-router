@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-batch-processor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_batch_processor",
+  "skill": {
+    "id": 70780,
+    "skillKey": "clawhub-content-batch-processor",
+    "name": "content-batch-processor（批量内容处理工具，支持文本格式化、摘要生成、关键词提取、文件格式转换等批处理操作，提升内容工作效率。）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-batch-processor",
+    "url": "https://clawhub.ai/skills/content-batch-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-batch-processor-c69baba4136f25a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "批量内容处理工具，支持文本格式化、摘要生成、关键词提取、多语言翻译等批量操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "careytian-ai",
+      "userId": "s17ed8qcx2a9c3trb2gjdxhvr583v8e1",
+      "displayName": "careytian",
+      "image": "https://avatars.githubusercontent.com/u/264030747?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774794208027,
+      "changelog": "content-batch-processor v1.0.0 初始发布\n\n- 提供批量文本处理工具，支持格式化、摘要生成、关键词提取和多语言翻译等功能\n- 支持多种处理模式：顺序、并行和流式处理\n- 支持 Markdown/HTML 格式转换、编码转换和文件重命名\n- 内置内容分析功能，包括字数统计、可读性评分和语言检测\n- 提供详细的使用示例和性能优化建议",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d8f1d3b8cbc9031d7e1326f853257ff708b31d96cff49674b04da0f268a8db3"
+}

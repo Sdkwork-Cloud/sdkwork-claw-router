@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jina-ai-reader@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jina_ai_reader",
+  "skill": {
+    "id": 13196,
+    "skillKey": "clawhub-jina-ai-reader",
+    "name": "jina-ai-reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jina-ai-reader",
+    "url": "https://clawhub.ai/skills/jina-ai-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jina-ai-reader-0fa09fcd5c70001d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch clean, AI-friendly Markdown content from any URL using Jina.ai Reader. Bypasses paywalls, handles Twitter/X posts, renders JavaScript-heavy pages, retu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiangtianjiao",
+      "userId": "s17b03zqms7344xdswt3xd82gn85dn8y",
+      "displayName": "soundi",
+      "image": "https://avatars.githubusercontent.com/u/20338177?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1284,
+      "installsAllTime": 15,
+      "installsCurrent": 14,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772589955947,
+      "changelog": "Update description.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6c102ba97477ec85b09dd7746edddc29e1c4855837ac4435aabcd583a87db35c"
+}

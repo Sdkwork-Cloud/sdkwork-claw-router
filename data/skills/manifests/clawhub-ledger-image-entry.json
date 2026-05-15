@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65341,
+  "uuid": "skill-clawhub-ledger-image-entry",
+  "skillKey": "clawhub-ledger-image-entry",
+  "name": "Ledger Image Entry",
+  "summary": "通过图片识别 receipt、订单或发票内容，提取商家、日期、金额和商品明细， 并转换为可入账的结构化记录。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ledger_image_entry",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shing19",
+      "features": [
+        "通过图片识别 receipt、订单或发票内容，提取商家、日期、金额和商品明细， 并转换为可入账的结构化记录。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ledger-image-entry@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38907754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ledger-image-entry",
+      "url": "https://clawhub.ai/skills/ledger-image-entry"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ledger-image-entry",
+    "url": "https://clawhub.ai/skills/ledger-image-entry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ledger-image-entry-c0c070b1e3c8bdfb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ledger-image-entry@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ledger-image-entry-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95c46a1050ff54f1670dd79394726ce115988c6f3edbd43fd3a4005f7056253e",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T05:47:34.548Z"
+}

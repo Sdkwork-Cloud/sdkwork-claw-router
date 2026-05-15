@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-voice-cloning@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_voice_cloning",
+  "skill": {
+    "id": 12503,
+    "skillKey": "clawhub-ai-voice-cloning",
+    "name": "Ai Voice Cloning"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-voice-cloning",
+    "url": "https://clawhub.ai/skills/ai-voice-cloning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-voice-cloning-1e37b7b4969f00ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI voice generation, text-to-speech, and voice synthesis via inference.sh CLI. Models: Kokoro TTS, DIA, Chatterbox, Higgs, VibeVoice for natural speech. Capa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1707,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403062072,
+      "changelog": "- Expanded documentation with detailed usage examples for all supported voice models.\n- Added tables listing available voices, their styles, and regional accents for Kokoro TTS.\n- Included best practices, use cases, and tips for achieving natural-sounding narration.\n- Provided comprehensive CLI commands for voice cloning, long-form narration, multi-voice conversations, and integration with video workflows.\n- Listed related skills for broader use with AI voice, podcast, and video generation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a9ef9646a4809342b511ba231aaf0edd29f9276561658099d9459a513815c5ab"
+}

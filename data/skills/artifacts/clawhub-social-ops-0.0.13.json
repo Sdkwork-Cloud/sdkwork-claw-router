@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-ops@0.0.13",
+  "version": "0.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_ops",
+  "skill": {
+    "id": 20687,
+    "skillKey": "clawhub-social-ops",
+    "name": "Social Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-ops",
+    "url": "https://clawhub.ai/skills/social-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-ops-1394a5526847741d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Role-based social media operations skill. Use this skill when executing structured social campaigns — scouting opportunities, crafting content, posting, resp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dougbtv",
+      "userId": "s17a7v3r8ht088r68gx35xgry983pf9q",
+      "displayName": "Doug Smith",
+      "image": "https://avatars.githubusercontent.com/u/5472189?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 907,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 1,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "0.0.13",
+      "createdAt": 1772746879547,
+      "changelog": "## What's Changed\n* social-ops: Add human-friendly configuration guide by @asteriskautobuilder in https://github.com/track-forge/openclaw-skill-social-ops/pull/65\n* Fixes #61: retry end-to-end for social-ops issue by @asteriskautobuilder in https://github.com/track-forge/openclaw-skill-social-ops/pull/63\n\n\n**Full Changelog**: https://github.com/track-forge/openclaw-skill-social-ops/compare/v0.0.12...v0.0.13",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3f43f83b17ee520da89edc93de85d2a639352c4aff5c32e8f1c9058d8d45e1a3"
+}

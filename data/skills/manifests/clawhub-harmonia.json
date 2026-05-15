@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45191,
+  "uuid": "skill-clawhub-harmonia",
+  "skillKey": "clawhub-harmonia",
+  "name": "Harmonia",
+  "summary": "Check PyTorch, Transformers, and CUDA compatibility. Detect GPU, driver mismatches, and version conflicts in ML environments. Use when the user sets up ML/AI...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.harmonia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ahmed Eladl",
+      "features": [
+        "Check PyTorch, Transformers, and CUDA compatibility",
+        "Detect GPU, driver mismatches, and version conflicts in ML environments",
+        "Use when the user sets up ML/AI..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/harmonia@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96540988?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "harmonia",
+      "url": "https://clawhub.ai/skills/harmonia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "harmonia",
+    "url": "https://clawhub.ai/skills/harmonia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/harmonia-4d214cdf38a656ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/harmonia@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-harmonia-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95b9ca999d13d00cbfbef6608026d3bd7303453cd090710ecbd17f2909c0023a",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T01:09:02.980Z"
+}

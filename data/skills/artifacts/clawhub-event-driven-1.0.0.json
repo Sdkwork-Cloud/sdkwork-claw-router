@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/event-driven@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.event_driven",
+  "skill": {
+    "id": 51653,
+    "skillKey": "clawhub-event-driven",
+    "name": "Event Driven"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "event-driven",
+    "url": "https://clawhub.ai/skills/event-driven",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/event-driven-c0c13eebc6578c80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep event-driven architecture workflow—events vs commands, ordering and idempotency, sagas, outbox pattern, observability, and failure modes. Use when desig..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 283,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774398288560,
+      "changelog": "- Initial release of the event-driven architecture workflow.\n- Covers events vs commands, ordering, idempotency, sagas, outbox pattern, observability, and failure modes.\n- Provides a six-stage process: event identification, contracts & versioning, delivery semantics, orchestration/choreography, observability, failure & replay.\n- Includes practical tips, review checklist, and guidance for handling deviations and special cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c15c4627cf38d3733866d3d315e3ecbfff721ad5d829678b63d9272b9f619573"
+}

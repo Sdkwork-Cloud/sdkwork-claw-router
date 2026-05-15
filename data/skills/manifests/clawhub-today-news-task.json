@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67043,
+  "uuid": "skill-clawhub-today-news-task",
+  "skillKey": "clawhub-today-news-task",
+  "name": "Today News Task",
+  "summary": "抓取国内门户页面并汇总热点资讯。Use When 需要国内外热点与科技数码的要闻摘录。且可选择是否将结果推送到负一屏。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.today_news_task",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LZH2607",
+      "features": [
+        "抓取国内门户页面并汇总热点资讯。Use When 需要国内外热点与科技数码的要闻摘录。且可选择是否将结果推送到负一屏。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/today-news-task@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48599687?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "today-news-task",
+      "url": "https://clawhub.ai/skills/today-news-task"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "today-news-task",
+    "url": "https://clawhub.ai/skills/today-news-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/today-news-task-4efbd110cce05d2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/today-news-task@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-today-news-task-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4abdb851fb23bc2c524d76f08925f11c032d7a768ff205ddc35839c36591c720",
+      "artifactSizeBytes": 2476
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T13:22:58.797Z"
+}

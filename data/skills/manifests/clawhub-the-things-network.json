@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42892,
+  "uuid": "skill-clawhub-the-things-network",
+  "skillKey": "clawhub-the-things-network",
+  "name": "The Things Network",
+  "summary": "The Things Network integration. Manage data, records, and automate workflows. Use when the user wants to interact with The Things Network data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.the_things_network",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "The Things Network integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with The Things Network data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/the-things-network@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "the-things-network",
+      "url": "https://clawhub.ai/skills/the-things-network"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "the-things-network",
+    "url": "https://clawhub.ai/skills/the-things-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/the-things-network-3c11292b243cdc35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/the-things-network@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-the-things-network-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0234386efb4fb1decea2703cb6d880cdc68e64e4c39d4ffbb2418176e7444ff1",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T08:54:08.905Z"
+}

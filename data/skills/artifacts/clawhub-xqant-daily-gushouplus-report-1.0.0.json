@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xqant-daily-gushouplus-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xqant_daily_gushouplus_report",
+  "skill": {
+    "id": 61283,
+    "skillKey": "clawhub-xqant-daily-gushouplus-report",
+    "name": "xqant daily gushouplus report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xqant-daily-gushouplus-report",
+    "url": "https://clawhub.ai/skills/xqant-daily-gushouplus-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xqant-daily-gushouplus-report-c8b419eca3f80d5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动生成每日21:30发布的87只固收+产品全量表现及赛道前后3名归因分析复盘报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wesdaliang",
+      "userId": "s171wvhk6kszhmj6qvw55npmf583hfrs",
+      "displayName": "wesdaliang",
+      "image": "https://avatars.githubusercontent.com/u/42329123?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774366688020,
+      "changelog": "Initial release of the 固收+ daily review skill:\n\n- Generates daily 21:30 report for 87 fixed-income+ products, including full data review, top/bottom 3 attribution analysis, and track rankings.\n- Pulls product data from authoritative lists with strict code validation.\n- Integrates Wind API queries (NAV returns, 1-year yield, 2-year max drawdown, drawdown period).\n- Produces Markdown reports: data dashboards per track, detailed attribution for top/bottom 3, and overall summary.\n- Includes cron job for automated periodic reporting and session isolation handling.\n- Emphasizes data completeness, accurate rankings per track, and formatted output without product codes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f2f5e7b5193ac2fbacb1c87cb6aa7289d21053a7a4af5fb7f2b1b0b66ba3763"
+}

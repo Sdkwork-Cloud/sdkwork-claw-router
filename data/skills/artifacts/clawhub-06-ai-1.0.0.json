@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/06-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.06_ai",
+  "skill": {
+    "id": 67274,
+    "skillKey": "clawhub-06-ai",
+    "name": "06 AI总结"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "06-ai",
+    "url": "https://clawhub.ai/skills/06-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/06-ai-771441c160903148.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI智能内容总结和项目复盘工具，支持多个大模型API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nidhov01",
+      "userId": "publishers:nidhov01",
+      "displayName": "nidhov01",
+      "image": "https://avatars.githubusercontent.com/u/235751867?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773577795973,
+      "changelog": "**v2.0.0 is a major upgrade: Adds multi-LLM support and AI-enhanced summarization with fallback.**\n\n- Supports multiple AI model providers (Zhipu, OpenAI, Claude, DeepSeek, Dashscope, Moonshot) for smarter content summarization and project reviews.\n- Introduces automatic fallback to basic summarization when API keys are unavailable.\n- Adds API key configuration and usage instructions; options for cost-effective providers and how to use free quotas.\n- Provides code samples for switching models, doing comparative results, and typical use cases.\n- Remains backward compatible with data from v1.0; no installation changes required to switch models.\n- Enhanced documentation on troubleshooting, supported summary types, and configuration steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72aca308689d53cef75a40dfcdfc462779ad0c194fc2d2b851335ae48e2c4a37"
+}

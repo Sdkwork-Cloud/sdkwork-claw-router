@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52071,
+  "uuid": "skill-clawhub-trim",
+  "skillKey": "clawhub-trim",
+  "name": "Trim",
+  "summary": "Data trimming reference — whitespace trimming, string cleanup, data truncation, outlier trimming, and signal processing. Use when cleaning text data, removin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trim",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Data trimming reference — whitespace trimming, string cleanup, data truncation, outlier trimmin.",
+        "Use when cleaning text data, removin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trim@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trim",
+      "url": "https://clawhub.ai/skills/trim"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trim",
+    "url": "https://clawhub.ai/skills/trim",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trim-657c97bf2df3f6e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trim@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trim-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a95c8af020f06a7fa2fc4bb15de8524a17995e4c426d34c7a2361f6f9147c28",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T15:18:50.745Z"
+}

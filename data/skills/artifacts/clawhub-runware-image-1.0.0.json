@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/runware-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runware_image",
+  "skill": {
+    "id": 19585,
+    "skillKey": "clawhub-runware-image",
+    "name": "Generate images using Runware API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runware-image",
+    "url": "https://clawhub.ai/skills/runware-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runware-image-e2d889b73af1742d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate high-quality images on-demand via the Runware.ai API. This skill is the default image generator. Use it whenever the user asks to \"generate an image..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "geeklord",
+      "userId": "publishers:geeklord",
+      "displayName": "GeekLord",
+      "image": "https://avatars.githubusercontent.com/u/214471?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 604,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771162798610,
+      "changelog": "Initial release: Secure, on-demand image generation using Runware.ai API.\n\n- Supports text-to-image generation with robust safety checks.\n- Executes requests directly, without prompting for clarifications unless absolutely necessary.\n- Reads API keys from environment; never requests or stores them from the user.\n- Saves generated images to the Downloads folder by default.\n- Provides a tested CLI script and clear usage documentation.\n- Includes prompt validation and minimal, privacy-focused design.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:de3f39c58a74e6c8b36a2bff5c9ac2de8a71323d48e3a216dc32151c3ed76801"
+}

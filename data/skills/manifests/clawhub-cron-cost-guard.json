@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41747,
+  "uuid": "skill-clawhub-cron-cost-guard",
+  "skillKey": "clawhub-cron-cost-guard",
+  "name": "Cron Cost Guard",
+  "summary": "Audit AI agent cron jobs for token cost risks, model-switch loops, and session isolation failures. Use when setting up new cron jobs, debugging unexpected to...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_cost_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pouria3",
+      "features": [
+        "Audit AI agent cron jobs for token cost risks, model-switch loops, and session isolation failur.",
+        "Use when setting up new cron jobs, debugging unexpected to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cron-cost-guard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1934314?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cron-cost-guard",
+      "url": "https://clawhub.ai/skills/cron-cost-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-cost-guard",
+    "url": "https://clawhub.ai/skills/cron-cost-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-cost-guard-9e9bbdced9aa04ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cron-cost-guard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cron-cost-guard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:acef22823bf4a7d6365cea0402fdfdddb17865db05c2f8bb75765f741008f95c",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T02:59:28.041Z"
+}

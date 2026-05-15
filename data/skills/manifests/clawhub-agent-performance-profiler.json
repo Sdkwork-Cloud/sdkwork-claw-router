@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38607,
+  "uuid": "skill-clawhub-agent-performance-profiler",
+  "skillKey": "clawhub-agent-performance-profiler",
+  "name": "Agent Performance Profiler",
+  "summary": "Analyzes AI agent response time, token usage, and tool call efficiency, providing actionable recommendations to optimize performance and reduce cost.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_performance_profiler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Analyzes AI agent response time, token usage, and tool call efficiency, providing actionable re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-performance-profiler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-performance-profiler",
+      "url": "https://clawhub.ai/skills/agent-performance-profiler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-performance-profiler",
+    "url": "https://clawhub.ai/skills/agent-performance-profiler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-performance-profiler-cb09765f41f3fcd4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-performance-profiler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-performance-profiler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0c7bec1c2d5793a8bf751123f314d9844a3da9722c5977360021dd61d3f2d98",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T00:53:58.960Z"
+}

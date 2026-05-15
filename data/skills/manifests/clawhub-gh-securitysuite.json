@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44866,
+  "uuid": "skill-clawhub-gh-securitysuite",
+  "skillKey": "clawhub-gh-securitysuite",
+  "name": "Securitysuite",
+  "summary": "Comprehensive agent security platform with 7 endpoints. Scan text for injection, audit SKILL.md files for malware and scope issues, generate detailed securit...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gh_securitysuite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mirni",
+      "features": [
+        "Comprehensive agent security platform with 7 endpoints",
+        "Scan text for injection, audit SKILL.md files for malware and scope issues, generate detailed s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gh-securitysuite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13551232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gh-securitysuite",
+      "url": "https://clawhub.ai/skills/gh-securitysuite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gh-securitysuite",
+    "url": "https://clawhub.ai/skills/gh-securitysuite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gh-securitysuite-fa59aed496e47ba3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gh-securitysuite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gh-securitysuite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4b62c1fd7dc98510a1962874237e1e39953638a1eac05e933782940281fc012",
+      "artifactSizeBytes": 2294
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T08:07:18.747Z"
+}

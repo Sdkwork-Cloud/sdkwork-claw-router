@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paperless@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paperless",
+  "skill": {
+    "id": 9920,
+    "skillKey": "clawhub-paperless",
+    "name": "Paperless"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paperless",
+    "url": "https://clawhub.ai/skills/paperless",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paperless-3aabed2fdda7ceef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Paperless-NGX document management system via ppls CLI. Search, retrieve, upload, and organize documents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nickchristensen",
+      "userId": "s170e911n7q2prxws0yzxfm5198408tf",
+      "displayName": "NickChristensen",
+      "image": "https://avatars.githubusercontent.com/u/613826?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2982,
+      "installsAllTime": 14,
+      "installsCurrent": 14,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1769718863391,
+      "changelog": "Updated docs with v1.2.0 CLI features: date filters, tag/correspondent/document-type filters, repeatable args",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c5af2557f02c75996a884751f238e93c2fca4763bbe22f0e15d9ee2b3d2a34f2"
+}

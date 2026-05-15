@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improvement-system@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improvement_system",
+  "skill": {
+    "id": 18461,
+    "skillKey": "clawhub-self-improvement-system",
+    "name": "Self-Improvement System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improvement-system",
+    "url": "https://clawhub.ai/skills/self-improvement-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improvement-system-096aedbdcdf6cd21.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs a continuous self-improvement loop that helps the agent learn from mistakes, extract lessons, and refine its behaviour over time. Use when the user says..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "assafster",
+      "userId": "s17213g8n27evnns49ttn37fjs842rcp",
+      "displayName": "assafster",
+      "image": "https://avatars.githubusercontent.com/u/152359331?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 489,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773801252678,
+      "changelog": "**This version introduces strict privacy safeguards to all self-improvement logging and process files.**\n\n- Added detailed privacy and data safety section: only abstract descriptions of process errors may be logged, never user data.\n- Banned logging of any personally identifiable information, user-provided content, verbatim user messages, credentials, or sensitive details.\n- Required paraphrasing or omission of any mistake description that could expose user information.\n- Applied privacy rules to all core files, including session-log entries.\n- Updated mindset and process to prioritize privacy over volume in logging and lesson extraction.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7be6a61c4f9603802a1ce65c5054c054dfe88f0f7d726dcb0e2db206092ce6fa"
+}

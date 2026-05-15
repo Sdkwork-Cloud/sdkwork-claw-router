@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32897,
+  "uuid": "skill-clawhub-diabatix-coldstream",
+  "skillKey": "clawhub-diabatix-coldstream",
+  "name": "Diabatix Coldstream",
+  "summary": "Diabatix ColdStream integration. Manage data, records, and automate workflows. Use when the user wants to interact with Diabatix ColdStream data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diabatix_coldstream",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Diabatix ColdStream integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Diabatix ColdStream data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/diabatix-coldstream@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "diabatix-coldstream",
+      "url": "https://clawhub.ai/skills/diabatix-coldstream"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diabatix-coldstream",
+    "url": "https://clawhub.ai/skills/diabatix-coldstream",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diabatix-coldstream-93f86534537d344f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/diabatix-coldstream@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-diabatix-coldstream-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c69bac18e640e6ad67478c2bb6195af8a4fb39c356d9e8dd20bde0e1dcb03185",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:38:55.508Z"
+}

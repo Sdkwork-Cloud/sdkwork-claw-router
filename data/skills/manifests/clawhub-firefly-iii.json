@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12632,
+  "uuid": "skill-clawhub-firefly-iii",
+  "skillKey": "clawhub-firefly-iii",
+  "name": "Firefly III",
+  "summary": "Manage personal finances via Firefly III API. Use when user asks about budgets, transactions, accounts, categories, piggy banks, subscriptions, recurring transactions, or financial reports. Supports creating, listing, updating transactions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firefly_iii",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pushp1997",
+      "features": [
+        "Manage personal finances via Firefly III API",
+        "Use when user asks about budgets, transactions, accounts, categories, piggy banks, subscription.",
+        "Supports creating, listing, updating transactions",
+        "managing accounts and balances"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/firefly-iii@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19623154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "firefly-iii",
+      "url": "https://clawhub.ai/skills/firefly-iii"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firefly-iii",
+    "url": "https://clawhub.ai/skills/firefly-iii",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firefly-iii-a8da15353d7152a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/firefly-iii@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-firefly-iii-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:594a67abf6f8d19f2ecf5925e251d2fecf2c67a635d67b29f4a90495fe3ad9f0",
+      "artifactSizeBytes": 2069
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T14:49:13.433Z"
+}

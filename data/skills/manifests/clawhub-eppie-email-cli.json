@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31238,
+  "uuid": "skill-clawhub-eppie-email-cli",
+  "skillKey": "clawhub-eppie-email-cli",
+  "name": "Eppie Email CLI",
+  "summary": "Control the eppie-console CLI mail client to inspect accounts, folders, read/send messages, sync folders, and manage vaults with JSON output and automation s...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eppie_email_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eppie",
+      "features": [
+        "Control the eppie-console CLI mail client to inspect accounts, folders, read/send messages, syn."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eppie-email-cli@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114587339?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eppie-email-cli",
+      "url": "https://clawhub.ai/skills/eppie-email-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eppie-email-cli",
+    "url": "https://clawhub.ai/skills/eppie-email-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eppie-email-cli-000cc55285834dd9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eppie-email-cli@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eppie-email-cli-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1351ac60ea42f70ef63ebe627fdc508458e53d71c3adf5d0af6cdb9463ae1114",
+      "artifactSizeBytes": 2459
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T11:43:23.600Z"
+}

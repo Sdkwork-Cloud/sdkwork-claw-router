@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/safe-long-run-mode-gpt54-claude@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_long_run_mode_gpt54_claude",
+  "skill": {
+    "id": 32700,
+    "skillKey": "clawhub-safe-long-run-mode-gpt54-claude",
+    "name": "Safe Long-Run Mode GPT5.4 + Claude"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-long-run-mode-gpt54-claude",
+    "url": "https://clawhub.ai/skills/safe-long-run-mode-gpt54-claude",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-long-run-mode-gpt54-claude-a84b522ea2da107f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate long-running AI tasks safely across GPT-5.4 and Claude by using model selection rules, phased execution, checkpoints, resumable workflows, API thrott..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bwiley1989",
+      "userId": "s17eqz6d7h70dmpw0884k3ckz183p1pm",
+      "displayName": "bwiley1989",
+      "image": "https://avatars.githubusercontent.com/u/249144466?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774575115358,
+      "changelog": "Initial release — safe operating mode for long-running tasks across GPT-5.4 and Claude",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64a45655fd155e2735684554d38115cbf6c6cbce90532362267fc2001354bb39"
+}

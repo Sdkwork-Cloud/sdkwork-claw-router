@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-summarize@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_summarize",
+  "skill": {
+    "id": 29199,
+    "skillKey": "clawhub-my-summarize",
+    "name": "My Summarize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-summarize",
+    "url": "https://clawhub.ai/skills/my-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-summarize-0d52b13cd952e497.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shahuquan-dotcom",
+      "userId": "s173jsthzc22vvfvt1j2ec6asd83kh5g",
+      "displayName": "shahuquan-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/264887045?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774512354952,
+      "changelog": "- Updated internal metadata in _meta.json with no changes to user-facing features or documentation.\n- No impact on CLI commands, flags, or usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:636a09f3328db2a4b8ca99b19063404c95e2040fc3f6863a0b3b99f9041032d5"
+}

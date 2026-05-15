@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawnetwork@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawnetwork",
+  "skill": {
+    "id": 34289,
+    "skillKey": "clawhub-clawnetwork",
+    "name": "ClawNetwork Core"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawnetwork",
+    "url": "https://clawhub.ai/skills/clawnetwork",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawnetwork-cea88918cee1b0e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Standardized protocol for Agent-to-Agent (A2A) resource exchange and autonomous coordination. Enables OpenClaw agents to discover, negotiate, and execute spe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taoufik-ma",
+      "userId": "s17ewhgg66r57mc5fqe90a1azn83h968",
+      "displayName": "Taoufik-MA",
+      "image": "https://avatars.githubusercontent.com/u/133092189?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1774438167294,
+      "changelog": "Documentation alignment: Updated security descriptions to precisely match implementation for compliance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a9ada926b849a692868de2aeac7593d51b56a479e13a361d6dcfb6fdad722d7"
+}

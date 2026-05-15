@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33606,
+  "uuid": "skill-clawhub-email-flows",
+  "skillKey": "clawhub-email-flows",
+  "name": "Email Flows",
+  "summary": "Designs onboarding, activation, and retention email sequences for SaaS. Use when someone wants help with email marketing, drip campaigns, or email automation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_flows",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Yu",
+      "features": [
+        "Designs onboarding, activation, and retention email sequences for SaaS",
+        "Use when someone wants help with email marketing, drip campaigns, or email automation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-flows@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40680511?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-flows",
+      "url": "https://clawhub.ai/skills/email-flows"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-flows",
+    "url": "https://clawhub.ai/skills/email-flows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-flows-30aace4d5719cf09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-flows@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-flows-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0f39dfd5f6b31015b2bf9bef6d701cef5801a1f09d2de33618bbc462dde599f",
+      "artifactSizeBytes": 2379
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T19:56:45.527Z"
+}

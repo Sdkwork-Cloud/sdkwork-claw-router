@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65790,
+  "uuid": "skill-clawhub-investoday-finance-data",
+  "skillKey": "clawhub-investoday-finance-data",
+  "name": "InvestToday Finance Data",
+  "summary": "获取中国市场金融数据与投研信息，覆盖 A股、港股、基金、指数、财务、公告、研报和宏观经济等 200+ 接口。Use when: 查询行情数据、财务数据、公告研报、基金指数数据、宏观经济数据。",
+  "version": "1.8.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investoday_finance_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "investoday",
+      "features": [
+        "获取中国市场金融数据与投研信息，覆盖 A股、港股、基金、指数、财务、公告、研报和宏观经济等 200+ 接口。Use when: 查询行情数据、财务数据、公告研报、基金指数数据、宏观经济数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/investoday-finance-data@1.8.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19256972?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "investoday-finance-data",
+      "url": "https://clawhub.ai/skills/investoday-finance-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investoday-finance-data",
+    "url": "https://clawhub.ai/skills/investoday-finance-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investoday-finance-data-e96bc8ec2cf1de3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/investoday-finance-data@1.8.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-investoday-finance-data-1.8.4.json",
+      "version": "1.8.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26e56d941f275ba505e0b6047a7bf49a29704f66aa3492b66eac590fe214c026",
+      "artifactSizeBytes": 2085
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T08:37:55.877Z"
+}

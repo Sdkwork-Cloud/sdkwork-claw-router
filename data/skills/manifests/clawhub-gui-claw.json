@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56044,
+  "uuid": "skill-clawhub-gui-claw",
+  "skillKey": "clawhub-gui-claw",
+  "name": "GUI Agent",
+  "summary": "GUI automation via visual detection. Clicking, typing, reading content, navigating menus, filling forms — all through screenshot → detect → act workflow. Sup...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gui_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlfredJamesLi",
+      "features": [
+        "GUI automation via visual detection",
+        "Clicking, typing, reading content, navigating menus, filling forms — all through screenshot → d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gui-claw@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105028682?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gui-claw",
+      "url": "https://clawhub.ai/skills/gui-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gui-claw",
+    "url": "https://clawhub.ai/skills/gui-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gui-claw-76116d355e904f77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gui-claw@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gui-claw-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a47ba93c8f1e8e02f0a6d39720411af233e0277b3edaa612d090fff4a2d76eac",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T12:09:04.635Z"
+}

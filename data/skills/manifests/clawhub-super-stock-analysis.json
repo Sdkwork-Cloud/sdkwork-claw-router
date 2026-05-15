@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46113,
+  "uuid": "skill-clawhub-super-stock-analysis",
+  "skillKey": "clawhub-super-stock-analysis",
+  "name": "super-stock-analysis",
+  "summary": "Analyze stocks and cryptocurrencies using Yahoo Finance data. Supports portfolio management, watchlists with alerts, dividend analysis, 8-dimension stock sco...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_stock_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Subaru0573",
+      "features": [
+        "Analyze stocks and cryptocurrencies using Yahoo Finance data",
+        "Supports portfolio management, watchlists with alerts, dividend analysis, 8-dimension stock sco."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/super-stock-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/188862647?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "super-stock-analysis",
+      "url": "https://clawhub.ai/skills/super-stock-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-stock-analysis",
+    "url": "https://clawhub.ai/skills/super-stock-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-stock-analysis-6c222bde5a6660be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/super-stock-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-super-stock-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7dc4af40d1aedad8e9de85d06f95b09df16fde9c541f1dc32505109e1513d06f",
+      "artifactSizeBytes": 2403
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T11:18:44.629Z"
+}

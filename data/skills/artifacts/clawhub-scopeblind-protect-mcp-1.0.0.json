@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scopeblind-protect-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scopeblind_protect_mcp",
+  "skill": {
+    "id": 34017,
+    "skillKey": "clawhub-scopeblind-protect-mcp",
+    "name": "ScopeBlind protect-mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scopeblind-protect-mcp",
+    "url": "https://clawhub.ai/skills/scopeblind-protect-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scopeblind-protect-mcp-7cf7e4c12803f3e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MCP security gateway. Wraps any MCP server with per-tool policies, Ed25519-signed decision receipts, and human approval gates. Shadow mode logs everything wi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tomjwxf",
+      "userId": "s179wpxwy2rbw2fhkyefn53whn83gzck",
+      "displayName": "TJF",
+      "image": "https://avatars.githubusercontent.com/u/226438758?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774593960541,
+      "changelog": "scopeblind-protect-mcp 1.0.0 — Initial Release\n\n- Wraps any MCP server as a security gateway with per-tool policies.\n- Supports both shadow mode (logs all actions, does not block) and enforce mode (applies policy).\n- Provides cryptographically signed (Ed25519) decision receipts for all tool calls.\n- Includes human approval gates, rate-limits, and per-tool allow/deny decisioning.\n- Integrates pre-built, CVE-anchored policy packs.\n- Receipts are verifiable offline with no external dependency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:106d23628c889a1433bb807037eefa70221eecf029077ad87e6b7b7b686733a3"
+}

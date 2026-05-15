@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/drawio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drawio",
+  "skill": {
+    "id": 11050,
+    "skillKey": "clawhub-drawio",
+    "name": "Draw.io Professional Diagrams"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drawio",
+    "url": "https://clawhub.ai/skills/drawio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drawio-52ee1a315816f42c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional draw.io diagrams (ERD/database tables, class diagrams, sequence diagrams, flowcharts, architecture diagrams) and export them as PNG. Us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "romanmeclazcke",
+      "userId": "s17cja1b08eq6nkk4f1tf17cj983n9ks",
+      "displayName": "Roman Meclazcke",
+      "image": "https://avatars.githubusercontent.com/u/137325701?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1760,
+      "installsAllTime": 17,
+      "installsCurrent": 17,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772634112868,
+      "changelog": "- Initial release of the drawio skill for generating professional diagrams.\n- Supports automatic detection and creation of ERD, class, sequence, flowchart, and architecture diagrams.\n- Strict output and formatting rules ensure diagram quality and consistency.\n- Always exports and displays PNG images first before offering other formats.\n- Users can request additional formats: .drawio (editable), SVG, PDF, or all of the above.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:87dcb851342a4d4345155a7df10384b74bf7e7bbf1ff0314fb095bce4360c802"
+}

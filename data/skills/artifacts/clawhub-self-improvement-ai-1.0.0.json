@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improvement-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improvement_ai",
+  "skill": {
+    "id": 36289,
+    "skillKey": "clawhub-self-improvement-ai",
+    "name": "Self Improvement Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improvement-ai",
+    "url": "https://clawhub.ai/skills/self-improvement-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improvement-ai-7d7fe0706ea43eed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fardeenkarim",
+      "userId": "s177r42za8vqs7gcrmrm3ef09d84rsxs",
+      "displayName": "Fardeen Karim",
+      "image": "https://avatars.githubusercontent.com/u/111298393?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773910949716,
+      "changelog": "Initial release of the self-improvement skill for continuous learning and error logging.\n\n- Enables structured logging of errors, user corrections, feature requests, knowledge gaps, and best practices to markdown files.\n- Supports both OpenClaw and generic agent setups, with detailed instructions for file setup and promotion to project memory.\n- Introduces standardized formats for learnings, errors, and feature requests, including metadata for tracking and resolution.\n- Provides workflow to review and promote broadly applicable learnings to core project files (AGENTS.md, SOUL.md, TOOLS.md, CLAUDE.md).\n- Includes OpenClaw integration with hooks and workspace file structure for seamless adoption and inter-session communication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a16c58b9de444a5e3795f5d3c6d2de25d4d06b09f311b2daed8ad5c38939f132"
+}

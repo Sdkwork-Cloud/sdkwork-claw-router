@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mistral-mcp-openclaw@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mistral_mcp_openclaw",
+  "skill": {
+    "id": 29239,
+    "skillKey": "clawhub-mistral-mcp-openclaw",
+    "name": "Mistral Mcp Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mistral-mcp-openclaw",
+    "url": "https://clawhub.ai/skills/mistral-mcp-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mistral-mcp-openclaw-0c6b57e4b0fe0afc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure OpenClaw to use the community mistral-mcp stdio server for Mistral OCR, Codestral FIM, Voxtral audio, durable workflows, moderation, classification..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "swih",
+      "userId": "s17bn2jztb78w1524w27c5kafn85qngc",
+      "displayName": "Swih",
+      "image": "https://avatars.githubusercontent.com/u/61151162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1777988598012,
+      "changelog": "v0.8 — process_document macro-tool, metier-docs profile, PII-safe cache, profile rename",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:682d8499e23bfa8cc68729a57008654744d5a127ef9c62e5262883b68305e940"
+}

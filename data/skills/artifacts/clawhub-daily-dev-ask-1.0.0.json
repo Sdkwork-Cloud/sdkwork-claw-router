@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-dev-ask@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_dev_ask",
+  "skill": {
+    "id": 24821,
+    "skillKey": "clawhub-daily-dev-ask",
+    "name": "daily.dev Ask"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-dev-ask",
+    "url": "https://clawhub.ai/skills/daily-dev-ask",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-dev-ask-547a099d1f4d608a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Answer technical questions using daily.dev's knowledge base. Searches articles from the developer community and synthesizes answers with source links."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nimrodkra",
+      "userId": "publishers:nimrodkra",
+      "displayName": "nimrodkra",
+      "image": "https://avatars.githubusercontent.com/u/41470823?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773155150272,
+      "changelog": "- Initial release of daily-dev-ask skill.\n- Enables answering technical questions using articles from daily.dev's developer community knowledge base, with direct source links.\n- Provides clear setup instructions for securely storing and retrieving API tokens across major operating systems.\n- Outlines a structured workflow for querying, analyzing, and synthesizing answers from daily.dev’s API.\n- Includes engagement-based credibility weighting and guidelines for transparent sourcing and handling edge cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9dab7fa99bdaa3eaace8679f6faaa386954979c2e185bf7a7d45d902e34c499"
+}

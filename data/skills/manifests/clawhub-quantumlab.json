@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13164,
+  "uuid": "skill-clawhub-quantumlab",
+  "skillKey": "clawhub-quantumlab",
+  "name": "quantumlab",
+  "summary": "Run the /home/bram/work/quantum_lab Python scripts and demos inside the existing venv ~/.venvs/qiskit. Use when asked (e.g., via Telegram/OpenClaw) to run quant_math_lab.py, qcqi_pure_math_playground.py, quantum_app.py subcommands, quantum.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quantumlab",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bram Dobbelaar",
+      "features": [
+        "Run the /home/bram/work/quantum_lab Python scripts and demos inside the existing venv ~/.venvs/.",
+        "Use when asked (e.g., via Telegram/OpenClaw) to run quant_math_lab.py, qcqi_pure_math_playgroun."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quantumlab@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1932397?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quantumlab",
+      "url": "https://clawhub.ai/skills/quantumlab"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quantumlab",
+    "url": "https://clawhub.ai/skills/quantumlab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quantumlab-4d30f6dcaf662631.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quantumlab@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quantumlab-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc37f54e6fedde56951f57e363bf33e8c20ee4f2a2726d9b86c9870e2aa655b6",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T22:05:56.624Z"
+}

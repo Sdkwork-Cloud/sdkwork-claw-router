@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17521,
+  "uuid": "skill-clawhub-plati-mcp-search",
+  "skillKey": "clawhub-plati-mcp-search",
+  "name": "Plati MCP Search",
+  "summary": "Find cheapest reliable subscription offers from Plati using the local MCP server. Use when users ask for best price options, reliable sellers, PRO/Plus subsc...",
+  "version": "0.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plati_mcp_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rybnikov",
+      "features": [
+        "Find cheapest reliable subscription offers from Plati using the local MCP server",
+        "Use when users ask for best price options, reliable sellers, PRO/Plus subsc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plati-mcp-search@0.1.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7761808?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plati-mcp-search",
+      "url": "https://clawhub.ai/skills/plati-mcp-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plati-mcp-search",
+    "url": "https://clawhub.ai/skills/plati-mcp-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plati-mcp-search-c0e114a6005cc63d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plati-mcp-search@0.1.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-plati-mcp-search-0.1.6.json",
+      "version": "0.1.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bebd58023066cb59097fa113267a1ae7fd2317cb0c6674e2cd8af245d1e6f66",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T22:48:53.715Z"
+}

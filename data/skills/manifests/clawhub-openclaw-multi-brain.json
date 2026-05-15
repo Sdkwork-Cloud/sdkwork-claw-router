@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12695,
+  "uuid": "skill-clawhub-openclaw-multi-brain",
+  "skillKey": "clawhub-openclaw-multi-brain",
+  "name": "Multi-Brain Protocol",
+  "summary": "Runs Kimi K2.5 and GPT 5.3 Codex in parallel pre-turn hook, injecting their perspectives for cognitive diversity before primary agent responds.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_multi_brain",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dannydvm",
+      "features": [
+        "Runs Kimi K2.5 and GPT 5.3 Codex in parallel pre-turn hook, injecting their perspectives for co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-multi-brain@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128923887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-multi-brain",
+      "url": "https://clawhub.ai/skills/openclaw-multi-brain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-multi-brain",
+    "url": "https://clawhub.ai/skills/openclaw-multi-brain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-multi-brain-d9bee1b689127545.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-multi-brain@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-multi-brain-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1dc9666b293c3856d0ad59f40e7ab4c7dbe240a19c2344b2ab5f8d8260da55fe",
+      "artifactSizeBytes": 1896
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T23:30:35.020Z"
+}

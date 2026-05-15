@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/echarts-master@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.echarts_master",
+  "skill": {
+    "id": 64082,
+    "skillKey": "clawhub-echarts-master",
+    "name": "ECharts Master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "echarts-master",
+    "url": "https://clawhub.ai/skills/echarts-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/echarts-master-75335e94f974fdcc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ECharts 图表大师。根据用户数据和业务上下文，自动设计并生成专业的 ECharts 可视化图表。使用场景：(1) 用户提供表格/JSON/CSV 数据需要可视化，(2) 用户说\"帮我做个图\"、\"画个图表\"，(3) 需要将查询结果可视化展示。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linux2010",
+      "userId": "s1751dhnzp0ph63jb85dgvkztd83hhdp",
+      "displayName": "Andy Tien",
+      "image": "https://avatars.githubusercontent.com/u/35169750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 671,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773393590074,
+      "changelog": "Initial release - ECharts chart generation with local rendering, HTTP preview, and professional design templates",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc3ef0b88566ca7c1152d35be57c27a58f4b9db13e5824c5faa2d97d83b11e2a"
+}

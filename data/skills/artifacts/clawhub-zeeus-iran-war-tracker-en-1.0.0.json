@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zeeus-iran-war-tracker-en@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeeus_iran_war_tracker_en",
+  "skill": {
+    "id": 56401,
+    "skillKey": "clawhub-zeeus-iran-war-tracker-en",
+    "name": "US-Iran War Situation Tracker (en)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeeus-iran-war-tracker-en",
+    "url": "https://clawhub.ai/skills/zeeus-iran-war-tracker-en",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeeus-iran-war-tracker-en-deec40e11b05c0f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A specialized skill for tracking the US-Iran conflict (English version), strictly focusing on intelligence published within the **last 6 hours**. Use this fo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wlkqyang-star",
+      "userId": "s177je4na5d6mkn26g9g2adff583q1eq",
+      "displayName": "wlkqyang-star",
+      "image": "https://avatars.githubusercontent.com/u/228461771?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772706601586,
+      "changelog": "US-Iran War Tracker Skill 1.0.0 – Initial Release\n\n- Provides a framework for tracking and reporting on US-Iran conflict events, strictly prioritizing intelligence from the last 6 hours.\n- Outlines a rigorous 3-step intelligence cycle emphasizing source triangulation and verification.\n- Details relevant keywords, specific query strategies, and a tiered system for consulting authoritative sources.\n- Sets clear reporting requirements: structured, English-language reports with a minimum of 1,000 words and explicit attribution of claims.\n- Introduces mandatory time-stamped timelines and thematic organization for clarity in situational reporting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:da47983532a16bf6c6f9414fedaea451be6ec745248a12fad1021233c80c33c1"
+}

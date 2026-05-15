@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentic-eval@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_eval",
+  "skill": {
+    "id": 20520,
+    "skillKey": "clawhub-agentic-eval",
+    "name": "agentic-eval"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-eval",
+    "url": "https://clawhub.ai/skills/agentic-eval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-eval-e38bf3da89436a8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Patterns and techniques for evaluating and improving AI agent outputs. Use this skill when: - Implementing self-critique and reflection loops - Building eval..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boleyn",
+      "userId": "s178twzv85nhtpzkgxdawkbb7s83pe5j",
+      "displayName": "santian",
+      "image": "https://avatars.githubusercontent.com/u/24293664?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 481,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773045985102,
+      "changelog": "Import from LeoYeAI/openclaw-master-skills on 2026-03-09",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:414f1e759409c2f9bca37d2bc283e42dd1ecef6c2277ab8fefa5b4a4e9711f8e"
+}

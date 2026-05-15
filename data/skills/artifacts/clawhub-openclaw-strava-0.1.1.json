@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-strava@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_strava",
+  "skill": {
+    "id": 21042,
+    "skillKey": "clawhub-openclaw-strava",
+    "name": "Strava (Official API)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-strava",
+    "url": "https://clawhub.ai/skills/openclaw-strava",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-strava-645d79e24e7b92e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Official Strava OAuth integration for OpenClaw. Use to connect/authorize Strava, store+refresh tokens, and fetch workout/activity data (runs/rides/etc.) for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gavinchengcool",
+      "userId": "s17ah06n6ay2g64xj492qk88zs84a53k",
+      "displayName": "Gavin C.",
+      "image": "https://avatars.githubusercontent.com/u/201307310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 516,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773381828245,
+      "changelog": "OAuth UX: default remote copy/paste mode; add optional --loopback fast path for same-machine browser authorization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:029ed054e0212e166d129c79e5a26bf304e942f2447434ccd5383ce9b79fe260"
+}

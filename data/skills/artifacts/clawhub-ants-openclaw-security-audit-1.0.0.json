@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ants-openclaw-security-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ants_openclaw_security_audit",
+  "skill": {
+    "id": 62306,
+    "skillKey": "clawhub-ants-openclaw-security-audit",
+    "name": "OpenClaw Security Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ants-openclaw-security-audit",
+    "url": "https://clawhub.ai/skills/ants-openclaw-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ants-openclaw-security-audit-b9d409df506b7c3e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "审计本地 openclaw 的安全配置与运行暴露面。用于检查、验证、解释和总结当前机器或沙箱中的 openclaw 相关安全设置，包括代理配置、sandbox 配置、docker 端口暴露、gateway 检查、文件权限、workspace symlink 风险、本地监听端口以及整体本地安全状态。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asantssec",
+      "userId": "publishers:asantssec",
+      "displayName": "ASantsSec",
+      "image": "https://avatars.githubusercontent.com/u/130966478?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 419,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773383334640,
+      "changelog": "Security Audit",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2042f32cf0e710c064f245494d9a048b3a1449cb0b9645aea2b9e89688bd6b53"
+}

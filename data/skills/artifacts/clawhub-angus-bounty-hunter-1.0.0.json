@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/angus-bounty-hunter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.angus_bounty_hunter",
+  "skill": {
+    "id": 17901,
+    "skillKey": "clawhub-angus-bounty-hunter",
+    "name": "Angus Bounty Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "angus-bounty-hunter",
+    "url": "https://clawhub.ai/skills/angus-bounty-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/angus-bounty-hunter-3c46ed52eb6e93be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated smart contract bug bounty hunting. Scans Immunefi/Code4rena targets with Slither static analysis, triages findings with local LLMs, and generates P..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chipp11",
+      "userId": "publishers:chipp11",
+      "displayName": "Chipp11",
+      "image": "https://avatars.githubusercontent.com/u/131332137?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 734,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771790731485,
+      "changelog": "Initial release: Slither + local LLM smart contract bug bounty scanner",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:540b915e324a7baecedc65916658cb8223bbf7075a43b204503a599946607bd2"
+}

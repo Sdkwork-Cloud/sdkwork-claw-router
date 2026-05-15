@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/high-value-task-manager@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.high_value_task_manager",
+  "skill": {
+    "id": 73092,
+    "skillKey": "clawhub-high-value-task-manager",
+    "name": "高价值目标任务猎头"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "high-value-task-manager",
+    "url": "https://clawhub.ai/skills/high-value-task-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/high-value-task-manager-395a1f53fef918b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "高价值目标任务猎头。使用猎头筛选人才的方法论管理个人任务，通过量化分析任务价值、资源消耗与互斥关系，科学评估和动态优化任务优先级。触发词：挖坑 (新增任务)、填坑 (更新进度)、任务列表、查看任务、完成任务、暂停任务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spaceack",
+      "userId": "s175vmv47hjbtmgxgxn07cs79h8468r9",
+      "displayName": "Spaceack",
+      "image": "https://avatars.githubusercontent.com/u/23256191?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775268765471,
+      "changelog": "更名为「高价值目标任务猎头」，更简洁易记",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6015e77ff9fe85b5ff539c06628eeacc83e2e8210e4878acdb2f8327212ee0d4"
+}

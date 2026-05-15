@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14703,
+  "uuid": "skill-clawhub-comic-script",
+  "skillKey": "clawhub-comic-script",
+  "name": "Comic Script",
+  "summary": "Draft comic storyboards with panels, dialogue, and scene pacing. Use when designing panels, writing dialogue, structuring comic chapters.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comic_script",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "Draft comic storyboards with panels, dialogue, and scene pacing",
+        "Use when designing panels, writing dialogue, structuring comic chapters."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comic-script@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comic-script",
+      "url": "https://clawhub.ai/skills/comic-script"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comic-script",
+    "url": "https://clawhub.ai/skills/comic-script",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comic-script-83d388c01c34a476.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comic-script@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-comic-script-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db3c62978ac40af762845508745302f85cf61c06e5dacfc88d65ad2ef8ff4313",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:38:36.414Z"
+}

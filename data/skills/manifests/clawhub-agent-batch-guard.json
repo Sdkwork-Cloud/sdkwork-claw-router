@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60381,
+  "uuid": "skill-clawhub-agent-batch-guard",
+  "skillKey": "clawhub-agent-batch-guard",
+  "name": "Agent Batch Guard",
+  "summary": "AI Agent 大任务防卡死指南。解决 agent 在批量操作中 session transcript 膨胀导致 compaction 超时、agent 卡死的问题。涵盖 session 保护策略、脚本化批处理、断点续传、熔断器、OpenClaw 配置调优和实战案例。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_batch_guard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "evan966890",
+      "features": [
+        "AI Agent 大任务防卡死指南。解决 agent 在批量操作中 session transcript 膨胀导致 compaction 超时、agent 卡死的问题。涵盖 session."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-batch-guard@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/236738035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-batch-guard",
+      "url": "https://clawhub.ai/skills/agent-batch-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-batch-guard",
+    "url": "https://clawhub.ai/skills/agent-batch-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-batch-guard-8e2fee59edabd3ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-batch-guard@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-batch-guard-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11238df9b384cbfbac0dc50459d3d756765f4d9b0af5381d3f7bf48f78395de3",
+      "artifactSizeBytes": 2535
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T06:42:49.583Z"
+}

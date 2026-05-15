@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62136,
+  "uuid": "skill-clawhub-skylv-persona-switch",
+  "skillKey": "clawhub-skylv-persona-switch",
+  "name": "Skylv Persona Switch",
+  "summary": "切换 agent 的人设 soul.md，支持三套预设角色与用户原有人设间自由切换并同步更新身份信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_persona_switch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "切换 agent 的人设 soul.md，支持三套预设角色与用户原有人设间自由切换并同步更新身份信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-persona-switch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-persona-switch",
+      "url": "https://clawhub.ai/skills/skylv-persona-switch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-persona-switch",
+    "url": "https://clawhub.ai/skills/skylv-persona-switch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-persona-switch-2f460ac4f4f00450.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-persona-switch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-persona-switch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9f1ff7656a88ed647de8c761e3a7f9a5bfbeeab0e8b47bad6949472a9f8e1a7",
+      "artifactSizeBytes": 2513
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T01:14:47.537Z"
+}

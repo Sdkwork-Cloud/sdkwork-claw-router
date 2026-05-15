@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/omnifun@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omnifun",
+  "skill": {
+    "id": 56657,
+    "skillKey": "clawhub-omnifun",
+    "name": "omnifun"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omnifun",
+    "url": "https://clawhub.ai/skills/omnifun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omnifun-12bb9435fc37160e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade memecoins across 8 chains and earn USDC — $69 bounty per graduation trigger, 0.5% creator fee forever, 50% Uniswap V3 LP fees after graduation. First 1..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xzcov",
+      "userId": "publishers:0xzcov",
+      "displayName": "0xzcov",
+      "image": "https://avatars.githubusercontent.com/u/171945895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1773765295218,
+      "changelog": "omnifun 1.3.0\n\n- Added a new \"Security Model\" section in the documentation, describing non-custodial API usage, unsigned calldata, and new agent spending controls (per-trade/daily limits, chain/action whitelist, emergency trading pause).\n- Documented new endpoints for configuring agent security and spending controls.\n- Added homepage metadata.\n- All public endpoints are now documented as requiring no API key (\"read-only usage\").\n- No code changes detected; documentation and metadata updates only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e9013a7a875973c6d82bf0086603de7182a73e45d3ae765d1de95f74cdb91f7"
+}

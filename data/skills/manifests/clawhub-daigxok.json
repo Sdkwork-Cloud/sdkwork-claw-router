@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71817,
+  "uuid": "skill-clawhub-daigxok",
+  "skillKey": "clawhub-daigxok",
+  "name": "高等数学多元函数微分学课程设计技能",
+  "summary": "高等数学多元函数微分学课程设计技能。使用场景：(1) 设计多元函数微分学新课课时 (2) 复习课/专题课设计 (3) 按三层目标+六步闭环框架优化现有教案 (4) 生成可复用的教学设计模板。核心方法：三层目标（基础/进阶/高阶）+ 六步闭环（AI角色互动→概念讲解→课堂练习→可视化实验→关联迁移→课后任务）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daigxok",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "math",
+      "features": [
+        "高等数学多元函数微分学课程设计技能。使用场景：(1) 设计多元函数微分学新课课时 (2) 复习课/专题课设计 (3) 按三层目标+六步闭环框架优化现有教案 (4) 生成可复用的教学设计模板。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daigxok@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48268142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daigxok",
+      "url": "https://clawhub.ai/skills/daigxok"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daigxok",
+    "url": "https://clawhub.ai/skills/daigxok",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daigxok-e47a0e3b59cb1c38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daigxok@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daigxok-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1c5424cb9d75409fed9085d3f4746a09ede7dc8dd101c5ed147569bd12b2ec4",
+      "artifactSizeBytes": 2126
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T22:44:47.674Z"
+}

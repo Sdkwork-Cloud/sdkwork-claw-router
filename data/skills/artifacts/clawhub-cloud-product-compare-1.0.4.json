@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloud-product-compare@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_product_compare",
+  "skill": {
+    "id": 66979,
+    "skillKey": "clawhub-cloud-product-compare",
+    "name": "cloud-product-compare"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-product-compare",
+    "url": "https://clawhub.ai/skills/cloud-product-compare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-product-compare-0aa0a5ad7deb7022.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "以资深云计算产品经理身份，深度阅读阿里云与华为云官方文档，输出有真实依据的差异化竞品分析"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ucsdzehualiu",
+      "userId": "s17bk47xgrxy45rkmxpwv5p1z983nsd8",
+      "displayName": "ucsdzehualiu",
+      "image": "https://avatars.githubusercontent.com/u/37421937?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775998325794,
+      "changelog": "cloud-product-compare v1.0.4\n\n- 文档更新为\"4.2.0\"，全面丰富官方对比流程说明\n- 增加支持全自动抓取脚本（Playwright+httpx+BS4），推荐通过脚本批量获取阿里云/华为云官方文档原文与更新日志\n- 详细整理文档获取优先级、对比维度与分析流程，实现分析结果自动保存并核心内容即时展示\n- 明确约束所有结论只引用官方文档，遇抓取失败需明示原因，禁止凭印象或静默补全\n- 技术部分补充依赖安装命令、已知站点特殊处理和脚本fallback行为说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46ff63c279df3fbed405fc17dcb1c2fd5a0d6c158b098b7efcacb2c1e2f21f52"
+}

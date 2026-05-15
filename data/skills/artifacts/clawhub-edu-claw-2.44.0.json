@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edu-claw@2.44.0",
+  "version": "2.44.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edu_claw",
+  "skill": {
+    "id": 58574,
+    "skillKey": "clawhub-edu-claw",
+    "name": "EduClaw - 主动式英语家教"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edu-claw",
+    "url": "https://clawhub.ai/skills/edu-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edu-claw-7b2680f2ef87c57e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactive English tutor with gamification - 互动式英语学习导师"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaohuiing",
+      "userId": "s1783js3hs4v9nj6h2yej76qan83gaf6",
+      "displayName": "huiing",
+      "image": "https://avatars.githubusercontent.com/u/17474842?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 567,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 37
+    },
+    "latestVersion": {
+      "version": "2.44.0",
+      "createdAt": 1773572786036,
+      "changelog": "- Updated version to 2.44.0.\n- No user-facing feature or documentation changes in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:754fbaee29cfd29448c7c323c925ab22c713ce66f74cf3b770c86a71cb53bae0"
+}

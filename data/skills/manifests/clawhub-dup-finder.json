@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44854,
+  "uuid": "skill-clawhub-dup-finder",
+  "skillKey": "clawhub-dup-finder",
+  "name": "Dup Finder",
+  "summary": "Identifies and lists duplicate files in a directory to help users easily clean up and save storage space.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dup_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "albionaiinc-del",
+      "features": [
+        "Identifies and lists duplicate files in a directory to help users easily clean up and save stor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dup-finder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269741383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dup-finder",
+      "url": "https://clawhub.ai/skills/dup-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dup-finder",
+    "url": "https://clawhub.ai/skills/dup-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dup-finder-1657400a8b053170.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dup-finder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dup-finder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9244ce14e1a5a9446d14d8bc4ab0992e15646c2bf5758dcc1c9430d20ce1f577",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T12:26:37.045Z"
+}

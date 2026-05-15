@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67248,
+  "uuid": "skill-clawhub-cashback",
+  "skillKey": "clawhub-cashback",
+  "name": "Cashback",
+  "summary": "海外品牌官方商城返利（cashback）助手。通过多麦联盟渠道，为指定海外商家的购物订单提供返利查询与转链服务，三个能力：粘贴商品链接生成返利短链、查询商家返利比例、查看个人返利订单。当前仅支持 Adidas、Space NK NL（荷兰站）、designwebstore DE（德国站）三家，不在清单中的海外商家...",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cashback",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangshan101-coder",
+      "features": [
+        "海外品牌官方商城返利（cashback）助手。通过多麦联盟渠道，为指定海外商家的购物订单提供返利查询与转链服务，三个能力：粘贴商品链接生成返利短链、查询商家返利比例、查看个人返利订单。当前仅."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cashback@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267524233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cashback",
+      "url": "https://clawhub.ai/skills/cashback"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cashback",
+    "url": "https://clawhub.ai/skills/cashback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cashback-50796754ffc7abc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cashback@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cashback-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9823308675e94a4aac07ae4164fffedf5f4f9500af2ab8bfbeb3bbb5cfc417d",
+      "artifactSizeBytes": 2134
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T11:44:04.970Z"
+}

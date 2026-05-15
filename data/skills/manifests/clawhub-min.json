@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42706,
+  "uuid": "skill-clawhub-min",
+  "skillKey": "clawhub-min",
+  "name": "My skill",
+  "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.min",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dragon-wlf",
+      "features": [
+        "Captures learnings, errors, and corrections to enable continuous improvement",
+        "Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/min@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138266994?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "min",
+      "url": "https://clawhub.ai/skills/min"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "min",
+    "url": "https://clawhub.ai/skills/min",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/min-1f6fa6f69d185e60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/min@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-min-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d27f9567da9e14d389d4c3b8389996be0a73a0b203477ef71b16000694bf31a9",
+      "artifactSizeBytes": 2485
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T08:37:41.781Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27660,
+  "uuid": "skill-clawhub-x-scout",
+  "skillKey": "clawhub-x-scout",
+  "name": "X-Scout",
+  "summary": "X/Twitter intelligence scraper. Search tweets, scrape profiles, pull comments, auto-transcribe videos. Classify tweets as replicable methods vs content. CLI...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_scout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aces1up",
+      "features": [
+        "X/Twitter intelligence scraper",
+        "Search tweets, scrape profiles, pull comments, auto-transcribe videos",
+        "Classify tweets as replicable methods vs content"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-scout@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2554853?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-scout",
+      "url": "https://clawhub.ai/skills/x-scout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-scout",
+    "url": "https://clawhub.ai/skills/x-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-scout-b3e6836322dba9cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-scout@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-scout-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6b07ef3f1ea3d2b12faf4c6bb8295715ac8f7c6f35a1c7d29829edc696dbd21",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T21:37:13.810Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bounty-bar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bounty_bar",
+  "skill": {
+    "id": 50056,
+    "skillKey": "clawhub-bounty-bar",
+    "name": "Bounty Bar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bounty-bar",
+    "url": "https://clawhub.ai/skills/bounty-bar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bounty-bar-ddd371d4a611ae36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed insights on Mars' Bounty Bar, its history, market presence, brand strategy, and sustainability efforts in the UK and Europe."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 46,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778325069841,
+      "changelog": "- 首发版介绍 Bounty 椰蓉巧克力棒及其全球品牌地图  \n- 包含品牌历史、商业模式与市场定位  \n- 分析椰蓉巧克力品类护城河及品牌情感纽带  \n- 提供关键发展数据与精选趣闻  \n- 特别适合关注糖果品牌策略和英国零食市场的用户",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc2bfe6f00f8afaf8d9c3997348ab22c154ce8e65a601e4900898d1694d32753"
+}

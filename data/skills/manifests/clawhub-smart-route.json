@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12385,
+  "uuid": "skill-clawhub-smart-route",
+  "skillKey": "clawhub-smart-route",
+  "name": "SmartRoute - Google Routes Calculator",
+  "summary": "Calculate traffic-aware routes, travel times, and distances between locations using Google Routes API. Use when the user asks for \"traffic to X\", \"how long to get to Y\", \"best route to Z\", or \"drive time\". Returns JSON with duration, dista.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_route",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vemec",
+      "features": [
+        "Calculate traffic-aware routes, travel times, and distances between locations using Google Rout.",
+        "Use when the user asks for \"traffic to X\", \"how long to get to Y\", \"best route to Z\", or \"drive.",
+        "Returns JSON with duration, distance, and a direct Google Maps navigation link."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-route@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/839090?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-route",
+      "url": "https://clawhub.ai/skills/smart-route"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-route",
+    "url": "https://clawhub.ai/skills/smart-route",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-route-58c04c9a576a1b3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-route@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-route-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fa94a5e0400c6099308c4c55564e63030f2069b52ffddcb31b37aefa02a05aa",
+      "artifactSizeBytes": 2165
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T22:10:33.625Z"
+}

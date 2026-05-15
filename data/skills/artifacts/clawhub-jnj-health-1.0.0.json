@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jnj-health@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jnj_health",
+  "skill": {
+    "id": 49586,
+    "skillKey": "clawhub-jnj-health",
+    "name": "Jnj Health"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jnj-health",
+    "url": "https://clawhub.ai/skills/jnj-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jnj-health-e5a029930081a605.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed insights on Johnson & Johnson's diversified healthcare operations, pharmaceutical pipelines, medical device innovations, and strategic busi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 74,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778195197101,
+      "changelog": "- 初始发布，新增强生（Johnson & Johnson）公司全面简介\n- 覆盖历史时间线、商业模式、核心药物、分拆战略（Kenvue）\n- 包含市场护城河分析、关键财务和业务数据\n- 收录强生公司治理、创新、与危机管理相关的有趣事实",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86e1e6f8eb626eb94ac763af1683aa773787b0a5a1f05d082204a1d2a7765291"
+}

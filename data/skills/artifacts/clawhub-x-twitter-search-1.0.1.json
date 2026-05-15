@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-twitter-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_twitter_search",
+  "skill": {
+    "id": 10115,
+    "skillKey": "clawhub-x-twitter-search",
+    "name": "X / Twitter Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-twitter-search",
+    "url": "https://clawhub.ai/skills/x-twitter-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-twitter-search-b1997651e41ff445.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search X/Twitter in real-time using Grok or X API. Find tweets, trends, and discussions with citations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blueberrywoodsym",
+      "userId": "s170d5vw6h65z8n14e9a17f7a9848472",
+      "displayName": "blueberrywoodsym",
+      "image": "https://avatars.githubusercontent.com/u/256029437?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 1641,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 13,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771622522239,
+      "changelog": "- No code changes in this release.\n- Documentation revised in SKILL.md only; behavior and commands remain unchanged.\n- No impact to interface, functionality, or environment variable usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:51691fbb36724e243e32affb4415a1fde8172043d943e46c3239513bcde58d0b"
+}

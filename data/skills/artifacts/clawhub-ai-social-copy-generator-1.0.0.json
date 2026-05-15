@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-social-copy-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_social_copy_generator",
+  "skill": {
+    "id": 52754,
+    "skillKey": "clawhub-ai-social-copy-generator",
+    "name": "Ai Social Copy Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-social-copy-generator",
+    "url": "https://clawhub.ai/skills/ai-social-copy-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-social-copy-generator-ca047391c0da17e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — write social media captions for Instagram, Twitter, and LinkedIn based on..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775958053043,
+      "changelog": "AI Social Copy Generator — v1.0.0\n\n- Initial release: Instantly generates platform-specific social media captions from uploaded videos.\n- Supports video uploads (MP4, MOV, AVI, WebM) up to 500MB; also accepts images and audio.\n- Automatic cloud processing delivers captioned, ready-to-post MP4s in 20–40 seconds.\n- Handles video edits, BGM, text overlays, and exports within a simple chat workflow.\n- Built-in credit management, file validation, and error handling for a seamless user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c517e3ba3854e3cdbe8254d9b93b7366aa673deaf884e0aa4b3392f24e03db95"
+}

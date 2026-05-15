@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jx-market-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jx_market_research",
+  "skill": {
+    "id": 37519,
+    "skillKey": "clawhub-jx-market-research",
+    "name": "market-research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jx-market-research",
+    "url": "https://clawhub.ai/skills/jx-market-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jx-market-research-7fdcb4849a2d3556.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research markets with sizing, segmentation, competitor mapping, pricing checks, and demand validation that turn fuzzy ideas into decision-ready..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirkraman",
+      "userId": "s171c4e2zwz2yy69j6tp9xcfc184vnxz",
+      "displayName": "KirkRaman",
+      "image": "https://avatars.githubusercontent.com/u/255880392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776663636683,
+      "changelog": "- Initial release of the Market Research skill.\n- Enables market sizing, segmentation, competitor mapping, pricing checks, and demand validation.\n- Designed for analysts, founders, and strategy teams to convert ideas into decision-ready insights.\n- Integrates with chat and web search APIs for comprehensive research.\n- Includes SEO optimization with relevant keywords for discoverability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f33c68d0a26eec449d80d84bc2ce9c84d6dec85a3405c3ffb6bbc2a3a0162a6"
+}

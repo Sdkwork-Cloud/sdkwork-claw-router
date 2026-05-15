@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35798,
+  "uuid": "skill-clawhub-elastic-path",
+  "skillKey": "clawhub-elastic-path",
+  "name": "Elastic Path",
+  "summary": "Elastic Path integration. Manage data, records, and automate workflows. Use when the user wants to interact with Elastic Path data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elastic_path",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Elastic Path integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Elastic Path data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/elastic-path@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "elastic-path",
+      "url": "https://clawhub.ai/skills/elastic-path"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elastic-path",
+    "url": "https://clawhub.ai/skills/elastic-path",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elastic-path-c439163816b5f069.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/elastic-path@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-elastic-path-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:396e0bc67c341b90adc1e9e32ae5e19a5334341cdd8b4640b7c8aeba780f9b33",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:25:43.659Z"
+}

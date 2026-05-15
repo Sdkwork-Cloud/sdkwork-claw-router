@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pans-poc-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pans_poc_tracker",
+  "skill": {
+    "id": 61771,
+    "skillKey": "clawhub-pans-poc-tracker",
+    "name": "Pans Poc Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pans-poc-tracker",
+    "url": "https://clawhub.ai/skills/pans-poc-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pans-poc-tracker-3c77271cca1ca3be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI算力销售POC追踪器。管理POC全生命周期，记录技术卡点，提醒跟进，生成转化报告。 支持阶段跟踪、团队协作、风险预警。 触发词：POC跟踪, 测试管理, 技术验证, POC进度, proof of concept, trial tracking"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dashiming",
+      "userId": "s175tbqc6kczpya7xzy4rksefs83p4hp",
+      "displayName": "dashiming",
+      "image": "https://avatars.githubusercontent.com/u/28342384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776404422260,
+      "changelog": "- Initial release of pans-poc-tracker, an AI compute POC lifecycle tracker.\n- Supports stage tracking, blocker recording, team collaboration, and risk alerts.\n- Allows creating, updating, closing POCs, and generating conversion reports via CLI.\n- Manages key fields including technical/business owners, GPU config, blockers, feedback, progress, and status.\n- Data stored locally in JSON format for easy access and audit.\n- Includes reminders for follow-up actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a577253a0895e76ce8b7f0636528969e9acd381fed3bceadb8675d3d1fb3540"
+}

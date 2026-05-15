@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "uapp-assets",
+    "displayName": "应用资产查询",
+    "summary": "友盟应用资产查询技能，支持通过 umeng-cli call 调用友盟 OpenAPI（gateway.open.umeng.com）的 3 个只读资产接口，覆盖 App 总数、App 列表、小程序列表及小程序总数查询（跨 com.umeng.uapp 与 com.umeng.umini 两个命名空间）。当用户需...",
+    "tags": {
+      "latest": "1.2.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "createdAt": 1775622513557,
+    "updatedAt": 1777527302901
+  },
+  "latestVersion": {
+    "version": "1.2.0",
+    "createdAt": 1777462378587,
+    "changelog": "**重大更新：由内置脚本切换为 umeng-cli 官方工具，精简结构并标准化接口。**\n\n- 移除了全部本地实现及 OpenAPI Python SDK 相关文件，依赖官方 umeng-cli 工具进行操作。\n- Skill 名称由“uapp-assets”变更为“umeng-cli-uapp-assets”，完全重新编写文档和用法说明。\n- 只支持 umeng-cli call 调用友盟 OpenAPI 资产只读接口（App 总数、App 列表、小程序列表）。\n- 更新接口说明，区分 App 与小程序命名空间和分页参数。\n- 补充了 umeng-cli 的安装、登录、埋点打点等官方推荐操作流程。\n- 移除了本地 Python 脚本文件及独立 SDK 部署说明，统一依赖 umeng-cli。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "squall0925",
+    "userId": "s178qv5gja5sbh0bq8t6wbhq8x83rmg5",
+    "displayName": "Umeng+",
+    "image": "https://avatars.githubusercontent.com/u/195273084?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527302901
+  }
+}

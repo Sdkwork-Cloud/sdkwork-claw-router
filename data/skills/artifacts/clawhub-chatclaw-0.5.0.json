@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chatclaw@0.5.0",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chatclaw",
+  "skill": {
+    "id": 53701,
+    "skillKey": "clawhub-chatclaw",
+    "name": "ChatClaw — Dashboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chatclaw",
+    "url": "https://clawhub.ai/skills/chatclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chatclaw-6255f52764e9bbd9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect your OpenClaw bot to the ChatClaw cloud dashboard — remote chat, token tracking, task management, agent workspace file browsing (read-only), and skil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sumeralabs",
+      "userId": "s17fvbtswpqekatb63ybej6qkd83hck5",
+      "displayName": "sumeraLabs",
+      "image": "https://avatars.githubusercontent.com/u/242130630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 555,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "0.5.0",
+      "createdAt": 1777920346517,
+      "changelog": "**ChatClaw 0.5.0 — major update**\n\n- Bumped version from 0.4.2 to 0.5.0.\n- No file or feature changes detected in this release.  \n- This is likely a version increment in preparation for upcoming changes or stability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:22babfad6cd6a949e51e3556cf822623fbc638625af3fcf88f7934f51d937cc9"
+}

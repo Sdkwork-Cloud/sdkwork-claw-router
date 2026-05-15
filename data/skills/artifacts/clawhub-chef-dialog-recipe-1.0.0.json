@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chef-dialog-recipe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chef_dialog_recipe",
+  "skill": {
+    "id": 73120,
+    "skillKey": "clawhub-chef-dialog-recipe",
+    "name": "专业厨师对话食谱生成技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chef-dialog-recipe",
+    "url": "https://clawhub.ai/skills/chef-dialog-recipe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chef-dialog-recipe-27f5d6cecf4b5174.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业厨师对话食谱生成技能：完整的交互式工作流，包含厨师视角生成、AI分析审查、综合优化"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "puppetcat-fire",
+      "userId": "s173vqgnnb1s856xph35s3ghch83e654",
+      "displayName": "渡鸦大人",
+      "image": "https://avatars.githubusercontent.com/u/56372513?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 429,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773230359292,
+      "changelog": "chef-dialog-recipe 1.0.0 初始发布\n\n- 提供专业厨师视角的交互式食谱生成\n- 包含AI分析审查和综合优化流程\n- 输出支持Markdown、JSON和纯文本格式\n- 预置东坡肉、麻婆豆腐等中国菜品模板\n- 每个步骤包含时间容错和安全等级提示\n- 完全基于Bash脚本实现，简单安装与使用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf1917a66fbbaafa8cdc56b8f76d3e3b183fcd070b72652badae99a49dbb0002"
+}

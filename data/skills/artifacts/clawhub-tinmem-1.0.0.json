@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tinmem@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tinmem",
+  "skill": {
+    "id": 20155,
+    "skillKey": "clawhub-tinmem",
+    "name": "Tinmem Memory System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tinmem",
+    "url": "https://clawhub.ai/skills/tinmem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tinmem-75c8e9083aaf0a89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides persistent memory management for storing, retrieving, updating, and deleting user-related information across conversations in OpenClaw AI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tincomking",
+      "userId": "publishers:tincomking",
+      "displayName": "tincomking",
+      "image": "https://avatars.githubusercontent.com/u/32919939?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 559,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772177352992,
+      "changelog": "Initial release: 6-category classification, hybrid retrieval, LLM deduplication, multi-scope isolation, SQL injection protection, atomic updates",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3568e8e1ed416dc56c6f7903db6b958b469c2d4deb5589cd90ca7a313d9a9f8a"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46862,
+  "uuid": "skill-clawhub-pipeworx-wikifeed",
+  "skillKey": "clawhub-pipeworx-wikifeed",
+  "name": "Pipeworx wikifeed",
+  "summary": "Provides curated Wikipedia content including historical events on a date, daily featured articles, most read pages, and picture of the day.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_wikifeed",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Provides curated Wikipedia content including historical events on a date, daily featured articl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-wikifeed@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-wikifeed",
+      "url": "https://clawhub.ai/skills/pipeworx-wikifeed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-wikifeed",
+    "url": "https://clawhub.ai/skills/pipeworx-wikifeed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-wikifeed-9d7b14bfe9c15a06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-wikifeed@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-wikifeed-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db42465f88b5af14b5f9a7cc8dd758da8f503287fe3e7537536d68b2242180bd",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T00:32:40.703Z"
+}

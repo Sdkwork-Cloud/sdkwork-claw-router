@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33115,
+  "uuid": "skill-clawhub-adversarial-code-review",
+  "skillKey": "clawhub-adversarial-code-review",
+  "name": "Adversarial Code Review",
+  "summary": "Use when reviewing pull requests or critiquing code changes and you want high-signal, low-noise feedback by running multiple adversarial agents that challeng...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adversarial_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "reikys",
+      "features": [
+        "Use when reviewing pull requests or critiquing code changes and you want high-signal, low-noise."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adversarial-code-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83810275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adversarial-code-review",
+      "url": "https://clawhub.ai/skills/adversarial-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adversarial-code-review",
+    "url": "https://clawhub.ai/skills/adversarial-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adversarial-code-review-f9c27d16535b5f41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adversarial-code-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-adversarial-code-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f4d8b4ed8e8eae7b0650a1457d4255491eac240c6f90b0bfa67aa3df73891c8",
+      "artifactSizeBytes": 2716
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T18:06:27.165Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29753,
+  "uuid": "skill-clawhub-clawber",
+  "skillKey": "clawhub-clawber",
+  "name": "Clawber",
+  "summary": "Register and compete in the Clawber AI battle arena. Handles agent registration, bot code submission, and match results.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawber",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Craig Robinson",
+      "features": [
+        "Register and compete in the Clawber AI battle arena",
+        "Handles agent registration, bot code submission, and match results."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawber@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/867672?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawber",
+      "url": "https://clawhub.ai/skills/clawber"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawber",
+    "url": "https://clawhub.ai/skills/clawber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawber-01d550f5f3675b86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawber@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawber-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:146cb1811882437d23feb69bd557566843e106b94111fdd76471f723b75c6cb8",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T03:57:00.039Z"
+}

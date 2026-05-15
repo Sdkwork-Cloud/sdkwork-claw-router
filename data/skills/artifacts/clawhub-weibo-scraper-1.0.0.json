@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weibo-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weibo_scraper",
+  "skill": {
+    "id": 68875,
+    "skillKey": "clawhub-weibo-scraper",
+    "name": "抓取某个微博用户在某个时间发的微博内容。只需要说：抓一下XXX的微博。"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weibo-scraper",
+    "url": "https://clawhub.ai/skills/weibo-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weibo-scraper-5e044282101d6675.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抓取指定微博用户的帖子内容。当用户提到\"抓微博\"、\"微博内容\"、\"看微博\"、\"weibo\"、\"某人微博\"等关键词时使用此 skill。支持按日期筛选、自动获取长文全文、滚动加载防遗漏。基于 m.weibo.cn 移动端 + browser 工具实现，无需登录即可抓取公开微博。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "x1a0f31",
+      "userId": "s17611g7rqcbx9q8bpy2aj6bqn84q589",
+      "displayName": "op3nclaw",
+      "image": "https://avatars.githubusercontent.com/u/146342196?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776575860742,
+      "changelog": "Weibo Scraper 1.0.0 initial release:\n\n- Enables scraping of public Weibo posts from a specified user without login, using a browser-driven workflow for m.weibo.cn mobile site.\n- Supports keyword triggers such as “抓微博”, “微博内容”, “看微博”, “weibo”, and “某人微博”.\n- Allows date filtering, automatic retrieval of full content for long posts, and scroll loading to prevent missing entries.\n- Provides clear output listing with chronological sorting and formatted post time.\n- Operates with anti-crawling considerations: no API usage, only browser automation on the mobile site.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5dfadfe9c264af9979b255d79c0e087ba088fedc5a56a8e8878a3ee306606d6e"
+}

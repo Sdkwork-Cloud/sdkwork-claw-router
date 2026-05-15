@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doubleword-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubleword_api",
+  "skill": {
+    "id": 11646,
+    "skillKey": "clawhub-doubleword-api",
+    "name": "Doubleword API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubleword-api",
+    "url": "https://clawhub.ai/skills/doubleword-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubleword-api-8a423139bdf7e3fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, submit, monitor, and retrieve asynchronous batch AI inference jobs via the Doubleword API using JSONL files for large or cost-sensitive workloads."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pjb157",
+      "userId": "publishers:pjb157",
+      "displayName": "pjb157",
+      "image": "https://avatars.githubusercontent.com/u/84070455?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1872,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769546053909,
+      "changelog": "v1",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5936a2354b887cb691e857b8f3938a7e0024c815f8a597fd35d612daf327f921"
+}

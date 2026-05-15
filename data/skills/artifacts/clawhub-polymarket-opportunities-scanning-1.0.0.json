@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-opportunities-scanning@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_opportunities_scanning",
+  "skill": {
+    "id": 26564,
+    "skillKey": "clawhub-polymarket-opportunities-scanning",
+    "name": "Polymarket Opportunities Scanning"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-opportunities-scanning",
+    "url": "https://clawhub.ai/skills/polymarket-opportunities-scanning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-opportunities-scanning-fe461e279551a19e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan Polymarket prediction markets for book arbitrage opportunities (overbooked/underbooked multi-outcome markets), generate a formatted report, and deliver..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caoqi",
+      "userId": "publishers:caoqi",
+      "displayName": "caoooqiii",
+      "image": "https://avatars.githubusercontent.com/u/430893?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773562208466,
+      "changelog": "Initial release: Scan Polymarket for book arbitrage opportunities (overbook/underbook), generate ranked report, deliver via Telegram and email. Includes full scanner.js and send-report.js scripts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5adc65a2187178d352acb1e86facf94534c1c327a5cb2450053eb1bf1f713f28"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobsterlan@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobsterlan",
+  "skill": {
+    "id": 19222,
+    "skillKey": "clawhub-lobsterlan",
+    "name": "LobsterLAN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobsterlan",
+    "url": "https://clawhub.ai/skills/lobsterlan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobsterlan-78ca38b26b41a9c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Communicate with other OpenClaw agents on your local network. Use when you need to ask another agent a question (sync), delegate a task (async), or check if..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielithomas",
+      "userId": "s175813sqtdwve7j1esbjfprw183qbk0",
+      "displayName": "Daniel Thomas",
+      "image": "https://avatars.githubusercontent.com/u/60994952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 528,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773810370721,
+      "changelog": "Security fix: eliminate command injection in inline Python blocks. All shell variables now passed via environment variables instead of string interpolation. Added input validation for peer names, hosts, and ports. Added non-localhost warning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:acc0dee17b12d6b2197a91efc1ce622364198a047c5779fba1fc847f0d516bbc"
+}

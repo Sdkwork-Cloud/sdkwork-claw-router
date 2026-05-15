@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44284,
+  "uuid": "skill-clawhub-paradex-strategy-builder",
+  "skillKey": "clawhub-paradex-strategy-builder",
+  "name": "Strategy Builder",
+  "summary": "Design, backtest, and reason about trading strategies for Paradex using MCP tools. Takes natural language strategy descriptions and turns them into structure...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paradex_strategy_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergey Vidyuk",
+      "features": [
+        "Design, backtest, and reason about trading strategies for Paradex using MCP tools",
+        "Takes natural language strategy descriptions and turns them into structure..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paradex-strategy-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14086?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paradex-strategy-builder",
+      "url": "https://clawhub.ai/skills/paradex-strategy-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paradex-strategy-builder",
+    "url": "https://clawhub.ai/skills/paradex-strategy-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paradex-strategy-builder-7446f3749443f1d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paradex-strategy-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paradex-strategy-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d56d7eac247778c24540972da8cdb6d1864f4a6d2e5c28e3a08488dc0a110bf9",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T05:21:36.477Z"
+}

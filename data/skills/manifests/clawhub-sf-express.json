@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56487,
+  "uuid": "skill-clawhub-sf-express",
+  "skillKey": "clawhub-sf-express",
+  "name": "sf-express",
+  "summary": "Use SF Express (顺丰速运) for shipment tracking, shipping guidance, service-type comparison, outlet lookup, and delivery-time or fee estimation. Use when the use...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sf_express",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Use SF Express (顺丰速运) for shipment tracking, shipping guidance, service-type comparison, outlet.",
+        "Use when the use..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sf-express@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sf-express",
+      "url": "https://clawhub.ai/skills/sf-express"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sf-express",
+    "url": "https://clawhub.ai/skills/sf-express",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sf-express-13a0adf7d440e502.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sf-express@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sf-express-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7f109305f188f2c4a06f20b8f5b2173009a5c62dab026a9373b7fd197968921",
+      "artifactSizeBytes": 1886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T03:30:16.486Z"
+}

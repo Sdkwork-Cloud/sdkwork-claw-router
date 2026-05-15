@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bird-twitter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bird_twitter",
+  "skill": {
+    "id": 9646,
+    "skillKey": "clawhub-bird-twitter",
+    "name": "Bird Twitter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bird-twitter",
+    "url": "https://clawhub.ai/skills/bird-twitter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bird-twitter-da2e289eb73dfb53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Twitter/X CLI wrapper using bird — post tweets, reply, read, search, and manage your timeline. Fast GraphQL-based X CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chuhuilove",
+      "userId": "publishers:chuhuilove",
+      "displayName": "chuhuilove",
+      "image": "https://avatars.githubusercontent.com/u/42975985?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3194,
+      "installsAllTime": 27,
+      "installsCurrent": 27,
+      "stars": 9,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772178681866,
+      "changelog": "Initial release - Twitter/X CLI wrapper using bird",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a3db334e44b64c5c5b0b9673f63c8bc5728d3267f056d9047a0d4561fad98e3a"
+}

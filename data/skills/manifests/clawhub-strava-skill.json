@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33255,
+  "uuid": "skill-clawhub-strava-skill",
+  "skillKey": "clawhub-strava-skill",
+  "name": "Strava Skill",
+  "summary": "Talk to your Strava data — ask questions about your activities, fitness trends, PRs, and training load using AI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strava_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nftechie",
+      "features": [
+        "Talk to your Strava data — ask questions about your activities, fitness trends, PRs, and traini."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/strava-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2530972?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "strava-skill",
+      "url": "https://clawhub.ai/skills/strava-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strava-skill",
+    "url": "https://clawhub.ai/skills/strava-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strava-skill-66d4ca9606cd7ad7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/strava-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-strava-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e8ba341f816aa3ca359b2cf15c866eb7669b3421a591710e24e05bc60c78c29",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T21:34:06.362Z"
+}

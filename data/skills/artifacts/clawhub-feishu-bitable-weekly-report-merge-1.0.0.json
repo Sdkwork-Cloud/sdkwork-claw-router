@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-bitable-weekly-report-merge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bitable_weekly_report_merge",
+  "skill": {
+    "id": 73107,
+    "skillKey": "clawhub-feishu-bitable-weekly-report-merge",
+    "name": "飞书周报合并一体化流程"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bitable-weekly-report-merge",
+    "url": "https://clawhub.ai/skills/feishu-bitable-weekly-report-merge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bitable-weekly-report-merge-69284f557db11046.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书多维表格周报权限检查与合并一体化工具。用户输入一个飞书多维表格 URL，自动完成：提取「链接地址」列 → 批量检查飞书文档阅读权限 → 将有权限的文档按章节合并为新文档。输出有权限列表、无权限列表，以及合并后的新飞书文档链接。触发词：多维表格周报合并、批量合并周报、多维表格文档合并。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ganguagua",
+      "userId": "s17c827aqxz5tagheksase6g4s85008s",
+      "displayName": "ganguagua",
+      "image": "https://avatars.githubusercontent.com/u/28615695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776415720776,
+      "changelog": "首发版本：串联权限检查+文档合并，一键完成多维表格周报合并",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91635fb529dc65cfe1725099c52196dffa6612c809206fc445a436e89abd17aa"
+}

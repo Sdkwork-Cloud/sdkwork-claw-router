@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58998,
+  "uuid": "skill-clawhub-agentops",
+  "skillKey": "clawhub-agentops",
+  "name": "AgentOps — Agent运维管理",
+  "summary": "OpenClaw Agent运维管理工具。Trigger when user mentions: Agent运维, agentops, Agent健康检查, 日志分析, 性能监控, 告警, Agent配置, 故障诊断, Agent协调, 运维报告, 性能报告, Agent管理, 系统监控. Supports fr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "keyong",
+      "features": [
+        "OpenClaw Agent运维管理工具。Trigger when user mentions: Agent运维, agentops, Agent健康检查, 日志分析, 性能监控, 告警,.",
+        "Supports fr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentops@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18619191?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentops",
+      "url": "https://clawhub.ai/skills/agentops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentops",
+    "url": "https://clawhub.ai/skills/agentops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentops-0a8b23877a34bfeb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentops@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentops-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95ed28d896c934988c33ce967b3c3283d3be98baad22221630a8552412bf02ec",
+      "artifactSizeBytes": 2379
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T10:51:20.108Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67475,
+  "uuid": "skill-clawhub-binance-proxy-cn",
+  "skillKey": "clawhub-binance-proxy-cn",
+  "name": "币安代理配置（中国大陆）",
+  "summary": "在中国大陆服务器通过代理访问币安API的完整配置指南。涵盖代理选型、mihomo安装配置、vmess连接、币安域名路由、API签名调用。当用户在中国大陆需要调用币安API、配置币安代理、解决币安API连接问题（Connection reset、HTTP 451区域限制、DNS污染）时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_proxy_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eastnomoring",
+      "features": [
+        "在中国大陆服务器通过代理访问币安API的完整配置指南。涵盖代理选型、mihomo安装配置、vmess连接、币安域名路由、API签名调用。当用户在中国大陆需要调用币安API、配置币安代理、解决."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance-proxy-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18109343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance-proxy-cn",
+      "url": "https://clawhub.ai/skills/binance-proxy-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-proxy-cn",
+    "url": "https://clawhub.ai/skills/binance-proxy-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-proxy-cn-b8a2f519bc574781.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance-proxy-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-proxy-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5ea947b6bc8b772b8fb1cb324b8336786cf8c5cce36d034e5a5835cfe937f25",
+      "artifactSizeBytes": 2188
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:10:37.412Z"
+}

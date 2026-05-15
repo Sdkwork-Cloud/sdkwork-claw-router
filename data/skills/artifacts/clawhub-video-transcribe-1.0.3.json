@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-transcribe@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_transcribe",
+  "skill": {
+    "id": 61423,
+    "skillKey": "clawhub-video-transcribe",
+    "name": "Video Transcribe - 视频转文字"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-transcribe",
+    "url": "https://clawhub.ai/skills/video-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-transcribe-52da11a6ad3685a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地视频转文字 - 使用 OpenAI Whisper 进行语音识别，完全免费、离线运行、保护隐私"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaa2531349",
+      "userId": "publishers:aaa2531349",
+      "displayName": "aaa2531349",
+      "image": "https://avatars.githubusercontent.com/u/100289418?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 744,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773829011000,
+      "changelog": "**v1.0.3 Changelog**\n\n- 首次运行时自动安装 Whisper 依赖，无需手动执行 pip 命令\n- 安装依赖时自动使用清华镜像源，加快国内用户安装速度\n- 文档（SKILL.md）更新，提示用户自动安装行为\n- 其余功能保持不变，优化用户首次使用体验",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38e86f8cb10e77fdc36741bddc880b5b2ff495f5a39508cf9bfd9998cca56a98"
+}

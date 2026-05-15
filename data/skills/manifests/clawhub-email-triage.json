@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10518,
+  "uuid": "skill-clawhub-email-triage",
+  "skillKey": "clawhub-email-triage",
+  "name": "email-triage",
+  "summary": "IMAP email scanning and triage with AI classification via a local Ollama LLM. Scans unread emails, categorizes them as urgent, needs-response, informational,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_triage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian Colinger",
+      "features": [
+        "IMAP email scanning and triage with AI classification via a local Ollama LLM",
+        "Scans unread emails, categorizes them as urgent, needs-response, informational,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-triage@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8125655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-triage",
+      "url": "https://clawhub.ai/skills/email-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-triage",
+    "url": "https://clawhub.ai/skills/email-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-triage-2c15ab624f5da1d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-triage@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-triage-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:900c4b9b0aefcca1b3699e397dade3fefe1d5b711c2c9a30a5597b9b798adfc4",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T19:26:03.024Z"
+}

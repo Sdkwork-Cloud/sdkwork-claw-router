@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tc-cheapflights@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tc_cheapflights",
+  "skill": {
+    "id": 73060,
+    "skillKey": "clawhub-tc-cheapflights",
+    "name": "tc特价机票查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tc-cheapflights",
+    "url": "https://clawhub.ai/skills/tc-cheapflights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tc-cheapflights-946056d5eb68235c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "同程特价机票查询与价格监控技能。通过第三方旅行平台API查询机票价格，支持自然语言解析、价格监控、降价推送（飞书）。当用户需要查询机票价格、监控特定航班价格波动、设置价格提醒时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qi812560784",
+      "userId": "publishers:qi812560784",
+      "displayName": "qi812560784",
+      "image": "https://avatars.githubusercontent.com/u/43288324?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773301235002,
+      "changelog": "tongcheng-cheap-flights v1.0.0\n\n- Initial release with full flight price search and monitoring features.\n- Supports natural language parsing for flexible queries (city, date, flight number).\n- Integrates with third-party travel API to fetch real-time ticket prices.\n- Enables subscription to specific routes or flights and monitors for price drops.\n- Sends automated price drop notifications via Feishu (Lark) webhook.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7bbe27300462808e71effdd2c67b6d8a94ae5e415af0805b6161faff785d063c"
+}

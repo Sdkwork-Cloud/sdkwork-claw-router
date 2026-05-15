@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65654,
+  "uuid": "skill-clawhub-png-lsb-skills",
+  "skillKey": "clawhub-png-lsb-skills",
+  "name": "png-lsb-skills",
+  "summary": "PNG图片LSB隐写分析、块信息解析与CRC校验工具，支持提取sRGB/gAMA/pHYs元数据并检测多种LSB隐藏模式；适合CTF比赛场景，当用户需要分析PNG图片结构、验证数据完整性、检测隐写信息或提取图像元数据时使用",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.png_lsb_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "末心",
+      "features": [
+        "PNG图片LSB隐写分析、块信息解析与CRC校验工具，支持提取sRGB/gAMA/pHYs元数据并检测多种LSB隐藏模式；适合CTF比赛场景，当用户需要分析PNG图片结构、验证数据完整性、检."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/png-lsb-skills@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59173630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "png-lsb-skills",
+      "url": "https://clawhub.ai/skills/png-lsb-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "png-lsb-skills",
+    "url": "https://clawhub.ai/skills/png-lsb-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/png-lsb-skills-b2a4515ecb71f7e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/png-lsb-skills@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-png-lsb-skills-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77798684248db434be9efcdb7aae08c0245f88fb97c771d5f4dd0114043465f8",
+      "artifactSizeBytes": 2280
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T21:42:53.862Z"
+}

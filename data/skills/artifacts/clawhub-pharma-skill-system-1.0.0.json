@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pharma-skill-system@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pharma_skill_system",
+  "skill": {
+    "id": 69881,
+    "skillKey": "clawhub-pharma-skill-system",
+    "name": "Pharma Skill System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pharma-skill-system",
+    "url": "https://clawhub.ai/skills/pharma-skill-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pharma-skill-system-fab263f80d30956e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "医药行业十大功能集群技能体系。基于\"任务为中心，AI pipeline驱动\"思想，覆盖情报采集、内容生产、活动运营、数据分析、知识管理、合规审核、KOL运营、流程协同、注册法规、供应链生产十大业务流。触发词：医药、制药、药企、医学事务、市场部、推广部、合规、PV、药物警戒、KOL、学术会议、竞品分析、医保、招标、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangjiaocheng",
+      "userId": "s175zq13kt63ypfry5rgxh1pv18440m2",
+      "displayName": "波动几何",
+      "image": "https://avatars.githubusercontent.com/u/25478397?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 104,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777660404238,
+      "changelog": "pharma-skill-system 1.0.0\n\n- Initial release introducing a comprehensive skill system for the pharmaceutical industry.\n- Covers 10 major business domains: intelligence, content production, activities, analytics, knowledge, compliance, KOL management, workflow, regulatory, and supply chain.\n- Features 334 modular capability units, each defined with schema for inputs, outputs, dependencies, AI autonomy, and composability.\n- Includes standardized execution rules and cluster-based routing for various pharma scenarios.\n- Provides pipeline templates for key business processes, referenced in organized index files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ec403d8b162687f5c0f7d9c6dfcf71b8817ad10b2b2f62406cb2df71aab6442"
+}

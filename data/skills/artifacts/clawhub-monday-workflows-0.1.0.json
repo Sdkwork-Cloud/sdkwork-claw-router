@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/monday-workflows@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monday_workflows",
+  "skill": {
+    "id": 54916,
+    "skillKey": "clawhub-monday-workflows",
+    "name": "Monday"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monday-workflows",
+    "url": "https://clawhub.ai/skills/monday-workflows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monday-workflows-ff01c125e9df3c14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage boards, items, subscribers, users, and workflow operations in monday.com — powered by ClawLink."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hith3sh",
+      "userId": "s173vws87a7ss71xf9rq53k5gd8568kv",
+      "displayName": "Hithesh Jay",
+      "image": "https://avatars.githubusercontent.com/u/83839061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 84,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778077318728,
+      "changelog": "- Initial release of monday-workflows skill.\n- Enables management of boards, items, users, subscribers, and workflow operations in monday.com via ClawLink integration.\n- Provides setup and connection guidance for ClawLink and Monday accounts without requiring user API credentials.\n- Supports dynamic tool discovery and execution based on the user's current Monday connection.\n- Includes built-in safeguards for confirmation before destructive, external, or bulk write operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1428a5fe776d3250e0a36bb0f38c2ffeee0a38ff3cd8da914283aa62abfa92a8"
+}

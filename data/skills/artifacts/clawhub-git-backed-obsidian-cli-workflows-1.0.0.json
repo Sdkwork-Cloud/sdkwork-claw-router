@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-backed-obsidian-cli-workflows@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_backed_obsidian_cli_workflows",
+  "skill": {
+    "id": 25638,
+    "skillKey": "clawhub-git-backed-obsidian-cli-workflows",
+    "name": "git-backed-obsidian-cli-workflows"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-backed-obsidian-cli-workflows",
+    "url": "https://clawhub.ai/skills/git-backed-obsidian-cli-workflows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-backed-obsidian-cli-workflows-86e7857b5a2e3dbc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the official Obsidian CLI for note workflows in a Git-backed vault, including search, read, links/backlinks-style queries, daily-note operations, and lig..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darinrowe",
+      "userId": "publishers:darinrowe",
+      "displayName": "DarinRowe",
+      "image": "https://avatars.githubusercontent.com/u/5706314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773368624027,
+      "changelog": "Initial release of git-backed-obsidian-cli-workflows.\n\n- Supports read, search, backlinks, daily note, and lightweight write workflows using the official Obsidian CLI in a Git-backed vault.\n- Automatically runs Git-based backup/sync after successful write operations.\n- Falls back to direct file writing only if the CLI does not support a workflow and fallback is allowed.\n- Reports operation details: command or workflow used, target note, sync run status, and sync result.\n- Designed for any supported environment where the official Obsidian CLI already works. Use a dedicated skill for CLI installation or headless adaptation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd8fb947bac2930261b5e31fcefd09f451ded14b199f4c1c72c496274d8cb62c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/people-memories@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.people_memories",
+  "skill": {
+    "id": 10305,
+    "skillKey": "clawhub-people-memories",
+    "name": "People Memories"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "people-memories",
+    "url": "https://clawhub.ai/skills/people-memories",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/people-memories-24f7acf0eb13d887.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Capture short personal notes about people you mention, store them in a lightweight DB, and recall those details whenever you ask about them later. Use when you want to remember preferences, reminders, or the context around a person without."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charbeld",
+      "userId": "publishers:charbeld",
+      "displayName": "Charbel Daccache",
+      "image": "https://avatars.githubusercontent.com/u/19322987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2432,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769691822105,
+      "changelog": "people-memories 0.1.0 – Initial Release\n\n- Capture and store short notes about people (preferences, reminders, context) in a lightweight personal database.\n- Smart tagging and keyword indexing enable fast search and recall of people by topic or preference.\n- Supports CLI commands to remember, recall, summarize, search, export, and list people’s notes.\n- Automatically captures memories from voice transcripts triggered by “remember …” phrases.\n- Structured notes include timestamps, sources, and tags for easy integration with other workflows.\n- Built-in cron-friendly reminders for birthdays and anniversaries, with export options for sharing or backup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:db0b56dfac67a9e1547eab982a2b610a4354e66587f7b88cfbb92ef88e666053"
+}

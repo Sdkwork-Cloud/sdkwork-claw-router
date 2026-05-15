@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fengshui-advisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fengshui_advisor",
+  "skill": {
+    "id": 70802,
+    "skillKey": "clawhub-fengshui-advisor",
+    "name": "Fengshui Advisor — 风水顾问"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fengshui-advisor",
+    "url": "https://clawhub.ai/skills/fengshui-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fengshui-advisor-1cf827833e8783be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "风水分析顾问，融合八宅风水和玄空飞星两大理气派体系，通过出生年份计算本命卦， 结合房屋坐向排布飞星盘，给出吉凶方位和空间布局建议。当用户提及「风水」「八宅」 「飞星」「本命卦」「方位布局」「家居风水」「办公室风水」时触发。 计算为确定性公式 + LLM 综合解读，无外部 API 依赖。 不适用于：八字命理、紫微斗..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eamanc-lab",
+      "userId": "s17dzwpvv0cahwmm867jhg7jk583hatt",
+      "displayName": "eamanc",
+      "image": "https://avatars.githubusercontent.com/u/33925426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 332,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774184218270,
+      "changelog": "首次发布：八宅本命卦+东西四命+八方吉凶+玄空飞星+三元九运",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30bbf6af6893eff2d0449647fe89db3fef97a9f336e9b8f08305ee4930acdc3f"
+}

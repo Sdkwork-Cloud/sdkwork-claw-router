@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18949,
+  "uuid": "skill-clawhub-docker-mcp-toolkit",
+  "skillKey": "clawhub-docker-mcp-toolkit",
+  "name": "Docker MCP Toolkit",
+  "summary": "Control and use an MCP Toolkit running in Docker. Use when setting up Docker MCP Toolkit (docker compose up/down), checking status/logs, configuring environm...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_mcp_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cauhi",
+      "features": [
+        "Control and use an MCP Toolkit running in Docker",
+        "Use when setting up Docker MCP Toolkit (docker compose up/down), checking status/logs, configur."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docker-mcp-toolkit@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37795823?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docker-mcp-toolkit",
+      "url": "https://clawhub.ai/skills/docker-mcp-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-mcp-toolkit",
+    "url": "https://clawhub.ai/skills/docker-mcp-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-mcp-toolkit-fa0ad8a447d49cca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docker-mcp-toolkit@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-docker-mcp-toolkit-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cfc98fb837e7ba15c05ee4f4db65f023576d793163bd85c49f3a8e983e178ee",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T01:33:26.535Z"
+}

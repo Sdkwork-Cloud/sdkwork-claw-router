@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcf-ugc-factory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcf_ugc_factory",
+  "skill": {
+    "id": 53543,
+    "skillKey": "clawhub-mcf-ugc-factory",
+    "name": "UGC Factory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcf-ugc-factory",
+    "url": "https://clawhub.ai/skills/mcf-ugc-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcf-ugc-factory-5be15bc8aaa7d21c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered video and content generation pipeline with script writing, TikTok automation, YouTube analysis, media library, avatars, and voice synthesis — buil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cameron48",
+      "userId": "s17drfmnfgy51netkcattne1118411vc",
+      "displayName": "Cameron48",
+      "image": "https://avatars.githubusercontent.com/u/135250315?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775101563779,
+      "changelog": "Initial release of UGC Factory: an AI-powered content generation API for video, scripts, automation, and analysis.\n\n- Launches complete API for autonomous UGC creation: script writing, video production with avatars and synthetic voices, and scheduling.\n- Offers tools for TikTok and YouTube analysis, content automation, and prompt suggestions.\n- Provides media management features including B-roll sourcing, uploads, audits, and watermark removal.\n- Requires x402 (USDC on Base) payment for all endpoints.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1d8a7229f92e3debafc7786fb7a9103b3bf48dcc6254335c41f58e404ec7276"
+}

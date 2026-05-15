@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10710,
+  "uuid": "skill-clawhub-backboard",
+  "skillKey": "clawhub-backboard",
+  "name": "Backboard.io",
+  "summary": "Integrate Backboard.io for assistants, threads, memories, and document RAG via a local backend on http://localhost:5100.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.backboard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chrisk60331",
+      "features": [
+        "Integrate Backboard.io for assistants, threads, memories, and document RAG via a local backend."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/backboard@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86388348?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "backboard",
+      "url": "https://clawhub.ai/skills/backboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "backboard",
+    "url": "https://clawhub.ai/skills/backboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/backboard-2373233dc7e8ee09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/backboard@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-backboard-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19ad695cfaf68773e86ae9bee6e09896518147c82c73c999e66ce0b601e46bb9",
+      "artifactSizeBytes": 2167
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T22:07:09.996Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29198,
+  "uuid": "skill-clawhub-image-sprout",
+  "skillKey": "clawhub-image-sprout",
+  "name": "Image Sprout",
+  "summary": "Generate and iterate on images using Image Sprout projects. Creates consistent outputs from reference images, style guides, and subject guides. Use when an a...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_sprout",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Trevin",
+      "features": [
+        "Generate and iterate on images using Image Sprout projects",
+        "Creates consistent outputs from reference images, style guides, and subject guides",
+        "Use when an a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-sprout@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/517103?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-sprout",
+      "url": "https://clawhub.ai/skills/image-sprout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-sprout",
+    "url": "https://clawhub.ai/skills/image-sprout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-sprout-e58a383c25955230.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-sprout@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-sprout-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef483fef78e3e305e23d6e18457ed2d91bbf799fd6ced13701873494429516c0",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T01:36:30.956Z"
+}

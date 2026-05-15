@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38313,
+  "uuid": "skill-clawhub-spade-integration",
+  "skillKey": "clawhub-spade-integration",
+  "name": "Spade",
+  "summary": "Spade integration. Manage data, records, and automate workflows. Use when the user wants to interact with Spade data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spade_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Spade integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Spade data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spade-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spade-integration",
+      "url": "https://clawhub.ai/skills/spade-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spade-integration",
+    "url": "https://clawhub.ai/skills/spade-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spade-integration-271098bcda2bce06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spade-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-spade-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52ae1ba3ad9fb7b372f13f9b1b975aa8c09618a5f9f83a620b7e07177712722e",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:45:29.019Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33403,
+  "uuid": "skill-clawhub-switchgear",
+  "skillKey": "clawhub-switchgear",
+  "name": "Switchgear",
+  "summary": "Switchgear specification manager. Use when json switchgear tasks, csv switchgear tasks, checking switchgear status.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.switchgear",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Switchgear specification manager",
+        "Use when json switchgear tasks, csv switchgear tasks, checking switchgear status."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/switchgear@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "switchgear",
+      "url": "https://clawhub.ai/skills/switchgear"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "switchgear",
+    "url": "https://clawhub.ai/skills/switchgear",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/switchgear-46a6d2caa8234dc4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/switchgear@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-switchgear-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc18f2b5b9f479817718f706eb23f30f4f08cfc3b38cf487fe68607ba49405ba",
+      "artifactSizeBytes": 1818
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T19:18:40.873Z"
+}

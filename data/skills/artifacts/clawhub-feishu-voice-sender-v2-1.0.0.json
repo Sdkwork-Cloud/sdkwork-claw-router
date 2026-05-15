@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-voice-sender-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_voice_sender_v2",
+  "skill": {
+    "id": 60021,
+    "skillKey": "clawhub-feishu-voice-sender-v2",
+    "name": "Feishu Voice Sender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-voice-sender-v2",
+    "url": "https://clawhub.ai/skills/feishu-voice-sender-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-voice-sender-v2-bd04c6d4dce9cc8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书语音消息发送技能 - 根据 channel 自动选择发送方式"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "enderxiao",
+      "userId": "s1732a3c8p9x170vhm1hhpvem183pnnn",
+      "displayName": "EnderXiao",
+      "image": "https://avatars.githubusercontent.com/u/38461979?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 313,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773995039052,
+      "changelog": "feishu-voice-sender-v2 v1.0.0\n\n- Initial release.\n- Automatically detects channel type (Feishu, Telegram, Discord) and selects the appropriate voice message sending method.\n- Feishu channels: generates voice using Xiaomi MiMo TTS and sends native Feishu voice messages.\n- Other channels: sends text or voice messages in supported formats.\n- Supports various voice styles, dialects, and audio effects via MiMo TTS.\n- Requires configuration of MIMO_API_KEY and ffmpeg for audio processing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:abf2c6ad10238570e1424a0a9a346f1fe26638462f7c27973376afe7acb0cf40"
+}

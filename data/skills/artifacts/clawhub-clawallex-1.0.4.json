@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawallex@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawallex",
+  "skill": {
+    "id": 55832,
+    "skillKey": "clawhub-clawallex",
+    "name": "Clawallex"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawallex",
+    "url": "https://clawhub.ai/skills/clawallex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawallex-65d5510da5073c1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pay for anything with USDC — virtual cards for any online checkout"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawallex-tech",
+      "userId": "s176zqby8kaj13cdk8ejf343fd83m9f4",
+      "displayName": "Clawallex",
+      "image": "https://avatars.githubusercontent.com/u/267561672?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775185679332,
+      "changelog": "clawallex 1.0.4\n\n- Added a browser-based quick signup flow (`signup` and `signup-check`) for easier new account creation without manually copying API keys.\n- Updated setup instructions to prioritize the new browser signup; connecting with API keys is now for existing users.\n- Updated \"Hard Rules\" and \"Setup Flow\" to guide users toward the new quick signup method.\n- Expanded command reference with `signup` and `signup-check` commands, and clarified intent for each setup command.\n- Described possible signup result statuses for improved onboarding troubleshooting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50b5323beb6047d98de94758ac8587ddda990fd77dcc669571cbe672f0e1c815"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61868,
+  "uuid": "skill-clawhub-mysql-slow-query-analyzer",
+  "skillKey": "clawhub-mysql-slow-query-analyzer",
+  "name": "MySQL Slow Query Analyzer",
+  "summary": "帮助开发者解析MySQL EXPLAIN和慢查询日志，定位性能瓶颈，生成索引与SQL重写优化建议，提升查询效率。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysql_slow_query_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenghoo123-png",
+      "features": [
+        "帮助开发者解析MySQL EXPLAIN和慢查询日志，定位性能瓶颈，生成索引与SQL重写优化建议，提升查询效率。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mysql-slow-query-analyzer@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265226019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mysql-slow-query-analyzer",
+      "url": "https://clawhub.ai/skills/mysql-slow-query-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysql-slow-query-analyzer",
+    "url": "https://clawhub.ai/skills/mysql-slow-query-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysql-slow-query-analyzer-4ddffef0d42c3085.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mysql-slow-query-analyzer@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mysql-slow-query-analyzer-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6607174dfcbe7fd70789fb97e3abfa828ee0f883ae6262ea4c2e79eb09c8e2a9",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T04:41:55.816Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-modelstudio-entry-test@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_modelstudio_entry_test",
+  "skill": {
+    "id": 41538,
+    "skillKey": "clawhub-aliyun-modelstudio-entry-test",
+    "name": "Aliyun Modelstudio Entry Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-modelstudio-entry-test",
+    "url": "https://clawhub.ai/skills/aliyun-modelstudio-entry-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-modelstudio-entry-test-8cb7239c156e1a9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when running a minimal test matrix for the Model Studio skills that exist in this repo, including image/video/audio, realtime speech, omni, visual reason..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775054923390,
+      "changelog": "- Initial release of aliyun-modelstudio-entry-test.\n- Provides a minimal test matrix for all Model Studio skills in the repo, including image, video, audio, speech, multimodal, embedding, rerank, and editing.\n- Defines a standard output template for test results.\n- Includes prerequisites, failure handling guidance, and workflow for running validation and saving evidence.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f1df29507cdedff134da0659508b74c608018bab21b4e5a152c11f4159f873f"
+}

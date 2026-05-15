@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-sum@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_sum",
+  "skill": {
+    "id": 70307,
+    "skillKey": "clawhub-news-sum",
+    "name": "News Sum"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-sum",
+    "url": "https://clawhub.ai/skills/news-sum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-sum-49e3841badbb0210.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "新闻汇总与邮件投递技能。当用户要求\"生成今日新闻汇总\"、\"把新闻发给邮箱\"时触发。支持：(1) 接收用户指定主题，搜索生成新闻汇总；(2) 按用户要求投递到指定邮箱。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liliangjie91",
+      "userId": "s173qeddfkg3zkkvemnap5r5f983j15s",
+      "displayName": "Leonard",
+      "image": "https://avatars.githubusercontent.com/u/22876690?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776186898296,
+      "changelog": "news-sum 1.0.0\n\n- 初始发布，支持多主题新闻获取、汇总与结构化写作。\n- 实现主编—编辑—记者三层并行分工，自动跟踪持续事件与报道热点。\n- 支持新闻每日总结自动发送至指定邮箱，内置 Markdown 转 HTML 转换流程。\n- 默认支持“国际局势”“经济金融”“科技AI”三大主题。\n- 新闻汇总及近期热点支持文件归档与自动滚动更新。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d4ba32e3d58fd2af0a3e602952024276616182badcbd223db46efff336b65cc2"
+}

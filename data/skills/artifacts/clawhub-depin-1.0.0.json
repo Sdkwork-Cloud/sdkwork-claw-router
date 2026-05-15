@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/depin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.depin",
+  "skill": {
+    "id": 32663,
+    "skillKey": "clawhub-depin",
+    "name": "DePIN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "depin",
+    "url": "https://clawhub.ai/skills/depin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/depin-f87b32cf88bdf2cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A comprehensive AI agent skill for navigating the Decentralized Physical Infrastructure Networks ecosystem. Explains DePIN projects and tokenomics, evaluates..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agenticio",
+      "userId": "publishers:agenticio",
+      "displayName": "agenticio",
+      "image": "https://avatars.githubusercontent.com/u/259287600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773754961301,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e07ac2b051e3d24e48f159e48da495ecf628af7bb054d89add2416a1f590808d"
+}

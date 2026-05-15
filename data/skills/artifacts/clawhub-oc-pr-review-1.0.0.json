@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oc-pr-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_pr_review",
+  "skill": {
+    "id": 61715,
+    "skillKey": "clawhub-oc-pr-review",
+    "name": "OC PR Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-pr-review",
+    "url": "https://clawhub.ai/skills/oc-pr-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-pr-review-e61c3f60808f5168.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PR 审查技能 — 完整的 Pull Request 审查流程，集成 GitHub CLI，支持安全分析、测试覆盖、性能评估、代码质量检查，并可推送飞书通知。Use when: (1) 审查 PR，(2) 检查 PR 安全性，(3) 分析测试覆盖，(4) 评估代码质量，(5) 生成审查报告。触发词：'review..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "penghang1223",
+      "userId": "s172cqnwbhjm7vh8k94913pe1h83qnca",
+      "displayName": "Narain",
+      "image": "https://avatars.githubusercontent.com/u/66556401?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775025081152,
+      "changelog": "v1.0.0 - 6步PR审查流程，GitHub CLI集成，飞书通知",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b55aa5e2d3a1ec3e66f720230c3399b775992ebde27cc482c5a381fce4fe35c"
+}

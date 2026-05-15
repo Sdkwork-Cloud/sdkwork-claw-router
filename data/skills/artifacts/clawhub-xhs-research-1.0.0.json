@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_research",
+  "skill": {
+    "id": 63712,
+    "skillKey": "clawhub-xhs-research",
+    "name": "xhs-research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-research",
+    "url": "https://clawhub.ai/skills/xhs-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-research-62f7be987d7e0571.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书调研工具 — 搜索小红书笔记，AI 合成调研报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kunhai1994",
+      "userId": "s17dwj923qayp3a5qk0th4sbz5843ysc",
+      "displayName": "Kunhai",
+      "image": "https://avatars.githubusercontent.com/u/20219762?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775136960321,
+      "changelog": "xhs-research v2.0.0 — Major upgrade for 小红书调研工具 with automated research workflows.\n\n- Now supports fully automated 小红书调研: generates search keywords with LLM, runs multi-keyword searches, and auto-creates AI-powered synthesis reports with source links.\n- Guided setup and environment checks with clear step-by-step instructions for tool installation, login, and service startup.\n- Flexible templates for a wide range of research types (推荐, 调研, 避雷, 对比, 痛点等), ensuring every piece of information is source-linked.\n- All reports saved to ~/Documents/XHS-Research/ with user notification and data bias disclaimer included.\n- Strong focus on using real user data from 小红书, with strict citation requirements and no unverifiable statements.\n- User flow enhanced: after report completion, tailored follow-up suggestions are provided, based on actual research findings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fff8afe5b90984257b5466bd399f2e0dcc3f7ca91d21f3982ce16a7ff51171f3"
+}

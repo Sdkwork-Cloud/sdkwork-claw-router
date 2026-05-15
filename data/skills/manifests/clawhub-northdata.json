@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43992,
+  "uuid": "skill-clawhub-northdata",
+  "skillKey": "clawhub-northdata",
+  "name": "NorthData",
+  "summary": "Use NorthData (German commercial-register + financials API) to look up companies, owners, representatives, financials, publications, and person records. Trig...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.northdata",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Patrick Meier",
+      "features": [
+        "Use NorthData (German commercial-register + financials API) to look up companies, owners, repre."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/northdata@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2674097?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "northdata",
+      "url": "https://clawhub.ai/skills/northdata"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "northdata",
+    "url": "https://clawhub.ai/skills/northdata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/northdata-468d9373e1c52fac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/northdata@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-northdata-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80f63d50d83e25644b6a05fcda68da1a1e5fdee58194585f7fe789a157c7cfe5",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T12:36:32.847Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mikonos-deep-reading@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mikonos_deep_reading",
+  "skill": {
+    "id": 62685,
+    "skillKey": "clawhub-mikonos-deep-reading",
+    "name": "Deep Reading (Zettelkasten)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mikonos-deep-reading",
+    "url": "https://clawhub.ai/skills/mikonos-deep-reading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mikonos-deep-reading-245521bafb8049bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "书/长文/研报/论文的深度消化，产出结构笔记+原子笔记+知识网络连接。关键词：深度阅读、深度学习、结构笔记、deep learning。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikonos",
+      "userId": "s17dcg2xgr601r2t7hegjrbh3983gtsc",
+      "displayName": "mikonos",
+      "image": "https://avatars.githubusercontent.com/u/3193323?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774203231948,
+      "changelog": "Initial ClawHub release: Luhmann/Adler/Feynman deep reading workflow, structure + atomic + method + index notes, case fidelity, workflow-audit Phase 6.5.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f498f944968f30b760056b59549968e40636116d89eacb0644059e2af936b606"
+}

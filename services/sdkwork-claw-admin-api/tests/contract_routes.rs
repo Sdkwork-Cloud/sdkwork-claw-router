@@ -25,15 +25,15 @@ async fn call(method: Method, uri: &str) -> (StatusCode, Value) {
 #[tokio::test]
 async fn backend_contract_routes_return_standard_not_implemented_envelope() {
     let cases = [
-        (Method::POST, "/backend/v3/api/model/list", "fetchModels"),
+        (Method::GET, "/backend/v3/api/ai/models", "fetchModels"),
         (
             Method::POST,
-            "/backend/v3/api/router/models/sync",
+            "/backend/v3/api/ai/models/refresh",
             "syncVendorsAndModels",
         ),
         (
             Method::PATCH,
-            "/backend/v3/api/router/announcements/notice-001",
+            "/backend/v3/api/content/announcements/notice-001",
             "updateAnnouncement",
         ),
     ];

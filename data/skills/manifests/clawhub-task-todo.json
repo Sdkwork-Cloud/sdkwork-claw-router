@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15144,
+  "uuid": "skill-clawhub-task-todo",
+  "skillKey": "clawhub-task-todo",
+  "name": "Task ToDo",
+  "summary": "Manage tasks with persistent storage, supporting creation, retrieval, updates, deletion, filtering by status or priority, and status tracking via SQLite.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_todo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Manojkumar Kotakonda",
+      "features": [
+        "Manage tasks with persistent storage, supporting creation, retrieval, updates, deletion, filter."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-todo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44414430?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-todo",
+      "url": "https://clawhub.ai/skills/task-todo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-todo",
+    "url": "https://clawhub.ai/skills/task-todo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-todo-2e1f9700ea08c746.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-todo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-todo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e674d198c935ff683a58a404a91cf457ef6865971957f0d7008e04713d4deed3",
+      "artifactSizeBytes": 2322
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T02:45:01.320Z"
+}

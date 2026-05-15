@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apollo-immu@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apollo_immu",
+  "skill": {
+    "id": 70832,
+    "skillKey": "clawhub-apollo-immu",
+    "name": "Apollo Immu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apollo-immu",
+    "url": "https://clawhub.ai/skills/apollo-immu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apollo-immu-da4c845452be26b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "像免疫系统一样拦截危险操作，守护你的数据和系统安全。自动识别危险操作，信任积累减少确认噪音。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1775553214765,
+      "changelog": "更新页面描述，突出核心功能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6789d39fd3613ba955e2da669af444e5ccfa0478349b05a64eb4e60adfa6136"
+}

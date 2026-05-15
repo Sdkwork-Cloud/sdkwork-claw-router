@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "maverick-stripe-mcp",
+    "displayName": "Stripe mcp",
+    "summary": "Search, read, and manage Stripe account data through Stripe's hosted MCP server. Thin pass-through to Stripe's official MCP; the live tool catalog is whateve...",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1778007053311,
+    "updatedAt": 1778233007301
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1778232773901,
+    "changelog": "- Removed dependency on bash scripts for initialization and invocation (scripts/init-mcporter.sh, scripts/invoke.sh deleted).\n- Usage is now direct via `mcporter`; instructions updated for improved simplicity and clarity.\n- Environment requirements reduced to only `MAVERICK_STRIPE_MCP_ACCESS_TOKEN`.\n- Removed requirements for `jq`, `flock`, and `shasum` as dependencies.\n- Documentation has been revised for a streamlined setup and for pointing to the Stripe MCP documentation as the source of truth.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "maverick",
+    "userId": "s17b4scyfsybdcep8c0034pgs186087n",
+    "displayName": "Maverick",
+    "image": "https://avatars.githubusercontent.com/u/261420589"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778233007301
+  }
+}

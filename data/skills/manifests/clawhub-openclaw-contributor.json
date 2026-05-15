@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54732,
+  "uuid": "skill-clawhub-openclaw-contributor",
+  "skillKey": "clawhub-openclaw-contributor",
+  "name": "OpenClaw Contributor",
+  "summary": "Contribute to the OpenClaw core repository using the repo's own CONTRIBUTING.md rules. Use when working in `openclaw/openclaw` or a fork to triage issues, pl...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_contributor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "manjaroblack",
+      "features": [
+        "Contribute to the OpenClaw core repository using the repo's own CONTRIBUTING.md rules",
+        "Use when working in `openclaw/openclaw` or a fork to triage issues, pl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-contributor@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42281273?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-contributor",
+      "url": "https://clawhub.ai/skills/openclaw-contributor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-contributor",
+    "url": "https://clawhub.ai/skills/openclaw-contributor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-contributor-fd966294680a9c0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-contributor@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-contributor-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44e939cc2db55ed1314d607efd5afb46f08bbcb3a4358780678c5673bf672084",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T23:39:04.247Z"
+}

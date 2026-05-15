@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-bounty-scanner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_bounty_scanner",
+  "skill": {
+    "id": 22350,
+    "skillKey": "clawhub-multi-bounty-scanner",
+    "name": "Multi-Platform Bounty Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-bounty-scanner",
+    "url": "https://clawhub.ai/skills/multi-bounty-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-bounty-scanner-8afba801e6267ce8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically scan and filter new bug and OSS bounty opportunities across 50+ platforms by tech stack, reward, and difficulty with daily automation support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dagangtj",
+      "userId": "publishers:dagangtj",
+      "displayName": "dagangtj",
+      "image": "https://avatars.githubusercontent.com/u/65108318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 446,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772747179469,
+      "changelog": "Initial public release of Multi-Platform Bounty Scanner:\n\n- Automatically scans 50+ bug bounty and OSS bounty platforms for new opportunities.\n- Supports filters for tech stack, minimum reward, and platform selection.\n- Exports scan results to JSON; tracks seen bounties to only show new ones.\n- Integrates with OpenClaw for daily automated scanning via cron.\n- Initial implementation supports GitHub (with bounty label); more platforms coming soon.\n- Free tier includes GitHub scanning; Pro tier for all platforms planned.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e06a38c614ecad169862cdb6eee057f4677dab4475ad8f90b6f60960951d1b99"
+}

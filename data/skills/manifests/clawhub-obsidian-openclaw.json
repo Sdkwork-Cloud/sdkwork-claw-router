@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59765,
+  "uuid": "skill-clawhub-obsidian-openclaw",
+  "skillKey": "clawhub-obsidian-openclaw",
+  "name": "Obsidian Master Assistant",
+  "summary": "Obsidian 大师级配置助手 - 基于三大 YouTube 频道教程，提供完整的 Obsidian 配置、插件推荐、模板系统、AI 集成（Claude/OpenClaw/Gemini）和知识管理最佳实践。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuxi304",
+      "features": [
+        "Obsidian 大师级配置助手",
+        "基于三大 YouTube 频道教程，提供完整的 Obsidian 配置、插件推荐、模板系统、AI 集成（Claude/OpenClaw/Gemini）和知识管理最佳实践。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-openclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79346762?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-openclaw",
+      "url": "https://clawhub.ai/skills/obsidian-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-openclaw",
+    "url": "https://clawhub.ai/skills/obsidian-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-openclaw-e8d6de0f0881d433.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-openclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-openclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e109b71f0cdc0150e3d6308d8129b34cecd1b4042c830c06d37d5c902ff1e828",
+      "artifactSizeBytes": 2533
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T01:03:42.503Z"
+}

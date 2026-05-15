@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geo-brand-overview@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_brand_overview",
+  "skill": {
+    "id": 50725,
+    "skillKey": "clawhub-geo-brand-overview",
+    "name": "Brand Visibility Overview"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-brand-overview",
+    "url": "https://clawhub.ai/skills/geo-brand-overview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-brand-overview-897de90a9009ea2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor your brand's AI visibility across ChatGPT, Perplexity, Gemini, Grok, and Google AI. Powered by GEOly AI — get AIGVR scores, mention counts, and platf..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "geoly-geo",
+      "userId": "publishers:geoly-geo",
+      "displayName": "GEOLY AI",
+      "image": "https://avatars.githubusercontent.com/u/70360114?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 409,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772199087974,
+      "changelog": "Initial release: Brand overview dashboard via GEOly AI MCP, supporting AIGVR score, mentions & platform distribution",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7f83d31b9b43345831592f7de5325fe3a16fe99fd0f0c541ebda4601b960d70a"
+}

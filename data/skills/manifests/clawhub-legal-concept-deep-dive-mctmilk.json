@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72898,
+  "uuid": "skill-clawhub-legal-concept-deep-dive-mctmilk",
+  "skillKey": "clawhub-legal-concept-deep-dive-mctmilk",
+  "name": "不确定法律概念深挖",
+  "summary": "深入分析法条中的不确定法律概念（如\"合理期限\"、\"重大误解\"、\"明显不当\"）的内涵、外延、裁判标准和边界案例。当用户想穿透法条中模糊词汇的具体含义时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_concept_deep_dive_mctmilk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MctMilk",
+      "features": [
+        "深入分析法条中的不确定法律概念（如\"合理期限\"、\"重大误解\"、\"明显不当\"）的内涵、外延、裁判标准和边界案例。当用户想穿透法条中模糊词汇的具体含义时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legal-concept-deep-dive-mctmilk@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51847435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legal-concept-deep-dive-mctmilk",
+      "url": "https://clawhub.ai/skills/legal-concept-deep-dive-mctmilk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-concept-deep-dive-mctmilk",
+    "url": "https://clawhub.ai/skills/legal-concept-deep-dive-mctmilk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-concept-deep-dive-mctmilk-c9765e0f13e58fb9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legal-concept-deep-dive-mctmilk@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-legal-concept-deep-dive-mctmilk-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0711f4af6642e11bb2c8161047ff87f0d4ff304671dc22749b6ce42665bd64b",
+      "artifactSizeBytes": 2614
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:06:36.471Z"
+}

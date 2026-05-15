@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66228,
+  "uuid": "skill-clawhub-funshion",
+  "skillKey": "clawhub-funshion",
+  "name": "Funshion",
+  "summary": "风行视频（已边缘化）- 在线视频平台历史存档",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.funshion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "风行视频（已边缘化）",
+        "在线视频平台历史存档"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/funshion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "funshion",
+      "url": "https://clawhub.ai/skills/funshion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "funshion",
+    "url": "https://clawhub.ai/skills/funshion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/funshion-a3a25a21daba7937.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/funshion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-funshion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c2eff72b1a696983c0b3fc28f71c3d21fe7982877a6d7143837f82cad1be50d",
+      "artifactSizeBytes": 2123
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:21:46.122Z"
+}

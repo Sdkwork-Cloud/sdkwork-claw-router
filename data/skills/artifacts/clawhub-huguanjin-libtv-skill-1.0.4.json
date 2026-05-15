@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huguanjin-libtv-skill@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huguanjin_libtv_skill",
+  "skill": {
+    "id": 63698,
+    "skillKey": "clawhub-huguanjin-libtv-skill",
+    "name": "libtv-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huguanjin-libtv-skill",
+    "url": "https://clawhub.ai/skills/huguanjin-libtv-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huguanjin-libtv-skill-5afd6dd98b517a12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "agent-im 会话技能 - 通过 liblib.tv 的 AI 能力生成和编辑图片/视频，兼容 Gemini 文生图、Sora/Veo/Grok/豆包/Vidu 视频直连。 覆盖：文生图、文生视频、图生视频、视频编辑、风格迁移、视频续写、MV生成、短剧生成、分镜设计。 触发词：画、生成、做动画、改镜头、换风格..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huguanjin",
+      "userId": "s17d3sjezenwta96wnk2gzf3ws83m87s",
+      "displayName": "guanjin hu",
+      "image": "https://avatars.githubusercontent.com/u/142820286?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 522,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774511961928,
+      "changelog": "huguanjin-libtv-skill 1.0.4\n\n- No file changes were detected in this release.\n- All documentation and functionality remain the same as the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d23fd4e67506ec5781a4568d12dcf41661075a24e66362af9786b829cc76ec97"
+}

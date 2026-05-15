@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21568,
+  "uuid": "skill-clawhub-medical",
+  "skillKey": "clawhub-medical",
+  "name": "Medical",
+  "summary": "Local-first health record management with strict privacy boundaries. Organize what happened, what you take, what changed, and what to bring to your doctor —...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AGIstack",
+      "features": [
+        "Local-first health record management with strict privacy boundaries",
+        "Organize what happened, what you take, what changed, and what to bring to your doctor —..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medical@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258523997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medical",
+      "url": "https://clawhub.ai/skills/medical"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical",
+    "url": "https://clawhub.ai/skills/medical",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-948dbde67a8ef961.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medical@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-medical-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34af02209127496805fafab6e39093ea1ae49842ba52120dc33b4ae04d67337a",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:45:58.708Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cinmoore-skill-devices@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cinmoore_skill_devices",
+  "skill": {
+    "id": 58945,
+    "skillKey": "clawhub-cinmoore-skill-devices",
+    "name": "Cinmoore Skill Devices"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cinmoore-skill-devices",
+    "url": "https://clawhub.ai/skills/cinmoore-skill-devices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cinmoore-skill-devices-c6cb3e20c60ba843.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "神眸智能设备控制技能：整合设备控制、视频录制、事件查询、VLM分析等原子能力，支持AI意图理解与自动化组合。Invoke when user wants to control devices, analyze video, query events, or understand device capabilities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "buaalingming",
+      "userId": "s174t7jpbf8kgjjrayk55qq0bh843ntc",
+      "displayName": "buaalingming",
+      "image": "https://avatars.githubusercontent.com/u/20924045?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775533100978,
+      "changelog": "Initial release of cinmoore-skill-devices.\n\n- Integrates device control, video recording, event query, and VLM analysis via a unified CLI tool.\n- Supports both Linux and Windows platforms with simple installation commands.\n- Enables AI-driven intent understanding and automated command composition.\n- Provides detailed instructions for device info query, PTZ control, event/media handling, and compound automation.\n- Requires `.env.cinmoore_skill_devices` configuration or direct parameter input for authentication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20d1edfe4f1e04b2401b0ac2446568966c827607dc24502252536f41aac9f776"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whale-alert@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whale_alert",
+  "skill": {
+    "id": 63434,
+    "skillKey": "clawhub-whale-alert",
+    "name": "Whale Alert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whale-alert",
+    "url": "https://clawhub.ai/skills/whale-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whale-alert-e45b46fe2fd862c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实时监控巨鲸大额转账，追踪聪明钱动向。支持ETH、BTC、USDT。触发词：巨鲸、whale alert、大额转账、聪明钱。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deeplearning1993",
+      "userId": "publishers:deeplearning1993",
+      "displayName": "deeplearning1993",
+      "image": "https://avatars.githubusercontent.com/u/106026146?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 536,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772753067915,
+      "changelog": "巨鲸转账监控，每次0.001 USDT",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:89f0f14874257dba629fc58950546bae6293f97820e558f63a136a186a744896"
+}

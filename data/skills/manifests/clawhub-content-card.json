@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60591,
+  "uuid": "skill-clawhub-content-card",
+  "skillKey": "clawhub-content-card",
+  "name": "Content Card",
+  "summary": "将内容铸成 PNG 视觉卡片。三种模具：-l 长图阅读卡（默认）、-i 信息图、-m 多卡。 输入文本/URL/文件，输出高品质 PNG。 Use when: (1) 用户说\"做成卡片\"/\"做成图\"/\"铸\"/\"cast\", (2) 用户说\"知识卡片\"/\"信息图\"/\"infograph\", (3) 需要将文章/笔记...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_card",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lovensky1992-wk",
+      "features": [
+        "将内容铸成 PNG 视觉卡片。三种模具：-l 长图阅读卡（默认）、-i 信息图、-m 多卡。 输入文本/URL/文件，输出高品质 PNG。 Use when: (1) 用户说\"做成卡片\"/\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-card@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264908128?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-card",
+      "url": "https://clawhub.ai/skills/content-card"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-card",
+    "url": "https://clawhub.ai/skills/content-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-card-b07ab1a1aeffa24b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-card@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-card-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e785009f8a2cbb8316dd9655c7e469d47464983c53109f78f776a43ae3f4602",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T06:32:03.788Z"
+}

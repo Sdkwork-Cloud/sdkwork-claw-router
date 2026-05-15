@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46080,
+  "uuid": "skill-clawhub-celery-task-analyzer",
+  "skillKey": "clawhub-celery-task-analyzer",
+  "name": "Celery Task Analyzer",
+  "summary": "Analyze Celery task configurations for reliability, performance, and debugging. Checks retry policies, task routing, serialization, result backends, worker c...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.celery_task_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Analyze Celery task configurations for reliability, performance, and debugging",
+        "Checks retry policies, task routing, serialization, result backends, worker c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/celery-task-analyzer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "celery-task-analyzer",
+      "url": "https://clawhub.ai/skills/celery-task-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "celery-task-analyzer",
+    "url": "https://clawhub.ai/skills/celery-task-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/celery-task-analyzer-e345efa673c6869c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/celery-task-analyzer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-celery-task-analyzer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa9a5d2ae7de520d75c70a92c6d71076e4d06b8058b7d93c18976a8d29885d05",
+      "artifactSizeBytes": 2134
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:00:09.846Z"
+}

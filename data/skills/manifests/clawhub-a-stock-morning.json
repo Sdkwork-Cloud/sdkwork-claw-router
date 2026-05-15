@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45691,
+  "uuid": "skill-clawhub-a-stock-morning",
+  "skillKey": "clawhub-a-stock-morning",
+  "name": "A Stock Morning",
+  "summary": "Sends a daily 9:45 AM summary of the A-share market open, including key indices, top sectors, volume, and trading suggestions via Feishu.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_morning",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chrislzg",
+      "features": [
+        "Sends a daily 9:45 AM summary of the A-share market open, including key indices, top sectors, v."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-stock-morning@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18321213?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-stock-morning",
+      "url": "https://clawhub.ai/skills/a-stock-morning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-morning",
+    "url": "https://clawhub.ai/skills/a-stock-morning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-morning-ad893022ebd295dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-stock-morning@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-stock-morning-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f9488f0d50db0f4c7bf6f859276657b1c841b2b14ad125cf9f14101ff17e55e",
+      "artifactSizeBytes": 2165
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T07:57:11.309Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llamaparse@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llamaparse",
+  "skill": {
+    "id": 24343,
+    "skillKey": "clawhub-llamaparse",
+    "name": "Llamaparse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llamaparse",
+    "url": "https://clawhub.ai/skills/llamaparse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llamaparse-6c1cdd86e0e4881a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parse, extract, and analyze documents using the LlamaParse API (LlamaCloud). Use when the user asks to parse PDFs, images, spreadsheets, or other documents i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zli484",
+      "userId": "s17akezwpkndd9hjygmn65t66584gp6e",
+      "displayName": "zli484",
+      "image": "https://avatars.githubusercontent.com/u/23391626?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773347737540,
+      "changelog": "Add runtime metadata (requires.env, bins, primaryEnv) to frontmatter and document external service usage to resolve security scan mismatch",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7fe0e2d7292f1709db98cf97217553ca4edcebce43ad8a7399582b7ebbc957a3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-structure-protocol@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_structure_protocol",
+  "skill": {
+    "id": 50602,
+    "skillKey": "clawhub-data-structure-protocol",
+    "name": "Data Structure Protocol (DSP)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-structure-protocol",
+    "url": "https://clawhub.ai/skills/data-structure-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-structure-protocol-336d1115d1690563.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and navigate DSP (Data Structure Protocol) — graph-based long-term structural memory of codebases for LLM agents. Stores entities (modules, functions),..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "k-kolomeitsev",
+      "userId": "publishers:k-kolomeitsev",
+      "displayName": "k-kolomeitsev",
+      "image": "https://avatars.githubusercontent.com/u/34948259?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773491386318,
+      "changelog": "Initial release of the Data Structure Protocol (DSP) skill.\n\n- Introduces DSP as a codebase graph for long-term structural memory (entities, dependencies, APIs, reasons).\n- Details core DSP concepts, UID system, and strict CLI-driven workflows for creating, modifying, and navigating code structure.\n- Provides a comprehensive agent prompt with usage rules and safety checks for DSP-tracked projects.\n- Documents setup, updates, deletion scenarios, and diagnostics commands for maintaining DSP integrity.\n- Includes references for storage format, bootstrap procedure, and supported operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0965e24b2e10b760baddd0dc8bbdb654d8cc6080201aa31768aba0e70cedf989"
+}

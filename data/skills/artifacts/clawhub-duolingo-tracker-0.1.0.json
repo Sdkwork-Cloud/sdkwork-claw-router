@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/duolingo-tracker@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.duolingo_tracker",
+  "skill": {
+    "id": 41928,
+    "skillKey": "clawhub-duolingo-tracker",
+    "name": "Duolingo Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "duolingo-tracker",
+    "url": "https://clawhub.ai/skills/duolingo-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/duolingo-tracker-5cad6d34e36f8c44.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and display Duolingo learning stats: streak, XP, league, level, course progress, and daily/weekly summaries. Use this skill whenever the user asks abou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elmoorish",
+      "userId": "s17619gksayqehk3v7z1g0ccp183f2et",
+      "displayName": "The Mooorish",
+      "image": "https://avatars.githubusercontent.com/u/213910000?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774223452992,
+      "changelog": "Initial public release with core Duolingo tracking functionality:\n\n- Fetches and displays Duolingo stats: streak, XP, daily goals, course progress, and weekly XP summaries.\n- Supports both authenticated (JWT token) and public (username only) stats.\n- Retrieves current league/tier information and presents progress in a concise summary format.\n- Includes setup instructions for authentication using browser cookie.\n- Handles common error cases and reminds users to keep tokens private.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3fe1d08aa4d2edf4de6800bcdb62a17be81618395c72f6ce8f99ffbb34ae908d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gsearch@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gsearch",
+  "skill": {
+    "id": 19334,
+    "skillKey": "clawhub-gsearch",
+    "name": "GSearch - Free Google Search MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gsearch",
+    "url": "https://clawhub.ai/skills/gsearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gsearch-5e5ace341a950aed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web with Google Search grounding. Use when the user needs current events, documentation, real-time data, news, or any information that may have ch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daanielcruz",
+      "userId": "s1716k4txmec4gsgrys2h1v9px83r8cs",
+      "displayName": "Daniel Cruz",
+      "image": "https://avatars.githubusercontent.com/u/65899808?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 411,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1777543903629,
+      "changelog": "- No changes detected in this version.\n- Behavior, features, and documentation remain unchanged from the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a975aabf0480639e9a6952e71174cd1c8ec646559ffdf1362d7fc3c795bd891c"
+}

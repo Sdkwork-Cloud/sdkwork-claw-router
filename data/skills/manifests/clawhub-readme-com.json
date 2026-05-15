@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22748,
+  "uuid": "skill-clawhub-readme-com",
+  "skillKey": "clawhub-readme-com",
+  "name": "Readme Com",
+  "summary": "Readme.com integration. Manage Projects. Use when the user wants to interact with Readme.com data.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readme_com",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Readme.com integration",
+        "Manage Projects",
+        "Use when the user wants to interact with Readme.com data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/readme-com@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "readme-com",
+      "url": "https://clawhub.ai/skills/readme-com"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readme-com",
+    "url": "https://clawhub.ai/skills/readme-com",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readme-com-50bbb455b64ba9f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/readme-com@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-readme-com-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c0996283b27af25e0c53618f117263d479b46fa212441d5b603fe341ed8f735",
+      "artifactSizeBytes": 1819
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:31:54.947Z"
+}

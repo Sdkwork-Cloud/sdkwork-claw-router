@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vendor-risk-brief@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vendor_risk_brief",
+  "skill": {
+    "id": 59672,
+    "skillKey": "clawhub-vendor-risk-brief",
+    "name": "Vendor Risk Brief"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vendor-risk-brief",
+    "url": "https://clawhub.ai/skills/vendor-risk-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vendor-risk-brief-d407622628e5e3c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对外部 SaaS/API 形成风险摘要，聚焦集成影响、权限、数据流向和替代方案。；use for vendor-risk, saas, security workflows；do not use for 冒充安全认证结论, 替代正式法务/安全审批."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774231977879,
+      "changelog": "Initial release of vendor-risk-brief skill:\n\n- Generates risk summaries for external SaaS/API integrations, focusing on integration impact, permissions, data flows, and alternatives.\n- Designed for use in vendor-risk, SaaS, and security workflows.\n- Outputs include supplier summary, permissions & data flow, main risks, mitigations, alternatives, and recommendation.\n- Clearly states information gaps and operational boundaries; not a substitute for formal legal/security approval.\n- Supports review drafts and executable checklists; provides structure for localized templates and specs.\n- Emphasizes auditability and risk boundaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67edb72e0011174353b3b14a1cd67cad9ca2f6af25157b8a86dc860c8ce8bb6f"
+}

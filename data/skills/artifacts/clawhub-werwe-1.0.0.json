@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/werwe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.werwe",
+  "skill": {
+    "id": 44319,
+    "skillKey": "clawhub-werwe",
+    "name": "fsdfsdf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "werwe",
+    "url": "https://clawhub.ai/skills/werwe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/werwe-9b2611f319e2c88f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search X (Twitter) posts using the xAI API. Use when the user wants to find tweets, search X/Twitter, look up what people are saying on X, or find social med..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "github2cao",
+      "userId": "s173r39xyj1y2b2yb05fdbawvd83ggjm",
+      "displayName": "GitHub2Cao",
+      "image": "https://avatars.githubusercontent.com/u/9276701?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776069246548,
+      "changelog": "Initial release of x-search skill for searching X (Twitter) posts via xAI API.\n\n- Enables real-time search of X posts with filtering options (handles, exclude, date range, images/video).\n- Simple setup via XAI_API_KEY environment variable.\n- Returns results with citations and readable summaries.\n- Full usage instructions included for command-line invocation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e8892293728054ad3bd74dc65201c9a00d1577a14bfbe77b5567a9c4272068c"
+}

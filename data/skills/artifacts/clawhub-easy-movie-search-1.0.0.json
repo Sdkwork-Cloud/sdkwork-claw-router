@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/easy-movie-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easy_movie_search",
+  "skill": {
+    "id": 72403,
+    "skillKey": "clawhub-easy-movie-search",
+    "name": "影视资源搜索技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easy-movie-search",
+    "url": "https://clawhub.ai/skills/easy-movie-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easy-movie-search-947c29ad988aaf52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "搜索电视剧、动漫、电影的百度网盘和夸克网盘资源链接。当用户询问任何影视作品的网盘链接、资源、下载地址时使用此技能，包括但不限于\"有XX的网盘链接吗\"、\"XX在哪里下载\"、\"找XX的资源\"等问题。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susankerrbq",
+      "userId": "publishers:susankerrbq",
+      "displayName": "SusanKerrbq",
+      "image": "https://avatars.githubusercontent.com/u/261413111?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 438,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773301129112,
+      "changelog": "- 更换为新影视资源 API，仅搜索百度网盘和夸克网盘链接\n- 仅支持电视剧、动漫、电影等的网盘资源搜索\n- 修改触发条件：仅当用户询问影视资源的网盘、链接、下载等\n- 删除了旧版的多源BT/PT/流媒体/字幕站展示逻辑\n- 精简输出模板，聚焦类型、链接和更新时间\n- 移除 evals/evals.json 文件",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:40032e73a6ce8288baa0dd351cdfb0c75639d2375c7ba87cde71d677d866cbcd"
+}

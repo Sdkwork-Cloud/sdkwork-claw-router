@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11604,
+  "uuid": "skill-clawhub-backtesting-trading-strategies",
+  "skillKey": "clawhub-backtesting-trading-strategies",
+  "name": "Backtesting Trading Strategies",
+  "summary": "Backtest crypto and traditional trading strategies against historical data. Calculates performance metrics (Sharpe, Sortino, max drawdown), generates equity...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.backtesting_trading_strategies",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhengxinjipai",
+      "features": [
+        "Backtest crypto and traditional trading strategies against historical data",
+        "Calculates performance metrics (Sharpe, Sortino, max drawdown), generates equity..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/backtesting-trading-strategies@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130424576?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "backtesting-trading-strategies",
+      "url": "https://clawhub.ai/skills/backtesting-trading-strategies"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "backtesting-trading-strategies",
+    "url": "https://clawhub.ai/skills/backtesting-trading-strategies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/backtesting-trading-strategies-8cfefea132d7d6c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/backtesting-trading-strategies@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-backtesting-trading-strategies-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc6d15ce787404704f7dd9356130865d8ca94cdc856a71593b5d9a22d7153180",
+      "artifactSizeBytes": 2499
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T09:55:04.521Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-energy-manager@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_energy_manager",
+  "skill": {
+    "id": 42596,
+    "skillKey": "clawhub-social-energy-manager",
+    "name": "Social Energy Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-energy-manager",
+    "url": "https://clawhub.ai/skills/social-energy-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-energy-manager-ff2ca9b3edb22553.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track and manage your social energy levels with assessments and personalized recovery plans to help maintain balance and recharge effectively."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775529252285,
+      "changelog": "Initial release of Social Energy Manager.\n\n- Enables users to track and manage social energy consumption.\n- Provides energy level assessments with scores, color codes, and status indicators.\n- Suggests personalized recovery plans (immediate, daily, weekly).\n- Delivers practical tips for maintaining and restoring social energy.\n- Accepts triggers like feeling socially drained, low energy, or the need to recharge.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d967f48878a73a6ea656e85b17c170b3bf8bb6e7c4969795c36a39102aa3733b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolguard-daemon-control@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolguard_daemon_control",
+  "skill": {
+    "id": 16287,
+    "skillKey": "clawhub-toolguard-daemon-control",
+    "name": "toolguard-daemon-control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolguard-daemon-control",
+    "url": "https://clawhub.ai/skills/toolguard-daemon-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolguard-daemon-control-5e1a93ac3f786394.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage macOS launchd user agents to start, stop, restart, check status, and access logs of persistent background services without sudo."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnnylambada",
+      "userId": "publishers:johnnylambada",
+      "displayName": "johnnylambada",
+      "image": "https://avatars.githubusercontent.com/u/180409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 904,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1771049047988,
+      "changelog": "toolguard-daemon-control 0.0.1 — Initial Release\n\n- Manage any executable as a persistent macOS launchd user agent with user-friendly scripts.\n- Install services that auto-restart, write logs and persist beyond the current session.\n- Includes scripts to install, uninstall, check status, view logs, and list managed services.\n- Services run without sudo and logs/plists are stored in user directories.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:102b3a1a34926ec1e6cc33cfc03db1ad6c5c66b11611bcf352a9b6a628803af7"
+}

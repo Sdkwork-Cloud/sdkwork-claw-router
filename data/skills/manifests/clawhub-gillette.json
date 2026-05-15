@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70886,
+  "uuid": "skill-clawhub-gillette",
+  "skillKey": "clawhub-gillette",
+  "name": "Gillette",
+  "summary": "提供吉列剃须刀、产品信息及价格，查询门店位置，获取男士剃须和护理建议。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gillette",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供吉列剃须刀、产品信息及价格，查询门店位置，获取男士剃须和护理建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gillette@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gillette",
+      "url": "https://clawhub.ai/skills/gillette"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gillette",
+    "url": "https://clawhub.ai/skills/gillette",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gillette-c54022be584c85fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gillette@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gillette-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78225c000c1b0846297fb58df1269e85d74b7991596f2fae86d5b38cf66c13dc",
+      "artifactSizeBytes": 2134
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T08:47:57.438Z"
+}

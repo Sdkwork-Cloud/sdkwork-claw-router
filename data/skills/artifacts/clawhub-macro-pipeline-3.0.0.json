@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/macro-pipeline@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macro_pipeline",
+  "skill": {
+    "id": 22183,
+    "skillKey": "clawhub-macro-pipeline",
+    "name": "Macro Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macro-pipeline",
+    "url": "https://clawhub.ai/skills/macro-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macro-pipeline-91adc07a3f1dccef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage macro-task pipelines (QA, roadmaps, feature rollouts) using PIPELINE.md + HEARTBEAT.md pattern. Use when building multi-step project plans..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "santacruzg282-cyber",
+      "userId": "publishers:santacruzg282-cyber",
+      "displayName": "santacruzg282-cyber",
+      "image": "https://avatars.githubusercontent.com/u/259176285?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 482,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1772523056279,
+      "changelog": "**Major architecture update: macro-pipeline v3 introduces a robust, dual-file workflow for managing autonomous, multi-step project pipelines.**\n\n- PIPELINE.md now lives in the project repo and stores all pipeline state, enabling subagents to track progress via Git.\n- HEARTBEAT.md is read-only in the agent workspace, delivering locked operational instructions and preventing accidental modification.\n- Clear, enforced patterns for status handling, parallel step execution, step verification, cron scheduling, and Git tagging.\n- Enhanced zombie step detection, cross-path reliability, and multiple pipeline support per project.\n- Strict separation and immutability rules between pipeline states and agent instructions for safer, traceable automation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:919a62a490de9c62dfedc76fcc79bf4cf8ad95e9705b19ee84796c04ea822a18"
+}

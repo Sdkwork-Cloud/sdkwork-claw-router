@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justoneapi-jd@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_jd",
+  "skill": {
+    "id": 30091,
+    "skillKey": "clawhub-justoneapi-jd",
+    "name": "JD.com API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-jd",
+    "url": "https://clawhub.ai/skills/justoneapi-jd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-jd-a3f0132a1ebdc132.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze JD.com workflows with JustOneAPI, including product Details, product Comments, and shop Product List."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justoneapi",
+      "userId": "s17ayjxfh4atw7gc7dgat7n40x845p6b",
+      "displayName": "justoneapi",
+      "image": "https://avatars.githubusercontent.com/u/139095138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 279,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1776924459316,
+      "changelog": "- Operation names updated: `getItemDetailV1` is now `getJdItemDetailV1`, and `getShopItemListV1` is now `getJdShopItemListV1`.\n- All docs and operation references updated to use the new operation IDs.\n- No user-facing feature or parameter changes; only naming adjustments for consistency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:56359e9339faef9273bcc3c7d98be9c0a973aac5efb889d5c8b58c9ddc026983"
+}

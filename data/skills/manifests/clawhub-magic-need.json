@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28136,
+  "uuid": "skill-clawhub-magic-need",
+  "skillKey": "clawhub-magic-need",
+  "name": "Magic Need",
+  "summary": "Capture tool and data needs from AI agents during task execution. When an agent identifies it needs a tool, API, or data source that doesn't exist, this skil...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.magic_need",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Thiago Guimarães",
+      "features": [
+        "Capture tool and data needs from AI agents during task execution",
+        "When an agent identifies it needs a tool, API, or data source that doesn't exist, this skil..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/magic-need@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45672975?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "magic-need",
+      "url": "https://clawhub.ai/skills/magic-need"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "magic-need",
+    "url": "https://clawhub.ai/skills/magic-need",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/magic-need-3f1026511f9fe6d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/magic-need@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-magic-need-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a26bf3299546aedc6b4b41f0fa113cf0fc7c3a6157c4fa7b1003c7be952b9f2",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T13:53:59.063Z"
+}

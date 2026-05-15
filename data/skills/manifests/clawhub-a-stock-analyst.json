@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69210,
+  "uuid": "skill-clawhub-a-stock-analyst",
+  "skillKey": "clawhub-a-stock-analyst",
+  "name": "A股智投大师",
+  "summary": "A股智投大师 | A股智能投研助手 | 行情分析 | 基本面分析 | 智能选股 | 自选股管理 | 监控预警",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_analyst",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lucasxing1",
+      "features": [
+        "A股智投大师 | A股智能投研助手 | 行情分析 | 基本面分析 | 智能选股 | 自选股管理 | 监控预警"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-stock-analyst@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216610351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-stock-analyst",
+      "url": "https://clawhub.ai/skills/a-stock-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-analyst",
+    "url": "https://clawhub.ai/skills/a-stock-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-analyst-d8b70cbb1616f886.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-stock-analyst@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-stock-analyst-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:519738f1197e3273e5fec4ac88a89193d2af1d9eecc812ea413dda8a451f1e9c",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:24:09.704Z"
+}

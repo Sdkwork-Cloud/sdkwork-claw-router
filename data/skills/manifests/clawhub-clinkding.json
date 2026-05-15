@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11174,
+  "uuid": "skill-clawhub-clinkding",
+  "skillKey": "clawhub-clinkding",
+  "name": "Clinkding - Linkding Bookmark Integration",
+  "summary": "Manage linkding bookmarks - save URLs, search, tag, organize, and retrieve your personal bookmark collection. Use when the user wants to save links, search bookmarks, manage tags, or organize their reading list.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clinkding",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daveonkels",
+      "features": [
+        "Manage linkding bookmarks",
+        "save URLs, search, tag, organize, and retrieve your personal bookmark collection",
+        "Use when the user wants to save links, search bookmarks, manage tags, or organize their reading."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clinkding@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/533642?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clinkding",
+      "url": "https://clawhub.ai/skills/clinkding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clinkding",
+    "url": "https://clawhub.ai/skills/clinkding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clinkding-349278e0f05d3402.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clinkding@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clinkding-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7330b8e3195114f6522c6fb72856f6ebd201a0854606b684d7422153b8d65c0",
+      "artifactSizeBytes": 2518
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-06T03:24:17.493Z"
+}

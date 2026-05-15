@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codex-cli-guardian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_cli_guardian",
+  "skill": {
+    "id": 61431,
+    "skillKey": "clawhub-codex-cli-guardian",
+    "name": "Codex CLI Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-cli-guardian",
+    "url": "https://clawhub.ai/skills/codex-cli-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-cli-guardian-574a49e4746f845d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Codex CLI 会话守护者。管理 API Key、任务执行与结果摘要。提供后台模式运行、API Key 验证、会话锁定与PID追踪等功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alukardo",
+      "userId": "s17dr9jhz019p73csqa13j2a7s842698",
+      "displayName": "林捷",
+      "image": "https://avatars.githubusercontent.com/u/8422650?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775452539702,
+      "changelog": "Initial release. Session guardian for Codex CLI with API key management, background task execution, PID locking, result summarization, and worker orchestration. Note: primarily tested with https://0011.ai; native Codex CLI may need tuning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dacdba261daf0242ff5e601ba8b432790afae6e0f369f66cfa4feb27bbf17f5e"
+}

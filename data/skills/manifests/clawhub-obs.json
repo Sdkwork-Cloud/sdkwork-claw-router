@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33930,
+  "uuid": "skill-clawhub-obs",
+  "skillKey": "clawhub-obs",
+  "name": "obs",
+  "summary": "Comprehensive Open Build Service (OBS) management with full API support for projects, packages, repositories, builds, submit requests, files, users, and search.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wei dong",
+      "features": [
+        "Comprehensive Open Build Service (OBS) management with full API support for projects, packages,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obs@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7512609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obs",
+      "url": "https://clawhub.ai/skills/obs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obs",
+    "url": "https://clawhub.ai/skills/obs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obs-d39ed8b3cea68e3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obs@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-obs-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cf5af3838a0554c616402a4e794abb1d21bb8cbb5109b24e94d4611682a6adb",
+      "artifactSizeBytes": 1826
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T01:22:25.765Z"
+}

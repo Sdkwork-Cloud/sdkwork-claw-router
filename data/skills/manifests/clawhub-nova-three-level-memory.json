@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63393,
+  "uuid": "skill-clawhub-nova-three-level-memory",
+  "skillKey": "clawhub-nova-three-level-memory",
+  "name": "NOVA Memory",
+  "summary": "AI Agent 三层记忆架构系统。用于构建具有长期记忆能力的 AI 助手。 触发条件：(1) 用户询问记忆系统设计或架构 (2) 需要为 AI Agent 构建记忆能力 (3) 提及\"记忆系统\"、\"情景记忆\"、\"语义记忆\"、\"NOVA\"、\"记忆维护\"等相关概念",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nova_three_level_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ShaunLeeCN",
+      "features": [
+        "AI Agent 三层记忆架构系统。用于构建具有长期记忆能力的 AI 助手。 触发条件：(1) 用户询问记忆系统设计或架构 (2) 需要为 AI Agent 构建记忆能力 (3) 提及\"记忆."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nova-three-level-memory@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195417774?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nova-three-level-memory",
+      "url": "https://clawhub.ai/skills/nova-three-level-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nova-three-level-memory",
+    "url": "https://clawhub.ai/skills/nova-three-level-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nova-three-level-memory-d7e50b44e37036fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nova-three-level-memory@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nova-three-level-memory-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e7f306061a7876cd257898e7a3a2e71af62c66590cd7fdd1749d8731b63e17b",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T10:05:54.871Z"
+}

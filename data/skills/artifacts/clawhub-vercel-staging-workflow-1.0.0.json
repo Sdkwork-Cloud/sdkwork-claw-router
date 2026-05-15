@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vercel-staging-workflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vercel_staging_workflow",
+  "skill": {
+    "id": 37878,
+    "skillKey": "clawhub-vercel-staging-workflow",
+    "name": "Vercel Staging Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vercel-staging-workflow",
+    "url": "https://clawhub.ai/skills/vercel-staging-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vercel-staging-workflow-9f99e0a0d4f6407b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up a staging/production workflow for Vercel projects using GitHub Actions and stable URL aliases. Use when asked to create a staging environment, set up..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielgrobelny",
+      "userId": "s1707neksyywgz1cnjq6552yk583h31v",
+      "displayName": "DanielGrobelny",
+      "image": "https://avatars.githubusercontent.com/u/7581754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774357712678,
+      "changelog": "Initial release: GitHub Action for stable Vercel staging aliases. Auto-updates staging URL on every push to main. Includes complete action template with commit matching, fallback logic, and team support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8fdad3e866b12dec629c051cd61e3fccddf58864833b236b05bd6408752fb59"
+}

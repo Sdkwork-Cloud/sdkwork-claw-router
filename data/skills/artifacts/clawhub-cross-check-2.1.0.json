@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cross-check@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_check",
+  "skill": {
+    "id": 31311,
+    "skillKey": "clawhub-cross-check",
+    "name": "Cross Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-check",
+    "url": "https://clawhub.ai/skills/cross-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-check-764bd3f59b2fe89d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Inline assumption checker that challenges your agent's thinking before responding. Detects complex queries and runs independent verification rounds, identifi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tommot2",
+      "userId": "s17fzh9kw6g9v8fg9kppsbmwt183p1kd",
+      "displayName": "TommoT2",
+      "image": "https://avatars.githubusercontent.com/u/106430507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1775173172634,
+      "changelog": "Auto-invocation now opt-in via HEARTBEAT.md. Declared sessions_spawn capability and HEARTBEAT.md config path in metadata. Suggest-don't-auto-run by default.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35be26494ffcafd3bebbf4574f30b41a318581323f6f87ea2b860baac817521e"
+}

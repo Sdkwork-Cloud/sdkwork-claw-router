@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-fix-workflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_fix_workflow",
+  "skill": {
+    "id": 40448,
+    "skillKey": "clawhub-skill-fix-workflow",
+    "name": "Skill Fix Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-fix-workflow",
+    "url": "https://clawhub.ai/skills/skill-fix-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-fix-workflow-6255f8a65f86d458.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically extracts and stitches sequential skills into a configurable, exception-handled workflow saved as an automated program."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ugpoor",
+      "userId": "s177qqrp481qedfn5w9m5nmte183ge14",
+      "displayName": "superStupidBear",
+      "image": "https://avatars.githubusercontent.com/u/6762468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774482682143,
+      "changelog": "Initial release of skill-fix-workflow version 1.0.0:\n\n- Introduces commands to \"固化\" (solidify) workflow automations based on chat context.\n- Core architecture features a Workflow Joiner that sequences actual function calls without embedding business logic.\n- Extracts execution chains, recognizes parameters, and handles exceptions at three defined levels.\n- Supports multiple output methods: screen, file, API, and web.\n- Includes detailed example and modular file structure for extensibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8008bb9dc9b1f492b0bd324222db5688f4245e299811cb47cad8204e4869be5d"
+}

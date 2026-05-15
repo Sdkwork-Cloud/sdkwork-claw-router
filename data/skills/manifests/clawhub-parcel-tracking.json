@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48073,
+  "uuid": "skill-clawhub-parcel-tracking",
+  "skillKey": "clawhub-parcel-tracking",
+  "name": "Parcel Tracking",
+  "summary": "Erkennt automatisch den Paketdienst (DHL, Hermes, UPS, GLS, Amazon etc.) via Track123-API und ruft Tracking-Informationen ab. Optional PLZ für erweiterte Infos.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parcel_tracking",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dany9328",
+      "features": [
+        "Erkennt automatisch den Paketdienst (DHL, Hermes, UPS, GLS, Amazon etc.) via Track123-API und r.",
+        "Optional PLZ für erweiterte Infos."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/parcel-tracking@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117908379?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "parcel-tracking",
+      "url": "https://clawhub.ai/skills/parcel-tracking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parcel-tracking",
+    "url": "https://clawhub.ai/skills/parcel-tracking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parcel-tracking-854bd701f1db91a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/parcel-tracking@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-parcel-tracking-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83125d2ec70d4c16fdc84c89d3cdf67a99df42a594cb050e892c974fb75edaf8",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T21:21:30.062Z"
+}

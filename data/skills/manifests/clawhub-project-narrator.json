@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52023,
+  "uuid": "skill-clawhub-project-narrator",
+  "skillKey": "clawhub-project-narrator",
+  "name": "Project Narrator",
+  "summary": "Generate, audit, and maintain a PROJECT-NARRATIVE.md file — a single-source-of-truth document that captures your entire project's architecture, decisions, in...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_narrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tcd004",
+      "features": [
+        "Generate, audit, and maintain a PROJECT-NARRATIVE.md file — a single-source-of-truth document t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project-narrator@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/609132?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project-narrator",
+      "url": "https://clawhub.ai/skills/project-narrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-narrator",
+    "url": "https://clawhub.ai/skills/project-narrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-narrator-8d7f39a516fe5f74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project-narrator@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-narrator-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e56de7f93d6bb24e2ba19e6c596e5ce505daf3ff28d5ecd74ac15d00a095a9fb",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:21:04.207Z"
+}

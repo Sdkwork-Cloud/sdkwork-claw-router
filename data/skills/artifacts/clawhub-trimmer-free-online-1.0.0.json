@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trimmer-free-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trimmer_free_online",
+  "skill": {
+    "id": 38215,
+    "skillKey": "clawhub-trimmer-free-online",
+    "name": "Trimmer Free Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trimmer-free-online",
+    "url": "https://clawhub.ai/skills/trimmer-free-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trimmer-free-online-341e69e5ca22f00b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "trim raw video clips into trimmed video clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for cutting unwanted..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776708797305,
+      "changelog": "Trimmer Free Online — Version 1.0.0\n\n- Initial release: Trim, edit, and export video clips (MP4, MOV, AVI, WebM up to 500MB) directly in the cloud, no software download needed.\n- Supports fast upload, AI-powered video segment removal, and export to 1080p MP4 in around 20–40 seconds.\n- Handles user instructions for timeline edits, cuts, overlays, BGM, and aspect ratio changes.\n- Provides free anonymous authentication with 100 credits; session management and cloud rendering included.\n- Error handling and API communication fully integrated; supports common video, audio, and image formats for output and upload.\n- Designed for quick, iterative workflows for content creators with seamless status, credit, and export management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d89dbcebc76da4da29c18f32d50a281cece07e198de8d21c26b937c7c69fd705"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51962,
+  "uuid": "skill-clawhub-bookforge-offline-concurrency-strategy-selector",
+  "skillKey": "clawhub-bookforge-offline-concurrency-strategy-selector",
+  "name": "Offline Concurrency Strategy Selector",
+  "summary": "Use when designing concurrency control for long-running edits where a business transaction spans multiple system transactions — user opens a record, edits fo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_offline_concurrency_strategy_selector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hung Quoc To",
+      "features": [
+        "Use when designing concurrency control for long-running edits where a business transaction span."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bookforge-offline-concurrency-strategy-selector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88069966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bookforge-offline-concurrency-strategy-selector",
+      "url": "https://clawhub.ai/skills/bookforge-offline-concurrency-strategy-selector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-offline-concurrency-strategy-selector",
+    "url": "https://clawhub.ai/skills/bookforge-offline-concurrency-strategy-selector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-offline-concurrency-strategy-selector-17b6d2e3f154b886.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bookforge-offline-concurrency-strategy-selector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bookforge-offline-concurrency-strategy-selector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19d7ced5ea24e955a00a40e82789445e84d6f28dde0ccd116d5e73883753cf7d",
+      "artifactSizeBytes": 2777
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T07:58:47.431Z"
+}

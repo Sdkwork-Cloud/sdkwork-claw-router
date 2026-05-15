@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73024,
+  "uuid": "skill-clawhub-dxm-sp-weather",
+  "skillKey": "clawhub-dxm-sp-weather",
+  "name": "度小满天气商户",
+  "summary": "用户询问天气（今天天气怎么样、天气怎么样、某城市/某日期天气）、或查询天气服务订单/额度/调用明细时触发",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dxm_sp_weather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "度小满",
+      "features": [
+        "用户询问天气（今天天气怎么样、天气怎么样、某城市/某日期天气）、或查询天气服务订单/额度/调用明细时触发"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dxm-sp-weather@1.0.10",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/dxm-sp-weather/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dxm-sp-weather",
+      "url": "https://clawhub.ai/skills/dxm-sp-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dxm-sp-weather",
+    "url": "https://clawhub.ai/skills/dxm-sp-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dxm-sp-weather-7aadbcc6b9155f45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dxm-sp-weather@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-dxm-sp-weather-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:579b66bc6946774eedc6fbcb0d97b86cb26e159d9f45650f48ba2e5c015f5d7c",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T12:24:07.185Z"
+}

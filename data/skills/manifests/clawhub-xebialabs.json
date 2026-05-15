@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34351,
+  "uuid": "skill-clawhub-xebialabs",
+  "skillKey": "clawhub-xebialabs",
+  "name": "Xebialabs",
+  "summary": "XebiaLabs integration. Manage data, records, and automate workflows. Use when the user wants to interact with XebiaLabs data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xebialabs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "XebiaLabs integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with XebiaLabs data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xebialabs@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xebialabs",
+      "url": "https://clawhub.ai/skills/xebialabs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xebialabs",
+    "url": "https://clawhub.ai/skills/xebialabs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xebialabs-e6786a8a8911bef1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xebialabs@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-xebialabs-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6212ef1cb333542d2b0b1d6e12e668ab489d1f2afefb064541cc7a5171541799",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:03:40.983Z"
+}

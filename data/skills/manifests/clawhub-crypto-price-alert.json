@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32346,
+  "uuid": "skill-clawhub-crypto-price-alert",
+  "skillKey": "clawhub-crypto-price-alert",
+  "name": "Crypto Price Alert",
+  "summary": "Real-time cryptocurrency price alerts and monitoring. Track Bitcoin, Ethereum, and 100+ coins with custom price alerts delivered to your Telegram, Discord, o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_price_alert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zy42905163-web",
+      "features": [
+        "Real-time cryptocurrency price alerts and monitoring",
+        "Track Bitcoin, Ethereum, and 100+ coins with custom price alerts delivered to your Telegram, Di."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-price-alert@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224392718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-price-alert",
+      "url": "https://clawhub.ai/skills/crypto-price-alert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-price-alert",
+    "url": "https://clawhub.ai/skills/crypto-price-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-price-alert-160326d0dd767d24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-price-alert@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-price-alert-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fb292aeaddc42eb5ab567f1e639121235711bf35330b441168905c0c6ca9ace",
+      "artifactSizeBytes": 2337
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T09:47:52.035Z"
+}

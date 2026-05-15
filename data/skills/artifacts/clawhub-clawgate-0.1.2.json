@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawgate@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawgate",
+  "skill": {
+    "id": 32344,
+    "skillKey": "clawhub-clawgate",
+    "name": "clawgate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawgate",
+    "url": "https://clawhub.ai/skills/clawgate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawgate-1ac8ca4c444febcb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw execution governance skill for approval gates, risk classification, confirmation policy, and action boundaries. Use it to reduce low-risk confirmati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dmiyding",
+      "userId": "s17e7pved4y050d8b1mxv0vbph83hpkg",
+      "displayName": "定大大",
+      "image": "https://avatars.githubusercontent.com/u/62461980?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774844448608,
+      "changelog": "Version 0.1.2 (no file changes detected):\n\n- hardened MEDIUM / HIGH / CRITICAL governance output blocks for more stable OpenClaw runtime behavior\n- improved activation drift diagnostics by comparing the injected clawgate block instead of the whole AGENTS file\n- clarified install vs activation and added faster onboarding / troubleshooting guidance in English and Chinese README",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9b696d88aa749db96e852d5c100e016b5e84b42cea33c9668e379bdc298fe69"
+}

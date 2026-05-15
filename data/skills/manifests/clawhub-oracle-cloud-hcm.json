@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36702,
+  "uuid": "skill-clawhub-oracle-cloud-hcm",
+  "skillKey": "clawhub-oracle-cloud-hcm",
+  "name": "Oracle Cloud Hcm",
+  "summary": "Oracle Cloud HCM integration. Manage data, records, and automate workflows. Use when the user wants to interact with Oracle Cloud HCM data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oracle_cloud_hcm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Oracle Cloud HCM integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Oracle Cloud HCM data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oracle-cloud-hcm@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oracle-cloud-hcm",
+      "url": "https://clawhub.ai/skills/oracle-cloud-hcm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oracle-cloud-hcm",
+    "url": "https://clawhub.ai/skills/oracle-cloud-hcm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oracle-cloud-hcm-c05d25d3562b409e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oracle-cloud-hcm@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-oracle-cloud-hcm-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e66ced42fb961011f27d504d611b388d2acd39070d3077ef21c4b4f20ce56d1d",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:48:37.577Z"
+}

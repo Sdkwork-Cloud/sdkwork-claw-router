@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zodiac-horoscope@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zodiac_horoscope",
+  "skill": {
+    "id": 16147,
+    "skillKey": "clawhub-zodiac-horoscope",
+    "name": "Zodiac Horoscope"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zodiac-horoscope",
+    "url": "https://clawhub.ai/skills/zodiac-horoscope",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zodiac-horoscope-440308b29322e46f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch personalized daily horoscope forecasts from zodiac-today.com API based on natal chart calculations. Use when a user wants: (1) daily guidance on what a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dowands",
+      "userId": "s17apxdb9gkpbv51xt0mtp2ath83j085",
+      "displayName": "dowands",
+      "image": "https://avatars.githubusercontent.com/u/30110306?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 913,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1771169697999,
+      "changelog": "Fixed metadata mismatch: moved env var declarations into description for registry visibility. Clarified human-in-the-loop email verification, secure cookie handling, and PII consent flow.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:71ea7e2c7159580c05d0c04726c6b9e7943f03c8ccdec442137c7bc93648beed"
+}

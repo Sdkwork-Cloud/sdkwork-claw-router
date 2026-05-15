@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67304,
+  "uuid": "skill-clawhub-vinoe",
+  "skillKey": "clawhub-vinoe",
+  "name": "VIN配件 精准译码",
+  "summary": "通过 17 位 VIN 车架号 与 待译码的配件别名列表, 精准解出这些配件的 标准配件编码OE 与 标准配件名称等信息",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vinoe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ju Yuan",
+      "features": [
+        "通过 17 位 VIN 车架号 与 待译码的配件别名列表, 精准解出这些配件的 标准配件编码OE 与 标准配件名称等信息"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vinoe@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5111899?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vinoe",
+      "url": "https://clawhub.ai/skills/vinoe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vinoe",
+    "url": "https://clawhub.ai/skills/vinoe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vinoe-83e2c5e22a22f4d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vinoe@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vinoe-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e6d7838dd6d6ca95a001b0bf9c0a5b2699f3e8a97c3e615fbadd3f2eccd9c3a",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T08:49:27.568Z"
+}

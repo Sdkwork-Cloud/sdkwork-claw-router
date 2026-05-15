@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-ads-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_ads_mcp",
+  "skill": {
+    "id": 34952,
+    "skillKey": "clawhub-meta-ads-mcp",
+    "name": "Meta Ads MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-ads-mcp",
+    "url": "https://clawhub.ai/skills/meta-ads-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-ads-mcp-f7d598308df9de5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operational guide for creating, managing, optimizing, and documenting Meta (Facebook/Instagram) ad campaigns via the Facebook Ads MCP. Use whenever the user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "benkalsky",
+      "userId": "s17b8qfjfq0g8kveh2g8v1179h83ejwb",
+      "displayName": "Ben Kalsky",
+      "image": "https://avatars.githubusercontent.com/u/1568840?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778006792363,
+      "changelog": "Initial public release: OpenClaw skill for safe Meta/Facebook/Instagram ads planning, launch preparation, tracking, optimization, and documentation through a Facebook Ads MCP workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:525c165eb7ce925bbb179e79148e02b669228a8a3521a45247d8078b77be1f3f"
+}

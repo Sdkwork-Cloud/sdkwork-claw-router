@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24480,
+  "uuid": "skill-clawhub-preflyt",
+  "skillKey": "clawhub-preflyt",
+  "name": "Preflyt",
+  "summary": "Scan deployed web apps for security misconfigurations after every deploy. Checks for exposed .env files, databases, source code, open ports, missing security...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.preflyt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "doureios39",
+      "features": [
+        "Scan deployed web apps for security misconfigurations after every deploy",
+        "Checks for exposed .env files, databases, source code, open ports, missing security..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/preflyt@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260724661?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "preflyt",
+      "url": "https://clawhub.ai/skills/preflyt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "preflyt",
+    "url": "https://clawhub.ai/skills/preflyt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/preflyt-49f8c79fc29ad6df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/preflyt@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-preflyt-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b79029141a7799227dfba27fc7171e84c4daa43181cebeae9de3e549d23c5af0",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T16:22:07.225Z"
+}

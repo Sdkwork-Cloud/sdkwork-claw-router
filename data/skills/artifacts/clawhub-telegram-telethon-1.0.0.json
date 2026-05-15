@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/telegram-telethon@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_telethon",
+  "skill": {
+    "id": 40454,
+    "skillKey": "clawhub-telegram-telethon",
+    "name": "Telegram Telethon CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-telethon",
+    "url": "https://clawhub.ai/skills/telegram-telethon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-telethon-075f787135a71ee9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Telegram via tgctl-telethon CLI (Python/Telethon) - send/forward/edit/delete/pin messages, search, list chats/members, join/leave groups, kick/invite..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youziyouzishu",
+      "userId": "s17f45x2befzzddmqgp07trqwd83gywv",
+      "displayName": "阿沁",
+      "image": "https://avatars.githubusercontent.com/u/48539892?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774854299173,
+      "changelog": "Initial release: Python/Telethon-based Telegram CLI with 35 commands",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8aa690946f3a612e9147a59a7b6d322e181b58a19faeaf0a2a794a8b88a1d52"
+}

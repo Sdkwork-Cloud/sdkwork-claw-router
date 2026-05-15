@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33567,
+  "uuid": "skill-clawhub-persona-plugin",
+  "skillKey": "clawhub-persona-plugin",
+  "name": "ClawdTalk Persona Plugin",
+  "summary": "Manage persistent caller memory by retrieving caller info at call start and logging detailed call summaries to update identity, personality, and memories aut...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_plugin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "noahvandal",
+      "features": [
+        "Manage persistent caller memory by retrieving caller info at call start and logging detailed ca."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/persona-plugin@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58602431?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "persona-plugin",
+      "url": "https://clawhub.ai/skills/persona-plugin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-plugin",
+    "url": "https://clawhub.ai/skills/persona-plugin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-plugin-d408ce3d12d932d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/persona-plugin@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-persona-plugin-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ce263971041ad382c38a1312eb0d0d238db6dd8679822f9e90ea49fd8b3e081",
+      "artifactSizeBytes": 2451
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T23:03:29.632Z"
+}

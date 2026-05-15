@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lrshuai-text-to-speech@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lrshuai_text_to_speech",
+  "skill": {
+    "id": 64299,
+    "skillKey": "clawhub-lrshuai-text-to-speech",
+    "name": "LrshuAI Text To Speech"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lrshuai-text-to-speech",
+    "url": "https://clawhub.ai/skills/lrshuai-text-to-speech",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lrshuai-text-to-speech-220490920ff6622a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "文字转语音技能。当你需要将文本转换为自然的人声朗读时调用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lrshu",
+      "userId": "s170narm707v3gdw8vbqtn9f2x8446yk",
+      "displayName": "dlazyAI",
+      "image": "https://avatars.githubusercontent.com/u/153581534?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775200572910,
+      "changelog": "Initial release of the lrshuAI-text-to-speech skill:\n\n- Converts input text to natural-sounding speech.\n- Supports three TTS models: Gemini 2.5 Pro TTS, Doubao TTS, and Keling TTS.\n- Usage requires running with the native python command, not openclaw run.\n- Requires TEAM_API_KEY environment variable for operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc3aca18fc23aa59290b4bb6fb8a6a522998e908c3c30689b0426dc12a56c9a8"
+}

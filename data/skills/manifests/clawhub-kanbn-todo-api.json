@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18286,
+  "uuid": "skill-clawhub-kanbn-todo-api",
+  "skillKey": "clawhub-kanbn-todo-api",
+  "name": "Kan.bn TODO API",
+  "summary": "Manage personal TODOs in Kan.bn through API-driven operations. Use this whenever the user wants to create, update, move, prioritize, search, summarize, or cl...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kanbn_todo_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Qihao",
+      "features": [
+        "Manage personal TODOs in Kan.bn through API-driven operations",
+        "Use this whenever the user wants to create, update, move, prioritize, search, summarize, or cl.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kanbn-todo-api@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16509323?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kanbn-todo-api",
+      "url": "https://clawhub.ai/skills/kanbn-todo-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kanbn-todo-api",
+    "url": "https://clawhub.ai/skills/kanbn-todo-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kanbn-todo-api-e1945f7f4537092a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kanbn-todo-api@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kanbn-todo-api-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65692798f8c8bc793bffc247fb29ec52cfc54ddcd0251969c7f2e80aee909b71",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T12:39:06.584Z"
+}

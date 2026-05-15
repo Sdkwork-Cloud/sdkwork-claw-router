@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-changelog-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_changelog_generator",
+  "skill": {
+    "id": 36069,
+    "skillKey": "clawhub-skylv-changelog-generator",
+    "name": "Skylv Changelog Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-changelog-generator",
+    "url": "https://clawhub.ai/skills/skylv-changelog-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-changelog-generator-986e2293d336d1c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates changelogs from git commit history using conventional commits. Triggers: generate changelog, release notes, changelog."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776664483462,
+      "changelog": "Initial release of skylv-changelog-generator.\n\n- Generates changelogs from git commit history using conventional commit standards\n- Supports changelog triggers including: generate changelog, release notes, changelog\n- Organizes logs by feature, fix, documentation, refactor, performance, tests, and maintenance\n- Designed for automation and tooling scenarios",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:75f2766f1c651e9a859b24d9fddcc6540591954fefd2245775e5f9f9b24f8813"
+}

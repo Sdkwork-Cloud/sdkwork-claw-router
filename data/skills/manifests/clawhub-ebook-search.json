@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36667,
+  "uuid": "skill-clawhub-ebook-search",
+  "skillKey": "clawhub-ebook-search",
+  "name": "Ebook Search",
+  "summary": "Search and download ebooks from jbiaojerry.github.io/ebook-treasure-chest. Use when the user wants to find ebooks, search for books by title/author/category,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ebook_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eyslce",
+      "features": [
+        "Search and download ebooks from jbiaojerry.github.io/ebook-treasure-chest",
+        "Use when the user wants to find ebooks, search for books by title/author/category,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ebook-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58419236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ebook-search",
+      "url": "https://clawhub.ai/skills/ebook-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ebook-search",
+    "url": "https://clawhub.ai/skills/ebook-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ebook-search-8f209a677a6b8c79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ebook-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ebook-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4e4e7b61f7164e672aa7ca1376c1dbdf03947e70f9810df68e65b0a9099d364",
+      "artifactSizeBytes": 2164
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T09:58:37.416Z"
+}

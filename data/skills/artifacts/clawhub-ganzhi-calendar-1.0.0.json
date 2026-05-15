@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ganzhi-calendar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ganzhi_calendar",
+  "skill": {
+    "id": 57606,
+    "skillKey": "clawhub-ganzhi-calendar",
+    "name": "Ganzhi Calendar (干支计算)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ganzhi-calendar",
+    "url": "https://clawhub.ai/skills/ganzhi-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ganzhi-calendar-ca80520140e91412.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculate Chinese lunar calendar dates with Heavenly Stems (天干) and Earthly Branches (地支). Use when generating Chinese calendar tables, checking 黄历, or conve..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wingchiu",
+      "userId": "s176egwp1q3t1bzz4ycgwvx8h983tx3t",
+      "displayName": "wingchiu",
+      "image": "https://avatars.githubusercontent.com/u/2759231?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 426,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772851788620,
+      "changelog": "Initial release: calculate Heavenly Stems and Earthly Branches using 1983-02-05 reference",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b90a33aa77ed9bee515f60a405493d69b1de4980598259368cfbd0deab9c282d"
+}

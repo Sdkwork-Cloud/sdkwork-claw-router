@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73730,
+  "uuid": "skill-clawhub-fortune-weather-guide",
+  "skillKey": "clawhub-fortune-weather-guide",
+  "name": "运势晴雨表**是一款创意运势分析技能，采用天气预报的形式呈现周运势。它将抽象的星座运势转化为直观、可操作的结构化报告，帮助用户快速了解本周的运势变化及建议。",
+  "summary": "用天气隐喻形式呈现周运势，提供星座或出生日期个性化分析，包含事业、财运、感情三大领域及每日行动指导。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fortune_weather_guide",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZaJ7373",
+      "features": [
+        "用天气隐喻形式呈现周运势，提供星座或出生日期个性化分析，包含事业、财运、感情三大领域及每日行动指导。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fortune-weather-guide@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/273246124?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fortune-weather-guide",
+      "url": "https://clawhub.ai/skills/fortune-weather-guide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fortune-weather-guide",
+    "url": "https://clawhub.ai/skills/fortune-weather-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fortune-weather-guide-3316f2afafe0d386.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fortune-weather-guide@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fortune-weather-guide-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7c1c5305a128b7bf0a2b2161352d3849f8e562cd595c6247b5104745aef1671",
+      "artifactSizeBytes": 4488
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T05:35:42.878Z"
+}

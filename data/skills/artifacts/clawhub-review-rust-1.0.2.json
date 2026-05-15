@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/review-rust@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_rust",
+  "skill": {
+    "id": 38088,
+    "skillKey": "clawhub-review-rust",
+    "name": "Review Rust"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-rust",
+    "url": "https://clawhub.ai/skills/review-rust",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-rust-88f9f17c88124c9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive Rust code review with optional parallel agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776831351184,
+      "changelog": "- Enforces new hard gates before reporting issues: explicit file scope, linter/compilation run, protocol loading, and evidence check for serious issues.\n- Details mandatory step ordering for file detection and review protocol.\n- Requires that compiler/clippy errors take precedence and not be duplicated as findings.\n- Forbids fabricated findings; if no files or issues, mandates clear output (e.g., “Protocol applied; no issues”).\n- Critical/Major findings must be re-checked in full-file context, not just diffs.\n- Improves review reliability and reduces false or redundant results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:058141196884fb1865695132ba2bf01e4abf045dd0d1eed5b8f0e1f95bfa753a"
+}

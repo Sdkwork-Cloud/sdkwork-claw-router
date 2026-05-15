@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-compressor@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_compressor",
+  "skill": {
+    "id": 51079,
+    "skillKey": "clawhub-token-compressor",
+    "name": "3-Layer Token Compressor — Cut AI API Costs 40-60%"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-compressor",
+    "url": "https://clawhub.ai/skills/token-compressor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-compressor-df3ec9f86e869324.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pre-process prompts through 3 compression layers before sending to paid APIs. Uses a local Ollama model to intelligently compress messages and summarize hist..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theshadowrose",
+      "userId": "s1736mx5m1zt9qzh6fvzvffnhh83hgf8",
+      "displayName": "Shadow Rose",
+      "image": "https://avatars.githubusercontent.com/u/262919821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 716,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773296813357,
+      "changelog": "Fixed docs-code mismatch: README now describes actual Ollama-powered API (compressMessage/compressHistory/checkCache). SKILL.md declares Ollama runtime dependency and model prompts sent. Hardcoded 127.0.0.1 replaced with localhost.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:960161c0aadcb4bc1207646f3c6f22ea2b6b0bdc80d642bdd86a628fce50bcf1"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30940,
+  "uuid": "skill-clawhub-platform9",
+  "skillKey": "clawhub-platform9",
+  "name": "Platform9",
+  "summary": "Platform9 integration. Manage data, records, and automate workflows. Use when the user wants to interact with Platform9 data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.platform9",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Platform9 integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Platform9 data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/platform9@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "platform9",
+      "url": "https://clawhub.ai/skills/platform9"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "platform9",
+    "url": "https://clawhub.ai/skills/platform9",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/platform9-2bb25069a7dfcbf7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/platform9@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-platform9-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6a77ac54699fb429002b1c7e33470d6c2735ef4801db52f1a730c51f262b988",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:25:11.482Z"
+}

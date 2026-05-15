@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hebrew-text-tools@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hebrew_text_tools",
+  "skill": {
+    "id": 47889,
+    "skillKey": "clawhub-hebrew-text-tools",
+    "name": "Jewish Hebrew Text Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hebrew-text-tools",
+    "url": "https://clawhub.ai/skills/hebrew-text-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hebrew-text-tools-3b8a4f65af499776.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hebrew text processing utilities: transliteration, gematria calculation, nikud removal, letter identification, and Hebrew number formatting. Pure Python, no..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abeperl",
+      "userId": "s179r66g7maj6y0rkwffexrhvs85mrx3",
+      "displayName": "Abraham Perl",
+      "image": "https://avatars.githubusercontent.com/u/6117184?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 107,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777318191374,
+      "changelog": "Initial release of Hebrew Text Tools.\n\n- Process Hebrew text: transliteration, gematria calculation, nikud (vowel) removal, letter name listing, and Hebrew number formatting.\n- Pure Python, works offline, no dependencies required.\n- Provides both CLI commands and a Python API for core operations.\n- Features Ashkenazi-style transliteration, standard gematria values, and accurate nikud/cantillation removal.\n- Supports numbers 1–999 for Hebrew letter formatting.\n- Outputs letter names, original text info, and other properties.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85ba16e82bc23085f085a88c303aad5ddcbb61135ae94321fee7e2f678ae1231"
+}

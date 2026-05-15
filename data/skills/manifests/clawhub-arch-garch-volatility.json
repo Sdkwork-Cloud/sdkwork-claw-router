@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63942,
+  "uuid": "skill-clawhub-arch-garch-volatility",
+  "skillKey": "clawhub-arch-garch-volatility",
+  "name": "Arch Garch Volatility",
+  "summary": "用 GARCH 族模型进行波动率建模与预测，支持夏普比率统计推断和 SPA 模型比较测试，应用于全球市场风险管理。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arch_garch_volatility",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "用 GARCH 族模型进行波动率建模与预测，支持夏普比率统计推断和 SPA 模型比较测试，应用于全球市场风险管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arch-garch-volatility@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arch-garch-volatility",
+      "url": "https://clawhub.ai/skills/arch-garch-volatility"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arch-garch-volatility",
+    "url": "https://clawhub.ai/skills/arch-garch-volatility",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arch-garch-volatility-9712ca41077e1cf6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arch-garch-volatility@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-arch-garch-volatility-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3d9a669d259e943df9836346f57ded5ffa3747322be68fc4fe801d835c778eb",
+      "artifactSizeBytes": 2065
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:23:31.682Z"
+}

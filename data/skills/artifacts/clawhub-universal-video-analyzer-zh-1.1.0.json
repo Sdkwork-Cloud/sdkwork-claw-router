@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/universal-video-analyzer-zh@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.universal_video_analyzer_zh",
+  "skill": {
+    "id": 66866,
+    "skillKey": "clawhub-universal-video-analyzer-zh",
+    "name": "Universal Video Analyzer Zh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "universal-video-analyzer-zh",
+    "url": "https://clawhub.ai/skills/universal-video-analyzer-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/universal-video-analyzer-zh-8c92a4eb55d1f92f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用视频分析器（中文版）- 使用多模态大模型分析视频内容，支持画面识别和语音转文字，生成结构化中文报告。支持豆包、智谱、通义千问等多种模型，用户自行配置 API Key。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lantianbaicai",
+      "userId": "s176xfb3fwyx3skyeqtqafvv7983sx0s",
+      "displayName": "lantianbaicai",
+      "image": "https://avatars.githubusercontent.com/u/268097445?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775835479778,
+      "changelog": "修复：添加必需环境变量声明、安装前置依赖说明、数据隐私提示",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5770638cb118fc275ea6e7641611ace36c5f15fb054cd9985278c4fedf0b316"
+}

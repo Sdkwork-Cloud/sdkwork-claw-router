@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47302,
+  "uuid": "skill-clawhub-skill-hr",
+  "skillKey": "clawhub-skill-hr",
+  "name": "skill-hr",
+  "summary": "Use when the user starts a new multi-step task, asks to pick/install/manage skills, tune skill performance, or fire/remove a skill after failure. Acts as HR...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_hr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luzhoucheng",
+      "features": [
+        "Use when the user starts a new multi-step task, asks to pick/install/manage skills, tune skill.",
+        "Acts as HR..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-hr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/141552610?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-hr",
+      "url": "https://clawhub.ai/skills/skill-hr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-hr",
+    "url": "https://clawhub.ai/skills/skill-hr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-hr-799ae9e058683f1a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-hr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-hr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae1592039cf3e8f02e6e376d0121705d861798ee1593f53537acd6f634b6e4a0",
+      "artifactSizeBytes": 1861
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T19:14:27.568Z"
+}

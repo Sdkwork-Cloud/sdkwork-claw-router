@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52084,
+  "uuid": "skill-clawhub-touchbridge",
+  "skillKey": "clawhub-touchbridge",
+  "name": "TouchBridge — Phone Biometric Auth for Mac",
+  "summary": "Authenticate sudo and macOS system prompts using your phone's biometric (Face ID/fingerprint) instead of typing passwords. Perfect for Mac Mini, Mac Studio,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.touchbridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HMAKT99",
+      "features": [
+        "Authenticate sudo and macOS system prompts using your phone's biometric (Face ID/fingerprint) i.",
+        "Perfect for Mac Mini, Mac Studio,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/touchbridge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222980227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "touchbridge",
+      "url": "https://clawhub.ai/skills/touchbridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "touchbridge",
+    "url": "https://clawhub.ai/skills/touchbridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/touchbridge-6063de1ba43c1464.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/touchbridge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-touchbridge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ecd4abc98f640fb0208d58df15b2dd9165002e8974711f9e58feff272c827fb2",
+      "artifactSizeBytes": 2580
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:57:44.167Z"
+}

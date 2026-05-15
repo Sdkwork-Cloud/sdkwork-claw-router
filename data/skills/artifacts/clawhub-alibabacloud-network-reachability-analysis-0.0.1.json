@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-network-reachability-analysis@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_network_reachability_analysis",
+  "skill": {
+    "id": 35771,
+    "skillKey": "clawhub-alibabacloud-network-reachability-analysis",
+    "name": "Alibabacloud Network Reachability Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-network-reachability-analysis",
+    "url": "https://clawhub.ai/skills/alibabacloud-network-reachability-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-network-reachability-analysis-087075b879a1a847.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform Alibaba Cloud NIS (Network Intelligence Service) network path reachability analysis with forward/reverse path diagnosis, topology visualization, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1774940420281,
+      "changelog": "Initial release of Alibaba Cloud NIS network reachability analysis skill.\n\n- Enables interactive network path analysis using Alibaba Cloud's Network Intelligence Service (NIS), including both forward and reverse diagnosis.\n- Supports topology visualization and resource health monitoring for analysis participants.\n- Strictly read-only: prohibits any create/modify/delete operations beyond path analysis and monitoring queries.\n- Provides detailed, language-adaptive guidance for parameter collection and workflow steps in both English and Chinese.\n- Enforces explicit user confirmation for all customizable analysis parameters before execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9597460d809d3cc2602509c6acee1337376cc3bfcb7e99c262e77d43f74e7634"
+}

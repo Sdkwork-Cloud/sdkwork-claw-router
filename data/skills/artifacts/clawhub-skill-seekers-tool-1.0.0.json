@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-seekers-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_seekers_tool",
+  "skill": {
+    "id": 39798,
+    "skillKey": "clawhub-skill-seekers-tool",
+    "name": "Skill Seekers Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-seekers-tool",
+    "url": "https://clawhub.ai/skills/skill-seekers-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-seekers-tool-3c0daf8b82fff7a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A Python CLI tool to convert websites, GitHub repos, and various documents into Claude AI skills or other supported AI skill formats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fan166",
+      "userId": "s1729pmpgm8t7ws4mc2t11qapx83hw86",
+      "displayName": "fan166",
+      "image": "https://avatars.githubusercontent.com/u/69749038?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774328200307,
+      "changelog": "Initial release: 将文档网站、GitHub仓库、PDF转换为Claude AI技能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:03dc0789bbb7e764100f6d0ae88b6e95e46257ec81edebd0e8a5ca579470494a"
+}

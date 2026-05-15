@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53427,
+  "uuid": "skill-clawhub-pr-pilot",
+  "skillKey": "clawhub-pr-pilot",
+  "name": "pr-pilot",
+  "summary": "Submit professional pull requests and manage their full lifecycle — from push to merge. Covers PR creation with structured descriptions, CI monitoring, revie...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pr_pilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bijin",
+      "features": [
+        "Submit professional pull requests and manage their full lifecycle — from push to merge",
+        "Covers PR creation with structured descriptions, CI monitoring, revie..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pr-pilot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38134380?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pr-pilot",
+      "url": "https://clawhub.ai/skills/pr-pilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pr-pilot",
+    "url": "https://clawhub.ai/skills/pr-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pr-pilot-ad4cd8213d0f9b38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pr-pilot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pr-pilot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48eb12fd17a0a70a921eb26e65732aaa52c75d70187cf866317657beca8317a5",
+      "artifactSizeBytes": 2496
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T13:23:50.673Z"
+}

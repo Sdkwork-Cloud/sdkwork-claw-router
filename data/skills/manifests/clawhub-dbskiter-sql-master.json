@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61646,
+  "uuid": "skill-clawhub-dbskiter-sql-master",
+  "skillKey": "clawhub-dbskiter-sql-master",
+  "name": "SQL智能助手",
+  "summary": "SQL智能助手，支持SQL执行、重写优化、质量分析、数据分析、智能补全、Schema查询、批量执行、数据导入导出。 使用场景： - 用户说\"执行这个SQL\" → execute 或直接 dbskiter sql \"SELECT...\" - 用户说\"优化这个SQL\" → rewrite - 用户说\"分析SQL质量\"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dbskiter_sql_master",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MagicCzc (AIOps打工人)",
+      "features": [
+        "SQL智能助手，支持SQL执行、重写优化、质量分析、数据分析、智能补全、Schema查询、批量执行、数据导入导出。 使用场景：",
+        "用户说\"执行这个SQL\" → execute 或直接 dbskiter sql \"SELECT...\"",
+        "用户说\"优化这个SQL\" → rewrite",
+        "用户说\"分析SQL质量\"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dbskiter-sql-master@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/161575294?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dbskiter-sql-master",
+      "url": "https://clawhub.ai/skills/dbskiter-sql-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dbskiter-sql-master",
+    "url": "https://clawhub.ai/skills/dbskiter-sql-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dbskiter-sql-master-3393726ad14099a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dbskiter-sql-master@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dbskiter-sql-master-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1cf29ca888375b7f30f5113c34c9b39e7de8d733d6bbe0a4d11f503c238c466",
+      "artifactSizeBytes": 2481
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T09:48:58.521Z"
+}

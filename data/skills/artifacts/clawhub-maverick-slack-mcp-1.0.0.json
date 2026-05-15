@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maverick-slack-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maverick_slack_mcp",
+  "skill": {
+    "id": 47704,
+    "skillKey": "clawhub-maverick-slack-mcp",
+    "name": "Slack mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maverick-slack-mcp",
+    "url": "https://clawhub.ai/skills/maverick-slack-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maverick-slack-mcp-7d636f0b34aaae5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, read, and update Slack messages, channel history, canvases, and users via Slack's hosted MCP server (https://mcp.slack.com/mcp). Use when the user as..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maverick",
+      "userId": "s17b4scyfsybdcep8c0034pgs186087n",
+      "displayName": "Maverick",
+      "image": "https://avatars.githubusercontent.com/u/261420589"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 99,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778007019641,
+      "changelog": "Initial release of maverick-slack-mcp skill.\n\n- Enables searching, reading, and updating Slack messages, channel history, canvases, and users via Slack’s hosted MCP server.\n- Provides secure integration with Slack, handling authentication and token rotation automatically.\n- Offers a wrapper script for all invocations, supporting safe message posting and explicit user confirmation.\n- Includes instructions for installation and required dependencies (`mcporter`, `jq`, `flock`, `shasum`).\n- Details data flow, safety guidance, and quick start command examples for Slack operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af7b3380ac288c7e307df795e090436c6606c00db6cae87569beff335a486a3e"
+}

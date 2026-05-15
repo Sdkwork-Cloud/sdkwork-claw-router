@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58806,
+  "uuid": "skill-clawhub-chatmerge",
+  "skillKey": "clawhub-chatmerge",
+  "name": "Display Name: ChatMerge - 智能多渠道聊天纪要助手",
+  "summary": "一键读取 20+ 平台聊天，生成智能纪要（摘要、决策、行动项、风险、多维分析、AI 建议）。Auto-read 20+ platforms, generate smart minutes with summaries, decisions, actions, risks, multi-dimensional an...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chatmerge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yaomo-1225",
+      "features": [
+        "一键读取 20+ 平台聊天，生成智能纪要（摘要、决策、行动项、风险、多维分析、AI 建议）。Auto-read 20+ platforms, generate smart minutes w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chatmerge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266532706?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chatmerge",
+      "url": "https://clawhub.ai/skills/chatmerge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chatmerge",
+    "url": "https://clawhub.ai/skills/chatmerge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chatmerge-6d6528d2152c2a0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chatmerge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chatmerge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16ee7f8d6f5c19e3264c2aae2b5d7bb4ce237d2ad0ee14919b1970a54f473dc1",
+      "artifactSizeBytes": 2672
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T17:32:07.489Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55883,
+  "uuid": "skill-clawhub-node-cron",
+  "skillKey": "clawhub-node-cron",
+  "name": "Node Cron",
+  "summary": "Node.js cron job scheduling with the `cron` npm package. Use when the user needs to schedule recurring tasks, create cron jobs, validate cron expressions, se...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.node_cron",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenLark",
+      "features": [
+        "Node.js cron job scheduling with the `cron` npm package",
+        "Use when the user needs to schedule recurring tasks, create cron jobs, validate cron expression."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/node-cron@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260858787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "node-cron",
+      "url": "https://clawhub.ai/skills/node-cron"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "node-cron",
+    "url": "https://clawhub.ai/skills/node-cron",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/node-cron-b4ba5abd2d3cfc5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/node-cron@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-node-cron-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2867790d45042fb8ef942add7aa0c748271699de8190b02c9fea2c4b440bcb41",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T04:08:16.206Z"
+}

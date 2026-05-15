@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53926,
+  "uuid": "skill-clawhub-allourthings",
+  "skillKey": "clawhub-allourthings",
+  "name": "AllOurThings",
+  "summary": "Household and personal inventory management. Use this skill to add, find, update, search, or delete items in the user's AllOurThings vault — covering anythin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.allourthings",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matt",
+      "features": [
+        "Household and personal inventory management",
+        "Use this skill to add, find, update, search, or delete items in the user's AllOurThings vault —."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/allourthings@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3025116?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "allourthings",
+      "url": "https://clawhub.ai/skills/allourthings"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "allourthings",
+    "url": "https://clawhub.ai/skills/allourthings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/allourthings-a6e04de46d786a9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/allourthings@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-allourthings-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebd50cb2f97e43adbc7083811e89002e4e22af5d7b36d41b5a6ce7f3b4faad38",
+      "artifactSizeBytes": 1915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T15:24:08.518Z"
+}

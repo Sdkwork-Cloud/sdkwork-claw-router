@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/united-nations@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.united_nations",
+  "skill": {
+    "id": 45917,
+    "skillKey": "clawhub-united-nations",
+    "name": "United Nations"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "united-nations",
+    "url": "https://clawhub.ai/skills/united-nations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/united-nations-ee930fc5ddb6eb3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides structured overview and key facts about the United Nations including history, functions, market position, and recent updates."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776491969859,
+      "changelog": "united-nations skill 1.0.0 – Initial Release\n\n- 提供 united-nations 相关结构化信息查询，包括基础档案、业务版图、市场表现和动态更新。\n- 适用于需要快速了解 united-nations 概况的场景，如商业调研、产品咨询和市场分析。\n- 强调信息为概览性质，具体数据请以官方发布为准。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f0c4eddcc24609474d852cc2f16e4801c9b9a67659c3e85424484dc2559f4d21"
+}

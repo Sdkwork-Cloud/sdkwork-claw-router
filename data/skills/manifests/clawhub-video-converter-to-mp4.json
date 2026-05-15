@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46887,
+  "uuid": "skill-clawhub-video-converter-to-mp4",
+  "skillKey": "clawhub-video-converter-to-mp4",
+  "name": "Video Converter To Mp4",
+  "summary": "Get converted MP4 files ready to post, without touching a single slider. Upload your video files (AVI, MOV, MKV, WebM, up to 500MB), say something like \"conv...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_converter_to_mp4",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linmillsd7",
+      "features": [
+        "Get converted MP4 files ready to post, without touching a single slider",
+        "Upload your video files (AVI, MOV, MKV, WebM, up to 500MB), say something like \"conv..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-converter-to-mp4@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208832666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-converter-to-mp4",
+      "url": "https://clawhub.ai/skills/video-converter-to-mp4"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-converter-to-mp4",
+    "url": "https://clawhub.ai/skills/video-converter-to-mp4",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-converter-to-mp4-6ce2bafac1759531.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-converter-to-mp4@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-converter-to-mp4-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a956685f3a56e5e16740b697f36f87c5e49bb066074459830b0c30b0508510a7",
+      "artifactSizeBytes": 2534
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T00:59:17.276Z"
+}

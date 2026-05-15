@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/emergency-rescue@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emergency_rescue",
+  "skill": {
+    "id": 9895,
+    "skillKey": "clawhub-emergency-rescue",
+    "name": "Emergency Rescue Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emergency-rescue",
+    "url": "https://clawhub.ai/skills/emergency-rescue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emergency-rescue-78ef3c5b46d9016e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Recover from developer disasters. Use when someone force-pushed to main, leaked credentials in git, ran out of disk space, killed the wrong process, corrupted a database, broke a deploy, locked themselves out of SSH, lost commits after a b."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gitgoodordietrying",
+      "userId": "publishers:gitgoodordietrying",
+      "displayName": "gitgoodordietrying",
+      "image": "https://avatars.githubusercontent.com/u/116975874?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2999,
+      "installsAllTime": 15,
+      "installsCurrent": 14,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770160264867,
+      "changelog": "Initial release — step-by-step recovery for git disasters, credential leaks, disk full, process emergencies, database failures, deploy rollbacks, access lockouts, and network failures",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9f10a2a1d48303c31639e0476f526c14c25905e475fa708c1942a6d8cbe51d8f"
+}

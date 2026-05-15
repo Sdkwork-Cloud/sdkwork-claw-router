@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31920,
+  "uuid": "skill-clawhub-freshmarketer",
+  "skillKey": "clawhub-freshmarketer",
+  "name": "Freshmarketer",
+  "summary": "Freshmarketer integration. Manage Leads, Persons, Organizations, Deals, Pipelines, Activities and more. Use when the user wants to interact with Freshmarkete...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freshmarketer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Freshmarketer integration",
+        "Manage Leads, Persons, Organizations, Deals, Pipelines, Activities and more",
+        "Use when the user wants to interact with Freshmarkete..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/freshmarketer@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "freshmarketer",
+      "url": "https://clawhub.ai/skills/freshmarketer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freshmarketer",
+    "url": "https://clawhub.ai/skills/freshmarketer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freshmarketer-961b59b545171daf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/freshmarketer@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-freshmarketer-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:287681f103a964e64b04fbc084ec3c6f917892ee529bb43217f036396bcb40a8",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:50:21.656Z"
+}

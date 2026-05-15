@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56790,
+  "uuid": "skill-clawhub-qique-ai",
+  "skillKey": "clawhub-qique-ai",
+  "name": "企雀AI助手",
+  "summary": "Use this skill when an agent needs to answer or plan operations for QiQue business requests in pure text protocol mode (no local executable dependency). Trig...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qique_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Edmon",
+      "features": [
+        "Use this skill when an agent needs to answer or plan operations for QiQue business requests in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qique-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1625441?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qique-ai",
+      "url": "https://clawhub.ai/skills/qique-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qique-ai",
+    "url": "https://clawhub.ai/skills/qique-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qique-ai-9cbfe44e27b19faf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qique-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qique-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e8969c5dd6eea5605ce698f6beab2586e0fd63cbacc6671e64c5e6c57c3b7f87",
+      "artifactSizeBytes": 1916
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T12:32:55.230Z"
+}

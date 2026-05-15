@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39420,
+  "uuid": "skill-clawhub-pilot-broadcast",
+  "skillKey": "clawhub-pilot-broadcast",
+  "name": "Pilot Broadcast",
+  "summary": "Publish messages to all trusted peers on a topic over the Pilot Protocol network. Use this skill when: 1. You need to send an announcement to all trusted age...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_broadcast",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Publish messages to all trusted peers on a topic over the Pilot Protocol network",
+        "Use this skill when: 1",
+        "You need to send an announcement to all trusted age..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-broadcast@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-broadcast",
+      "url": "https://clawhub.ai/skills/pilot-broadcast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-broadcast",
+    "url": "https://clawhub.ai/skills/pilot-broadcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-broadcast-0431a9962f15af01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-broadcast@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-broadcast-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c212014aa9c49d0847548dfc8f53d185b875dc8650d92bb25a4e3f96953f3dd9",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T23:14:58.945Z"
+}

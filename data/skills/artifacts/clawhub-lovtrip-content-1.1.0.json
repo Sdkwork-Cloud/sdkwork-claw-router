@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lovtrip-content@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lovtrip_content",
+  "skill": {
+    "id": 61137,
+    "skillKey": "clawhub-lovtrip-content",
+    "name": "LovTrip Content Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lovtrip-content",
+    "url": "https://clawhub.ai/skills/lovtrip-content",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lovtrip-content-063e8d5591a1e852.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "旅行内容查询 / Travel Content Browser — 搜索攻略、目的地、行程，零 API Key。当用户需要搜索旅行攻略、浏览目的地、查看行程方案时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lizhijun",
+      "userId": "s172ve229xyk6c6nn1dmtgmz2n83g3t7",
+      "displayName": "KLeo",
+      "image": "https://avatars.githubusercontent.com/u/2713983?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 344,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772947755539,
+      "changelog": "Add lovtrip.app website links, online experience section, SEO improvements",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ffb194f188abdd23c62d63e3ff5593d0995c907e96719ff8fdffabc19cd9711e"
+}

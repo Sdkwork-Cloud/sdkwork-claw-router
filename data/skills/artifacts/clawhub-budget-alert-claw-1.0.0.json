@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/budget-alert-claw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.budget_alert_claw",
+  "skill": {
+    "id": 70179,
+    "skillKey": "clawhub-budget-alert-claw",
+    "name": "支出预警管控虾"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "budget-alert-claw",
+    "url": "https://clawhub.ai/skills/budget-alert-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/budget-alert-claw-9d9af2690a8e646a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支出预警管控虾 — 实时监控预算执行，发现超支或异常消费时自动报红。 当以下情况时使用此 Skill： (1) 需要校验某笔支出申请是否超出预算 (2) 需要批量核对支出流水与预算配置 (3) 需要生成预算执行报告（各部门/项目使用率） (4) 需要检测异常消费（金额异常、频次异常、类目异常） (5) 需要配置预..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tujinsama",
+      "userId": "s177vqraepq71bz6ynj98rrtdd83j0pd",
+      "displayName": "Ricky",
+      "image": "https://avatars.githubusercontent.com/u/82147388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776676042780,
+      "changelog": "初始发布：实时监控预算执行，支持分级预警（绿/黄/红）、异常消费检测、批量校验和飞书通知推送",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e0199e45f26a7966ab5656e82311e501be32a5cfb70ae104f4c8b86d02038f1"
+}

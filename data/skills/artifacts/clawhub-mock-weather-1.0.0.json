@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mock-weather@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mock_weather",
+  "skill": {
+    "id": 67724,
+    "skillKey": "clawhub-mock-weather",
+    "name": "Mock Weather"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mock-weather",
+    "url": "https://clawhub.ai/skills/mock-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mock-weather-693c63461f49ae03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "模拟天气查询，为任意城市生成仿真天气数据（当前天气 + 多日预报）。Use when: (1) 用户查询某城市天气，(2) 用户询问天气预报，(3) 需要演示天气功能但无真实API时。支持中英文城市名，支持1-7天预报。注意：数据为模拟生成，非真实气象数据。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krisliu16",
+      "userId": "publishers:krisliu16",
+      "displayName": "Kris",
+      "image": "https://avatars.githubusercontent.com/u/174239318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 328,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772779292222,
+      "changelog": "模拟天气查询skill，支持任意城市当前天气和多日预报",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e0d3b03916a720aaf58136c3c0b26d1f3a43099f937c1a9031650ac9040c2899"
+}

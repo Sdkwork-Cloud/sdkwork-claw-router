@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61954,
+  "uuid": "skill-clawhub-webflow-china-speed",
+  "skillKey": "clawhub-webflow-china-speed",
+  "name": "Webflow 中国加速",
+  "summary": "Webflow + Cloudflare Worker 中国大陆访问加速专项技能。当用户想要优化 Webflow 网站在中国大陆的访问速度时，必须使用此技能。 触发场景：用户提到 Webflow 网站速度慢、中国大陆无法访问、CF Worker 反向代理优化、Google 资源被屏蔽、Webflow CDN 加速...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webflow_china_speed",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "申冶 Shenye",
+      "features": [
+        "Webflow + Cloudflare Worker 中国大陆访问加速专项技能。当用户想要优化 Webflow 网站在中国大陆的访问速度时，必须使用此技能。 触发场景：用户提到 Webfl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/webflow-china-speed@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44078613?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "webflow-china-speed",
+      "url": "https://clawhub.ai/skills/webflow-china-speed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webflow-china-speed",
+    "url": "https://clawhub.ai/skills/webflow-china-speed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webflow-china-speed-27ad0657fd57d2b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/webflow-china-speed@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-webflow-china-speed-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21507e748e4b6705f344f7ad47c33c91fe9a42392d6855acb7728124adb7e768",
+      "artifactSizeBytes": 2306
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:34:04.058Z"
+}

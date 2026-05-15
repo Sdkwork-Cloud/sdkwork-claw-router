@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pg-buy@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pg_buy",
+  "skill": {
+    "id": 51021,
+    "skillKey": "clawhub-pg-buy",
+    "name": "Pg Buy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pg-buy",
+    "url": "https://clawhub.ai/skills/pg-buy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pg-buy-6084ebc158ecc9ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when buying API access through ProxyGate — depositing USDC, browsing available APIs, making proxy requests, streaming responses, or rating sellers. Make..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jwelten",
+      "userId": "s17ea14p7afnh5qnk5d9zdacq183g92p",
+      "displayName": "jwelten",
+      "image": "https://avatars.githubusercontent.com/u/194850832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1774132410773,
+      "changelog": "Sync with CLI v0.2.1 — updated commands, descriptions, and examples",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04f927ab905b69606e2228bd925fa142ad3155e1a7bd215ba95b1b4da0423111"
+}

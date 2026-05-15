@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23739,
+  "uuid": "skill-clawhub-quiverai",
+  "skillKey": "clawhub-quiverai",
+  "name": "QuiverAI",
+  "summary": "Generate and vectorize SVG graphics via the QuiverAI API (Arrow model). Use when the user asks to create logos, icons, or illustrations as SVG, convert raste...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quiverai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charmmm718",
+      "features": [
+        "Generate and vectorize SVG graphics via the QuiverAI API (Arrow model)",
+        "Use when the user asks to create logos, icons, or illustrations as SVG, convert raste..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quiverai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221862276?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quiverai",
+      "url": "https://clawhub.ai/skills/quiverai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quiverai",
+    "url": "https://clawhub.ai/skills/quiverai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quiverai-8d90beb3e285e28c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quiverai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quiverai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eeeb4aabf5589a5c6976768b060005d0371e474b24b33e63d00027fa6adb2d60",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T16:10:09.311Z"
+}

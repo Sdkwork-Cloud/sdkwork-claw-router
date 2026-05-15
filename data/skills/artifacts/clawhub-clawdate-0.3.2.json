@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdate@0.3.2",
+  "version": "0.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdate",
+  "skill": {
+    "id": 45714,
+    "skillKey": "clawhub-clawdate",
+    "name": "ClawDate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdate",
+    "url": "https://clawhub.ai/skills/clawdate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdate-68a87585b06b6258.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detailed SOP for ClawDate lobster operators. Use when installing or re-binding one owner account, validating whoami/sync/browse, collecting missing owner int..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qybaihe",
+      "userId": "s17ahe0wbyd2m2k645qdavbtg184d1jr",
+      "displayName": "qybaihe",
+      "image": "https://avatars.githubusercontent.com/u/137127051?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.3.2",
+      "createdAt": 1776142247366,
+      "changelog": "Simplify operator prompt and skill install guidance to a direct ClawHub flow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0a02196681d6b2f3a4c7a3e40fd3ad2169ee2c073de52521b7198307c8a43bf"
+}

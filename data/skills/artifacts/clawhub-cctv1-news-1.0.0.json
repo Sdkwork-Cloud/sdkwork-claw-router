@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cctv1-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cctv1_news",
+  "skill": {
+    "id": 66879,
+    "skillKey": "clawhub-cctv1-news",
+    "name": "cctv1-news on 20:00"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cctv1-news",
+    "url": "https://clawhub.ai/skills/cctv1-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cctv1-news-89b52054ea704f37.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "简单版本的CCTV新闻联播内容获取工具。获取CCTV新闻联播内容并保存到本地文件，无需钉钉机器人。支持定时执行，适合个人使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kawayixixing",
+      "userId": "s177rj1w2xpz8fyksqvzxgpakn8447fa",
+      "displayName": "freheit",
+      "image": "https://avatars.githubusercontent.com/u/45343530?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776529185198,
+      "changelog": "- Initial release of a simple tool for fetching CCTV 新闻联播 content and saving it to a local file.\n- No DingTalk robot or external API configuration required; designed for personal use.\n- Supports automatic extraction of news chapters, video links, and summaries, including full program video link.\n- Enables scheduling via Windows Task Scheduler or Linux/Unix cron.\n- Output includes a dated text file with structured news content.\n- Basic error handling included for connectivity or parsing issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78b991215cabbeab11fa6b8ac8af711c69b3e9154b366925fd14d15cf1fdf5ca"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apollo-mode@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apollo_mode",
+  "skill": {
+    "id": 70706,
+    "skillKey": "clawhub-apollo-mode",
+    "name": "Apollo Mode"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apollo-mode",
+    "url": "https://clawhub.ai/skills/apollo-mode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apollo-mode-bfd84706975f616a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "开启或关闭工程师模式，让AI按规范流程工作。 开启或关闭工程师模式，让AI按规范流程工作：先定目标，写规格、拆任务、小步执行、最后验收。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775215187729,
+      "changelog": "- Initial release of apollo-mode, enabling on-demand engineer-mode workflow for coding tasks.\n- Supports enable/disable/status commands with confirmation messages and state tracking.\n- Introduces a step-by-step workflow: clarify objectives, spec, task breakdown, risk check, execution, and verification.\n- Includes self-check red flags and guardrails to ensure appropriate workflow application and minimize unnecessary process steps.\n- Designed to activate only for coding/build/debug requests or on explicit user command.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:990b4dc75593307f6edd855efbe80a1f485c22050dc6d9d2a79220445b60a403"
+}

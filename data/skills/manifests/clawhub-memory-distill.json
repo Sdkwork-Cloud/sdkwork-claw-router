@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70528,
+  "uuid": "skill-clawhub-memory-distill",
+  "skillKey": "clawhub-memory-distill",
+  "name": "Memory Distill",
+  "summary": "对话记忆蒸馏系统。从对话中提取关键信息、压缩长对话为精简摘要、自动分类存储到结构化文件、支持定期清理过期内容。支持 Cron 定时自动执行和 HEARTBEAT 心跳集成。触发词：蒸馏记忆、整理对话、压缩上下文、记忆压缩、清理对话、记忆整理、上下文压缩、定时蒸馏。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_distill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "systiger",
+      "features": [
+        "对话记忆蒸馏系统。从对话中提取关键信息、压缩长对话为精简摘要、自动分类存储到结构化文件、支持定期清理过期内容。支持 Cron 定时自动执行和 HEARTBEAT 心跳集成。触发词：蒸馏记忆、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-distill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/154035099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-distill",
+      "url": "https://clawhub.ai/skills/memory-distill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-distill",
+    "url": "https://clawhub.ai/skills/memory-distill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-distill-04e1af343910ccfc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-distill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-distill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1901fc1dcbb5eada2a1f93485a1fb67f6b9b7d8a0fb07225de5c4bd43393714",
+      "artifactSizeBytes": 2610
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T15:12:33.203Z"
+}

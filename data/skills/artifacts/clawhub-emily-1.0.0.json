@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/emily@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emily",
+  "skill": {
+    "id": 13764,
+    "skillKey": "clawhub-emily",
+    "name": "emily"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emily",
+    "url": "https://clawhub.ai/skills/emily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emily-e8e9689deac5bac9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Radix DLT blockchain data including wallet balances and performance, token prices and market movers, validator staking info, transaction history, network statistics, ecosystem news, DeFi yield pools, XRD trading venues, dApp director."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mavremu",
+      "userId": "publishers:mavremu",
+      "displayName": "MAvRemu",
+      "image": "https://avatars.githubusercontent.com/u/5968588?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1365,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770308295411,
+      "changelog": "Initial release of Emily Radix Assistant.\n\n- Query Radix DLT blockchain for wallet balances, token prices, validator info, transactions, network stats, news, DeFi data, trading venues, dApps, and developer resources.\n- Supports queries for XRD wallets, tokens, staking, .xrd domains, Attos Earn, and buying/bridging XRD.\n- Provides 35 integrated tools covering wallets, tokens, network, ecosystem, and developer resources.\n- No API key required; mainnet data only.\n- Easy setup via mcporter CLI.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9a0aab907ddc20d2cd8f58da8dde8d5f15b9db411442f263e35be85c7d0e0ea4"
+}

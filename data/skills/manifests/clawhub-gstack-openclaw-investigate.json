@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12558,
+  "uuid": "skill-clawhub-gstack-openclaw-investigate",
+  "skillKey": "clawhub-gstack-openclaw-investigate",
+  "name": "gstack Investigate",
+  "summary": "Provides systematic root cause analysis and verified fixes for bugs or errors using a four-phase debugging process without guessing or premature fixes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gstack_openclaw_investigate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Garry Tan",
+      "features": [
+        "Provides systematic root cause analysis and verified fixes for bugs or errors using a four-phas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gstack-openclaw-investigate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19957?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gstack-openclaw-investigate",
+      "url": "https://clawhub.ai/skills/gstack-openclaw-investigate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gstack-openclaw-investigate",
+    "url": "https://clawhub.ai/skills/gstack-openclaw-investigate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gstack-openclaw-investigate-fc2623697bd39119.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gstack-openclaw-investigate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gstack-openclaw-investigate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48a8d4c164dfebf10b268ae242d37a5815887663c03f262385c2765b2c521c0d",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T16:57:38.998Z"
+}

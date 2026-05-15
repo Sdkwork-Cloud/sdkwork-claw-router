@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8902,
+  "uuid": "skill-clawhub-audio-cog",
+  "skillKey": "clawhub-audio-cog",
+  "name": "Audio Cog",
+  "summary": "AI audio generation and text-to-speech powered by CellCog. Voiceover, narration, voice cloning, avatar voices, sound effects, music, podcasts, dialogue. Thre...",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_cog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CellCog",
+      "features": [
+        "AI audio generation and text-to-speech powered by CellCog",
+        "Voiceover, narration, voice cloning, avatar voices, sound effects, music, podcasts, dialogue"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audio-cog@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14193431?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audio-cog",
+      "url": "https://clawhub.ai/skills/audio-cog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-cog",
+    "url": "https://clawhub.ai/skills/audio-cog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-cog-8fa1aa8c4212149e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audio-cog@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-audio-cog-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01b6a3bbecc5948e5a1ff094b2c181be1e7ccdaa8920120ce121e6bb9fc5171c",
+      "artifactSizeBytes": 2108
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:18:23.817Z"
+}

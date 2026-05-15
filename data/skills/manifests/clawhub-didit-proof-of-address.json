@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20301,
+  "uuid": "skill-clawhub-didit-proof-of-address",
+  "skillKey": "clawhub-didit-proof-of-address",
+  "name": "Didit Proof Of Address",
+  "summary": "Integrate Didit Proof of Address standalone API to verify address documents. Use when the user wants to verify a proof of address, validate utility bills, ba...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.didit_proof_of_address",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Didit",
+      "features": [
+        "Integrate Didit Proof of Address standalone API to verify address documents",
+        "Use when the user wants to verify a proof of address, validate utility bills, ba..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/didit-proof-of-address@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47662054?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "didit-proof-of-address",
+      "url": "https://clawhub.ai/skills/didit-proof-of-address"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "didit-proof-of-address",
+    "url": "https://clawhub.ai/skills/didit-proof-of-address",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/didit-proof-of-address-67131777f3bd860d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/didit-proof-of-address@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-didit-proof-of-address-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe0051fd311bd2efe2e51bc0a61b6f3c6a2dbbbe73747ef6ed83ff6bf7b4438c",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T05:15:22.369Z"
+}

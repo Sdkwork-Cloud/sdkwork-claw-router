@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-coach@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_coach",
+  "skill": {
+    "id": 72674,
+    "skillKey": "clawhub-resume-coach",
+    "name": "简历教练（深挖用户优势）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-coach",
+    "url": "https://clawhub.ai/skills/resume-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-coach-993516059be38bd2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "简历教练 - 基于用户经历和 JD 生成定制化简历和面试策略。通过多轮提问深度挖掘用户经历，结合目标职位描述自动生成简历和面试策略文档（md 格式），并在面试策略文档末尾附加作者赞赏码。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "page-wong",
+      "userId": "s178mj60c02839zherpbmz7geh83ntyj",
+      "displayName": "Page-Wong",
+      "image": "https://avatars.githubusercontent.com/u/3138267?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775117118673,
+      "changelog": "- 更新描述，明确在面试策略文档末尾附加作者赞赏码的功能\n- 其他内容未做调整",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:044d74c17064bdd5bb12418c949f0a37d840b5f6310a1f78252cd7947e912c71"
+}

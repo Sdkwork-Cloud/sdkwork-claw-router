@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64539,
+  "uuid": "skill-clawhub-web-reader-tts",
+  "skillKey": "clawhub-web-reader-tts",
+  "name": "Web Reader Tts",
+  "summary": "将指定网页内容转换为多语言语音，支持高质量在线Edge TTS和完全离线本地TTS，实时流式播放。",
+  "version": "2.7.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_reader_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zach",
+      "features": [
+        "将指定网页内容转换为多语言语音，支持高质量在线Edge TTS和完全离线本地TTS，实时流式播放。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-reader-tts@2.7.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11252265?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-reader-tts",
+      "url": "https://clawhub.ai/skills/web-reader-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-reader-tts",
+    "url": "https://clawhub.ai/skills/web-reader-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-reader-tts-59277daaefc03629.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-reader-tts@2.7.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-reader-tts-2.7.1.json",
+      "version": "2.7.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94ee1a1e26ea7dc69b1ff8964d041e1d88ffd7bc1d3dbc6936ea6e7fbdddc015",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T01:34:51.970Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37702,
+  "uuid": "skill-clawhub-cargo-toml-validator",
+  "skillKey": "clawhub-cargo-toml-validator",
+  "name": "Cargo Toml Validator",
+  "summary": "Validate Rust Cargo.toml manifests for dependency issues, missing metadata, feature conflicts, workspace config, and crates.io publishing readiness. Use when...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cargo_toml_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Validate Rust Cargo.toml manifests for dependency issues, missing metadata, feature conflicts,.",
+        "Use when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cargo-toml-validator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cargo-toml-validator",
+      "url": "https://clawhub.ai/skills/cargo-toml-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cargo-toml-validator",
+    "url": "https://clawhub.ai/skills/cargo-toml-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cargo-toml-validator-ddd9bdb05938200d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cargo-toml-validator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cargo-toml-validator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa52ee93046283c05d354b3ad1add424114124d66086591081ccc325690ea049",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:00:16.759Z"
+}

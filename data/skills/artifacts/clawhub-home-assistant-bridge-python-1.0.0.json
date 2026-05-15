@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/home-assistant-bridge-python@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_assistant_bridge_python",
+  "skill": {
+    "id": 23735,
+    "skillKey": "clawhub-home-assistant-bridge-python",
+    "name": "minos"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-assistant-bridge-python",
+    "url": "https://clawhub.ai/skills/home-assistant-bridge-python",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-assistant-bridge-python-5c7dd6ea5c159efa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Home Assistant devices, read sensors, and manage automations using the Python Bridge. Use when the user wants to interact with their smart home - tur..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mischa-petschenig",
+      "userId": "publishers:mischa-petschenig",
+      "displayName": "Mischa-Petschenig",
+      "image": "https://avatars.githubusercontent.com/u/139151185?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 431,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773000679258,
+      "changelog": "- Major update: Switched from bash CLI to Python Bridge for all Home Assistant control and automation.\n- New Python-based bridge script (ha-bridge.py) with comprehensive commands for device control, state queries, history, and scenes.\n- Alias system introduced: Use `aliases.json` to map friendly names to Home Assistant entity IDs.\n- One-time interactive setup script (`ha-setup.sh`) for configuration.\n- Documentation expanded: added concise usage guide in README.md and detailed reference on finding entity IDs.\n- Removed legacy bash scripts and outdated API reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af51bae23645bc86fafee10509c89fba9eb1acd7df5b082fee7a5f7d9038965a"
+}

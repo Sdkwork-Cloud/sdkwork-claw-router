@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/transferwise@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transferwise",
+  "skill": {
+    "id": 62045,
+    "skillKey": "clawhub-transferwise",
+    "name": "Transferwise"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transferwise",
+    "url": "https://clawhub.ai/skills/transferwise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transferwise-3565aa0ed836a51c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Wise (原TransferWise) 提供透明汇率和低费率的跨境汇款服务，支持80+货币并为银行提供跨境汇款API基础设施。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777986177402,
+      "changelog": "Wise（原TransferWise）技能上线，带来以下内容：\n\n- 讲述Wise由两位爱沙尼亚创始人颠覆银行跨境汇款的创业故事。\n- 详细解析Wise相较传统银行的汇款优势：透明费用、实时中间汇率。\n- 展示Wise如何从个人汇款服务成长为全球金融基础设施，为银行等合作伙伴提供API。\n- 列举核心成长数字，包括用户数、营收、支持货币及国家覆盖等。\n- 提供爱沙尼亚科技创业背景资料，与Skype、Bolt等案例对比分析。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b6c407554aebb0cc965f60efe747148b5c3e887973a36af2027bb4b2c34caf3f"
+}

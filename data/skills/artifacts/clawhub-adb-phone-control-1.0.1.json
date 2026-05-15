@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adb-phone-control@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adb_phone_control",
+  "skill": {
+    "id": 52168,
+    "skillKey": "clawhub-adb-phone-control",
+    "name": "adb-phone-control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adb-phone-control",
+    "url": "https://clawhub.ai/skills/adb-phone-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adb-phone-control-562fc7708a4c6430.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user asks to control, operate, or automate an Android phone via ADB — tapping, swiping, typing, launching apps, or any UI interaction on a conne..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "txmonkey",
+      "userId": "s17d12m95hwc67gv9zwdfth7th840b02",
+      "displayName": "txmonkey",
+      "image": "https://avatars.githubusercontent.com/u/23020807?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775045365492,
+      "changelog": "**Changelog for adb-phone-control v1.0.1**\n\n- Added explicit requirements section: now documents dependencies on `adb`, `python3`, and optional `ADB_OUTPUT_DIR` environment variable.\n- Detailed permission usage for device operations via ADB, covering input events, UI dump, screencap, IME broadcast, and clipboard.\n- Minor documentation edits: new \"Requirements\" and \"Permissions Used\" sections, clarifications for user setup.\n- No code or functional changes; this is a documentation enhancement for improved clarity and onboarding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f855b773ce01953031c8a0dc335617a396b891dac86998e661f6faef75568de2"
+}

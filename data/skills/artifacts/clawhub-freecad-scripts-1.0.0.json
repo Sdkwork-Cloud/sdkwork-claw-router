@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/freecad-scripts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freecad_scripts",
+  "skill": {
+    "id": 37508,
+    "skillKey": "clawhub-freecad-scripts",
+    "name": "freeCAD Scripts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freecad-scripts",
+    "url": "https://clawhub.ai/skills/freecad-scripts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freecad-scripts-6fbba149f56eac76.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert skill for writing FreeCAD Python scripts, macros, and automation. Use when asked to create FreeCAD models, parametric objects, Part/Mesh/Sketcher scri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jhauga",
+      "userId": "s17ch25466qc0g2bcymk2dr8zx83pfny",
+      "displayName": "John Haugabook",
+      "image": "https://avatars.githubusercontent.com/u/10998676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775615016913,
+      "changelog": "freecad-scripts 1.0.0\n\n- Initial release of expert FreeCAD scripting skill.\n- Provides comprehensive guidance for generating Python scripts and macros using the FreeCAD API.\n- Covers part, mesh, and sketch geometry creation; parametric objects; GUI (PySide/Qt) tools; and scenegraph manipulation.\n- Includes code examples for document handling, placement, geometry construction, topology exploration, mesh conversion, and sketch constraints.\n- Suitable for automating CAD tasks, developing custom tools, and supporting advanced FreeCAD automation needs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4762474f8ca8749f221c57dc3bade1fbc34525409010e18e974821bbfa2b4fda"
+}

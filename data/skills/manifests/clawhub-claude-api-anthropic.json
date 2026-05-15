@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57041,
+  "uuid": "skill-clawhub-claude-api-anthropic",
+  "skillKey": "clawhub-claude-api-anthropic",
+  "name": "Claude Api Anthropic",
+  "summary": "Build apps with the Claude API or Anthropic SDK. TRIGGER when: code imports `anthropic`/`@anthropic-ai/sdk`/`claude_agent_sdk`, or user asks to use Claude AP...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_api_anthropic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pupuking723",
+      "features": [
+        "Build apps with the Claude API or Anthropic SDK",
+        "TRIGGER when: code imports `anthropic`/`@anthropic-ai/sdk`/`claude_agent_sdk`, or user asks to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-api-anthropic@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169750518?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-api-anthropic",
+      "url": "https://clawhub.ai/skills/claude-api-anthropic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-api-anthropic",
+    "url": "https://clawhub.ai/skills/claude-api-anthropic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-api-anthropic-0fd8c40b82cc2803.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-api-anthropic@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-api-anthropic-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f8d2dafbfea5d29706ccd8d87a90d7b1c6a280995bc089e4c2f706a0dc17398",
+      "artifactSizeBytes": 2530
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T14:31:19.810Z"
+}

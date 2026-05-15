@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66542,
+  "uuid": "skill-clawhub-bilibili-subtitles",
+  "skillKey": "clawhub-bilibili-subtitles",
+  "name": "Bilibili Subtitles",
+  "summary": "使用 yt-dlp 从哔哩哔哩公开视频提取已有字幕或自动字幕（不下载整段视频）。当用户提到 B 站、bilibili、BV 号、视频字幕、拉字幕、做摘要、根据视频内容回答问题时使用。v1 仅支持平台已提供字幕轨道的视频；无字幕视频需换源或后续用 Whisper 等方案。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_subtitles",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fanzhuo",
+      "features": [
+        "使用 yt-dlp 从哔哩哔哩公开视频提取已有字幕或自动字幕（不下载整段视频）。当用户提到 B 站、bilibili、BV 号、视频字幕、拉字幕、做摘要、根据视频内容回答问题时使用。v1 仅."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-subtitles@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128193289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-subtitles",
+      "url": "https://clawhub.ai/skills/bilibili-subtitles"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-subtitles",
+    "url": "https://clawhub.ai/skills/bilibili-subtitles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-subtitles-35a1f6515749ecb3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-subtitles@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-subtitles-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16c0d049da3691e2d1d7f7261f3e92df2497badf33aa5ab8d471ce0a719cfd17",
+      "artifactSizeBytes": 2177
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T08:44:03.955Z"
+}

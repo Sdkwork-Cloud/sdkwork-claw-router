@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/miro-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miro_mcp",
+  "skill": {
+    "id": 23264,
+    "skillKey": "clawhub-miro-mcp",
+    "name": "Miro MCP Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miro-mcp",
+    "url": "https://clawhub.ai/skills/miro-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miro-mcp-db4d33674883d7ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect OpenClaw agents to Miro via Model Context Protocol (MCP). Use when generating diagrams, visualizing code, brainstorming board layouts, or integrating..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bigbubbaagent-bot",
+      "userId": "s17591ys68ptbj1gsdhv3zbkmx83mhj1",
+      "displayName": "bigbubbaagent-bot",
+      "image": "https://avatars.githubusercontent.com/u/262385618?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772844721421,
+      "changelog": "Initial release: OAuth 2.1 support, diagram generation, code generation from boards, 14+ MCP-compatible clients",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:20d655020d444e8164472f019563d7b295a3b3c9a31d75dd4973eebc8fc36ff2"
+}

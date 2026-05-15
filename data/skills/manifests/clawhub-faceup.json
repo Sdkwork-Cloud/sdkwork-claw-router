@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34300,
+  "uuid": "skill-clawhub-faceup",
+  "skillKey": "clawhub-faceup",
+  "name": "Faceup",
+  "summary": "FaceUp integration. Manage data, records, and automate workflows. Use when the user wants to interact with FaceUp data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.faceup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "FaceUp integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with FaceUp data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/faceup@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "faceup",
+      "url": "https://clawhub.ai/skills/faceup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "faceup",
+    "url": "https://clawhub.ai/skills/faceup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/faceup-0f85e58c6ba4700b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/faceup@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-faceup-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbe9c17a34560b9edc98b740c54ed381dac769d11bd0aa06929eb48790623609",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:26:47.321Z"
+}

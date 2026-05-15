@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/surrealfs@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.surrealfs",
+  "skill": {
+    "id": 16029,
+    "skillKey": "clawhub-surrealfs",
+    "name": "surrealfs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "surrealfs",
+    "url": "https://clawhub.ai/skills/surrealfs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/surrealfs-98581ce6fc94cf9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SurrealFS virtual filesystem for AI agents. Rust core + Python agent (Pydantic AI). Persistent file operations backed by SurrealDB. Part of the surreal-skill..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "24601",
+      "userId": "s178bj90ka9xeg44k6bt7q07k184jcr0",
+      "displayName": "Basit Mustafa",
+      "image": "https://avatars.githubusercontent.com/u/1157207?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 736,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1773432363827,
+      "changelog": "- No changes detected in this version.\n- Version bump to 1.2.1 with no file or documentation updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb42950c7733645179711de1d644a67e66a3619c99d2efe5a229c332b0b727fb"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rent",
+  "skill": {
+    "id": 68683,
+    "skillKey": "clawhub-rent",
+    "name": "Realtor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rent",
+    "url": "https://clawhub.ai/skills/rent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rent-0e9fd1596c4b1dfc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Поиск долгосрочной аренды 2-комнатных квартир в Одессе до 15 000 грн с фильтрами по району, площади, мебели и новостройкам."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kapishdima",
+      "userId": "publishers:kapishdima",
+      "displayName": "kapishdima",
+      "image": "https://avatars.githubusercontent.com/u/23422228?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 909,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770664953586,
+      "changelog": "Initial release of rent-odessa skill:\n\n- Enables search for 2-room apartments for long-term rent in Odessa within 15,000 UAH/month.\n- Supports queries via specific triggers and phrases.\n- Applies detailed filters (rooms, area, pets allowed, new building, furnished, etc.).\n- Collects listings from major sources: OLX, DOM.RIA, flatfy, rieltor, lun, Atlanta, REM.\n- Outputs results in a formatted, user-friendly message with links and details.\n- Provides fallback info if no apartments are found on any or all sources.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5d19fa0790e4dd0b216f63a6d30f5e131f39eec93db93f2b597bfb565f62ac72"
+}

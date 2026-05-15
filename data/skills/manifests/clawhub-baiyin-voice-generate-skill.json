@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66889,
+  "uuid": "skill-clawhub-baiyin-voice-generate-skill",
+  "skillKey": "clawhub-baiyin-voice-generate-skill",
+  "name": "baiyin-voice-generate-skill",
+  "summary": "使用百音开放平台创建 AI 语音任务，支持文本转语音、音色克隆，并在同一 skill 内继续查询任务状态和结果链接。用于用户要生成语音、克隆音色、查询语音任务进度或下载结果时。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baiyin_voice_generate_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baiyin",
+      "features": [
+        "使用百音开放平台创建 AI 语音任务，支持文本转语音、音色克隆，并在同一 skill 内继续查询任务状态和结果链接。用于用户要生成语音、克隆音色、查询语音任务进度或下载结果时。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baiyin-voice-generate-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63402476?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baiyin-voice-generate-skill",
+      "url": "https://clawhub.ai/skills/baiyin-voice-generate-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baiyin-voice-generate-skill",
+    "url": "https://clawhub.ai/skills/baiyin-voice-generate-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baiyin-voice-generate-skill-0232a341ce216e05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baiyin-voice-generate-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-baiyin-voice-generate-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1ec7b24d00005eca8c540296f43c0d3b36e95de727bff8e160fcdd7aaeee271",
+      "artifactSizeBytes": 2288
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T09:58:17.638Z"
+}

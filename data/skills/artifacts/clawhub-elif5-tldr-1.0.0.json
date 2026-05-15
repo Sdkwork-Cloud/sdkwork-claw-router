@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elif5-tldr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elif5_tldr",
+  "skill": {
+    "id": 28840,
+    "skillKey": "clawhub-elif5-tldr",
+    "name": "ELI5-TLDR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elif5-tldr",
+    "url": "https://clawhub.ai/skills/elif5-tldr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elif5-tldr-6a644d2b5d552f23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Forces offering ELI5 or TLDR options after complex responses. Always present simplified alternatives."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tooled-app",
+      "userId": "publishers:tooled-app",
+      "displayName": "Tooled-app",
+      "image": "https://avatars.githubusercontent.com/u/261758850?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773341696431,
+      "changelog": "- Initial release of the eli5-tldr skill.\n- Automatically offers ELI5 (Explain Like I'm 5) or TLDR (Too Long; Didn't Read) options after complex responses.\n- Presents simplified alternatives when responses are lengthy, technical, or involve multiple steps.\n- Ensures increased accessibility and clarity by including summary or analogy-based explanations.\n- Always active; no user trigger required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7857818b0bb21f76e25126c4e9e9353d2f8e2340e67e6dd47df79c42d71bb042"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24962,
+  "uuid": "skill-clawhub-mexc-openapi-skill",
+  "skillKey": "clawhub-mexc-openapi-skill",
+  "name": "MEXC OpenAPI Skill",
+  "summary": "Operate MEXC Spot REST APIs through UXC with a curated OpenAPI schema, HMAC query signing, and separate public/signed workflow guardrails.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mexc_openapi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Operate MEXC Spot REST APIs through UXC with a curated OpenAPI schema, HMAC query signing, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mexc-openapi-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mexc-openapi-skill",
+      "url": "https://clawhub.ai/skills/mexc-openapi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mexc-openapi-skill",
+    "url": "https://clawhub.ai/skills/mexc-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mexc-openapi-skill-0887e9999a064ef1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mexc-openapi-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mexc-openapi-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0639479617c1ab2bbea99d500b1a91fbe92a51c0066481111f0075831d9b2317",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T00:51:39.442Z"
+}

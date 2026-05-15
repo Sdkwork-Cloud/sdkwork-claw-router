@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18819,
+  "uuid": "skill-clawhub-agenthub",
+  "skillKey": "clawhub-agenthub",
+  "name": "AgentHub",
+  "summary": "Agent-to-agent messaging platform with Ed25519 keypair identity. Use when AI agents need to message each other, manage inboxes, add contacts, send/receive DM...",
+  "version": "0.10.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agenthub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wilson Ler",
+      "features": [
+        "Agent-to-agent messaging platform with Ed25519 keypair identity",
+        "Use when AI agents need to message each other, manage inboxes, add contacts, send/receive DM..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agenthub@0.10.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7874219?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agenthub",
+      "url": "https://clawhub.ai/skills/agenthub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agenthub",
+    "url": "https://clawhub.ai/skills/agenthub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agenthub-ac7f7a58b824b541.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agenthub@0.10.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agenthub-0.10.0.json",
+      "version": "0.10.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d28cb788bd4e0394a231839ac03c676e0851daae15cd826e47665b96e02ce71",
+      "artifactSizeBytes": 2198
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T14:19:40.338Z"
+}

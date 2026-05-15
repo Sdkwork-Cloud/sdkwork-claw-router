@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39116,
+  "uuid": "skill-clawhub-homestruk-maintenance-triage",
+  "skillKey": "clawhub-homestruk-maintenance-triage",
+  "name": "Homestruk Maintenance Triage",
+  "summary": "Triage tenant maintenance requests by severity, assign priority, identify the right contractor type, estimate costs, and generate work orders. Use when a ten...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.homestruk_maintenance_triage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adams Jean Baptiste",
+      "features": [
+        "Triage tenant maintenance requests by severity, assign priority, identify the right contractor.",
+        "Use when a ten..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/homestruk-maintenance-triage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22421595?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "homestruk-maintenance-triage",
+      "url": "https://clawhub.ai/skills/homestruk-maintenance-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "homestruk-maintenance-triage",
+    "url": "https://clawhub.ai/skills/homestruk-maintenance-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/homestruk-maintenance-triage-7b16096707553bb8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/homestruk-maintenance-triage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-homestruk-maintenance-triage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fba787cb89ddac124b541533edfe463e2b63dea8cfb40a1bf474fd1b957ef5ae",
+      "artifactSizeBytes": 2604
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T17:32:49.588Z"
+}

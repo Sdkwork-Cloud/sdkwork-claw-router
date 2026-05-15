@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-sequence-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_sequence_builder",
+  "skill": {
+    "id": 15307,
+    "skillKey": "clawhub-email-sequence-builder",
+    "name": "Email Sequence Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-sequence-builder",
+    "url": "https://clawhub.ai/skills/email-sequence-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-sequence-builder-1091edf2bf43520b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build complete email marketing sequences (welcome, nurture, sales, re-engagement) with subject lines, body copy, and platform-ready output. Use when creating email campaigns, drip sequences, or automated email flows for clients."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seanwyngaard",
+      "userId": "s17cbgx0qmxw2p9k4mvca4z40n83mae0",
+      "displayName": "Sean Wyngaard",
+      "image": "https://avatars.githubusercontent.com/u/187758643?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1026,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770986031133,
+      "changelog": "- Initial release of the Email Sequence Builder skill.\n- Generates ready-to-deploy email marketing sequences with subject lines, preview text, body, CTAs, and timing.\n- Supports multiple sequence types: welcome, sales, nurture, re-engagement, onboarding, launch, webinar, abandoned cart.\n- Outputs platform-ready formats for Markdown, Mailchimp (CSV), ConvertKit, and ActiveCampaign.\n- Sequences follow best-practice copy rules and quality checks, including personalization and A/B testing for subject lines.\n- Includes configuration files detailing sequence goals, triggers, segmentation, and KPIs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:66d31911649f917a6c65742b763e91c9e9513f92f38413ad376cbce5cb95c3d7"
+}

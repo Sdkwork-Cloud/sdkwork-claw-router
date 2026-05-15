@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-webhook-workflow-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_webhook_workflow_builder",
+  "skill": {
+    "id": 47792,
+    "skillKey": "clawhub-skylv-webhook-workflow-builder",
+    "name": "Skylv Webhook Workflow Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-webhook-workflow-builder",
+    "url": "https://clawhub.ai/skills/skylv-webhook-workflow-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-webhook-workflow-builder-c3501b76bca92029.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate webhook workflows for AI agents. Receive, process, transform, and route webhooks to other services. Triggers: webhook automation, webhook workflow,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778029156258,
+      "changelog": "Initial release of webhook-workflow-builder.\n\n- Automates webhook workflows for AI agents.\n- Receive, validate, and process incoming webhooks.\n- Transform payloads and route webhooks to different endpoints.\n- Supports automatic retries, security verification, and event filtering.\n- Logs full webhook delivery history and status.\n- Includes command interface for registering webhooks, setting routing rules, and transforming payloads.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9ba434adb29015ab74955bdc7e0e1a34746d5efabc973c08a22348564c96e72"
+}

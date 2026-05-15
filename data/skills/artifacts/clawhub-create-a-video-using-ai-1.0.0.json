@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-a-video-using-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_a_video_using_ai",
+  "skill": {
+    "id": 43225,
+    "skillKey": "clawhub-create-a-video-using-ai",
+    "name": "Create A Video Using Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-a-video-using-ai",
+    "url": "https://clawhub.ai/skills/create-a-video-using-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-a-video-using-ai-5b51bbc5dcd9214b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "create images or clips into AI-generated videos with this skill. Works with MP4, MOV, JPG, PNG files up to 500MB. marketers, content creators, small business..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776363230086,
+      "changelog": "- Initial release of the skill \"Create a Video Using AI\" (v1.0.0).\n- Upload images, video, or audio files (MP4, MOV, JPG, PNG, etc. up to 500MB) to generate AI-created 1080p MP4 videos in 1-2 minutes.\n- Automated authentication with free 7-day, 100-credit tokens; seamless session management.\n- Simple chat commands for uploading, exporting, credits, or editing with real-time status and error handling.\n- Cloud rendering pipeline with automatic timeline management, export options, and clear workflow guidance for marketers and creators.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e590411a1f54710bc18c453197bf8fbc054ba52648942410bf3d1ecd6703c1dc"
+}

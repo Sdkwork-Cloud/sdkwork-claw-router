@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-1@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_1",
+  "skill": {
+    "id": 66473,
+    "skillKey": "clawhub-test-1",
+    "name": "testskill-0410repo123"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-1",
+    "url": "https://clawhub.ai/skills/test-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-1-ed1e1dcf971990c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "QQ 群管理操作，通过 OneBot 11 API 实现群名修改、群公告、禁言、踢人、设置管理员、全员禁言等功能。当用户需要在 QQ 群中执行管理操作时使用，如修改群名、发公告、禁言某人、踢人、设置管理员等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinwuzhe",
+      "userId": "s17bebxc1t0w5frqp4rnmt85nx83hc1n",
+      "displayName": "yuangui",
+      "image": "https://avatars.githubusercontent.com/u/5061317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 76,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1777437827472,
+      "changelog": "- Added detailed documentation for OneBot QQ group management operations using the napcat OneBot 11 API.\n- Describes command-line usage for actions such as group name change, announcements, muting/unmuting members, kicking, setting admins, group-wide mute, card/nickname change, member titles, group portrait, message recall, and group info queries.\n- Includes usage examples for each major action and notes for correct parameter handling and permissions.\n- Clarifies required API names, special behaviors (such as parameter formats), and environment variable overrides.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:22a0cffb5b081b65ced80182cbf729190077c82f705cca7fc56d4416b6884a3e"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13741,
+  "uuid": "skill-clawhub-education",
+  "skillKey": "clawhub-education",
+  "name": "Education",
+  "summary": "Generate study materials. Use when creating study plans, quizzes, flashcards, tracking progress, or scheduling review sessions.",
+  "version": "3.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.education",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Generate study materials",
+        "Use when creating study plans, quizzes, flashcards, tracking progress, or scheduling review ses."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/education@3.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "education",
+      "url": "https://clawhub.ai/skills/education"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "education",
+    "url": "https://clawhub.ai/skills/education",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/education-68bf0109c6f8a87b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/education@3.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-education-3.4.1.json",
+      "version": "3.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e0d9bace6e2404eefee0b83e1010792b736a2e07330e26513e48feef43bed6a",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:14:00.283Z"
+}

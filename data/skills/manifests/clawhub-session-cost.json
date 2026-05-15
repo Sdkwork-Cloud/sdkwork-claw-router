@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10749,
+  "uuid": "skill-clawhub-session-cost",
+  "skillKey": "clawhub-session-cost",
+  "name": "Session Cost",
+  "summary": "Analyze OpenClaw session logs to report token usage, costs, and performance metrics grouped by agent and model. Use when the user asks about API spending, to...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_cost",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Haney",
+      "features": [
+        "Analyze OpenClaw session logs to report token usage, costs, and performance metrics grouped by.",
+        "Use when the user asks about API spending, to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-cost@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13684640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-cost",
+      "url": "https://clawhub.ai/skills/session-cost"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-cost",
+    "url": "https://clawhub.ai/skills/session-cost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-cost-7cac0af0552bd98d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-cost@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-cost-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78053ea79c7b1e198e97d00801fd1313f2ca24193e1956bdf7d595cdeb3d60bb",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T20:53:51.188Z"
+}

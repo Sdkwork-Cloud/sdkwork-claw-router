@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moat-evaluator@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moat_evaluator",
+  "skill": {
+    "id": 73200,
+    "skillKey": "clawhub-moat-evaluator",
+    "name": "护城河评估师"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moat-evaluator",
+    "url": "https://clawhub.ai/skills/moat-evaluator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moat-evaluator-18c3be8e220c6e40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "［何时使用］当用户需要评估企业竞争优势时；当用户问\"这家公司有护城河吗\"时；当进行价值投资分析时；当需要判断长期投资价值时"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lj22503",
+      "userId": "s17dhbyrvq4rmpz7c0cg1y9yrs83nsxz",
+      "displayName": "lj22503",
+      "image": "https://avatars.githubusercontent.com/u/170225356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773922281376,
+      "changelog": "按 v2.0 标准重构",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2243311911a90fafcdf1a62ceab9e0cfcceaed4c8c983cc84948c4a28f2c8f60"
+}

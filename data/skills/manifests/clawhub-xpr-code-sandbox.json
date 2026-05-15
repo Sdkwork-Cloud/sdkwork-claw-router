@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15350,
+  "uuid": "skill-clawhub-xpr-code-sandbox",
+  "skillKey": "clawhub-xpr-code-sandbox",
+  "name": "XPR Code Sandbox",
+  "summary": "Execute JavaScript code in a secure sandbox for data processing, computation, and quick expression evaluation without network or filesystem access.",
+  "version": "0.2.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xpr_code_sandbox",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "paulgnz",
+      "features": [
+        "Execute JavaScript code in a secure sandbox for data processing, computation, and quick express."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xpr-code-sandbox@0.2.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12118160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xpr-code-sandbox",
+      "url": "https://clawhub.ai/skills/xpr-code-sandbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xpr-code-sandbox",
+    "url": "https://clawhub.ai/skills/xpr-code-sandbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xpr-code-sandbox-205d07a2d32f4ae9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xpr-code-sandbox@0.2.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-xpr-code-sandbox-0.2.11.json",
+      "version": "0.2.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8b3436ee42acfdddcaf0bcff6984b28835cccf30c40786be33405c0a1ee9070",
+      "artifactSizeBytes": 2263
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T22:28:34.678Z"
+}

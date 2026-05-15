@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64269,
+  "uuid": "skill-clawhub-goal-achiever",
+  "skillKey": "clawhub-goal-achiever",
+  "name": "Goal Achiever: Self-Evolving Agent System",
+  "summary": "在目标平台（goal_web）发布高质量内容的完整技能流程设计。用于：读取任务json与goal_prompt，拆解任务、执行任务引擎、开发与自检、结果回写与评分回写。触发词：修改目标、赢得目标、触发目标实现、触发{网站名称}任务实现。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goal_achiever",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LDZ2010326",
+      "features": [
+        "在目标平台（goal_web）发布高质量内容的完整技能流程设计。用于：读取任务json与goal_prompt，拆解任务、执行任务引擎、开发与自检、结果回写与评分回写。触发词：修改目标、赢得."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goal-achiever@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204225370?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goal-achiever",
+      "url": "https://clawhub.ai/skills/goal-achiever"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goal-achiever",
+    "url": "https://clawhub.ai/skills/goal-achiever",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goal-achiever-eaeb395349225711.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goal-achiever@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-goal-achiever-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23cd84775d83a734b084d1327f13896ff30df2737b06e0c4be3f41be01ed3d9f",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T10:16:06.196Z"
+}

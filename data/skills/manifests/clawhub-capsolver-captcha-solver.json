@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20346,
+  "uuid": "skill-clawhub-capsolver-captcha-solver",
+  "skillKey": "clawhub-capsolver-captcha-solver",
+  "name": "CapSolver",
+  "summary": "Use capsolver to automatically resolve Geetest, reCAPTCHA v2, reCAPTCHA v3, MTCaptcha, DataDome, AWS WAF, Cloudflare Turnstile, and Cloudflare Challenge, etc.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.capsolver_captcha_solver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "capsolver",
+      "features": [
+        "Use capsolver to automatically resolve Geetest, reCAPTCHA v2, reCAPTCHA v3, MTCaptcha, DataDome."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/capsolver-captcha-solver@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111706386?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "capsolver-captcha-solver",
+      "url": "https://clawhub.ai/skills/capsolver-captcha-solver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "capsolver-captcha-solver",
+    "url": "https://clawhub.ai/skills/capsolver-captcha-solver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/capsolver-captcha-solver-0851ade888fcebe9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/capsolver-captcha-solver@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-capsolver-captcha-solver-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1f0df4917f3ced39daa0421b0ca4e1971a82f5ca9f50ecc08c05212d817eaed",
+      "artifactSizeBytes": 2164
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:19:50.858Z"
+}

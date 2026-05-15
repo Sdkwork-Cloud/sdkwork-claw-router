@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44843,
+  "uuid": "skill-clawhub-cline-kanban",
+  "skillKey": "clawhub-cline-kanban",
+  "name": "Cline Kanban",
+  "summary": "Delegate coding tasks to Cline CLI (open-source autonomous coding agent). Model-agnostic, supports all major providers. Use for one-shot tasks, CI/CD automat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cline_kanban",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andreas Varotsis",
+      "features": [
+        "Delegate coding tasks to Cline CLI (open-source autonomous coding agent)",
+        "Model-agnostic, supports all major providers",
+        "Use for one-shot tasks, CI/CD automat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cline-kanban@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3072143?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cline-kanban",
+      "url": "https://clawhub.ai/skills/cline-kanban"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cline-kanban",
+    "url": "https://clawhub.ai/skills/cline-kanban",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cline-kanban-60b6b05b3fe95cd2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cline-kanban@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cline-kanban-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23eab593db054eb11496c4f2713f9444378b180f03b426046433221b60391ea8",
+      "artifactSizeBytes": 2691
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T17:03:56.846Z"
+}

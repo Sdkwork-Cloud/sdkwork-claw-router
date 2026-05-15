@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/series-storytelling-skill@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.series_storytelling_skill",
+  "skill": {
+    "id": 41036,
+    "skillKey": "clawhub-series-storytelling-skill",
+    "name": "Series Storytelling Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "series-storytelling-skill",
+    "url": "https://clawhub.ai/skills/series-storytelling-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/series-storytelling-skill-31e6e7fedfb4c2d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill to turn a premise, video notes, a one-episode idea, or a long novel into a multi-line long-form series or season outline. Chinese trigger phra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hshgogogo",
+      "userId": "s17as6e5bs2gmp8xpmzm5r4t6h84hfz3",
+      "displayName": "贺苏桓",
+      "image": "https://avatars.githubusercontent.com/u/175308167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775798543741,
+      "changelog": "Remove the misleading storyboard-style trigger phrase.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:99db7fac2d74ca4759f033e23a6d4728390d1b29fb695d3f25ca1a22550cf608"
+}

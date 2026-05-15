@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/woocommerce@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.woocommerce",
+  "skill": {
+    "id": 8449,
+    "skillKey": "clawhub-woocommerce",
+    "name": "WooCommerce"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "woocommerce",
+    "url": "https://clawhub.ai/skills/woocommerce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/woocommerce-36546d452b5919ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WooCommerce REST API integration with managed OAuth. Access products, orders, customers, coupons, shipping, taxes, reports, and webhooks. Use this skill when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 5,
+      "downloads": 13949,
+      "installsAllTime": 19,
+      "installsCurrent": 17,
+      "stars": 18,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777592916959,
+      "changelog": "- Updated all endpoint base URLs from gateway.maton.ai and ctrl.maton.ai to api.maton.ai for consistency.\n- Added a new Security & Permissions section, specifying resource scope and user approval for write operations.\n- Clarified that when multiple connections exist, the Maton-Connection header must be used to choose the target WooCommerce account.\n- Removed the LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8078025b8f9886852e566d5f031b016cdbfb77ea174e2ab3806dce42355c76a7"
+}

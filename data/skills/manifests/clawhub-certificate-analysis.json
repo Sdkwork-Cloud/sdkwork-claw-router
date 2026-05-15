@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72750,
+  "uuid": "skill-clawhub-certificate-analysis",
+  "skillKey": "clawhub-certificate-analysis",
+  "name": "证书难度分析与 AI 替代风险评估",
+  "summary": "职业资格证书难度分析与 AI 替代风险评估技能。使用当用户询问各类证书（统计师、资产评估师、注册会计师、房地产估价师等）的考试难度对比、备考建议、或未来被 AI 替代的风险时。提供难度百分比对比、备考周期估算、职业安全分析的完整框架。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.certificate_analysis",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "方布块",
+      "features": [
+        "职业资格证书难度分析与 AI 替代风险评估技能。使用当用户询问各类证书（统计师、资产评估师、注册会计师、房地产估价师等）的考试难度对比、备考建议、或未来被 AI 替代的风险时。提供难度百分比."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/certificate-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100364063?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "certificate-analysis",
+      "url": "https://clawhub.ai/skills/certificate-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "certificate-analysis",
+    "url": "https://clawhub.ai/skills/certificate-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/certificate-analysis-9ff7e1e206f25415.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/certificate-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-certificate-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:186a94590b877495422b38bef3779450eb5ff64dbe49ce9770970ea0d0d5eaf9",
+      "artifactSizeBytes": 2542
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T07:37:11.609Z"
+}

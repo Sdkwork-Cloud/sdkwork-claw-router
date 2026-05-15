@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59724,
+  "uuid": "skill-clawhub-baidu-netdisk-skills",
+  "skillKey": "clawhub-baidu-netdisk-skills",
+  "name": "百度网盘",
+  "summary": "百度网盘文件管理。支持上传、下载、转存、分享、搜索、移动、复制、重命名、创建文件夹。当用户提及\"百度网盘\"\"百度云\"\"百度云盘\"\"bdpan\"\"网盘\"\"云盘\"\"baidu netdisk\"\"baidu pan\"\"baidu cloud\"并涉及文件操作时触发。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_netdisk_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enoyao",
+      "features": [
+        "百度网盘文件管理。支持上传、下载、转存、分享、搜索、移动、复制、重命名、创建文件夹。当用户提及\"百度网盘\"\"百度云\"\"百度云盘\"\"bdpan\"\"网盘\"\"云盘\"\"baidu netdisk\"\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-netdisk-skills@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17243165?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-netdisk-skills",
+      "url": "https://clawhub.ai/skills/baidu-netdisk-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-netdisk-skills",
+    "url": "https://clawhub.ai/skills/baidu-netdisk-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-netdisk-skills-fab5a2d656cf9808.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-netdisk-skills@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-netdisk-skills-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1bb50416454e4a93199af5f1868c50ee983db9d33838ca51b5f79d6006e4ae6",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T05:59:59.173Z"
+}

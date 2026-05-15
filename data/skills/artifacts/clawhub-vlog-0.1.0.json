@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vlog@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vlog",
+  "skill": {
+    "id": 71172,
+    "skillKey": "clawhub-vlog",
+    "name": "Vlog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vlog",
+    "url": "https://clawhub.ai/skills/vlog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vlog-3fdd2f35c6525379.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供手机剪辑、卡点音效及旅游大片拍摄技巧。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 283,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773937145158,
+      "changelog": "- 首发版本，提供旅行Vlog手机剪辑、音效及拍摄技巧指南。\n- 增加交通方式、出行偏好、签证政策等多项筛选功能。\n- 实时返回票务动态、天气预警、行程辅助等关键信息。\n- 示例请求和使用指引便于快速上手与查询核心功能。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c92eb88e809e281385cb5110a8ae3b15ffa13813bd73d16ad0c3662b905bfed9"
+}

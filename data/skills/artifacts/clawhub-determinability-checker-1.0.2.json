@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/determinability-checker@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.determinability_checker",
+  "skill": {
+    "id": 54361,
+    "skillKey": "clawhub-determinability-checker",
+    "name": "Determinability Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "determinability-checker",
+    "url": "https://clawhub.ai/skills/determinability-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/determinability-checker-4d37022d722e2b0c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Causal Sufficiency Determinability Checker — Meta-Skill Gatekeeper based on JEP Paper CheckDeterminability Algorithm"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "schchit",
+      "userId": "s1792pfv3byw2ah26z463sfgr184xckb",
+      "displayName": "JEP (Judgment Event Protocol)",
+      "image": "https://avatars.githubusercontent.com/u/10815391?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777209895963,
+      "changelog": "- Added initial changelog file (CHANGELOG.md) to the repository.\n- Updated English documentation in SKILL.md and description for broader accessibility.\n- No code changes; version incremented for documentation and metadata improvement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f00e0cf91fbf0f25932674de3e7048133b89406155e384e9b9c86f920d1ea1c"
+}

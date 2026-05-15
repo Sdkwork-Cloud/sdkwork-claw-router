@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcf-marketing-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcf_marketing_tool",
+  "skill": {
+    "id": 53488,
+    "skillKey": "clawhub-mcf-marketing-tool",
+    "name": "Marketing Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcf-marketing-tool",
+    "url": "https://clawhub.ai/skills/mcf-marketing-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcf-marketing-tool-319d9b6f5d93d0ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full marketing automation with prospects, campaigns, outreach tracking, solutions catalog, agent conversation logs, and cost tracking — built for AI agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cameron48",
+      "userId": "s17drfmnfgy51netkcattne1118411vc",
+      "displayName": "Cameron48",
+      "image": "https://avatars.githubusercontent.com/u/135250315?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775101558919,
+      "changelog": "- Initial release of the Marketing Automation skill.\n- Enables full marketing operations via API: manage prospects, campaigns, outreach, solutions, and costs.\n- Designed for AI agents with programmatic access — no manual dashboards required.\n- Enforces x402 authentication and cost per endpoint (USDC on Base).\n- Comprehensive endpoint coverage: create/research prospects, launch campaigns, track outreach and spend, manage solution catalog, and log conversations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31f8ce8b152e528c8d314dffad53a16f0e92ad0f80fb03cdbefc2d2a79b64806"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58302,
+  "uuid": "skill-clawhub-doubao-skill-v2",
+  "skillKey": "clawhub-doubao-skill-v2",
+  "name": "Doubao Image Video Skill V2",
+  "summary": "Doubao (Volcengine ARK) API Shell 脚本实现 - 文本生图、图片编辑和文本生视频,接口文档https://www.volcengine.com/docs/82379/1520757?lang=zh#y2hhTyHB",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubao_skill_v2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wenkangwei",
+      "features": [
+        "Doubao (Volcengine ARK) API Shell 脚本实现",
+        "文本生图、图片编辑和文本生视频,接口文档https://www.volcengine.com/docs/82379/1520757?lang=zh#y2hhTyHB"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doubao-skill-v2@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23649773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doubao-skill-v2",
+      "url": "https://clawhub.ai/skills/doubao-skill-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubao-skill-v2",
+    "url": "https://clawhub.ai/skills/doubao-skill-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubao-skill-v2-fe646b7d5c155c9f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doubao-skill-v2@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-doubao-skill-v2-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45336065a81cad0ca0c1d462e6c5420038ff014818a5d5f1bb616f26586ee430",
+      "artifactSizeBytes": 2169
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T15:45:56.278Z"
+}

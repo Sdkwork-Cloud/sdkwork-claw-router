@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27468,
+  "uuid": "skill-clawhub-wechat-auto-reply-ai",
+  "skillKey": "clawhub-wechat-auto-reply-ai",
+  "name": "WeChat Auto Reply (V26 Safe)",
+  "summary": "Monitors a detached WeChat Mac window via OCR and automatically replies using a customizable AI persona with safety locks to prevent interference.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_auto_reply_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jarryxin",
+      "features": [
+        "Monitors a detached WeChat Mac window via OCR and automatically replies using a customizable AI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-auto-reply-ai@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21277570?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-auto-reply-ai",
+      "url": "https://clawhub.ai/skills/wechat-auto-reply-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-auto-reply-ai",
+    "url": "https://clawhub.ai/skills/wechat-auto-reply-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-auto-reply-ai-7f5148d6c5dc94fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-auto-reply-ai@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-auto-reply-ai-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a548d481b9f8250122c57d0c24e1e96f71e3e7126336d49937b0996c1fea6119",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:57:50.760Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/threat-modeling@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.threat_modeling",
+  "skill": {
+    "id": 14713,
+    "skillKey": "clawhub-threat-modeling",
+    "name": "Threat Modeling Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "threat-modeling",
+    "url": "https://clawhub.ai/skills/threat-modeling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/threat-modeling-32168c8a1921c59c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provide structured threat modeling using STRIDE, attack trees, and risk scoring to identify, prioritize, and mitigate security threats in system designs and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brandonwise",
+      "userId": "publishers:brandonwise",
+      "displayName": "brandonwise",
+      "image": "https://avatars.githubusercontent.com/u/21148772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1066,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771207510711,
+      "changelog": "Initial release: STRIDE, PASTA, attack trees, risk prioritization, DFD analysis",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:29607b5017b2874abc7f7d0d08ef6e2d53c856e3dd91d3a3d3374e81cb12b17a"
+}

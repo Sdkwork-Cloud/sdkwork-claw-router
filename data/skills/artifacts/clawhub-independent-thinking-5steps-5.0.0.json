@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/independent-thinking-5steps@5.0.0",
+  "version": "5.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.independent_thinking_5steps",
+  "skill": {
+    "id": 72529,
+    "skillKey": "clawhub-independent-thinking-5steps",
+    "name": "独立思考五部曲"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "independent-thinking-5steps",
+    "url": "https://clawhub.ai/skills/independent-thinking-5steps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/independent-thinking-5steps-00cb38d00efb6810.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "独立思考五部曲。触发场景：**架构讨论、排错、复盘、决策、不确定知识点**。日常闲聊、确认、打招呼、简单问答 → 直接回答，不查向量、不 thinking、不走五步曲。与沟通五部曲并行通用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "markma84",
+      "userId": "s1781mqr2e06xdvhk7gbfzd2vs83kfra",
+      "displayName": "MarkMa84",
+      "image": "https://avatars.githubusercontent.com/u/19796416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "5.0.0",
+      "createdAt": 1776386337857,
+      "changelog": "v5.0: 升级为五部曲；厘清他验/自验定位；每步增加wiki检查点",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9555e586540218bb738e833ab973150c602003a79b960a04d4b5f2643e40901"
+}

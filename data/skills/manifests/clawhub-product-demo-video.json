@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23488,
+  "uuid": "skill-clawhub-product-demo-video",
+  "skillKey": "clawhub-product-demo-video",
+  "name": "Product Demo Video Creator",
+  "summary": "Create product demo videos with voiceover, text overlays, and real browser interactions. Fully automated, zero cost. Uses Puppeteer (headless Chrome), edge-t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_demo_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiazai77",
+      "features": [
+        "Create product demo videos with voiceover, text overlays, and real browser interactions",
+        "Fully automated, zero cost",
+        "Uses Puppeteer (headless Chrome), edge-t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-demo-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259570831?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-demo-video",
+      "url": "https://clawhub.ai/skills/product-demo-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-demo-video",
+    "url": "https://clawhub.ai/skills/product-demo-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-demo-video-9f175dd6a0577dce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-demo-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-demo-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8bafd6061daa48047265b857d3dac44d85f5b444eb818ccaaa49052e76df7cb",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T07:44:55.780Z"
+}

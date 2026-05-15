@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-topk-similiar-chemicals-rdkit@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_topk_similiar_chemicals_rdkit",
+  "skill": {
+    "id": 39985,
+    "skillKey": "clawhub-find-topk-similiar-chemicals-rdkit",
+    "name": "rdkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-topk-similiar-chemicals-rdkit",
+    "url": "https://clawhub.ai/skills/find-topk-similiar-chemicals-rdkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-topk-similiar-chemicals-rdkit-91e90523e404587f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cheminformatics toolkit for fine-grained molecular control. SMILES/SDF parsing, descriptors (MW, LogP, TPSA), fingerprints, substructure search, 2D/3D genera..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wu-uk",
+      "userId": "s170bfqwae6mtf922jhz299q7s83jb0h",
+      "displayName": "wu-uk",
+      "image": "https://avatars.githubusercontent.com/u/199610473?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776233471314,
+      "changelog": "Bulk publish from all-task-skills-dedup",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ed3d5ca9e62b7a0535edd7292cf14fc23fe1080219f96f033933c8abbb193a4"
+}

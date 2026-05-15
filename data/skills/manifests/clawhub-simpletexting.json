@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31278,
+  "uuid": "skill-clawhub-simpletexting",
+  "skillKey": "clawhub-simpletexting",
+  "name": "Simpletexting",
+  "summary": "SimpleTexting integration. Manage Contacts, Campaigns, Keywords. Use when the user wants to interact with SimpleTexting data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simpletexting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SimpleTexting integration",
+        "Manage Contacts, Campaigns, Keywords",
+        "Use when the user wants to interact with SimpleTexting data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/simpletexting@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "simpletexting",
+      "url": "https://clawhub.ai/skills/simpletexting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simpletexting",
+    "url": "https://clawhub.ai/skills/simpletexting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simpletexting-5aee8e86a60fc29f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/simpletexting@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-simpletexting-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91e247f600db655e6ef0ce9c012b889a457a1fea5999dc6aa9d5d6ae0d3c016a",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:42:28.045Z"
+}

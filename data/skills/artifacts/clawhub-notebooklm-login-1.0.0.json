@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notebooklm-login@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notebooklm_login",
+  "skill": {
+    "id": 38079,
+    "skillKey": "clawhub-notebooklm-login",
+    "name": "NotebookLM MCP Login"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notebooklm-login",
+    "url": "https://clawhub.ai/skills/notebooklm-login",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notebooklm-login-58b4b1ac78a3c6d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Login to Google NotebookLM via Chrome DevTools Protocol and save auth cookies for notebooklm-mcp. Use when user asks to login, authenticate, or re-authentica..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ou-rock",
+      "userId": "s175v3pbswgkc1sepmc1y96hsd83yrg1",
+      "displayName": "ou-rock",
+      "image": "https://avatars.githubusercontent.com/u/114635389?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774103309228,
+      "changelog": "- Initial release of notebooklm-login skill.\n- Enables login to Google NotebookLM using the Chrome DevTools Protocol.\n- Works around issues with the default `nlm login` command in non-standard environments.\n- Guides users through manual Chromium launch, Google authentication, and automated cookie extraction.\n- Stores authentication cookies and metadata for use by the notebooklm-mcp CLI/server.\n- Includes troubleshooting steps for common login and environment issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85d593fde5f0306c87ce17ff454e9abbca1642c55cba710059995e5fd3e7ce57"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56478,
+  "uuid": "skill-clawhub-kam-filebrowser-operator",
+  "skillKey": "clawhub-kam-filebrowser-operator",
+  "name": "File Browser Operator",
+  "summary": "Operate FileBrowser via REST API—login, list/upload/download resources, manage users. Scan for 采购单 files in scope, prompt user to download by number or all,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kam_filebrowser_operator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linhai",
+      "features": [
+        "Operate FileBrowser via REST API—login, list/upload/download resources, manage users",
+        "Scan for 采购单 files in scope, prompt user to download by number or all,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kam-filebrowser-operator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8407663?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kam-filebrowser-operator",
+      "url": "https://clawhub.ai/skills/kam-filebrowser-operator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kam-filebrowser-operator",
+    "url": "https://clawhub.ai/skills/kam-filebrowser-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kam-filebrowser-operator-1d1c46a7d04bd827.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kam-filebrowser-operator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kam-filebrowser-operator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35021bf383124319dd60c0523ec155ee08fdac321cd258c8c157d37e4b6b3098",
+      "artifactSizeBytes": 2687
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T05:08:15.535Z"
+}

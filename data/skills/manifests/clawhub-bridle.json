@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10483,
+  "uuid": "skill-clawhub-bridle",
+  "skillKey": "clawhub-bridle",
+  "name": "Bridle",
+  "summary": "Unified configuration manager for AI coding assistants. Manage profiles, install skills/agents/commands, and switch configurations across Claude Code, OpenCode, Goose, and Amp.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bridle",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bjesuiter",
+      "features": [
+        "Unified configuration manager for AI coding assistants",
+        "Manage profiles, install skills/agents/commands, and switch configurations across Claude Code,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bridle@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2365676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bridle",
+      "url": "https://clawhub.ai/skills/bridle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bridle",
+    "url": "https://clawhub.ai/skills/bridle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bridle-e988a59045252a6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bridle@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bridle-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d2c39d04ce2c886789a4577ccca397f897ac4098be8419b78a5aaed1cba0806",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-14T11:00:20.062Z"
+}

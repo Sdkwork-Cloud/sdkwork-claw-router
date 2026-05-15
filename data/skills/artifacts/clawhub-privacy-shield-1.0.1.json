@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/privacy-shield@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.privacy_shield",
+  "skill": {
+    "id": 31347,
+    "skillKey": "clawhub-privacy-shield",
+    "name": "Privacy Shield"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "privacy-shield",
+    "url": "https://clawhub.ai/skills/privacy-shield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/privacy-shield-08d80edfc758b389.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages sensitive data access by marking resources with privacy levels and enforcing share, export, and usage restrictions based on a centralized registry."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaobu2020",
+      "userId": "s1773p9g7kx8e7k8d5h3zbez2983g0v5",
+      "displayName": "xiaobu2020",
+      "image": "https://avatars.githubusercontent.com/u/71875436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773972528489,
+      "changelog": "SKILL.md rewritten in English; added audit --deny-only, glob support, image-manager integration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8bab86f40db4ce23a8b807b3b66e799e3af8e70b202a691258ad3aff034ef12e"
+}

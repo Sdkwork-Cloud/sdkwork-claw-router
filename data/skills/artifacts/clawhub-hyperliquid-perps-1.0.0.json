@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hyperliquid-perps@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hyperliquid_perps",
+  "skill": {
+    "id": 18262,
+    "skillKey": "clawhub-hyperliquid-perps",
+    "name": "Hyperliquid Perps"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hyperliquid-perps",
+    "url": "https://clawhub.ai/skills/hyperliquid-perps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hyperliquid-perps-08645318825fab6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Paper and live perpetual futures trading on Hyperliquid. Smart leverage (1x/3x/5x based on signal strength), OBV divergence, auto-stop-loss. Use for Hyperliq..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamierossouw",
+      "userId": "publishers:jamierossouw",
+      "displayName": "JamieRossouw",
+      "image": "https://avatars.githubusercontent.com/u/219507116?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 705,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771697935935,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:65215383c96e84ae3990a23c25f3060d8bc277dd21feddbc5c92043fabb955f0"
+}

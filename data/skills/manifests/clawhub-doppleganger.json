@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51451,
+  "uuid": "skill-clawhub-doppleganger",
+  "skillKey": "clawhub-doppleganger",
+  "name": "Doppleganger",
+  "summary": "Prevents duplicate subagent sessions running the same task. Saves tokens and reduces lag—no more \"multiple Spidermen\" doing the same work.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doppleganger",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austindixson",
+      "features": [
+        "Prevents duplicate subagent sessions running the same task",
+        "Saves tokens and reduces lag—no more \"multiple Spidermen\" doing the same work."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doppleganger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52183161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doppleganger",
+      "url": "https://clawhub.ai/skills/doppleganger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doppleganger",
+    "url": "https://clawhub.ai/skills/doppleganger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doppleganger-3da09a9f97f87a95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doppleganger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doppleganger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef8ff4e88b5c2d48d22105dc15a0e38b78b50601feb5b267ac8ff080bff11764",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T13:07:22.105Z"
+}

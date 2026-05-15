@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mar-intelligence-suite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mar_intelligence_suite",
+  "skill": {
+    "id": 44650,
+    "skillKey": "clawhub-mar-intelligence-suite",
+    "name": "Intelligence Suite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mar-intelligence-suite",
+    "url": "https://clawhub.ai/skills/mar-intelligence-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mar-intelligence-suite-959cc80e63fa455d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Makima's All-Seeing Intelligence Suite. Combines real-time AI news tracking and global news monitoring for a comprehensive strategic briefing, with LLM analy..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marjoriebroad",
+      "userId": "s17evr8hna69xbf4mv5z0nppgx84m26f",
+      "displayName": "MarjorieBroad",
+      "image": "https://avatars.githubusercontent.com/u/260425366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777255465730,
+      "changelog": "- Initial release of Makima's Intelligence Suite.\n- Combines real-time AI news tracking with global news monitoring for comprehensive strategic briefings.\n- Integrates LLM analysis using SkillBoss API Hub, automatically routing to the optimal model.\n- Monitors leading AI labs (OpenAI, DeepMind, Anthropic) and global news sources (Reuters, RTHK, SCMP).\n- Provides network access to selected news sites, processes data locally, and delivers structured briefings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa16b022f5a90617e729f9e627c93905b618d12887f28bc34325f95ce61e162c"
+}

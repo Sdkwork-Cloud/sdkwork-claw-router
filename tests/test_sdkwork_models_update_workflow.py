@@ -976,6 +976,15 @@ class SdkworkModelsUpdateWorkflowTest(unittest.TestCase):
         self.assertIn("sdkwork-models catalog check", verify_script)
         self.assertIn("models:check", verify_script)
 
+    def test_release_check_defaults_to_manifest_generated_at(self) -> None:
+        result = subprocess.run(
+            ["node", "tools/release-catalog.mjs", "--check"],
+            cwd=SDKWORK_MODELS,
+            text=True,
+            capture_output=True,
+        )
+        self.assertEqual(0, result.returncode, result.stdout + result.stderr)
+
 
 if __name__ == "__main__":
     unittest.main()

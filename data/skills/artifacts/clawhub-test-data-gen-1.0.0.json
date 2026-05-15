@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-data-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_data_gen",
+  "skill": {
+    "id": 37985,
+    "skillKey": "clawhub-test-data-gen",
+    "name": "Test Data Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-data-gen",
+    "url": "https://clawhub.ai/skills/test-data-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-data-gen-e320b528c631e9e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate customized test data in JSON, CSV, or SQL (MySQL/PostgreSQL) formats using built-in or custom templates with realistic fields like names, emails, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenghoo123-png",
+      "userId": "s17dv44xed17vb7n7v728mr4dd846y7m",
+      "displayName": "shenghoo123-png",
+      "image": "https://avatars.githubusercontent.com/u/265226019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775382256424,
+      "changelog": "Initial release of test-data-gen — 测试数据生成器:\n\n- 支持快速生成各类标准格式测试数据（JSON、CSV、MySQL/PostgreSQL SQL）。\n- 内置多类数据模板（如用户、订单、产品、评价、地址），字段丰富。\n- 提供基础/Pro/Team 三档功能：自定义模板、格式导出、批量生成/API等。\n- 可生成符合业务规则的通用字段（手机号、邮箱、金额、日期、枚举等）。\n- 明确指令和自定义模板用法，支持一键批量输出指定数量测试数据。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8674565cabc32be85207d7afa81e4e4c04e536628bba8f54fa99c80ab1bda2c4"
+}

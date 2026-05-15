@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10098,
+  "uuid": "skill-clawhub-bash",
+  "skillKey": "clawhub-bash",
+  "name": "Bash",
+  "summary": "Avoid common Bash mistakes — quoting traps, word splitting, and subshell gotchas.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bash",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Avoid common Bash mistakes — quoting traps, word splitting, and subshell gotchas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bash@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bash",
+      "url": "https://clawhub.ai/skills/bash"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bash",
+    "url": "https://clawhub.ai/skills/bash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bash-37d2b12d5d9abc2a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bash@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bash-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac56bf1472d0c88f4f1aa63292d94381029b619392f0780350eee6c231b42e3a",
+      "artifactSizeBytes": 1738
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T21:44:33.271Z"
+}

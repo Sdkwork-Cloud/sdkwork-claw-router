@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coo-commander@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coo_commander",
+  "skill": {
+    "id": 19389,
+    "skillKey": "clawhub-coo-commander",
+    "name": "COO Commander"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coo-commander",
+    "url": "https://clawhub.ai/skills/coo-commander",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coo-commander-4acb1e381f5a6bf1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Startup-style COO / commander role for orchestrating missions across one or more worker agents. Use when an agent must accept a business goal, break it into..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kiril-shturman",
+      "userId": "s177d64yqktwnj4mw7w7fzz17984n7cn",
+      "displayName": "Kiril-Shturman",
+      "image": "https://avatars.githubusercontent.com/u/69124328?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 406,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773203138358,
+      "changelog": "coo-commander 1.0.0 – Initial release\n\n- Introduces a COO/commander role for orchestrating business missions using worker agents.\n- Provides structured protocols for breaking goals into tasks, assigning work, monitoring progress, and managing blockers.\n- Emphasizes compact, operational communication using defined message headings.\n- Clearly separates commander responsibilities from heavy execution or research tasks.\n- Outlines best practices for maintaining momentum, clarity, and decisive leadership throughout the mission.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19b5a996dbe01044f43d907fc40940fc29c3f55efc38e14e100d342d0b877e59"
+}

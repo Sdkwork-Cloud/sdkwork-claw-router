@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pain2mvp@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pain2mvp",
+  "skill": {
+    "id": 35727,
+    "skillKey": "clawhub-pain2mvp",
+    "name": "Pain to MVP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pain2mvp",
+    "url": "https://clawhub.ai/skills/pain2mvp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pain2mvp-fb4bbbda365fbd86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover and structure product opportunities from public user discussions, then convert top opportunities into a lightweight PRD for a coding agent. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhao-weijie",
+      "userId": "s176ztbdc9mz7g7gmc5m3fz9b583vhj4",
+      "displayName": "zhao-weijie",
+      "image": "https://avatars.githubusercontent.com/u/15281332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774796757351,
+      "changelog": "pain2mvp v1.0.2 – Minor update\n\n- Removed Node.js-based TypeScript tool installation instructions from the install section.\n- Fixed db bootstrap issues - agent_memory table needs to exist.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51b92512e5351596396106ba87cca36fd9be56592693462ca3a5b1772aa89d01"
+}

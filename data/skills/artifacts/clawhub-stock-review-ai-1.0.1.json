@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-review-ai@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_review_ai",
+  "skill": {
+    "id": 21961,
+    "skillKey": "clawhub-stock-review-ai",
+    "name": "A-Share Review and Analyse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-review-ai",
+    "url": "https://clawhub.ai/skills/stock-review-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-review-ai-58500e105734d304.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A-share market automated review and analysis system, generating daily market insights with Gemini AI, supporting publishing to Hugo blog and WeChat Official..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "donvink",
+      "userId": "s17f910k54pxr4amnmy4qk7pd183j7st",
+      "displayName": "Leo Zhong",
+      "image": "https://avatars.githubusercontent.com/u/53471541?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 391,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774435154738,
+      "changelog": "update README",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8de0a333ab4733b32929593ca173eeb6053cdc374f3b96eeceaf02d8635e3db1"
+}

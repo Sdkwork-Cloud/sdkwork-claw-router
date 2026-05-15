@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/family-photo-curation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.family_photo_curation",
+  "skill": {
+    "id": 49931,
+    "skillKey": "clawhub-family-photo-curation",
+    "name": "Family Photo Curation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "family-photo-curation",
+    "url": "https://clawhub.ai/skills/family-photo-curation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/family-photo-curation-c5cc0139646f5d7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Organize, curate, and back up family photos from multiple sources using a stepwise workflow and a practical, non-prescriptive selection framework."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 59,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778281966819,
+      "changelog": "- Initial release of family-photo-curation skill focused on organizing and curating family photo collections.\n- Covers a full workflow from photo source inventory, deduplication, and selection to organizing and backup.\n- Outlines best practices including folder structure design, selection criteria, and the 3-2-1 backup rule.\n- Adds ongoing photo management routines and safety considerations.\n- Excludes video management and general digital declutter; focuses strictly on still photos.\n- Provides clear output format and practical real-life usage examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e6245bd8c3097cb596373f087f10363452a0c1ba3b9d6d13c7250bebd972974"
+}

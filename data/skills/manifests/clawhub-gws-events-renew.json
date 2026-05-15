@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19256,
+  "uuid": "skill-clawhub-gws-events-renew",
+  "skillKey": "clawhub-gws-events-renew",
+  "name": "Gws Events Renew",
+  "summary": "Google Workspace Events: Renew/reactivate Workspace Events subscriptions.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_events_renew",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google Workspace Events: Renew/reactivate Workspace Events subscriptions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-events-renew@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-events-renew",
+      "url": "https://clawhub.ai/skills/gws-events-renew"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-events-renew",
+    "url": "https://clawhub.ai/skills/gws-events-renew",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-events-renew-698e75f12117956f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-events-renew@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-events-renew-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:611d8bce9dfdc38793c443b22af37b090294ef5347c1f68e3db7d49f8d112147",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:33:50.688Z"
+}

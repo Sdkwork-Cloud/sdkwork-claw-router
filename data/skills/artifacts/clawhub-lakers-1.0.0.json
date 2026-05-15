@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lakers@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lakers",
+  "skill": {
+    "id": 46743,
+    "skillKey": "clawhub-lakers",
+    "name": "Lakers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lakers",
+    "url": "https://clawhub.ai/skills/lakers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lakers-be392b792809651c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The Los Angeles Lakers are an NBA franchise known for 17 championships, star players, Hollywood glamour, and a strong business model centered in LA."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777313095134,
+      "changelog": "- Initial release providing an overview of the Los Angeles Lakers franchise.\n- Includes historical timeline from founding to recent championships.\n- Outlines business model, revenue streams, and market advantages.\n- Offers key financial and fan data, such as team valuation and TV deals.\n- Features notable facts, including origins of the team name and jersey retirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2198fd421925de2974cfbef96d148642c8d8860d355fca1d01cabe0f2867148c"
+}

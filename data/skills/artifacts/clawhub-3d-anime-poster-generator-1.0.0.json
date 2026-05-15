@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/3d-anime-poster-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.3d_anime_poster_generator",
+  "skill": {
+    "id": 37277,
+    "skillKey": "clawhub-3d-anime-poster-generator",
+    "name": "3d Anime Poster Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "3d-anime-poster-generator",
+    "url": "https://clawhub.ai/skills/3d-anime-poster-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/3d-anime-poster-generator-c78de3f860aebf87.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create stunning 3D anime posters with volumetric lighting, cinematic depth, and dynamic compositions. Perfect for wallpapers, merch designs, print-on-demand..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "omactiengartelle",
+      "userId": "s1700se1ym0cqwmmannczhx57183gf78",
+      "displayName": "omactiengartelle",
+      "image": "https://avatars.githubusercontent.com/u/258436340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776138578216,
+      "changelog": "Initial release of 3d-anime-poster-generator:\n\n- Generate 3D anime posters with volumetric lighting and cinematic depth.\n- Supports dynamic compositions suitable for wallpapers, merch, and print-on-demand art.\n- Uses the Neta AI image generation API (requires token).\n- Offers customization: size options (portrait, landscape, square, tall) and style reference image.\n- Simple command-line usage for quick poster creation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5cf6a56bfb1bb07c37490f20b76324534531451ad107055bf4c580900fb3ff2"
+}

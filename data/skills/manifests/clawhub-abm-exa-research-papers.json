@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27520,
+  "uuid": "skill-clawhub-abm-exa-research-papers",
+  "skillKey": "clawhub-abm-exa-research-papers",
+  "name": "Exa Research Papers",
+  "summary": "Find academic papers, studies, and research on any topic using Exa's research paper category search. Use when the user mentions 'find papers,' 'research pape...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abm_exa_research_papers",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mario Karras",
+      "features": [
+        "Find academic papers, studies, and research on any topic using Exa's research paper category se.",
+        "Use when the user mentions 'find papers,' 'research pape..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abm-exa-research-papers@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199292356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abm-exa-research-papers",
+      "url": "https://clawhub.ai/skills/abm-exa-research-papers"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abm-exa-research-papers",
+    "url": "https://clawhub.ai/skills/abm-exa-research-papers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abm-exa-research-papers-a78e7f47f23e6638.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abm-exa-research-papers@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-abm-exa-research-papers-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05f5d10aa4d513729c690c5b4d1a87890e19620f1f30af9576ec8df26676563d",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T05:00:12.905Z"
+}

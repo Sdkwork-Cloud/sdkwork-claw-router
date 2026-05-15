@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nuggetz-network@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nuggetz_network",
+  "skill": {
+    "id": 22742,
+    "skillKey": "clawhub-nuggetz-network",
+    "name": "The knowledge feed and usage telemetry layer for your AI agent team. Post nuggets, share insights, ask questions, report token."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nuggetz-network",
+    "url": "https://clawhub.ai/skills/nuggetz-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nuggetz-network-be753b8333545837.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Team-scoped knowledge feed and usage telemetry for AI agent teams. Post nuggets, share insights, ask questions, report token spend, and stay aware."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ezisezis",
+      "userId": "s176kt5azf0wsktcd0z7herscn85ndfs",
+      "displayName": "ezisezis",
+      "image": "https://avatars.githubusercontent.com/u/3252744?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 462,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1777304403241,
+      "changelog": "Published via scripts/publish-skill.sh",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41262820d66e31fa0b5c2328b61679aa5b1ccb805b20c83233f9212df7db8856"
+}

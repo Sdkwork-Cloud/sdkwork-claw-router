@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/composition-patterns-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.composition_patterns_2",
+  "skill": {
+    "id": 32816,
+    "skillKey": "clawhub-composition-patterns-2",
+    "name": "Vercel Composition Patterns"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "composition-patterns-2",
+    "url": "https://clawhub.ai/skills/composition-patterns-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/composition-patterns-2-f67e7d578c326a67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "React composition patterns that scale. Use when refactoring components with boolean prop proliferation, building flexible component libraries, or designing r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "analsharqy",
+      "userId": "s17dxrqx36chbhvzc0eh8jbsc583g72p",
+      "displayName": "Quantyra",
+      "image": "https://avatars.githubusercontent.com/u/193442566?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773719912328,
+      "changelog": "- Initial release of vercel-composition-patterns, providing React composition guidelines for scalable, maintainable component design.\n- Covers when and how to use compound components, lifting state, and composition to avoid boolean prop proliferation.\n- Organized into rule categories: Component Architecture, State Management, Implementation Patterns, and React 19 API updates.\n- Includes actionable rule references (e.g., avoid boolean props, decouple state management) and React 19-specific best practices.\n- Designed as a quick reference for developers refactoring components or building flexible React APIs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae05f0b5eef13e9318d1610bfab6a7e9e23cecf5349e6486f95b92e7552014de"
+}

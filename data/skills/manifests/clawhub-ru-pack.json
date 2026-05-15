@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70368,
+  "uuid": "skill-clawhub-ru-pack",
+  "skillKey": "clawhub-ru-pack",
+  "name": "Ru Pack",
+  "summary": "Шесть скиллов для русскоязычных пользователей — договоры, ЖКХ, анализы, претензии, госдокументы и налоги ИП.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ru_pack",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aggel008",
+      "features": [
+        "Шесть скиллов для русскоязычных пользователей — договоры, ЖКХ, анализы, претензии, госдокументы."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ru-pack@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/161417766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ru-pack",
+      "url": "https://clawhub.ai/skills/ru-pack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ru-pack",
+    "url": "https://clawhub.ai/skills/ru-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ru-pack-5ca2480b94214aad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ru-pack@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ru-pack-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bdadc5a503882dd1610f17b0eddaaed76cea3403447ddcdbf8c5f1dd5d60307e",
+      "artifactSizeBytes": 2563
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T10:32:40.097Z"
+}

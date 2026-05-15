@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/boss-ai-agent@9.0.0",
+  "version": "9.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boss_ai_agent",
+  "skill": {
+    "id": 49970,
+    "skillKey": "clawhub-boss-ai-agent",
+    "name": "Boss AI Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boss-ai-agent",
+    "url": "https://clawhub.ai/skills/boss-ai-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boss-ai-agent-0e2486e6e4daa463.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Boss AI Agent — AI management advisor and team operations middleware. Use this skill whenever the user needs management advice, leadership guidance, or team..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tonypk",
+      "userId": "s1701k5ppwdthxcrjf4m9bmahs83h3cp",
+      "displayName": "tonypk",
+      "image": "https://avatars.githubusercontent.com/u/3667472?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 533,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 29
+    },
+    "latestVersion": {
+      "version": "9.0.0",
+      "createdAt": 1776696327216,
+      "changelog": "Boss AI Agent 9.0.0\n\n- Adds 6 new reference scenarios (now 14 total) and expands coverage to new consulting flows.\n- Increases MCP tool coverage: Team Operations Mode now supports 44 tools (up from 33).\n- Introduces an automated script (`update-learning.py`) for saving user learning patterns.\n- Adds evaluation workspace for skill benchmarking and regression tracking.\n- Updates all scenario, tool, and config documentation for clarity.\n- Multiple bugfixes and improved mode/cron detection logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:710989f8c20d14e93efb35131afe5cb7f1c2ef9b28d23ea0f88a6a20ebd950a9"
+}

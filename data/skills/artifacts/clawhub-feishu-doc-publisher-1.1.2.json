@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-doc-publisher@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_doc_publisher",
+  "skill": {
+    "id": 66271,
+    "skillKey": "clawhub-feishu-doc-publisher",
+    "name": "飞书 Markdown 文档发布器，完美支持支持图片、表格"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-doc-publisher",
+    "url": "https://clawhub.ai/skills/feishu-doc-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-doc-publisher-ca167ca7f20f3499.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 Markdown 文件发布为飞书（Feishu/Lark）在线文档。 支持完整的 Markdown 语法，包括标题、段落、表格、有序/无序列表、 待办事项、分隔线、加粗/斜体等富文本样式。 当用户需要将本地 Markdown 文件同步或发布到飞书文档时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "happyphper",
+      "userId": "s173y5qas6hds4arrrfg8gpkt9859yb8",
+      "displayName": "happyphper",
+      "image": "https://avatars.githubusercontent.com/u/17527766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1777730503978,
+      "changelog": "- Bumped version to 1.1.2.\n- No other changes detected in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5a09a6c8bb25c4a02ca49596008946d89d04456c0d49a679a8d88300eb36f4d"
+}

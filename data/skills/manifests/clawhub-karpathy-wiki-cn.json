@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61795,
+  "uuid": "skill-clawhub-karpathy-wiki-cn",
+  "skillKey": "clawhub-karpathy-wiki-cn",
+  "name": "Karpathy Wiki",
+  "summary": "基于 Karpathy LLM Wiki 模式，为科研工作建立和维护持久化知识库。 当用户提到建立知识库、LLM Wiki、Karpathy 方法、Obsidian 知识管理、论文管理、 研究笔记、摄入论文、维护 Wiki 时使用。",
+  "version": "1.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.karpathy_wiki_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Walle",
+      "features": [
+        "基于 Karpathy LLM Wiki 模式，为科研工作建立和维护持久化知识库。 当用户提到建立知识库、LLM Wiki、Karpathy 方法、Obsidian 知识管理、论文管理、 研."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/karpathy-wiki-cn@1.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9403745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "karpathy-wiki-cn",
+      "url": "https://clawhub.ai/skills/karpathy-wiki-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "karpathy-wiki-cn",
+    "url": "https://clawhub.ai/skills/karpathy-wiki-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/karpathy-wiki-cn-3f2a009b5a497dd6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/karpathy-wiki-cn@1.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-karpathy-wiki-cn-1.1.3.json",
+      "version": "1.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc200705dc72f79fddad5fbf926e3acea5e739731a89823a5ff0ea759a9e32e2",
+      "artifactSizeBytes": 2064
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T01:48:14.157Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65165,
+  "uuid": "skill-clawhub-oxford",
+  "skillKey": "clawhub-oxford",
+  "name": "Oxford",
+  "summary": "牛津大学介绍和申请指南",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oxford",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "牛津大学介绍和申请指南"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oxford@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oxford",
+      "url": "https://clawhub.ai/skills/oxford"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oxford",
+    "url": "https://clawhub.ai/skills/oxford",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oxford-69c04ffd98674f1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oxford@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-oxford-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6cd94d593bddc4f78850f0a3eb3b4532034094f9008c2f6713312dfb9fea2cb3",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T17:38:29.891Z"
+}

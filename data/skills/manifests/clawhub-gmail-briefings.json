@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20289,
+  "uuid": "skill-clawhub-gmail-briefings",
+  "skillKey": "clawhub-gmail-briefings",
+  "name": "Gmail Briefings",
+  "summary": "Provide daily Gmail briefings by listing unread/urgent emails, summarizing priorities, drafting replies, and managing inbox filters.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_briefings",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "deliverydriver",
+      "features": [
+        "Provide daily Gmail briefings by listing unread/urgent emails, summarizing priorities, drafting."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gmail-briefings@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26074034?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gmail-briefings",
+      "url": "https://clawhub.ai/skills/gmail-briefings"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-briefings",
+    "url": "https://clawhub.ai/skills/gmail-briefings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-briefings-fabfcabb8bea0d11.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gmail-briefings@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gmail-briefings-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6301a6b915c03ffd7295484cec525dff375439f948dd0ca897270709cc7332a5",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T03:18:04.683Z"
+}

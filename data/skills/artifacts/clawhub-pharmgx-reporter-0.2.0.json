@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pharmgx-reporter@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pharmgx_reporter",
+  "skill": {
+    "id": 18864,
+    "skillKey": "clawhub-pharmgx-reporter",
+    "name": "PharmGx Reporter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pharmgx-reporter",
+    "url": "https://clawhub.ai/skills/pharmgx-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pharmgx-reporter-6a4c78a868a2dfe9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pharmacogenomic report from DTC genetic data (23andMe/AncestryDNA)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "manuelcorpas",
+      "userId": "publishers:manuelcorpas",
+      "displayName": "manuelcorpas",
+      "image": "https://avatars.githubusercontent.com/u/383303?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 564,
+      "installsAllTime": 9,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1772258750511,
+      "changelog": "Add 24-test suite, migrate to ClawBio org, update URLs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ae6f01f6e957e9ed14f325afdd9d24ef033b13ac179ca819c22221e4967646cf"
+}

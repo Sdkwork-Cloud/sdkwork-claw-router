@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20611,
+  "uuid": "skill-clawhub-microsoft-power-bi",
+  "skillKey": "clawhub-microsoft-power-bi",
+  "name": "Microsoft Power Bi",
+  "summary": "Microsoft Power BI integration. Manage Reports, Workspaces, Apps, Users. Use when the user wants to interact with Microsoft Power BI data.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microsoft_power_bi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Microsoft Power BI integration",
+        "Manage Reports, Workspaces, Apps, Users",
+        "Use when the user wants to interact with Microsoft Power BI data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/microsoft-power-bi@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "microsoft-power-bi",
+      "url": "https://clawhub.ai/skills/microsoft-power-bi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microsoft-power-bi",
+    "url": "https://clawhub.ai/skills/microsoft-power-bi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microsoft-power-bi-d68d1cf78da659b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/microsoft-power-bi@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-microsoft-power-bi-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:026964fa64cbc03d7722df4855eb8cb67ad3bbdbd0f5d378cf8f1907bc02ea6f",
+      "artifactSizeBytes": 1915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:14:09.348Z"
+}

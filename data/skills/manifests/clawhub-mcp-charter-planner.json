@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42254,
+  "uuid": "skill-clawhub-mcp-charter-planner",
+  "skillKey": "clawhub-mcp-charter-planner",
+  "name": "mcp-charter-planner",
+  "summary": "Plan BVI sailing charters with real anchorages, weather-aware routing, provisioning lists, and local knowledge. Returns complete itineraries tailored by expe...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_charter_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HaveBlue997",
+      "features": [
+        "Plan BVI sailing charters with real anchorages, weather-aware routing, provisioning lists, and.",
+        "Returns complete itineraries tailored by expe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-charter-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23174278?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-charter-planner",
+      "url": "https://clawhub.ai/skills/mcp-charter-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-charter-planner",
+    "url": "https://clawhub.ai/skills/mcp-charter-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-charter-planner-284165cbdf91eeec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-charter-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-charter-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7598f59a3920f5cea9e7398efaa8511833f9acdbafeba1dfe925769a1d34fbd4",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T14:08:25.248Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65878,
+  "uuid": "skill-clawhub-chpublish",
+  "skillKey": "clawhub-chpublish",
+  "name": "ClawHub 发布助手",
+  "summary": "将本地技能发布到 ClawHub 技能市场。自动检查技能目录结构、生成版本号、 构建 changelog，执行发布命令并验证结果。 **触发场景**：用户说\"发布技能\"、\"发布到 ClawHub\"、\"上传技能\"等。",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chpublish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fslong",
+      "features": [
+        "将本地技能发布到 ClawHub 技能市场。自动检查技能目录结构、生成版本号、 构建 changelog，执行发布命令并验证结果。 **触发场景**：用户说\"发布技能\"、\"发布到 ClawH."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chpublish@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25819806?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chpublish",
+      "url": "https://clawhub.ai/skills/chpublish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chpublish",
+    "url": "https://clawhub.ai/skills/chpublish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chpublish-4f31a1da256422c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chpublish@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chpublish-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c197ecf2f4b233743feca021119d652e8ab6ade96c9162ee1db27e3d6a976974",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T05:22:42.763Z"
+}

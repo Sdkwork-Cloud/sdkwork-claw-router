@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ustack@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ustack",
+  "skill": {
+    "id": 46120,
+    "skillKey": "clawhub-ustack",
+    "name": "uStack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ustack",
+    "url": "https://clawhub.ai/skills/ustack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ustack-aef9fc43ad8a8544.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Universal agent workspace compatibility and update engine. Track upstream agent frameworks (like gstack), analyze every change, classify portability, and gen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aggie-security",
+      "userId": "s171n5as43mtvk45xmbb5ben8d84edna",
+      "displayName": "aggie-security",
+      "image": "https://avatars.githubusercontent.com/u/261865043?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775628169607,
+      "changelog": "Phase 1: upstream watcher, analyzer, publisher pipeline. Track gstack and other agent frameworks, analyze changes, classify portability, generate website-ready update pages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b383f7636851ba6a59a17486c5e6f653b217f7928d0da61606756c857e66488d"
+}

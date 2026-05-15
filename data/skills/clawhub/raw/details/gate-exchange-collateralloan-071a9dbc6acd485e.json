@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "gate-exchange-collateralloan",
+    "displayName": "Gate Exchange Multi-Collateral Loan",
+    "summary": "Gate multi-collateral loan management skill. Use when the user asks to borrow crypto against collateral or manage existing loans. Triggers on 'collateral loa...",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1774618397466,
+    "updatedAt": 1777624251301
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1775115158299,
+    "changelog": "- Added reference to a new authoritative MCP execution logic file: `references/mcp.md`.\n- Updated repayment operation from `cex_mcl_repay_multi_collateral_loan` to `cex_mcl_repay_mcl` throughout documentation for accuracy.\n- Adjusted short skill description for clarity and directness.\n- Clarified workflow: users and implementers must review and follow rules in `references/mcp.md` for all MCP-dependent logic (pre-checks, confirmation, post-verification), with SKILL.md now focused on routing and product rules.\n- Minor content edits and formatting enhancements for improved readability and intent classification.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "gate-exchange",
+    "userId": "s172g4d1dcv6ccs6desbb2xw1583qza9",
+    "displayName": "Gate",
+    "image": "https://avatars.githubusercontent.com/u/33109813?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777624251301
+  }
+}

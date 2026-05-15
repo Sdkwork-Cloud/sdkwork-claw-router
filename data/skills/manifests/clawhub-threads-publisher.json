@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26431,
+  "uuid": "skill-clawhub-threads-publisher",
+  "skillKey": "clawhub-threads-publisher",
+  "name": "Threads Publisher",
+  "summary": "Publish posts and threads to Threads (by Meta). Use when the user says 'post to Threads', 'create a thread', 'publish thread', 'write a Threads post', 'reply...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.threads_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "snoopyrain",
+      "features": [
+        "Publish posts and threads to Threads (by Meta)",
+        "Use when the user says 'post to Threads', 'create a thread', 'publish thread', 'write a Threads."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/threads-publisher@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9717776?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "threads-publisher",
+      "url": "https://clawhub.ai/skills/threads-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "threads-publisher",
+    "url": "https://clawhub.ai/skills/threads-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/threads-publisher-ccaecb11ffa76c43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/threads-publisher@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-threads-publisher-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9d51dcfc3bfbbefad72a185b3b93e23748e877dd69977f210cec8328e4fdb7f",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T14:39:08.064Z"
+}

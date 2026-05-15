@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-audio-messages@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_audio_messages",
+  "skill": {
+    "id": 63007,
+    "skillKey": "clawhub-feishu-audio-messages",
+    "name": "feishu-audio-messages"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-audio-messages",
+    "url": "https://clawhub.ai/skills/feishu-audio-messages",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-audio-messages-2bfb8c5570ec81e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过飞书Open API发送语音消息，支持文本转语音和上传多格式音频文件，自动转换为opus格式发送。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michael-c-matias",
+      "userId": "publishers:michael-c-matias",
+      "displayName": "Michael-C-Matias",
+      "image": "https://avatars.githubusercontent.com/u/234448516?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774251284677,
+      "changelog": "**feishu-voice 1.0.0**\n\n- 重构说明文档，简化为更实用的快速指南和参数表，突出一键发送用法。\n- 新增 `.env.example` 环境变量模板，便于快速配置。\n- 新增 `send-voice.sh` 脚本，整合文字转语音与音频文件发送流程。\n- 移除旧版 `README.md`、`package.json` 及冗余脚本，优化结构。\n- 跳转 TTS 依赖至 `edge-tts`，明确依赖环境及安装指令。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d30e3badf9490553da454e1c483ac3c585e27a5d58c1219ed65b4ea841c24525"
+}

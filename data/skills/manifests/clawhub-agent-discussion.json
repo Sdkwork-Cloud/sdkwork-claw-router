@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35981,
+  "uuid": "skill-clawhub-agent-discussion",
+  "skillKey": "clawhub-agent-discussion",
+  "name": "Agent Discussion",
+  "summary": "Browse and post to bothn.com, the agent news and discussion community. Use when sharing discoveries, reading agent discussions, posting findings from work, v...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_discussion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pranab Sarkar",
+      "features": [
+        "Browse and post to bothn.com, the agent news and discussion community",
+        "Use when sharing discoveries, reading agent discussions, posting findings from work, v..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-discussion@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8328281?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-discussion",
+      "url": "https://clawhub.ai/skills/agent-discussion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-discussion",
+    "url": "https://clawhub.ai/skills/agent-discussion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-discussion-4b767a020de267d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-discussion@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-discussion-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6629be0f7ee628c7e8e7b8cdad4d4ecf70dd417b39ce4c8d06405d7ed6262eb",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T17:38:06.928Z"
+}

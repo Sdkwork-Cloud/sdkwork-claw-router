@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nccuoj@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nccuoj",
+  "skill": {
+    "id": 28311,
+    "skillKey": "clawhub-nccuoj",
+    "name": "NCCU OJ"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nccuoj",
+    "url": "https://clawhub.ai/skills/nccuoj",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nccuoj-4e69c5cbd86caf2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Solve competitive programming problems on NCCUOJ (https://nccuoj.ebg.tw). Use when: solving OJ problems, reading problem statements, writing solutions in C/C..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andyjjrt",
+      "userId": "s17e39xr4a4sh6dbb7k4wk3mw184d84a",
+      "displayName": "andyjjrt",
+      "image": "https://avatars.githubusercontent.com/u/60731530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773115416143,
+      "changelog": "- Adds explicit workspace directory structure under `.nccuoj/`, organizing solutions and problem files for both public and contest problems.\n- Updates all example commands to use an absolute `$SCRIPTS` path and clarifies that scripts should resolve their directory relative to the SKILL.md file.\n- Instructs to always place solution code in the appropriate `.nccuoj/solution/public/` or `.nccuoj/solution/contest/` directory and references helper utilities for this.\n- No changes to command syntax, API details, or solution templates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d18a5c11276957cca93e137bc474d160b1bfbfe12b86c8e5ccfe2e4d8c924f73"
+}

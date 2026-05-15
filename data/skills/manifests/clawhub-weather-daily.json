@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52250,
+  "uuid": "skill-clawhub-weather-daily",
+  "skillKey": "clawhub-weather-daily",
+  "name": "Weather Daily",
+  "summary": "Daily weather briefing for any city — morning conditions, what to wear, umbrella forecast, evening preview, extreme weather alerts. No API key. Works worldwide.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiajiaoy",
+      "features": [
+        "Daily weather briefing for any city — morning conditions, what to wear, umbrella forecast, even.",
+        "No API key",
+        "Works worldwide."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-daily@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254620896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-daily",
+      "url": "https://clawhub.ai/skills/weather-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-daily",
+    "url": "https://clawhub.ai/skills/weather-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-daily-a13ccbe190bddfa0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-daily@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-daily-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6434db72c86950dfc3b4b3beb69f85c0219a1a87ba049651fb8a698eed23963b",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T10:46:45.367Z"
+}

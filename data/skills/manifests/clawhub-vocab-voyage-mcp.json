@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41226,
+  "uuid": "skill-clawhub-vocab-voyage-mcp",
+  "skillKey": "clawhub-vocab-voyage-mcp",
+  "name": "Vocab Voyage Mcp",
+  "summary": "Provides vocabulary definitions, quizzes, word lists, study plans, and context explanations for academic and test-prep exams including ISEE, SSAT, SAT, GRE,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vocab_voyage_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jaideepdhanoa",
+      "features": [
+        "Provides vocabulary definitions, quizzes, word lists, study plans, and context explanations for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vocab-voyage-mcp@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219172107?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vocab-voyage-mcp",
+      "url": "https://clawhub.ai/skills/vocab-voyage-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vocab-voyage-mcp",
+    "url": "https://clawhub.ai/skills/vocab-voyage-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vocab-voyage-mcp-2d0fdee254143e4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vocab-voyage-mcp@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vocab-voyage-mcp-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:314fe4fb2a509207ddbc0fb26ca81e6fba3e030b8e512df080c4166d53b0ce19",
+      "artifactSizeBytes": 2400
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T18:56:38.588Z"
+}

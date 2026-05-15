@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/postsyncer@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postsyncer",
+  "skill": {
+    "id": 29770,
+    "skillKey": "clawhub-postsyncer",
+    "name": "Social Media Assistant (via postsyncer.com)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postsyncer",
+    "url": "https://clawhub.ai/skills/postsyncer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postsyncer-30d22bd75c151728.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages social media through PostSyncer using REST and/or MCP. Use when scheduling, posting, or managing content across Instagram, TikTok, YouTube, X (Twitte..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abdulmejidshemsuawel",
+      "userId": "s17ct85tn3a3hn9v4gnjtnvf1d83jns3",
+      "displayName": "Abdul",
+      "image": "https://avatars.githubusercontent.com/u/195536684?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 296,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1774976167130,
+      "changelog": "postsyncer 2.1.1\n\n- Updated documentation to clarify that in post creation, the schedule_for field is optional and can be omitted to auto-schedule (previously marked as required).\n- No code or file changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:791b12e1f06a82b8710776bb0e9b777e83a074172f4416719d682af27e2edc2d"
+}

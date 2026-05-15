@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caption-generator-from-photo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caption_generator_from_photo",
+  "skill": {
+    "id": 55036,
+    "skillKey": "clawhub-caption-generator-from-photo",
+    "name": "Caption Generator From Photo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caption-generator-from-photo",
+    "url": "https://clawhub.ai/skills/caption-generator-from-photo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caption-generator-from-photo-c9df100fe7bf4722.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — generate a caption for this photo and overlay it as a short video — and ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776761076405,
+      "changelog": "Initial release of Caption Generator From Photo — Turn Photos Into Captioned Videos.\n\n- Instantly generate AI captions for uploaded photos, with overlays rendered as 1080p MP4 videos in 20–40 seconds.\n- Supports JPG, PNG, WEBP, and HEIC uploads up to 200MB; ideal for content creators needing fast captioned videos.\n- Handles authentication automatically with free credits — no account required.\n- Clear user guidance for uploading, generating captions, exporting, and checking credits or status.\n- Cloud GPU rendering pipeline with detailed error handling and status feedback.\n- Workflow tips and endpoint mapping included for smooth use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5e9f8813284993d5c15a4626214bc259083293e977203f3b86a7b2e32b8b411"
+}

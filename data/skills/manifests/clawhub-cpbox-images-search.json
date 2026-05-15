@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21393,
+  "uuid": "skill-clawhub-cpbox-images-search",
+  "skillKey": "clawhub-cpbox-images-search",
+  "name": "cpbox-images-search",
+  "summary": "USE FOR image search. Returns images with title, source URL, thumbnail. Supports SafeSearch filter. Up to 200 results.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cpbox_images_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "springmint",
+      "features": [
+        "USE FOR image search",
+        "Returns images with title, source URL, thumbnail",
+        "Supports SafeSearch filter",
+        "Up to 200 results."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cpbox-images-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166361573?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cpbox-images-search",
+      "url": "https://clawhub.ai/skills/cpbox-images-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cpbox-images-search",
+    "url": "https://clawhub.ai/skills/cpbox-images-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cpbox-images-search-21199d6e9c749ae4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cpbox-images-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cpbox-images-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ec3b553fa23ac854b18cfc7e51779eaf83d88dda4bf8a6583515b6a1382dad5",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T07:31:34.437Z"
+}

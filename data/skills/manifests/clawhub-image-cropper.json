@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24272,
+  "uuid": "skill-clawhub-image-cropper",
+  "skillKey": "clawhub-image-cropper",
+  "name": "Image Cropper",
+  "summary": "Crop objects from images using bounding box annotations in COCO, YOLO, VOC, or LabelMe formats with optional padding and batch processing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_cropper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mingo_318",
+      "features": [
+        "Crop objects from images using bounding box annotations in COCO, YOLO, VOC, or LabelMe formats."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-cropper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62329898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-cropper",
+      "url": "https://clawhub.ai/skills/image-cropper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-cropper",
+    "url": "https://clawhub.ai/skills/image-cropper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-cropper-6a43730c99300a8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-cropper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-cropper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47b79bae05048966a8b3fb1d63aeeaa020172dcec94bf9ad28c314fecb420f98",
+      "artifactSizeBytes": 2236
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T11:58:54.238Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64906,
+  "uuid": "skill-clawhub-dolores-ops",
+  "skillKey": "clawhub-dolores-ops",
+  "name": "Dolores 运维工具",
+  "summary": "OpenClaw 运维工具 - 负责 AI 助手自身的日常运维工作。 包括：健康检查、Memory 同步、目录清理、日志管理、定时任务管理。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dolores_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Milesnee",
+      "features": [
+        "OpenClaw 运维工具",
+        "负责 AI 助手自身的日常运维工作。 包括：健康检查、Memory 同步、目录清理、日志管理、定时任务管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dolores-ops@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16829681?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dolores-ops",
+      "url": "https://clawhub.ai/skills/dolores-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dolores-ops",
+    "url": "https://clawhub.ai/skills/dolores-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dolores-ops-aa3b8af4342aa840.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dolores-ops@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dolores-ops-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48520d9ff7069059d35c9c282a27088c0adfc6ef9b99a1808a8938fc0ee101f9",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T13:33:11.362Z"
+}

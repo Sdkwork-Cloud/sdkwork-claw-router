@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audio-note-taker@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_note_taker",
+  "skill": {
+    "id": 68427,
+    "skillKey": "clawhub-audio-note-taker",
+    "name": "Audio Note Taker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-note-taker",
+    "url": "https://clawhub.ai/skills/audio-note-taker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-note-taker-63eaac47bebf371a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "语音笔记助手：录音自动转文字并整理成结构化笔记，支持说话人识别，自动总结要点和行动项"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "utopiabenben",
+      "userId": "s17cnh4v6k2vf1742dfy2z5vj183qz0q",
+      "displayName": "utopiabenben",
+      "image": "https://avatars.githubusercontent.com/u/19267750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773561265548,
+      "changelog": "audio-note-taker 1.0.1\n\n- 重新优化和精简了功能说明与文档结构，突出会议、讲座、采访等场景应用\n- 增强了说话人识别、摘要提取和行动项整理等高级功能参数说明\n- 明确依赖需要 ffmpeg 和 openai>=1.0.0，完善环境变量说明\n- 优化输出 Markdown 格式示例，提升易用性和结果可读性\n- 更新描述和元数据，更准确反映实际功能及适用场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:757523fb35fb5b1b84df11fe2e127397daee6f249e00501cadc33ac8a13142b5"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/emr-analyer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emr_analyer",
+  "skill": {
+    "id": 60246,
+    "skillKey": "clawhub-emr-analyer",
+    "name": "EMR Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emr-analyer",
+    "url": "https://clawhub.ai/skills/emr-analyer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emr-analyer-0e498c2a89b3357d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Linux 系统上开源大数据应用分析诊断工具。支持服务状态检查、参数配置获取和调优、任务报错分析并提供优化建议。支持 YARN、Hive、HDFS、Spark、Impala、Trino、Tez、StarRocks、HBase、Kafka、ZooKeeper、Ranger、OpenLDAP、Hue、Flink。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qinyafei123",
+      "userId": "s175dhqxfrytp7s0ghemqqxzcd83q367",
+      "displayName": "qinyafei",
+      "image": "https://avatars.githubusercontent.com/u/69954892?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775707820119,
+      "changelog": "emr-analyer 1.0.0 初始版本上线，支持一站式大数据服务分析与诊断：\n\n- 提供 YARN、Hive、HDFS、Spark、Impala、Trino、Tez、StarRocks、HBase、Kafka、ZooKeeper、Ranger、OpenLDAP、Hue、Flink 等主流组件分析能力\n- 支持服务状态检查、参数配置获取与调优、日志报错分析及优化建议自动输出\n- 提供一键集群健康报告、单服务自诊断与常见故障修复建议\n- 脚本化操作流程，输出规范化 JSON 响应，便于快速集成和自动化运维",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3be698b2d3bacb0438ecf6f057a275c0a5b5012cb4d2045c81b96d375fe7be12"
+}

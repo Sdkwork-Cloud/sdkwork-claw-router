@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46861,
+  "uuid": "skill-clawhub-pipeworx-census-trade",
+  "skillKey": "clawhub-pipeworx-census-trade",
+  "name": "Pipeworx census-trade",
+  "summary": "Access detailed US international trade data including imports, exports, trade balance, and trends by commodity and country.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_census_trade",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Access detailed US international trade data including imports, exports, trade balance, and tren."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-census-trade@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-census-trade",
+      "url": "https://clawhub.ai/skills/pipeworx-census-trade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-census-trade",
+    "url": "https://clawhub.ai/skills/pipeworx-census-trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-census-trade-2052e53901ac55cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-census-trade@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-census-trade-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f34c6e8e8a7ffdceb0b703f76f960467b6d100803f5a8c30bf2e54c4a2a2b391",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T04:42:35.520Z"
+}

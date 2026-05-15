@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/socialconductor-skill@1.7.1",
+  "version": "1.7.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.socialconductor_skill",
+  "skill": {
+    "id": 50783,
+    "skillKey": "clawhub-socialconductor-skill",
+    "name": "Socialconductor Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "socialconductor-skill",
+    "url": "https://clawhub.ai/skills/socialconductor-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/socialconductor-skill-9186cd806f084aff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage your SocialConductor AI comment automation bots from any chat app. Control Facebook, Instagram, YouTube, and TikTok — check status, pause or resume AI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dcecchino",
+      "userId": "s1788g9j5pcsg8xkpp3nytkwr18404k4",
+      "displayName": "dcecchino",
+      "image": "https://avatars.githubusercontent.com/u/17807052?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 407,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.7.1",
+      "createdAt": 1777162827605,
+      "changelog": "- Updated version number to 1.7.1 in SKILL.md.\n- Removed the unused \"metadata.openclaw.requires\" and \"metadata.openclaw.primaryEnv\" fields from SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5bbfea220986108b4fd8bce0e9afa1d4aaa0dced7e53144509922376c0a58732"
+}

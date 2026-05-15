@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bobine-contract-caller@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bobine_contract_caller",
+  "skill": {
+    "id": 50065,
+    "skillKey": "clawhub-bobine-contract-caller",
+    "name": "Bobine Contract Caller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bobine-contract-caller",
+    "url": "https://clawhub.ai/skills/bobine-contract-caller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bobine-contract-caller-84ddb33331056988.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when you need to call deployed Bobine modules with typed params or perform a signed Ed25519 call through an auth module."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ccamel",
+      "userId": "s177wz3n9wkq2nnskf8f6erqvx84q9cw",
+      "displayName": "Chris",
+      "image": "https://avatars.githubusercontent.com/u/9574336?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 45,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778346379964,
+      "changelog": "Initial release of bobine-contract-caller.\n\n- Enables typed Bobine contract calls via `/api/execute`\n- Supports unsigned and authenticated Ed25519-signed calls to Bobine modules\n- Provides scripts for contract interaction (`call_bobine.mjs`) and Ed25519 key generation (`keygen.mjs`)\n- Handles complex param structures and signed call nonce/signature flow\n- Outputs results as normalized tagged JSON; logs diagnostics to stderr\n- Includes robust safety practices for handling sensitive key material",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f0c972f011e47ee5fc2480036a092d5edfe01b14e212ffc2a5f3372f36352751"
+}

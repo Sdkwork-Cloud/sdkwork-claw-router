@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28495,
+  "uuid": "skill-clawhub-clinical-data-cleaner-1",
+  "skillKey": "clawhub-clinical-data-cleaner-1",
+  "name": "Clinical Data Cleaner",
+  "summary": "Use when cleaning clinical trial data, preparing data for FDA/EMA submission, standardizing SDTM datasets, handling missing values in clinical studies, detec...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clinical_data_cleaner_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Use when cleaning clinical trial data, preparing data for FDA/EMA submission, standardizing SDT."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clinical-data-cleaner-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clinical-data-cleaner-1",
+      "url": "https://clawhub.ai/skills/clinical-data-cleaner-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clinical-data-cleaner-1",
+    "url": "https://clawhub.ai/skills/clinical-data-cleaner-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clinical-data-cleaner-1-e292bc4c7f233022.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clinical-data-cleaner-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clinical-data-cleaner-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09eb6a014ee64ad5c70c309204beb1f87140fe9caf8ca37c4413dff4f2974343",
+      "artifactSizeBytes": 2461
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T06:42:24.370Z"
+}

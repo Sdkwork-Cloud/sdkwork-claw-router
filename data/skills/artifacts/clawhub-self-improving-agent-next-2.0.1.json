@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improving-agent-next@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_agent_next",
+  "skill": {
+    "id": 69632,
+    "skillKey": "clawhub-self-improving-agent-next",
+    "name": "self-improving-agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-agent-next",
+    "url": "https://clawhub.ai/skills/self-improving-agent-next",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-agent-next-5506ba451eea80cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "记录错误、纠正、能力缺口与最佳实践，形成可复用的持续改进闭环。适用于：命令失败、用户纠正、外部 API/工具异常、发现更优做法、提出新能力需求，以及任务前复盘历史经验。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weiyunbyte",
+      "userId": "s172sph2v6yvvt745srymqf12985zsa1",
+      "displayName": "微云字节",
+      "image": "https://avatars.githubusercontent.com/u/69578375?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 570,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1772960399989,
+      "changelog": "Rewrite SKILL.md fully in Chinese",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:736ec57b4ae66de41236a1b52c0170441ee039d45fb8cd68207030798bb08e58"
+}

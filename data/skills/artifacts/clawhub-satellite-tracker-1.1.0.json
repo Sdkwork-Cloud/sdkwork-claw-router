@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/satellite-tracker@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.satellite_tracker",
+  "skill": {
+    "id": 49521,
+    "skillKey": "clawhub-satellite-tracker",
+    "name": "Satellite Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "satellite-tracker",
+    "url": "https://clawhub.ai/skills/satellite-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/satellite-tracker-37ce067f6461d365.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time satellite and spacecraft tracking powered by SGP4 orbit prediction. Supports Tiangong (CSS), ISS, Hubble, or any NORAD catalog ID. Features real-ti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fengyucn",
+      "userId": "s17fx20nzq4qsz087yw1yga7s183hsa0",
+      "displayName": "fengyucn",
+      "image": "https://avatars.githubusercontent.com/u/127462220?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 76,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778230313751,
+      "changelog": "v1.1.0: bilingual SKILL.md (Chinese + English)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c216ee01dc4b1b6ec396ef0ab5e220c74af5ee2b16acf900167b79f346350876"
+}

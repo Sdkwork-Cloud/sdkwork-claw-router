@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11702,
+  "uuid": "skill-clawhub-todoist-td",
+  "skillKey": "clawhub-todoist-td",
+  "name": "Todoist",
+  "summary": "Use the td (Todoist CLI) to read and manage Todoist todos/to-dos/tasks from the terminal. Trigger when the user asks about their todos/tasks/agenda/checklist (today/upcoming/overdue), wants to list inbox/tasks/projects/labels, add a task/t.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todoist_td",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mattjefferson",
+      "features": [
+        "Use the td (Todoist CLI) to read and manage Todoist todos/to-dos/tasks from the terminal",
+        "Trigger when the user asks about their todos/tasks/agenda/checklist (today/upcoming/overdue), w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/todoist-td@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1720223?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "todoist-td",
+      "url": "https://clawhub.ai/skills/todoist-td"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todoist-td",
+    "url": "https://clawhub.ai/skills/todoist-td",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todoist-td-32b9564d149fd85a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/todoist-td@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-todoist-td-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:814ac62c52ce8f6698f4de31d3ee720d58f433ba7e7f9a7d69fca2d9babebda8",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-24T01:32:06.270Z"
+}

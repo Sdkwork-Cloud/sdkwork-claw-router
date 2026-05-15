@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68862,
+  "uuid": "skill-clawhub-industry-stock-tracker",
+  "skillKey": "clawhub-industry-stock-tracker",
+  "name": "Stock/Industry Tracker",
+  "summary": "依托东方财富数据库，面向行业或个股，产出跟踪类报告（含日报/周报/月报、研报及结构化跟踪解读）。 满足以下任一条件即触发：（1）用户明确索要「报告」「研报」「跟踪分析」或定期跟踪类文稿；（2）用户点名的行业、板块、指数、个股（名称或代码），并期望系统化、可成文的近况跟踪或梳理。 典型说法如「写一份 XX 行业报告...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.industry_stock_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Financial AI Analyst",
+      "features": [
+        "依托东方财富数据库，面向行业或个股，产出跟踪类报告（含日报/周报/月报、研报及结构化跟踪解读）。 满足以下任一条件即触发：（1）用户明确索要「报告」「研报」「跟踪分析」或定期跟踪类文稿；（2."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/industry-stock-tracker@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41098207?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "industry-stock-tracker",
+      "url": "https://clawhub.ai/skills/industry-stock-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "industry-stock-tracker",
+    "url": "https://clawhub.ai/skills/industry-stock-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/industry-stock-tracker-2b87c4bd07612a7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/industry-stock-tracker@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-industry-stock-tracker-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc00eb173d3954d4e05927ac091170a834912e0b73a61821201c94da70f3cbc8",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T11:18:34.311Z"
+}

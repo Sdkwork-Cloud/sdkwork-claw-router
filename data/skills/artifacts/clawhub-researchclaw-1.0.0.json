@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/researchclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.researchclaw",
+  "skill": {
+    "id": 24521,
+    "skillKey": "clawhub-researchclaw",
+    "name": "ResearchClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "researchclaw",
+    "url": "https://clawhub.ai/skills/researchclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/researchclaw-555822b57a7280ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous research pipeline skill for Claude Code. Given a research topic, orchestrates 23 stages end-to-end: literature review, hypothesis generation, expe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dongsheng123132",
+      "userId": "s17084bpvdzamtn12vmsse6r0d83ttn8",
+      "displayName": "dongsheng123132",
+      "image": "https://avatars.githubusercontent.com/u/90887123?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773817653413,
+      "changelog": "Initial release: 23-stage autonomous research pipeline skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a81862c9537d14dfcf6ae1c16e0397137ac7b37a17144b9bbfd9db392fdf6d21"
+}

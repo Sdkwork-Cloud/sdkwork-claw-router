@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61648,
+  "uuid": "skill-clawhub-silas-wechat-article-search",
+  "skillKey": "clawhub-silas-wechat-article-search",
+  "name": "Silas WeChat Article Search",
+  "summary": "微信公众号文章搜索与解析。搜狗微信+新榜双源搜索，Python脚本解析全文（零Node依赖），Serper转载兜底。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.silas_wechat_article_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "silas",
+      "features": [
+        "微信公众号文章搜索与解析。搜狗微信+新榜双源搜索，Python脚本解析全文（零Node依赖），Serper转载兜底。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/silas-wechat-article-search@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169723524?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "silas-wechat-article-search",
+      "url": "https://clawhub.ai/skills/silas-wechat-article-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "silas-wechat-article-search",
+    "url": "https://clawhub.ai/skills/silas-wechat-article-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/silas-wechat-article-search-87064efd3a31b1b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/silas-wechat-article-search@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-silas-wechat-article-search-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2e2063cff5bb6ba082de10baae7a99db299f28f2206f1d601193f3f8453dd18",
+      "artifactSizeBytes": 2064
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T14:19:47.091Z"
+}

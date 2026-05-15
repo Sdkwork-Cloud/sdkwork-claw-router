@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-task-workbench@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_task_workbench",
+  "skill": {
+    "id": 62141,
+    "skillKey": "clawhub-feishu-task-workbench",
+    "name": "Feishu Task Workbench"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-task-workbench",
+    "url": "https://clawhub.ai/skills/feishu-task-workbench",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-task-workbench-d69b6a27d56a3d25.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在单个 Feishu/OpenClaw 对话窗口中运行多任务工作台，让用户在一个窗口里完成任务新建、切换、继续、总结、关闭与归档，并通过 `sessions_spawn`、`sessions_send`、`sessions_history` 把每个任务路由到独立会话。**当用户发送“任务列表 / 新建任务 / 切到"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shawnhan98",
+      "userId": "s177y5zct8sgsk9ge2rhkf88vs83e2q2",
+      "displayName": "shawnhan98",
+      "image": "https://avatars.githubusercontent.com/u/266221639?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774419858233,
+      "changelog": "Align with stable weixin-task-workbench protocol: enforce sessions gate, per-channel isolated registry, task-status command, task-header replies, and bundled deterministic registry script.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a5cf7e05a6298bcf583649b1a70d11909d6f8ec7c36f5c1a0d8b74236619dd1"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21077,
+  "uuid": "skill-clawhub-rule-creation",
+  "skillKey": "clawhub-rule-creation",
+  "name": "Rule Creation",
+  "summary": "Auto-triggers Context Engineering compliance and Lobster enforcement when proposing, creating, or formalizing rules, policies, processes, or behavioral const...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rule_creation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "levineam",
+      "features": [
+        "Auto-triggers Context Engineering compliance and Lobster enforcement when proposing, creating,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rule-creation@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1668898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rule-creation",
+      "url": "https://clawhub.ai/skills/rule-creation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rule-creation",
+    "url": "https://clawhub.ai/skills/rule-creation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rule-creation-95b45611557c4168.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rule-creation@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rule-creation-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:692a7757b64679d45211bbb084f83ca8db1b397d6242fda7a42142026cef129b",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T21:58:54.854Z"
+}

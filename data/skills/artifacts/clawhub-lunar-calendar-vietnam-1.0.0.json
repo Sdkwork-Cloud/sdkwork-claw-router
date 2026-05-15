@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lunar-calendar-vietnam@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lunar_calendar_vietnam",
+  "skill": {
+    "id": 58249,
+    "skillKey": "clawhub-lunar-calendar-vietnam",
+    "name": "Lunar Calendar Vietnam"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lunar-calendar-vietnam",
+    "url": "https://clawhub.ai/skills/lunar-calendar-vietnam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lunar-calendar-vietnam-24ff02e01241bac1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Công cụ tra cứu Âm lịch, chuẩn xác theo hệ lịch Việt Nam (giờ GMT+7). Năng lực cốt lõi: - Dương lịch chuyển sang Âm Lịch (có Can Chi, Con Giáp Việt Nam) - Âm..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tuanxt",
+      "userId": "publishers:tuanxt",
+      "displayName": "tuanxt",
+      "image": "https://avatars.githubusercontent.com/u/33397967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 336,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773117177720,
+      "changelog": "Lunar Calendar Vietnam v1.0.0\n\n- Initial release: provides accurate Vietnamese lunar calendar lookup and conversion.\n- Supports conversion between solar and lunar dates (including Can Chi and Vietnamese Zodiac).\n- Offers basic hoàng đạo (auspicious hours) and 24 solar terms (tiết khí).\n- Uses `amlich.js` for precise calculations (including leap years).\n- Results are returned as JSON with clear natural language explanations.\n- Activated by user queries such as \"ngày âm\", \"âm lịch\", \"giờ hoàng đạo\", or relevant Vietnamese historical date requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9318c071bfeac45a43e958daed5530c56602056e8c5e4400049d15c532e0e9a6"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41456,
+  "uuid": "skill-clawhub-healthcheck-audit",
+  "skillKey": "clawhub-healthcheck-audit",
+  "name": "Healthcheck",
+  "summary": "Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, r...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.healthcheck_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "utromaya-code",
+      "features": [
+        "Host security hardening and risk-tolerance configuration for OpenClaw deployments",
+        "Use when a user asks for security audits, firewall/SSH/update hardening, r..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/healthcheck-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254962629?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "healthcheck-audit",
+      "url": "https://clawhub.ai/skills/healthcheck-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "healthcheck-audit",
+    "url": "https://clawhub.ai/skills/healthcheck-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/healthcheck-audit-ac971c358281fc3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/healthcheck-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-healthcheck-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae1497f51f116b7e3e0d6928c15c231bbd32041b72f771c6d7a3133237de70c5",
+      "artifactSizeBytes": 2677
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T19:06:20.518Z"
+}

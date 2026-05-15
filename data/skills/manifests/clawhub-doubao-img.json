@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24851,
+  "uuid": "skill-clawhub-doubao-img",
+  "skillKey": "clawhub-doubao-img",
+  "name": "Doubao AI Image Generator",
+  "summary": "Generate high-quality images using Doubao (豆包) AI image generation. Use when the user asks for AI-generated images, artwork, illustrations, or any visual con...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubao_img",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "herry-zhu",
+      "features": [
+        "Generate high-quality images using Doubao (豆包) AI image generation",
+        "Use when the user asks for AI-generated images, artwork, illustrations, or any visual con..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doubao-img@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177619463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doubao-img",
+      "url": "https://clawhub.ai/skills/doubao-img"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubao-img",
+    "url": "https://clawhub.ai/skills/doubao-img",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubao-img-3a35a435e79aa0c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doubao-img@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doubao-img-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89b6e196b707de7280ab40583a1c0ff0f4e66f1697406b4f752dab9d4e209873",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T03:13:33.000Z"
+}

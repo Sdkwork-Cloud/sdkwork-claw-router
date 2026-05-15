@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56479,
+  "uuid": "skill-clawhub-bestseller-writer",
+  "skillKey": "clawhub-bestseller-writer",
+  "name": "Bestseller Writer",
+  "summary": "Turn a shower idea into a full best-seller manuscript in one command. Multi-agent pipeline — Planner → Character Designer → Chapter Writers (parallel) → Edit...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bestseller_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PhilipStark",
+      "features": [
+        "Turn a shower idea into a full best-seller manuscript in one command",
+        "Multi-agent pipeline — Planner → Character Designer → Chapter Writers (parallel) → Edit..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bestseller-writer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/186941063?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bestseller-writer",
+      "url": "https://clawhub.ai/skills/bestseller-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bestseller-writer",
+    "url": "https://clawhub.ai/skills/bestseller-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bestseller-writer-cb016ceb35d1ca4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bestseller-writer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bestseller-writer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cdccfae2a66ff8aa0070f3f2805818ead315c40fc25d87e26221016306559046",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T02:21:44.236Z"
+}

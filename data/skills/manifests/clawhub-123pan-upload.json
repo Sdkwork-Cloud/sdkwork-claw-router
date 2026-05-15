@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54210,
+  "uuid": "skill-clawhub-123pan-upload",
+  "skillKey": "clawhub-123pan-upload",
+  "name": "123pan upload and share",
+  "summary": "Upload files to 123pan (123云盘) and generate shareable links. Use when users need to upload files to 123pan and get links for sharing. Supports short share li...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.123pan_upload",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "solarise94",
+      "features": [
+        "Upload files to 123pan (123云盘) and generate shareable links",
+        "Use when users need to upload files to 123pan and get links for sharing",
+        "Supports short share li..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/123pan-upload@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44441876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "123pan-upload",
+      "url": "https://clawhub.ai/skills/123pan-upload"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "123pan-upload",
+    "url": "https://clawhub.ai/skills/123pan-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/123pan-upload-d06457f4676515ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/123pan-upload@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-123pan-upload-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:180a91e2263f93b2a5217f8a34c82010c7ef560d9530dbbe961fdce445155957",
+      "artifactSizeBytes": 2565
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T06:40:02.470Z"
+}

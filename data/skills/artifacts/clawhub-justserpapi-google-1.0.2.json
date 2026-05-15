@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justserpapi-google@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justserpapi_google",
+  "skill": {
+    "id": 26795,
+    "skillKey": "clawhub-justserpapi-google",
+    "name": "Google Search API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justserpapi-google",
+    "url": "https://clawhub.ai/skills/justserpapi-google",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justserpapi-google-eeabdfd73005f124.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Google web, news, maps, trends, shopping, scholar, finance, hotel, and media surfaces through Just Serp API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justserpapi",
+      "userId": "s176he03y3mv071gkzxfsc97sd849phg",
+      "displayName": "justserpapi",
+      "image": "https://avatars.githubusercontent.com/u/258152455?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775817800208,
+      "changelog": "- Skill renamed from \"Google SERP API\" to \"Google Search API\" in the documentation.\n- No changes to functionality, configuration, or usage instructions.\n- SKILL.md updated for revised skill name only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de97ddb468c5485a63cca2dc4d311edc91b28c9e0d9f612d51942fb6508be51e"
+}

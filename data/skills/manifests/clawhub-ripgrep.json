@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10048,
+  "uuid": "skill-clawhub-ripgrep",
+  "skillKey": "clawhub-ripgrep",
+  "name": "Ripgrep",
+  "summary": "Blazingly fast text search tool - recursively searches directories for regex patterns with respect to gitignore rules.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ripgrep",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Arnarsson",
+      "features": [
+        "Blazingly fast text search tool",
+        "recursively searches directories for regex patterns with respect to gitignore rules."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ripgrep@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96142966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ripgrep",
+      "url": "https://clawhub.ai/skills/ripgrep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ripgrep",
+    "url": "https://clawhub.ai/skills/ripgrep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ripgrep-33165223a0a3c347.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ripgrep@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ripgrep-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a1d3b466536ee68bb1f8bbda1c34d1113c2e2a11063897d101c0ccec003d176",
+      "artifactSizeBytes": 2156
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T13:06:58.910Z"
+}

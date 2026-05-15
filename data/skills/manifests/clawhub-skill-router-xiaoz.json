@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70509,
+  "uuid": "skill-clawhub-skill-router-xiaoz",
+  "skillKey": "clawhub-skill-router-xiaoz",
+  "name": "技能路由枢纽",
+  "summary": "技能路由枢纽 — 解决80+技能导致OpenClaw变笨的问题。按场景分桶，每次只激活Top3相关技能，防止路由成本过高。学习历史路由记录，失败的技能自动降权。ano原创架构。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_router_xiaoz",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freak30",
+      "features": [
+        "技能路由枢纽 — 解决80+技能导致OpenClaw变笨的问题。按场景分桶，每次只激活Top3相关技能，防止路由成本过高。学习历史路由记录，失败的技能自动降权。ano原创架构。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-router-xiaoz@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56594001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-router-xiaoz",
+      "url": "https://clawhub.ai/skills/skill-router-xiaoz"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-router-xiaoz",
+    "url": "https://clawhub.ai/skills/skill-router-xiaoz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-router-xiaoz-2462c2a401be0101.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-router-xiaoz@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-router-xiaoz-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:664577662d45669065c5245ed83a7584b21d09c7fc0dcb5c597559a58617760d",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T07:22:18.960Z"
+}

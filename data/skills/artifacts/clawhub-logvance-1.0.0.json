@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/logvance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logvance",
+  "skill": {
+    "id": 44417,
+    "skillKey": "clawhub-logvance",
+    "name": "Logvance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logvance",
+    "url": "https://clawhub.ai/skills/logvance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logvance-8f570caf95184f95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Converts UTC or ISO timestamps in logs to local time to simplify log analysis for developers and system administrators."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "albionaiinc-del",
+      "userId": "s17a02897swm2wgc0ge6g3j8ss83mx5y",
+      "displayName": "albionaiinc-del",
+      "image": "https://avatars.githubusercontent.com/u/269741383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776429589506,
+      "changelog": "Initial release of Logvance.\n\n- Converts UTC or ISO timestamps in logs to the system's local time.\n- Supports processing log files or piped log data.\n- Allows saving converted logs to an output file.\n- Designed for faster, more intuitive log analysis for developers and sysadmins.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8bb4c96f8c9f2071dc3b20c8432e4f27d211d044432f386b20d8108f145d6fa0"
+}

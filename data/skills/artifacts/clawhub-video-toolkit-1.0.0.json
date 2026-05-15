@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_toolkit",
+  "skill": {
+    "id": 39933,
+    "skillKey": "clawhub-video-toolkit",
+    "name": "Video Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-toolkit",
+    "url": "https://clawhub.ai/skills/video-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-toolkit-e6cbf86f18b4352c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited MP4 files ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"trim th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775947317216,
+      "changelog": "Video Toolkit 1.0.0 — Initial Release\n\n- Instantly edit and export your videos online (MP4, MOV, AVI, WebM, up to 500MB).\n- Simple workflow: upload video, describe edits (e.g. trim silences, add captions), and receive a 1080p MP4 download.\n- No video editing software or manual configuration required — all processing is cloud-powered.\n- Tracks session state, credits, and progress; supports status updates and troubleshooting.\n- Automatic handling of authentication, session creation, and error cases for a smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97d04efe44155a22bd61ab4f0c40b148a339e88c4c417672cb8505294a2bc286"
+}

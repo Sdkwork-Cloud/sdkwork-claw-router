@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45338,
+  "uuid": "skill-clawhub-1panel-appstore",
+  "skillKey": "clawhub-1panel-appstore",
+  "name": "1Panel Appstore skill",
+  "summary": "Create 1Panel appstore/local-app installation packages for Dockerized applications from official repositories, Docker images, docker-compose.yml files, or a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1panel_appstore",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1Panel",
+      "features": [
+        "Create 1Panel appstore/local-app installation packages for Dockerized applications from officia."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/1panel-appstore@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/1panel-appstore/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "1panel-appstore",
+      "url": "https://clawhub.ai/skills/1panel-appstore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1panel-appstore",
+    "url": "https://clawhub.ai/skills/1panel-appstore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1panel-appstore-25d3998ff70ff007.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/1panel-appstore@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-1panel-appstore-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14009cc30651103a8c593c5a61a22c8ffbcb06b343d71915f9884e47641f87ef",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T09:39:17.797Z"
+}

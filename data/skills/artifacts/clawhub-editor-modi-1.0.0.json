@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-modi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_modi",
+  "skill": {
+    "id": 55714,
+    "skillKey": "clawhub-editor-modi",
+    "name": "Editor Modi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-modi",
+    "url": "https://clawhub.ai/skills/editor-modi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-modi-632780715476044b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — cut out silences, add transitions, and export a clean final video — and ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776875251222,
+      "changelog": "Editor Modi 1.0.0 — Initial Release\n\n- Instantly edit and export polished videos without using professional software: just upload, describe edits, and receive your video back in 1–2 minutes.\n- Supports uploading MP4, MOV, AVI, and WebM files up to 500MB.\n- Automated backend using cloud GPU nodes for fast rendering and export (1080p max).\n- Handles common edits like cutting silences, adding transitions, and exporting finalized clips.\n- Integrates session management, credit tracking, and error handling for a smooth experience.\n- Ideal for content creators seeking quick, high-quality video edits without manual workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6e2b7fa66206cc300c2d3ebadb67cd71dcd54126f65d554e9aa0bef1e192b19"
+}

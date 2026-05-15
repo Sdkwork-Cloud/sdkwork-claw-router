@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/akkualle-youtube-transcript@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.akkualle_youtube_transcript",
+  "skill": {
+    "id": 55291,
+    "skillKey": "clawhub-akkualle-youtube-transcript",
+    "name": "YouTube Transcript Extractor by AkkuAlle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "akkualle-youtube-transcript",
+    "url": "https://clawhub.ai/skills/akkualle-youtube-transcript",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/akkualle-youtube-transcript-29f01b420859f78b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extrahiert Transkripte von YouTube-Videos für Content-Erstellung. Nutze für Video-Analysen, Content-Ideen und Blog-Posts aus YouTube-Videos."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "akkualle",
+      "userId": "s177jjpb6bm7wbz5sm80pd8n1h83m63a",
+      "displayName": "Akkualle",
+      "image": "https://avatars.githubusercontent.com/u/257129674?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774610137526,
+      "changelog": "Initial release - Extract transcripts from YouTube videos for SEO content",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7dcd1bc8be8ad8665f8de66dcf33f6d0fa0a60048bcdb88eaa1f1146ab5f2ea"
+}

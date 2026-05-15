@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/backend-admin-dev-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.backend_admin_dev_skill",
+  "skill": {
+    "id": 36767,
+    "skillKey": "clawhub-backend-admin-dev-skill",
+    "name": "backend admin develop skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "backend-admin-dev-skill",
+    "url": "https://clawhub.ai/skills/backend-admin-dev-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/backend-admin-dev-skill-ab0259a6c1a4d1af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Develop and manage backend admin features including RBAC, multi-projects, image upload with S3 integration, dynamic content, system settings, and secure toke..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "258468639",
+      "userId": "s17f65s7ecz316zm1fe8r2bxsn8403b6",
+      "displayName": "zengkang",
+      "image": "https://avatars.githubusercontent.com/u/18650664?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775045397040,
+      "changelog": "Initial release of backend-admin-dev-skill.\n\n- Introduces Project Portal, a project management backend system based on Vue 3 + Flask.\n- Implements RBAC permissions, multi-project management, user/role/menu management.\n- Integrates image upload management, rich text editing, and S3-compatible storage (with independent Flask S3 server).\n- Provides dynamic content (news) and category management, system settings, and logs.\n- Offers Docker deployment examples and API grouping; security and naming best practices documented.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:609fc1085637fbd800d4a7a084280ac34e0fb0dafcf53c620cc501ff92fbcee1"
+}

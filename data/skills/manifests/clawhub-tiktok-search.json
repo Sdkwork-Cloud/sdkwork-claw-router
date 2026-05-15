@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32268,
+  "uuid": "skill-clawhub-tiktok-search",
+  "skillKey": "clawhub-tiktok-search",
+  "name": "TikTok Search",
+  "summary": "Professional TikTok keyword search and data extraction tool. Automates browsing and scraping via Chrome extension.",
+  "version": "1.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gecho AI",
+      "features": [
+        "Professional TikTok keyword search and data extraction tool",
+        "Automates browsing and scraping via Chrome extension."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiktok-search@1.1.7",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/tiktok-search/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiktok-search",
+      "url": "https://clawhub.ai/skills/tiktok-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-search",
+    "url": "https://clawhub.ai/skills/tiktok-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-search-98f0d19a55dcc1a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiktok-search@1.1.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiktok-search-1.1.7.json",
+      "version": "1.1.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3ab984193c70f1a61b0753337697190c21e184b4e737d7da3b4178c0745ba72",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T10:29:34.116Z"
+}

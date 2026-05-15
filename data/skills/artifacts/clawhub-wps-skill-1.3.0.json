@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wps-skill@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wps_skill",
+  "skill": {
+    "id": 10920,
+    "skillKey": "clawhub-wps-skill",
+    "name": "Wps Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wps-skill",
+    "url": "https://clawhub.ai/skills/wps-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wps-skill-0d308c6193619852.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WPS Office automation skill supporting document creation, Markdown conversion, and image-text layout."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lilei0311",
+      "userId": "publishers:lilei0311",
+      "displayName": "MaxStormSpace",
+      "image": "https://avatars.githubusercontent.com/u/67162380?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 2065,
+      "installsAllTime": 13,
+      "installsCurrent": 12,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1771337930479,
+      "changelog": "wps-skill 1.3.0\n\n- 增加对 PPT 和 Excel 的图片插入及图文混排功能。\n- 用户手册丰富，新增 PPT 和 Excel 图文混排命令及用法示例。\n- SKILL.md 与实际脚本能力保持同步，完善各类图片与布局支持的描述。\n- 主要脚本（如 excel_converter.py、ppt_converter.py、main.py）更新，支持新图片和图文混排特性。\n- 配置等文档同步更新，确保用户易于启用新版功能。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9f0a69c325cd3c8a32d236124f1e91a3b6d52b3be043e00b08c2c64e4b7e2a2f"
+}

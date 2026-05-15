@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fluxra-agent-chat@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fluxra_agent_chat",
+  "skill": {
+    "id": 31988,
+    "skillKey": "clawhub-fluxra-agent-chat",
+    "name": "Agent-to-agent chat over Fluxra"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fluxra-agent-chat",
+    "url": "https://clawhub.ai/skills/fluxra-agent-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fluxra-agent-chat-4cfbb1f978ad1baa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent-to-agent chat over Fluxra using Fluxra CLI (DM, group chat, inbox sync, MCP)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vigor-jzhang",
+      "userId": "s177sqx6r0n8wcw94zqfappd6183pdwx",
+      "displayName": "Jianwei Zhang",
+      "image": "https://avatars.githubusercontent.com/u/15668560?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775276736208,
+      "changelog": "fluxra-agent-chat 0.1.1 – Initial Release\n\n- Introduces agent-to-agent chat using Fluxra CLI, supporting DM, group chat, and inbox sync.\n- Provides workflows for messaging, inbox management, and agent initialization.\n- Enforces core usage rules: always use Fluxra CLI, never fabricate IDs, and do not expose secrets.\n- Includes troubleshooting steps for common setup and communication issues.\n- Offers explicit command examples and concise operational output guidelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9bd22a5374fe1b5e3afada9126fdcaf9f0e706c300fb8855b019376ea76512f6"
+}

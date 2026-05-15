@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41085,
+  "uuid": "skill-clawhub-alibabacloud-cms-alert-rule-create",
+  "skillKey": "clawhub-alibabacloud-cms-alert-rule-create",
+  "name": "Alibabacloud Cms Alert Rule Create",
+  "summary": "Create and query Alibaba Cloud alert rules via CLI. Supports CMS 1.0 cloud resource monitoring (ECS, RDS, SLB, etc.) and CMS 2.0 advanced monitoring (Prometh...",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_cms_alert_rule_create",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Create and query Alibaba Cloud alert rules via CLI",
+        "Supports CMS 1.0 cloud resource monitoring (ECS, RDS, SLB, etc.) and CMS 2.0 advanced monitorin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-cms-alert-rule-create@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-cms-alert-rule-create",
+      "url": "https://clawhub.ai/skills/alibabacloud-cms-alert-rule-create"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-cms-alert-rule-create",
+    "url": "https://clawhub.ai/skills/alibabacloud-cms-alert-rule-create",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-cms-alert-rule-create-51ab9c1d3951c6d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-cms-alert-rule-create@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-cms-alert-rule-create-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e55e17fdd9d026ade198d444910dedf1c9f47b8011efae8ea14685d0f201f218",
+      "artifactSizeBytes": 2653
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T03:16:15.570Z"
+}

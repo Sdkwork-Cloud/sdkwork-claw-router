@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/promote-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.promote_skill",
+  "skill": {
+    "id": 49157,
+    "skillKey": "clawhub-promote-skill",
+    "name": "Promote Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "promote-skill",
+    "url": "https://clawhub.ai/skills/promote-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/promote-skill-eded96d44be7187b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when publishing a SKILL.md-style agent skill across uGig, sh1pt, GitHub/gists, and follow-on skill marketplaces such as ClawHub, Goose, LobeHub, Kilo, Sk..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ralyodio",
+      "userId": "s17ctf08n3zfy38ztyptkwqr2h85vm1w",
+      "displayName": "Anthony Ettinger",
+      "image": "https://avatars.githubusercontent.com/u/27381?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 86,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777539322642,
+      "changelog": "Initial public release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e07a24bc890951f1e6416bfc31b2e6f5f7f2758994b46f37c7c85f8a448189ce"
+}

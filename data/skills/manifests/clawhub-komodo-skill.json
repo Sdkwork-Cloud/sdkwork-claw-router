@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27105,
+  "uuid": "skill-clawhub-komodo-skill",
+  "skillKey": "clawhub-komodo-skill",
+  "name": "Komodo",
+  "summary": "Interact with Komodo Core API using this project. Use when the user wants to list, manage, deploy, or execute operations against Komodo resources (servers, s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.komodo_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlwaysBeDream",
+      "features": [
+        "Interact with Komodo Core API using this project",
+        "Use when the user wants to list, manage, deploy, or execute operations against Komodo resources."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/komodo-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25810659?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "komodo-skill",
+      "url": "https://clawhub.ai/skills/komodo-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "komodo-skill",
+    "url": "https://clawhub.ai/skills/komodo-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/komodo-skill-a046a63a0e840980.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/komodo-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-komodo-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f08dc1daac70412b77836e6a8f082494b7b3ae91ec941c9d39c316f6b3778bbf",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T12:10:55.541Z"
+}

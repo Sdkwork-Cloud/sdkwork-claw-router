@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63626,
+  "uuid": "skill-clawhub-crypto-arbitrage-monitor",
+  "skillKey": "clawhub-crypto-arbitrage-monitor",
+  "name": "📊 Crypto Arbitrage Monitor - 套利信号监控",
+  "summary": "加密货币套利信号监控。当用户要求\"套利监控\"、\"资金费率\"、\"arbitrage\"、\"套利机会\"时触发。自动搜索 Gate.io/Binance 等交易所的 ETH 永续合约资金费率，评估期现套利和跨所套利机会，给出明确的买入/观望/风险信号。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_arbitrage_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pcy891",
+      "features": [
+        "加密货币套利信号监控。当用户要求\"套利监控\"、\"资金费率\"、\"arbitrage\"、\"套利机会\"时触发。自动搜索 Gate.io/Binance 等交易所的 ETH 永续合约资金费率，评估期."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-arbitrage-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100127401?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-arbitrage-monitor",
+      "url": "https://clawhub.ai/skills/crypto-arbitrage-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-arbitrage-monitor",
+    "url": "https://clawhub.ai/skills/crypto-arbitrage-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-arbitrage-monitor-494aef4c3572c179.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-arbitrage-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-arbitrage-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44cbd062c7829814a52a8512d82086fa9ec8459363b80504d5347a900105708d",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T03:45:54.994Z"
+}

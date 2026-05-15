@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34811,
+  "uuid": "skill-clawhub-chocolatey",
+  "skillKey": "clawhub-chocolatey",
+  "name": "Chocolatey",
+  "summary": "Chocolatey integration. Manage data, records, and automate workflows. Use when the user wants to interact with Chocolatey data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chocolatey",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Chocolatey integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Chocolatey data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chocolatey@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chocolatey",
+      "url": "https://clawhub.ai/skills/chocolatey"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chocolatey",
+    "url": "https://clawhub.ai/skills/chocolatey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chocolatey-97a95ca70b5e97bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chocolatey@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-chocolatey-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d5a692da632e6d9c8f696ab7bdaf1446543dfea1a3c4db371c3d3b9e606c7b5",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:18:12.324Z"
+}

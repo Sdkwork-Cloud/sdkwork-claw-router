@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ltv-loyalty-winback@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ltv_loyalty_winback",
+  "skill": {
+    "id": 27756,
+    "skillKey": "clawhub-ltv-loyalty-winback",
+    "name": "Ltv Loyalty Winback"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ltv-loyalty-winback",
+    "url": "https://clawhub.ai/skills/ltv-loyalty-winback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ltv-loyalty-winback-aa40289402448ae5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Predict repeat-customer churn from purchase and tier data, then trigger branch-specific win-back workflows with VIP care or time-limited offers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rijoyai",
+      "userId": "s17968d4vetrx5cj2yx3105heh83hrb4",
+      "displayName": "RIJOY-AI",
+      "image": "https://avatars.githubusercontent.com/u/219251023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773481107728,
+      "changelog": "- Initial release of ltv-loyalty-winback for predicting repeat-customer churn risk and delivering targeted win-back workflows.\n- Segments customers by value: VIPs receive white-glove CS care, standard buyers get incentive offers.\n- Supports scenarios like growing lapsed cohorts, declining tier engagement, points expiry, and RFM/LTV segmentation needs.\n- Excludes single-order confirmations and pure transactional messaging.\n- Provides mandatory risk summary, explicit VIP vs Standard action branches, and a required win-back plan table.\n- Outlines channel strategies, timing, and measurement metrics for reactivation success.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fcef81df6d3fbb8e621e6088e993e9a2bafe7f77cbaadd0f07ca3130fff7b4e"
+}

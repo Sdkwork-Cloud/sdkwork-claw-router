@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44098,
+  "uuid": "skill-clawhub-dataddo-integration",
+  "skillKey": "clawhub-dataddo-integration",
+  "name": "Dataddo",
+  "summary": "Dataddo integration. Manage data, records, and automate workflows. Use when the user wants to interact with Dataddo data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dataddo_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Dataddo integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Dataddo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dataddo-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dataddo-integration",
+      "url": "https://clawhub.ai/skills/dataddo-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dataddo-integration",
+    "url": "https://clawhub.ai/skills/dataddo-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dataddo-integration-209f603a48eac31e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dataddo-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-dataddo-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9dfaf0b372670d2cb4ab5c8365fc1d48ee744e85eb698ed1d185e3b33a8a71f5",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:22:29.512Z"
+}

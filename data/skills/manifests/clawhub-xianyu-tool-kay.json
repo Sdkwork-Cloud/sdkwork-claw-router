@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72236,
+  "uuid": "skill-clawhub-xianyu-tool-kay",
+  "skillKey": "clawhub-xianyu-tool-kay",
+  "name": "Xianyu",
+  "summary": "帮助用户在闲鱼平台发布技能服务，包括填写标题、描述、定价和上传配图，实现技能变现与交易。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xianyu_tool_kay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenghoo123-png",
+      "features": [
+        "帮助用户在闲鱼平台发布技能服务，包括填写标题、描述、定价和上传配图，实现技能变现与交易。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xianyu-tool-kay@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265226019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xianyu-tool-kay",
+      "url": "https://clawhub.ai/skills/xianyu-tool-kay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xianyu-tool-kay",
+    "url": "https://clawhub.ai/skills/xianyu-tool-kay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xianyu-tool-kay-e9895822b617ffb6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xianyu-tool-kay@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xianyu-tool-kay-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d69469a3545850e8b4f5327569db1f9909eb392f5edaac4ebcea2ecc875c5e23",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T15:31:11.649Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arxiv-to-obsidian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_to_obsidian",
+  "skill": {
+    "id": 60197,
+    "skillKey": "clawhub-arxiv-to-obsidian",
+    "name": "arxiv-to-obsidian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-to-obsidian",
+    "url": "https://clawhub.ai/skills/arxiv-to-obsidian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-to-obsidian-5966107ca1115280.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户要求获取 arXiv 最新 AI 论文、整理今日论文摘要、生成 AI 论文日报、把 arXiv 论文写入 Obsidian、同步文献到今日日记时，使用此 skill。默认来源是 `https://export.arxiv.org/rss/cs.AI`，默认目标是 Obsidian 中的 `402论文资料`..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "senrylee",
+      "userId": "s171hcxt0xcjr89qnhzjsxh3b183smsa",
+      "displayName": "SenryLee",
+      "image": "https://avatars.githubusercontent.com/u/41836813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773991089910,
+      "changelog": "arxiv-to-obsidian v1.0.0\n\n- 新增从 arXiv `cs.AI` RSS 获取最新 AI 论文摘要并同步到 Obsidian 指定笔记的功能。\n- 自动获取、翻译、整理最新 10 篇论文，按标准 Markdown 表格格式追加到每日笔记。\n- 严格限制 Obsidian CLI 操作（禁止直接读写文件系统），兼容 obsidian-cli skill。\n- 明确失败处理逻辑，保障数据一致性与安全。\n- 提供辅助脚本供本地 RSS 解析与翻译，所有写入操作均经 Obsidian CLI 实现。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e58952e36e8bd2cf128b959c7e90474724351fde93c8e4745c3057f31b395445"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloudflare-media@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_media",
+  "skill": {
+    "id": 59551,
+    "skillKey": "clawhub-cloudflare-media",
+    "name": "cloudflare-media"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-media",
+    "url": "https://clawhub.ai/skills/cloudflare-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-media-732eb3af75ea2433.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 Cloudflare Workers AI 生成图片或语音。触发条件： - 文生图：\"生成图片\"、\"文生图\"、\"text-to-image\"、\"AI 作图\"、\"帮我画\" - TTS：\"文字转语音\"、\"TTS\"、\"读出来\"、\"语音合成\"、\"text-to-speech"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "n0nsense11",
+      "userId": "s17e1c1h4wyz6x7z4673knkw2583gx3c",
+      "displayName": "n0nsense",
+      "image": "https://avatars.githubusercontent.com/u/49099455?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774326977232,
+      "changelog": "Cloudflare-media 2.2.0 大幅升级，支持多模型文生图与 TTS 语音生成：\n\n- 全面整理和扩展图片生成（文生图）与文本转语音（TTS）模型清单，详细参数、用法、费用说明。\n- 支持 8 个主流文生图模型（包括 FLUX、SDXL-Lightning、DreamShaper、Leonardo Phoenix/Lucid Origin）。\n- 支持 4 个 TTS 模型（Deepgram Aura-2/Aura-1、MyShell MeloTTS），含多语种与声音选择。\n- 丰富用户交互指引：请求后自动展示模型、参数和补充说明。\n- 明确凭证读取逻辑（config.json 或 MEMORY.md），缺失时主动提醒用户补充。\n- 输出格式、适用渠道等使用细节详细说明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:623d2666fee8b3ea1fa61ff59158f8a6add7504cde6413bbbe60757f5e2e9b7d"
+}

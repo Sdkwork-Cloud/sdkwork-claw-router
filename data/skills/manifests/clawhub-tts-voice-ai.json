@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68550,
+  "uuid": "skill-clawhub-tts-voice-ai",
+  "skillKey": "clawhub-tts-voice-ai",
+  "name": "Tts Voice Ai",
+  "summary": "AI多语言文字转语音工具，支持中文、英文、日语、韩语、粤语语音生成、配音、有声书及语音克隆。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tts_voice_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiachuan-1",
+      "features": [
+        "AI多语言文字转语音工具，支持中文、英文、日语、韩语、粤语语音生成、配音、有声书及语音克隆。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tts-voice-ai@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/189439716?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tts-voice-ai",
+      "url": "https://clawhub.ai/skills/tts-voice-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tts-voice-ai",
+    "url": "https://clawhub.ai/skills/tts-voice-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tts-voice-ai-ecd7a2203121a76b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tts-voice-ai@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tts-voice-ai-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48fd342e96dd0b3cb24344c5ea0c966a47b65fc2bde597969a4b112925e4d610",
+      "artifactSizeBytes": 2274
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T10:09:25.793Z"
+}

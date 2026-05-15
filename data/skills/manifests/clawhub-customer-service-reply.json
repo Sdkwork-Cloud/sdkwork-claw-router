@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58675,
+  "uuid": "skill-clawhub-customer-service-reply",
+  "skillKey": "clawhub-customer-service-reply",
+  "name": "Customer Service Reply",
+  "summary": "客服回复模板。售前咨询、售后处理、退换货、投诉回复、好评引导、升级处理、行业FAQ、满意度挽回。Customer service reply templates for pre-sale, after-sale, returns, complaints, escalation, FAQ generation, s...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customer_service_reply",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "客服回复模板。售前咨询、售后处理、退换货、投诉回复、好评引导、升级处理、行业FAQ、满意度挽回。Customer service reply templates for pre-sale,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/customer-service-reply@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "customer-service-reply",
+      "url": "https://clawhub.ai/skills/customer-service-reply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customer-service-reply",
+    "url": "https://clawhub.ai/skills/customer-service-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customer-service-reply-f692d04c5fad03ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/customer-service-reply@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-customer-service-reply-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38941a40b5907476b200c39b114d0ecbd9c11b8c6376f6f8d859371a5ce49ead",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:57:02.660Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15998,
+  "uuid": "skill-clawhub-priceworld",
+  "skillKey": "clawhub-priceworld",
+  "name": "PriceWorld",
+  "summary": "Pricing intelligence across web hosting, email marketing, domain registrars, savings rates, and AI tools. Query real prices, compare providers by true cost (...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.priceworld",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "priceworldcom",
+      "features": [
+        "Pricing intelligence across web hosting, email marketing, domain registrars, savings rates, and.",
+        "Query real prices, compare providers by true cost (..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/priceworld@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260223337?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "priceworld",
+      "url": "https://clawhub.ai/skills/priceworld"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "priceworld",
+    "url": "https://clawhub.ai/skills/priceworld",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/priceworld-faaf0231f710cc7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/priceworld@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-priceworld-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d93e6d926ed5674e2e3b2b7131564265bc0b2e1c563192d8d4d1cbacefa08a00",
+      "artifactSizeBytes": 2006
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T04:19:28.118Z"
+}

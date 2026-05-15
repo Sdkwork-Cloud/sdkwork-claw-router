@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yuebao-self-backup@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuebao_self_backup",
+  "skill": {
+    "id": 26678,
+    "skillKey": "clawhub-yuebao-self-backup",
+    "name": "OpenClaw Self Backup & Restore"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuebao-self-backup",
+    "url": "https://clawhub.ai/skills/yuebao-self-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuebao-self-backup-162d0e8aae3d4cc7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Backup and restore OpenClaw agent configuration, skills, memory, and workspace files. Use when asked to \"backup\", \"backup yourself\", \"create a restore point\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuyue8135",
+      "userId": "s17b4t2xccbgnsk1kjnr2v6wf9844x79",
+      "displayName": "liuyue8135",
+      "image": "https://avatars.githubusercontent.com/u/255660117?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773922320328,
+      "changelog": "v1.0.1: 移除私人配置信息，改为通用模板，适合所有 OpenClaw 用户使用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:987a3422b8891f1647403db3cb57966393ee427c3b62d44d16c4fff7da1ad3d8"
+}

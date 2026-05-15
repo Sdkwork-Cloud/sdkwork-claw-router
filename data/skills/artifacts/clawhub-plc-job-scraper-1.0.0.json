@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plc-job-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plc_job_scraper",
+  "skill": {
+    "id": 57851,
+    "skillKey": "clawhub-plc-job-scraper",
+    "name": "PLC Job Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plc-job-scraper",
+    "url": "https://clawhub.ai/skills/plc-job-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plc-job-scraper-c250e79c3dd802cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automaticky vyhledává PLC, automation a SCADA pracovní nabídky z LinkedIn, Indeed a dalších job boardů. Ideální pro PLC programátory a automation inženýry hl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cjmore66",
+      "userId": "s173kf9xreef911jpkrjazbz3d83hevz",
+      "displayName": "Caisik",
+      "image": "https://avatars.githubusercontent.com/u/104183381?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775958762021,
+      "changelog": "Initial release of plc-job-scraper.\n\n- Automates searching for PLC, automation, and SCADA job listings from major job boards such as LinkedIn, Indeed, and Glassdoor.\n- Supports configuration of job boards, keywords, locations, and job types via environment variables.\n- Outputs results in JSON or CSV format with comprehensive job fields (title, company, location, etc.).\n- Provides tools for exporting results to CSV or Google Sheets.\n- Includes guidance on automation, notifications (e.g., Telegram), proxy rotation, and filtering.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f8baf4f1578cab783c0584d0747c7bbd6f18cdd0a7dddef6122e086121159731"
+}

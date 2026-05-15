@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pyramid-principle@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pyramid_principle",
+  "skill": {
+    "id": 30543,
+    "skillKey": "clawhub-pyramid-principle",
+    "name": "Pyramid Principle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pyramid-principle",
+    "url": "https://clawhub.ai/skills/pyramid-principle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pyramid-principle-f270b00c9789db9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Apply structured thinking and MECE principle to break down complex problems. Use at the start of any strategic analysis to organize thoughts and create compe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linuszz",
+      "userId": "s17e0e5q8g0sjf5mpwdq1sy65183gmj7",
+      "displayName": "linuszz",
+      "image": "https://avatars.githubusercontent.com/u/46770204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 271,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774184711536,
+      "changelog": "- Initial release of the \"pyramid-principle\" skill.\n- Provides a structured thinking framework based on the Pyramid Principle and MECE approach.\n- Includes detailed instructions, pyramid diagrams, common first-level splits, and a step-by-step output process.\n- Defines a standardized format for strategic analysis to help organize problems and build compelling arguments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:22ab6645b00d07da6744a4ec641f036998ee563ab941d62606e9ac4f41536aef"
+}

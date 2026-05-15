@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52432,
+  "uuid": "skill-clawhub-openclaw-auto-training-skill",
+  "skillKey": "clawhub-openclaw-auto-training-skill",
+  "name": "Openclaw Auto Training Skill",
+  "summary": "Autonomous QA evaluation loop — runs domain-specific tasks against yourself, scores responses with an LLM judge, installs missing skills, and logs knowledge...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_auto_training_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wade Deng",
+      "features": [
+        "Autonomous QA evaluation loop — runs domain-specific tasks against yourself, scores responses w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-auto-training-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2989631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-auto-training-skill",
+      "url": "https://clawhub.ai/skills/openclaw-auto-training-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-auto-training-skill",
+    "url": "https://clawhub.ai/skills/openclaw-auto-training-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-auto-training-skill-05f487610523fb5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-auto-training-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-auto-training-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f65a80b8ea1e612fed11ef5b36e5d441131ad26b3f4f0201aa99513cb19febc4",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T11:11:57.511Z"
+}

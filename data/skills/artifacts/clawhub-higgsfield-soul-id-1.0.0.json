@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/higgsfield-soul-id@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.higgsfield_soul_id",
+  "skill": {
+    "id": 53657,
+    "skillKey": "clawhub-higgsfield-soul-id",
+    "name": "Higgsfield Soul ID"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "higgsfield-soul-id",
+    "url": "https://clawhub.ai/skills/higgsfield-soul-id",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/higgsfield-soul-id-1907e6d3c28a29d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Train a Soul Character — a personalized model on a person's face that Higgsfield uses for identity-faithful image and video generation. Use when: \"create my..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "higgsfield",
+      "userId": "s17f8fwnpnszqskag8vjqhx1ts862976",
+      "displayName": "Yerzat Dulat",
+      "image": "https://avatars.githubusercontent.com/u/24421551?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777911706039,
+      "changelog": "Initial release enabling personalized Soul Character training for identity-faithful image and video generation.\n\n- Allows users to train a reusable Soul model from a set of face photos.\n- Supports selection of image or cinematic model variant based on downstream use.\n- Streamlined onboarding: prompts for name, checks account status, and manages photo uploads.\n- Enforces clear, minimal chat prompts and silent progress polling.\n- Guides users on using trained Souls with other Higgsfield tools.\n- Handles common errors such as missing plan, photo issues, or authentication problems.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2229b49bfe40b07014979a63d3c994aa0edaf1b9c40108bd77b5b747ea93436d"
+}

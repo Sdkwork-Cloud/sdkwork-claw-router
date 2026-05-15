@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kbo-results@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kbo_results",
+  "skill": {
+    "id": 46843,
+    "skillKey": "clawhub-kbo-results",
+    "name": "kbo-results"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kbo-results",
+    "url": "https://clawhub.ai/skills/kbo-results",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kbo-results-a4c2a7f4329cc170.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch KBO game schedules and results for a specific date with the kbo-game npm package. Use when the user asks for today's KBO games, yesterday's scores, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "5eun",
+      "userId": "s174xz7epwfkfspq6g84zapkws845859",
+      "displayName": "5eun",
+      "image": "https://avatars.githubusercontent.com/u/169572743?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776409029931,
+      "changelog": "- Initial release: Easily fetch and summarize KBO league game results and schedules for any date.\n- Uses the kbo-game npm package to display game scores, statuses, and schedules.\n- Supports filtering by team and user-friendly, compact scoreboard summaries.\n- Requires global installation of the kbo-game package; does not fallback to unofficial sources.\n- Handles requests like “today’s KBO games,” “yesterday’s results,” or specific-date scoreboards.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8830ecb8be7107f3f485940513eb7ddc677975744461bde82c8da77602989be"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qweather-china@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qweather_china",
+  "skill": {
+    "id": 71053,
+    "skillKey": "clawhub-qweather-china",
+    "name": "QWeather China"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qweather-china",
+    "url": "https://clawhub.ai/skills/qweather-china",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qweather-china-6d07682115318a6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于中国气象局数据的完整天气服务，通过和风天气API提供实时天气、天气预报、生活指数、空气质量等全方位天气信息。专为中国用户优化，数据更准确，功能更全面。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "uni-huang",
+      "userId": "s17e4brg2cgqrep13q1sxjzbyn8497st",
+      "displayName": "uni-huang",
+      "image": "https://avatars.githubusercontent.com/u/224979535?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 479,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1776037193501,
+      "changelog": "Security compliance update: complete env vars declaration, detailed permissions, placeholder config values",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf6194ab6a1dc0e612ca743860afd590b98f268cc7daf919ed4d8d833eab0cfd"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clarity-literature@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clarity_literature",
+  "skill": {
+    "id": 24818,
+    "skillKey": "clawhub-clarity-literature",
+    "name": "Clarity Literature"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clarity-literature",
+    "url": "https://clawhub.ai/skills/clarity-literature",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clarity-literature-7d57c33c560db008.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search research papers and get publication details from Clarity Protocol. Use when the user asks to search research papers, find publications, PubMed referen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clarityprotocol",
+      "userId": "publishers:clarityprotocol",
+      "displayName": "clarityprotocol",
+      "image": "https://avatars.githubusercontent.com/u/255743260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 402,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772055677030,
+      "changelog": "- Initial release of the clarity-literature skill.\n- Search for research papers and retrieve publication details from Clarity Protocol.\n- Supports querying by keywords and fetching paper details using PubMed ID (PMID).\n- Provides citation metrics, full-text availability, and paper metadata.\n- Allows up to 10 requests/min without an API key; 100 requests/min with an API key.\n- Includes error handling for not found, rate limits, server errors, and timeouts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2361de6b05d4b581a3beb2787baeccc4a9cff9a157b361dee9d4a62b159ea80e"
+}

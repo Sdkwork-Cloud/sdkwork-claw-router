@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "configure-openclaw-anyrouter-model-and-fix-baseurl",
+    "displayName": "Configure Openclaw Anyrouter Model And Fix Baseurl",
+    "summary": "用于在 OpenClaw 中新增或覆盖 anyrouter 模型配置、把小肠 Agent 默认模型切到 `anyrouter/claude-opus-4-6`，并结合运行日志判断是不是 `baseUrl`、网关兼容、鉴权或协议端点导致不可用。遇到“把某个供应商模型写进 openclaw.json”“切换默认模型”...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774195465248,
+    "updatedAt": 1777622543149
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774195465248,
+    "changelog": "- Initial release: Add and override anyrouter model configuration for OpenClaw, switch default Agent model to `anyrouter/claude-opus-4-6`, and introduce a robust troubleshooting flow for baseUrl, gateway compatibility, authentication, and endpoint issues.\n- Guides users to safely merge provider configs to avoid accidental overwrites.\n- Emphasizes checking both static config and live logs to verify model availability and routing, not just assumed config result.\n- Provides fallback and recovery options if upstream routes remain unavailable.\n- Ensures ClaudeCode config is in sync to avoid confusion.\n- Lists common pitfalls in model config and troubleshooting, with actionable solutions.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "can4hou6joeng4",
+    "userId": "s17fzhes75mvxfh1xm1q519egh83y6gc",
+    "displayName": "can4hou6joeng4",
+    "image": "https://avatars.githubusercontent.com/u/66450588?v=4"
+  },
+  "moderation": null
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/business-rule-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_rule_engine",
+  "skill": {
+    "id": 58525,
+    "skillKey": "clawhub-business-rule-engine",
+    "name": "Business Rule Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-rule-engine",
+    "url": "https://clawhub.ai/skills/business-rule-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-rule-engine-39660bfe1adf7708.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "轻量级业务规则引擎，支持规则定义、规则执行、规则链编排和动态规则加载。 Lightweight business rule engine supporting rule definition, execution, chain orchestration and dynamic rule loading."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaiyuelv",
+      "userId": "s171c2g5qpr0rdyra8xbm4srbh84mjjm",
+      "displayName": "Lv Lancer",
+      "image": "https://avatars.githubusercontent.com/u/29176686?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776498396864,
+      "changelog": "Initial release of the business-rule-engine skill.\n\n- Provides a lightweight, flexible business rule engine.\n- Supports rule definition, execution, rule chain orchestration, and dynamic rule loading.\n- Includes extensible plugin architecture and condition/action-based rule evaluation.\n- Python API for defining, adding, and evaluating business rules.\n- Quick start guide and test instructions included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21a23ac02f03349365c7718e9ea8163369b63a731666d952565b8bc27e6cf621"
+}

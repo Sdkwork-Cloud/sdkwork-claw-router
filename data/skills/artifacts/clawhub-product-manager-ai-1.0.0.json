@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/product-manager-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_manager_ai",
+  "skill": {
+    "id": 72702,
+    "skillKey": "clawhub-product-manager-ai",
+    "name": "产品经理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-manager-ai",
+    "url": "https://clawhub.ai/skills/product-manager-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-manager-ai-e83b6b37b31ec93e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "以专业产品经理视角分析用户需求，拆解产品功能，输出结构化的产品文档（PRD、竞品分析、用户故事、需求池、数据指标等）。当用户提出产品创意、功能需求、改进建议或需要产品规划时触发。适用于APP、Web、小程序、B端系统、AI产品等全品类软件产品。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hwl1413520",
+      "userId": "s17ekarx3p1e6dgdk3qfb20tbx84q8v4",
+      "displayName": "rumu14",
+      "image": "https://avatars.githubusercontent.com/u/116565375?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777189844712,
+      "changelog": "- 首次发布：产品经理专业技能版本上线。\n- 支持针对APP、Web、小程序、B端、AI等全品类软件产品的结构化分析与文档输出。\n- 按标准流程进行需求诊断、方案设计、文档输出，覆盖PRD、竞品分析、用户故事、需求池、数据指标等主要类型。\n- 默认使用中文输出，所有文档结构化、可执行，并采用优先级标注（P0/P1/P2）。\n- 支持主动澄清需求、分轮次细化与格式切换（如Markdown、DOCX）。\n- 附带典型需求到PRD推导示例。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1abbdb0305abbf39cdbb5916fd2dfbfb9b3da2cd997e735e0d0680861126b146"
+}

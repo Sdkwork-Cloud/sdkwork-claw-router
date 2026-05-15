@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44425,
+  "uuid": "skill-clawhub-openclaw-gitflow",
+  "skillKey": "clawhub-openclaw-gitflow",
+  "name": "OpenClaw Git Workflow",
+  "summary": "Git workflow assistant. Generates commit messages, PR descriptions, branch management suggestions, and automates common Git operations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_gitflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "michealxie001",
+      "features": [
+        "Git workflow assistant",
+        "Generates commit messages, PR descriptions, branch management suggestions, and automates common."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-gitflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231448030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-gitflow",
+      "url": "https://clawhub.ai/skills/openclaw-gitflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-gitflow",
+    "url": "https://clawhub.ai/skills/openclaw-gitflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-gitflow-a628bc5c57a99bd0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-gitflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-gitflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02e54ecfde53ad13a90d1985eb089d695c820fc2759aa25a29150675957d4068",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T10:39:38.736Z"
+}

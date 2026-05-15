@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smyx-familiar-person-recognition-analysis@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_familiar_person_recognition_analysis",
+  "skill": {
+    "id": 57453,
+    "skillKey": "clawhub-smyx-familiar-person-recognition-analysis",
+    "name": "熟人识别分析技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-familiar-person-recognition-analysis",
+    "url": "https://clawhub.ai/skills/smyx-familiar-person-recognition-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-familiar-person-recognition-analysis-1bc2aa852aef5192.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Identifies acquaintances in videos or images through face photo comparison. Supports database enrollment, and the recognition results tell you who is at whic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "18072937735",
+      "userId": "s17f8q65zg3y98t86jdg1177g583whq8",
+      "displayName": "smyx-skills",
+      "image": "https://avatars.githubusercontent.com/u/272124705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777988738791,
+      "changelog": "No user-facing changes in this version.\n\n- No file changes detected.\n- Documentation, features, and workflows remain unchanged from previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8df85673d196d6097c685ad726a8f1dd5e8a87a247dc615df370f01df0b56f76"
+}

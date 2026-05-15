@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47434,
+  "uuid": "skill-clawhub-pionex-bot",
+  "skillKey": "clawhub-pionex-bot",
+  "name": "pionex-bot",
+  "summary": "Use when the user asks to create, query, list, adjust, reduce, or cancel Pionex bot orders (Futures Grid, Spot Grid, Smart Copy). Includes listing/paginating...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pionex_bot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pibrandon",
+      "features": [
+        "Use when the user asks to create, query, list, adjust, reduce, or cancel Pionex bot orders (Fut.",
+        "Includes listing/paginating..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pionex-bot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248439762?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pionex-bot",
+      "url": "https://clawhub.ai/skills/pionex-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pionex-bot",
+    "url": "https://clawhub.ai/skills/pionex-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pionex-bot-d9be6d5fdde382af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pionex-bot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pionex-bot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0970fed9e883513ce7f3b789863a661372e841283a15fdca32f2c07b5667468b",
+      "artifactSizeBytes": 1860
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T08:12:57.891Z"
+}

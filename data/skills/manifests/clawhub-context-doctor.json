@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12229,
+  "uuid": "skill-clawhub-context-doctor",
+  "skillKey": "clawhub-context-doctor",
+  "name": "Context Doctor",
+  "summary": "Visualize and diagnose OpenClaw context window usage. Generates a terminal-rendered breakdown showing workspace files (status, chars, tokens), installed skil...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_doctor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jzOcb",
+      "features": [
+        "Visualize and diagnose OpenClaw context window usage",
+        "Generates a terminal-rendered breakdown showing workspace files (status, chars, tokens), instal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-doctor@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258660657?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-doctor",
+      "url": "https://clawhub.ai/skills/context-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-doctor",
+    "url": "https://clawhub.ai/skills/context-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-doctor-8c082b3057cbe995.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-doctor@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-doctor-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5bfa789f7467698a1b593540eedd7609f06848503a7c05284ad34406b2c285ce",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T15:02:20.692Z"
+}

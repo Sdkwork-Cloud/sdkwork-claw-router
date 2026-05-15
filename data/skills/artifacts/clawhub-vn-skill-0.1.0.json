@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vn-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vn_skill",
+  "skill": {
+    "id": 31436,
+    "skillKey": "clawhub-vn-skill",
+    "name": "VN Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vn-skill",
+    "url": "https://clawhub.ai/skills/vn-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vn-skill-fc8afadf559ecfca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local video, audio and image processing expert for macOS, powered by VN Video Editor. Use this skill whenever the user wants to process video, audio or image..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cawcut",
+      "userId": "s17ad6me6bfe341hxcmw0m9ymh858ge2",
+      "displayName": "cawcut",
+      "image": "https://avatars.githubusercontent.com/u/273249714?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776772414573,
+      "changelog": "Initial release — auto-captions, burn SRT, compress, denoise, extract, merge, background removal; local processing on macOS via VN Video Editor",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1764a5b7ebd2aa8b2bedf4e0b287069bc3588666afca9325f15a7d6eb898abb7"
+}

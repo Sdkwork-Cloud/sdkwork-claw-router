@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31831,
+  "uuid": "skill-clawhub-cside-site-scanner",
+  "skillKey": "clawhub-cside-site-scanner",
+  "name": "cside Site Scanner",
+  "summary": "Scan any website for third-party scripts, trackers, and security risks. Detects PCI DSS compliance issues, missing CSP headers, fingerprinting scripts, and p...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cside_site_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "swijckmans",
+      "features": [
+        "Scan any website for third-party scripts, trackers, and security risks",
+        "Detects PCI DSS compliance issues, missing CSP headers, fingerprinting scripts, and p..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cside-site-scanner@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61318055?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cside-site-scanner",
+      "url": "https://clawhub.ai/skills/cside-site-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cside-site-scanner",
+    "url": "https://clawhub.ai/skills/cside-site-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cside-site-scanner-1358056f4e315ed0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cside-site-scanner@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-cside-site-scanner-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fef7c2c37197945a9bba4adad264eb11eac580aea6c6a2458932f8319519620",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:48:16.242Z"
+}

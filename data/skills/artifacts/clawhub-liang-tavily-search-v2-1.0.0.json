@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/liang-tavily-search-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liang_tavily_search_v2",
+  "skill": {
+    "id": 31628,
+    "skillKey": "clawhub-liang-tavily-search-v2",
+    "name": "Tavily Search V2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liang-tavily-search-v2",
+    "url": "https://clawhub.ai/skills/liang-tavily-search-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liang-tavily-search-v2-c18b487e96d941e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web search using Tavily's LLM-optimized API. Returns relevant results with content snippets, scores, and metadata."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "15914355527",
+      "userId": "s179nh9sbfxbd6ve2kghnkq4vn83vv89",
+      "displayName": "15914355527",
+      "image": "https://avatars.githubusercontent.com/u/51820137?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 264,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774094819474,
+      "changelog": "- Initial release of Tavily Search skill.\n- Enables web search using Tavily’s LLM-optimized API with relevant results, content snippets, scores, and metadata.\n- Supports multiple result options such as search depth, topic, result count, domain filters, time range, and output format.\n- Requires API key configuration via environment variable or OpenClaw config.\n- Includes command-line script for quick searches with flexible parameters.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95f1d2b54e17c1f163fe827f511ba8c02213e77f997224a5bd8292988d1b5401"
+}

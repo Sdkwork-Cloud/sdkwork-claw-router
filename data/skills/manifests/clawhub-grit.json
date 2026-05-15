@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38662,
+  "uuid": "skill-clawhub-grit",
+  "skillKey": "clawhub-grit",
+  "name": "Grit",
+  "summary": "Relentless problem-solving and tool-escalation for blocked tasks. Use when a user wants OpenClaw to keep pushing, keep trying alternatives, install or use ad...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rocketship4545-a11y",
+      "features": [
+        "Relentless problem-solving and tool-escalation for blocked tasks",
+        "Use when a user wants OpenClaw to keep pushing, keep trying alternatives, install or use ad..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224569816?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grit",
+      "url": "https://clawhub.ai/skills/grit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grit",
+    "url": "https://clawhub.ai/skills/grit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grit-23d7702598ff12e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2e4fbcb1fbefa47e26a912ab1b0e38451d31898407f11e5fd7d6156286f9471",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T07:03:11.775Z"
+}

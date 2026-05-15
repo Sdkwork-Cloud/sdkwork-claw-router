@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-oracle@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_oracle",
+  "skill": {
+    "id": 20169,
+    "skillKey": "clawhub-polymarket-oracle",
+    "name": "Polymarket Oracle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-oracle",
+    "url": "https://clawhub.ai/skills/polymarket-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-oracle-5fb66d63fe9cf7c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-strategy arbitrage and trading bot for Polymarket prediction markets. Scans ALL markets (crypto, politics, sports, economics, entertainment) for parity..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "georges91560",
+      "userId": "publishers:georges91560",
+      "displayName": "Wesley Armando",
+      "image": "https://avatars.githubusercontent.com/u/130360599?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 568,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772226360156,
+      "changelog": "- Changed env var requirements: now POLYMARKET_API_KEY, POLYMARKET_SECRET, POLYMARKET_PASSPHRASE are required; TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, WALLET_PRIVATE_KEY are optional or only needed for specific actions.\n- Updated SKILL.md metadata to clarify which environment variables are required versus optional, and for what purpose.\n- No changes to bot strategies or core functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:22889ed38970f8b6ce2a0c956f6cd9058ebef8db610f98844b07febe8a51096b"
+}

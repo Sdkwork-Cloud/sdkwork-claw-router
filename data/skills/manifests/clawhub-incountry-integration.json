@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37942,
+  "uuid": "skill-clawhub-incountry-integration",
+  "skillKey": "clawhub-incountry-integration",
+  "name": "Incountry",
+  "summary": "InCountry integration. Manage data, records, and automate workflows. Use when the user wants to interact with InCountry data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.incountry_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "InCountry integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with InCountry data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/incountry-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "incountry-integration",
+      "url": "https://clawhub.ai/skills/incountry-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "incountry-integration",
+    "url": "https://clawhub.ai/skills/incountry-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/incountry-integration-9a00c2da93bfe5b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/incountry-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-incountry-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be273e78c38362fd7c5d4ffd443973a4d5ac58bb1a6ffdc6cfbc3673d68637a8",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:59:08.539Z"
+}

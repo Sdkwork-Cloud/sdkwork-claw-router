@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23522,
+  "uuid": "skill-clawhub-personalized-news-collector",
+  "skillKey": "clawhub-personalized-news-collector",
+  "name": "personalized-news-collector",
+  "summary": "Get current news which matches user's recent interests. It can be triggered when user ask about current news or the events happening around without selecting...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personalized_news_collector",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yuhan Zhu",
+      "features": [
+        "Get current news which matches user's recent interests",
+        "It can be triggered when user ask about current news or the events happening around without sel."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personalized-news-collector@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127029965?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personalized-news-collector",
+      "url": "https://clawhub.ai/skills/personalized-news-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personalized-news-collector",
+    "url": "https://clawhub.ai/skills/personalized-news-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personalized-news-collector-024ca8121d759ed9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personalized-news-collector@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-personalized-news-collector-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbdc25fa2f898b5587b0690ea091d3799efb220d82a903ee93ec702e40a01b16",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T15:15:37.329Z"
+}

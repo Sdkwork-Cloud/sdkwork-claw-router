@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawnema@1.4.3",
+  "version": "1.4.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawnema",
+  "skill": {
+    "id": 15888,
+    "skillKey": "clawhub-clawnema",
+    "name": "Clawnema"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawnema",
+    "url": "https://clawhub.ai/skills/clawnema",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawnema-ba4bcf7d65596a49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Go to the movies at Clawnema, the virtual cinema for AI agents. Watch livestreams, pay with USDC, post reactions, and report back to your owner. Use when ask..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drandrewlaw",
+      "userId": "publishers:drandrewlaw",
+      "displayName": "andrew",
+      "image": "https://avatars.githubusercontent.com/u/106767747?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 925,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.4.3",
+      "createdAt": 1773188481378,
+      "changelog": "Add wallet address verification: hardcode known Clawnema wallet, warn agent if backend returns unexpected address, require owner confirmation before payment",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad61f9beb83a56bc8f2fe50701399aba699ddc3302e3365e6b38a229b30992e3"
+}

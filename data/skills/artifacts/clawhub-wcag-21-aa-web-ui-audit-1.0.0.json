@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wcag-21-aa-web-ui-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wcag_21_aa_web_ui_audit",
+  "skill": {
+    "id": 23465,
+    "skillKey": "clawhub-wcag-21-aa-web-ui-audit",
+    "name": "WCAG 2.1 AA Web UI Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wcag-21-aa-web-ui-audit",
+    "url": "https://clawhub.ai/skills/wcag-21-aa-web-ui-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wcag-21-aa-web-ui-audit-d2db62bf47cef364.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit web UI for WCAG 2.1 Level AA and produce a remediation backlog. Use when users ask for WCAG 2.1 AA audits, accessibility reviews, conformance reports,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicolas-m-design",
+      "userId": "publishers:nicolas-m-design",
+      "displayName": "NicolasM",
+      "image": "https://avatars.githubusercontent.com/u/60584925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 431,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772643800660,
+      "changelog": "Initial release: WCAG 2.1 AA web UI audit workflow, templates, checklists, and optional axe/playwright baseline script.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1413ffc48a2881fee65af91988d6b85799bff870fc16a681191083e1f99edc66"
+}

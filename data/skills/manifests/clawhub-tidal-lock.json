@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51491,
+  "uuid": "skill-clawhub-tidal-lock",
+  "skillKey": "clawhub-tidal-lock",
+  "name": "Tidal Lock",
+  "summary": "Detects unhealthy coupling between components — when two modules, services, or layers have become gravitationally locked, unable to change independently. Lik...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tidal_lock",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John DeVere Cooley",
+      "features": [
+        "Detects unhealthy coupling between components — when two modules, services, or layers have beco."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tidal-lock@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75928463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tidal-lock",
+      "url": "https://clawhub.ai/skills/tidal-lock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tidal-lock",
+    "url": "https://clawhub.ai/skills/tidal-lock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tidal-lock-d2f527cbb8cf1a0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tidal-lock@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tidal-lock-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3677c36db247df3270726ef8fd4cf56aed715c899aab1180239d88d603fec778",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T20:02:18.607Z"
+}

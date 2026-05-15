@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-gen@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_gen",
+  "skill": {
+    "id": 52276,
+    "skillKey": "clawhub-content-gen",
+    "name": "Content Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-gen",
+    "url": "https://clawhub.ai/skills/content-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-gen-fa93725670a6c584.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-format content generation with built-in neural quality scoring — every piece is scored against neuromarketing dimensions before delivery. Content that..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drivenautoplex1",
+      "userId": "s17amw9603tjt6jg530q93xzvx83syaf",
+      "displayName": "drivenautoplex1",
+      "image": "https://avatars.githubusercontent.com/u/186228539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774723042811,
+      "changelog": "**v1.2.0 — Adds automated neural quality scoring and rewriting**\n\n- Every generated content piece is now scored against 8 neuromarketing dimensions (0-100).\n- If content scores below your threshold (default: 70), it is automatically rewritten and re-scored (up to 2 times).\n- All outputs include a neural score, scoring breakdown, and ready-to-use score badge as proof.\n- Input/output contracts updated to support quality gate parameters and scored output.\n- Three pricing tiers clarified: Free (score only), Standard (score gate + 1 rewrite), Pro (up to 2 rewrites/bulk scoring).\n- No changes to backend or platform; only the SKILL.md contract and documentation are updated for quality gating.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:674a4981a755de15ed1e799157960bd87d14666993e67eafa9ad89fa237c2f1f"
+}

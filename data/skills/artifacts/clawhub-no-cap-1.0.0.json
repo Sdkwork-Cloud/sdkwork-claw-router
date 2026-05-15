@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/no-cap@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.no_cap",
+  "skill": {
+    "id": 41803,
+    "skillKey": "clawhub-no-cap",
+    "name": "No Cap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "no-cap",
+    "url": "https://clawhub.ai/skills/no-cap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/no-cap-4890e3048e4cd544.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically ingest X/Twitter bookmarks, filter noise, and extract actionable signals. Run to process new bookmarks into structured intelligence."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zephyr2800",
+      "userId": "s17dr169farvzaym74zyfa8gmn83rwag",
+      "displayName": "zephyr2800",
+      "image": "https://avatars.githubusercontent.com/u/262954335?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774709415153,
+      "changelog": "Initial release: X bookmark ingestion, 3-layer noise filter, email digest",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9fbb29a77de8ab717265068f59ad6a1a1d3b30e09c95422e75d9464a0249869"
+}

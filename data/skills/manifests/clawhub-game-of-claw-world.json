@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20982,
+  "uuid": "skill-clawhub-game-of-claw-world",
+  "skillKey": "clawhub-game-of-claw-world",
+  "name": "ClawWorld",
+  "summary": "Connect to ClawWorld game server to create characters, perform actions like work, battle, explore, and manage items via A2A protocol.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.game_of_claw_world",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lillsi",
+      "features": [
+        "Connect to ClawWorld game server to create characters, perform actions like work, battle, explo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/game-of-claw-world@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3517819?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "game-of-claw-world",
+      "url": "https://clawhub.ai/skills/game-of-claw-world"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "game-of-claw-world",
+    "url": "https://clawhub.ai/skills/game-of-claw-world",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/game-of-claw-world-6226d70172f46ea4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/game-of-claw-world@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-game-of-claw-world-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d0ed9d2570458f732b48fb61edbed4f9d365369f5338905b08a22f885d613b8",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T14:12:21.315Z"
+}

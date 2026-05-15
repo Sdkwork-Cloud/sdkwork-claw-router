@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abe-dexter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abe_dexter",
+  "skill": {
+    "id": 45254,
+    "skillKey": "clawhub-abe-dexter",
+    "name": "abe-dexter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abe-dexter",
+    "url": "https://clawhub.ai/skills/abe-dexter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abe-dexter-d134464370111a01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous financial research agent for stock analysis, financial statements, metrics, prices, SEC filings, and crypto data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abeltennyson",
+      "userId": "s174gfyzm9cmcv1mx6226h2s3584rfxt",
+      "displayName": "AbelTennyson",
+      "image": "https://avatars.githubusercontent.com/u/261241122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776917349015,
+      "changelog": "Dexter 1.0.0 – Initial Release\n\n- Introduces Dexter, an autonomous financial research agent for analyzing stocks, crypto, market fundamentals, SEC filings, and more.\n- Supports retrieval of stock/crypto prices, financial statements, key metrics, filings, analyst ratings, insider trades, news, and comparative analysis.\n- Integrates with SkillBoss API Hub for LLM and data routing, supporting both quick one-shot queries and interactive research sessions.\n- Includes a non-interactive query script and instructions for standalone install and usage.\n- Provides robust toolset for US equities, with fallback web search for international data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09f6e869eef24ab5de49a372d99900b299b859656c3409d8a2f9d894ed8adaea"
+}

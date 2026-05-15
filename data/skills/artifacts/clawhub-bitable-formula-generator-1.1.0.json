@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bitable-formula-generator@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitable_formula_generator",
+  "skill": {
+    "id": 64552,
+    "skillKey": "clawhub-bitable-formula-generator",
+    "name": "bitable-formula-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitable-formula-generator",
+    "url": "https://clawhub.ai/skills/bitable-formula-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitable-formula-generator-30a94174d315a631.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书多维表格字段公式生成器。通过导出Excel分析字段结构，利用Excel公式逻辑生成多维表格兼容公式，并写入多维表格字段。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chengfen1987",
+      "userId": "s179satkzdjh90qkxgwcydc8yh83sj96",
+      "displayName": "chengfen1987",
+      "image": "https://avatars.githubusercontent.com/u/15917527?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774685331532,
+      "changelog": "Update to 1.1.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd9d3a74809c0376852fcbbb5882f5b31d46d55679027b2b8a59e30d1efb6714"
+}

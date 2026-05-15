@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/package-tracker-lite@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.package_tracker_lite",
+  "skill": {
+    "id": 59001,
+    "skillKey": "clawhub-package-tracker-lite",
+    "name": "Package Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "package-tracker-lite",
+    "url": "https://clawhub.ai/skills/package-tracker-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/package-tracker-lite-edd42641fcc2e007.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track your packages and deliveries worldwide. 支持顺丰、圆通、中通、申通、韵达、邮政EMS、UPS、FedEx、DHL等国内外快递实时查询，快递单号一键查询物流轨迹。Express tracking, parcel delivery status, logistics查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darbling",
+      "userId": "s1735cfbwbr6ybnmzw58m9bhkx85my84",
+      "displayName": "darbling",
+      "image": "https://avatars.githubusercontent.com/u/105998927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777290525672,
+      "changelog": "- Updated skill name to \"Package Tracker Lite\" and revised descriptions for clarity.\n- Expanded multilingual support in documentation, including Chinese (简体中文).\n- Simplified feature list and usage instructions.\n- Added an explicit disclaimer in Chinese only.\n- Modernized formatting and removed references to some secondary features (e.g., delivery timeline, multiple tracking parameters).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81d7934ab69bb2973181b0d382b38b5c07735b5c7cb85c6ecea9d69410c9f33e"
+}

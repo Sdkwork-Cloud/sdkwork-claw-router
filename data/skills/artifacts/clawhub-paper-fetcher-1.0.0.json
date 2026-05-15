@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-fetcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_fetcher",
+  "skill": {
+    "id": 10957,
+    "skillKey": "clawhub-paper-fetcher",
+    "name": "Academic Paper Fetcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-fetcher",
+    "url": "https://clawhub.ai/skills/paper-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-fetcher-b40fddc45f437e7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch academic papers from Sci-Hub given a DOI. Automatically downloads PDFs and saves them to research/papers/ with clean filenames. Use when the user provides a DOI or requests a paper from PubMed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "biohackerrrrrr",
+      "userId": "publishers:biohackerrrrrr",
+      "displayName": "biohackerrrrrr",
+      "image": "https://avatars.githubusercontent.com/u/207184515?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2008,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770634798196,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b1c42d26bd9b8fab134cfe5808b2b0be30fbbec64b1400ae590a7d62eaf43d6e"
+}

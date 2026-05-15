@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-stock-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_research",
+  "skill": {
+    "id": 52745,
+    "skillKey": "clawhub-a-stock-research",
+    "name": "A Stock Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-research",
+    "url": "https://clawhub.ai/skills/a-stock-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-research-46929ccfa443b99e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive A-share (A 股) information gathering and analysis skills for Chinese stock market. Use when you need to query stock prices, analyze financial da..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gk-lucky",
+      "userId": "s17bzvcc3jnst25cg64m0c2w1d83znqb",
+      "displayName": "GK-Lucky",
+      "image": "https://avatars.githubusercontent.com/u/120407490?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774960066861,
+      "changelog": "a-stock-research v1.0.0\n\n- Initial release providing comprehensive A股（A-share）information gathering and analysis tools for the Chinese stock market.\n- Integrates akshare-stock, china-stock-analysis, stock-watcher, and stock-analysis for real-time prices, financial data, portfolio tracking, and trend monitoring.\n- Supports key workflows: querying prices, financial analysis, watchlist management, and portfolio reporting.\n- Includes detailed usage scenarios, command quick reference, and recommended routines for daily monitoring and deep research.\n- Summarizes data source features, usage tips, and tailored learning paths for users at all levels.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:10c7762d5478f378b7b70b55309a9f19601ec51ed076ced385c41d773d7787b0"
+}

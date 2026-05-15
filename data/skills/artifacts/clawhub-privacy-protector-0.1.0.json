@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/privacy-protector@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.privacy_protector",
+  "skill": {
+    "id": 25192,
+    "skillKey": "clawhub-privacy-protector",
+    "name": "Privacy Protector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "privacy-protector",
+    "url": "https://clawhub.ai/skills/privacy-protector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/privacy-protector-a4a924917cb36310.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs PII anonymization, local de-anonymization, and deterministic local detector checks for text and supported files. Use for redact/restore flows, file-firs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "modeioai",
+      "userId": "publishers:modeioai",
+      "displayName": "modeioai",
+      "image": "https://avatars.githubusercontent.com/u/244495891?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773209432017,
+      "changelog": "Initial release of privacy-protector.\n\n- Adds local PII anonymization, de-anonymization, and local detector diagnostics for text and supported files.\n- Supports redact/restore file workflows with allowlist, blocklist, and threshold configuration.\n- Fully offline processing for the \"lite\" anonymization level; backend API support for other levels.\n- Includes helpers for working with text, various file types, and saved placeholder maps.\n- Provides documentation for usage patterns, supported commands, and runtime considerations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1936dccb8f2dc2e9ec32bea9a9799e097872b78660a0fdc3aa458db2fce1e115"
+}

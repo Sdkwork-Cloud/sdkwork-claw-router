@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70502,
+  "uuid": "skill-clawhub-moonlight-map",
+  "skillKey": "clawhub-moonlight-map",
+  "name": "白月光 | Moonlight Map",
+  "summary": "把忘不掉的那个人的碎片记忆整理成一份月光档案。重点是理解、命名、归档，不做角色扮演。主输出是月光图谱+未寄出的信。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moonlight_map",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cong Zhao",
+      "features": [
+        "把忘不掉的那个人的碎片记忆整理成一份月光档案。重点是理解、命名、归档，不做角色扮演。主输出是月光图谱+未寄出的信。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moonlight-map@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11643774?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moonlight-map",
+      "url": "https://clawhub.ai/skills/moonlight-map"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moonlight-map",
+    "url": "https://clawhub.ai/skills/moonlight-map",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moonlight-map-0ddb05f12e425952.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moonlight-map@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moonlight-map-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:725131f2c2f99f0241433693c476eab92c16df21fb8e4d4e35106816cb1e64f2",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T14:21:10.919Z"
+}

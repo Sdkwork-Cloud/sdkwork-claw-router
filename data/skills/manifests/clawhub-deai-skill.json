@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58434,
+  "uuid": "skill-clawhub-deai-skill",
+  "skillKey": "clawhub-deai-skill",
+  "name": "De-AI-fy Text Skill1.0.0",
+  "summary": "Remove AI-like features from text to make it more natural and human-like (去除AI生成文本的AI特征，使文本更自然、更接近人类写作)",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deai_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YouStudyeveryday",
+      "features": [
+        "Remove AI-like features from text to make it more natural and human-like (去除AI生成文本的AI特征，使文本更自然、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deai-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134957344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deai-skill",
+      "url": "https://clawhub.ai/skills/deai-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deai-skill",
+    "url": "https://clawhub.ai/skills/deai-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deai-skill-0f3c2da2fd5779d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deai-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-deai-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1285c480ab5f435bd7ef13477a5274c072c65e254bb122cc479cf273a229811",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T13:58:06.374Z"
+}

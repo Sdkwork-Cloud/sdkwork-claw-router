@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vehicle-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vehicle_tracker",
+  "skill": {
+    "id": 12103,
+    "skillKey": "clawhub-vehicle-tracker",
+    "name": "Vehicle Expense Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vehicle-tracker",
+    "url": "https://clawhub.ai/skills/vehicle-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vehicle-tracker-7063522c7674cedd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track vehicle expenses (gas, maintenance, parts) in Google Sheets and save related photos. Handles mileage, cost, category, and photo organization."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huchengtw",
+      "userId": "publishers:huchengtw",
+      "displayName": "huchengtw",
+      "image": "https://avatars.githubusercontent.com/u/1418929?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1803,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770011796089,
+      "changelog": "Initial release of vehicle-tracker.\n\n- Track vehicle expenses (gas, maintenance, parts) with support for Google Sheets and local Excel files.\n- Supports multiple languages and unit systems (metric/imperial).\n- Organizes expense photos and auto-renames them with timestamps.\n- Allows configurable vehicle aliases, default values per expense category, and custom save paths.\n- Includes detailed setup and configuration instructions for first-time users.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:67e4d1d438343c8016e5b712ce9aba6599282f493a2113df1de132c1cc82f0f4"
+}

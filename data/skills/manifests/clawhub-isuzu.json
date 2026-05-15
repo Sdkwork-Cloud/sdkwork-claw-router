@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70129,
+  "uuid": "skill-clawhub-isuzu",
+  "skillKey": "clawhub-isuzu",
+  "name": "Isuzu",
+  "summary": "提供Isuzu的历史、业务、全球布局及最新动态的综合信息，助力商业调查和行业分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.isuzu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供Isuzu的历史、业务、全球布局及最新动态的综合信息，助力商业调查和行业分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/isuzu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "isuzu",
+      "url": "https://clawhub.ai/skills/isuzu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "isuzu",
+    "url": "https://clawhub.ai/skills/isuzu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/isuzu-09b7b4bebb61f328.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/isuzu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-isuzu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa9eb9d46a161c963abcd40cda551b69a207c8284ad65c876e1be7609a0e2a5f",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T12:42:00.402Z"
+}

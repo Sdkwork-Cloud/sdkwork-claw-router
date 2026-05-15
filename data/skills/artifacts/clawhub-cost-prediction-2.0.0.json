@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cost-prediction@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cost_prediction",
+  "skill": {
+    "id": 13307,
+    "skillKey": "clawhub-cost-prediction",
+    "name": "Cost Prediction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cost-prediction",
+    "url": "https://clawhub.ai/skills/cost-prediction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cost-prediction-5051f2d26d6979e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Predict construction project costs using Machine Learning. Use Linear Regression, K-Nearest Neighbors, and Random Forest models on historical project data. Train, evaluate, and deploy cost prediction models."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datadrivenconstruction",
+      "userId": "publishers:datadrivenconstruction",
+      "displayName": "datadrivenconstruction",
+      "image": "https://avatars.githubusercontent.com/u/94158709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1428,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1770999154376,
+      "changelog": "Major update: Adds comprehensive guidance and code for construction cost prediction using multiple ML models.\n\n- Introduces an in-depth SKILL.md with project overview, methodology, and book reference.\n- Provides detailed code snippets for data preparation, feature engineering, and handling inflation adjustments.\n- Offers step-by-step instructions for training and evaluating Linear Regression, K-Nearest Neighbors, Random Forest, and Gradient Boosting models.\n- Includes model evaluation metrics (MAE, RMSE, R², MAPE) and feature importance analysis.\n- Enables easy model comparison for optimal selection.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:59b14265b5c8b9ac278f8029c034001e186ceb2b41efccd472f4afad322b3701"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-text-to-video-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_text_to_video_app",
+  "skill": {
+    "id": 55473,
+    "skillKey": "clawhub-free-text-to-video-app",
+    "name": "Free Text To Video App"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-text-to-video-app",
+    "url": "https://clawhub.ai/skills/free-text-to-video-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-text-to-video-app-b50e1d51adec0cf3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — turn this blog intro into a 30-second video with visuals and music — and g..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776355694859,
+      "changelog": "- Initial release of the Free Text to Video App.\n- Instantly converts text (TXT, DOCX, PDF, or pasted) into AI-generated videos with visuals and music.\n- Supports file uploads up to 500MB; handles all editing and export on cloud GPUs.\n- Includes automatic setup and authentication for first-time users.\n- Provides clear workflows for uploading, editing, exporting, and checking credit balance.\n- Built-in error handling guides users through common issues (token expiry, credits, file limits).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:281432c865043ef2f0dfd2ea2d80d0c1de9baca84059f0f12bf8035b47b33248"
+}

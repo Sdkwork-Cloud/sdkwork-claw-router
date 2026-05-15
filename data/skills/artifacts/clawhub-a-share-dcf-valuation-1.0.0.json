@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-share-dcf-valuation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_dcf_valuation",
+  "skill": {
+    "id": 28282,
+    "skillKey": "clawhub-a-share-dcf-valuation",
+    "name": "A-Share DCF Valuation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-dcf-valuation",
+    "url": "https://clawhub.ai/skills/a-share-dcf-valuation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-dcf-valuation-8834097b8bdd9514.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DCF valuation modeling for A-share listed companies. Pass stock code to automatically fetch financial data, calculate WACC, run conservative/base/optimistic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laigen",
+      "userId": "s174c3qf7rzby58ss8ght6wmyd83hx75",
+      "displayName": "赖根",
+      "image": "https://avatars.githubusercontent.com/u/42961557?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776759524346,
+      "changelog": "Initial release: Two-stage FCFF DCF model with dynamic WACC calculation, three-scenario valuation (conservative/base/optimistic), sensitivity analysis matrix, and comprehensive risk disclosure. Supports all A-share listed companies with automated financial data fetching via Tushare API.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:522f424d71def045b34029bf51869c77241f72a7686961fd7517010fff533ac5"
+}

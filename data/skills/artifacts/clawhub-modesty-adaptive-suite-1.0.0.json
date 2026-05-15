@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/modesty-adaptive-suite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modesty_adaptive_suite",
+  "skill": {
+    "id": 49195,
+    "skillKey": "clawhub-modesty-adaptive-suite",
+    "name": "Adaptive Suite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modesty-adaptive-suite",
+    "url": "https://clawhub.ai/skills/modesty-adaptive-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modesty-adaptive-suite-2f6f938e89906128.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A continuously adaptive skill suite that empowers Clawdbot to act as a versatile coder, business analyst, project manager, web developer, data analyst, and N..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "modestyrichards",
+      "userId": "s17069c392wb17n1nvrdv0kq1h84qjrk",
+      "displayName": "ModestyRichards",
+      "image": "https://avatars.githubusercontent.com/u/261238899?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 85,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777536050583,
+      "changelog": "Initial release of adaptive-suite\n\n- Introduces a multi-role skill for coding, business analysis, project management, web and data development, and NAS metadata scraping.\n- Utilizes the SkillBoss API Hub for discovering free and open-source AI tools, with intelligent routing and recommendations.\n- Offers adaptive support, learning from user context and coding style to provide tailored advice and best practices.\n- Includes read-only NAS metadata scraping and desktop app compilation safely.\n- Ensures reliability by referencing proven methodologies and cross-checking outputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd2df0417ee3e746446f1ef16d0a7a4a5c562f32bcc92e3ac15524d0cb3b74f6"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66590,
+  "uuid": "skill-clawhub-baidu-cloud-bos",
+  "skillKey": "clawhub-baidu-cloud-bos",
+  "name": "Baidu Cloud BOS",
+  "summary": "百度智能云对象存储（BOS）集成技能。支持文件上传/下载/删除/复制、列出文件与 Bucket、获取签名 URL、 图片处理（亮度、对比度、模糊、旋转、缩放、裁剪、圆形裁切、圆角、质量压缩、水印等）、 目录递归上传/下载及增量同步。通过 Node.js SDK 脚本（优先）和 bcecmd 命令行工具双方式管理，...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_cloud_bos",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang",
+      "features": [
+        "百度智能云对象存储（BOS）集成技能。支持文件上传/下载/删除/复制、列出文件与 Bucket、获取签名 URL、 图片处理（亮度、对比度、模糊、旋转、缩放、裁剪、圆形裁切、圆角、质量压缩、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-cloud-bos@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30278828?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-cloud-bos",
+      "url": "https://clawhub.ai/skills/baidu-cloud-bos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-cloud-bos",
+    "url": "https://clawhub.ai/skills/baidu-cloud-bos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-cloud-bos-ce8f0dd6142a86f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-cloud-bos@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-cloud-bos-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e84e1b39d2bdb16d211f2814eddafeade6a4275c60dd8e7bfd4da15d04269c7d",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T02:58:18.977Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/photo-to-video-ai-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photo_to_video_ai_online",
+  "skill": {
+    "id": 43010,
+    "skillKey": "clawhub-photo-to-video-ai-online",
+    "name": "Photo To Video Ai Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photo-to-video-ai-online",
+    "url": "https://clawhub.ai/skills/photo-to-video-ai-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photo-to-video-ai-online-b80009ce59df8b86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert images into animated photo videos with this skill. Works with JPG, PNG, WEBP, HEIC files up to 200MB. social media creators use it for turning photo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775947131197,
+      "changelog": "photo-to-video-ai-online 1.0.0 — initial release\n\n- Convert JPG, PNG, WEBP, and HEIC images (up to 200MB) into 1080p MP4 videos using AI in the cloud.\n- Simple UX: upload photos and describe the video you want (e.g. smooth transitions, aspect ratio, audio, text overlay).\n- Handles authentication with free credit system and automatic token management.\n- Supports common video and audio formats for uploads; export-ready videos typically process in 30–60 seconds.\n- Includes user guidance, API connection workflow, action routing by user intent, and transparent error handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f84cc6ffaa6cdd9c00655b681c7e0f6eec4cc3ea6c1d267ad256044126fef023"
+}

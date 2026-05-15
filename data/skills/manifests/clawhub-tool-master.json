@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64798,
+  "uuid": "skill-clawhub-tool-master",
+  "skillKey": "clawhub-tool-master",
+  "name": "Tool Master",
+  "summary": "工具使用大师 - 基于关键词映射表的实用工具查找系统",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tool_master",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iamwangli",
+      "features": [
+        "基于关键词映射表的实用工具查找系统"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tool-master@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48752449?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tool-master",
+      "url": "https://clawhub.ai/skills/tool-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tool-master",
+    "url": "https://clawhub.ai/skills/tool-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tool-master-3c47354f0427c659.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tool-master@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tool-master-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:128e7783111d258ce6da92db9bb128fdabb3e7aa212c296c6a85627dc298e6ab",
+      "artifactSizeBytes": 2091
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T03:00:42.846Z"
+}

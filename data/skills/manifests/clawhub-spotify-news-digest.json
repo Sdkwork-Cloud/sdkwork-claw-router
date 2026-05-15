@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26173,
+  "uuid": "skill-clawhub-spotify-news-digest",
+  "skillKey": "clawhub-spotify-news-digest",
+  "name": "spotify-news-digest",
+  "summary": "Scrape and summarize Spotify-related news from multiple sources (Spotify official blogs, engineering/research/newsroom, TechCrunch, The Verge, Music Business...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spotify_news_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bill Xia",
+      "features": [
+        "Scrape and summarize Spotify-related news from multiple sources (Spotify official blogs, engine."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spotify-news-digest@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2110361?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spotify-news-digest",
+      "url": "https://clawhub.ai/skills/spotify-news-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spotify-news-digest",
+    "url": "https://clawhub.ai/skills/spotify-news-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spotify-news-digest-9b359009ee243628.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spotify-news-digest@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-spotify-news-digest-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9170072bbe1d3efcc7c206e455c79af49bcb28a494539490a792dfee3b404b9d",
+      "artifactSizeBytes": 2615
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T02:18:19.843Z"
+}

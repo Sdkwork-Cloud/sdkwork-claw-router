@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fei-du@1.0.23",
+  "version": "1.0.23",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fei_du",
+  "skill": {
+    "id": 71759,
+    "skillKey": "clawhub-fei-du",
+    "name": "Fei Du"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fei-du",
+    "url": "https://clawhub.ai/skills/fei-du",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fei-du-371aa54b153d8b91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "洞察提炼与模式识别，分析数据趋势、异常与差异，生成详尽分析报告以支持决策。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lt8899789",
+      "userId": "s179v8xedkc48zhrn16wqqz5ad83h8b8",
+      "displayName": "无为上人",
+      "image": "https://avatars.githubusercontent.com/u/269488520?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 658,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 23
+    },
+    "latestVersion": {
+      "version": "1.0.23",
+      "createdAt": 1778270410809,
+      "changelog": "- Version bumped from 1.0.22 to 1.0.23 in SKILL.md.\n- No functional or content changes detected; documentation only updated version number.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:438460bf1d60ac33595e0c90acaba1b1d9970db99d4565b0fbefb14e22addfc9"
+}

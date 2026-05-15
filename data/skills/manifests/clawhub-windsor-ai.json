@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16698,
+  "uuid": "skill-clawhub-windsor-ai",
+  "skillKey": "clawhub-windsor-ai",
+  "name": "Windsor.ai Analytics",
+  "summary": "Connect to Windsor.ai MCP for natural language access to 325+ data sources including Facebook Ads, GA4, HubSpot, Shopify, and more.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windsor_ai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Carlos Leon",
+      "features": [
+        "Connect to Windsor.ai MCP for natural language access to 325+ data sources including Facebook A."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/windsor-ai@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91811936?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "windsor-ai",
+      "url": "https://clawhub.ai/skills/windsor-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windsor-ai",
+    "url": "https://clawhub.ai/skills/windsor-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windsor-ai-b89f407f2b41d3de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/windsor-ai@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-windsor-ai-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78abff395c739e54f1262f3b7b917ebdf9ebc16f1ee9e2da54b114004e3ba6c6",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T03:50:48.663Z"
+}

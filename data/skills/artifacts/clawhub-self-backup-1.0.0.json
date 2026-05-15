@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_backup",
+  "skill": {
+    "id": 19666,
+    "skillKey": "clawhub-self-backup",
+    "name": "self-backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-backup",
+    "url": "https://clawhub.ai/skills/self-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-backup-46c0dcb6c4145038.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Backup OpenClaw workspace files like AGENTS.md, SOUL.md, scripts/, and configs to a GitHub repo, with token sanitization and version control."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mayueanyou",
+      "userId": "s1713d8mt8mvzpxb1g0ffpxnb983sacc",
+      "displayName": "Yue Ma",
+      "image": "https://avatars.githubusercontent.com/u/43566180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 479,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773086761205,
+      "changelog": "- Initial release of the self-backup skill for OpenClaw.\n- Backs up key workspace files (configurations, scripts, skill metadata) to a configurable private GitHub repository.\n- Includes automatic sanitization of sensitive tokens for security.\n- Provides easy setup, restore, and manual/automated backup options.\n- Supports customizable repository structure and backup content via configuration.\n- Documentation covers setup, usage, restore process, and troubleshooting tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a46b0a08558c0d01349fcbf385ea7ba7212c82fb85f26921667e0a0f085489be"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-image-to-video-miricanvas@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_image_to_video_miricanvas",
+  "skill": {
+    "id": 49169,
+    "skillKey": "clawhub-ai-image-to-video-miricanvas",
+    "name": "Ai Image To Video Miricanvas"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-image-to-video-miricanvas",
+    "url": "https://clawhub.ai/skills/ai-image-to-video-miricanvas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-image-to-video-miricanvas-269dd79ae214643e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert static images into animated image videos with this skill. Works with JPG, PNG, WEBP, GIF files up to 200MB. marketers and social media creators use i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 85,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777867690411,
+      "changelog": "Initial release — convert static images into animated MP4 videos using cloud GPUs.\n\n- Supports JPG, PNG, WEBP, and GIF files up to 200MB.\n- Automated setup: free token generation and session establishment for easy out-of-the-box use.\n- Export 1080p MP4 videos; typical processing takes 30-60 seconds.\n- Designed for marketers and social media creators needing quick image-to-video workflows.\n- Simple commands for upload, export, credits balance, and project status.\n- Error handling and helpful guidance for file types, credits, and export issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:481aa4b131d67d23dba2c72cf64d9473baa0fd5ffee5fde73089d18bb1553202"
+}

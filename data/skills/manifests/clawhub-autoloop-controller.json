@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38976,
+  "uuid": "skill-clawhub-autoloop-controller",
+  "skillKey": "clawhub-autoloop-controller",
+  "name": "Autoloop Controller",
+  "summary": "When continuous automated improvement of a Skill is needed. Wraps improvement-orchestrator in a persistent loop with convergence detection (plateau/oscillati...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autoloop_controller",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "_silhouette",
+      "features": [
+        "When continuous automated improvement of a Skill is needed",
+        "Wraps improvement-orchestrator in a persistent loop with convergence detection (plateau/oscilla."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autoloop-controller@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22570800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autoloop-controller",
+      "url": "https://clawhub.ai/skills/autoloop-controller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autoloop-controller",
+    "url": "https://clawhub.ai/skills/autoloop-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autoloop-controller-3a74a842b6c60b40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autoloop-controller@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-autoloop-controller-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:169572a4abf64806bf952e3d09b44088c6ebd3329167a3526779a4ad45b27d88",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T03:31:09.361Z"
+}

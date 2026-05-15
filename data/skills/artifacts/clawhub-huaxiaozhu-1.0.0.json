@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huaxiaozhu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huaxiaozhu",
+  "skill": {
+    "id": 68845,
+    "skillKey": "clawhub-huaxiaozhu",
+    "name": "Huaxiaozhu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huaxiaozhu",
+    "url": "https://clawhub.ai/skills/huaxiaozhu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huaxiaozhu-5781d9aab8ea98d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "花小猪打车助手，精通优惠出行、行程规划、费用估算、安全出行"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 302,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773652833946,
+      "changelog": "Major update with full release and expanded user guidance:\n\n- Skill renamed为“花小猪”，发布正式版 1.0.0\n- 增加了详细的出行、省钱、安全、投诉和司机端使用指南\n- 新增花小猪与滴滴快车的详细对比\n- 明确讲解一口价计费模式及其优势与注意事项\n- 覆盖各类优惠类型、日常省钱技巧，以及安全功能和场景分析\n- 规范工作原则，强调以平台信息为准、保障用户安全",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63ae64ee439b2925140bc4e7a81a8a66e5535b7e412229c80c6d25fcfcf4d1a2"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59542,
+  "uuid": "skill-clawhub-vwu-openai",
+  "skillKey": "clawhub-vwu-openai",
+  "name": "vwu.ai OpenAI Models",
+  "summary": "调用 vwu.ai 平台上的多款 GPT-4 和 GPT-5 系列模型，兼容 OpenAI API，支持标准聊天补全接口。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vwu_openai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "a3273283",
+      "features": [
+        "调用 vwu.ai 平台上的多款 GPT-4 和 GPT-5 系列模型，兼容 OpenAI API，支持标准聊天补全接口。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vwu-openai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92772341?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vwu-openai",
+      "url": "https://clawhub.ai/skills/vwu-openai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vwu-openai",
+    "url": "https://clawhub.ai/skills/vwu-openai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vwu-openai-5ba7207bd18f228f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vwu-openai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vwu-openai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8f3da27dfedaf06b2d6c1b5febf40b765713bc076a6109d4e95e39ad25455d8",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T04:38:55.178Z"
+}

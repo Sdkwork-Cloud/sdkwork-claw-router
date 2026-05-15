@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lsl-test-skill1@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lsl_test_skill1",
+  "skill": {
+    "id": 65058,
+    "skillKey": "clawhub-lsl-test-skill1",
+    "name": "lsl-test-skill1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lsl-test-skill1",
+    "url": "https://clawhub.ai/skills/lsl-test-skill1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lsl-test-skill1-1bd79a31789dd4ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询城市当前天气，并用简洁中文返回天气状况和温度。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lushulin-jack",
+      "userId": "s179ccvz2vhb4f8jm2j05mga5s84efh8",
+      "displayName": "lushulin-jack",
+      "image": "https://avatars.githubusercontent.com/u/55017616?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773827433534,
+      "changelog": "- 新增文件 haha/3.txt\n- 其他无变更",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db29726ca2b529dfce2a1d6c440046605335731e8e43061a843859b8d0b8d0dc"
+}

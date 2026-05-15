@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bank-of-bots@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bank_of_bots",
+  "skill": {
+    "id": 51138,
+    "skillKey": "clawhub-bank-of-bots",
+    "name": "Bank of Bots"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bank-of-bots",
+    "url": "https://clawhub.ai/skills/bank-of-bots",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bank-of-bots-6179fd609f42bfe2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trust scoring for AI agents. Log transactions and submit payment proofs to build a verifiable BOB Score — a trust score (think FICO but for AI Agents) that o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bankofbotsandy",
+      "userId": "s17b5dmqkd65mpjxf0zgfzmx6183e7em",
+      "displayName": "bankofbotsandy",
+      "image": "https://avatars.githubusercontent.com/u/259720042?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773618152779,
+      "changelog": "Initial release of Bank of Bots — a trust scoring and payment workflow toolkit for AI agents.\n\n- Log and verify transactions to build a verifiable BOB Score (trust score) for AI agents.\n- Supports agent identity, multiple wallets (USD, BTC, USDC), spend policies, and structured payment flows.\n- Includes comprehensive CLI/API commands for checking balances, wallet management, payment initiation, transaction recording, and counterparty management.\n- Enables both custodial and non-custodial (BTC Lightning/onchain) payment modes, with proof submission for non-custodial flows.\n- Outputs structured JSON with actionable next steps for all commands.\n- Features service gates to unlock actions by presenting completed payment proofs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f010b64ced75e988ce9532e4f66073f1d28bf7bebaf7f83120c295df2559bd0c"
+}

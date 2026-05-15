@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24500,
+  "uuid": "skill-clawhub-devteam-command",
+  "skillKey": "clawhub-devteam-command",
+  "name": "DevTeam Command",
+  "summary": "Runs a full Dev Team pipeline from planning to release for any coding task, producing plans, code, tests, fixes, and release notes.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.devteam_command",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SunlearnDev",
+      "features": [
+        "Runs a full Dev Team pipeline from planning to release for any coding task, producing plans, co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/devteam-command@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124433272?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "devteam-command",
+      "url": "https://clawhub.ai/skills/devteam-command"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "devteam-command",
+    "url": "https://clawhub.ai/skills/devteam-command",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/devteam-command-acfdb2d2a297c93c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/devteam-command@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-devteam-command-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4ebb96c76007753bbd0ed1f58f433963df4f3c2872a7a2a8ba4ecdec10f6ed8",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T02:09:10.696Z"
+}

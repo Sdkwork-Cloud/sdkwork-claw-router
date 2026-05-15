@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39551,
+  "uuid": "skill-clawhub-shoofly-advanced",
+  "skillKey": "clawhub-shoofly-advanced",
+  "name": "Shoofly Advanced",
+  "summary": "Pre-execution security layer for AI agents. Intercepts and blocks dangerous tool calls before they fire -- not detected after. Works with OpenClaw and Claude...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shoofly_advanced",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wow-leeroy-jenkins05",
+      "features": [
+        "Pre-execution security layer for AI agents",
+        "Intercepts and blocks dangerous tool calls before they fire -",
+        "not detected after",
+        "Works with OpenClaw and Claude..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shoofly-advanced@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266177925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shoofly-advanced",
+      "url": "https://clawhub.ai/skills/shoofly-advanced"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shoofly-advanced",
+    "url": "https://clawhub.ai/skills/shoofly-advanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shoofly-advanced-3972c0bf0196b657.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shoofly-advanced@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shoofly-advanced-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9599330ad8878c9feb58768f3a5836f157eae3aaa8ac435f5c2117ed53134ee",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T22:04:35.091Z"
+}

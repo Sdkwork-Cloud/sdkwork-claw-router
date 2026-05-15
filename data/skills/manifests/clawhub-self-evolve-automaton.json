@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28903,
+  "uuid": "skill-clawhub-self-evolve-automaton",
+  "skillKey": "clawhub-self-evolve-automaton",
+  "name": "Self Evolve",
+  "summary": "Autonomous self-evolution skill by Automaton. Grants agent full authority to modify its own configuration, skills, prompts, AGENTS.md, SOUL.md, memory files...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_evolve_automaton",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenghaifeng08-creator",
+      "features": [
+        "Autonomous self-evolution skill by Automaton",
+        "Grants agent full authority to modify its own configuration, skills, prompts, AGENTS.md, SOUL.m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-evolve-automaton@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266006783?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-evolve-automaton",
+      "url": "https://clawhub.ai/skills/self-evolve-automaton"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-evolve-automaton",
+    "url": "https://clawhub.ai/skills/self-evolve-automaton",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-evolve-automaton-be6686c80f766ddb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-evolve-automaton@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-evolve-automaton-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c9341a215b9b3cb47ece023f69f9225f411b22fd438471fbb5ef80880cc777b",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T12:28:10.692Z"
+}

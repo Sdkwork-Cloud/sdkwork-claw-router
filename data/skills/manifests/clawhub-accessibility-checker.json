@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56317,
+  "uuid": "skill-clawhub-accessibility-checker",
+  "skillKey": "clawhub-accessibility-checker",
+  "name": "Accessibility Checker",
+  "summary": "Prüft UI-Komponenten auf WCAG-Verstöße, identifiziert Accessibility-Probleme und implementiert Verbesserungen wie ARIA-Labels und Farbkontrast.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.accessibility_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hupmann86-cell",
+      "features": [
+        "Prüft UI-Komponenten auf WCAG-Verstöße, identifiziert Accessibility-Probleme und implementiert."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/accessibility-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242008639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "accessibility-checker",
+      "url": "https://clawhub.ai/skills/accessibility-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "accessibility-checker",
+    "url": "https://clawhub.ai/skills/accessibility-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/accessibility-checker-b5d06981dd60dbab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/accessibility-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-accessibility-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56023a178863a38abaad593f791ba9833e09a164ddfc58e4c5e2405a849dea5f",
+      "artifactSizeBytes": 2306
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T06:53:12.466Z"
+}

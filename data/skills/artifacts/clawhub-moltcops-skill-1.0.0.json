@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltcops-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltcops_skill",
+  "skill": {
+    "id": 42565,
+    "skillKey": "clawhub-moltcops-skill",
+    "name": "Moltcops Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltcops-skill",
+    "url": "https://clawhub.ai/skills/moltcops-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltcops-skill-1398dcff7c411a4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pre-install security scanner for AI agent skills. Detects malicious patterns before you trust code. Local-first — code never leaves your machine."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adamthompson33",
+      "userId": "publishers:adamthompson33",
+      "displayName": "Adamthompson33",
+      "image": "https://avatars.githubusercontent.com/u/256450073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 781,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770727692225,
+      "changelog": "MoltCops 1.0.0 initial release:\n\n- Launches a local-first, pre-install security scanner for AI agent skills.\n- Detects 20 security threat categories including prompt injection, code injection, data exfiltration, hardcoded secrets, and more.\n- Provides clear PASS/WARN/BLOCK verdicts with actionable summaries.\n- Requires no dependencies; runs entirely via Python 3 standard library.\n- Optimized false positive handling for common safe patterns.\n- Browser-based version also available at scan.moltcops.com.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ef3c6a349132beb11e220048d9485418b87b180dd508625a2a859e1d990290c5"
+}

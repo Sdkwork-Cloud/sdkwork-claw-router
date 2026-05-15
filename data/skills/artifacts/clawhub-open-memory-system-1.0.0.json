@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/open-memory-system@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_memory_system",
+  "skill": {
+    "id": 62310,
+    "skillKey": "clawhub-open-memory-system",
+    "name": "open-memory-system"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-memory-system",
+    "url": "https://clawhub.ai/skills/open-memory-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-memory-system-4c0d42905e19b8e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "三层记忆系统 — Working/Short-Term/Long-Term Memory 管理。支持自动偏好记忆、实体记忆、事件记录、L2自动提炼、Hook自动触发、Cron定期整理。用于记忆用户偏好、跨会话积累知识、自动化记忆管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jochenyang",
+      "userId": "s17c1hbk23tyfjbykcdt2hs4a583kqde",
+      "displayName": "Jochen",
+      "image": "https://avatars.githubusercontent.com/u/107936988?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774236316860,
+      "changelog": "Open Memory System 1.0.0\n\n- 首次发布：基于 OpenViking + Microsoft Agent Memory 的三层记忆系统（Working/Short-Term/Long-Term Memory）。\n- 支持自动偏好、实体、事件记忆，L2 自动提炼，Hook 自动触发，Cron 定期整理。\n- 明确的目录结构和初始化流程，方便持久化管理用户和 Agent 记忆。\n- 提供命令行工具进行记忆读取、统计、清理、提炼及记录偏好/事件/经验。\n- 详尽文档，说明自动化流程与 Hook 部署，方便快速集成与配置。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f99a2d8baa566de21bc28cea56bb7113326c8c9c2e6026cee13757ba6bbdfc0b"
+}

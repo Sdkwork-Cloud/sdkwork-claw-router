@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12232,
+  "uuid": "skill-clawhub-antivirus",
+  "skillKey": "clawhub-antivirus",
+  "name": "Antivirus",
+  "summary": "MoltGuard — Protect you and your human from prompt injection, data exfiltration, and malicious commands. Source: https://github.com/openguardrails/openguardr...",
+  "version": "6.8.20",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.antivirus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Thomas",
+      "features": [
+        "MoltGuard — Protect you and your human from prompt injection, data exfiltration, and malicious.",
+        "Source: https://github.com/openguardrails/openguardr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/antivirus@6.8.20",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9669989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "antivirus",
+      "url": "https://clawhub.ai/skills/antivirus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "antivirus",
+    "url": "https://clawhub.ai/skills/antivirus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/antivirus-d3bc9bd14ff82827.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/antivirus@6.8.20",
+      "artifactUrl": "data/skills/artifacts/clawhub-antivirus-6.8.20.json",
+      "version": "6.8.20",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4909ba50ff78952d9e3b3e98dff939248c98764903f154cbabf9a0c6005cd4ab",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T04:59:17.682Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spec-task@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spec_task",
+  "skill": {
+    "id": 60336,
+    "skillKey": "clawhub-spec-task",
+    "name": "spec-task"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spec-task",
+    "url": "https://clawhub.ai/skills/spec-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spec-task-359463f32849b1fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "结构化任务管理与生命周期强制执行。以下场景必须使用：(1) 任何被 coordinator 通过 sessions_spawn 派发的任务 (2) 可拆解步骤≥3 的复杂任务 (3) 工作区已存在 spec-task/ 目录时的后续任务 (4) 用户显式要求使用 spec-task (5) prependCont..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leonardo-lb",
+      "userId": "s173fecesqz6npp546249nqprd83jtfx",
+      "displayName": "LeoNardo-LB",
+      "image": "https://avatars.githubusercontent.com/u/58056860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 254,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1774825006674,
+      "changelog": "The skill has been deprecated due to unstable factors and can be used in the form of a plugin with the same name instead.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:184c627dab2f1c8f9b3cb10a5f66867a9485f5afadd6f1fc560793808aa259d9"
+}

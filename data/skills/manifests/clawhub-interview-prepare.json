@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65241,
+  "uuid": "skill-clawhub-interview-prepare",
+  "skillKey": "clawhub-interview-prepare",
+  "name": "my skill",
+  "summary": "AI面试模拟与辅导。基于用户简历和JD生成定制化面试题库，逐题模拟面试并提供评分与示范回答。 触发词：面试模拟、面试准备、简历面试、interview prep、面试练习、 面试辅导、帮我准备面试、出面试题、面试题生成、interview practice、 mock interview、面试官模拟。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interview_prepare",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yangmanqi2104201431-ship-it",
+      "features": [
+        "AI面试模拟与辅导。基于用户简历和JD生成定制化面试题库，逐题模拟面试并提供评分与示范回答。 触发词：面试模拟、面试准备、简历面试、interview prep、面试练习、 面试辅导、帮我准."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/interview-prepare@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239160289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "interview-prepare",
+      "url": "https://clawhub.ai/skills/interview-prepare"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interview-prepare",
+    "url": "https://clawhub.ai/skills/interview-prepare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interview-prepare-0217ca65061d95bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/interview-prepare@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-interview-prepare-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae69c6f08e0e6be16cfcdde5dd9f6e86a55a2e5c1e71ecfd838e874bafbdd41a",
+      "artifactSizeBytes": 2666
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T07:08:26.970Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/etalon-gdpr@0.9.6",
+  "version": "0.9.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.etalon_gdpr",
+  "skill": {
+    "id": 38041,
+    "skillKey": "clawhub-etalon-gdpr",
+    "name": "Etalon GDPR Scan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "etalon-gdpr",
+    "url": "https://clawhub.ai/skills/etalon-gdpr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/etalon-gdpr-2527ef02118e83bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full GDPR compliance audit for any website or codebase using the ETALON CLI. Scans for trackers (111k+ domain database), tests consent violations, checks pri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rednix",
+      "userId": "s170cvfh9s59w5610ah2tznmxd83fyk2",
+      "displayName": "Nico Lumma",
+      "image": "https://avatars.githubusercontent.com/u/3120412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.9.6",
+      "createdAt": 1774111271324,
+      "changelog": "Fix: removed autonomous background scan language, removed external skill chains (github-pr, markdown-report) that implied credential usage",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0714e742d17bdc9575133e3b1a2df13e55ffc6a9ed11f3bad838d33511d20a8"
+}

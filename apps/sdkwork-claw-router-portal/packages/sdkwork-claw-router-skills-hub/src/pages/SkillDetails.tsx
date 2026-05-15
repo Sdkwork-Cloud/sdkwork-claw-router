@@ -1,10 +1,15 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useLocation, useNavigate, useParams, Link } from 'react-router-dom';
 import { Trans, useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
 import { ChevronLeft, Star, Download, ShieldCheck, CheckCircle2, Box, Terminal, Power, Save, Settings2 } from 'lucide-react';
 import { BusinessStatePanel, CopyButton } from 'sdkwork-claw-router-commons';
-import { buildPortalShareUrl, getLoadErrorMessage } from 'sdkwork-claw-router-commons/runtime';
+import {
+  buildPortalAuthLoginRedirect,
+  buildPortalShareUrl,
+  getLoadErrorMessage,
+  hasStoredPortalSession,
+} from 'sdkwork-claw-router-commons/runtime';
 import { skillService } from '../services/skillService';
 import {
   buildSkillInstallCommand,
@@ -20,6 +25,8 @@ import {
 
 export function SkillDetails() {
   const { id } = useParams<{ id: string }>();
+  const location = useLocation();
+  const navigate = useNavigate();
   const { t } = useTranslation();
   const [skill, setSkill] = useState<Skill | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -65,6 +72,11 @@ export function SkillDetails() {
 
   const loadInstalledSkills = useCallback(async (isActive: () => boolean = () => true) => {
     setInstalledLoadError(null);
+    if (!hasStoredPortalSession()) {
+      setInstalledSkills([]);
+      setInstalledLoadError(null);
+      return;
+    }
     try {
       const fetchedInstalledSkills = await skillService.getMySkills();
       if (isActive()) {
@@ -98,8 +110,19 @@ export function SkillDetails() {
     ? buildSkillInstallCommand({ packageName: detail.packageName, packageManager, registry })
     : '';
 
+  const requirePortalLoginForAction = useCallback(() => {
+    if (hasStoredPortalSession()) {
+      return true;
+    }
+    navigate(buildPortalAuthLoginRedirect(location));
+    return false;
+  }, [location, navigate]);
+
   const handleInstallToggle = useCallback(async () => {
     if (!id || !detail || isInstallActionPending) {
+      return;
+    }
+    if (!requirePortalLoginForAction()) {
       return;
     }
     setInstallActionError(null);
@@ -118,10 +141,13 @@ export function SkillDetails() {
     } finally {
       setIsInstallActionPending(false);
     }
-  }, [detail, id, installationState.action, isInstallActionPending]);
+  }, [detail, id, installationState.action, isInstallActionPending, requirePortalLoginForAction]);
 
   const handleConfigSave = useCallback(async () => {
     if (!id || !installationState.installed || isConfigSavePending) {
+      return;
+    }
+    if (!requirePortalLoginForAction()) {
       return;
     }
     setConfigActionError(null);
@@ -139,7 +165,7 @@ export function SkillDetails() {
     } finally {
       setIsConfigSavePending(false);
     }
-  }, [configDraft, id, installationState.installed, isConfigSavePending]);
+  }, [configDraft, id, installationState.installed, isConfigSavePending, requirePortalLoginForAction]);
 
   if (isLoading) {
     return (
@@ -287,7 +313,7 @@ export function SkillDetails() {
 
         {/* Quick Install Section */}
         <div className="mb-12">
-          <div className="bg-[#1a1a1a] dark:bg-[#111] rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-white/5 shadow-lg">
+          <div className="bg-white dark:bg-[#111] rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-white/5 shadow-lg">
             <h3 className="text-lg font-medium text-slate-800 dark:text-slate-300 mb-6">{t('skills.install.title')}</h3>
 
             <div className="bg-white dark:bg-[#1a1a1a] rounded-xl p-6 border border-slate-200 dark:border-white/5">

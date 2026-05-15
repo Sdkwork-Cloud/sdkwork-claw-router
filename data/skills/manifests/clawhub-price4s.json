@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65050,
+  "uuid": "skill-clawhub-price4s",
+  "skillKey": "clawhub-price4s",
+  "name": "汽车配件 - 4S 指导价查询",
+  "summary": "使用积智数据 4S价 API，通过 配件编码 列表 查询 配件的 4S价 信息。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.price4s",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ju Yuan",
+      "features": [
+        "使用积智数据 4S价 API，通过 配件编码 列表 查询 配件的 4S价 信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/price4s@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5111899?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "price4s",
+      "url": "https://clawhub.ai/skills/price4s"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "price4s",
+    "url": "https://clawhub.ai/skills/price4s",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/price4s-c1a66b7138c5b47c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/price4s@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-price4s-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:118db92e3a684b7a21528d20885e6a8250eb049801997f4796b788a732fa0f4c",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:07:42.277Z"
+}

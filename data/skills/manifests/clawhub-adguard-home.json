@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16727,
+  "uuid": "skill-clawhub-adguard-home",
+  "skillKey": "clawhub-adguard-home",
+  "name": "Adguard Home",
+  "summary": "Query AdGuard Home instances for real-time DNS stats, blocked domains, client activity, service status, configs, filter rules, and recent query logs.",
+  "version": "1.2.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adguard_home",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo Li",
+      "features": [
+        "Query AdGuard Home instances for real-time DNS stats, blocked domains, client activity, service."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adguard-home@1.2.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5019239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adguard-home",
+      "url": "https://clawhub.ai/skills/adguard-home"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adguard-home",
+    "url": "https://clawhub.ai/skills/adguard-home",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adguard-home-7950739bcc710962.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adguard-home@1.2.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-adguard-home-1.2.7.json",
+      "version": "1.2.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81ab2f0066e6f0de99eb5f82822991f6891fb1ffb5cbdde6d9bd432725d3958f",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T05:59:53.147Z"
+}

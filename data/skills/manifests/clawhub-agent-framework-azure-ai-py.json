@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10938,
+  "uuid": "skill-clawhub-agent-framework-azure-ai-py",
+  "skillKey": "clawhub-agent-framework-azure-ai-py",
+  "name": "Agent Framework Azure Ai Py",
+  "summary": "Build Azure AI Foundry agents using the Microsoft Agent Framework Python SDK (agent-framework-azure-ai). Use when creating persistent agents with AzureAIAgentsProvider, using hosted tools (code interpreter, file search, web search), integr.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_framework_azure_ai_py",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thegovind",
+      "features": [
+        "Build Azure AI Foundry agents using the Microsoft Agent Framework Python SDK (agent-framework-a.",
+        "Use when creating persistent agents with AzureAIAgentsProvider, using hosted tools (code interp.",
+        "Covers function tools, structured outputs, and multi-tool agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-framework-azure-ai-py@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18152044?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-framework-azure-ai-py",
+      "url": "https://clawhub.ai/skills/agent-framework-azure-ai-py"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-framework-azure-ai-py",
+    "url": "https://clawhub.ai/skills/agent-framework-azure-ai-py",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-framework-azure-ai-py-f360c21a522fbd4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-framework-azure-ai-py@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-framework-azure-ai-py-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f1b17a50343e106bbe9527a8dc2b45c2cce73f2096d794010cda7f12f386986",
+      "artifactSizeBytes": 2519
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T05:02:19.571Z"
+}

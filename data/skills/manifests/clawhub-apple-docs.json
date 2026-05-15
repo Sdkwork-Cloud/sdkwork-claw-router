@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9546,
+  "uuid": "skill-clawhub-apple-docs",
+  "skillKey": "clawhub-apple-docs",
+  "name": "Apple Docs",
+  "summary": "Query Apple Developer Documentation, APIs, and WWDC videos (2014-2025). Search SwiftUI, UIKit, Objective-C, Swift frameworks and watch sessions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_docs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Seth Rose",
+      "features": [
+        "Query Apple Developer Documentation, APIs, and WWDC videos (2014-2025)",
+        "Search SwiftUI, UIKit, Objective-C, Swift frameworks and watch sessions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apple-docs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10383809?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apple-docs",
+      "url": "https://clawhub.ai/skills/apple-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-docs",
+    "url": "https://clawhub.ai/skills/apple-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-docs-2cb9bebf28a254a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apple-docs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apple-docs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68e5f6cb48b2e4eb8e602c02903123c781dac39fc7a1386d0c1c5069ebd5cca8",
+      "artifactSizeBytes": 2288
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-17T20:13:36.436Z"
+}

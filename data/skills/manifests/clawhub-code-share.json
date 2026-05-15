@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14876,
+  "uuid": "skill-clawhub-code-share",
+  "skillKey": "clawhub-code-share",
+  "name": "Code Share",
+  "summary": "Share code via GitHub Gist instead of inline chat blocks. Use when code output exceeds 10 lines, when the user asks for copy-friendly code sharing in Discord...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_share",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jiayi Wang",
+      "features": [
+        "Share code via GitHub Gist instead of inline chat blocks",
+        "Use when code output exceeds 10 lines, when the user asks for copy-friendly code sharing in Dis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-share@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26063944?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-share",
+      "url": "https://clawhub.ai/skills/code-share"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-share",
+    "url": "https://clawhub.ai/skills/code-share",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-share-a938b2b363d08060.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-share@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-share-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2d806e48a0e0409f40899e5b28f8bd092381214b0c8f294ce24c7efd6e145cf",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T22:06:03.885Z"
+}

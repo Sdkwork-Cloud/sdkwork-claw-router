@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69904,
+  "uuid": "skill-clawhub-memory-auto-update",
+  "skillKey": "clawhub-memory-auto-update",
+  "name": "memory-auto-update",
+  "summary": "记忆自动更新 - 智能识别重要内容，自动更新记忆，再也不用担心忘记了。 触发场景（中文）： - 更新记忆、保存一下、记录今天的对话 - 这个很重要、你记住、记下来、别忘了 - 你忘了吗、你怎么不记得、你记性太差了 - 今天就这样、先到这里、结束了、总结一下今天 - 设置更新模式、设置更新频率、当前设置是什么 -...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_auto_update",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhuqingsonga",
+      "features": [
+        "智能识别重要内容，自动更新记忆，再也不用担心忘记了。 触发场景（中文）：",
+        "更新记忆、保存一下、记录今天的对话",
+        "这个很重要、你记住、记下来、别忘了",
+        "你忘了吗、你怎么不记得、你记性太差了"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-auto-update@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33415526?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-auto-update",
+      "url": "https://clawhub.ai/skills/memory-auto-update"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-auto-update",
+    "url": "https://clawhub.ai/skills/memory-auto-update",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-auto-update-1659860dd4a8ec69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-auto-update@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-auto-update-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93a4202338d7268ddcdab3f18e250ba0b28ed3db52a1ed23576eee9ee8785778",
+      "artifactSizeBytes": 2922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T12:39:51.462Z"
+}

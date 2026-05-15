@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-content-rewriter-pro@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_content_rewriter_pro",
+  "skill": {
+    "id": 32152,
+    "skillKey": "clawhub-ai-content-rewriter-pro",
+    "name": "AI Rewriter PRO"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-content-rewriter-pro",
+    "url": "https://clawhub.ai/skills/ai-content-rewriter-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-content-rewriter-pro-00e976e02ecb9306.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transforms any text into five SEO-optimized, tone-adapted versions with improved readability, grammar, and social media snippets for better engagement."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777931311931,
+      "changelog": "Initial release of AI Content Rewriter Pro.\n\n- Instantly rewrites any text while keeping the original meaning.\n- Automatically optimizes content for SEO keywords and readability.\n- Offers multiple tone options: professional, casual, viral, sales, and technical.\n- Generates five content variations for A/B testing and social snippets.\n- Built-in SEO tools: keyword density checks, meta descriptions, title suggestions, and more.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee2d5b8e6b8c34b6a6aca802544ccb37bdfdb06d83a4f9609d301c9bfff9efb2"
+}

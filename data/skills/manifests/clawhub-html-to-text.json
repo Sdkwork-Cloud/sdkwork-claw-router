@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33488,
+  "uuid": "skill-clawhub-html-to-text",
+  "skillKey": "clawhub-html-to-text",
+  "name": "HTML to Text",
+  "summary": "Convert HTML to plain readable text using MinerU. Strips HTML markup and extracts clean text content from web pages and HTML files. Features: HTML to text co...",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.html_to_text",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mzlzyCA",
+      "features": [
+        "Convert HTML to plain readable text using MinerU",
+        "Strips HTML markup and extracts clean text content from web pages and HTML files",
+        "Features: HTML to text co..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/html-to-text@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87289074?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "html-to-text",
+      "url": "https://clawhub.ai/skills/html-to-text"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "html-to-text",
+    "url": "https://clawhub.ai/skills/html-to-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/html-to-text-7878d6a30f28565d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/html-to-text@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-html-to-text-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbe84d85658ef70dbe215ff673809c6a009f7be9ba8e8eb4272d47c2c1d60f34",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:58:36.128Z"
+}

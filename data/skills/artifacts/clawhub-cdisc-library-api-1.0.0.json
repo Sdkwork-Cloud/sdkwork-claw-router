@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cdisc-library-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cdisc_library_api",
+  "skill": {
+    "id": 58646,
+    "skillKey": "clawhub-cdisc-library-api",
+    "name": "CDISC Library API Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cdisc-library-api",
+    "url": "https://clawhub.ai/skills/cdisc-library-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cdisc-library-api-d62933197bbe106d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CDISC Library API Skill - 查询临床数据标准（QRS 量表、ADaM、CDASH、SDTM、受控术语）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whereayan",
+      "userId": "s177646q3z6bt7qqbraqb1dwnx83s4fg",
+      "displayName": "AYAN",
+      "image": "https://avatars.githubusercontent.com/u/55865412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 446,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772968844548,
+      "changelog": "Initial release - Query CDISC Library API for clinical data standards (QRS, ADaM, CDASH, SDTM, Controlled Terminology)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f2c5943c3d9cfbd080c5a011870412351f0ae870cf5eb67229e03097e4506de2"
+}

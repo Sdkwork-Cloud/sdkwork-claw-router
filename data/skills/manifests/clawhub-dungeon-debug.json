@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27875,
+  "uuid": "skill-clawhub-dungeon-debug",
+  "skillKey": "clawhub-dungeon-debug",
+  "name": "Dungeon Debug",
+  "summary": "Transforms debugging sessions into a text-based dungeon crawl. Your bug is the final boss. Stack frames are dungeon rooms. Variables are loot. Log messages a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dungeon_debug",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John DeVere Cooley",
+      "features": [
+        "Transforms debugging sessions into a text-based dungeon crawl",
+        "Your bug is the final boss",
+        "Stack frames are dungeon rooms",
+        "Variables are loot"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dungeon-debug@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75928463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dungeon-debug",
+      "url": "https://clawhub.ai/skills/dungeon-debug"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dungeon-debug",
+    "url": "https://clawhub.ai/skills/dungeon-debug",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dungeon-debug-15ec5b5d29f65e32.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dungeon-debug@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dungeon-debug-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54c4440c3af2ad0a795f3342e4ea02b74a384cb53813a435e240bb2f9ff5527f",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T23:12:42.453Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17431,
+  "uuid": "skill-clawhub-wangwu-agent-chat",
+  "skillKey": "clawhub-wangwu-agent-chat",
+  "name": "AgentChat",
+  "summary": "Command-line tool for encrypted agent-to-agent messaging and small file sharing over public Nostr relays using npub/nsec authentication.",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wangwu_agent_chat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangwu-30",
+      "features": [
+        "Command-line tool for encrypted agent-to-agent messaging and small file sharing over public Nos."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wangwu-agent-chat@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260053481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wangwu-agent-chat",
+      "url": "https://clawhub.ai/skills/wangwu-agent-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wangwu-agent-chat",
+    "url": "https://clawhub.ai/skills/wangwu-agent-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wangwu-agent-chat-41d87f925154a8ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wangwu-agent-chat@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wangwu-agent-chat-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23eccd8fdf048101e3dc5fc71521ce6c41edb02fe71fb48a0f597520e048e4c7",
+      "artifactSizeBytes": 2229
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T18:18:54.267Z"
+}

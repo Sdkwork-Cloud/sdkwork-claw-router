@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agency-agents-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agency_agents_openclaw",
+  "skill": {
+    "id": 61092,
+    "skillKey": "clawhub-agency-agents-openclaw",
+    "name": "Agency Agents Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agency-agents-openclaw",
+    "url": "https://clawhub.ai/skills/agency-agents-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agency-agents-openclaw-25f44606d58a5a53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供61个专业AI Agent，支持单Agent执行专业任务、部门协作或多Agent编排完成复杂项目和企业级开发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jerry-guo-mys",
+      "userId": "publishers:jerry-guo-mys",
+      "displayName": "jerry-guo-mys",
+      "image": "https://avatars.githubusercontent.com/u/188930677?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1253,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772838719528,
+      "changelog": "Initial release of agency-agents for OpenClaw:\n\n- Provides 61 specialized AI Agents across 8 departments, supporting both single-agent and multi-agent workflows.\n- Enables flexible use: run individual agents, department-wide collaborations, or orchestrate complex projects.\n- Includes detailed workflow descriptions, output formats, and configuration options for customization and QA.\n- Offers best-practice guidelines, troubleshooting tips, and support resources.\n- Built on and extends the agency-agents project, with documentation in Chinese.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ede9a54f0d3e378b2dffed223566fdf1c9f0af8bb37200e5b10f95705097f915"
+}

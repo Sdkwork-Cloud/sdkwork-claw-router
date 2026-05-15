@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67495,
+  "uuid": "skill-clawhub-hitachi",
+  "skillKey": "clawhub-hitachi",
+  "name": "Hitachi",
+  "summary": "提供Hitachi品牌历史、业务范围、市场分布与行业竞争格局的详细信息和概览。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hitachi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供Hitachi品牌历史、业务范围、市场分布与行业竞争格局的详细信息和概览。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hitachi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hitachi",
+      "url": "https://clawhub.ai/skills/hitachi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hitachi",
+    "url": "https://clawhub.ai/skills/hitachi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hitachi-ca6e0dc328e4570d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hitachi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hitachi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4be32697188117b54c3e1171318090861d8acbc7be0c5a44b93819485bda2a7f",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T10:02:27.042Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seed@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seed",
+  "skill": {
+    "id": 54042,
+    "skillKey": "clawhub-seed",
+    "name": "Seed"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seed",
+    "url": "https://clawhub.ai/skills/seed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seed-19b25856e1c150ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Grow firmware on any hardware through HTTP — upload C, compile on device, apply with watchdog rollback"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "awis13",
+      "userId": "publishers:awis13",
+      "displayName": "Awis13",
+      "image": "https://avatars.githubusercontent.com/u/41254059?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 436,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773260971818,
+      "changelog": "- Added a \"First steps\" section to guide users in obtaining a seed node address and token.\n- Included clear instructions for deploying a new seed node on any Linux machine.\n- Made it explicit that the seed binary is ~70KB and requires only libc.\n- Improved initial onboarding for users who don't have a node running yet.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a1d7aa59491a3a28d5332a542be08ae30b882afe0037c604f5c258472efd29f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36090,
+  "uuid": "skill-clawhub-weixin-long-image",
+  "skillKey": "clawhub-weixin-long-image",
+  "name": "Weixin Long Image",
+  "summary": "Turn Weixin/Wechat replies into readable image cards by rendering HTML into long PNG screenshots. Use when a Weixin direct-chat reply would exceed 150 Chines...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weixin_long_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "usky",
+      "features": [
+        "Turn Weixin/Wechat replies into readable image cards by rendering HTML into long PNG screenshots",
+        "Use when a Weixin direct-chat reply would exceed 150 Chines..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weixin-long-image@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15121953?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weixin-long-image",
+      "url": "https://clawhub.ai/skills/weixin-long-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weixin-long-image",
+    "url": "https://clawhub.ai/skills/weixin-long-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weixin-long-image-fc1f18df8c472f3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weixin-long-image@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weixin-long-image-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a68ca519e9be3bb005dc27f3df24167bfc01ae1aa3b27b39720bc35f3b9ae423",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T05:53:47.011Z"
+}

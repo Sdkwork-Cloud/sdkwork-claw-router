@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-pai-feature-store-featuredb-usage-query@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_pai_feature_store_featuredb_usage_query",
+  "skill": {
+    "id": 43207,
+    "skillKey": "clawhub-alibabacloud-pai-feature-store-featuredb-usage-query",
+    "name": "Alibabacloud Pai Feature Store Featuredb Usage Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-pai-feature-store-featuredb-usage-query",
+    "url": "https://clawhub.ai/skills/alibabacloud-pai-feature-store-featuredb-usage-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-pai-feature-store-featuredb-usage-query-11db8e67f9c7be00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query FeatureDB read/write usage data from PAI-FeatureStore. Use for analyzing consumption, usage trends, and cost estimation by official pricing. Supports d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1776685758552,
+      "changelog": "- Now requires Aliyun CLI version 3.3.3 or higher (previously 3.3.1).  \n- Added explicit steps to run `aliyun plugin update` to keep CLI plugins up-to-date.\n- The `--user-agent` parameter must now include the skill name for all CLI commands.\n- Installation and CLI requirements in documentation updated for improved clarity and compliance.\n- Minor clarifications and corrections in step-by-step guides and validation instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ef3b36c1ae7a9f403ccbd8ed7f3b95de2670f75ec9c7b9c2f00a437cab47560"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-subtitle-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_subtitle_video",
+  "skill": {
+    "id": 35974,
+    "skillKey": "clawhub-youtube-subtitle-video",
+    "name": "Youtube Subtitle Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-subtitle-video",
+    "url": "https://clawhub.ai/skills/youtube-subtitle-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-subtitle-video-942b15e8ae818e40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 10-minute YouTube tutorial video into 1080p captioned YouTube videos just by typing what you need. Whether it's adding subtitles to YouTube videos or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776613547894,
+      "changelog": "YouTube Subtitle Video — Add Subtitles to YouTube Videos v1.0.0\n\n- Initial release: Instantly add subtitles to YouTube videos and export as 1080p MP4, MOV, and more.\n- Simple workflow: Drop your YouTube video, describe the subtitles or edits you want—results ready in 1–2 minutes.\n- Automatic cloud-powered processing with free token support (no account required for 100 trial credits).\n- Supports multiple subtitle languages, video/audio tracks, and fast batch or iterative editing.\n- Real-time status updates, credits checking, and timeline summaries for easy project management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9fa08deca2e9b610b06602d9a49364ed9ad9bf94a851e690b5bd0dfd5ba29f64"
+}

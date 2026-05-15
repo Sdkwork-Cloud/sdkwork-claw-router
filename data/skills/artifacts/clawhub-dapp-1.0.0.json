@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dapp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dapp",
+  "skill": {
+    "id": 30142,
+    "skillKey": "clawhub-dapp",
+    "name": "Dapp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dapp",
+    "url": "https://clawhub.ai/skills/dapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dapp-c7e7d9f7ef4565bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A comprehensive AI agent skill for discovering, evaluating, and monitoring decentralized applications. Tracks on-chain activity anomalies, evaluates smart co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agenticio",
+      "userId": "publishers:agenticio",
+      "displayName": "agenticio",
+      "image": "https://avatars.githubusercontent.com/u/259287600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 288,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773759750310,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fbe027181e243bb3131533d82f66e100be021282f3223f6aa949861baef1f1b"
+}

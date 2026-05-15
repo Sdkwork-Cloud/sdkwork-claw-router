@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26901,
+  "uuid": "skill-clawhub-save-to-email",
+  "skillKey": "clawhub-save-to-email",
+  "name": "Save To Email",
+  "summary": "Send emails through the Resend API. Use when the user wants to send an email, deliver a report by email, forward generated content to an inbox, or trigger an...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.save_to_email",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chjm-ai",
+      "features": [
+        "Send emails through the Resend API",
+        "Use when the user wants to send an email, deliver a report by email, forward generated content."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/save-to-email@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10297628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "save-to-email",
+      "url": "https://clawhub.ai/skills/save-to-email"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "save-to-email",
+    "url": "https://clawhub.ai/skills/save-to-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/save-to-email-f43ad987fab5f4b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/save-to-email@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-save-to-email-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b5fe7193339ff0bbb4cdc8e67279c7b0db0e4f7aad40a76522545928f373685",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:13:24.830Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/expense-tracker-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expense_tracker_pro",
+  "skill": {
+    "id": 9130,
+    "skillKey": "clawhub-expense-tracker-pro",
+    "name": "Expense Tracker Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expense-tracker-pro",
+    "url": "https://clawhub.ai/skills/expense-tracker-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expense-tracker-pro-89e349bb90a24826.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track expenses via natural language, get spending summaries, set budgets"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jhillin8",
+      "userId": "publishers:jhillin8",
+      "displayName": "jhillin8",
+      "image": "https://avatars.githubusercontent.com/u/79551560?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4067,
+      "installsAllTime": 21,
+      "installsCurrent": 21,
+      "stars": 7,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769326430224,
+      "changelog": "Initial release of Expense Tracker Pro:\n\n- Log expenses using natural language input.\n- Automatic expense categorization and budget tracking.\n- Set and manage monthly budgets by category.\n- Request spending summaries and reports on demand.\n- All data is stored locally for privacy and persistence.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4777921ff8aba8006ae66ed98b750bd7d93d2110add364698144d0d3335747f3"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37309,
+  "uuid": "skill-clawhub-gif-search-cli",
+  "skillKey": "clawhub-gif-search-cli",
+  "name": "Gifgrep",
+  "summary": "Search GIF providers with CLI/TUI, download results, and extract stills/sheets.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gif_search_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "utromaya-code",
+      "features": [
+        "Search GIF providers with CLI/TUI, download results, and extract stills/sheets."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gif-search-cli@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254962629?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gif-search-cli",
+      "url": "https://clawhub.ai/skills/gif-search-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gif-search-cli",
+    "url": "https://clawhub.ai/skills/gif-search-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gif-search-cli-52f45ce23c379ce1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gif-search-cli@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gif-search-cli-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:847e09b5c9095da5e8ed4e1c2a581ecbaac16d8805525e56bdaed6fc79e84f2d",
+      "artifactSizeBytes": 1858
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T23:24:02.778Z"
+}

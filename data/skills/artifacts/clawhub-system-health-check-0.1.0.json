@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/system-health-check@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.system_health_check",
+  "skill": {
+    "id": 31442,
+    "skillKey": "clawhub-system-health-check",
+    "name": "System Health Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "system-health-check",
+    "url": "https://clawhub.ai/skills/system-health-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/system-health-check-e4ad96c804975b7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "System health validator — checks skill files, paths, permissions, binaries, backup freshness, and encryption. Produces pass/fail reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "satoshistackalotto",
+      "userId": "publishers:satoshistackalotto",
+      "displayName": "Stems",
+      "image": "https://avatars.githubusercontent.com/u/70470779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 822,
+      "installsAllTime": 8,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771696660818,
+      "changelog": "Initial release of the system-health-check skill for OpenClaw Greek Accounting.\n\n- Validates skill file presence, integrity, and test coverage across all skills.\n- Checks directory structure and flags any non-canonical paths under `/data/`.\n- Verifies sensitive directory and file permissions for security compliance.\n- Ensures required binaries and environment variables are set for operation.\n- Reports on backup freshness, file encryption status, and process locks.\n- Provides clear pass/fail reports with actionable remediation steps.\n- Designed for safe, read-only, cron-friendly daily or pre-operation use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:63e795627cb4b6d3d934975d682475c8563caafc3f3fd31a2dba37c3a23fae01"
+}

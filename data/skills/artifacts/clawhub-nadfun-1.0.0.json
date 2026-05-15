@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nadfun@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nadfun",
+  "skill": {
+    "id": 11343,
+    "skillKey": "clawhub-nadfun",
+    "name": "nadfun"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nadfun",
+    "url": "https://clawhub.ai/skills/nadfun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nadfun-08295c0d92129d9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Decentralized Monad token launchpad with bonding curve trading, token creation, real-time event streaming, and historical data querying via pure viem calls."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "portdeveloper",
+      "userId": "publishers:portdeveloper",
+      "displayName": "portdeveloper",
+      "image": "https://avatars.githubusercontent.com/u/108868128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1762,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770038336391,
+      "changelog": "nadfun 1.0.0\n\n- Initial release of the NadFun skill documentation.\n- Includes modular guides: architecture, trading, quoting, token management, creation, event indexing, and REST API for bots.\n- Provides step-by-step authentication/login flow for API access.\n- Lists Monad network endpoints and contract addresses for testnet and mainnet.\n- Features code examples to set up clients using viem and TypeScript interfaces for API interaction.\n- Explains core launchpad concepts: bonding curves, token graduation, real-time and historical event access.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:142662b8c4873d0c86262c9df489ddb7db2ce058d1328a8d734586d80cea88ee"
+}

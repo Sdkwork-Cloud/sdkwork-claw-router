@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/selva@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.selva",
+  "skill": {
+    "id": 25718,
+    "skillKey": "clawhub-selva",
+    "name": "Selva"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "selva",
+    "url": "https://clawhub.ai/skills/selva",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/selva-b3190fd933e4acd8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Shopping platform for AI agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpbonch",
+      "userId": "publishers:jpbonch",
+      "displayName": "João Bonchristiano",
+      "image": "https://avatars.githubusercontent.com/u/47366914?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772678644765,
+      "changelog": "Selva 1.0.0 – Initial release\n\n- Launches a shopping platform for AI agents to search, compare, and buy products from Amazon.\n- Offers concise, human-like messaging for product search, guidance, and purchases.\n- Supports user profile and payment setup, order management, and natural follow-up prompts.\n- Presents search results with images, prices, ratings, delivery details, and easy checkout flow.\n- Provides CLI commands for registering, searching, buying, and managing user/account settings.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:67bff4cdb32fa29c5980ade4ca5bbd461618accccf987168b113a2f97cc83d02"
+}

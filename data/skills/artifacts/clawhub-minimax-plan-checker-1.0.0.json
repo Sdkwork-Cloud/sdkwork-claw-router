@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-plan-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_plan_checker",
+  "skill": {
+    "id": 67069,
+    "skillKey": "clawhub-minimax-plan-checker",
+    "name": "MiniMax套餐查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-plan-checker",
+    "url": "https://clawhub.ai/skills/minimax-plan-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-plan-checker-e44740af5b282666.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取 MiniMax 平台的套餐信息，包括套餐名称、额度、当前使用情况。当用户询问 MiniMax 套餐、额度使用情况、API 调用量、计费信息时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asio-o",
+      "userId": "s171eygee7gjbrj7g58ra209ch83qb3v",
+      "displayName": "杨帆",
+      "image": "https://avatars.githubusercontent.com/u/20653356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773159781609,
+      "changelog": "- Initial release of minimax-plan-checker.\n- Allows users to query MiniMax platform plan details, usage, and billing info.\n- Supports both browser-based automatic retrieval and manual instructions.\n- Output includes plan name, quota details, and usage statistics.\n- Requires user to log in to their MiniMax account if not already logged in.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe930fa7084dd1ed73146b77513f6b0b98709db0a827e48e625918eeeaa9c1b1"
+}

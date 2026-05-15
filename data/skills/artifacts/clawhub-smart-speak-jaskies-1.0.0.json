@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-speak-jaskies@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_speak_jaskies",
+  "skill": {
+    "id": 58322,
+    "skillKey": "clawhub-smart-speak-jaskies",
+    "name": "Smart Speak Multilingual TTS (Jaskies)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-speak-jaskies",
+    "url": "https://clawhub.ai/skills/smart-speak-jaskies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-speak-jaskies-be50db2ef172259c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chuyển đổi văn bản đa ngôn ngữ (Việt - Hoa - Anh) thành giọng nói chuẩn xác. Tự động xử lý Pinyin và ghép nối âm thanh chất lượng cao. Yêu cầu cài đặt edge-t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaskies",
+      "userId": "s171rw4dgsj7r2amq25j89gmfs83v7he",
+      "displayName": "Trần Anh Vũ",
+      "image": "https://avatars.githubusercontent.com/u/19165770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773311553665,
+      "changelog": "Xuất bản chính thức với hướng dẫn cài đặt chi tiết edge-tts và ffmpeg.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:311a2b7ea6f22978472cff9a4b20f53d7d2d62d22ac9ebfca3615938aba2e2a5"
+}

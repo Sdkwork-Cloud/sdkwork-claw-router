@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/open-market-data@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_market_data",
+  "skill": {
+    "id": 51499,
+    "skillKey": "clawhub-open-market-data",
+    "name": "open-market-data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-market-data",
+    "url": "https://clawhub.ai/skills/open-market-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-market-data-a78a4521dd2406c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query free financial data APIs — stocks, crypto, macro, SEC filings"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anotb",
+      "userId": "publishers:anotb",
+      "displayName": "anotb",
+      "image": "https://avatars.githubusercontent.com/u/28667903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 817,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771366654094,
+      "changelog": "Initial release — 8 providers, 13 commands, auto-routing with fallback",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:45b1bd08fd212a34c9186647411b88a897e50835ef4e8aea98b522d97c84b1fe"
+}

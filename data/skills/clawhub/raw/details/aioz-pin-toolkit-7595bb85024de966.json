@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "aioz-pin-toolkit",
+    "displayName": "AIOZ Pin Toolkit",
+    "summary": "Respond to user requests for AIOZ Pin API. Use provided scripts to manage API keys, pin files to IPFS, track usage, and more.",
+    "tags": {
+      "latest": "1.0.7"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "createdAt": 1774536162448,
+    "updatedAt": 1777623955058
+  },
+  "latestVersion": {
+    "version": "1.0.7",
+    "createdAt": 1774584221206,
+    "changelog": "**Security update: Prevent passing credentials as CLI arguments.**\n\n- Added prominent warning not to pass credentials (API key, secret, or JWT) as command-line arguments—scripts must read these exclusively from environment variables.\n- Updated instructions and all script examples to reinforce the credential usage policy.\n- Clarified that providing credentials as script arguments is a security violation and increases exposure risk.\n- Adjusted documentation for greater emphasis on secure environment practices before running any scripts.\n- No changes to available features or functionality.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "namle-aioz",
+    "userId": "s17fx03yhvaw8hjyb3p4mq5zz183j1x3",
+    "displayName": "namle-aioz",
+    "image": "https://avatars.githubusercontent.com/u/265162279?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777623955058
+  }
+}

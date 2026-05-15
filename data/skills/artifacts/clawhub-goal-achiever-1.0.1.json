@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/goal-achiever@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goal_achiever",
+  "skill": {
+    "id": 64269,
+    "skillKey": "clawhub-goal-achiever",
+    "name": "Goal Achiever: Self-Evolving Agent System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goal-achiever",
+    "url": "https://clawhub.ai/skills/goal-achiever",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goal-achiever-eaeb395349225711.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在目标平台（goal_web）发布高质量内容的完整技能流程设计。用于：读取任务json与goal_prompt，拆解任务、执行任务引擎、开发与自检、结果回写与评分回写。触发词：修改目标、赢得目标、触发目标实现、触发{网站名称}任务实现。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ldz2010326",
+      "userId": "s17073sqdaw6m8ed22ja94dbvn842pxd",
+      "displayName": "LDZ2010326",
+      "image": "https://avatars.githubusercontent.com/u/204225370?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774174566196,
+      "changelog": "goal-achiever v1.0.1\n\n- No file changes detected in this version.\n- No user-facing feature, behavior, or documentation changes.\n- Edited a file",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23cd84775d83a734b084d1327f13896ff30df2737b06e0c4be3f41be01ed3d9f"
+}

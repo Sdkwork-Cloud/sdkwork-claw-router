@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32822,
+  "uuid": "skill-clawhub-deputy",
+  "skillKey": "clawhub-deputy",
+  "name": "Deputy",
+  "summary": "Deputy integration. Manage Employees, Locations, LeaveRequests, Timesheets, PayRates. Use when the user wants to interact with Deputy data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deputy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Deputy integration",
+        "Manage Employees, Locations, LeaveRequests, Timesheets, PayRates",
+        "Use when the user wants to interact with Deputy data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deputy@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deputy",
+      "url": "https://clawhub.ai/skills/deputy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deputy",
+    "url": "https://clawhub.ai/skills/deputy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deputy-00652261d8f5e7a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deputy@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-deputy-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15c99cee22e249bb741e8e2f9d2bfda59ac348d229b447e15bd0c874c60ce89b",
+      "artifactSizeBytes": 1840
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:23:40.352Z"
+}

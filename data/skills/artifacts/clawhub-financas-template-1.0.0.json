@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/financas-template@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financas_template",
+  "skill": {
+    "id": 55815,
+    "skillKey": "clawhub-financas-template",
+    "name": "Finanças Template"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financas-template",
+    "url": "https://clawhub.ai/skills/financas-template",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financas-template-e9078963fe7c8b17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gerencia finanças pessoais com registro detalhado de gastos/receitas por categoria, processamento de extratos/faturas e resumos mensais e anuais."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evandrotho",
+      "userId": "s170aqpshwe81pvqj0c503d7qn849k5y",
+      "displayName": "evandrotho",
+      "image": "https://avatars.githubusercontent.com/u/261009611?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775359845442,
+      "changelog": "Skill de gerenciamento financeiro pessoal em linguagem natural.\n\n- Estrutura e processos para registro de gastos, receitas, parcelamentos e categorias financeiras.\n- Processamento automático de extratos bancários e faturas de cartão, com regras para evitar duplicatas.\n- Geração de resumos mensais e anuais por categoria, acessíveis via comandos e consultas.\n- Formato padronizado para arquivos financeiros no workspace e confirmações obrigatórias para cada registro.\n- Regras claras para classificação, descrição real dos estabelecimentos e verificação ante duplicatas.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e4ea6020e1184a36323254d7b2d13a44191deea8ff99807bfae8381a3de8cf45"
+}

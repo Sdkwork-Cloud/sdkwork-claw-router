@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32540,
+  "uuid": "skill-clawhub-devrel-playbook",
+  "skillKey": "clawhub-devrel-playbook",
+  "name": "DevRel Playbook",
+  "summary": "This skill redirects to [Gingiris Open Source Playbook](https://github.com/Gingiris/gingiris-opensource)",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.devrel_playbook",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gingiris",
+      "features": [
+        "This skill redirects to [Gingiris Open Source Playbook](https://github.com/Gingiris/gingiris-op."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/devrel-playbook@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260675847?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "devrel-playbook",
+      "url": "https://clawhub.ai/skills/devrel-playbook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "devrel-playbook",
+    "url": "https://clawhub.ai/skills/devrel-playbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/devrel-playbook-1aa85ffa3f65ded2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/devrel-playbook@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-devrel-playbook-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:569fe4b02405b54d7791c6d06e96b3b2a3c801d3beca7e6d2197a30f84c4090b",
+      "artifactSizeBytes": 1861
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T19:00:33.696Z"
+}

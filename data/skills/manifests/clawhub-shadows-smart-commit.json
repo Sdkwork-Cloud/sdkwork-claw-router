@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51157,
+  "uuid": "skill-clawhub-shadows-smart-commit",
+  "skillKey": "clawhub-shadows-smart-commit",
+  "name": "Shadows Smart Commit",
+  "summary": "Intelligent git commit assistant — analyzes diffs, enforces conventional commits, detects secrets, generates meaningful messages. Use when committing code ch...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shadows_smart_commit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NakedoShadow",
+      "features": [
+        "Intelligent git commit assistant — analyzes diffs, enforces conventional commits, detects secre.",
+        "Use when committing code ch..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shadows-smart-commit@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196211757?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shadows-smart-commit",
+      "url": "https://clawhub.ai/skills/shadows-smart-commit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shadows-smart-commit",
+    "url": "https://clawhub.ai/skills/shadows-smart-commit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shadows-smart-commit-2e044340a2aa1dc6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shadows-smart-commit@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shadows-smart-commit-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f678c8302e7f959c4c58d27124b15232e7179995b3897b9b3b2ca28993e414fc",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T14:36:46.555Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gmail-modify-labels@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_modify_labels",
+  "skill": {
+    "id": 38482,
+    "skillKey": "clawhub-gmail-modify-labels",
+    "name": "Gmail Modify Labels"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-modify-labels",
+    "url": "https://clawhub.ai/skills/gmail-modify-labels",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-modify-labels-7c33c6a4af773bc5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Atomic node skill to modify email labels in Gmail using the gog CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zvirb",
+      "userId": "s178ycq6n64frv7zswtx5rvyfd85kc2g",
+      "displayName": "zvirb",
+      "image": "https://avatars.githubusercontent.com/u/130008533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777277717575,
+      "changelog": "- Added a Jidoka-validated loop: on command failure, retry up to 3 times with 3-second intervals; if still unsuccessful, report the error and stop.\n- Updated Cognitive Directives section to reflect the error-handling and retry process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:991413e6a6ce9c0870a6921018bf88f61553e85cda46704001bdfe10f26808aa"
+}

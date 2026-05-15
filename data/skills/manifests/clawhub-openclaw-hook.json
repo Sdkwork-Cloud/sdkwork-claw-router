@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21523,
+  "uuid": "skill-clawhub-openclaw-hook",
+  "skillKey": "clawhub-openclaw-hook",
+  "name": "OpenClaw Hook Development",
+  "summary": "Create, debug, and maintain OpenClaw Gateway internal hooks for agent events like bootstrap, including virtual file injection and Telegram notification fixes.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_hook",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cbd2020",
+      "features": [
+        "Create, debug, and maintain OpenClaw Gateway internal hooks for agent events like bootstrap, in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-hook@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60251704?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-hook",
+      "url": "https://clawhub.ai/skills/openclaw-hook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-hook",
+    "url": "https://clawhub.ai/skills/openclaw-hook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-hook-af54905bdf9cf4a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-hook@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-hook-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a85ec0d9f933a7b5b355826ad4e877eaa475f399caec403392a2df652bcdfd36",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T14:01:46.522Z"
+}

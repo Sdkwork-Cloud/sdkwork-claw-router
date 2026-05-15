@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60892,
+  "uuid": "skill-clawhub-insurance-actuarial-cn",
+  "skillKey": "clawhub-insurance-actuarial-cn",
+  "name": "China Insurance Actuarial Pricing Expert",
+  "summary": "提供基于第四套生命表(2025)和CASS标准的中国保险产品精算定价、准备金计算及偿付能力资本分析。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insurance_actuarial_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lingfeng-19",
+      "features": [
+        "提供基于第四套生命表(2025)和CASS标准的中国保险产品精算定价、准备金计算及偿付能力资本分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/insurance-actuarial-cn@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8140166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "insurance-actuarial-cn",
+      "url": "https://clawhub.ai/skills/insurance-actuarial-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insurance-actuarial-cn",
+    "url": "https://clawhub.ai/skills/insurance-actuarial-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insurance-actuarial-cn-128a33d0538cc8d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/insurance-actuarial-cn@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-insurance-actuarial-cn-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f02eed8c88c2e7242133c20de213a497af9047bac21bb24315be3ea20f183b6",
+      "artifactSizeBytes": 2087
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T15:23:17.838Z"
+}

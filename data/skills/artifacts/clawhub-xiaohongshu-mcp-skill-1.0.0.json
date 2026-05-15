@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-mcp-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_mcp_skill",
+  "skill": {
+    "id": 9287,
+    "skillKey": "clawhub-xiaohongshu-mcp-skill",
+    "name": "xiaohongshu-mcp-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-mcp-skill",
+    "url": "https://clawhub.ai/skills/xiaohongshu-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-mcp-skill-8f312d6bedda51b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate Xiaohongshu (小红书/RED) via local MCP service. Use when user wants to search notes, publish content (image/video), interact with posts (like/comment/fa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "palmpalm7",
+      "userId": "s17dmbj4x5xncchsseqr346agx83ftgk",
+      "displayName": "Andy Xie",
+      "image": "https://avatars.githubusercontent.com/u/21349144?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4767,
+      "installsAllTime": 27,
+      "installsCurrent": 24,
+      "stars": 10,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772318069911,
+      "changelog": "Initial release: 小红书 MCP 本地部署技能，基于 xpzouying/xiaohongshu-mcp，支持搜索、发布、互动等 13 个工具",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:078fc823eb1cde34e82c597c1c3eac1008c1a4e496d49237bcd5a3e7c35eef6a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oee-social-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oee_social_research",
+  "skill": {
+    "id": 16691,
+    "skillKey": "clawhub-oee-social-research",
+    "name": "OEE Social Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oee-social-research",
+    "url": "https://clawhub.ai/skills/oee-social-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oee-social-research-95f42a50b14876ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conduct tiered social media research on Twitter and web sources, compiling insights into structured briefings without requiring API keys for basic access."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "odinbot33",
+      "userId": "publishers:odinbot33",
+      "displayName": "OdinBot33",
+      "image": "https://avatars.githubusercontent.com/u/259951308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 859,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771079590283,
+      "changelog": "Initial release — Social Research (Ravens) skill for tiered X/Twitter intelligence gathering.\n\n- Supports tiered research: FxTwitter API, web search fallback, and browser scraping.\n- Generates compiled research briefings from public discussions.\n- Provides command-line interface with topic targeting and tier selection.\n- No API keys required for Tier 1 (FxTwitter).\n- Caches results and stores compiled reports for reuse.\n- Triggered by phrases like \"what are people saying about\" and \"send the ravens.\"",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1cdb35cc5b18e5975bb7526ce69fed18dfc04e6c2d9cacf20710fe54fd5a1cf4"
+}

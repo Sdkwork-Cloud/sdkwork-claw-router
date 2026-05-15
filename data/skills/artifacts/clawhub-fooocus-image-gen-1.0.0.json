@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fooocus-image-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fooocus_image_gen",
+  "skill": {
+    "id": 23337,
+    "skillKey": "clawhub-fooocus-image-gen",
+    "name": "Fooocus Image Generation Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fooocus-image-gen",
+    "url": "https://clawhub.ai/skills/fooocus-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fooocus-image-gen-8e4f5873dca1bac7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local AI image generation using Fooocus (Stable Diffusion XL). Use when users want to generate images locally without relying on cloud APIs. Supports text-to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wszhhx",
+      "userId": "publishers:wszhhx",
+      "displayName": "Tony",
+      "image": "https://avatars.githubusercontent.com/u/38256402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 435,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773035618271,
+      "changelog": "- Initial release of fooocus-image-gen skill for local AI image generation using Fooocus (Stable Diffusion XL).\n- Supports text-to-image, image variation, upscaling, inpainting, outpainting, face swap, and style transfer.\n- Includes detailed usage guides for setup, configuration, and Web UI operation.\n- Local only: No reliance on cloud APIs; all processing is offline.\n- Provides troubleshooting, best practices, and checklists for consistent results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cebc54c477218bcd6efd0bae089546f79577c115cf2c1e6e61b5df0ef9b629de"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-geo-tiktok@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_geo_tiktok",
+  "skill": {
+    "id": 45949,
+    "skillKey": "clawhub-daily-geo-tiktok",
+    "name": "Daily Geopolitical TikTok Reporter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-geo-tiktok",
+    "url": "https://clawhub.ai/skills/daily-geo-tiktok",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-geo-tiktok-d98dbf894ae082a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate daily geopolitical TikTok scripts using free news sources. Use when user wants to create TikTok content about world events, conflicts, diplomacy, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahmed181283",
+      "userId": "s177nd0qk7heppjfethwwsmk6x85ea2c",
+      "displayName": "ahmed181283",
+      "image": "https://avatars.githubusercontent.com/u/26248550?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777071001875,
+      "changelog": "Initial release: Generate daily TikTok scripts about geopolitical news using free RSS sources. Includes news gathering engine with BBC, Reuters, AP, Al Jazeera sources. TikTok script generator with optimized 60-90 second format, viral hashtags, and platform-specific timing. Supports regional filtering (Middle East, Europe, Asia, Americas, Africa) and topic filtering (conflicts, diplomacy, sanctions, elections, alliances). Daily automation ready with cron/scheduling support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e9871cf5e9afed534bb6c64ee9bc7114d7c28423e504d6ef9541c6073d2b484"
+}

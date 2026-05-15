@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43152,
+  "uuid": "skill-clawhub-saleor-integration",
+  "skillKey": "clawhub-saleor-integration",
+  "name": "Saleor",
+  "summary": "Saleor integration. Manage data, records, and automate workflows. Use when the user wants to interact with Saleor data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.saleor_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Saleor integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Saleor data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/saleor-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "saleor-integration",
+      "url": "https://clawhub.ai/skills/saleor-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "saleor-integration",
+    "url": "https://clawhub.ai/skills/saleor-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/saleor-integration-2d7e22e69689cf68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/saleor-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-saleor-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b782825a5653d6af525642e439e9e6047d7f70afded3a79d0abf2a5e97bc4c76",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:57:04.575Z"
+}

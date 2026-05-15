@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12767,
+  "uuid": "skill-clawhub-extract-pdf-text",
+  "skillKey": "clawhub-extract-pdf-text",
+  "name": "Extract PDF Text",
+  "summary": "Extract text from PDF files using PyMuPDF. Parse tables, forms, and complex layouts. Supports OCR for scanned documents.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.extract_pdf_text",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Extract text from PDF files using PyMuPDF",
+        "Parse tables, forms, and complex layouts",
+        "Supports OCR for scanned documents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/extract-pdf-text@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "extract-pdf-text",
+      "url": "https://clawhub.ai/skills/extract-pdf-text"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "extract-pdf-text",
+    "url": "https://clawhub.ai/skills/extract-pdf-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/extract-pdf-text-7dea6e59b1dea6e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/extract-pdf-text@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-extract-pdf-text-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73bdb716c5a50a707eafb42216cb8da1345b646526ee95fc29a2d9eabbb8179f",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T00:24:29.266Z"
+}

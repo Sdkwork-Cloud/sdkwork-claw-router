@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14575,
+  "uuid": "skill-clawhub-mm-voice-maker",
+  "skillKey": "clawhub-mm-voice-maker",
+  "name": "mmVoiceMaker",
+  "summary": "Enables voice synthesis, voice cloning, voice design, and audio post-processing using MiniMax Voice API and FFmpeg. Use when converting text to speech, creat...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mm_voice_maker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Haolan He",
+      "features": [
+        "Enables voice synthesis, voice cloning, voice design, and audio post-processing using MiniMax V.",
+        "Use when converting text to speech, creat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mm-voice-maker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61172629?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mm-voice-maker",
+      "url": "https://clawhub.ai/skills/mm-voice-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mm-voice-maker",
+    "url": "https://clawhub.ai/skills/mm-voice-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mm-voice-maker-27b26838d522d096.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mm-voice-maker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mm-voice-maker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:662ca4cc3ec824a23a9b08b032dd636389dd487dbcbb57771fcf4775ce4e62ec",
+      "artifactSizeBytes": 2472
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T12:00:16.336Z"
+}

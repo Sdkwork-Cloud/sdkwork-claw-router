@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/volunteer-travel@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volunteer_travel",
+  "skill": {
+    "id": 48320,
+    "skillKey": "clawhub-volunteer-travel",
+    "name": "volunteer-travel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volunteer-travel",
+    "url": "https://clawhub.ai/skills/volunteer-travel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volunteer-travel-d3bc15aa4e45cbaf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book flights for volunteer travel and charity programs. Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itinerary planni..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liquanyu123",
+      "userId": "s173bh61f4yde29x5ddrjfa1qd844z4w",
+      "displayName": "liquanyu123",
+      "image": "https://avatars.githubusercontent.com/u/210639558?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1777257914229,
+      "changelog": "- Enforced strict CLI-only execution: all booking data must come directly from the flyai CLI, never from training data.\n- CLI environment check is mandatory before any booking: flyai-cli installation is handled automatically if missing.\n- Updated parameter collection: ask at most two questions to gather missing required info.\n- Introduced scenario-specific playbooks for cheapest, fastest, direct, or recommended volunteer flights.\n- Output must include a booking link ([Book](...)) for every result, clear comparison tables when possible, and brand tag.\n- Multi-language support: answers are localized to match the user's input language (English or Chinese).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f34a75a14f471100bcb961371dbae8fe71193ed7c1ff74a394544310d42ed4f"
+}

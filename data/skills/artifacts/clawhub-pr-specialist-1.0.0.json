@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pr-specialist@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pr_specialist",
+  "skill": {
+    "id": 40879,
+    "skillKey": "clawhub-pr-specialist",
+    "name": "Pr Specialist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pr-specialist",
+    "url": "https://clawhub.ai/skills/pr-specialist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pr-specialist-65a42aa54be22e92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert PR and media relations guidance for earned media, press coverage, and reputation building. Use when writing press releases, crafting media pitches, de..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775256072514,
+      "changelog": "- Initial release of pr-specialist, providing expert PR and media relations guidance for earned media, press coverage, and reputation building.\n- Offers frameworks for media outreach, press kit creation, embargo strategy, crisis communication, thought leadership, analyst relations, award submissions, and PR measurement.\n- Includes structured methodologies such as the Newsworthiness Test, PR Funnel, Media Tier Framework, Pitch Response Matrix, and principles for effective journalist relationship building.\n- Highlights best practices and anti-patterns to improve PR outcomes and reputation management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7406b6b5f1e8f82b65c349bc340930f7f3e60242b0e189acbd44f9984ab91e47"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36972,
+  "uuid": "skill-clawhub-skill-creator-ming",
+  "skillKey": "clawhub-skill-creator-ming",
+  "name": "Skill Creator (Ming)",
+  "summary": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_creator_ming",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wm-zqbx",
+      "features": [
+        "Create new skills, modify and improve existing skills, and measure skill performance",
+        "Use when users want to create a skill from scratch, edit, or optimize a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-creator-ming@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147606229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-creator-ming",
+      "url": "https://clawhub.ai/skills/skill-creator-ming"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-creator-ming",
+    "url": "https://clawhub.ai/skills/skill-creator-ming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-creator-ming-33cf10361ea57f8c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-creator-ming@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-creator-ming-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4be4b897baf84aedebcbe79538ceb00d6dfb9cd51ab9c327b9d08f1e4b1eff2",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T11:00:15.958Z"
+}

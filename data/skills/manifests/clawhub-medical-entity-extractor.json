@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15170,
+  "uuid": "skill-clawhub-medical-entity-extractor",
+  "skillKey": "clawhub-medical-entity-extractor",
+  "name": "Medical Entity Extractor",
+  "summary": "Extract medical entities (symptoms, medications, lab values, diagnoses) from patient messages.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_entity_extractor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "binubmuse",
+      "features": [
+        "Extract medical entities (symptoms, medications, lab values, diagnoses) from patient messages."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medical-entity-extractor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90269022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medical-entity-extractor",
+      "url": "https://clawhub.ai/skills/medical-entity-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-entity-extractor",
+    "url": "https://clawhub.ai/skills/medical-entity-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-entity-extractor-d95de2f9cd910ad6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medical-entity-extractor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-medical-entity-extractor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cd7355922b849a51215bec53737c398990194ff1b06e98c4a09eadf2008a56d",
+      "artifactSizeBytes": 2343
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T11:47:57.846Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-highlight-cropper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_highlight_cropper",
+  "skill": {
+    "id": 23963,
+    "skillKey": "clawhub-image-highlight-cropper",
+    "name": "Image Highlight Cropper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-highlight-cropper",
+    "url": "https://clawhub.ai/skills/image-highlight-cropper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-highlight-cropper-5cf3c614cd4032cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever a user uploads a large image and wants to see interesting details, highlights, or close-ups cropped out of it. Trigger when users say..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rosemaxio",
+      "userId": "publishers:rosemaxio",
+      "displayName": "Max Rose",
+      "image": "https://avatars.githubusercontent.com/u/70895944?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 424,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773396235685,
+      "changelog": "- Initial release of image-highlight-cropper skill.\n- Automatically extracts and crops the 5 most visually interesting square regions from user-uploaded images.\n- Ensures one highlight is always on a visible painter's signature, centered and uncut.\n- All crops are square, well-composed, and saved as downloadable files; handles edge crops with white background if needed.\n- Presents cropped highlights in chat (2 per row), each with a label and short explanation.\n- Invites users to request different highlighted areas or crop sizes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e453c3c013ae4c34a342d4f716b5d0463e8ebd74264259d22236c42f8043fe61"
+}

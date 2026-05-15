@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-advisor@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_advisor",
+  "skill": {
+    "id": 63718,
+    "skillKey": "clawhub-agent-advisor",
+    "name": "Agent Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-advisor",
+    "url": "https://clawhub.ai/skills/agent-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-advisor-b66b2281d9031f31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "模型推荐 + OpenClaw 安全系数分析工具。当用户询问\"用哪个模型\"、\"推荐模型\"、\"适合什么模型\"、\"安全系数\"、\"openclaw 安全\"、\"根据历史\"时触发。功能：(1) 根据历史会话自动分析任务类型并推荐最优的 Claude 模型（auto 模式），(2) 根据用户描述的任务推荐最优模型（recom..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrkangzubin",
+      "userId": "publishers:mrkangzubin",
+      "displayName": "MrKangZuBin",
+      "image": "https://avatars.githubusercontent.com/u/21353325?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773129780926,
+      "changelog": "- Renamed the skill to \"model-advisor\" and updated the description for clearer scope.\n- Improved documentation with detailed usage instructions for model recommendation and OpenClaw security score analysis.\n- Clarified usage scenarios: automatic recommendation from session history, task-based recommendation, security analysis, and combined reports.\n- Added model selection reference table and security scoring system with actionable improvement tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20b42a8ab8bceea0d8dd2b7f7e56c08dc4ea0077fac9a826cd4504890a9eeefd"
+}

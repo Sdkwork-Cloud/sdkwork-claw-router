@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gene-structure-mapper@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gene_structure_mapper",
+  "skill": {
+    "id": 31921,
+    "skillKey": "clawhub-gene-structure-mapper",
+    "name": "Gene Structure Mapper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gene-structure-mapper",
+    "url": "https://clawhub.ai/skills/gene-structure-mapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gene-structure-mapper-94ccd78f5195e3c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Visualize gene structure with exon-intron diagrams, domain annotations, and mutation position markers. Produces SVG, PNG, or PDF figures suitable for publica..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 260,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774230954718,
+      "changelog": "- Initial public release (v0.1.0) of gene-structure-mapper.\n- Visualizes gene structures from a gene symbol using Ensembl API.\n- Supports exon-intron diagrams, optional UniProt domain overlays (--domains), and mutation marker positions (--mutations).\n- Outputs publication-ready SVG, PNG, or PDF figures.\n- Includes demo mode (--demo) using TP53 without internet and implements API response caching.\n- Comprehensive error handling, scope limits, and fallback procedures provided in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e83d785bb12e923729d7c4b2f2b3fe9d749587892b33ae7d17d0a93796ed91e0"
+}

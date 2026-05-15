@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/somark-document-parser@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.somark_document_parser",
+  "skill": {
+    "id": 14805,
+    "skillKey": "clawhub-somark-document-parser",
+    "name": "Somark Document Parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "somark-document-parser",
+    "url": "https://clawhub.ai/skills/somark-document-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/somark-document-parser-b1f53737bb5d6388.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parse PDF, images (PNG/JPG/BMP/TIFF/WebP/HEIC), Word, PPT and other documents into Markdown or JSON using SoMark. All document parsing needs (like resumes, p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "soul-code",
+      "userId": "s174s742ercwf45sfzcnqsb8c58444hx",
+      "displayName": "Soul-Code",
+      "image": "https://avatars.githubusercontent.com/u/33421641?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 637,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 5,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1776777423123,
+      "changelog": "Auto-publish from GitHub Actions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a3ccf6136a8dc2c6f5fe7daf5ad15fb25f9a4e9c5206e1b11ecb654995c16fb"
+}

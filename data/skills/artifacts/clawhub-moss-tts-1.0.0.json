@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moss-tts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moss_tts",
+  "skill": {
+    "id": 19241,
+    "skillKey": "clawhub-moss-tts",
+    "name": "SOTA Zero-shot Voice Cloning TTS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moss-tts",
+    "url": "https://clawhub.ai/skills/moss-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moss-tts-8a04293a37985091.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Voice-first OpenClaw skill powered by MOSS APIs. Use when a user wants spoken replies in a preferred timbre, either from an existing voice_id or from a refer..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiami2019",
+      "userId": "s17cvap5e8fyxhp73bvk3z6bwn83vpar",
+      "displayName": "Qinyuan Cheng",
+      "image": "https://avatars.githubusercontent.com/u/37145051?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 527,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772441632562,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e7d3b0725a5741e8e3cb4b7eb0613630ec78d97cf50751451b10c9307343a2df"
+}

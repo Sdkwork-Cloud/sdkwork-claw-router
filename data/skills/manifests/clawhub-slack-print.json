@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22871,
+  "uuid": "skill-clawhub-slack-print",
+  "skillKey": "clawhub-slack-print",
+  "name": "Slack Print",
+  "summary": "Print files uploaded to a Slack channel. Supports smart matching: multiple files, filename prefix/keyword filter, file type (pdf/image), and time range (\"jus...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slack_print",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "caigang78",
+      "features": [
+        "Print files uploaded to a Slack channel",
+        "Supports smart matching: multiple files, filename prefix/keyword filter, file type (pdf/image),."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slack-print@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7031130?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slack-print",
+      "url": "https://clawhub.ai/skills/slack-print"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slack-print",
+    "url": "https://clawhub.ai/skills/slack-print",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slack-print-ceb3a44e9247bf2a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slack-print@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slack-print-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62f420bc852534641697b40793d873a88016142ae8b569446be6a730e0dc719b",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T06:13:38.355Z"
+}

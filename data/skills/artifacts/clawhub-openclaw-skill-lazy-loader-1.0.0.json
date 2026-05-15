@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-skill-lazy-loader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_lazy_loader",
+  "skill": {
+    "id": 45252,
+    "skillKey": "clawhub-openclaw-skill-lazy-loader",
+    "name": "OpenClaw Skill Lazy Loader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-lazy-loader",
+    "url": "https://clawhub.ai/skills/openclaw-skill-lazy-loader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-lazy-loader-cc10752b96b900df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dramatically reduce per-session token usage by loading skills and context files only when needed — not at session start. Includes the SKILLS catalog pattern,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asif2bd",
+      "userId": "s172w5rqenpwn4qb4g5n563hx9845890",
+      "displayName": "Asif",
+      "image": "https://avatars.githubusercontent.com/u/2099592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 630,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772243777460,
+      "changelog": "- Initial release of openclaw-skill-lazy-loader.\n- Introduces lazy loading of skill and context files, reducing per-session token usage by 40–70%.\n- Provides a SKILLS catalog pattern and AGENTS.md strategy to only load context when needed.\n- Includes a Python helper (context_optimizer.py) to recommend which files to load for specific tasks.\n- Designed for full compatibility with OpenClaw agents and works alongside Token Optimizer.\n- Comes with templates and documentation for easy integration and rapid setup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d176473297997d5f5b79950f30373ecb2ebbf1b32af6d212e0c54db9d446a8f8"
+}

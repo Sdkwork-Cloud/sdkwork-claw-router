@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39053,
+  "uuid": "skill-clawhub-textile-clothing-repair",
+  "skillKey": "clawhub-textile-clothing-repair",
+  "name": "Textile Clothing Repair",
+  "summary": "Basic clothing repair and maintenance skills. Use when someone needs to fix torn clothing, replace a button, hem pants, patch holes, or wants to stop wasting...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.textile_clothing_repair",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HowToUseHumans",
+      "features": [
+        "Basic clothing repair and maintenance skills",
+        "Use when someone needs to fix torn clothing, replace a button, hem pants, patch holes, or wants."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/textile-clothing-repair@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151727669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "textile-clothing-repair",
+      "url": "https://clawhub.ai/skills/textile-clothing-repair"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "textile-clothing-repair",
+    "url": "https://clawhub.ai/skills/textile-clothing-repair",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/textile-clothing-repair-a5058100d773220d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/textile-clothing-repair@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-textile-clothing-repair-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac60bb6727e372b288dc5f9433c5bbf24b0afc45eb3d7431e91fb4ed80771809",
+      "artifactSizeBytes": 2443
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T05:02:07.932Z"
+}

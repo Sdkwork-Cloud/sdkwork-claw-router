@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-migrate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_migrate",
+  "skill": {
+    "id": 17066,
+    "skillKey": "clawhub-openclaw-migrate",
+    "name": "Openclaw Migrate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-migrate",
+    "url": "https://clawhub.ai/skills/openclaw-migrate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-migrate-d8ba61c15691d91d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Migrate OpenClaw configs, skills, memory, tokens, environment variables, and cron jobs to a new host via SSH with setup, test, and migrate commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chris6970barbarian-hue",
+      "userId": "publishers:chris6970barbarian-hue",
+      "displayName": "Glitch",
+      "image": "https://avatars.githubusercontent.com/u/258746291?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 789,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771335274570,
+      "changelog": "Initial release – migrate OpenClaw between hosts via SSH in one command.\n\n- Provides interactive setup for target host configuration.\n- Migrates all OpenClaw config, skills, memory, and tokens.\n- Syncs relevant files, directories, environment variables, and cron jobs.\n- Supports testing the SSH connection and status checks.\n- Offers error handling and prompts for missing prerequisites.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:327724176fc6ffb656a5ab8ab90d39bca3eca2d80394095f2cb9b7e67a20a32e"
+}

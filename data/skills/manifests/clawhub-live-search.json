@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53316,
+  "uuid": "skill-clawhub-live-search",
+  "skillKey": "clawhub-live-search",
+  "name": "Live Search",
+  "summary": "Real-time answers from the public web via the host app’s local search gateway (Auth Gateway proxy). Typical stacks surface results comparable to major engine...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.live_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "Real-time answers from the public web via the host app’s local search gateway (Auth Gateway pro.",
+        "Typical stacks surface results comparable to major engine..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/live-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "live-search",
+      "url": "https://clawhub.ai/skills/live-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "live-search",
+    "url": "https://clawhub.ai/skills/live-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/live-search-c7f50f3d6770ecac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/live-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-live-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d218f8ebfe78ead8cbaf298f03c391b2fd5ab826ba77789ddbef482877486f3",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T07:30:44.914Z"
+}

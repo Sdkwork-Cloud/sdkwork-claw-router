@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50464,
+  "uuid": "skill-clawhub-book",
+  "skillKey": "clawhub-book",
+  "name": "Book a flight or Airbnb | Is your claw a nomad?",
+  "summary": "Easy-to-use agentic wallets powered by Stripe. Use your existing Stripe/Link to top-up this versatile x402 wallet for any purchases or A2A payments.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TripleHippo",
+      "features": [
+        "Easy-to-use agentic wallets powered by Stripe",
+        "Use your existing Stripe/Link to top-up this versatile x402 wallet for any purchases or A2A pay."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261665182?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book",
+      "url": "https://clawhub.ai/skills/book"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book",
+    "url": "https://clawhub.ai/skills/book",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-92719fe0cf8cd515.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e3d6339eb257674df9257adb629a2227e2cf5bbb8f2fbbc52e31f0a38d6d55b",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T00:42:00.022Z"
+}

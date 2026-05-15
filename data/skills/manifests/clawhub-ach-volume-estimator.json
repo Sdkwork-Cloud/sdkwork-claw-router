@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42331,
+  "uuid": "skill-clawhub-ach-volume-estimator",
+  "skillKey": "clawhub-ach-volume-estimator",
+  "name": "Ach Volume Estimator",
+  "summary": "Estimate Dwolla's end-of-month ACH transaction volume from daily KPI emails. Use when processing ACH KPI emails, when Dave asks about monthly volume projecti...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ach_volume_estimator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daveglaser0823",
+      "features": [
+        "Estimate Dwolla's end-of-month ACH transaction volume from daily KPI emails",
+        "Use when processing ACH KPI emails, when Dave asks about monthly volume projecti..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ach-volume-estimator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156377708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ach-volume-estimator",
+      "url": "https://clawhub.ai/skills/ach-volume-estimator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ach-volume-estimator",
+    "url": "https://clawhub.ai/skills/ach-volume-estimator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ach-volume-estimator-82547f1a9ec32a78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ach-volume-estimator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ach-volume-estimator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34b5046602770092b08f0ea08aec26922d559455e0be6ff8a22aaa60c6d664d4",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T22:29:48.012Z"
+}

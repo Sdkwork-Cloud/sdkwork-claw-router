@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gcalcli-calendar@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gcalcli_calendar",
+  "skill": {
+    "id": 8423,
+    "skillKey": "clawhub-gcalcli-calendar",
+    "name": "Google Calendar (via gcalcli)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gcalcli-calendar",
+    "url": "https://clawhub.ai/skills/gcalcli-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gcalcli-calendar-70597ae815e1d740.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Calendar via gcalcli: today-only agenda by default, bounded meaning-first lookup via agenda scans, and fast create/delete with verification--optimized for low tool calls and minimal output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lstpsche",
+      "userId": "s17e65zsnrnq4cpfyghybrn4p985gcav",
+      "displayName": "Nikita Shkoda",
+      "image": "https://avatars.githubusercontent.com/u/40822400?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 15288,
+      "installsAllTime": 115,
+      "installsCurrent": 107,
+      "stars": 10,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1770939510320,
+      "changelog": "- Added a README.md file with rationale and safety notes.\n- Clarified action confirmation policy: unambiguous destructive actions (delete/edit) are run immediately, ambiguous ones always require user confirmation.\n- Updated action policy section to emphasize conversational speed and personal assistant use case.\n- Renamed/delete section now explicitly describes post-delete verification and the use of `--iamaexpert`.\n- No behavior changes to commands, but documentation is clearer about UX intent and safeguards.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:69469d7d8d65df7e46ea58dbc9746f68d47d7c948d6b33c4ecd245c4682da522"
+}

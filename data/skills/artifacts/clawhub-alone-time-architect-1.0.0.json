@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alone-time-architect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alone_time_architect",
+  "skill": {
+    "id": 43627,
+    "skillKey": "clawhub-alone-time-architect",
+    "name": "Alone Time Architect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alone-time-architect",
+    "url": "https://clawhub.ai/skills/alone-time-architect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alone-time-architect-e328caa0c97e4766.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design intentional alone time with a clear purpose, realistic duration, phone boundaries, nourishing activities, and a gentle transition back."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776214894058,
+      "changelog": "Initial release of Alone Time Architect.\n\n- Guides users to purposefully design nourishing alone time based on their needs (rest, clarity, play, recovery, or creative space).\n- Provides a step-by-step workflow: clarify purpose, match time/energy, set boundaries, suggest activities, plan gentle re-entry, and reflect on the experience.\n- Supports phone boundaries and customized solitude environments.\n- Includes a markdown output template for easy use or journaling.\n- Emphasizes replenishment over avoidance, with considerations for different user situations (e.g., caregivers, lonely users).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0ce68c7c89ddcc4fd0b256fa7352724d8f296f41db90f5a49eb49c1d18fc364"
+}

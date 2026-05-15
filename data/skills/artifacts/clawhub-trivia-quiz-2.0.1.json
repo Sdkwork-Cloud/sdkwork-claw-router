@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trivia-quiz@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trivia_quiz",
+  "skill": {
+    "id": 19016,
+    "skillKey": "clawhub-trivia-quiz",
+    "name": "Trivia Quiz"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trivia-quiz",
+    "url": "https://clawhub.ai/skills/trivia-quiz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trivia-quiz-4cbdb3b9aca8c5fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Play knowledge quizzes with facts, categories, and daily challenges. Use when learning topics, drilling flashcards, reviewing answers, tracking progress."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain-lab",
+      "userId": "s174pq5f3gzez3838vt2642fmx848f1d",
+      "displayName": "bytesagain-lab",
+      "image": "https://avatars.githubusercontent.com/u/271735676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 613,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773831166388,
+      "changelog": "update",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b3e96bf4b0d6beac72457182a04bc49fdce005e2473e9503cd81233baa5743c"
+}

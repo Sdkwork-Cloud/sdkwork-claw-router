@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dolph-fast-loop@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dolph_fast_loop",
+  "skill": {
+    "id": 42954,
+    "skillKey": "clawhub-dolph-fast-loop",
+    "name": "Polymarket Fast Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dolph-fast-loop",
+    "url": "https://clawhub.ai/skills/dolph-fast-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dolph-fast-loop-c22619bfc2a6ad86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade Polymarket BTC 5-minute and 15-minute fast markets using CEX price momentum signals via Simmer API. Default signal is Binance BTC/USDT klines. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "richducat",
+      "userId": "s172pm13k2nd0gwew35ac7tnf9846t3e",
+      "displayName": "richducat",
+      "image": "https://avatars.githubusercontent.com/u/15804981?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775341937508,
+      "changelog": "**Initial release of Polymarket FastLoop Trader skill.**\n\n- Enables automated trading of Polymarket 5m and 15m fast markets using CEX momentum signals (default: Binance BTC/USDT).\n- Real-time market discovery via Polymarket Gamma API; no reliance on Simmer's inventory.\n- Supports BTC, ETH, and SOL markets; configurable asset and entry criteria.\n- Built-in CLI for configuration, simulation (dry run), and live trading.\n- Designed as a remixable template: plug in custom signals while the skill manages all trade execution and plumbing.\n- Documents limitations around risk monitoring (not applicable to fast markets) and Polymarket’s fee structure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6bcfc1daa0b6132c3813cc32eb9d5c8df85ef339c6ea445b45b047e83288398"
+}

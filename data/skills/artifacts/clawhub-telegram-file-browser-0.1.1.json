@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/telegram-file-browser@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_file_browser",
+  "skill": {
+    "id": 28321,
+    "skillKey": "clawhub-telegram-file-browser",
+    "name": "Telegram File Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-file-browser",
+    "url": "https://clawhub.ai/skills/telegram-file-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-file-browser-d6a09a86571c32cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build or improve Telegram inline-button file browsers and menu-style navigators. Use when creating Telegram chat UIs for browsing directories, paging lists,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "just-cj",
+      "userId": "s1760v46smgjadwwkzdh8ay40s83gpaj",
+      "displayName": "Just-CJ",
+      "image": "https://avatars.githubusercontent.com/u/9214223?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 328,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773569869925,
+      "changelog": "Polish Telegram inline-button file browser workflow, validation, and dispatcher-based sending.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9590815ccc1cbdd75451c54cc9546e2ea2065909db6350bf0b5bdaf6d00615a"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12457,
+  "uuid": "skill-clawhub-mintgarden",
+  "skillKey": "clawhub-mintgarden",
+  "name": "MintGarden",
+  "summary": "Browse and search Chia NFTs and collections, view stats, trade history, recent sales, trending data, and user profiles via MintGarden API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mintgarden",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Koba42Corp",
+      "features": [
+        "Browse and search Chia NFTs and collections, view stats, trade history, recent sales, trending."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mintgarden@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76798369?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mintgarden",
+      "url": "https://clawhub.ai/skills/mintgarden"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mintgarden",
+    "url": "https://clawhub.ai/skills/mintgarden",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mintgarden-9299002373f64b2a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mintgarden@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mintgarden-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52d31f31584d66f02a89ed0230ec70e47dd91a208e73b15a45f684e3f4e41a21",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T19:14:56.818Z"
+}

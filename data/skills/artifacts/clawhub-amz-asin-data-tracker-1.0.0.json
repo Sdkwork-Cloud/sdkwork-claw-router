@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amz-asin-data-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amz_asin_data_tracker",
+  "skill": {
+    "id": 32962,
+    "skillKey": "clawhub-amz-asin-data-tracker",
+    "name": "Amz Asin Data Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amz-asin-data-tracker",
+    "url": "https://clawhub.ai/skills/amz-asin-data-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amz-asin-data-tracker-b321c4a97d23e1b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon ASIN visual data collection and monitoring agent. Zero-code collection of Amazon ASIN and competitor data, supports scheduled tasks, real-time alerts,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774310255746,
+      "changelog": "- Initial release of amz-asin-data-tracker.\n- Zero-code Amazon ASIN and competitor data collection.\n- Supports scheduled monitoring, real-time alerts, and multi-format export (CSV, JSON, Markdown).\n- Allows tracking, alerting, scheduling, and comparison of ASINs via simple commands.\n- Generates monitoring reports with snapshots, change detection, trend summaries, and recommended actions.\n- Stores tracked data, alerts, exports, and reports in structured workspace folders.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f38fcd1c52ad03ca0581f3b5dbdab204455a90fb60f21d03babe11e21297daf7"
+}

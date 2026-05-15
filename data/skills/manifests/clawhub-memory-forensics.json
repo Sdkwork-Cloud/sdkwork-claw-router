@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20098,
+  "uuid": "skill-clawhub-memory-forensics",
+  "skillKey": "clawhub-memory-forensics",
+  "name": "Memory Forensics",
+  "summary": "Memory forensics with Volatility and related tools. Acquire RAM dumps, extract processes and DLLs, investigate rootkits and fileless malware, recover credent...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_forensics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Solomon Neas",
+      "features": [
+        "Memory forensics with Volatility and related tools",
+        "Acquire RAM dumps, extract processes and DLLs, investigate rootkits and fileless malware, recov."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-forensics@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41877493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-forensics",
+      "url": "https://clawhub.ai/skills/memory-forensics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-forensics",
+    "url": "https://clawhub.ai/skills/memory-forensics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-forensics-25b0d2fe9eeae4e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-forensics@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-forensics-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14c58b538b9652ee75da39888e6baf2d7cdd8378bb05d6641726a2c4af72df15",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T12:16:06.562Z"
+}

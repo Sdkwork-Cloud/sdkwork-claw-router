@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-invoice-parser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_invoice_parser",
+  "skill": {
+    "id": 35060,
+    "skillKey": "clawhub-pdf-invoice-parser",
+    "name": "Pdf Invoice Parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-invoice-parser",
+    "url": "https://clawhub.ai/skills/pdf-invoice-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-invoice-parser-bce2321f93e674f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract structured data from PDF invoices and documents. Handles scanned PDFs (OCR) and digital PDFs. Outputs clean CSV/Excel with vendor, invoice number, da..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tktk-ai",
+      "userId": "s17dae0n2wkh65b6p2v4zvkbt184ey9h",
+      "displayName": "tktk-ai",
+      "image": "https://avatars.githubusercontent.com/u/59158345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775772533327,
+      "changelog": "Initial release of pdf-invoice-parser.\n\n- Extracts structured data from digital and scanned PDF invoices.\n- Supports OCR for scanned/image-based PDFs.\n- Outputs invoice data as CSV, JSON, or Excel-ready TSV formats.\n- Captures key fields: vendor, invoice number, dates, line items, totals, and currency.\n- Supports batch processing of invoice directories.\n- Includes CLI usage examples and required dependencies for setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eba428be6474cde9ca6925c851fbe208d658eb0ca9279f11b0518cf32d854124"
+}

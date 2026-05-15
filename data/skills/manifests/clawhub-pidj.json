@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30881,
+  "uuid": "skill-clawhub-pidj",
+  "skillKey": "clawhub-pidj",
+  "name": "Pidj",
+  "summary": "Pidj integration. Manage Persons, Organizations, Deals, Leads, Projects, Activities and more. Use when the user wants to interact with Pidj data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pidj",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Pidj integration",
+        "Manage Persons, Organizations, Deals, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with Pidj data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pidj@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pidj",
+      "url": "https://clawhub.ai/skills/pidj"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pidj",
+    "url": "https://clawhub.ai/skills/pidj",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pidj-8f5e82fa7294e3ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pidj@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-pidj-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a533b94ee139fe4140f207c797e63edcf8c0fba885814bf58352bdd53276492a",
+      "artifactSizeBytes": 1824
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:24:11.427Z"
+}

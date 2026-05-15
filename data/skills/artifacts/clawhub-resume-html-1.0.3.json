@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-html@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_html",
+  "skill": {
+    "id": 34867,
+    "skillKey": "clawhub-resume-html",
+    "name": "Resume Html"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-html",
+    "url": "https://clawhub.ai/skills/resume-html",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-html-b2b90c5b1f08801a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "HTML-based resume generator with PDF export. Creates pixel-perfect resumes with advanced layouts, photo support, custom styling. Generates beautiful HTML res..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobewin",
+      "userId": "s174rz3f0862tcfw7pzfh5w8kn83hv2z",
+      "displayName": "ToBeWin",
+      "image": "https://avatars.githubusercontent.com/u/145168989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774663422375,
+      "changelog": "清理测试文件，重新发布：专业简历生成器，10种预设，PDF导出",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0939bf429948c49e4d72f2d4185e60a62fd0caba7889ef1d80998a59c48e06c6"
+}

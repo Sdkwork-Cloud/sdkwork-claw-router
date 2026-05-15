@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sonos-music-playback@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sonos_music_playback",
+  "skill": {
+    "id": 65517,
+    "skillKey": "clawhub-sonos-music-playback",
+    "name": "Sonos 音乐点播"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sonos-music-playback",
+    "url": "https://clawhub.ai/skills/sonos-music-playback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sonos-music-playback-e0e8ae2300824eab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向中文用户的 Sonos 音乐点播技能。支持通过 Sonos 侧搜索加队列起播的方式播放已绑定音乐服务，当前已验证兼容 网易云音乐 和 QQ音乐。通过 SoCo 将搜索结果转成 Sonos 队列项，再从队列起播，以保留 Sonos App 中的标题、歌手、专辑和封面等 metadata。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huacius",
+      "userId": "s17abrggnn06z6pmpebjt7ky5s83gg39",
+      "displayName": "Sengo Zhao",
+      "image": "https://avatars.githubusercontent.com/u/72131616?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1775633768954,
+      "changelog": "中文化 skill 名称与描述，面向国内用户更直观；继续统一支持网易云音乐与 QQ 音乐",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:728cfb88b4ab31ee413be827dd1970ec876c8e445d811bb19c4e985b5dbb2b08"
+}

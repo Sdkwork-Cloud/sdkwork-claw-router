@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toshiba-corp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toshiba_corp",
+  "skill": {
+    "id": 49207,
+    "skillKey": "clawhub-toshiba-corp",
+    "name": "Toshiba Corp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toshiba-corp",
+    "url": "https://clawhub.ai/skills/toshiba-corp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toshiba-corp-7367e10f8eafaed7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Japanese industrial conglomerate specializing in infrastructure, semiconductors, and NAND flash technology, privatized in 2023 after restructuring."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 85,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777871444616,
+      "changelog": "- Initial release introducing Toshiba Corp skill.\n- Covers Toshiba's 150-year history, key inventions (flash memory, DVD, laptop PC), and privatization details.\n- Provides historical milestones, post-privatization business model, and analysis of its competitive moat.\n- Includes key data (revenue, ownership, inventions, employee count).\n- Highlights major corporate events: accounting scandal, restructuring, and asset divestitures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5eb5d6e8630956c861a6c02ce883557f5ca6623d35ed980a4a99fb02681fee3e"
+}

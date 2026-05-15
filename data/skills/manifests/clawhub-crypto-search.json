@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28837,
+  "uuid": "skill-clawhub-crypto-search",
+  "skillKey": "clawhub-crypto-search",
+  "name": "Crypto Search",
+  "summary": "Content search and synthesis primitive using Kaito MCP tools. Use this skill to search for and synthesize content from Twitter (X) and News sources. Triggers...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YH9277",
+      "features": [
+        "Content search and synthesis primitive using Kaito MCP tools",
+        "Use this skill to search for and synthesize content from Twitter (X) and News sources",
+        "Triggers..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118905551?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-search",
+      "url": "https://clawhub.ai/skills/crypto-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-search",
+    "url": "https://clawhub.ai/skills/crypto-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-search-54c1ed76bc09e105.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12c1b985ec24e8726a271a858098c0471a006b302ca8258fd0686025c6b3fd19",
+      "artifactSizeBytes": 2528
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T04:30:17.671Z"
+}

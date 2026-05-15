@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "cnb-openapi",
+    "displayName": "CNB OpenAPI Skills",
+    "summary": "与 CNB (Cloud Native Build) Open API 交互，用于代码管理和开发协作。当用户需要查询项目、代码仓库、问题、合并请求或其他开发相关数据时使用。需要 CNB_TOKEN 环境变量进行身份认证。API 请求地址从环境变量 CNB_API_ENDPOINT 获取，默认为 https://a...",
+    "tags": {
+      "latest": "1.18.9"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 512,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1773128331396,
+    "updatedAt": 1778306273636
+  },
+  "latestVersion": {
+    "version": "1.18.9",
+    "createdAt": 1773212349626,
+    "changelog": "- Updated and expanded skill documentation for CNB-OpenAPI, providing a comprehensive overview and usage guidelines.\n- Added strict usage rules: all API calls must be executed via curl with authorization headers, always using environment variables for tokens and endpoints.\n- Documented URL parsing logic for extracting parameters when users provide CNB page links.\n- Included a detailed index of all available API services and endpoints, each with brief descriptions and links to further references.\n- Clarified requirements for environment variables and required tools for operation.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "sixther-dc",
+    "userId": "s17268aqsgb95g58mpp9396frn83pcgd",
+    "displayName": "sixther-dc",
+    "image": "https://avatars.githubusercontent.com/u/10322318?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.prompt_injection_instructions"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.prompt_injection_instructions",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778306273636
+  }
+}

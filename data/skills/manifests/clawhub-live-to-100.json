@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61879,
+  "uuid": "skill-clawhub-live-to-100",
+  "skillKey": "clawhub-live-to-100",
+  "name": "Live To 100",
+  "summary": "收集用户身体指标、生活习惯、既往病史和目标，生成可执行的长寿行动计划与分阶段复盘机制，并提供风险评分、自动周报/月报、保健品安全检查和每日饮食营养均衡分析（含热量缺口）。Use when users ask for longevity plans, healthy routine optimization, be...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.live_to_100",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RQ-Wu",
+      "features": [
+        "收集用户身体指标、生活习惯、既往病史和目标，生成可执行的长寿行动计划与分阶段复盘机制，并提供风险评分、自动周报/月报、保健品安全检查和每日饮食营养均衡分析（含热量缺口）。Use when u."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/live-to-100@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50363829?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "live-to-100",
+      "url": "https://clawhub.ai/skills/live-to-100"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "live-to-100",
+    "url": "https://clawhub.ai/skills/live-to-100",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/live-to-100-94fb33030138650c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/live-to-100@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-live-to-100-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e174522d04992fdf7ad23bd3cff16d909a51523ce2b63297cfc26f9ac4a90feb",
+      "artifactSizeBytes": 2026
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T03:51:54.405Z"
+}

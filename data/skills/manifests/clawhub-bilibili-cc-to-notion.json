@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71074,
+  "uuid": "skill-clawhub-bilibili-cc-to-notion",
+  "skillKey": "clawhub-bilibili-cc-to-notion",
+  "name": "b站视频自动生成高质量图文笔记自动截图并上传至Notion笔记",
+  "summary": "将B站视频字幕转换为带截图的Notion学习笔记。 当用户需要从B站视频提取字幕、分析内容并创建Notion学习笔记时，必须使用此技能。 支持BV号、完整URL输入，自动下载CC字幕，智能处理内容，生成带截图标记的结构化学习笔记。 适用于学习、研究、知识整理等场景。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_cc_to_notion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xinyu",
+      "features": [
+        "将B站视频字幕转换为带截图的Notion学习笔记。 当用户需要从B站视频提取字幕、分析内容并创建Notion学习笔记时，必须使用此技能。 支持BV号、完整URL输入，自动下载CC字幕，智能处."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-cc-to-notion@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82202703?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-cc-to-notion",
+      "url": "https://clawhub.ai/skills/bilibili-cc-to-notion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-cc-to-notion",
+    "url": "https://clawhub.ai/skills/bilibili-cc-to-notion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-cc-to-notion-a6e67dc594f484c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-cc-to-notion@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-cc-to-notion-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0652c6db08cca772969a46ac033f4a4db9a16783d7a7aa8be3b909de843ca699",
+      "artifactSizeBytes": 2349
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T15:46:08.188Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-audit-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_audit_pro",
+  "skill": {
+    "id": 49891,
+    "skillKey": "clawhub-model-audit-pro",
+    "name": "Model Audit Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-audit-pro",
+    "url": "https://clawhub.ai/skills/model-audit-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-audit-pro-8ea9ddce37c1c85b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monthly LLM stack audit — compare your current models against latest benchmarks and pricing from OpenRouter. Identifies potential savings, upgrades, and bett..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 631,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771147678432,
+      "changelog": "- Initial release of the Model Audit skill for OpenClaw agents.\n- Audits your LLM stack by fetching live model pricing from OpenRouter.\n- Analyzes your configured models, categorizes them, and recommends alternatives by reasoning, code, fast, cheap, and vision.\n- Calculates potential monthly savings and suggests cost optimizations or upgrades.\n- Provides multiple output modes including JSON, category leaders, and direct model comparison.\n- Requires an OPENROUTER_API_KEY to operate.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d51414b25461e7c63a7856265610c18eb88e83f753e19369db861f4a836b43db"
+}

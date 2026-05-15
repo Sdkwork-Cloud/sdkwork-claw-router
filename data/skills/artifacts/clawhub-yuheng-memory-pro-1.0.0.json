@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yuheng-memory-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuheng_memory_pro",
+  "skill": {
+    "id": 67742,
+    "skillKey": "clawhub-yuheng-memory-pro",
+    "name": "Memory Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuheng-memory-pro",
+    "url": "https://clawhub.ai/skills/yuheng-memory-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuheng-memory-pro-76143493b797d087.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "> 精选层·主动精馏：主动从原始会话和笔记中提取知识，沉淀到长期记忆。。触发词：skill, 优化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "horizoncove",
+      "userId": "s17db51np30f4wk2n976x2x0wd83hsgt",
+      "displayName": "horizoncove",
+      "image": "https://avatars.githubusercontent.com/u/221652459?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776948215735,
+      "changelog": "Initial release of 记忆专家skill (memory-pro):\n\n- Implements an \"active distillation\" layer for proactively extracting, refining, and saving key knowledge from conversations, notes, and user actions into long-term memory files.\n- Clearly defines triggers (end of conversation, discoveries, decisions, corrections, explicit user commands) for when knowledge should be distilled and stored.\n- Introduces a systematic workflow for evaluating content value, categorizing, and writing or updating memory files in structured locations.\n- Sets standards for high-quality knowledge distillation, including clear summarization, context, applicability, and source tracking.\n- Integrates with memory-setup for read operations, coordinates with self-improving-agent's memory architecture, and supports promotion to elite-longterm memory when valuable insights are repeatedly confirmed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b57c759c3169fc61d2cbd9be11d2a10880146483364256ec4ab53219aa4ec09f"
+}

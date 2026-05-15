@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71214,
+  "uuid": "skill-clawhub-world-cup",
+  "skillKey": "clawhub-world-cup",
+  "name": "World Cup",
+  "summary": "提供国际足联世界杯的赛制规则、历史沿革、著名选手及球队信息，以及赛事赛程与结果查询。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.world_cup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供国际足联世界杯的赛制规则、历史沿革、著名选手及球队信息，以及赛事赛程与结果查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/world-cup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "world-cup",
+      "url": "https://clawhub.ai/skills/world-cup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "world-cup",
+    "url": "https://clawhub.ai/skills/world-cup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/world-cup-79096dc8b62218d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/world-cup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-world-cup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc050f3f053b4cddc999743985dda60c8472d9abf3fbb0228019aa929a0cc2ca",
+      "artifactSizeBytes": 2096
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T08:16:32.958Z"
+}

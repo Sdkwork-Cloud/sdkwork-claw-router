@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27787,
+  "uuid": "skill-clawhub-config-checkpoint",
+  "skillKey": "clawhub-config-checkpoint",
+  "name": "Config Checkpoint",
+  "summary": "Git-based version control for OpenClaw system configuration changes. Provides two core capabilities: (1) SAVE - Create a checkpoint before sensitive operatio...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.config_checkpoint",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wenju Gao",
+      "features": [
+        "Git-based version control for OpenClaw system configuration changes",
+        "Provides two core capabilities: (1) SAVE",
+        "Create a checkpoint before sensitive operatio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/config-checkpoint@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9826697?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "config-checkpoint",
+      "url": "https://clawhub.ai/skills/config-checkpoint"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "config-checkpoint",
+    "url": "https://clawhub.ai/skills/config-checkpoint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/config-checkpoint-2c8120955f4c8248.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/config-checkpoint@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-config-checkpoint-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ac29fe1fce357b36eb59ff9dde151b87fd824301a15fa3e835f444c51d04d81",
+      "artifactSizeBytes": 2500
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T05:10:21.741Z"
+}

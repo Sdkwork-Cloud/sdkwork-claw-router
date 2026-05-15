@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53870,
+  "uuid": "skill-clawhub-tryhair-skill",
+  "skillKey": "clawhub-tryhair-skill",
+  "name": "TryHair AI",
+  "summary": "AI Hairstyle Try-On & Face Shape Analysis – Upload a photo to analyze face shape and instantly try recommended hairstyles. UID required.",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tryhair_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guokai-01",
+      "features": [
+        "AI Hairstyle Try-On & Face Shape Analysis – Upload a photo to analyze face shape and instantly.",
+        "UID required."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tryhair-skill@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196128503?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tryhair-skill",
+      "url": "https://clawhub.ai/skills/tryhair-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tryhair-skill",
+    "url": "https://clawhub.ai/skills/tryhair-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tryhair-skill-761aa282b8d6bb40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tryhair-skill@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-tryhair-skill-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:830b88141fde0bfd91f826f2854341c1a1e7bc05b41c438355af4b0402accd7c",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T05:42:19.094Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21957,
+  "uuid": "skill-clawhub-sf-scraper",
+  "skillKey": "clawhub-sf-scraper",
+  "name": "Sf Scraper",
+  "summary": "Scrape employee data from a logged-in SAP SuccessFactors browser session using browser automation. Use when: user provides an employee ID and wants employee...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sf_scraper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "VenkataLokesh-dot",
+      "features": [
+        "Scrape employee data from a logged-in SAP SuccessFactors browser session using browser automati.",
+        "Use when: user provides an employee ID and wants employee..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sf-scraper@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218624424?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sf-scraper",
+      "url": "https://clawhub.ai/skills/sf-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sf-scraper",
+    "url": "https://clawhub.ai/skills/sf-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sf-scraper-9adb19ddc6661470.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sf-scraper@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sf-scraper-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9ec59db7e749e9fac1e38aa473e2b479feea4e78aa6cbc7b8312818fa615681",
+      "artifactSizeBytes": 2490
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T00:42:51.284Z"
+}

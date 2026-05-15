@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/official-document@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.official_document",
+  "skill": {
+    "id": 57764,
+    "skillKey": "clawhub-official-document",
+    "name": "一键转换为机关公文标准格式"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "official-document",
+    "url": "https://clawhub.ai/skills/official-document",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/official-document-3769d105dd581545.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate official government documents formatted strictly by GB/T 9704-2012 standards, including titles, body, headings, footers, attachments, and contacts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangxue1985122219",
+      "userId": "s175beywmd89m2zr83wn8rgs7983gq7h",
+      "displayName": "zhangxue1985122219",
+      "image": "https://avatars.githubusercontent.com/u/54266548?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1412,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1778054759928,
+      "changelog": "official-document v1.0.5\n\n- No file changes detected in this version.\n- Documentation remains unchanged and consistent with previous standards.\n- No new features, bug fixes, or technical modifications introduced.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ebbd182f932a106625d0ca07b98e27e8724455634222612d4cc018ed37949ec6"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66885,
+  "uuid": "skill-clawhub-ai-financial-report-cn",
+  "skillKey": "clawhub-ai-financial-report-cn",
+  "name": "Ai Financial Report Cn",
+  "summary": "自动生成资产负债表、利润表、现金流量表，提供智能财务分析与税务筹划，支持多格式导出及多账套管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_financial_report_cn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huyong2023",
+      "features": [
+        "自动生成资产负债表、利润表、现金流量表，提供智能财务分析与税务筹划，支持多格式导出及多账套管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-financial-report-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138767654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-financial-report-cn",
+      "url": "https://clawhub.ai/skills/ai-financial-report-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-financial-report-cn",
+    "url": "https://clawhub.ai/skills/ai-financial-report-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-financial-report-cn-7c0c90b483a9a501.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-financial-report-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-financial-report-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96d09b6e64f400d20173eb8ccab3f20bf5996f9486dbd6c7dd78141baf5dfbc0",
+      "artifactSizeBytes": 2317
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T05:35:34.945Z"
+}

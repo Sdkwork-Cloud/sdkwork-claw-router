@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/systematic-review-screener@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.systematic_review_screener",
+  "skill": {
+    "id": 33873,
+    "skillKey": "clawhub-systematic-review-screener",
+    "name": "Systematic Review Screener"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "systematic-review-screener",
+    "url": "https://clawhub.ai/skills/systematic-review-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/systematic-review-screener-7a3f5f81686458e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated abstract screening tool for systematic literature reviews with PRISMA workflow support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775030878872,
+      "changelog": "Initial release of systematic-review-screener: Automated abstract screening tool for systematic literature reviews with PRISMA workflow support.\n\n- Screens academic abstracts using configurable inclusion/exclusion criteria (YAML format)\n- Supports multiple input formats: PubMed MEDLINE, EndNote XML, CSV/TSV\n- Generates PRISMA-compliant outputs, including flow diagram data and screening logs\n- Provides confidence scores and flags low-confidence/conflict cases for human review\n- Handles batch processing and large reference sets efficiently\n- Outputs structured results: included/excluded lists, conflict logs, and audit-ready records",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb790859a7f3225edc8280b6ec51d34397ac3a89aebfa4678313987e313f7a96"
+}

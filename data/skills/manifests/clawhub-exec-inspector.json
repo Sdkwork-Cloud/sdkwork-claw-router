@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61776,
+  "uuid": "skill-clawhub-exec-inspector",
+  "skillKey": "clawhub-exec-inspector",
+  "name": "Exec Inspector",
+  "summary": "查看和分析 OpenClaw Agent exec 工具的执行历史，支持查询、搜索、统计和实时监控命令使用详情。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exec_inspector",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhengzk-bj",
+      "features": [
+        "查看和分析 OpenClaw Agent exec 工具的执行历史，支持查询、搜索、统计和实时监控命令使用详情。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exec-inspector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133962595?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exec-inspector",
+      "url": "https://clawhub.ai/skills/exec-inspector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exec-inspector",
+    "url": "https://clawhub.ai/skills/exec-inspector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exec-inspector-b1fc4ce992eb639b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exec-inspector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-exec-inspector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:164bff6af08c5d8965c58835fc31b5ef5ce9595cd97a9f2665215b73abb6a353",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T08:10:04.350Z"
+}

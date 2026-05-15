@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ugc-campaign-pipeline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ugc_campaign_pipeline",
+  "skill": {
+    "id": 52361,
+    "skillKey": "clawhub-ugc-campaign-pipeline",
+    "name": "UGC Campaign Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ugc-campaign-pipeline",
+    "url": "https://clawhub.ai/skills/ugc-campaign-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ugc-campaign-pipeline-11ffbc8dd5797b4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete UGC video campaign pipeline: product → hero image → variations → videos → edited final. ✅ USE WHEN: - User says \"crear campaña UGC\" or \"pipeline completo\" - Need end-to-end UGC video production - Starting from product image/URL →."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pauldelavallaz",
+      "userId": "publishers:pauldelavallaz",
+      "displayName": "Paul de Lavallaz",
+      "image": "https://avatars.githubusercontent.com/u/51497690?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1206,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770859123931,
+      "changelog": "Initial release: Complete UGC video production pipeline",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d4e00ede778e83fd2f3ac40b9bb203d04fb4bac4f10b471109dee30d9cdec686"
+}

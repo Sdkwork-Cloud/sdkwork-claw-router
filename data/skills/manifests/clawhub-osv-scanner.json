@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15415,
+  "uuid": "skill-clawhub-osv-scanner",
+  "skillKey": "clawhub-osv-scanner",
+  "name": "OSV Scanner",
+  "summary": "Scans Node.js/NPM and Linux packages for known vulnerabilities using the Google OSV API by analyzing dependencies and reporting related CVEs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.osv_scanner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nassi Mohammed",
+      "features": [
+        "Scans Node.js/NPM and Linux packages for known vulnerabilities using the Google OSV API by anal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/osv-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115360141?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "osv-scanner",
+      "url": "https://clawhub.ai/skills/osv-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "osv-scanner",
+    "url": "https://clawhub.ai/skills/osv-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/osv-scanner-31082a78c0618c3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/osv-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-osv-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2003545d8714a9ca2a03434ddeddd9999422cb7449cd8c091e3a67c7c66b9c44",
+      "artifactSizeBytes": 2114
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T14:06:05.390Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcporter-hardened@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcporter_hardened",
+  "skill": {
+    "id": 48372,
+    "skillKey": "clawhub-mcporter-hardened",
+    "name": "Mcporter Hardened"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcporter-hardened",
+    "url": "https://clawhub.ai/skills/mcporter-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcporter-hardened-e95f56c481f45b51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the mcporter CLI to list, configure, auth, and call MCP servers/tools directly (HTTP or stdio), including ad-hoc servers, config edits, and CLI/type gene..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snazar-faberlens",
+      "userId": "s17er0wp685j1z14w6vqrsnqrh83h5er",
+      "displayName": "Faberlens",
+      "image": "https://avatars.githubusercontent.com/u/261834257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776920407757,
+      "changelog": "mcporter-hardened 1.0.0\n\n- Initial release of mcporter-hardened skill.\n- Enables listing, configuring, authenticating, and calling MCP servers/tools via the mcporter CLI.\n- Supports flexible usage with HTTP, stdio, ad-hoc servers, config edits, and code generation.\n- Security guardrails applied: limits schema enumeration, restricts sensitive outputs, and provides safeguards against transmitting secrets or performing destructive actions without confirmation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc8912d543f5d5777074e61906725e2e9935d2d52f54757d4b47c9b7655ade67"
+}

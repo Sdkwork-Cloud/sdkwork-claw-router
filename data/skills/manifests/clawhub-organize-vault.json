@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65133,
+  "uuid": "skill-clawhub-organize-vault",
+  "skillKey": "clawhub-organize-vault",
+  "name": "Organize Vault",
+  "summary": "扫描 Markdown vault 中的笔记，按语义主题生成目录层级，将笔记移动到 对应目录，并在根目录和每个主题目录下创建 MOC.md。增量维护模式下检测 git 新增笔记， 移动归类并更新对应 MOC.md。笔记内容始终不变，git 是唯一回退机制。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.organize_vault",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wl95",
+      "features": [
+        "扫描 Markdown vault 中的笔记，按语义主题生成目录层级，将笔记移动到 对应目录，并在根目录和每个主题目录下创建 MOC.md。增量维护模式下检测 git 新增笔记， 移动归类并."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/organize-vault@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59633744?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "organize-vault",
+      "url": "https://clawhub.ai/skills/organize-vault"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "organize-vault",
+    "url": "https://clawhub.ai/skills/organize-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/organize-vault-a99761414e211f52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/organize-vault@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-organize-vault-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba38a47ff0882d443318404064b1447a642d1bac5fa83c7d2f6fb21f4ac7c62a",
+      "artifactSizeBytes": 2528
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T08:59:06.186Z"
+}

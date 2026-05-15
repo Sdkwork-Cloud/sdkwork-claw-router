@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-skill-bandwidth-income@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skill_bandwidth_income",
+  "skill": {
+    "id": 20526,
+    "skillKey": "clawhub-clawhub-skill-bandwidth-income",
+    "name": "Clawhub Skill Bandwidth Income"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skill-bandwidth-income",
+    "url": "https://clawhub.ai/skills/clawhub-skill-bandwidth-income",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skill-bandwidth-income-cde2877e79689294.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up and monitor bandwidth-sharing nodes on Grass.io, Mysterium, Storj, and Honeygain to earn passive crypto income with automated alerts and ROI tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariusfit",
+      "userId": "publishers:mariusfit",
+      "displayName": "mariusfit",
+      "image": "https://avatars.githubusercontent.com/u/53900085?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 540,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771981873917,
+      "changelog": "bandwidth-income skill initial release:\n\n- Guides users to set up and manage bandwidth-sharing nodes for Grass.io, Mysterium Network, Storj, and Honeygain via Docker.\n- Provides commands for node setup, status checks, earning tracking, monitoring with alerts, and node restarts.\n- Includes an all-in-one Docker Compose example for deployment.\n- Features earning calculators and platform comparisons.\n- Offers a sample monitoring script for automatic uptime checks and restarts.\n- Lists requirements, earnings estimates, and best practices for privacy and safety.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f986f92450d66206199b8d2ff3e4c1b65fcb3d9acbf4e5832dd1d168b4e111fc"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39980,
+  "uuid": "skill-clawhub-diffgate",
+  "skillKey": "clawhub-diffgate",
+  "name": "Diffgate",
+  "summary": "Compare two texts and get a unified diff with a similarity score (0-1), line-level additions/deletions, and individual change records. Useful for comparing L...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diffgate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mirni",
+      "features": [
+        "Compare two texts and get a unified diff with a similarity score (0-1), line-level additions/de.",
+        "Useful for comparing L..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/diffgate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13551232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "diffgate",
+      "url": "https://clawhub.ai/skills/diffgate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diffgate",
+    "url": "https://clawhub.ai/skills/diffgate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diffgate-41c6c6dd7756e7e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/diffgate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-diffgate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48c06afafda33ab5cbbc9e49f371a0f9c6a13a8a0470c2b2d85ea9f7c7735433",
+      "artifactSizeBytes": 2138
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T08:06:47.819Z"
+}

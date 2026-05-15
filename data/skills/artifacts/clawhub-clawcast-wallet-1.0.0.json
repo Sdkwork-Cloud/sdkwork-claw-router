@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawcast-wallet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawcast_wallet",
+  "skill": {
+    "id": 13386,
+    "skillKey": "clawhub-clawcast-wallet",
+    "name": "Clawcast - Cast Ethereum Wallet for Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawcast-wallet",
+    "url": "https://clawhub.ai/skills/clawcast-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawcast-wallet-3b0b81574a926339.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill for managing EVM wallets, transactions, and network helpers via cast; covers onboarding, checks, and operating procedures."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tezatezaz",
+      "userId": "s175jdv04s9d22s190s8qsxwz1855fec",
+      "displayName": "te_za",
+      "image": "https://avatars.githubusercontent.com/u/112280042?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1472,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770314637413,
+      "changelog": "Initial release of clawcast-wallet: an interactive skill for managing EVM wallets and transactions with cast.\n\n- Guides users step-by-step through wallet onboarding, including creation/import, encryption, network, and token setup, all driven by user-supplied inputs.\n- Automatically checks for an existing wallet and shows address, network, and balance at session start.\n- Provides scripts for wallet health checks, network status, and safe wallet removal.\n- Logs transaction mentions for later reference in a dedicated log file.\n- Shares direct explorer URLs for manual transaction review when API access is unavailable.\n- Focuses on clarity and ease of use, avoiding technical jargon unless requested.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d30c4da969998be42002ea004109214be135676eaf83f803c0bfc616733d94e1"
+}

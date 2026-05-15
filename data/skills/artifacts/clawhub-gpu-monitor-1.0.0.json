@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gpu-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gpu_monitor",
+  "skill": {
+    "id": 40845,
+    "skillKey": "clawhub-gpu-monitor",
+    "name": "gpu monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gpu-monitor",
+    "url": "https://clawhub.ai/skills/gpu-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gpu-monitor-9c5b7a1db16622b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides real-time NVIDIA GPU usage and memory stats, plus Ollama model layer GPU/CPU distribution via server.log parsing with live updates."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tinkerjueberg",
+      "userId": "s170hhyjpb2dt1xq7jgyrj1rs583pscy",
+      "displayName": "TinkerJueBerg",
+      "image": "https://avatars.githubusercontent.com/u/19902041?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774586308063,
+      "changelog": "v1",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bdbf8c68a20d544ae4158bcc17a22b073a9dea31d58b0e37a0ce681883357ee8"
+}

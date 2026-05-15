@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/experience-summary-sys@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.experience_summary_sys",
+  "skill": {
+    "id": 65079,
+    "skillKey": "clawhub-experience-summary-sys",
+    "name": "Experience Summary Sys"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "experience-summary-sys",
+    "url": "https://clawhub.ai/skills/experience-summary-sys",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/experience-summary-sys-2a21610c9b8c90b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "管理经验总结系统：定时生成每日/每周/每月/每季度/每年经验总结，以及按需调用历史经验的功能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "17oko",
+      "userId": "s1765dd57bdf3n48yg4fqagt6n841cw7",
+      "displayName": "thiswin",
+      "image": "https://avatars.githubusercontent.com/u/62000536?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1775174776591,
+      "changelog": "**经验总结系统 v1.4.0 主要变更：**\n\n- 优化所有定时任务的时间配置，避免周期任务时间重合。\n- 日志目录增加 memory/manual，支持手动记录，内容不会被自动任务覆盖。\n- 定期总结（周、月、季度、年）支持空数据占位输出，增强容错。\n- 详细补充每个周期任务的处理逻辑、容错说明和输出格式统一规则。\n- 新增会话历史文件自动清理建议，提升空间可维护性。\n- 部分 bash 操作命令的 cron 时间与输出路径说明同步修正。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1be23057fcd190c79ae039438085f96e7c8c276d00e499727fd78ae9fec2c99e"
+}

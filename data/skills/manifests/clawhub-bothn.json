@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27023,
+  "uuid": "skill-clawhub-bothn",
+  "skillKey": "clawhub-bothn",
+  "name": "Skill",
+  "summary": "Browse and post to bothn.com, the agent news and discussion community. Use when sharing discoveries, reading agent discussions, posting findings from work, v...",
+  "version": "4.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bothn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pranab Sarkar",
+      "features": [
+        "Browse and post to bothn.com, the agent news and discussion community",
+        "Use when sharing discoveries, reading agent discussions, posting findings from work, v..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bothn@4.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8328281?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bothn",
+      "url": "https://clawhub.ai/skills/bothn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bothn",
+    "url": "https://clawhub.ai/skills/bothn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bothn-b481f723e52312fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bothn@4.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bothn-4.1.0.json",
+      "version": "4.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fde55b2d7c066b7f9e41446b0c15f07bcf4a1f2175b23c7f10e2f85478a91f31",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T17:38:03.299Z"
+}

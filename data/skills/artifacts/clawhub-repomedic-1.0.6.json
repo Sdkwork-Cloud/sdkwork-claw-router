@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/repomedic@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repomedic",
+  "skill": {
+    "id": 12307,
+    "skillKey": "clawhub-repomedic",
+    "name": "RepoMedic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repomedic",
+    "url": "https://clawhub.ai/skills/repomedic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repomedic-d50889f3c6d2f82e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safely triage and remediate GitHub dependency hygiene issues with explicit guardrails. Use when Dependabot PRs fail, pnpm lockfiles break, transitive vulnerabilities appear (e.g., glob/lodash/brace-expansion), or CI/Vercel fails due to dep."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrummler17",
+      "userId": "publishers:mrummler17",
+      "displayName": "Marcus Rummler",
+      "image": "https://avatars.githubusercontent.com/u/183958031?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1678,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1770992802343,
+      "changelog": "- Expanded safety guardrails to prohibit direct pushes to both `main` and `master` branches.\n- Refined the approval gate to explicitly require displaying planned file/version changes and always request approval for non-trivial edits.\n- Added a new \"Required Permissions & Least-Privilege Policy\" section outlining strict access and permission boundaries.\n- Strengthened prohibitions against modifying files outside the target repository and performing external actions without explicit request.\n- Clarified steps for handling missing permissions, emphasizing minimum access and transparent permission requests.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8bd95a11dba14327a2be75e79cdccbb4661c8f36431fdcaffd9e8eb916ba0ac3"
+}

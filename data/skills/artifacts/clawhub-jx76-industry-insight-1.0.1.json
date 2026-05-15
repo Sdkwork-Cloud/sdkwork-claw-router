@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jx76-industry-insight@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jx76_industry_insight",
+  "skill": {
+    "id": 70413,
+    "skillKey": "clawhub-jx76-industry-insight",
+    "name": "Industry Insight - 行业洞察分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jx76-industry-insight",
+    "url": "https://clawhub.ai/skills/jx76-industry-insight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jx76-industry-insight-59d51abb44855ec9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "行业洞察分析助手，使用麦肯锡工作法帮助产品经理快速了解任意行业。包含关键词定义、报告搜索、书籍推荐、思维导图生成、关键洞察提炼。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jx-76",
+      "userId": "s171yt34379y1hr90tqkb226a9842e3c",
+      "displayName": "jjx",
+      "image": "https://avatars.githubusercontent.com/u/152524220?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773767894013,
+      "changelog": "Add tags for better discovery",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:27eff0d354e0d548a1efcce325c67bf2cf25373e140cafe134fbad93573fbfb7"
+}

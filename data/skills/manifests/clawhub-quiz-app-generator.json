@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72057,
+  "uuid": "skill-clawhub-quiz-app-generator",
+  "skillKey": "clawhub-quiz-app-generator",
+  "name": "刷题网页生成器",
+  "summary": "生成适合学生使用的交互式刷题单文件 HTML 网页应用，支持练习、考试、背题、错题重练四种模式，零外部依赖，可直接部署到服务器。哪怕用户没有明确叫出本技能的名字，只要提到\"帮我把这些题做成刷题网页\"、\"生成一个考试页面\"、\"制作交互式题目\"、\"把题库做成 HTML\"、\"给学生做一个测试工具\"，就应当立即使用本技能...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quiz_app_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "duzhilei951",
+      "features": [
+        "生成适合学生使用的交互式刷题单文件 HTML 网页应用，支持练习、考试、背题、错题重练四种模式，零外部依赖，可直接部署到服务器。哪怕用户没有明确叫出本技能的名字，只要提到\"帮我把这些题做成刷."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quiz-app-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22375450?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quiz-app-generator",
+      "url": "https://clawhub.ai/skills/quiz-app-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quiz-app-generator",
+    "url": "https://clawhub.ai/skills/quiz-app-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quiz-app-generator-39b8ea0172cd721a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quiz-app-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quiz-app-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2df7b07b64697b21beb01eff83c94ecbe3502cd5daf8fdf07d6843dc8e475b2",
+      "artifactSizeBytes": 2381
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T08:59:49.233Z"
+}

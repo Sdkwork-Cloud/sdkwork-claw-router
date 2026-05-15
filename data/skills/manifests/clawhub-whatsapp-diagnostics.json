@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40079,
+  "uuid": "skill-clawhub-whatsapp-diagnostics",
+  "skillKey": "clawhub-whatsapp-diagnostics",
+  "name": "Whatsapp Diagnostics",
+  "summary": "Diagnose and fix WhatsApp connectivity issues for OpenClaw agents. Use when: a PA is not responding, WhatsApp shows connected but messages don't arrive, the...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_diagnostics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Netanel Abergel",
+      "features": [
+        "Diagnose and fix WhatsApp connectivity issues for OpenClaw agents",
+        "Use when: a PA is not responding, WhatsApp shows connected but messages don't arrive, the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whatsapp-diagnostics@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89765095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whatsapp-diagnostics",
+      "url": "https://clawhub.ai/skills/whatsapp-diagnostics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-diagnostics",
+    "url": "https://clawhub.ai/skills/whatsapp-diagnostics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-diagnostics-cd0987f5175f06fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whatsapp-diagnostics@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-whatsapp-diagnostics-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0be91036ba34bbd02037315e4d993a7638087133126a43537fd8c01012a8db88",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:37:26.595Z"
+}

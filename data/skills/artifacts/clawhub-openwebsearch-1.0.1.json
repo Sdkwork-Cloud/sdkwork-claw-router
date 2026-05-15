@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openwebsearch@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openwebsearch",
+  "skill": {
+    "id": 29634,
+    "skillKey": "clawhub-openwebsearch",
+    "name": "OpenWebSearch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openwebsearch",
+    "url": "https://clawhub.ai/skills/openwebsearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openwebsearch-5f99c9aa651d8c59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Single entry skill for open-websearch setup and focused live retrieval, preferring local CLI/daemon paths while remaining compatible with workspace-exposed M..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aas-ee",
+      "userId": "s17ac5dmraqp00jfxvyb9fd885842z1v",
+      "displayName": "Aasee",
+      "image": "https://avatars.githubusercontent.com/u/81606643?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775367242803,
+      "changelog": "No user-visible changes in this version.\n\n- No changes detected between versions 1.0.1 and 1.4.0; the skill logic and documentation remain unchanged.\n- Version number increment only; behavior and features are the same as the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee195f5f9cef4b293f2ebbad9240e06860ec9a59e9e82fa3e1e9c805d8c995c5"
+}

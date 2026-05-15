@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8952,
+  "uuid": "skill-clawhub-decision-trees",
+  "skillKey": "clawhub-decision-trees",
+  "name": "Decision Trees",
+  "summary": "Decision tree analysis for complex decision-making across all domains. Use when user needs to evaluate multiple options with uncertain outcomes, assess risk/reward scenarios, or structure choices systematically. Applicable to business, inv.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decision_trees",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "evgyur",
+      "features": [
+        "Decision tree analysis for complex decision-making across all domains",
+        "Use when user needs to evaluate multiple options with uncertain outcomes, assess risk/reward sc.",
+        "Applicable to business, investment, personal decisions, operations, career choices, product str.",
+        "Triggers include decision tree, should I, what if, evaluate options, compare alternatives, risk."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/decision-trees@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/120411712?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "decision-trees",
+      "url": "https://clawhub.ai/skills/decision-trees"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decision-trees",
+    "url": "https://clawhub.ai/skills/decision-trees",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decision-trees-9f1151af5095d6f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/decision-trees@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-decision-trees-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3345364b5cbb6ed83a4b7394ba423e90d6772bdf815cb671f98c731034b3f55b",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T22:22:33.260Z"
+}

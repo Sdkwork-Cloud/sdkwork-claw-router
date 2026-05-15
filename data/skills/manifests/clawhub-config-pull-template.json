@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70130,
+  "uuid": "skill-clawhub-config-pull-template",
+  "skillKey": "clawhub-config-pull-template",
+  "name": "配置拉取代码生成",
+  "summary": "生成配置拉取代码模板。用于在 Android 项目中接入配置中心、白名单、单独接口或推拉结合的配置。 触发条件：用户想要创建配置拉取功能，需要生成对应的 Kotlin/Java 代码模板。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.config_pull_template",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hefuwei-95",
+      "features": [
+        "生成配置拉取代码模板。用于在 Android 项目中接入配置中心、白名单、单独接口或推拉结合的配置。 触发条件：用户想要创建配置拉取功能，需要生成对应的 Kotlin/Java 代码模板。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/config-pull-template@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81024917?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "config-pull-template",
+      "url": "https://clawhub.ai/skills/config-pull-template"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "config-pull-template",
+    "url": "https://clawhub.ai/skills/config-pull-template",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/config-pull-template-0fb4e07f80ae6eb2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/config-pull-template@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-config-pull-template-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d004f5a572b40cab0a05d5894412ac73116fabba3e56f88d700ea80d0028102",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:53:52.298Z"
+}

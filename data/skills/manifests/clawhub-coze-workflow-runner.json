@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62149,
+  "uuid": "skill-clawhub-coze-workflow-runner",
+  "skillKey": "clawhub-coze-workflow-runner",
+  "name": "coze-workflow-runner",
+  "summary": "调用 Coze 工作流执行自动化任务，支持生成图片、处理数据等操作",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coze_workflow_runner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "beilunjuzhen",
+      "features": [
+        "调用 Coze 工作流执行自动化任务，支持生成图片、处理数据等操作"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coze-workflow-runner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260882530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coze-workflow-runner",
+      "url": "https://clawhub.ai/skills/coze-workflow-runner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coze-workflow-runner",
+    "url": "https://clawhub.ai/skills/coze-workflow-runner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coze-workflow-runner-e2d4466a5dd8c5d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coze-workflow-runner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coze-workflow-runner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0fef78f2446d8bacd67cd31bea356bf345708f4159cd4c0500b543ff206522fe",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T16:27:13.336Z"
+}

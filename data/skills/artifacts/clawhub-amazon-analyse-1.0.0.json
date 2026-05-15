@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-analyse@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_analyse",
+  "skill": {
+    "id": 59709,
+    "skillKey": "clawhub-amazon-analyse",
+    "name": "Amazon Analyse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-analyse",
+    "url": "https://clawhub.ai/skills/amazon-analyse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-analyse-7f20aaa7c53fd88f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对亚马逊竞品Listing进行全维度穿透分析，包括文案逻辑、评论分析、关键词分析、市场动态等。分析完成后自动保存为Markdown报告文档到reports/目录。Invoke when user uses /amazon-analyse command with a product ASIN."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chanalii",
+      "userId": "publishers:chanalii",
+      "displayName": "ChanaLii",
+      "image": "https://avatars.githubusercontent.com/u/20842481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 464,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773047329437,
+      "changelog": "amazon-analyse 1.0.0 - Initial Release\n\n- Provides comprehensive, multi-dimensional analysis of Amazon competitor listings, covering copy logic, review sentiment, keyword strategies, and market dynamics.\n- Automatically generates and saves a structured Markdown analysis report to the reports/ directory.\n- Utilizes Sorftime MCP API for real-time Amazon data collection and analysis via curl POST and SSE.\n- Includes detailed instructions and best practices for workflow, data retrieval, and exporting reports.\n- Activated with the /amazon-analyse command and ASIN input.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:165a3743e4a2d223969a68ef2ddd27d57609bea5ca3c3df470da5cd463c030f9"
+}

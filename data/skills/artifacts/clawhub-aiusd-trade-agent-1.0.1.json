@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aiusd-trade-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiusd_trade_agent",
+  "skill": {
+    "id": 13091,
+    "skillKey": "clawhub-aiusd-trade-agent",
+    "name": "trade-with-aiusd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiusd-trade-agent",
+    "url": "https://clawhub.ai/skills/aiusd-trade-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiusd-trade-agent-c616db9009e35f1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade AIUSD tokens, manage balances, stake, withdraw, top up gas, view transaction history, and handle authentication via MCP backend."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaunceyliu",
+      "userId": "publishers:chaunceyliu",
+      "displayName": "ChaunceyLiu",
+      "image": "https://avatars.githubusercontent.com/u/18446173?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1570,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770426345609,
+      "changelog": "**Summary:** This update introduces skill installation scripts, adds public documentation, and refines usage and agent output guidelines.\n\n- Added README.md and skill installer scripts (`aiusd-skill-installer.js` and `.sh`)\n- Overhauled SKILL.md to a user- and agent-focused reference, including strict output rules and live tool access requirements\n- Updated build metadata in build-info.json\n- Enhanced authentication guidance and detailed usage documentation for agents and users",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e48ad2830a43b838e78ae590b63b79fafa9af7ab26e382eb4175bd6c85c363ea"
+}

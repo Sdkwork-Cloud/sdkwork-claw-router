@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-gemini@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_gemini",
+  "skill": {
+    "id": 46674,
+    "skillKey": "clawhub-text-to-video-gemini",
+    "name": "Text To Video Gemini"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-gemini",
+    "url": "https://clawhub.ai/skills/text-to-video-gemini",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-gemini-fb0f4e185655fcb2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text prompts into AI generated videos with this skill. Works with TXT, DOCX, PDF, plain text files up to 500MB. content creators use it for generati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776279215318,
+      "changelog": "Initial release of Text to Video Gemini — generate videos from text prompts with easy cloud processing.\n\n- Converts text prompts or documents (TXT, DOCX, PDF, up to 500MB) into AI-generated videos.\n- Simple onboarding: automatic NEMO_TOKEN setup and session management for new users.\n- Supports video editing actions (add tracks, overlays, BGM) and export to 1080p MP4.\n- Exposes intuitive commands for upload, export, credits, and project status checks.\n- Clear backend integration: real-time feedback, error handling, and multi-format export (video, audio, images).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d0a6e2828103f2e084262efbe86a480a7539d2460a073b4c840f09005a21cda5"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41008,
+  "uuid": "skill-clawhub-notes-know-you",
+  "skillKey": "clawhub-notes-know-you",
+  "name": "Notes Know You",
+  "summary": "Sync Evernote notebooks to local Markdown, analyze your notes, and update USER.md + Memory files so the AI truly understands who you are",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notes_know_you",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hxiaom",
+      "features": [
+        "Sync Evernote notebooks to local Markdown, analyze your notes, and update USER.md + Memory file."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notes-know-you@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3956114?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notes-know-you",
+      "url": "https://clawhub.ai/skills/notes-know-you"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notes-know-you",
+    "url": "https://clawhub.ai/skills/notes-know-you",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notes-know-you-88b17d7ec5af4b18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notes-know-you@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notes-know-you-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:648769248761d6dbf748bf4c01861a374be6edcded8565854cdf0bab759656a9",
+      "artifactSizeBytes": 2517
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:39:10.565Z"
+}

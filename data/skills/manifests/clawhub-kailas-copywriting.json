@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73381,
+  "uuid": "skill-clawhub-kailas-copywriting",
+  "skillKey": "clawhub-kailas-copywriting",
+  "name": "金牌带货主播文案生成器",
+  "summary": "根据凯乐石产品信息（型号、卖点、场景、痛点）生成极具转化率的直播/短视频带货口播文案。当用户提供户外产品信息并需要生成带货脚本、口播文案、直播话术时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kailas_copywriting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuqingyang3019-cyber",
+      "features": [
+        "根据凯乐石产品信息（型号、卖点、场景、痛点）生成极具转化率的直播/短视频带货口播文案。当用户提供户外产品信息并需要生成带货脚本、口播文案、直播话术时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kailas-copywriting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237017898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kailas-copywriting",
+      "url": "https://clawhub.ai/skills/kailas-copywriting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kailas-copywriting",
+    "url": "https://clawhub.ai/skills/kailas-copywriting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kailas-copywriting-7c1b617db4322c45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kailas-copywriting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kailas-copywriting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6540e0c54630f4c27c920657e87a0241e0124d48fa1aac6ee7320a42cf49f181",
+      "artifactSizeBytes": 2508
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T06:43:13.234Z"
+}

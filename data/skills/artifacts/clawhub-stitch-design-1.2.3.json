@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stitch-design@1.2.3",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stitch_design",
+  "skill": {
+    "id": 20802,
+    "skillKey": "clawhub-stitch-design",
+    "name": "Stitch Design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stitch-design",
+    "url": "https://clawhub.ai/skills/stitch-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stitch-design-46deea395acd3bb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Official Google Stitch SDK wrapper for OpenClaw. Requires only STITCH_API_KEY. Generate UI screens from text, apply targeted edits, branch variants, export H..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rasimme",
+      "userId": "s1733ceh2knhecccb4gr5brqmh83h2hw",
+      "displayName": "Simeon",
+      "image": "https://avatars.githubusercontent.com/u/114735614?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 438,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.2.3",
+      "createdAt": 1774769790699,
+      "changelog": "Sync with google-stitch-design@1.2.3.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b95348d5402c691e2652af9f4f1af1220245ace2da7c9323d6b97199a3bcc9d6"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61778,
+  "uuid": "skill-clawhub-implicit-contract-defense",
+  "skillKey": "clawhub-implicit-contract-defense",
+  "name": "Implicit Contract Defense",
+  "summary": "Rust + SeaORM + 任意前端的隐式契约防御规范。 当项目涉及 Rust 后端 + 前端 + 数据库开发时激活。 核心：所有跨边界交互收敛到隔离仓，内部壳只写纯 Rust 逻辑。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.implicit_contract_defense",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiamu-ssr",
+      "features": [
+        "Rust + SeaORM + 任意前端的隐式契约防御规范。 当项目涉及 Rust 后端 + 前端 + 数据库开发时激活。 核心：所有跨边界交互收敛到隔离仓，内部壳只写纯 Rust 逻辑。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/implicit-contract-defense@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77220168?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "implicit-contract-defense",
+      "url": "https://clawhub.ai/skills/implicit-contract-defense"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "implicit-contract-defense",
+    "url": "https://clawhub.ai/skills/implicit-contract-defense",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/implicit-contract-defense-2e551bdffb5aaf65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/implicit-contract-defense@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-implicit-contract-defense-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d77d2d59f06e72429aae7647079c8ea42d34b469a22942536c2ce11ee27e917c",
+      "artifactSizeBytes": 2168
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T07:30:28.654Z"
+}

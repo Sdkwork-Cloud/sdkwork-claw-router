@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22409,
+  "uuid": "skill-clawhub-legal-consultation",
+  "skillKey": "clawhub-legal-consultation",
+  "name": "Legal Consultation",
+  "summary": "General legal consultation entry point to help users identify their legal issues and guide them to appropriate resources. Use when the user asks about any le...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_consultation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "General legal consultation entry point to help users identify their legal issues and guide them.",
+        "Use when the user asks about any le..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legal-consultation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legal-consultation",
+      "url": "https://clawhub.ai/skills/legal-consultation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-consultation",
+    "url": "https://clawhub.ai/skills/legal-consultation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-consultation-4eef7215d1bcbff3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legal-consultation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-legal-consultation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61da921dd09229bcbbec3c78c6b471198a53ac4872e9a0a58d7b2113e66ba8ea",
+      "artifactSizeBytes": 1915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T12:20:46.417Z"
+}

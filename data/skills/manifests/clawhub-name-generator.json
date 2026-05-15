@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58804,
+  "uuid": "skill-clawhub-name-generator",
+  "skillKey": "clawhub-name-generator",
+  "name": "Name Generator",
+  "summary": "起名助手。宝宝取名、公司起名、笔名、网名、英文名。Name generator for babies, companies, pen names, usernames, English names. 取名字、起名大全、姓名测试。Use when naming anything.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.name_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "起名助手。宝宝取名、公司起名、笔名、网名、英文名。Name generator for babies, companies, pen names, usernames, English na.",
+        "取名字、起名大全、姓名测试。Use when naming anything."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/name-generator@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "name-generator",
+      "url": "https://clawhub.ai/skills/name-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "name-generator",
+    "url": "https://clawhub.ai/skills/name-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/name-generator-709a847529dd18d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/name-generator@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-name-generator-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15d53ba69af18f3da5ad7c2d903186ceba378cf416f259df2edf3fe88508d75f",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:56:02.491Z"
+}

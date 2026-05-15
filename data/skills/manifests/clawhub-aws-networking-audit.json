@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35996,
+  "uuid": "skill-clawhub-aws-networking-audit",
+  "skillKey": "clawhub-aws-networking-audit",
+  "name": "Aws Networking Audit",
+  "summary": "AWS VPC networking audit covering CIDR architecture, Security Group and NACL rule analysis, Transit Gateway connectivity, VPC Flow Log forensics, Route Table...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aws_networking_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vahagn Madatyan",
+      "features": [
+        "AWS VPC networking audit covering CIDR architecture, Security Group and NACL rule analysis, Tra."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aws-networking-audit@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74753362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aws-networking-audit",
+      "url": "https://clawhub.ai/skills/aws-networking-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aws-networking-audit",
+    "url": "https://clawhub.ai/skills/aws-networking-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aws-networking-audit-6b05aab75621f0e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aws-networking-audit@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aws-networking-audit-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e2f4c72d08cd409103d207e15adc1ad2c3bdeb1c1a1a7fc5bb77ac72b4e7ad6",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T00:28:52.254Z"
+}

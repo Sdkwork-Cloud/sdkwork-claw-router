@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35902,
+  "uuid": "skill-clawhub-core-web-vitals",
+  "skillKey": "clawhub-core-web-vitals",
+  "name": "core-web-vitals",
+  "summary": "When the user wants to optimize Core Web Vitals, fix LCP, INP, or CLS issues. Also use when the user mentions \"Core Web Vitals,\" \"CWV,\" \"LCP,\" \"INP,\" \"CLS,\"...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.core_web_vitals",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to optimize Core Web Vitals, fix LCP, INP, or CLS issues",
+        "Also use when the user mentions \"Core Web Vitals,\" \"CWV,\" \"LCP,\" \"INP,\" \"CLS,\"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/core-web-vitals@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "core-web-vitals",
+      "url": "https://clawhub.ai/skills/core-web-vitals"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "core-web-vitals",
+    "url": "https://clawhub.ai/skills/core-web-vitals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/core-web-vitals-55f9e14b1879602f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/core-web-vitals@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-core-web-vitals-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a18a125d8cb425559d210427967d8105a888c28bc57c2e4d942cacdee72df1f8",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T13:42:32.225Z"
+}

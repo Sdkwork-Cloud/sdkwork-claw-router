@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-file-transfer-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_file_transfer_guide",
+  "skill": {
+    "id": 25371,
+    "skillKey": "clawhub-feishu-file-transfer-guide",
+    "name": "feishu file transfer guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-file-transfer-guide",
+    "url": "https://clawhub.ai/skills/feishu-file-transfer-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-file-transfer-guide-62b4912f8156f41e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide to upload and send local files to Feishu users via OpenClaw by obtaining tenant token, uploading files for file_key, then sending file message using Fe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "swingmonkey",
+      "userId": "s1766cha3kxcky9zyqgap9fm3983maev",
+      "displayName": "swingmonkey",
+      "image": "https://avatars.githubusercontent.com/u/37450014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773460669549,
+      "changelog": "feishu-file-transfer-guide v1.0.0\n\n- Initial release with a comprehensive technical guide for sending local files over Feishu via OpenClaw Agent.\n- Covers rationale, API steps, required headers, and detailed PowerShell/Python implementation examples.\n- Provides a step-by-step workflow: obtaining tenant_access_token, uploading files to get file_key, and sending file messages.\n- Includes full sample code in Python, supporting both English and Chinese filenames.\n- Targeted for OpenClaw Agent scenarios using the official Feishu API.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c58acb9ea0b145a7fcd372f7898c90ac7974806ea922732e53050cde8d658a8e"
+}

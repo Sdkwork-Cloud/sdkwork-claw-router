@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38700,
+  "uuid": "skill-clawhub-robocorp-integration",
+  "skillKey": "clawhub-robocorp-integration",
+  "name": "Robocorp",
+  "summary": "Robocorp integration. Manage Organizations. Use when the user wants to interact with Robocorp data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.robocorp_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Robocorp integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Robocorp data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/robocorp-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "robocorp-integration",
+      "url": "https://clawhub.ai/skills/robocorp-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "robocorp-integration",
+    "url": "https://clawhub.ai/skills/robocorp-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/robocorp-integration-e6dc78336df2fdc9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/robocorp-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-robocorp-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cebbb204c215ba3e58dccd3c7d4856786a657a26eabcdc74af1ac8815e9d8e7",
+      "artifactSizeBytes": 1878
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:35:30.678Z"
+}

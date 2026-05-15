@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63350,
+  "uuid": "skill-clawhub-hot-topic-ideator",
+  "skillKey": "clawhub-hot-topic-ideator",
+  "name": "hot-topic-ideator",
+  "summary": "生成小红书热点选题和内容创意。当用户提到\"热点选题\"、\"内容创意\"、\"小红书选题\"、\"trending topics\"、\"content ideas\"、\"热门话题\"、\"爆款选题\"时使用。适用于品牌社媒运营、内容策划、热点借势营销场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hot_topic_ideator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yyobject",
+      "features": [
+        "生成小红书热点选题和内容创意。当用户提到\"热点选题\"、\"内容创意\"、\"小红书选题\"、\"trending topics\"、\"content ideas\"、\"热门话题\"、\"爆款选题\"时使用。适用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hot-topic-ideator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48043998?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hot-topic-ideator",
+      "url": "https://clawhub.ai/skills/hot-topic-ideator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hot-topic-ideator",
+    "url": "https://clawhub.ai/skills/hot-topic-ideator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hot-topic-ideator-24cd883587c27a1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hot-topic-ideator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hot-topic-ideator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9100d8da1e6f80348e4d8bb1933da5757ee0b3df1c2b7f2b8b25773d6555c11",
+      "artifactSizeBytes": 2694
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T03:26:08.333Z"
+}

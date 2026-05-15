@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youdaonote-news@1.7.8",
+  "version": "1.7.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youdaonote_news",
+  "skill": {
+    "id": 70679,
+    "skillKey": "clawhub-youdaonote-news",
+    "name": "YoudaoNote News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youdaonote-news",
+    "url": "https://clawhub.ai/skills/youdaonote-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youdaonote-news-85f0400f4123c111.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "有道云笔记资讯推送：基于收藏笔记分析关注话题，推送最新相关资讯。支持对话触发与每日定时推送（如早上9点）。触发词:资讯推送、设置资讯推送、生成资讯推送。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lephix",
+      "userId": "s17bx0c27sghyvg48kbx2h94dn83yp1p",
+      "displayName": "lephix",
+      "image": "https://avatars.githubusercontent.com/u/308410?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1683,
+      "installsAllTime": 17,
+      "installsCurrent": 16,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.7.8",
+      "createdAt": 1773753706444,
+      "changelog": "- Clarified that Perplexity API is now optional; removed requirement for PERPLEXITY_API_KEY in environment variables.\n- Updated metadata to reflect the new optional dependency.\n- Added explanation in the workflow that Perplexity requires PERPLEXITY_API_KEY only if used.\n- No changes to user-facing commands or functional workflow.\n- Improved documentation for deployment and configuration clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4380b007e1092e24ea5838633e67f0dd317faafa81c856147d0c53c739a8cf08"
+}

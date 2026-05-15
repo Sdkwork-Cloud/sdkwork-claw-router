@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-advanced-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_advanced_memory",
+  "skill": {
+    "id": 19902,
+    "skillKey": "clawhub-openclaw-advanced-memory",
+    "name": "OpenClaw Advanced Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-advanced-memory",
+    "url": "https://clawhub.ai/skills/openclaw-advanced-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-advanced-memory-8c390a5809440f43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides persistent, searchable AI agent memory with real-time capture, vector search, and nightly LLM curation for long-term recall on local hardware."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jtil4201",
+      "userId": "s175hjybfqkfv5z5jwryh5xmf185sztp",
+      "displayName": "Josh",
+      "image": "https://avatars.githubusercontent.com/u/34990826?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 484,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772501038388,
+      "changelog": "Initial release: Three-tier memory system (Hot/Warm/Cold) with real-time capture, vector search, and LLM-curated long-term recall.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:205f3885342bf8de84f4272e01a8c83124908752bd3eaf71f001d77360caff9f"
+}

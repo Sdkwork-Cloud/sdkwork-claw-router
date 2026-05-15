@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quant-architecture-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quant_architecture_review",
+  "skill": {
+    "id": 67752,
+    "skillKey": "clawhub-quant-architecture-review",
+    "name": "Quant Architecture Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quant-architecture-review",
+    "url": "https://clawhub.ai/skills/quant-architecture-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quant-architecture-review-30fb48f204de9a07.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "量化架构设计审查技能。当用户说\"审查架构\"、\"检查设计\"、\"优化架构\"、\"架构有问题\"、\"XX环节有问题\"时自动触发。提供架构设计检查清单、常见问题识别、优化建议。适用于量化项目的设计审查阶段。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueylee-dotcom",
+      "userId": "s17cfbpghyxeebsx1t64sx4ck583q0e9",
+      "displayName": "xueylee-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/260164558?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774583294285,
+      "changelog": "v1.0.0: 量化架构设计审查技能。提供架构设计检查清单、常见问题识别、优化建议。支持自动触发：审查架构、检查设计、优化架构、XX环节有问题。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ada09d5e06abe9b8400dc085b009887366038b3b1bb260e15d3bc2d13e9e6bf"
+}

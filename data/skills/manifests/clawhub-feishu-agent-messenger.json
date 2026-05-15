@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26933,
+  "uuid": "skill-clawhub-feishu-agent-messenger",
+  "skillKey": "clawhub-feishu-agent-messenger",
+  "name": "Feishu Send Message",
+  "summary": "Send messages via Feishu using the current Agent's credentials, supporting private and group chats with independent identity display to solve open_id isolation.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_agent_messenger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pikaqiuyaya",
+      "features": [
+        "Send messages via Feishu using the current Agent's credentials, supporting private and group ch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-agent-messenger@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146065672?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-agent-messenger",
+      "url": "https://clawhub.ai/skills/feishu-agent-messenger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-agent-messenger",
+    "url": "https://clawhub.ai/skills/feishu-agent-messenger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-agent-messenger-5beee012d0ce2aab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-agent-messenger@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-agent-messenger-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:972d124fdceefa54c828a889c64ca3dc76d95f01fe0c64dc3383dd94abb28f7b",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T11:20:22.703Z"
+}

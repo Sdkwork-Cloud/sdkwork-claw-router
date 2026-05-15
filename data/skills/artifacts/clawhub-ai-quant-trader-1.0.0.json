@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-quant-trader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_quant_trader",
+  "skill": {
+    "id": 64888,
+    "skillKey": "clawhub-ai-quant-trader",
+    "name": "Ai Quant Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-quant-trader",
+    "url": "https://clawhub.ai/skills/ai-quant-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-quant-trader-0da1ad596a34901c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于AKShare的AI量化交易助手，实现策略生成、参数优化、自动交易、止盈止损及实时选股模拟。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuhuijiang2025-cell",
+      "userId": "publishers:yuhuijiang2025-cell",
+      "displayName": "yuhuijiang2025-cell",
+      "image": "https://avatars.githubusercontent.com/u/262733151?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 640,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772820061701,
+      "changelog": "AI量化交易助手技能 v1.0.0 初始发布：\n\n- 提供基于AKShare的数据驱动的AI量化交易模拟，包括策略生成、参数优化、自动化交易和风控功能。\n- 支持模拟买卖、AI选股、止盈止损、策略胜率统计等完整量化流程。\n- 提供简化版对话模式，免依赖安装，直接对话式操控所有核心功能。\n- 覆盖丰富的命令体系，便于用户快速操作持仓、策略、自动化及风控管理。\n- 明确说明所有交易为模拟，策略建议仅供参考。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8984d009a962165ddcbc9d8a30846e3d45b878dfd8624a189102e810c14f75bb"
+}

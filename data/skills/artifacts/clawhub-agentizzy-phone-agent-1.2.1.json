@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentizzy-phone-agent@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentizzy_phone_agent",
+  "skill": {
+    "id": 52837,
+    "skillKey": "clawhub-agentizzy-phone-agent",
+    "name": "Openclaw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentizzy-phone-agent",
+    "url": "https://clawhub.ai/skills/agentizzy-phone-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentizzy-phone-agent-6b0281d4724f6bee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI phone agent for any business — answers inbound calls 24/7, captures leads, books appointments, and returns structured call data with transcripts, summarie..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryanhall00",
+      "userId": "s17cdzyk997k6p8p9tgen7yhdn84repy",
+      "displayName": "Ryan Hall",
+      "image": "https://avatars.githubusercontent.com/u/167811819?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1776138862284,
+      "changelog": "1. Documentation consistency update only; no code or functionality changes.\n2. SKILL.md: Corrected agent limits and minute limits in the “Rate Limits” section for accuracy.\n3. Updated plan details to clarify inclusion amounts (e.g., “unlimited agents”, “pay-per-use per month”).\n4. No changes to scripts, API, or integration process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:205da44fe0ae8ac011e6725a1754d79aa3cdbbee90097d995d64602e74a2472f"
+}

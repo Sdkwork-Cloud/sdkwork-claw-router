@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29032,
+  "uuid": "skill-clawhub-traffic-analysis",
+  "skillKey": "clawhub-traffic-analysis",
+  "name": "traffic-analysis",
+  "summary": "When the user wants to analyze website traffic sources, attribution, or dark traffic. Also use when the user mentions \"traffic sources,\" \"dark traffic,\" \"dir...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.traffic_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to analyze website traffic sources, attribution, or dark traffic",
+        "Also use when the user mentions \"traffic sources,\" \"dark traffic,\" \"dir..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/traffic-analysis@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "traffic-analysis",
+      "url": "https://clawhub.ai/skills/traffic-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "traffic-analysis",
+    "url": "https://clawhub.ai/skills/traffic-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/traffic-analysis-4e0d9604a5adcbc0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/traffic-analysis@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-traffic-analysis-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29043f10734a084c79cf14f4bda70da6967948a0a7d5666d9786cef6181c3411",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T10:17:19.178Z"
+}

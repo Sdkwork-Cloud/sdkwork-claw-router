@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-aisa-chinese-llm-models@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aisa_chinese_llm_models",
+  "skill": {
+    "id": 15823,
+    "skillKey": "clawhub-openclaw-aisa-chinese-llm-models",
+    "name": "Chinese LLM Models (Kimi 2.5, MiniMax 2.5, Qwen, DeepSeek) with One Key"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aisa-chinese-llm-models",
+    "url": "https://clawhub.ai/skills/openclaw-aisa-chinese-llm-models",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aisa-chinese-llm-models-4c45c0c75b43d569.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure AIsa as a first-class model provider for OpenClaw, enabling production access to major Chinese AI models (Qwen, DeepSeek, Kimi K2.5, Doubao) throug..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xjordansg-yolo",
+      "userId": "s17eqxzhby6aqcv44tccm6dqh583fznj",
+      "displayName": "0xjordansg-yolo",
+      "image": "https://avatars.githubusercontent.com/u/249538244?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 924,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771251429126,
+      "changelog": "- Added detailed Chinese-language documentation and guides (`guide-zh-CN.md`, `pricing.md`) to support users in both English and Chinese.\n- Moved documentation files into organized subfolders (`AIsa Chinese Models v3/`, `references/`).\n- Removed duplicated top-level guide and pricing files in favor of new structured documentation.\n- No changes to provider configuration or API usage—this update is documentation and structure only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fb3c52f7849c5acf1f0890ff91f9f8683225ebec22798fd4f9aabf33e994e393"
+}

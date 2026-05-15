@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mineru-document-extractor@0.1.29",
+  "version": "0.1.29",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mineru_document_extractor",
+  "skill": {
+    "id": 9698,
+    "skillKey": "clawhub-mineru-document-extractor",
+    "name": "mineru document extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mineru-document-extractor",
+    "url": "https://clawhub.ai/skills/mineru-document-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mineru-document-extractor-65133372a5a903ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MinerU document extraction — convert PDFs, scanned documents, images, Word (DOC/DOCX), PowerPoint (PPT/PPTX), and web pages into clean Markdown, HTML, LaTeX,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mineru-extract",
+      "userId": "s17a507qg9adzt2jkyh0mgzp3183ggjt",
+      "displayName": "MinerU-Extract",
+      "image": "https://avatars.githubusercontent.com/u/82048227?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3406,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 6,
+      "versions": 38
+    },
+    "latestVersion": {
+      "version": "0.1.29",
+      "createdAt": 1777363081254,
+      "changelog": "No user-visible changes in this release — SKILL.md and included documentation remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4cf471c7df66bfce6135c30f774b296c316555c5f9322660eb73425281f40bf5"
+}

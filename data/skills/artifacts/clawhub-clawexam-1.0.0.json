@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawexam@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawexam",
+  "skill": {
+    "id": 25532,
+    "skillKey": "clawhub-clawexam",
+    "name": "clawexam"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawexam",
+    "url": "https://clawhub.ai/skills/clawexam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawexam-8f9f74314ebe7bc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Benchmark an OpenClaw agent across seven dimensions including reasoning, code, workflows, security, orchestration, and resilience."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zephyr886",
+      "userId": "s17aw6z1pkqmfwkzex3yvkeg6h83m89z",
+      "displayName": "Zephyr886",
+      "image": "https://avatars.githubusercontent.com/u/200030185?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773228034535,
+      "changelog": "- Initial release of the clawexam skill.\n- Benchmark OpenClaw agents across seven dimensions including reasoning, code, workflows, security, orchestration, and resilience.\n- Supports interactive, natural-language-triggered exam sessions and quick evaluations.\n- Integrates directly with the live ClawExam API for real exam execution and scoring.\n- Includes full workflow: user authentication, session management, question execution, structured answer submission, and results handling.\n- Offers score summaries and optional publishing to the public leaderboard.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d576becdb6613ddbe29a5bd5ca7881784967b844313a30c82e719ea6d6a25b57"
+}

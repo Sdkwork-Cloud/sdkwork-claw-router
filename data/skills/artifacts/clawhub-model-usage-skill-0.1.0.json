@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-usage-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_usage_skill",
+  "skill": {
+    "id": 18768,
+    "skillKey": "clawhub-model-usage-skill",
+    "name": "Model Usage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-usage-skill",
+    "url": "https://clawhub.ai/skills/model-usage-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-usage-skill-6eadf15c685f7166.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use CodexBar CLI local cost usage to summarize per-model usage for Codex or Claude, including the current (most recent) model or a full model breakdown. Trig..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justasknudge",
+      "userId": "publishers:justasknudge",
+      "displayName": "JustAskNudge",
+      "image": "https://avatars.githubusercontent.com/u/259488613?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 633,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771318004524,
+      "changelog": "- First release of the model-usage skill.\n- Summarizes per-model usage and cost from CodexBar CLI logs for Codex or Claude.\n- Supports both “current model” (latest daily entry) and full model breakdowns.\n- Accepts input from CodexBar CLI output, file, or stdin.\n- Provides flexible output formats: text or JSON.\n- macOS support with homebrew install instructions; Linux guidance coming soon.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:090c73661a0cc6c02f32c56b385bcd7e740869a7932a3c486a3b3b16bd9468b7"
+}

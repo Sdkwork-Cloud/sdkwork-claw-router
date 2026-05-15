@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justoneapi-douyin@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_douyin",
+  "skill": {
+    "id": 29053,
+    "skillKey": "clawhub-justoneapi-douyin",
+    "name": "Douyin (TikTok China) API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-douyin",
+    "url": "https://clawhub.ai/skills/justoneapi-douyin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-douyin-513ba8801e5182d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Douyin (TikTok China) workflows with JustOneAPI, including user Profile, user Published Videos, and video Details across 8 operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justoneapi",
+      "userId": "s17ayjxfh4atw7gc7dgat7n40x845p6b",
+      "displayName": "justoneapi",
+      "image": "https://avatars.githubusercontent.com/u/139095138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1776924431018,
+      "changelog": "- Reduced available operations from 9 to 8, reflecting current JustOneAPI endpoints.\n- Updated main operation names and parameters (e.g., `getUserVideoListV1` → `getUserVideoListV3`, added `commentId` as a common parameter).\n- Refreshed documentation to match the present API structure and rename endpoints accordingly.\n- Adjusted guidance, usage instructions, and representative operations in all references.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e9456479a98608a5a6f89fb175d4c7b09c3d55940fdc9e550790c2aa11c85cd3"
+}

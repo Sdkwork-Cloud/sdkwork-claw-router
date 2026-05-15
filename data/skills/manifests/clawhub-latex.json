@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9772,
+  "uuid": "skill-clawhub-latex",
+  "skillKey": "clawhub-latex",
+  "name": "LaTeX",
+  "summary": "Write LaTeX documents with correct syntax, packages, and compilation workflow.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.latex",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Write LaTeX documents with correct syntax, packages, and compilation workflow."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/latex@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "latex",
+      "url": "https://clawhub.ai/skills/latex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "latex",
+    "url": "https://clawhub.ai/skills/latex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/latex-60e5f258a91a88dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/latex@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-latex-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb0f1381b69b060b6784ce5e5e2cdfbb844e4ad9112f386a75689146dddaa9f9",
+      "artifactSizeBytes": 1739
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T01:37:02.408Z"
+}

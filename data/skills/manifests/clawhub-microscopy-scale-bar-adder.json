@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43557,
+  "uuid": "skill-clawhub-microscopy-scale-bar-adder",
+  "skillKey": "clawhub-microscopy-scale-bar-adder",
+  "name": "Microscopy Scale Bar Adder",
+  "summary": "Add accurate, publication-ready scale bars to microscopy images given pixel-to-unit calibration data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microscopy_scale_bar_adder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Add accurate, publication-ready scale bars to microscopy images given pixel-to-unit calibration."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/microscopy-scale-bar-adder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "microscopy-scale-bar-adder",
+      "url": "https://clawhub.ai/skills/microscopy-scale-bar-adder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microscopy-scale-bar-adder",
+    "url": "https://clawhub.ai/skills/microscopy-scale-bar-adder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microscopy-scale-bar-adder-32f7a184f23c3b39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/microscopy-scale-bar-adder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-microscopy-scale-bar-adder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23bb6b0a1d2983466e42cd251226b64a8b43f00477f24cc615f8ff3e79540d7c",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T05:27:35.105Z"
+}

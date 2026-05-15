@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taildrop@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taildrop",
+  "skill": {
+    "id": 18364,
+    "skillKey": "clawhub-taildrop",
+    "name": "Taildrop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taildrop",
+    "url": "https://clawhub.ai/skills/taildrop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taildrop-abb57b8702a8de8b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download files from Tailscale Taildrop inbox to local storage. Use when user wants to retrieve files sent via Tailscale or mentions Taildrop."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cortexuvula",
+      "userId": "s1708xwjmpxwt0jkkps10s75m983tz6q",
+      "displayName": "Roaming",
+      "image": "https://avatars.githubusercontent.com/u/2161372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 697,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771857470027,
+      "changelog": "Initial public release. Download files from Tailscale Taildrop inbox to local storage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cba375ab3a57feecc5e5820211c83167cff5e871896a81112a6e6de674c331df"
+}

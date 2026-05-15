@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seaart-video@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seaart_video",
+  "skill": {
+    "id": 38203,
+    "skillKey": "clawhub-seaart-video",
+    "name": "seaart video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seaart-video",
+    "url": "https://clawhub.ai/skills/seaart-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seaart-video-88435d6b0673ab86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill to generate high-quality AI videos using the SeaArt platform (seaart.ai). Supports both Text-to-Video and Image-to-Video generation using vari..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "foxwzh",
+      "userId": "s17d3fhn1kgersyvz2rqdwnq8583n1yx",
+      "displayName": "FoxWzh",
+      "image": "https://avatars.githubusercontent.com/u/121653573?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774967715683,
+      "changelog": "- Clarified the required environment variables and binaries in the metadata section, including descriptions for each.\n- Added explicit requirement and description for pip3, needed to install the requests library if not already present.\n- No functional or code changes; documentation improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52efda5ff186302946ca51af1e92b91e14a09379ca03c323ca9e8547a9db6f93"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68825,
+  "uuid": "skill-clawhub-fintech-risk-control",
+  "skillKey": "clawhub-fintech-risk-control",
+  "name": "FinTech Risk Control Expert",
+  "summary": "数字金融科技与风控策略专家。当用户要求进行数据分析、使用Python处理金融数据、构建风控模型（决策树、分箱）、进行特征工程与分箱、分析信用风险、生成风控规则、构建评分卡等场景时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fintech_risk_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JhinKing",
+      "features": [
+        "数字金融科技与风控策略专家。当用户要求进行数据分析、使用Python处理金融数据、构建风控模型（决策树、分箱）、进行特征工程与分箱、分析信用风险、生成风控规则、构建评分卡等场景时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fintech-risk-control@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55840005?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fintech-risk-control",
+      "url": "https://clawhub.ai/skills/fintech-risk-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fintech-risk-control",
+    "url": "https://clawhub.ai/skills/fintech-risk-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fintech-risk-control-754179037aa147b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fintech-risk-control@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fintech-risk-control-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c2219d52a00beee1c6aae595f5f549209d1c56285d90a49543980e15004a376",
+      "artifactSizeBytes": 2643
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T07:25:14.139Z"
+}

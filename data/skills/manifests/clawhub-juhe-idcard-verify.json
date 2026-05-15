@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71475,
+  "uuid": "skill-clawhub-juhe-idcard-verify",
+  "skillKey": "clawhub-juhe-idcard-verify",
+  "name": "身份证二要素核验 - 聚合数据",
+  "summary": "身份证实名认证。验证姓名与身份证号是否一致，支持全国居民身份证。使用场景：用户说\"身份证认证\"、\"实名认证\"、\"验证身份证\"、\"姓名和身份证是否匹配\"、\"身份证二要素核验\"等。通过聚合数据（juhe.cn）API 实时核验，免费注册每天免费调用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juhe_idcard_verify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "juhe-skills",
+      "features": [
+        "身份证实名认证。验证姓名与身份证号是否一致，支持全国居民身份证。使用场景：用户说\"身份证认证\"、\"实名认证\"、\"验证身份证\"、\"姓名和身份证是否匹配\"、\"身份证二要素核验\"等。通过聚合数据（."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/juhe-idcard-verify@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203600343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "juhe-idcard-verify",
+      "url": "https://clawhub.ai/skills/juhe-idcard-verify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juhe-idcard-verify",
+    "url": "https://clawhub.ai/skills/juhe-idcard-verify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juhe-idcard-verify-aa3eebf559ea5174.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/juhe-idcard-verify@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-juhe-idcard-verify-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d779285966f5d2c4dcc1d3bafe4f7cc580db29975f4c0a0b83c16785f7b5cbf6",
+      "artifactSizeBytes": 2505
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T05:19:33.331Z"
+}

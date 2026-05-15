@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61006,
+  "uuid": "skill-clawhub-grok-image-generate",
+  "skillKey": "clawhub-grok-image-generate",
+  "name": "grok_image_generate",
+  "summary": "通过 Grok Imagine 生成用户描述的图片，并指导保存及发送至飞书的完整流程。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grok_image_generate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaohuozi",
+      "features": [
+        "通过 Grok Imagine 生成用户描述的图片，并指导保存及发送至飞书的完整流程。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grok-image-generate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79885733?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grok-image-generate",
+      "url": "https://clawhub.ai/skills/grok-image-generate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grok-image-generate",
+    "url": "https://clawhub.ai/skills/grok-image-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grok-image-generate-b4f0e528402f40fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grok-image-generate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grok-image-generate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e3eed5a0650bebe873eafb3e2c9f1e86474373da032a10383f179148764dda8",
+      "artifactSizeBytes": 2387
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T00:36:13.646Z"
+}

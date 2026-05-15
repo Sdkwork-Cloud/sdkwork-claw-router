@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rss-brew@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rss_brew",
+  "skill": {
+    "id": 41992,
+    "skillKey": "clawhub-rss-brew",
+    "name": "RSS-Brew"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rss-brew",
+    "url": "https://clawhub.ai/skills/rss-brew",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rss-brew-e7cb5483380443f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run and operate the RSS-Brew digest pipeline, including app CLI usage, dry-runs, latest-run inspection, delivery status updates, and retry/finalize-aware ope..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunsetchow",
+      "userId": "s17c5gcx78a563gh91qsnv9rdh83jray",
+      "displayName": "Yuhao Zhou",
+      "image": "https://avatars.githubusercontent.com/u/36184376?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774439159282,
+      "changelog": "Initial release: RSS digest pipeline with LLM scoring, Tavily enrichment, and delivery tracking",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9dd362f8e9dec376bbc5d824a4c749879b2bee121102477e1448284ea4a05980"
+}

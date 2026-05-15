@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cfcrm-build@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cfcrm_build",
+  "skill": {
+    "id": 53907,
+    "skillKey": "clawhub-cfcrm-build",
+    "name": "Cfcrm Build"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cfcrm-build",
+    "url": "https://clawhub.ai/skills/cfcrm-build",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cfcrm-build-36e4d9df8369ad40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-version build plan for ContactFlowCRM (CFCRM). Guides agents through v1→v5 phased development with deliverables, checklists, and success criteria per v..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vega6dev",
+      "userId": "s17bca8ef1mc1g4vr88zz1p72183hd9q",
+      "displayName": "vega6dev",
+      "image": "https://avatars.githubusercontent.com/u/82135146?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777218804438,
+      "changelog": "Initial release with multi-version CFCRM build roadmap and interactive commands.\n\n- Guides users through CFCRM development across v1–v5, with deliverables and milestones per version.\n- Provides commands for build status, detailed plans, launch checklists, next action, and roadmap summary.\n- Includes strict version dependency, guardrails, and error handling for reliable project tracking.\n- Designed for ecosystem integration and transparent progress review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af69f97060903a5fcd2aa0ec82f8a1d329b61e4f92431264a17f420fd39f98f0"
+}

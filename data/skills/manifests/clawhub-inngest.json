@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39383,
+  "uuid": "skill-clawhub-inngest",
+  "skillKey": "clawhub-inngest",
+  "name": "Inngest",
+  "summary": "Manage Inngest serverless background jobs and event-driven workflows via REST API. Use when asked to send events, trigger functions, list runs, cancel jobs,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inngest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dwhite-oss",
+      "features": [
+        "Manage Inngest serverless background jobs and event-driven workflows via REST API",
+        "Use when asked to send events, trigger functions, list runs, cancel jobs,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inngest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256912923?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inngest",
+      "url": "https://clawhub.ai/skills/inngest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inngest",
+    "url": "https://clawhub.ai/skills/inngest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inngest-169a73498a428a01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inngest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inngest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e39657cf66b2e4614b5d878d1ddcb76e4eea7b9eb127c378fff209024fc4feb6",
+      "artifactSizeBytes": 1862
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T19:16:04.802Z"
+}

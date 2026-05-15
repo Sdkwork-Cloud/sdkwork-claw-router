@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/davidme6-smart-model-switcher-v3@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.davidme6_smart_model_switcher_v3",
+  "skill": {
+    "id": 27736,
+    "skillKey": "clawhub-davidme6-smart-model-switcher-v3",
+    "name": "Smart Model Switcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "davidme6-smart-model-switcher-v3",
+    "url": "https://clawhub.ai/skills/davidme6-smart-model-switcher-v3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/davidme6-smart-model-switcher-v3-45806e61c6cf4714.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Universal Smart Model Switcher V3 - Multi-Provider, Multi-Model intelligent switching. Automatically selects the best model from ALL your purchased API plans..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidme6",
+      "userId": "s17aperbk8h3dswpc0vbsayk4d83hweb",
+      "displayName": "davidme6",
+      "image": "https://avatars.githubusercontent.com/u/198009354?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 341,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1773556295084,
+      "changelog": "Version 3.0.0 — Major update: Now supports universal, intelligent model switching across 4+ AI providers and 50+ models.\n\n- Added support for Bailian/Qwen, MiniMax, GLM, and Kimi model series with fully automatic multi-provider integration.\n- Introduced advanced API key validation and automatic detection of purchased API plans for all providers.\n- Enabled multi-key management and zero-latency runtime model switching for seamless transition between models.\n- Enhanced task classification with intelligent model selection, fallback logic, and cost optimization based on task type and credits.\n- Streamlined configuration via both environment variables and JSON for easy provider/API integration.\n- Improved real-time performance and user experience with preloading, connection pooling, and runtime choice (<100ms switch).\n- Detailed architecture, model/task matrix, and use cases included in the new documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92d24565bca669187551153b7a70764d046e9e5eeda8d0eeda0d7488fea4bde8"
+}

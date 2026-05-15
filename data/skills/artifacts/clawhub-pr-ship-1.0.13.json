@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pr-ship@1.0.13",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pr_ship",
+  "skill": {
+    "id": 15725,
+    "skillKey": "clawhub-pr-ship",
+    "name": "Pr Ship"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pr-ship",
+    "url": "https://clawhub.ai/skills/pr-ship",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pr-ship-d8968fc9c93f2fbe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pre-ship risk report for OpenClaw PRs. Dynamically explores the codebase to assess module risk, blast radius, and version-specific gotchas. Scores each findi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "glucksberg",
+      "userId": "s174ntjpaez2r36rkj193c5j3183jww8",
+      "displayName": "Glucksberg",
+      "image": "https://avatars.githubusercontent.com/u/80581902?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 951,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "1.0.13",
+      "createdAt": 1772581593699,
+      "changelog": "Auto-updated: 2026.3.3 additional fixes (auth labels, Discord mega-wave, exec heartbeat routing, compaction continuity, session startup date grounding)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9e860a38072cc6f1f5b26f611fea5629e17c140314c305e7ecaa6fb02cd87a66"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-all-in-one@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_all_in_one",
+  "skill": {
+    "id": 60207,
+    "skillKey": "clawhub-xiaohongshu-all-in-one",
+    "name": "Xiaohongshu All In One"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-all-in-one",
+    "url": "https://clawhub.ai/skills/xiaohongshu-all-in-one",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-all-in-one-744a7c20bb4ce28a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书全链路运营技能 - 发布、浏览、搜索、评论、运营分析（macOS验证版 v2.0）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "richardx0319",
+      "userId": "publishers:richardx0319",
+      "displayName": "richardx0319",
+      "image": "https://avatars.githubusercontent.com/u/143338009?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 5711,
+      "installsAllTime": 29,
+      "installsCurrent": 28,
+      "stars": 9,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773541847292,
+      "changelog": "整合 xiaohongshu-auto-publish 和 xiaohongshu-ops，macOS 验证通过",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2277ebcf8379637e9e30f5d34c67e2e675d918916573c4167075618eaf395c60"
+}

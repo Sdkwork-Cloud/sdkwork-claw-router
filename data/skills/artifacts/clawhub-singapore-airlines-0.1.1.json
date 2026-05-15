@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/singapore-airlines@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.singapore_airlines",
+  "skill": {
+    "id": 59595,
+    "skillKey": "clawhub-singapore-airlines",
+    "name": "Singapore Airlines"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "singapore-airlines",
+    "url": "https://clawhub.ai/skills/singapore-airlines",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/singapore-airlines-e6bb7e6417ad9ad9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全球服务最佳航空公司"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776295602615,
+      "changelog": "- Updated documentation with a new summary and usage scenarios in Chinese.\n- Reorganized content for clearer structure and faster information retrieval.\n- Added information index sections highlighting core facts, business scope, and market position.\n- Removed detailed English content and example queries.\n- Clarified that official data should be referenced for specifics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0ddee7cd1cb4c134f4155ac2508e669b91657852e7310fa8fb01f8290a0570e"
+}

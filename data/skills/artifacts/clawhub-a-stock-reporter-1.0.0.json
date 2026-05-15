@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-stock-reporter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_reporter",
+  "skill": {
+    "id": 66193,
+    "skillKey": "clawhub-a-stock-reporter",
+    "name": "A-Stock Reporter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-reporter",
+    "url": "https://clawhub.ai/skills/a-stock-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-reporter-43ba9849973a198b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股实时行情报告与定时推送。支持用户主动查询个股、生成市场简报、查询历史日报，也可由cron定时触发交易时段报告（9:30/10:30/11:30/13:30/14:30）。激活关键词：股票日报、A股简报、查股票、市场报告、每日研报、历史日报、查询过去。NOT for 美股、港股、期货、基金等非A股资产。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laojun509",
+      "userId": "s175rjaqs0zz2x81vbyxnxb34183rdc1",
+      "displayName": "laojun",
+      "image": "https://avatars.githubusercontent.com/u/26532654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772853408595,
+      "changelog": "Initial release: real-time query, market brief, historical report",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9a59a14655b96d026718f878e8db746f9869012532400368e1bfaf06719acc24"
+}

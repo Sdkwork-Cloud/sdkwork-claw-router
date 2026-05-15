@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63453,
+  "uuid": "skill-clawhub-model-pricing-sync",
+  "skillKey": "clawhub-model-pricing-sync",
+  "name": "Model Pricing Sync",
+  "summary": "抓取模型厂商与代码工具价格页面，读取 Markdown 后补 JSON 提取文件，并同步到飞书普通电子表格。需要收集模型价格、补全价格 JSON、追踪价格变化或推送 Lark Sheets 时使用。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_pricing_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sapereaude2014",
+      "features": [
+        "抓取模型厂商与代码工具价格页面，读取 Markdown 后补 JSON 提取文件，并同步到飞书普通电子表格。需要收集模型价格、补全价格 JSON、追踪价格变化或推送 Lark Sheets."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-pricing-sync@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66770653?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-pricing-sync",
+      "url": "https://clawhub.ai/skills/model-pricing-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-pricing-sync",
+    "url": "https://clawhub.ai/skills/model-pricing-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-pricing-sync-1645b3a13bf5eafb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-pricing-sync@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-pricing-sync-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:195c5770ad68284601e82a208bf1a964fc2a333fdc15adcc93c5e4ae6495de20",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T02:40:19.248Z"
+}

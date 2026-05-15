@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59074,
+  "uuid": "skill-clawhub-wudao-intel",
+  "skillKey": "clawhub-wudao-intel",
+  "name": "悟道 · A股市场情报",
+  "summary": "悟道 · A股市场情报：龙虎榜、研报数据、竞价数据、智能热榜、每日简报、游资席位。Use when: user asks about A股, 龙虎榜, hot topics, trending news, research reports, analyst ratings, pre-market auction,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wudao_intel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wudao",
+      "features": [
+        "悟道 · A股市场情报：龙虎榜、研报数据、竞价数据、智能热榜、每日简报、游资席位。Use when: user asks about A股, 龙虎榜, hot topics, trendin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wudao-intel@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4266157?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wudao-intel",
+      "url": "https://clawhub.ai/skills/wudao-intel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wudao-intel",
+    "url": "https://clawhub.ai/skills/wudao-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wudao-intel-ba2b7eef8a3f89a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wudao-intel@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wudao-intel-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7c72a89fa000b3eeaa25fe4eae4d1e9e40b2f4489862ff7c661c2f4a84235e9",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T06:19:06.786Z"
+}

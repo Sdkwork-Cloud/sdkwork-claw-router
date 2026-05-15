@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43833,
+  "uuid": "skill-clawhub-gate-exchange-assets-staging",
+  "skillKey": "clawhub-gate-exchange-assets-staging",
+  "name": "Gate Exchange Assets",
+  "summary": "Gate multi-account asset and balance query skill. Use when the user asks to check total assets, account balance, or specific coin holdings across all account...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_assets_staging",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaixg",
+      "features": [
+        "Gate multi-account asset and balance query skill",
+        "Use when the user asks to check total assets, account balance, or specific coin holdings across."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-exchange-assets-staging@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12163126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-exchange-assets-staging",
+      "url": "https://clawhub.ai/skills/gate-exchange-assets-staging"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-assets-staging",
+    "url": "https://clawhub.ai/skills/gate-exchange-assets-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-assets-staging-92041ab3ce5bbbb8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-exchange-assets-staging@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-exchange-assets-staging-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1403cd4f731fc30236ef5f71978333ca0501f1f01f59ba5d259bfd459b260f48",
+      "artifactSizeBytes": 2735
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T04:33:41.987Z"
+}

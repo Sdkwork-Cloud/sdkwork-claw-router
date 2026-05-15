@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wish-ssh-code-review@2.3.1",
+  "version": "2.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wish_ssh_code_review",
+  "skill": {
+    "id": 33033,
+    "skillKey": "clawhub-wish-ssh-code-review",
+    "name": "Wish Ssh Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wish-ssh-code-review",
+    "url": "https://clawhub.ai/skills/wish-ssh-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wish-ssh-code-review-3b91ff5b7d996862.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews Wish SSH server code for proper middleware, session handling, and security patterns. Use when reviewing SSH server code using charmbracelet/wish."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.3.1",
+      "createdAt": 1776831174149,
+      "changelog": "- Introduced a sequential \"Review gates\" process for structured code review, with explicit pass conditions for each step.\n- Updated the review process to require explicit source citations and evidence gathering before making findings.\n- Clarified how to tie each checklist item and finding to Quick Reference or documentation.\n- Reworded instructions for preparing findings, including formatting and linking to reference material.\n- No functional changes to code review patterns or checklist content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:15350c6340373ac6a8eef63dd8f34153cf907dda48ddd71b768f1d66a1542629"
+}

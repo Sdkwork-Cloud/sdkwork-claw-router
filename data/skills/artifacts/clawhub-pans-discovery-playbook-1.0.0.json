@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pans-discovery-playbook@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pans_discovery_playbook",
+  "skill": {
+    "id": 65791,
+    "skillKey": "clawhub-pans-discovery-playbook",
+    "name": "Pans Discovery Playbook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pans-discovery-playbook",
+    "url": "https://clawhub.ai/skills/pans-discovery-playbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pans-discovery-playbook-9597a0a5e5cfa492.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI算力销售发现阶段话术与框架工具。根据沟通场景（首次电话/需求介绍/POC/ 续约增购）和行业（科技/金融/医疗/自动驾驶/内容/制造/学术/政府） 自动生成访谈问题清单、行业背景知识、话术建议和异议处理策略， 输出 Markdown 或 JSON 格式发现指南。 触发词：发现阶段, 客户访谈, 话术指南, 异..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dashiming",
+      "userId": "s175tbqc6kczpya7xzy4rksefs83p4hp",
+      "displayName": "dashiming",
+      "image": "https://avatars.githubusercontent.com/u/28342384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776393498578,
+      "changelog": "- Initial release of pans-discovery-playbook.\n- Generates AI compute sales discovery playbooks tailored to scenario and industry.\n- Provides interview question lists, industry background, conversation tips, and objection handling strategies.\n- Supports scenarios: first call, intro call, POC, and renewal/expansion.\n- Covers industries: technology, finance, healthcare, autonomous, media, manufacturing, academic, government.\n- Outputs guides in Markdown or JSON, including structured discovery record templates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9fe10ca8b50abbe19eccd68e6f2532f29e065ae590604018961299047d6896c"
+}

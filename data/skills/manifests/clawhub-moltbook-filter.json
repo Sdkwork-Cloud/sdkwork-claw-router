@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49040,
+  "uuid": "skill-clawhub-moltbook-filter",
+  "skillKey": "clawhub-moltbook-filter",
+  "name": "Moltbook Spam Filter",
+  "summary": "Filter mbc-20 token minting spam from Moltbook feeds (96% spam removal rate)",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbook_filter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ymode",
+      "features": [
+        "Filter mbc-20 token minting spam from Moltbook feeds (96% spam removal rate)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltbook-filter@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5312047?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltbook-filter",
+      "url": "https://clawhub.ai/skills/moltbook-filter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbook-filter",
+    "url": "https://clawhub.ai/skills/moltbook-filter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbook-filter-d5206fbeb5dbcae4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltbook-filter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltbook-filter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78ad2615eeb48395e52fcdb6ecb0b5fe026c2125544af41ead77eae6186b9bc5",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T06:27:31.266Z"
+}

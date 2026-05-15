@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/us-stock-financial-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.us_stock_financial_analyzer",
+  "skill": {
+    "id": 49346,
+    "skillKey": "clawhub-us-stock-financial-analyzer",
+    "name": "US Stock Financial Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "us-stock-financial-analyzer",
+    "url": "https://clawhub.ai/skills/us-stock-financial-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/us-stock-financial-analyzer-aaec6d063072b70a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated financial indicator analysis for S&P 500 and NASDAQ stocks. Use when (1) analyzing stock financial health or valuation, (2) computing financial rat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 81,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778147431416,
+      "changelog": "Initial release: S&P 500 & NASDAQ financial indicator analysis with peer benchmarking",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd19c51ada3444f7e7301249efc48272b8dfb5e91175a8a4287ebc96d058c386"
+}

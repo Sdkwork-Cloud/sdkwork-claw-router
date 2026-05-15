@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/renewal-risk-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.renewal_risk_monitor",
+  "skill": {
+    "id": 59371,
+    "skillKey": "clawhub-renewal-risk-monitor",
+    "name": "Renewal Risk Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "renewal-risk-monitor",
+    "url": "https://clawhub.ai/skills/renewal-risk-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/renewal-risk-monitor-b6e51389abc90e5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "识别续约风险信号，区分可挽回风险与高概率流失信号。；use for renewal, risk, customer-success workflows；do not use for 伪造健康度数据, 替代正式续约决策."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774239677874,
+      "changelog": "Initial release of renewal-risk-monitor skill:\n\n- Identifies renewal risk signals and distinguishes between recoverable risks and high-probability churn signs.\n- Intended for renewal, risk assessment, and customer-success workflows.\n- Provides structured output: risk signals, recoverable items, high-risk factors, action suggestions, time windows, escalation criteria.\n- Clearly separates use cases: not for faking health scores or replacing formal renewal decisions.\n- Includes clear boundaries for security, compliance, and execution permissions.\n- Offers both review draft and actionable checklist outputs; highlights missing information for user confirmation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43643fb5628e87e0360bc575f3c0c84ff25ea5cf25b79a1b0891765733845146"
+}

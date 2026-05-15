@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subtitle-generator-chrome-extension@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_generator_chrome_extension",
+  "skill": {
+    "id": 46876,
+    "skillKey": "clawhub-subtitle-generator-chrome-extension",
+    "name": "Subtitle Generator Chrome Extension"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-generator-chrome-extension",
+    "url": "https://clawhub.ai/skills/subtitle-generator-chrome-extension",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-generator-chrome-extension-49775c867a1b7ea2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get captioned video files ready to post, without touching a single slider. Upload your video files (MP4, MOV, WebM, AVI, up to 500MB), say something like \"ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776243088566,
+      "changelog": "Initial release of Subtitle Generator Chrome Extension.\n\n- Instantly generates and adds AI-powered subtitles to uploaded video files (MP4, MOV, WebM, AVI up to 500MB)\n- Simple setup: automatic token and session management; supports anonymous sign-in with free credits\n- Download 1080p MP4 videos with burned-in captions in ~30–90 seconds  \n- Handles user prompts for uploads, exports, credits, and editing with smart intent matching\n- All processing done via secure cloud backend; no desktop software required\n- Provides detailed error handling and progress updates throughout the workflow",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f510ed85ddfd0d04180b113b3d1c6050d618935bb2f9c72a9b63c6871b4f8ff8"
+}

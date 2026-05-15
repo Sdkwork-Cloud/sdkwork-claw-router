@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-pilot@0.3.0-beta.2",
+  "version": "0.3.0-beta.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_pilot",
+  "skill": {
+    "id": 31122,
+    "skillKey": "clawhub-openclaw-pilot",
+    "name": "OpenClaw Pilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-pilot",
+    "url": "https://clawhub.ai/skills/openclaw-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-pilot-1cfeb1fa6ba619d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert rough project ideas into a human-readable blueprint and a clean OpenClaw execution packet for safe, scoped implementation and continuation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "catcherintheroad-hub",
+      "userId": "s17avhfzbj3gkd9rhx60nyxqcn83qswd",
+      "displayName": "catcherintheroad-hub",
+      "image": "https://avatars.githubusercontent.com/u/264535810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.3.0-beta.2",
+      "createdAt": 1775291247721,
+      "changelog": "Deliverable-first update: low-risk content requests now ship a real asset first while project-style requests remain blueprint-first; packet semantics and public skill docs updated.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a79fd3229be0a8c5bd0d09860424f142b7bbfdd844ec100e3003acc164ea05cc"
+}

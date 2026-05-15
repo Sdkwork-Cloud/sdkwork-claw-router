@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/enterprise-kb-reader@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enterprise_kb_reader",
+  "skill": {
+    "id": 67711,
+    "skillKey": "clawhub-enterprise-kb-reader",
+    "name": "Enterprise Knowledge Base Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enterprise-kb-reader",
+    "url": "https://clawhub.ai/skills/enterprise-kb-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enterprise-kb-reader-ca25646fe30b91a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业知识库查询。用户提出任何业务问题、产品咨询、公司政策、员工手册、操作流程、规章制度、FAQ、项目信息等问题时，必须优先调用本知识库检索相关内容，再结合结果回答。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "apanghu",
+      "userId": "s176x9xhy66hr127pqkkqwjykd86ae5c",
+      "displayName": "apanghu",
+      "image": "https://avatars.githubusercontent.com/u/45411273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 63,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778209144794,
+      "changelog": "# Enterprise Knowledge Base Reader\n\nLightweight enterprise knowledge base query system that provides secure read-only knowledge retrieval capabilities for AI Agents.\n\n## 🔍 Core Features\n\n- **Read-Only Query**: Strict read-only permissions, cannot modify data\n- **Multiple Search Modes**: Semantic search, keyword search, hybrid search\n- **Lightweight Design**: Minimal resource usage, focused on query functionality\n- **Security Isolation**: Code-level enforced read-only, prevents accidental operations\n- **Distributed Deployment**: Can be deployed across different applications or services\n\n## 💡 Use Cases\n\n- Customer service system knowledge queries\n- User-side document retrieval\n- Read-only knowledge base access\n- Distributed knowledge services\n- AI Agent knowledge enhancement\n\n## 🔧 Quick Start\n\n1. Set API key: `export DASHSCOPE_API_KEY='your-key'`\n2. Query knowledge base: `python main.py query \"your question\"`\n3. View documents: `python main.py list`\n4. Statistics: `python main.py stats`\n\n## 🔒 Security Features\n\n- Strict read-only permissions, cannot create or modify data\n- Automatic system environment detection, clear error reporting when missing\n- Local data access only, no network transmission involved\n- Permission separation design, completely isolated from manager\n- Fail-safe operation when system environment doesn't exist",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e90a7afa4bcc123ddcce3c66193e4e4a5068b6ab68c37e9650800f35f0de79f6"
+}

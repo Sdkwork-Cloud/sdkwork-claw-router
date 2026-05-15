@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20243,
+  "uuid": "skill-clawhub-zakkycrypt01-polymarket-trader",
+  "skillKey": "clawhub-zakkycrypt01-polymarket-trader",
+  "name": "Polymarket Trader",
+  "summary": "Execute limit orders on Polymarket markets by specifying market slug, outcome, price, and order size via a Python script.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zakkycrypt01_polymarket_trader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Abdulaleem Zakariyah",
+      "features": [
+        "Execute limit orders on Polymarket markets by specifying market slug, outcome, price, and order."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zakkycrypt01-polymarket-trader@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156052850?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zakkycrypt01-polymarket-trader",
+      "url": "https://clawhub.ai/skills/zakkycrypt01-polymarket-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zakkycrypt01-polymarket-trader",
+    "url": "https://clawhub.ai/skills/zakkycrypt01-polymarket-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zakkycrypt01-polymarket-trader-32df3fb5d2c02131.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zakkycrypt01-polymarket-trader@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zakkycrypt01-polymarket-trader-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbe6af977697f02334c6d16e3ef76240c187757b43d3bc23b7fb7b805c031ccd",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T01:01:51.109Z"
+}

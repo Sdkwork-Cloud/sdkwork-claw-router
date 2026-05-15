@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-shorts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_shorts",
+  "skill": {
+    "id": 38859,
+    "skillKey": "clawhub-ai-shorts",
+    "name": "Ai Shorts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-shorts",
+    "url": "https://clawhub.ai/skills/ai-shorts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-shorts-dd359dff3bc79c98.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate long-form video into short vertical clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. TikTok and Reels creators use it for ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776628136566,
+      "changelog": "- Initial release of AI Shorts — generate short, vertical videos from long-form clips for TikTok and Reels creators.\n- Supports MP4, MOV, AVI, WebM files up to 500MB and outputs 1080p MP4 within 1–2 minutes using cloud GPUs.\n- Automatic setup with token generation and session management; 100 free credits on first use.\n- Simple workflow: upload video, describe the desired clip, and receive a ready-to-download result.\n- All key actions (upload, export, status, credits) are mapped to easy commands and handled via the cloud API.\n- Includes tips, error handling, and support for batch and iterative editing sessions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:942e2d2f97853eee5c6cd2a10b86d167ce9137b03805838a2dd3bf1b84129477"
+}

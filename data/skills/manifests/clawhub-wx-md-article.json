@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21673,
+  "uuid": "skill-clawhub-wx-md-article",
+  "skillKey": "clawhub-wx-md-article",
+  "name": "wx-md-article",
+  "summary": "Automatically generate WeChat public account articles from Markdown and upload them to the draft folder with clean, professional formatting and color rules.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wx_md_article",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sundy Yang",
+      "features": [
+        "Automatically generate WeChat public account articles from Markdown and upload them to the draf."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wx-md-article@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2383724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wx-md-article",
+      "url": "https://clawhub.ai/skills/wx-md-article"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wx-md-article",
+    "url": "https://clawhub.ai/skills/wx-md-article",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wx-md-article-532cadcc3fdf1a07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wx-md-article@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wx-md-article-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c1c3914b6ba52c55781a334e6fb5095f18448cc3b2d45605addab5835ecf957",
+      "artifactSizeBytes": 2353
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T16:00:02.814Z"
+}

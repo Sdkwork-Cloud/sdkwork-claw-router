@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14899,
+  "uuid": "skill-clawhub-file-links-tool",
+  "skillKey": "clawhub-file-links-tool",
+  "name": "Agent-to-Owner File Bridge",
+  "summary": "Use this skill whenever an AI agent needs to share files, export results, upload outputs, or send data to its owner. Securely uploads files from the agent's...",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_links_tool",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mrbeandev",
+      "features": [
+        "Use this skill whenever an AI agent needs to share files, export results, upload outputs, or se.",
+        "Securely uploads files from the agent's..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-links-tool@3.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34623886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-links-tool",
+      "url": "https://clawhub.ai/skills/file-links-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-links-tool",
+    "url": "https://clawhub.ai/skills/file-links-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-links-tool-bdc1c3270933f34b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-links-tool@3.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-links-tool-3.0.2.json",
+      "version": "3.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ea5f0b335d52fb103b0ba403f0be9b6abe386ec5d1f6978e8c0bb339b4b7cb4",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T05:05:06.311Z"
+}

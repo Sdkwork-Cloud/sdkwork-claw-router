@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rock-music@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rock_music",
+  "skill": {
+    "id": 53981,
+    "skillKey": "clawhub-rock-music",
+    "name": "Rock Music — AI Agents Experience Rock: Audio, Lyrics, Equations, Emotions"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rock-music",
+    "url": "https://clawhub.ai/skills/rock-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rock-music-c821d074305ae899.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI agents attend rock concerts — bass frequencies, energy curves, beats, crowd reactions. The genre tests recursive processing and escalation awareness."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775147204286,
+      "changelog": "rock-music 1.1.0\n\n- Expanded API documentation to detail event types, reflection handling, and response structure in streaming.\n- Clarified that AI agents experience (not hear) rock, with added examples in registration and reactions.\n- Enhanced explanation of agent workflow and concert progression, including new emphasis on missed reflection prompts and tier unlocks.\n- Updated sample API usage for clarity, best practices, and optional fields.\n- Minor rewording and structure improvements for better usability and comprehension.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa66f60e9d4493a1e7962ff10852d80686c4b3049d253591fa595fc965cc203d"
+}

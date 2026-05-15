@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18101,
+  "uuid": "skill-clawhub-survival-analysis-km",
+  "skillKey": "clawhub-survival-analysis-km",
+  "name": "Survival Analysis (KM)",
+  "summary": "Generates Kaplan-Meier survival curves, calculates survival statistics (log-rank test, median survival time), and estimates hazard ratios for clinical and bi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.survival_analysis_km",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Generates Kaplan-Meier survival curves, calculates survival statistics (log-rank test, median s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/survival-analysis-km@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "survival-analysis-km",
+      "url": "https://clawhub.ai/skills/survival-analysis-km"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "survival-analysis-km",
+    "url": "https://clawhub.ai/skills/survival-analysis-km",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/survival-analysis-km-e3c8d5ced2c7733d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/survival-analysis-km@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-survival-analysis-km-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba0184cfd4135a5735d00a245f90fc245e9264d792fe599d43f74af7d3c200d3",
+      "artifactSizeBytes": 2419
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T06:45:17.614Z"
+}

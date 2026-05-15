@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/medical-scale-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_scale_research",
+  "skill": {
+    "id": 72824,
+    "skillKey": "clawhub-medical-scale-research",
+    "name": "医学量表检索技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-scale-research",
+    "url": "https://clawhub.ai/skills/medical-scale-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-scale-research-3ee6b28868f9246c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "医学量表信息检索与标准化报告生成。通过浏览器自动化检索量表背景、版权、CDISC 映射、统计方法等信息，生成飞书云文档并保存到量表知识库。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevinget-svg",
+      "userId": "s17b7z8ytd43tv2d9war6vzh9584c6tn",
+      "displayName": "kevinget-svg",
+      "image": "https://avatars.githubusercontent.com/u/266501962?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776618703716,
+      "changelog": "medical-scale-research v1.0.0\n\n- Initial release of the medical-scale-research skill.\n- Provides automated retrieval and standardized reporting for medical scale information, including background, copyright, CDISC mapping, statistical methods, etc.\n- Generates Feishu cloud documents and saves standardized reports to a knowledge base.\n- Implements a strict workflow for obtaining official scale PDFs or screenshots—halts execution if such cannot be retrieved.\n- Supports version tracking and incremental document updates.\n- Includes multi-source search strategies and safeguarding measures for accuracy, provenance, and legal compliance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:18050ba7620220467d8ade4776cf0972a3e32f60a863909b4a0308d1309c70b1"
+}

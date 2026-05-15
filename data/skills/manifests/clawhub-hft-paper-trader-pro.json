@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29278,
+  "uuid": "skill-clawhub-hft-paper-trader-pro",
+  "skillKey": "clawhub-hft-paper-trader-pro",
+  "name": "HFT Paper Trader Pro",
+  "summary": "High-frequency paper trading framework for crypto. Multi-indicator TA scoring (RSI/MACD/EMA/BB/OBV/StochRSI), dual-regime filter (15m fast + 4h macro), posit...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hft_paper_trader_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zero2Ai",
+      "features": [
+        "High-frequency paper trading framework for crypto",
+        "Multi-indicator TA scoring (RSI/MACD/EMA/BB/OBV/StochRSI), dual-regime filter (15m fast + 4h ma."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hft-paper-trader-pro@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244362887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hft-paper-trader-pro",
+      "url": "https://clawhub.ai/skills/hft-paper-trader-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hft-paper-trader-pro",
+    "url": "https://clawhub.ai/skills/hft-paper-trader-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hft-paper-trader-pro-6b7e179f73e29945.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hft-paper-trader-pro@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hft-paper-trader-pro-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bff433de419cfcb28141c524f5f13ee1e153a16323f90f215eaf522b53f221c6",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T23:14:21.233Z"
+}

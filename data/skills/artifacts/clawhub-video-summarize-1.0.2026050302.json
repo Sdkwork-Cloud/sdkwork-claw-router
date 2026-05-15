@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-summarize@1.0.2026050302",
+  "version": "1.0.2026050302",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_summarize",
+  "skill": {
+    "id": 27854,
+    "skillKey": "clawhub-video-summarize",
+    "name": "video-summarize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-summarize",
+    "url": "https://clawhub.ai/skills/video-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-summarize-9f4aa7f1f90ba097.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Video summarization. Trigger: 1.User provides a video link (Bilibili/YouTube/Douyin/Twitter/TikTok etc.), 2.Summarize this video"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yilsonyan",
+      "userId": "s17fbn63bhbeevtcqdj3rqahbd84vxtp",
+      "displayName": "yilsonyan",
+      "image": "https://avatars.githubusercontent.com/u/46336803?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.2026050302",
+      "createdAt": 1777822773266,
+      "changelog": "update skill’s description",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b18383f26ce8d2005847900c4b5eeb450eafd84992e020ec312fe34532517c3a"
+}

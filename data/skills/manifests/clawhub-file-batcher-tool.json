@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23514,
+  "uuid": "skill-clawhub-file-batcher-tool",
+  "skillKey": "clawhub-file-batcher-tool",
+  "name": "file-batcher-tool",
+  "summary": "Batch file operations (rename, convert, organize). Use when user says \"rename files\", \"batch rename\", \"convert files\", \"organize files\", or wants to process...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_batcher_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yushimohuang",
+      "features": [
+        "Batch file operations (rename, convert, organize)",
+        "Use when user says \"rename files\", \"batch rename\", \"convert files\", \"organize files\", or wants."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-batcher-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197757967?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-batcher-tool",
+      "url": "https://clawhub.ai/skills/file-batcher-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-batcher-tool",
+    "url": "https://clawhub.ai/skills/file-batcher-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-batcher-tool-5b24af0530434330.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-batcher-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-batcher-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82b1561bc1d9e5a2984f21bd1d44f24167e372866542f80f57489884201edc9b",
+      "artifactSizeBytes": 2282
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T04:59:23.419Z"
+}

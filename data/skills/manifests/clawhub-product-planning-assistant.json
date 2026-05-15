@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57140,
+  "uuid": "skill-clawhub-product-planning-assistant",
+  "skillKey": "clawhub-product-planning-assistant",
+  "name": "产品规划助手",
+  "summary": "Helps complete high-quality product planning from requirements to implementation. Invoke when PM needs annual/quarterly/product iteration planning, reporting...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_planning_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "orzinfo",
+      "features": [
+        "Helps complete high-quality product planning from requirements to implementation",
+        "Invoke when PM needs annual/quarterly/product iteration planning, reporting..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-planning-assistant@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/181125285?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-planning-assistant",
+      "url": "https://clawhub.ai/skills/product-planning-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-planning-assistant",
+    "url": "https://clawhub.ai/skills/product-planning-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-planning-assistant-d9fba434c307e49e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-planning-assistant@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-planning-assistant-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcaefae58b52271a909a878a2cf3db198ac3ed839329285e2077a8a98a44995e",
+      "artifactSizeBytes": 2181
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T04:33:08.433Z"
+}

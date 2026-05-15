@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-books@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_books",
+  "skill": {
+    "id": 19127,
+    "skillKey": "clawhub-agent-books",
+    "name": "AgentBooks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-books",
+    "url": "https://clawhub.ai/skills/agent-books",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-books-a0ae65e82e4ad418.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Financial management for AI agents. Track LLM inference costs, record confirmed income, manage multi-provider crypto wallets, and compute a Financial Health..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neiljo-gy",
+      "userId": "s179vn1xk5bsc9jy98a9j2brkh83gtgg",
+      "displayName": "acnlabs",
+      "image": "https://avatars.githubusercontent.com/u/43027886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 635,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1773104887983,
+      "changelog": "- Updated skill metadata version to 0.1.5.\n- Added \"source\" URL to metadata for clearer package provenance.\n- Clarified Node.js and npm requirements in the compatibility section.\n- No functional or code changes detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c498a731a2e8c4246a8912c2138a9343e5ecf406dfeb709b54c8672e74a684a"
+}

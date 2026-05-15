@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67076,
+  "uuid": "skill-clawhub-jy-policy-interpretation",
+  "skillKey": "clawhub-jy-policy-interpretation",
+  "name": "jy-policy-interpretation",
+  "summary": "基于聚源数据 MCP 服务获取宏观政策、行业政策的深度解读与分析，包括政策背景、核心内容、影响范围、实施时间、受益行业、风险提示等维度。使用场景：当用户需要查询最新政策动态、了解政策对特定行业的影响、获取政策深度解读、分析政策导向、追踪政策实施效果时触发。Triggered when users need to...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jy_policy_interpretation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiayinian",
+      "features": [
+        "基于聚源数据 MCP 服务获取宏观政策、行业政策的深度解读与分析，包括政策背景、核心内容、影响范围、实施时间、受益行业、风险提示等维度。使用场景：当用户需要查询最新政策动态、了解政策对特定行."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jy-policy-interpretation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22932351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jy-policy-interpretation",
+      "url": "https://clawhub.ai/skills/jy-policy-interpretation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jy-policy-interpretation",
+    "url": "https://clawhub.ai/skills/jy-policy-interpretation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jy-policy-interpretation-6c080cae9ab7afae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jy-policy-interpretation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jy-policy-interpretation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c66b971ce4ea37fb8ef2a1b862bf644dc2aaa7e4993877ea89491d5f6759897",
+      "artifactSizeBytes": 3023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T01:25:50.831Z"
+}

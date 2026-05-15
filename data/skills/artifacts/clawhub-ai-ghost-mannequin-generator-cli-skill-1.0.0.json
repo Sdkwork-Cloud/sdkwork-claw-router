@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-ghost-mannequin-generator-cli-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_ghost_mannequin_generator_cli_skill",
+  "skill": {
+    "id": 55043,
+    "skillKey": "clawhub-ai-ghost-mannequin-generator-cli-skill",
+    "name": "Free AI Ghost Mannequin Generator - Remove Mannequin from Clothing Photos Instantly – CLI-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-ghost-mannequin-generator-cli-skill",
+    "url": "https://clawhub.ai/skills/ai-ghost-mannequin-generator-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-ghost-mannequin-generator-cli-skill-739f1dc0983e8409.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI ghost mannequin generator — create a professional ghost mannequin effect from a clothing photo"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776047731274,
+      "changelog": "Initial release of ai-ghost-mannequin-generator-cli-skill\n\n- Introduces a CLI skill to generate AI-based ghost mannequin effects from clothing photos.\n- Requires weshop-cli and a WESHOP_API_KEY environment variable for secure API access.\n- Supports custom aspect ratios (auto, 1:1, 2:3, etc.) and image sizes up to 4K resolution.\n- Provides guidance for secure API key handling and setup instructions.\n- Outputs professional studio-style ghost mannequin images with batch processing support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:508467d04a3ce5ba7c32310c7d91dac237ad7d1fcb99f0f1862d0cee32f399d1"
+}

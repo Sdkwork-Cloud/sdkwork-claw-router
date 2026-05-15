@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54319,
+  "uuid": "skill-clawhub-apishield",
+  "skillKey": "clawhub-apishield",
+  "name": "apishield",
+  "summary": "API endpoint security auditor — scans route definitions for missing auth, rate limiting, CORS issues, and input validation holes",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apishield",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suhteevah",
+      "features": [
+        "API endpoint security auditor — scans route definitions for missing auth, rate limiting, CORS i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apishield@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2342183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apishield",
+      "url": "https://clawhub.ai/skills/apishield"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apishield",
+    "url": "https://clawhub.ai/skills/apishield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apishield-455de3a636ec5132.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apishield@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-apishield-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98201aacbe23235923511edbf99b85fc8325046834eeaafb21b6f4b0a4887121",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T15:04:08.829Z"
+}

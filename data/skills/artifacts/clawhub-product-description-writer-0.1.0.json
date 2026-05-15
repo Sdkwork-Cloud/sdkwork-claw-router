@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/product-description-writer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_description_writer",
+  "skill": {
+    "id": 18928,
+    "skillKey": "clawhub-product-description-writer",
+    "name": "Product Description Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-description-writer",
+    "url": "https://clawhub.ai/skills/product-description-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-description-writer-8cdb6cd1b8d7e4cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate high-converting, SEO-optimized product descriptions for e-commerce stores. Use this skill whenever the user mentions product description, PDP copy,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rijoyai",
+      "userId": "s17968d4vetrx5cj2yx3105heh83hrb4",
+      "displayName": "RIJOY-AI",
+      "image": "https://avatars.githubusercontent.com/u/219251023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 641,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773216370221,
+      "changelog": "- Initial release of the Product Description Writer skill.\n- Quickly generates high-converting, SEO-optimized product descriptions for any product category.\n- Supports inputs like specs, competitor listings, or rough notes—no need for structured requests.\n- Outputs SEO titles, detailed descriptions, benefit-led bullets, and meta descriptions by default.\n- Includes context gathering questions, writing guidelines, tone table, and sample scripts for quality control.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24d6acffc6ce15fa2ccebeef72c64dc6e7009aa52fcc4838e52b403cc88bf9dc"
+}

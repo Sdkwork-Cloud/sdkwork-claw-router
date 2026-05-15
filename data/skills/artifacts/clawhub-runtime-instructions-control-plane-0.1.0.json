@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/runtime-instructions-control-plane@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runtime_instructions_control_plane",
+  "skill": {
+    "id": 45531,
+    "skillKey": "clawhub-runtime-instructions-control-plane",
+    "name": "Runtime Instructions Control Plane"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runtime-instructions-control-plane",
+    "url": "https://clawhub.ai/skills/runtime-instructions-control-plane",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runtime-instructions-control-plane-05a146c43a00eba1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Load per-job runtime instructions from Google Sheets, cache them locally, and reconcile cron job enablement flags safely for OpenClaw operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielsinewe",
+      "userId": "s176jv075hrkmn3rxtgbyd914583nrry",
+      "displayName": "Daniel Sinewe",
+      "image": "https://avatars.githubusercontent.com/u/128365422?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775545419280,
+      "changelog": "Initial release: Google Sheets runtime-instructions loader + cron enablement reconciler with local cache fallback and configurable paths.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c80fef7b07003e5d35b20a1413225a83bd1e2ff944f898144a103672ba68c41d"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63747,
+  "uuid": "skill-clawhub-doc-ocr-xy",
+  "skillKey": "clawhub-doc-ocr-xy",
+  "name": "文档识别-表格识别（invoice-ocr-xy）翔云平台",
+  "summary": "文档 OCR 识别技能。扫描文件夹中的文档（PDF/图片），调用翔云 OCR API 识别文档信息。**重要：首次使用必须先配置翔云凭证，主动向用户索要 netocr_key 和 netocr_secret，或引导用户运行 --config 命令自行配置。**",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_ocr_xy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liudengkui",
+      "features": [
+        "文档 OCR 识别技能。扫描文件夹中的文档（PDF/图片），调用翔云 OCR API 识别文档信息。**重要：首次使用必须先配置翔云凭证，主动向用户索要 netocr_key 和 netoc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doc-ocr-xy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19543709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doc-ocr-xy",
+      "url": "https://clawhub.ai/skills/doc-ocr-xy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-ocr-xy",
+    "url": "https://clawhub.ai/skills/doc-ocr-xy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-ocr-xy-ebbcaba98a8e1655.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doc-ocr-xy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doc-ocr-xy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ff4643abc5605e78d230aa85afab5d2eba092ec7e6c313e9d960c7e879a6828",
+      "artifactSizeBytes": 2585
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T03:04:08.786Z"
+}

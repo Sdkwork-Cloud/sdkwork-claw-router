@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opencv@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencv",
+  "skill": {
+    "id": 36384,
+    "skillKey": "clawhub-opencv",
+    "name": "OpenCV"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencv",
+    "url": "https://clawhub.ai/skills/opencv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencv-ea2ebcbc108269c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Computer vision and image processing using OpenCV WebAssembly. Uses opencv-component.wasm running in openclaw-wasm-sandbox plugin. Supports image processing,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guyoung",
+      "userId": "s1791jtrp7z0s6h87f8f0twdk183pq6y",
+      "displayName": "guyoung",
+      "image": "https://avatars.githubusercontent.com/u/1448308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775529386020,
+      "changelog": "OpenCV computer vision skill initial release:\n\n- Brings comprehensive image processing and computer vision capabilities via OpenCV WebAssembly.\n- Supports operations such as object detection, feature extraction, panorama stitching, photo enhancement, camera calibration, and machine learning.\n- Enables batch processing with multi-threading support.\n- Integrates through the openclaw-wasm-sandbox plugin using the opencv-component.wasm file.\n- Includes detailed usage instructions and a categorized operations overview.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e3e565dfb56c324702e418ee104bb8fb4c4464b607cb332bbd4bc0f4a9a684f"
+}

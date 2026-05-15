@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pndr@1.0.20260202",
+  "version": "1.0.20260202",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pndr",
+  "skill": {
+    "id": 9873,
+    "skillKey": "clawhub-pndr",
+    "name": "Pndr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pndr",
+    "url": "https://clawhub.ai/skills/pndr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pndr-bd84b938793b2dab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal productivity app with Ideas/Tasks, Journal, Habits, Package tracking, Lists, and more via MCP"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dgershman",
+      "userId": "s17ecj5at1z33s6mr5szhks6p183jzwt",
+      "displayName": "Danny Gershman",
+      "image": "https://avatars.githubusercontent.com/u/1850811?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3082,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.20260202",
+      "createdAt": 1769997681994,
+      "changelog": "Updated SKILL.md documentation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ac45bf3f61acea760360f68f495f8becb69b7398fa78428ba507adf908044a61"
+}

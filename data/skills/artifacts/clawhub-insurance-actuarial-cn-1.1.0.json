@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/insurance-actuarial-cn@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insurance_actuarial_cn",
+  "skill": {
+    "id": 60892,
+    "skillKey": "clawhub-insurance-actuarial-cn",
+    "name": "China Insurance Actuarial Pricing Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insurance-actuarial-cn",
+    "url": "https://clawhub.ai/skills/insurance-actuarial-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insurance-actuarial-cn-128a33d0538cc8d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供基于第四套生命表(2025)和CASS标准的中国保险产品精算定价、准备金计算及偿付能力资本分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gechengling",
+      "userId": "s17ewqc4f2s6gpcbm88hy7fgvn85kg1g",
+      "displayName": "lingfeng-19",
+      "image": "https://avatars.githubusercontent.com/u/8140166?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777908197838,
+      "changelog": "v1.1.0 Bilingual optimization: English metadata + English summaries (4th Life Table 2025 + C-ROSS Phase II); Bilingual README.md; SEO title for China actuarial pricing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f02eed8c88c2e7242133c20de213a497af9047bac21bb24315be3ea20f183b6"
+}

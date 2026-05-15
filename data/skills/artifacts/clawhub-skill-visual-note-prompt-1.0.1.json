@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-visual-note-prompt@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_visual_note_prompt",
+  "skill": {
+    "id": 70340,
+    "skillKey": "clawhub-skill-visual-note-prompt",
+    "name": "visual-note-prompt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-visual-note-prompt",
+    "url": "https://clawhub.ai/skills/skill-visual-note-prompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-visual-note-prompt-e7c6b5b199b8d5b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将简短文本转换为知识卡片图片的提示词生成器（社区精简版）。基于严格的格式规则，自动分析输入内容并生成符合视觉笔记标准的图片提示词。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spiderzhcl",
+      "userId": "s17dbqwby3vwvhxq2h2qsze2fn83g85m",
+      "displayName": "八点虾",
+      "image": "https://avatars.githubusercontent.com/u/514586?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775528236469,
+      "changelog": "- 优化出现百分比数字，精简版发布，聚焦基础及高频功能。\n- 支持2种风格（classic、tech）和2种构图（cards、center）。\n- 仅提供3:4竖版知识卡片生图类型。\n- 明确规范，位置描述禁止百分比等数字，新增[Negative Prompt]字段。\n- 删除部分高级风格与复杂构图，仅保留常用核心要素。\n- 强化示例与流程说明，简化用户输入与技能输出。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a9ee5d217a344637a571fa625450990325ff70a349acdcb523417ab0ffa3342"
+}

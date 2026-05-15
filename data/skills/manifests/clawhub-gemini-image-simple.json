@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8717,
+  "uuid": "skill-clawhub-gemini-image-simple",
+  "skillKey": "clawhub-gemini-image-simple",
+  "name": "Gemini Image Simple",
+  "summary": "Generate and edit images with Gemini API using pure Python stdlib. Zero dependencies - works on locked-down environments where pip/uv aren't available.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_image_simple",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cluka-399",
+      "features": [
+        "Generate and edit images with Gemini API using pure Python stdlib",
+        "Zero dependencies",
+        "works on locked-down environments where pip/uv aren't available."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gemini-image-simple@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257591420?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gemini-image-simple",
+      "url": "https://clawhub.ai/skills/gemini-image-simple"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-image-simple",
+    "url": "https://clawhub.ai/skills/gemini-image-simple",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-image-simple-2f67498d4c872176.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gemini-image-simple@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gemini-image-simple-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:465a60d93ca28d7c953f3b8fc2663edd1aee8ad6a05896930e369e633d3639e4",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T20:30:21.317Z"
+}

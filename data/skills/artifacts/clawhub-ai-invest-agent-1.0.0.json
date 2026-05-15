@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-invest-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_invest_agent",
+  "skill": {
+    "id": 70183,
+    "skillKey": "clawhub-ai-invest-agent",
+    "name": "Ai Invest Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-invest-agent",
+    "url": "https://clawhub.ai/skills/ai-invest-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-invest-agent-c8dd84603979fac8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于四步复盘法和多市场指数温度计，提供跨市场投资分析及多格式报告，支持周度复盘、每日快检与单标的深度评估。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vivifishtl",
+      "userId": "s17akpda3ycgs5t2sbedw06r8983m1ym",
+      "displayName": "vivifishtl",
+      "image": "https://avatars.githubusercontent.com/u/33654455?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774555444293,
+      "changelog": "- 首次发布：AI 投资 Agent v1.0.0 上线，实现跨市场投资分析与报告。\n- 支持 A 股、港股、美股，具备独立四步复盘法、指数温度计、10 维度持仓分析等核心功能。\n- 一键生成 Markdown、Word、Excel 等多格式报告，适应多种投资场景。\n- 集成 Feishu 文档与表格，支持/命令调用与自动报告保存。\n- 覆盖 33 个核心市场指数，适合个人与机构投资分析需求。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38ef586f7c08b8318f513a91276a9fa6f2c7f37eda1ec5e7c1d8646cc51f278f"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11732,
+  "uuid": "skill-clawhub-crisp",
+  "skillKey": "clawhub-crisp",
+  "name": "Crisp Skill",
+  "summary": "Customer support via Crisp API. Use when the user asks to check, read, search, or respond to Crisp inbox messages. Requires Crisp website ID and plugin token (authenticated via environment variables CRISP_WEBSITE_ID, CRISP_TOKEN_ID, and CR.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crisp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Minh Phan (Paul)",
+      "features": [
+        "Customer support via Crisp API",
+        "Use when the user asks to check, read, search, or respond to Crisp inbox messages",
+        "Requires Crisp website ID and plugin token (authenticated via environment variables CRISP_WEBSI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crisp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11459809?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crisp",
+      "url": "https://clawhub.ai/skills/crisp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crisp",
+    "url": "https://clawhub.ai/skills/crisp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crisp-06df90ccef78b500.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crisp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crisp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28b63f51168fc990df49164a5effebc75e02cee05656822ce88160d5c515934a",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T04:54:24.974Z"
+}

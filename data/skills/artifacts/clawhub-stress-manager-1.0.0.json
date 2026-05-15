@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stress-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stress_manager",
+  "skill": {
+    "id": 35199,
+    "skillKey": "clawhub-stress-manager",
+    "name": "Stress Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stress-manager",
+    "url": "https://clawhub.ai/skills/stress-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stress-manager-9e72fa8b38a7cc61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help users identify stress sources, sort controllable vs uncontrollable pressure, and choose practical daily coping strategies. Use when the user says they f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774495963210,
+      "changelog": "Initial release.\n\n- Provides daily stress support and practical coping guidance.\n- Helps users identify main stress sources and sort controllable vs uncontrollable pressure.\n- Offers structured response with clear steps: acknowledge, clarify source, sort pressure, suggest coping moves, and set small targets.\n- Includes specific stress categories (workload, emotional, relationship, long-term, multi-source) and tailored response patterns.\n- Outlines boundaries: not for diagnosis, medical advice, or crisis intervention; includes safety escalation guidance and disclaimers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb4ac627677f7e3a40865d7e2409325ebb388827ce8e98d7350b3d4a7a916161"
+}

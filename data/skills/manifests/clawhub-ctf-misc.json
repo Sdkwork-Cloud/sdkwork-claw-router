@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31096,
+  "uuid": "skill-clawhub-ctf-misc",
+  "skillKey": "clawhub-ctf-misc",
+  "name": "Ctf Misc",
+  "summary": "Provides miscellaneous CTF challenge techniques. Use for encoding puzzles, RF/SDR signal processing, Python/bash jails, DNS exploitation, unicode steganograp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctf_misc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gandli",
+      "features": [
+        "Provides miscellaneous CTF challenge techniques",
+        "Use for encoding puzzles, RF/SDR signal processing, Python/bash jails, DNS exploitation, unicod."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ctf-misc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85359251?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ctf-misc",
+      "url": "https://clawhub.ai/skills/ctf-misc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctf-misc",
+    "url": "https://clawhub.ai/skills/ctf-misc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctf-misc-3867f55aac79cb73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ctf-misc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ctf-misc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e0810a0cf738d5084b4ab7e40a0a0b12a7d0e6c94f40bab84483d09e60dda78",
+      "artifactSizeBytes": 2573
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T04:39:19.700Z"
+}

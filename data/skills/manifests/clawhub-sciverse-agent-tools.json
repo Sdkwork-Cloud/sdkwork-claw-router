@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63896,
+  "uuid": "skill-clawhub-sciverse-agent-tools",
+  "skillKey": "clawhub-sciverse-agent-tools",
+  "name": "sciverse agent tools",
+  "summary": "SciVerse 学术文献检索：按结构化条件查元数据、自然语言语义检索片段、按字节读取原文。适合需要权威学术文献支撑的 RAG 与 agent 工作流。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sciverse_agent_tools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gary",
+      "features": [
+        "SciVerse 学术文献检索：按结构化条件查元数据、自然语言语义检索片段、按字节读取原文。适合需要权威学术文献支撑的 RAG 与 agent 工作流。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sciverse-agent-tools@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10260860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sciverse-agent-tools",
+      "url": "https://clawhub.ai/skills/sciverse-agent-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sciverse-agent-tools",
+    "url": "https://clawhub.ai/skills/sciverse-agent-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sciverse-agent-tools-acb0b61cbcbc672c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sciverse-agent-tools@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sciverse-agent-tools-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c2ac3b624d36c93b9451aadc842afacdc4ebb73e39b550ad0b0e26501035aec",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T11:40:31.314Z"
+}

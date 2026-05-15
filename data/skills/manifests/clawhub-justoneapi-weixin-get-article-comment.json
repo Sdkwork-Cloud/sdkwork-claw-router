@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49110,
+  "uuid": "skill-clawhub-justoneapi-weixin-get-article-comment",
+  "skillKey": "clawhub-justoneapi-weixin-get-article-comment",
+  "name": "WeChat Official Accounts Article Comments API",
+  "summary": "Call GET /api/weixin/get-article-comment/v1 for WeChat Official Accounts Article Comments through JustOneAPI with articleUrl.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_weixin_get_article_comment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/weixin/get-article-comment/v1 for WeChat Official Accounts Article Comments throu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-weixin-get-article-comment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-weixin-get-article-comment",
+      "url": "https://clawhub.ai/skills/justoneapi-weixin-get-article-comment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-weixin-get-article-comment",
+    "url": "https://clawhub.ai/skills/justoneapi-weixin-get-article-comment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-weixin-get-article-comment-4c5e267d855d2e88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-weixin-get-article-comment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-weixin-get-article-comment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c166b78c779e2d976f5a25b035f3d3a2f295d4f6d75c8646a87755316b4503fc",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T06:23:29.396Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50600,
+  "uuid": "skill-clawhub-opensea-skill",
+  "skillKey": "clawhub-opensea-skill",
+  "name": "Deprecated",
+  "summary": "DEPRECATED — moved to opensea/opensea-marketplace. Install that skill instead. This slug is no longer maintained.",
+  "version": "2.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opensea_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryanio",
+      "features": [
+        "DEPRECATED — moved to opensea/opensea-marketplace",
+        "Install that skill instead",
+        "This slug is no longer maintained."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opensea-skill@2.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22116?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opensea-skill",
+      "url": "https://clawhub.ai/skills/opensea-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opensea-skill",
+    "url": "https://clawhub.ai/skills/opensea-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opensea-skill-e3bf1158622e68e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opensea-skill@2.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-opensea-skill-2.2.3.json",
+      "version": "2.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4a77574ed5a05d9bac957dd3b3b00edda485dacd0c00b5ec4d8197e18564a7f",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T22:04:30.403Z"
+}

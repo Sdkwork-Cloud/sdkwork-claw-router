@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-sentinel@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_sentinel",
+  "skill": {
+    "id": 14303,
+    "skillKey": "clawhub-test-sentinel",
+    "name": "Test Sentinel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-sentinel",
+    "url": "https://clawhub.ai/skills/test-sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-sentinel-1f6902e2e70ba20e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Writes and runs tests (unit, integration, E2E), performs linting, and auto-fixes failures"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guifav",
+      "userId": "s17bdsbc0c31q1qryawma14pf5858sm5",
+      "displayName": "Guilherme Favaron",
+      "image": "https://avatars.githubusercontent.com/u/109181842?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1116,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774228638544,
+      "changelog": "- Added a CHANGELOG.md file to the project.\n- Updated claw.json configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50acfa2455437d66d393a85aa1f2a7e65fe85d4a0338fef0bb8f0d64948b6b9a"
+}

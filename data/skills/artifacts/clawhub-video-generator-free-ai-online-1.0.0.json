@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-generator-free-ai-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generator_free_ai_online",
+  "skill": {
+    "id": 44814,
+    "skillKey": "clawhub-video-generator-free-ai-online",
+    "name": "Video Generator Free Ai Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generator-free-ai-online",
+    "url": "https://clawhub.ai/skills/video-generator-free-ai-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generator-free-ai-online-9c7c7d91b7343184.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text or images into ready-to-share videos with this skill. Works with MP4, MOV, JPG, PNG files up to 200MB. content creators, marketers, students us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776276315213,
+      "changelog": "- Initial release: Generate videos from text or images using a cloud AI render pipeline.\n- Supports MP4, MOV, JPG, and PNG files up to 200MB; output is 1080p MP4.\n- Anonymous authentication with 100 free credits (valid for 7 days); handles session, state, upload, export, and error reporting.\n- Simple text prompts power video creation—ideal for content creators, marketers, and students.\n- Automatic backend setup and session management; user-friendly handling of uploads, exports, and credits.\n- Robust error handling with clear user guidance for common issues (format, file size, credits, export limits).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:270e46a4039a27545f773aae9b292566b7b2986109a5e11f27ca3c2e9c5efe03"
+}

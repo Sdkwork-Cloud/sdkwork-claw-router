@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45747,
+  "uuid": "skill-clawhub-intelligent-file-renamer",
+  "skillKey": "clawhub-intelligent-file-renamer",
+  "name": "Intelligent File Renamer",
+  "summary": "Batch rename files using pattern matching and AI suggestions",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intelligent_file_renamer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Batch rename files using pattern matching and AI suggestions"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intelligent-file-renamer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intelligent-file-renamer",
+      "url": "https://clawhub.ai/skills/intelligent-file-renamer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intelligent-file-renamer",
+    "url": "https://clawhub.ai/skills/intelligent-file-renamer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intelligent-file-renamer-b96e4ebacefee4c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intelligent-file-renamer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-intelligent-file-renamer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07c966656f7846853f0d275126d4e370dc2eef102ba5a986c360f41c76f83fc1",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T22:01:26.791Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71361,
+  "uuid": "skill-clawhub-reputation-thermometer",
+  "skillKey": "clawhub-reputation-thermometer",
+  "name": "声誉体温计",
+  "summary": "舆情风险预诊工具。单段文本快速风险评估，输出风险评分 (1-10)、风险等级 (蓝/黄/橙/红/黑)、传播力×危害力矩阵。适用于客服筛查、社交媒体预检。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reputation_thermometer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhushanwei",
+      "features": [
+        "舆情风险预诊工具。单段文本快速风险评估，输出风险评分 (1-10)、风险等级 (蓝/黄/橙/红/黑)、传播力×危害力矩阵。适用于客服筛查、社交媒体预检。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reputation-thermometer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53216479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reputation-thermometer",
+      "url": "https://clawhub.ai/skills/reputation-thermometer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reputation-thermometer",
+    "url": "https://clawhub.ai/skills/reputation-thermometer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reputation-thermometer-63677607e503da7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reputation-thermometer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reputation-thermometer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9e193817ba0a51dd995e2c8c429aa6a9b4e18adfb83a0cf0c5a0b0c981fd528",
+      "artifactSizeBytes": 2519
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T01:24:41.580Z"
+}

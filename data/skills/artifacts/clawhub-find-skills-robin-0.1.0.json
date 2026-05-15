@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-skills-robin@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_skills_robin",
+  "skill": {
+    "id": 10057,
+    "skillKey": "clawhub-find-skills-robin",
+    "name": "Find Skills (Robin's Fork)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-skills-robin",
+    "url": "https://clawhub.ai/skills/find-skills-robin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-skills-robin-fa322725f80dd25e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is loo."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robin797860",
+      "userId": "publishers:robin797860",
+      "displayName": "Robin797860",
+      "image": "https://avatars.githubusercontent.com/u/199881117?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2784,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770348262491,
+      "changelog": "- Initial release of the \"find-skills\" skill.\n- Helps users discover and install agent skills based on their questions or needs.\n- Provides guidance on when and how to search for skills using the Skills CLI.\n- Offers instructions for presenting and installing skills for users.\n- Includes tips for effective searching and advice when no relevant skill is found.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2042e755b691ed0ecf78eec34707701183de423d7d7910847149c38629607d21"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clean-desktop@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clean_desktop",
+  "skill": {
+    "id": 68843,
+    "skillKey": "clawhub-clean-desktop",
+    "name": "clean-desktop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clean-desktop",
+    "url": "https://clawhub.ai/skills/clean-desktop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clean-desktop-168b66a9580bc614.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动分类移动桌面文件到图片、文档、压缩包文件夹，支持预览模式避免实际修改。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "578499893",
+      "userId": "publishers:578499893",
+      "displayName": "578499893",
+      "image": "https://avatars.githubusercontent.com/u/26110046?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773365652408,
+      "changelog": "Initial release of clean-desktop 1.0.0:\n\n- Automatically organizes desktop files into folders by type (Images, Documents, Archives).\n- Supports preview mode with dry_run parameter (doesn't actually move files unless set to false).\n- Ignores hidden files and shortcuts, and doesn't delete any files.\n- Ensures destination folders are created as needed before moving files.\n- Provides a report listing which files were moved.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:75c539403b906f5a721165d4c91bce03084f1f11ca74b29ff855b8e6d0e603e3"
+}

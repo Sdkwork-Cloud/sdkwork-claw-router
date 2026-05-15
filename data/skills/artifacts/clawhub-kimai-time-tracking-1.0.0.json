@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kimai-time-tracking@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kimai_time_tracking",
+  "skill": {
+    "id": 14729,
+    "skillKey": "clawhub-kimai-time-tracking",
+    "name": "Kimai Time Tracking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kimai-time-tracking",
+    "url": "https://clawhub.ai/skills/kimai-time-tracking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kimai-time-tracking-f344c3589dae83fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Kimai time-tracking API integration. Manage timesheets, customers, projects, activities, teams, invoices and exports via REST API. Supports time tracking workflows, reporting, and administrative operations. Keywords - kimai, zeite."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0x7466",
+      "userId": "publishers:0x7466",
+      "displayName": "TFM",
+      "image": "https://avatars.githubusercontent.com/u/7838269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1122,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770580333864,
+      "changelog": "Initial release: Complete Kimai time-tracking API integration with timesheets, customers, projects, activities, and system management. Supports JSON/Table/CSV output formats with safety confirmations for destructive operations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6fc853845efa7095ecdf5b20fb4210e7688cc9cf2eead0ffc46a28d32dab83c2"
+}

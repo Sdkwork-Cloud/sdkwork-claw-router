@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15541,
+  "uuid": "skill-clawhub-beware-piper-tts",
+  "skillKey": "clawhub-beware-piper-tts",
+  "name": "Piper TTS",
+  "summary": "Local text-to-speech using Piper for voice message delivery. Use when the user asks for voice responses, audio messages, TTS, text-to-speech, voice notes, or...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beware_piper_tts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bewareofddog",
+      "features": [
+        "Local text-to-speech using Piper for voice message delivery",
+        "Use when the user asks for voice responses, audio messages, TTS, text-to-speech, voice notes, o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beware-piper-tts@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261640819?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beware-piper-tts",
+      "url": "https://clawhub.ai/skills/beware-piper-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beware-piper-tts",
+    "url": "https://clawhub.ai/skills/beware-piper-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beware-piper-tts-55db4e633ca4b277.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beware-piper-tts@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-beware-piper-tts-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36b4f072f2106a41ea31a4c4bacfa628c4bd261545bc6e896c95e29db019dab0",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T07:40:11.510Z"
+}

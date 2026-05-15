@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stripfeed@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stripfeed",
+  "skill": {
+    "id": 21962,
+    "skillKey": "clawhub-stripfeed",
+    "name": "StripFeed"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stripfeed",
+    "url": "https://clawhub.ai/skills/stripfeed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stripfeed-930bf67570be8a8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch any URL as clean, AI-ready Markdown with token counts and caching. Strip ads, nav, scripts, and noise from web pages."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "atlasopenclaw",
+      "userId": "publishers:atlasopenclaw",
+      "displayName": "Atlas",
+      "image": "https://avatars.githubusercontent.com/u/258399382?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 490,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772447935029,
+      "changelog": "Update skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3e58c4d5c02fb40687095a936df093e2494044e2430ea2946b1b418a5a372644"
+}

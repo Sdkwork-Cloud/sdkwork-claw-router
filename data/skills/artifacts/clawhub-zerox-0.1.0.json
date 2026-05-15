@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zerox@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zerox",
+  "skill": {
+    "id": 15100,
+    "skillKey": "clawhub-zerox",
+    "name": "Zerox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zerox",
+    "url": "https://clawhub.ai/skills/zerox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zerox-cd9df14ad8cdf1b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert PDFs, DOCX, PPTX, and images to Markdown using zerox with GPT-4o vision, including OCR for scanned documents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "otacu",
+      "userId": "publishers:otacu",
+      "displayName": "otacu",
+      "image": "https://avatars.githubusercontent.com/u/6127877?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1070,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771072709615,
+      "changelog": "Initial release of zerox document converter\n\n- Convert PDF, DOCX, PPTX, and image files to Markdown using the zerox library\n- Supports both scanned (OCR) and text-based documents via GPT-4o vision\n- Includes scripts for quick (foreground) and large file (background) conversion\n- Background conversion supports progress logging and macOS notifications\n- Requires node and an APIYI_API_KEY environment variable for operation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1a7c6b7ece370a5e90b0dd249b5af16ac3967abe38421f8e6d94bf57a35b6c28"
+}

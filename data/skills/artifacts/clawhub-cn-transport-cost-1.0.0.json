@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-transport-cost@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_transport_cost",
+  "skill": {
+    "id": 67764,
+    "skillKey": "clawhub-cn-transport-cost",
+    "name": "Cn Transport Cost"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-transport-cost",
+    "url": "https://clawhub.ai/skills/cn-transport-cost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-transport-cost-f446f15025ec1787.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供公路、铁路、水运交通运输工程造价咨询服务的预算编制、费率计算和工作分类指导。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ruiyongwang",
+      "userId": "s17794q4z9wefyrcsdwngwptzd83qkh2",
+      "displayName": "ruiyongwang",
+      "image": "https://avatars.githubusercontent.com/u/127424769?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775388065141,
+      "changelog": "Initial release aligning with Guangdong T/GDHS 017—2026 standard for transport engineering cost consulting:\n\n- Provides classification and definition of consulting service types and specialties (highway, railway, waterway).\n- Details core budget calculation methods and fee coefficient systems.\n- Lists typical work breakdown and recommended budget ratios for common consulting phases.\n- Specifies compliance requirements and risk control measures for professional practice.\n- Includes coefficient quick-reference tables and checklists for quality and compliance.\n- Organizes main and supporting documentation for user guidance and case reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b1af6817bad08af195acd910502acaa1e086fa616c911314f8c4e79a0e27596"
+}

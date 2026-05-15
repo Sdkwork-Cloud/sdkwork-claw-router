@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32927,
+  "uuid": "skill-clawhub-openclaw-cron-standard",
+  "skillKey": "clawhub-openclaw-cron-standard",
+  "name": "openclaw-cron-standard",
+  "summary": "Standardize OpenClaw cron wrappers, prompt contracts, and delivery-mode expectations. Use when auditing or fixing cron jobs that rely on ClankerHive claims,...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_cron_standard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Frederiksen",
+      "features": [
+        "Standardize OpenClaw cron wrappers, prompt contracts, and delivery-mode expectations",
+        "Use when auditing or fixing cron jobs that rely on ClankerHive claims,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-cron-standard@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/908172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-cron-standard",
+      "url": "https://clawhub.ai/skills/openclaw-cron-standard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-cron-standard",
+    "url": "https://clawhub.ai/skills/openclaw-cron-standard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-cron-standard-4732e45d561dd81b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-cron-standard@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-cron-standard-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4cc4ac34683eb4bbdb3aec42fc77a82b0fa5120d52bfb763d73c9db8a4d046f",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T23:12:26.372Z"
+}

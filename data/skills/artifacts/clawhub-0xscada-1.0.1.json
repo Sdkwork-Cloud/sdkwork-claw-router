@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/0xscada@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.0xscada",
+  "skill": {
+    "id": 22694,
+    "skillKey": "clawhub-0xscada",
+    "name": "0xscada"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "0xscada",
+    "url": "https://clawhub.ai/skills/0xscada",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/0xscada-fe4f22e33fae0969.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Decentralized Industrial Control Fabric. Bridges SCADA systems with blockchain-backed audit trails and Kannaka memory integration. Provides a unified API for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nickflach",
+      "userId": "s17778s4zwzj7mxeeetrgzvn8x83h9be",
+      "displayName": "Nick Flach",
+      "image": "https://avatars.githubusercontent.com/u/29632150?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 463,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773032954539,
+      "changelog": "0xSCADA v1.0.1\n\n- Added license terms acceptance to metadata.\n- Expanded required binaries: now includes curl and git.\n- Updated environment variable support to include SCADA_DIR, WEB3_RPC_URL, PRIVATE_KEY, FLUX_URL, and FLUX_AUTH_TOKEN for richer configuration and blockchain integration.\n- Enhanced documentation with an architecture note, configuration guide, and environmental variable descriptions.\n- Startup now validates that SCADA_DIR points to a valid 0xSCADA repository.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8dfe07e79f192e8ce1e064bb1f06bd6531b7aa5f94d831e280cce6e4930e0e63"
+}

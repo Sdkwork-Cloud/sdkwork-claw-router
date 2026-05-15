@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64061,
+  "uuid": "skill-clawhub-baidu-ocr",
+  "skillKey": "clawhub-baidu-ocr",
+  "name": "Baidu Ocr",
+  "summary": "百度 OCR 文字识别。支持中英文混合、公式、表格识别，准确率 95%+。使用百度 AI 开放平台 API。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_ocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nidhov01",
+      "features": [
+        "百度 OCR 文字识别。支持中英文混合、公式、表格识别，准确率 95%+。使用百度 AI 开放平台 API。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-ocr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235751867?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-ocr",
+      "url": "https://clawhub.ai/skills/baidu-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-ocr",
+    "url": "https://clawhub.ai/skills/baidu-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-ocr-07f8cca5f601e3e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-ocr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-ocr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb763ad0d10e3f4eea3052f1b2bac4f6037ff54d74691240be5fd453cbbace0b",
+      "artifactSizeBytes": 1814
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T22:41:49.029Z"
+}

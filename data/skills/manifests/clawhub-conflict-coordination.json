@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27428,
+  "uuid": "skill-clawhub-conflict-coordination",
+  "skillKey": "clawhub-conflict-coordination",
+  "name": "Conflict Coordination",
+  "summary": "Mechanism conflict detection and coordination for AI assistant systems. Automatically detects crontab conflicts, systemd service conflicts, script overlaps,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conflict_coordination",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alfredming-2026",
+      "features": [
+        "Mechanism conflict detection and coordination for AI assistant systems",
+        "Automatically detects crontab conflicts, systemd service conflicts, script overlaps,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/conflict-coordination@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261600602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "conflict-coordination",
+      "url": "https://clawhub.ai/skills/conflict-coordination"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conflict-coordination",
+    "url": "https://clawhub.ai/skills/conflict-coordination",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conflict-coordination-8f7444545c8d9ba8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/conflict-coordination@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-conflict-coordination-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49b5c2a2817e72b3f1a0f8f96ea7d931d859d4eec17c3b95f8277f2dd0c0bbb2",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T11:14:14.309Z"
+}

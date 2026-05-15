@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14154,
+  "uuid": "skill-clawhub-mineru-ai",
+  "skillKey": "clawhub-mineru-ai",
+  "name": "MinerU Doc Parser",
+  "summary": "MinerU AI document parser — intelligent document extraction powered by AI. Parse PDFs, scanned documents, images, Word files, PowerPoint slides, and web page...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mineru_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MinerU-Extract",
+      "features": [
+        "MinerU AI document parser — intelligent document extraction powered by AI",
+        "Parse PDFs, scanned documents, images, Word files, PowerPoint slides, and web page..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mineru-ai@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82048227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mineru-ai",
+      "url": "https://clawhub.ai/skills/mineru-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mineru-ai",
+    "url": "https://clawhub.ai/skills/mineru-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mineru-ai-38a59313b070c07f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mineru-ai@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mineru-ai-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2581d89f5bb7999bf799e4c47038a6add0e8efa18b2b5b6b45ed73e2b2810d6",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T12:30:46.383Z"
+}

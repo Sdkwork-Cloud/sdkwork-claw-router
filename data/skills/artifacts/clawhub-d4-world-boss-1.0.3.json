@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/d4-world-boss@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.d4_world_boss",
+  "skill": {
+    "id": 63087,
+    "skillKey": "clawhub-d4-world-boss",
+    "name": "D4 World Boss Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "d4-world-boss",
+    "url": "https://clawhub.ai/skills/d4-world-boss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/d4-world-boss-900916965c749c31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "暗黑4世界BOSS刷新时间查询。使用 @D4世界boss 或询问暗黑4世界boss时触发。自动获取踩蘑菇地图的世界BOSS刷新时间，并询问是否设置定时提醒。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crazzies",
+      "userId": "s17cmq7301t4knehc4r2qf67kh83qt5v",
+      "displayName": "Crazzies",
+      "image": "https://avatars.githubusercontent.com/u/258517530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1402,
+      "installsAllTime": 2,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770607194185,
+      "changelog": "Improve status message: 'BOSS已出现，战斗中'",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bab8acfc103bd277b7e0dcef547a210d722c41ff5e37c47a77601f755df1f4e8"
+}

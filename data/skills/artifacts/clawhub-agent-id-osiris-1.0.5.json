@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-id-osiris@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_id_osiris",
+  "skill": {
+    "id": 18253,
+    "skillKey": "clawhub-agent-id-osiris",
+    "name": "Agent Identity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-id-osiris",
+    "url": "https://clawhub.ai/skills/agent-id-osiris",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-id-osiris-ad4d9ebbf79d405b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cryptographic identity for AI agents - sign and verify agent messages"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nantes",
+      "userId": "s170qwtzgq9bfexvxw8e5ws1ms83g6qn",
+      "displayName": "Ivan Cetta",
+      "image": "https://avatars.githubusercontent.com/u/2672456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 705,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1771783981373,
+      "changelog": "Force rescan - verified working",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c913792fc81039e3734a23862702946c9080ffd8230d391c50ccacb2893719cd"
+}

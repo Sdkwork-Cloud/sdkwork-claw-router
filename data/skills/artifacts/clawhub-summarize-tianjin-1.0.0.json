@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/summarize-tianjin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.summarize_tianjin",
+  "skill": {
+    "id": 25808,
+    "skillKey": "clawhub-summarize-tianjin",
+    "name": "Summarize Tianjin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "summarize-tianjin",
+    "url": "https://clawhub.ai/skills/summarize-tianjin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/summarize-tianjin-83f410d849bfda63.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tianjin-ren",
+      "userId": "s17cscba5zaa18h4gwjegpz9as8408z5",
+      "displayName": "tianjin-ren",
+      "image": "https://avatars.githubusercontent.com/u/191457384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773644272254,
+      "changelog": "Initial release of the summarize-tianjin skill.\n\n- Provides a fast CLI for summarizing URLs, local files (PDFs, images, audio), and YouTube links.\n- Supports multiple AI models from Google, OpenAI, Anthropic, and xAI.\n- Includes useful flags for summary length, output format, extraction mode, and fallback options.\n- Allows configuration via environment variables and optional config file.\n- Supports API fallback services (Firecrawl, Apify) for improved extraction and YouTube summarization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3134cf7f3bf9fd9424339732a2f5bb6657467ed63cf60101b44c94ecfaa6a5d"
+}

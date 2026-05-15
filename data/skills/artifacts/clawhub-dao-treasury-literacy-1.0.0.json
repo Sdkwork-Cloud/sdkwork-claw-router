@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dao-treasury-literacy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dao_treasury_literacy",
+  "skill": {
+    "id": 49544,
+    "skillKey": "clawhub-dao-treasury-literacy",
+    "name": "Dao Treasury Literacy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dao-treasury-literacy",
+    "url": "https://clawhub.ai/skills/dao-treasury-literacy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dao-treasury-literacy-30059ed8d9ce6b52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explains how DAO treasuries work - revenue, asset composition, spending, diversification, and how to evaluate treasury proposals - from user-provided informa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 75,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778173753723,
+      "changelog": "DAO Treasury Literacy skill initial release\n\n- Provides structured, plain-English explanations of DAO treasury concepts—revenue, assets, spending, diversification, proposal evaluation—using only user-provided information.\n- Guides users with a step-by-step analysis: identifying facts, assumptions, risks, red flags, and unknowns in DAO treasury decisions.\n- Includes clear checklists for verification, information gaps, and practical next questions.\n- Clearly states boundaries: cannot access or verify external data, execute code, give investment or legal advice, or handle sensitive credentials.\n- Designed for users evaluating DAO treasury proposals, spending, or management with a focus on decision clarity and risk identification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd4e71693a951e5e72cb788626ed664f45581e70f5dd0801bd14cffc0ee85138"
+}

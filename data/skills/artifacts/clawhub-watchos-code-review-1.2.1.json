@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/watchos-code-review@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.watchos_code_review",
+  "skill": {
+    "id": 33952,
+    "skillKey": "clawhub-watchos-code-review",
+    "name": "Watchos Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "watchos-code-review",
+    "url": "https://clawhub.ai/skills/watchos-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/watchos-code-review-54ad9b99f53e8054.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews watchOS code for app lifecycle, complications (ClockKit/WidgetKit), WatchConnectivity, and performance constraints. Use when reviewing code with impo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1776831243015,
+      "changelog": "- Adds detailed output formatting instructions for issue reports (`[FILE:LINE] ISSUE_TITLE`).\n- Introduces mandatory “hard gate” pre-reporting steps to ensure thorough review before reporting findings.\n- Requires referencing concrete artifacts or downgrading to a review question when findings depend on watchOS-specific behaviors.\n- Enforces compliance with a linked review verification protocol before reporting.\n- No changes to core checklist or reference sections.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3df55954fcb8059100fdf7b39344ae5c41171a02755f15c0744aaef091a6ceb6"
+}

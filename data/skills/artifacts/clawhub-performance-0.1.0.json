@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/performance@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.performance",
+  "skill": {
+    "id": 67613,
+    "skillKey": "clawhub-performance",
+    "name": "Performance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "performance",
+    "url": "https://clawhub.ai/skills/performance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/performance-4a1898716ef67796.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供绩效考核设计的可落地指南与SOP。在开展绩效考核设计相关工作时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikeclaw007",
+      "userId": "s173n2mnssqbs3ebpdz3b52ssh83gshx",
+      "displayName": "mikeclaw007",
+      "image": "https://avatars.githubusercontent.com/u/265502950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 398,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774231443557,
+      "changelog": "Initial release of the \"绩效考核设计\" skill.\n\n- 提供绩效考核设计的操作指南与标准流程（SOP）。\n- 明确目标、指标设定，保障合规与个人信息安全。\n- 支持模板、脚本、Checklist及标准报表输出。\n- 包含资源梳理、试点复盘、标准化沉淀等实操环节。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a42c8bedb93162d5b16827bbd521f191baa86654fa06deded4eba228a412ee44"
+}

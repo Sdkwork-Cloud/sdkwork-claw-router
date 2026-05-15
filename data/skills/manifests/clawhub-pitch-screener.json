@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30474,
+  "uuid": "skill-clawhub-pitch-screener",
+  "skillKey": "clawhub-pitch-screener",
+  "name": "Pitch Screener",
+  "summary": "Screen startup pitch decks (PDF, PowerPoint, images) from a VC/angel investor perspective. Parses the deck with SoMark to recover slide structure accurately,...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pitch_screener",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Soul-Code",
+      "features": [
+        "Screen startup pitch decks (PDF, PowerPoint, images) from a VC/angel investor perspective",
+        "Parses the deck with SoMark to recover slide structure accurately,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pitch-screener@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33421641?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pitch-screener",
+      "url": "https://clawhub.ai/skills/pitch-screener"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pitch-screener",
+    "url": "https://clawhub.ai/skills/pitch-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pitch-screener-821a6b28fd7bc9c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pitch-screener@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-pitch-screener-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:846b1c9d9bbfb9b4d2f9fd8fb78615ae89781d6c53a14f569da63267fe438185",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T13:16:56.818Z"
+}

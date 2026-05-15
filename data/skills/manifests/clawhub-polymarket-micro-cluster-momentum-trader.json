@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32693,
+  "uuid": "skill-clawhub-polymarket-micro-cluster-momentum-trader",
+  "skillKey": "clawhub-polymarket-micro-cluster-momentum-trader",
+  "name": "Polymarket Micro Cluster Momentum Trader",
+  "summary": "Trades cluster momentum continuation in 5-minute crypto Up/Down bundles on Polymarket. When 2+ coins (BTC, ETH, SOL, XRP) all show the same directional bias...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_micro_cluster_momentum_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades cluster momentum continuation in 5-minute crypto Up/Down bundles on Polymarket",
+        "When 2+ coins (BTC, ETH, SOL, XRP) all show the same directional bias..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-micro-cluster-momentum-trader@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-micro-cluster-momentum-trader",
+      "url": "https://clawhub.ai/skills/polymarket-micro-cluster-momentum-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-micro-cluster-momentum-trader",
+    "url": "https://clawhub.ai/skills/polymarket-micro-cluster-momentum-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-micro-cluster-momentum-trader-1499c439e2b922c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-micro-cluster-momentum-trader@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-micro-cluster-momentum-trader-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc934e3fdfeb6e47b769f01365c1093c6a46d5bdba9dca550f25b82276f288d4",
+      "artifactSizeBytes": 2109
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:34:34.068Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14519,
+  "uuid": "skill-clawhub-codex-multi-subscription-auth-fallbacks",
+  "skillKey": "clawhub-codex-multi-subscription-auth-fallbacks",
+  "name": "Codex Multi Subscription Auth Fallbacks",
+  "summary": "Set up OpenClaw multi-provider auth with OpenAI Codex OAuth fallback profiles and automatic model switching. Use when configuring multiple OpenAI Codex accou...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_multi_subscription_auth_fallbacks",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Markeljan",
+      "features": [
+        "Set up OpenClaw multi-provider auth with OpenAI Codex OAuth fallback profiles and automatic mod.",
+        "Use when configuring multiple OpenAI Codex accou..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codex-multi-subscription-auth-fallbacks@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12901349?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codex-multi-subscription-auth-fallbacks",
+      "url": "https://clawhub.ai/skills/codex-multi-subscription-auth-fallbacks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-multi-subscription-auth-fallbacks",
+    "url": "https://clawhub.ai/skills/codex-multi-subscription-auth-fallbacks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-multi-subscription-auth-fallbacks-77169d0790fbd299.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codex-multi-subscription-auth-fallbacks@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-codex-multi-subscription-auth-fallbacks-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e84703283b79b4f933b223df098234b349de41d4d29bf40ea5079e1144d6344",
+      "artifactSizeBytes": 3108
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T23:24:38.503Z"
+}

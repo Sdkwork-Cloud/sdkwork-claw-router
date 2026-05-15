@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41069,
+  "uuid": "skill-clawhub-adaptive-cruise-control-yaml-config",
+  "skillKey": "clawhub-adaptive-cruise-control-yaml-config",
+  "name": "yaml-config",
+  "summary": "Use this skill when reading or writing YAML configuration files, loading vehicle parameters, or handling config file parsing with proper error handling.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adaptive_cruise_control_yaml_config",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wu-uk",
+      "features": [
+        "Use this skill when reading or writing YAML configuration files, loading vehicle parameters, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adaptive-cruise-control-yaml-config@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199610473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adaptive-cruise-control-yaml-config",
+      "url": "https://clawhub.ai/skills/adaptive-cruise-control-yaml-config"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adaptive-cruise-control-yaml-config",
+    "url": "https://clawhub.ai/skills/adaptive-cruise-control-yaml-config",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adaptive-cruise-control-yaml-config-7f386cb61b4e518c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adaptive-cruise-control-yaml-config@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-adaptive-cruise-control-yaml-config-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74725b96cd853d2237ab693da925a0f2e6ba765515f3510cd4c3017ffbd5555e",
+      "artifactSizeBytes": 2019
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T15:24:20.235Z"
+}

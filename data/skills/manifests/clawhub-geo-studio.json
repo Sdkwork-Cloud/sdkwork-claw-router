@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24384,
+  "uuid": "skill-clawhub-geo-studio",
+  "skillKey": "clawhub-geo-studio",
+  "name": "GEO Content Studio",
+  "summary": "Master GEO content orchestrator that understands user goals and intelligently routes tasks across specialized GEO skills. Automatically selects the right wor...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_studio",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GEOLY AI",
+      "features": [
+        "Master GEO content orchestrator that understands user goals and intelligently routes tasks acro.",
+        "Automatically selects the right wor..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/geo-studio@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70360114?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "geo-studio",
+      "url": "https://clawhub.ai/skills/geo-studio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-studio",
+    "url": "https://clawhub.ai/skills/geo-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-studio-0a35b34dce858946.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/geo-studio@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-geo-studio-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b0d0d6e83d377ee98ad6dd1fcfcef6ecdc50c346d6f34c4503602dd3d2050ed",
+      "artifactSizeBytes": 2220
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T12:15:33.146Z"
+}

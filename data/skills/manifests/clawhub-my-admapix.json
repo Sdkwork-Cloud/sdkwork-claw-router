@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41340,
+  "uuid": "skill-clawhub-my-admapix",
+  "skillKey": "clawhub-my-admapix",
+  "name": "My Admapix",
+  "summary": "Ad intelligence & app analytics assistant. Search ad creatives, analyze apps, view rankings, track downloads/revenue, and get market insights via api.admapix...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_admapix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rockyzhuo",
+      "features": [
+        "Ad intelligence & app analytics assistant",
+        "Search ad creatives, analyze apps, view rankings, track downloads/revenue, and get market insig."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-admapix@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12961098?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-admapix",
+      "url": "https://clawhub.ai/skills/my-admapix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-admapix",
+    "url": "https://clawhub.ai/skills/my-admapix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-admapix-d13f377e889226f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-admapix@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-admapix-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66778f18e5d2fbafe52d2f136082518d9dffc0e642c64349f3eda95ffe3c212b",
+      "artifactSizeBytes": 2456
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T11:47:38.044Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19240,
+  "uuid": "skill-clawhub-memory-audit-guardian",
+  "skillKey": "clawhub-memory-audit-guardian",
+  "name": "Memory Audit Guardian",
+  "summary": "Weekly memory governance audit for OpenClaw. Use when user asks to audit/optimize memory quality, reduce token overhead, verify MEMORY/TOOLS/AGENTS role boun...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_audit_guardian",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "markisadesigner1992-eng",
+      "features": [
+        "Weekly memory governance audit for OpenClaw",
+        "Use when user asks to audit/optimize memory quality, reduce token overhead, verify MEMORY/TOOLS."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-audit-guardian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254804547?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-audit-guardian",
+      "url": "https://clawhub.ai/skills/memory-audit-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-audit-guardian",
+    "url": "https://clawhub.ai/skills/memory-audit-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-audit-guardian-d34a83fbc1baafc9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-audit-guardian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-audit-guardian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f5e9997818c53b6e6c16f6b90ce14233fd90b0d560d35bfac0eda9fc57ef9e2",
+      "artifactSizeBytes": 2221
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T06:20:34.330Z"
+}

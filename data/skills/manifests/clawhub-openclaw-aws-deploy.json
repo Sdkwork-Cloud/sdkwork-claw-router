@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17855,
+  "uuid": "skill-clawhub-openclaw-aws-deploy",
+  "skillKey": "clawhub-openclaw-aws-deploy",
+  "name": "OpenClaw AWS Deploy",
+  "summary": "Deploy OpenClaw securely on AWS with a single command. Creates VPC, EC2 (ARM64), Telegram channel, and configurable AI model (Bedrock, Gemini, or any provide...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aws_deploy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Godwin Babu",
+      "features": [
+        "Deploy OpenClaw securely on AWS with a single command",
+        "Creates VPC, EC2 (ARM64), Telegram channel, and configurable AI model (Bedrock, Gemini, or any."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-aws-deploy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1253288?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-aws-deploy",
+      "url": "https://clawhub.ai/skills/openclaw-aws-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aws-deploy",
+    "url": "https://clawhub.ai/skills/openclaw-aws-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aws-deploy-de97c8ed6dffb4db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-aws-deploy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-aws-deploy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:009c9e6819c64432c7bacd23d1cc327ad9c481567481592d18e0f1c542f36ed5",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T00:03:06.139Z"
+}

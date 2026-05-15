@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chroma-memory@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chroma_memory",
+  "skill": {
+    "id": 33356,
+    "skillKey": "clawhub-chroma-memory",
+    "name": "Chroma Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chroma-memory",
+    "url": "https://clawhub.ai/skills/chroma-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chroma-memory-66a571aca117110f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stores and semantically retrieves per-turn customer conversation data with auto-tagging and customer isolation using ChromaDB."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ipythoning",
+      "userId": "s172w4n5ns9akgj3tg573p1kvx83gtgq",
+      "displayName": "iPythoning",
+      "image": "https://avatars.githubusercontent.com/u/29250610?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775368621963,
+      "changelog": "chroma-memory 1.0.1\n\n- Documentation updates only: SKILL.md reformatted, with no changes to commands, features, or usage.\n- No functional changes to the core skill logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a475201e01eb4aa44a2983d02cfc58cfd0b6343e99f95fa409ae7bfbcadcaf5"
+}

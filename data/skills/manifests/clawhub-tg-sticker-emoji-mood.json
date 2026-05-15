@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11251,
+  "uuid": "skill-clawhub-tg-sticker-emoji-mood",
+  "skillKey": "clawhub-tg-sticker-emoji-mood",
+  "name": "emoji and tg stickers use proactively based on mood",
+  "summary": "Automatically send Telegram stickers and emojis that match the mood and vibe of the conversation. Activates on every Telegram message to add expressive, huma...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tg_sticker_emoji_mood",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniil Burykin",
+      "features": [
+        "Automatically send Telegram stickers and emojis that match the mood and vibe of the conversation",
+        "Activates on every Telegram message to add expressive, huma..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tg-sticker-emoji-mood@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232385700?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tg-sticker-emoji-mood",
+      "url": "https://clawhub.ai/skills/tg-sticker-emoji-mood"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tg-sticker-emoji-mood",
+    "url": "https://clawhub.ai/skills/tg-sticker-emoji-mood",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tg-sticker-emoji-mood-0d2d99a49790764d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tg-sticker-emoji-mood@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tg-sticker-emoji-mood-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8f63407f81cc68a8abbd243075e37af5e70bc104c01bfdeb83f227f84149a27",
+      "artifactSizeBytes": 2751
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T00:39:31.134Z"
+}

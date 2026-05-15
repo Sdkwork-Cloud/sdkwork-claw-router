@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/e2b-sandbox@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.e2b_sandbox",
+  "skill": {
+    "id": 41576,
+    "skillKey": "clawhub-e2b-sandbox",
+    "name": "E2B Sandbox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "e2b-sandbox",
+    "url": "https://clawhub.ai/skills/e2b-sandbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/e2b-sandbox-4c0083d504aedb05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Spin up and manage E2B cloud sandboxes for agent work. Use when an OpenClaw agent needs an isolated remote Linux sandbox instead of the local workspace: crea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maverick-software",
+      "userId": "s172zy52hz8d9fxcmyr9padghd842s7c",
+      "displayName": "maverick-software",
+      "image": "https://avatars.githubusercontent.com/u/85259593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776567680967,
+      "changelog": "Initial release. MCPorter-native E2B sandbox skill with tools for create/list/info/exec/host/set-timeout/snapshot/kill, plus local mcporter registration helper and shell fallback.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:54a142206154b2793e889059e6f60650319159dbd79521fca7b3373c43318a2c"
+}

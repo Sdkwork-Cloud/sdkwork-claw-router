@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sorftime@0.1.10",
+  "version": "0.1.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sorftime",
+  "skill": {
+    "id": 59821,
+    "skillKey": "clawhub-sorftime",
+    "name": "sorftime"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sorftime",
+    "url": "https://clawhub.ai/skills/sorftime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sorftime-b8e3ef863439133f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 sorftime-cli 调用 Sorftime 跨境电商全量数据接口（Amazon 47 + Shopee 5 + Walmart 14 = 66 个 endpoint）。 当用户或智能体需要：写脚本批量查询 ASIN/类目/关键词/Best Seller/跟卖/子体销量/产品评论， 自定义编排多个接口完..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangfaguo",
+      "userId": "s171rksbr701mrw8504hcjva8584w3ax",
+      "displayName": "zhangfaguo",
+      "image": "https://avatars.githubusercontent.com/u/15167506?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 281,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.1.10",
+      "createdAt": 1777538462183,
+      "changelog": "- 新增 resources/account.md，支持跨平台账户余额及请求记录3接口说明。\n- 新增 resources/amazon-data-types.md、shopee-data-types.md、walmart-data-types.md，分别补充各平台接口数据类型定义。\n- Amazon 端点由43个扩展至47个，Shopee 和 Walmart 端点总数相应更新，总API数增至66个。\n- 目录与索引全面同步，反映新增文件与接口变动。\n- 响应结构字段名更正为小写（如code、message等），错误码说明补充细化。\n- 更新通用规则与示例，强调以 _common.md 为权威参考。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82bfbd51511887a105968e08be7b666e7e5dc0d9080be3344e9164e42bc36dbe"
+}

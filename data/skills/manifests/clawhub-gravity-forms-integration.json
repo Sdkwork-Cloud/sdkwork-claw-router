@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34061,
+  "uuid": "skill-clawhub-gravity-forms-integration",
+  "skillKey": "clawhub-gravity-forms-integration",
+  "name": "Gravity Forms",
+  "summary": "Gravity Forms integration. Manage Forms. Use when the user wants to interact with Gravity Forms data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gravity_forms_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Gravity Forms integration",
+        "Manage Forms",
+        "Use when the user wants to interact with Gravity Forms data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gravity-forms-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gravity-forms-integration",
+      "url": "https://clawhub.ai/skills/gravity-forms-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gravity-forms-integration",
+    "url": "https://clawhub.ai/skills/gravity-forms-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gravity-forms-integration-70073596b91bd06a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gravity-forms-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gravity-forms-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b443ab30a201caa65cb7292b54721980a4810a6a4014cd4001e4aad0bd99566e",
+      "artifactSizeBytes": 1915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:54:27.650Z"
+}

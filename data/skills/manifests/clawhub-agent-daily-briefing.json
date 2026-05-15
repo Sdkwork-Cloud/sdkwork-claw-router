@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50920,
+  "uuid": "skill-clawhub-agent-daily-briefing",
+  "skillKey": "clawhub-agent-daily-briefing",
+  "name": "Agent Daily Briefing",
+  "summary": "Structured morning briefing skill — daily summaries covering calendar, tasks, weather, news, and priorities. Supports cron, heartbeat, and on-demand triggers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_daily_briefing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Clawdssen",
+      "features": [
+        "Structured morning briefing skill — daily summaries covering calendar, tasks, weather, news, an.",
+        "Supports cron, heartbeat, and on-demand triggers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-daily-briefing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262485069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-daily-briefing",
+      "url": "https://clawhub.ai/skills/agent-daily-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-daily-briefing",
+    "url": "https://clawhub.ai/skills/agent-daily-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-daily-briefing-2b3942113e99450e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-daily-briefing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-daily-briefing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e64e6c70258e5f0b5bdfac0caa473778186bcc382f83ef83f98159fbf77619b4",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T17:42:06.481Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56344,
+  "uuid": "skill-clawhub-wechatsync",
+  "skillKey": "clawhub-wechatsync",
+  "name": "WechatSync",
+  "summary": "Multi-platform article publisher and content distribution tool. Sync and cross-post Markdown/HTML articles to 27+ platforms including Zhihu (知乎), Juejin (掘金)...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechatsync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lljxx1",
+      "features": [
+        "Multi-platform article publisher and content distribution tool",
+        "Sync and cross-post Markdown/HTML articles to 27+ platforms including Zhihu (知乎), Juejin (掘金)..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechatsync@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7993835?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechatsync",
+      "url": "https://clawhub.ai/skills/wechatsync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechatsync",
+    "url": "https://clawhub.ai/skills/wechatsync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechatsync-4581eb1482569f21.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechatsync@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechatsync-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18fa50da5e3ec8228f6a49d9ac3471a244ec89eb931c9711c94a79d4eef1c35d",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T09:06:29.837Z"
+}

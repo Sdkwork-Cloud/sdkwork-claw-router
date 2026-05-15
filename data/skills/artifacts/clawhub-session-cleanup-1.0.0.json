@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-cleanup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_cleanup",
+  "skill": {
+    "id": 66299,
+    "skillKey": "clawhub-session-cleanup",
+    "name": "Session Cleanup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-cleanup",
+    "url": "https://clawhub.ai/skills/session-cleanup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-cleanup-1938e1ec447e98e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "定期清理过期会话，评估并保存有价值信息，自动清理无价值会话。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xaiohuangningde",
+      "userId": "publishers:xaiohuangningde",
+      "displayName": "xaiohuangningde",
+      "image": "https://avatars.githubusercontent.com/u/143916959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 705,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772364224974,
+      "changelog": "Initial release of session-cleanup skill.\n\n- Periodically scans session directories, detects expired sessions, and evaluates their value.\n- Saves valuable sessions based on keyword matching; automatically deletes sessions deemed irrelevant.\n- Supports multiple session sources: cron runs, delivery queue, Telegram, and subagents, each with customized expiration rules.\n- Generates a cleanup report after each run.\n- Can be run manually or scheduled weekly with cron.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a6fab050a1b18cc9bac23c4c8a71084462a6b8981871a4f549011a6e864fdcc9"
+}

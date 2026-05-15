@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-install@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_install",
+  "skill": {
+    "id": 20018,
+    "skillKey": "clawhub-clawhub-install",
+    "name": "clawhub-install"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-install",
+    "url": "https://clawhub.ai/skills/clawhub-install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-install-c528b526b842c374.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download and install skills from ClawHub directly via curl, bypassing official CLI rate limits. Use when the user wants to install one or more ClawHub skills..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "upupc",
+      "userId": "s17439q4cqy7w4mepf1htey0z983pwrr",
+      "displayName": "upupc",
+      "image": "https://avatars.githubusercontent.com/u/12829489?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 577,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772642629399,
+      "changelog": "- Changed extraction path when unzipping skills to <workspace>/skills/<skill_name> (was <workspace>/<skill_name>)\n- No other functional or usage changes documented",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c41be5fb4d775a80d776b629c7fd0c73f0f15cd0297f4fa79d3273a1ed61a830"
+}

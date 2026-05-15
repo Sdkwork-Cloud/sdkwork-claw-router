@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59632,
+  "uuid": "skill-clawhub-ftshare-etf-data",
+  "skillKey": "clawhub-ftshare-etf-data",
+  "name": "Skills of ETF data released by ft.tech.",
+  "summary": "A 股 ETF 数据技能集（market.ft.tech）。覆盖单只 ETF 详情、ETF 分页列表（排序/筛选）、ETF K 线（日/周/月/年线）、ETF 分钟级分时、ETF PCF 列表与下载。用户询问某只 ETF 行情、ETF 列表、ETF K 线、分时或 PCF 申购赎回清单时使用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ftshare_etf_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shawn92",
+      "features": [
+        "A 股 ETF 数据技能集（market.ft.tech）。覆盖单只 ETF 详情、ETF 分页列表（排序/筛选）、ETF K 线（日/周/月/年线）、ETF 分钟级分时、ETF PCF 列."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ftshare-etf-data@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17521361?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ftshare-etf-data",
+      "url": "https://clawhub.ai/skills/ftshare-etf-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ftshare-etf-data",
+    "url": "https://clawhub.ai/skills/ftshare-etf-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ftshare-etf-data-76456b6f812f4959.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ftshare-etf-data@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ftshare-etf-data-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcfc4baf8c716fd390d7da1e994e4197ae8a7383457ab8a57934550dd8ab2a89",
+      "artifactSizeBytes": 2605
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:28:33.063Z"
+}

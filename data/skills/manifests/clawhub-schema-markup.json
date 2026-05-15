@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12555,
+  "uuid": "skill-clawhub-schema-markup",
+  "skillKey": "clawhub-schema-markup",
+  "name": "Schema Markup",
+  "summary": "Add, fix, or optimize schema markup and structured data. Use when the user mentions schema markup, structured data, JSON-LD, rich snippets, schema.org, FAQ schema, product schema, review schema, or breadcrumb schema.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.schema_markup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Add, fix, or optimize schema markup and structured data",
+        "Use when the user mentions schema markup, structured data, JSON-LD, rich snippets, schema.org,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/schema-markup@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "schema-markup",
+      "url": "https://clawhub.ai/skills/schema-markup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "schema-markup",
+    "url": "https://clawhub.ai/skills/schema-markup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/schema-markup-e1e6e4945daacc65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/schema-markup@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-schema-markup-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b986bdeb3605e484b0cad1857069781ba381ca54e66ae07385b1b72b496a40c8",
+      "artifactSizeBytes": 2410
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T13:41:23.089Z"
+}

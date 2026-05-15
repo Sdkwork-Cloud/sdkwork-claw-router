@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23511,
+  "uuid": "skill-clawhub-customer",
+  "skillKey": "clawhub-customer",
+  "name": "Customer",
+  "summary": "A comprehensive AI agent skill for acquiring, onboarding, retaining, and growing customers. Helps customer success teams reduce churn, expand revenue, and tu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AGIstack",
+      "features": [
+        "A comprehensive AI agent skill for acquiring, onboarding, retaining, and growing customers",
+        "Helps customer success teams reduce churn, expand revenue, and tu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/customer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258523997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "customer",
+      "url": "https://clawhub.ai/skills/customer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customer",
+    "url": "https://clawhub.ai/skills/customer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customer-b6c45863875e3448.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/customer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-customer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5b6fc4acbc0f2e1ddde835e11997459c4dffdc1e42dc79474fae51cf2757b44",
+      "artifactSizeBytes": 1869
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T11:49:16.949Z"
+}

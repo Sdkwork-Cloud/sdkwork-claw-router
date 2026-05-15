@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48604,
+  "uuid": "skill-clawhub-nascar-racing",
+  "skillKey": "clawhub-nascar-racing",
+  "name": "Nascar Racing",
+  "summary": "Provides detailed information on NASCAR's history, business model, major events, cultural roots, and its role as a leading American stock car racing organiza...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nascar_racing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides detailed information on NASCAR's history, business model, major events, cultural roots."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nascar-racing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nascar-racing",
+      "url": "https://clawhub.ai/skills/nascar-racing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nascar-racing",
+    "url": "https://clawhub.ai/skills/nascar-racing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nascar-racing-50c9bbd93e8bcfc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nascar-racing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nascar-racing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df84e02d68ac9e01a71118ea3e0c7832cdef47a6eaeebfb0c245cba454c204df",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T14:07:05.325Z"
+}

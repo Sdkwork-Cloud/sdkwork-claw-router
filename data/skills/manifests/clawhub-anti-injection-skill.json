@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14775,
+  "uuid": "skill-clawhub-anti-injection-skill",
+  "skillKey": "clawhub-anti-injection-skill",
+  "name": "smart-security",
+  "summary": "Advanced prompt injection defense with multi-layer protection, memory integrity, and tool security wrapper. OWASP LLM Top 10 2026 compliant.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anti_injection_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wesley Armando",
+      "features": [
+        "Advanced prompt injection defense with multi-layer protection, memory integrity, and tool secur.",
+        "OWASP LLM Top 10 2026 compliant."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anti-injection-skill@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130360599?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anti-injection-skill",
+      "url": "https://clawhub.ai/skills/anti-injection-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anti-injection-skill",
+    "url": "https://clawhub.ai/skills/anti-injection-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anti-injection-skill-99861db7f152bdb5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anti-injection-skill@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-anti-injection-skill-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87d6b452ddbcb1994745a8748338c574b021b646d7970af9cfb88336b8500add",
+      "artifactSizeBytes": 2453
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T02:37:08.695Z"
+}

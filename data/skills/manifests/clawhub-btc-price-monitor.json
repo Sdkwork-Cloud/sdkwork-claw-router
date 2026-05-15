@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43220,
+  "uuid": "skill-clawhub-btc-price-monitor",
+  "skillKey": "clawhub-btc-price-monitor",
+  "name": "BTC Price Monitor",
+  "summary": "Fetches the current Bitcoin price from CoinGecko and sends it to Telegram, with optional alerts if price falls below a set threshold.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.btc_price_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JesusReb",
+      "features": [
+        "Fetches the current Bitcoin price from CoinGecko and sends it to Telegram, with optional alerts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/btc-price-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125454315?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "btc-price-monitor",
+      "url": "https://clawhub.ai/skills/btc-price-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "btc-price-monitor",
+    "url": "https://clawhub.ai/skills/btc-price-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/btc-price-monitor-66a84fafe25c13c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/btc-price-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-btc-price-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52056736a1b34031cee4411f7a9e7bab0520b8ce2475e55c5dd3d3c5272c7243",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T17:15:10.493Z"
+}

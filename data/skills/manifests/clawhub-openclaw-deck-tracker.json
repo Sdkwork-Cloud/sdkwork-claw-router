@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15228,
+  "uuid": "skill-clawhub-openclaw-deck-tracker",
+  "skillKey": "clawhub-openclaw-deck-tracker",
+  "name": "NextCloud Deck Tracker",
+  "summary": "Track OpenClaw tasks on NextCloud Deck board. Auto-add tasks to Queue, move through states.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_deck_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SkanderHelali",
+      "features": [
+        "Track OpenClaw tasks on NextCloud Deck board",
+        "Auto-add tasks to Queue, move through states."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-deck-tracker@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2225618?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-deck-tracker",
+      "url": "https://clawhub.ai/skills/openclaw-deck-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-deck-tracker",
+    "url": "https://clawhub.ai/skills/openclaw-deck-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-deck-tracker-272b803a42595971.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-deck-tracker@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-deck-tracker-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:909fda0c948bc3d27895a4eb48d6433acf9673d160a95913df294c8fbd9a3f61",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T16:29:09.200Z"
+}

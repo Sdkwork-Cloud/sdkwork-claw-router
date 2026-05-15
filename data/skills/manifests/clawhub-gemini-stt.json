@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9661,
+  "uuid": "skill-clawhub-gemini-stt",
+  "skillKey": "clawhub-gemini-stt",
+  "name": "Gemini STT",
+  "summary": "Transcribe audio files using Google's Gemini API or Vertex AI",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_stt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "araa47",
+      "features": [
+        "Transcribe audio files using Google's Gemini API or Vertex AI"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gemini-stt@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22760261?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gemini-stt",
+      "url": "https://clawhub.ai/skills/gemini-stt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-stt",
+    "url": "https://clawhub.ai/skills/gemini-stt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-stt-811b054c9b0e1403.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gemini-stt@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gemini-stt-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1adaef44392d2102e87741ca973048228783e0b4f374660dd735e097d2fd640",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-17T12:06:21.889Z"
+}

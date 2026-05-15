@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fred-navigator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fred_navigator",
+  "skill": {
+    "id": 15080,
+    "skillKey": "clawhub-fred-navigator",
+    "name": "FRED-Navigator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fred-navigator",
+    "url": "https://clawhub.ai/skills/fred-navigator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fred-navigator-07d00f5565a9e24b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Navigate FRED categories and series using fredapi, supporting natural-language queries with intent recognition and double validation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kiszly",
+      "userId": "publishers:kiszly",
+      "displayName": "kiszly",
+      "image": "https://avatars.githubusercontent.com/u/157223919?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 863,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771416662830,
+      "changelog": "Initial release of fred-navigator.\n\n- Enables navigation of FRED categories and series using direct IDs or natural-language queries.\n- Implements intent recognition and double validation for reliable category selection.\n- Returns Top-5 candidates when query confidence is low or validation fails.\n- Provides structured workflow for series lookup and metadata retrieval.\n- Requires external references and scripts for data lookup and path building; does not hardcode API keys.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7c03c59c539ac4d2bc5517cf561d54e867bdba07e86c6dd30f2ca819c292bfb9"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19403,
+  "uuid": "skill-clawhub-waimai",
+  "skillKey": "clawhub-waimai",
+  "name": "Waimai",
+  "summary": "Help users decide where and how to order takeout with the best tradeoff between merchant quality, promotions, delivery fees, threshold rules, and timing. Use...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.waimai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Help users decide where and how to order takeout with the best tradeoff between merchant qualit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/waimai@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "waimai",
+      "url": "https://clawhub.ai/skills/waimai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "waimai",
+    "url": "https://clawhub.ai/skills/waimai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/waimai-ed24198bfed73baa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/waimai@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-waimai-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95b5f9e21bdbd3615ffe2f2468406b4cb855a044ec362434e7f17c3961dc220a",
+      "artifactSizeBytes": 1916
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T10:01:03.225Z"
+}

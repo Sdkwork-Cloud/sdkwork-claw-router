@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40141,
+  "uuid": "skill-clawhub-git-clear-committed-file-history",
+  "skillKey": "clawhub-git-clear-committed-file-history",
+  "name": "Permanently Clear Files from Git History",
+  "summary": "Guide users to permanently remove files from Git repository history. Use this skill when users mention any of the following scenarios: - \"git filter-repo\", \"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_clear_committed_file_history",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hhjin",
+      "features": [
+        "Guide users to permanently remove files from Git repository history",
+        "Use this skill when users mention any of the following scenarios:",
+        "\"git filter-repo\", \"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-clear-committed-file-history@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20532714?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-clear-committed-file-history",
+      "url": "https://clawhub.ai/skills/git-clear-committed-file-history"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-clear-committed-file-history",
+    "url": "https://clawhub.ai/skills/git-clear-committed-file-history",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-clear-committed-file-history-d82f822d2c21524c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-clear-committed-file-history@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-clear-committed-file-history-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54da8560656e0177c0eafbd3fba997a2778dba2bb5dd796f590aed9cdfc2c7f5",
+      "artifactSizeBytes": 2485
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T07:22:14.701Z"
+}

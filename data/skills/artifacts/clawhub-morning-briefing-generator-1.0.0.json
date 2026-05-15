@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/morning-briefing-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morning_briefing_generator",
+  "skill": {
+    "id": 17271,
+    "skillKey": "clawhub-morning-briefing-generator",
+    "name": "Morning Briefing Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morning-briefing-generator",
+    "url": "https://clawhub.ai/skills/morning-briefing-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morning-briefing-generator-27b3870769ecd001.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates a personalized morning briefing with weather, calendar events, urgent emails, trending topics, health data, news, and priorities to save time."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michael-laffin",
+      "userId": "s172763bq8hk878ptgz2a77cqn83j1f6",
+      "displayName": "Michael-laffin",
+      "image": "https://avatars.githubusercontent.com/u/133843289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 796,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771095134063,
+      "changelog": "Morning Briefing Generator 1.0.0\n\n- First public release: generates personalized morning briefings to streamline your daily start.\n- Integrates weather, calendar events, urgent emails, trending topics, health metrics, news, and task priorities into a single daily summary.\n- Supports custom prompts, advanced filters, and automation via cron job and delivery to Telegram, Slack, WhatsApp, or Email.\n- Easy configuration for multiple accounts and personalized content.\n- Troubleshooting guides and examples included for common setup issues.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ffbf23d254ad4240738ac73e5b376dd84dc540fa7280ab7108c47ea4f3b9750d"
+}

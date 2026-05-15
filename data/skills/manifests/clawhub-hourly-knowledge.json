@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71490,
+  "uuid": "skill-clawhub-hourly-knowledge",
+  "skillKey": "clawhub-hourly-knowledge",
+  "name": "Hourly Knowledge",
+  "summary": "每小时自动为用户推送一条有趣、有用的小知识。当每小时定时任务触发时使用，负责搜索并生成知识内容。包含去重机制，避免短期内推送相同主题。支持多用户，开箱即用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hourly_knowledge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MrMiracle1",
+      "features": [
+        "每小时自动为用户推送一条有趣、有用的小知识。当每小时定时任务触发时使用，负责搜索并生成知识内容。包含去重机制，避免短期内推送相同主题。支持多用户，开箱即用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hourly-knowledge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55183373?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hourly-knowledge",
+      "url": "https://clawhub.ai/skills/hourly-knowledge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hourly-knowledge",
+    "url": "https://clawhub.ai/skills/hourly-knowledge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hourly-knowledge-6b2c784e4b86b64b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hourly-knowledge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hourly-knowledge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ca4f7370a62050fd553dd923f4e167cfb5f1f7c46cf720586acbfa1cbb59951",
+      "artifactSizeBytes": 2424
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T05:43:05.859Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54814,
+  "uuid": "skill-clawhub-migratesafe",
+  "skillKey": "clawhub-migratesafe",
+  "name": "migratesafe",
+  "summary": "Database migration safety checker — catches destructive migrations before they reach production",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.migratesafe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suhteevah",
+      "features": [
+        "Database migration safety checker — catches destructive migrations before they reach production"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/migratesafe@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2342183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "migratesafe",
+      "url": "https://clawhub.ai/skills/migratesafe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "migratesafe",
+    "url": "https://clawhub.ai/skills/migratesafe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/migratesafe-440db5e3b4161362.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/migratesafe@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-migratesafe-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebab0b9aa59dbbc495e18bc609ce867261f4bb0477d28b3f2069219f2d18d943",
+      "artifactSizeBytes": 1854
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T15:19:16.325Z"
+}

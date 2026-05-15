@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67991,
+  "uuid": "skill-clawhub-email-usage",
+  "skillKey": "clawhub-email-usage",
+  "name": "Email Usage",
+  "summary": "使用本地邮件服务器收发我们自己域名的邮件。固定脚本位于 scripts/ 目录，直接执行即可。发送失败或密码遗忘时联系 小爪子。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_usage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AxelHu",
+      "features": [
+        "使用本地邮件服务器收发我们自己域名的邮件。固定脚本位于 scripts/ 目录，直接执行即可。发送失败或密码遗忘时联系 小爪子。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-usage@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12809280?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-usage",
+      "url": "https://clawhub.ai/skills/email-usage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-usage",
+    "url": "https://clawhub.ai/skills/email-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-usage-8746739d8f4882c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-usage@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-usage-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac2303357d9445662d871ce5c930ce8f90e66d902c40675dbe2d95b3d1773d69",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T00:15:55.532Z"
+}

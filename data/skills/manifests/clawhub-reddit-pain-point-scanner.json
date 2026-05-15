@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31066,
+  "uuid": "skill-clawhub-reddit-pain-point-scanner",
+  "skillKey": "clawhub-reddit-pain-point-scanner",
+  "name": "Reddit Pain Point Scanner",
+  "summary": "Reddit market research agent. Scans subreddits and keywords for recurring user complaints, unmet needs, and product gaps. Clusters pain points by frequency a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_pain_point_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mguozhen",
+      "features": [
+        "Reddit market research agent",
+        "Scans subreddits and keywords for recurring user complaints, unmet needs, and product gaps",
+        "Clusters pain points by frequency a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reddit-pain-point-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1411875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reddit-pain-point-scanner",
+      "url": "https://clawhub.ai/skills/reddit-pain-point-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-pain-point-scanner",
+    "url": "https://clawhub.ai/skills/reddit-pain-point-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-pain-point-scanner-adf0b426bf1e7136.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reddit-pain-point-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reddit-pain-point-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62c1442a7248a5022e06d150fa592686887785e74e34a4f727f5993cf1cfc6e1",
+      "artifactSizeBytes": 2608
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:00:57.032Z"
+}

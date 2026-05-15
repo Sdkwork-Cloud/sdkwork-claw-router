@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/optionshawk@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.optionshawk",
+  "skill": {
+    "id": 19964,
+    "skillKey": "clawhub-optionshawk",
+    "name": "OptionsHawk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "optionshawk",
+    "url": "https://clawhub.ai/skills/optionshawk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/optionshawk-b78fc5ce79cc253b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Options flow analysis, unusual activity detection, and options strategy evaluation for equities and ETFs"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "optionshawk24",
+      "userId": "publishers:optionshawk24",
+      "displayName": "OptionsHawk24",
+      "image": "https://avatars.githubusercontent.com/u/84326369?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 582,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1771790211776,
+      "changelog": "Initial release of OptionsHawk\n\n- Provides options flow analysis, unusual activity detection, and strategy evaluation for equities and ETFs.\n- Detects large or out-of-the-ordinary options trades and multi-leg strategies.\n- Tracks key flow metrics like put/call ratios, volume vs open interest, and sweep orders.\n- Supports analysis of earnings-related options positioning and skew shifts.\n- Requires OPTIONSHAWK_API_KEY for access; supports alert threshold customization via environment variable.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:528f1fe3a811f98b4056e0c218edd3bce6a52c78dc1a1aeeb43143d3a985d09e"
+}

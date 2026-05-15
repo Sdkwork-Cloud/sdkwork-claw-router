@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-note-transcriber-cn@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_note_transcriber_cn",
+  "skill": {
+    "id": 62084,
+    "skillKey": "clawhub-voice-note-transcriber-cn",
+    "name": "Voice Note Transcriber Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-note-transcriber-cn",
+    "url": "https://clawhub.ai/skills/voice-note-transcriber-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-note-transcriber-cn-4374b2c5fc3524d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "语音笔记转文字工具 v2.1 | Voice Note Transcriber. 支持多语言识别、实时转写、说话人识别、智能摘要、音频降噪、离线识别。触发词：转写、识别、语音。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huyong2023",
+      "userId": "s17agxwnrg48cpbrsngxqb6eg183yzy9",
+      "displayName": "huyong2023",
+      "image": "https://avatars.githubusercontent.com/u/138767654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 480,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772709543639,
+      "changelog": "Major update with new features and improvements:\n\n- Added support for 50+ languages, enhanced multi-language and mixed-language recognition.\n- Introduced real-time transcription with live text display and smart punctuation.\n- Added speaker diarization to distinguish and label multiple speakers.\n- Integrated intelligent summarization, including action items and meeting decisions.\n- Implemented audio noise reduction for clearer transcriptions.\n- Enabled offline transcription mode for privacy and no-network use.\n- Expanded supported formats and detailed usage examples throughout documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d7652540114f9fd829400dadd29d855096efb5513a30456028730d227e0052a9"
+}

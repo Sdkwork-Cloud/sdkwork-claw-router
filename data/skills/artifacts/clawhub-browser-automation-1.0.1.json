@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-automation@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_automation",
+  "skill": {
+    "id": 8270,
+    "skillKey": "clawhub-browser-automation",
+    "name": "Browser Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-automation",
+    "url": "https://clawhub.ai/skills/browser-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-automation-90d43c801cddfb64.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate web browser interactions using natural language via CLI commands. Use when the user asks to browse websites, navigate web pages, extract data from websites, take screenshots, fill forms, click buttons, or interact with web applica."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peytoncasper",
+      "userId": "publishers:peytoncasper",
+      "displayName": "peytoncasper",
+      "image": "https://avatars.githubusercontent.com/u/8305883?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 40585,
+      "installsAllTime": 503,
+      "installsCurrent": 474,
+      "stars": 54,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770307243177,
+      "changelog": "Initial public release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e4bf86e3bb8dc8640cf36ded4e138834d7da1bee96e4e399cb1c8ac7cfb4b87f"
+}

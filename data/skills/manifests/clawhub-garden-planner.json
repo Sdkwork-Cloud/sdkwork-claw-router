@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52804,
+  "uuid": "skill-clawhub-garden-planner",
+  "skillKey": "clawhub-garden-planner",
+  "name": "Garden Planner",
+  "summary": "Comprehensive garden planning — track plants, get planting recommendations, watering schedules, and frost alerts. Use when: garden, plant, planting, harvest,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.garden_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "New Age Investments",
+      "features": [
+        "Comprehensive garden planning — track plants, get planting recommendations, watering schedules,.",
+        "Use when: garden, plant, planting, harvest,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/garden-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243381911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "garden-planner",
+      "url": "https://clawhub.ai/skills/garden-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "garden-planner",
+    "url": "https://clawhub.ai/skills/garden-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/garden-planner-1a7ba3554b8ea8db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/garden-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-garden-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5dc20f320da80fbadb772a55b86a1d7a9e43343a4253fd7c851e9451de481e7d",
+      "artifactSizeBytes": 2624
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T12:29:44.355Z"
+}

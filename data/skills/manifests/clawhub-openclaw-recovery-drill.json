@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25062,
+  "uuid": "skill-clawhub-openclaw-recovery-drill",
+  "skillKey": "clawhub-openclaw-recovery-drill",
+  "name": "OpenClaw Recovery Drill",
+  "summary": "This skill should be used when the user asks to test OpenClaw recovery readiness, rehearse backup/restore, run a disaster-recovery drill, validate operator r...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_recovery_drill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "X-RayLuan",
+      "features": [
+        "This skill should be used when the user asks to test OpenClaw recovery readiness, rehearse back."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-recovery-drill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150766707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-recovery-drill",
+      "url": "https://clawhub.ai/skills/openclaw-recovery-drill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-recovery-drill",
+    "url": "https://clawhub.ai/skills/openclaw-recovery-drill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-recovery-drill-83fcc3ea1be771b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-recovery-drill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-recovery-drill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b3ef558c840d252a920a5bc09b473b93dbb8c9f5af77e12b24e75a8581f7811",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T03:44:17.659Z"
+}

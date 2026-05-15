@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62646,
+  "uuid": "skill-clawhub-aisa-multi-search-engine-zh",
+  "skillKey": "clawhub-aisa-multi-search-engine-zh",
+  "name": "aisa-multi-search-engine-zh",
+  "summary": "通过一个 AISA skill 统一执行网页搜索、学术搜索、Tavily 搜索与抽取、智能搜索和类 Perplexity 深度研究。触发条件：当用户需要网页研究、学术检索、URL 抽取或多源证据汇总时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_multi_search_engine_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bibaofeng",
+      "features": [
+        "通过一个 AISA skill 统一执行网页搜索、学术搜索、Tavily 搜索与抽取、智能搜索和类 Perplexity 深度研究。触发条件：当用户需要网页研究、学术检索、URL 抽取或多源."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aisa-multi-search-engine-zh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86095131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aisa-multi-search-engine-zh",
+      "url": "https://clawhub.ai/skills/aisa-multi-search-engine-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-multi-search-engine-zh",
+    "url": "https://clawhub.ai/skills/aisa-multi-search-engine-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-multi-search-engine-zh-0ba69a5064350482.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aisa-multi-search-engine-zh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aisa-multi-search-engine-zh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b50f2ca6e80e8f30f32c832a105f7490d32f72c1a20cb63c0ded6dc0992bfe11",
+      "artifactSizeBytes": 2499
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T10:45:33.519Z"
+}

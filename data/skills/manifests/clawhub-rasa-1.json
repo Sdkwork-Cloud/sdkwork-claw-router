@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34591,
+  "uuid": "skill-clawhub-rasa-1",
+  "skillKey": "clawhub-rasa-1",
+  "name": "Rasa 1",
+  "summary": "Rasa integration. Manage data, records, and automate workflows. Use when the user wants to interact with Rasa data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rasa_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Rasa integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Rasa data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rasa-1@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rasa-1",
+      "url": "https://clawhub.ai/skills/rasa-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rasa-1",
+    "url": "https://clawhub.ai/skills/rasa-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rasa-1-29f519318c538c46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rasa-1@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-rasa-1-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9b4ac6a4eb3105c35efc872cabd8b51e9cabfe67a2281b6f1fc22b6fe652b70",
+      "artifactSizeBytes": 1808
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:31:38.222Z"
+}

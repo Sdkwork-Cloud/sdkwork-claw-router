@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oc-extract-memories@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_extract_memories",
+  "skill": {
+    "id": 56749,
+    "skillKey": "clawhub-oc-extract-memories",
+    "name": "Oc Extract Memories"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-extract-memories",
+    "url": "https://clawhub.ai/skills/oc-extract-memories",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-extract-memories-01bda14ceb1dc7c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract key memories from conversation into topic files. Triggers: extract memories, 提炼记忆, /extract-memories. Auto-triggers on conversation end words."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776751487250,
+      "changelog": "Initial release of extract-memories skill.\n\n- Automatically extracts key memories from conversations at end triggers (e.g., \"bye\", \"see you\").\n- Supports four memory types: user, feedback, project, and reference, each with structured formats.\n- Writes each memory into a dedicated topic file in memory/topics/, and updates MEMORY.md with a summary.\n- Excludes specific information types such as code structure, git history, and temporary task statuses to avoid redundancy.\n- Includes both English and Chinese command triggers and end-word detection.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3668d5752e60ba116970ac7671f6989f372db6dc83802e2bad4651c613058972"
+}

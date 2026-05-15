@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/axodus-command-execution@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axodus_command_execution",
+  "skill": {
+    "id": 45265,
+    "skillKey": "clawhub-axodus-command-execution",
+    "name": "RedHat Command Execution"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axodus-command-execution",
+    "url": "https://clawhub.ai/skills/axodus-command-execution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axodus-command-execution-a1c87ac95d9601bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute terminal commands safely with preflight checks and risk gating."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mzfshark",
+      "userId": "s17c7t947t48hg8ymjbywz1th583y2n6",
+      "displayName": "Mauricio Z.",
+      "image": "https://avatars.githubusercontent.com/u/26634695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777029966367,
+      "changelog": "Initial release of command-execution skill for safe, auditable command runs.\n\n- Supports executing terminal commands with preflight risk checks and gating.\n- Requires specifying both the command and its purpose.\n- Classifies and blocks high-risk operations (e.g., recursive deletes, remote scripts) unless explicitly confirmed.\n- Preferentially uses dry-run flags to reduce risk.\n- Captures and summarizes results, checks expected effects, and proposes diagnostics on failure.\n- Enforces safety rules—no destructive or remote-script commands without explicit user review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4e6a93b306ef3411574837656d9c724e7f2238427576fd574d2334d6af73866"
+}

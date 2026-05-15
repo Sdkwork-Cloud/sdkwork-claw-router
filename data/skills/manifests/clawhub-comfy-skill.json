@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16558,
+  "uuid": "skill-clawhub-comfy-skill",
+  "skillKey": "clawhub-comfy-skill",
+  "name": "Comfy Skill",
+  "summary": "Send user prompts to local ComfyUI at http://127.0.0.1:8188 using workflow.json to generate images.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfy_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "edward-hsiao",
+      "features": [
+        "Send user prompts to local ComfyUI at http://127.0.0.1:8188 using workflow.json to generate ima."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comfy-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221547162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comfy-skill",
+      "url": "https://clawhub.ai/skills/comfy-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfy-skill",
+    "url": "https://clawhub.ai/skills/comfy-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfy-skill-fc1dd96a22cbca78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comfy-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-comfy-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f143963eae981f094dc5bda8efedb46b944609d8a56f21bc8f7aafe28dee1c5",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T14:45:47.634Z"
+}

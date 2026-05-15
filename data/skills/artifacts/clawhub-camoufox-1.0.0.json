@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/camoufox@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camoufox",
+  "skill": {
+    "id": 9810,
+    "skillKey": "clawhub-camoufox",
+    "name": "Camoufox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camoufox",
+    "url": "https://clawhub.ai/skills/camoufox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camoufox-0f3587bce979ca59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Anti-detect browser automation using Camoufox (Firefox-based). Use instead of Chrome/Playwright for bot-detection-heavy sites like X/Twitter, Naver, and other protected sites. Provides stealth browsing with OS/browser fingerprint spoofing,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goodgoodjm",
+      "userId": "publishers:goodgoodjm",
+      "displayName": "GoodGoodJM",
+      "image": "https://avatars.githubusercontent.com/u/8029093?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3151,
+      "installsAllTime": 11,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770226056907,
+      "changelog": "Initial release of camoufox: stealthy browser automation for bot-protected sites.\n\n- Provides anti-detect automation using a Firefox-based browser with OS/browser fingerprint spoofing.\n- Enables human-like mouse movements and persistent sessions for enhanced stealth.\n- Designed for use in environments with heavy bot detection such as X/Twitter and Naver.\n- Includes setup scripts, persistent profile/session handling, and manual CAPTCHA resolution instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e79fd0fa64c60e548181dc1398049134ac7887d584d81009d5750d1fab69e287"
+}

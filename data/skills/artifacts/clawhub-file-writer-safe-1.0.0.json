@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-writer-safe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_writer_safe",
+  "skill": {
+    "id": 19722,
+    "skillKey": "clawhub-file-writer-safe",
+    "name": "File Writer Safe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-writer-safe",
+    "url": "https://clawhub.ai/skills/file-writer-safe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-writer-safe-363a9fb082f7a700.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safely write or update large files over 5000 bytes by reading, incrementally editing small sections, verifying after each step, and using backups for recovery."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ykaixu",
+      "userId": "publishers:ykaixu",
+      "displayName": "YuKaiXu",
+      "image": "https://avatars.githubusercontent.com/u/30675834?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 536,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772169522163,
+      "changelog": "Initial release - Safe file writing strategy for large files with step-by-step approach, fallback strategies, and error recovery",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:452b4d6888a0a3a7ff80c9748993d159846e76d659aefb1c5627aa3d60fb0fbb"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47557,
+  "uuid": "skill-clawhub-hotel-social-automator",
+  "skillKey": "clawhub-hotel-social-automator",
+  "name": "Hotel Social Automator",
+  "summary": "Generate, review, and publish social media content through MCP with AgentAuth and workspace token authentication.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotel_social_automator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tourmind",
+      "features": [
+        "Generate, review, and publish social media content through MCP with AgentAuth and workspace tok."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hotel-social-automator@1.0.1",
+      "screenshots": [
+        "https://socialmedia.tos-cn-guangzhou.volces.com/272203551.jpg"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hotel-social-automator",
+      "url": "https://clawhub.ai/skills/hotel-social-automator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotel-social-automator",
+    "url": "https://clawhub.ai/skills/hotel-social-automator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotel-social-automator-9b9d0d4f6ab9cf4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hotel-social-automator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hotel-social-automator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:feee25f1c28ed33d4d9e122f419a5a32bf057e786737d965ba4b3c12441d3cd6",
+      "artifactSizeBytes": 2719
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T03:12:34.039Z"
+}

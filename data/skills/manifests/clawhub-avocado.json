@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56904,
+  "uuid": "skill-clawhub-avocado",
+  "skillKey": "clawhub-avocado",
+  "name": "avocado",
+  "summary": "Information guide for Avocado 牛油果. Learn about nutrition, recipes, growing regions, and market prices.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avocado",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information guide for Avocado 牛油果",
+        "Learn about nutrition, recipes, growing regions, and market prices."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/avocado@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "avocado",
+      "url": "https://clawhub.ai/skills/avocado"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avocado",
+    "url": "https://clawhub.ai/skills/avocado",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avocado-f9c9baac9006160a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/avocado@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-avocado-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4853c0b4628187c9510b6c80c549ff64c8ef20eab69f5d53f095bd1af0161eeb",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T22:37:31.667Z"
+}

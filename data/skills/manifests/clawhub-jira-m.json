@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18143,
+  "uuid": "skill-clawhub-jira-m",
+  "skillKey": "clawhub-jira-m",
+  "name": "Jira",
+  "summary": "Manage Jira issues and worklogs via REST API: search, view, create, comment, assign, transition status, and log or report work hours.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jira_m",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whz",
+      "features": [
+        "Manage Jira issues and worklogs via REST API: search, view, create, comment, assign, transition."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jira-m@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45926667?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jira-m",
+      "url": "https://clawhub.ai/skills/jira-m"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jira-m",
+    "url": "https://clawhub.ai/skills/jira-m",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jira-m-bb1cfb13267b88c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jira-m@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jira-m-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2692c6f9e044fa075987a5969fb3d21d1bc97b03b26a6685e40239e25ac4120d",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T14:58:35.213Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22060,
+  "uuid": "skill-clawhub-global-price-comparison",
+  "skillKey": "clawhub-global-price-comparison",
+  "name": "Global Price Comparison",
+  "summary": "Discover and compare the same product across multiple countries and source types (official stores, marketplaces, retailers) using Brave and/or Tavily web sea...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.global_price_comparison",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joe Wong",
+      "features": [
+        "Discover and compare the same product across multiple countries and source types (official stor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/global-price-comparison@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13167524?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "global-price-comparison",
+      "url": "https://clawhub.ai/skills/global-price-comparison"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "global-price-comparison",
+    "url": "https://clawhub.ai/skills/global-price-comparison",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/global-price-comparison-b8804dbf8efedb00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/global-price-comparison@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-global-price-comparison-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b089f50c151564271afa4fea11798d7c99df2cabeaab8b76e807cbf15de5a2fd",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T21:17:18.448Z"
+}

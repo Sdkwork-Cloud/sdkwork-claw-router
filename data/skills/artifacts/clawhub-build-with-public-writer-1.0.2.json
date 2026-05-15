@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/build-with-public-writer@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.build_with_public_writer",
+  "skill": {
+    "id": 24371,
+    "skillKey": "clawhub-build-with-public-writer",
+    "name": "Build With Public Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "build-with-public-writer",
+    "url": "https://clawhub.ai/skills/build-with-public-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/build-with-public-writer-b78bb3499a9f8ce5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use \"bwp\" command to create technical content for codewithriver. Supports articles, courses, theory, persona with version management and link sharing"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "riverfor",
+      "userId": "s179a87ejfjdj23bn8vkpevv1s83ksa8",
+      "displayName": "River Yan",
+      "image": "https://avatars.githubusercontent.com/u/3059527?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774495334370,
+      "changelog": "Update for public release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49f05158f60ea23a18e7074fa4fbd9d7fd4550416c02e9b2cf6a3328df2552ea"
+}

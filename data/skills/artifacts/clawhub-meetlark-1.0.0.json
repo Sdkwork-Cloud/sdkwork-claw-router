@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meetlark@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meetlark",
+  "skill": {
+    "id": 15134,
+    "skillKey": "clawhub-meetlark",
+    "name": "Meetlark - coordinate a meeting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meetlark",
+    "url": "https://clawhub.ai/skills/meetlark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meetlark-2a1a41daa6c006e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scheduling polls for humans and their agents. Create polls, share participation links, collect votes, and find the best meeting time. A Doodle alternative built for the age of AI agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mkelk",
+      "userId": "publishers:mkelk",
+      "displayName": "mkelk",
+      "image": "https://avatars.githubusercontent.com/u/13288681?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1076,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770531703461,
+      "changelog": "meetlark 1.0.0\n\n- Initial release of meetlark skill: a Doodle alternative for scheduling polls with support for both humans and AI agents.\n- Create meeting polls, share participation links, collect votes, and determine the best meeting time.\n- Secure admin and participant token system for poll management and privacy.\n- Automated email verification flow for poll creation.\n- Full API documentation and usage examples included for quick onboarding.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:70bbe02fb4ee855a64cf653ba9253d37972ca049aa3e2b5849982c8375125faf"
+}

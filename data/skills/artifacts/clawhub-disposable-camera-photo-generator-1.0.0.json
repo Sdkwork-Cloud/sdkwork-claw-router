@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/disposable-camera-photo-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.disposable_camera_photo_generator",
+  "skill": {
+    "id": 53515,
+    "skillKey": "clawhub-disposable-camera-photo-generator",
+    "name": "Disposable Camera Photo Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "disposable-camera-photo-generator",
+    "url": "https://clawhub.ai/skills/disposable-camera-photo-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/disposable-camera-photo-generator-3b42995240cc9f48.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate authentic disposable camera photos with harsh flash, film grain, light leaks, date stamps, and that nostalgic Y2K snapshot aesthetic — perfect for I..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blammectrappora",
+      "userId": "s17e1t07j9b4mkk29p15qwbst983hdan",
+      "displayName": "blammectrappora",
+      "image": "https://avatars.githubusercontent.com/u/258436334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 81,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777522296876,
+      "changelog": "Initial release of Disposable Camera Photo Generator.\n\n- Generates images with authentic disposable camera effects: harsh flash, film grain, light leaks, and date stamps for a vintage Y2K look.\n- Supports custom prompts and reference image style inheritance.\n- Adjustable output sizes: portrait, landscape, square, or tall.\n- Requires a Neta API token for image generation (free trial available).\n- Simple installation via npx and easy command-line usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5c0ed280e48717189234378c0f2dbad5f1746d6db76a29c749cc76ed105c465"
+}

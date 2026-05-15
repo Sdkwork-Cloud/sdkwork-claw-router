@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "self-improving-session",
+    "displayName": "Extracts durable workflow preferences and project conventions from a session, then proposes the smallest valid update to global or project CLAUDE.md files. Trigger when the user asks to remember rules, when repeated preference patterns appear, or at session end for non-trivial sessions.",
+    "summary": "Extracts durable workflow preferences and project conventions from a session, then proposes the smallest valid update to global or project CLAUDE.md files. T...",
+    "tags": {
+      "latest": "1.0.3"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "createdAt": 1775811659724,
+    "updatedAt": 1777527383447
+  },
+  "latestVersion": {
+    "version": "1.0.3",
+    "createdAt": 1776157903564,
+    "changelog": "self-improving-session 1.0.3: Major ruleset and scope tightening\n\n- Greatly clarifies what counts as a durable, reusable session rule versus noise.\n- Splits rules by confidence level with clear thresholds for `[tentative]`, `[stable]`, and correction markers.\n- Adds explicit rule budget guidance to reduce `CLAUDE.md` bloat (max ~20 global, ~15 project-specific rules).\n- Now prefers merging, replacing, or compressing over appending near-duplicates; often proposes zero net change.\n- New reference file `references/rule-quality.md` explains what should be learned or skipped.\n- Removes embedded session-end automation instructions from core docs (now in README only).\n- Stronger, briefer, and safer rule extraction and merge policies.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "lq434239",
+    "userId": "s1728p25v3hyr2n7qt74s00r7h84ecm4",
+    "displayName": "TaiChangXieBuWan",
+    "image": "https://avatars.githubusercontent.com/u/29980602?v=4"
+  },
+  "moderation": null
+}

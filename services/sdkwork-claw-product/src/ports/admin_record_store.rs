@@ -31,6 +31,7 @@ pub struct ListAdminRecordLogsQuery {
 pub struct AdminRecordLogsPage {
     pub logs: Vec<AdminRecordLogItem>,
     pub total: i64,
+    #[serde(rename = "page")]
     pub page_no: i64,
     pub page_size: i64,
 }

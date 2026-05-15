@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72147,
+  "uuid": "skill-clawhub-hainan-cost-index",
+  "skillKey": "clawhub-hainan-cost-index",
+  "name": "Hainan Cost Index",
+  "summary": "海南省建设工程造价指标专家技能。基于《2024年版海南省建设工程典型案例造价指标》，提供房屋建筑、市政工程等各类工程的造价指标查询、对比分析、投资估算等服务。触发词包括：海南造价指标、海南省造价、造价指标查询、投资估算、造价对比、建安造价、单方造价、经济指标、工程量指标。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hainan_cost_index",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ruiyongwang",
+      "features": [
+        "海南省建设工程造价指标专家技能。基于《2024年版海南省建设工程典型案例造价指标》，提供房屋建筑、市政工程等各类工程的造价指标查询、对比分析、投资估算等服务。触发词包括：海南造价指标、海南省."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hainan-cost-index@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127424769?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hainan-cost-index",
+      "url": "https://clawhub.ai/skills/hainan-cost-index"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hainan-cost-index",
+    "url": "https://clawhub.ai/skills/hainan-cost-index",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hainan-cost-index-b28a42f49ec169e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hainan-cost-index@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hainan-cost-index-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d7da34f545dfc94ed3c3903e54db5c085e224d2396476974eb88da8146f95bc",
+      "artifactSizeBytes": 2816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T12:57:10.807Z"
+}

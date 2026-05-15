@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45266,
+  "uuid": "skill-clawhub-axodus-frontend-builder",
+  "skillKey": "clawhub-axodus-frontend-builder",
+  "name": "RedHat Frontend Builder",
+  "summary": "Build frontend apps with safe API integration and quality gates.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axodus_frontend_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mauricio Z.",
+      "features": [
+        "Build frontend apps with safe API integration and quality gates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/axodus-frontend-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26634695?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "axodus-frontend-builder",
+      "url": "https://clawhub.ai/skills/axodus-frontend-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axodus-frontend-builder",
+    "url": "https://clawhub.ai/skills/axodus-frontend-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axodus-frontend-builder-6cb58de8e919e001.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/axodus-frontend-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-axodus-frontend-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea85a71af837bb78e2964b01c946364ded869c5f5126433ecc70fb1486fc034f",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T13:05:39.303Z"
+}

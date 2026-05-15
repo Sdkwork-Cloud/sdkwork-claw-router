@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-excel-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_excel_editor",
+  "skill": {
+    "id": 67986,
+    "skillKey": "clawhub-voice-excel-editor",
+    "name": "语音Excel编辑助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-excel-editor",
+    "url": "https://clawhub.ai/skills/voice-excel-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-excel-editor-f1408aaaa626778b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when: 用户要上传 Excel 文件和一段语音指令，希望把语音中的表格编辑要求转成结构化 Excel 操作并落到工作簿里时触发。 适用于格式调整、数据写入、基础计算、行列结构修改、多步顺序编辑，以及需要输出执行日志和修改后 Excel 文件的场景。Skill 会先做语音转写与文本规范化，再让 Agen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xinhao-96",
+      "userId": "s17est75fddx5qx0wkm9n1szdh85tezf",
+      "displayName": "Xin",
+      "image": "https://avatars.githubusercontent.com/u/151364531?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 295,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773732539800,
+      "changelog": "- Initial release of voice-excel-editor.\n- Supports processing Excel files via Chinese voice commands.\n- Converts voice instructions to structured Excel operations using SenseAudio ASR and stepwise normalization.\n- Ensures every edit is logged and generates a modified Excel file as output.\n- Handles multi-step tasks including formatting, data entry, calculation, structure editing, and execution logs.\n- Requires both an Excel file and voice input; enforces strict validation and error handling per documented rules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5c542c7fb9382b35dc603c4a9fd559688d3f8479a7f884386cf83992d95f6a5"
+}

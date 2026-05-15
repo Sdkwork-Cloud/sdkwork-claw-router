@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14393,
+  "uuid": "skill-clawhub-caching",
+  "skillKey": "clawhub-caching",
+  "name": "caching",
+  "summary": "Caching strategies, invalidation, eviction policies, HTTP caching, distributed caching, and anti-patterns. Use when designing cache layers, choosing eviction policies, debugging stale data, or optimizing read-heavy workloads.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caching",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Caching strategies, invalidation, eviction policies, HTTP caching, distributed caching, and ant.",
+        "Use when designing cache layers, choosing eviction policies, debugging stale data, or optimizin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/caching@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "caching",
+      "url": "https://clawhub.ai/skills/caching"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caching",
+    "url": "https://clawhub.ai/skills/caching",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caching-6fe78deb222783bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/caching@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-caching-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f40b2f9c38e8360b62f2548acb37fbecfb5c402560cceccae275f5c53a57a7dc",
+      "artifactSizeBytes": 2361
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T12:08:04.077Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/runpod-media@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runpod_media",
+  "skill": {
+    "id": 50508,
+    "skillKey": "clawhub-runpod-media",
+    "name": "Runpod Media"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runpod-media",
+    "url": "https://clawhub.ai/skills/runpod-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runpod-media-5aee04aa91553b00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images from text, edit images with text instructions, animate images to video, and generate video from text — all via RunPod public AI endpoints. Us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "itamarcoh3n",
+      "userId": "publishers:itamarcoh3n",
+      "displayName": "Itamar C",
+      "image": "https://avatars.githubusercontent.com/u/26421901?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 484,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1772899190487,
+      "changelog": "Fix: p-image-t2i endpoint uses result field (not image_url); confirmed API host is api.runpod.ai",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:021a0ef44ff0b9a16783f4cbc2a60ce080807296adeef5e70d207db59f58c94f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12902,
+  "uuid": "skill-clawhub-swarm-janitor",
+  "skillKey": "clawhub-swarm-janitor",
+  "name": "Swarm Janitor",
+  "summary": "Enterprise-grade OpenClaw skill for cleaning up orphaned subagent processes, archiving transcripts to SuperMemory, and freeing disk space without losing work. Features dry-run mode, configurable retention policies, and comprehensive safety.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swarm_janitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LvcidPsyche",
+      "features": [
+        "Enterprise-grade OpenClaw skill for cleaning up orphaned subagent processes, archiving transcri.",
+        "Features dry-run mode, configurable retention policies, and comprehensive safety checks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swarm-janitor@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160208855?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swarm-janitor",
+      "url": "https://clawhub.ai/skills/swarm-janitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swarm-janitor",
+    "url": "https://clawhub.ai/skills/swarm-janitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swarm-janitor-0d2ccc765d09bc08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swarm-janitor@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-swarm-janitor-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:814729ce1ef56944d27a2bfc9d431d8a21285d06638bd47d6e6f8f0853ce5b66",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T00:29:09.986Z"
+}

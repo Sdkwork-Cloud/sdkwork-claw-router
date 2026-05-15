@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/runcloud@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runcloud",
+  "skill": {
+    "id": 28478,
+    "skillKey": "clawhub-runcloud",
+    "name": "Runcloud Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runcloud",
+    "url": "https://clawhub.ai/skills/runcloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runcloud-05c04caff3d836ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Runcloud servers, databases, web apps, services, cronjobs, deployments, and health via the Runcloud API v3. Trigger when the user mentions Runcloud, wa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neshable",
+      "userId": "s1709tq1npz8eymf7w6kcb5evs849bkm",
+      "displayName": "Nesho Sabakov",
+      "image": "https://avatars.githubusercontent.com/u/17108106?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775733675399,
+      "changelog": "Initial release of the Runcloud skill.\n\n- Query servers, web apps, databases, cronjobs, deployments, users, and health via Runcloud API v3.\n- Retrieve stats, hardware info, services, SSL certificates, supervisor jobs, and domains.\n- Trigger safe actions: deploy web apps, restart services, test cronjobs, issue Let's Encrypt SSL.\n- Provides bash/curl+jq usage examples for all common operations.\n- Requires an API token and jq for outputs. No destructive operations exposed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c2c1725f23efc35d879c945d5c77df123d155d88277671897db8eaba48b431d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yby6-video-parser-skill@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yby6_video_parser_skill",
+  "skill": {
+    "id": 70268,
+    "skillKey": "clawhub-yby6-video-parser-skill",
+    "name": "Short Video Parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yby6-video-parser-skill",
+    "url": "https://clawhub.ai/skills/yby6-video-parser-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yby6-video-parser-skill-db6fe977ce6fd37b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "此技能用于解析短视频链接，支持解析抖音、快手、B站等多个主流平台的短视频和图文链接，并能自动提取语音内容转录为文字。适用于需要批量获取视频元数据或将视频内容转为文本的场景时使用此 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangbuyiya",
+      "userId": "s17dhwttehkzrsjtrx1d5x9d4n83gz2f",
+      "displayName": "yangbuyiya",
+      "image": "https://avatars.githubusercontent.com/u/52228969?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774320625430,
+      "changelog": "- Added English README file (README_EN.md) for international users.\n- Updated environment variables section in SKILL.md to clarify the requirements and mark transcription key as \"Optional, transcription is required and mandatory\".\n- Added a \"binaries\" section to SKILL.md specifying ffmpeg as a required tool.\n- No code or functional changes to the parsing/transcription scripts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a4316db30d5a5a6074364fabaab8d756fc8e7c909e43fee4588371a2e5731e7"
+}

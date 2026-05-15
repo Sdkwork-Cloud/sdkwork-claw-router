@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32704,
+  "uuid": "skill-clawhub-smart-scraper",
+  "skillKey": "clawhub-smart-scraper",
+  "name": "Smart Scraper",
+  "summary": "AI-powered web scraper with intelligent structure recognition. Extracts lists, articles, and tables from any website with automatic type detection.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_scraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yadanzheng68-cmyk",
+      "features": [
+        "AI-powered web scraper with intelligent structure recognition",
+        "Extracts lists, articles, and tables from any website with automatic type detection."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-scraper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265278641?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-scraper",
+      "url": "https://clawhub.ai/skills/smart-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-scraper",
+    "url": "https://clawhub.ai/skills/smart-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-scraper-8b0249391ac1d1a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-scraper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-scraper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:958d3aa225fac6a51f8d994c0584fa2caffc270b812ce11863647776ab629c93",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T12:00:30.911Z"
+}

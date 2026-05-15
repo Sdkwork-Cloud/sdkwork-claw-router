@@ -3,7 +3,7 @@ use sdkwork_claw_product::infrastructure::provider::ProviderSecretMapResolver;
 use sdkwork_claw_product::ports::ProviderSecretResolver;
 
 #[test]
-fn provider_secret_map_resolver_resolves_tokens_without_debug_leak() {
+fn provider_secret_map_resolver_resolves_secret_values_without_debug_leak() {
     let config = ProviderSecretMapConfig::from_json(
         r#"{
             "vault://providers/openrouter/account/main": "sk-openrouter-provider-token",
@@ -16,17 +16,18 @@ fn provider_secret_map_resolver_resolves_tokens_without_debug_leak() {
     assert_eq!(
         "sk-openrouter-provider-token",
         resolver
-            .resolve_bearer_token("vault://providers/openrouter/account/main")
+            .resolve_secret_value("vault://providers/openrouter/account/main")
             .unwrap()
     );
     assert_eq!(
         "sk-local-provider-token",
         resolver
-            .resolve_bearer_token(" env://providers/local/account/dev ")
+            .resolve_secret_value(" env://providers/local/account/dev ")
             .unwrap()
     );
     assert!(!format!("{resolver:?}").contains("sk-openrouter-provider-token"));
     assert!(!format!("{resolver:?}").contains("sk-local-provider-token"));
+    assert!(!format!("{resolver:?}").contains("bearer_tokens"));
 }
 
 #[test]
@@ -37,14 +38,14 @@ fn provider_secret_map_resolver_rejects_missing_secret_ref_without_leaking_value
     .unwrap();
     let resolver = ProviderSecretMapResolver::from_config(config);
 
-    let blank = resolver.resolve_bearer_token("   ").unwrap_err();
+    let blank = resolver.resolve_secret_value("   ").unwrap_err();
     assert!(blank
         .to_string()
         .contains("provider secret_ref is required"));
     assert!(!blank.to_string().contains("sk-openrouter-provider-token"));
 
     let missing = resolver
-        .resolve_bearer_token("vault://providers/openrouter/account/missing")
+        .resolve_secret_value("vault://providers/openrouter/account/missing")
         .unwrap_err();
     assert!(missing
         .to_string()

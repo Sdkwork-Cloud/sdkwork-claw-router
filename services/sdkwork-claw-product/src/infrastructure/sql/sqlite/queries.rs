@@ -136,23 +136,97 @@ SELECT
     m.provider_model,
     COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template) AS base_url,
     a.secret_ref,
+    CAST(a.auth_type AS TEXT) AS auth_type,
+    CAST(a.auth_config AS TEXT) AS auth_config_json,
     c.timeout_ms,
     c.retry_policy AS retry_policy_json
 FROM integration_channel_model m
 JOIN integration_channel c ON c.id = m.channel_id
-LEFT JOIN integration_provider p ON p.provider_code = c.provider_code
-LEFT JOIN integration_provider_account a ON a.id = c.account_id
+JOIN integration_provider p ON p.provider_code = c.provider_code
+JOIN integration_provider_account a ON a.id = c.account_id
 WHERE m.deleted_at IS NULL
   AND c.deleted_at IS NULL
-  AND (p.id IS NULL OR p.deleted_at IS NULL)
-  AND (a.id IS NULL OR a.deleted_at IS NULL)
+  AND p.deleted_at IS NULL
+  AND a.deleted_at IS NULL
   AND m.status = 1
   AND c.status = 1
-  AND (p.id IS NULL OR p.status = 1)
-  AND (a.id IS NULL OR a.status = 1)
+  AND p.status = 1
+  AND a.status = 1
+  AND COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template) IS NOT NULL
+  AND NULLIF(COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template), '') IS NOT NULL
+  AND NULLIF(a.secret_ref, '') IS NOT NULL
   AND (m.effective_from IS NULL OR datetime(m.effective_from) <= CURRENT_TIMESTAMP)
   AND (m.effective_to IS NULL OR datetime(m.effective_to) > CURRENT_TIMESTAMP)
 ORDER BY c.priority ASC, c.weight DESC, m.id ASC
+"#;
+
+pub const LOAD_PROVIDER_ACCOUNT_POOL_ROUTES: &str = r#"
+SELECT
+    c.provider_code,
+    c.id AS channel_id,
+    COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template) AS base_url,
+    a.secret_ref,
+    CAST(a.auth_type AS TEXT) AS auth_type,
+    CAST(a.auth_config AS TEXT) AS auth_config_json,
+    c.timeout_ms,
+    c.retry_policy AS retry_policy_json
+FROM integration_channel c
+JOIN integration_provider p ON p.provider_code = c.provider_code
+JOIN integration_provider_account a ON a.id = c.account_id
+WHERE c.deleted_at IS NULL
+  AND p.deleted_at IS NULL
+  AND a.deleted_at IS NULL
+  AND c.status = 1
+  AND p.status = 1
+  AND a.status = 1
+  AND COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template) IS NOT NULL
+  AND NULLIF(COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template), '') IS NOT NULL
+  AND NULLIF(a.secret_ref, '') IS NOT NULL
+ORDER BY c.priority ASC, c.weight DESC, c.id ASC
+"#;
+
+pub const LOAD_ROUTING_POLICIES: &str = r#"
+SELECT
+    p.id,
+    COALESCE(p.tenant_id, 0) AS tenant_id,
+    COALESCE(p.organization_id, 0) AS organization_id,
+    p.policy_code,
+    p.policy_scope,
+    p.subject_id,
+    p.capability,
+    p.default_profile_id,
+    p.fallback_mode
+FROM ai_routing_policy p
+JOIN ai_routing_profile pr ON pr.id = p.default_profile_id
+WHERE p.deleted_at IS NULL
+  AND pr.deleted_at IS NULL
+  AND p.status = 1
+  AND pr.status = 1
+ORDER BY p.policy_scope DESC, p.updated_at DESC, p.id DESC
+"#;
+
+pub const LOAD_ROUTING_RULES: &str = r#"
+SELECT
+    r.id,
+    COALESCE(r.tenant_id, 0) AS tenant_id,
+    COALESCE(r.organization_id, 0) AS organization_id,
+    r.profile_id,
+    r.rule_code,
+    r.priority,
+    COALESCE(r.match_expression, '{}') AS match_expression_json,
+    r.target_model,
+    COALESCE(r.candidate_channels, '[]') AS candidate_channels_json,
+    COALESCE(r.fallback_chain, '[]') AS fallback_chain_json,
+    COALESCE(r.constraints, '{}') AS constraints_json
+FROM ai_routing_rule r
+JOIN ai_routing_profile pr ON pr.id = r.profile_id
+WHERE r.deleted_at IS NULL
+  AND pr.deleted_at IS NULL
+  AND r.status = 1
+  AND pr.status = 1
+  AND (r.effective_from IS NULL OR datetime(r.effective_from) <= CURRENT_TIMESTAMP)
+  AND (r.effective_to IS NULL OR datetime(r.effective_to) > CURRENT_TIMESTAMP)
+ORDER BY r.profile_id ASC, r.priority ASC, r.id ASC
 "#;
 
 pub const LOAD_PRICING_PLANS: &str = r#"

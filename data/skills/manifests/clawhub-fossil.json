@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47093,
+  "uuid": "skill-clawhub-fossil",
+  "skillKey": "clawhub-fossil",
+  "name": "Fossil",
+  "summary": "Semantic failure memory for AI agents. Search past reasoning failures before acting to avoid known mistakes. Record new failures and resolutions after they h...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fossil",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "heyrtl",
+      "features": [
+        "Semantic failure memory for AI agents",
+        "Search past reasoning failures before acting to avoid known mistakes",
+        "Record new failures and resolutions after they h..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fossil@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146240529?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fossil",
+      "url": "https://clawhub.ai/skills/fossil"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fossil",
+    "url": "https://clawhub.ai/skills/fossil",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fossil-d735fb5e9f2f61a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fossil@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fossil-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6bf9044581a88fd98b2198543d643af65e89e3ed168399b11ec3b9861ebb362d",
+      "artifactSizeBytes": 2245
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T13:05:15.315Z"
+}

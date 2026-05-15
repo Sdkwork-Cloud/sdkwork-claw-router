@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/animation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.animation",
+  "skill": {
+    "id": 22111,
+    "skillKey": "clawhub-animation",
+    "name": "Animation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "animation",
+    "url": "https://clawhub.ai/skills/animation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/animation-ec23cef03131da4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate CSS and SVG animation code snippets using bash and Python. Use when building UI animations, keyframes, or transition effects."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773840634693,
+      "changelog": "Initial release of the animation skill — generate CSS/SVG animation code from the command line.\n\n- Supports creating production-ready CSS keyframes, transitions, motion paths, and easing functions.\n- Stores all animation definitions locally for reuse, chaining, sequencing, and export.\n- Includes commands for building, exporting, previewing, and listing animations.\n- Outputs code as JSON, raw CSS/SVG, or HTML previews.\n- Runs on Python 3.6+ and Bash 4+.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77fc4145a7b007608c2b61130363f8b984023acac276a74bf570e0959bb35a8e"
+}

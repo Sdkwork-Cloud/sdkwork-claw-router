@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67793,
+  "uuid": "skill-clawhub-converse",
+  "skillKey": "clawhub-converse",
+  "name": "Converse",
+  "summary": "提供Converse匡威鞋款、门店、价格及新品信息，助您了解经典与联名系列，查询全球零售点。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.converse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供Converse匡威鞋款、门店、价格及新品信息，助您了解经典与联名系列，查询全球零售点。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/converse@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "converse",
+      "url": "https://clawhub.ai/skills/converse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "converse",
+    "url": "https://clawhub.ai/skills/converse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/converse-6a930006ef296ea0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/converse@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-converse-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38bd0c6fd09ba4fc020adb0a817f48f80a4289454c5c6e38d5c618147f21ee8b",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:32:23.473Z"
+}

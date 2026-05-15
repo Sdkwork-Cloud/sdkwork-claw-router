@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70722,
+  "uuid": "skill-clawhub-bazi-pan",
+  "skillKey": "clawhub-bazi-pan",
+  "name": "Bazi Pan",
+  "summary": "八字排盘，根据出生年月日时排八字、大运、流年，分析五行强弱与命理特点",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bazi_pan",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mingo_318",
+      "features": [
+        "八字排盘，根据出生年月日时排八字、大运、流年，分析五行强弱与命理特点"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bazi-pan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62329898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bazi-pan",
+      "url": "https://clawhub.ai/skills/bazi-pan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bazi-pan",
+    "url": "https://clawhub.ai/skills/bazi-pan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bazi-pan-91199f2f30c10eae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bazi-pan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bazi-pan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf6d9f61557e271611533d313e83249b317921c3793708625e080a7d1176aa56",
+      "artifactSizeBytes": 2345
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T06:27:25.384Z"
+}

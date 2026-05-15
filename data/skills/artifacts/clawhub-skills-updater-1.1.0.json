@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skills-updater@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_updater",
+  "skill": {
+    "id": 28439,
+    "skillKey": "clawhub-skills-updater",
+    "name": "Skills Updater"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-updater",
+    "url": "https://clawhub.ai/skills/skills-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-updater-a8031a1e32d5bda0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically detect, backup, and update OpenClaw skills using caching, retry logic, dry-run mode, and detailed upgrade reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thunder1743",
+      "userId": "s17b648e04t6dwc9eteb629d3h83k7bz",
+      "displayName": "thunder1743",
+      "image": "https://avatars.githubusercontent.com/u/267053921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774794625716,
+      "changelog": "v1.1.0: Add ~/.openclaw/workspace/skills/ to scan paths (was missing - caused many skills to be invisible). Update SKILL.md credits section with correct version and date.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba8c19ae9fa4120be54fbcf5905426778bca5aaa9bde79a2ec38a064ca2d1188"
+}

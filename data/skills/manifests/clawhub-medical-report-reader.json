@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73537,
+  "uuid": "skill-clawhub-medical-report-reader",
+  "skillKey": "clawhub-medical-report-reader",
+  "name": "医疗报告解读助手",
+  "summary": "帮助用户理解血常规、肝肾功能等医疗检验报告中的指标含义及异常提示，提供通俗解释和健康建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_report_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hikaruhuimin",
+      "features": [
+        "帮助用户理解血常规、肝肾功能等医疗检验报告中的指标含义及异常提示，提供通俗解释和健康建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medical-report-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/275198871?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medical-report-reader",
+      "url": "https://clawhub.ai/skills/medical-report-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-report-reader",
+    "url": "https://clawhub.ai/skills/medical-report-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-report-reader-8faa52a6b10cae56.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medical-report-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-medical-report-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:378513f39f50a63e1317b2533a4a50e1098276dce97e8f30484554fb2939a6f2",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T14:46:00.226Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36997,
+  "uuid": "skill-clawhub-web-tester",
+  "skillKey": "clawhub-web-tester",
+  "name": "Web Tester",
+  "summary": "Web UI testing and browser automation using Playwright or Selenium. Navigate pages, interact with elements, take screenshots, validate UI state, generate E2E...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_tester",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhanghengyi1986-afk",
+      "features": [
+        "Web UI testing and browser automation using Playwright or Selenium",
+        "Navigate pages, interact with elements, take screenshots, validate UI state, generate E2E..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-tester@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266693384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-tester",
+      "url": "https://clawhub.ai/skills/web-tester"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-tester",
+    "url": "https://clawhub.ai/skills/web-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-tester-d12aa8159855fc24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-tester@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-tester-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6bb9480c160cb8cec94c81658994a9f2a1c9f29a2e95c7c172a6a4a18fdb792a",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T01:46:41.336Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21166,
+  "uuid": "skill-clawhub-wells1137-skill-updater",
+  "skillKey": "clawhub-wells1137-skill-updater",
+  "name": "Skill Updater",
+  "summary": "Updates a specific skill within a repository and triggers the automated publishing pipeline. Use when the user wants to release a new version of a single skill.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wells1137_skill_updater",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wells Wu",
+      "features": [
+        "Updates a specific skill within a repository and triggers the automated publishing pipeline",
+        "Use when the user wants to release a new version of a single skill."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wells1137-skill-updater@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195866913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wells1137-skill-updater",
+      "url": "https://clawhub.ai/skills/wells1137-skill-updater"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wells1137-skill-updater",
+    "url": "https://clawhub.ai/skills/wells1137-skill-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wells1137-skill-updater-73600112e634fc7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wells1137-skill-updater@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wells1137-skill-updater-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51e5b34c4fc238ce1567d1c803240643138cb5457a8e2a5c75ed47c8391f8634",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T14:58:49.687Z"
+}

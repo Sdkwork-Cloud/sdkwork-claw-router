@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geo-push-policy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_push_policy",
+  "skill": {
+    "id": 68570,
+    "skillKey": "clawhub-geo-push-policy",
+    "name": "Geo Push Policy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-push-policy",
+    "url": "https://clawhub.ai/skills/geo-push-policy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-push-policy-dc334acb1d80ef1a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "管理事件推送策略，包括冷却期、观察池、推送次数限制、事件状态跟踪和频率限制保护。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liweijie0709-cmyk",
+      "userId": "s178pv1a35w03t664czf771xvx83p3kr",
+      "displayName": "liweijie0709-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/266322839?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774595540210,
+      "changelog": "geo-push-policy v1.0.0\n\n- 初始版本发布，从 smart-geo-push.py v2.0 拆分\n- 实现事件冷却期、观察池、推送次数限制等基础推送策略\n- 支持事件状态流转（new → escalating → ongoing → resolved）\n- 加入飞书推送频率保护及自动重试\n- 提供死信队列机制与补投能力\n- 提供 Python API 与状态持久化方案",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b61e5405aa72cd45ef4469731061260521c1e2ad2c3e31775d50f6a2c5517b3"
+}

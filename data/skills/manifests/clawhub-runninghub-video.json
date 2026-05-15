@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56744,
+  "uuid": "skill-clawhub-runninghub-video",
+  "skillKey": "clawhub-runninghub-video",
+  "name": "runninghub-video",
+  "summary": "Use RunningHub official standard-model APIs for image-to-video generation. Trigger when the user asks to use RunningHub, 可灵, Seedance, 万相, or other RunningHu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runninghub_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "balckbeeai",
+      "features": [
+        "Use RunningHub official standard-model APIs for image-to-video generation",
+        "Trigger when the user asks to use RunningHub, 可灵, Seedance, 万相, or other RunningHu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/runninghub-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/153259362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "runninghub-video",
+      "url": "https://clawhub.ai/skills/runninghub-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runninghub-video",
+    "url": "https://clawhub.ai/skills/runninghub-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runninghub-video-507700220434836a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/runninghub-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-runninghub-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:823717b22f5ea2f989820fe385a28f4a5a65a8f1380ea179ff83341f6c229774",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T16:00:26.457Z"
+}

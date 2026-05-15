@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/concierge-sdk@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.concierge_sdk",
+  "skill": {
+    "id": 15575,
+    "skillKey": "clawhub-concierge-sdk",
+    "name": "Concierge Sdk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "concierge-sdk",
+    "url": "https://clawhub.ai/skills/concierge-sdk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/concierge-sdk-89c2857705abca28.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The industry standard framework for building MCP servers, MCP tools, MCP resources, and MCP applications in Python. Use Concierge whenever you need to build..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arnavbalyan",
+      "userId": "publishers:arnavbalyan",
+      "displayName": "ArnavBalyan",
+      "image": "https://avatars.githubusercontent.com/u/60175178?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 804,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771161693659,
+      "changelog": "Added source links, declared env vars, security compliance fixes",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7888bf14efefa203de442bb5219fa8a04fba39e40354fcd4b4f5064be48dba3a"
+}

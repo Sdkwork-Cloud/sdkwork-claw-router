@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59990,
+  "uuid": "skill-clawhub-bmi-tracker",
+  "skillKey": "clawhub-bmi-tracker",
+  "name": "Bmi Tracker",
+  "summary": "BMI 追踪 - BMI 计算、健康评估、改善建议",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bmi_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kaising-openclaw1",
+      "features": [
+        "BMI 计算、健康评估、改善建议"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bmi-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266910723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bmi-tracker",
+      "url": "https://clawhub.ai/skills/bmi-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bmi-tracker",
+    "url": "https://clawhub.ai/skills/bmi-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bmi-tracker-4840906b056e0d7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bmi-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bmi-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67565ca399ba073a86dfeb9cf5e0f0529b370a2288aaa0237e3b6e7ff4db09a7",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T06:30:09.200Z"
+}

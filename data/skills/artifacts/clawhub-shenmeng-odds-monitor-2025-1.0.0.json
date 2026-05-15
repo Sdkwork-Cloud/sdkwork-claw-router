@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shenmeng-odds-monitor-2025@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shenmeng_odds_monitor_2025",
+  "skill": {
+    "id": 71315,
+    "skillKey": "clawhub-shenmeng-odds-monitor-2025",
+    "name": "Odds Movement Monitor 盘口监控"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shenmeng-odds-monitor-2025",
+    "url": "https://clawhub.ai/skills/shenmeng-odds-monitor-2025",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shenmeng-odds-monitor-2025-3f9e7f5f717211e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "盘口变化监控助手 - 实时监控足球、篮球等体育赛事的亚盘、欧赔、大小球盘口变化。检测异常波动、大额注单信号、机构态度转变。支持多平台对比、历史趋势分析、自动预警通知。当用户需要监控盘口变化、追踪赔率走势、发现投注机会时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenmeng",
+      "userId": "s176scxxt9cxw1s0gqyexga8hd83qc4r",
+      "displayName": "shenmeng",
+      "image": "https://avatars.githubusercontent.com/u/6897076?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775340837280,
+      "changelog": "Odds Movement Monitor 1.0.0 – Initial Release\n\n- Real-time monitoring of Asian Handicap, European odds, and Over/Under changes across major sports.\n- Detects abnormal fluctuations, significant bet signals, and bookmaker attitude shifts.\n- Supports multi-platform comparison, historical trend analysis, and automated alert notifications.\n- Includes sample monitoring commands and pre-built use cases for anomaly detection and opportunity discovery.\n- Integrated with SkillPay for usage-based billing (0.01 USDT per call).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d28ffeb223af0f760df7d28856a05e9b2e31304a73e57ddeeff42eb0ac0e8525"
+}

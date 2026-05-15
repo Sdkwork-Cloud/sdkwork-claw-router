@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workflow-tools@1.5.1",
+  "version": "1.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workflow_tools",
+  "skill": {
+    "id": 20650,
+    "skillKey": "clawhub-workflow-tools",
+    "name": "Workflow Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workflow-tools",
+    "url": "https://clawhub.ai/skills/workflow-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workflow-tools-5975ec784dc04873.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work smarter with loop detection, parallel decisions, and file size analysis"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leegitw",
+      "userId": "s179srg0a58h1v79wy2w7g9ymh83jxhd",
+      "displayName": "Lee Brown",
+      "image": "https://avatars.githubusercontent.com/u/1395866?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 525,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.5.1",
+      "createdAt": 1774472073071,
+      "changelog": "- Updated author email in SKILL.md\n- Bumped version from 1.4.0 to 1.5.0 in SKILL.md\n- No logic or feature changes—documentation and metadata update only",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3637e273364e621f2055d45f2c22694a7e68a630e553ed4dba10234824c23877"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36901,
+  "uuid": "skill-clawhub-chartai",
+  "skillKey": "clawhub-chartai",
+  "name": "Chart AI",
+  "summary": "Use this skill when the user wants to create visualizations (charts, dashboards, diagrams, Gantt, PPT), analyze data (Excel/CSV upload, cross-file analysis,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chartai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChartGen AI",
+      "features": [
+        "Use this skill when the user wants to create visualizations (charts, dashboards, diagrams, Gant."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chartai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128801127?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chartai",
+      "url": "https://clawhub.ai/skills/chartai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chartai",
+    "url": "https://clawhub.ai/skills/chartai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chartai-8c86b5b2f78e7490.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chartai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chartai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e74d47554dd9148d591bfdb907d55a460c66790aacd66a5fd61e6b18fa812115",
+      "artifactSizeBytes": 2468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:53:34.189Z"
+}

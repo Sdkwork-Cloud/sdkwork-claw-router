@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32536,
+  "uuid": "skill-clawhub-continuous-agent-loop",
+  "skillKey": "clawhub-continuous-agent-loop",
+  "name": "continuous-agent-loop",
+  "summary": "Canonical patterns for continuous autonomous agent loops with quality gates, evals, and recovery controls. Supports sequential, RFC, CI/PR, and exploratory l...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.continuous_agent_loop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Deonte Cooper",
+      "features": [
+        "Canonical patterns for continuous autonomous agent loops with quality gates, evals, and recover.",
+        "Supports sequential, RFC, CI/PR, and exploratory l..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/continuous-agent-loop@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45864171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "continuous-agent-loop",
+      "url": "https://clawhub.ai/skills/continuous-agent-loop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "continuous-agent-loop",
+    "url": "https://clawhub.ai/skills/continuous-agent-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/continuous-agent-loop-872f9368f4f2896b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/continuous-agent-loop@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-continuous-agent-loop-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:703f3fb930b1a194d41137c6ccf133cbaf01070618d17c7fa1b43c5134042cde",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T04:46:40.296Z"
+}

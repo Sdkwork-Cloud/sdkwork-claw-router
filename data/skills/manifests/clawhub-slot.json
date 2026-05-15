@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31516,
+  "uuid": "skill-clawhub-slot",
+  "skillKey": "clawhub-slot",
+  "name": "Slot",
+  "summary": "Use when managing time slots, creating schedule blocks, detecting booking conflicts, exporting calendars, or applying scheduling templates for appointments.",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Use when managing time slots, creating schedule blocks, detecting booking conflicts, exporting."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slot@2.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slot",
+      "url": "https://clawhub.ai/skills/slot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slot",
+    "url": "https://clawhub.ai/skills/slot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slot-6558838331b742a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slot@2.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-slot-2.0.3.json",
+      "version": "2.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9a4bd7f8a5f0a78276511e9f4f9efaf7b5dfc807d9a3d9d8fa5ee523e8848eb",
+      "artifactSizeBytes": 1814
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T16:40:07.979Z"
+}

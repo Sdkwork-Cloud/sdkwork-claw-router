@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49001,
+  "uuid": "skill-clawhub-clawdbot-blogwatcher",
+  "skillKey": "clawhub-clawdbot-blogwatcher",
+  "name": "ClawdBot Blog Watcher",
+  "summary": "Monitor blogs and RSS feeds",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdbot_blogwatcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "Monitor blogs and RSS feeds"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdbot-blogwatcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdbot-blogwatcher",
+      "url": "https://clawhub.ai/skills/clawdbot-blogwatcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdbot-blogwatcher",
+    "url": "https://clawhub.ai/skills/clawdbot-blogwatcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdbot-blogwatcher-7e4626d4ccc291d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdbot-blogwatcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdbot-blogwatcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9647ac0031c45fe07ccd5b9fff72e664c3394f58f6e9b38022a03935c053fff2",
+      "artifactSizeBytes": 1834
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T03:00:14.775Z"
+}

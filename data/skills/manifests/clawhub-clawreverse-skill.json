@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28607,
+  "uuid": "skill-clawhub-clawreverse-skill",
+  "skillKey": "clawhub-clawreverse-skill",
+  "name": "Clawreverse",
+  "summary": "Inspect, checkpoint, rollback, and branch OpenClaw sessions with the ClawReverse plugin. Use when a user wants to recover from bad tool or file changes, rest...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawreverse_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BinHuangPJLAB",
+      "features": [
+        "Inspect, checkpoint, rollback, and branch OpenClaw sessions with the ClawReverse plugin",
+        "Use when a user wants to recover from bad tool or file changes, rest..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawreverse-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92799545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawreverse-skill",
+      "url": "https://clawhub.ai/skills/clawreverse-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawreverse-skill",
+    "url": "https://clawhub.ai/skills/clawreverse-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawreverse-skill-34fec81134bf8230.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawreverse-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawreverse-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96b2e7ab93c7a1e684ecc70ba134b51556adac6acb46dfd8a39dc9fb71910699",
+      "artifactSizeBytes": 2392
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T10:57:36.334Z"
+}

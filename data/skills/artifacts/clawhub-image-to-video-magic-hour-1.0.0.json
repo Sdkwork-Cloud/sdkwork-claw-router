@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-magic-hour@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_magic_hour",
+  "skill": {
+    "id": 44399,
+    "skillKey": "clawhub-image-to-video-magic-hour",
+    "name": "Image To Video Magic Hour"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-magic-hour",
+    "url": "https://clawhub.ai/skills/image-to-video-magic-hour",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-magic-hour-866bda688f638406.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a single golden hour landscape photo into 1080p animated magic hour video just by typing what you need. Whether it's converting golden hour photos into..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776446420094,
+      "changelog": "Initial release — convert golden hour photos into cinematic 1080p videos in seconds.\n\n- Upload a single photo and describe the video style you want; get back a 1080p MP4 in 30–60 seconds.\n- No installation needed — creation and rendering are done via a cloud GPU API.\n- Supports text overlays, aspect ratio changes, audio tracks, and batch processing.\n- Automatic token and session management; free anonymous usage with 100 credits.\n- Simple, prompt-based workflow—no timeline editing or export settings required.\n- Error handling, export, session state, and credits checking included for a smooth experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a54b7e3aeaa2ed67478dbd1ee60c664a3b4be6bb7eeda5e9efb7c2dd93b595c"
+}

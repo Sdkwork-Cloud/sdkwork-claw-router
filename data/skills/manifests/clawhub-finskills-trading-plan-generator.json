@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42381,
+  "uuid": "skill-clawhub-finskills-trading-plan-generator",
+  "skillKey": "clawhub-finskills-trading-plan-generator",
+  "name": "trading-plan-generator",
+  "summary": "Generate structured trade plans with entry, stop-loss, and take-profit levels based on technical and fundamental data from the Finskills API.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finskills_trading_plan_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "finskills",
+      "features": [
+        "Generate structured trade plans with entry, stop-loss, and take-profit levels based on technica."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finskills-trading-plan-generator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32382589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finskills-trading-plan-generator",
+      "url": "https://clawhub.ai/skills/finskills-trading-plan-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finskills-trading-plan-generator",
+    "url": "https://clawhub.ai/skills/finskills-trading-plan-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finskills-trading-plan-generator-187df1f0296f3e0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finskills-trading-plan-generator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-finskills-trading-plan-generator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e7d0fa88f853705803dc6507c2704e28160167e65783928bc4d14b6d6f14ef1",
+      "artifactSizeBytes": 2315
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T15:13:35.213Z"
+}

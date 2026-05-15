@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/signet-guardian@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signet_guardian",
+  "skill": {
+    "id": 15906,
+    "skillKey": "clawhub-signet-guardian",
+    "name": "Signet Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signet-guardian",
+    "url": "https://clawhub.ai/skills/signet-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signet-guardian-04b7d2d32c226e9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Payment guard middleware for AI agents. Use whenever any skill is about to initiate a payment. Runs a preflight check against the user's policy (payments enabled, per-transaction limit, monthly cap). Returns ALLOW, DENY, or CONFIRM_REQUIRE."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rafalzacher1",
+      "userId": "publishers:rafalzacher1",
+      "displayName": "rafalzacher1",
+      "image": "https://avatars.githubusercontent.com/u/46526911?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 953,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770903090988,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:78c2f12f4ba39a30ad86b71c77beea916a8ef46dd5846c0d7d1d24facfdf8247"
+}

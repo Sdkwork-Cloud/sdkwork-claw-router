@@ -62,7 +62,7 @@ const UNRESTRICTED_MODALITIES: ApiKeyModality[] = ['text', 'image', 'video', 'au
 export class ApiKeyService {
   static async fetchKeys(): Promise<ApiKeyPageData> {
     try {
-      const result = await getClawRouterAppSdkClient().router.fetchKeys();
+      const result = await getClawRouterAppSdkClient().iam.apiKeys.list();
       ensurePlusApiSuccess(result, 'Failed to fetch API keys');
       const items = readRequiredApiItems(result, 'Failed to fetch API keys');
       const groups = readRequiredApiItems(result, 'Failed to fetch API key groups', ['groups']);
@@ -80,10 +80,9 @@ export class ApiKeyService {
     const idempotencyKey = createRequestToken('create-api-key');
     const requestId = createRequestToken('request');
     try {
-      const result = await getClawRouterAppSdkClient().router.createKey(
+      const result = await getClawRouterAppSdkClient().iam.apiKeys.create(
         toCreateApiKeyRequest(input),
-        idempotencyKey,
-        requestId,
+        { idempotencyKey, xRequestId: requestId },
       );
 
       const data = readApiRecord(result);

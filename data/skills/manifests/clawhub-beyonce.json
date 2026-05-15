@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57143,
+  "uuid": "skill-clawhub-beyonce",
+  "skillKey": "clawhub-beyonce",
+  "name": "Beyonce",
+  "summary": "Information assistant for Beyoncé 碧昂丝. Get biography, latest news, career highlights, and social media updates.",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beyonce",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for Beyoncé 碧昂丝",
+        "Get biography, latest news, career highlights, and social media updates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beyonce@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beyonce",
+      "url": "https://clawhub.ai/skills/beyonce"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beyonce",
+    "url": "https://clawhub.ai/skills/beyonce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beyonce-8511faeff24111c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beyonce@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-beyonce-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:339266d404c63a52a1e842759a209dfe51ecb04076c5540526d46842c30aae5d",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:02:12.181Z"
+}

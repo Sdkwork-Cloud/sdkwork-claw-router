@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-backend-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_backend_report",
+  "skill": {
+    "id": 34192,
+    "skillKey": "clawhub-amazon-backend-report",
+    "name": "Amazon Backend Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-backend-report",
+    "url": "https://clawhub.ai/skills/amazon-backend-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-backend-report-0a6af666a1db7896.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon Seller Central backend data report auto-analysis agent. Automatically analyze business reports, inventory reports, advertising reports, and financial..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774345700289,
+      "changelog": "Amazon Backend Report Analyzer initial release.\n\n- Automatically analyzes Amazon Seller Central business, inventory, advertising, and financial reports to surface actionable insights.\n- Supports paste-in CSV/text report analysis with clear performance summaries and prioritized action items.\n- Offers commands for analyzing various report types, comparing time periods, generating weekly digests, and managing workspace archives.\n- Frameworks and benchmarks included for business, inventory, advertising, and financial report analysis.\n- Outputs include performance summaries, anomaly detection, inventory status, ad performance, financial health, action lists, and next week forecasts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:614e67149bfa93f89f7becd17a62f1d27308367fad08cab7f842c7ba14afc820"
+}

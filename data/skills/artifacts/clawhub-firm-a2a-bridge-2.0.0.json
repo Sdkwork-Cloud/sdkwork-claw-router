@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firm-a2a-bridge@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firm_a2a_bridge",
+  "skill": {
+    "id": 20457,
+    "skillKey": "clawhub-firm-a2a-bridge",
+    "name": "Firm A2a Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firm-a2a-bridge",
+    "url": "https://clawhub.ai/skills/firm-a2a-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firm-a2a-bridge-757212de6ed1233c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent-to-Agent (A2A) Protocol RC v1.0 bridge for OpenClaw agents. Enables agent discovery, identity cards, task lifecycle management, push notification confi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "romainsantoli-web",
+      "userId": "publishers:romainsantoli-web",
+      "displayName": "romainsantoli-web",
+      "image": "https://avatars.githubusercontent.com/u/246739959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 544,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772403015057,
+      "changelog": "A2A RC v1.0 rewrite: 8 tools, cancel, subscribe SSE, push CRUD, JWS signing",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:61b7b28e4030d94c473316928209e720ca3b6fee2b55d1c34a14b0b87c168c3d"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69781,
+  "uuid": "skill-clawhub-human-tech-blog",
+  "skillKey": "clawhub-human-tech-blog",
+  "name": "human-tech-blog",
+  "summary": "生成读起来像人写的技术博客，彻底去除 AI 味。当用户想写技术文章、博客、教程、总结、踩坑记录时使用。特别适合：写给开发者看的技术博客、个人技术总结、开源项目介绍、技术选型文章。凡是用户提到\"写博客\"、\"技术文章\"、\"去 AI 味\"、\"不像机器写的\"，必须触发此 skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.human_tech_blog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "njcx",
+      "features": [
+        "生成读起来像人写的技术博客，彻底去除 AI 味。当用户想写技术文章、博客、教程、总结、踩坑记录时使用。特别适合：写给开发者看的技术博客、个人技术总结、开源项目介绍、技术选型文章。凡是用户提到."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/human-tech-blog@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18710147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "human-tech-blog",
+      "url": "https://clawhub.ai/skills/human-tech-blog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "human-tech-blog",
+    "url": "https://clawhub.ai/skills/human-tech-blog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/human-tech-blog-01964c43eca7fd0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/human-tech-blog@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-human-tech-blog-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4903c818d05d17289d0fdf4348ae05e7cecff57c48e1da6ecc2eac1ee59029a2",
+      "artifactSizeBytes": 2677
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:16:08.631Z"
+}

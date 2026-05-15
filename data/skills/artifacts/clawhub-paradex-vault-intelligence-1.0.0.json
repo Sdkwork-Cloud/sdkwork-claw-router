@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paradex-vault-intelligence@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paradex_vault_intelligence",
+  "skill": {
+    "id": 44786,
+    "skillKey": "clawhub-paradex-vault-intelligence",
+    "name": "Vault Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paradex-vault-intelligence",
+    "url": "https://clawhub.ai/skills/paradex-vault-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paradex-vault-intelligence-07ba0b0f72a0ce0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Vault discovery, comparison, and analytics for Paradex vaults. Ranks vaults by risk-adjusted returns, analyzes operator track records, monitors TVL changes,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sv",
+      "userId": "s17emvq60g2t4ve39162cg0z8x8407rg",
+      "displayName": "Sergey Vidyuk",
+      "image": "https://avatars.githubusercontent.com/u/14086?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775020901311,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:06f2fbe04bfbc3641a00201e328d5cd44a67df221e5ca0c99aec1bef997e2d7d"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64647,
+  "uuid": "skill-clawhub-novel-generator",
+  "skillKey": "clawhub-novel-generator",
+  "name": "novel-generator 是一个中文爽文小说生成技能。用户只需提供一句话方向（如\"写个都市重生爽文\"），AI 代理即可自动完善提示词、规划大纲、逐章创作并输出为独立 Markdown 文件。 核心特性： 智能提示词生成：从一句话方向自动补全世界观、.",
+  "summary": "根据用户提供的内容方向自动生成提示词并创作爽文小说。适用场景：(1) 用户提供小说方向/题材/关键词，(2) 需要生成章节连贯的长篇爽文，(3) 需要维护角色、地点、情节的连续性，(4) 需要为关键情节生成图解，(5) 需要记录生成失败场景以优化后续创作。支持都市、修仙、玄幻、重生、系统流等多种题材。Use wh...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novel_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ITYHG",
+      "features": [
+        "根据用户提供的内容方向自动生成提示词并创作爽文小说。适用场景：(1) 用户提供小说方向/题材/关键词，(2) 需要生成章节连贯的长篇爽文，(3) 需要维护角色、地点、情节的连续性，(4) 需."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/novel-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64723881?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "novel-generator",
+      "url": "https://clawhub.ai/skills/novel-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novel-generator",
+    "url": "https://clawhub.ai/skills/novel-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novel-generator-797fd6756d3925ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/novel-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-novel-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f364bb12d9dce0b93bf22c7772b4e2d1f2f1c2aed3d820a12f10b139307f24a",
+      "artifactSizeBytes": 3312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T07:22:12.892Z"
+}

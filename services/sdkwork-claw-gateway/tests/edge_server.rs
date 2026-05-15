@@ -799,15 +799,10 @@ async fn edge_server_forwards_api_and_portal_paths_through_rust() {
     assert_eq!("http", app_response["forwardedProto"]);
     assert_eq!(r#"{"kind":"app"}"#, app_response["body"]);
 
-    let admin_response = json_request(
-        router.clone(),
-        Method::GET,
-        "/backend/v3/api/model/list",
-        "",
-    )
-    .await;
+    let admin_response =
+        json_request(router.clone(), Method::GET, "/backend/v3/api/ai/models", "").await;
     assert_eq!("admin", admin_response["upstream"]);
-    assert_eq!("/backend/v3/api/model/list", admin_response["path"]);
+    assert_eq!("/backend/v3/api/ai/models", admin_response["path"]);
 
     let models_response = json_request(router.clone(), Method::GET, "/v1/models", "").await;
     assert_eq!("gateway", models_response["upstream"]);
@@ -974,9 +969,40 @@ async fn edge_server_can_serve_portal_dist_without_node_server() {
             .unwrap()
     );
 
+    let schema_tabs_payload =
+        json_request(router.clone(), Method::GET, "/openapi/schema-tabs.json", "").await;
+    assert_eq!(3, schema_tabs_payload["tabs"].as_array().unwrap().len());
+    assert_eq!("gateway", schema_tabs_payload["tabs"][0]["id"]);
+    assert_eq!(
+        "Claw Router Open API",
+        schema_tabs_payload["tabs"][0]["name"]
+    );
+    assert_eq!(
+        "/openapi.json",
+        schema_tabs_payload["tabs"][0]["schemaUrls"][0]
+    );
+
     let openapi_payload = json_request(router.clone(), Method::GET, "/openapi.json", "").await;
-    assert_eq!("gateway", openapi_payload["upstream"]);
-    assert_eq!("/openapi.json", openapi_payload["path"]);
+    assert_eq!("3.0.3", openapi_payload["openapi"]);
+    assert_eq!("Claw Router Open API", openapi_payload["info"]["title"]);
+    assert!(openapi_payload["paths"]
+        .get("/v1/chat/completions")
+        .is_some());
+
+    let app_openapi_payload =
+        json_request(router.clone(), Method::GET, "/app/v3/api/openapi.json", "").await;
+    assert_eq!("3.1.2", app_openapi_payload["openapi"]);
+    assert_eq!("/app/v3/api", app_openapi_payload["x-api-prefix"]);
+
+    let backend_openapi_payload = json_request(
+        router.clone(),
+        Method::GET,
+        "/backend/v3/api/openapi.json",
+        "",
+    )
+    .await;
+    assert_eq!("3.1.2", backend_openapi_payload["openapi"]);
+    assert_eq!("/backend/v3/api", backend_openapi_payload["x-api-prefix"]);
 
     let spa_response = router
         .oneshot(
@@ -1226,7 +1252,7 @@ async fn edge_server_generates_sdk_with_default_current_origin_generator_url() {
         "spec": {
             "openapi": "3.1.0",
             "info": { "title": "SDKWork Claw Router App API", "version": "1.0.0" },
-            "paths": { "/app/v3/api/router/models": { "get": {} } }
+            "paths": { "/app/v3/api/ai/models": { "get": {} } }
         },
         "language": "typescript",
         "config": {
@@ -1806,7 +1832,7 @@ async fn edge_server_handles_direct_portal_dev_cors_preflight() {
         .oneshot(
             Request::builder()
                 .method(Method::OPTIONS)
-                .uri("/app/v3/api/router/models")
+                .uri("/app/v3/api/ai/models")
                 .header(header::ORIGIN, &upstream.base_url)
                 .header(header::ACCESS_CONTROL_REQUEST_METHOD, "GET")
                 .body(Body::empty())
@@ -1846,7 +1872,7 @@ async fn edge_server_handles_direct_portal_dev_cors_preflight() {
         .oneshot(
             Request::builder()
                 .method(Method::OPTIONS)
-                .uri("/app/v3/api/router/models")
+                .uri("/app/v3/api/ai/models")
                 .header(header::ORIGIN, "https://evil.example.com")
                 .header(header::ACCESS_CONTROL_REQUEST_METHOD, "GET")
                 .body(Body::empty())
@@ -1881,7 +1907,7 @@ async fn edge_server_preserves_upstream_vary_when_adding_cors_origin_vary() {
         .oneshot(
             Request::builder()
                 .method(Method::GET)
-                .uri("/app/v3/api/router/models")
+                .uri("/app/v3/api/ai/models")
                 .header(header::ORIGIN, &upstream.base_url)
                 .body(Body::empty())
                 .unwrap(),

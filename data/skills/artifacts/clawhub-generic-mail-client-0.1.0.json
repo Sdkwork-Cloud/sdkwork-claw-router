@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generic-mail-client@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generic_mail_client",
+  "skill": {
+    "id": 15115,
+    "skillKey": "clawhub-generic-mail-client",
+    "name": "Generic Mail Client"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generic-mail-client",
+    "url": "https://clawhub.ai/skills/generic-mail-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generic-mail-client-a25be4e94520cbb2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send, receive, and manage emails via IMAP/POP3 and SMTP for multiple accounts supporting text, HTML, attachments, folders, and read status."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuwenke123",
+      "userId": "publishers:xuwenke123",
+      "displayName": "xuwenke123",
+      "image": "https://avatars.githubusercontent.com/u/131440946?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1018,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772940053489,
+      "changelog": "- Initial release of generic-mail-client skill.\n- Supports multiple email providers using IMAP/POP3 + SMTP with username/password login.\n- Features multi-account support, sending emails (text/HTML/Markdown, multiple recipients, attachments), and receiving emails (listing/filtering, reading details, attachments).\n- Includes email management functions: mark read/unread and move emails (IMAP only).\n- Credentials and sensitive data are securely stored; logs contain only metadata.\n- Usage limits and security best practices are implemented to prevent misuse.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:46f7d361b9a187f8a73d48565c2ec1de0e6943525b7224f852f59fe9c5ad8260"
+}

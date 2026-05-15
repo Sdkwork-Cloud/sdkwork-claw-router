@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alphaear-signal-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alphaear_signal_tracker",
+  "skill": {
+    "id": 38236,
+    "skillKey": "clawhub-alphaear-signal-tracker",
+    "name": "alphaear-signal-tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alphaear-signal-tracker",
+    "url": "https://clawhub.ai/skills/alphaear-signal-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alphaear-signal-tracker-433461bc1be5291f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track finance investment signal evolution and update logic based on new finance market information. Use when monitoring finance signals and determining if th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhouzhonglu8-png",
+      "userId": "s17fc97saqx9w7mhqhm8bqe1ss840tq5",
+      "displayName": "zhouzhonglu8-png",
+      "image": "https://avatars.githubusercontent.com/u/266468406?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775046193464,
+      "changelog": "AlphaEar Signal Tracker Skill v1.0.0\n\n- Initial release of signal tracking logic for finance investment signals.\n- Tracks and updates investment signal states (Strengthened, Weakened, Falsified, or Unchanged) based on new market information.\n- Outlines an agentic workflow using research, analysis, and signal evolution tracking prompts.\n- Integrates with `alphaear-search` and `alphaear-stock` for data gathering.\n- Depends on `agno` agent framework and uses a `DatabaseManager` with `sqlite3`.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6f693aea9dc12bc0d033a2e55ec3f249abbdecd17ad48610d2a89d5d96693455"
+}

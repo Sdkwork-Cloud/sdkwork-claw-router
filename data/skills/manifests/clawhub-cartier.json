@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71654,
+  "uuid": "skill-clawhub-cartier",
+  "skillKey": "clawhub-cartier",
+  "name": "Cartier",
+  "summary": "提供卡地亚珠宝手表系列、价格、门店信息及礼品推荐，支持售后保养和定制服务咨询。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cartier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供卡地亚珠宝手表系列、价格、门店信息及礼品推荐，支持售后保养和定制服务咨询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cartier@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cartier",
+      "url": "https://clawhub.ai/skills/cartier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cartier",
+    "url": "https://clawhub.ai/skills/cartier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cartier-827c0fb1ae67b3ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cartier@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-cartier-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:421058a5ddfc8389abed461044f316a823669c8ee3617c64a2ca2de6e0e69244",
+      "artifactSizeBytes": 2162
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:27:19.398Z"
+}

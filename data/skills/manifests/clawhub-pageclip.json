@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37336,
+  "uuid": "skill-clawhub-pageclip",
+  "skillKey": "clawhub-pageclip",
+  "name": "Pageclip",
+  "summary": "Pageclip integration. Manage data, records, and automate workflows. Use when the user wants to interact with Pageclip data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pageclip",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Pageclip integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Pageclip data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pageclip@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pageclip",
+      "url": "https://clawhub.ai/skills/pageclip"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pageclip",
+    "url": "https://clawhub.ai/skills/pageclip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pageclip-5edace103ab0bcb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pageclip@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-pageclip-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:600e6f4daad2819393a877e8729cf922c4b21fc34f1710fcd9b543f302cb5e24",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:21:17.835Z"
+}

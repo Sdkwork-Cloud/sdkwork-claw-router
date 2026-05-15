@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40023,
+  "uuid": "skill-clawhub-notamify",
+  "skillKey": "clawhub-notamify",
+  "name": "Notamify NOTAM Skill",
+  "summary": "Retrieve and analyze NOTAMs (Notices to Airmen) for airports worldwide using the Notamify Python SDK",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notamify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Damian",
+      "features": [
+        "Retrieve and analyze NOTAMs (Notices to Airmen) for airports worldwide using the Notamify Pytho."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notamify@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62949685?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notamify",
+      "url": "https://clawhub.ai/skills/notamify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notamify",
+    "url": "https://clawhub.ai/skills/notamify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notamify-0239f552f9eba9a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notamify@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-notamify-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2302a5cf756c9e079ce555a94254bf6394cf8731b7ed3f29d90461d5348e9def",
+      "artifactSizeBytes": 2512
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:12:51.246Z"
+}

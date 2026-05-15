@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19301,
+  "uuid": "skill-clawhub-postgres-mcp-skill",
+  "skillKey": "clawhub-postgres-mcp-skill",
+  "name": "postgres mcp",
+  "summary": "PostgreSQL database management and optimization assistant. Provides complete database operation capabilities: health checks, index optimization, query plan a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postgres_mcp_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "victorzhou123",
+      "features": [
+        "PostgreSQL database management and optimization assistant",
+        "Provides complete database operation capabilities: health checks, index optimization, query pla."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/postgres-mcp-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51261792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "postgres-mcp-skill",
+      "url": "https://clawhub.ai/skills/postgres-mcp-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postgres-mcp-skill",
+    "url": "https://clawhub.ai/skills/postgres-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postgres-mcp-skill-80514f13bb92a35b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/postgres-mcp-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-postgres-mcp-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:431a0ed34ba0e45761fda76d58f4a39d6757053a81a841e6270882f78b0937cc",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T18:15:33.657Z"
+}

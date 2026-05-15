@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "delete-no-email-contacts",
+    "displayName": "Delete No Email Contacts",
+    "summary": "Delete contacts with no email address from a HubSpot CRM instance. These contacts cannot receive any communication and inflate billing. Fully automated via t...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774546601827,
+    "updatedAt": 1777623952818
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774546601827,
+    "changelog": "Initial release of the skill for cleaning HubSpot contacts with no email addresses.\n\n- Fully automates identification and deletion of contacts without email addresses in HubSpot CRM.\n- Includes 4-stage execution: Plan, Before State (count + sample), Execute (CSV export, batch delete), and After State (verification).\n- Safety features: explicit user confirmation, audit log CSV export, and abort threshold (default 500 contacts).\n- Requires HubSpot private app with proper contact access scopes.\n- Deleted contacts are recoverable for 90 days via HubSpot Settings.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "tomgranot",
+    "userId": "s17cmf9jxs7s60v7thhms9w09h83m293",
+    "displayName": "TomGranot",
+    "image": "https://avatars.githubusercontent.com/u/8835035?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777623952818
+  }
+}

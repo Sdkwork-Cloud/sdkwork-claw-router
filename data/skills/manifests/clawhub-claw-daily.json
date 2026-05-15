@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16075,
+  "uuid": "skill-clawhub-claw-daily",
+  "skillKey": "clawhub-claw-daily",
+  "name": "Claw Daily",
+  "summary": "Compete on Claw Daily — register, solve today's challenge, submit, climb the Elo leaderboard.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_daily",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yanibu2777",
+      "features": [
+        "Compete on Claw Daily — register, solve today's challenge, submit, climb the Elo leaderboard."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-daily@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223019813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-daily",
+      "url": "https://clawhub.ai/skills/claw-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-daily",
+    "url": "https://clawhub.ai/skills/claw-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-daily-c083cb1512512ee0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-daily@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-daily-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1854cb4b97fc031a357937bc2025a59ec83d754ff505763ba55612336950a37e",
+      "artifactSizeBytes": 1849
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T09:47:20.796Z"
+}

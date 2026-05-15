@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-with-descript@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_with_descript",
+  "skill": {
+    "id": 41385,
+    "skillKey": "clawhub-video-editing-with-descript",
+    "name": "Video Editing With Descript"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-with-descript",
+    "url": "https://clawhub.ai/skills/video-editing-with-descript",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-with-descript-b2fc337b826a27ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 10-minute interview recording in MP4 into 1080p edited captioned videos just by typing what you need. Whether it's editing video by deleting words fro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776788195163,
+      "changelog": "- Initial release of \"Video Editing with Descript — Edit Video by Editing Text\".\n- Transcribe and edit videos by typing instructions; delete words from transcripts to cut footage.\n- Automatic setup with token creation and cloud session management—user only uploads and types instructions.\n- Single command workflows: remove filler words, add captions, trim silences, and export 1080p MP4—no manual timeline needed.\n- Supports uploads up to 500MB in common video formats, with 1-2 minute processing time per clip.\n- Exposes core actions (upload, edit, export, check credits/status) and robust error handling for seamless user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:719892acdb6923a39d774f88d26590d9785c38d2a545696f53c73051e9c88e31"
+}

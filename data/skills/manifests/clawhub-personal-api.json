@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39418,
+  "uuid": "skill-clawhub-personal-api",
+  "skillKey": "clawhub-personal-api",
+  "name": "Personal API",
+  "summary": "Turn your Obsidian vault into a personal identity layer for AI. Any agent reads ME.md and AGENT.md and instantly knows who you are, how you think, and how to...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "beiyuii",
+      "features": [
+        "Turn your Obsidian vault into a personal identity layer for AI",
+        "Any agent reads ME.md and AGENT.md and instantly knows who you are, how you think, and how to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-api@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105758977?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-api",
+      "url": "https://clawhub.ai/skills/personal-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-api",
+    "url": "https://clawhub.ai/skills/personal-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-api-9b312da89574c729.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-api@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-api-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:113f045b95eef5f3d472e411b46f9c1ba2b21d93dd8ef347852c087cd0a419b8",
+      "artifactSizeBytes": 2421
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T08:28:05.208Z"
+}

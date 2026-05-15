@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25631,
+  "uuid": "skill-clawhub-email-imap-smtp",
+  "skillKey": "clawhub-email-imap-smtp",
+  "name": "Email IMAP/SMTP",
+  "summary": "Connect to mainstream email providers and perform reliable send/receive workflows through IMAP and SMTP with password or OAuth2 authentication. Use when a us...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_imap_smtp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WaziXuan",
+      "features": [
+        "Connect to mainstream email providers and perform reliable send/receive workflows through IMAP.",
+        "Use when a us..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-imap-smtp@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100177960?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-imap-smtp",
+      "url": "https://clawhub.ai/skills/email-imap-smtp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-imap-smtp",
+    "url": "https://clawhub.ai/skills/email-imap-smtp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-imap-smtp-95f50f0af7f17666.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-imap-smtp@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-imap-smtp-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1dd934ca4ec976dba7f1b1a8a52b719a94fec7b8d1bed5432ce3192cb6f2a380",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T05:49:47.453Z"
+}

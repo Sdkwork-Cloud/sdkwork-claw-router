@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shinewilzhang-veadk-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shinewilzhang_veadk_skills",
+  "skill": {
+    "id": 59738,
+    "skillKey": "clawhub-shinewilzhang-veadk-skills",
+    "name": "Shinewilzhang Veadk Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shinewilzhang-veadk-skills",
+    "url": "https://clawhub.ai/skills/shinewilzhang-veadk-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shinewilzhang-veadk-skills-08e66221870cd4d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据用户的功能需求，完成与 VeADK 相关的功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shinewilzhang",
+      "userId": "s172anppmf1c60vrfeynjvf5fd83zxw0",
+      "displayName": "shinewilzhang",
+      "image": "https://avatars.githubusercontent.com/u/242368578?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774930353243,
+      "changelog": "shinewilzhang-veadk-skills 1.0.0\n\n- 首次发布，提供 VeADK Agent 代码自动生成与转换功能。\n- 支持根据用户需求生成新的 VeADK Agent 代码。\n- 支持将 Langchain/Langgraph 代码转换为 VeADK Agent 代码。\n- 支持将 Dify 工作流 DSL 转换为 VeADK Agent 代码。\n- 包括详细的使用步骤和代码保存方式说明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78f8f68bfb5e08f2318480ff2fa4c9f9c04d28025a484a7254e0e2adefffd508"
+}

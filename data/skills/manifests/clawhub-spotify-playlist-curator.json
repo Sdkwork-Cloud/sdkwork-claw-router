@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39559,
+  "uuid": "skill-clawhub-spotify-playlist-curator",
+  "skillKey": "clawhub-spotify-playlist-curator",
+  "name": "Spotify Playlist Curator",
+  "summary": "Create and refine Spotify playlists using the Spotify Web API, with support for track search, recent and top listening lookups, queueing selected tracks, and...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spotify_playlist_curator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rachel-howell",
+      "features": [
+        "Create and refine Spotify playlists using the Spotify Web API, with support for track search, r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spotify-playlist-curator@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66449986?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spotify-playlist-curator",
+      "url": "https://clawhub.ai/skills/spotify-playlist-curator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spotify-playlist-curator",
+    "url": "https://clawhub.ai/skills/spotify-playlist-curator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spotify-playlist-curator-334e1cdbd13e4f0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spotify-playlist-curator@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-spotify-playlist-curator-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5dddb4cab411f6bdcdeb4aac679cf01a729221405e2117f7c8aa596cfe22b764",
+      "artifactSizeBytes": 2100
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T23:11:13.463Z"
+}

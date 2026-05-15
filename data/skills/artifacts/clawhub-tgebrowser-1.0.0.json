@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tgebrowser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tgebrowser",
+  "skill": {
+    "id": 27416,
+    "skillKey": "clawhub-tgebrowser",
+    "name": "tgebrowser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tgebrowser",
+    "url": "https://clawhub.ai/skills/tgebrowser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tgebrowser-2b0b4778b5133550.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operates TgeBrowser via MCP tools. Use when the user asks to create or manage TgeBrowser environments, groups, proxies, browser automation, or check status...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tuguang2025",
+      "userId": "publishers:tuguang2025",
+      "displayName": "tuguang2025",
+      "image": "https://avatars.githubusercontent.com/u/81463246?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773295087970,
+      "changelog": "tgebrowser 1.0.0\n\n- Initial release providing MCP-based management and automation for TgeBrowser environments.\n- Enables creation, update, deletion, and listing of browsers, groups, proxies, and profiles.\n- Supports full browser automation: navigation, interaction, screenshot, form fill, and script execution.\n- Implements smart defaults for proxies, fingerprints, privacy, and cache handling.\n- Includes robust error handling and workflow guidance for new and existing browsers.\n- Covers batch operations and group/proxy management via dedicated MCP tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3cb82eedf8c988b51a04f655a9c40fd360d5dd0c2ccbd7c11aa49d33b91e3a28"
+}

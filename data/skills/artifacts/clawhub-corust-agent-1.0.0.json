@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/corust-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.corust_agent",
+  "skill": {
+    "id": 52643,
+    "skillKey": "clawhub-corust-agent",
+    "name": "Corust Agent Configure"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "corust-agent",
+    "url": "https://clawhub.ai/skills/corust-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/corust-agent-e9bf0ab3ff10dafd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install, configure, and use Corust Agent (corust-agent-acp) — an ACP-compatible coding agent. Use when: the user wants to install, configure, set up, or use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phoenix500526",
+      "userId": "s174rgffexcn0b9mqsx50ct0ad83qv0n",
+      "displayName": "Phoenix",
+      "image": "https://avatars.githubusercontent.com/u/9337239?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774623913472,
+      "changelog": "Initial release: install, configure, and use corust-agent-acp",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2f6c023cf989eaca96e719b2b193fe5fe5f6022cb798a71d8f48672197606bd"
+}

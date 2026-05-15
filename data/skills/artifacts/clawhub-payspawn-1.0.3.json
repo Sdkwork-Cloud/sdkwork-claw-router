@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/payspawn@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payspawn",
+  "skill": {
+    "id": 50122,
+    "skillKey": "clawhub-payspawn",
+    "name": "PaySpawn — On-Chain Spending Limits for AI Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payspawn",
+    "url": "https://clawhub.ai/skills/payspawn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payspawn-00dccda62d7953ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add spending controls to any AI agent that makes API payments. Supports x402 auto-pay, daily limits, per-transaction limits, address allowlists, and fleet pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adambrainai",
+      "userId": "publishers:adambrainai",
+      "displayName": "adambrainai",
+      "image": "https://avatars.githubusercontent.com/u/260548252?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 511,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771905009109,
+      "changelog": "Added required env declaration for PAYSPAWN_CREDENTIAL with lifetime/revocation/minPrivilege details, added npm install spec for @payspawn/sdk with source and audit links, expanded setup instructions to clarify credential vs private key distinction",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ee43a9ae3c51f876d8901f0eaacf5e0e8aebdcdaa319de78bef5974e39ab697e"
+}

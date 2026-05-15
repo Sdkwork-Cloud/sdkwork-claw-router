@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-daily-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_daily_assistant",
+  "skill": {
+    "id": 16926,
+    "skillKey": "clawhub-smart-daily-assistant",
+    "name": "Smart Daily Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-daily-assistant",
+    "url": "https://clawhub.ai/skills/smart-daily-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-daily-assistant-a2597637ffba3317.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When user asks to set reminders, save quick notes, get morning briefing, draft messages, use quick reply templates, translate text, plan day, schedule tasks,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mkpareek0315",
+      "userId": "s177xftdngf7e244bg15634m5x83yz4j",
+      "displayName": "Manish Pareek",
+      "image": "https://avatars.githubusercontent.com/u/71243646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 637,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771819179835,
+      "changelog": "v1.0.0 — 20-feature AI personal assistant with reminders, notes, briefings, planner, habits",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:92981bc27947c4773a61b826d602eb454c2473afb1e273fa654c99e029eb8e5b"
+}

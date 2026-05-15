@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52537,
+  "uuid": "skill-clawhub-polymarket-predictradar-whale-alert-skills",
+  "skillKey": "clawhub-polymarket-predictradar-whale-alert-skills",
+  "name": "polymarket-predictradar-whale-alert-skills",
+  "summary": "Polymarket Whale Alert — real-time large order monitoring. Queries the past 24 hours of smart money (HUMAN/MM/SIGNAL) large orders. Trigger words: whale, wha...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_predictradar_whale_alert_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yeri",
+      "features": [
+        "Polymarket Whale Alert — real-time large order monitoring",
+        "Queries the past 24 hours of smart money (HUMAN/MM/SIGNAL) large orders",
+        "Trigger words: whale, wha..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-predictradar-whale-alert-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83803401?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-predictradar-whale-alert-skills",
+      "url": "https://clawhub.ai/skills/polymarket-predictradar-whale-alert-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-predictradar-whale-alert-skills",
+    "url": "https://clawhub.ai/skills/polymarket-predictradar-whale-alert-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-predictradar-whale-alert-skills-eee266d151b03938.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-predictradar-whale-alert-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-predictradar-whale-alert-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fed053d69202ded5beba9dc54153dc3684255298811236202988253cd310d3b4",
+      "artifactSizeBytes": 2636
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:27:49.193Z"
+}

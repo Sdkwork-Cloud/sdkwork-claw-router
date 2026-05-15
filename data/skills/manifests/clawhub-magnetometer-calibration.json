@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20151,
+  "uuid": "skill-clawhub-magnetometer-calibration",
+  "skillKey": "clawhub-magnetometer-calibration",
+  "name": "Pywayne Calibration Magnetometer Calibration",
+  "summary": "Sensor calibration toolkit with magnetometer calibration using close-form method. Use when calibrating IMU sensors (accelerometer, gyroscope, magnetometer) t...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.magnetometer_calibration",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangyendt",
+      "features": [
+        "Sensor calibration toolkit with magnetometer calibration using close-form method",
+        "Use when calibrating IMU sensors (accelerometer, gyroscope, magnetometer) t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/magnetometer-calibration@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18455758?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "magnetometer-calibration",
+      "url": "https://clawhub.ai/skills/magnetometer-calibration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "magnetometer-calibration",
+    "url": "https://clawhub.ai/skills/magnetometer-calibration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/magnetometer-calibration-e044a4a5349d5252.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/magnetometer-calibration@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-magnetometer-calibration-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82f4fa5098d61c42bade7b6eab6a181168528a807cf28a72b1fac589875c2412",
+      "artifactSizeBytes": 2477
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T13:25:31.093Z"
+}

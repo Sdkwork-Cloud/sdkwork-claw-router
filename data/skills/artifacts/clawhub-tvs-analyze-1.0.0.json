@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tvs-analyze@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tvs_analyze",
+  "skill": {
+    "id": 72503,
+    "skillKey": "clawhub-tvs-analyze",
+    "name": "tvs-analyze"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tvs-analyze",
+    "url": "https://clawhub.ai/skills/tvs-analyze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tvs-analyze-a741f20dd5531ce4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用户要求代码分析时，提供项目的结构、依赖关系、主要业务、存在问题等信息，帮助开发者快速了解项目。或用户问一些代码的作用时，寻找相关代码的业务逻辑相关代码，分析并总结其作用和实现细节。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "inksnowhailong",
+      "userId": "s177pqccte7rb6prtwj4ad2bpx83nmt8",
+      "displayName": "inksnowhailong",
+      "image": "https://avatars.githubusercontent.com/u/57605894?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773711969810,
+      "changelog": "- 首个发布版本，提供代码与项目分析能力。\n- 支持项目结构、依赖关系、主要业务、现有问题等多维度分析。\n- 针对代码片段，逐步拆解业务流程、输入输出和细节逻辑。\n- 回复结构严格分为一句话总结、主体内容（分模块）、结尾建议或追问。\n- 强制使用中文纯文本 ASCII 图，优先视觉化展示核心结构与流程。\n- 回答语气直观清晰，适合零基础或非专业人士理解。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5603d4331e7320fa99887184f1ab4471c80e4de4fa0c86810f9ab5da8bd26c04"
+}

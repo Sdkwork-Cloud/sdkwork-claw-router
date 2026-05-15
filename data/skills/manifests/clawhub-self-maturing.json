@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38702,
+  "uuid": "skill-clawhub-self-maturing",
+  "skillKey": "clawhub-self-maturing",
+  "name": "Daily Growth & Maturity",
+  "summary": "Self-reflection, correction logging, persistent memory, WAL protocol, cold-boot recovery, and automated daily review with self-healing cron. Evaluates own wo...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_maturing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joel Yi - DeployAIBots.com",
+      "features": [
+        "Self-reflection, correction logging, persistent memory, WAL protocol, cold-boot recovery, and a.",
+        "Evaluates own wo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-maturing@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262135669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-maturing",
+      "url": "https://clawhub.ai/skills/self-maturing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-maturing",
+    "url": "https://clawhub.ai/skills/self-maturing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-maturing-ec2d0157fec3bd4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-maturing@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-maturing-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9315f34bf6d84863468c1dd5bcb738fbb6300f1143eba3571cef5c0c4a6e0b9",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:50:22.312Z"
+}

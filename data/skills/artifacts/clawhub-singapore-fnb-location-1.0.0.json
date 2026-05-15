@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/singapore-fnb-location@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.singapore_fnb_location",
+  "skill": {
+    "id": 64879,
+    "skillKey": "clawhub-singapore-fnb-location",
+    "name": "Singapore Fnb Location"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "singapore-fnb-location",
+    "url": "https://clawhub.ai/skills/singapore-fnb-location",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/singapore-fnb-location-fe13057ee60e1bb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🍜 新加坡餐饮选址助手：分析租金、人流、竞争、盈亏平衡，辅助餐饮店铺选址决策"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gisellekokkok",
+      "userId": "publishers:gisellekokkok",
+      "displayName": "gisellekokkok",
+      "image": "https://avatars.githubusercontent.com/u/260831939?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771934896484,
+      "changelog": "- Initial release of Singapore F&B Location Assistant.\n- Analyze rent, foot traffic, competition, and break-even for restaurant site decisions.\n- Includes region-specific rent analysis, profitability calculation, and competitive assessment.\n- Provides tailored guides based on owner identity (citizen/PR/foreigner).\n- Features practical tips to avoid common pitfalls and maximize success chances.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2aaa98d3fc1549e1c2c35d3f0253e93a792526b62fc6dc987109b52cf3af4f5c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/c3po-session-cleaner@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.c3po_session_cleaner",
+  "skill": {
+    "id": 44963,
+    "skillKey": "clawhub-c3po-session-cleaner",
+    "name": "c3po-session-cleaner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "c3po-session-cleaner",
+    "url": "https://clawhub.ai/skills/c3po-session-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/c3po-session-cleaner-457d7a802298e023.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Clean up old OpenClaw session files and keep only active sessions"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ccc-3po",
+      "userId": "s171bb2s07ngdmhzr00c5wdybs83mk3b",
+      "displayName": "c-3po",
+      "image": "https://avatars.githubusercontent.com/u/44689813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775359022701,
+      "changelog": "- Updated description to clarify that only active session files are kept.\n- Added a trigger field: clean sessions.\n- Now only old .jsonl session files (>3 days) are deleted; rebuilding sessions.json has been removed.\n- Simplified completion message to show only remaining session files.\n- Version number updated to 1.0.5.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4cdfdccd50b62bace0875220d7096f67bf776da31051f8c48390307f840e5c6"
+}

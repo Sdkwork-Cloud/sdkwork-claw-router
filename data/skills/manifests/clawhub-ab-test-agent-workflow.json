@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59248,
+  "uuid": "skill-clawhub-ab-test-agent-workflow",
+  "skillKey": "clawhub-ab-test-agent-workflow",
+  "name": "AB Test Agent Workflow (EN)",
+  "summary": "多agent双盲 A/B 测试工作流。对多个 AI model/Agent 进行多轮次、双盲对照测试。 核心role：coordinate者（Coordinator）、受测者 A/B（Contestant）、评测者（Judge）。 trigger场景：\"A/B 测试\"、\"双盲测试\"、\"比较 AI model\"、\"...",
+  "version": "1.1.0-en2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ab_test_agent_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JohnSmithfan",
+      "features": [
+        "多agent双盲 A/B 测试工作流。对多个 AI model/Agent 进行多轮次、双盲对照测试。 核心role：coordinate者（Coordinator）、受测者 A/B（Con."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ab-test-agent-workflow@1.1.0-en2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147225147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ab-test-agent-workflow",
+      "url": "https://clawhub.ai/skills/ab-test-agent-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ab-test-agent-workflow",
+    "url": "https://clawhub.ai/skills/ab-test-agent-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ab-test-agent-workflow-415963867a7edb7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ab-test-agent-workflow@1.1.0-en2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ab-test-agent-workflow-1.1.0-en2.json",
+      "version": "1.1.0-en2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6af1f95a588ba02ad3dd28195d43d8fb16b655085d060ab843e7205c187cdfb",
+      "artifactSizeBytes": 2104
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T09:49:39.964Z"
+}

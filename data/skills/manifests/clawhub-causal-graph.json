@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66653,
+  "uuid": "skill-clawhub-causal-graph",
+  "skillKey": "clawhub-causal-graph",
+  "name": "Causal Graph Builder",
+  "summary": "自动从日志和记忆中提取实体、事件及其因果关系，构建动态知识图谱并支持查询与可视化。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.causal_graph",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ceelo",
+      "features": [
+        "自动从日志和记忆中提取实体、事件及其因果关系，构建动态知识图谱并支持查询与可视化。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/causal-graph@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111347656?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "causal-graph",
+      "url": "https://clawhub.ai/skills/causal-graph"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "causal-graph",
+    "url": "https://clawhub.ai/skills/causal-graph",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/causal-graph-96b886178cc7133e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/causal-graph@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-causal-graph-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e494208dad26c914431035d683d10df4ad36dcbceadd0d154c52327b02b533cf",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T00:44:45.961Z"
+}

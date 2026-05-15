@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aicade-create-app-builder@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aicade_create_app_builder",
+  "skill": {
+    "id": 33465,
+    "skillKey": "clawhub-aicade-create-app-builder",
+    "name": "aicade galaxy create app skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aicade-create-app-builder",
+    "url": "https://clawhub.ai/skills/aicade-create-app-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aicade-create-app-builder-319f95ffcb15bad2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build general aicade application prompts by taking the user's base prompt plus the platform additions from the bundled 3.1 workflow reference, then assemblin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aicadegalaxy",
+      "userId": "s17cm5twfsb6tdgf0kfjnve25x83rm26",
+      "displayName": "aicadegalaxy",
+      "image": "https://avatars.githubusercontent.com/u/201355035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777730094892,
+      "changelog": "No user-visible changes in this version; no file changes detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e35b579903badb32a6b93a7c06ec26b89aa079be802351b2b94f318c3f2515ac"
+}

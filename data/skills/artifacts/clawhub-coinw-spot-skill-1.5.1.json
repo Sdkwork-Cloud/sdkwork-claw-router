@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coinw-spot-skill@1.5.1",
+  "version": "1.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coinw_spot_skill",
+  "skill": {
+    "id": 28161,
+    "skillKey": "clawhub-coinw-spot-skill",
+    "name": "Coinw Spot Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coinw-spot-skill",
+    "url": "https://clawhub.ai/skills/coinw-spot-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coinw-spot-skill-dc5aa708f7f74371.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coinw Spot REST API skill: covers market data, order placement/cancellation, order queries, account balances, and asset transfers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "connectcoinw",
+      "userId": "s172jc7269510ta5m80bbbk0n1840a1z",
+      "displayName": "connectCoinw",
+      "image": "https://avatars.githubusercontent.com/u/256478439?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.5.1",
+      "createdAt": 1777534895613,
+      "changelog": "- Added direct links to official CoinW API documentation for each endpoint in the Quick Reference tables.\n- Each API operation in the Market Information, Place Orders, Query Orders, and Account Information sections now includes a \"Detailed Doc URL\" column pointing to its reference on coinw.com.\n- No changes to the skill functionality or endpoints; documentation enhancement only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b104605994879f25d35b495cce7b9ebdcdb5106f1dc66c05aee350b03d818594"
+}

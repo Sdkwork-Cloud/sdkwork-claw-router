@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toll@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toll",
+  "skill": {
+    "id": 29741,
+    "skillKey": "clawhub-toll",
+    "name": "toll"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toll",
+    "url": "https://clawhub.ai/skills/toll",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toll-bcade5095df6aac4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track and display token usage statistics and estimated USD costs from Claude Code and Codex CLI sessions"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fullstop000",
+      "userId": "publishers:fullstop000",
+      "displayName": "Fullstop000",
+      "image": "https://avatars.githubusercontent.com/u/12471960?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 297,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773336968228,
+      "changelog": "Initial release: track token usage and costs from Claude Code and Codex CLI sessions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6656cc8be6d06b7b4f59ef636527967875a91c4b9e0aebf1de8bc92dedec2f00"
+}

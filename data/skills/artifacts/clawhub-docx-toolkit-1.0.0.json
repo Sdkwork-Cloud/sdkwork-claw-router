@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docx-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docx_toolkit",
+  "skill": {
+    "id": 17729,
+    "skillKey": "clawhub-docx-toolkit",
+    "name": "DOCX Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docx-toolkit",
+    "url": "https://clawhub.ai/skills/docx-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docx-toolkit-eb0284c3889c8cff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract text, tables, and images from .docx and legacy .doc files. Handles large documents, CJK text, and complex table structures. Includes deduplication an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zacjiang",
+      "userId": "publishers:zacjiang",
+      "displayName": "Shihao Jiang (Zac)",
+      "image": "https://avatars.githubusercontent.com/u/15880609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 692,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772694961898,
+      "changelog": "Initial release: extract text, tables, images from .docx/.doc with CJK support",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0e47aa791fbe5c57f14455fa48a408566e0e85f136d66158651b75a73947ee7f"
+}

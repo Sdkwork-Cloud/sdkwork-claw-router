@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40679,
+  "uuid": "skill-clawhub-devops-platform-skill",
+  "skillKey": "clawhub-devops-platform-skill",
+  "name": "Devops Platform Skill",
+  "summary": "Manage and query DevOps platform data, including applications, iterations, releases, and statistics via configured API access with user token authorization.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.devops_platform_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuanqiuqian",
+      "features": [
+        "Manage and query DevOps platform data, including applications, iterations, releases, and statis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/devops-platform-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20298940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "devops-platform-skill",
+      "url": "https://clawhub.ai/skills/devops-platform-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "devops-platform-skill",
+    "url": "https://clawhub.ai/skills/devops-platform-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/devops-platform-skill-b90d7d00b8af12c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/devops-platform-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-devops-platform-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e40602f68f14a20afbb49dbbc575ad2423b5af282ab7555a685af5eac44168d",
+      "artifactSizeBytes": 2481
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:18:13.227Z"
+}

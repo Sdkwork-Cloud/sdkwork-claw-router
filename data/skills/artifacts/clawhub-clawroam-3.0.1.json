@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawroam@3.0.1",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawroam",
+  "skill": {
+    "id": 49794,
+    "skillKey": "clawhub-clawroam",
+    "name": "ClawRoam"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawroam",
+    "url": "https://clawhub.ai/skills/clawroam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawroam-485d4216308831b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Portable identity vault for OpenClaw. Syncs knowledge, packages, and memory across machines like iCloud — automatic, invisible, encrypted. Bring your own sto..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "getlighty",
+      "userId": "publishers:getlighty",
+      "displayName": "getlighty",
+      "image": "https://avatars.githubusercontent.com/u/26691300?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 658,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.0.1",
+      "createdAt": 1771953139379,
+      "changelog": "Patch release with minor fixes and improvements.\n\n- Updated version to 3.0.1 in SKILL.md\n- Small content/format changes in SKILL.md for clarity and consistency\n- Internal script and code adjustments in clawroam.sh and cloud-api-worker/src/index.ts (details not specified)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1f4b93a49fa22cfd45ed74851fac665a1e7c8dcb5f3dcdc6e693596505e88e91"
+}

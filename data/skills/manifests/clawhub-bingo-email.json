@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65718,
+  "uuid": "skill-clawhub-bingo-email",
+  "skillKey": "clawhub-bingo-email",
+  "name": "Bingo Email",
+  "summary": "统一邮件管理技能，用于读取、发送、回复、转发邮件，以及管理草稿箱和文件夹。 当用户提到\"读邮件\"、\"发邮件\"、\"回复\"、\"草稿箱\"、\"未读邮件\"、\"收件箱\"、 \"邮箱\"等任何与电子邮件相关的操作时，使用此技能。替代 himalaya CLI， 全部使用 Python 脚本操作任意 IMAP/SMTP 邮箱（腾讯企...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bingo_email",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "soulcoolzzz",
+      "features": [
+        "统一邮件管理技能，用于读取、发送、回复、转发邮件，以及管理草稿箱和文件夹。 当用户提到\"读邮件\"、\"发邮件\"、\"回复\"、\"草稿箱\"、\"未读邮件\"、\"收件箱\"、 \"邮箱\"等任何与电子邮件相关的."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bingo-email@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145415318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bingo-email",
+      "url": "https://clawhub.ai/skills/bingo-email"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bingo-email",
+    "url": "https://clawhub.ai/skills/bingo-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bingo-email-97ba8ff852c1e9eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bingo-email@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bingo-email-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4d18bf8f3ce4182d34a504783be1edec7485dddedde38a8a2d561c40478188b",
+      "artifactSizeBytes": 2696
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T16:42:29.701Z"
+}

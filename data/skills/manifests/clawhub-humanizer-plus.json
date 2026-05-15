@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22181,
+  "uuid": "skill-clawhub-humanizer-plus",
+  "skillKey": "clawhub-humanizer-plus",
+  "name": "AI Text Humanizer",
+  "summary": "Remove signs of AI-generated writing from text via the Claw0x API. Use when the user asks to humanize text, make AI writing sound natural, remove AI patterns...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanizer_plus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "claw0x",
+      "features": [
+        "Remove signs of AI-generated writing from text via the Claw0x API",
+        "Use when the user asks to humanize text, make AI writing sound natural, remove AI patterns..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/humanizer-plus@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169416751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "humanizer-plus",
+      "url": "https://clawhub.ai/skills/humanizer-plus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanizer-plus",
+    "url": "https://clawhub.ai/skills/humanizer-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanizer-plus-4381c92f75394daf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/humanizer-plus@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-humanizer-plus-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4dd78b4406340c82267c7a9316801dd0576d08e5bb520ceb61e18625e7e6c04c",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:31:18.392Z"
+}

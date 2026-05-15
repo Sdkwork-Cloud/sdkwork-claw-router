@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-ai-list@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_ai_list",
+  "skill": {
+    "id": 46776,
+    "skillKey": "clawhub-video-editing-ai-list",
+    "name": "Video Editing Ai List"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-ai-list",
+    "url": "https://clawhub.ai/skills/video-editing-ai-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-ai-list-9237c42305b96614.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited video clips ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"trim..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777171960495,
+      "changelog": "Initial release — Quickly edit and export videos with AI-powered processing.\n\n- Upload video clips (MP4, MOV, AVI, WebM up to 500MB) and describe desired edits; AI handles cutting, transitions, captions, and exports.\n- Automatic connection: Sets up authentication and session with a free 7-day token if needed.\n- Flexible commands: Supports actions like export, upload, check credits/status, and detailed video edits via chat.\n- Fast cloud rendering: 1080p MP4 results typically delivered in 1–2 minutes.\n- Robust error handling for tokens, file size/type, credits, and rate limits.\n- Designed for content creators seeking quick, polished video outputs without manual tweaking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2cf007f057c3c4e29c31020ab7e041c864d8e0c1521f11c701b4c956585ae0a9"
+}

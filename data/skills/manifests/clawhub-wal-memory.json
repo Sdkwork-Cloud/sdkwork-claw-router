@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25157,
+  "uuid": "skill-clawhub-wal-memory",
+  "skillKey": "clawhub-wal-memory",
+  "name": "WAL Memory",
+  "summary": "Session crash and compaction recovery using a two-file WAL (Write-Ahead Log) system. Use when setting up persistent memory for an OpenClaw agent that needs t...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wal_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maikunari",
+      "features": [
+        "Session crash and compaction recovery using a two-file WAL (Write-Ahead Log) system",
+        "Use when setting up persistent memory for an OpenClaw agent that needs t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wal-memory@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1254759?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wal-memory",
+      "url": "https://clawhub.ai/skills/wal-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wal-memory",
+    "url": "https://clawhub.ai/skills/wal-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wal-memory-21a90133bf059d9d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wal-memory@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wal-memory-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34244dd419241805b0fe1eac3595f7ec6af31c944c378d03d578bc6f71532cf0",
+      "artifactSizeBytes": 2188
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T05:00:19.750Z"
+}

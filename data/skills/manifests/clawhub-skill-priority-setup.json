@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20949,
+  "uuid": "skill-clawhub-skill-priority-setup",
+  "skillKey": "clawhub-skill-priority-setup",
+  "name": "Skill Priority Setup",
+  "summary": "Scans installed skills, suggests L0-L3 priority tiers, and auto-configures skill injection policy. Use when: setting up skill priorities, optimizing token bu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_priority_setup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "halfmoon82",
+      "features": [
+        "Scans installed skills, suggests L0-L3 priority tiers, and auto-configures skill injection poli.",
+        "Use when: setting up skill priorities, optimizing token bu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-priority-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261569221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-priority-setup",
+      "url": "https://clawhub.ai/skills/skill-priority-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-priority-setup",
+    "url": "https://clawhub.ai/skills/skill-priority-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-priority-setup-656ec4030cdfa373.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-priority-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-priority-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7dc77ea3e179dc84d3daa978a6896abfc4b296a1b22ff814d04557441b025577",
+      "artifactSizeBytes": 2459
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T11:59:35.128Z"
+}

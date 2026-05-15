@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nom-feed@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nom_feed",
+  "skill": {
+    "id": 17451,
+    "skillKey": "clawhub-nom-feed",
+    "name": "Search recent repo activities"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nom-feed",
+    "url": "https://clawhub.ai/skills/nom-feed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nom-feed-cc1dcdf1d887ef32.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch recent GitHub activity from the Nom feed"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lws803",
+      "userId": "publishers:lws803",
+      "displayName": "Wilson Ler",
+      "image": "https://avatars.githubusercontent.com/u/7874219?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 778,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771553411764,
+      "changelog": "nom-feed 1.0.0\n\n- Initial release: fetch and display recent GitHub activity from the Nom feed (beta.nomit.dev).\n- Supports repo-specific or global activity queries with filters for type, org, search terms, date range, and result limit.\n- Option to fetch results in JSON (summary view) or as RSS XML.\n- Clean, readable Markdown summaries for each event, showing type, title (as a link), AI-generated summary, author, and timestamp.\n- Uses curl for all API requests.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2101caa238675736cd4ec7a7f26f7ef474b00aae17fb382f0cbe73c028f79d66"
+}

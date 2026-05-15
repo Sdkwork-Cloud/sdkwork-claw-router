@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44515,
+  "uuid": "skill-clawhub-flow-pms",
+  "skillKey": "clawhub-flow-pms",
+  "name": "Web Star Studio's Flow PMS",
+  "summary": "Interact with FlowDeck Project Management API (projects, cycles, tasks). Use for CRUD + archive/unarchive operations via the FlowDeck REST API through Supaba...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flow_pms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Douglas Araújo",
+      "features": [
+        "Interact with FlowDeck Project Management API (projects, cycles, tasks)",
+        "Use for CRUD + archive/unarchive operations via the FlowDeck REST API through Supaba..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flow-pms@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162932110?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flow-pms",
+      "url": "https://clawhub.ai/skills/flow-pms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flow-pms",
+    "url": "https://clawhub.ai/skills/flow-pms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flow-pms-eab039397d754d5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flow-pms@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flow-pms-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a7ebfac94e9894caf9828eea66f9d5fb7b983b4baddf354c96ea302fafad34a",
+      "artifactSizeBytes": 2457
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T23:18:46.386Z"
+}

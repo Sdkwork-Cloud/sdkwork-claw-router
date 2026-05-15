@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-scrapling@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_scrapling",
+  "skill": {
+    "id": 64076,
+    "skillKey": "clawhub-cn-scrapling",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-scrapling",
+    "url": "https://clawhub.ai/skills/cn-scrapling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-scrapling-17850eb9a5f27c72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "高性能自适应 Python 网页抓取框架，内置反爬虫绕过（Cloudflare Turnstile）、智能元素重定位、完整爬虫框架和 MCP 服务器，适合 AI 辅助数据提取和大规模爬取任务"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cn-big-cabbage",
+      "userId": "s17dbd0j0kazk5ay31x9kv1z3n84f04v",
+      "displayName": "CN-big-cabbage",
+      "image": "https://avatars.githubusercontent.com/u/63539779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776818626652,
+      "changelog": "Initial release of Scrapling, a high-performance adaptive Python web scraping framework.\n\n- Supports automated anti-bot bypass (Cloudflare Turnstile), adaptive element re-location, and complete spider framework.\n- Includes MCP server for AI-assisted data extraction to reduce token consumption.\n- Offers three Fetcher classes (Fetcher, StealthyFetcher, DynamicFetcher) for HTTP, stealth/anti-bot, and browser automation tasks.\n- Features proxy rotation, session management, pause/resume for spiders, and CLI utilities.\n- Provides comprehensive documentation and integration guides for rapid use and extension.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4aec3fd1d647c44c4a922fff50a7cbdf0b550f8f48940e86c5e19354bef64f4"
+}

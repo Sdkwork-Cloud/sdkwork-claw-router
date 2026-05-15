@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tappi@3.5.0",
+  "version": "3.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tappi",
+  "skill": {
+    "id": 27720,
+    "skillKey": "clawhub-tappi",
+    "name": "tappi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tappi",
+    "url": "https://clawhub.ai/skills/tappi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tappi-c3719999da689bf6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight CDP browser control for AI agents. Token-efficient alternative to the built-in browser tool — 3-10x fewer tokens per interaction. Use when browsi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaihazher",
+      "userId": "publishers:shaihazher",
+      "displayName": "shaihazher",
+      "image": "https://avatars.githubusercontent.com/u/96671723?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 924,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "3.5.0",
+      "createdAt": 1771644601418,
+      "changelog": "grep filtering for text and elements. Use bjs text | grep or bjs elements | grep to filter output. Saves context for smaller models.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8039b163c043269845016b2e9edc1c51e01e39b368ebcd3451b6fb62300b55ab"
+}

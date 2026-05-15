@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rocky-evo@16.2.0",
+  "version": "16.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rocky_evo",
+  "skill": {
+    "id": 60528,
+    "skillKey": "clawhub-rocky-evo",
+    "name": "Rocky Evo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rocky-evo",
+    "url": "https://clawhub.ai/skills/rocky-evo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rocky-evo-2280c19125fb6fe8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自我修复·自我进化·自我迭代 — 收集4小时内所有原始日志喂给AI，AI自行分析并自动修复，修复结果注入活跃会话。Self-healing, self-evolving, self-iterating AI agent."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rockytian-top",
+      "userId": "s17cfrabedwq598kagfb3zv0v583w27s",
+      "displayName": "Rocky.Tian",
+      "image": "https://avatars.githubusercontent.com/u/272256358?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "16.2.0",
+      "createdAt": 1778244135577,
+      "changelog": "# rocky-evo v16.2.0\n\n- Cron 任务现在自动绑定到当前运行的 agent，而不仅限于主 agent，支持多 agent 场景。\n- 文档同步更新，说明 Cron agentId 绑定逻辑。\n- 新增 setup.sh 脚本文件。\n- 其它描述、文档结构优化。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b333d334b38a9dfaeea6ffdfa11fb6f2654e24d896748c9cbbc4c62bbc95bb7b"
+}

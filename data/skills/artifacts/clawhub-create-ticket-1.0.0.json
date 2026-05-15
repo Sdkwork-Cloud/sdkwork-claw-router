@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-ticket@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_ticket",
+  "skill": {
+    "id": 28337,
+    "skillKey": "clawhub-create-ticket",
+    "name": "create-ticket"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-ticket",
+    "url": "https://clawhub.ai/skills/create-ticket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-ticket-9fc607e82013bdb4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create a private Discord channel for a user to handle unresolved issues requiring privacy and manual support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charles-lpd",
+      "userId": "s175y0nen74kf3whxxesv1t1ch83x49z",
+      "displayName": "charles-lpd",
+      "image": "https://avatars.githubusercontent.com/u/90810762?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 328,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773313263136,
+      "changelog": "- Initial release of the Create Discord Ticket Skill.\n- Allows the bot to create a private ticket channel for users on a Discord server.\n- Use cases include unresolved auto-repair, complex technical errors, or privacy-sensitive support.\n- Enforces constraints for appropriate usage and requires notifying the user before creating a channel.\n- Supports parameters for username, userId, and a brief issue description.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1822394732c181f9ea86a9c97c5317f103ed4eb63f3f8a311ce862453dc89578"
+}

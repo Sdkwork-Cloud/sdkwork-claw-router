@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-token-plan@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_token_plan",
+  "skill": {
+    "id": 60230,
+    "skillKey": "clawhub-minimax-token-plan",
+    "name": "MiniMax Token Plan 余额查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-token-plan",
+    "url": "https://clawhub.ai/skills/minimax-token-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-token-plan-7461e6aadbcdb2eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询 MiniMax Token Plan 订阅套餐余额。引导用户配置 API Key（通过 openclaw config set 保存到本地环境变量），查询 M2.7 请求次数、TTS 字符、视频/图片生成配额等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "superuser-fank",
+      "userId": "s170tpepzbdbz5ep27a0z669hh83vfnv",
+      "displayName": "Superuser-fank",
+      "image": "https://avatars.githubusercontent.com/u/118589778?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 211,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1774806911697,
+      "changelog": "手机端适配：改为竖向列表布局，不再使用表格，彻底解决手机端排版错乱问题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4872f7b770f0ae583759e3e3647d64978adf8c398f32e46fba51a124855e2fbd"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qb@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qb",
+  "skill": {
+    "id": 51829,
+    "skillKey": "clawhub-qb",
+    "name": "QuickBooks for Beginners | Accounting skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qb",
+    "url": "https://clawhub.ai/skills/qb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qb-22d1fb414b6d62b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Let your agent shop online with guardrailed wallets, multiple payment methods, and owner approval."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "triplehippo",
+      "userId": "s171q9wjnctwwjjn7rjgjkwy2h83fayr",
+      "displayName": "TripleHippo",
+      "image": "https://avatars.githubusercontent.com/u/261665182?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 395,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1773190471740,
+      "changelog": "- Updated to CreditClaw skill version 2.3.1 with enhanced documentation and security guidelines.\n- Expanded payment rail support: Encrypted Card (default), Stripe Wallet (x402, USDC), and upcoming Crossmint Wallet.\n- Added detailed file structure with guides for each feature and installation instructions.\n- Improved documentation on security practices, spending approvals, and owner oversight.\n- Includes clear instructions for end-to-end setup and safeguarding API keys.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0772b81897dc70eeb5d8625060051b390dc7559c6990f587d4870fb0a2285e63"
+}

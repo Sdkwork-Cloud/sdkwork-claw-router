@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40954,
+  "uuid": "skill-clawhub-clawtrix-token-saver",
+  "skillKey": "clawhub-clawtrix-token-saver",
+  "name": "Token Saver",
+  "summary": "Reduce Claude API token consumption and track spending. Diagnoses waste patterns, recommends optimizations, and generates cost reports. Use when: (1) User as...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtrix_token_saver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nicobot",
+      "features": [
+        "Reduce Claude API token consumption and track spending",
+        "Diagnoses waste patterns, recommends optimizations, and generates cost reports",
+        "Use when: (1) User as..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawtrix-token-saver@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16653864?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawtrix-token-saver",
+      "url": "https://clawhub.ai/skills/clawtrix-token-saver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtrix-token-saver",
+    "url": "https://clawhub.ai/skills/clawtrix-token-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtrix-token-saver-a4254b75c8a7d090.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawtrix-token-saver@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawtrix-token-saver-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6abf3cc764bfbca9b23d0b7cda9582bee9a84cc10608a41519eb2b7fa998d7e",
+      "artifactSizeBytes": 2462
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T20:08:22.204Z"
+}

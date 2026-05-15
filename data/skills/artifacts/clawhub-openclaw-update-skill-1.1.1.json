@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-update-skill@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_update_skill",
+  "skill": {
+    "id": 12041,
+    "skillKey": "clawhub-openclaw-update-skill",
+    "name": "Openclaw Update"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-update-skill",
+    "url": "https://clawhub.ai/skills/openclaw-update-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-update-skill-7cadb033f9db8be8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check for OpenClaw updates, perform updates, and manage version status. Provides automatic update checking, version comparison, and seamless updating of the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rothcold",
+      "userId": "publishers:rothcold",
+      "displayName": "Rothcold",
+      "image": "https://avatars.githubusercontent.com/u/1788448?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1817,
+      "installsAllTime": 12,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1771216099559,
+      "changelog": "Removed local path reference",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:92b1c2a3dfa1c99cae7502347dea5ce56db52499dcf9381486803e9844844ea8"
+}

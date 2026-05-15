@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56986,
+  "uuid": "skill-clawhub-epub2md-cli",
+  "skillKey": "clawhub-epub2md-cli",
+  "name": "Epub2md Cli",
+  "summary": "Use the local `epub2md` CLI to inspect EPUB files and convert them into Markdown. Make sure to use this whenever the user mentions `.epub` files, EPUB 转 Mark...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.epub2md_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liujuntao123",
+      "features": [
+        "Use the local `epub2md` CLI to inspect EPUB files and convert them into Markdown",
+        "Make sure to use this whenever the user mentions `.epub` files, EPUB 转 Mark..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/epub2md-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22583601?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "epub2md-cli",
+      "url": "https://clawhub.ai/skills/epub2md-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "epub2md-cli",
+    "url": "https://clawhub.ai/skills/epub2md-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/epub2md-cli-59a7dddf3b8c6c8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/epub2md-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-epub2md-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9fa52c452457a02b058b397b3178de41484badfa7622451b98c08adf3a14964a",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T09:00:35.557Z"
+}

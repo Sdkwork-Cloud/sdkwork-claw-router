@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30471,
+  "uuid": "skill-clawhub-ops-tasks",
+  "skillKey": "clawhub-ops-tasks",
+  "name": "Ops Tasks",
+  "summary": "Track tasks with priorities, owners, and statuses for operations teams.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ops_tasks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AdmiralKittysDad",
+      "features": [
+        "Track tasks with priorities, owners, and statuses for operations teams."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ops-tasks@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/167309028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ops-tasks",
+      "url": "https://clawhub.ai/skills/ops-tasks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ops-tasks",
+    "url": "https://clawhub.ai/skills/ops-tasks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ops-tasks-1d03cdcd421276d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ops-tasks@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ops-tasks-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:191aac67bdf9a303259a5e2592423d2242c0a4f4b08a2fa7dbbbd446b032c030",
+      "artifactSizeBytes": 2386
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T19:10:01.001Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66729,
+  "uuid": "skill-clawhub-model-rate-limiter",
+  "skillKey": "clawhub-model-rate-limiter",
+  "name": "Model Rate Limiter",
+  "summary": "限制大模型请求频率，每分钟不超指定次数（默认5次）。当用户提到\"限制请求频率\"、\"限速\"、\"模型限流\"、\"每分钟不超过X次\"时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_rate_limiter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mazhimin-123",
+      "features": [
+        "限制大模型请求频率，每分钟不超指定次数（默认5次）。当用户提到\"限制请求频率\"、\"限速\"、\"模型限流\"、\"每分钟不超过X次\"时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-rate-limiter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269791888?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-rate-limiter",
+      "url": "https://clawhub.ai/skills/model-rate-limiter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-rate-limiter",
+    "url": "https://clawhub.ai/skills/model-rate-limiter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-rate-limiter-19a5869a836948fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-rate-limiter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-rate-limiter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03935fd9933a499fce39b87025f491bcc494290b49f8822eb1b18f6655d2000f",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T03:51:18.110Z"
+}

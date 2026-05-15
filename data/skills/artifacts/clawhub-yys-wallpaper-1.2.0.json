@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yys-wallpaper@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yys_wallpaper",
+  "skill": {
+    "id": 63347,
+    "skillKey": "clawhub-yys-wallpaper",
+    "name": "Yys Wallpaper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yys-wallpaper",
+    "url": "https://clawhub.ai/skills/yys-wallpaper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yys-wallpaper-4d6bc49872a5ba78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "阴阳师原画壁纸下载工具。自动从 https://yys.163.com/media/picture.html 抓取壁纸，按分辨率下载到 ~/图片/{分辨率}/ 目录，跳过已存在的文件。触发条件：用户想要下载阴阳师壁纸、整理壁纸、批量下载图片。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lhf6623",
+      "userId": "s178gw603kj5na42nz8mqg030x83tx4s",
+      "displayName": "lhf6623",
+      "image": "https://avatars.githubusercontent.com/u/29174474?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775341763735,
+      "changelog": "v1.2.0 introduces advanced download options and improved usability.\n\n- Added CLI options: batch size, delay control, force overwrite, and help message.\n- Batch downloading and progress display are now supported.\n- Enhanced skipping logic: intelligently skips existing files, or can re-download with --no-skip.\n- Added error auto-retry (3 times) and per-file progress/statistics output.\n- Updated documentation with new usage examples and supported resolutions.\n- Metadata file _meta.json added.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6f4332f526e0a9048f71c1fa0f86c78af7bcd55564732bb71d5533281edf78a4"
+}

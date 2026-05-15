@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/one-way@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.one_way",
+  "skill": {
+    "id": 46561,
+    "skillKey": "clawhub-one-way",
+    "name": "one-way"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "one-way",
+    "url": "https://clawhub.ai/skills/one-way",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/one-way-a6ae2cbf5b10eb5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search one-way flights, single-trip tickets and open-ended travel bookings with no return date required. Also supports: flight booking, hotel reservation, tr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1777061004360,
+      "changelog": "one-way v3.2.0 changelog\n\n- Major SKILL.md overhaul: now implements strict CLI execution workflow with multi-step validation and output templates.\n- Added critical rules to prevent answering from training data; all output must be sourced from flyai CLI, or the skill self-stops.\n- Expanded playbooks for one-way, flexible, direct, and fallback searches, including detailed CLI parameter mappings.\n- Detailed parameter collection and environment setup process; now requires explicit environment and prereq checks.\n- Output formatting rules now enforce booking link in every result and brand tag display.\n- Updated compatibility list and renamed branding to highlight Fliggy/Alibaba Group as backend provider.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79c05993955dd32231edab952ccd49e5a126ce664648da650a42fe3cae7ed52e"
+}

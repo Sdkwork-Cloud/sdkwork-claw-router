@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-info-explorer@1.2.10",
+  "version": "1.2.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_info_explorer",
+  "skill": {
+    "id": 8470,
+    "skillKey": "clawhub-stock-info-explorer",
+    "name": "Stock Info Explorer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-info-explorer",
+    "url": "https://clawhub.ai/skills/stock-info-explorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-info-explorer-9d22a90e2648aa95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A Yahoo Finance (yfinance) powered financial analysis tool. Get real-time quotes, generate high-resolution charts with moving averages + indicators (RSI/MACD/Bollinger/VWAP/ATR), summarize fundamentals, and run a one-shot report that outpu."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kys42",
+      "userId": "s170vef4y1jjd3f0ecxstk70pn83wrh9",
+      "displayName": "ClawMaker",
+      "image": "https://avatars.githubusercontent.com/u/25008566?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 12145,
+      "installsAllTime": 124,
+      "installsCurrent": 114,
+      "stars": 14,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.10",
+      "createdAt": 1769694294993,
+      "changelog": "Docs: rewrite SKILL.md in English for global users.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:99ef07f7b0116445cd6b6babb3c4c5fc26a2fe0e39d5c4edbd51d782667d762e"
+}

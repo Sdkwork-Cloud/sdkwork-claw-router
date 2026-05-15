@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pocketlens@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pocketlens",
+  "skill": {
+    "id": 18303,
+    "skillKey": "clawhub-pocketlens",
+    "name": "PocketLens"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pocketlens",
+    "url": "https://clawhub.ai/skills/pocketlens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pocketlens-f76950588d8082ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user wants to track expenses, scan receipts, upload card payment screenshots, categorize spending, record transactions, check spending summaries, vi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edenjw",
+      "userId": "publishers:edenjw",
+      "displayName": "Eden Jeongwoo Hong",
+      "image": "https://avatars.githubusercontent.com/u/2323545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 702,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771771537941,
+      "changelog": "Initial release – PocketLens integration for automated expense tracking via receipts, card statements, and manual entries.\n\n- Automatically extract transactions from images of receipts or credit card statements and record them in PocketLens.\n- Supports manual transaction entry based on user messages.\n- Provides spending summaries, category breakdowns, and card billing info upon request.\n- Includes commands to verify API connection and list spending categories.\n- Handles common API errors with clear user-friendly messages.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:066eb887b32d26628076a1f1e80f0455e28f576b7502ddbdb51f451cb31469d4"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14348,
+  "uuid": "skill-clawhub-briefing-room",
+  "skillKey": "clawhub-briefing-room",
+  "name": "Briefing Room",
+  "summary": "Daily news briefing generator — produces a conversational radio-host-style audio briefing + DOCX document covering weather, X/Twitter trends, web trends, world news, politics, tech, local news, sports, markets, and crypto. macOS only (uses.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.briefing_room",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "matusvojtek",
+      "features": [
+        "Daily news briefing generator — produces a conversational radio-host-style audio briefing + DOC.",
+        "macOS only (uses Apple TTS and afplay)",
+        "Use when user asks for a news briefing, morning briefing, daily update, or similar."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/briefing-room@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/206214405?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "briefing-room",
+      "url": "https://clawhub.ai/skills/briefing-room"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "briefing-room",
+    "url": "https://clawhub.ai/skills/briefing-room",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/briefing-room-5e473bd2089d5c11.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/briefing-room@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-briefing-room-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:508083d52742971ab1598fec21786a1f35ff41cea941ea5d0d5e2e8abd8ad7ae",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T20:34:57.874Z"
+}

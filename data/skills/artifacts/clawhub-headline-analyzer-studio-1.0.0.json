@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/headline-analyzer-studio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.headline_analyzer_studio",
+  "skill": {
+    "id": 47018,
+    "skillKey": "clawhub-headline-analyzer-studio",
+    "name": "Headline Analyzer Studio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "headline-analyzer-studio",
+    "url": "https://clawhub.ai/skills/headline-analyzer-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/headline-analyzer-studio-d7d9e2c7f70a963c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate, score, and optimize headlines and titles for articles, videos, emails, and social posts using proven frameworks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777774241034,
+      "changelog": "Initial release: document-only content creation prompt-flow skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eec47c6ca642ead571453decf7a8505f52fc90d709acd52f01fccb7fced221d9"
+}

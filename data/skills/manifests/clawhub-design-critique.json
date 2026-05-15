@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54312,
+  "uuid": "skill-clawhub-design-critique",
+  "skillKey": "clawhub-design-critique",
+  "name": "Designers Eye",
+  "summary": "Get honest design feedback. Upload any visual — UI design, logos, photos, graphics, PDFs — and get prioritized critique: what's broken, what works, what to p...",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.design_critique",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chris Couriard",
+      "features": [
+        "Get honest design feedback",
+        "Upload any visual — UI design, logos, photos, graphics, PDFs — and get prioritized critique: wh."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/design-critique@2.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128924221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "design-critique",
+      "url": "https://clawhub.ai/skills/design-critique"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "design-critique",
+    "url": "https://clawhub.ai/skills/design-critique",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/design-critique-58503fc63c1e8323.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/design-critique@2.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-design-critique-2.0.4.json",
+      "version": "2.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97657f65eb49245c006d2708718c33d57fe2792cc2c094eadccacb10f5c0df0e",
+      "artifactSizeBytes": 2397
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T08:29:24.121Z"
+}

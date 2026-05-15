@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/delivery-queue@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delivery_queue",
+  "skill": {
+    "id": 40526,
+    "skillKey": "clawhub-delivery-queue",
+    "name": "Delivery Queue"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delivery-queue",
+    "url": "https://clawhub.ai/skills/delivery-queue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delivery-queue-cf08848111b87353.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Schedule and send segmented messages in timed intervals to mimic human-like delivery and optimize engagement."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ipythoning",
+      "userId": "s172w4n5ns9akgj3tg573p1kvx83gtgq",
+      "displayName": "iPythoning",
+      "image": "https://avatars.githubusercontent.com/u/29250610?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775122525879,
+      "changelog": "Initial publish from b2b-sdr-agent-template v3.3.1",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f561e2aab049b64ff395152cf9bea44f9bf915c376ca09277d2c42e3b525aa4e"
+}

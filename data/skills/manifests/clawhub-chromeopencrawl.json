@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51478,
+  "uuid": "skill-clawhub-chromeopencrawl",
+  "skillKey": "clawhub-chromeopencrawl",
+  "name": "crawl",
+  "summary": "Crawl any JavaScript-rendered webpage through distributed real Chrome browsers. No local browser needed — perfect for headless VPS.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chromeopencrawl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hlyylly",
+      "features": [
+        "Crawl any JavaScript-rendered webpage through distributed real Chrome browsers",
+        "No local browser needed — perfect for headless VPS."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chromeopencrawl@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/175072744?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chromeopencrawl",
+      "url": "https://clawhub.ai/skills/chromeopencrawl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chromeopencrawl",
+    "url": "https://clawhub.ai/skills/chromeopencrawl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chromeopencrawl-5e703da5d7f333d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chromeopencrawl@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-chromeopencrawl-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e73a594d41822b9ea7124486d19da721a15abd86a6138e93e4519a358d5c1f4a",
+      "artifactSizeBytes": 2253
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:26:57.589Z"
+}

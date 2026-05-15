@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53314,
+  "uuid": "skill-clawhub-geo-compare",
+  "skillKey": "clawhub-geo-compare",
+  "name": "Geo Compare",
+  "summary": "Compare GEO scores across 2-3 competing websites side by side — identify where competitors lead and where you should focus optimization efforts. Use when the...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_compare",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eugene Liu",
+      "features": [
+        "Compare GEO scores across 2-3 competing websites side by side — identify where competitors lead.",
+        "Use when the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/geo-compare@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11206822?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "geo-compare",
+      "url": "https://clawhub.ai/skills/geo-compare"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-compare",
+    "url": "https://clawhub.ai/skills/geo-compare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-compare-823c39ae2e042328.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/geo-compare@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-geo-compare-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:febb9ce80f428652ced00f118dbe194616bdc20513bd9b42a6ef2b0d583ce465",
+      "artifactSizeBytes": 2047
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T17:47:37.061Z"
+}

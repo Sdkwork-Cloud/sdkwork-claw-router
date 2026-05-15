@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/niche-hunter-app-store@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.niche_hunter_app_store",
+  "skill": {
+    "id": 50289,
+    "skillKey": "clawhub-niche-hunter-app-store",
+    "name": "Niche Hunter App Store"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "niche-hunter-app-store",
+    "url": "https://clawhub.ai/skills/niche-hunter-app-store",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/niche-hunter-app-store-3d9b315b5d27b281.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "NicheHunter Ultra — Headless App Store Market Intelligence engine for OpenClaw (VPS). Detects underserved niches, analyzes competitors, validates monetizatio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chebyte",
+      "userId": "publishers:chebyte",
+      "displayName": "mauro",
+      "image": "https://avatars.githubusercontent.com/u/20957?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1772314615791,
+      "changelog": "- Added curl (HTTP request capability) as a new fallback extraction tool when web_search and web_fetch are unavailable.\n- Defined tool priority order and tool usage adaptation logic, with strict preference for web_search > web_fetch > curl.\n- Introduced a stricter checkpoint format focused on state only (no scoring, no bold claims, no revenue estimates).\n- Prohibited ASCII tables and all grid-style/table-style formatting, enforcing vertical block output.\n- Clarified output discipline and format enforcement for both checkpoints and final Telegram report.\n- Minor clarifications to execution logic around competitor analysis and source confidence levels.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f209d0efda882c6ba399485234e7bd75b537218ff6b89f798531907e1a699af3"
+}

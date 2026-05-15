@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14103,
+  "uuid": "skill-clawhub-niche",
+  "skillKey": "clawhub-niche",
+  "name": "Niche - Peer to Peer Trading Cards Marketplace",
+  "summary": "Trading card marketplace with partial USDC deposits. Browse cards, deposit partial amounts, and complete purchases with secure on-chain escrow.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.niche",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClementSutjiatma",
+      "features": [
+        "Trading card marketplace with partial USDC deposits",
+        "Browse cards, deposit partial amounts, and complete purchases with secure on-chain escrow."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/niche@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24305920?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "niche",
+      "url": "https://clawhub.ai/skills/niche"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "niche",
+    "url": "https://clawhub.ai/skills/niche",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/niche-4bd0ba1cf742f5bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/niche@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-niche-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:967800b8bc656472fda1101e8410e355ca28fb7f74664991b40c7de067be1660",
+      "artifactSizeBytes": 2549
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T20:14:26.244Z"
+}

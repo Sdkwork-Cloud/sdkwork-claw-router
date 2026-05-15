@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self",
+  "skill": {
+    "id": 11374,
+    "skillKey": "clawhub-self",
+    "name": "Self"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self",
+    "url": "https://clawhub.ai/skills/self",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-06c604b332b386b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Organic personality development through self-observation with lightweight reliability guards. Teaches agents to grow authentic identity over time by combinin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirchlive",
+      "userId": "publishers:kirchlive",
+      "displayName": "Kirchlive",
+      "image": "https://avatars.githubusercontent.com/u/16271634?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1719,
+      "installsAllTime": 16,
+      "installsCurrent": 15,
+      "stars": 3,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1771724918109,
+      "changelog": "v1.1.1: expanded SKILL description to better explain problem, mechanism, and practical value (authentic growth with lightweight reliability guards).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:da7fd98297a64118f2577f92fb862a8f4e4e42d36c96ccd5fada78bfdff1cc96"
+}

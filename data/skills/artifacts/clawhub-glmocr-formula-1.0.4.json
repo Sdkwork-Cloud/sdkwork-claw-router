@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glmocr-formula@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glmocr_formula",
+  "skill": {
+    "id": 19268,
+    "skillKey": "clawhub-glmocr-formula",
+    "name": "GLM-OCR-Formula"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glmocr-formula",
+    "url": "https://clawhub.ai/skills/glmocr-formula",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glmocr-formula-41c636a42eca27ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Official skill for recognizing and extracting mathematical formulas from images and PDFs into LaTeX format using ZhiPu GLM-OCR API. Supports complex equation..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaredforreal",
+      "userId": "s175c2hb1p5qwxh8z279000h0s83j2tt",
+      "displayName": "Jared Wen",
+      "image": "https://avatars.githubusercontent.com/u/142211841?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 516,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776255884073,
+      "changelog": "- No user-visible changes; this version contains no updates to code or documentation.\n- All features, behavior, and documentation remain unchanged from the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f86c708a61ee3a1688df62b58493ef0072339dc3823c60781269b986b2f7613"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kite-agent-smart-wallet-v3@3.0.2",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kite_agent_smart_wallet_v3",
+  "skill": {
+    "id": 20646,
+    "skillKey": "clawhub-kite-agent-smart-wallet-v3",
+    "name": "Kite Agent Smart Wallet V3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kite-agent-smart-wallet-v3",
+    "url": "https://clawhub.ai/skills/kite-agent-smart-wallet-v3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kite-agent-smart-wallet-v3-9a157587c464899b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Kite AI chain-wallet via Telegram using OpenClaw for wallet creation, balance checks, transfers, session keys, and spending limits without running a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nihaovand",
+      "userId": "publishers:nihaovand",
+      "displayName": "nihaovand",
+      "image": "https://avatars.githubusercontent.com/u/110290620?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 545,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.0.2",
+      "createdAt": 1772034195258,
+      "changelog": "- Internal improvements to kite-wallet.js for version 3.0.2.\n- No changes to user-facing features or documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b054e22b0b92a222905ce94b75e6330fda120afa47a4b8ac83b3b151b9a49d75"
+}

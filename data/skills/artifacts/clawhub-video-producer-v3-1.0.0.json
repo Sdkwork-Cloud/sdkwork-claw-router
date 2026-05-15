@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-producer-v3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_producer_v3",
+  "skill": {
+    "id": 68465,
+    "skillKey": "clawhub-video-producer-v3",
+    "name": "短视频一键生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-producer-v3",
+    "url": "https://clawhub.ai/skills/video-producer-v3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-producer-v3-d4b60a3df3a95c5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "短视频一键生成器 v3.0。输入主题+要点，AI自动完成分镜、生图、配音、字幕、渲染，输出1080×1920竖屏MP4。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hyjaixiao",
+      "userId": "s178vfnjzek9axaw33xdacxmjd85g8xw",
+      "displayName": "Hyjaixiao",
+      "image": "https://avatars.githubusercontent.com/u/102917158?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777102407079,
+      "changelog": "初版发布：多后端TTS(Minimax/OpenAI/Edge) + 图片生成 + 视频渲染",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1bb90cacbf7e5ed863cd7921365687afa1a60b7a99d64b9428d90a0e279980f1"
+}

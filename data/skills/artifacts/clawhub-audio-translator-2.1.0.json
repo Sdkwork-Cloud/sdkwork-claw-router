@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audio-translator@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_translator",
+  "skill": {
+    "id": 73177,
+    "skillKey": "clawhub-audio-translator",
+    "name": "多语种音频翻译助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-translator",
+    "url": "https://clawhub.ai/skills/audio-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-translator-1266fef4c719c283.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多语种语音翻译技能。支持URL或本地文件输入，自动识别源语言，翻译为目标语言，并生成目标语言的语音文件。支持中文、英文、日文、法文、西班牙文等多种语言互译。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okgptai",
+      "userId": "s17fhdnz0efymedd66jffq4cf184yg3k",
+      "displayName": "Jasper.W",
+      "image": "https://avatars.githubusercontent.com/u/7321793?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1773909110032,
+      "changelog": "- 新增对音频URL输入的支持：可直接翻译在线音频文件，无需手动下载。\n- 安装脚本与主流程更新，自动检测输入类型并处理音频下载。\n- 参数说明和使用示例补充，明确支持本地文件与URL输入。\n- 更新依赖与工具要求，说明需支持curl下载音频。\n- 适应性提升，输入格式与触发请求更丰富。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25521d3b9867dddfc3a008c1cd75f44395684e3d6c8e328f830d68ab3d188130"
+}

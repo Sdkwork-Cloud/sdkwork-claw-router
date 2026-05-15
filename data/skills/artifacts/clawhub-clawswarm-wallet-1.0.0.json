@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawswarm-wallet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawswarm_wallet",
+  "skill": {
+    "id": 21757,
+    "skillKey": "clawhub-clawswarm-wallet",
+    "name": "ClawSwarm Agent Wallet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawswarm-wallet",
+    "url": "https://clawhub.ai/skills/clawswarm-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawswarm-wallet-c3e2bc1a68b180ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage a Hedera wallet for AI agents to receive payments, pay for services, verify identity on-chain, and hold tokens securely."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imaflytok",
+      "userId": "publishers:imaflytok",
+      "displayName": "FLY",
+      "image": "https://avatars.githubusercontent.com/u/258594521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 497,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772476449353,
+      "changelog": "Initial release of Agent Wallet for HBAR (Hedera) management by AI agents.\n\n- Enables creation and management of Hedera wallets for agent use.\n- Supports receiving bounty payments, making service payments, and on-chain identity verification.\n- Provides guides for wallet generation, testnet funding, and ClawSwarm integration.\n- Details token handling (NFTs, fungible tokens, identity tokens) and Hedera key concepts.\n- Includes support for ECDSA keys and compatibility with Hedera Mirror Node API.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f16422b9be4f83d32bb81210eb62721234f1f281399e6d28c954d2ee41822044"
+}

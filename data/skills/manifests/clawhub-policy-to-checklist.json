@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66513,
+  "uuid": "skill-clawhub-policy-to-checklist",
+  "skillKey": "clawhub-policy-to-checklist",
+  "name": "policy-to-checklist",
+  "summary": "把征稿启事、通知、比赛规则、制度文件、招标要求等转成可执行检查清单与时间线。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.policy_to_checklist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "把征稿启事、通知、比赛规则、制度文件、招标要求等转成可执行检查清单与时间线。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/policy-to-checklist@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "policy-to-checklist",
+      "url": "https://clawhub.ai/skills/policy-to-checklist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "policy-to-checklist",
+    "url": "https://clawhub.ai/skills/policy-to-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/policy-to-checklist-6397324784443570.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/policy-to-checklist@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-policy-to-checklist-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a285b96e306ce03790359b067b4062249088f7be81d47054b803aabf7a5a3821",
+      "artifactSizeBytes": 2324
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T08:36:45.798Z"
+}

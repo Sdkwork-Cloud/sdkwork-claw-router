@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8284,
+  "uuid": "skill-clawhub-gmail",
+  "skillKey": "clawhub-gmail",
+  "name": "Gmail",
+  "summary": "Gmail API integration with managed OAuth. Read, send, and manage emails, threads, labels, and drafts. Use this skill when users want to interact with Gmail....",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Gmail API integration with managed OAuth",
+        "Read, send, and manage emails, threads, labels, and drafts",
+        "Use this skill when users want to interact with Gmail...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gmail@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gmail",
+      "url": "https://clawhub.ai/skills/gmail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail",
+    "url": "https://clawhub.ai/skills/gmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-576ba7c2e4abb718.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gmail@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-gmail-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3281346659832a1565e3563322cc0fdd0be0a5f60aac8eab68312cace1f41141",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T10:03:31.420Z"
+}

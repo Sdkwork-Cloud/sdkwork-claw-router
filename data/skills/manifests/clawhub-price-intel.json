@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42873,
+  "uuid": "skill-clawhub-price-intel",
+  "skillKey": "clawhub-price-intel",
+  "name": "Price Intel",
+  "summary": "Monitor and analyze competitor pricing movements, discount patterns, and bundle strategies to inform your own pricing decisions without a race to the bottom.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.price_intel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Monitor and analyze competitor pricing movements, discount patterns, and bundle strategies to i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/price-intel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "price-intel",
+      "url": "https://clawhub.ai/skills/price-intel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "price-intel",
+    "url": "https://clawhub.ai/skills/price-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/price-intel-86c24adf28c348d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/price-intel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-price-intel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae433674ac352d459fe5c49f719154fa7be11b4d6508ffee1e1fa34fe174eaee",
+      "artifactSizeBytes": 1869
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T01:10:12.049Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/check-user-fraud@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.check_user_fraud",
+  "skill": {
+    "id": 24037,
+    "skillKey": "clawhub-check-user-fraud",
+    "name": "Check User Fraud"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "check-user-fraud",
+    "url": "https://clawhub.ai/skills/check-user-fraud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/check-user-fraud-5210a84a8865347e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query MySQL database to analyze user fraud/shuadan behavior. Use when user asks to check if a user is engaging in fraudulent task completion. Analyzes time i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "star1986c",
+      "userId": "s17egt680pqxs5bj86w62p1knn83nr9y",
+      "displayName": "star1986c",
+      "image": "https://avatars.githubusercontent.com/u/213021881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772946016857,
+      "changelog": "Initial release of the check-user-fraud skill:\n\n- Analyzes user fraud/shuadan behaviors by querying a MySQL database.\n- Detects suspicious patterns via time intervals, publisher concentration, task duplication, and top refresh status.\n- Provides a structured fraud risk assessment (high, medium, low) with clear output format.\n- Includes practical usage scenarios, database configuration notes, and example SQL references.\n- Requires pymysql and appropriate database credentials.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:101360d5fb235dcfb77923ef66168a9b99722527976e7d10dee9cdaf2e300227"
+}

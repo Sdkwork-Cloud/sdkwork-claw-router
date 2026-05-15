@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14647,
+  "uuid": "skill-clawhub-listonic",
+  "skillKey": "clawhub-listonic",
+  "name": "Listonic",
+  "summary": "Access Listonic shopping lists: list lists/items, add/check/delete items, and manage lists.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.listonic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jeremy Mahieu",
+      "features": [
+        "Access Listonic shopping lists: list lists/items, add/check/delete items, and manage lists."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/listonic@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23409814?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "listonic",
+      "url": "https://clawhub.ai/skills/listonic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "listonic",
+    "url": "https://clawhub.ai/skills/listonic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/listonic-141f67e467431cc8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/listonic@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-listonic-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b02aaef753a23359b9b688018b7821255e50d46c9d2371ff6ed9790c3a957c8",
+      "artifactSizeBytes": 2026
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T20:41:35.763Z"
+}

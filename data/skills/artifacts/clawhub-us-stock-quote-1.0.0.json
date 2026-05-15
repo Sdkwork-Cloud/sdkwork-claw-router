@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/us-stock-quote@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.us_stock_quote",
+  "skill": {
+    "id": 62603,
+    "skillKey": "clawhub-us-stock-quote",
+    "name": "Stock Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "us-stock-quote",
+    "url": "https://clawhub.ai/skills/us-stock-quote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/us-stock-quote-2a7d537edc6db2e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "美股行情工具 - 通过Yahoo Finance抓取美股实时行情（股价、涨跌幅、成交量等）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wndagg",
+      "userId": "s172zy7r78dr8st9ztk9kt75q585yc0n",
+      "displayName": "wNDAGG",
+      "image": "https://avatars.githubusercontent.com/u/180063893?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777707757976,
+      "changelog": "Initial release of the US Stock Quote skill:\n\n- Provides real-time US stock quotes via Yahoo Finance.\n- Supports popular stocks and ETFs such as SPY, QQQ, AAPL, NVDA, and TSLA.\n- Returns key data including price, percentage change, volume, and market capitalization.\n- Easy command-line operation using a Python script.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3c646264aedb95dfbc3720df4131dc2111c9e8d189909d6b45ab2940366c4c9"
+}

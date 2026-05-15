@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-starter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_starter",
+  "skill": {
+    "id": 42488,
+    "skillKey": "clawhub-ai-starter",
+    "name": "Ai Starter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-starter",
+    "url": "https://clawhub.ai/skills/ai-starter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-starter-dde2ad0f61ca6361.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered idea generation and brainstorming assistant. Perfect for \"what if\" scenarios, exploring concepts, and generating creative ideas."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pengqian1009",
+      "userId": "s176nkyktpmmb0zympv8szjxe984dc2s",
+      "displayName": "pengqian1009",
+      "image": "https://avatars.githubusercontent.com/u/268584550?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776270794527,
+      "changelog": "ai-starter 1.0.0 – Initial Release\n\n- Introduces a comprehensive AI-powered brainstorming assistant.\n- Supports idea generation, concept exploration, and creative thinking via structured prompts and techniques.\n- Includes methods such as \"What If\", 5 Whys, reverse thinking, and perspective shifting.\n- Provides templates and examples for reframing questions, multi-layer analysis, and challenging assumptions.\n- Offers quick prompts for brainstorming, deepening ideas, and planning workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5096c3db36e922338acb44621d881e9f7199f5ee06ea6b9e9967829b3f0b5bd"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lark-multi-agent-factory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lark_multi_agent_factory",
+  "skill": {
+    "id": 59611,
+    "skillKey": "clawhub-lark-multi-agent-factory",
+    "name": "Lark Multi Agent Factory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lark-multi-agent-factory",
+    "url": "https://clawhub.ai/skills/lark-multi-agent-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lark-multi-agent-factory-0bbbaa853568ee03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "针对 @larksuite/openclaw-lark 官方插件的多 agent 批量配置工具。当用户说「添加 agent」「新建 agent」「配置飞书」「批量创建 agent」「添加新机器人」，且系统安装的是 @larksuite/openclaw-lark 插件时触发。支持 threadSession、re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cchenwei",
+      "userId": "s17fvxzs15k0zr9vt6xzwr8qms83hkc8",
+      "displayName": "Cchenwei",
+      "image": "https://avatars.githubusercontent.com/u/17821177?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776101208694,
+      "changelog": "Initial release: Multi-agent batch configuration for the official @larksuite/openclaw-lark plugin.\n\n- Guides users to batch add or configure Feishu (Lark) agents with fields exclusive to the official plugin (threadSession, replyMode, blockStreaming, etc.).\n- Auto-checks @larksuite/openclaw-lark plugin installation before operation.\n- Supports dry-run preview and interactive information gathering.\n- Separate per-agent and channel-level options, with clear JSON structure and command-line workflows.\n- Ensures plugin safety: agentId validation, local credential storage, app secret masking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:56bd5a7630eaefa45923e7045a86640df3c37270e6254e8c1d1d578121acbfc0"
+}

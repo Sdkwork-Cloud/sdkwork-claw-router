@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42182,
+  "uuid": "skill-clawhub-wechat-mp-draft-publisher",
+  "skillKey": "clawhub-wechat-mp-draft-publisher",
+  "name": "wechat-mp-draft-publisher",
+  "summary": "Publish WeChat Official Account draft articles through a packaged CLI executable that wraps WeChat API calls. Use when the user wants to publish or create a...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_mp_draft_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mesus",
+      "features": [
+        "Publish WeChat Official Account draft articles through a packaged CLI executable that wraps WeC.",
+        "Use when the user wants to publish or create a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-mp-draft-publisher@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18209480?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-mp-draft-publisher",
+      "url": "https://clawhub.ai/skills/wechat-mp-draft-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-mp-draft-publisher",
+    "url": "https://clawhub.ai/skills/wechat-mp-draft-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-mp-draft-publisher-60dfdfdf7989e522.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-mp-draft-publisher@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-mp-draft-publisher-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbc040d3b3645509f4be061ce39e4387738f2ceed3f57d628cca23a2dee80ff6",
+      "artifactSizeBytes": 2475
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T07:37:52.233Z"
+}

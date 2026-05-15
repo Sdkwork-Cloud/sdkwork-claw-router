@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geo-fix-schema@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_fix_schema",
+  "skill": {
+    "id": 41594,
+    "skillKey": "clawhub-geo-fix-schema",
+    "name": "Geo Fix Schema"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-fix-schema",
+    "url": "https://clawhub.ai/skills/geo-fix-schema",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-fix-schema-cac72f1c822f5321.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze a website's structured data and generate ready-to-use JSON-LD schema markup to improve AI discoverability. Use when the user asks to fix schema, add..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "enzyme2013",
+      "userId": "s1769p76b5b6v79bsajk42ash9840ed9",
+      "displayName": "Eugene Liu",
+      "image": "https://avatars.githubusercontent.com/u/11206822?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775411186265,
+      "changelog": "**Security enhancements and schema analysis update.**\n\n- Added a new \"Security: Untrusted Content Handling\" section detailing safe processing of user-supplied/fetched website content.\n- Now explicitly warns against following any agent or prompt injection instructions found in fetched sites; such attempts are flagged as \"Prompt Injection Attempt Detected.\"\n- Core functionality for schema discovery, auditing, and JSON-LD generation remains unchanged.\n- Documentation improved to highlight stronger safeguards when analyzing third-party HTML and data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35889c26e177f0072828be208251acef40c945dad499530057ed7b7e4fe7603d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/farmdash-futures-strategist@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.farmdash_futures_strategist",
+  "skill": {
+    "id": 26640,
+    "skillKey": "clawhub-farmdash-futures-strategist",
+    "name": "farmdash futures strategist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "farmdash-futures-strategist",
+    "url": "https://clawhub.ai/skills/farmdash-futures-strategist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/farmdash-futures-strategist-2a98f4bca2d9c5d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adaptive Hyperliquid perps execution engine for OpenClaw. Researches funding, trend, liquidity, regime, and account context; returns strategy objects with pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parmasanandgarlic",
+      "userId": "s177a1xxprmvcbyygraxwvbf5s83qzs6",
+      "displayName": "Parm",
+      "image": "https://avatars.githubusercontent.com/u/221037511?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 364,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1777184944412,
+      "changelog": "FarmDash Futures Strategist 1.0.6\n\n- Updated documentation: SKILL.md now reflects version 2.0.0, down from 2.1.0, with minor content streamlining.\n- No code or interface changes; this release is documentation-only.\n- Revised the recommended workflow section and removed the reference to a shared operating model file.\n- Clarified strategy recommendation structures and reaffirmed tool availability and zero-custody execution principles.\n- No changes to API endpoints, features, or security model.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:519ce8630dc8a21bdd423c5755e84b3a3f193f9046d785b67d111ea7bd9c353f"
+}

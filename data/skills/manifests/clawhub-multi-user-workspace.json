@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14637,
+  "uuid": "skill-clawhub-multi-user-workspace",
+  "skillKey": "clawhub-multi-user-workspace",
+  "name": "Multi User Workspace",
+  "summary": "Multi-user workspace management with sandbox permissions, user profiles, and relationship networks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_user_workspace",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shun-dong",
+      "features": [
+        "Multi-user workspace management with sandbox permissions, user profiles, and relationship netwo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-user-workspace@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88697335?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-user-workspace",
+      "url": "https://clawhub.ai/skills/multi-user-workspace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-user-workspace",
+    "url": "https://clawhub.ai/skills/multi-user-workspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-user-workspace-22af857b5136b012.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-user-workspace@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-user-workspace-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e06acbe74f0c06930420f4fe2a7685ab4453754a8729fbdb9a2187015025081",
+      "artifactSizeBytes": 2411
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T14:29:02.063Z"
+}

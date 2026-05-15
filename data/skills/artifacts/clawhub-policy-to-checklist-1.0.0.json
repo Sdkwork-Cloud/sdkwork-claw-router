@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/policy-to-checklist@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.policy_to_checklist",
+  "skill": {
+    "id": 66513,
+    "skillKey": "clawhub-policy-to-checklist",
+    "name": "policy-to-checklist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "policy-to-checklist",
+    "url": "https://clawhub.ai/skills/policy-to-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/policy-to-checklist-6397324784443570.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "把征稿启事、通知、比赛规则、制度文件、招标要求等转成可执行检查清单与时间线。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 395,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773218205798,
+      "changelog": "Initial release of policy-to-checklist\n\n- Converts complex policy documents (e.g., calls for papers, contest rules, application guidelines, bid requirements) into actionable checklists and timelines.\n- Supports extracting requirements and deadlines from notifications and instructions.\n- Activated by user requests to organize or extract key points from such documents.\n- Clipboard content automatically processed into clear, step-by-step lists.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a285b96e306ce03790359b067b4062249088f7be81d47054b803aabf7a5a3821"
+}

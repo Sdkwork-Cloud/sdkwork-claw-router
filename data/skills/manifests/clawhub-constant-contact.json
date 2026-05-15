@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9020,
+  "uuid": "skill-clawhub-constant-contact",
+  "skillKey": "clawhub-constant-contact",
+  "name": "Constant Contact",
+  "summary": "Constant Contact API integration with managed OAuth. This is a write-capable integration — it can read, create, update, delete, and bulk-modify contacts, ema...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.constant_contact",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Constant Contact API integration with managed OAuth",
+        "This is a write-capable integration — it can read, create, update, delete, and bulk-modify cont."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/constant-contact@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "constant-contact",
+      "url": "https://clawhub.ai/skills/constant-contact"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "constant-contact",
+    "url": "https://clawhub.ai/skills/constant-contact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/constant-contact-8526acc308a2f9c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/constant-contact@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-constant-contact-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12dececd4683fcae03dab05b79dc3e7a5c2f372740cca17db61fac637491ee87",
+      "artifactSizeBytes": 2510
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T09:50:51.963Z"
+}

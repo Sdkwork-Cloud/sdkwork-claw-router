@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-searxng@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_searxng",
+  "skill": {
+    "id": 39401,
+    "skillKey": "clawhub-my-searxng",
+    "name": "My Searxng"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-searxng",
+    "url": "https://clawhub.ai/skills/my-searxng",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-searxng-9e0d0b9f17de1d26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Privacy-respecting metasearch using your local SearXNG instance. Search the web, images, news, and more without external API dependencies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liujiang817",
+      "userId": "s17cmgh8wy9gdmg7vkhg9eshcn83gfyz",
+      "displayName": "liujiang817",
+      "image": "https://avatars.githubusercontent.com/u/30427436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774092607758,
+      "changelog": "Initial release of searxng skill, enabling privacy-friendly local metasearch.\n\n- Search the web, images, news, IT, and science using your own SearXNG instance.\n- Zero external dependencies beyond Python 3; no pip install required.\n- Standard output is optimized for context efficiency; avoids raw JSON unless explicitly requested.\n- Configurable via a simple INI file; local instance URL required.\n- Multiple trigger phrases supported in both English and Chinese.\n- Advanced options include results count, category, language, and time filtering.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a3eae9f50c23ee83f617aeffa906cfc9f2b22da63c30c4520a386a33a4bbf4a"
+}

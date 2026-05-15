@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notion-enhanced-markdown@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_enhanced_markdown",
+  "skill": {
+    "id": 33996,
+    "skillKey": "clawhub-notion-enhanced-markdown",
+    "name": "notion-enhanced-markdown-integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-enhanced-markdown",
+    "url": "https://clawhub.ai/skills/notion-enhanced-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-enhanced-markdown-c3af8466e5e93017.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Notion API for creating and managing pages, databases, blocks and enhanced markdown."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fental",
+      "userId": "s1724ma7y5fc5cdxmga8x25esx83g8he",
+      "displayName": "Fental Huang",
+      "image": "https://avatars.githubusercontent.com/u/11538644?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775141573155,
+      "changelog": "Notion skill 1.0.0 adds support for enhanced Markdown read/write API and updates to the latest Notion API.\n\n- Updated to Notion API version 2026-03-11, with new endpoints and terminology\n- Added Markdown API sections for creating, reading, and updating pages as plain Markdown\n- Detailed support for Markdown-compatible block types, syntax, and limitations\n- Expanded documentation for search/replace, partial updates, and content replacement in Markdown\n- Updated environment variable and setup instructions\n- Clarified differences and usage of database_id vs. data_source_id",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0fbaeed73e9c391ca0897f4ee0735110de1d5155e453f8869fc5fe30f708347"
+}

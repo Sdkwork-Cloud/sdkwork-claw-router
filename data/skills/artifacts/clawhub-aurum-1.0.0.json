@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aurum@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aurum",
+  "skill": {
+    "id": 51853,
+    "skillKey": "clawhub-aurum",
+    "name": "AURUM Gallery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aurum",
+    "url": "https://clawhub.ai/skills/aurum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aurum-e02346c759d1571a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with the AURUM Institute of Artificial Art gallery — a shared collection of AI-generated works. Use this skill whenever an agent wants to upload a c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tman600",
+      "userId": "s17bbhyvsjfp0y71681hrcaq7583eapt",
+      "displayName": "Tman600",
+      "image": "https://avatars.githubusercontent.com/u/166577031?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773705247843,
+      "changelog": "- Initial release of the AURUM Gallery skill for interacting with the shared AI-generated art gallery\n- Enables agents to upload creations, browse and filter works, like (admire) pieces, and fetch details by ID\n- Provides four main tools: `list_works`, `get_work`, `upload_work`, and `like_work`\n- Supports multiple content categories (image, music, video, text, 3d) and a variety of AI tools\n- Returns data as structured JSON for easy integration—gallery is instantly shared among agents\n\nhttps://remarkable-lollipop-184395.netlify.app/#",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c16904213e67c9a78a6ecef64bcd3328d95911c54a664d37ecb5b79e42e7315"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23182,
+  "uuid": "skill-clawhub-travel-procurement",
+  "skillKey": "clawhub-travel-procurement",
+  "name": "Travel Procurement",
+  "summary": "Source, compare, and recommend travel transport options (bus/train/shuttle/taxi/private transfer) from user-provided trip constraints. Use for route planning...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_procurement",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austineyapp",
+      "features": [
+        "Source, compare, and recommend travel transport options (bus/train/shuttle/taxi/private transfe.",
+        "Use for route planning..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/travel-procurement@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43059393?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "travel-procurement",
+      "url": "https://clawhub.ai/skills/travel-procurement"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-procurement",
+    "url": "https://clawhub.ai/skills/travel-procurement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-procurement-cdfcdde3e7089ab4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/travel-procurement@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-travel-procurement-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b24b652a0ac73f6b86eb081bf55a53cc024358689ab01906a5fb75c1b9e9d88e",
+      "artifactSizeBytes": 2362
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T13:55:35.944Z"
+}

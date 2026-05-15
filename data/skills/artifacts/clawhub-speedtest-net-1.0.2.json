@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/speedtest-net@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.speedtest_net",
+  "skill": {
+    "id": 34335,
+    "skillKey": "clawhub-speedtest-net",
+    "name": "Speedtest.net"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "speedtest-net",
+    "url": "https://clawhub.ai/skills/speedtest-net",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/speedtest-net-c9dab31277005046.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Measure internet network speed (download, upload, ping) using speedtest-cli (Speedtest.net). Use when: user asks to \"check speed\", \"run speedtest\", \"test net..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elony-7",
+      "userId": "s176jb0n0r6kph5ma1st3sz9zx83kgjz",
+      "displayName": "elony-7",
+      "image": "https://avatars.githubusercontent.com/u/172764870?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774793857226,
+      "changelog": "Security fix: removed auto-install of speedtest-cli. Script now fails with clear error pointing to setup.md instead of running pip/apt automatically.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a5c31090a486a6c40fd389f6617e53f71d6e7c44cc31cfc70fc37b7dd1861fd"
+}

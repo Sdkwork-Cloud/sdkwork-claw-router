@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20137,
+  "uuid": "skill-clawhub-video-enhancer",
+  "skillKey": "clawhub-video-enhancer",
+  "name": "Filmora Video Enhancer",
+  "summary": "Cloud-based video enhancement skill that uploads a user-selected local video file to Wondershare-hosted endpoints for AI enhancement, then downloads the proc...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_enhancer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bing",
+      "features": [
+        "Cloud-based video enhancement skill that uploads a user-selected local video file to Wondershar."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-enhancer@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54020143?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-enhancer",
+      "url": "https://clawhub.ai/skills/video-enhancer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-enhancer",
+    "url": "https://clawhub.ai/skills/video-enhancer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-enhancer-3b79570711b130de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-enhancer@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-enhancer-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aff448e052aed27e3ff4544fea17f8c7310503af3fbbab0984ae89af7b8b2a47",
+      "artifactSizeBytes": 2184
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T06:23:07.426Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60881,
+  "uuid": "skill-clawhub-guantou-feishu-bot-connector",
+  "skillKey": "clawhub-guantou-feishu-bot-connector",
+  "name": "Feishu Bot Connector",
+  "summary": "可以帮用户飞书机器人，并将 agent 连接到飞书机器人上",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guantou_feishu_bot_connector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leochens",
+      "features": [
+        "可以帮用户飞书机器人，并将 agent 连接到飞书机器人上"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guantou-feishu-bot-connector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30434852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guantou-feishu-bot-connector",
+      "url": "https://clawhub.ai/skills/guantou-feishu-bot-connector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guantou-feishu-bot-connector",
+    "url": "https://clawhub.ai/skills/guantou-feishu-bot-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guantou-feishu-bot-connector-9232164ba949e7a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guantou-feishu-bot-connector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-guantou-feishu-bot-connector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9980ff21bf30467dfdd057c08328db3cb3febf34f62d39a0e9f76c383cc46e1f",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T07:03:52.468Z"
+}

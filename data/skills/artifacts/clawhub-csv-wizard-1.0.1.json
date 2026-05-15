@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/csv-wizard@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.csv_wizard",
+  "skill": {
+    "id": 66092,
+    "skillKey": "clawhub-csv-wizard",
+    "name": "CSV Wizard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "csv-wizard",
+    "url": "https://clawhub.ai/skills/csv-wizard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/csv-wizard-8f7bb41afc6f58d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "交互式数据清洗 CLI，支持自动类型推断、缺失值处理、重复检测"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "antonia-sz",
+      "userId": "s1730srvecg82e9ex26q7shpd184ghxy",
+      "displayName": "antonia huang",
+      "image": "https://avatars.githubusercontent.com/u/143588581?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 475,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773192157125,
+      "changelog": "- Version bumped from 1.0.0 to 1.0.1 with no file changes detected.\n- No changes to features, usage, or documentation in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:894f47a2f5ed711c389b510ff90ac43890eba358938771b39e6019565231eb9e"
+}

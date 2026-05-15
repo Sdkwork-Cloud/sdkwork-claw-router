@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60932,
+  "uuid": "skill-clawhub-ai-skillhub",
+  "skillKey": "clawhub-ai-skillhub",
+  "name": "AI SkillHub",
+  "summary": "OpenClaw AI SkillHub 核心。支持两种触发方式：①「!skill URL」自动模式，AI 自动归纳关键词和分类；②「!skill 关键词 URL」手动模式，用户指定关键词。提取内容 → 生成原始内容.md + SKILL.md → 推送 GitHub。",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_skillhub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eeyan2025-art",
+      "features": [
+        "OpenClaw AI SkillHub 核心。支持两种触发方式：①「!skill URL」自动模式，AI 自动归纳关键词和分类；②「!skill 关键词 URL」手动模式，用户指定关键词。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-skillhub@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259014150?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-skillhub",
+      "url": "https://clawhub.ai/skills/ai-skillhub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-skillhub",
+    "url": "https://clawhub.ai/skills/ai-skillhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-skillhub-1e825c874b279680.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-skillhub@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-skillhub-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e9015b55ee4aaad276a345d886ff8b98fc22683ea3ca2e7b8dbe19dd6980bad",
+      "artifactSizeBytes": 2156
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T09:22:04.537Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docker-sandbox-lucas@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_sandbox_lucas",
+  "skill": {
+    "id": 13933,
+    "skillKey": "clawhub-docker-sandbox-lucas",
+    "name": "Docker Sandbox Lucas"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-sandbox-lucas",
+    "url": "https://clawhub.ai/skills/docker-sandbox-lucas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-sandbox-lucas-c0ac963627332e2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage Docker sandboxed VM environments for safe agent execution. Use when running untrusted code, exploring packages, or isolating agent workloads. Supports Claude, Codex, Copilot, Gemini, and Kiro agents with network proxy con."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lucasseeley",
+      "userId": "publishers:lucasseeley",
+      "displayName": "LucasSeeley",
+      "image": "https://avatars.githubusercontent.com/u/69803592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1258,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770851402700,
+      "changelog": "- Updated meta file formatting; no user-facing changes.\n- Clarified or standardized metadata structure for consistency.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c5806aadbcde3c73d6db3942c90204ab906ef6a13d0693576b97df017f99025c"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62523,
+  "uuid": "skill-clawhub-ai-cost-calculator-cn",
+  "skillKey": "clawhub-ai-cost-calculator-cn",
+  "name": "Ai Cost Calculator",
+  "summary": "AI 成本计算器 - 对比各大模型成本，优化 API 支出。适合：AI 应用开发者、成本敏感用户。",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_cost_calculator_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang1002378395-cmyk",
+      "features": [
+        "AI 成本计算器",
+        "对比各大模型成本，优化 API 支出。适合：AI 应用开发者、成本敏感用户。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-cost-calculator-cn@1.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261632147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-cost-calculator-cn",
+      "url": "https://clawhub.ai/skills/ai-cost-calculator-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-cost-calculator-cn",
+    "url": "https://clawhub.ai/skills/ai-cost-calculator-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-cost-calculator-cn-8ce12d18b832e9a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-cost-calculator-cn@1.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-cost-calculator-cn-1.2.4.json",
+      "version": "1.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d6cb3506a144017133e5b76032f23b0f3723703cb0d520e20024ce777febd86",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T05:42:09.607Z"
+}

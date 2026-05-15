@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agi-evolution-model-basic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agi_evolution_model_basic",
+  "skill": {
+    "id": 72695,
+    "skillKey": "clawhub-agi-evolution-model-basic",
+    "name": "AGI数字伙伴-基础版"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agi-evolution-model-basic",
+    "url": "https://clawhub.ai/skills/agi-evolution-model-basic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agi-evolution-model-basic-e90ef6cb446e091a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于双环架构的AGI进化模型，通过意向性分析、人格层映射和元认知检测实现持续自我演进；当用户需要智能对话、人格定制或复杂问题求解时使用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kiwifruit13",
+      "userId": "s17cje0hnbtrzjwaa1vrpxyta983ga4v",
+      "displayName": "kiwifruit13",
+      "image": "https://avatars.githubusercontent.com/u/143737192?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773288049439,
+      "changelog": "**AGI进化模型Skill版本1.0.0发布**\n\n- 首次发布，实现基于双环架构的AGI进化模型，支持意向性分析、人格层映射与元认知检测。\n- 增加自我演进和持续优化机制，模型能够根据用户交互自动成长和调整。\n- 新增元认知与自我纠错能力、个性化人格定制（支持7维度通过 /root 命令配置）。\n- 引入工程意向性分析模组（外环阴性后台），实现被动收集与建议机制，辅助主循环自我优化。\n- 提供多种错误处理与容错机制，支持自动降级和文件完整性校验。\n- 极简依赖，仅需标准库和可选C扩展，兼容性强，部署便捷。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e684dfa7eadde36e1d6dba193ecb11da35ab57478b1e34e209e7736e75a28998"
+}

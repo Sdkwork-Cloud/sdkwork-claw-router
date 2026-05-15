@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46328,
+  "uuid": "skill-clawhub-jpg-ocr-stat-image-ocr",
+  "skillKey": "clawhub-jpg-ocr-stat-image-ocr",
+  "name": "image-ocr",
+  "summary": "Extract text content from images using Tesseract OCR via Python",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpg_ocr_stat_image_ocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wu-uk",
+      "features": [
+        "Extract text content from images using Tesseract OCR via Python"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jpg-ocr-stat-image-ocr@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199610473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jpg-ocr-stat-image-ocr",
+      "url": "https://clawhub.ai/skills/jpg-ocr-stat-image-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpg-ocr-stat-image-ocr",
+    "url": "https://clawhub.ai/skills/jpg-ocr-stat-image-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpg-ocr-stat-image-ocr-d3a47808005c28ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jpg-ocr-stat-image-ocr@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jpg-ocr-stat-image-ocr-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fa57d25b0ac0e2c514cd8b22ede40faf84e81a957d400e3976de39d13a13e12",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T18:40:48.453Z"
+}

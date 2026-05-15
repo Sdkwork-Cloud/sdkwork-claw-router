@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48934,
+  "uuid": "skill-clawhub-vibe-vc",
+  "skillKey": "clawhub-vibe-vc",
+  "name": "The Vibe VC",
+  "summary": "Submit a vibe-coded startup to The Vibe VC and manage its diligence surfaces. Use when you need to (1) register a project via https://vibevc.md API (/api/reg...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibe_vc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "oliversum-ch",
+      "features": [
+        "Submit a vibe-coded startup to The Vibe VC and manage its diligence surfaces",
+        "Use when you need to (1) register a project via https://vibevc.md API (/api/reg..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vibe-vc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75724465?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vibe-vc",
+      "url": "https://clawhub.ai/skills/vibe-vc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibe-vc",
+    "url": "https://clawhub.ai/skills/vibe-vc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibe-vc-c6f6e3228991b1ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vibe-vc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vibe-vc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23dda04b334cb71b07486e67779b844b1317971b54b5c7b307f3a9b74f1f171d",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T09:22:44.197Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63599,
+  "uuid": "skill-clawhub-ssa-logistics-tracker",
+  "skillKey": "clawhub-ssa-logistics-tracker",
+  "name": "Logistics Tracker",
+  "summary": "物流跟踪技能，对接 17Track 批量 API，自动跟踪运单状态，向客户发送邮件通知，并在异常时告警。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssa_logistics_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaden's built a claw",
+      "features": [
+        "物流跟踪技能，对接 17Track 批量 API，自动跟踪运单状态，向客户发送邮件通知，并在异常时告警。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssa-logistics-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64246343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssa-logistics-tracker",
+      "url": "https://clawhub.ai/skills/ssa-logistics-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssa-logistics-tracker",
+    "url": "https://clawhub.ai/skills/ssa-logistics-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssa-logistics-tracker-e9c4465ffda6baeb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssa-logistics-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssa-logistics-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:080c3084e11637520aa375d62b423826e2ab5e43508566fa3208199cfc63b2f9",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T06:44:42.370Z"
+}

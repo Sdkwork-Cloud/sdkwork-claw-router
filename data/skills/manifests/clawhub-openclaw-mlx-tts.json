@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65416,
+  "uuid": "skill-clawhub-openclaw-mlx-tts",
+  "skillKey": "clawhub-openclaw-mlx-tts",
+  "name": "Mlx Tts",
+  "summary": "基于 mlx-audio 的本地文本转语音，支持多语言和多模型，输出音频文件限于指定路径，无需 API 密钥。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_mlx_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gandli-2025",
+      "features": [
+        "基于 mlx-audio 的本地文本转语音，支持多语言和多模型，输出音频文件限于指定路径，无需 API 密钥。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-mlx-tts@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222068792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-mlx-tts",
+      "url": "https://clawhub.ai/skills/openclaw-mlx-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-mlx-tts",
+    "url": "https://clawhub.ai/skills/openclaw-mlx-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-mlx-tts-0ce764e823e9d790.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-mlx-tts@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-mlx-tts-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc26302b01a9a0f463d96264849860b3b5cade8ab5bb5c31071e5a3e74db5273",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T14:03:11.015Z"
+}

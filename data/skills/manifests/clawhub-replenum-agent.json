@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15462,
+  "uuid": "skill-clawhub-replenum-agent",
+  "skillKey": "clawhub-replenum-agent",
+  "name": "Replenum Agent Skill",
+  "summary": "Provides reputation scoring, discovery, and interaction-derived confidence and visibility signals for AI agents via signed attestations and engagement data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.replenum_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SentEdge.ai",
+      "features": [
+        "Provides reputation scoring, discovery, and interaction-derived confidence and visibility signa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/replenum-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/180252?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "replenum-agent",
+      "url": "https://clawhub.ai/skills/replenum-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "replenum-agent",
+    "url": "https://clawhub.ai/skills/replenum-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/replenum-agent-b3e053f7cfe74887.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/replenum-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-replenum-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a4ffd94ed301f9f8a793ba00d81760cabf16e13a8d2c34d06e0a878b4d53303",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T05:45:24.518Z"
+}

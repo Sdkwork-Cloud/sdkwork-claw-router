@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64569,
+  "uuid": "skill-clawhub-rent-computer",
+  "skillKey": "clawhub-rent-computer",
+  "name": "Rent Computer Assistant",
+  "summary": "当用户电脑性能不足，或者希望租赁高性能电脑时，帮助用户完成电脑租赁申请",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rent_computer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cyyinfo",
+      "features": [
+        "当用户电脑性能不足，或者希望租赁高性能电脑时，帮助用户完成电脑租赁申请"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rent-computer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15858735?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rent-computer",
+      "url": "https://clawhub.ai/skills/rent-computer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rent-computer",
+    "url": "https://clawhub.ai/skills/rent-computer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rent-computer-40489d3c7086f4ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rent-computer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-rent-computer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:001be2b9a87938db2fa3cee8ffcf272ae69d7fda4e830ba0f7b64aa33de6c728",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T02:57:47.497Z"
+}

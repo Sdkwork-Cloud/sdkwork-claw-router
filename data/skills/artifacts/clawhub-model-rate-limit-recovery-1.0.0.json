@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-rate-limit-recovery@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_rate_limit_recovery",
+  "skill": {
+    "id": 53143,
+    "skillKey": "clawhub-model-rate-limit-recovery",
+    "name": "Model Rate Limit Recovery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-rate-limit-recovery",
+    "url": "https://clawhub.ai/skills/model-rate-limit-recovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-rate-limit-recovery-aa560cc9579c863e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose and recover from model rate limit errors (ChatGPT usage limits, 429 errors). Use when cron jobs or agent sessions fail with \"Try again in ~9500 min\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stefanferreira",
+      "userId": "s174f5nq8v4pyqpbz80b1gew5d83pkm9",
+      "displayName": "stefanferreira",
+      "image": "https://avatars.githubusercontent.com/u/6356549?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776150787078,
+      "changelog": "Initial release—toolkit for diagnosing and recovering from model rate limit errors.\n\n- Offers step-by-step instructions for identifying and resolving ChatGPT usage limit (429/rate_limit) errors in cron jobs and agent sessions\n- Documents API key rotation setup and automatic model fallback options\n- Includes recovery procedures, best practices for resilient cron configuration, and monitoring strategies\n- Provides ready-to-use scripts and templates for rapid recovery and improved workflow resilience\n- Notes plan-specific limitations and clarifies which errors are recoverable via rotation or fallback",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2271cb9e44e3997e2e3110a98402a4afa66419af597f933a9cdd586642bd0a52"
+}

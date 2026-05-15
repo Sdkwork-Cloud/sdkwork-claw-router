@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-memory-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_pro",
+  "skill": {
+    "id": 28562,
+    "skillKey": "clawhub-agent-memory-pro",
+    "name": "Agent Memory Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-pro",
+    "url": "https://clawhub.ai/skills/agent-memory-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-pro-74236108225191b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full AI agent memory stack — Mem0 unified memory engine with vector search (Qdrant) and knowledge graph (Neo4j), plus SQLite for structured data. Complete se..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 876,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771143538299,
+      "changelog": "Full agent brain stack: Mem0 + Qdrant + Neo4j + SQLite",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c060ab555c6c5c7039de64ae743c3c88ad0749540b497f014690a5320227d9db"
+}

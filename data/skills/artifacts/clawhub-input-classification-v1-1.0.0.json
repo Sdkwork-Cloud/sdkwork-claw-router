@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/input-classification-v1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.input_classification_v1",
+  "skill": {
+    "id": 20056,
+    "skillKey": "clawhub-input-classification-v1",
+    "name": "input classification"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "input-classification-v1",
+    "url": "https://clawhub.ai/skills/input-classification-v1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/input-classification-v1-42a3f44fb40168fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deterministic rule-based system for classifying clarified input into a single primary task category and assigning execution complexity. Use when the Main Age..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "omprasad122007-rgb",
+      "userId": "publishers:omprasad122007-rgb",
+      "displayName": "omprasad122007-rgb",
+      "image": "https://avatars.githubusercontent.com/u/260436802?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 576,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771737021241,
+      "changelog": "Initial release of the Input Classification System.\n\n- Provides deterministic, rule-based classification of clarified input into a single primary task category.\n- Assigns execution complexity, risk level, and confidence score for each input.\n- Enforces single-category output with explicit tie-breaking and category boundary rules.\n- Triggers only after clarification is complete and before task decomposition.\n- Outputs structured results for downstream systems and maintains full audit trails.\n- Prevents misclassification and escalation for high-risk or low-confidence inputs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5b241fd22d33aa92fc62313b2dab20c86e743399b07f3817796067629a0c9b32"
+}

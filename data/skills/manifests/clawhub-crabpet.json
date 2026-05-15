@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50809,
+  "uuid": "skill-clawhub-crabpet",
+  "skillKey": "clawhub-crabpet",
+  "name": "CrabPet",
+  "summary": "AI pet companion — a pixel lobster that grows from your OpenClaw usage. Use when user mentions pet, crabpet, lobster pet, my crab, pet status, pet card, pet...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crabpet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "力奇蛙",
+      "features": [
+        "AI pet companion — a pixel lobster that grows from your OpenClaw usage",
+        "Use when user mentions pet, crabpet, lobster pet, my crab, pet status, pet card, pet..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crabpet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16315246?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crabpet",
+      "url": "https://clawhub.ai/skills/crabpet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crabpet",
+    "url": "https://clawhub.ai/skills/crabpet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crabpet-e8327afb2dbccaf3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crabpet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crabpet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:734d9de371c9a86d59ea02113a5ccd81a429ae8b076aa2196e331aaee1c53c17",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T15:04:30.695Z"
+}

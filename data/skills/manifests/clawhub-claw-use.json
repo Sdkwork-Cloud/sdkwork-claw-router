@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50746,
+  "uuid": "skill-clawhub-claw-use",
+  "skillKey": "clawhub-claw-use",
+  "name": "Claw Use — Device Control for AI Agents",
+  "summary": "Control physical devices over HTTP with unified commands for screen reading, input actions, app launch, navigation, and audio output using the Claw Use proto...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_use",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "傅洋",
+      "features": [
+        "Control physical devices over HTTP with unified commands for screen reading, input actions, app."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-use@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5648066?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-use",
+      "url": "https://clawhub.ai/skills/claw-use"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-use",
+    "url": "https://clawhub.ai/skills/claw-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-use-19dacc23a52c5e4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-use@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-use-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4f5b9a300858c2aabd307a9822a6521feb7d176fc677bdc4ef589bec9c928cc",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:30:24.245Z"
+}

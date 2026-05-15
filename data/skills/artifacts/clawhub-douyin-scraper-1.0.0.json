@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_scraper",
+  "skill": {
+    "id": 65529,
+    "skillKey": "clawhub-douyin-scraper",
+    "name": "douyin-scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-scraper",
+    "url": "https://clawhub.ai/skills/douyin-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-scraper-65da7c9eda4d7206.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抖音图文笔记采集工具。搜索关键词 → 自动筛选「图文·一周内」→ Playwright 截图（绕过反爬虫）→ Baidu OCR 识别图片文字 → 输出 Markdown 报告（含热度评分）。当用户提到\"抖音图文采集\"、\"抖音笔记抓取\"、\"抖音爬虫\"、\"抖音内容采集\"等场景时加载此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samcheng0717",
+      "userId": "s17djcvsw0254x6mgsbyd4yk0583nkbr",
+      "displayName": "Sam Cheng",
+      "image": "https://avatars.githubusercontent.com/u/33610748?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774515501097,
+      "changelog": "抖音图文笔记采集工具。搜索关键词 → 自动筛选「图文·一周内」→ Playwright 截图（绕过反爬虫）→ Baidu OCR 识别图片文字 →\n  输出 Markdown 报告（含热度评分）。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c17746b8511d4b64611534b28297504e667873082e83970c3740cdfab337129a"
+}

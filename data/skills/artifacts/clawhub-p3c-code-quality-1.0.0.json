@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/p3c-code-quality@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.p3c_code_quality",
+  "skill": {
+    "id": 60425,
+    "skillKey": "clawhub-p3c-code-quality",
+    "name": "p3c-code-quality"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "p3c-code-quality",
+    "url": "https://clawhub.ai/skills/p3c-code-quality",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/p3c-code-quality-8dc48cd0345ffa0d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "执行代码质量检查测试，基于阿里巴巴 P3C 规范对代码进行全面检查，包括命名规范、异常处理、并发安全、数据库规范、OOP 规范、安全规约和单元测试规范。Invoke when user needs to verify code quality against P3C standards."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ohalo",
+      "userId": "s17efdg8a4jaek72pvvbab8t9183mztf",
+      "displayName": "ohalo",
+      "image": "https://avatars.githubusercontent.com/u/2868547?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 709,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773371299184,
+      "changelog": "Initial release of p3c-code-quality skill.\n\n- Provides comprehensive code quality checks based on Alibaba P3C standards (2022 version), covering naming conventions, exception handling, concurrency, database rules, OOP practices, security, and unit testing.\n- Aggregates multiple specialized sub-skills to perform detailed inspections across all major Java code quality areas.\n- Utilizes Trae IDE built-in tools (Glob, Read, Grep, SearchCodebase, GetDiagnostics, Write) for scanning, analyzing, and reporting problems.\n- Generates detailed Markdown reports with categorized issue severity, improvement suggestions, and quality ratings.\n- Supports flexible input for file or directory paths, business context, and interface/module names to customize reports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bfeb97fcf6db47b098e5e6061587d64fcb00156173978da3319331d3aca34589"
+}

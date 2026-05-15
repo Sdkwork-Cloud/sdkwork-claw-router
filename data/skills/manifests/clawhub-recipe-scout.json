@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56754,
+  "uuid": "skill-clawhub-recipe-scout",
+  "skillKey": "clawhub-recipe-scout",
+  "name": "Recipe Scout — Chinese Recipes",
+  "summary": "Find and normalize Chinese recipes (中餐菜谱) from structured sources first, then export clean recipe notes to Obsidian markdown. Prefer stable recipe sites over...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_scout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yinliang Chen",
+      "features": [
+        "Find and normalize Chinese recipes (中餐菜谱) from structured sources first, then export clean reci.",
+        "Prefer stable recipe sites over..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe-scout@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72800166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe-scout",
+      "url": "https://clawhub.ai/skills/recipe-scout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-scout",
+    "url": "https://clawhub.ai/skills/recipe-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-scout-3db787c62d6324b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe-scout@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-scout-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:330f344ce7075c16bd6650fd17fa10384943f3729f5dbb8b3d2c91a6888644cf",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T21:07:20.924Z"
+}

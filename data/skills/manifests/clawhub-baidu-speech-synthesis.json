@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26838,
+  "uuid": "skill-clawhub-baidu-speech-synthesis",
+  "skillKey": "clawhub-baidu-speech-synthesis",
+  "name": "Baidu Speech Synthesis",
+  "summary": "Baidu Intelligent Cloud Speech Synthesis (TTS), supporting multi-role dialogue audio generation, SSML/segment-merge dual modes, speech rate/pitch adjustment.",
+  "version": "1.2.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_speech_synthesis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guoxh",
+      "features": [
+        "Baidu Intelligent Cloud Speech Synthesis (TTS), supporting multi-role dialogue audio generation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-speech-synthesis@1.2.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3035139?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-speech-synthesis",
+      "url": "https://clawhub.ai/skills/baidu-speech-synthesis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-speech-synthesis",
+    "url": "https://clawhub.ai/skills/baidu-speech-synthesis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-speech-synthesis-e62273768ce322b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-speech-synthesis@1.2.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-speech-synthesis-1.2.6.json",
+      "version": "1.2.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4afcc2049184b75637e015057a03897cf7531f426f0ea7b441d8da882efb1d5",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T10:39:08.077Z"
+}

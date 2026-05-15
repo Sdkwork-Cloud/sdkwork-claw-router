@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/datapulse@0.8.1",
+  "version": "0.8.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datapulse",
+  "skill": {
+    "id": 22607,
+    "skillKey": "clawhub-datapulse",
+    "name": "DataPulse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datapulse",
+    "url": "https://clawhub.ai/skills/datapulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datapulse-7cbfef7507d823c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cross-platform content collection, web search, trending topics, confidence scoring, and watch/triage workflows for assistant and agent usage."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunyifei83",
+      "userId": "s170ae6sgrjf6ee1r5wt2tcnyd83j66p",
+      "displayName": "vincent.sun",
+      "image": "https://avatars.githubusercontent.com/u/4455967?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 446,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.8.1",
+      "createdAt": 1773061125234,
+      "changelog": "v0.8.1 — Security transparency\n\n  Added full behavior disclosure to SKILL.md to address OpenClaw security scan findings:\n\n  - Documented opt-in Playwright browser automation (WeChat/XHS login sessions)\n  - Disclosed subprocess usage (MCP JSON-RPC transport, yt-dlp fallback, CLI upgrade) with explicit timeouts\n  - Clarified local persistence scope (~/.datapulse/sessions/ and data/ only)\n  - Declared outbound webhook/Feishu/Telegram alert delivery as user-configured-only\n  - Noted local FastAPI console server is never auto-started\n  - Listed all external API endpoints (Jina, Tavily, Groq) as read-only, key-from-env\n  - Extended manifest capabilities with 6 new behavior declarations\n\n  No functional changes. Code is identical to v0.8.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f70193126084e3ea9eba793425359e323cb9a7216972e7d1a19a26c19bb6de5a"
+}

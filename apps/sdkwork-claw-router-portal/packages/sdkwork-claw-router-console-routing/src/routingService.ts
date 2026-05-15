@@ -103,15 +103,15 @@ export interface RoutingChannelTestResult {
 }
 
 export const protocolsList = [
-  { id: 'OpenAI', label: 'OpenAI 兼容协议' },
-  { id: 'Anthropic', label: 'Anthropic 协议' },
-  { id: 'Gemini', label: 'Gemini 协议' },
-  { id: 'Ollama', label: 'Ollama 原生接口' },
-  { id: 'Custom', label: '平台独有 / 自定义协议' },
+  { id: 'OpenAI', label: 'OpenAI compatible protocol' },
+  { id: 'Anthropic', label: 'Anthropic protocol' },
+  { id: 'Gemini', label: 'Gemini protocol' },
+  { id: 'Ollama', label: 'Ollama native API' },
+  { id: 'Custom', label: 'Platform custom protocol' },
 ];
 
 export const authTypesList = [
-  { id: 'api-key', title: '标准 API Key', desc: 'Bearer Token 鉴权 (默认)', isSpecial: false },
+  { id: 'api-key', title: '鏍囧噯 API Key', desc: 'Bearer Token 閴存潈 (榛樿)', isSpecial: false },
   { id: 'oauth-gcp', title: 'GCP Vertex OAuth', desc: 'OAuth 2.0 / Service Account', isSpecial: true },
   { id: 'aws-bedrock', title: 'AWS Bedrock', desc: 'AWS SigV4', isSpecial: true },
   { id: 'azure-ad', title: 'Azure OpenAI', desc: 'Azure AD', isSpecial: true },
@@ -126,10 +126,10 @@ export const knownModelVendors = [
   { id: 'Ollama', name: 'Ollama' },
   { id: 'OpenRouter', name: 'OpenRouter' },
   { id: 'DeepSeek', name: 'DeepSeek' },
-  { id: 'Zhipu', name: '智谱 (Zhipu)' },
+  { id: 'Zhipu', name: '鏅鸿氨 (Zhipu)' },
   { id: 'Mistral', name: 'Mistral AI' },
   { id: 'Cohere', name: 'Cohere' },
-  { id: 'Custom', name: '未知 / 其他' },
+  { id: 'Custom', name: '鏈煡 / 鍏朵粬' },
 ];
 
 export const prefillModels: Record<string, string[]> = {
@@ -147,14 +147,14 @@ export const prefillModels: Record<string, string[]> = {
 
 export class RoutingService {
   static async fetchRequestTraces(): Promise<RequestTrace[]> {
-    const result = await getClawRouterAppSdkClient().router.fetchRequestTraces();
+    const result = await getClawRouterAppSdkClient().ai.routing.requestTraces.list();
     ensurePlusApiSuccess(result, 'Failed to fetch request traces');
     return readRequiredApiItems(result, 'Failed to fetch request traces')
       .map(normalizeRequestTrace);
   }
 
   static async fetchUsageData(): Promise<{ chartData: RoutingUsageData[]; modelStats: RoutingModelStats[] }> {
-    const result = await getClawRouterAppSdkClient().router.fetchUsageData();
+    const result = await getClawRouterAppSdkClient().ai.routing.usage.list();
     ensurePlusApiSuccess(result, 'Failed to fetch routing usage data');
     const data = readApiRecord(result);
     return {
@@ -166,22 +166,20 @@ export class RoutingService {
   }
 
   static async fetchChannels(): Promise<Channel[]> {
-    const result = await getClawRouterAppSdkClient().router.fetchChannels();
+    const result = await getClawRouterAppSdkClient().ai.routing.channels.list();
     ensurePlusApiSuccess(result, 'Failed to fetch routing channels');
     return readRequiredApiItems(result, 'Failed to fetch routing channels')
       .map(normalizeRoutingChannel);
   }
 
   static async createChannel(input: RoutingChannelMutationInput): Promise<Channel> {
-    const router = getClawRouterAppSdkClient().router;
-    const result = await router.createChannel(toCreateRoutingChannelRequest(input));
+    const result = await getClawRouterAppSdkClient().ai.routing.channels.create(toCreateRoutingChannelRequest(input));
     ensurePlusApiSuccess(result, 'Failed to create routing channel');
     return normalizeRoutingChannel(readRequiredApiItem(result, 'Created routing channel is missing'));
   }
 
   static async updateChannel(channelId: string, input: RoutingChannelUpdateInput): Promise<Channel> {
-    const router = getClawRouterAppSdkClient().router;
-    const result = await router.updateChannel(
+    const result = await getClawRouterAppSdkClient().ai.routing.channels.update(
       requiredSafePathSegment(channelId, 'channelId'),
       toUpdateRoutingChannelRequest(input),
     );
@@ -190,16 +188,14 @@ export class RoutingService {
   }
 
   static async deleteChannel(channelId: string): Promise<boolean> {
-    const router = getClawRouterAppSdkClient().router;
-    const result = await router.deleteChannel(requiredSafePathSegment(channelId, 'channelId'));
+    const result = await getClawRouterAppSdkClient().ai.routing.channels.delete(requiredSafePathSegment(channelId, 'channelId'));
     ensurePlusApiSuccess(result, 'Failed to delete routing channel');
     return readBoolean(readApiRecord(result), 'deleted');
   }
 
   static async setChannelStatus(channelId: string, status: ChannelStatus): Promise<Channel> {
-    const router = getClawRouterAppSdkClient().router;
     const normalizedStatus = status === 'disabled' ? 'disabled' : 'active';
-    const result = await router.setChannelStatus(
+    const result = await getClawRouterAppSdkClient().ai.routing.channels.status.update(
       requiredSafePathSegment(channelId, 'channelId'),
       { status: normalizedStatus },
     );
@@ -208,9 +204,8 @@ export class RoutingService {
   }
 
   static async testChannel(channelId: string): Promise<RoutingChannelTestResult> {
-    const router = getClawRouterAppSdkClient().router;
     const normalizedChannelId = requiredSafePathSegment(channelId, 'channelId');
-    const result = await router.testChannel(normalizedChannelId);
+    const result = await getClawRouterAppSdkClient().ai.routing.channels.verify(normalizedChannelId);
     ensurePlusApiSuccess(result, 'Failed to test routing channel');
     const data = readApiRecord(result);
     return {
@@ -223,14 +218,14 @@ export class RoutingService {
   }
 
   static async fetchApiKeys(): Promise<RoutingApiKey[]> {
-    const result = await getClawRouterAppSdkClient().router.fetchApiKeys();
+    const result = await getClawRouterAppSdkClient().ai.routing.apiKeys.list();
     ensurePlusApiSuccess(result, 'Failed to fetch routing API keys');
     return readRequiredApiItems(result, 'Failed to fetch routing API keys')
       .map(normalizeRoutingApiKey);
   }
 
   static async fetchStrategy(): Promise<RoutingStrategySnapshot> {
-    const result = await getClawRouterAppSdkClient().router.fetchStrategy();
+    const result = await getClawRouterAppSdkClient().ai.routing.strategy.list();
     ensurePlusApiSuccess(result, 'Failed to fetch routing strategy');
     return normalizeRoutingStrategySnapshot(readApiRecord(result));
   }
@@ -240,7 +235,7 @@ export class RoutingService {
       strategy: snapshot.strategy,
       mappingRules: snapshot.mappingRules.map(toUpdateMappingRuleRequest),
     };
-    const result = await getClawRouterAppSdkClient().router.updateStrategy(request);
+    const result = await getClawRouterAppSdkClient().ai.routing.strategy.update(request);
     ensurePlusApiSuccess(result, 'Failed to update routing strategy');
   }
 }

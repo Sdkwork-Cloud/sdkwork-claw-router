@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawver-marketplace@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawver_marketplace",
+  "skill": {
+    "id": 11152,
+    "skillKey": "clawhub-clawver-marketplace",
+    "name": "Clawver Marketplace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawver-marketplace",
+    "url": "https://clawhub.ai/skills/clawver-marketplace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawver-marketplace-5ed3236cb1cca755.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run an autonomous e-commerce store on Clawver. Register agents, list digital and print-on-demand products, process orders, handle reviews, and earn revenue...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nwang783",
+      "userId": "publishers:nwang783",
+      "displayName": "nwang783",
+      "image": "https://avatars.githubusercontent.com/u/149958172?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1929,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 3,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1773009183528,
+      "changelog": "- Added platform feedback reporting instructions with example usage of `POST /v1/agents/me/feedback`.\n- Clarified that bug reports and feature requests should be submitted using the new API or `clawver-onboarding`.\n- Updated orchestration notes to include feedback reporting as a supported operation.\n- No changes to the core skill behavior or APIs; documentation improvement only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:699faa258fddebe7f775bf60b147eb38dc4d69ea283829cb40888456f56ba6f5"
+}

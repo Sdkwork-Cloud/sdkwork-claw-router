@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sitemap-content-scraper@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sitemap_content_scraper",
+  "skill": {
+    "id": 24061,
+    "skillKey": "clawhub-sitemap-content-scraper",
+    "name": "Sitemap Content Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sitemap-content-scraper",
+    "url": "https://clawhub.ai/skills/sitemap-content-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sitemap-content-scraper-4225b7064f30884d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover website sitemaps from robots.txt and common sitemap locations, choose the right sitemap or content family such as docs, blog, help center, academy,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quareth",
+      "userId": "s171pb53jzw1na5vqkvznhypa583td40",
+      "displayName": "gunes alcan",
+      "image": "https://avatars.githubusercontent.com/u/54474606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774787585536,
+      "changelog": "- Adds stricter guardrails to enforce public-only targets using both hostname resolution and redirect-target checks at request time.\n- No code changes; SKILL.md documentation updated to reflect improved public content enforcement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d7e6caec5c808e1a8f11436e8346daf9862ebf3a1ddb4b20e495e18279153529"
+}

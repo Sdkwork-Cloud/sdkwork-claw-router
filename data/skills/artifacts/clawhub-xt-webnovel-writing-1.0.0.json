@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xt-webnovel-writing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xt_webnovel_writing",
+  "skill": {
+    "id": 62456,
+    "skillKey": "clawhub-xt-webnovel-writing",
+    "name": "xt-webnovel-writing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xt-webnovel-writing",
+    "url": "https://clawhub.ai/skills/xt-webnovel-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xt-webnovel-writing-334c7c850e9670d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文网络小说写作 agent 的总入口。处理网文构思、写开头、设计主线、起书名、写大纲、写简介、设计剧情、加爽点、改文笔、拆解参考文本、自检错误、续写连载等任何中文网文生成类任务。内部路由到 6 个模块：text-analysis / story-blueprint / plot-design / excitem..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaotiewinner",
+      "userId": "s177jbrtr7gs935a7ym49xbfnn8568y9",
+      "displayName": "xiaotie",
+      "image": "https://avatars.githubusercontent.com/u/216300557?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777522989579,
+      "changelog": "xt-webnovel-writing 1.0.0 初始版本发布：\n\n- 提供中文网络小说写作全流程 agent，一站式支持构思、主线、开头、剧情、书名、大纲、文笔优化等任务。\n- 集成 6 个内部分模块：文本分析、故事蓝图、情节设计、爽点与文笔、AI 味体检、持久化记忆系统。\n- 内建 25 项“反 AI 味”硬约束，含多项回滚级硬门，确保生成内容原创且自然。\n- 所有项目/文件严格管理，目录结构与自检/PERSIST 流程要求齐全。\n- 支持覆盖主流网文类型（玄幻、仙侠、系统流、签到流等）及连载完整生命周期。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:298b1580e8cb184345fc6a1305d2d7aab7152501ec289731fcb2b86818a5666d"
+}

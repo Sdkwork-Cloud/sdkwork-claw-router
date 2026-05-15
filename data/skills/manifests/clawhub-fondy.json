@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34547,
+  "uuid": "skill-clawhub-fondy",
+  "skillKey": "clawhub-fondy",
+  "name": "Fondy",
+  "summary": "Fondy integration. Manage data, records, and automate workflows. Use when the user wants to interact with Fondy data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fondy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Fondy integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Fondy data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fondy@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fondy",
+      "url": "https://clawhub.ai/skills/fondy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fondy",
+    "url": "https://clawhub.ai/skills/fondy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fondy-2acc072e5f305f45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fondy@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-fondy-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0072d20af40c59cae750c909f8f1814795cf98789211a1909770cebf5a24ed5b",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:49:07.367Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12452,
+  "uuid": "skill-clawhub-basecamp-automation",
+  "skillKey": "clawhub-basecamp-automation",
+  "name": "Basecamp Automation",
+  "summary": "Automate Basecamp project management, to-dos, messages, people, and to-do list organization via Rube MCP (Composio). Always search tools first for current schemas.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.basecamp_automation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sohamganatra",
+      "features": [
+        "Automate Basecamp project management, to-dos, messages, people, and to-do list organization via.",
+        "Always search tools first for current schemas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/basecamp-automation@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7982102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "basecamp-automation",
+      "url": "https://clawhub.ai/skills/basecamp-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "basecamp-automation",
+    "url": "https://clawhub.ai/skills/basecamp-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/basecamp-automation-08b52e8362e43329.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/basecamp-automation@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-basecamp-automation-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbaa5f870b21bb25df56017dd9216d017a0b9c8283dbbc7698c487f9a0e6a979",
+      "artifactSizeBytes": 2525
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T08:41:54.256Z"
+}

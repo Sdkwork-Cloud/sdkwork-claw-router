@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-openmeteo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_openmeteo",
+  "skill": {
+    "id": 24179,
+    "skillKey": "clawhub-weather-openmeteo",
+    "name": "Weather Open-Meteo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-openmeteo",
+    "url": "https://clawhub.ai/skills/weather-openmeteo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-openmeteo-b9c425ac3dd1178a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get current weather and forecasts using Open-Meteo API (no API key required). Optimized for PowerShell environments with Chinese support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexfeng75",
+      "userId": "publishers:alexfeng75",
+      "displayName": "alexfeng75",
+      "image": "https://avatars.githubusercontent.com/u/25864319?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 389,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772550623992,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2c2df83acaaf24809d196e6aad79ffc734d7f94b7089fabc849175649c34b649"
+}

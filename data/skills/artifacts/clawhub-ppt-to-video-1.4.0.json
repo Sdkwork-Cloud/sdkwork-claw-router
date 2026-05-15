@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ppt-to-video@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt_to_video",
+  "skill": {
+    "id": 63427,
+    "skillKey": "clawhub-ppt-to-video",
+    "name": "PPT to Video（汇报视频生成）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt-to-video",
+    "url": "https://clawhub.ai/skills/ppt-to-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt-to-video-a4bea1fb8314bec2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将PPTX/PDF/HTML与背景材料自动匹配，生成1280×720分辨率、带有智能风格识别和口语化TTS的播报视频。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vincentlau2046-sudo",
+      "userId": "s177qxxtwn13trxmgd54c7a6wh83h7rc",
+      "displayName": "vincentlau2046-sudo",
+      "image": "https://avatars.githubusercontent.com/u/259013171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1775816568464,
+      "changelog": "**v1.4.0 Changelog (ppt-to-video):**\n\n- 新增自动将讲稿书面语重写为口语化汇报风格（先重点后事实）。\n- 优化句子长度为15–25字/句，自动添加连接词提升流畅感。\n- 综合支持新闻/技术/政治/轻松自动风格识别与TTS音色选择。\n- 默认语速统一+25%，删除封面/结尾特殊加速逻辑，可用--rate自定义。\n- 完善音画对齐验证及讲稿与PPT页数不匹配自动警告功能。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47d8da421280265ac980a29488cd006250e1ca3222fd2ccd58a1cbb15d3015b8"
+}

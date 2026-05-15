@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25397,
+  "uuid": "skill-clawhub-web-llm-chat",
+  "skillKey": "clawhub-web-llm-chat",
+  "name": "web-llm-chat",
+  "summary": "Chat with web-based LLMs through the Chrome Relay extension. Supports Qwen (chat.qwen.ai) and Kimi (kimi.com) via scripts; more sites may be added. Use for w...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_llm_chat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GoDiao",
+      "features": [
+        "Chat with web-based LLMs through the Chrome Relay extension",
+        "Supports Qwen (chat.qwen.ai) and Kimi (kimi.com) via scripts",
+        "more sites may be added",
+        "Use for w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-llm-chat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104132148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-llm-chat",
+      "url": "https://clawhub.ai/skills/web-llm-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-llm-chat",
+    "url": "https://clawhub.ai/skills/web-llm-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-llm-chat-98188fada9ecb823.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-llm-chat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-llm-chat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5403cd1c18e561b5705ef0cafe0c5fc94b0b506e115a18df9a4993b3d58bd88f",
+      "artifactSizeBytes": 2337
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:45:33.649Z"
+}

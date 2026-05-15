@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/academic-research-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_research_assistant",
+  "skill": {
+    "id": 73055,
+    "skillKey": "clawhub-academic-research-assistant",
+    "name": "学术研究助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-research-assistant",
+    "url": "https://clawhub.ai/skills/academic-research-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-research-assistant-abde317ee6d05157.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "学术研究全流程助手。提供论文写作指导、文献检索方法、学术工具推荐、期刊投稿指南、学术会议信息、科研项目管理等。适用于大学生、研究生和科研人员的学术工作辅助。支持家用（知识库）和商用（API扩展）双模式。触发器：用户提出论文/文献/期刊/投稿/学术/科研相关问题时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yezhaowang888-stack",
+      "userId": "s17ffxprqs0jtaf8w6n5gtnprd84cx12",
+      "displayName": "yezhaowang888-stack",
+      "image": "https://avatars.githubusercontent.com/u/274244352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777254134298,
+      "changelog": "- 首次发布：提供学术研究全流程辅助，覆盖论文写作、文献检索、投稿、学术会议和项目管理\n- 支持家用（本地知识库）与商用（API扩展）双模式\n- 内置论文结构模板、文献检索技巧、期刊筛选与投稿流程、主流工具推荐\n- 提供学术会议信息及科研项目管理实用框架\n- 加强安全规范：不含版权论文、不自动生成完整范文，工具和数据均有版权与时效说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9d9adac866b3628d9ed2e02314b451777dffa182f9c14d5c7ffc93e727e68ff"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31237,
+  "uuid": "skill-clawhub-employment-hero",
+  "skillKey": "clawhub-employment-hero",
+  "name": "Employment Hero",
+  "summary": "Employment Hero integration. Manage data, records, and automate workflows. Use when the user wants to interact with Employment Hero data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.employment_hero",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Employment Hero integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Employment Hero data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/employment-hero@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "employment-hero",
+      "url": "https://clawhub.ai/skills/employment-hero"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "employment-hero",
+    "url": "https://clawhub.ai/skills/employment-hero",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/employment-hero-6899c56510814f03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/employment-hero@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-employment-hero-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d2b7e407c738d3fb8bcbd9bd9f9f77cb3ab7a3da9584154836191b6a647b7cb",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:43:48.334Z"
+}

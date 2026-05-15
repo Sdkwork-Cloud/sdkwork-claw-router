@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20390,
+  "uuid": "skill-clawhub-freechat-deepseek",
+  "skillKey": "clawhub-freechat-deepseek",
+  "name": "Chat DeepSeek by Browser",
+  "summary": "openclaw browser open https://chat.deepseek.com and login it, then input questions from user's messages, extract response of deepseek chat to reply user.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freechat_deepseek",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "christo",
+      "features": [
+        "openclaw browser open https://chat.deepseek.com and login it, then input questions from user's."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/freechat-deepseek@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1757861?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "freechat-deepseek",
+      "url": "https://clawhub.ai/skills/freechat-deepseek"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freechat-deepseek",
+    "url": "https://clawhub.ai/skills/freechat-deepseek",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freechat-deepseek-db8b1dc885d2e1bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/freechat-deepseek@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-freechat-deepseek-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2cb8c78d278a46e600988480f98064eccc44ff2439fbc179814c05462597bec3",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:24:42.360Z"
+}

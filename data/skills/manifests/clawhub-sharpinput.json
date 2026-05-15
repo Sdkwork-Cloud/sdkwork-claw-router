@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50229,
+  "uuid": "skill-clawhub-sharpinput",
+  "skillKey": "clawhub-sharpinput",
+  "name": "sharpinput",
+  "summary": "Use when a user asks to optimize, sharpen, clarify, rewrite, pressure-test, or improve an input, prompt, question, requirement, plan, idea, or message before...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sharpinput",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaoyechen",
+      "features": [
+        "Use when a user asks to optimize, sharpen, clarify, rewrite, pressure-test, or improve an input."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sharpinput@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22289082?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sharpinput",
+      "url": "https://clawhub.ai/skills/sharpinput"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sharpinput",
+    "url": "https://clawhub.ai/skills/sharpinput",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sharpinput-65098760e089e482.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sharpinput@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sharpinput-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e30761079096897458c0beacc1ff5ec0460ab4a7d5da7d5d2eaf9f187c0f628f",
+      "artifactSizeBytes": 2543
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T01:51:29.670Z"
+}

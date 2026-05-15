@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/1inch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1inch",
+  "skill": {
+    "id": 36311,
+    "skillKey": "clawhub-1inch",
+    "name": "1inch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1inch",
+    "url": "https://clawhub.ai/skills/1inch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1inch-e679fb124222495c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides 1inch API v5.2 client to get optimal DEX trade quotes and execute token swaps across multiple chains with gas and slippage control."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eric1099281",
+      "userId": "s1732jknq1hr76tcq65tba6med83zwn4",
+      "displayName": "eric1099281",
+      "image": "https://avatars.githubusercontent.com/u/265237573?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774954113583,
+      "changelog": "1inch DEX 聚合器技能 v1.0.0 首次发布。\n\n- 提供 1inch API v5.2 Python 客户端，支持多链与多 DEX 聚合。\n- 支持获取最优交易报价、执行代币交换、限价单、Gas 估算与优化。\n- 包含详细 API 端点、参数说明及使用示例。\n- 列出支持链及常见错误处理方式。\n- 需 API 密钥，支持免费额度。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19546e835083620bca04af28556b8d250d919c92f2c7477aa6cfc0dfedabdb88"
+}

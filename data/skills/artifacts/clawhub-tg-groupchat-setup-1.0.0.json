@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tg-groupchat-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tg_groupchat_setup",
+  "skill": {
+    "id": 13010,
+    "skillKey": "clawhub-tg-groupchat-setup",
+    "name": "Telegram Group Chat Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tg-groupchat-setup",
+    "url": "https://clawhub.ai/skills/tg-groupchat-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tg-groupchat-setup-06582fe983fcaef4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure a MoltBot agent to participate in a Telegram group chat. Automates adding the group to the allowlist, setting mention patterns, and configuring sender permissions — all via a single gateway config patch. Use when the user wants t."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arekqq",
+      "userId": "publishers:arekqq",
+      "displayName": "arekqq",
+      "image": "https://avatars.githubusercontent.com/u/19227389?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1865,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770157402879,
+      "changelog": "Initial release: Automates Telegram group chat configuration for MoltBot agents.\n\n- Adds a Telegram group to the gateway allowlist with `requireMention: true`\n- Configures which users can trigger the bot in the group via `groupAllowFrom`\n- Fetches the bot’s name and @username from the Telegram Bot API\n- Sets up mention patterns so the bot responds only when addressed by name or @username\n- Merges configuration cleanly without overwriting existing allowed users or mention patterns\n- Restarts the gateway and sends a confirmation message upon completion",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3d938d94f0e1f2580e028e09874b453e723bddbcf54c89386db0ce8b6fe7ae56"
+}

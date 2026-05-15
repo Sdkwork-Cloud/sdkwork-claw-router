@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39071,
+  "uuid": "skill-clawhub-on-chain-analyitcs",
+  "skillKey": "clawhub-on-chain-analyitcs",
+  "name": "on-chain analytics for evm contract",
+  "summary": "Analyze any EVM smart contract — auto-fetches ABI, discovers usage patterns, decodes function calls via Dune, generates AI-driven analytics (charts, stats, t...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.on_chain_analyitcs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "phi",
+      "features": [
+        "Analyze any EVM smart contract — auto-fetches ABI, discovers usage patterns, decodes function c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/on-chain-analyitcs@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42600064?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "on-chain-analyitcs",
+      "url": "https://clawhub.ai/skills/on-chain-analyitcs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "on-chain-analyitcs",
+    "url": "https://clawhub.ai/skills/on-chain-analyitcs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/on-chain-analyitcs-5c2da0b23802f006.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/on-chain-analyitcs@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-on-chain-analyitcs-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa17db94bef90c25b80002dad4d36b42f01b383b12eaad1977c00e0c0a627416",
+      "artifactSizeBytes": 2124
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T12:28:30.418Z"
+}

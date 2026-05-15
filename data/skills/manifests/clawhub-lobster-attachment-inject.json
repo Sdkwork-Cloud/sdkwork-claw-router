@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59410,
+  "uuid": "skill-clawhub-lobster-attachment-inject",
+  "skillKey": "clawhub-lobster-attachment-inject",
+  "name": "Lobster Attachment Inject",
+  "summary": "动态附件注入 — 在不修改system prompt的情况下注入动态内容。参考Claude Code的Attachment消息机制。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_attachment_inject",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangxiaofei860208-source",
+      "features": [
+        "动态附件注入 — 在不修改system prompt的情况下注入动态内容。参考Claude Code的Attachment消息机制。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-attachment-inject@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260913269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-attachment-inject",
+      "url": "https://clawhub.ai/skills/lobster-attachment-inject"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-attachment-inject",
+    "url": "https://clawhub.ai/skills/lobster-attachment-inject",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-attachment-inject-63c4ea10a38ba8ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-attachment-inject@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-attachment-inject-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:869dd7fd0888e7b28eae0ade54c90c29a8ce5c43b01c9d11d52e983659f1346b",
+      "artifactSizeBytes": 2162
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T11:23:11.554Z"
+}

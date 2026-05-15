@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63474,
+  "uuid": "skill-clawhub-ws-excel",
+  "skillKey": "clawhub-ws-excel",
+  "name": "Excel",
+  "summary": "Excel 操作。数据处理、公式、表格操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ws_excel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fhbillwer",
+      "features": [
+        "Excel 操作。数据处理、公式、表格操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ws-excel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42957828?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ws-excel",
+      "url": "https://clawhub.ai/skills/ws-excel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ws-excel",
+    "url": "https://clawhub.ai/skills/ws-excel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ws-excel-107d43af44321edd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ws-excel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ws-excel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6619952e501742f60a75c8b7ef972d764371c8967ecb857b3567a13ef17c1785",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T15:57:58.043Z"
+}

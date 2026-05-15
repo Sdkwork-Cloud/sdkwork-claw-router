@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52021,
+  "uuid": "skill-clawhub-tunelo",
+  "skillKey": "clawhub-tunelo",
+  "name": "tunelo",
+  "summary": "Expose local services and files to the internet through a public HTTPS URL. Designed for AI agents — when you need to let a user preview files remotely, shar...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tunelo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "claw-bot",
+      "features": [
+        "Expose local services and files to the internet through a public HTTPS URL",
+        "Designed for AI agents — when you need to let a user preview files remotely, shar..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tunelo@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253076684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tunelo",
+      "url": "https://clawhub.ai/skills/tunelo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tunelo",
+    "url": "https://clawhub.ai/skills/tunelo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tunelo-b05f12604dabb396.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tunelo@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tunelo-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae9b5c866e64443159bf28cc180d9c0a40fea4468346077bdb7de25191619be4",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T14:37:47.573Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17812,
+  "uuid": "skill-clawhub-persistent-user-memory",
+  "skillKey": "clawhub-persistent-user-memory",
+  "name": "persistent_user_memory",
+  "summary": "Manages long-term local user memory across sessions for personalization, learning preferences, contacts, and patterns to tailor assistance continually.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persistent_user_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eyadhrif",
+      "features": [
+        "Manages long-term local user memory across sessions for personalization, learning preferences,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/persistent-user-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192901339?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "persistent-user-memory",
+      "url": "https://clawhub.ai/skills/persistent-user-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persistent-user-memory",
+    "url": "https://clawhub.ai/skills/persistent-user-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persistent-user-memory-3fc1e55220846811.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/persistent-user-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-persistent-user-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd6f1e559bd99acc2d9d6b97716a5d98043ccf1df461a93e416e81a200d4a25f",
+      "artifactSizeBytes": 2574
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T09:07:46.408Z"
+}

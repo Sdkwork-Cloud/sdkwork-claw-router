@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61246,
+  "uuid": "skill-clawhub-github-iteration-workflow",
+  "skillKey": "clawhub-github-iteration-workflow",
+  "name": "GitHub Iteration Workflow",
+  "summary": "GitHub Issue 全流程自动化处理。当用户要求处理 GitHub Issue、拉取并修复 Issue、创建 PR、监控 CI/CD、合并部署时使用此技能。涵盖从 Issue 拉取、代码修复、PR 创建、CI/CD 监控到合并部署的完整自动化流程。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_iteration_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gdyshi",
+      "features": [
+        "GitHub Issue 全流程自动化处理。当用户要求处理 GitHub Issue、拉取并修复 Issue、创建 PR、监控 CI/CD、合并部署时使用此技能。涵盖从 Issue 拉取、代."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-iteration-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6500274?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-iteration-workflow",
+      "url": "https://clawhub.ai/skills/github-iteration-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-iteration-workflow",
+    "url": "https://clawhub.ai/skills/github-iteration-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-iteration-workflow-9d1cd33347f80d2a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-iteration-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-iteration-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8e44ee2430eef2b14bd5bc3ea69b95818f1fe94523b79a92789525f8039b8e9",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T12:35:59.161Z"
+}

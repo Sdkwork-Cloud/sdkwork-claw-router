@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70355,
+  "uuid": "skill-clawhub-akshare-a-stock",
+  "skillKey": "clawhub-akshare-a-stock",
+  "name": "A股数据分析 (AkShare)",
+  "summary": "A股量化数据分析工具，基于AkShare库获取A股、港股、美股行情、财务数据、板块分析等。用于回答关于股票查询、行情数据、财务分析、资金流向、龙虎榜、涨停跌停、新股IPO、融资融券等问题。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.akshare_a_stock",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Logan Reed",
+      "features": [
+        "A股量化数据分析工具，基于AkShare库获取A股、港股、美股行情、财务数据、板块分析等。用于回答关于股票查询、行情数据、财务分析、资金流向、龙虎榜、涨停跌停、新股IPO、融资融券等问题。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/akshare-a-stock@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95275520?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "akshare-a-stock",
+      "url": "https://clawhub.ai/skills/akshare-a-stock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "akshare-a-stock",
+    "url": "https://clawhub.ai/skills/akshare-a-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/akshare-a-stock-39c79dba7e04fa11.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/akshare-a-stock@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-akshare-a-stock-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e78446b2d0aad417c45047b3ae087c784946a2535446f6b2511de3a487b9a1cc",
+      "artifactSizeBytes": 2137
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T09:08:13.443Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/takeda@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.takeda",
+  "skill": {
+    "id": 53834,
+    "skillKey": "clawhub-takeda",
+    "name": "Takeda"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "takeda",
+    "url": "https://clawhub.ai/skills/takeda",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/takeda-4c99dabfc351571e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Japan's largest pharma, Takeda specializes in oncology, gastroenterology, plasma therapies, and neuroscience, operating in 80+ countries with $29B revenue."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776874051946,
+      "changelog": "Takeda skill v1.0.0 – Initial release\n\n- Provides an overview of Takeda Pharmaceutical's history, business model, and global position.\n- Includes a timeline highlighting major milestones, such as key acquisitions and innovations.\n- Details Takeda's core therapeutic areas, revenue stats, and R&D focus.\n- Analyzes competitive advantages and barriers to entry in the pharma industry.\n- Lists interesting historical and business facts about the company.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1fe2ef814652cbd84b923d8fa84a6757146a6f10d8c9492649443b6c68b98768"
+}

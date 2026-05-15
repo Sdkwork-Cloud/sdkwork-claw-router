@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17488,
+  "uuid": "skill-clawhub-plane-so-cli",
+  "skillKey": "clawhub-plane-so-cli",
+  "name": "Plane.so CLI",
+  "summary": "Manage Plane.so projects and work items using a zero-dependency Python CLI. List projects, create/update/assign issues, add comments, search workspace. The p...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plane_so_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Luis Eduardo Augusto",
+      "features": [
+        "Manage Plane.so projects and work items using a zero-dependency Python CLI",
+        "List projects, create/update/assign issues, add comments, search workspace",
+        "The p..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plane-so-cli@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1188867?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plane-so-cli",
+      "url": "https://clawhub.ai/skills/plane-so-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plane-so-cli",
+    "url": "https://clawhub.ai/skills/plane-so-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plane-so-cli-cdd673afd1e04949.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plane-so-cli@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-plane-so-cli-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:957f0449421c49e52287563a94c8c7c2bdaa66702ec3f0cee69075e326fc1982",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T01:05:15.796Z"
+}

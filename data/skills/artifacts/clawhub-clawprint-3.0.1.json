@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawprint@3.0.1",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawprint",
+  "skill": {
+    "id": 10468,
+    "skillKey": "clawhub-clawprint",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawprint",
+    "url": "https://clawhub.ai/skills/clawprint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawprint-5f710b39c3b42859.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent discovery, trust, and exchange. Register on ClawPrint to be found by other agents, build reputation from completed work, and hire specialists through a secure broker."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yugovit",
+      "userId": "publishers:yugovit",
+      "displayName": "yugovit",
+      "image": "https://avatars.githubusercontent.com/u/184183026?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2363,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.0.1",
+      "createdAt": 1770242707335,
+      "changelog": "fix: ERC-8004 Alignment to Compliance",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ea3fc13b0d92d2ab2764b10b44e66cd43ffe35aee54ba05e9ec221ef99756075"
+}

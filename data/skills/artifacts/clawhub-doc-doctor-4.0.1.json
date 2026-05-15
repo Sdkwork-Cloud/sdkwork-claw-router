@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doc-doctor@4.0.1",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_doctor",
+  "skill": {
+    "id": 54105,
+    "skillKey": "clawhub-doc-doctor",
+    "name": "Claude Doc Doctor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-doctor",
+    "url": "https://clawhub.ai/skills/doc-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-doctor-4b6dd9498c661014.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Say 'lint my docs' to scan your markdown KB for broken links, orphan pages, and missing metadata — then auto-fix them."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "singggggyee",
+      "userId": "s172495a8eaqa4vnpf6twt7ke9844t2y",
+      "displayName": "SingYee",
+      "image": "https://avatars.githubusercontent.com/u/266048725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "4.0.1",
+      "createdAt": 1775331784894,
+      "changelog": "Rename to Claude Doc Doctor",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1cc18497129284fab4d36477247591ce49487201a32c958f073da796e81d2fb9"
+}

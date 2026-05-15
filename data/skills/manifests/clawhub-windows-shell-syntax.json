@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40351,
+  "uuid": "skill-clawhub-windows-shell-syntax",
+  "skillKey": "clawhub-windows-shell-syntax",
+  "name": "windows-shell-syntax",
+  "summary": "Use when giving terminal commands on Windows or when comparing Windows vs Linux shell syntax. Detect whether the shell is PowerShell or cmd.exe before sugges...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_shell_syntax",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "loevery",
+      "features": [
+        "Use when giving terminal commands on Windows or when comparing Windows vs Linux shell syntax",
+        "Detect whether the shell is PowerShell or cmd.exe before sugges..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/windows-shell-syntax@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5111148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "windows-shell-syntax",
+      "url": "https://clawhub.ai/skills/windows-shell-syntax"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-shell-syntax",
+    "url": "https://clawhub.ai/skills/windows-shell-syntax",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-shell-syntax-b6557820c51ad71f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/windows-shell-syntax@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-windows-shell-syntax-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3466251c2736c9c9e6a69f531ece981af544cd43cf265d66729abd4aafebf68a",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T03:03:02.436Z"
+}

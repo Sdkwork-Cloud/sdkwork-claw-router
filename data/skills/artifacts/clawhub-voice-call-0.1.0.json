@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-call@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_call",
+  "skill": {
+    "id": 9586,
+    "skillKey": "clawhub-voice-call",
+    "name": "Voice Call"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-call",
+    "url": "https://clawhub.ai/skills/voice-call",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-call-2310e5f5c60c2213.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Start voice calls via the OpenClaw voice-call plugin."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielsinewe",
+      "userId": "s176jv075hrkmn3rxtgbyd914583nrry",
+      "displayName": "Daniel Sinewe",
+      "image": "https://avatars.githubusercontent.com/u/128365422?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2510,
+      "installsAllTime": 112,
+      "installsCurrent": 110,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774940559269,
+      "changelog": "Initial release: provider-agnostic voice call skill for Twilio, Telnyx, Plivo, and local mock mode.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:654b2c22712d9341d6fc677151f3eec51fc3c34a3a0628262bd7b774d6d00ea5"
+}

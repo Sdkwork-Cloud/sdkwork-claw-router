@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chords-fetcher@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chords_fetcher",
+  "skill": {
+    "id": 35663,
+    "skillKey": "clawhub-chords-fetcher",
+    "name": "Chords Fetcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chords-fetcher",
+    "url": "https://clawhub.ai/skills/chords-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chords-fetcher-ef6417e32a4ccce2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch clean guitar chords and lyrics from popular sites (mychords.net, amdm.ru, ultimate-guitar.com). Strips tabs, fixes formatting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flobo3",
+      "userId": "s179zg9xncbgjedmxmj0yx1q2983sn3q",
+      "displayName": "Flo",
+      "image": "https://avatars.githubusercontent.com/u/268352850?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775680568067,
+      "changelog": "Security-fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:142c62018240c87277b88a56569e5486fa887c104b5b3a26b354e7559838f82e"
+}

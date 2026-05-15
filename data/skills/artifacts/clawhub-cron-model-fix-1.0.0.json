@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cron-model-fix@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_model_fix",
+  "skill": {
+    "id": 40390,
+    "skillKey": "clawhub-cron-model-fix",
+    "name": "Cron Model Fix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-model-fix",
+    "url": "https://clawhub.ai/skills/cron-model-fix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-model-fix-77fefd360613f6e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose and fix OpenClaw cron job model override issues. Use when cron jobs show \"not allowed, falling back to agent defaults\" in logs, experience unexpecte..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mklue",
+      "userId": "s179wbxrqsrrbp0pt783nshecx83w8db",
+      "displayName": "mklue",
+      "image": "https://avatars.githubusercontent.com/u/108096783?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774879280096,
+      "changelog": "Initial release - Fixes OpenClaw cron model override issues. 180x speedup, 99.9% token reduction.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64df4329ccd8f4ed33ede6fc6fb541391a5989f1881e3208d2e2dcba21b081de"
+}

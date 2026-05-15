@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14771,
+  "uuid": "skill-clawhub-kubera-skill",
+  "skillKey": "clawhub-kubera-skill",
+  "name": "Kubera",
+  "summary": "Read and manage Kubera.com portfolio data (net worth, assets, debts, allocation, holdings). Use when a user asks about their finances, net worth, portfolio, investments, holdings, asset allocation, or wants to update asset values in Kubera.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kubera_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brett Wallace",
+      "features": [
+        "Read and manage Kubera.com portfolio data (net worth, assets, debts, allocation, holdings)",
+        "Use when a user asks about their finances, net worth, portfolio, investments, holdings, asset a.",
+        "Works with any AI agent or CLI that can run Python scripts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kubera-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7144854?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kubera-skill",
+      "url": "https://clawhub.ai/skills/kubera-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kubera-skill",
+    "url": "https://clawhub.ai/skills/kubera-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kubera-skill-d7b66cde6162ff07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kubera-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kubera-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6159e7ec0b900704247c9a12697f3eaae65c4cb3f3ab05110e3e62104ab3c4b5",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T01:49:49.093Z"
+}

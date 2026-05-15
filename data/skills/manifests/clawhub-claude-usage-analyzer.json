@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28332,
+  "uuid": "skill-clawhub-claude-usage-analyzer",
+  "skillKey": "clawhub-claude-usage-analyzer",
+  "name": "Claude Usage Analyzer",
+  "summary": "Analyze Claude Code token usage. Shows where tokens went, which projects cost most, and how to reduce waste. Use when user asks about token usage, costs, or...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_usage_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SingYee",
+      "features": [
+        "Analyze Claude Code token usage",
+        "Shows where tokens went, which projects cost most, and how to reduce waste",
+        "Use when user asks about token usage, costs, or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-usage-analyzer@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266048725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-usage-analyzer",
+      "url": "https://clawhub.ai/skills/claude-usage-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-usage-analyzer",
+    "url": "https://clawhub.ai/skills/claude-usage-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-usage-analyzer-888b4b511552724f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-usage-analyzer@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-usage-analyzer-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7535cd88a8dc05c1abef92ee5e128b1f9309a7b84da92ff8ea5af6bec92d3466",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T17:59:44.725Z"
+}

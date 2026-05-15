@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opencode-lingxin-memory1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencode_lingxin_memory1",
+  "skill": {
+    "id": 67332,
+    "skillKey": "clawhub-opencode-lingxin-memory1",
+    "name": "灵芯派记忆守护者 为OpenCode AI助手提供记忆持久化，专为灵芯派低资源环境设计，支持Gitee云端同步"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencode-lingxin-memory1",
+    "url": "https://clawhub.ai/skills/opencode-lingxin-memory1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencode-lingxin-memory1-bf3375aa45ebc49c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为OpenCode AI助手提供轻量级记忆持久化，专为灵芯派低资源环境设计，支持Git版本控制和Gitee云端同步。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nmww",
+      "userId": "s1762nr9rag7kr87r50q9fzf5x83py71",
+      "displayName": "nmww",
+      "image": "https://avatars.githubusercontent.com/u/6917516?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 77,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777531571071,
+      "changelog": "OpenCode 灵芯派记忆守护者 1.0.0\n\n- 首次发布，为OpenCode AI助手引入专为灵芯派设计的轻量级记忆持久化系统\n- 支持Git版本控制及Gitee云端同步，保障数据安全不丢失\n- 快速恢复历史对话和工作进度，每日自动生成工作日志\n- 极低空间占用（适配仅2GB空间设备）\n- 安装、配置和同步流程简单，适配Debian 10/ARM64设备",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5078ced6224cdcc2a8857fbba6c7cf472906e5f39b797491892e9860b72a4be"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29225,
+  "uuid": "skill-clawhub-deside-messaging",
+  "skillKey": "clawhub-deside-messaging",
+  "name": "Deside Messaging",
+  "summary": "Use Deside MCP for wallet-to-wallet Solana DMs, public identity lookup, and agent directory search.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deside_messaging",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Deside",
+      "features": [
+        "Use Deside MCP for wallet-to-wallet Solana DMs, public identity lookup, and agent directory sea."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deside-messaging@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190300973?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deside-messaging",
+      "url": "https://clawhub.ai/skills/deside-messaging"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deside-messaging",
+    "url": "https://clawhub.ai/skills/deside-messaging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deside-messaging-fadc061f2175cde3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deside-messaging@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-deside-messaging-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e59aa159920ca56ea0ad3d874ea2eb06f193d37226bf15c600e0338f261b103",
+      "artifactSizeBytes": 2056
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T16:22:18.115Z"
+}

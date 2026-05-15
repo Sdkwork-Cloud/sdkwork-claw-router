@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63782,
+  "uuid": "skill-clawhub-release-checker",
+  "skillKey": "clawhub-release-checker",
+  "name": "release-checker",
+  "summary": "一体化发版兼容性检查工具。自动分析 Git diff 检测发版兼容性，通过代码智能识别推送中心/Gateway/配置变更，自动检测 SQL 脚本兼容性并生成多数据库版本，输出完整的 TODO 清单和 Markdown 报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.release_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QFann",
+      "features": [
+        "一体化发版兼容性检查工具。自动分析 Git diff 检测发版兼容性，通过代码智能识别推送中心/Gateway/配置变更，自动检测 SQL 脚本兼容性并生成多数据库版本，输出完整的 TODO."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/release-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39287764?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "release-checker",
+      "url": "https://clawhub.ai/skills/release-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "release-checker",
+    "url": "https://clawhub.ai/skills/release-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/release-checker-88ef39510ef4fd8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/release-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-release-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb48ba82cf8ee4775d38bfeb8789bdef827581905332abbaf9eb579b0bed2f26",
+      "artifactSizeBytes": 2505
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T11:11:39.554Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65294,
+  "uuid": "skill-clawhub-ms-speech-synth",
+  "skillKey": "clawhub-ms-speech-synth",
+  "name": "Ms Speech Synth",
+  "summary": "将长文本（最多数千字）使用微软 Edge TTS 分段合成 MP3/WAV 音频。支持单文件和文件夹批量模式，自动降速防限流（可配置 20-30次/分钟），自动清洗 Markdown 格式转为自然朗读，并可选添加背景音乐（片头/片尾纯背景音）。",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ms_speech_synth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "booynal",
+      "features": [
+        "将长文本（最多数千字）使用微软 Edge TTS 分段合成 MP3/WAV 音频。支持单文件和文件夹批量模式，自动降速防限流（可配置 20-30次/分钟），自动清洗 Markdown 格式转."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ms-speech-synth@2.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12683370?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ms-speech-synth",
+      "url": "https://clawhub.ai/skills/ms-speech-synth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ms-speech-synth",
+    "url": "https://clawhub.ai/skills/ms-speech-synth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ms-speech-synth-0311ad2c98320f41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ms-speech-synth@2.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ms-speech-synth-2.3.0.json",
+      "version": "2.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:000e661b24ca3ab666817b5e451def4cb05ca79b4efe5c46b8363991cf909e43",
+      "artifactSizeBytes": 2289
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T12:18:05.604Z"
+}

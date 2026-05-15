@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40356,
+  "uuid": "skill-clawhub-zoho-invoice-integration",
+  "skillKey": "clawhub-zoho-invoice-integration",
+  "name": "Zoho Invoice",
+  "summary": "Zoho Invoice integration. Manage data, records, and automate workflows. Use when the user wants to interact with Zoho Invoice data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoho_invoice_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Zoho Invoice integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Zoho Invoice data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zoho-invoice-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zoho-invoice-integration",
+      "url": "https://clawhub.ai/skills/zoho-invoice-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoho-invoice-integration",
+    "url": "https://clawhub.ai/skills/zoho-invoice-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoho-invoice-integration-ad2168af87fa8396.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zoho-invoice-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zoho-invoice-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aadc0c88498b5b7009a309eb38042cc95cbe8af52a1dfccd465147e4bde2408d",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:13:38.491Z"
+}

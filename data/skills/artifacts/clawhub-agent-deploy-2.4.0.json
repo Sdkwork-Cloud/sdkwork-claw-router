@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-deploy@2.4.0",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_deploy",
+  "skill": {
+    "id": 18332,
+    "skillKey": "clawhub-agent-deploy",
+    "name": "Agent Deploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-deploy",
+    "url": "https://clawhub.ai/skills/agent-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-deploy-267b4e3c5c94128d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy a new isolated OpenClaw agent with its own Telegram bot, workspace, and session storage. Use when user asks to create a new agent, add a new bot, or s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joe7921",
+      "userId": "publishers:joe7921",
+      "displayName": "Joe7921",
+      "image": "https://avatars.githubusercontent.com/u/130832778?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 689,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.4.0",
+      "createdAt": 1772610673354,
+      "changelog": "agent-deploy 2.4.0\n\n- Improved API key management: The deploy script now merges API keys from both global config (openclaw.json) and the main agent's auth-profiles.json.\n- Updated documentation to reflect enhanced API key merging process.\n- Minor tweaks to scripts and helper for reliability and multi-account compatibility.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ccda38b60ccdaf8d963c8674a9fda318f037aa8eac3ca87fb4428ad9d0cbca6a"
+}

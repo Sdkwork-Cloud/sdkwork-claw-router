@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16424,
+  "uuid": "skill-clawhub-github-bounty-hunter",
+  "skillKey": "clawhub-github-bounty-hunter",
+  "name": "Github Bounty Hunter",
+  "summary": "Automatically scan GitHub repositories for bounty issues, filter by difficulty/reward, and auto-submit solutions.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_bounty_hunter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SASAMITTRRR",
+      "features": [
+        "Automatically scan GitHub repositories for bounty issues, filter by difficulty/reward, and auto."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-bounty-hunter@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/171415195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-bounty-hunter",
+      "url": "https://clawhub.ai/skills/github-bounty-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-bounty-hunter",
+    "url": "https://clawhub.ai/skills/github-bounty-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-bounty-hunter-12ab5e8d8d510358.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-bounty-hunter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-bounty-hunter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87cd1eb557bff26260d53afc855f5a2557e896674b18edb4b315e75609bb25b9",
+      "artifactSizeBytes": 2346
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T05:15:38.398Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/learn-python@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learn_python",
+  "skill": {
+    "id": 33685,
+    "skillKey": "clawhub-learn-python",
+    "name": "Learn Python"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learn-python",
+    "url": "https://clawhub.ai/skills/learn-python",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learn-python-6c176308d6310c43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Learn Python programming on LabEx: beginner and topic courses plus coding labs via LabEx MCP; avoid generic help outside labex.io catalog URLs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huhuhang",
+      "userId": "s1726ykzye3y2rzgd7tzkjg0t183wqsv",
+      "displayName": "huhuhang",
+      "image": "https://avatars.githubusercontent.com/u/5147530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774056924081,
+      "changelog": "Minor update adding public LabEx user reviews and common feedback themes to help explain the platform’s benefits.\n\n- Added section on learner reviews and testimonials from LabEx public site.\n- Highlighted LabEx’s “hands-on, lab-first” approach and positive user feedback.\n- Clarified that courses and labs are widely regarded for interactivity and practical learning.\n- No workflow or API usage changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2807d0f15c343333cadabef8189400ac0c9c2bd6c4144001008b37c0c5b512f7"
+}

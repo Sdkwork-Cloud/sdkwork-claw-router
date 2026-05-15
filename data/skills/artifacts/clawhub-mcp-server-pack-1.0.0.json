@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-server-pack@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_server_pack",
+  "skill": {
+    "id": 38918,
+    "skillKey": "clawhub-mcp-server-pack",
+    "name": "MCP Server Pack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-server-pack",
+    "url": "https://clawhub.ai/skills/mcp-server-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-server-pack-34d801c17a9516db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Managed MCP servers: filesystem-secure, memory-enhanced, github, postgres, websearch, rss. Provides connection details and auto-config for OpenClaw agents. S..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neroagent",
+      "userId": "s172sfbczvqgag0zvay27m9k1d840549",
+      "displayName": "NeroAgent",
+      "image": "https://avatars.githubusercontent.com/u/217334413?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775069957930,
+      "changelog": "Initial release — managed MCP servers: filesystem-secure, memory-enhanced, github, postgres, websearch, rss",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa82be7e776ee5c50ceb7fc529e1078e6bc4f72a95ac47a7498d3d0a8b8dbd5f"
+}

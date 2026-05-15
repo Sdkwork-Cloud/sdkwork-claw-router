@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/thegraph-token-mcp-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thegraph_token_mcp_skill",
+  "skill": {
+    "id": 23413,
+    "skillKey": "clawhub-thegraph-token-mcp-skill",
+    "name": "Thegraph Token Mcp Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thegraph-token-mcp-skill",
+    "url": "https://clawhub.ai/skills/thegraph-token-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thegraph-token-mcp-skill-36ea32aa94e719d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use The Graph Token API MCP through UXC for token metadata, wallet balances, transfers, holders, pools, and market data with help-first inspection and Token..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jolestar",
+      "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+      "displayName": "jolestar",
+      "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 423,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772960558939,
+      "changelog": "**Auth handling and documentation improvements for The Graph Token MCP Skill**\n\n- Clarified the required use of a specific Token API JWT (not a subgraph API key) for authentication.\n- Updated setup instructions to reflect proper credential separation and explicit JWT bearer token workflow.\n- Added warnings against reusing credentials from other The Graph skills.\n- Expanded guardrails and troubleshooting steps for correct auth binding and token usage.\n- Improved language in capability and prerequisite descriptions for accuracy.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:db4dbf504ac4f4e234380dd215ddfb1d54358e9566d2c5e99e8329c2707e515a"
+}

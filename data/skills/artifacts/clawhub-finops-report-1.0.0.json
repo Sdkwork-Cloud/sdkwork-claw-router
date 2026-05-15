@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/finops-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finops_report",
+  "skill": {
+    "id": 24231,
+    "skillKey": "clawhub-finops-report",
+    "name": "Finops Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finops-report",
+    "url": "https://clawhub.ai/skills/finops-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finops-report-da4038a14249d8ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate executive-ready monthly AWS FinOps reports with team-level chargeback and savings opportunities"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anmolnagpal",
+      "userId": "publishers:anmolnagpal",
+      "displayName": "Anmol Nagpal",
+      "image": "https://avatars.githubusercontent.com/u/4303310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 417,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772341737529,
+      "changelog": "- Initial release of aws-finops-report skill.\n- Generates executive-ready monthly AWS FinOps reports with team-level chargeback and savings insights.\n- Parses total spend, MoM trend, per-account/team breakdown, and service-level cost heatmap.\n- Identifies top 5 savings opportunities with estimated monthly impact.\n- Produces budget vs actual variances and highlights teams exceeding budget by 20%+.\n- Includes executive summary, finance summary, and engineer-focused action items.\n- Aligns reporting and terminology with FinOps FOCUS 1.2 standards.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b57f826f4e16b50204aaf5550f004deabea369365f4dfc049f7e7656ce9dbef5"
+}

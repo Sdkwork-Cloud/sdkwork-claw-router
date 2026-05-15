@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54757,
+  "uuid": "skill-clawhub-polymarket-bundle-crypto-fade-trader",
+  "skillKey": "clawhub-polymarket-bundle-crypto-fade-trader",
+  "name": "Polymarket Bundle Crypto Fade Trader",
+  "summary": "Fades strong directional crypto moves on Polymarket 5-minute interval markets. After 3+ consecutive high-conviction same-direction intervals (>58% probabilit...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_bundle_crypto_fade_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Fades strong directional crypto moves on Polymarket 5-minute interval markets",
+        "After 3+ consecutive high-conviction same-direction intervals (>58% probabilit..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-bundle-crypto-fade-trader@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-bundle-crypto-fade-trader",
+      "url": "https://clawhub.ai/skills/polymarket-bundle-crypto-fade-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-bundle-crypto-fade-trader",
+    "url": "https://clawhub.ai/skills/polymarket-bundle-crypto-fade-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-bundle-crypto-fade-trader-2ca1c6639853e65b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-bundle-crypto-fade-trader@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-bundle-crypto-fade-trader-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7e2c53f2d2967ff0f051468c13d6bd13f1a99d0d98af04caf90391d0c59f1cd",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:28:11.712Z"
+}

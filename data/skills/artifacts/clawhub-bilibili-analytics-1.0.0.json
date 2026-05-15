@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-analytics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_analytics",
+  "skill": {
+    "id": 65111,
+    "skillKey": "clawhub-bilibili-analytics",
+    "name": "Bilibili Analytics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-analytics",
+    "url": "https://clawhub.ai/skills/bilibili-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-analytics-24b9a34e38b3d328.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bilibili视频搜索与数据分析。抓取指定关键词的搜索结果，生成统计报告。支持多页面抓取、数据分析和可视化报告。适用于：(1) 搜索B站视频 (2) 分析视频数据 (3) 生成统计报告 (4) 追踪热门趋势"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pcjinglang",
+      "userId": "publishers:pcjinglang",
+      "displayName": "pcjinglang",
+      "image": "https://avatars.githubusercontent.com/u/127206406?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1022,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772272896699,
+      "changelog": "首个版本：B站视频搜索与数据分析",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c44fa6ce6da36e351b6cb58e0c26db742a13a1c7eec3afe515a3bc60c75efbec"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-9@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_9",
+  "skill": {
+    "id": 10152,
+    "skillKey": "clawhub-skill-9",
+    "name": "Agent Reach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-9",
+    "url": "https://clawhub.ai/skills/skill-9",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-9-65635fc9a5924f50.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your AI agent eyes to see the entire internet. Install and configure upstream tools for Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu, Douyi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ma-star",
+      "userId": "s1797ytvncp92e85w3syj5tde183sgbc",
+      "displayName": "Ma-star",
+      "image": "https://avatars.githubusercontent.com/u/18366314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2003,
+      "installsAllTime": 14,
+      "installsCurrent": 11,
+      "stars": 8,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772688772476,
+      "changelog": "agent-reach 0.1.0 — First public release\n\n- Initial release of agent-reach with setup and configuration instructions for 13+ major platforms (Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu, Douyin, LinkedIn, Boss直聘, WeChat, RSS, and general web/URL support).\n- Provides step-by-step guidelines for installation, channel configuration (including cookie and proxy setup), and best practices to avoid workspace pollution.\n- Includes usage examples for each upstream tool, covering both setup and real-world read/search/publish commands.\n- Warns users of potential risks (e.g., cookie account security, IP blocking) and offers proxy and cookie management recommendations.\n- Emphasizes using `agent-reach doctor` for channel status and troubleshooting rather than memorizing platform-specific steps.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9af0370fec351a5d2be490389edcde74bfd9d86691f403dd630df3041ead1aa4"
+}

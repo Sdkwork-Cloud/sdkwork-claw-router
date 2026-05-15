@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45821,
+  "uuid": "skill-clawhub-anthropic-ai",
+  "skillKey": "clawhub-anthropic-ai",
+  "name": "Anthropic Ai",
+  "summary": "Provides expertise on Anthropic AI's history, safety-focused models, governance, and strategic investments by Amazon and Google.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anthropic_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides expertise on Anthropic AI's history, safety-focused models, governance, and strategic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anthropic-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anthropic-ai",
+      "url": "https://clawhub.ai/skills/anthropic-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anthropic-ai",
+    "url": "https://clawhub.ai/skills/anthropic-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anthropic-ai-561241e9a2171da4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anthropic-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-anthropic-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d48a1ddf78d89a8ebf6e907a70fa84c52e73439e8ac46e14084e2684e2de85a4",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T21:02:04.380Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a2a-market-order-state-machine@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_market_order_state_machine",
+  "skill": {
+    "id": 27082,
+    "skillKey": "clawhub-a2a-market-order-state-machine",
+    "name": "a2a-Market-Order-State-Machine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-market-order-state-machine",
+    "url": "https://clawhub.ai/skills/a2a-market-order-state-machine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-market-order-state-machine-50ed5e318ed03f7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Define order lifecycle states, transition guards, and recovery paths for A2A transactions. Use when implementing order orchestration from quote acceptance th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luoqianchenguni-max",
+      "userId": "publishers:luoqianchenguni-max",
+      "displayName": "luoqianchenguni-max",
+      "image": "https://avatars.githubusercontent.com/u/225840188?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1773902942530,
+      "changelog": "sync runtime implementation and validation coverage",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a38940de859b4972cf76ccdd6d9f14a0357c3ede48421cbb3ba492a104ed8b26"
+}

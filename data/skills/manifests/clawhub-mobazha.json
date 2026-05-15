@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34667,
+  "uuid": "skill-clawhub-mobazha",
+  "skillKey": "clawhub-mobazha",
+  "name": "Using Mobazha",
+  "summary": "Entry point for Mobazha skills. Provides an overview of available skills and guides the AI agent to load the right one based on user intent.",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mobazha",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fengzie",
+      "features": [
+        "Entry point for Mobazha skills",
+        "Provides an overview of available skills and guides the AI agent to load the right one based on."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mobazha@0.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34826428?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mobazha",
+      "url": "https://clawhub.ai/skills/mobazha"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mobazha",
+    "url": "https://clawhub.ai/skills/mobazha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mobazha-3a70a24f8d5062a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mobazha@0.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mobazha-0.3.1.json",
+      "version": "0.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d1678d9d0a73d572f8644bd69c05a3ab2e0d0c99144b628f6608d59fa0dd656",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T10:53:16.160Z"
+}

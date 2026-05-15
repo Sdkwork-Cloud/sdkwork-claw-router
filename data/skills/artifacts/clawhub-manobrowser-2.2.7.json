@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/manobrowser@2.2.7",
+  "version": "2.2.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manobrowser",
+  "skill": {
+    "id": 51145,
+    "skillKey": "clawhub-manobrowser",
+    "name": "ManoBrowser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manobrowser",
+    "url": "https://clawhub.ai/skills/manobrowser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manobrowser-01e6709628d59bc9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your hands in the user's real browser. Operate the user's own Chrome with their logged-in sessions — extract data behind login walls, reverse-engineer websit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sophie-xin9",
+      "userId": "s173ct06qcsk0pk1rah6ysms3983m2cc",
+      "displayName": "Sophieyou",
+      "image": "https://avatars.githubusercontent.com/u/243932536?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.2.7",
+      "createdAt": 1776310370713,
+      "changelog": "**Changelog for ManoBrowser 2.2.7**\n\n- Updated the Chrome extension installation link to point to the official Chrome Web Store.\n- Revised user installation instructions to match the new installation method: install directly via Chrome Web Store instead of manual zip download.\n- No functional or structural changes to skill modules or features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a554bc068e8587f8dc3be47c431cb1be479a14276284afc442f887ff939bece"
+}

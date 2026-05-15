@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/detective-mystery@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.detective_mystery",
+  "skill": {
+    "id": 68684,
+    "skillKey": "clawhub-detective-mystery",
+    "name": "Chinese Voice Detective Mystery Game"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "detective-mystery",
+    "url": "https://clawhub.ai/skills/detective-mystery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/detective-mystery-bcdd07dbd671afcd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文语音侦探推理游戏。适用于用户想玩一场沉浸式推理探案的场景：由 LLM 生成包含嫌疑人、线索和真凶的完整案件，玩家通过审讯嫌疑人（支持 ASR 语音或文本输入）、勘察现场、收集证据，最终提出指控并获得评分。支持多音色 TTS 为不同嫌疑人配音，审讯历史自动压缩防止上下文溢出，案件生成后自动验证逻辑自洽性。支持存..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "delong-liu-bupt",
+      "userId": "publishers:delong-liu-bupt",
+      "displayName": "Delong-liu-bupt",
+      "image": "https://avatars.githubusercontent.com/u/96622011?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773735404423,
+      "changelog": "Version 1.0.1 — No functional changes; documentation refresh.\n\n- Updated SKILL.md with clarified and expanded instructions.\n- No code or logic changes were detected.\n- Project usage, workflow, and configuration details clarified in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02a3fca439308e00c5beb1e39c1a46de5797cc3a8bd31ad21050fc1a58c1270a"
+}

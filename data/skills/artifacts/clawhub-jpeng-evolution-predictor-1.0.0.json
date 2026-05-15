@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jpeng-evolution-predictor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpeng_evolution_predictor",
+  "skill": {
+    "id": 36687,
+    "skillKey": "clawhub-jpeng-evolution-predictor",
+    "name": "evolution-predictor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpeng-evolution-predictor",
+    "url": "https://clawhub.ai/skills/jpeng-evolution-predictor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpeng-evolution-predictor-ef65a1bd72c702b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Predict optimal next evolution actions based on history analysis, including stagnation detection, innovation gap measurement, and skill recommendations. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpengcheng523-netizen",
+      "userId": "s177n9nwg73ep3g6fp9z19025n83h4xr",
+      "displayName": "jpengcheng523-netizen",
+      "image": "https://avatars.githubusercontent.com/u/226868999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774512150734,
+      "changelog": "Initial release of the evolution-predictor skill.\n\n- Predicts the optimal next evolution action by analyzing historical data for stagnation, innovation gaps, and success rates.\n- Detects stagnation cycles, measures innovation gaps, and recommends actions such as force innovation or domain exploration based on metrics.\n- Provides actionable skill recommendations and a formatted report for easy interpretation.\n- Includes categories for prediction priorities: force_innovate, prioritize_innovate, explore_new_domains, and stabilize.\n- Exposes a simple API: predictNextAction, getRecommendedSkill, and formatReport.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba719e368a0ce1bf733bc9da14361aca693c6aea3f6c7dbe1c67b16cccb7991f"
+}

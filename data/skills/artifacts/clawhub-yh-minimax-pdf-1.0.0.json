@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yh-minimax-pdf@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yh_minimax_pdf",
+  "skill": {
+    "id": 41868,
+    "skillKey": "clawhub-yh-minimax-pdf",
+    "name": "MiniMax PDF"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yh-minimax-pdf",
+    "url": "https://clawhub.ai/skills/yh-minimax-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yh-minimax-pdf-bf94667401c79032.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when visual quality and design identity matter for a PDF. CREATE (generate from scratch): \"make a PDF\", \"generate a report\", \"write a proposal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yhlorra",
+      "userId": "s1722rfrg89fk95t1dwm4vqdyx83j73f",
+      "displayName": "zylorra",
+      "image": "https://avatars.githubusercontent.com/u/111432771?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774446231857,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c16d3a13b011c50227f046d7fc6554718395c8bc472e6bbadbd7df7621787e2"
+}

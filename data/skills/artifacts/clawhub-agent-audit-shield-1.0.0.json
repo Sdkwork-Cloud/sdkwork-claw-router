@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-audit-shield@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_audit_shield",
+  "skill": {
+    "id": 17874,
+    "skillKey": "clawhub-agent-audit-shield",
+    "name": "Agent Audit Shield"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-audit-shield",
+    "url": "https://clawhub.ai/skills/agent-audit-shield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-audit-shield-53ba18eb4f11eb65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The ultimate security auditor for local AI agents. It performs real-time heuristic scanning of every command to prevent data leaks and accidental file destru..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tmstudio667-commits",
+      "userId": "publishers:tmstudio667-commits",
+      "displayName": "System Architect Zero",
+      "image": "https://avatars.githubusercontent.com/u/261739543?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 616,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772634383293,
+      "changelog": "- Initial release of Agent Audit Shield, a security auditor for local AI agents.\n- Real-time heuristic scanning of every command to prevent data leaks and file destruction.\n- Blocks unauthorized data exfiltration and dangerous `rm -rf` operations.\n- Includes a TUI interface for human-in-the-loop validation.\n- Usage via `npx openclaw skill run agent-audit-shield --hardened`.\n- Session fee set at $0.50 (USDC on Base network).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bebd064e29082cbab7e494d32cd188810321e2a1a2294ebbf2abd0ca1663375b"
+}

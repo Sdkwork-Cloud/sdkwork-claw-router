@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawvault-payments@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawvault_payments",
+  "skill": {
+    "id": 25682,
+    "skillKey": "clawhub-clawvault-payments",
+    "name": "ClawVault Payments"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawvault-payments",
+    "url": "https://clawhub.ai/skills/clawvault-payments",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawvault-payments-c8ad94066756a4fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security middleware for AI agents handling money. Non-custodial crypto wallets and virtual Visa cards with spending limits, whitelists, and human approval."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andrewszk1",
+      "userId": "publishers:andrewszk1",
+      "displayName": "clawvault",
+      "image": "https://avatars.githubusercontent.com/u/172156552?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772805569229,
+      "changelog": "Added proper metadata: homepage, source, required credentials, security model documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fe7d89248500c04da4c692070cb5c86ce41ed457b63706500f0e9dbd82c6e451"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22362,
+  "uuid": "skill-clawhub-buy-domain-helper",
+  "skillKey": "clawhub-buy-domain-helper",
+  "name": "Buy Domain Helper",
+  "summary": "3-layer site launcher: tunnel any HTML instantly (no account), deploy to Cloudflare Pages (permanent), then buy a domain and link it via DNS. Use when a user...",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buy_domain_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tony Kim",
+      "features": [
+        "3-layer site launcher: tunnel any HTML instantly (no account), deploy to Cloudflare Pages (perm.",
+        "Use when a user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/buy-domain-helper@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16312083?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "buy-domain-helper",
+      "url": "https://clawhub.ai/skills/buy-domain-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buy-domain-helper",
+    "url": "https://clawhub.ai/skills/buy-domain-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buy-domain-helper-a08a6f9d039be4d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/buy-domain-helper@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-buy-domain-helper-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e916f9a612960e0f3932533288317e4544d7697b029eb7e6231367a45252bcea",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T01:00:23.741Z"
+}

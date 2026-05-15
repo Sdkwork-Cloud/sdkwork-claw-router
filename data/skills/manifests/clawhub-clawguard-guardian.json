@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44364,
+  "uuid": "skill-clawhub-clawguard-guardian",
+  "skillKey": "clawhub-clawguard-guardian",
+  "name": "ClawGuard-Guardian",
+  "summary": "ClawGuard Guardian v3 - Runtime guardian with behavior monitoring, interception, session freeze/replay, and emergency response",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawguard_guardian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stardreaming",
+      "features": [
+        "ClawGuard Guardian v3",
+        "Runtime guardian with behavior monitoring, interception, session freeze/replay, and emergency r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawguard-guardian@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160408334?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawguard-guardian",
+      "url": "https://clawhub.ai/skills/clawguard-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawguard-guardian",
+    "url": "https://clawhub.ai/skills/clawguard-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawguard-guardian-ea6e86d12f02168e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawguard-guardian@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawguard-guardian-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29a1f8d734777fbbeeddd7a55602c9e97dc11dbe455e78dae53bbdcee1357c11",
+      "artifactSizeBytes": 2521
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T09:11:11.995Z"
+}

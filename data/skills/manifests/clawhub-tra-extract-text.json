@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30962,
+  "uuid": "skill-clawhub-tra-extract-text",
+  "skillKey": "clawhub-tra-extract-text",
+  "name": "tra-extract-text",
+  "summary": "Extract readable text, markdown, HTML, JSON, or XML content from web pages using the trafilatura CLI tool with optional metadata and output formatting.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tra_extract_text",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jay",
+      "features": [
+        "Extract readable text, markdown, HTML, JSON, or XML content from web pages using the trafilatur."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tra-extract-text@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1488374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tra-extract-text",
+      "url": "https://clawhub.ai/skills/tra-extract-text"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tra-extract-text",
+    "url": "https://clawhub.ai/skills/tra-extract-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tra-extract-text-0b5bf624b9b0022b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tra-extract-text@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tra-extract-text-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e254eb483f50b05474f50efb1b939a68a4e87a5032abe248d6124846757c5f5",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T12:01:04.037Z"
+}

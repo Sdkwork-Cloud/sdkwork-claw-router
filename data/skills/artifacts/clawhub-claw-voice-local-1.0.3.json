@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-voice-local@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_voice_local",
+  "skill": {
+    "id": 41435,
+    "skillKey": "clawhub-claw-voice-local",
+    "name": "claw-voice-local"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-voice-local",
+    "url": "https://clawhub.ai/skills/claw-voice-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-voice-local-e3795b3e85c4feb4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert text to offline Telegram voice messages using piper TTS. Use when the agent should speak a response, send audio, or deliver voice notes via Telegram..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "photon78",
+      "userId": "s17afpy9d96xvjhk94ka1cs2ms85c8ne",
+      "displayName": "photon78",
+      "image": "https://avatars.githubusercontent.com/u/59928921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777023815050,
+      "changelog": "- No changes detected in this version.  \n- The SKILL.md and source files remain identical to the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5aa4ff10bbe669134dc0c6b5d6a763770540068f4d07ed933761d2cb0f274628"
+}

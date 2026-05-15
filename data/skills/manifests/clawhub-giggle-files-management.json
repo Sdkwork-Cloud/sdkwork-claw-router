@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24077,
+  "uuid": "skill-clawhub-giggle-files-management",
+  "skillKey": "clawhub-giggle-files-management",
+  "name": "Giggle Files Management",
+  "summary": "Upload files to Giggle asset service and get public/download URLs.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.giggle_files_management",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Parker",
+      "features": [
+        "Upload files to Giggle asset service and get public/download URLs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/giggle-files-management@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169116739?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "giggle-files-management",
+      "url": "https://clawhub.ai/skills/giggle-files-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "giggle-files-management",
+    "url": "https://clawhub.ai/skills/giggle-files-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/giggle-files-management-ad154dc4f1778ebd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/giggle-files-management@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-giggle-files-management-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0295ec235323b0d80106e3b596f2008c231b670bf531d2f206f7e115e5b2fdb8",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:50:36.496Z"
+}

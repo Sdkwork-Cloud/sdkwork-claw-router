@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baoyu-cover-image@1.103.2",
+  "version": "1.103.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baoyu_cover_image",
+  "skill": {
+    "id": 8948,
+    "skillKey": "clawhub-baoyu-cover-image",
+    "name": "Baoyu Cover Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baoyu-cover-image",
+    "url": "https://clawhub.ai/skills/baoyu-cover-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baoyu-cover-image-77898ebbc76558f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates article cover images with 5 dimensions (type, palette, rendering, text, mood) combining 11 color palettes and 7 rendering styles. Supports cinemati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimliu",
+      "userId": "s17dfbhg0khk4fvtnx0stqg0yx83j25z",
+      "displayName": "Jim Liu 宝玉",
+      "image": "https://avatars.githubusercontent.com/u/648674?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4839,
+      "installsAllTime": 69,
+      "installsCurrent": 69,
+      "stars": 3,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.103.2",
+      "createdAt": 1776808883508,
+      "changelog": "baoyu-cover-image 1.103.2\n\n- Clarified user input tool selection with detailed fallback and batching rules in the documentation.\n- Documented new backend resolution order for image generation, including support for user override, saved preferences, and auto-selection logic.\n- Updated confirmation policy to align with new explicit/implicit confirmation rules and the --quick override.\n- Aligned configuration lookup priority and completed details for first-time setup and preference checking.\n- No functional changes to cover image parameters; changes focus on tool/interaction flexibility and documentation precision.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2378ed5b18bf8fd6b7ccadeea1fd6d4d05f64c148e56bee32dba7161802162de"
+}

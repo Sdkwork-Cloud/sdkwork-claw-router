@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bazhuayu-rpa-webhook@2.0.5",
+  "version": "2.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bazhuayu_rpa_webhook",
+  "skill": {
+    "id": 59390,
+    "skillKey": "clawhub-bazhuayu-rpa-webhook",
+    "name": "Bazhuayu Rpa Webhook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bazhuayu-rpa-webhook",
+    "url": "https://clawhub.ai/skills/bazhuayu-rpa-webhook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bazhuayu-rpa-webhook-f068875d5ac27f09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "八爪鱼 RPA Webhook 调用工具 - 通过 Webhook 触发 RPA 任务运行，支持自定义参数传递"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blogwebsem",
+      "userId": "publishers:blogwebsem",
+      "displayName": "李飞RPA",
+      "image": "https://avatars.githubusercontent.com/u/31609936?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 476,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.5",
+      "createdAt": 1773105373627,
+      "changelog": "Update",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:10faa20e2a1b2a0faca26c39d6ed7c14adae13f317f1e6e84afe2ee64e1df82d"
+}

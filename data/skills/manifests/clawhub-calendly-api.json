@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8410,
+  "uuid": "skill-clawhub-calendly-api",
+  "skillKey": "clawhub-calendly-api",
+  "name": "Calendly",
+  "summary": "Calendly API integration with managed OAuth. Access event types, scheduled events, invitees, availability, and manage webhooks. Use this skill when users wan...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calendly_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Calendly API integration with managed OAuth",
+        "Access event types, scheduled events, invitees, availability, and manage webhooks",
+        "Use this skill when users wan..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/calendly-api@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "calendly-api",
+      "url": "https://clawhub.ai/skills/calendly-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calendly-api",
+    "url": "https://clawhub.ai/skills/calendly-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calendly-api-4f905cfcd3e570a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/calendly-api@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-calendly-api-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a266996bb728c9c68e1c26b927dd74faf2fe5b397156511130c44f4cb1513679",
+      "artifactSizeBytes": 2322
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:54:06.105Z"
+}

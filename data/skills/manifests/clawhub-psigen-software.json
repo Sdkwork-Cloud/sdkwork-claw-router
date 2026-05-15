@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33322,
+  "uuid": "skill-clawhub-psigen-software",
+  "skillKey": "clawhub-psigen-software",
+  "name": "Psigen Software",
+  "summary": "PSIGEN Software integration. Manage data, records, and automate workflows. Use when the user wants to interact with PSIGEN Software data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.psigen_software",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "PSIGEN Software integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with PSIGEN Software data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/psigen-software@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "psigen-software",
+      "url": "https://clawhub.ai/skills/psigen-software"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "psigen-software",
+    "url": "https://clawhub.ai/skills/psigen-software",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/psigen-software-709c625b5cb96534.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/psigen-software@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-psigen-software-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3741b24407068913db4c7e99985488d8c6c1c37cbff01fec2674692a453cd6d2",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:29:14.131Z"
+}

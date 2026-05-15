@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ccc3po-session-cleaner@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccc3po_session_cleaner",
+  "skill": {
+    "id": 39850,
+    "skillKey": "clawhub-ccc3po-session-cleaner",
+    "name": "ccc3po-session-cleaner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccc3po-session-cleaner",
+    "url": "https://clawhub.ai/skills/ccc3po-session-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccc3po-session-cleaner-46d7751e20e23c1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safely clean OpenClaw old session files and rebuild sessions.json for Ubuntu ARM"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ccc-3po",
+      "userId": "s171bb2s07ngdmhzr00c5wdybs83mk3b",
+      "displayName": "c-3po",
+      "image": "https://avatars.githubusercontent.com/u/44689813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775331142115,
+      "changelog": "- Renamed skill to \"openclaw-session-cleaner\" and updated description for OpenClaw on Ubuntu ARM.\n- Improved cleanup automation: safely removes session files older than 3 days and retains the main session.\n- Added automated rebuilding of sessions.json index.\n- Enhanced output: now reports total files and sessions.json size before and after cleanup.\n- Updated documentation for new commands and automation steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04f3f153cd093b048f9643dce742cc623f0be376b19d60b9bb463a870374f0f2"
+}

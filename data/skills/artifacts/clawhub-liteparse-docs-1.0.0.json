@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/liteparse-docs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liteparse_docs",
+  "skill": {
+    "id": 38489,
+    "skillKey": "clawhub-liteparse-docs",
+    "name": "LiteParse Document Parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liteparse-docs",
+    "url": "https://clawhub.ai/skills/liteparse-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liteparse-docs-ad031262425d81b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when parsing PDFs, DOCX, PPTX, XLSX, or images locally. Supports text extraction, JSON output with bounding boxes, batch processing, and page screenshots..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ricanwarfare",
+      "userId": "s177bhc17epc6hk7skpkdgzc5n83x0fn",
+      "displayName": "ricanwarfare",
+      "image": "https://avatars.githubusercontent.com/u/33404913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775406274246,
+      "changelog": "- Initial release of LiteParse: local document parsing for PDFs, DOCX, PPTX, XLSX, and images.\n- Supports text extraction, JSON output with bounding boxes, and page-level screenshots.\n- Enables batch processing of directories and selective page parsing.\n- No cloud or LLM dependencies; works offline with Homebrew installation.\n- Supports popular office and image formats with optional dependencies (LibreOffice, ImageMagick).\n- Includes configurable options and support for reusable config files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d4101bf033b685bfbcd5fce35abf63a0d78960d3361c8aaebbfc6905ef2dbb9"
+}

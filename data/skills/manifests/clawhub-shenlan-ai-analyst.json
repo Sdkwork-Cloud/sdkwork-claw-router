@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71342,
+  "uuid": "skill-clawhub-shenlan-ai-analyst",
+  "skillKey": "clawhub-shenlan-ai-analyst",
+  "name": "深蓝AI分析师",
+  "summary": "当用户需要对财经内容进行AI分析（情感分析、摘要、关键词提取、深度解读），或想查看AI Agent编辑自动生产的财经内容，或需要将文章转为语音播报时使用。通过深蓝财经AI分析API提供智能内容分析和TTS能力。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shenlan_ai_analyst",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenlannews",
+      "features": [
+        "当用户需要对财经内容进行AI分析（情感分析、摘要、关键词提取、深度解读），或想查看AI Agent编辑自动生产的财经内容，或需要将文章转为语音播报时使用。通过深蓝财经AI分析API提供智能内."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shenlan-ai-analyst@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/shenlan-ai-analyst/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shenlan-ai-analyst",
+      "url": "https://clawhub.ai/skills/shenlan-ai-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shenlan-ai-analyst",
+    "url": "https://clawhub.ai/skills/shenlan-ai-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shenlan-ai-analyst-b6bf0d11ba61e9ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shenlan-ai-analyst@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shenlan-ai-analyst-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c37f06d667de707451422e63a7a8d86f6fb33f3f6ccb56df42fb8833eee59759",
+      "artifactSizeBytes": 2681
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T07:06:01.891Z"
+}

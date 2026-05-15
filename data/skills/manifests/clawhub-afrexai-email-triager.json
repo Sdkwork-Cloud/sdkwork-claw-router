@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16461,
+  "uuid": "skill-clawhub-afrexai-email-triager",
+  "skillKey": "clawhub-afrexai-email-triager",
+  "name": "Email Triager",
+  "summary": "Triage, categorize, and draft responses to emails. Sorts by urgency, flags action items, and generates context-aware reply drafts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_email_triager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1kalin",
+      "features": [
+        "Triage, categorize, and draft responses to emails",
+        "Sorts by urgency, flags action items, and generates context-aware reply drafts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/afrexai-email-triager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15705344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "afrexai-email-triager",
+      "url": "https://clawhub.ai/skills/afrexai-email-triager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-email-triager",
+    "url": "https://clawhub.ai/skills/afrexai-email-triager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-email-triager-587f3d8614200161.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/afrexai-email-triager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-email-triager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eadd0657fe009afcbed8eab62958227b897e5797fa4d840973d63098e82ae966",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T02:22:47.013Z"
+}

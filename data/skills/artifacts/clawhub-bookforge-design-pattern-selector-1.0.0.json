@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-design-pattern-selector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_design_pattern_selector",
+  "skill": {
+    "id": 38747,
+    "skillKey": "clawhub-bookforge-design-pattern-selector",
+    "name": "Design Pattern Selector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-design-pattern-selector",
+    "url": "https://clawhub.ai/skills/bookforge-design-pattern-selector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-design-pattern-selector-70b546c8756ee3dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Select the right GoF design pattern for a specific object-oriented design problem. Use when facing any of these situations: object creation inflexibility (to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775809884164,
+      "changelog": "Design Pattern Selector skill initial release.\n\n- Provides a step-by-step process to select the most suitable GoF design pattern for specific object-oriented design problems.\n- Analyzes problems using six complementary approaches, including intent scanning, purpose/scope classification, and trade-off analysis.\n- Guides users through context gathering, design intent clarification, and candidate pattern comparison.\n- Suggests patterns with rationale, covering common design pain points such as inflexible object creation, tight coupling, and subclass explosion.\n- Offers targeted questions and observable code cues to refine pattern recommendations for both new designs and refactoring scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ab92c1f248d2d1d3fbb6819e20795507835c230108b70933386e75061e9d0d5"
+}

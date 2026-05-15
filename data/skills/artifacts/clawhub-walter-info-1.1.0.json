@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/walter-info@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.walter_info",
+  "skill": {
+    "id": 69270,
+    "skillKey": "clawhub-walter-info",
+    "name": "Walter Info"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "walter-info",
+    "url": "https://clawhub.ai/skills/walter-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/walter-info-5c5a1cf7268026db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取全球五大洲主要城市天气预报与跨境电商热点资讯，并生成格式化Markdown文档和JSON数据文件。当用户需要查询天气、跨境电商资讯，或要求生成报告时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beyondbright",
+      "userId": "s17f81b6vdwyrc6srjwnzegzq983hdat",
+      "displayName": "beyondbright",
+      "image": "https://avatars.githubusercontent.com/u/9914857?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775577120848,
+      "changelog": "移除 config.example.json（无需脱敏）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:239ddfe1bca70fd560f2a323cbe88bba0236ef5eaff4f0b32bc664054b5db359"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/security-monitor-v15-t33@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_monitor_v15_t33",
+  "skill": {
+    "id": 63259,
+    "skillKey": "clawhub-security-monitor-v15-t33",
+    "name": "Security Monitor V15 T33"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-monitor-v15-t33",
+    "url": "https://clawhub.ai/skills/security-monitor-v15-t33",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-monitor-v15-t33-ef4ee53788ca76da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供Linux/Unix服务器进程、网络、文件权限、敏感信息、日志和进程树的安全审计与异常行为检测工具。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "t33-coder",
+      "userId": "publishers:t33-coder",
+      "displayName": "t33-coder",
+      "image": "https://avatars.githubusercontent.com/u/255769058?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773471470258,
+      "changelog": "System Security Analysis Tool v1.5 introduces comprehensive server security auditing and anomaly detection features:\n\n- Adds analysis of system processes, network connections, file permissions, sensitive information exposure, and log events.\n- New in v1.5: Log analysis for SSH attacks, account events, sudo usage, and process tree analysis to detect suspicious relationships and hidden processes.\n- Provides core capabilities like monitoring suspicious processes, port/service auditing, scanning for exposed secrets, and auditing file permissions.\n- Supports both full scans and targeted checks via Python scripts or command-line usage.\n- Outputs both human-readable reports and JSON-formatted results for integration.\n- Recommends running with root privileges for full analysis, but supports limited checks without.\n- Includes detailed usage steps, customization options, and security recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cdfd60d99e276e213e3ea00dab0a7d8d8b921b10f63da26a6c5a7d5c93d1aee8"
+}

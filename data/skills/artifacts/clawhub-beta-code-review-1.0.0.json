@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beta-code-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beta_code_review",
+  "skill": {
+    "id": 52509,
+    "skillKey": "clawhub-beta-code-review",
+    "name": "Beta Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beta-code-review",
+    "url": "https://clawhub.ai/skills/beta-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beta-code-review-e9a950b2c17397db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Systematic code review patterns covering security, performance, maintainability, correctness, and testing — with severity levels, structured feedback guidanc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1477009639zw-blip",
+      "userId": "s17ezgebx1rdjg5v6ddseykg2183rt6j",
+      "displayName": "1477009639zw-blip",
+      "image": "https://avatars.githubusercontent.com/u/266505725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774894741867,
+      "changelog": "Initial release: structured, comprehensive code review patterns and checklists.\n\n- Covers security, performance, correctness, maintainability, testing, accessibility, and documentation.\n- Provides detailed checklists for each review dimension, including common vulnerabilities and anti-patterns.\n- Introduces a three-pass code review process for thorough, systematic evaluation.\n- Designed for use in PR reviews, improving review quality, and setting organization-wide standards.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4164946070ca2263181342636b6e4f4a9800cad03b711871b0077b159a9c6460"
+}

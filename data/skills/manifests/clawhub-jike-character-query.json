@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72699,
+  "uuid": "skill-clawhub-jike-character-query",
+  "skillKey": "clawhub-jike-character-query",
+  "name": "新华字典 - 即刻数据",
+  "summary": "新华字典。支持拼音列表、部首列表、按拼音查汉字、按部首查汉字、汉字详情查询，返回汉字、拼音、部首、笔画、结构、繁体、异体字、同义词、反义词和形近字。适用场景：用户说“查一下好字怎么读”“口部有哪些汉字”“yī 这个拼音有哪些字”等。数据由即刻数据（jikeapi.cn）开放接口提供。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_character_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jikeapi",
+      "features": [
+        "新华字典。支持拼音列表、部首列表、按拼音查汉字、按部首查汉字、汉字详情查询，返回汉字、拼音、部首、笔画、结构、繁体、异体字、同义词、反义词和形近字。适用场景：用户说“查一下好字怎么读”“口部."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jike-character-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26078515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jike-character-query",
+      "url": "https://clawhub.ai/skills/jike-character-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-character-query",
+    "url": "https://clawhub.ai/skills/jike-character-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-character-query-9d198c869662f133.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jike-character-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jike-character-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:639b31f0724065dbabe1da7490a33f26347c87c62184849d3ea6f9e087b2a7d0",
+      "artifactSizeBytes": 2205
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T06:50:58.796Z"
+}

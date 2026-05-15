@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55003,
+  "uuid": "skill-clawhub-imagen",
+  "skillKey": "clawhub-imagen",
+  "name": "Imagen",
+  "summary": "Genera imágenes con calidad cheap, medium, good o top usando OpenRouter y la configuración activa de OpenClaw. Guarda los archivos en el workspace actual del...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imagen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Perilla",
+      "features": [
+        "Genera imágenes con calidad cheap, medium, good o top usando OpenRouter y la configuración acti.",
+        "Guarda los archivos en el workspace actual del..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/imagen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/840433?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "imagen",
+      "url": "https://clawhub.ai/skills/imagen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imagen",
+    "url": "https://clawhub.ai/skills/imagen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imagen-3559fb35e3328cff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/imagen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-imagen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:600098bd06f9dc0e8d9c3739ea32dca08599a7db0397de35ae72500dae9ef0aa",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T21:30:46.667Z"
+}

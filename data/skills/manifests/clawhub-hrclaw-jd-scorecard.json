@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19647,
+  "uuid": "skill-clawhub-hrclaw-jd-scorecard",
+  "skillKey": "clawhub-hrclaw-jd-scorecard",
+  "name": "HRClaw JD & Resume Scorecard",
+  "summary": "Turn job descriptions and PDF resumes into structured hiring decisions, interview questions, and Feishu/DingTalk-friendly output.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hrclaw_jd_scorecard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qinjobs",
+      "features": [
+        "Turn job descriptions and PDF resumes into structured hiring decisions, interview questions, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hrclaw-jd-scorecard@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37294169?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hrclaw-jd-scorecard",
+      "url": "https://clawhub.ai/skills/hrclaw-jd-scorecard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hrclaw-jd-scorecard",
+    "url": "https://clawhub.ai/skills/hrclaw-jd-scorecard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hrclaw-jd-scorecard-cd85eb6ed4b739fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hrclaw-jd-scorecard@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hrclaw-jd-scorecard-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a42d6e5512193331773eb601ca0f58ccdfec170a3778b4ef026c3bd20811591",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T08:12:19.030Z"
+}

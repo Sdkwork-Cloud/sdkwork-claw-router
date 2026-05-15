@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68199,
+  "uuid": "skill-clawhub-canvas-render-optimize",
+  "skillKey": "clawhub-canvas-render-optimize",
+  "name": "Canvas大规模渲染优化",
+  "summary": "优化Canvas大量元素渲染，采用三层管线、空间哈希裁剪、LOD分层与帧调度提升FPS与交互流畅度。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canvas_render_optimize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenxiaoyu0124-web",
+      "features": [
+        "优化Canvas大量元素渲染，采用三层管线、空间哈希裁剪、LOD分层与帧调度提升FPS与交互流畅度。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/canvas-render-optimize@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267548392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "canvas-render-optimize",
+      "url": "https://clawhub.ai/skills/canvas-render-optimize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canvas-render-optimize",
+    "url": "https://clawhub.ai/skills/canvas-render-optimize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canvas-render-optimize-d8fca4c909075cda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/canvas-render-optimize@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-canvas-render-optimize-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f03754ebb587878a6974f0913b19364c76823b01837e47e04476adf2cf8fd40e",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T07:16:45.152Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lc-scene-analysis-http@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lc_scene_analysis_http",
+  "skill": {
+    "id": 67864,
+    "skillKey": "clawhub-lc-scene-analysis-http",
+    "name": "LC Scene Analysis HTTP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lc-scene-analysis-http",
+    "url": "https://clawhub.ai/skills/lc-scene-analysis-http",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lc-scene-analysis-http-d9c48e69b63e5500.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "工地隐患分析模型技能，默认处理施工现场静态图片的隐患识别；仅在用户明确要求时调用数据采集或交叉验证接口。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenqu108",
+      "userId": "s17b9925g4hqvmeta723b8ms1583x6zd",
+      "displayName": "chenqu108",
+      "image": "https://avatars.githubusercontent.com/u/34977580?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774948328001,
+      "changelog": "- 增加了对 Windows 操作系统的显式支持说明\n- 在 metadata 中添加了 auth profile 配置需求说明\n- 其他内容保持不变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:370931a8d00f49c862b2082ff223aeec4e69e9b030f74147598c72b1ab1f997f"
+}

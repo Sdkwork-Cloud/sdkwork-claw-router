@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tvs-pullread@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tvs_pullread",
+  "skill": {
+    "id": 72323,
+    "skillKey": "clawhub-tvs-pullread",
+    "name": "tvs-pullread"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tvs-pullread",
+    "url": "https://clawhub.ai/skills/tvs-pullread",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tvs-pullread-ea4322dbc6a64558.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分析远程代码变更，既能对比本地差异，也能深入解释远程变更的具体实现和业务逻辑。聚焦业务/功能层面（而非逐文件列出所有改动），帮助开发者快速理解 PR/拉取的实质内容，并可深入解读任何感兴趣的变更细节。分析后主动询问是否合并，以及是否需要协助处理冲突。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "inksnowhailong",
+      "userId": "s177pqccte7rb6prtwj4ad2bpx83nmt8",
+      "displayName": "inksnowhailong",
+      "image": "https://avatars.githubusercontent.com/u/57605894?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773712018156,
+      "changelog": "Initial release offering in-depth business-level analysis of remote code changes.\n\n- Summarizes code changes from a functional/business perspective rather than file-by-file.\n- Automatically highlights key business or feature impacts (API, process, UI, etc.) with risk and testing suggestions.\n- Offers concise overviews plus optional deep-dive explanations of specific changes.\n- Warns about potential merge conflicts based on diff context.\n- Guides users through merge decisions and assists with conflict resolution if needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be0e3972fb225e1163fd383ce2af6b307c3a6666d54b60d204f6a30891638ce3"
+}

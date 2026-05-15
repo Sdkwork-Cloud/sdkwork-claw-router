@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trendsdotfun@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trendsdotfun",
+  "skill": {
+    "id": 58262,
+    "skillKey": "clawhub-trendsdotfun",
+    "name": "Create a coin on trends.fun"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trendsdotfun",
+    "url": "https://clawhub.ai/skills/trendsdotfun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trendsdotfun-b7f6135fc659abf5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在 trends.fun 上创建 coin 并部署 Meteora DBC 资金池"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "poploli2",
+      "userId": "publishers:poploli2",
+      "displayName": "lewis",
+      "image": "https://avatars.githubusercontent.com/u/133581727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 849,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771817981180,
+      "changelog": "- Updated parameter descriptions: `--name`, `--symbol`, and `--desc` now specify maximum character limits and formatting rules.\n- Clarified that `--name` and `--symbol` are limited to 32 characters each, and `--desc` to 150 characters without newlines or spaces.\n- No functional or code changes, only documentation improved for clarity and usability.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:432cbe11d84ad6c179125fbb0ac82aedf94b54ee26acd1e5bf0a96f944dabe92"
+}

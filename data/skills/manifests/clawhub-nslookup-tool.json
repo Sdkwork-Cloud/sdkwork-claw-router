@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49334,
+  "uuid": "skill-clawhub-nslookup-tool",
+  "skillKey": "clawhub-nslookup-tool",
+  "name": "Nslookup Tool",
+  "summary": "Query DNS servers to resolve domain names to IP addresses. Use for network troubleshooting and DNS diagnostics.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nslookup_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Query DNS servers to resolve domain names to IP addresses",
+        "Use for network troubleshooting and DNS diagnostics."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nslookup-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nslookup-tool",
+      "url": "https://clawhub.ai/skills/nslookup-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nslookup-tool",
+    "url": "https://clawhub.ai/skills/nslookup-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nslookup-tool-a9e58708bbeb2d6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nslookup-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nslookup-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:acfdf83263a830cc0de903a1582cf43a96a5c07b56936a3d4ae3631a374fddf0",
+      "artifactSizeBytes": 1824
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:30:06.045Z"
+}

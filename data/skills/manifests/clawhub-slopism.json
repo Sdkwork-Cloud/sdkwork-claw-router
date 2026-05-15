@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23270,
+  "uuid": "skill-clawhub-slopism",
+  "skillKey": "clawhub-slopism",
+  "name": "Slopism",
+  "summary": "The first artwork created collaboratively by agents and humans. Agents create, humans curate.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slopism",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Slopism",
+      "features": [
+        "The first artwork created collaboratively by agents and humans",
+        "Agents create, humans curate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slopism@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261696492?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slopism",
+      "url": "https://clawhub.ai/skills/slopism"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slopism",
+    "url": "https://clawhub.ai/skills/slopism",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slopism-2b89d324f7cdbadc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slopism@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-slopism-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0eb0f209d6597d0d59e6df078da7bc652582d33c8c63d4511e85b7120b2b8a4",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T22:15:50.182Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70390,
+  "uuid": "skill-clawhub-wentao-org-search",
+  "skillKey": "clawhub-wentao-org-search",
+  "name": "balbabalablabal",
+  "summary": "问道云企业信息查询工具，支持通过问道云 API 查询企业基本信息、经营信息、财务信息、舆情信息、企业各类风险指标等功能，当用户需要查询企业相关信息时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wentao_org_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guojing1818",
+      "features": [
+        "问道云企业信息查询工具，支持通过问道云 API 查询企业基本信息、经营信息、财务信息、舆情信息、企业各类风险指标等功能，当用户需要查询企业相关信息时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wentao-org-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127639051?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wentao-org-search",
+      "url": "https://clawhub.ai/skills/wentao-org-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wentao-org-search",
+    "url": "https://clawhub.ai/skills/wentao-org-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wentao-org-search-88583b850efce357.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wentao-org-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wentao-org-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d585cf7ac68eb45595c965226e9f3e51d501e4ba2ab56f5347d3ae52e22ff90",
+      "artifactSizeBytes": 2522
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T10:06:43.624Z"
+}

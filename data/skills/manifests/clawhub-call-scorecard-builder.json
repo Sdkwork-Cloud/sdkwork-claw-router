@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59913,
+  "uuid": "skill-clawhub-call-scorecard-builder",
+  "skillKey": "clawhub-call-scorecard-builder",
+  "name": "Call Scorecard Builder",
+  "summary": "为销售、客服或访谈通话生成评分维度、观察点与培训反馈模板。；use for scorecard, calls, sales workflows；do not use for 把单次录音当最终定论, 替代正式人力评估.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.call_scorecard_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "为销售、客服或访谈通话生成评分维度、观察点与培训反馈模板。；use for scorecard, calls, sales workflows；do not use for 把单次录音当最终."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/call-scorecard-builder@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "call-scorecard-builder",
+      "url": "https://clawhub.ai/skills/call-scorecard-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "call-scorecard-builder",
+    "url": "https://clawhub.ai/skills/call-scorecard-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/call-scorecard-builder-7aa46577ed6a8c85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/call-scorecard-builder@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-call-scorecard-builder-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6ce4c7a241819ef9a27529ba1df364a55543ee6a888703efb95dbcc0fccd42a",
+      "artifactSizeBytes": 2128
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:03:08.856Z"
+}

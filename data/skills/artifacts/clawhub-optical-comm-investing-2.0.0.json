@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/optical-comm-investing@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.optical_comm_investing",
+  "skill": {
+    "id": 66309,
+    "skillKey": "clawhub-optical-comm-investing",
+    "name": "光通信投资分析框架"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "optical-comm-investing",
+    "url": "https://clawhub.ai/skills/optical-comm-investing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/optical-comm-investing-dc6c4a9742501725.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI光通信产业链投资分析框架（自迭代）。基于闷得而蜜160篇专栏+查尔斯大风车15篇长文的系统性整理，支持持续学习新帖自动追加。用于：(1)分析光通信相关股票（光模块/光芯片/PCB/CPO/NPO/OCS概念股），(2)判断技术路线（InP/硅光/TFLN/CPO/NPO/XPO），(3)评估标的质量（九字诀/..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seanweisean",
+      "userId": "s170vve213a2f768grj55dkk6s83m7n0",
+      "displayName": "SeanWeiSean",
+      "image": "https://avatars.githubusercontent.com/u/17775798?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776757327178,
+      "changelog": "重构：拆分为core-framework + 14个股档案 + 按日期帖子存档。修复闷蜜userid。新增查尔斯InP MZM分析、五大金牛专栏等4/21内容。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32f09609dcefc585e91c87ebf1fb31036c6d47dd6cfef379bed41d218fb224d0"
+}

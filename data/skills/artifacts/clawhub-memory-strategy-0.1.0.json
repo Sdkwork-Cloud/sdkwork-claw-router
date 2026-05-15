@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-strategy@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_strategy",
+  "skill": {
+    "id": 66295,
+    "skillKey": "clawhub-memory-strategy",
+    "name": "Memory Strategy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-strategy",
+    "url": "https://clawhub.ai/skills/memory-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-strategy-04cbf955c6f3f5d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户需要管理对话记忆时应使用此skill。 触发条件包括： - 用户说\"记下来\"、\"记住这个\"、\"别忘了\"、\"永久保存\"、\"这是一个重点\" - 用户查询历史信息：\"之前是怎么做的\"、\"查找关于...的记录\"、\"回忆一下...\" - 会话结束需要自动整理归档 - 需要评估信息重要性并决定存储位置 - 需要更新记忆..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hugoiku",
+      "userId": "publishers:hugoiku",
+      "displayName": "Hugoiku",
+      "image": "https://avatars.githubusercontent.com/u/128440105?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773565349288,
+      "changelog": "memory-strategy v1.0.0\n\n- Initial release with a dual-layer memory architecture (long-term + short-term), featuring a 30-day time decay mechanism.\n- Implements an intelligent 1-5 scoring system for memory importance based on four weighted dimensions.\n- Adds Silent Agent for automatic memory organization and archiving at session end or on demand.\n- Supports trigger phrase detection (\"记下来\", \"别忘了\", etc.) to boost memory scoring and storage priority.\n- Provides scripts for importance evaluation, memory retrieval (with decay), silent cleanup, and index updating.\n- Includes comprehensive setup, configuration, best practices, troubleshooting, and reference guides.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dbd5533cdcf96f617ceb2bec695c27993fb5d3254330324c24e3f51d0c28a506"
+}

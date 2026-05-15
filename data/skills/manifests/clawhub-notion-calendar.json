@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21132,
+  "uuid": "skill-clawhub-notion-calendar",
+  "skillKey": "clawhub-notion-calendar",
+  "name": "Notion Calendar",
+  "summary": "Manage Notion calendar databases with date-aware search, page creation, rescheduling, and safe workflows for planning views.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_calendar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Manage Notion calendar databases with date-aware search, page creation, rescheduling, and safe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notion-calendar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notion-calendar",
+      "url": "https://clawhub.ai/skills/notion-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-calendar",
+    "url": "https://clawhub.ai/skills/notion-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-calendar-c601060e5cfa851d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notion-calendar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notion-calendar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4559fe7581288ded6dd94e1da5675b000d244ff6b72bc46e5c740691ff24e31",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T15:30:31.730Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16143,
+  "uuid": "skill-clawhub-log-dive",
+  "skillKey": "clawhub-log-dive",
+  "name": "log-dive",
+  "summary": "Unified log search across Loki, Elasticsearch, and CloudWatch. Natural language queries translated to LogQL, ES DSL, or CloudWatch filter patterns. Read-only...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.log_dive",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Todd Kuehnl",
+      "features": [
+        "Unified log search across Loki, Elasticsearch, and CloudWatch",
+        "Natural language queries translated to LogQL, ES DSL, or CloudWatch filter patterns",
+        "Read-only..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/log-dive@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25701510?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "log-dive",
+      "url": "https://clawhub.ai/skills/log-dive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "log-dive",
+    "url": "https://clawhub.ai/skills/log-dive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/log-dive-26943a2b36092957.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/log-dive@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-log-dive-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57dd45f6dc813fbe51f9ecef3b7c7191a6f6fad63a187f26a1ccd81d1cf57df2",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T23:37:25.486Z"
+}

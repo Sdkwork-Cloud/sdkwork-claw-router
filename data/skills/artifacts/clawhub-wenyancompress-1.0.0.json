@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wenyancompress@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wenyancompress",
+  "skill": {
+    "id": 70280,
+    "skillKey": "clawhub-wenyancompress",
+    "name": "**文件**：`wenyan-compress.skill` **大小**：~7KB --- **包含内容：** 1. **SKILL.md** — 主触发逻辑和两种工作模式 2. **references/compress-map.md** — 压缩映."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wenyancompress",
+    "url": "https://clawhub.ai/skills/wenyancompress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wenyancompress-ef5d1d286a0c91a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "文言文压缩技能。触发场景：用户说\"用文言文回答\"、用户要求压缩/存档/记录记忆、对话过长需要提炼摘要、或需要高频记录日志时。核心能力：(1) 将任意中文回复压缩为文言文格式，保留关键信息；(2) 提供典故/成语/文言映射表供查阅；(3) 生成可逆向还原的压缩日志和记忆存档；(4) 为用户生成文言文输出（省 tok..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "october27",
+      "userId": "s172der9y5vescah4s51csdcf584kzkm",
+      "displayName": "Zen",
+      "image": "https://avatars.githubusercontent.com/u/34088070?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 532,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775861252368,
+      "changelog": "**文件**：`wenyan-compress.skill`\n\n**大小**：~7KB\n\n---\n\n**包含内容：**\n\n1. **SKILL.md** — 主触发逻辑和两种工作模式\n2. **references/compress-map.md** — 压缩映射表（动作/状态/情绪/主题词/时间戳）\n3. **references/grammar.md** — 文言语法速查（句式/虚词/快速压缩公式）\n4. **references/dict.md** — 典故成语对照表（诸子百家+近现代名人）\n\n---\n**核心价值：**\n- 省Token也是个不错的赛道，中文语言，典故，成语，文言文都是压缩包，记忆压缩也可以参考。\n**使用说明：**\nSkill 的核心设计：\n- 省Token也是个不错的赛道，中文语言，典故，成语，文言文都是压缩包，记忆压缩也可以参考。\n- 触发：用户说\"用文言文\"、要求存档/压缩、或写入日志时自动激活\n- 模式A：对外输出，追求文辞雅驯\n- 模式B：内部存档，用 时间·主语·动作·状态 格式高效压缩\n- 三大参考文件：映射表 + 语法速查 + 典故词典（诸子百家都有）\n\n安装后直接说\"用文言文回答\"即可体验。\n**使用示例：**\n问题：用文言文帮我概括下十五五的规划重点\n回答：\n十五五规划（即第十四个五年规划收官与第十五个五年规划纲要，2026-2030）之要旨，试以文言述之：\n\n十五五规划要义\n\n当世之局，变乱交织，十五五之策，以创新驱动为核。科技自立，关乎存亡；人工智能、量子计算、深海深空，皆兵家必争之地，此新质生产力之谓也。\n\n内循环为主，外开放为辅——内需畅则根基固，外联广则财源通，二者相济，不可偏废。\n\n绿色转型，势在必行。碳达峰、碳中和，非一时之功，乃百年之计。清洁能源、储能技术、低碳制造，皆为急务。\n\n乡村振兴，与城并举。县域经济、特色产业、数字农桑，皆可兴焉。\n\n共同富裕，非均贫富，乃崇教育、平机会、缩差距，使民各安其业、各得其所。\n\n国家安全，至重至要。粮食、能源、信息、生物，四域皆需有备。\n\n五字诀：\n创之以科技，循之以绿色，畅之以内需，富之以共惠，固之以国安。\n\n欲详某一领域（如AI、芯片、新能源等）之专项规划，可再询之。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9e2f39fb82ab18eb879f1101e568d9cb8862d1b87949b1a3b494b5d6315fc7a"
+}

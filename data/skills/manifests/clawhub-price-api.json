@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13827,
+  "uuid": "skill-clawhub-price-api",
+  "skillKey": "clawhub-price-api",
+  "name": "Price Api",
+  "summary": "Fetch construction material prices from open APIs. Track price trends, regional variations, and update cost databases.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.price_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "datadrivenconstruction",
+      "features": [
+        "Fetch construction material prices from open APIs",
+        "Track price trends, regional variations, and update cost databases."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/price-api@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94158709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "price-api",
+      "url": "https://clawhub.ai/skills/price-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "price-api",
+    "url": "https://clawhub.ai/skills/price-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/price-api-72127ad3ee5bdf35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/price-api@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-price-api-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e32dd63d08daf47bae0a02da4de4c53fb1e2306ae937991c05e3f79525ad8ffc",
+      "artifactSizeBytes": 2207
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T16:08:29.593Z"
+}

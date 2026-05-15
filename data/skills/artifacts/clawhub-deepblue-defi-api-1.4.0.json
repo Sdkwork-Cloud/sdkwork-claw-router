@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deepblue-defi-api@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepblue_defi_api",
+  "skill": {
+    "id": 50418,
+    "skillKey": "clawhub-deepblue-defi-api",
+    "name": "Deepblue Defi Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepblue-defi-api",
+    "url": "https://clawhub.ai/skills/deepblue-defi-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepblue-defi-api-688b579c74808964.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when an agent needs live DeFi data from Base — ETH prices, trending pools, token scores, or wallet scans. No auth required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "error403agent",
+      "userId": "s1779xgky98qaybz75cap760mn83h265",
+      "displayName": "DeepBlue",
+      "image": "https://avatars.githubusercontent.com/u/260345463?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 633,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1774325860956,
+      "changelog": "Added 5 DeFi LP farming endpoints for  token pool: /defi/lp/stats (TVL, APY), /defi/lp/position (user holdings), /defi/lp/deposit, /defi/lp/withdraw, /defi/lp/claim-rewards. Read endpoints /bin/bash.01, write endpoints /bin/bash.02 via x402 on Base.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd6b7f9a76594a75d008c28f5ac5ee5043069df202bafdd897e7b352cc0c5b32"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57805,
+  "uuid": "skill-clawhub-cern",
+  "skillKey": "clawhub-cern",
+  "name": "cern",
+  "summary": "Information assistant for CERN 欧洲核子研究中心. Get mission info, latest reports, member states, and organizational resources.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cern",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for CERN 欧洲核子研究中心",
+        "Get mission info, latest reports, member states, and organizational resources."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cern@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cern",
+      "url": "https://clawhub.ai/skills/cern"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cern",
+    "url": "https://clawhub.ai/skills/cern",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cern-68d2992e6c76c890.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cern@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cern-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9842ccdd6aae56c89a5540a164d94911deb88a0131e81dd33f903e603476d74b",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T00:31:19.829Z"
+}

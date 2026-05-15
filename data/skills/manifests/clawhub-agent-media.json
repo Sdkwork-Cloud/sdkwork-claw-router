@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55983,
+  "uuid": "skill-clawhub-agent-media",
+  "skillKey": "clawhub-agent-media",
+  "name": "Agent Media: Generate AI-powered videos and images from the terminal using the `agent-media` CLI.",
+  "summary": "AI UGC video production from the terminal using the `agent-media` CLI.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_media",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nevo-david",
+      "features": [
+        "AI UGC video production from the terminal using the `agent-media` CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-media@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100117126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-media",
+      "url": "https://clawhub.ai/skills/agent-media"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-media",
+    "url": "https://clawhub.ai/skills/agent-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-media-f344806881c2e819.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-media@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-media-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50c80353dd651bc8c97335fd31cc10cd5789c5fd6f1b39ef918940725fbc230a",
+      "artifactSizeBytes": 2488
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T09:10:27.223Z"
+}

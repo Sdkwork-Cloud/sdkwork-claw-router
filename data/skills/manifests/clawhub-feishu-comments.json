@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19938,
+  "uuid": "skill-clawhub-feishu-comments",
+  "skillKey": "clawhub-feishu-comments",
+  "name": "Feishu Comments",
+  "summary": "Read comments from Feishu documents. Use when: user asks to check/read/fetch comments on a Feishu doc, review feedback on a document, or collaborate on docum...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_comments",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "deadblue",
+      "features": [
+        "Read comments from Feishu documents",
+        "Use when: user asks to check/read/fetch comments on a Feishu doc, review feedback on a document."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-comments@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/448649?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-comments",
+      "url": "https://clawhub.ai/skills/feishu-comments"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-comments",
+    "url": "https://clawhub.ai/skills/feishu-comments",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-comments-1ed5b3793e561641.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-comments@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-comments-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0daf46d56cb29c85ad7da8be05c3546321f9edc6b960541e267aa8ca05ee0011",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T04:10:11.951Z"
+}

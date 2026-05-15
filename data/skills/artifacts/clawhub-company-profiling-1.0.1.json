@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/company-profiling@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.company_profiling",
+  "skill": {
+    "id": 44846,
+    "skillKey": "clawhub-company-profiling",
+    "name": "Company Profiling"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "company-profiling",
+    "url": "https://clawhub.ai/skills/company-profiling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/company-profiling-446a2f30692a9750.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Accurately and efficiently extract and analyze intelligence based on massive pharmaceutical data to provide users with professional company profiles and inve..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "patsnaplifescience",
+      "userId": "s178w3pk85rejw2tje9nd1jras85eg1c",
+      "displayName": "XK",
+      "image": "https://avatars.githubusercontent.com/u/275897758?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778145389633,
+      "changelog": "- Updated version to 1.0.3 in metadata.\n- Expanded and clarified the setup section for getting API keys and connecting PatSnap LifeScience MCP Services.\n- Added step-by-step connection and verification instructions with references to relevant PatSnap resources.\n- Listed available MCP servers and clearly marked which are required for this skill.\n- No changes to core execution or analysis logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cff6d13ce2ffa8f8791f4abd1d7493d94c72bef89279a58abb36320c02ff998e"
+}

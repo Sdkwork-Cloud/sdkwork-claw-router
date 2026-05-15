@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-launcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_launcher",
+  "skill": {
+    "id": 42380,
+    "skillKey": "clawhub-file-launcher",
+    "name": "File Launcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-launcher",
+    "url": "https://clawhub.ai/skills/file-launcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-launcher-4fc132804b351873.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill allows the assistant to launch files and open them with their default applications."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "badwolf-63",
+      "userId": "s179cdrncw0bjmkej9qkf2a90s85937q",
+      "displayName": "BadWolf-63",
+      "image": "https://avatars.githubusercontent.com/u/10259644?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776779526103,
+      "changelog": "Initial release of the file-launcher skill.\n\n- Enables launching files with their default Windows applications using Invoke-Item.\n- Supports commands to open documents, play media files, and launch programs.\n- Works with any file type that has a registered default application in Windows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d526810f5c9899f51af8c2d4fc33440c77e5dcb011253db186f1c2f4b399569b"
+}

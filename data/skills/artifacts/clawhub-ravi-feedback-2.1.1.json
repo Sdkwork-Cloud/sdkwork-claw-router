@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ravi-feedback@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ravi_feedback",
+  "skill": {
+    "id": 49500,
+    "skillKey": "clawhub-ravi-feedback",
+    "name": "Ravi feedback"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ravi-feedback",
+    "url": "https://clawhub.ai/skills/ravi-feedback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ravi-feedback-1568e5a09dc7ae41.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send feedback to the Ravi team — bugs, feature requests, praise, frustrations, suggestions. Do NOT use for general email sending (use ravi-email-send)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raunaksingwi",
+      "userId": "s17c2wh3r2py8ztx3k1ks1v6yh84aak2",
+      "displayName": "Raunak Singwi",
+      "image": "https://avatars.githubusercontent.com/u/18749768?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 673,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1775627175315,
+      "changelog": "Auto-published from 19d2b7eea3e0a215bf8c5726dd9e1fb86307cdd7",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce0ca655931f52ae44b68f540ff037535d9fa873a3911ba4846f17d1462f4e24"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clarity-submit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clarity_submit",
+  "skill": {
+    "id": 24860,
+    "skillKey": "clawhub-clarity-submit",
+    "name": "Clarity Submit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clarity-submit",
+    "url": "https://clawhub.ai/skills/clarity-submit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clarity-submit-27a1fcc8ed3c877b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Submit a protein variant hypothesis to Clarity Protocol for validation and folding. Use when the user asks to submit a hypothesis, propose a protein variant,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clarityprotocol",
+      "userId": "publishers:clarityprotocol",
+      "displayName": "clarityprotocol",
+      "image": "https://avatars.githubusercontent.com/u/255743260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772055687724,
+      "changelog": "Initial release of the Clarity Submit skill.\n\n- Submit protein variant hypotheses to Clarity Protocol for automated validation and structural prediction.\n- Supports checking submission status via unique ID.\n- Requires the CLARITY_WRITE_KEY environment variable for write access.\n- Enforces write/read rate limits and protein size limits.\n- Provides clear error codes for invalid input, authentication failure, and rate limiting.\n- Enables integration into research pipelines and supports programmatic or agent-driven submissions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3ccf3875abcc6db2d915d7f329f45d30e4c731fc99c6ddab1c4a0971cd2c4868"
+}

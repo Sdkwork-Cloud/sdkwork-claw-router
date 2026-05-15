@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openbuddy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openbuddy",
+  "skill": {
+    "id": 63568,
+    "skillKey": "clawhub-openbuddy",
+    "name": "OpenBuddy 电子宠物"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openbuddy",
+    "url": "https://clawhub.ai/skills/openbuddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openbuddy-ee354799042eb609.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenBuddy 电子宠物系统 - 在你的终端中孵化、养成和互动虚拟宠物伙伴"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wltgithub",
+      "userId": "s17bdvqym82trx62zwtt2yt8jh845zzy",
+      "displayName": "oldsword",
+      "image": "https://avatars.githubusercontent.com/u/130758128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775191997919,
+      "changelog": "Initial release - 18 species virtual pet system with deterministic generation, rarity tiers, and ASCII art sprites",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71ccd2fce2b9e83a666b54ece58f12bb4e7596bf73a5877349f91a57423a4e27"
+}

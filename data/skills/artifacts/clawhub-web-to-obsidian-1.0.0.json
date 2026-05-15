@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-to-obsidian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_to_obsidian",
+  "skill": {
+    "id": 63069,
+    "skillKey": "clawhub-web-to-obsidian",
+    "name": "web-to-obsidian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-to-obsidian",
+    "url": "https://clawhub.ai/skills/web-to-obsidian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-to-obsidian-b7c6c84380bd41c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抓取网页文章并保存到 Obsidian vault。当用户想要保存网页文章、博客、文档到 Obsidian 时使用，特别是提到\"保存到 Obsidian\"、\"存到 Obsidian\"、\"抓取网页\"、\"网页转 Obsidian\"、\"导入文章\"等场景。支持自动翻译非中文内容为中文，生成元数据（标签、摘要、标题），并以..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ioriiod0",
+      "userId": "publishers:ioriiod0",
+      "displayName": "ioriiod0",
+      "image": "https://avatars.githubusercontent.com/u/1235459?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 468,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772878666036,
+      "changelog": "- Initial release of web-to-obsidian for saving web articles, blogs, and documents to Obsidian vaults.\n- Supports automatic translation of non-Chinese content to Chinese, with industry-accurate terminology and formatting.\n- Generates structured metadata: title, source, date, tags, summary, author, language, and translation status.\n- Produces Obsidian-compatible Markdown files with YAML frontmatter; preserves original Markdown formatting.\n- Allows importing individual or multiple articles, including organizing into specified folders.\n- Includes robust error handling for fetch, translation, and Obsidian import failures; provides user guidance and cleanup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c0c941bdd8ed49145b3dd60870f6479b8970ec8a98bc7f72815e172743c2a1e3"
+}

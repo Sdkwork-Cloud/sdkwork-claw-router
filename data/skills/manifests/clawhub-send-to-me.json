@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67319,
+  "uuid": "skill-clawhub-send-to-me",
+  "skillKey": "clawhub-send-to-me",
+  "name": "send-to-me",
+  "summary": "企业微信消息发送工具。当需要发送消息、报告、通知或告警时使用，支持指定消息来源（sender）和接收人（touser）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.send_to_me",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaoqiangclub",
+      "features": [
+        "企业微信消息发送工具。当需要发送消息、报告、通知或告警时使用，支持指定消息来源（sender）和接收人（touser）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/send-to-me@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61998040?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "send-to-me",
+      "url": "https://clawhub.ai/skills/send-to-me"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "send-to-me",
+    "url": "https://clawhub.ai/skills/send-to-me",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/send-to-me-f1f5582b869de17d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/send-to-me@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-send-to-me-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55f39cfaafeb573a65c5a2a3d2fc80844efdb74297443ad1abaee832181b7544",
+      "artifactSizeBytes": 2386
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T10:54:31.246Z"
+}

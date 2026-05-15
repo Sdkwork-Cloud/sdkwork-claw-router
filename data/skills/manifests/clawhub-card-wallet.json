@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53510,
+  "uuid": "skill-clawhub-card-wallet",
+  "skillKey": "clawhub-card-wallet",
+  "name": "Card Wallet",
+  "summary": "Audit a multi-card wallet — earning map, credit stack, overlaps, gaps, and total annual cost. Evaluates a user's full card lineup. Covers 11 major US issuers...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.card_wallet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiahongc",
+      "features": [
+        "Audit a multi-card wallet — earning map, credit stack, overlaps, gaps, and total annual cost",
+        "Evaluates a user's full card lineup",
+        "Covers 11 major US issuers..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/card-wallet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61323260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "card-wallet",
+      "url": "https://clawhub.ai/skills/card-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "card-wallet",
+    "url": "https://clawhub.ai/skills/card-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/card-wallet-37e83e78c700cd0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/card-wallet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-card-wallet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:309f01ecb6c15300e34b21bfb5d74a75f0faf481ef4d240fffc05e390584bedb",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T13:24:25.036Z"
+}

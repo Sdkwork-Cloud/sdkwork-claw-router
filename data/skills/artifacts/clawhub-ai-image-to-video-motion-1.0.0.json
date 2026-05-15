@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-image-to-video-motion@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_image_to_video_motion",
+  "skill": {
+    "id": 45927,
+    "skillKey": "clawhub-ai-image-to-video-motion",
+    "name": "Ai Image To Video Motion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-image-to-video-motion",
+    "url": "https://clawhub.ai/skills/ai-image-to-video-motion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-image-to-video-motion-702ec48434ac3e45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get animated motion videos ready to post, without touching a single slider. Upload your still images (JPG, PNG, WEBP, HEIC, up to 200MB), say something like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777069204859,
+      "changelog": "AI Image to Video Motion skill — first public release:\n\n- Instantly animate still images into 1080p motion videos via simple natural language prompts; outputs MP4 ready for social sharing.\n- Handles image upload (JPG, PNG, WEBP, HEIC up to 200MB), cloud-side processing, and export, all with minimal user setup.\n- Automatic backend connection and 7-day free anonymous token registration (100 credits on signup).\n- Supports actions like export, credits check, timeline state, and file upload via intent classification.\n- Real-time status updates, robust error messaging, and workflow tips for social media creators.\n- Requires environment variable setup (NEMO_TOKEN) and attribution headers for all API calls.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b19802ddaf9c5098a13e938397009fd66949e7e2826522a6f01347e9dc77c73"
+}

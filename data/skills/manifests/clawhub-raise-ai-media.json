@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67841,
+  "uuid": "skill-clawhub-raise-ai-media",
+  "skillKey": "clawhub-raise-ai-media",
+  "name": "raise-ai-media",
+  "summary": "RaiseAI 媒体生成工具集 - 生图、生视频、脚本生成、图片解析、视频解析。 当用户提到以下任何关键词时必须触发此技能：生成图片、生成视频、图片生成、视频生成、脚本生成、 图片解析、图生文、反推提示词、视频解析、视频脚本、图片生图、视频生视频、 AI生图、AI生视频、AI创作、Media generation...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raise_ai_media",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JacobLUXJ",
+      "features": [
+        "RaiseAI 媒体生成工具集",
+        "生图、生视频、脚本生成、图片解析、视频解析。 当用户提到以下任何关键词时必须触发此技能：生成图片、生成视频、图片生成、视频生成、脚本生成、 图片解析、图生文、反推提示词、视频解析、视频脚本、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/raise-ai-media@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25626372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "raise-ai-media",
+      "url": "https://clawhub.ai/skills/raise-ai-media"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raise-ai-media",
+    "url": "https://clawhub.ai/skills/raise-ai-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raise-ai-media-80672ce9d6eb4ec7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/raise-ai-media@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-raise-ai-media-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:712d31286b98925012323e402905ebcc9ed40693c4eeb05b06011cbe70487150",
+      "artifactSizeBytes": 2701
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T12:21:39.816Z"
+}

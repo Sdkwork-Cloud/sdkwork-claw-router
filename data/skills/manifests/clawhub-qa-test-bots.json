@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45528,
+  "uuid": "skill-clawhub-qa-test-bots",
+  "skillKey": "clawhub-qa-test-bots",
+  "name": "QA Test Bots",
+  "summary": "Automate end-to-end QA tests simulating user flows, checking UI elements, broken links, responsiveness, and performance across devices with Apify integration.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qa_test_bots",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nicemaths123",
+      "features": [
+        "Automate end-to-end QA tests simulating user flows, checking UI elements, broken links, respons."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qa-test-bots@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244252350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qa-test-bots",
+      "url": "https://clawhub.ai/skills/qa-test-bots"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qa-test-bots",
+    "url": "https://clawhub.ai/skills/qa-test-bots",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qa-test-bots-0d05cf2a8e03d745.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qa-test-bots@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qa-test-bots-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b3b5ffd2e588500d5eb9f88660d71df3420597389e12502b5997c2c71132094",
+      "artifactSizeBytes": 2496
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T19:44:09.687Z"
+}

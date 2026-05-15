@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/volc-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volc_image",
+  "skill": {
+    "id": 71343,
+    "skillKey": "clawhub-volc-image",
+    "name": "火山引擎图片生成"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volc-image",
+    "url": "https://clawhub.ai/skills/volc-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volc-image-f5bd33ac309a758c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "火山引擎图像生成 - 使用火山引擎方舟API生成图片并下载"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "magiesky",
+      "userId": "s17dz48hm9f4zzszjwv8vdr9j1840qmp",
+      "displayName": "magieSky",
+      "image": "https://avatars.githubusercontent.com/u/4121450?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 305,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773721212475,
+      "changelog": "- Initial release of volc-image skill.\n- Enables AI-powered image generation and downloading using the Volcano Engine Ark API.\n- Requires the ARK_API_KEY environment variable for authentication.\n- Supports customizable prompts, model, and image size.\n- Includes example prompt templates for covers, sci-fi, and cute styles.\n- Provides Python usage guide for direct integration and automation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:749e2a5b0dc3682523ced273a85b365f6792c1e2a8e21aa2b299203382f8d251"
+}

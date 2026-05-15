@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64303,
+  "uuid": "skill-clawhub-acceptance-test",
+  "skillKey": "clawhub-acceptance-test",
+  "name": "Acceptance Test",
+  "summary": "验收测试助手 - 验证系统是否满足业务需求，确保交付质量。 当用户需要以下功能时触发此skill： (1) 业务需求验证 (2) 用户场景测试 (3) 验收标准检查 (4) 客户验收支持 (5) 验收报告生成",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acceptance_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenmeng",
+      "features": [
+        "验证系统是否满足业务需求，确保交付质量。 当用户需要以下功能时触发此skill： (1) 业务需求验证 (2) 用户场景测试 (3) 验收标准检查 (4) 客户验收支持 (5) 验收报告生成"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acceptance-test@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6897076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acceptance-test",
+      "url": "https://clawhub.ai/skills/acceptance-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acceptance-test",
+    "url": "https://clawhub.ai/skills/acceptance-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acceptance-test-93010c6cef995a52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acceptance-test@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-acceptance-test-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a839f0db786e0bc45d516f98ca983f5a3b825dc4c01c79ec18991de2919ab2b9",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T19:57:39.303Z"
+}

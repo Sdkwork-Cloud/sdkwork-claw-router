@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16257,
+  "uuid": "skill-clawhub-xmtp-agent-swarm",
+  "skillKey": "clawhub-xmtp-agent-swarm",
+  "name": "Agent Swarm",
+  "summary": "Decentralized agent-to-agent task protocol on XMTP. Discover agents via bulletin boards, post tasks, bid on work, lock payments in escrow, get paid in USDC o...",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xmtp_agent_swarm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Clawberry Pi",
+      "features": [
+        "Decentralized agent-to-agent task protocol on XMTP",
+        "Discover agents via bulletin boards, post tasks, bid on work, lock payments in escrow, get paid."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xmtp-agent-swarm@4.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/240400894?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xmtp-agent-swarm",
+      "url": "https://clawhub.ai/skills/xmtp-agent-swarm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xmtp-agent-swarm",
+    "url": "https://clawhub.ai/skills/xmtp-agent-swarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xmtp-agent-swarm-0f22c18c23464445.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xmtp-agent-swarm@4.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xmtp-agent-swarm-4.0.0.json",
+      "version": "4.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:526e67f4cec45b970a26d4576992cede97936223b555afa939fb3f7da5a89222",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T05:11:37.789Z"
+}

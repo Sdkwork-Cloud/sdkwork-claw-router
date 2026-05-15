@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63529,
+  "uuid": "skill-clawhub-pans-gpu-solution-builder",
+  "skillKey": "clawhub-pans-gpu-solution-builder",
+  "name": "Pans Gpu Solution Builder",
+  "summary": "GPU 算力方案构建器。根据客户的工作负载类型（训练/推理/微调/批量推理/开发测试）、 部署规模（小型/中型/大型/企业级）和月度预算，自动推荐最优 GPU 配置 （H100/A100/L40S/A10G/RTX 4090 等），生成含 GPU 型号、数量、算力、 月度/小时成本的配置表、扩展路线图和技术建议，...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pans_gpu_solution_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dashiming",
+      "features": [
+        "GPU 算力方案构建器。根据客户的工作负载类型（训练/推理/微调/批量推理/开发测试）、 部署规模（小型/中型/大型/企业级）和月度预算，自动推荐最优 GPU 配置 （H100/A100/L."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pans-gpu-solution-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28342384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pans-gpu-solution-builder",
+      "url": "https://clawhub.ai/skills/pans-gpu-solution-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pans-gpu-solution-builder",
+    "url": "https://clawhub.ai/skills/pans-gpu-solution-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pans-gpu-solution-builder-b0545644fe92a2e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pans-gpu-solution-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pans-gpu-solution-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5701163a8b7edb69b04147165bb8031df9b5fafe255714294b715b6fb8b18d14",
+      "artifactSizeBytes": 2611
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T04:40:23.884Z"
+}

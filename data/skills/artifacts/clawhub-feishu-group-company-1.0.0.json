@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-group-company@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_group_company",
+  "skill": {
+    "id": 55172,
+    "skillKey": "clawhub-feishu-group-company",
+    "name": "Feishu Group Company"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-group-company",
+    "url": "https://clawhub.ai/skills/feishu-group-company",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-group-company-1a17dfc50907282e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure a Feishu multi-bot company group so one coordinator bot, for example `company-ceo`, handles normal group messages, while specialist bots reply only..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alex-shen1121",
+      "userId": "s17e8rt3ehqr1jwgx55v915cb983gp22",
+      "displayName": "AlexShen",
+      "image": "https://avatars.githubusercontent.com/u/73343630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774891111693,
+      "changelog": "Initial release: Feishu company-group routing template with CEO default reply, specialist mention-only gating, and reusable config patch script.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab47d6d06abe22fbce7e3d7a8be4c52876ce66190d7e5163769d12bf0281331f"
+}

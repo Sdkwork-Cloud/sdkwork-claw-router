@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aisa-twitter-research-engage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_twitter_research_engage",
+  "skill": {
+    "id": 46060,
+    "skillKey": "clawhub-aisa-twitter-research-engage",
+    "name": "AIsa Twitter Research Engage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-twitter-research-engage",
+    "url": "https://clawhub.ai/skills/aisa-twitter-research-engage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-twitter-research-engage-b50e0d58c8c18ba9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search X/Twitter profiles, tweets, trends, and OAuth-gated posting through AIsa. Use when: the user needs Twitter research, monitoring, or engagement workflo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisadocs",
+      "userId": "s172yz541n4361fw0sapygg0r583eghk",
+      "displayName": "AIsa",
+      "image": "https://avatars.githubusercontent.com/u/245991925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777049527186,
+      "changelog": "Initial release of aisa-twitter-research-engage.\n\n- Search and monitor X/Twitter profiles, tweets, trends, and conversations.\n- Supports secure OAuth-based posting with explicit user approval.\n- CLI tools provided for research, engagement, and authorized posting workflows.\n- Requires AISA_API_KEY for API access.\n- Guardrails ensure safe use: no password requests, explicit post confirmations, and returns authorization links.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c8a5011da494065b4fc3f846452424e23a56c17322f562fa294f4c7db48af82"
+}

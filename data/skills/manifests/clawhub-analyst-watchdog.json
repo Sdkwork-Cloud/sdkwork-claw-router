@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22053,
+  "uuid": "skill-clawhub-analyst-watchdog",
+  "skillKey": "clawhub-analyst-watchdog",
+  "name": "Analyst Watchdog",
+  "summary": "Automated monitoring agent that watches an API scoreboard, detects milestones, writes findings to markdown, and alerts via file-based triggers. Use when you...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analyst_watchdog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nissan Dookeran",
+      "features": [
+        "Automated monitoring agent that watches an API scoreboard, detects milestones, writes findings.",
+        "Use when you..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/analyst-watchdog@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "analyst-watchdog",
+      "url": "https://clawhub.ai/skills/analyst-watchdog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analyst-watchdog",
+    "url": "https://clawhub.ai/skills/analyst-watchdog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analyst-watchdog-6cbef335162392fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/analyst-watchdog@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-analyst-watchdog-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36eee5b7488ed0bdbbdb545f4ea331e0fbe9620cda5eea8ef0f4afdcc578232b",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T04:42:05.000Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58688,
+  "uuid": "skill-clawhub-asset-library-skill",
+  "skillKey": "clawhub-asset-library-skill",
+  "name": "Asset Library Skill",
+  "summary": "Asset Library Skill. Use when the user expresses the overall end-to-end intent in one request, including “把这些材料建成资产库”“列出未来 60 天需要续办或补办的事项”“生成暑期实习申请材料包”, when...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asset_library_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ANGJustinl",
+      "features": [
+        "Asset Library Skill",
+        "Use when the user expresses the overall end-to-end intent in one request, including “把这些材料建成资产库."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/asset-library-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96008766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "asset-library-skill",
+      "url": "https://clawhub.ai/skills/asset-library-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asset-library-skill",
+    "url": "https://clawhub.ai/skills/asset-library-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asset-library-skill-8bcda1330245098c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/asset-library-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-asset-library-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ae8bc9bb72b27ce940a90c26df3d46cea2d37ae402da92718c09a7e9b697951",
+      "artifactSizeBytes": 2577
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T16:05:49.853Z"
+}

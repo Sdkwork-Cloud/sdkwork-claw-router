@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cre-scraper@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cre_scraper",
+  "skill": {
+    "id": 41570,
+    "skillKey": "clawhub-cre-scraper",
+    "name": "CRE Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cre-scraper",
+    "url": "https://clawhub.ai/skills/cre-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cre-scraper-684cd99b664977f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrapes commercial real estate listings from Crexi and LoopNet using Claude in Chrome on a Mac Mini with residential IP. Bypasses Cloudflare bot protection...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaceagentic",
+      "userId": "s17asrjzkemyzsy4ct3dy0zyy983ybhr",
+      "displayName": "jaceagentic",
+      "image": "https://avatars.githubusercontent.com/u/265969955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775002873427,
+      "changelog": "Full rewrite: Claude in Chrome approach bypasses Cloudflare, direct properties table, AI analysis, value-add scoring, Crexi + LoopNet support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0bda4c64504be91eed06677c27e024c9105176a70b97350d80955c9c693b93c2"
+}

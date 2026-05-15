@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/diagram-generator@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diagram_generator",
+  "skill": {
+    "id": 58701,
+    "skillKey": "clawhub-diagram-generator",
+    "name": "diagram-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diagram-generator",
+    "url": "https://clawhub.ai/skills/diagram-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diagram-generator-e9f39406a24e8f84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成和编辑各种类型的图表（drawio、mermaid、excalidraw）。支持流程图、时序图、类图、ER图、思维导图、架构图、网络拓扑图等常见图表类型。能够根据自然语言描述创建新图表，也能读取并修改已有的 drawio/mermaid/excalidraw 文件。使用独立的 MCP server (mcp-diagram-generator) 生成图表文件，减少 token 消耗并保证输出一致性。支持自动配置管理，默认输出路径为项目目录下的 diagrams/{for."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "matthewyin",
+      "userId": "s17b3wh7gm0ggppx38c8fkcnqd83e0gb",
+      "displayName": "Matthewyin",
+      "image": "https://avatars.githubusercontent.com/u/26054345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 23133,
+      "installsAllTime": 217,
+      "installsCurrent": 208,
+      "stars": 40,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1770197321321,
+      "changelog": "- Minor update with documentation improvements and increased clarity in description.\n- Added contact information for user support.\n- Enhanced the English description for easier understanding of features and usage.\n- No changes to features or code; functionality remains the same.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1661116dd78e18abcf8a135c675da24e7f57d4589b50c6771ef6f148e932da84"
+}

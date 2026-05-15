@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/signalhire-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signalhire_skill",
+  "skill": {
+    "id": 10927,
+    "skillKey": "clawhub-signalhire-skill",
+    "name": "The SignalHire skill integrates the full SignalHire API into OpenClaw, enabling you to search for prospects and enrich their co."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signalhire-skill",
+    "url": "https://clawhub.ai/skills/signalhire-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signalhire-skill-4473930e09d0075c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prospect and enrich contacts via the SignalHire API (Search, Person and Credits)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ms-youssef",
+      "userId": "publishers:ms-youssef",
+      "displayName": "ms-youssef",
+      "image": "https://avatars.githubusercontent.com/u/64752958?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2293,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770198903542,
+      "changelog": "The SignalHire skill integrates the full SignalHire API into OpenClaw, enabling you to search for prospects and enrich their contact details without leaving your workflow. It exposes three core actions: a credits check, a search-by-query for prospecting, and an asynchronous contact enrichment call. The credits check invokes SignalHire’s /api/v1/credits endpoint to report how many credits you have left, while the search action uses the searchByQuery endpoint to filter candidates by title, location, industry and other fields. Access to the search API requires contacting SignalHire and is limited to three concurrent requests.\n\nThe enrichment action calls the Person API (/api/v1/candidate/search) with up to 100 identifiers and a callback URL. SignalHire returns results asynchronously to your callback; your server must reply with HTTP 200 within a 10‑second window or SignalHire will retry and eventually discard the request. Each callback object includes a status (success, failed, credits_are_over, timeout_exceeded or duplicate_query) and, on success, a candidate with fields like fullName, emails, phones and locations. The skill includes a small Flask connector that listens on the callback endpoint, writes results into per‑job and consolidated CSV files, and exposes a job-status API so your agent knows when to proceed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b545a29d7a4c3928675cd621686c7def0530aee392278b53b1611cf3758e460e"
+}

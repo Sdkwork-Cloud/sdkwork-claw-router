@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71656,
+  "uuid": "skill-clawhub-meituan-hot-trend",
+  "skillKey": "clawhub-meituan-hot-trend",
+  "name": "Meituan",
+  "summary": "提供美团公开商家和优惠信息的检索与摘要，支持评分、价格、评价等核心指标比较分析。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meituan_hot_trend",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "提供美团公开商家和优惠信息的检索与摘要，支持评分、价格、评价等核心指标比较分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meituan-hot-trend@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meituan-hot-trend",
+      "url": "https://clawhub.ai/skills/meituan-hot-trend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meituan-hot-trend",
+    "url": "https://clawhub.ai/skills/meituan-hot-trend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meituan-hot-trend-50eec97594dc10fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meituan-hot-trend@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meituan-hot-trend-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6082ed3f8e54d25a28d54264ca2176b318ff1983a2c70492519ad189e5cf5a02",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:45:58.939Z"
+}

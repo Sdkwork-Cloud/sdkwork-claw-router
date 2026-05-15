@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73319,
+  "uuid": "skill-clawhub-construction-tender-analyzer-jianshetong",
+  "skillKey": "clawhub-construction-tender-analyzer-jianshetong",
+  "name": "工程建设招投标分析-建设通",
+  "summary": "工程建设招投标分析-建设通，当搜索词包含工程、施工、建筑、市政、监理、设计等建筑业专属词汇时触发，聚焦工程项目金额、中标单位资质背景，重点提取建筑类项目核心字段并进行业绩汇总。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.construction_tender_analyzer_jianshetong",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pkuycl",
+      "features": [
+        "工程建设招投标分析-建设通，当搜索词包含工程、施工、建筑、市政、监理、设计等建筑业专属词汇时触发，聚焦工程项目金额、中标单位资质背景，重点提取建筑类项目核心字段并进行业绩汇总。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/construction-tender-analyzer-jianshetong@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15953272?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "construction-tender-analyzer-jianshetong",
+      "url": "https://clawhub.ai/skills/construction-tender-analyzer-jianshetong"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "construction-tender-analyzer-jianshetong",
+    "url": "https://clawhub.ai/skills/construction-tender-analyzer-jianshetong",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/construction-tender-analyzer-jianshetong-389079f95f19b6e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/construction-tender-analyzer-jianshetong@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-construction-tender-analyzer-jianshetong-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bcdffc5e0b6f0668976e0d8464b91356f5b33c3727e253398feae153f780fa1",
+      "artifactSizeBytes": 2809
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T09:42:17.701Z"
+}

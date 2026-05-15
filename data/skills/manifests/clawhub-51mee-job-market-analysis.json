@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65808,
+  "uuid": "skill-clawhub-51mee-job-market-analysis",
+  "skillKey": "clawhub-51mee-job-market-analysis",
+  "name": "51mee Job Market Analysis",
+  "summary": "职位市场分析。触发场景：用户提供职位名称和地区，要求分析职位市场供需、薪资水平、技能趋势。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.51mee_job_market_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "51mee",
+      "features": [
+        "职位市场分析。触发场景：用户提供职位名称和地区，要求分析职位市场供需、薪资水平、技能趋势。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/51mee-job-market-analysis@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226007355?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "51mee-job-market-analysis",
+      "url": "https://clawhub.ai/skills/51mee-job-market-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "51mee-job-market-analysis",
+    "url": "https://clawhub.ai/skills/51mee-job-market-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/51mee-job-market-analysis-4c6a42405046a0c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/51mee-job-market-analysis@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-51mee-job-market-analysis-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66501f6a96e48a38e5666f6cfdc26d8306ad0ab2ec81523cb487a1894de1c6f2",
+      "artifactSizeBytes": 2133
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T02:24:17.238Z"
+}

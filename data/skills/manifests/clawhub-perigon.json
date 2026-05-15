@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24606,
+  "uuid": "skill-clawhub-perigon",
+  "skillKey": "clawhub-perigon",
+  "name": "Perigon",
+  "summary": "Perigon integration. Manage Organizations. Use when the user wants to interact with Perigon data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perigon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Perigon integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Perigon data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/perigon@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "perigon",
+      "url": "https://clawhub.ai/skills/perigon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perigon",
+    "url": "https://clawhub.ai/skills/perigon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perigon-876e18077ea207f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/perigon@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-perigon-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39db41b4753712c81278dfc095d94faa51ba0d8b224f6dc0811e8ed25fa4a74a",
+      "artifactSizeBytes": 1805
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:51:15.504Z"
+}

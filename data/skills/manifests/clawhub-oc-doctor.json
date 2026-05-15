@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19059,
+  "uuid": "skill-clawhub-oc-doctor",
+  "skillKey": "clawhub-oc-doctor",
+  "name": "oc-doctor",
+  "summary": "Runs a comprehensive 11-section health check on local OpenClaw installations. Diagnoses configuration errors, session bloat, model drift, cron issues, securi...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_doctor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bryant24hao",
+      "features": [
+        "Runs a comprehensive 11-section health check on local OpenClaw installations",
+        "Diagnoses configuration errors, session bloat, model drift, cron issues, securi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oc-doctor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17765408?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oc-doctor",
+      "url": "https://clawhub.ai/skills/oc-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-doctor",
+    "url": "https://clawhub.ai/skills/oc-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-doctor-29f00382e4492650.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oc-doctor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oc-doctor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83d80fb21da7fe8a3ec3dcb517477402c021f68450f2ebd4f75d0c4ac663baa9",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T13:03:10.596Z"
+}

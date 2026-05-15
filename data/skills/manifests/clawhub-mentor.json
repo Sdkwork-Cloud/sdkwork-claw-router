@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56306,
+  "uuid": "skill-clawhub-mentor",
+  "skillKey": "clawhub-mentor",
+  "name": "导师 Mentor",
+  "summary": "Turn any public figure into your private AI mentor. Give a name — auto-collect their real posts, speeches, and content from social platforms, extract their t...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mentor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sophieyou",
+      "features": [
+        "Turn any public figure into your private AI mentor",
+        "Give a name — auto-collect their real posts, speeches, and content from social platforms, extra."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mentor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243932536?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mentor",
+      "url": "https://clawhub.ai/skills/mentor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mentor",
+    "url": "https://clawhub.ai/skills/mentor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mentor-d9d771df57e86d11.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mentor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mentor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d041929983b164374bd441c5e9ea839ee77ade927d24bc35d50b6bab382ac1c",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T03:18:54.263Z"
+}

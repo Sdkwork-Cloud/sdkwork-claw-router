@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50075,
+  "uuid": "skill-clawhub-strategy-backtest",
+  "skillKey": "clawhub-strategy-backtest",
+  "name": "Strategy Backtest",
+  "summary": "Quantitative strategy backtesting—implement, run, and tune trading rules on historical data; performance metrics (CAGR, max drawdown, Sharpe, win rate) and s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strategy_backtest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mikeclaw007",
+      "features": [
+        "Quantitative strategy backtesting—implement, run, and tune trading rules on historical data",
+        "performance metrics (CAGR, max drawdown, Sharpe, win rate) and s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/strategy-backtest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265502950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "strategy-backtest",
+      "url": "https://clawhub.ai/skills/strategy-backtest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strategy-backtest",
+    "url": "https://clawhub.ai/skills/strategy-backtest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strategy-backtest-82e31a0d7e9af750.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/strategy-backtest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-strategy-backtest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1a97b421f31adcdcc721494264f740e5d2abc726cfb942aac8a88f2a9e80c9a",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T08:14:08.338Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73685,
+  "uuid": "skill-clawhub-budget-hotel-search",
+  "skillKey": "clawhub-budget-hotel-search",
+  "name": "今夜特价酒店",
+  "summary": "分贝通酒店预定助手，实时查询搜索酒店、展示酒店列表、查询酒店房型、展示房型产品和报价、预定酒店、查看订单、取消订单、查看酒店基础信息和酒店评论信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.budget_hotel_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fenbeitong-trip",
+      "features": [
+        "分贝通酒店预定助手，实时查询搜索酒店、展示酒店列表、查询酒店房型、展示房型产品和报价、预定酒店、查看订单、取消订单、查看酒店基础信息和酒店评论信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/budget-hotel-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265222913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "budget-hotel-search",
+      "url": "https://clawhub.ai/skills/budget-hotel-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "budget-hotel-search",
+    "url": "https://clawhub.ai/skills/budget-hotel-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/budget-hotel-search-7f9c9d74c78895a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/budget-hotel-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-budget-hotel-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d343271c377e4ac88e4e716f437c35364d0319eefe03d47f2c4df2637eeac82e",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:50:10.678Z"
+}

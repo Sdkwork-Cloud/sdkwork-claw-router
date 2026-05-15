@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9639,
+  "uuid": "skill-clawhub-diet-tracker",
+  "skillKey": "clawhub-diet-tracker",
+  "name": "Diet Tracker",
+  "summary": "Tracks daily diet and calculates nutrition information to help achieve weight loss goals. Use when user provides meal information, asks about calorie intake,...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diet_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yonghao Zhao",
+      "features": [
+        "Tracks daily diet and calculates nutrition information to help achieve weight loss goals",
+        "Use when user provides meal information, asks about calorie intake,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/diet-tracker@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118432288?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "diet-tracker",
+      "url": "https://clawhub.ai/skills/diet-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diet-tracker",
+    "url": "https://clawhub.ai/skills/diet-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diet-tracker-e0f3705aaea3372b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/diet-tracker@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-diet-tracker-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97b9f5cc4c9b246e90424d5347167a4f2e1e6dfba902eee141b3296cfb4ced1f",
+      "artifactSizeBytes": 2062
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T12:59:38.894Z"
+}

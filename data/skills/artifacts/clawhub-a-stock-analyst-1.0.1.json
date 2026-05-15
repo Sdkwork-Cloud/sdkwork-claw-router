@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-stock-analyst@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_analyst",
+  "skill": {
+    "id": 69210,
+    "skillKey": "clawhub-a-stock-analyst",
+    "name": "A股智投大师"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-analyst",
+    "url": "https://clawhub.ai/skills/a-stock-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-analyst-d8b70cbb1616f886.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股智投大师 | A股智能投研助手 | 行情分析 | 基本面分析 | 智能选股 | 自选股管理 | 监控预警"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lucasxing1",
+      "userId": "s179j5g77vqbkfyce681arp2cx84ryb6",
+      "displayName": "lucasxing1",
+      "image": "https://avatars.githubusercontent.com/u/216610351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 409,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773667449704,
+      "changelog": "修复: 移除硬编码API Key，改为从环境变量读取",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:519738f1197e3273e5fec4ac88a89193d2af1d9eecc812ea413dda8a451f1e9c"
+}

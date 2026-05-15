@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bits@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bits",
+  "skill": {
+    "id": 11161,
+    "skillKey": "clawhub-bits",
+    "name": "Bits Browser Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bits",
+    "url": "https://clawhub.ai/skills/bits",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bits-e5e59d10f196504b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control browser automation agents via the Bits MCP server. Use when running web scraping, form filling, data extraction, or any browser-based automation task. Bits agents can navigate websites, click elements, fill forms, handle OAuth flow."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robbiethompson18",
+      "userId": "s17fjmb07de9z67sxg9rkyrm3n83nh95",
+      "displayName": "Robbie Thompson",
+      "image": "https://avatars.githubusercontent.com/u/216262277?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2273,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770042458580,
+      "changelog": "- Initial release of Bits MCP skill for browser automation.\n- Enables web scraping, form filling, data extraction, and browser-based automation via the Bits MCP server.\n- Provides setup instructions for API key creation and MCP server integration.\n- Supports TypeScript SDK execution in a sandboxed environment with code docs search.\n- Lists use cases: navigating sites, extracting data, reading pages, interacting with web elements, handling authentication, multi-window control, and structured JSON output.\n- Includes troubleshooting tips and workflow creation guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fbcd38d9b5923adfb45020b9556f1ec9470f503e6b0eecb61ea9294bee737524"
+}

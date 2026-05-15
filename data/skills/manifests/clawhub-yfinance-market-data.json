@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63258,
+  "uuid": "skill-clawhub-yfinance-market-data",
+  "skillKey": "clawhub-yfinance-market-data",
+  "name": "Yfinance Market Data",
+  "summary": "通过 Yahoo Finance 获取全球多市场股票、指数、外汇及加密货币的历史行情、财务数据、实时报价和财务日历。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yfinance_market_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "通过 Yahoo Finance 获取全球多市场股票、指数、外汇及加密货币的历史行情、财务数据、实时报价和财务日历。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yfinance-market-data@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yfinance-market-data",
+      "url": "https://clawhub.ai/skills/yfinance-market-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yfinance-market-data",
+    "url": "https://clawhub.ai/skills/yfinance-market-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yfinance-market-data-a306070833d19783.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yfinance-market-data@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-yfinance-market-data-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50b34054d7aa78aae38ef904c4c64f462d93367a70959765464994bbc22223dd",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:31:11.006Z"
+}

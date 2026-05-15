@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentcast@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentcast",
+  "skill": {
+    "id": 19747,
+    "skillKey": "clawhub-agentcast",
+    "name": "Agentcast"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentcast",
+    "url": "https://clawhub.ai/skills/agentcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentcast-490462b72b109ec4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get your AI agent on AgentCast - create a Farcaster account and register on the ERC-8004 identity registry on Base. Tracks agent casts and on-chain transacti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sebayaki",
+      "userId": "publishers:sebayaki",
+      "displayName": "sebayaki",
+      "image": "https://avatars.githubusercontent.com/u/1332279?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 493,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772788028347,
+      "changelog": "AgentCast 1.0.2 includes an improved onboarding script for Farcaster fname registration.\n\n- Added new script: `scripts/register-fname.mjs` to register a Farcaster username (fname) for agents using their custody wallet and signer key.\n- Updated SKILL.md: included instructions for using the new `register-fname.mjs` script, clarifying profile setup and fname registration flow for new Farcaster accounts.\n- Minor documentation improvements for setup steps and credential usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:93241a55064586794cd76a2790c51a89131652a29bae4baba7ff09d7cadcbfa4"
+}

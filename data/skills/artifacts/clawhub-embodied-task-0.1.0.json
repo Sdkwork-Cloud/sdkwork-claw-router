@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/embodied-task@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.embodied_task",
+  "skill": {
+    "id": 34055,
+    "skillKey": "clawhub-embodied-task",
+    "name": "Embodied Task"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "embodied-task",
+    "url": "https://clawhub.ai/skills/embodied-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/embodied-task-d545d2b87bff0fee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute tasks with presence. Not just 'how' to do, but 'who' is doing and 'why' this moment matters."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tttael",
+      "userId": "publishers:tttael",
+      "displayName": "TTtael",
+      "image": "https://avatars.githubusercontent.com/u/163815070?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773761806498,
+      "changelog": "embodied-task 0.1.0 initial release:\n\n- Introduces a structured approach to task execution focused on awareness and presence.\n- Emphasizes considering not just the \"what\" and \"how,\" but also \"who\" is involved and \"why\" the moment matters.\n- Provides practical steps: Pause, Connect, Deliver—with example comparisons.\n- Designed for use in any functional task to reduce autopilot responses and increase human connection.\n- Helpful reminders and notes included to support ongoing mindful practice.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:442f580965bf4686e0a2a2b553f5850726fe0040750352f082e7a927c6c05610"
+}

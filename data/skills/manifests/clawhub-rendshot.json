@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46566,
+  "uuid": "skill-clawhub-rendshot",
+  "skillKey": "clawhub-rendshot",
+  "name": "Rendshot",
+  "summary": "Image generation and screenshot tool using Rendshot. Use when the user asks to generate images from HTML/CSS, take website screenshots, render templates to i...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rendshot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Martian",
+      "features": [
+        "Image generation and screenshot tool using Rendshot",
+        "Use when the user asks to generate images from HTML/CSS, take website screenshots, render templ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rendshot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27270775?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rendshot",
+      "url": "https://clawhub.ai/skills/rendshot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rendshot",
+    "url": "https://clawhub.ai/skills/rendshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rendshot-a54bd5eb67420d63.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rendshot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rendshot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fdf2c05889ac2777a52de7ed1ec84bf3932fbda13079a2334d1ed3c534774ac",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T15:00:31.731Z"
+}

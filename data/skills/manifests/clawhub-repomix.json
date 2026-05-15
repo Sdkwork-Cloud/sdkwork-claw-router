@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29637,
+  "uuid": "skill-clawhub-repomix",
+  "skillKey": "clawhub-repomix",
+  "name": "Repomix",
+  "summary": "Pack and analyze codebases into AI-friendly single files using Repomix. Use when the user wants to explore repositories, analyze code structure, find pattern...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repomix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yamadashy",
+      "features": [
+        "Pack and analyze codebases into AI-friendly single files using Repomix",
+        "Use when the user wants to explore repositories, analyze code structure, find pattern..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/repomix@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5019072?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "repomix",
+      "url": "https://clawhub.ai/skills/repomix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repomix",
+    "url": "https://clawhub.ai/skills/repomix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repomix-28f0985d8e5ec729.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/repomix@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-repomix-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dff238fe84b98ba52640d8238e77f3e5cb4b1e5f6d0d825d1a2b12e555fe32db",
+      "artifactSizeBytes": 2106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T11:20:11.898Z"
+}

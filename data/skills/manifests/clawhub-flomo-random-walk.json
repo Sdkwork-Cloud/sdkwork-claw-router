@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66254,
+  "uuid": "skill-clawhub-flomo-random-walk",
+  "skillKey": "clawhub-flomo-random-walk",
+  "name": "Flomo Random Walk",
+  "summary": "随机漫步：从一条随机笔记出发，探索相关笔记，形成知识漫游路径。 触发场景：用户说\"随机漫步\"、\"flomo漫步\"、\"知识漫步\"、\"开始漫步\"等。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flomo_random_walk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JayShna",
+      "features": [
+        "随机漫步：从一条随机笔记出发，探索相关笔记，形成知识漫游路径。 触发场景：用户说\"随机漫步\"、\"flomo漫步\"、\"知识漫步\"、\"开始漫步\"等。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flomo-random-walk@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25737838?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flomo-random-walk",
+      "url": "https://clawhub.ai/skills/flomo-random-walk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flomo-random-walk",
+    "url": "https://clawhub.ai/skills/flomo-random-walk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flomo-random-walk-4e5c722af494747f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flomo-random-walk@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flomo-random-walk-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b89954e2de34b4cfce1700c979d8f04b3a8f1d1825c8fce4111a8d4a6872d3ae",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T15:54:15.744Z"
+}

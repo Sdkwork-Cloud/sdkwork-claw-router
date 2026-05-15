@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55556,
+  "uuid": "skill-clawhub-raigo-owasp-top-10-llm",
+  "skillKey": "clawhub-raigo-owasp-top-10-llm",
+  "name": "OWASP Top 10 AI",
+  "summary": "RAIGO × OWASP LLM Top 10 — official OWASP LLM Application Security Top 10 (2025) enforcement rules for OpenClaw agents. Covers all 10 OWASP LLM risks: prompt...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raigo_owasp_top_10_llm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "musharsec",
+      "features": [
+        "RAIGO × OWASP LLM Top 10 — official OWASP LLM Application Security Top 10 (2025) enforcement ru.",
+        "Covers all 10 OWASP LLM risks: prompt..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/raigo-owasp-top-10-llm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45098359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "raigo-owasp-top-10-llm",
+      "url": "https://clawhub.ai/skills/raigo-owasp-top-10-llm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raigo-owasp-top-10-llm",
+    "url": "https://clawhub.ai/skills/raigo-owasp-top-10-llm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raigo-owasp-top-10-llm-3124c688a0522ea0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/raigo-owasp-top-10-llm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-raigo-owasp-top-10-llm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8372b0120d09b357a7b623320e94ed30c7a1bcecef2824ba11e1f816f7b18f94",
+      "artifactSizeBytes": 2529
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T07:30:00.218Z"
+}

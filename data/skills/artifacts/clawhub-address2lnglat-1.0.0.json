@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/address2lnglat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.address2lnglat",
+  "skill": {
+    "id": 65813,
+    "skillKey": "clawhub-address2lnglat",
+    "name": "address2lnglat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "address2lnglat",
+    "url": "https://clawhub.ai/skills/address2lnglat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/address2lnglat-6f12056afc65ae10.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用百度地图开放平台API，将地名批量转换为BD-09（百度）经纬度坐标，自动搜索地点 → 用户填入AK → 批量爬取坐标 → 保存CSV+JSON → 直接发送给用户。坐标保留6位小数，无需转换。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ggyybb",
+      "userId": "s17dwtrmbh0atzzgj7fprv5e21843gga",
+      "displayName": "ggyybb",
+      "image": "https://avatars.githubusercontent.com/u/61568153?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775118449724,
+      "changelog": "Initial release of address2lnglat.\n\n- Batch converts place names to BD-09 coordinates using Baidu Maps API.\n- Prompts user for Baidu Map AK and city restriction.\n- Outputs results as CSV and JSON with 6-decimal BD-09 coordinates.\n- Includes fields like place name, structured address, source, type, confidence, and status.\n- No manual coordinate system conversion needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:28f2893d03c46b96789e99b293109e05d141c0673ea98014ff5633cf80e46ffd"
+}

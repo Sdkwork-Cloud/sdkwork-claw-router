@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69951,
+  "uuid": "skill-clawhub-qualitative-thematic-analysis",
+  "skillKey": "clawhub-qualitative-thematic-analysis",
+  "name": "质性主题分析",
+  "summary": "基于Braun & Clarke六阶段法，对本地质性资料（访谈、观察、文本）进行系统性主题归纳、编码及报告生成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qualitative_thematic_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yipng05-max",
+      "features": [
+        "基于Braun & Clarke六阶段法，对本地质性资料（访谈、观察、文本）进行系统性主题归纳、编码及报告生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qualitative-thematic-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256726987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qualitative-thematic-analysis",
+      "url": "https://clawhub.ai/skills/qualitative-thematic-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qualitative-thematic-analysis",
+    "url": "https://clawhub.ai/skills/qualitative-thematic-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qualitative-thematic-analysis-6aef8fcaad8ed716.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qualitative-thematic-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qualitative-thematic-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c826a8a86ecb189db7758f09e93dd534cfbeda72e729149ee43d4dbf4246b9a",
+      "artifactSizeBytes": 2614
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T07:00:00.408Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17730,
+  "uuid": "skill-clawhub-itsyhome-control",
+  "skillKey": "clawhub-itsyhome-control",
+  "name": "Itsyhome Control",
+  "summary": "Control and query HomeKit and Home Assistant smart home devices via the Itsyhome macOS app (https://itsyhome.app). Use when the user asks to turn devices on/...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.itsyhome_control",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nickustinov",
+      "features": [
+        "Control and query HomeKit and Home Assistant smart home devices via the Itsyhome macOS app (htt.",
+        "Use when the user asks to turn devices on/..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/itsyhome-control@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/823000?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "itsyhome-control",
+      "url": "https://clawhub.ai/skills/itsyhome-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "itsyhome-control",
+    "url": "https://clawhub.ai/skills/itsyhome-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/itsyhome-control-a671a6cb1e63cd02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/itsyhome-control@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-itsyhome-control-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da124729e5cb88d0916edb042a7ade9c9659455a0f97d22b3b6e8108833262de",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T16:30:57.493Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31236,
+  "uuid": "skill-clawhub-electrical-backup-power",
+  "skillKey": "clawhub-electrical-backup-power",
+  "name": "Electrical Backup Power",
+  "summary": "Electrical fundamentals and backup power systems. Use when someone needs to understand their electrical panel, safely connect a generator, evaluate solar opt...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.electrical_backup_power",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HowToUseHumans",
+      "features": [
+        "Electrical fundamentals and backup power systems",
+        "Use when someone needs to understand their electrical panel, safely connect a generator, evalua."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/electrical-backup-power@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151727669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "electrical-backup-power",
+      "url": "https://clawhub.ai/skills/electrical-backup-power"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "electrical-backup-power",
+    "url": "https://clawhub.ai/skills/electrical-backup-power",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/electrical-backup-power-e8e6e92a78e5e52b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/electrical-backup-power@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-electrical-backup-power-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c514c8bb4edae008d553b1cd786f99d8aec53744f108ac210c49f5c28491687",
+      "artifactSizeBytes": 2666
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T21:32:50.058Z"
+}

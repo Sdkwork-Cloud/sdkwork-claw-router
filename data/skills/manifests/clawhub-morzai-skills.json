@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40304,
+  "uuid": "skill-clawhub-morzai-skills",
+  "skillKey": "clawhub-morzai-skills",
+  "name": "Morzai Skills",
+  "summary": "Unified entry point for Morzai workflows. Routes requests through api/commands.json into the matching child skill.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morzai_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Morzai-app",
+      "features": [
+        "Unified entry point for Morzai workflows",
+        "Routes requests through api/commands.json into the matching child skill."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/morzai-skills@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272398409?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "morzai-skills",
+      "url": "https://clawhub.ai/skills/morzai-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morzai-skills",
+    "url": "https://clawhub.ai/skills/morzai-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morzai-skills-08b7b1918b078713.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/morzai-skills@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-morzai-skills-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b736998745a55e865c4543fe1cea1a2c63318c0f9776f655e5604d464e0dce40",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T03:38:41.700Z"
+}

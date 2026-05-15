@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64495,
+  "uuid": "skill-clawhub-unclecheng-bilibilianalyzer",
+  "skillKey": "clawhub-unclecheng-bilibilianalyzer",
+  "name": "Analysis of comments on Bilibili videos",
+  "summary": "B站视频评论与弹幕深度分析。输入B站视频链接或BV号，自动采集评论、弹幕数据，进行情感分析、关键词提取、热度分析，生成结构化分析报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unclecheng_bilibilianalyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Unclecheng",
+      "features": [
+        "B站视频评论与弹幕深度分析。输入B站视频链接或BV号，自动采集评论、弹幕数据，进行情感分析、关键词提取、热度分析，生成结构化分析报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unclecheng-bilibilianalyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55303635?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unclecheng-bilibilianalyzer",
+      "url": "https://clawhub.ai/skills/unclecheng-bilibilianalyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unclecheng-bilibilianalyzer",
+    "url": "https://clawhub.ai/skills/unclecheng-bilibilianalyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unclecheng-bilibilianalyzer-6db10ae201ecd904.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unclecheng-bilibilianalyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unclecheng-bilibilianalyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6550d20e7d2c756f7893f16fb8c5c8bba495427528766eb1840a8d7f01af2239",
+      "artifactSizeBytes": 2512
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T03:54:07.362Z"
+}

@@ -1,0 +1,49 @@
+{
+  "skill": {
+    "slug": "skillguard-scanner",
+    "displayName": "SkillGuard Scanner",
+    "summary": "Security scanner for OpenClaw/ClawHub skills. Detects malware, reverse shells, credential theft, prompt injection, memory poisoning, typosquatting, and suspicious prerequisites before installation. Use when installing new skills, auditing existing skills, checking a skill name for typosquatting, or scanning ClawHub skills for security risks.",
+    "tags": {
+      "audit": "1.1.0",
+      "latest": "1.1.0",
+      "malware": "1.1.0",
+      "scanner": "1.1.0",
+      "security": "1.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1754,
+      "installsAllTime": 7,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 2
+    },
+    "createdAt": 1770816433244,
+    "updatedAt": 1778385129452
+  },
+  "latestVersion": {
+    "version": "1.1.0",
+    "createdAt": 1770818366146,
+    "changelog": "Added security policy engine: human-readable WHY/ACTION blurbs per finding, real-world incident references, enriched JSON output",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "msgnoki",
+    "userId": "publishers:msgnoki",
+    "displayName": "msgnoki",
+    "image": "https://avatars.githubusercontent.com/u/180914307?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778385129452
+  }
+}

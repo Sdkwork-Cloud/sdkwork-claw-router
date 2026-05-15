@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58480,
+  "uuid": "skill-clawhub-local-data-ai",
+  "skillKey": "clawhub-local-data-ai",
+  "name": "LocalDataAI",
+  "summary": "ClawHub AI 私有数据本地处理 Skill - 纯离线、不上云、数据不出域的本地 AI 文件处理工具 | Local private AI data processing with offline models, supporting WPS/PDF/Excel/WeChat files",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_data_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lv Lancer",
+      "features": [
+        "ClawHub AI 私有数据本地处理 Skill",
+        "纯离线、不上云、数据不出域的本地 AI 文件处理工具 | Local private AI data processing with offline models, supporting W."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-data-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29176686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-data-ai",
+      "url": "https://clawhub.ai/skills/local-data-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-data-ai",
+    "url": "https://clawhub.ai/skills/local-data-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-data-ai-c9a28c24f3e19622.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-data-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-data-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bcd3345ce724b42934e6b12ba0e8c37ae7cf6f1e8ae740783afdaa70b715e105",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T05:22:36.736Z"
+}

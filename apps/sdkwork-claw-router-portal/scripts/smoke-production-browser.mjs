@@ -60,6 +60,15 @@ const API_PLAYGROUND_PRIMITIVE_FIXTURE_MODE = "api-playground-primitive";
 const API_PLAYGROUND_AUTH_FIXTURE_MODE = "api-playground-auth";
 const API_PLAYGROUND_NETWORK_FAILURE_FIXTURE_MODE = "api-playground-network-failure";
 const API_PLAYGROUND_EXPECTED_API_KEY = "browser-smoke-api-key";
+const APP_SESSION_STORAGE_KEY = "sdkwork.clawRouter.appSession.v1";
+const BROWSER_SMOKE_SESSION = {
+  accessToken: "browser-smoke-access-token",
+  authToken: "browser-smoke-auth-token",
+  expiresAt: 4_102_444_800,
+  refreshToken: "browser-smoke-refresh-token",
+  sessionId: "browser-smoke-session",
+  storedAt: 1_778_716_800,
+};
 
 const BROWSER_SMOKE_APP_RECORD = {
   id: "__browser-smoke-success",
@@ -204,8 +213,8 @@ const BROWSER_SMOKE_ADMIN_APP_RECORD = {
   resourceList: { assets: ["artifact://apps/browser-smoke/app.zip"] },
   projectId: "1001",
   accessUrl: "https://apps.example.test/browser-smoke",
-  config: { standard: { appKey: "app_browser_smoke" } },
-  appKey: "app_browser_smoke",
+  config: { standard: { appKey: "app-browser-smoke" } },
+  appKey: "app-browser-smoke",
   status: "ACTIVE",
   marketStatus: "PUBLISHED",
   appType: "web",
@@ -231,6 +240,119 @@ const PRIVATE_PRICING_TOKENS = [
 ];
 
 const BROWSER_SMOKE_MODEL_RECORDS = [
+  {
+    model: "gpt-5.5-pro",
+    catalogKey: "openai/global/gpt-5.5-pro",
+    displayName: "GPT-5.5 Pro",
+    vendorCode: "openai",
+    regionCode: "global",
+    vendor: "OpenAI",
+    capabilities: ["chat", "tools", "json schema", "vision"],
+    groups: ["default", "enterprise"],
+    categories: ["Recommended", "Proprietary", "New"],
+    description: "OpenAI GPT-5.5 Pro frontier model for maximum reasoning depth, coding, and agentic workloads.",
+    modalities: ["text"],
+    inputModalities: ["text", "image"],
+    outputModalities: ["text"],
+    apiFormat: "openai_responses",
+    capabilityIntro: "OpenAI GPT-5.5 Pro is tuned for maximum reasoning depth, coding, and agentic workflows.",
+    limitations: ["Use trusted evaluation for business-critical automation."],
+    supportedLanguages: ["English", "Chinese"],
+    useCases: ["Complex reasoning", "Coding agents", "Long-context analysis"],
+    trainingDataCutoff: "2026-05",
+    contextTokens: 1050000,
+    maxOutputTokens: 128000,
+    supportsStreaming: true,
+    supportsTools: true,
+    supportsJsonSchema: true,
+    providerCodes: ["openai"],
+    officialReferenceUnitPrice: "15.000000",
+    officialReferenceCurrency: "USD",
+    officialReferencePrices: [
+      { billingMeter: "llm_input_token", unitPrice: "15.000000", currency: "USD" },
+      { billingMeter: "llm_output_token", unitPrice: "120.000000", currency: "USD" },
+    ],
+    priceAvailability: {
+      status: "reference",
+      reason: "Public reference price only. Customer-specific pricing requires an API key context.",
+    },
+  },
+  {
+    model: "gpt-5.5",
+    catalogKey: "openai/global/gpt-5.5",
+    displayName: "GPT-5.5",
+    vendorCode: "openai",
+    regionCode: "global",
+    vendor: "OpenAI",
+    capabilities: ["chat", "tools", "json schema", "vision"],
+    groups: ["default"],
+    categories: ["Recommended", "Proprietary", "New"],
+    description: "Current OpenAI frontier model for coding, reasoning, and agentic workloads.",
+    modalities: ["text"],
+    inputModalities: ["text", "image"],
+    outputModalities: ["text"],
+    apiFormat: "openai_responses",
+    capabilityIntro: "OpenAI GPT-5.5 balances frontier reasoning, coding, and agentic workloads.",
+    limitations: ["Review outputs before automated execution."],
+    supportedLanguages: ["English", "Chinese"],
+    useCases: ["Software engineering", "Reasoning", "Agents"],
+    trainingDataCutoff: "2026-05",
+    contextTokens: 1050000,
+    maxOutputTokens: 128000,
+    supportsStreaming: true,
+    supportsTools: true,
+    supportsJsonSchema: true,
+    providerCodes: ["openai"],
+    officialReferenceUnitPrice: "5.000000",
+    officialReferenceCurrency: "USD",
+    officialReferencePrices: [
+      { billingMeter: "llm_input_token", unitPrice: "5.000000", currency: "USD" },
+      { billingMeter: "llm_output_token", unitPrice: "30.000000", currency: "USD" },
+      { billingMeter: "llm_cache_read_token", unitPrice: "0.500000", currency: "USD" },
+    ],
+    priceAvailability: {
+      status: "reference",
+      reason: "Public reference price only. Customer-specific pricing requires an API key context.",
+    },
+  },
+  {
+    model: "claude-opus-4-7",
+    catalogKey: "anthropic/global/claude-opus-4-7",
+    displayName: "Claude Opus 4.7",
+    vendorCode: "anthropic",
+    regionCode: "global",
+    vendor: "Anthropic",
+    capabilities: ["chat", "tools", "json schema", "long context", "vision"],
+    groups: ["default", "enterprise"],
+    categories: ["Recommended", "Proprietary", "New"],
+    description: "Current Claude Opus frontier model for complex reasoning, coding, and agentic work.",
+    modalities: ["text"],
+    inputModalities: ["text", "image"],
+    outputModalities: ["text"],
+    apiFormat: "anthropic_messages",
+    capabilityIntro: "Claude Opus 4.7 is a frontier model for complex reasoning, coding, and long-context agentic work.",
+    limitations: ["Validate outputs before high-impact decisions."],
+    supportedLanguages: ["English", "Chinese"],
+    useCases: ["Reasoning", "Coding", "Long-context synthesis"],
+    trainingDataCutoff: "2026-05",
+    contextTokens: 1000000,
+    maxOutputTokens: 128000,
+    supportsStreaming: true,
+    supportsTools: true,
+    supportsJsonSchema: true,
+    providerCodes: ["anthropic"],
+    officialReferenceUnitPrice: "5.000000",
+    officialReferenceCurrency: "USD",
+    officialReferencePrices: [
+      { billingMeter: "llm_input_token", unitPrice: "5.000000", currency: "USD" },
+      { billingMeter: "llm_output_token", unitPrice: "25.000000", currency: "USD" },
+      { billingMeter: "llm_cache_read_token", unitPrice: "0.500000", currency: "USD" },
+    ],
+    priceAvailability: {
+      status: "reference",
+      reason: "Public reference price only. Customer-specific pricing requires an API key context.",
+    },
+  },
   {
     model: "runtime-good",
     catalogKey: "newvendor/global/runtime-good",
@@ -314,8 +436,353 @@ const BROWSER_SMOKE_MODEL_RECORDS = [
   },
 ];
 
+const BROWSER_SMOKE_COURSE_SOURCE = {
+  sourceLabel: "Curated course content snapshot",
+  sourceDescription: "Production browser smoke course fixture.",
+  observedAt: "2026-05-03",
+  sourceTables: [
+    "content_course",
+    "content_course_section",
+    "content_course_lesson",
+    "content_course_relation",
+    "content_reaction",
+  ],
+};
+
+const BROWSER_SMOKE_COURSE_CATEGORIES = [
+  {
+    id: "architecture",
+    code: "Architecture",
+    label: "Architecture",
+    name: "Architecture",
+    description: "Architecture courses for production API systems.",
+    icon: "/assets/courses/categories/architecture.svg",
+    sortWeight: 10,
+    courseCount: 1,
+  },
+  {
+    id: "security",
+    code: "Security",
+    label: "Security",
+    name: "Security",
+    description: "Security and authorization courses.",
+    icon: "/assets/courses/categories/security.svg",
+    sortWeight: 20,
+    courseCount: 1,
+  },
+  {
+    id: "operations",
+    code: "Operations",
+    label: "Operations",
+    name: "Operations",
+    description: "Operations courses for distributed services.",
+    icon: "/assets/courses/categories/operations.svg",
+    sortWeight: 30,
+    courseCount: 1,
+  },
+  {
+    id: "frontend",
+    code: "Frontend",
+    label: "Frontend",
+    name: "Frontend",
+    description: "Frontend courses for Claw Router.",
+    icon: "/assets/courses/categories/frontend.svg",
+    sortWeight: 40,
+    courseCount: 1,
+  },
+];
+
+const BROWSER_SMOKE_COURSE_RECORDS = [
+  {
+    id: "c1",
+    contentId: 30001001,
+    courseCode: "c1",
+    title: "Claw Router Fundamentals: Zero to Hero",
+    description: "Master Claw Router fundamentals, SDK surfaces, and production routing workflows.",
+    thumbnailUrl: TRANSPARENT_PIXEL_DATA_URL,
+    instructor: {
+      name: "Sarah Chen",
+      avatar: TRANSPARENT_PIXEL_DATA_URL,
+      title: "Principal API Platform Instructor",
+      bio: "Curates practical Claw Router courses for production teams.",
+    },
+    durationText: "3h 20m",
+    lessonsCount: 4,
+    ratingScore: 4.9,
+    studentsCount: 3851,
+    level: 1,
+    levelLabel: "Beginner",
+    category: "fundamentals",
+    categoryLabel: "Fundamentals",
+    tags: ["Claw Router", "SDK", "Gateway"],
+    externalBvid: "BV1GJ411x7h7",
+    content: "Start with Claw Router fundamentals and move from zero to production-ready operation.",
+    publishedAt: "2026-05-03T00:00:00Z",
+    engagement: {
+      views: 3851,
+      likes: 155,
+      saves: 22,
+      shares: 11,
+      discussions: 8,
+    },
+  },
+  {
+    id: "c2",
+    contentId: 30001002,
+    courseCode: "c2",
+    title: "Advanced API Architecture and Design",
+    description: "Design advanced API architecture for multi-surface SDK ownership and routed services.",
+    thumbnailUrl: TRANSPARENT_PIXEL_DATA_URL,
+    instructor: {
+      name: "David Smith",
+      avatar: TRANSPARENT_PIXEL_DATA_URL,
+      title: "Distributed API Architect",
+      bio: "Builds architecture courses for Claw Router platform teams.",
+    },
+    durationText: "4h 10m",
+    lessonsCount: 6,
+    ratingScore: 4.8,
+    studentsCount: 2400,
+    level: 3,
+    levelLabel: "Advanced",
+    category: "Architecture",
+    categoryLabel: "Architecture",
+    tags: ["Architecture", "API Design"],
+    externalBvid: "BV1hY411N7xL",
+    content: "Advanced API Architecture and Design covers service boundaries, OpenAPI contracts, and SDK routing.",
+    publishedAt: "2026-05-03T00:00:00Z",
+    engagement: {
+      views: 2400,
+      likes: 132,
+      saves: 34,
+      shares: 10,
+      discussions: 7,
+    },
+  },
+  {
+    id: "c3",
+    contentId: 30001003,
+    courseCode: "c3",
+    title: "Authentication and Authorization Flows",
+    description: "Security course for session validation, IAM contracts, and authorization guard behavior.",
+    thumbnailUrl: TRANSPARENT_PIXEL_DATA_URL,
+    instructor: {
+      name: "Maya Patel",
+      avatar: TRANSPARENT_PIXEL_DATA_URL,
+      title: "Identity Platform Instructor",
+      bio: "Teaches security and authorization implementation patterns.",
+    },
+    durationText: "2h 45m",
+    lessonsCount: 5,
+    ratingScore: 4.7,
+    studentsCount: 1800,
+    level: 2,
+    levelLabel: "Intermediate",
+    category: "Security",
+    categoryLabel: "Security",
+    tags: ["Security", "Authorization"],
+    externalBvid: "BV1Q5411W7xL",
+    content: "Authentication and Authorization Flows shows practical security control points.",
+    publishedAt: "2026-05-03T00:00:00Z",
+    engagement: {
+      views: 1800,
+      likes: 90,
+      saves: 26,
+      shares: 8,
+      discussions: 5,
+    },
+  },
+  {
+    id: "c4",
+    contentId: 30001004,
+    courseCode: "c4",
+    title: "Microservices and Distributed Tracing",
+    description: "Operate advanced distributed services with tracing, observability, and diagnostics.",
+    thumbnailUrl: TRANSPARENT_PIXEL_DATA_URL,
+    instructor: {
+      name: "Ops Academy",
+      avatar: TRANSPARENT_PIXEL_DATA_URL,
+      title: "Operations Curriculum Team",
+      bio: "Teaches operational practices for distributed API gateways.",
+    },
+    durationText: "3h 50m",
+    lessonsCount: 6,
+    ratingScore: 4.6,
+    studentsCount: 1500,
+    level: 3,
+    levelLabel: "Advanced",
+    category: "Operations",
+    categoryLabel: "Operations",
+    tags: ["Tracing", "Operations"],
+    externalBvid: "BV1oW411x7h9",
+    content: "Microservices and Distributed Tracing focuses on production observability.",
+    publishedAt: "2026-05-03T00:00:00Z",
+    engagement: {
+      views: 1500,
+      likes: 86,
+      saves: 21,
+      shares: 9,
+      discussions: 4,
+    },
+  },
+  {
+    id: "c5",
+    contentId: 30001005,
+    courseCode: "c5",
+    title: "Real-time Integrations and Webhooks",
+    description: "Build real-time integration workflows and webhook processing.",
+    thumbnailUrl: TRANSPARENT_PIXEL_DATA_URL,
+    instructor: {
+      name: "Integration Guild",
+      avatar: TRANSPARENT_PIXEL_DATA_URL,
+      title: "Integration Instructor",
+      bio: "Focuses on integration and webhook design.",
+    },
+    durationText: "2h 20m",
+    lessonsCount: 4,
+    ratingScore: 4.5,
+    studentsCount: 900,
+    level: 2,
+    levelLabel: "Intermediate",
+    category: "Integration",
+    categoryLabel: "Integration",
+    tags: ["Webhook", "Integration"],
+    externalBvid: "BV1oZ411x7h8",
+    content: "Real-time Integrations and Webhooks covers event-driven app extensions.",
+    publishedAt: "2026-05-03T00:00:00Z",
+    engagement: {
+      views: 900,
+      likes: 40,
+      saves: 12,
+      shares: 3,
+      discussions: 2,
+    },
+  },
+  {
+    id: "c6",
+    contentId: 30001006,
+    courseCode: "c6",
+    title: "Frontend State Management with Claw",
+    description: "Frontend application state patterns for Claw Router portal modules.",
+    thumbnailUrl: TRANSPARENT_PIXEL_DATA_URL,
+    instructor: {
+      name: "Frontend Academy",
+      avatar: TRANSPARENT_PIXEL_DATA_URL,
+      title: "Frontend Instructor",
+      bio: "Designs frontend workflow courses.",
+    },
+    durationText: "2h 30m",
+    lessonsCount: 4,
+    ratingScore: 4.4,
+    studentsCount: 820,
+    level: 2,
+    levelLabel: "Intermediate",
+    category: "Frontend",
+    categoryLabel: "Frontend",
+    tags: ["Frontend", "State"],
+    externalBvid: "BV1oX411x7h7",
+    content: "Frontend State Management with Claw focuses on stateful UI workflows.",
+    publishedAt: "2026-05-03T00:00:00Z",
+    engagement: {
+      views: 820,
+      likes: 38,
+      saves: 9,
+      shares: 2,
+      discussions: 2,
+    },
+  },
+];
+
+const BROWSER_SMOKE_COURSE_SECTIONS_BY_ID = new Map([
+  ["c1", [
+    {
+      id: "c1-foundation",
+      sectionNo: 1,
+      title: "Foundation",
+      lessons: [
+        {
+          id: "c1-lesson-1",
+          number: 1,
+          lessonNo: 1,
+          title: "Claw Router Fundamentals: Zero to Hero: Lesson 1",
+          description: "Foundation concepts for Claw Router.",
+          durationText: "15m",
+          externalBvid: "BV1GJ411x7h7",
+          sourceProvider: "bilibili",
+          content: "Foundation lesson for Claw Router fundamentals.",
+          freePreview: true,
+        },
+        {
+          id: "c1-lesson-2",
+          number: 2,
+          lessonNo: 2,
+          title: "SDK surface contracts",
+          description: "Understand app, backend, and open SDK surfaces.",
+          durationText: "18m",
+          externalBvid: "BV1GJ411x7h7",
+          sourceProvider: "bilibili",
+          content: "SDK surface contract lesson.",
+          freePreview: true,
+        },
+      ],
+    },
+    {
+      id: "c1-implementation",
+      sectionNo: 2,
+      title: "Implementation",
+      lessons: [
+        {
+          id: "c1-lesson-3",
+          number: 3,
+          lessonNo: 3,
+          title: "Implement routed services",
+          description: "Wire routed services through generated SDKs.",
+          durationText: "22m",
+          externalBvid: "BV1GJ411x7h7",
+          sourceProvider: "bilibili",
+          content: "Implementation lesson.",
+          freePreview: false,
+        },
+        {
+          id: "c1-lesson-4",
+          number: 4,
+          lessonNo: 4,
+          title: "Production verification",
+          description: "Verify development and production smoke tests.",
+          durationText: "20m",
+          externalBvid: "BV1GJ411x7h7",
+          sourceProvider: "bilibili",
+          content: "Production verification lesson.",
+          freePreview: false,
+        },
+      ],
+    },
+  ]],
+  ["c2", [
+    {
+      id: "c2-foundation",
+      sectionNo: 1,
+      title: "Architecture",
+      lessons: [
+        {
+          id: "c2-lesson-1",
+          number: 1,
+          lessonNo: 1,
+          title: "Advanced API Architecture and Design: Lesson 1",
+          description: "Architecture boundary design.",
+          durationText: "21m",
+          externalBvid: "BV1hY411N7xL",
+          sourceProvider: "bilibili",
+          content: "Advanced architecture lesson.",
+          freePreview: true,
+        },
+      ],
+    },
+  ]],
+]);
+
 const APP_SDK_BROWSER_FIXTURES = new Map([
-  [`${APP_SDK_MODEL_FIXTURE_MODE} GET /app/v3/api/router/models`, {
+  [`${APP_SDK_MODEL_FIXTURE_MODE} GET /app/v3/api/ai/models`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -325,7 +792,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_MODEL_EMPTY_FIXTURE_MODE} GET /app/v3/api/router/models`, {
+  [`${APP_SDK_MODEL_EMPTY_FIXTURE_MODE} GET /app/v3/api/ai/models`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -335,7 +802,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_FIXTURE_MODE} GET /app/v3/api/app/store`, {
+  [`${APP_SDK_FIXTURE_MODE} GET /app/v3/api/platform/apps/store`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -345,7 +812,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_FIXTURE_MODE} GET /app/v3/api/app/store/categories`, {
+  [`${APP_SDK_FIXTURE_MODE} GET /app/v3/api/platform/apps/store/categories`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -355,7 +822,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_FIXTURE_MODE} GET /app/v3/api/app/store/__browser-smoke-success`, {
+  [`${APP_SDK_FIXTURE_MODE} GET /app/v3/api/platform/apps/store/__browser-smoke-success`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -363,7 +830,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       data: BROWSER_SMOKE_APP_RECORD,
     },
   }],
-  [`${APP_SDK_EMPTY_FIXTURE_MODE} GET /app/v3/api/app/store`, {
+  [`${APP_SDK_EMPTY_FIXTURE_MODE} GET /app/v3/api/platform/apps/store`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -373,7 +840,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_EMPTY_FIXTURE_MODE} GET /app/v3/api/app/store/categories`, {
+  [`${APP_SDK_EMPTY_FIXTURE_MODE} GET /app/v3/api/platform/apps/store/categories`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -383,7 +850,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_FAILURE_FIXTURE_MODE} GET /app/v3/api/app/store`, {
+  [`${APP_SDK_FAILURE_FIXTURE_MODE} GET /app/v3/api/platform/apps/store`, {
     statusCode: 200,
     body: {
       code: "4001",
@@ -391,7 +858,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       data: null,
     },
   }],
-  [`${APP_SDK_FAILURE_FIXTURE_MODE} GET /app/v3/api/app/store/categories`, {
+  [`${APP_SDK_FAILURE_FIXTURE_MODE} GET /app/v3/api/platform/apps/store/categories`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -401,7 +868,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_FAILURE_FIXTURE_MODE} GET /app/v3/api/app/store/app-1`, {
+  [`${APP_SDK_FAILURE_FIXTURE_MODE} GET /app/v3/api/platform/apps/store/app-1`, {
     statusCode: 200,
     body: {
       code: "4001",
@@ -409,7 +876,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       data: null,
     },
   }],
-  [`${APP_SDK_CATEGORY_FAILURE_FIXTURE_MODE} GET /app/v3/api/app/store`, {
+  [`${APP_SDK_CATEGORY_FAILURE_FIXTURE_MODE} GET /app/v3/api/platform/apps/store`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -419,7 +886,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_CATEGORY_FAILURE_FIXTURE_MODE} GET /app/v3/api/app/store/categories`, {
+  [`${APP_SDK_CATEGORY_FAILURE_FIXTURE_MODE} GET /app/v3/api/platform/apps/store/categories`, {
     statusCode: 200,
     body: {
       code: "4001",
@@ -427,7 +894,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       data: null,
     },
   }],
-  [`${APP_SDK_MISSING_FIXTURE_MODE} GET /app/v3/api/app/store/__browser-smoke-missing`, {
+  [`${APP_SDK_MISSING_FIXTURE_MODE} GET /app/v3/api/platform/apps/store/__browser-smoke-missing`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -435,7 +902,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       data: null,
     },
   }],
-  [`${APP_SDK_RETRY_FIXTURE_MODE} GET /app/v3/api/app/store/categories`, {
+  [`${APP_SDK_RETRY_FIXTURE_MODE} GET /app/v3/api/platform/apps/store/categories`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -445,7 +912,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_FIXTURE_MODE} GET /app/v3/api/skills`, {
+  [`${APP_SDK_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -455,7 +922,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_FIXTURE_MODE} GET /app/v3/api/skills/categories`, {
+  [`${APP_SDK_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills/categories`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -465,7 +932,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_FIXTURE_MODE} GET /app/v3/api/skills/my`, {
+  [`${APP_SDK_FIXTURE_MODE} GET /app/v3/api/ecosystem/users/current/skills`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -475,7 +942,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_FIXTURE_MODE} GET /app/v3/api/skills/__browser-smoke-success`, {
+  [`${APP_SDK_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills/__browser-smoke-success`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -483,7 +950,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       data: BROWSER_SMOKE_SKILL_RECORD,
     },
   }],
-  [`${APP_SDK_EMPTY_FIXTURE_MODE} GET /app/v3/api/skills`, {
+  [`${APP_SDK_EMPTY_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -493,7 +960,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_EMPTY_FIXTURE_MODE} GET /app/v3/api/skills/categories`, {
+  [`${APP_SDK_EMPTY_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills/categories`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -503,7 +970,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_EMPTY_FIXTURE_MODE} GET /app/v3/api/skills/my`, {
+  [`${APP_SDK_EMPTY_FIXTURE_MODE} GET /app/v3/api/ecosystem/users/current/skills`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -513,7 +980,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_FAILURE_FIXTURE_MODE} GET /app/v3/api/skills`, {
+  [`${APP_SDK_FAILURE_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills`, {
     statusCode: 200,
     body: {
       code: "4001",
@@ -521,7 +988,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       data: null,
     },
   }],
-  [`${APP_SDK_FAILURE_FIXTURE_MODE} GET /app/v3/api/skills/categories`, {
+  [`${APP_SDK_FAILURE_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills/categories`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -531,7 +998,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_FAILURE_FIXTURE_MODE} GET /app/v3/api/skills/my`, {
+  [`${APP_SDK_FAILURE_FIXTURE_MODE} GET /app/v3/api/ecosystem/users/current/skills`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -541,7 +1008,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_FAILURE_FIXTURE_MODE} GET /app/v3/api/skills/skill-1`, {
+  [`${APP_SDK_FAILURE_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills/skill-1`, {
     statusCode: 200,
     body: {
       code: "4001",
@@ -549,7 +1016,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       data: null,
     },
   }],
-  [`${APP_SDK_CATEGORY_FAILURE_FIXTURE_MODE} GET /app/v3/api/skills`, {
+  [`${APP_SDK_CATEGORY_FAILURE_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -559,7 +1026,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_CATEGORY_FAILURE_FIXTURE_MODE} GET /app/v3/api/skills/categories`, {
+  [`${APP_SDK_CATEGORY_FAILURE_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills/categories`, {
     statusCode: 200,
     body: {
       code: "4001",
@@ -567,7 +1034,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       data: null,
     },
   }],
-  [`${APP_SDK_CATEGORY_FAILURE_FIXTURE_MODE} GET /app/v3/api/skills/my`, {
+  [`${APP_SDK_CATEGORY_FAILURE_FIXTURE_MODE} GET /app/v3/api/ecosystem/users/current/skills`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -577,7 +1044,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_MISSING_FIXTURE_MODE} GET /app/v3/api/skills/__browser-smoke-missing`, {
+  [`${APP_SDK_MISSING_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills/__browser-smoke-missing`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -585,7 +1052,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       data: null,
     },
   }],
-  [`${APP_SDK_MISSING_FIXTURE_MODE} GET /app/v3/api/skills/my`, {
+  [`${APP_SDK_MISSING_FIXTURE_MODE} GET /app/v3/api/ecosystem/users/current/skills`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -595,7 +1062,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_RETRY_FIXTURE_MODE} GET /app/v3/api/skills/categories`, {
+  [`${APP_SDK_RETRY_FIXTURE_MODE} GET /app/v3/api/ecosystem/skills/categories`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -605,7 +1072,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${APP_SDK_RETRY_FIXTURE_MODE} GET /app/v3/api/skills/my`, {
+  [`${APP_SDK_RETRY_FIXTURE_MODE} GET /app/v3/api/ecosystem/users/current/skills`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -618,7 +1085,7 @@ const APP_SDK_BROWSER_FIXTURES = new Map([
 ]);
 
 const BACKEND_SDK_BROWSER_FIXTURES = new Map([
-  [`${BACKEND_SDK_SKILL_FIXTURE_MODE} GET /backend/v3/api/skill/categories`, {
+  [`${BACKEND_SDK_SKILL_FIXTURE_MODE} GET /backend/v3/api/ecosystem/skills/categories`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -628,7 +1095,7 @@ const BACKEND_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${BACKEND_SDK_SKILL_FIXTURE_MODE} POST /backend/v3/api/skill/package/list`, {
+  [`${BACKEND_SDK_SKILL_FIXTURE_MODE} GET /backend/v3/api/ecosystem/skills/package`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -638,7 +1105,7 @@ const BACKEND_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${BACKEND_SDK_SKILL_FIXTURE_MODE} POST /backend/v3/api/skill/list`, {
+  [`${BACKEND_SDK_SKILL_FIXTURE_MODE} GET /backend/v3/api/ecosystem/skills`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -648,7 +1115,7 @@ const BACKEND_SDK_BROWSER_FIXTURES = new Map([
       },
     },
   }],
-  [`${BACKEND_SDK_APP_FIXTURE_MODE} POST /backend/v3/api/app/list`, {
+  [`${BACKEND_SDK_APP_FIXTURE_MODE} GET /backend/v3/api/platform/apps`, {
     statusCode: 200,
     body: {
       code: "2000",
@@ -677,10 +1144,12 @@ const API_PLAYGROUND_AUTH_BROWSER_RESPONSE = {
 const BROWSER_SMOKE_ROUTES = [
   {
     pathName: "/models",
+    appSdkFixtureMode: APP_SDK_MODEL_FIXTURE_MODE,
     requiredTextTokens: ["GPT-5.5 Pro", "GPT-5.5", "Claude Opus 4.7", "REFERENCE / 1M TOKENS"],
   },
   {
     pathName: "/models/openai%2Fglobal%2Fgpt-5.5-pro",
+    appSdkFixtureMode: APP_SDK_MODEL_FIXTURE_MODE,
     requiredTextTokens: ["GPT-5.5 Pro", "openai/global/gpt-5.5-pro", "API Example", "Try in Playground"],
   },
   {
@@ -805,6 +1274,7 @@ const BROWSER_SMOKE_ROUTES = [
   {
     pathName: "/admin/app?__browser-smoke-admin-app=1",
     backendSdkFixtureMode: BACKEND_SDK_APP_FIXTURE_MODE,
+    requiresPortalSession: true,
     requiredTextTokens: [
       "App Store",
       "Browser Smoke Admin App",
@@ -822,6 +1292,7 @@ const BROWSER_SMOKE_ROUTES = [
   {
     pathName: "/admin/skill?__browser-smoke-admin-skill=1",
     backendSdkFixtureMode: BACKEND_SDK_SKILL_FIXTURE_MODE,
+    requiresPortalSession: true,
     requiredTextTokens: [
       "Agent Skills",
       "Browser Smoke Admin Skill",
@@ -840,10 +1311,12 @@ const BROWSER_SMOKE_ROUTES = [
   },
   {
     pathName: "/courses",
+    appSdkFixtureMode: APP_SDK_FIXTURE_MODE,
     requiredTextTokens: ["Master Claw Router", "Featured Courses", "Claw Router Fundamentals: Zero to Hero"],
   },
   {
     pathName: "/courses?__browser-smoke-category=1",
+    appSdkFixtureMode: APP_SDK_FIXTURE_MODE,
     setupExpressions: [
       clickRouteCourseFilterButtonByText("Architecture"),
     ],
@@ -864,6 +1337,7 @@ const BROWSER_SMOKE_ROUTES = [
   },
   {
     pathName: "/courses?__browser-smoke-level=1",
+    appSdkFixtureMode: APP_SDK_FIXTURE_MODE,
     setupExpressions: [
       clickRouteCourseFilterButtonByText("Advanced"),
     ],
@@ -882,18 +1356,19 @@ const BROWSER_SMOKE_ROUTES = [
   },
   {
     pathName: "/courses?__browser-smoke-search=1",
+    appSdkFixtureMode: APP_SDK_FIXTURE_MODE,
     setupExpressions: [
       setRouteTextInputByPlaceholder("Search courses...", "security"),
     ],
     requiredTextTokens: [
-      "Advanced API Architecture and Design",
       "Authentication and Authorization Flows",
-      "2 courses",
+      "1 courses",
     ],
     requiredDomExpressions: [
       `document.querySelector('input[placeholder="Search courses..."]')?.value === "security"`,
     ],
     forbiddenTextTokens: [
+      "Advanced API Architecture and Design",
       "Real-time Integrations and Webhooks",
       "Frontend State Management with Claw",
       "javascript:alert(1)",
@@ -903,6 +1378,7 @@ const BROWSER_SMOKE_ROUTES = [
   },
   {
     pathName: "/courses?__browser-smoke-card-click=1",
+    appSdkFixtureMode: APP_SDK_FIXTURE_MODE,
     setupExpressions: [
       clickRouteCourseCardByTitle("Claw Router Fundamentals: Zero to Hero"),
     ],
@@ -927,10 +1403,12 @@ const BROWSER_SMOKE_ROUTES = [
   },
   {
     pathName: "/courses/c1",
+    appSdkFixtureMode: APP_SDK_FIXTURE_MODE,
     requiredTextTokens: ["Claw Router Fundamentals: Zero to Hero", "ABOUT THIS COURSE", "Course lessons"],
   },
   {
     pathName: "/courses/c1?__browser-smoke-detail=1",
+    appSdkFixtureMode: APP_SDK_FIXTURE_MODE,
     requiredTextTokens: [
       "Claw Router Fundamentals: Zero to Hero",
       "ABOUT THIS COURSE",
@@ -961,6 +1439,7 @@ const BROWSER_SMOKE_ROUTES = [
   },
   {
     pathName: "/courses/c1?__browser-smoke-lesson-grid=1",
+    appSdkFixtureMode: APP_SDK_FIXTURE_MODE,
     setupExpressions: [
       clickRouteButtonByTitle("Lesson grid"),
     ],
@@ -981,6 +1460,7 @@ const BROWSER_SMOKE_ROUTES = [
   },
   {
     pathName: "/courses/c1?__browser-smoke-related=1",
+    appSdkFixtureMode: APP_SDK_FIXTURE_MODE,
     setupExpressions: [
       clickRouteCourseRelatedLinkByTitle("Advanced API Architecture and Design"),
     ],
@@ -1007,6 +1487,7 @@ const BROWSER_SMOKE_ROUTES = [
   },
   {
     pathName: "/courses/__browser-smoke-missing",
+    appSdkFixtureMode: APP_SDK_FIXTURE_MODE,
     requiredTextTokens: ["Course not found."],
     forbiddenTextTokens: [
       "ABOUT THIS COURSE",
@@ -1019,163 +1500,32 @@ const BROWSER_SMOKE_ROUTES = [
   },
   {
     pathName: "/forum",
-    requiredTextTokens: ["Developer Community", "New Discussion", "Published snapshot"],
-  },
-  {
-    pathName: "/forum?__browser-smoke-category=1",
-    setupExpressions: [
-      clickRouteForumCategoryButtonByText("Performance"),
-    ],
     requiredTextTokens: [
-      "How to optimize routing performance in the latest release?",
-      "Performance",
-      "Published snapshot: 2026-05-03",
-      "1 discussions",
+      "Developer Community",
+      "New Discussion",
+      "Live community feed",
+      "Community links are not configured.",
     ],
     forbiddenTextTokens: [
-      "Best practices for organizing large API specs",
-      "Introducing the new Middleware Hooks",
-      "How should API keys be rotated across environments?",
       "Math.random",
       "toLocaleDateString",
     ],
   },
   {
-    pathName: "/forum?__browser-smoke-search=1",
-    setupExpressions: [
-      setRouteTextInputByPlaceholder("Search discussions...", "api keys"),
-    ],
-    requiredTextTokens: [
-      "How should API keys be rotated across environments?",
-      "Help & Support",
-      "Published snapshot: 2026-05-03",
-      "1 discussions",
-    ],
-    requiredDomExpressions: [
-      `document.querySelector('input[placeholder="Search discussions..."]')?.value === "api keys"`,
-    ],
-    forbiddenTextTokens: [
-      "How to optimize routing performance in the latest release?",
-      "Best practices for organizing large API specs",
-      "Introducing the new Middleware Hooks",
-      "Math.random",
-      "toLocaleDateString",
-    ],
-  },
-  {
-    pathName: "/forum?__browser-smoke-empty=1",
+    pathName: "/forum?__browser-smoke-live-empty=1",
     setupExpressions: [
       setRouteTextInputByPlaceholder("Search discussions...", "no-match-browser-smoke-discussion"),
     ],
     requiredTextTokens: [
+      "Live community feed",
       "No discussions found",
       "Try a different search or category filter.",
-      "Published snapshot: 2026-05-03",
       "0 discussions",
     ],
     requiredDomExpressions: [
       `document.querySelector('input[placeholder="Search discussions..."]')?.value === "no-match-browser-smoke-discussion"`,
     ],
     forbiddenTextTokens: [
-      "How to optimize routing performance in the latest release?",
-      "Best practices for organizing large API specs",
-      "Introducing the new Middleware Hooks",
-      "How should API keys be rotated across environments?",
-      "Math.random",
-      "toLocaleDateString",
-    ],
-  },
-  {
-    pathName: "/forum?__browser-smoke-sort=1",
-    setupExpressions: [
-      clickRouteForumSortButtonByText("Top"),
-    ],
-    requiredTextTokens: [
-      "Introducing the new Middleware Hooks",
-      "How to optimize routing performance in the latest release?",
-      "Best practices for organizing large API specs",
-      "Published snapshot: 2026-05-03",
-    ],
-    requiredDomExpressions: [
-      `(() => {
-        const headings = Array.from(document.querySelectorAll('h3'));
-        const titles = headings.map((heading) => heading.textContent?.trim() ?? "");
-        const middlewareIndex = titles.findIndex((title) => title.includes("Introducing the new Middleware Hooks"));
-        const performanceIndex = titles.findIndex((title) => title.includes("How to optimize routing performance in the latest release?"));
-        return middlewareIndex >= 0
-          && performanceIndex >= 0
-          && middlewareIndex < performanceIndex;
-      })()`,
-    ],
-    forbiddenTextTokens: [
-      "Math.random",
-      "toLocaleDateString",
-    ],
-  },
-  {
-    pathName: "/forum?__browser-smoke-card-click=1",
-    setupExpressions: [
-      clickRouteForumPostCardByTitle("How to optimize routing performance in the latest release?"),
-    ],
-    requiredTextTokens: [
-      "Back to Forum",
-      "How to optimize routing performance in the latest release?",
-      "Published snapshot",
-      "Discussion (3)",
-      "Related discussions",
-    ],
-    requiredDomExpressions: [
-      `window.location.pathname === "/forum/1"`,
-      `Boolean(document.querySelector('textarea[placeholder="What are your thoughts?"]'))`,
-    ],
-    forbiddenTextTokens: [
-      "Discussion not found.",
-      "Math.random",
-      "toLocaleDateString",
-    ],
-  },
-  {
-    pathName: "/forum/1",
-    requiredTextTokens: ["Back to Forum", "Published snapshot", "Related discussions"],
-  },
-  {
-    pathName: "/forum/1?__browser-smoke-detail=1",
-    requiredTextTokens: [
-      "Back to Forum",
-      "How to optimize routing performance in the latest release?",
-      "Published snapshot",
-      "Performance",
-      "@alexjohnson",
-      "Discussion (3)",
-      "Sarah Chen",
-      "Post Comment",
-      "Related discussions",
-    ],
-    forbiddenTextTokens: [
-      "Discussion not found.",
-      "Math.random",
-      "toLocaleDateString",
-    ],
-  },
-  {
-    pathName: "/forum/1?__browser-smoke-related=1",
-    setupExpressions: [
-      clickRouteForumRelatedLinkByTitle("Best practices for organizing large API specs"),
-    ],
-    requiredTextTokens: [
-      "Back to Forum",
-      "Best practices for organizing large API specs",
-      "Published snapshot",
-      "Best Practices",
-      "@sarahchen",
-      "Discussion (1)",
-      "Related discussions",
-    ],
-    requiredDomExpressions: [
-      `window.location.pathname === "/forum/2"`,
-    ],
-    forbiddenTextTokens: [
-      "Discussion not found.",
       "Math.random",
       "toLocaleDateString",
     ],
@@ -2054,6 +2404,15 @@ async function navigate(cdp, baseUrl, pathName) {
   await waitForExpression(cdp, "document.readyState === 'complete'", `${pathName} document ready`);
 }
 
+async function seedPortalSession(cdp) {
+  const storageKey = JSON.stringify(APP_SESSION_STORAGE_KEY);
+  const sessionJson = JSON.stringify(JSON.stringify(BROWSER_SMOKE_SESSION));
+  await evaluateExpression(cdp, `(() => {
+    window.sessionStorage.setItem(${storageKey}, ${sessionJson});
+    return window.sessionStorage.getItem(${storageKey}) === ${sessionJson};
+  })()`);
+}
+
 async function waitForRouteTextTokens(cdp, pathName, requiredTextTokens) {
   if (!Array.isArray(requiredTextTokens) || requiredTextTokens.length === 0) {
     return;
@@ -2213,56 +2572,6 @@ function clickRouteCourseRelatedLinkByTitle(title) {
     const headings = Array.from(document.querySelectorAll('h4'));
     const heading = headings.find((item) => item.textContent?.trim() === ${JSON.stringify(title)});
     const link = heading?.closest('a[href^="/courses/"]');
-    if (!(link instanceof HTMLAnchorElement)) {
-      return false;
-    }
-    link.click();
-    return true;
-  })()`;
-}
-
-function clickRouteForumCategoryButtonByText(text) {
-  return `(() => {
-    const buttons = Array.from(document.querySelectorAll('button'));
-    const button = buttons.find((item) => Array.from(item.querySelectorAll('span'))
-      .some((span) => span.textContent?.trim() === ${JSON.stringify(text)}));
-    if (!(button instanceof HTMLButtonElement)) {
-      return false;
-    }
-    button.click();
-    return true;
-  })()`;
-}
-
-function clickRouteForumSortButtonByText(text) {
-  return `(() => {
-    const buttons = Array.from(document.querySelectorAll('button'));
-    const button = buttons.find((item) => item.textContent?.trim() === ${JSON.stringify(text)});
-    if (!(button instanceof HTMLButtonElement)) {
-      return false;
-    }
-    button.click();
-    return true;
-  })()`;
-}
-
-function clickRouteForumPostCardByTitle(title) {
-  return `(() => {
-    const headings = Array.from(document.querySelectorAll('h3'));
-    const heading = headings.find((item) => item.textContent?.includes(${JSON.stringify(title)}));
-    const link = heading?.closest('a[href^="/forum/"]');
-    if (!(link instanceof HTMLAnchorElement)) {
-      return false;
-    }
-    link.click();
-    return true;
-  })()`;
-}
-
-function clickRouteForumRelatedLinkByTitle(title) {
-  return `(() => {
-    const links = Array.from(document.querySelectorAll('a[href^="/forum/"]'));
-    const link = links.find((item) => item.textContent?.includes(${JSON.stringify(title)}));
     if (!(link instanceof HTMLAnchorElement)) {
       return false;
     }
@@ -2648,6 +2957,134 @@ function normalizeFixtureUrlPath(rawUrl) {
   }
 }
 
+function plusApiFixture(data) {
+  return {
+    statusCode: 200,
+    body: {
+      code: "2000",
+      msg: "success",
+      data,
+    },
+  };
+}
+
+function parseFixtureUrl(rawUrl) {
+  try {
+    return new URL(rawUrl);
+  } catch {
+    return null;
+  }
+}
+
+function courseSearchHaystack(course) {
+  return [
+    course.title,
+    course.description,
+    course.categoryLabel,
+    course.category,
+    ...(Array.isArray(course.tags) ? course.tags : []),
+  ].join(" ").toLowerCase();
+}
+
+function browserSmokeFilteredCourses(searchParams) {
+  const level = searchParams.get("level")?.trim();
+  const category = searchParams.get("category")?.trim().toLowerCase();
+  const query = searchParams.get("q")?.trim().toLowerCase();
+  return BROWSER_SMOKE_COURSE_RECORDS.filter((course) => {
+    if (level && String(course.level) !== level) {
+      return false;
+    }
+    if (
+      category
+      && String(course.category).toLowerCase() !== category
+      && String(course.categoryLabel).toLowerCase() !== category
+    ) {
+      return false;
+    }
+    if (query && !courseSearchHaystack(course).includes(query)) {
+      return false;
+    }
+    return true;
+  });
+}
+
+function browserSmokeCourseListResponse(searchParams) {
+  const items = browserSmokeFilteredCourses(searchParams);
+  return {
+    items,
+    page: 1,
+    size: 240,
+    totalElements: items.length,
+  };
+}
+
+function browserSmokeCourseOverviewResponse() {
+  return {
+    stats: {
+      totalCourses: BROWSER_SMOKE_COURSE_RECORDS.length,
+      totalLessons: BROWSER_SMOKE_COURSE_RECORDS.reduce(
+        (total, course) => total + Number(course.lessonsCount ?? 0),
+        0,
+      ),
+      totalStudents: BROWSER_SMOKE_COURSE_RECORDS.reduce(
+        (total, course) => total + Number(course.studentsCount ?? 0),
+        0,
+      ),
+      totalCategories: BROWSER_SMOKE_COURSE_CATEGORIES.length,
+    },
+    source: BROWSER_SMOKE_COURSE_SOURCE,
+  };
+}
+
+function browserSmokeCourseDetailResponse(courseId) {
+  const course = BROWSER_SMOKE_COURSE_RECORDS.find((item) => item.id === courseId);
+  if (!course) {
+    return null;
+  }
+  return {
+    ...course,
+    sections: BROWSER_SMOKE_COURSE_SECTIONS_BY_ID.get(courseId) ?? [],
+    relatedCourses: BROWSER_SMOKE_COURSE_RECORDS.filter((item) => {
+      if (courseId === "c1") {
+        return item.id === "c2";
+      }
+      if (courseId === "c2") {
+        return item.id === "c1";
+      }
+      return false;
+    }),
+    source: BROWSER_SMOKE_COURSE_SOURCE,
+  };
+}
+
+function resolveCourseAppSdkFixture(request) {
+  const method = String(request.method ?? "GET").toUpperCase();
+  if (method !== "GET") {
+    return null;
+  }
+  const parsedUrl = parseFixtureUrl(request.url);
+  if (!parsedUrl) {
+    return null;
+  }
+  const pathName = parsedUrl.pathname.replace(/\/+$/, "") || "/";
+  if (pathName === "/app/v3/api/courses") {
+    return plusApiFixture(browserSmokeCourseListResponse(parsedUrl.searchParams));
+  }
+  if (pathName === "/app/v3/api/courses/categories") {
+    return plusApiFixture({
+      items: BROWSER_SMOKE_COURSE_CATEGORIES,
+    });
+  }
+  if (pathName === "/app/v3/api/courses/overview") {
+    return plusApiFixture(browserSmokeCourseOverviewResponse());
+  }
+  if (pathName.startsWith("/app/v3/api/courses/")) {
+    const courseId = decodeURIComponent(pathName.slice("/app/v3/api/courses/".length));
+    return plusApiFixture(browserSmokeCourseDetailResponse(courseId));
+  }
+  return null;
+}
+
 function createRetryFixtureResolver() {
   const attempts = new Map();
 
@@ -2658,7 +3095,7 @@ function createRetryFixtureResolver() {
       return null;
     }
 
-    if (pathName === "/app/v3/api/app/store") {
+    if (pathName === "/app/v3/api/platform/apps/store") {
       const key = `${method} ${pathName}`;
       const nextAttempt = (attempts.get(key) ?? 0) + 1;
       attempts.set(key, nextAttempt);
@@ -2684,7 +3121,7 @@ function createRetryFixtureResolver() {
       };
     }
 
-    if (pathName === "/app/v3/api/skills") {
+    if (pathName === "/app/v3/api/ecosystem/skills") {
       const key = `${method} ${pathName}`;
       const nextAttempt = (attempts.get(key) ?? 0) + 1;
       attempts.set(key, nextAttempt);
@@ -2726,6 +3163,10 @@ function resolveAppSdkFixture(appSdkFixtureMode, request, resolveRetryFixture = 
   }
   const method = String(request.method ?? "GET").toUpperCase();
   const pathName = normalizeFixtureUrlPath(request.url);
+  const courseFixture = resolveCourseAppSdkFixture(request);
+  if (courseFixture) {
+    return courseFixture;
+  }
   return APP_SDK_BROWSER_FIXTURES.get(`${appSdkFixtureMode} ${method} ${pathName}`) ?? null;
 }
 
@@ -2754,7 +3195,7 @@ function apiPlaygroundCorsHeaders(request) {
     { name: "access-control-allow-origin", value: origin },
     { name: "access-control-allow-credentials", value: "true" },
     { name: "access-control-allow-methods", value: "GET, POST, PUT, PATCH, DELETE, OPTIONS" },
-    { name: "access-control-allow-headers", value: "authorization, content-type, x-browser-smoke" },
+    { name: "access-control-allow-headers", value: "authorization, content-type, sdkwork-access-token, x-browser-smoke" },
     { name: "access-control-expose-headers", value: "content-type, x-browser-smoke" },
     { name: "vary", value: "origin" },
   ];
@@ -3058,6 +3499,7 @@ async function verifyRouteDom(cdp, baseUrl, route, issueCollector, toolApiReques
     setupExpressions,
     apiPlaygroundFixtureMode,
     expectedBrowserLogTexts,
+    requiresPortalSession,
   } = route;
   const hasForbiddenToolApiPaths = Array.isArray(forbiddenToolApiPaths) && forbiddenToolApiPaths.length > 0;
   for (const expectedBrowserLogText of expectedBrowserLogTexts ?? []) {
@@ -3079,6 +3521,9 @@ async function verifyRouteDom(cdp, baseUrl, route, issueCollector, toolApiReques
     toolApiRequestCollector.start(forbiddenToolApiPaths);
   }
   try {
+    if (requiresPortalSession) {
+      await seedPortalSession(cdp);
+    }
     await navigate(cdp, baseUrl, pathName);
     try {
       await waitForExpression(cdp, "Boolean(document.querySelector('#root')?.children.length)", `${pathName} React root`);

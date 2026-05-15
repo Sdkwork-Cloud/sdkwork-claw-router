@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vidu-video-publisher@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vidu_video_publisher",
+  "skill": {
+    "id": 23273,
+    "skillKey": "clawhub-vidu-video-publisher",
+    "name": "24-hour news is automatically generated into AI videos and can be published with one click, provided by the Vidu API."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vidu-video-publisher",
+    "url": "https://clawhub.ai/skills/vidu-video-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vidu-video-publisher-f419f051ec4548d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically publish videos to Xiaohongshu, Douyin, WeChat Channels, and Kuaishou with platform-tailored titles and tags via browser automation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "x-jihua",
+      "userId": "s1784btgjdbcht1279h27zwrcs83g5md",
+      "displayName": "Vidu AI",
+      "image": "https://avatars.githubusercontent.com/u/25274975?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 446,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773994533875,
+      "changelog": "Initial release of video-publisher.\n\n- 一站式视频发布工具，支持小红书、抖音、视频号、快手等主流平台\n- 自动根据平台调性生成吸引人的标题和标签\n- 支持多平台、批量视频发布流程\n- 展示并允许修改标题与标签后再自动发布\n- 明确平台视频参数要求、账号登录与内容审核须知\n- 完善的错误处理和平台限制说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42cc504ffe73d7c6b49a4bb5979957a31ef76da62b1c72563ae208ed59af3b41"
+}

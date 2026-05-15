@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taobao-native@1.0.41",
+  "version": "1.0.41",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taobao_native",
+  "skill": {
+    "id": 16255,
+    "skillKey": "clawhub-taobao-native",
+    "name": "Taobao Native CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taobao-native",
+    "url": "https://clawhub.ai/skills/taobao-native",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taobao-native-b1fe7bfb820294ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Shopping assistant via Taobao Desktop client. Use when the user needs to search products, view details, add to cart, place orders, check orders, request ship..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flappymonkey",
+      "userId": "s17axx27gx6syq5cc66h13dpfx83hgkd",
+      "displayName": "shenbin",
+      "image": "https://avatars.githubusercontent.com/u/397388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 669,
+      "installsAllTime": 14,
+      "installsCurrent": 14,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.41",
+      "createdAt": 1775792802884,
+      "changelog": "Version 1.0.41\n\n- Added metadata field specifying required binaries and config paths for agent integration.\n- Clarified supported operating systems (Windows, macOS) in the metadata.\n- Improved macOS troubleshooting instructions: now suggests exporting the bin directory to PATH if taobao-native command is not found.\n- No changes to command usage or tool functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3a055030262ed1fac09a6ae65731cb137873bb5d3c34a6eac93334c0a886e1c"
+}

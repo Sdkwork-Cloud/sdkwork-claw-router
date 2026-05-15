@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53688,
+  "uuid": "skill-clawhub-graphql-schema-analyzer",
+  "skillKey": "clawhub-graphql-schema-analyzer",
+  "name": "Graphql Schema Analyzer",
+  "summary": "Analyze GraphQL schemas for performance, security, complexity, and best practices — detect N+1 queries, circular references, excessive depth, and missing aut...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.graphql_schema_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Analyze GraphQL schemas for performance, security, complexity, and best practices — detect N+1."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/graphql-schema-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "graphql-schema-analyzer",
+      "url": "https://clawhub.ai/skills/graphql-schema-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "graphql-schema-analyzer",
+    "url": "https://clawhub.ai/skills/graphql-schema-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/graphql-schema-analyzer-d7d5dfc1ec9aff57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/graphql-schema-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-graphql-schema-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4aa114a86e6d6ecf535d3d9e16430e18246456434a9f0eaa89e83613355d4c08",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T05:42:08.287Z"
+}

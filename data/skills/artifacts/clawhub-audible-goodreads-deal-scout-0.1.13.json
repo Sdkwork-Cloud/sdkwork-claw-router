@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audible-goodreads-deal-scout@0.1.13",
+  "version": "0.1.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audible_goodreads_deal_scout",
+  "skill": {
+    "id": 21512,
+    "skillKey": "clawhub-audible-goodreads-deal-scout",
+    "name": "Audible Goodreads Deal Scout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audible-goodreads-deal-scout",
+    "url": "https://clawhub.ai/skills/audible-goodreads-deal-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audible-goodreads-deal-scout-7862bcbddc983f75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluate an Audible daily promotion against Goodreads public score, optional Goodreads CSV shelves, optional freeform reading notes, optional delivery rules,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lenpr",
+      "userId": "s1793ns2ngcn6emb53xdgbawts856yaf",
+      "displayName": "Lukas N.P. Egger",
+      "image": "https://avatars.githubusercontent.com/u/833605?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 407,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "0.1.13",
+      "createdAt": 1777926790598,
+      "changelog": "Constrain optional Audible auth use to token refresh and product-price lookup, add credential boundary metadata, and clarify auth trust docs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ffd5ed07c8e77e2b45aa4242e44684f184d8fc85d344132c03add281ad980f23"
+}

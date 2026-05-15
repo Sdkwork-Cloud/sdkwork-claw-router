@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34211,
+  "uuid": "skill-clawhub-freelancer-crm",
+  "skillKey": "clawhub-freelancer-crm",
+  "name": "freelancer-crm",
+  "summary": "Autonomous CRM for freelancers. Tracks clients, detects follow-up opportunities, generates proposals, tracks invoices, and sends a weekly digest. Works via W...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freelancer_crm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "omermalix",
+      "features": [
+        "Autonomous CRM for freelancers",
+        "Tracks clients, detects follow-up opportunities, generates proposals, tracks invoices, and send.",
+        "Works via W..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/freelancer-crm@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38657735?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "freelancer-crm",
+      "url": "https://clawhub.ai/skills/freelancer-crm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freelancer-crm",
+    "url": "https://clawhub.ai/skills/freelancer-crm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freelancer-crm-34528e10fede27d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/freelancer-crm@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-freelancer-crm-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ba3333045f64de2bb4c195624f01cd1f9f8367a5cbc5eac0b259c8ee83f2d6e",
+      "artifactSizeBytes": 2224
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:11:27.102Z"
+}

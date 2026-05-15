@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50302,
+  "uuid": "skill-clawhub-cutout-visual-api",
+  "skillKey": "clawhub-cutout-visual-api",
+  "name": "A Python CLI skill for Cutout.Pro visual APIs — background removal, face cutout, and photo enhancement. Supports file upload &.",
+  "summary": "Call Cutout.Pro visual processing APIs to perform background removal, face cutout, and photo enhancement. Supports both file upload and image URL input, retu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cutout_visual_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cutout-pro",
+      "features": [
+        "Call Cutout.Pro visual processing APIs to perform background removal, face cutout, and photo en.",
+        "Supports both file upload and image URL input, retu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cutout-visual-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93960484?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cutout-visual-api",
+      "url": "https://clawhub.ai/skills/cutout-visual-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cutout-visual-api",
+    "url": "https://clawhub.ai/skills/cutout-visual-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cutout-visual-api-a3e8a181ea2d5dcb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cutout-visual-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cutout-visual-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3591a14f6b0fd1da76cda6e54361ba25f274412017773e3eeab40ecedf84763",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T08:27:53.184Z"
+}

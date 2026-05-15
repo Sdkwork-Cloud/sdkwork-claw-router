@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ultimate-music-manager@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ultimate_music_manager",
+  "skill": {
+    "id": 45239,
+    "skillKey": "clawhub-ultimate-music-manager",
+    "name": "Ultimate Music Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ultimate-music-manager",
+    "url": "https://clawhub.ai/skills/ultimate-music-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ultimate-music-manager-86fa86c3580a2bd5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Organises a messy local music library into a clean Language/Artist/Album hierarchy using acoustic fingerprinting, deduplication, metadata enrichment, and opt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drajb",
+      "userId": "s17cz2ptjec6e75a4q88pk3fm584g5b3",
+      "displayName": "Rohit Burani",
+      "image": "https://avatars.githubusercontent.com/u/50279000?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775976509583,
+      "changelog": "Version 1.0.1\n\n- Added optional environment variables and binaries (e.g., SPOTIFY credentials, FFMPEG, etc.) to metadata for improved configuration flexibility.\n- Specified `source` field in metadata with project repository URL.\n- Clarified the function and use-cases of environment variables and prerequisites in documentation.\n- Expanded and improved descriptions of pipeline phases and script purposes for greater clarity.\n- No changes to code; documentation and metadata updates only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee63fe984e79a1c6c43ff9ea2aa75206f57095e103f318f73512ae255b74f588"
+}

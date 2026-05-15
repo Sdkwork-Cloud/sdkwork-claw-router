@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/websocket-patterns@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.websocket_patterns",
+  "skill": {
+    "id": 52057,
+    "skillKey": "clawhub-websocket-patterns",
+    "name": "Websocket Patterns"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "websocket-patterns",
+    "url": "https://clawhub.ai/skills/websocket-patterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/websocket-patterns-ba8a33278b61eb35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep WebSocket/SSE workflow—handshake and auth, session lifecycle, heartbeats, ordering, backpressure, scaling, and observability. Use when building realtime..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774370616817,
+      "changelog": "Initial release with comprehensive real-time WebSocket/SSE workflow guide.\n\n- Outlines six core stages: transport choice, connection/auth, protocol/messages, reliability/ordering, scale/operations, and security/abuse.\n- Includes actionable patterns for handshake, token refresh, presence, heartbeats, reconnect storms, and load balancing.\n- Provides checklists, design heuristics, and guidance for delivery guarantees, ordering, backpressure, and horizontal scaling.\n- Contains observability, abuse protection, and operational tips for production environments.\n- Designed for use cases like live dashboards, chat, collaborative editing, or notification systems.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a383259271922ca0dccb855f27b615a5ad17cba61c40a037c507d440c6a5fe23"
+}

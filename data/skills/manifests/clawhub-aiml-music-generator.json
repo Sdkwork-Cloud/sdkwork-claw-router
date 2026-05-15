@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17947,
+  "uuid": "skill-clawhub-aiml-music-generator",
+  "skillKey": "clawhub-aiml-music-generator",
+  "name": "AIML Music Generator",
+  "summary": "Generate high-quality music/songs via AIMLAPI. Supports Suno, Udio, Minimax, and ElevenLabs music models. Use when the user asks for music, songs, or soundtr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiml_music_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI/ML API",
+      "features": [
+        "Generate high-quality music/songs via AIMLAPI",
+        "Supports Suno, Udio, Minimax, and ElevenLabs music models",
+        "Use when the user asks for music, songs, or soundtr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aiml-music-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/187510884?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aiml-music-generator",
+      "url": "https://clawhub.ai/skills/aiml-music-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiml-music-generator",
+    "url": "https://clawhub.ai/skills/aiml-music-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiml-music-generator-45faeeebcdfb67f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aiml-music-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aiml-music-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9dc2b41a4adcb029e42372316dfba5ebbd0967e1148604fc9568fcc203fe4ad",
+      "artifactSizeBytes": 2318
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T15:49:09.661Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38209,
+  "uuid": "skill-clawhub-simplescraper",
+  "skillKey": "clawhub-simplescraper",
+  "name": "Simplescraper",
+  "summary": "Simplescraper integration. Manage data, records, and automate workflows. Use when the user wants to interact with Simplescraper data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simplescraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Simplescraper integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Simplescraper data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/simplescraper@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "simplescraper",
+      "url": "https://clawhub.ai/skills/simplescraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simplescraper",
+    "url": "https://clawhub.ai/skills/simplescraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simplescraper-7ce3676119b6918c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/simplescraper@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-simplescraper-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5abdf9584afeaeb8da45c7f591e7a27a80ac06c233ff0142a86d17f8a8cc03aa",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:00:33.246Z"
+}

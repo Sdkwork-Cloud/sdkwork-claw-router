@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/capmonster@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.capmonster",
+  "skill": {
+    "id": 16140,
+    "skillKey": "clawhub-capmonster",
+    "name": "CapMonster CAPTCHA Solver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "capmonster",
+    "url": "https://clawhub.ai/skills/capmonster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/capmonster-e9439cfbb6a5b76f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Solve CAPTCHAs (reCAPTCHA v2/v3, hCaptcha, Cloudflare Turnstile, image CAPTCHAs) using CapMonster Cloud API. Use when browser automation encounters CAPTCHA c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "easonc13",
+      "userId": "publishers:easonc13",
+      "displayName": "Eason Chen",
+      "image": "https://avatars.githubusercontent.com/u/43432631?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 923,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771175741843,
+      "changelog": "Initial publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:50749bc3c8367b875ebe53c6cc2e6800c87c34a4f379a6f7e9a079f81bb570b4"
+}

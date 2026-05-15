@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15100,
+  "uuid": "skill-clawhub-zerox",
+  "skillKey": "clawhub-zerox",
+  "name": "Zerox",
+  "summary": "Convert PDFs, DOCX, PPTX, and images to Markdown using zerox with GPT-4o vision, including OCR for scanned documents.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zerox",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "otacu",
+      "features": [
+        "Convert PDFs, DOCX, PPTX, and images to Markdown using zerox with GPT-4o vision, including OCR."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zerox@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6127877?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zerox",
+      "url": "https://clawhub.ai/skills/zerox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zerox",
+    "url": "https://clawhub.ai/skills/zerox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zerox-cd9df14ad8cdf1b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zerox@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zerox-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a7c6b7ece370a5e90b0dd249b5af16ac3967abe38421f8e6d94bf57a35b6c28",
+      "artifactSizeBytes": 2168
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T12:38:29.615Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feature-flag-manager@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feature_flag_manager",
+  "skill": {
+    "id": 55390,
+    "skillKey": "clawhub-feature-flag-manager",
+    "name": "Feature Flag Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feature-flag-manager",
+    "url": "https://clawhub.ai/skills/feature-flag-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feature-flag-manager-205997c489a1df24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Toggle features instantly without deploying code. A/B test variants, gradual rollouts from 1% to 100%, and emergency kill switches for AI agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777507588128,
+      "changelog": "- Revamped documentation for easier onboarding, with a new Quick Start and updated use case sections.\n- Clarified feature descriptions: instant toggling, granular percentage rollouts (1%–100%), A/B variant traffic splitting, and emergency kill switches.\n- Improved explanation of commands with a new summary table for easier reference.\n- Expanded list of trigger keywords and simplified audience-facing descriptions.\n- Updated configuration and integration examples for better clarity and accuracy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba0658cdf645131c79f4dbe3cf6347c4eaecc5dc59cfe89d634c5c8bcd8e81e9"
+}

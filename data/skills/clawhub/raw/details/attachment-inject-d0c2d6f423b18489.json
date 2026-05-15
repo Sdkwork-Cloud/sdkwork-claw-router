@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "attachment-inject",
+    "displayName": "Attachment Inject",
+    "summary": "动态附件注入 — 在不修改system prompt的情况下注入动态内容。参考Claude Code的Attachment消息机制。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775301717232,
+    "updatedAt": 1777527160645
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775301717232,
+    "changelog": "Initial release introducing dynamic attachment injection for OpenClaw, inspired by Claude Code's attachment mechanism.\n\n- Enables injecting dynamic content as attachments instead of modifying the system prompt.\n- Reduces token consumption and preserves prompt caching by not embedding full lists directly.\n- Supports multiple modes: on-demand reading, lightweight registries, and dynamic injection placeholders.\n- Includes registry generation scripts for agents and skills with name and description only.\n- Provides best practices for efficient and dynamic content management in prompts.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "wangxiaofei860208-source",
+    "userId": "s17937syhc72vf48t0a5914v8d847evs",
+    "displayName": "wangxiaofei860208-source",
+    "image": "https://avatars.githubusercontent.com/u/260913269?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527160645
+  }
+}

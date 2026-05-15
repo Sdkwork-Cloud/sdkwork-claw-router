@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-usage-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_usage_tracker",
+  "skill": {
+    "id": 20620,
+    "skillKey": "clawhub-skill-usage-tracker",
+    "name": "Skill usage tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-usage-tracker",
+    "url": "https://clawhub.ai/skills/skill-usage-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-usage-tracker-7fdcc0ee56567b23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically tracks and audits skill usage, enforces rules from SKILL_USAGE_RULES.md, logs violations, and generates daily reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sasamittrrr",
+      "userId": "publishers:sasamittrrr",
+      "displayName": "SASAMITTRRR",
+      "image": "https://avatars.githubusercontent.com/u/171415195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 497,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772166120653,
+      "changelog": "Skill Usage Tracker 1.0.0 — initial release.\n\n- 自动追踪和审计 skill 使用情况\n- 读取 SKILL_USAGE_RULES.md 获取强制规则\n- 检查每次回复是否符合规范，并记录违规到 skill_violations.log\n- 生成每日使用报告\n- 全自动运行，无需手动调用",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:92b24ed990a3bbc0b4d3e0c76285b615536fb8b8978e4e3892e2a8fc65f60af6"
+}

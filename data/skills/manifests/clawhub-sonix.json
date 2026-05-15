@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35082,
+  "uuid": "skill-clawhub-sonix",
+  "skillKey": "clawhub-sonix",
+  "name": "Sonix",
+  "summary": "Sonix integration. Manage Deals, Persons, Organizations, Leads, Projects, Activities and more. Use when the user wants to interact with Sonix data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sonix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Sonix integration",
+        "Manage Deals, Persons, Organizations, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with Sonix data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sonix@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sonix",
+      "url": "https://clawhub.ai/skills/sonix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sonix",
+    "url": "https://clawhub.ai/skills/sonix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sonix-e1b82a5bbabde671.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sonix@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sonix-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:729496af084a8f0518266bd03a1e779c4a12e97b6d165997e737328458b6ac0a",
+      "artifactSizeBytes": 1841
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:02:11.930Z"
+}

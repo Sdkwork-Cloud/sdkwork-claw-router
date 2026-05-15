@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20918,
+  "uuid": "skill-clawhub-babblebrush",
+  "skillKey": "clawhub-babblebrush",
+  "name": "babbleBrush",
+  "summary": "Generate and iteratively edit images. Supports storage, UI for manual editing, history, version branching, time travel, reference images, and multiple AI mod...",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.babblebrush",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kivS",
+      "features": [
+        "Generate and iteratively edit images",
+        "Supports storage, UI for manual editing, history, version branching, time travel, reference ima."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/babblebrush@1.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3810567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "babblebrush",
+      "url": "https://clawhub.ai/skills/babblebrush"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "babblebrush",
+    "url": "https://clawhub.ai/skills/babblebrush",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/babblebrush-7f9dd61eca4a9dbc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/babblebrush@1.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-babblebrush-1.4.1.json",
+      "version": "1.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:068be1fa41a16882a55914740cf3733d82c33ee083412ff5961c4e9eab96ccd7",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T18:34:12.818Z"
+}

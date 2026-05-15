@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-whale-tracker-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_whale_tracker_pro",
+  "skill": {
+    "id": 33014,
+    "skillKey": "clawhub-polymarket-whale-tracker-pro",
+    "name": "Polymarket Whale Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-whale-tracker-pro",
+    "url": "https://clawhub.ai/skills/polymarket-whale-tracker-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-whale-tracker-pro-87a02ff60f2f959a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track the top Polymarket whale wallets and copy their winning trades. Monitors the monthly leaderboard, shows open positions, and identifies high-conviction..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "themsquared",
+      "userId": "publishers:themsquared",
+      "displayName": "Mike",
+      "image": "https://avatars.githubusercontent.com/u/5358781?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774210186993,
+      "changelog": "Track top monthly earners on Polymarket and copy high-conviction signals",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41422359c6bff987bda9adb27f1124da007e56b28336cb65f79c0c082917c75a"
+}

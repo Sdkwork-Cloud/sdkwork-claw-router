@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/japan-seasons@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.japan_seasons",
+  "skill": {
+    "id": 52484,
+    "skillKey": "clawhub-japan-seasons",
+    "name": "Japan Seasons API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "japan-seasons",
+    "url": "https://clawhub.ai/skills/japan-seasons",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/japan-seasons-1b503f2c07e703fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Japanese seasonal data — cherry blossom forecasts, autumn foliage tracking, and festival search. Use when a user asks about sakura bloom dates, best ti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ko-syun",
+      "userId": "s1737p84eeh133epj69bg5bx4d83vk08",
+      "displayName": "Ko Syun / Gu Jun",
+      "image": "https://avatars.githubusercontent.com/u/113325603?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774766756273,
+      "changelog": "- Initial release of japan-seasons skill.\n- Provides endpoints for cherry blossom forecasts, autumn foliage tracking, and festival search in Japan.\n- Users can query bloom dates, historical data, and travel recommendations for sakura and kouyou.\n- Search for Japanese festivals by region, month, and category; view upcoming events and festival details.\n- Requires a free API key from https://jpseasons.dokos.dev/dashboard.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eecfc55fe2b4ef33a2226a55ba3ac6de43bd260c8e5db5f3b76d2b17469c700b"
+}

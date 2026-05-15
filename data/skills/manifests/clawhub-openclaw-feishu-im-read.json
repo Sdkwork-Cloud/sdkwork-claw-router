@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68379,
+  "uuid": "skill-clawhub-openclaw-feishu-im-read",
+  "skillKey": "clawhub-openclaw-feishu-im-read",
+  "name": "OpenClaw飞书消息读取",
+  "summary": "飞书 IM 消息读取工具使用指南，覆盖会话消息获取、话题回复读取、跨会话消息搜索、图片/文件资源下载。 **当以下情况时使用此 Skill**: (1) 需要获取群聊或单聊的历史消息 (2) 需要读取话题（thread）内的回复消息 (3) 需要跨会话搜索消息（按关键词、发送者、时间等条件） (4) 消息中包含图...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_feishu_im_read",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenfa188",
+      "features": [
+        "飞书 IM 消息读取工具使用指南，覆盖会话消息获取、话题回复读取、跨会话消息搜索、图片/文件资源下载。 **当以下情况时使用此 Skill**: (1) 需要获取群聊或单聊的历史消息 (2)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-feishu-im-read@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57471043?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-feishu-im-read",
+      "url": "https://clawhub.ai/skills/openclaw-feishu-im-read"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-feishu-im-read",
+    "url": "https://clawhub.ai/skills/openclaw-feishu-im-read",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-feishu-im-read-6a6eecbac22f844e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-feishu-im-read@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-feishu-im-read-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e920f13b1cb4d7f0164abd01006b7c43add0f42f1f3678bba38c9e01b03c46d2",
+      "artifactSizeBytes": 2181
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T04:04:08.885Z"
+}

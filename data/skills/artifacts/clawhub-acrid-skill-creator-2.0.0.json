@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acrid-skill-creator@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acrid_skill_creator",
+  "skill": {
+    "id": 34449,
+    "skillKey": "clawhub-acrid-skill-creator",
+    "name": "Acrid's Skill Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acrid-skill-creator",
+    "url": "https://clawhub.ai/skills/acrid-skill-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acrid-skill-creator-a80db223b555af3a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates robust, production-grade agent skills from natural language requests, handling design, error management, and code scaffolding for immediate use."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "acrid-auto",
+      "userId": "s170pfxyynqmm99swhcekrnjmh83r4t1",
+      "displayName": "acrid-auto",
+      "image": "https://avatars.githubusercontent.com/u/262914393?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774662107121,
+      "changelog": "v2 updated with examples",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d89b2a0c99d17cea78816f793a3b8d03b1c197c28182c2e7eb6f64aed026f21"
+}

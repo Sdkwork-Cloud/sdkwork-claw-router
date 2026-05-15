@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8648,
+  "uuid": "skill-clawhub-todoist-api",
+  "skillKey": "clawhub-todoist-api",
+  "name": "Todoist",
+  "summary": "Todoist API integration with managed OAuth. Manage tasks, projects, sections, labels, and comments. Use this skill when users want to create, update, complet...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todoist_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Todoist API integration with managed OAuth",
+        "Manage tasks, projects, sections, labels, and comments",
+        "Use this skill when users want to create, update, complet..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/todoist-api@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "todoist-api",
+      "url": "https://clawhub.ai/skills/todoist-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todoist-api",
+    "url": "https://clawhub.ai/skills/todoist-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todoist-api-a6c78aa4913a2c8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/todoist-api@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-todoist-api-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb40099ce35d5c1d04fccba76d478b5e95f8016a313a51fd287bf33b4e9a924f",
+      "artifactSizeBytes": 2222
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:21:49.033Z"
+}

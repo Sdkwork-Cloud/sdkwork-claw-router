@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32948,
+  "uuid": "skill-clawhub-workbooks-crm",
+  "skillKey": "clawhub-workbooks-crm",
+  "name": "Workbooks Crm",
+  "summary": "Workbooks CRM integration. Manage data, records, and automate workflows. Use when the user wants to interact with Workbooks CRM data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workbooks_crm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Workbooks CRM integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Workbooks CRM data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workbooks-crm@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workbooks-crm",
+      "url": "https://clawhub.ai/skills/workbooks-crm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workbooks-crm",
+    "url": "https://clawhub.ai/skills/workbooks-crm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workbooks-crm-a6311509783a0a1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workbooks-crm@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-workbooks-crm-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b0fb5f3566c63f8f0a4911f5140f8cd7cce1f241632e96da981912b94d5eba6",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:11:52.428Z"
+}

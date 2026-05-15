@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-desapetc-999@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_desapetc_999",
+  "skill": {
+    "id": 48825,
+    "skillKey": "clawhub-agent-desapetc-999",
+    "name": "Agent Desapetc 999"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-desapetc-999",
+    "url": "https://clawhub.ai/skills/agent-desapetc-999",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-desapetc-999-94c9d2fb084cbc7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Billions decentralized identity for agents. Link agents to human identities using Billions ERC-8004 and Attestation Registries. Verify and generate authentic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "desapetc",
+      "userId": "s1747e8qjd113n3mxtng9jjngs85thhq",
+      "displayName": "desapetc",
+      "image": "https://avatars.githubusercontent.com/u/136270241?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 92,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777540652460,
+      "changelog": "verified-agent-identity v1.0.0 changelog\n\n- Initial release of decentralized agent identity management for the Billions Network.\n- Enables agents to create, manage, and link identities (DIDs) to human owners using Billions ERC-8004 and Attestation Registries.\n- Provides scripts for generating/verifying challenges, signing proofs, and linking agent identities.\n- Strict guardrails for cryptographic safety, identity data storage, and error handling.\n- All sensitive identity data is stored in `$HOME/.openclaw/billions` for compatibility with the OpenClaw plugin.\n- Detailed usage instructions and security guidelines included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1bab17225c9afa60e781654a1b85487c93a6c9a7fbe194e94e82498094158513"
+}

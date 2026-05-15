@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tavily-search-enhanced@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_search_enhanced",
+  "skill": {
+    "id": 40451,
+    "skillKey": "clawhub-tavily-search-enhanced",
+    "name": "Openclaw Tavily Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-search-enhanced",
+    "url": "https://clawhub.ai/skills/tavily-search-enhanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-search-enhanced-f25a2e7230cc4468.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web search and data retrieval via Tavily API. Use when you need to search the web, get news, find answers, or look up sources. Supports 5 modes: search (gene..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nowhere1975",
+      "userId": "s176svyn599zygxnse1e70rg2s83t861",
+      "displayName": "nowhere1975",
+      "image": "https://avatars.githubusercontent.com/u/5549547?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1774121296610,
+      "changelog": "Enhanced edition with significantly expanded documentation and feature explanations.\n\n- Added a comprehensive SKILL.md with detailed usage instructions, examples, and option tables.\n- Clarified the five supported search modes: search, news, qna, images, and context.\n- Documented output formats and advised best use-cases for each.\n- Explained all common flags, options, and environment variables.\n- Provided copy-paste command examples for quick start, research, news, Q&A, and focused/domain-specific searches.\n- Included usage notes and plan limits for clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5909ebcd4f919c18b78eeec5cbfe9668735bd59044bb836ffd278215db7487e6"
+}

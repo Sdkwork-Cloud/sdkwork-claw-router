@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/element-nft-drops@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.element_nft_drops",
+  "skill": {
+    "id": 45605,
+    "skillKey": "clawhub-element-nft-drops",
+    "name": "Element NFT Drops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "element-nft-drops",
+    "url": "https://clawhub.ai/skills/element-nft-drops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/element-nft-drops-0a40c156900f4207.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user mentions Element plus drops, NFT creation, NFT collection launch, mint setup, sale stages, prereveal media, preview media, or publishing/pa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "element-som",
+      "userId": "s17da4nxe9gw2fmhskp08ep43183jy2q",
+      "displayName": "element-som",
+      "image": "https://avatars.githubusercontent.com/u/267862864?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777275411973,
+      "changelog": "No user-facing or functional changes in this version.\n\n- Version bump with no detected file changes.\n- All behavior, features, and documentation remain unchanged from the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f2548d9c5a9d4e692916cc9acee3e110f075f5ce50ea2b3929271538e95da3b"
+}

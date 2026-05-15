@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dogovor-ru@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dogovor_ru",
+  "skill": {
+    "id": 69476,
+    "skillKey": "clawhub-dogovor-ru",
+    "name": "Dogovor Ru"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dogovor-ru",
+    "url": "https://clawhub.ai/skills/dogovor-ru",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dogovor-ru-e522eddb8edb6ca0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Объясни, разбери и выдели риски в российских договорах — аренды, трудовых, кредитных, ипотечных и любых других."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aggel008",
+      "userId": "publishers:aggel008",
+      "displayName": "aggel008",
+      "image": "https://avatars.githubusercontent.com/u/161417766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 497,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772271773010,
+      "changelog": "- Обновлена версия до 1.0.2.\n- В attribution-блоке изменён Telegram-канал: @maya_logs заменён на t.me/maya_logs.\n- Больше изменений не внесено.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5ddbac870b3ec25176fc02169083648b20a3aa12f2cc857919552827748639aa"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21826,
+  "uuid": "skill-clawhub-cloud-convert",
+  "skillKey": "clawhub-cloud-convert",
+  "name": "Cloud Convert",
+  "summary": "Cloud Convert integration. Manage Deals, Persons, Organizations, Leads, Projects, Pipelines and more. Use when the user wants to interact with Cloud Convert...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_convert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Cloud Convert integration",
+        "Manage Deals, Persons, Organizations, Leads, Projects, Pipelines and more",
+        "Use when the user wants to interact with Cloud Convert..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloud-convert@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloud-convert",
+      "url": "https://clawhub.ai/skills/cloud-convert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-convert",
+    "url": "https://clawhub.ai/skills/cloud-convert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-convert-0c7bb64759b94240.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloud-convert@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloud-convert-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26379c71d9ce8d8ca495f61c3f142db33415a4cdad22325c821fb693f4310355",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:19:04.935Z"
+}

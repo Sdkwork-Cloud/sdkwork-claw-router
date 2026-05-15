@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22822,
+  "uuid": "skill-clawhub-agent-economy",
+  "skillKey": "clawhub-agent-economy",
+  "name": "Agent Economy Starter Kit",
+  "summary": "Enables your agent to earn cryptocurrency by registering skills, negotiating tasks with escrow, building reputation, and auto-matching to paid jobs globally.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_economy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FLY",
+      "features": [
+        "Enables your agent to earn cryptocurrency by registering skills, negotiating tasks with escrow,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-economy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258594521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-economy",
+      "url": "https://clawhub.ai/skills/agent-economy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-economy",
+    "url": "https://clawhub.ai/skills/agent-economy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-economy-ad0b7a8454031498.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-economy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-economy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54e0f9d6881b55689ecf901de15b001c0d33e77b0f5486ba2a7852a9aeb787bc",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T22:17:48.294Z"
+}

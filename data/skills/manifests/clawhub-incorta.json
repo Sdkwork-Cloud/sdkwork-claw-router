@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39507,
+  "uuid": "skill-clawhub-incorta",
+  "skillKey": "clawhub-incorta",
+  "name": "Incorta",
+  "summary": "Incorta integration. Manage data, records, and automate workflows. Use when the user wants to interact with Incorta data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.incorta",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Incorta integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Incorta data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/incorta@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "incorta",
+      "url": "https://clawhub.ai/skills/incorta"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "incorta",
+    "url": "https://clawhub.ai/skills/incorta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/incorta-79f23ccea381da12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/incorta@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-incorta-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af0d48fc9de2d676d5f7b1fde978965f1ed9f4d053c4c8d51a0127e9ac65a1e4",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:34:58.247Z"
+}

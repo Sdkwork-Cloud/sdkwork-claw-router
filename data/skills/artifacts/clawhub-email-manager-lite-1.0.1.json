@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-manager-lite@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_manager_lite",
+  "skill": {
+    "id": 9993,
+    "skillKey": "clawhub-email-manager-lite",
+    "name": "eMail manager lite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-manager-lite",
+    "url": "https://clawhub.ai/skills/email-manager-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-manager-lite-e5cbb3678a51af86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight email manager with IMAP/SMTP support, advanced search, folder management, and attachment detection. Works with Zoho, Gmail, Outlook, and any IMAP/SMTP provider."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jorgermp",
+      "userId": "publishers:jorgermp",
+      "displayName": "jorgermp",
+      "image": "https://avatars.githubusercontent.com/u/1401249?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2895,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770046468105,
+      "changelog": "email-manager-lite v1.0.1\n\n- Added comprehensive README.md with detailed usage, configuration, and provider setup instructions.\n- Added CHANGELOG.md to document future updates and changes.\n- No code changes—documentation files only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b6221857963280dc0a27383c99b75d2d1c1d2de3a18d54cc8fd72dd23656b641"
+}

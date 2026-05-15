@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cjl-plugin@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cjl_plugin",
+  "skill": {
+    "id": 53203,
+    "skillKey": "clawhub-cjl-plugin",
+    "name": "Cjl Plugin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cjl-plugin",
+    "url": "https://clawhub.ai/skills/cjl-plugin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cjl-plugin-29ee6c4eac2aa927.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CJL Skills Collection — a personal Claude Code plugin with 17 production skills. Use when the user wants to: read papers, create content cards, design presen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xcjl",
+      "userId": "s17c0swjv7p83sgyqfwvqqkbed83hk19",
+      "displayName": "Jialin",
+      "image": "https://avatars.githubusercontent.com/u/38884292?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775314778142,
+      "changelog": "- Added a README.md file with detailed usage instructions, installation guide, skill descriptions, design philosophy, and credits.\n- No changes to plugin code or features; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2781b33221042bb14241a7cfa9caa6c4b2533c33c9dd32df91ee45e675227fb8"
+}

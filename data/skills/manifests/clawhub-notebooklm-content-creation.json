@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54726,
+  "uuid": "skill-clawhub-notebooklm-content-creation",
+  "skillKey": "clawhub-notebooklm-content-creation",
+  "name": "NotebookLM Content Creation",
+  "summary": "Create and monitor NotebookLM Studio content — Audio Overview, Video Overview, Infographics, and Slides — via the notebooklm-mcp-cli. Use when user wants to...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notebooklm_content_creation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Skywalker326",
+      "features": [
+        "Create and monitor NotebookLM Studio content — Audio Overview, Video Overview, Infographics, an.",
+        "Use when user wants to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notebooklm-content-creation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5773915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notebooklm-content-creation",
+      "url": "https://clawhub.ai/skills/notebooklm-content-creation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notebooklm-content-creation",
+    "url": "https://clawhub.ai/skills/notebooklm-content-creation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notebooklm-content-creation-87180db9e0f3c5c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notebooklm-content-creation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notebooklm-content-creation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8de64e8ae76a2a356665e06b2e1fa62105ff77535390d4f986e154726d0efa2",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:59:36.114Z"
+}

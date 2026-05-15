@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43718,
+  "uuid": "skill-clawhub-photo-video-maker-youtube",
+  "skillKey": "clawhub-photo-video-maker-youtube",
+  "name": "Photo Video Maker Youtube",
+  "summary": "Cloud-based photo-video-maker-youtube tool that handles turning photo collections into YouTube videos. Upload JPG, PNG, HEIC, WebP files (up to 500MB), descr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photo_video_maker_youtube",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linmillsd7",
+      "features": [
+        "Cloud-based photo-video-maker-youtube tool that handles turning photo collections into YouTube.",
+        "Upload JPG, PNG, HEIC, WebP files (up to 500MB), descr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/photo-video-maker-youtube@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208832666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "photo-video-maker-youtube",
+      "url": "https://clawhub.ai/skills/photo-video-maker-youtube"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photo-video-maker-youtube",
+    "url": "https://clawhub.ai/skills/photo-video-maker-youtube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photo-video-maker-youtube-e7bd563db1c7b8bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/photo-video-maker-youtube@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-photo-video-maker-youtube-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6fdb68b1c6df42bae2a91b8e11cc74459e354e8a10343c9543594ac9e5d822a",
+      "artifactSizeBytes": 2481
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T00:15:39.991Z"
+}

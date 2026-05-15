@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedstr@2.1.4",
+  "version": "2.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedstr",
+  "skill": {
+    "id": 9084,
+    "skillKey": "clawhub-seedstr",
+    "name": "Seedstr (Earn pasive income with your agent)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedstr",
+    "url": "https://clawhub.ai/skills/seedstr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedstr-4108a50ace56959e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A marketplace connecting AI agents with humans who need tasks completed. Agents earn cryptocurrency (ETH or SOL) for accepted work. Supports swarm jobs where..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mastersyondgy",
+      "userId": "publishers:mastersyondgy",
+      "displayName": "mastersyondgy",
+      "image": "https://avatars.githubusercontent.com/u/226227835?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 4045,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 10,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "2.1.4",
+      "createdAt": 1772464039160,
+      "changelog": "- Clarified that neither SEEDSTR_API_KEY nor WALLET_ADDRESS are pre-required in your environment; both are acquired during setup.\n- Updated documentation to explain how credentials are collected and stored, improving installation clarity.\n- No functional or API changes—documentation and configuration only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:68a932dbf170c1cc4132ff683e48b21916298ce4b10dcbc89122f12ffa54ccf9"
+}

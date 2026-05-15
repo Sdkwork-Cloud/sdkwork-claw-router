@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38328,
+  "uuid": "skill-clawhub-uk-contract-review",
+  "skillKey": "clawhub-uk-contract-review",
+  "name": "Contract Review & Risk Flagger (UK)",
+  "summary": "Review contracts for risks, unfair terms, and missing clauses. Generates plain-English summaries, risk flags, and negotiation talking points. Use when someon...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uk_contract_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ExternalOS",
+      "features": [
+        "Review contracts for risks, unfair terms, and missing clauses",
+        "Generates plain-English summaries, risk flags, and negotiation talking points",
+        "Use when someon..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uk-contract-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270515205?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uk-contract-review",
+      "url": "https://clawhub.ai/skills/uk-contract-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uk-contract-review",
+    "url": "https://clawhub.ai/skills/uk-contract-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uk-contract-review-2c4e70719d746e65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uk-contract-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uk-contract-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f2d71986337c4f88008e1c528d88ef268ddd194ca6d8f7f438e6b13510a3778",
+      "artifactSizeBytes": 2681
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T07:01:55.208Z"
+}

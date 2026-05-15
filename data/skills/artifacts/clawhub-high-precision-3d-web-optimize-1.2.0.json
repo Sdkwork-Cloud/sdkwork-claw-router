@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/high-precision-3d-web-optimize@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.high_precision_3d_web_optimize",
+  "skill": {
+    "id": 39505,
+    "skillKey": "clawhub-high-precision-3d-web-optimize",
+    "name": "High-Precision 3D Web Optimize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "high-precision-3d-web-optimize",
+    "url": "https://clawhub.ai/skills/high-precision-3d-web-optimize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/high-precision-3d-web-optimize-94c522a0c59d09d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Optimize high-precision .glb/.gltf models for Web 3D and digital twin delivery. Use when preparing Three.js or Babylon.js assets that need UV-safe simplifica..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neowalker69",
+      "userId": "s1715704tvnbebadwp19ppff7583kh9s",
+      "displayName": "Zavon",
+      "image": "https://avatars.githubusercontent.com/u/23568845?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1778340373714,
+      "changelog": "**Major update: Introduces slot-based texture compression options and KTX2 support for Web 3D optimization workflows.**\n\n- Added support for per-slot texture compression: Normal/ORM use UASTC, BaseColor/Emissive use ETC1S, with differentiated resolution and encoding per LOD and slot.\n- Exposed user-selectable global texture encoding: choose between WebP (default, simple/fast) and KTX2 (GPU-native, zero CPU decode).\n- Updated default parameters to specify slot-resolution mapping, slot-specific compression quality, and detailed KTX2 options.\n- Expanded documentation and troubleshooting with slot-based compression rationale, KTX2 configuration guidance, and common pitfalls.\n- Clarified manifest outputs and LOD × slot mappings for better front-end integration and lazy loading.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ca25b739d4d8b95d2e14d58fac72ee63f34d1eaa802cdd35c27102b97dfbd1e"
+}

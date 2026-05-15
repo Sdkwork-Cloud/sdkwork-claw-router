@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baoyu-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baoyu_skills",
+  "skill": {
+    "id": 58719,
+    "skillKey": "clawhub-baoyu-skills",
+    "name": "Baoyu Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baoyu-skills",
+    "url": "https://clawhub.ai/skills/baoyu-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baoyu-skills-95d750ea4fb2f4dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "宝玉分享的 Claude Code 技能集，包含多个内容生成和处理子技能。 子技能列表 (skills/baoyu-*): - baoyu-article-illustrator: 文章插图生成 - baoyu-comic: 漫画生成 - baoyu-compress-image: 图片压缩 - baoyu-co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "conanwhf",
+      "userId": "s17630t4f4mg47rk0nkkr09cf983xw8x",
+      "displayName": "conanwhf",
+      "image": "https://avatars.githubusercontent.com/u/14151735?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1819,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775496336349,
+      "changelog": "Initial release of baoyu-skills, a comprehensive collection of Claude Code utilities for content generation, conversion, publishing, and image processing.\n\n- Includes 16 subskills such as AI image generation, markdown formatting, PPT creation, translation, web scraping, and multi-platform publishing.\n- Supports workflows like image creation, markdown conversion, article illustration, comic and infographic generation, and social media posting.\n- Requires Node.js and Bun runtime.\n- Installation via npx; subskills executed with the Bun command.\n- Some skills may need Chrome/CDP configuration or API keys.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95de119ccbef6c4398bb70e2a1419cbb83ec64063938af91d1fb5bc2b129068c"
+}

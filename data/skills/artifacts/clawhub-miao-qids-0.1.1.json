@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/miao-qids@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miao_qids",
+  "skill": {
+    "id": 71138,
+    "skillKey": "clawhub-miao-qids",
+    "name": "MiaoQIDS 🛡️量子防火墙-会做pcap文件分析的猫娘"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miao-qids",
+    "url": "https://clawhub.ai/skills/miao-qids",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miao-qids-0396f182a2a1613d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "量子入侵检测系统技能喵～ 基于经典-量子混合神经网络的入侵检测系统，可以分析网络流量数据（PCAP 文件），检测多种攻击类型，并为每种攻击提供置信度喵～ 提供安全防护建议喵。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tsherryyann",
+      "userId": "s17bqb534njdgzhge2kwnj9s2n84bf13",
+      "displayName": "tsherryyann",
+      "image": "https://avatars.githubusercontent.com/u/273959355?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776770622380,
+      "changelog": "基于经典-量子混合神经网络的入侵检测系统\n- 支持 PCAP 文件流量分析，检测 8 种攻击类型并输出多类型置信度分布\n- 提供基于输出类型的详细安全防护建议和攻击者 IP 归属地自动查询\n- 支持 HTTP 接口调用和参数灵活配置\n- 支持特征缓存与模型重建误差评估，提升检测效率与结果可靠性\n-权重和坐标系文件下载来源：https://gitee.com/TSherry/MiaoQIDS\n-使用前先把skill.md以及各py文件里面的有关路径根据自己电脑的情况设置好\n-运行时需要电脑管理员权限，若管理员用户没有对应运行库则使用sys.path.append语句把运行库路径添加进去。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcee3d56042a2e0bc38bb84be5b3936d7031d5e3755d585f6b5073fec44f5522"
+}

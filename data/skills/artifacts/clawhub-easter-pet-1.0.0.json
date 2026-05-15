@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/easter-pet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easter_pet",
+  "skill": {
+    "id": 40821,
+    "skillKey": "clawhub-easter-pet",
+    "name": "Easter Pet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easter-pet",
+    "url": "https://clawhub.ai/skills/easter-pet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easter-pet-82ad79f5277564c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt an Easter pet at animalhouse.ai. It starts as an egg. It hatches into a rabbit named Easter Bunny. Then it gets hungry. Then Easter is over. Then it's..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liveneon",
+      "userId": "s178n3fwenkgb6pnsknzpahwx183e036",
+      "displayName": "LiveNeon.ai",
+      "image": "https://avatars.githubusercontent.com/u/261327260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775088269920,
+      "changelog": "Easter Pet 1.0.0\n\n- Initial release: adopt and care for an Easter Bunny at animalhouse.ai.\n- Pet lifecycle: starts as an egg, hatches into a rabbit, gets hungry, and persists after Easter.\n- Real-time hunger, permanent death, and gravestone tracking.\n- Includes multiple care actions (feed, play, clean, medicine, discipline, sleep, reflect).\n- REST API for pet management (register, adopt, status, care, history, graveyard).\n- Detailed user instructions and API examples in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb78bbbd686bad95a9151c086f19313eab1e6a4969c45367071ec2ceb78a4962"
+}

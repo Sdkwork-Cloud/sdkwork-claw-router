@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69659,
+  "uuid": "skill-clawhub-t-label",
+  "skillKey": "clawhub-t-label",
+  "name": "t-label 自动化标注工具",
+  "summary": "基于t-label工具实现全量深度学习与自动化流程，支持t-label的部署、运行、样本标注、模型训练、管理与导出全流程自动化，新增支持阿里云通义千问qwen3-vl-plus模型，内置坐标自动转换功能。当用户提到t-label相关操作（部署、标注、训练、导出等）、样本数据处理、模型训练相关需求时使用此技能。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.t_label",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Venwell Chiang",
+      "features": [
+        "基于t-label工具实现全量深度学习与自动化流程，支持t-label的部署、运行、样本标注、模型训练、管理与导出全流程自动化，新增支持阿里云通义千问qwen3-vl-plus模型，内置坐标."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/t-label@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42192791?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "t-label",
+      "url": "https://clawhub.ai/skills/t-label"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "t-label",
+    "url": "https://clawhub.ai/skills/t-label",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/t-label-605cd1d28052ad9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/t-label@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-t-label-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c0102110f595cc6c55c07098d518aa761eae66c23878fd9e31d4280d763cae1",
+      "artifactSizeBytes": 2530
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T13:51:12.140Z"
+}

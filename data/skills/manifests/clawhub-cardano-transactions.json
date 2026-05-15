@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25259,
+  "uuid": "skill-clawhub-cardano-transactions",
+  "skillKey": "clawhub-cardano-transactions",
+  "name": "Cardano Transactions",
+  "summary": "Sign and submit Cardano transactions with explicit user confirmation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cardano_transactions",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Angelos Kappos",
+      "features": [
+        "Sign and submit Cardano transactions with explicit user confirmation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cardano-transactions@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9395707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cardano-transactions",
+      "url": "https://clawhub.ai/skills/cardano-transactions"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cardano-transactions",
+    "url": "https://clawhub.ai/skills/cardano-transactions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cardano-transactions-d5dcc424bd2ff3bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cardano-transactions@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cardano-transactions-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15a31eb6bc9eea6d6318362458b6dca40aec4a13335ff7b3bf0af62edc43a8d3",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T02:07:15.169Z"
+}

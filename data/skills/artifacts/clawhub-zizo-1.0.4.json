@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zizo@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zizo",
+  "skill": {
+    "id": 34445,
+    "skillKey": "clawhub-zizo",
+    "name": "skill for searching images and boards in zizo library (https://zizo.pro)."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zizo",
+    "url": "https://clawhub.ai/skills/zizo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zizo-6672ea2bd4a443c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search images and boards in zizo library. Use when user asks to search for images, photos, pictures, visual assets, or boards/collections."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "foobarhe",
+      "userId": "publishers:foobarhe",
+      "displayName": "foobar",
+      "image": "https://avatars.githubusercontent.com/u/1496544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774106052581,
+      "changelog": "- Added ZIZO_TOKEN to the credentials section in SKILL.md to clarify it is required for authentication.\n- No other functionality or documentation changes detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:392622b0bc614a5ad0ef95f9a5de79ce0324d9ab011c5233f1d9df32457bda5e"
+}

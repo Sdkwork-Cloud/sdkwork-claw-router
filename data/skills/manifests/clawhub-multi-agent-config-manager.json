@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65194,
+  "uuid": "skill-clawhub-multi-agent-config-manager",
+  "skillKey": "clawhub-multi-agent-config-manager",
+  "name": "Multi Agent Config Manager",
+  "summary": "多代理编排引擎 - 目标驱动的深度研究与项目协作系统。支持任务分解、分支执行、验证审核、返工迭代、智能决策。遵循第一性原理，实现主代理与分支代理的双向通信。触发词：多代理、multi-agent、代理编排、深度研究、目标分解、任务委派、工作流、agent orchestrate、multi agent",
+  "version": "7.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_agent_config_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bjmrcft-hash",
+      "features": [
+        "目标驱动的深度研究与项目协作系统。支持任务分解、分支执行、验证审核、返工迭代、智能决策。遵循第一性原理，实现主代理与分支代理的双向通信。触发词：多代理、multi-agent、代理编排、深度."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-agent-config-manager@7.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270054236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-agent-config-manager",
+      "url": "https://clawhub.ai/skills/multi-agent-config-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-agent-config-manager",
+    "url": "https://clawhub.ai/skills/multi-agent-config-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-agent-config-manager-20ab18b951461506.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-agent-config-manager@7.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-agent-config-manager-7.2.0.json",
+      "version": "7.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:108c04f7a8f021318a395d8cf9d87591691a5c1e3ca65ef1f123c64e5625f6ba",
+      "artifactSizeBytes": 2933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T03:48:21.875Z"
+}

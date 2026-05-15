@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-container-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_container_helper",
+  "skill": {
+    "id": 46762,
+    "skillKey": "clawhub-skylv-container-helper",
+    "name": "Skylv Container Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-container-helper",
+    "url": "https://clawhub.ai/skills/skylv-container-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-container-helper-e77353dc0b5a6098.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assist with Docker container management, Dockerfile creation, image building, and container network configuration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777682973419,
+      "changelog": "- Initial release of docker-helper (v1.0.2), a tool for Docker container management and optimization.\n- Supports container operations, image building, Dockerfile creation, and network configuration.\n- Designed for ease of use with OpenClaw and simple command triggers.\n- Documentation available in both English and Chinese.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a4d5aa7161704b3df10b60e09e67bf4bb1cd666b12cfd82db659c560c3420ec"
+}

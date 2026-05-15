@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23250,
+  "uuid": "skill-clawhub-stm-assistant",
+  "skillKey": "clawhub-stm-assistant",
+  "name": "STM Assistant",
+  "summary": "Professional email outreach on behalf of your human. Branded signatures, Reply-To routing, CC tracking.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stm_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MouseRider",
+      "features": [
+        "Professional email outreach on behalf of your human",
+        "Branded signatures, Reply-To routing, CC tracking."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stm-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12753169?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stm-assistant",
+      "url": "https://clawhub.ai/skills/stm-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stm-assistant",
+    "url": "https://clawhub.ai/skills/stm-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stm-assistant-34b9209fc4c9a05d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stm-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stm-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1ec15de6930c33d8bdc24a3ce96e12f497205aa9bb6789965fefb47b5c3b3ab",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T06:11:58.784Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45431,
+  "uuid": "skill-clawhub-vaikora",
+  "skillKey": "clawhub-vaikora",
+  "name": "Vaikora",
+  "summary": "Route OpenClaw LLM calls through Vaikora for real-time AI agent security monitoring. Every action your agent takes gets scored for risk, anomaly-flagged, and...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vaikora",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Data443",
+      "features": [
+        "Route OpenClaw LLM calls through Vaikora for real-time AI agent security monitoring",
+        "Every action your agent takes gets scored for risk, anomaly-flagged, and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vaikora@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/vaikora/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vaikora",
+      "url": "https://clawhub.ai/skills/vaikora"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vaikora",
+    "url": "https://clawhub.ai/skills/vaikora",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vaikora-04523adfa8fdb099.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vaikora@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vaikora-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be9c4b1abddbc9432a6b68bf5aff8c7625eba6a8b3ad698c56d9e2537133301b",
+      "artifactSizeBytes": 2279
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T13:24:06.573Z"
+}

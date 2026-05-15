@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15613,
+  "uuid": "skill-clawhub-camino-places",
+  "skillKey": "clawhub-camino-places",
+  "name": "Places Search",
+  "summary": "Locate places using flexible query formats - free-form search or structured address components. Returns coordinates, addresses, and optional street-level pho...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camino_places",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "James-southendsolutions",
+      "features": [
+        "Locate places using flexible query formats",
+        "free-form search or structured address components",
+        "Returns coordinates, addresses, and optional street-level pho..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/camino-places@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93152760?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "camino-places",
+      "url": "https://clawhub.ai/skills/camino-places"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camino-places",
+    "url": "https://clawhub.ai/skills/camino-places",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camino-places-bafae39d1ab56a89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/camino-places@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-camino-places-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32ec0deffacb3fe515ef42f825f6a0ece915aa5496de4d840df7dfb5528f03dc",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T04:11:31.830Z"
+}

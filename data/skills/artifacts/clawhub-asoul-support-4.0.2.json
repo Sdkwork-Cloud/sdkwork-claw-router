@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/asoul-support@4.0.2",
+  "version": "4.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asoul_support",
+  "skill": {
+    "id": 68378,
+    "skillKey": "clawhub-asoul-support",
+    "name": "Asoul Support"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asoul-support",
+    "url": "https://clawhub.ai/skills/asoul-support",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asoul-support-db7c172f2209fcdb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A-SOUL 粉丝应援工具 — 检测开播自动点亮粉丝牌+移动端心跳挂机涨亲密度、视频点赞/投币/收藏、动态点赞。纯Python实现，零外部依赖。触发词：A-SOUL、asoul、签到、点赞、三连、应援、动态、点亮、粉丝牌、心跳、挂机、直播、嘉然、贝拉、乃琳、心宜、思诺。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaoyiweio",
+      "userId": "s177w0npqct9fjq708k4fgne6h83j7tt",
+      "displayName": "XiaoYiWeio",
+      "image": "https://avatars.githubusercontent.com/u/50070170?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "4.0.2",
+      "createdAt": 1776914947189,
+      "changelog": "- Updated README.md for improved clarity and instructions.\n- No feature or code changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b7ebb6fab0f1ce0578ac667ced632d8442c2d047b7472f258b59ab432de8dc2"
+}

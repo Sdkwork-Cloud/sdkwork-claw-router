@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nas-system-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nas_system_monitor",
+  "skill": {
+    "id": 19472,
+    "skillKey": "clawhub-nas-system-monitor",
+    "name": "Nas system monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nas-system-monitor",
+    "url": "https://clawhub.ai/skills/nas-system-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nas-system-monitor-2dcdd69df1b294a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor NAS system health, disk usage, network status, and auto-alert via Feishu/Discord."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sasamittrrr",
+      "userId": "publishers:sasamittrrr",
+      "displayName": "SASAMITTRRR",
+      "image": "https://avatars.githubusercontent.com/u/171415195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 581,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772166099808,
+      "changelog": "Initial release of NAS System Monitor.\n\n- Monitors NAS system health, disk usage, and network status\n- Tracks Docker containers and critical process status\n- Supports alert notifications via Feishu, Discord, and Telegram\n- Configurable alert thresholds for disk, CPU, memory, and network\n- Compatible with 飞牛 NAS, Synology DSM, QNAP QTS, and generic Linux systems",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9cfbe86a5b8a891652082213cac737ac32fb0d12f721c55beadb9f40be127537"
+}

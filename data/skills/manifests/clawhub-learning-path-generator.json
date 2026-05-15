@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35926,
+  "uuid": "skill-clawhub-learning-path-generator",
+  "skillKey": "clawhub-learning-path-generator",
+  "name": "learning-path-generator",
+  "summary": "Generate personalized learning paths and curriculum for any skill or subject",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learning_path_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huajianjiu",
+      "features": [
+        "Generate personalized learning paths and curriculum for any skill or subject"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learning-path-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/163974966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learning-path-generator",
+      "url": "https://clawhub.ai/skills/learning-path-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learning-path-generator",
+    "url": "https://clawhub.ai/skills/learning-path-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learning-path-generator-a8be243fdc5baf18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learning-path-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-learning-path-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60aee91730ea8821eaff0af82751ad2db879484f8bd05af8e9503f913fe918bc",
+      "artifactSizeBytes": 2448
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T10:25:28.368Z"
+}

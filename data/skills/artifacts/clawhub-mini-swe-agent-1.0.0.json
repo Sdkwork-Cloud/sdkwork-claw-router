@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mini-swe-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mini_swe_agent",
+  "skill": {
+    "id": 22970,
+    "skillKey": "clawhub-mini-swe-agent",
+    "name": "mini-swe-agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mini-swe-agent",
+    "url": "https://clawhub.ai/skills/mini-swe-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mini-swe-agent-935cb7be8b2d5b07.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomously run complex software engineering tasks like bug fixes or feature implementation using the mini-swe-agent CLI with full codebase edits."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "c1nderscript",
+      "userId": "s17185n8mc0b59s6dxwj8m5s4583njgh",
+      "displayName": "c1nder",
+      "image": "https://avatars.githubusercontent.com/u/218101649?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 455,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772594266706,
+      "changelog": "- Initial release of the mini-swe-agent skill.\n- Enables autonomous execution of complex software engineering tasks via the mini-swe-agent CLI.\n- Designed for end-to-end codebase exploration and editing (e.g., bug fixes, feature implementations, GitHub issue resolution).\n- Always uses the --yolo flag for fully autonomous operation.\n- Not intended for simple text replacements or minor fixes; use standard editing tools for those cases.\n- Includes clear installation and usage instructions in SKILL.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9ffada95576f48ac24fdcf878aebc3f19a25029f2e104e883005629628731b8d"
+}

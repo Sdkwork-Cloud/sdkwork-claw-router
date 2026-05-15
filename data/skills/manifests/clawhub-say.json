@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16810,
+  "uuid": "skill-clawhub-say",
+  "skillKey": "clawhub-say",
+  "name": "say",
+  "summary": "Text-to-Speech via macOS say command with Siri Natural Voices. Use for generating speech audio, TTS clips, or speaking text aloud on macOS.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.say",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tobihagemann",
+      "features": [
+        "Text-to-Speech via macOS say command with Siri Natural Voices",
+        "Use for generating speech audio, TTS clips, or speaking text aloud on macOS."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/say@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2924160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "say",
+      "url": "https://clawhub.ai/skills/say"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "say",
+    "url": "https://clawhub.ai/skills/say",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/say-a0b967fc60136d2e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/say@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-say-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f917153e482e76ad5d26883893fa0793dad53ad11a9257ebfb466a15459bc33",
+      "artifactSizeBytes": 1791
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T05:11:18.117Z"
+}

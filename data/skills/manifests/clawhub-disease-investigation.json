@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46710,
+  "uuid": "skill-clawhub-disease-investigation",
+  "skillKey": "clawhub-disease-investigation",
+  "name": "Disease Investigation",
+  "summary": "Conduct comprehensive disease investigation combining academic literature, epidemiological data, clinical guidelines, pharmaceutical intelligence, and clinic...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.disease_investigation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XK",
+      "features": [
+        "Conduct comprehensive disease investigation combining academic literature, epidemiological data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/disease-investigation@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/275897758?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "disease-investigation",
+      "url": "https://clawhub.ai/skills/disease-investigation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "disease-investigation",
+    "url": "https://clawhub.ai/skills/disease-investigation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/disease-investigation-4ab7d0b386df4c72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/disease-investigation@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-disease-investigation-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da5a0acc95274524c7425a1fb7e349f0489d81f6442d492d13b00cce07e1a671",
+      "artifactSizeBytes": 2324
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T09:16:38.326Z"
+}

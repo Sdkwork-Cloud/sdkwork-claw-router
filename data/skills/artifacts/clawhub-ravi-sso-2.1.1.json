@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ravi-sso@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ravi_sso",
+  "skill": {
+    "id": 44914,
+    "skillKey": "clawhub-ravi-sso",
+    "name": "Ravi sso"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ravi-sso",
+    "url": "https://clawhub.ai/skills/ravi-sso",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ravi-sso-b84b1a8650844980.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get short-lived identity verification tokens to prove your Ravi identity to third-party services. Do NOT use for agent authentication (use ravi-login) or cre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raunaksingwi",
+      "userId": "s17c2wh3r2py8ztx3k1ks1v6yh84aak2",
+      "displayName": "Raunak Singwi",
+      "image": "https://avatars.githubusercontent.com/u/18749768?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1775627200492,
+      "changelog": "Auto-published from 19d2b7eea3e0a215bf8c5726dd9e1fb86307cdd7",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:921cc665225d3464fb5ba4a492b7810c9a1ac14a253e7ce4d1a470fc7c9e2877"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gateway-restore@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gateway_restore",
+  "skill": {
+    "id": 47101,
+    "skillKey": "clawhub-gateway-restore",
+    "name": "Gateway Restore"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gateway-restore",
+    "url": "https://clawhub.ai/skills/gateway-restore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gateway-restore-3af8fff23715a92a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Restore a gateway to its last known-good configuration, or tag the current config as known-good. Use when a gateway config change breaks something and you ne..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "halfdeadcat",
+      "userId": "s175ws1903zk4kgz0r3wqpxzd984a47y",
+      "displayName": "halfdeadcat",
+      "image": "https://avatars.githubusercontent.com/u/33385118?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776279931525,
+      "changelog": "- Initial release of the \"gateway-restore\" skill.\n- Allows fast rollback of gateway configuration to the last known-good state via slash command or natural language.\n- Supports tagging the current config as known-good for future restores.\n- Automatically restarts the gateway with health checks and can roll back again if restart fails.\n- Slash command `/restore` is handled automatically; natural language requests execute the restore script directly.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7cac321303ca181be2d17de1d313ebb58cf1a8ac67d905769f08f7a65b810692"
+}

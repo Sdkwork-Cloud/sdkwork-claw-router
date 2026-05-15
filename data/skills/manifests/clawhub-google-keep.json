@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16631,
+  "uuid": "skill-clawhub-google-keep",
+  "skillKey": "clawhub-google-keep",
+  "name": "Google Keep",
+  "summary": "Read, create, edit, search, and manage Google Keep notes and lists via CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_keep",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tag",
+      "features": [
+        "Read, create, edit, search, and manage Google Keep notes and lists via CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-keep@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260167501?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-keep",
+      "url": "https://clawhub.ai/skills/google-keep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-keep",
+    "url": "https://clawhub.ai/skills/google-keep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-keep-4e0e0420403ee458.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-keep@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-keep-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ce60b73448bdc78207098b7debdba62ddf7af1e523ed0db99449a7a632d18f9",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T17:00:42.257Z"
+}

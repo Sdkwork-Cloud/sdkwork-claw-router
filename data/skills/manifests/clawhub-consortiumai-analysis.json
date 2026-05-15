@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16274,
+  "uuid": "skill-clawhub-consortiumai-analysis",
+  "skillKey": "clawhub-consortiumai-analysis",
+  "name": "Consortium AI Analysis",
+  "summary": "Gets the latest AI-generated crypto trading analysis (BUY / SELL / WAIT) for spot trading pairs from the Consortium AI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consortiumai_analysis",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Web Crafter 🕸️",
+      "features": [
+        "Gets the latest AI-generated crypto trading analysis (BUY / SELL / WAIT) for spot trading pairs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/consortiumai-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221954507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "consortiumai-analysis",
+      "url": "https://clawhub.ai/skills/consortiumai-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consortiumai-analysis",
+    "url": "https://clawhub.ai/skills/consortiumai-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consortiumai-analysis-684e1cf185be5066.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/consortiumai-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-consortiumai-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98c7fa87f7fe93195d253b20324942d722f7c4601c158605a0b7070675b914ca",
+      "artifactSizeBytes": 2528
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T16:58:03.596Z"
+}

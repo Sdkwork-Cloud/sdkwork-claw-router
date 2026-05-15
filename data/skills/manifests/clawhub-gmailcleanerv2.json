@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20498,
+  "uuid": "skill-clawhub-gmailcleanerv2",
+  "skillKey": "clawhub-gmailcleanerv2",
+  "name": "gmailcleanerfall",
+  "summary": "Read/search Gmail via gog CLI (preferred) or Python scripts (fallback). Inbox check, email search, content retrieval, IMAP support.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmailcleanerv2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Coorops25",
+      "features": [
+        "Read/search Gmail via gog CLI (preferred) or Python scripts (fallback)",
+        "Inbox check, email search, content retrieval, IMAP support."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gmailcleanerv2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220255760?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gmailcleanerv2",
+      "url": "https://clawhub.ai/skills/gmailcleanerv2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmailcleanerv2",
+    "url": "https://clawhub.ai/skills/gmailcleanerv2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmailcleanerv2-e7d68a9d76ef0cc8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gmailcleanerv2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gmailcleanerv2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fabfdbc986ac29516cec44c2b12f0aa2e995e8a5ba5056a81a99ea72c2c9fcb9",
+      "artifactSizeBytes": 2399
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T22:40:54.127Z"
+}

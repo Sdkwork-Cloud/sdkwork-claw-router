@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25327,
+  "uuid": "skill-clawhub-ka",
+  "skillKey": "clawhub-ka",
+  "name": "ri",
+  "summary": "Feishu document read/write operations. Activate when user mentions Feishu docs, cloud docs, or docx links.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ka",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KaRi-code",
+      "features": [
+        "Feishu document read/write operations",
+        "Activate when user mentions Feishu docs, cloud docs, or docx links."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ka@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190169541?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ka",
+      "url": "https://clawhub.ai/skills/ka"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ka",
+    "url": "https://clawhub.ai/skills/ka",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ka-3ebb1c99b12b7746.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ka@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ka-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34eb0ddb74b3543b62cc997ddfe893e062e639c60b0a14074fd7ea9a6da28f2c",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T06:46:49.212Z"
+}

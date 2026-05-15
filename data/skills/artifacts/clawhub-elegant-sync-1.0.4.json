@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elegant-sync@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elegant_sync",
+  "skill": {
+    "id": 60374,
+    "skillKey": "clawhub-elegant-sync",
+    "name": "Elegant Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elegant-sync",
+    "url": "https://clawhub.ai/skills/elegant-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elegant-sync-4fd2430828d7ece3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "优雅安全的 OpenClaw 配置同步工具 - 支持选择性备份、.gitignore 规则、版本控制"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "russellfei",
+      "userId": "s176a27myh2rbyrfvwd62nct2h83g913",
+      "displayName": "russellfei",
+      "image": "https://avatars.githubusercontent.com/u/3415940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 634,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1772530063514,
+      "changelog": "- Internal changes in index.js; no user-facing updates.\n- No SKILL.md documentation updates in this version.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a5bdf403f5c3573f18ec7cd729fcef9cac7b0773f06cf4394f443b123998274a"
+}

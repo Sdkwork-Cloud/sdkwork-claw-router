@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glm-web-search@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glm_web_search",
+  "skill": {
+    "id": 61685,
+    "skillKey": "clawhub-glm-web-search",
+    "name": "glm-web-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glm-web-search",
+    "url": "https://clawhub.ai/skills/glm-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glm-web-search-084f741270317ca0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 GLM 联网搜索 MCP 进行网络搜索。触发条件：(1) 用户要求进行网络搜索、在线搜索、查找信息 (2) 需要查询最新资讯、新闻、资料 (3) 使用 GLM 的 web_search 功能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thincher",
+      "userId": "s170vv9kmhtyc5hywwmkq5cf51845fxf",
+      "displayName": "要啥自行车",
+      "image": "https://avatars.githubusercontent.com/u/54308220?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2382,
+      "installsAllTime": 34,
+      "installsCurrent": 32,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1772112193976,
+      "changelog": "- 移除了自动从本地 auth-profiles.json 检索和建议 API Key 的流程，直接询问用户手动输入 API Key。\n- 其他配置与用法保持不变。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7529a0b86f4b89e63f08e386a0b95252663f777d10a98b2ca034f78875fea9b1"
+}

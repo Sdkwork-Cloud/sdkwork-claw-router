@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/exxon-mobil@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exxon_mobil",
+  "skill": {
+    "id": 41288,
+    "skillKey": "clawhub-exxon-mobil",
+    "name": "Exxon Mobil"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exxon-mobil",
+    "url": "https://clawhub.ai/skills/exxon-mobil",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exxon-mobil-c125960ab84b8380.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed insights on ExxonMobil's integrated oil and gas operations, energy transition efforts, financials, assets, and industry impact."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776852293786,
+      "changelog": "ExxonMobil skill version 1.0.0 – initial release:\n\n- Provides a concise overview of ExxonMobil’s history, business model, and competitive advantages.\n- Includes timeline of major milestones from Standard Oil origins through recent acquisitions.\n- Covers key business segments: Upstream, Downstream, Chemicals, and Low Carbon Solutions.\n- Highlights moat analysis, financial strength, and operational scale.\n- Lists essential company data and interesting facts for context and discussion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ca7ac85b4f9f809d4c4469520f05e5b955777514177c5a107eb5c00995b2e82"
+}

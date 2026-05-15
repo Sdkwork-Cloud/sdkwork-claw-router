@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hd-notes-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hd_notes_skills",
+  "skill": {
+    "id": 70104,
+    "skillKey": "clawhub-hd-notes-skills",
+    "name": "话袋笔记 Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hd-notes-skills",
+    "url": "https://clawhub.ai/skills/hd-notes-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hd-notes-skills-62576c0e81afd37f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "话袋笔记 - 新建、更新和搜索个人笔记。 **当以下情况时使用此 Skill**： (1) 用户要保存内容到笔记：「记一下」「存到笔记」「保存」「收藏」 (2) 用户要更新内容到笔记：「更新一下」「更新笔记」 (3) 用户要搜索或查看笔记：「搜一下」「找找笔记」「打开某条笔记」「笔记详情」 (4) 用户要配置话袋..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "monkeydb",
+      "userId": "s17bzjcpm1anady2ttcx59s195858va5",
+      "displayName": "monkeyDB",
+      "image": "https://avatars.githubusercontent.com/u/54386391?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776842524831,
+      "changelog": "话袋笔记 Skill 1.0.0\n\n- 初始发布，支持创建、更新和搜索个人笔记\n- 提供详细配置、权限、安全及错误处理规则\n- 支持基于自然语言的指令路由及 API 路由表\n- 明确区分配置、鉴权、规范响应与多人私密性约束",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a41dae7442aac16e039c3235bd3c97d6ea47d29ce530bac6b1542394f8f3c63"
+}

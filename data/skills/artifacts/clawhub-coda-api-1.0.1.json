@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coda-api@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coda_api",
+  "skill": {
+    "id": 15504,
+    "skillKey": "clawhub-coda-api",
+    "name": "Coda"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coda-api",
+    "url": "https://clawhub.ai/skills/coda-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coda-api-625f8199362f36ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coda API integration with managed OAuth. Manage docs, pages, tables, rows, and formulas. Use this skill when users want to read, create, update, or delete Co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 815,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777588746670,
+      "changelog": "- Changed all Maton API endpoints from gateway.maton.ai and ctrl.maton.ai to api.maton.ai for both API and connection management.\n- Updated usage examples and URLs in documentation to reflect the new api.maton.ai domain.\n- Added a new \"Security & Permissions\" section highlighting scope limitations and the need for explicit user approval for all write operations.\n- Removed LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a05b73142a4ce4ad61c1c14b61674d3e2752c0043be085ca21dee2508e924476"
+}

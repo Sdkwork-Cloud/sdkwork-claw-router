@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71597,
+  "uuid": "skill-clawhub-daily-hot-news",
+  "skillKey": "clawhub-daily-hot-news",
+  "name": "每日热榜",
+  "summary": "每日热榜技能 - 查询微博、知乎、B站、抖音等54个平台的热榜数据，支持定时推送和分类浏览。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_hot_news",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "one-box-u",
+      "features": [
+        "查询微博、知乎、B站、抖音等54个平台的热榜数据，支持定时推送和分类浏览。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-hot-news@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200010714?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-hot-news",
+      "url": "https://clawhub.ai/skills/daily-hot-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-hot-news",
+    "url": "https://clawhub.ai/skills/daily-hot-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-hot-news-9e7a94fbfe8c4889.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-hot-news@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-hot-news-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b8a283b8d9e61107073b310bb42f1aca1737d573b784b84f6332ac5cfd44154",
+      "artifactSizeBytes": 1854
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T11:50:31.956Z"
+}

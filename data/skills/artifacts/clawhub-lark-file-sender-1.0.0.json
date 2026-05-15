@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lark-file-sender@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lark_file_sender",
+  "skill": {
+    "id": 30868,
+    "skillKey": "clawhub-lark-file-sender",
+    "name": "lark-file-sender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lark-file-sender",
+    "url": "https://clawhub.ai/skills/lark-file-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lark-file-sender-c4d8ad3bd43eb19c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send files to Feishu/Lark users and groups via the message tool. Use when the user wants to send documents, images, PDFs, or any files through Feishu. Handle..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "timyljob2011-sudo",
+      "userId": "s173c9xf7r1vtegphbw5vyhap183hax4",
+      "displayName": "timyljob2011-sudo",
+      "image": "https://avatars.githubusercontent.com/u/253444946?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773884689042,
+      "changelog": "- Initial release of Feishu/Lark file sending capability.\n- Send documents, images, archives, and more to users or groups via Feishu/Lark message tool.\n- Supports custom messages, target selection (user or chat), and robust file path validation.\n- Includes guidance on file types, error handling, usage patterns, and best practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f6ac77658260ec907924cfff7295e76f1dfc06703d65f112c3102fe1e70e55a"
+}

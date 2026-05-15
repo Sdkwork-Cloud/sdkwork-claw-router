@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22951,
+  "uuid": "skill-clawhub-agencyzoom",
+  "skillKey": "clawhub-agencyzoom",
+  "name": "Agencyzoom",
+  "summary": "AgencyZoom integration. Manage Organizations, Leads, Users, Goals, Filters. Use when the user wants to interact with AgencyZoom data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agencyzoom",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "AgencyZoom integration",
+        "Manage Organizations, Leads, Users, Goals, Filters",
+        "Use when the user wants to interact with AgencyZoom data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agencyzoom@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agencyzoom",
+      "url": "https://clawhub.ai/skills/agencyzoom"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agencyzoom",
+    "url": "https://clawhub.ai/skills/agencyzoom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agencyzoom-0ba775d0f8cb5e20.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agencyzoom@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-agencyzoom-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12ec527284375b2eca30bb89906a8d7d7af4ba49fb431fd277064fba529b5811",
+      "artifactSizeBytes": 1862
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:08:31.957Z"
+}

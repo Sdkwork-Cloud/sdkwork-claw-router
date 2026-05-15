@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25053,
+  "uuid": "skill-clawhub-konektor",
+  "skillKey": "clawhub-konektor",
+  "name": "Konektor - CAPI & Lead Management",
+  "summary": "Access and manage marketing leads, update lead details, and retrieve analytics for lead performance and conversion tracking via Konektor API.",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.konektor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rama Aditya",
+      "features": [
+        "Access and manage marketing leads, update lead details, and retrieve analytics for lead perform."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/konektor@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213913142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "konektor",
+      "url": "https://clawhub.ai/skills/konektor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "konektor",
+    "url": "https://clawhub.ai/skills/konektor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/konektor-a76f1dbd4d24c829.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/konektor@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-konektor-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fae2dba6acd0f2062159a5ff4c60ccbd5efc2850c65bb8a601f4e5912c1a8b69",
+      "artifactSizeBytes": 2168
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T22:10:52.906Z"
+}

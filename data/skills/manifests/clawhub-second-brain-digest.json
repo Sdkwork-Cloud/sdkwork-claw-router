@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69038,
+  "uuid": "skill-clawhub-second-brain-digest",
+  "skillKey": "clawhub-second-brain-digest",
+  "name": "second-brain-digest",
+  "summary": "碎片内容提炼工作流。把扔进来的任何碎片内容（文章、笔记、截图文字、对话记录、 想法片段）提炼成标准化知识卡片，并自动发现与已有卡片的关联， 构建可检索、可复用的个人知识库。 触发场景（必须使用本 skill）： - 用户说\"帮我消化 / 整理 / 提炼这篇文章 / 这段内容\" - 用户粘贴了一段文字、截图文字、链...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.second_brain_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "boboy-j",
+      "features": [
+        "碎片内容提炼工作流。把扔进来的任何碎片内容（文章、笔记、截图文字、对话记录、 想法片段）提炼成标准化知识卡片，并自动发现与已有卡片的关联， 构建可检索、可复用的个人知识库。 触发场景（必须使.",
+        "用户说\"帮我消化 / 整理 / 提炼这篇文章 / 这段内容\"",
+        "用户粘贴了一段文字、截图文字、链..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/second-brain-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257822985?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "second-brain-digest",
+      "url": "https://clawhub.ai/skills/second-brain-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "second-brain-digest",
+    "url": "https://clawhub.ai/skills/second-brain-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/second-brain-digest-b6ef94c4534aa396.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/second-brain-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-second-brain-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:159f96c9ae137e0952951e4eec6ea706f793cb5fabf11b488cb4707edb5ac23b",
+      "artifactSizeBytes": 2615
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T15:32:54.010Z"
+}

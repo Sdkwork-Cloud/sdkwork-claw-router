@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68202,
+  "uuid": "skill-clawhub-bee-inquiry-read",
+  "skillKey": "clawhub-bee-inquiry-read",
+  "name": "bee-inquiry-read",
+  "summary": "基于\"小蜜蜂（Bee）建站\"平台的询盘数据进行读取、分页查询与统计分析，支持多语言筛选、字段选择和结构化报告生成。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bee_inquiry_read",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mouxiaming",
+      "features": [
+        "基于\"小蜜蜂（Bee）建站\"平台的询盘数据进行读取、分页查询与统计分析，支持多语言筛选、字段选择和结构化报告生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bee-inquiry-read@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45960106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bee-inquiry-read",
+      "url": "https://clawhub.ai/skills/bee-inquiry-read"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bee-inquiry-read",
+    "url": "https://clawhub.ai/skills/bee-inquiry-read",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bee-inquiry-read-e3e587a8e9395db4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bee-inquiry-read@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bee-inquiry-read-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a70b3a8ba6c9ee31ca191a33e7e6b038cf0ad3a9df6901c5837b49cbe3e5e5d",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T09:02:03.068Z"
+}

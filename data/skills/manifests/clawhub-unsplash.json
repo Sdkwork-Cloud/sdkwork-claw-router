@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12129,
+  "uuid": "skill-clawhub-unsplash",
+  "skillKey": "clawhub-unsplash",
+  "name": "Unsplash",
+  "summary": "Search, browse, and download high-quality free photos from Unsplash with filtering, random selection, and detailed photo metadata access.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unsplash",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BrokenWatchCEO",
+      "features": [
+        "Search, browse, and download high-quality free photos from Unsplash with filtering, random sele."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unsplash@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110206505?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unsplash",
+      "url": "https://clawhub.ai/skills/unsplash"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unsplash",
+    "url": "https://clawhub.ai/skills/unsplash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unsplash-6e204575f58f2425.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unsplash@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unsplash-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c77f37d5031cd9444b9b14d8b6ac301f08202fc141fa5dc9e40490d0973fb56",
+      "artifactSizeBytes": 2343
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T04:28:06.901Z"
+}

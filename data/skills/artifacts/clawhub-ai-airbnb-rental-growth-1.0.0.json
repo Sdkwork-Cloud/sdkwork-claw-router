@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-airbnb-rental-growth@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_airbnb_rental_growth",
+  "skill": {
+    "id": 38343,
+    "skillKey": "clawhub-ai-airbnb-rental-growth",
+    "name": "AI Airbnb Rental Growth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-airbnb-rental-growth",
+    "url": "https://clawhub.ai/skills/ai-airbnb-rental-growth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-airbnb-rental-growth-3b1e864054a48a97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrapes Airbnb, Vrbo, and Booking listings, analyzes pricing and reviews, and generates data-driven strategies to optimize rental revenue and marketing content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775763766736,
+      "changelog": "AI Airbnb and Short Term Rental Growth Engine v1.0.0\n\n- Initial release with multi-platform short-term rental market scraping (Airbnb, Vrbo, Booking.com) via Apify integration.\n- Automated competitor analysis with dynamic pricing, occupancy, amenity, and review sentiment insights.\n- Generates optimized listing text and marketing content, including property showcase videos using InVideo AI.\n- Calculates revenue potential, scores your property against competitors, and produces monthly market reports.\n- Example code provided for scraping, analysis, and competitive scoring to accelerate your rental business.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69394a1893c51df7453ce5af5cef8dac73657adebeddc2f9f2e11506d52e8ed7"
+}

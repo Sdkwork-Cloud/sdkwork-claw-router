@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65386,
+  "uuid": "skill-clawhub-minimax-tts-cn",
+  "skillKey": "clawhub-minimax-tts-cn",
+  "name": "MiniMax TTS 国内版",
+  "summary": "调用MiniMax语音合成API，支持中文多音色、高质量文本转语音，提供流式和非流式音频输出。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_tts_cn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whille",
+      "features": [
+        "调用MiniMax语音合成API，支持中文多音色、高质量文本转语音，提供流式和非流式音频输出。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-tts-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1240846?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-tts-cn",
+      "url": "https://clawhub.ai/skills/minimax-tts-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-tts-cn",
+    "url": "https://clawhub.ai/skills/minimax-tts-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-tts-cn-63d9235e94674a9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-tts-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-tts-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c3f37908d0092c986326f6f2ebdcb79fa35fb0b1e412f77a15750661bf14bfb",
+      "artifactSizeBytes": 2139
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T14:29:17.353Z"
+}

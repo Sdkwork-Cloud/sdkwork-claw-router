@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20883,
+  "uuid": "skill-clawhub-operator",
+  "skillKey": "clawhub-operator",
+  "name": "Operator",
+  "summary": "Manage your Operator fleet of AI agent instances. Create, configure, monitor, message, and manage OpenClaw agents. Handles authentication, instance lifecycle...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.operator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "David",
+      "features": [
+        "Manage your Operator fleet of AI agent instances",
+        "Create, configure, monitor, message, and manage OpenClaw agents",
+        "Handles authentication, instance lifecycle..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/operator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19938602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "operator",
+      "url": "https://clawhub.ai/skills/operator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "operator",
+    "url": "https://clawhub.ai/skills/operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/operator-06e55b633481f7bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/operator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-operator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2bbb8108afe64c52f1247b20e1e1970569f4dfa6ef15d07b54b1c9d3f1ce189",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T15:30:35.987Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/videogen@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.videogen",
+  "skill": {
+    "id": 63376,
+    "skillKey": "clawhub-videogen",
+    "name": "Videogen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "videogen",
+    "url": "https://clawhub.ai/skills/videogen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/videogen-efaa7b6b2286e553.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "视频号AI短视频自动化生产流水线（v2）。用户说\"做视频\"、\"生成视频\"、\"短视频制作\"、\"视频混剪\"时触发。支持三种内容模式自动切换（Mode A纯干货 / Mode B剧情+科普 / Mode C漫剧型）。使用 MiniMax Hailuo AI 生成视频片段，配合 FFmpeg 混剪，输出适合视频号发布的完..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devioslang",
+      "userId": "s17echkxjatbs69t4zqwem78px83ht0r",
+      "displayName": "DeviosLang",
+      "image": "https://avatars.githubusercontent.com/u/5735268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 338,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1775590456660,
+      "changelog": "视频号竖屏字体规范：72px标题/32px节点/20px标签 + 精简配色(#007AFF单一强调色) + 60px安全区",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c9d13dba94e450ea5615c3a31d5bb28d51329f50b0217f201e6f5aa6bd8c3d8"
+}

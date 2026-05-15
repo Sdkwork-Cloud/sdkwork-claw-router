@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59397,
+  "uuid": "skill-clawhub-llm-memory-publish",
+  "skillKey": "clawhub-llm-memory-publish",
+  "name": "Llm Memory Publish",
+  "summary": "LLM Memory Integration - 接口层 + 自动化钩子。安装后自动从 CNB 仓库拉取私有增强包。",
+  "version": "8.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_memory_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xkzs2007",
+      "features": [
+        "LLM Memory Integration",
+        "接口层 + 自动化钩子。安装后自动从 CNB 仓库拉取私有增强包。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-memory-publish@8.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129643655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-memory-publish",
+      "url": "https://clawhub.ai/skills/llm-memory-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-memory-publish",
+    "url": "https://clawhub.ai/skills/llm-memory-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-memory-publish-1b2480a7c4660626.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-memory-publish@8.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-memory-publish-8.0.2.json",
+      "version": "8.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6ca1a1d5125f14663b68c782ddc1baa5f6c1d0bda9b8c86935754fc9cabd984",
+      "artifactSizeBytes": 1851
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T03:24:11.767Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72531,
+  "uuid": "skill-clawhub-my-weather-helper",
+  "skillKey": "clawhub-my-weather-helper",
+  "name": "JACK",
+  "summary": "提供指定城市实时天气、气温和穿衣建议，如无城市则询问位置，数据来源真实可靠。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_weather_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wanglingchao-2025",
+      "features": [
+        "提供指定城市实时天气、气温和穿衣建议，如无城市则询问位置，数据来源真实可靠。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-weather-helper@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235682901?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-weather-helper",
+      "url": "https://clawhub.ai/skills/my-weather-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-weather-helper",
+    "url": "https://clawhub.ai/skills/my-weather-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-weather-helper-11d298e45987bfdf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-weather-helper@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-weather-helper-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9f69dd2d12f43081472d98a1760caecbd06ba2bcda15af4860fa1afe32e3811",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T09:13:36.615Z"
+}

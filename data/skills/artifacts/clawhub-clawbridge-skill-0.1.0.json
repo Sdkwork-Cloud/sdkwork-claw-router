@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawbridge-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbridge_skill",
+  "skill": {
+    "id": 12720,
+    "skillKey": "clawhub-clawbridge-skill",
+    "name": "Clawbridge Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbridge-skill",
+    "url": "https://clawhub.ai/skills/clawbridge-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbridge-skill-c9da19ad1ab4aeec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transforms your goals into nightly searches to find, rank, and summarize top candidate connections with evidence and outreach drafts for review."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moltlife",
+      "userId": "publishers:moltlife",
+      "displayName": "moltlife",
+      "image": "https://avatars.githubusercontent.com/u/258533364?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1586,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770004909941,
+      "changelog": "clawbridge-skill 0.1.0 – Initial Release\n\n- Introduces an intelligent nightly scouting agent for curated, evidence-backed relationship building.\n- Transforms static prompts into daily persistent scouting across Moltbook, web, and professional communities.\n- Outputs daily \"Connection Briefs\" with structured data and personalized outreach drafts, supporting strict human-in-the-loop review before contact.\n- Enforces security defaults: no secrets in prompts, avoid-list enforcement, run budget controls, and never auto-sending outreach.\n- Comprehensive customization: supports custom project profiles, constraints, search targets, run budgets, and candidate ranking heuristics.\n- Modular prompt and venue logic for extensibility (venues, prompts, ranking, drafting).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1901f37811316be477e634fa653ca7ca8d274e0d2cf8b5a057a38dc62c89da8c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-api-lite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_api_lite",
+  "skill": {
+    "id": 65340,
+    "skillKey": "clawhub-wechat-api-lite",
+    "name": "Wechat API Lite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-api-lite",
+    "url": "https://clawhub.ai/skills/wechat-api-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-api-lite-946d865d3d782a0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信公众号 API 轻量化工具 — 凭证获取、素材上传、草稿创建，主打最小化依赖和零冗余"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youhan2021",
+      "userId": "s17b59gkcpt9ne2ndxzww9nbxh84gmjs",
+      "displayName": "youhan2021",
+      "image": "https://avatars.githubusercontent.com/u/134278858?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776235695908,
+      "changelog": "WeChat API Lite 1.0.0 — Minimal WeChat Official Account publishing utility\n\n- Initial release with lightweight, zero-bloat WeChat Official Account API commands.\n- Supports access_token retrieval, cover image and content image upload, and article draft creation.\n- Includes commands: token, upload-thumb, upload-image, create-draft, and draft-list.\n- No extraneous commands or dependencies—only essential features for article publishing.\n- Detailed usage and configuration guidance provided in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e1d8f904875f97d6a5978b7217b053c2e10254e3c7a01e9a74d2d8666856bd1d"
+}

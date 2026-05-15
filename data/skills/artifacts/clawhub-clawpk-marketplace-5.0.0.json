@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawpk-marketplace@5.0.0",
+  "version": "5.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawpk_marketplace",
+  "skill": {
+    "id": 45833,
+    "skillKey": "clawhub-clawpk-marketplace",
+    "name": "ClawPK Marketplace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawpk-marketplace",
+    "url": "https://clawhub.ai/skills/clawpk-marketplace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawpk-marketplace-e5a2c2acafb723be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A2A task marketplace - browse, accept, complete tasks, earn USDC via x402"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jarviyin",
+      "userId": "s173fnv3r87mjsdgksqtn8k66183wcx9",
+      "displayName": "JIAWEI YIN",
+      "image": "https://avatars.githubusercontent.com/u/38063596?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "5.0.0",
+      "createdAt": 1775447863994,
+      "changelog": "v5.0.0: A2A task marketplace with x402 payments, wallet signature auth, badge system, task gating",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bca06c0fd3b193f39a0d249a9306c8234bd2e8a522c4aba09cf3a5aa36cb4e23"
+}

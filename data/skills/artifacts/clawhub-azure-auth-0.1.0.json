@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/azure-auth@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.azure_auth",
+  "skill": {
+    "id": 12694,
+    "skillKey": "clawhub-azure-auth",
+    "name": "Azure Auth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "azure-auth",
+    "url": "https://clawhub.ai/skills/azure-auth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/azure-auth-8117c274fe6c9728.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Microsoft Entra ID (Azure AD) authentication for React SPAs with MSAL.js and Cloudflare Workers JWT validation using jose library. Full-stack pattern with Authorization Code Flow + PKCE. Prevents 8 documented errors. Use when: implementing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1587,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769871275836,
+      "changelog": "azure-auth 0.1.0\n\n- Initial release providing Microsoft Entra ID (Azure AD) authentication for React SPAs and JWT validation in Cloudflare Workers.\n- Implements Authorization Code Flow with PKCE using @azure/msal-react v5 and the jose library (Cloudflare Workers compatible).\n- Offers mitigation guidance for 8 common MSAL/Azure AD errors, including SSO issues and token refresh problems.\n- Includes quick-start setup for both frontend (React) and backend (Cloudflare Workers).\n- Documents key breaking changes: MSAL v4→v5 migration, Azure AD B2C and ADAL retirements.\n- Provides step-by-step configuration, recommended patterns, and architecture overview.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2ba4640847b5ebcdef50d01fecefec11d53385dfdc194d426880027babcedc28"
+}

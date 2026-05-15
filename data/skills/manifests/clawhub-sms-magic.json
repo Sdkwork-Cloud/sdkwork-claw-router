@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30363,
+  "uuid": "skill-clawhub-sms-magic",
+  "skillKey": "clawhub-sms-magic",
+  "name": "Sms Magic",
+  "summary": "SMS Magic integration. Manage SMSes, Contacts, Conversations, Templates, Campaigns, Lists. Use when the user wants to interact with SMS Magic data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sms_magic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SMS Magic integration",
+        "Manage SMSes, Contacts, Conversations, Templates, Campaigns, Lists",
+        "Use when the user wants to interact with SMS Magic data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sms-magic@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sms-magic",
+      "url": "https://clawhub.ai/skills/sms-magic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sms-magic",
+    "url": "https://clawhub.ai/skills/sms-magic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sms-magic-33633baa077fa0fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sms-magic@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sms-magic-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:681da71a7f1e29c35702be76fcecabac3a577dfc717f52e5fbed29415c4abdb7",
+      "artifactSizeBytes": 1861
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:44:10.069Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43006,
+  "uuid": "skill-clawhub-paradex-portfolio-copilot",
+  "skillKey": "clawhub-paradex-portfolio-copilot",
+  "name": "Portfolio Copilot",
+  "summary": "Conversational portfolio briefings for Paradex accounts and vaults. Unifies account summary, positions, fills, balances, market data, and funding into natura...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paradex_portfolio_copilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergey Vidyuk",
+      "features": [
+        "Conversational portfolio briefings for Paradex accounts and vaults",
+        "Unifies account summary, positions, fills, balances, market data, and funding into natura..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paradex-portfolio-copilot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14086?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paradex-portfolio-copilot",
+      "url": "https://clawhub.ai/skills/paradex-portfolio-copilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paradex-portfolio-copilot",
+    "url": "https://clawhub.ai/skills/paradex-portfolio-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paradex-portfolio-copilot-f66f78727da24da2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paradex-portfolio-copilot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paradex-portfolio-copilot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2b887aca44e0d061861863902f2eff82833be21bf680864b82ea5349ba97226",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T05:21:25.559Z"
+}

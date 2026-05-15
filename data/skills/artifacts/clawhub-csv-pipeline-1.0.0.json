@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/csv-pipeline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.csv_pipeline",
+  "skill": {
+    "id": 8884,
+    "skillKey": "clawhub-csv-pipeline",
+    "name": "CSV Data Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "csv-pipeline",
+    "url": "https://clawhub.ai/skills/csv-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/csv-pipeline-360e250846d6a28b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Process, transform, analyze, and report on CSV and JSON data files. Use when the user needs to filter rows, join datasets, compute aggregates, convert formats, deduplicate, or generate summary reports from tabular data. Works with any CSV,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gitgoodordietrying",
+      "userId": "publishers:gitgoodordietrying",
+      "displayName": "gitgoodordietrying",
+      "image": "https://avatars.githubusercontent.com/u/116975874?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5650,
+      "installsAllTime": 41,
+      "installsCurrent": 41,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770151669885,
+      "changelog": "Initial release - CSV/JSON/TSV data processing with filtering, joining, grouping, aggregation, format conversion, deduplication, validation, and report generation using Python and standard CLI tools.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:703193897e2a23143ef8c862451106ea987a3ad0bf996b4df8af5c8d8fd17386"
+}

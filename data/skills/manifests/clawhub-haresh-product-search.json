@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20857,
+  "uuid": "skill-clawhub-haresh-product-search",
+  "skillKey": "clawhub-haresh-product-search",
+  "name": "Haresh Product Search",
+  "summary": "Search e-commerce products via n8n webhook integration",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.haresh_product_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Haresh Sainaath S",
+      "features": [
+        "Search e-commerce products via n8n webhook integration"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/haresh-product-search@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/180730984?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "haresh-product-search",
+      "url": "https://clawhub.ai/skills/haresh-product-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "haresh-product-search",
+    "url": "https://clawhub.ai/skills/haresh-product-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/haresh-product-search-b310800923e3238f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/haresh-product-search@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-haresh-product-search-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4538a9e73578b6b22c00f079485bcd34b48ce37440aa2e88733beaf72d01e955",
+      "artifactSizeBytes": 2139
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T19:01:47.808Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66840,
+  "uuid": "skill-clawhub-compliance-audit-pro",
+  "skillKey": "clawhub-compliance-audit-pro",
+  "name": "compliance-audit-pro",
+  "summary": "面向法律/财务/采购场景的合规审计引擎，自动提取风险条款、映射法规基线、生成审计底稿与澄清模板",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compliance_audit_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "boboy-j",
+      "features": [
+        "面向法律/财务/采购场景的合规审计引擎，自动提取风险条款、映射法规基线、生成审计底稿与澄清模板"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/compliance-audit-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257822985?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "compliance-audit-pro",
+      "url": "https://clawhub.ai/skills/compliance-audit-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compliance-audit-pro",
+    "url": "https://clawhub.ai/skills/compliance-audit-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compliance-audit-pro-bb13328e1a02047b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/compliance-audit-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-compliance-audit-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:615afbd347869364d613f7b932f5dc9bd1ba6a4a1cf6f8ee8a282a1ffaddebe5",
+      "artifactSizeBytes": 2370
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T15:47:12.713Z"
+}

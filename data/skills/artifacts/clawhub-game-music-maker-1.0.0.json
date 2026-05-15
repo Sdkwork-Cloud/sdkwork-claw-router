@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/game-music-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.game_music_maker",
+  "skill": {
+    "id": 48255,
+    "skillKey": "clawhub-game-music-maker",
+    "name": "Game Music Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "game-music-maker",
+    "url": "https://clawhub.ai/skills/game-music-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/game-music-maker-91e9e2ccdc9e98e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get music-scored videos ready to post, without touching a single slider. Upload your game footage or prompts (MP4, MOV, AVI, WebM, up to 500MB), say somethin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777404230069,
+      "changelog": "Initial release of Game Music Maker — Generate Music for Game Videos.\n\n- Instantly generate royalty-free background music for your game videos by uploading footage or providing a prompt.\n- Handles all music generation, video merging, and export in the cloud—no local installation needed.\n- Supports MP4, MOV, AVI, WebM video uploads up to 500MB, plus many image and audio formats.\n- Simple prompts trigger tailored background music creation, with finished 1080p MP4 exports ready for use.\n- Easy credit system with free starter tokens for new users; seamless session and export handling.\n- Built for indie game devs and creators needing quick, high-quality scene-specific music without hiring a composer.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c4e5e746ced7711ffa7875aab95b6f532f70e3f55431b11f0bf2668a2bd39b9"
+}

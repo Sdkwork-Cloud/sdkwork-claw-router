@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sports-acca-tracker@1.3.1",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sports_acca_tracker",
+  "skill": {
+    "id": 53334,
+    "skillKey": "clawhub-sports-acca-tracker",
+    "name": "Acca Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sports-acca-tracker",
+    "url": "https://clawhub.ai/skills/sports-acca-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sports-acca-tracker-9bbf3218c0662ba1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track accumulator (acca) betting slips across football, basketball, and tennis — parses slip photo or text, checks live scores every 15 minutes, and reports..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "svenmedina07-ship-it",
+      "userId": "s175bd94s9e66xgsayqwcrrev58400h8",
+      "displayName": "Banozz",
+      "image": "https://avatars.githubusercontent.com/u/263121691?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.3.1",
+      "createdAt": 1776287781812,
+      "changelog": "sports-acca-tracker 1.3.1\n\n- Updated data source documentation for more accurate and detailed score-fetching (references/data-sources.md).\n- Minor script improvements in scores.sh for reliability.\n- SKILL.md updated for clarity; no core feature or behavior changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32cbaf246965ed69b6a46f7665554e129813e4a4a75c72789594d3431cdd2844"
+}

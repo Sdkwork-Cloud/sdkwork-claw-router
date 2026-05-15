@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rotifer-guide@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rotifer_guide",
+  "skill": {
+    "id": 41830,
+    "skillKey": "clawhub-rotifer-guide",
+    "name": "Rotifer Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rotifer-guide",
+    "url": "https://clawhub.ai/skills/rotifer-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rotifer-guide-a62dd0d0bc5bef4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unified user-facing entry point for Rotifer Protocol: interactive onboarding, natural-language scaffolding, diagnostics, ecosystem search, and fidelity upgra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaoba-dev",
+      "userId": "s174dvd7sg66gw86h4t3c8575d83g51m",
+      "displayName": "Xiaoba",
+      "image": "https://avatars.githubusercontent.com/u/229576266?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776265985361,
+      "changelog": "Add Prerequisites section with CLI and MCP setup instructions (no hardcoded versions)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d4fffbb2d7df708d0652bcc1f7210c212ab7e278076a6734a92148f8b2fec50b"
+}

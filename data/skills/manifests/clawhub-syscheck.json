@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22717,
+  "uuid": "skill-clawhub-syscheck",
+  "skillKey": "clawhub-syscheck",
+  "name": "Syscheck",
+  "summary": "System health checker and diagnostics tool. Quick overview of CPU usage, memory, disk space, uptime, load average, and running processes. Monitor system reso...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.syscheck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "System health checker and diagnostics tool",
+        "Quick overview of CPU usage, memory, disk space, uptime, load average, and running processes",
+        "Monitor system reso..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/syscheck@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "syscheck",
+      "url": "https://clawhub.ai/skills/syscheck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "syscheck",
+    "url": "https://clawhub.ai/skills/syscheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/syscheck-54c3f7e2ca999236.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/syscheck@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-syscheck-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c4e7c69ca5f1f5587bcd74173d6e316f5a36c4efc0d6c3658c493c6b8ab883d",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T12:30:00.961Z"
+}

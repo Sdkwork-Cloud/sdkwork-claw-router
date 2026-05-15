@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55670,
+  "uuid": "skill-clawhub-squad-control",
+  "skillKey": "clawhub-squad-control",
+  "name": "Squad Control",
+  "summary": "Integrate with Squad Control kanban for AI agent task orchestration. ⚠️ Security note: This skill handles GitHub tokens and API keys by design — it clones pr...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.squad_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wilson Gan",
+      "features": [
+        "Integrate with Squad Control kanban for AI agent task orchestration",
+        "⚠️ Security note: This skill handles GitHub tokens and API keys by design — it clones pr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/squad-control@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5180798?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "squad-control",
+      "url": "https://clawhub.ai/skills/squad-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "squad-control",
+    "url": "https://clawhub.ai/skills/squad-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/squad-control-8c1ff8da56877694.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/squad-control@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-squad-control-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00150a1ec1d57b811e463ee6aadab0be9866a6a87954c70073d67ef7e0d79c3f",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T04:30:30.943Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29327,
+  "uuid": "skill-clawhub-fxtwitter-translate",
+  "skillKey": "clawhub-fxtwitter-translate",
+  "name": "FX Twitter Translate",
+  "summary": "Fetch full text from Twitter/X tweets via fxtwitter API, then translate to Chinese. Triggers when user shares a x.com / twitter.com / fxtwitter link and asks...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fxtwitter_translate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dizhu",
+      "features": [
+        "Fetch full text from Twitter/X tweets via fxtwitter API, then translate to Chinese",
+        "Triggers when user shares a x.com / twitter.com / fxtwitter link and asks..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fxtwitter-translate@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3749687?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fxtwitter-translate",
+      "url": "https://clawhub.ai/skills/fxtwitter-translate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fxtwitter-translate",
+    "url": "https://clawhub.ai/skills/fxtwitter-translate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fxtwitter-translate-0dbc6d1dd4e2a2b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fxtwitter-translate@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fxtwitter-translate-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5329b469c87a84ee800c15cc43246952fd9092401ef24296b4d7d531a538e914",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T12:54:59.669Z"
+}

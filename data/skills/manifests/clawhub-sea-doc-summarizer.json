@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25065,
+  "uuid": "skill-clawhub-sea-doc-summarizer",
+  "skillKey": "clawhub-sea-doc-summarizer",
+  "name": "SEA Multilingual Document Summarizer",
+  "summary": "Summarize documents in EN/CN/BM/ID with cross-language support. Optimized for Southeast Asian languages.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sea_doc_summarizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wms2537",
+      "features": [
+        "Summarize documents in EN/CN/BM/ID with cross-language support",
+        "Optimized for Southeast Asian languages."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sea-doc-summarizer@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51080539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sea-doc-summarizer",
+      "url": "https://clawhub.ai/skills/sea-doc-summarizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sea-doc-summarizer",
+    "url": "https://clawhub.ai/skills/sea-doc-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sea-doc-summarizer-8e5ac0700bfae2f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sea-doc-summarizer@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sea-doc-summarizer-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9056f9d2bdf760839b9317b31cf5defd97929af3cfc79d2482716d29e728869d",
+      "artifactSizeBytes": 2517
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T16:49:51.870Z"
+}

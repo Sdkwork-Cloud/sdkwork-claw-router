@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justcalendar@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justcalendar",
+  "skill": {
+    "id": 26279,
+    "skillKey": "clawhub-justcalendar",
+    "name": "JustCalendar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justcalendar",
+    "url": "https://clawhub.ai/skills/justcalendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justcalendar-7d5a7da1ed019583.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when a user needs to install, authenticate, or operate the Just Calendar CLI against https://justcalendar.ai, including generating an agent to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andredalmeida",
+      "userId": "publishers:andredalmeida",
+      "displayName": "André Almeida",
+      "image": "https://avatars.githubusercontent.com/u/282436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772572610833,
+      "changelog": "- Added \"Bulk-First Rule\" section to require bulk commands (multi-date set/delete/get) by default for multi-day JustCalendar CLI operations.\n- Provided usage notes, examples, and exceptions for when to use bulk vs per-day commands.\n- Clarified that single-day commands remain unchanged.\n- No other changes to commands or skill behavior.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9b92dc0edc0618b028309d6f133580f0a4c24fd7c8fa73bfb1adc6da7bb3eeea"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15146,
+  "uuid": "skill-clawhub-clawsouls",
+  "skillKey": "clawhub-clawsouls",
+  "name": "ClawSouls",
+  "summary": "Manage AI agent personas (Souls) for OpenClaw. Use when the user wants to install, switch, list, or restore AI personalities/personas. Triggers on requests l...",
+  "version": "0.6.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawsouls",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tom Jaejoon Lee",
+      "features": [
+        "Manage AI agent personas (Souls) for OpenClaw",
+        "Use when the user wants to install, switch, list, or restore AI personalities/personas",
+        "Triggers on requests l..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawsouls@0.6.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6657615?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawsouls",
+      "url": "https://clawhub.ai/skills/clawsouls"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawsouls",
+    "url": "https://clawhub.ai/skills/clawsouls",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawsouls-667c61260a17ce9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawsouls@0.6.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawsouls-0.6.3.json",
+      "version": "0.6.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24c80b4b53581088d68f65485ad77242abff8f098cfb159203bea352dd5c1dc8",
+      "artifactSizeBytes": 2375
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T09:58:37.164Z"
+}

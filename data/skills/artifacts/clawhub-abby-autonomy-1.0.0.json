@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abby-autonomy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abby_autonomy",
+  "skill": {
+    "id": 67070,
+    "skillKey": "clawhub-abby-autonomy",
+    "name": "Abby Autonomy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abby-autonomy",
+    "url": "https://clawhub.ai/skills/abby-autonomy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abby-autonomy-ba06dd3f76497edf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使 Abby 能主动从任务队列获取并执行任务，自主管理任务状态，持续推进工作至完成或资源限制。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "earnabitmore365",
+      "userId": "publishers:earnabitmore365",
+      "displayName": "earnabitmore365",
+      "image": "https://avatars.githubusercontent.com/u/258793012?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 558,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771666742684,
+      "changelog": "Abby Autonomy Skill 1.0.0 – Empowering Abby to work proactively\n\n- Transforms Abby from passive waiting (\"HEARTBEAT_OK\") to active, autonomous task execution.\n- Implements a structured task queue system with clear states (Ready, In Progress, Done Today, Blocked).\n- Abby now pulls new tasks, tracks progress in memory, and works until set limits or completion.\n- Includes robust status checks for emergencies, resource limits, and ongoing tasks.\n- Integrates with long-term memory and cron for state tracking and scheduled operation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0ba028f11810aac999e5464bee9cbb2f87139fda922179ed164d405a4cf42399"
+}

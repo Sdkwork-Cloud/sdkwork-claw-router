@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tickerdb@0.1.97",
+  "version": "0.1.97",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tickerdb",
+  "skill": {
+    "id": 25927,
+    "skillKey": "clawhub-tickerdb",
+    "name": "Tickerdb"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tickerdb",
+    "url": "https://clawhub.ai/skills/tickerdb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tickerdb-b30e4710e5aaa4f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect your agent to pre-computed market context that improves reasoning and reduces token usage."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tickerdb",
+      "userId": "s17chf3wxqvmngd0r945q869sh83qjhc",
+      "displayName": "TickerDB",
+      "image": "https://avatars.githubusercontent.com/u/267823731?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "0.1.97",
+      "createdAt": 1777001570824,
+      "changelog": "No functional changes. The only update was to the documentation file (SKILL.md) with no detected content modifications.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25f3582480a2e09d5b188848702da9f7b8d4d9cd10e80be34fd46d9c8ad45741"
+}

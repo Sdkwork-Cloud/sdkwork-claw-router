@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-system-pro-v2@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_system_pro_v2",
+  "skill": {
+    "id": 58923,
+    "skillKey": "clawhub-memory-system-pro-v2",
+    "name": "Memory System Pro V2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-system-pro-v2",
+    "url": "https://clawhub.ai/skills/memory-system-pro-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-system-pro-v2-77d50ccd6d7c0954.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "完整记忆系统 - 四类记忆分类 + AutoDream自动整合 + MiniMax LLM驱动 + Feedback双向记录"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "minmengxhw-cpu",
+      "userId": "s171n50ja894a51q7a162ztvws83gbtb",
+      "displayName": "minmengxhw-cpu",
+      "image": "https://avatars.githubusercontent.com/u/265757721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774957912530,
+      "changelog": "v2.0.1: 修复Critical问题 - memory_write触发检查/HEARTBEAT hook/新增文件内容",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9f21f3f1ca88cd0cfbc03957c94088b03d95cb4b0053aa8d8d7ac3eff9ffdf3"
+}

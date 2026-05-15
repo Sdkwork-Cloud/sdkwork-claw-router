@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50571,
+  "uuid": "skill-clawhub-clinstagram",
+  "skillKey": "clawhub-clinstagram",
+  "name": "clinstagram",
+  "summary": "Full Instagram CLI — posting, DMs, stories, analytics, followers, hashtags, likes, comments. Supports Meta Graph API (official, safe) and private API (full f...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clinstagram",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "199-bio",
+      "features": [
+        "Full Instagram CLI — posting, DMs, stories, analytics, followers, hashtags, likes, comments",
+        "Supports Meta Graph API (official, safe) and private API (full f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clinstagram@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5087259?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clinstagram",
+      "url": "https://clawhub.ai/skills/clinstagram"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clinstagram",
+    "url": "https://clawhub.ai/skills/clinstagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clinstagram-907f1a7402e12c13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clinstagram@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clinstagram-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c8dc5a4a588891fe2a4878c1655e945efd6ea93e81dc1b6065c4725689060e1",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T03:07:42.914Z"
+}

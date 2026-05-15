@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65989,
+  "uuid": "skill-clawhub-fluid-memory",
+  "skillKey": "clawhub-fluid-memory",
+  "name": "Fluid Memory",
+  "summary": "基于艾宾浩斯遗忘曲线和访问频率的衰减模型设计的遗忘和归档机制，完全依赖openclaw原生记忆系统的拟人化流体记忆系统",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fluid_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JiagHong Phang",
+      "features": [
+        "基于艾宾浩斯遗忘曲线和访问频率的衰减模型设计的遗忘和归档机制，完全依赖openclaw原生记忆系统的拟人化流体记忆系统"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fluid-memory@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262230615?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fluid-memory",
+      "url": "https://clawhub.ai/skills/fluid-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fluid-memory",
+    "url": "https://clawhub.ai/skills/fluid-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fluid-memory-933e0be7cd01bef1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fluid-memory@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-fluid-memory-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6b91c7bc657337d44a622d3e213c596efb45399b3d127ff73187630e31765a7",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T15:47:25.999Z"
+}

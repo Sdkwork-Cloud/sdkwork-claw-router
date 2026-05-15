@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stable-diffusion-sd3@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stable_diffusion_sd3",
+  "skill": {
+    "id": 50401,
+    "skillKey": "clawhub-stable-diffusion-sd3",
+    "name": "Stable Diffusion Sd3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stable-diffusion-sd3",
+    "url": "https://clawhub.ai/skills/stable-diffusion-sd3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stable-diffusion-sd3-d96c329d3cf4ec81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stable Diffusion 3 and SD3.5 Large on Apple Silicon — generate Stable Diffusion images locally with DiffusionKit's MLX-native backend. SD3 Medium for fast St..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 289,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775254726016,
+      "changelog": "Cross-platform support: macOS, Linux, and Windows. Updated OS metadata, descriptions, and hardware recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:58c6be5506021ec15c6e2a4c3dc88a7513ca062134146c07701f9b0dd34f8df5"
+}

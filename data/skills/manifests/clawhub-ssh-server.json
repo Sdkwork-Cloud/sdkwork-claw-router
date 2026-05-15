@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21816,
+  "uuid": "skill-clawhub-ssh-server",
+  "skillKey": "clawhub-ssh-server",
+  "name": "SSH Server",
+  "summary": "SSH remote connection and operation for servers (Linux/Unix cloud servers, etc.)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssh_server",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XingFaLin",
+      "features": [
+        "SSH remote connection and operation for servers (Linux/Unix cloud servers, etc.)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssh-server@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203192917?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssh-server",
+      "url": "https://clawhub.ai/skills/ssh-server"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssh-server",
+    "url": "https://clawhub.ai/skills/ssh-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssh-server-e2d952327a11420f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssh-server@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssh-server-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b304f15a2c28c77af2d2f7feb309913ba5ac55edac26bd49928f3e21cc30706",
+      "artifactSizeBytes": 1780
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:48:14.264Z"
+}

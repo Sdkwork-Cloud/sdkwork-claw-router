@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kpi@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kpi",
+  "skill": {
+    "id": 64938,
+    "skillKey": "clawhub-kpi",
+    "name": "KPI for clawbot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kpi",
+    "url": "https://clawhub.ai/skills/kpi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kpi-1da4ffdd60434705.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 KPI 体系管理智能体关键绩效指标与执行任务。当用户提到 KPI、指标管理、达成率、绩效复盘、评分、经验沉淀时使用，并将信息维护到 memory/kpi.md。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dawnlck",
+      "userId": "s17372tvt62jdsgq2qkeapbwt583ne0x",
+      "displayName": "InfiniEcho",
+      "image": "https://avatars.githubusercontent.com/u/12195307?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 459,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773066981236,
+      "changelog": "- 所有描述、核心能力与存储规范岗位，从 OKR 模型切换到 KPI 指标、任务、达成率等逻辑。\n- 新增任务（Task）联动与复盘“高杠杆动作”等机制，更贴合 KPI 实战。\n- 评分和复盘流程沿用阶梯制并细化经验沉淀相关标准与执行规范。\n- 文件存储路径改为 memory/kpi.md，结构与字段全部适配 KPI 场景。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2cf6a4ffe509eb765a2f901087997f1e0c886814f71e2e60ab11ac4e4a8d2bf8"
+}

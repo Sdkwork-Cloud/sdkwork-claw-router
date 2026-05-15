@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14331,
+  "uuid": "skill-clawhub-agent-dashboard",
+  "skillKey": "clawhub-agent-dashboard",
+  "name": "Agent Dashboard",
+  "summary": "Real-time agent dashboard for OpenClaw. Monitor active tasks, cron job health, issues, and action items from anywhere. Three setup tiers: (1) Zero-config can...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_dashboard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tahseen-ur Rahman",
+      "features": [
+        "Real-time agent dashboard for OpenClaw",
+        "Monitor active tasks, cron job health, issues, and action items from anywhere",
+        "Three setup tiers: (1) Zero-config can..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-dashboard@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217856162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-dashboard",
+      "url": "https://clawhub.ai/skills/agent-dashboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-dashboard",
+    "url": "https://clawhub.ai/skills/agent-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-dashboard-24fa713aee245aa5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-dashboard@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-dashboard-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6502809461b449d0d0a6d8fa85ab3d84060dedfb74dbbd98f1520af9d43a7a20",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T00:27:59.408Z"
+}

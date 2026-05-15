@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-medical-billing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_medical_billing",
+  "skill": {
+    "id": 19019,
+    "skillKey": "clawhub-afrexai-medical-billing",
+    "name": "Medical Billing & Revenue Cycle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-medical-billing",
+    "url": "https://clawhub.ai/skills/afrexai-medical-billing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-medical-billing-c866d86d7ebfcc01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze medical billing workflows, identify revenue leaks, optimize claims, reduce denials, and improve revenue cycle KPIs for healthcare practices and billi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 633,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771962242138,
+      "changelog": "Initial public release of afrexai-medical-billing skill:\n\n- Provides end-to-end analysis of medical billing workflows, denial management, payer contracts, coding, compliance, and patient collections.\n- Includes specialty-specific guidance on CPT/ICD-10 coding accuracy and modifier usage.\n- Benchmarks practice KPIs and identifies revenue leaks with actionable recommendations.\n- Features payer contract comparison tools and underpayment detection.\n- Covers compliance checklists (OIG, Stark Law, No Surprises Act) and internal audit frameworks.\n- Supports customizable queries for denial analysis, appeal letters, and fee schedule comparisons.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9d15d62c2cde10ea0558fe710229d39bf4e5430e074bb8b941aebcf4d2d628fa"
+}

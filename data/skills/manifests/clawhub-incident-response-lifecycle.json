@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37198,
+  "uuid": "skill-clawhub-incident-response-lifecycle",
+  "skillKey": "clawhub-incident-response-lifecycle",
+  "name": "Incident Response Lifecycle",
+  "summary": "Incident response process management following the NIST 800-61 lifecycle. Covers severity classification, escalation matrices, role assignment, communication...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.incident_response_lifecycle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vahagn Madatyan",
+      "features": [
+        "Incident response process management following the NIST 800-61 lifecycle",
+        "Covers severity classification, escalation matrices, role assignment, communication..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/incident-response-lifecycle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74753362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "incident-response-lifecycle",
+      "url": "https://clawhub.ai/skills/incident-response-lifecycle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "incident-response-lifecycle",
+    "url": "https://clawhub.ai/skills/incident-response-lifecycle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/incident-response-lifecycle-f148a536819ac32e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/incident-response-lifecycle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-incident-response-lifecycle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7c18bc89936981348c2165a2d43cf52f42f545e0280b50b3f1e68d5bc71308b",
+      "artifactSizeBytes": 2816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T08:19:20.715Z"
+}

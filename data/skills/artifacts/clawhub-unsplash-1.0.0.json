@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unsplash@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unsplash",
+  "skill": {
+    "id": 12129,
+    "skillKey": "clawhub-unsplash",
+    "name": "Unsplash"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unsplash",
+    "url": "https://clawhub.ai/skills/unsplash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unsplash-6e204575f58f2425.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, browse, and download high-quality free photos from Unsplash with filtering, random selection, and detailed photo metadata access."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brokenwatch24",
+      "userId": "publishers:brokenwatch24",
+      "displayName": "BrokenWatchCEO",
+      "image": "https://avatars.githubusercontent.com/u/110206505?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1544,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771216086901,
+      "changelog": "Unsplash Skill 1.0.0 initial release\n\n- Provides comprehensive documentation for using the Unsplash API, including setup, authentication, and rate limits.\n- Covers searching, browsing, and downloading high-quality free photos.\n- Includes usage examples for common API endpoints and parameters.\n- Explains required download tracking and best practices for attribution and hotlinking.\n- Details image manipulation options and response structures.\n- Lists common filters, pagination, error handling, and guidance for production use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7c77f37d5031cd9444b9b14d8b6ac301f08202fc141fa5dc9e40490d0973fb56"
+}

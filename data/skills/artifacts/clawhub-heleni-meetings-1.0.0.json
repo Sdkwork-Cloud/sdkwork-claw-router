@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/heleni-meetings@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.heleni_meetings",
+  "skill": {
+    "id": 44395,
+    "skillKey": "clawhub-heleni-meetings",
+    "name": "Heleni Meetings"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "heleni-meetings",
+    "url": "https://clawhub.ai/skills/heleni-meetings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/heleni-meetings-980b77bc3784fc5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "All-in-one meetings skill. Section 1: Schedule a meeting by coordinating with another PA, finding free slots, and sending a calendar invite. Section 2: Paste..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "netanel-abergel",
+      "userId": "s17ber573ejk857tr938jb5dqs8413hk",
+      "displayName": "Netanel Abergel",
+      "image": "https://avatars.githubusercontent.com/u/89765095?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775492854323,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9800a367ca6d3747d1b0c7a65baf900a62bcbed0285738d76a01ae46763e985e"
+}

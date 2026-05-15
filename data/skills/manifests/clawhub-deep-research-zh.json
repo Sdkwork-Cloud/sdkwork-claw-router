@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61917,
+  "uuid": "skill-clawhub-deep-research-zh",
+  "skillKey": "clawhub-deep-research-zh",
+  "name": "深度调研 (Deep Research)",
+  "summary": "中文深度调研工具。基于 academic-deep-research fork，针对中文场景优化：自动生成中文 PDF（内嵌样式、容错降级）、Tavily 搜索集成、飞书自动交付。适用于竞品分析、行业调研、政策研究等需要严格方法论的场景。使用 native OpenClaw 工具（web_search, web_...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mydearzsy",
+      "features": [
+        "中文深度调研工具。基于 academic-deep-research fork，针对中文场景优化：自动生成中文 PDF（内嵌样式、容错降级）、Tavily 搜索集成、飞书自动交付。适用于竞品."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deep-research-zh@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5027137?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deep-research-zh",
+      "url": "https://clawhub.ai/skills/deep-research-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-zh",
+    "url": "https://clawhub.ai/skills/deep-research-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-zh-1491eff0c4723fa8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deep-research-zh@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deep-research-zh-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c882c46dd9d8c498af5a57958483e92f9fc0d890322c04ac7eeb4fe3b5398cfd",
+      "artifactSizeBytes": 2223
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:15:40.608Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34389,
+  "uuid": "skill-clawhub-flagsmith",
+  "skillKey": "clawhub-flagsmith",
+  "name": "Flagsmith",
+  "summary": "Flagsmith integration. Manage data, records, and automate workflows. Use when the user wants to interact with Flagsmith data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flagsmith",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Flagsmith integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Flagsmith data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flagsmith@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flagsmith",
+      "url": "https://clawhub.ai/skills/flagsmith"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flagsmith",
+    "url": "https://clawhub.ai/skills/flagsmith",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flagsmith-b6395c1bd638a39a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flagsmith@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-flagsmith-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:649000af993cdb04040118426eff58ee5fdefc49ff18179271a81c58ba8e99fd",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:28:03.157Z"
+}

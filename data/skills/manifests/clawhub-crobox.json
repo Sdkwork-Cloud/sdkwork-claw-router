@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35023,
+  "uuid": "skill-clawhub-crobox",
+  "skillKey": "clawhub-crobox",
+  "name": "Crobox",
+  "summary": "Crobox integration. Manage data, records, and automate workflows. Use when the user wants to interact with Crobox data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crobox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Crobox integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Crobox data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crobox@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crobox",
+      "url": "https://clawhub.ai/skills/crobox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crobox",
+    "url": "https://clawhub.ai/skills/crobox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crobox-089bf89fa5dbab46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crobox@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-crobox-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a4b93faa6710d0e4b4294bd9febab608b2253fc2ff888c5cf96df9761b6a609",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:35:55.290Z"
+}

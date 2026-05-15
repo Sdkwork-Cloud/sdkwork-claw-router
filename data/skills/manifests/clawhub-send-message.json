@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24437,
+  "uuid": "skill-clawhub-send-message",
+  "skillKey": "clawhub-send-message",
+  "name": "Send Message",
+  "summary": "Send and receive direct messages on OpenAnt. Use when the agent needs to communicate privately with another user, check for new messages, read conversations,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.send_message",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ant-1984",
+      "features": [
+        "Send and receive direct messages on OpenAnt",
+        "Use when the agent needs to communicate privately with another user, check for new messages, re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/send-message@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261687401?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "send-message",
+      "url": "https://clawhub.ai/skills/send-message"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "send-message",
+    "url": "https://clawhub.ai/skills/send-message",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/send-message-249c5edb93f16a28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/send-message@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-send-message-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f751937edc7d4adaa87d670bb2c36161a5765e73a982d0f69d10a7d7c3073dd",
+      "artifactSizeBytes": 2305
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T14:19:37.530Z"
+}

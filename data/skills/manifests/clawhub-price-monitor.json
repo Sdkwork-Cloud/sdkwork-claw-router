@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16975,
+  "uuid": "skill-clawhub-price-monitor",
+  "skillKey": "clawhub-price-monitor",
+  "name": "Price Monitor",
+  "summary": "Monitor website prices, inventory, and content changes using browser automation. Use when tracking e-commerce prices, competitor monitoring, stock alerts, or...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.price_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yinanping",
+      "features": [
+        "Monitor website prices, inventory, and content changes using browser automation",
+        "Use when tracking e-commerce prices, competitor monitoring, stock alerts, or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/price-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87659652?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "price-monitor",
+      "url": "https://clawhub.ai/skills/price-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "price-monitor",
+    "url": "https://clawhub.ai/skills/price-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/price-monitor-689f0341eefb056d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/price-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-price-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2774bcef61b81dcb1631c953f35c1dfd0f1798e8125feee6937ee9e1736781e5",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T09:01:29.668Z"
+}

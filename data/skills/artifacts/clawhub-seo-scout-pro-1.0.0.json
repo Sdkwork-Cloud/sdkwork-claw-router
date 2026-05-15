@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seo-scout-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seo_scout_pro",
+  "skill": {
+    "id": 39667,
+    "skillKey": "clawhub-seo-scout-pro",
+    "name": "Seo Scout Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seo-scout-pro",
+    "url": "https://clawhub.ai/skills/seo-scout-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seo-scout-pro-d6019237b3e2fa01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Website submit page discovery and form analysis tool. Scout any website to find submission forms, detect authentication requirements, identify CAPTCHAs, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueyetianya",
+      "userId": "s1716dgb4pf37kmebjdxfdexmh83ehwx",
+      "displayName": "bytesagain4",
+      "image": "https://avatars.githubusercontent.com/u/218210530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774316666640,
+      "changelog": "Initial release - website submit page discovery tool",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96810d8d382eb49e104321c429253e70fcfc2e1f1069259415a1b3a0469053d9"
+}

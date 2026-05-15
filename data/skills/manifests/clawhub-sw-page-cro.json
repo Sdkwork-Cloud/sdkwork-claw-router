@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32140,
+  "uuid": "skill-clawhub-sw-page-cro",
+  "skillKey": "clawhub-sw-page-cro",
+  "name": "Page CRO",
+  "summary": "Conducts detailed audits of landing pages to identify conversion blockers and recommends prioritized fixes based on proven CRO principles and benchmarks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sw_page_cro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "amdf01-debug",
+      "features": [
+        "Conducts detailed audits of landing pages to identify conversion blockers and recommends priori."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sw-page-cro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252609374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sw-page-cro",
+      "url": "https://clawhub.ai/skills/sw-page-cro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sw-page-cro",
+    "url": "https://clawhub.ai/skills/sw-page-cro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sw-page-cro-65f2437ca6106689.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sw-page-cro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sw-page-cro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57c71522fd32798ce58bf83688f7b18f309ce127d9e7a5b4083b7a2009a445f0",
+      "artifactSizeBytes": 1854
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:54:14.027Z"
+}

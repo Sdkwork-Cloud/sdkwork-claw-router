@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61390,
+  "uuid": "skill-clawhub-news-sentiment-analysis",
+  "skillKey": "clawhub-news-sentiment-analysis",
+  "name": "News Sentiment Analysis",
+  "summary": "区分\"真利好\"和\"假利好\"，避免追高被套。用于A股消息面分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_sentiment_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haohanyang92",
+      "features": [
+        "区分\"真利好\"和\"假利好\"，避免追高被套。用于A股消息面分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-sentiment-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61062925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-sentiment-analysis",
+      "url": "https://clawhub.ai/skills/news-sentiment-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-sentiment-analysis",
+    "url": "https://clawhub.ai/skills/news-sentiment-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-sentiment-analysis-a75ce04b03edfa00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-sentiment-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-sentiment-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59d4f09361b29f78963dc2b9372f1713e5f6eb586fcca07d6a60df8b66eb3d90",
+      "artifactSizeBytes": 2474
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:53:58.025Z"
+}

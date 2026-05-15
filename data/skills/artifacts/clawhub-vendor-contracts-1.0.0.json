@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vendor-contracts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vendor_contracts",
+  "skill": {
+    "id": 36206,
+    "skillKey": "clawhub-vendor-contracts",
+    "name": "Vendor Contracts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vendor-contracts",
+    "url": "https://clawhub.ai/skills/vendor-contracts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vendor-contracts-f572e91858c4b1d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pragmatic review of software contracts: IP, liability, SLAs. Use when triaging vendor agreements (not legal advice)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774605821952,
+      "changelog": "Initial release: Structured workflow for pragmatic software contract reviews.\n\n- Introduces a 4-stage process: clarify context & goals, structure issues, draft/refine summaries, and verify/ship.\n- Designed for vendor contract scenarios: IP, liability, SLAs.\n- Emphasizes actionable, stage-by-stage guidance and clear checklists.\n- Includes guidelines for adapting the workflow or switching to freeform help per user request.\n- Offers tips for effective, procedural, and respectful review support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:370ca56ddf7b2de184e8f67b445103b40ddb0533b90683ec94ef389238cc3dc5"
+}

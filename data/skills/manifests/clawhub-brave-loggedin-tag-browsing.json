@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62437,
+  "uuid": "skill-clawhub-brave-loggedin-tag-browsing",
+  "skillKey": "clawhub-brave-loggedin-tag-browsing",
+  "name": "Brave Loggedin Tag Browsing",
+  "summary": "使用 Brave 瀏覽器（已登入狀態）瀏覽 X/Twitter、Facebook 用戶頁面並提取最新帖子。 自動化社交媒體監控，支援登入狀態檢查、帖子提取、互動數據抓取。",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brave_loggedin_tag_browsing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "https://github.com/account/ssh",
+      "features": [
+        "使用 Brave 瀏覽器（已登入狀態）瀏覽 X/Twitter、Facebook 用戶頁面並提取最新帖子。 自動化社交媒體監控，支援登入狀態檢查、帖子提取、互動數據抓取。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brave-loggedin-tag-browsing@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/888016?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brave-loggedin-tag-browsing",
+      "url": "https://clawhub.ai/skills/brave-loggedin-tag-browsing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brave-loggedin-tag-browsing",
+    "url": "https://clawhub.ai/skills/brave-loggedin-tag-browsing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brave-loggedin-tag-browsing-80580192385c36ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brave-loggedin-tag-browsing@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-brave-loggedin-tag-browsing-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:987a44863ee251b497d4fa90fb74f4a84fd5453c07e396bf8548957a95af977e",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T07:14:04.721Z"
+}

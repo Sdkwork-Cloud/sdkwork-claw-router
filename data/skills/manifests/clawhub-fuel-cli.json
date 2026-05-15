@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53160,
+  "uuid": "skill-clawhub-fuel-cli",
+  "skillKey": "clawhub-fuel-cli",
+  "name": "Fuel CLI",
+  "summary": "UK fuel prices CLI — find nearby stations by postcode or coordinates, get station details, ranked by price/distance/freshness, and agent-friendly JSON envelo...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fuel_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shan8851",
+      "features": [
+        "UK fuel prices CLI — find nearby stations by postcode or coordinates, get station details, rank."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fuel-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39712238?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fuel-cli",
+      "url": "https://clawhub.ai/skills/fuel-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fuel-cli",
+    "url": "https://clawhub.ai/skills/fuel-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fuel-cli-019f2b2c017d94b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fuel-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fuel-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:986ad9a21bedda64756a24ee43fc126c5201b0450a8d893d03be502f1a6a88e7",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T22:50:57.533Z"
+}

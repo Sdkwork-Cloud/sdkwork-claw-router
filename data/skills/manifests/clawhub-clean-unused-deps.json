@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29612,
+  "uuid": "skill-clawhub-clean-unused-deps",
+  "skillKey": "clawhub-clean-unused-deps",
+  "name": "Clean Unused Deps",
+  "summary": "Clean up unused npm dependencies in a project. Use when you want to remove packages that are installed but not used in the codebase.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clean_unused_deps",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hgxszhj-pixel",
+      "features": [
+        "Clean up unused npm dependencies in a project",
+        "Use when you want to remove packages that are installed but not used in the codebase."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clean-unused-deps@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235062944?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clean-unused-deps",
+      "url": "https://clawhub.ai/skills/clean-unused-deps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clean-unused-deps",
+    "url": "https://clawhub.ai/skills/clean-unused-deps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clean-unused-deps-5e2fc84c50d97477.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clean-unused-deps@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clean-unused-deps-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac7c334011fab5c1c2d1f22f191e905bb4aec89361632542f6beb44315283b5d",
+      "artifactSizeBytes": 2155
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T10:13:37.449Z"
+}

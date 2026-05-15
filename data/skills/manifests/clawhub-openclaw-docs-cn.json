@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64039,
+  "uuid": "skill-clawhub-openclaw-docs-cn",
+  "skillKey": "clawhub-openclaw-docs-cn",
+  "name": "Openclaw Docs",
+  "summary": "OpenClaw 官方文档知识库。当用户询问 OpenClaw 相关问题时自动触发，包括：安装配置、CLI 命令、渠道设置（飞书/钉钉/WhatsApp 等）、定时任务（cron）、技能开发、故障排查。提供命令示例和配置模板。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_docs_cn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "z13777869196",
+      "features": [
+        "OpenClaw 官方文档知识库。当用户询问 OpenClaw 相关问题时自动触发，包括：安装配置、CLI 命令、渠道设置（飞书/钉钉/WhatsApp 等）、定时任务（cron）、技能开发."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-docs-cn@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111835640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-docs-cn",
+      "url": "https://clawhub.ai/skills/openclaw-docs-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-docs-cn",
+    "url": "https://clawhub.ai/skills/openclaw-docs-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-docs-cn-86dd86b67bb77fd0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-docs-cn@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-docs-cn-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:925aaf5d3cebd32b13dbc186bb4172eacc914d351ccaf1e39072987d0d4bff0a",
+      "artifactSizeBytes": 2138
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T00:47:10.872Z"
+}

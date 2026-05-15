@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cmc-kline-data-collector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmc_kline_data_collector",
+  "skill": {
+    "id": 59250,
+    "skillKey": "clawhub-cmc-kline-data-collector",
+    "name": "CMC Kline Data Collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmc-kline-data-collector",
+    "url": "https://clawhub.ai/skills/cmc-kline-data-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmc-kline-data-collector-5b3db350a7c9cfa3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从 CoinMarketCap 获取加密货币 K 线历史数据，自动计算 EMA7、EMA30、RSI14 等技术指标，支持 JSON/CSV 格式输出"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrierdb",
+      "userId": "publishers:harrierdb",
+      "displayName": "HarrierDB",
+      "image": "https://avatars.githubusercontent.com/u/107302237?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 332,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773424829922,
+      "changelog": "首发版本 - 从 CoinMarketCap 获取 ETH/SOL/BNB 等加密货币 K 线数据，自动计算 EMA7/EMA30/RSI14 技术指标，支持 JSON/CSV 格式输出",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0bbdecf7d394fbaf8e0ea003e55cb71da7d1e5e140e26def3ae1b5b6d71942f5"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21878,
+  "uuid": "skill-clawhub-over-computer",
+  "skillKey": "clawhub-over-computer",
+  "name": "Over Computer",
+  "summary": "Trade on prediction markets through over.computer. Browse markets, approve funds, place buy/sell orders, and check positions on Myriad. Use when the operator...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.over_computer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Márton Borsos",
+      "features": [
+        "Trade on prediction markets through over.computer",
+        "Browse markets, approve funds, place buy/sell orders, and check positions on Myriad",
+        "Use when the operator..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/over-computer@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25983983?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "over-computer",
+      "url": "https://clawhub.ai/skills/over-computer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "over-computer",
+    "url": "https://clawhub.ai/skills/over-computer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/over-computer-6818f79029f52878.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/over-computer@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-over-computer-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:279be19eec4ce41c02c88d290eaba65bc4a87db15016f702ca9af02ff74a5263",
+      "artifactSizeBytes": 2102
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T16:09:41.948Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39334,
+  "uuid": "skill-clawhub-tailwind-config-validator",
+  "skillKey": "clawhub-tailwind-config-validator",
+  "name": "Tailwind Config Validator",
+  "summary": "Validate JSON-exported Tailwind CSS configuration files for structural issues, content path problems, theme misconfiguration, and best practices. Use when au...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tailwind_config_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Validate JSON-exported Tailwind CSS configuration files for structural issues, content path pro.",
+        "Use when au..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tailwind-config-validator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tailwind-config-validator",
+      "url": "https://clawhub.ai/skills/tailwind-config-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tailwind-config-validator",
+    "url": "https://clawhub.ai/skills/tailwind-config-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tailwind-config-validator-c4d5f2168abe17de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tailwind-config-validator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tailwind-config-validator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3628852927c609ddf88a8ebf7c097d800e5616f1a69e98b0d6c01c581ba2279d",
+      "artifactSizeBytes": 2101
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:03:04.932Z"
+}

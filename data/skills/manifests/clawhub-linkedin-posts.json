@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32487,
+  "uuid": "skill-clawhub-linkedin-posts",
+  "skillKey": "clawhub-linkedin-posts",
+  "name": "linkedin-posts",
+  "summary": "When the user wants to create LinkedIn post copy or optimize for LinkedIn. Also use when the user mentions \"LinkedIn post,\" \"LinkedIn article,\" \"professional...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_posts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to create LinkedIn post copy or optimize for LinkedIn",
+        "Also use when the user mentions \"LinkedIn post,\" \"LinkedIn article,\" \"professional..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkedin-posts@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkedin-posts",
+      "url": "https://clawhub.ai/skills/linkedin-posts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-posts",
+    "url": "https://clawhub.ai/skills/linkedin-posts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-posts-cbee74f89eaf59fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkedin-posts@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkedin-posts-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d04bf12efe78cb29acdc3ba1f37fbbae598c515feac13ce3ac04cb8e3fe38e3f",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T15:03:51.468Z"
+}

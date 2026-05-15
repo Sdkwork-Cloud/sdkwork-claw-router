@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spec-brainstorm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spec_brainstorm",
+  "skill": {
+    "id": 52870,
+    "skillKey": "clawhub-spec-brainstorm",
+    "name": "Spec Brainstorm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spec-brainstorm",
+    "url": "https://clawhub.ai/skills/spec-brainstorm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spec-brainstorm-e3cf75e89f4cf41d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn ideas into comprehensive project specs through collaborative dialogue. Use BEFORE any planning or implementation — for new projects, features, or signif..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775858024097,
+      "changelog": "Initial public release of spec-brainstorm.\n\n- Guides users from fuzzy ideas to clear, comprehensive project specs via structured, collaborative dialogue.\n- Enforces scope discipline: decomposes large projects and prevents implementation leakage.\n- Provides a step-by-step workflow for context exploration, clarifying questions, proposing product directions, and producing a standalone spec document.\n- Ensures specs are system-agnostic and implementation-free, focusing on WHAT and WHY, not HOW.\n- Includes detailed guidance for questioning, scope assessment, and handling out-of-scope ideas.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c781577196d8119bffab264c337fd32f28b1120951265e34c92a607e3f323d1"
+}

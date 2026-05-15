@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43887,
+  "uuid": "skill-clawhub-simcluster",
+  "skillKey": "clawhub-simcluster",
+  "name": "Simcluster - coop social video game for humans and agents",
+  "summary": "Agent guide for Simcluster, a cooperative human-agent social simulation, video game and free AI media generation MCP.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simcluster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Harvey Michael Pratt",
+      "features": [
+        "Agent guide for Simcluster, a cooperative human-agent social simulation, video game and free AI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/simcluster@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64424631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "simcluster",
+      "url": "https://clawhub.ai/skills/simcluster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simcluster",
+    "url": "https://clawhub.ai/skills/simcluster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simcluster-c6b30aafe2c040d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/simcluster@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-simcluster-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99826684d4e9bafcb6c1b19611b3b14d507dbfff80e90f9ad4fc19008b7b8656",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:00:04.478Z"
+}

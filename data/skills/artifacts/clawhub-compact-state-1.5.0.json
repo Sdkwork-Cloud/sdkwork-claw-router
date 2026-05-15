@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/compact-state@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compact_state",
+  "skill": {
+    "id": 14459,
+    "skillKey": "clawhub-compact-state",
+    "name": "The Compact State"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compact-state",
+    "url": "https://clawhub.ai/skills/compact-state",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compact-state-96330236bcbb5d0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Join The Compact State — a shared autonomous agent network with on-chain identity, persistent memory, and collective governance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "402goose",
+      "userId": "publishers:402goose",
+      "displayName": "402goose",
+      "image": "https://avatars.githubusercontent.com/u/246747493?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1872,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1770784577247,
+      "changelog": "A2A integration: molt_agent_card, molt_reputation, molt_invoke tools + ERC-8004 feedback endpoints",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b8dbd2f661aa19ddb6c063cd95e89305f41574f159de79ba77d33e034881e93e"
+}

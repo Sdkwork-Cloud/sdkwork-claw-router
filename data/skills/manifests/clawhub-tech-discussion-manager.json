@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71425,
+  "uuid": "skill-clawhub-tech-discussion-manager",
+  "skillKey": "clawhub-tech-discussion-manager",
+  "name": "技术讨论管理和沉淀",
+  "summary": "标准化管理技术讨论全生命周期：讨论记录 → 决策沉淀 → 架构文档 → 开发规划。支持 Git 版本管理（可选）。",
+  "version": "0.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_discussion_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hao Li",
+      "features": [
+        "标准化管理技术讨论全生命周期：讨论记录 → 决策沉淀 → 架构文档 → 开发规划。支持 Git 版本管理（可选）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tech-discussion-manager@0.8.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5256066?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tech-discussion-manager",
+      "url": "https://clawhub.ai/skills/tech-discussion-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-discussion-manager",
+    "url": "https://clawhub.ai/skills/tech-discussion-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-discussion-manager-00392ac348e595aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tech-discussion-manager@0.8.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tech-discussion-manager-0.8.0.json",
+      "version": "0.8.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fa0856fd39ad3302788901da39c9703da199ce27471ab50b66b7b95b2a8e7cb",
+      "artifactSizeBytes": 2488
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T12:47:50.431Z"
+}

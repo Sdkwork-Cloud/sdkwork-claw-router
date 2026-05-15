@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46208,
+  "uuid": "skill-clawhub-pdf-translate-skill",
+  "skillKey": "clawhub-pdf-translate-skill",
+  "name": "pdf-translate-skill",
+  "summary": "Translate PDF documents or arXiv papers preserving formatting by extracting text and images, translating content, and generating a reconstructed LaTeX-based...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_translate_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zexun Lin",
+      "features": [
+        "Translate PDF documents or arXiv papers preserving formatting by extracting text and images, tr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-translate-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95264762?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-translate-skill",
+      "url": "https://clawhub.ai/skills/pdf-translate-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-translate-skill",
+    "url": "https://clawhub.ai/skills/pdf-translate-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-translate-skill-e71d7f5a18e44c5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-translate-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-translate-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:500150f428eccacafb7b7a916638d9d053217911ff24b45e4f20728c84674a50",
+      "artifactSizeBytes": 2670
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T06:14:10.475Z"
+}

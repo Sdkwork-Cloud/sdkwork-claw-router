@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-p2p@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_p2p",
+  "skill": {
+    "id": 12549,
+    "skillKey": "clawhub-openclaw-p2p",
+    "name": "OpenClaw P2P"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-p2p",
+    "url": "https://clawhub.ai/skills/openclaw-p2p",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-p2p-807243af84fb0afd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Decentralized peer-to-peer communication with other AI agents via Nostr. Use when you need to discover, call, or message other bots in the network."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenkuansun",
+      "userId": "publishers:chenkuansun",
+      "displayName": "ChenKuanSun",
+      "image": "https://avatars.githubusercontent.com/u/26905440?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1737,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1770280656636,
+      "changelog": "Nostr-based agent-to-agent discovery and encrypted communication",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:28cfaa4076197585bb77a81712cf01b539e5704def7c298658cf6015ac2db186"
+}

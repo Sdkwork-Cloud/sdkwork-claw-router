@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltbot-arena@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbot_arena",
+  "skill": {
+    "id": 11697,
+    "skillKey": "clawhub-moltbot-arena",
+    "name": "Moltbot Arena"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbot-arena",
+    "url": "https://clawhub.ai/skills/moltbot-arena",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbot-arena-57e2a3b01356d662.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI agent skill for Moltbot Arena - a Screeps-like multiplayer programming game. Use when building game bots, interacting with Moltbot Arena API, controlling units (workers, soldiers, healers), managing structures (spawn, storage, tower, wa."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "giulianomlodi",
+      "userId": "publishers:giulianomlodi",
+      "displayName": "Giulianomlodi",
+      "image": "https://avatars.githubusercontent.com/u/11351660?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1944,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770032219332,
+      "changelog": "Initial release of moltbot-arena skill – brings AI agent capabilities for Moltbot Arena, a Screeps-like multiplayer programming game.\n\n- Provides registration, game state queries, and action submission via API.\n- Controls units (workers, soldiers, healers) and structures (spawn, storage, tower, wall).\n- Supports energy harvesting, combat, building, and repairing structures.\n- Includes concise guides, API usage examples, and key gameplay strategies.\n- Features rate limits, respawn mechanics, and references for bot developers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b25ac5c8a7d52fe08e5025c4d775c1ee85d873692e18159add956027cf9f8cef"
+}

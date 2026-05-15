@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/microsoft-docs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microsoft_docs",
+  "skill": {
+    "id": 10482,
+    "skillKey": "clawhub-microsoft-docs",
+    "name": "Microsoft Learn documentation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microsoft-docs",
+    "url": "https://clawhub.ai/skills/microsoft-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microsoft-docs-ebb84dd7bdbacacb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query official Microsoft documentation to understand concepts, find tutorials, and learn how services work. Use for Azure, .NET, Microsoft 365, Windows, Power Platform, and all Microsoft technologies. Get accurate, current information from."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pdebruin",
+      "userId": "publishers:pdebruin",
+      "displayName": "Pieter de Bruin",
+      "image": "https://avatars.githubusercontent.com/u/4709852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2665,
+      "installsAllTime": 15,
+      "installsCurrent": 15,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770107001350,
+      "changelog": "- Initial release of the microsoft-docs skill.\n- Enables querying and fetching content from official Microsoft documentation, including Azure, .NET, Microsoft 365, Windows, and more.\n- Provides tools for both searching docs and retrieving full page content when needed.\n- Highlights best practices for forming effective queries and when to fetch full documentation.\n- Requires connection to the Microsoft Learn MCP Server for operation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3a51eb0d1e284b01d43d1f6f3aa4b46634e843cd1a9965c3e15cec7c7d58358e"
+}

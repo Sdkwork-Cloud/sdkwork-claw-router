@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15011,
+  "uuid": "skill-clawhub-comfyui-tts",
+  "skillKey": "clawhub-comfyui-tts",
+  "name": "ComfyUI TTS",
+  "summary": "Convert text to speech audio via ComfyUI's Qwen-TTS API, supporting customizable voice, style, model, and output options.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfyui_tts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YHSI5358",
+      "features": [
+        "Convert text to speech audio via ComfyUI's Qwen-TTS API, supporting customizable voice, style,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comfyui-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77769435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comfyui-tts",
+      "url": "https://clawhub.ai/skills/comfyui-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfyui-tts",
+    "url": "https://clawhub.ai/skills/comfyui-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfyui-tts-b412995b622b7ec1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comfyui-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-comfyui-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f07ca62c5cea1816fdf19130a0347ad272bb2b177fedc297474770169b76f143",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T22:35:02.903Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40000,
+  "uuid": "skill-clawhub-hum-writer",
+  "skillKey": "clawhub-hum-writer",
+  "name": "hum",
+  "summary": "AI content writer that researches, outlines, drafts, publishes, and manages engagement for LinkedIn and X using your voice and style guidelines.",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hum_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jyek",
+      "features": [
+        "AI content writer that researches, outlines, drafts, publishes, and manages engagement for Link."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hum-writer@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3284409?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hum-writer",
+      "url": "https://clawhub.ai/skills/hum-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hum-writer",
+    "url": "https://clawhub.ai/skills/hum-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hum-writer-f691b1f76dc7d572.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hum-writer@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hum-writer-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d299c55e4798d3514c630c61b5508842f45d832287839d782db4cae3d5d51a0d",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T11:21:17.314Z"
+}

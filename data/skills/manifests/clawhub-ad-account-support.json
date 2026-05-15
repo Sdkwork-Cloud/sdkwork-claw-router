@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26310,
+  "uuid": "skill-clawhub-ad-account-support",
+  "skillKey": "clawhub-ad-account-support",
+  "name": "ad-account-support",
+  "summary": "Use this skill when users mention advertising accounts, ad account setup, Business Manager (BM), ad account suspension or ban, ad payment issues, or cross-pl...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ad_account_support",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zion",
+      "features": [
+        "Use this skill when users mention advertising accounts, ad account setup, Business Manager (BM)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ad-account-support@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45931088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ad-account-support",
+      "url": "https://clawhub.ai/skills/ad-account-support"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ad-account-support",
+    "url": "https://clawhub.ai/skills/ad-account-support",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ad-account-support-e9056646f0644a29.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ad-account-support@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ad-account-support-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be6cc38a67c73e93bfe1090d07c228bf7503091496f718ccefc0fdc67a135dd9",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T06:48:35.577Z"
+}

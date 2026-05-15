@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45373,
+  "uuid": "skill-clawhub-canary-deployment-analyzer",
+  "skillKey": "clawhub-canary-deployment-analyzer",
+  "name": "Canary Deployment Analyzer",
+  "summary": "Analyze canary deployments by comparing metrics between canary and baseline. Provide data-driven promotion/rollback recommendations based on error rates, lat...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canary_deployment_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Analyze canary deployments by comparing metrics between canary and baseline",
+        "Provide data-driven promotion/rollback recommendations based on error rates, lat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/canary-deployment-analyzer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "canary-deployment-analyzer",
+      "url": "https://clawhub.ai/skills/canary-deployment-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canary-deployment-analyzer",
+    "url": "https://clawhub.ai/skills/canary-deployment-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canary-deployment-analyzer-cb89a469ea1f1287.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/canary-deployment-analyzer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-canary-deployment-analyzer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8397a02e6f20a16b2648af8bb44c4c28be70cbe6549f8c864fc501b3fe3fbb3a",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:00:08.536Z"
+}

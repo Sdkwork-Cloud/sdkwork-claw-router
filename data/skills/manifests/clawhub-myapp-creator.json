@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50008,
+  "uuid": "skill-clawhub-myapp-creator",
+  "skillKey": "clawhub-myapp-creator",
+  "name": "Myapp Creator",
+  "summary": "Create or update standalone single-file HTML apps with specified features, saving them to fe-service without invoking LLM directly.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.myapp_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhang6714268",
+      "features": [
+        "Create or update standalone single-file HTML apps with specified features, saving them to fe-se."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/myapp-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96230773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "myapp-creator",
+      "url": "https://clawhub.ai/skills/myapp-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "myapp-creator",
+    "url": "https://clawhub.ai/skills/myapp-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/myapp-creator-2e2addaa2e50de65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/myapp-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-myapp-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbcebbe0dad8d9369876491c1fa3977bc990e1b0819f7e406ec6b450ed391efe",
+      "artifactSizeBytes": 2397
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T12:24:02.209Z"
+}

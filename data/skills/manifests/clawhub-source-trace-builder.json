@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59654,
+  "uuid": "skill-clawhub-source-trace-builder",
+  "skillKey": "clawhub-source-trace-builder",
+  "name": "Source Trace Builder",
+  "summary": "为分析稿建立引用索引和原始出处映射，区分一手与二手来源。；use for sources, citations, research workflows；do not use for 编造文献出处, 替代正式文献管理软件.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.source_trace_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "为分析稿建立引用索引和原始出处映射，区分一手与二手来源。；use for sources, citations, research workflows；do not use for 编造文献."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/source-trace-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "source-trace-builder",
+      "url": "https://clawhub.ai/skills/source-trace-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "source-trace-builder",
+    "url": "https://clawhub.ai/skills/source-trace-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/source-trace-builder-3438765354fa35eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/source-trace-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-source-trace-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:347dbc32a575e9272cf35967997db3efcbbaae65795b0a7607283879e7bad435",
+      "artifactSizeBytes": 2536
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T08:01:09.036Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiger-trading@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiger_trading",
+  "skill": {
+    "id": 62436,
+    "skillKey": "clawhub-tiger-trading",
+    "name": "Tiger Trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiger-trading",
+    "url": "https://clawhub.ai/skills/tiger-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiger-trading-5b45bc45b2f371b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "老虎证券美股交易能力。支持账户余额查询、持仓查询、买卖下单、订单管理。用户只需提供 tiger_id、account、license 和 private_key 即可使用。触发场景：(1) 查询老虎账户状态 (2) 买卖美股 (3) 查看持仓 (4) 取消订单"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wjpwc",
+      "userId": "publishers:wjpwc",
+      "displayName": "wjpwc",
+      "image": "https://avatars.githubusercontent.com/u/4392862?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 446,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773050390726,
+      "changelog": "Initial release of Tiger Trading Skill\n\n- Enables US stock trading via Tiger Brokers: account and positions query, order placement, order management.\n- Supports querying account balance, holdings, placing buy/sell orders, and canceling orders.\n- Requires tiger_id, account, license, and private_key for access.\n- Provides Python and CLI usage examples for all main operations.\n- Returns data in structured JSON formats for easy integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6196da3e06cbafeceebf3059126a4cf65becc40beb9a6410150a8b428ae75baa"
+}

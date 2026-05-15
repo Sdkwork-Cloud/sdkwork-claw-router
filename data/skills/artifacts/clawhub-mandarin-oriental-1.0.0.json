@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mandarin-oriental@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mandarin_oriental",
+  "skill": {
+    "id": 68434,
+    "skillKey": "clawhub-mandarin-oriental",
+    "name": "Mandarin Oriental"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mandarin-oriental",
+    "url": "https://clawhub.ai/skills/mandarin-oriental",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mandarin-oriental-dfc117f8b5bca2cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供文华东方酒店品牌信息，包括东方奢华哲学、传承服务、旗舰酒店及全球扩展历史等内容查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776326481501,
+      "changelog": "Mandarin Oriental skill 1.0.0 – Initial Release\n\n- 提供全面的 Mandarin Oriental（文华东方）品牌介绍与发展历程\n- 涵盖品牌服务哲学、全球旗舰酒店与标志性元素\n- 总结集团重要数据（创始人、总部、酒店数量、营收等）\n- 适用于品牌查询、奢华酒店行业分析及相关内容撰写",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2ca7f1d25825ab648d7dfcd95d2b71ec6d5406695a5063c2d709d9f7c466981"
+}

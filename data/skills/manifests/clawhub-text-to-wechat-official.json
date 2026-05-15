@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73278,
+  "uuid": "skill-clawhub-text-to-wechat-official",
+  "skillKey": "clawhub-text-to-wechat-official",
+  "name": "通用文本一键转公众号推文工具",
+  "summary": "【内容创作者通用生产力工具】任意长文本一键转公众号推文神器，支持将口语化聊天记录、素材草稿、会议纪要、读书笔记、行业分析、赛事复盘等所有非结构化内容，自动转换为结构清晰、排版规范、符合公众号阅读习惯的标准化推文，自动提炼核心观点、分层排版、生成合规提示，无需手动调整格式，10秒输出可直接发布的内容，大幅降低公众号...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_wechat_official",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ninetyhe",
+      "features": [
+        "【内容创作者通用生产力工具】任意长文本一键转公众号推文神器，支持将口语化聊天记录、素材草稿、会议纪要、读书笔记、行业分析、赛事复盘等所有非结构化内容，自动转换为结构清晰、排版规范、符合公众号."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text-to-wechat-official@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97206190?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text-to-wechat-official",
+      "url": "https://clawhub.ai/skills/text-to-wechat-official"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-wechat-official",
+    "url": "https://clawhub.ai/skills/text-to-wechat-official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-wechat-official-8ddb161fa591911b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text-to-wechat-official@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-text-to-wechat-official-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:800adaebfd04667eb5c4918bc2127aa570840c820c7e51c977c05791947d9b5a",
+      "artifactSizeBytes": 2779
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T11:54:30.788Z"
+}

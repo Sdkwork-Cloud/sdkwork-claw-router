@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yuyonghao-agent-marketplace@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuyonghao_agent_marketplace",
+  "skill": {
+    "id": 39452,
+    "skillKey": "clawhub-yuyonghao-agent-marketplace",
+    "name": "Agent Marketplace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuyonghao-agent-marketplace",
+    "url": "https://clawhub.ai/skills/yuyonghao-agent-marketplace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuyonghao-agent-marketplace-1fcdcabf10917d4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent Marketplace enables skill discovery, rating, version control, dependency management, and installation with conflict detection and rollback support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuyonghao-123",
+      "userId": "s173qtadqbwthef9dwg283f54n83np6t",
+      "displayName": "yuyonghao-123",
+      "image": "https://avatars.githubusercontent.com/u/267580628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774925584154,
+      "changelog": "Initial release of Agent Marketplace.\n\n- Provides a system for skill discovery, rating, version management, and transactions.\n- Features include searchable skill directory, user rating system, personal recommendations, and installation management.\n- Supports publishing, updating, and compatibility checks for skills.\n- Includes API for searching, installing, rating, and managing skill versions.\n- Offers both basic and advanced usage examples in the documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f4733f5547d30f634704af9b77084acf68cb12cf5faf388205c058bb2c2f4e37"
+}

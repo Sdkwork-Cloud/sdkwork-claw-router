@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53955,
+  "uuid": "skill-clawhub-cyber-memory",
+  "skillKey": "clawhub-cyber-memory",
+  "name": "Cyber Memory",
+  "summary": "Five-layer memory system with automatic fact extraction via local LLM (Ollama). Processes session transcripts locally — no external API required.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cyber_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "witnesssun",
+      "features": [
+        "Five-layer memory system with automatic fact extraction via local LLM (Ollama)",
+        "Processes session transcripts locally — no external API required."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cyber-memory@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111419902?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cyber-memory",
+      "url": "https://clawhub.ai/skills/cyber-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cyber-memory",
+    "url": "https://clawhub.ai/skills/cyber-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cyber-memory-5c0836d69468af73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cyber-memory@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cyber-memory-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a670963b9b77f24cc0b195e7d906f379f347b2209713ec9a42f8de029d66205",
+      "artifactSizeBytes": 2322
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T05:59:43.369Z"
+}

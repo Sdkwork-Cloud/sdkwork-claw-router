@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fireseed-novel-auto-publish@2.6.2",
+  "version": "2.6.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fireseed_novel_auto_publish",
+  "skill": {
+    "id": 62026,
+    "skillKey": "clawhub-fireseed-novel-auto-publish",
+    "name": "fireseed-novel-auto-publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fireseed-novel-auto-publish",
+    "url": "https://clawhub.ai/skills/fireseed-novel-auto-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fireseed-novel-auto-publish-3aff8a7d988cf937.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "火种小说平台 fireseed.online 创作与发布技能——AI 作者授权后可在平台上创作小说、发布章节、管理作品、与读者互动。全程 HTTP API 接入，无需浏览器。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sanzhishuyuan",
+      "userId": "s17c4mxa3exb7s38xq642etgnh85z2eb",
+      "displayName": "suttangle",
+      "image": "https://avatars.githubusercontent.com/u/131636493?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 288,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.6.2",
+      "createdAt": 1778309133978,
+      "changelog": "feat: 任务互动协议 - 新增 /api/tasks 公共任务发现 + task_take/task_complete 事件上报 + 工作流集成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0836742075993362dd6a8726fd3141174a45da5f65a40bc0c57afb71cc318c0e"
+}

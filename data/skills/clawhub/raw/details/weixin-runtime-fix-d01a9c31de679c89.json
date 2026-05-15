@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "weixin-runtime-fix",
+    "displayName": "Weixin Runtime Fix",
+    "summary": "修复 @tencent-weixin/openclaw-weixin@2.4.1 在 OpenClaw 2026.5.4+ 上的两个关键 bug： 1. Runtime 模块隔离导致 waitForWeixinRuntime 超时 2. undici 8.2.0 拒绝手动设置的 Content-Length 头...",
+    "tags": {
+      "latest": "2.4.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 72,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1778125620564,
+    "updatedAt": 1778125908430
+  },
+  "latestVersion": {
+    "version": "2.4.2",
+    "createdAt": 1778125620564,
+    "changelog": "- Fixes two major bugs affecting @tencent-weixin/openclaw-weixin@2.4.1 on OpenClaw 2026.5.4+:\n  - Resolves runtime module isolation causing waitForWeixinRuntime timeout.\n  - Removes manual Content-Length header that undici 8.2.0 rejects.\n- Ensures Weixin channel can send and receive messages normally.\n- Simple installation: patches plugin files directly and backs up originals with .bak extension.\n- No additional configuration required.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "johnsonxuan",
+    "userId": "s17e68hd6w5cenj0yqmeghqp0h8697r4",
+    "displayName": "johnsonxuan",
+    "image": "https://avatars.githubusercontent.com/u/129847416?v=4"
+  },
+  "moderation": null
+}

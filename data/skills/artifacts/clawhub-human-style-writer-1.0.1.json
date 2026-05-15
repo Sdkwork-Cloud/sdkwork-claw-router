@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/human-style-writer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.human_style_writer",
+  "skill": {
+    "id": 69638,
+    "skillKey": "clawhub-human-style-writer",
+    "name": "具备人工特征的AI创作技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "human-style-writer",
+    "url": "https://clawhub.ai/skills/human-style-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/human-style-writer-873e80ea591d71d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "具备人工特征的AI创作技能。生成高质量长文、随笔、观点类内容，自然节奏、情感纹理、零AI腔调。由 adeeptools.com 提供服务。此为付费服务，每次创作支付 0.1 元（10分），执行前需完成支付验证。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qiaoshaohua",
+      "userId": "s17drabp7jr2c1eqbkbvxcvmz5850c77",
+      "displayName": "adeeptools",
+      "image": "https://avatars.githubusercontent.com/u/7576212?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776396124557,
+      "changelog": "fix: align with clawtip protocol — generate indicator (md5 of slug), write full order file to ~/.openclaw/skills/orders, Phase 3 reads payCredential from order file",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:829894cb6b395d064ad9901faa0ce0deed188131da11b406859a812ce3315c6a"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18400,
+  "uuid": "skill-clawhub-maritime-watch",
+  "skillKey": "clawhub-maritime-watch",
+  "name": "Maritime Watch",
+  "summary": "Monitors Chornomorsk port status by aggregating weather, vessel tracking, security alerts, and news with cross-validated data inputs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maritime_watch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ApacheUA",
+      "features": [
+        "Monitors Chornomorsk port status by aggregating weather, vessel tracking, security alerts, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maritime-watch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/206995083?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maritime-watch",
+      "url": "https://clawhub.ai/skills/maritime-watch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maritime-watch",
+    "url": "https://clawhub.ai/skills/maritime-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maritime-watch-8b6163407f93de2a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maritime-watch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-maritime-watch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf36f71f525f6f532242bd7fdce30f023145df34f4de1e35857d47a957b404a7",
+      "artifactSizeBytes": 2221
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T10:55:36.956Z"
+}

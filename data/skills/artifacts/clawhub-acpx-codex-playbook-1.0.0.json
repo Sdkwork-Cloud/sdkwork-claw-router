@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acpx-codex-playbook@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acpx_codex_playbook",
+  "skill": {
+    "id": 22110,
+    "skillKey": "clawhub-acpx-codex-playbook",
+    "name": "ACPX Codex Playbook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acpx-codex-playbook",
+    "url": "https://clawhub.ai/skills/acpx-codex-playbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acpx-codex-playbook-91e915c363584e2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Practical playbook for running Codex through acpx in persistent sessions, especially when the task needs reliable file creation, local dependency installs, s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spyfree",
+      "userId": "s175y9e87xpst713zv7cffhc4983g4ca",
+      "displayName": "Li Xin",
+      "image": "https://avatars.githubusercontent.com/u/2403860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 474,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773283590197,
+      "changelog": "Initial release: practical acpx+Codex workflow, prompt-file pattern, full-access guidance, shell-write fallback, troubleshooting, and PPT generation playbook.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ad385e88ccc981fafd6d027696299be022e1d9b5ddca1227adeac681934c9bd"
+}

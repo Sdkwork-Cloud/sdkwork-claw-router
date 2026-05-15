@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cwicr-cost-calculator@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cwicr_cost_calculator",
+  "skill": {
+    "id": 13846,
+    "skillKey": "clawhub-cwicr-cost-calculator",
+    "name": "Cwicr Cost Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cwicr-cost-calculator",
+    "url": "https://clawhub.ai/skills/cwicr-cost-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cwicr-cost-calculator-e2a6eb25f2b2b125.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculate construction costs using DDC CWICR resource-based methodology. Break down costs into labor, materials, equipment with transparent pricing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datadrivenconstruction",
+      "userId": "publishers:datadrivenconstruction",
+      "displayName": "datadrivenconstruction",
+      "image": "https://avatars.githubusercontent.com/u/94158709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1331,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1771017232149,
+      "changelog": "- Added homepage and metadata fields to SKILL.md for improved documentation and platform compatibility.\n- Metadata includes supported OS platforms, required binaries (python3), and an emoji icon for better discoverability.\n- No code or functional changes to the skill itself.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e480a6bbf8481d06df0122abd3de18ecb43b9be8808d47229417a81fa20209b1"
+}

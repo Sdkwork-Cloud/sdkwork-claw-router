@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/node-connection-doctor@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.node_connection_doctor",
+  "skill": {
+    "id": 35833,
+    "skillKey": "clawhub-node-connection-doctor",
+    "name": "node-connection-doctor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "node-connection-doctor",
+    "url": "https://clawhub.ai/skills/node-connection-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/node-connection-doctor-3e2d667febfbba95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose and fix OpenClaw node connection issues with automated checks, error-specific solutions, CLI guidance, and optional one-click repairs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huoxinjiang",
+      "userId": "s17bqjdmw3vjz8hdnxevncpvg183jzrd",
+      "displayName": "HuoXinJiang",
+      "image": "https://avatars.githubusercontent.com/u/125207178?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774505545337,
+      "changelog": "Initial release of node-connection-doctor.\n\n- Diagnose and fix OpenClaw node connection issues automatically.\n- Supports common failure scenarios: QR/setup code errors, manual pairing failures, VPN/Tailscale problems, and configuration errors.\n- Provides step-by-step CLI suggestions and exports diagnostic reports.\n- Includes one-click repair options (reset tokens, rebind/restart gateway).\n- English documentation and workflow files added.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61267104f0ead5938055e30b434c0004d0b70cc63340f2c5a6c7233263961f26"
+}

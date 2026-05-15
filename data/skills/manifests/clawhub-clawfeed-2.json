@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13603,
+  "uuid": "skill-clawhub-clawfeed-2",
+  "skillKey": "clawhub-clawfeed-2",
+  "name": "Clawfeed",
+  "summary": "AI-powered tool generating structured news summaries from Twitter and RSS feeds with digest options for 4H, daily, weekly, and monthly intervals.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawfeed_2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "94W666",
+      "features": [
+        "AI-powered tool generating structured news summaries from Twitter and RSS feeds with digest opt."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawfeed-2@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190935683?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawfeed-2",
+      "url": "https://clawhub.ai/skills/clawfeed-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawfeed-2",
+    "url": "https://clawhub.ai/skills/clawfeed-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawfeed-2-c1310219f1b78f66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawfeed-2@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawfeed-2-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e3f76eff6ec2360959bc5bb487b4b7f4c516bb58357e5c97c0a45fabb1b1968",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T04:13:47.732Z"
+}

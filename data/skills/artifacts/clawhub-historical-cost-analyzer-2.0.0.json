@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/historical-cost-analyzer@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.historical_cost_analyzer",
+  "skill": {
+    "id": 13824,
+    "skillKey": "clawhub-historical-cost-analyzer",
+    "name": "Historical Cost Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "historical-cost-analyzer",
+    "url": "https://clawhub.ai/skills/historical-cost-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/historical-cost-analyzer-58375b82348ec3ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze historical construction costs for benchmarking, trend analysis, and estimating calibration. Compare projects, track escalation, identify patterns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datadrivenconstruction",
+      "userId": "publishers:datadrivenconstruction",
+      "displayName": "datadrivenconstruction",
+      "image": "https://avatars.githubusercontent.com/u/94158709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1346,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1770997876661,
+      "changelog": "Version 2.0.0 introduces a full rewrite, adding robust construction cost analysis and reporting features.\n\n- Major rewrite and restructuring for clarity and usability.\n- Skill now analyzes historical construction costs for benchmarking, escalation tracking, and estimation calibration.\n- Supports location and time normalization, cost escalation analysis, and identification of cost drivers.\n- New data model classes (CostBenchmark, EscalationAnalysis, CostDriver) for clear and structured outputs.\n- Usage examples and clear documentation added for practical implementation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7ecc604a7d9eef9347fbad6a2c0402277edf35f9daadb20e2c67eb8b128be60f"
+}

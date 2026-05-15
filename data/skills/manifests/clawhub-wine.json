@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29549,
+  "uuid": "skill-clawhub-wine",
+  "skillKey": "clawhub-wine",
+  "name": "Wine",
+  "summary": "Record, search, and analyze your wine collection and tasting notes. Use when logging tastings, searching vintages, comparing ratings, or tracking inventory.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Record, search, and analyze your wine collection and tasting notes",
+        "Use when logging tastings, searching vintages, comparing ratings, or tracking inventory."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wine@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wine",
+      "url": "https://clawhub.ai/skills/wine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wine",
+    "url": "https://clawhub.ai/skills/wine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wine-32c4feed996880bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wine@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wine-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7405df9308ea6928f97ef7f747c8b71ca87adad335cf510ba4d09c2c5d2971c6",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:53:45.526Z"
+}

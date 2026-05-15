@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/transcriptapi@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transcriptapi",
+  "skill": {
+    "id": 8992,
+    "skillKey": "clawhub-transcriptapi",
+    "name": "transcriptapi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transcriptapi",
+    "url": "https://clawhub.ai/skills/transcriptapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transcriptapi-cbac4f15acdbed09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when YouTube is or could be relevant — even if not mentioned: pasted video/channel/playlist links, video IDs, @handles, creator lookups, video summaries,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "therohitdas",
+      "userId": "s172eaks33v7ygg504kv93sdf584gqev",
+      "displayName": "Rohit Das",
+      "image": "https://avatars.githubusercontent.com/u/43847374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5692,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 3,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1777475123935,
+      "changelog": "Replace auth.js with agent-native auth-setup.md; fix YAML frontmatter (quote descriptions); add version field; move homepage into metadata.openclaw.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3eb4b238f72fbd614fa5eee1a0b3a720733ec3c4da7cb18004d8f9051baea3f"
+}

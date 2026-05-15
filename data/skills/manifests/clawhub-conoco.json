@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47825,
+  "uuid": "skill-clawhub-conoco",
+  "skillKey": "clawhub-conoco",
+  "name": "Conoco",
+  "summary": "ConocoPhillips is a leading US independent oil and gas producer focused on upstream exploration and production with global operations and low-cost shale assets.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conoco",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "ConocoPhillips is a leading US independent oil and gas producer focused on upstream exploration."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/conoco@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "conoco",
+      "url": "https://clawhub.ai/skills/conoco"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conoco",
+    "url": "https://clawhub.ai/skills/conoco",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conoco-a563d946fc723400.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/conoco@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-conoco-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a577184dad4591d33320e50bfd3e2f56eb75a90cb16f3ccd2c831b0cb6d4e2ef",
+      "artifactSizeBytes": 2272
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T11:04:26.163Z"
+}

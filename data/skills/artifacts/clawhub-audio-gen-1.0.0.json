@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audio-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_gen",
+  "skill": {
+    "id": 9905,
+    "skillKey": "clawhub-audio-gen",
+    "name": "Audio Content Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-gen",
+    "url": "https://clawhub.ai/skills/audio-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-gen-5e9fca6af8669c97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate audiobooks, podcasts, or educational audio content on demand. User provides an idea or topic, Claude AI writes a script, and ElevenLabs converts it to high-quality audio. Supports multiple formats (audiobook, podcast, educational)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "udiedrichsen",
+      "userId": "publishers:udiedrichsen",
+      "displayName": "udiedrichsen",
+      "image": "https://avatars.githubusercontent.com/u/4386398?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2927,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768400692046,
+      "changelog": "Initial release: Generate audiobooks, podcasts, and educational audio content on demand using AI-generated scripts and ElevenLabs TTS",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7d1313f55cc6a0509e300984489159ba1d48dfeb34a0ac41dae3e1c296d7a5a2"
+}

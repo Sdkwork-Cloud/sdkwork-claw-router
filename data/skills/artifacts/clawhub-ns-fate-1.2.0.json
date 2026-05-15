@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ns-fate@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ns_fate",
+  "skill": {
+    "id": 33384,
+    "skillKey": "clawhub-ns-fate",
+    "name": "NS Fate - Empirical Divination & Forecasting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ns-fate",
+    "url": "https://clawhub.ai/skills/ns-fate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ns-fate-8507124d858e71a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrates divination systems (tarot, astrology, Chinese calendar, numerology, I Ching-style reasoning) into a structured cross-validation workflow. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neonsoung98",
+      "userId": "s17d63y20vqz83hz449ep26evd86cxdb",
+      "displayName": "NeonSoung98",
+      "image": "https://avatars.githubusercontent.com/u/108206488?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773985748302,
+      "changelog": "Added Scientific Stance, Directionality Policy (GO/HOLD/NO-GO), 6-step analysis framework, adjudication-engine, red-team-tests, accuracy-addons; standardized tarot shuffle protocol with seed-based draw",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:490536cfc7f754b21908e1b226942ef312f3d423932fa4aba9f426ddcad76917"
+}

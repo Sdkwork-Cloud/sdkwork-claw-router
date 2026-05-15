@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22046,
+  "uuid": "skill-clawhub-volcengine-sdk-generator",
+  "skillKey": "clawhub-volcengine-sdk-generator",
+  "name": "Volcengine SDK Generator",
+  "summary": "Generate complete, runnable Volcengine SDK code and provide SDK configuration guidance. Supports Go, Python, PHP, Java, and Node.js. Trigger this skill whene...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_sdk_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sdk-team",
+      "features": [
+        "Generate complete, runnable Volcengine SDK code and provide SDK configuration guidance",
+        "Supports Go, Python, PHP, Java, and Node.js",
+        "Trigger this skill whene..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcengine-sdk-generator@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198185282?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcengine-sdk-generator",
+      "url": "https://clawhub.ai/skills/volcengine-sdk-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-sdk-generator",
+    "url": "https://clawhub.ai/skills/volcengine-sdk-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-sdk-generator-5598a4d911ad9120.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcengine-sdk-generator@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-sdk-generator-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:914266b408b58d2707f81670e8025a9833af96ad4592814b12d7d97e8f833661",
+      "artifactSizeBytes": 2553
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T06:40:50.550Z"
+}

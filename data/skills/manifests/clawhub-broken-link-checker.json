@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14476,
+  "uuid": "skill-clawhub-broken-link-checker",
+  "skillKey": "clawhub-broken-link-checker",
+  "name": "Broken Link Checker",
+  "summary": "verify external URLs (http/https) for availability (200-399 status code).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.broken_link_checker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WANGJUNJIE",
+      "features": [
+        "verify external URLs (http/https) for availability (200-399 status code)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/broken-link-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32323900?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "broken-link-checker",
+      "url": "https://clawhub.ai/skills/broken-link-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "broken-link-checker",
+    "url": "https://clawhub.ai/skills/broken-link-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/broken-link-checker-6ddf2022d373b959.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/broken-link-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-broken-link-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16e23f27a2c8d45ff260f3765e9694d4b5de3619d12ca4d0f3065a1fbdf1d0f1",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T16:31:02.451Z"
+}

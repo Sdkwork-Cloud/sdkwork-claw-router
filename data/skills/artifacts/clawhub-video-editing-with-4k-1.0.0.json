@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-with-4k@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_with_4k",
+  "skill": {
+    "id": 37991,
+    "skillKey": "clawhub-video-editing-with-4k",
+    "name": "Video Editing With 4k"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-with-4k",
+    "url": "https://clawhub.ai/skills/video-editing-with-4k",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-with-4k-f4d35ec7326cd069.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cloud-based video-editing-with-4k tool that handles editing and exporting high-resolution 4K video projects. Upload MP4, MOV, AVI, MKV files (up to 500MB), d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776593024759,
+      "changelog": "Initial release of Video Editing with 4K\n\n- Cloud-based tool for editing and exporting high-resolution 4K video projects.\n- Supports uploading MP4, MOV, AVI, MKV files (up to 500MB).\n- Simple setup with automatic anonymous NEMO_TOKEN generation if not provided.\n- Handles tasks like trimming, color grading, aspect ratio adjustments, and text/audiotrack overlays, all via cloud GPUs.\n- Fast turnaround: 4K MP4 output available in 1–3 minutes.\n- Provides clear feedback for authentication, credits, file limits, and common errors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5040bf9c386c0584f6206ad66f65d2091d1ad568f7ed86d171854472052f627"
+}

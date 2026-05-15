@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27517,
+  "uuid": "skill-clawhub-veritier-fact-checking",
+  "skillKey": "clawhub-veritier-fact-checking",
+  "name": "Veritier Fact Checking",
+  "summary": "Real-time fact-checking and claim extraction. Extract falsifiable claims from any text or document, then verify each against live web evidence or your own pr...",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veritier_fact_checking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Salomon Henao",
+      "features": [
+        "Real-time fact-checking and claim extraction",
+        "Extract falsifiable claims from any text or document, then verify each against live web evidenc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/veritier-fact-checking@2.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39999385?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "veritier-fact-checking",
+      "url": "https://clawhub.ai/skills/veritier-fact-checking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veritier-fact-checking",
+    "url": "https://clawhub.ai/skills/veritier-fact-checking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veritier-fact-checking-e22ad67904ea6fd5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/veritier-fact-checking@2.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-veritier-fact-checking-2.1.2.json",
+      "version": "2.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c44defaf143d161c31f31bec2c48a094a517a1eea9e28f8cc8f8aeefd464226",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T01:37:02.546Z"
+}

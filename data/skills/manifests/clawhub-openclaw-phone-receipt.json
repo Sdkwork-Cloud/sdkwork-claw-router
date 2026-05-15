@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16983,
+  "uuid": "skill-clawhub-openclaw-phone-receipt",
+  "skillKey": "clawhub-openclaw-phone-receipt",
+  "name": "OpenClaw Phone Receipt",
+  "summary": "Trigger and manage OpenClaw outbound phone receipts via ElevenLabs+Twilio for task completion/failure notifications. Use when user asks to call them after finishing/failing a task, asks to enable/disable fixed command toggles (\"phone-recei.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_phone_receipt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tuofangzhe",
+      "features": [
+        "Trigger and manage OpenClaw outbound phone receipts via ElevenLabs+Twilio for task completion/f.",
+        "Use when user asks to call them after finishing/failing a task, asks to enable/disable fixed co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-phone-receipt@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129367165?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-phone-receipt",
+      "url": "https://clawhub.ai/skills/openclaw-phone-receipt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-phone-receipt",
+    "url": "https://clawhub.ai/skills/openclaw-phone-receipt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-phone-receipt-011cca49be937244.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-phone-receipt@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-phone-receipt-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad0d0438c9af98ed210a244a74e80eb8c95d623a479598409466be19a5153c68",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T06:49:38.778Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-generator-seedance@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generator_seedance",
+  "skill": {
+    "id": 60763,
+    "skillKey": "clawhub-video-generator-seedance",
+    "name": "video-generator-seedance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generator-seedance",
+    "url": "https://clawhub.ai/skills/video-generator-seedance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generator-seedance-9a01e92002a13691.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用火山引擎 SD1.5pro API 生成视频。支持文本到视频和图生视频，异步处理任务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaronzoe",
+      "userId": "s17bp6gkbc19x59ppgc44qccps83vzmb",
+      "displayName": "aaronzoe",
+      "image": "https://avatars.githubusercontent.com/u/5404172?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 965,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773337801019,
+      "changelog": "- No code or documentation changes detected in this version.\n- Functionality and usage remain the same as the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:057c2eb33fbe39810d7b14ffad7ecae2c9c132e664ef51e35350cded68a31e56"
+}

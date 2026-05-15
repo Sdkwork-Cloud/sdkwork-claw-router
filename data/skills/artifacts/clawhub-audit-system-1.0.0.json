@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audit-system@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audit_system",
+  "skill": {
+    "id": 24988,
+    "skillKey": "clawhub-audit-system",
+    "name": "audit system"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audit-system",
+    "url": "https://clawhub.ai/skills/audit-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audit-system-24d958a71e9f1e43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform structured audits on code, workflows, prompts, and products. Use when: (1) Something is not working as expected, (2) User asks for review or feedback..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mededdahby",
+      "userId": "s177k2zmyf2zzzdwjv1sjtcm6183g9dh",
+      "displayName": "Mededdahby",
+      "image": "https://avatars.githubusercontent.com/u/99148703?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 288,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774174068555,
+      "changelog": "Initial release of audit-system skill.\n\n- Enables structured audits for code, workflows, prompts, and products.\n- Provides clear audit process: define scope, inspect, detect issues, classify severity, recommend fixes, and prioritize.\n- Outlines different audit types with specific guidance for each.\n- Standardized output format for actionable reports.\n- Includes clear behavior rules and limitations for safe, focused usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a515254cbe8eb7a3f9eb5845356f49370f959543fe4a9b27ca6ec7070bb5aebe"
+}

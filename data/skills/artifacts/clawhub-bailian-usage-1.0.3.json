@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bailian-usage@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bailian_usage",
+  "skill": {
+    "id": 64642,
+    "skillKey": "clawhub-bailian-usage",
+    "name": "Bailian Usage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bailian-usage",
+    "url": "https://clawhub.ai/skills/bailian-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bailian-usage-a9776121e0a39ae9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询阿里云百炼 Coding Plan 套餐状态、剩余额度、用量消耗及有效期信息，支持自动登录和数据提取。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackwude",
+      "userId": "s179gq7hbe4eahgf1sdzkgs03d84835g",
+      "displayName": "jackwude",
+      "image": "https://avatars.githubusercontent.com/u/20317407?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 492,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773847614658,
+      "changelog": "Security hotfix: 确保 README.md 使用占位符，无真实凭证泄露",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1aab2399181623f2a7af243711fdf7b34ff912bdcb94dd4a1ed9f19ab8fd5e96"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10677,
+  "uuid": "skill-clawhub-canva-automation",
+  "skillKey": "clawhub-canva-automation",
+  "name": "Canva Automation",
+  "summary": "Automate Canva tasks via Rube MCP (Composio): designs, exports, folders, brand templates, autofill. Always search tools first for current schemas.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canva_automation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sohamganatra",
+      "features": [
+        "Automate Canva tasks via Rube MCP (Composio): designs, exports, folders, brand templates, autof.",
+        "Always search tools first for current schemas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/canva-automation@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7982102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "canva-automation",
+      "url": "https://clawhub.ai/skills/canva-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canva-automation",
+    "url": "https://clawhub.ai/skills/canva-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canva-automation-5749d79f54141e89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/canva-automation@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-canva-automation-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a708e82aae5de4b2c2cc057897c0c07e506348ef852af768f7ae22f8c1535b62",
+      "artifactSizeBytes": 2315
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T00:23:44.968Z"
+}

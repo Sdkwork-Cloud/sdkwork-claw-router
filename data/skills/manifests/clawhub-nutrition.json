@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10972,
+  "uuid": "skill-clawhub-nutrition",
+  "skillKey": "clawhub-nutrition",
+  "name": "Nutrition",
+  "summary": "Build a personal nutrition system for tracking meals, calories, macros, vitamins, and minerals.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nutrition",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build a personal nutrition system for tracking meals, calories, macros, vitamins, and minerals."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nutrition@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nutrition",
+      "url": "https://clawhub.ai/skills/nutrition"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nutrition",
+    "url": "https://clawhub.ai/skills/nutrition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nutrition-257c4a121ae568ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nutrition@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nutrition-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53ea4c9bc926283bedab8afdc63bbf1fb94b9dc18295a0392646bd47370af244",
+      "artifactSizeBytes": 1783
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T01:33:52.943Z"
+}

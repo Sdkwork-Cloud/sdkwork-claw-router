@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16710,
+  "uuid": "skill-clawhub-wip-repo-init",
+  "skillKey": "clawhub-wip-repo-init",
+  "name": "Wip Repo Init",
+  "summary": "Scaffold the standard ai/ directory structure in any repo.",
+  "version": "1.9.72",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wip_repo_init",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Parker Todd Brooks",
+      "features": [
+        "Scaffold the standard ai/ directory structure in any repo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wip-repo-init@1.9.72",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/585456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wip-repo-init",
+      "url": "https://clawhub.ai/skills/wip-repo-init"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wip-repo-init",
+    "url": "https://clawhub.ai/skills/wip-repo-init",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wip-repo-init-238a7a12da3a2a95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wip-repo-init@1.9.72",
+      "artifactUrl": "data/skills/artifacts/clawhub-wip-repo-init-1.9.72.json",
+      "version": "1.9.72",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07cc5c5737cc83688c24783b8c01658ce1e771bd6a0e145b9e9ffe5b9b8e4d2c",
+      "artifactSizeBytes": 3436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T21:25:26.686Z"
+}

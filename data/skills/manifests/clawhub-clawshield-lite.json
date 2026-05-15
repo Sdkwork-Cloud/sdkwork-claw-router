@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54728,
+  "uuid": "skill-clawhub-clawshield-lite",
+  "skillKey": "clawhub-clawshield-lite",
+  "name": "ClawShield Lite – AI Skill Security Scanner",
+  "summary": "Scans AI skills for potential security risks and unsafe commands",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawshield_lite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TheNox21",
+      "features": [
+        "Scans AI skills for potential security risks and unsafe commands"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawshield-lite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184642573?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawshield-lite",
+      "url": "https://clawhub.ai/skills/clawshield-lite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawshield-lite",
+    "url": "https://clawhub.ai/skills/clawshield-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawshield-lite-34748af6a7c8b685.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawshield-lite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawshield-lite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7521a5c21597fc9d428bdee254a5e07f8506c983bc54b4f9c9332efafd47244",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:36:38.504Z"
+}

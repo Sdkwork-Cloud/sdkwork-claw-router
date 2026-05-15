@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34029,
+  "uuid": "skill-clawhub-xtoys-app",
+  "skillKey": "clawhub-xtoys-app",
+  "name": "Xtoys.app Webhook Controller",
+  "summary": "Control xtoys.app devices via webhook. Supports precise control of various body parts for remote intimate device control.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xtoys_app",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KasuganoSora",
+      "features": [
+        "Control xtoys.app devices via webhook",
+        "Supports precise control of various body parts for remote intimate device control."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xtoys-app@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1083618?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xtoys-app",
+      "url": "https://clawhub.ai/skills/xtoys-app"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xtoys-app",
+    "url": "https://clawhub.ai/skills/xtoys-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xtoys-app-8c7c5a0440e81227.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xtoys-app@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-xtoys-app-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b6371c776a3c9fbecf408f0c5feb2ae1000a9a63375481e468a4481eb9ce6ea",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:34:25.558Z"
+}

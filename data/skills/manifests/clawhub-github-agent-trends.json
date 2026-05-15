@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37606,
+  "uuid": "skill-clawhub-github-agent-trends",
+  "skillKey": "clawhub-github-agent-trends",
+  "name": "Github Agent Trends",
+  "summary": "Generate GitHub agent-trending project reports as formatted markdown leaderboards. Fetches agent/LLM-agent/multi-agent related repos by daily, weekly, or mon...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_agent_trends",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "Generate GitHub agent-trending project reports as formatted markdown leaderboards",
+        "Fetches agent/LLM-agent/multi-agent related repos by daily, weekly, or mon..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-agent-trends@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-agent-trends",
+      "url": "https://clawhub.ai/skills/github-agent-trends"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-agent-trends",
+    "url": "https://clawhub.ai/skills/github-agent-trends",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-agent-trends-46e3f47c96422d16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-agent-trends@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-agent-trends-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:479634d4921f76000610bc4396d8815f6910716466dbe6ae20117e8274c5aa19",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:33:06.542Z"
+}

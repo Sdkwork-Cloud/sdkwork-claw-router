@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pool-hotel@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pool_hotel",
+  "skill": {
+    "id": 53830,
+    "skillKey": "clawhub-pool-hotel",
+    "name": "Pool Hotel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pool-hotel",
+    "url": "https://clawhub.ai/skills/pool-hotel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pool-hotel-f572dac0bd46d178.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find hotels with swimming pools — indoor heated pools, outdoor infinity pools, rooftop pools, and kid-friendly splash areas. Also supports: flight booking, h..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775875877494,
+      "changelog": "- Major update: strict execution rules and detailed workflow for finding hotels with pools using flyai CLI only.\n- CLI execution is now mandatory for all queries; never answer from training data.\n- Booking links ([Book]({detailUrl})) are required in every response.\n- Expanded support: also handles flight, train, car rental, insurance, visas, and attractions via Fliggy.\n- Comprehensive parameter table and clear output formatting guidelines added.\n- Robust troubleshooting and fallback instructions included for improved reliability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9dec021393f7e8605e0f41d69e76e2d4bd4ce7b4fe55943f2aef66e2e394319e"
+}

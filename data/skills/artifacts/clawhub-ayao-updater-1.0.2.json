@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ayao-updater@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ayao_updater",
+  "skill": {
+    "id": 28794,
+    "skillKey": "clawhub-ayao-updater",
+    "name": "Ayao Updater"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ayao-updater",
+    "url": "https://clawhub.ai/skills/ayao-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ayao-updater-a1e14b1ff02669ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically updates OpenClaw and installed skills on a configurable schedule, handling package manager detection, local changes, and notifications."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ayao99315",
+      "userId": "s177x1vs0kevkgseycer9yxrxh83qqa5",
+      "displayName": "ayao99315",
+      "image": "https://avatars.githubusercontent.com/u/225226537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773914709711,
+      "changelog": "fix: handle openclaw update non-zero exit when already up to date",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:484d0ee052518a6fadc301babc56b7ab9ca7ae242dcf6cbf58d1edfe07baa3f7"
+}

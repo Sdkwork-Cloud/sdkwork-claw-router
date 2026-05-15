@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-publisher-plugin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_publisher_plugin",
+  "skill": {
+    "id": 61035,
+    "skillKey": "clawhub-skill-publisher-plugin",
+    "name": "Skill Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-publisher-plugin",
+    "url": "https://clawhub.ai/skills/skill-publisher-plugin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-publisher-plugin-a2a76a0a5c7bc6c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "上传和发布技能到 ClawHub 市场。当用户说\"发布skill\"、\"上传到clawhub\"、\"发布到市场\"或需要将本地技能发布到 ClawHub 时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vivian8725118",
+      "userId": "s17140zjypft9dtsz7c5xwrbeh84560c",
+      "displayName": "Vivian",
+      "image": "https://avatars.githubusercontent.com/u/6382684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775197481951,
+      "changelog": "- Initial release of the ClawHub skill publishing tool.\n- Allows uploading and publishing local skills to the ClawHub marketplace.\n- Includes login status checks and versioning guidance based on semantic versioning.\n- Provides clear CLI command references and usage examples for publishing and updating skills.\n- Supports trigger words like \"发布skill\", \"上传到clawhub\", and \"发布到市场\" for easy activation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64bd805ef95377c883da008f9cc15a60030386d2d0d4b6d9f7ab3bb55913e4ae"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61391,
+  "uuid": "skill-clawhub-api-quick-tester",
+  "skillKey": "clawhub-api-quick-tester",
+  "name": "Api Quick Tester",
+  "summary": "API 快速测试工具。一键测试 REST/GraphQL API，生成测试报告，模拟请求。适合前端/后端开发者。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_quick_tester",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang1002378395-cmyk",
+      "features": [
+        "API 快速测试工具。一键测试 REST/GraphQL API，生成测试报告，模拟请求。适合前端/后端开发者。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-quick-tester@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261632147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-quick-tester",
+      "url": "https://clawhub.ai/skills/api-quick-tester"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-quick-tester",
+    "url": "https://clawhub.ai/skills/api-quick-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-quick-tester-0528800369199514.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-quick-tester@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-quick-tester-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf8bb17ca83bb22c5368b1f30b809285b5ca8f92fe00d1c442809477965b83a6",
+      "artifactSizeBytes": 2292
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T04:40:49.671Z"
+}

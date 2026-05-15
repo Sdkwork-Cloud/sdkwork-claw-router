@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rakuten-shop-analysis@0.1.10",
+  "version": "0.1.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rakuten_shop_analysis",
+  "skill": {
+    "id": 62254,
+    "skillKey": "clawhub-rakuten-shop-analysis",
+    "name": "Rakuten Shop Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rakuten-shop-analysis",
+    "url": "https://clawhub.ai/skills/rakuten-shop-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rakuten-shop-analysis-43c71ce079b1cc73.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用于分析 Rakuten 乐天店铺。用户提供店铺链接或 shopCode 时使用，适合竞品研究、店铺结构分析和快速出报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abca12a",
+      "userId": "s17339071esqdjg2gmabex9mx183gpze",
+      "displayName": "abca12a",
+      "image": "https://avatars.githubusercontent.com/u/35697843?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 319,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "0.1.10",
+      "createdAt": 1774672966377,
+      "changelog": "Forbid background monitoring claims when a run does not return final results",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:10d44ebffb5273493ca20ec4d533183ffa01cee432b5c0e2d99405b5eb54f3d3"
+}

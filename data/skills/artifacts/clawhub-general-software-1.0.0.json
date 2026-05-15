@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/general-software@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.general_software",
+  "skill": {
+    "id": 70077,
+    "skillKey": "clawhub-general-software",
+    "name": "General Software Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "general-software",
+    "url": "https://clawhub.ai/skills/general-software",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/general-software-05ec7e6a63e1b812.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用软件自动化技能，涵盖窗口管理、GUI自动化、批量文件处理、软件安装配置、系统设置、日志收集分析、截图取证等通用场景。触发场景：自动化点击、窗口操作、批量重命名、文件格式转换、软件批量安装、系统配置、日志分析、屏幕截图、GUI测试。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaochunz030-spec",
+      "userId": "s17aqpem1sxfcabvh3td5t9q8583hhr6",
+      "displayName": "xiaochunz030-spec",
+      "image": "https://avatars.githubusercontent.com/u/267922219?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774670610145,
+      "changelog": "GUI自动化/批量文件处理/系统配置/日志分析",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5fcfd9f0df2e5107f795a449bb11d686c3bd685b7025b49e3868eb39bacf1fb"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/patchright-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patchright_skill",
+  "skill": {
+    "id": 45215,
+    "skillKey": "clawhub-patchright-skill",
+    "name": "Patchright Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patchright-skill",
+    "url": "https://clawhub.ai/skills/patchright-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patchright-skill-1e511e8b108434ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Patchright-based browser automation with bot detection bypass. Use when Claude needs to interact with local web applications, test localhost/dev servers, tak..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smallnest",
+      "userId": "s1732835fdfty4p76msqxsdq2583gj80",
+      "displayName": "smallnest",
+      "image": "https://avatars.githubusercontent.com/u/865763?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775473592684,
+      "changelog": "Patchright-skill 1.0.0 – initial release\n\n- Enables Patchright-based browser automation focused on localhost, dev servers, and private networks.\n- Supports session-persistent automation via a background server (scripts/server.py).\n- Provides tools for navigation, screenshots, clicking, typing, waiting for elements, retrieving page info, and more.\n- Ideal for QA, E2E testing, frontend/debug verification, and UI automation on development/local environments.\n- Includes detailed usage instructions, trigger examples, and troubleshooting guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8317742ad8ec38ee76ee86360d9eb94199a508ed44c2f1cfee5431c280e4b655"
+}

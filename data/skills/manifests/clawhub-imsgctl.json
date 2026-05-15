@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37197,
+  "uuid": "skill-clawhub-imsgctl",
+  "skillKey": "clawhub-imsgctl",
+  "name": "imsgctl",
+  "summary": "Read Apple Messages data with imsgctl: check access, list chats, inspect message history, filter by time, include attachment metadata, and watch new activity...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imsgctl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "James Reagan",
+      "features": [
+        "Read Apple Messages data with imsgctl: check access, list chats, inspect message history, filte."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/imsgctl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46203919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "imsgctl",
+      "url": "https://clawhub.ai/skills/imsgctl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imsgctl",
+    "url": "https://clawhub.ai/skills/imsgctl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imsgctl-590f15759f1b3f5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/imsgctl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-imsgctl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8be1b332aeefb8c26f7d16118763eb523d3b3fe59e5c24fa8abfafcb67b250ee",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T05:35:45.281Z"
+}

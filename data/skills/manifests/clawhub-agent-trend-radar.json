@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58853,
+  "uuid": "skill-clawhub-agent-trend-radar",
+  "skillKey": "clawhub-agent-trend-radar",
+  "name": "Agent Trend Radar",
+  "summary": "키워드 트렌드 신호 탐지 및 Rising/Peaking/Declining 분류 에이전트",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_trend_radar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jinu4you",
+      "features": [
+        "키워드 트렌드 신호 탐지 및 Rising/Peaking/Declining 분류 에이전트"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-trend-radar@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30405449?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-trend-radar",
+      "url": "https://clawhub.ai/skills/agent-trend-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-trend-radar",
+    "url": "https://clawhub.ai/skills/agent-trend-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-trend-radar-7bde3e924028093c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-trend-radar@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-trend-radar-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07b1b7eb975cf79aa0e9ea5b3b8f19fc31613f9a26c4d46da362a504c17c2dd4",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T00:17:25.815Z"
+}

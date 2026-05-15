@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/appendix-table-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appendix_table_writer",
+  "skill": {
+    "id": 55023,
+    "skillKey": "clawhub-appendix-table-writer",
+    "name": "Appendix Table Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appendix-table-writer",
+    "url": "https://clawhub.ai/skills/appendix-table-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appendix-table-writer-0431d423e2011fa5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Curate reader-facing survey tables for the Appendix (clean layout + high information density), using only in-scope evidence and existing citation keys. **Tri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "willoscar",
+      "userId": "publishers:willoscar",
+      "displayName": "WILLOSCAR",
+      "image": "https://avatars.githubusercontent.com/u/63443351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773911682389,
+      "changelog": "- Initial release of the Appendix Table Writer skill.\n- Generates reader-facing, publishable survey tables for the Appendix based on in-scope evidence and existing citation keys.\n- Produces a clean, high-information-density layout; enforces citation of sources and avoids internal pipeline jargon.\n- Validates output to ensure at least two well-cited Markdown tables with clear, reader-appropriate formatting.\n- Explicitly documents required inputs, workflow, style guidelines, and roles for contributors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b2b3c90d27baa1d548282037f8f236cc369f9e6bd2b0e52af60174a70da4074"
+}

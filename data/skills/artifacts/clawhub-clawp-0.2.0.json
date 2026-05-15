@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawp@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawp",
+  "skill": {
+    "id": 11999,
+    "skillKey": "clawhub-clawp",
+    "name": "CLAWP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawp",
+    "url": "https://clawhub.ai/skills/clawp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawp-513732e12f724477.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLAWP Agent - AI token creation advisor powered by OpenClaw"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iclawn",
+      "userId": "publishers:iclawn",
+      "displayName": "iclawn",
+      "image": "https://avatars.githubusercontent.com/u/258453233?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1650,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1769978214596,
+      "changelog": "Initial release of the CLAWP OpenClaw skill.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1eff32a95a107681a1609a31bfbc1aefaab33e29454db20f548f9a1c2a8c49b8"
+}

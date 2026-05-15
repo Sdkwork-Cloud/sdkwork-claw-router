@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-design-guide-skill@1.3.3",
+  "version": "1.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_design_guide_skill",
+  "skill": {
+    "id": 28186,
+    "skillKey": "clawhub-skill-design-guide-skill",
+    "name": "Skill Design Guide Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-design-guide-skill",
+    "url": "https://clawhub.ai/skills/skill-design-guide-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-design-guide-skill-5779ef05a34d1c47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design better AI skills with proven architecture patterns. Helps you decide Workflow vs Agent, pick the right pattern (Prompt Chaining, Routing, Parallelizat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haiyangchenbj",
+      "userId": "s17672gh0nx9qr7sjp84kz7xen83jv7v",
+      "displayName": "haiyangchen",
+      "image": "https://avatars.githubusercontent.com/u/135641704?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.3.3",
+      "createdAt": 1776227638858,
+      "changelog": "Optimize Chinese description in SKILL_zh.md; remove emojis from headings",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:26a26175f97944b5bae9a8cdff66e64ea3574bb73e978fdda679b999b318175f"
+}

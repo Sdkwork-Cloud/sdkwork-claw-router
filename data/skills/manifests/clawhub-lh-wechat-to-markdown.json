@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61671,
+  "uuid": "skill-clawhub-lh-wechat-to-markdown",
+  "skillKey": "clawhub-lh-wechat-to-markdown",
+  "name": "lh-wechat-to-markdown",
+  "summary": "抓取并保存微信公众平台文章为干净的 Markdown 与 HTML 快照，支持登录态和图片本地化下载。",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lh_wechat_to_markdown",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liuhedev",
+      "features": [
+        "抓取并保存微信公众平台文章为干净的 Markdown 与 HTML 快照，支持登录态和图片本地化下载。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lh-wechat-to-markdown@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19663285?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lh-wechat-to-markdown",
+      "url": "https://clawhub.ai/skills/lh-wechat-to-markdown"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lh-wechat-to-markdown",
+    "url": "https://clawhub.ai/skills/lh-wechat-to-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lh-wechat-to-markdown-13a79a65179696e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lh-wechat-to-markdown@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lh-wechat-to-markdown-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c36fde56d988591b3a16d58002f2469a0d62a265b2911a7246e3e3e4fe3d4071",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:05:04.086Z"
+}

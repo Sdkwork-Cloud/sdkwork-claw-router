@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33276,
+  "uuid": "skill-clawhub-boost",
+  "skillKey": "clawhub-boost",
+  "name": "Boost",
+  "summary": "Boost integration. Manage data, records, and automate workflows. Use when the user wants to interact with Boost data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boost",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Boost integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Boost data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/boost@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "boost",
+      "url": "https://clawhub.ai/skills/boost"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boost",
+    "url": "https://clawhub.ai/skills/boost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boost-ca4264faf5970fc6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/boost@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-boost-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:260a17a496e28b30fe07ed8fcc39200e73ba2b466d128d8f1d7171ac638da328",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:24:52.449Z"
+}

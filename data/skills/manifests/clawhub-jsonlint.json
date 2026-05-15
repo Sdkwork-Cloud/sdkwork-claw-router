@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23872,
+  "uuid": "skill-clawhub-jsonlint",
+  "skillKey": "clawhub-jsonlint",
+  "name": "Jsonlint",
+  "summary": "Validate and pretty-print JSON files from the terminal. Use when linting config files, formatting API payloads, checking syntax before deployment.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jsonlint",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Validate and pretty-print JSON files from the terminal",
+        "Use when linting config files, formatting API payloads, checking syntax before deployment."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jsonlint@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jsonlint",
+      "url": "https://clawhub.ai/skills/jsonlint"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jsonlint",
+    "url": "https://clawhub.ai/skills/jsonlint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jsonlint-d71791d4e1963bda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jsonlint@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jsonlint-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9dfb3c4c3f521a9776d5291e71d03ee09309665ac997d7c528dfa9d1d8aa1b5",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:41:04.705Z"
+}

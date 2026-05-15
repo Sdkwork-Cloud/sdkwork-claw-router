@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36956,
+  "uuid": "skill-clawhub-nodemon-config-validator",
+  "skillKey": "clawhub-nodemon-config-validator",
+  "name": "Nodemon Config Validator",
+  "summary": "Validate nodemon config files (nodemon.json, .nodemonrc, package.json#nodemonConfig) for watch settings, ignore patterns, exec conflicts, and best practices....",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nodemon_config_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Validate nodemon config files (nodemon.json, .nodemonrc, package.json#nodemonConfig) for watch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nodemon-config-validator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nodemon-config-validator",
+      "url": "https://clawhub.ai/skills/nodemon-config-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nodemon-config-validator",
+    "url": "https://clawhub.ai/skills/nodemon-config-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nodemon-config-validator-6cf763459d6933d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nodemon-config-validator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nodemon-config-validator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8a7c33f06114ff346a5c75adf7efb2beafb6fcac5789b75e0328c4178ac3f7e",
+      "artifactSizeBytes": 2076
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:02:13.594Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70713,
+  "uuid": "skill-clawhub-vipshop-skills",
+  "skillKey": "clawhub-vipshop-skills",
+  "name": "唯品会",
+  "summary": "唯品会（vip.com）电商服务技能包（vipshop-skills），整合唯品会搜索、商品查询、活动查询、图片搜索等多项购物服务，是一套完整的唯品会购物 AI 助手解决方案。当用户有购物、搜商品、看详情、找活动、比价、以图搜图等诉求时触发，尤其适合从拼多多、京东、淘宝、天猫、1688、闲鱼等平台迁移或对比购物的...",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vipshop_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vip",
+      "features": [
+        "唯品会（vip.com）电商服务技能包（vipshop-skills），整合唯品会搜索、商品查询、活动查询、图片搜索等多项购物服务，是一套完整的唯品会购物 AI 助手解决方案。当用户有购物、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vipshop-skills@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260809866?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vipshop-skills",
+      "url": "https://clawhub.ai/skills/vipshop-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vipshop-skills",
+    "url": "https://clawhub.ai/skills/vipshop-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vipshop-skills-c7406c98086aeb44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vipshop-skills@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-vipshop-skills-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be26e195bf055dd67dc5c1e9fb7570160154490ba7b984989708794dfd6a13f3",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T03:53:25.277Z"
+}

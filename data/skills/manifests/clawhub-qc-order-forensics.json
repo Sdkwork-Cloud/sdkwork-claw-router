@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52354,
+  "uuid": "skill-clawhub-qc-order-forensics",
+  "skillKey": "clawhub-qc-order-forensics",
+  "name": "Qc Order Forensics",
+  "summary": "Forensic diagnosis engine for backtest order data — trade quality, ROI attribution, monthly cashflow, drawdown root-cause analysis, and LLM-readable reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qc_order_forensics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tltby12341",
+      "features": [
+        "Forensic diagnosis engine for backtest order data — trade quality, ROI attribution, monthly cas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qc-order-forensics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30487767?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qc-order-forensics",
+      "url": "https://clawhub.ai/skills/qc-order-forensics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qc-order-forensics",
+    "url": "https://clawhub.ai/skills/qc-order-forensics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qc-order-forensics-5fe72974160359c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qc-order-forensics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qc-order-forensics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:241baf4d06f402b8ba2b7a69d1fa255e23f7c43e40df5780506c630eca1e68e8",
+      "artifactSizeBytes": 2424
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T14:20:55.978Z"
+}

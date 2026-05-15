@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openbroker@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openbroker",
+  "skill": {
+    "id": 9388,
+    "skillKey": "clawhub-openbroker",
+    "name": "Open-broker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openbroker",
+    "url": "https://clawhub.ai/skills/openbroker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openbroker-48ed7bf7fd4f9b09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hyperliquid trading plugin with background position monitoring and custom automations. Execute market orders, limit orders, manage positions, view funding ra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ya7ya",
+      "userId": "s172z989jdmnn1swd2x7c9fbn183zttg",
+      "displayName": "Yahya",
+      "image": "https://avatars.githubusercontent.com/u/932163?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3199,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 9,
+      "versions": 39
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1777715875236,
+      "changelog": "**Adds HIP-4 outcome market support and new outcome commands.**\n\n- Introduced support for HIP-4 outcome markets, including identification, trading, and querying outcome markets.\n- New commands and plugin tools: `openbroker outcomes`, `ob_outcomes`, `ob_outcome_buy`, and `ob_outcome_sell`.\n- Updated asset search and asset ID documentation to include HIP-4 encoding and usage.\n- Expanded allowed tools list to support outcome market operations.\n- Improved documentation for outcome handling and command reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2822df879e48c9c1e0bfd5b547e1dd50cbe878eb5c44ff2a8832c961f6839cd8"
+}

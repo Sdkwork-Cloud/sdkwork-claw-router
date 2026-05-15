@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19294,
+  "uuid": "skill-clawhub-agent-team-orchestration-1",
+  "skillKey": "clawhub-agent-team-orchestration-1",
+  "name": "Agent Team Orchestration 1",
+  "summary": "Orchestrate multi-agent teams with defined roles, task lifecycles, handoff protocols, and review workflows. Use when: (1) Setting up a team of 2+ agents with...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_team_orchestration_1",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nuradil",
+      "features": [
+        "Orchestrate multi-agent teams with defined roles, task lifecycles, handoff protocols, and revie.",
+        "Use when: (1) Setting up a team of 2+ agents with..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-team-orchestration-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19585535?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-team-orchestration-1",
+      "url": "https://clawhub.ai/skills/agent-team-orchestration-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-team-orchestration-1",
+    "url": "https://clawhub.ai/skills/agent-team-orchestration-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-team-orchestration-1-6ff40b28aceb2f20.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-team-orchestration-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-team-orchestration-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b693deda93fa1aa9162d999f5a4edd6667bc33da78090baff8caa339ed94f57",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T01:46:25.193Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/side-peace@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.side_peace",
+  "skill": {
+    "id": 11228,
+    "skillKey": "clawhub-side-peace",
+    "name": "Side Peace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "side-peace",
+    "url": "https://clawhub.ai/skills/side-peace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/side-peace-b40ab7f97d21bf9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Minimal secure secret handoff. Zero external deps. Human opens browser form, submits secret, agent receives it via temp file. Secret NEVER appears in stdout/logs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bitbrujo",
+      "userId": "s1732ej7n9qhhqfdmwt1jjhzmh83gv6q",
+      "displayName": "EULOxGOS",
+      "image": "https://avatars.githubusercontent.com/u/106397029?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1770267350183,
+      "changelog": "Republish test",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bd390591e63f9ea88c903d87e1369dd891a53854579d990f6a58692fd3cd1e74"
+}

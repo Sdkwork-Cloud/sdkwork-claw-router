@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14646,
+  "uuid": "skill-clawhub-humor",
+  "skillKey": "clawhub-humor",
+  "name": "Humor",
+  "summary": "Develop adaptive humor that learns what makes each user laugh through signal detection, graduated testing, and graceful failure recovery.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Develop adaptive humor that learns what makes each user laugh through signal detection, graduat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/humor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "humor",
+      "url": "https://clawhub.ai/skills/humor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humor",
+    "url": "https://clawhub.ai/skills/humor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humor-c50a5e4de8983f75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/humor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-humor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4afaa01b7c5b51be6fce3ce80dc820cdc632143319dd295ac93da593c54fc2b5",
+      "artifactSizeBytes": 1796
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T21:58:20.185Z"
+}

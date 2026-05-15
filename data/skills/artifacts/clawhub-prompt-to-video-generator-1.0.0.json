@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-to-video-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_to_video_generator",
+  "skill": {
+    "id": 49201,
+    "skillKey": "clawhub-prompt-to-video-generator",
+    "name": "Prompt To Video Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-to-video-generator",
+    "url": "https://clawhub.ai/skills/prompt-to-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-to-video-generator-f403806f299b1e98.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get AI-generated videos ready to post, without touching a single slider. Upload your text prompts (TXT, DOCX, PDF, plain text, up to 500MB), say something li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 84,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778064811787,
+      "changelog": "Initial release of Prompt to Video Generator (v1.0.0):\n\n- Upload text prompts (TXT, DOCX, PDF, etc., up to 500MB) to generate AI-powered 1080p videos from plain English instructions.\n- Provides a simple workflow for marketers, creators, and social media managers to create share-ready video content without editing software.\n- Automatic backend connection and authentication; 100 free credits for new users (valid 7 days).\n- Supports multiple formats for export, including MP4, MOV, AVI, and more.\n- Intelligent handling of credits, session state, and common errors; includes clear feedback and recovery steps.\n- Optimized for fast, specific prompt-driven video generation and batch processing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:064115a43b6763c308640b17b9a280b7c9cc2b6f217e4eb362c0f988b0e6d43d"
+}

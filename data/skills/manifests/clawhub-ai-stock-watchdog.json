@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52549,
+  "uuid": "skill-clawhub-ai-stock-watchdog",
+  "skillKey": "clawhub-ai-stock-watchdog",
+  "name": "AI stock watchdog",
+  "summary": "Daily monitoring for Indian equity holdings (NSE/BSE) using a documented severity rubric. Silent by default — only surfaces Sev-1 events (governance, cash fl...",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_stock_watchdog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daveanandraj",
+      "features": [
+        "Daily monitoring for Indian equity holdings (NSE/BSE) using a documented severity rubric",
+        "Silent by default — only surfaces Sev-1 events (governance, cash fl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-stock-watchdog@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221209287?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-stock-watchdog",
+      "url": "https://clawhub.ai/skills/ai-stock-watchdog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-stock-watchdog",
+    "url": "https://clawhub.ai/skills/ai-stock-watchdog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-stock-watchdog-a827a19bd29b857b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-stock-watchdog@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-stock-watchdog-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b56c061e7e767c47329d8800219bab7a24500ee3f449552b793d14ce770271c",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T19:18:30.044Z"
+}

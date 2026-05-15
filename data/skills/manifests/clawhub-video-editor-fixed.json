@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48665,
+  "uuid": "skill-clawhub-video-editor-fixed",
+  "skillKey": "clawhub-video-editor-fixed",
+  "name": "Video Editor Fixed",
+  "summary": "Get corrected video files ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"fi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_fixed",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "Get corrected video files ready to post, without touching a single slider",
+        "Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"fi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-editor-fixed@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-editor-fixed",
+      "url": "https://clawhub.ai/skills/video-editor-fixed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-fixed",
+    "url": "https://clawhub.ai/skills/video-editor-fixed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-fixed-a72d55eb66d95bae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-editor-fixed@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-editor-fixed-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2a5a9578df8277436f8678103415b84afc384d8d3d72318e6d21afc51b8e246",
+      "artifactSizeBytes": 2456
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T15:37:47.434Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31493,
+  "uuid": "skill-clawhub-neural-network-diagnostics",
+  "skillKey": "clawhub-neural-network-diagnostics",
+  "name": "Neural Network Ops",
+  "summary": "Diagnoses and tunes LLM providers (Groq, OpenRouter, Ollama), resolves rate limits/timeouts, and selects stable primary/fallback models. Use when the bot is...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neural_network_diagnostics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "utromaya-code",
+      "features": [
+        "Diagnoses and tunes LLM providers (Groq, OpenRouter, Ollama), resolves rate limits/timeouts, an.",
+        "Use when the bot is..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neural-network-diagnostics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254962629?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neural-network-diagnostics",
+      "url": "https://clawhub.ai/skills/neural-network-diagnostics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neural-network-diagnostics",
+    "url": "https://clawhub.ai/skills/neural-network-diagnostics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neural-network-diagnostics-314e68dbb10a7aec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neural-network-diagnostics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-neural-network-diagnostics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e4341e08183b76e4364382ef00478326f5f764bd422c02101ee156b8ad39e20",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T19:06:36.556Z"
+}

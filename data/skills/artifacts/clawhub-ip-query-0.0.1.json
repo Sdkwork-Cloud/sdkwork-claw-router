@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ip-query@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ip_query",
+  "skill": {
+    "id": 65764,
+    "skillKey": "clawhub-ip-query",
+    "name": "ip-query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ip-query",
+    "url": "https://clawhub.ai/skills/ip-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ip-query-446c71745178bc3b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询当前设备的公共IP地址及其地理位置和ISP等相关信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shogunwin",
+      "userId": "publishers:shogunwin",
+      "displayName": "shogunwin",
+      "image": "https://avatars.githubusercontent.com/u/4899151?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 327,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1773206230763,
+      "changelog": "Initial release of the IP Query Skill:\n\n- 查询并显示当前设备的公共IP地址\n- 可选获取IP所属地理位置信息和ISP信息\n- 支持通过多种中文及英文关键词自动激活\n- 依赖curl或wget发起请求，支持jq解析JSON\n- 示例输出包括IP、位置信息和网络信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29b450a7c511da6346b304db897789c97dae7efc9fa80b7d3329032ef768a638"
+}

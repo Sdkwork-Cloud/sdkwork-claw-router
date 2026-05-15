@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/searxng-selfhost@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searxng_selfhost",
+  "skill": {
+    "id": 17456,
+    "skillKey": "clawhub-searxng-selfhost",
+    "name": "SearXNG Self-Host"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searxng-selfhost",
+    "url": "https://clawhub.ai/skills/searxng-selfhost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searxng-selfhost-755a930d32fc8646.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-hosted web search aggregator for OpenClaw agents. Use this skill to (1) install SearXNG on a VPS/server so the agent can search the web without API keys..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "saikatkumardey",
+      "userId": "publishers:saikatkumardey",
+      "displayName": "Saikat Kumar Dey",
+      "image": "https://avatars.githubusercontent.com/u/4646605?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 768,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771348306683,
+      "changelog": "Fix: replace curl|sh uv installer with pip3 install uv -- removes security scan flag",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9abc1404238643722d48b824b24e61e9b939f03ec011f945a3992b1907a89afc"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33224,
+  "uuid": "skill-clawhub-leadoku",
+  "skillKey": "clawhub-leadoku",
+  "name": "Leadoku",
+  "summary": "Leadoku integration. Manage Leads, Persons, Organizations, Deals, Pipelines, Users and more. Use when the user wants to interact with Leadoku data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leadoku",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Leadoku integration",
+        "Manage Leads, Persons, Organizations, Deals, Pipelines, Users and more",
+        "Use when the user wants to interact with Leadoku data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/leadoku@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "leadoku",
+      "url": "https://clawhub.ai/skills/leadoku"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leadoku",
+    "url": "https://clawhub.ai/skills/leadoku",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leadoku-f1526f017b97197b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/leadoku@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-leadoku-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01e26ef83df54a536c14fe163a4ebcae02b42a67fcaf474e4be1c942a6bf37d9",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:06:13.521Z"
+}

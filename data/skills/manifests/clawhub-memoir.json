@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72289,
+  "uuid": "skill-clawhub-memoir",
+  "skillKey": "clawhub-memoir",
+  "name": "memoir",
+  "summary": "帮助用户撰写人生回忆录。通过间歇性采集和引导式提问，收集用户的人生故事， 然后整理成完整的回忆录。前期以用户讲述为主（引导提问），后期以总结为主（整理成文）。 触发条件：用户说\"写回忆录\"、\"回忆录\"、\"人生故事\"、\"帮我记录一下人生\"等。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memoir",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIdalong",
+      "features": [
+        "帮助用户撰写人生回忆录。通过间歇性采集和引导式提问，收集用户的人生故事， 然后整理成完整的回忆录。前期以用户讲述为主（引导提问），后期以总结为主（整理成文）。 触发条件：用户说\"写回忆录\"、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memoir@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204814894?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memoir",
+      "url": "https://clawhub.ai/skills/memoir"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memoir",
+    "url": "https://clawhub.ai/skills/memoir",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memoir-f77b78e7fd6a09bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memoir@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-memoir-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ff82b977ea25368e6f471e42d4a14e696acbbf15982d6e6778d304a630833a9",
+      "artifactSizeBytes": 2103
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T01:54:37.097Z"
+}

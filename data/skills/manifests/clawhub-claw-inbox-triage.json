@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47337,
+  "uuid": "skill-clawhub-claw-inbox-triage",
+  "skillKey": "clawhub-claw-inbox-triage",
+  "name": "Inbox Triage",
+  "summary": "Automates inbox management by categorizing messages into urgent, normal, or spam, generating daily digests, and drafting responses for low-priority items.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_inbox_triage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Indigas",
+      "features": [
+        "Automates inbox management by categorizing messages into urgent, normal, or spam, generating da."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-inbox-triage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69516204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-inbox-triage",
+      "url": "https://clawhub.ai/skills/claw-inbox-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-inbox-triage",
+    "url": "https://clawhub.ai/skills/claw-inbox-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-inbox-triage-2b5b0c2c322999df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-inbox-triage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-inbox-triage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89547729842c3e861f5f1cc25a0ec33ad30147ca91e9d8b8e337ed301880acfe",
+      "artifactSizeBytes": 2389
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T11:32:48.878Z"
+}

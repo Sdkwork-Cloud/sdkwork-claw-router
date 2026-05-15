@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8766,
+  "uuid": "skill-clawhub-skywork-ppt",
+  "skillKey": "clawhub-skywork-ppt",
+  "name": "Skywork PPT",
+  "summary": "Skywork PPT (skywork) - Use when the user wants to work with PowerPoint presentations. Triggers: (1) Generate a new PPT from a topic — 'generate a PPT', 'cre...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skywork_ppt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Skywork AI",
+      "features": [
+        "Skywork PPT (skywork)",
+        "Use when the user wants to work with PowerPoint presentations",
+        "Triggers: (1) Generate a new PPT from a topic — 'generate a PPT', 'cre..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skywork-ppt@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5279174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skywork-ppt",
+      "url": "https://clawhub.ai/skills/skywork-ppt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skywork-ppt",
+    "url": "https://clawhub.ai/skills/skywork-ppt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skywork-ppt-29d213ce50b11727.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skywork-ppt@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-skywork-ppt-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd8abe123dd4774d55d8bf5b9239fc242df8b54d4883794ca884a503c0c8b82c",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T12:59:48.398Z"
+}

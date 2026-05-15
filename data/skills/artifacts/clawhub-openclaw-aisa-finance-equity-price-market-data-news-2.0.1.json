@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-aisa-finance-equity-price-market-data-news@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aisa_finance_equity_price_market_data_news",
+  "skill": {
+    "id": 51090,
+    "skillKey": "clawhub-openclaw-aisa-finance-equity-price-market-data-news",
+    "name": "Query real-time and historical financial data of equity prices, market moves, metrics, and trends for analysis, alerts, and rep."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aisa-finance-equity-price-market-data-news",
+    "url": "https://clawhub.ai/skills/openclaw-aisa-finance-equity-price-market-data-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aisa-finance-equity-price-market-data-news-6a52aa23a312e20b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query real-time and historical financial data for equities—prices, news, financial statements, metrics, analyst estimates, insider and institutional activity..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisadocs",
+      "userId": "s172yz541n4361fw0sapygg0r583eghk",
+      "displayName": "AIsa",
+      "image": "https://avatars.githubusercontent.com/u/245991925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1776207983504,
+      "changelog": "**MarketPulse 2.0.1 – Complete, user-friendly financial data API and CLI for equities**\n\n- Rebranded skill as \"marketpulse\" with updated, concise documentation.\n- Expanded support for comprehensive equity data: prices, news, statements, filings, metrics, and macro rates.\n- Clear curl and Python usage examples for all endpoints, including real-time & historical queries.\n- New features: segmented revenues, analyst estimates, insider/institutional activity, full stock screening, and company facts.\n- Improved endpoint parameter documentation and coverage notes for press releases.\n- Enhanced compatibility details and environment requirements for easier integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2730092ea6c52699a6a43908a15e94dd0d52db719a4549702022b98636a9d96b"
+}

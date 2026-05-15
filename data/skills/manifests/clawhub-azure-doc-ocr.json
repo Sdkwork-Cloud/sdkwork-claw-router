@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17959,
+  "uuid": "skill-clawhub-azure-doc-ocr",
+  "skillKey": "clawhub-azure-doc-ocr",
+  "name": "Azure Document OCR",
+  "summary": "Extract text and structured data from documents using Azure Document Intelligence (formerly Form Recognizer). Supports OCR for PDFs, images, scanned document...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.azure_doc_ocr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HONGMIN LI",
+      "features": [
+        "Extract text and structured data from documents using Azure Document Intelligence (formerly For.",
+        "Supports OCR for PDFs, images, scanned document..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/azure-doc-ocr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14259647?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "azure-doc-ocr",
+      "url": "https://clawhub.ai/skills/azure-doc-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "azure-doc-ocr",
+    "url": "https://clawhub.ai/skills/azure-doc-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/azure-doc-ocr-8d0ee4c839baf7cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/azure-doc-ocr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-azure-doc-ocr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee78468453f1abedf97b0515e247523d371d74c74e60b4d2a9f1298b091c065a",
+      "artifactSizeBytes": 2012
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T08:20:09.281Z"
+}

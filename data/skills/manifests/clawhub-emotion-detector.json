@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16977,
+  "uuid": "skill-clawhub-emotion-detector",
+  "skillKey": "clawhub-emotion-detector",
+  "name": "Emotion Detector",
+  "summary": "Detects the primary emotion in text input for AI agents. Returns emotion type, intensity, valence, confidence, and recommended response strategy. Use when an...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emotion_detector",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daisuke Narita",
+      "features": [
+        "Detects the primary emotion in text input for AI agents",
+        "Returns emotion type, intensity, valence, confidence, and recommended response strategy",
+        "Use when an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/emotion-detector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140220114?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "emotion-detector",
+      "url": "https://clawhub.ai/skills/emotion-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emotion-detector",
+    "url": "https://clawhub.ai/skills/emotion-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emotion-detector-bb66cc3947517b25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/emotion-detector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-emotion-detector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:117b6466e663c9a9ce934b12f47c50e777f5e4379aac112e9b2a2debd8d3b09c",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T21:49:00.340Z"
+}

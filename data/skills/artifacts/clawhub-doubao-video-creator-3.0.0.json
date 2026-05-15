@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doubao-video-creator@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubao_video_creator",
+  "skill": {
+    "id": 73560,
+    "skillKey": "clawhub-doubao-video-creator",
+    "name": "豆包视频创作助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubao-video-creator",
+    "url": "https://clawhub.ai/skills/doubao-video-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubao-video-creator-8fa66e1819406328.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于火山引擎豆包视频生成模型，辅助用户配置项目并分场景确认提示词，逐步生成并合成专业短视频。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cindypapa",
+      "userId": "s171tsgfz5gnz75p6mgabptb6x8416qw",
+      "displayName": "Cindypapa",
+      "image": "https://avatars.githubusercontent.com/u/128971646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1777371746413,
+      "changelog": "默认时长改为 10 秒，支持用户选择 10s/15s，支持模型版本选择 1.0/1.5/2.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:844b5fa8488729a2048ad85dd89910791c0ab00e14249b5ac4745886486edb20"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firm-agent-orchestration-pack@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firm_agent_orchestration_pack",
+  "skill": {
+    "id": 21631,
+    "skillKey": "clawhub-firm-agent-orchestration-pack",
+    "name": "Firm Agent Orchestration Pack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firm-agent-orchestration-pack",
+    "url": "https://clawhub.ai/skills/firm-agent-orchestration-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firm-agent-orchestration-pack-142a151c9fbe9c6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent task orchestration pack. DAG-based parallel task execution and team status monitoring. 2 orchestration tools."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "romainsantoli-web",
+      "userId": "publishers:romainsantoli-web",
+      "displayName": "romainsantoli-web",
+      "image": "https://avatars.githubusercontent.com/u/246739959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 482,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772407030544,
+      "changelog": "Initial release — 2 tools: DAG task execution, team status",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6d4accb9ef75c7470a96059a69da4a35ad1fb5389d7d33bef557831284d871c5"
+}

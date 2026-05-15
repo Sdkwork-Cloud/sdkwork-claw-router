@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42265,
+  "uuid": "skill-clawhub-nex-depcheck",
+  "skillKey": "clawhub-nex-depcheck",
+  "name": "Nex DepCheck",
+  "summary": "Skill dependency checker. Scan Python skills for external dependencies. Verify stdlib-only compliance, check individual files or entire skill directories. No...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nex_depcheck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nex AI",
+      "features": [
+        "Skill dependency checker",
+        "Scan Python skills for external dependencies",
+        "Verify stdlib-only compliance, check individual files or entire skill directories"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nex-depcheck@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149910894?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nex-depcheck",
+      "url": "https://clawhub.ai/skills/nex-depcheck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nex-depcheck",
+    "url": "https://clawhub.ai/skills/nex-depcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nex-depcheck-04db822efa4eb2b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nex-depcheck@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nex-depcheck-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c66da3f1435753003700d9d0f0465722b4e6012a2d3f4da2cd5b79eac6f40baa",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T02:00:07.034Z"
+}

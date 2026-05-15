@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10694,
+  "uuid": "skill-clawhub-who-growth-charts",
+  "skillKey": "clawhub-who-growth-charts",
+  "name": "WHO Growth Charts",
+  "summary": "Generate WHO child growth charts (height, weight, BMI) with percentile curves. Downloads official WHO reference data on demand. Use when users ask about chil...",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.who_growth_charts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Oliver Drobnik",
+      "features": [
+        "Generate WHO child growth charts (height, weight, BMI) with percentile curves",
+        "Downloads official WHO reference data on demand",
+        "Use when users ask about chil..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/who-growth-charts@1.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/333270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "who-growth-charts",
+      "url": "https://clawhub.ai/skills/who-growth-charts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "who-growth-charts",
+    "url": "https://clawhub.ai/skills/who-growth-charts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/who-growth-charts-e8675626d969cf4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/who-growth-charts@1.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-who-growth-charts-1.2.3.json",
+      "version": "1.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:465fbdbbe0508373e33bd498006617c944e522d2c79af72e53f785aedabad619",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T22:11:25.242Z"
+}

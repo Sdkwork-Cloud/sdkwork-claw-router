@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brand-analyzer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brand_analyzer",
+  "skill": {
+    "id": 11151,
+    "skillKey": "clawhub-brand-analyzer",
+    "name": "Brand Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brand-analyzer",
+    "url": "https://clawhub.ai/skills/brand-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brand-analyzer-d940c5b79a512899.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user requests brand analysis, brand guidelines creation, brand audits, or establishing brand identity and consistency standards. It provides comprehensive frameworks for analyzing brand elements and creat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1852,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769869738566,
+      "changelog": "Initial release of brand-analyzer skill: comprehensive tool for brand analysis, guideline creation, and brand identity audits.\n\n- Supports workflows for new brand development, existing brand analysis, and quick brand audits.\n- Utilizes established frameworks including Jung’s 12 brand archetypes and standard identity principles.\n- Step-by-step process for analyzing visual identity, messaging, market position, and consistency.\n- Generates professional output documents: guidelines, analysis reports, and audit checklists.\n- Provides actionable prioritization and implementation roadmaps for brand improvements.\n- Advanced features include brand health scoring and competitive brand analysis.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3642d4326264e566e5b8511977ef82f256adbfb9a322b1e1b83cc47af86b6225"
+}

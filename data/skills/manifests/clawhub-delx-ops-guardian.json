@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19308,
+  "uuid": "skill-clawhub-delx-ops-guardian",
+  "skillKey": "clawhub-delx-ops-guardian",
+  "name": "Delx Ops Guardian",
+  "summary": "Automatically detects, assesses, and safely mitigates incidents in OpenClaw production agents, providing detailed reports and verified recovery.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delx_ops_guardian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "David Batista",
+      "features": [
+        "Automatically detects, assesses, and safely mitigates incidents in OpenClaw production agents,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/delx-ops-guardian@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/624359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "delx-ops-guardian",
+      "url": "https://clawhub.ai/skills/delx-ops-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delx-ops-guardian",
+    "url": "https://clawhub.ai/skills/delx-ops-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delx-ops-guardian-4e30a81260047104.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/delx-ops-guardian@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-delx-ops-guardian-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1207254c80ef33e1284042418639b1a5fae394adfafec3eca18cdad6398777b1",
+      "artifactSizeBytes": 2478
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T16:12:10.361Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fapi-twitter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fapi_twitter",
+  "skill": {
+    "id": 61173,
+    "skillKey": "clawhub-fapi-twitter",
+    "name": "fapi.uk Twitter All-in-One API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fapi-twitter",
+    "url": "https://clawhub.ai/skills/fapi-twitter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fapi-twitter-1dc008f0fe65c0ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过自然语言调用fapi.uk 60+ Twitter接口，实现发推、搜索、互动、用户管理及社区功能，自动管理积分与授权。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huojiecs110",
+      "userId": "publishers:huojiecs110",
+      "displayName": "huojiecs110",
+      "image": "https://avatars.githubusercontent.com/u/154880305?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 404,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773115482659,
+      "changelog": "fapi-twitter 1.0.0\n\n- Initial release of the fapi.uk Twitter 全能 API Skill (pure REST version).\n- Enables full natural language access to 60+ real Twitter API endpoints via OpenClaw.\n- Easy setup with step-by-step API key and auth_token binding, no MCP required.\n- Key features: tweeting, replies, likes, bookmarks, retweets, user search, follows, advanced search, trending topics, Grok/Communities, media upload, notifications, and more.\n- Intelligent balance checks are enforced before every action; provides recharge reminders when points are low.\n- User interactions and replies are summarized naturally in Chinese, with detailed data only on demand.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e256677b78e42a88b4b63270cf44d6808af79d6d887674501ff4e1ccffc9b43"
+}

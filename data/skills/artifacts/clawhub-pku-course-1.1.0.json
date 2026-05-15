@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pku-course@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pku_course",
+  "skill": {
+    "id": 56993,
+    "skillKey": "clawhub-pku-course",
+    "name": "Course"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pku-course",
+    "url": "https://clawhub.ai/skills/pku-course",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pku-course-7b3070be63b65215.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PKU Teaching Platform (北大教学网/Blackboard Learn) CLI tool built in Rust. Use this skill when working on the course crate, debugging course commands, adding fea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wjsoj",
+      "userId": "s170ksphbtrkq0sghjqcwn5v3s83v5ew",
+      "displayName": "wjsoj",
+      "image": "https://avatars.githubusercontent.com/u/59087896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776235094544,
+      "changelog": "更新 description: 课表问题改用 treehole skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8699db99e4b6ad46a10c1129a99e2a5e7921fefa11caacf554360617763e4c1c"
+}

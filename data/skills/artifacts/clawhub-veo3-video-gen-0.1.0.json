@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/veo3-video-gen@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veo3_video_gen",
+  "skill": {
+    "id": 9753,
+    "skillKey": "clawhub-veo3-video-gen",
+    "name": "Veo 3 Video Gen (Gemini API)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veo3-video-gen",
+    "url": "https://clawhub.ai/skills/veo3-video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veo3-video-gen-f2da27e8edecfadb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and stitch short videos via Google Veo 3.x using the Gemini API (google-genai). Use when you need to create video clips from prompts (ads, UGC-style clips, product demos) and want a reproducible CLI workflow (generate, poll, downl."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bluelyw",
+      "userId": "publishers:bluelyw",
+      "displayName": "bluelyw",
+      "image": "https://avatars.githubusercontent.com/u/19149404?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3144,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769609324187,
+      "changelog": "Initial public release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:42628f9c15165548ba20d37e62384253ddb29e644b83873da1499badef47be1f"
+}

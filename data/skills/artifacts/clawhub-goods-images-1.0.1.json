@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/goods-images@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goods_images",
+  "skill": {
+    "id": 57189,
+    "skillKey": "clawhub-goods-images",
+    "name": "goods-images"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goods-images",
+    "url": "https://clawhub.ai/skills/goods-images",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goods-images-03ad49c2a874ab5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants to generate product detail images or carousel/main images for e-commerce platforms like Taobao. Triggers on keywords like 商品图, 详情图, 产..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "briefness",
+      "userId": "s17fk50xgzfn3652z9b7awhjan8503tn",
+      "displayName": "briefness",
+      "image": "https://avatars.githubusercontent.com/u/25975388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 705,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773140104698,
+      "changelog": "goods-images 1.0.1\n\n- Now clarifies that 14 images must be generated for each request (5 carousel + 9 detail images).\n- Adds an explicit step-by-step execution checklist to ensure every image is created using the correct process.\n- Emphasizes that every image should call `generate_image` separately, always use the original product image as ImagePaths, and overlay logos/texts via PIL, not in the prompt.\n- Reinforces not to use pure white backgrounds, but to apply contextual scenes based on product style.\n- No code or file changes; adjustments are documentation and instruction updates for correctness and completeness.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19c225802bc88f25ac809b5f3f9302be34be5bd13bc86f0acb495895fb513a29"
+}

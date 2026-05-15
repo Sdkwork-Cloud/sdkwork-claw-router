@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38348,
+  "uuid": "skill-clawhub-biontech",
+  "skillKey": "clawhub-biontech",
+  "name": "BioNTech",
+  "summary": "Provides detailed insights into BioNTech's mRNA technology, vaccine development, cancer immunotherapy, and its global pharmaceutical impact.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.biontech",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides detailed insights into BioNTech's mRNA technology, vaccine development, cancer immunot."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/biontech@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "biontech",
+      "url": "https://clawhub.ai/skills/biontech"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "biontech",
+    "url": "https://clawhub.ai/skills/biontech",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/biontech-4469c2627cbf990e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/biontech@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-biontech-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a70753f6a95e1f13f969c41835dd1b455714dab786b6fe9667c11fc72069e3d5",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T17:04:39.466Z"
+}

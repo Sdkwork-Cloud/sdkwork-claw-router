@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-download@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_download",
+  "skill": {
+    "id": 61631,
+    "skillKey": "clawhub-douyin-download",
+    "name": "douyin-download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-download",
+    "url": "https://clawhub.ai/skills/douyin-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-download-be0be129a1dc920f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抖音无水印视频下载和文案提取工具"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whille",
+      "userId": "publishers:whille",
+      "displayName": "whille",
+      "image": "https://avatars.githubusercontent.com/u/1240846?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1936,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 5,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772213555490,
+      "changelog": "- 文档调整：在“提取文案”示例中，将环境变量设置方式由 `export` 命令改为注释形式，提升易读性。\n- 其余内容未发生变动。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:201b9f174175c7eaa985fd3ad90de1a28f7f06327a47ce0740e7ff627d8a82cd"
+}

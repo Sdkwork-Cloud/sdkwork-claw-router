@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58454,
+  "uuid": "skill-clawhub-a-share-stock-dossier",
+  "skillKey": "clawhub-a-share-stock-dossier",
+  "name": "A Share Stock Dossier",
+  "summary": "Analyze A-share stocks and portfolios with analyst-grade, evidence-first reports. Use when the user asks for 个股分析、持仓复盘、逻辑是否还在、行业龙头、盘前/盘后策略、情绪+技术综合判断, especia...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_stock_dossier",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lian Junhong",
+      "features": [
+        "Analyze A-share stocks and portfolios with analyst-grade, evidence-first reports",
+        "Use when the user asks for 个股分析、持仓复盘、逻辑是否还在、行业龙头、盘前/盘后策略、情绪+技术综合判断, especia..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-share-stock-dossier@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69239617?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-share-stock-dossier",
+      "url": "https://clawhub.ai/skills/a-share-stock-dossier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-stock-dossier",
+    "url": "https://clawhub.ai/skills/a-share-stock-dossier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-stock-dossier-ab3c65a95d32d41f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-share-stock-dossier@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-share-stock-dossier-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b07ac19dff4344a8f2beebf8c3bd19bda1f1654d6be4573d66f206311182354",
+      "artifactSizeBytes": 2615
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T11:50:46.697Z"
+}

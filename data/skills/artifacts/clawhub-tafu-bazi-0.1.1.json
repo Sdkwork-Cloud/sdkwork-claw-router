@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tafu-bazi@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tafu_bazi",
+  "skill": {
+    "id": 33180,
+    "skillKey": "clawhub-tafu-bazi",
+    "name": "Tafu BaZi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tafu-bazi",
+    "url": "https://clawhub.ai/skills/tafu-bazi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tafu-bazi-0a7559cf66614a82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Tafu's paid API for deterministic BaZi chart calculation, thematic readings, synastry, and soul-song generation when users ask for Chinese astrology anal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhihao93li",
+      "userId": "s1730qjqtyywgqfm8jbtnr66cn83qgyp",
+      "displayName": "zhihao93li",
+      "image": "https://avatars.githubusercontent.com/u/150808916?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774697644783,
+      "changelog": "- Updated developer and billing URLs from ta​fu.app to ta​fu.me throughout documentation.\n- Changed default API base URL to https://api.tafu.me/api/v1.\n- No functional code changes; documentation and endpoint references improved for consistency with current service domains.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d659d8a42f6773a5552f5acaeeb72589d99101025969dd4bb9c8760f4ea5e05"
+}

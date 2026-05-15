@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25154,
+  "uuid": "skill-clawhub-token-risk-explainer-skill",
+  "skillKey": "clawhub-token-risk-explainer-skill",
+  "name": "Token Risk Explainer",
+  "summary": "Explain crypto token risk in plain Chinese and English from Binance Web3 token audit and market metadata. Use this skill when users want a contract-level ris...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_risk_explainer_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2663629531",
+      "features": [
+        "Explain crypto token risk in plain Chinese and English from Binance Web3 token audit and market.",
+        "Use this skill when users want a contract-level ris..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/token-risk-explainer-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85226053?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "token-risk-explainer-skill",
+      "url": "https://clawhub.ai/skills/token-risk-explainer-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-risk-explainer-skill",
+    "url": "https://clawhub.ai/skills/token-risk-explainer-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-risk-explainer-skill-b9f168524f9c0d7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/token-risk-explainer-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-token-risk-explainer-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e5449cd2a26b73cf9ab42693667ce3036de93ccaf1633a450d4b63a2aeb22e9",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T07:30:57.647Z"
+}

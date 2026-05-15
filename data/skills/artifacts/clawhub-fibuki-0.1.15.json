@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fibuki@0.1.15",
+  "version": "0.1.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fibuki",
+  "skill": {
+    "id": 19539,
+    "skillKey": "clawhub-fibuki",
+    "name": "Bank Transactions Connector - Europe (PSD2)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fibuki",
+    "url": "https://clawhub.ai/skills/fibuki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fibuki-8fb901bed2704516.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to European bank accounts via PSD2 Open Banking. Browse transactions, match receipts to payments, categorize expenses, and manage business partners t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "felixtosh",
+      "userId": "publishers:felixtosh",
+      "displayName": "felixtosh",
+      "image": "https://avatars.githubusercontent.com/u/595541?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 586,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "0.1.15",
+      "createdAt": 1773701904281,
+      "changelog": "Auto-publish from main",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f80dde14c99c584a9aa4c8666e90835c1a2c07ad75d9378db978e62fc6dcc5e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zoho@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoho",
+  "skill": {
+    "id": 9834,
+    "skillKey": "clawhub-zoho",
+    "name": "Zoho"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoho",
+    "url": "https://clawhub.ai/skills/zoho",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoho-cb2317426a5c336d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Zoho CRM, Projects, and Meeting APIs. Use when managing deals, contacts, leads, tasks, projects, milestones, meeting recordings, or any Zoho wo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shreefentsar",
+      "userId": "publishers:shreefentsar",
+      "displayName": "Shreef Entsar",
+      "image": "https://avatars.githubusercontent.com/u/51826553?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3103,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1771445206486,
+      "changelog": "Fix security scan: configurable paths (no more hardcoded /root/clawd), declared all env vars in skill.json including GEMINI_API_KEY, verified bin/zoho exists in manifest",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:751696ccf534f0c41dced6bbb91da17d43621b4dbeca3f31a594bb6384d1316b"
+}

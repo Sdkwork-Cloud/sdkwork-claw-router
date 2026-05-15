@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/form2api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.form2api",
+  "skill": {
+    "id": 26200,
+    "skillKey": "clawhub-form2api",
+    "name": "form2api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "form2api",
+    "url": "https://clawhub.ai/skills/form2api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/form2api-4979506f884ec267.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically intercept and analyze login-required form submissions to generate reusable API docs and call code for automation and bulk operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "longway-code",
+      "userId": "s175twm9gmnkskjnp0j4124m5183gqf0",
+      "displayName": "longway-code",
+      "image": "https://avatars.githubusercontent.com/u/248519566?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773836604800,
+      "changelog": "Initial release of form-to-api – a tool for reverse-engineering web forms into reusable APIs.\n\n- Capture real API requests when a form is submitted, no manual analysis needed.\n- Automatically identify which fields are user inputs and which are fixed.\n- Generate a structured API document, including curl and Python usage examples.\n- Supports cookie extraction and re-use, streamlining automation for authenticated forms.\n- Simple workflow: just share the form URL and submit it once; everything else is automated.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da37a9526577f9b028f27611882acbe1a37a93285b5aeae5f25ecd7d43d02d1c"
+}

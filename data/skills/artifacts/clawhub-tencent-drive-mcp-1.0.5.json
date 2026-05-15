@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencent-drive-mcp@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_drive_mcp",
+  "skill": {
+    "id": 58115,
+    "skillKey": "clawhub-tencent-drive-mcp",
+    "name": "Tencent Drive(Weiyun) MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-drive-mcp",
+    "url": "https://clawhub.ai/skills/tencent-drive-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-drive-mcp-4f1ac8e092619db9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微云网盘 MCP 接口完整技能。包含 weiyun.list、weiyun.list_by_category、weiyun.download、weiyun.delete、weiyun.upload、weiyun.gen_share_link、weiyun.rename_file、weiyun.rename_dir..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yun-percy",
+      "userId": "s176cen8yn341b5ttszb0htpdd84dr8k",
+      "displayName": "振云 (Percy)",
+      "image": "https://avatars.githubusercontent.com/u/5087001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1777450276967,
+      "changelog": "tencent-drive-mcp v1.0.5\n\n- Added Python script for file encoding fixes: scripts/_encoding_fix.py (and bytecode __pycache__).\n- Removed setup.sh installation script.\n- Documentation (SKILL.md) updated with more detail for directory deletion (dir_name parameter requirement), error code description, enhanced upload retry instructions, and improved descriptions for FTN上传 SHA1 block calculation support.\n- No breaking changes to MCP Tool interfaces or core functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42682783425a50629817e13aa01f9e781c4d44f1407717a9272f4972fe18302c"
+}

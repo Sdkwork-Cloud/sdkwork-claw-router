@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47958,
+  "uuid": "skill-clawhub-game-generator",
+  "skillKey": "clawhub-game-generator",
+  "name": "Game Generator",
+  "summary": "generate game concepts or text into gameplay demo videos with this skill. Works with MP4, MOV, PNG, WebM files up to 500MB. indie game developers use it for...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.game_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vcarolxhberger",
+      "features": [
+        "generate game concepts or text into gameplay demo videos with this skill",
+        "Works with MP4, MOV, PNG, WebM files up to 500MB",
+        "indie game developers use it for..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/game-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210890217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "game-generator",
+      "url": "https://clawhub.ai/skills/game-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "game-generator",
+    "url": "https://clawhub.ai/skills/game-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/game-generator-1bc999325718aa46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/game-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-game-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a203b427dcf7cbfb96e69dcfef7c4a71d741e2fb09976bf2f88c942093fb49b5",
+      "artifactSizeBytes": 2333
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T17:12:47.772Z"
+}

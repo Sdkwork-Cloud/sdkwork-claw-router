@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67479,
+  "uuid": "skill-clawhub-dkey-switch",
+  "skillKey": "clawhub-dkey-switch",
+  "name": "Dkey Switch",
+  "summary": "AI 窗口切换技能。用于定位并激活 Windows 上的目标窗口，支持智能模糊匹配、窗口查找、进程匹配、句柄激活与标签切换回退。",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dkey_switch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ddmy",
+      "features": [
+        "AI 窗口切换技能。用于定位并激活 Windows 上的目标窗口，支持智能模糊匹配、窗口查找、进程匹配、句柄激活与标签切换回退。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dkey-switch@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19168372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dkey-switch",
+      "url": "https://clawhub.ai/skills/dkey-switch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dkey-switch",
+    "url": "https://clawhub.ai/skills/dkey-switch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dkey-switch-4f756b671ffa28b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dkey-switch@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-dkey-switch-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e99d1673bdbe688d3e5840ed67bce43bbe83d48f26c7601d5f0ea55bd38fcc51",
+      "artifactSizeBytes": 2635
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:23:03.907Z"
+}

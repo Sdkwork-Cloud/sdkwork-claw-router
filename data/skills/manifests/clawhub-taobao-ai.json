@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73386,
+  "uuid": "skill-clawhub-taobao-ai",
+  "skillKey": "clawhub-taobao-ai",
+  "name": "淘宝官方导航",
+  "summary": "淘宝官方门户导航，正版官方入口，能够正确跳转到淘宝相关频道，杜绝虚假宣传",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taobao_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eam",
+      "features": [
+        "淘宝官方门户导航，正版官方入口，能够正确跳转到淘宝相关频道，杜绝虚假宣传"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taobao-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90089625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taobao-ai",
+      "url": "https://clawhub.ai/skills/taobao-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taobao-ai",
+    "url": "https://clawhub.ai/skills/taobao-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taobao-ai-8e44307b55272a44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taobao-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-taobao-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8eee43d6d2f6c87f347e7dd808a70671156ea4985601802bfa53c6334748e3c4",
+      "artifactSizeBytes": 2099
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:11:09.758Z"
+}

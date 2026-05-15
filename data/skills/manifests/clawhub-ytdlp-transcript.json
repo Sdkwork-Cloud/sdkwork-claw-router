@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54266,
+  "uuid": "skill-clawhub-ytdlp-transcript",
+  "skillKey": "clawhub-ytdlp-transcript",
+  "name": "ytdlp-transcript — YouTube to Text via yt-dlp",
+  "summary": "Fetch and summarize transcripts from any YouTube video. Paste a URL and your agent reads the video for you — summarize, translate, extract insights.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ytdlp_transcript",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nerikko",
+      "features": [
+        "Fetch and summarize transcripts from any YouTube video",
+        "Paste a URL and your agent reads the video for you — summarize, translate, extract insights."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ytdlp-transcript@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112247568?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ytdlp-transcript",
+      "url": "https://clawhub.ai/skills/ytdlp-transcript"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ytdlp-transcript",
+    "url": "https://clawhub.ai/skills/ytdlp-transcript",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ytdlp-transcript-744cfebd5afa3452.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ytdlp-transcript@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ytdlp-transcript-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76f96a840d211a896eb11055a8aab1f9287886c7e32cbfc4948fb244513a108c",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T12:08:25.987Z"
+}

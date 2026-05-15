@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39337,
+  "uuid": "skill-clawhub-tetra-scar-code-review",
+  "skillKey": "clawhub-tetra-scar-code-review",
+  "name": "Tetra Scar Code Review",
+  "summary": "Code review that learns from failures. Reflex arc blocks repeat mistakes without LLM calls. Combines systematic checklist review (security, performance, corr...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tetra_scar_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aibenyclaude-coder",
+      "features": [
+        "Code review that learns from failures",
+        "Reflex arc blocks repeat mistakes without LLM calls",
+        "Combines systematic checklist review (security, performance, corr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tetra-scar-code-review@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259613785?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tetra-scar-code-review",
+      "url": "https://clawhub.ai/skills/tetra-scar-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tetra-scar-code-review",
+    "url": "https://clawhub.ai/skills/tetra-scar-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tetra-scar-code-review-a57ac09a0c82b262.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tetra-scar-code-review@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tetra-scar-code-review-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68d6fb371857fbb082b89d360df7b89cd5158afa1223cd7698ea6d7aa51b2d55",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T02:55:43.092Z"
+}

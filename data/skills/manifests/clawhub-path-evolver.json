@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58597,
+  "uuid": "skill-clawhub-path-evolver",
+  "skillKey": "clawhub-path-evolver",
+  "name": "Path Evolver",
+  "summary": "记录 skill 使用成功率，主动发现更优工具，提示用户选择。Use when tracking skill success rates or discovering better tools.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.path_evolver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wyzlove",
+      "features": [
+        "记录 skill 使用成功率，主动发现更优工具，提示用户选择。Use when tracking skill success rates or discovering better tool."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/path-evolver@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17510920?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "path-evolver",
+      "url": "https://clawhub.ai/skills/path-evolver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "path-evolver",
+    "url": "https://clawhub.ai/skills/path-evolver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/path-evolver-40c9e1416e34f11f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/path-evolver@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-path-evolver-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4540fe7722d61c6a41021543c47878faba79ce79c6ebc09c8d3cc16d48052675",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T05:55:23.438Z"
+}

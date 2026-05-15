@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/financial-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_analyzer",
+  "skill": {
+    "id": 32349,
+    "skillKey": "clawhub-financial-analyzer",
+    "name": "Financial Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-analyzer",
+    "url": "https://clawhub.ai/skills/financial-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-analyzer-8bf27f302a0e9378.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered financial analysis assistant for financial statement analysis, ratio analysis, cash flow analysis, investment evaluation, and financial health ass..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jason-aka-chen",
+      "userId": "publishers:jason-aka-chen",
+      "displayName": "jason-aka-chen",
+      "image": "https://avatars.githubusercontent.com/u/251550877?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774168819785,
+      "changelog": "- Initial release of financial-analyzer 1.0.0.\n- Provides AI-powered financial statement, ratio, and cash flow analysis supporting Chinese and international accounting standards.\n- Includes investment evaluation tools (DCF, relative valuation, Graham number, intrinsic value).\n- Offers comprehensive risk assessment featuring Altman Z-Score, Piotroski F-Score, and credit/operational risk metrics.\n- Supplies API methods for statement analysis, ratio calculation, valuation models, risk scoring, and report generation.\n- Essential tool for investors and analysts to assess financial health and make informed investment decisions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72557d3588406171d5d4688863aae11f519c5d6fcdbb8392820e96c28837cc9e"
+}

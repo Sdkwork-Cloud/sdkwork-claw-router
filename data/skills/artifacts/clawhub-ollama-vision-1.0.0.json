@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ollama-vision@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_vision",
+  "skill": {
+    "id": 61470,
+    "skillKey": "clawhub-ollama-vision",
+    "name": "ollama-vision"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-vision",
+    "url": "https://clawhub.ai/skills/ollama-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-vision-7908f3854ab50f87.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地调用 Ollama qwen3-vl:4b 模型自动压缩并分析图片，支持描述、OCR 文字提取和自定义信息抽取。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lzm2023",
+      "userId": "s17dws38xdm1xdqphwce92wew583htk7",
+      "displayName": "LZM2023",
+      "image": "https://avatars.githubusercontent.com/u/133074322?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 452,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773191708700,
+      "changelog": "使用 Ollama 本地视觉模型进行图像分析，支持 OCR、文字提取、图像描述等功能。默认使用qwen3-vl:4b模型，记得在ollama下载并运行这个模型。\n具体功能如下：\n自动压缩：超过 2MB 的图片会自动压缩后再分析\n多模式分析：describe（描述）、ocr（文字提取）、extract（自定义提取）\n临时文件清理：压缩产生的临时文件会自动删除\n质量优先：优先降低 JPEG 质量，必要时缩小尺寸\n\n建议：至少要4-6G显存，方便运行模型\n\nTags: vision, ollama, image-analysis, 本地",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b764abc97023d1b2c76c5ef6de4fbbc278f9847d77cd3656117918df25fc3145"
+}

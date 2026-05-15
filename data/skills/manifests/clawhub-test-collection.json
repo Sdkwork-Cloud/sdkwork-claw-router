@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61362,
+  "uuid": "skill-clawhub-test-collection",
+  "skillKey": "clawhub-test-collection",
+  "name": "Test Collection",
+  "summary": "用于测试采集功能的简单 skill，无实际业务逻辑",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_collection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thascc1024",
+      "features": [
+        "用于测试采集功能的简单 skill，无实际业务逻辑"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-collection@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267271122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-collection",
+      "url": "https://clawhub.ai/skills/test-collection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-collection",
+    "url": "https://clawhub.ai/skills/test-collection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-collection-feb2f3afda3388d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-collection@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-collection-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afe69f13afee32c30e4a355c08add03e6d77983f132846f11b2f688d9d39aa8c",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T10:52:20.328Z"
+}

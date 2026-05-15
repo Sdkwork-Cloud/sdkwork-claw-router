@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-self-health-monitor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_self_health_monitor",
+  "skill": {
+    "id": 39433,
+    "skillKey": "clawhub-skylv-self-health-monitor",
+    "name": "Skylv Self Health Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-self-health-monitor",
+    "url": "https://clawhub.ai/skills/skylv-self-health-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-self-health-monitor-abe3c39a5ac4b763.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time monitoring of agent memory, API calls, and errors"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776487071422,
+      "changelog": "- Added structured frontmatter to SKILL.md with description, keywords, name, and triggers.\n- Included a new \"Usage\" section outlining installation, configuration, and running the skill.\n- No changes to the skill's logic or features; documentation improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c414c084bf7f6e5b8ae9c0ea719c49b80ec303f09952706162dc3ef4e2a6fa62"
+}

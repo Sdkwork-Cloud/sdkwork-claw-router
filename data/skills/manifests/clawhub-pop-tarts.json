@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49630,
+  "uuid": "skill-clawhub-pop-tarts",
+  "skillKey": "clawhub-pop-tarts",
+  "name": "Pop Tarts",
+  "summary": "Provides detailed information on Kellogg's Pop-Tarts, covering history, flavors, business model, market presence, and cultural impact.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pop_tarts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides detailed information on Kellogg's Pop-Tarts, covering history, flavors, business model."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pop-tarts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pop-tarts",
+      "url": "https://clawhub.ai/skills/pop-tarts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pop-tarts",
+    "url": "https://clawhub.ai/skills/pop-tarts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pop-tarts-e8867940d15f28a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pop-tarts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pop-tarts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:666582bd93592d01f972ebece9f0f509a16d088233bbc1d4082ded2a0fef0c3d",
+      "artifactSizeBytes": 2209
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T14:06:34.375Z"
+}

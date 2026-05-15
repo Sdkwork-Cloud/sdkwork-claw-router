@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-delegation-management@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_delegation_management",
+  "skill": {
+    "id": 28531,
+    "skillKey": "clawhub-git-delegation-management",
+    "name": "Git Delegation Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-delegation-management",
+    "url": "https://clawhub.ai/skills/git-delegation-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-delegation-management-8e94956f588bc6e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute any git command on behalf of Workers without credentials by processing their git-request messages and managing workspace synchronization safely."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "montycn",
+      "userId": "s17fq3f5c7xm0qja9p4xz3px8h83hcxd",
+      "displayName": "Monty",
+      "image": "https://avatars.githubusercontent.com/u/21038938?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 302,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773997913523,
+      "changelog": "Initial release of git-delegation-management skill.\n\n- Allows Managers to execute any git operation on behalf of Workers who lack git credentials.\n- Handles `git-request:` messages to process git commands in shared workspaces.\n- Integrates with credential files and host `.gitconfig` for authenticated operations.\n- Uses processing markers to prevent workspace conflicts and ensures sync with MinIO storage.\n- Supports error handling and clear success/failure reporting to requesting Workers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e1d6d279c742020bc66b536b37116c099b330a2d0a2d5e343ef4a3385f2fd034"
+}

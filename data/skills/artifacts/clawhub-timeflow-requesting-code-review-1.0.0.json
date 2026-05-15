@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/timeflow-requesting-code-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.timeflow_requesting_code_review",
+  "skill": {
+    "id": 37987,
+    "skillKey": "clawhub-timeflow-requesting-code-review",
+    "name": "Requesting Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "timeflow-requesting-code-review",
+    "url": "https://clawhub.ai/skills/timeflow-requesting-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/timeflow-requesting-code-review-076006feb749503c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when completing tasks, implementing major features, or before merging to verify work meets requirements"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "soponcd",
+      "userId": "s17028c8y9t26ss5fgt6rycpw183jt9x",
+      "displayName": "soponcd",
+      "image": "https://avatars.githubusercontent.com/u/31302208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774429852678,
+      "changelog": "- Initial release of the \"requesting-code-review\" skill.\n- Provides clear guidelines on when and how to request code reviews.\n- Describes integration with subagent-driven, plan-based, and ad-hoc workflows.\n- Includes actionable steps and example scenarios for requesting reviews.\n- Outlines best practices and red flags to maintain code quality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df80ad233525dac8d67a10a6ce2f4e345cf2d5d349a5d6167e0043205746384d"
+}

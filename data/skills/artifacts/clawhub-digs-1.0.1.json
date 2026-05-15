@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/digs@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.digs",
+  "skill": {
+    "id": 52061,
+    "skillKey": "clawhub-digs",
+    "name": "Digs: What you're figuring out."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "digs",
+    "url": "https://clawhub.ai/skills/digs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/digs-c81f66b5e599e2c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Active research intelligence — track questions you're pursuing, log findings as they arrive, and close the loop when you figure it out. One markdown file per..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ilyabelikin",
+      "userId": "s17ds3kb4zmj4zjzjzf7c8242n85401s",
+      "displayName": "Ilya Belikin",
+      "image": "https://avatars.githubusercontent.com/u/22588?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776728493751,
+      "changelog": "- Changed the default data folder from kyp/digs/ to mind/digs/ throughout the documentation and examples.\n- Updated move/close instructions to reference mind/digs/ and mind/digs/closed/.\n- Adjusted config file and path guidance to match the new directory structure.\n- No code or functional changes; documentation and path update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fde1b176f692b424e9e1a3d91361ec92c157695c560def34f5b988ecfd545db1"
+}

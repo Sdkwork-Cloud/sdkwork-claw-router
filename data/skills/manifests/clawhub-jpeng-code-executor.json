@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31112,
+  "uuid": "skill-clawhub-jpeng-code-executor",
+  "skillKey": "clawhub-jpeng-code-executor",
+  "name": "Code Executor",
+  "summary": "Safe code execution in sandboxed environments. Supports Python, JavaScript, Bash, and more with resource limits and timeout controls.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpeng_code_executor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jpengcheng523-netizen",
+      "features": [
+        "Safe code execution in sandboxed environments",
+        "Supports Python, JavaScript, Bash, and more with resource limits and timeout controls."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jpeng-code-executor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226868999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jpeng-code-executor",
+      "url": "https://clawhub.ai/skills/jpeng-code-executor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpeng-code-executor",
+    "url": "https://clawhub.ai/skills/jpeng-code-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpeng-code-executor-540ada4ec30919d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jpeng-code-executor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jpeng-code-executor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2f558dbb9a573401664c174e3986d14f0357c9169c1d8f00da26fd75586595f",
+      "artifactSizeBytes": 2309
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T12:28:05.069Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-voice-lobster@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_voice_lobster",
+  "skill": {
+    "id": 69655,
+    "skillKey": "clawhub-feishu-voice-lobster",
+    "name": "飞书语音"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-voice-lobster",
+    "url": "https://clawhub.ai/skills/feishu-voice-lobster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-voice-lobster-3e00c2bc5b605867.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实现飞书语音消息的上传下载、语音转文字及文字转语音，支持与 ElevenLabs 语音服务集成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "godzff",
+      "userId": "publishers:godzff",
+      "displayName": "godzff",
+      "image": "https://avatars.githubusercontent.com/u/14889649?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 735,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771862802363,
+      "changelog": "Feishu Voice Skill 1.0.0 — Initial Release\n\n- Enables voice-to-text (speech recognition) and text-to-voice (TTS) conversion between Feishu and ElevenLabs.\n- Supports downloading and uploading of Feishu voice messages.\n- Provides detailed setup instructions for ElevenLabs API and FFmpeg requirements.\n- Includes step-by-step usage examples for both voice recognition and speech synthesis workflows.\n- Documents common issues and required bot permissions for smooth operation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0ed8a07c99b01dddf8ea2e4ab076305b8efd2e15df74d83a0def70ec76cae898"
+}

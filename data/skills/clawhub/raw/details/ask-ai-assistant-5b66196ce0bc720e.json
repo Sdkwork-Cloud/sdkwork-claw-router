@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "ask-ai-assistant",
+    "displayName": "AI助手自动求助技能",
+    "summary": "自动识别问题复杂度，优先使用豆包、千问等多AI轮询获取并验证可执行解决方案，遇验证码需用户协助。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774436760291,
+    "updatedAt": 1777623463569
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774436760291,
+    "changelog": "- Initial release of ask-ai skill for automatic escalation to Doubao, Qianwen, Kimi, and DeepSeek AI when facing unsolvable problems.\n- Implements a 6-step forced execution checklist, including sending questions, result validation, polling, self-checks, multi-turn clarification, and final evaluation.\n- Features strict trigger and auto-escalation rules based on solution quality, confidence, and user input.\n- Includes prioritized AI selection with automatic fallback on failure, and robust handling for login/captcha requirements.\n- Provides a clear conversational template for querying external AIs and strict output requirements for every critical step.\n- Saves all AI responses, ensures solution execution and closure, and documents every attempt and outcome for future review.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "danielwang20150225-source",
+    "userId": "s173fs3bz6hxcg4ttf0r4ae8b983kmg8",
+    "displayName": "danielwang20150225-source",
+    "image": "https://avatars.githubusercontent.com/u/226548993?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777623463569
+  }
+}

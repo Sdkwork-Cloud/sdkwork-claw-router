@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50098,
+  "uuid": "skill-clawhub-security-awareness-skill",
+  "skillKey": "clawhub-security-awareness-skill",
+  "name": "Agent Security Patterns",
+  "summary": "Help AI agents recognize and respond to potentially malicious skill patterns from public registries. Based on Snyk ToxicSkills research showing 13.4% of skil...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_awareness_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jarkko Iso-kuortti",
+      "features": [
+        "Help AI agents recognize and respond to potentially malicious skill patterns from public regist.",
+        "Based on Snyk ToxicSkills research showing 13.4% of skil..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-awareness-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19709829?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-awareness-skill",
+      "url": "https://clawhub.ai/skills/security-awareness-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-awareness-skill",
+    "url": "https://clawhub.ai/skills/security-awareness-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-awareness-skill-fc2bfd52d4504bde.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-awareness-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-awareness-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3efed7894ccc2c31679092e59e783e462504cc3a460dc197caf52e32ee0e6975",
+      "artifactSizeBytes": 2509
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T11:23:07.988Z"
+}

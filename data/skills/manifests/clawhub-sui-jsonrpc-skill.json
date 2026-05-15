@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30831,
+  "uuid": "skill-clawhub-sui-jsonrpc-skill",
+  "skillKey": "clawhub-sui-jsonrpc-skill",
+  "name": "Sui JSON-RPC Skill",
+  "summary": "Operate Sui public JSON-RPC through UXC with OpenRPC-driven discovery, mainnet fullnode defaults, and read-only query plus pubsub subscription guardrails.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sui_jsonrpc_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Operate Sui public JSON-RPC through UXC with OpenRPC-driven discovery, mainnet fullnode default."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sui-jsonrpc-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sui-jsonrpc-skill",
+      "url": "https://clawhub.ai/skills/sui-jsonrpc-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sui-jsonrpc-skill",
+    "url": "https://clawhub.ai/skills/sui-jsonrpc-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sui-jsonrpc-skill-49e26028d2d8b6a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sui-jsonrpc-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sui-jsonrpc-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94af02b69aefeb69b00081868f4044850383ff2935580e4ebb1964125b86c72c",
+      "artifactSizeBytes": 2491
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T23:24:16.369Z"
+}

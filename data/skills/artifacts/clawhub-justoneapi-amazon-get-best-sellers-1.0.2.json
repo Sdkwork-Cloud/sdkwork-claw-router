@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justoneapi-amazon-get-best-sellers@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_amazon_get_best_sellers",
+  "skill": {
+    "id": 40006,
+    "skillKey": "clawhub-justoneapi-amazon-get-best-sellers",
+    "name": "Amazon Best Sellers API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-amazon-get-best-sellers",
+    "url": "https://clawhub.ai/skills/justoneapi-amazon-get-best-sellers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-amazon-get-best-sellers-4946479c5a5a0fd5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call GET /api/amazon/get-best-sellers/v1 for Amazon Best Sellers through JustOneAPI with category."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justoneapi",
+      "userId": "s17ayjxfh4atw7gc7dgat7n40x845p6b",
+      "displayName": "justoneapi",
+      "image": "https://avatars.githubusercontent.com/u/139095138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776957106135,
+      "changelog": "- Simplified and focused documentation to highlight the primary endpoint, required parameters, and use cases.\n- Clarified that `category` is the only required parameter; improved parameter table and country code documentation.\n- Added explicit endpoint and operation details (operation ID, path, summary table).\n- Updated output instructions to prioritize the summary, required scope, and endpoint focus.\n- Streamlined setup and usage instructions for environment configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2403f075cdab5c53007453a7a6bedddf100ab5aba867351194f62a14244b26a3"
+}

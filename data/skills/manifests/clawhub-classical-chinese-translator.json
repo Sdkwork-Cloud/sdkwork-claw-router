@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40950,
+  "uuid": "skill-clawhub-classical-chinese-translator",
+  "skillKey": "clawhub-classical-chinese-translator",
+  "name": "Skill for OpenClaw: Converts classical Chinese to vernacular Chinese, supporting multiple e-book formats for full-text conversi.",
+  "summary": "Translates Classical Chinese texts to modern vernacular Chinese with high accuracy, preserving e-book formatting and specialized terminology across multiple...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.classical_chinese_translator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MrFengcn",
+      "features": [
+        "Translates Classical Chinese texts to modern vernacular Chinese with high accuracy, preserving."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/classical-chinese-translator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11829761?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "classical-chinese-translator",
+      "url": "https://clawhub.ai/skills/classical-chinese-translator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "classical-chinese-translator",
+    "url": "https://clawhub.ai/skills/classical-chinese-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/classical-chinese-translator-750e21df6578d649.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/classical-chinese-translator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-classical-chinese-translator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6005be633f55cb958fa540f0204a849bd60914d074f9560453f2560c70827954",
+      "artifactSizeBytes": 2675
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T14:32:36.240Z"
+}

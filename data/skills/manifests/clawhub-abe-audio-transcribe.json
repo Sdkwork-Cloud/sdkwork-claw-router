@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47385,
+  "uuid": "skill-clawhub-abe-audio-transcribe",
+  "skillKey": "clawhub-abe-audio-transcribe",
+  "name": "Audio Transcribe",
+  "summary": "Transcribe, diarise, translate, post-process, and structure audio/video with AssemblyAI. Use this skill when the user wants AssemblyAI specifically, needs hi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abe_audio_transcribe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AbelTennyson",
+      "features": [
+        "Transcribe, diarise, translate, post-process, and structure audio/video with AssemblyAI",
+        "Use this skill when the user wants AssemblyAI specifically, needs hi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abe-audio-transcribe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261241122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abe-audio-transcribe",
+      "url": "https://clawhub.ai/skills/abe-audio-transcribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abe-audio-transcribe",
+    "url": "https://clawhub.ai/skills/abe-audio-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abe-audio-transcribe-2cc8ecd5fd5eef6c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abe-audio-transcribe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-abe-audio-transcribe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f65b345a7163df2ccfb6e4644eb88305de24408c0ef7b2511f1ff8dfe96a873f",
+      "artifactSizeBytes": 2760
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T02:47:21.962Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/photo-retouching@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photo_retouching",
+  "skill": {
+    "id": 29024,
+    "skillKey": "clawhub-photo-retouching",
+    "name": "Photo Retouching"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photo-retouching",
+    "url": "https://clawhub.ai/skills/photo-retouching",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photo-retouching-68559ba16710377b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute RunningHub ComfyUI workflows via API. Use when you need to run ComfyUI workflows on RunningHub cloud platform, submit tasks, query status, and retrie..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "uiueux",
+      "userId": "publishers:uiueux",
+      "displayName": "uiueux",
+      "image": "https://avatars.githubusercontent.com/u/4375543?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 311,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773542650091,
+      "changelog": "Initial release of RunningHub ComfyUI workflow runner skill.\n\n- Run ComfyUI workflows on the RunningHub cloud via API.\n- Supports uploading images as workflow inputs.\n- Includes CLI and Python API usage instructions.\n- Enables submitting tasks, querying status, and downloading results.\n- Provides troubleshooting tips and API endpoint references.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0b1d9ad58cb6ff512b8da84c3126a47e3913014ba911f061a1eeeb167d14e16"
+}

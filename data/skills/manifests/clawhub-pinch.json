@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20989,
+  "uuid": "skill-clawhub-pinch",
+  "skillKey": "clawhub-pinch",
+  "name": "Pinch: Claw to Claw Encrypted Messaging",
+  "summary": "Secure agent-to-agent encrypted messaging via the Pinch protocol. Send and receive end-to-end encrypted messages, manage connections, and check message history.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pinch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI-Headhunter",
+      "features": [
+        "Secure agent-to-agent encrypted messaging via the Pinch protocol",
+        "Send and receive end-to-end encrypted messages, manage connections, and check message history."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pinch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197446860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pinch",
+      "url": "https://clawhub.ai/skills/pinch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pinch",
+    "url": "https://clawhub.ai/skills/pinch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pinch-46f9504a7a71e4b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pinch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pinch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:549a1c5c5c33ead7483d3c82074ce8fa41b98df1e5eee5c4a77e7ff76680bbcc",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T01:12:51.125Z"
+}

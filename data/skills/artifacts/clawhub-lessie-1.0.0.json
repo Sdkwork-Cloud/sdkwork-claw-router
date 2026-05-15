@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lessie@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lessie",
+  "skill": {
+    "id": 33302,
+    "skillKey": "clawhub-lessie",
+    "name": "lessie"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lessie",
+    "url": "https://clawhub.ai/skills/lessie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lessie-1871ec8d10cf3195.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, qualify, and enrich people and companies. Use this skill whenever the user wants to find professionals, candidates, or KOLs by title, company, locati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jkgeekjack",
+      "userId": "s172ayyb7dj84asnbcgccp0zh183zmdm",
+      "displayName": "jkgeekJack",
+      "image": "https://avatars.githubusercontent.com/u/15207717?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774938885632,
+      "changelog": "lessie 1.0.0\n\n- Initial release of Lessie skill for people and company search, qualification, and enrichment.\n- Supports both CLI (default, recommended) and MCP Server modes for broad compatibility.\n- Enables searching and enriching professionals, candidates, and companies by multiple criteria (title, location, company, seniority, audience).\n- Includes tools for deep qualification, company research (funding, tech stack, job postings, news), and advanced web research.\n- Implements robust entity disambiguation workflows to avoid misidentification and credit waste.\n- Details setup instructions, agent behavioral rules, key usage constraints, and privacy/compliance notes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88b7994d253aa13b7af558620217478aa4ee65026618bdc619a967d0a4093b6c"
+}

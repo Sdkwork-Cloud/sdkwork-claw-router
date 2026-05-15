@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59443,
+  "uuid": "skill-clawhub-clawdog-backup",
+  "skillKey": "clawhub-clawdog-backup",
+  "name": "Clawdog Backup",
+  "summary": "狗蛋备份恢复技能。备份 OpenClaw 核心文件（SOUL.md, AGENTS.md, IDENTITY.md, USER.md, TOOLS.md）和记忆层（memory/）到 OneDrive，支持实时监控备份和定时备份，可从云端恢复。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdog_backup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael-crazy",
+      "features": [
+        "狗蛋备份恢复技能。备份 OpenClaw 核心文件（SOUL.md, AGENTS.md, IDENTITY.md, USER.md, TOOLS.md）和记忆层（memory/）到 One."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdog-backup@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86336293?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdog-backup",
+      "url": "https://clawhub.ai/skills/clawdog-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdog-backup",
+    "url": "https://clawhub.ai/skills/clawdog-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdog-backup-c4561481a985ac1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdog-backup@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdog-backup-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5800c7a2378a8138ec8ebdb5a429971534411bab744a9e51b8b0ff10ece5b3b",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T15:15:29.487Z"
+}

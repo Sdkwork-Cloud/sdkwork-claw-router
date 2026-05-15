@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29446,
+  "uuid": "skill-clawhub-1crm",
+  "skillKey": "clawhub-1crm",
+  "name": "1Crm",
+  "summary": "1CRM integration. Manage data, records, and automate workflows. Use when the user wants to interact with 1CRM data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1crm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "1CRM integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with 1CRM data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/1crm@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "1crm",
+      "url": "https://clawhub.ai/skills/1crm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1crm",
+    "url": "https://clawhub.ai/skills/1crm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1crm-4f75c0dfa73b58ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/1crm@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-1crm-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da6e51f32119ee251dd8de3dfd8baa05c09a6c4c2efa67428118b6aca9655291",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:14:12.437Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-accountant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_accountant",
+  "skill": {
+    "id": 48981,
+    "skillKey": "clawhub-smart-accountant",
+    "name": "Smart Accountant with GST Understanding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-accountant",
+    "url": "https://clawhub.ai/skills/smart-accountant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-accountant-5de477a04d17422b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides expert double-entry accounting support including GST compliance, audit controls, period closing, journal entries, and financial reporting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dakshhmehta",
+      "userId": "s172bbrx169wm8qyz0yrztz97d85t3aw",
+      "displayName": "Daksh Mehta",
+      "image": "https://avatars.githubusercontent.com/u/1838017?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777572122335,
+      "changelog": "Initial public release of smart-accountant skill.\n\n- Introduces a structured AI accountant knowledge base with detailed guides for each core file.\n- Covers foundational topics: audit rules, closing processes, chart of accounts, database handling, ledgers, journal entries, rectification, reporting, source documents, and transaction language mapping.\n- Provides step-by-step installation and setup instructions for the toolchain using Node.js and better-sqlite3.\n- Defines a complete onboarding interview flow for initializing a new business or workspace.\n- Emphasizes best practices such as the Maker-Checker protocol, immutable audit trail, and attachment of supporting evidence before transaction entry.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c26c265ab48410d3a70b2ee284afc1c1c83316476b293e4f9b1d87606d980023"
+}

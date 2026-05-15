@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/militia-training@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.militia_training",
+  "skill": {
+    "id": 34565,
+    "skillKey": "clawhub-militia-training",
+    "name": "Militia Training (EN)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "militia-training",
+    "url": "https://clawhub.ai/skills/militia-training",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/militia-training-50b733545e7cede5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Militia Military Training Assistant based on the classic Militia Military Training Manual. Covers anti-aircraft defense, NBC (nuclear-biological-chemical), s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnsmithfan",
+      "userId": "s17ar8yxm9wh64zhr7mr0xemcn84gs16",
+      "displayName": "JohnSmithfan",
+      "image": "https://avatars.githubusercontent.com/u/147225147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1777201610688,
+      "changelog": "v2.0.0: English-only rewrite. Index-only SKILL.md. Added references/method-patterns.md, prompts/01-implement-method.md, prompts/02-robustness-checks.md. Full coverage: anti-air defense, NBC defense, shooting fundamentals, combat tactics, combat service support, field survival.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:807cfb24e1fdcfd7de20994b3d57b8d368c48e1295acd846b67e4834ccf33859"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17584,
+  "uuid": "skill-clawhub-ai-news-aggregator-sl",
+  "skillKey": "clawhub-ai-news-aggregator-sl",
+  "name": "AI News Aggregator",
+  "summary": "Fetches AI & tech news (default) or any custom topic (crypto, geopolitics, etc.) from RSS feeds, Tavily search, Twitter/X, and YouTube. Writes an English edi...",
+  "version": "1.2.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news_aggregator_sl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Scott Lai",
+      "features": [
+        "Fetches AI & tech news (default) or any custom topic (crypto, geopolitics, etc.) from RSS feeds.",
+        "Writes an English edi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-news-aggregator-sl@1.2.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43226003?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-news-aggregator-sl",
+      "url": "https://clawhub.ai/skills/ai-news-aggregator-sl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news-aggregator-sl",
+    "url": "https://clawhub.ai/skills/ai-news-aggregator-sl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-aggregator-sl-8c01b6f3a6281a1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-news-aggregator-sl@1.2.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-news-aggregator-sl-1.2.8.json",
+      "version": "1.2.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba9b5f692bf2c5fed6eed8ebf49947e39d1b02e5c0965f3984a0c0265a50d531",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T02:18:51.790Z"
+}

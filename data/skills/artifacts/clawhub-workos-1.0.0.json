@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workos@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workos",
+  "skill": {
+    "id": 40623,
+    "skillKey": "clawhub-workos",
+    "name": "WorkOS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workos",
+    "url": "https://clawhub.ai/skills/workos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workos-9f41c9209f220655.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage enterprise SSO, Directory Sync (SCIM), Admin Portal, and user management via WorkOS API. Use when asked to set up SSO for an organization, provision u..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dwhite-oss",
+      "userId": "s1774sw0egvy8t13mcss727fy183qs7m",
+      "displayName": "dwhite-oss",
+      "image": "https://avatars.githubusercontent.com/u/256912923?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774638497221,
+      "changelog": "High-quality API skill by SkillPlexAI",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:514bcf2d306e23ee6c621082c9cc7e25b23d0cc71a12fab61f2579b7abd41c83"
+}

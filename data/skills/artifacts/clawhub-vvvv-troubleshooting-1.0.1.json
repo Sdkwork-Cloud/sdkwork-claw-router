@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vvvv-troubleshooting@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vvvv_troubleshooting",
+  "skill": {
+    "id": 26010,
+    "skillKey": "clawhub-vvvv-troubleshooting",
+    "name": "Vvvv Troubleshooting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vvvv-troubleshooting",
+    "url": "https://clawhub.ai/skills/vvvv-troubleshooting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vvvv-troubleshooting-e143e44f6265f14b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnoses and fixes common vvvv gamma errors in C# nodes, SDSL shaders, and runtime behavior. Use when encountering errors, exceptions, crashes, red nodes, s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tebjan",
+      "userId": "publishers:tebjan",
+      "displayName": "Tebjan Halm",
+      "image": "https://avatars.githubusercontent.com/u/1094716?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772750602702,
+      "changelog": "Improved skill descriptions: better triggering for HLSL/shaders, Spreads/collections, ImportAsIs/dotnet, VL packages, reactive channels. Fixed broken cross-skill reference in troubleshooting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:01f77bd4a8b2a4c36ce467cbe4064662ab7731e5386fcda4837a88c3db7993e0"
+}

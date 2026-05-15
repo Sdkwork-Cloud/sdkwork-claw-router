@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29276,
+  "uuid": "skill-clawhub-genai-toolkit",
+  "skillKey": "clawhub-genai-toolkit",
+  "name": "Genai Toolkit",
+  "summary": "Bridge AI models to databases through MCP with config and evaluation tools. Use when setting up DB tools, comparing engines, or evaluating prompt quality.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.genai_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Bridge AI models to databases through MCP with config and evaluation tools",
+        "Use when setting up DB tools, comparing engines, or evaluating prompt quality."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/genai-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "genai-toolkit",
+      "url": "https://clawhub.ai/skills/genai-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "genai-toolkit",
+    "url": "https://clawhub.ai/skills/genai-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/genai-toolkit-6a258e426df3e71c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/genai-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-genai-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:638b6ed162c2cbf2b53c927983914e9d8eeb068299fc466bf665537a92f678ba",
+      "artifactSizeBytes": 1878
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T23:19:20.700Z"
+}

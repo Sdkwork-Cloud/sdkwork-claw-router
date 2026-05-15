@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72838,
+  "uuid": "skill-clawhub-tcm-exam-assistant",
+  "skillKey": "clawhub-tcm-exam-assistant",
+  "name": "中医执业医师备考助手",
+  "summary": "中医执业医师考试备考助手 - 生成每日复习计划、评估答案、管理错题集",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tcm_exam_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flyingants",
+      "features": [
+        "中医执业医师考试备考助手",
+        "生成每日复习计划、评估答案、管理错题集"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tcm-exam-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/230412921?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tcm-exam-assistant",
+      "url": "https://clawhub.ai/skills/tcm-exam-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tcm-exam-assistant",
+    "url": "https://clawhub.ai/skills/tcm-exam-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tcm-exam-assistant-65baf769ca985c8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tcm-exam-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tcm-exam-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:665488b393648f2f59d7ad9732425d0a1f04f9d815b98665b0b1c21018970c7c",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T01:50:06.045Z"
+}

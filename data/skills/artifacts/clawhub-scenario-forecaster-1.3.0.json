@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scenario-forecaster@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scenario_forecaster",
+  "skill": {
+    "id": 29914,
+    "skillKey": "clawhub-scenario-forecaster",
+    "name": "Scenario Forecaster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scenario-forecaster",
+    "url": "https://clawhub.ai/skills/scenario-forecaster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scenario-forecaster-43b04049b6c4ae22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-driven event forecasting skill. Collects multi-source data, cross-validates facts, maps future scenarios with probabilities, and delivers actionable recom..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onecore-me",
+      "userId": "s174ffv211hm41s8mrb83b3mfs84nksb",
+      "displayName": "Onecore-me",
+      "image": "https://avatars.githubusercontent.com/u/216992446?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1775982825233,
+      "changelog": "v1.3.0: Security sanitization - removed Unicode chars, neutralized action names, pure English interface to avoid false positives.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64621fe6a604d92cc9f51f137fca4c6b7ed291e351f9d8150d4fe419b84d463a"
+}

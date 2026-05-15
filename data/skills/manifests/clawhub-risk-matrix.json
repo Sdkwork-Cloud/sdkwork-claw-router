@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33021,
+  "uuid": "skill-clawhub-risk-matrix",
+  "skillKey": "clawhub-risk-matrix",
+  "name": "Risk Matrix",
+  "summary": "Identify and prioritize risks by impact and controllability. Use for risk management, project planning, and strategic decision support.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.risk_matrix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linuszz",
+      "features": [
+        "Identify and prioritize risks by impact and controllability",
+        "Use for risk management, project planning, and strategic decision support."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/risk-matrix@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46770204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "risk-matrix",
+      "url": "https://clawhub.ai/skills/risk-matrix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "risk-matrix",
+    "url": "https://clawhub.ai/skills/risk-matrix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/risk-matrix-ef4a96c00134a33f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/risk-matrix@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-risk-matrix-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f95e4b3d3b6befde8fc0673a77b8f2f259114ee7acaddae0ecd376e8652ba6b",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T00:05:20.717Z"
+}

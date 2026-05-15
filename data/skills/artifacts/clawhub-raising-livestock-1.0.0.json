@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/raising-livestock@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raising_livestock",
+  "skill": {
+    "id": 37110,
+    "skillKey": "clawhub-raising-livestock",
+    "name": "Raising Livestock"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raising-livestock",
+    "url": "https://clawhub.ai/skills/raising-livestock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raising-livestock-a1abcd45a0ba26b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Practical small livestock management starting with chickens and progressing to goats. Use when someone wants to raise chickens for eggs, keep goats for milk..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "howtousehumans",
+      "userId": "s17ftae1txxqa39a87v3p6ta1583js3w",
+      "displayName": "HowToUseHumans",
+      "image": "https://avatars.githubusercontent.com/u/151727669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774557359023,
+      "changelog": "Initial release focusing on practical backyard livestock management starting with chickens and progressing to goats.\n\n- Provides step-by-step guidance for raising chickens for eggs, then scaling up to goats for milk/meat/land management.\n- Includes thorough readiness checklist: zoning, time, space, budget, and predator proofing.\n- Contains agent adaptation guidelines for users outside the US (legal, breed, climate/regulatory localization).\n- Lists trusted reference materials and when to use the skill.\n- Emphasizes daily commitment, realistic startup/ongoing costs, and core health/housing requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8717ab97e00bddcdd9dbaccb7425503f7bcbc25be50c70d0e2e3d07516f5f208"
+}

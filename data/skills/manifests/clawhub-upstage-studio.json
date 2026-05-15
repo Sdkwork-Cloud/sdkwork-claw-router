@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56302,
+  "uuid": "skill-clawhub-upstage-studio",
+  "skillKey": "clawhub-upstage-studio",
+  "name": "Upstage Studio",
+  "summary": "Run document processing workflows using Upstage Document Agent API (v2) — both Studio-UI-configured agents (`agt_xxx`) and programmatically defined Agents/Co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upstage_studio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Upstage Deployment",
+      "features": [
+        "Run document processing workflows using Upstage Document Agent API (v2) — both Studio-UI-config."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upstage-studio@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124652596?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upstage-studio",
+      "url": "https://clawhub.ai/skills/upstage-studio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upstage-studio",
+    "url": "https://clawhub.ai/skills/upstage-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upstage-studio-309b466bc13b1a35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upstage-studio@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-upstage-studio-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f5ea8dc51b14feed6d7de7b3cb8f3fdd9cf94071e90047ff9205dcc193862c1",
+      "artifactSizeBytes": 2357
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T23:57:12.533Z"
+}

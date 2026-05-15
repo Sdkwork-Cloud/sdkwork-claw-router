@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rust-code-review@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rust_code_review",
+  "skill": {
+    "id": 26866,
+    "skillKey": "clawhub-rust-code-review",
+    "name": "Rust Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rust-code-review",
+    "url": "https://clawhub.ai/skills/rust-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rust-code-review-5bd71b863be171e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews Rust code for ownership, borrowing, lifetime, error handling, trait design, unsafe usage, and common mistakes. Use when reviewing .rs files, checking..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776831366121,
+      "changelog": "Version 1.0.3\n\n- Added a \"Gates\" section with step-by-step verification stages to strengthen review rigor.\n- Clarified that reviewers must explicitly pass each gate before proceeding, not relying on mental shortcuts.\n- Updated the review workflow to require completion of all Gates—including loading the verification protocol—before reporting findings.\n- Emphasized objective pass criteria and explicit crate context determination for edition/MSRV-sensitive analysis.\n- No changes to checklists or technical coverage; procedural improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4863a6b8f8428993212a03aba60085e8fae909da1727eac36025fd831b0b22f"
+}

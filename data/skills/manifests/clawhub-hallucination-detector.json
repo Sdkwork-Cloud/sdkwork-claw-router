@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72206,
+  "uuid": "skill-clawhub-hallucination-detector",
+  "skillKey": "clawhub-hallucination-detector",
+  "name": "幻觉检测器",
+  "summary": "幻觉检测器 - 原创技能。检测AI生成代码中的幻觉内容，包括不存在的API、错误的参数、虚假引用等。适用于代码审查、AI编程辅助、质量保证等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hallucination_detector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "534422530",
+      "features": [
+        "原创技能。检测AI生成代码中的幻觉内容，包括不存在的API、错误的参数、虚假引用等。适用于代码审查、AI编程辅助、质量保证等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hallucination-detector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82763531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hallucination-detector",
+      "url": "https://clawhub.ai/skills/hallucination-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hallucination-detector",
+    "url": "https://clawhub.ai/skills/hallucination-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hallucination-detector-45afc15dd1538e32.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hallucination-detector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hallucination-detector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:691e8efd4bca9a8c6be970bdc90ee8cbad108cb7345f50ad8583227ed09be9a4",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T06:35:58.298Z"
+}

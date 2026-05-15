@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59672,
+  "uuid": "skill-clawhub-vendor-risk-brief",
+  "skillKey": "clawhub-vendor-risk-brief",
+  "name": "Vendor Risk Brief",
+  "summary": "对外部 SaaS/API 形成风险摘要，聚焦集成影响、权限、数据流向和替代方案。；use for vendor-risk, saas, security workflows；do not use for 冒充安全认证结论, 替代正式法务/安全审批.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vendor_risk_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "对外部 SaaS/API 形成风险摘要，聚焦集成影响、权限、数据流向和替代方案。；use for vendor-risk, saas, security workflows；do not u."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vendor-risk-brief@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vendor-risk-brief",
+      "url": "https://clawhub.ai/skills/vendor-risk-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vendor-risk-brief",
+    "url": "https://clawhub.ai/skills/vendor-risk-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vendor-risk-brief-d407622628e5e3c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vendor-risk-brief@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vendor-risk-brief-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67edb72e0011174353b3b14a1cd67cad9ca2f6af25157b8a86dc860c8ce8bb6f",
+      "artifactSizeBytes": 2612
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:12:57.879Z"
+}

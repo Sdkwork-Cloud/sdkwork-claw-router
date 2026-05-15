@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55440,
+  "uuid": "skill-clawhub-qa-agent",
+  "skillKey": "clawhub-qa-agent",
+  "name": "Qa Agent",
+  "summary": "Un agente para realizar tareas de control de calidad (QA), incluyendo análisis de código, ejecución de pruebas y reporte de problemas.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qa_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Steven Martínez",
+      "features": [
+        "Un agente para realizar tareas de control de calidad (QA), incluyendo análisis de código, ejecu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qa-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124845088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qa-agent",
+      "url": "https://clawhub.ai/skills/qa-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qa-agent",
+    "url": "https://clawhub.ai/skills/qa-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qa-agent-1822ec4ad2a0975d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qa-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qa-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d146d44ebae5c3ea0b13a8f5e20cb779ba99d449f9c904a51cae1aacee66e85",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T21:23:19.352Z"
+}

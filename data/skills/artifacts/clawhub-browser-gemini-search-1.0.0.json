@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-gemini-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_gemini_search",
+  "skill": {
+    "id": 44090,
+    "skillKey": "clawhub-browser-gemini-search",
+    "name": "Browser Gemini Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-gemini-search",
+    "url": "https://clawhub.ai/skills/browser-gemini-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-gemini-search-6f707a56469fe262.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web using Google Gemini via OpenClaw-controlled Chrome with remote debugging enabled and an approved user profile."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dream007007s",
+      "userId": "s17361fzzkrrhjqsbfg9yhawx583px2h",
+      "displayName": "dream007007s",
+      "image": "https://avatars.githubusercontent.com/u/205114065?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777044229731,
+      "changelog": "Initial release: Use Google Gemini to search the web via OpenClaw browser control. Uses Chrome MCP attach mode to control the user's existing Chrome session.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0dff182399b359860ed0f110364d9635638e3937af8fb817a087c9d105d55110"
+}

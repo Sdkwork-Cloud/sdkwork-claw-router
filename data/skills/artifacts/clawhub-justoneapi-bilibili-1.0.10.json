@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justoneapi-bilibili@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_bilibili",
+  "skill": {
+    "id": 29281,
+    "skillKey": "clawhub-justoneapi-bilibili",
+    "name": "Bilibili API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-bilibili",
+    "url": "https://clawhub.ai/skills/justoneapi-bilibili",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-bilibili-3248102c44217219.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Bilibili workflows with JustOneAPI, including video Details, user Published Videos, and user Profile across 9 operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justoneapi",
+      "userId": "s17ayjxfh4atw7gc7dgat7n40x845p6b",
+      "displayName": "justoneapi",
+      "image": "https://avatars.githubusercontent.com/u/139095138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 296,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1776924420722,
+      "changelog": "- Updated operation names: \"getVideoDetailV2\" is now \"getBilibiliVideoDetailV2\" and \"getUserVideoListV2\" is now \"getBilibiliUserVideoListV2\".\n- Documentation revised to reflect new operation IDs in usage instructions and recommendations.\n- No functional changes to API integration or authentication required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7316ad1151b9dab85d54ac407ff4e3dd02b90397968def09b3391deadc9aef72"
+}

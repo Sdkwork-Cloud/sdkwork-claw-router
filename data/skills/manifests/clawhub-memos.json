@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9069,
+  "uuid": "skill-clawhub-memos",
+  "skillKey": "clawhub-memos",
+  "name": "Memos",
+  "summary": "Manage memos via the Memos API: create, retrieve, delete, and list memos with visibility and pagination support, requiring MEMOS_URL and MEMOS_TOKEN.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memos",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marco Lecheler",
+      "features": [
+        "Manage memos via the Memos API: create, retrieve, delete, and list memos with visibility and pa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memos@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16336640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memos",
+      "url": "https://clawhub.ai/skills/memos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memos",
+    "url": "https://clawhub.ai/skills/memos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memos-2b8d8df819e0a3ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memos@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-memos-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd6103ed1a7ac7fdaf339b187c6938f134e0cda82cf7404e828008ea59fe842c",
+      "artifactSizeBytes": 2111
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T20:33:08.319Z"
+}

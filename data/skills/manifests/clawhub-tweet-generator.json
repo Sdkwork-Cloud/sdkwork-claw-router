@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21051,
+  "uuid": "skill-clawhub-tweet-generator",
+  "skillKey": "clawhub-tweet-generator",
+  "name": "Tweet Generator",
+  "summary": "Craft tweets, threads, and viral hooks with schedule tips. Use when drafting copy, editing threads, optimizing engagement, scheduling posts.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tweet_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Craft tweets, threads, and viral hooks with schedule tips",
+        "Use when drafting copy, editing threads, optimizing engagement, scheduling posts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tweet-generator@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tweet-generator",
+      "url": "https://clawhub.ai/skills/tweet-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tweet-generator",
+    "url": "https://clawhub.ai/skills/tweet-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tweet-generator-bc6c04ed0b59734f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tweet-generator@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tweet-generator-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58adc87d7761ee72b9b1be8e59842add6481366263ec6c157d38298ac44c975e",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:52:50.232Z"
+}

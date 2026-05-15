@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-actions-deploy-risk-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_deploy_risk_audit",
+  "skill": {
+    "id": 27833,
+    "skillKey": "clawhub-github-actions-deploy-risk-audit",
+    "name": "GitHub Actions Deploy Risk Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-deploy-risk-audit",
+    "url": "https://clawhub.ai/skills/github-actions-deploy-risk-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-deploy-risk-audit-3b3d9ca99f418c44.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit deployment workflow risk from GitHub Actions runs by scoring failure rate, unresolved failure streaks, and time since last successful deploy."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daniellummis",
+      "userId": "publishers:daniellummis",
+      "displayName": "Daniel Lummis",
+      "image": "https://avatars.githubusercontent.com/u/65238171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772831611637,
+      "changelog": "Initial release: deploy workflow risk scoring by failure rate, trailing failure streak, and stale-success age with text/json outputs and fail gate.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cb1360f308cf4ec6593a9edbd465717ec25bf3277b53154dbe982f37d571ff36"
+}

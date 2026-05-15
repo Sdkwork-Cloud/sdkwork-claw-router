@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10166,
+  "uuid": "skill-clawhub-image-to-relief-stl",
+  "skillKey": "clawhub-image-to-relief-stl",
+  "name": "Image To Relief Stl",
+  "summary": "Turn a source image (or multi-color mask image) into a 3D-printable bas-relief STL by mapping colors (or grayscale) to heights. Use when you have an image from an image-gen skill (nano-banana-pro, etc.) and want a real, printable model (ST.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_relief_stl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ajmwagar",
+      "features": [
+        "Turn a source image (or multi-color mask image) into a 3D-printable bas-relief STL by mapping c.",
+        "Use when you have an image from an image-gen skill (nano-banana-pro, etc.) and want a real, pri."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-to-relief-stl@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25015651?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-to-relief-stl",
+      "url": "https://clawhub.ai/skills/image-to-relief-stl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-relief-stl",
+    "url": "https://clawhub.ai/skills/image-to-relief-stl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-relief-stl-d18289d7749c812f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-to-relief-stl@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-to-relief-stl-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f4c42d2ff18b2af51d4e90e3e0cae544346965797edd2cb9362c05d324fd4cd",
+      "artifactSizeBytes": 2108
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T13:38:59.353Z"
+}

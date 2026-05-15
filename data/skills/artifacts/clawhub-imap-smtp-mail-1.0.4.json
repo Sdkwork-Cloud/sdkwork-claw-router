@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/imap-smtp-mail@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imap_smtp_mail",
+  "skill": {
+    "id": 34835,
+    "skillKey": "clawhub-imap-smtp-mail",
+    "name": "IMAP SMTP Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imap-smtp-mail",
+    "url": "https://clawhub.ai/skills/imap-smtp-mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imap-smtp-mail-baf5c8d975306fec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read and send email via IMAP/SMTP using local Node scripts. Use when the agent needs to check inboxes, fetch email content, search messages, download attachm..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mohamed-hammane",
+      "userId": "s1741t73nrt7q2vnxcrxcxxtjh83hfew",
+      "displayName": "Umbra",
+      "image": "https://avatars.githubusercontent.com/u/35642940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775327909106,
+      "changelog": "v1.0.4 — Security hardening + metadata fixes\n\n- Fixed symlink bypass in attachment download path validation (now resolves symlinks before checking ALLOWED_WRITE_DIRS)\n- Fixed ~ expansion in read path validation for attachment sends\n- Workspace root detection is now resilient (OPENCLAW_WORKSPACE env var > marker file walk > fallback) in smtp.js and email-watch-lite.js\n- Constrained --state path to workspace in email-watch-lite.js\n- Removed openclaw from requires.bins (only needed for optional watcher, not core IMAP/SMTP)\n- Added requires.env for IMAP/SMTP credential vars\n- Documented that smtp.js test sends a real email\n- Removed imap-simple dead dependency\n- Fixed package.json: version, author, description",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efddf2aaec2b41066f5f4576fa874efc2774c9c709e76f849cbdfbbc2c694fb2"
+}

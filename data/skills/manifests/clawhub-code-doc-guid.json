@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26733,
+  "uuid": "skill-clawhub-code-doc-guid",
+  "skillKey": "clawhub-code-doc-guid",
+  "name": "code-doc-guid",
+  "summary": "Codebase navigation and documentation assistant. Helps AI locate code definitions, understand dependencies, and maintain documentation consistency. BLOCKING...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_doc_guid",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Omeletee",
+      "features": [
+        "Codebase navigation and documentation assistant",
+        "Helps AI locate code definitions, understand dependencies, and maintain documentation consisten.",
+        "BLOCKING..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-doc-guid@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10515280?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-doc-guid",
+      "url": "https://clawhub.ai/skills/code-doc-guid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-doc-guid",
+    "url": "https://clawhub.ai/skills/code-doc-guid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-doc-guid-7cb196f7a898f5ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-doc-guid@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-doc-guid-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76a44d8b7879ae89b5fa2b8d3b1456c6afd960d41fa57ef010b63ddd9c57f323",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T06:47:25.875Z"
+}

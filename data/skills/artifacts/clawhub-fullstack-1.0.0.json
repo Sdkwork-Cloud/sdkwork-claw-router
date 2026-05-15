@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fullstack@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fullstack",
+  "skill": {
+    "id": 22345,
+    "skillKey": "clawhub-fullstack",
+    "name": "my skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fullstack",
+    "url": "https://clawhub.ai/skills/fullstack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fullstack-47ebf385118a877d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Senior Fullstack & IoT engineer skilled in multi-tenant Express.js APIs, Next.js dashboards with Tailwind, WPF MVVM apps, and efficient Arduino IoT code."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aldilukman",
+      "userId": "publishers:aldilukman",
+      "displayName": "aldilukman",
+      "image": "https://avatars.githubusercontent.com/u/42825443?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 467,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773590350008,
+      "changelog": "Initial release with focus on enterprise-grade fullstack and IoT development.\n\n- Defines main expertise: Express.js (multi-tenant REST backend), Next.js (modern frontend with Tailwind), WPF/C# (MVVM desktop apps), and Arduino/C++ (efficient microcontroller code).\n- Sets professional communication style: concise, technical, and always provides ready-to-use, well-commented code.\n- Emphasizes cross-layer compatibility between hardware, backend, and UI components.\n- Outlines best practices for clean code, secure architectures, and system efficiency across all supported technologies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62d1352a2f52632d2a17842f7848d9fa3548c58d81ba0c14a561e5239596f797"
+}

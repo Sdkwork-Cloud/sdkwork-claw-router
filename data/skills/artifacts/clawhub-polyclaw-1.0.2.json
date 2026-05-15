@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polyclaw@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polyclaw",
+  "skill": {
+    "id": 8697,
+    "skillKey": "clawhub-polyclaw",
+    "name": "Polyclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polyclaw",
+    "url": "https://clawhub.ai/skills/polyclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polyclaw-f790e03fa6d59ae6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Become an autonomous prediction market trader on Polymarket with AI-powered analysis and a performance-backed token on Base. Trade real markets, build a track record, and let the buyback flywheel run."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pipethedev",
+      "userId": "publishers:pipethedev",
+      "displayName": "pipethedev",
+      "image": "https://avatars.githubusercontent.com/u/54484130?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6902,
+      "installsAllTime": 71,
+      "installsCurrent": 70,
+      "stars": 9,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770806177898,
+      "changelog": "Polyclaw 1.0.2 Changelog\n\n- Added _meta.json metadata file for improved skill management and distribution.\n- No user-facing changes; documentation and usage remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e2166aebb5f7d265ce69e404ac7405853f2f0d9c9feb5f3492a3a15d8241b28d"
+}

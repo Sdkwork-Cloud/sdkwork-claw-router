@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-multiagent-setup@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_multiagent_setup",
+  "skill": {
+    "id": 68574,
+    "skillKey": "clawhub-feishu-multiagent-setup",
+    "name": "飞书多机器人配置向导"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-multiagent-setup",
+    "url": "https://clawhub.ai/skills/feishu-multiagent-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-multiagent-setup-de8fc24f8aa549df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书多机器人接入 OpenClaw 的配置向导。用于给用户生成步骤清单、字段说明、权限核对表和本地配置草案；公开版不收集真实 App Secret/API Key，不写入 openclaw.json，不运行脚本，不重启服务。需要处理密钥或改配置时，必须让用户在本机私有环境中确认和执行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ashu2025-rgb",
+      "userId": "s17d4159h0jcejr0kwayxypb5x83jwky",
+      "displayName": "煮酒社群",
+      "image": "https://avatars.githubusercontent.com/u/198321274?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778213447565,
+      "changelog": "Public safety build: convert to checklist/config-draft guidance only; no real credential collection, config writes, scripts, or gateway restart in the ClawHub package.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1622a0ad3abeb5233b6c49ece7be652e6edb97df4cc359f3f2476745d212ac0"
+}

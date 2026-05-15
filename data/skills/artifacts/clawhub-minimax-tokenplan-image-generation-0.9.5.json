@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-tokenplan-image-generation@0.9.5",
+  "version": "0.9.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_tokenplan_image_generation",
+  "skill": {
+    "id": 37840,
+    "skillKey": "clawhub-minimax-tokenplan-image-generation",
+    "name": "minimax-tokenplan-image-generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-tokenplan-image-generation",
+    "url": "https://clawhub.ai/skills/minimax-tokenplan-image-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-tokenplan-image-generation-bbf4d4c17ef610c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images using MiniMax image-01 model. Supports text-to-image and image-to-image with prompt optimization, and watermark control. Preferred skill for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "4833675",
+      "userId": "s17dw9z9xd8dsfxg1grd034q5s83nwbt",
+      "displayName": "k.x.",
+      "image": "https://avatars.githubusercontent.com/u/128761670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.9.5",
+      "createdAt": 1775360871218,
+      "changelog": "Version 0.9.5\n\n- Simplified and updated initialization instructions for API key setup.\n- Removed the \"模型自动判断逻辑\" and \"REGION\" configuration; model selection is now limited to image-01.\n- Updated documentation to reflect that only the image-01 model is supported for global and new installs.\n- Improved clarity in configuration steps and usage instructions.\n- Minor documentation cleanup for easier onboarding and fewer configuration errors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:286a97d2e08d07a95cc9fdf5564642405c88a3734aed8beeb6ed9115b936ef05"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31430,
+  "uuid": "skill-clawhub-sumo-logic",
+  "skillKey": "clawhub-sumo-logic",
+  "name": "Sumo Logic",
+  "summary": "Sumo Logic integration. Manage Connectionses, Contents, Users, Roles. Use when the user wants to interact with Sumo Logic data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sumo_logic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Sumo Logic integration",
+        "Manage Connectionses, Contents, Users, Roles",
+        "Use when the user wants to interact with Sumo Logic data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sumo-logic@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sumo-logic",
+      "url": "https://clawhub.ai/skills/sumo-logic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sumo-logic",
+    "url": "https://clawhub.ai/skills/sumo-logic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sumo-logic-f7353294e1543ca6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sumo-logic@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sumo-logic-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b81159e65af3c8610d60df8d58bd140f8ab6a486a58902bf6c1be8179b39d509",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:48:23.851Z"
+}

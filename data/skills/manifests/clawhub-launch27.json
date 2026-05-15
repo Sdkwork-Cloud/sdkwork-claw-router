@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36480,
+  "uuid": "skill-clawhub-launch27",
+  "skillKey": "clawhub-launch27",
+  "name": "Launch27",
+  "summary": "Launch27 integration. Manage data, records, and automate workflows. Use when the user wants to interact with Launch27 data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.launch27",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Launch27 integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Launch27 data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/launch27@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "launch27",
+      "url": "https://clawhub.ai/skills/launch27"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "launch27",
+    "url": "https://clawhub.ai/skills/launch27",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/launch27-0543e091979a3295.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/launch27@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-launch27-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abecdc86b8a3e33b600d00666b4de8c7c0c9991ccd686c75fb60bf197383e373",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:05:46.861Z"
+}

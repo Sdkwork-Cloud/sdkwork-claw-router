@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28547,
+  "uuid": "skill-clawhub-scavio-google",
+  "skillKey": "clawhub-scavio-google",
+  "name": "Scavio Google",
+  "summary": "Search Google and get structured JSON results (web, news, images, maps). Use for any query requiring current web information or recent news.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scavio_google",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scavio-ai",
+      "features": [
+        "Search Google and get structured JSON results (web, news, images, maps)",
+        "Use for any query requiring current web information or recent news."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scavio-google@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264839281?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scavio-google",
+      "url": "https://clawhub.ai/skills/scavio-google"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scavio-google",
+    "url": "https://clawhub.ai/skills/scavio-google",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scavio-google-11092a7277962095.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scavio-google@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-scavio-google-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcf61b8b632b63ba7dafde1bab0dadf5ed51f5eb4920c100b87c46ac84582690",
+      "artifactSizeBytes": 2319
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T10:29:47.268Z"
+}

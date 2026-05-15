@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kaist@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kaist",
+  "skill": {
+    "id": 54273,
+    "skillKey": "clawhub-kaist",
+    "name": "Kaist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kaist",
+    "url": "https://clawhub.ai/skills/kaist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kaist-fd65749b4f8854d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "KAIST is South Korea’s top science and tech university, leading research in AI, robotics, semiconductors, and fostering industry innovation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777226579463,
+      "changelog": "- 初始版本发布，概述 KAIST 的历史、学科优势和行业地位  \n- 增加关键历史节点和成就（如与 MIT 对标设立、双足机器人 HUBO、AlphaGo 关联等）  \n- 详细介绍商业模式与政府支撑  \n- 提供护城河与产学研结合分析  \n- 收录最新数据与有趣事实，包括校友成就  \n- 明确适用阅读场景（科技、教育、AI、创新研究等）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b5ca629e36217c6f7961e96aa5f0d83f1c819d5952fc448bdcb15005a3fc682"
+}

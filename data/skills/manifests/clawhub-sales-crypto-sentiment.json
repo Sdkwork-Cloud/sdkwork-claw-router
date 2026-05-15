@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42285,
+  "uuid": "skill-clawhub-sales-crypto-sentiment",
+  "skillKey": "clawhub-sales-crypto-sentiment",
+  "name": "Sales Crypto Sentiment Agent",
+  "summary": "Analyzes crypto sentiment, on-chain data, and technical indicators to provide verified trading signals and actionable market insights.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sales_crypto_sentiment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fuzzyb33s",
+      "features": [
+        "Analyzes crypto sentiment, on-chain data, and technical indicators to provide verified trading."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sales-crypto-sentiment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221636957?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sales-crypto-sentiment",
+      "url": "https://clawhub.ai/skills/sales-crypto-sentiment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sales-crypto-sentiment",
+    "url": "https://clawhub.ai/skills/sales-crypto-sentiment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sales-crypto-sentiment-77dcd4881f338f3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sales-crypto-sentiment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sales-crypto-sentiment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c760e2f8bc8903b3df373377968ce3114b07fbe9ac2cf674e23414d687cd577d",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T17:21:27.393Z"
+}

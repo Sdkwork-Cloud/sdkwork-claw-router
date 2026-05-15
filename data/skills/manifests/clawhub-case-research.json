@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71900,
+  "uuid": "skill-clawhub-case-research",
+  "skillKey": "clawhub-case-research",
+  "name": "Case Research",
+  "summary": "中国财税法律案例与法规检索助手。当用户需要检索税务相关判例、行政复议决定、税收法规政策、国家税务总局公告、各地税务实践案例，或需要查找类似税务争议案例时，应使用本 Skill。适用于税务争议应对、税务筹划合规性验证、法律研究等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.case_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Richie Dirkson",
+      "features": [
+        "中国财税法律案例与法规检索助手。当用户需要检索税务相关判例、行政复议决定、税收法规政策、国家税务总局公告、各地税务实践案例，或需要查找类似税务争议案例时，应使用本 Skill。适用于税务争议."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/case-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121166069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "case-research",
+      "url": "https://clawhub.ai/skills/case-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "case-research",
+    "url": "https://clawhub.ai/skills/case-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/case-research-6d6d53d21c45ea24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/case-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-case-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a495e02e08ba01108f12ef0989ee92f32498e4352fac2817c0266b8e894fb7d5",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T01:05:04.234Z"
+}

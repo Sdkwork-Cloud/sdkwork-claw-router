@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17686,
+  "uuid": "skill-clawhub-apple-calendar-ops",
+  "skillKey": "clawhub-apple-calendar-ops",
+  "name": "Apple Calendar Ops",
+  "summary": "Read, create, update, and delete Apple Calendar events via CalDAV. Use when the user wants to inspect calendars or events, add a calendar event, change an ex...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_calendar_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawEnd",
+      "features": [
+        "Read, create, update, and delete Apple Calendar events via CalDAV",
+        "Use when the user wants to inspect calendars or events, add a calendar event, change an ex..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apple-calendar-ops@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3644544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apple-calendar-ops",
+      "url": "https://clawhub.ai/skills/apple-calendar-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-calendar-ops",
+    "url": "https://clawhub.ai/skills/apple-calendar-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-calendar-ops-df9dcbc894cc9854.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apple-calendar-ops@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apple-calendar-ops-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1121c522b722a013e8bd346df1f015f9d2dc86fd68fb5bc715f061cfc2b4950",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T03:28:08.518Z"
+}

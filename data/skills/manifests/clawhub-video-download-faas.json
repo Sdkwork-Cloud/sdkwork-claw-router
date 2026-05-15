@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16137,
+  "uuid": "skill-clawhub-video-download-faas",
+  "skillKey": "clawhub-video-download-faas",
+  "name": "Video Download FaaS",
+  "summary": "Download videos in MP4 format using yt-dlp with FaaS (Firecracker/Container) isolation. Start downloads, check status, and kill processes. Videos are automat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_download_faas",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robert (Zhaohan) Hu",
+      "features": [
+        "Download videos in MP4 format using yt-dlp with FaaS (Firecracker/Container) isolation",
+        "Start downloads, check status, and kill processes",
+        "Videos are automat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-download-faas@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61567222?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-download-faas",
+      "url": "https://clawhub.ai/skills/video-download-faas"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-download-faas",
+    "url": "https://clawhub.ai/skills/video-download-faas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-download-faas-69f3394b840f30bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-download-faas@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-download-faas-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:390a3c4b181a153447092391e49e47166c4c247e60cd62a65d89d07e29cb14cc",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T05:30:52.710Z"
+}

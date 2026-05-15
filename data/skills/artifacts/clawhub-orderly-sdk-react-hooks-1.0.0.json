@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/orderly-sdk-react-hooks@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orderly_sdk_react_hooks",
+  "skill": {
+    "id": 28015,
+    "skillKey": "clawhub-orderly-sdk-react-hooks",
+    "name": "Orderly Sdk React Hooks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orderly-sdk-react-hooks",
+    "url": "https://clawhub.ai/skills/orderly-sdk-react-hooks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orderly-sdk-react-hooks-153449693541feeb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reference guide for using Orderly React SDK hooks - useOrderEntry, usePositionStream, useOrderbookStream, useCollateral, and more"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tarnadas",
+      "userId": "publishers:tarnadas",
+      "displayName": "Mario Reder",
+      "image": "https://avatars.githubusercontent.com/u/5855071?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772875758069,
+      "changelog": "orderly-sdk-react-hooks v1.0.0\n\n- Initial release with a comprehensive reference guide (SKILL.md) for all available Orderly Network React hooks.\n- Includes setup instructions and usage examples for major hooks: useAccount, useWalletConnector, useOrderEntry, useOrderStream, usePositionStream, useTPSLOrder, and more.\n- Covers installation requirements and React app integration with Orderly providers.\n- Provides detailed hook signatures, parameters/return types, and example component code for effective integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5f9113f43b8d4a5a1c102532a2d5a77b64aacbc4ef16807bbe0b64d5273f5a76"
+}

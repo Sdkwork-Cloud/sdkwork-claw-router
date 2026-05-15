@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gillette@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gillette",
+  "skill": {
+    "id": 70886,
+    "skillKey": "clawhub-gillette",
+    "name": "Gillette"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gillette",
+    "url": "https://clawhub.ai/skills/gillette",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gillette-c54022be584c85fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供吉列剃须刀、产品信息及价格，查询门店位置，获取男士剃须和护理建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776242877438,
+      "changelog": "- Updated and simplified the skill summary and usage instructions.\n- Reorganized content into clear sections: 品牌故事, 产品矩阵, 全球足迹, 行业观察.\n- Adjusted typical usage scenarios for clarity.\n- Removed detailed product listings and added navigation for further reading.\n- Shortened and generalized content for easier understanding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78225c000c1b0846297fb58df1269e85d74b7991596f2fae86d5b38cf66c13dc"
+}

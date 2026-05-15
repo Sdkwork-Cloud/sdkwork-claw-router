@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cross-channel-daily-review@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_channel_daily_review",
+  "skill": {
+    "id": 28526,
+    "skillKey": "clawhub-cross-channel-daily-review",
+    "name": "Cross Channel Daily Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-channel-daily-review",
+    "url": "https://clawhub.ai/skills/cross-channel-daily-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-channel-daily-review-695f16ead70a70b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create a simple, repeatable daily review workflow across whatever conversation surfaces are available. Use when a user wants one raw note per source, one mer..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "panpansirius-cloud",
+      "userId": "s17c4w3dnj153ckjvkn1ny2kx984c0yk",
+      "displayName": "panpansirius-cloud",
+      "image": "https://avatars.githubusercontent.com/u/264842173?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 322,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773653224468,
+      "changelog": "Remove private-style naming, generalize public wording, and make default delivery fallback channel-agnostic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:532e170d274e8da48c44070e60c62deb70ea40c747acdf5aa809305821bd6ef7"
+}

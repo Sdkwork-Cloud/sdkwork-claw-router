@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71491,
+  "uuid": "skill-clawhub-matter-day-reminder",
+  "skillKey": "clawhub-matter-day-reminder",
+  "name": "matter-day-reminder",
+  "summary": "管理亲友重要日期（生日、纪念日等）的个人社交助理。当用户需要记录联系人信息、 设置生日提醒、管理纪念日或生成祝福语时使用此技能。支持农历/阳历日期、双节点提醒 （提前7天准备礼物+当天推送祝福），以及AI生成个性化祝福语和礼物建议。 触发关键词：生日提醒、纪念日、重要日期、联系人管理、礼物建议、祝福语生成、 农历...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.matter_day_reminder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "李永翔",
+      "features": [
+        "管理亲友重要日期（生日、纪念日等）的个人社交助理。当用户需要记录联系人信息、 设置生日提醒、管理纪念日或生成祝福语时使用此技能。支持农历/阳历日期、双节点提醒 （提前7天准备礼物+当天推送祝."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/matter-day-reminder@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1826235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "matter-day-reminder",
+      "url": "https://clawhub.ai/skills/matter-day-reminder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "matter-day-reminder",
+    "url": "https://clawhub.ai/skills/matter-day-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/matter-day-reminder-5fc6fff470c6b734.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/matter-day-reminder@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-matter-day-reminder-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf19fe1f7f546b27dc8d04502228c962e3fe109049b9dca82e2e85caee4e04b3",
+      "artifactSizeBytes": 3769
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T01:02:29.048Z"
+}

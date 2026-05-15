@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35797,
+  "uuid": "skill-clawhub-edlink",
+  "skillKey": "clawhub-edlink",
+  "name": "Edlink",
+  "summary": "Edlink integration. Manage data, records, and automate workflows. Use when the user wants to interact with Edlink data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edlink",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Edlink integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Edlink data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edlink@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edlink",
+      "url": "https://clawhub.ai/skills/edlink"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edlink",
+    "url": "https://clawhub.ai/skills/edlink",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edlink-1acad46937db637e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edlink@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-edlink-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:692d72e9b1144087abe1f67e3e874d15605144353b3bbfad527616d35a2782ec",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:25:36.832Z"
+}

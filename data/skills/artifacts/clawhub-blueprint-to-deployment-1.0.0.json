@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blueprint-to-deployment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blueprint_to_deployment",
+  "skill": {
+    "id": 65252,
+    "skillKey": "clawhub-blueprint-to-deployment",
+    "name": "落地鸿沟补全器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blueprint-to-deployment",
+    "url": "https://clawhub.ai/skills/blueprint-to-deployment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blueprint-to-deployment-3c729a40c9ad9680.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 Agent 规划结果补全为可交付、可部署的落地闭环。适用于把蓝图、架构、next actions 写入目标 Agent workspace，并主动推进到平台部署与接入引导。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beachanger",
+      "userId": "publishers:beachanger",
+      "displayName": "BeAChanger",
+      "image": "https://avatars.githubusercontent.com/u/133616562?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 289,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773905642634,
+      "changelog": "Initial release: bridge planning to delivery by writing docs into target agent workspace, showing handoff map, and proactively guiding platform deployment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:54c329d33b0c953d685fc0568e91ce349bb91b8d7e50840a3238caa6b1b43a27"
+}

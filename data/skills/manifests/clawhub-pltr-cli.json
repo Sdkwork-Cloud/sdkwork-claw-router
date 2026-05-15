@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11287,
+  "uuid": "skill-clawhub-pltr-cli",
+  "skillKey": "clawhub-pltr-cli",
+  "name": "Palantir Foundry CLI",
+  "summary": "Use the pltr CLI to query datasets, run SQL, manage builds, ontologies, projects, users, streams, AI agents, and ML models in Palantir Foundry.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pltr_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anjor",
+      "features": [
+        "Use the pltr CLI to query datasets, run SQL, manage builds, ontologies, projects, users, stream."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pltr-cli@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1911631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pltr-cli",
+      "url": "https://clawhub.ai/skills/pltr-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pltr-cli",
+    "url": "https://clawhub.ai/skills/pltr-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pltr-cli-1e018cf22f25454f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pltr-cli@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pltr-cli-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1843ab24ebb94270c78836972b408bf1f24db3632dc20e27e8591ac3885715c9",
+      "artifactSizeBytes": 2174
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T22:13:17.061Z"
+}

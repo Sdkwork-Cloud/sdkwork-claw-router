@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/loop-stability-check-clarkchenkai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loop_stability_check_clarkchenkai",
+  "skill": {
+    "id": 52854,
+    "skillKey": "clawhub-loop-stability-check-clarkchenkai",
+    "name": "Loop Stability Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loop-stability-check-clarkchenkai",
+    "url": "https://clawhub.ai/skills/loop-stability-check-clarkchenkai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loop-stability-check-clarkchenkai-917bd4e33d309040.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Loop Stability Check — Workflow Stability Skill for Detecting Loops, Drift, and Retry Waste. Use it when the user needs a disciplined protocol and fixed outp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clarkchenkai",
+      "userId": "s17ajkxsb44wpgrcm6e0s5bbj5849c81",
+      "displayName": "Cubic AI",
+      "image": "https://avatars.githubusercontent.com/u/242906237?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775700615398,
+      "changelog": "Initial release of loop-stability-check skill.\n\n- Provides a structured protocol to assess and intervene in unstable workflow loops.\n- Detects patterns such as repeated retries, oscillation, drift, and wasted cycles in human-bot workflows.\n- Defines a disciplined six-part output contract for consistent, actionable analysis.\n- Recommends targeted guardrails and interventions to restore workflow stability.\n- Clarifies boundaries to avoid misuse in creative or open-ended workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83a03efb6eed047ba6daa9b9799d39eb5e268364fce9ea19bc1e7c9f89a1b73e"
+}

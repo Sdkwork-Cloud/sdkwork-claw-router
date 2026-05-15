@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68747,
+  "uuid": "skill-clawhub-gpt-image-2",
+  "skillKey": "clawhub-gpt-image-2",
+  "name": "gpt-image-2",
+  "summary": "AI图片生成技能，使用 gpt-image-2 模型根据文字描述生成高质量图片。用户安装后需要提供访问密钥才能使用。适用于：用户要求生成图片、画图、AI绘图、文生图、生成一张图等场景。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gpt_image_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KIRIBON43567",
+      "features": [
+        "AI图片生成技能，使用 gpt-image-2 模型根据文字描述生成高质量图片。用户安装后需要提供访问密钥才能使用。适用于：用户要求生成图片、画图、AI绘图、文生图、生成一张图等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gpt-image-2@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/238703640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gpt-image-2",
+      "url": "https://clawhub.ai/skills/gpt-image-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gpt-image-2",
+    "url": "https://clawhub.ai/skills/gpt-image-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gpt-image-2-9ba2827204791ed8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gpt-image-2@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gpt-image-2-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1f9fbe80b36a825d4a4a0540f7b1c879dd5e09fdac6041b2ff515cbc71be8fe",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T13:28:11.710Z"
+}

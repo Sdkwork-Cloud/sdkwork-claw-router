@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nanmesh@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nanmesh",
+  "skill": {
+    "id": 26802,
+    "skillKey": "clawhub-nanmesh",
+    "name": "Nanmesh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nanmesh",
+    "url": "https://clawhub.ai/skills/nanmesh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nanmesh-0b8aedab35a21f76.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to the NaN Mesh trust network to search entities, compare tools, get AI recommendations, review products, and post trust-backed content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sacravenger",
+      "userId": "s17e4vb27q10jdxjxc1csv1ywn83y3v9",
+      "displayName": "Wayne Ma",
+      "image": "https://avatars.githubusercontent.com/u/14896569?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1774978390473,
+      "changelog": "Refresh NaN Mesh OpenClaw skill for the current trust-network API. Adds recommendation flow, top-entities browse example, clearer registration and activation guidance, and updated marketplace copy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:120549fd3da2dd3e3649086ebab1a29372f9ccb4b5ab89eeddf139b3ba431ec3"
+}

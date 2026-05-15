@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chainaware-behavioral-prediction@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chainaware_behavioral_prediction",
+  "skill": {
+    "id": 23086,
+    "skillKey": "clawhub-chainaware-behavioral-prediction",
+    "name": "ChainaAware Behavioral Prediction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chainaware-behavioral-prediction",
+    "url": "https://clawhub.ai/skills/chainaware-behavioral-prediction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chainaware-behavioral-prediction-1164c93151cea54c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Predict and assess wallet safety, fraud risk, rug pulls, behavior, token community strength, and on-chain intent across multiple blockchains for Web3 trust s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chainaware",
+      "userId": "publishers:chainaware",
+      "displayName": "ChainAware",
+      "image": "https://avatars.githubusercontent.com/u/240919698?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 452,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773416563871,
+      "changelog": "v1.0.3: \nDeclared CHAINAWARE_API_KEY env var requirement, added explicit \ncredential handling instructions, added data transmission consent steps, \nadded API key security instructions per OpenClaw requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d605aa3debb2917593be16c1a964e80c36cf8770c0f65e5f09715929897efdde"
+}

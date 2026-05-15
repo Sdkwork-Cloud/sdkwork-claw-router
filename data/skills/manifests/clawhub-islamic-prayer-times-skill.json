@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41600,
+  "uuid": "skill-clawhub-islamic-prayer-times-skill",
+  "skillKey": "clawhub-islamic-prayer-times-skill",
+  "name": "Prayer Times Skill",
+  "summary": "Islamic prayer times with reminders, todo list, and journal. Use when: user asks for prayer times (sholat, waktu solat, jadwalsholat), wants to set location,...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.islamic_prayer_times_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rizki suluh adi",
+      "features": [
+        "Islamic prayer times with reminders, todo list, and journal",
+        "Use when: user asks for prayer times (sholat, waktu solat, jadwalsholat), wants to set location."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/islamic-prayer-times-skill@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213207127?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "islamic-prayer-times-skill",
+      "url": "https://clawhub.ai/skills/islamic-prayer-times-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "islamic-prayer-times-skill",
+    "url": "https://clawhub.ai/skills/islamic-prayer-times-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/islamic-prayer-times-skill-db3c573b4bdddd0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/islamic-prayer-times-skill@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-islamic-prayer-times-skill-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a377ec0292bb8f68ca85a5ac482947bdc25dc40aab8f4b6e78e8b81189d377da",
+      "artifactSizeBytes": 2038
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T05:57:00.488Z"
+}

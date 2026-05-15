@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27469,
+  "uuid": "skill-clawhub-claw-drive",
+  "skillKey": "clawhub-claw-drive",
+  "name": "Claw Drive",
+  "summary": "Claw Drive — AI-managed personal drive for OpenClaw. Auto-categorize, tag, deduplicate, and retrieve files with natural language. Backed by Google Drive for...",
+  "version": "0.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_drive",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dissao",
+      "features": [
+        "Claw Drive — AI-managed personal drive for OpenClaw",
+        "Auto-categorize, tag, deduplicate, and retrieve files with natural language",
+        "Backed by Google Drive for..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-drive@0.4.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31650641?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-drive",
+      "url": "https://clawhub.ai/skills/claw-drive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-drive",
+    "url": "https://clawhub.ai/skills/claw-drive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-drive-6ea6701014a3795c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-drive@0.4.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-drive-0.4.4.json",
+      "version": "0.4.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15b3216dc51b86a6f41f2fa23484abaa8329034dfdc30cb1187ce78cffe10cea",
+      "artifactSizeBytes": 2249
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T23:55:55.799Z"
+}

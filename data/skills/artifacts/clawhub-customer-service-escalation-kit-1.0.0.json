@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/customer-service-escalation-kit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customer_service_escalation_kit",
+  "skill": {
+    "id": 49769,
+    "skillKey": "clawhub-customer-service-escalation-kit",
+    "name": "Customer Service Escalation Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customer-service-escalation-kit",
+    "url": "https://clawhub.ai/skills/customer-service-escalation-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customer-service-escalation-kit-1ffb199ddea45f5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides structured workflows to clarify issues, build evidence timelines, draft calm messages, and prepare follow-ups for refunds, disputes, and escalations..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 67,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778267341381,
+      "changelog": "Initial release of Customer Service Escalation Kit.\n\n- Provides a structured workflow for refund, complaint, dispute, and escalation scenarios.\n- Helps users clarify their situation, build evidence timelines, and draft messages.\n- Generates checklists and working artifacts to organize actions and required information.\n- Includes verification steps for accuracy, highlighting gaps and assumptions.\n- Designed for everyday consumers needing practical, actionable guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:54978f7557c9c6c5493f816d82c3ea11d52fb535383ac49ddd204a8f80d39c78"
+}

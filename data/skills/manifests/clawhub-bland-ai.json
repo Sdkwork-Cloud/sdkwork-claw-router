@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30726,
+  "uuid": "skill-clawhub-bland-ai",
+  "skillKey": "clawhub-bland-ai",
+  "name": "Bland Ai",
+  "summary": "Bland AI integration. Manage data, records, and automate workflows. Use when the user wants to interact with Bland AI data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bland_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Bland AI integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Bland AI data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bland-ai@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bland-ai",
+      "url": "https://clawhub.ai/skills/bland-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bland-ai",
+    "url": "https://clawhub.ai/skills/bland-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bland-ai-1ead8743360255ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bland-ai@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-bland-ai-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f785a81b2c59ce2c76c9caba82cfa64c4fafb4383be81dfa4a4b351adbbc4d73",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:14:10.247Z"
+}

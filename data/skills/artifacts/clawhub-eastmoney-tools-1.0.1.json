@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eastmoney-tools@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eastmoney_tools",
+  "skill": {
+    "id": 73196,
+    "skillKey": "clawhub-eastmoney-tools",
+    "name": "东方财富金融工具集"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eastmoney-tools",
+    "url": "https://clawhub.ai/skills/eastmoney-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eastmoney-tools-60383403054fe68b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "东方财富金融数据工具集，集成选股、资讯搜索、行情财务查询三大功能。当用户查询 A股、港股、美股相关数据时使用，包括：条件选股、股票推荐、板块成分股；新闻、公告、研报、政策搜索；实时行情、财务指标、公司信息、资金流向等数据查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "torchesfrms",
+      "userId": "s17b4z2mknzysd115pp2b62vsh84bhs3",
+      "displayName": "moer",
+      "image": "https://avatars.githubusercontent.com/u/42177272?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1817,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773548552965,
+      "changelog": "新增多 API Key 轮换功能，支持每日 50+ 次调用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aad13592b2bc3966e3c510b349ee927eca3feae660338a2fea883492799a8629"
+}

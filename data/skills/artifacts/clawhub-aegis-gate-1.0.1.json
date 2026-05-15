@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aegis-gate@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aegis_gate",
+  "skill": {
+    "id": 52959,
+    "skillKey": "clawhub-aegis-gate",
+    "name": "Aegis Gate — AI Security"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aegis-gate",
+    "url": "https://clawhub.ai/skills/aegis-gate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aegis-gate-08bab025f3f77661.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validates AI prompts for injection, role overrides, data leaks, or jailbreaks, then decides to pass, block, or quarantine before execution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jongartmann",
+      "userId": "s173qsb2y1s5m05x6qec8689a183fqvc",
+      "displayName": "X-Loop³ Labs",
+      "image": "https://avatars.githubusercontent.com/u/236873560?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774305749010,
+      "changelog": "Aegis Gate 1.0.1 — Updated documentation for API usage\n\n- Clarified REST API usage with endpoint, sample payload, and response format.\n- Updated rule flow for handling PASS, BLOCK, QUARANTINE, and error outcomes.\n- Added provenance, demo links, and patent information.\n- Removed in-depth explanation of internal detection mechanisms.\n- No functional or code changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:44e3355a28fb0ec8116403f60320f1df0039b79b2c6dd3f38b9cd24d90514d44"
+}

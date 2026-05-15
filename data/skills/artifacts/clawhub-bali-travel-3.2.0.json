@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bali-travel@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bali_travel",
+  "skill": {
+    "id": 54620,
+    "skillKey": "clawhub-bali-travel",
+    "name": "Plan Bali Travel — Flights, Hotels, Attractions, Temples, Beaches, Villas & Itineraries"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bali-travel",
+    "url": "https://clawhub.ai/skills/bali-travel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bali-travel-87a4166a3ced83cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan your Bali dream trip — Ubud rice terraces, Seminyak beach clubs, Uluwatu temple sunsets, Nusa Penida cliffs, and spiritual yoga retreats. Also supports:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1776080836060,
+      "changelog": "Renamed and optimized per naming methodology v3",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c33131627eb34d5892459632ef1d6022a25c295a36b931258a42ebe0bea4862"
+}

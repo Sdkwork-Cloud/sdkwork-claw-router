@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-scif@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_scif",
+  "skill": {
+    "id": 23948,
+    "skillKey": "clawhub-agent-scif",
+    "name": "Agent SCIF"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-scif",
+    "url": "https://clawhub.ai/skills/agent-scif",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-scif-a330a9b24d8198e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trustless encrypted vault with TOTP auth and clean-room session isolation. Secrets your agent holds but cannot read. Use when user wants to store, retrieve,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cmill01",
+      "userId": "publishers:cmill01",
+      "displayName": "cmill01",
+      "image": "https://avatars.githubusercontent.com/u/34229607?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 424,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772680528099,
+      "changelog": "Updated roadmap: v2.0 will add true cryptographic encryption via out-of-band passphrase input (local micro HTTP server, never through chat)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f61e68bd43ba0d9ffee063eab26f5b10626a81ae674bb8dcc0fc362e039ee094"
+}

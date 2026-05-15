@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25803,
+  "uuid": "skill-clawhub-serpshot",
+  "skillKey": "clawhub-serpshot",
+  "name": "serpshot",
+  "summary": "Use Serpshot Google Search API to perform web searches and image searches.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serpshot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dylan",
+      "features": [
+        "Use Serpshot Google Search API to perform web searches and image searches."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/serpshot@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41266749?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "serpshot",
+      "url": "https://clawhub.ai/skills/serpshot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serpshot",
+    "url": "https://clawhub.ai/skills/serpshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serpshot-95316d0db51c392f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/serpshot@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-serpshot-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95b533a2a816c17aee490912c131d9d2989ba77f7242f2617d5f2de4d5aa3de0",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T08:24:31.490Z"
+}

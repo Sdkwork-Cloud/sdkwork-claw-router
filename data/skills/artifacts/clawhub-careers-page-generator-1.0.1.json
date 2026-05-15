@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/careers-page-generator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.careers_page_generator",
+  "skill": {
+    "id": 32531,
+    "skillKey": "clawhub-careers-page-generator",
+    "name": "careers-page-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "careers-page-generator",
+    "url": "https://clawhub.ai/skills/careers-page-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/careers-page-generator-add39473aa8b536b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to create, optimize, or audit a careers or jobs page. Also use when the user mentions \"careers,\" \"jobs,\" \"hiring,\" \"open positions,\" \"com..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775036128322,
+      "changelog": "Batch: startups through app-ads",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c28c0acbf9f76c4466693c3d3133c16cd103cf03fd963fa79986245e6f33ff3d"
+}

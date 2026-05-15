@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hengqin-subsidy-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hengqin_subsidy_helper",
+  "skill": {
+    "id": 73393,
+    "skillKey": "clawhub-hengqin-subsidy-helper",
+    "name": "橫琴創業補貼助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hengqin-subsidy-helper",
+    "url": "https://clawhub.ai/skills/hengqin-subsidy-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hengqin-subsidy-helper-53cae000d3b83dad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "幫助澳門創業者及企業查詢橫琴及澳門最新補貼政策、申請條件與流程指引。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "isaacloi1995-dot",
+      "userId": "publishers:isaacloi1995-dot",
+      "displayName": "isaacloi1995-dot",
+      "image": "https://avatars.githubusercontent.com/u/257231061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 302,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772761384932,
+      "changelog": "initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cbfd7c6696b246634dd10e544b08abf537ae4f6e7b1723965489460537600ccb"
+}

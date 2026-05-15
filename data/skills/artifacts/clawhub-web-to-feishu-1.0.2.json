@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-to-feishu@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_to_feishu",
+  "skill": {
+    "id": 60551,
+    "skillKey": "clawhub-web-to-feishu",
+    "name": "Web To Feishu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-to-feishu",
+    "url": "https://clawhub.ai/skills/web-to-feishu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-to-feishu-c2688566c820bd99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将任意网页链接或本地文件一键转为结构化 Markdown，并保存到飞书云文档或腾讯 ima 笔记。 支持的信源：(1) X/Twitter 推文、长文 Article、Thread 线程；(2) 微信公众号文章； (3) YouTube 视频；(4) 任意 HTML 网页；(5) 本地文件：PDF、Word、PP..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edwardwason",
+      "userId": "s177q4wcvafq6fzfkhk2g3cwth83y01d",
+      "displayName": "AI花生",
+      "image": "https://avatars.githubusercontent.com/u/47667850?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775984564283,
+      "changelog": "API fix: Tencent IMA real cloud API endpoint and auth headers updated",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e46e7cf120202c5f2247413c7a60b6d726f164a70f9a0cfdce7ab647f7275fd"
+}

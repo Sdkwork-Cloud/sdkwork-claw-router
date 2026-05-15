@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42994,
+  "uuid": "skill-clawhub-modesty-audiopod",
+  "skillKey": "clawhub-modesty-audiopod",
+  "name": "audiopod",
+  "summary": "Use SkillBoss API Hub for audio processing tasks including AI music generation (text-to-music, instrumentals, samples), text-to-speech, speech-to-text transc...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modesty_audiopod",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ModestyRichards",
+      "features": [
+        "Use SkillBoss API Hub for audio processing tasks including AI music generation (text-to-music,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/modesty-audiopod@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261238899?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "modesty-audiopod",
+      "url": "https://clawhub.ai/skills/modesty-audiopod"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modesty-audiopod",
+    "url": "https://clawhub.ai/skills/modesty-audiopod",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modesty-audiopod-35c3e904c54a1930.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/modesty-audiopod@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-modesty-audiopod-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28b28b38738ff7f8f64afa804d2420b7182ae681aa0695ad2a148a000ebc04d1",
+      "artifactSizeBytes": 2167
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T05:17:45.475Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/check-emails-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.check_emails_1_0_0",
+  "skill": {
+    "id": 26732,
+    "skillKey": "clawhub-check-emails-1-0-0",
+    "name": "Check Emails 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "check-emails-1-0-0",
+    "url": "https://clawhub.ai/skills/check-emails-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/check-emails-1-0-0-5fb57dc32a03ab3e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lists the last 10 emails from the user's inbox using Himalaya for quick recent email review."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shrivastavarohit",
+      "userId": "publishers:shrivastavarohit",
+      "displayName": "shrivastavarohit",
+      "image": "https://avatars.githubusercontent.com/u/9568679?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773416344640,
+      "changelog": "Check Emails from Himalaya - Version 1.0.0\n\n- Initial release of the skill.\n- Adds a command to list the latest 10 email envelopes using Himalaya.\n- Enables quick checking of recent emails with a single command.\n- No special configuration or additional flags required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:146ba003fa3cef5de0e0357f8a66d5114f24f3f9e5679f295333ddf9dd9d9a6c"
+}

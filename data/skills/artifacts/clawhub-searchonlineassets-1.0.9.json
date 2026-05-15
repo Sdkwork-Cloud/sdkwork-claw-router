@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/searchonlineassets@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searchonlineassets",
+  "skill": {
+    "id": 16835,
+    "skillKey": "clawhub-searchonlineassets",
+    "name": "SearchOnlineAssets"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searchonlineassets",
+    "url": "https://clawhub.ai/skills/searchonlineassets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searchonlineassets-c8c59c1f1d6e0486.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Online asset search tool: queries public stock libraries (Pixabay) for high-quality photos, illustrations, vectors and videos, returning result metadata and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlazyai",
+      "userId": "s170j1ymymrxasgd00dsk7tckx84cf45",
+      "displayName": "dlazy",
+      "image": "https://avatars.githubusercontent.com/u/274158181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 835,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1777544585797,
+      "changelog": "Sync to CLI 1.0.9 with cliWarning support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55446f3d6b18fb8cc3b72286df3fb46065f3a22e51fcd2eaf8ccd6c780a1d053"
+}

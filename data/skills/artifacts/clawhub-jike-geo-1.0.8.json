@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jike-geo@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_geo",
+  "skill": {
+    "id": 66543,
+    "skillKey": "clawhub-jike-geo",
+    "name": "jike-geo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-geo",
+    "url": "https://clawhub.ai/skills/jike-geo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-geo-2a452aaff0c81c6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "极义GEO — 生成式搜索引擎优化平台。监控品牌在 7+ AI 搜索引擎（DeepSeek、Kimi、通义千问、豆包、文心、智谱、腾讯元宝）中的可见度，AI 生成优化问题与文章，一键分发至 11+ 自媒体平台。适用场景包括：GEO 优化、AI 搜索监控、品牌可见度分析、品牌在 AI 里的表现、AI 搜索排名、品牌..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mzoob",
+      "userId": "s172s1km0rk8w53q877abtx9yh83ghee",
+      "displayName": "mzoob",
+      "image": "https://avatars.githubusercontent.com/u/83409616?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 390,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1774684188057,
+      "changelog": "- Refined the workflow for company info填写：新增“公司信息一次性完整填写”要求，详细列出必填/选填字段及填写策略，强调不能编造。\n- 明确 company save 必须一次性补全全部必填项，优先用用户对话、网络搜索及用户提问补足资料。\n- 修改 company save 命令用法示例，展示所有必填参数填写格式。\n- 强化数据依赖链，突出公司资料完整性对后续内容生成的影响。\n- 仅增加了缓存目录 pyc 文件，没有代码变更。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:948f486a823b3f8c94433a94af7b88c522f587dd469e13a756aff269fbb28aea"
+}

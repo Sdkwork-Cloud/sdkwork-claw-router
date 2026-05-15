@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66888,
+  "uuid": "skill-clawhub-mimo-web-search",
+  "skillKey": "clawhub-mimo-web-search",
+  "name": "MiMo 联网搜索",
+  "summary": "基于小米 MiMo 模型提供实时联网搜索，支持最新信息查询与资料核对，需配置 API Key 并付费使用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mimo_web_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EnderXiao",
+      "features": [
+        "基于小米 MiMo 模型提供实时联网搜索，支持最新信息查询与资料核对，需配置 API Key 并付费使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mimo-web-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38461979?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mimo-web-search",
+      "url": "https://clawhub.ai/skills/mimo-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mimo-web-search",
+    "url": "https://clawhub.ai/skills/mimo-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mimo-web-search-e325fe7edb17fd3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mimo-web-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mimo-web-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ce3886b7a1aef2c2a3069a08bb131dcb70a2a5f69e4b8e82c9ed6f8939f0633",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T07:50:30.434Z"
+}

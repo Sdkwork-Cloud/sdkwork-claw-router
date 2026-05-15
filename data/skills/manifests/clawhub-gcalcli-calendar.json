@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8423,
+  "uuid": "skill-clawhub-gcalcli-calendar",
+  "skillKey": "clawhub-gcalcli-calendar",
+  "name": "Google Calendar (via gcalcli)",
+  "summary": "Google Calendar via gcalcli: today-only agenda by default, bounded meaning-first lookup via agenda scans, and fast create/delete with verification--optimized for low tool calls and minimal output.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gcalcli_calendar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nikita Shkoda",
+      "features": [
+        "Google Calendar via gcalcli: today-only agenda by default, bounded meaning-first lookup via age."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gcalcli-calendar@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40822400?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gcalcli-calendar",
+      "url": "https://clawhub.ai/skills/gcalcli-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gcalcli-calendar",
+    "url": "https://clawhub.ai/skills/gcalcli-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gcalcli-calendar-70597ae815e1d740.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gcalcli-calendar@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gcalcli-calendar-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69469d7d8d65df7e46ea58dbc9746f68d47d7c948d6b33c4ecd245c4682da522",
+      "artifactSizeBytes": 2460
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T23:38:30.320Z"
+}

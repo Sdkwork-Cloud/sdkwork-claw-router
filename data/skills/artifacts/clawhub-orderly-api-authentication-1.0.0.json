@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/orderly-api-authentication@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orderly_api_authentication",
+  "skill": {
+    "id": 28854,
+    "skillKey": "clawhub-orderly-api-authentication",
+    "name": "Orderly Api Authentication"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orderly-api-authentication",
+    "url": "https://clawhub.ai/skills/orderly-api-authentication",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orderly-api-authentication-02b0ea9c767fe212.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete authentication guide for Orderly Network - EIP-712 wallet signatures for EVM accounts, Ed25519 message signing for Solana accounts, and Ed25519 sign..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tarnadas",
+      "userId": "publishers:tarnadas",
+      "displayName": "Mario Reder",
+      "image": "https://avatars.githubusercontent.com/u/5855071?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772814172504,
+      "changelog": "orderly-api-authentication v1.0.0\n\n- Initial release providing a comprehensive authentication guide for Orderly Network.\n- Covers two-layer authentication: EIP-712 wallet signatures for EVM, Ed25519 message signing for Solana, and Ed25519 signatures for API requests.\n- Explains setup for new accounts, key management, and API trading bots.\n- Includes clear step-by-step registration examples for both EVM and Solana.\n- Details EIP-712 domain usage, broker setup, and recommended API endpoints for best practices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7a56cf8b8c6af6fce9d71e1cc0606370a3325f80ffd3d16c9a9765989ef90dee"
+}

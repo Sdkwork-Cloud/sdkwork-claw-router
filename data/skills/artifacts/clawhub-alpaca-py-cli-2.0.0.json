@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alpaca-py-cli@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alpaca_py_cli",
+  "skill": {
+    "id": 16139,
+    "skillKey": "clawhub-alpaca-py-cli",
+    "name": "Alpaca Py Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alpaca-py-cli",
+    "url": "https://clawhub.ai/skills/alpaca-py-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alpaca-py-cli-68def7ddd8ea5484.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI agent skill for Alpaca Markets trading. Intelligent setup wizard (alpaca init) guides users through registration. Trade stocks/crypto, manage portfolios,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zijunl",
+      "userId": "publishers:zijunl",
+      "displayName": "Eugene Lin",
+      "image": "https://avatars.githubusercontent.com/u/31418926?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 883,
+      "installsAllTime": 4,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1771481739743,
+      "changelog": "Major update: Simplify init for agent automation. Remove interactive wizard, make it non-interactive with clear steps for browser automation. Reduce code by 21%. Add comprehensive agent automation workflow documentation. Philosophy change: manual and auto are the same for agents.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:178e5286c9ca4e98c7754f8089c3292e87259f552c4f302d8ee8c1264b578fe9"
+}

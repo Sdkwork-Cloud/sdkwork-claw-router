@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44976,
+  "uuid": "skill-clawhub-env-config-manager",
+  "skillKey": "clawhub-env-config-manager",
+  "name": "Env Config Manager",
+  "summary": "Manage environment configs with loading, switching, encryption, key rotation, validation, and team-safe secret sharing for .env, YAML, and JSON files.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.env_config_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lv Lancer",
+      "features": [
+        "Manage environment configs with loading, switching, encryption, key rotation, validation, and t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/env-config-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29176686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "env-config-manager",
+      "url": "https://clawhub.ai/skills/env-config-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "env-config-manager",
+    "url": "https://clawhub.ai/skills/env-config-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/env-config-manager-d41fd6917ad36ba5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/env-config-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-env-config-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4484c8fefc2678c5e408f8ad329d29bb9881ac25180b08d4a82f3f6d65c96ddf",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T07:22:03.934Z"
+}

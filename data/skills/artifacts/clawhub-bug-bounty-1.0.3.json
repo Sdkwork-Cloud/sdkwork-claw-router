@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bug-bounty@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bug_bounty",
+  "skill": {
+    "id": 63651,
+    "skillKey": "clawhub-bug-bounty",
+    "name": "Bug Bounty"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bug-bounty",
+    "url": "https://clawhub.ai/skills/bug-bounty",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bug-bounty-5069f4d1762bad11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bug Bounty 猎人 - 自动扫描漏洞、生成报告、追踪奖励。适合：安全研究员、白帽子。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773600020695,
+      "changelog": "- Added SKILL.md with detailed description, usage instructions, and core features of the bug bounty skill.\n- Introduced core functions: automated vulnerability scanning, professional report generation, and bounty tracking.\n- Outlined example commands for scanning, report generation, and project recommendations.\n- Provided clear scope for intended users: security researchers and white hats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3815e17c6698f5fe7b0cd5a5a154db4079f6bca0d3c7f9131d3835551cc7549c"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15037,
+  "uuid": "skill-clawhub-product-strategy",
+  "skillKey": "clawhub-product-strategy",
+  "name": "Product Strategy",
+  "summary": "Product strategy analysis for any consumer product. Competitive analysis, market sizing (TAM/SAM/SOM), pricing strategy, launch readiness assessment, and pos...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_strategy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kingmadellc",
+      "features": [
+        "Product strategy analysis for any consumer product",
+        "Competitive analysis, market sizing (TAM/SAM/SOM), pricing strategy, launch readiness assessmen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-strategy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257369583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-strategy",
+      "url": "https://clawhub.ai/skills/product-strategy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-strategy",
+    "url": "https://clawhub.ai/skills/product-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-strategy-fdea1e25e09a73f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-strategy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-strategy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc7bb82c1fb18e766f53b93ff73d514c861ccc41038b327cb4b00d179722a2ce",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T21:57:57.820Z"
+}

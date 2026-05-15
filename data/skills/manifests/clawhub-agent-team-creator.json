@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66613,
+  "uuid": "skill-clawhub-agent-team-creator",
+  "skillKey": "clawhub-agent-team-creator",
+  "name": "Claw Team Builder",
+  "summary": "Agent团队创建和管理工具 - 用于创建多Agent协作团队，分配角色和任务，协调复杂工作流。支持创建CEO、分析师、研究员等角色，实现智能任务分发和结果整合。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_team_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryan-wuxl",
+      "features": [
+        "Agent团队创建和管理工具",
+        "用于创建多Agent协作团队，分配角色和任务，协调复杂工作流。支持创建CEO、分析师、研究员等角色，实现智能任务分发和结果整合。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-team-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21093002?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-team-creator",
+      "url": "https://clawhub.ai/skills/agent-team-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-team-creator",
+    "url": "https://clawhub.ai/skills/agent-team-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-team-creator-c8787651a50aec77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-team-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-team-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0cad534fd2f8b2cbdf33ae248271bc0cc855bf84de9cb47e2de587bcecdc4d37",
+      "artifactSizeBytes": 2389
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T03:38:27.714Z"
+}

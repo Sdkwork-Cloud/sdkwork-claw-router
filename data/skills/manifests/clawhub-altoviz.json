@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26020,
+  "uuid": "skill-clawhub-altoviz",
+  "skillKey": "clawhub-altoviz",
+  "name": "Altoviz",
+  "summary": "Altoviz integration. Manage data, records, and automate workflows. Use when the user wants to interact with Altoviz data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.altoviz",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Altoviz integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Altoviz data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/altoviz@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "altoviz",
+      "url": "https://clawhub.ai/skills/altoviz"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "altoviz",
+    "url": "https://clawhub.ai/skills/altoviz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/altoviz-b9e2ca0e0424acd3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/altoviz@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-altoviz-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50c862da661d05c9e2d6d892200a30a572ee5b0aacbe44e8301c8d759e134335",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:18:28.351Z"
+}

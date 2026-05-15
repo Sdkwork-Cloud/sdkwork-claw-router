@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41629,
+  "uuid": "skill-clawhub-patch-maker",
+  "skillKey": "clawhub-patch-maker",
+  "name": "Patch Maker",
+  "summary": "patch video clips into repaired video clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for removing or replac...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patch_maker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "patch video clips into repaired video clips with this skill",
+        "Works with MP4, MOV, AVI, WebM files up to 500MB",
+        "content creators use it for removing or replac..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/patch-maker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "patch-maker",
+      "url": "https://clawhub.ai/skills/patch-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patch-maker",
+    "url": "https://clawhub.ai/skills/patch-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patch-maker-dcb406a3565f05a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/patch-maker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-patch-maker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b16632f44dfcf665b55694f853d325d112ec3584d32f02d0d23caecd60f324d5",
+      "artifactSizeBytes": 2544
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T00:07:57.876Z"
+}

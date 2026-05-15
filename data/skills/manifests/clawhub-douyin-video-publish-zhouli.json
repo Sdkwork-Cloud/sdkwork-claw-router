@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66906,
+  "uuid": "skill-clawhub-douyin-video-publish-zhouli",
+  "skillKey": "clawhub-douyin-video-publish-zhouli",
+  "name": "Douyin Video Publish",
+  "summary": "抖音视频发布。使用浏览器自动化在抖音创作者平台发布视频。当用户说\"发布视频到抖音\"、\"发抖音\"时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_video_publish_zhouli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "onlyloveher",
+      "features": [
+        "抖音视频发布。使用浏览器自动化在抖音创作者平台发布视频。当用户说\"发布视频到抖音\"、\"发抖音\"时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-video-publish-zhouli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/972832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-video-publish-zhouli",
+      "url": "https://clawhub.ai/skills/douyin-video-publish-zhouli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-video-publish-zhouli",
+    "url": "https://clawhub.ai/skills/douyin-video-publish-zhouli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-video-publish-zhouli-c67360f2c0984b70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-video-publish-zhouli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-video-publish-zhouli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d084477ba671c33863b9a543738294adfc6b71031f82b9d1496393915f8b4d75",
+      "artifactSizeBytes": 2427
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T00:41:25.502Z"
+}

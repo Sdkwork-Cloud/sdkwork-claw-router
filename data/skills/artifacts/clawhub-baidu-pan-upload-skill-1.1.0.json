@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-pan-upload-skill@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_pan_upload_skill",
+  "skill": {
+    "id": 64050,
+    "skillKey": "clawhub-baidu-pan-upload-skill",
+    "name": "Baidu Pan Upload"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-pan-upload-skill",
+    "url": "https://clawhub.ai/skills/baidu-pan-upload-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-pan-upload-skill-45a643fecc0f6344.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "百度网盘文件上传，支持分片上传、断点续传和进度监控。触发词：百度网盘上传、baidu pan upload、上传文件到网盘、upload to baidu pan、断点续传。适用场景：(1)上传本地文件到百度网盘指定目录 (2)大文件自动分片上传 (>4MB) (3)中断后断点续传 (4)自动创建远程目录。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ugpoor",
+      "userId": "s177qqrp481qedfn5w9m5nmte183ge14",
+      "displayName": "superStupidBear",
+      "image": "https://avatars.githubusercontent.com/u/6762468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776968810945,
+      "changelog": "- 新增断点续传功能，上传中断后可自动从断点继续，无需重新上传已完成分片\n- 增加大文件上传进度监控，实时显示进度、速率与剩余时间\n- 所有上传统一采用分片流程，提升大文件和小文件一致性\n- 上传状态保存在源文件目录，上传完成后自动清理\n- 文档补充了断点续传和进度监控的详细指引",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca6e706a72b7ec6206c03e05942a23776c9adb4d78d6202ccc21c38290716cfd"
+}

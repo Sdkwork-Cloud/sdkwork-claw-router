@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23113,
+  "uuid": "skill-clawhub-autonomous-organization",
+  "skillKey": "clawhub-autonomous-organization",
+  "name": "Autonomous Organization",
+  "summary": "Manages and schedules autonomous agents to perform research, projects, memory upkeep, cleanup, and security tasks around the clock.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomous_organization",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xeonai44",
+      "features": [
+        "Manages and schedules autonomous agents to perform research, projects, memory upkeep, cleanup,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autonomous-organization@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261166030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autonomous-organization",
+      "url": "https://clawhub.ai/skills/autonomous-organization"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomous-organization",
+    "url": "https://clawhub.ai/skills/autonomous-organization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomous-organization-07697abb167315ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autonomous-organization@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-autonomous-organization-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a66b1311e3ae9debc950d006c53b1e637ff538caf0286f2a74d11eae0c26181c",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T09:15:22.500Z"
+}

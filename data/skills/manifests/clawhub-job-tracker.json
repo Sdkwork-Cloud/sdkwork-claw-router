@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36581,
+  "uuid": "skill-clawhub-job-tracker",
+  "skillKey": "clawhub-job-tracker",
+  "name": "Job Tracker",
+  "summary": "Track job applications, contacts, deadlines, and follow-up reminders in a local SQLite database.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.job_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mehul Bhojraj Upase",
+      "features": [
+        "Track job applications, contacts, deadlines, and follow-up reminders in a local SQLite database."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/job-tracker@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59685273?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "job-tracker",
+      "url": "https://clawhub.ai/skills/job-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "job-tracker",
+    "url": "https://clawhub.ai/skills/job-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/job-tracker-faba07e9645cf342.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/job-tracker@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-job-tracker-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6dd28281178761b155e96ccaff13ca89508084964876801185a4357c564c64c8",
+      "artifactSizeBytes": 1815
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T21:20:07.231Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/buy-handshake-domain@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buy_handshake_domain",
+  "skill": {
+    "id": 17355,
+    "skillKey": "clawhub-buy-handshake-domain",
+    "name": "Buy Sovereign Domain (Handshake DNS)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buy-handshake-domain",
+    "url": "https://clawhub.ai/skills/buy-handshake-domain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buy-handshake-domain-2101a6f15e8ab720.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register sovereign domains (.badass, .forever, .fuck, .rebel, .pump, .hello, .howdy, .robo, .dnet, .f, bear emoji) on Ethereum mainnet via Impervious Domains..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "techno-hippies",
+      "userId": "publishers:techno-hippies",
+      "displayName": "techno-hippies",
+      "image": "https://avatars.githubusercontent.com/u/214526112?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 788,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771182075334,
+      "changelog": "- Initial release of buy-handshake-domainl skill.\n- Register decentralized domains (e.g., .badass, .forever, .fuck, bear emoji) on Ethereum mainnet.\n- Uses Impervious Domains contracts for on-chain ERC-721 NFT minting.\n- Supports a secure commit/reveal pattern for domain registration.\n- Customizable with various TLD options for different vibes.\n- Requires ETHEREUM_RPC_URL environment variable for operation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:42effa5dcc5ddc8e43e35d5a32efdea69b10455f402d62fbca51d1717ec4e28c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jiuma-mata-human@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiuma_mata_human",
+  "skill": {
+    "id": 73197,
+    "skillKey": "clawhub-jiuma-mata-human",
+    "name": "九马免费对口型数字人"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiuma-mata-human",
+    "url": "https://clawhub.ai/skills/jiuma-mata-human",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiuma-mata-human-52b3ec3d45071427.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "这是一个免费生成对口型数字人对口型的工具, 工具安装需要下载二进制文件到电脑上，只需根据文本和性别生成数字人视频并返回一个下载链接,生成时间在半个小时以内。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kalos-chen",
+      "userId": "s17e2pv1z3wnv8pbvj1gt7mp0n83g6t3",
+      "displayName": "kalos-chen",
+      "image": "https://avatars.githubusercontent.com/u/51595132?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1774343016075,
+      "changelog": "9ma-mata-human 1.0.6\n\n- Improved SKILL.md documentation with detailed instructions for use and setup.\n- Clarified supported arguments and parameters (text and sex) for generating digital human lip-sync videos.\n- Added step-by-step user prompts for text input and sex selection.\n- Included clear instructions for downloading and running platform-specific binaries (Windows/Linux).\n- Provided usage scenarios and download link retrieval process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa997eb433485a7cf14b7e69c434477d0e220d47b1be41e6a7106285db48aa57"
+}

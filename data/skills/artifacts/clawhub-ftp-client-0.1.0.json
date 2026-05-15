@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ftp-client@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ftp_client",
+  "skill": {
+    "id": 23094,
+    "skillKey": "clawhub-ftp-client",
+    "name": "Ftp Client"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ftp-client",
+    "url": "https://clawhub.ai/skills/ftp-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ftp-client-4a539a7e94052dde.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "FTP/FTPS client skill. Connect to FTP servers and perform file operations (list, upload, download, delete, move, copy, mkdir, read). Supports FTP and FTPS (e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "erayai",
+      "userId": "publishers:erayai",
+      "displayName": "erayai",
+      "image": "https://avatars.githubusercontent.com/u/187963888?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 451,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773655044565,
+      "changelog": "Initial release of ftp-client — a full-featured FTP/FTPS client skill.\n\n- Connect to remote FTP servers using FTP or FTPS (explicit/implicit TLS) with flexible config.\n- List, upload, download, delete, move, copy, and create directories on FTP servers.\n- Supports both file and recursive directory operations.\n- Provides progress reporting for large file transfers.\n- Includes commands for file info and reading file content.\n- Requires setting the FTP_CONNECTION environment variable.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d03d80380dfc3ccd3305a0b1c31a53145ba581fc7f7bba60bcc82c610e1b502"
+}

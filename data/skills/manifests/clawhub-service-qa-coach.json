@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43028,
+  "uuid": "skill-clawhub-service-qa-coach",
+  "skillKey": "clawhub-service-qa-coach",
+  "name": "Service Qa Coach",
+  "summary": "Review support quality for chat, email, phone, social DM, or marketplace service teams. Use when a team needs a QA scorecard, failure-mode analysis, coaching...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.service_qa_coach",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Review support quality for chat, email, phone, social DM, or marketplace service teams",
+        "Use when a team needs a QA scorecard, failure-mode analysis, coaching..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/service-qa-coach@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "service-qa-coach",
+      "url": "https://clawhub.ai/skills/service-qa-coach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "service-qa-coach",
+    "url": "https://clawhub.ai/skills/service-qa-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/service-qa-coach-e23fed69b6593966.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/service-qa-coach@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-service-qa-coach-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ddddbc10b0a4e1379e32f21635371518a84313e89a0a494dade33bf510c54bcd",
+      "artifactSizeBytes": 2515
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T00:26:47.588Z"
+}

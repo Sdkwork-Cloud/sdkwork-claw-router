@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mortys-mind-blowers@0.1.3",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mortys_mind_blowers",
+  "skill": {
+    "id": 37086,
+    "skillKey": "clawhub-mortys-mind-blowers",
+    "name": "Morty's Mind Blowers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mortys-mind-blowers",
+    "url": "https://clawhub.ai/skills/mortys-mind-blowers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mortys-mind-blowers-4f2eff871e94534d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find an unusual, funny, bleak, uncanny, technical, or deep-cut memory entry and retell it as a short story in the style of Rick and Morty's \"Morty's Mind Blo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "inertia186",
+      "userId": "s17fj5zp0f74hydhsqe0bq9ayh83g45c",
+      "displayName": "Anthony Martin",
+      "image": "https://avatars.githubusercontent.com/u/494368?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.3",
+      "createdAt": 1776010192008,
+      "changelog": "Broaden memory source wording to include transcripts/logs without naming specific local frameworks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b7ffc1023e78c4bc0333b1dea96374efc4de4c235747975582248bd93d151b5"
+}

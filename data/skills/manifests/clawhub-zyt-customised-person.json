@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33523,
+  "uuid": "skill-clawhub-zyt-customised-person",
+  "skillKey": "clawhub-zyt-customised-person",
+  "name": "Zyt customised person",
+  "summary": "Use Chanjing customised person APIs to create, inspect, list, poll, and delete custom digital humans from uploaded source videos.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zyt_customised_person",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zuoyuting214",
+      "features": [
+        "Use Chanjing customised person APIs to create, inspect, list, poll, and delete custom digital h."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zyt-customised-person@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226682936?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zyt-customised-person",
+      "url": "https://clawhub.ai/skills/zyt-customised-person"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zyt-customised-person",
+    "url": "https://clawhub.ai/skills/zyt-customised-person",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zyt-customised-person-ed2066bf83fe800a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zyt-customised-person@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zyt-customised-person-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:435ade7b76192dfdd4f804f7732ef40e49643a29a5ee781c213dc135e4d89eca",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T17:42:30.931Z"
+}

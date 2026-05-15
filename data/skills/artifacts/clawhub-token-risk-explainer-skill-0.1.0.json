@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-risk-explainer-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_risk_explainer_skill",
+  "skill": {
+    "id": 25154,
+    "skillKey": "clawhub-token-risk-explainer-skill",
+    "name": "Token Risk Explainer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-risk-explainer-skill",
+    "url": "https://clawhub.ai/skills/token-risk-explainer-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-risk-explainer-skill-b9f168524f9c0d7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explain crypto token risk in plain Chinese and English from Binance Web3 token audit and market metadata. Use this skill when users want a contract-level ris..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2663629531",
+      "userId": "publishers:2663629531",
+      "displayName": "2663629531",
+      "image": "https://avatars.githubusercontent.com/u/85226053?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772868657647,
+      "changelog": "Initial public release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2e5449cd2a26b73cf9ab42693667ce3036de93ccaf1633a450d4b63a2aeb22e9"
+}

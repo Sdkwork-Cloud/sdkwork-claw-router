@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-search-engine-refined@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_search_engine_refined",
+  "skill": {
+    "id": 41802,
+    "skillKey": "clawhub-multi-search-engine-refined",
+    "name": "multi-search-engine-refined"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-search-engine-refined",
+    "url": "https://clawhub.ai/skills/multi-search-engine-refined",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-search-engine-refined-a87c715d33a3a193.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi search engine integration with 4 engines: Google, DuckDuckGo, Brave Search, and WolframAlpha. Supports advanced search operators, time filters, and kno..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gimpy666",
+      "userId": "s171st9wdj1wz3gemycn00qgen84afeh",
+      "displayName": "Gimpy666",
+      "image": "https://avatars.githubusercontent.com/u/118591524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775482691432,
+      "changelog": "- Initial release: integrates Google, DuckDuckGo, Brave Search, and WolframAlpha into a single skill.\n- Supports advanced operators and time filters for refined searches.\n- No API keys required for any search engine.\n- Includes documentation and usage examples for all supported engines.\n- Focus on privacy: options for privacy-oriented searching with DuckDuckGo and Brave.\n- WolframAlpha enables direct knowledge, math, and conversion queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e16a987692d0f83fa06b78fab7697b6ba83fb642ddd597ef70d50d6179e6a0e3"
+}

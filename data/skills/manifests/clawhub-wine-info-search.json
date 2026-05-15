@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45804,
+  "uuid": "skill-clawhub-wine-info-search",
+  "skillKey": "clawhub-wine-info-search",
+  "name": "Wine Info Search",
+  "summary": "READ-ONLY wine and alcohol information lookup skill. Searches for wine details, ratings, and price comparisons across platforms. Does NOT make purchases, pro...",
+  "version": "1.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wine_info_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Amurtiger",
+      "features": [
+        "READ-ONLY wine and alcohol information lookup skill",
+        "Searches for wine details, ratings, and price comparisons across platforms",
+        "Does NOT make purchases, pro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wine-info-search@1.6.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/158826430?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wine-info-search",
+      "url": "https://clawhub.ai/skills/wine-info-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wine-info-search",
+    "url": "https://clawhub.ai/skills/wine-info-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wine-info-search-fa8c37d692811c7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wine-info-search@1.6.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wine-info-search-1.6.1.json",
+      "version": "1.6.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f33c6a2ddff2db775e9af70239c5b1f58f9f40f38bb0768f51172a713911be9",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T05:49:06.553Z"
+}

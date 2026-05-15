@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twelve-data@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twelve_data",
+  "skill": {
+    "id": 24486,
+    "skillKey": "clawhub-twelve-data",
+    "name": "Twelve Data Market API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twelve-data",
+    "url": "https://clawhub.ai/skills/twelve-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twelve-data-0784a00e8ad0378a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Twelve Data REST/WebSocket APIs for market quotes, latest prices, historical time series, symbol discovery, and technical indicators. Trigger when users..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "softtrymee",
+      "userId": "publishers:softtrymee",
+      "displayName": "softtrymee",
+      "image": "https://avatars.githubusercontent.com/u/35638008?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 411,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772180565339,
+      "changelog": "Update: improved documentation and usage examples",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:900cfe31aff74ba53bd661ec306d0dc08a244800c82ef61ca2cee4787876d267"
+}

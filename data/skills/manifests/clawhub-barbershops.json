@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36640,
+  "uuid": "skill-clawhub-barbershops",
+  "skillKey": "clawhub-barbershops",
+  "name": "Nearby Barbershops",
+  "summary": "Find nearby barbershops. Invoke when user asks for a haircut near me.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.barbershops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawkk",
+      "features": [
+        "Find nearby barbershops",
+        "Invoke when user asks for a haircut near me."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/barbershops@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "barbershops",
+      "url": "https://clawhub.ai/skills/barbershops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "barbershops",
+    "url": "https://clawhub.ai/skills/barbershops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/barbershops-c222ccea0851edcc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/barbershops@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-barbershops-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f961a79aad68bcdee35ffcda07c5fbe5e1d8fefd2fea5a11de1587ed499582a",
+      "artifactSizeBytes": 2137
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:45:40.709Z"
+}

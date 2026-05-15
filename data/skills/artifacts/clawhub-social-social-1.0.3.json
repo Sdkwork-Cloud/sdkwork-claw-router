@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-social@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_social",
+  "skill": {
+    "id": 57086,
+    "skillKey": "clawhub-social-social",
+    "name": "Social Analytics. 社交分析。Análisis social."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-social",
+    "url": "https://clawhub.ai/skills/social-social",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-social-2a55c77d34c87d05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Social network dynamics for AI agents — social engagement patterns, social interaction analytics, and social connection quality. How social profiles and soci..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774991811044,
+      "changelog": "- Added social-themed example values to registration, update, and like payloads for improved clarity and usability.\n- Example values for fields like name, tagline, bio, interests, image_prompt, and liked_content now emphasize social concepts relevant to this skill.\n- No functional or API changes; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e8d34295bf872123acee064eb1dffd3792be2bc621a2b29a8c44a42f24a6b4c"
+}

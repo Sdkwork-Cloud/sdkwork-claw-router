@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16895,
+  "uuid": "skill-clawhub-acpx-orchestrator",
+  "skillKey": "clawhub-acpx-orchestrator",
+  "name": "ACP Orchestrator",
+  "summary": "Enhanced terminal AI agent orchestrator with parallel execution, health checks, and workflow presets.",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acpx_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qriiz112",
+      "features": [
+        "Enhanced terminal AI agent orchestrator with parallel execution, health checks, and workflow pr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acpx-orchestrator@4.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31663957?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acpx-orchestrator",
+      "url": "https://clawhub.ai/skills/acpx-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acpx-orchestrator",
+    "url": "https://clawhub.ai/skills/acpx-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acpx-orchestrator-17c9b702ec706e8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acpx-orchestrator@4.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-acpx-orchestrator-4.0.1.json",
+      "version": "4.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07df26c0b69242dca6f3d19f10020320797b4ada941dd6a4cedc945a965c23e2",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T21:29:45.536Z"
+}

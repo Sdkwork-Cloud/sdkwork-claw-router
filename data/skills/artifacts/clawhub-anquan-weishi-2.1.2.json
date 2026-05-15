@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anquan-weishi@2.1.2",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anquan_weishi",
+  "skill": {
+    "id": 70199,
+    "skillKey": "clawhub-anquan-weishi",
+    "name": "安全卫士"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anquan-weishi",
+    "url": "https://clawhub.ai/skills/anquan-weishi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anquan-weishi-a48337fe63347efe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "安全卫士 v2.1 - 智能威胁检测、权限控制、隐私保护。L1-L4四级安全等级，13种攻击模式自动识别，中央库单点修改全局生效"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xingjihome",
+      "userId": "s17d4x6kz5sqpgbzezk6kvvmcn85010s",
+      "displayName": "xingjihome",
+      "image": "https://avatars.githubusercontent.com/u/164947284?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.2",
+      "createdAt": 1776416132875,
+      "changelog": "- 明确声明仅拥有只读权限，限制所有操作在自身目录和记忆区读取，不进行任何外部文件修改。\n- 精简并重点描述权限边界和配置来源，移除大量冗长SOP及操作流程说明。\n- 保留L1–L4安全等级体系及13种攻击模式说明，聚焦核心威胁检测能力。\n- 新增permissions字段，列表化可访问目录，突出本技能合规性。\n- 配置文件路径和更新方式仅指向自身目录，强调本地隔离和单点配置。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ac1fa4205136a6248c0d5c7fb14a065f6d75f5ae73896bd7771c0c834e27f11"
+}

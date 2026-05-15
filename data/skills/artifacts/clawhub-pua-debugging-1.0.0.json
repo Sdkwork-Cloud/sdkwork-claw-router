@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pua-debugging@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pua_debugging",
+  "skill": {
+    "id": 19499,
+    "skillKey": "clawhub-pua-debugging",
+    "name": "PUA Debugging"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pua-debugging",
+    "url": "https://clawhub.ai/skills/pua-debugging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pua-debugging-78a656e02d36ae24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Forces exhaustive problem-solving using corporate PUA rhetoric and structured debugging methodology. MUST trigger when: (1) any task has failed 2+ times or y..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tanweai",
+      "userId": "publishers:tanweai",
+      "displayName": "tanweai",
+      "image": "https://avatars.githubusercontent.com/u/256783335?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 549,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773312319086,
+      "changelog": "Initial release: Corporate PUA rhetoric + structured debugging methodology",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:56982c295a45c1b8413d63ace056c05bd93172de4fb16ff7b2052c8c7327036f"
+}

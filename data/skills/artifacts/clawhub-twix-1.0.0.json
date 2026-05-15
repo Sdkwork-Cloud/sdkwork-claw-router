@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twix@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twix",
+  "skill": {
+    "id": 70279,
+    "skillKey": "clawhub-twix",
+    "name": "Twix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twix",
+    "url": "https://clawhub.ai/skills/twix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twix-acf48a0a5a48958f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供Twix巧克力棒品牌历史、产品结构及经典\"左右之争\"广告的详细信息和市场表现分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776470569903,
+      "changelog": "Twix skill version 1.0.0 - Initial Release\n\n- 提供 Twix 特趣巧克力棒的详细品牌介绍、历史与全球市场表现。\n- 解析 Twix 的结构、口感层次及经典广告“Left Twix vs Right Twix”文化现象。\n- 涵盖 Mars 旗下巧克力棒产品线的市场定位与竞争对比。\n- 列出 Twix 各类产品系列及招牌卖点与品牌档案。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:27d6b56efe52c54073f8f23256cc91af1ed94937c87eee9457d589c0307a9c14"
+}

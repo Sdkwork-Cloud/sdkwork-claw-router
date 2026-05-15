@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opportunity-assessment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opportunity_assessment",
+  "skill": {
+    "id": 70823,
+    "skillKey": "clawhub-opportunity-assessment",
+    "name": "Opportunity Assessment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opportunity-assessment",
+    "url": "https://clawhub.ai/skills/opportunity-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opportunity-assessment-a89ade83a1c1bcb1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "商机判断与风险评估技能。接收新项目信息，主动询问关键问题（客户背景、时间要求、第三方集成等），输出风险分级评估、待确认事项清单、商机建议。适用于销售前期、项目立项、商机评审场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yakov0922",
+      "userId": "s1740a36zv0gtsnxydnqs0mr6d83h0gm",
+      "displayName": "yakov0922",
+      "image": "https://avatars.githubusercontent.com/u/8510897?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772625787197,
+      "changelog": "Initial release of \"opportunity-assessment\" skill.\n\n- Enables structured opportunity assessment for new projects, focusing on risk evaluation and business decision support.\n- Guides users to proactively inquire about key aspects such as client background, project requirements, technical and commercial risks.\n- Provides clear risk grading (high, medium, low) with corresponding mitigation suggestions.\n- Outputs prioritized lists of pending confirmation items needing client input.\n- Delivers actionable recommendations: suggest undertaking, cautious evaluation, or advise against the opportunity.\n- Outputs are formatted for compatibility with Feishu messaging (plain text, no markdown tables).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8476d146f97eaf66741f9873845b51396447729f1a9f09257f233bdf4702bb7e"
+}

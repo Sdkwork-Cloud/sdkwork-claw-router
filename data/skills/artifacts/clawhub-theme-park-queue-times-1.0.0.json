@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/theme-park-queue-times@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.theme_park_queue_times",
+  "skill": {
+    "id": 42605,
+    "skillKey": "clawhub-theme-park-queue-times",
+    "name": "Theme Park Queue Times"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "theme-park-queue-times",
+    "url": "https://clawhub.ai/skills/theme-park-queue-times",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/theme-park-queue-times-6fc36e5211286721.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches live theme park wait times and park metadata from Queue-Times.com JSON APIs. Use when the user asks about queue times, ride waits, park hours/status,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adaclaw",
+      "userId": "s173ew6t53fdtt139ewnz9wm39846m69",
+      "displayName": "Ada",
+      "image": "https://avatars.githubusercontent.com/u/266167987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775323492461,
+      "changelog": "Initial release — fetches live theme park queue times and metadata.\n\n- Retrieves real-time wait times and park info from Queue-Times.com APIs.\n- Resolves park IDs based on user queries about park names, regions, or URLs.\n- Supports listing and summarizing rides, waits, closures, and park details.\n- Attribution “Powered by Queue-Times.com” required in all responses displaying data.\n- Data refreshes roughly every 5 minutes (not second-by-second live).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb9226d6dce8ed5bc3698e07be63230869a7c969718d8ba061550f4fd247b8a4"
+}

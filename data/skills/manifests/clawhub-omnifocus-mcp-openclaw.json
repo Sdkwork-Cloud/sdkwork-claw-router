@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32370,
+  "uuid": "skill-clawhub-omnifocus-mcp-openclaw",
+  "skillKey": "clawhub-omnifocus-mcp-openclaw",
+  "name": "OmniFocus MCP for OpenClaw",
+  "summary": "Review what is due, capture new tasks, build projects from notes, and organize OmniFocus from natural language in OpenClaw on macOS. Use this when the user w...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omnifocus_mcp_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "doannminh",
+      "features": [
+        "Review what is due, capture new tasks, build projects from notes, and organize OmniFocus from n.",
+        "Use this when the user w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/omnifocus-mcp-openclaw@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44343966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "omnifocus-mcp-openclaw",
+      "url": "https://clawhub.ai/skills/omnifocus-mcp-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omnifocus-mcp-openclaw",
+    "url": "https://clawhub.ai/skills/omnifocus-mcp-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omnifocus-mcp-openclaw-a493580457b7b13b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/omnifocus-mcp-openclaw@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-omnifocus-mcp-openclaw-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0438153c6674ec3c1b21cee12c1f7bee65ecac7fe2d68da7a0281e52ebe48d38",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T00:39:16.366Z"
+}

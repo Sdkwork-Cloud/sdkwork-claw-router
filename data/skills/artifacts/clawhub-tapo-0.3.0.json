@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tapo@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tapo",
+  "skill": {
+    "id": 18853,
+    "skillKey": "clawhub-tapo",
+    "name": "Tapo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tapo",
+    "url": "https://clawhub.ai/skills/tapo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tapo-b67394e17a0215cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control TP-Link Tapo smart home devices (lights, plugs, strips, cameras) via [Tapo MCP](https://github.com/mihai-dinculescu/tapo/tree/main/tapo-mcp)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mihai-dinculescu",
+      "userId": "s170qz3n3mj61xe1kkkkmgge3n843903",
+      "displayName": "mihai-dinculescu",
+      "image": "https://avatars.githubusercontent.com/u/9944681?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 525,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1777151241488,
+      "changelog": "Add take_snapshot tool for Tapo cameras, switch invocation to npx mcporter, and pin the skill to Tapo MCP server v0.3.0+.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c24bae4f9c9785a979bd7852c126c07573404950319ebef60f6613e8ea7c1ff"
+}

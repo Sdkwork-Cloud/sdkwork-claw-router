@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52995,
+  "uuid": "skill-clawhub-release-readiness-checker",
+  "skillKey": "clawhub-release-readiness-checker",
+  "name": "Release Readiness Checker",
+  "summary": "Pre-release checklist for shipping software — verify tests pass, changelog updated, version bumped, no debug code, dependencies clean, docs current, no secre...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.release_readiness_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Pre-release checklist for shipping software — verify tests pass, changelog updated, version bum."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/release-readiness-checker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "release-readiness-checker",
+      "url": "https://clawhub.ai/skills/release-readiness-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "release-readiness-checker",
+    "url": "https://clawhub.ai/skills/release-readiness-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/release-readiness-checker-d3fbc3a4af78e53a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/release-readiness-checker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-release-readiness-checker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:521be6e268f875f83b4675549175a8c0d0368782efe8ea58e85553b7a1203042",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:02:43.721Z"
+}

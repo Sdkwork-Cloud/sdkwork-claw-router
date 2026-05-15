@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12433,
+  "uuid": "skill-clawhub-luma-event-manager",
+  "skillKey": "clawhub-luma-event-manager",
+  "name": "Luma Event Manager",
+  "summary": "Luma Event Manager for Clawdbot — Discover events by topic or location, RSVP, view guest lists, and sync to Google Calendar. No API key required (web scraping), no Luma Plus subscription needed.",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.luma_event_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mariovallereyes",
+      "features": [
+        "Luma Event Manager for Clawdbot — Discover events by topic or location, RSVP, view guest lists,.",
+        "No API key required (web scraping), no Luma Plus subscription needed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/luma-event-manager@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/120954554?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "luma-event-manager",
+      "url": "https://clawhub.ai/skills/luma-event-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "luma-event-manager",
+    "url": "https://clawhub.ai/skills/luma-event-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/luma-event-manager-ffc23917e5538bf4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/luma-event-manager@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-luma-event-manager-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61fea8a80e72b7ac01764f2bfe886cad0f077495e3c84f6c15ba2cefd34d5ffa",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-30T01:04:10.059Z"
+}

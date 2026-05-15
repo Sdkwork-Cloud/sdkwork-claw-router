@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/go-concurrency-web@2.3.1",
+  "version": "2.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.go_concurrency_web",
+  "skill": {
+    "id": 32104,
+    "skillKey": "clawhub-go-concurrency-web",
+    "name": "Go Concurrency Web"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "go-concurrency-web",
+    "url": "https://clawhub.ai/skills/go-concurrency-web",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/go-concurrency-web-1bc82603b2f19015.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Go concurrency patterns for high-throughput web applications including worker pools, rate limiting, race detection, and safe shared state management. Use whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.3.1",
+      "createdAt": 1776831142042,
+      "changelog": "## go-concurrency-web 2.3.1\n\n- Added a new \"Gates\" section detailing objective, sequenced concurrency safety checks for PR review and merges, covering race detection, bounded background work, and graceful teardown.\n- No changes to code examples, reference links, or existing guidance.\n- Documentation now emphasizes concrete, verifiable evidence (race detector output, code inspection, teardown proof) for concurrency correctness.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb619948499488b061d130f510ccb5699de81e3f56bac696c8e6895257f84c20"
+}

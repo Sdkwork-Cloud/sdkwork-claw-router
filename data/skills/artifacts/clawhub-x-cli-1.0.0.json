@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_cli",
+  "skill": {
+    "id": 23747,
+    "skillKey": "clawhub-x-cli",
+    "name": "X-CLI Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-cli",
+    "url": "https://clawhub.ai/skills/x-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-cli-6f3e3895d0044928.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full-featured X/Twitter toolkit — read, search, post, interact, DMs, lists, polls, trends. Cookie auth, proxy support, no API keys needed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ignsoftwarellc",
+      "userId": "publishers:ignsoftwarellc",
+      "displayName": "IGN Software",
+      "image": "https://avatars.githubusercontent.com/u/259055493?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 878,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771534109339,
+      "changelog": "Initial release: \n- 40+ commands across 7 scripts (read, search, post, interact, dm, extra, auth).\n- No API keys needed (cookie auth).\n- Fully compatible with OpenClaw agents.\n- Media vision & contextual replies supported.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f2857d3da44bbbee0f66cf63479be45cafe1167114ba032ec272ddbd1f9858e2"
+}

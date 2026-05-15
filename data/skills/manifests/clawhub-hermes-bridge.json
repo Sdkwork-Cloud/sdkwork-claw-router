@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25789,
+  "uuid": "skill-clawhub-hermes-bridge",
+  "skillKey": "clawhub-hermes-bridge",
+  "name": "Hermes Agent Bridge",
+  "summary": "Delegate tasks or questions to a local Hermes Agent via its CLI for fast, persona-specific responses and terminal tool access.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ibigbigip",
+      "features": [
+        "Delegate tasks or questions to a local Hermes Agent via its CLI for fast, persona-specific resp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hermes-bridge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/236617553?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hermes-bridge",
+      "url": "https://clawhub.ai/skills/hermes-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-bridge",
+    "url": "https://clawhub.ai/skills/hermes-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-bridge-444ef21200021b8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hermes-bridge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hermes-bridge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3fb609b57ace48e6bac740dda622e377be325018373ead5adfd90dbb1aeb312",
+      "artifactSizeBytes": 2239
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T03:14:33.761Z"
+}

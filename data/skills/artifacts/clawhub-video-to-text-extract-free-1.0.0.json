@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-to-text-extract-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_to_text_extract_free",
+  "skill": {
+    "id": 42030,
+    "skillKey": "clawhub-video-to-text-extract-free",
+    "name": "Video To Text Extract Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-to-text-extract-free",
+    "url": "https://clawhub.ai/skills/video-to-text-extract-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-to-text-extract-free-e53142cd51b804f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get plain text transcript ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"ex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776846046225,
+      "changelog": "Video To Text Extract Free — Initial Release\n\n- Quickly extract plain text transcripts from uploaded video files (MP4, MOV, AVI, WebM up to 500MB).\n- Automatic backend setup with free 7-day token (100 credits) — no manual configuration required.\n- Simple prompt-based workflow: upload, describe your extraction needs, and download results.\n- Real-time session management, progress updates, and error handling for a seamless experience.\n- Supports multiple video and audio formats; optimized for fast, accurate spoken word transcription.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:37ee8b7b3a331109623c8b7cf117036fb04a3d242b9fea51ce070eec14583205"
+}

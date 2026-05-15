@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57942,
+  "uuid": "skill-clawhub-ci-ci",
+  "skillKey": "clawhub-ci-ci",
+  "name": "CI发布工程师 CI与发布门禁",
+  "summary": "CI release engineer skill for validation gating, release-readiness checks, and automation-safe delivery criteria.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ci_ci",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aiweline",
+      "features": [
+        "CI release engineer skill for validation gating, release-readiness checks, and automation-safe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ci-ci@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32635766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ci-ci",
+      "url": "https://clawhub.ai/skills/ci-ci"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ci-ci",
+    "url": "https://clawhub.ai/skills/ci-ci",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ci-ci-8cefd9bf49873e9d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ci-ci@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ci-ci-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3147cc2e6016675f67cde0e6f905106fb16ecbd94df13aec3a0e73b0e4d46dd2",
+      "artifactSizeBytes": 2432
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T05:43:15.457Z"
+}

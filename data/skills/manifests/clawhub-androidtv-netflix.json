@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21033,
+  "uuid": "skill-clawhub-androidtv-netflix",
+  "skillKey": "clawhub-androidtv-netflix",
+  "name": "Android TV Netflix",
+  "summary": "Search and play Netflix content on Android TV. When the user asks to play a specific Netflix title on TV, the agent looks up the title ID and executes ADB co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.androidtv_netflix",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jiayun Zhou (Claudia)",
+      "features": [
+        "Search and play Netflix content on Android TV",
+        "When the user asks to play a specific Netflix title on TV, the agent looks up the title ID and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/androidtv-netflix@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/752076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "androidtv-netflix",
+      "url": "https://clawhub.ai/skills/androidtv-netflix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "androidtv-netflix",
+    "url": "https://clawhub.ai/skills/androidtv-netflix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/androidtv-netflix-c917e8838682b73c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/androidtv-netflix@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-androidtv-netflix-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f7f30a28f7efb9f829aa883bc9472ac6d04793e2363e5af067a64768b18192f",
+      "artifactSizeBytes": 2277
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T04:25:31.552Z"
+}

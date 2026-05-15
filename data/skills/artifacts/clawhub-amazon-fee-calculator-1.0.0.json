@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-fee-calculator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_fee_calculator",
+  "skill": {
+    "id": 27227,
+    "skillKey": "clawhub-amazon-fee-calculator",
+    "name": "Amazon Fee Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-fee-calculator",
+    "url": "https://clawhub.ai/skills/amazon-fee-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-fee-calculator-4d6e83db683b6acb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculates precise Amazon FBA fees, storage, and profit margins for 2026, covering all size tiers and 20+ categories to determine real profitability."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "avmw2025",
+      "userId": "publishers:avmw2025",
+      "displayName": "Elway Botty",
+      "image": "https://avatars.githubusercontent.com/u/214021893?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773475394430,
+      "changelog": "Amazon FBA Fee Calculator 1.0.0 — Initial Release\n\n- Calculates Amazon referral fees, FBA fulfillment fees, storage costs, and net margin using the 2026 fee schedule.\n- Supports all size tiers and 20+ product categories.\n- Provides full profitability breakdown: profit per unit, margin %, ROI %, monthly/annual projections, and break-even price.\n- Accepts options for shipping, weight, dimensions, category, PPC costs, and units sold.\n- Easy command-line usage—requires only Python 3, no install or API keys needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e09727ea90c24f69e77975d812401ee3e103d25f1b7df6b7f388b1756c96048"
+}

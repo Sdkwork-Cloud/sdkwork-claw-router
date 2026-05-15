@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9025,
+  "uuid": "skill-clawhub-writer",
+  "skillKey": "clawhub-writer",
+  "name": "Writer",
+  "summary": "Fix AI writing patterns that create repetitive and robotic content",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.writer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Fix AI writing patterns that create repetitive and robotic content"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/writer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "writer",
+      "url": "https://clawhub.ai/skills/writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "writer",
+    "url": "https://clawhub.ai/skills/writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/writer-b93006774cbdd4b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/writer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-writer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:faeecd64c74f21a12e729837f61b65009e3bc2df9ff9ee70582da4c60f66340f",
+      "artifactSizeBytes": 1735
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T19:15:25.321Z"
+}

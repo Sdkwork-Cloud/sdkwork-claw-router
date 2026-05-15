@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36909,
+  "uuid": "skill-clawhub-demo-cutter",
+  "skillKey": "clawhub-demo-cutter",
+  "name": "Demo Cutter",
+  "summary": "Turn a 10-minute product demo recording into 1080p trimmed demo clips just by typing what you need. Whether it's cutting long product demos down to tight, sh...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.demo_cutter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whitejohnk-26",
+      "features": [
+        "Turn a 10-minute product demo recording into 1080p trimmed demo clips just by typing what you n.",
+        "Whether it's cutting long product demos down to tight, sh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/demo-cutter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "demo-cutter",
+      "url": "https://clawhub.ai/skills/demo-cutter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "demo-cutter",
+    "url": "https://clawhub.ai/skills/demo-cutter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/demo-cutter-d27c641d9516985b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/demo-cutter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-demo-cutter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4dd91faba6b54b64a411eb8050851e78e87e7210187b6d9ee9d53795dd695ab0",
+      "artifactSizeBytes": 2457
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T10:31:03.005Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aiclude-vulns-scan@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiclude_vulns_scan",
+  "skill": {
+    "id": 15561,
+    "skillKey": "clawhub-aiclude-vulns-scan",
+    "name": "AIclude Security Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiclude-vulns-scan",
+    "url": "https://clawhub.ai/skills/aiclude-vulns-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiclude-vulns-scan-55d195d6cdfa565f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search security vulnerability scan results for MCP Servers and AI Agent Skills from the AICLUDE scan database."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mastergear4824",
+      "userId": "publishers:mastergear4824",
+      "displayName": "AICLUDE",
+      "image": "https://avatars.githubusercontent.com/u/164070306?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 987,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1771365540283,
+      "changelog": "v3.0.0: Standalone package, API-only, dynamic signature auth (no secrets required)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:adb8b7003bb25550e231e9b085799db28c8b6845ced5a427ede39db5b0579993"
+}

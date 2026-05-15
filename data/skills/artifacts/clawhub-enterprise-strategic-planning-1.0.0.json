@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/enterprise-strategic-planning@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enterprise_strategic_planning",
+  "skill": {
+    "id": 72675,
+    "skillKey": "clawhub-enterprise-strategic-planning",
+    "name": "企业战略规划"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enterprise-strategic-planning",
+    "url": "https://clawhub.ai/skills/enterprise-strategic-planning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enterprise-strategic-planning-a08073f3d782a293.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "按7步流程引导用户完成企业战略规划分析，从信息采集到成果交付，提供专业的战略咨询对话体验。支持PEST分析、SWOT分析、战略方案设计、目标体系构建、关键举措制定和实施计划。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wsb26459025-prog",
+      "userId": "s17ba94e7dyw0nkgs9kyw88fx586da9c",
+      "displayName": "wsb26459025-prog",
+      "image": "https://avatars.githubusercontent.com/u/245987784?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 41,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778305369177,
+      "changelog": "Initial release: 7步流程引导企业完成战略规划，支持PEST/SWOT分析、方案设计、目标体系、关键举措、实施计划，可生成Word和PPT交付物",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2021cad74cc7a70b6771bc44d2a7771b5141db5a26f56fa41032240aa7b277f"
+}

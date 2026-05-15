@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trave-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trave_ai",
+  "skill": {
+    "id": 59217,
+    "skillKey": "clawhub-trave-ai",
+    "name": "旅行智能助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trave-ai",
+    "url": "https://clawhub.ai/skills/trave-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trave-ai-020d2c78c3a9fe87.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI智能旅行助手套装，包含行程规划、目的地指南、预算管理、签证办理、天气打包等一站式旅行服务。Invoke when user needs comprehensive travel planning, itinerary creation, destination information, budget calc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaogao605",
+      "userId": "s17cxwwzm94v9ntkczkmq0r2x983km1s",
+      "displayName": "fenbeitong-trip",
+      "image": "https://avatars.githubusercontent.com/u/265222913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774875282409,
+      "changelog": "ai-travel-skill-package 1.0.0 首发上线，集成多项智能旅行服务：\n\n- 提供全流程AI旅行助理，包括行程生成、目的地介绍、预算计算、签证办理和打包建议五大核心子技能。\n- 各子技能间数据流转协作，覆盖行前、行中、行后全场景。\n- 明确约束：基于真实数据算法，禁止虚构景点、价格及签证政策，预算含隐性消费。\n- 统一响应格式，便于集成与结果解读。\n- 支持智能分配预算、签证办理材料及流程、天气&打包指导等一站式解决。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb1442d2edffd6b216c348a54ebd92dfdf28496a5e31cc7b0ff05edabacbe425"
+}

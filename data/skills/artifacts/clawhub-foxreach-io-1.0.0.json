@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/foxreach-io@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.foxreach_io",
+  "skill": {
+    "id": 30128,
+    "skillKey": "clawhub-foxreach-io",
+    "name": "Foxreach Cold Outrach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "foxreach-io",
+    "url": "https://clawhub.ai/skills/foxreach-io",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/foxreach-io-243b3ccd923ee656.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage FoxReach cold email outreach — leads, campaigns, sequences, templates, email accounts, inbox, and analytics. Use when the user asks to create leads, m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "concaption",
+      "userId": "publishers:concaption",
+      "displayName": "Usama Navid",
+      "image": "https://avatars.githubusercontent.com/u/43001234?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 837,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771365057092,
+      "changelog": "- Initial release of the FoxReach API management skill for cold email outreach.\n- Supports managing leads, campaigns, sequences, templates, email accounts, inbox, and analytics via Python SDK and CLI.\n- Provides usage and authentication guides, including best practices for API key handling.\n- Includes quick reference for all supported resources and action methods.\n- Documents error handling, pagination, variable templating, spintax, and common workflows.\n- Example code and command line snippets are provided for typical operations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6d534e47ddca3980f84456be796deeabdb84fb270ee8769c3fb1be718351e439"
+}

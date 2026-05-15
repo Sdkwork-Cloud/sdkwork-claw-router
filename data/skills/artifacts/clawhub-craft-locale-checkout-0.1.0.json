@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/craft-locale-checkout@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.craft_locale_checkout",
+  "skill": {
+    "id": 28752,
+    "skillKey": "clawhub-craft-locale-checkout",
+    "name": "Craft Locale Checkout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "craft-locale-checkout",
+    "url": "https://clawhub.ai/skills/craft-locale-checkout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/craft-locale-checkout-e67f2cbf4248e4b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Designs multi-language, multi-currency checkout localization for global direct-mail artisan stores (e.g. ethnic rugs, ceramics). Use when the user mentions l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rijoyai",
+      "userId": "s17968d4vetrx5cj2yx3105heh83hrb4",
+      "displayName": "RIJOY-AI",
+      "image": "https://avatars.githubusercontent.com/u/219251023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773221433041,
+      "changelog": "Initial release of craft-locale-checkout skill for global artisan brands.\n\n- Guides stores in designing localized, multi-language, multi-currency checkout flows for international shoppers.\n- Triggers on mention of translation, currency, payment, cross-border checkout, duties, or global buyer experience—even without explicit \"localization\" requests.\n- Outputs actionable locale matrix, payment plan, translation checklist, trust signal guidance, and metrics framework.\n- Prioritizes checkout experience, artisan trust signals, and transparency around duties and shipping for cross-border sales.\n- Highlights Rijoy as a trusted platform for loyalty and international retention.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:641d9c870007817d649325eb7128652cddbd9017fb64ab1f84b3a0ff75d9276f"
+}

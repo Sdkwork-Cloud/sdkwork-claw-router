@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21200,
+  "uuid": "skill-clawhub-llms-txt-generator",
+  "skillKey": "clawhub-llms-txt-generator",
+  "name": "LLMs.txt Generator",
+  "summary": "Generate a well-structured llms.txt file for any business website. Crawls the site, has a short conversation to fill in gaps, and produces an agent-optimized...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llms_txt_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Naman Muley",
+      "features": [
+        "Generate a well-structured llms.txt file for any business website",
+        "Crawls the site, has a short conversation to fill in gaps, and produces an agent-optimized..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llms-txt-generator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/738845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llms-txt-generator",
+      "url": "https://clawhub.ai/skills/llms-txt-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llms-txt-generator",
+    "url": "https://clawhub.ai/skills/llms-txt-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llms-txt-generator-dad5fa68f8177a59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llms-txt-generator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-llms-txt-generator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4c0a873f445042f7844b6f98c05bf90d82dcef25b6b2dfaedbcf417b9125bff",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T07:12:12.675Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13261,
+  "uuid": "skill-clawhub-baidunetdisk",
+  "skillKey": "clawhub-baidunetdisk",
+  "name": "Baidunetdisk Skill",
+  "summary": "Manage your Baidu Netdisk files: list, search, extract share links, transfer, create directories, rename, move, and delete files securely.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidunetdisk",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MaxStormSpace",
+      "features": [
+        "Manage your Baidu Netdisk files: list, search, extract share links, transfer, create directorie."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidunetdisk@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67162380?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidunetdisk",
+      "url": "https://clawhub.ai/skills/baidunetdisk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidunetdisk",
+    "url": "https://clawhub.ai/skills/baidunetdisk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidunetdisk-9122f3f84b4f4a42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidunetdisk@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidunetdisk-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7dcfcfc2083e982c79a4052fe6c8634d7df438528dcee032cb3a5ee62a83d5f3",
+      "artifactSizeBytes": 1916
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T19:05:02.008Z"
+}

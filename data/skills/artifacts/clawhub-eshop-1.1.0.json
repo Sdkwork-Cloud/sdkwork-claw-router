@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eshop@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eshop",
+  "skill": {
+    "id": 72981,
+    "skillKey": "clawhub-eshop",
+    "name": "eShop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eshop",
+    "url": "https://clawhub.ai/skills/eshop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eshop-9f5728eb173f9a31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一个聚合购物与外卖服务的智能平台，帮助用户完成商品搜索、下单购买、外卖点餐、订单查询、优惠券领取等全流程购物体验。支持多平台、多商家、多品牌的统一接入与智能路由。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fireium",
+      "userId": "s17065g3sjw2pk4606qy7mj11x83hw5b",
+      "displayName": "fireium",
+      "image": "https://avatars.githubusercontent.com/u/89568?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 464,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774329953365,
+      "changelog": "**eShop 1.0.4 introduces multi-domain (e-commerce & food delivery) intent routing and entity mapping.**\n\n- 新增外卖与电商融合的聚合平台架构，支持“点餐”“买东西”等多意图识别与路由。\n- 增加7个子文档，覆盖主流外卖商家（麦当劳、肯德基、必胜客）及主流平台。\n- 明确实体别名归一化与文件路由规则，实现平台、商家、品牌的多别名智能映射。\n- 优化交互策略：信息不全时自动引导澄清，按需加载子文档，提升用户体验。\n- 更新元数据标签及描述，支持多平台、多场景的购物与外卖统一入口。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e558e15e3b7c229fae877444f07616ee12437ac3cc6eef7c9cc4d0d10a0b7fed"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-caption@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_caption",
+  "skill": {
+    "id": 46763,
+    "skillKey": "clawhub-social-caption",
+    "name": "Social Caption"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-caption",
+    "url": "https://clawhub.ai/skills/social-caption",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-caption-e59cae5f9cd3584a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add social media video into captioned social videos with this skill. Works with MP4, MOV, WebM, AVI files up to 500MB. TikTok and Instagram creators use it f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777108242605,
+      "changelog": "Social Caption 1.0.0 — initial release\n\n- Add captions to social videos (MP4, MOV, WebM, AVI up to 500MB) with GPU-accelerated cloud processing.\n- Automatic setup: acquire free NEMO_TOKEN and session seamlessly at first run.\n- Supports TikTok, Instagram, and vertical 1080p exports with synced AI captions.\n- Simple commands: upload, add/edit captions, preview timeline, check credits, export in MP4.\n- Fast edits — typical processing takes 20–40 seconds per short video.\n- Clear error handling and instructions mapped to backend workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3ad7b10ab05b8c76d69d0212c42916ffc8335e3d87023d8311d9af95dd6882c"
+}

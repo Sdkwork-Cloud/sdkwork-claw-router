@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70452,
+  "uuid": "skill-clawhub-sichuan-cuisine",
+  "skillKey": "clawhub-sichuan-cuisine",
+  "name": "sichuan-cuisine",
+  "summary": "川菜食品研发专家，提供配方研制、工艺设计与食品安全指导；当用户需要开发川菜产品、优化生产工艺或咨询食品法规时使用",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sichuan_cuisine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "H-BeatMan",
+      "features": [
+        "川菜食品研发专家，提供配方研制、工艺设计与食品安全指导；当用户需要开发川菜产品、优化生产工艺或咨询食品法规时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sichuan-cuisine@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30313494?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sichuan-cuisine",
+      "url": "https://clawhub.ai/skills/sichuan-cuisine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sichuan-cuisine",
+    "url": "https://clawhub.ai/skills/sichuan-cuisine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sichuan-cuisine-ccb5c438250031df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sichuan-cuisine@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sichuan-cuisine-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e61ef0ef29cee5fc19c12f2ffd7cadb61dcd6d3709518d6fd17027b8972645fa",
+      "artifactSizeBytes": 2585
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:23:58.074Z"
+}

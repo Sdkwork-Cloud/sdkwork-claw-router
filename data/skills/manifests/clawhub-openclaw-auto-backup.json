@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59741,
+  "uuid": "skill-clawhub-openclaw-auto-backup",
+  "skillKey": "clawhub-openclaw-auto-backup",
+  "name": "Openclaw Auto Backup",
+  "summary": "OpenClaw 自动备份技能 - 定时备份配置文件，防止数据丢失。 支持版本管理、一键恢复、定时任务。包含完整 Python 脚本（backup/restore/list/cleanup）。 已通过 ClawHub 多次安全审查（ZipSlip/Symlink/Manifest 修复）。 关键词：opencla...",
+  "version": "0.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_auto_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "williamwg2025",
+      "features": [
+        "OpenClaw 自动备份技能",
+        "定时备份配置文件，防止数据丢失。 支持版本管理、一键恢复、定时任务。包含完整 Python 脚本（backup/restore/list/cleanup）。 已通过 ClawHub 多次安全."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-auto-backup@0.1.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/175094070?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-auto-backup",
+      "url": "https://clawhub.ai/skills/openclaw-auto-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-auto-backup",
+    "url": "https://clawhub.ai/skills/openclaw-auto-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-auto-backup-cbd5da564daf9a6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-auto-backup@0.1.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-auto-backup-0.1.6.json",
+      "version": "0.1.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52d2f7317831cd4e7e2b82e11550c110fe07df9c175635c429d5ceb2678ccc6d",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T06:03:23.042Z"
+}

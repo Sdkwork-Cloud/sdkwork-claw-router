@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43389,
+  "uuid": "skill-clawhub-hvac-control-scipy-curve-fit",
+  "skillKey": "clawhub-hvac-control-scipy-curve-fit",
+  "name": "scipy-curve-fit",
+  "summary": "Use scipy.optimize.curve_fit for nonlinear least squares parameter estimation from experimental data.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hvac_control_scipy_curve_fit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wu-uk",
+      "features": [
+        "Use scipy.optimize.curve_fit for nonlinear least squares parameter estimation from experimental."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hvac-control-scipy-curve-fit@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199610473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hvac-control-scipy-curve-fit",
+      "url": "https://clawhub.ai/skills/hvac-control-scipy-curve-fit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hvac-control-scipy-curve-fit",
+    "url": "https://clawhub.ai/skills/hvac-control-scipy-curve-fit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hvac-control-scipy-curve-fit-b7df6f3f6c265c92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hvac-control-scipy-curve-fit@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hvac-control-scipy-curve-fit-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56d39d8e3bb3860786249847e1da62d0e2982ece6c6412b1de360bc60b3530be",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T11:30:13.015Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72950,
+  "uuid": "skill-clawhub-xiaomi-tts",
+  "skillKey": "clawhub-xiaomi-tts",
+  "name": "小米tts文字转语音",
+  "summary": "把文字转成语音。可以发语音、念给我听、唱歌、用方言或夹子音说话，支持各种情绪和风格。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaomi_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangalexhy",
+      "features": [
+        "把文字转成语音。可以发语音、念给我听、唱歌、用方言或夹子音说话，支持各种情绪和风格。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaomi-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51531505?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaomi-tts",
+      "url": "https://clawhub.ai/skills/xiaomi-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaomi-tts",
+    "url": "https://clawhub.ai/skills/xiaomi-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaomi-tts-a71e8d48e9017267.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaomi-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaomi-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7b4319aa0f2742bf803a358429bf4d12377dbcbca3de7f89be6e3079fcc993e",
+      "artifactSizeBytes": 2160
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T06:39:04.966Z"
+}

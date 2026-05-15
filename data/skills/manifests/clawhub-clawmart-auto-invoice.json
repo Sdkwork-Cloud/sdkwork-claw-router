@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65598,
+  "uuid": "skill-clawhub-clawmart-auto-invoice",
+  "skillKey": "clawhub-clawmart-auto-invoice",
+  "name": "ClawMart Auto Invoice",
+  "summary": "自动生成专业PDF发票，支持模板选择、客户管理、收款状态跟踪及财务报表生成，提升财务效率。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmart_auto_invoice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang1002378395-cmyk",
+      "features": [
+        "自动生成专业PDF发票，支持模板选择、客户管理、收款状态跟踪及财务报表生成，提升财务效率。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawmart-auto-invoice@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261632147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawmart-auto-invoice",
+      "url": "https://clawhub.ai/skills/clawmart-auto-invoice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmart-auto-invoice",
+    "url": "https://clawhub.ai/skills/clawmart-auto-invoice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmart-auto-invoice-8316d68286eb3246.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawmart-auto-invoice@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawmart-auto-invoice-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d287624d15f709e1503c98e80c543bb01dd3845eadab3c3ed8456c0d4deb7723",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:42:13.684Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8699,
+  "uuid": "skill-clawhub-voice-wake-say",
+  "skillKey": "clawhub-voice-wake-say",
+  "name": "Voice Wake Say",
+  "summary": "Speak responses aloud on macOS using the built-in `say` command when user input indicates Voice Wake/voice recognition (for example, messages starting with \"User talked via voice recognition on <device>\").",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_wake_say",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xadenryan",
+      "features": [
+        "Speak responses aloud on macOS using the built-in `say` command when user input indicates Voice."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voice-wake-say@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165437834?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voice-wake-say",
+      "url": "https://clawhub.ai/skills/voice-wake-say"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-wake-say",
+    "url": "https://clawhub.ai/skills/voice-wake-say",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-wake-say-8266cc0a77a486dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voice-wake-say@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-voice-wake-say-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55d6097b9db1c77e7839cd04cd0397db58015cd5771bb06a0b63e23915a9bccc",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T10:18:11.994Z"
+}

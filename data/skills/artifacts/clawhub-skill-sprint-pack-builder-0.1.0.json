@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-sprint-pack-builder@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_sprint_pack_builder",
+  "skill": {
+    "id": 48980,
+    "skillKey": "clawhub-skill-sprint-pack-builder",
+    "name": "Skill Sprint Pack Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-sprint-pack-builder",
+    "url": "https://clawhub.ai/skills/skill-sprint-pack-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-sprint-pack-builder-c527ed05ff381d16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert pasted lesson notes, workflow notes, or rough implementation notes into a public-safe ClawHub/Codex skill sprint pack with a 20-minute action, proof..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zack-dev-cm",
+      "userId": "s170hyv1nagjajq3y5c6kpzx3s84jp29",
+      "displayName": "Zakhar Pashkin",
+      "image": "https://avatars.githubusercontent.com/u/112114097?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 89,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778085600390,
+      "changelog": "Initial public-safe Skool skill sprint pack builder",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ddf5cc701407c9ef8e8f41991ad09754fe6431ac4b968a2ac966278d96270239"
+}

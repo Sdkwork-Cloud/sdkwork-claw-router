@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29759,
+  "uuid": "skill-clawhub-fetch-url",
+  "skillKey": "clawhub-fetch-url",
+  "name": "Fetch Url",
+  "summary": "Fetch raw HTTP response bodies from one or more URLs with optional custom headers and timeout, supporting JSON, XML, RSS, CSV, plain text, and files.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fetch_url",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "长安",
+      "features": [
+        "Fetch raw HTTP response bodies from one or more URLs with optional custom headers and timeout,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fetch-url@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36761662?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fetch-url",
+      "url": "https://clawhub.ai/skills/fetch-url"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fetch-url",
+    "url": "https://clawhub.ai/skills/fetch-url",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fetch-url-752492a75a072098.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fetch-url@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fetch-url-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fef6bb434c47d55340e8d58c3ef82410d686e3f1b94249103840045740a8e341",
+      "artifactSizeBytes": 2189
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T01:07:08.369Z"
+}

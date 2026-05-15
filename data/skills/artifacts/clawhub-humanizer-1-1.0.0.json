@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/humanizer-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanizer_1",
+  "skill": {
+    "id": 33555,
+    "skillKey": "clawhub-humanizer-1",
+    "name": "Humanizer 1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanizer-1",
+    "url": "https://clawhub.ai/skills/humanizer-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanizer-1-bbd55adf904b6ef5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueda",
+      "userId": "s17esmz2rjkjt1twh7adaessj583jwms",
+      "displayName": "三昧",
+      "image": "https://avatars.githubusercontent.com/u/22470505?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774436885304,
+      "changelog": "**Humanizer 1.0.0 Initial Release**\n\n- Launch of \"humanizer\" skill for editing text to remove signs of AI-generated writing.\n- Detects and rewrites inflated symbolism, promotional language, superficial \"-ing\" analyses, vague attributions, em dash overuse, \"rule of three\", negative parallelisms, and excessive conjunctive phrases.\n- Focuses on adding natural voice, personality, and rhythm to make text feel authentically human.\n- Based on comprehensive guidance from Wikipedia’s \"Signs of AI writing\" project.\n- Supports various editing tools including Read, Write, Edit, and Grep.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d4f40b0244dccf9b9436e93387fe29b015351f756427a9b4a9f8dbd401a2de7"
+}

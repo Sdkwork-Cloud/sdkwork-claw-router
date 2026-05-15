@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wcs-helper-server-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wcs_helper_server_skill",
+  "skill": {
+    "id": 52545,
+    "skillKey": "clawhub-wcs-helper-server-skill",
+    "name": "Wcs Helper Server Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wcs-helper-server-skill",
+    "url": "https://clawhub.ai/skills/wcs-helper-server-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wcs-helper-server-skill-f53164a4fc04b0d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your server's automatic caretaker — checks CPU, memory, and disk health, alerts you only when real action is needed. Use when: server feels slow, a cron job..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guanqi0914",
+      "userId": "s17aa3cmer82t07dh79m490mh183hrkr",
+      "displayName": "无上宗师",
+      "image": "https://avatars.githubusercontent.com/u/49145037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774427658208,
+      "changelog": "- Initial release of wcs-helper-server-skill.\n- Monitors server CPU, memory, and disk health with actionable alerts.\n- Provides easy commands for health checks, quick fixes, and on-demand or automatic (cron-based) operation.\n- Only alerts when intervention is needed (e.g., high memory/disk usage, zombie processes, cron job failures).\n- Includes preview mode for safe fixes and clear troubleshooting/uninstall instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d0c574e0c942e3224d4bd1a17b475cf8eb771bbe1f472352286ccb9353f5ad2"
+}

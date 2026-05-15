@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trading-signals-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trading_signals_pro",
+  "skill": {
+    "id": 52310,
+    "skillKey": "clawhub-trading-signals-pro",
+    "name": "Scrub Trading Signals Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trading-signals-pro",
+    "url": "https://clawhub.ai/skills/trading-signals-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trading-signals-pro-291a7cf4e31bb51b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crypto trading signals using CoinGecko price data, DeFiLlama TVL trends, and CCXT exchange order flow — momentum, RSI, VWAP signals for XRP, HBAR, BTC, ETH,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drivenautoplex1",
+      "userId": "s17amw9603tjt6jg530q93xzvx83syaf",
+      "displayName": "drivenautoplex1",
+      "image": "https://avatars.githubusercontent.com/u/186228539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774722598476,
+      "changelog": "Initial release: provides advanced crypto trading and DeFi yield signals using real-time data.\n\n- Analyzes price momentum, RSI, and VWAP for assets like XRP, HBAR, BTC, ETH, and major DeFi tokens.\n- Aggregates CoinGecko price history, ccxt exchange order flow, and DeFiLlama TVL and yield data.\n- Supports momentum, RSI, VWAP, DeFi yield scan, and portfolio dashboard modes.\n- Outputs combine JSON and human summaries with signal strength, context, and actionable insights.\n- Features special support for HBAR ecosystem (e.g., SaucerSwap LP yield signals).\n- Usable via Telegram, command line, Claude, or direct Python script for seamless integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80dfbe12ef6ddbe5de995f548fa681f0d8473c8d55de40774d7147439b71fb79"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mom@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mom",
+  "skill": {
+    "id": 42260,
+    "skillKey": "clawhub-mom",
+    "name": "Mom.skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mom",
+    "url": "https://clawhub.ai/skills/mom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mom-bcb9dae6ea88dbf2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parenting co-pilot for mothers. Tracks your baby's feeding, sleep, and cry patterns. Builds a soothing playbook ranked by success rate. Remembers what works..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "realteamprinz",
+      "userId": "s17209ssa988mpg9pegvdzfz6x83vvr4",
+      "displayName": "realteamprinz",
+      "image": "https://avatars.githubusercontent.com/u/267227604?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775829879928,
+      "changelog": "mom-skill 1.0.0\n\n- Initial release of a comprehensive parenting co-pilot tailored for mothers.\n- Tracks feeding, sleep, and crying patterns based on parent-reported observations.\n- Builds a personalized soothing playbook ranked by method success rate, updated dynamically.\n- Logs feeding times, sleep durations, night shift activity, milestones, and more, with robust privacy: all data stored locally, no cloud or third-party access.\n- Supports multi-caregiver input, cross-session persistence, and care summaries for seamless handoff.\n- Not medical advice—tool focuses on memory aid and recognizing patterns, never replaces professional healthcare guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80c6454f7aeebb1430a097a1dcd7e835c3789753918abb5264a103cb4675f201"
+}

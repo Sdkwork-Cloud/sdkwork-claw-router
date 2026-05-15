@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54030,
+  "uuid": "skill-clawhub-whatisagent",
+  "skillKey": "clawhub-whatisagent",
+  "name": "Whatisagent",
+  "summary": "Instantly teaches an Agent what it is, how memory works, and how to behave on complex projects — no hand-holding required from the owner.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatisagent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huangrichao2020",
+      "features": [
+        "Instantly teaches an Agent what it is, how memory works, and how to behave on complex projects."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whatisagent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72842645?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whatisagent",
+      "url": "https://clawhub.ai/skills/whatisagent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatisagent",
+    "url": "https://clawhub.ai/skills/whatisagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatisagent-bf18519ec217e990.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whatisagent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whatisagent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14d811ba8daea8e10fbd115bed51298d5d334a42d1679cfe46859a2c508c4ab3",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T17:30:44.327Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64259,
+  "uuid": "skill-clawhub-claw-trade-hub",
+  "skillKey": "clawhub-claw-trade-hub",
+  "name": "Claw Trade Hub",
+  "summary": "服务交易模块 - 支持服务挂牌、竞价、议价、交易记录管理",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_trade_hub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TangBoheng",
+      "features": [
+        "支持服务挂牌、竞价、议价、交易记录管理"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-trade-hub@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16973161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-trade-hub",
+      "url": "https://clawhub.ai/skills/claw-trade-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-trade-hub",
+    "url": "https://clawhub.ai/skills/claw-trade-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-trade-hub-eeb4cbb0ef9cf7cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-trade-hub@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-trade-hub-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4490a86930924e54bbe6f7753cafd35680b4b3d539aa6ce6cb2dadbc00585fb8",
+      "artifactSizeBytes": 1831
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T06:43:20.854Z"
+}

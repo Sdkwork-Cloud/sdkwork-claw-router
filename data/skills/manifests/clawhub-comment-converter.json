@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17052,
+  "uuid": "skill-clawhub-comment-converter",
+  "skillKey": "clawhub-comment-converter",
+  "name": "comment-converter",
+  "summary": "Turn Reddit thread context into genuinely helpful comments that build trust and can convert to profile/link clicks.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comment_converter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xammarie",
+      "features": [
+        "Turn Reddit thread context into genuinely helpful comments that build trust and can convert to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comment-converter@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219314498?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comment-converter",
+      "url": "https://clawhub.ai/skills/comment-converter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comment-converter",
+    "url": "https://clawhub.ai/skills/comment-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comment-converter-5282bec640f94f9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comment-converter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-comment-converter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eaf6ec33f8741b6c0d66664474499a327ef83d709fed772207b8558aa56bb856",
+      "artifactSizeBytes": 1878
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T15:50:05.324Z"
+}

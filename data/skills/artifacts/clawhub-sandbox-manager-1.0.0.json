@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sandbox-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sandbox_manager",
+  "skill": {
+    "id": 58939,
+    "skillKey": "clawhub-sandbox-manager",
+    "name": "Sandbox Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sandbox-manager",
+    "url": "https://clawhub.ai/skills/sandbox-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sandbox-manager-12ff38471b59965c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "百度 Agent Sandbox 沙箱管理。触发词:沙箱/sandbox/创建沙箱/沙箱实例/沙箱模板/code_test/browser_use/aio。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "igogo888",
+      "userId": "s170atvayc197zd93hjkh5kh1n83gwyp",
+      "displayName": "igogo888",
+      "image": "https://avatars.githubusercontent.com/u/270532137?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 78,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777517921473,
+      "changelog": "百度 Agent Sandbox 沙箱管理工具",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:10593d238166938c5e8f36140e115834727fddec3196bd54fd8279ee684ac409"
+}

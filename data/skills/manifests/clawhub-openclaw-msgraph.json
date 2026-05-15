@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20412,
+  "uuid": "skill-clawhub-openclaw-msgraph",
+  "skillKey": "clawhub-openclaw-msgraph",
+  "name": "OpenCloutlook",
+  "summary": "Read and manage Microsoft Outlook email (inbox, folders, move messages) and Outlook calendar (list events, create events) via Microsoft Graph API. Use when t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_msgraph",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jon",
+      "features": [
+        "Read and manage Microsoft Outlook email (inbox, folders, move messages) and Outlook calendar (l.",
+        "Use when t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-msgraph@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7820180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-msgraph",
+      "url": "https://clawhub.ai/skills/openclaw-msgraph"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-msgraph",
+    "url": "https://clawhub.ai/skills/openclaw-msgraph",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-msgraph-961dfbf7d1a4bdd0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-msgraph@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-msgraph-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13a6fbea2c14ad836a1221a3b0866bb47d4428d2d0e6b4d1b5d94d2e152bd773",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T08:09:05.861Z"
+}

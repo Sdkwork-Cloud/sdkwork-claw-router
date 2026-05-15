@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-audit-scanner@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_audit_scanner",
+  "skill": {
+    "id": 20973,
+    "skillKey": "clawhub-agent-audit-scanner",
+    "name": "Agent Audit Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-audit-scanner",
+    "url": "https://clawhub.ai/skills/agent-audit-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-audit-scanner-e42343a6469cd749.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security scanner for OpenClaw skills. Detects prompt injection, credential leaks, unsafe code execution, MCP misconfigurations, privilege escalation, obfusca..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "headyzhang",
+      "userId": "publishers:headyzhang",
+      "displayName": "Heady",
+      "image": "https://avatars.githubusercontent.com/u/181223267?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 428,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772740117341,
+      "changelog": "Initial release of agent-audit-scanner security tool for OpenClaw skills.\n\n- Scans skills for vulnerabilities across all 10 OWASP Agentic AI threat categories using 49+ detection rules.\n- Detects prompt injection, credential leaks, unsafe code execution, misconfigurations, privilege escalation, obfuscated commands, and social engineering patterns.\n- Provides step-by-step scanning commands for individual skills, all skills, and OpenClaw configuration checks.\n- Reports findings with severity tiers: BLOCK, WARN, INFO, and CLEAN.\n- Includes clear guidance for interpreting scan results and best practices for safe use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0402c357764fdfd1225390dbc029e8cd4f5a745d694b8aea0da85bf2ec027cae"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26465,
+  "uuid": "skill-clawhub-gradient",
+  "skillKey": "clawhub-gradient",
+  "name": "Gradient",
+  "summary": "Generate CSS gradient code, preview gradient combinations, and build gradient palettes using bash and Python. Use when creating linear, radial, or conic grad...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gradient",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Generate CSS gradient code, preview gradient combinations, and build gradient palettes using ba.",
+        "Use when creating linear, radial, or conic grad..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gradient@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gradient",
+      "url": "https://clawhub.ai/skills/gradient"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gradient",
+    "url": "https://clawhub.ai/skills/gradient",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gradient-1b6a3443f30a8adc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gradient@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gradient-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d4d96b460ce22aede731e1983b1edc44ad51da49cfefbae50d23511bdde828d",
+      "artifactSizeBytes": 1858
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:31:50.630Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48227,
+  "uuid": "skill-clawhub-wechat-db-decrypt",
+  "skillKey": "clawhub-wechat-db-decrypt",
+  "name": "Wechat Db Decrypt",
+  "summary": "Decrypt and extract messages from WeChat PC 3.x/4.x databases after obtaining decrypted SQLite files from xwechat_files directory.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_db_decrypt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "as1113435",
+      "features": [
+        "Decrypt and extract messages from WeChat PC 3.x/4.x databases after obtaining decrypted SQLite."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-db-decrypt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268808311?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-db-decrypt",
+      "url": "https://clawhub.ai/skills/wechat-db-decrypt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-db-decrypt",
+    "url": "https://clawhub.ai/skills/wechat-db-decrypt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-db-decrypt-c4f0c16efbefdc60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-db-decrypt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-db-decrypt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5bdafb2ee54883a69f78c8b86bc3213f01b9150d5c6b4b416e6f34e0b10aa9b0",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T15:47:08.158Z"
+}

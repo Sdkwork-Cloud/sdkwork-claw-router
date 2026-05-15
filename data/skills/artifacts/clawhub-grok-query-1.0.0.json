@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grok-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grok_query",
+  "skill": {
+    "id": 25269,
+    "skillKey": "clawhub-grok-query",
+    "name": "Grok Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grok-query",
+    "url": "https://clawhub.ai/skills/grok-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grok-query-0305330c75303ddf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Grok AI (grok.com) for real-time information via browser automation. Requires: OpenClaw browser enabled, user pre-logged-in to grok.com, and a Grok acc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "inphinitiz",
+      "userId": "s176zp7k7d49qaptz59wn8448h84g213",
+      "displayName": "InphinitiZ",
+      "image": "https://avatars.githubusercontent.com/u/9105620?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772360434181,
+      "changelog": "- Initial release of grok-query skill.\n- Enables real-time querying of Grok AI (grok.com) via browser automation.\n- Requires the user to be pre-logged-in to Grok in an OpenClaw browser.\n- Supports both single and multi-turn conversational research, including handling news, real-time info, and external knowledge verification.\n- Includes robust error handling and step-by-step workflow for interacting with Grok’s web interface, including popup management and interface element detection.\n- No SuperGrok subscription required; works with free-tier accounts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:26c3dd9a1e91b6a8c8ca93f0c742673d3c51b927b0666350a1a6f3e452697683"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/small-context-coding@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.small_context_coding",
+  "skill": {
+    "id": 47508,
+    "skillKey": "clawhub-small-context-coding",
+    "name": "Small Context Coding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "small-context-coding",
+    "url": "https://clawhub.ai/skills/small-context-coding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/small-context-coding-25151215a68b8c27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Efficient coding workflow for small-context models working on medium or large codebases. Use when the user wants to develop, debug, refactor, or analyze code..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ambitioncn",
+      "userId": "s176403v6056szwqp2hd324dpx857gdh",
+      "displayName": "ambitioncn",
+      "image": "https://avatars.githubusercontent.com/u/36698505?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777830598957,
+      "changelog": "Add MIT LICENSE file to the published package and align license metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d87f784fb22939623e4b8823332c66969255acf388eb5312415c4c9827c674dc"
+}

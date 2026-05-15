@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/3s-hook-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.3s_hook_generator",
+  "skill": {
+    "id": 73118,
+    "skillKey": "clawhub-3s-hook-generator",
+    "name": "短视频黄金3秒钩子生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "3s-hook-generator",
+    "url": "https://clawhub.ai/skills/3s-hook-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/3s-hook-generator-67a84cc9b5d44312.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为短视频创作者一键生成高吸引力、全平台合规的黄金3秒开场钩子，提升完播率与用户留存。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hadderyes",
+      "userId": "s17a2kq52x8vbknwsgszg1005h852pfa",
+      "displayName": "hadderyes",
+      "image": "https://avatars.githubusercontent.com/u/189217632?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776562672303,
+      "changelog": "3s-hook-generator v1.0.0 发布\n\n- 首次发布短视频3秒黄金钩子生成器，面向内容创作者及自媒体人。\n- 根据用户提供内容赛道、卖点、形式，一键生成10条高流量、强吸引力的3秒开场文案。\n- 完全适配抖音、视频号、快手主流平台流量规则，自动避开违禁及极限词。\n- 支持口播、好物分享、知识科普、剧情、vlog等多类内容场景，输出标明适用场景与亮点。\n- 固定输出格式，包含内容识别、详细钩子文案、推荐理由、发布时间和配合画面建议。\n- 严格限制仅处理短视频黄金3秒钩子需求，对其他问题有明确回复。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89c091995d98571c452a8b80e548595f8203ac7171017ba1291a5740133efa1c"
+}

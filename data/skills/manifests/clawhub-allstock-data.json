@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11344,
+  "uuid": "skill-clawhub-allstock-data",
+  "skillKey": "clawhub-allstock-data",
+  "name": "allstock-data",
+  "summary": "Stock market data query skill for China A-shares, Hong Kong, and US markets. Uses Tencent Finance HTTP API by default (lightweight, no install needed), with...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.allstock_data",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIWareTop",
+      "features": [
+        "Stock market data query skill for China A-shares, Hong Kong, and US markets",
+        "Uses Tencent Finance HTTP API by default (lightweight, no install needed), with..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/allstock-data@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13587279?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "allstock-data",
+      "url": "https://clawhub.ai/skills/allstock-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "allstock-data",
+    "url": "https://clawhub.ai/skills/allstock-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/allstock-data-5d13808280ea08f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/allstock-data@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-allstock-data-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d9c40d890542ef00b7893f9958501a285c149d0c153ac3af9f2d204e3ea86fc",
+      "artifactSizeBytes": 2479
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T15:47:59.850Z"
+}

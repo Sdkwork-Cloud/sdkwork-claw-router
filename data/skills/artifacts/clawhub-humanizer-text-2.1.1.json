@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/humanizer-text@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanizer_text",
+  "skill": {
+    "id": 57048,
+    "skillKey": "clawhub-humanizer-text",
+    "name": "Humanizer-Text AI写作痕迹去除"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanizer-text",
+    "url": "https://clawhub.ai/skills/humanizer-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanizer-text-3d9b3663d3638bad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove signs of AI-generated writing from text. Detects and fixes: inflated symbolism, promotional language, superficial -ing analyses, vague attributions, e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xbmchina",
+      "userId": "s176qgj7dwmgy5pwm8yfthnf2s84q973",
+      "displayName": "xbmchina",
+      "image": "https://avatars.githubusercontent.com/u/14942293?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1775991905158,
+      "changelog": "去除AI写作痕迹，让文本更自然",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5fd5aa830813f6406dc5a44844c639c0980220b8766e7a086639f090d7ddb34d"
+}

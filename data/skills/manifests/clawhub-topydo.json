@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10059,
+  "uuid": "skill-clawhub-topydo",
+  "skillKey": "clawhub-topydo",
+  "name": "topydo",
+  "summary": "Manage todo.txt tasks using topydo CLI. Add, list, complete, prioritize, tag, and organize tasks with dependencies, due dates, recurrence, and projects. Use for any task management, todo lists, or when the user mentions tasks, todos, or to.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.topydo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tiago Bastos",
+      "features": [
+        "Manage todo.txt tasks using topydo CLI",
+        "Add, list, complete, prioritize, tag, and organize tasks with dependencies, due dates, recurren.",
+        "Use for any task management, todo lists, or when the user mentions tasks, todos, or todo.txt",
+        "Requires Python 3 and pip"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/topydo@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "topydo",
+      "url": "https://clawhub.ai/skills/topydo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "topydo",
+    "url": "https://clawhub.ai/skills/topydo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/topydo-7948ce65e9d9f221.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/topydo@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-topydo-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f9ac036a0259a58d56bdb35d59c580bbfa56599246200ee554ed326d1204626",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T14:07:39.785Z"
+}

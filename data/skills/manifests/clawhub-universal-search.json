@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65797,
+  "uuid": "skill-clawhub-universal-search",
+  "skillKey": "clawhub-universal-search",
+  "name": "universal-search",
+  "summary": "全网搜索接口 - 孙永乐开发的高质量全网搜索API，返回结构化结果，带可信度评分和交叉验证。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.universal_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "孙永乐",
+      "features": [
+        "孙永乐开发的高质量全网搜索API，返回结构化结果，带可信度评分和交叉验证。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/universal-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5218528?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "universal-search",
+      "url": "https://clawhub.ai/skills/universal-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "universal-search",
+    "url": "https://clawhub.ai/skills/universal-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/universal-search-516aac5576358021.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/universal-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-universal-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7af6a671f9042faab654fcdb90934255ff2eeb8717280eef6612e1680b109cc4",
+      "artifactSizeBytes": 2308
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T06:02:48.397Z"
+}

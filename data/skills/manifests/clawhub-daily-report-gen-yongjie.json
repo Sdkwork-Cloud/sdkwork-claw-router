@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72564,
+  "uuid": "skill-clawhub-daily-report-gen-yongjie",
+  "skillKey": "clawhub-daily-report-gen-yongjie",
+  "name": "日报/周报生成器",
+  "summary": "日报/周报生成器 | 根据工作内容描述自动生成结构化工日报/周报，支持军工格式和通用格式",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_report_gen_yongjie",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yongjie666888",
+      "features": [
+        "日报/周报生成器 | 根据工作内容描述自动生成结构化工日报/周报，支持军工格式和通用格式"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-report-gen-yongjie@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177016990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-report-gen-yongjie",
+      "url": "https://clawhub.ai/skills/daily-report-gen-yongjie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-report-gen-yongjie",
+    "url": "https://clawhub.ai/skills/daily-report-gen-yongjie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-report-gen-yongjie-7989e5479bcfa583.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-report-gen-yongjie@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-report-gen-yongjie-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03157647fb47fa811a6a8242b04b9937d5149b867d3cb043035ccd9d001f3f60",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T14:53:08.344Z"
+}

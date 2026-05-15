@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51972,
+  "uuid": "skill-clawhub-pearl",
+  "skillKey": "clawhub-pearl",
+  "name": "Pearl",
+  "summary": "Stripe for AI agents — one wallet for all paid skills. If you installed a skill that requires Pearl (check its SKILL.md), you MUST set up Pearl first: run no...",
+  "version": "0.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pearl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Simeon",
+      "features": [
+        "Stripe for AI agents — one wallet for all paid skills",
+        "If you installed a skill that requires Pearl (check its SKILL.md), you MUST set up Pearl first:."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pearl@0.0.14",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83140665?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pearl",
+      "url": "https://clawhub.ai/skills/pearl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pearl",
+    "url": "https://clawhub.ai/skills/pearl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pearl-26e3b2a5dc54dd58.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pearl@0.0.14",
+      "artifactUrl": "data/skills/artifacts/clawhub-pearl-0.0.14.json",
+      "version": "0.0.14",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19c941e5db9756a686dbf44113a9a507a89feae996b0b4de90c7c785ee151936",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T18:35:53.274Z"
+}

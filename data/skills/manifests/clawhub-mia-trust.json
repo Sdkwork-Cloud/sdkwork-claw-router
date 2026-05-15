@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58086,
+  "uuid": "skill-clawhub-mia-trust",
+  "skillKey": "clawhub-mia-trust",
+  "name": "mia-trust",
+  "summary": "MIA-Trust Pipeline - Memory-Intelligent Assistant 信任守门+记忆进化 pipeline",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mia_trust",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SII-YUCHENG2002",
+      "features": [
+        "MIA-Trust Pipeline",
+        "Memory-Intelligent Assistant 信任守门+记忆进化 pipeline"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mia-trust@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134203683?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mia-trust",
+      "url": "https://clawhub.ai/skills/mia-trust"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mia-trust",
+    "url": "https://clawhub.ai/skills/mia-trust",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mia-trust-1dd338e924af6a0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mia-trust@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mia-trust-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf0892cb46ebe201bcd456ef58200ac14d8064ffb74c0e4cbdb73304d6f411a2",
+      "artifactSizeBytes": 3606
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T08:44:04.916Z"
+}

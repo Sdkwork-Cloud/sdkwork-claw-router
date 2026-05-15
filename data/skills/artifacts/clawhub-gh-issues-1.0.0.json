@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gh-issues@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gh_issues",
+  "skill": {
+    "id": 8994,
+    "skillKey": "clawhub-gh-issues",
+    "name": "gh-issues"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gh-issues",
+    "url": "https://clawhub.ai/skills/gh-issues",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gh-issues-bc35792ec1df3a11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch GitHub issues, spawn sub-agents to implement fixes and open PRs, then monitor and address PR review comments. Usage: /gh-issues [owner/repo] [--label b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackhua6",
+      "userId": "s1748a181h4pg1m8348ycfqst583k5mk",
+      "displayName": "JackHua6",
+      "image": "https://avatars.githubusercontent.com/u/266310299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4045,
+      "installsAllTime": 147,
+      "installsCurrent": 145,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774453481689,
+      "changelog": "Initial registration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4194241aeb61819d3f3506226d8c96ac21d76fa8278223de232a7c010f429d29"
+}

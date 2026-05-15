@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pinkr-openapi-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pinkr_openapi_skill",
+  "skill": {
+    "id": 68883,
+    "skillKey": "clawhub-pinkr-openapi-skill",
+    "name": "品氪 OpenApi 开放平台 Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pinkr-openapi-skill",
+    "url": "https://clawhub.ai/skills/pinkr-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pinkr-openapi-skill-ae4f983a3cdb49d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "品氪提供的OpenApi开放平台，支持门店、导购、会员、订单、退单、库存、商品、积分、储值、卡券、销售等全链路CRM/SCRM数据同步与管理。通过安全认证的API接口实现第三方系统与品氪平台的数据互通。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ikaijian",
+      "userId": "s17cnypfkxkv4t8stdes9v4r4d83spht",
+      "displayName": "ikaijian",
+      "image": "https://avatars.githubusercontent.com/u/40664684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774787090326,
+      "changelog": "No user-visible changes in this update.\n\n- Version incremented to 1.0.1.\n- No file changes detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51db5ee4d5497c1507f9e11c47ac176001ca3c44e37123f1ca4f0b5259c73c86"
+}

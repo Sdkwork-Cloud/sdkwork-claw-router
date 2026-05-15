@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-plugin-dg-lab-skill@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_plugin_dg_lab_skill",
+  "skill": {
+    "id": 43002,
+    "skillKey": "clawhub-openclaw-plugin-dg-lab-skill",
+    "name": "DG-LAB"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-plugin-dg-lab-skill",
+    "url": "https://clawhub.ai/skills/openclaw-plugin-dg-lab-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-plugin-dg-lab-skill-de0933f55c7b3035.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "An OpenClaw plugin that controls DG-Lab V3 electrostimulation devices via WebSocket with AI-driven commands and emotion-triggered stimulation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fengying1314",
+      "userId": "s17exz96mq6fnkqq1a4k8j9dm583hfcj",
+      "displayName": "枫莹",
+      "image": "https://avatars.githubusercontent.com/u/87564515?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774358182191,
+      "changelog": "- Initial release of openclaw-plugin-dg-lab.\n- Native integration with OpenClaw for controlling DG-Lab V3 electrostimulation devices via WebSocket.\n- Supports QR code pairing, AI tool-based control (dg_shock, dg_pulse_list), and emotion engine for automatic stimulation triggers.\n- Implements software intensity limits, 1-hour safety timer with enforced cooldown, device feedback sync, and real-time status monitoring.\n- Custom waveform library with Coyote-Game-Hub format compatibility, and robust security and protocol compliance features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ef4cac8681da1a4db6a0a1df95f80c778a351ab0da9fb2d869f7f5f50f1cf73"
+}

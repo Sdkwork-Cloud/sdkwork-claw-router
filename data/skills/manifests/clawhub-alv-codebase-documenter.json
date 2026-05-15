@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42638,
+  "uuid": "skill-clawhub-alv-codebase-documenter",
+  "skillKey": "clawhub-alv-codebase-documenter",
+  "name": "Codebase Documenter",
+  "summary": "This skill should be used when writing documentation for codebases, including README files, architecture documentation, code comments, and API documentation....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alv_codebase_documenter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlvisDunlop",
+      "features": [
+        "This skill should be used when writing documentation for codebases, including README files, arc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alv-codebase-documenter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255881479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alv-codebase-documenter",
+      "url": "https://clawhub.ai/skills/alv-codebase-documenter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alv-codebase-documenter",
+    "url": "https://clawhub.ai/skills/alv-codebase-documenter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alv-codebase-documenter-b39215814f3a53ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alv-codebase-documenter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alv-codebase-documenter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8dc49489e3420f564627ab06eb3e5ea4e6a5847bae3d0b2dc9e656aef75884fc",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T02:21:37.488Z"
+}

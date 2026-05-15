@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-lark-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_lark_cli",
+  "skill": {
+    "id": 72083,
+    "skillKey": "clawhub-feishu-lark-cli",
+    "name": "feishu-lark-cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-lark-cli",
+    "url": "https://clawhub.ai/skills/feishu-lark-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-lark-cli-7fbb080b92bac1a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书即时通讯：收发消息和管理群聊。发送和回复消息、搜索聊天记录、管理群聊成员、上传下载图片和文件、管理表情回复。当用户需要发消息、查看或搜索聊天记录、下载聊天中的文件、查看群成员时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roy-oss1",
+      "userId": "s178rped1kc5gzamqhagevxn0984fage",
+      "displayName": "Roy-oss1",
+      "image": "https://avatars.githubusercontent.com/u/268667990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775654394261,
+      "changelog": "feishu-lark-cli 1.0.0\n\n- Initial release with comprehensive 飞书 (Feishu/Lark) instant messaging CLI capabilities.\n- Supports sending, replying, searching messages; managing group chats and members; uploading/downloading images and files; managing emoji reactions.\n- Provides both user and bot identity operation; detailed token/permission guidance included.\n- Advanced, shortcut-style commands for common IM tasks.\n- Thorough documentation of core concepts, and resource relationships for effective usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f83143cd32eea92d09504bbe73a7a7eb27c18159af333248262b192ca23ac460"
+}

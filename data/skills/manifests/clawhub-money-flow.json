@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71949,
+  "uuid": "skill-clawhub-money-flow",
+  "skillKey": "clawhub-money-flow",
+  "name": "money-flow",
+  "summary": "资金流分析 — 追踪主力资金、超级资金、大单净流入/流出，结合价格行为判断机构意图。当用户说「资金流」「主力资金」「大单净流入」「超级资金」「机构建仓」时激活。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.money_flow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danpian1",
+      "features": [
+        "资金流分析 — 追踪主力资金、超级资金、大单净流入/流出，结合价格行为判断机构意图。当用户说「资金流」「主力资金」「大单净流入」「超级资金」「机构建仓」时激活。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/money-flow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87922625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "money-flow",
+      "url": "https://clawhub.ai/skills/money-flow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "money-flow",
+    "url": "https://clawhub.ai/skills/money-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/money-flow-0b07aff7252ed49b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/money-flow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-money-flow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a596d476fcf6f8fd0fe20a9eed39a22682be273e2533a79614d0e2261c8a6620",
+      "artifactSizeBytes": 2462
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T07:52:53.076Z"
+}

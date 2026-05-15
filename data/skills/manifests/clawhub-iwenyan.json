@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55782,
+  "uuid": "skill-clawhub-iwenyan",
+  "skillKey": "clawhub-iwenyan",
+  "name": "文言",
+  "summary": "Force OpenClaw replies into classical Chinese prose for general Q&A, writing, coding help, and daily work; supports iwenyan style switching across six Wenyan...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iwenyan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iwenyan",
+      "features": [
+        "Force OpenClaw replies into classical Chinese prose for general Q&A, writing, coding help, and.",
+        "supports iwenyan style switching across six Wenyan..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iwenyan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257445332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iwenyan",
+      "url": "https://clawhub.ai/skills/iwenyan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iwenyan",
+    "url": "https://clawhub.ai/skills/iwenyan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iwenyan-8775d579bd5d7e1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iwenyan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-iwenyan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11d2b7084cab528de3c365830daa2edd39b51e47b5154eb3c8efb3c0acd57c93",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T05:27:51.176Z"
+}

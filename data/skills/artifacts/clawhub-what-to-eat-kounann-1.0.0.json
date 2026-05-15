@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/what-to-eat-kounann@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.what_to_eat_kounann",
+  "skill": {
+    "id": 42473,
+    "skillKey": "clawhub-what-to-eat-kounann",
+    "name": "What To Eat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "what-to-eat-kounann",
+    "url": "https://clawhub.ai/skills/what-to-eat-kounann",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/what-to-eat-kounann-0e22ce577a6070af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Can't decide what to eat at the office? Let me pick for you! Triggered when you ask \"what to eat\", \"lunch/dinner ideas\", or any food-related questions. Combi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kounann",
+      "userId": "s171j2t0xr33m4mhqrmwda70xn84w2yc",
+      "displayName": "Kounann",
+      "image": "https://avatars.githubusercontent.com/u/144655140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776225262304,
+      "changelog": "what-to-eat v1.0.0 – Initial Release\n\n- Randomly recommends what to eat based on office cafeteria options and highly-rated nearby restaurants (4.1+).\n- Supports questions like \"中午吃什么\", \"晚饭吃什么\", and similar food-related prompts.\n- Merges internal cafeteria stalls with top-rated restaurants around Yuan Center for a randomized suggestion.\n- Provides a formatted result, including the full options pool and your randomly-picked suggestion.\n- Data includes detailed vendor lists and is updated monthly.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16e39f216bb2b9675228db354c4f1677479ffefcc2a0a801ea4a65ad47cb19d7"
+}

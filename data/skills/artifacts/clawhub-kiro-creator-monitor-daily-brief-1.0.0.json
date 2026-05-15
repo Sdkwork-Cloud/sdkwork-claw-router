@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kiro-creator-monitor-daily-brief@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kiro_creator_monitor_daily_brief",
+  "skill": {
+    "id": 19484,
+    "skillKey": "clawhub-kiro-creator-monitor-daily-brief",
+    "name": "Kiro Creator Monitor Daily Brief"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kiro-creator-monitor-daily-brief",
+    "url": "https://clawhub.ai/skills/kiro-creator-monitor-daily-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kiro-creator-monitor-daily-brief-8a0591fa7e93ccb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor creator topics across X, RSS, GitHub, and Reddit; deduplicate and score results; produce a daily top-5 brief plus one publish-ready X/LinkedIn draft;..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vmining",
+      "userId": "s17egwyjsr6yzmmjjyakghyvyd83mx21",
+      "displayName": "Xinjin",
+      "image": "https://avatars.githubusercontent.com/u/105750766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 611,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771710913911,
+      "changelog": "Kiro Creator Monitor Daily Brief v1.0.0\n\n- Initial release.\n- Monitors specified topics across X, RSS, GitHub, and Reddit.\n- Deduplicates and scores results by relevance and freshness.\n- Generates a daily top-5 brief plus one publish-ready X/LinkedIn social draft.\n- Supports scheduled delivery to Telegram, Slack, or email.\n- Includes setup instructions and example configs for quick start.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9df14eb4ccd7917860b84a80d29205003461a80de6e5cd49c9a9615ebd77f45a"
+}

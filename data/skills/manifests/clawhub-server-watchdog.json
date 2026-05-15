@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51220,
+  "uuid": "skill-clawhub-server-watchdog",
+  "skillKey": "clawhub-server-watchdog",
+  "name": "Server Watchdog",
+  "summary": "Monitor remote servers via SSH — check service health (PM2, systemd, Docker), database status (MongoDB, MySQL, PostgreSQL), disk space, memory, and auto-rest...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.server_watchdog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Qoohsuan",
+      "features": [
+        "Monitor remote servers via SSH — check service health (PM2, systemd, Docker), database status (."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/server-watchdog@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81729903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "server-watchdog",
+      "url": "https://clawhub.ai/skills/server-watchdog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "server-watchdog",
+    "url": "https://clawhub.ai/skills/server-watchdog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/server-watchdog-dcfafb858a2fdb42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/server-watchdog@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-server-watchdog-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a175d56afc559dbe52b8fc4f2c011401df366ee3fac7165ff159d99c151f2989",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:42:58.763Z"
+}

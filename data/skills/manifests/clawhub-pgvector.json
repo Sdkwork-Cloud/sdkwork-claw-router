@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20946,
+  "uuid": "skill-clawhub-pgvector",
+  "skillKey": "clawhub-pgvector",
+  "name": "pgvector",
+  "summary": "PostgreSQL vector database skill with pgvector extension. Enables vector similarity search, embeddings storage, RAG (Retrieval-Augmented Generation) pipeline...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pgvector",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "damienCronw",
+      "features": [
+        "PostgreSQL vector database skill with pgvector extension",
+        "Enables vector similarity search, embeddings storage, RAG (Retrieval-Augmented Generation) pipe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pgvector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128512183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pgvector",
+      "url": "https://clawhub.ai/skills/pgvector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pgvector",
+    "url": "https://clawhub.ai/skills/pgvector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pgvector-44f3c8ab3bb645ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pgvector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pgvector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1619e5a79b6e22fbbcdf717150fb4a5852ca7d01d11c1d1f2970860b2b50310",
+      "artifactSizeBytes": 2533
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T01:51:21.294Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20928,
+  "uuid": "skill-clawhub-stm32-cubemx",
+  "skillKey": "clawhub-stm32-cubemx",
+  "name": "STM32 CubeMX",
+  "summary": "STM32CubeMX CLI operations for configuring pins, peripherals, DMA, interrupts, and generating code. Use cases: (1) Add/modify STM32 peripheral configuration...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stm32_cubemx",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aidankong",
+      "features": [
+        "STM32CubeMX CLI operations for configuring pins, peripherals, DMA, interrupts, and generating c.",
+        "Use cases: (1) Add/modify STM32 peripheral configuration..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stm32-cubemx@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52355735?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stm32-cubemx",
+      "url": "https://clawhub.ai/skills/stm32-cubemx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stm32-cubemx",
+    "url": "https://clawhub.ai/skills/stm32-cubemx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stm32-cubemx-55f2ceec24ed9782.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stm32-cubemx@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-stm32-cubemx-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:966456e98986c16709bed939ec1b8af54d98bf8e2a614d154ef0302d5ceac653",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T02:09:29.697Z"
+}

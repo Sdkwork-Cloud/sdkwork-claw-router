@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowledge-connector@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_connector",
+  "skill": {
+    "id": 17208,
+    "skillKey": "clawhub-knowledge-connector",
+    "name": "Knowledge Connector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-connector",
+    "url": "https://clawhub.ai/skills/knowledge-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-connector-62201bb2500d7ad7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn scattered notes and documents into an actionable knowledge graph. Use when the user wants an import wizard, cross-document answers, relationship maps, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 734,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774954140090,
+      "changelog": "Added an import wizard and answer-style cross-document results to make Knowledge Connector easier to onboard and more actionable.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94b2ca5212826b1e892d5802b17e7394b0498a9911089e7af40b5f2f9f7abb2a"
+}

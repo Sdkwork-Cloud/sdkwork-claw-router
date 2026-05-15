@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8966,
+  "uuid": "skill-clawhub-polymarket-weather-trader",
+  "skillKey": "clawhub-polymarket-weather-trader",
+  "name": "Polymarket Weather Trader",
+  "summary": "Trade Polymarket weather markets using NOAA (US) and Open-Meteo (international) forecasts via Simmer API. Inspired by gopfan2's weather trading approach. Use...",
+  "version": "1.21.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_weather_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AD88",
+      "features": [
+        "Trade Polymarket weather markets using NOAA (US) and Open-Meteo (international) forecasts via S.",
+        "Inspired by gopfan2's weather trading approach"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-weather-trader@1.21.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6263940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-weather-trader",
+      "url": "https://clawhub.ai/skills/polymarket-weather-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-weather-trader",
+    "url": "https://clawhub.ai/skills/polymarket-weather-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-weather-trader-ebaf3a0600ce0c95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-weather-trader@1.21.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-weather-trader-1.21.0.json",
+      "version": "1.21.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9431c21b67c8dcff339eb5c10ee9701ced902e560701a7e39db6ad6467de1564",
+      "artifactSizeBytes": 2727
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T07:01:30.103Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63982,
+  "uuid": "skill-clawhub-easy-openclaw",
+  "skillKey": "clawhub-easy-openclaw",
+  "name": "easy-openclaw",
+  "summary": "OpenClaw 配置优化向导。采用“第 0 层测试观测（可选）+ 前 3 轮优化 + 第 4 轮接入扩展”流程：基础推荐层（含联网搜索与权限模式）、渠道增强层（Discord/Feishu/Telegram 分支优化）、Skills 推荐层（可执行可跳过）、新增渠道接入引导（可跳过）。用于帮助用户快速完成 Op...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easy_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "人工大黑",
+      "features": [
+        "OpenClaw 配置优化向导。采用“第 0 层测试观测（可选）+ 前 3 轮优化 + 第 4 轮接入扩展”流程：基础推荐层（含联网搜索与权限模式）、渠道增强层（Discord/Feishu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/easy-openclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19701090?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "easy-openclaw",
+      "url": "https://clawhub.ai/skills/easy-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easy-openclaw",
+    "url": "https://clawhub.ai/skills/easy-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easy-openclaw-0454eb4e2c12bfc6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/easy-openclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-easy-openclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cb26bb5801d87618aba8320ec0301882d44775acdbed601e9a247497ad94810",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T13:06:32.479Z"
+}

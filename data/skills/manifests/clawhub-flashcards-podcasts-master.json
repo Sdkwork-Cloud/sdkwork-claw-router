@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12824,
+  "uuid": "skill-clawhub-flashcards-podcasts-master",
+  "skillKey": "clawhub-flashcards-podcasts-master",
+  "name": "Ultimate Flashcards / Podcasts Tutor",
+  "summary": "Manage flashcards, generate AI-based cards, create audio podcasts, and track study progress using EchoDecks API integration.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flashcards_podcasts_master",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "drgeld",
+      "features": [
+        "Manage flashcards, generate AI-based cards, create audio podcasts, and track study progress usi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flashcards-podcasts-master@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98776673?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flashcards-podcasts-master",
+      "url": "https://clawhub.ai/skills/flashcards-podcasts-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flashcards-podcasts-master",
+    "url": "https://clawhub.ai/skills/flashcards-podcasts-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flashcards-podcasts-master-bfaf9d1521389013.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flashcards-podcasts-master@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flashcards-podcasts-master-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3c6b9d8e7baa5a06525da2f54c07daec0b0facdb3796acda3d806055391ff9e",
+      "artifactSizeBytes": 2156
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T20:52:17.997Z"
+}

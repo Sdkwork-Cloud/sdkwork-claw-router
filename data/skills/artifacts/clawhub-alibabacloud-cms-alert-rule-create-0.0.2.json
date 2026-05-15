@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-cms-alert-rule-create@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_cms_alert_rule_create",
+  "skill": {
+    "id": 41085,
+    "skillKey": "clawhub-alibabacloud-cms-alert-rule-create",
+    "name": "Alibabacloud Cms Alert Rule Create"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-cms-alert-rule-create",
+    "url": "https://clawhub.ai/skills/alibabacloud-cms-alert-rule-create",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-cms-alert-rule-create-51ab9c1d3951c6d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and query Alibaba Cloud alert rules via CLI. Supports CMS 1.0 cloud resource monitoring (ECS, RDS, SLB, etc.) and CMS 2.0 advanced monitoring (Prometh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1777432575570,
+      "changelog": "- Major update: Adds cross-version alert management with workflow auto-selection.\n- Introduces CMS 2.0 (Prometheus, APM, UModel) alert rule create/query workflows alongside existing CMS 1.0.\n- Implements intent routing to select correct workflow and APIs based on monitoring target.\n- Adds extensive rules for CMS 2.0 parameter collection, mandatory user confirmation, and API usage.\n- Expands reference documentation: new files for CMS 2.0 workflows, Prometheus/APM/UModel metrics, and cross-version examples.\n- Institutes strict CLI setup and user-agent handling; network access and CLI command usage rules strengthened.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e55e17fdd9d026ade198d444910dedf1c9f47b8011efae8ea14685d0f201f218"
+}

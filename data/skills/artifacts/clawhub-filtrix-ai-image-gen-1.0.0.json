@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/filtrix-ai-image-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.filtrix_ai_image_gen",
+  "skill": {
+    "id": 19846,
+    "skillKey": "clawhub-filtrix-ai-image-gen",
+    "name": "Filtrix AI Image Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "filtrix-ai-image-gen",
+    "url": "https://clawhub.ai/skills/filtrix-ai-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/filtrix-ai-image-gen-145d8360c1ad4920.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images using AI providers (OpenAI gpt-image-1, Google Gemini, fal.ai). Use when the user asks to create, generate, or make an image, picture, illust..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lumenclaw-cloud",
+      "userId": "publishers:lumenclaw-cloud",
+      "displayName": "lumenclaw-cloud",
+      "image": "https://avatars.githubusercontent.com/u/260919617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 577,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771921288496,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:054b48f4ee91500f10ab1e6ee6bc42c27bd8e5c3c2102660e815a43a7d93fbc6"
+}

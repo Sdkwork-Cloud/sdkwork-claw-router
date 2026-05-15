@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dragon-xiaohongshu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dragon_xiaohongshu",
+  "skill": {
+    "id": 73575,
+    "skillKey": "clawhub-dragon-xiaohongshu",
+    "name": "小红书发布"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dragon-xiaohongshu",
+    "url": "https://clawhub.ai/skills/dragon-xiaohongshu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dragon-xiaohongshu-e587638c2bbd654f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动发布内容到小红书平台。支持发布图文、检查登录状态、获取登录二维码。使用场景：自动化小红书内容发布、批量发布、定时发布等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dragon015",
+      "userId": "s175zzb45wmdd31bgsvsjhv0sh83gjrf",
+      "displayName": "dragon015",
+      "image": "https://avatars.githubusercontent.com/u/43516666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 532,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772352573647,
+      "changelog": "初始版本",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:243abeeb35cdccffb24ad7c6506dd392df68bfcba0d9788bd67a2c2d5b3e0ab0"
+}

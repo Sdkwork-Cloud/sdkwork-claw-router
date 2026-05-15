@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24586,
+  "uuid": "skill-clawhub-auto-sec-blogger-repo",
+  "skillKey": "clawhub-auto-sec-blogger-repo",
+  "name": "Auto Sec Blogger Repo",
+  "summary": "Collects security news from multiple sources, generates expert-level blog posts with GLM-4.7, publishes drafts to Notion, and auto-deploys approved posts to...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_sec_blogger_repo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rebugui",
+      "features": [
+        "Collects security news from multiple sources, generates expert-level blog posts with GLM-4.7, p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-sec-blogger-repo@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51498462?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-sec-blogger-repo",
+      "url": "https://clawhub.ai/skills/auto-sec-blogger-repo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-sec-blogger-repo",
+    "url": "https://clawhub.ai/skills/auto-sec-blogger-repo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-sec-blogger-repo-1a66d85b28e44d14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-sec-blogger-repo@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-sec-blogger-repo-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c179cb9877050c409d67e8094b98307b5f94e01615b352d2f393687492b68c35",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T07:39:40.170Z"
+}

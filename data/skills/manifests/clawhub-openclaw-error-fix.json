@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61106,
+  "uuid": "skill-clawhub-openclaw-error-fix",
+  "skillKey": "clawhub-openclaw-error-fix",
+  "name": "Openclaw Error Fix",
+  "summary": "OpenClaw 常见错误修复 - 解决安装/配置/运行问题。适合：遇到错误的用户。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_error_fix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang1002378395-cmyk",
+      "features": [
+        "OpenClaw 常见错误修复",
+        "解决安装/配置/运行问题。适合：遇到错误的用户。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-error-fix@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261632147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-error-fix",
+      "url": "https://clawhub.ai/skills/openclaw-error-fix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-error-fix",
+    "url": "https://clawhub.ai/skills/openclaw-error-fix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-error-fix-d59a3916fb97916c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-error-fix@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-error-fix-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed9770c1efad1afec1389eda3aef638f109b1c91a4dc4043acbcfcda72bf6b69",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:49:44.633Z"
+}

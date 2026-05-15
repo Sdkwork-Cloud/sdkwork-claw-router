@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29180,
+  "uuid": "skill-clawhub-claude-legal-skill",
+  "skillKey": "clawhub-claude-legal-skill",
+  "name": "Claude Legal Skill",
+  "summary": "Review legal contracts, NDAs, employment agreements, SaaS terms, and M&A documents. Identifies unfavorable terms, suggests redlines, and compares to market s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_legal_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LAU SII LUN",
+      "features": [
+        "Review legal contracts, NDAs, employment agreements, SaaS terms, and M&A documents",
+        "Identifies unfavorable terms, suggests redlines, and compares to market s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-legal-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266634203?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-legal-skill",
+      "url": "https://clawhub.ai/skills/claude-legal-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-legal-skill",
+    "url": "https://clawhub.ai/skills/claude-legal-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-legal-skill-b862d76bd04358b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-legal-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-legal-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:694d65731d91e37074778390c541a2bd1e070118abbd464f36c07cea1f840f32",
+      "artifactSizeBytes": 2677
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T19:27:54.392Z"
+}

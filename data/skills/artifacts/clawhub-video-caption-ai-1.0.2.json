@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-caption-ai@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_caption_ai",
+  "skill": {
+    "id": 31365,
+    "skillKey": "clawhub-video-caption-ai",
+    "name": "Video Caption Ai Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-caption-ai",
+    "url": "https://clawhub.ai/skills/video-caption-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-caption-ai-39d0d3c8a6403534.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Video Caption AI is an AI subtitle and video caption tool for creators who want readable, native-feeling text overlays that improve watch time. It helps gene..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imwyvern",
+      "userId": "s17as2pe33fqm26ag8dqnwe0gx83gd3q",
+      "displayName": "wes",
+      "image": "https://avatars.githubusercontent.com/u/1765672?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774896802554,
+      "changelog": "- Added a frontmatter section with name and description to SKILL.md for improved metadata and clarity.\n- Description now includes multilingual summary and extra keywords (视频字幕、自动字幕、短视频 caption、文字覆盖).\n- No changes to core functionality or usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95761b110a8291bc73ac5dbe27a8c8dfc0319fcef9c137c1578ec5b3596ba38d"
+}

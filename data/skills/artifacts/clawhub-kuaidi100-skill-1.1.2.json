@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kuaidi100-skill@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kuaidi100_skill",
+  "skill": {
+    "id": 64610,
+    "skillKey": "clawhub-kuaidi100-skill",
+    "name": "kuaidi100-skill-快递100物流查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kuaidi100-skill",
+    "url": "https://clawhub.ai/skills/kuaidi100-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kuaidi100-skill-1580af40014e5741.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "快递100 API 技能，用于查询快递物流相关信息。当用户提到快递单号、物流轨迹、查快递、运费估算、预计到达时间、识别快递公司等需求时，必须使用此技能。支持：查询物流轨迹（query_trace）、识别快递公司（auto_number）、估算运费（estimate_price）、预估寄件送达时间（estimate..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kuaidi100-api",
+      "userId": "s176hpvvhhyy3p59gtz9d5sw7x83kd5g",
+      "displayName": "快递100API",
+      "image": "https://avatars.githubusercontent.com/u/68226294?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 584,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1777342772750,
+      "changelog": "update: displayname更新",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c62debd4d43616a542964e72cb84c37e318c430dcc72a4eb310ef69c6cb2990"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41271,
+  "uuid": "skill-clawhub-bookforge-transaction-isolation-selector",
+  "skillKey": "clawhub-bookforge-transaction-isolation-selector",
+  "name": "Transaction Isolation Selector",
+  "summary": "Choose the correct transaction isolation level and serializability implementation for an application's concurrency patterns. Use when: selecting an isolation...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_transaction_isolation_selector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hung Quoc To",
+      "features": [
+        "Choose the correct transaction isolation level and serializability implementation for an applic.",
+        "Use when: selecting an isolation..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bookforge-transaction-isolation-selector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88069966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bookforge-transaction-isolation-selector",
+      "url": "https://clawhub.ai/skills/bookforge-transaction-isolation-selector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-transaction-isolation-selector",
+    "url": "https://clawhub.ai/skills/bookforge-transaction-isolation-selector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-transaction-isolation-selector-70daf7af82d74db6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bookforge-transaction-isolation-selector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bookforge-transaction-isolation-selector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:036e4dda2b2734f01753ed00f439571bea66a40cdd434e310b4e8b200e2b0e20",
+      "artifactSizeBytes": 2718
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T17:14:38.779Z"
+}

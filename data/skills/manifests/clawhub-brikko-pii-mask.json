@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66957,
+  "uuid": "skill-clawhub-brikko-pii-mask",
+  "skillKey": "clawhub-brikko-pii-mask",
+  "name": "Brikko PII Mask",
+  "summary": "Маскирует персональные данные (ФИО, ИНН, СНИЛС, ОГРН, ОГРНИП, паспорт, телефон, email, банковский счёт) в тексте перед отправкой в LLM, и восстанавливает пле...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brikko_pii_mask",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bbchrt",
+      "features": [
+        "Маскирует персональные данные (ФИО, ИНН, СНИЛС, ОГРН, ОГРНИП, паспорт, телефон, email, банковск."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brikko-pii-mask@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/174191378?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brikko-pii-mask",
+      "url": "https://clawhub.ai/skills/brikko-pii-mask"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brikko-pii-mask",
+    "url": "https://clawhub.ai/skills/brikko-pii-mask",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brikko-pii-mask-28387105ca40923c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brikko-pii-mask@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brikko-pii-mask-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee9e36656b9646aed30f4bb535432118aafa2f5f8779c604124d4614cdce2707",
+      "artifactSizeBytes": 2171
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T17:58:51.467Z"
+}

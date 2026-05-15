@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32383,
+  "uuid": "skill-clawhub-speech-transcribe",
+  "skillKey": "clawhub-speech-transcribe",
+  "name": "Speech-to-text, 3x faster than Whisper, remote FREE GPU",
+  "summary": "3x Faster than Whisper, Speech-to-text transcription with sentence-level timestamps on remote (FREE) L4 GPU. Trigger when user says: transcribe, speech to te...",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.speech_transcribe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "speech2srt",
+      "features": [
+        "3x Faster than Whisper, Speech-to-text transcription with sentence-level timestamps on remote (.",
+        "Trigger when user says: transcribe, speech to te..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/speech-transcribe@1.3.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/speech-transcribe/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "speech-transcribe",
+      "url": "https://clawhub.ai/skills/speech-transcribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "speech-transcribe",
+    "url": "https://clawhub.ai/skills/speech-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/speech-transcribe-4ebe61170d0a4d54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/speech-transcribe@1.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-speech-transcribe-1.3.1.json",
+      "version": "1.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c1c356a58f72a14f685b20bc197d9d4fee2a3c53e5f47c300a6786770197dca",
+      "artifactSizeBytes": 2093
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T18:49:32.682Z"
+}

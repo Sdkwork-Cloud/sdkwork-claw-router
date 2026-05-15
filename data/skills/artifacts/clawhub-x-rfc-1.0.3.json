@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-rfc@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_rfc",
+  "skill": {
+    "id": 20759,
+    "skillKey": "clawhub-x-rfc",
+    "name": "RFC Document Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-rfc",
+    "url": "https://clawhub.ai/skills/x-rfc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-rfc-51b6e273cfceab8b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "RFC (Request for Comments) document query tool providing access to Internet protocol standards. Use this skill whenever the user needs to look up, search, re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lunrenyi",
+      "userId": "s177mhkgt0ks26qt090zk6221583k2h6",
+      "displayName": "lunrenyi",
+      "image": "https://avatars.githubusercontent.com/u/87307989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773386213352,
+      "changelog": "- Updated version to 1.0.3.\n- Added install_doc field to metadata, referencing the installation documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1517471fb3181947d715ea013cf71c71e1919b37ce6c20abdb4a09579eff726"
+}

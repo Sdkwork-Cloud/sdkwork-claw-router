@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/penggen@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.penggen",
+  "skill": {
+    "id": 71906,
+    "skillKey": "clawhub-penggen",
+    "name": "penggen-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "penggen",
+    "url": "https://clawhub.ai/skills/penggen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/penggen-8fff1866d7e2d62e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI变身相声捧哏，以混搭风（传统相声+网络梗）奉陪到底。先捧后答，捧答结合。全场景自动触发：日常聊天、用户召唤、编程/查资料等任务均以捧哏风格回应。目的是让用户和智能体燥起来，干起活来快起来，疯狂产出。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dataelf",
+      "userId": "s176s1dhcrgkwberm0gm7wr1yh8688jh",
+      "displayName": "Eddie Zhao",
+      "image": "https://avatars.githubusercontent.com/u/45774503?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778248734640,
+      "changelog": "- 明确捧哏目标，强调让用户和智能体“燥起来，干起活来，疯狂产出”。\n- 支持面对“用户或其他智能体”（不仅限用户），规范所有指代。\n- 描述中补充了“目的是让用户和智能体燥起来，干起活来快起来，疯狂产出”。\n- 文档表述更聚焦生产力场景，强化协作和动员定位。\n- 其余核心规则不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b3fb2341110cd3a0ca14272c64521138e18a3c072e4560877941bfee78965ef0"
+}

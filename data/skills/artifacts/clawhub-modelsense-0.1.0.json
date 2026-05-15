@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/modelsense@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modelsense",
+  "skill": {
+    "id": 51233,
+    "skillKey": "clawhub-modelsense",
+    "name": "Modelsense"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modelsense",
+    "url": "https://clawhub.ai/skills/modelsense",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modelsense-df63f4b94f3333c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ModelSense — The right model for the right job. Recommends the best LLM model and effort level for any task, based on benchmark data, task analysis, and the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xinbenlv",
+      "userId": "publishers:xinbenlv",
+      "displayName": "xinbenlv",
+      "image": "https://avatars.githubusercontent.com/u/640325?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 364,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772817664319,
+      "changelog": "- Initial release of ModelSense: an on-demand advisor to recommend the best LLM model and effort level for any user task.\n- Offers clear recommendations grounded in benchmark data, user task analysis, and available providers.\n- Provides rationale, cost estimates, and alternative options for different effort or quality needs.\n- Supports advisory mode, auto-switching session models, and on-demand task delegation.\n- Designed for interactive use when users need help choosing between models or understanding benchmark implications.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:18038be33f480ee195cd99c952fa32c79950af76e9d4f72cd715bc9800822da8"
+}

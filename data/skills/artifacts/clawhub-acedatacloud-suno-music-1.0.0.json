@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acedatacloud-suno-music@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acedatacloud_suno_music",
+  "skill": {
+    "id": 36314,
+    "skillKey": "clawhub-acedatacloud-suno-music",
+    "name": "Suno Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acedatacloud-suno-music",
+    "url": "https://clawhub.ai/skills/acedatacloud-suno-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acedatacloud-suno-music-c369179590af2424.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI music with Suno via AceDataCloud API. Use when creating songs from text prompts, generating lyrics, extending tracks, creating covers, extracting..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "germey",
+      "userId": "publishers:germey",
+      "displayName": "Germey",
+      "image": "https://avatars.githubusercontent.com/u/8678661?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774150614939,
+      "changelog": "Initial release of the Suno Music Generation skill via AceDataCloud.\n\n- Generate AI music from text prompts with support for lyrics, styles, and custom personas.\n- Multi-format output: MP3, WAV, MIDI, and MP4, including vocal separation.\n- Supports specialized workflows: custom generation, song extension, covers/remixes, and multi-step lyric/style optimization.\n- Includes auxiliary endpoints for lyric generation, style optimization, audio uploads, and stem extraction.\n- All generation tasks are asynchronous; supports both task polling and synchronous (\"wait\": true) operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6cdd12d4f2f09276be0144f725e209c61c4c51d6bc6f9c9eca3d051b9763c2d5"
+}

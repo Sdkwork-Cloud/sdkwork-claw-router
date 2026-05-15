@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62281,
+  "uuid": "skill-clawhub-openclaw-security-skill",
+  "skillKey": "clawhub-openclaw-security-skill",
+  "name": "OpenClaw Security Configurator",
+  "summary": "为OpenClaw提供企业级安全配置和监控功能，解决高系统权限带来的安全风险，符合金融合规要求。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_security_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2389275723",
+      "features": [
+        "为OpenClaw提供企业级安全配置和监控功能，解决高系统权限带来的安全风险，符合金融合规要求。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-security-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248118636?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-security-skill",
+      "url": "https://clawhub.ai/skills/openclaw-security-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-security-skill",
+    "url": "https://clawhub.ai/skills/openclaw-security-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-security-skill-153dee98714f29b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-security-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-security-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9fc439c54209dfc19d1293783f7709266cd01817ddf7f4a06a2b5a7797f7677",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T05:10:46.866Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/haohuo-recommend@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.haohuo_recommend",
+  "skill": {
+    "id": 70644,
+    "skillKey": "clawhub-haohuo-recommend",
+    "name": "电商导购助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "haohuo-recommend",
+    "url": "https://clawhub.ai/skills/haohuo-recommend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/haohuo-recommend-5b400ff0c0f73908.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "电商导购助手，以对话方式为终端买家提供商品推荐、价格查询、优惠提醒、购物建议。基于 haohuo-cps 获取实时商品数据，链接默认为 CPS 推广链接（推广者可赚取佣金）。适合 CPS 推广者接入到自己的 APP 或购物群，作为买家侧的导购入口"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zachariah-77",
+      "userId": "s175kv6sy0d4byjxzjg9fjjces83j8gf",
+      "displayName": "zachariah-77",
+      "image": "https://avatars.githubusercontent.com/u/228875721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776428545806,
+      "changelog": "Initial release of haohuo-recommend as a user-facing shopping assistant built on haohuo-cps:\n\n- Skill renamed to \"haohuo-recommend\" and repositioned for end-buyer shopping guidance (not CPS promoters).\n- Relies on haohuo-cps for all product data, with clear buyer-focused conversational formatting.\n- Removed internal scripts (no direct data fetching); presentation, filtering, and reply style revised for retail buyers.\n- Strict filtering: omits CPS terms and commission info from buyer replies, provides only relevant product, price, and offer details.\n- Detailed best-practices for how and when to call haohuo-cps, reply structure, and filtering/summarization of results.\n- Added instructions for CPS promoters on deployment and integration (not shown to end-users).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:292fd99d045efd7461241cd1158c11534fcc6334e4c497ed0d2897f0dcffd986"
+}

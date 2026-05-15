@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71946,
+  "uuid": "skill-clawhub-tianchuang-finance-kb",
+  "skillKey": "clawhub-tianchuang-finance-kb",
+  "name": "myskill",
+  "summary": "提供天创财务相关文档的严格逐字检索，返回精准原文或“无”，不做解释和修改，仅限中文内容。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianchuang_finance_kb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jizhidemu52",
+      "features": [
+        "提供天创财务相关文档的严格逐字检索，返回精准原文或“无”，不做解释和修改，仅限中文内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tianchuang-finance-kb@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121356503?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tianchuang-finance-kb",
+      "url": "https://clawhub.ai/skills/tianchuang-finance-kb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianchuang-finance-kb",
+    "url": "https://clawhub.ai/skills/tianchuang-finance-kb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianchuang-finance-kb-abf44b6913465090.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tianchuang-finance-kb@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tianchuang-finance-kb-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fb285049ea8afab35f64d5922e7af0ee45604d7a70c3ecb25744d600116cb4e",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:09:46.900Z"
+}

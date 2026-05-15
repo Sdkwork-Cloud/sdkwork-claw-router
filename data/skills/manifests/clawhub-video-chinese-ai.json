@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48224,
+  "uuid": "skill-clawhub-video-chinese-ai",
+  "skillKey": "clawhub-video-chinese-ai",
+  "name": "Video Chinese Ai",
+  "summary": "Get Chinese-captioned videos ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_chinese_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linmillsd7",
+      "features": [
+        "Get Chinese-captioned videos ready to post, without touching a single slider",
+        "Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-chinese-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208832666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-chinese-ai",
+      "url": "https://clawhub.ai/skills/video-chinese-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-chinese-ai",
+    "url": "https://clawhub.ai/skills/video-chinese-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-chinese-ai-fe68b15604e5688b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-chinese-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-chinese-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0dc27c1e05dfaa9f76aeddd289d8a28f8ff9890010e1676f1f9d0b33c916c51",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T16:56:17.759Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52305,
+  "uuid": "skill-clawhub-geoinfer-image-geolocation",
+  "skillKey": "clawhub-geoinfer-image-geolocation",
+  "name": "GeoInfer Image Geolocation",
+  "summary": "AI image geolocation via visual analysis — no GPS or EXIF needed. Requires GEOINFER_API_KEY.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geoinfer_image_geolocation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samtin0x",
+      "features": [
+        "AI image geolocation via visual analysis — no GPS or EXIF needed",
+        "Requires GEOINFER_API_KEY."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/geoinfer-image-geolocation@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40127309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "geoinfer-image-geolocation",
+      "url": "https://clawhub.ai/skills/geoinfer-image-geolocation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geoinfer-image-geolocation",
+    "url": "https://clawhub.ai/skills/geoinfer-image-geolocation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geoinfer-image-geolocation-c112015d7d657e54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/geoinfer-image-geolocation@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-geoinfer-image-geolocation-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96b2c8ed13249898111f2dc9c9947c985365ec91f80eb446b744fe86f9f3e3cd",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T18:23:20.900Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49194,
+  "uuid": "skill-clawhub-mlops-experiment-tracker",
+  "skillKey": "clawhub-mlops-experiment-tracker",
+  "name": "Mlops Experiment Tracker",
+  "summary": "Track and compare ML experiments across MLflow, Weights & Biases, or local logs. Organizes runs, compares metrics, identifies best models, detects training a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mlops_experiment_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Track and compare ML experiments across MLflow, Weights & Biases, or local logs",
+        "Organizes runs, compares metrics, identifies best models, detects training a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mlops-experiment-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mlops-experiment-tracker",
+      "url": "https://clawhub.ai/skills/mlops-experiment-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mlops-experiment-tracker",
+    "url": "https://clawhub.ai/skills/mlops-experiment-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mlops-experiment-tracker-1a66f69ea5965fa0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mlops-experiment-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mlops-experiment-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7236e0ba653d27647362024d85a81c379feae1d83f9807175b906f01709e753c",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T07:42:06.170Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rollinggo-hotel-cn@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rollinggo_hotel_cn",
+  "skill": {
+    "id": 65893,
+    "skillKey": "clawhub-rollinggo-hotel-cn",
+    "name": "rollinggo-hotel-cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rollinggo-hotel-cn",
+    "url": "https://clawhub.ai/skills/rollinggo-hotel-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rollinggo-hotel-cn-78f3bfcab207d8ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 RollingGo CLI 查询酒店信息、筛选结果、读取酒店标签和获取房型价格。当用户需要按目的地 / 日期 / 星级 / 预算 / 标签 / 距离搜索酒店、查看酒店详情与房型报价，或读取酒店标签库时触发本技能。触发短语——\"搜索酒店\"、\"查酒店\"、\"酒店详情\"、\"房型价格\"、\"酒店标签\"、\"附近酒店\"、\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dreamtzlong",
+      "userId": "s1778zncyn3j956nag4kfqw3cs83grbr",
+      "displayName": "dreamtzlong",
+      "image": "https://avatars.githubusercontent.com/u/232517634?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 410,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776766531734,
+      "changelog": "- Added new reference file: references/claw-host-env.md\n- Updated metadata: included skillKey and revised installation instructions to use rollinggo@latest\n- Clarified environment loading and API Key configuration with reference to the new document\n- Simplified and reorganized section on environment selection and persistent configuration\n- Updated uvx and npm version upgrade instructions for clarity and consistency",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b0870938e158301252ae63790f280fdeac43b1d6cbf29995567977d09f0abbb"
+}

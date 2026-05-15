@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45195,
+  "uuid": "skill-clawhub-ic-trade-skills",
+  "skillKey": "clawhub-ic-trade-skills",
+  "name": "chip-trade-skills",
+  "summary": "Connects local ERP inventory with IC Trade Navigator API for real-time IC pricing, risk scores, and trade advice without exposing your financial data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ic_trade_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jayictw",
+      "features": [
+        "Connects local ERP inventory with IC Trade Navigator API for real-time IC pricing, risk scores,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ic-trade-skills@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/ic-trade-skills/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ic-trade-skills",
+      "url": "https://clawhub.ai/skills/ic-trade-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ic-trade-skills",
+    "url": "https://clawhub.ai/skills/ic-trade-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ic-trade-skills-02db729be4ecc324.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ic-trade-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ic-trade-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07c3d031d48458219b6773b151c79f88e1ad27c00d72289e3969da8d39a01be4",
+      "artifactSizeBytes": 2541
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T14:42:20.769Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-for-beginners-pdf@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_for_beginners_pdf",
+  "skill": {
+    "id": 48983,
+    "skillKey": "clawhub-video-editing-for-beginners-pdf",
+    "name": "Video Editing For Beginners Pdf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-for-beginners-pdf",
+    "url": "https://clawhub.ai/skills/video-editing-for-beginners-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-for-beginners-pdf-e95461e6ed393072.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited beginner videos ready to post, without touching a single slider. Upload your raw video clips (MP4, MOV, AVI, WebM, up to 500MB), say something lik..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777590943399,
+      "changelog": "Video Editing for Beginners — Initial Release\n\n- Launches simple, step-by-step cloud-based video editing aimed at beginners and students.\n- Supports uploading raw video clips (MP4, MOV, AVI, WebM, up to 500MB) for easy editing and export to 1080p MP4.\n- Allows users to request editing actions (e.g. trim, transitions, text overlays) using natural language prompts.\n- Handles authentication, session management, upload, editing, export, and credits via clear API workflows.\n- Includes beginner-focused UX guidance and fast cloud rendering (export jobs typically complete in 1–2 minutes for short clips).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5de70326f9193afed79a670b9f634b622203e4a615d434829d063c39f914a17"
+}

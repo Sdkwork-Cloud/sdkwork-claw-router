@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/terry-camsnap@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.terry_camsnap",
+  "skill": {
+    "id": 49416,
+    "skillKey": "clawhub-terry-camsnap",
+    "name": "terry-camsnap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "terry-camsnap",
+    "url": "https://clawhub.ai/skills/terry-camsnap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/terry-camsnap-62884d010c21b8fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Take camera snapshots and save them to disk. Use when the user asks to take a photo, capture an image from webcam, or take a snapshot."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 80,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777867385286,
+      "changelog": "v1.0.0: Fix code-review findings — add path-traversal guard, warm-up frames for exposure, resource-leak protection (finally), imwrite return check, logging instead of print, type annotations; rename skill.md to SKILL.md per ClawHub spec; update skill docs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6bf86035aea34c74a7db973ad480d18773e08da9625edc108e49f9b7957710f"
+}

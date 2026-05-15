@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linear-todos@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linear_todos",
+  "skill": {
+    "id": 15967,
+    "skillKey": "clawhub-linear-todos",
+    "name": "Linear Todos"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linear-todos",
+    "url": "https://clawhub.ai/skills/linear-todos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linear-todos-befbc2cd490586bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A CLI tool that executes Python source code to manage todos via Linear's API. Creates tasks with natural language dates, priorities, and scheduling. This is..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "avegancafe",
+      "userId": "publishers:avegancafe",
+      "displayName": "Kyle Holzinger",
+      "image": "https://avatars.githubusercontent.com/u/2652762?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 935,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771447627201,
+      "changelog": "Auto-detect timezone from OpenClaw USER.md",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f0e13b88350cd2c5116761370dd8b4d7f53ccaa206c742b49e05e376a724bb1c"
+}

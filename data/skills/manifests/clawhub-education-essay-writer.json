@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68419,
+  "uuid": "skill-clawhub-education-essay-writer",
+  "skillKey": "clawhub-education-essay-writer",
+  "name": "教育征文写作助手",
+  "summary": "金牛区教育学会\"人工智能+教育\"主题征文写作专用助手。 参考 awesome-ai-research-writing 的双重角色 Prompt 框架（生成者+审核者）， 专为教育实践类征文设计，支持初稿生成、质量评审、迭代改进。 触发词：写征文、起草征文、帮我写作文、教育征文、征文评审、润色征文。 适用：成都市金...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.education_essay_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joe-rq",
+      "features": [
+        "金牛区教育学会\"人工智能+教育\"主题征文写作专用助手。 参考 awesome-ai-research-writing 的双重角色 Prompt 框架（生成者+审核者）， 专为教育实践类征文设."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/education-essay-writer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77777313?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "education-essay-writer",
+      "url": "https://clawhub.ai/skills/education-essay-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "education-essay-writer",
+    "url": "https://clawhub.ai/skills/education-essay-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/education-essay-writer-0a479795913b2f38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/education-essay-writer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-education-essay-writer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d59f0405a40f398a5862af43119979275985d6598d5b1277896c709d914a5eb",
+      "artifactSizeBytes": 2198
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T07:25:49.230Z"
+}

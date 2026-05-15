@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iot-platform@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iot_platform",
+  "skill": {
+    "id": 24122,
+    "skillKey": "clawhub-iot-platform",
+    "name": "IoT Platform Connection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iot-platform",
+    "url": "https://clawhub.ai/skills/iot-platform",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iot-platform-9d1ef618e3adece9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "[WIP] Guide to connect to Cloud Studio IoT's OpenClaw platform via MCP API. Use when configuring MCP server connections, sending commands to IoT devices, rea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sobdev",
+      "userId": "s174zd76t1k4rgsmdmrz5cmp2x83gvxp",
+      "displayName": "Sobdev",
+      "image": "https://avatars.githubusercontent.com/u/71671270?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 409,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772635588875,
+      "changelog": "- Updated the description and guide to clarify this skill is for connecting to Cloud Studio IoT's OpenClaw-Ready platform via the MCP API.\n- Added references to Cloud Studio IoT and updated branding throughout the documentation.\n- No changes to functionality; documentation improvements and increased clarity for intended use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b0753213b4554d213f352befeb058e5a78e3ed69b4c26ba5a480ab629f7c8e18"
+}

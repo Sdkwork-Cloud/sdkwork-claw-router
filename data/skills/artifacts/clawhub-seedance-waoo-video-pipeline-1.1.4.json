@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedance-waoo-video-pipeline@1.1.4",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_waoo_video_pipeline",
+  "skill": {
+    "id": 59849,
+    "skillKey": "clawhub-seedance-waoo-video-pipeline",
+    "name": "Seedance + Waoo 短视频流水线"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-waoo-video-pipeline",
+    "url": "https://clawhub.ai/skills/seedance-waoo-video-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-waoo-video-pipeline-405ff2acda646034.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动化短视频工作流（story-to-video pipeline）：从剧本/分镜到生成、字幕 ASR、TTS、合并交付，支持 Seedance / Vidu / MiniMax 多厂商路由。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wusyu",
+      "userId": "s17aagdek53pkw9891yjtkatxh83y84m",
+      "displayName": "wusyu",
+      "image": "https://avatars.githubusercontent.com/u/170169388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.4",
+      "createdAt": 1775095091220,
+      "changelog": "**Prompt engineering overlay and testing scripts introduced:**\n\n- Added `scripts/build-seedance-prompt-pack.cjs` for generating prompt packs with structured blocks and quality scoring.\n- Added `scripts/self-test-prompt-pack.cjs` for prompt pack self-testing.\n- Updated workflow documentation: prompt engineering overlay is now built-in; now includes prompt quality scoring, scenario fallback, and usage of the new scripts.\n- New runtime options for prompt mode, style, camera, scenario, auto-fallback, and minimum score.\n- Workflow result outputs now include `promptQuality`, prompt fallback reports, and structured prompt-pack results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57d3076ee1d91f242a984cd56935e0132ee0f02423fe1e37dbf8fe98cb33594f"
+}

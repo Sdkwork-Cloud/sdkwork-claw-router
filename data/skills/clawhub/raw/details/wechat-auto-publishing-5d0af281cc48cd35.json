@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "wechat-auto-publishing",
+    "displayName": "全流程微信公众号自动发文 skill",
+    "summary": "Automate a full local WeChat Official Account publishing workflow: environment setup, content drafting, image prep, publishing, archiving, and optional sched...",
+    "tags": {
+      "2026.4.7": "3.0.0",
+      "latest": "3.0.0",
+      "2026.4.6": "2.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "createdAt": 1775322003068,
+    "updatedAt": 1777527171083
+  },
+  "latestVersion": {
+    "version": "3.0.0",
+    "createdAt": 1775495101486,
+    "changelog": "- Added production-ready orchestrator template: `templates/run.production-example.sh`\n- Updated documentation with key real-world guidance:\n  - Noted that `freepublish` via API does not always match manual backend publishing for homepage visibility\n  - Recommended using draft-only mode in production; full publish mainly for testing\n  - Emphasized validating image files by real format, not just extension\n  - Stressed that multi-account setups should use isolated directories for safety\n- Expanded section on operational boundaries and recommended production practices",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "16miku",
+    "userId": "s17afqafc9cxg79k2at04c4ydd83gnaq",
+    "displayName": "16Miku",
+    "image": "https://avatars.githubusercontent.com/u/196724264?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious",
+      "suspicious.potential_exfiltration"
+    ],
+    "summary": "Detected: suspicious.env_credential_access, suspicious.llm_suspicious, suspicious.potential_exfiltration",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527171083
+  }
+}

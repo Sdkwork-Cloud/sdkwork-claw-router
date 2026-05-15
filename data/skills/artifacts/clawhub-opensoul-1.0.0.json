@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opensoul@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opensoul",
+  "skill": {
+    "id": 10182,
+    "skillKey": "clawhub-opensoul",
+    "name": "OpenSoul - An immutable, private soul for agent Self-reflection, self-improvement and on-chain economic activities."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opensoul",
+    "url": "https://clawhub.ai/skills/opensoul",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opensoul-37bbedd3e316f7a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables AI agents to log immutable, encrypted audit trails on Bitcoin SV for persistent memory, self-reflection, and on-chain economic tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mastergoogler",
+      "userId": "publishers:mastergoogler",
+      "displayName": "MasterGoogler",
+      "image": "https://avatars.githubusercontent.com/u/71019749?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2356,
+      "installsAllTime": 6,
+      "installsCurrent": 3,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769871834754,
+      "changelog": "OpenSoul 1.0.0 initial release\n\n- Introduces an auditable agent identity with transparent structured JSON logging of actions, metrics, and reflections.\n- Supports session-based batching and persistent log storage, with tools for log analysis and self-reflection to optimize behavior.\n- Provides privacy and on-chain logging options via BSV integration (optional with environment variable).\n- Includes setup instructions and example commands for both basic and advanced OpenSoul features.\n- Defines standardized log format and actionable reflection guidelines for session oversight and improvement.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7fe7bf2fdd4b22c13843eff2df48abe659863bb4a5fcac7c6c9cea046048c6e1"
+}

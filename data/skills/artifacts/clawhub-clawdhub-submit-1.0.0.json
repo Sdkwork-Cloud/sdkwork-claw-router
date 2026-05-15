@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdhub-submit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdhub_submit",
+  "skill": {
+    "id": 31384,
+    "skillKey": "clawhub-clawdhub-submit",
+    "name": "Clawdhub Submit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdhub-submit",
+    "url": "https://clawhub.ai/skills/clawdhub-submit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdhub-submit-2c0437e35ebee392.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates ClawdHub skill submission by diagnosing common issues, checking file structure, and guiding users through proper publishing steps."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mahongting",
+      "userId": "publishers:mahongting",
+      "displayName": "mahongting",
+      "image": "https://avatars.githubusercontent.com/u/61448287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773663927820,
+      "changelog": "Clawdhub-submit 1.0.0 – Initial release.\n\n- Provides a guided workflow for submitting skills to ClawdHub.\n- Diagnoses common problems like license acceptance, file structure, and metadata issues.\n- Offers troubleshooting steps and alternative submission methods (web, CLI, GitHub).\n- Explains why PRs are auto-closed and details the correct submission process.\n- Includes detailed checklists, error explanations, and quick references for CLI commands and endpoints.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd927bc3f704f0f22e2b43ff1d034db25b8119f60740bf571b6da17830f854d7"
+}

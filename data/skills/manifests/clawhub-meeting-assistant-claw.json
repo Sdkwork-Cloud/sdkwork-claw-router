@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71749,
+  "uuid": "skill-clawhub-meeting-assistant-claw",
+  "skillKey": "clawhub-meeting-assistant-claw",
+  "name": "全流程会议助理虾",
+  "summary": "全流程会议助理虾。核心职责：录音转写、提炼待办并分发任务。业务价值：结果闭环——直接将待办指派到人的协作软件中，防止烂尾。 激活场景：用户发送会议录音文件（mp3/m4a/opus/wav/flac 等音频格式），要求转写、记纪要、提炼待办、分发任务。 触发关键词：转写录音、会议纪要、会议记录、提炼待办、会议总结...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_assistant_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ricky",
+      "features": [
+        "全流程会议助理虾。核心职责：录音转写、提炼待办并分发任务。业务价值：结果闭环——直接将待办指派到人的协作软件中，防止烂尾。 激活场景：用户发送会议录音文件（mp3/m4a/opus/wav/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-assistant-claw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82147388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-assistant-claw",
+      "url": "https://clawhub.ai/skills/meeting-assistant-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-assistant-claw",
+    "url": "https://clawhub.ai/skills/meeting-assistant-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-assistant-claw-233acf05ce11c085.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-assistant-claw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-assistant-claw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edbf2a0962160cdb0bd982aca64cabd37ccf1a83ee2c8bfbbe1b54b5710f5438",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T06:36:30.218Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53339,
+  "uuid": "skill-clawhub-mercadolibre-mcp",
+  "skillKey": "clawhub-mercadolibre-mcp",
+  "name": "Mercado Libre MCP Server",
+  "summary": "Complete MCP server for Mercado Libre seller operations — products, orders, pricing, stock, questions, ads, reputation, competitor analysis",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mercadolibre_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarcosNahuel",
+      "features": [
+        "Complete MCP server for Mercado Libre seller operations — products, orders, pricing, stock, que."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mercadolibre-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69739045?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mercadolibre-mcp",
+      "url": "https://clawhub.ai/skills/mercadolibre-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mercadolibre-mcp",
+    "url": "https://clawhub.ai/skills/mercadolibre-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mercadolibre-mcp-9e9173b288d45844.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mercadolibre-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mercadolibre-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ac34929cd8c536da565445347b180e1a01a632b93352f774e23634c5f27e9d2",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T19:32:28.998Z"
+}

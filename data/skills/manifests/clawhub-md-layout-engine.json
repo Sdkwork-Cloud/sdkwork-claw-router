@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59861,
+  "uuid": "skill-clawhub-md-layout-engine",
+  "skillKey": "clawhub-md-layout-engine",
+  "name": "Convert MD document to HTML",
+  "summary": "将 Markdown 转为多主题 HTML 卡片。主题样式定义在 themes/ 目录下独立文件中，可单独修改。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_layout_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "五四",
+      "features": [
+        "将 Markdown 转为多主题 HTML 卡片。主题样式定义在 themes/ 目录下独立文件中，可单独修改。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/md-layout-engine@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271461114?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "md-layout-engine",
+      "url": "https://clawhub.ai/skills/md-layout-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-layout-engine",
+    "url": "https://clawhub.ai/skills/md-layout-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-layout-engine-da2628c37244d61e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/md-layout-engine@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-md-layout-engine-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89ae468ab732df234a99f7abfe540b5e57080cddc7447f5b4220b7c4fbcd1ed0",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T14:53:07.686Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38083,
+  "uuid": "skill-clawhub-pipeworx-sunrisesunset",
+  "skillKey": "clawhub-pipeworx-sunrisesunset",
+  "name": "Pipeworx sunrisesunset",
+  "summary": "Provides precise sunrise, sunset, dawn, dusk, solar noon, golden hour, and day length times for any location and date worldwide.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_sunrisesunset",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Provides precise sunrise, sunset, dawn, dusk, solar noon, golden hour, and day length times for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-sunrisesunset@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-sunrisesunset",
+      "url": "https://clawhub.ai/skills/pipeworx-sunrisesunset"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-sunrisesunset",
+    "url": "https://clawhub.ai/skills/pipeworx-sunrisesunset",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-sunrisesunset-83c93fd8f586235e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-sunrisesunset@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-sunrisesunset-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f81a973a43967e90a0c0da9109738a5f7d31691d885f28a8a7e9e07e4b741743",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T21:51:02.390Z"
+}

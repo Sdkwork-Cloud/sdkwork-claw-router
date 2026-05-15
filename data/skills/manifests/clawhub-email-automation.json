@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14315,
+  "uuid": "skill-clawhub-email-automation",
+  "skillKey": "clawhub-email-automation",
+  "name": "Email Automation",
+  "summary": "Automate email triage, categorize, draft replies, and auto-archive in Gmail, Outlook, or IMAP to maintain an organized, efficient inbox.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fly3094",
+      "features": [
+        "Automate email triage, categorize, draft replies, and auto-archive in Gmail, Outlook, or IMAP t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-automation@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23025507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-automation",
+      "url": "https://clawhub.ai/skills/email-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-automation",
+    "url": "https://clawhub.ai/skills/email-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-automation-09871b780bee1020.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-automation@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-automation-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49eab21939c94a8c7171efc1ad1edc7c03e296e1c9077848f6ad10f7f53ceb62",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T08:59:17.696Z"
+}

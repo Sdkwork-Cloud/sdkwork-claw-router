@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38599,
+  "uuid": "skill-clawhub-yunlv-compliance-check",
+  "skillKey": "clawhub-yunlv-compliance-check",
+  "name": "Yunlv Compliance Check",
+  "summary": "Use when user needs to check import/export compliance requirements for specific products and countries. Use when verifying product certifications, tariffs, s...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yunlv_compliance_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangM-A3",
+      "features": [
+        "Use when user needs to check import/export compliance requirements for specific products and co.",
+        "Use when verifying product certifications, tariffs, s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yunlv-compliance-check@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274818589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yunlv-compliance-check",
+      "url": "https://clawhub.ai/skills/yunlv-compliance-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yunlv-compliance-check",
+    "url": "https://clawhub.ai/skills/yunlv-compliance-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yunlv-compliance-check-666112244d578035.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yunlv-compliance-check@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yunlv-compliance-check-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:230699fc5ba276bd1fcc6cf390e39ba9ee1123c82d511460478584b95c95c56e",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T23:41:00.828Z"
+}

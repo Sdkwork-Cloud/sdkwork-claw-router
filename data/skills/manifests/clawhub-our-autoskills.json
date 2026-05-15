@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60690,
+  "uuid": "skill-clawhub-our-autoskills",
+  "skillKey": "clawhub-our-autoskills",
+  "name": "AutoSkills CLI",
+  "summary": "AutoSkills - 智能AgentSkills自动检测与安装系统。自动检测项目类型（Web/Python/学术/金融等），推荐并安装对应的AgentSkills。触发词：autoskills、项目类型检测、智能安装。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.our_autoskills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adam",
+      "features": [
+        "AutoSkills",
+        "智能AgentSkills自动检测与安装系统。自动检测项目类型（Web/Python/学术/金融等），推荐并安装对应的AgentSkills。触发词：autoskills、项目类型检测、智能."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/our-autoskills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198090187?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "our-autoskills",
+      "url": "https://clawhub.ai/skills/our-autoskills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "our-autoskills",
+    "url": "https://clawhub.ai/skills/our-autoskills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/our-autoskills-808e7f29587309b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/our-autoskills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-our-autoskills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f951c693fe61b2cef638f8c5ff089f6760b7c991dbd22c7263369bc52dc81a2",
+      "artifactSizeBytes": 2430
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T15:47:33.074Z"
+}

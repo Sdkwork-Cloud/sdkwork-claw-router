@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-review-reveyes@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_review_reveyes",
+  "skill": {
+    "id": 64354,
+    "skillKey": "clawhub-amazon-review-reveyes",
+    "name": "Amazon Review Reveyes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-review-reveyes",
+    "url": "https://clawhub.ai/skills/amazon-review-reveyes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-review-reveyes-f4aa3922f40a2fe2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 Reveyes API 批量抓取亚马逊商品评论，支持 20 个站点。 输出评论列表、星级分布统计和差评摘要。 Use when: 用户提到抓评论、查差评、分析竞品口碑、给出 ASIN 编号需要评论数据。 NOT for: 分析已经抓好的本地评论文件，或查询亚马逊商品价格/销量。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhuojiuya",
+      "userId": "s178fxx7je9747p1x3vcyj33rx83yqvf",
+      "displayName": "zhuojiuya",
+      "image": "https://avatars.githubusercontent.com/u/73979375?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774937261032,
+      "changelog": "Rename to amazon-review-reveyes for better discoverability",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c154346e4bb9fce59b0a3eb7b90037dd37cd252dce379fc763f554efc622ffc"
+}

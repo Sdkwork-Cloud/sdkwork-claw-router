@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/okki-sync-mail@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okki_sync_mail",
+  "skill": {
+    "id": 62756,
+    "skillKey": "clawhub-okki-sync-mail",
+    "name": "Okki Sync Mail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okki-sync-mail",
+    "url": "https://clawhub.ai/skills/okki-sync-mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okki-sync-mail-3cb6a8f42ec7cc4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "完整的邮件自动化解决方案，集成 OKKI CRM。支持 IMAP 邮件自动捕获、SMTP 发送邮件、dry-run 模式、发送日志、速率限制、定时发送、签名模板、邮件规则、连接池优化、邮件转发等功能。自动同步 inbound/outbound 邮件到 OKKI 创建跟进记录（remark_type=102）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cjboy007",
+      "userId": "s17c8f5qp6wpzyxcf0v2588kmd83qzw7",
+      "displayName": "Jaden's built a claw",
+      "image": "https://avatars.githubusercontent.com/u/64246343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774751423839,
+      "changelog": "修复：移除 .env.example 中的敏感信息（邮箱地址和路径），使用占位符",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8079baff967f8b2b652654775a9debc87cc8834e86c3a724bb28e0ea423d56c"
+}

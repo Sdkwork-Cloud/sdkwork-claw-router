@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53197,
+  "uuid": "skill-clawhub-polymarket-mean-reversion-pro",
+  "skillKey": "clawhub-polymarket-mean-reversion-pro",
+  "name": "Polymarket Mean Reversion Pro",
+  "summary": "Generates zero-false mean reversion signals on Polymarket using 4σ price moves with RSI, MACD divergence, ATR compression, and VPIN flow filters.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_mean_reversion_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mike",
+      "features": [
+        "Generates zero-false mean reversion signals on Polymarket using 4σ price moves with RSI, MACD d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-mean-reversion-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5358781?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-mean-reversion-pro",
+      "url": "https://clawhub.ai/skills/polymarket-mean-reversion-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-mean-reversion-pro",
+    "url": "https://clawhub.ai/skills/polymarket-mean-reversion-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-mean-reversion-pro-19b4a310584f821a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-mean-reversion-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-mean-reversion-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d101b79222268c37d3c10e5b59136839f05fc4e8741f4247ee5d22fd813984e8",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T23:20:52.764Z"
+}

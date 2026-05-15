@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71451,
+  "uuid": "skill-clawhub-gold-skill",
+  "skillKey": "clawhub-gold-skill",
+  "name": "gold-analysis",
+  "summary": "黄金投资分析工具，提供实时金价查询、技术指标分析、新闻基本面分析功能。当用户询问黄金价格、黄金走势、黄金投资、黄金分析、黄金新闻、黄金技术分析、黄金支撑位阻力位等相关问题时触发此 Skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gold_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FMouse",
+      "features": [
+        "黄金投资分析工具，提供实时金价查询、技术指标分析、新闻基本面分析功能。当用户询问黄金价格、黄金走势、黄金投资、黄金分析、黄金新闻、黄金技术分析、黄金支撑位阻力位等相关问题时触发此 Skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gold-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36061597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gold-skill",
+      "url": "https://clawhub.ai/skills/gold-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gold-skill",
+    "url": "https://clawhub.ai/skills/gold-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gold-skill-717fc22f76c5b477.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gold-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gold-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:036180770cd29aa70fd2fa9ae02d758384e85829df4799ef2bc244a4379484fa",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:43:36.050Z"
+}

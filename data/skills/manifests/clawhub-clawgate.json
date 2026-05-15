@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32344,
+  "uuid": "skill-clawhub-clawgate",
+  "skillKey": "clawhub-clawgate",
+  "name": "clawgate",
+  "summary": "OpenClaw execution governance skill for approval gates, risk classification, confirmation policy, and action boundaries. Use it to reduce low-risk confirmati...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawgate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "定大大",
+      "features": [
+        "OpenClaw execution governance skill for approval gates, risk classification, confirmation polic.",
+        "Use it to reduce low-risk confirmati..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawgate@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62461980?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawgate",
+      "url": "https://clawhub.ai/skills/clawgate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawgate",
+    "url": "https://clawhub.ai/skills/clawgate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawgate-1ac8ca4c444febcb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawgate@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawgate-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9b696d88aa749db96e852d5c100e016b5e84b42cea33c9668e379bdc298fe69",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T04:20:48.608Z"
+}

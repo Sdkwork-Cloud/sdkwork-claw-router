@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26630,
+  "uuid": "skill-clawhub-bpm-finder",
+  "skillKey": "clawhub-bpm-finder",
+  "name": "bpm finder",
+  "summary": "Use this skill when the user needs BPM finder help inside Codex, including tap tempo estimation, BPM conversion, tempo normalization, lightweight tempo analy...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bpm_finder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wsgtcyx",
+      "features": [
+        "Use this skill when the user needs BPM finder help inside Codex, including tap tempo estimation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bpm-finder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26543766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bpm-finder",
+      "url": "https://clawhub.ai/skills/bpm-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bpm-finder",
+    "url": "https://clawhub.ai/skills/bpm-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bpm-finder-648de749a88f5951.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bpm-finder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bpm-finder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e181e0ba1cd91fde78c3efc83013e2fdbe6928eabf1110d0760c7f4afb76dbf",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T07:41:28.074Z"
+}

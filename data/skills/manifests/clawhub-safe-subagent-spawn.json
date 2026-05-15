@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30656,
+  "uuid": "skill-clawhub-safe-subagent-spawn",
+  "skillKey": "clawhub-safe-subagent-spawn",
+  "name": "safe-subagent-spawn",
+  "summary": "Safely create and manage subagents through a strict wrapper instead of calling sessions_spawn directly. Use whenever a task needs a subagent, detached helper...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_subagent_spawn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Devymex",
+      "features": [
+        "Safely create and manage subagents through a strict wrapper instead of calling sessions_spawn d.",
+        "Use whenever a task needs a subagent, detached helper..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-subagent-spawn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1797836?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-subagent-spawn",
+      "url": "https://clawhub.ai/skills/safe-subagent-spawn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-subagent-spawn",
+    "url": "https://clawhub.ai/skills/safe-subagent-spawn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-subagent-spawn-36011b7b165833ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-subagent-spawn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-subagent-spawn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d596718120e730f59b95d8e712cd006fc2ce059dafb5fef5d7f8135216877df4",
+      "artifactSizeBytes": 5709
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T10:29:05.710Z"
+}

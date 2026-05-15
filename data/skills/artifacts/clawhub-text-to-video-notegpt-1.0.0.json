@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-notegpt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_notegpt",
+  "skill": {
+    "id": 43595,
+    "skillKey": "clawhub-text-to-video-notegpt",
+    "name": "Text To Video Notegpt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-notegpt",
+    "url": "https://clawhub.ai/skills/text-to-video-notegpt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-notegpt-6611a8045eaa3027.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get AI-generated videos ready to post, without touching a single slider. Upload your text or notes (TXT, DOCX, PDF, MD, up to 50MB), say something like \"conv..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776373309913,
+      "changelog": "- Initial release of Text to Video NoteGPT!\n- Upload TXT, DOCX, PDF, or MD files (up to 50MB) and convert your notes into shareable videos with visuals and AI narration.\n- Download ready-to-use 1080p MP4 videos—no manual recording or editing required.\n- Cloud-based processing with auto token/session setup; 100 free credits on first use.\n- Supports batch uploads, iterative editing, and common export/workflows.\n- Clear error messages for unsupported files, expired tokens, and quota limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78db97f8e873f4625c377e7ec87fdd08508a04a67f8e49134926b1e288291903"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-subtitle-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_subtitle_generator",
+  "skill": {
+    "id": 41939,
+    "skillKey": "clawhub-free-video-subtitle-generator",
+    "name": "Free Video Subtitle Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-subtitle-generator",
+    "url": "https://clawhub.ai/skills/free-video-subtitle-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-subtitle-generator-35a61457fd23c5b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get captioned video files ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776601770478,
+      "changelog": "Initial release of Free Video Subtitle Generator.\n\n- Upload video files (MP4, MOV, AVI, WebM up to 500MB) for automatic subtitle generation.\n- Supports subtitle creation in multiple languages (e.g., English and Spanish).\n- Fast, cloud-based rendering with 1080p MP4 downloads in about 30–90 seconds.\n- 100 free credits upon first anonymous sign-in, usable for 7 days.\n- Streamlined workflows for uploading, editing, exporting, and tracking job status.\n- Designed for YouTubers and content creators needing quick, accurate captions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0aa7065ad09408b5fc8e22b14e50188b1d7db27d445d8f43f33e033a835043d6"
+}

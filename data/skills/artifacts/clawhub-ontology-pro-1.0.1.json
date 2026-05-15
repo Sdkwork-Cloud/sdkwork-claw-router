@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ontology-pro@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ontology_pro",
+  "skill": {
+    "id": 70297,
+    "skillKey": "clawhub-ontology-pro",
+    "name": "ontology-pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ontology-pro",
+    "url": "https://clawhub.ai/skills/ontology-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ontology-pro-8d57ae7cb5fdfc74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于文本构建并持续更新知识图谱，支持多步推理和因果分析，输出可执行的最优策略与行动建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zmy1006-sudo",
+      "userId": "s178943e0sqbs17b9qd9x38x7583wvdq",
+      "displayName": "mingyuan",
+      "image": "https://avatars.githubusercontent.com/u/267627552?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774948367973,
+      "changelog": "- Reference documentation files have been removed from the package.\n- Script files for graph visualization and memory management are no longer included.\n- Added new documentation file: SKILL_EN.md.\n- No user-facing workflow or behavior changes; skill usage and documentation unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2adf52d206e2a4151ef9becc96de3170da120233e2929795200a9ac9e05ba0ef"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fox-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fox_news",
+  "skill": {
+    "id": 28618,
+    "skillKey": "clawhub-fox-news",
+    "name": "Fox News Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fox-news",
+    "url": "https://clawhub.ai/skills/fox-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fox-news-1ca9eb3ccd9325e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor Fox News sections and breaking updates with official RSS routes, live-event tracking, and optional outside verification."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 311,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772809945514,
+      "changelog": "Initial release with official feed routing, live coverage workflows, and section-based briefing formats for Fox News readers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b23b098f9049018f477ced021afc4e8604169227937eb809be68598abe770a88"
+}

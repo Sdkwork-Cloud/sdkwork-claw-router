@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44582,
+  "uuid": "skill-clawhub-keychat",
+  "skillKey": "clawhub-keychat",
+  "name": "Keychat",
+  "summary": "Install Keychat — sovereign E2E encrypted messaging for OpenClaw agents via Signal Protocol over Nostr relays. Use when the user wants to add Keychat or set...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keychat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "keychat.io",
+      "features": [
+        "Install Keychat — sovereign E2E encrypted messaging for OpenClaw agents via Signal Protocol ove.",
+        "Use when the user wants to add Keychat or set..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/keychat@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/153359248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "keychat",
+      "url": "https://clawhub.ai/skills/keychat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keychat",
+    "url": "https://clawhub.ai/skills/keychat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keychat-7d28ed8c437abc8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/keychat@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-keychat-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7971c299d8333c98a4600ab9271443a7e21818e24f623739409362294480580",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T05:25:21.792Z"
+}

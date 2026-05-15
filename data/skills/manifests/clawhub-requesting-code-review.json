@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9267,
+  "uuid": "skill-clawhub-requesting-code-review",
+  "skillKey": "clawhub-requesting-code-review",
+  "name": "Requesting Code Review",
+  "summary": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.requesting_code_review",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zlc000190",
+      "features": [
+        "Use when completing tasks, implementing major features, or before merging to verify work meets."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/requesting-code-review@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8969941?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "requesting-code-review",
+      "url": "https://clawhub.ai/skills/requesting-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "requesting-code-review",
+    "url": "https://clawhub.ai/skills/requesting-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/requesting-code-review-c2b9a4d00b1f02b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/requesting-code-review@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-requesting-code-review-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2318ac637c244d7ac39fd18349334da2ddf29ae543f27d12796557978bd3907",
+      "artifactSizeBytes": 1908
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T02:51:56.262Z"
+}

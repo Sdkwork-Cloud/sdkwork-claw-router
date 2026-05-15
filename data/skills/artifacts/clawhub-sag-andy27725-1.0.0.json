@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sag-andy27725@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sag_andy27725",
+  "skill": {
+    "id": 35744,
+    "skillKey": "clawhub-sag-andy27725",
+    "name": "Sag Andy27725"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sag-andy27725",
+    "url": "https://clawhub.ai/skills/sag-andy27725",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sag-andy27725-efd9e92d71669b38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ElevenLabs text-to-speech with mac-style say UX."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andy27725",
+      "userId": "s1771zaa2s144y84bcq90bv6h183h8km",
+      "displayName": "Andy27725",
+      "image": "https://avatars.githubusercontent.com/u/259773669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774377473969,
+      "changelog": "- Initial release of sag skill for ElevenLabs text-to-speech with mac-style `say` user experience.\n- Supports local playback and multiple voice models (expressive, stable, fast).\n- Flexible input handling with audio tags, pronunciation rules, and model-specific controls.\n- Requires `ELEVENLABS_API_KEY`; install via Homebrew (`steipete/tap/sag`).\n- CLI supports custom voices and integrates audio responses for chat applications.\n- Documentation covers quick start commands, model options, audio tagging, and usage tips for voice replies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb3d67fcdba863c58b1ee25d55872154c559a7d10667c71d22b829ebe00d0fa8"
+}

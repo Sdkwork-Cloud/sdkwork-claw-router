@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30778,
+  "uuid": "skill-clawhub-10to8",
+  "skillKey": "clawhub-10to8",
+  "name": "10To8",
+  "summary": "10to8 integration. Manage data, records, and automate workflows. Use when the user wants to interact with 10to8 data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.10to8",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "10to8 integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with 10to8 data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/10to8@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "10to8",
+      "url": "https://clawhub.ai/skills/10to8"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "10to8",
+    "url": "https://clawhub.ai/skills/10to8",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/10to8-fe6caf414fd0b161.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/10to8@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-10to8-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0157e549959c096ab090b454ae435219bf582bbf44f49d9b7b5e151b872752bc",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:06:28.560Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skyinsights@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skyinsights",
+  "skill": {
+    "id": 35080,
+    "skillKey": "clawhub-skyinsights",
+    "name": "Skyinsights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skyinsights",
+    "url": "https://clawhub.ai/skills/skyinsights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skyinsights-02003af4ef1e8cbf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query the CertiK SkyInsights blockchain risk intelligence API. Use this skill when the user wants to check whether a wallet address or transaction hash is ri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "certik-ai",
+      "userId": "publishers:certik-ai",
+      "displayName": "CertiK",
+      "image": "https://avatars.githubusercontent.com/u/243521631?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773734122477,
+      "changelog": "Initial release of skyinsights skill.\n\n- Enables queries to the CertiK SkyInsights blockchain risk intelligence API for risk assessment, AML screening, label lookup, and transaction checks.\n- Supports subcommands: kya (address risk), labels (address/entity info), screen (AML screening), kyt (transaction risk).\n- Chain support table included; guides users on valid parameters per method.\n- Provides clear output templates, risk factor references, and error explanations.\n- Usage examples and credential setup instructions included for user onboarding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5ea211131eef30f246ec25647daee9f57b1474303b78421ab16885f9ac666cb"
+}

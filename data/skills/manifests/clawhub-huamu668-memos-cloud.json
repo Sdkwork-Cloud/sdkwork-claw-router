@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20584,
+  "uuid": "skill-clawhub-huamu668-memos-cloud",
+  "skillKey": "clawhub-huamu668-memos-cloud",
+  "name": "MemOS Cloud Integration",
+  "summary": "Recall memories from MemOS Cloud before responding. Use this skill when you need context about user's previous conversations, preferences, or decisions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huamu668_memos_cloud",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huamu668",
+      "features": [
+        "Recall memories from MemOS Cloud before responding",
+        "Use this skill when you need context about user's previous conversations, preferences, or decis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huamu668-memos-cloud@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202473531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huamu668-memos-cloud",
+      "url": "https://clawhub.ai/skills/huamu668-memos-cloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huamu668-memos-cloud",
+    "url": "https://clawhub.ai/skills/huamu668-memos-cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huamu668-memos-cloud-a6ae27cca1836a4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huamu668-memos-cloud@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-huamu668-memos-cloud-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d79dcb5522cc0e78970c80217d6566de9232dcd4e65523bc0619f53f4e1555e",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T11:50:38.920Z"
+}

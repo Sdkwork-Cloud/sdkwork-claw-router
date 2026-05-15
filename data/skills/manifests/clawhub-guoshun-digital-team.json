@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73596,
+  "uuid": "skill-clawhub-guoshun-digital-team",
+  "skillKey": "clawhub-guoshun-digital-team",
+  "name": "国顺数字团队协作",
+  "summary": "提供多智能体协作能力，模拟数字团队分工、辩论和任务分发，支持技术评审、代码审查和复杂项目管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guoshun_digital_team",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jimmygx",
+      "features": [
+        "提供多智能体协作能力，模拟数字团队分工、辩论和任务分发，支持技术评审、代码审查和复杂项目管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guoshun-digital-team@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27848299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guoshun-digital-team",
+      "url": "https://clawhub.ai/skills/guoshun-digital-team"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guoshun-digital-team",
+    "url": "https://clawhub.ai/skills/guoshun-digital-team",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guoshun-digital-team-8499a5f0a825f586.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guoshun-digital-team@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-guoshun-digital-team-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81af1cb923de5344fc43a69cefe8370354ba6832ed13e93257781919adae4c7f",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T09:10:09.065Z"
+}

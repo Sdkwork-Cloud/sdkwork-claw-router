@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecwid-ecommerce@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecwid_ecommerce",
+  "skill": {
+    "id": 40131,
+    "skillKey": "clawhub-ecwid-ecommerce",
+    "name": "Ecwid Ecommerce"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecwid-ecommerce",
+    "url": "https://clawhub.ai/skills/ecwid-ecommerce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecwid-ecommerce-5f5d219e946a0347.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ecwid REST API v3 integration for managing e-commerce store data including products, orders, customers, categories, discount coupons, promotions, abandoned c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "droneitgroup",
+      "userId": "s178890dfms1gxtr00j6w01x5d841txc",
+      "displayName": "droneitgroup",
+      "image": "https://avatars.githubusercontent.com/u/201618752?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775051796335,
+      "changelog": "Ecwid REST API v3 skill covering 12 verified endpoints: products, orders, customers, categories, discount coupons, promotions, abandoned carts, and store profile. All endpoints tested against a live Ecwid store. Includes YAML frontmatter with credential declarations, security best practices section recommending read-only token scopes, and full parameter/response documentation sourced from official Ecwid docs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52d8b81ea7ec72b50a10ba13b0048cf9b571baa13e7a858fc6f8c788500a875b"
+}

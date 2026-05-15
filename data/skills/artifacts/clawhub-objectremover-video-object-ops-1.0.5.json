@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/objectremover-video-object-ops@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.objectremover_video_object_ops",
+  "skill": {
+    "id": 22241,
+    "skillKey": "clawhub-objectremover-video-object-ops",
+    "name": "ObjectRemover Video Object Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "objectremover-video-object-ops",
+    "url": "https://clawhub.ai/skills/objectremover-video-object-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/objectremover-video-object-ops-a67281d21cd43436.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove or extract objects from videos with AI. Supports watermark/distraction removal, subject extraction with transparent background, natural-language objec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quanyongli",
+      "userId": "s173gtfjpn951r5b97svsmhv3n83gdf7",
+      "displayName": "jerry",
+      "image": "https://avatars.githubusercontent.com/u/143871597?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 281,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774597687040,
+      "changelog": "Reformatted SKILL.md for parser compatibility (removed table syntax, fixed step numbering).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2ac6298ddaed9005bb24570be1a710813de6e82bda8987c8f71eb08bb74393b"
+}

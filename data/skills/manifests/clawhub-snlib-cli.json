@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57616,
+  "uuid": "skill-clawhub-snlib-cli",
+  "skillKey": "clawhub-snlib-cli",
+  "name": "snlib-cli",
+  "summary": "Run Seongnam Library (snlib.go.kr) tasks from the command line. Use when you need login, book search, my-info (내 정보 조회)/loan status (대출 현황) checks, interlibr...",
+  "version": "2026.4.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snlib_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "정문식",
+      "features": [
+        "Run Seongnam Library (snlib.go.kr) tasks from the command line",
+        "Use when you need login, book search, my-info (내 정보 조회)/loan status (대출 현황) checks, interlibr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/snlib-cli@2026.4.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81857?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "snlib-cli",
+      "url": "https://clawhub.ai/skills/snlib-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snlib-cli",
+    "url": "https://clawhub.ai/skills/snlib-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snlib-cli-b6196eb5bd1ca311.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/snlib-cli@2026.4.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-snlib-cli-2026.4.7.json",
+      "version": "2026.4.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e98d818d6680248a2bf151199d5bbd0dd428946b72199926ae682d71a49417b6",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T08:50:09.358Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33663,
+  "uuid": "skill-clawhub-amazon-review-checker",
+  "skillKey": "clawhub-amazon-review-checker",
+  "name": "Amazon Review Checker",
+  "summary": "Amazon review authenticity analyzer. Detect fake reviews, suspicious patterns, and rating manipulation. Includes time clustering detection, content similarit...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_review_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Henk Nie",
+      "features": [
+        "Amazon review authenticity analyzer",
+        "Detect fake reviews, suspicious patterns, and rating manipulation",
+        "Includes time clustering detection, content similarit..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-review-checker@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44972754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-review-checker",
+      "url": "https://clawhub.ai/skills/amazon-review-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-review-checker",
+    "url": "https://clawhub.ai/skills/amazon-review-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-review-checker-ab96d52574720f10.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-review-checker@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-review-checker-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:819d6a2dc4183f286d52e9e10af95e0d06a437170c14c2af11200acb9e345225",
+      "artifactSizeBytes": 2410
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T00:07:51.279Z"
+}

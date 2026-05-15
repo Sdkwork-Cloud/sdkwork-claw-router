@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/custom-smtp-sender@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.custom_smtp_sender",
+  "skill": {
+    "id": 15318,
+    "skillKey": "clawhub-custom-smtp-sender",
+    "name": "Custom Smtp Sender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "custom-smtp-sender",
+    "url": "https://clawhub.ai/skills/custom-smtp-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/custom-smtp-sender-a0d181d777f0d70c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A skill to send emails with support for markdown, HTML text, and attachments, leveraging existing SMTP configuration in `/home/bb/.openclaw/smtp-config.json`. Includes retry logic and logging."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scccmsd",
+      "userId": "publishers:scccmsd",
+      "displayName": "scccmsd",
+      "image": "https://avatars.githubusercontent.com/u/243490427?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1832,
+      "installsAllTime": 6,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770315556847,
+      "changelog": "Initial release of custom-smtp-sender:\n\n- Send emails via an existing SMTP configuration file.\n- Supports markdown-to-HTML conversion and sending HTML-formatted messages.\n- Allows attaching multiple files to emails.\n- Implements retry logic for temporary send failures.\n- Logs sent messages and errors for auditing and troubleshooting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d3724e2739a65f02d8d387463218ca0c3f088d5b853fd5a4b3cc29144e454b3a"
+}

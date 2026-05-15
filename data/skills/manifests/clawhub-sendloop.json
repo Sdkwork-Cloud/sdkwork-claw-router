@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40188,
+  "uuid": "skill-clawhub-sendloop",
+  "skillKey": "clawhub-sendloop",
+  "name": "Sendloop",
+  "summary": "Sendloop integration. Manage Subscribers, Lists, Segments, Campaigns, Forms. Use when the user wants to interact with Sendloop data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sendloop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Sendloop integration",
+        "Manage Subscribers, Lists, Segments, Campaigns, Forms",
+        "Use when the user wants to interact with Sendloop data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sendloop@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sendloop",
+      "url": "https://clawhub.ai/skills/sendloop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sendloop",
+    "url": "https://clawhub.ai/skills/sendloop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sendloop-106e4ca4364ec3ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sendloop@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sendloop-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ced278159403ed0cec62cf9cc159d44ce08d55c4f122dd3edbc443fdcafc1b40",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:58:38.686Z"
+}

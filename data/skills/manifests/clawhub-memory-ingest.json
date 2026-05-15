@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30211,
+  "uuid": "skill-clawhub-memory-ingest",
+  "skillKey": "clawhub-memory-ingest",
+  "name": "Memory Ingest",
+  "summary": "Process unstructured external input (meeting transcripts, conversation logs, pasted documents) into structured Basic Memory entities. Extracts entities, sear...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_ingest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Hernandez",
+      "features": [
+        "Process unstructured external input (meeting transcripts, conversation logs, pasted documents).",
+        "Extracts entities, sear..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-ingest@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-ingest",
+      "url": "https://clawhub.ai/skills/memory-ingest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-ingest",
+    "url": "https://clawhub.ai/skills/memory-ingest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-ingest-33e68cefd46e4ade.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-ingest@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-ingest-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4976d57ca346d1035ec1cc61df6f41e39e8ef05d9275cadcba7adb54d33fa147",
+      "artifactSizeBytes": 2416
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T02:05:50.528Z"
+}

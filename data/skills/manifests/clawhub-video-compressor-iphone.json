@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42467,
+  "uuid": "skill-clawhub-video-compressor-iphone",
+  "skillKey": "clawhub-video-compressor-iphone",
+  "name": "Video Compressor Iphone",
+  "summary": "Get compressed MP4 files ready to post, without touching a single slider. Upload your iPhone video files (MP4, MOV, HEVC, AVI, up to 500MB), say something li...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_compressor_iphone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "francemichaell-15",
+      "features": [
+        "Get compressed MP4 files ready to post, without touching a single slider",
+        "Upload your iPhone video files (MP4, MOV, HEVC, AVI, up to 500MB), say something li..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-compressor-iphone@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208906142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-compressor-iphone",
+      "url": "https://clawhub.ai/skills/video-compressor-iphone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-compressor-iphone",
+    "url": "https://clawhub.ai/skills/video-compressor-iphone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-compressor-iphone-b592f1bdd4efd71b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-compressor-iphone@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-compressor-iphone-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:132ea94fda3451d7e430d2eb6e1eabc0ba690b45185ca232d5465b0577bf143e",
+      "artifactSizeBytes": 2547
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T00:39:19.625Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jz-workflow-enforcer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jz_workflow_enforcer",
+  "skill": {
+    "id": 60308,
+    "skillKey": "clawhub-jz-workflow-enforcer",
+    "name": "Agent Workflow Enforcer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jz-workflow-enforcer",
+    "url": "https://clawhub.ai/skills/jz-workflow-enforcer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jz-workflow-enforcer-440d288ae09d9472.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "让 AI Agent 的执行流程稳定可控。 通过 Gate 门禁、强制输出格式、Style Context 持久化， 把\"建议\"变成\"必须\"，解决 Agent 选择性执行的问题。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jzocb",
+      "userId": "s171w51c7np1cprte4r1ab11vs83g4bd",
+      "displayName": "jzOcb",
+      "image": "https://avatars.githubusercontent.com/u/258660657?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 514,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772336089367,
+      "changelog": "Gate system, forced output formats, style context persistence. Turn suggestions into requirements.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e8df1a50acef711679a192d735ba49fc456c718de0082cd4f920a0f9535386fc"
+}

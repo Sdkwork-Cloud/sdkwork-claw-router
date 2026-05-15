@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19692,
+  "uuid": "skill-clawhub-browser-extension-enabler",
+  "skillKey": "clawhub-browser-extension-enabler",
+  "name": "Browser Extension Enabler",
+  "summary": "Auto-detect and enable OpenClaw Browser Relay Chrome extension when disconnected. Uses native mouse control to click the extension icon.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_extension_enabler",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kevinZhj",
+      "features": [
+        "Auto-detect and enable OpenClaw Browser Relay Chrome extension when disconnected",
+        "Uses native mouse control to click the extension icon."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-extension-enabler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/193040475?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-extension-enabler",
+      "url": "https://clawhub.ai/skills/browser-extension-enabler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-extension-enabler",
+    "url": "https://clawhub.ai/skills/browser-extension-enabler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-extension-enabler-a893657d4e6e8970.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-extension-enabler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-extension-enabler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a1388b8db77f5794e9ee7c9bf0c9035f5ea1a12fce791c967c45824bc4a8b9d",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T17:09:16.764Z"
+}

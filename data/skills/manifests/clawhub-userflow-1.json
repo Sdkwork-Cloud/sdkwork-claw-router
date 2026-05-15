@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37132,
+  "uuid": "skill-clawhub-userflow-1",
+  "skillKey": "clawhub-userflow-1",
+  "name": "Userflow 1",
+  "summary": "Userflow integration. Manage data, records, and automate workflows. Use when the user wants to interact with Userflow data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.userflow_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Userflow integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Userflow data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/userflow-1@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "userflow-1",
+      "url": "https://clawhub.ai/skills/userflow-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "userflow-1",
+    "url": "https://clawhub.ai/skills/userflow-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/userflow-1-b46f204b7aaed56d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/userflow-1@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-userflow-1-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:914f63a08219372efa5b05a1c5ae7bae1438fa51d31d1e72eb445ca5a40a00f8",
+      "artifactSizeBytes": 1852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:08:48.185Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/groundapi-market-briefing@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.groundapi_market_briefing",
+  "skill": {
+    "id": 26115,
+    "skillKey": "clawhub-groundapi-market-briefing",
+    "name": "Groundapi Market Briefing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "groundapi-market-briefing",
+    "url": "https://clawhub.ai/skills/groundapi-market-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/groundapi-market-briefing-2787a5fd2d2cf10d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate A-share market briefing with indices, limit-up/down pools, sector rotation, IPO calendar, anomaly signals, gold/forex macro data, trending topics, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qingkongzhiqian",
+      "userId": "s1748mzyk6x2a2xwtsgpz5z835845ege",
+      "displayName": "qingkongzhiqian",
+      "image": "https://avatars.githubusercontent.com/u/45964299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 264,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776248036752,
+      "changelog": "v1.1.0: Add gold price, forex rate, trending topics, daily bulletin, calendar (trading day check), update MCP endpoint",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df7cd8d9af09fff4486945a2570f0a5b46e92cfd69d147063f81897b287fee3b"
+}

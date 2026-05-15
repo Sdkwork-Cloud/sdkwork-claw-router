@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45132,
+  "uuid": "skill-clawhub-tavily-extract-aisa",
+  "skillKey": "clawhub-tavily-extract-aisa",
+  "name": "tavily-extract-aisa",
+  "summary": "Extract clean article content from URLs through the AISA Tavily extract endpoint. Use when: the user already has URLs and needs readable page content for sum...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_extract_aisa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIsa",
+      "features": [
+        "Extract clean article content from URLs through the AISA Tavily extract endpoint",
+        "Use when: the user already has URLs and needs readable page content for sum..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tavily-extract-aisa@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245991925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tavily-extract-aisa",
+      "url": "https://clawhub.ai/skills/tavily-extract-aisa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-extract-aisa",
+    "url": "https://clawhub.ai/skills/tavily-extract-aisa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-extract-aisa-842e49eaa304144f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tavily-extract-aisa@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tavily-extract-aisa-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a92b6970c7016a6a8d8a350a55dc4be0b22e11379a1b57c463dca7f379e71a1",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T09:32:43.322Z"
+}

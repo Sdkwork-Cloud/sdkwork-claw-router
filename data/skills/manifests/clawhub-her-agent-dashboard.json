@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61773,
+  "uuid": "skill-clawhub-her-agent-dashboard",
+  "skillKey": "clawhub-her-agent-dashboard",
+  "name": "Her Agent Dashboard",
+  "summary": "Her-Agent发展进度看板 - 实时显示自我意识、情感、知识图谱、学习进度、进化状态。打开web dashboard查看详细数据。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.her_agent_dashboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wenqin1688",
+      "features": [
+        "Her-Agent发展进度看板",
+        "实时显示自我意识、情感、知识图谱、学习进度、进化状态。打开web dashboard查看详细数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/her-agent-dashboard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46556755?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "her-agent-dashboard",
+      "url": "https://clawhub.ai/skills/her-agent-dashboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "her-agent-dashboard",
+    "url": "https://clawhub.ai/skills/her-agent-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/her-agent-dashboard-81b67f52dff9c29c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/her-agent-dashboard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-her-agent-dashboard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7b1bd2c2af378a4fe9382e9ef881c13da8e2bb8ecb33d63eb2768669339b9b3",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T15:04:12.462Z"
+}

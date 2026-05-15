@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-davis-bacon@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_davis_bacon",
+  "skill": {
+    "id": 22722,
+    "skillKey": "clawhub-afrexai-davis-bacon",
+    "name": "Davis-Bacon Prevailing Wage Compliance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-davis-bacon",
+    "url": "https://clawhub.ai/skills/afrexai-davis-bacon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-davis-bacon-bfb99bd7b1a297c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides wage determination lookups, certified payroll compliance, classification conformance, violation risk assessments, and apprenticeship tracking for fe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 463,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771976657742,
+      "changelog": "- Initial release of the Davis-Bacon & Prevailing Wage Compliance skill.\n- Provides guidance on federal and state prevailing wage laws, including the Davis-Bacon Act and Related Acts.\n- Supports wage determination lookup, certified payroll preparation, and compliance for federal and federally-assisted construction projects.\n- Includes checklists for audit preparation, summaries of common violations and penalties, and state-by-state prevailing wage references.\n- Covers requirements for wage classification/conformance, fringe benefits, apprenticeship, and IRA/IIJA clean energy projects.\n- Designed to integrate with contract review, project management, payroll, and bid estimation tools.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a240174d6dffbe90eda6fc3c5f6f1f7abecae1040d768c68823ab7c87f45c6e1"
+}

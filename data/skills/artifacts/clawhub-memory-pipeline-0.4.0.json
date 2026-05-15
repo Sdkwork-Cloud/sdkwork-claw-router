@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-pipeline@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_pipeline",
+  "skill": {
+    "id": 9776,
+    "skillKey": "clawhub-memory-pipeline",
+    "name": "Memory Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-pipeline",
+    "url": "https://clawhub.ai/skills/memory-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-pipeline-62e89ec344e2cb85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete agent memory + performance system. Extracts structured facts, builds knowledge graphs, generates briefings, and enforces execution discipline via pre-game routines, tool policies, result compression, and after-action reviews. Incl."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joe-rlo",
+      "userId": "publishers:joe-rlo",
+      "displayName": "joe-rlo",
+      "image": "https://avatars.githubusercontent.com/u/103778941?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2904,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 4,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1770036749512,
+      "changelog": "Cleaned up README — clearer structure, scannable tables, setup front and center",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a0489eb54f27bdb43892ddc7ad11e96722b8f22219c96dea966d92e9e809aab7"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32183,
+  "uuid": "skill-clawhub-lake-warming-attribution-trend-analysis",
+  "skillKey": "clawhub-lake-warming-attribution-trend-analysis",
+  "name": "trend-analysis",
+  "summary": "Detect long-term trends in time series data using parametric and non-parametric methods. Use when determining if a variable shows statistically significant i...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lake_warming_attribution_trend_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wu-uk",
+      "features": [
+        "Detect long-term trends in time series data using parametric and non-parametric methods",
+        "Use when determining if a variable shows statistically significant i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lake-warming-attribution-trend-analysis@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199610473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lake-warming-attribution-trend-analysis",
+      "url": "https://clawhub.ai/skills/lake-warming-attribution-trend-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lake-warming-attribution-trend-analysis",
+    "url": "https://clawhub.ai/skills/lake-warming-attribution-trend-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lake-warming-attribution-trend-analysis-31e0607cf452e3d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lake-warming-attribution-trend-analysis@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lake-warming-attribution-trend-analysis-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d4d0606e357d142f19449bb6c421071ec918b9edcf4b3661aa415a3bd6976c3",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T20:46:52.405Z"
+}

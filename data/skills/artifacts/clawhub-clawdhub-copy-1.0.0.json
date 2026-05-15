@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdhub-copy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdhub_copy",
+  "skill": {
+    "id": 11826,
+    "skillKey": "clawhub-clawdhub-copy",
+    "name": "Clawdhub Copy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdhub-copy",
+    "url": "https://clawhub.ai/skills/clawdhub-copy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdhub-copy-1d3961952118d078.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the ClawdHub CLI to search, install, update, and publish agent skills from clawdhub.com. Use when you need to fetch new skills on the fly, sync installed skills to latest or a specific version, or publish new/updated skill folders with."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jk50505k",
+      "userId": "publishers:jk50505k",
+      "displayName": "jk50505k",
+      "image": "https://avatars.githubusercontent.com/u/38711478?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1968,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769653063911,
+      "changelog": "- Initial release of the ClawdHub CLI skill.\n- Search, install, update, list, and publish agent skills from clawdhub.com directly via CLI commands.\n- Supports syncing installed skills to latest or specific versions.\n- Integrates publish workflow with authentication using clawdhub login.\n- Registry and working directory can be customized with environment variables or flags.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5e1cbdc277b7d2fda4f180cbfd8689f6f406e9d518de1158ef9e831aed3f2cca"
+}

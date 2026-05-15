@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-project@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_project",
+  "skill": {
+    "id": 50275,
+    "skillKey": "clawhub-create-project",
+    "name": "Create Project"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-project",
+    "url": "https://clawhub.ai/skills/create-project",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-project-3c19483b6c7689ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactive Orchestrix project scaffolding. Creates project directory under ~/Codes/, generates project brief from Q&A, installs MCP config, hooks, slash com..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dorayo",
+      "userId": "s170vkqknc65p9m708z2yhk5p583xz4c",
+      "displayName": "dorayo",
+      "image": "https://avatars.githubusercontent.com/u/3347991?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 551,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1774880619917,
+      "changelog": "**3.0.0 adds automated session and agent monitoring scripts for improved Orchestrix startup and integration.**\n\n- 新增 `ensure-session.sh` 和 `monitor-agent.sh` 两个 helper 脚本，支持 tmux session 懒创建和 agent 完成检测，自 3.0.0 起自动在项目内配置。\n- `start-orchestrix.sh`、骨架输出清单等文档更新，准确描述并集成新 helper。\n- 使用体验提升：进入项目时无需手动操作 trust，启动/监控全面自动化。\n- 其它细节及提示按照脚本文档同步优化。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d9297d09a177b4b4fcc5b5d8410b9824f946f8c752a7602b0b7a358c32e8e98"
+}

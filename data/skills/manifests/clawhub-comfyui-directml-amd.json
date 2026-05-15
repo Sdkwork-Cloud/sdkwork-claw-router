@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49312,
+  "uuid": "skill-clawhub-comfyui-directml-amd",
+  "skillKey": "clawhub-comfyui-directml-amd",
+  "name": "ComfyUI DirectML AMD",
+  "summary": "Sets up and optimizes ComfyUI on AMD GPUs with DirectML on Windows, including fixes, compatible models, benchmarks, and automated configuration tools.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfyui_directml_amd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vilém Kužel",
+      "features": [
+        "Sets up and optimizes ComfyUI on AMD GPUs with DirectML on Windows, including fixes, compatible."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comfyui-directml-amd@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39015391?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comfyui-directml-amd",
+      "url": "https://clawhub.ai/skills/comfyui-directml-amd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfyui-directml-amd",
+    "url": "https://clawhub.ai/skills/comfyui-directml-amd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfyui-directml-amd-2c1b4b30b754c867.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comfyui-directml-amd@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-comfyui-directml-amd-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3bd5fd89f7ccb8da3eb9bc633e8160f81e83661e9b8cdd3427a70e921385e69",
+      "artifactSizeBytes": 2065
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T11:28:36.320Z"
+}

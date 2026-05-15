@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "airfrance-afkl",
+    "displayName": "Air France - KLM",
+    "summary": "Track Air France flights using the Air France–KLM Open Data APIs (Flight Status). Use when the user gives a flight number/date (e.g., AF007 on 2026-01-29) and wants monitoring, alerts (delay/gate/aircraft changes), or analysis (previous-flight chain, aircraft tail number → cabin recency / Wi‑Fi). Also use when setting up or tuning polling schedules within API rate limits.",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "createdAt": 1769634832307,
+    "updatedAt": 1778382546176
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1769655571857,
+    "changelog": "- Added a comprehensive README.md with setup, usage, and implementation notes.\n- Clarified that the watcher script now prints no output when nothing changes, to reduce noise in cron jobs.\n- Updated documentation to detail input handling, polling strategies, and heuristic use of aircraft data.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "iclems",
+    "userId": "publishers:iclems",
+    "displayName": "iclems",
+    "image": "https://avatars.githubusercontent.com/u/1120050?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious",
+      "suspicious.potential_exfiltration",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.env_credential_access, suspicious.llm_suspicious, suspicious.potential_exfiltration (+1 more)",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778382546176
+  }
+}

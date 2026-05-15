@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24929,
+  "uuid": "skill-clawhub-wechat-to-notion",
+  "skillKey": "clawhub-wechat-to-notion",
+  "name": "WeChat to Notion",
+  "summary": "Save WeChat public account articles to a Notion database. Use when user sends a mp.weixin.qq.com link and wants to save/archive it to Notion. Fetches title,...",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_to_notion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dongyu Li",
+      "features": [
+        "Save WeChat public account articles to a Notion database",
+        "Use when user sends a mp.weixin.qq.com link and wants to save/archive it to Notion",
+        "Fetches title,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-to-notion@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57080907?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-to-notion",
+      "url": "https://clawhub.ai/skills/wechat-to-notion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-to-notion",
+    "url": "https://clawhub.ai/skills/wechat-to-notion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-to-notion-2ce23565384a7a35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-to-notion@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-to-notion-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72e303c0a098a3e442c5e6097b35ffed21561c8405db1f9a82b338c143c58b1e",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:56:11.793Z"
+}

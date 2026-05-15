@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63198,
+  "uuid": "skill-clawhub-jiege-openclaw-video-v1",
+  "skillKey": "clawhub-jiege-openclaw-video-v1",
+  "name": "jiege-openclaw-video",
+  "summary": "高性能视频生成技能包，集成 Sora 和 VEO 模型接口，提供全自动的视频生成、轮询和下载管理。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiege_openclaw_video_v1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liangshenghzj888-stack",
+      "features": [
+        "高性能视频生成技能包，集成 Sora 和 VEO 模型接口，提供全自动的视频生成、轮询和下载管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jiege-openclaw-video-v1@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233961624?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jiege-openclaw-video-v1",
+      "url": "https://clawhub.ai/skills/jiege-openclaw-video-v1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiege-openclaw-video-v1",
+    "url": "https://clawhub.ai/skills/jiege-openclaw-video-v1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiege-openclaw-video-v1-083440851861f7c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jiege-openclaw-video-v1@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jiege-openclaw-video-v1-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4f89bc9032985e3c4d9d483a06622a4aad6b2a9d27990e3f9bd506ec7a239dc",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T09:22:42.739Z"
+}

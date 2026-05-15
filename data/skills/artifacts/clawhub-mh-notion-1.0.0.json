@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mh-notion@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mh_notion",
+  "skill": {
+    "id": 19207,
+    "skillKey": "clawhub-mh-notion",
+    "name": "MH notion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mh-notion",
+    "url": "https://clawhub.ai/skills/mh-notion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mh-notion-5d18df24b60b7605.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Notion API for creating and managing pages, databases, and blocks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mohdalhashemi98-hue",
+      "userId": "publishers:mohdalhashemi98-hue",
+      "displayName": "mohdalhashemi98-hue",
+      "image": "https://avatars.githubusercontent.com/u/241047511?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 630,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771990986978,
+      "changelog": "Priority upload batch",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e83217502eefc2b0ece1de0ae1b010f244855b88b48c83d620278be48499dfd9"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trimmer-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trimmer_app",
+  "skill": {
+    "id": 55829,
+    "skillKey": "clawhub-trimmer-app",
+    "name": "Trimmer App"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trimmer-app",
+    "url": "https://clawhub.ai/skills/trimmer-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trimmer-app-4cc78af31c471a21.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim the first 30 seconds and cut the dead air at the end — and get trimme..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777395501872,
+      "changelog": "Trimmer App 1.0.0 — Initial Release\n\n- Instantly trim and export video clips via natural language prompts (e.g., \"trim the first 30 seconds\").\n- Supports uploads of MP4, MOV, AVI, and WebM files up to 500MB.\n- Cloud-based editing: no installation required; setup handles authentication and session automatically.\n- Credits-based usage: 100 free credits on first connection, with basic balance and error handling included.\n- Supports multi-format exports (MP4 default, 1080p quality) and batch processing.\n- User-friendly error messages for unsupported formats, oversized files, rate limits, and expired sessions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c37a09411839fcb48db004d9bd1065a06a90ac0a285465ceb8b0b0ea4c773743"
+}

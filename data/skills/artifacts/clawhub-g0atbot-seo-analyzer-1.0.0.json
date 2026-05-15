@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/g0atbot-seo-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.g0atbot_seo_analyzer",
+  "skill": {
+    "id": 25695,
+    "skillKey": "clawhub-g0atbot-seo-analyzer",
+    "name": "SEO Analyzer by G0atbot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "g0atbot-seo-analyzer",
+    "url": "https://clawhub.ai/skills/g0atbot-seo-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/g0atbot-seo-analyzer-bb2c7c8752beaa83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze website SEO including meta tags, headings, content, keywords, competitor comparison, site audits, and ranking checks for free."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "g0atfac3",
+      "userId": "s17drmhh8bsjqez092fk04kjpx83ej8p",
+      "displayName": "G0atfac3",
+      "image": "https://avatars.githubusercontent.com/u/258429686?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773439334027,
+      "changelog": "SEO Analyzer Skill 1.0.0 – Initial Release\n\n- Analyze web pages for on-page SEO factors like meta tags, headings, and content structure.\n- Generate keyword suggestions and research based on topics.\n- Compare SEO metrics between two URLs for competitor analysis.\n- Conduct site audits to detect common technical SEO issues.\n- Check how pages rank for specific keywords using search.\n- Free alternative to tools like Ahrefs, SEMrush, and Moz for basic SEO tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee7fa47e5584918ef9a7268093cf87f79efbd13113dc45852f122c3ef516f3e9"
+}

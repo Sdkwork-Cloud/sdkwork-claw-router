@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tvs-cc-migrator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tvs_cc_migrator",
+  "skill": {
+    "id": 60171,
+    "skillKey": "clawhub-tvs-cc-migrator",
+    "name": "tvs-cc-migrator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tvs-cc-migrator",
+    "url": "https://clawhub.ai/skills/tvs-cc-migrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tvs-cc-migrator-ed4aad6c817a95c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Claude Code 配置迁移工具。备份和恢复 ~/.claude/ 下的所有配置（CLAUDE.md、rules、skills、commands、agents、自定义插件、settings.json 等）。当用户提到备份配置、迁移 Claude Code、导出设置、恢复配置、换电脑等场景时使用此 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "inksnowhailong",
+      "userId": "s177pqccte7rb6prtwj4ad2bpx83nmt8",
+      "displayName": "inksnowhailong",
+      "image": "https://avatars.githubusercontent.com/u/57605894?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775204313569,
+      "changelog": "CC Migrator 1.0.0 — 首次发布，支持 Claude Code 配置一键迁移与恢复：\n\n- 一键扫描并备份 ~/.claude/ 下全部配置（含敏感项安全处理选项）。\n- 详细配置项确认流程，支持敏感信息处理和个性化备份排除。\n- 输出 manifest.json，完整描述备份内容和恢复指令。\n- 恢复流程全程引导，支持全量覆盖或追加合并两种策略。\n- 跨平台支持 Mac、Linux、Windows，自动适配路径与打包方式。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8eedea92325d854593d025924954f962bf11367c1b54ca48994c1197afa3f384"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71347,
+  "uuid": "skill-clawhub-pro-zh-summary",
+  "skillKey": "clawhub-pro-zh-summary",
+  "name": "Pro Zh Summary",
+  "summary": "专业级中文长文本摘要工具。当用户要求“总结”、“摘要”、“提炼要点”、“缩写”或处理超长中文文本时，必须调用此工具进行自动分段与压缩。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pro_zh_summary",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "erickong",
+      "features": [
+        "专业级中文长文本摘要工具。当用户要求“总结”、“摘要”、“提炼要点”、“缩写”或处理超长中文文本时，必须调用此工具进行自动分段与压缩。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pro-zh-summary@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1572768?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pro-zh-summary",
+      "url": "https://clawhub.ai/skills/pro-zh-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pro-zh-summary",
+    "url": "https://clawhub.ai/skills/pro-zh-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pro-zh-summary-becb4f5d3002aa2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pro-zh-summary@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pro-zh-summary-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff1dbfdb0b59c17763106d41271e7633004f6704c9ca00a267bb2016fece77c1",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T15:37:56.389Z"
+}

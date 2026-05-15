@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36053,
+  "uuid": "skill-clawhub-polymarket-arb",
+  "skillKey": "clawhub-polymarket-arb",
+  "name": "Polymarket Spread Arbitrage",
+  "summary": "Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_arb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIsa",
+      "features": [
+        "Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-arb@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245991925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-arb",
+      "url": "https://clawhub.ai/skills/polymarket-arb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-arb",
+    "url": "https://clawhub.ai/skills/polymarket-arb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-arb-be5ac43abff005e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-arb@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-arb-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50b0268b0f1afc9436d7e8cab01c27abc8a522fbec2daf176a4723d4952d793c",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T05:47:14.749Z"
+}

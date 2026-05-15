@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-arbitrage-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_arbitrage_monitor",
+  "skill": {
+    "id": 63626,
+    "skillKey": "clawhub-crypto-arbitrage-monitor",
+    "name": "📊 Crypto Arbitrage Monitor - 套利信号监控"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-arbitrage-monitor",
+    "url": "https://clawhub.ai/skills/crypto-arbitrage-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-arbitrage-monitor-494aef4c3572c179.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "加密货币套利信号监控。当用户要求\"套利监控\"、\"资金费率\"、\"arbitrage\"、\"套利机会\"时触发。自动搜索 Gate.io/Binance 等交易所的 ETH 永续合约资金费率，评估期现套利和跨所套利机会，给出明确的买入/观望/风险信号。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pcy891",
+      "userId": "s17112s9d1dph1pqsx1rw0f9r5866r00",
+      "displayName": "pcy891",
+      "image": "https://avatars.githubusercontent.com/u/100127401?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 88,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778039154994,
+      "changelog": "Initial release: Crypto arbitrage signal monitor",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:44cbd062c7829814a52a8512d82086fa9ec8459363b80504d5347a900105708d"
+}

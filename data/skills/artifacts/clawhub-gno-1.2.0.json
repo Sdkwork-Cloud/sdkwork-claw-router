@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gno@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gno",
+  "skill": {
+    "id": 9432,
+    "skillKey": "clawhub-gno",
+    "name": "Gno"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gno",
+    "url": "https://clawhub.ai/skills/gno",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gno-a5477a787d4a66a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search local documents, files, notes, and knowledge bases. Index directories, search with BM25/vector/hybrid, get AI answers with citations. Use when user wa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gmickel",
+      "userId": "s178r9vh8jh2bxewfg7aetpd65856mjy",
+      "displayName": "gmickel",
+      "image": "https://avatars.githubusercontent.com/u/139907?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 3549,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 4,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1776852151226,
+      "changelog": "Native --detach / --status / --stop for gno serve and gno daemon (gno 1.2.0). New flag table + dedicated `### gno daemon` section in cli-reference.md teaches agents the full lifecycle: --pid-file, --log-file, --status (with --json gating), --stop (silent NOT_RUNNING), and exit code 3. Mutual exclusion of --detach/--status/--stop documented. Live-foreign (version-mismatched detached process) handling explained. Windows --detach gated with WSL guidance. Replaces all stale `nohup gno daemon` recipes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66a461fee59d68ca647c8904d264e61ab7f170659a2c793232794e64daa2ef6e"
+}

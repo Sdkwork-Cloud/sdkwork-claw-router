@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62505,
+  "uuid": "skill-clawhub-pengbo-space",
+  "skillKey": "clawhub-pengbo-space",
+  "name": "Pengbo Space",
+  "summary": "通过 pengbo.space 的 SMM API 查询服务、筛选服务 ID、提交订单、查询订单状态、发起补单和检查余额。适用于需要安全调用 pengbo.space/api/v1 的自动化任务。对写操作默认要求显式确认。",
+  "version": "1.1.1-beta.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pengbo_space",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AmadoHallal",
+      "features": [
+        "通过 pengbo.space 的 SMM API 查询服务、筛选服务 ID、提交订单、查询订单状态、发起补单和检查余额。适用于需要安全调用 pengbo.space/api/v1 的自动化."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pengbo-space@1.1.1-beta.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261196056?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pengbo-space",
+      "url": "https://clawhub.ai/skills/pengbo-space"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pengbo-space",
+    "url": "https://clawhub.ai/skills/pengbo-space",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pengbo-space-cdd0c41b47bfc902.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pengbo-space@1.1.1-beta.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pengbo-space-1.1.1-beta.1.json",
+      "version": "1.1.1-beta.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e67e7f43cdbcfc0e357e26e0d21b78acbfb975314e433ac6b32a7782bf1e3946",
+      "artifactSizeBytes": 2076
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T03:35:16.252Z"
+}

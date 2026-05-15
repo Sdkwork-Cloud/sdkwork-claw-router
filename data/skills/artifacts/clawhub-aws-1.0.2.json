@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aws@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aws",
+  "skill": {
+    "id": 10759,
+    "skillKey": "clawhub-aws",
+    "name": "AWS | Amazon Web Services"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aws",
+    "url": "https://clawhub.ai/skills/aws",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aws-7d1507284a5757ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Architect, deploy, and optimize AWS infrastructure avoiding cost explosions and security pitfalls."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2877,
+      "installsAllTime": 21,
+      "installsCurrent": 21,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771978633756,
+      "changelog": "Complete rewrite with cost traps, security hardening, service selection",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e1998c15f3e0cce2a2206fc13515514e299d7828e13811623b172438ae9fe63c"
+}

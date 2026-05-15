@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28956,
+  "uuid": "skill-clawhub-audi",
+  "skillKey": "clawhub-audi",
+  "name": "Audi",
+  "summary": "Audi vehicle lineup, specs, pricing, technology features, and dealership info. From A3 to RS models and e-tron EVs.",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Audi vehicle lineup, specs, pricing, technology features, and dealership info",
+        "From A3 to RS models and e-tron EVs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audi@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audi",
+      "url": "https://clawhub.ai/skills/audi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audi",
+    "url": "https://clawhub.ai/skills/audi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audi-b51026e4444f98ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audi@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-audi-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68898649c2b1c7de29f7d96f53f2ed76b4fea79a22a4ebd848fe649f1d151db3",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:01:30.760Z"
+}

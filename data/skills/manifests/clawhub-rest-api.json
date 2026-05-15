@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16980,
+  "uuid": "skill-clawhub-rest-api",
+  "skillKey": "clawhub-rest-api",
+  "name": "REST API",
+  "summary": "Build production-ready REST APIs with contract-first design, secure auth, robust testing, and deployment runbooks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rest_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build production-ready REST APIs with contract-first design, secure auth, robust testing, and d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rest-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rest-api",
+      "url": "https://clawhub.ai/skills/rest-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rest-api",
+    "url": "https://clawhub.ai/skills/rest-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rest-api-d2609a8f60a2f494.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rest-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rest-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06200e0ae241d7ff4fb7509b142f9fc719af5cc6ebdc2a008e5a9d524a8fddba",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T08:43:08.773Z"
+}

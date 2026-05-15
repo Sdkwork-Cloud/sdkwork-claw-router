@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20876,
+  "uuid": "skill-clawhub-dz-podcast",
+  "skillKey": "clawhub-dz-podcast",
+  "name": "Dual-Host Daily Podcast Generator",
+  "summary": "Generate and publish a dual-host daily podcast. Fetches news, generates a conversational script between two hosts, synthesizes audio via Fish Audio or Edge T...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dz_podcast",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dachao",
+      "features": [
+        "Generate and publish a dual-host daily podcast",
+        "Fetches news, generates a conversational script between two hosts, synthesizes audio via Fish A."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dz-podcast@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/171011290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dz-podcast",
+      "url": "https://clawhub.ai/skills/dz-podcast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dz-podcast",
+    "url": "https://clawhub.ai/skills/dz-podcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dz-podcast-73c919ab513070fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dz-podcast@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dz-podcast-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:400422def428242a7a9978bb36a176a381a3f17b8a564197055d6ad39a2b84f1",
+      "artifactSizeBytes": 2282
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T10:18:54.992Z"
+}

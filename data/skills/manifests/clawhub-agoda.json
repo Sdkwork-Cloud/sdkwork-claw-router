@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62669,
+  "uuid": "skill-clawhub-agoda",
+  "skillKey": "clawhub-agoda",
+  "name": "Agoda",
+  "summary": "Agoda 酒店预订平台介绍和预订指南",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agoda",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Agoda 酒店预订平台介绍和预订指南"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agoda@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agoda",
+      "url": "https://clawhub.ai/skills/agoda"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agoda",
+    "url": "https://clawhub.ai/skills/agoda",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agoda-04cc66d0f3548663.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agoda@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agoda-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de2c4a0a4c3fab5c4691c5b2760ebb2afe83cc43d03cb71368d44f472ac6e424",
+      "artifactSizeBytes": 2099
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T02:34:21.947Z"
+}

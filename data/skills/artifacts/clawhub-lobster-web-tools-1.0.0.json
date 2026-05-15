@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobster-web-tools@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_web_tools",
+  "skill": {
+    "id": 54081,
+    "skillKey": "clawhub-lobster-web-tools",
+    "name": "Web Tools Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-web-tools",
+    "url": "https://clawhub.ai/skills/lobster-web-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-web-tools-c513e65a0b028556.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MANDATORY before calling web_search, web_fetch, browser, or opencli. Contains required error-handling procedures (web_search failure → must guide user to con..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freeman88-tch",
+      "userId": "s175vqzthvtcgmgawcp7vz2q3d85s636",
+      "displayName": "Freeman88-tch",
+      "image": "https://avatars.githubusercontent.com/u/212022282?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 62,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778256189525,
+      "changelog": "🦞 龙虾兵团自研融合技能 v1首发",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70309c9bef9514bf190f859b5d1322f948ce7c7278eff3c7cf1b6dcafc0da2b7"
+}

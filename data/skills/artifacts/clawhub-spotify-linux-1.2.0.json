@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spotify-linux@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spotify_linux",
+  "skill": {
+    "id": 10382,
+    "skillKey": "clawhub-spotify-linux",
+    "name": "Spotify Player"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spotify-linux",
+    "url": "https://clawhub.ai/skills/spotify-linux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spotify-linux-8c79c7e39b3618e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Spotify CLI for headless Linux servers. Control Spotify playback via terminal using cookie auth (no OAuth callback needed). Perfect for remote servers withou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaharsha",
+      "userId": "s1731v0zz0xz2rh03mt12r81t983g5b0",
+      "displayName": "shaharsh",
+      "image": "https://avatars.githubusercontent.com/u/11346965?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2612,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774206104752,
+      "changelog": "- Updated installation instructions to recommend adding spogo to PATH using ~/.bashrc instead of a system symlink.\n- Clarified the use of tilde (~) for user home paths in config examples.\n- Improved and clarified documentation for the browser fallback flow, emphasizing agent isolation and privacy.\n- Added notes to make the browser fallback steps clearer and explicitly marked them as optional.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f9d8de4697a73f163aa5041d072309f028c16c41ab6dce3bbb9199bfb08c918"
+}

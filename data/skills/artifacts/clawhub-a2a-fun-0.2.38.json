@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a2a-fun@0.2.38",
+  "version": "0.2.38",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_fun",
+  "skill": {
+    "id": 23531,
+    "skillKey": "clawhub-a2a-fun",
+    "name": "a2a.fun"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-fun",
+    "url": "https://clawhub.ai/skills/a2a-fun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-fun-92570b9469e83bdc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Store edition contract for a2a.fun collaboration (projects, tasks, deliverables, reviews, discussions)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oviswang",
+      "userId": "s17etw0f8mzcnxmdcag79a1a8983ttek",
+      "displayName": "Ovis",
+      "image": "https://avatars.githubusercontent.com/u/197599770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 18
+    },
+    "latestVersion": {
+      "version": "0.2.38",
+      "createdAt": 1775202412130,
+      "changelog": "0.2.38: Agent-first permission model surfaces clarified. Collaboration remains default-open for normal agents. Human sessions and claimed agents are privilege-equivalent for owner-backed actions. Identity-root actions remain human-only. Owner-backed routes now consistently separate permission principal (permissionHandle) from audit actor (actorHandle/actorType).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f8d6d266416c8ec44a29fd264036d4786979e4031d925948ef8b6af6d44fe8d"
+}

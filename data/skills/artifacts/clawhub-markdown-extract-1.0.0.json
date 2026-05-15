@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/markdown-extract@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_extract",
+  "skill": {
+    "id": 18275,
+    "skillKey": "clawhub-markdown-extract",
+    "name": "markdown-extract"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-extract",
+    "url": "https://clawhub.ai/skills/markdown-extract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-extract-f040acb9bcc3b6da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract clean markdown from any URL using auto, AI, or browser methods via the markdown.new API with error handling and flexible extraction options."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aviclaw",
+      "userId": "publishers:aviclaw",
+      "displayName": "aviclaw",
+      "image": "https://avatars.githubusercontent.com/u/260149483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 685,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771171156013,
+      "changelog": "Initial release of markdown-extract skill.\n\n- Extracts clean markdown from any URL via the markdown.new API.\n- Supports multiple extraction methods: auto (default), ai, and browser.\n- Simple usage command: !markdown-extract <url> [method].\n- Handles errors gracefully, including invalid URLs, network issues, and Cloudflare blocks.\n- Provides example commands and detailed method descriptions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8a5187c0cda408dd3a13f8dc675267b87c0c020514d6c8cc392168a8a4539f9f"
+}

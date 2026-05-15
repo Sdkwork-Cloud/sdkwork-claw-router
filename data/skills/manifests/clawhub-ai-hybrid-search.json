@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71457,
+  "uuid": "skill-clawhub-ai-hybrid-search",
+  "skillKey": "clawhub-ai-hybrid-search",
+  "name": "梓享双擎 AI 全网搜索平台（按搜索次数收费）",
+  "summary": "梓享AI双擎搜索平台官方付费技能，通过POST请求调用搜索接口，支持中国区/全球双引擎，返回结构化JSON搜索结果，按调用次数计费。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_hybrid_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zixiangai",
+      "features": [
+        "梓享AI双擎搜索平台官方付费技能，通过POST请求调用搜索接口，支持中国区/全球双引擎，返回结构化JSON搜索结果，按调用次数计费。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-hybrid-search@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44561847?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-hybrid-search",
+      "url": "https://clawhub.ai/skills/ai-hybrid-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-hybrid-search",
+    "url": "https://clawhub.ai/skills/ai-hybrid-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-hybrid-search-8dd5d5b06634fb9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-hybrid-search@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-hybrid-search-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5d94d61f92a3d9f984833f763e1ebecebf681aa315025409bcb2045aae4c30c",
+      "artifactSizeBytes": 2292
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T16:30:08.390Z"
+}

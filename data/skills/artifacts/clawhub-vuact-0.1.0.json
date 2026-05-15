@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vuact@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vuact",
+  "skill": {
+    "id": 51897,
+    "skillKey": "clawhub-vuact",
+    "name": "vuact"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vuact",
+    "url": "https://clawhub.ai/skills/vuact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vuact-5cb37d3885cd682e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Vuact best practices and integration guide. A React↔Vue bridge / interop library that lets you use React components in Vue or Vue components in React with fu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinhangfeng",
+      "userId": "publishers:yinhangfeng",
+      "displayName": "yinhf",
+      "image": "https://avatars.githubusercontent.com/u/2867940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 291,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773553741109,
+      "changelog": "Initial release of Vuact – a bridge for full two-way interoperability between React and Vue 3.\n\n- Seamlessly render React components inside Vue apps, and Vue components inside React apps.\n- Supports component rendering, event and prop interop, reactivity, slots/render props, Context, and refs across frameworks.\n- Allows use of Vue hooks within React components and vice versa.\n- Includes well-defined APIs for r2v (React-to-Vue) and v2r (Vue-to-React) conversions.\n- Documents compatibility (React 16–18, Vue 3.5+) and current limitations (e.g., concurrent rendering).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ceee6006115713143d27c27387a69e4e66927b441e076edaae0506049014d74b"
+}

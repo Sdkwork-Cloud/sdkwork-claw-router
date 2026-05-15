@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/boxed-curl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boxed_curl",
+  "skill": {
+    "id": 41272,
+    "skillKey": "clawhub-boxed-curl",
+    "name": "Boxed Curl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boxed-curl",
+    "url": "https://clawhub.ai/skills/boxed-curl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boxed-curl-23e92046ce0f8634.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run curl requests safely in a sandbox, supporting GET/POST/HTTP headers, with complete network isolation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guyoung",
+      "userId": "s1791jtrp7z0s6h87f8f0twdk183pq6y",
+      "displayName": "guyoung",
+      "image": "https://avatars.githubusercontent.com/u/1448308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774713434571,
+      "changelog": "boxed_curl v1.0.0\n\n- Initial release providing sandboxed (WASM-based) execution of curl-like HTTP requests.\n- Supports GET, POST, HTTP headers, and request bodies, with per-host network isolation via allowedOutboundHosts.\n- Requires openclaw-wasm-sandbox plugin v0.2.0+ and a local boxed_curl_component.wasm file.\n- Includes automatic extraction of curl arguments and outbound host restriction based on the target URL.\n- Provides example usage patterns and options matrix; explicit documentation for setup and key usage tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1bcac8ee1e34c5b7b2c8c9987c0992cde59ffa7c995d37f979087886d1d1f42"
+}

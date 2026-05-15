@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/carkey@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.carkey",
+  "skill": {
+    "id": 63201,
+    "skillKey": "clawhub-carkey",
+    "name": "Control your vehicle from AI agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "carkey",
+    "url": "https://clawhub.ai/skills/carkey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/carkey-1b89b8160b27cb6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "车辆信息查询技能。查询车辆位置、车况（车锁、车门、车窗、空调、电源状态等）。触发词：查车、车辆位置、车况、我的车在哪。跨平台支持 Linux/macOS/Windows。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lkisme",
+      "userId": "s17bspp0djyhfwrt781gp62ebn83gk67",
+      "displayName": "Kuikui",
+      "image": "https://avatars.githubusercontent.com/u/2712885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1774351112437,
+      "changelog": "- 更新「快速使用」部分，新增绝对路径与相对路径两种调用方式说明，提升使用指引清晰度",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:523b4a56222cf08471720ad3fd761aceb4826b807efcd6a935912e5d8f34080c"
+}

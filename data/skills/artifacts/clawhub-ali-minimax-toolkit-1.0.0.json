@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ali-minimax-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ali_minimax_toolkit",
+  "skill": {
+    "id": 40483,
+    "skillKey": "clawhub-ali-minimax-toolkit",
+    "name": "Ali Minimax Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ali-minimax-toolkit",
+    "url": "https://clawhub.ai/skills/ali-minimax-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ali-minimax-toolkit-4c3b25160a368063.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MiniMax multimodal generation via API. Use when user wants voice, music, image, image-to-image, or video generation with MiniMax. Supports TTS, music, image..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuan-huicheng",
+      "userId": "s17c0qnxe8jej8s5srjsh3bacx83tbnw",
+      "displayName": "yuan-huicheng",
+      "image": "https://avatars.githubusercontent.com/u/134614128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774778428531,
+      "changelog": "- Initial release of ali-minimax-toolkit for MiniMax multimodal generation.\n- Supports TTS, music, image (text-to-image & image-to-image), and video (text/image-to-video, subject/sequence reference) generation via MiniMax APIs.\n- Pure Python implementation: cross-platform, no third-party dependencies required.\n- Provides both Python module and CLI usage; all outputs saved to minimax-output/ directory.\n- Includes quick-start guides, error handling info, API references, and Feishu integration instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3fee3c442683aeba014327c751b41789a91fe2127f66c8935ae6a0e25dc3b0bb"
+}

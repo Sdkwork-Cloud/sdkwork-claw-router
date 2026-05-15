@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qg-skill-sync@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qg_skill_sync",
+  "skill": {
+    "id": 69516,
+    "skillKey": "clawhub-qg-skill-sync",
+    "name": "qg-skill-sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qg-skill-sync",
+    "url": "https://clawhub.ai/skills/qg-skill-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qg-skill-sync-1f9dcf7b3e03dbac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从团队 Git 仓库同步最新技能到本机 OpenClaw。支持首次设置、定时自动更新、手动同步和卸载。当用户需要同步技能、设置技能同步、安装或更新团队技能，或提到「技能同步」「同步技能」时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wzj666666",
+      "userId": "s1700xkt5e3a395hcyjg7fes5983m1gh",
+      "displayName": "wzj666666",
+      "image": "https://avatars.githubusercontent.com/u/61194128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 435,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773647875558,
+      "changelog": "- 文档优化：定时任务的 cron 脚本新增了 --no-deliver 参数，并在说明中明确“直接执行下面的脚本”。\n- 其他内容保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5fd6bf223ead7e521e8524318ac829dd24e90933d27b4ea0b0043ce5e2d8e9ac"
+}

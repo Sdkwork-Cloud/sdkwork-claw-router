@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reachy-mini@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reachy_mini",
+  "skill": {
+    "id": 12259,
+    "skillKey": "clawhub-reachy-mini",
+    "name": "Reachy Mini"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reachy-mini",
+    "url": "https://clawhub.ai/skills/reachy-mini",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reachy-mini-8e0e6178ab148311.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control a Reachy Mini robot (by Pollen Robotics / Hugging Face) via its REST API and SSH. Use for any request involving the Reachy Mini robot — moving the head, body, or antennas; playing emotions or dances; capturing camera snapshots; adj."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "afalk42",
+      "userId": "publishers:afalk42",
+      "displayName": "afalk42",
+      "image": "https://avatars.githubusercontent.com/u/6906332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2128,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1769643214340,
+      "changelog": "Updated 1.1.0 release.\n\n- Added `reachy-react.sh` script for contextual robot reactions integrated with heartbeat, cron, and session triggers.\n- Provides quick commands for nodding, success, alerts, reminders, idle animation, morning wake-up, goodnight routine, patrol (snapshot), directional audio tracking, and celebration dances.\n- Built-in quiet hours skip reactions automatically at night, with auto-wake and fault-tolerant behavior.\n- No changes to existing `reachy.sh` CLI or core documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f32635fdf9086d78c397c3d92923d0bbfc7c6f6bf83338965738eb94ab4c4cab"
+}

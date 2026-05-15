@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22481,
+  "uuid": "skill-clawhub-ashare-fast-watcher",
+  "skillKey": "clawhub-ashare-fast-watcher",
+  "name": "Ashare Fast Watcher",
+  "summary": "A-Share millisecond-level market data watcher using Tencent direct API.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ashare_fast_watcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kenswj",
+      "features": [
+        "A-Share millisecond-level market data watcher using Tencent direct API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ashare-fast-watcher@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29836387?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ashare-fast-watcher",
+      "url": "https://clawhub.ai/skills/ashare-fast-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ashare-fast-watcher",
+    "url": "https://clawhub.ai/skills/ashare-fast-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ashare-fast-watcher-9e6c98a3aa957e81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ashare-fast-watcher@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ashare-fast-watcher-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d398683e9fce29343871995ace1a7f978e04303c33995c635986abd279b0837d",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T19:20:45.445Z"
+}

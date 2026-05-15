@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11745,
+  "uuid": "skill-clawhub-flux",
+  "skillKey": "clawhub-flux",
+  "name": "Flux",
+  "summary": "Publish events and query shared world state via Flux state engine. Use when agents need to share observations, coordinate on shared data, or track entity sta...",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flux",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EckmanTechLLC",
+      "features": [
+        "Publish events and query shared world state via Flux state engine",
+        "Use when agents need to share observations, coordinate on shared data, or track entity sta..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flux@2.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211055804?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flux",
+      "url": "https://clawhub.ai/skills/flux"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flux",
+    "url": "https://clawhub.ai/skills/flux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flux-a2e10207c7be30e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flux@2.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flux-2.3.0.json",
+      "version": "2.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6da3a3fb4ac5ec4d92fb2030096c25cdd3e7262031638795e49d222aee19ff12",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T22:29:09.174Z"
+}

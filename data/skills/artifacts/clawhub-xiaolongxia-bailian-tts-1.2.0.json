@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaolongxia-bailian-tts@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaolongxia_bailian_tts",
+  "skill": {
+    "id": 63722,
+    "skillKey": "clawhub-xiaolongxia-bailian-tts",
+    "name": "Bailian TTS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaolongxia-bailian-tts",
+    "url": "https://clawhub.ai/skills/xiaolongxia-bailian-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaolongxia-bailian-tts-5e3522669d335128.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "百炼 TTS 语音合成，支持多种音色切换，生成高质量中文语音，需配置百炼 API Key。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dadaniya99",
+      "userId": "s178e9wg39md2mzzgdd57zvhyd83y6sg",
+      "displayName": "dadaniya99",
+      "image": "https://avatars.githubusercontent.com/u/254098635?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774973692967,
+      "changelog": "v1.2.0: Production ready with full voice library and documentation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32b4a388b798ffb5c5da4b47ae6d94444ab3bcb17640c1d053693d8783416b7c"
+}

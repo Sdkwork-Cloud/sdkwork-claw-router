@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73454,
+  "uuid": "skill-clawhub-douyindownload",
+  "skillKey": "clawhub-douyindownload",
+  "name": "抖音视频解析",
+  "summary": "解析抖音视频分享链接，返回无水印视频下载地址并支持免费及付费调用次数管理。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyindownload",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Steven Fu",
+      "features": [
+        "解析抖音视频分享链接，返回无水印视频下载地址并支持免费及付费调用次数管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyindownload@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3166378?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyindownload",
+      "url": "https://clawhub.ai/skills/douyindownload"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyindownload",
+    "url": "https://clawhub.ai/skills/douyindownload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyindownload-ba6aa63f2c8910ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyindownload@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyindownload-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32cfd325a0cbf0270cc5fd7633dc92143d7dd9d0b83d00a2d4d7697f3b9675c5",
+      "artifactSizeBytes": 2286
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T14:18:45.444Z"
+}

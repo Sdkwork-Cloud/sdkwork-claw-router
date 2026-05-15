@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amadeus-hotels@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amadeus_hotels",
+  "skill": {
+    "id": 10665,
+    "skillKey": "clawhub-amadeus-hotels",
+    "name": "Amadeus Hotels"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amadeus-hotels",
+    "url": "https://clawhub.ai/skills/amadeus-hotels",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amadeus-hotels-35e5409a956eed22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search hotel prices and availability via Amadeus API. Find vacation hotels by city, coordinates, or amenities. Compare prices, view ratings, get offer details. Track prices with alerts. Use when user asks to \"find hotels\", \"search hotels i."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kesslerio",
+      "userId": "publishers:kesslerio",
+      "displayName": "kesslerio",
+      "image": "https://avatars.githubusercontent.com/u/2647990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2427,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770017918702,
+      "changelog": "Add pricing disclaimer: API returns net/wholesale rates, not retail prices",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:79e0290e0ef7ebf6f2701f145f4db5d24b8f6fe8fd432f930a589e984ac0db95"
+}

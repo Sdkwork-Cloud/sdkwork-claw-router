@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fetch-stock-daily@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fetch_stock_daily",
+  "skill": {
+    "id": 34739,
+    "skillKey": "clawhub-fetch-stock-daily",
+    "name": "fetch-stock-daily"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fetch-stock-daily",
+    "url": "https://clawhub.ai/skills/fetch-stock-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fetch-stock-daily-06c1ff2d3bce1bcf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Resolve a China A-share stock name or code in pure Node.js, fetch daily historical bars from Eastmoney HTTP APIs, and archive them as local JSON files. Use w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenchunjiekk",
+      "userId": "s1711xkfz242nc8ctpsar4e71d83v5ek",
+      "displayName": "ChenchunjieKK",
+      "image": "https://avatars.githubusercontent.com/u/99855454?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774783103845,
+      "changelog": "- Initial release of fetch-stock-daily-json skill.\n- Resolves China A-share stock names or codes using Node.js.\n- Fetches daily historical OHLCV bars from Eastmoney APIs.\n- Archives results as local JSON files, providing a summary with symbol, row count, date range, and file path.\n- Supports input as 6-digit code, code with exchange suffix, or Chinese stock name.\n- Handles adjustable date ranges and adjustment types; defaults to 5 years and qfq adjustment if unspecified.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:921daa4a2cb83ff347f99d8430b60c6742b03e098520186605901f3acfecae46"
+}

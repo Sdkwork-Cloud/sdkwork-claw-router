@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58715,
+  "uuid": "skill-clawhub-github-bug-report",
+  "skillKey": "clawhub-github-bug-report",
+  "name": "GitHub Bug Report",
+  "summary": "Submit bug reports to GitHub for OpenClaw issues. Use when: (1)发现了明确的bug并想提交给官方; (2)官方产品出现问题需要报障; (3)想查询现有issue状态; (4)需要跟进已提交issue的进展. Includes issue templat...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_bug_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarkMa84",
+      "features": [
+        "Submit bug reports to GitHub for OpenClaw issues",
+        "Use when: (1)发现了明确的bug并想提交给官方",
+        "(2)官方产品出现问题需要报障",
+        "(3)想查询现有issue状态"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-bug-report@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19796416?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-bug-report",
+      "url": "https://clawhub.ai/skills/github-bug-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-bug-report",
+    "url": "https://clawhub.ai/skills/github-bug-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-bug-report-e04f7fae9212c6ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-bug-report@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-bug-report-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3a1bee0adfaa5ed9fa08db972a3d17152d151fcd7c9ad244d964785e8e8c0c0",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T01:15:03.351Z"
+}

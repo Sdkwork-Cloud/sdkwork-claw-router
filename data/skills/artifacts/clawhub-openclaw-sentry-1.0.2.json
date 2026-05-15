@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-sentry@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_sentry",
+  "skill": {
+    "id": 13163,
+    "skillKey": "clawhub-openclaw-sentry",
+    "name": "Openclaw Sentry"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-sentry",
+    "url": "https://clawhub.ai/skills/openclaw-sentry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-sentry-535bd2de41e0b04a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan workspace files for leaked secrets: API keys, tokens, passwords, private keys, and credentials. Detects AWS, GitHub, Slack, Stripe, OpenAI, Anthropic, Google, Azure keys and more. Free alert layer — upgrade to openclaw-sentry-pro for."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "atlaspa",
+      "userId": "publishers:atlaspa",
+      "displayName": "AtlasPA",
+      "image": "https://avatars.githubusercontent.com/u/231540010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1739,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770891998206,
+      "changelog": "- Removed references to the paid \"openclaw-sentry-pro\" product and related upgrade information from documentation.\n- Simplified SKILL.md by deleting external promo links while clarifying core features.\n- No changes to skill functionality; updates are documentation-only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:027d76ee88eb81220d3a67b2bae5f0b7db0419760a9611692299072e48f993db"
+}

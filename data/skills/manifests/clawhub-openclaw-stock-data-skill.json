@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64201,
+  "uuid": "skill-clawhub-openclaw-stock-data-skill",
+  "skillKey": "clawhub-openclaw-stock-data-skill",
+  "name": "股票数据API",
+  "summary": "使用 data.diemeng.chat 提供的接口查询股票日线、分钟线、财务指标等数据，支持 A 股等市场。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_stock_data_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1018466411",
+      "features": [
+        "使用 data.diemeng.chat 提供的接口查询股票日线、分钟线、财务指标等数据，支持 A 股等市场。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-stock-data-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11850843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-stock-data-skill",
+      "url": "https://clawhub.ai/skills/openclaw-stock-data-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-stock-data-skill",
+    "url": "https://clawhub.ai/skills/openclaw-stock-data-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-stock-data-skill-fd024c89a140ac05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-stock-data-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-stock-data-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ddf843983a7855160602bfcb12436c89358af353fe5e05cc1f8d0bf96d18d79",
+      "artifactSizeBytes": 2512
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T01:58:53.350Z"
+}

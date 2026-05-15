@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29686,
+  "uuid": "skill-clawhub-search-hotel",
+  "skillKey": "clawhub-search-hotel",
+  "name": "search-hotel",
+  "summary": "Hotel search and pricing via the RollingGo CLI. Use when the user wants to search hotels by destination, filter by date/star/budget/tags/distance, inspect ho...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.search_hotel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zlon",
+      "features": [
+        "Hotel search and pricing via the RollingGo CLI",
+        "Use when the user wants to search hotels by destination, filter by date/star/budget/tags/distan."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/search-hotel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68158872?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "search-hotel",
+      "url": "https://clawhub.ai/skills/search-hotel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "search-hotel",
+    "url": "https://clawhub.ai/skills/search-hotel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/search-hotel-b898a352800adbca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/search-hotel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-search-hotel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec95f0f4dc023574d9a86af4e01595f50018564c3186eec277dc7259ed43b4d2",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T08:42:26.060Z"
+}

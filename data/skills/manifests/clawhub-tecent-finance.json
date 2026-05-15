@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9219,
+  "uuid": "skill-clawhub-tecent-finance",
+  "skillKey": "clawhub-tecent-finance",
+  "name": "Tecent Finance",
+  "summary": "Get stock prices, quotes, and compare stocks using Tencent Finance API. No API key required. Supports US stocks, China A-Shares, Hong Kong stocks. Optimized for use in mainland China.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tecent_finance",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pz325",
+      "features": [
+        "Get stock prices, quotes, and compare stocks using Tencent Finance API",
+        "No API key required",
+        "Supports US stocks, China A-Shares, Hong Kong stocks",
+        "Optimized for use in mainland China."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tecent-finance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/538880?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tecent-finance",
+      "url": "https://clawhub.ai/skills/tecent-finance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tecent-finance",
+    "url": "https://clawhub.ai/skills/tecent-finance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tecent-finance-054e6c33ad22b831.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tecent-finance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tecent-finance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e2f8eec359c0c91cdddfbc3978b653ee0971e442f1e737eea46c5fb8dd4956e",
+      "artifactSizeBytes": 2375
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T13:27:15.670Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35171,
+  "uuid": "skill-clawhub-music-seperator-demucs",
+  "skillKey": "clawhub-music-seperator-demucs",
+  "name": "Music Seperator (Demucs)",
+  "summary": "Separate vocals and instrument stems from audio files with Demucs CLI. Use when the user asks for vocal extraction, accompaniment generation, stem splitting,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_seperator_demucs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chinesemisaka",
+      "features": [
+        "Separate vocals and instrument stems from audio files with Demucs CLI",
+        "Use when the user asks for vocal extraction, accompaniment generation, stem splitting,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/music-seperator-demucs@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184379246?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "music-seperator-demucs",
+      "url": "https://clawhub.ai/skills/music-seperator-demucs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-seperator-demucs",
+    "url": "https://clawhub.ai/skills/music-seperator-demucs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-seperator-demucs-a676841441edd29e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/music-seperator-demucs@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-music-seperator-demucs-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e88cd549d9a377ea230626045c16fa605fe583bcd15752fc70aa155b2eeadfd",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T17:30:19.093Z"
+}

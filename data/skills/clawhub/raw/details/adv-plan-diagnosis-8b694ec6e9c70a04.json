@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "adv-plan-diagnosis",
+    "displayName": "EMAR adv-plan-diagnosis",
+    "summary": "信息流广告计划诊断助手。当用户说“计划为什么不起量”“成本为什么这么高”“帮我诊断这个计划”“计划有问题”“计划跑不动”“消耗不动”“成本超标”时触发。基于出价、预算、消耗、展现、点击率、转化成本等数据，诊断广告计划异常原因并给出可执行的优化建议。",
+    "tags": {
+      "latest": "1.0.2"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "createdAt": 1776339705604,
+    "updatedAt": 1778203593230
+  },
+  "latestVersion": {
+    "version": "1.0.2",
+    "createdAt": 1778202945512,
+    "changelog": "Version 1.0.2 – 支持巨量官方诊断接口，优化流程与报告格式\n\n- 新增对巨量引擎官方诊断接口的支持，优化诊断准确性与建议内容\n- 腾讯广告侧继续采用报表+规则引擎，明确区分两平台诊断方式\n- 统一信息收集与提问流程，要求用户提供必要参数\n- 报告格式优化，场景分类更清晰，增加紧急程度判断\n- 若无优化建议时，输出提示内容，引导用户保持观察\n\n- 支持巨量引擎官方诊断接口，腾讯广告采用报表+规则引擎方式诊断。\n- 更新信息收集流程及提问模板，平台、广告主ID、广告ID为必填，腾讯广告需目标成本。\n- 报告格式调整，支持多场景建议及紧急程度判断，若无建议则合理提示用户。\n- 脚本 token 配置说明更明确，强调用户需本地维护 token。\n- 清晰区分平台别名，用户输入更友好。\n- 新增巨量引擎官方诊断 JSON 输出的解析与格式化展示。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "suwangsen",
+    "userId": "s177x5qnk79jdnrbhxja5jb5c584ynqn",
+    "displayName": "suwangsen",
+    "image": "https://avatars.githubusercontent.com/u/24741249?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778203593230
+  }
+}

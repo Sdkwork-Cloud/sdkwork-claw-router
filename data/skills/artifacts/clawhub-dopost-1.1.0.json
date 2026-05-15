@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dopost@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dopost",
+  "skill": {
+    "id": 30574,
+    "skillKey": "clawhub-dopost",
+    "name": "dopost-api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dopost",
+    "url": "https://clawhub.ai/skills/dopost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dopost-1ff90b0b6552689d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the Dopost REST API to publish, schedule, and manage social media posts programmatically. Use this skill when the user wants to publish to social media,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dopost",
+      "userId": "s17cp3xnmtcxcs952wgw72tq0984kf7k",
+      "displayName": "dopost",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775808204549,
+      "changelog": "dopost-api v1.1.0\n\n- Adds detailed SKILL.md documentation covering all major Dopost REST API endpoints, authentication, required environment variables, and usage workflows.\n- Includes endpoint references for social account management, publishing, scheduling, media upload, and error handling.\n- Specifies when to activate the skill, including explicit user intents and keyword triggers.\n- Outlines setup instructions and platform-specific options for publishing and scheduling posts.\n- Provides example requests and responses for common use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8326871a40599a60d3e9e4d9e7668260d0f2fb1b89c006a21d3ba6a9baf8d60a"
+}

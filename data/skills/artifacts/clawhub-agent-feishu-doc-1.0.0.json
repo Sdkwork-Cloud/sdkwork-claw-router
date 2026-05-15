@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-feishu-doc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_feishu_doc",
+  "skill": {
+    "id": 39456,
+    "skillKey": "clawhub-agent-feishu-doc",
+    "name": "Agent Feishu Doc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-feishu-doc",
+    "url": "https://clawhub.ai/skills/agent-feishu-doc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-feishu-doc-a2094e04114e689e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide for OpenClaw agents to create, read, and edit Feishu/Lark documents via API. Use when: (1) creating a new Feishu doc and writing content, (2) reading a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jmin1113",
+      "userId": "s17c92w131bzrgqf6ae6gab9b983ycve",
+      "displayName": "JMin1113",
+      "image": "https://avatars.githubusercontent.com/u/258832386?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775197380650,
+      "changelog": "Initial release: create/read/edit Feishu docs via API, permissions, cross-agent collaboration guide",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:356c4c147b429421ac05ba6afa62d69614436015022605ff3949056fbcff3897"
+}

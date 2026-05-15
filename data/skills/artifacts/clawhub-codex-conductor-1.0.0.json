@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codex-conductor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_conductor",
+  "skill": {
+    "id": 10011,
+    "skillKey": "clawhub-codex-conductor",
+    "name": "Codex Conductor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-conductor",
+    "url": "https://clawhub.ai/skills/codex-conductor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-conductor-5f288d32edcb7c7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Methodical end-to-end software delivery orchestrator for Codex CLI with dual project modes (greenfield for new builds, brownfield for existing systems) and dual execution modes (autonomous and gated). Use when users want full lifecycle del."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shalomobongo",
+      "userId": "publishers:shalomobongo",
+      "displayName": "ShalomObongo",
+      "image": "https://avatars.githubusercontent.com/u/145100315?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 2068,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 10,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770467129107,
+      "changelog": "Initial release: spec-driven orchestration with strict gate enforcement, OpenClaw verification loop, AC mapping, drift checks, validation artifacts, and auto-BLOCKED escalation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:75bc3308366fd69d584900537e3072b12dab1b210a908290d702d2127cc5e3ae"
+}

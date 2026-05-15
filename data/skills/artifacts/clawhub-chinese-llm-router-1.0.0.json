@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-llm-router@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_llm_router",
+  "skill": {
+    "id": 14719,
+    "skillKey": "clawhub-chinese-llm-router",
+    "name": "Chinese LLM Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-llm-router",
+    "url": "https://clawhub.ai/skills/chinese-llm-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-llm-router-18d3a272c73ab4cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Route OpenClaw chats to top Chinese LLMs with smart model selection, auto-fallback, cost tracking, and unified OpenAI-compatible API access."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xdd-xund",
+      "userId": "publishers:xdd-xund",
+      "displayName": "xund",
+      "image": "https://avatars.githubusercontent.com/u/194621946?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1123,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771262128322,
+      "changelog": "Initial release of Chinese LLM Router.\n\n- Unified interface to access all major Chinese LLMs in OpenClaw.\n- Supports model selection, comparison, recommendations, and testing via commands.\n- Auto-fallback, cost tracking, and smart routing between multiple providers.\n- Simple configuration with OpenAI-compatible APIs and quick setup script.\n- Comprehensive model/task recommendations and up-to-date pricing included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c8a95de980116ebf69ed23557cec1ad153257c6fb6254983764a7119cb650134"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moodtrip-hotel-search@1.0.19",
+  "version": "1.0.19",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moodtrip_hotel_search",
+  "skill": {
+    "id": 28177,
+    "skillKey": "clawhub-moodtrip-hotel-search",
+    "name": "MoodTrip Hotel Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moodtrip-hotel-search",
+    "url": "https://clawhub.ai/skills/moodtrip-hotel-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moodtrip-hotel-search-b80552d5c4077921.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, compare, evaluate, and hand off hotel bookings using the MoodTrip.ai MCP server (api.moodtrip.ai). Use this skill whenever the user mentions hotels,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adiny",
+      "userId": "s17dmz6sp2sw3avkk13t3qqvkn83g1e0",
+      "displayName": "adiny",
+      "image": "https://avatars.githubusercontent.com/u/47896047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 332,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "1.0.19",
+      "createdAt": 1774816185980,
+      "changelog": "**Version 1.0.19 – More robust tool detection and OpenAI/Codex compatibility**\n\n- Expanded pre-flight tool checks to include `search_hotels`, `get_hotel_details`, and `build_booking_link` for broader runtime compatibility.\n- Added explicit guidance to prefer OpenAI/Codex-compliant wrapper tools (`search_hotels` and `get_hotel_details`) on strict schema platforms.\n- Updated Decision Rules to prioritize wrapper tools on OpenClaw and Codex, clarifying which variants to use.\n- Improved and clarified tool selection for common hotel search scenarios.\n- Documentation and setup sections refined for clarity and better cross-platform guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c39f6ed1a78cc6ca9279aefbfc78bff4ce70b5f8a719b52999d8ed2a1d39141f"
+}

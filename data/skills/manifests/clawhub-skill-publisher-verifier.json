@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51806,
+  "uuid": "skill-clawhub-skill-publisher-verifier",
+  "skillKey": "clawhub-skill-publisher-verifier",
+  "name": "Skill Publisher Verifier",
+  "summary": "Check a ClawHub publisher's trust score before installing their skill. Returns TRUSTED, ESTABLISHED, NEW, or FLAGGED based on public signals. Free taster — f...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_publisher_verifier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ordo-tech",
+      "features": [
+        "Check a ClawHub publisher's trust score before installing their skill",
+        "Returns TRUSTED, ESTABLISHED, NEW, or FLAGGED based on public signals",
+        "Free taster — f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-publisher-verifier@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270605482?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-publisher-verifier",
+      "url": "https://clawhub.ai/skills/skill-publisher-verifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-publisher-verifier",
+    "url": "https://clawhub.ai/skills/skill-publisher-verifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-publisher-verifier-ef0b2c810abb3b21.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-publisher-verifier@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-publisher-verifier-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43b413bed797e5a3cec7c05929b74dc4083ed67f0e7a4ee23e099e1bf22013fe",
+      "artifactSizeBytes": 2074
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T09:20:04.004Z"
+}

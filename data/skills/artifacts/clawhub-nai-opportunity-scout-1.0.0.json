@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nai-opportunity-scout@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nai_opportunity_scout",
+  "skill": {
+    "id": 43413,
+    "skillKey": "clawhub-nai-opportunity-scout",
+    "name": "Opportunity Scout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nai-opportunity-scout",
+    "url": "https://clawhub.ai/skills/nai-opportunity-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nai-opportunity-scout-efcbc109031c8e6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hunt for real, expressed user pain points and unmet demand across Reddit, HN, and configurable sources. Finds demand signals like frustration posts, feature..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newageinvestments25-byte",
+      "userId": "s1750zbb4q7vnt30b4h3mhgarx83n6hn",
+      "displayName": "New Age Investments",
+      "image": "https://avatars.githubusercontent.com/u/243381911?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774561606175,
+      "changelog": "Initial release of Opportunity Scout: a tool for uncovering user pain points and unmet demand from online forums.\n\n- Scan Reddit, Hacker News, and custom sources for expressions of user frustration, need, or willingness to pay.\n- Score and prioritize findings by signal strength, competition, engagement, and trend persistence.\n- Compile results into a digest, highlighting emerging market gaps and business opportunities.\n- Includes scripts for configuration, scanning, scoring, trend tracking, and digest generation.\n- Workflow supports both full scans and rapid, niche-targeted scans without complex setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2070f2af00f287f5f6f4bdcc662890c77e52e1950c985396341cfc879bb59f0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xxx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xxx",
+  "skill": {
+    "id": 39347,
+    "skillKey": "clawhub-xxx",
+    "name": "xxx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xxx",
+    "url": "https://clawhub.ai/skills/xxx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xxx-cd2eb0837c9b4c96.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Capture frames or clips from RTSP/ONVIF cameras."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cosrider",
+      "userId": "s1710wc25nvv0r2940pmvcx94s83qf9g",
+      "displayName": "Cosrider",
+      "image": "https://avatars.githubusercontent.com/u/40035645?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774593225940,
+      "changelog": "Initial release of camsnap.\n\n- Capture snapshots or video clips from RTSP/ONVIF cameras via command line.\n- Supports camera discovery, motion event watching, and diagnostic tools.\n- Requires a YAML config file for camera setup.\n- Installable via Homebrew.\n- Depends on ffmpeg for media handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:719e507202457a80dec08e8a8377e59ad56e48a214b2b96a97209b031ca8fcc8"
+}

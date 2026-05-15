@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12625,
+  "uuid": "skill-clawhub-mondilo",
+  "skillKey": "clawhub-mondilo",
+  "name": "mbk",
+  "summary": "Command-line tool to list, inspect, and verify skill availability and eligibility with moltbot skills commands.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mondilo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mondilo1",
+      "features": [
+        "Command-line tool to list, inspect, and verify skill availability and eligibility with moltbot."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mondilo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/209247345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mondilo",
+      "url": "https://clawhub.ai/skills/mondilo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mondilo",
+    "url": "https://clawhub.ai/skills/mondilo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mondilo-4742b977c9dfb0bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mondilo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mondilo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3caab444786cd84d49890fa22b4c5089f6770a59ddcb24342f5efb997590c993",
+      "artifactSizeBytes": 2091
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T16:28:34.842Z"
+}

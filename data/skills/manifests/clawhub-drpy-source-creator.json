@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66782,
+  "uuid": "skill-clawhub-drpy-source-creator",
+  "skillKey": "clawhub-drpy-source-creator",
+  "name": "Drpy Source Creator",
+  "summary": "drpy视频源创建与调试技能。当用户需要创建、修改、调试drpy视频源（用于TVBox、海阔视界、ZYPlayer等播放器）时使用此技能。包括drpy源属性配置、模板继承、正则表达式编写、本地代理设置、不同类型源（影视/听书/漫画/小说）支持。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drpy_source_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuluoxci",
+      "features": [
+        "drpy视频源创建与调试技能。当用户需要创建、修改、调试drpy视频源（用于TVBox、海阔视界、ZYPlayer等播放器）时使用此技能。包括drpy源属性配置、模板继承、正则表达式编写、本."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drpy-source-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45326074?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drpy-source-creator",
+      "url": "https://clawhub.ai/skills/drpy-source-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drpy-source-creator",
+    "url": "https://clawhub.ai/skills/drpy-source-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drpy-source-creator-2a72f54323e2e907.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drpy-source-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-drpy-source-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49b9b833348bddca1be26d7eabed162331d8aa3eb2b53d3cabb54532ab1a0604",
+      "artifactSizeBytes": 2448
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T07:05:22.693Z"
+}

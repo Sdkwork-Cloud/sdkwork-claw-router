@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firm-hebbian-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firm_hebbian_memory",
+  "skill": {
+    "id": 57009,
+    "skillKey": "clawhub-firm-hebbian-memory",
+    "name": "Firm Hebbian Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firm-hebbian-memory",
+    "url": "https://clawhub.ai/skills/firm-hebbian-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firm-hebbian-memory-40b17a021f465985.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Système de mémoire adaptative hebbienne pour Claude.md — transforme les logs de sessions en patterns pondérés qui renforcent ou atrophient les règles de trav..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "romainsantoli-web",
+      "userId": "publishers:romainsantoli-web",
+      "displayName": "romainsantoli-web",
+      "image": "https://avatars.githubusercontent.com/u/246739959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 509,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772318886674,
+      "changelog": "firm-hebbian-memory 1.0.0\n\n- Première version stable du système de mémoire adaptative hebbienne pour Claude.md.\n- Implémente la consolidation synaptique inspirée de la neuroplasticité : renforcement automatique des schémas récurrents, atrophie des règles obsolètes.\n- Ajout d’un pipeline complet (ingestion logs, co-activation, pondération, validation humaine).\n- Outils d’audit avancés (statut des poids, validation structurelle, stripping PII, détection de drift sémantique).\n- Sécurité renforcée : suppression des données sensibles via regex, accès BDD restreint, détection rapide de secrets.\n- Documentation exhaustive (architecture, hooks, automatisation, limitations, configuration).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d9404da6b12cf8f25119f02c1f9ffbfe7a075924a7a12620f823177cebe4a9ed"
+}

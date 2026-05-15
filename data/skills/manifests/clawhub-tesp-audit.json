@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41212,
+  "uuid": "skill-clawhub-tesp-audit",
+  "skillKey": "clawhub-tesp-audit",
+  "name": "TESP Audit",
+  "summary": "Audit whether the Task Execution Signal Protocol is still being followed, with low-token, exception-first checks for version drift, queue hygiene, numeric st...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tesp_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wewehg",
+      "features": [
+        "Audit whether the Task Execution Signal Protocol is still being followed, with low-token, excep."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tesp-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227321197?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tesp-audit",
+      "url": "https://clawhub.ai/skills/tesp-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tesp-audit",
+    "url": "https://clawhub.ai/skills/tesp-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tesp-audit-7094f62021dcc00e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tesp-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tesp-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:700ab94f493d9db5a32e2f2b7aa3a2b60eadb7eed5cbd710cff47a5e236a43b4",
+      "artifactSizeBytes": 1922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T13:25:45.793Z"
+}

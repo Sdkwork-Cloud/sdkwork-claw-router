@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53776,
+  "uuid": "skill-clawhub-vps-backup",
+  "skillKey": "clawhub-vps-backup",
+  "name": "VPS Backup",
+  "summary": "Automated daily VPS backup using restic — backs up OpenClaw workspace, SSH keys, project code, and session transcripts. Configures encrypted incremental snap...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vps_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Carina MacInnes",
+      "features": [
+        "Automated daily VPS backup using restic — backs up OpenClaw workspace, SSH keys, project code,.",
+        "Configures encrypted incremental snap..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vps-backup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112783500?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vps-backup",
+      "url": "https://clawhub.ai/skills/vps-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vps-backup",
+    "url": "https://clawhub.ai/skills/vps-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vps-backup-05dd8fdd3c5b557b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vps-backup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vps-backup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:686450fad50f59ced3db18304a8a32014ae9dd68221b96c262a5af5fe8ec08fd",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T18:25:28.588Z"
+}

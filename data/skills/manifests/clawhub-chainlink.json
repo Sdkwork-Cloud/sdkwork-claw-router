@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15161,
+  "uuid": "skill-clawhub-chainlink",
+  "skillKey": "clawhub-chainlink",
+  "name": "Chainlink",
+  "summary": "Assist with Chainlink LINK tokens, oracle integrations, staking, and price feed usage.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chainlink",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Assist with Chainlink LINK tokens, oracle integrations, staking, and price feed usage."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chainlink@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chainlink",
+      "url": "https://clawhub.ai/skills/chainlink"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chainlink",
+    "url": "https://clawhub.ai/skills/chainlink",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chainlink-b4bfe090fdd6cdf4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chainlink@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chainlink-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf375ee29c514201768ab561d34202fd1f01858ea8f0f88be21acf66dbc90e87",
+      "artifactSizeBytes": 1773
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T18:00:12.737Z"
+}

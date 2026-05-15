@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/story-cog@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.story_cog",
+  "skill": {
+    "id": 8720,
+    "skillKey": "clawhub-story-cog",
+    "name": "Story Cog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "story-cog",
+    "url": "https://clawhub.ai/skills/story-cog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/story-cog-aa38fee39c1ec9d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI creative writing and storytelling powered by CellCog. Novels, short stories, screenplays, fan fiction, poetry. World building, character development, narr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nitishgargiitd",
+      "userId": "s1766yx1dct3dffeec508gjrz983fce7",
+      "displayName": "CellCog",
+      "image": "https://avatars.githubusercontent.com/u/14193431?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6055,
+      "installsAllTime": 31,
+      "installsCurrent": 30,
+      "stars": 17,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1776925175612,
+      "changelog": "- Added explicit environment requirements for OpenClaw: Python 3 and CELLCOG_API_KEY must be set.\n- Updated the metadata block in SKILL.md to specify required binaries and environment variables for better setup clarity.\n- No functional or usage changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6418c46a8a67658ac8b230bb20f6b948107b84aafda91019d3e9627dafb8de16"
+}

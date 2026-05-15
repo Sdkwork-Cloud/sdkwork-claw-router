@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70832,
+  "uuid": "skill-clawhub-apollo-immu",
+  "skillKey": "clawhub-apollo-immu",
+  "name": "Apollo Immu",
+  "summary": "像免疫系统一样拦截危险操作，守护你的数据和系统安全。自动识别危险操作，信任积累减少确认噪音。",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apollo_immu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nic-yuan",
+      "features": [
+        "像免疫系统一样拦截危险操作，守护你的数据和系统安全。自动识别危险操作，信任积累减少确认噪音。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apollo-immu@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195308903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apollo-immu",
+      "url": "https://clawhub.ai/skills/apollo-immu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apollo-immu",
+    "url": "https://clawhub.ai/skills/apollo-immu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apollo-immu-da4c845452be26b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apollo-immu@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-apollo-immu-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6789d39fd3613ba955e2da669af444e5ccfa0478349b05a64eb4e60adfa6136",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T09:13:34.765Z"
+}

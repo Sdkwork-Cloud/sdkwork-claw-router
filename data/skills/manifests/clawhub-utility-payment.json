@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64459,
+  "uuid": "skill-clawhub-utility-payment",
+  "skillKey": "clawhub-utility-payment",
+  "name": "Utility Payment",
+  "summary": "提供家庭生活缴费汇总、自动划扣及账单核对指引。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.utility_payment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "提供家庭生活缴费汇总、自动划扣及账单核对指引。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/utility-payment@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "utility-payment",
+      "url": "https://clawhub.ai/skills/utility-payment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "utility-payment",
+    "url": "https://clawhub.ai/skills/utility-payment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/utility-payment-333d5f3629606fb2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/utility-payment@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-utility-payment-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b816feeadc4184f0261f8bb876d0d0d9d169d6959aa8575d6c40ec2484e11ae",
+      "artifactSizeBytes": 2286
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T16:44:09.363Z"
+}
